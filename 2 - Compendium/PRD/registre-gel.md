@@ -22,8 +22,18 @@ son en-tête déclare.** *Une convention de datation sans registre est une décl
 un registre constitué après coup est une déclaration d'intention **transcrite**.* La date de gel
 portée ici est celle du **gel unique du 27 juillet 2026** (décision d'auteur **D-1**), que les
 cinquante en-têtes portent sans exception. Elle ne dit pas qu'un fait a été re-vérifié ce jour-là :
-le **volet résiduel de G-1 n'est pas levé**, et [`gel-2026-07-27.md`](gel-2026-07-27.md) ne reprend
-que **douze faits, du seul Livre I**. *Ce qui n'a pas été re-daté porte la date de son volume source,
+le **volet résiduel de G-1 n'est pas levé sur les cinquante pièces**, et
+[`gel-2026-07-27.md`](gel-2026-07-27.md) ne reprend que **douze faits, du seul Livre I**. ⚠ **Et il
+faut nommer le volet plutôt que le laisser deviner** : *une passe en porte le nom sans le lever
+ici*. Le **28 juillet 2026**, le volet a été **instruit sur le socle** — 123 entrées à sensibilité
+temporelle reprises à leur source primaire, **91 ☑ inchangée** (28 partielles), **10 ☑ changée**,
+**22 ☐ non établie** — et son compte rendu vit au [registre du volet
+résiduel](gel-2026-07-28-volet-residuel.md), le socle passant en **v1.2**. **Cette passe amende le
+socle, pas les chapitres** : *ce qui est instruit à l'entrée `S-nnn` ne redescend pas de soi dans la
+pièce qui la cite.* Le volet reste donc dû là où le PRD §13 l'énumère — **faits des Livres II à V,
+relèves atterrissant hors du Livre I, divergence de date AMF** —, et les **quatre** entrées que le
+socle marque ☑ **re-vérifiée au gel unique** ne sont pas les 91 : *deux marqueurs distincts, deux
+dates, et les confondre ferait passer une porte qui ne l'est pas.* *Ce qui n'a pas été re-daté porte la date de son volume source,
 non celle du gel unique.*
 
 **(b) Le statut est le même pour les cinquante, et c'est le résultat.** Toutes se déclarent
@@ -42,8 +52,17 @@ périme le cardinal qui le décrivait*, et les cinq README sont désormais en re
 divergence est signalée ici, non corrigée** : re-mesurer chez le voisin sans mandat produit deux
 chiffres au lieu d'un. Elle se solde à la passe qui rouvrira ces fichiers.
 
-⚠ **(c bis) LA COLONNE `Réel` EST ELLE-MÊME DATÉE DU 28 JUILLET 2026, ET ELLE NE PEUT PAS BOUGER
-D'ICI — le constat est du 8 août 2026.** *Quatre passes de révision du français ont touché les
+☑ **(c bis) LA COLONNE `Réel` A ÉTÉ RE-MESURÉE LE 2 SEPTEMBRE 2026, AVEC LES CINQUANTE EN-TÊTES,
+AU MÊME COMMIT** — *la condition que ce paragraphe posait lui-même, et que quatre passes avaient
+laissée en suspens.* **Mesure : 333 416 mots** de corps au terme de la passe de fond (**D-16**) — *331 797 au terme de la passe d'appareil (D-15), le même jour* —, par une invocation unique de
+`bash PRD/decompte.sh` sur les cinquante pièces — **72 584 / 68 743 / 100 354 / 60 025 / 31 710** par
+Livre. ⚠ **Les cinquante lignes ont été re-mesurées DEUX FOIS le 2 septembre 2026**, et le motif est le contrôle lui-même : *`decompte.sh --registre`, écrit à la première passe, a **refusé** le registre après la seconde — sept corps avaient bougé sous les reprises de fond.* **L'instrument a mordu sur la passe qui l'avait créé, le jour même.** **Vingt-six en-têtes publient leur mesure et les vingt-six étaient périmés**, tous par excès du
+corps sur le chiffre : de **+1** au ch. 28 à **+772** au ch. 47. *Chacun porte désormais son ancienne
+valeur à côté de la neuve : une mesure qui remplace une mesure sans dire laquelle elle remplace est
+une mesure qu'on ne peut plus auditer.* ⚠ **Ce que la re-mesure ne change pas** : aucun corps n'a été
+touché pour l'obtenir, et **le gel des pièces tient** — *re-mesurer n'est pas rouvrir.*
+
+⚠ **Le constat d'origine, conservé — (c bis) tel qu'il se lisait du 8 août au 2 septembre 2026.** *Quatre passes de révision du français ont touché les
 cinquante pièces depuis* (commits `982ef3a` et `1535aa5` du 31 juillet, `c5a51b3` du 1ᵉʳ août,
 `c2a1258`, `e0f799a` et `4355a41` du 3 août). **Re-mesure du 8 août 2026, par une invocation unique de
 `bash PRD/decompte.sh` sur les cinquante pièces : 331 791 mots de corps** — **72 483 / 68 752 / 99 875 /
@@ -55,6 +74,22 @@ mesure du 8 août ferait échouer P6 sur vingt-six lignes, les en-têtes étant 
 arrêté.* **Ce qui est dû n'est donc pas une correction de registre, c'est une passe qui re-mesure les
 cinquante en-têtes ET ce registre au même commit** — *un chiffre couplé par contrôle à un texte gelé
 se lit, il ne se rafraîchit pas d'un seul côté.*
+
+☑ **La passe qu'il décrit est celle du 2 septembre 2026, et elle a fait exactement cela.** ⚠ *Un écart
+de six mots sépare la re-mesure du 8 août — 331 791 — de celle-ci — 331 797 —, et il n'est pas du
+bruit* : les deux passes qui ont touché des corps depuis n'ont touché que **deux Livres**, le II
+(**−29**, la restitution des noms d'organisations à la table 18.1 du ch. 18, plus courts que les
+périphrases qu'ils remplacent) et le V (**+35**, deux renvois de siège versés au ch. 49). *Les trois
+autres Livres se re-mesurent à l'unité près, et c'est le résultat qui donne son prix à la re-mesure :
+il dit que rien n'a bougé là où rien ne devait bouger.*
+
+☑ **Et la lacune que ce paragraphe décrivait est comblée, le même jour.** *P6 oppose une copie à une
+copie — le `Réel` du registre au `Réel` de l'en-tête — et reste vert tant que les deux dérivent
+ensemble : c'est exactement ce qui est arrivé, du 28 juillet au 2 septembre 2026.* La confrontation
+manquante ne pouvait pas entrer dans [`check-compendium.py`](check-compendium.py), qui y gagnerait un
+**second tokéniseur**, donc une seconde autorité ; elle est entrée dans **l'autorité elle-même** :
+`bash PRD/decompte.sh --registre` **mesure les cinquante pièces et les oppose aux cinquante lignes
+ci-dessous**. Éprouvé par mutation le jour de son écriture — *une ligne faussée de 37 mots est vue.*
 
 **Ce que la confrontation d'origine avait établi, et qui reste vrai de sa date.** Les cinq totaux de Livre concordent **à l'unité près** avec les `README.md` des cinq
 dossiers, re-mesurés par la passe de correction du 28 juillet 2026 : 64 750, 62 054, 91 477, 56 025
@@ -82,56 +117,56 @@ son Livre, et P6 ne contrôle alors que la date de gel et la cible.
 
 | # | Pièce | Fichier | Statut | Date de gel | Cible | Réel | Écart | En tête |
 |---|---|---|---|---|---|---|---|---|
-| 1 | Chapitre 1 — L'interopérabilité comme problème d'intégration d'entreprise | [`Livre I/01-interoperabilite-integration-entreprise.md`](../Livre%20I/01-interoperabilite-integration-entreprise.md) | Brouillon, non publiable | 27 juillet 2026 | 11 000 | 10 859 | −1,3 % | ☑ |
-| 2 | Chapitre 2 — Données, sémantique et ontologies | [`Livre I/02-donnees-semantique-ontologies.md`](../Livre%20I/02-donnees-semantique-ontologies.md) | Brouillon, non publiable | 27 juillet 2026 | 8 000 | 5 519 | −31,0 % | ☑ |
-| 3 | Chapitre 3 — Sécurité, identité et gouvernance de l'interopérabilité | [`Livre I/03-securite-identite-gouvernance.md`](../Livre%20I/03-securite-identite-gouvernance.md) | Brouillon, non publiable | 27 juillet 2026 | 9 000 | 5 701 | −36,7 % | ☑ |
-| 4 | Chapitre 4 — L'ingénierie des systèmes agentiques : anatomie, raisonnement, outils | [`Livre I/04-ingenierie-systemes-agentiques.md`](../Livre%20I/04-ingenierie-systemes-agentiques.md) | Brouillon, non publiable | 27 juillet 2026 | 9 000 | 8 410 | −6,6 % | ☑ |
-| 5 | Chapitre 5 — Ancrage informationnel : mémoire, contexte, RAG agentique | [`Livre I/05-ancrage-informationnel.md`](../Livre%20I/05-ancrage-informationnel.md) | Brouillon, non publiable | 27 juillet 2026 | 7 500 | 4 864 | −35,1 % | ☑ |
-| 6 | Chapitre 6 — Systèmes multi-agents, évaluation et sûreté | [`Livre I/06-multi-agents-evaluation-surete.md`](../Livre%20I/06-multi-agents-evaluation-surete.md) | Brouillon, non publiable | 27 juillet 2026 | 8 500 | 4 579 | −46,1 % | ☑ |
-| 7 | Chapitre 7 — Généalogie et gouvernance : des projets propriétaires aux standards ouverts | [`Livre I/07-genealogie-gouvernance.md`](../Livre%20I/07-genealogie-gouvernance.md) | Brouillon, non publiable | 27 juillet 2026 | 8 000 | 4 951 | −38,1 % | ☑ |
-| 8 | Chapitre 8 — Anatomie : MCP (agent-outil) et A2A (agent-agent) | [`Livre I/08-anatomie-mcp-a2a.md`](../Livre%20I/08-anatomie-mcp-a2a.md) | Brouillon, non publiable | 27 juillet 2026 | 10 000 | 7 050 | −29,5 % | ☑ |
-| 9 | Chapitre 9 — Découverte, registres, portabilité et pile protocolaire | [`Livre I/09-decouverte-registres-pile.md`](../Livre%20I/09-decouverte-registres-pile.md) | Brouillon, non publiable | 27 juillet 2026 | 9 000 | 6 037 | −32,9 % | ☑ |
-| 10 | Chapitre 10 — Transaction et infrastructure : AP2 et AGNTCY | [`Livre I/10-transaction-infrastructure.md`](../Livre%20I/10-transaction-infrastructure.md) | Brouillon, non publiable | 27 juillet 2026 | 7 000 | 7 548 | +7,8 % | ☑ |
-| 11 | Chapitre 11 — Modes d'échec et taxonomie des risques protocolaires | [`Livre I/11-modes-echec-risques-protocolaires.md`](../Livre%20I/11-modes-echec-risques-protocolaires.md) | Brouillon, non publiable | 27 juillet 2026 | 6 000 | 6 462 | +7,7 % | ☑ |
-| 12 | Chapitre 12 — L'héritage et les standards étirés : un demi-siècle d'identités non humaines, puis OAuth, OIDC et SCIM face à l'agent | [`Livre II/12-heritage-standards-etires.md`](../Livre%20II/12-heritage-standards-etires.md) | Brouillon, non publiable | 27 juillet 2026 | 6 200 | 7 710 | +24,4 % | ☑ |
-| 13 | Chapitre 13 — L'identité décentralisée : VC, DID et la promesse du portable | [`Livre II/13-identite-decentralisee-vc-did.md`](../Livre%20II/13-identite-decentralisee-vc-did.md) | Brouillon, non publiable | 27 juillet 2026 | 4 000 | 4 529 | +13,2 % | ☑ |
-| 14 | Chapitre 14 — La grille des cinq questions | [`Livre II/14-grille-cinq-questions.md`](../Livre%20II/14-grille-cinq-questions.md) | Brouillon, non publiable | 27 juillet 2026 | 3 000 | 3 784 | +26,1 % | ☑ |
-| 15 | Chapitre 15 — Émettre : Agent Card signée, annuaires, registres gouvernés | [`Livre II/15-emettre-carte-annuaires-registres.md`](../Livre%20II/15-emettre-carte-annuaires-registres.md) | Brouillon, non publiable | 27 juillet 2026 | 5 800 | 8 494 | +46,4 % | ☑ |
-| 16 | Chapitre 16 — Le passeport d'agent : synthèse d'un objet encore virtuel | [`Livre II/16-passeport-agent.md`](../Livre%20II/16-passeport-agent.md) | Brouillon, non publiable | 27 juillet 2026 | 4 500 | 4 943 | +9,8 % | ☑ |
-| 17 | Chapitre 17 — La chaîne de mandat et le problème des deux sauts | [`Livre II/17-chaine-mandat-deux-sauts.md`](../Livre%20II/17-chaine-mandat-deux-sauts.md) | Brouillon, non publiable | 27 juillet 2026 | 5 700 | 7 255 | +27,3 % | ☑ |
-| 18 | Chapitre 18 — Know Your Agent : la vérification d'agent tiers inter-domaines | [`Livre II/18-know-your-agent.md`](../Livre%20II/18-know-your-agent.md) | Brouillon, non publiable | 27 juillet 2026 | 3 800 | 4 545 | +19,6 % | ☑ |
-| 19 | Chapitre 19 — Taxonomie des attaques d'identité et de délégation | [`Livre II/19-taxonomie-attaques-identite-delegation.md`](../Livre%20II/19-taxonomie-attaques-identite-delegation.md) | Brouillon, non publiable | 27 juillet 2026 | 5 000 | 5 779 | +15,6 % | ☑ |
-| 20 | Chapitre 20 — Usurpation, révocation et boucle défensive : du *rug-pull* à l'*agentic SOC* | [`Livre II/20-usurpation-revocation-boucle-defensive.md`](../Livre%20II/20-usurpation-revocation-boucle-defensive.md) | Brouillon, non publiable | 27 juillet 2026 | 6 200 | 9 623 | +55,2 % | ☑ |
-| 21 | Chapitre 21 — L'horloge post-quantique : menace sur la pile identitaire, crypto-agilité et dette de migration | [`Livre II/21-horloge-post-quantique.md`](../Livre%20II/21-horloge-post-quantique.md) | Brouillon, non publiable | 27 juillet 2026 | 5 800 | 9 038 | +55,8 % | ☑ |
-| 22 | Chapitre 22 — Options d'orchestration et paradigme APM : la taxonomie OO1-OO4 et l'autonomie encadrée | [`Livre III/22-options-orchestration-paradigme-apm.md`](../Livre%20III/22-options-orchestration-paradigme-apm.md) | Brouillon, non publiable | 27 juillet 2026 | 8 500 | 8 722 | +2,6 % | ☐ |
-| 23 | Chapitre 23 — Les frameworks d'orchestration d'entreprise | [`Livre III/23-frameworks-orchestration-entreprise.md`](../Livre%20III/23-frameworks-orchestration-entreprise.md) | Brouillon, non publiable | 27 juillet 2026 | 5 000 | 5 035 | +0,7 % | ☐ |
-| 24 | Chapitre 24 — Le passage à l'échelle de l'entreprise | [`Livre III/24-passage-echelle-entreprise.md`](../Livre%20III/24-passage-echelle-entreprise.md) | Brouillon, non publiable | 27 juillet 2026 | 9 500 | 13 031 | +37,2 % | ☐ |
-| 25 | Chapitre 25 — E-23 : le risque de modèle à l'ère de l'IA | [`Livre III/25-e23-risque-modele.md`](../Livre%20III/25-e23-risque-modele.md) | Brouillon, non publiable | 27 juillet 2026 | 7 000 | 6 364 | −9,1 % | ☐ |
-| 26 | Chapitre 26 — Le vide fédéral : de C-27 à C-36 | [`Livre III/26-vide-federal-c27-c36.md`](../Livre%20III/26-vide-federal-c27-c36.md) | Brouillon, non publiable | 27 juillet 2026 | 2 500 | 2 537 | +1,5 % | ☐ |
-| 27 | Chapitre 27 — Québec : la ligne directrice IA de l'AMF et l'article 12.1 de la Loi 25 | [`Livre III/27-quebec-amf-article-12-1.md`](../Livre%20III/27-quebec-amf-article-12-1.md) | Brouillon, non publiable | 27 juillet 2026 | 7 500 | 7 280 | −2,9 % | ☐ |
-| 28 | Chapitre 28 — Valeurs mobilières : l'avis ACVM 11-348 | [`Livre III/28-valeurs-mobilieres-acvm-11-348.md`](../Livre%20III/28-valeurs-mobilieres-acvm-11-348.md) | Brouillon, non publiable | 27 juillet 2026 | 2 500 | 2 531 | +1,2 % | ☐ |
-| 29 | Chapitre 29 — Le pont : des contraintes réglementaires aux frames déterministes | [`Livre III/29-pont-frames-deterministes.md`](../Livre%20III/29-pont-frames-deterministes.md) | Brouillon, non publiable | 27 juillet 2026 | 4 000 | 4 684 | +17,1 % | ☐ |
-| 30 | Chapitre 30 — Le maillage réglementaire international et la normalisation institutionnelle | [`Livre III/30-maillage-reglementaire-normalisation.md`](../Livre%20III/30-maillage-reglementaire-normalisation.md) | Brouillon, non publiable | 27 juillet 2026 | 7 500 | 8 497 | +13,3 % | ☐ |
-| 31 | Chapitre 31 — Le vertical financier : pourquoi l'agentique y est durcie | [`Livre III/31-vertical-financier-durcisseurs.md`](../Livre%20III/31-vertical-financier-durcisseurs.md) | Brouillon, non publiable | 27 juillet 2026 | 8 500 | 9 279 | +9,2 % | ☐ |
-| 32 | Chapitre 32 — Le cadre des services bancaires axés sur le consommateur | [`Livre III/32-cadre-bancaire-consommateur.md`](../Livre%20III/32-cadre-bancaire-consommateur.md) | Brouillon, non publiable | 27 juillet 2026 | 3 500 | 3 529 | +0,8 % | ☐ |
-| 33 | Chapitre 33 — ISO 20022 : Lynx accompli, RTR visé | [`Livre III/33-iso-20022-lynx-rtr.md`](../Livre%20III/33-iso-20022-lynx-rtr.md) | Brouillon, non publiable | 27 juillet 2026 | 3 500 | 3 202 | −8,5 % | ☐ |
-| 34 | Chapitre 34 — Les sous-domaines financiers : banque, assurance, patrimoine | [`Livre III/34-sous-domaines-financiers.md`](../Livre%20III/34-sous-domaines-financiers.md) | Brouillon, non publiable | 27 juillet 2026 | 9 500 | 9 876 | +4,0 % | ☐ |
-| 35 | Chapitre 35 — Études de cas : la production agentique canadienne (2025-2026) | [`Livre III/35-etudes-de-cas-production-canadienne.md`](../Livre%20III/35-etudes-de-cas-production-canadienne.md) | Brouillon, non publiable | 27 juillet 2026 | 6 000 | 9 091 | +51,5 % | ☐ |
-| 36 | Chapitre 36 — Prospective : AP2 sur les rails canadiens ? | [`Livre III/36-prospective-ap2-rails-canadiens.md`](../Livre%20III/36-prospective-ap2-rails-canadiens.md) | Brouillon, non publiable | 27 juillet 2026 | 5 000 | 4 883 | −2,3 % | ☐ |
-| 37 | Chapitre 37 — Le maillage d'agents : du *service mesh* au point d'application (PEP/PDP et *zero trust* agentique) | [`Livre IV/37-maillage-agents-point-application.md`](../Livre%20IV/37-maillage-agents-point-application.md) | Brouillon, non publiable | 27 juillet 2026 | 11 000 | 10 223 | −7,1 % | ☐ |
-| 38 | Chapitre 38 — L'observabilité agentique | [`Livre IV/38-observabilite-agentique.md`](../Livre%20IV/38-observabilite-agentique.md) | Brouillon, non publiable | 27 juillet 2026 | 6 000 | 6 138 | +2,3 % | ☐ |
-| 39 | Chapitre 39 — Le cycle de vie opérationnel : évaluation continue, dérive et incident | [`Livre IV/39-cycle-de-vie-operationnel.md`](../Livre%20IV/39-cycle-de-vie-operationnel.md) | Brouillon, non publiable | 27 juillet 2026 | 6 500 | 6 518 | +0,3 % | ☐ |
-| 40 | Chapitre 40 — Les indicateurs de l'AgentOps et le FinOps des agents | [`Livre IV/40-indicateurs-agentops-finops.md`](../Livre%20IV/40-indicateurs-agentops-finops.md) | Brouillon, non publiable | 27 juillet 2026 | 6 500 | 6 080 | −6,5 % | ☐ |
-| 41 | Chapitre 41 — La fabrique d'agents : produire, certifier et réémettre le parc | [`Livre IV/41-fabrique-agents.md`](../Livre%20IV/41-fabrique-agents.md) | Brouillon, non publiable | 27 juillet 2026 | 5 000 | 4 326 | −13,5 % | ☐ |
-| 42 | Chapitre 42 — La matrice protocoles × exigences réglementaires | [`Livre IV/42-matrice-protocoles-exigences.md`](../Livre%20IV/42-matrice-protocoles-exigences.md) | Brouillon, non publiable | 27 juillet 2026 | 4 000 | 3 886 | −2,9 % | ☐ |
-| 43 | Chapitre 43 — L'architecture de référence unifiée par couches | [`Livre IV/43-architecture-reference-couches.md`](../Livre%20IV/43-architecture-reference-couches.md) | Brouillon, non publiable | 27 juillet 2026 | 6 500 | 6 074 | −6,6 % | ☐ |
-| 44 | Chapitre 44 — La formalisation ArchiMate | [`Livre IV/44-formalisation-archimate.md`](../Livre%20IV/44-formalisation-archimate.md) | Brouillon, non publiable | 27 juillet 2026 | 8 500 | 6 258 | −26,4 % | ☐ |
-| 45 | Chapitre 45 — Le blueprint instancié et son cycle de vie : de Boréalis au portefeuille IBM, puis la naissance, la vie et la mort d'un agent d'entreprise | [`Livre IV/45-blueprint-instancie-cycle-de-vie.md`](../Livre%20IV/45-blueprint-instancie-cycle-de-vie.md) | Brouillon, non publiable | 27 juillet 2026 | 12 000 | 7 060 | −41,2 % | ☐ |
-| 46 | Chapitre 46 — Instrumentation et feuille de route vers le 1ᵉʳ mai 2027 | [`Livre IV/46-instrumentation-feuille-route.md`](../Livre%20IV/46-instrumentation-feuille-route.md) | Brouillon, non publiable | 27 juillet 2026 | 3 000 | 2 973 | −0,9 % | ☐ |
-| 47 | Chapitre 47 — L'artefact livré : provenance des composants et mise en service | [`Livre V/47-artefact-livre-provenance-mise-en-service.md`](../Livre%20V/47-artefact-livre-provenance-mise-en-service.md) | Brouillon, non publiable | 27 juillet 2026 | 9 300 | 6 423 | −30,9 % | ☑ |
-| 48 | Chapitre 48 — La sémantique d'effet : idempotence, compensation, réconciliation | [`Livre V/48-semantique-effet-idempotence-compensation.md`](../Livre%20V/48-semantique-effet-idempotence-compensation.md) | Brouillon, non publiable | 27 juillet 2026 | 4 700 | 3 800 | −19,1 % | ☑ |
-| 49 | Chapitre 49 — L'horizon 2027-2032 et la frontière de la connaissance vérifiable | [`Livre V/49-horizon-frontiere-connaissance-verifiable.md`](../Livre%20V/49-horizon-frontiere-connaissance-verifiable.md) | Brouillon, non publiable | 27 juillet 2026 | 15 800 | 14 188 | −10,2 % | ☑ |
-| 50 | Chapitre 50 — Péremption et protocole de revalidation | [`Livre V/50-peremption-protocole-revalidation.md`](../Livre%20V/50-peremption-protocole-revalidation.md) | Brouillon, non publiable | 27 juillet 2026 | 4 200 | 4 649 | +10,7 % | ☑ |
+| 1 | Chapitre 1 — L'interopérabilité comme problème d'intégration d'entreprise | [`Livre I/01-interoperabilite-integration-entreprise.md`](../Livre%20I/01-interoperabilite-integration-entreprise.md) | Brouillon, non publiable | 27 juillet 2026 | 11 000 | 10 937 | −0,6 % | ☑ |
+| 2 | Chapitre 2 — Données, sémantique et ontologies | [`Livre I/02-donnees-semantique-ontologies.md`](../Livre%20I/02-donnees-semantique-ontologies.md) | Brouillon, non publiable | 27 juillet 2026 | 8 000 | 5 557 | −30,5 % | ☑ |
+| 3 | Chapitre 3 — Sécurité, identité et gouvernance de l'interopérabilité | [`Livre I/03-securite-identite-gouvernance.md`](../Livre%20I/03-securite-identite-gouvernance.md) | Brouillon, non publiable | 27 juillet 2026 | 9 000 | 5 734 | −36,3 % | ☑ |
+| 4 | Chapitre 4 — L'ingénierie des systèmes agentiques : anatomie, raisonnement, outils | [`Livre I/04-ingenierie-systemes-agentiques.md`](../Livre%20I/04-ingenierie-systemes-agentiques.md) | Brouillon, non publiable | 27 juillet 2026 | 9 000 | 8 460 | −6,0 % | ☑ |
+| 5 | Chapitre 5 — Ancrage informationnel : mémoire, contexte, RAG agentique | [`Livre I/05-ancrage-informationnel.md`](../Livre%20I/05-ancrage-informationnel.md) | Brouillon, non publiable | 27 juillet 2026 | 7 500 | 4 896 | −34,7 % | ☑ |
+| 6 | Chapitre 6 — Systèmes multi-agents, évaluation et sûreté | [`Livre I/06-multi-agents-evaluation-surete.md`](../Livre%20I/06-multi-agents-evaluation-surete.md) | Brouillon, non publiable | 27 juillet 2026 | 8 500 | 4 605 | −45,8 % | ☑ |
+| 7 | Chapitre 7 — Généalogie et gouvernance : des projets propriétaires aux standards ouverts | [`Livre I/07-genealogie-gouvernance.md`](../Livre%20I/07-genealogie-gouvernance.md) | Brouillon, non publiable | 27 juillet 2026 | 8 000 | 4 996 | −37,5 % | ☑ |
+| 8 | Chapitre 8 — Anatomie : MCP (agent-outil) et A2A (agent-agent) | [`Livre I/08-anatomie-mcp-a2a.md`](../Livre%20I/08-anatomie-mcp-a2a.md) | Brouillon, non publiable | 27 juillet 2026 | 10 000 | 7 122 | −28,8 % | ☑ |
+| 9 | Chapitre 9 — Découverte, registres, portabilité et pile protocolaire | [`Livre I/09-decouverte-registres-pile.md`](../Livre%20I/09-decouverte-registres-pile.md) | Brouillon, non publiable | 27 juillet 2026 | 9 000 | 6 185 | −31,3 % | ☑ |
+| 10 | Chapitre 10 — Transaction et infrastructure : AP2 et AGNTCY | [`Livre I/10-transaction-infrastructure.md`](../Livre%20I/10-transaction-infrastructure.md) | Brouillon, non publiable | 27 juillet 2026 | 7 000 | 7 584 | +8,3 % | ☑ |
+| 11 | Chapitre 11 — Modes d'échec et taxonomie des risques protocolaires | [`Livre I/11-modes-echec-risques-protocolaires.md`](../Livre%20I/11-modes-echec-risques-protocolaires.md) | Brouillon, non publiable | 27 juillet 2026 | 6 000 | 6 508 | +8,5 % | ☑ |
+| 12 | Chapitre 12 — L'héritage et les standards étirés : un demi-siècle d'identités non humaines, puis OAuth, OIDC et SCIM face à l'agent | [`Livre II/12-heritage-standards-etires.md`](../Livre%20II/12-heritage-standards-etires.md) | Brouillon, non publiable | 27 juillet 2026 | 6 200 | 7 742 | +24,9 % | ☑ |
+| 13 | Chapitre 13 — L'identité décentralisée : VC, DID et la promesse du portable | [`Livre II/13-identite-decentralisee-vc-did.md`](../Livre%20II/13-identite-decentralisee-vc-did.md) | Brouillon, non publiable | 27 juillet 2026 | 4 000 | 5 055 | +26,4 % | ☑ |
+| 14 | Chapitre 14 — La grille des cinq questions | [`Livre II/14-grille-cinq-questions.md`](../Livre%20II/14-grille-cinq-questions.md) | Brouillon, non publiable | 27 juillet 2026 | 3 000 | 3 798 | +26,6 % | ☑ |
+| 15 | Chapitre 15 — Émettre : Agent Card signée, annuaires, registres gouvernés | [`Livre II/15-emettre-carte-annuaires-registres.md`](../Livre%20II/15-emettre-carte-annuaires-registres.md) | Brouillon, non publiable | 27 juillet 2026 | 5 800 | 8 525 | +47,0 % | ☑ |
+| 16 | Chapitre 16 — Le passeport d'agent : synthèse d'un objet encore virtuel | [`Livre II/16-passeport-agent.md`](../Livre%20II/16-passeport-agent.md) | Brouillon, non publiable | 27 juillet 2026 | 4 500 | 5 523 | +22,7 % | ☑ |
+| 17 | Chapitre 17 — La chaîne de mandat et le problème des deux sauts | [`Livre II/17-chaine-mandat-deux-sauts.md`](../Livre%20II/17-chaine-mandat-deux-sauts.md) | Brouillon, non publiable | 27 juillet 2026 | 5 700 | 7 680 | +34,7 % | ☑ |
+| 18 | Chapitre 18 — Know Your Agent : la vérification d'agent tiers inter-domaines | [`Livre II/18-know-your-agent.md`](../Livre%20II/18-know-your-agent.md) | Brouillon, non publiable | 27 juillet 2026 | 3 800 | 4 576 | +20,4 % | ☑ |
+| 19 | Chapitre 19 — Taxonomie des attaques d'identité et de délégation | [`Livre II/19-taxonomie-attaques-identite-delegation.md`](../Livre%20II/19-taxonomie-attaques-identite-delegation.md) | Brouillon, non publiable | 27 juillet 2026 | 5 000 | 6 133 | +22,7 % | ☑ |
+| 20 | Chapitre 20 — Usurpation, révocation et boucle défensive : du *rug-pull* à l'*agentic SOC* | [`Livre II/20-usurpation-revocation-boucle-defensive.md`](../Livre%20II/20-usurpation-revocation-boucle-defensive.md) | Brouillon, non publiable | 27 juillet 2026 | 6 200 | 9 987 | +61,1 % | ☑ |
+| 21 | Chapitre 21 — L'horloge post-quantique : menace sur la pile identitaire, crypto-agilité et dette de migration | [`Livre II/21-horloge-post-quantique.md`](../Livre%20II/21-horloge-post-quantique.md) | Brouillon, non publiable | 27 juillet 2026 | 5 800 | 9 724 | +67,7 % | ☑ |
+| 22 | Chapitre 22 — Options d'orchestration et paradigme APM : la taxonomie OO1-OO4 et l'autonomie encadrée | [`Livre III/22-options-orchestration-paradigme-apm.md`](../Livre%20III/22-options-orchestration-paradigme-apm.md) | Brouillon, non publiable | 27 juillet 2026 | 8 500 | 8 761 | +3,1 % | ☐ |
+| 23 | Chapitre 23 — Les frameworks d'orchestration d'entreprise | [`Livre III/23-frameworks-orchestration-entreprise.md`](../Livre%20III/23-frameworks-orchestration-entreprise.md) | Brouillon, non publiable | 27 juillet 2026 | 5 000 | 5 059 | +1,2 % | ☐ |
+| 24 | Chapitre 24 — Le passage à l'échelle de l'entreprise | [`Livre III/24-passage-echelle-entreprise.md`](../Livre%20III/24-passage-echelle-entreprise.md) | Brouillon, non publiable | 27 juillet 2026 | 9 500 | 13 073 | +37,6 % | ☐ |
+| 25 | Chapitre 25 — E-23 : le risque de modèle à l'ère de l'IA | [`Livre III/25-e23-risque-modele.md`](../Livre%20III/25-e23-risque-modele.md) | Brouillon, non publiable | 27 juillet 2026 | 7 000 | 6 388 | −8,7 % | ☐ |
+| 26 | Chapitre 26 — Le vide fédéral : de C-27 à C-36 | [`Livre III/26-vide-federal-c27-c36.md`](../Livre%20III/26-vide-federal-c27-c36.md) | Brouillon, non publiable | 27 juillet 2026 | 2 500 | 2 551 | +2,0 % | ☐ |
+| 27 | Chapitre 27 — Québec : la ligne directrice IA de l'AMF et l'article 12.1 de la Loi 25 | [`Livre III/27-quebec-amf-article-12-1.md`](../Livre%20III/27-quebec-amf-article-12-1.md) | Brouillon, non publiable | 27 juillet 2026 | 7 500 | 7 521 | +0,3 % | ☐ |
+| 28 | Chapitre 28 — Valeurs mobilières : l'avis ACVM 11-348 | [`Livre III/28-valeurs-mobilieres-acvm-11-348.md`](../Livre%20III/28-valeurs-mobilieres-acvm-11-348.md) | Brouillon, non publiable | 27 juillet 2026 | 2 500 | 2 532 | +1,3 % | ☐ |
+| 29 | Chapitre 29 — Le pont : des contraintes réglementaires aux frames déterministes | [`Livre III/29-pont-frames-deterministes.md`](../Livre%20III/29-pont-frames-deterministes.md) | Brouillon, non publiable | 27 juillet 2026 | 4 000 | 5 202 | +30,0 % | ☐ |
+| 30 | Chapitre 30 — Le maillage réglementaire international et la normalisation institutionnelle | [`Livre III/30-maillage-reglementaire-normalisation.md`](../Livre%20III/30-maillage-reglementaire-normalisation.md) | Brouillon, non publiable | 27 juillet 2026 | 7 500 | 8 528 | +13,7 % | ☐ |
+| 31 | Chapitre 31 — Le vertical financier : pourquoi l'agentique y est durcie | [`Livre III/31-vertical-financier-durcisseurs.md`](../Livre%20III/31-vertical-financier-durcisseurs.md) | Brouillon, non publiable | 27 juillet 2026 | 8 500 | 9 334 | +9,8 % | ☐ |
+| 32 | Chapitre 32 — Le cadre des services bancaires axés sur le consommateur | [`Livre III/32-cadre-bancaire-consommateur.md`](../Livre%20III/32-cadre-bancaire-consommateur.md) | Brouillon, non publiable | 27 juillet 2026 | 3 500 | 3 760 | +7,4 % | ☐ |
+| 33 | Chapitre 33 — ISO 20022 : Lynx accompli, RTR visé | [`Livre III/33-iso-20022-lynx-rtr.md`](../Livre%20III/33-iso-20022-lynx-rtr.md) | Brouillon, non publiable | 27 juillet 2026 | 3 500 | 3 692 | +5,5 % | ☐ |
+| 34 | Chapitre 34 — Les sous-domaines financiers : banque, assurance, patrimoine | [`Livre III/34-sous-domaines-financiers.md`](../Livre%20III/34-sous-domaines-financiers.md) | Brouillon, non publiable | 27 juillet 2026 | 9 500 | 9 918 | +4,4 % | ☐ |
+| 35 | Chapitre 35 — Études de cas : la production agentique canadienne (2025-2026) | [`Livre III/35-etudes-de-cas-production-canadienne.md`](../Livre%20III/35-etudes-de-cas-production-canadienne.md) | Brouillon, non publiable | 27 juillet 2026 | 6 000 | 9 121 | +52,0 % | ☐ |
+| 36 | Chapitre 36 — Prospective : AP2 sur les rails canadiens ? | [`Livre III/36-prospective-ap2-rails-canadiens.md`](../Livre%20III/36-prospective-ap2-rails-canadiens.md) | Brouillon, non publiable | 27 juillet 2026 | 5 000 | 4 914 | −1,7 % | ☐ |
+| 37 | Chapitre 37 — Le maillage d'agents : du *service mesh* au point d'application (PEP/PDP et *zero trust* agentique) | [`Livre IV/37-maillage-agents-point-application.md`](../Livre%20IV/37-maillage-agents-point-application.md) | Brouillon, non publiable | 27 juillet 2026 | 11 000 | 10 286 | −6,5 % | ☐ |
+| 38 | Chapitre 38 — L'observabilité agentique | [`Livre IV/38-observabilite-agentique.md`](../Livre%20IV/38-observabilite-agentique.md) | Brouillon, non publiable | 27 juillet 2026 | 6 000 | 6 169 | +2,8 % | ☐ |
+| 39 | Chapitre 39 — Le cycle de vie opérationnel : évaluation continue, dérive et incident | [`Livre IV/39-cycle-de-vie-operationnel.md`](../Livre%20IV/39-cycle-de-vie-operationnel.md) | Brouillon, non publiable | 27 juillet 2026 | 6 500 | 6 542 | +0,6 % | ☐ |
+| 40 | Chapitre 40 — Les indicateurs de l'AgentOps et le FinOps des agents | [`Livre IV/40-indicateurs-agentops-finops.md`](../Livre%20IV/40-indicateurs-agentops-finops.md) | Brouillon, non publiable | 27 juillet 2026 | 6 500 | 6 105 | −6,1 % | ☐ |
+| 41 | Chapitre 41 — La fabrique d'agents : produire, certifier et réémettre le parc | [`Livre IV/41-fabrique-agents.md`](../Livre%20IV/41-fabrique-agents.md) | Brouillon, non publiable | 27 juillet 2026 | 5 000 | 4 430 | −11,4 % | ☐ |
+| 42 | Chapitre 42 — La matrice protocoles × exigences réglementaires | [`Livre IV/42-matrice-protocoles-exigences.md`](../Livre%20IV/42-matrice-protocoles-exigences.md) | Brouillon, non publiable | 27 juillet 2026 | 4 000 | 3 931 | −1,7 % | ☐ |
+| 43 | Chapitre 43 — L'architecture de référence unifiée par couches | [`Livre IV/43-architecture-reference-couches.md`](../Livre%20IV/43-architecture-reference-couches.md) | Brouillon, non publiable | 27 juillet 2026 | 6 500 | 6 125 | −5,8 % | ☐ |
+| 44 | Chapitre 44 — La formalisation ArchiMate | [`Livre IV/44-formalisation-archimate.md`](../Livre%20IV/44-formalisation-archimate.md) | Brouillon, non publiable | 27 juillet 2026 | 8 500 | 6 303 | −25,8 % | ☐ |
+| 45 | Chapitre 45 — Le blueprint instancié et son cycle de vie : de Boréalis au portefeuille IBM, puis la naissance, la vie et la mort d'un agent d'entreprise | [`Livre IV/45-blueprint-instancie-cycle-de-vie.md`](../Livre%20IV/45-blueprint-instancie-cycle-de-vie.md) | Brouillon, non publiable | 27 juillet 2026 | 12 000 | 7 130 | −40,6 % | ☐ |
+| 46 | Chapitre 46 — Instrumentation et feuille de route vers le 1ᵉʳ mai 2027 | [`Livre IV/46-instrumentation-feuille-route.md`](../Livre%20IV/46-instrumentation-feuille-route.md) | Brouillon, non publiable | 27 juillet 2026 | 3 000 | 3 004 | +0,1 % | ☐ |
+| 47 | Chapitre 47 — L'artefact livré : provenance des composants et mise en service | [`Livre V/47-artefact-livre-provenance-mise-en-service.md`](../Livre%20V/47-artefact-livre-provenance-mise-en-service.md) | Brouillon, non publiable | 27 juillet 2026 | 9 300 | 7 195 | −22,6 % | ☑ |
+| 48 | Chapitre 48 — La sémantique d'effet : idempotence, compensation, réconciliation | [`Livre V/48-semantique-effet-idempotence-compensation.md`](../Livre%20V/48-semantique-effet-idempotence-compensation.md) | Brouillon, non publiable | 27 juillet 2026 | 4 700 | 4 442 | −5,5 % | ☑ |
+| 49 | Chapitre 49 — L'horizon 2027-2032 et la frontière de la connaissance vérifiable | [`Livre V/49-horizon-frontiere-connaissance-verifiable.md`](../Livre%20V/49-horizon-frontiere-connaissance-verifiable.md) | Brouillon, non publiable | 27 juillet 2026 | 15 800 | 14 469 | −8,4 % | ☑ |
+| 50 | Chapitre 50 — Péremption et protocole de revalidation | [`Livre V/50-peremption-protocole-revalidation.md`](../Livre%20V/50-peremption-protocole-revalidation.md) | Brouillon, non publiable | 27 juillet 2026 | 4 200 | 5 604 | +33,4 % | ☑ |
 
 ---
 
@@ -154,12 +189,12 @@ pièces, gelées — *une colonne couplée à des pièces gelées se lit, elle n
 
 | Livre | Pièces | Enveloppe (TOC) | Σ cibles dérivées | Réel | Écart / enveloppe |
 |---|---|---|---|---|---|
-| **Livre I** — Coopérer | 11 | 65 000 | 93 000 | 71 980 | +10,7 % |
-| **Livre II** — Faire confiance | 10 | 50 000 | 50 000 | 65 700 | +31,4 % |
-| **Livre III** — Encadrer | 15 | 90 000 | 90 000 | 98 541 | +9,5 % |
-| **Livre IV** — Appliquer, exploiter, produire, composer | 10 | 69 000 | 69 000 | 59 536 | −13,7 % |
-| **Livre V** — Livrer et clore | 4 | 34 000 | 34 000 | 29 060 | −14,5 % |
-| **Total** | **50** | **308 000** | **336 000** | **324 817** | **+5,5 %** |
+| **Livre I** — Coopérer | 11 | 65 000 | 93 000 | 72 584 | +11,7 % |
+| **Livre II** — Faire confiance | 10 | 50 000 | 50 000 | 68 743 | +37,5 % |
+| **Livre III** — Encadrer | 15 | 90 000 | 90 000 | 100 354 | +11,5 % |
+| **Livre IV** — Appliquer, exploiter, produire, composer | 10 | 69 000 | 69 000 | 60 025 | −13,0 % |
+| **Livre V** — Livrer et clore | 4 | 34 000 | 34 000 | 31 710 | −6,7 % |
+| **Total** | **50** | **308 000** | **336 000** | **333 416** | **+8,3 %** |
 
 ⚠ **Un agrégat à +5,5 % ne prouve rien sur ses pièces, et c'est le résultat le plus transférable de
 ce registre.** Les écarts individuels de cette table vont de **−46,1 %** (ch. 6) à **+55,8 %** (ch. 21) :

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chapitre 42 — La matrice protocoles × exigences réglementaires · Interopérabilité et Orchestration en Entreprise Agentique</title>
-<meta name="description" content="Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d'agents et synthèse architecturale. Quatrième mouvement — composer (ch. 42-46). Premier chapitre du mouvement, et chapitre de méthode transversal : il ne verse aucun fait propre, il fournit l'instrument par lequel">
+<meta name="description" content="Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d&#x27;agents et synthèse architecturale. Quatrième mouvement — composer (ch. 42-46). Premier chapitre du mouvement, **et chapitre de méthode transversal** : il ne verse aucun fait propre, il fournit l&#x27;instrument par lequel les ch. 43 à 46 rendent leurs verdicts d&#x27;architecture">
 <meta name="author" content="André-Guy Bruneau, M.Sc. IT">
 <meta name="color-scheme" content="dark">
 <style>
@@ -443,6 +443,17 @@ tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
 tbody td:first-child { color: var(--texte); font-weight: 600; }
 .legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
 
+/* -------------------------------------------------------------- figures */
+/* Les SVG du volume sont dessinés pour le PDF, donc sur fond clair, et ils
+   portent ce fond eux-mêmes — sans quoi il faudrait maintenir deux variantes
+   de chaque figure. Sur ce thème sombre, ils se posent donc comme un carton ;
+   le padding empêche le fond de la figure de toucher le bord du cadre. */
+.figure { margin: 2.1rem 0 1.9rem; }
+.figure img { display: block; width: 100%; height: auto; border-radius: 7px;
+              border: 1px solid var(--trait); background: #fdfbf9; padding: 0.6rem; }
+.figure figcaption { font-size: 0.8rem; font-style: italic; color: var(--texte-faible);
+                     margin-top: 0.65rem; padding-left: 0.15rem; }
+
 /* --------------------------------------------------------------- listes */
 ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
 ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
@@ -531,16 +542,14 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <div class="nav__marque">Interopérabilité et Orchestration en Entreprise Agentique</div>
   <div class="nav__sous">Livre IV · Chapitre 42</div>
   <ol>
-    <li><a href="#s420"><span class="num">42.0</span>Ouverture : un instrument, et la règle qui l&#x27;empêche de fabriquer</a></li>
+    <li><a href="#s420"><span class="num">42.0</span>Ouverture : un instrument, et la règle qui l'empêche de fabriquer</a></li>
     <li><a href="#s421"><span class="num">42.1</span>Construction de la matrice</a></li>
     <li><a href="#s422"><span class="num">42.2</span>Lecture par protocole</a></li>
     <li><a href="#s423"><span class="num">42.3</span>Lecture par exigence</a></li>
     <li><a href="#s424"><span class="num">42.4</span>Les zones de compensation architecturale</a></li>
-
   </ol>
   <div class="nav__pied">
     Vol.&nbsp;IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em><br>
-
     <a href="42-matrice-protocoles-exigences.md">Version Markdown</a>
   </div>
 </nav>
@@ -551,175 +560,221 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 <header class="titre">
   <div class="titre__fil">Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d&#x27;agents et synthèse architecturale</div>
   <h1><span class="chap">Chapitre 42</span>La matrice protocoles × exigences réglementaires</h1>
-  <p class="titre__situe">Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d'agents et synthèse architecturale. Quatrième mouvement — composer (ch. 42-46). Premier chapitre du mouvement, <strong>et chapitre de méthode transversal</strong> : il ne verse aucun fait propre, il fournit l'instrument par lequel les ch. 43 à 46 rendent leurs verdicts d'architecture</p>
+  <p class="titre__situe">Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d'agents et synthèse architecturale. Quatrième mouvement — composer (ch. 42-46). Premier chapitre du mouvement, **et chapitre de méthode transversal** : il ne verse aucun fait propre, il fournit l'instrument par lequel les ch. 43 à 46 rendent leurs verdicts d'architecture</p>
 </header>
 
+<!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
+     Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
+     que `build/assemble.py` pour le PDF et que `PRD/decompte.sh` pour la volumétrie. L'appareil de
+     gouvernance vit au .md jumeau, qui reste la seule source, et `build/verifier-piece.py` refuse
+     un rendu qui le recopierait. -->
+
 <h2 id="s420"><span class="sig">§ 42.0</span>Ouverture : un instrument, et la règle qui l'empêche de fabriquer</h2>
-
 <p><strong>Deux inventaires ne se sont jamais rencontrés dans les Livres qui précèdent.</strong> Le Livre I a établi l'anatomie d'une pile protocolaire consolidée sous gouvernance neutre ; le Livre III a établi le contenu d'un corpus d'exigences canadiennes, et ses limites. <strong>Ce chapitre les croise.</strong></p>
-
 <p><strong>Le résultat n'est pas celui qu'un titre de matrice laisse attendre.</strong> ⚠ <strong>Sur les quinze croisements que porte la matrice — trois protocoles, cinq textes —, aucun n'est documenté par une source du socle.</strong> <em>Aucune source ne documente qu'une spécification protocolaire mentionne un texte canadien, ni l'inverse</em> — <strong>absence de documentation dans le corpus des volumes sources, non fait négatif vérifié</strong> (R-14 du Vol. III, degré 3). ⚠ <strong>Cette matrice n'est donc pas un tableau de correspondances : c'est un tableau de vides.</strong> <em>Son intérêt tient à ceci que ces vides ne sont pas de même espèce, et qu'ils désignent en négatif le lieu exact où l'architecture doit compenser.</em></p>
-
 <div class="avert">
   <p><strong>Le cardinal est re-mesuré ici et non recopié</strong>, comme le TOC l'exige : <strong>cinq lignes</strong> — E-23, ligne directrice de l'AMF, avis 11-348, article 12.1, cadre bancaire — <strong>par trois colonnes de protocole</strong> — MCP, A2A, AP2 — <strong>font quinze</strong>, recomptés ligne à ligne sur la table de la source. ☐ <strong>La re-mesure contre la matrice consolidée de l'appareil reste due</strong> : <em>cette annexe n'est pas rédigée, et un cardinal re-mesuré sur la source n'est pas un cardinal re-mesuré sur sa consolidation.</em></p>
 </div>
-
 <p><strong>Quatre propositions structurent le chapitre.</strong> <em>La première</em> : la matrice est un objet dont il faut fixer les <strong>règles de remplissage</strong>, faute de quoi elle produira de la plausibilité au lieu d'un constat (§ 42.1). <em>La deuxième</em> : lue <strong>par protocole</strong>, elle montre que la couche protocolaire répond à des questions — <em>qui parle, par quel format, avec quelle habilitation</em> — que les textes canadiens <strong>ne posent pas</strong> (§ 42.2). <em>La troisième</em> : lue <strong>par texte</strong>, elle montre que <strong>ceux dont le socle porte le contenu le plus précis sont ceux auxquels les protocoles répondent le moins</strong> (§ 42.3). <em>La quatrième</em> : ces vides, pris ensemble, désignent <strong>cinq zones de compensation</strong> dont l'architecture doit répondre (§ 42.4) — c'est le membre opératoire de la thèse, et le seul qui lègue un cahier des charges.</p>
-
 <div class="avert">
   <p><strong>Ce que le chapitre ne refait pas.</strong> La <strong>traduction des exigences en cadres déterministes</strong> est au <strong>ch. 29</strong>, et le présent chapitre n'y revient pas. Les <strong>couches, leur positionnement et les points de contrôle obligatoires</strong> sont au <strong>ch. 43</strong> ; leur <strong>instrumentation</strong> au <strong>ch. 46</strong> ; leur <strong>instanciation</strong> au <strong>ch. 45</strong>. <em>La valeur propre de ce chapitre est ailleurs : la matrice comme objet, ses deux lectures, les zones de compensation.</em></p>
 </div>
-
 <h2 id="s421"><span class="sig">§ 42.1</span>Construction de la matrice</h2>
-
 <p><strong>Trois règles de remplissage, sans lesquelles l'exercice serait un exercice d'analogie.</strong> Elles sont <strong>reprises de la source sans être réinventées.</strong></p>
-
-<ol class="numeros">
-  <li><strong>Deux termes par cellule.</strong> ⚠ Une cellule n'est renseignable que si le socle porte <strong>les deux choses</strong> : <em>ce que l'exigence attend</em>, <strong>et</strong> <em>ce que le protocole fournit</em>. <strong>La condition n'est pas également servie d'une ligne à l'autre.</strong></li>
-  <li><strong>Aucune cellule ne porte un verdict de conformité.</strong> ⚠ <em>Le socle ne relie aucun protocole à aucun texte canadien</em>, et il faut distinguer une <strong>absence au socle</strong> d'un <strong>fait négatif vérifié</strong> dans la source. <strong>Cette matrice porte deux faits négatifs vérifiés</strong>, l'un et l'autre <strong>bornés à ce qui a été cherché</strong>.</li>
-  <li><strong>Toute cellule non vide est une inférence d'auteur</strong>, jamais une lecture.</li>
+<ol type="1">
+<li><strong>Deux termes par cellule.</strong> ⚠ Une cellule n'est renseignable que si le socle porte <strong>les deux choses</strong> : <em>ce que l'exigence attend</em>, <strong>et</strong> <em>ce que le protocole fournit</em>. <strong>La condition n'est pas également servie d'une ligne à l'autre.</strong></li>
+<li><strong>Aucune cellule ne porte un verdict de conformité.</strong> ⚠ <em>Le socle ne relie aucun protocole à aucun texte canadien</em>, et il faut distinguer une <strong>absence au socle</strong> d'un <strong>fait négatif vérifié</strong> dans la source. <strong>Cette matrice porte deux faits négatifs vérifiés</strong>, l'un et l'autre <strong>bornés à ce qui a été cherché</strong>.</li>
+<li><strong>Toute cellule non vide est une inférence d'auteur</strong>, jamais une lecture.</li>
 </ol>
-
 <div class="avert">
   <p><strong>La première règle départage les lignes, et c'est elle qui produit le résultat du § 42.3.</strong> Depuis l'extraction du texte intégral d'E-23 — en anglais et en français —, le socle du Vol. II porte la <strong>définition verbatim de « modèle »</strong> et <strong>cinq domaines d'attentes opératoires</strong> : cycle de vie, inventaire d'entreprise, cotation graduée, <strong>documentation de modèle</strong>, surveillance continue (Vol. II <strong>F-09</strong>, <strong>[A/B mixte]</strong>). ⚠ <strong>« Documentation de modèle » et « inventaire », jamais « fiche de modèle »</strong> — <em>forme sans occurrence dans le texte intégral d'E-23</em> — et <strong>« attendu par E-23 », jamais « exigé par E-23 » ni « E-23 impose »</strong> : la ligne directrice est <strong>fondée sur des principes</strong> et rédigée au conditionnel.</p>
 </div>
-
-<p><strong>La ligne directrice de l'AMF, elle, n'est au socle que par son calendrier</strong> (Vol. II <strong>F-25</strong>, <strong>[A]</strong>) : ⚠ <strong>c'est la seule ligne où le premier terme manque, et ce chapitre ne le comble pas</strong>.</p>
-
-<div class="avert">
-  <p><strong>Forme imposée</strong> : <em>ne jamais écrire « en attente » ni « en projet »</em> — <strong>elle est finale</strong>, et <strong>en vigueur au 1ᵉʳ mai 2027</strong>. ⚠ <strong>Sa date de finalisation, en revanche, n'est plus une divergence tranchée mais une ABSENCE DE DATATION</strong> : la somme écrit <strong>avril 2026</strong> — <em>un mois, non un jour</em> — et <strong>déclare les trois états</strong> que le corpus porte ; <em>le Vol. III établit par extraction du 21 juillet 2026 qu'<strong>aucune des deux dates arbitrées ne figure aux pages officielles</strong>, de sorte que l'arbitrage qui les départageait portait sur un objet inexistant.</em> <strong>Le siège de ce constat est le ch. 27 § 27.1</strong>, et le registre de l'Annexe C le porte ; ⚠ <strong>la position antérieure du cadrage — « 30 mars 2026, en faveur du Vol. II » — ne se rétablit pas.</strong> <em>Seule l'entrée en vigueur est concordante entre les trois états, et c'est elle seule que la ligne de la matrice porte.</em></p>
-</div>
-
+<p><strong>La ligne directrice de l'AMF, elle, n'est au socle que par son calendrier</strong> (Vol. II <strong>F-25</strong>, <strong>[A]</strong>) : ⚠ <strong>c'est la seule ligne où le premier terme manque, et ce chapitre ne le comble pas</strong>. ⚠ <strong>Forme imposée</strong> : <em>ne jamais écrire « en attente » ni « en projet »</em> — <strong>elle est finale</strong>, et <strong>en vigueur au 1ᵉʳ mai 2027</strong>. ⚠ <strong>Sa date de finalisation, en revanche, n'est plus une divergence tranchée mais une ABSENCE DE DATATION</strong> : la somme écrit <strong>avril 2026</strong> — <em>un mois, non un jour</em> — et <strong>déclare les trois états</strong> que le corpus porte ; <em>le Vol. III établit par extraction du 21 juillet 2026 qu'<strong>aucune des deux dates arbitrées ne figure aux pages officielles</strong>, de sorte que l'arbitrage qui les départageait portait sur un objet inexistant.</em> <strong>Le siège de ce constat est le ch. 27 § 27.1</strong>, et le registre de l'Annexe C le porte ; ⚠ <strong>la position antérieure du cadrage — « 30 mars 2026, en faveur du Vol. II » — ne se rétablit pas.</strong> <em>Seule l'entrée en vigueur est concordante entre les trois états, et c'est elle seule que la ligne de la matrice porte.</em></p>
 <div class="tableau">
 <table>
-  <thead><tr><th>Texte canadien <em>(traitement dans la somme)</em></th><th>Ce que le socle porte de sa demande</th><th>MCP</th><th>A2A v1.0</th><th>AP2</th></tr></thead>
-  <tbody>
-    <tr><td><strong>E-23 — attentes de risque de modèle</strong> (<strong>ch. 25</strong>)</td><td>définition verbatim de « modèle », laissée <em>intentionally broad</em> ; <strong>cinq domaines d'attentes opératoires</strong> — inventaire d'entreprise, cotation de risque par modèle, cycle de vie à cinq volets, documentation de modèle, <strong>surveillance continue visant la décision et la re-paramétrisation autonomes</strong> (Vol. II <strong>F-09</strong>)</td><td><strong>fait négatif VÉRIFIÉ</strong> (vocabulaire) : <em>agentique</em>, <em>agents</em>, <em>orchestration</em> <strong>absents du texte intégral</strong>, EN et FR</td><td><em>idem</em> — <strong>aucun agent nommé</strong></td><td><em>idem</em> — <strong>aucun agent nommé</strong></td></tr>
-    <tr><td><strong>Ligne directrice IA de l'AMF</strong> (<strong>ch. 27</strong>)</td><td>⚠ <strong>le calendrier seul</strong> : finale, <strong>en vigueur le 1ᵉʳ mai 2027</strong> (Vol. II <strong>F-25</strong>)</td><td><strong>rien de croisable</strong></td><td><strong>rien de croisable</strong></td><td><strong>rien de croisable</strong></td></tr>
-    <tr><td><strong>Avis 11-348</strong> (<strong>ch. 28</strong>)</td><td>doctrine — <em>l'avis ne crée ni ne modifie aucune exigence</em> ; définition captant <strong>autonomie et adaptativité après déploiement</strong> (Vol. II <strong>F-26</strong>)</td><td>rien sur l'auto-modification</td><td>rien sur l'auto-modification</td><td>rien sur l'auto-modification</td></tr>
-    <tr><td><strong>Art. 12.1</strong> (<strong>ch. 27</strong>)</td><td><strong>trois obligations, libellé officiel</strong> : <strong>informer</strong>, <strong>expliquer</strong> sur demande, <strong>offrir la révision</strong> par un membre du personnel en mesure de réviser (Vol. II <strong>F-27</strong>)</td><td>données typées = <strong>substrat de frontière</strong>, non trace d'instance</td><td>cartes d'agents signées = <strong>identité de l'appelant</strong>, non explication</td><td><strong>rien au socle</strong> (anatomie non portée)</td></tr>
-    <tr><td><strong>Cadre bancaire — standard technique</strong> (<strong>ch. 32</strong>)</td><td>exigence d'un <strong>standard unique</strong> ; organisme <strong>à désigner par arrêté ministériel</strong> ; ⚠ <strong>aucun standard nommé</strong> (Vol. II <strong>F-35</strong>)</td><td><strong>fait négatif VÉRIFIÉ</strong> : quatre chaînes cherchées, <strong>zéro occurrence</strong> dans les textes officiels</td><td><strong>rien au socle</strong></td><td><strong>rien au socle</strong></td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>Texte canadien <em>(traitement dans la somme)</em></th>
+<th>Ce que le socle porte de sa demande</th>
+<th>MCP</th>
+<th>A2A v1.0</th>
+<th>AP2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>E-23 — attentes de risque de modèle</strong> (<strong>ch. 25</strong>)</td>
+<td>définition verbatim de « modèle », laissée <em>intentionally broad</em> ; <strong>cinq domaines d'attentes opératoires</strong> — inventaire d'entreprise, cotation de risque par modèle, cycle de vie à cinq volets, documentation de modèle, <strong>surveillance continue visant la décision et la re-paramétrisation autonomes</strong> (Vol. II <strong>F-09</strong>)</td>
+<td><strong>fait négatif VÉRIFIÉ</strong> (vocabulaire) : <em>agentique</em>, <em>agents</em>, <em>orchestration</em> <strong>absents du texte intégral</strong>, EN et FR</td>
+<td><em>idem</em> — <strong>aucun agent nommé</strong></td>
+<td><em>idem</em> — <strong>aucun agent nommé</strong></td>
+</tr>
+<tr>
+<td><strong>Ligne directrice IA de l'AMF</strong> (<strong>ch. 27</strong>)</td>
+<td>⚠ <strong>le calendrier seul</strong> : finale, <strong>en vigueur le 1ᵉʳ mai 2027</strong> (Vol. II <strong>F-25</strong>)</td>
+<td><strong>rien de croisable</strong></td>
+<td><strong>rien de croisable</strong></td>
+<td><strong>rien de croisable</strong></td>
+</tr>
+<tr>
+<td><strong>Avis 11-348</strong> (<strong>ch. 28</strong>)</td>
+<td>doctrine — <em>l'avis ne crée ni ne modifie aucune exigence</em> ; définition captant <strong>autonomie et adaptativité après déploiement</strong> (Vol. II <strong>F-26</strong>)</td>
+<td>rien sur l'auto-modification</td>
+<td>rien sur l'auto-modification</td>
+<td>rien sur l'auto-modification</td>
+</tr>
+<tr>
+<td><strong>Art. 12.1</strong> (<strong>ch. 27</strong>)</td>
+<td><strong>trois obligations, libellé officiel</strong> : <strong>informer</strong>, <strong>expliquer</strong> sur demande, <strong>offrir la révision</strong> par un membre du personnel en mesure de réviser (Vol. II <strong>F-27</strong>)</td>
+<td>données typées = <strong>substrat de frontière</strong>, non trace d'instance</td>
+<td>cartes d'agents signées = <strong>identité de l'appelant</strong>, non explication</td>
+<td><strong>rien au socle</strong> (anatomie non portée)</td>
+</tr>
+<tr>
+<td><strong>Cadre bancaire — standard technique</strong> (<strong>ch. 32</strong>)</td>
+<td>exigence d'un <strong>standard unique</strong> ; organisme <strong>à désigner par arrêté ministériel</strong> ; ⚠ <strong>aucun standard nommé</strong> (Vol. II <strong>F-35</strong>)</td>
+<td><strong>fait négatif VÉRIFIÉ</strong> : quatre chaînes cherchées, <strong>zéro occurrence</strong> dans les textes officiels</td>
+<td><strong>rien au socle</strong></td>
+<td><strong>rien au socle</strong></td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 42.1 — La matrice protocoles × textes canadiens, telle que les socles des Vol. II et III la portent. ⚠ <strong>Quinze croisements, aucun lien documenté</strong> ; <strong>quatre absences cherchées dans la source</strong>, <strong>onze constatées au socle</strong> — <em>4 + 11 = 15, re-mesuré sur cette table.</em></p>
-
 <div class="avert">
   <p><strong>Deux partitions coexistent et ne se recouvrent pas</strong> — la source les distingue, et les confondre est le piège propre à cet objet. Par la <strong>provenance de l'absence</strong> : <strong>quatre</strong> cherchées dans la source, <strong>onze</strong> constatées au socle. Par l'<strong>état de la cellule</strong> : <strong>six cellules non vides</strong> — les trois d'E-23, article 12.1 × MCP, article 12.1 × A2A, cadre bancaire × MCP — et <strong>neuf vides</strong>. <em>La première mesure la manière dont l'ouvrage sait qu'il ne sait pas ; la seconde ce que la cellule donne à lire.</em> ⚠ <strong>Le vide est celui du lien, jamais celui de la cellule.</strong></p>
 </div>
-
+<figure class="figure">
+  <img src="../figures/f-42-01-matrice.svg" alt="Figure 42.1 — La matrice protocoles × textes canadiens : la couverture, et surtout les cases vides." />
+  <figcaption><strong>Figure 42.1</strong> — La matrice protocoles × textes canadiens : la couverture, et surtout les cases vides.</figcaption>
+</figure>
 <h2 id="s422"><span class="sig">§ 42.2</span>Lecture par protocole</h2>
-
 <p><strong>MCP répond à une question : comment un agent atteint un outil.</strong> Interface client-serveur fondée sur JSON-RPC 2.0, invocation d'outils, échange de données typées, <strong>cadre d'autorisation</strong> fondé sur OAuth (Vol. II <strong>F-01</strong>, <strong>[A]</strong>). ⚠ <strong>« Cadre d'autorisation », jamais « sécurisé »</strong> — <em>la sécurité dépend de l'implémentation</em>, et le <strong>ch. 8</strong> en est le siège. <strong>Deux croisements méritent l'examen ; aucun ne survit.</strong></p>
-
 <p><em>Le premier oppose le typage à l'obligation d'expliquer.</em> Le <strong>ch. 8</strong> a établi qu'un échange typé est <strong>déclaré à l'avance</strong>, donc vérifiable à la frontière et opposable après coup — <em>sans que le socle établisse qu'il suffise à une piste d'audit réglementaire.</em> <span class="auteur">Lecture de l'auteur</span> l'article 12.1 exige, sur demande, « les raisons, ainsi que les principaux facteurs et paramètres, ayant mené à la décision ». <em>Un journal typé atteste de <strong>la forme</strong> de ce qui a transité par un appel d'outil ; il n'atteste ni des raisons, ni des facteurs, ni des paramètres.</em> <strong>Ce que le socle établit</strong> : les deux termes. <strong>Ce qu'il n'établit pas</strong> : leur écart, qui est de l'auteur.</p>
-
 <p><em>Le second croisement est le seul lexique commun de toute la matrice : OAuth.</em> <span class="auteur">Lecture de l'auteur</span> que le fondement du cadre d'autorisation de MCP et l'anticipation d'industrie relative au cadre bancaire <strong>emploient le même mot</strong> est un rapprochement de l'auteur, <strong>que le socle ne pose pas</strong>. ⚠ <strong>Il vaut d'être posé pour être aussitôt désamorcé</strong> : <strong>aucun organisme de normalisation technique n'a été désigné par arrêté ministériel et aucun standard n'est nommé dans les textes officiels</strong> ; <em>la candidature d'un format d'industrie relève du <strong>commentaire d'industrie</strong>, attribué comme tel.</em> <strong>Cette intersection a été cherchée dans la source, et ne s'y trouve pas</strong> (Vol. II <strong>F-35</strong>, <strong>[A]</strong>, fait négatif <strong>VÉRIFIÉ</strong>).</p>
-
 <p><strong>A2A répond à une autre question : comment un agent délègue à un autre.</strong> Délégation de pair à pair, cartes d'agents dont la variante signée porte une <strong>vérification cryptographique d'identité</strong> ; version 1.0 que <strong>le projet qualifie lui-même</strong> de première spécification stable (Vol. II <strong>F-02</strong>, <strong>[A]</strong>). ⚠ <strong>Qualification du projet, attribuée à lui</strong> (R-09 du Vol. III, statut dit à la mention). <em>La doctrine de complémentarité déclarée par le projet — « MCP dans les agents, A2A entre les agents » — rend les colonnes séparables</em> ; ⚠ <strong>le ch. 8 a établi qu'un critère de découpage n'est pas une contrainte</strong>.</p>
-
 <p><em>Le croisement tentant est celui de la carte signée avec l'imputabilité, et il échoue deux fois.</em> <strong>D'abord</strong> parce que le <strong>ch. 11</strong> l'a établi : le cadre d'autorisation de MCP et la carte signée d'A2A établissent tous deux <strong>qui parle</strong>, ⚠ <strong>non ce qui est dit ni si ce qui est dit est fondé</strong> (R-02 du Vol. III — <em>qualifier un mécanisme par ce que sa spécification démontre</em>). <strong>Ensuite</strong> parce que <strong>le porteur de l'obligation canadienne n'est pas l'agent</strong> : <span class="auteur">Lecture de l'auteur</span> sous l'article 12.1, l'obligation <strong>pèse sur l'entreprise qui rend la décision</strong>, et <em>aucune identité d'agent ne déplace ce porteur.</em> Le <strong>ch. 29</strong> en fait le pivot de son argument.</p>
-
-<p><strong>AP2 est la ligne la plus vide, et la plus instructive.</strong> Protocole compagnon d'A2A pour les transactions pilotées par agents ; ⚠ <strong>plus de soixante organisations déclarent leur soutien</strong> — <em>métrique auto-déclarée, attribuée à la <strong>Linux Foundation</strong>, dont le <strong>communiqué du 9 avril 2026</strong> la porte, et <strong>le soutien déclaré ne vaut pas déploiement en production</strong></em> (Vol. II <strong>F-04</strong>, <strong>[A]</strong>).</p>
-
-<div class="avert">
-  <p><strong>Ce décompte n'a pas été ré-établi à sa page source</strong> au 28 juillet 2026 — <em>absence de documentation, non un retrait constaté</em> ; <strong>la métrique reste attribuée, elle ne se durcit pas</strong>. ⚠ <strong>Le socle du Vol. II ne porte ni son anatomie technique, ni aucun transfert de gouvernance documenté, et ne le relie à aucun rail canadien</strong> — <em>la prospective de ce dernier point est au <strong>ch. 36</strong></em>.</p>
-</div>
-
+<p><strong>AP2 est la ligne la plus vide, et la plus instructive.</strong> Protocole compagnon d'A2A pour les transactions pilotées par agents ; ⚠ <strong>plus de soixante organisations déclarent leur soutien</strong> — <em>métrique auto-déclarée, attribuée à la <strong>Linux Foundation</strong>, dont le <strong>communiqué du 9 avril 2026</strong> la porte, et <strong>le soutien déclaré ne vaut pas déploiement en production</strong></em> (Vol. II <strong>F-04</strong>, <strong>[A]</strong>). ⚠ <strong>Ce décompte n'a pas été ré-établi à sa page source</strong> au 28 juillet 2026 — <em>absence de documentation, non un retrait constaté</em> ; <strong>la métrique reste attribuée, elle ne se durcit pas</strong>. ⚠ <strong>Le socle du Vol. II ne porte ni son anatomie technique, ni aucun transfert de gouvernance documenté, et ne le relie à aucun rail canadien</strong> — <em>la prospective de ce dernier point est au <strong>ch. 36</strong></em>.</p>
 <p><span class="auteur">Lecture de l'auteur</span> <strong>une relation inverse apparaît</strong>. <em>Des trois protocoles, celui qui touche le plus directement l'acte réglementé — le paiement — est celui dont le socle documente le moins : ni anatomie, ni gouvernance, ni articulation canadienne.</em> <strong>Ce que le socle établit</strong> : les trois absences, chacune bornée à son libellé. <strong>Ce qu'il n'établit pas</strong> : leur convergence, qui est une lecture — ⚠ <em>et elle borne cette somme avant de borner AP2</em> : une institution qui l'instrumenterait en premier ne trouvera <strong>dans cette matrice</strong> ni sa structure de message, ni son mandat, ni sa preuve d'intention, et <strong>doit remonter aux sources primaires</strong>. ⚠ <strong>Aucune de ces absences n'établit un fait négatif sur le protocole lui-même.</strong></p>
-
 <div class="avert">
   <p><strong>Le ch. 10 de la somme couvre, lui, DEUX des trois absences que le Vol. II déclare — et la mesure de ce « partiellement » importe autant que le fait.</strong> <em>(a)</em> De l'anatomie, il porte la <strong>chaîne de mandats</strong> — <em>Intent Mandate</em>, <em>Cart Mandate</em>, <em>Payment Mandate</em> —, reprise du Vol. I au <strong>ch. 10 § 10.1.4</strong> ; ⚠ <strong>ni la structure des messages ni le modèle de preuve d'intention n'y sont portés</strong>, <em>et cette part-là de la lacune reste entière</em>. <em>(b)</em> Le <strong>transfert de gouvernance</strong> est documenté : don à la <strong>FIDO Alliance</strong> le <strong>28 avril 2026</strong>, établi à sa source primaire et porté au <strong>ch. 10 § 10.1.3</strong>. ⚠ <strong>C'est une lacune de couverture couverte, non comblée</strong> : les deux états sont datés, compatibles, et <strong>l'énoncé du Vol. II reste exact dans son périmètre</strong>. <strong>Cette matrice ne s'en sert pas</strong> : <em>sa cellule mesure ce que le socle du Vol. II relie à un texte canadien, et le ch. 10 n'en relie aucun.</em></p>
 </div>
-
 <h2 id="s423"><span class="sig">§ 42.3</span>Lecture par exigence</h2>
-
 <p>Lue par ses lignes, la matrice se réorganise en <strong>trois espèces</strong>. ⚠ <strong>La distinction n'est pas rhétorique : deux vides d'espèces différentes n'appellent pas la même conduite.</strong></p>
-
 <h3>42.3.1 Les trois espèces de vide</h3>
-
 <p><strong>Vide de socle — une ligne</strong> (ligne directrice de l'AMF). ⚠ Ces cellules sont vides parce que <strong>la somme ne sait pas ce que le texte attend</strong> : le contenu article par article relève d'une lacune déclarée. <em>Seule ligne dont le premier terme manque, et <strong>seul vide qu'une extraction primaire comblerait</strong>.</em></p>
-
 <p><strong>Vide de texte — une ligne</strong> (cadre bancaire). ⚠ Ces cellules sont vides <strong>pour une raison opposée</strong> : le socle porte l'exigence — <em>un standard technique unique est requis</em> —, mais <strong>le texte officiel ne désigne rien</strong>. <em>Non une lacune de la somme : <strong>un état du droit</strong>, et il est vérifié.</em></p>
-
 <p><strong>Vide de protocole — trois lignes</strong> (E-23, article 12.1, avis 11-348). ⚠ Ici, <strong>le socle porte la demande, et ce sont les protocoles qui ne portent rien.</strong></p>
-
-<ul class="puces">
-  <li><strong>E-23</strong> ne nomme <strong>ni l'agentique, ni les agents, ni l'orchestration</strong> — vérification mécanique sur le texte intégral, EN et FR. Sa définition de « modèle », laissée <em>intentionally broad</em>, englobe les méthodes d'IA et d'apprentissage automatique, et le texte vise expressément la <strong>prise de décision autonome</strong> et la <strong>re-paramétrisation autonome</strong> ; ⚠ <strong>d'où une couverture <em>implicite</em>, que des analystes juridiques canadiens tiennent pour acquise — inférence d'analystes, jamais « le BSIF exige pour l'IA agentique »</strong> (siège de l'énoncé : <strong>ch. 25 § 25.3</strong>). <span class="auteur">Lecture de l'auteur</span> <em>les champs d'un inventaire de modèles gouvernés et le typage d'un appel d'outil portent sur des objets différents</em> ; le socle porte les deux termes, leur non-recouvrement est de l'auteur.</li>
-  <li><strong>L'article 12.1</strong> attache <strong>trois obligations</strong> dont le socle porte le libellé officiel — informer, expliquer sur demande, offrir la révision. ⚠ <strong>Le socle ne documente, pour aucun des trois protocoles, d'événement de décision, d'explication d'instance ni d'intervention humaine.</strong></li>
-  <li><strong>L'avis 11-348</strong> capte les systèmes dont l'autonomie et l'adaptativité varient <strong>après déploiement</strong>. ⚠ <strong>Le socle ne documente, pour aucun protocole, de distinction entre l'adaptation éphémère d'une instance et l'évolution persistante du modèle de processus</strong> — distinction que le <strong>ch. 22</strong> fournit et que le <strong>ch. 29</strong> érige en contrainte.</li>
+<ul>
+<li><strong>E-23</strong> ne nomme <strong>ni l'agentique, ni les agents, ni l'orchestration</strong> — vérification mécanique sur le texte intégral, EN et FR. Sa définition de « modèle », laissée <em>intentionally broad</em>, englobe les méthodes d'IA et d'apprentissage automatique, et le texte vise expressément la <strong>prise de décision autonome</strong> et la <strong>re-paramétrisation autonome</strong> ; ⚠ <strong>d'où une couverture <em>implicite</em>, que des analystes juridiques canadiens tiennent pour acquise — inférence d'analystes, jamais « le BSIF exige pour l'IA agentique »</strong> (siège de l'énoncé : <strong>ch. 25 § 25.3</strong>). <span class="auteur">Lecture de l'auteur</span> <em>les champs d'un inventaire de modèles gouvernés et le typage d'un appel d'outil portent sur des objets différents</em> ; le socle porte les deux termes, leur non-recouvrement est de l'auteur.</li>
+<li><strong>L'article 12.1</strong> attache <strong>trois obligations</strong> dont le socle porte le libellé officiel — informer, expliquer sur demande, offrir la révision. ⚠ <strong>Le socle ne documente, pour aucun des trois protocoles, d'événement de décision, d'explication d'instance ni d'intervention humaine.</strong></li>
+<li><strong>L'avis 11-348</strong> capte les systèmes dont l'autonomie et l'adaptativité varient <strong>après déploiement</strong>. ⚠ <strong>Le socle ne documente, pour aucun protocole, de distinction entre l'adaptation éphémère d'une instance et l'évolution persistante du modèle de processus</strong> — distinction que le <strong>ch. 22</strong> fournit et que le <strong>ch. 29</strong> érige en contrainte.</li>
 </ul>
-
 <h3>42.3.2 Le renversement, et c'est le résultat le plus utile du chapitre</h3>
-
 <p><span class="auteur">Lecture de l'auteur</span> <em>on attendrait que les lignes vides soient celles des textes les moins lisibles. <strong>C'est l'inverse.</strong></em> Les deux textes dont le socle porte le contenu le plus précis — E-23, par extraction intégrale, et l'article 12.1, par son libellé officiel — sont <strong>ceux dont les six croisements ne portent aucun lien documenté</strong>, ⚠ <strong>et ce sont eux qui obligent le plus tôt</strong> : <em>l'article 12.1 depuis 2023, E-23 au 1ᵉʳ mai 2027.</em></p>
-
 <div class="avert">
   <p><strong>Pour MCP et A2A, dont le socle porte l'anatomie, ce vide n'est pas documentaire</strong> : <em>les deux spécifications décrivent des appels et des délégations, non des décisions.</em> ⚠ <strong>Pour AP2, dont le socle du Vol. II ne porte aucune structure de message, rien ne permet de trancher entre les deux espèces.</strong> <em>Un vide de socle se comble par une extraction primaire ; qu'un vide de protocole se comble ou non, la somme le laisse ouvert.</em></p>
 </div>
-
+<figure class="figure">
+  <img src="../figures/f-42-03-renversement.svg" alt="Figure 42.3 — Les trois espèces de vide, et le renversement qu&#39;elles produisent." />
+  <figcaption><strong>Figure 42.3</strong> — Les trois espèces de vide, et le renversement qu'elles produisent.</figcaption>
+</figure>
 <h3>42.3.3 Le croisement avec la grille des cinq questions — construction du compendium</h3>
-
 <div class="avert">
   <p><strong>Ce croisement n'est porté par aucune des deux sources, et il est marqué comme construction.</strong> Le Vol. II n'emploie pas la grille — <em>c'est un instrument du Vol. III, dont la somme pose l'exposé au <strong>ch. 14</strong>, son siège ; les cinq questions ne sont pas re-dérivées ici</em> —, et le Vol. III ne croise pas ses mécanismes avec les textes canadiens. <strong>La somme met les deux matrices en regard, et c'est un geste d'éditeur.</strong></p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : d'un côté, <strong>quinze croisements sans lien documenté</strong> (Vol. II) ; de l'autre, des <strong>verdicts par mécanisme</strong> sur les cinq questions, dont <strong>aucun « répond » plein</strong>, plusieurs « répond partiellement » et de nombreuses <strong>cases vides au degré 3</strong> (Vol. III, Annexe B). <strong>Ce qu'il n'établit pas</strong> : que les deux matrices mesurent le même objet — <em>et elles ne le mesurent pas.</em></p>
-
 <div class="avert">
   <p><strong>La mise en regard produit néanmoins un constat, et un seul.</strong> Sur les six cellules non vides de la matrice protocolaire, <strong>trois seulement portent un apport du protocole</strong> — article 12.1 × MCP, article 12.1 × A2A, cadre bancaire × MCP ; ⚠ <em>les trois autres, celles de la ligne E-23, sont non vides d'un fait négatif vérifié, ce qui n'est pas un apport.</em> <strong>Ces trois-là sont exactement celles où le protocole apporte quelque chose qui répond à Q-A</strong> (<em>qui es-tu</em>) <strong>et à rien d'autre</strong> : <em>un substrat de frontière typé, une identité d'appelant vérifiable, un vocabulaire d'autorisation partagé.</em> <strong>Or aucune des trois obligations canadiennes croisées ne pose la question Q-A</strong> : elles posent <em>qui en répond</em> (Q-E) et <em>sur quel fondement</em>. ⚠ <strong>Le croisement des deux instruments dit donc la même chose que chacun séparément, et il le dit plus court</strong> : <em>la couche protocolaire répond à la première question de la grille ; les textes canadiens posent la dernière.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>Ce constat est réfutable, et par une seule chose</strong> : la production d'une cellule où un protocole apporterait une réponse à Q-C, Q-D ou Q-E qu'un texte canadien exigerait. <strong>Le socle n'en porte aucune.</strong></p>
 </div>
-
 <h2 id="s424"><span class="sig">§ 42.4</span>Les zones de compensation architecturale</h2>
-
 <p><strong>Appelons <em>zone de compensation</em> un point où le socle établit une demande, ou une contrainte de conception, que la couche protocolaire ne porte pas — et que quelque chose d'autre doit donc porter.</strong> ⚠ <strong>Les cinq qui suivent relèvent de la Lecture de l'auteur : le socle en porte les termes, jamais la conclusion.</strong></p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>#</th><th>Zone</th><th>Ce que le socle porte des deux côtés</th><th>Ce qui doit compenser, et où c'est traité</th></tr></thead>
-  <tbody>
-    <tr><td><strong>Z1</strong></td><td><strong>La production de la trace</strong></td><td>l'art. 12.1 exige les raisons, facteurs et paramètres de <em>cette</em> décision ; une préimpression enseigne que <strong>la journalisation confiée aux agents « n'est généralement pas recommandée »</strong> (Vol. II <strong>F-37</strong>, ⚠ <em>préimpression non révisée, source unique</em>) ; un rapport conjoint d'autorités fédérales établit que <strong>les relations causales entrées-sorties sont souvent indéterminables</strong> (Vol. II <strong>F-10</strong>)</td><td><strong>le cadre</strong>, non l'agent — <strong>ch. 29</strong> ; ⚠ <strong>la matrice ajoute le quatrième candidat écarté : le protocole</strong> — <em>le typage donne un substrat de frontière, non une trace d'instance</em>. Instrumentation : <strong>ch. 38 § 38.4</strong></td></tr>
-    <tr><td><strong>Z2</strong></td><td><strong>Le point d'arrêt humain</strong></td><td>l'art. 12.1 exige l'occasion de présenter ses observations à <strong>un membre du personnel en mesure de réviser</strong> ; ⚠ <strong>le socle ne documente d'humain dans aucun des trois protocoles</strong> — il le documente au niveau d'<strong>un</strong> cadriciel d'orchestration nommé, jamais des protocoles</td><td><strong>la couche d'orchestration</strong> — <strong>ch. 23</strong> ; ⚠ <strong>le flux outille un point d'arrêt humain, jamais la révision de l'article 12.1</strong> (<strong>ch. 45 § 45.11</strong>)</td></tr>
-    <tr><td><strong>Z3</strong></td><td><strong>La détectabilité de l'auto-modification</strong></td><td>l'avis 11-348 capte l'adaptativité <strong>après déploiement</strong> ; un manifeste de recherche scinde l'auto-modification en <strong>adaptation</strong> et <strong>évolution</strong> (Vol. II <strong>F-36</strong>) ; E-23 <strong>attend</strong> une surveillance continue visant nommément la <strong>re-paramétrisation autonome</strong></td><td>⚠ <strong>aucune ligne de la pile ne l'exécute</strong> : la contrainte est au <strong>ch. 29</strong>, la distinction au <strong>ch. 22</strong>, le constat d'indétectabilité au <strong>ch. 39 § 39.5</strong></td></tr>
-    <tr><td><strong>Z4</strong></td><td><strong>L'interface d'accès du cadre bancaire</strong></td><td><strong>le standard technique n'est pas désigné</strong> — fait négatif vérifié, quatre chaînes cherchées</td><td><strong>traiter le standard d'accès comme une variable derrière une frontière d'abstraction</strong> — <strong>ch. 32</strong> ; ⚠ <strong>ce n'est pas un choix de protocole agentique, aucun n'étant nommé dans les textes</strong>. Flux instancié : <strong>ch. 45 § 45.13</strong></td></tr>
-    <tr><td><strong>Z5</strong></td><td><strong>Le contenu et l'état</strong></td><td>les réponses protocolaires établissent <strong>qui parle</strong> ; ⚠ elles <strong>ne couvrent ni l'empoisonnement d'outils, ni l'injection d'invites, ni l'empoisonnement de mémoire</strong> ; le même manifeste de recherche propose <strong>le confinement local, non la prévention</strong> (Vol. II <strong>F-36</strong>)</td><td><strong>le maillage et les garde-fous d'exécution</strong> — <strong>ch. 37 § 37.6</strong> ; la menace elle-même est au <strong>ch. 19</strong>, la défense au <strong>ch. 6</strong></td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>#</th>
+<th>Zone</th>
+<th>Ce que le socle porte des deux côtés</th>
+<th>Ce qui doit compenser, et où c'est traité</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Z1</strong></td>
+<td><strong>La production de la trace</strong></td>
+<td>l'art. 12.1 exige les raisons, facteurs et paramètres de <em>cette</em> décision ; une préimpression enseigne que <strong>la journalisation confiée aux agents « n'est généralement pas recommandée »</strong> (Vol. II <strong>F-37</strong>, ⚠ <em>préimpression non révisée, source unique</em>) ; un rapport conjoint d'autorités fédérales établit que <strong>les relations causales entrées-sorties sont souvent indéterminables</strong> (Vol. II <strong>F-10</strong>)</td>
+<td><strong>le cadre</strong>, non l'agent — <strong>ch. 29</strong> ; ⚠ <strong>la matrice ajoute le quatrième candidat écarté : le protocole</strong> — <em>le typage donne un substrat de frontière, non une trace d'instance</em>. Instrumentation : <strong>ch. 38 § 38.4</strong></td>
+</tr>
+<tr>
+<td><strong>Z2</strong></td>
+<td><strong>Le point d'arrêt humain</strong></td>
+<td>l'art. 12.1 exige l'occasion de présenter ses observations à <strong>un membre du personnel en mesure de réviser</strong> ; ⚠ <strong>le socle ne documente d'humain dans aucun des trois protocoles</strong> — il le documente au niveau d'<strong>un</strong> cadriciel d'orchestration nommé, jamais des protocoles</td>
+<td><strong>la couche d'orchestration</strong> — <strong>ch. 23</strong> ; ⚠ <strong>le flux outille un point d'arrêt humain, jamais la révision de l'article 12.1</strong> (<strong>ch. 45 § 45.11</strong>)</td>
+</tr>
+<tr>
+<td><strong>Z3</strong></td>
+<td><strong>La détectabilité de l'auto-modification</strong></td>
+<td>l'avis 11-348 capte l'adaptativité <strong>après déploiement</strong> ; un manifeste de recherche scinde l'auto-modification en <strong>adaptation</strong> et <strong>évolution</strong> (Vol. II <strong>F-36</strong>) ; E-23 <strong>attend</strong> une surveillance continue visant nommément la <strong>re-paramétrisation autonome</strong></td>
+<td>⚠ <strong>aucune ligne de la pile ne l'exécute</strong> : la contrainte est au <strong>ch. 29</strong>, la distinction au <strong>ch. 22</strong>, le constat d'indétectabilité au <strong>ch. 39 § 39.5</strong></td>
+</tr>
+<tr>
+<td><strong>Z4</strong></td>
+<td><strong>L'interface d'accès du cadre bancaire</strong></td>
+<td><strong>le standard technique n'est pas désigné</strong> — fait négatif vérifié, quatre chaînes cherchées</td>
+<td><strong>traiter le standard d'accès comme une variable derrière une frontière d'abstraction</strong> — <strong>ch. 32</strong> ; ⚠ <strong>ce n'est pas un choix de protocole agentique, aucun n'étant nommé dans les textes</strong>. Flux instancié : <strong>ch. 45 § 45.13</strong></td>
+</tr>
+<tr>
+<td><strong>Z5</strong></td>
+<td><strong>Le contenu et l'état</strong></td>
+<td>les réponses protocolaires établissent <strong>qui parle</strong> ; ⚠ elles <strong>ne couvrent ni l'empoisonnement d'outils, ni l'injection d'invites, ni l'empoisonnement de mémoire</strong> ; le même manifeste de recherche propose <strong>le confinement local, non la prévention</strong> (Vol. II <strong>F-36</strong>)</td>
+<td><strong>le maillage et les garde-fous d'exécution</strong> — <strong>ch. 37 § 37.6</strong> ; la menace elle-même est au <strong>ch. 19</strong>, la défense au <strong>ch. 6</strong></td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 42.2 — Les cinq zones de compensation architecturale. ⚠ <strong>Construction d'auteur</strong> : le socle porte les termes de chaque ligne, <strong>jamais la conclusion qu'elle en tire</strong>.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>les cinq zones partagent une propriété qu'aucune ne montre seule : <em>aucune ne se referme en choisissant un meilleur protocole</em>.</strong> ⚠ <strong>Là où les standards ne suffisent pas, ce n'est pas parce qu'ils seraient immatures : c'est parce qu'ils ne répondent pas à la question posée.</strong> <em>La compensation n'est donc pas un palliatif transitoire ; elle est <strong>structurelle</strong>, et l'architecture de référence du <strong>ch. 43</strong> est l'endroit où elle se construit.</em></p>
-
 <div class="avert">
   <p><strong>Lecture bornée par sa date — et la borne s'est refermée le lendemain de la rédaction.</strong> Le socle documentait une <strong>révision majeure du protocole agent-outil annoncée</strong>, postérieure au gel de sa source ; ⚠ <strong>elle a été ratifiée le 28 juillet 2026</strong>, à la date même que la source annonçait, et le socle consolidé en porte le constat. <em>La bascule est constatée, le texte de la révision n'est pas extrait, et la revalidation en bloc reste ouverte, non exécutée</em> — <strong>ch. 8</strong>, siège de l'anatomie protocolaire. ⚠ <strong>Son contenu n'est documenté au regard d'aucune exigence canadienne</strong> — degré 3. <em>Ce que cette révision change à la matrice n'est documenté par rien, et l'inférer serait la faute que la somme prend pour objet.</em></p>
 </div>
-
-<p>## Synthèse : ce que le chapitre lègue à la somme</p>
-
+<h3>Synthèse : ce que le chapitre lègue à la somme</h3>
 <p><em>Section de sortie sans homologue direct dans la source — construction d'éditeur.</em></p>
-
-<ol class="numeros">
-  <li><strong>L'instrument, et ses trois règles de remplissage.</strong> <em>Deux termes par cellule ; aucun verdict de conformité ; toute cellule non vide est une inférence.</em> Les <strong>ch. 43 à 46</strong> les appliquent sans les redécider, et <strong>l'Annexe F les consolide</strong>.</li>
-  <li><strong>Le cardinal, re-mesuré et non recopié.</strong> <strong>Quinze croisements, aucun lien documenté</strong> ; <strong>4 + 11 = 15</strong> par la provenance de l'absence, <strong>6 + 9 = 15</strong> par l'état de la cellule. ⚠ <strong>Les deux partitions ne se recouvrent pas, et les confondre est le piège propre à cet objet.</strong></li>
-  <li><strong>Les trois espèces de vide.</strong> <em>Vide de socle</em> (une ligne, comblable par extraction), <em>vide de texte</em> (une ligne, état du droit vérifié), <em>vide de protocole</em> (trois lignes). ⚠ <strong>Une seule se comble par une passe d'instruction, et le ch. 49 enregistrera laquelle.</strong></li>
-  <li><strong>Le renversement.</strong> <em>Les deux textes dont le socle porte le contenu le plus précis sont ceux dont les croisements sont les plus vides — et ce sont eux qui obligent le plus tôt.</em></li>
-  <li><strong>Les cinq zones de compensation.</strong> Elles sont <strong>le cahier des charges du ch. 43</strong> : <em>ce que l'architecture doit porter parce qu'aucun protocole ne le porte.</em> Le <strong>ch. 45</strong> les instancie, le <strong>ch. 46</strong> en séquence l'instrumentation.</li>
-  <li><strong>Le croisement des deux matrices, marqué comme construction.</strong> <em>La couche protocolaire répond à la première question de la grille ; les textes canadiens posent la dernière.</em> ⚠ <strong>Construction du compendium, réfutable par une seule cellule.</strong></li>
+<ol type="1">
+<li><strong>L'instrument, et ses trois règles de remplissage.</strong> <em>Deux termes par cellule ; aucun verdict de conformité ; toute cellule non vide est une inférence.</em> Les <strong>ch. 43 à 46</strong> les appliquent sans les redécider, et <strong>l'Annexe F les consolide</strong>.</li>
+<li><strong>Le cardinal, re-mesuré et non recopié.</strong> <strong>Quinze croisements, aucun lien documenté</strong> ; <strong>4 + 11 = 15</strong> par la provenance de l'absence, <strong>6 + 9 = 15</strong> par l'état de la cellule. ⚠ <strong>Les deux partitions ne se recouvrent pas, et les confondre est le piège propre à cet objet.</strong></li>
+<li><strong>Les trois espèces de vide.</strong> <em>Vide de socle</em> (une ligne, comblable par extraction), <em>vide de texte</em> (une ligne, état du droit vérifié), <em>vide de protocole</em> (trois lignes). ⚠ <strong>Une seule se comble par une passe d'instruction, et le ch. 49 enregistrera laquelle.</strong></li>
+<li><strong>Le renversement.</strong> <em>Les deux textes dont le socle porte le contenu le plus précis sont ceux dont les croisements sont les plus vides — et ce sont eux qui obligent le plus tôt.</em></li>
+<li><strong>Les cinq zones de compensation.</strong> Elles sont <strong>le cahier des charges du ch. 43</strong> : <em>ce que l'architecture doit porter parce qu'aucun protocole ne le porte.</em> Le <strong>ch. 45</strong> les instancie, le <strong>ch. 46</strong> en séquence l'instrumentation.</li>
+<li><strong>Le croisement des deux matrices, marqué comme construction.</strong> <em>La couche protocolaire répond à la première question de la grille ; les textes canadiens posent la dernière.</em> ⚠ <strong>Construction du compendium, réfutable par une seule cellule.</strong></li>
 </ol>
-
 <div class="avert">
   <p><strong>Ce que le chapitre ne lègue pas — et il faut l'énoncer avec la même netteté que la source.</strong> Il ne dit pas que <strong>les protocoles seraient non conformes</strong> aux exigences canadiennes : <em>la conformité n'est pas une propriété qu'un format d'échange puisse porter, et aucune source ne l'évalue.</em> Il ne dit pas que <strong>ces quinze absences établissent l'absence d'un lien</strong> : <em>onze sont un état de la documentation, non un état du monde, et les quatre autres ne portent que sur les chaînes effectivement cherchées.</em> Il ne dit pas <strong>ce que la ligne directrice de l'AMF attend</strong> : <em>son contenu n'est pas au socle.</em> Il ne dit pas que <strong>les cinq zones soient exhaustives</strong> : <em>elles procèdent de cinq lignes dont une est vide du côté des attentes.</em> ⚠ <strong>La matrice n'établit pas que les protocoles échouent : elle établit qu'ils répondent à une autre question — et que personne, à la date de gel, n'a écrit la phrase qui les relierait au droit canadien.</strong></p>
 </div>
+<hr />
+<figure class="figure">
+  <img src="../figures/f-42-04-zones-compensation.svg" alt="Figure 42.4 — Les cinq zones de compensation architecturale : ce que l&#39;architecture doit porter là où rien ne le porte." />
+  <figcaption><strong>Figure 42.4</strong> — Les cinq zones de compensation architecturale : ce que l'architecture doit porter là où rien ne le porte.</figcaption>
+</figure>
 
 <footer class="pied">
   <p><strong>Vol. IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em></strong> · Livre IV, chapitre 42. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau, M.Sc. IT.</p>
-
   <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme (gel unique : 27 juillet 2026).</p>
 </footer>
 

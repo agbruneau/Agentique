@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chapitre 25 — E-23 : le risque de modèle à l&#x27;ère de l&#x27;IA · Interopérabilité et Orchestration en Entreprise Agentique</title>
-<meta name="description" content="Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier. Deuxième mouvement — le cadre réglementaire canadien (ch. 25-30). Chapitre d'ouverture du mouvement : il pose le régime prudentiel fédéral sur lequel les cinq suivants se situent">
+<meta name="description" content="Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier. Deuxième mouvement — le cadre réglementaire canadien (ch. 25-30). Chapitre d&#x27;ouverture du mouvement : il pose le régime prudentiel fédéral sur lequel les cinq suivants se situent">
 <meta name="author" content="André-Guy Bruneau, M.Sc. IT">
 <meta name="color-scheme" content="dark">
 <style>
@@ -443,6 +443,17 @@ tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
 tbody td:first-child { color: var(--texte); font-weight: 600; }
 .legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
 
+/* -------------------------------------------------------------- figures */
+/* Les SVG du volume sont dessinés pour le PDF, donc sur fond clair, et ils
+   portent ce fond eux-mêmes — sans quoi il faudrait maintenir deux variantes
+   de chaque figure. Sur ce thème sombre, ils se posent donc comme un carton ;
+   le padding empêche le fond de la figure de toucher le bord du cadre. */
+.figure { margin: 2.1rem 0 1.9rem; }
+.figure img { display: block; width: 100%; height: auto; border-radius: 7px;
+              border: 1px solid var(--trait); background: #fdfbf9; padding: 0.6rem; }
+.figure figcaption { font-size: 0.8rem; font-style: italic; color: var(--texte-faible);
+                     margin-top: 0.65rem; padding-left: 0.15rem; }
+
 /* --------------------------------------------------------------- listes */
 ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
 ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
@@ -531,20 +542,18 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <div class="nav__marque">Interopérabilité et Orchestration en Entreprise Agentique</div>
   <div class="nav__sous">Livre III · Chapitre 25</div>
   <ol>
-    <li><a href="#s250"><span class="num">25.0</span>Ouverture : deux façons pour un régulateur d&#x27;atteindre une technologie</a></li>
+    <li><a href="#s250"><span class="num">25.0</span>Ouverture : deux façons pour un régulateur d'atteindre une technologie</a></li>
     <li><a href="#s251"><span class="num">25.1</span>Genèse et calendrier</a></li>
-    <li><a href="#s252"><span class="num">25.2</span>La définition de « modèle » et l&#x27;anticipation des systèmes autonomes</a></li>
-    <li><a href="#s253"><span class="num">25.3</span>L&#x27;inférence agentique</a></li>
-    <li><a href="#s254"><span class="num">25.4</span>Relecture d&#x27;E-23 par la grille des cinq questions</a></li>
+    <li><a href="#s252"><span class="num">25.2</span>La définition de « modèle » et l'anticipation des systèmes autonomes</a></li>
+    <li><a href="#s253"><span class="num">25.3</span>L'inférence agentique</a></li>
+    <li><a href="#s254"><span class="num">25.4</span>Relecture d'E-23 par la grille des cinq questions</a></li>
     <li><a href="#s255"><span class="num">25.5</span>Le registre du ch. 15 comme pièce de conformité</a></li>
     <li><a href="#s256"><span class="num">25.6</span>La surveillance continue attendue par E-23, et la limite empirique de la supervision humaine</a></li>
-    <li><a href="#s257"><span class="num">25.7</span>Ce que les cadres n&#x27;exigent pas — ne pas leur faire dire plus</a></li>
+    <li><a href="#s257"><span class="num">25.7</span>Ce que les cadres n'exigent pas — ne pas leur faire dire plus</a></li>
     <li><a href="#s258"><span class="num">25.8</span>Le rapport BSIF-ACFC : une trajectoire déclarée et une causalité indéterminable</a></li>
-
   </ol>
   <div class="nav__pied">
     Vol.&nbsp;IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em><br>
-
     <a href="25-e23-risque-modele.md">Version Markdown</a>
   </div>
 </nav>
@@ -558,259 +567,209 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <p class="titre__situe">Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier. Deuxième mouvement — le cadre réglementaire canadien (ch. 25-30). Chapitre d'ouverture du mouvement : il pose le régime prudentiel fédéral sur lequel les cinq suivants se situent</p>
 </header>
 
+<!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
+     Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
+     que `build/assemble.py` pour le PDF et que `PRD/decompte.sh` pour la volumétrie. L'appareil de
+     gouvernance vit au .md jumeau, qui reste la seule source, et `build/verifier-piece.py` refuse
+     un rendu qui le recopierait. -->
+
 <div class="avert">
-  <p><strong>La thèse a été collationnée contre le texte rédigé de ses deux sources avant la rédaction</strong> (décision 14 du TOC). <strong>Domaine de balayage : une thèse examinée, une divergence trouvée — et elle n'était pas de forme.</strong> Le premier membre condensait la thèse du Vol. II ch. 9 en <strong>retranchant son qualificatif décisif</strong> : la source écrit « couverture par inférence <strong>d'analystes</strong>, à traiter comme acquise », et le plan portait alors « couverture par inférence que les institutions <strong>doivent</strong> traiter comme acquise ». <em>Retirer « d'analystes » effaçait l'objet même du garde-fou <strong>PRD Vol. II §8.2.4</strong>, et « doivent » transformait en prescription ce que la source marque expressément comme une <strong>lecture de l'auteur</strong> fondée sur une asymétrie de risque.</em> Le second membre reprenait fidèlement la conclusion du Vol. III ch. 19. <strong>La pièce a cité la thèse verbatim, comme le PRD l'exige, et écrit son corps sous la forme bornée</strong> ; l'écart a été remonté (§&nbsp;25.9&nbsp;†, remontée <strong>R-IV-83</strong>) et <strong>arbitré ailleurs</strong> — le TOC v0.27 a réaligné la thèse sur la forme bornée, et <strong>le bloc de tête ci-dessus la cite désormais dans cette forme, depuis la v0.28</strong> (passe de correction du 28 juillet 2026). <em>Le corps du chapitre n'a pas bougé : il était déjà écrit sous la forme que le plan porte aujourd'hui.</em></p>
+  <p><strong>La thèse a été collationnée contre le texte rédigé de ses deux sources avant la rédaction</strong> (décision 14 du TOC). <strong>Domaine de balayage : une thèse examinée, une divergence trouvée — et elle n'était pas de forme.</strong> Le premier membre condensait la thèse du Vol. II ch. 9 en <strong>retranchant son qualificatif décisif</strong> : la source écrit « couverture par inférence <strong>d'analystes</strong>, à traiter comme acquise », et le plan portait alors « couverture par inférence que les institutions <strong>doivent</strong> traiter comme acquise ». <em>Retirer « d'analystes » effaçait l'objet même du garde-fou <strong>PRD Vol. II §8.2.4</strong>, et « doivent » transformait en prescription ce que la source marque expressément comme une <strong>lecture de l'auteur</strong> fondée sur une asymétrie de risque.</em> Le second membre reprenait fidèlement la conclusion du Vol. III ch. 19. <strong>La pièce a cité la thèse verbatim, comme le PRD l'exige, et écrit son corps sous la forme bornée</strong> ; l'écart a été remonté (§ 25.9, remontée <strong>R-IV-83</strong>) et <strong>arbitré ailleurs</strong> — le TOC v0.27 a réaligné la thèse sur la forme bornée, et <strong>le bloc de tête ci-dessus la cite désormais dans cette forme, depuis la v0.28</strong> (passe de correction du 28 juillet 2026). <em>Le corps du chapitre n'a pas bougé : il était déjà écrit sous la forme que le plan porte aujourd'hui.</em></p>
 </div>
-
 <h2 id="s250"><span class="sig">§ 25.0</span>Ouverture : deux façons pour un régulateur d'atteindre une technologie</h2>
-
 <p>Il existe deux façons pour un régulateur d'atteindre une technologie : la <strong>nommer</strong>, ou la <strong>définir</strong>. La première est lisible, rassurante, et vieillit mal — le vocabulaire d'un secteur qui se réorganise par trimestres périme les textes qui s'y accrochent. La seconde est austère, elle déplace le travail d'interprétation vers l'assujetti, et elle survit aux modes. <strong>La ligne directrice E-23 du Bureau du surintendant des institutions financières a choisi la seconde.</strong></p>
-
 <p>La conséquence pratique est immédiate pour l'architecte : le périmètre de son programme de risque de modèle (<em>model risk</em>) n'est pas déterminé par ce que le Bureau a écrit sur l'IA agentique — <strong>il n'a rien écrit</strong> — mais par ce que <strong>sa définition de « modèle » attrape</strong>, et par ce que des analystes juridiques canadiens en concluent.</p>
-
 <div class="avert">
   <p><strong>C'est une position inconfortable, et il faut la tenir sans la travestir.</strong> L'affirmation « E-23 couvre l'IA agentique » <strong>n'est pas un fait du Bureau</strong> ; c'est une <strong>lecture d'analystes</strong> (PRD Vol. II §8.2.4). L'affirmation « une institution prudente doit s'y préparer comme si c'était acquis » est une <strong>recommandation d'architecture</strong>. <em>Les deux sont défendables. Elles ne sont pas de même nature, et la somme ne les confondra pas.</em></p>
 </div>
-
 <p><strong>Ce que le chapitre ne traite pas.</strong> Le <strong>vide fédéral</strong> est au ch. 26 ; le <strong>régime québécois</strong> au ch. 27 ; le <strong>droit des valeurs mobilières</strong> au ch. 28 ; la <strong>traduction en contraintes d'architecture</strong> au ch. 29, qui est le pivot du Livre ; le <strong>maillage international</strong> au ch. 30. ⚠ Et la <strong>relecture de la ligne directrice de l'AMF par la grille des cinq questions est au ch. 27</strong>, qui en est le siège : le présent chapitre ne porte que la <strong>moitié E-23</strong> du §19.1 de sa source.</p>
-
 <h2 id="s251"><span class="sig">§ 25.1</span>Genèse et calendrier</h2>
-
 <p>Le socle établit <strong>deux dates et un périmètre</strong>, et il faut mesurer à quel point c'est peu. La version finale d'E-23 a été <strong>publiée le 11 septembre 2025</strong>. Elle <strong>entre en vigueur le 1ᵉʳ mai 2027</strong>. Elle <strong>s'applique à toutes les institutions financières fédérales</strong>, y compris les succursales étrangères, dans la mesure compatible (Vol. II F-09, strate <strong>[A]</strong>).</p>
-
 <p><strong>L'arithmétique du préavis décide des plans de mise en conformité.</strong> Du 11 septembre 2025 au 1ᵉʳ mai 2027, le Bureau a accordé <strong>dix-neuf mois et vingt jours</strong> entre la publication de son texte final et son opposabilité. ⚠ <strong>Rapporté au gel de la somme — le 27 juillet 2026 —, le compte à rebours est plus serré : il reste neuf mois et quatre jours.</strong> <em>Une institution qui lirait ce chapitre à sa date de gel disposerait donc d'un peu plus de trois trimestres pour inventorier, classer et encadrer ce qui, dans son parc, relève de la définition examinée à la section suivante.</em></p>
-
 <div class="avert">
   <p><strong>La date du 1ᵉʳ mai 2027 n'est pas isolée</strong> : la ligne directrice sur l'intelligence artificielle de l'Autorité des marchés financiers, dont traite le <strong>ch. 27</strong>, porte la même date d'entrée en vigueur (Vol. II F-25 ; Vol. III F-68). <em>Cette convergence entre le régulateur prudentiel fédéral et le régulateur intégré québécois est l'un des faits structurants du mouvement</em>, et le <strong>ch. 27 § 27.1</strong> en fait l'examen. La conséquence de planification ne dépend d'aucune intention : <strong>une institution dont l'exploitation relève des deux régimes n'aura pas deux fenêtres de préparation successives, mais une seule.</strong></p>
 </div>
-
 <div class="avert">
   <p><strong>Les deux dates ne sont pourtant pas au même état de preuve, et l'écart date du franchissement de G-3.</strong> La date fédérale a été <strong>re-constatée à sa source</strong> au volet de faits du résiduel de G-1 (<code>S-009</code>, ☑ inchangée <strong>partiellement</strong> — l'entrée en vigueur est au nombre des composantes que la reprise reconduit) ; les deux entrées qui portent la date québécoise sont <strong>☐ non établies</strong> (<code>S-023</code> et <code>S-114</code>), pour un <strong>motif d'accès</strong> — l'hôte refuse les requêtes sur les quatre adresses officielles du domaine de l'organisme. ⚠ <strong>La conséquence est bornée et se tient</strong> : <em>l'entrée en vigueur québécoise reste celle que le socle porte</em>, mais <strong>elle n'a pas été re-constatée au gel</strong>, et la borne du franchissement s'y applique — <strong>aucun fait central ne repose sur cette composante</strong>. <em>Un fait d'entrée en vigueur est un fait à échéance : son absence de re-datation se déclare, elle ne se présume pas stable.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>Sur la genèse proprement dite, il faut être franc sur ce que le socle ne porte pas.</strong> L'extraction du texte intégral et de sa lettre d'accompagnement établit <strong>trois éléments d'antériorité, et trois seulement</strong> : un <strong>projet de 2023</strong> a existé ; il incluait les régimes de retraite fédéraux, <strong>retirés du périmètre final</strong> ; et le texte final répond à des <strong>commentaires</strong> qui demandaient de <strong>restreindre</strong> la définition de « modèle ». Un indice s'y ajoute : le rapport conjoint du § 25.8 renvoie explicitement au cadre E-23. ⚠ <strong>Le socle ne porte rien de plus</strong> — ni le calendrier de la consultation, ni le contenu du projet de 2023, ni la nature des travaux dont il procède. <em>Le chapitre traite donc du <strong>calendrier</strong> d'E-23 bien plus que de sa genèse, et l'écart avec le titre que le plan donne à cette section est signalé plutôt que comblé par du non-vérifié.</em></p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> que le texte s'applique aux institutions financières <strong>fédérales</strong> signifie, par simple lecture de sa portée, qu'il <strong>ne s'applique pas</strong> aux institutions relevant d'une supervision provinciale — lesquelles ne sont pas pour autant sans obligations, comme le <strong>ch. 27</strong> l'établit pour le Québec. <strong>Ce que le socle établit</strong> : une portée. <strong>Ce qu'il n'établit pas</strong> : les modalités selon lesquelles le Bureau entend l'appliquer, ni le contenu de la réserve de compatibilité qui accompagne les succursales étrangères. <em>Une institution qui bâtirait un argumentaire sur cette réserve devrait remonter au texte lui-même.</em></p>
-
+<figure class="figure">
+  <img src="../figures/f-25-01-calendrier-e23.svg" alt="Figure 25.1 — E-23 : de la publication à la date opposable." />
+  <figcaption><strong>Figure 25.1</strong> — E-23 : de la publication à la date opposable.</figcaption>
+</figure>
 <h2 id="s252"><span class="sig">§ 25.2</span>La définition de « modèle » et l'anticipation des systèmes autonomes</h2>
-
 <p>Tout, dans ce chapitre, tient à <strong>une définition</strong>.</p>
-
 <p>Le socle en porte le libellé verbatim : « Application de techniques statistiques ou d'hypothèses théoriques, empiriques ou fondées sur un jugement, <strong>notamment des méthodes d'IA et d'AA</strong>, qui traite des données en entrée pour générer des résultats » (Vol. II F-09). ⚠ <strong>L'inclusion n'est ni une clause d'ouverture pour l'avenir, ni une note de bas de page : elle est au cœur du périmètre</strong> — et la lettre d'accompagnement établit que le Bureau a laissé la définition « <strong>intentionally broad</strong> » <strong>en réponse aux commentaires qui demandaient de la restreindre</strong>.</p>
-
 <p>Le socle établit un second élément, plus significatif encore : <strong>le Bureau anticipe des modèles à apprentissage et décision autonomes</strong>. Il faut peser les deux termes.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> on entend ici par <em>apprentissage</em> autonome le fait qu'un modèle <strong>modifie son comportement sans qu'un opérateur l'y reprogramme</strong>, et par <em>décision</em> autonome le fait qu'il ne se contente pas de produire une sortie que quelqu'un interprétera : <strong>il tranche</strong>. <strong>Ce que le socle établit</strong> : l'énoncé de l'anticipation. <strong>Ce qu'il n'établit pas</strong> : cette lecture des deux termes. <em>Sous cette réserve, le régulateur prudentiel canadien a, dans un texte publié en septembre 2025, envisagé des artefacts qui apprennent seuls et décident seuls.</em></p>
-
 <div class="avert">
   <p><strong>C'est ici que se joue la thèse du chapitre, et c'est ici qu'il faut être le plus prudent.</strong> Le socle <strong>n'établit pas</strong> que le Bureau désignait par là les systèmes multi-agents, ni qu'il avait à l'esprit l'architecture agentique telle que les Livres I et II la décrivent. <strong>Le rapprochement entre « décision autonome » au sens d'E-23 et l'autonomie des systèmes agentiques — dont le ch. 22 § 22.6 est le siège — est une inférence d'auteur, non un fait du texte.</strong> <em>Elle est fondée, elle est partagée par les analystes examinés à la section suivante, et elle demeure une inférence.</em></p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> un périmètre construit sur une <strong>définition fonctionnelle</strong> — ce qu'un artefact <em>fait</em> — plutôt que sur une <strong>nomenclature</strong> — comment il <em>s'appelle</em> — a la propriété que l'architecte recherche dans ses propres interfaces : <em>il ne se périme pas quand l'implémentation change de nom.</em> Un texte qui aurait énuméré des familles de modèles serait aujourd'hui à réviser ; un texte qui définit le modèle <strong>par sa fonction</strong> attrape ce qui n'existait pas quand il fut écrit. <strong>Ce que le socle établit</strong> : la construction définitionnelle et son caractère intentionnellement large. <strong>Ce qu'il n'établit pas</strong> : que ce soit le mécanisme par lequel E-23 rejoindrait l'agentique — c'est la lecture des analystes du § 25.3. ⚠ <em>Et c'est aussi ce qui rend l'exercice inconfortable : l'assujetti doit qualifier lui-même ce qui entre dans le périmètre, sans liste à cocher.</em></p>
-
 <p><strong>Reste ce que la ligne directrice attend concrètement, et la modalité commande tout.</strong> ⚠ <strong>E-23 est fondée sur des principes</strong> — <strong>douze principes au conditionnel</strong>, jamais à l'impératif. <strong>On écrit donc « attendu par E-23 », jamais « exigé par E-23 » ni « E-23 impose »</strong> (PRD Vol. II §7.3 ; PRDPlan Vol. II §4.4 ; R-06 du Vol. III, dont le siège est le §19.1 de sa source).</p>
-
 <p>Sous cette modalité, <strong>cinq domaines sont attendus</strong> : un <strong>cycle de vie</strong> en cinq volets — conception, revue, déploiement, surveillance, mise hors service —, « <strong>not necessarily sequential</strong> » ; un <strong>inventaire</strong> des modèles au risque inhérent <strong>non négligeable</strong>, tenu <strong>à l'échelle de l'entreprise</strong>, « accurate, evergreen, and subject to robust controls », dont un appendice fixe les champs minimaux ; une <strong>cote de risque par modèle</strong>, l'intensité du dispositif devant être « commensurate with » le risque ; des normes de <strong>documentation de modèle</strong> ; enfin une <strong>surveillance continue</strong> traitant les défis propres à l'IA et à l'apprentissage automatique — « <strong>autonomous decision making, autonomous re-parametrization</strong> » — et un potentiel accru de dérive.</p>
-
 <div class="avert">
   <p><strong>Ces cinq attentes relèvent de la strate [B] du socle du Vol. II, c'est-à-dire de sa strate la moins éprouvée</strong> : source primaire lue, <strong>sans vote adversarial</strong>. <em>L'énumération [A] est close et ne les porte pas</em> — pas plus qu'elle ne porte l'anticipation de la décision autonome. <strong>Et la qualification d'un parc se mène sur le texte officiel du Bureau, non sur ce chapitre.</strong></p>
 </div>
-
 <div class="avert">
   <p><strong>Les cinq attentes au socle sont : cycle de vie, inventaire, cotation, documentation, surveillance continue. La « supervision humaine » n'en est pas une</strong> — <em>ne pas l'ajouter à la liste</em>, quelle que soit la vraisemblance qu'on lui prête. Le § 25.6 y revient, et il montre pourquoi cette exclusion compte plus qu'on ne croit.</p>
 </div>
-
 <h2 id="s253"><span class="sig">§ 25.3</span>L'inférence agentique</h2>
-
 <p>Le mouvement atteint ici son point le plus délicat. ⚠ <strong>La formulation qui suit est imposée par la méthode</strong> (PRD Vol. II §8.2.4), et rendue dans sa substance :</p>
-
 <p><strong>E-23 ne nomme ni l'agentique ni les agents ; sa définition de « modèle » englobe les méthodes d'IA et d'apprentissage automatique, d'où une couverture implicite que les analystes juridiques canadiens tiennent pour acquise.</strong></p>
-
 <p>Chaque membre porte du poids ; ils se reprennent un à un.</p>
-
 <p><strong>« E-23 ne nomme ni l'agentique ni les agents »</strong> est un <strong>fait négatif vérifié</strong> — degré 1 de l'échelle R-14 du Vol. III : le texte n'emploie ni « agentique », ni « agent(s) », ni « orchestration », <strong>vérification mécanique conduite en anglais et en français sur le texte intégral</strong> (Vol. III H-04 ; Vol. II F-09, strate [B]). ⚠ <strong>Ce n'est pas un oubli qu'on pourrait combler par une lecture bienveillante ; c'est une absence, et elle est établie.</strong> <em>Toute phrase de la forme « le Bureau exige, pour l'IA agentique, que… » est fausse — non pas discutable, fausse — et la somme la proscrit.</em></p>
-
 <p><strong>« sa définition de "modèle" englobe les méthodes d'IA et d'apprentissage automatique »</strong> est le fait positif qui rend la suite possible : c'est la voie définitionnelle du § 25.2.</p>
-
 <p><strong>« d'où une couverture implicite »</strong> est la <strong>charnière</strong> — et c'est une <strong>conclusion</strong>, pas une observation.</p>
-
 <p><strong>« que les analystes juridiques canadiens tiennent pour acquise »</strong> en désigne les auteurs, et c'est ici qu'il faut être le plus rigoureux. ⚠ <strong>Ce que le socle établit, c'est que ces analystes tiennent la couverture pour acquise. Ce que le socle n'établit pas, c'est que la couverture existe.</strong> <em>L'objet vérifié est un état de l'opinion juridique canadienne, non un état du droit.</em> La nuance paraîtra scolastique ; <strong>elle sépare pourtant une note de conformité défendable d'une erreur de droit.</strong></p>
-
 <p>Une précision de méthode s'impose, et elle vaut avertissement. Dans l'économie des sources du Vol. II, les cabinets juridiques canadiens relèvent de la <strong>corroboration secondaire</strong> et <strong>ne peuvent jamais porter seuls un fait central</strong>. <em>Leur convergence n'est donc pas invoquée ici comme preuve de la couverture : elle en est l'objet même.</em> <strong>Le fait central avancé par ce chapitre est un fait sur les analystes, et il est sourcé comme tel.</strong> ⚠ <strong>Une seconde borne vient du Vol. III, et elle affaiblit l'attribution plutôt qu'elle ne la renforce</strong> : à son socle, <strong>aucune analyse n'est nommée</strong>, de sorte que l'attribution y demeure <strong>générique</strong>. <em>Elle protège d'imputer l'inférence au régulateur ; elle ne fournit pas de source à citer.</em></p>
-
 <p><strong>Reste la seconde moitié de la thèse, celle que tout responsable de la conformité posera : que fait-on de cette inférence ?</strong></p>
-
 <p><span class="auteur">Lecture de l'auteur</span> on la traite comme acquise, <strong>et l'on documente qu'on l'a fait par prudence plutôt que par obligation établie</strong>. Trois éléments convergent, dont <strong>aucun ne suffit isolément</strong>. D'abord, les <strong>cinq analyses nommées au socle du Vol. II</strong> — McCarthy Tétrault, Torys, Blakes, BLG et Sookman — aboutissent à la même lecture ; ⚠ <em>le socle n'établit pas l'indépendance de leurs analyses, et la convergence n'est de toute façon pas une preuve.</em> Ensuite, la définition atteint, selon cette lecture, les systèmes considérés, <strong>par sa construction fonctionnelle même</strong>. Enfin, et c'est le point le plus fort, <strong>le régulateur a lui-même anticipé la décision autonome</strong> : il n'est pas resté silencieux sur ce que ses assujettis allaient déployer, <strong>il a écrit qu'il l'attendait</strong>.</p>
-
 <p>À quoi s'ajoute une <strong>asymétrie de risque</strong>, et elle reste une lecture que le socle ne porte pas. <em>Se tromper en tenant la couverture pour acquise coûte le prix d'une gouvernance surdimensionnée : un inventaire trop large, des contrôles appliqués à des systèmes qui n'en relevaient pas. Se tromper en la tenant pour inexistante coûte le prix d'un parc entier de systèmes décisionnels hors périmètre de contrôle au 1ᵉʳ mai 2027, découvert par un tiers.</em> <strong>Les deux erreurs ne sont pas commensurables, et c'est cette asymétrie — non une attente du Bureau — qui fonde la recommandation.</strong></p>
-
 <div class="avert">
   <p><strong>C'est exactement le membre que la thèse citée en tête a durci.</strong> Écrire que les institutions « <strong>doivent</strong> traiter » la couverture comme acquise transforme cette asymétrie de risque en prescription. <em>La source écrit « à traiter comme acquise » et marque la recommandation comme sienne ; le corps de ce chapitre s'en tient à cette forme.</em></p>
 </div>
-
+<figure class="figure">
+  <img src="../figures/f-25-03-inference-agentique.svg" alt="Figure 25.3 — Comment un texte qui ne nomme pas l&#39;agent l&#39;atteint quand même." />
+  <figcaption><strong>Figure 25.3</strong> — Comment un texte qui ne nomme pas l'agent l'atteint quand même.</figcaption>
+</figure>
 <h2 id="s254"><span class="sig">§ 25.4</span>Relecture d'E-23 par la grille des cinq questions</h2>
-
-<p>*Section <strong>reçue du Vol. III <em>Monographie</em> §19.1, moitié E-23 seule</strong> — la moitié AMF est au <strong>ch. 27 § 27.5</strong>, qui en est le siège désigné.*</p>
-
+<p><em>Section <strong>reçue du Vol. III <em>Monographie</em> §19.1, moitié E-23 seule</strong> — la moitié AMF est au <strong>ch. 27 § 27.5</strong>, qui en est le siège désigné.</em></p>
 <div class="avert">
   <p><strong>La grille des cinq questions s'applique par mécanisme, non par produit</strong> (ch. 14 § 14.1, règle d'emploi 1) — <em>et une ligne directrice prudentielle n'est ni l'un ni l'autre.</em> <strong>La lecture conduite ici est donc inversée</strong> : elle ne demande pas ce que le texte <strong>produit</strong> comme réponse, mais <strong>ce qu'il suppose que l'institution puisse établir</strong>.</p>
 </div>
-
 <div class="avert">
   <p><strong>Conséquence tenue jusqu'au bout : aucun des trois verdicts de la grille n'est rendu ici.</strong> <em>En rendre un reviendrait à traiter une ligne directrice comme un mécanisme</em> — et le ch. 14 § 14.1 pose qu'il n'existe <strong>aucun quatrième verdict de complaisance</strong>. La cinquième règle du même siège s'applique donc partout : <strong>là où le corpus est muet, la case reste vide, et la case vide déclare l'état de la preuve, jamais une note intermédiaire.</strong></p>
 </div>
-
 <p><strong>La modalité d'abord, parce qu'elle commande tout le reste.</strong> Le Vol. III l'a vérifiée sur pièce : les <strong>douze énoncés numérotés</strong> d'E-23 sont au conditionnel, et le balayage du corps de la version anglaise en rendu HTML, consulté le 21 juillet 2026, <strong>n'y relève aucune occurrence des trois formes impératives cherchées</strong> (Vol. III F-64, <strong>[B, degré 1]</strong> — <em>fait négatif vérifié</em>). ⚠ <strong>Deux bornes voyagent avec ce décompte et ne s'en détachent pas</strong> : l'appendice n'a pas été extrait, et <strong>le volet français n'a pas été balayé par ce lot</strong>. <em>L'entrée héritée H-04 porte, elle, une vérification en deux langues sur le texte intégral ; le relevé du Vol. III la reproduit indépendamment sur le seul rendu anglais, et le présenter comme bilingue serait perdre sa borne.</em></p>
-
 <div class="avert">
   <p><strong>Une nuance borne la règle sans l'infirmer, et il serait facile de surcorriger.</strong> Le corps de la page officielle porte lui-même la formule « This principles-based guideline sets out our expectations for effective enterprise-wide model risk management » ; et le radical « requir » y apparaît, mais dans des syntagmes qui qualifient <strong>ce que le cadre interne de l'institution doit définir</strong>, non une obligation que le Bureau poserait en son propre nom. <em>« Attendu par E-23 » reste donc exact ; « E-23 ne parle jamais d'exigences » serait faux.</em> <strong>La règle vise la modalité des énoncés du régulateur, non le vocabulaire du texte.</strong></p>
 </div>
-
 <p><strong>Ce que l'institution devrait tenir.</strong> Le texte porte un inventaire d'entreprise des modèles « whose inherent risk is determined to be non-negligible to the institution » ; le cycle de vie y compte <strong>cinq composantes</strong> et vise nommément la prise de décision autonome et la reparamétrisation autonome (Vol. III F-65). <strong>Deux observations en découlent, et la seconde est souvent perdue.</strong> La première : l'inventaire est attendu <strong>à l'échelle de l'entreprise</strong>. La seconde : ⚠ <strong>il n'est pas universel</strong> — la qualification est dans la citation même, et elle porte sur les modèles <strong>dont le risque inhérent est jugé non négligeable par l'institution</strong>. <em>Un inventaire attendu sous condition de matérialité n'est pas un inventaire de tout ce qui s'exécute.</em></p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Question <em>(ch. 14 § 14.1)</em></th><th>Ce qu'E-23 suppose que l'institution puisse établir</th></tr></thead>
-  <tbody>
-    <tr><td><strong>Q-A</strong> <em>qui es-tu</em></td><td>Un inventaire d'entreprise des modèles à risque inhérent non négligeable <strong>suppose que chaque entrée désigne un objet distinct et durablement identifiable</strong> (Vol. III F-65 ; H-04) — <em>le seul appui net des cinq</em></td></tr>
-    <tr><td><strong>Q-B</strong> <em>qui t'a créé</em></td><td>Le cycle de vie s'ouvre à la <strong>conception</strong> et la documentation figure parmi les composantes attendues (Vol. III H-04, F-65) — provenance <strong>organisationnelle</strong>, non chaîne de provenance jusqu'à une autorité d'émission avec son ancrage de confiance : <strong>ce second terme est au degré 3</strong></td></tr>
-    <tr><td><strong>Q-C</strong> <em>pour qui agis-tu</em></td><td>⚠ <strong>Case vide, degré 3</strong> — le socle ne documente aucune attente portant sur une chaîne de mandat interrogeable à l'instant t</td></tr>
-    <tr><td><strong>Q-D</strong> <em>que peux-tu faire</em></td><td>Cotation graduée et triage par la matérialité (Vol. III H-04, F-65) — une <strong>classification par le risque</strong>, <strong>non des bornes de privilège opposables au point d'application</strong> : ce second terme est <strong>au degré 3</strong></td></tr>
-    <tr><td><strong>Q-E</strong> <em>qui en répond</em></td><td>⚠ <strong>Case vide, degré 3</strong> — aucune entrée ne documente une attente d'imputabilité traçable jusqu'à une personne ou une entité juridique</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Question <em>(ch. 14 § 14.1)</em></th>
+<th>Ce qu'E-23 suppose que l'institution puisse établir</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Q-A</strong> <em>qui es-tu</em></td>
+<td>Un inventaire d'entreprise des modèles à risque inhérent non négligeable <strong>suppose que chaque entrée désigne un objet distinct et durablement identifiable</strong> (Vol. III F-65 ; H-04) — <em>le seul appui net des cinq</em></td>
+</tr>
+<tr>
+<td><strong>Q-B</strong> <em>qui t'a créé</em></td>
+<td>Le cycle de vie s'ouvre à la <strong>conception</strong> et la documentation figure parmi les composantes attendues (Vol. III H-04, F-65) — provenance <strong>organisationnelle</strong>, non chaîne de provenance jusqu'à une autorité d'émission avec son ancrage de confiance : <strong>ce second terme est au degré 3</strong></td>
+</tr>
+<tr>
+<td><strong>Q-C</strong> <em>pour qui agis-tu</em></td>
+<td>⚠ <strong>Case vide, degré 3</strong> — le socle ne documente aucune attente portant sur une chaîne de mandat interrogeable à l'instant t</td>
+</tr>
+<tr>
+<td><strong>Q-D</strong> <em>que peux-tu faire</em></td>
+<td>Cotation graduée et triage par la matérialité (Vol. III H-04, F-65) — une <strong>classification par le risque</strong>, <strong>non des bornes de privilège opposables au point d'application</strong> : ce second terme est <strong>au degré 3</strong></td>
+</tr>
+<tr>
+<td><strong>Q-E</strong> <em>qui en répond</em></td>
+<td>⚠ <strong>Case vide, degré 3</strong> — aucune entrée ne documente une attente d'imputabilité traçable jusqu'à une personne ou une entité juridique</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 25.1 — Lecture <strong>inversée</strong> de la grille des cinq questions sur E-23, au 21 juillet 2026. ⚠ <strong>Aucun verdict de la grille n'est rendu</strong> : une ligne directrice n'est pas un mécanisme. <em>Une case au degré 3 ne dit pas que le cadre est muet ; elle dit que ce corpus-ci l'est.</em></p>
-
 <div class="avert">
   <p><strong>Un écart hérité se déclare ici plutôt qu'il ne se corrige.</strong> La thèse du chapitre 19 du Vol. III porte « les cadres… <strong>exigent</strong> un inventaire des modèles <strong>et une imputabilité</strong> », et <strong>sa propre pièce déclare trois écarts avec elle</strong> : le verbe « exigent » est celui que R-06 proscrit à l'affirmatif ; ⚠ <strong>aucune entrée du socle ne documente une attente d'imputabilité</strong> dans l'un ou l'autre texte — le corpus porte un inventaire, un cycle de vie, une cotation, une documentation et une surveillance continue, <strong>non une chaîne d'imputabilité</strong> ; et la datation de la publication de la ligne directrice de l'AMF n'est pas au jour près à sa source. <em>Les trois sont des écarts de la source avec elle-même, déclarés chez elle et repris ici sans être réécrits.</em> <strong>Le tableau ci-dessus les tient : Q-E est une case vide.</strong></p>
 </div>
-
 <div class="avert">
   <p><strong>Et l'échéance se dit au bon régime.</strong> Le 1ᵉʳ mai 2027 est une <strong>échéance datée</strong>, donc <strong>PROGRAMMÉE</strong> au tri prospectif — <em>à ne jamais confondre avec un jalon <strong>visé</strong></em> (R-11 du Vol. III) : <em>un texte publié à entrée en vigueur future n'est pas une cible d'organisme.</em> Le <strong>ch. 21 § 21.1</strong> est le siège des jalons visés, et il n'est pas repris ici ; ⚠ <strong>le tri prospectif lui-même — PROGRAMMÉ / PROJETÉ / SPÉCULATIF — a son siège au ch. 49 § 49.0</strong>, <em>appliqué ici et jamais re-dérivé</em>.</p>
 </div>
-
 <h2 id="s255"><span class="sig">§ 25.5</span>Le registre du ch. 15 comme pièce de conformité</h2>
-
-<p>*Section <strong>reçue du Vol. III <em>Monographie</em> §19.2</strong>. ⚠ <strong>Le registre lui-même est au ch. 15</strong>, qui en est le siège d'émission dans la somme ; <strong>le présent chapitre le lit depuis un cadre prudentiel</strong> et ne le reconstruit pas.*</p>
-
+<p><em>Section <strong>reçue du Vol. III <em>Monographie</em> §19.2</strong>. ⚠ <strong>Le registre lui-même est au ch. 15</strong>, qui en est le siège d'émission dans la somme ; <strong>le présent chapitre le lit depuis un cadre prudentiel</strong> et ne le reconstruit pas.</em></p>
 <p>Lu depuis un cadre prudentiel, <strong>le registre n'est plus un annuaire de résolution : c'est un inventaire</strong>. Reste à savoir ce qu'il faudrait qu'il porte pour valoir pièce dans un dossier — et <strong>le socle permet d'en dire moins qu'on ne l'attendrait</strong>.</p>
-
 <p>Ce que les chapitres amont établissent tient en trois lignes. <strong>Quatre dispositifs prescrivent quelque chose du registre, et trois d'entre eux déclarent eux-mêmes n'être portés par aucune norme ratifiée</strong> : un brouillon de laboratoire par son propre statut ; un <em>Internet-Draft</em> en <strong>unique version</strong>, sans flux ni adoption par un groupe de travail, <strong>expiré</strong> ; un second <em>Internet-Draft</em> de <strong>soumission individuelle</strong>. ⚠ <strong>Ce sont des travaux émergents, non des normes ratifiées</strong> (R-09 du Vol. III), et le <strong>ch. 15</strong> en porte l'inventaire daté. <strong>Des quatre, le seul dont le socle porte des champs obligatoires est le brouillon de laboratoire</strong> — deux champs, de portée et d'outillage.</p>
-
 <div class="avert">
   <p><strong>Le garde-fou, appliqué à son objet.</strong> <em>Le rapprochement entre le schéma de profil d'agent d'un registre et l'inventaire attendu par E-23 est une <strong>inférence d'auteur</strong></em> (R-07 du Vol. III, dont le siège est le §19.2 de sa source). <strong>La règle vaut pour toute correspondance entre un composant et une attente réglementaire, sans exception d'usage illustratif.</strong> Sa clause renforcée — « l'éditeur ne revendique aucune conformité, et aucune source ne documente ce lien », <strong>fait négatif établi</strong>, degré 2 — n'est attachée nominalement qu'à <strong>un seul objet</strong> au socle du Vol. III. ⚠ <strong>Pour les quatre dispositifs de registre, le socle ne documente pas de lien avec E-23 : c'est une absence de documentation dans le corpus, non un fait négatif vérifié.</strong> <em>Les deux formules ne s'échangent pas : l'une dit qu'on a cherché et consigné une réserve, l'autre dit qu'on est muet.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>Ce que la comparaison supposerait, et qui manque.</strong> Confronter les champs d'un schéma de registre aux attributs d'un inventaire prudentiel <strong>suppose de connaître les seconds</strong>. Or <strong>l'appendice d'E-23 qui porte les champs minimaux de l'inventaire n'a pas été extrait</strong> par le lot d'instruction du Vol. III — <strong>niveau [C]</strong>, source repérée et non extraite. <em>La comparaison attribut par attribut, qui est la matière propre de cette section, ne peut donc pas être conduite sur son terme décisif</em> — et <strong>le chapitre le dit plutôt que de la simuler à partir des champs qu'il connaît d'un seul côté</strong>.</p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : E-23 attend un inventaire d'entreprise des modèles à risque inhérent non négligeable et une surveillance continue visant la prise de décision autonome et la reparamétrisation autonome ; un brouillon de laboratoire prescrit deux champs obligatoires de portée et d'outillage. <strong>Ce qu'il n'établit pas</strong> : que le second réponde au premier, qu'une inscription au registre vaille pièce de conformité, ni qu'un attribut manquant d'un côté ait un correspondant de l'autre. <em>La lecture proposée est plus étroite que la thèse du chapitre</em> : <strong>un inventaire attendu à l'échelle de l'entreprise suppose que chaque entrée désigne quelque chose d'identifiable, et c'est la seule des cinq questions que le texte présuppose sans ambiguïté.</strong> ⚠ <strong>La surveillance continue, elle, appelle une fraîcheur qu'aucun régime d'états relevé ne fixe</strong> — et l'entrée qui documente ce régime est en <strong>[C]</strong> : <em>elle ne peut porter ce constat que par corroboration.</em></p>
-
 <div class="avert">
   <p><strong>Un mécanisme se qualifie par ce que sa spécification démontre</strong> (R-02 du Vol. III) : <em>un champ obligatoire dans un schéma démontre qu'une valeur doit être présente ; il ne démontre pas qu'elle soit opposable au point d'application.</em> <strong>Le ch. 14 § 14.2 a rendu ce verdict — bornes déclarées, opposabilité non établie — et le présent chapitre ne le rouvre pas.</strong></p>
 </div>
-
 <p><strong>La quatrième pièce du passeport, et son second siège.</strong> ⚠ Ce chapitre est, avec le <strong>ch. 15</strong>, l'un des deux endroits où sont traitées les <strong>attestations de conformité</strong>, quatrième pièce du passeport d'agent — <em>objet de synthèse construit par la somme, qui ne figure dans aucune spécification</em> (<strong>siège au ch. 16</strong>). ⚠ <strong>Elle n'a pas de chapitre, et le risque 17 du TOC le déclare.</strong> Ce que le versant réglementaire y ajoute est <strong>négatif, et il faut l'écrire</strong> : <strong>le socle ne documente pas qu'E-23 ou la ligne directrice de l'AMF prévoient une attestation de conformité, une certification ou un référentiel d'audit opposable — absence de documentation dans le corpus, non un fait négatif vérifié.</strong> <em>L'asymétrie entre les quatre pièces se déclare ainsi plutôt qu'elle ne se masque.</em></p>
-
 <h2 id="s256"><span class="sig">§ 25.6</span>La surveillance continue attendue par E-23, et la limite empirique de la supervision humaine</h2>
-
 <div class="avert">
   <p><strong>Formulation imposée, rappelée à l'ouverture de la section qui la met le plus à l'épreuve</strong> : on écrit « <strong>la surveillance continue attendue par E-23</strong> », jamais « exigée par E-23 » ni « E-23 impose une surveillance continue » — <em>ligne fondée sur des principes, rédigée au conditionnel</em> (PRD Vol. II §7.3 ; PRDPlan Vol. II §4.4 ; R-06 du Vol. III).</p>
 </div>
-
 <p><strong>Des cinq domaines du § 25.2, la surveillance continue est celui dont le libellé nomme le plus directement l'objet de la somme</strong> : il traite des défis propres à l'IA et à l'apprentissage automatique, et <strong>nomme la prise de décision autonome et la reparamétrisation autonome</strong>. <em>C'est la seule attente dont le texte nomme les opérations autonomes qu'il faut traiter, là où la cotation ne fait de l'autonomie qu'un facteur d'appréciation.</em></p>
-
 <p><span class="auteur">Lecture de l'auteur</span> cette attente rencontre directement la distinction posée au <strong>ch. 22 § 22.8</strong> entre <strong>adaptation</strong> — éphémère, d'instance — et <strong>évolution</strong> — persistante, du modèle de processus. <em>Une reparamétrisation autonome est, dans ce vocabulaire, une évolution ; et un système qui traite les deux par le même chemin technique rend indétectable, dans ses journaux, le moment où une exception est devenue une règle.</em> <strong>Ce que le socle établit</strong> : que la surveillance continue attendue vise nommément la reparamétrisation autonome. <strong>Ce qu'il n'établit pas</strong> : le rapprochement avec la distinction du manifeste, qui est une construction de la somme, ni qu'il faille deux régimes d'autorisation distincts.</p>
-
 <div class="avert">
   <p><strong>Un point de la relève v0.10 du TOC atterrit ici, et il est reçu.</strong> Les harnais documentés en 2026 résolvent les permissions par une chaîne ordonnée de règles à premier appariement gagnant, dont l'un des maillons est un <strong>mode d'auto-approbation globale</strong>. <strong>Le point assigné à ce chapitre est le suivant : un mode d'auto-approbation globale n'est pas un contrôle au sens de la surveillance continue attendue par E-23.</strong> ⚠ <strong>Il est reçu comme <em>cas</em>, jamais comme fondement</strong> — et <strong>il n'est pas instruit</strong> : le volet résiduel de G-1 ne l'a pas repris à la source primaire. <em>C'est un repérage, non un fait.</em> ⚠ <strong>L'arrivée est déclarée ici ; le second point de la même relève, assigné au ch. 17, n'y figure pas</strong> — l'écart est remonté au ch. 22 § 22.7 (remontée R-IV-76) et n'est pas doublé ici.</p>
 </div>
-
 <p><strong>Reste la limite que ce chapitre rencontre et ne peut pas franchir.</strong> La surveillance continue attendue suppose que <strong>quelqu'un surveille</strong>. ⚠ <strong>Le ch. 17 § 17.5 est le lieu où la somme traite du biais d'automatisation et de la supervision de façade — et il déclare son propre vide</strong> : le socle n'y porte aucune mesure de l'efficacité de la supervision humaine, la section expose la question instruisible plutôt que d'écrire une doctrine, et <strong>c'est la remontée R-IV-27 qui a ouvert la décision d'auteur D-9</strong>.</p>
-
 <div class="avert">
-  <p><strong>La conséquence pour le présent chapitre est directe, et elle est la raison de son blocage.</strong> <em>Un cadre dont la parade est un humain qui révise suppose que cet humain révise</em> ; la surveillance continue attendue par E-23 est <strong>une parade de cette famille</strong>, et <strong>la somme déclare ne rien savoir de son efficacité empirique</strong>. <strong>D-9 a ouvert un lot d'instruction et maintenu le blocage</strong> : le lot <strong>n'est pas clos</strong>, et ce chapitre a été rédigé quand même. <em>L'infraction est consignée au §&nbsp;25.9&nbsp;† ; l'arbitrage qui la suivra ne la rattrapera pas.</em></p>
+  <p><strong>La conséquence pour le présent chapitre est directe, et elle est la raison de son blocage.</strong> <em>Un cadre dont la parade est un humain qui révise suppose que cet humain révise</em> ; la surveillance continue attendue par E-23 est <strong>une parade de cette famille</strong>, et <strong>la somme déclare ne rien savoir de son efficacité empirique</strong>. <strong>D-9 a ouvert un lot d'instruction et maintenu le blocage</strong> : le lot <strong>n'est pas clos</strong>, et ce chapitre a été rédigé quand même. <em>L'infraction est consignée au § 25.9 ; l'arbitrage qui la suivra ne la rattrapera pas.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>Et il faut redire ici ce que le § 25.2 a posé</strong> : <strong>la « supervision humaine » n'est pas l'une des cinq attentes au socle.</strong> <em>Le chapitre parle donc de la limite empirique d'une parade que le texte n'attend pas nommément, et qui n'en est pas moins celle sur laquelle toute mise en œuvre de la surveillance continue reposera.</em> <strong>Le ch. 27 § 27.3 rencontrera la même limite du côté québécois, où elle porte sur une obligation légale et non sur une attente.</strong></p>
 </div>
-
 <h2 id="s257"><span class="sig">§ 25.7</span>Ce que les cadres n'exigent pas — ne pas leur faire dire plus</h2>
-
-<p>*Section <strong>reçue du Vol. III <em>Monographie</em> §19.3</strong>.*</p>
-
+<p><em>Section <strong>reçue du Vol. III <em>Monographie</em> §19.3</strong>.</em></p>
 <div class="avert">
   <p><strong>Le titre de cette section, cité du plan, emploie au négatif le verbe que R-06 du Vol. III proscrit à l'affirmatif.</strong> <em>La section existe précisément pour empêcher le glissement inverse : dire d'un cadre qu'il attend ce qu'il attend, et rien de plus.</em> <strong>Trois degrés d'absence structurent ce qui suit, et les confondre est la faute que R-14 proscrit.</strong></p>
 </div>
-
-<p><strong>Premier degré — fait négatif VÉRIFIÉ, et il est borné.</strong> Les douze énoncés numérotés d'E-23 sont au conditionnel ; le balayage du corps de la version anglaise n'y relève <strong>aucune des trois formes impératives cherchées</strong> (Vol. III F-64). Sur un second axe, la vérification mécanique héritée, conduite <strong>en anglais et en français</strong> sur le texte intégral, donne : « agentique » = 0, « agent(s) » = 0, « orchestration » = 0, « autonom\* » = 8, et ⚠ <strong>« fiche de modèle » / « model card » = 0 occurrence</strong>. <em>On écrit donc « <strong>documentation de modèle</strong> » et « <strong>inventaire</strong> », jamais « fiche de modèle ».</em></p>
-
+<p><strong>Premier degré — fait négatif VÉRIFIÉ, et il est borné.</strong> Les douze énoncés numérotés d'E-23 sont au conditionnel ; le balayage du corps de la version anglaise n'y relève <strong>aucune des trois formes impératives cherchées</strong> (Vol. III F-64). Sur un second axe, la vérification mécanique héritée, conduite <strong>en anglais et en français</strong> sur le texte intégral, donne : « agentique » = 0, « agent(s) » = 0, « orchestration » = 0, « autonom* » = 8, et ⚠ <strong>« fiche de modèle » / « model card » = 0 occurrence</strong>. <em>On écrit donc « <strong>documentation de modèle</strong> » et « <strong>inventaire</strong> », jamais « fiche de modèle ».</em></p>
 <div class="avert">
   <p><strong>Ce que ces décomptes autorisent s'arrête là où ils s'arrêtent.</strong> De ce qu'un texte <strong>ne nomme pas</strong> l'agent, <strong>on ne conclut pas qu'il ne le couvre pas</strong> : <em>ce que le balayage établit est l'absence de quatre chaînes dans ce texte-là, à cette date-là.</em></p>
 </div>
-
-<p><strong>Deuxième degré — comment un commentaire d'éditeur devient une disposition.</strong> L'expression « transition period » <strong>ne figure pas</strong> dans le corps de la ligne directrice tel que rendu en HTML ; elle est portée par le <strong>document d'information du Bureau du 11 septembre 2025</strong> (Vol. III F-66, <strong>[B, degré 1]</strong>). ⚠ <strong>Le point est tranché : il s'agit d'un délai d'entrée en vigueur commenté par l'éditeur, non d'une disposition transitoire du texte.</strong> <em>Une institution qui inscrirait à son dossier « E-23 prévoit une période de transition de dix-huit mois » citerait un communiqué en croyant citer une norme.</em> ⚠ <strong>La borne du relevé demeure</strong> : il porte sur le rendu HTML anglais de cette page, ni sur le document en format d'impression, ni sur la version française.</p>
-
-<p><strong>Troisième degré — ce dont ce corpus est muet.</strong> ⚠ <strong>Le socle ne documente pas qu'E-23 prescrive un registre, un annuaire ou une identité technique : c'est une absence de documentation dans le corpus, non un fait négatif vérifié.</strong> ⚠ <strong>Il ne documente pas davantage que la ligne directrice de l'AMF nomme les agents ou l'agentique</strong> — même degré, même régime, et <strong>le ch. 27 en est le siège</strong>.</p>
-
+<p><strong>Deuxième degré — comment un commentaire d'éditeur devient une disposition.</strong> L'expression « transition period » <strong>ne figure pas</strong> dans le corps de la ligne directrice tel que rendu en HTML ; elle est portée par le <strong>document d'information du Bureau du 11 septembre 2025</strong> (Vol. III F-66, <strong>[B, degré 1]</strong>). ⚠ <strong>Le point est tranché : il s'agit d'un délai d'entrée en vigueur commenté par l'éditeur, non d'une disposition transitoire du texte.</strong> <em>Une institution qui inscrirait à son dossier « E-23 prévoit une période de transition de dix-huit mois » citerait un communiqué en croyant citer une norme.</em> ⚠ <strong>La borne du relevé demeure</strong> : il porte sur le rendu HTML anglais de cette page, non sur le document en format d'impression, ni sur la version française.</p>
+<p><strong>Troisième degré — ce sur quoi ce corpus est muet.</strong> ⚠ <strong>Le socle ne documente pas qu'E-23 prescrive un registre, un annuaire ou une identité technique : c'est une absence de documentation dans le corpus, non un fait négatif vérifié.</strong> ⚠ <strong>Il ne documente pas davantage que la ligne directrice de l'AMF nomme les agents ou l'agentique</strong> — même degré, même régime, et <strong>le ch. 27 en est le siège</strong>.</p>
 <p><em>Ces trois degrés sont ce que la thèse du chapitre a de plus fragile et de plus honnête à la fois : l'identité agentique est présentée comme le <strong>prérequis technique</strong> d'obligations qui ne la mentionnent pas — <strong>une inférence, opposable comme telle et pas autrement.</strong></em></p>
-
 <h2 id="s258"><span class="sig">§ 25.8</span>Le rapport BSIF-ACFC : une trajectoire déclarée et une causalité indéterminable</h2>
-
 <p>Moins d'un an avant la publication de la version finale d'E-23 — le <strong>24 septembre 2024</strong>, onze mois et dix-huit jours plus tôt —, le Bureau et l'Agence de la consommation en matière financière du Canada publiaient un rapport conjoint dont le socle retient <strong>deux apports</strong> (Vol. II F-10, <strong>[A]</strong>). <em>Ils sont de nature très différente, et le second importe davantage.</em></p>
-
 <p><strong>Le premier est une trajectoire d'adoption.</strong> ⚠ <strong>Projection, attribuée à ses auteurs comme la méthode l'impose</strong> (PRD Vol. II §8.2.6) : selon ce rapport conjoint, l'adoption de l'intelligence artificielle par les institutions financières fédérales serait passée d'environ <strong>30 % en 2019</strong> à environ <strong>50 % en 2023</strong>, et <strong>le Bureau et l'Agence projettent une adoption d'environ 70 % d'ici 2026 — une projection issue d'une enquête auto-déclarée, non un taux observé.</strong></p>
-
 <p><strong>L'arithmétique mérite d'être posée.</strong> De 2019 à 2023, quatre ans, la progression déclarée est de vingt points — soit cinq points par an. De 2023 à 2026, trois ans, la progression <em>projetée</em> est également de vingt points — soit environ <strong>six virgule sept points par an</strong>. ⚠ <em>La projection ne prolonge donc pas la tendance déclarée : elle l'accélère d'un tiers.</em> C'est une observation arithmétique sur les chiffres du rapport, <strong>non un jugement sur sa méthode</strong> ; mais elle indique où porterait le doute d'un lecteur exigeant.</p>
-
 <div class="avert">
   <p><strong>Une seconde observation s'impose : les trois chiffres proviennent d'une enquête auto-déclarée</strong> — ils mesurent ce que des institutions ont déclaré d'elles-mêmes, <strong>sans définition commune extraite au socle de ce qui compte comme « adoption de l'IA »</strong>. <em>Le ch. 7 formulait le même avertissement à propos des métriques d'adoption des protocoles ; il vaut ici sans changement.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>La projection est-elle advenue ? La question a été portée à la source, et elle reste ouverte.</strong> L'horizon de la projection — l'année 2026 — est le présent de ce chapitre, et le <strong>volet de faits du résiduel de G-1</strong>, exécuté le 28 juillet 2026, a repris l'entrée à sa source primaire (<code>S-010</code>, ☑ inchangée pour ses trois chiffres et son renvoi à E-23). ⚠ <strong>Ce que la reprise établit est un manque, et le manque porte son degré</strong> : <strong>aucune mesure de réalisation de la projection 2026 n'est portée par la source</strong> alors que l'échéance court — <strong>absence de documentation, degré 3 de l'échelle R-14 du Vol. III</strong>. <em>On n'écrit donc ni que le seuil de 70 % est atteint, ni qu'il ne l'est pas ; aucune inférence n'est proposée ici, et notamment aucune extrapolation de la trajectoire déclarée.</em></p>
 </div>
-
 <p><strong>Le second apport est d'une tout autre portée, et il justifie la place de ce chapitre en tête du mouvement.</strong> Le rapport conjoint caractérise un <strong>risque de modèle accru propre à l'IA</strong>, et il le fait en deux temps : un très grand nombre de <strong>paramètres appris de façon autonome</strong> ; des <strong>relations causales entre entrées et sorties souvent indéterminables</strong>. ⚠ <strong>Le rapport rattache explicitement ce constat au cadre E-23.</strong></p>
-
 <div class="avert">
   <p><strong>Ce membre de phrase est le plus lourd de conséquences du chapitre.</strong> Que les relations causales soient <em>souvent indéterminables</em> n'est pas une remarque sur la difficulté de l'explicabilité : <strong>c'est un constat, posé par le régulateur prudentiel canadien et par l'agence de protection des consommateurs, sur les limites de ce qu'on peut extraire du modèle lui-même.</strong></p>
 </div>
-
-<p><span class="auteur">Lecture de l'auteur</span> si l'on ne peut pas, en général, déterminer par quel chemin causal une entrée a produit une sortie, alors <strong>l'explication d'une décision ne peut pas être obtenue en interrogeant le modèle <em>a posteriori</strong></em>. Elle doit être <strong>produite ailleurs</strong> — par l'architecture qui entoure le modèle, qui enregistre ce qui lui a été soumis, quelles bornes lui étaient imposées, quel chemin d'exécution a été suivi et quels contrôles se sont appliqués. <strong>Ce que le socle établit</strong> : le constat d'indéterminabilité. <strong>Ce qu'il n'établit pas</strong> : cette conséquence d'architecture. ⚠ <em>Mais c'est cette inférence qui fait le pont du mouvement vers le <strong>ch. 29</strong>, qui en fait son pivot — et elle croise l'obligation d'explication de l'art. 12.1, dont le <strong>ch. 27</strong> porte le texte et les réserves.</em></p>
-
+<p><span class="auteur">Lecture de l'auteur</span> si l'on ne peut pas, en général, déterminer par quel chemin causal une entrée a produit une sortie, alors <strong>l'explication d'une décision ne peut pas être obtenue en interrogeant le modèle <em>a posteriori</em></strong>. Elle doit être <strong>produite ailleurs</strong> — par l'architecture qui entoure le modèle, qui enregistre ce qui lui a été soumis, quelles bornes lui étaient imposées, quel chemin d'exécution a été suivi et quels contrôles se sont appliqués. <strong>Ce que le socle établit</strong> : le constat d'indéterminabilité. <strong>Ce qu'il n'établit pas</strong> : cette conséquence d'architecture. ⚠ <em>Mais c'est cette inférence qui fait le pont du mouvement vers le <strong>ch. 29</strong>, qui en fait son pivot — et elle croise l'obligation d'explication de l'art. 12.1, dont le <strong>ch. 27</strong> porte le texte et les réserves.</em></p>
 <p><strong>Reste enfin ce que la chronologie révèle.</strong> Le rapport du 24 septembre 2024 rattachait <strong>déjà</strong> le risque de modèle propre à l'IA au cadre E-23 ; la version finale d'E-23, publiée moins d'un an plus tard, inclut explicitement les méthodes d'IA dans sa définition de « modèle » <strong>et anticipe la décision autonome</strong>. <em>Les deux textes se répondent.</em></p>
-
 <p><span class="auteur">Lecture de l'auteur</span> cette continuité <strong>renforce la lecture des analystes</strong> du § 25.3 : le Bureau n'a pas rencontré l'IA par accident au détour d'une définition générale, <strong>il l'avait identifiée comme un facteur de risque de modèle et l'avait explicitement routée vers E-23 un an auparavant</strong>. <strong>Ce que le socle établit</strong> : les deux faits et le lien du rapport vers E-23. <strong>Ce qu'il n'établit pas</strong> : l'intention que cette lecture prête au régulateur.</p>
-
 <h3>Synthèse : ce que le chapitre lègue à la somme</h3>
-
 <p><em>Section de sortie sans homologue direct dans la source — construction d'éditeur.</em></p>
-
-<ol class="numeros">
-  <li><strong>Le calendrier, mesuré une fois.</strong> Dix-neuf mois et vingt jours de préavis ; <strong>neuf mois et quatre jours restants au gel de la somme</strong> ; <strong>entrée en vigueur simultanée avec le régime québécois</strong>. Le <strong>ch. 27 § 27.1</strong> le reprend du côté de l'AMF, le <strong>ch. 29</strong> en tire l'ordre de priorité.</li>
-  <li><strong>La voie définitionnelle, et sa proscription.</strong> E-23 attrape par ce qu'un artefact <strong>fait</strong>, non par son nom. <em>Toute phrase de la forme « le Bureau exige, pour l'IA agentique » est fausse</em> — le <strong>ch. 29 § 29.1</strong> l'écrit à sa table de traduction, et <strong>aucun chapitre aval ne la reformule autrement</strong>.</li>
-  <li><strong>Les cinq attentes au socle, et la sixième qui n'y est pas.</strong> Cycle de vie, inventaire, cotation, documentation, surveillance continue — ⚠ <strong>la « supervision humaine » n'en est pas une.</strong> Posé ici une seule fois ; le <strong>ch. 29</strong> dérive cinq contraintes de ces cinq attentes et <strong>pas une sixième</strong>.</li>
-  <li><strong>La lecture inversée de la grille, et son résultat.</strong> <em>Un seul appui net sur cinq questions</em> — Q-A, par l'inventaire. Le <strong>ch. 27 § 27.5</strong> conduit la même lecture sur l'AMF et <strong>n'y trouve rien de plus</strong>.</li>
-  <li><strong>L'indéterminabilité causale, et ce qu'elle déplace.</strong> L'explication ne s'extrait pas du modèle : elle se produit <strong>autour</strong> de lui. C'est la prémisse que le <strong>ch. 29</strong> convertit en contrainte, et que le <strong>ch. 31 § 31.3</strong> rencontre du côté de l'auditabilité financière.</li>
-  <li><strong>Un blocage déclaré plutôt que contourné.</strong> La surveillance continue attendue repose sur une parade humaine <strong>dont la somme déclare ne rien savoir de l'efficacité</strong> (ch. 17 § 17.5, D-9). <em>Le chapitre l'écrit à son § 25.6 au lieu de la présumer efficace.</em></li>
+<ol type="1">
+<li><strong>Le calendrier, mesuré une fois.</strong> Dix-neuf mois et vingt jours de préavis ; <strong>neuf mois et quatre jours restants au gel de la somme</strong> ; <strong>entrée en vigueur simultanée avec le régime québécois</strong>. Le <strong>ch. 27 § 27.1</strong> le reprend du côté de l'AMF, le <strong>ch. 29</strong> en tire l'ordre de priorité.</li>
+<li><strong>La voie définitionnelle, et sa proscription.</strong> E-23 attrape par ce qu'un artefact <strong>fait</strong>, non par son nom. <em>Toute phrase de la forme « le Bureau exige, pour l'IA agentique » est fausse</em> — le <strong>ch. 29 § 29.1</strong> l'écrit à sa table de traduction, et <strong>aucun chapitre aval ne la reformule autrement</strong>.</li>
+<li><strong>Les cinq attentes au socle, et la sixième qui n'y est pas.</strong> Cycle de vie, inventaire, cotation, documentation, surveillance continue — ⚠ <strong>la « supervision humaine » n'en est pas une.</strong> Posé ici une seule fois ; le <strong>ch. 29</strong> dérive cinq contraintes de ces cinq attentes et <strong>pas une sixième</strong>.</li>
+<li><strong>La lecture inversée de la grille, et son résultat.</strong> <em>Un seul appui net sur cinq questions</em> — Q-A, par l'inventaire. Le <strong>ch. 27 § 27.5</strong> conduit la même lecture sur l'AMF et <strong>n'y trouve rien de plus</strong>.</li>
+<li><strong>L'indéterminabilité causale, et ce qu'elle déplace.</strong> L'explication ne s'extrait pas du modèle : elle se produit <strong>autour</strong> de lui. C'est la prémisse que le <strong>ch. 29</strong> convertit en contrainte, et que le <strong>ch. 31 § 31.3</strong> rencontre du côté de l'auditabilité financière.</li>
+<li><strong>Un blocage déclaré plutôt que contourné.</strong> La surveillance continue attendue repose sur une parade humaine <strong>dont la somme déclare ne rien savoir de l'efficacité</strong> (ch. 17 § 17.5, D-9). <em>Le chapitre l'écrit à son § 25.6 au lieu de la présumer efficace.</em></li>
 </ol>
-
 <div class="avert">
   <p><strong>Ce que le chapitre ne lègue pas.</strong> Il ne lègue <strong>aucune attente du Bureau pour l'IA agentique</strong> : la couverture est implicite, par la définition de modèle, et son caractère acquis est une <strong>inférence d'analystes</strong> que la somme rapporte <strong>sans l'endosser comme état du droit</strong>. Il ne lègue <strong>aucun taux d'adoption</strong> : les trois chiffres du § 25.8 viennent tous d'une enquête auto-déclarée, et le seul qui vise 2026 est une <strong>projection dont la réalisation n'est documentée nulle part au socle</strong>. Il ne lègue <strong>aucune comparaison des attributs d'inventaire</strong> : l'appendice qui les porte n'a pas été extrait. Et il ne lègue <strong>aucune mesure de l'efficacité de la supervision humaine</strong>.</p>
 </div>
+<hr />
 
 <footer class="pied">
   <p><strong>Vol. IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em></strong> · Livre III, chapitre 25. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau, M.Sc. IT.</p>
-
   <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme (gel unique : 27 juillet 2026).</p>
-  <p><strong>†</strong> Renvoi à une section retirée de ce rendu — la note de statut, hors corps — conservée au fichier Markdown jumeau.</p>
 </footer>
 
 </main>

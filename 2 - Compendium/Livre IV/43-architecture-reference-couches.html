@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chapitre 43 — L&#x27;architecture de référence unifiée par couches · Interopérabilité et Orchestration en Entreprise Agentique</title>
-<meta name="description" content="Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d'agents et synthèse architecturale. Quatrième mouvement — composer (ch. 42-46). Deuxième chapitre du mouvement : là où le ch. 42 a constaté cinq vides, celui-ci construit ce qui les comble — et doit dire d'abord à">
+<meta name="description" content="Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d&#x27;agents et synthèse architecturale. Quatrième mouvement — composer (ch. 42-46). Deuxième chapitre du mouvement : **là où le ch. 42 a constaté cinq vides, celui-ci construit ce qui les comble — et doit dire d&#x27;abord à quel titre.**">
 <meta name="author" content="André-Guy Bruneau, M.Sc. IT">
 <meta name="color-scheme" content="dark">
 <style>
@@ -443,6 +443,17 @@ tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
 tbody td:first-child { color: var(--texte); font-weight: 600; }
 .legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
 
+/* -------------------------------------------------------------- figures */
+/* Les SVG du volume sont dessinés pour le PDF, donc sur fond clair, et ils
+   portent ce fond eux-mêmes — sans quoi il faudrait maintenir deux variantes
+   de chaque figure. Sur ce thème sombre, ils se posent donc comme un carton ;
+   le padding empêche le fond de la figure de toucher le bord du cadre. */
+.figure { margin: 2.1rem 0 1.9rem; }
+.figure img { display: block; width: 100%; height: auto; border-radius: 7px;
+              border: 1px solid var(--trait); background: #fdfbf9; padding: 0.6rem; }
+.figure figcaption { font-size: 0.8rem; font-style: italic; color: var(--texte-faible);
+                     margin-top: 0.65rem; padding-left: 0.15rem; }
+
 /* --------------------------------------------------------------- listes */
 ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
 ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
@@ -533,16 +544,14 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <ol>
     <li><a href="#s430"><span class="num">43.0</span>Ouverture : à quel titre une architecture de référence se construit</a></li>
     <li><a href="#s431"><span class="num">43.1</span>Les couches et leurs responsabilités</a></li>
-    <li><a href="#s432"><span class="num">43.2</span>Le positionnement des options d&#x27;orchestration par cas d&#x27;usage</a></li>
+    <li><a href="#s432"><span class="num">43.2</span>Le positionnement des options d'orchestration par cas d'usage</a></li>
     <li><a href="#s433"><span class="num">43.3</span>Les points de contrôle obligatoires</a></li>
-    <li><a href="#s434"><span class="num">43.4</span>Le plan de contrôle d&#x27;agents comme architecture de référence</a></li>
-    <li><a href="#s435"><span class="num">43.5</span>Le modèle de maturité de l&#x27;entreprise agentique</a></li>
-    <li><a href="#s436"><span class="num">43.6</span>Alternatives, variantes et frontières d&#x27;abstraction</a></li>
-
+    <li><a href="#s434"><span class="num">43.4</span>Le plan de contrôle d'agents comme architecture de référence</a></li>
+    <li><a href="#s435"><span class="num">43.5</span>Le modèle de maturité de l'entreprise agentique</a></li>
+    <li><a href="#s436"><span class="num">43.6</span>Alternatives, variantes et frontières d'abstraction</a></li>
   </ol>
   <div class="nav__pied">
     Vol.&nbsp;IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em><br>
-
     <a href="43-architecture-reference-couches.md">Version Markdown</a>
   </div>
 </nav>
@@ -553,273 +562,359 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 <header class="titre">
   <div class="titre__fil">Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d&#x27;agents et synthèse architecturale</div>
   <h1><span class="chap">Chapitre 43</span>L&#x27;architecture de référence unifiée par couches</h1>
-  <p class="titre__situe">Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d'agents et synthèse architecturale. Quatrième mouvement — composer (ch. 42-46). Deuxième chapitre du mouvement : <strong>là où le ch. 42 a constaté cinq vides, celui-ci construit ce qui les comble — et doit dire d'abord à quel titre.</strong></p>
+  <p class="titre__situe">Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d'agents et synthèse architecturale. Quatrième mouvement — composer (ch. 42-46). Deuxième chapitre du mouvement : **là où le ch. 42 a constaté cinq vides, celui-ci construit ce qui les comble — et doit dire d'abord à quel titre.**</p>
 </header>
 
+<!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
+     Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
+     que `build/assemble.py` pour le PDF et que `PRD/decompte.sh` pour la volumétrie. L'appareil de
+     gouvernance vit au .md jumeau, qui reste la seule source, et `build/verifier-piece.py` refuse
+     un rendu qui le recopierait. -->
+
 <h2 id="s430"><span class="sig">§ 43.0</span>Ouverture : à quel titre une architecture de référence se construit</h2>
-
 <p><strong>Le ch. 42 s'achève sur un constat négatif</strong> : quinze croisements, aucun lien documenté, <strong>cinq zones où l'architecture doit compenser</strong>. <strong>Ce chapitre construit — et doit dire d'abord à quel titre.</strong></p>
-
 <div class="avert">
   <p><strong>Une architecture de référence n'est pas une déduction du socle.</strong> <em>C'est un ordonnancement : elle range ce que le socle documente, elle nomme ce qu'il ne documente pas, et elle pose entre les deux des liens qui sont d'un auteur.</em> D'où, comme au ch. 29, <strong>plus d'inférences marquées que dans les chapitres de fait</strong>.</p>
 </div>
-
 <div class="avert">
   <p><strong>Elle est en outre neutre : aucun composant d'éditeur n'y est prescrit.</strong> L'instanciation sur un portefeuille réel — retenu comme <strong>cas documenté par sources primaires et non comme recommandation</strong> — est l'objet du <strong>ch. 45</strong>.</p>
 </div>
-
 <div class="avert">
   <p><strong>Et le socle ne la porte pas davantage du côté du Vol. III.</strong> Celui-ci pose ses trois étages <strong>au titre de son cadrage</strong> et déclare : <em>« le socle ne documente pas d'architecture composant ces trois étages — absence de documentation, non fait négatif vérifié »</em> (degré 3). <strong>Ce que les socles portent, ce sont les objets que les couches rangent et les bornes de chacun</strong> ; <em>le découpage, l'ordre des couches et la nature contractuelle de leurs relations sont d'un auteur.</em> ⚠ <strong>Le lecteur peut refuser le découpage sans qu'aucun des faits cités ne tombe.</strong></p>
 </div>
-
 <p><strong>Le chapitre se lit en six temps</strong> : les couches et ce qu'elles portent (§ 43.1) ; où placer la main qui commande (§ 43.2) ; les cinq points où l'architecture doit produire quelque chose (§ 43.3) ; le patron qui les unifie (§ 43.4) ; la trajectoire par paliers (§ 43.5) ; et ce qui pourrait être fait autrement (§ 43.6).</p>
-
 <h2 id="s431"><span class="sig">§ 43.1</span>Les couches et leurs responsabilités</h2>
-
 <h3>43.1.1 Six couches, et la fusion qui les produit</h3>
-
 <div class="avert">
   <p><strong>La somme compose deux découpages, et elle le déclare.</strong> Le Vol. II pose <strong>quatre couches</strong> — protocoles, identité et registre, orchestration, gouvernance ; le Vol. III pose <strong>trois étages</strong> — <strong>fabrique d'identité</strong>, <strong>maillage</strong>, <strong>AgentOps</strong> — et leurs contrats mutuels. <strong>Les deux se recouvrent partiellement</strong> : <em>la fabrique d'identité du Vol. III est la couche « identité et registre » du Vol. II vue par son producteur ; le maillage et l'AgentOps n'ont pas d'équivalent chez lui.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>SIÈGE DE LA COLLISION « FABRIQUE » POUR TOUTE LA SOMME (décision 12c du TOC).</strong> La <strong>fabrique d'identité</strong> de ce paragraphe est <strong>l'étage qui émet l'identité</strong> ; la <strong>fabrique d'agents</strong> du <strong>ch. 41</strong> est <strong>le plan qui produit l'agent</strong>. <em>Les deux sont des étages distincts de la même architecture, et le mot ne les désigne jamais indistinctement.</em> ⚠ <strong>Ni l'une ni l'autre n'est le patron <em>factory</em> du catalogue de patrons, ni un titre d'éditeur</strong> — le <strong>ch. 41 § 41.1</strong> porte la table des quatre emplois, <strong>que ce chapitre ne reconstruit pas</strong>.</p>
 </div>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Couche</th><th>Ce que les socles documentent</th><th>Responsabilité</th><th>Ce qu'elle ne porte pas</th></tr></thead>
-  <tbody>
-    <tr><td><strong>Protocoles</strong></td><td>accès aux outils, données typées, <strong>cadre d'autorisation</strong> (Vol. II <strong>F-01</strong>) ; délégation de pair à pair, cartes signées (Vol. II <strong>F-02</strong>) ; complémentarité <strong>déclarée par un projet</strong>, et <em>un critère de découpage n'est pas une contrainte</em> (Vol. II <strong>F-16</strong>) ; protocole de transaction, <strong>anatomie non portée</strong> par ce socle (Vol. II <strong>F-04</strong>)</td><td><strong>format et habilitation à la frontière</strong> : <em>qui parle, par quel format</em></td><td>le processus, la trace d'instance, la décision, l'humain (<strong>ch. 42</strong>)</td></tr>
-    <tr><td><strong>Identité et registre</strong> — <em>fabrique d'identité</em></td><td>identités d'agents et gabarits d'identité sur des protocoles d'autorisation et d'authentification, <strong>dont les flux étendent ces RFC plutôt qu'ils ne s'y conforment</strong> (Vol. II <strong>F-07</strong>) ; spécification de registre, <strong>brouillon</strong> : profil ancré, énumération d'outils invocables, bornes de privilège (Vol. II <strong>F-08</strong> ; Vol. III <strong>F-40</strong>, <strong>H-03</strong>)</td><td><strong>nommer l'agent</strong> ; <strong>borner ses outils et ses droits hors de lui</strong></td><td>la conformité (statuts pré-normatifs) ; ⚠ <strong>l'inventaire attendu par E-23, qui est un objet distinct</strong></td></tr>
-    <tr><td><strong>Orchestration</strong></td><td>taxonomie OO1-OO4, cinq propriétés, sept critères (Vol. II <strong>F-37</strong>, ⚠ <strong>préimpression non révisée</strong>) ; réalisations : flux à base de graphes, points de contrôle, humain dans la boucle (Vol. II <strong>F-15</strong>)</td><td><strong>tenir l'enchaînement ; produire la trace ; arrêter pour l'humain</strong></td><td>la qualification juridique du processus ; le contenu des cadres</td></tr>
-    <tr><td><strong>Maillage</strong></td><td>syntaxe d'autorisation par arête, <strong>pré-version auto-déclarée</strong> (Vol. III <strong>F-71</strong>, <strong>F-70</strong>) ; <strong>écart de couverture entre deux plans d'identité déclaré par l'éditeur</strong> (Vol. III <strong>F-35</strong>)</td><td><strong>appliquer la politique à l'arête</strong> — <strong>siège ch. 37</strong></td><td>l'émission ; ⚠ <strong>la couverture du graphe, qui n'est établie par aucune entrée</strong></td></tr>
-    <tr><td><strong>Exploitation</strong> — <em>AgentOps</em></td><td>seize métriques <strong>au grain de l'opération</strong>, aucune de parc ; <strong>dimension d'agent qui est un nom, pas une identité</strong> (Vol. III <strong>F-90</strong> à <strong>F-96</strong>) — ⚠ <em>ces deux énoncés-là relèvent de <strong>F-96</strong> et <strong>F-92</strong>, <strong>exclus du socle consolidé</strong> pour dette de vote adversarial : <strong>non réfutés, non éprouvés</strong></em></td><td><strong>voir, boucler, mesurer</strong> — <strong>siège ch. 38-40</strong></td><td>⚠ <strong>la clé de jointure entre trace et mandat</strong>, lacune ouverte</td></tr>
-    <tr><td><strong>Gouvernance</strong></td><td>E-23 : <strong>cinq domaines d'attentes opératoires</strong> (Vol. II <strong>F-09</strong>) ; ligne directrice de l'AMF : <strong>le calendrier seul</strong> (Vol. II <strong>F-25</strong>) ; avis 11-348 (<strong>F-26</strong>) ; article 12.1 (<strong>F-27</strong>)</td><td><strong>inventaire, cotation, cycle de vie, documentation, surveillance</strong></td><td>⚠ <strong>ce que l'AMF attend — non porté par le socle</strong></td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Couche</th>
+<th>Ce que les socles documentent</th>
+<th>Responsabilité</th>
+<th>Ce qu'elle ne porte pas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Protocoles</strong></td>
+<td>accès aux outils, données typées, <strong>cadre d'autorisation</strong> (Vol. II <strong>F-01</strong>) ; délégation de pair à pair, cartes signées (Vol. II <strong>F-02</strong>) ; complémentarité <strong>déclarée par un projet</strong>, et <em>un critère de découpage n'est pas une contrainte</em> (Vol. II <strong>F-16</strong>) ; protocole de transaction, <strong>anatomie non portée</strong> par ce socle (Vol. II <strong>F-04</strong>)</td>
+<td><strong>format et habilitation à la frontière</strong> : <em>qui parle, par quel format</em></td>
+<td>le processus, la trace d'instance, la décision, l'humain (<strong>ch. 42</strong>)</td>
+</tr>
+<tr>
+<td><strong>Identité et registre</strong> — <em>fabrique d'identité</em></td>
+<td>identités d'agents et gabarits d'identité sur des protocoles d'autorisation et d'authentification, <strong>dont les flux étendent ces RFC plutôt qu'ils ne s'y conforment</strong> (Vol. II <strong>F-07</strong>) ; spécification de registre, <strong>brouillon</strong> : profil ancré, énumération d'outils invocables, bornes de privilège (Vol. II <strong>F-08</strong> ; Vol. III <strong>F-40</strong>, <strong>H-03</strong>)</td>
+<td><strong>nommer l'agent</strong> ; <strong>borner ses outils et ses droits hors de lui</strong></td>
+<td>la conformité (statuts pré-normatifs) ; ⚠ <strong>l'inventaire attendu par E-23, qui est un objet distinct</strong></td>
+</tr>
+<tr>
+<td><strong>Orchestration</strong></td>
+<td>taxonomie OO1-OO4, cinq propriétés, sept critères (Vol. II <strong>F-37</strong>, ⚠ <strong>préimpression non révisée</strong>) ; réalisations : flux à base de graphes, points de contrôle, humain dans la boucle (Vol. II <strong>F-15</strong>)</td>
+<td><strong>tenir l'enchaînement ; produire la trace ; arrêter pour l'humain</strong></td>
+<td>la qualification juridique du processus ; le contenu des cadres</td>
+</tr>
+<tr>
+<td><strong>Maillage</strong></td>
+<td>syntaxe d'autorisation par arête, <strong>pré-version auto-déclarée</strong> (Vol. III <strong>F-71</strong>, <strong>F-70</strong>) ; <strong>écart de couverture entre deux plans d'identité déclaré par l'éditeur</strong> (Vol. III <strong>F-35</strong>)</td>
+<td><strong>appliquer la politique à l'arête</strong> — <strong>siège ch. 37</strong></td>
+<td>l'émission ; ⚠ <strong>la couverture du graphe, qui n'est établie par aucune entrée</strong></td>
+</tr>
+<tr>
+<td><strong>Exploitation</strong> — <em>AgentOps</em></td>
+<td>seize métriques <strong>au grain de l'opération</strong>, aucune de parc ; <strong>dimension d'agent qui est un nom, pas une identité</strong> (Vol. III <strong>F-90</strong> à <strong>F-96</strong>) — ⚠ <em>ces deux énoncés-là relèvent de <strong>F-96</strong> et <strong>F-92</strong>, <strong>exclus du socle consolidé</strong> pour dette de vote adversarial : <strong>non réfutés, non éprouvés</strong></em></td>
+<td><strong>voir, boucler, mesurer</strong> — <strong>siège ch. 38-40</strong></td>
+<td>⚠ <strong>la clé de jointure entre trace et mandat</strong>, lacune ouverte</td>
+</tr>
+<tr>
+<td><strong>Gouvernance</strong></td>
+<td>E-23 : <strong>cinq domaines d'attentes opératoires</strong> (Vol. II <strong>F-09</strong>) ; ligne directrice de l'AMF : <strong>le calendrier seul</strong> (Vol. II <strong>F-25</strong>) ; avis 11-348 (<strong>F-26</strong>) ; article 12.1 (<strong>F-27</strong>)</td>
+<td><strong>inventaire, cotation, cycle de vie, documentation, surveillance</strong></td>
+<td>⚠ <strong>ce que l'AMF attend — non porté par le socle</strong></td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 43.1 — Les six couches de l'architecture de référence unifiée. ⚠ <strong>Le découpage est imposé par le plan ; sa vertu est d'obliger à dire, couche par couche, ce que les socles documentent et ce qu'ils laissent vide.</strong></p>
-
+<figure class="figure">
+  <img src="../figures/f-43-01-six-couches.svg" alt="Figure 43.1 — Les six couches de l&#39;architecture de référence unifiée, et ce que chacune ne porte pas." />
+  <figcaption><strong>Figure 43.1</strong> — Les six couches de l'architecture de référence unifiée, et ce que chacune ne porte pas.</figcaption>
+</figure>
 <h3>43.1.2 Quatre réserves qui commandent la lecture du tableau</h3>
-
 <p><em>Un — la couche protocolaire.</em> ⚠ <strong>« Cadre d'autorisation », jamais « sécurisé »</strong> : <em>la sécurité dépend de l'implémentation</em>, et le <strong>ch. 8</strong> en est le siège. <span class="auteur">Lecture de l'auteur</span> <em>de ces six couches, la protocolaire est la mieux documentée et la moins porteuse pour un processus réglementé : une spécification décrit un appel, et un appel n'est pas une décision.</em> ⚠ <strong>Le choix d'un protocole ne referme donc aucune des cinq zones de compensation du ch. 42.</strong></p>
-
 <p><em>Deux — la couche d'identité appelle son statut avant son contenu.</em> ⚠ <strong>Le socle ne documente pas de registre d'agents centralisé pour la capacité d'annuaire nommée</strong>, et <em>la somme n'en écrira pas</em> : absence de documentation, non fait négatif vérifié (R-2 du Vol. II). Le <strong>registre gouverné</strong> relève d'une spécification dont <strong>le statut interdit d'en faire un point d'appui</strong> : <strong>brouillon de laboratoire, non norme ratifiée</strong> (R-09 du Vol. III, statut dit à la mention), ⚠ <strong>et elle <em>s'appuie sur</em> un mécanisme d'identité de charge de travail sans que l'exigence stricte soit établie</strong> (R-3 du Vol. II).</p>
-
 <div class="avert">
-  <p><strong>Et le socle IAM pré-agentique de cette couche n'est pas reconstruit ici</strong> : <em>identité fédérée, autorisation déléguée et identité de charge de travail sont <strong>posées une seule fois pour toute la somme au ch. 3 § 3.2 et § 3.3</strong></em>. <strong>Ce chapitre les transpose aux agents et n'en redémontre aucune</strong> — <em>c'est l'économie qui justifie la refonte des trois volumes en un ouvrage, et un chapitre d'architecture qui la reconstruirait l'annulerait au premier paragraphe.</em></p>
+  <p><strong>Et le socle IAM pré-agentique de cette couche n'est pas reconstruit ici</strong> : <em>identité fédérée, autorisation déléguée et identité de charge de travail sont <strong>posées une seule fois pour toute la somme au ch. 3 § 3.2 et § 3.3</strong></em>. <strong>Ce chapitre les transpose aux agents et n'en redémontre aucune</strong> — <em>c'est l'économie qui justifie la refonte des trois volumes en un ouvrage, et un chapitre d'architecture qui les reconstruirait l'annulerait au premier paragraphe.</em></p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> les deux champs obligatoires du <strong>schéma de profil d'agent</strong> — l'énumération des outils invocables et les bornes de privilège (Vol. III <strong>F-40</strong>) — sont, dans le vocabulaire du manifeste, un <strong>cadre opérationnel</strong> — <em>ce que l'agent peut faire, avec quels outils</em> — <strong>écrit hors de l'agent, dans un objet lisible avant l'exécution</strong>. ⚠ <strong>Le socle porte les deux termes ; il ne pose pas le rapprochement</strong>, et <em>l'état pré-normatif de la spécification interdit d'en tirer autre chose qu'une direction.</em> ⚠ <strong>Un second rapprochement est à écarter</strong> : <em>un registre d'agents et l'inventaire <strong>attendu par</strong> E-23 ne portent pas sur le même objet</em> — le premier recense des agents, le second des modèles dont le risque inhérent est jugé non négligeable. <strong>Les confondre prêterait au régulateur un périmètre qu'il n'énonce pas.</strong></p>
-
 <p><em>Trois — la couche d'orchestration est celle où réside le cadre, donc celle où se joue tout ce chapitre.</em> Le socle y documente, <strong>au niveau d'un cadriciel d'orchestration et à aucun niveau protocolaire</strong>, les deux mécanismes qui la rendent possible : <strong>les points de contrôle</strong> et <strong>l'humain dans la boucle</strong> (Vol. II <strong>F-15</strong>).</p>
-
 <p><em>Quatre — la couche de gouvernance est la seule dont le socle porte des attentes opératoires, et il ne les porte que pour un texte sur deux.</em> Depuis l'extraction du texte intégral d'E-23, EN et FR, le socle porte <strong>cinq domaines</strong> : cycle de vie à cinq volets « not necessarily sequential » ; inventaire d'entreprise « accurate, evergreen » ; cotation graduée — « Each model should be assigned a model risk rating » ; <strong>documentation de modèle</strong> ; surveillance continue visant « autonomous decision making, autonomous re-parametrization ». ⚠ <strong>La modalité commande la rédaction de toute cette couche</strong> : <em>E-23 est fondée sur des principes et rédigée au conditionnel — on écrit « attendu par E-23 », jamais « exigé ».</em> ⚠ <strong>Et « documentation de modèle » ou « inventaire », jamais « fiche de modèle »</strong> — <em>zéro occurrence dans le texte.</em></p>
-
 <p><span class="auteur">Lecture de l'auteur</span> ⚠ <strong>cette couche est spécifiable contre un texte et pas contre l'autre, alors que les deux entreront en vigueur le même jour.</strong> <em>L'asymétrie n'est pas dans le droit ; elle est dans le socle</em>, et le <strong>ch. 49</strong> la reprend.</p>
-
 <h2 id="s432"><span class="sig">§ 43.2</span>Le positionnement des options d'orchestration par cas d'usage</h2>
-
 <h3>43.2.1 Le principe, et son statut</h3>
-
 <p>Le <strong>ch. 29</strong> a énoncé le principe directeur : ⚠ <strong>sous exigence réglementaire stricte, le processus est imposé de façon déterministe par le cadre, qui invoque les agents ; les agents n'orchestrent pas le processus</strong> — soit les positions <strong>OO3 et OO4</strong>.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> ⚠ <strong>ce principe est construit par transposition de trois sources dont le socle n'établit l'application ni au Canada ni à la finance canadienne.</strong> <em>Il dit où placer la main qui commande, non comment qualifier un processus.</em></p>
-
 <p>Le socle fournit pour cela <strong>sept critères qualitatifs de sélection</strong> — complexité du but, supervision humaine, contraintes, action humaine, espace de décision, effort initial, maintenance (Vol. II <strong>F-37</strong>, ⚠ <strong>préimpression non révisée</strong>). ⚠ <strong>Deux avertissements les accompagnent.</strong> <em>Un</em> : le socle écrit « contraintes » <strong>sans adjectif</strong> — <em>les contraintes réglementaires en sont une espèce, non le genre ; un budget de latence sur un rail de paiement en est une autre.</em> <em>Deux</em> : ⚠ <strong>ces critères orientent un jugement sans calculer de réponse</strong> — <em>aucune pondération ni fonction de score ne les relie aux quatre options.</em></p>
-
 <div class="avert">
   <p><strong>Le socle ne documente l'option d'orchestration d'aucun déploiement agentique canadien</strong> : absence de documentation, non fait négatif vérifié (degré 3). <em>Aucune passe n'a instruit l'architecture des systèmes que le Livre III documente en production</em> — <strong>et les trois classes ci-dessous ne sont pas des architectures réelles</strong> : elles sont construites à partir des seules <strong>fonctions</strong> que les sources primaires décrivent.</p>
 </div>
-
 <h3>43.2.2 Trois classes, et ce qui les distingue</h3>
-
-<p><strong>Classe 1 — la décision de crédit avec mémo à un souscripteur humain.</strong> ⚠ <strong>Métrique auto-déclarée, attribuée à chaque occurrence et non vérifiée indépendamment</strong> : <strong>TD</strong> déclare que son premier modèle d'IA agentique, développé par <strong>Layer 6</strong>, effectue la pré-adjudication d'un prêt garanti par l'immobilier et génère des mémos de synthèse pour les souscripteurs, <strong>ramenant un traitement d'environ quinze heures à moins de trois minutes</strong> — ⚠ <strong>résultats que la source qualifie elle-même de préliminaires</strong> (Vol. II <strong>F-17</strong>). <strong>Lecture de l'auteur</strong>, <em>sur la classe seulement</em> — <strong>cinq des sept critères y sont saturés</strong>, et le principe du <strong>ch. 29</strong> y conclut à <strong>OO3 ou OO4</strong>. ⚠ <strong>Le socle ne dit pas où se positionne ce système, et la somme ne le déduit pas d'un gain de temps déclaré.</strong></p>
-
+<p><strong>Classe 1 — la décision de crédit avec mémo à un souscripteur humain.</strong> ⚠ <strong>Métrique auto-déclarée, attribuée à chaque occurrence et non vérifiée indépendamment</strong> : <strong>TD</strong> déclare que son premier modèle d'IA agentique, développé par <strong>Layer 6</strong>, effectue la pré-adjudication d'un prêt garanti par l'immobilier et génère des mémos de synthèse pour les souscripteurs, <strong>ramenant un traitement d'environ quinze heures à moins de trois minutes</strong> — ⚠ <strong>résultats que la source qualifie elle-même de préliminaires</strong> (Vol. II <strong>F-17</strong>). Lecture de l'auteur, <em>sur la classe seulement</em> — <strong>cinq des sept critères y sont saturés</strong>, et le principe du <strong>ch. 29</strong> y conclut à <strong>OO3 ou OO4</strong>. ⚠ <strong>Le socle ne dit pas où se positionne ce système, et la somme ne le déduit pas d'un gain de temps déclaré.</strong></p>
 <p><strong>Classe 2 — l'acheminement autonome de courriels commerciaux.</strong> ⚠ <strong>Métrique auto-déclarée, attribuée à chaque occurrence</strong> : <strong>Scotiabank</strong> déclare que des capacités agentiques traitent de façon autonome <strong>environ 90 % d'environ 1 500 courriels par jour</strong> en services bancaires aux entreprises, les cas complexes étant escaladés (Vol. II <strong>F-21</strong>). <span class="auteur">Lecture de l'auteur</span> ⚠ <strong>la classe est instructive par ce qu'elle rend indécidable</strong> : <em>un acheminement est-il une « décision fondée exclusivement sur un traitement automatisé » au sens de l'article 12.1 ?</em> <strong>Le socle ne le dit pas, et la somme n'émet pas d'avis juridique.</strong> Le critère « contraintes » ne se remplit donc <strong>pas par lecture d'un texte</strong>, mais par <strong>une qualification que l'institution doit assumer</strong> — ⚠ <strong>et dont le positionnement dépend entièrement.</strong> <em>La qualification précède l'architecture.</em></p>
-
 <p><strong>Classe 3 — le paiement de grande valeur sur un rail à sémantique commune.</strong> Le rail a <strong>achevé sa bascule</strong> vers la norme de messagerie financière (Vol. II <strong>F-28</strong>). <span class="auteur">Lecture de l'auteur</span> <em>la contrainte dominante y est d'une autre nature — non d'expliquer mais d'exécuter</em>, le rail imposant <strong>une forme de message et un budget de temps</strong>. ⚠ <em>Un délai à tenir ne se confie pas à un composant dont la durée d'exécution n'est pas bornée.</em> La conclusion — <strong>l'agent observe, le rail exécute</strong> — est celle qu'instancie le <strong>ch. 45 § 45.12</strong>.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> ⚠ <strong>les trois classes se distinguent non par leur degré d'automatisation, mais par la nature de ce qui les contraint : <em>expliquer, qualifier, exécuter</em>.</strong> Le socle établit les sept critères et les faits de chaque classe ; <strong>il n'établit ni cette tripartition, ni son exhaustivité.</strong></p>
-
 <h3>43.2.3 La grille « quand agentifier, quand s'abstenir »</h3>
-
 <p><em>← Vol. I</em> Monographie <em>§2.13.1, <strong>arrivée</strong> depuis le ch. 6. ⚠ Section en <strong>[C]</strong>.</em></p>
-
 <div class="avert">
   <p><strong>La première discipline est de minimiser la surface agentique</strong>, et le Vol. I l'énonce comme <strong>thèse d'un volume antérieur, à attribuer</strong>. <em>Ne déléguer au modèle que ce que le code ne peut pas tenir à sa place</em> : tant qu'un flux est connu d'avance, un <strong>enchaînement déterministe</strong> — où le code orchestre la tuyauterie et le modèle ne sert qu'aux étapes irréductiblement linguistiques — <strong>est préférable à une boucle où le modèle pilote sa propre trajectoire</strong>. ⚠ <strong>Le réflexe par défaut est la retenue</strong> : <em>préférer le patron le plus contraint qui résout la tâche — un enchaînement avant un agent, un agent unique avant un système multi-agents.</em> ⚠ <strong>Agentifier est un choix qui doit se justifier, pas un point de départ.</strong></p>
 </div>
-
 <div class="avert">
   <p><strong>La grille intègre un résultat non négociable de son chapitre d'origine</strong> : <em>dès que la triade létale est réunie — données privées, contenu non fiable, canal de sortie —, l'injection d'invite n'est pas évitable au niveau du modèle</em>, et la réponse est <strong>une défense en profondeur, jamais une « solution »</strong>. ⚠ <strong>Le siège de la triade est au ch. 19 § 19.2</strong>, celui de la défense au <strong>ch. 6 § 6.5</strong> ; <em>ce chapitre n'en reconstruit aucun.</em></p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> ⚠ <strong>la grille et la taxonomie OO ne répondent pas à la même question, et les composer est un geste du compendium</strong> : <em>la première demande <strong>s'il faut</strong> un agent, la seconde <strong>qui commande</strong> quand il y en a un.</em> <strong>Ce que le socle établit</strong> : les deux instruments, chacun dans son volume, à leur niveau. <strong>Ce qu'il n'établit pas</strong> : leur articulation — ⚠ <em>aucune entrée ne les met en rapport</em>. La lecture proposée est <strong>un ordre d'application</strong> : <em>la grille d'abord, la taxonomie ensuite ; agentifier ce qui doit l'être, puis décider qui commande.</em> Elle se réfute par la production d'un cas où la position OO déciderait de l'opportunité d'agentifier.</p>
-
+<figure class="figure">
+  <img src="../figures/f-43-02-agentifier.svg" alt="Figure 43.2 — Quand agentifier, quand s&#39;abstenir." />
+  <figcaption><strong>Figure 43.2</strong> — Quand agentifier, quand s'abstenir.</figcaption>
+</figure>
 <h2 id="s433"><span class="sig">§ 43.3</span>Les points de contrôle obligatoires</h2>
-
-<div class="encadre encadre--oeuvre">
-  <span class="encadre__label">Note</span>
-  <p>⚠ <strong>SIÈGE DES CINQ POINTS DE CONTRÔLE OBLIGATOIRES POUR TOUTE LA SOMME.</strong> Ils sont <strong>posés ici une seule fois</strong>. Les <strong>ch. 37, 38, 39, 41 et 45</strong> les <strong>citent</strong> et <strong>n'en reconstruisent aucun</strong> ; <em>un chapitre aval qui reposerait la liste annulerait l'économie qui justifie la refonte des trois volumes en un ouvrage.</em></p>
+<blockquote>
+<div class="avert">
+  <p><strong>SIÈGE DES CINQ POINTS DE CONTRÔLE OBLIGATOIRES POUR TOUTE LA SOMME.</strong> Ils sont <strong>posés ici une seule fois</strong>. Les <strong>ch. 37, 38, 39, 41 et 45</strong> les <strong>citent</strong> et <strong>n'en reconstruisent aucun</strong> ; <em>un chapitre aval qui reposerait la liste annulerait l'économie qui justifie la refonte des trois volumes en un ouvrage.</em></p>
 </div>
-
+</blockquote>
 <div class="avert">
   <p><strong>Précaution terminologique, reprise de la source et non résolue par la somme.</strong> Le glossaire du Vol. II réserve <strong>« point de contrôle »</strong> à la traduction de <em>checkpointing</em> — <em>la persistance de l'état d'un flux agentique</em> — alors que le titre de cette section désigne <strong>autre chose</strong> : <em>les points où l'architecture doit obligatoirement porter une garantie.</em> Le second peut s'implémenter par le premier ; <strong>la somme écrit « point de contrôle obligatoire » pour la seconde notion</strong>. ⚠ <strong>La collision est signalée par le Vol. II, signalée à son tour par le Vol. III, et signalée ici — trois fois, jamais résolue</strong> : <em>elle relève du glossaire de son volume d'origine, que la somme ne modifie pas.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>La liste est une reprise attribuée, non une invention de la somme.</strong> <em>Les cinq points sont posés par le <strong>texte rédigé du Vol. II</strong>, à son ch. 19 §19.3, sous le marquage « Lecture de l'auteur » ; le Vol. III les reprend en <strong>H-15</strong> comme <strong>thèses d'un volume antérieur, à prolonger et à attribuer, jamais comme acquis</strong>, et <strong>H-15 n'entre pas au socle consolidé</strong> — son origine n'est pas un identifiant de socle et ne peut pas l'être.</em> <strong>Leur dérivation est celle que la source énonce elle-même, transposée à la numérotation de la somme : ces points ne sont pas déduits d'une source — ce sont les cinq zones de compensation du ch. 42, chacune assignée à la couche qui doit la porter.</strong> ⚠ <strong>Quatre deviennent ici des points de contrôle obligatoires ; la cinquième — l'interface d'accès du cadre bancaire — n'en est pas un, faute d'objet</strong> : <em>aucun organisme de normalisation technique n'a été désigné et aucun standard n'est nommé dans les textes officiels.</em> Elle est <strong>une frontière d'abstraction</strong> (§ 43.6). <strong>Un cinquième point s'ajoute, issu non d'une zone mais de la table de traduction du ch. 29. Total : cinq.</strong></p>
 </div>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>#</th><th>Point de contrôle obligatoire</th><th>Ce que le socle porte</th><th>Ce qui est de l'auteur</th></tr></thead>
-  <tbody>
-    <tr><td><strong>PC1</strong></td><td><strong>L'événement de décision</strong></td><td>l'art. 12.1 <strong>impose</strong> d'informer « au plus tard au moment de la décision » — <strong>seule des trois obligations à ne pas être subordonnée à une demande</strong> (Vol. II <strong>F-27</strong>)</td><td><em>le moment de la décision doit être un <strong>événement daté</strong>, émis par la couche d'orchestration</em> — ⚠ <strong>un système qui ne sait dire quand la décision a été prise ne peut satisfaire une obligation qui se déclenche à cet instant</strong></td></tr>
-    <tr><td><strong>PC2</strong></td><td><strong>La trace d'instance, produite par le cadre</strong></td><td>l'art. 12.1 exige, sur demande, « les raisons, ainsi que les principaux facteurs et paramètres » — <strong>l'objet est l'instance</strong> ; la journalisation confiée aux agents « n'est généralement pas recommandée » (Vol. II <strong>F-37</strong>, ⚠ <strong>préimpression non révisée, source unique</strong>) ; <strong>les relations causales entrées-sorties sont souvent indéterminables</strong> (Vol. II <strong>F-10</strong>)</td><td><strong>quatre producteurs candidats, trois écartés</strong> — <em>l'agent par la préimpression, le modèle par le rapport conjoint, <strong>le protocole par la matrice du ch. 42</strong>, dont le typage donne un substrat de frontière et non une trace d'instance.</em> ⚠ <strong>La trace revient au cadre ; aucune source ne désigne ce producteur, l'élimination est de l'auteur</strong></td></tr>
-    <tr><td><strong>PC3</strong></td><td><strong>Le point d'arrêt humain</strong></td><td>l'art. 12.1 exige l'occasion de présenter ses observations à <strong>un membre du personnel « en mesure de réviser la décision »</strong> ; ⚠ <strong>le socle ne documente d'humain dans aucun protocole</strong> — il le documente au niveau d'<strong>un</strong> cadriciel d'orchestration (Vol. II <strong>F-15</strong>)</td><td><em>un point d'arrêt ne vaut que si <strong>les effets aval de la décision sont bornés</strong>, donc défaisables</em> — ⚠ <strong>le socle ne l'énonce pas</strong>, et le versant <em>sémantique d'effet</em> est au <strong>ch. 48</strong></td></tr>
-    <tr><td><strong>PC4</strong></td><td><strong>La séparation de l'adaptation et de l'évolution</strong></td><td>le manifeste scinde l'auto-modification en <strong>adaptation éphémère</strong> et <strong>évolution persistante</strong> (Vol. II <strong>F-36</strong> ; Vol. III <strong>H-11</strong>) ; l'avis 11-348 capte l'adaptativité <strong>après déploiement</strong> (<strong>F-26</strong>) ; E-23 <strong>attend</strong> une surveillance visant la re-paramétrisation autonome (<strong>F-09</strong>)</td><td><em>un système qui traite les deux régimes par le même chemin technique rend <strong>indétectable, dans ses journaux, le moment où une exception est devenue une règle</strong></em> — ⚠ <strong>aucune des trois sources ne l'énonce ; leur conjonction est de l'auteur</strong></td></tr>
-    <tr><td><strong>PC5</strong></td><td><strong>Le confinement local</strong></td><td>le manifeste pose l'opérationnalisation <strong>locale</strong> des cadres comme frontière de sécurité et de confidentialité — <strong>confinement, non prévention</strong> ; il nomme aussi le <strong>paradoxe de confidentialité de l'explicabilité</strong> (Vol. III <strong>H-11</strong>)</td><td>⚠ <strong>ce que PC2 exige d'exposer, PC5 exige de restreindre</strong> — <em>l'arbitrage se documente, il ne se déclare pas résolu</em></td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>#</th>
+<th>Point de contrôle obligatoire</th>
+<th>Ce que le socle porte</th>
+<th>Ce qui est de l'auteur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PC1</strong></td>
+<td><strong>L'événement de décision</strong></td>
+<td>l'art. 12.1 <strong>impose</strong> d'informer « au plus tard au moment de la décision » — <strong>seule des trois obligations à ne pas être subordonnée à une demande</strong> (Vol. II <strong>F-27</strong>)</td>
+<td><em>le moment de la décision doit être un <strong>événement daté</strong>, émis par la couche d'orchestration</em> — ⚠ <strong>un système qui ne sait dire quand la décision a été prise ne peut satisfaire une obligation qui se déclenche à cet instant</strong></td>
+</tr>
+<tr>
+<td><strong>PC2</strong></td>
+<td><strong>La trace d'instance, produite par le cadre</strong></td>
+<td>l'art. 12.1 exige, sur demande, « les raisons, ainsi que les principaux facteurs et paramètres » — <strong>l'objet est l'instance</strong> ; la journalisation confiée aux agents « n'est généralement pas recommandée » (Vol. II <strong>F-37</strong>, ⚠ <strong>préimpression non révisée, source unique</strong>) ; <strong>les relations causales entrées-sorties sont souvent indéterminables</strong> (Vol. II <strong>F-10</strong>)</td>
+<td><strong>quatre producteurs candidats, trois écartés</strong> — <em>l'agent par la préimpression, le modèle par le rapport conjoint, <strong>le protocole par la matrice du ch. 42</strong>, dont le typage donne un substrat de frontière et non une trace d'instance.</em> ⚠ <strong>La trace revient au cadre ; aucune source ne désigne ce producteur, l'élimination est de l'auteur</strong></td>
+</tr>
+<tr>
+<td><strong>PC3</strong></td>
+<td><strong>Le point d'arrêt humain</strong></td>
+<td>l'art. 12.1 exige l'occasion de présenter ses observations à <strong>un membre du personnel « en mesure de réviser la décision »</strong> ; ⚠ <strong>le socle ne documente d'humain dans aucun protocole</strong> — il le documente au niveau d'<strong>un</strong> cadriciel d'orchestration (Vol. II <strong>F-15</strong>)</td>
+<td><em>un point d'arrêt ne vaut que si <strong>les effets aval de la décision sont bornés</strong>, donc défaisables</em> — ⚠ <strong>le socle ne l'énonce pas</strong>, et le versant <em>sémantique d'effet</em> est au <strong>ch. 48</strong></td>
+</tr>
+<tr>
+<td><strong>PC4</strong></td>
+<td><strong>La séparation de l'adaptation et de l'évolution</strong></td>
+<td>le manifeste scinde l'auto-modification en <strong>adaptation éphémère</strong> et <strong>évolution persistante</strong> (Vol. II <strong>F-36</strong> ; Vol. III <strong>H-11</strong>) ; l'avis 11-348 capte l'adaptativité <strong>après déploiement</strong> (<strong>F-26</strong>) ; E-23 <strong>attend</strong> une surveillance visant la re-paramétrisation autonome (<strong>F-09</strong>)</td>
+<td><em>un système qui traite les deux régimes par le même chemin technique rend <strong>indétectable, dans ses journaux, le moment où une exception est devenue une règle</strong></em> — ⚠ <strong>aucune des trois sources ne l'énonce ; leur conjonction est de l'auteur</strong></td>
+</tr>
+<tr>
+<td><strong>PC5</strong></td>
+<td><strong>Le confinement local</strong></td>
+<td>le manifeste pose l'opérationnalisation <strong>locale</strong> des cadres comme frontière de sécurité et de confidentialité — <strong>confinement, non prévention</strong> ; il nomme aussi le <strong>paradoxe de confidentialité de l'explicabilité</strong> (Vol. III <strong>H-11</strong>)</td>
+<td>⚠ <strong>ce que PC2 exige d'exposer, PC5 exige de restreindre</strong> — <em>l'arbitrage se documente, il ne se déclare pas résolu</em></td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 43.2 — Les cinq points de contrôle obligatoires, avec ce que le socle porte et ce qui est de l'auteur. ⚠ <strong>SIÈGE UNIQUE</strong> ; les chapitres aval y renvoient sans le reconstruire.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> ⚠ <strong>ces cinq points partagent une propriété que le Livre III nomme.</strong> <strong>Quatre des cinq propriétés d'évaluation</strong> du cadre mobilisé — spécificité de tâche, <strong>assurance de correction</strong>, réactivité, <strong>traçabilité</strong> — sont <strong>celles que l'exploitant démontre à un tiers</strong>, et ce sont exactement celles que le cadre instrumente ; ⚠ <strong>la cinquième, l'autonomie, n'a au socle aucune métrique</strong> (Vol. II <strong>F-37</strong> ; constat repris au <strong>ch. 39 § 39.2</strong>, siège). <em>Les cinq points relèvent tous du premier registre : <strong>chacun est un endroit où l'exploitant doit pouvoir produire quelque chose</strong>, non un endroit où le système doit être bon.</em></p>
-
 <div class="avert">
   <p><strong>Et le passeport n'y est pas un prérequis</strong> : <em>il ne figure dans aucune spécification à date</em> (R-01 du Vol. III ; siège <strong>ch. 16</strong>). <strong>Les cinq points sont opposables sans lui</strong> ; <em>c'est ce qui les distingue des huit principes directeurs du blueprint, dont le premier conditionne l'admission à un artefact que personne ne délivre</em> (<strong>ch. 45 § 45.1</strong>).</p>
 </div>
-
+<figure class="figure">
+  <img src="../figures/f-43-03-points-de-controle.svg" alt="Figure 43.3 — Les cinq points de contrôle obligatoires, posés sur les six couches." />
+  <figcaption><strong>Figure 43.3</strong> — Les cinq points de contrôle obligatoires, posés sur les six couches.</figcaption>
+</figure>
 <h2 id="s434"><span class="sig">§ 43.4</span>Le plan de contrôle d'agents comme architecture de référence</h2>
-
 <p><em>← Vol. I</em> Monographie <em>§4.12.1 et §5.12.1 — <strong>arrivées</strong> depuis les ch. 24 et 34. ⚠ Section en <strong>[C]</strong> de bout en bout.</em></p>
-
 <div class="avert">
   <p><strong>Désambiguïsation obligatoire, à chaque emploi</strong> (R-8 du Vol. II) : <strong>« plan de contrôle d'agents » s'entend ici au sens du patron d'architecture</strong>, et <strong>l'encadré des quatre branches de la collision siège au ch. 7 § 7.5</strong> — <em>ce chapitre y renvoie et ne le reconstruit pas.</em> ⚠ <strong>Le sigle correspondant ne s'emploie jamais nu.</strong></p>
 </div>
-
 <p><strong>Le Vol. I décrit un patron dont il tire la valeur de référence d'une convergence.</strong> ⚠ <strong>Repérage [C], thèse d'un volume antérieur à attribuer</strong> : <em>plusieurs analystes et fournisseurs y formalisent, sous des libellés voisins, un plan de contrôle à couches, et un éditeur en fait le positionnement d'un produit nommé.</em> ⚠ <strong>La somme reprend le principe, jamais l'instanciation sur des produits nommés</strong> — <em>c'est le régime imposé au Vol. III et repris ici.</em></p>
-
-<p><strong>Le principe directeur qui unifie ces propositions est cité pour lui-même</strong> : ⚠ <strong><em>séparer l'intelligence de l'autorité, la capacité de la permission, l'explication de la preuve — ne jamais laisser le modèle qui décide être aussi celui qui s'auto-autorise ou s'auto-atteste.</strong></em></p>
-
+<p><strong>Le principe directeur qui unifie ces propositions est cité pour lui-même</strong> : ⚠ <strong><em>séparer l'intelligence de l'autorité, la capacité de la permission, l'explication de la preuve — ne jamais laisser le modèle qui décide être aussi celui qui s'auto-autorise ou s'auto-atteste.</em></strong></p>
 <p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : que ce principe est <strong>énoncé</strong> par un volume antérieur, en [C], et qu'il converge avec <strong>les cinq points de contrôle obligatoires du § 43.3</strong>, dont il est la formulation abstraite. <strong>Ce qu'il n'établit pas</strong> : <em>que cette convergence soit un fait du domaine plutôt qu'un effet du corpus consulté</em> — ⚠ <strong>le Vol. I ne balaie pas les propositions divergentes</strong>, et <strong>le socle du Vol. III ne porte aucune entrée sur ce patron</strong> : absence de documentation, non fait négatif vérifié (degré 3). <em>Une convergence relevée sur les sources qu'on a ouvertes est une propriété de la lecture avant d'être une propriété du monde.</em></p>
-
 <div class="avert">
   <p><strong>La déclinaison en finance régulée porte une formule que la somme borne, et c'est le point le plus sensible de la section.</strong> Le Vol. I écrit qu'en finance régulée cet enchaînement — <em>point d'application unique et obligatoire par lequel transite toute action, sans chemin de contournement</em> — <strong>« est réglementairement exigé »</strong>. ⚠ <strong>La somme ne reprend pas cette qualification telle quelle</strong> : <em>le socle du Vol. II établit qu'E-23 est <strong>fondée sur des principes</strong> et rédigée au conditionnel, et R-06 du Vol. III interdit d'écrire « exigé » là où le texte <strong>attend</strong>.</em> <strong>La forme retenue est donc</strong> : <em>le Vol. I qualifie cet enchaînement d'exigence réglementaire ; le socle du Vol. II établit une <strong>attente</strong> et non une exigence, et l'écart entre les deux n'est pas arbitré ici</em> — ⚠ <strong>il est signalé</strong>, et il relève de la collation de fond.</p>
 </div>
-
 <p><strong>Ce que le Vol. I attache à ce point d'application est en revanche repris, en [C] et sous attribution</strong> : il y fait converger <strong>quatre fonctions</strong> — <em>identification de l'acteur, autorisation calibrée sur la matérialité et la réversibilité, ségrégation des tâches et double regard, et journalisation infalsifiable opposable en audit</em> —, ⚠ <strong>et il pose un couplage obligatoire au registre de modèles</strong> : <em>un agent matériel qui décide est un modèle au sens des cadres de risque de modèle.</em> <span class="auteur">Lecture de l'auteur</span> ⚠ <strong>c'est exactement le rapprochement que le § 43.1.2 a écarté</strong> : <em>un registre d'agents et un inventaire de modèles ne portent pas sur le même objet.</em> <strong>Les deux énoncés ne sont pas contradictoires</strong> — <em>le Vol. I dit qu'un agent décisionnel <strong>relève</strong> d'un inventaire de modèles, non que le registre d'agents <strong>soit</strong> cet inventaire</em> —, <strong>mais la distance entre les deux est exactement là où une lecture rapide produirait un doublon d'autorité.</strong> <em>La somme écrit les deux et ne les fond pas.</em></p>
-
 <h2 id="s435"><span class="sig">§ 43.5</span>Le modèle de maturité de l'entreprise agentique</h2>
-
-<div class="encadre encadre--oeuvre">
-  <span class="encadre__label">Note</span>
-  <p>⚠ <strong>SIÈGE DU MODÈLE DE MATURITÉ ET DE LA DÉSAMBIGUÏSATION DES TROIS ÉCHELLES D'AUTONOMIE, POUR TOUTE LA SOMME.</strong> Ils sont <strong>posés ici une seule fois</strong>. Les <strong>ch. 39, 40, 41 et 46</strong> y renvoient et <strong>n'en reconstruisent aucun</strong> ; ⚠ <em>le ch. 39 § 39.6 s'abstient explicitement d'en produire un autre.</em></p>
+<blockquote>
+<div class="avert">
+  <p><strong>SIÈGE DU MODÈLE DE MATURITÉ ET DE LA DÉSAMBIGUÏSATION DES TROIS ÉCHELLES D'AUTONOMIE, POUR TOUTE LA SOMME.</strong> Ils sont <strong>posés ici une seule fois</strong>. Les <strong>ch. 39, 40, 41 et 46</strong> y renvoient et <strong>n'en reconstruisent aucun</strong> ; ⚠ <em>le ch. 39 § 39.6 s'abstient explicitement d'en produire un autre.</em></p>
 </div>
-
+</blockquote>
 <p><span class="auteur">Lecture de l'auteur</span> <strong>marquage porté à l'ouverture de la section, qui est une construction d'auteur en totalité.</strong> <strong>Ce que le socle établit</strong> : l'existence et le contenu de <strong>l'échelle d'autonomie mobilisée</strong>, à son niveau et sous ses réserves ; l'état de chacun des objets rangés dans les six couches. <strong>Ce qu'il n'établit pas</strong> : <em>qu'une trajectoire de déploiement existe</em> ; <em>que les exigences d'identité, de maillage et d'exploitation s'ordonnent par paliers</em> ; <em>que le coût d'une question sans réponse croisse avec le palier d'autonomie consentie.</em> ⚠ <strong>Le socle ne documente aucun modèle de maturité de l'entreprise agentique</strong> : absence de documentation, non fait négatif vérifié (degré 3).</p>
-
 <div class="avert">
   <p><strong>La section a été réaffectée à sa source le 21 juillet 2026, et le motif se déclare.</strong> Elle confrontait <strong>trois modèles de maturité d'un corpus d'appui dont aucun des trois ouvrages n'a jamais été déposé</strong> — <strong>le lot est clos par échec documenté, réversible par dépôt ultérieur</strong>, et <strong>aucun modèle source n'est plus rapporté</strong>. ⚠ <strong>Le risque a changé de nature sans disparaître</strong> : <em>la tentation devient de combler par la construction ce que le retrait a vidé</em>, et <strong>la parade est le présent marquage, appliqué sans indulgence</strong>. ⚠ <strong>Les mentions de « corpus d'appui » sont des marqueurs conditionnels de réouverture, jamais des sources.</strong></p>
 </div>
-
 <h3>43.5.1 L'échelle, citée au complet — et les deux autres dont il faut la séparer</h3>
-
-<p><strong>Selon la proposition du Vol. I</strong>, l'<strong>échelle à quatre paliers non numérotés</strong> — <em>assistance → copilote → orchestration sous revue → autonomie bornée</em> — <strong>indexe l'autonomie consentie sur le produit matérialité × réversibilité</strong>, non sur la capacité brute du modèle ; l'entrée qui la porte en rapporte le principe : ⚠ <strong><em>un agent ne doit jamais exécuter une action irréversible sans garde-fou structurel ; la règle est la préparation par l'agent et la libération humaine sur l'action irréversible</strong></em> (Vol. III <strong>H-31</strong>, <strong>[C]</strong>).</p>
-
+<p><strong>Selon la proposition du Vol. I</strong>, l'<strong>échelle à quatre paliers non numérotés</strong> — <em>assistance → copilote → orchestration sous revue → autonomie bornée</em> — <strong>indexe l'autonomie consentie sur le produit matérialité × réversibilité</strong>, non sur la capacité brute du modèle ; l'entrée qui la porte en rapporte le principe : ⚠ <strong><em>un agent ne doit jamais exécuter une action irréversible sans garde-fou structurel ; la règle est la préparation par l'agent et la release humaine sur l'action irréversible</em></strong> (Vol. III <strong>H-31</strong>, <strong>[C]</strong>).</p>
 <div class="avert">
   <p><strong>TROIS ÉCHELLES COEXISTENT AU VOL. I ET PARTAGENT LEURS LIBELLÉS — les nommer nues est proscrit</strong> (R-13 du Vol. III).</p>
 </div>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Échelle</th><th>Cardinal et numérotation</th><th>Où elle vit dans la somme</th></tr></thead>
-  <tbody>
-    <tr><td><strong>échelle à quatre paliers non numérotés</strong></td><td><em>assistance, copilote, orchestration sous revue, autonomie bornée</em> — <strong>quatre, sans numéros</strong></td><td><strong>ce paragraphe</strong>, et le <strong>ch. 14 § 14.4</strong> pour son croisement avec la grille</td></tr>
-    <tr><td><strong>continuum à six niveaux numérotés de 0 à 5</strong></td><td><strong>six, numérotés 0-5</strong> ; « copilote » y est le <strong>niveau 2</strong></td><td><strong>ch. 4 § 4.1.4</strong></td></tr>
-    <tr><td><strong>graduation à quatre niveaux préfixés L</strong></td><td><strong>quatre, L0-L3</strong> ; « copilote » y est le <strong>niveau L0</strong></td><td><strong>Annexe H</strong></td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Échelle</th>
+<th>Cardinal et numérotation</th>
+<th>Où elle vit dans la somme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>échelle à quatre paliers non numérotés</strong></td>
+<td><em>assistance, copilote, orchestration sous revue, autonomie bornée</em> — <strong>quatre, sans numéros</strong></td>
+<td><strong>ce paragraphe</strong>, et le <strong>ch. 14 § 14.4</strong> pour son croisement avec la grille</td>
+</tr>
+<tr>
+<td><strong>continuum à six niveaux numérotés de 0 à 5</strong></td>
+<td><strong>six, numérotés 0-5</strong> ; « copilote » y est le <strong>niveau 2</strong></td>
+<td><strong>ch. 4 § 4.1.4</strong></td>
+</tr>
+<tr>
+<td><strong>graduation à quatre niveaux préfixés L</strong></td>
+<td><strong>quatre, L0-L3</strong> ; « copilote » y est le <strong>niveau L0</strong></td>
+<td><strong>Annexe H</strong></td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 43.3 — Les trois échelles d'autonomie homonymes du Vol. I. ⚠ <strong>« Copilote » désigne un palier de la première, le niveau 2 de la deuxième et le niveau L0 de la troisième</strong> : <em>le terme ne s'emploie jamais seul.</em> ⚠ <strong>L'indexation sur matérialité × réversibilité ne discrimine pas davantage</strong> — la graduation L0-L3 indexe deux de ses niveaux sur les mêmes critères. <strong>Seuls le cardinal et la numérotation discriminent.</strong></p>
-
 <div class="avert">
   <p><strong>L'entrée qui porte la première est en [C] et NON ÉLEVABLE</strong>, et la conséquence est structurante : <em>l'échelle est une <strong>construction d'auteur du Vol. I</strong>, introduite par « La proposition de l'ouvrage… », non la reprise d'une source primaire tierce — <strong>l'élévation en [B] par lecture de la source est sans objet</strong>.</em> Elle entre comme <strong>thèse d'un volume antérieur, à attribuer à chaque emploi</strong>, jamais comme fait. ⚠ <strong>Le croisement qui suit ne peut donc rien établir ; il ordonne.</strong></p>
 </div>
-
+<figure class="figure">
+  <img src="../figures/f-43-05-echelles-homonymes.svg" alt="Figure 43.5 — Trois échelles d&#39;autonomie homonymes : « copilote » ne désigne pas la même chose trois fois." />
+  <figcaption><strong>Figure 43.5</strong> — Trois échelles d'autonomie homonymes : « copilote » ne désigne pas la même chose trois fois.</figcaption>
+</figure>
 <h3>43.5.2 Le croisement par palier, et ce qu'il ordonne</h3>
-
 <div class="avert">
   <p><strong>Ce que cette section ajoute au ch. 14 § 14.4, et ce qu'elle en reprend.</strong> Le ch. 14 § 14.4 a croisé <strong>les cinq questions</strong> avec cette même échelle et a ordonné les <strong>exigences d'identité</strong> par palier. <strong>La colonne « identité » ci-dessous en est la reprise et ne la refait pas.</strong> <em>Ce que ce paragraphe ajoute est le croisement avec les <strong>autres couches</strong> — ce qu'un palier exige du maillage et de l'exploitation —, et la lecture qui en découle : <strong>à chaque palier, la dette contractée n'est pas la même selon la couche</strong>.</em></p>
 </div>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Palier <em>(échelle à quatre paliers non numérotés ; H-31, [C])</em></th><th>Identité exigible <em>(reprise du ch. 14 § 14.4)</em></th><th>Maillage exigible</th><th>Exploitation exigible</th><th>Ce que le socle offre, et ce qu'il n'offre pas</th></tr></thead>
-  <tbody>
-    <tr><td><strong>assistance</strong> — l'humain engage chaque action</td><td><strong>Q-A</strong> : <em>sans identifiant, la trace ne s'impute à rien</em></td><td><strong>le point d'application est l'humain qui engage</strong> : l'autorisation par arête n'est pas requise</td><td>une trace <strong>rattachable à la personne qui engage</strong></td><td><strong>offre</strong> : une signature démontrant l'intégrité d'un contenu canonicalisé au regard d'une clé. ⚠ <strong>n'offre pas</strong> : l'obligation de signer — <em>la signature est facultative</em></td></tr>
-    <tr><td><strong>copilote</strong> <em>(palier de cette échelle-là — quatre paliers <strong>non numérotés</strong> ; jamais le niveau 2 du continuum 0-5 ni le niveau L0 de la graduation L0-L3)</em></td><td><strong>Q-B</strong> s'ajoute : <em>contresigner ce qu'on n'a pas produit suppose de savoir qui l'a produit</em></td><td><strong>le contresignataire tient lieu de point d'application</strong> ; la couverture des arêtes n'est pas encore en cause</td><td><strong>la détection d'un changement d'outil entre deux contresignatures</strong></td><td>⚠ <strong>n'offre rien qui ancre la confiance</strong> — <em>l'ancrage est renvoyé hors du protocole</em> ; et <strong>ni version, ni empreinte, ni signature au type décrivant un outil</strong></td></tr>
-    <tr><td><strong>orchestration sous revue</strong> — la revue porte sur une chaîne</td><td><strong>Q-C</strong> devient centrale : <em>une chaîne qui ne s'interroge qu'à l'admission ne soutient pas une revue portant sur l'exécution</em></td><td><strong>le point d'application par arête devient exigible</strong> — <em>c'est le lieu où une chaîne se vérifie à chaque saut</em></td><td><strong>la corrélation entre la trace et la chaîne de mandat</strong></td><td><strong>offre</strong> : un format de mandat versionné, l'expression de la délégation par un attribut normalisé, une syntaxe d'autorisation par arête. ⚠ <strong>n'offre pas</strong> : l'interrogeabilité à l'instant <em>t</em> ; <strong>la clé de jointure</strong> (ch. 38 § 38.5) ; et <em>la propagation borne elle-même sa portée à un domaine de confiance</em></td></tr>
-    <tr><td><strong>autonomie bornée</strong> — plus aucun acte n'est contresigné à l'unité</td><td><strong>les cinq questions, simultanément</strong></td><td><strong>la couverture du graphe devient la question opérante</strong> (ch. 37 § 37.5)</td><td><strong>la boucle complète</strong> : évaluer, détecter, répondre, réviser (ch. 39) — ⚠ <strong>et la réémission du gabarit</strong>, qui n'a pas de socle (ch. 41 § 41.5)</td><td>⚠ <strong>n'offre ni révocation outillée, ni délai de propagation, ni métrique de parc</strong> — <em>les trois manques se cumulent au palier où ils coûtent le plus</em></td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>Palier <em>(échelle à quatre paliers non numérotés ; H-31, [C])</em></th>
+<th>Identité exigible <em>(reprise du ch. 14 § 14.4)</em></th>
+<th>Maillage exigible</th>
+<th>Exploitation exigible</th>
+<th>Ce que le socle offre, et ce qu'il n'offre pas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>assistance</strong> — l'humain engage chaque action</td>
+<td><strong>Q-A</strong> : <em>sans identifiant, la trace ne s'impute à rien</em></td>
+<td><strong>le point d'application est l'humain qui engage</strong> : l'autorisation par arête n'est pas requise</td>
+<td>une trace <strong>rattachable à la personne qui engage</strong></td>
+<td><strong>offre</strong> : une signature démontrant l'intégrité d'un contenu canonicalisé au regard d'une clé. ⚠ <strong>n'offre pas</strong> : l'obligation de signer — <em>la signature est facultative</em></td>
+</tr>
+<tr>
+<td><strong>copilote</strong> <em>(palier de cette échelle-là — quatre paliers <strong>non numérotés</strong> ; jamais le niveau 2 du continuum 0-5 ni le niveau L0 de la graduation L0-L3)</em></td>
+<td><strong>Q-B</strong> s'ajoute : <em>contresigner ce qu'on n'a pas produit suppose de savoir qui l'a produit</em></td>
+<td><strong>le contresignataire tient lieu de point d'application</strong> ; la couverture des arêtes n'est pas encore en cause</td>
+<td><strong>la détection d'un changement d'outil entre deux contresignatures</strong></td>
+<td>⚠ <strong>n'offre rien qui ancre la confiance</strong> — <em>l'ancrage est renvoyé hors du protocole</em> ; et <strong>ni version, ni empreinte, ni signature au type décrivant un outil</strong></td>
+</tr>
+<tr>
+<td><strong>orchestration sous revue</strong> — la revue porte sur une chaîne</td>
+<td><strong>Q-C</strong> devient centrale : <em>une chaîne qui ne s'interroge qu'à l'admission ne soutient pas une revue portant sur l'exécution</em></td>
+<td><strong>le point d'application par arête devient exigible</strong> — <em>c'est le lieu où une chaîne se vérifie à chaque saut</em></td>
+<td><strong>la corrélation entre la trace et la chaîne de mandat</strong></td>
+<td><strong>offre</strong> : un format de mandat versionné, l'expression de la délégation par un attribut normalisé, une syntaxe d'autorisation par arête. ⚠ <strong>n'offre pas</strong> : l'interrogeabilité à l'instant <em>t</em> ; <strong>la clé de jointure</strong> (ch. 38 § 38.5) ; et <em>la propagation borne elle-même sa portée à un domaine de confiance</em></td>
+</tr>
+<tr>
+<td><strong>autonomie bornée</strong> — plus aucun acte n'est contresigné à l'unité</td>
+<td><strong>les cinq questions, simultanément</strong></td>
+<td><strong>la couverture du graphe devient la question opérante</strong> (ch. 37 § 37.5)</td>
+<td><strong>la boucle complète</strong> : évaluer, détecter, répondre, réviser (ch. 39) — ⚠ <strong>et la réémission du gabarit</strong>, qui n'a pas de socle (ch. 41 § 41.5)</td>
+<td>⚠ <strong>n'offre ni révocation outillée, ni délai de propagation, ni métrique de parc</strong> — <em>les trois manques se cumulent au palier où ils coûtent le plus</em></td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 43.4 — Le croisement des quatre paliers avec trois couches. ⚠ <strong>Construction d'auteur en totalité</strong> ; <em>aucun palier n'est porté par une entrée de socle.</em></p>
-
 <p><span class="auteur">Lecture de l'auteur</span> ⚠ <strong>le croisement ne rend aucun mécanisme suffisant à un palier bas.</strong> <em>Un fait borné ne varie pas avec le palier</em> : la section d'une spécification qui ne comporte aucun moyen d'établir le statut d'une clé n'en comporte pas plus pour un agent d'assistance que pour un agent en autonomie bornée. ⚠ <strong>Le palier change le coût du défaut, non le défaut</strong> — et <em>une entreprise qui ordonnerait ses exigences par palier accepterait, en connaissance de cause, de porter aux paliers bas une dette dont l'échéance est le palier suivant.</em></p>
-
 <h3>43.5.3 La feuille de route par plateaux, et l'écart entre ambition et déploiement</h3>
-
 <p><em>← Vol. I</em> Monographie <em>§5.12.2 — <strong>arrivée</strong> depuis le ch. 34 — et §6.10, <strong>prélevé au ch. 44</strong>, qui traite par ailleurs son chapitre d'origine en bloc. ⚠ <strong>[C]</strong>.</em></p>
-
 <p>Le Vol. I modélise la trajectoire comme <strong>une suite ordonnée de paliers</strong> — <em>un état de référence, des états intermédiaires, un état cible</em> —, chacun <strong>agrégeant un jeu d'incréments de capacité</strong>, ⚠ <strong>et il pose la règle qui compte</strong> : <em>un palier ne se franchit qu'en débloquant un jeu de <strong>contrôles vérifiables</strong>, non en empilant des fonctionnalités.</em> ⚠ <strong>L'instrument est nommé et daté</strong> : <em>c'est une transposition du <strong>modèle LCIM</strong> — Wang, Tolk et Wang, 2009 — aux agents, et la somme n'en est ni l'auteur ni le dépositaire.</em> <span class="auteur">Lecture de l'auteur</span> ⚠ <em>c'est le même énoncé que le § 43.3 sous une autre forme : <strong>chaque palier est un endroit où l'exploitant doit pouvoir produire quelque chose</strong>.</em></p>
-
 <p><strong>Sa transposition financière déplace l'axe de lecture</strong> : ⚠ <em>chaque palier ne débloque pas seulement des capacités d'interopérabilité, il débloque surtout des <strong>contrôles</strong>.</em> Le Vol. I situe <strong>la réduction de risque la plus forte non au sommet de cette grille mais à son passage intermédiaire</strong> — <em>là où l'application de politique et les contrôles d'accès deviennent <strong>systématiques et non plus ponctuels</strong></em>. ⚠ <strong>Repérage [C], thèse attribuée</strong> : <em>une institution qui pousse l'autonomie sans avoir franchi ce palier accumule du risque non gouverné.</em></p>
-
 <div class="avert">
   <p><strong>L'écart entre ambition et déploiement encadre la lecture, et chacun de ses chiffres est auto-déclaré.</strong> ⚠ <strong>L'attribution suit la source et ne la devance pas</strong> : <em>le Vol. I rapporte le premier jeu <strong>sans nommer d'analyste</strong>, et la somme reporte cet état plutôt que de lui prêter une attribution.</em> Il le donne <strong>de statut analyste ou enquête, marqué « ressources vivantes » et à re-vérifier</strong> : <em>environ un tiers des organisations à un niveau de maturité 3 ou supérieur ; une quasi-totalité qui <strong>prévoient</strong> des déploiements ; environ un déploiement sur dix réellement en production</em> — écart que les analystes nomment le <strong>purgatoire des pilotes</strong>. <strong>D'autres enquêtes qu'il cite avancent des chiffres plus bas encore, également auto-déclarés et nommément attribués</strong> : <em>les enquêtes de <strong>McKinsey/QuantumBlack</strong> (2025) et le rapport <strong>MIT NANDA</strong> (Challapally et coll., 2025).</em> ⚠ <strong>Aucune de ces grandeurs n'est vérifiée indépendamment, aucune n'est reprise comme fait, et la somme n'en dérive rien.</strong> <em>Ce qu'elles éclairent est une chose et une seule</em> : <strong>la gouvernance est régulièrement citée comme blocage principal</strong> — ⚠ <em>ce qui, s'il fallait le retenir, validerait a contrario le patron du palier intermédiaire : <strong>c'est l'absence de contrôles, non l'insuffisance des modèles, qui retiendrait les déploiements</strong>.</em> <strong>Lecture de l'auteur, et elle est faible par construction</strong> : <em>un constat tiré d'enquêtes auto-déclarées ne vaut pas mieux que ses sources.</em></p>
 </div>
-
 <h2 id="s436"><span class="sig">§ 43.6</span>Alternatives, variantes et frontières d'abstraction</h2>
-
 <p><strong>Cette architecture est neutre ; elle n'en est pas moins réalisable, et le socle documente de quoi.</strong></p>
-
 <p><strong>Pour la couche d'orchestration, trois réalisations sont au socle</strong>, et <strong>chacune porte son statut à la mention</strong> (R-09 du Vol. III) : <em>un cadriciel d'éditeur en <strong>disponibilité générale depuis une date nommée</strong>, portant les flux à base de graphes, les points de contrôle et l'humain dans la boucle</em> (Vol. II <strong>F-15</strong>) ; <em>une plateforme dont <strong>le support d'un protocole n'est confirmé de première main que pour son offre commerciale</strong>, non pour sa bibliothèque ouverte</em> (Vol. II <strong>F-32</strong>) ; <em>une orchestration événementielle dont les capacités agentiques déclarent un appel d'outils natif et une intégration en <strong>préversion ouverte</strong>, ⚠ <strong>sans qu'aucun client ni chiffre d'adoption ne figure à la source</strong></em> (Vol. II <strong>F-33</strong>). ⚠ <strong>Deux autres cadriciels sont au socle en [C] et ne portent aucun fait central ici.</strong> <em>Le ch. 23 les traite ; ce chapitre les nomme comme réalisations documentées, jamais comme recommandations.</em></p>
-
 <div class="avert">
   <p><strong>Une seule de ces réserves engage ce chapitre.</strong> Le socle documente <strong>des limites connues du magasin de points de contrôle d'un cadriciel nommé en déploiement distribué</strong> (Vol. II <strong>F-15</strong>). <span class="auteur">Lecture de l'auteur</span> ⚠ <em>la persistance de l'état est le mécanisme dont dépend <strong>PC3</strong>, le point d'arrêt humain</em> ; <strong>le socle ne relie ce magasin à aucun des autres points</strong>. <em>Une limite connue de ce mécanisme est un <strong>risque d'architecture</strong>, non un détail d'exploitation.</em></p>
 </div>
-
 <p><strong>La frontière d'abstraction, elle, est la cinquième zone du ch. 42 — celle qui n'est pas devenue un point de contrôle.</strong> ⚠ <strong>Aucun organisme de normalisation technique n'a été désigné par arrêté ministériel et aucun standard n'est nommé dans les textes officiels</strong> ; <em>la candidature d'un format d'industrie relève du <strong>commentaire d'industrie</strong></em>, attribué comme tel (R-5 du Vol. II, formulation imposée). <strong>La discipline qui en découle est celle du ch. 32</strong> : <em>traiter le standard d'accès comme une variable derrière une frontière d'abstraction.</em> ⚠ <strong>Ce n'est pas un choix de protocole agentique</strong> — <em>aucun n'est nommé dans les textes.</em></p>
-
 <p><span class="auteur">Lecture de l'auteur</span> ⚠ <strong>une frontière d'abstraction n'est pas un point de contrôle, et les confondre coûterait deux fois.</strong> <em>Un point de contrôle est un endroit où l'architecture <strong>doit produire</strong> quelque chose ; une frontière d'abstraction est un endroit où elle <strong>doit pouvoir changer d'avis</strong> sans se refaire.</em> <strong>Ce que le socle établit</strong> : l'absence de désignation, <strong>par balayage documenté</strong>. <strong>Ce qu'il n'établit pas</strong> : que cette absence dure, ni qu'une désignation future soit compatible avec l'un des protocoles de la pile.</p>
-
-<p>## Synthèse : ce que le chapitre lègue à la somme</p>
-
+<h3>Synthèse : ce que le chapitre lègue à la somme</h3>
 <p><em>Section de sortie sans homologue direct dans la source — construction d'éditeur.</em></p>
-
-<ol class="numeros">
-  <li><strong>Les six couches, et leur statut de découpage.</strong> ⚠ <strong>Fusion déclarée de quatre couches et de trois étages</strong> ; <em>le socle porte les objets rangés, jamais le rangement.</em> Le <strong>ch. 45</strong> l'instancie couche par couche, le <strong>ch. 44</strong> le formalise.</li>
-  <li><strong>La collision « fabrique », posée ici pour la somme.</strong> ⚠ <em>La fabrique d'identité <strong>émet</strong> ; la fabrique d'agents du ch. 41 <strong>produit</strong>.</em> <strong>Siège de la distinction</strong> ; la table des quatre emplois reste au <strong>ch. 41 § 41.1</strong>.</li>
-  <li>⚠ <strong>SIÈGE : les cinq points de contrôle obligatoires.</strong> Posés <strong>une seule fois</strong>. Les <strong>ch. 37, 38, 39, 41 et 45</strong> y renvoient. <em>Chacun est un endroit où l'exploitant doit pouvoir <strong>produire</strong> quelque chose, non un endroit où le système doit être bon</em> — <strong>et aucun ne suppose le passeport</strong>.</li>
-  <li>⚠ <strong>SIÈGE : le modèle de maturité et les trois échelles d'autonomie.</strong> Posés <strong>une seule fois</strong>, avec leur cardinal et leur numérotation. Le <strong>ch. 39 § 39.6 s'abstient explicitement d'en produire un autre</strong> ; le <strong>ch. 40 § 40.6</strong> y renvoie pour départager les trois échelles homonymes.</li>
-  <li><strong>L'ordre d'application de deux instruments.</strong> <em>La grille « quand agentifier » d'abord, la taxonomie OO ensuite.</em> ⚠ <strong>Construction du compendium, réfutable.</strong></li>
-  <li><strong>La distinction point de contrôle / frontière d'abstraction.</strong> <em>Produire quelque chose, contre pouvoir changer d'avis.</em> Le <strong>ch. 45 § 45.13</strong> instancie la seconde, le <strong>ch. 46</strong> séquence l'instrumentation des cinq premiers.</li>
+<ol type="1">
+<li><strong>Les six couches, et leur statut de découpage.</strong> ⚠ <strong>Fusion déclarée de quatre couches et de trois étages</strong> ; <em>le socle porte les objets rangés, jamais le rangement.</em> Le <strong>ch. 45</strong> l'instancie couche par couche, le <strong>ch. 44</strong> le formalise.</li>
+<li><strong>La collision « fabrique », posée ici pour la somme.</strong> ⚠ <em>La fabrique d'identité <strong>émet</strong> ; la fabrique d'agents du ch. 41 <strong>produit</strong>.</em> <strong>Siège de la distinction</strong> ; la table des quatre emplois reste au <strong>ch. 41 § 41.1</strong>.</li>
+<li>⚠ <strong>SIÈGE : les cinq points de contrôle obligatoires.</strong> Posés <strong>une seule fois</strong>. Les <strong>ch. 37, 38, 39, 41 et 45</strong> y renvoient. <em>Chacun est un endroit où l'exploitant doit pouvoir <strong>produire</strong> quelque chose, non un endroit où le système doit être bon</em> — <strong>et aucun ne suppose le passeport</strong>.</li>
+<li>⚠ <strong>SIÈGE : le modèle de maturité et les trois échelles d'autonomie.</strong> Posés <strong>une seule fois</strong>, avec leur cardinal et leur numérotation. Le <strong>ch. 39 § 39.6 s'abstient explicitement d'en produire un autre</strong> ; le <strong>ch. 40 § 40.6</strong> y renvoie pour départager les trois échelles homonymes.</li>
+<li><strong>L'ordre d'application de deux instruments.</strong> <em>La grille « quand agentifier » d'abord, la taxonomie OO ensuite.</em> ⚠ <strong>Construction du compendium, réfutable.</strong></li>
+<li><strong>La distinction point de contrôle / frontière d'abstraction.</strong> <em>Produire quelque chose, contre pouvoir changer d'avis.</em> Le <strong>ch. 45 § 45.13</strong> instancie la seconde, le <strong>ch. 46</strong> séquence l'instrumentation des cinq premiers.</li>
 </ol>
-
 <div class="avert">
   <p><strong>Ce que le chapitre ne lègue pas.</strong> Aucune <strong>prescription de composant</strong> : <em>l'architecture est neutre, et les réalisations sont des cas documentés.</em> Aucune <strong>qualification juridique</strong> : <em>la qualification précède l'architecture, et elle appartient à l'institution.</em> Aucune <strong>exigence</strong> là où les textes portent une <strong>attente</strong> — ⚠ <strong>et l'écart entre « exigé » et « attendu » est le point où ce chapitre a dû borner sa propre source</strong>. Et aucun <strong>modèle de maturité fondé</strong> : <em>le socle n'en documente aucun, le corpus d'appui a été retiré, et ce qui reste est une construction marquée.</em></p>
 </div>
+<hr />
 
 <footer class="pied">
   <p><strong>Vol. IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em></strong> · Livre IV, chapitre 43. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau, M.Sc. IT.</p>
-
   <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme (gel unique : 27 juillet 2026).</p>
 </footer>
 

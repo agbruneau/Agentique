@@ -867,8 +867,18 @@ conditionne pas ce chapitre** ; ⚠ **D-9 ne le bloque pas.**
 
 **Remontées ouvertes par ce chapitre :**
 
-⚠ **Avertissement d'allocation, à lire avant les trois numéros neufs.** *Les identifiants **R-IV-110**,
-**R-IV-111** et **R-IV-112** sont **proposés**, non alloués : la relecture du 28 juillet 2026 a couru
+☑ **ALLOUÉS ET SOLDÉS LE 2 SEPTEMBRE 2026**, passe d'audit et d'appareil (**D-16**, PRD §19) :
+**R-IV-110** — *subdivision du § 35.8 **admise** et dépliée au plan, décision 23 du TOC* ;
+**R-IV-111** — *le critère de reprise est porté au [registre du volet
+résiduel](../PRD/gel-2026-07-28-volet-residuel.md), et il tranche : sur vingt-deux verdicts, **quatre
+seulement** sont résorbables par l'appareil* ; **R-IV-112** — *les trois sites portent la même mesure,
+**9 121 mots** au 2 septembre, chacun avec son historique*. ⚠ **L'unicité a été vérifiée avant
+inscription, comme cet avertissement l'exigeait** : le contrôle **P9** relève **106 ouvertures** sur
+les cinquante pièces, **aucun numéro ouvert deux fois** — *l'instrument qui manquait au 28 juillet
+2026 existe depuis le 2 septembre.*
+
+⚠ **Avertissement d'allocation d'origine, conservé.** *Les identifiants **R-IV-110**,
+**R-IV-111** et **R-IV-112** étaient **proposés**, non alloués : la relecture du 28 juillet 2026 a couru
 **en parallèle sur les cinquante pièces**, dans une série unique et partagée, et **c'est exactement la
 configuration qui a produit dix numéros alloués deux fois le 27 juillet 2026**.* ⚠ ***La passe qui consolide ces remontées
 vérifie l'unicité avant de les inscrire*** — *aucun instrument versionné ne rapproche deux plages de

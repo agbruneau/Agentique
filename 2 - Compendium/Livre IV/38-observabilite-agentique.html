@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chapitre 38 — L&#x27;observabilité agentique · Interopérabilité et Orchestration en Entreprise Agentique</title>
-<meta name="description" content="Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d'agents et synthèse architecturale. Second mouvement — exploiter (ch. 38-40). Premier chapitre du mouvement : il traite la première des trois capacités que l'exploitation distingue — voir">
+<meta name="description" content="Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d&#x27;agents et synthèse architecturale. Second mouvement — exploiter (ch. 38-40). Premier chapitre du mouvement : il traite la première des trois capacités que l&#x27;exploitation distingue — **voir**">
 <meta name="author" content="André-Guy Bruneau, M.Sc. IT">
 <meta name="color-scheme" content="dark">
 <style>
@@ -443,6 +443,17 @@ tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
 tbody td:first-child { color: var(--texte); font-weight: 600; }
 .legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
 
+/* -------------------------------------------------------------- figures */
+/* Les SVG du volume sont dessinés pour le PDF, donc sur fond clair, et ils
+   portent ce fond eux-mêmes — sans quoi il faudrait maintenir deux variantes
+   de chaque figure. Sur ce thème sombre, ils se posent donc comme un carton ;
+   le padding empêche le fond de la figure de toucher le bord du cadre. */
+.figure { margin: 2.1rem 0 1.9rem; }
+.figure img { display: block; width: 100%; height: auto; border-radius: 7px;
+              border: 1px solid var(--trait); background: #fdfbf9; padding: 0.6rem; }
+.figure figcaption { font-size: 0.8rem; font-style: italic; color: var(--texte-faible);
+                     margin-top: 0.65rem; padding-left: 0.15rem; }
+
 /* --------------------------------------------------------------- listes */
 ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
 ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
@@ -531,17 +542,15 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <div class="nav__marque">Interopérabilité et Orchestration en Entreprise Agentique</div>
   <div class="nav__sous">Livre IV · Chapitre 38</div>
   <ol>
-    <li><a href="#s380"><span class="num">38.0</span>Introduction : ce que « voir » veut dire quand l&#x27;observé est un mandataire</a></li>
-    <li><a href="#s381"><span class="num">38.1</span>De l&#x27;APM à l&#x27;AgentOps : ce que l&#x27;observabilité classique couvre et où l&#x27;agent la déborde</a></li>
-    <li><a href="#s382"><span class="num">38.2</span>État des conventions sémantiques OpenTelemetry pour l&#x27;IA générative et les agents</a></li>
-    <li><a href="#s383"><span class="num">38.3</span>Propagation de trace à travers les frontières d&#x27;agents</a></li>
+    <li><a href="#s380"><span class="num">38.0</span>Introduction : ce que « voir » veut dire quand l'observé est un mandataire</a></li>
+    <li><a href="#s381"><span class="num">38.1</span>De l'APM à l'AgentOps : ce que l'observabilité classique couvre et où l'agent la déborde</a></li>
+    <li><a href="#s382"><span class="num">38.2</span>État des conventions sémantiques OpenTelemetry pour l'IA générative et les agents</a></li>
+    <li><a href="#s383"><span class="num">38.3</span>Propagation de trace à travers les frontières d'agents</a></li>
     <li><a href="#s384"><span class="num">38.4</span>La journalisation probatoire : quand la trace devient pièce de conformité</a></li>
-    <li><a href="#s385"><span class="num">38.5</span>Corréler la trace au passeport : l&#x27;identité comme clé de jointure</a></li>
-
+    <li><a href="#s385"><span class="num">38.5</span>Corréler la trace au passeport : l'identité comme clé de jointure</a></li>
   </ol>
   <div class="nav__pied">
     Vol.&nbsp;IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em><br>
-
     <a href="38-observabilite-agentique.md">Version Markdown</a>
   </div>
 </nav>
@@ -552,263 +561,240 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 <header class="titre">
   <div class="titre__fil">Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d&#x27;agents et synthèse architecturale</div>
   <h1><span class="chap">Chapitre 38</span>L&#x27;observabilité agentique</h1>
-  <p class="titre__situe">Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d'agents et synthèse architecturale. Second mouvement — exploiter (ch. 38-40). Premier chapitre du mouvement : il traite la première des trois capacités que l'exploitation distingue — <strong>voir</strong></p>
+  <p class="titre__situe">Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d'agents et synthèse architecturale. Second mouvement — exploiter (ch. 38-40). Premier chapitre du mouvement : il traite la première des trois capacités que l'exploitation distingue — **voir**</p>
 </header>
 
+<!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
+     Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
+     que `build/assemble.py` pour le PDF et que `PRD/decompte.sh` pour la volumétrie. L'appareil de
+     gouvernance vit au .md jumeau, qui reste la seule source, et `build/verifier-piece.py` refuse
+     un rendu qui le recopierait. -->
+
 <h2 id="s380"><span class="sig">§ 38.0</span>Introduction : ce que « voir » veut dire quand l'observé est un mandataire</h2>
-
 <p>Le ch. 37 s'est arrêté sur un constat qu'il ne pouvait pas dépasser : un dispositif que toute interaction traverse est <strong>structurellement un producteur de trace non délégué à l'observé</strong> — propriété d'emplacement, non de qualité —, et <strong>la clé qui rattacherait cette trace au mandat autorisant l'action tracée manque</strong>. Ce chapitre reprend le dossier à cet endroit exact.</p>
-
 <p><strong>Le mouvement <em>exploiter</em> distingue trois capacités, et celui-ci en traite une seule.</strong> Voir (ch. 38) ; boucler — évaluer, détecter la dérive, répondre à l'incident (ch. 39) ; mesurer un parc (ch. 40). ⚠ <strong>La frontière avec le ch. 40 passe entre l'instrument et l'indicateur</strong> : ce chapitre décrit ce que les conventions d'instrumentation <strong>nomment et rattachent</strong> — segments (<em>spans</em>), attributs, événements ; le ch. 40 examine <strong>ce qu'elles comptent et ce qu'elles ne comptent pas</strong>.</p>
-
 <p><strong>Le terme qui nomme la discipline est un terme de fournisseur, et il se pose ici à son siège hérité.</strong> Le Vol. III écrit qu'« AgentOps » n'a <strong>pas de définition normative à date</strong> (R-03 du Vol. III) et l'emploie au sens de : <em>la discipline d'exploitation qui maintient vérifiable, dans la durée, l'identité et le mandat d'un parc d'agents — par ce qu'elle observe, par ce qu'elle consigne et par le signal de revalidation qu'elle renvoie à l'émetteur.</em> <strong>La somme reprend cette définition et ne la redéfinit pas.</strong> ⚠ <strong>Le statut du terme est posé par décision de cadrage, non par un relevé</strong> : <strong>aucun balayage n'a porté sur son emploi commercial</strong>, et <strong>le socle ne documente aucun homonyme commercial d'« AgentOps »</strong> — absence de documentation, non fait négatif vérifié (R-14 du Vol. III, degré 3). <em>L'ouvrage emploie le terme au sens de la discipline et le déclare ; il n'affirme pas qu'un produit du même nom existe.</em></p>
-
 <div class="avert">
   <p><strong>Ce que le chapitre ne traite pas, dit ici pour qu'on ne le prenne pas pour un oubli.</strong> Le <strong>coût par jeton</strong> n'y entre pas : le test d'appartenance ne le retient à aucun titre, et le FinOps agentique est au <strong>ch. 40 § 40.6</strong>. L'<strong>horizon de tâche déléguée</strong> n'y entre pas : il est au <strong>ch. 40 § 40.3</strong>, en partage déclaré avec le <strong>ch. 49</strong>. Le <strong>non-déterminisme</strong> n'y entre pas : il ne répond ni à ce qu'il vérifie de l'identité ou du mandat, ni à ce qu'il en produit comme preuve opposable, et <strong>aucune entrée ne le caractérise</strong>. Les <strong>fondements de l'évaluation</strong> ne sont pas ici : ils restent au <strong>ch. 6</strong>, et le Vol. I <em>Monographie</em> §2.9 n'est pas repris par ce chapitre — <strong>seul son §2.9.6 y arrive, en seule affectation</strong>.</p>
 </div>
-
 <p><strong>Le chapitre se lit en cinq temps.</strong> D'où vient la filiation et où l'agent la déborde (§ 38.1) ; ce que le corpus d'instrumentation est réellement, à sa date (§ 38.2) ; ce qui traverse une frontière d'agents (§ 38.3) ; quand la trace devient pièce (§ 38.4) ; et pourquoi la corrélation manque (§ 38.5).</p>
-
 <h2 id="s381"><span class="sig">§ 38.1</span>De l'APM à l'AgentOps : ce que l'observabilité classique couvre et où l'agent la déborde</h2>
-
 <h3>38.1.1 Une homonymie à poser avant toute filiation</h3>
-
 <div class="avert">
   <p><strong>Le sigle « APM » sert à deux objets sans rapport dans le Vol. III, et la somme hérite de l'homonymie.</strong> Le cadrage en fait le point de départ de la filiation de l'AgentOps — « de l'APM à l'AgentOps » —, où il désigne la <strong>supervision des performances applicatives</strong> (<em>application performance monitoring</em>). Le même sigle nomme, au socle hérité, un <strong>manifeste de recherche</strong> homonyme dont le siège est aux <strong>ch. 22</strong> et <strong>ch. 39</strong> (Vol. III <strong>H-11</strong>, <strong>[B]</strong>).</p>
 </div>
-
 <div class="avert">
   <p><strong>Le socle ne documente le développé d'aucun des deux sigles</strong> : absence de documentation, non fait négatif vérifié (R-14 du Vol. III, degré 3). La lecture retenue — que le premier désigne la supervision des performances applicatives — est une <strong>lecture de l'auteur</strong>, et <strong>le syntagme complet s'écrit à chaque emploi plutôt que le sigle nu</strong>. C'est la discipline que R-04 du Vol. III applique à « ACP » et que R-8 du Vol. II applique au plan de contrôle, dont le siège est au <strong>ch. 7 § 7.5</strong>. ⚠ <strong>Aucun garde-fou nouveau n'est créé</strong> — la somme applique les deux séries héritées et <strong>n'en ouvre pas de troisième</strong> (PRD §8).</p>
 </div>
-
 <h3>38.1.2 Ce que la supervision des performances applicatives couvre</h3>
-
 <p><strong>Le socle du Vol. III n'en porte aucune définition, aucun historique et aucune capacité</strong> : absence de documentation, non fait négatif vérifié (degré 3). <strong>La filiation posée est donc un choix de cadrage, pas un résultat d'instruction</strong>, et ce chapitre ne s'autorise d'elle <strong>aucune propriété transférée</strong>.</p>
-
 <div class="avert">
   <p><strong>Le compendium hérite pourtant, ici encore, d'une couverture que le Vol. III n'avait pas — et elle ne comble rien.</strong> Le <strong>ch. 3 § 3.4.5</strong> pose le socle pré-agentique du traçage réparti — norme W3C de contexte de trace, cadre d'instrumentation, conventions sémantiques —, et le Vol. I <em>Monographie</em> décrit en §2.9.6 la boucle <em>production → jeux d'évaluation → amélioration → production</em> qui transforme l'évaluation d'un audit ponctuel en processus continu. ⚠ <strong>C'est une lacune de couverture couverte, non comblée</strong> : le Vol. I entre en <strong>[C]</strong> — sa vérification porte sur ses références, non sur le contenu de ses affirmations —, et <em>une entrée [C] ne porte jamais un fait central.</em> Les deux énoncés — « le socle du Vol. III ne documente pas la supervision des performances applicatives » et « le Vol. I la décrit » — sont <strong>logiquement compatibles</strong>, et l'énoncé du Vol. III <strong>reste exact dans son périmètre</strong>.</p>
 </div>
-
 <p>Ce que le chapitre peut établir se trouve du côté de l'instrument : les conventions sémantiques ouvertes par le Vol. III déclarent <strong>sept attributs d'outil</strong> au premier échelon de maturité (Vol. III <strong>F-77</strong>, <strong>[B]</strong>), et rattachent l'exécution d'un outil à un segment dont la <strong>forme prescrite</strong> est <code>execute_tool {gen_ai.tool.name}</code> — <em>relevé hors socle, cité comme tel</em>. ⚠ <strong>Le verbe prescriptif de la spécification est « SHOULD », non « MUST »</strong> : le nom de segment est <strong>recommandé, non imposé</strong>, et la borne ne se détache pas de l'énoncé.</p>
-
 <h3>38.1.3 Où l'agent déborde, et le débordement qui appartient à la somme</h3>
-
-<p><strong>L'unité que l'instrument sait nommer est une opération</strong> : une invocation, un appel d'outil, une session. L'entrée la plus explicite du socle sur ce point est bornée à trois fichiers et vaut d'être citée <strong>pour sa lettre plutôt que pour sa portée</strong> : la métrique de durée d'invocation d'agent mesure « a single <strong>in-process</strong> agent invocation » (Vol. III <strong>F-91</strong>, <strong>[B]</strong> ; siège <strong>ch. 40 § 40.1</strong>).</p>
-
-<div class="avert">
-  <p><strong>Une invocation en processus n'est ni une délégation, ni une chaîne de mandat, ni un parc.</strong></p>
-</div>
-
-<p><strong>L'entreprise, elle, n'a pas de question sur l'invocation : elle a une question sur le mandataire.</strong> Savoir qu'un appel a duré trois secondes ne dit ni qui l'a émis, ni pour le compte de qui, ni sous quelle borne de privilège — c'est-à-dire ni <strong>Q-A</strong> (« qui es-tu ? »), ni <strong>Q-B</strong> (« qui t'a créé ? »), ni <strong>Q-C</strong> (« pour qui agis-tu ? », qui exige une chaîne de mandat <strong>interrogeable à l'instant <em>t</strong></em>), ni <strong>Q-D</strong> (« que peux-tu faire ? », qui exige des bornes <strong>opposables au point d'application</strong>). <em>La grille du ch. 14 s'applique ici en lecture inversée : elle ne rend pas un verdict, elle nomme ce que l'instrument ne peut pas produire.</em></p>
-
+<p><strong>L'unité que l'instrument sait nommer est une opération</strong> : une invocation, un appel d'outil, une session. L'entrée la plus explicite du socle sur ce point est bornée à trois fichiers et vaut d'être citée <strong>pour sa lettre plutôt que pour sa portée</strong> : la métrique de durée d'invocation d'agent mesure « a single <strong>in-process</strong> agent invocation » (Vol. III <strong>F-91</strong>, <strong>[B]</strong> ; siège <strong>ch. 40 § 40.1</strong>). ⚠ <strong>Une invocation en processus n'est ni une délégation, ni une chaîne de mandat, ni un parc.</strong></p>
+<p><strong>L'entreprise, elle, n'a pas de question sur l'invocation : elle a une question sur le mandataire.</strong> Savoir qu'un appel a duré trois secondes ne dit ni qui l'a émis, ni pour le compte de qui, ni sous quelle borne de privilège — c'est-à-dire ni <strong>Q-A</strong> (« qui es-tu ? »), ni <strong>Q-B</strong> (« qui t'a créé ? »), ni <strong>Q-C</strong> (« pour qui agis-tu ? », qui exige une chaîne de mandat <strong>interrogeable à l'instant <em>t</em></strong>), ni <strong>Q-D</strong> (« que peux-tu faire ? », qui exige des bornes <strong>opposables au point d'application</strong>). <em>La grille du ch. 14 s'applique ici en lecture inversée : elle ne rend pas un verdict, elle nomme ce que l'instrument ne peut pas produire.</em></p>
 <p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : sept attributs d'outil au premier échelon (F-77, <strong>[B]</strong>) ; le grain déclaré d'une métrique d'invocation, <strong>borné à l'exécution en processus</strong> (F-91, <strong>[B]</strong>). <strong>Ce qu'il n'établit pas</strong> : ce que couvre la supervision des performances applicatives, ni qu'une discipline nommée « AgentOps » existe comme catégorie constituée, ni qu'elle procède de celle-là. La lecture proposée est que <strong>le débordement qui appartient à la somme n'est ni celui du volume ni celui du non-déterminisme, mais celui du sujet</strong> : <em>l'instrument nomme une opération, l'entreprise doit répondre d'un mandataire, et la distance entre les deux est exactement ce que les § 38.2 à § 38.5 mesurent.</em> ⚠ <strong>Le lecteur peut refuser cette lecture sans qu'aucun des faits cités ne tombe.</strong></p>
-
 <h2 id="s382"><span class="sig">§ 38.2</span>État des conventions sémantiques OpenTelemetry pour l'IA générative et les agents</h2>
-
 <h3>38.2.1 La première chose à écrire est ce qu'on ne peut pas écrire</h3>
-
 <p><strong>La formule « conventions OpenTelemetry version X du [date] » est inécrivable</strong>, et elle l'est pour une raison précise : <strong>il n'y a pas de version à citer</strong>. Les conventions sémantiques (<em>semantic conventions</em>) pour l'IA générative ont quitté le dépôt principal pour un <strong>dépôt dédié</strong>, par une <strong>rupture déclarée dans la version v1.42.0 du 12 juin 2026</strong> (Vol. III <strong>F-74</strong>, <strong>[B]</strong>). Ce dépôt dédié ne porte, au 21 juillet 2026, <strong>ni publication ni étiquette</strong>, et la section « Schema URL » de son fichier de présentation ne contient que le mot « TODO » : <strong>aucun numéro de version qui lui soit propre n'est citable</strong> (Vol. III <strong>F-75</strong>, <strong>[B, degré 2]</strong> — <strong>fait négatif ÉTABLI</strong>, fondé sur l'interrogation des ressources d'énumération du dépôt et sur la lecture intégrale de son fichier de présentation, <strong>non sur un balayage exhaustif du projet</strong>).</p>
-
 <div class="avert">
-  <p><strong>Cette absence ne s'étend pas au-delà de sa borne</strong> : elle n'établit pas que le projet n'ait aucun mécanisme de versionnage ailleurs — une numérotation par instantané, une URL de schéma générée à la construction ou les millésimes du dépôt principal dont il dépend demeurent possibles et <strong>n'ont pas été balayés</strong>.</p>
+  <p><strong>Cette absence ne s'étend pas au-delà de sa borne</strong> : elle n'établit pas que le projet n'ait aucun mécanisme de versionnement ailleurs — une numérotation par instantané, une URL de schéma générée à la construction ou les millésimes du dépôt principal dont il dépend demeurent possibles et <strong>n'ont pas été balayés</strong>.</p>
 </div>
-
 <p><strong>La seule forme fidèle est donc descriptive</strong> : <em>les conventions sémantiques GenAI d'OpenTelemetry, telles que portées par leur dépôt dédié au 21 juillet 2026, à l'état</em> Development <em>et sans version publiée</em>. Les deux seules ancres temporelles disponibles sont <strong>la date de consultation</strong> et <strong>celle de la rupture qui a créé le dépôt</strong>.</p>
-
 <div class="avert">
   <p><strong>Le plan du compendium porte ici une forme et une ancre que le socle du Vol. III réfute, et le désalignement est remonté plutôt que corrigé.</strong> La ligne de sections du TOC annonce pour cette section un « statut exact des conventions — <strong>stable/expérimental</strong> — à dater au gel », <strong>alternative binaire que F-76 réfute</strong> (voir § 38.2.2) ; et sa datation v0.7 ancre les conventions sur un millésime d'<strong>avril 2026</strong> du dépôt principal, <strong>antérieur de deux mois à la rupture du 12 juin 2026</strong> qui les en a sorties. <em>Une ancre de version antérieure au déplacement qui l'a périmée relève exactement de la classe de défaut que le § 38.2.3 documente chez un éditeur.</em> Remontée <strong>R-IV-43</strong>.</p>
 </div>
-
 <h3>38.2.2 L'échelle de maturité, et il faut la nommer</h3>
-
 <p>L'échelle applicable <strong>aux groupes de conventions sémantiques</strong> compte <strong>cinq échelons</strong> — <code>development</code>, <code>alpha</code>, <code>beta</code>, <code>release_candidate</code>, <code>stable</code> —, le niveau <code>development</code> étant présumé en l'absence de déclaration (Vol. III <strong>F-76</strong>, <strong>[B]</strong>).</p>
-
 <div class="avert">
   <p><strong>Nommer l'échelle n'est pas une précaution de style</strong> : une <strong>seconde échelle, distincte</strong>, s'applique aux signaux des bibliothèques clientes, et c'est vraisemblablement d'elle que venait l'échelle à trois échelons qu'une revalidation antérieure du Vol. III avait portée — elle-même corrective d'une alternative binaire déjà fausse. <em>Une correction non vérifiée à la source n'est qu'une seconde erreur</em>, et le Vol. III s'est trompé <strong>deux fois</strong> sur cette échelle avant de la lire. <strong>La somme écrit l'échelle réelle et déclare l'écart avec son propre plan.</strong></p>
 </div>
-
 <h3>38.2.3 Le statut relevé, et son périmètre</h3>
-
 <p>Deux fichiers agentiques du dépôt dédié ont été ouverts et affichent en tête « <strong>Status</strong>: [Development] » ; les <strong>quatre attributs d'agent</strong>, les <strong>deux de conversation</strong>, les <strong>sept d'outil</strong> et les <strong>quatre d'évaluation</strong> relevés portent tous <code>stability: development</code> (Vol. III <strong>F-77</strong>, <strong>[B]</strong>).</p>
-
 <div class="avert">
   <p><strong>Deux marquages sont distincts et ne se fusionnent pas</strong> : le statut « Development » d'un <strong>document</strong> et la valeur <code>stability: development</code> d'un <strong>attribut</strong>. ⚠ <strong>Et les deux relevés ne portent pas sur les mêmes fichiers</strong> : le statut de document est relevé sur les deux documents ouverts, les attributs sont déclarés au registre et dans les documents de segments et d'événements. ⚠ <strong>Le relevé de statut porte sur ces deux fichiers et ne documente pas le statut des autres documents du dépôt.</strong></p>
 </div>
-
 <p>Deux autres documents portent le même statut de document, et le socle les nomme : un document de métriques, qui en définit <strong>douze</strong> (Vol. III <strong>F-90</strong>, <strong>[B]</strong>), et un document de jonction ouvert <strong>sur sa seule section de métriques</strong> (Vol. III <strong>F-95</strong>, <strong>[B, degré 1]</strong>) — <em>celui-là même dont le § 38.5 établit que le volet de corrélation n'a pas été instruit.</em></p>
-
 <div class="avert">
   <p><strong>Le cardinal du répertoire est hors socle et se cite comme tel</strong> : le répertoire compte <strong>onze fichiers</strong>, dont <strong>six ont été ouverts au moins en partie et cinq ne l'ont pas été</strong> — <em>relevé porté par le rapport de lot, non versé au socle</em>. <strong>Aucun constat ne vaut pour les cinq fichiers non ouverts.</strong></p>
 </div>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Ce que le socle établit du corpus, au 21 juillet 2026</th><th>Entrée (Vol. III)</th><th>Borne portée par l'entrée</th></tr></thead>
-  <tbody>
-    <tr><td>Déplacement vers un dépôt dédié, <strong>rupture déclarée en v1.42.0 du 12 juin 2026</strong></td><td><strong>F-74</strong>, [B]</td><td>—</td></tr>
-    <tr><td><strong>Aucune publication, aucune étiquette</strong>, « Schema URL » à « TODO »</td><td><strong>F-75</strong>, [B, degré 2]</td><td>deux ressources et cette date ; <strong>n'établit pas</strong> l'absence de tout versionnage ailleurs</td></tr>
-    <tr><td>Échelle <strong>des groupes de conventions</strong> : <strong>cinq échelons</strong>, <code>development</code> présumé par défaut</td><td><strong>F-76</strong>, [B]</td><td>une <strong>seconde échelle, distincte</strong>, régit les signaux des bibliothèques clientes</td></tr>
-    <tr><td>Deux fichiers agentiques au statut de document <em>Development</em> ; attributs d'agent, de conversation, d'outil et d'évaluation en <code>stability: development</code></td><td><strong>F-77</strong>, [B]</td><td><strong>ces deux fichiers seuls</strong> ; statut de document ≠ stabilité d'attribut</td></tr>
-    <tr><td>Un troisième document au même statut, <strong>douze métriques</strong> relevées</td><td><strong>F-90</strong>, [B]</td><td>ce fichier seul</td></tr>
-    <tr><td>Un quatrième document au même statut, ouvert <strong>sur ses seules métriques</strong></td><td><strong>F-95</strong>, [B, degré 1]</td><td>volet de corrélation <strong>non instruit</strong> (§ 38.5)</td></tr>
-    <tr><td>Une <strong>conformité annoncée</strong> pointant un millésime que le dépôt nommé <strong>n'a jamais émis</strong></td><td><strong>F-78</strong>, [B] — ⚠ <strong>☑ changée au 28 juill. 2026</strong></td><td><strong>un éditeur, une page, cette date</strong> — aucune généralisation ; <em>la qualification d'origine, « millésime du dépôt principal », est tombée</em></td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Ce que le socle établit du corpus, au 21 juillet 2026</th>
+<th>Entrée (Vol. III)</th>
+<th>Borne portée par l'entrée</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Déplacement vers un dépôt dédié, <strong>rupture déclarée en v1.42.0 du 12 juin 2026</strong></td>
+<td><strong>F-74</strong>, [B]</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Aucune publication, aucune étiquette</strong>, « Schema URL » à « TODO »</td>
+<td><strong>F-75</strong>, [B, degré 2]</td>
+<td>deux ressources et cette date ; <strong>n'établit pas</strong> l'absence de tout versionnement ailleurs</td>
+</tr>
+<tr>
+<td>Échelle <strong>des groupes de conventions</strong> : <strong>cinq échelons</strong>, <code>development</code> présumé par défaut</td>
+<td><strong>F-76</strong>, [B]</td>
+<td>une <strong>seconde échelle, distincte</strong>, régit les signaux des bibliothèques clientes</td>
+</tr>
+<tr>
+<td>Deux fichiers agentiques au statut de document <em>Development</em> ; attributs d'agent, de conversation, d'outil et d'évaluation en <code>stability: development</code></td>
+<td><strong>F-77</strong>, [B]</td>
+<td><strong>ces deux fichiers seuls</strong> ; statut de document ≠ stabilité d'attribut</td>
+</tr>
+<tr>
+<td>Un troisième document au même statut, <strong>douze métriques</strong> relevées</td>
+<td><strong>F-90</strong>, [B]</td>
+<td>ce fichier seul</td>
+</tr>
+<tr>
+<td>Un quatrième document au même statut, ouvert <strong>sur ses seules métriques</strong></td>
+<td><strong>F-95</strong>, [B, degré 1]</td>
+<td>volet de corrélation <strong>non instruit</strong> (§ 38.5)</td>
+</tr>
+<tr>
+<td>Une <strong>conformité annoncée</strong> pointant un millésime que le dépôt nommé <strong>n'a jamais émis</strong></td>
+<td><strong>F-78</strong>, [B] — ⚠ <strong>☑ changée au 28 juill. 2026</strong></td>
+<td><strong>un éditeur, une page, cette date</strong> — aucune généralisation ; <em>la qualification d'origine, « millésime du dépôt principal », est tombée</em></td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 38.1 — État daté des conventions sémantiques d'OpenTelemetry pour l'IA générative et les agents, tel que le socle du Vol. III le porte au 21 juillet 2026 — et, à la dernière ligne, tel que l'instruction du 28 juillet 2026 l'a re-daté.</p>
-
-<p><strong>Ce que devient « conforme aux conventions OpenTelemetry » dans ces conditions.</strong> <strong>Une conformité annoncée peut pointer un millésime que le dépôt qu'elle nomme n'a jamais émis.</strong> Au relevé du 21 juillet 2026, la documentation produit d'un éditeur nommé — <strong>Datadog</strong> — énonçait sa conformité par référence à un millésime du <strong>dépôt principal publié le 25 août 2025</strong>, soit <strong>antérieur au déplacement du 12 juin 2026</strong> (Vol. III <strong>F-78</strong>, <strong>[B]</strong>). ⚠ <strong>L'instruction du 28 juillet 2026 a rouvert cette page, et la qualification est tombée</strong> : le syntagme de conformité y est <strong>identique au mot près</strong>, mais <strong>son ancre pointe le dépôt dédié</strong>, où <strong>le dépôt principal n'apparaît en lien nulle part</strong> (<a class="lien" href="../PRD/socle-consolide.md">0</a>, entrée <code>S-124</code>, <strong>☑ changée</strong>). ⚠ <strong>La date de ce changement n'est pas établie</strong> — la page ne porte aucune date de révision exploitable, et <em>rien n'exclut que l'ancre pointât déjà le dépôt dédié au relevé d'origine.</em> ⚠ <strong>Le fait que la qualification servait ne tombe pas avec elle : il se durcit.</strong> Le millésime annoncé désigne désormais le dépôt dont le Vol. III établit, en <strong>F-75</strong>, qu'il <strong>ne porte ni publication ni étiquette</strong> — <em>la conformité annoncée ne pointe plus un millésime périmé, elle pointe un numéro que le dépôt nommé n'a jamais émis.</em> ⚠ <strong>La donnée est auto-déclarée</strong> par cet éditeur, à sa page et à sa date, et <strong>n'a fait l'objet d'aucune vérification indépendante</strong>. La même page prescrit une variable d'environnement dont l'intitulé qualifie ces conventions d'<strong>expérimentales</strong> — <em>indice de vocabulaire, non de statut</em>. ⚠ <strong>Ce constat est borné à un éditeur</strong> : il fournit <strong>une occurrence, pas une mesure</strong>, et ne soutient <strong>aucun énoncé sur une discontinuité générale</strong> entre le dépôt dédié et les implémentations.</p>
-
+<p><strong>Ce que devient « conforme aux conventions OpenTelemetry » dans ces conditions.</strong> <strong>Une conformité annoncée peut pointer un millésime que le dépôt qu'elle nomme n'a jamais émis.</strong> Au relevé du 21 juillet 2026, la documentation produit d'un éditeur nommé — <strong>Datadog</strong> — énonçait sa conformité par référence à un millésime du <strong>dépôt principal publié le 25 août 2025</strong>, soit <strong>antérieur au déplacement du 12 juin 2026</strong> (Vol. III <strong>F-78</strong>, <strong>[B]</strong>). ⚠ <strong>L'instruction du 28 juillet 2026 a rouvert cette page, et la qualification est tombée</strong> : le syntagme de conformité y est <strong>identique au mot près</strong>, mais <strong>son ancre pointe le dépôt dédié</strong>, où <strong>le dépôt principal n'apparaît en lien nulle part</strong> (<a href="../PRD/socle-consolide.md"><code>socle-consolide.md</code></a>, entrée <code>S-124</code>, <strong>☑ changée</strong>). ⚠ <strong>La date de ce changement n'est pas établie</strong> — la page ne porte aucune date de révision exploitable, et <em>rien n'exclut que l'ancre pointât déjà le dépôt dédié au relevé d'origine.</em> ⚠ <strong>Le fait que la qualification servait ne tombe pas avec elle : il se durcit.</strong> Le millésime annoncé désigne désormais le dépôt dont le Vol. III établit, en <strong>F-75</strong>, qu'il <strong>ne porte ni publication ni étiquette</strong> — <em>la conformité annoncée ne pointe plus un millésime périmé, elle pointe un numéro que le dépôt nommé n'a jamais émis.</em> ⚠ <strong>La donnée est auto-déclarée</strong> par cet éditeur, à sa page et à sa date, et <strong>n'a fait l'objet d'aucune vérification indépendante</strong>. La même page prescrit une variable d'environnement dont l'intitulé qualifie ces conventions d'<strong>expérimentales</strong> — <em>indice de vocabulaire, non de statut</em>. ⚠ <strong>Ce constat est borné à un éditeur</strong> : il fournit <strong>une occurrence, pas une mesure</strong>, et ne soutient <strong>aucun énoncé sur une discontinuité générale</strong> entre le dépôt dédié et les implémentations.</p>
 <div class="avert">
   <p><strong>Le Vol. I porte de son côté une conséquence d'ingénierie, en [C], et elle recoupe ce constat sans l'établir</strong> : un déploiement prudent <strong>active explicitement l'option de stabilité sémantique et anticipe des ruptures de schéma</strong>, et le patron de mise en œuvre fait converger <strong>deux couches distinctes vers un seul collecteur</strong> — l'observabilité spécialisée des appels de modèle et l'infrastructure de supervision générale — <em>de manière à corréler une dérive de comportement avec une saturation de ressource</em>. <strong>Le critère d'architecture qu'il pose est l'unification</strong> : <em>un agent d'entreprise ne doit pas créer un silo d'observabilité parallèle.</em> ⚠ <strong>Repérage [C], non fait central</strong> : la somme le cite comme thèse d'un volume antérieur, à attribuer.</p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : une date de rupture ; une absence de version citable <strong>bornée à deux ressources</strong> ; une échelle nommée à cinq échelons ; un statut de document relevé sur <strong>quatre fichiers</strong>, dont deux nommés ; un cas d'éditeur pointant un millésime que le dépôt qu'il nomme n'a pas émis. <strong>Ce qu'il n'établit pas</strong> : <strong>que ces conventions soient le seul candidat existant</strong> — aucun balayage de candidats concurrents n'a été conduit, et <em>une exclusivité posée sur un corpus non balayé est la forme même que R-14 du Vol. III proscrit</em> —, ni qu'elles progresseront sur leur échelle, ni ce que portent les cinq fichiers non ouverts. La lecture proposée est que <strong>le premier échelon d'une échelle de cinq, sans version publiée, est un objet qu'on cite par sa date de consultation et non par son numéro</strong> — et que <strong>toute architecture d'observabilité qui s'y adosse hérite de cette volatilité</strong>. ⚠ Le passage de ces conventions à un échelon supérieur est <strong>SPÉCULATIF</strong> : <strong>aucun jalon daté n'est relevé</strong>, et aucune date d'aboutissement n'est écrite ici sous aucun des trois tris.</p>
-
 <h2 id="s383"><span class="sig">§ 38.3</span>Propagation de trace à travers les frontières d'agents</h2>
-
 <p><em>← Vol. I</em> Monographie <em>§3.12.3 — <strong>arrivée</strong>, prélevée au ch. 9, qui garde le reste du §3.12 et déclare la sortie à son bout. Le socle pré-agentique du traçage réparti reste au <strong>ch. 3 § 3.4.5</strong> et n'est pas reconstruit ici.</em></p>
-
 <div class="avert">
   <p><strong>Cette section entre en [C] de bout en bout</strong>, et c'est la seule du chapitre dans ce cas : sa matière vient <strong>entièrement</strong> du Vol. I, dont le socle du Vol. III ne porte aucun équivalent. <em>Aucun énoncé n'y est central, et aucun ne le deviendra sans lecture de la source primaire que le Vol. I cite.</em></p>
 </div>
-
 <p><strong>Le seul fait propre à l'interopérabilité est la propagation du contexte de trace à travers la frontière protocolaire.</strong> Lorsqu'un agent client délègue une tâche à un serveur d'outils ou à un agent distant, <strong>la continuité de la trace ne survit que si le contexte de traçage traverse l'appel</strong> : le segment du serveur s'imbrique alors sous celui du client, et <strong>la chaîne d'exécution reste reconstituable de bout en bout malgré le franchissement d'une frontière organisationnelle</strong>. La norme de contexte de trace du W3C fournit le mécanisme — un en-tête véhicule l'identité de trace d'un saut à l'autre —, ⚠ <strong>son niveau 2 étant à un stade de recommandation candidate, la version stable demeurant le niveau 1</strong> (statut dit à la mention, R-09 du Vol. III).</p>
-
 <p><strong>La difficulté propre à l'agentique tient à l'asynchronie.</strong> Les tâches confiées à des processus de traitement et les tâches différées rompent <strong>la corrélation parent-enfant synchrone</strong>, ce qui impose de <strong>propager puis de raviver le contexte de trace au moment où un résultat différé est récupéré</strong> — faute de quoi le segment asynchrone <strong>se détache de sa trace d'origine</strong>.</p>
-
 <div class="avert">
   <p><strong>Et la reconstruction inter-organisationnelle se heurte à une contrainte que l'ingénierie ne tranche pas.</strong> Lorsque des segments transitent par des <strong>juridictions différentes</strong>, l'unicité de la trace devient <strong>une contrainte d'architecture, et non un simple réglage</strong> — la résidence des données est traitée au <strong>Livre III</strong>, et ce chapitre ne fait que nommer le point de collision.</p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : rien qui vienne du socle consolidé, auquel cette pièce n'est pas adossée ; ce que la somme mobilise ici est un <strong>repérage [C] du Vol. I</strong>, à attribuer. <strong>Ce qu'il n'établit pas</strong> : que la propagation du contexte de trace transporte <strong>quoi que ce soit du mandat</strong> sous lequel l'appel est fait — ⚠ <em>c'est exactement la question que le § 38.5 pose et ne referme pas, et il faut noter qu'elle se pose ici <strong>une première fois</strong>, sur un mécanisme dont le Vol. I documente le fonctionnement sans documenter son contenu sémantique.</em> La lecture proposée est que <strong>la propagation résout la continuité et non l'imputation</strong> : <em>une trace recollée de bout en bout établit qu'un même fil d'exécution a traversé n sauts, jamais sous quelle autorité il les a traversés.</em></p>
-
+<figure class="figure">
+  <img src="../figures/f-38-03-propagation-trace.svg" alt="Figure 38.3 — La propagation de trace à travers les frontières d&#39;agents, et l&#39;endroit où le contexte se perd." />
+  <figcaption><strong>Figure 38.3</strong> — La propagation de trace à travers les frontières d'agents, et l'endroit où le contexte se perd.</figcaption>
+</figure>
 <h2 id="s384"><span class="sig">§ 38.4</span>La journalisation probatoire : quand la trace devient pièce de conformité</h2>
-
 <p><strong>Une trace d'exécution est produite pour diagnostiquer. Une pièce de conformité est produite pour être opposée.</strong> Le passage de l'une à l'autre n'est pas un changement de format : c'est <strong>un changement de régime de production</strong>, et le socle en documente exactement un aspect.</p>
-
 <h3>38.4.1 Qui produit la trace</h3>
-
-<p>Le cadre empirique hérité enseigne que <strong>la journalisation confiée aux agents « n'est généralement pas recommandée »</strong> (Vol. III <strong>H-12</strong>, <strong>[B]</strong>) — <em>reprise en substance, non verbatim revendiqué</em>.</p>
-
-<div class="avert">
-  <p><strong>Trois réserves voyagent avec cette entrée et ne s'en détachent pas</strong> : <strong>source unique</strong>, <strong>préimpression non révisée par les pairs</strong>, <strong>sans reproduction indépendante</strong>. Le même cadre relève par ailleurs que, de ses cinq propriétés d'évaluation, <strong>quatre reçoivent une instrumentation et l'autonomie n'en reçoit aucune</strong> — <em>constat d'une préimpression, non propriété établie du domaine.</em></p>
-</div>
-
+<p>Le cadre empirique hérité enseigne que <strong>la journalisation confiée aux agents « n'est généralement pas recommandée »</strong> (Vol. III <strong>H-12</strong>, <strong>[B]</strong>) — <em>reprise en substance, non verbatim revendiqué</em>. ⚠ <strong>Trois réserves voyagent avec cette entrée et ne s'en détachent pas</strong> : <strong>source unique</strong>, <strong>préimpression non révisée par les pairs</strong>, <strong>sans reproduction indépendante</strong>. Le même cadre relève par ailleurs que, de ses cinq propriétés d'évaluation, <strong>quatre reçoivent une instrumentation et l'autonomie n'en reçoit aucune</strong> — <em>constat d'une préimpression, non propriété établie du domaine.</em></p>
 <p>Le Vol. II en tire, <strong>sous marquage d'auteur</strong>, le point de contrôle par lequel <strong>la trace d'instance est produite par le cadre</strong> et non par l'agent — l'un des cinq <strong>points de contrôle obligatoires</strong> dont <strong>le siège est au ch. 43 § 43.3</strong> (Vol. III <strong>H-15</strong>, construction d'auteur du Vol. II, <strong>sans niveau ni identifiant de fait</strong>). ⚠ <strong>Ce ne sont pas des faits de socle</strong> : les cinq portent le marquage « Lecture de l'auteur » dans leur volume d'origine et entrent ici comme <strong>thèses d'un volume antérieur, à attribuer</strong>, jamais comme acquis. ⚠ <strong>Collision terminologique héritée, signalée et non résolue</strong> : le glossaire du Vol. II réserve « point de contrôle » à la traduction de <em>checkpointing</em>, où « point de contrôle obligatoire » désigne autre chose.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> la somme en fait un <strong>principe absolu</strong> — <em>la trace revient au cadre, jamais à l'agent</em> — et <strong>la forme absolue est une décision d'architecture, non la reprise d'une recommandation graduée d'une préimpression</strong>. ⚠ <strong>La distinction n'est pas rhétorique : elle décide de ce qu'une institution peut inscrire à son dossier.</strong></p>
-
 <h3>38.4.2 Ce que la trace devrait porter pour valoir pièce, et ce que le socle en dit</h3>
-
-<p><strong>La ligne directrice E-23 du BSIF est fondée sur des principes.</strong> Ses <strong>douze énoncés numérotés sont au <em>should</strong></em> — balayage du corps de la version anglaise en rendu HTML, <strong>sans occurrence de <em>must</em>, <em>OSFI expects</em> ni <em>we expect</strong></em> (Vol. III <strong>F-64</strong>, <strong>[B, degré 1]</strong>). ⚠ <strong>Deux bornes</strong> : l'Appendice n'a pas été extrait, et le volet français n'a pas été balayé par ce lot. <strong>On écrit donc « attendu par E-23 », « les attentes d'E-23 », jamais « exigé par E-23 » ni « E-23 impose »</strong> (R-06 du Vol. III, dont le siège est au <strong>ch. 25</strong>).</p>
-
+<p><strong>La ligne directrice E-23 du BSIF est fondée sur des principes.</strong> Ses <strong>douze énoncés numérotés sont au <em>should</em></strong> — balayage du corps de la version anglaise en rendu HTML, <strong>sans occurrence de <em>must</em>, <em>OSFI expects</em> ni <em>we expect</em></strong> (Vol. III <strong>F-64</strong>, <strong>[B, degré 1]</strong>). ⚠ <strong>Deux bornes</strong> : l'Appendice n'a pas été extrait, et le volet français n'a pas été balayé par ce lot. <strong>On écrit donc « attendu par E-23 », « les attentes d'E-23 », jamais « exigé par E-23 » ni « E-23 impose »</strong> (R-06 du Vol. III, dont le siège est au <strong>ch. 25</strong>).</p>
 <div class="avert">
   <p><strong>Et la forme porte sa propre condition, que le socle attache à cette formulation même</strong> : le modal est celui du texte (F-64), de sorte qu'écrire « E-23 attend » n'est admissible <strong>qu'au titre du document d'information de l'éditeur</strong> — celui du <strong>11 septembre 2025</strong>, dont le socle constate qu'il porte une formule <strong>absente du corps de la ligne directrice</strong> en rendu HTML anglais (Vol. III <strong>F-66</strong>, <strong>[B, degré 1]</strong>). La ligne directrice, elle, <strong>énonce ce que l'institution <em>devrait</em> faire</strong> (Vol. III <strong>F-65</strong>, <strong>[B]</strong>).</p>
 </div>
-
 <p><strong>Ce que ce texte énonce touche directement la matière de ce chapitre</strong> : une <strong>surveillance continue</strong> visant nommément la prise de décision autonome et la re-paramétrisation autonome, et une <strong>documentation de modèle</strong> — ⚠ <strong>jamais « fiche de modèle » : zéro occurrence dans les deux langues</strong> (Vol. III <strong>H-04</strong>, <strong>[A/B mixte]</strong> ; <strong>F-65</strong>, <strong>[B]</strong>).</p>
-
 <p><strong>Et ici s'arrête ce que le socle autorise.</strong> ⚠ <strong>Le socle ne documente pas que la ligne directrice E-23, que la ligne directrice de l'AMF sur l'utilisation de l'intelligence artificielle ou que l'un quelconque des autres cadres canadiens instruits par le Livre III prescrivent une trace d'exécution, un journal, une durée de conservation ou un format de restitution</strong> : absence de documentation, non fait négatif vérifié (R-14 du Vol. III, degré 3).</p>
-
 <p><strong>Un troisième texte est plus exigeant sur le contenu, et sans ambiguïté de modalité.</strong> L'<strong>article 12.1</strong> de la loi québécoise sur la protection des renseignements personnels dans le secteur privé <strong>impose</strong> à qui rend une décision « fondée exclusivement sur un traitement automatisé » d'en informer la personne concernée, puis, <strong>à sa demande</strong>, de l'informer de trois choses — les renseignements personnels utilisés, « des raisons, ainsi que des principaux facteurs et paramètres, ayant mené à la décision », et son droit de faire rectifier ces renseignements ; s'y ajoute, <strong>dans un alinéa distinct</strong>, l'occasion de présenter ses observations à un membre du personnel <strong>en mesure de réviser la décision</strong> (Vol. III <strong>F-89</strong>, <strong>[B]</strong> ; <strong>H-06</strong>, <strong>[B]</strong> ; siège <strong>ch. 27</strong>).</p>
-
 <div class="avert">
   <p><strong>Restituer des facteurs et des paramètres suppose de les avoir consignés au moment de la décision, et de savoir laquelle.</strong> <em>C'est le point où une trace cesse d'être un instrument de diagnostic.</em> ⚠ <strong>Et la forme imposée tient</strong> : le dispositif <strong>outille un point d'arrêt humain</strong>, <strong>jamais la révision de l'article 12.1</strong> — le <strong>ch. 45 § 45.11</strong> le reprend à l'identique pour son premier flux.</p>
 </div>
-
 <h3>38.4.3 Ce que le Vol. I ajoute, en [C], et ce qu'il n'ajoute pas</h3>
-
-<p>Le Vol. I pose de son côté un <strong>critère d'architecture</strong> pour la journalisation probatoire : <strong>l'infalsifiabilité</strong> — journaux en mode ajout seul, <strong>chaînage cryptographique reliant chaque entrée à la précédente</strong>, horodatage fiable, conservation alignée sur des normes reconnues —, et rappelle qu'au-delà de la conformité <strong>ces propriétés conditionnent l'admissibilité en preuve</strong>, la piste d'audit devenant l'élément central d'un litige et devant pouvoir faire l'objet d'un gel de pièces.</p>
-
-<div class="avert">
-  <p><strong>Le Vol. I y ajoute la condition qui décide de tout</strong> : <em>sans attribution fiable, un journal infalsifiable ne prouve qu'une séquence anonyme d'actions</em> — l'attribution exacte d'une action à l'agent qui l'a posée, et au mandant humain dont il tient son autorité, <strong>repose sur l'identité non humaine et la chaîne de délégation</strong>.</p>
-</div>
-
+<p>Le Vol. I pose de son côté un <strong>critère d'architecture</strong> pour la journalisation probatoire : <strong>l'infalsifiabilité</strong> — journaux en mode ajout seul, <strong>chaînage cryptographique reliant chaque entrée à la précédente</strong>, horodatage fiable, conservation alignée sur des normes reconnues —, et rappelle qu'au-delà de la conformité <strong>ces propriétés conditionnent l'admissibilité en preuve</strong>, la piste d'audit devenant l'élément central d'un litige et devant pouvoir faire l'objet d'un gel de pièces. ⚠ <strong>Le Vol. I y ajoute la condition qui décide de tout</strong> : <em>sans attribution fiable, un journal infalsifiable ne prouve qu'une séquence anonyme d'actions</em> — l'attribution exacte d'une action à l'agent qui l'a posée, et au mandant humain dont il tient son autorité, <strong>repose sur l'identité non humaine et la chaîne de délégation</strong>.</p>
 <div class="avert">
   <p><strong>Repérage [C], et la conséquence est double.</strong> <em>Un</em> : <strong>aucun de ces critères n'est central au sens de CA-IV-01</strong>, et leur élévation en [B] passerait par la lecture des sources primaires que le Vol. I cite — travail de <strong>G-1</strong>, non de ce chapitre. <em>Deux</em> : <strong>c'est une couverture partielle d'une relève du plan, et il faut écrire laquelle.</strong> Le TOC porte pour cette section une <strong>relève v0.10</strong> — une préimpression adverse posant que <strong>la propriété porteuse d'un environnement d'exécution agentique n'est pas la richesse de la trace mais la détection de la divergence entre l'action effectuée et son enregistrement d'audit</strong>, et proposant le <strong>journal chaîné par empreintes</strong> comme parade. ⚠ <strong>Le Vol. I documente la parade, en [C] ; il ne documente pas la thèse.</strong> <em>Une parade décrite ne vaut pas la propriété qu'on lui prête</em>, et la relève <strong>reste un repérage [C] à instruire à la source primaire</strong> — elle n'entre pas au socle, et son instruction relève de G-1. ⚠ <strong>Le versant <em>effet</em> est au ch. 48</strong>, ⚠ <em>rédigé depuis, par une passe concurrente du même jour, et <strong>hors portes comme celle-ci</strong> : le renvoi résout contre du texte, non contre une pièce recevable.</em></p>
 </div>
-
 <h3>38.4.4 Le garde-fou, et le socle y est dissymétrique — ne pas généraliser</h3>
-
 <p><strong>Le rapprochement entre un outil d'observabilité et une attente réglementaire est une inférence d'auteur</strong> (R-07 du Vol. III ; ⚠ <strong>et R-7 du Vol. II pour l'instrumentation d'E-23 par un produit de gouvernance nommé — deux garde-fous distincts sur le même geste, nommés par volume, dont la confusion était précisément indécidable au renvoi nu</strong>). <strong>Sans exception d'usage illustratif.</strong></p>
-
 <p>Le socle porte <strong>deux produits du même éditeur et deux régimes d'absence différents</strong> (Vol. III <strong>H-14</strong>, <strong>[B]</strong>), ⚠ <strong>et les deux formules ne s'échangent pas</strong>.</p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Produit nommé</th><th>Régime d'absence</th><th>Ce que cela veut dire exactement</th></tr></thead>
-  <tbody>
-    <tr><td>Un produit de <strong>gouvernance de modèles</strong></td><td><strong>fait négatif ÉTABLI, degré 2</strong></td><td><strong>l'éditeur ne revendique aucune conformité</strong>, et aucune source ne documente le lien avec E-23 — <em>on a cherché, et on a consigné une réserve</em></td></tr>
-    <tr><td>Un produit d'<strong>observabilité d'agents et de modèles</strong>, <strong>en préversion publique</strong> (statut dit à la mention)</td><td><strong>absence de documentation, degré 3</strong></td><td><strong>le socle est muet</strong> sur E-23 pour ce produit — <em>on n'a rien</em></td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Produit nommé</th>
+<th>Régime d'absence</th>
+<th>Ce que cela veut dire exactement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Un produit de <strong>gouvernance de modèles</strong></td>
+<td><strong>fait négatif ÉTABLI, degré 2</strong></td>
+<td><strong>l'éditeur ne revendique aucune conformité</strong>, et aucune source ne documente le lien avec E-23 — <em>on a cherché, et on a consigné une réserve</em></td>
+</tr>
+<tr>
+<td>Un produit d'<strong>observabilité d'agents et de modèles</strong>, <strong>en préversion publique</strong> (statut dit à la mention)</td>
+<td><strong>absence de documentation, degré 3</strong></td>
+<td><strong>le socle est muet</strong> sur E-23 pour ce produit — <em>on n'a rien</em></td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 38.2 — Les deux régimes d'absence portés par le socle du Vol. III sur le lien entre outil d'observabilité et attente réglementaire. ⚠ <strong>L'un ne se déduit pas de l'autre</strong>, et aucun ne se généralise au-delà du produit qu'il nomme.</p>
-
 <div class="avert">
   <p><strong>Les deux produits sont nommés dans leur volume source</strong>, où ils sont des <strong>cas d'instanciation documentés, jamais des recommandations</strong> ; la somme les désigne ici par leur fonction, <strong>parade de péremption que la décision 15 du TOC maintient pour les dénominations commerciales</strong> — ⚠ <em>la réserve, elle, reste attachée à l'objet que la source nomme et ne se généralise à rien.</em> La somme reprend le régime et <strong>ne recommande pas davantage</strong>.</p>
 </div>
-
 <div class="avert">
   <p><strong>Le statut de préversion, lui, n'a pas pu être re-constaté.</strong> L'instruction du 28 juillet 2026 a porté cette entrée à sa source et <strong>l'hôte de l'éditeur a refusé l'accès</strong> : rien n'a été rouvert, pas même le statut annoncé de l'offre d'observabilité (<code>S-042</code>, <strong>☐ non établie</strong>). <em>L'entrée n'est pas infirmée : elle est non re-datée, ce qui est un état et non un doute</em> — et <strong>les deux régimes d'absence du tableau ci-dessus n'en dépendent pas et restent entiers</strong>.</p>
 </div>
-
 <h2 id="s385"><span class="sig">§ 38.5</span>Corréler la trace au passeport : l'identité comme clé de jointure</h2>
-
 <div class="avert">
   <p><strong>Le passeport d'agent ne figure dans aucune spécification à date : c'est un objet de synthèse construit par la somme</strong>, en assemblant la carte signée (<strong>ch. 15</strong>), l'inscription au registre (<strong>ch. 15 § 15.3</strong>), la chaîne de mandat (<strong>ch. 17</strong>) et les attestations de conformité — R-01 du Vol. III ; <strong>siège ch. 16</strong>. <em>Corréler une trace « au passeport » désigne donc une jonction entre un objet observé et un objet construit</em>, et le chapitre l'écrit ainsi plutôt que de laisser croire à un raccordement entre deux artefacts existants.</p>
 </div>
-
-<p><strong>Pourquoi cette section est décisive.</strong> C'est <strong>par elle que l'observabilité entre dans la somme</strong> : non par le panorama des plateformes, mais par la <strong>corrélation trace ↔ chaîne de mandat</strong>. Les sections précédentes décrivent un instrument ; celle-ci demande <strong>ce que l'instrument produit comme preuve opposable</strong> sur l'identité et le mandat d'un agent. <strong>La réponse du socle est courte, et elle se donne en trois constats bornés.</strong></p>
-
+<p><strong>Pourquoi cette section est décisive.</strong> C'est <strong>par elle que l'observabilité entre dans la somme</strong> : non par le panorama des plateformes, mais par la <strong>corrélation trace ↔︎ chaîne de mandat</strong>. Les sections précédentes décrivent un instrument ; celle-ci demande <strong>ce que l'instrument produit comme preuve opposable</strong> sur l'identité et le mandat d'un agent. <strong>La réponse du socle est courte, et elle se donne en trois constats bornés.</strong></p>
 <p><strong>Premier constat — une clé existe comme attribut, sans que rien ne la rattache à un émetteur.</strong> Le registre d'attributs du dépôt dédié définit <strong>quatre attributs d'agent</strong> — dont un identifiant d'agent — et <strong>deux attributs de conversation</strong>, tous en <code>stability: development</code> (Vol. III <strong>F-77</strong>, <strong>[B]</strong> ; <em>l'identité nominative des attributs est portée par le rapport de lot et non versée au socle</em>). ⚠ <strong>Aucune entrée n'établit que cet identifiant soit celui d'un registre d'agents au sens du ch. 15, ni qu'il soit émis, ni qu'il soit vérifiable</strong> : le socle documente <strong>un nom de champ dans un fichier de modèle, à son premier échelon de maturité</strong>. <strong>Ce qu'un attribut d'identifiant démontre est qu'un producteur de télémétrie peut renseigner une chaîne</strong> ; il ne documente <strong>ni son unicité à l'échelle d'une organisation, ni son ancrage, ni sa révocation</strong> (R-02 du Vol. III).</p>
-
-<p><strong>Deuxième constat — l'interrogeabilité de la chaîne de mandat n'est établie ni par le socle ni par les chapitres qui la portent, et ce n'est pas l'observabilité qui l'a perdue.</strong> Le <strong>ch. 17</strong> le pose sur les trois mécanismes du mandat : le socle n'établit pas qu'une chaîne ainsi formée soit interrogeable à un instant quelconque, ni qu'un vérificateur situé au troisième maillon puisse remonter au mandant d'origine, ni qu'un mandat révoqué en amont cesse d'être opposable en aval.</p>
-
+<p><strong>Deuxième constat — l'interrogeabilité de la chaîne de mandat n'est établie ni par le socle ni par les chapitres qui la portent, et ce n'est pas l'observabilité qui l'a perdue.</strong> Le <strong>ch. 17</strong> le pose sur les trois mécanismes du mandat : le socle n'établit pas qu'une chaîne ainsi formée soit interrogeable à un instant quelconque, ni qu'un vérificateur situé au troisième maillon puisse remonter au mandant d'origine, ni qu'un mandat révoqué en amont cesse d'être opposable en aval. ⚠ <strong>C'est un non-établissement, non un fait négatif</strong> : ces trois énoncés sont rangés sous « ce qu'il n'établit pas », et <strong>aucun balayage n'a été conduit qui permettrait de conclure à l'inverse</strong>. Le <strong>ch. 16</strong> les reprend à l'identique dans la même colonne de sa table des quatre pièces.</p>
+<p><strong>Troisième constat — la pièce de jonction existe, elle est nommée, et elle n'a pas été ouverte sur ce point.</strong> Un document du dépôt dédié est désigné comme <strong>la pièce de jonction</strong> de cette section : propagation de contexte par les en-têtes du § 38.3, portés dans un champ de métadonnées de la requête. <strong>Le lot d'instruction déclare ne pas l'avoir ouvert</strong> et qualifie ce manque de <strong>lacune la plus coûteuse du lot</strong> ; le lot complémentaire l'a ouvert <strong>sur sa seule section de métriques</strong> — quatre métriques supplémentaires, toutes des histogrammes, statut de document <em>Development</em> — et déclare que <strong>son volet de corrélation demeure non instruit</strong> (Vol. III <strong>F-95</strong>, <strong>[B, degré 1]</strong>). ⚠ <strong>Rien n'est affirmé ici de ce que ce document prescrit ou omet.</strong></p>
+<blockquote>
+<dl>
+<dt><strong>État de la recherche — la corrélation entre trace d'exécution et chaîne de mandat.</strong> <strong>Question</strong></dt>
+<dd>
+par quel mécanisme un contexte de trace se propage-t-il à travers un appel d'agent, et ce mécanisme transporte-t-il quoi que ce soit du <strong>mandat sous lequel l'appel est fait</strong> ? <strong>État</strong> : lacune ouverte le 21 juillet 2026 chez sa source ; <strong>aucune passe de recherche n'a été conduite</strong> — le lot n'a pas ouvert le document, le lot complémentaire ne l'a ouvert que sur ses métriques. <strong>Corpus à ouvrir</strong> : le document <code>docs/gen-ai/mcp.md</code> du dépôt <code>open-telemetry/semantic-conventions-genai</code>, branche <code>main</code>, sur son volet de propagation de contexte — <code>traceparent</code>, <code>tracestate</code> et <code>baggage</code> dans le champ <code>_meta</code>. ⚠ <strong>L'identifiant de la source est écrit</strong> : <em>un critère de clôture qui désigne son corpus par sa fonction est inexécutable</em> (décision 15 du TOC, alinéa b-iii ; identité du fichier portée par le Vol. III <em>Monographie</em> §24.4, <strong>hors socle</strong>). <strong>Critère de clôture</strong> : que le volet soit extrait à la source primaire et que la présence ou l'absence d'un identifiant de chaîne de mandat exportable y soit constatée. ⚠ <strong>La question reste ouverte ; aucune inférence n'est proposée ici.</strong>
+</dd>
+</dl>
+</blockquote>
 <div class="avert">
-  <p><strong>C'est un non-établissement, non un fait négatif</strong> : ces trois énoncés sont rangés sous « ce qu'il n'établit pas », et <strong>aucun balayage n'a été conduit qui permettrait de conclure à l'inverse</strong>. Le <strong>ch. 16</strong> les reprend à l'identique dans la même colonne de sa table des quatre pièces.</p>
+  <p><strong>Une seconde source s'est périmée pendant que cette lacune restait ouverte, et l'événement est advenu au lendemain du gel.</strong> La révision majeure de la spécification agent-outil — protocole sans état, retrait de l'en-tête de session — était, au gel du 27 juillet 2026, <strong>annoncée au brouillon</strong> pour le jour suivant, <strong>sa date n'étant pas confirmée à la source</strong> (R-09 du Vol. III) ; <em>aucun des trois statuts du tri prospectif ne lui était alors attribuable, le <strong>PROGRAMMÉ exigeant un engagement daté réel</strong></em> (siège <strong>ch. 49 § 49.0</strong>). ☑ ⚠ <strong>L'instruction du 28 juillet 2026 a constaté à la source que la page de spécification courante sert cette révision et que l'index documentaire du site ne connaît qu'elle</strong> (<a href="../PRD/gel-2026-07-28-volet-residuel.md"><code>gel-2026-07-28-volet-residuel.md</code></a>, entrée <code>S-001</code>, <strong>☑ changée</strong>) : <em>la péremption annoncée est advenue, et un événement advenu ne se trie plus au prospectif.</em> ⚠ <strong>Ce qui a été constaté est la mise en service de la révision, non son contenu</strong> — <em>le protocole sans état et le retrait de l'en-tête de session n'ont pas été rouverts</em> —, et <strong>la revalidation en bloc des sections du ch. 8 qui portent cette matière reste ouverte, non exécutée</strong>. <strong>Un mécanisme de corrélation adossé à une notion de session est, par construction, exposé à cette révision</strong> ; ⚠ <strong>le socle ne documente pas son incidence sur la propagation de contexte</strong> : absence de documentation, non fait négatif vérifié.</p>
 </div>
-
-<p><strong>Troisième constat — la pièce de jonction existe, elle est nommée, et elle n'a pas été ouverte sur ce point.</strong> Un document du dépôt dédié est désigné comme <strong>la pièce de jonction</strong> de cette section : propagation de contexte par les en-têtes du § 38.3, portés dans un champ de métadonnées de la requête. <strong>Le lot d'instruction déclare ne pas l'avoir ouvert</strong> et qualifie ce manque de <strong>lacune la plus coûteuse du lot</strong> ; le lot complémentaire l'a ouvert <strong>sur sa seule section de métriques</strong> — quatre métriques supplémentaires, toutes des histogrammes, statut de document <em>Development</em> — et déclare que <strong>son volet de corrélation demeure non instruit</strong> (Vol. III <strong>F-95</strong>, <strong>[B, degré 1]</strong>).</p>
-
-<div class="avert">
-  <p><strong>Rien n'est affirmé ici de ce que ce document prescrit ou omet.</strong></p>
-</div>
-
-<div class="encadre encadre--oeuvre">
-  <span class="encadre__label">Note</span>
-  <p><strong>État de la recherche — la corrélation entre trace d'exécution et chaîne de mandat.</strong> <strong>Question</strong> : par quel mécanisme un contexte de trace se propage-t-il à travers un appel d'agent, et ce mécanisme transporte-t-il quoi que ce soit du <strong>mandat sous lequel l'appel est fait</strong> ? <strong>État</strong> : lacune ouverte le 21 juillet 2026 chez sa source ; <strong>aucune passe de recherche n'a été conduite</strong> — le lot n'a pas ouvert le document, le lot complémentaire ne l'a ouvert que sur ses métriques. <strong>Corpus à ouvrir</strong> : le document <code>docs/gen-ai/mcp.md</code> du dépôt <code>open-telemetry/semantic-conventions-genai</code>, branche <code>main</code>, sur son volet de propagation de contexte — <code>traceparent</code>, <code>tracestate</code> et <code>baggage</code> dans le champ <code>_meta</code>. ⚠ <strong>L'identifiant de la source est écrit</strong> : <em>un critère de clôture qui désigne son corpus par sa fonction est inexécutable</em> (décision 15 du TOC, alinéa b-iii ; identité du fichier portée par le Vol. III <em>Monographie</em> §24.4, <strong>hors socle</strong>). <strong>Critère de clôture</strong> : que le volet soit extrait à la source primaire et que la présence ou l'absence d'un identifiant de chaîne de mandat exportable y soit constatée. ⚠ <strong>La question reste ouverte ; aucune inférence n'est proposée ici.</strong></p>
-</div>
-
-<div class="avert">
-  <p><strong>Une seconde source s'est périmée pendant que cette lacune restait ouverte, et l'événement est advenu au lendemain du gel.</strong> La révision majeure de la spécification agent-outil — protocole sans état, retrait de l'en-tête de session — était, au gel du 27 juillet 2026, <strong>annoncée au brouillon</strong> pour le jour suivant, <strong>sa date n'étant pas confirmée à la source</strong> (R-09 du Vol. III) ; <em>aucun des trois statuts du tri prospectif ne lui était alors attribuable, le <strong>PROGRAMMÉ exigeant un engagement daté réel</strong></em> (siège <strong>ch. 49 § 49.0</strong>). ☑ ⚠ <strong>L'instruction du 28 juillet 2026 a constaté à la source que la page de spécification courante sert cette révision et que l'index documentaire du site ne connaît qu'elle</strong> (<a class="lien" href="../PRD/gel-2026-07-28-volet-residuel.md">0</a>, entrée <code>S-001</code>, <strong>☑ changée</strong>) : <em>la péremption annoncée est advenue, et un événement advenu ne se trie plus au prospectif.</em> ⚠ <strong>Ce qui a été constaté est la mise en service de la révision, non son contenu</strong> — <em>le protocole sans état et le retrait de l'en-tête de session n'ont pas été rouverts</em> —, et <strong>la revalidation en bloc des sections du ch. 8 qui portent cette matière reste ouverte, non exécutée</strong>. <strong>Un mécanisme de corrélation adossé à une notion de session est, par construction, exposé à cette révision</strong> ; ⚠ <strong>le socle ne documente pas son incidence sur la propagation de contexte</strong> : absence de documentation, non fait négatif vérifié.</p>
-</div>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>et c'est la clôture du chapitre, marquée en totalité.</strong> <strong>Ce que le socle établit</strong> : quatre attributs d'agent et deux de conversation définis au premier échelon (F-77) ; un document de jonction nommé, <strong>ouvert sur ses seules métriques</strong> (F-95). <strong>Ce qu'il n'établit pas</strong> : que la chaîne de mandat soit interrogeable à l'instant <em>t</em> — <strong>non-établissement</strong>, jamais une absence établie ; qu'une <strong>clé de jointure</strong> existe entre une trace et un mandat, ni qu'elle soit propagée, ni qu'un vérificateur puisse la contrôler. La lecture proposée est que <strong>l'identité serait la clé de jointure de l'observabilité agentique, et que rien dans le corpus ouvert ne la constitue</strong> : d'un côté un identifiant d'agent <strong>qui n'est rattaché à aucun émetteur</strong>, de l'autre une chaîne de mandat <strong>dont l'interrogeabilité n'est établie par aucune entrée</strong>. ⚠ <strong>Le chaînon manquant n'est donc pas un mécanisme qu'il faudrait mieux chercher : c'est une lacune ouverte, et le chapitre l'expose plutôt qu'il ne la comble.</strong> <em>L'exposer est le résultat ; la combler par inférence serait la faute que la somme prend pour objet.</em></p>
-
-<p>## Synthèse : ce que le chapitre lègue à la somme</p>
-
+<h3>Synthèse : ce que le chapitre lègue à la somme</h3>
 <p><em>Section de sortie sans homologue direct dans la source — construction d'éditeur.</em></p>
-
-<ol class="numeros">
-  <li><strong>La définition d'« AgentOps », et son statut de définition.</strong> Terme de fournisseur, <strong>sans définition normative</strong>, repris du Vol. III à son siège. Les <strong>ch. 39, 40 et 41</strong> l'emploient sans le redéfinir. ⚠ <em>Et l'homonymie du sigle « APM » est posée ici une fois</em> : le syntagme complet s'écrit à chaque emploi, dans tout le Livre.</li>
-  <li><strong>L'état daté du corpus d'instrumentation, et la manière de le citer.</strong> Premier échelon d'une échelle de <strong>cinq</strong>, <strong>aucune version citable</strong>, ancre unique = date de consultation. ⚠ <strong>Le ch. 40 hérite de cet état pour les métriques qu'il dénombre</strong>, et <strong>le ch. 46</strong> pour son inventaire de jalons externes — <em>aucun ne le redémontre.</em> ⚠ <strong>Le cardinal se lit au ch. 40 § 40.1.2, qui le re-mesure : SEIZE</strong> — douze au document de métriques (F-90), quatre au document de jonction (F-95), <em>que le § 38.5 mentionne lui-même</em> ; <strong>il n'est pas cité ici sous sa valeur partielle.</strong></li>
-  <li><strong>La distinction instrument / indicateur.</strong> Ce chapitre nomme et rattache ; <strong>le ch. 40 compte</strong>. La frontière est posée ici pour les deux.</li>
-  <li><strong>Le régime de la trace probatoire.</strong> Producteur distinct de l'observé ; infalsifiabilité en [C] ; ⚠ <strong>et la condition qui décide de tout — <em>sans attribution fiable, un journal infalsifiable ne prouve qu'une séquence anonyme d'actions</em>.</strong> Le <strong>ch. 45 § 45.10</strong> le reprend à l'archivage probatoire ; le <strong>ch. 39 § 39.3</strong> à l'imputation d'incident.</li>
-  <li><strong>Les deux régimes d'absence sur le lien produit ↔ réglementation.</strong> <em>Fait négatif établi</em> et <em>absence de documentation</em> <strong>ne s'échangent pas</strong>. Le <strong>ch. 45 § 45.4</strong> rencontre la même distinction sur un portefeuille entier ; le <strong>ch. 46</strong> sur une instrumentation candidate.</li>
-  <li><strong>La lacune de corrélation, exposée et non comblée.</strong> C'est <strong>le legs négatif du chapitre</strong>, et le plus opposable : <em>l'identité serait la clé de jointure, et rien ne la constitue.</em> Le <strong>ch. 41 § 41.5</strong> en dépend — une boucle de réémission suppose de savoir <strong>quel agent</strong> l'indicateur condamne.</li>
+<ol type="1">
+<li><strong>La définition d'« AgentOps », et son statut de définition.</strong> Terme de fournisseur, <strong>sans définition normative</strong>, repris du Vol. III à son siège. Les <strong>ch. 39, 40 et 41</strong> l'emploient sans le redéfinir. ⚠ <em>Et l'homonymie du sigle « APM » est posée ici une fois</em> : le syntagme complet s'écrit à chaque emploi, dans tout le Livre.</li>
+<li><strong>L'état daté du corpus d'instrumentation, et la manière de le citer.</strong> Premier échelon d'une échelle de <strong>cinq</strong>, <strong>aucune version citable</strong>, ancre unique = date de consultation. ⚠ <strong>Le ch. 40 hérite de cet état pour les métriques qu'il dénombre</strong>, et <strong>le ch. 46</strong> pour son inventaire de jalons externes — <em>aucun ne le redémontre.</em> ⚠ <strong>Le cardinal se lit au ch. 40 § 40.1.2, qui le re-mesure : SEIZE</strong> — douze au document de métriques (F-90), quatre au document de jonction (F-95), <em>que le § 38.5 mentionne lui-même</em> ; <strong>il n'est pas cité ici sous sa valeur partielle.</strong></li>
+<li><strong>La distinction instrument / indicateur.</strong> Ce chapitre nomme et rattache ; <strong>le ch. 40 compte</strong>. La frontière est posée ici pour les deux.</li>
+<li><strong>Le régime de la trace probatoire.</strong> Producteur distinct de l'observé ; infalsifiabilité en [C] ; ⚠ <strong>et la condition qui décide de tout — <em>sans attribution fiable, un journal infalsifiable ne prouve qu'une séquence anonyme d'actions</em>.</strong> Le <strong>ch. 45 § 45.10</strong> le reprend à l'archivage probatoire ; le <strong>ch. 39 § 39.3</strong> à l'imputation d'incident.</li>
+<li><strong>Les deux régimes d'absence sur le lien produit ↔︎ réglementation.</strong> <em>Fait négatif établi</em> et <em>absence de documentation</em> <strong>ne s'échangent pas</strong>. Le <strong>ch. 45 § 45.4</strong> rencontre la même distinction sur un portefeuille entier ; le <strong>ch. 46</strong> sur une instrumentation candidate.</li>
+<li><strong>La lacune de corrélation, exposée et non comblée.</strong> C'est <strong>le legs négatif du chapitre</strong>, et le plus opposable : <em>l'identité serait la clé de jointure, et rien ne la constitue.</em> Le <strong>ch. 41 § 41.5</strong> en dépend — une boucle de réémission suppose de savoir <strong>quel agent</strong> l'indicateur condamne.</li>
 </ol>
-
 <div class="avert">
   <p><strong>Ce que le chapitre ne lègue pas.</strong> Aucune <strong>mesure</strong> : les métriques relevées ne sont pas comptées ici, elles le sont au <strong>ch. 40 § 40.1.2</strong>, <em>qui en dénombre seize</em>. Aucun <strong>verdict de grille</strong> : la grille du ch. 14 y sert en lecture inversée, à nommer ce que l'instrument ne produit pas. Et <strong>aucune propriété démontrée d'un outil nommé</strong> — <em>deux produits sont cités, deux régimes d'absence sont déclarés, et rien n'est recommandé.</em></p>
 </div>
+<hr />
+<figure class="figure">
+  <img src="../figures/f-38-05-trace-passeport.svg" alt="Figure 38.5 — L&#39;identité comme clé de jointure entre la trace et le passeport." />
+  <figcaption><strong>Figure 38.5</strong> — L'identité comme clé de jointure entre la trace et le passeport.</figcaption>
+</figure>
 
 <footer class="pied">
   <p><strong>Vol. IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em></strong> · Livre IV, chapitre 38. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau, M.Sc. IT.</p>
-
   <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme (gel unique : 27 juillet 2026).</p>
 </footer>
 

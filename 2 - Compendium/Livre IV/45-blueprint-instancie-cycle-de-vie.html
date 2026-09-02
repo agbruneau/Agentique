@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chapitre 45 — Le blueprint instancié et son cycle de vie : de Boréalis au portefeuille IBM, puis la naissance, la vie et la mort d&#x27;un agent d&#x27;entreprise · Interopérabilité et Orchestration en Entreprise Agentique</title>
-<meta name="description" content="Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d'agents et synthèse architecturale. Quatrième mouvement — composer (ch. 42-46). Quatrième chapitre du mouvement, et celui dont l'enveloppe dérivée est la plus haute du Livre : il instancie ce que le ch. 43 a rangé">
+<meta name="description" content="Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d&#x27;agents et synthèse architecturale. Quatrième mouvement — composer (ch. 42-46). Quatrième chapitre du mouvement, **et celui dont l&#x27;enveloppe dérivée est la plus haute du Livre** : il instancie ce que le ch. 43 a rangé et ce que le ch. 44 a formalisé">
 <meta name="author" content="André-Guy Bruneau, M.Sc. IT">
 <meta name="color-scheme" content="dark">
 <style>
@@ -443,6 +443,17 @@ tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
 tbody td:first-child { color: var(--texte); font-weight: 600; }
 .legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
 
+/* -------------------------------------------------------------- figures */
+/* Les SVG du volume sont dessinés pour le PDF, donc sur fond clair, et ils
+   portent ce fond eux-mêmes — sans quoi il faudrait maintenir deux variantes
+   de chaque figure. Sur ce thème sombre, ils se posent donc comme un carton ;
+   le padding empêche le fond de la figure de toucher le bord du cadre. */
+.figure { margin: 2.1rem 0 1.9rem; }
+.figure img { display: block; width: 100%; height: auto; border-radius: 7px;
+              border: 1px solid var(--trait); background: #fdfbf9; padding: 0.6rem; }
+.figure figcaption { font-size: 0.8rem; font-style: italic; color: var(--texte-faible);
+                     margin-top: 0.65rem; padding-left: 0.15rem; }
+
 /* --------------------------------------------------------------- listes */
 ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
 ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
@@ -531,27 +542,25 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <div class="nav__marque">Interopérabilité et Orchestration en Entreprise Agentique</div>
   <div class="nav__sous">Livre IV · Chapitre 45</div>
   <ol>
-    <li><a href="#s450"><span class="num">45.0</span>Ouverture : ce qu&#x27;instancier veut dire, et ce qu&#x27;il ne prouve pas</a></li>
+    <li><a href="#s450"><span class="num">45.0</span>Ouverture : ce qu'instancier veut dire, et ce qu'il ne prouve pas</a></li>
     <li><a href="#s451"><span class="num">45.1</span>Les six principes directeurs</a></li>
     <li><a href="#s452"><span class="num">45.2</span>La vue en couches C1-C8, avec statuts datés</a></li>
     <li><a href="#s453"><span class="num">45.3</span>La neutralité fournisseur en pratique</a></li>
     <li><a href="#s454"><span class="num">45.4</span>Correspondance réglementaire : le tableau B.3 développé</a></li>
-    <li><a href="#s455"><span class="num">45.5</span>Points d&#x27;intégration avec l&#x27;existant : étendre, ne pas dupliquer</a></li>
-    <li><a href="#s456"><span class="num">45.6</span>L&#x27;organisation de la fabrique : qui opère quoi</a></li>
-    <li><a href="#s457"><span class="num">45.7</span>L&#x27;architecture de solutions Boréalis, résumée</a></li>
+    <li><a href="#s455"><span class="num">45.5</span>Points d'intégration avec l'existant : étendre, ne pas dupliquer</a></li>
+    <li><a href="#s456"><span class="num">45.6</span>L'organisation de la fabrique : qui opère quoi</a></li>
+    <li><a href="#s457"><span class="num">45.7</span>L'architecture de solutions Boréalis, résumée</a></li>
     <li><a href="#s458"><span class="num">45.8</span>Naissance : enregistrement, émission du passeport, admission au maillage</a></li>
     <li><a href="#s459"><span class="num">45.9</span>Vie : délégations, vérifications par arête, traces, évaluations, renouvellements, migration post-quantique</a></li>
     <li><a href="#s4510"><span class="num">45.10</span>Mort : révocation, cascade dans la chaîne de mandat, retrait du maillage, archivage probatoire</a></li>
     <li><a href="#s4511"><span class="num">45.11</span>Flux 1 — la décision de crédit assistée par agents : le processus commande</a></li>
-    <li><a href="#s4512"><span class="num">45.12</span>Flux 2 — le paiement normalisé vers le rail de grande valeur : l&#x27;agent observe, le rail exécute</a></li>
-    <li><a href="#s4513"><span class="num">45.13</span>Flux 3 — l&#x27;accès au cadre bancaire : concevoir contre une norme qui n&#x27;existe pas encore</a></li>
+    <li><a href="#s4512"><span class="num">45.12</span>Flux 2 — le paiement normalisé vers le rail de grande valeur : l'agent observe, le rail exécute</a></li>
+    <li><a href="#s4513"><span class="num">45.13</span>Flux 3 — l'accès au cadre bancaire : concevoir contre une norme qui n'existe pas encore</a></li>
     <li><a href="#s4514"><span class="num">45.14</span>Exemple de bout en bout : souscription vie augmentée, et sa variante en sinistres</a></li>
-    <li><a href="#s4515"><span class="num">45.15</span>Confrontation : ce que l&#x27;épreuve vaut, et ce qu&#x27;elle ne vaut pas</a></li>
-
+    <li><a href="#s4515"><span class="num">45.15</span>Confrontation : ce que l'épreuve vaut, et ce qu'elle ne vaut pas</a></li>
   </ol>
   <div class="nav__pied">
     Vol.&nbsp;IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em><br>
-
     <a href="45-blueprint-instancie-cycle-de-vie.md">Version Markdown</a>
   </div>
 </nav>
@@ -562,375 +571,422 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 <header class="titre">
   <div class="titre__fil">Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d&#x27;agents et synthèse architecturale</div>
   <h1><span class="chap">Chapitre 45</span>Le blueprint instancié et son cycle de vie : de Boréalis au portefeuille IBM, puis la naissance, la vie et la mort d&#x27;un agent d&#x27;entreprise</h1>
-  <p class="titre__situe">Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d'agents et synthèse architecturale. Quatrième mouvement — composer (ch. 42-46). Quatrième chapitre du mouvement, <strong>et celui dont l'enveloppe dérivée est la plus haute du Livre</strong> : il instancie ce que le ch. 43 a rangé et ce que le ch. 44 a formalisé</p>
+  <p class="titre__situe">Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d'agents et synthèse architecturale. Quatrième mouvement — composer (ch. 42-46). Quatrième chapitre du mouvement, **et celui dont l'enveloppe dérivée est la plus haute du Livre** : il instancie ce que le ch. 43 a rangé et ce que le ch. 44 a formalisé</p>
 </header>
 
+<!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
+     Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
+     que `build/assemble.py` pour le PDF et que `PRD/decompte.sh` pour la volumétrie. L'appareil de
+     gouvernance vit au .md jumeau, qui reste la seule source, et `build/verifier-piece.py` refuse
+     un rendu qui le recopierait. -->
+
 <h2 id="s450"><span class="sig">§ 45.0</span>Ouverture : ce qu'instancier veut dire, et ce qu'il ne prouve pas</h2>
-
 <p><strong>Une architecture de référence ne se déploie pas.</strong> <em>Elle se choisit, se négocie, s'achète — et c'est à ce moment, quand le principe rencontre une référence de produit et une date de disponibilité, qu'elle cesse d'être un schéma pour devenir une décision opposable.</em></p>
-
 <p><strong>Le portefeuille retenu par le Vol. II est celui d'IBM</strong>, ⚠ <strong>et ce choix appelle immédiatement sa réserve, qui gouverne tout le chapitre</strong> : <em>il s'agit d'un <strong>cas d'instanciation documenté par sources primaires</strong>, <strong>non d'une recommandation d'achat ni d'un verdict comparatif</strong>.</em> ⚠ <strong>La neutralité fournisseur interdit de recommander, non de nommer</strong> : <em>anonymiser un éditeur est une faute au même titre qu'en recommander un</em>, et le § 45.3 rend compte de la manière dont la règle a été tenue.</p>
-
 <div class="avert">
   <p><strong>Deux réserves de traçabilité s'imposent d'entrée, et elles sont héritées.</strong> <em>La première</em> : <strong>les pages de l'éditeur refusent le récupérage automatisé</strong>, de sorte qu'une partie des entrées du socle du Vol. II repose sur <strong>des extraits indexés citant l'adresse primaire plutôt que sur la lecture intégrale de la page</strong> — ⚠ <em>la réserve est signalée entrée par entrée, et une relecture humaine des annonces clés est recommandée avant publication.</em> <em>La seconde</em> : ⚠ <strong>aucune source du corpus du Vol. II ne positionne un produit sur l'échelle des options d'orchestration</strong> — <em>la taxonomie est un cadre académique, les produits sont documentés par leur éditeur, et rien ne rapproche les deux.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>Ce que le chapitre ne refait pas.</strong> Les <strong>principes de l'architecture de référence</strong> sont au <strong>ch. 43</strong> ; leur <strong>formalisation</strong> au <strong>ch. 44</strong> ; la <strong>matrice protocoles × exigences</strong> au <strong>ch. 42</strong>. <em>Ce chapitre les instancie et ne les redécide pas.</em> ⚠ <strong>Et il ne porte aucun flux dans son premier mouvement</strong> : <em>le ch. 22 du Vol. II est repris en entier — principes, couches, neutralité —, et les trois flux sont au second mouvement.</em></p>
 </div>
-
-<p># Premier mouvement — Le blueprint instancié : de Boréalis au portefeuille IBM à la fabrique de confiance</p>
-
+<hr />
+<h1 id="premier-mouvement-le-blueprint-instancié-de-boréalis-au-portefeuille-ibm-à-la-fabrique-de-confiance">Premier mouvement — Le blueprint instancié : de Boréalis au portefeuille IBM à la fabrique de confiance</h1>
 <p><em>Ancien ch. 49 du plan (décision 11 du TOC). Entrée conservée intégralement.</em></p>
-
 <h2 id="s451"><span class="sig">§ 45.1</span>Les six principes directeurs</h2>
-
 <p><strong>Le blueprint repose sur six principes.</strong> ⚠ <strong>Aucun n'est un produit ; aucun n'est non plus une déduction du socle.</strong> <em>Ce sont des choix d'architecture, dérivés de ce que le socle établit et énoncés pour être contestés.</em></p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>#</th><th>Principe</th><th>Ce qui le porte</th><th>Ce que le socle n'établit pas</th></tr></thead>
-  <tbody>
-    <tr><td><strong>1</strong></td><td><strong>L'autonomie encadrée par construction</strong> — tout processus sous exigence réglementaire stricte s'exécute en <strong>OO3 ou OO4</strong> : <em>le processus déterministe orchestre les agents, jamais l'inverse</em></td><td>une convergence à trois sources — un manifeste académique, une expérimentation, un patron de fournisseur (Vol. II <strong>F-36</strong>, <strong>F-37</strong> et <strong>F-46</strong>) —, ⚠ <strong>dont le Vol. II déclare lui-même qu'elles ne sont pas trois observateurs indépendants</strong> : <em>deux partagent une autrice, deux une organisation</em></td><td>⚠ <em>l'application d'aucune des trois au Canada ni à la finance canadienne</em> ; ⚠ <strong>et « exigence réglementaire stricte » n'est pas défini par le socle</strong>, alors que c'est le déclencheur de toute la règle</td></tr>
-    <tr><td><strong>2</strong></td><td><strong>Aucune interaction IA non gouvernée</strong> — chaque appel de modèle, chaque invocation d'outil, chaque échange entre agents transite par une passerelle d'application de politiques</td><td>trois points de contrôle candidats, datés au § 45.2 (Vol. II <strong>F-40</strong>)</td><td>⚠ <em>qu'elles interceptent toute interaction dans un déploiement réel</em>, ni <strong>qu'aucune voie de contournement ne subsiste</strong></td></tr>
-    <tr><td><strong>3</strong></td><td><strong>Le contrat d'abord</strong> — les actifs d'intégration existants sont <strong>republiés</strong> comme outils, non réécrits</td><td>la documentation d'une passerelle d'API décrit <strong>la génération d'outils et de serveurs à partir des définitions d'API existantes</strong> (Vol. II <strong>F-40</strong>)</td><td>⚠ <em>la <strong>fidélité</strong> de la projection</em>, ni <em>qu'elle préserve les contrôles du contrat d'origine</em></td></tr>
-    <tr><td><strong>4</strong></td><td><strong>Hybride et souveraineté</strong> — charges sensibles en auto-géré, agilité par le service infonuagique, <strong>résidence canadienne</strong></td><td>zones multizones datées, une offre souveraine <strong>en disponibilité générale</strong>, un cadre de contrôles à <strong>565 exigences</strong> (Vol. II <strong>F-45</strong>)</td><td>⚠ <strong>le rapprochement avec la ligne directrice B-13 est une inférence d'auteur</strong> : <em>l'éditeur ne revendique aucune conformité à B-13, et aucune source ne documente ce lien</em></td></tr>
-    <tr><td><strong>5</strong></td><td><strong>La traçabilité de bout en bout, jamais déléguée aux agents</strong></td><td>une préimpression enseigne que la journalisation confiée aux agents « n'est généralement pas recommandée » (Vol. II <strong>F-37</strong>), ⚠ <strong>position, non résultat établi</strong> ; instrumentation ouverte native dans deux produits datés (Vol. II <strong>F-39</strong>)</td><td>⚠ <em>que la forme <strong>absolue</strong> du principe soit portée par la source</em> — <strong>elle est une décision d'architecture</strong></td></tr>
-    <tr><td><strong>6</strong></td><td><strong>La gouvernance du cycle de vie des modèles et des agents</strong> — inventaire, évaluation graduée, catalogue gouverné</td><td>un produit de gouvernance <strong>en disponibilité générale</strong> depuis une date nommée, et sa gouvernance agentique livrée en 2025 (Vol. II <strong>F-44</strong>)</td><td>⚠ <strong>le rapprochement avec E-23 est une inférence d'auteur</strong> : <em>l'éditeur <strong>ne revendique aucune conformité</strong> à E-23, et aucune source ne documente ce lien</em> — <strong>fait négatif ÉTABLI</strong></td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>#</th>
+<th>Principe</th>
+<th>Ce qui le porte</th>
+<th>Ce que le socle n'établit pas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td><strong>L'autonomie encadrée par construction</strong> — tout processus sous exigence réglementaire stricte s'exécute en <strong>OO3 ou OO4</strong> : <em>le processus déterministe orchestre les agents, jamais l'inverse</em></td>
+<td>une convergence à trois sources — un manifeste académique, une expérimentation, un patron de fournisseur (Vol. II <strong>F-36</strong>, <strong>F-37</strong> et <strong>F-46</strong>) —, ⚠ <strong>dont le Vol. II déclare lui-même qu'elles ne sont pas trois observateurs indépendants</strong> : <em>deux partagent une autrice, deux une organisation</em></td>
+<td>⚠ <em>l'application d'aucune des trois au Canada ni à la finance canadienne</em> ; ⚠ <strong>et « exigence réglementaire stricte » n'est pas défini par le socle</strong>, alors que c'est le déclencheur de toute la règle</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td><strong>Aucune interaction IA non gouvernée</strong> — chaque appel de modèle, chaque invocation d'outil, chaque échange entre agents transite par une passerelle d'application de politiques</td>
+<td>trois points de contrôle candidats, datés au § 45.2 (Vol. II <strong>F-40</strong>)</td>
+<td>⚠ <em>qu'elles interceptent toute interaction dans un déploiement réel</em>, ni <strong>qu'aucune voie de contournement ne subsiste</strong></td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td><strong>Le contrat d'abord</strong> — les actifs d'intégration existants sont <strong>republiés</strong> comme outils, non réécrits</td>
+<td>la documentation d'une passerelle d'API décrit <strong>la génération d'outils et de serveurs à partir des définitions d'API existantes</strong> (Vol. II <strong>F-40</strong>)</td>
+<td>⚠ <em>la <strong>fidélité</strong> de la projection</em>, ni <em>qu'elle préserve les contrôles du contrat d'origine</em></td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td><strong>Hybride et souveraineté</strong> — charges sensibles en auto-géré, agilité par le service infonuagique, <strong>résidence canadienne</strong></td>
+<td>zones multizones datées, une offre souveraine <strong>en disponibilité générale</strong>, un cadre de contrôles à <strong>565 exigences</strong> (Vol. II <strong>F-45</strong>)</td>
+<td>⚠ <strong>le rapprochement avec la ligne directrice B-13 est une inférence d'auteur</strong> : <em>l'éditeur ne revendique aucune conformité à B-13, et aucune source ne documente ce lien</em></td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td><strong>La traçabilité de bout en bout, jamais déléguée aux agents</strong></td>
+<td>une préimpression enseigne que la journalisation confiée aux agents « n'est généralement pas recommandée » (Vol. II <strong>F-37</strong>), ⚠ <strong>position, non résultat établi</strong> ; instrumentation ouverte native dans deux produits datés (Vol. II <strong>F-39</strong>)</td>
+<td>⚠ <em>que la forme <strong>absolue</strong> du principe soit portée par la source</em> — <strong>elle est une décision d'architecture</strong></td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td><strong>La gouvernance du cycle de vie des modèles et des agents</strong> — inventaire, évaluation graduée, catalogue gouverné</td>
+<td>un produit de gouvernance <strong>en disponibilité générale</strong> depuis une date nommée, et sa gouvernance agentique livrée en 2025 (Vol. II <strong>F-44</strong>)</td>
+<td>⚠ <strong>le rapprochement avec E-23 est une inférence d'auteur</strong> : <em>l'éditeur <strong>ne revendique aucune conformité</strong> à E-23, et aucune source ne documente ce lien</em> — <strong>fait négatif ÉTABLI</strong></td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 45.1 — Les six principes directeurs du blueprint, avec ce qui les porte et ce que le socle n'établit pas. ⚠ <strong>Trois énoncent une discipline d'architecture, deux imposent un point de contrôle, et le quatrième — celui de la souveraineté — pose une contrainte de territoire.</strong> <em>Seul le premier dispose de trois sources convergentes ; les cinq autres sont des choix appuyés sur des capacités documentées.</em></p>
-
 <div class="avert">
   <p><strong>Un élément mérite d'être relevé pour lui-même, et il vient de l'éditeur du portefeuille.</strong> Un patron d'architecture agentique publié par cet éditeur <strong>recommande explicitement les enchaînements statiques — de type notation de processus normalisée — pour les processus sous surveillance réglementaire</strong>, au nom de <strong>l'auditabilité, de la conformité et de la définition des transferts</strong> (Vol. II <strong>F-46</strong>). <span class="auteur">Lecture de l'auteur</span> ⚠ <em>la recommandation est remarquable par sa provenance : elle émane de l'éditeur dont ce chapitre instancie le portefeuille agentique, et <strong>elle borne l'emploi de ce qu'il vend</strong>.</em> <strong>Le socle en établit le contenu et la date</strong> ; ⚠ <em>il n'établit ni son influence sur les décisions d'architecture des institutions, ni son maintien après la date de gel.</em> ⚠ <strong>La même entrée porte une réserve inséparable</strong> : <em>cet éditeur <strong>ne publie pas d'architecture agentique spécifique aux services financiers</strong></em> — le patron est générique, et la recherche a été menée <strong>sans résultat</strong>.</p>
 </div>
-
 <div class="avert">
   <p><strong>Et le premier principe touche un objet qui n'existe pas.</strong> <em>Le blueprint du Vol. III pose, lui, que <strong>rien n'entre au maillage sans passeport</strong></em> — ⚠ <strong>or le passeport d'agent ne figure dans aucune spécification à date</strong> (R-01 du Vol. III ; siège <strong>ch. 16</strong>). <strong>Ce principe conditionne donc une admission à un artefact que personne ne délivre</strong>, et <em>le ch. 43 § 43.3 a établi que c'est ce qui le distingue des cinq points de contrôle obligatoires, lesquels sont opposables sans lui.</em></p>
 </div>
-
 <h2 id="s452"><span class="sig">§ 45.2</span>La vue en couches C1-C8, avec statuts datés</h2>
-
 <div class="avert">
   <p><strong>Convention de lecture, et elle est la règle de cette section.</strong> <em>Chaque composant porte <strong>sa source et sa date</strong>. Son <strong>statut de disponibilité</strong> n'est indiqué <strong>que lorsque le socle l'établit</strong> sous l'une des trois formes attendues — disponibilité générale, préversion, déprécié.</em> ⚠ <strong>Les composants qui n'en portent pas sont ceux pour lesquels le socle n'en établit aucun</strong> : <em>l'éditeur les documente sans le publier.</em> ⚠ <strong>« Annoncé » date une communication, non une disponibilité</strong> — <em>et c'est le cas de la passerelle de médiation sur laquelle repose pourtant le principe 2.</em></p>
 </div>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>#</th><th>Couche</th><th>Composants au socle, datés — <strong>statut lorsque le socle l'établit</strong></th><th>Positionnement des options d'orchestration ⚠ <strong>(<span class="auteur">Lecture de l'auteur</span> aucune source ne le porte)</strong></th></tr></thead>
-  <tbody>
-    <tr><td><strong>C1</strong></td><td><strong>Exposition et gouvernance des interactions</strong></td><td>une passerelle d'API en version majeure datée ; un agent d'API <strong>en disponibilité générale</strong> (19 nov. 2025) ; une passerelle d'IA (2024, étendue 2025) ; une <strong>passerelle de niveau microservice annoncée</strong> le 19 nov. 2025 ; une <strong>passerelle de médiation IA annoncée</strong>, ⚠ <strong>sans statut de disponibilité au socle</strong> ; une passerelle et registre unifiés en logiciel libre (Vol. II <strong>F-40</strong>)</td><td>⚠ <strong>aucun</strong> — la couche s'applique à toutes les options</td></tr>
-    <tr><td><strong>C2</strong></td><td><strong>Intégration applicative et B2B</strong></td><td>un moteur d'intégration à cadence trimestrielle ; un nœud d'appel de modèle ; une solution de messagerie financière normalisée ; une offre hybride <strong>en disponibilité générale</strong> (16 juin 2025) (Vol. II <strong>F-39</strong> et <strong>F-38</strong>)</td><td>flux déterministes = <strong>cadres opérationnels</strong>, <strong>OO3</strong></td></tr>
-    <tr><td><strong>C3</strong></td><td><strong>Messagerie et événements</strong></td><td>un gestionnaire de files <strong>en disponibilité générale</strong> (juin 2026) — <em>livraison « exactly-once » <strong>selon la documentation de l'éditeur</strong></em>, haute disponibilité intra et inter-régions, <strong>cryptographie post-quantique pour le transport</strong> ; une gestion de points de terminaison d'événements <strong>maintenue</strong> ; ⚠ <strong>deux produits dépréciés</strong> ; ⚠ <strong>et un pivot d'éditeur clôturé le 17 mars 2026 — écrit au passé</strong> (Vol. II <strong>F-39</strong> et <strong>F-41</strong>)</td><td>rail déterministe <strong>OO3</strong> ; agents événementiels sans cadre explicite = <strong>OO1</strong></td></tr>
-    <tr><td><strong>C4</strong></td><td><strong>Données</strong></td><td>un plan de contrôle unifié d'intégration de données, daté du 11 juin 2025 (Vol. II <strong>F-38</strong>)</td><td>⚠ <strong>aucun</strong> — couche d'alimentation</td></tr>
-    <tr><td><strong>C5</strong></td><td><strong>Couche agentique</strong></td><td>un orchestrateur d'agents : trousse de développement datée, outils dès mai 2025, <strong>protocole agent-agent depuis le 30 juin 2025</strong>, serveurs distants sept. 2025, cadre de connexion d'agents, <strong>six garde-fous</strong> ; une famille de modèles <strong>en disponibilité générale</strong> (2 oct. 2025) (Vol. II <strong>F-42</strong>)</td><td>les enchaînements de l'orchestrateur = <strong>cadre opérationnel des agents</strong>, <strong>OO4</strong></td></tr>
-    <tr><td><strong>C6</strong></td><td><strong>Gouvernance IA et risque de modèle</strong></td><td>un produit de gouvernance <strong>en disponibilité générale</strong> (déc. 2023) ; gouvernance agentique livrée en 2025 ; un module de conformité issu d'un accord de revente daté (Vol. II <strong>F-44</strong>)</td><td>⚠ <strong>aucun</strong> — couche transverse</td></tr>
-    <tr><td><strong>C7</strong></td><td><strong>Observabilité et opérations</strong></td><td>une observabilité d'agents et de modèles <strong>en préversion publique</strong> ; une plateforme d'opérations ; instrumentation ouverte native (Vol. II <strong>F-44</strong> et <strong>F-39</strong>)</td><td>⚠ <strong>aucun</strong> — instrumentation des propriétés d'évaluation</td></tr>
-    <tr><td><strong>C8</strong></td><td><strong>Socle d'exécution et souveraineté</strong></td><td>une plateforme d'intégration <strong>en disponibilité générale</strong> (30 juin 2026, support six ans) ; zones multizones <strong>datées de 2021 et du 3 avril 2025</strong> ; une offre souveraine <strong>en disponibilité générale</strong> (5 mai 2026) ; un cadre de contrôles à <strong>565 exigences</strong> (Vol. II <strong>F-39</strong> et <strong>F-45</strong>)</td><td>⚠ <strong>aucun</strong> — couche d'exécution</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>#</th>
+<th>Couche</th>
+<th>Composants au socle, datés — <strong>statut lorsque le socle l'établit</strong></th>
+<th>Positionnement des options d'orchestration ⚠ <strong>(<span class="auteur">Lecture de l'auteur</span> aucune source ne le porte)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>C1</strong></td>
+<td><strong>Exposition et gouvernance des interactions</strong></td>
+<td>une passerelle d'API en version majeure datée ; un agent d'API <strong>en disponibilité générale</strong> (19 nov. 2025) ; une passerelle d'IA (2024, étendue 2025) ; une <strong>passerelle de niveau microservice annoncée</strong> le 19 nov. 2025 ; une <strong>passerelle de médiation IA annoncée</strong>, ⚠ <strong>sans statut de disponibilité au socle</strong> ; une passerelle et registre unifiés en logiciel libre (Vol. II <strong>F-40</strong>)</td>
+<td>⚠ <strong>aucun</strong> — la couche s'applique à toutes les options</td>
+</tr>
+<tr>
+<td><strong>C2</strong></td>
+<td><strong>Intégration applicative et B2B</strong></td>
+<td>un moteur d'intégration à cadence trimestrielle ; un nœud d'appel de modèle ; une solution de messagerie financière normalisée ; une offre hybride <strong>en disponibilité générale</strong> (16 juin 2025) (Vol. II <strong>F-39</strong> et <strong>F-38</strong>)</td>
+<td>flux déterministes = <strong>cadres opérationnels</strong>, <strong>OO3</strong></td>
+</tr>
+<tr>
+<td><strong>C3</strong></td>
+<td><strong>Messagerie et événements</strong></td>
+<td>un gestionnaire de files <strong>en disponibilité générale</strong> (juin 2026) — <em>livraison « exactly-once » <strong>selon la documentation de l'éditeur</strong></em>, haute disponibilité intra et inter-régions, <strong>cryptographie post-quantique pour le transport</strong> ; une gestion de points de terminaison d'événements <strong>maintenue</strong> ; ⚠ <strong>deux produits dépréciés</strong> ; ⚠ <strong>et un pivot d'éditeur clôturé le 17 mars 2026 — écrit au passé</strong> (Vol. II <strong>F-39</strong> et <strong>F-41</strong>)</td>
+<td>rail déterministe <strong>OO3</strong> ; agents événementiels sans cadre explicite = <strong>OO1</strong></td>
+</tr>
+<tr>
+<td><strong>C4</strong></td>
+<td><strong>Données</strong></td>
+<td>un plan de contrôle unifié d'intégration de données, daté du 11 juin 2025 (Vol. II <strong>F-38</strong>)</td>
+<td>⚠ <strong>aucun</strong> — couche d'alimentation</td>
+</tr>
+<tr>
+<td><strong>C5</strong></td>
+<td><strong>Couche agentique</strong></td>
+<td>un orchestrateur d'agents : trousse de développement datée, outils dès mai 2025, <strong>protocole agent-agent depuis le 30 juin 2025</strong>, serveurs distants sept. 2025, cadre de connexion d'agents, <strong>six garde-fous</strong> ; une famille de modèles <strong>en disponibilité générale</strong> (2 oct. 2025) (Vol. II <strong>F-42</strong>)</td>
+<td>les enchaînements de l'orchestrateur = <strong>cadre opérationnel des agents</strong>, <strong>OO4</strong></td>
+</tr>
+<tr>
+<td><strong>C6</strong></td>
+<td><strong>Gouvernance IA et risque de modèle</strong></td>
+<td>un produit de gouvernance <strong>en disponibilité générale</strong> (déc. 2023) ; gouvernance agentique livrée en 2025 ; un module de conformité issu d'un accord de revente daté (Vol. II <strong>F-44</strong>)</td>
+<td>⚠ <strong>aucun</strong> — couche transverse</td>
+</tr>
+<tr>
+<td><strong>C7</strong></td>
+<td><strong>Observabilité et opérations</strong></td>
+<td>une observabilité d'agents et de modèles <strong>en préversion publique</strong> ; une plateforme d'opérations ; instrumentation ouverte native (Vol. II <strong>F-44</strong> et <strong>F-39</strong>)</td>
+<td>⚠ <strong>aucun</strong> — instrumentation des propriétés d'évaluation</td>
+</tr>
+<tr>
+<td><strong>C8</strong></td>
+<td><strong>Socle d'exécution et souveraineté</strong></td>
+<td>une plateforme d'intégration <strong>en disponibilité générale</strong> (30 juin 2026, support six ans) ; zones multizones <strong>datées de 2021 et du 3 avril 2025</strong> ; une offre souveraine <strong>en disponibilité générale</strong> (5 mai 2026) ; un cadre de contrôles à <strong>565 exigences</strong> (Vol. II <strong>F-39</strong> et <strong>F-45</strong>)</td>
+<td>⚠ <strong>aucun</strong> — couche d'exécution</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 45.2 — La vue en couches C1-C8 du blueprint, avec statuts datés. ⚠ <strong>Tous les statuts sont auto-déclarés par leur éditeur, nommé, et n'ont fait l'objet d'aucune vérification indépendante.</strong> ⚠ <strong>Toute la colonne de droite est une Lecture de l'auteur</strong> : <em>aucune source du corpus ne positionne un produit sur l'échelle des options d'orchestration.</em></p>
-
 <p><strong>Lecture de l'auteur, sur C1 — la couche où le principe 2 devient une adresse réseau.</strong> <em>La famille de passerelles s'est diversifiée <strong>par la taille et par l'objet</strong> — passerelle d'API, de microservice, de médiation IA —, ce qui suggère que <strong>le point de contrôle unique du principe 2 est, dans les faits, une famille de points à coordonner</strong>.</em> ⚠ <strong>Le socle n'établit ni leur intégration mutuelle, ni qu'une politique écrite une fois s'y applique partout.</strong> ⚠ <strong>Et c'est exactement la première condition de réfutation du ch. 37 § 37.9</strong> : <em>un dispositif dont on ne peut pas énumérer les arêtes qu'il ne médiatise pas fournit une opposabilité partielle dont le complément est inconnu.</em></p>
-
 <div class="avert">
   <p><strong>Désambiguïsation obligatoire à C5</strong> (R-8 du Vol. II) : <em>le positionnement de l'orchestrateur comme plan de contrôle agentique est <strong>une qualification de son éditeur, attribuée à lui</strong></em>, et <strong>l'encadré des quatre branches siège au ch. 7 § 7.5</strong> — <em>ce chapitre n'en reconstruit aucune.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>Réserve de vocabulaire à C1</strong> : <em>la passerelle porte un <strong>cadre d'autorisation</strong>, jamais un protocole « sécurisé »</em> (réserve F-01 du Vol. II ; siège <strong>ch. 8</strong>).</p>
 </div>
-
 <div class="avert">
   <p><strong>Deux dépréciations et un pivot d'éditeur figurent au tableau, et ils se lisent comme des faits datés, non comme des jugements.</strong> <em>Le pivot est <strong>clôturé</strong> — la trajectoire est écrite au passé</em>, et ⚠ <strong>le socle ne documente pas ce que la clôture a produit</strong> : absence de documentation, non fait négatif vérifié (degré 3). <em>Une trajectoire de produit annoncée n'est pas une capacité livrée, et le chapitre ne comble pas l'écart.</em></p>
 </div>
-
+<figure class="figure">
+  <img src="../figures/f-45-02-vue-c1-c8.svg" alt="Figure 45.2 — La vue en couches C1-C8 du blueprint, avec ses statuts datés." />
+  <figcaption><strong>Figure 45.2</strong> — La vue en couches C1-C8 du blueprint, avec ses statuts datés.</figcaption>
+</figure>
 <h2 id="s453"><span class="sig">§ 45.3</span>La neutralité fournisseur en pratique</h2>
-
 <div class="avert">
   <p><strong>Cette section n'est pas une précaution rhétorique : c'est le rendu de compte d'une règle opposable.</strong> <em>La neutralité fournisseur <strong>interdit de recommander, non de nommer</strong></em>, et elle impose trois choses que le chapitre tient : <strong>nommer l'éditeur à chaque occurrence</strong>, <strong>porter le statut à chaque mention</strong>, <strong>ne jamais présenter un cas d'instanciation comme un verdict comparatif</strong>.</p>
 </div>
-
-<p><strong>Les alternatives ne sont ni écartées ni surclassées.</strong> *Le Vol. II documente à leur propre niveau de preuve <strong>trois réalisations d'orchestration</strong> — un cadriciel d'éditeur en disponibilité générale, une plateforme dont <strong>le support d'un protocole n'est confirmé de première main que pour son offre commerciale</strong>, une orchestration événementielle <strong>en préversion ouverte sans client ni chiffre d'adoption à la source</strong> — et <strong>deux cadriciels supplémentaires en [C]</strong> (Vol. II <strong>F-32</strong>, <strong>F-33</strong>, <strong>F-15</strong>). ⚠ <strong>Le ch. 43 § 43.6 en est le siège</strong> ; <em>ce chapitre y renvoie et ne les rejuge pas.</em></p>
-
+<p><strong>Les alternatives ne sont ni écartées ni surclassées.</strong> <em>Le Vol. II documente à leur propre niveau de preuve <strong>trois réalisations d'orchestration</strong> — un cadriciel d'éditeur en disponibilité générale, une plateforme dont <strong>le support d'un protocole n'est confirmé de première main que pour son offre commerciale</strong>, une orchestration événementielle <strong>en préversion ouverte sans client ni chiffre d'adoption à la source</strong> — et <strong>deux cadriciels supplémentaires en [C]</strong></em> (Vol. II <strong>F-32</strong>, <strong>F-33</strong>, <strong>F-15</strong>). ⚠ <strong>Le ch. 43 § 43.6 en est le siège</strong> ; <em>ce chapitre y renvoie et ne les rejuge pas.</em></p>
 <div class="avert">
   <p><strong>Une réserve porte sur un classement d'analystes, et elle est nommée</strong> (R-6 du Vol. II) : <em>une position à un classement d'analystes citée par le socle <strong>n'a pas été vérifiée</strong>, et elle ne soutient aucun énoncé de ce chapitre.</em> ⚠ <strong>Les études d'analystes commandées portent leur statut</strong> : <em>une étude commandée par l'éditeur qu'elle évalue est une donnée d'éditeur, attribuée comme telle.</em></p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> ⚠ <strong>la neutralité se mesure à un test simple, et le chapitre s'y soumet</strong> : <em>si l'on remplace le nom de l'éditeur par celui d'un autre et que le raisonnement tient encore, la neutralité est tenue ; s'il cesse de tenir, le chapitre recommandait.</em> <strong>Ce que le socle établit</strong> : l'existence et le statut daté de chaque composant nommé. <strong>Ce qu'il n'établit pas</strong> : <em>qu'un autre portefeuille ne réponde pas aux mêmes principes</em> — ⚠ <strong>aucun balayage comparatif n'a été conduit</strong>, et <em>l'absence de comparaison est une propriété de la méthode, non un verdict sur le marché.</em></p>
-
 <h2 id="s454"><span class="sig">§ 45.4</span>Correspondance réglementaire : le tableau B.3 développé</h2>
-
 <div class="avert">
   <p><strong>La colonne décisive de ce tableau n'est pas celle de la réponse d'architecture : c'est celle du statut du lien.</strong></p>
 </div>
-
 <div class="avert">
-  <p><strong>Et le fait qui commande tout ce qui suit est un fait négatif du socle, établi et déterminant pour la section</strong> : <strong><em>aucune source ne relie le portefeuille à la ligne directrice E-23 ni à la ligne directrice B-13</strong></em>. ⚠ <strong>Ce n'est pas une lacune de recherche qu'un effort supplémentaire comblerait</strong> : <em>c'est un constat sur <strong>ce que l'éditeur revendique</strong>.</em> <strong>Fait négatif ÉTABLI, non vérifié</strong> — <em>l'éditeur n'affirme rien, et le socle le constate ; aucun balayage n'établit qu'il ne pourrait pas l'affirmer.</em></p>
+  <p><strong>Et le fait qui commande tout ce qui suit est un fait négatif du socle, établi et déterminant pour la section</strong> : <strong><em>aucune source ne relie le portefeuille à la ligne directrice E-23 ni à la ligne directrice B-13</em></strong>. ⚠ <strong>Ce n'est pas une lacune de recherche qu'un effort supplémentaire comblerait</strong> : <em>c'est un constat sur <strong>ce que l'éditeur revendique</strong>.</em> <strong>Fait négatif ÉTABLI, non vérifié</strong> — <em>l'éditeur n'affirme rien, et le socle le constate ; aucun balayage n'établit qu'il ne pourrait pas l'affirmer.</em></p>
 </div>
-
 <div class="avert">
   <p><em>« Central » est le terme technique de CA-IV-01, et l'en-tête de cette pièce déclare qu'<strong>aucun énoncé n'est central en ce sens</strong> ; le mot ne sert donc, ici comme aux § 45.6 et § 45.7, qu'à <strong>nier</strong> — jamais à qualifier un énoncé de ce chapitre.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>Un composant peut <em>outiller</em> une exigence sans que quiconque l'ait certifié conforme à cette exigence</strong> ; <em>le rapprochement, alors, <strong>appartient à l'auteur du blueprint</strong> — c'est-à-dire à l'institution qui le porte, et qui en répondra.</em></p>
 </div>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Exigence</th><th>Réponse d'architecture (couche)</th><th>Statut du lien</th></tr></thead>
-  <tbody>
-    <tr><td><strong>E-23 — attentes de risque de modèle</strong>, effet au 1ᵉʳ mai 2027</td><td><strong>C6</strong> : inventaire, cotation graduée, cycle de vie, documentation de modèle ; <strong>C7</strong> : surveillance continue</td><td>⚠ <strong>Inférence d'auteur — fait négatif ÉTABLI</strong> : <em>l'éditeur ne revendique aucune conformité, aucune source ne documente le lien</em> (R-7 du Vol. II ; R-07 du Vol. III)</td></tr>
-    <tr><td><strong>B-13 — gestion du risque technologique</strong></td><td><strong>C8</strong> : cadre de contrôles à 565 exigences, zones multizones, offre souveraine</td><td>⚠ <strong>Inférence d'auteur — fait négatif ÉTABLI</strong> : <em>même régime</em>. <strong>Le cadre de contrôles de l'éditeur n'est pas B-13</strong></td></tr>
-    <tr><td><strong>Ligne directrice IA de l'AMF</strong>, effet au 1ᵉʳ mai 2027</td><td><strong>C6</strong> transverse</td><td>⚠ <strong>Inférence d'auteur — mais le régime d'absence DIFFÈRE, et l'écart se déclare</strong> : <em>le socle <strong>n'a pas établi</strong> l'absence de revendication sur ce point</em> — <strong>absence de documentation, degré 3</strong>, non fait négatif</td></tr>
-    <tr><td><strong>Art. 12.1</strong> — informer, expliquer, offrir la révision</td><td><strong>C1</strong> (trace de passerelle), <strong>C5</strong> (point d'arrêt), <strong>C7</strong> (journal)</td><td>⚠ <strong>Inférence d'auteur</strong> — <em>et le ch. 43 § 43.3 a établi que les trois obligations deviennent <strong>PC1, PC2 et PC3</strong>, qui ne sont déduits d'aucune source</em></td></tr>
-    <tr><td><strong>Avis 11-348 des autorités en valeurs mobilières</strong> — autonomie et adaptativité</td><td><strong>C1</strong> et <strong>C7</strong> : audit de chaque interaction à la passerelle, traçabilité par tâche</td><td>⚠ <strong>Inférence d'auteur, et rien de plus</strong> : <em>y adjoindre une absence de revendication serait la faute symétrique — <strong>le fait négatif est borné à E-23 et à B-13</strong></em></td></tr>
-    <tr><td><strong>Cadre bancaire — standard technique</strong></td><td><strong>C1</strong> : couche d'exposition, republication d'actifs existants</td><td>⚠ <strong>Sans objet à date</strong> : <em>aucun organisme de normalisation technique n'a été désigné et <strong>aucun standard n'est nommé</strong> dans les textes officiels</em> (R-5 du Vol. II)</td></tr>
-    <tr><td><strong>Rails de paiement canadiens</strong> — le rail de grande valeur, le rail temps réel</td><td><strong>C3</strong> : messagerie et intégration à la norme financière ; continuité opérationnelle de l'éditeur au Canada</td><td>⚠ <strong>DOCUMENTÉ — le seul du tableau, et il porte sur un RÔLE, non sur une conformité</strong> : <em>l'éditeur est partenaire technologique des deux rails à des dates nommées</em> (Vol. II <strong>F-45</strong>, <strong>F-28</strong>, <strong>F-29</strong>) ; ⚠ <strong>la solution de messagerie normalisée reste en [C]</strong>, élévation tentée et échouée. ⚠ <strong>Réserve F-29 du Vol. II</strong> : <em>le rail temps réel porte <strong>quatre cibles successives</strong>, jamais « lancé »</em></td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Exigence</th>
+<th>Réponse d'architecture (couche)</th>
+<th>Statut du lien</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>E-23 — attentes de risque de modèle</strong>, effet au 1ᵉʳ mai 2027</td>
+<td><strong>C6</strong> : inventaire, cotation graduée, cycle de vie, documentation de modèle ; <strong>C7</strong> : surveillance continue</td>
+<td>⚠ <strong>Inférence d'auteur — fait négatif ÉTABLI</strong> : <em>l'éditeur ne revendique aucune conformité, aucune source ne documente le lien</em> (R-7 du Vol. II ; R-07 du Vol. III)</td>
+</tr>
+<tr>
+<td><strong>B-13 — gestion du risque technologique</strong></td>
+<td><strong>C8</strong> : cadre de contrôles à 565 exigences, zones multizones, offre souveraine</td>
+<td>⚠ <strong>Inférence d'auteur — fait négatif ÉTABLI</strong> : <em>même régime</em>. <strong>Le cadre de contrôles de l'éditeur n'est pas B-13</strong></td>
+</tr>
+<tr>
+<td><strong>Ligne directrice IA de l'AMF</strong>, effet au 1ᵉʳ mai 2027</td>
+<td><strong>C6</strong> transverse</td>
+<td>⚠ <strong>Inférence d'auteur — mais le régime d'absence DIFFÈRE, et l'écart se déclare</strong> : <em>le socle <strong>n'a pas établi</strong> l'absence de revendication sur ce point</em> — <strong>absence de documentation, degré 3</strong>, non fait négatif</td>
+</tr>
+<tr>
+<td><strong>Art. 12.1</strong> — informer, expliquer, offrir la révision</td>
+<td><strong>C1</strong> (trace de passerelle), <strong>C5</strong> (point d'arrêt), <strong>C7</strong> (journal)</td>
+<td>⚠ <strong>Inférence d'auteur</strong> — <em>et le ch. 43 § 43.3 a établi que les trois obligations deviennent <strong>PC1, PC2 et PC3</strong>, qui ne sont déduits d'aucune source</em></td>
+</tr>
+<tr>
+<td><strong>Avis 11-348 des autorités en valeurs mobilières</strong> — autonomie et adaptativité</td>
+<td><strong>C1</strong> et <strong>C7</strong> : audit de chaque interaction à la passerelle, traçabilité par tâche</td>
+<td>⚠ <strong>Inférence d'auteur, et rien de plus</strong> : <em>y adjoindre une absence de revendication serait la faute symétrique — <strong>le fait négatif est borné à E-23 et à B-13</strong></em></td>
+</tr>
+<tr>
+<td><strong>Cadre bancaire — standard technique</strong></td>
+<td><strong>C1</strong> : couche d'exposition, republication d'actifs existants</td>
+<td>⚠ <strong>Sans objet à date</strong> : <em>aucun organisme de normalisation technique n'a été désigné et <strong>aucun standard n'est nommé</strong> dans les textes officiels</em> (R-5 du Vol. II)</td>
+</tr>
+<tr>
+<td><strong>Rails de paiement canadiens</strong> — le rail de grande valeur, le rail temps réel</td>
+<td><strong>C3</strong> : messagerie et intégration à la norme financière ; continuité opérationnelle de l'éditeur au Canada</td>
+<td>⚠ <strong>DOCUMENTÉ — le seul du tableau, et il porte sur un RÔLE, non sur une conformité</strong> : <em>l'éditeur est partenaire technologique des deux rails à des dates nommées</em> (Vol. II <strong>F-45</strong>, <strong>F-28</strong>, <strong>F-29</strong>) ; ⚠ <strong>la solution de messagerie normalisée reste en [C]</strong>, élévation tentée et échouée. ⚠ <strong>Réserve F-29 du Vol. II</strong> : <em>le rail temps réel porte <strong>quatre cibles successives</strong>, jamais « lancé »</em></td>
+</tr>
+</tbody>
 </table>
 </div>
-
-<p class="legende">Tableau 45.3 — La correspondance réglementaire développée, avec le statut de chaque lien. ⚠ <strong>CA-8 hérité : chaque lien porte son statut — et un seul est documenté, pour un rôle opérationnel.</strong> ⚠ <strong><em>Une continuité opérationnelle ne vaut pas agrément réglementaire</strong></em> : <em>une institution qui écrirait que sa plateforme convient aux rails canadiens <strong>parce que</strong> leur exploitant technologique en est l'éditeur commettrait un enchaînement que le socle ne porte pas.</em></p>
-
+<p class="legende">Tableau 45.3 — La correspondance réglementaire développée, avec le statut de chaque lien. ⚠ <strong>CA-8 hérité : chaque lien porte son statut — et un seul est documenté, pour un rôle opérationnel.</strong> ⚠ <strong><em>Une continuité opérationnelle ne vaut pas agrément réglementaire</em></strong> : <em>une institution qui écrirait que sa plateforme convient aux rails canadiens <strong>parce que</strong> leur exploitant technologique en est l'éditeur commettrait un enchaînement que le socle ne porte pas.</em></p>
 <div class="avert">
   <p><strong>Le régime d'absence n'est pas uniforme, et c'est le point le plus fin de la section.</strong> <em>Pour E-23 et B-13, le socle a <strong>cherché et consigné</strong> l'absence de revendication : <strong>fait négatif ÉTABLI, degré 2</strong>. Pour la ligne directrice de l'AMF, <strong>le socle n'a rien cherché</strong> : <strong>absence de documentation, degré 3</strong>.</em> ⚠ <strong>Les deux formules ne s'échangent pas</strong>, et <em>le ch. 38 § 38.4 en a fait le siège pour la somme.</em></p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> ⚠ <em>l'éditeur <strong>revendique là où il revendique</strong>, et son silence sur le Canada est une donnée, non un oubli à combler.</em> Le socle atteste au contraire des revendications ailleurs : <em>pour un module de conformité issu d'un accord de revente daté, l'éditeur <strong>revendique</strong> des contenus prêts pour trois cadres nommés — <strong>le lien est documenté comme revendication d'éditeur, et le socle n'établit pas la conformité elle-même</strong>.</em></p>
-
 <h2 id="s455"><span class="sig">§ 45.5</span>Points d'intégration avec l'existant : étendre, ne pas dupliquer</h2>
-
 <div class="avert">
   <p><strong>L'entreprise qui déploie des agents n'ouvre pas un chantier vierge.</strong> <em>Elle exploite une gestion des identités et des accès, une chaîne d'observabilité, et elle est assujettie à des cadres.</em> <strong>La question est de savoir ce que le socle documente de l'<em>extension</em> de ces trois existants, plutôt que de leur duplication.</strong></p>
 </div>
-
 <p><strong>Un énoncé documenté soutient l'extension, et il est daté.</strong> Un <em>Internet-Draft</em> d'architecture énonce, <strong>du point de vue de son groupe de travail</strong>, que <em>les intermédiaires d'IA sont <strong>un cas particulier de charges de travail déléguées</strong></em> (Vol. III <strong>F-86</strong>, <strong>[B]</strong>).</p>
-
 <div class="avert">
   <p><strong>Trois bornes, et elles ne se détachent pas.</strong> <em>Un</em> : <strong>c'est l'énoncé d'un <em>Internet-Draft</em> en cours, qui ne fait autorité sur rien et peut changer à la révision suivante</strong> (R-09 du Vol. III). <em>Deux</em> : <strong>c'est une section d'<em>architecture</em>, non une prescription protocolaire.</strong> <em>Trois</em> : ⚠ <em>la page des documents de ce groupe recense <strong>sept</strong> brouillons <strong>dont aucune date de publication en norme n'est annoncée</strong></em>, et <strong>l'un d'eux expire pendant la période de rédaction</strong> (Vol. III <strong>F-85</strong>, <strong>[B]</strong>) — <em>un relevé horodaté et périssable, à rejouer avant citation.</em></p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : qu'un groupe de travail <strong>considère</strong> les intermédiaires d'IA comme un cas particulier d'un objet qu'il spécifie déjà. <strong>Ce qu'il n'établit pas</strong> : <em>que l'extension soit techniquement possible sur un déploiement donné</em>, ni <strong>qu'elle préserve les propriétés de l'existant</strong>. ⚠ <strong>La lecture proposée est étroite</strong> : <em>« étendre plutôt que dupliquer » est une <strong>règle d'économie</strong>, non une garantie de compatibilité</em> — et <strong>elle se réfute par la production d'un cas où l'extension casse une propriété que la duplication aurait préservée</strong>.</p>
-
 <div class="avert">
   <p><strong>Deux existants sur trois ne sont pas documentés à ce grain</strong>, et il faut l'écrire : <em>le socle documente l'extension du plan d'identité ; <strong>il ne documente ni l'extension de la chaîne d'observabilité, ni celle des dispositifs de conformité en place</strong></em> — absence de documentation, non fait négatif vérifié (degré 3). ⚠ <strong>La thèse du mouvement écrivait « chaque couche porte son point d'intégration » ; elle est réalignée depuis la v0.28 du TOC</strong> et porte désormais <em>trois existants nommés, non chaque couche</em> — <strong>le corps et la thèse concordent</strong> (R-IV-105, soldée).</p>
 </div>
-
 <h2 id="s456"><span class="sig">§ 45.6</span>L'organisation de la fabrique : qui opère quoi</h2>
-
-<div class="encadre encadre--oeuvre">
-  <span class="encadre__label">Note</span>
-  <p>⚠ <strong>SIÈGE DE L'ORGANISATION DE LA FABRIQUE POUR TOUTE LA SOMME.</strong> Le <strong>ch. 41 § 41.7</strong> y <strong>renvoie sans la reprendre</strong> — <em>un renvoi interne, jamais une seconde revendication du même texte</em> (décision 6 du TOC). <em>C'est le motif pour lequel la table détaillée du ch. 41 ne porte aucun marqueur de provenance.</em></p>
+<blockquote>
+<div class="avert">
+  <p><strong>SIÈGE DE L'ORGANISATION DE LA FABRIQUE POUR TOUTE LA SOMME.</strong> Le <strong>ch. 41 § 41.7</strong> y <strong>renvoie sans la reprendre</strong> — <em>un renvoi interne, jamais une seconde revendication du même texte</em> (décision 6 du TOC). <em>C'est le motif pour lequel la table détaillée du ch. 41 ne porte aucun marqueur de provenance.</em></p>
 </div>
-
+</blockquote>
 <p><span class="auteur">Lecture de l'auteur</span> <strong>marquage porté à l'ouverture de la section.</strong> <strong>Ce que le socle établit</strong> : <em>quatre propositions d'un volume antérieur sur la place d'un <strong>plan de contrôle obligatoire</strong></em> (Vol. III <strong>H-30</strong>, <strong>[C]</strong>) ; <strong>un rôle nommé par une source primaire</strong> — <em>celui du membre du personnel en mesure de réviser une décision</em> (Vol. III <strong>F-89</strong>, <strong>[B]</strong>), ⚠ <strong>seul de son espèce parmi les entrées mobilisées, aucun balayage du socle n'ayant porté sur les rôles</strong> ; et <strong>deux absences de titulaire documentées</strong> dans le projet qui spécifie la signature (Vol. III <strong>F-08</strong>, <strong>F-11</strong>). <strong>Ce qu'il n'établit pas</strong> : ⚠ <strong>la répartition des responsabilités entre équipes, la conduite du changement, le facteur humain, et la forme d'organisation qu'appellerait une fabrique de confiance</strong> — <em>la répartition proposée est une <strong>inférence d'auteur intégrale</strong>.</em></p>
-
 <div class="avert">
   <p><strong>La section a été réaffectée à sa source le 21 juillet 2026, et le motif se déclare</strong> : <em>elle empruntait sa matière à un ouvrage d'un <strong>corpus d'appui</strong> dont aucun des trois n'a jamais été déposé</em> — <strong>le lot est clos par échec documenté, réversible par dépôt ultérieur</strong>. ⚠ <strong>Les mentions de « corpus d'appui » sont des marqueurs conditionnels de réouverture, jamais des sources</strong> ; <em>elle se reconstruit sur le principe hérité seul.</em></p>
 </div>
-
-<p><strong>Le principe hérité, et sa borne.</strong> Le Vol. I traite la plateforme d'agents <strong>non comme un dispositif à gouverner après coup, mais comme un plan de contrôle obligatoire couplé à une dorsale d'intégration</strong>, et en résume la logique en une phrase : ⚠ <strong><em>l'agent prépare ; un humain ou un contrôle déterministe engage l'irréversible ; toute action transite par un point d'application de politique unique ; tout actif décisionnel est un modèle inventorié.</strong></em> ⚠ <strong>Entrée de repérage, thèse d'un volume antérieur, attribuée : elle ne porte aucun fait central.</strong> ⚠ <strong>Qualificatif obligatoire</strong> (R-8 du Vol. II) : <em>le « plan de contrôle <strong>obligatoire</strong> » est celui du Vol. I, distinct du « plan de contrôle <strong>au sens infrastructure</strong> » du maillage</em> — <strong>les quatre branches siègent au ch. 7 § 7.5</strong>.</p>
-
+<p><strong>Le principe hérité, et sa borne.</strong> Le Vol. I traite la plateforme d'agents <strong>non comme un dispositif à gouverner après coup, mais comme un plan de contrôle obligatoire couplé à une dorsale d'intégration</strong>, et en résume la logique en une phrase : ⚠ <strong><em>l'agent prépare ; un humain ou un contrôle déterministe engage l'irréversible ; toute action transite par un point d'application de politique unique ; tout actif décisionnel est un modèle inventorié.</em></strong> ⚠ <strong>Entrée de repérage, thèse d'un volume antérieur, attribuée : elle ne porte aucun fait central.</strong> ⚠ <strong>Qualificatif obligatoire</strong> (R-8 du Vol. II) : <em>le « plan de contrôle <strong>obligatoire</strong> » est celui du Vol. I, distinct du « plan de contrôle <strong>au sens infrastructure</strong> » du maillage</em> — <strong>les quatre branches siègent au ch. 7 § 7.5</strong>.</p>
 <div class="avert">
   <p><strong>Deux absences de titulaire sont documentées, et ce sont les seuls faits de la section.</strong> <em>Le fichier de sécurité du dépôt qui spécifie la signature <strong>ne porte aucune disposition de gouvernance des clés</strong>, et le document de gouvernance <strong>n'attribue à aucun organe une responsabilité de gestion des clés</strong>.</em> ⚠ <span class="auteur">Lecture de l'auteur</span> <em>une architecture dont le mécanisme de confiance n'a <strong>aucun titulaire nommé</strong> ne se répartit pas en rôles : elle en manque un.</em> <strong>Ce que le socle établit</strong> : les deux absences, bornées à ces deux documents. <strong>Ce qu'il n'établit pas</strong> : <em>qu'aucun titulaire n'existe ailleurs</em> — degré 3.</p>
 </div>
-
 <div class="avert">
   <p><strong>Et une question neuve s'ouvre ici, que le ch. 41 § 41.7 formule sans pouvoir la refermer</strong> : <em>les rôles répartis ci-dessus répondent de ce qui <strong>tourne</strong> ; <strong>qui répond de ce qui est produit</strong> ?</em> <strong>Le socle ne documente aucune répartition des responsabilités de production d'un parc</strong> — degré 3.</p>
 </div>
-
 <h2 id="s457"><span class="sig">§ 45.7</span>L'architecture de solutions Boréalis, résumée</h2>
-
 <p><em>← Vol. I <strong>Annexe B</strong> ; ⚠ <strong>intégrale à l'Annexe H</strong>, non rédigée.</em></p>
-
 <div class="avert">
   <p><strong>Le cas est fictif, et il se déclare tel avant sa première ligne.</strong> <em>Une coopérative de services financiers du Québec, institution financière fédérale et assujettie à l'autorité provinciale ; cinq sous-domaines ; <strong>contraintes-pivots</strong> — l'article 12.1, la résidence des renseignements personnels au Canada, les lignes directrices de risque de modèle et de risque technologique, la ligne directrice IA provinciale</em> (Vol. III <strong>H-32</strong>, <strong>[C]</strong>).</p>
 </div>
-
 <div class="avert">
   <p><strong>Entrée de repérage venue d'un volume dont la vérification porte sur les références et non sur le contenu des affirmations : elle situe le cas, elle ne porte aucun fait central.</strong> ⚠ <strong>Et une confusion est à écarter d'emblée</strong> : <em>ce cas fictif n'est pas le <strong>démonstrateur logiciel</strong> du même nom, qui est un autre objet</em> — ⚠ <strong>et ce démonstrateur a été retiré du dépôt le 25 juillet 2026</strong> ; <em>il ne se lit plus que dans l'historique, et aucun renvoi de ce chapitre n'y résout.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>Décision de fusion, reprise du plan et déclarée</strong> : <em>les deux instanciations — le cas fictif du Vol. I et le portefeuille réel du Vol. II — sont présentées comme <strong>deux réalisations de la même architecture de référence</strong>, non comme deux blueprints concurrents.</em> <span class="auteur">Lecture de l'auteur</span> <em>ce qui les rend comparables est le <strong>jeu de contraintes</strong>, non les composants : le premier fixe les contraintes, le second fournit des composants datés, et <strong>aucun des deux n'établit que les seconds satisfont les premières</strong>.</em></p>
 </div>
-
-<p># Second mouvement — Instanciation : le cycle de vie complet d'un agent d'entreprise</p>
-
+<hr />
+<h1 id="second-mouvement-instanciation-le-cycle-de-vie-complet-dun-agent-dentreprise">Second mouvement — Instanciation : le cycle de vie complet d'un agent d'entreprise</h1>
 <p><em>Ancien ch. 50 du plan (décision 11 du TOC). Entrée conservée intégralement.</em></p>
-
 <div class="avert">
   <p><strong>Écart de grain déclaré, et il est repris de la source plutôt que corrigé.</strong> <em>Le cadrage prescrivait de jouer <strong>chaque transition au grain du cas fil rouge</strong> ; <strong>les trois transitions ci-dessous sont jouées au grain générique des mécanismes</strong>, et le cas est joué <strong>en une passe unique</strong> au § 45.15.</em> ⚠ <strong>L'inversion est un choix de composition, non une prescription du cadrage</strong> — et <em>c'est la forme que la thèse du mouvement porte depuis son réalignement en v0.28</em> (R-IV-103, soldée).</p>
 </div>
-
 <h2 id="s458"><span class="sig">§ 45.8</span>Naissance : enregistrement, émission du passeport, admission au maillage</h2>
-
 <div class="avert">
   <p><strong>La naissance est le moment du parcours où le socle est le mieux garni — et c'est ce qui la rend instructive.</strong> <em>Trois actes s'y enchaînent, et <strong>aucun des trois ne s'appuie sur ce que le précédent était censé produire</strong>.</em></p>
 </div>
-
 <p><strong>Enregistrer.</strong> L'agent est déclaré à un registre gouverné dont le schéma rend <strong>obligatoires</strong> deux champs — <em>l'énumération des outils invocables et les bornes de portée</em>. ⚠ <strong>Le statut du document se dit à chaque mention</strong> : <strong>brouillon de laboratoire, non norme ratifiée</strong> (R-09 du Vol. III). ⚠ <strong>Et le ch. 15 en est le siège</strong> ; <em>ce chapitre n'y revient pas.</em></p>
-
 <p><strong>Émettre.</strong> ⚠ <strong>Le passeport d'agent ne figure dans aucune spécification à date</strong> : <em>c'est un objet de synthèse construit par la somme, en assemblant une carte signée, une inscription au registre, une chaîne de mandat et des attestations</em> (R-01 du Vol. III ; siège <strong>ch. 16</strong>). ⚠ <strong>L'acte d'émission n'est donc pas décrit par une spécification</strong> : <em>ce que les mécanismes documentent est l'émission de <strong>chacune de ses pièces</strong>, séparément, et <strong>aucune ne fournit aux autres l'ancrage qui leur manque</strong>.</em></p>
-
 <p><strong>Admettre.</strong> Le maillage vérifie l'agent qui se présente — ⚠ <strong>et le ch. 37 § 37.4 a rendu le verdict qui compte</strong> : <em>le mécanisme documenté <strong>ne répond pas</strong> à « qui es-tu » ; il <strong>évalue une politique</strong>, il n'émet, ne vérifie ni ne révoque un identifiant.</em> ⚠ <strong>La barrière qui déciderait de ce qui <em>peut</em> se présenter est au ch. 41 § 41.4</strong> — <em>matière neuve, sans socle.</em></p>
-
-<p><span class="auteur">Lecture de l'auteur</span> ⚠ <strong><em>la naissance décrite ici est une séquence de trois actes dont aucun ne consomme la sortie du précédent</strong></em> : le registre déclare des bornes que <strong>rien n'établit lisibles par un point d'application</strong> ; l'émission produit des pièces <strong>dont aucune n'ancre les autres</strong> ; l'admission évalue une politique <strong>qui ne porte ni identité ni mandat</strong>. <strong>Ce que le socle établit</strong> : les trois mécanismes, chacun dans ses bornes. <strong>Ce qu'il n'établit pas</strong> : <em>leur chaînage</em> — ⚠ <strong>aucune entrée ne met deux de ces trois actes en rapport</strong>, et <strong>c'est le résultat de la section</strong>.</p>
-
+<p><span class="auteur">Lecture de l'auteur</span> ⚠ <strong><em>la naissance décrite ici est une séquence de trois actes dont aucun ne consomme la sortie du précédent</em></strong> : le registre déclare des bornes que <strong>rien n'établit lisibles par un point d'application</strong> ; l'émission produit des pièces <strong>dont aucune n'ancre les autres</strong> ; l'admission évalue une politique <strong>qui ne porte ni identité ni mandat</strong>. <strong>Ce que le socle établit</strong> : les trois mécanismes, chacun dans ses bornes. <strong>Ce qu'il n'établit pas</strong> : <em>leur chaînage</em> — ⚠ <strong>aucune entrée ne met deux de ces trois actes en rapport</strong>, et <strong>c'est le résultat de la section</strong>.</p>
 <h2 id="s459"><span class="sig">§ 45.9</span>Vie : délégations, vérifications par arête, traces, évaluations, renouvellements, migration post-quantique</h2>
-
 <div class="avert">
   <p><strong>La vie est le moment où les trois étages travaillent simultanément, et le socle y est réparti très inégalement d'un geste à l'autre.</strong></p>
 </div>
-
 <p><strong>Déléguer.</strong> Le mandat existe sous <strong>trois formes documentées, et chacune borne ce qu'elle porte.</strong> <em>Un format de projet sérialise le mandat avec un attribut de type versionné et des attributs temporels, à une version datée</em> — ⚠ <strong>spécification de projet, non texte normatif d'un organisme de normalisation</strong> (R-09 du Vol. III ; Vol. III <strong>F-46</strong>). <em>Une norme de délégation définit l'attribut qui exprime qu'une délégation a eu lieu et identifie la partie agissante, et <strong>place explicitement hors périmètre la syntaxe, la sémantique et les caractéristiques de sécurité des jetons eux-mêmes</strong></em> (Vol. III <strong>F-47</strong>). ⚠ <strong>Le ch. 17 § 17.1 a repris cette norme à la source primaire au titre de G-1, et l'extraction rapporte plus que la relève n'annonçait</strong> — <em>elle <strong>exclut</strong> les maillons antérieurs de toute décision d'autorisation</em> ; <strong>le siège est là-bas</strong>. <em>Un mécanisme de propagation est à une révision datée d'un brouillon en cours, <strong>expirant dans les six mois</strong>, et <strong>borne lui-même sa portée à un domaine de confiance</strong></em> (Vol. III <strong>F-29</strong>).</p>
-
 <p><strong>Vérifier par arête.</strong> ⚠ <strong>Le ch. 37 § 37.5 en est le siège</strong> : <em>une syntaxe d'autorisation documentée, <strong>en préversion auto-déclarée</strong>, et un <strong>écart de couverture entre deux plans d'identité déclaré par l'éditeur lui-même</strong>.</em> <em>Ce chapitre n'y revient pas.</em></p>
-
 <p><strong>Tracer.</strong> ⚠ <strong>Le ch. 38 § 38.5 en est le siège</strong> : <em>l'identité serait la clé de jointure, et <strong>rien dans le corpus ouvert ne la constitue</strong>.</em></p>
-
 <p><strong>Évaluer.</strong> ⚠ <strong>Le ch. 39 § 39.1 en est le siège</strong> : <em>l'évaluation continue est instrumentée comme mesure de performance et <strong>non comme acte de vérification d'identité</strong>.</em></p>
-
 <p><strong>Renouveler.</strong> ⚠ <strong>La rotation est outillée ; le retrait d'une clé compromise ne l'est pas</strong> (Vol. III <strong>F-10</strong>, siège <strong>ch. 20</strong>). <em>Un renouvellement qui ne s'accompagne pas d'un retrait vérifiable prolonge un verdict au lieu de le redater.</em></p>
-
 <p><strong>Migrer.</strong> ⚠ <strong>Le ch. 21 en est le siège</strong> — <em>les jalons post-quantiques, leur statut et leurs origines y sont posés <strong>une seule fois</strong>, et ils ne se fusionnent jamais.</em> <strong>Ce chapitre en retient un seul fait</strong>, et il est de composant : <em>un gestionnaire de files du portefeuille déclare une <strong>cryptographie post-quantique pour le transport</strong>, à une version datée</em> — ⚠ <strong>capacité auto-déclarée par son éditeur nommé, non vérifiée</strong>. ⚠ <strong>Un mécanisme se qualifie par ce que sa spécification démontre, jamais par ce qu'un éditeur annonce</strong> (R-02 du Vol. III) : <em>ce que le socle établit est l'annonce, non la propriété.</em></p>
-
-<p><span class="auteur">Lecture de l'auteur</span> ⚠ <strong><em>des six gestes de la vie d'un agent, quatre ont un siège ailleurs dans la somme, un est outillé à moitié, et un ne l'est que par une annonce d'éditeur.</strong></em> <em>C'est ce que l'instanciation apporte : <strong>non des faits nouveaux, mais la mesure de la dispersion</strong>.</em> <strong>Ce qu'elle n'apporte pas</strong> : <em>aucun chaînage entre les six</em> — ⚠ <strong>et le § 45.10 montre où l'absence de chaînage coûte.</strong></p>
-
+<p><span class="auteur">Lecture de l'auteur</span> ⚠ <strong><em>des six gestes de la vie d'un agent, quatre ont un siège ailleurs dans la somme, un est outillé à moitié, et un ne l'est que par une annonce d'éditeur.</em></strong> <em>C'est ce que l'instanciation apporte : <strong>non des faits nouveaux, mais la mesure de la dispersion</strong>.</em> <strong>Ce qu'elle n'apporte pas</strong> : <em>aucun chaînage entre les six</em> — ⚠ <strong>et le § 45.10 montre où l'absence de chaînage coûte.</strong></p>
 <h2 id="s4510"><span class="sig">§ 45.10</span>Mort : révocation, cascade dans la chaîne de mandat, retrait du maillage, archivage probatoire</h2>
-
 <div class="avert">
   <p><strong>Deux précisions d'intitulé, héritées et reportées.</strong> <em>(1)</em> <strong>Le qualificatif complet de la chaîne est obligatoire à chaque occurrence</strong> — <em>l'intitulé est rendu ici avec lui, et l'écart avec le plan est signalé chez sa source.</em> <em>(2)</em> <strong>Le cadrage désigne cette transition comme la plus instructive des trois</strong> ; ⚠ <strong>la qualification est celle du document de cadrage, reprise et attribuée</strong>, <em>non un classement mesuré</em> — <strong>et la source a elle-même retiré un superlatif voisin faute de balayage comparatif.</strong></p>
 </div>
-
 <p><strong>Révoquer.</strong> ⚠ <strong>L'interdiction est posée au niveau normatif le plus fort — « Expired or revoked keys MUST NOT be used for verification » — sans aucun mécanisme permettant au client d'établir l'expiration ou la révocation</strong> (Vol. III <strong>F-07</strong>). ⚠ <strong>Deux bornes reportées</strong> : <em>l'énoncé figure <strong>sous un intitulé de considérations de sécurité</strong>, au milieu de recommandations plus faibles, et <strong>il vise la clé de signature, non la carte</strong></em>. La section qui porterait le mécanisme <strong>ne mentionne ni liste de révocation, ni protocole d'état en ligne, ni chaîne de certificats, ni délai de revalidation</strong>, et sa procédure <strong>ne comporte aucune étape de contrôle de statut ou de fraîcheur</strong> (Vol. III <strong>F-06</strong>, fait négatif <strong>VÉRIFIÉ, borné à une seule section</strong>).</p>
-
 <p><strong>Cascade.</strong> ⚠ <strong>Le ch. 20 écrit au degré 3 l'absence de mécanisme de révocation en cascade dans une chaîne de délégation</strong> — <em>absence de documentation, non fait négatif vérifié</em> —, <strong>et le ch. 39 § 39.3 a établi ce que le socle documente à la place</strong> : <em>une <strong>révocation de masse</strong> datée, en réponse à un incident public. <strong>L'exemple daté que le socle porte d'une réponse d'urgence est une réponse à granularité maximale.</strong></em></p>
-
 <p><strong>Retirer du maillage.</strong> ⚠ <em>Le retrait suppose que le point d'application <strong>sache</strong> que l'agent est retiré</em> ; <strong>le ch. 37 § 37.8 a établi qu'un point d'application ne peut pas vérifier une fraîcheur dont aucun mécanisme ne lui fournit le moyen.</strong></p>
-
-<p><strong>Archiver.</strong> ⚠ <strong>Le ch. 38 § 38.4 en est le siège</strong>, et il porte la condition qui décide de tout : <strong><em>sans attribution fiable, un journal infalsifiable ne prouve qu'une séquence anonyme d'actions.</strong></em></p>
-
-<div class="avert">
-  <p><strong>Et l'archivage probatoire hérite du § 45.8</strong> : <em>si l'émission n'a produit aucune pièce qui ancre les autres, l'archive conserve une séquence dont l'imputation n'a jamais été établie.</em></p>
-</div>
-
-<p><span class="auteur">Lecture de l'auteur</span> ⚠ <strong><em>la mort d'un agent est la transition où l'absence de chaînage constatée au § 45.8 devient un coût mesurable</strong></em>. <em>Naître sans chaînage produit un agent dont les pièces ne s'ancrent pas ; mourir sans chaînage produit <strong>un retrait dont on ne peut pas établir la propagation</strong>.</em> ⚠ <strong>Le geste intermédiaire — retirer un mandat précis et constater sa propagation — n'est documenté par aucune entrée</strong> (siège <strong>ch. 39 § 39.3</strong>).</p>
-
+<p><strong>Archiver.</strong> ⚠ <strong>Le ch. 38 § 38.4 en est le siège</strong>, et il porte la condition qui décide de tout : <strong><em>sans attribution fiable, un journal infalsifiable ne prouve qu'une séquence anonyme d'actions.</em></strong> ⚠ <strong>Et l'archivage probatoire hérite du § 45.8</strong> : <em>si l'émission n'a produit aucune pièce qui ancre les autres, l'archive conserve une séquence dont l'imputation n'a jamais été établie.</em></p>
+<p><span class="auteur">Lecture de l'auteur</span> ⚠ <strong><em>la mort d'un agent est la transition où l'absence de chaînage constatée au § 45.8 devient un coût mesurable</em></strong>. <em>Naître sans chaînage produit un agent dont les pièces ne s'ancrent pas ; mourir sans chaînage produit <strong>un retrait dont on ne peut pas établir la propagation</strong>.</em> ⚠ <strong>Le geste intermédiaire — retirer un mandat précis et constater sa propagation — n'est documenté par aucune entrée</strong> (siège <strong>ch. 39 § 39.3</strong>).</p>
+<figure class="figure">
+  <img src="../figures/f-45-08-naissance-vie-mort.svg" alt="Figure 45.8 — Naissance, vie et mort d&#39;un agent d&#39;entreprise." />
+  <figcaption><strong>Figure 45.8</strong> — Naissance, vie et mort d'un agent d'entreprise.</figcaption>
+</figure>
 <h2 id="s4511"><span class="sig">§ 45.11</span>Flux 1 — la décision de crédit assistée par agents : le processus commande</h2>
-
 <p><strong>Le premier flux instancie le principe directeur sur l'un des cas d'usage agentiques canadiens les mieux documentés par source primaire.</strong> ⚠ <strong>Métrique auto-déclarée, attribuée à l'institution nommée et non vérifiée</strong> : <em>une banque <strong>déclare</strong> que son premier modèle d'IA agentique effectue la pré-adjudication d'un prêt garanti et génère des mémos de synthèse, <strong>ramenant un traitement d'environ quinze heures à moins de trois minutes</strong></em> (Vol. II <strong>F-17</strong>).</p>
-
 <div class="avert">
   <p><strong>Le flux décrit ci-dessous n'est pas celui de cette institution</strong> — <em>le socle n'en documente aucun composant d'architecture</em> : <strong>c'est le flux type de la spécification du blueprint, sur le portefeuille instancié.</strong></p>
 </div>
-
-<p><strong>Sa propriété structurante tient en une phrase</strong> : ⚠ <strong><em>le processus déterministe orchestre les agents, et c'est lui qui décide de l'enchaînement.</strong></em> <em>Le flux d'intégration ou l'enchaînement d'orchestration appelle des agents de synthèse documentaire ; <strong>il ne leur délègue ni la séquence, ni la décision de s'arrêter, ni la production du journal</strong>.</em></p>
-
+<p><strong>Sa propriété structurante tient en une phrase</strong> : ⚠ <strong><em>le processus déterministe orchestre les agents, et c'est lui qui décide de l'enchaînement.</em></strong> <em>Le flux d'intégration ou l'enchaînement d'orchestration appelle des agents de synthèse documentaire ; <strong>il ne leur délègue ni la séquence, ni la décision de s'arrêter, ni la production du journal</strong>.</em></p>
 <p><span class="auteur">Lecture de l'auteur</span> ⚠ <strong>la spécification retient OO4 pour ce flux ; le socle n'établit pas que les agents invoqués y soient conscients du processus</strong>, <em>or c'est cette conscience qui sépare OO4 d'OO3.</em> ⚠ <strong>Sur les seuls faits documentés, rien ne distingue les deux options</strong> — <em>le positionnement est une inférence, à vérifier sur chaque configuration.</em> <strong>Ce qui est établi est ce qui compte pour la suite : le processus commande, soit OO3 au moins.</strong></p>
-
 <div class="avert">
-  <p><strong>Deux formes imposées se tiennent ici, et leur violation serait la faute la plus coûteuse du chapitre.</strong> <em>(1)</em> <strong>« attendu par E-23 », jamais « exigé »</strong> : <em>le flux outille des attentes, il ne satisfait aucune exigence.</em> <em>(2)</em> ⚠ <strong><em>le flux outille un point d'arrêt humain, JAMAIS la révision de l'article 12.1</strong></em> — le Vol. II écrit que <strong>« le blueprint ne doit pas prétendre le contraire »</strong>. <em>L'article ménage l'occasion de présenter ses observations à un membre du personnel <strong>en mesure de réviser la décision</strong> ; un point d'arrêt technique n'établit ni cette qualité, ni cette mise en mesure.</em></p>
+  <p><strong>Deux formes imposées se tiennent ici, et leur violation serait la faute la plus coûteuse du chapitre.</strong> <em>(1)</em> <strong>« attendu par E-23 », jamais « exigé »</strong> : <em>le flux outille des attentes, il ne satisfait aucune exigence.</em> <em>(2)</em> ⚠ <strong><em>le flux outille un point d'arrêt humain, JAMAIS la révision de l'article 12.1</em></strong> — le Vol. II écrit que <strong>« le blueprint ne doit pas prétendre le contraire »</strong>. <em>L'article ménage l'occasion de présenter ses observations à un membre du personnel <strong>en mesure de réviser la décision</strong> ; un point d'arrêt technique n'établit ni cette qualité, ni cette mise en mesure.</em></p>
 </div>
-
+<figure class="figure">
+  <img src="../figures/f-45-11-flux-credit.svg" alt="Figure 45.11 — Flux 1 — la décision de crédit assistée par agents : le processus commande." />
+  <figcaption><strong>Figure 45.11</strong> — Flux 1 — la décision de crédit assistée par agents : le processus commande.</figcaption>
+</figure>
 <h2 id="s4512"><span class="sig">§ 45.12</span>Flux 2 — le paiement normalisé vers le rail de grande valeur : l'agent observe, le rail exécute</h2>
-
 <p><strong>Le deuxième flux est l'inverse du premier, et c'est pour cela qu'il figure ici.</strong></p>
-
 <p><em>L'émission d'un paiement de grande valeur est un traitement transactionnel déterministe.</em> <strong>Le rail a achevé sa bascule</strong> vers la norme de messagerie financière — <em>fin de la coexistence des deux formats à une date nommée</em> (Vol. II <strong>F-28</strong>). ⚠ <strong>Côté plateforme, le socle documente un gestionnaire de files en disponibilité générale</strong>, dont <em>la livraison « exactly-once », la haute disponibilité intra et inter-régions et la cryptographie post-quantique pour le transport sont <strong>déclarées par son éditeur nommé</strong>, non vérifiées</em> ; <strong>un moteur d'intégration</strong> assure l'intégration applicative, et l'éditeur documente <strong>une solution dédiée à cette messagerie</strong>.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> ⚠ <em>la contrainte dominante y est d'une autre nature : <strong>non d'expliquer mais d'exécuter</strong>, le rail imposant <strong>une forme de message et un budget de temps</strong>.</em> ⚠ <strong>Un délai à tenir ne se confie pas à un composant dont la durée d'exécution n'est pas bornée</strong> — <em>et le ch. 40 § 40.5 a établi, en [C], que <strong>la latence des boucles longues a un coût d'exploitation propre</strong>.</em> <strong>La conclusion est donc structurelle : l'agent observe, le rail exécute.</strong></p>
-
 <div class="avert">
   <p><strong>Et le positionnement qui en découle est le seul du chapitre qui ne soit pas ambigu</strong> : <em>un agent qui observe sans commander n'est pas au même endroit de l'échelle qu'un agent invoqué par un enchaînement</em> — <strong>mais le socle ne porte toujours aucun positionnement</strong>, et <em>cette lecture-ci est d'auteur comme les autres.</em></p>
 </div>
-
+<figure class="figure">
+  <img src="../figures/f-45-12-flux-paiement.svg" alt="Figure 45.12 — Flux 2 — le paiement normalisé vers le rail de grande valeur : l&#39;agent observe, le rail exécute." />
+  <figcaption><strong>Figure 45.12</strong> — Flux 2 — le paiement normalisé vers le rail de grande valeur : l'agent observe, le rail exécute.</figcaption>
+</figure>
 <h2 id="s4513"><span class="sig">§ 45.13</span>Flux 3 — l'accès au cadre bancaire : concevoir contre une norme qui n'existe pas encore</h2>
-
 <div class="avert">
   <p><strong>Le troisième flux est le plus inconfortable, et c'est là son intérêt : il faut concevoir sans savoir contre quoi.</strong></p>
 </div>
-
-<p><strong>Le fait négatif est ici du degré le plus fort — VÉRIFIÉ</strong> : ⚠ <strong><em>aucun organisme de normalisation technique n'a été désigné par arrêté ministériel et aucun standard n'est nommé dans les textes officiels</strong></em> ; <em>la candidature d'un format d'industrie relève du <strong>commentaire d'industrie</strong></em>, attribué comme tel (R-5 du Vol. II, formulation imposée). ⚠ <strong>Le règlement lui-même n'est que prépublié</strong>, <em>et son texte final peut changer.</em></p>
-
+<p><strong>Le fait négatif est ici du degré le plus fort — VÉRIFIÉ</strong> : ⚠ <strong><em>aucun organisme de normalisation technique n'a été désigné par arrêté ministériel et aucun standard n'est nommé dans les textes officiels</em></strong> ; <em>la candidature d'un format d'industrie relève du <strong>commentaire d'industrie</strong></em>, attribué comme tel (R-5 du Vol. II, formulation imposée). ⚠ <strong>Le règlement lui-même n'est que prépublié</strong>, <em>et son texte final peut changer.</em></p>
 <p><strong>Ce que le blueprint peut affirmer se réduit à trois propositions, dont la dernière est négative — et il faut résister à la tentation d'en ajouter une quatrième.</strong></p>
-
-<ol class="numeros">
-  <li><strong>La couche d'exposition existe et est documentée</strong> — <em>une passerelle d'API en version majeure datée, avec cycle de vie, portail développeur et famille de passerelles.</em></li>
-  <li><strong>Cette couche sait republier des actifs d'intégration existants en outils et serveurs</strong>, <em>à partir des définitions d'API</em> — <strong>c'est le troisième principe directeur, le contrat d'abord</strong> : <em>les API du cadre, une fois qu'il y en aura, seront des actifs <strong>à republier, non à réécrire</strong>.</em></li>
-  <li>⚠ <strong>Proposition négative</strong> : <em>le consentement de la personne et le registre public des participants sont <strong>hors du périmètre du portefeuille</strong></em> — ils relèvent du cadre et de son superviseur, non de la plateforme d'intégration.</li>
+<ol type="1">
+<li><strong>La couche d'exposition existe et est documentée</strong> — <em>une passerelle d'API en version majeure datée, avec cycle de vie, portail développeur et famille de passerelles.</em></li>
+<li><strong>Cette couche sait republier des actifs d'intégration existants en outils et serveurs</strong>, <em>à partir des définitions d'API</em> — <strong>c'est le troisième principe directeur, le contrat d'abord</strong> : <em>les API du cadre, une fois qu'il y en aura, seront des actifs <strong>à republier, non à réécrire</strong>.</em></li>
+<li>⚠ <strong>Proposition négative</strong> : <em>le consentement de la personne et le registre public des participants sont <strong>hors du périmètre du portefeuille</strong></em> — ils relèvent du cadre et de son superviseur, non de la plateforme d'intégration.</li>
 </ol>
-
 <div class="avert">
-  <p><strong>Lire la couche d'exposition comme épuisant la question de l'accès au cadre bancaire, ce serait confondre le tuyau et le droit d'y faire passer quoi que ce soit</strong> : <strong><em>ce qui autorise le flux ne se configure pas dans une passerelle.</strong></em></p>
+  <p><strong>Lire la couche d'exposition comme épuisant la question de l'accès au cadre bancaire, ce serait confondre le tuyau et le droit d'y faire passer quoi que ce soit</strong> : <strong><em>ce qui autorise le flux ne se configure pas dans une passerelle.</em></strong></p>
 </div>
-
 <div class="avert">
   <p><strong>Et le ch. 43 § 43.6 a nommé cette situation par son nom d'architecture</strong> : <em>ce n'est pas un point de contrôle, c'est une <strong>frontière d'abstraction</strong> — un endroit où l'architecture doit <strong>pouvoir changer d'avis</strong> sans se refaire.</em></p>
 </div>
-
 <h2 id="s4514"><span class="sig">§ 45.14</span>Exemple de bout en bout : souscription vie augmentée, et sa variante en sinistres</h2>
-
 <p><em>← Vol. I</em> Monographie <em>§6.8 — <strong>prélevé au ch. 44</strong>, qui traite par ailleurs son chapitre d'origine en bloc. ⚠ Section en <strong>[C]</strong> de bout en bout.</em></p>
-
 <div class="avert">
   <p><strong>Cette section est la seule du chapitre où le formalisme du ch. 44 s'applique à un cas complet</strong>, et elle se lit <strong>domaine par domaine</strong>.</p>
 </div>
-
 <p><strong>Motivation.</strong> <em>Les parties prenantes et les moteurs de conformité y produisent des exigences de transparence, chacune devenue une <strong>Specialization de Requirement</strong> stéréotypée.</em> ⚠ <strong>Le ch. 44 § 44.6 en est le siège</strong> : <em>aucun Requirement réglementaire ne doit demeurer orphelin.</em></p>
-
 <p><strong>Strategy.</strong> <em>Une <strong>Capability</strong> de souscription augmentée et un <strong>Value Stream</strong> conscient de la coopération humain-agent.</em> ⚠ <strong>La capacité est l'unité de planification, jamais l'outil</strong> (ch. 44 § 44.3).</p>
-
 <p><strong>Business.</strong> <em>Le processus, le <strong>Role</strong> de souscripteur, et — ⚠ <strong>le point qui compte</strong> — <strong>le point d'arrêt humain placé sur l'irréversible</strong>, par Assignment.</em> ⚠ <strong>Le ch. 44 § 44.1.7 en est le siège</strong>, et <strong>il porte la borne</strong> : <em>le formalisme atteste <strong>l'intention</strong> de contrôle, non son <strong>exercice à l'exécution</strong></em>. ⚠ <strong>R-13 du Vol. III</strong> : <em>aucune échelle d'autonomie n'est nommée nue ici ; le siège de la désambiguïsation est au <strong>ch. 43 § 43.5</strong>.</em></p>
-
 <p><strong>Application.</strong> <em>Un agent orchestrateur, des serveurs d'outils adossés à un standard sectoriel de données de santé, un moteur de règles de souscription.</em> ⚠ <strong>Le triplet de modélisation n'est pas renégocié</strong> — <em>il est au ch. 44 § 44.1.3.</em></p>
-
 <p><strong>Technology et mise en œuvre.</strong> <em>Un environnement d'exécution confiné, un plan de contrôle, un <strong>Plateau</strong> de déploiement.</em> ⚠ <strong>Le plan de contrôle porte son qualificatif</strong> (R-8 du Vol. II) ; <strong>le Plateau renvoie au ch. 43 § 43.5.3</strong>, où <em>un palier ne se franchit qu'en débloquant des contrôles vérifiables, non en empilant des fonctionnalités.</em></p>
-
 <p><span class="auteur">Lecture de l'auteur</span> ⚠ <em>l'exemple est en <strong>[C]</strong> de bout en bout, et son apport n'est pas factuel</em> : <strong>il montre que les cinq points de contrôle obligatoires du ch. 43 § 43.3 ont chacun un lieu dans un modèle</strong>, <em>ce qui est une propriété du formalisme et non une propriété du système modélisé.</em> ⚠ <strong>La variante en sinistres ne change ni les patrons ni les points de contrôle</strong> — <em>et c'est ce qu'elle est censée montrer.</em></p>
-
+<figure class="figure">
+  <img src="../figures/f-45-14-souscription-vie.svg" alt="Figure 45.14 — L&#39;exemple de bout en bout : la souscription vie augmentée, et sa variante en sinistres." />
+  <figcaption><strong>Figure 45.14</strong> — L'exemple de bout en bout : la souscription vie augmentée, et sa variante en sinistres.</figcaption>
+</figure>
 <h2 id="s4515"><span class="sig">§ 45.15</span>Confrontation : ce que l'épreuve vaut, et ce qu'elle ne vaut pas</h2>
-
 <div class="avert">
   <p><strong>Cette section perd quelque chose, et elle le déclare avant d'écrire quoi que ce soit.</strong> <em>Elle rejouait, au cadrage antérieur, un cas fil rouge <strong>externe</strong> issu d'un corpus d'appui de trois ouvrages ; <strong>aucun des trois n'a jamais été déposé</strong>, le lot est clos par <strong>échec documenté</strong>, et la filiation est retirée.</em></p>
 </div>
-
 <div class="avert">
-  <p><strong>Ce qui la remplace est le cas fil rouge du Vol. I — donc du même auteur et du même corpus.</strong> ⚠ <strong><em>La confrontation ne vaut donc pas réfutation externe</strong></em> : <em>une architecture confrontée à un cas conçu dans le même corpus <strong>éprouve sa cohérence interne, non sa résistance à un jugement indépendant</strong>.</em> ⚠ <strong>C'est une épreuve de cohérence, et l'appeler autrement serait exactement la faute que la somme prend pour objet.</strong></p>
+  <p><strong>Ce qui la remplace est le cas fil rouge du Vol. I — donc du même auteur et du même corpus.</strong> ⚠ <strong><em>La confrontation ne vaut donc pas réfutation externe</em></strong> : <em>une architecture confrontée à un cas conçu dans le même corpus <strong>éprouve sa cohérence interne, non sa résistance à un jugement indépendant</strong>.</em> ⚠ <strong>C'est une épreuve de cohérence, et l'appeler autrement serait exactement la faute que la somme prend pour objet.</strong></p>
 </div>
-
 <div class="avert">
   <p><strong>L'intitulé du plan écrivait « Confrontation externe » quand sa propre note de provenance écrivait « confrontation <em>interne</em> au corpus »</strong> : <em>le désalignement était <strong>interne au plan</strong></em>. <strong>Il est réaligné depuis la v0.28 du TOC</strong>, et l'intitulé porté ici est celui du plan courant (R-IV-104, soldée).</p>
 </div>
-
 <p><strong>Ce que l'épreuve établit malgré tout.</strong> <em>Les contraintes-pivots du cas — l'article 12.1, la résidence canadienne, les lignes directrices de risque de modèle et de risque technologique, la ligne directrice IA provinciale — <strong>se retrouvent une à une dans la correspondance du § 45.4</strong>, et <strong>aucune n'y reçoit un lien documenté</strong>.</em> ⚠ <span class="auteur">Lecture de l'auteur</span> <em>la cohérence est donc établie <strong>par le bas</strong> : les mêmes contraintes produisent les mêmes vides.</em> <strong>Ce que cela ne montre pas</strong> : <em>que ces vides soient ceux qu'un observateur indépendant relèverait</em> — ⚠ <strong>le socle ne documente aucune confrontation externe</strong> : absence de documentation, non fait négatif vérifié (degré 3).</p>
-
-<p>## Synthèse : ce que le chapitre lègue à la somme</p>
-
+<h3>Synthèse : ce que le chapitre lègue à la somme</h3>
 <p><em>Section de sortie sans homologue direct dans la source — construction d'éditeur.</em></p>
-
-<ol class="numeros">
-  <li><strong>Les six principes directeurs, avec ce que chacun ne porte pas.</strong> ⚠ <em>Un seul dispose de trois sources convergentes ; <strong>le premier conditionne une admission à un artefact que personne ne délivre</strong>.</em> Le <strong>ch. 46</strong> en séquence l'instrumentation.</li>
-  <li><strong>La vue en couches datée, et la règle qui la rend lisible.</strong> <em>Statut <strong>seulement</strong> lorsque le socle l'établit ; « annoncé » date une communication.</em> ⚠ <strong>Toute la colonne des positionnements est une Lecture de l'auteur.</strong></li>
-  <li><strong>La correspondance réglementaire, et ses cinq régimes.</strong> ⚠ <em>Sept liens : <strong>fait négatif établi</strong> (deux), <strong>inférence simple</strong> (deux), <strong>absence de documentation</strong> (un), <strong>sans objet</strong> (un), <strong>documenté</strong> (un).</em> <strong>CA-8 : chaque lien porte son statut, et le seul lien documenté porte sur un rôle opérationnel</strong> — ⚠ <em>jamais sur une conformité.</em></li>
-  <li>⚠ <strong>SIÈGE : l'organisation de la fabrique.</strong> Le <strong>ch. 41 § 41.7</strong> y renvoie <strong>sans la reprendre</strong>. <em>Deux absences de titulaire documentées, et une répartition qui est une inférence intégrale.</em></li>
-  <li><strong>Le parcours, et ce que sa dispersion mesure.</strong> ⚠ <strong><em>Des six gestes de la vie d'un agent, quatre ont un siège ailleurs, un est outillé à moitié, un ne l'est que par une annonce.</strong></em> <em>Le ch. 49 enregistrera l'état final ; le ch. 50 le registre de gel.</em></li>
-  <li><strong>Les trois flux, et leur enseignement croisé.</strong> <em>Le processus commande ; l'agent observe ; l'architecture doit pouvoir changer d'avis.</em> ⚠ <strong>Et la forme imposée qui les traverse</strong> : <em>le flux outille un point d'arrêt humain, <strong>jamais la révision de l'article 12.1</strong>.</em></li>
+<ol type="1">
+<li><strong>Les six principes directeurs, avec ce que chacun ne porte pas.</strong> ⚠ <em>Un seul dispose de trois sources convergentes ; <strong>le premier conditionne une admission à un artefact que personne ne délivre</strong>.</em> Le <strong>ch. 46</strong> en séquence l'instrumentation.</li>
+<li><strong>La vue en couches datée, et la règle qui la rend lisible.</strong> <em>Statut <strong>seulement</strong> lorsque le socle l'établit ; « annoncé » date une communication.</em> ⚠ <strong>Toute la colonne des positionnements est une Lecture de l'auteur.</strong></li>
+<li><strong>La correspondance réglementaire, et ses cinq régimes.</strong> ⚠ <em>Sept liens : <strong>fait négatif établi</strong> (deux), <strong>inférence simple</strong> (deux), <strong>absence de documentation</strong> (un), <strong>sans objet</strong> (un), <strong>documenté</strong> (un).</em> <strong>CA-8 : chaque lien porte son statut, et le seul lien documenté porte sur un rôle opérationnel</strong> — ⚠ <em>jamais sur une conformité.</em></li>
+<li>⚠ <strong>SIÈGE : l'organisation de la fabrique.</strong> Le <strong>ch. 41 § 41.7</strong> y renvoie <strong>sans la reprendre</strong>. <em>Deux absences de titulaire documentées, et une répartition qui est une inférence intégrale.</em></li>
+<li><strong>Le parcours, et ce que sa dispersion mesure.</strong> ⚠ <strong><em>Des six gestes de la vie d'un agent, quatre ont un siège ailleurs, un est outillé à moitié, un ne l'est que par une annonce.</em></strong> <em>Le ch. 49 enregistrera l'état final ; le ch. 50 le registre de gel.</em></li>
+<li><strong>Les trois flux, et leur enseignement croisé.</strong> <em>Le processus commande ; l'agent observe ; l'architecture doit pouvoir changer d'avis.</em> ⚠ <strong>Et la forme imposée qui les traverse</strong> : <em>le flux outille un point d'arrêt humain, <strong>jamais la révision de l'article 12.1</strong>.</em></li>
 </ol>
-
 <div class="avert">
   <p><strong>Ce que le chapitre ne lègue pas.</strong> Aucune <strong>conformité</strong> : <em>aucun lien de conformité n'est documenté — le seul lien documenté du tableau porte sur un <strong>rôle opérationnel</strong> —, et l'inférence appartient à l'institution qui la porte.</em> Aucun <strong>verdict comparatif</strong> : <em>aucun balayage n'a été conduit, et l'absence de comparaison est une propriété de la méthode.</em> Aucune <strong>réfutation externe</strong> : <em>l'épreuve est de cohérence interne, et le déclarer est le résultat.</em> Et aucun <strong>chaînage</strong> entre les actes du parcours : <em>naître, vivre et mourir y sont trois séquences dont le socle ne met jamais deux termes en rapport.</em></p>
 </div>
+<hr />
 
 <footer class="pied">
   <p><strong>Vol. IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em></strong> · Livre IV, chapitre 45. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau, M.Sc. IT.</p>
-
   <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme (gel unique : 27 juillet 2026).</p>
 </footer>
 

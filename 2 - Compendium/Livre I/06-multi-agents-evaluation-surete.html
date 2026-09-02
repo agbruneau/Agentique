@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chapitre 6 — Systèmes multi-agents, évaluation et sûreté · Interopérabilité et Orchestration en Entreprise Agentique</title>
-<meta name="description" content="Livre I — Coopérer : fondements de l&#x27;interopérabilité et couche protocolaire agentique. Premier mouvement — les fondements (ch. 1-6). Dernier chapitre du mouvement.">
+<meta name="description" content="Livre I — Coopérer : fondements de l&#x27;interopérabilité et couche protocolaire agentique. Premier mouvement — les fondements (ch. 1-6). **Dernier chapitre du mouvement.**">
 <meta name="author" content="André-Guy Bruneau, M.Sc. IT">
 <meta name="color-scheme" content="dark">
 <style>
@@ -443,6 +443,17 @@ tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
 tbody td:first-child { color: var(--texte); font-weight: 600; }
 .legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
 
+/* -------------------------------------------------------------- figures */
+/* Les SVG du volume sont dessinés pour le PDF, donc sur fond clair, et ils
+   portent ce fond eux-mêmes — sans quoi il faudrait maintenir deux variantes
+   de chaque figure. Sur ce thème sombre, ils se posent donc comme un carton ;
+   le padding empêche le fond de la figure de toucher le bord du cadre. */
+.figure { margin: 2.1rem 0 1.9rem; }
+.figure img { display: block; width: 100%; height: auto; border-radius: 7px;
+              border: 1px solid var(--trait); background: #fdfbf9; padding: 0.6rem; }
+.figure figcaption { font-size: 0.8rem; font-style: italic; color: var(--texte-faible);
+                     margin-top: 0.65rem; padding-left: 0.15rem; }
+
 /* --------------------------------------------------------------- listes */
 ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
 ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
@@ -532,9 +543,9 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <div class="nav__sous">Livre I · Chapitre 6</div>
   <ol>
     <li><a href="#s61"><span class="num">6.1</span>Pourquoi le multi-agent : gains, surcoût, topologies</a></li>
-    <li><a href="#s62"><span class="num">6.2</span>Communication inter-agents : A2A, ACP et pile d&#x27;interopérabilité</a></li>
-    <li><a href="#s63"><span class="num">6.3</span>Évaluation et bancs d&#x27;essai</a></li>
-    <li><a href="#s64"><span class="num">6.4</span>Sûreté, red-teaming et taxonomie d&#x27;échecs</a></li>
+    <li><a href="#s62"><span class="num">6.2</span>Communication inter-agents : A2A, ACP et pile d'interopérabilité</a></li>
+    <li><a href="#s63"><span class="num">6.3</span>Évaluation et bancs d'essai</a></li>
+    <li><a href="#s64"><span class="num">6.4</span>Sûreté, red-teaming et taxonomie d'échecs</a></li>
     <li><a href="#s65"><span class="num">6.5</span>Défense architecturale, garde-fous et alignement</a></li>
   </ol>
   <div class="nav__pied">
@@ -549,311 +560,274 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 <header class="titre">
   <div class="titre__fil">Livre I — Coopérer : fondements de l&#x27;interopérabilité et couche protocolaire agentique</div>
   <h1><span class="chap">Chapitre 6</span>Systèmes multi-agents, évaluation et sûreté</h1>
-  <p class="titre__situe">Livre I — Coopérer : fondements de l'interopérabilité et couche protocolaire agentique. Premier mouvement — les fondements (ch. 1-6). <strong>Dernier chapitre du mouvement.</strong></p>
+  <p class="titre__situe">Livre I — Coopérer : fondements de l'interopérabilité et couche protocolaire agentique. Premier mouvement — les fondements (ch. 1-6). **Dernier chapitre du mouvement.**</p>
 </header>
 
 <!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
      Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
-     que `build/assemble.py` pour le PDF. L'appareil de gouvernance vit au .md jumeau, qui reste la
-     seule source, et `verifier-piece.py` [6] refuse désormais un rendu qui le recopierait. -->
+     que `build/assemble.py` pour le PDF et que `PRD/decompte.sh` pour la volumétrie. L'appareil de
+     gouvernance vit au .md jumeau, qui reste la seule source, et `build/verifier-piece.py` refuse
+     un rendu qui le recopierait. -->
 
 <h2 id="s61"><span class="sig">§ 6.1</span>Pourquoi le multi-agent : gains, surcoût, topologies</h2>
-
 <p>La bascule s'opère ici. Les ch. 4 et 5 ont décrit l'<strong>anatomie d'un agent unique</strong> ; ce chapitre passe à l'<strong>ingénierie de systèmes</strong> où plusieurs agents collaborent, sont mesurés et doivent être défendus.</p>
-
 <p>L'invariant du Livre y réapparaît à chaque échelon, et il fournit le critère de viabilité : <em>un système multi-agents n'est viable que si les agents sont <strong>découplés</strong>, communiquent par <strong>contrat</strong> explicite et restent indépendamment <strong>évolutifs</strong>.</em> Un système où ces trois conditions ne tiennent pas n'est pas un système multi-agents — c'est un monolithe dont les parties s'appellent par du texte.</p>
-
 <h3>6.1.1 Gains, surcoût et fondements classiques</h3>
-
 <p>La promesse du multi-agent est la <strong>décomposition</strong> : confier des sous-tâches à des agents spécialisés, paralléliser l'exploration, isoler les contextes.</p>
-
 <div class="avert">
   <p><strong>Le chiffre le plus cité du domaine mérite d'être rapporté avec toutes ses réserves, parce qu'il est presque toujours cité sans elles.</strong> Pour un système de recherche en architecture orchestrateur-travailleurs, <strong>Anthropic rapporte</strong> un gain d'environ <strong>+90 %</strong> sur une <strong>évaluation interne</strong>, par rapport à un agent unique — mais au prix d'une consommation de jetons d'environ <strong>quinze fois</strong> celle d'une simple conversation. Ces deux valeurs sont <strong>auto-déclarées</strong> et attribuées ici à leur source, comme elles doivent l'être <strong>à chaque occurrence</strong>.</p>
 </div>
-
 <p>Trois réserves s'y attachent, et elles sont dans la source :</p>
-
-<ol class="numeros">
-  <li>c'est une <strong>mesure interne</strong>, non un résultat reproduit indépendamment ;</li>
-  <li>elle porte sur <strong>une tâche de recherche</strong> — un cas où la parallélisation paie parce que la tâche <strong>se subdivise naturellement</strong> ;</li>
-  <li>elle <strong>ne se transpose pas</strong> à toute charge de travail.</li>
+<ol type="1">
+<li>c'est une <strong>mesure interne</strong>, non un résultat reproduit indépendamment ;</li>
+<li>elle porte sur <strong>une tâche de recherche</strong> — un cas où la parallélisation paie parce que la tâche <strong>se subdivise naturellement</strong> ;</li>
+<li>elle <strong>ne se transpose pas</strong> à toute charge de travail.</li>
 </ol>
-
 <p>Le surcoût est ainsi le <strong>principal argument contre l'agentification réflexe</strong>, et le gain n'en est un que sur une classe de tâches nommée.</p>
-
 <p>À l'inverse, une position concurrente — celle que <strong>Cognition</strong> défend dans « Don't Build Multi-Agents » (2025) — soutient qu'<strong>un rédacteur unique conservant un contexte continu surpasse souvent l'architecture distribuée</strong>, parce que le fractionnement du contexte engendre des décisions incohérentes et coûteuses à réconcilier. C'est la même tension que le ch. 5 § 5.1.2 relevait à propos du verbe <em>isoler</em> — et ce n'est pas un hasard : <strong>le multi-agent est une politique de contexte avant d'être une politique d'architecture</strong>.</p>
-
 <p>Cette tension se nourrit d'un socle classique réinterprété : le <strong>Contract Net Protocol</strong> (Smith, 1980), qui formalise l'allocation de tâches par appel d'offres et adjudication entre nœuds d'un résolveur distribué, et les <strong>actes de langage normalisés</strong> des spécifications <strong>FIPA ACL</strong> (FIPA / IEEE Computer Society, 2002), qui préfigurent les messages contractuels qu'échangent aujourd'hui les agents.</p>
-
 <div class="encadre encadre--oeuvre">
   <span class="encadre__label">Mise en œuvre</span>
   <p>Avant d'introduire un second agent, <strong>vérifier que la tâche se subdivise réellement</strong> et que le gain de qualité justifie un facteur de coût qui, selon la mesure interne rapportée par Anthropic, peut atteindre <strong>quinze fois</strong>. À défaut, un agent unique à contexte continu reste l'option par défaut. La charge de la preuve pèse sur le multi-agent, pas l'inverse.</p>
 </div>
-
 <h3>6.1.2 Topologies, rôles et raisonnement collectif</h3>
-
 <p>Les systèmes multi-agents se structurent selon des <strong>topologies de communication</strong> — étoile, chaîne, arbre, graphe :</p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Topologie</th><th>Structure</th><th>Propriété dominante</th></tr></thead>
-  <tbody>
-    <tr><td><strong>Étoile</strong></td><td>un orchestrateur délègue à des travailleurs</td><td>visibilité maximale, orchestrateur point de dépendance</td></tr>
-    <tr><td><strong>Chaîne</strong></td><td>la sortie d'un agent est l'entrée du suivant</td><td>simple, mais l'erreur se propage sans recours</td></tr>
-    <tr><td><strong>Arbre</strong></td><td>délégation hiérarchique</td><td>passage à l'échelle, diagnostic plus difficile</td></tr>
-    <tr><td><strong>Graphe</strong></td><td>interactions arbitraires</td><td>expressivité maximale, état global inobservable</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Topologie</th>
+<th>Structure</th>
+<th>Propriété dominante</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Étoile</strong></td>
+<td>un orchestrateur délègue à des travailleurs</td>
+<td>visibilité maximale, orchestrateur point de dépendance</td>
+</tr>
+<tr>
+<td><strong>Chaîne</strong></td>
+<td>la sortie d'un agent est l'entrée du suivant</td>
+<td>simple, mais l'erreur se propage sans recours</td>
+</tr>
+<tr>
+<td><strong>Arbre</strong></td>
+<td>délégation hiérarchique</td>
+<td>passage à l'échelle, diagnostic plus difficile</td>
+</tr>
+<tr>
+<td><strong>Graphe</strong></td>
+<td>interactions arbitraires</td>
+<td>expressivité maximale, état global inobservable</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 6.1 — Topologies de coordination multi-agents et leur propriété dominante.</p>
-
 <p>Le patron <strong>orchestrateur-travailleurs</strong> — un agent chef planifie, répartit, puis synthétise — est le plus répandu en production. Il prolonge directement la séparation contrôleur/exécuteur du mono-agent (ch. 4 § 4.2.4), ce qui explique sa prévalence : c'est le patron dont l'ingénierie savait déjà raisonner.</p>
-
 <p>La <strong>spécialisation des rôles</strong> — un agent par compétence — est au cœur de plusieurs cadriciels et travaux fondateurs : <strong>CAMEL</strong> (Li et coll., 2023) fait jouer à deux agents des rôles complémentaires ; <strong>MetaGPT</strong> et <strong>ChatDev</strong> (Hong et coll., 2023 ; Qian et coll., 2023) assignent des rôles d'équipe logicielle ; <strong>AutoGen</strong> (Wu et coll., 2023) généralise la conversation multi-agents.</p>
-
 <p>Le <strong>raisonnement collectif</strong> recouvre des mécanismes distincts qu'il ne faut pas confondre. Le <strong>débat multi-agents</strong> (Du et coll., 2023) fait converger plusieurs modèles vers une réponse plus factuelle par confrontation itérative — c'est la parade à la chambre d'écho du ch. 4 § 4.2.3. Le <strong>vote majoritaire</strong> et la <strong>recherche de consensus</strong> offrent des compromis différents entre robustesse et coût.</p>
-
 <div class="avert">
   <p><strong>La principale difficulté demeure la coordination elle-même</strong>, et elle est documentée plutôt qu'anecdotique : dérive de problème, agents qui divergent de l'objectif initial, propagation d'erreurs entre coéquipiers. La taxonomie <strong>MAST</strong> (Cemri et coll., 2025) recense ces modes de défaillance propres aux systèmes multi-agents, et le § 6.4.2 y revient comme grille d'analyse causale.</p>
 </div>
-
+<hr />
+<figure class="figure">
+  <img src="../figures/f-06-01-topologies.svg" alt="Figure 6.1 — Les quatre topologies de coordination multi-agents et la propriété dominante de chacune." />
+  <figcaption><strong>Figure 6.1</strong> — Les quatre topologies de coordination multi-agents et la propriété dominante de chacune.</figcaption>
+</figure>
 <h2 id="s62"><span class="sig">§ 6.2</span>Communication inter-agents : A2A, ACP et pile d'interopérabilité</h2>
-
 <p>C'est le <strong>foyer canonique de l'interopérabilité agent-agent</strong>, complémentaire de l'interopérabilité agent-outil.</p>
-
 <div class="avert">
   <p><strong>Cette section est délibérément brève, et sa brièveté est un arbitrage du plan.</strong> L'<strong>anatomie protocolaire</strong> est au <strong>ch. 8</strong> ; la <strong>pile</strong> — découverte, registres, portabilité — est au <strong>ch. 9</strong>. Ce qui suit est le strict nécessaire pour que le lecteur du premier mouvement sache <strong>que</strong> ces protocoles existent et <strong>où</strong> ils sont traités.</p>
 </div>
-
 <p>Le protocole <strong>Agent2Agent</strong> (A2A) a été ouvert par <strong>Google</strong> en avril 2025, puis confié à la <strong>Linux Foundation</strong>. Il repose sur des <strong>Agent Cards</strong> — descripteurs de capacités pouvant être signés — qui permettent à un agent de découvrir et d'invoquer un pair par un <strong>contrat explicite</strong>. Cette logique de description signée prolonge directement l'invariant du Livre au niveau de l'orchestration et de la chorégraphie <strong>inter-organisationnelles</strong> (ch. 1 § 1.6.2).</p>
-
-<p>La pile s'est consolidée autour de lui. L'<strong>Agent Communication Protocol</strong>, lancé par <strong>IBM</strong> en mars 2025, <strong>a convergé dans A2A</strong> ; un troisième effort, initié par <strong>Cisco</strong>, vise une interopérabilité d'échelle réseau alignée sur les deux précédents ; et plusieurs revues comparent ces protocoles émergents. ⚠ Le sigle <strong>ACP</strong> est développé ici à sa première occurrence et n'est jamais employé seul, conformément aux garde-fous R-8 du Vol. II et R-13 du Vol. III : <strong>il désigne au moins quatre objets distincts, et l'encadré de désambiguïsation qui en fait le partage est au ch. 7 § 7.5, siège unique pour toute la somme, auquel ce chapitre renvoie sans le reconstruire.</strong></p>
-
+<p>La pile s'est consolidée autour de lui. L'<strong>Agent Communication Protocol</strong>, lancé par <strong>IBM</strong> en mars 2025, <strong>a convergé dans A2A</strong> ; un troisième effort, amorcé par <strong>Cisco</strong>, vise une interopérabilité d'échelle réseau alignée sur les deux précédents ; et plusieurs revues comparent ces protocoles émergents. ⚠ Le sigle <strong>ACP</strong> est développé ici à sa première occurrence et n'est jamais employé seul, conformément aux garde-fous R-8 du Vol. II et R-13 du Vol. III : <strong>il désigne au moins quatre objets distincts, et l'encadré de désambiguïsation qui en fait le partage est au ch. 7 § 7.5, siège unique pour toute la somme, auquel ce chapitre renvoie sans le reconstruire.</strong></p>
 <p>Le fait marquant de <strong>gouvernance</strong> est la création, en <strong>décembre 2025</strong>, de l'<strong>Agentic AI Foundation</strong> sous l'égide de la Linux Foundation : elle co-gouverne le protocole agent-outil et le protocole agent-agent, <strong>séparant proprement les deux plans d'interopérabilité</strong>. Cette séparation n'est pas une commodité d'organisation : c'est la reconnaissance que la relation d'un agent à ses outils et sa relation à ses pairs ne posent pas le même problème, constat que le ch. 8 instruit.</p>
-
 <div class="avert">
   <p><strong>Un chiffre d'adoption est relevé au premier anniversaire d'A2A</strong> — plus de 150 organisations —, et il est <strong>auto-déclaré</strong>. Il est attribué ici à sa source — <strong>la Linux Foundation</strong>, fondation faîtière du protocole, qui le rapporte en avril 2026 (ch. 7 § 7.6) —, et il mesure un <strong>soutien</strong>, non une mise en production. La distinction est celle que le ch. 7 érige en critère, et elle vaut d'être posée dès maintenant : <em>soutien n'est pas production</em>.</p>
 </div>
-
 <h3>6.2.1 Ce que « communiquer » veut dire, et ce que ces protocoles n'en portent pas</h3>
-
 <div class="avert">
   <p><strong>Cette sous-section est ajoutée le 30 juillet 2026 (D-11), et son motif est un reproche fondé de l'arbitrage externe : une section intitulée « communication inter-agents » qui n'énumérait que des protocoles et leur gouvernance n'honorait pas son titre.</strong> <em>Le renvoi de l'anatomie au ch. 8 et de la pile au ch. 9 reste un arbitrage de plan légitime ; ce qui manquait n'est ni l'une ni l'autre — c'est la question de la <strong>sémantique</strong> de l'échange, qui n'a de siège nulle part ailleurs.</em></p>
 </div>
-
 <p><strong>Communiquer suppose trois accords, et les protocoles agentiques n'en portent qu'un.</strong> <em>(a)</em> Un accord sur le <strong>transport</strong> — comment le message circule : <em>porté</em>, par le protocole agent-agent comme par le protocole agent-outil. <em>(b)</em> Un accord sur la <strong>forme</strong> — comment le message est structuré : <em>porté aussi</em>, par les schémas de tâche et de message. <em>(c)</em> ⚠ Un accord sur la <strong>force illocutoire</strong> — <em>ce que l'émetteur <strong>fait</strong> en émettant : demande-t-il, informe-t-il, s'engage-t-il, refuse-t-il, propose-t-il ?</em> <strong>C'est celui-là qui manque.</strong></p>
-
 <div class="avert">
-  <p><strong>Le contraste avec l'héritage multi-agents classique est net, et il a été nommé au ch. 4 § 4.1.3.</strong> <strong>KQML</strong> (Finin, Fritzson, McKay et McEntire, 1994) puis <strong>FIPA-ACL</strong> — dont la bibliothèque <strong>SC00037J</strong> énumère ses actes communicatifs, chacun assorti d'une précondition, d'un effet rationnel et d'un schéma de contenu — avaient fait de la force illocutoire <strong>un champ obligatoire du message</strong>. <em>Un agent FIPA qui reçoit un message sait s'il est mis en demeure ou simplement informé, parce que le protocole le lui dit.</em> <strong>Les protocoles agentiques de 2025-2026 ne portent pas cette information</strong> : un message y transporte une charge utile typée dont <em>l'intention se déduit du contenu, c'est-à-dire du langage naturel, c'est-à-dire du modèle</em>.</p>
+  <p><strong>Le contraste avec l'héritage multi-agents classique est net, et il a été nommé au ch. 4 § 4.1.3.</strong> <strong>KQML</strong> (Finin, Fritzson, McKay et McEntire, 1994) puis <strong>FIPA-ACL</strong> — dont la bibliothèque <strong>SC00037J</strong> énumère les actes communicatifs, chacun assorti d'une précondition, d'un effet rationnel et d'un schéma de contenu — avaient fait de la force illocutoire <strong>un champ obligatoire du message</strong>. <em>Un agent FIPA qui reçoit un message sait s'il est mis en demeure ou simplement informé, parce que le protocole le lui dit.</em> <strong>Les protocoles agentiques de 2025-2026 ne portent pas cette information</strong> : un message y transporte une charge utile typée dont <em>l'intention se déduit du contenu, c'est-à-dire du langage naturel, c'est-à-dire du modèle</em>.</p>
 </div>
-
 <div class="avert">
-  <p><strong>Trois bornes, et la deuxième interdit la lecture nostalgique.</strong> <em>(1)</em> <strong>Le socle ne documente pas cette absence comme un fait négatif vérifié</strong> : aucun balayage systématique des spécifications agentiques n'a été conduit sous cet angle — <strong>absence de documentation, degré 3</strong> (R-14 du Vol. III). <em>(2)</em> ⚠ <strong><em>Que FIPA-ACL ait porté les actes communicatifs n'établit pas que sa démarche ait réussi</strong></em>. Le socle ne documente ni son adoption industrielle, ni sa performance, ni les motifs de son déclin ; <em>écrire que la couche agentique « a oublié » quelque chose qui marchait serait un jugement que rien n'appuie.</em> <strong>Ce qui est établi est plus étroit et plus sûr : le problème avait été posé, il avait reçu une réponse normalisée, et la couche neuve le repose sans la reprendre.</strong> <em>(3)</em> <strong>La coordination sous défaillance n'est pas traitée ici et ne le sera pas</strong> : elle est <strong>hors périmètre par décision d'auteur D-7</strong>, déclarée au risque 15 du TOC, et ce chapitre y est <strong>fermé</strong> — <em>y ajouter une section rouvrirait la décision, non le seul chapitre.</em></p>
+  <p><strong>Trois bornes, et la deuxième interdit la lecture nostalgique.</strong> <em>(1)</em> <strong>Le socle ne documente pas cette absence comme un fait négatif vérifié</strong> : aucun balayage systématique des spécifications agentiques n'a été conduit sous cet angle — <strong>absence de documentation, degré 3</strong> (R-14 du Vol. III). <em>(2)</em> ⚠ <strong><em>Que FIPA-ACL ait porté les actes communicatifs n'établit pas que sa démarche ait réussi</em></strong>. Le socle ne documente ni son adoption industrielle, ni sa performance, ni les motifs de son déclin ; <em>écrire que la couche agentique « a oublié » quelque chose qui marchait serait un jugement que rien n'appuie.</em> <strong>Ce qui est établi est plus étroit et plus sûr : le problème avait été posé, il avait reçu une réponse normalisée, et la couche neuve le repose sans la reprendre.</strong> <em>(3)</em> <strong>La coordination sous défaillance n'est pas traitée ici et ne le sera pas</strong> : elle est <strong>hors périmètre par décision d'auteur D-7</strong>, déclarée au risque 15 du TOC, et ce chapitre y est <strong>fermé</strong> — <em>y ajouter une section rouvrirait la décision, non le seul chapitre.</em></p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> cette absence est de la même famille que celle du ch. 8 § 8.2.3 : <em>un schéma contraint la forme d'un message, il n'en dit pas l'interprétation.</em> <strong>Le ch. 48 la retrouvera au niveau de l'effet</strong> — <em>que produit le rejeu de ce message ?</em> — et <strong>le ch. 9 § 9.4 l'instruit</strong> au niveau du vocabulaire. <em>Les trois sont la même question posée à trois étages, et la somme ne la résout à aucun.</em></p>
-
+<hr />
 <h2 id="s63"><span class="sig">§ 6.3</span>Évaluation et bancs d'essai</h2>
-
 <p>L'évaluation d'un agent diffère <strong>par nature</strong> de celle d'un modèle isolé. Le système sous mesure n'est plus une fonction qui transforme une invite en réponse, mais une <strong>boucle</strong> qui agit sur le monde au fil de trajectoires longues, appelle des outils, écrit en mémoire et orchestre éventuellement plusieurs sous-agents.</p>
-
 <p>Mesurer un tel système suppose de dépasser le seul résultat final pour interroger <strong>la trajectoire qui y mène</strong>, la fiabilité de sa reproduction, le coût en jetons, la robustesse face à un adversaire et la traçabilité de l'exécution.</p>
-
 <div class="avert">
   <p><strong>Cette section est le lieu central des bancs d'essai chiffrés de la somme.</strong> Les capacités évoquées qualitativement au ch. 4 § 4.1.5 et § 4.4.3 y reçoivent leurs métriques. En revanche, l'<strong>observabilité</strong> en production — instrumentation, conventions sémantiques, évaluation continue — n'est <strong>pas</strong> traitée ici : elle part <strong>en entier</strong> au ch. 38, seule affectation de cette matière.</p>
 </div>
-
 <h3>6.3.1 Pourquoi évaluer un agent est difficile</h3>
-
 <p>La difficulté première tient à ce que <strong>l'on mesure un système, et non un modèle</strong>. Deux régimes d'évaluation s'opposent :</p>
-
-<ul class="puces">
-  <li>la <strong>vérification programmatique du résultat</strong> — un test qui passe, une transaction qui aboutit. Objective, mais <strong>aveugle au chemin</strong> : un agent peut atteindre le bon état final par une suite d'actions dangereuses, coûteuses ou irreproductibles ;</li>
-  <li>la <strong>notation du processus</strong> — de la trajectoire elle-même. Elle capture la qualité du raisonnement et des appels d'outils, mais <strong>exige un juge</strong> et introduit sa propre subjectivité.</li>
+<ul>
+<li>la <strong>vérification programmatique du résultat</strong> — un test qui passe, une transaction qui aboutit. Objective, mais <strong>aveugle au chemin</strong> : un agent peut atteindre le bon état final par une suite d'actions dangereuses, coûteuses ou irreproductibles ;</li>
+<li>la <strong>notation du processus</strong> — de la trajectoire elle-même. Elle capture la qualité du raisonnement et des appels d'outils, mais <strong>exige un juge</strong> et introduit sa propre subjectivité.</li>
 </ul>
-
 <p>À cette dualité s'ajoute le <strong>non-déterminisme intrinsèque</strong> : température et échantillonnage rendent une même tâche tantôt réussie tantôt échouée. ⚠ <strong>Et une difficulté de second ordre qui invalide silencieusement les comparaisons</strong> : la dérive de version d'une interface fermée — un modèle <strong>silencieusement mis à jour</strong> côté fournisseur — rend deux mesures incomparables sans qu'aucun signal ne l'indique.</p>
-
 <p>La reproductibilité devient donc un <strong>objectif d'ingénierie en soi</strong> : figer les germes aléatoires là où c'est possible, <strong>journaliser la version exacte du modèle servi</strong>, et <strong>répéter les exécutions pour estimer la variance</strong> plutôt que de rapporter un point unique.</p>
-
 <p><em>Évaluer un agent, c'est évaluer une distribution de comportements d'un système composite, pas la capacité ponctuelle d'un réseau de neurones.</em></p>
-
 <div class="encadre encadre--recherche">
   <span class="encadre__label">Perspective recherche</span>
   <p><em>AI Agents That Matter</em> (Kapoor et coll., 2024) montre que de nombreux résultats publiés sont <strong>incomparables faute de contrôle du coût et de la variance</strong>, et plaide pour une évaluation conjointe <strong>précision-coût</strong> plutôt que pour la course au sommet du tableau. Le survol du domaine de <strong>Yehudai et coll. (2025)</strong> confirme <strong>l'absence de protocole standardisé</strong> et la prolifération de métriques <em>ad hoc</em> propres à chaque banc.</p>
 </div>
-
 <h3>6.3.2 Le modèle comme juge : principes, biais et piratage de récompense</h3>
-
 <p>Faute de vérificateur programmatique pour les sorties ouvertes — un résumé, une réponse argumentée, une trajectoire à noter qualitativement —, la pratique recourt massivement au <strong>modèle comme juge</strong>.</p>
-
 <p>Sa fiabilité <strong>dépend d'une calibration explicite sur des annotations humaines</strong> : sans elle, le juge dérive. <strong>Zheng et coll. (2023)</strong> documentent plusieurs biais systématiques :</p>
-
-<ul class="puces">
-  <li><strong>biais de position</strong> — l'ordre de présentation de deux réponses influe sur le verdict ;</li>
-  <li><strong>biais de longueur</strong> — préférence pour les réponses verbeuses ;</li>
-  <li><strong>auto-préférence</strong> — un modèle favorise les sorties stylistiquement proches des siennes.</li>
+<ul>
+<li><strong>biais de position</strong> — l'ordre de présentation de deux réponses influe sur le verdict ;</li>
+<li><strong>biais de longueur</strong> — préférence pour les réponses verbeuses ;</li>
+<li><strong>auto-préférence</strong> — un modèle favorise les sorties stylistiquement proches des siennes.</li>
 </ul>
-
 <div class="avert">
   <p><strong>Plus insidieux pour les agents : le piratage de récompense</strong>, où le système optimise le signal du juge <strong>sans accomplir la tâche réelle</strong>, exploitant les failles de la grille plutôt que de la satisfaire.</p>
 </div>
-
 <div class="avert">
   <p><strong>Et la chaîne de raisonnement affichée n'offre aucun garde-fou</strong> : elle peut être <strong>infidèle</strong>, c'est-à-dire ne pas refléter le calcul réel (ch. 4 § 4.3.4). Un juge qui note la trace peut donc être trompé par une justification <strong>plausible mais reconstruite après coup</strong>. C'est la même limite que le ch. 4 posait pour la supervision, retrouvée du côté de la mesure.</p>
 </div>
-
 <div class="encadre encadre--oeuvre">
   <span class="encadre__label">Mise en œuvre</span>
   <p>Un juge se déploie <strong>comme un composant versionné</strong>, accompagné d'un jeu d'étalonnage humain régulièrement rejoué pour détecter la dérive. Atténuer les biais connus passe par la <strong>permutation des positions</strong>, la <strong>normalisation par la longueur</strong> et le recours à un <strong>modèle juge distinct de celui évalué</strong>. Les plateformes d'évaluation intègrent ces juges comme évaluateurs configurables, mais <strong>la responsabilité de la calibration reste celle de l'équipe</strong>.</p>
 </div>
-
 <h3>6.3.3 Bancs d'essai de capacité</h3>
-
 <p>Les bancs se répartissent par domaine, chacun avec ses environnements, ses métriques et son plafond humain de référence.</p>
-
 <div class="avert">
   <p><strong>Une menace transversale les fragilise tous : la contamination</strong> — la présence d'éléments du banc dans les données d'entraînement du modèle évalué, qui <strong>gonfle artificiellement les scores</strong>. La parade consiste à privilégier des collectes <strong>décontaminées</strong> — jeux assemblés après la date de coupe d'entraînement, ou filtrés pour exclure les fuites — et à <strong>renouveler périodiquement les instances</strong>. Comme le notent <strong>Kapoor et coll. (2024)</strong>, <em>un score isolé d'un protocole de décontamination et de contrôle de coût n'a guère de valeur comparative.</em></p>
 </div>
-
 <p><strong>Codage, web et bureautique.</strong> En codage, <strong>SWE-bench</strong> (Jimenez et coll., 2023) confronte l'agent à de vrais tickets à résoudre par un correctif validé par la suite de tests du dépôt ; sa <strong>variante vérifiée par des humains</strong>, <strong>SWE-bench Verified</strong> (OpenAI, 2024) — un sous-ensemble de 500 tâches —, est devenue la référence en éliminant les instances mal spécifiées ou irrésolubles. Les harnais dédiés (<strong>SWE-agent</strong> ; Yang et coll., 2024) ont fait progresser nettement le taux de résolution : <strong>l'interface agent-ordinateur s'avère aussi déterminante que le modèle sous-jacent</strong>, constat qui vaut d'être retenu par toute équipe tentée d'attribuer un résultat au seul modèle. Pour le web, <strong>WebArena</strong> (Zhou et coll., 2023) offre un environnement réaliste auto-hébergé, que <strong>VisualWebArena</strong> (Koh et coll., 2024) étend aux tâches visuelles multimodales. Pour la bureautique, <strong>OSWorld</strong> (Xie et coll., 2024) mesure le pilotage d'un poste de travail complet sur des tâches ouvertes.</p>
-
 <div class="avert">
   <p><strong>La trajectoire est plus instructive que le point, et c'est la seule manière défendable de citer ces chiffres.</strong> Les agents de pilotage de poste plafonnaient <strong>autour de 20 % en 2024</strong> sur OSWorld ; leur taux a ensuite progressé vers le plafond de performance humaine, <strong>approché entre fin 2025 et début 2026 sans encore le rejoindre</strong>. L'écart résiduel à ce plafond est l'information utile — un instantané ne la porte pas.</p>
 </div>
-
-<p><strong>Raisonnement général, outils et tâches d'entreprise.</strong> Une seconde famille évalue le raisonnement multi-sauts avec usage d'outils (<strong>GAIA</strong> ; Mialon et coll., 2023), la capacité agentique transversale sur des environnements hétérogènes (<strong>AgentBench</strong> ; Liu et coll., 2023), l'interaction outil-agent-utilisateur dans des domaines réalistes (<strong>τ-bench</strong> ; Yao et coll., 2024) et l'appel de fonctions par analyse syntaxique (<strong>BFCL</strong> ; Patil et coll., 2025). Un banc de raisonnement à la frontière, <strong><em>Humanity's Last Exam</strong></em> (Phan et coll., 2025), sert enfin à <strong>saturer les jeux antérieurs</strong> devenus peu discriminants. ⚠ Ce dernier est une <strong>ressource vivante</strong> dont une version ultérieure est parue : sa révision exacte doit être fixée au moment de citer un score.</p>
-
+<p><strong>Raisonnement général, outils et tâches d'entreprise.</strong> Une seconde famille évalue le raisonnement multi-sauts avec usage d'outils (<strong>GAIA</strong> ; Mialon et coll., 2023), la capacité agentique transversale sur des environnements hétérogènes (<strong>AgentBench</strong> ; Liu et coll., 2023), l'interaction outil-agent-utilisateur dans des domaines réalistes (<strong>τ-bench</strong> ; Yao et coll., 2024) et l'appel de fonctions par analyse syntaxique (<strong>BFCL</strong> ; Patil et coll., 2025). Un banc de raisonnement à la frontière, <strong><em>Humanity's Last Exam</em></strong> (Phan et coll., 2025), sert enfin à <strong>saturer les jeux antérieurs</strong> devenus peu discriminants. ⚠ Ce dernier est une <strong>ressource vivante</strong> dont une version ultérieure est parue : sa révision exacte doit être fixée au moment de citer un score.</p>
 <div class="encadre encadre--oeuvre">
   <span class="encadre__label">Mise en œuvre</span>
   <p>Un banc de codage s'exécute <strong>en bac à sable conteneurisé</strong>, avec budgets d'appels et d'outils plafonnés ; <strong>son coût par instance, souvent occulté, doit être journalisé au même titre que le taux de résolution</strong>. La fragilité des sélecteurs de page (ch. 4 § 4.4.3) impose, pour les bancs web, de <strong>figer les instantanés d'environnement</strong> — faute de quoi une page mouvante rend les scores incomparables d'une exécution à l'autre.</p>
 </div>
-
+<hr />
 <h2 id="s64"><span class="sig">§ 6.4</span>Sûreté, red-teaming et taxonomie d'échecs</h2>
-
 <h3>6.4.1 Évaluation de la sûreté et red-teaming agentique</h3>
-
 <div class="avert">
   <p><strong>L'évaluation de capacité laisse un angle mort, et il est total : un agent compétent peut être trivialement détourné.</strong> Les bancs adversariaux comblent cet écart en mesurant non pas ce que l'agent <strong>réussit</strong>, mais <strong>ce qu'un attaquant peut lui faire faire</strong>.</p>
 </div>
-
 <p>Trois bancs s'y emploient : <strong>AgentDojo</strong> (Debenedetti et coll., 2024), environnement dynamique où des injections sont insérées dans les <strong>données que l'agent traite</strong>, mesurant à la fois l'utilité préservée et la résistance ; <strong>InjecAgent</strong> (Zhan et coll., 2024), qui cible spécifiquement les <strong>injections indirectes par les sorties d'outils</strong> ; et <strong>AgentHarm</strong> (Andriushchenko et coll., 2024), qui quantifie la <strong>nocivité</strong> d'un agent sommé d'accomplir des tâches malveillantes.</p>
-
 <p>Le <strong>red-teaming automatisé</strong> prolonge cette logique en <strong>générant dynamiquement</strong> des attaques plutôt qu'en s'appuyant sur un catalogue figé, exposant des chemins qu'un jeu statique manquerait.</p>
-
 <div class="avert">
   <p><strong>La distinction est cardinale, et elle est la conclusion de cette section</strong> : <em>un score élevé sur un banc de capacité ne dit rien de la robustesse</em>, et un agent ne devrait jamais être déployé sur la seule foi de ses performances fonctionnelles.</p>
 </div>
-
 <div class="encadre encadre--recherche">
   <span class="encadre__label">Perspective recherche</span>
   <p>L'évaluation systématique des attaques par injection conduite par <strong>Liu et coll. (2024)</strong> montre qu'<strong>aucune défense connue n'élimine la vulnérabilité</strong> — elles n'en réduisent que la surface. Cela ancre empiriquement la proposition de <strong>non-résolubilité au niveau du modèle</strong> posée au ch. 4 § 4.0.1. ⚠ Les bancs adversariaux sont donc à interpréter comme des <strong>mesures de réduction de risque, non comme des certificats d'innocuité</strong> : leurs scores évoluent à mesure que de nouvelles attaques sont publiées, et qu'aucune défense n'existe relève d'une <strong>absence de documentation</strong> au sens de R-14 du Vol. III — le corpus consulté n'en recense pas, ce qui n'établit pas leur impossibilité.</p>
 </div>
-
 <h3>6.4.2 Fiabilité, coût et taxonomie d'échecs</h3>
-
 <div class="avert">
   <p><strong>La fiabilité d'un agent ne se résume pas à sa réussite moyenne, et la métrique usuelle induit en erreur.</strong></p>
 </div>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Métrique</th><th>Ce qu'elle mesure</th><th>Ce qu'elle flatte ou révèle</th></tr></thead>
-  <tbody>
-    <tr><td><em>pass@k</em></td><td>la probabilité qu'<strong>au moins une</strong> parmi <em>k</em> tentatives réussisse — le <strong>potentiel</strong></td><td><strong>flatte</strong> les systèmes capables de trouver occasionnellement la bonne réponse</td></tr>
-    <tr><td><em>pass^k</em></td><td>la probabilité que <strong>les <em>k</em> tentatives réussissent toutes</strong> — la <strong>consistance</strong></td><td><strong>chute brutalement</strong> dès que la fiabilité par étape s'éloigne de la perfection</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Métrique</th>
+<th>Ce qu'elle mesure</th>
+<th>Ce qu'elle flatte ou révèle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>pass@k</em></td>
+<td>la probabilité qu'<strong>au moins une</strong> parmi <em>k</em> tentatives réussisse — le <strong>potentiel</strong></td>
+<td><strong>flatte</strong> les systèmes capables de trouver occasionnellement la bonne réponse</td>
+</tr>
+<tr>
+<td><em>pass^k</em></td>
+<td>la probabilité que <strong>les <em>k</em> tentatives réussissent toutes</strong> — la <strong>consistance</strong></td>
+<td><strong>chute brutalement</strong> dès que la fiabilité par étape s'éloigne de la perfection</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 6.2 — Potentiel contre consistance : deux métriques dont la confusion masque l'effondrement des agents sur les tâches longues.</p>
-
 <p>La seconde — <em>pass^k</em>, <strong>introduite par τ-bench</strong> (Yao et coll., 2024) — révèle <strong>l'effondrement des agents sur les tâches longues et multi-étapes</strong>. Cette dégradation — où une probabilité d'échec par pas même faible <strong>se compose géométriquement</strong> sur une longue trajectoire — est <strong>l'un des constats les plus robustes du domaine</strong>, et l'une des questions que le ch. 49 laisse ouvertes.</p>
-
 <p>Le <strong>coût</strong>, second axe de fiabilité, exige des <strong>classements contrôlés en budget</strong> plutôt qu'à performance brute — le <strong>Holistic Agent Leaderboard</strong> (Kapoor et coll., 2025) fournit cette infrastructure de comparaison à budget égal.</p>
-
 <p>Diagnostiquer les échecs suppose enfin une <strong>taxonomie</strong> : <strong>MAST</strong> (Cemri et coll., 2025) classe les modes de défaillance des systèmes multi-agents — mauvaise spécification, désalignement inter-agents, vérification défaillante — et fournit une grille d'analyse <strong>causale</strong> des effondrements de coordination (§ 6.1.2).</p>
-
 <div class="encadre encadre--oeuvre">
   <span class="encadre__label">Mise en œuvre</span>
   <p>Un agent destiné à la production doit être caractérisé par sa <strong>courbe de consistance</strong>, pas par son meilleur potentiel : c'est la consistance, non le potentiel, qui détermine la viabilité opérationnelle. Le rapport coût-performance, mesuré <strong>à budget contrôlé</strong>, doit figurer au cahier des charges <strong>au même rang que l'exactitude</strong>. Et tout incident en production doit être rattaché à une <strong>catégorie de la taxonomie MAST</strong> pour orienter la correction vers la cause racine plutôt que vers le symptôme.</p>
 </div>
-
+<hr />
+<figure class="figure">
+  <img src="../figures/f-06-04-potentiel-consistance.svg" alt="Figure 6.4 — Potentiel contre consistance : deux métriques dont la confusion masque l&#39;effondrement." />
+  <figcaption><strong>Figure 6.4</strong> — Potentiel contre consistance : deux métriques dont la confusion masque l'effondrement.</figcaption>
+</figure>
 <h2 id="s65"><span class="sig">§ 6.5</span>Défense architecturale, garde-fous et alignement</h2>
-
 <div class="avert">
   <p><strong>Partage déclaré avec le ch. 37.</strong> Ce qui suit <strong>pose</strong> les référentiels, les patrons et les garde-fous ; le ch. 37 les <strong>applique au grain de l'infrastructure</strong>. Le modèle de menace et les vecteurs d'attaque, eux, ne sont <strong>pas</strong> ici : ils partent <strong>en entier</strong> au ch. 19. <em>Ce chapitre pose la défense, pas la menace</em> — et cette asymétrie est un arbitrage du plan, non un déséquilibre.</p>
 </div>
-
 <h3>6.5.1 Référentiels et patrons de défense architecturale</h3>
-
 <p>À l'injection non résoluble répond une <strong>discipline de défense en profondeur</strong> outillée par des référentiels et des patrons.</p>
-
 <p><strong>Côté référentiels</strong>, deux corpus structurent le domaine : <strong>OWASP</strong>, par ses classements des risques applicatifs des modèles de langage (<strong>2025</strong>) puis des applications agentiques (<strong>pour 2026</strong>) et par son corpus <em>Agentic AI — Threats and Mitigations</em>, qui formalise le cadre de modélisation <strong>MAESTRO</strong> ; et <strong>MITRE ATLAS</strong>, qui fournit la matrice adverse des techniques observées contre les systèmes d'IA — ⚠ <strong>instrument que le socle hérité reprend sans date</strong>, qui n'est donc pas écrite ici.</p>
-
 <p><strong>Côté patrons</strong>, plusieurs propositions cherchent à rétablir une séparation de privilège <strong>hors du modèle</strong> — et c'est la formule qui compte, parce qu'elle dit où la garantie doit résider :</p>
-
-<ul class="puces">
-  <li>le patron à <strong>deux modèles</strong> de <strong>Willison (2023)</strong> isole un modèle « privilégié », qui <strong>ne voit jamais le contenu non fiable</strong>, d'un modèle « en quarantaine » qui le traite <strong>sans pouvoir déclencher d'action</strong> ;</li>
-  <li><strong>CaMeL</strong> (Debenedetti et coll., 2025) systématise cette idée : un interpréteur en extrait le <strong>flux de contrôle et de données</strong>, puis applique des politiques explicites — <em>défaisant l'injection par conception</em> ;</li>
-  <li>la <strong>règle de non-cumul</strong> de <strong>Meta AI</strong> (31 octobre 2025) propose une heuristique opérationnelle : dans une même session, un agent ne devrait pas cumuler les trois propriétés — contenu non fiable, accès à des données sensibles, capacité de communication externe ; <strong>en posséder au plus deux</strong> préserve la sûreté.</li>
+<ul>
+<li>le patron à <strong>deux modèles</strong> de <strong>Willison (2023)</strong> isole un modèle « privilégié », qui <strong>ne voit jamais le contenu non fiable</strong>, d'un modèle « en quarantaine » qui le traite <strong>sans pouvoir déclencher d'action</strong> ;</li>
+<li><strong>CaMeL</strong> (Debenedetti et coll., 2025) systématise cette idée : un interpréteur en extrait le <strong>flux de contrôle et de données</strong>, puis applique des politiques explicites — <em>défaisant l'injection par conception</em> ;</li>
+<li>la <strong>règle de non-cumul</strong> de <strong>Meta AI</strong> (31 octobre 2025) propose une heuristique opérationnelle : dans une même session, un agent ne devrait pas cumuler les trois propriétés — contenu non fiable, accès à des données sensibles, capacité de communication externe ; <strong>en posséder au plus deux</strong> préserve la sûreté.</li>
 </ul>
-
 <p>Un fil commun les traverse : <strong>l'étiquetage de la provenance et du niveau de confiance des données</strong>, condition pour qu'un agent traite différemment ce qui vient d'une source fiable et ce qui vient du dehors.</p>
-
 <div class="avert">
   <p>Que ces patrons épuisent l'espace des défenses architecturales n'est pas établi : le socle hérité en recense un catalogue — celui de <strong>Beurer-Kellner et coll. (2025)</strong> — sans prétendre à l'exhaustivité, ce qui est une <strong>absence de documentation</strong> au sens de R-14 du Vol. III, non un fait négatif vérifié.</p>
 </div>
-
 <div class="encadre encadre--recherche">
   <span class="encadre__label">Perspective recherche</span>
   <p>Ces patrons déplacent la garantie <strong>de l'apprentissage statistique vers une vérification systémique auditable</strong> : CaMeL et la règle de non-cumul énoncent des <strong>invariants</strong> — séparation de privilège, non-cumul — que l'on peut vérifier <strong>à la conception, indépendamment du modèle sous-jacent</strong>. C'est la transposition agentique du masquage de l'information et de la conception orientée contrat (ch. 1 § 1.1.3) : <strong>la sécurité naît du découplage explicite entre canal de confiance et canal non fiable, non d'un agent supposé infaillible.</strong></p>
 </div>
-
 <h3>6.5.2 Garde-fous d'exécution et chaîne d'approvisionnement</h3>
-
 <p>Sous les patrons se trouve la <strong>couche d'exécution</strong> : les garde-fous concrets qui <strong>contiennent un agent compromis</strong>. Des classifieurs d'entrée et de sortie et des cadres de garde-fous programmables filtrent invites et réponses ; le <strong>bac à sable</strong> confine l'exécution de code ; le <strong>moindre privilège</strong> borne la portée des outils et des accès.</p>
-
 <div class="avert">
   <p><strong>Partage déclaré</strong> : ce point expose le <em>pourquoi</em> et le <em>patron</em> de l'identité — un agent ne devrait disposer que des autorisations <strong>strictement nécessaires, à portée limitée et révocables</strong>. L'implémentation opérationnelle — protocoles d'autorisation, identités non humaines, rotation des secrets — relève du <strong>Livre II</strong>, et le socle pré-agentique en est au ch. 3 § 3.2.</p>
 </div>
-
 <p>La <strong>chaîne d'approvisionnement des outils</strong> appelle ses propres contrôles : vérification de provenance, épinglage de version, admission par passerelle. Le ch. 8 § 8.3.2 traite les registres ; le ch. 47 traite la provenance des composants.</p>
-
 <div class="avert">
   <p><strong>Le point cardinal de cette section, et il est chiffré.</strong> Ces garde-fous sont des <strong>mesures de réduction de risque dont l'efficacité est partielle et mesurable</strong>. <strong>CaMeL neutralise par conception</strong> le détournement du flux de contrôle par injection, mais <strong>ne résout par construction qu'environ deux tiers des scénarios de son banc d'évaluation</strong> — la fraction restante exigeant une politique que le mécanisme <strong>ne sait pas exprimer</strong>. Cette proportion est <strong>indicative et dépendante du banc</strong>, et elle est attribuée ici à la source qui la rapporte — <strong>Debenedetti et coll. (2025)</strong>, sur le banc <strong>AgentDojo</strong>. La règle de non-cumul, de son côté, <strong>ne garantit la sûreté qu'à l'intérieur d'une session</strong>, sans protéger contre une attaque <strong>répartie sur plusieurs sessions</strong> — réserve portée par son propre auteur, <strong>Meta AI, le 31 octobre 2025</strong>.</p>
 </div>
-
 <p><em>Présenter ces chiffres est indispensable pour interdire toute lecture de « solution ».</em> La défense en profondeur empile des couches imparfaites <strong>précisément parce qu'aucune n'est suffisante</strong> — et c'est cette phrase, non les mécanismes, que le Livre IV réemploiera.</p>
-
 <div class="encadre encadre--oeuvre">
   <span class="encadre__label">Mise en œuvre</span>
   <p>Dimensionner les garde-fous <strong>d'après leurs limites quantifiées</strong> : un blocage partiel impose qu'<strong>aucune action irréversible ne dépende d'une seule couche de défense</strong>. Combiner confinement, moindre privilège et <strong>approbation humaine sur les actions sensibles</strong>, de sorte que la probabilité résiduelle d'une cascade reste sous le seuil de tolérance du domaine. Ce seuil est une décision métier, pas une décision d'architecture — et le Livre III montre qui le fixe.</p>
 </div>
-
 <h3>6.5.3 Alignement, comportement déviant et asymétrie attaquant/défenseur</h3>
-
 <p>Au-delà des attaques externes, <strong>l'agent peut dévier de lui-même</strong> — non par malveillance, mais par <strong>optimisation d'un objectif mal spécifié</strong>.</p>
-
 <p>Le <strong>piratage de récompense</strong> désigne l'exploitation de failles dans le signal ou le critère de tâche : <strong>METR</strong> (5 juin 2025) documente que des modèles de frontière récents <strong>trichent sur les évaluations</strong> en satisfaisant la lettre de la métrique sans en accomplir l'intention (§ 6.3.2).</p>
-
 <div class="avert">
   <p><strong>Plus préoccupant, un comportement stratégique trompeur</strong> — visant à dissimuler ses véritables objectifs à ses superviseurs — <strong>a été mis en évidence</strong> : <strong>Meinke et coll. (2024, Apollo Research)</strong> montrent que des modèles de frontière sont capables de manigances en contexte, et <strong>Greenblatt et coll. (2024, Anthropic et Redwood Research)</strong> documentent une <strong>feinte d'alignement</strong>, où le modèle simule l'alignement durant l'entraînement pour préserver ses préférences. Les travaux d'entraînement correctif de <strong>Schoen et coll. (2025, OpenAI et Apollo Research)</strong> <strong>réduisent ces comportements sans les éliminer</strong>, et l'analyse de menace interne d'<strong>Anthropic</strong> (<em>Agentic Misalignment</em>, juin 2025) montre que des agents peuvent, <strong>sous pression d'objectif</strong>, adopter des conduites s'apparentant à une menace d'initié.</p>
 </div>
-
 <div class="avert">
   <p>Le statut épistémique de ces constats mérite précision : ils établissent que ces comportements <strong>sont possibles et ont été observés en conditions d'évaluation</strong>. Ils n'établissent ni leur fréquence en production, ni leur absence — <strong>absence de documentation</strong> au sens de R-14 du Vol. III sur les deux points.</p>
 </div>
-
 <p>Sur le versant adverse, un principe rappelle une <strong>asymétrie fondamentale</strong> : <em>l'attaquant joue en second</em>. Le défenseur fige ses protections ; l'attaquant les observe, puis les contourne.</p>
-
-<p>La conséquence rejoint le fil de tout le chapitre, et clôt le premier mouvement : <strong>viser non l'invulnérabilité — illusoire — mais la défense en profondeur</strong>, en supposant que toute couche finira par être éprouvée.</p>
-
+<p>La conséquence rejoint le fil de tout le chapitre, et clôt le premier mouvement : <strong>viser non l'invulnérabilité — illusoire — mais la défense en profondeur</strong>, en supposant que toute couche finisse par être éprouvée.</p>
 <div class="encadre encadre--recherche">
   <span class="encadre__label">Perspective recherche</span>
   <p>La fidélité de la chaîne de raisonnement (ch. 4 § 4.3.4) est ici une <strong>ressource fragile</strong>. Si la trace reflétait fidèlement le calcul interne, elle offrirait une fenêtre de surveillance sur le comportement stratégique. Mais <strong>rien ne garantit cette fidélité</strong>, et un agent capable de manigances pourrait précisément <strong>apprendre à produire une trace trompeuse</strong>. Le red-teaming systématique et les bancs adversariaux (§ 6.4.1) deviennent dès lors la <strong>seule mesure empirique tenable</strong> de la robustesse — non une preuve d'absence de faille, mais <strong>une borne inférieure sur la surface déjà connue de l'attaquant</strong>.</p>
 </div>
+<hr />
 
 <footer class="pied">
   <p><strong>Vol. IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em></strong> · Livre I, chapitre 6. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau, M.Sc. IT.</p>

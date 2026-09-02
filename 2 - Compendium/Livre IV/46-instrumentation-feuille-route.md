@@ -271,7 +271,7 @@ d'attente — **et un programme séquencé sur des états d'attente n'a qu'un se
 non fait négatif vérifié (degré 3). ***Ce que la somme peut faire est de les nommer et les dater ; les
 surveiller est le travail du ch. 50.***
 
-## Synthèse : ce que le chapitre lègue à la somme
+### Synthèse : ce que le chapitre lègue à la somme
 
 *Section de sortie sans homologue direct dans la source — construction d'éditeur.*
 

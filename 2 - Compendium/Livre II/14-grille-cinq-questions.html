@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chapitre 14 — La grille des cinq questions · Interopérabilité et Orchestration en Entreprise Agentique</title>
-<meta name="description" content="Livre II — Faire confiance : identité, délégation et fabrique de confiance. Premier mouvement — émettre (ch. 12-18). Troisième chapitre du mouvement, et chapitre de méthode transversal : il ne verse aucun fait, il fournit l'instrument par lequel les ch. 15 à 21 rendent leurs verdicts">
+<meta name="description" content="Livre II — Faire confiance : identité, délégation et fabrique de confiance. Premier mouvement — émettre (ch. 12-18). Troisième chapitre du mouvement, et **chapitre de méthode transversal** : il ne verse aucun fait, il fournit l&#x27;instrument par lequel les **ch. 15 à 21** rendent leurs verdicts">
 <meta name="author" content="André-Guy Bruneau, M.Sc. IT">
 <meta name="color-scheme" content="dark">
 <style>
@@ -443,6 +443,17 @@ tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
 tbody td:first-child { color: var(--texte); font-weight: 600; }
 .legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
 
+/* -------------------------------------------------------------- figures */
+/* Les SVG du volume sont dessinés pour le PDF, donc sur fond clair, et ils
+   portent ce fond eux-mêmes — sans quoi il faudrait maintenir deux variantes
+   de chaque figure. Sur ce thème sombre, ils se posent donc comme un carton ;
+   le padding empêche le fond de la figure de toucher le bord du cadre. */
+.figure { margin: 2.1rem 0 1.9rem; }
+.figure img { display: block; width: 100%; height: auto; border-radius: 7px;
+              border: 1px solid var(--trait); background: #fdfbf9; padding: 0.6rem; }
+.figure figcaption { font-size: 0.8rem; font-style: italic; color: var(--texte-faible);
+                     margin-top: 0.65rem; padding-left: 0.15rem; }
+
 /* --------------------------------------------------------------- listes */
 ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
 ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
@@ -532,15 +543,13 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <div class="nav__sous">Livre II · Chapitre 14</div>
   <ol>
     <li><a href="#s140"><span class="num">14.0</span>Introduction : pourquoi un instrument, et pourquoi cinq questions</a></li>
-    <li><a href="#s141"><span class="num">14.1</span>L&#x27;inspiration de la grille — et ce qu&#x27;elle n&#x27;autorise pas</a></li>
+    <li><a href="#s141"><span class="num">14.1</span>L'inspiration de la grille — et ce qu'elle n'autorise pas</a></li>
     <li><a href="#s142"><span class="num">14.2</span>Application-témoin à trois mécanismes</a></li>
     <li><a href="#s143"><span class="num">14.3</span>La grille comme critère de structure des chapitres suivants</a></li>
     <li><a href="#s144"><span class="num">14.4</span>Grille et maturité</a></li>
-
   </ol>
   <div class="nav__pied">
     Vol.&nbsp;IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em><br>
-
     <a href="14-grille-cinq-questions.md">Version Markdown</a>
   </div>
 </nav>
@@ -551,174 +560,229 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 <header class="titre">
   <div class="titre__fil">Livre II — Faire confiance : identité, délégation et fabrique de confiance</div>
   <h1><span class="chap">Chapitre 14</span>La grille des cinq questions</h1>
-  <p class="titre__situe">Livre II — Faire confiance : identité, délégation et fabrique de confiance. Premier mouvement — émettre (ch. 12-18). Troisième chapitre du mouvement, et <strong>chapitre de méthode transversal</strong> : il ne verse aucun fait, il fournit l'instrument par lequel les <strong>ch. 15 à 21</strong> rendent leurs verdicts</p>
+  <p class="titre__situe">Livre II — Faire confiance : identité, délégation et fabrique de confiance. Premier mouvement — émettre (ch. 12-18). Troisième chapitre du mouvement, et **chapitre de méthode transversal** : il ne verse aucun fait, il fournit l'instrument par lequel les **ch. 15 à 21** rendent leurs verdicts</p>
 </header>
 
+<!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
+     Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
+     que `build/assemble.py` pour le PDF et que `PRD/decompte.sh` pour la volumétrie. L'appareil de
+     gouvernance vit au .md jumeau, qui reste la seule source, et `build/verifier-piece.py` refuse
+     un rendu qui le recopierait. -->
+
 <h2 id="s140"><span class="sig">§ 14.0</span>Introduction : pourquoi un instrument, et pourquoi cinq questions</h2>
-
 <p>Les deux chapitres précédents ont produit un inventaire : des RFC étirés d'un côté (ch. 12), un vocabulaire portable dont l'adoption reste à démontrer de l'autre (ch. 13). L'inventaire ne suffit pas. Une organisation qui doit décider si elle admet un agent — le sien ou celui d'un tiers — n'a pas besoin de savoir <strong>quels mécanismes existent</strong> ; elle a besoin de savoir <strong>ce que chacun lui permet d'établir</strong>.</p>
-
 <p>C'est l'objet du présent chapitre, et il est de méthode : il ne verse aucun fait, il fournit l'<strong>instrument</strong> par lequel les ch. 15 à 21 rendront leurs verdicts. Son homologue dans le Livre IV est la <strong>matrice protocoles × exigences réglementaires du ch. 42</strong> ; les deux jouent le même rôle — un critère explicite, opposable, que chaque chapitre consommateur applique sans le redécider.</p>
-
 <div class="avert">
   <p><strong>Le chapitre porte donc, de bout en bout, le régime des constructions d'auteur</strong> (CA-IV-07), et c'est ce qui lui interdit de s'autoriser de lui-même. Une grille qui tirerait argument de son existence serait précisément l'objet que la somme prend pour cible : <em>un instrument d'analyse se juge à son rendement, jamais à sa provenance.</em></p>
 </div>
-
 <p><strong>Le chapitre se lit en quatre temps.</strong> D'où vient la grille et ce que son inspiration n'autorise pas (§ 14.1) ; ce qu'elle donne quand on l'éprouve sur trois mécanismes documentés (§ 14.2) ; comment elle structure les chapitres suivants (§ 14.3) ; et ce qu'elle devient croisée avec une échelle d'autonomie (§ 14.4).</p>
-
 <h2 id="s141"><span class="sig">§ 14.1</span>L'inspiration de la grille — et ce qu'elle n'autorise pas</h2>
-
 <p><span class="auteur">Lecture de l'auteur</span> la grille des cinq questions est une <strong>construction d'auteur du Vol. III</strong>. Elle est spécifiée à son PRD, Annexe C — le document qui fait autorité sur son contenu —, et <strong>non dérivée d'un socle qui la porterait</strong>. <strong>Ce que le socle établit</strong> : les faits sur lesquels chaque verdict du § 14.2 repose, entrée par entrée. <strong>Ce qu'il n'établit pas</strong> : la grille elle-même, son cardinal de cinq, l'ordre de ses questions, le partage qu'elle opère entre elles ; aucune entrée, propre ou héritée, ne les porte, et aucune source primaire n'en est l'extraction.</p>
-
 <div class="avert">
   <p><strong>La différence avec l'instrument équivalent du Vol. II est structurante et vaut d'être écrite</strong> : la taxonomie d'orchestration OO1-OO4 du Vol. II (<em>Monographie</em> ch. 5) venait <strong>d'une source</strong> ; la grille n'en vient <strong>d'aucune</strong>. Elle relève du régime des constructions d'auteur, ce qui interdit d'en tirer un argument d'autorité et impose qu'elle soit <strong>falsifiable</strong>.</p>
 </div>
-
 <p><strong>L'inspiration, elle, est nommée.</strong> Le Vol. I emploie une grille d'analyse <strong>par axes</strong> — découverte, sémantique, identité et confiance, gouvernance des frontières —, présentée comme le moyen de comparer des spécifications hétérogènes et d'anticiper leurs recouvrements et leurs manques. Deux de ces quatre axes — <em>identité et confiance</em>, <em>gouvernance des frontières</em> — fournissent l'<strong>inspiration</strong> des cinq questions ; ils n'en fournissent <strong>pas la dérivation</strong>.</p>
-
 <div class="avert">
   <p><strong>La distinction n'est pas de politesse.</strong> Un élément du Vol. I entre dans la somme en <strong>[C]</strong> — repérage documentaire —, parce que sa vérification porte sur ses références et non sur le contenu de ses affirmations (PRD §7.1) ; et <strong>une entrée [C] ne porte jamais un fait central</strong>. <em>Adosser la grille aux axes du Vol. I l'aurait rendue inutilisable au moment même où l'on prétendait la fonder.</em> ⚠ <strong>Les quatre axes sont posés au ch. 7 § 7.2.2</strong> et ne sont pas reconstruits ici.</p>
 </div>
-
 <div class="avert">
   <p><strong>Aucune entrée de socle ne porte les axes eux-mêmes, et l'écart se déclare plutôt qu'il ne se comble.</strong> Le Vol. III l'avait constaté pour son propre socle ; le balayage des <strong>159 entrées</strong> du socle consolidé, au 28 juillet 2026, le confirme — <strong>aucune ne les énonce</strong> : fait négatif <strong>vérifié</strong> sur ce corpus, degré 1, et borné à lui. <em>La traçabilité de cette filiation vient des documents de cadrage, non du socle ; y créer une entrée n'y changerait rien, une entrée [C] n'autorisant aucun emploi central.</em></p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> le changement d'objet justifie le changement d'instrument : les <strong>axes</strong> comparent des spécifications <em>entre elles</em> ; les <strong>cinq questions</strong> demandent ce qu'une entreprise doit pouvoir <strong>établir</strong> d'un agent qu'elle héberge ou qu'elle admet. <strong>Ce que le socle établit</strong> : la formulation des axes et leur fonction déclarée. <strong>Ce qu'il n'établit pas</strong> : que ce passage soit correct, complet ou nécessaire — <em>il se juge à son rendement en § 14.2, non à sa filiation.</em></p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>#</th><th>Question</th><th>Ce qu'un mécanisme doit produire pour y répondre</th></tr></thead>
-  <tbody>
-    <tr><td><strong>Q-A</strong></td><td><strong>Qui es-tu ?</strong></td><td>Un identifiant <strong>stable</strong>, <strong>vérifiable</strong>, <strong>résistant à l'usurpation</strong> et <strong>révocable</strong></td></tr>
-    <tr><td><strong>Q-B</strong></td><td><strong>Qui t'a créé ?</strong></td><td>Une chaîne de provenance jusqu'à une autorité d'émission, <strong>avec son ancrage de confiance</strong></td></tr>
-    <tr><td><strong>Q-C</strong></td><td><strong>Pour qui agis-tu ?</strong></td><td>Une chaîne de mandat interrogeable <strong>à l'instant t</strong>, et non seulement à l'admission</td></tr>
-    <tr><td><strong>Q-D</strong></td><td><strong>Que peux-tu faire ?</strong></td><td>Des bornes de privilège <strong>explicites</strong> <em>et</em> <strong>opposables au point d'application</strong></td></tr>
-    <tr><td><strong>Q-E</strong></td><td><strong>Qui en répond ?</strong></td><td>Une imputabilité traçable jusqu'à une personne ou une entité juridique</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>#</th>
+<th>Question</th>
+<th>Ce qu'un mécanisme doit produire pour y répondre</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Q-A</strong></td>
+<td><strong>Qui es-tu ?</strong></td>
+<td>Un identifiant <strong>stable</strong>, <strong>vérifiable</strong>, <strong>résistant à l'usurpation</strong> et <strong>révocable</strong></td>
+</tr>
+<tr>
+<td><strong>Q-B</strong></td>
+<td><strong>Qui t'a créé ?</strong></td>
+<td>Une chaîne de provenance jusqu'à une autorité d'émission, <strong>avec son ancrage de confiance</strong></td>
+</tr>
+<tr>
+<td><strong>Q-C</strong></td>
+<td><strong>Pour qui agis-tu ?</strong></td>
+<td>Une chaîne de mandat interrogeable <strong>à l'instant t</strong>, et non seulement à l'admission</td>
+</tr>
+<tr>
+<td><strong>Q-D</strong></td>
+<td><strong>Que peux-tu faire ?</strong></td>
+<td>Des bornes de privilège <strong>explicites</strong> <em>et</em> <strong>opposables au point d'application</strong></td>
+</tr>
+<tr>
+<td><strong>Q-E</strong></td>
+<td><strong>Qui en répond ?</strong></td>
+<td>Une imputabilité traçable jusqu'à une personne ou une entité juridique</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 14.1 — La grille des cinq questions et ce que chacune exige d'un mécanisme.</p>
-
 <p><strong>Quatre règles d'emploi commandent tout ce qui suit</strong>, et elles sont reprises du cadrage du Vol. III sans être modifiées.</p>
-
-<ol class="numeros">
-  <li><strong>La grille s'applique par mécanisme, non par produit.</strong> Un même produit peut répondre à Q-A et laisser Q-C sans réponse ; le noter globalement effacerait précisément ce que la grille sert à voir.</li>
-  <li><strong>Une réponse partielle est une réponse partielle.</strong> Trois verdicts seulement — <em>répond</em>, <em>répond partiellement — et on dit à quoi</em>, <em>ne répond pas</em> —, <strong>aucun quatrième verdict de complaisance</strong>.</li>
-  <li><strong>La thèse est falsifiable, et c'est voulu.</strong> Un mécanisme qui répondrait aux cinq la réfute, et <em>la réfutation s'écrit si elle survient plutôt qu'elle ne se contourne</em>.</li>
-  <li><strong>Le ch. 16 § 16.5 est le seul endroit de la somme où les cinq reçoivent une réponse</strong>, et cette réponse y est explicitement <strong>sur le papier</strong> — elle décrit ce qu'un assemblage produirait, non ce qu'une implémentation produit.</li>
+<ol type="1">
+<li><strong>La grille s'applique par mécanisme, non par produit.</strong> Un même produit peut répondre à Q-A et laisser Q-C sans réponse ; le noter globalement effacerait précisément ce que la grille sert à voir.</li>
+<li><strong>Une réponse partielle est une réponse partielle.</strong> Trois verdicts seulement — <em>répond</em>, <em>répond partiellement — et on dit à quoi</em>, <em>ne répond pas</em> —, <strong>aucun quatrième verdict de complaisance</strong>.</li>
+<li><strong>La thèse est falsifiable, et c'est voulu.</strong> Un mécanisme qui répondrait aux cinq la réfute, et <em>la réfutation s'écrit si elle survient plutôt qu'elle ne se contourne</em>.</li>
+<li><strong>Le ch. 16 § 16.5 est le seul endroit de la somme où les cinq reçoivent une réponse</strong>, et cette réponse y est explicitement <strong>sur le papier</strong> — elle décrit ce qu'un assemblage produirait, non ce qu'une implémentation produit.</li>
 </ol>
-
 <div class="avert">
   <p><strong>Une cinquième règle vient du régime d'absence, et elle n'est pas dans la liste ci-dessus parce qu'elle ne porte pas sur la grille mais sur ce qu'on écrit dans ses cases.</strong> Là où le corpus est muet, <strong>la case reste vide</strong> : <em>le socle ne documente pas X — absence de documentation, non fait négatif vérifié</em> (R-14 du Vol. III, degré 3). <strong>Une case vide n'est pas un quatrième verdict</strong> : ce n'est pas le mécanisme qui reçoit une note intermédiaire, c'est <strong>l'état de la preuve</strong> qui est déclaré.</p>
 </div>
-
+<figure class="figure">
+  <img src="../figures/f-14-01-grille-cinq-questions.svg" alt="Figure 14.1 — La grille des cinq questions, et ce que chacune exige d&#39;un mécanisme." />
+  <figcaption><strong>Figure 14.1</strong> — La grille des cinq questions, et ce que chacune exige d'un mécanisme.</figcaption>
+</figure>
 <h2 id="s142"><span class="sig">§ 14.2</span>Application-témoin à trois mécanismes</h2>
-
 <p>Trois mécanismes ont été instruits à un degré qui permet de les soumettre à la grille : la <strong>carte d'agent signée</strong>, les <strong>annuaires d'agents commerciaux</strong>, les <strong>registres gouvernés</strong>. ⚠ <strong>Cette section est une application-témoin, non le verdict du Livre</strong> : chacun des trois reçoit son verdict complet à son propre chapitre — ch. 15 § 15.1.4, § 15.2.4 et, pour le registre, § 15.3. Ce qui se joue ici est l'<strong>épreuve de l'instrument</strong>, et le résultat qui compte est ce que la grille permet ou ne permet pas de dire.</p>
-
 <p><strong>La carte d'agent signée.</strong> Sur <strong>Q-A</strong>, elle <strong>répond partiellement</strong> : au volet <em>vérifiable</em>, non au volet <em>révocable</em>. Ce que la signature <strong>démontre</strong> est l'intégrité du contenu canonicalisé au regard d'une clé donnée (Vol. III F-01, F-02, <strong>[A]</strong>) — et rien de plus (R-02). Elle est en outre <strong>facultative</strong> : apposition en <strong>MAY</strong>, vérification en <strong>SHOULD</strong>, de sorte qu'une chaîne entièrement conforme peut ne comporter <strong>aucune signature apposée ni aucune vérification effectuée</strong> (Vol. III F-04, <strong>[A]</strong>). Le volet <em>révocable</em> n'est pas outillé : le message normatif de la carte compte <strong>quatorze champs</strong>, dont aucun n'exprime une date d'émission, une expiration, une fenêtre de validité ni un indicateur de révocation (Vol. III F-05, <strong>[A]</strong>, fait négatif <strong>vérifié</strong>, degré 1) ; et l'interdiction est pourtant posée au niveau normatif le plus fort — « Expired or revoked keys <strong>MUST NOT</strong> be used for verification » — <strong>sans aucun moyen d'établir l'expiration ou la révocation</strong> (Vol. III F-07, <strong>[A]</strong>). ⚠ <strong>L'interdiction porte sur la clé de signature, non sur la carte</strong>, et la borne change ce qu'on peut en tirer.</p>
-
 <p>Sur <strong>Q-B</strong>, elle <strong>ne répond pas</strong> : l'ancrage est renvoyé <strong>hors du protocole</strong> — clé récupérée par identifiant et adresse de jeu de clés, ou depuis un magasin de clés de confiance que les clients « <strong>MAY</strong> maintain », dispositif facultatif et non spécifié (Vol. III F-09, <strong>[B]</strong>). Deux documents de projet ont été balayés et ni l'un ni l'autre ne rattrape l'ancrage (Vol. III F-08, <strong>[A]</strong>, degré 1 ; F-11, <strong>[B]</strong>). Sur <strong>Q-C</strong>, <strong>Q-D</strong> et <strong>Q-E</strong>, <strong>les cases restent vides au degré 3</strong> : aucun balayage ne couvre ce que la carte porte du mandat, du privilège ou de l'imputabilité.</p>
-
 <p><strong>Les annuaires d'agents commerciaux.</strong> ⚠ <strong>Le statut se dit à chaque mention, et l'éditeur se nomme</strong> — <em>la neutralité fournisseur interdit de recommander, non de nommer, et un statut non attribué n'est pas revalidable au gel suivant.</em> La <strong>disponibilité générale</strong> d'Entra Agent ID, produit de Microsoft, est datée d'<strong>avril 2026</strong> par les notes de version de son éditeur (Vol. III F-33, <strong>[B]</strong>) — mais <strong>elle ne vaut pas disponibilité générale de ses capacités</strong> : plusieurs capacités nommées demeuraient étiquetées <em>Preview</em> au 21 juillet 2026 (Vol. III F-34, <strong>[A]</strong>).</p>
-
 <p>Sur <strong>Q-A</strong>, <strong>répond partiellement</strong> : le type de ressource d'annuaire est défini et publié, héritant du type <code>application</code> (Vol. III F-37, <strong>[B]</strong>), mais l'identité y vit sur <strong>deux plans</strong> — une politique d'accès conditionnel ciblant des identités d'agent <strong>ne s'applique pas</strong> au compte d'utilisateur de l'agent, et une politique ciblant « tous les utilisateurs » <strong>n'inclut pas</strong> les identités d'agent (Vol. III F-35, <strong>[A]</strong>, fait négatif <strong>établi</strong>, degré 2). <em>Un identifiant qui n'est pas unique au point d'application ne répond qu'à moitié à « qui es-tu ».</em> Sur <strong>Q-B</strong>, <strong>répond partiellement</strong> : ce qui se cite en <strong>[B]</strong> est la spécification elle-même — <strong>SPIFFE-ID</strong> énonce qu'un SVID est <strong>considéré</strong> valide s'il a été signé par une autorité du domaine de confiance de l'<strong>identité SPIFFE</strong> qu'il porte (Vol. III F-87) —, et ce qu'elle <strong>démontre</strong> est une vérification de signature dans un domaine, <strong>non l'ancrage de confiance de cette autorité</strong> (R-02). Sur <strong>Q-C</strong>, <strong>répond partiellement</strong>, et la borne vient de la norme sous-jacente : le <strong>RFC 8693</strong> définit l'attribut <code>act</code> comme le moyen d'exprimer <strong>qu'une délégation a eu lieu</strong> et place explicitement hors de son périmètre les caractéristiques de sécurité des jetons eux-mêmes (Vol. III F-47, <strong>[A]</strong>) — le mandat s'exprime donc, mais qu'il soit interrogeable <strong>à l'instant t</strong> n'est pas établi (degré 3). Sur <strong>Q-D</strong>, même verdict et même cause : les bornes sont opposables au point d'application d'<strong>un</strong> des deux plans (F-35). Sur <strong>Q-E</strong>, <strong>case vide au degré 3</strong>.</p>
-
 <p><strong>Les registres gouvernés.</strong> Statut, dit à chaque mention : la spécification de registre d'agents est un <strong>brouillon de laboratoire</strong> et son en-tête le dit — « White Paper | 2026-03-27 | Status: draft », l'espace qui l'héberge se décrivant comme accueillant des travaux qui ne sont <strong>pas encore</strong> un projet officiel de l'organisme (Vol. III F-38, <strong>[A]</strong>). Sur <strong>Q-A</strong>, <strong>répond partiellement</strong> : l'identifiant est <strong>spécifié et administrable</strong>, dans un brouillon de laboratoire (Vol. III H-03 ; F-38). Sur <strong>Q-D</strong>, la déclaration des bornes est explicitement outillée — <code>toolAccessList</code> et <code>permissionBoundaries</code> sont des champs <strong>obligatoires</strong> (Vol. III F-40, <strong>[B]</strong>) —, mais le verdict reste <strong>partiel</strong> : <em>déclarer une borne et l'opposer sont deux actes distincts, et la grille est faite pour les séparer.</em> Sur <strong>Q-B</strong>, <strong>Q-C</strong> et <strong>Q-E</strong>, <strong>cases vides au degré 3</strong>.</p>
-
-<div class="tableau">
-<table>
-  <thead><tr><th></th><th>Q-A <em>qui es-tu</em></th><th>Q-B <em>qui t'a créé</em></th><th>Q-C <em>pour qui agis-tu</em></th><th>Q-D <em>que peux-tu faire</em></th><th>Q-E <em>qui en répond</em></th></tr></thead>
-  <tbody>
-    <tr><td><strong>Carte d'agent signée</strong></td><td>partiellement — vérifiable oui, révocable non (F-04, F-05, F-06, F-07)</td><td><strong>ne répond pas</strong> (F-08, F-09, F-11)</td><td><em>case vide, degré 3</em></td><td><em>case vide, degré 3</em></td><td><em>case vide, degré 3</em></td></tr>
-    <tr><td><strong>Annuaires commerciaux</strong></td><td>partiellement — deux plans d'identité (F-35, F-37)</td><td>partiellement — validité par signature dans un domaine (F-87), ancrage de l'autorité non établi</td><td>partiellement — mandat exprimé, non interrogeable à l'instant t (H-02, F-47)</td><td>partiellement — un plan couvert sur deux (F-35)</td><td><em>case vide, degré 3</em></td></tr>
-    <tr><td><strong>Registres gouvernés</strong></td><td>partiellement — identifiant spécifié et administrable, brouillon de laboratoire (H-03, F-38)</td><td><em>case vide, degré 3</em></td><td><em>case vide, degré 3</em></td><td>partiellement — bornes déclarées, opposabilité non établie (F-40, H-03)</td><td><em>case vide, degré 3</em></td></tr>
-  </tbody>
+<table style="width:100%;">
+<caption>Tableau 14.2 — Application-témoin de la grille à trois mécanismes, au 21 juillet 2026. Toutes les entrées citées appartiennent au socle du Vol. III.</caption>
+<colgroup>
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+<col style="width: 16%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>Q-A <em>qui es-tu</em></th>
+<th>Q-B <em>qui t'a créé</em></th>
+<th>Q-C <em>pour qui agis-tu</em></th>
+<th>Q-D <em>que peux-tu faire</em></th>
+<th>Q-E <em>qui en répond</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Carte d'agent signée</strong></td>
+<td>partiellement — vérifiable oui, révocable non (F-04, F-05, F-06, F-07)</td>
+<td><strong>ne répond pas</strong> (F-08, F-09, F-11)</td>
+<td><em>case vide, degré 3</em></td>
+<td><em>case vide, degré 3</em></td>
+<td><em>case vide, degré 3</em></td>
+</tr>
+<tr>
+<td><strong>Annuaires commerciaux</strong></td>
+<td>partiellement — deux plans d'identité (F-35, F-37)</td>
+<td>partiellement — validité par signature dans un domaine (F-87), ancrage de l'autorité non établi</td>
+<td>partiellement — mandat exprimé, non interrogeable à l'instant t (H-02, F-47)</td>
+<td>partiellement — un plan couvert sur deux (F-35)</td>
+<td><em>case vide, degré 3</em></td>
+</tr>
+<tr>
+<td><strong>Registres gouvernés</strong></td>
+<td>partiellement — identifiant spécifié et administrable, brouillon de laboratoire (H-03, F-38)</td>
+<td><em>case vide, degré 3</em></td>
+<td><em>case vide, degré 3</em></td>
+<td>partiellement — bornes déclarées, opposabilité non établie (F-40, H-03)</td>
+<td><em>case vide, degré 3</em></td>
+</tr>
+</tbody>
 </table>
-</div>
-
-<p class="legende">Tableau 14.2 — Application-témoin de la grille à trois mécanismes, au 21 juillet 2026. Toutes les entrées citées appartiennent au socle du Vol. III.</p>
-
 <p><strong>Décompte re-mesuré sur le tableau : huit verdicts rendus sur quinze cases</strong> — <strong>aucun « répond »</strong>, <strong>un</strong> « ne répond pas », <strong>sept</strong> « répond partiellement » — et <strong>sept cases</strong> où le corpus consulté est muet. ⚠ Un verdict plein figurait au premier jet du Vol. III et <strong>est tombé le 21 juillet 2026</strong>, non qu'un fait ait changé, mais parce que le <strong>niveau</strong> de l'entrée qui le portait est passé en <strong>[C]</strong> : <em>une entrée [C] ne porte jamais un fait central, et un verdict de grille en est un.</em></p>
-
 <p><strong>Aucun des trois mécanismes ne répond aux cinq : la thèse n'est pas réfutée.</strong> ⚠ <strong>Elle n'est pas non plus établie, et il faut l'écrire aussi nettement</strong> : trois mécanismes ne sont pas le corpus des mécanismes de 2026, et conclure de trois verdicts à « aucun mécanisme de 2026 ne répond aux cinq » serait un <strong>fait négatif de corpus</strong>, la forme même que le régime des trois degrés refuse. <em>La thèse se tient donc comme hypothèse falsifiable, éprouvée mécanisme par mécanisme aux endroits recensés au § 14.3, et sa portée reste bornée aux mécanismes réellement instruits.</em></p>
-
 <h2 id="s143"><span class="sig">§ 14.3</span>La grille comme critère de structure des chapitres suivants</h2>
-
 <p>La grille n'est pas un ornement méthodologique : <strong>elle décide de ce qu'un chapitre doit produire.</strong> Elle est appliquée, verdict à l'appui, au <strong>ch. 15 § 15.1.4</strong> (la carte signée), <strong>§ 15.2.4</strong> (les annuaires), <strong>ch. 16 § 16.5</strong> (l'objet de synthèse), <strong>ch. 19 § 19.4</strong> (la taxonomie des attaques) et, hors du présent Livre, au <strong>ch. 37 § 37.4</strong> (le maillage). ⚠ <strong>Deux sièges de plus l'appliquent sans rendre aucun verdict</strong> — le <strong>ch. 25 § 25.4</strong> (la ligne directrice E-23) et le <strong>ch. 27 § 27.5</strong> (la ligne directrice de l'AMF) —, en <strong>lecture inversée</strong> : ils demandent non ce qu'un texte produit comme réponse, mais ce qu'il suppose que l'institution puisse établir, <em>une ligne directrice n'étant ni un mécanisme ni un produit</em> (règle d'emploi 1). Elle sert enfin de colonne à l'annexe des mécanismes. <em>Toute pièce qui ne l'applique pas s'en explique.</em></p>
-
 <p><strong>Le ch. 17 est l'exception, et c'est la plus instructive.</strong> Il ne porte <strong>aucun verdict</strong> : il <strong>instruit Q-C</strong> — <em>pour qui agis-tu ?</em> — au lieu de l'appliquer mécanisme par mécanisme, et il le déclare à son ouverture. La raison tient au constat du § 14.2 : <strong>Q-C n'y a reçu qu'un seul verdict, et encore partiel</strong>. <em>Une question à laquelle deux mécanismes sur trois ne permettent même pas de répondre n'appelle pas un verdict de plus ; elle appelle un chapitre.</em></p>
-
 <p><strong>Au ch. 19, la grille change de fonction</strong> : elle devient l'<strong>axe de la taxonomie</strong>, chaque attaque étant rangée selon <strong>le maillon de la chaîne d'identité ou de mandat qui cède</strong> — traitement défensif exclusif, au niveau architectural, sans recette d'exploitation. Le socle montre que le tri fonctionne : dans la campagne de compromission de jetons du <strong>8 au 18 août 2025 au moins</strong>, le maillon qui cède est le <strong>jeton porteur</strong>, lié ni à l'appelant, ni à un appareil, ni à une session — <em>quiconque le détient est l'intégration</em> (Vol. III F-21, <strong>[A]</strong>) : <strong>défaut de Q-A</strong>. Dans la technique <strong>AML.T0053</strong> du corpus de techniques adverses <strong>MITRE ATLAS</strong>, où un agent dispose d'outils inaccessibles aux utilisateurs, ce n'est pas l'authentification qui cède mais <strong>l'absence de réduction de portée entre mandant et mandataire</strong> (Vol. III F-14, <strong>[A]</strong>) : <strong>défaut de Q-D</strong>, que la contre-mesure <strong>AML.M0027</strong> vise en posant qu'un agent agissant pour un utilisateur ne doit pas recevoir de permissions que cet utilisateur n'a pas (Vol. III F-15, <strong>[A]</strong>).</p>
-
 <p>L'entrée <strong>ASI03</strong> du référentiel de sécurité applicative de l'<strong>OWASP</strong> énonce le lien que la grille formalise : « Without a distinct, governed identity of its own, an agent operates in an attribution gap that makes enforcing true least privilege impossible. » (Vol. III F-19, <strong>[A]</strong>).</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> l'énoncé soutient <strong>l'ordre</strong> des questions : sans réponse à Q-A, Q-D et Q-E deviennent <strong>inapplicables</strong> plutôt que difficiles — une borne de privilège suppose un porteur identifié, et une imputabilité suppose quelqu'un à qui imputer. <strong>Ce que le socle établit</strong> : l'énoncé cité, au niveau [A]. <strong>Ce qu'il n'établit pas</strong> : que cet ordre soit le seul possible, ni qu'il ait une valeur autre qu'organisatrice.</p>
-
 <div class="avert">
   <p><strong>Le ch. 16 § 16.5 est le seul endroit de la somme où les cinq questions reçoivent une réponse, et la nature de cet endroit décide de ce qu'on peut en conclure.</strong> Ce qui y est soumis à la grille n'est <strong>pas un mécanisme de 2026</strong> : c'est le <strong>passeport d'agent</strong>, objet de synthèse que la somme construit en assemblant une carte signée, une inscription au registre, une chaîne de mandat et des attestations. <em>Le passeport reçoit une réponse aux cinq questions parce qu'il a été construit pour en recevoir une : c'est la propriété d'un objet de synthèse, pas un résultat.</em> ⚠ <strong>Confondre les deux ferait de la construction d'auteur le contre-exemple de la thèse qu'elle sert à éprouver.</strong></p>
 </div>
-
 <h2 id="s144"><span class="sig">§ 14.4</span>Grille et maturité</h2>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>la présente section est une construction d'auteur en totalité.</strong> Le croisement des cinq questions avec une échelle de maturité n'est porté par aucune entrée du socle, non plus que l'ordonnancement des exigences par palier qui en découle. <strong>Ce que le socle établit</strong> : l'existence et le contenu de l'échelle mobilisée, à son niveau et sous ses réserves. <strong>Ce qu'il n'établit pas</strong> : que le coût d'une question sans réponse croisse avec le palier d'autonomie — proposition de la somme, à lire comme telle.</p>
-
 <div class="avert">
   <p><strong>Cette section a été réaffectée le 21 juillet 2026, et le motif se déclare plutôt qu'il ne se masque.</strong> Elle mobilisait le spectre de maturité d'un <strong>corpus d'appui</strong> dont aucun des trois ouvrages n'a jamais été déposé ; la filiation livresque a été <strong>retirée</strong> — arbitrage clos par <strong>échec documenté, et réversible par dépôt ultérieur</strong> —, et le croisement se refait sur l'échelle d'autonomie du Vol. I. ⚠ <strong>Les mentions de « corpus d'appui » sont des marqueurs conditionnels de réouverture, jamais des sources</strong> : aucun chapitre ne se rédige en s'appuyant sur ces ouvrages sans dépôt effectif.</p>
 </div>
-
 <p><strong>L'échelle se cite au complet, et la contrainte n'est pas de forme.</strong> Selon la proposition du Vol. I, l'<strong>échelle à quatre paliers non numérotés</strong> — <em>assistance → copilote → orchestration sous revue → autonomie bornée</em> — indexe l'autonomie consentie sur le produit <strong>matérialité × réversibilité</strong>, non sur la capacité brute du modèle ; l'entrée héritée <strong>H-31 [C]</strong> en rapporte le principe, verbatim : « un agent ne doit jamais exécuter une action irréversible sans garde-fou structurel ; la règle est la préparation par l'agent et la <em>release</em> humaine sur l'action irréversible ».</p>
-
 <div class="avert">
   <p><strong>Trois échelles coexistent au Vol. I et partagent leurs libellés — les nommer nues est proscrit.</strong> « Copilote » est un palier de l'échelle à <strong>quatre paliers non numérotés</strong>, le <strong>niveau 2</strong> du continuum à <strong>six niveaux numérotés de 0 à 5</strong>, et le <strong>niveau L0</strong> de la graduation à <strong>quatre niveaux préfixés L, L0-L3</strong>. <em>Le terme ne s'emploie jamais seul</em>, et l'indexation sur matérialité × réversibilité ne discrimine pas davantage — la graduation L0-L3 indexe deux de ses niveaux sur les mêmes critères. <strong>Seuls le cardinal et la numérotation discriminent.</strong></p>
 </div>
-
 <div class="avert">
   <p><strong>Une de ces trois numérotations n'est plus opposable.</strong> Les désignations du continuum à six niveaux ne vivent qu'au tableau 3 de la <em>Synthèse</em> du Vol. I, <strong>fichier supprimé du dépôt le 22 juillet 2026</strong> : le renvoi demeure exact, il <strong>cesse d'être opposable</strong>, et le socle consolidé déclare pour ce motif le calibrage du garde-fou <strong>R-13 du Vol. III non rejouable</strong> dans l'arbre courant (<code>S-157</code>). <em>La règle de désambiguïsation ne s'en trouve pas allégée pour autant.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>H-31 est une entrée [C] non élevable, et la conséquence est nette.</strong> L'échelle est une <strong>construction d'auteur du Vol. I</strong>, introduite par « La proposition de l'ouvrage… », non la reprise d'une source primaire tierce : l'élévation en [B] par lecture de la source est <strong>sans objet</strong>. Elle entre comme <strong>thèse d'un volume antérieur, à attribuer à chaque emploi</strong>, jamais comme fait. <em>Le croisement qui suit ne peut donc rien établir ; il ordonne.</em></p>
 </div>
-
 <p><strong>L'ordonnancement proposé est le suivant.</strong> Au palier <em>assistance</em>, l'humain engage chaque action : <strong>Q-E</strong> est portée par la personne qui engage et <strong>Q-D</strong> bornée par ce qu'elle valide ; reste <strong>Q-A</strong>, sans laquelle la trace ne s'impute à rien. Au palier que l'échelle à quatre paliers non numérotés nomme <em>copilote</em>, l'agent produit des actes que l'humain contresigne sans les reconstruire : <strong>Q-B</strong> devient exigible — <em>contresigner ce qu'on n'a pas produit suppose de savoir qui l'a produit</em>. À l'<em>orchestration sous revue</em>, la revue porte sur une <strong>chaîne</strong> et non sur un acte : <strong>Q-C</strong> devient centrale, et <em>une chaîne de mandat qui ne s'interroge qu'à l'admission ne soutient pas une revue portant sur l'exécution</em>. À l'<em>autonomie bornée</em>, les cinq deviennent simultanément exigibles, et le défaut le plus coûteux est celui que le § 14.2 a trouvé à la carte signée : un identifiant vérifiable dont la <strong>clé de signature</strong>, expirée ou révoquée, ne doit plus servir à vérifier — sans qu'aucun moyen permette d'établir ce statut (Vol. III F-07, <strong>[A]</strong>).</p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Palier <em>(échelle à quatre paliers non numérotés du Vol. I)</em></th><th>Question qui devient exigible</th><th>Motif</th></tr></thead>
-  <tbody>
-    <tr><td><strong>assistance</strong></td><td><strong>Q-A</strong></td><td>l'humain engage chaque acte ; sans identifiant, la trace ne s'impute à rien</td></tr>
-    <tr><td><strong>copilote</strong></td><td><strong>Q-B</strong> s'ajoute</td><td>contresigner ce qu'on n'a pas produit suppose de savoir qui l'a produit</td></tr>
-    <tr><td><strong>orchestration sous revue</strong></td><td><strong>Q-C</strong> s'ajoute</td><td>la revue porte sur une chaîne, non sur un acte isolé</td></tr>
-    <tr><td><strong>autonomie bornée</strong></td><td><strong>les cinq</strong>, simultanément</td><td>plus aucun acte n'est contresigné à l'unité</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Palier <em>(échelle à quatre paliers non numérotés du Vol. I)</em></th>
+<th>Question qui devient exigible</th>
+<th>Motif</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>assistance</strong></td>
+<td><strong>Q-A</strong></td>
+<td>l'humain engage chaque acte ; sans identifiant, la trace ne s'impute à rien</td>
+</tr>
+<tr>
+<td><strong>copilote</strong></td>
+<td><strong>Q-B</strong> s'ajoute</td>
+<td>contresigner ce qu'on n'a pas produit suppose de savoir qui l'a produit</td>
+</tr>
+<tr>
+<td><strong>orchestration sous revue</strong></td>
+<td><strong>Q-C</strong> s'ajoute</td>
+<td>la revue porte sur une chaîne, non sur un acte isolé</td>
+</tr>
+<tr>
+<td><strong>autonomie bornée</strong></td>
+<td><strong>les cinq</strong>, simultanément</td>
+<td>plus aucun acte n'est contresigné à l'unité</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 14.3 — Croisement de la grille et de l'échelle d'autonomie du Vol. I — <strong>construction d'auteur en totalité</strong>, aucun palier n'étant porté par une entrée de socle.</p>
-
 <p><strong>Ce que le croisement ne fait pas se dit avec la même netteté : il ne rend aucun mécanisme suffisant à un palier bas.</strong> Un fait borné <strong>ne varie pas avec le palier</strong> — la section de la spécification qui ne comporte aucun moyen d'établir le statut d'une clé n'en comporte pas plus pour un agent d'assistance que pour un agent en autonomie bornée (Vol. III F-06, <strong>[A]</strong>, degré 1). <em>Le palier change le coût du défaut, non le défaut</em> ; et une entreprise qui ordonnerait ses exigences d'identité par palier accepterait, <strong>en connaissance de cause</strong>, de porter aux paliers bas une dette dont l'échéance est le palier suivant.</p>
-
 <h3>Synthèse : ce que le chapitre lègue à la somme</h3>
-
 <p><em>Section de sortie sans homologue direct dans la source — construction d'éditeur.</em></p>
-
-<ol class="numeros">
-  <li><strong>L'instrument, et ses quatre règles d'emploi.</strong> Par mécanisme et non par produit ; trois verdicts et pas un quatrième ; falsifiabilité assumée ; un seul lieu où les cinq reçoivent réponse. Les <strong>ch. 15, 16, 19, 25 et 37</strong> l'appliquent sans le redécider.</li>
-  <li><strong>La cinquième règle, qui n'est pas dans la grille.</strong> Une <strong>case vide</strong> déclare l'état de la preuve, jamais une note intermédiaire. C'est le point où la grille et le régime des trois degrés d'absence se rejoignent, et il est posé ici une fois pour la somme.</li>
-  <li><strong>L'ordre des questions.</strong> Sans Q-A, Q-D et Q-E sont <strong>inapplicables</strong> et non difficiles. Le <strong>ch. 19</strong> en fait l'axe de sa taxonomie.</li>
-  <li><strong>Le croisement avec l'autonomie, et sa borne.</strong> Le palier change <strong>le coût</strong> du défaut, non le défaut. Le <strong>ch. 25</strong> rencontre la même distinction du côté réglementaire, et le <strong>ch. 20</strong> du côté défensif.</li>
+<ol type="1">
+<li><strong>L'instrument, et ses quatre règles d'emploi.</strong> Par mécanisme et non par produit ; trois verdicts et pas un quatrième ; falsifiabilité assumée ; un seul lieu où les cinq reçoivent réponse. Les <strong>ch. 15, 16, 19, 25 et 37</strong> l'appliquent sans le redécider.</li>
+<li><strong>La cinquième règle, qui n'est pas dans la grille.</strong> Une <strong>case vide</strong> déclare l'état de la preuve, jamais une note intermédiaire. C'est le point où la grille et le régime des trois degrés d'absence se rejoignent, et il est posé ici une fois pour la somme.</li>
+<li><strong>L'ordre des questions.</strong> Sans Q-A, Q-D et Q-E sont <strong>inapplicables</strong> et non difficiles. Le <strong>ch. 19</strong> en fait l'axe de sa taxonomie.</li>
+<li><strong>Le croisement avec l'autonomie, et sa borne.</strong> Le palier change <strong>le coût</strong> du défaut, non le défaut. Le <strong>ch. 25</strong> rencontre la même distinction du côté réglementaire, et le <strong>ch. 20</strong> du côté défensif.</li>
 </ol>
-
 <div class="avert">
   <p><strong>Ce que le chapitre ne lègue pas.</strong> Il ne verse aucun fait, aucune entrée de socle, aucune date. Il ne tranche pas la thèse qu'il porte : <strong>elle reste une hypothèse falsifiable</strong>, et le § 14.2 dit exactement sur quel échantillon elle a été éprouvée.</p>
 </div>
+<hr />
 
 <footer class="pied">
   <p><strong>Vol. IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em></strong> · Livre II, chapitre 14. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau, M.Sc. IT.</p>
-
   <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme (gel unique : 27 juillet 2026).</p>
 </footer>
 

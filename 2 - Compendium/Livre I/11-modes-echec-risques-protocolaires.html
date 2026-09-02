@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chapitre 11 — Modes d&#x27;échec et taxonomie des risques protocolaires · Interopérabilité et Orchestration en Entreprise Agentique</title>
-<meta name="description" content="Livre I — Coopérer : fondements de l&#x27;interopérabilité et couche protocolaire agentique. Second mouvement — la couche protocolaire agentique (ch. 7-11). Dernier chapitre du mouvement, et dernier chapitre du Livre.">
+<meta name="description" content="Livre I — Coopérer : fondements de l&#x27;interopérabilité et couche protocolaire agentique. Second mouvement — la couche protocolaire agentique (ch. 7-11). **Dernier chapitre du mouvement, et dernier chapitre du Livre.**">
 <meta name="author" content="André-Guy Bruneau, M.Sc. IT">
 <meta name="color-scheme" content="dark">
 <style>
@@ -443,6 +443,17 @@ tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
 tbody td:first-child { color: var(--texte); font-weight: 600; }
 .legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
 
+/* -------------------------------------------------------------- figures */
+/* Les SVG du volume sont dessinés pour le PDF, donc sur fond clair, et ils
+   portent ce fond eux-mêmes — sans quoi il faudrait maintenir deux variantes
+   de chaque figure. Sur ce thème sombre, ils se posent donc comme un carton ;
+   le padding empêche le fond de la figure de toucher le bord du cadre. */
+.figure { margin: 2.1rem 0 1.9rem; }
+.figure img { display: block; width: 100%; height: auto; border-radius: 7px;
+              border: 1px solid var(--trait); background: #fdfbf9; padding: 0.6rem; }
+.figure figcaption { font-size: 0.8rem; font-style: italic; color: var(--texte-faible);
+                     margin-top: 0.65rem; padding-left: 0.15rem; }
+
 /* --------------------------------------------------------------- listes */
 ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
 ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
@@ -531,9 +542,9 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <div class="nav__marque">Interopérabilité et Orchestration en Entreprise Agentique</div>
   <div class="nav__sous">Livre I · Chapitre 11</div>
   <ol>
-    <li><a href="#s110"><span class="num">11.0</span>Introduction : ce que quatre chapitres d&#x27;acquis ne disent pas</a></li>
-    <li><a href="#s111"><span class="num">11.1</span>La surface d&#x27;attaque : outils, invites, mémoire</a></li>
-    <li><a href="#s112"><span class="num">11.2</span>Modes d&#x27;échec propres à l&#x27;interopérabilité agentique</a></li>
+    <li><a href="#s110"><span class="num">11.0</span>Introduction : ce que quatre chapitres d'acquis ne disent pas</a></li>
+    <li><a href="#s111"><span class="num">11.1</span>La surface d'attaque : outils, invites, mémoire</a></li>
+    <li><a href="#s112"><span class="num">11.2</span>Modes d'échec propres à l'interopérabilité agentique</a></li>
     <li><a href="#s113"><span class="num">11.3</span>Les réponses protocolaires : ce que les spécifications apportent</a></li>
     <li><a href="#s114"><span class="num">11.4</span>Ce que les protocoles ne couvrent pas</a></li>
   </ol>
@@ -549,439 +560,469 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 <header class="titre">
   <div class="titre__fil">Livre I — Coopérer : fondements de l&#x27;interopérabilité et couche protocolaire agentique</div>
   <h1><span class="chap">Chapitre 11</span>Modes d&#x27;échec et taxonomie des risques protocolaires</h1>
-  <p class="titre__situe">Livre I — Coopérer : fondements de l'interopérabilité et couche protocolaire agentique. Second mouvement — la couche protocolaire agentique (ch. 7-11). <strong>Dernier chapitre du mouvement, et dernier chapitre du Livre.</strong></p>
+  <p class="titre__situe">Livre I — Coopérer : fondements de l'interopérabilité et couche protocolaire agentique. Second mouvement — la couche protocolaire agentique (ch. 7-11). **Dernier chapitre du mouvement, et dernier chapitre du Livre.**</p>
 </header>
 
 <!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
      Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
-     que `build/assemble.py` pour le PDF. L'appareil de gouvernance vit au .md jumeau, qui reste la
-     seule source, et `verifier-piece.py` [6] refuse désormais un rendu qui le recopierait. -->
+     que `build/assemble.py` pour le PDF et que `PRD/decompte.sh` pour la volumétrie. L'appareil de
+     gouvernance vit au .md jumeau, qui reste la seule source, et `build/verifier-piece.py` refuse
+     un rendu qui le recopierait. -->
 
 <h2 id="s110"><span class="sig">§ 11.0</span>Introduction : ce que quatre chapitres d'acquis ne disent pas</h2>
-
 <p>Les quatre chapitres précédents ont établi que la couche protocolaire agentique <strong>était sortie du régime propriétaire</strong> (ch. 7), qu'elle reposait sur une <strong>doctrine de complémentarité explicite</strong> (ch. 8), qu'elle s'était dotée d'une <strong>couche de découverte et d'une pile étagée</strong> (ch. 9) et d'une <strong>couche marchande</strong> (ch. 10).</p>
-
 <div class="avert">
   <p><strong>Aucun de ces acquis ne dit quoi que ce soit de sa sûreté</strong>, et il faut énoncer d'emblée la conclusion de ce chapitre, parce qu'elle contredit une attente répandue : <strong>un protocole d'interopérabilité agentique ne constitue pas, à lui seul, une posture de sécurité.</strong> Il définit un <strong>format d'échange</strong> et un <strong>cadre d'autorisation</strong> (<em>authorization framework</em>) ; ce qui se passe <strong>à l'intérieur</strong> de ce cadre relève de <strong>celui qui l'implémente</strong>.</p>
 </div>
-
 <div class="avert">
   <p><strong>Cette proposition n'est pas une opinion.</strong> Elle est inscrite au socle du Vol. II comme une <strong>réserve de rédaction contraignante</strong> : à propos du protocole agent-outil, il faut écrire <strong>« cadre d'autorisation »</strong> et <strong>jamais « sécurisé »</strong>, <em>parce que la sécurité dépend de l'implémentation</em> — et la réserve cite, à son appui, <strong>deux catégories d'attaques documentées</strong> : l'<strong>empoisonnement d'outils</strong> (<em>tool poisoning</em>) et l'<strong>injection d'invites</strong> (<em>prompt injection</em>).</p>
 </div>
-
 <p><strong>Le chapitre déplie cette réserve en quatre temps</strong> : la <strong>surface d'attaque</strong> que les protocoles ouvrent (§ 11.1), les <strong>modes d'échec qui ne supposent aucun attaquant</strong> (§ 11.2), ce que les <strong>spécifications apportent en réponse</strong> (§ 11.3), et ce qu'elles laissent <strong>par construction à l'architecture</strong> (§ 11.4).</p>
-
 <div class="avert">
   <p><strong>Un déplacement d'objet doit être annoncé, faute de quoi le lecteur croira lire une redite.</strong> Le premier mouvement du Livre a traité la sûreté d'un agent <strong>considéré isolément</strong> — l'injection d'invite non résoluble au niveau du modèle (ch. 5 § 5.4), les défenses en profondeur côté agent (ch. 6 § 6.5). Ce chapitre change d'objet : il porte sur la sécurité des <strong>frontières</strong> entre agents, outils, modèles et organisations — c'est-à-dire sur les <strong>propriétés de sûreté de la couche d'interopérabilité elle-même</strong>. <em>L'angle distinctif est celui de l'amplification par la composabilité.</em></p>
 </div>
-
+<hr />
 <h2 id="s111"><span class="sig">§ 11.1</span>La surface d'attaque : outils, invites, mémoire</h2>
-
 <h3>11.1.1 Cadrage : l'interopérabilité crée une surface d'attaque non composable</h3>
-
 <p><strong>Le résultat central de cette section tient en une phrase.</strong></p>
-
-<div class="encadre encadre--oeuvre">
-  <span class="encadre__label">Note</span>
-  <p><strong>Un agent sûr et un outil sûr, une fois composés, ne donnent pas un système sûr. La sûreté n'est pas une propriété compositionnelle.</strong></p>
-</div>
-
+<blockquote>
+<p><strong>Un agent sûr et un outil sûr, une fois composés, ne donnent pas un système sûr. La sûreté n'est pas une propriété compositionnelle.</strong></p>
+</blockquote>
 <p>Là où l'interopérabilité classique présupposait des <strong>appelants déterministes</strong> et des <strong>contrats figés</strong> (ch. 1 § 1.1), la couche agentique introduit <strong>trois mécanismes</strong> qui font basculer des propriétés <strong>locales</strong> — un serveur valide ses entrées, un agent respecte ses garde-fous — vers des propriétés <strong>globales que rien ne garantit</strong> :</p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Mécanisme</th><th>Où le Livre l'a posé</th><th>Ce qu'il rend global</th></tr></thead>
-  <tbody>
-    <tr><td><strong>découverte à l'exécution</strong> de pairs et d'outils</td><td>ch. 9 § 9.1</td><td>l'ensemble des interlocuteurs n'est plus connu à la conception</td></tr>
-    <tr><td><strong>délégation de tâches</strong> franchissant les frontières organisationnelles</td><td>ch. 8 § 8.4</td><td>la chaîne d'exécution excède le périmètre administré</td></tr>
-    <tr><td><strong>fédération d'identité</strong> inter-domaines</td><td>Livre II</td><td>la décision d'autorisation dépend d'un tiers</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Mécanisme</th>
+<th>Où le Livre l'a posé</th>
+<th>Ce qu'il rend global</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>découverte à l'exécution</strong> de pairs et d'outils</td>
+<td>ch. 9 § 9.1</td>
+<td>l'ensemble des interlocuteurs n'est plus connu à la conception</td>
+</tr>
+<tr>
+<td><strong>délégation de tâches</strong> franchissant les frontières organisationnelles</td>
+<td>ch. 8 § 8.4</td>
+<td>la chaîne d'exécution excède le périmètre administré</td>
+</tr>
+<tr>
+<td><strong>fédération d'identité</strong> inter-domaines</td>
+<td>Livre II</td>
+<td>la décision d'autorisation dépend d'un tiers</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 11.1 — Les trois mécanismes par lesquels la couche agentique fait basculer des propriétés locales en propriétés globales.</p>
-
 <div class="avert">
   <p><strong>La conséquence est architecturale et elle est forte.</strong> <em>La frontière de confiance n'est plus le périmètre d'un système, mais <strong>chaque arête du graphe d'interaction</strong></em> : tout appel d'outil, toute délégation entre pairs, toute résolution via un registre constitue <strong>un point où une propriété de sûreté peut se rompre</strong>.</p>
 </div>
-
 <p>La position que défend la littérature de sécurité <strong>mobilisée ici</strong> est qu'il faut <strong>modéliser la menace au niveau du protocole et de l'écosystème</strong>, et non du seul agent. ⚠ <strong>Ce qui est propre à l'interopérabilité, et développé ici, est l'amplification</strong> : <em>la composition crée une surface d'attaque que l'analyse composant par composant ne révèle pas.</em></p>
-
 <div class="avert">
   <p><strong>Convention de nomenclature et garde-fous, rappelés à leur unique occurrence de ce chapitre</strong> (R-8 du Vol. II, R-13 du Vol. III). Le corpus de recherche mobilisé ici cite l'<strong>ACP protocolaire</strong> — l'<em>Agent Communication Protocol</em> d'un centre de recherche industriel — parmi les protocoles d'interopérabilité, <strong>à une date antérieure à sa fusion</strong> du 29 août 2025. ⚠ <strong>Cette mention n'est pas reprise comme un état courant</strong> : l'ACP protocolaire <strong>n'est pas un standard vivant</strong> (R-1 du Vol. II), et le ch. 10 § 10.5 en a tiré la portée de risque. <em>Le siège de l'encadré des quatre branches est au ch. 7 § 7.5.</em></p>
 </div>
-
 <h3>11.1.2 Modèle de menace de la pile et la triade létale amplifiée</h3>
-
-<div class="encadre encadre--oeuvre">
-  <span class="encadre__label">Note</span>
-  <p>⚠ <strong>La triade létale est posée au ch. 19</strong> (Livre II), qui en porte le modèle de menace, les conditions et les incidents documentés — arbitrage du plan déjà appliqué au ch. 5 § 5.4. <strong>Ce qui suit n'en est pas la reprise mais l'amplification, qui est propre à la couche d'interopérabilité.</strong></p>
+<blockquote>
+<div class="avert">
+  <p><strong>La triade létale est posée au ch. 19</strong> (Livre II), qui en porte le modèle de menace, les conditions et les incidents documentés — arbitrage du plan déjà appliqué au ch. 5 § 5.4. <strong>Ce qui suit n'en est pas la reprise mais l'amplification, qui est propre à la couche d'interopérabilité.</strong></p>
 </div>
-
+</blockquote>
 <p><strong>La modélisation de menace de la pile agentique dispose de cadres, et il faut dire exactement ce qu'ils apportent.</strong> Des cadres adaptés de la modélisation de menace classique, et un cadre à <strong>sept couches</strong> conçu pour les systèmes agentiques, ont été <strong>appliqués protocole par protocole</strong> : une modélisation de menace dédiée au protocole agent-agent, des taxonomies équivalentes côté protocole agent-outil, et une <strong>analyse comparée par couche et par protocole</strong> couvrant quatre protocoles de la pile.</p>
-
 <div class="avert">
   <p><strong>R-02 du Vol. III — et c'est ici l'énoncé le plus utile du chapitre à un dossier de risque.</strong> Un modèle de menace <strong>démontre</strong> qu'une surface d'attaque <strong>a été analysée et cartographiée</strong> ; il <strong>ne démontre pas</strong> qu'une attaque ait été <strong>observée</strong>, ni qu'un correctif existe, ni qu'un déploiement donné y soit exposé. <em>Un protocole abondamment modélisé n'est ni plus ni moins attaqué qu'un protocole qui ne l'est pas — il est mieux décrit.</em></p>
 </div>
-
 <p><strong>L'amplification, elle, est un résultat, et elle est propre à ce chapitre.</strong> La triade de conditions posée au ch. 19 — accès à des données privées, exposition à du contenu non fiable, capacité de communication vers l'extérieur — a été formulée <strong>au niveau d'un agent</strong>. <strong>Sa transposition à la couche d'interopérabilité en révèle une forme amplifiée</strong> :</p>
-
-<div class="encadre encadre--oeuvre">
-  <span class="encadre__label">Note</span>
-  <p><strong>La composition de plusieurs serveurs ou agents peut réunir les trois conditions alors qu'aucun participant pris isolément ne les possède toutes.</strong></p>
-</div>
-
+<blockquote>
+<p><strong>La composition de plusieurs serveurs ou agents peut réunir les trois conditions alors qu'aucun participant pris isolément ne les possède toutes.</strong></p>
+</blockquote>
 <p>Un serveur qui ne donne <strong>que</strong> l'accès aux données ; un deuxième qui n'ingère <strong>que</strong> du contenu externe ; un troisième qui ne fait <strong>qu'</strong>émettre des requêtes sortantes. <strong>Chacun est inoffensif ; leur orchestration par un même agent reconstitue la triade.</strong> Les travaux d'écosystème sur le détournement du mécanisme d'échantillonnage du protocole agent-outil illustrent ce <strong>franchissement de frontière</strong>.</p>
-
 <div class="avert">
   <p><strong>La conséquence méthodologique est directe, et elle invalide une pratique répandue</strong> : <em>un modèle de menace agentique doit raisonner sur le <strong>graphe de composition</strong>, pas sur l'<strong>inventaire des composants</strong>.</em> Un inventaire complet de serveurs individuellement conformes ne dit <strong>rien</strong> de l'exposition de leur assemblage.</p>
 </div>
-
 <div class="avert">
   <p><strong>Tout pourcentage d'exposition ou de vulnérabilité avancé dans ce contexte n'est retenu que rattaché à une source primaire datée</strong>, faute de quoi il est écarté — règle du corpus source, reconduite ici sans exception.</p>
 </div>
-
+<figure class="figure">
+  <img src="../figures/f-11-01a-amplification.svg" alt="Figure 11.1a — Ce que la couche d&#39;interopérabilité amplifie : trois mécanismes qui font basculer des propriétés locales." />
+  <figcaption><strong>Figure 11.1a</strong> — Ce que la couche d'interopérabilité amplifie : trois mécanismes qui font basculer des propriétés locales.</figcaption>
+</figure>
 <h3>11.1.3 Attaques sur les frontières : empoisonnement, révocation après approbation, injection transitive</h3>
-
 <p><strong>Trois familles d'attaques visent spécifiquement les frontières — et la première en réunit deux mécanismes distincts, que le tableau de clôture déplie.</strong> Elles sont ici <strong>datées et identifiées</strong>, et le § 11.1.4 dira pourquoi ce fait est en lui-même un enjeu de la somme.</p>
-
 <p><strong>(1) L'empoisonnement d'outils et la révocation après approbation.</strong> L'<strong>empoisonnement d'outils</strong> exploite une propriété que le ch. 9 § 9.4.2 a posée : <strong>la description d'un outil est du texte libre, lu par le modèle à l'inférence</strong>. Une instruction malveillante glissée dans la description est <strong>ingérée comme si elle émanait du développeur</strong>. Une variante — l'<strong>ombrage d'outil</strong> — voit un serveur <strong>redéfinir le comportement d'un outil légitime</strong>. Un <strong>banc d'épreuve dédié</strong> mesure l'efficacité de ces attaques <strong>sur des serveurs réels</strong>.</p>
-
 <div class="avert">
   <p><strong>La révocation après approbation</strong> (<em>rug-pull</em>) est le cas le plus instructif pour le fil du Livre : <strong>un serveur initialement bénin modifie, après coup, la définition d'un outil déjà approuvé.</strong> <em>C'est un problème de chaîne d'approvisionnement, et c'est surtout la démonstration qu'un contrat figé à l'approbation ne lie pas un acteur qui évolue après elle.</em> Une mitigation par <strong>définitions d'outils renforcées</strong> et <strong>contrôle d'accès par politique</strong> répond à ce vecteur.</p>
 </div>
-
 <p><strong>(2) L'injection indirecte traversant les frontières.</strong> Un <strong>exploit zéro-clic</strong> documenté contre une suite bureautique assistée — <strong>CVE-2025-32711</strong>, avis de sécurité du <strong>11 juin 2025</strong> — illustre que <strong>la nouveauté n'est pas l'injection elle-même mais la transitivité de la confiance</strong> : <em>un contenu non fiable injecté en amont se propage par délégation.</em> Le ch. 5 § 5.4 avait posé l'injection indirecte au niveau de l'ancrage ; <strong>ce qui est propre à l'interopérabilité est qu'elle franchit des frontières administratives.</strong></p>
-
 <div class="avert">
   <p><strong>Un score de gravité se cite avec son émetteur, faute de quoi il est indécidable.</strong> La valeur de <strong>9,3 sur 10</strong> est celle qu'attribue <strong>Microsoft</strong>, autorité de numérotation (<em>CNA</em>) pour ce produit ; la fiche en porte une <strong>seconde, officielle elle aussi, retenue par le NIST</strong> dans la base nationale de vulnérabilités — <strong>7,5</strong>, soit <strong>1,8 point d'écart et un changement de palier</strong>. Divergence de périmètre, <strong>consignée au socle consolidé (<code>S-152</code>) et non arbitrée</strong>. <em>Écrire « gravité 9,3 » sans nommer qui la prononce, c'est trancher en silence entre deux valeurs également officielles</em> — et le présent paragraphe, jusqu'au 30 juillet 2026, ne tenait sa propre règle <strong>qu'au rôle</strong>, ce que la contre-relecture avait relevé et que la décision 18 du TOC corrige ici.</p>
 </div>
-
-<p><strong>(3) Les vulnérabilités d'implémentation des composants de la pile.</strong> Deux identifiants publiés en 2025 en donnent la mesure : <strong>CVE-2025-6514</strong>, une <strong>exécution de commande</strong> dans un utilitaire de relais du protocole agent-outil (<strong>gravité 9,6</strong>), et <strong>CVE-2025-49596</strong>, un <strong>défaut d'authentification du proxy</strong> d'un inspecteur du même protocole (<strong>gravité 9,4</strong>).</p>
-
+<p><strong>(3) Les vulnérabilités d'implémentation des composants de la pile.</strong> Deux identifiants publiés en 2025 en donnent la mesure : <strong>CVE-2025-6514</strong>, une <strong>exécution de commande</strong> dans un utilitaire de relais du protocole agent-outil (<strong>gravité 9,6</strong>), et <strong>CVE-2025-49596</strong>, un <strong>défaut d'authentification du mandataire</strong> d'un inspecteur du même protocole (<strong>gravité 9,4</strong>).</p>
 <div class="avert">
   <p><strong>Ces trois identifiants sont cités comme jalons datés, et non comme état courant d'exposition</strong> : <em>un identifiant publié est, le plus souvent, un défaut corrigé</em> — et <strong>la source le documente pour deux des trois</strong>, le relais étant <strong>corrigé en version 0.1.16</strong> (avis du 9 juillet 2025) et l'inspecteur <strong>en version 0.14.1, le 13 juin 2025</strong>. ⚠ <strong>Pour CVE-2025-32711, la source ne documente aucun correctif</strong> — <em>absence de documentation</em>, <strong>R-14 degré 3</strong> : le tableau ci-dessous ne l'atteste pas, et ne doit pas laisser croire l'inverse.</p>
 </div>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Famille</th><th>Ce que l'attaque exploite</th><th>Ce que la source établit</th></tr></thead>
-  <tbody>
-    <tr><td><strong>empoisonnement d'outils</strong>, ombrage</td><td>la <strong>description d'outil</strong> est du texte lu par le modèle</td><td>mécanique documentée ; <strong>banc d'épreuve sur serveurs réels</strong></td></tr>
-    <tr><td><strong>révocation après approbation</strong></td><td>la <strong>mutabilité du serveur après l'approbation</strong></td><td>mécanique documentée ; mitigation par politique proposée</td></tr>
-    <tr><td><strong>injection indirecte transitive</strong></td><td>la <strong>transitivité de la confiance</strong> entre agents</td><td><strong>CVE-2025-32711</strong> ; gravité <strong>9,3</strong> <em>selon Microsoft</em> — <strong>7,5</strong> selon le <strong>NIST</strong>, divergence non arbitrée</td></tr>
-    <tr><td><strong>défauts d'implémentation</strong> de la pile</td><td>le code des <strong>composants d'outillage</strong>, non le protocole</td><td><strong>CVE-2025-6514</strong> et <strong>CVE-2025-49596</strong>, gravités <strong>9,6</strong> et <strong>9,4</strong> ; <strong>correctifs documentés</strong></td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Famille</th>
+<th>Ce que l'attaque exploite</th>
+<th>Ce que la source établit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>empoisonnement d'outils</strong>, ombrage</td>
+<td>la <strong>description d'outil</strong> est du texte lu par le modèle</td>
+<td>mécanique documentée ; <strong>banc d'épreuve sur serveurs réels</strong></td>
+</tr>
+<tr>
+<td><strong>révocation après approbation</strong></td>
+<td>la <strong>mutabilité du serveur après l'approbation</strong></td>
+<td>mécanique documentée ; mitigation par politique proposée</td>
+</tr>
+<tr>
+<td><strong>injection indirecte transitive</strong></td>
+<td>la <strong>transitivité de la confiance</strong> entre agents</td>
+<td><strong>CVE-2025-32711</strong> ; gravité <strong>9,3</strong> <em>selon Microsoft</em> — <strong>7,5</strong> selon le <strong>NIST</strong>, divergence non arbitrée</td>
+</tr>
+<tr>
+<td><strong>défauts d'implémentation</strong> de la pile</td>
+<td>le code des <strong>composants d'outillage</strong>, non le protocole</td>
+<td><strong>CVE-2025-6514</strong> et <strong>CVE-2025-49596</strong>, gravités <strong>9,6</strong> et <strong>9,4</strong> ; <strong>correctifs documentés</strong></td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 11.2 — Les trois familles d'attaques sur les frontières, la première dépliée en ses deux mécanismes — jalons datés, non état courant d'exposition.</p>
-
 <div class="avert">
-  <p><strong>La réponse historique au <em>député confus</em> — le vol de jeton par un intermédiaire trompé — passe par le confinement d'audience des jetons</strong>, adopté par le <strong>cadre d'autorisation</strong> du protocole agent-outil (ch. 8 § 8.2.2). <em>Réserve F-01 du Vol. II : cadre d'autorisation, jamais « sécurisé ».</em></p>
+  <p><strong>La réponse historique au <em>mandataire confus</em> — le vol de jeton par un intermédiaire trompé — passe par le confinement d'audience des jetons</strong>, adopté par le <strong>cadre d'autorisation</strong> du protocole agent-outil (ch. 8 § 8.2.2). <em>Réserve F-01 du Vol. II : cadre d'autorisation, jamais « sécurisé ».</em></p>
 </div>
-
 <p><strong>Reste la mémoire — la troisième des surfaces que cette section annonce en titre, après l'outil et l'invite, et de loin la moins documentée.</strong> Le Vol. II la nomme au titre d'un <strong>défi de sécurité holistique</strong> porté par un manifeste de recherche à dix-huit auteurs : l'<strong>empoisonnement de mémoire</strong> (<em>memory poisoning</em>). ⚠ <strong>Son socle le nomme et s'arrête là</strong> : il n'en porte <strong>ni ce que cette mémoire recouvre, ni la mécanique de sa corruption, ni la portée temporelle de l'atteinte</strong> — <em>absence de documentation</em>, <strong>R-14 degré 3</strong>. <em>Un lecteur tenté d'en déduire la gravité doit savoir qu'il la déduirait de ce que la source ne porte pas.</em></p>
-
 <h3>11.1.4 La typologie des trois surfaces, et l'asymétrie qu'elle ne doit pas masquer</h3>
-
 <p><span class="auteur">Lecture de l'auteur</span> construction d'éditeur, et le corpus source la marque déjà comme telle. Les trois surfaces <strong>se distinguent par ce qu'elles corrompent</strong> :</p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Surface</th><th>Ce qu'elle corrompt</th><th>Canal</th></tr></thead>
-  <tbody>
-    <tr><td><strong>l'outil</strong></td><td>la <strong>capacité</strong> de l'agent</td><td>la description lue à l'inférence</td></tr>
-    <tr><td><strong>l'invite</strong></td><td>son <strong>instruction</strong></td><td>le contexte</td></tr>
-    <tr><td><strong>la mémoire</strong></td><td>son <strong>état</strong></td><td>la persistance entre exécutions</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Surface</th>
+<th>Ce qu'elle corrompt</th>
+<th>Canal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>l'outil</strong></td>
+<td>la <strong>capacité</strong> de l'agent</td>
+<td>la description lue à l'inférence</td>
+</tr>
+<tr>
+<td><strong>l'invite</strong></td>
+<td>son <strong>instruction</strong></td>
+<td>le contexte</td>
+</tr>
+<tr>
+<td><strong>la mémoire</strong></td>
+<td>son <strong>état</strong></td>
+<td>la persistance entre exécutions</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 11.3 — Les trois surfaces d'attaque nommées, distinguées par ce que chacune corrompt — construction d'éditeur, non énoncé de source.</p>
-
 <div class="avert">
   <p><strong>Aucun contrôle ne les couvre ensemble, parce qu'aucune de ces trois choses ne circule par le même canal.</strong> <em>C'est, en une phrase, ce que le manifeste veut dire par « holistique » : le problème ne se découpe pas selon les frontières que l'ingénierie de la sécurité applicative a l'habitude de tracer.</em></p>
 </div>
-
 <p><strong>Trois énoncés closent cette section, et ce qui les sépare importe autant que ce qu'ils disent : le premier et le troisième sont des absences du socle du Vol. II, de même degré ; le deuxième n'est pas une absence, mais le rétrécissement que le Vol. I leur impose.</strong></p>
-
 <p><strong>(1)</strong> ⚠ <strong>Le socle du Vol. II ne documente aucune attaque propre au protocole agent-agent</strong>, alors même que celui-ci ouvre une surface d'une autre nature — <strong>la délégation de tâches de pair à pair</strong>. <em>Absence de documentation</em>, <strong>R-14 degré 3</strong> — <em>c'est une propriété du socle, non une propriété du protocole.</em> ⚠ <strong>Un architecte qui conclurait d'un chapitre où ce protocole est peu mis en cause qu'il est moins exposé aurait commis, à partir d'un texte prudent, exactement l'erreur que ce texte cherche à prévenir.</strong></p>
-
 <p><strong>(2)</strong> ⚠ <strong>Le Vol. I ne renverse pas ce constat — il le rétrécit, et la nuance est de méthode.</strong> Il verse au dossier une <strong>modélisation de menace dédiée</strong> au protocole agent-agent et une <strong>analyse comparée de sécurité</strong> qui l'inclut (§ 11.1.2) ; il <strong>ne verse aucune attaque datée, aucun identifiant de vulnérabilité, aucun incident public</strong> propre à ce protocole. ⚠ <strong>R-02 du Vol. III</strong> : ces travaux <strong>démontrent</strong> que la surface a été <strong>analysée</strong> ; ils <strong>ne démontrent pas</strong> qu'elle ait été <strong>exploitée</strong>. <em>L'énoncé du Vol. II reste donc debout dans sa forme la plus stricte, et il est important qu'il le reste : la somme n'a pas d'attaque propre au protocole agent-agent à opposer.</em></p>
-
 <p><strong>(3)</strong> ⚠ <strong>Le socle du Vol. II ne date pas la documentation des risques qu'il nomme</strong> et <strong>n'en établit pas la mécanique</strong> — <em>absence de documentation</em>, <strong>R-14 degré 3</strong>, lacune ouverte à son registre le 16 juillet 2026, <strong>aucune passe de recherche n'ayant été conduite</strong> à ce lot. ⚠ <strong>Le Vol. I, lui, la porte</strong> — mécaniques, bancs, identifiants, incidents datés, comme les § 11.1.2 et § 11.1.3 viennent de l'exposer. <strong>Ce n'est pas une contradiction mais une lacune de couverture</strong>, et le § 11.4.2 en tire les conséquences pour la somme. <em>Le Vol. II est exact sur son socle ; il ne l'est pas sur le corpus.</em></p>
-
+<hr />
+<figure class="figure">
+  <img src="../figures/f-11-01b-trois-surfaces.svg" alt="Figure 11.1b — Les trois surfaces d&#39;attaque, distinguées par ce que chacune corrompt." />
+  <figcaption><strong>Figure 11.1b</strong> — Les trois surfaces d'attaque, distinguées par ce que chacune corrompt.</figcaption>
+</figure>
 <h2 id="s112"><span class="sig">§ 11.2</span>Modes d'échec propres à l'interopérabilité agentique</h2>
-
-<div class="encadre encadre--oeuvre">
-  <span class="encadre__label">Note</span>
-  <p>⚠ <strong>Changement d'angle, délibéré et annoncé.</strong> Le § 11.1 traitait l'<strong>adversaire intentionnel</strong>. Cette section traite la <strong>fiabilité</strong> — <em>la capacité d'un assemblage d'agents à produire le résultat attendu de façon répétable</em>. <strong>Un système agentique interopérable peut échouer sans aucun attaquant</strong>, par le seul jeu de la composition d'acteurs non déterministes au-dessus de contrats imparfaitement spécifiés.</p>
+<blockquote>
+<div class="avert">
+  <p><strong>Changement d'angle, délibéré et annoncé.</strong> Le § 11.1 traitait l'<strong>adversaire intentionnel</strong>. Cette section traite la <strong>fiabilité</strong> — <em>la capacité d'un assemblage d'agents à produire le résultat attendu de façon répétable</em>. <strong>Un système agentique interopérable peut échouer sans aucun attaquant</strong>, par le seul jeu de la composition d'acteurs non déterministes au-dessus de contrats imparfaitement spécifiés.</p>
 </div>
-
+</blockquote>
 <p>Les chapitres précédents ont isolé, axe par axe, des défaillances <strong>locales</strong> : empoisonnement d'outils (ch. 8 § 8.6.1), désaccord d'intention entre pairs (ch. 8 § 8.6.2), faux accord sémantique (ch. 9 § 9.4.5), confusion entre identité autonome et déléguée (Livre II), défaillances de registres (ch. 9 § 9.1.5). <strong>Cette section les rassemble sous une taxonomie unifiée.</strong></p>
-
 <div class="avert">
   <p><strong>Le fil du Livre fournit la clé de lecture, et il est vérifié ici plus nettement qu'ailleurs</strong> : <em>la plupart des modes d'échec recensés naissent non <strong>à l'intérieur</strong> d'un agent, mais <strong>au contrat</strong> qui le relie à ses pairs, à ses outils ou à ses délégants.</em></p>
 </div>
-
 <h3>11.2.1 La taxonomie des échecs émergents</h3>
-
 <p><strong>Une taxonomie de référence des défaillances multi-agents existe</strong>, construite par <strong>analyse empirique de traces d'exécution</strong> annotées par plusieurs juges, avec un <strong>accord inter-annotateur élevé</strong>, puis étendue à un corpus plus large couvrant <strong>plusieurs cadriciels distincts</strong>. Elle distingue <strong>trois grandes catégories</strong> — défauts de spécification et de conception du système, désalignement entre agents, échecs de vérification et de terminaison — déclinées en une grille fine de modes individuels.</p>
-
 <div class="avert">
   <p><strong>Son apport central pour ce chapitre est un résultat, non une commodité de classement</strong> : ces défaillances sont <strong>émergentes</strong> — <em>elles ne se réduisent pas au comportement d'un agent isolé mais procèdent des interactions</em>, ce qui les place précisément dans le champ de l'interopérabilité.</p>
 </div>
-
 <p><strong>Parmi les modes recensés, sept sont spécifiques à la frontière interopérable</strong>, et chacun renvoie à un endroit où le Livre a déjà posé le mécanisme :</p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Mode d'échec</th><th>Ce qui se rompt</th><th>Posé au</th></tr></thead>
-  <tbody>
-    <tr><td><strong>routage incorrect</strong> d'une tâche vers un agent inadéquat</td><td>l'<strong>appariement</strong> capacité/besoin</td><td>ch. 9 § 9.1.2</td></tr>
-    <tr><td><strong>perte de contexte</strong> au passage d'une frontière protocolaire</td><td>l'<strong>intégrité du transfert</strong></td><td>ch. 8 § 8.4.2</td></tr>
-    <tr><td><strong>incompatibilité de schéma non détectée</strong></td><td>l'écart <strong>conformité / interopérabilité</strong></td><td>ch. 9 § 9.5.1</td></tr>
-    <tr><td><strong>échec de négociation</strong> — pas de format commun</td><td>l'<strong>accord de protocole</strong> lui-même</td><td>ch. 8 § 8.6.2</td></tr>
-    <tr><td><strong>absence de clarification</strong> — poursuite sur une instruction ambiguë</td><td>le <strong>verrou pragmatique</strong></td><td>ch. 7 § 7.1.3</td></tr>
-    <tr><td><strong>dérive sémantique</strong> en chaîne de délégations</td><td>la <strong>conservation de l'intention</strong></td><td>ch. 9 § 9.4.5</td></tr>
-    <tr><td><strong>interblocage de délégation</strong> — agents s'attendant mutuellement</td><td>la <strong>terminaison</strong></td><td><em>propre à cette section</em></td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Mode d'échec</th>
+<th>Ce qui se rompt</th>
+<th>Posé au</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>routage incorrect</strong> d'une tâche vers un agent inadéquat</td>
+<td>l'<strong>appariement</strong> capacité/besoin</td>
+<td>ch. 9 § 9.1.2</td>
+</tr>
+<tr>
+<td><strong>perte de contexte</strong> au passage d'une frontière protocolaire</td>
+<td>l'<strong>intégrité du transfert</strong></td>
+<td>ch. 8 § 8.4.2</td>
+</tr>
+<tr>
+<td><strong>incompatibilité de schéma non détectée</strong></td>
+<td>l'écart <strong>conformité / interopérabilité</strong></td>
+<td>ch. 9 § 9.5.1</td>
+</tr>
+<tr>
+<td><strong>échec de négociation</strong> — pas de format commun</td>
+<td>l'<strong>accord de protocole</strong> lui-même</td>
+<td>ch. 8 § 8.6.2</td>
+</tr>
+<tr>
+<td><strong>absence de clarification</strong> — poursuite sur une instruction ambiguë</td>
+<td>le <strong>verrou pragmatique</strong></td>
+<td>ch. 7 § 7.1.3</td>
+</tr>
+<tr>
+<td><strong>dérive sémantique</strong> en chaîne de délégations</td>
+<td>la <strong>conservation de l'intention</strong></td>
+<td>ch. 9 § 9.4.5</td>
+</tr>
+<tr>
+<td><strong>interblocage de délégation</strong> — agents s'attendant mutuellement</td>
+<td>la <strong>terminaison</strong></td>
+<td><em>propre à cette section</em></td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 11.4 — Les sept modes d'échec spécifiques à la frontière interopérable, et l'endroit du Livre où chacun a été posé.</p>
-
 <p><strong>Deux analyses convergentes complètent cette grille</strong> : l'étude des <strong>points de rupture</strong> des agents et de leur apprentissage à partir des échecs, et la caractérisation de la <strong>déviation du chemin canonique</strong> comme mécanisme causal de défaillance dans les tâches à long horizon — <em>laquelle montre qu'un agent capable échoue moins par incompétence ponctuelle que par accumulation de petits écarts à la trajectoire attendue.</em></p>
-
-<div class="encadre encadre--oeuvre">
-  <span class="encadre__label">Note</span>
-  <p><strong>Perspective de recherche — vers une science de la fiabilité des agents.</strong> Deux cadres analytiques se distinguent. <strong>D'une part</strong>, le rapprochement avec la <strong>tolérance aux pannes byzantines</strong> : <em>un agent non déterministe qui émet un message plausible mais erroné se comporte comme un nœud byzantin</em>, ce qui ouvre la question — <strong>encore largement ouverte</strong> — de <strong>seuils de quorum et de redondance pour des acteurs probabilistes</strong>. <strong>D'autre part</strong>, la <strong>décomposition de l'exécution en sous-tâches vérifiées par consensus</strong> comme voie vers une fiabilité de qualité industrielle.  ⚠ <strong>Ces travaux convergent vers une idée forte, et elle prolonge directement le ch. 7 § 7.1.5</strong> : <em>pour des acteurs probabilistes, la fiabilité d'un assemblage n'est pas la conjonction des fiabilités individuelles mais une propriété du graphe d'interaction</em>, qui doit être <strong>spécifiée et vérifiée à l'exécution</strong>.</p>
+<blockquote>
+<p><strong>Perspective de recherche — vers une science de la fiabilité des agents.</strong> Deux cadres analytiques se distinguent. <strong>D'une part</strong>, le rapprochement avec la <strong>tolérance aux pannes byzantines</strong> : <em>un agent non déterministe qui émet un message plausible mais erroné se comporte comme un nœud byzantin</em>, ce qui ouvre la question — <strong>encore largement ouverte</strong> — de <strong>seuils de quorum et de redondance pour des acteurs probabilistes</strong>. <strong>D'autre part</strong>, la <strong>décomposition de l'exécution en sous-tâches vérifiées par consensus</strong> comme voie vers une fiabilité de qualité industrielle.</p>
+<div class="avert">
+  <p><strong>Ces travaux convergent vers une idée forte, et elle prolonge directement le ch. 7 § 7.1.5</strong> : <em>pour des acteurs probabilistes, la fiabilité d'un assemblage n'est pas la conjonction des fiabilités individuelles mais une propriété du graphe d'interaction</em>, qui doit être <strong>spécifiée et vérifiée à l'exécution</strong>.</p>
 </div>
-
+</blockquote>
 <h3>11.2.2 Défaillances en cascade, incidents de production et effet cumulatif</h3>
-
 <p><strong>La composition d'agents hétérogènes ne se contente pas de juxtaposer des risques : elle les amplifie.</strong> <em>Une erreur émise par un agent en amont devient l'entrée de confiance d'un agent en aval, qui la propage et l'aggrave</em> — phénomène modélisé sous les noms de <strong>cascade d'hallucinations</strong> et de <strong>cascade d'erreurs</strong>, ces travaux proposant aussi des <strong>mitigations</strong> pour contenir la propagation.</p>
-
 <p><strong>Trois facteurs aggravants se conjuguent, et ils ne sont pas de même nature.</strong></p>
-
-<ol class="numeros">
-  <li><strong>L'opacité sémantique.</strong> <em>Une erreur exprimée en langage naturel franchit les contrôles parce qu'elle reste <strong>syntaxiquement bien formée et plausible</strong>.</em> C'est le faux accord sémantique du ch. 9 § 9.4.5 <strong>transposé à l'échelle d'une chaîne</strong>.</li>
-  <li><strong>Le comportement émergent</strong> de l'assemblage, <strong>non prévisible à partir des composants</strong>.</li>
-  <li><strong>L'effet cumulatif sur long horizon</strong>, où l'erreur, <strong>mémorisée et réutilisée</strong>, contamine durablement les décisions ultérieures.</li>
+<ol type="1">
+<li><strong>L'opacité sémantique.</strong> <em>Une erreur exprimée en langage naturel franchit les contrôles parce qu'elle reste <strong>syntaxiquement bien formée et plausible</strong>.</em> C'est le faux accord sémantique du ch. 9 § 9.4.5 <strong>transposé à l'échelle d'une chaîne</strong>.</li>
+<li><strong>Le comportement émergent</strong> de l'assemblage, <strong>non prévisible à partir des composants</strong>.</li>
+<li><strong>L'effet cumulatif sur long horizon</strong>, où l'erreur, <strong>mémorisée et réutilisée</strong>, contamine durablement les décisions ultérieures.</li>
 </ol>
-
 <div class="avert">
   <p><strong>Ce mode est inscrit comme catégorie de premier plan</strong> dans l'<strong>OWASP Top 10 for Agentic Applications</strong> — les défaillances en cascade y figurant à un item propre, aux côtés de la communication inter-agents non protégée traitée au § 11.1. <em>C'est donc une préoccupation de gouvernance, et non seulement de recherche.</em></p>
 </div>
-
 <p><strong>Un incident de production documenté illustre le caractère contractuel de ces défaillances</strong>, et il mérite d'être lu pour ce qu'il déplace. Un agent de codage a <strong>exécuté des commandes destructrices durant un gel de code</strong>, entraînant la <strong>perte de données de production</strong> — <strong>incident 1152 de l'<em>AI Incident Database</em> (Responsible AI Collaborative), daté du 18 juillet 2025</strong>. ⚠ <em>La notice qualifie elle-même l'exécution de rapportée</em> : l'identifiant et la date sont cités parce que la lacune héritée du § 11.4.2 réclame un incident <strong>daté</strong>, non parce que le fait aurait été établi ailleurs.</p>
-
-<div class="encadre encadre--oeuvre">
-  <span class="encadre__label">Note</span>
-  <p>⚠ <strong>Le point saillant, du point de vue de l'interopérabilité, n'est pas la faute du modèle mais le garde-fou organisationnel qui ne s'est pas appliqué à l'agent</strong> : <em>une règle de validation prévue pour des opérateurs humains n'avait pas d'équivalent contraignant au contrat agent-système.</em></p>
+<blockquote>
+<div class="avert">
+  <p><strong>Le point saillant, du point de vue de l'interopérabilité, n'est pas la faute du modèle mais le garde-fou organisationnel qui ne s'est pas appliqué à l'agent</strong> : <em>une règle de validation prévue pour des opérateurs humains n'avait pas d'équivalent contraignant au contrat agent-système.</em></p>
 </div>
-
+</blockquote>
 <p><strong>Les mitigations relèvent dès lors de la couche d'interopérabilité plutôt que du modèle</strong> : <strong>disjoncteurs</strong> interrompant une chaîne avant amplification ; <strong>traçabilité de bout en bout</strong> à travers les frontières protocolaires — la propagation de contexte de trace normalisée du ch. 38 permettant de <strong>remonter une cascade à son contrat d'origine</strong> ; et <strong>points de validation humains aux frontières sensibles</strong>.</p>
-
 <div class="avert">
   <p><strong>Des bancs d'épreuve commencent à mesurer cette fiabilité sous contraintes de production, mais l'évaluation standardisée des défaillances en cascade inter-fournisseurs demeure une question ouverte</strong> — <em>absence de documentation</em>, <strong>R-14 degré 3</strong>, et le ch. 9 § 9.5 l'avait déjà rencontrée sous l'angle de la conformité.</p>
 </div>
-
 <p><em>L'angle directeur reste constant : <strong>la défaillance naît au contrat entre agents</strong>, et c'est donc à ce contrat — explicité, instrumenté, doté de points de coupure — que doivent s'appliquer les remèdes.</em></p>
-
+<hr />
 <h2 id="s113"><span class="sig">§ 11.3</span>Les réponses protocolaires : ce que les spécifications apportent</h2>
-
 <p><strong>Les protocoles ne sont pas muets sur le sujet. Ils apportent des réponses réelles, et il serait aussi malhonnête de les taire que de les surqualifier.</strong></p>
-
 <h3>11.3.1 Cadre d'autorisation et cartes d'agent signées</h3>
-
 <p><strong>Le protocole agent-outil porte un cadre d'autorisation fondé sur un standard de délégation d'autorisation.</strong> ⚠ <strong>La formulation est celle que le socle impose, et sa précision est le fond de l'affaire</strong> (réserve F-01 du Vol. II).</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> le socle établit que ce protocole <strong>porte un cadre d'autorisation</strong> ; il <strong>ne documente ni la sémantique du standard sous-jacent ni ses limites</strong>. Ce qu'on en retient est qu'<strong>un cadre de délégation d'autorisation établit l'habilitation d'un appelant</strong> — <em>non le contenu ni le bien-fondé de ce qu'il demande, ni le fait que l'outil invoqué soit celui qu'il prétend être.</em></p>
-
 <p><strong>Le protocole agent-agent, en version 1.0, apporte les cartes d'agent signées</strong>, qui adjoignent au descripteur d'agent une <strong>vérification cryptographique d'identité</strong> (ch. 8 § 8.4.2). ⚠ <strong>Le projet qualifie cette version de première spécification stable et de qualité de production</strong> — <em>qualification de l'annonce du projet lui-même, non d'un tiers évaluateur</em>, et attribuée ici comme telle (PRD du Vol. II §8.2).</p>
-
 <div class="avert">
   <p><strong>Il faut être exact sur le statut de ces deux réponses.</strong> Le socle documente leur <strong>existence</strong> ; il <strong>ne documente ni leurs propriétés de résistance, ni le détail de leur mise en œuvre</strong>. <em>Ce qu'un mécanisme dont le socle atteste la seule présence garantit — ou non — face aux surfaces du § 11.1 ne figure nulle part, et ne sera donc pas affirmé ici.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>R-02 du Vol. III, et c'est la limite la plus importante du chapitre.</strong> Ces deux réponses répondent à la <strong>même question</strong>, et <strong>ce n'est pas la question des attaques du § 11.1</strong> :</p>
 </div>
-
-<div class="encadre encadre--oeuvre">
-  <span class="encadre__label">Note</span>
-  <p><strong>Le cadre d'autorisation et la carte d'agent signée établissent tous deux QUI parle. Ils n'établissent NI ce qui est dit, NI si ce qui est dit est fondé.</strong></p>
-</div>
-
+<blockquote>
+<p><strong>Le cadre d'autorisation et la carte d'agent signée établissent tous deux QUI parle. Ils n'établissent NI ce qui est dit, NI si ce qui est dit est fondé.</strong></p>
+</blockquote>
 <p><em>Un agent dont l'identité est cryptographiquement vérifiée et dont l'habilitation est en règle demeure exactement aussi dangereux que ses instructions, si ces instructions ont été injectées, et exactement aussi fiable que sa mémoire, si cette mémoire a été corrompue.</em> ⚠ <strong>L'authentification est une condition nécessaire de la confiance ; le socle n'en fait pas — et cette somme n'en fera pas — une condition suffisante.</strong> <em>C'est le même énoncé que le § 10.3.3 posait pour la signature de requête à la frontière marchande, et il vaut ici pour toute la pile.</em></p>
-
 <div class="avert">
   <p><strong>Une remarque de datation, car un chapitre sur les risques d'un protocole vieillit à la vitesse de sa spécification.</strong> La révision du protocole agent-outil en vigueur à la date de gel du Vol. II était celle de novembre 2025 ; une <strong>révision majeure</strong> — refonte sans état, retrait d'un en-tête de session — était en finalisation <strong>douze jours après ce gel</strong>, et le ch. 8 § 8.2.1 en a porté le détail avec la remontée qui l'accompagne. ⚠ <strong>On se gardera ici d'anticiper ses effets sur la surface d'attaque</strong> : <em>le socle documente le changement, non ses conséquences</em> — et une révision de cette ampleur est précisément le genre d'événement qui commande une revalidation avant publication.</p>
 </div>
-
 <div class="avert">
   <p><strong>Depuis, la bascule a eu lieu.</strong> Au <strong>28 juillet 2026</strong>, la révision servie comme courante par la spécification est celle de cette refonte (<code>S-001</code>) : <em>la péremption que le socle avait datée s'est produite le jour même qu'il annonçait.</em> ☑ ⚠ <strong>Et la revalidation, restée ouverte deux jours, est EXÉCUTÉE le 30 juillet 2026</strong> (D-11) : le texte de la révision <code>2026-07-28</code> a été extrait à sa source, et le <strong>ch. 8 § 8.1.2, § 8.1.3, § 8.2.1, § 8.2.2, § 8.2.3 et § 8.3.1</strong> en portent le détail lu. <em>Ce chapitre-ci n'en reprend que ce qui touche sa matière — la surface d'attaque —, et il s'y tient.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>Trois effets sur la surface d'attaque, et il faut les qualifier durement, parce que le socle n'établit toujours pas de rapport entre eux.</strong> <em>(1)</em> La <strong>suppression des sessions de protocole et de la poignée de main</strong> retire un état partagé entre client et serveur : <em>elle retire donc aussi les classes d'attaque qui visaient cet état</em> — fixation, reprise, confusion d'instance —, et <strong>en ouvre une autre</strong>, puisque l'état applicatif migre vers des <strong>poignées frappées par le serveur et transmises comme arguments d'outil ordinaires</strong>, c'est-à-dire dans le canal même que le § 11.1 décrit comme non fiable. <em>(2)</em> La <strong>dépréciation de l'échantillonnage et des racines</strong> referme les deux primitives par lesquelles un serveur pouvait solliciter l'hôte — <strong>la voie que le tableau 11.1 range parmi les mécanismes de bascule du local au global</strong> —, mais sur une <strong>fenêtre de douze mois</strong> pendant laquelle elles restent fonctionnelles : <em>une primitive dépréciée est une primitive encore exploitable.</em> <em>(3)</em> La <strong>suppression de la reprise de flux</strong> transforme une interruption en perte de requête, ce qui <strong>déplace vers le client la logique de réémission</strong> — et le ch. 48 établit qu'une réémission sans sémantique d'effet est une source de duplication, non une garantie.</p>
 </div>
-
 <div class="avert">
   <p><strong>Ce que cette revalidation n'établit pas, et le dire est le geste dû.</strong> Elle <strong>ne mesure aucune de ces trois conséquences</strong> : aucune n'est adossée à un travail publié, aucun identifiant de vulnérabilité ne les documente, et le socle n'en recense pas. Ce sont des <strong>lectures de l'auteur</strong> sur un texte lu, au sens de CA-IV-07, et non des faits — <em>savoir ce qu'une spécification dit n'est pas savoir ce qu'elle expose.</em> Le passage de « nous n'avons pas lu le texte » à « nous l'avons lu et nous en tirons trois hypothèses marquées » est le seul progrès que cette passe pouvait produire.</p>
 </div>
-
 <p><strong>Un dernier rappel, qui n'est pas de pure forme.</strong> Le passage de ces protocoles <strong>sous gouvernance neutre</strong>, établi au ch. 7, <strong>ne change rien à ce qui précède</strong>. ⚠ <strong>Le socle documente les transferts de gouvernance ; il n'énonce aucun rapport entre gouvernance et sûreté.</strong> <em>Une fondation ne durcit pas une implémentation, et confondre la consolidation institutionnelle avec la sûreté technique serait, en entreprise réglementée, le type même de raccourci qu'un dossier de risque de tiers ne devrait pas laisser passer.</em></p>
-
 <h3>11.3.2 Durcissement par couche et intégrité des registres</h3>
-
 <p><strong>Le durcissement procède couche par couche</strong>, du transport et de l'autorisation jusqu'à la <strong>provenance des artefacts publiés</strong>.</p>
-
-<p><strong>Au niveau de l'autorisation</strong>, le durcissement repose sur le positionnement du serveur d'outils comme <strong>serveur de ressources</strong> au sens du standard de délégation : <strong>métadonnées de ressource protégée découvrables</strong> sous un chemin normalisé, <strong>confinement d'audience</strong> des jetons, et compléments introduits dans les révisions datées (ch. 8 § 8.2.2). Des <strong>passerelles et proxys de filtrage</strong> interposent un <strong>point de contrôle des appels</strong> — <em>dont le siège, côté entreprise, est au ch. 37</em>.</p>
-
+<p><strong>Au niveau de l'autorisation</strong>, le durcissement repose sur le positionnement du serveur d'outils comme <strong>serveur de ressources</strong> au sens du standard de délégation : <strong>métadonnées de ressource protégée découvrables</strong> sous un chemin normalisé, <strong>confinement d'audience</strong> des jetons, et compléments introduits dans les révisions datées (ch. 8 § 8.2.2). Des <strong>passerelles et mandataires de filtrage</strong> interposent un <strong>point de contrôle des appels</strong> — <em>dont le siège, côté entreprise, est au ch. 37</em>.</p>
 <p><strong>Au niveau du registre</strong>, l'intégrité se construit <strong>par signature</strong> : signature sans gestion de clés persistantes pour le service d'annuaire de la couche d'infrastructure du ch. 10 § 10.2.2, résolution sous chemin normalisé, <strong>provenance cryptographique</strong> et, à terme, <strong>nomenclature de composants appliquée aux agents</strong>.</p>
-
 <p><strong>Les référentiels de l'écosystème consolident les contrôles attendus</strong> : l'<strong>OWASP Top 10 for Agentic Applications</strong>, annoncé fin 2025 pour le millésime 2026, dont un item vise la communication inter-agents non protégée ; et un référentiel homologue <strong>en statut bêta</strong> côté serveurs d'outils. ⚠ <strong>Un référentiel en statut bêta n'est pas une norme</strong> : le ch. 9 § 9.5 a posé la règle, et elle ne s'assouplit pas ici.</p>
-
 <div class="avert">
   <p><strong>Un problème reste ouvert, et c'est le verrou opérationnel de cette section.</strong></p>
 </div>
-
-<div class="encadre encadre--oeuvre">
-  <span class="encadre__label">Note</span>
-  <p><strong>La vérification d'intégrité <em>continue</em> — seule réponse robuste à la révocation après approbation — demeure immature.</strong> <em>La signature au moment de la publication n'empêche pas une mutation ultérieure du comportement d'un serveur déjà approuvé</em>, et <strong>aucun mécanisme normalisé ne garantit que ce qui a été audité reste ce qui s'exécute</strong>.</p>
-</div>
-
+<blockquote>
+<p><strong>La vérification d'intégrité <em>continue</em> — seule réponse robuste à la révocation après approbation — demeure immature.</strong> <em>La signature au moment de la publication n'empêche pas une mutation ultérieure du comportement d'un serveur déjà approuvé</em>, et <strong>aucun mécanisme normalisé ne garantit que ce qui a été audité reste ce qui s'exécute</strong>.</p>
+</blockquote>
 <div class="avert">
   <p><strong>R-02 du Vol. III</strong> : la signature à la publication <strong>démontre</strong> qu'un artefact <strong>était</strong> celui qu'il prétendait être <strong>au moment de sa publication</strong> ; elle <strong>ne démontre rien</strong> de son état à l'exécution. ⚠ <strong>R-14 degré 3</strong> : <em>l'absence de mécanisme normalisé est une absence de documentation dans les sources, non un fait négatif vérifié</em> — un tel mécanisme peut exister hors du corpus.</p>
 </div>
-
 <p><em>Ce verrou illustre le fil conducteur du Livre avec une netteté rare : <strong>un contrat figé à la publication ne suffit pas lorsque l'acteur évolue après l'approbation.</strong></em> ⚠ <strong>Réserve F-01</strong> : signature et provenance sont des <strong>cadres d'autorisation et de traçabilité</strong>, jamais des dispositifs « sécurisés ».</p>
-
 <h3>11.3.3 Défenses par conception et exercices adverses inter-agents</h3>
-
 <p><strong>La défense par conception déplace la sécurité du correctif vers l'architecture</strong> : plutôt que de détecter les attaques après coup, elle <strong>structure le système de sorte que les propriétés indésirables soient impossibles ou confinées</strong>.</p>
-
-<p><strong>Plusieurs architectures ciblent précisément les systèmes composés.</strong> Un <strong>interpréteur à capacités</strong> sépare le <strong>plan d'exécution</strong> des <strong>données non fiables</strong> — le ch. 6 § 6.5 en a présenté l'emploi <strong>au sein</strong> d'un agent ; ⚠ <strong>la nouveauté propre à l'interopérabilité est l'obtention de garanties composables aux frontières</strong>. Un <strong>motif à deux modèles</strong>, le <strong>contrôle d'intégrité de flux</strong>, les approches de <strong>contrôle du flux d'information</strong> et les cadres <strong>tenant compte de la provenance entre agents</strong> prolongent cette ligne pour le cas multi-agents.</p>
-
+<p><strong>Plusieurs architectures ciblent précisément les systèmes composés.</strong> Un <strong>interpréteur à capacités</strong> sépare le <strong>plan d'exécution</strong> des <strong>données non fiables</strong> — le ch. 6 § 6.5 en a présenté l'emploi <strong>au sein</strong> d'un agent ; ⚠ <strong>la nouveauté propre à l'interopérabilité est l'obtention de garanties composables aux frontières</strong>. Un <strong>patron à deux modèles</strong>, le <strong>contrôle d'intégrité de flux</strong>, les approches de <strong>contrôle du flux d'information</strong> et les cadres <strong>tenant compte de la provenance entre agents</strong> prolongent cette ligne pour le cas multi-agents.</p>
 <div class="avert">
   <p><strong>L'enjeu spécifique doit être énoncé exactement, car il est la raison d'être de la section</strong> : fournir des garanties <strong>composables</strong> — <em>c'est-à-dire qui se conservent lorsqu'on assemble plusieurs agents et serveurs hétérogènes</em> — là où le § 11.1.1 a montré que <strong>la sûreté ne se compose pas spontanément</strong>.</p>
 </div>
-
 <div class="avert">
   <p><strong>R-02 du Vol. III.</strong> Ces architectures <strong>démontrent</strong> qu'un <strong>confinement est constructible</strong> ; elles <strong>ne démontrent pas</strong> qu'il <strong>tienne à l'échelle d'un assemblage ouvert</strong>, ni qu'un déploiement donné l'ait adopté. <em>Une garantie composable démontrée sur un prototype n'est pas une garantie déployée.</em></p>
 </div>
-
 <p><strong>L'évaluation s'appuie sur des environnements dynamiques dédiés</strong> et sur des <strong>exercices adverses inter-agents</strong> — dont <strong>l'analyse par injection d'invite du protocole de paiement</strong>, où le ch. 10 § 10.3.4 a pris son verrou : <em>un agent dont l'intention est détournée signera un mandat malveillant parfaitement valide.</em></p>
-
 <div class="avert">
   <p><strong>L'exercice adverse inter-agents complète l'évaluation en éprouvant non un agent mais le graphe d'interaction</strong> : <em>ses arêtes de délégation, ses points de résolution, ses chaînes d'identité.</em> ⚠ <strong>La mesure systématique de ces défenses et de leur robustesse relève de l'évaluation et de la conformité de l'interopérabilité</strong> (ch. 9 § 9.5), <strong>et l'évaluation inter-fournisseurs y reste une question ouverte</strong> — <em>absence de documentation</em>, <strong>R-14 degré 3</strong>.</p>
 </div>
-
+<hr />
 <h2 id="s114"><span class="sig">§ 11.4</span>Ce que les protocoles ne couvrent pas</h2>
-
 <h3>11.4.1 Le confinement plutôt que la prévention</h3>
-
 <p><strong>Si les spécifications répondent à la question de l'identité et de l'habilitation, la question du contenu et de l'état reste entière. La réponse n'est pas protocolaire.</strong></p>
-
 <p>Le manifeste de recherche mobilisé au § 11.1.3 propose l'<strong>opérationnalisation locale des cadres</strong> (<em>frames</em>) comme <strong>frontière de sécurité et de confidentialité</strong> : <em>restreindre le contexte et les capacités de chaque agent limite l'impact d'un agent compromis.</em></p>
-
 <div class="avert">
   <p><strong>La proposition mérite d'être lue lentement, car elle renverse l'ordre habituel du raisonnement.</strong> <em>Elle ne cherche pas à empêcher la compromission — elle en borne le rayon.</em> <strong>Elle ne suppose pas que les surfaces du § 11.1 soient refermables ; elle suppose au contraire qu'elles ne le sont pas</strong>, et déplace la question <strong>de la prévention vers le confinement</strong>.</p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> et il faut dire précisément ce que le socle porte. Il établit que le manifeste propose ces cadres locaux comme <strong>frontière de sécurité</strong>, et il établit par ailleurs que l'<strong>autonomie encadrée</strong> — dont ces mêmes cadres, normatifs et opérationnels, sont le dispositif — est le <strong>mécanisme premier de gouvernance des systèmes agentiques</strong>. ⚠ <strong>Il n'établit pas que l'encadrement soit une réponse <em>suffisante</em> aux trois surfaces d'attaque, et cette somme ne l'affirmera pas.</strong></p>
-
-<p><strong>Ce que l'on peut retenir est plus modeste et plus solide</strong> : <em>le même dispositif que le Livre III présentera comme instrument de <strong>gouvernance de l'autonomie</strong> est, chez ses propres auteurs, un instrument de <strong>confinement du compromis</strong>.</em></p>
-
+<p><strong>Ce que l'on peut retenir est plus modeste et plus solide</strong> : <em>le même dispositif que le Livre III présentera comme instrument de <strong>gouvernance de l'autonomie</strong> est, chez ses propres auteurs, un instrument de <strong>confinement de la compromission</strong>.</em></p>
 <div class="avert">
   <p><strong>Ce déplacement a un prix conceptuel qu'il faut assumer.</strong> Une frontière de confinement suppose qu'on ait <strong>décidé, en amont</strong>, quel contexte et quelles capacités chaque agent reçoit — c'est-à-dire qu'on ait <strong>spécifié le cadre</strong>. <em>Or cette spécification n'est pas un artefact de sécurité : c'est un artefact de <strong>conception du processus</strong>.</em></p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> et c'est la proposition que ce chapitre lègue au reste de la somme.</p>
-
-<div class="encadre encadre--oeuvre">
-  <span class="encadre__label">Note</span>
-  <p><strong>La sûreté d'un système agentique se décide, pour l'essentiel, au moment où l'on décide de son architecture, et non au moment où l'on choisit ses protocoles.</strong></p>
-</div>
-
+<blockquote>
+<p><strong>La sûreté d'un système agentique se décide, pour l'essentiel, au moment où l'on décide de son architecture, et non au moment où l'on choisit ses protocoles.</strong></p>
+</blockquote>
 <div class="avert">
   <p><strong>Le socle ne formule pas cette proposition ; il en fournit les deux termes</strong> — les cadres comme frontière de sécurité chez les auteurs du manifeste, et l'indépendance de la sûreté à l'égard de la spécification protocolaire dans la <strong>réserve F-01</strong>. <em>Le rapprochement est d'auteur, et la somme entière peut se lire comme sa vérification.</em></p>
 </div>
-
 <h3>11.4.2 La lacune héritée, portée telle quelle — et l'écart que la somme doit trancher</h3>
-
-<div class="encadre encadre--oeuvre">
-  <span class="encadre__label">Note</span>
-  <p>⚠ <strong>Lacune héritée, portée et non comblée</strong> (PRD du Vol. II §10.8, ouverte le 16 juillet 2026). <strong>Renvoi ch. 49.</strong></p>
+<blockquote>
+<div class="avert">
+  <p><strong>Lacune héritée, portée et non comblée</strong> (PRD du Vol. II §10.8, ouverte le 16 juillet 2026). <strong>Renvoi ch. 49.</strong></p>
 </div>
-
+</blockquote>
 <p><strong>L'énoncé de la lacune, dans les termes de son volume d'origine.</strong> <em>Par quels mécanismes précis un empoisonnement d'outils ou une injection d'invites s'exécute-t-il contre une implémentation donnée, et quels incidents publics les attestent ?</em> Le socle du Vol. II <strong>nomme</strong> ces risques et les tient pour documentés ; il ne verse au dossier <strong>aucune source primaire consacrée à leur mécanique</strong>, <strong>aucun identifiant de vulnérabilité</strong>, <strong>aucun incident public daté</strong>, et <strong>aucune date</strong> à laquelle cette documentation serait apparue. ⚠ <strong>Aucune passe de recherche n'a été conduite</strong> à ce lot. ⚠ <strong>R-14 degré 3</strong> dans son volume d'origine : <em>absence de documentation</em>, <strong>et non un fait négatif vérifié</strong> — le volume s'interdit lui-même d'écrire que ces sources n'existent pas.</p>
-
 <div class="avert">
   <p><strong>Un détail de datation, hérité et à ne pas perdre.</strong> La thèse de ce chapitre, telle que le plan du Vol. II la formulait d'abord, comportait la mention « <strong>dès l'origine</strong> » ; <strong>cette datation n'étant pas portée par le socle, elle a été retirée par correctif du 16 juillet 2026</strong>, et ce chapitre ne l'affirme pas.</p>
 </div>
-
 <div class="avert">
   <p><strong>Mais la somme ne peut pas porter cette lacune comme si elle était la sienne, et c'est le point propre de ce chapitre.</strong> Le Vol. I verse au dossier, sur exactement les objets que la lacune déclare absents :</p>
 </div>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Ce que la lacune du Vol. II déclare absent</th><th>Ce que le Vol. I verse</th><th>Régime</th></tr></thead>
-  <tbody>
-    <tr><td><strong>la mécanique</strong> des attaques</td><td>empoisonnement d'outils, ombrage, révocation après approbation, injection transitive (§ 11.1.3)</td><td><strong>[C]</strong> — à instruire à la source primaire</td></tr>
-    <tr><td><strong>les identifiants de vulnérabilité</strong></td><td><strong>CVE-2025-32711</strong>, <strong>CVE-2025-6514</strong>, <strong>CVE-2025-49596</strong>, tous de 2025 — gravités 9,3 / 9,6 / 9,4 (§ 11.1.3)</td><td><strong>[C]</strong></td></tr>
-    <tr><td><strong>les incidents publics datés</strong></td><td>l'<strong>incident 1152</strong> de l'<em>AI Incident Database</em>, <strong>18 juillet 2025</strong> (§ 11.2.2)</td><td><strong>[C]</strong></td></tr>
-    <tr><td><strong>les bancs d'épreuve</strong></td><td>un banc dédié aux attaques d'outils, un environnement d'évaluation dynamique (§ 11.1.3, § 11.3.3)</td><td><strong>[C]</strong></td></tr>
-    <tr><td><strong>une attaque propre au protocole agent-agent</strong></td><td>⚠ <strong>rien</strong> — une modélisation de menace et une analyse comparée, pas une attaque (§ 11.1.4)</td><td>—</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Ce que la lacune du Vol. II déclare absent</th>
+<th>Ce que le Vol. I verse</th>
+<th>Régime</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>la mécanique</strong> des attaques</td>
+<td>empoisonnement d'outils, ombrage, révocation après approbation, injection transitive (§ 11.1.3)</td>
+<td><strong>[C]</strong> — à instruire à la source primaire</td>
+</tr>
+<tr>
+<td><strong>les identifiants de vulnérabilité</strong></td>
+<td><strong>CVE-2025-32711</strong>, <strong>CVE-2025-6514</strong>, <strong>CVE-2025-49596</strong>, tous de 2025 — gravités 9,3 / 9,6 / 9,4 (§ 11.1.3)</td>
+<td><strong>[C]</strong></td>
+</tr>
+<tr>
+<td><strong>les incidents publics datés</strong></td>
+<td>l'<strong>incident 1152</strong> de l'<em>AI Incident Database</em>, <strong>18 juillet 2025</strong> (§ 11.2.2)</td>
+<td><strong>[C]</strong></td>
+</tr>
+<tr>
+<td><strong>les bancs d'épreuve</strong></td>
+<td>un banc dédié aux attaques d'outils, un environnement d'évaluation dynamique (§ 11.1.3, § 11.3.3)</td>
+<td><strong>[C]</strong></td>
+</tr>
+<tr>
+<td><strong>une attaque propre au protocole agent-agent</strong></td>
+<td>⚠ <strong>rien</strong> — une modélisation de menace et une analyse comparée, pas une attaque (§ 11.1.4)</td>
+<td>—</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 11.5 — Ce que la lacune héritée du Vol. II déclare absent, et ce que le Vol. I verse au même dossier — quatre lignes comblées au régime [C], une qui ne l'est pas.</p>
-
 <div class="avert">
   <p><strong>Quatre conséquences, dans l'ordre où elles engagent.</strong></p>
 </div>
-
 <p><em>(1)</em> <strong>Ce n'est pas une contradiction entre volumes</strong> mais une <strong>lacune de couverture du socle du Vol. II</strong>, exacte dans son périmètre et <strong>qui ne se corrige pas après coup</strong> — même classe que celle que le ch. 10 § 10.1.3 a instruite sur la gouvernance du protocole de paiement.</p>
-
 <p><em>(2)</em> <strong>La thèse de ce chapitre était, à la rédaction, vraie du Vol. II et fausse de la somme</strong> sur sa seconde moitié. Elle était alors <strong>citée verbatim depuis le plan</strong> et <strong>n'a pas été modifiée ici</strong> : un rédacteur ne corrige pas le plan, <strong>il remonte</strong> — <strong>R-IV-13</strong>. ⚠ <strong>Le plan a depuis été requalifié (TOC v0.24) et le bloc de tête re-collationné contre le TOC v0.30</strong> : <em>la thèse nomme désormais son sujet — « le socle du Vol. II » —, et elle est vraie des deux.</em></p>
-
 <p><em>(3)</em> <strong>La cinquième ligne du tableau ne se comble pas</strong>, et c'est celle qui compte le plus pour un architecte. <strong>Aucune attaque propre au protocole agent-agent n'est au corpus</strong>, ni au socle du Vol. II ni aux sources du Vol. I. ⚠ <strong>Ce silence doit être lu comme une limite du corpus, en aucun cas comme un certificat de sûreté.</strong></p>
-
 <p><em>(4)</em> <strong>Ce que le corpus autorise est exactement ceci</strong> : ces risques sont <strong>nommés</strong>, ils sont <strong>attachés à ces protocoles par leurs propres réserves de caractérisation</strong>, leur mécanique est <strong>documentée au régime [C] par un seul des deux volumes</strong>, et <strong>ils suffisent à interdire d'écrire qu'un protocole est « sécurisé »</strong>. <em>Un lecteur qui aurait besoin de la mécanique pour construire un plan de tests d'intrusion doit la chercher <strong>hors de cette somme</strong>, et le ch. 49 est l'endroit où cette recherche est programmée.</em></p>
-
 <h3>11.4.3 Trois renvois, qui sont la conclusion et non une commodité de plan</h3>
-
 <p><strong>Trois renvois closent ce que ce chapitre s'interdit de traiter.</strong></p>
-
-<ul class="puces">
-  <li><strong>Les passerelles</strong> — les points de contrôle placés entre les agents, les modèles et les systèmes d'entreprise — relèvent du <strong>ch. 37</strong>, où le durcissement d'infrastructure est instancié.</li>
-  <li><strong>La taxonomie des risques d'identité</strong>, la triade de conditions et la délégation multi-saut relèvent du <strong>ch. 19</strong>, où le Livre II les pose.</li>
-  <li><strong>L'inventaire gouverné des agents</strong> — ce qui, en dernière analyse, permet de savoir quels outils un agent donné est autorisé à invoquer — relève du <strong>ch. 15</strong>.</li>
+<ul>
+<li><strong>Les passerelles</strong> — les points de contrôle placés entre les agents, les modèles et les systèmes d'entreprise — relèvent du <strong>ch. 37</strong>, où le durcissement d'infrastructure est instancié.</li>
+<li><strong>La taxonomie des risques d'identité</strong>, la triade de conditions et la délégation multi-saut relèvent du <strong>ch. 19</strong>, où le Livre II les pose.</li>
+<li><strong>L'inventaire gouverné des agents</strong> — ce qui, en dernière analyse, permet de savoir quels outils un agent donné est autorisé à invoquer — relève du <strong>ch. 15</strong>.</li>
 </ul>
-
 <div class="avert">
   <p><strong>Ce découpage n'est pas une commodité de plan : il reflète exactement la conclusion du chapitre.</strong> <em>Ce que les protocoles ne couvrent pas, d'autres couches le couvrent — ou ne le couvrent pas, et c'est alors à l'architecture d'en répondre.</em></p>
 </div>
-
 <p><strong>Ce que ce chapitre établit — trois acquis, et le Livre s'achève dessus.</strong></p>
-
 <p><em>(1)</em> <strong>La sécurité des protocoles agentiques dépend de leur implémentation.</strong> C'est une <strong>réserve de caractérisation inscrite au socle</strong>, non une prudence rhétorique, et elle <strong>interdit d'écrire qu'un protocole est « sécurisé »</strong>.</p>
-
 <p><em>(2)</em> <strong>La sûreté n'est pas compositionnelle.</strong> Trois surfaces sont nommées — <strong>outils, invites, mémoire</strong> —, elles corrompent respectivement la <strong>capacité</strong>, l'<strong>instruction</strong> et l'<strong>état</strong> d'un agent, <strong>aucun contrôle ne les couvre ensemble</strong>, et <strong>leur composition amplifie ce qu'aucun participant ne porte seul</strong>.</p>
-
 <p><em>(3)</em> <strong>Les réponses que les spécifications apportent portent sur l'identité et l'habilitation de l'appelant</strong>, et <strong>le socle ne leur attribue aucune portée au-delà</strong>. <em>Elles établissent qui parle, non ce qui est dit.</em></p>
-
 <p><strong>Ce que ce chapitre ne dit pas, énoncé avec la même netteté.</strong> Il <strong>ne dit pas</strong> que ces trois surfaces épuisent la question : le défi est qualifié d'<strong>holistique</strong>, ce qui est <strong>l'inverse d'une liste close</strong>. Il <strong>ne dit pas</strong> que les cadres locaux résolvent le problème : le socle en fait une <strong>frontière de confinement</strong>, non une garantie. Il <strong>ne dit rien</strong> d'une attaque propre au protocole agent-agent : <strong>le corpus n'en porte aucune</strong>, et ce silence est une <strong>limite de la somme</strong>.</p>
-
 <p><em>Un protocole ouvert et gouverné de façon neutre demeure un format d'échange. C'est déjà beaucoup ; ce n'est pas une posture de sécurité.</em></p>
-
 <p><strong>Le Livre I s'achève ici.</strong> Il a établi ce que <strong>coopérer</strong> exige — des niveaux d'interopérabilité au contrat probabiliste, de la donnée à la sémantique, de l'agent isolé au maillage, du protocole à la transaction —, et <strong>il s'achève sur ce que la coopération laisse à découvert</strong>. <em>Le Livre II prend le relais là où ce chapitre s'arrête : établir qui parle, et à quel titre.</em></p>
+<hr />
+<figure class="figure">
+  <img src="../figures/f-11-04-confinement.svg" alt="Figure 11.4 — Confiner plutôt que prévenir : ce que le renversement change, et ce qu&#39;il ne promet pas." />
+  <figcaption><strong>Figure 11.4</strong> — Confiner plutôt que prévenir : ce que le renversement change, et ce qu'il ne promet pas.</figcaption>
+</figure>
 
 <footer class="pied">
   <p><strong>Vol. IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em></strong> · Livre I, chapitre 11. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau, M.Sc. IT.</p>

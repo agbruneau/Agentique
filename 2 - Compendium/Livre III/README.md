@@ -80,7 +80,7 @@ publiable**.
 ⚠ **Ce tableau est un constat daté et deux de ses lignes ont été DÉPASSÉES depuis — le rappel est du
 8 août 2026, il ne réécrit rien.** ☑ **La porte G-3 est franchie le 28 juillet 2026** et le socle
 consolidé ne compte plus zéro entrée mais **159**, `S-001`…`S-159`
-([`PRD/socle-consolide.md`](../PRD/socle-consolide.md) ; `python PRD/check-compendium.py` → *P1-P8,
+([`PRD/socle-consolide.md`](../PRD/socle-consolide.md) ; `python PRD/check-compendium.py` → *P1-P10,
 sortie 0*). ☑ **La table `SIEGES` porte 26 sièges sur 50 pièces** (`python PRD/check-sieges.py`).
 ⚠ **Rien d'autre n'a bougé** : *aucun énoncé n'est central au sens de CA-IV-01, CA-IV-11 et CA-IV-13
 demeurent non satisfaisables, et les pièces restent un brouillon arrêté, non publiable* — **une porte
@@ -168,9 +168,11 @@ conspectus : il remonte* (PRD, Annexe A) :
 
 ## Volumétrie réelle — l'enveloppe n'est plus tenue, et la compensation qui la tenait s'est défaite
 
-☑ **Mesure du jour : 99 875 mots** de corps pour les quinze pièces, relevés le **10 août 2026** par
+☑ **Mesure du jour : 100 354 mots** de corps pour les quinze pièces, relevés le **2 septembre 2026** au terme de la passe de fond (**D-16**) par
 [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — contre une enveloppe de
-Livre de **90 000** au TOC, soit **+11,0 %**.
+Livre de **90 000** au TOC, soit **+11,5 %**.
+
+⚠ *Le Livre portait **99 875 mots** avant la passe de fond, et **100 354** après — soit **+479**, **entièrement d'appareil** : reprises datées, remontées soldées, revalidations consignées. **Aucun énoncé de fond n'a été ajouté.***
 
 ⚠ **Le chiffre publié ici — 91 477 mots au 28 juillet 2026 — ne se reproduit plus, et les pièces de ce
 dossier le démentaient déjà.** Le champ *Volumétrie cible* du
@@ -184,24 +186,24 @@ ont été posées dans les pièces le 31 juillet 2026**, et la légende de chacu
 commande mesure ; *quatorze des quinze pièces en portent au moins une, le ch. 28 aucune.*
 **Le cardinal courant d'une pièce se lit à son champ *Volumétrie cible*, jamais ici.**
 
-| Pièce | Cible dérivée | Réel (28 juill.) | Écart | Réel (27 juill.) |
-|---|---|---|---|---|
-| [Ch. 22](22-options-orchestration-paradigme-apm.md) | 8 500 | **8 464** | −0,4 % | 8 459 |
-| [Ch. 23](23-frameworks-orchestration-entreprise.md) | 5 000 | **4 435** | −11,3 % | 4 421 |
-| [Ch. 24](24-passage-echelle-entreprise.md) | 9 500 | **12 628** | **+32,9 %** | 12 530 |
-| [Ch. 25](25-e23-risque-modele.md) | 7 000 | **6 142** | −12,3 % | 6 069 |
-| [Ch. 26](26-vide-federal-c27-c36.md) | 2 500 | **2 316** | −7,4 % | 2 316 |
-| [Ch. 27](27-quebec-amf-article-12-1.md) | 7 500 | **6 984** | −6,9 % | 6 905 |
-| [Ch. 28](28-valeurs-mobilieres-acvm-11-348.md) | 2 500 | **2 379** | −4,8 % | 2 331 |
-| [Ch. 29](29-pont-frames-deterministes.md) | 4 000 | **4 580** | +14,5 % | 4 577 |
-| [Ch. 30](30-maillage-reglementaire-normalisation.md) | 7 500 | **8 017** | +6,9 % | 7 941 |
-| [Ch. 31](31-vertical-financier-durcisseurs.md) | 8 500 | **8 517** | +0,2 % | 8 084 |
-| [Ch. 32](32-cadre-bancaire-consommateur.md) | 3 500 | **3 271** | −6,5 % | 3 086 |
-| [Ch. 33](33-iso-20022-lynx-rtr.md) | 3 500 | **2 859** | **−18,3 %** | 2 804 |
-| [Ch. 34](34-sous-domaines-financiers.md) | 9 500 | **9 629** | +1,4 % | 9 562 |
-| [Ch. 35](35-etudes-de-cas-production-canadienne.md) | 6 000 | **6 800** | +13,3 % | 6 783 |
-| [Ch. 36](36-prospective-ap2-rails-canadiens.md) | 5 000 | **4 456** | −10,9 % | 4 383 |
-| **Livre** | **90 000** | **91 477** | **+1,6 %** | 90 251 |
+| Pièce | Cible dérivée | Réel (28 juill.) | Écart | Réel (27 juill.) | **Réel (2 sept. 2026)** |
+|---|---|---|---|---|---|
+| [Ch. 22](22-options-orchestration-paradigme-apm.md) | 8 500 | **8 464** | −0,4 % | 8 459 | **8 761** |
+| [Ch. 23](23-frameworks-orchestration-entreprise.md) | 5 000 | **4 435** | −11,3 % | 4 421 | **5 059** |
+| [Ch. 24](24-passage-echelle-entreprise.md) | 9 500 | **12 628** | **+32,9 %** | 12 530 | **13 073** |
+| [Ch. 25](25-e23-risque-modele.md) | 7 000 | **6 142** | −12,3 % | 6 069 | **6 388** |
+| [Ch. 26](26-vide-federal-c27-c36.md) | 2 500 | **2 316** | −7,4 % | 2 316 | **2 551** |
+| [Ch. 27](27-quebec-amf-article-12-1.md) | 7 500 | **6 984** | −6,9 % | 6 905 | **7 521** |
+| [Ch. 28](28-valeurs-mobilieres-acvm-11-348.md) | 2 500 | **2 379** | −4,8 % | 2 331 | **2 532** |
+| [Ch. 29](29-pont-frames-deterministes.md) | 4 000 | **4 580** | +14,5 % | 4 577 | **5 202** |
+| [Ch. 30](30-maillage-reglementaire-normalisation.md) | 7 500 | **8 017** | +6,9 % | 7 941 | **8 528** |
+| [Ch. 31](31-vertical-financier-durcisseurs.md) | 8 500 | **8 517** | +0,2 % | 8 084 | **9 334** |
+| [Ch. 32](32-cadre-bancaire-consommateur.md) | 3 500 | **3 271** | −6,5 % | 3 086 | **3 760** |
+| [Ch. 33](33-iso-20022-lynx-rtr.md) | 3 500 | **2 859** | **−18,3 %** | 2 804 | **3 692** |
+| [Ch. 34](34-sous-domaines-financiers.md) | 9 500 | **9 629** | +1,4 % | 9 562 | **9 918** |
+| [Ch. 35](35-etudes-de-cas-production-canadienne.md) | 6 000 | **6 800** | +13,3 % | 6 783 | **9 121** |
+| [Ch. 36](36-prospective-ap2-rails-canadiens.md) | 5 000 | **4 456** | −10,9 % | 4 383 | **4 914** |
+| **Livre** | **90 000** | **91 477** | **+1,6 %** | 90 251 | **100 354** |
 
 : Volumétrie du Livre III, re-mesurée le 28 juillet 2026 au terme de la passe de correction ; la dernière colonne conserve la mesure du 27 juillet, pour que le delta se lise. ⚠ **Constat daté et dépassé — ce tableau et les paragraphes d'analyse qui le suivent** — *les pièces ont depuis remplacé plusieurs de ces valeurs à leur propre en-tête, et le ch. 35 nomme ce tableau ; voir l'avertissement ci-dessus, et la mesure du 10 août 2026.* *L'écart se documente ; il ne se corrige ni par amputation ni par gonflement* (D-4).
 
@@ -334,7 +336,7 @@ de la pièce** qui l'avait ouverte.
 | **R-IV-96** | ch. 33 | ☑ **PRD v0.10, G-1** — la **convention de trimestre** dont dépendent quatre intervalles entre au registre. ⚠ *Un cardinal dérivé d'une convention non documentée est exact **sous une hypothèse**, et l'hypothèse ne se voit pas dans le nombre* |
 | **R-IV-97** | ch. 34 | ☑ **PRD v0.10 §7.1 — décision de régime** : les affirmations que le Vol. I déclare **hors de son propre corpus bibliographique** **n'entrent pas au socle consolidé** ; elles demeurent des **mentions à sourcer**. ⚠ *Une affirmation hors corpus n'a pas été vérifiée **même au niveau des références** — c'est-à-dire au niveau exact que [C] atteste* |
 | **R-IV-98** | ch. 35 | ☑ **PRD v0.10, G-1** — le fait du **7 juillet 2026** entre au registre avec ses deux points : *le maintien de l'affirmation de production, et le décompte de jetons* |
-| **R-IV-99** | ch. 36 | ☑ **TOC v0.26** — l'**état instruit** du transfert de gouvernance est porté à l'entrée du ch. 36 ; ☑ ⚠ **la cohérence du ch. 10 est constatée sur pièce** : *il porte déjà le transfert daté du 28 avril 2026* |
+| **R-IV-99** | ch. 36 | ☑ **TOC v0.27** — l'**état instruit** du transfert de gouvernance est porté à l'entrée du ch. 36 ; ☑ ⚠ **la cohérence du ch. 10 est constatée sur pièce** : *il porte déjà le transfert daté du 28 avril 2026* |
 
 : Les vingt-quatre remontées du Livre III et leur issue, au 27 juillet 2026.
 

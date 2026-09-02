@@ -443,6 +443,17 @@ tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
 tbody td:first-child { color: var(--texte); font-weight: 600; }
 .legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
 
+/* -------------------------------------------------------------- figures */
+/* Les SVG du volume sont dessinés pour le PDF, donc sur fond clair, et ils
+   portent ce fond eux-mêmes — sans quoi il faudrait maintenir deux variantes
+   de chaque figure. Sur ce thème sombre, ils se posent donc comme un carton ;
+   le padding empêche le fond de la figure de toucher le bord du cadre. */
+.figure { margin: 2.1rem 0 1.9rem; }
+.figure img { display: block; width: 100%; height: auto; border-radius: 7px;
+              border: 1px solid var(--trait); background: #fdfbf9; padding: 0.6rem; }
+.figure figcaption { font-size: 0.8rem; font-style: italic; color: var(--texte-faible);
+                     margin-top: 0.65rem; padding-left: 0.15rem; }
+
 /* --------------------------------------------------------------- listes */
 ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
 ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
@@ -531,10 +542,10 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <div class="nav__marque">Interopérabilité et Orchestration en Entreprise Agentique</div>
   <div class="nav__sous">Livre I · Chapitre 2</div>
   <ol>
-    <li><a href="#s21"><span class="num">2.1</span>Formats d&#x27;échange, sérialisation, schémas et registres</a></li>
+    <li><a href="#s21"><span class="num">2.1</span>Formats d'échange, sérialisation, schémas et registres</a></li>
     <li><a href="#s22"><span class="num">2.2</span>Transformation, modèle canonique, contrats de données et formats de table</a></li>
-    <li><a href="#s23"><span class="num">2.3</span>Pile du Web sémantique, médiation ontologique et graphe de connaissances d&#x27;entreprise</a></li>
-    <li><a href="#s24"><span class="num">2.4</span>LLM et automatisation de l&#x27;interopérabilité sémantique</a></li>
+    <li><a href="#s23"><span class="num">2.3</span>Pile du Web sémantique, médiation ontologique et graphe de connaissances d'entreprise</a></li>
+    <li><a href="#s24"><span class="num">2.4</span>LLM et automatisation de l'interopérabilité sémantique</a></li>
   </ol>
   <div class="nav__pied">
     Vol.&nbsp;IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em><br>
@@ -553,266 +564,203 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 
 <!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
      Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
-     que `build/assemble.py` pour le PDF. L'appareil de gouvernance vit au .md jumeau, qui reste la
-     seule source, et `verifier-piece.py` [6] refuse désormais un rendu qui le recopierait. -->
+     que `build/assemble.py` pour le PDF et que `PRD/decompte.sh` pour la volumétrie. L'appareil de
+     gouvernance vit au .md jumeau, qui reste la seule source, et `build/verifier-piece.py` refuse
+     un rendu qui le recopierait. -->
 
 <h2 id="s21"><span class="sig">§ 2.1</span>Formats d'échange, sérialisation, schémas et registres</h2>
-
 <p>Le chapitre précédent a établi que la pile d'interopérabilité est <strong>cumulative</strong> : le niveau sémantique présuppose le syntaxique, qui présuppose le technique (ch. 1 § 1.1.2). Ce chapitre descend aux deux paliers que cette cumulativité rend indissociables — la forme sous laquelle l'information est sérialisée, validée et transformée, puis le sens qu'elle est censée porter. Il faut les traiter ensemble parce que c'est leur <strong>écart</strong> qui constitue la thèse : deux systèmes peuvent échanger des messages parfaitement bien formés, validés contre un schéma partagé, et se méprendre entièrement sur ce qu'ils signifient.</p>
-
 <p>À ce niveau, l'invariant du Livre prend sa forme la plus tangible. Le <strong>format</strong> est le support physique du contrat ; le <strong>schéma</strong> en est la spécification machine-lisible ; les <strong>règles de compatibilité</strong> déterminent si producteur et consommateur peuvent être déployés indépendamment. Rien d'abstrait ici : ce sont ces règles, et elles seules, qui font la différence entre deux équipes qui livrent quand elles veulent et deux équipes qui doivent se coordonner à chaque version.</p>
-
 <h3>2.1.1 Taxonomie des formats : texte ou binaire, document ou flux, schéma à l'écriture ou à la lecture</h3>
-
 <p>Tout choix de format engage un compromis multidimensionnel qu'il vaut mieux expliciter avant d'arrêter une technologie, faute de quoi la décision se prend par habitude et se paie en dette.</p>
-
 <p>Un premier axe oppose les formats <strong>textuels</strong>, lisibles et tolérants à l'inspection directe, aux formats <strong>binaires</strong>, plus denses et plus rapides à sérialiser mais opaques sans outillage. Un deuxième distingue le traitement <strong>document</strong> — l'unité d'échange est un message complet, autonome et borné — du traitement <strong>flux</strong>, où les enregistrements s'écoulent en continu et où la densité et le débit priment sur la lisibilité. Un troisième, le plus structurant, sépare le régime <em>schema-on-write</em>, qui impose la conformité au moment de l'écriture et garantit une donnée propre en aval, du régime <em>schema-on-read</em>, qui repousse l'interprétation à la lecture et privilégie la souplesse d'ingestion au prix d'une validation différée.</p>
-
 <p>Les critères de décision se déclinent alors concrètement : lisibilité et facilité de débogage, densité d'encodage et coût réseau, caractère <strong>auto-descriptif</strong> — le message porte-t-il son propre schéma ? —, latence de sérialisation, débit soutenu, et surtout <strong>évolutivité</strong>, la capacité du format à absorber l'ajout ou le retrait de champs sans rupture.</p>
-
 <p>Aucun format n'optimise simultanément tous ces axes, et c'est le point à retenir : l'architecte arbitre en fonction du <strong>couplage visé</strong>, non de la performance brute. Un format auto-descriptif réduit le couplage de format au prix de la densité ; un format binaire à schéma externe maximise la densité mais <strong>reporte le couplage sur la disponibilité du schéma</strong> — d'où l'importance des registres traités en § 2.1.6. Le couplage ne disparaît pas, il se déplace : c'est la leçon que le ch. 1 tirait des architectures d'intégration, et elle vaut telle quelle un niveau plus bas.</p>
-
 <h3>2.1.2 Formats textuels et binaires</h3>
-
-<p>Côté textuel, <strong>JSON</strong> s'est imposé comme <em>lingua franca</em> des API web : auto-descriptif, trivialement projeté sur les structures des langages courants, il privilégie la simplicité et l'ubiquité sur la richesse typologique. <strong>XML</strong> conserve sa pertinence dans les échanges B2B et le monde SOAP, où les espaces de noms, la validation par grammaire et l'outillage normatif — signatures, transformations — restent des atouts qu'aucun successeur n'a répliqués. <strong>YAML</strong>, surensemble lisible de JSON, domine la configuration plus que l'échange inter-systèmes proprement dit. Ces trois formats partagent une faiblesse de densité et de débit qui devient prohibitive aux volumes élevés.</p>
-
+<p>Côté textuel, <strong>JSON</strong> s'est imposé comme <em>lingua franca</em> des API web : auto-descriptif, trivialement projeté sur les structures des langages courants, il privilégie la simplicité et l'ubiquité plutôt que la richesse typologique. <strong>XML</strong> conserve sa pertinence dans les échanges B2B et le monde SOAP, où les espaces de noms, la validation par grammaire et l'outillage normatif — signatures, transformations — restent des atouts qu'aucun successeur n'a répliqués. <strong>YAML</strong>, surensemble lisible de JSON, domine la configuration plus que l'échange inter-systèmes proprement dit. Ces trois formats partagent une faiblesse de densité et de débit qui devient prohibitive aux volumes élevés.</p>
 <p>Côté binaire, deux familles structurent la pratique, et leur différence n'est pas de performance mais de <strong>doctrine d'évolution</strong>.</p>
-
 <p><strong>Protocol Buffers</strong> repose sur un langage de description d'interface compilé, un encodage compact à étiquettes numériques, et une compatibilité d'évolution fondée sur la <strong>stabilité des numéros de champ</strong>. Il sert de format de charge utile à gRPC et convient au trafic interservices à faible latence.</p>
-
 <p><strong>Apache Avro</strong> adopte une philosophie distincte : le schéma, exprimé en JSON, accompagne ou référence chaque jeu de données, et la <strong>résolution de schéma à la lecture</strong> confronte explicitement schéma d'écriture et schéma de lecture. Cette confrontation explicite en fait le format de prédilection de la sérialisation dense dans les flux.</p>
-
 <p>Le choix entre les deux illustre l'invariant : tous deux externalisent le schéma pour gagner en densité, mais gèrent l'évolution par des mécanismes différents — numéros figés contre résolution à la lecture —, ce qui conditionne les règles de compatibilité applicables (§ 2.1.5). Choisir un format binaire, c'est donc choisir un régime d'évolution avant de choisir un encodage.</p>
-
 <div class="encadre encadre--oeuvre">
   <span class="encadre__label">Mise en œuvre</span>
   <p>Une règle pragmatique répandue : JSON sur HTTP pour les API externes et l'interopérabilité maximale ; Protobuf et gRPC pour le trafic interne dense entre microservices ; Avro pour les sujets de flux adossés à un registre de schémas (§ 2.1.6). XML demeure imposé dès qu'un partenaire B2B ou une norme sectorielle — facturation électronique, échanges réglementés — l'exige, et cette contrainte ne se négocie pas au niveau de l'architecture.</p>
 </div>
-
 <h3>2.1.3 Formats analytiques et protocoles de connexion</h3>
-
-<p>Le plan analytique impose des formats orientés <strong>colonne</strong> plutôt que ligne, optimisés pour la compression et la lecture sélective de larges volumes. <strong>Parquet</strong> et <strong>ORC</strong> sont des formats de fichier sur disque qui stockent les données par colonne, exploitent l'encodage et la compression par bloc, et embarquent des statistiques de prédicat permettant d'élaguer la lecture.</p>
-
+<p>Le plan analytique impose des formats orientés <strong>colonne</strong> plutôt que ligne, optimisés pour la compression et la lecture sélective de grands volumes. <strong>Parquet</strong> et <strong>ORC</strong> sont des formats de fichier sur disque qui stockent les données par colonne, exploitent l'encodage et la compression par bloc, et embarquent des statistiques de prédicat permettant d'élaguer la lecture.</p>
 <p><strong>Arrow</strong> joue un rôle complémentaire et qu'il importe de ne pas confondre avec le précédent : il définit un format colonnaire <strong>en mémoire</strong>, conçu pour le partage <em>zéro-copie</em> entre processus et moteurs, supprimant les coûts répétés de sérialisation aux frontières entre composants analytiques. Arrow se positionne comme couche d'interopérabilité du <strong>traitement</strong>, là où Parquet et ORC servent la <strong>persistance</strong>.</p>
-
 <p>Au-delà des fichiers, l'enjeu est le protocole <em>filaire</em> d'accès. Les interfaces historiques JDBC/ODBC, orientées ligne et coûteuses en conversion, sont concurrencées par la pile Arrow : <strong>Arrow Flight SQL</strong> définit un protocole bâti sur gRPC qui transporte des résultats directement au format colonnaire, éliminant la transposition ligne-vers-colonne et exploitant le parallélisme du transport ; <strong>ADBC</strong> offre par-dessus une interface client uniforme, indépendante du pilote, qui restitue nativement des lots Arrow.</p>
-
 <p>Du point de vue de l'invariant, ces standards <strong>découplent le client analytique du système de stockage</strong> par un contrat de transport stable. C'est la même opération que celle du contrat d'API au ch. 1 § 1.4.2, transposée à un plan où elle était historiquement absente.</p>
-
 <div class="encadre encadre--recherche">
   <span class="encadre__label">Perspective recherche</span>
   <p>La proposition du <em>lakehouse</em> (Zaharia et coll., 2021) consiste précisément à unifier l'entreposage et l'analytique avancée sur un substrat de formats ouverts. Arrow comme format mémoire et Flight SQL comme protocole filaire en sont les pièces d'interopérabilité : ils dissocient le moteur d'exécution de la couche de stockage, autorisant la coexistence de moteurs hétérogènes sur un même corpus. La question ouverte n'est plus la faisabilité mais la <strong>gouvernance</strong> de cette coexistence, traitée en § 2.2.3.</p>
 </div>
-
 <h3>2.1.4 Schémas et validation</h3>
-
 <p>Le schéma est la spécification machine-lisible du <strong>contrat syntaxique</strong> : il définit la structure attendue, les types, les contraintes et les champs obligatoires, et permet de rejeter <strong>aux frontières</strong> du système les messages non conformes plutôt que de propager des données malformées en profondeur. Cette localisation du rejet n'est pas un détail d'implémentation : une donnée malformée détectée à la frontière coûte un message ; détectée trois systèmes plus loin, elle coûte une enquête.</p>
-
 <p>Dans le monde XML, <strong>XSD</strong> remplit ce rôle avec une grammaire expressive et un outillage de validation mature. Les langages de description des formats binaires — fichiers <code>.proto</code>, schémas Avro — jouent une fonction analogue côté sérialisation dense : ils servent à la fois de contrat et de source de génération de code.</p>
-
-<p>Pour JSON, <strong>JSON Schema</strong> s'est établi comme standard de fait. Son alignement avec <strong>OpenAPI 3.1.0</strong> est le fait le plus conséquent de cette sous-section : à partir de cette version, l'objet Schema d'OpenAPI est un surensemble strict du vocabulaire JSON Schema, ce qui réconcilie la description d'API et la validation de charge utile sous un même formalisme et <strong>supprime une divergence historiquement coûteuse</strong>. Deux dialectes qui décrivaient la même chose de deux manières incompatibles obligeaient chaque organisation à maintenir deux vérités ; <strong>à partir de cette version</strong>, il n'en reste qu'une.</p>
-
+<p>Pour JSON, <strong>JSON Schema</strong> s'est établi comme standard de fait. Son alignement avec <strong>OpenAPI 3.1.0</strong> est le fait le plus important de cette sous-section : à partir de cette version, l'objet Schema d'OpenAPI est un surensemble strict du vocabulaire JSON Schema, ce qui réconcilie la description d'API et la validation de charge utile sous un même formalisme et <strong>supprime une divergence historiquement coûteuse</strong>. Deux dialectes qui décrivaient la même chose de deux manières incompatibles obligeaient chaque organisation à maintenir deux vérités ; <strong>à partir de cette version</strong>, il n'en reste qu'une.</p>
 <p>La validation aux frontières concrétise le principe de moindre confiance : un consommateur valide ce qu'il reçoit, un producteur valide ce qu'il émet, et le schéma partagé fait foi. La <strong>conception</strong> du schéma — champs optionnels par défaut, refus de l'interdiction implicite de champs additionnels — prépare directement l'évolution traitée ci-après. Un schéma trop strict est un schéma qu'on ne pourra pas faire évoluer.</p>
-
 <h3>2.1.5 Évolution et compatibilité</h3>
-
 <p>L'interopérabilité dans le temps repose sur des règles formelles qui déterminent quelles modifications de schéma sont sûres. Elles sont peu nombreuses et se retiennent.</p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Régime</th><th>Garantie</th><th>Ce qu'il autorise et interdit</th></tr></thead>
-  <tbody>
-    <tr><td><strong>Ascendante</strong> (<em>backward</em>)</td><td>un consommateur mis à jour lit des données produites selon l'ancien schéma</td><td>ajout de champs porteurs d'une valeur par défaut ; suppression de champs optionnels</td></tr>
-    <tr><td><strong>Descendante</strong> (<em>forward</em>)</td><td>un consommateur resté sur l'ancien schéma lit des données produites selon le nouveau</td><td><strong>interdit</strong> l'ajout de champs obligatoires sans défaut</td></tr>
-    <tr><td><strong>Complète</strong> (<em>full</em>)</td><td>les deux à la fois</td><td>autorise la mise à jour des deux parties <strong>dans un ordre quelconque</strong></td></tr>
-    <tr><td><strong>Transitive</strong></td><td>la garantie s'étend à <strong>toutes</strong> les versions antérieures, non à la seule précédente</td><td>interdit la dérive cumulative que des sauts successifs compatibles deux à deux peuvent produire</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Régime</th>
+<th>Garantie</th>
+<th>Ce qu'il autorise et interdit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ascendante</strong> (<em>backward</em>)</td>
+<td>un consommateur mis à jour lit des données produites selon l'ancien schéma</td>
+<td>ajout de champs porteurs d'une valeur par défaut ; suppression de champs optionnels</td>
+</tr>
+<tr>
+<td><strong>Descendante</strong> (<em>forward</em>)</td>
+<td>un consommateur resté sur l'ancien schéma lit des données produites selon le nouveau</td>
+<td><strong>interdit</strong> l'ajout de champs obligatoires sans défaut</td>
+</tr>
+<tr>
+<td><strong>Complète</strong> (<em>full</em>)</td>
+<td>les deux à la fois</td>
+<td>autorise la mise à jour des deux parties <strong>dans un ordre quelconque</strong></td>
+</tr>
+<tr>
+<td><strong>Transitive</strong></td>
+<td>la garantie s'étend à <strong>toutes</strong> les versions antérieures, non à la seule précédente</td>
+<td>interdit la dérive cumulative que des sauts successifs compatibles deux à deux peuvent produire</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 2.1 — Les quatre régimes de compatibilité de schéma et ce que chacun rend possible.</p>
-
 <p>Ces règles ne sont pas académiques : elles sont la <strong>condition même du déploiement découplé</strong>. Tant qu'une évolution respecte la compatibilité requise, producteur et consommateur peuvent être livrés indépendamment, sans coordination de version ni fenêtre de rupture — l'invariant du Livre, décliné au niveau du schéma.</p>
-
 <p>Le pendant pratique côté lecture est le <em>tolerant reader</em> (ch. 1 § 1.1.4) : un consommateur qui ignore les champs qu'il ne connaît pas et ne suppose pas l'absence de champs futurs absorbe une part de l'évolution sans modification. La résolution de schéma d'Avro institutionnalise ce raisonnement en confrontant explicitement les deux schémas plutôt qu'en espérant leur coïncidence.</p>
-
 <div class="avert">
   <p><strong>Une garantie de compatibilité n'est pas une garantie de sens.</strong> Un champ peut rester structurellement compatible tout en changeant de signification — une même colonne « montant » qui passe des dollars aux cents satisfait toutes les règles ci-dessus et casse ses consommateurs. Le fait que les registres n'attrapent pas cette classe de rupture relève d'une <strong>absence de documentation</strong> au sens de R-14 du Vol. III : le socle hérité ne documente aucun mécanisme de contrôle sémantique automatique à ce niveau, ce qui ne dit rien de l'existence d'approches non recensées. C'est précisément l'écart que les § 2.3 et § 2.4 prennent pour objet.</p>
 </div>
-
 <h3>2.1.6 Registres de schémas dans l'architecture événementielle</h3>
-
 <p>Dans une architecture événementielle, les schémas ne peuvent rester implicites : producteurs et consommateurs sont découplés dans le temps <strong>et</strong> dans l'espace, et rien ne garantit qu'ils partagent une vue à jour du contrat. Le <strong>registre de schémas</strong> résout ce problème en agissant comme autorité du contrat : chaque schéma y est enregistré, versionné et identifié par un identifiant compact que le producteur encode dans l'enregistrement plutôt que d'y embarquer le schéma complet. Le consommateur résout cet identifiant auprès du registre, ce qui réduit la taille des messages tout en garantissant l'accès au schéma <strong>exact</strong> ayant servi à l'écriture.</p>
-
 <p>La fonction décisive du registre n'est pourtant pas le stockage : c'est l'<strong>application automatique des règles de compatibilité</strong>. À l'enregistrement d'une nouvelle version, le registre rejette toute évolution qui violerait le mode configuré sur le sujet. Une règle de gouvernance devient ainsi un <strong>garde-fou exécutable au moment de l'évolution</strong>, et non une recommandation qu'une relecture pourrait laisser passer.</p>
-
 <p>C'est le principe que le ch. 1 § 1.2.2 tire de la lignée LISI — <em>l'évaluation par preuves plutôt que par déclaration d'intention</em>, la maturité liée à des artefacts concrets et vérifiables. Un registre de schémas est l'instrument par lequel une organisation rend non négociable, à l'échelle de centaines de sujets, le contrat d'évolution qui autorise le déploiement indépendant.</p>
-
 <div class="encadre encadre--oeuvre">
   <span class="encadre__label">Mise en œuvre</span>
   <p>Plusieurs implémentations coexistent — registres adossés aux courtiers, catalogues gérés des fournisseurs infonuagiques —, prenant typiquement en charge Avro, Protobuf et JSON Schema. Le critère de choix n'est pas la couverture de formats, largement banalisée, mais la <strong>granularité du mode de compatibilité</strong> : pouvoir le fixer par sujet plutôt que globalement est ce qui permet à un domaine critique d'exiger la compatibilité complète pendant qu'un domaine exploratoire se contente de l'ascendante.</p>
 </div>
-
+<hr />
+<figure class="figure">
+  <img src="../figures/f-02-01-compatibilite-schema.svg" alt="Figure 2.1 — Les quatre régimes de compatibilité de schéma, et le sens d&#39;évolution que chacun protège." />
+  <figcaption><strong>Figure 2.1</strong> — Les quatre régimes de compatibilité de schéma, et le sens d'évolution que chacun protège.</figcaption>
+</figure>
 <h2 id="s22"><span class="sig">§ 2.2</span>Transformation, modèle canonique, contrats de données et formats de table</h2>
-
 <h3>2.2.1 Transformation et ponts inter-formats</h3>
-
-<p>L'hétérogénéité des formats étant irréductible (ch. 1 § 1.1.3), l'intégration suppose presque toujours une médiation entre représentations. Le patron <strong>Message Translator</strong> (Hohpe et Woolf, 2003) en est la formalisation : un composant transforme la structure et la sémantique d'un message d'un format source vers un format cible <strong>sans coupler producteur et consommateur à la connaissance l'un de l'autre</strong>. Les outils varient selon le monde — XSLT pour les transformations XML, langages de projection pour JSON — et les ponts les plus courants concernent les conversions REST/SOAP et JSON/Avro, où une passerelle traduit entre les conventions des deux univers.</p>
-
+<p>L'hétérogénéité des formats étant irréductible (ch. 1 § 1.1.3), l'intégration suppose presque toujours une médiation entre représentations. Le patron du <strong>traducteur de message</strong> (<em>Message Translator</em> ; Hohpe et Woolf, 2003) en est la formalisation : un composant transforme la structure et la sémantique d'un message d'un format source vers un format cible <strong>sans coupler producteur et consommateur à la connaissance l'un de l'autre</strong>. Les outils varient selon le monde — XSLT pour les transformations XML, langages de projection pour JSON — et les ponts les plus courants concernent les conversions REST/SOAP et JSON/Avro, où une passerelle traduit entre les conventions des deux univers.</p>
 <p>Ces transformations ne sont <strong>pas neutres</strong>, et c'est le point qu'on oublie le plus aisément. La conversion entre modèles de richesse inégale entraîne des pertes : un type absent dans le format cible, une contrainte non exprimable, une structure imbriquée aplatie. Ces pertes doivent être <strong>identifiées et réconciliées explicitement au point de médiation</strong>, plutôt que subies silencieusement en aval.</p>
-
 <p>Le traducteur préserve donc le découplage en localisant la connaissance des deux formats en un seul endroit, mais il introduit <strong>un point où le contrat peut se dégrader</strong>. Sa conception relève de la même rigueur contractuelle que les interfaces qu'il relie ; le traiter comme un détail d'implémentation est l'erreur.</p>
-
 <h3>2.2.2 Contrats de données et produits de données</h3>
-
 <p>Le mouvement du <strong>maillage de données</strong> (<em>data mesh</em> ; Dehghani, 2022) transpose au domaine des données les principes de découplage et de propriété décentralisée déjà appliqués aux services. Sa pièce maîtresse est le <strong>contrat de données</strong> : une spécification exécutable, machine-lisible, qui fixe le schéma, les garanties de qualité, les attentes sémantiques et les engagements de service entre un fournisseur et ses consommateurs. Une formalisation ouverte en est portée par l'<em>Open Data Contract Standard</em>, maintenu sous fondation, qui succède à une spécification antérieure désormais dépréciée à son profit. Le complément structurel est le <strong>produit de données</strong> doté de ports de sortie explicites.</p>
-
 <p>Le contrat joue ici exactement le rôle que le Livre attribue au contrat d'interface : il rend l'évolution gouvernable et le couplage explicite. Sa nouveauté tient à ce qu'il porte des <strong>garanties de qualité</strong> — fraîcheur, complétude, distribution attendue — que le contrat d'API ne porte pas, et qui sont vérifiables en continu.</p>
-
 <p>L'échange <strong>inter-organisationnel</strong> de données souveraines ajoute une couche de protocole. Le <em>Dataspace Protocol</em> normalise la négociation de contrat, le catalogage et le transfert entre espaces de données autonomes, en s'appuyant sur un modèle de référence et des implémentations de référence. L'objectif est le partage contrôlé entre organisations <strong>qui ne se font pas mutuellement confiance</strong>, en encodant l'usage autorisé dans le contrat lui-même.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> c'est la première fois, dans la progression du Livre, qu'un contrat prétend porter non seulement la <strong>forme</strong> et le <strong>sens</strong> de ce qui est échangé, mais l'<strong>usage autorisé</strong> de ce qui a été transféré. Cette prétention est exactement celle que le Livre II retrouvera sous le nom de délégation, et le Livre IV sous celui de politique appliquée à l'exécution. Ce que le socle établit s'arrête à l'énoncé du paragraphe précédent — le protocole d'espaces de données encode l'usage autorisé dans le contrat lui-même ; <strong>il n'établit pas la filiation</strong> vers la délégation ni vers la politique d'exécution, proposée ici comme lecture, et dont l'instruction relève des ch. 17 et 37.</p>
-
 <div class="encadre encadre--recherche">
   <span class="encadre__label">Perspective recherche</span>
   <p>Le contrat de données exécutable déplace la question de l'interopérabilité sémantique du plan documentaire vers le plan opérationnel : les attentes de schéma et de qualité deviennent vérifiables en continu, et leur violation détectable automatiquement. La gouvernance souveraine pose en outre une question <strong>encore ouverte</strong> : l'application machinale des politiques d'usage <strong>au-delà du point de transfert</strong>. Rien, dans le socle hérité, n'établit qu'un tel mécanisme existe et fonctionne à l'échelle.</p>
 </div>
-
 <h3>2.2.3 Formats de table et catalogues interopérables</h3>
-
 <p>Les formats de fichier colonnaires (§ 2.1.3) ne suffisent pas à rendre un lac de données interopérable : sans couche de cohérence, une collection de fichiers n'offre ni transaction, ni évolution de schéma, ni isolation des lectures. Les <strong>formats de table</strong> comblent ce manque. Ils ajoutent au-dessus des fichiers une couche de métadonnées qui apporte les garanties transactionnelles, le voyage dans le temps, l'évolution de schéma et de partitionnement, et l'isolation par instantané.</p>
-
 <p>C'est cette couche qui rend un <em>lakehouse</em> réellement interopérable : un même corpus tabulaire devient lisible et modifiable par des moteurs hétérogènes <strong>sans recopie ni format propriétaire</strong>.</p>
-
-<p>Le contrat se déplace alors vers le <strong>catalogue</strong>, qui suit les tables, leurs versions et leurs métadonnées — et c'est là que se joue désormais le verrouillage. L'<strong>Iceberg REST Catalog</strong>, spécification OpenAPI de la fondation Apache, standardise l'interface entre moteurs et catalogue, transformant celui-ci d'un couplage propriétaire en un contrat ouvert et interchangeable. Plusieurs implémentations se disputent ce rôle : <strong>Apache Polaris</strong>, <strong>gradué projet de premier niveau de l'ASF le 19 février 2026</strong>, <strong>Unity Catalog OSS</strong> (LF AI &amp; Data) et <strong>Apache Gravitino</strong>, ce dernier visant un métastore unifié au-delà du seul Iceberg.</p>
-
+<p>Le contrat se déplace alors vers le <strong>catalogue</strong>, qui suit les tables, leurs versions et leurs métadonnées — et c'est là que se joue désormais le verrouillage. L'<strong>Iceberg REST Catalog</strong>, spécification OpenAPI de la fondation Apache, standardise l'interface entre moteurs et catalogue, transformant celui-ci d'un couplage propriétaire en un contrat ouvert et interchangeable. Plusieurs implémentations se disputent ce rôle : <strong>Apache Polaris</strong>, <strong>promu projet de premier niveau de l'ASF le 19 février 2026</strong>, <strong>Unity Catalog OSS</strong> (LF AI &amp; Data) et <strong>Apache Gravitino</strong>, ce dernier visant un métastore unifié au-delà du seul Iceberg.</p>
 <div class="avert">
-  <p><strong>Cette date est le seul fait daté du chapitre qui appelle une re-vérification au gel — la normalisation d'avril 2024 du § 2.3.5 étant acquise —, et elle a été reprise à sa source primaire</strong> : une graduation de projet est un événement de gouvernance, non une propriété technique, et la carte des implémentations en concurrence bouge par trimestres. Le volet Livre I de la porte G-1 l'a <strong>confirmée au 19 février 2026</strong> le 27 juillet 2026 (registre du gel, fait 1) ; la réserve porte désormais sur la carte, non sur la date.</p>
+  <p><strong>Cette date est le seul fait daté du chapitre qui appelle une re-vérification au gel — la normalisation d'avril 2024 du § 2.3.5 étant acquise —, et elle a été reprise à sa source primaire</strong> : une promotion de projet est un événement de gouvernance, non une propriété technique, et la carte des implémentations en concurrence bouge par trimestres. Le volet Livre I de la porte G-1 l'a <strong>confirmée au 19 février 2026</strong> le 27 juillet 2026 (registre du gel, fait 1) ; la réserve porte désormais sur la carte, non sur la date.</p>
 </div>
-
 <p>Cette convergence vers un protocole de catalogue commun est l'extension la plus récente de l'invariant au plan analytique : en découplant le moteur du catalogue par un contrat stable, elle préserve la liberté de substitution des moteurs et la portabilité du patrimoine de données. Le ch. 43 en reprend le principe pour l'architecture de référence.</p>
-
+<hr />
 <h2 id="s23"><span class="sig">§ 2.3</span>Pile du Web sémantique, médiation ontologique et graphe de connaissances d'entreprise</h2>
-
 <p>La couche du sens se superpose à la couche syntaxique traitée jusqu'ici. Deux systèmes peuvent échanger des messages bien formés, validés contre un schéma (§ 2.1.4), et néanmoins se méprendre sur ce que ces messages signifient. L'interopérabilité sémantique vise précisément ce hiatus — le troisième palier de la pile canonique (ch. 1 § 1.1.2) : faire en sorte que l'information reçue soit interprétée par le destinataire <strong>avec le sens que l'émetteur lui prêtait</strong>.</p>
-
 <div class="avert">
   <p><strong>Le verrou que ce hiatus nomme n'est pas reconstruit ici.</strong> Le constat d'ensemble — la normalisation est abondante dans le bas de la pile et s'amenuise vers le haut, là où le sens se joue — et le programme de recherche qui en découle ont leur <strong>siège au ch. 49 § 49.6</strong>, lieu unique pour toute la somme. Le présent chapitre en instrumente le versant outillé : ce que la pile du Web sémantique sait établir, et à quel prix.</p>
 </div>
-
 <p>L'invariant reste identique, et c'est ce qui rend cette section lisible : un vocabulaire partagé est un <strong>contrat</strong> ; une ontologie — spécification explicite d'une conceptualisation (Gruber, 1993) — est une <strong>interface</strong> qui découple les producteurs de sens des consommateurs ; et ces deux artefacts doivent <strong>évoluer</strong> sans rompre les correspondances établies.</p>
-
 <h3>2.3.1 RDF, RDFS, OWL et JSON-LD</h3>
-
 <p>Le socle du Web sémantique est un modèle de données en <strong>graphe</strong> : RDF représente toute connaissance comme un ensemble de triplets sujet-prédicat-objet, où chaque ressource est identifiée par un identifiant globalement résolvable. Cette granularité atomique confère au modèle une propriété rare pour l'intégration : <strong>deux graphes provenant de sources hétérogènes fusionnent par simple union de leurs triplets</strong>, sans réconciliation préalable de schémas, pourvu qu'ils partagent des identifiants.</p>
-
 <p>C'est une propriété que la fusion de deux schémas relationnels n'offre pas, et elle explique la persistance de RDF : là où fusionner deux schémas relationnels exige un projet, fusionner deux graphes RDF exige un accord sur des identifiants.</p>
-
 <p>Au-dessus de RDF s'échelonne une gradation de pouvoir expressif. <strong>RDFS</strong> introduit un vocabulaire léger — classes, propriétés, hiérarchies, domaines et co-domaines —, auquel <strong>SKOS</strong> adjoint l'outillage des systèmes de concepts. À l'autre extrémité, <strong>OWL 2</strong> offre une ontologie formelle adossée à la logique de description, avec restrictions de cardinalité, propriétés transitives ou inverses et axiomes de disjonction permettant l'<strong>inférence automatique</strong>.</p>
-
 <p>L'adoption de cet appareil a longtemps buté sur la lourdeur perçue de la sérialisation RDF/XML. <strong>JSON-LD</strong> lève cet obstacle : il habille des documents JSON ordinaires d'un contexte qui projette leurs clés sur des identifiants, faisant d'une charge utile REST un graphe RDF <strong>sans rupture de l'outillage existant</strong>. JSON-LD constitue ainsi le pont par lequel la sémantique pénètre les API synchrones décrites par OpenAPI (ch. 1 § 1.4.2), réalisant le découplage entre le format de transport et l'engagement de sens.</p>
-
 <div class="encadre encadre--oeuvre">
   <span class="encadre__label">Mise en œuvre</span>
   <p>Un point d'API qui sert déjà du JSON peut devenir sémantiquement interopérable par l'ajout d'un seul contexte pointant un vocabulaire partagé, <strong>sans modifier ni les consommateurs existants ni le schéma JSON validant la syntaxe</strong>. Le contrat syntaxique et le contrat de sens coexistent alors sur la même charge utile — c'est le chemin d'adoption le moins coûteux que ce chapitre puisse recommander, et il reste peu emprunté.</p>
 </div>
-
 <h3>2.3.2 SPARQL et la fédération de sources</h3>
-
 <p>Là où REST expose des ressources et GraphQL un graphe typé propriétaire (ch. 1 § 1.4.1), <strong>SPARQL</strong> interroge directement le graphe RDF par appariement de motifs de triplets. Le langage dépasse la simple lecture : il couvre la mise à jour des graphes, l'agrégation, les sous-requêtes et les chemins de propriété, ce qui en fait une <strong>API sémantique standardisée</strong> plutôt qu'un langage de consultation cantonné.</p>
-
 <p>Pour l'intégration, sa contribution décisive est la <strong>fédération</strong> : une clause dédiée délègue une portion de requête à un service distant et recompose les résultats localement, autorisant une interrogation transversale de sources autonomes <strong>sans entreposage préalable ni copie des données</strong>. Cette capacité instancie au niveau sémantique le découplage de localisation : le consommateur raisonne sur un graphe logique unifié tandis que les données demeurent réparties et sous le contrôle de leurs propriétaires.</p>
-
 <div class="avert">
   <p><strong>La fédération présuppose toutefois que les sources aient aligné leurs vocabulaires</strong>, faute de quoi la jointure échoue <strong>silencieusement</strong> sur des identifiants divergents. Ce mode d'échec est le plus pernicieux de la section : une requête fédérée mal alignée ne lève pas d'erreur, elle retourne un résultat vide ou partiel qui a toutes les apparences d'un résultat. Le préalable renvoie aux mécanismes d'alignement du § 2.3.4.</p>
 </div>
-
 <div class="avert">
   <p><strong>Une révision du langage était en cours au gel de la source</strong> (juin 2026), alignée sur une révision du modèle RDF et sur son extension permettant d'interroger les assertions portant sur des assertions. Ces travaux <strong>ne sont pas cités comme acquis</strong> : leur ancre de version se fixe au moment de citer, et cette réserve est reconduite ici sans être levée.</p>
 </div>
-
 <h3>2.3.3 Validation et contrats sémantiques : SHACL et ShEx</h3>
-
 <p>Un graphe RDF est, par construction, <strong>ouvert et sans schéma</strong> : tout triplet est licite, l'absence d'information n'est pas une faute, et rien n'interdit a priori d'attribuer une date de naissance à une facture. Pour l'intégration, cette permissivité est intenable ; il faut un pendant sémantique aux schémas qui gardent les frontières des API.</p>
-
-<p><strong>SHACL</strong> remplit ce rôle : il décrit des <em>formes</em> contraignant la structure attendue d'un nœud — propriétés obligatoires, cardinalités, types de valeurs, motifs — et produit un rapport de validation circonstancié lorsqu'un graphe les viole. SHACL devient ainsi le <strong>contrat sémantique vérifiable aux points d'échange</strong>, transposant au graphe la discipline du contrat-d'abord. <strong>ShEx</strong> poursuit le même objectif avec une grammaire de patrons d'inspiration régulière, souvent jugée plus concise.</p>
-
+<p><strong>SHACL</strong> remplit ce rôle : il décrit des <em>formes</em> contraignant la structure attendue d'un nœud — propriétés obligatoires, cardinalités, types de valeurs, motifs — et produit un rapport de validation circonstancié lorsqu'un graphe les viole. SHACL devient ainsi le <strong>contrat sémantique vérifiable aux points d'échange</strong>, transposant au graphe la discipline du contrat-d'abord. <strong>ShEx</strong> poursuit le même objectif avec une grammaire de patrons inspirée des expressions régulières, souvent jugée plus concise.</p>
 <div class="avert">
   <p><strong>La distinction conceptuelle qui suit est celle dont la confusion se paie le plus cher.</strong> OWL sert l'<strong>inférence</strong> sous hypothèse de <strong>monde ouvert</strong> — déduire des faits implicites ; SHACL sert la <strong>validation</strong> sous hypothèse de <strong>monde clos</strong> — constater qu'un fait requis manque. Confondre les deux produit des contrôles qui <strong>ne se déclenchent jamais</strong> : une contrainte exprimée en OWL sur un graphe incomplet n'est pas violée, elle est simplement non satisfaite, et le raisonneur conclut que le fait manquant est peut-être vrai ailleurs. Une organisation qui croit valider alors qu'elle infère risque de ne s'en apercevoir qu'à l'incident.</p>
 </div>
-
 <p>L'alignement de SHACL sur la révision du modèle RDF — <strong>lui aussi en cours au gel de la source</strong> — vise à contraindre aussi les assertions qualifiées, étendant la portée du contrat à la <strong>provenance</strong> des données échangées, exigence récurrente de l'auditabilité (ch. 3 § 3.4).</p>
-
 <div class="encadre encadre--recherche">
   <span class="encadre__label">Perspective recherche</span>
   <p>SHACL et OWL relèvent de logiques distinctes dont la cohabitation sur un même graphe demeure un sujet ouvert : un axiome OWL peut rendre satisfiable un graphe qu'une forme SHACL rejette, et inversement. La spécification d'une sémantique unifiée du raisonnement et de la validation, et la décidabilité des fragments combinés, restent des questions vives. ⚠ Que ces questions soient « ouvertes » relève ici d'une <strong>absence de documentation</strong> au sens de R-14 du Vol. III : le socle hérité ne recense aucune solution, ce qui n'établit pas qu'aucune n'existe.</p>
 </div>
-
 <h3>2.3.4 Alignement ontologique et architectures de médiation</h3>
-
 <p>L'hétérogénéité sémantique — désigner la même entité par des termes différents, ou des entités différentes par le même terme — est l'obstacle irréductible que ni la syntaxe ni la validation ne résolvent. Lorsque deux ontologies autonomes décrivent un domaine recouvrant, l'interopérabilité exige de <strong>découvrir les correspondances</strong> entre leurs concepts : c'est l'appariement d'ontologies (Euzenat et Shvaiko, 2013), dont la production est un ensemble de relations d'équivalence, de subsomption ou de chevauchement. Une campagne d'évaluation comparative fournit à ce champ sa référence empirique, en évaluant les systèmes d'appariement sur des paires d'ontologies de référence — jalon stable pour mesurer tout progrès, y compris celui des approches récentes (§ 2.4.1).</p>
-
 <p>Une fois les correspondances établies, deux architectures de médiation s'opposent classiquement. Dans l'approche <strong>entrepôt</strong>, les sources sont matérialisées et transformées vers un schéma global unique. Dans l'approche <strong>médiateur</strong>, un schéma virtuel réécrit à la volée les requêtes vers les sources, qui restent en place.</p>
-
 <p>Le formalisme distingue ici deux régimes de correspondance, et le choix entre eux est structurant :</p>
-
-<ul class="puces">
-  <li><strong>GAV</strong> (<em>Global-As-View</em>) — chaque concept global est défini comme une vue sur les sources. Réécriture de requête simple ; <strong>ajout de source coûteux</strong>, puisqu'il faut revoir les définitions globales.</li>
-  <li><strong>LAV</strong> (<em>Local-As-View</em>) — chaque source est décrite comme une vue sur le schéma global. Extensibilité supérieure — ajouter une source n'affecte pas les autres — au prix d'une <strong>réécriture de requête plus complexe</strong>.</li>
+<ul>
+<li><strong>GAV</strong> (<em>Global-As-View</em>) — chaque concept global est défini comme une vue sur les sources. Réécriture de requête simple ; <strong>ajout de source coûteux</strong>, puisqu'il faut revoir les définitions globales.</li>
+<li><strong>LAV</strong> (<em>Local-As-View</em>) — chaque source est décrite comme une vue sur le schéma global. Extensibilité supérieure — ajouter une source n'affecte pas les autres — au prix d'une <strong>réécriture de requête plus complexe</strong>.</li>
 </ul>
-
 <p>Ce choix rejoue, au niveau du sens, l'arbitrage entre couplage et évolutivité qui structure tout le Livre : GAV optimise le présent, LAV optimise l'arrivée du prochain participant.</p>
-
 <h3>2.3.5 Graphe de connaissances, OBDA et gestion des données de référence</h3>
-
 <p>Le <strong>graphe de connaissances d'entreprise</strong> concrétise la médiation à grande échelle, et deux régimes y coexistent. Le graphe <strong>matérialisé</strong> importe et fusionne effectivement les données dans un magasin de graphe ; le graphe <strong>virtuel</strong> les laisse dans leurs bases d'origine et expose une couche sémantique par-dessus. Une spécification dédiée standardise cette projection, en décrivant comment lignes et colonnes d'un schéma relationnel se traduisent en triplets. Cette projection est le cœur de l'<strong>accès aux données fondé sur les ontologies</strong> (OBDA ; Poggi et coll., 2008), où l'ontologie sert d'interface de requête de haut niveau au-dessus de sources dont la complexité reste masquée — application directe du masquage d'information au plan sémantique.</p>
-
 <p>Un débat structurant oppose les modèles de graphe, et il s'est déplacé récemment. RDF, normalisé et conçu pour la fédération sur le Web, côtoie le modèle des <strong>graphes de propriétés</strong> (LPG), longtemps propriétaire mais désormais doté d'un langage de requête <strong>normalisé internationalement en avril 2024</strong>. RDF privilégie l'interopérabilité inter-organisationnelle et le raisonnement ; LPG privilégie la performance d'attribution sur les arêtes et l'ergonomie applicative.</p>
-
 <p>Parallèlement, la convergence entre <strong>gestion des données de référence</strong> et graphe s'affirme : le graphe offre un substrat naturel pour réconcilier identités et hiérarchies dispersées, faisant du référentiel partagé non plus une table maîtresse figée, mais <strong>un graphe vivant gouverné dans le temps</strong>.</p>
-
 <div class="encadre encadre--oeuvre">
   <span class="encadre__label">Mise en œuvre</span>
   <p>Le choix entre les deux modèles ne se tranche pas dans l'abstrait. Un cas d'usage d'intégration ouverte et de fédération inter-domaines penche vers RDF et SPARQL (§ 2.3.2) ; un cas d'usage interne à forte densité de relations attribuées et à requêtes de parcours penche vers un graphe de propriétés. La normalisation du langage de requête a réduit le verrouillage fournisseur qui pesait historiquement sur le second, ce qui rend au critère technique le poids que la contrainte commerciale lui disputait.</p>
 </div>
-
+<hr />
+<figure class="figure">
+  <img src="../figures/f-02-03-pile-web-semantique.svg" alt="Figure 2.3 — La pile du Web sémantique, et ce que chaque étage ajoute au graphe." />
+  <figcaption><strong>Figure 2.3</strong> — La pile du Web sémantique, et ce que chaque étage ajoute au graphe.</figcaption>
+</figure>
 <h2 id="s24"><span class="sig">§ 2.4</span>LLM et automatisation de l'interopérabilité sémantique</h2>
-
 <h3>2.4.1 Modèles de langage pour la construction d'ontologies et l'appariement de schémas</h3>
-
 <p>Le goulet d'étranglement historique de l'interopérabilité sémantique est le <strong>coût humain</strong> : construire une ontologie et établir les correspondances entre schémas relève d'un travail expert, lent et difficilement automatisable.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> c'est ce coût, plus qu'un défaut technique, qui explique la diffusion limitée de la pile du § 2.3. Le socle établit le goulet d'étranglement humain ; il n'établit ni cette causalité, ni aucune mesure de diffusion.</p>
-
 <p>Les grands modèles de langage ouvrent ici une piste <strong>exploratoire</strong>. Des travaux évaluent la capacité d'un modèle à induire des éléments d'ontologie — termes, hiérarchies, relations — à partir de corpus, en mesurant les résultats contre des bancs d'essai établis (Babaei Giglou et coll., 2023). D'autres approches ciblent l'appariement de schémas et d'ontologies proprement dit, confrontées à la référence exigeante de la campagne d'évaluation citée en § 2.3.4.</p>
-
 <p>Ces résultats appellent une lecture prudente, et la prudence porte ici sur un point précis. La promesse est réelle : les modèles capturent une connaissance lexicale et contextuelle qui leur permet de proposer des correspondances qu'un appariement purement structurel manquerait. Mais la limite est <strong>structurelle et non conjoncturelle</strong> : <em>une correspondance générée n'est pas vérifiée</em>. Elle peut être plausible et fausse, et rien dans le procédé qui l'a produite ne distingue les deux cas.</p>
-
 <p>La gouvernance du sens en environnement distribué impose donc de traiter la sortie du modèle comme une <strong>proposition soumise à validation</strong> — par SHACL (§ 2.3.3), par revue experte, par confrontation aux axiomes ontologiques — et non comme un contrat établi. Le découplage producteur-consommateur de sens ne tolère pas qu'une correspondance erronée s'installe silencieusement dans la chaîne d'intégration : elle n'y produira pas une panne, mais une divergence lente.</p>
-
 <div class="avert">
   <p><strong>La fiabilité des correspondances produites par modèle est un front de recherche explicitement ouvert.</strong> Que le socle hérité n'en recense pas de solution éprouvée est une <strong>absence de documentation</strong> au sens de R-14 du Vol. III, non un fait négatif vérifié.</p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> le régime à appliquer ici est celui que le Vol. III impose aux mécanismes cryptographiques (R-02) : qualifier un dispositif par ce que sa spécification <strong>démontre</strong>, jamais par ce qu'elle <strong>promet</strong>. Un appariement produit par modèle démontre une plausibilité lexicale ; il ne démontre pas une équivalence sémantique. Ce que le socle établit est la règle elle-même, et son domaine — les mécanismes cryptographiques ; <strong>il n'établit pas son extension</strong> aux correspondances produites par modèle, proposée ici comme lecture. Elle vaut avertissement pour toute la suite du Livre, où la tentation d'attribuer à un agent la compétence qu'on souhaiterait qu'il ait sera constante.</p>
-
 <h3>2.4.2 GraphRAG : les graphes au service de l'IA générative d'entreprise</h3>
-
 <p>La relation entre graphes et modèles se renverse aussi : le graphe de connaissances n'est plus seulement une cible que le modèle aide à construire, il devient une <strong>ressource qui discipline le modèle</strong>. C'est l'objet de GraphRAG (Edge et coll., 2024), qui adosse la génération augmentée par récupération non à un index vectoriel plat mais à un <strong>graphe structuré</strong> extrait des sources, permettant un raisonnement multi-sauts et une synthèse à l'échelle d'un corpus que la récupération par fragments isolés ne sait pas produire. Des approches apparentées cherchent à rendre cette construction plus économique pour un déploiement d'entreprise.</p>
-
 <p>L'apport pour l'interopérabilité opérationnelle est <strong>triple</strong>, et les trois volets intéressent directement la suite du Livre.</p>
-
 <p><strong>La réduction des hallucinations.</strong> Ancrer les réponses sur des entités et relations attestées du graphe contraint le modèle à puiser dans un référentiel vérifié plutôt que dans sa mémoire paramétrique.</p>
-
 <p><strong>La traçabilité.</strong> Chaque assertion générée peut être rattachée aux nœuds et arêtes qui la fondent — exigence d'auditabilité impérative en contexte réglementé, et que le Livre III retrouvera comme condition, non comme confort.</p>
-
 <p><strong>L'ontologie comme garde-fou.</strong> En imposant que le graphe respecte un schéma de classes et de relations défini, l'organisation <strong>circonscrit l'espace des inférences admissibles</strong> et fait du contrat sémantique une frontière de sûreté pour le système génératif.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> ce troisième volet est le plus important pour la thèse du chapitre, et il opère un renversement qu'il faut nommer. Jusqu'ici, la sémantique servait à ce que deux systèmes se comprennent ; ici, elle sert à <strong>borner ce qu'un système a le droit de conclure</strong>. Le contrat de sens cesse d'être un instrument de coopération pour devenir un instrument de contrainte — et c'est sous cette seconde forme que les Livres II et IV le réemploieront. Ce que le socle établit s'arrête à l'ontologie comme garde-fou circonscrivant l'espace des inférences admissibles ; <strong>il n'établit ni la hiérarchie des trois volets, ni le réemploi</strong> par les Livres II et IV, proposés ici comme lecture.</p>
-
 <div class="avert">
   <p><strong>Ce que ce chapitre ne traite pas, et où cela se trouve.</strong> Le versant proprement <strong>agentique</strong> de la sémantique — l'écart entre accord de protocole et compréhension, la sémantique lue-par-le-modèle, les ontologies de capacités, les modes d'échec sémantiques propres aux échanges entre agents — n'est pas repris ici. Cette matière est celle du <strong>Vol. I <em>Monographie</em> §3.5</strong> ; elle est <strong>consolidée au ch. 9 § 9.4</strong>, où la découverte et la pile protocolaire la prennent pour objet. La thèse du présent chapitre en est la prémisse : les protocoles agentiques <strong>présupposent</strong> l'accord sémantique et ne le fournissent pas. C'est au ch. 9 qu'on mesure le prix de cette présupposition, non ici.</p>
 </div>
+<hr />
 
 <footer class="pied">
   <p><strong>Vol. IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em></strong> · Livre I, chapitre 2. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau, M.Sc. IT.</p>

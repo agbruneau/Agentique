@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chapitre 21 — L&#x27;horloge post-quantique : menace sur la pile identitaire, crypto-agilité et dette de migration · Interopérabilité et Orchestration en Entreprise Agentique</title>
-<meta name="description" content="Livre II — Faire confiance : identité, délégation et fabrique de confiance. Troisième mouvement — l&#x27;horloge post-quantique (ch. 21). Chapitre unique du mouvement, et dernier chapitre du Livre. Chapitre à deux mouvements, issu de la fusion v0.20 des anciens ch. 23 et 24">
+<meta name="description" content="Livre II — Faire confiance : identité, délégation et fabrique de confiance. Troisième mouvement — l&#x27;horloge post-quantique (ch. 21). **Chapitre unique du mouvement, et dernier chapitre du Livre.** Chapitre à deux mouvements, issu de la fusion v0.20 des anciens ch. 23 et 24">
 <meta name="author" content="André-Guy Bruneau, M.Sc. IT">
 <meta name="color-scheme" content="dark">
 <style>
@@ -443,6 +443,17 @@ tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
 tbody td:first-child { color: var(--texte); font-weight: 600; }
 .legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
 
+/* -------------------------------------------------------------- figures */
+/* Les SVG du volume sont dessinés pour le PDF, donc sur fond clair, et ils
+   portent ce fond eux-mêmes — sans quoi il faudrait maintenir deux variantes
+   de chaque figure. Sur ce thème sombre, ils se posent donc comme un carton ;
+   le padding empêche le fond de la figure de toucher le bord du cadre. */
+.figure { margin: 2.1rem 0 1.9rem; }
+.figure img { display: block; width: 100%; height: auto; border-radius: 7px;
+              border: 1px solid var(--trait); background: #fdfbf9; padding: 0.6rem; }
+.figure figcaption { font-size: 0.8rem; font-style: italic; color: var(--texte-faible);
+                     margin-top: 0.65rem; padding-left: 0.15rem; }
+
 /* --------------------------------------------------------------- listes */
 ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
 ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
@@ -533,14 +544,14 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <ol>
     <li><a href="#s210"><span class="num">21.0</span>Introduction : la seule échéance datée du Livre</a></li>
     <li><a href="#s211"><span class="num">21.1</span>Les échéances exactes et leurs sources</a></li>
-    <li><a href="#s212"><span class="num">21.2</span>Harvest now, decrypt later appliqué aux artefacts d&#x27;identité longue durée</a></li>
+    <li><a href="#s212"><span class="num">21.2</span><em>Harvest now, decrypt later</em> appliqué aux artefacts d'identité longue durée</a></li>
     <li><a href="#s213"><span class="num">21.3</span>Inventaire : quels artefacts de la pile agentique cassent, et quand</a></li>
     <li><a href="#s214"><span class="num">21.4</span>Définition opérationnelle et état des recommandations NIST</a></li>
-    <li><a href="#s215"><span class="num">21.5</span>Audit de crypto-agilité des mécanismes d&#x27;émission et du mandat</a></li>
+    <li><a href="#s215"><span class="num">21.5</span>Audit de crypto-agilité des mécanismes d'émission et du mandat</a></li>
     <li><a href="#s216"><span class="num">21.6</span>Patrons de migration sans rupture de la chaîne de confiance</a></li>
     <li><a href="#s217"><span class="num">21.7</span>Ce que les études de coût publiées couvrent (et ne couvrent pas)</a></li>
-    <li><a href="#s218"><span class="num">21.8</span>Méthode d&#x27;inventaire pour une institution</a></li>
-    <li><a href="#s219"><span class="num">21.9</span>Fenêtre d&#x27;action 2026-2029 : le calendrier inverse</a></li>
+    <li><a href="#s218"><span class="num">21.8</span>Méthode d'inventaire pour une institution</a></li>
+    <li><a href="#s219"><span class="num">21.9</span>Fenêtre d'action 2026-2029 : le calendrier inverse</a></li>
   </ol>
   <div class="nav__pied">
     Vol.&nbsp;IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em><br>
@@ -554,350 +565,378 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 <header class="titre">
   <div class="titre__fil">Livre II — Faire confiance : identité, délégation et fabrique de confiance</div>
   <h1><span class="chap">Chapitre 21</span>L&#x27;horloge post-quantique : menace sur la pile identitaire, crypto-agilité et dette de migration</h1>
-  <p class="titre__situe">Livre II — Faire confiance : identité, délégation et fabrique de confiance. Troisième mouvement — l'horloge post-quantique (ch. 21). <strong>Chapitre unique du mouvement, et dernier chapitre du Livre.</strong> Chapitre à deux mouvements, issu de la fusion v0.20 des anciens ch. 23 et 24</p>
+  <p class="titre__situe">Livre II — Faire confiance : identité, délégation et fabrique de confiance. Troisième mouvement — l'horloge post-quantique (ch. 21). **Chapitre unique du mouvement, et dernier chapitre du Livre.** Chapitre à deux mouvements, issu de la fusion v0.20 des anciens ch. 23 et 24</p>
 </header>
 
 <!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
      Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
-     que `build/assemble.py` pour le PDF. L'appareil de gouvernance vit au .md jumeau, qui reste la
-     seule source, et `verifier-piece.py` [6] refuse désormais un rendu qui le recopierait. -->
+     que `build/assemble.py` pour le PDF et que `PRD/decompte.sh` pour la volumétrie. L'appareil de
+     gouvernance vit au .md jumeau, qui reste la seule source, et `build/verifier-piece.py` refuse
+     un rendu qui le recopierait. -->
 
-<div class="encadre encadre--oeuvre">
-  <span class="encadre__label">Note</span>
-  <p><strong>Thèse du second mouvement</strong>, citée depuis le TOC v0.30, entrée du chapitre 21 — la crypto-agilité est l'application des <strong>trois premiers termes de l'invariant</strong> (découplage, contrat, évolution — le quatrième, l'exploitation, est refermé au Livre IV) à la couche cryptographique ; la dette de migration PQC est réelle mais largement non chiffrée — méthode d'estimation plutôt que chiffre.</p>
-</div>
-
+<blockquote>
+<p><strong>Thèse du second mouvement</strong>, citée depuis le TOC v0.30, entrée du chapitre 21 — la crypto-agilité est l'application des <strong>trois premiers termes de l'invariant</strong> (découplage, contrat, évolution — le quatrième, l'exploitation, est refermé au Livre IV) à la couche cryptographique ; la dette de migration PQC est réelle mais largement non chiffrée — méthode d'estimation plutôt que chiffre.</p>
+</blockquote>
 <div class="avert">
   <p><strong>Deux thèses pour un chapitre : le ch. 21 est issu de la fusion v0.20 des anciens ch. 23 et 24</strong> (décision 11 du TOC), et les deux entrées y sont conservées <strong>intégralement</strong>.</p>
 </div>
-
 <h2 id="s210"><span class="sig">§ 21.0</span>Introduction : la seule échéance datée du Livre</h2>
-
 <p>Les sept chapitres du premier mouvement (ch. 12-18) ont établi ce qu'une organisation peut <strong>émettre</strong>, et les deux du deuxième (ch. 19-20) ce qui peut <strong>céder</strong>. Aucun des deux n'a rencontré d'échéance qui <strong>contraigne la conception</strong> : les statuts de normalisation relevés au ch. 13 sont des stades, les propositions du ch. 18 sont <strong>sans jalon</strong>, et les trois scénarios du ch. 16 § 16.4 sont <strong>tous PROJETÉS ou SPÉCULATIFS</strong>.</p>
-
 <p><strong>Ce chapitre est le seul du Livre dont l'objet propre soit une horloge — des jalons publics datés, examinés pour eux-mêmes —, et c'est ce qui lui donne sa fonction.</strong> L'entreprise qui met aujourd'hui des agents en production <strong>arrête des mécanismes d'identité pour une architecture dont elle attend plusieurs années de service</strong> ; et les mécanismes que le premier mouvement a examinés <strong>reposent, au grain de la cryptographie, sur des signatures numériques classiques</strong>.</p>
-
 <div class="avert">
   <p><strong>Ce chapitre ne traite pas de la cryptographie post-quantique pour elle-même.</strong> Il établit d'abord <strong>quelle horloge les documents publics fixent — avec, pour chacun, le statut réel du texte qui la porte</strong> —, puis examine <strong>ce que cette horloge fait à des artefacts d'identité dont le socle documente précisément la longévité</strong> (§ 21.3), <strong>ce qui rend un changement d'algorithme possible sans rupture du contrat</strong> (§ 21.4 à § 21.6), et <strong>ce que coûte le passage</strong> (§ 21.7 à § 21.9).</p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>les deux thèses citées sont des constructions d'auteur.</strong> <strong>Ce que le socle établit</strong> : le statut d'un document et le libellé de ses jalons (F-59, F-60) ; l'existence d'une obligation fédérale datée qui s'ancre sur ce même document (F-61) ; l'écart de statut entre les algorithmes normalisés et le calendrier de retrait (F-62) ; l'absence d'échéance calendaire dans un rapport sectoriel (F-63) ; et le format cryptographique et les bornes temporelles de trois artefacts d'identité (F-01, F-03, F-05, F-46, F-53). <strong>Ce qu'il n'établit pas</strong> : que ces jalons <strong>s'appliquent à la pile identitaire agentique</strong>, ni <strong>quelle durée de service</strong> les architectures conçues en 2026 atteindront, ni qu'une échéance soit <strong>atteignable ou manquée</strong>. ⚠ <em>Le lot d'instruction le déclare lui-même : <strong>il fournit l'horloge, non son incidence</strong>.</em></p>
-
 <h2 id="s211"><span class="sig">§ 21.1</span>Les échéances exactes et leurs sources</h2>
-
-<div class="encadre encadre--oeuvre">
-  <span class="encadre__label">Note</span>
-  <p>⚠ <strong>SIÈGE DE L'HORLOGE POST-QUANTIQUE POUR TOUTE LA SOMME.</strong> Les jalons, leurs sources et leur statut sont <strong>posés ici une seule fois</strong>. Les <strong>ch. 15, 16, 20</strong> et, hors du Livre, les <strong>ch. 45 et 49</strong> y renvoient ; <strong>ils ne re-datent aucun jalon, et ne fusionnent aucune origine</strong>. <em>C'est l'économie de la fusion côté horloge, et elle n'a lieu que si ces chapitres s'y tiennent.</em>  ⚠ <strong>Ce siège porte les jalons, il ne porte pas le tri qui les classe.</strong> Les trois statuts <strong>PROGRAMMÉ / PROJETÉ / SPÉCULATIF</strong> — leur définition, ce qu'ils autorisent et ce qu'ils interdisent — sont posés au <strong>ch. 49 § 49.0, siège de la discipline pour toute la somme</strong>, et ce chapitre les <strong>applique sans les redéfinir</strong>. <em>Un instrument de tri et un fait trié ne se logent pas au même endroit</em> : confondre les deux sièges reviendrait à faire dépendre la définition d'un instrument de la matière qu'il classe. ⚠ <strong>Ce renvoi est ajouté le 27 juillet 2026</strong> (remontée <strong>R-IV-37</strong>, close <strong>sur constat</strong>) : le siège du tri <strong>existait déjà</strong>, et <em>ce qui manquait n'était pas le siège mais le renvoi</em> — trois chapitres du Livre triaient sans pointer vers lui.</p>
-</div>
-
-<p><strong>Trois origines documentaires sont examinées ici pour leurs dates — une quatrième, hors socle, est nommée au § 21.8.</strong> ⚠ <strong>Elles ne relèvent ni du même auteur, ni du même régime, ni du même périmètre, et les fondre en un calendrier unique — ce que la littérature de vulgarisation fait couramment — produit un énoncé faux dans les trois cas.</strong> <em>Elles sont donc tenues sur trois lignes distinctes, et cette section est le siège de cette discipline pour toute la somme.</em></p>
-
-<p><strong>Première origine : le NIST.</strong> Le <strong>NIST IR 8547</strong>, <em>Transition to Post-Quantum Cryptography Standards</em>, à l'état de <strong>projet public initial</strong>, <strong>vise</strong> une <strong>dépréciation en 2030</strong> des mécanismes à clé publique vulnérables au quantique <strong>au niveau de sécurité de 112 bits</strong>, et une <strong>interdiction en 2035</strong> de ces mêmes mécanismes <strong>tous niveaux de sécurité confondus</strong>. Le projet écrit littéralement « <strong>Deprecated after 2030</strong> » et « <strong>Disallowed after 2035</strong> » (F-60, <strong>[B]</strong>), dans les tableaux de ses <strong>§4.1.1</strong> (signatures) et <strong>§4.1.2</strong> (établissement de clés) — <em>bornes de section portées par la composante du rapport de lot, que le texte de l'entrée ne reprend pas.</em></p>
-
+<blockquote>
 <div class="avert">
-  <p><strong>Le statut du document n'est pas un détail de procédure</strong> : sa fiche affiche, à la consultation du 21 juillet 2026, <strong>une entrée d'historique unique</strong> de novembre 2024 et <strong>une période de commentaires publics close en janvier 2025</strong> ; <strong>aucune version finale n'y figure</strong> (F-59, <strong>[B]</strong>, fait négatif <strong>VÉRIFIÉ</strong> par énumération de l'historique, <strong>borné à cette fiche et à cette date</strong>).</p>
+  <p><strong>SIÈGE DE L'HORLOGE POST-QUANTIQUE POUR TOUTE LA SOMME.</strong> Les jalons, leurs sources et leur statut sont <strong>posés ici une seule fois</strong>. Les <strong>ch. 15, 16, 20</strong> et, hors du Livre, les <strong>ch. 45 et 49</strong> y renvoient ; <strong>ils ne re-datent aucun jalon, et ne fusionnent aucune origine</strong>. <em>C'est l'économie de la fusion côté horloge, et elle n'a lieu que si ces chapitres s'y tiennent.</em></p>
 </div>
-
+<div class="avert">
+  <p><strong>Ce siège porte les jalons, il ne porte pas le tri qui les classe.</strong> Les trois statuts <strong>PROGRAMMÉ / PROJETÉ / SPÉCULATIF</strong> — leur définition, ce qu'ils autorisent et ce qu'ils interdisent — sont posés au <strong>ch. 49 § 49.0, siège de la discipline pour toute la somme</strong>, et ce chapitre les <strong>applique sans les redéfinir</strong>. <em>Un instrument de tri et un fait trié ne se logent pas au même endroit</em> : confondre les deux sièges reviendrait à faire dépendre la définition d'un instrument de la matière qu'il classe. ⚠ <strong>Ce renvoi est ajouté le 27 juillet 2026</strong> (remontée <strong>R-IV-37</strong>, close <strong>sur constat</strong>) : le siège du tri <strong>existait déjà</strong>, et <em>ce qui manquait n'était pas le siège mais le renvoi</em> — trois chapitres du Livre triaient sans pointer vers lui.</p>
+</div>
+</blockquote>
+<p><strong>Trois origines documentaires sont examinées ici pour leurs dates — une quatrième, hors socle, est nommée au § 21.8.</strong> ⚠ <strong>Elles ne relèvent ni du même auteur, ni du même régime, ni du même périmètre, et les fondre en un calendrier unique — ce que la littérature de vulgarisation fait couramment — produit un énoncé faux dans les trois cas.</strong> <em>Elles sont donc tenues sur trois lignes distinctes, et cette section est le siège de cette discipline pour toute la somme.</em></p>
+<p><strong>Première origine : le NIST.</strong> Le <strong>NIST IR 8547</strong>, <em>Transition to Post-Quantum Cryptography Standards</em>, à l'état de <strong>projet public initial</strong>, <strong>vise</strong> une <strong>dépréciation en 2030</strong> des mécanismes à clé publique vulnérables au quantique <strong>au niveau de sécurité de 112 bits</strong>, et une <strong>interdiction en 2035</strong> de ces mêmes mécanismes <strong>tous niveaux de sécurité confondus</strong>. Le projet écrit littéralement « <strong>Deprecated after 2030</strong> » et « <strong>Disallowed after 2035</strong> » (F-60, <strong>[B]</strong>), dans les tableaux de ses <strong>§4.1.1</strong> (signatures) et <strong>§4.1.2</strong> (établissement de clés) — <em>bornes de section portées par la composante du rapport de lot, que le texte de l'entrée ne reprend pas.</em> ⚠ <strong>Le statut du document n'est pas un détail de procédure</strong> : sa fiche affiche, à la consultation du 21 juillet 2026, <strong>une entrée d'historique unique</strong> de novembre 2024 et <strong>une période de commentaires publics close en janvier 2025</strong> ; <strong>aucune version finale n'y figure</strong> (F-59, <strong>[B]</strong>, fait négatif <strong>VÉRIFIÉ</strong> par énumération de l'historique, <strong>borné à cette fiche et à cette date</strong>).</p>
 <div class="avert">
   <p><strong>Deux précisions décident de la portée de ces deux mots, et l'une comme l'autre s'écrit contre l'usage courant.</strong> <em>(1)</em> Le vocabulaire du projet donne à <em>deprecated</em> <strong>un sens qui n'est pas celui d'une interdiction</strong> : l'algorithme <em>« may be used, but there is some security risk »</em>, et <strong>il revient au propriétaire des données d'examiner ce risque et de décider s'il continue</strong>. <em>(2)</em> Le projet <strong>permet aux normes d'algorithmes de continuer à spécifier des techniques vulnérables jusqu'en 2035</strong> tout en laissant <strong>des transitions sectorielles plus précoces possibles</strong> (F-60). ⚠ <em>Un lecteur pressé lit dans « Disallowed after 2035 » une date d'extinction générale ; <strong>le texte dit l'inverse</strong> — une borne supérieure à ce que ces normes toléreront, sous laquelle des contraintes sectorielles peuvent s'installer plus tôt.</em> ⚠ <strong>La qualification de 2035 en « plafond et non plancher » est portée par le texte de l'entrée, mais le contrôle de bornage du lot l'a rangée en lecture d'auteur</strong> : elle est reprise <strong>à ce titre</strong>.</p>
 </div>
-
 <div class="avert">
-  <p><strong>Un troisième élément achève de qualifier cette ligne, et il ne figure pas au socle</strong> : le <strong>véhicule normatif</strong> que la §4.1 du NIST IR 8547 désigne pour porter ces échéances — la <strong>SP 800-131A Rev. 3</strong> — est <strong>lui-même un projet public initial</strong>, sa période de commentaires étant close depuis décembre 2024. <em>(Source primaire ouverte et citée hors socle, non versée.)</em> ⚠ <strong><em>Un projet qui renvoie ses échéances à un second projet ne devient pas exécutoire par accumulation.</strong></em></p>
+  <p><strong>Un troisième élément achève de qualifier cette ligne, et il ne figure pas au socle</strong> : le <strong>véhicule normatif</strong> que la §4.1 du NIST IR 8547 désigne pour porter ces échéances — la <strong>SP 800-131A Rev. 3</strong> — est <strong>lui-même un projet public initial</strong>, sa période de commentaires étant close depuis décembre 2024. <em>(Source primaire ouverte et citée hors socle, non versée.)</em> ⚠ <strong><em>Un projet qui renvoie ses échéances à un second projet ne devient pas exécutoire par accumulation.</em></strong></p>
 </div>
-
-<p><strong>Deuxième origine : l'exécutif fédéral américain.</strong> Le <strong>décret présidentiel 14412</strong>, <em>Securing the Nation Against Advanced Cryptographic Attacks</em>, <strong>signé le 22 juin 2026 et publié au <em>Federal Register</em> du 25 juin 2026</strong>, charge l'<em>Office of Management and Budget</em> (OMB) de publier <strong>sous 90 jours</strong> une directive de migration visant les <strong>actifs de grande valeur</strong> et les systèmes à impact élevé, <strong>selon le périmètre que le décret définit</strong>, avec échéance au <strong>31 décembre 2030 pour l'établissement de clés</strong> et au <strong>31 décembre 2031 pour les signatures numériques</strong> (F-61, <strong>[B, degré 1]</strong>). ⚠ <strong>Tri : PROGRAMMÉ</strong> — <em>engagement daté porté par un texte signé et publié.</em> Le décret prévoit en outre la publication d'une <strong>règle proposée</strong> modifiant la réglementation fédérale des acquisitions, qui viserait les contractants couverts à la même échéance ; ⚠ <strong><em>une règle proposée n'est pas une règle en vigueur</strong>, et le socle n'établit rien de son adoption.</em></p>
-
+<p><strong>Deuxième origine : l'exécutif fédéral américain.</strong> Le <strong>décret présidentiel 14412</strong>, <em>Securing the Nation Against Advanced Cryptographic Attacks</em>, <strong>signé le 22 juin 2026 et publié au <em>Federal Register</em> du 25 juin 2026</strong>, charge l'<em>Office of Management and Budget</em> (OMB) de publier <strong>sous 90 jours</strong> une directive de migration visant les <strong>actifs de grande valeur</strong> et les systèmes à impact élevé, <strong>selon le périmètre que le décret définit</strong>, avec échéance au <strong>31 décembre 2030 pour l'établissement de clés</strong> et au <strong>31 décembre 2031 pour les signatures numériques</strong> (F-61, <strong>[B, degré 1]</strong>). ⚠ <strong>Tri : PROGRAMMÉ</strong> — <em>engagement daté porté par un texte signé et publié.</em> Le décret prévoit en outre la publication d'une <strong>règle proposée</strong> modifiant la réglementation fédérale des acquisitions, qui viserait les contractants couverts à la même échéance ; ⚠ <em><strong>une règle proposée n'est pas une règle en vigueur</strong>, et le socle n'établit rien de son adoption.</em></p>
 <p><strong>La note OMB M-26-15 du 24 juin 2026, qui met en œuvre ce décret, ordonne aux agences d'aligner leur plan de migration sur « NIST Internal Report (IR) 8547 […] <em>or successor document</em> »</strong>, sa note de bas de page renvoyant explicitement à l'adresse du projet (F-61). ⚠ <strong>C'est le fait qui commande la lecture de cette deuxième ligne : une obligation fédérale datée s'ancre sur un document qui est encore un projet public initial.</strong> <em>La clause « ou un document successeur » est précisément ce qui évite d'en conclure que le projet devient une norme — elle transfère au futur la désignation du texte qui fera foi.</em> ⚠ <strong>La note distingue par ailleurs deux registres qu'il ne faut pas confondre</strong> : <strong>la remise du plan est prescrite au mode obligatoire, sous 120 jours</strong>, tandis que <strong>les cinq phases de son calendrier — dont une phase de migration complète à horizon 2035 — sont formulées au mode de la recommandation</strong>. <em>Le tri porte sur l'énoncé prospectif, non sur le support qui l'imprime</em> : l'horizon de 2035 est <strong>PROJETÉ</strong>, la remise du plan sous 120 jours relevant seule du <strong>PROGRAMMÉ</strong>.</p>
-
 <div class="avert">
   <p><strong>Périmètre, et il commande la lecture d'un volume canadien.</strong> <em>Cette obligation vise des agences fédérales américaines et un ensemble de systèmes que le décret nomme. <strong>Elle ne s'étend d'elle-même ni aux institutions financières canadiennes, ni à leurs fournisseurs.</strong></em> <strong>Le socle ne documente pas d'instrument canadien équivalent — absence de documentation, non fait négatif vérifié</strong> (degré 3), et la lacune est déclarée au § 21.8.</p>
 </div>
-
 <p><strong>Troisième origine : le secteur financier européen.</strong> Le rapport conjoint <em>Prioritising Post-Quantum Cryptography Migration Activities in Financial Services</em> (<strong>Europol</strong>, Office des publications de l'Union européenne, Luxembourg, <strong>2026</strong>) <strong>ordonne ses activités de migration par le risque plutôt que par un calendrier daté</strong> : le balayage du texte extrait de ses 26 pages <strong>ne relève aucune occurrence</strong> des trois chaînes cherchées — « 2030 », « 2035 » et « 8547 » (F-63, <strong>[B]</strong>, fait négatif <strong>VÉRIFIÉ</strong>, <strong>borné à ces trois chaînes, à ce fichier et à cette extraction</strong> — ⚠ <em>ce qui serait rendu en image y échappe</em>). Un second document, antérieur, est le <em>call to action</em> du <strong>Quantum Safe Financial Forum</strong> (QSFF). ⚠ <strong>Le socle ne documente pas de lien institutionnel entre ce document et le rapport conjoint — degré 3</strong> : <em>le rattachement des deux textes est porté par des communiqués que le lot n'a pas pu ouvrir.</em> ⚠ Ce second document <strong>ne porte pas davantage d'échéance sectorielle</strong> : ses cinq recommandations sont énoncées <strong>sans date</strong>, et <strong>la seule échéance datée relevée au balayage est attribuée à l'administration américaine</strong>. <em>(Source primaire ouverte et citée hors socle, non versée.)</em></p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Origine</th><th>Ce que le document écrit</th><th>Statut réel du document</th><th>Périmètre</th><th>Tri prospectif</th></tr></thead>
-  <tbody>
-    <tr><td><strong>NIST IR 8547</strong> (F-59, F-60)</td><td>« Deprecated after 2030 » (112 bits) ; « Disallowed after 2035 » (tous niveaux) ; 2035 comme <strong>borne de spécification</strong> — <em>lecture d'auteur</em></td><td><strong>projet public initial</strong> ; <strong>une seule entrée d'historique</strong>, de novembre 2024 ; commentaires clos en janvier 2025</td><td>les normes d'algorithmes du NIST</td><td><strong>PROJETÉ</strong> — <em>intention annoncée dans un projet ; tri d'auteur, motivé ci-dessous</em></td></tr>
-    <tr><td><strong>Décret 14412</strong> et <strong>note OMB M-26-15</strong> (F-61)</td><td>migration au <strong>31 déc. 2030</strong> (établissement de clés) et au <strong>31 déc. 2031</strong> (signatures) ; alignement des plans sur le projet « <strong>or successor document</strong> »</td><td>décret <strong>signé et publié</strong> ; note d'application du 24 juin 2026</td><td>actifs de grande valeur et systèmes fédéraux <strong>américains</strong> à impact élevé ; règle d'acquisition <strong>proposée</strong>, non adoptée</td><td><strong>PROGRAMMÉ</strong> — <em>engagement daté porté par un texte publié</em></td></tr>
-    <tr><td><strong>Rapport Europol 2026</strong> (F-63) et <em>call to action</em> du <strong>QSFF</strong> (hors socle) — ⚠ <strong>deux documents, lien institutionnel non documenté</strong></td><td>priorisation <strong>par le risque</strong> ; <strong>aucune échéance sectorielle</strong> relevée au balayage ; l'échéance citée dans le second est <strong>attribuée à l'administration américaine</strong></td><td>rapport de praticiens, portant <strong>un avertissement de non-obligation</strong></td><td>secteur financier, <strong>sans force contraignante</strong></td><td><em>sans échéance propre à trier</em></td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>Origine</th>
+<th>Ce que le document écrit</th>
+<th>Statut réel du document</th>
+<th>Périmètre</th>
+<th>Tri prospectif</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>NIST IR 8547</strong> (F-59, F-60)</td>
+<td>« Deprecated after 2030 » (112 bits) ; « Disallowed after 2035 » (tous niveaux) ; 2035 comme <strong>borne de spécification</strong> — <em>lecture d'auteur</em></td>
+<td><strong>projet public initial</strong> ; <strong>une seule entrée d'historique</strong>, de novembre 2024 ; commentaires clos en janvier 2025</td>
+<td>les normes d'algorithmes du NIST</td>
+<td><strong>PROJETÉ</strong> — <em>intention annoncée dans un projet ; tri d'auteur, motivé ci-dessous</em></td>
+</tr>
+<tr>
+<td><strong>Décret 14412</strong> et <strong>note OMB M-26-15</strong> (F-61)</td>
+<td>migration au <strong>31 déc. 2030</strong> (établissement de clés) et au <strong>31 déc. 2031</strong> (signatures) ; alignement des plans sur le projet « <strong>or successor document</strong> »</td>
+<td>décret <strong>signé et publié</strong> ; note d'application du 24 juin 2026</td>
+<td>actifs de grande valeur et systèmes fédéraux <strong>américains</strong> à impact élevé ; règle d'acquisition <strong>proposée</strong>, non adoptée</td>
+<td><strong>PROGRAMMÉ</strong> — <em>engagement daté porté par un texte publié</em></td>
+</tr>
+<tr>
+<td><strong>Rapport Europol 2026</strong> (F-63) et <em>call to action</em> du <strong>QSFF</strong> (hors socle) — ⚠ <strong>deux documents, lien institutionnel non documenté</strong></td>
+<td>priorisation <strong>par le risque</strong> ; <strong>aucune échéance sectorielle</strong> relevée au balayage ; l'échéance citée dans le second est <strong>attribuée à l'administration américaine</strong></td>
+<td>rapport de praticiens, portant <strong>un avertissement de non-obligation</strong></td>
+<td>secteur financier, <strong>sans force contraignante</strong></td>
+<td><em>sans échéance propre à trier</em></td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 21.1 — Trois origines de l'horloge post-quantique, leurs statuts et leurs périmètres, au 21 juillet 2026.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : les jalons figurent <strong>dans un projet</strong> et y sont formulés <strong>comme une intention</strong> — le texte écrit « NIST <strong>intends</strong> to instead deprecate… » (F-60) —, et <strong>le véhicule normatif censé les porter est lui aussi un projet</strong>. <strong>Ce que le socle n'établit pas</strong> : <strong>un tri prospectif de ces jalons</strong> — ni F-59 ni F-60 n'en porte. <em>La lecture proposée est qu'un engagement institutionnel <strong>annoncé sans être en vigueur</strong> relève du <strong>PROJETÉ</strong>, non du PROGRAMMÉ.</em> ⚠ <strong>La définition qu'applique ce tri est elle-même attribuée</strong> : elle est héritée du <strong>Vol. I <em>Monographie</em> §7.0.2</strong> (H-33, <strong>[C]</strong>), et son siège dans la somme est celui qu'annonce l'encadré ci-dessus — <em>appliquer un instrument sans nommer son auteur le fait passer pour acquis.</em> <strong>Le tri de la deuxième ligne, lui, se déduit du fait</strong> : <em>un texte signé, publié et portant des dates est un engagement daté réel.</em></p>
-
-<p><strong>Quatrième constat, et il ferme la section.</strong> ⚠ <strong>Les algorithmes de remplacement, eux, ne sont pas en projet</strong> : <strong>FIPS 203</strong> (ML-KEM, encapsulation de clé) et <strong>FIPS 204</strong> (ML-DSA, signature) sont des normes <strong>finales, publiées le 13 août 2024</strong> (F-62, <strong>[B]</strong>). <strong><em>Les algorithmes sont normalisés ; le calendrier de retrait des algorithmes classiques ne l'est pas.</strong></em> ⚠ <strong>L'asymétrie est le cœur de l'horloge</strong> : <em>une organisation qui attendrait « la norme » pour agir attendrait un document dont <strong>rien, dans le corpus consulté, ne date la finalisation</strong>.</em> ⚠ <strong>Et un statut final ne vaut pas texte figé</strong> : les fiches des deux normes portent <strong>l'une et l'autre un avis d'errata</strong> annonçant des corrections dans une révision future — <em>matière du § 21.4.</em></p>
-
+<p><strong>Quatrième constat, et il ferme la section.</strong> ⚠ <strong>Les algorithmes de remplacement, eux, ne sont pas en projet</strong> : <strong>FIPS 203</strong> (ML-KEM, encapsulation de clé) et <strong>FIPS 204</strong> (ML-DSA, signature) sont des normes <strong>finales, publiées le 13 août 2024</strong> (F-62, <strong>[B]</strong>). <strong><em>Les algorithmes sont normalisés ; le calendrier de retrait des algorithmes classiques ne l'est pas.</em></strong> ⚠ <strong>L'asymétrie est le cœur de l'horloge</strong> : <em>une organisation qui attendrait « la norme » pour agir attendrait un document dont <strong>rien, dans le corpus consulté, ne date la finalisation</strong>.</em> ⚠ <strong>Et un statut final ne vaut pas texte figé</strong> : les fiches des deux normes portent <strong>l'une et l'autre un avis d'errata</strong> annonçant des corrections dans une révision future — <em>matière du § 21.4.</em></p>
 <div class="avert">
   <p><strong>La lacune du statut réel du projet est ouverte et non close</strong> : <strong>le socle ne documente pas de calendrier de finalisation — degré 3</strong>, et <em>il ne s'en déduit rien sur les intentions du NIST.</em></p>
 </div>
-
 <h2 id="s212"><span class="sig">§ 21.2</span><em>Harvest now, decrypt later</em> appliqué aux artefacts d'identité longue durée</h2>
-
 <div class="avert">
   <p><strong>Le socle ne documente pas la collecte anticipée en vue d'un déchiffrement ultérieur — absence de documentation, non fait négatif vérifié</strong> (degré 3). <em>Le lot ne l'a pas traitée, et aucune des entrées mobilisées n'en porte la mécanique ni n'en date la faisabilité.</em> <strong>La section ne peut donc pas s'écrire comme un chapitre de fait ; elle s'écrit comme un raisonnement d'architecture appuyé sur des faits qui, eux, sont établis — et elle dit à quel endroit exact le raisonnement quitte le socle.</strong></p>
 </div>
-
 <p><strong>Ce que le socle établit porte sur la longévité des artefacts, et c'est la variable qui décide.</strong> Trois faits, tous en <strong>[A]</strong> et tous bornés à la spécification de la carte signée :</p>
-
-<ul class="puces">
-  <li>l'<strong>en-tête protégé</strong> énumère trois paramètres obligatoires et un seul facultatif nommé, et <strong>ne porte aucun paramètre temporel</strong> — <em>la signature ne périme que par sa clé</em> (F-03, degré 1) ;</li>
-  <li>la <strong>carte</strong> compte quatorze champs, <strong>dont aucun n'exprime une date d'émission, une expiration, une fenêtre de validité ni un indicateur de révocation</strong> (F-05, degré 1) ;</li>
-  <li>la <strong>procédure de vérification</strong> ne comporte <strong>aucune étape de contrôle de statut ou de fraîcheur</strong>, et la section balayée <strong>ne mentionne aucun dispositif de statut</strong> (F-06) — alors même que l'interdiction d'employer une clé expirée ou révoquée est posée <strong>au niveau normatif le plus fort</strong>, <strong>sans le moyen de l'établir</strong> (F-07).</li>
+<ul>
+<li>l'<strong>en-tête protégé</strong> énumère trois paramètres obligatoires et un seul facultatif nommé, et <strong>ne porte aucun paramètre temporel</strong> — <em>la signature ne périme que par sa clé</em> (F-03, degré 1) ;</li>
+<li>la <strong>carte</strong> compte quatorze champs, <strong>dont aucun n'exprime une date d'émission, une expiration, une fenêtre de validité ni un indicateur de révocation</strong> (F-05, degré 1) ;</li>
+<li>la <strong>procédure de vérification</strong> ne comporte <strong>aucune étape de contrôle de statut ou de fraîcheur</strong>, et la section balayée <strong>ne mentionne aucun dispositif de statut</strong> (F-06) — alors même que l'interdiction d'employer une clé expirée ou révoquée est posée <strong>au niveau normatif le plus fort</strong>, <strong>sans le moyen de l'établir</strong> (F-07).</li>
 </ul>
-
 <p><strong>Le contraste avec un artefact voisin est instructif</strong> : les mandats de paiement agentique, eux, <strong>portent des attributs temporels d'émission et d'échéance</strong> (F-46, <strong>[B]</strong>). ⚠ <em>Deux artefacts de la même pile, <strong>deux régimes de péremption</strong> — l'un borné par le temps, l'autre suspendu au statut d'une clé que la procédure spécifiée ne permet pas d'établir.</em></p>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle n'établit pas</strong> : <em>qu'un adversaire collecte aujourd'hui des artefacts signés, qu'une capacité de cryptanalyse existe ou soit datable, ni qu'un tel artefact conserve une valeur opérationnelle après la dépréciation de son algorithme.</em> <strong>La lecture proposée est la suivante, et elle est réfutable.</strong> <em>Un artefact d'identité se distingue d'un message chiffré sur un point : <strong>le risque n'est pas qu'il soit lu plus tard, c'est qu'il soit forgé plus tard</strong>. Un artefact dont rien ne fixe la fin de validité, et dont le retrait suppose un mécanisme de statut que sa spécification ne fournit pas, <strong>ne dispose d'aucun moyen documenté d'être sorti de circulation avant l'horizon de dépréciation de son algorithme</strong>. Le risque de collecte anticipée porte donc, pour cette classe d'artefacts, <strong>moins sur la confidentialité que sur la non-répudiation rétroactive</strong> : ce qui a été signé sous un algorithme déprécié <strong>perd, à terme, la capacité d'être opposé</strong>.</em> ⚠ <strong>Le socle ne documente ni procédure de re-signature ni horodatage d'appoint pour les mécanismes examinés — degré 3.</strong></p>
-
 <div class="avert">
   <p><strong>Une borne doit être posée sur la date, et elle écarte une fenêtre plutôt qu'elle ne l'invoque.</strong> Une entrée héritée situe entre 2029 et 2032 la fenêtre d'apparition d'un calculateur quantique cryptographiquement pertinent, <strong>et le Vol. I trie lui-même cet énoncé SPÉCULATIF</strong> (H-17, <strong>[C]</strong>). <strong>Une entrée [C] ne porte jamais un fait central</strong> : <em>cette fenêtre est mentionnée pour être écartée du raisonnement, non pour l'appuyer.</em> ⚠ <strong>Ce qui tient sans elle suffit</strong> : les deux jalons publics du § 21.1 tombent en 2030-2031 — <strong>PROGRAMMÉ</strong> — et en 2035 — <strong>PROJETÉ</strong> — ; et — <span class="auteur">Lecture de l'auteur</span> <em>l'horizon de conception d'une pile d'identité d'entreprise n'est vraisemblablement pas plus court.</em></p>
 </div>
-
+<figure class="figure">
+  <img src="../figures/f-21-02-moisson.svg" alt="Figure 21.2 — Récolter maintenant, déchiffrer plus tard : ce que le socle établit, et où le raisonnement le quitte." />
+  <figcaption><strong>Figure 21.2</strong> — Récolter maintenant, déchiffrer plus tard : ce que le socle établit, et où le raisonnement le quitte.</figcaption>
+</figure>
 <h2 id="s213"><span class="sig">§ 21.3</span>Inventaire : quels artefacts de la pile agentique cassent, et quand</h2>
-
 <p><em>Un inventaire de migration se dresse <strong>par artefact, non par produit</strong>.</em> ⚠ <strong>C'est la colonne de droite qui dit où une institution ne peut pas encore inscrire de plan.</strong></p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Artefact</th><th>Ce que le socle documente de sa cryptographie</th><th>Ce qui décide de sa longévité</th><th>Ce que le socle ne porte pas — <strong>degré 3</strong>, sauf mention</th></tr></thead>
-  <tbody>
-    <tr><td><strong>Carte d'agent signée</strong></td><td>signature au format JWS ; canonicalisation avant signature ; champ de signatures exclu du contenu signé (F-01, <strong>[A]</strong>)</td><td><strong>aucune borne temporelle</strong> dans l'en-tête protégé (F-03) ; <strong>ni validité ni statut</strong> parmi les quatorze champs (F-05) ; <strong>statut de clé non établissable</strong> (F-06, F-07)</td><td>l'ancrage de confiance, la révocation et la gouvernance des clés — <strong>réserve capitale de l'entrée héritée</strong> H-01, <strong>[A]</strong></td></tr>
-    <tr><td><strong>Mandats de paiement agentique</strong></td><td>sérialisation SD-JWT, attribut de type <strong>versionné</strong>, version v0.2.0 du 28 avril 2026 (F-46, <strong>[B]</strong>)</td><td>attributs temporels d'émission et d'échéance portés par le mandat</td><td><strong>l'agilité du mécanisme de signature sous-jacent</strong> ; le socle ne porte que le format et ses attributs</td></tr>
-    <tr><td><strong>Certificats et statut</strong></td><td>granularité de la révocation bornée à la période d'émission de la liste ; l'état « good » <strong>ne signifie pas nécessairement</strong> qu'un certificat ait jamais été émis (F-53, <strong>[B]</strong>)</td><td>fraîcheur de la liste ou du répondeur ; <strong>un exploitant a arrêté ses répondeurs le 6 août 2025</strong> (F-54, <strong>[B]</strong>)</td><td><strong>toute application de ces textes à un artefact d'identité d'agent</strong></td></tr>
-    <tr><td><strong>Entrées de registre gouverné</strong></td><td>brouillon de laboratoire, en-tête du 27 mars 2026 (F-38, <strong>[A]</strong>) ; profil ancré sur SCIM 2.0 (H-03)</td><td>quatre états prescrits, ⚠ <strong>sans délai de propagation ni budget de fraîcheur</strong> (F-55, <strong>[C]</strong> : repérage, non fait central)</td><td><strong>tout élément cryptographique du registre lui-même</strong> ; le socle ne porte, pour cet artefact, que des états et un statut de document</td></tr>
-    <tr><td><strong>Autorisation du protocole agent-outil</strong></td><td>—</td><td>la page balayée <strong>ne prescrit aucun mécanisme de révocation</strong> : chaînes absentes, RFC de révocation non citée (F-52, <strong>[B]</strong>, fait négatif <strong>VÉRIFIÉ</strong>, borné à cette page et à cette révision)</td><td>ce que <strong>d'autres pages</strong> de la spécification prévoient ; le balayage porte sur <strong>deux pages nommées</strong></td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Artefact</th>
+<th>Ce que le socle documente de sa cryptographie</th>
+<th>Ce qui décide de sa longévité</th>
+<th>Ce que le socle ne porte pas — <strong>degré 3</strong>, sauf mention</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Carte d'agent signée</strong></td>
+<td>signature au format JWS ; canonicalisation avant signature ; champ de signatures exclu du contenu signé (F-01, <strong>[A]</strong>)</td>
+<td><strong>aucune borne temporelle</strong> dans l'en-tête protégé (F-03) ; <strong>ni validité ni statut</strong> parmi les quatorze champs (F-05) ; <strong>statut de clé non établissable</strong> (F-06, F-07)</td>
+<td>l'ancrage de confiance, la révocation et la gouvernance des clés — <strong>réserve capitale de l'entrée héritée</strong> H-01, <strong>[A]</strong></td>
+</tr>
+<tr>
+<td><strong>Mandats de paiement agentique</strong></td>
+<td>sérialisation SD-JWT, attribut de type <strong>versionné</strong>, version v0.2.0 du 28 avril 2026 (F-46, <strong>[B]</strong>)</td>
+<td>attributs temporels d'émission et d'échéance portés par le mandat</td>
+<td><strong>l'agilité du mécanisme de signature sous-jacent</strong> ; le socle ne porte que le format et ses attributs</td>
+</tr>
+<tr>
+<td><strong>Certificats et statut</strong></td>
+<td>granularité de la révocation bornée à la période d'émission de la liste ; l'état « good » <strong>ne signifie pas nécessairement</strong> qu'un certificat ait jamais été émis (F-53, <strong>[B]</strong>)</td>
+<td>fraîcheur de la liste ou du répondeur ; <strong>un exploitant a arrêté ses répondeurs le 6 août 2025</strong> (F-54, <strong>[B]</strong>)</td>
+<td><strong>toute application de ces textes à un artefact d'identité d'agent</strong></td>
+</tr>
+<tr>
+<td><strong>Entrées de registre gouverné</strong></td>
+<td>brouillon de laboratoire, en-tête du 27 mars 2026 (F-38, <strong>[A]</strong>) ; profil ancré sur SCIM 2.0 (H-03)</td>
+<td>quatre états prescrits, ⚠ <strong>sans délai de propagation ni budget de fraîcheur</strong> (F-55, <strong>[C]</strong> : repérage, non fait central)</td>
+<td><strong>tout élément cryptographique du registre lui-même</strong> ; le socle ne porte, pour cet artefact, que des états et un statut de document</td>
+</tr>
+<tr>
+<td><strong>Autorisation du protocole agent-outil</strong></td>
+<td>—</td>
+<td>la page balayée <strong>ne prescrit aucun mécanisme de révocation</strong> : chaînes absentes, RFC de révocation non citée (F-52, <strong>[B]</strong>, fait négatif <strong>VÉRIFIÉ</strong>, borné à cette page et à cette révision)</td>
+<td>ce que <strong>d'autres pages</strong> de la spécification prévoient ; le balayage porte sur <strong>deux pages nommées</strong></td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 21.2 — Inventaire de migration par artefact, au 21 juillet 2026.</p>
-
 <p><strong>Trois enseignements se tirent, et aucun n'exige de date.</strong></p>
-
 <p><strong>Le premier porte sur l'agilité.</strong> Dans l'énumération normative de l'en-tête protégé, <strong>un seul paramètre nomme l'algorithme</strong> (F-03). <em>Le mécanisme dispose donc d'un point où l'algorithme est déclaré et peut, à ce titre, changer.</em> ⚠ <strong>Ce que la spécification démontre est qu'un algorithme est nommé et que la vérification reconstruit la charge en re-canonicalisant la carte reçue</strong> (F-01, F-02) ; <strong>elle ne documente ni procédure de transition d'un algorithme à un autre, ni politique d'acceptation des algorithmes par le vérificateur</strong> (R-02). ⚠ <em>La capacité de porter plusieurs signatures est spécifiée pour permettre <strong>la rotation des clés</strong>, mais <strong>aucune procédure de retrait d'une clé compromise ne l'est</strong></em> (F-10, <strong>[B]</strong>) — <strong>la rotation est outillée, le retrait ne l'est pas.</strong> <em>L'audit est au § 21.5.</em></p>
-
 <p><strong>Le deuxième porte sur l'ordre des travaux.</strong> ⚠ <em>Ce qui décide de la difficulté d'une migration n'est pas la force de l'algorithme employé, <strong>c'est la capacité à sortir de circulation ce qui a été émis sous l'ancien</strong>.</em> <strong>Or c'est le point où quatre des cinq lignes du tableau convergent</strong>, chacune dans sa borne : la carte signée n'a ni expiration ni indicateur de révocation, et le vérificateur n'a pas le moyen d'établir le statut d'une clé qu'il lui est pourtant interdit d'employer si elle est révoquée ; le registre prescrit un état de révocation <strong>sans fixer de délai de propagation</strong> ; l'autorisation du protocole agent-outil <strong>ne prescrit, sur la page balayée, aucun mécanisme de révocation</strong> ; et le précédent des certificats converge par sa borne propre. ⚠ <strong>La cinquième fait exception</strong> : les mandats portent des attributs temporels — <em>une péremption par le temps, qui n'est pas une révocation mais qui borne la circulation.</em> ⚠ <strong>Et le précédent ne console pas</strong> : <em>là même où la révocation est spécifiée, sa granularité est bornée à la période d'émission de la liste.</em> <strong>L'inventaire complet est au ch. 20 § 20.4</strong> ; il n'est pas refait ici.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle n'établit pas</strong> : que ces manques soient <strong>liés entre eux</strong>, qu'ils tiennent à une <strong>cause commune</strong>, ni qu'ils <strong>empêchent</strong> une migration. <em>La lecture proposée est qu'<strong>une migration cryptographique est d'abord une opération de retrait</strong>, et qu'elle ordonne donc les travaux d'une institution — <strong>instrumenter le retrait avant de choisir l'algorithme de remplacement</strong>. Elle est réfutable : un mécanisme de retrait spécifié ailleurs, dans un corpus non balayé, la ferait tomber.</em></p>
-
 <p><strong>Le troisième porte sur l'objet composite.</strong> ⚠ <strong>Le passeport d'agent ne figure dans aucune spécification de 2026 : c'est un objet de synthèse construit par la somme</strong> (ch. 16). <span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle n'établit pas</strong> : que ces pièces composent un objet unique, ni <strong>qu'une propriété de migration se transporte d'une pièce à l'assemblage</strong> — <em>aucune entrée mobilisée ici ne porte sur des assemblages.</em> <em>La lecture proposée est que <strong>la migration de cet assemblage ne vaudra pas mieux que celle de sa pièce la moins agile</strong>, le tableau montrant que ces pièces n'ont ni le même format, ni le même régime de péremption, ni le même degré de documentation.</em></p>
-
 <div class="avert">
   <p><strong>Reste le « quand », que le titre annonce et que le socle ne fournit pas au grain de l'artefact.</strong> <strong>Le socle ne documente pas l'incidence des jalons post-quantiques sur les artefacts d'identité agentique — degré 3</strong> ; <em>le lot le déclare en clôture, et le chapitre ne comble pas ce trou par une chronologie inventée.</em> <strong>Ce qui peut s'écrire sans le combler tient en une phrase</strong> : <em>un artefact que rien ne borne dans le temps <strong>traverse par construction les deux jalons du § 21.1</strong> — de sorte que la variable qu'une institution contrôle <strong>n'est pas la date, mais la durée de vie qu'elle consent à ses propres artefacts</strong>.</em></p>
 </div>
-
 <h2 id="s214"><span class="sig">§ 21.4</span>Définition opérationnelle et état des recommandations NIST</h2>
-
 <div class="avert">
   <p><strong>La réponse ne se lit pas dans le socle, et il faut l'écrire avant tout le reste.</strong> <strong>Le socle ne documente ni définition de la crypto-agilité, ni recommandation portant sur elle — absence de documentation, non fait négatif vérifié</strong> (degré 3). <em>Le programme d'instruction nommait pourtant les « recommandations de crypto-agilité » parmi les objets du lot ; <strong>la clôture du lot énumère six points couverts, et la crypto-agilité n'est aucun des six</strong>.</em> <strong>La lacune est déclarée et non comblée.</strong></p>
 </div>
-
 <p><strong>Ce chapitre fait donc trois choses qu'il ne mélange pas</strong> : il <strong>construit</strong> une définition opérationnelle, marquée comme construction d'auteur ; il <strong>audite</strong> contre elle les mécanismes d'émission et le mandat, en ne retenant de chacun que <strong>ce que sa spécification démontre</strong> (§ 21.5) ; et il <strong>propose</strong> des patrons de migration, <strong>constructions d'auteur en totalité</strong> (§ 21.6).</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : que l'algorithme de signature est <strong>un paramètre nommé</strong> dans au moins un mécanisme (F-03) ; qu'un format de mandat porte <strong>un attribut de type versionné</strong> (F-46) ; que les algorithmes de remplacement sont normalisés tandis que le calendrier de retrait ne l'est pas (F-62, F-59). <strong>Ce qu'il n'établit pas</strong> : <strong>les trois conditions énoncées ci-dessous, qui ne sont endossées par aucune source.</strong> <em>La somme appelle <strong>crypto-agile</strong> un mécanisme dont la spécification satisfait trois conditions</em> : <strong>(1)</strong> l'algorithme y est <strong>un paramètre nommé du contrat</strong>, et non une hypothèse implicite du format — c'est le <strong>découplage</strong> ; <strong>(2)</strong> le contrat porte <strong>une version vérifiable</strong>, de sorte qu'un vérificateur puisse constater à quel régime il a affaire — c'est le <strong>contrat</strong> ; <strong>(3)</strong> la spécification documente <strong>le passage d'une valeur du paramètre à la suivante, retrait de l'ancienne compris</strong> — c'est l'<strong>évolution</strong>. ⚠ <em>Le quatrième terme de l'invariant, l'<strong>exploitation</strong>, en fait <strong>une charge qui se réévalue</strong> plutôt qu'un travail qui s'achève</em> (H-27, <strong>[C]</strong>, thèse attribuée). ⚠ <strong>La troisième condition est celle qui décide, et c'est contre elle que ce chapitre doit se tenir en garde</strong> : <em>une spécification qui ne documente pas cette procédure <strong>n'est pas convaincue de défaut</strong> — elle est <strong>muette</strong>, et le silence se qualifie à son degré.</em></p>
-
 <div class="avert">
-  <p><strong>L'invariant n'est pas employé nu, et sa forme se cite exactement.</strong> Il est <strong>une thèse d'un volume antérieur, à attribuer</strong> : <em>« découplage, contrat, évolution » deviennent « découplage, contrat, évolution, exploitation »</em> (H-27, <strong>[C]</strong>, Vol. I <em>Synthèse</em> §10.3 ; l'énoncé canonique de l'invariant à <strong>trois</strong> termes est au Vol. I <em>Monographie</em> §1.0.2.1 — ne pas confondre les deux). <strong>Une entrée [C] ne porte jamais un fait central</strong> : <em>elle fournit ici un cadre, non une preuve</em>, et <strong>le quatrième terme est refermé au Livre IV</strong>, non invoqué ici. ⚠ <strong>Une borne s'ajoute depuis le 28 juillet 2026, et elle tient au dépôt plutôt qu'au contenu</strong> : le fichier qui porte cette citation a été <strong>supprimé du dépôt le 22 juillet 2026</strong> (commit <code>fd8f1be</code>), de sorte que l'entrée est <strong>☐ non établie</strong> au volet résiduel de G-1 (<code>S-153</code>), non rejouable dans l'arbre courant. <strong><em>Une citation non rejouable n'est pas une citation fautive : elle cesse d'être opposable sans cesser d'être exacte</strong></em> — raison de plus pour n'en tirer aucun fait.</p>
+  <p><strong>L'invariant n'est pas employé nu, et sa forme se cite exactement.</strong> Il est <strong>une thèse d'un volume antérieur, à attribuer</strong> : <em>« découplage, contrat, évolution » deviennent « découplage, contrat, évolution, exploitation »</em> (H-27, <strong>[C]</strong>, Vol. I <em>Synthèse</em> §10.3 ; l'énoncé canonique de l'invariant à <strong>trois</strong> termes est au Vol. I <em>Monographie</em> §1.0.2.1 — ne pas confondre les deux). <strong>Une entrée [C] ne porte jamais un fait central</strong> : <em>elle fournit ici un cadre, non une preuve</em>, et <strong>le quatrième terme est refermé au Livre IV</strong>, non invoqué ici. ⚠ <strong>Une borne s'ajoute depuis le 28 juillet 2026, et elle tient au dépôt plutôt qu'au contenu</strong> : le fichier qui porte cette citation a été <strong>supprimé du dépôt le 22 juillet 2026</strong> (commit <code>fd8f1be</code>), de sorte que l'entrée est <strong>☐ non établie</strong> au volet résiduel de G-1 (<code>S-153</code>), non rejouable dans l'arbre courant. <strong><em>Une citation non rejouable n'est pas une citation fautive : elle cesse d'être opposable sans cesser d'être exacte</em></strong> — raison de plus pour n'en tirer aucun fait.</p>
 </div>
-
 <p><strong>L'état des recommandations, tel que le socle le porte, se résume à un écart de statut</strong> — <strong>algorithmes normalisés, calendrier de retrait non normalisé</strong> (F-62 ; F-59). <em>Le § 21.1 en est le siège ; il n'est pas rejoué.</em></p>
-
 <div class="avert">
-  <p><strong>Deux précisions se rattachent directement à l'objet de ce mouvement, et l'une comme l'autre nuance ce qu'un statut « final » autorise à croire.</strong> <em>(1)</em> <strong>Les fiches des deux normes finales portent l'une et l'autre un avis d'errata</strong> annonçant des corrections dans une révision future, et celle de <strong>FIPS 204</strong> porte en outre une <strong>note de planification du 23 février 2026</strong> signalant plusieurs points mineurs à corriger. ⚠ <strong>Le socle ne documente aucune date pour la révision annoncée — degré 3</strong> ; <strong>tri : PROJETÉ</strong> — <em>intention publiée sans échéance relevée.</em> <strong><em>Un statut final ne vaut pas texte figé : le paramètre vers lequel on migre bouge lui aussi, ce qui est un argument pour l'agilité et non contre elle.</strong></em> <em>(2)</em> <strong>Le véhicule normatif désigné pour porter les échéances est lui-même à l'état de projet</strong> (§ 21.1) : <em>le document institutionnel qui a la transition pour objet est, à la date de consultation, dans le même état que celui qui la date.</em></p>
+  <p><strong>Deux précisions se rattachent directement à l'objet de ce mouvement, et l'une comme l'autre nuance ce qu'un statut « final » autorise à croire.</strong> <em>(1)</em> <strong>Les fiches des deux normes finales portent l'une et l'autre un avis d'errata</strong> annonçant des corrections dans une révision future, et celle de <strong>FIPS 204</strong> porte en outre une <strong>note de planification du 23 février 2026</strong> signalant plusieurs points mineurs à corriger. ⚠ <strong>Le socle ne documente aucune date pour la révision annoncée — degré 3</strong> ; <strong>tri : PROJETÉ</strong> — <em>intention publiée sans échéance relevée.</em> <strong><em>Un statut final ne vaut pas texte figé : le paramètre vers lequel on migre bouge lui aussi, ce qui est un argument pour l'agilité et non contre elle.</em></strong> <em>(2)</em> <strong>Le véhicule normatif désigné pour porter les échéances est lui-même à l'état de projet</strong> (§ 21.1) : <em>le document institutionnel qui a la transition pour objet est, à la date de consultation, dans le même état que celui qui la date.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>Une clause du dossier réglementaire intéresse la crypto-agilité au niveau où on l'attend le moins.</strong> La note d'application ordonne aux agences d'aligner leur plan sur le projet <strong>« ou un document successeur »</strong> (F-61). <span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : le libellé de cette clause. <strong>Ce qu'il n'établit pas</strong> : l'intention de son rédacteur, ni l'effet de la clause sur un plan d'agence. <em>La lecture proposée est que <strong>cette clause est un patron d'agilité appliqué non au format mais au texte</strong> : une obligation qui s'ancre sur <strong>une classe de documents</strong> plutôt que sur <strong>une instance</strong> survit au remplacement de l'instance. C'est, transposé à la gouvernance, exactement ce que la première condition ci-dessus demande d'un format.</em> <strong>Elle est réfutable</strong> : <em>un texte d'application qui nommerait un successeur précis la ferait tomber.</em></p>
 </div>
-
 <h2 id="s215"><span class="sig">§ 21.5</span>Audit de crypto-agilité des mécanismes d'émission et du mandat</h2>
-
 <p>L'audit demande à chaque mécanisme <strong>les trois questions de la définition</strong>, et <strong>il n'en tire que ce que la spécification démontre</strong>. ⚠ <strong>Trois précautions le bornent, et elles ne sont pas de forme.</strong> <em>(1)</em> <strong>Un mécanisme dont la spécification est muette sur un point reçoit un degré d'absence, non un verdict défavorable</strong> — <em>c'est la faute que R-02 proscrit, et c'est elle que ce paragraphe risque à chaque ligne de son tableau.</em> <em>(2)</em> <strong>Deux des entrées mobilisées dans ce tableau sont en [C]</strong> — F-36 et F-55 — et <strong>ne portent aucune affirmation centrale</strong>. <em>(3)</em> <strong>La dernière ligne ne porte pas sur un mécanisme</strong> : <em>le passeport d'agent est un objet de synthèse construit par la somme</em> — <strong>en auditer la crypto-agilité, c'est auditer une construction</strong>, et le tableau le dit à sa dernière ligne plutôt que de le taire.</p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Mécanisme</th><th>Où l'algorithme est déclaré, et ce que la spécification en <strong>démontre</strong></th><th>Ce que le socle ne porte pas sur son changement — <strong>degré 3</strong> pour chaque cellule</th><th>Trace</th></tr></thead>
-  <tbody>
-    <tr><td><strong>Carte d'agent signée</strong> (v1.0.0)</td><td>un paramètre <strong>obligatoire</strong> de l'en-tête protégé nomme l'algorithme, parmi trois imposés et un seul facultatif nommé (F-03, <strong>[A, degré 1]</strong>) ; <strong>la charge n'est pas transportée</strong> et le vérificateur la <strong>reconstruit</strong> par re-canonicalisation (F-01 ; F-02, <strong>[A]</strong>)</td><td>procédure de transition d'un algorithme à un autre ; politique d'acceptation par le vérificateur ; <strong>existence d'un profil cryptographique obligatoire ou d'une liste fermée</strong> — <em>le lot déclare n'avoir recherché aucun profil de ce type</em></td><td>ch. 15 § 15.1.1, § 15.1.4</td></tr>
-    <tr><td><strong>Rotation sur ce même mécanisme</strong></td><td>plusieurs signatures <strong>MAY</strong> coexister « to support key rotation » ; <strong>c'est le seul dispositif de rotation</strong> que la section prévoie (F-10, <strong>[B]</strong>)</td><td><strong>procédure de retrait d'une clé compromise</strong> ; emploi du dispositif pour une transition d'<strong>algorithme</strong> plutôt que de <strong>clé</strong></td><td>ch. 15 § 15.1.3 ; ch. 20 § 20.4</td></tr>
-    <tr><td><strong>Mandat de paiement agentique</strong> (v0.2.0)</td><td>sérialisation et <strong>attribut de type versionné</strong> (F-46, <strong>[B]</strong>) ; la spécification impose <strong>l'appariement exact de la chaîne de type, suffixe de version compris</strong></td><td>mécanisme de retrait d'un mandat ; procédure de passage d'une version de type à la suivante ; <strong>régime de compatibilité entre deux versions</strong></td><td>ch. 17 § 17.1 ; ch. 20 § 20.4</td></tr>
-    <tr><td><strong>Identité de charge de travail</strong></td><td>la spécification énonce qu'un justificatif est <strong>considéré valide s'il a été signé par une autorité du domaine de confiance</strong> de l'identité qu'il porte (F-87, <strong>[B]</strong>)</td><td><strong>tout élément d'algorithme, de profil ou de transition</strong> ; le profil et la version mis en œuvre chez un fournisseur ne sont pas documentés sur la page consultée</td><td>ch. 3 (socle) ; ch. 15 § 15.2.2 ; <strong>F-36, [C]</strong>, corroboration seule</td></tr>
-    <tr><td><strong>Registre gouverné</strong></td><td><strong>deux champs obligatoires</strong> du profil d'agent (F-40, <strong>[B]</strong>, borné à ces deux champs) ; ce que le document décrit par là est <strong>un régime de champs et d'invalidation</strong>, et il <strong>ne démontre par ce seul fait aucune propriété cryptographique</strong> (R-02) ; côté annuaire, l'adressage par contenu est <strong>présenté</strong> comme fondant l'intégrité, <strong>sans démonstration</strong> (F-55, <strong>[C, degré 1]</strong>)</td><td>la présence ou l'absence d'un élément cryptographique <strong>parmi les autres champs du schéma</strong> — <em>le socle ne porte pas l'inventaire complet</em> ; la fonction de hachage employée et sa substituabilité ; ⚠ le balayage porte sur une <strong>révision supplantée, non rebalayée</strong></td><td>ch. 15 § 15.3.1, § 15.3.2</td></tr>
-    <tr><td><strong>Passeport d'agent</strong></td><td><em>néant</em> — <strong>objet de synthèse sans spécification</strong>, donc <strong>sans contrat porteur d'un paramètre d'algorithme</strong></td><td><strong>le socle ne documente pas d'objet composé des quatre pièces qu'assemble le ch. 16</strong></td><td>ch. 16, ouverture</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Mécanisme</th>
+<th>Où l'algorithme est déclaré, et ce que la spécification en <strong>démontre</strong></th>
+<th>Ce que le socle ne porte pas sur son changement — <strong>degré 3</strong> pour chaque cellule</th>
+<th>Trace</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Carte d'agent signée</strong> (v1.0.0)</td>
+<td>un paramètre <strong>obligatoire</strong> de l'en-tête protégé nomme l'algorithme, parmi trois imposés et un seul facultatif nommé (F-03, <strong>[A, degré 1]</strong>) ; <strong>la charge n'est pas transportée</strong> et le vérificateur la <strong>reconstruit</strong> par re-canonicalisation (F-01 ; F-02, <strong>[A]</strong>)</td>
+<td>procédure de transition d'un algorithme à un autre ; politique d'acceptation par le vérificateur ; <strong>existence d'un profil cryptographique obligatoire ou d'une liste fermée</strong> — <em>le lot déclare n'avoir recherché aucun profil de ce type</em></td>
+<td>ch. 15 § 15.1.1, § 15.1.4</td>
+</tr>
+<tr>
+<td><strong>Rotation sur ce même mécanisme</strong></td>
+<td>plusieurs signatures <strong>MAY</strong> coexister « to support key rotation » ; <strong>c'est le seul dispositif de rotation</strong> que la section prévoie (F-10, <strong>[B]</strong>)</td>
+<td><strong>procédure de retrait d'une clé compromise</strong> ; emploi du dispositif pour une transition d'<strong>algorithme</strong> plutôt que de <strong>clé</strong></td>
+<td>ch. 15 § 15.1.3 ; ch. 20 § 20.4</td>
+</tr>
+<tr>
+<td><strong>Mandat de paiement agentique</strong> (v0.2.0)</td>
+<td>sérialisation et <strong>attribut de type versionné</strong> (F-46, <strong>[B]</strong>) ; la spécification impose <strong>l'appariement exact de la chaîne de type, suffixe de version compris</strong></td>
+<td>mécanisme de retrait d'un mandat ; procédure de passage d'une version de type à la suivante ; <strong>régime de compatibilité entre deux versions</strong></td>
+<td>ch. 17 § 17.1 ; ch. 20 § 20.4</td>
+</tr>
+<tr>
+<td><strong>Identité de charge de travail</strong></td>
+<td>la spécification énonce qu'un justificatif est <strong>considéré valide s'il a été signé par une autorité du domaine de confiance</strong> de l'identité qu'il porte (F-87, <strong>[B]</strong>)</td>
+<td><strong>tout élément d'algorithme, de profil ou de transition</strong> ; le profil et la version mis en œuvre chez un fournisseur ne sont pas documentés sur la page consultée</td>
+<td>ch. 3 (socle) ; ch. 15 § 15.2.2 ; <strong>F-36, [C]</strong>, corroboration seule</td>
+</tr>
+<tr>
+<td><strong>Registre gouverné</strong></td>
+<td><strong>deux champs obligatoires</strong> du profil d'agent (F-40, <strong>[B]</strong>, borné à ces deux champs) ; ce que le document décrit par là est <strong>un régime de champs et d'invalidation</strong>, et il <strong>ne démontre par ce seul fait aucune propriété cryptographique</strong> (R-02) ; côté annuaire, l'adressage par contenu est <strong>présenté</strong> comme fondant l'intégrité, <strong>sans démonstration</strong> (F-55, <strong>[C, degré 1]</strong>)</td>
+<td>la présence ou l'absence d'un élément cryptographique <strong>parmi les autres champs du schéma</strong> — <em>le socle ne porte pas l'inventaire complet</em> ; la fonction de hachage employée et sa substituabilité ; ⚠ le balayage porte sur une <strong>révision supplantée, non rebalayée</strong></td>
+<td>ch. 15 § 15.3.1, § 15.3.2</td>
+</tr>
+<tr>
+<td><strong>Passeport d'agent</strong></td>
+<td><em>néant</em> — <strong>objet de synthèse sans spécification</strong>, donc <strong>sans contrat porteur d'un paramètre d'algorithme</strong></td>
+<td><strong>le socle ne documente pas d'objet composé des quatre pièces qu'assemble le ch. 16</strong></td>
+<td>ch. 16, ouverture</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 21.3 — Audit de crypto-agilité, mécanisme par mécanisme, au 21 juillet 2026 — ce que chaque spécification démontre, et ce que le socle ne porte pas.</p>
-
 <p><strong>Deux résultats se dégagent, et ils tirent en sens contraire.</strong></p>
-
 <p><strong>Le premier est favorable, et il faut le borner tout de suite.</strong> La carte signée dispose d'un point où l'algorithme est déclaré, <strong>et ce point est obligatoire</strong> (F-03). <em>Comme la charge n'est pas transportée et que le vérificateur la reconstruit à partir de la carte reçue, <strong>un changement de valeur de ce paramètre n'oblige pas à changer le format de l'artefact</strong>.</em> ⚠ <strong>Ce que la spécification démontre est donc qu'un algorithme est nommé par signature et que la vérification est reproductible à partir du document ; elle ne documente ni la procédure de passage d'un algorithme à un autre, ni la politique par laquelle un vérificateur accepte ou refuse une valeur</strong> (R-02). ⚠ <em>La spécification illustre d'ailleurs ce paramètre par <strong>deux valeurs données en exemple</strong>, sans liste fermée, et le lot déclare expressément n'avoir recherché <strong>aucun profil cryptographique obligatoire</strong> — <strong>il ne faut pas conclure de ces deux exemples à une restriction</strong>.</em></p>
-
 <div class="avert">
   <p><strong>Une qualification du rapport de lot n'est pas reprise ici, et le motif est déclaré.</strong> Ce rapport écrit, à l'adresse de ce chapitre, que « la crypto-agilité de la carte est <strong>structurellement présente</strong> ». ⚠ <strong>Cette qualification excède ce que le lot a balayé</strong> : <em>elle porte sur ce que le mécanisme <strong>permettrait</strong>, non sur ce que la spécification <strong>démontre</strong>, et le rapport déclare lui-même n'avoir recherché aucun profil obligatoire.</em> <strong>Elle n'est ni une affirmation votée, ni une entrée de socle. Le chapitre retient le fait positif et borné, et laisse le reste au degré 3.</strong></p>
 </div>
-
 <p><strong>Le second est défavorable, et il porte sur la version plutôt que sur l'algorithme.</strong> Le mandat est, des mécanismes relevés, <strong>le seul dont le contrat soit explicitement versionné</strong> : l'attribut de type porte sa version, et la spécification <strong>exige que les mises en œuvre apparient la chaîne exacte, suffixe compris</strong> (F-46). <em>La deuxième condition de la définition est donc satisfaite — mais elle l'est d'une manière qui <strong>déplace le coût</strong>.</em></p>
-
-<p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle n'établit pas</strong> : ce qu'il advient d'un vérificateur confronté à une version qu'il ne connaît pas, ni qu'aucun régime de compatibilité n'existe ailleurs dans la spécification. <em>La lecture proposée est qu'<strong>un appariement exact transforme le changement de version en bascule coordonnée plutôt qu'en transition progressive</strong> : émetteurs et vérificateurs doivent changer ensemble, ou la vérification échoue.</em> <strong><em>Une version explicite rend le changement détectable ; elle ne le rend pas graduel.</strong></em></p>
-
+<p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle n'établit pas</strong> : ce qu'il advient d'un vérificateur confronté à une version qu'il ne connaît pas, ni qu'aucun régime de compatibilité n'existe ailleurs dans la spécification. <em>La lecture proposée est qu'<strong>un appariement exact transforme le changement de version en bascule coordonnée plutôt qu'en transition progressive</strong> : émetteurs et vérificateurs doivent changer ensemble, ou la vérification échoue.</em> <strong><em>Une version explicite rend le changement détectable ; elle ne le rend pas graduel.</em></strong></p>
 <div class="avert">
   <p><strong>Reste le constat qui vaut pour le tableau entier, et il s'écrit à la formule imposée plutôt qu'en généralité.</strong> <strong>Le socle ne documente, pour aucun des mécanismes inventoriés dans ce paragraphe, de procédure de transition d'un algorithme à un autre — absence de documentation, non fait négatif vérifié.</strong> <em>L'énoncé porte sur les six lignes du tableau et sur elles seules ; il ne dit rien des mécanismes qu'aucun lot n'a ouverts, ni des sections que les lots déclarent n'avoir pas atteintes.</em></p>
 </div>
-
 <h2 id="s216"><span class="sig">§ 21.6</span>Patrons de migration sans rupture de la chaîne de confiance</h2>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>ce paragraphe entier est une construction d'auteur, et le marquage se porte à son ouverture.</strong> <strong>Ce que le socle établit</strong> : le dispositif de signatures multiples et son objet déclaré (F-10), le régime temporel des mandats (F-46), l'énumération de l'en-tête protégé et l'absence de validité dans la carte (F-03, F-05), et la clause d'ancrage sur un document successeur (F-61). <strong>Ce qu'il n'établit pas</strong> : <strong>qu'il existe des patrons de migration, qu'ils soient au nombre de quatre, ni qu'aucun d'eux préserve une chaîne de confiance.</strong> ⚠ <strong>Le socle ne documente aucun patron de migration cryptographique — degré 3.</strong> <em>Ce qui suit est proposé par la somme et adossé, patron par patron, à ce que le socle porte ; chacun est assorti de ce qui le réfuterait.</em></p>
-
-<p><strong>Patron 1 — la coexistence de signatures pendant la transition.</strong> <em>Le véhicule structurel existe</em> : plusieurs signatures <strong>MAY</strong> être portées par une même carte, et la spécification en déclare l'objet — <em>la rotation des clés</em> (F-10) ; et le paramètre d'algorithme est déclaré dans l'en-tête protégé de <strong>chaque</strong> signature (F-03) — <strong>il est donc porté au grain de la signature, non au grain de la carte</strong>.</p>
-
-<div class="avert">
-  <p><strong>Ce que le socle n'établit pas est précisément l'emploi visé</strong> : <em>le dispositif est spécifié pour la rotation des <strong>clés</strong>, et <strong>le socle ne documente pas son emploi pour une transition d'algorithme</strong> — degré 3.</em> <strong>Ce qui le réfuterait</strong> : <em>une clause restreignant les signatures multiples à une même valeur du paramètre.</em> ⚠ <strong>Et une limite en borne d'avance la portée</strong> : les cartes <strong>MAY</strong> être signées et les clients <strong>SHOULD</strong> vérifier (F-04) — <em>un régime facultatif ne permet pas d'imposer une transition, il permet de l'offrir.</em></p>
-</div>
-
+<p><strong>Patron 1 — la coexistence de signatures pendant la transition.</strong> <em>Le véhicule structurel existe</em> : plusieurs signatures <strong>MAY</strong> être portées par une même carte, et la spécification en déclare l'objet — <em>la rotation des clés</em> (F-10) ; et le paramètre d'algorithme est déclaré dans l'en-tête protégé de <strong>chaque</strong> signature (F-03) — <strong>il est donc porté au grain de la signature, non au grain de la carte</strong>. ⚠ <strong>Ce que le socle n'établit pas est précisément l'emploi visé</strong> : <em>le dispositif est spécifié pour la rotation des <strong>clés</strong>, et <strong>le socle ne documente pas son emploi pour une transition d'algorithme</strong> — degré 3.</em> <strong>Ce qui le réfuterait</strong> : <em>une clause restreignant les signatures multiples à une même valeur du paramètre.</em> ⚠ <strong>Et une limite en borne d'avance la portée</strong> : les cartes <strong>MAY</strong> être signées et les clients <strong>SHOULD</strong> vérifier (F-04) — <em>un régime facultatif ne permet pas d'imposer une transition, il permet de l'offrir.</em></p>
 <p><strong>Patron 2 — l'hybride comme mesure temporaire, et non comme état stable.</strong> Le projet du NIST énonce que, lorsqu'elles sont employées, <strong>les solutions hybrides sont « typically expected to be temporary measures that lead to a second transition »</strong> vers des outils n'employant que des algorithmes post-quantiques. <em>(Source citée à la réserve d'une affirmation versée, que le texte de l'entrée ne reprend pas.)</em> <strong>Le patron consiste donc à compter deux transitions et non une.</strong> ⚠ <strong>Réserve portée par le lot et reprise telle quelle</strong> : <em>le projet <strong>ne dit pas</strong> que les modes hybrides restent admis au-delà de 2035, et lui prêter cette autorisation serait lui faire dire ce qu'il n'écrit pas.</em> <strong>Tri de la seconde transition : PROJETÉ.</strong> <strong>Ce qui le réfuterait</strong> : <em>une révision du document abandonnant l'hybride, ou en faisant un régime cible.</em></p>
-
 <p><strong>Patron 3 — la brièveté de l'artefact plutôt que sa révocation.</strong> <em>Un artefact dont la durée de vie est bornée migre par son renouvellement ordinaire : il n'y a rien à retirer, seulement à cesser d'émettre.</em> Le socle documente ce régime <strong>pour les mandats</strong>, qui portent leurs attributs temporels (F-46) ; en corroboration seulement, l'identité d'agent d'un fournisseur repose sur des certificats <strong>de vingt-quatre heures</strong> (F-36, <strong>[C]</strong> — <em>repérage, non fait central ; cas documenté, jamais recommandation</em>). ⚠ <strong>Le patron est indisponible pour la carte signée</strong> : <em>elle ne porte aucun paramètre temporel dans son en-tête protégé (F-03) et aucun champ de validité ni de statut parmi ses quatorze (F-05, <strong>[A, degré 1]</strong>) — <strong>elle ne périme que par sa clé</strong>, dont le ch. 15 § 15.1.3 établit que le statut n'est pas établissable.</em> <strong>Ce qui le réfuterait</strong> : <em>une prescription de fraîcheur portée par une section normative non ouverte — et le ch. 15 § 15.1.3 en nomme deux, restées inaccessibles par troncature.</em></p>
-
-<p><strong>Patron 4 — l'ancrage sur une classe de document plutôt que sur une instance.</strong> Le § 21.4 l'a relevé au niveau de la gouvernance : <em>une obligation qui vise un document « <strong>ou un document successeur</strong> » ne devient pas caduque au remplacement du document</em> (F-61). <strong>Transposé au format, le patron consiste à faire pointer un artefact vers un profil nommé et versionné plutôt que vers un algorithme littéral.</strong></p>
-
-<div class="avert">
-  <p><strong>Le socle ne documente, pour aucun des mécanismes du § 21.5, l'existence d'un tel profil — degré 3</strong> ; <em>le lot déclarant, pour la carte signée, n'en avoir recherché aucun.</em> <strong>Ce qui le réfuterait</strong> : <em>la publication d'un profil cryptographique obligatoire pour l'un de ces mécanismes.</em></p>
-</div>
-
+<p><strong>Patron 4 — l'ancrage sur une classe de document plutôt que sur une instance.</strong> Le § 21.4 l'a relevé au niveau de la gouvernance : <em>une obligation qui vise un document « <strong>ou un document successeur</strong> » ne devient pas caduque au remplacement du document</em> (F-61). <strong>Transposé au format, le patron consiste à faire pointer un artefact vers un profil nommé et versionné plutôt que vers un algorithme littéral.</strong> ⚠ <strong>Le socle ne documente, pour aucun des mécanismes du § 21.5, l'existence d'un tel profil — degré 3</strong> ; <em>le lot déclarant, pour la carte signée, n'en avoir recherché aucun.</em> <strong>Ce qui le réfuterait</strong> : <em>la publication d'un profil cryptographique obligatoire pour l'un de ces mécanismes.</em></p>
 <p><strong>Ce qu'aucun de ces quatre patrons ne règle, et qui décide de l'ordre des travaux.</strong> ⚠ <em>Une migration est une opération de <strong>retrait</strong> autant que d'ajout, et c'est le point où les entrées mobilisées s'arrêtent.</em> <strong>La rotation est outillée, le retrait ne l'est pas</strong> (F-10) ; <strong>l'inventaire de la révocation est au ch. 20 § 20.4</strong>, qui en dégage trois formes — <em>le silence, l'interdiction sans le moyen, l'état sans la fraîcheur.</em> S'y ajoute ce que le § 21.2 a déclaré : <strong>ni procédure de re-signature ni horodatage d'appoint — degré 3</strong>.</p>
-
-<p><strong>Reste à nommer la rupture que le titre vise.</strong> ⚠ <strong><em>Une chaîne de confiance ne se rompt pas au moment où l'algorithme change : elle se rompt lorsqu'un vérificateur ne peut plus établir, pour un artefact déjà émis, sous quel régime il l'a été.</strong></em></p>
-
+<p><strong>Reste à nommer la rupture que le titre vise.</strong> ⚠ <strong><em>Une chaîne de confiance ne se rompt pas au moment où l'algorithme change : elle se rompt lorsqu'un vérificateur ne peut plus établir, pour un artefact déjà émis, sous quel régime il l'a été.</em></strong></p>
 <p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle n'établit pas</strong> : qu'une chaîne de confiance se rompe, ni qu'une migration l'expose. <em>La lecture proposée est que <strong>la crypto-agilité et la révocabilité sont la même propriété vue de deux côtés</strong> : un mécanisme qui ne sait pas retirer ce qu'il a émis <strong>ne peut pas achever une migration</strong> — il peut seulement en ajouter une couche.</em> <strong>Elle est réfutable</strong> : <em>un mécanisme documentant une transition d'algorithme sans dispositif de retrait la ferait tomber.</em></p>
-
 <h2 id="s217"><span class="sig">§ 21.7</span>Ce que les études de coût publiées couvrent (et ne couvrent pas)</h2>
-
 <p>Le lot a cherché des études de coût de migration. ⚠ <strong>Il en a ouvert une</strong>, et l'énoncé de ce résultat <strong>porte sa borne dans sa formulation même</strong> : <em>la seule étude de coût commanditée par une autorité publique <strong>que cette passe a ouverte</strong>.</em> ⚠ <strong>Le lot déclare expressément n'avoir mené aucun balayage de la littérature sur ce point, et refuse d'en tirer une affirmation d'unicité</strong> — <em>les chiffres circulant dans la presse spécialisée n'ont pas été instruits et ne sont pas rapportés.</em></p>
-
 <p>Cette étude est le <strong>rapport de juillet 2024 de l'<em>Office of Management and Budget</em> (OMB) au Congrès des États-Unis</strong>, prescrit par le <em>Quantum Computing Cybersecurity Preparedness Act</em> (Public Law 117-260) — le commanditaire est donc le législateur fédéral américain. Selon ce rapport, l'<em>Office of the National Cyber Director</em> (ONCD) déclare que <strong>le coût total, à l'échelle du gouvernement, de la migration des systèmes d'information prioritaires entre 2025 et 2035 s'établirait à environ 7,1 milliards de dollars de 2024</strong>. ⚠ <strong>L'attributeur est nommé plutôt qu'élidé</strong> : <em>la parade de péremption vaut pour une dénomination commerciale ou une version, jamais pour l'attributeur d'une métrique — un chiffre dont on ne peut plus remonter l'auteur cesse d'être vérifiable, et c'est exactement ce que le garde-fou d'attribution protège.</em> ⚠ <strong>Cette donnée est auto-déclarée</strong> — <em>elle est produite à partir des estimations remises par les agences elles-mêmes</em> — <strong>et n'a fait l'objet d'aucune vérification indépendante</strong> ; le rapport porte lui-même sa réserve d'incertitude — <em>« a high, but expected, level of uncertainty »</em> — et <strong>impose une mise à jour annuelle</strong>. ⚠ <strong>Tri : PROJETÉ</strong> — <em>projection d'une institution, avec sa source nominative, son millésime et son périmètre, <strong>jamais un coût constaté</strong>.</em> <em>(Source primaire ouverte et citée hors socle, non versée ; le chapitre n'écrit donc nulle part que « le socle porte » ce chiffre.)</em></p>
-
 <div class="avert">
-  <p><strong>Le périmètre de ce chiffre est ce qui décide de son usage, et il est étroit sur quatre plans.</strong> Il porte sur les <strong>systèmes fédéraux civils prioritaires</strong> des États-Unis, entre 2025 et 2035 ; <strong>les systèmes de sécurité nationale en sont exclus</strong> ; il ne porte <strong>ni sur une entreprise, ni sur une institution financière, ni sur une juridiction canadienne</strong> ; et <strong>il ne porte pas davantage sur la couche identitaire agentique</strong> — <em>le lot déclare n'avoir rien instruit sur l'application de ces jalons aux signatures de cartes, aux chaînes de mandat ou aux jetons.</em> ⚠ <strong><em>Un chiffre dont le périmètre exclut l'objet de la somme ne devient pas applicable parce qu'on le divise.</strong></em></p>
+  <p><strong>Le périmètre de ce chiffre est ce qui décide de son usage, et il est étroit sur quatre plans.</strong> Il porte sur les <strong>systèmes fédéraux civils prioritaires</strong> des États-Unis, entre 2025 et 2035 ; <strong>les systèmes de sécurité nationale en sont exclus</strong> ; il ne porte <strong>ni sur une entreprise, ni sur une institution financière, ni sur une juridiction canadienne</strong> ; et <strong>il ne porte pas davantage sur la couche identitaire agentique</strong> — <em>le lot déclare n'avoir rien instruit sur l'application de ces jalons aux signatures de cartes, aux chaînes de mandat ou aux jetons.</em> ⚠ <strong><em>Un chiffre dont le périmètre exclut l'objet de la somme ne devient pas applicable parce qu'on le divise.</em></strong></p>
 </div>
-
 <p><strong>Le déplacement européen : de l'échéance vers le risque.</strong> Deux documents prennent la question par l'autre bout, et <strong>leur intérêt tient moins à ce qu'ils chiffrent qu'à ce qu'ils ne chiffrent pas</strong>. Le rapport conjoint de 2026 <strong>ordonne ses activités par le risque plutôt que par un calendrier daté</strong> (F-63, <strong>[B, degré 1]</strong>), et <strong>porte son propre avertissement de non-obligation</strong> — <em>c'est un document de praticiens, non un acte d'autorité</em>. Le second n'énonce <strong>aucune échéance calendaire propre au secteur</strong> : ses cinq recommandations sont <strong>sans date</strong>, et la seule échéance datée relevée est <strong>attribuée à l'administration américaine</strong>. ⚠ <em>Réserve : la date de publication de ce second document n'a pas pu être établie sur une page de son éditeur.</em></p>
-
 <div class="avert">
-  <p><strong>Ce relevé a une conséquence directe sur l'héritage, et elle est désagréable : une entrée héritée est périmée sur ce point</strong> (F-63). Le Vol. I prête au <strong>QSFF</strong> des cibles propres de <strong>2030-2031 et de 2035</strong> ; <strong>la source primaire ouverte par la passe n'en porte pas</strong>, dans les bornes de son balayage — lesquelles excluaient la chaîne « 2031 », qui n'y avait pas été cherchée. ⚠ <strong>La re-datation du 28 juillet 2026 a élargi ce balayage sans l'infirmer</strong> : conduit sur les vingt-six pages entières, il donne <strong>zéro occurrence de « 2030 », de « 2031 » et de « 2035 »</strong> (<code>S-109</code>) — <em>la péremption est ainsi confirmée plus fermement que l'entrée ne l'établissait.</em> ⚠ <strong><em>Une cible attribuée à un forum qui ne l'énonce pas est exactement ce que R-11 proscrit en interdisant de fusionner des jalons d'origines distinctes.</strong></em></p>
+  <p><strong>Ce relevé a une conséquence directe sur l'héritage, et elle est désagréable : une entrée héritée est périmée sur ce point</strong> (F-63). Le Vol. I prête au <strong>QSFF</strong> des cibles propres de <strong>2030-2031 et de 2035</strong> ; <strong>la source primaire ouverte par la passe n'en porte pas</strong>, dans les bornes de son balayage — lesquelles excluaient la chaîne « 2031 », qui n'y avait pas été cherchée. ⚠ <strong>La re-datation du 28 juillet 2026 a élargi ce balayage sans l'infirmer</strong> : conduit sur les vingt-six pages entières, il donne <strong>zéro occurrence de « 2030 », de « 2031 » et de « 2035 »</strong> (<code>S-109</code>) — <em>la péremption est ainsi confirmée plus fermement que l'entrée ne l'établissait.</em> ⚠ <strong><em>Une cible attribuée à un forum qui ne l'énonce pas est exactement ce que R-11 proscrit en interdisant de fusionner des jalons d'origines distinctes.</em></strong></p>
 </div>
-
-<p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : que le rapport européen ne porte aucune des trois chaînes relevées, et que le balayage hors socle du second n'y relève aucune échéance sectorielle. <strong>Ce qu'il n'établit pas</strong> : <strong>par quel chemin l'entrée héritée en est venue à prêter ces cibles au QSFF</strong>. <em>Tout au plus se constate-t-il que 2030 et 2031 sont les deux échéances du décret 14412 ; <strong>aucune source du socle ne relie ce texte à l'entrée héritée</strong>.</em> ⚠ <strong><em>Seul l'écart est documenté ; sa provenance ne l'est pas, et la somme ne la reconstitue pas.</strong></em></p>
-
+<p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : que le rapport européen ne porte aucune des trois chaînes relevées, et que le balayage hors socle du second n'y relève aucune échéance sectorielle. <strong>Ce qu'il n'établit pas</strong> : <strong>par quel chemin l'entrée héritée en est venue à prêter ces cibles au QSFF</strong>. <em>Tout au plus se constate-t-il que 2030 et 2031 sont les deux échéances du décret 14412 ; <strong>aucune source du socle ne relie ce texte à l'entrée héritée</strong>.</em> ⚠ <strong><em>Seul l'écart est documenté ; sa provenance ne l'est pas, et la somme ne la reconstitue pas.</em></strong></p>
 <div class="avert">
-  <p><strong>Le versant du Vol. I ajoute un verrou d'ingénierie que le socle propre ne porte pas — et il faut dire par quelle porte il entre.</strong> ⚠ <strong>Aucune entrée héritée ne couvre le §7.4.4 du Vol. I <em>Monographie</strong></em> — <em>le document se nomme, ce volume ayant deux documents cités par ce chapitre (décision 7)</em> : là où le §7.4.1 entre par H-17, celui-ci <strong>n'a pas d'identifiant de socle</strong> et entre en <strong>[C]</strong> par le seul régime du PRD §7.1. <em>Un appui sans entrée est plus faible qu'une entrée [C], non plus fort.</em> Son §7.4.4 nomme <strong>deux propriétés qui s'opposent</strong> — <em>la longévité requise d'un justificatif d'autorité et la nature jetable d'une identité d'agent instanciée pour une tâche</em> — et une <strong>soutenabilité de performance non établie</strong> : <em>les signatures et échanges post-quantiques, dont les tailles d'artefacts sont sensiblement accrues, doivent être soutenus sur des charges éphémères à fort débit de poignées de main, profil de trafic caractéristique des flottes d'agents.</em> ⚠ <strong>Régime</strong> : entrée en <strong>[C]</strong>, et le Vol. I trie lui-même ce verrou <strong>SPÉCULATIF</strong> ; <em>aucune mesure publique ne le valide à son gel, et aucun énoncé de ce paragraphe n'est central.</em></p>
+  <p><strong>Le versant du Vol. I ajoute un verrou d'ingénierie que le socle propre ne porte pas — et il faut dire par quelle porte il entre.</strong> ⚠ <strong>Aucune entrée héritée ne couvre le §7.4.4 du Vol. I <em>Monographie</em></strong> — <em>le document se nomme, ce volume ayant deux documents cités par ce chapitre (décision 7)</em> : là où le §7.4.1 entre par H-17, celui-ci <strong>n'a pas d'identifiant de socle</strong> et entre en <strong>[C]</strong> par le seul régime du PRD §7.1. <em>Un appui sans entrée est plus faible qu'une entrée [C], non plus fort.</em> Son §7.4.4 nomme <strong>deux propriétés qui s'opposent</strong> — <em>la longévité requise d'un justificatif d'autorité et la nature jetable d'une identité d'agent instanciée pour une tâche</em> — et une <strong>soutenabilité de performance non établie</strong> : <em>les signatures et échanges post-quantiques, dont les tailles d'artefacts sont sensiblement accrues, doivent être soutenus sur des charges éphémères à fort débit de poignées de main, profil de trafic caractéristique des flottes d'agents.</em> ⚠ <strong>Régime</strong> : entrée en <strong>[C]</strong>, et le Vol. I trie lui-même ce verrou <strong>SPÉCULATIF</strong> ; <em>aucune mesure publique ne le valide à son gel, et aucun énoncé de ce paragraphe n'est central.</em></p>
 </div>
-
 <h2 id="s218"><span class="sig">§ 21.8</span>Méthode d'inventaire pour une institution</h2>
-
 <p><em>Puisqu'aucun nombre n'est transposable, ce qui se transmet est une méthode.</em> <span class="auteur">Lecture de l'auteur</span> <strong>elle est construite ici, et elle est une construction d'auteur en totalité.</strong> <strong>Ce que le socle établit</strong> : les <strong>quatre contraintes posées au § 21.1</strong> — les algorithmes de remplacement sont normalisés depuis le 13 août 2024 tandis que le calendrier de retrait ne l'est pas (F-62 ; F-59) ; les deux jalons sont portés par ce même document à l'état de projet (F-59, F-60) ; une obligation fédérale datée s'y ancre par la clause « ou un document successeur » (F-61) ; un rapport sectoriel ordonne ses activités par le risque plutôt que par une date (F-63). <strong>Il n'établit pas de méthode d'inventaire, pas de nomenclature d'artefacts, pas de pondération de risque, pas d'ordre de grandeur de charge.</strong> <em>Les cinq relevés qui suivent sont proposés par la somme ; <strong>ils ne sont endossés par aucune source</strong>.</em></p>
-
 <p><em>Le point de départ n'est pas une liste d'algorithmes mais <strong>une liste d'artefacts qui portent une signature ou un établissement de clés</strong> dans la chaîne d'identité et de mandat.</em> <strong>Le § 21.3 en dresse l'inventaire ; ce paragraphe propose ce qu'il faut relever sur chacun.</strong></p>
-
-<ol class="numeros">
-  <li><strong>Le mécanisme et ses paramètres.</strong> <em>Quel algorithme, quelle longueur de clé, quel niveau de sécurité déclaré.</em> ⚠ <strong>C'est le seul relevé pour lequel les jalons publiés fournissent une grille directement applicable</strong> : le projet écrit « Deprecated after 2030 » au niveau 112 bits et « Disallowed after 2035 » tous niveaux confondus (F-60).</li>
-  <li><strong>La durée de vie de ce que l'artefact protège.</strong> <em>Un jeton d'accès de dix minutes et une chaîne de mandat archivée dix ans ne portent pas le même risque devant la même échéance.</em> <strong>C'est le relevé qui décide de l'ordre de traitement</strong>, et c'est la logique que le rapport sectoriel met en avant en croisant le risque quantique et le temps de migration (F-63).</li>
-  <li><strong>L'autorité qui peut faire tourner la clé.</strong> <em>Qui la détient, selon quelle procédure, avec quel délai constaté.</em> ⚠ <strong><em>Un artefact dont l'autorité de rotation n'est pas identifiée n'est pas migrable à échéance : il est à re-gouverner d'abord.</strong></em></li>
-  <li><strong>Le régime qui lie l'artefact — s'il en existe un.</strong> ⚠ <strong>C'est ici que la discipline de R-11 se paie.</strong> Les jalons relevés viennent de <strong>quatre origines distinctes qui ne se fusionnent pas</strong> : le projet de l'institut, <strong>qui vise sans prescrire</strong> ; le décret, <strong>qui fixe des échéances pour le périmètre fédéral qu'il définit</strong> ; la note d'application, <strong>qui échelonne</strong> ; et la <strong>cible générale de 2035 que fixe le mémorandum de sécurité nationale NSM-10</strong>, citée par le projet lui-même — <em>cette quatrième origine est <strong>hors socle</strong>, et son versement est demandé par le Vol. III, non opéré ici.</em> <strong>Le relevé consiste à nommer laquelle des quatre s'applique, à quel titre et sur quel périmètre.</strong> ⚠ <em>La confrontation ne se saute pas au motif que l'exploitant est canadien</em> : le décret charge par ailleurs de publier une <strong>règle proposée</strong> d'acquisition visant les contractants couverts — <em>une règle proposée n'est ni une règle en vigueur ni une obligation constatée, et son périmètre se lit avant de conclure.</em></li>
-  <li><strong>L'agilité du contrat qui porte l'artefact.</strong> <em>Le mécanisme de signature est-il un paramètre versionné du contrat, ou une hypothèse câblée ?</em> <strong>C'est l'objet du § 21.5, et c'est le relevé qui transforme une migration en changement de configuration plutôt qu'en réécriture.</strong></li>
+<ol type="1">
+<li><strong>Le mécanisme et ses paramètres.</strong> <em>Quel algorithme, quelle longueur de clé, quel niveau de sécurité déclaré.</em> ⚠ <strong>C'est le seul relevé pour lequel les jalons publiés fournissent une grille directement applicable</strong> : le projet écrit « Deprecated after 2030 » au niveau 112 bits et « Disallowed after 2035 » tous niveaux confondus (F-60).</li>
+<li><strong>La durée de vie de ce que l'artefact protège.</strong> <em>Un jeton d'accès de dix minutes et une chaîne de mandat archivée dix ans ne portent pas le même risque devant la même échéance.</em> <strong>C'est le relevé qui décide de l'ordre de traitement</strong>, et c'est la logique que le rapport sectoriel met en avant en croisant le risque quantique et le temps de migration (F-63).</li>
+<li><strong>L'autorité qui peut faire tourner la clé.</strong> <em>Qui la détient, selon quelle procédure, avec quel délai constaté.</em> ⚠ <strong><em>Un artefact dont l'autorité de rotation n'est pas identifiée n'est pas migrable à échéance : il est à re-gouverner d'abord.</em></strong></li>
+<li><strong>Le régime qui lie l'artefact — s'il en existe un.</strong> ⚠ <strong>C'est ici que la discipline de R-11 se paie.</strong> Les jalons relevés viennent de <strong>quatre origines distinctes qui ne se fusionnent pas</strong> : le projet de l'institut, <strong>qui vise sans prescrire</strong> ; le décret, <strong>qui fixe des échéances pour le périmètre fédéral qu'il définit</strong> ; la note d'application, <strong>qui échelonne</strong> ; et la <strong>cible générale de 2035 que fixe le mémorandum de sécurité nationale NSM-10</strong>, citée par le projet lui-même — <em>cette quatrième origine est <strong>hors socle</strong>, et son versement est demandé par le Vol. III, non opéré ici.</em> <strong>Le relevé consiste à nommer laquelle des quatre s'applique, à quel titre et sur quel périmètre.</strong> ⚠ <em>La confrontation ne se saute pas au motif que l'exploitant est canadien</em> : le décret prévoit par ailleurs la publication d'une <strong>règle proposée</strong> d'acquisition visant les contractants couverts — <em>une règle proposée n'est ni une règle en vigueur ni une obligation constatée, et son périmètre se lit avant de conclure.</em></li>
+<li><strong>L'agilité du contrat qui porte l'artefact.</strong> <em>Le mécanisme de signature est-il un paramètre versionné du contrat, ou une hypothèse câblée ?</em> <strong>C'est l'objet du § 21.5, et c'est le relevé qui transforme une migration en changement de configuration plutôt qu'en réécriture.</strong></li>
 </ol>
-
 <div class="avert">
   <p><strong>Ce que la méthode interdit.</strong> <em>(1)</em> <strong>Dériver une charge d'entreprise d'un agrégat fédéral</strong> : <em>le rapport projette un coût pour un périmètre nommé, et ce périmètre exclut ce que la somme prend pour objet.</em> <em>(2)</em> <strong>Convertir une échéance en obligation</strong> : <em>« Deprecated » n'est pas une interdiction — le projet écrit lui-même que l'algorithme peut être employé et que la décision revient au propriétaire des données</em> (F-60).</p>
 </div>
-
 <div class="avert">
-  <p><strong>Reste ce qui ne se relève pas, et qui doit être écrit plutôt que comblé.</strong> <strong>Le socle ne documente ni le coût unitaire de migration d'un artefact d'identité d'agent, ni aucun ordre de grandeur de charge applicable à un parc d'entreprise — degré 3.</strong> <strong><em>Le chapitre ne propose donc aucun ratio, aucune fourchette et aucune règle de trois — et ce refus est le résultat de la passe, non un pis-aller.</strong></em></p>
+  <p><strong>Reste ce qui ne se relève pas, et qui doit être écrit plutôt que comblé.</strong> <strong>Le socle ne documente ni le coût unitaire de migration d'un artefact d'identité d'agent, ni aucun ordre de grandeur de charge applicable à un parc d'entreprise — degré 3.</strong> <strong><em>Le chapitre ne propose donc aucun ratio, aucune fourchette et aucune règle de trois — et ce refus est le résultat de la passe, non un pis-aller.</em></strong></p>
 </div>
-
 <div class="avert">
   <p><strong>Une lacune était ouverte ici et le chapitre la déclarait la plus coûteuse de celles qu'il laisse</strong> : <em>quelles échéances les autorités canadiennes énoncent-elles, et sous quel régime ?</em> <strong>Aucune passe de recherche n'avait été conduite</strong> — le lot déclarait n'avoir rien instruit hors du couple États-Unis / Union européenne. <em>L'état d'origine se conserve ici, au passé</em> (décision 17c) ; les sources à retrouver y étaient <strong>nommées plutôt qu'élidées</strong>, et c'est ce qui a rendu l'instruction exécutable — <em>un critère de clôture qui ne porte pas l'identifiant de la source à instruire est inexécutable.</em></p>
 </div>
-
 <p>☑ ⚠ <strong>LOT INSTRUIT LE 30 JUILLET 2026 (D-11), par extraction à la source primaire.</strong> Le <strong>Centre canadien pour la cybersécurité</strong> — l'un des deux identifiants que le critère de clôture nommait — publie le <strong>23 juin 2025</strong> la <strong>Feuille de route pour la migration vers la cryptographie post-quantique au sein du gouvernement du Canada, ITSM.40.001</strong>. Ses termes, lus à la page de l'organisme :</p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th></th><th></th></tr></thead>
-  <tbody>
-    <tr><td><strong>Portée</strong></td><td>les <strong>systèmes de TI non classifiés du gouvernement du Canada</strong> — réseaux traitant l'information NON CLASSIFIÉ, PROTÉGÉ A et PROTÉGÉ B</td></tr>
-    <tr><td><strong>Échéance des systèmes hautement prioritaires</strong></td><td><strong>fin de 2031</strong></td></tr>
-    <tr><td><strong>Échéance des autres systèmes</strong></td><td><strong>fin de 2035</strong></td></tr>
-    <tr><td><strong>Jalons intermédiaires</strong></td><td>plans de migration ministériels <strong>d'ici avril 2026</strong>, puis <strong>rapports de progrès annuels</strong></td></tr>
-    <tr><td><strong>Régime</strong></td><td>⚠ <strong>orientation, non obligation légale</strong> — le document recommande et trace une feuille de route ; <em>il ne crée aucune contrainte opposable, et l'écrire autrement serait la faute que R-11 proscrit</em></td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr>
+<td><strong>Portée</strong></td>
+<td>les <strong>systèmes de TI non classifiés du gouvernement du Canada</strong> — réseaux traitant l'information NON CLASSIFIÉ, PROTÉGÉ A et PROTÉGÉ B</td>
+</tr>
+<tr>
+<td><strong>Échéance des systèmes hautement prioritaires</strong></td>
+<td><strong>fin de 2031</strong></td>
+</tr>
+<tr>
+<td><strong>Échéance des autres systèmes</strong></td>
+<td><strong>fin de 2035</strong></td>
+</tr>
+<tr>
+<td><strong>Jalons intermédiaires</strong></td>
+<td>plans de migration ministériels <strong>d'ici avril 2026</strong>, puis <strong>rapports de progrès annuels</strong></td>
+</tr>
+<tr>
+<td><strong>Régime</strong></td>
+<td>⚠ <strong>orientation, non obligation légale</strong> — le document recommande et trace une feuille de route ; <em>il ne crée aucune contrainte opposable, et l'écrire autrement serait la faute que R-11 proscrit</em></td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 21.4 — La feuille de route canadienne ITSM.40.001, extraite à la page du Centre canadien pour la cybersécurité le 30 juillet 2026. ⚠ <strong>Portée fédérale et régime d'orientation</strong> : aucune de ses deux échéances n'est opposable à une institution financière.</p>
-
 <div class="avert">
   <p><strong>Trois conséquences, et la première renverse une lecture du § 21.9.</strong> <em>(1)</em> <strong>Le Canada porte une échéance intermédiaire que ni le NIST ni l'Union européenne ne portent : la fin de 2031.</strong> <em>Elle est antérieure de quatre ans à l'échéance de 2035 que le § 21.9 traite comme borne de droite, et <strong>antérieure d'un an à l'ouverture de la fenêtre 2026-2029 augmentée d'un cycle</strong>.</em> <em>(2)</em> ⚠ <strong>Les origines ne se fusionnent pas</strong> (<strong>R-11</strong>) : <em>2030/2035 du NIST, 2031/2035 du Centre canadien et le séquencement européen sont <strong>trois calendriers distincts, de trois autorités distinctes, à trois régimes distincts</strong></em> — et le fait que deux d'entre eux partagent 2035 <strong>n'est pas une convergence établie</strong>, seulement une coïncidence de millésime. <em>(3)</em> ⚠ <strong>La portée exclut les institutions financières.</strong> ITSM.40.001 vise le <strong>gouvernement fédéral</strong>, non les banques ni les assureurs : <em>une institution qui s'en réclamerait comme d'une échéance applicable lirait, encore une fois, le plafond d'un autre</em> — c'est exactement l'avertissement du § 21.9, et il vaut pour cette source neuve comme pour les précédentes.</p>
 </div>
-
 <p>☐ ⚠ <strong>La lacune n'est pas close pour autant, et la part qui demeure se nomme.</strong> Le second identifiant du critère de clôture — le groupe de travail <strong>CFDIR</strong> — <strong>n'a pas été instruit</strong> ; le rapport de lot précisait que sa mention ne repose que sur des communiqués de presse, et <em>rien de cette passe ne change cet état</em>. <strong>Reste également ouvert</strong> : ⚠ <em>aucune autorité canadienne de réglementation financière — ni le BSIF, ni l'AMF — n'est documentée comme ayant énoncé d'échéance post-quantique</em>. <strong>Absence de documentation, degré 3</strong>, non fait négatif vérifié : <em>aucun balayage de leurs publications n'a été conduit, et le déclarer autrement serait s'attribuer un travail qu'on n'a pas fait.</em> <strong>La lacune passe donc d'ouverte à REQUALIFIÉE</strong> — sa couverture a changé, son motif a changé, et <em>une lacune requalifiée reste une lacune</em>.</p>
-
 <h2 id="s219"><span class="sig">§ 21.9</span>Fenêtre d'action 2026-2029 : le calendrier inverse</h2>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>la fenêtre qui donne son titre à ce paragraphe est une construction de la somme</strong>, développée et bornée en fin de section. <em>Le socle porte des échéances datées ; <strong>il ne porte aucun délai de mise en œuvre applicable à une institution</strong>.</em></p>
-
 <p><em>Un calendrier de migration ne se lit pas dans le sens de la lecture. <strong>Il se lit à rebours</strong>, depuis la date la plus contraignante qui s'applique réellement à l'institution, en remontant vers l'instant présent.</em> ⚠ <strong>Encore faut-il savoir laquelle des dates publiées s'applique — et le socle établit qu'elles ne sont ni de même nature, ni de même force, ni de même statut</strong> (§ 21.1).</p>
-
 <div class="avert">
   <p><strong>Ce raisonnement à rebours porte un nom depuis 2018, et ne pas le citer serait une omission canonique dans un chapitre post-quantique.</strong> C'est l'<strong>inégalité de Mosca</strong> — <strong>Michele Mosca</strong>, <em>Cybersecurity in an Era with Quantum Computers: Will We Be Ready?</em>, <em>IEEE Security &amp; Privacy</em>, 16(5), 38-41, 2018 —, qui pose la condition sous laquelle une organisation est <strong>déjà en retard</strong> : si l'on note <strong>x</strong> la durée pendant laquelle un secret doit rester confidentiel, <strong>y</strong> la durée de la migration du parc, et <strong>z</strong> le délai avant qu'une machine quantique pertinente n'existe, alors <strong><em>x + y &gt; z</em> signifie que l'exposition est déjà engagée</strong> — <em>et la seule variable que l'exploitant contrôle est <strong>y</strong></em>.</p>
 </div>
-
 <div class="avert">
   <p><strong>Deux bornes, sans lesquelles la citation vaudrait caution.</strong> <em>(1)</em> <strong>Le socle ne fournit aucune des trois grandeurs</strong> : ni la durée de confidentialité exigible d'un artefact d'identité d'agent, ni la durée de migration d'un parc — <strong>degré 3</strong>, comme le § 21.8 vient de l'établir —, ni <em>a fortiori</em> une estimation de <strong>z</strong>, qui est une projection et non un fait. <em>L'inégalité est donc versée ici comme <strong>forme de raisonnement</strong>, jamais comme instrument de calcul</em> : la somme ne l'instancie sur aucun chiffre. <em>(2)</em> ⚠ <strong>Elle ne remplace pas la fenêtre 2026-2029, et ne la fonde pas non plus</strong> : celle-ci reste une <strong>construction de la somme</strong> bornée à droite par une échéance datée du socle, quand Mosca raisonne sur un <strong>z</strong> qui n'y figure pas. <em>Nommer le patron dont une construction s'approche n'élève pas cette construction au rang de la source.</em></p>
 </div>
-
 <p><strong>Trois lectures se tirent du tableau du § 21.1, et deux d'entre elles sont des constructions d'auteur : la première seule est un fait.</strong></p>
-
-<p><strong>La première est un fait, et c'est le cœur de l'horloge</strong> : <em>les algorithmes de remplacement sont normalisés depuis le 13 août 2024, tandis que le calendrier de retrait demeure, à la fiche consultée, à l'état de projet public initial</em> (F-62 ; F-59). ⚠ <strong><em>Une institution n'attend donc rien du côté de ces deux primitives — elle attend du côté des dates.</strong></em></p>
-
-<p><strong>La deuxième appelle une lecture, et elle est contre-intuitive.</strong> Le projet écrit que ses normes d'algorithmes <strong>peuvent</strong> continuer de spécifier des techniques vulnérables jusqu'en 2035, et annonce que <strong>des guides propres à une application pourront imposer des transitions plus précoces</strong> (F-60). <span class="auteur">Lecture de l'auteur</span> <em>2035 y fonctionne donc <strong>comme un plafond et non comme un plancher</strong>.</em> <strong>Ce que le socle n'établit pas</strong> : que 2035 vaille plafond <strong>pour un exploitant donné</strong>, ni qu'un guide sectoriel plus précoce existe pour la couche agentique. ⚠ <strong><em>Une institution qui lirait 2035 comme sa propre échéance lirait le plafond d'un autre.</strong></em></p>
-
+<p><strong>La première est un fait, et c'est le cœur de l'horloge</strong> : <em>les algorithmes de remplacement sont normalisés depuis le 13 août 2024, tandis que le calendrier de retrait demeure, à la fiche consultée, à l'état de projet public initial</em> (F-62 ; F-59). ⚠ <strong><em>Une institution n'attend donc rien du côté de ces deux primitives — elle attend du côté des dates.</em></strong></p>
+<p><strong>La deuxième appelle une lecture, et elle est contre-intuitive.</strong> Le projet écrit que ses normes d'algorithmes <strong>peuvent</strong> continuer de spécifier des techniques vulnérables jusqu'en 2035, et annonce que <strong>des guides propres à une application pourront imposer des transitions plus précoces</strong> (F-60). <span class="auteur">Lecture de l'auteur</span> <em>2035 y fonctionne donc <strong>comme un plafond et non comme un plancher</strong>.</em> <strong>Ce que le socle n'établit pas</strong> : que 2035 vaille plafond <strong>pour un exploitant donné</strong>, ni qu'un guide sectoriel plus précoce existe pour la couche agentique. ⚠ <strong><em>Une institution qui lirait 2035 comme sa propre échéance lirait le plafond d'un autre.</em></strong></p>
 <div class="avert">
   <p><strong>Conformément à R-11</strong> : le NIST <strong>vise</strong> une dépréciation en 2030 au niveau de sécurité de 112 bits et une interdiction en 2035 tous niveaux confondus, <strong>dans un document à l'état de projet public initial</strong> — <em>aucune de ces deux lignes n'est formulée en obligation, et <strong>un jalon du NIST n'est pas une obligation légale</strong>.</em></p>
 </div>
-
-<p><strong>La troisième est une lecture d'auteur, et elle porte la borne de droite du titre.</strong> <span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : une date d'obligation applicable à un périmètre fédéral américain nommé, le 31 décembre 2030 pour l'établissement de clés (F-61) ; que le NIST vise 2030 et 2035 <strong>dans un projet</strong> (F-59, F-60) ; et que la clause « ou un document successeur » <strong>est précisément ce qui empêche ce projet de devenir la norme sur laquelle une obligation se fonderait</strong>. <strong>Ce qu'il n'établit pas</strong> : <strong>aucun délai de conception, aucun cycle de renouvellement d'infrastructure, aucune durée de migration d'un parc — degré 3.</strong> <em>La fenêtre <strong>2026-2029</strong> est donc une construction de la somme : elle borne à droite l'intervalle qui précède la première échéance datée du socle, et <strong>elle vaut ce que vaut l'hypothèse — non sourcée — qu'un parc d'agents ne se migre pas dans l'année de son échéance</strong>.</em></p>
-
-<div class="avert">
-  <p><strong><em>Le lecteur qui juge cette hypothèse fausse doit refaire le calcul, non ajuster le résultat.</strong></em></p>
-</div>
-
+<p><strong>La troisième est une lecture d'auteur, et elle porte la borne de droite du titre.</strong> <span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : une date d'obligation applicable à un périmètre fédéral américain nommé, le 31 décembre 2030 pour l'établissement de clés (F-61) ; que le NIST vise 2030 et 2035 <strong>dans un projet</strong> (F-59, F-60) ; et que la clause « ou un document successeur » <strong>est précisément ce qui empêche ce projet de devenir la norme sur laquelle une obligation se fonderait</strong>. <strong>Ce qu'il n'établit pas</strong> : <strong>aucun délai de conception, aucun cycle de renouvellement d'infrastructure, aucune durée de migration d'un parc — degré 3.</strong> <em>La fenêtre <strong>2026-2029</strong> est donc une construction de la somme : elle borne à droite l'intervalle qui précède la première échéance datée du socle, et <strong>elle vaut ce que vaut l'hypothèse — non sourcée — qu'un parc d'agents ne se migre pas dans l'année de son échéance</strong>.</em> ⚠ <strong><em>Le lecteur qui juge cette hypothèse fausse doit refaire le calcul, non ajuster le résultat.</em></strong></p>
 <p><strong>Ce que le calendrier inverse produit concrètement n'est pas un plan de migration : c'est un ordre de travaux.</strong> <span class="auteur">Lecture de l'auteur</span> <em>les artefacts <strong>dont l'autorité de rotation n'est pas identifiée</strong> passent en premier, parce qu'ils ne sont pas migrables tant qu'ils ne sont pas gouvernés — et <strong>cette gouvernance est un travail d'identité, pas de cryptographie</strong>. Viennent ensuite les artefacts <strong>dont le contrat n'expose pas son mécanisme de signature comme un paramètre versionné</strong> (§ 21.5). Viennent en dernier <strong>les artefacts agiles</strong>, dont la migration est un changement de configuration à échéance.</em></p>
-
 <div class="avert">
-  <p><strong>C'est aussi le point où le quatrième terme de l'invariant hérité trouve une application littérale</strong> (H-27, <strong>[C]</strong>, thèse attribuée) : <strong><em>une dette de migration n'est pas un problème d'architecture qu'on résout une fois ; c'est une charge d'exploitation qui se réévalue à chaque révision du document qui porte l'horloge</strong></em> — et ce document est, à la date de gel, <strong>un projet</strong> (F-59). ⚠ <strong>Aucun calendrier de finalisation n'a été relevé — degré 3</strong> ; <em>il ne s'en déduit rien sur les intentions du NIST.</em></p>
+  <p><strong>C'est aussi le point où le quatrième terme de l'invariant hérité trouve une application littérale</strong> (H-27, <strong>[C]</strong>, thèse attribuée) : <strong><em>une dette de migration n'est pas un problème d'architecture qu'on résout une fois ; c'est une charge d'exploitation qui se réévalue à chaque révision du document qui porte l'horloge</em></strong> — et ce document est, à la date de gel, <strong>un projet</strong> (F-59). ⚠ <strong>Aucun calendrier de finalisation n'a été relevé — degré 3</strong> ; <em>il ne s'en déduit rien sur les intentions du NIST.</em></p>
 </div>
-
-<p><strong>Ce que ce chapitre refuse d'écrire, et pourquoi il le déclare.</strong> <em>(1)</em> Il <strong>ne convertit pas</strong> en coût unitaire, en ratio ou en fourchette d'entreprise la projection de coût du § 21.7 : <em>le périmètre du chiffre exclut l'objet.</em> <em>(2)</em> Il <strong>n'attribue aucune échéance sectorielle</strong> au forum dont le balayage n'en relève aucune. <em>(3)</em> Il <strong>ne présente aucun des quatre jalons comme liant d'office une institution canadienne</strong> : <em>les périmètres que le socle porte sont fédéraux et américains, et le rattachement éventuel d'un exploitant à l'un d'eux <strong>se constate, il ne se présume pas</strong>.</em> <em>(4)</em> Et il <strong>ne comble pas la lacune canadienne par transposition d'un calendrier étranger</strong> — ⚠ <strong><em>un calendrier qu'on transpose devient, en trois citations, une échéance.</strong></em></p>
-
+<p><strong>Ce que ce chapitre refuse d'écrire, et pourquoi il le déclare.</strong> <em>(1)</em> Il <strong>ne convertit pas</strong> en coût unitaire, en ratio ou en fourchette d'entreprise la projection de coût du § 21.7 : <em>le périmètre du chiffre exclut l'objet.</em> <em>(2)</em> Il <strong>n'attribue aucune échéance sectorielle</strong> au forum dont le balayage n'en relève aucune. <em>(3)</em> Il <strong>ne présente aucun des quatre jalons comme liant d'office une institution canadienne</strong> : <em>les périmètres que le socle porte sont fédéraux et américains, et le rattachement éventuel d'un exploitant à l'un d'eux <strong>se constate, il ne se présume pas</strong>.</em> <em>(4)</em> Et il <strong>ne comble pas la lacune canadienne par transposition d'un calendrier étranger</strong> — ⚠ <strong><em>un calendrier qu'on transpose devient, en trois citations, une échéance.</em></strong></p>
 <h3>Synthèse : ce que le chapitre lègue à la somme</h3>
-
 <p><em>Section de sortie sans homologue direct dans la source — construction d'éditeur.</em></p>
-
-<ol class="numeros">
-  <li><strong>Le siège de l'horloge</strong> (§ 21.1), avec ses <strong>trois origines documentaires</strong> — la quatrième, hors socle, étant nommée au § 21.8 — <strong>qui ne se fusionnent pas</strong>, et le statut réel de chaque texte. Hors du Livre, les <strong>ch. 45 et 49</strong> y renvoient ; <strong>aucun ne re-date un jalon</strong>.</li>
-  <li><strong>La formulation imposée</strong> : « <strong>visée</strong> », jamais « fixée », jamais un ordre de grandeur approché ; et <strong>le statut du document porté à chaque mention</strong>. <em>C'est le garde-fou le plus mécanique du Livre, et le plus facile à casser d'inadvertance.</em></li>
-  <li><strong>La définition opérationnelle de la crypto-agilité en trois conditions</strong>, marquée construction d'auteur, et <strong>le constat que sa troisième condition n'est satisfaite par aucun mécanisme inventorié</strong>.</li>
-  <li><strong>Le renversement qui ferme le Livre</strong> : <strong><em>la crypto-agilité et la révocabilité sont la même propriété vue de deux côtés.</strong></em> Le <strong>ch. 20 § 20.4</strong> avait établi l'asymétrie émission/révocation ; le § 21.6 en montre le coût à l'échéance.</li>
-  <li>⚠ <strong>Et un legs négatif, qui est celui du Livre entier</strong> : <em>la fabrique d'émission des ch. 12 à 18 repose sur des signatures classiques, et <strong>aucun de ses mécanismes ne documente comment en sortir</strong>.</em></li>
+<ol type="1">
+<li><strong>Le siège de l'horloge</strong> (§ 21.1), avec ses <strong>trois origines documentaires</strong> — la quatrième, hors socle, étant nommée au § 21.8 — <strong>qui ne se fusionnent pas</strong>, et le statut réel de chaque texte. Hors du Livre, les <strong>ch. 45 et 49</strong> y renvoient ; <strong>aucun ne re-date un jalon</strong>.</li>
+<li><strong>La formulation imposée</strong> : « <strong>visée</strong> », jamais « fixée », jamais un ordre de grandeur approché ; et <strong>le statut du document porté à chaque mention</strong>. <em>C'est le garde-fou le plus mécanique du Livre, et le plus facile à casser d'inadvertance.</em></li>
+<li><strong>La définition opérationnelle de la crypto-agilité en trois conditions</strong>, marquée construction d'auteur, et <strong>le constat que sa troisième condition n'est satisfaite par aucun mécanisme inventorié</strong>.</li>
+<li><strong>Le renversement qui ferme le Livre</strong> : <strong><em>la crypto-agilité et la révocabilité sont la même propriété vue de deux côtés.</em></strong> Le <strong>ch. 20 § 20.4</strong> avait établi l'asymétrie émission/révocation ; le § 21.6 en montre le coût à l'échéance.</li>
+<li>⚠ <strong>Et un legs négatif, qui est celui du Livre entier</strong> : <em>la fabrique d'émission des ch. 12 à 18 repose sur des signatures classiques, et <strong>aucun de ses mécanismes ne documente comment en sortir</strong>.</em></li>
 </ol>
+<hr />
+<figure class="figure">
+  <img src="../figures/f-21-09-calendrier-inverse.svg" alt="Figure 21.9 — La fenêtre d&#39;action lue à rebours, depuis l&#39;échéance la plus contraignante." />
+  <figcaption><strong>Figure 21.9</strong> — La fenêtre d'action lue à rebours, depuis l'échéance la plus contraignante.</figcaption>
+</figure>
 
 <footer class="pied">
   <p><strong>Vol. IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em></strong> · Livre II, chapitre 21. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau, M.Sc. IT.</p>

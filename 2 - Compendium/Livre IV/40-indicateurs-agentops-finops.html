@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chapitre 40 — Les indicateurs de l&#x27;AgentOps et le FinOps des agents · Interopérabilité et Orchestration en Entreprise Agentique</title>
-<meta name="description" content="Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d'agents et synthèse architecturale. Second mouvement — exploiter (ch. 38-40). Troisième et dernier chapitre du mouvement : il traite la troisième capacité — mesurer un parc">
+<meta name="description" content="Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d&#x27;agents et synthèse architecturale. Second mouvement — exploiter (ch. 38-40). Troisième et dernier chapitre du mouvement : il traite la troisième capacité — **mesurer un parc**">
 <meta name="author" content="André-Guy Bruneau, M.Sc. IT">
 <meta name="color-scheme" content="dark">
 <style>
@@ -443,6 +443,17 @@ tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
 tbody td:first-child { color: var(--texte); font-weight: 600; }
 .legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
 
+/* -------------------------------------------------------------- figures */
+/* Les SVG du volume sont dessinés pour le PDF, donc sur fond clair, et ils
+   portent ce fond eux-mêmes — sans quoi il faudrait maintenir deux variantes
+   de chaque figure. Sur ce thème sombre, ils se posent donc comme un carton ;
+   le padding empêche le fond de la figure de toucher le bord du cadre. */
+.figure { margin: 2.1rem 0 1.9rem; }
+.figure img { display: block; width: 100%; height: auto; border-radius: 7px;
+              border: 1px solid var(--trait); background: #fdfbf9; padding: 0.6rem; }
+.figure figcaption { font-size: 0.8rem; font-style: italic; color: var(--texte-faible);
+                     margin-top: 0.65rem; padding-left: 0.15rem; }
+
 /* --------------------------------------------------------------- listes */
 ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
 ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
@@ -531,18 +542,16 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <div class="nav__marque">Interopérabilité et Orchestration en Entreprise Agentique</div>
   <div class="nav__sous">Livre IV · Chapitre 40</div>
   <ol>
-    <li><a href="#s400"><span class="num">40.0</span>Ouverture : la règle que le chapitre s&#x27;applique à lui-même</a></li>
+    <li><a href="#s400"><span class="num">40.0</span>Ouverture : la règle que le chapitre s'applique à lui-même</a></li>
     <li><a href="#s401"><span class="num">40.1</span>Recension critique des métriques relevées : ce qui a été ouvert, et ce que cela compte</a></li>
-    <li><a href="#s402"><span class="num">40.2</span>La grille minimale : ce que l&#x27;architecte doit pouvoir répondre à l&#x27;auditeur</a></li>
-    <li><a href="#s403"><span class="num">40.3</span>La métrique d&#x27;horizon de tâche déléguée : état d&#x27;un front ouvert</a></li>
+    <li><a href="#s402"><span class="num">40.2</span>La grille minimale : ce que l'architecte doit pouvoir répondre à l'auditeur</a></li>
+    <li><a href="#s403"><span class="num">40.3</span>La métrique d'horizon de tâche déléguée : état d'un front ouvert</a></li>
     <li><a href="#s404"><span class="num">40.4</span>Les indicateurs de la supervision humaine</a></li>
-    <li><a href="#s405"><span class="num">40.5</span>Le modèle de coût agentique comme contrainte d&#x27;ingénierie de premier ordre</a></li>
+    <li><a href="#s405"><span class="num">40.5</span>Le modèle de coût agentique comme contrainte d'ingénierie de premier ordre</a></li>
     <li><a href="#s406"><span class="num">40.6</span>FinOps des agents</a></li>
-
   </ol>
   <div class="nav__pied">
     Vol.&nbsp;IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em><br>
-
     <a href="40-indicateurs-agentops-finops.md">Version Markdown</a>
   </div>
 </nav>
@@ -553,301 +562,280 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 <header class="titre">
   <div class="titre__fil">Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d&#x27;agents et synthèse architecturale</div>
   <h1><span class="chap">Chapitre 40</span>Les indicateurs de l&#x27;AgentOps et le FinOps des agents</h1>
-  <p class="titre__situe">Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d'agents et synthèse architecturale. Second mouvement — exploiter (ch. 38-40). Troisième et dernier chapitre du mouvement : il traite la troisième capacité — <strong>mesurer un parc</strong></p>
+  <p class="titre__situe">Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d'agents et synthèse architecturale. Second mouvement — exploiter (ch. 38-40). Troisième et dernier chapitre du mouvement : il traite la troisième capacité — **mesurer un parc**</p>
 </header>
 
+<!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
+     Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
+     que `build/assemble.py` pour le PDF et que `PRD/decompte.sh` pour la volumétrie. L'appareil de
+     gouvernance vit au .md jumeau, qui reste la seule source, et `build/verifier-piece.py` refuse
+     un rendu qui le recopierait. -->
+
 <h2 id="s400"><span class="sig">§ 40.0</span>Ouverture : la règle que le chapitre s'applique à lui-même</h2>
-
-<p><span class="auteur">Lecture de l'auteur</span> <strong>marquage porté à l'ouverture de la pièce, et il régit le chapitre entier</strong> (CA-IV-07). <strong>Ce que le socle établit</strong> : un relevé daté et borné de <strong>seize métriques normalisées</strong>, de leurs types, de leurs unités, de leur statut de maturité et de leurs dimensions, plus <strong>deux catalogues d'éditeurs nommés</strong> — ⚠ <em>l'un daté, l'autre sans date, sans version ni statut, et le § 40.1.6 le dit à sa mention</em>. <strong>Ce qu'il n'établit pas</strong> : <strong>la moindre grandeur de parc</strong>.</p>
-
-<div class="avert">
-  <p><strong>Aucune des quatre grandeurs que le § 40.2 retient n'a de répondant dans les seize métriques relevées</strong> ; elles sont <strong>dérivées, dans cette pièce et par elle</strong>, de ce que les cadres du Livre III attendent ou imposent et de ce que le ch. 37 documente au point d'application. <strong>La grille du § 40.2 est donc une construction d'auteur en totalité</strong> : <em>le lecteur peut la refuser sans qu'aucun des faits du § 40.1 ne tombe — c'est la propriété que le chapitre revendique, et la seule.</em></p>
-</div>
-
+<p><span class="auteur">Lecture de l'auteur</span> <strong>marquage porté à l'ouverture de la pièce, et il régit le chapitre entier</strong> (CA-IV-07). <strong>Ce que le socle établit</strong> : un relevé daté et borné de <strong>seize métriques normalisées</strong>, de leurs types, de leurs unités, de leur statut de maturité et de leurs dimensions, plus <strong>deux catalogues d'éditeurs nommés</strong> — ⚠ <em>l'un daté, l'autre sans date, sans version ni statut, et le § 40.1.6 le dit à sa mention</em>. <strong>Ce qu'il n'établit pas</strong> : <strong>la moindre grandeur de parc</strong>. ⚠ <strong>Aucune des quatre grandeurs que le § 40.2 retient n'a de répondant dans les seize métriques relevées</strong> ; elles sont <strong>dérivées, dans cette pièce et par elle</strong>, de ce que les cadres du Livre III attendent ou imposent et de ce que le ch. 37 documente au point d'application. <strong>La grille du § 40.2 est donc une construction d'auteur en totalité</strong> : <em>le lecteur peut la refuser sans qu'aucun des faits du § 40.1 ne tombe — c'est la propriété que le chapitre revendique, et la seule.</em></p>
 <p><strong>Le chapitre porte enfin une règle qu'il s'applique à lui-même : il ne produit aucun chiffre qu'il ne puisse tracer.</strong> Chaque cardinal du § 40.1 porte son fichier, sa date de consultation et son entrée ; le § 40.2 ne produit <strong>aucune valeur</strong>, seulement des questions et l'énoncé de ce qui manque pour y répondre. ⚠ <em>Une grille d'indicateurs qui livrerait des seuils sans dénominateur fabriquerait exactement ce que la somme prend pour objet.</em></p>
-
 <div class="avert">
   <p><strong>Le terme « AgentOps » n'est pas redéfini ici</strong> : son siège est au <strong>ch. 38 § 38.0</strong>, qui le pose au sens du Vol. III — <em>discipline d'exploitation, non produit</em> (R-03 du Vol. III). ⚠ <strong>Et la frontière avec le ch. 38 tient en une phrase</strong> : <em>il nomme et rattache, ce chapitre compte.</em></p>
 </div>
-
 <p><strong>Le chapitre se lit en six temps</strong> : ce que le corpus compte réellement (§ 40.1) ; la grille dérivée et ce qui lui manque (§ 40.2) ; l'horizon de tâche déléguée, front ouvert (§ 40.3) ; les indicateurs de la supervision humaine, et ce qu'ils ne mesurent pas (§ 40.4) ; le coût comme contrainte de conception (§ 40.5) ; et son pilotage à l'échelle (§ 40.6).</p>
-
 <h2 id="s401"><span class="sig">§ 40.1</span>Recension critique des métriques relevées : ce qui a été ouvert, et ce que cela compte</h2>
-
 <h3>40.1.1 Le périmètre d'abord, parce que tout le reste s'y borne</h3>
-
-<p><strong>Trois fichiers</strong> d'un dépôt dédié ont été <strong>balayés</strong> le 21 juillet 2026 — un document de métriques, un document de jonction, un fichier de modèle de métriques ; <strong>deux pages d'éditeurs ont par ailleurs été consultées</strong>, hors de ce périmètre de balayage.</p>
-
-<div class="avert">
-  <p><strong>« Balayés » n'est pas « ouverts », et la distinction porte la borne</strong> : les entrées mobilisées plus bas citent en outre <strong>deux groupes d'attributs</strong> d'un fichier de segments et <strong>la définition et la note du registre d'attributs</strong>, qui sont des <strong>consultations ponctuelles, hors du périmètre de balayage</strong>. <em>La borne des faits négatifs qui suivent porte sur les trois fichiers balayés, non sur ces consultations.</em></p>
-</div>
-
+<p><strong>Trois fichiers</strong> d'un dépôt dédié ont été <strong>balayés</strong> le 21 juillet 2026 — un document de métriques, un document de jonction, un fichier de modèle de métriques ; <strong>deux pages d'éditeurs ont par ailleurs été consultées</strong>, hors de ce périmètre de balayage. ⚠ <strong>« Balayés » n'est pas « ouverts », et la distinction porte la borne</strong> : les entrées mobilisées plus bas citent en outre <strong>deux groupes d'attributs</strong> d'un fichier de segments et <strong>la définition et la note du registre d'attributs</strong>, qui sont des <strong>consultations ponctuelles, hors du périmètre de balayage</strong>. <em>La borne des faits négatifs qui suivent porte sur les trois fichiers balayés, non sur ces consultations.</em></p>
 <p><strong>Ce que ce lot n'a pas balayé est énuméré</strong> : les <strong>neuf</strong> autres fichiers Markdown du répertoire, le fichier de segments hors deux groupes, et le fichier d'événements (Vol. III <strong>F-96</strong>, <strong>[B, degré 1]</strong> ; ⚖ <strong>vote dû, non conduit</strong>).</p>
-
 <div class="avert">
   <p><strong>Aucun numéro de version n'est citable</strong> — le dépôt dédié ne porte <strong>ni publication ni étiquette</strong> (Vol. III <strong>F-75</strong>, <strong>[B, degré 2]</strong> ; <strong>siège ch. 38 § 38.2</strong>) —, et les conventions relevées sont au <strong>premier des cinq échelons</strong> de maturité (Vol. III <strong>F-76</strong>, <strong>[B]</strong> ; même siège). <em>C'est le statut le plus volatil de l'échelle, et R-09 du Vol. III impose de le dire à chaque mention.</em></p>
 </div>
-
 <h3>40.1.2 Ce que le corpus compte</h3>
-
-<p>Le document de métriques porte en tête « <strong>Status</strong>: Development » et définit <strong>douze</strong> métriques à son tableau récapitulatif ; <strong>les douze sont de type histogramme</strong> et portent la stabilité <code>development</code>, relevé <strong>contre-vérifié au champ d'instrument du fichier de modèle</strong> (Vol. III <strong>F-90</strong>, <strong>[B]</strong>).</p>
-
-<div class="avert">
-  <p><strong>Deux marquages qui ne se fusionnent pas</strong> : le statut du <strong>document</strong> est distinct de la valeur de stabilité portée par chaque <strong>métrique</strong>.</p>
-</div>
-
+<p>Le document de métriques porte en tête « <strong>Status</strong>: Development » et définit <strong>douze</strong> métriques à son tableau récapitulatif ; <strong>les douze sont de type histogramme</strong> et portent la stabilité <code>development</code>, relevé <strong>contre-vérifié au champ d'instrument du fichier de modèle</strong> (Vol. III <strong>F-90</strong>, <strong>[B]</strong>). ⚠ <strong>Deux marquages qui ne se fusionnent pas</strong> : le statut du <strong>document</strong> est distinct de la valeur de stabilité portée par chaque <strong>métrique</strong>.</p>
 <p><strong>Quatre des douze portent sur l'agent ou le flux de travail</strong>, les huit autres sur le client, le serveur ou l'exécution d'un outil ; ⚠ <strong>la partition est faite sur le préfixe du nom, non sur une taxinomie déclarée par la source</strong> (Vol. III <strong>F-91</strong>, <strong>[B]</strong>). Le document de jonction, au même statut, en définit <strong>quatre de plus, toutes des histogrammes</strong> d'unité seconde (Vol. III <strong>F-95</strong>, <strong>[B, degré 1]</strong>). <strong>Seize au total.</strong></p>
-
 <h3>40.1.3 Ce qu'elles ne comptent pas, et il faut l'écrire au degré exact</h3>
-
 <p>Les seize sont définies <strong>au grain d'une opération, d'une invocation ou d'une session unitaire</strong>, et <strong>aucune n'est un compteur ni une jauge portant sur un ensemble d'agents</strong> (Vol. III <strong>F-96</strong>, <strong>[B, degré 1]</strong> ; ⚖ <strong>vote dû, non conduit</strong>).</p>
-
 <div class="avert">
   <p><strong>Fait négatif de degré 1, borné aux trois fichiers nommés et à cette date</strong> : <em>il n'établit pas qu'une métrique de parc n'existe nulle part</em> — ni ailleurs dans ce dépôt, ni dans le dépôt principal, ni chez un éditeur. ⚠ <strong>Écrire « le socle ne documente pas de métrique de parc, <em>donc</em> il n'en existe pas » est proscrit.</strong></p>
 </div>
-
 <p><strong>La borne que la source porte elle-même est décisive</strong> : la métrique de durée d'invocation mesure « a single <strong>in-process</strong> agent invocation » (Vol. III <strong>F-91</strong>, <strong>[B]</strong>). <em>Une invocation en processus n'est ni une délégation, ni une chaîne de mandat, ni un parc.</em></p>
-
 <h3>40.1.4 La dimension d'agent est un nom, pas une identité</h3>
-
 <div class="avert">
   <p><strong>C'est le constat qui fait entrer ce chapitre dans la somme.</strong> Dans les deux fichiers ouverts, la seule référence d'agent est un <strong>nom lisible par un humain fourni par l'application</strong> ; l'identifiant stable — que le registre d'attributs définit pourtant comme « The unique and stable identifier of the GenAI hosted agent resource » — compte <strong>zéro occurrence</strong> dans le document de métriques, et le groupe d'attributs qui alimente la métrique d'invocation <strong>ne référence que ce nom lisible et un identifiant de modèle de requête</strong> (Vol. III <strong>F-92</strong>, <strong>[B, degré 1]</strong> ; ⚖ <strong>vote dû, non conduit</strong>).</p>
 </div>
-
 <div class="avert">
   <p><strong>Ne pas écrire « l'instrumentation ne permet pas d'identifier un agent »</strong> : <em>le registre définit l'identifiant stable</em> ; ce que le relevé établit est plus étroit — <strong>les métriques relevées agrègent par nom lisible, non par identifiant stable</strong>.</p>
 </div>
-
 <p>S'y ajoute un <strong>balayage de sept chaînes exactes</strong> sur le même document : identité, délégation, révocation, audit, autorisation, identifiant de conversation et identifiant d'appel d'outil comptent <strong>zéro occurrence chacune</strong> (Vol. III <strong>F-93</strong>, <strong>[B, degré 1]</strong>). ⚠ <strong>Un balayage de sept chaînes n'est pas un balayage sémantique</strong>, et il porte sur ce fichier seul : <em>deux de ces chaînes sont définies ailleurs dans le dépôt</em> — <strong>leur absence ici signifie qu'elles ne sont pas des dimensions de métrique, non qu'elles n'existent pas.</strong></p>
-
 <h3>40.1.5 Deux réserves de méthode renforcent le constat au lieu de l'affaiblir</h3>
-
 <p><em>Un</em> : <strong>la dimension d'agent est facultative</strong> — « Conditionally Required — When available » sur la durée d'invocation, « Recommended » sur les deux compteurs d'appels. <em>Deux</em> : le nom de flux de travail <strong>« MUST have low cardinality »</strong> et, selon la note du registre, <strong>ne doit pas être capturé par défaut si aucun nom de faible cardinalité n'est disponible</strong> pour le cadriciel (Vol. III <strong>F-94</strong>, <strong>[B]</strong>).</p>
-
 <div class="avert">
   <p><strong>La contrainte de cardinalité n'est pas un défaut de la spécification</strong> : c'est une <strong>règle d'hygiène standard en métrologie de séries temporelles</strong>. <em>Le chapitre ne la critique pas ; il constate qu'elle <strong>exclut</strong> le dénombrement d'un parc par cette voie.</em> <strong>Une clé d'agrégation qui peut légitimement manquer n'est pas un dénominateur.</strong></p>
 </div>
-
 <p>Enfin, les deux compteurs d'appels comptent <strong>les appels directs</strong> de l'agent, ceux de sous-agents ou d'agents auxquels la tâche est transférée étant <strong>attribués séparément</strong> (F-96 ; ⚖ <strong>vote dû, non conduit</strong>). ⚠ <strong>Une chaîne de délégation n'est donc pas reconstituable par sommation</strong> — <em>borne à exploiter, non à déplorer</em>, et elle commande le § 40.3.</p>
-
 <h3>40.1.6 Deux catalogues d'éditeurs, nommés parce que les anonymiser serait une faute</h3>
-
 <p>Selon la page de référence des évaluateurs intégrés de <strong>Microsoft Foundry</strong>, horodatée du 2 juin 2026, cet éditeur <strong>déclare onze évaluateurs d'agents, dont cinq portent la mention de préversion et six ne la portent pas sur cette page</strong> ; deux évaluateurs de risque y visent nommément l'agent (Vol. III <strong>F-97</strong>, <strong>[B]</strong>). ⚠ <strong>Qualifications auto-déclarées par cet éditeur, sans vérification indépendante.</strong> ⚠ <strong>L'absence de la mention de préversion sur une ligne n'est pas une déclaration de disponibilité générale</strong> : l'avertissement de la page ne régit, à la lettre, que les éléments qui la portent — <em>ne pas écrire que six évaluateurs sont en disponibilité générale.</em></p>
-
 <div class="avert">
   <p><strong>Un évaluateur n'est pas une métrique normalisée</strong> : instrument propriétaire, <strong>sans définition partagée d'unité ni de cardinalité</strong>, et <strong>aucune page ouverte n'établit de correspondance</strong> avec les attributs d'instrumentation. ⚠ <strong>L'évaluateur de risque le plus proche du sujet mesure une capacité et non une conformité</strong> — <em>instrument d'épreuve adverse, non indicateur de conformité d'un mandat en production</em> (siège <strong>ch. 39 § 39.1</strong>, qui n'est pas reconstruit ici).</p>
 </div>
-
 <p>Selon la page de métriques de <strong>Langfuse</strong>, <strong>consultée sans numéro de version, sans date et sans mention de statut</strong>, cet éditeur <strong>déclarait, au relevé du 21 juillet 2026, quatre mesures et neuf dimensions de découpage</strong> (Vol. III <strong>F-98</strong>, <strong>[B]</strong>). ⚠ <strong>Qualification auto-déclarée par Langfuse, sans vérification indépendante</strong>, et <em>ce sont des <strong>catégories</strong>, non des identifiants de métriques ; il n'est pas établi qu'elles constituent une spécification.</em> ⚠ <strong>Ce cardinal a changé, et l'entrée le porte</strong> : l'instruction du 28 juillet 2026 constate <strong>quatre dimensions</strong>, sur deux récupérations indépendantes concordantes, le décompte des mesures demeurant <strong>ambigu à l'instrument</strong> — trois ou quatre selon la lecture d'une entrée — et la page restant <strong>sans version, sans date et sans statut</strong> (<code>S-142</code>, <strong>☑ changée</strong> ; date du changement <strong>non établissable par cette voie</strong>). <em>Une page qui ne se date pas ne se re-date pas non plus : elle se re-lit.</em></p>
-
 <p><strong>Trois grains, aucun identifiant commun — et trois sources ne font pas un marché.</strong> ⚠ <strong>L'entrée ne soutient aucun énoncé sur l'état du marché de l'observabilité agentique</strong>, ni sur une convergence, ni sur une divergence générale. <strong>Huit plateformes n'ont pas été instruites par le lot, et elles se nomment</strong> : <strong>Arize Phoenix</strong>, <strong>LangSmith</strong>, <strong>W&amp;B Weave</strong>, <strong>Traceloop</strong>, <strong>Grafana</strong>, <strong>Elastic</strong>, <strong>AWS</strong> et <strong>Datadog</strong> — <strong>Datadog étant la seule des huit dont deux pages ouvertes n'ont nommé aucun identifiant de métrique</strong>, et <strong>l'échec sur Arize Phoenix un 404 sur une adresse construite par déduction</strong> — ⚠ <em>une adresse devinée qui échoue n'établit aucune absence.</em> ⚠ <strong>Les nommer est obligatoire</strong> (décision 15 du TOC, alinéa b) : <em>un lot dont les sources à instruire ne sont pas nommées a un critère de clôture inexécutable.</em> ⚠ <strong>Aucune métrique d'adoption n'a été cherchée ni relevée</strong> pour aucun des trois.</p>
-
 <div class="avert">
   <p><strong>Et le rapprochement entre un instrument d'observabilité et une attente réglementaire demeure en tout état de cause une inférence d'auteur</strong> (R-07 du Vol. III ; ⚠ <strong>et R-7 du Vol. II pour l'instrumentation d'E-23 par le produit de gouvernance que ce garde-fou nomme — deux garde-fous distincts sur le même geste, nommés par volume</strong>). Le socle n'attache sa clause renforcée qu'à <strong>watsonx.governance</strong>, produit de gouvernance de modèles d'<strong>IBM</strong> — pour lequel <strong>cet éditeur ne revendique aucune conformité et aucune source ne documente le lien avec E-23</strong> : fait négatif <strong>ÉTABLI</strong>, degré 2 (Vol. III <strong>H-14</strong>, <strong>[B]</strong>) ; ⚠ <strong>pour les deux catalogues ci-dessus, le socle ne documente aucun lien avec un cadre réglementaire</strong> — absence de documentation, <strong>degré 3</strong>. <em>Les deux formules ne s'échangent pas — on a cherché et consigné une réserve d'un côté, on n'a rien de l'autre ; le tableau du ch. 38 § 38.4 en est le siège.</em></p>
 </div>
-
 <p><strong>Le dernier apport vient du socle hérité, et il porte sa réserve.</strong> Le cadre empirique de <strong>Rinderle-Ma, Mangler et coll.</strong> relève que <strong>quatre propriétés sur cinq sont instrumentées, l'autonomie n'en ayant aucune</strong> (Vol. III <strong>H-12</strong>, <strong>[B]</strong> — ⚠ <strong>préimpression non révisée par les pairs, source unique, sans reproduction indépendante</strong>). <em>Constat d'une préimpression, non propriété établie du domaine : il <strong>corrobore</strong> l'asymétrie que le relevé montre, il ne la fonde pas.</em></p>
-
 <h2 id="s402"><span class="sig">§ 40.2</span>La grille minimale : ce que l'architecte doit pouvoir répondre à l'auditeur</h2>
-
 <h3>40.2.1 La contrainte de modalité, posée avant les grandeurs</h3>
-
 <div class="avert">
   <p><strong>Elle se pose avant, sous peine de fabriquer une obligation.</strong> Les instruments du Livre III <strong>ne portent pas le même mode</strong>, et <strong>les deux régimes ne se confondent pas</strong> (R-06 du Vol. III).</p>
 </div>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Instrument</th><th>Mode</th><th>Ce que le socle établit du mode</th><th>Effet</th></tr></thead>
-  <tbody>
-    <tr><td><strong>E-23</strong></td><td><strong>attend</strong></td><td>ligne directrice <strong>fondée sur des principes</strong> : ses <strong>douze énoncés numérotés sont au <em>should</strong></em>, sans occurrence de <em>must</em> au corps de la version anglaise balayée (<strong>F-64</strong>, [B, degré 1]) ; ⚠ <strong>la forme « attend » se prend au document d'information de l'éditeur du 11 septembre 2025</strong>, non au texte de la ligne directrice (<strong>F-66</strong>, [B, degré 1])</td><td><strong>PROGRAMMÉE, 1ᵉʳ mai 2027</strong></td></tr>
-    <tr><td><strong>Ligne directrice de l'AMF</strong></td><td><strong>s'attend à ce que…</strong></td><td>formulation relevée à son texte (<strong>F-68</strong>, [B])</td><td><strong>PROGRAMMÉE, 1ᵉʳ mai 2027</strong> — ⚠ <strong>effet non re-constaté au 28 juillet 2026</strong>, l'hôte refusant l'accès (<code>S-114</code>, ☐ non établie)</td></tr>
-    <tr><td><strong>Avis 11-348 des ACVM</strong></td><td><strong>n'impose pas</strong></td><td>⚠ <strong>borné aux marchés de capitaux</strong>, le socle n'établissant pas qu'il porte au-delà, et <strong>déclarant lui-même que ses indications ne créent ni ne modifient aucune exigence</strong> — <em>rendu français, l'instrument étant en anglais</em> (<strong>H-07</strong>, [B] ; instruit au <strong>ch. 28</strong>)</td><td>sans effet obligatoire</td></tr>
-    <tr><td><strong>Article 12.1</strong></td><td><strong>impose</strong></td><td>obligation d'informer et, <strong>sur demande</strong>, de communiquer « des raisons, ainsi que des principaux facteurs et paramètres, ayant mené à la décision » (<strong>F-89</strong>, [B] ; <strong>H-06</strong>, [B])</td><td><strong>en vigueur depuis le 22 septembre 2023</strong> — ⚠ <strong>texte non re-récupéré au 28 juillet 2026</strong>, l'éditeur officiel refusant l'accès (<code>S-135</code> et <code>S-025</code>, ☐ non établie)</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Instrument</th>
+<th>Mode</th>
+<th>Ce que le socle établit du mode</th>
+<th>Effet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>E-23</strong></td>
+<td><strong>attend</strong></td>
+<td>ligne directrice <strong>fondée sur des principes</strong> : ses <strong>douze énoncés numérotés sont au <em>should</em></strong>, sans occurrence de <em>must</em> au corps de la version anglaise balayée (<strong>F-64</strong>, [B, degré 1]) ; ⚠ <strong>la forme « attend » se prend au document d'information de l'éditeur du 11 septembre 2025</strong>, non au texte de la ligne directrice (<strong>F-66</strong>, [B, degré 1])</td>
+<td><strong>PROGRAMMÉE, 1ᵉʳ mai 2027</strong></td>
+</tr>
+<tr>
+<td><strong>Ligne directrice de l'AMF</strong></td>
+<td><strong>s'attend à ce que…</strong></td>
+<td>formulation relevée à son texte (<strong>F-68</strong>, [B])</td>
+<td><strong>PROGRAMMÉE, 1ᵉʳ mai 2027</strong> — ⚠ <strong>effet non re-constaté au 28 juillet 2026</strong>, l'hôte refusant l'accès (<code>S-114</code>, ☐ non établie)</td>
+</tr>
+<tr>
+<td><strong>Avis 11-348 des ACVM</strong></td>
+<td><strong>n'impose pas</strong></td>
+<td>⚠ <strong>borné aux marchés de capitaux</strong>, le socle n'établissant pas qu'il porte au-delà, et <strong>déclarant lui-même que ses indications ne créent ni ne modifient aucune exigence</strong> — <em>rendu français, l'instrument étant en anglais</em> (<strong>H-07</strong>, [B] ; instruit au <strong>ch. 28</strong>)</td>
+<td>sans effet obligatoire</td>
+</tr>
+<tr>
+<td><strong>Article 12.1</strong></td>
+<td><strong>impose</strong></td>
+<td>obligation d'informer et, <strong>sur demande</strong>, de communiquer « des raisons, ainsi que des principaux facteurs et paramètres, ayant mené à la décision » (<strong>F-89</strong>, [B] ; <strong>H-06</strong>, [B])</td>
+<td><strong>en vigueur depuis le 22 septembre 2023</strong> — ⚠ <strong>texte non re-récupéré au 28 juillet 2026</strong>, l'éditeur officiel refusant l'accès (<code>S-135</code> et <code>S-025</code>, ☐ non établie)</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 40.1 — Les quatre instruments dont la grille dérive, et leur mode. ⚠ <strong>Des quatre, un seul impose, et son obligation est la seule en vigueur à la date du gel de source.</strong> <em>Une grille qui présenterait au présent ce qui n'a pas d'effet avant 2027 fabriquerait l'obligation que ce paragraphe s'emploie à ne pas fabriquer.</em></p>
-
 <div class="avert">
   <p><strong>« PROGRAMMÉE » n'est pas un mot du chapitre mais une étiquette de tri</strong> : elle vient du <strong>tri prospectif</strong> hérité du Vol. I (Vol. III <strong>H-33</strong>, <strong>[C]</strong>, thèse attribuée), dont <strong>le siège dans la somme est au ch. 49 § 49.0</strong> — <em>ce chapitre l'emploie, il ne le définit pas.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>Le rang est borné à ces quatre instruments et ne porte pas sur le Livre III entier</strong> — le <strong>ch. 32</strong> en instruit un cinquième, dont <strong>la loi impose une norme technique unique</strong> fixée par un organisme désigné (Vol. III <strong>H-08</strong>, <strong>[A]</strong>), <strong>sans effet sur la dérivation de ce chapitre</strong>. Et <strong>le ch. 37 ne porte aucune obligation</strong> : il documente une architecture et un point d'application, <strong>non une prescription</strong>.</p>
 </div>
-
 <h3>40.2.2 Quatre grandeurs, et le motif de chacune</h3>
-
 <div class="avert">
   <p><strong>Le premier mot est ambigu, et le chapitre tranche son emploi plutôt que de le laisser flotter</strong> : <strong>« disponibilité du parc » ne désigne pas ici un taux de fonctionnement</strong> — sens que le terme a en exploitation classique — mais le <strong>dénombrement</strong> : <em>la part du parc déclaré qui, à un instant donné, est identifiable et énumérable.</em> <strong>Le choix est de l'auteur</strong> ; il est fait parce que <strong>la question de l'auditeur porte sur l'inventaire, non sur la panne</strong>.</p>
 </div>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Grandeur <em>(construction d'auteur)</em></th><th>Ce qu'un instrument du Livre III attend ou impose</th><th>Ce que le ch. 37 rend au point d'application</th><th>Ce que le relevé du § 40.1 offre</th><th>Ce qui manque pour que l'indicateur se calcule</th></tr></thead>
-  <tbody>
-    <tr><td><strong>Disponibilité du parc</strong> — dénombrement des agents identifiables à l'instant <em>t</em></td><td>E-23 <strong>attend</strong> — au titre de son document d'information — un <strong>inventaire à l'échelle de l'entreprise des modèles à risque inhérent non négligeable</strong> ; ⚠ <strong>attente sous condition de matérialité, non inventaire universel</strong>, et <strong>PROGRAMMÉE</strong> (<strong>F-65</strong>, [B] ; <strong>H-04</strong>, [A/B mixte])</td><td>le mécanisme d'autorisation par arête <strong>ne répond pas à Q-A</strong> — <em>première question de la grille du <strong>ch. 14</strong></em> : évaluation d'une politique, <strong>non émission, vérification ni révocation d'un identifiant</strong> (<strong>F-71</strong>, [B] ; siège ch. 37 § 37.4)</td><td>une dimension d'agent qui est un <strong>nom lisible</strong>, <strong>facultative</strong>, et un nom de flux contraint à faible cardinalité (<strong>F-92</strong>, ⚖ vote dû ; <strong>F-94</strong>)</td><td>un <strong>dénominateur</strong> : ⚠ <strong>le socle ne documente aucune source d'énumération du parc opposable à l'inventaire attendu</strong> — degré 3</td></tr>
-    <tr><td><strong>Couverture de traçabilité</strong> — part des actions tracées <strong>et</strong> rattachées à une identité émise et à un mandat</td><td>l'art. 12.1 <strong>impose</strong> la restitution des facteurs et paramètres <strong>sur demande</strong> (<strong>F-89</strong>) ; E-23 <strong>attend</strong> une <strong>surveillance continue</strong> visant la décision et la re-paramétrisation autonomes, <strong>PROGRAMMÉE</strong> (<strong>H-04</strong>, <strong>F-65</strong>)</td><td>⚠ <strong>Lecture de l'auteur reprise du ch. 37 § 37.8, qui la marque comme telle</strong> — un point d'application que toute interaction traverse est <strong>structurellement</strong> producteur de trace non délégué à l'observé, <strong>propriété d'emplacement, non de qualité</strong>. <em>Ce que le socle établit s'arrête aux deux énoncés qu'elle compose</em> : la trace produite par le cadre (<strong>H-15</strong>, thèse du Vol. II, <strong>hors socle factuel</strong>) et la journalisation confiée aux agents « n'est généralement pas recommandée » (<strong>H-12</strong>, [B], préimpression, source unique)</td><td>des <strong>durées d'opération</strong>, <strong>aucune dimension d'identité, de mandat ni de conversation</strong> (<strong>F-93</strong>, [B, degré 1])</td><td>la <strong>clé de jointure</strong> entre la trace et la chaîne de mandat — ⚠ <strong>lacune ouverte, aucune passe conduite</strong> (siège <strong>ch. 38 § 38.5</strong> ; <strong>F-95</strong>)</td></tr>
-    <tr><td><strong>Délai de révocation</strong> — durée entre la décision de retrait et le refus par le dernier point d'application</td><td>⚠ <strong>Le socle ne documente pas qu'un des cadres canadiens instruits fixe un délai de propagation d'un retrait</strong> — <strong>aucun balayage de ces textes sur cette question n'a été conduit</strong> : degré 3</td><td>un point d'application <strong>ne peut pas vérifier une fraîcheur dont aucun mécanisme ne lui fournit le moyen</strong> (ch. 37 § 37.8) ; la révocation en cascade est au <strong>degré 3</strong> (ch. 20)</td><td><strong>zéro occurrence</strong> de « revocation » dans le document de métriques (<strong>F-93</strong>) ; <strong>aucune métrique de statut</strong></td><td><strong>les deux bornes de la mesure</strong> : l'interdiction d'employer une clé révoquée est au <strong>MUST NOT</strong> <strong>sans mécanisme d'établir ce statut</strong> (<strong>F-07</strong>, [A] ; <strong>F-06</strong>, [A, degré 1], borné à une seule section) ; le précédent des infrastructures à clés publiques <strong>n'offre pas le secours qu'on lui prête</strong> (<strong>F-53</strong>, [B]) ; un régime d'états <strong>prescrit sans délai de propagation</strong> n'entre qu'en <strong>corroboration</strong> (<strong>F-55</strong>, [C, degré 1])</td></tr>
-    <tr><td><strong>Fraîcheur des évaluations</strong> — âge de la dernière évaluation de chaque agent, rapporté à un seuil</td><td>E-23 <strong>attend</strong> une surveillance continue (<strong>H-04</strong>, <strong>F-65</strong>) ; l'AMF <strong>s'attend à ce que…</strong> (<strong>F-68</strong>) — ⚠ <strong>deux attentes, aucune exigence</strong>, l'une et l'autre <strong>PROGRAMMÉES</strong></td><td>⚠ <strong>Le socle ne documente pas ce qu'un maillage produit d'imputabilité traçable jusqu'à une personne ou une entité juridique</strong> — <strong>Q-E, cinquième question de la grille du ch. 14, est une case vide au degré 3</strong> (siège <strong>ch. 37 § 37.4</strong>)</td><td>onze évaluateurs nommés par <strong>Microsoft Foundry</strong>, <strong>cinq en préversion déclarée</strong> (<strong>F-97</strong>, [B]), à deux niveaux d'évaluation (<strong>F-98</strong>, [B]) — ⚠ <strong>qualifications auto-déclarées par cet éditeur</strong></td><td>un <strong>horodatage d'évaluation exportable</strong> : <strong>aucune des seize métriques n'en porte</strong>, et <strong>aucune page ouverte n'établit de correspondance</strong> entre un évaluateur d'éditeur et un attribut d'instrumentation (<strong>F-97</strong>)</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>Grandeur <em>(construction d'auteur)</em></th>
+<th>Ce qu'un instrument du Livre III attend ou impose</th>
+<th>Ce que le ch. 37 rend au point d'application</th>
+<th>Ce que le relevé du § 40.1 offre</th>
+<th>Ce qui manque pour que l'indicateur se calcule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Disponibilité du parc</strong> — dénombrement des agents identifiables à l'instant <em>t</em></td>
+<td>E-23 <strong>attend</strong> — au titre de son document d'information — un <strong>inventaire à l'échelle de l'entreprise des modèles à risque inhérent non négligeable</strong> ; ⚠ <strong>attente sous condition de matérialité, non inventaire universel</strong>, et <strong>PROGRAMMÉE</strong> (<strong>F-65</strong>, [B] ; <strong>H-04</strong>, [A/B mixte])</td>
+<td>le mécanisme d'autorisation par arête <strong>ne répond pas à Q-A</strong> — <em>première question de la grille du <strong>ch. 14</strong></em> : évaluation d'une politique, <strong>non émission, vérification ni révocation d'un identifiant</strong> (<strong>F-71</strong>, [B] ; siège ch. 37 § 37.4)</td>
+<td>une dimension d'agent qui est un <strong>nom lisible</strong>, <strong>facultative</strong>, et un nom de flux contraint à faible cardinalité (<strong>F-92</strong>, ⚖ vote dû ; <strong>F-94</strong>)</td>
+<td>un <strong>dénominateur</strong> : ⚠ <strong>le socle ne documente aucune source d'énumération du parc opposable à l'inventaire attendu</strong> — degré 3</td>
+</tr>
+<tr>
+<td><strong>Couverture de traçabilité</strong> — part des actions tracées <strong>et</strong> rattachées à une identité émise et à un mandat</td>
+<td>l'art. 12.1 <strong>impose</strong> la restitution des facteurs et paramètres <strong>sur demande</strong> (<strong>F-89</strong>) ; E-23 <strong>attend</strong> une <strong>surveillance continue</strong> visant la décision et la re-paramétrisation autonomes, <strong>PROGRAMMÉE</strong> (<strong>H-04</strong>, <strong>F-65</strong>)</td>
+<td>⚠ <strong>Lecture de l'auteur reprise du ch. 37 § 37.8, qui la marque comme telle</strong> — un point d'application que toute interaction traverse est <strong>structurellement</strong> producteur de trace non délégué à l'observé, <strong>propriété d'emplacement, non de qualité</strong>. <em>Ce que le socle établit s'arrête aux deux énoncés qu'elle compose</em> : la trace produite par le cadre (<strong>H-15</strong>, thèse du Vol. II, <strong>hors socle factuel</strong>) et la journalisation confiée aux agents « n'est généralement pas recommandée » (<strong>H-12</strong>, [B], préimpression, source unique)</td>
+<td>des <strong>durées d'opération</strong>, <strong>aucune dimension d'identité, de mandat ni de conversation</strong> (<strong>F-93</strong>, [B, degré 1])</td>
+<td>la <strong>clé de jointure</strong> entre la trace et la chaîne de mandat — ⚠ <strong>lacune ouverte, aucune passe conduite</strong> (siège <strong>ch. 38 § 38.5</strong> ; <strong>F-95</strong>)</td>
+</tr>
+<tr>
+<td><strong>Délai de révocation</strong> — durée entre la décision de retrait et le refus par le dernier point d'application</td>
+<td>⚠ <strong>Le socle ne documente pas qu'un des cadres canadiens instruits fixe un délai de propagation d'un retrait</strong> — <strong>aucun balayage de ces textes sur cette question n'a été conduit</strong> : degré 3</td>
+<td>un point d'application <strong>ne peut pas vérifier une fraîcheur dont aucun mécanisme ne lui fournit le moyen</strong> (ch. 37 § 37.8) ; la révocation en cascade est au <strong>degré 3</strong> (ch. 20)</td>
+<td><strong>zéro occurrence</strong> de « revocation » dans le document de métriques (<strong>F-93</strong>) ; <strong>aucune métrique de statut</strong></td>
+<td><strong>les deux bornes de la mesure</strong> : l'interdiction d'employer une clé révoquée est au <strong>MUST NOT</strong> <strong>sans mécanisme d'établir ce statut</strong> (<strong>F-07</strong>, [A] ; <strong>F-06</strong>, [A, degré 1], borné à une seule section) ; le précédent des infrastructures à clés publiques <strong>n'offre pas le secours qu'on lui prête</strong> (<strong>F-53</strong>, [B]) ; un régime d'états <strong>prescrit sans délai de propagation</strong> n'entre qu'en <strong>corroboration</strong> (<strong>F-55</strong>, [C, degré 1])</td>
+</tr>
+<tr>
+<td><strong>Fraîcheur des évaluations</strong> — âge de la dernière évaluation de chaque agent, rapporté à un seuil</td>
+<td>E-23 <strong>attend</strong> une surveillance continue (<strong>H-04</strong>, <strong>F-65</strong>) ; l'AMF <strong>s'attend à ce que…</strong> (<strong>F-68</strong>) — ⚠ <strong>deux attentes, aucune exigence</strong>, l'une et l'autre <strong>PROGRAMMÉES</strong></td>
+<td>⚠ <strong>Le socle ne documente pas ce qu'un maillage produit d'imputabilité traçable jusqu'à une personne ou une entité juridique</strong> — <strong>Q-E, cinquième question de la grille du ch. 14, est une case vide au degré 3</strong> (siège <strong>ch. 37 § 37.4</strong>)</td>
+<td>onze évaluateurs nommés par <strong>Microsoft Foundry</strong>, <strong>cinq en préversion déclarée</strong> (<strong>F-97</strong>, [B]), à deux niveaux d'évaluation (<strong>F-98</strong>, [B]) — ⚠ <strong>qualifications auto-déclarées par cet éditeur</strong></td>
+<td>un <strong>horodatage d'évaluation exportable</strong> : <strong>aucune des seize métriques n'en porte</strong>, et <strong>aucune page ouverte n'établit de correspondance</strong> entre un évaluateur d'éditeur et un attribut d'instrumentation (<strong>F-97</strong>)</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 40.2 — Grille minimale d'indicateurs de l'AgentOps — <strong>construction d'auteur en totalité</strong>, au 21 juillet 2026. ⚠ <strong>Aucune valeur, aucun seuil, aucun barème : la colonne de droite est le résultat.</strong></p>
-
+<figure class="figure">
+  <img src="../figures/f-40-02-grille-minimale.svg" alt="Figure 40.2 — La grille minimale d&#39;indicateurs, et ce qui manque pour que chacun se calcule." />
+  <figcaption><strong>Figure 40.2</strong> — La grille minimale d'indicateurs, et ce qui manque pour que chacun se calcule.</figcaption>
+</figure>
 <h3>40.2.3 Trois règles d'emploi, et c'est la seule chose que la grille prescrit</h3>
-
-<p><em>Un</em> : <strong>aucune grandeur ne s'écrit en taux tant que son dénominateur n'est pas établi</strong> — elle s'écrit <strong>en question</strong>, et <em>l'énoncé du manque tient lieu de valeur</em>. <em>Deux</em> : <strong>tout chiffre porté dans une case porte sa source et sa date à chaque occurrence</strong>, sans exception d'usage illustratif —</p>
-
-<div class="avert">
-  <p><em>un chiffre auto-déclaré qu'on cesse d'attribuer devient, en trois citations, un fait</em>. <em>Trois</em> : <strong>la grille ne s'oppose à personne</strong> — elle n'est <strong>ni une norme, ni un référentiel d'audit, ni un engagement contractuel</strong> ; ⚠ <strong>le socle ne documente aucun référentiel d'indicateurs de parc agentique opposable</strong> : absence de documentation, non fait négatif vérifié.</p>
-</div>
-
+<p><em>Un</em> : <strong>aucune grandeur ne s'écrit en taux tant que son dénominateur n'est pas établi</strong> — elle s'écrit <strong>en question</strong>, et <em>l'énoncé du manque tient lieu de valeur</em>. <em>Deux</em> : <strong>tout chiffre porté dans une case porte sa source et sa date à chaque occurrence</strong>, sans exception d'usage illustratif — ⚠ <em>un chiffre auto-déclaré qu'on cesse d'attribuer devient, en trois citations, un fait</em>. <em>Trois</em> : <strong>la grille ne s'oppose à personne</strong> — elle n'est <strong>ni une norme, ni un référentiel d'audit, ni un engagement contractuel</strong> ; ⚠ <strong>le socle ne documente aucun référentiel d'indicateurs de parc agentique opposable</strong> : absence de documentation, non fait négatif vérifié.</p>
 <p><strong>La grille est falsifiable, et il faut dire par quoi.</strong> Une métrique normalisée <strong>portant une dimension d'identité stable ou de mandat</strong> renverserait les deux premières lignes ; <strong>un mécanisme documenté de propagation d'un retrait avec budget de fraîcheur</strong> renverserait la troisième ; <strong>une correspondance publiée entre un évaluateur d'éditeur et un attribut de convention</strong> renverserait la quatrième. ⚠ <strong>Chacune de ces réfutations devrait alors être écrite, non contournée.</strong></p>
-
 <div class="avert">
   <p><strong>Et ce que la grille mesurerait est la fraîcheur d'un objet construit.</strong> Les quatre grandeurs se rattachent à la <strong>boucle de revalidation</strong> qui remonte de l'exploitation vers l'émetteur, laquelle <strong>réaliserait</strong> le quatrième terme que le Vol. I ajoute à l'invariant (Vol. III <strong>H-27</strong>, <strong>[C]</strong> — <strong>thèse d'un volume antérieur, à attribuer</strong>, ne portant ici aucun fait central ; ⚠ <code>S-153</code>, <strong>☐ non établie</strong>, sa source désignée étant un fichier du Vol. I <strong>retiré du dépôt le 22 juillet 2026</strong> — <strong>D-5</strong>). ⚠ <strong>Le passeport d'agent ne figure dans aucune spécification à date : c'est un objet de synthèse construit par la somme</strong> (R-01 du Vol. III ; siège <strong>ch. 16</strong>). <em>Les quatre grandeurs décrivent donc la fraîcheur d'un objet construit, et le chapitre l'écrit ainsi plutôt que de laisser croire à la métrologie d'un artefact existant.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>Un indicateur qui ne réémet rien mesure sans corriger.</strong> Ce que la grille <strong>déclenche en amont du parc</strong> — la correction du gabarit dont l'agent est issu — est au <strong>ch. 41 § 41.5</strong>, matière neuve, <strong>risque 16 du TOC</strong> ; <strong>la grille elle-même reste ici</strong>, et <em>le renvoi n'est pas une reconstruction</em>.</p>
 </div>
-
 <h2 id="s403"><span class="sig">§ 40.3</span>La métrique d'horizon de tâche déléguée : état d'un front ouvert</h2>
-
 <div class="avert">
   <p><strong>L'horizon de tâche déléguée n'est pas une métrique publiée, et ce chapitre n'en fait pas une.</strong></p>
 </div>
-
 <p>Le Vol. I le range parmi ses <strong>manques structurants</strong> : il formule le besoin d'une science de l'évaluation inter-fournisseurs, condition de toute certification, <strong>et d'une métrique d'horizon de tâche déléguée</strong> (Vol. III <strong>H-28</strong>, <strong>[C]</strong>), et relève qu'à juin 2026 l'évaluation des systèmes d'agents est <strong>largement immature, sans bancs d'essai inter-fournisseurs reconnus</strong>, l'horizon mesuré portant sur un <strong>agent isolé</strong> et non sur une délégation inter-agents (Vol. III <strong>H-23</strong>, <strong>[C]</strong>).</p>
-
 <div class="avert">
   <p><strong>Les deux entrées sont des repérages</strong> : elles entrent du Vol. I, dont la vérification porte sur les <strong>références</strong> et non sur le <strong>contenu des affirmations</strong>, et <em>une affirmation tracée vers une entrée [C] n'est pas centrale, ou n'est pas rédigée</em>. <strong>Elles situent la question ; elles ne l'établissent pas.</strong> ⚠ <strong>Et leurs états de re-datation diffèrent</strong>, ce qui borne inégalement les deux moitiés du constat : <code>S-149</code> (<strong>H-23</strong>) est <strong>☑ inchangée</strong>, ses deux références résolvant à leurs identifiants exacts — <em>mais le manque structurant qu'elle nomme est un énoncé du Vol. I, non de la source citée, et il n'a pas été instruit</em> ; <code>S-154</code> (<strong>H-28</strong>) est <strong>☐ non établie</strong>, sa source désignée étant la <em>Synthèse</em> du Vol. I, <strong>supprimée du dépôt le 22 juillet 2026</strong> — ⚠ <em>une citation non rejouable n'est pas une citation fautive : elle cesse d'être opposable sans cesser d'être exacte</em> (décision d'auteur <strong>D-5</strong>). ⚠ <strong>Le chapitre n'écrit donc pas « il n'existe pas de métrique d'horizon de tâche déléguée »</strong> : il écrit que <strong>deux entrées de repérage rangent cette métrique parmi les manques déclarés d'un volume antérieur, et que rien n'a été instruit qui les confirme ou les infirme.</strong></p>
 </div>
-
 <p><strong>Ce que le relevé du § 40.1 permet néanmoins d'établir est étroit et il est utile.</strong> Les deux compteurs d'appels comptent les appels <strong>directs</strong>, ceux des sous-agents ou des agents auxquels la tâche est transférée étant <strong>attribués séparément</strong> (F-96 ; ⚖ <strong>vote dû, non conduit</strong>). <strong>Une chaîne de délégation n'est donc pas reconstituable par sommation</strong> — ⚠ <em>non par insuffisance de l'instrument, mais par construction déclarée de sa sémantique.</em></p>
-
 <p>Le constat <strong>rejoint la frontière que le ch. 17 localise</strong> : elle ne passe pas à un rang numéroté de sauts, mais <strong>au premier changement de régime</strong>. <em>Une grandeur d'horizon suppose de savoir jusqu'où va une délégation ; le corpus ouvert documente le contraire — un instrument qui compte au plus près, et qui le déclare.</em> ⚠ <strong>Aucune autre voie n'est écartée</strong> : <strong>le socle ne documente aucun autre mécanisme d'agrégation d'une chaîne de délégation à des fins de mesure</strong> — degré 3.</p>
-
 <div class="avert">
   <p><strong>Partage déclaré avec le ch. 49</strong> : <strong>la métrique et son état se traitent ici</strong> ; <strong>l'énoncé de recherche qui en sort</strong> est transmis au <strong>ch. 49 § 49.13</strong>, <em>qui ne la reconstruit pas</em>. ⚠ <strong>Le ch. 49 n'était pas rédigé à la date de cette pièce</strong> ; <em>il l'est depuis, hors portes, et le renvoi résout contre du texte</em> — voir la note de statut.</p>
 </div>
-
 <h2 id="s404"><span class="sig">§ 40.4</span>Les indicateurs de la supervision humaine</h2>
-
 <div class="avert">
   <p><strong>Cette section n'a aucune source externe, et le plan le montre par sa forme</strong> : elle est la seule du chapitre dont l'entrée au TOC ne porte <strong>aucun marqueur de provenance</strong>. <em>Ce n'est pas un oubli du plan : il n'y a rien à marquer.</em></p>
 </div>
-
 <p><strong>Deux grandeurs sont proposées, et les deux sont des constructions d'auteur</strong> : le <strong>délai médian de révision</strong> — temps écoulé entre la présentation d'un acte à un réviseur humain et sa décision — et le <strong>taux de renversement</strong> — part des actes présentés que le réviseur infirme.</p>
-
-<p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : que <strong>deux instruments du Livre III attendent une supervision</strong> dont ils ne définissent ni la forme ni la mesure (F-65, F-68, H-04) ; que <strong>l'article 12.1 ménage, dans un alinéa distinct, l'occasion de présenter ses observations à un membre du personnel <em>en mesure de réviser la décision</strong></em> (F-89, H-06). <strong>Ce qu'il n'établit pas</strong> : qu'une de ces deux grandeurs soit mesurée, mesurable, attendue sous ce nom, ni qu'elle mesure quoi que ce soit de la qualité de la révision.</p>
-
+<p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : que <strong>deux instruments du Livre III attendent une supervision</strong> dont ils ne définissent ni la forme ni la mesure (F-65, F-68, H-04) ; que <strong>l'article 12.1 ménage, dans un alinéa distinct, l'occasion de présenter ses observations à un membre du personnel <em>en mesure de réviser la décision</em></strong> (F-89, H-06). <strong>Ce qu'il n'établit pas</strong> : qu'une de ces deux grandeurs soit mesurée, mesurable, attendue sous ce nom, ni qu'elle mesure quoi que ce soit de la qualité de la révision.</p>
 <div class="avert">
-  <p><strong>Et c'est ici qu'il faut être le plus net, parce que la section touche un vide déclaré ailleurs dans la somme.</strong> Ces deux grandeurs sont des <strong>proxies imparfaits du tamponnage</strong> — la supervision qui s'exerce sans exercer de discernement. Or <strong>le ch. 17 § 17.5 est le siège de cette matière, et il n'écrit rien</strong> : le plan l'a déclaré <strong>front neuf, sources primaires à établir avant rédaction</strong>, la section <strong>expose le vide et refuse de le combler</strong>, et la décision d'auteur <strong>D-9</strong> a <strong>ouvert un lot d'instruction</strong> en maintenant le blocage des <strong>ch. 25 et 27</strong>.</p>
+  <p><strong>Et c'est ici qu'il faut être le plus net, parce que la section touche un vide déclaré ailleurs dans la somme.</strong> Ces deux grandeurs sont des <strong>approximations imparfaites du tamponnage</strong> — la supervision qui s'exerce sans exercer de discernement. Or <strong>le ch. 17 § 17.5 est le siège de cette matière, et il n'écrit rien</strong> : le plan l'a déclaré <strong>front neuf, sources primaires à établir avant rédaction</strong>, la section <strong>expose le vide et refuse de le combler</strong>, et la décision d'auteur <strong>D-9</strong> a <strong>ouvert un lot d'instruction</strong> en maintenant le blocage des <strong>ch. 25 et 27</strong>.</p>
 </div>
-
 <div class="avert">
   <p><strong>Conséquence, écrite plutôt que contournée.</strong> <em>Mesurer la révision n'est pas mesurer le discernement.</em> <strong>Un délai médian de révision élevé ne prouve pas l'attention</strong>, et <strong>un taux de renversement bas ne prouve pas la justesse de l'acte</strong> — il est <strong>exactement aussi compatible avec un agent qui a raison qu'avec un réviseur qui ne lit pas</strong>. <strong>Le socle ne documente aucun moyen de distinguer les deux</strong> : absence de documentation, non fait négatif vérifié (R-14 du Vol. III, degré 3). <em>Deux indicateurs qui ne discriminent pas entre l'hypothèse favorable et l'hypothèse défavorable ne mesurent pas ; ils rassurent.</em></p>
 </div>
-
 <div class="avert">
-  <p><strong>Ce que la somme peut donc écrire ici est borné à trois choses</strong>, et elles sont dites plutôt qu'étendues : <em>(a)</em> les deux grandeurs sont <strong>calculables</strong> — un point d'arrêt humain outillé produit des horodatages et des décisions ; <em>(b)</em> elles sont <strong>des proxies dont l'écart au phénomène n'est pas estimé</strong>, et l'estimer suppose la littérature que le lot de <strong>D-9</strong> doit ouvrir ; <em>(c)</em> <strong>aucun seuil n'est proposé</strong>, et <em>proposer un seuil ici serait produire une construction d'auteur à l'endroit exact où le socle est muet — la faute que le ch. 17 § 17.5 s'est interdite.</em></p>
+  <p><strong>Ce que la somme peut donc écrire ici est borné à trois choses</strong>, et elles sont dites plutôt qu'étendues : <em>(a)</em> les deux grandeurs sont <strong>calculables</strong> — un point d'arrêt humain outillé produit des horodatages et des décisions ; <em>(b)</em> elles sont <strong>des approximations dont l'écart au phénomène n'est pas estimé</strong>, et l'estimer suppose la littérature que le lot de <strong>D-9</strong> doit ouvrir ; <em>(c)</em> <strong>aucun seuil n'est proposé</strong>, et <em>proposer un seuil ici serait produire une construction d'auteur à l'endroit exact où le socle est muet — la faute que le ch. 17 § 17.5 s'est interdite.</em></p>
 </div>
-
 <div class="avert">
-  <p><strong>Une remontée en découle</strong> : le lot ouvert par D-9 nomme les <strong>ch. 25 et 27</strong> comme dépendants, <strong>et cette section l'est aussi</strong> — voir R-IV-49 (§&nbsp;40.7&nbsp;†).</p>
+  <p><strong>Une remontée en découle</strong> : le lot ouvert par D-9 nomme les <strong>ch. 25 et 27</strong> comme dépendants, <strong>et cette section l'est aussi</strong> — voir R-IV-49 (§ 40.7).</p>
 </div>
-
 <h2 id="s405"><span class="sig">§ 40.5</span>Le modèle de coût agentique comme contrainte d'ingénierie de premier ordre</h2>
-
 <p><em>← Vol. I</em> Monographie <em>§2.11.1 — <strong>seule affectation</strong> : le ch. 38 ne la revendique plus. ⚠ Section en <strong>[C]</strong> de bout en bout, le socle du Vol. III n'en portant aucun équivalent.</em></p>
-
 <p><strong>Le coût d'un système agentique n'est pas une variable d'ajustement <em>a posteriori</em> mais une contrainte de conception au même rang que la latence ou la justesse.</strong> ⚠ <strong>Repérage [C], thèse d'un volume antérieur à attribuer</strong> — <em>et le poser ici plutôt qu'au § 40.6 est un choix du plan, non un constat.</em></p>
-
 <p><strong>La cause première est la forme de la boucle.</strong> Chaque pas réinjecte l'historique croissant — invite système, trace de raisonnement, observations d'outils — dans la fenêtre de contexte, de sorte que <strong>l'intensité en jetons d'une trajectoire croît au moins linéairement, souvent davantage, avec le nombre de tours</strong>. <strong>Trois multiplicateurs structurels s'y ajoutent.</strong></p>
-
-<ol class="numeros">
-  <li><strong>Les modèles de raisonnement facturent les jetons de réflexion</strong> produits sous un budget dédié, <strong>dont les rendements décroissent au-delà d'un seuil</strong> : <em>le budget de raisonnement est autant un levier de coût qu'un levier de qualité.</em></li>
-  <li><strong>La bascule vers une topologie multi-agents amplifie fortement la dépense.</strong> ⚠ <strong>Métrique auto-déclarée, attribuée à son auteur nommé et bornée à sa tâche</strong> : la <strong>mesure interne d'Anthropic</strong> sur une tâche de recherche, publiée le <strong>13 juin 2025</strong> (Hadfield et coll.), rapporte <strong>un gain de qualité d'environ +90 % au prix d'une consommation d'environ quinze fois les jetons d'un agent unique</strong>, ⚠ <strong>présentée par cet éditeur comme un point empirique et non comme une loi générale</strong>. <em>Le chiffre est attribué à chaque occurrence, sans exception d'usage illustratif ; le § 40.6 le reprend sous la même attribution.</em></li>
-  <li><strong>La latence des boucles longues a un coût d'exploitation propre</strong> — temps d'occupation, expérience dégradée, fenêtres de reprise élargies.</li>
+<ol type="1">
+<li><strong>Les modèles de raisonnement facturent les jetons de réflexion</strong> produits sous un budget dédié, <strong>dont les rendements décroissent au-delà d'un seuil</strong> : <em>le budget de raisonnement est autant un levier de coût qu'un levier de qualité.</em></li>
+<li><strong>La bascule vers une topologie multi-agents amplifie fortement la dépense.</strong> ⚠ <strong>Métrique auto-déclarée, attribuée à son auteur nommé et bornée à sa tâche</strong> : la <strong>mesure interne d'Anthropic</strong> sur une tâche de recherche, publiée le <strong>13 juin 2025</strong> (Hadfield et coll.), rapporte <strong>un gain de qualité d'environ +90 % au prix d'une consommation d'environ quinze fois les jetons d'un agent unique</strong>, ⚠ <strong>présentée par cet éditeur comme un point empirique et non comme une loi générale</strong>. <em>Le chiffre est attribué à chaque occurrence, sans exception d'usage illustratif ; le § 40.6 le reprend sous la même attribution.</em></li>
+<li><strong>La latence des boucles longues a un coût d'exploitation propre</strong> — temps d'occupation, expérience dégradée, fenêtres de reprise élargies.</li>
 </ol>
-
 <p><strong>Le levier de réduction le plus immédiat est la mise en cache d'invite</strong> (<em>prompt caching</em>), qui réutilise le préfixe stable d'un contexte et <strong>peut abattre de l'ordre de 90 % le coût des jetons d'entrée répétés sur des boucles à préfixe constant</strong>. ⚠ <strong>Grandeur relevée par le Vol. I, en [C], et elle n'est pas centrale</strong> : <em>elle oriente la conception du contexte — stabiliser l'ordre des blocs, isoler la partie volatile en fin de fenêtre — et rien de plus.</em></p>
-
 <div class="avert">
   <p><strong>Et une conséquence d'évaluation en découle, qui appartient à ce chapitre.</strong> Les <strong>classements coût-contrôlés</strong> — où la justesse n'est créditée qu'à <strong>dépense bornée</strong>, et dont le Vol. I nomme un exemple, la plateforme <strong>HAL</strong> (Kapoor et coll., 2025) — déplacent l'évaluation d'un optimum de capacité brute vers un <strong>optimum de frontière coût-justesse</strong>. <em>C'est la condition pour qu'une comparaison entre agents soit honnête en production</em> — et <strong>le seul lien que ce chapitre établisse entre coût et évaluation</strong>.</p>
 </div>
-
 <h2 id="s406"><span class="sig">§ 40.6</span>FinOps des agents</h2>
-
 <p><em>← Vol. I</em> Monographie <em>§4.9.3-4.9.5 — condensé. ⚠ Section en <strong>[C]</strong> de bout en bout.</em></p>
-
 <h3>40.6.1 Évaluation à l'échelle de flotte, fiabilité composée, dérive</h3>
-
 <p><strong>Le patron retenu en exploitation est l'évaluation multidimensionnelle permanente par échantillonnage</strong> : un sous-ensemble du trafic est soumis à un juge, ⚠ <strong>dont la version doit être verrouillée pour que l'indicateur reste comparable dans le temps et que la dérive du juge ne se confonde pas avec celle des agents</strong>. <em>C'est la seule prescription de cette section, et elle est de méthode.</em></p>
-
-<p><strong>La fiabilité doit se raisonner de façon <em>composée</strong></em> : la cible de réussite de bout en bout n'est atteignable que si <strong>chaque étape porte son propre objectif de service</strong>, <em>le produit des fiabilités d'étape s'érodant vite sur une trajectoire longue</em>. Les indicateurs pertinents <strong>dépassent la latence</strong> : taux de réussite de la tâche, <strong>adhérence à la trajectoire et au choix d'outils attendus</strong>, et un indicateur de sûreté mesurant <strong>le respect des garde-fous</strong>.</p>
-
+<p><strong>La fiabilité doit se raisonner de façon <em>composée</em></strong> : la cible de réussite de bout en bout n'est atteignable que si <strong>chaque étape porte son propre objectif de service</strong>, <em>le produit des fiabilités d'étape s'érodant vite sur une trajectoire longue</em>. Les indicateurs pertinents <strong>dépassent la latence</strong> : taux de réussite de la tâche, <strong>adhérence à la trajectoire et au choix d'outils attendus</strong>, et un indicateur de sûreté mesurant <strong>le respect des garde-fous</strong>.</p>
 <div class="avert">
   <p><strong>Le budget d'erreur ainsi défini commande une autonomie graduée</strong> — relever ou abaisser le seuil d'intervention humaine selon la marge consommée. ⚠ <strong>R-13 du Vol. III</strong> : <em>l'échelle visée est celle à <strong>quatre paliers non numérotés</strong> du Vol. I — assistance, copilote, orchestration sous revue, autonomie bornée —, jamais nommée nue</em>, et <strong>son siège dans la somme est au ch. 43 § 43.5</strong>, où les trois échelles homonymes sont distinguées par leur cardinal et leur numérotation.</p>
 </div>
-
 <div class="avert">
   <p><strong>Une question de modélisation reste ouverte, et le Vol. I la déclare</strong> : <em>la décomposition d'une cible de bout en bout en objectifs d'étape suppose une <strong>indépendance des défaillances</strong> que les modes d'échec multi-agents contredisent</em> — une erreur amont contaminant les étapes aval. <strong>Calibrer un juge stable, distinguer la dérive du système jugé de celle du juge, et borner la corrélation des erreurs le long d'une trajectoire restent des problèmes non résolus.</strong> ⚠ <strong>Repérage [C], front ouvert</strong> : <em>la somme ne le comble pas, et le ch. 39 § 39.2 en dépend sans le savoir — une dérive de juge est indiscernable d'une dérive d'agent par les instruments du § 40.1.</em></p>
 </div>
-
 <h3>40.6.2 Du coût par jeton au coût par résultat</h3>
-
 <p><strong>Le coût d'un parc d'agents échappe aux outils classiques parce que la consommation de jetons est volatile, dupliquée et difficilement imputable.</strong> Le cadre de référence relevé par le Vol. I est le travail de la <strong>FinOps Foundation</strong>, dont <strong>la spécification ouverte de format de coûts a été ratifiée en version 1.4 le 4 juin 2026, l'économie des jetons étant cadrée pour la version suivante</strong> ⚠ <strong>— ressource vivante, statut et version à re-dater au gel</strong> (R-09 du Vol. III). ⚠ <strong>L'auteur de l'instrument se nomme même quand sa dénomination se périme</strong> (décision 15 du TOC, alinéas a et b).</p>
-
-<p><strong>Le patron d'allocation</strong> consiste à <strong>attacher des métadonnées — équipe, produit, centre de coûts — à chaque appel transitant par la passerelle</strong>, ⚠ <em>et c'est le point où ce chapitre rejoint le ch. 37 : la passerelle qui applique la politique est aussi celle qui impute le coût — même arête, deux usages.</em> <strong>La progression de maturité va du <em>showback</strong></em> — rendre visible la dépense par unité, première étape vers la responsabilisation — <strong>au <em>chargeback</strong></em> — refacturation effective au-delà d'un seuil justifiant la friction administrative. <strong>Les leviers de maîtrise</strong> restent le <strong>routage de modèles</strong> vers la capacité la moins coûteuse adéquate et le <strong>cache sémantique</strong> des invites redondantes.</p>
-
+<p><strong>Le patron d'allocation</strong> consiste à <strong>attacher des métadonnées — équipe, produit, centre de coûts — à chaque appel transitant par la passerelle</strong>, ⚠ <em>et c'est le point où ce chapitre rejoint le ch. 37 : la passerelle qui applique la politique est aussi celle qui impute le coût — même arête, deux usages.</em> <strong>La progression de maturité va du <em>showback</em></strong> — rendre visible la dépense par unité, première étape vers la responsabilisation — <strong>au <em>chargeback</em></strong> — refacturation effective au-delà d'un seuil justifiant la friction administrative. <strong>Les leviers de maîtrise</strong> restent le <strong>routage de modèles</strong> vers la capacité la moins coûteuse adéquate et le <strong>cache sémantique</strong> des invites redondantes.</p>
 <div class="avert">
   <p><strong>Le palier le plus avancé déplace la métrique</strong> : du coût par jeton vers le <strong>coût par résultat métier</strong> — coût par dossier traité, par inférence utile, par trajectoire complète —, <em>seule mesure permettant de juger la rentabilité réelle</em>. ⚠ <strong>Et ce coût total de trajectoire rouvre le fil que le ch. 1 a posé</strong> : chaque standard ouvert exigé <strong>abaisse le coût marginal d'intégration</strong>, donc le coût par résultat. <em>C'est le seul endroit de la somme où l'argument d'interopérabilité du Livre I reçoit une contrepartie chiffrable</em> — ⚠ <strong>en [C], et sans qu'aucun chiffre ne soit produit ici</strong>.</p>
 </div>
-
 <p>Le <strong>surcoût propre au multi-agent</strong> s'y trouve directement chiffré : <strong>environ quinze fois plus de jetons</strong> qu'un agent unique, ⚠ <strong>métrique auto-déclarée d'Anthropic (Hadfield et coll., 13 juin 2025), bornée à sa tâche, et reprise ici sous la même attribution qu'au § 40.5</strong> — <em>sans exception d'usage illustratif.</em> ⚠ <strong>Le Vol. I porte la même mesure à deux de ses sections sous deux formes de référence</strong> — §2.11.1 et §4.9.4 —, <em>qui désignent le même document ; le fait est signalé, non arbitré.</em></p>
-
+<figure class="figure">
+  <img src="../figures/f-40-06-cout-par-resultat.svg" alt="Figure 40.6 — Du coût par jeton au coût par résultat métier." />
+  <figcaption><strong>Figure 40.6</strong> — Du coût par jeton au coût par résultat métier.</figcaption>
+</figure>
 <h3>40.6.3 Pré-production gouvernée</h3>
-
-<p><strong>Le critère est la promotion contrôlée entre environnements</strong> : <em>un agent franchit des portes de qualité successives avant d'atteindre la production, plutôt que d'y être exposé d'emblée.</em> Le patron de <strong>déploiement fantôme</strong> — exécuter l'agent candidat <strong>en parallèle du processus de référence, sur le trafic réel, sans que ses décisions ne s'appliquent</strong> — permet de <strong>mesurer son comportement en conditions authentiques tout en neutralisant le risque</strong>.</p>
-
+<p><strong>Le critère est la promotion contrôlée entre environnements</strong> : <em>un agent franchit des portes de qualité successives avant d'atteindre la production, plutôt que d'y être exposé d'emblée.</em> Le patron de <strong>déploiement fantôme</strong> — exécuter l'agent candidat <strong>en parallèle du processus de référence, sur le trafic réel, sans que ses décisions s'appliquent</strong> — permet de <strong>mesurer son comportement en conditions authentiques tout en neutralisant le risque</strong>.</p>
 <div class="avert">
   <p><strong>Un arbitrage propre à l'entreprise s'y tranche, et il est réglementaire avant d'être technique</strong> : recourir à des <strong>données synthétiques</strong>, qui contournent les contraintes mais <strong>peuvent masquer des cas réels</strong>, ou à des <strong>données réelles sous masquage et minimisation</strong>, plus représentatives mais <strong>soumises aux exigences sectorielles</strong>. <em>Le versant réglementaire est au Livre III ; ce chapitre ne tranche pas.</em></p>
 </div>
-
 <p><strong>La non-régression impose enfin de figer des jeux d'évaluation de référence</strong> et d'exiger qu'<strong>une nouvelle version ne dégrade aucun indicateur critique avant promotion</strong>. ⚠ <strong>Deux notions de bac à sable ne se confondent pas</strong> : le <strong>bac à sable d'ingénierie</strong>, environnement isolé d'expérimentation, et le <strong>bac à sable réglementaire</strong>, espace supervisé d'essai sous dérogation encadrée — <em>la première sert la qualité, la seconde la conformité.</em></p>
-
 <div class="avert">
   <p><strong>Le pont vers le ch. 47 est déclaré ici et non franchi</strong> : ce que devient cette pré-production quand l'objet promu est <strong>un artefact non reproductible</strong> est la matière du <strong>ch. 47</strong>, matière neuve, ⚠ <strong>non rédigée à la date de cette pièce et rédigée depuis, hors portes</strong>. <em>Ce chapitre nomme la porte ; il ne la passe pas.</em></p>
 </div>
-
-<p>## Synthèse : ce que le chapitre lègue à la somme</p>
-
+<h3>Synthèse : ce que le chapitre lègue à la somme</h3>
 <p><em>Section de sortie sans homologue direct dans la source — construction d'éditeur.</em></p>
-
-<ol class="numeros">
-  <li><strong>Le relevé borné, et sa borne.</strong> Seize métriques, <strong>toutes au grain d'une opération</strong>, <strong>aucune de parc</strong> ; <strong>une dimension d'agent qui est un nom, pas une identité</strong>. ⚠ <em>Et les deux entrées qui portent ces deux constats-là sont <strong>exclues du socle consolidé</strong> pour dette de vote non résorbée — le legs comprend la dette.</em></li>
-  <li><strong>La grille minimale, et son statut.</strong> <strong>Construction d'auteur en totalité</strong>, aucune valeur, aucun seuil ; <strong>la colonne de droite — ce qui manque — est le résultat</strong>. Le <strong>ch. 41 § 41.5</strong> en fait le déclencheur d'une boucle de réémission ; le <strong>ch. 46</strong> en fait une <strong>instrumentation candidate</strong> de programmes réglementaires, <em>sous le même régime d'inférence d'auteur</em>.</li>
-  <li><strong>La contrainte de modalité, posée une fois pour le Livre.</strong> <strong>Un instrument impose, deux attendent à échéance 2027, un quatrième ne crée rien.</strong> ⚠ <em>Confondre les deux régimes fabrique l'obligation qu'on prétendait mesurer</em> — le <strong>ch. 46 § 46.2</strong> séquence sa feuille de route sur la même échéance, et <strong>ne la requalifie pas</strong>.</li>
-  <li><strong>Le legs négatif du § 40.4, et il est le plus opposable du chapitre.</strong> <em>Mesurer la révision n'est pas mesurer le discernement</em> : deux indicateurs calculables dont <strong>l'écart au phénomène n'est pas estimé</strong>, et <strong>aucun seuil proposé</strong>. Les <strong>ch. 25 et 27</strong> prescrivent la parade dont <strong>ce vide est la limite empirique</strong>, et <strong>le § 40.4 est le troisième dépendant du lot de D-9</strong>.</li>
-  <li><strong>Le coût comme contrainte de conception.</strong> Posé ici <strong>une seule fois</strong> pour toute la somme, en <strong>[C]</strong>. Le <strong>ch. 41 § 41.6</strong> en tire une condition de renversement — <em>un goulot de certification a un coût</em> — sans reconstruire le modèle.</li>
-  <li><strong>La fiabilité composée, et sa question ouverte.</strong> <em>L'indépendance des défaillances que la décomposition suppose, les modes d'échec multi-agents la contredisent.</em> ⚠ <strong>Front ouvert légué au ch. 49</strong>, non comblé ici.</li>
+<ol type="1">
+<li><strong>Le relevé borné, et sa borne.</strong> Seize métriques, <strong>toutes au grain d'une opération</strong>, <strong>aucune de parc</strong> ; <strong>une dimension d'agent qui est un nom, pas une identité</strong>. ⚠ <em>Et les deux entrées qui portent ces deux constats-là sont <strong>exclues du socle consolidé</strong> pour dette de vote non résorbée — le legs comprend la dette.</em></li>
+<li><strong>La grille minimale, et son statut.</strong> <strong>Construction d'auteur en totalité</strong>, aucune valeur, aucun seuil ; <strong>la colonne de droite — ce qui manque — est le résultat</strong>. Le <strong>ch. 41 § 41.5</strong> en fait le déclencheur d'une boucle de réémission ; le <strong>ch. 46</strong> en fait une <strong>instrumentation candidate</strong> de programmes réglementaires, <em>sous le même régime d'inférence d'auteur</em>.</li>
+<li><strong>La contrainte de modalité, posée une fois pour le Livre.</strong> <strong>Un instrument impose, deux attendent à échéance 2027, un quatrième ne crée rien.</strong> ⚠ <em>Confondre les deux régimes fabrique l'obligation qu'on prétendait mesurer</em> — le <strong>ch. 46 § 46.2</strong> séquence sa feuille de route sur la même échéance, et <strong>ne la requalifie pas</strong>.</li>
+<li><strong>Le legs négatif du § 40.4, et il est le plus opposable du chapitre.</strong> <em>Mesurer la révision n'est pas mesurer le discernement</em> : deux indicateurs calculables dont <strong>l'écart au phénomène n'est pas estimé</strong>, et <strong>aucun seuil proposé</strong>. Les <strong>ch. 25 et 27</strong> prescrivent la parade dont <strong>ce vide est la limite empirique</strong>, et <strong>le § 40.4 est le troisième dépendant du lot de D-9</strong>.</li>
+<li><strong>Le coût comme contrainte de conception.</strong> Posé ici <strong>une seule fois</strong> pour toute la somme, en <strong>[C]</strong>. Le <strong>ch. 41 § 41.6</strong> en tire une condition de renversement — <em>un goulot de certification a un coût</em> — sans reconstruire le modèle.</li>
+<li><strong>La fiabilité composée, et sa question ouverte.</strong> <em>L'indépendance des défaillances que la décomposition suppose, les modes d'échec multi-agents la contredisent.</em> ⚠ <strong>Front ouvert légué au ch. 49</strong>, non comblé ici.</li>
 </ol>
-
 <div class="avert">
   <p><strong>Ce que le chapitre ne lègue pas.</strong> Aucun <strong>seuil</strong>, aucun <strong>barème</strong>, aucun <strong>taux</strong> : <em>une grandeur sans dénominateur s'écrit en question</em>. Aucune <strong>métrique d'horizon de tâche déléguée</strong> : c'est un <strong>front ouvert</strong>, et son énoncé de recherche part au <strong>ch. 49</strong>. Aucun <strong>énoncé sur le marché</strong> : <em>trois sources ne font pas un marché</em>, et huit plateformes n'ont pas été instruites. Et aucune <strong>conformité</strong> : <em>le rapprochement entre un instrument d'observabilité et une attente réglementaire reste une inférence d'auteur, à chaque occurrence.</em></p>
 </div>
+<hr />
 
 <footer class="pied">
   <p><strong>Vol. IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em></strong> · Livre IV, chapitre 40. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau, M.Sc. IT.</p>
-
   <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme (gel unique : 27 juillet 2026).</p>
-  <p><strong>†</strong> Renvoi à une section retirée de ce rendu — la note de statut, hors corps — conservée au fichier Markdown jumeau.</p>
 </footer>
 
 </main>

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chapitre 41 — La fabrique d&#x27;agents : produire, certifier et réémettre le parc · Interopérabilité et Orchestration en Entreprise Agentique</title>
-<meta name="description" content="Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d'agents et synthèse architecturale. Troisième mouvement — produire (ch. 41). Chapitre unique du mouvement, et seul chapitre de matière neuve de ce Livre">
+<meta name="description" content="Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d&#x27;agents et synthèse architecturale. Troisième mouvement — produire (ch. 41). Chapitre unique du mouvement, **et seul chapitre de matière neuve de ce Livre**">
 <meta name="author" content="André-Guy Bruneau, M.Sc. IT">
 <meta name="color-scheme" content="dark">
 <style>
@@ -443,6 +443,17 @@ tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
 tbody td:first-child { color: var(--texte); font-weight: 600; }
 .legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
 
+/* -------------------------------------------------------------- figures */
+/* Les SVG du volume sont dessinés pour le PDF, donc sur fond clair, et ils
+   portent ce fond eux-mêmes — sans quoi il faudrait maintenir deux variantes
+   de chaque figure. Sur ce thème sombre, ils se posent donc comme un carton ;
+   le padding empêche le fond de la figure de toucher le bord du cadre. */
+.figure { margin: 2.1rem 0 1.9rem; }
+.figure img { display: block; width: 100%; height: auto; border-radius: 7px;
+              border: 1px solid var(--trait); background: #fdfbf9; padding: 0.6rem; }
+.figure figcaption { font-size: 0.8rem; font-style: italic; color: var(--texte-faible);
+                     margin-top: 0.65rem; padding-left: 0.15rem; }
+
 /* --------------------------------------------------------------- listes */
 ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
 ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
@@ -533,18 +544,16 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <ol>
     <li><a href="#s410"><span class="num">41.0</span>Ouverture : pourquoi ce chapitre existe, et à quelles conditions il devrait survivre</a></li>
     <li><a href="#s411"><span class="num">41.1</span>Ce que « fabrique » désigne ici, et les trois emplois dont il faut la séparer</a></li>
-    <li><a href="#s412"><span class="num">41.2</span>Le gabarit d&#x27;agent gouverné : ce qui se décide une fois pour tout le parc</a></li>
+    <li><a href="#s412"><span class="num">41.2</span>Le gabarit d'agent gouverné : ce qui se décide une fois pour tout le parc</a></li>
     <li><a href="#s413"><span class="num">41.3</span>Le catalogue interne et le registre gouverné : deux objets, deux autorités</a></li>
-    <li><a href="#s414"><span class="num">41.4</span>La barrière de certification : ce qu&#x27;un agent démontre avant d&#x27;être admis au maillage</a></li>
-    <li><a href="#s415"><span class="num">41.5</span>La boucle de réémission : de l&#x27;indicateur et de la dérive au gabarit corrigé</a></li>
-    <li><a href="#s416"><span class="num">41.6</span>La fabrique comme point de concentration : ce qu&#x27;elle centralise, ce qu&#x27;elle fragilise</a></li>
-    <li><a href="#s417"><span class="num">41.7</span>L&#x27;organisation de la fabrique : qui opère quoi</a></li>
-    <li><a href="#s418"><span class="num">41.8</span>Ce que la fabrique ne fait pas : la couche d&#x27;exécution reste hors périmètre</a></li>
-
+    <li><a href="#s414"><span class="num">41.4</span>La barrière de certification : ce qu'un agent démontre avant d'être admis au maillage</a></li>
+    <li><a href="#s415"><span class="num">41.5</span>La boucle de réémission : de l'indicateur et de la dérive au gabarit corrigé</a></li>
+    <li><a href="#s416"><span class="num">41.6</span>La fabrique comme point de concentration : ce qu'elle centralise, ce qu'elle fragilise</a></li>
+    <li><a href="#s417"><span class="num">41.7</span>L'organisation de la fabrique : qui opère quoi</a></li>
+    <li><a href="#s418"><span class="num">41.8</span>Ce que la fabrique ne fait pas : la couche d'exécution reste hors périmètre</a></li>
   </ol>
   <div class="nav__pied">
     Vol.&nbsp;IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em><br>
-
     <a href="41-fabrique-agents.md">Version Markdown</a>
   </div>
 </nav>
@@ -555,225 +564,266 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 <header class="titre">
   <div class="titre__fil">Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d&#x27;agents et synthèse architecturale</div>
   <h1><span class="chap">Chapitre 41</span>La fabrique d&#x27;agents : produire, certifier et réémettre le parc</h1>
-  <p class="titre__situe">Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d'agents et synthèse architecturale. Troisième mouvement — produire (ch. 41). Chapitre unique du mouvement, <strong>et seul chapitre de matière neuve de ce Livre</strong></p>
+  <p class="titre__situe">Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d'agents et synthèse architecturale. Troisième mouvement — produire (ch. 41). Chapitre unique du mouvement, **et seul chapitre de matière neuve de ce Livre**</p>
 </header>
 
+<!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
+     Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
+     que `build/assemble.py` pour le PDF et que `PRD/decompte.sh` pour la volumétrie. L'appareil de
+     gouvernance vit au .md jumeau, qui reste la seule source, et `build/verifier-piece.py` refuse
+     un rendu qui le recopierait. -->
+
 <h2 id="s410"><span class="sig">§ 41.0</span>Ouverture : pourquoi ce chapitre existe, et à quelles conditions il devrait survivre</h2>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>marquage porté à l'ouverture et régissant le chapitre entier</strong> (CA-IV-07, qui l'impose nommément aux chapitres de matière neuve). <strong>Ce que le socle établit</strong> : <strong>rien</strong>. ⚠ <strong>Et depuis le 28 juillet 2026, ce « rien » ne se lit plus comme le vide du socle mais comme celui de ce chapitre</strong> : <em>le socle consolidé compte 159 entrées, et aucune n'est mobilisable ici.</em> Aucun volume source ne porte cette matière, et <strong>le seul relevé daté du chapitre est un fait de dépôt</strong> (§ 41.1). <strong>Ce qu'il n'établit pas</strong> : <strong>la totalité de ce qui suit</strong> — l'existence d'un objet nommé « fabrique d'agents » dans une organisation quelconque, la pertinence du découpage en huit sections, et jusqu'à la nécessité du chapitre.</p>
-
-<p><strong>Le motif de son insertion est un constat de couverture, et il est vérifiable.</strong> La somme décrit le maillage qui <strong>admet</strong> les agents (ch. 37) et l'exploitation qui <strong>mesure</strong> leur comportement (ch. 38-40) ; elle décrit l'architecture qui les <strong>compose</strong> (ch. 43) et le blueprint qui les <strong>instancie</strong> (ch. 45). ⚠ <strong>Elle ne nommait nulle part le plan qui les <em>produit</strong></em> — constat établi par balayage de la zone des chapitres du plan, <strong>zéro occurrence</strong>, et c'est ce constat, non un fait du domaine, qui a motivé l'insertion (décision 12 du TOC, sur instruction d'auteur du 27 juillet 2026).</p>
-
+<p><strong>Le motif de son insertion est un constat de couverture, et il est vérifiable.</strong> La somme décrit le maillage qui <strong>admet</strong> les agents (ch. 37) et l'exploitation qui <strong>mesure</strong> leur comportement (ch. 38-40) ; elle décrit l'architecture qui les <strong>compose</strong> (ch. 43) et le blueprint qui les <strong>instancie</strong> (ch. 45). ⚠ <strong>Elle ne nommait nulle part le plan qui les <em>produit</em></strong> — constat établi par balayage de la zone des chapitres du plan, <strong>zéro occurrence</strong>, et c'est ce constat, non un fait du domaine, qui a motivé l'insertion (décision 12 du TOC, sur instruction d'auteur du 27 juillet 2026).</p>
 <div class="avert">
   <p><strong>Un constat de couverture d'un plan n'est pas un fait sur le monde</strong>, et la nuance est la seule chose que ce chapitre puisse affirmer sans réserve : <em>le plan ne traitait pas la production ; il ne s'ensuit pas que la production soit un objet constitué, ni qu'elle mérite un chapitre.</em> <strong>C'est exactement ce que D-8 avait à trancher, et elle l'a fait le 27 juillet 2026, après cette rédaction</strong> : <em>chapitre maintenu sous réserve, socle non constitué,</em> ⚠ <strong>le retrait demeurant l'issue si les lots échouent.</strong></p>
 </div>
-
 <p><strong>Les huit sections se lisent donc comme huit questions</strong>, dont <strong>cinq</strong> sont instruisibles et assorties du corpus à ouvrir et du critère qui clorait l'instruction — § 41.2, § 41.3, § 41.4, § 41.5 et § 41.7. ⚠ <strong>Les trois autres n'appellent aucun lot, et le motif diffère à chaque fois</strong> : la désambiguïsation (§ 41.1) tranche un emploi de mots, les conditions de réfutation (§ 41.6) énoncent ce qui renverserait le chapitre, et la sortie de périmètre (§ 41.8) déclare une matière que la somme ne traite pas — <em>aucune des trois n'attend quoi que ce soit d'une source.</em></p>
-
 <p><strong>Ce qui ne s'y trouve pas est déclaré au même titre</strong> : <strong>aucune recette d'organisation</strong>, <strong>aucun modèle de maturité</strong> (siège <strong>ch. 43 § 43.5</strong>), <strong>aucun outil nommé</strong>, <strong>aucun chiffre du domaine</strong>.</p>
-
 <h2 id="s411"><span class="sig">§ 41.1</span>Ce que « fabrique » désigne ici, et les trois emplois dont il faut la séparer</h2>
-
 <div class="avert">
   <p><strong>Le chapitre s'ouvre sur ce tri plutôt que de le renvoyer au glossaire, et le motif est celui qui a déjà coûté une passe au corpus.</strong> C'est le geste que la branche (f) du garde-fou d'homonymie du Vol. III impose déjà à « AgentMesh » (ch. 37 § 37.0), et <strong>la cause est identique</strong> : <em>deux sens incompatibles à quelques lignes d'écart.</em> ⚠ <strong>Trois des quatre emplois vivent déjà dans le plan de cette somme, et deux d'entre eux se confondraient à l'œil</strong> — celui de ce chapitre et celui du <strong>ch. 43 § 43.1</strong>.</p>
 </div>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Emploi</th><th>Objet</th><th>Ce qu'il désigne</th><th>Où il vit</th></tr></thead>
-  <tbody>
-    <tr><td><strong>F1</strong></td><td><strong>Fabrique d'agents</strong> (<em>agent factory</em>)</td><td>le <strong>plan de production d'un parc</strong> : gabarits gouvernés, catalogue interne, barrière de certification, réémission pilotée par la mesure</td><td><strong>ce chapitre</strong> — construction d'auteur</td></tr>
-    <tr><td><strong>F2</strong></td><td><strong>Fabrique d'identité</strong> — et <strong>fabrique de confiance</strong></td><td>l'<strong>étage qui émet l'identité</strong>, non celui qui produit l'agent</td><td><strong>ch. 43 § 43.1</strong>, qui en est le siège</td></tr>
-    <tr><td><strong>F3</strong></td><td><strong>Titre d'éditeur</strong></td><td>un <strong>nom de publication</strong>, jamais un terme d'architecture</td><td>bibliographie du <strong>Vol. I</strong> (<em>Monographie</em> §7.10.4)</td></tr>
-    <tr><td><strong>F4</strong></td><td><strong>Patron <em>factory</strong></em> du catalogue GoF de patrons de conception</td><td>un patron qui <strong>instancie un objet à l'exécution</strong> — aucun rapport avec un plan de production organisationnel</td><td><strong>Annexe G</strong></td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Emploi</th>
+<th>Objet</th>
+<th>Ce qu'il désigne</th>
+<th>Où il vit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>F1</strong></td>
+<td><strong>Fabrique d'agents</strong> (<em>agent factory</em>)</td>
+<td>le <strong>plan de production d'un parc</strong> : gabarits gouvernés, catalogue interne, barrière de certification, réémission pilotée par la mesure</td>
+<td><strong>ce chapitre</strong> — construction d'auteur</td>
+</tr>
+<tr>
+<td><strong>F2</strong></td>
+<td><strong>Fabrique d'identité</strong> — et <strong>fabrique de confiance</strong></td>
+<td>l'<strong>étage qui émet l'identité</strong>, non celui qui produit l'agent</td>
+<td><strong>ch. 43 § 43.1</strong>, qui en est le siège</td>
+</tr>
+<tr>
+<td><strong>F3</strong></td>
+<td><strong>Titre d'éditeur</strong></td>
+<td>un <strong>nom de publication</strong>, jamais un terme d'architecture</td>
+<td>bibliographie du <strong>Vol. I</strong> (<em>Monographie</em> §7.10.4)</td>
+</tr>
+<tr>
+<td><strong>F4</strong></td>
+<td><strong>Patron <em>factory</em></strong> du catalogue GoF de patrons de conception</td>
+<td>un patron qui <strong>instancie un objet à l'exécution</strong> — aucun rapport avec un plan de production organisationnel</td>
+<td><strong>Annexe G</strong></td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 41.1 — Les quatre emplois du mot « fabrique » dans la somme, et le lieu de chacun. ⚠ <strong>Aucun chapitre n'emploie le terme sans que le sens visé soit déterminable de sa phrase</strong> (décision 12c du TOC) ; le glossaire (Annexe E) porte les quatre.</p>
-
 <div class="avert">
-  <p><strong>L'emploi F3 est le seul relevé daté de tout ce chapitre, et sa borne est plus étroite que celle que le plan lui donne.</strong> <strong>Constat sur pièce, 27 juillet 2026</strong> : la bibliographie du <strong>Vol. I</strong> porte, sous <strong>Microsoft</strong>, <strong>une publication dont le titre contient l'expression</strong> — <em>Agent Factory: Designing the Open Agentic Web Stack</em> —, datée du <strong>24 septembre 2025</strong> ; l'entrée regroupe par ailleurs un second document, <strong>dont le titre ne porte pas l'expression</strong>, et <strong>porte le marqueur de ressource vivante</strong>. ⚠ <strong>L'éditeur est nommé plutôt qu'anonymisé</strong> : la parade de péremption couvre les dénominations commerciales et les versions, <strong>jamais l'attribution</strong> (décision 15 du TOC) — <em>un fait de dépôt dont l'attributeur est tu cesse d'être vérifiable.</em> ⚠ <strong>Le plan écrivait « la série <em>Agent Factory</em> » ; ce que la pièce constate est <em>un titre</em>, non une série</strong> — <em>le socle ne documente pas l'existence d'une série sous ce nom : absence de documentation, non fait négatif vérifié</em> (degré 3). ⚠ <strong>La table d'appuis du TOC est alignée sur ce constat depuis la v0.28</strong> (remontée <strong>R-IV-52</strong>, §&nbsp;41.9&nbsp;†) : <em>le passé de ce verbe est la trace de l'écart, non un flottement — et une pièce qui continuerait d'opposer au plan une forme qu'il ne porte plus fabriquerait la divergence qu'elle croit relever.</em> ⚠ <strong>Et ce que ce fait de dépôt atteste s'arrête là où il commence</strong> : <strong>l'emploi du terme par cet éditeur, à une date</strong>, rien de plus. <strong>Il n'entre pas au socle</strong>, il <strong>ne caractérise pas l'objet</strong>, et <strong>aucun énoncé de ce chapitre ne s'y adosse</strong>.</p>
+  <p><strong>L'emploi F3 est le seul relevé daté de tout ce chapitre, et sa borne est plus étroite que celle que le plan lui donne.</strong> <strong>Constat sur pièce, 27 juillet 2026</strong> : la bibliographie du <strong>Vol. I</strong> porte, sous <strong>Microsoft</strong>, <strong>une publication dont le titre contient l'expression</strong> — <em>Agent Factory: Designing the Open Agentic Web Stack</em> —, datée du <strong>24 septembre 2025</strong> ; l'entrée regroupe par ailleurs un second document, <strong>dont le titre ne porte pas l'expression</strong>, et <strong>porte le marqueur de ressource vivante</strong>. ⚠ <strong>L'éditeur est nommé plutôt qu'anonymisé</strong> : la parade de péremption couvre les dénominations commerciales et les versions, <strong>jamais l'attribution</strong> (décision 15 du TOC) — <em>un fait de dépôt dont l'attributeur est tu cesse d'être vérifiable.</em> ⚠ <strong>Le plan écrivait « la série <em>Agent Factory</em> » ; ce que la pièce constate est <em>un titre</em>, non une série</strong> — <em>le socle ne documente pas l'existence d'une série sous ce nom : absence de documentation, non fait négatif vérifié</em> (degré 3). ⚠ <strong>La table d'appuis du TOC est alignée sur ce constat depuis la v0.28</strong> (remontée <strong>R-IV-52</strong>, § 41.9) : <em>le passé de ce verbe est la trace de l'écart, non un flottement — et une pièce qui continuerait d'opposer au plan une forme qu'il ne porte plus fabriquerait la divergence qu'elle croit relever.</em> ⚠ <strong>Et ce que ce fait de dépôt atteste s'arrête là où il commence</strong> : <strong>l'emploi du terme par cet éditeur, à une date</strong>, rien de plus. <strong>Il n'entre pas au socle</strong>, il <strong>ne caractérise pas l'objet</strong>, et <strong>aucun énoncé de ce chapitre ne s'y adosse</strong>.</p>
 </div>
-
 <div class="avert">
   <p><strong>La distinction F1/F2 est celle dont la confusion coûterait le plus cher, et elle tient à un verbe</strong> : <em>la fabrique d'identité <strong>émet</strong> ; la fabrique d'agents <strong>produit</strong>.</em> ⚠ <strong>Le départage de ces deux étages a son siège au ch. 43 § 43.1</strong> : <em>ce chapitre y renvoie et ne le refait pas ; ce qui lui appartient en propre est la table des quatre emplois ci-dessus.</em></p>
 </div>
-
 <h2 id="s412"><span class="sig">§ 41.2</span>Le gabarit d'agent gouverné : ce qui se décide une fois pour tout le parc</h2>
-
 <p><em>Construction d'auteur ; sources primaires à constituer.</em></p>
-
 <p><strong>La proposition est la suivante</strong> : un <strong>gabarit d'agent gouverné</strong> est l'artefact par lequel une organisation <strong>décide une fois, pour une classe d'agents, ce qu'elle refuserait de décider à chaque agent</strong>. Ce qu'il fixerait — <strong>bornes de finalité</strong>, <strong>outils admis</strong>, <strong>politique d'approbation</strong>, <strong>exigences de trace</strong> — et ce qu'il laisserait à l'agent sont deux listes ; <strong>ni l'une ni l'autre n'est portée par une source.</strong></p>
-
 <div class="avert">
   <p><strong>Un gabarit n'est pas un cadriciel</strong>, et la distinction n'est pas verbale : les <strong>cadriciels de composition</strong> — ce qui exécute une orchestration — sont au <strong>ch. 23</strong>, <strong>et ce chapitre ne les reconstruit pas</strong>. <em>Un gabarit décrit ce qu'un agent a le droit d'être ; un cadriciel décrit comment il tourne.</em></p>
 </div>
-
 <p><strong>Le seul argument que ce chapitre puisse opposer à un lecteur sceptique vient d'un autre chapitre, et il est cité comme tel.</strong> Le <strong>ch. 39 § 39.2</strong> établit — <em>dans les bornes de son propre socle</em> — que <strong>des trois dérives qu'il traite, et qu'il déclare inégalement documentées, celle que les cadres canadiens nomment est celle que le seul relevé d'instrumentation versé au socle n'instrumente pas</strong>, et il en tire une <strong>obligation de conception</strong> : <em>ce qui n'est pas instrumenté doit être borné à l'émission.</em> ⚠ <strong>Un gabarit est un candidat au lieu de ce bornage</strong> ; <strong>qu'il en soit le bon lieu n'est établi par rien.</strong></p>
-
-<div class="encadre encadre--oeuvre">
-  <span class="encadre__label">Note</span>
-  <p><strong>Ce qu'il faudrait ouvrir pour clore la question.</strong> <strong>Corpus</strong> : les référentiels d'ingénierie logicielle traitant du gabarit d'application gouverné (<em>golden path</em>, <em>paved road</em>) et leur transposition documentée à un parc d'agents ; les schémas de profil d'agent déjà relevés par le Livre II, <strong>au titre de ce qu'ils rendent obligatoire à la déclaration</strong> ; toute publication d'organisation décrivant un gabarit d'agent en production. <strong>Critère de clôture</strong> : qu'au moins un corpus primaire décrive un artefact fixant, pour une classe d'agents, les quatre catégories ci-dessus — ou que son absence soit <strong>établie par balayage</strong> plutôt que présumée. ⚠ <strong>Identifiants du corpus, écrits parce qu'un critère de clôture qui ne nomme pas ses sources est inexécutable</strong> (décision 15 du TOC, alinéa b-iii) : les <strong>schémas de profil d'agent</strong> à relire sont ceux qu'énumèrent le <strong>ch. 15 § 15.1</strong> (carte d'agent signée : anatomie et valeur probante) et le <strong>ch. 15 § 15.3</strong> (registres gouvernés) ; <em>le lot s'ouvre sur cette énumération, non sur une description</em>. ⚠ <strong>Une instruction infructueuse est un résultat</strong> : elle rendrait la section retirable, ce que D-8 prévoit.</p>
-</div>
-
+<blockquote>
+<p><strong>Ce qu'il faudrait ouvrir pour clore la question.</strong> <strong>Corpus</strong> : les référentiels d'ingénierie logicielle traitant du gabarit d'application gouverné (<em>golden path</em>, <em>paved road</em>) et leur transposition documentée à un parc d'agents ; les schémas de profil d'agent déjà relevés par le Livre II, <strong>au titre de ce qu'ils rendent obligatoire à la déclaration</strong> ; toute publication d'organisation décrivant un gabarit d'agent en production. <strong>Critère de clôture</strong> : qu'au moins un corpus primaire décrive un artefact fixant, pour une classe d'agents, les quatre catégories ci-dessus — ou que son absence soit <strong>établie par balayage</strong> plutôt que présumée. ⚠ <strong>Identifiants du corpus, écrits parce qu'un critère de clôture qui ne nomme pas ses sources est inexécutable</strong> (décision 15 du TOC, alinéa b-iii) : les <strong>schémas de profil d'agent</strong> à relire sont ceux qu'énumèrent le <strong>ch. 15 § 15.1</strong> (carte d'agent signée : anatomie et valeur probante) et le <strong>ch. 15 § 15.3</strong> (registres gouvernés) ; <em>le lot s'ouvre sur cette énumération, non sur une description</em>. ⚠ <strong>Une instruction infructueuse est un résultat</strong> : elle rendrait la section retirable, ce que D-8 prévoit.</p>
+</blockquote>
 <h2 id="s413"><span class="sig">§ 41.3</span>Le catalogue interne et le registre gouverné : deux objets, deux autorités</h2>
-
 <p><em>Adossement au <strong>ch. 15</strong> (registres gouvernés, carte d'agent signée) et au <strong>ch. 16</strong> (passeport), <strong>sans les reconstruire</strong>. Construction d'auteur, marquée telle.</em></p>
-
 <div class="avert">
   <p><strong>La distinction à tenir, sous peine de doublon d'autorité, est celle-ci</strong> : le <strong>registre gouverné</strong> est le lieu où une identité devient <strong>opposable à des tiers</strong> ; le <strong>catalogue interne</strong> est le lieu où l'organisation sait <strong>ce qu'elle produit et exploite</strong>. ⚠ <strong>Confondre les deux redonnerait au catalogue une valeur probante qu'aucune spécification relevée ne lui reconnaît</strong> — et <em>le ch. 15 a établi, dans ses propres bornes, que même le registre gouverné n'a pas cette valeur au régime où le corpus le documente.</em></p>
 </div>
-
 <p><strong>Quatre propriétés distinguent les deux objets, et elles sont proposées, non relevées.</strong></p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th></th><th>Registre gouverné (<strong>ch. 15</strong>)</th><th>Catalogue interne (<em>ce chapitre</em>)</th></tr></thead>
-  <tbody>
-    <tr><td><strong>Ce qu'il rend possible</strong></td><td>qu'un tiers <strong>vérifie</strong> une identité qu'il n'a pas émise</td><td>que l'organisation <strong>énumère</strong> ce qu'elle a produit</td></tr>
-    <tr><td><strong>À qui il est opposable</strong></td><td>à des tiers, dans les limites que le Livre II a bornées</td><td><strong>à personne</strong> — <em>c'est un instrument de gestion, non de preuve</em></td></tr>
-    <tr><td><strong>Ce qu'il porte de plus</strong></td><td>l'ancrage, dont le Livre II établit qu'il est le verrou</td><td>le <strong>gabarit d'origine</strong> de chaque agent, et son état de certification</td></tr>
-    <tr><td><strong>Ce qui le peuple</strong></td><td>l'émission</td><td>la <strong>fabrique</strong></td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>Registre gouverné (<strong>ch. 15</strong>)</th>
+<th>Catalogue interne (<em>ce chapitre</em>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ce qu'il rend possible</strong></td>
+<td>qu'un tiers <strong>vérifie</strong> une identité qu'il n'a pas émise</td>
+<td>que l'organisation <strong>énumère</strong> ce qu'elle a produit</td>
+</tr>
+<tr>
+<td><strong>À qui il est opposable</strong></td>
+<td>à des tiers, dans les limites que le Livre II a bornées</td>
+<td><strong>à personne</strong> — <em>c'est un instrument de gestion, non de preuve</em></td>
+</tr>
+<tr>
+<td><strong>Ce qu'il porte de plus</strong></td>
+<td>l'ancrage, dont le Livre II établit qu'il est le verrou</td>
+<td>le <strong>gabarit d'origine</strong> de chaque agent, et son état de certification</td>
+</tr>
+<tr>
+<td><strong>Ce qui le peuple</strong></td>
+<td>l'émission</td>
+<td>la <strong>fabrique</strong></td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 41.2 — Registre gouverné et catalogue interne : deux objets, deux autorités. ⚠ <strong>Construction d'auteur en totalité</strong> — <em>aucune ligne de ce tableau n'est portée par une entrée de socle.</em></p>
-
 <div class="avert">
   <p><strong>Une seule chose relie ce tableau à un constat établi ailleurs, et elle vient du ch. 40 § 40.2</strong> : la grille minimale y demande un <strong>dénominateur</strong> — <em>une source d'énumération du parc</em> — et déclare que <strong>le socle n'en documente aucune qui soit opposable à l'inventaire attendu</strong> (degré 3). <strong>Le catalogue interne est un candidat à ce dénominateur</strong> ; ⚠ <strong>qu'il le fournisse effectivement n'est établi par rien</strong>, et <em>un candidat proposé à l'endroit exact où une lacune est déclarée est précisément l'énoncé qu'aucune relecture ne peut réfuter.</em></p>
 </div>
-
-<div class="encadre encadre--oeuvre">
-  <span class="encadre__label">Note</span>
-  <p><strong>Ce qu'il faudrait ouvrir.</strong> <strong>Corpus</strong> : les spécifications de registre déjà relevées par le Livre II, <strong>relues au titre de ce qu'elles disent d'un usage interne</strong> ; les publications décrivant un inventaire d'actifs applicatifs gouverné et son articulation à un annuaire d'identités. <strong>Critère de clôture</strong> : qu'un corpus primaire distingue explicitement les deux autorités, ou qu'aucun ne les distingue — <em>l'un et l'autre résultat sont exploitables.</em> ⚠ <strong>Identifiants du corpus</strong> (décision 15, alinéa b-iii) : les <strong>spécifications de registre</strong> à relire sont celles qu'énumère le <strong>ch. 15 § 15.3</strong>, et les <strong>annuaires</strong> ceux du <strong>ch. 15 § 15.2</strong> ; les quatre pièces dont l'autorité est en cause sont assemblées au <strong>ch. 16 § 16.1</strong>. <em>Le lot s'ouvre sur ces trois sections, nommées, et non sur « les spécifications déjà relevées ».</em></p>
-</div>
-
+<blockquote>
+<p><strong>Ce qu'il faudrait ouvrir.</strong> <strong>Corpus</strong> : les spécifications de registre déjà relevées par le Livre II, <strong>relues au titre de ce qu'elles disent d'un usage interne</strong> ; les publications décrivant un inventaire d'actifs applicatifs gouverné et son articulation à un annuaire d'identités. <strong>Critère de clôture</strong> : qu'un corpus primaire distingue explicitement les deux autorités, ou qu'aucun ne les distingue — <em>l'un et l'autre résultat sont exploitables.</em> ⚠ <strong>Identifiants du corpus</strong> (décision 15, alinéa b-iii) : les <strong>spécifications de registre</strong> à relire sont celles qu'énumère le <strong>ch. 15 § 15.3</strong>, et les <strong>annuaires</strong> ceux du <strong>ch. 15 § 15.2</strong> ; les quatre pièces dont l'autorité est en cause sont assemblées au <strong>ch. 16 § 16.1</strong>. <em>Le lot s'ouvre sur ces trois sections, nommées, et non sur « les spécifications déjà relevées ».</em></p>
+</blockquote>
+<figure class="figure">
+  <img src="../figures/f-41-03-registre-catalogue.svg" alt="Figure 41.3 — Registre gouverné et catalogue interne : deux objets, deux autorités." />
+  <figcaption><strong>Figure 41.3</strong> — Registre gouverné et catalogue interne : deux objets, deux autorités.</figcaption>
+</figure>
 <h2 id="s414"><span class="sig">§ 41.4</span>La barrière de certification : ce qu'un agent démontre avant d'être admis au maillage</h2>
-
 <p><em>Adossement au <strong>ch. 37 § 37.5</strong> (le maillage comme point d'application) et au <strong>ch. 47 § 47.9</strong> (barrière d'évaluation au déploiement) ; ⚠ <strong>le constat cité plus bas vient du ch. 37 § 37.4</strong>, où il est établi.</em></p>
-
 <div class="avert">
   <p><strong>Le grain diffère des deux, et il se déclare.</strong> Le <strong>ch. 47</strong> traite la barrière au grain de <strong>l'artefact et de sa mise en service</strong> ; ce chapitre au grain du <strong>parc et de son admission</strong>. <em>Un artefact franchit une barrière une fois ; un parc en franchit une à chaque agent, et la question devient celle du débit autant que celle du critère.</em> ⚠ <strong>Le ch. 47 n'était pas rédigé à la date de cette pièce</strong> : le renvoi a été posé comme <strong>renvoi de plan</strong>, et <em>il n'a pas été re-vérifié contre le texte — rédigé depuis, hors portes — qui a paru après lui.</em></p>
 </div>
-
 <p><strong>La proposition est étroite</strong> : <em>le maillage vérifie l'agent qui se présente ; il ne dit rien de ce qui l'a produit.</em> Le <strong>ch. 37 § 37.4</strong> l'établit dans ses propres bornes — la première question de la grille qu'il applique demande un identifiant que le mécanisme <strong>produit</strong>, et le mécanisme documenté <strong>n'y répond pas</strong> : ce qu'il porte est l'<strong>évaluation d'une politique contre des invocations de méthodes</strong>, <strong>non une émission, une vérification cryptographique ni une révocation</strong>. ⚠ <strong>Et la source range l'émission ailleurs plutôt que de la déclarer manquante</strong> : <em>elle en fait l'objet du Livre II et écrit que le maillage n'a jamais prétendu s'en charger.</em> ⚠ <strong>Que « produire » et « émettre » ne se recouvrent pas est une lecture de ce chapitre, non un énoncé de sa source</strong> — elle est posée au § 41.1, et <em>elle ne s'adosse à aucun fait.</em> <strong>La barrière de certification serait le geste qui décide de ce qui <em>peut</em> se présenter</strong> ; ⚠ <strong>qu'un tel geste existe, et qu'il soit distinct du point d'application, n'est établi par rien.</strong></p>
-
 <div class="avert">
   <p><strong>Et une difficulté héritée s'y transporte intacte, ce qui est le seul énoncé fort de cette section.</strong> Le plan renvoie au <strong>problème de l'oracle</strong> — <em>comment sait-on qu'un comportement est correct quand on ne dispose pas d'un résultat attendu de référence ?</em> — relevé au <strong>ch. 47 § 47.9</strong>. <strong>Une barrière de certification hérite de la même difficulté et ne s'en affranchit pas en changeant d'échelle</strong> : <em>certifier mille agents ne rend pas l'oracle plus disponible qu'il ne l'était pour un.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>Une barrière se qualifie par ce qu'elle démontre, jamais par ce qu'elle promet</strong> (R-02 du Vol. III, balayé par prudence) : <em>une barrière qui admet sans oracle atteste un passage, non une propriété.</em> Et ⚠ <strong>le passeport d'agent ne figure dans aucune spécification à date</strong> (R-01 du Vol. III ; siège <strong>ch. 16</strong>) : une barrière ne peut donc <strong>pas</strong> être décrite comme « vérifiant le passeport », et ce chapitre ne l'écrit pas.</p>
 </div>
-
-<div class="encadre encadre--oeuvre">
-  <span class="encadre__label">Note</span>
-  <p><strong>Ce qu'il faudrait ouvrir.</strong> <strong>Corpus</strong> : la littérature de test métamorphique et d'évaluation sans oracle, déjà relevée par le plan au titre du <strong>ch. 47</strong> ; les référentiels de certification de composants logiciels transposables, <strong>sous réserve d'une filiation établie plutôt que réinventée</strong> ; toute publication décrivant une porte d'admission à un maillage. <strong>Critère de clôture</strong> : qu'un critère d'admission documenté soit relevé avec <strong>ce qu'il démontre</strong> — et non ce qu'il annonce. ⚠ <strong>Identifiants du corpus</strong> (décision 15, alinéa b-iii) : le problème de l'oracle et la littérature de <strong>test métamorphique</strong> sont relevés par le plan à la <strong>relève v0.19</strong>, au titre du <strong>ch. 47 § 47.9</strong> (jeux d'essai de référence et barrière d'évaluation au déploiement), <em>dont le lot hérite le corpus sans le recopier</em> ; la barrière au grain du parc se lit contre le <strong>ch. 37 § 37.5</strong>. ⚠ <strong>Ces désignations sont des points d'entrée, non des sources</strong> : <em>aucune n'a été ouverte par ce chapitre.</em></p>
-</div>
-
+<blockquote>
+<p><strong>Ce qu'il faudrait ouvrir.</strong> <strong>Corpus</strong> : la littérature de test métamorphique et d'évaluation sans oracle, déjà relevée par le plan au titre du <strong>ch. 47</strong> ; les référentiels de certification de composants logiciels transposables, <strong>sous réserve d'une filiation établie plutôt que réinventée</strong> ; toute publication décrivant une porte d'admission à un maillage. <strong>Critère de clôture</strong> : qu'un critère d'admission documenté soit relevé avec <strong>ce qu'il démontre</strong> — et non ce qu'il annonce. ⚠ <strong>Identifiants du corpus</strong> (décision 15, alinéa b-iii) : le problème de l'oracle et la littérature de <strong>test métamorphique</strong> sont relevés par le plan à la <strong>relève v0.19</strong>, au titre du <strong>ch. 47 § 47.9</strong> (jeux d'essai de référence et barrière d'évaluation au déploiement), <em>dont le lot hérite le corpus sans le recopier</em> ; la barrière au grain du parc se lit contre le <strong>ch. 37 § 37.5</strong>. ⚠ <strong>Ces désignations sont des points d'entrée, non des sources</strong> : <em>aucune n'a été ouverte par ce chapitre.</em></p>
+</blockquote>
+<figure class="figure">
+  <img src="../figures/f-41-04-barriere-certification.svg" alt="Figure 41.4 — La barrière de certification : ce qu&#39;un agent démontre avant d&#39;être admis au maillage." />
+  <figcaption><strong>Figure 41.4</strong> — La barrière de certification : ce qu'un agent démontre avant d'être admis au maillage.</figcaption>
+</figure>
 <h2 id="s415"><span class="sig">§ 41.5</span>La boucle de réémission : de l'indicateur et de la dérive au gabarit corrigé</h2>
-
 <p><em>Adossement au <strong>ch. 39 § 39.2</strong> (dérive), au <strong>ch. 39 § 39.4</strong> (versionnement du parc) et au <strong>ch. 40 § 40.2</strong> (grille minimale d'indicateurs). Construction d'auteur.</em></p>
-
-<p><strong>C'est ici que l'AgentOps cesserait d'être une discipline de constat.</strong> La proposition tient en une phrase : ⚠ <strong><em>un indicateur qui ne réémet rien mesure sans corriger.</strong></em> Le <strong>ch. 40 § 40.2</strong> produit quatre grandeurs et <strong>une colonne de ce qui manque</strong> ; le <strong>ch. 39 § 39.2</strong> produit trois dérives dont une n'est pas instrumentée par le seul relevé d'instrumentation versé au socle. <strong>La boucle de réémission serait le geste qui transforme l'un et l'autre en correction du gabarit dont l'agent est issu</strong>, plutôt qu'en correction de l'agent lui-même.</p>
-
+<p><strong>C'est ici que l'AgentOps cesserait d'être une discipline de constat.</strong> La proposition tient en une phrase : ⚠ <strong><em>un indicateur qui ne réémet rien mesure sans corriger.</em></strong> Le <strong>ch. 40 § 40.2</strong> produit quatre grandeurs et <strong>une colonne de ce qui manque</strong> ; le <strong>ch. 39 § 39.2</strong> produit trois dérives dont une n'est pas instrumentée par le seul relevé d'instrumentation versé au socle. <strong>La boucle de réémission serait le geste qui transforme l'un et l'autre en correction du gabarit dont l'agent est issu</strong>, plutôt qu'en correction de l'agent lui-même.</p>
 <div class="avert">
   <p><strong>La distinction est la seule chose que cette section apporte, et elle est réfutable</strong> : <em>corriger l'agent traite l'occurrence ; corriger le gabarit traite la classe.</em> Ce que le <strong>ch. 39 § 39.4</strong> établit dans ses bornes — <strong>on sait versionner ce qu'un agent est autorisé à faire, on ne sait pas restituer ce qu'il était autorisé à faire à l'instant où il l'a fait</strong> — <strong>s'applique au gabarit avec la même force</strong> : <em>une boucle de réémission dont on ne peut pas restituer l'état antérieur du gabarit ne se documente pas, elle se raconte.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>Le ch. 39 § 39.4 renvoie d'ailleurs à cette section</strong> — <em>promouvoir suppose un gabarit à promouvoir, et il déclare ne pas le fournir</em> —, et <strong>l'adossement est donc mutuel</strong> : <em>ce chapitre-ci ne peut pas fonder la boucle sur un chapitre qui la lui renvoie.</em> <strong>Le socle ne documente ni la boucle, ni le gabarit, ni leur articulation</strong> : absence de documentation, non fait négatif vérifié (degré 3).</p>
 </div>
-
-<div class="encadre encadre--oeuvre">
-  <span class="encadre__label">Note</span>
-  <p><strong>Ce qu'il faudrait ouvrir.</strong> <strong>Corpus</strong> : les publications d'exploitation décrivant une correction de gabarit déclenchée par un indicateur de production ; la littérature de gestion de configuration traitant de la <strong>propagation d'une correction de modèle à des instances déjà déployées</strong>. <strong>Critère de clôture</strong> : qu'un mécanisme documenté relie une mesure de production à une modification d'artefact d'origine, <strong>avec son délai de propagation</strong> — <em>le délai est la partie qui manque partout ailleurs dans ce Livre, et il manquerait ici de la même manière.</em> ⚠ <strong>Identifiants du corpus</strong> (décision 15, alinéa b-iii) : les trois points d'entrée internes sont nommés — <strong>ch. 39 § 39.2</strong> (les trois dérives, dont une non instrumentée), <strong>ch. 39 § 39.4</strong> (GitOps du parc) et <strong>ch. 40 § 40.2</strong> (la grille minimale et sa colonne de manques) ; <em>ce sont eux que l'instruction doit confronter à une publication d'exploitation, et non « la littérature ».</em></p>
-</div>
-
+<blockquote>
+<p><strong>Ce qu'il faudrait ouvrir.</strong> <strong>Corpus</strong> : les publications d'exploitation décrivant une correction de gabarit déclenchée par un indicateur de production ; la littérature de gestion de configuration traitant de la <strong>propagation d'une correction de modèle à des instances déjà déployées</strong>. <strong>Critère de clôture</strong> : qu'un mécanisme documenté relie une mesure de production à une modification d'artefact d'origine, <strong>avec son délai de propagation</strong> — <em>le délai est la partie qui manque partout ailleurs dans ce Livre, et il manquerait ici de la même manière.</em> ⚠ <strong>Identifiants du corpus</strong> (décision 15, alinéa b-iii) : les trois points d'entrée internes sont nommés — <strong>ch. 39 § 39.2</strong> (les trois dérives, dont une non instrumentée), <strong>ch. 39 § 39.4</strong> (GitOps du parc) et <strong>ch. 40 § 40.2</strong> (la grille minimale et sa colonne de manques) ; <em>ce sont eux que l'instruction doit confronter à une publication d'exploitation, et non « la littérature ».</em></p>
+</blockquote>
+<figure class="figure">
+  <img src="../figures/f-41-05-boucle-reemission.svg" alt="Figure 41.5 — La boucle de réémission : de l&#39;indicateur et de la dérive au gabarit corrigé." />
+  <figcaption><strong>Figure 41.5</strong> — La boucle de réémission : de l'indicateur et de la dérive au gabarit corrigé.</figcaption>
+</figure>
 <h2 id="s416"><span class="sig">§ 41.6</span>La fabrique comme point de concentration : ce qu'elle centralise, ce qu'elle fragilise</h2>
-
 <div class="avert">
   <p><strong>Cette section porte les conditions qui renverseraient ce chapitre, et elles sont à écrire comme telles, non comme réserves de style</strong> — même exigence qu'au <strong>ch. 37 § 37.9</strong>. <em>Un chapitre qui ne peut pas être renversé n'affirme rien</em> ; ⚠ <strong>et un chapitre sans socle qui ne peut pas être renversé n'est même pas discutable.</strong></p>
 </div>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>#</th><th>Condition</th><th>Ce qui la rendrait constatable</th></tr></thead>
-  <tbody>
-    <tr><td><strong>1</strong></td><td><strong>Gabarit unique et monoculture de parc</strong> — un gabarit qui décide pour tout le parc <strong>propage aussi ses défauts à tout le parc</strong></td><td>un incident dont la cause remonte au gabarit et non à l'agent ; ou, à l'inverse, l'absence documentée de corrélation entre agents issus d'un même gabarit</td></tr>
-    <tr><td><strong>2</strong></td><td><strong>File d'attente de certification comme goulot</strong> — une barrière qui admet trop lentement <strong>est contournée</strong>, et un contournement documenté vide la barrière de son objet</td><td>une mesure de délai d'admission rapportée au rythme de production ; ⚠ <strong>le socle n'en porte aucune</strong> (degré 3), et le <strong>ch. 40 § 40.5</strong> établit seulement que <strong>le coût est une contrainte de premier ordre</strong>, en [C]</td></tr>
-    <tr><td><strong>3</strong></td><td><strong>Équipe-fabrique en point de défaillance unique</strong> — la centralisation qui fait la valeur du dispositif fait aussi sa fragilité</td><td>une indisponibilité documentée, ou une mesure de dépendance ; ⚠ <strong>c'est la troisième condition du ch. 37 § 37.9, transposée d'un point d'application à une équipe</strong>, et <em>la transposition est une lecture, non un constat</em></td></tr>
-    <tr><td><strong>4</strong></td><td><strong>L'écart entre ce que la fabrique croit produire et ce que le maillage admet réellement</strong></td><td>un relevé d'agents admis au maillage <strong>sans passage par la fabrique</strong> ; ⚠ <strong>c'est le pendant exact de la première condition du ch. 37 § 37.9</strong> — <em>un dispositif dont on ne peut pas énumérer ce qui l'a contourné ne fournit pas la garantie qu'il annonce</em></td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>#</th>
+<th>Condition</th>
+<th>Ce qui la rendrait constatable</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td><strong>Gabarit unique et monoculture de parc</strong> — un gabarit qui décide pour tout le parc <strong>propage aussi ses défauts à tout le parc</strong></td>
+<td>un incident dont la cause remonte au gabarit et non à l'agent ; ou, à l'inverse, l'absence documentée de corrélation entre agents issus d'un même gabarit</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td><strong>File d'attente de certification comme goulot</strong> — une barrière qui admet trop lentement <strong>est contournée</strong>, et un contournement documenté vide la barrière de son objet</td>
+<td>une mesure de délai d'admission rapportée au rythme de production ; ⚠ <strong>le socle n'en porte aucune</strong> (degré 3), et le <strong>ch. 40 § 40.5</strong> établit seulement que <strong>le coût est une contrainte de premier ordre</strong>, en [C]</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td><strong>Équipe-fabrique en point de défaillance unique</strong> — la centralisation qui fait la valeur du dispositif fait aussi sa fragilité</td>
+<td>une indisponibilité documentée, ou une mesure de dépendance ; ⚠ <strong>c'est la troisième condition du ch. 37 § 37.9, transposée d'un point d'application à une équipe</strong>, et <em>la transposition est une lecture, non un constat</em></td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td><strong>L'écart entre ce que la fabrique croit produire et ce que le maillage admet réellement</strong></td>
+<td>un relevé d'agents admis au maillage <strong>sans passage par la fabrique</strong> ; ⚠ <strong>c'est le pendant exact de la première condition du ch. 37 § 37.9</strong> — <em>un dispositif dont on ne peut pas énumérer ce qui l'a contourné ne fournit pas la garantie qu'il annonce</em></td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 41.3 — Les quatre conditions de réfutation du chapitre 41. ⚠ <strong>Construction d'auteur</strong> ; <em>aucune n'est instruite, et une condition posée n'est pas une condition éprouvée.</em></p>
-
 <div class="avert">
   <p><strong>La quatrième est la plus instructive, parce qu'elle rejoint le résultat du ch. 37 par l'autre bout.</strong> Le ch. 37 demande <strong>quelles arêtes le maillage ne médiatise pas</strong> ; celui-ci demande <strong>quels agents la fabrique n'a pas produits</strong>. <em>Les deux questions ont la même forme — l'énumération du complément —, et ni l'une ni l'autre n'a de réponse documentée.</em></p>
 </div>
-
 <h2 id="s417"><span class="sig">§ 41.7</span>L'organisation de la fabrique : qui opère quoi</h2>
-
 <div class="avert">
   <p><strong>Aucune revendication de provenance ici, et la forme le dit.</strong> La source de cette matière est portée par le <strong>ch. 45 § 45.6</strong>, <strong>qui en reste le siège</strong> ; ce chapitre n'en tire qu'un <strong>renvoi interne</strong>. <em>C'est le motif pour lequel la table détaillée de ce chapitre ne porte aucun marqueur de provenance : en porter un ici serait une <strong>seconde revendication du même texte</strong>.</em></p>
 </div>
-
 <p><strong>Ce que ce chapitre peut écrire sans empiéter tient en une question, et le ch. 45 § 45.6 la pose lui-même à son terme</strong> : <em>les rôles qu'il répartit répondent de ce qui <strong>tourne</strong> ; qui répond de ce qui <strong>est produit</strong> ?</em> ⚠ <strong>Et la répartition dont elle part est bornée à sa source</strong> : <em>le ch. 45 § 45.6 déclare que le socle n'établit pas la répartition des responsabilités entre équipes, et que la sienne est une inférence d'auteur intégrale</em> — <strong>ce chapitre n'en hérite donc aucun titulaire nommé</strong>. ⚠ <strong>Le socle ne documente aucune répartition des responsabilités de production d'un parc d'agents</strong> : absence de documentation, non fait négatif vérifié (degré 3).</p>
-
 <div class="avert">
   <p><strong>Et la question n'est pas rhétorique</strong> : le <strong>ch. 39 § 39.4</strong> a établi, en [C], que <strong>les agents qui maintiennent le parc sont eux-mêmes des agents</strong> et relèvent <strong>du même régime que ceux qu'ils surveillent</strong>. <em>La même récursivité s'appliquerait à la fabrique — l'outillage qui produit les agents serait lui-même à produire —, et rien n'établit où elle s'arrête.</em></p>
 </div>
-
-<div class="encadre encadre--oeuvre">
-  <span class="encadre__label">Note</span>
-  <p><strong>Ce qu'il faudrait ouvrir.</strong> <strong>Corpus</strong> : les publications d'organisation décrivant une répartition nommée des responsabilités de <strong>production</strong> d'un parc logiciel gouverné, distincte de sa répartition d'exploitation. ⚠ <strong>Identifiants du corpus</strong> (décision 15 du TOC, alinéa b-iii) : le point d'entrée interne est le <strong>ch. 45 § 45.6</strong>, <strong>siège de l'organisation de la fabrique pour toute la somme</strong>, dont ce lot reprend la répartition d'exploitation <strong>sans la reconstruire</strong> ; la récursivité se lit contre le <strong>ch. 39 § 39.4</strong>. <strong>Critère de clôture</strong> : qu'une source primaire nomme un titulaire de la production distinct du titulaire de l'exploitation, <strong>ou</strong> que le balayage établisse qu'aucune ne les distingue — <em>les deux résultats sont exploitables, et le second rendrait la section retirable.</em></p>
-</div>
-
+<blockquote>
+<p><strong>Ce qu'il faudrait ouvrir.</strong> <strong>Corpus</strong> : les publications d'organisation décrivant une répartition nommée des responsabilités de <strong>production</strong> d'un parc logiciel gouverné, distincte de sa répartition d'exploitation. ⚠ <strong>Identifiants du corpus</strong> (décision 15 du TOC, alinéa b-iii) : le point d'entrée interne est le <strong>ch. 45 § 45.6</strong>, <strong>siège de l'organisation de la fabrique pour toute la somme</strong>, dont ce lot reprend la répartition d'exploitation <strong>sans la reconstruire</strong> ; la récursivité se lit contre le <strong>ch. 39 § 39.4</strong>. <strong>Critère de clôture</strong> : qu'une source primaire nomme un titulaire de la production distinct du titulaire de l'exploitation, <strong>ou</strong> que le balayage établisse qu'aucune ne les distingue — <em>les deux résultats sont exploitables, et le second rendrait la section retirable.</em></p>
+</blockquote>
 <h2 id="s418"><span class="sig">§ 41.8</span>Ce que la fabrique ne fait pas : la couche d'exécution reste hors périmètre</h2>
-
 <div class="avert">
   <p><strong>Cette section est la plus importante du chapitre, et elle est entièrement négative.</strong> Le <strong>risque 14 du TOC n'est pas comblé par ce chapitre</strong>, et il faut l'écrire ici plutôt que le laisser croire.</p>
 </div>
-
 <p><strong>Le harnais</strong> — le programme qui <strong>héberge la boucle de l'agent</strong> et porte la persistance de session, les modes, les sous-agents, la chaîne d'approbation d'outils, l'admission d'extensions et la compression de contexte — <strong>n'est traité par aucun chapitre de la somme</strong>. ⚠ <strong>Produire un agent n'est pas l'exécuter</strong> : <em>la fabrique décide de ce qui entre au parc ; le harnais décide, en dernier ressort, d'exécuter l'appel.</em></p>
-
 <div class="avert">
   <p><strong>Trois conséquences, et la troisième est celle qu'on oublie.</strong> <em>Un</em> : <strong>la porte G-5 conditionne le Livre IV entier</strong> et n'était pas franchie à la rédaction — <strong>l'arbitrage du risque 14 est la décision d'auteur D-2</strong>, que <strong>ce chapitre ne consomme pas</strong>. ⚠ <strong>La table détaillée du plan nomme encore D-7 pour ce risque</strong> — forme antérieure à l'affectation de D-7 au risque 15 —, <em>et c'est le PRD qui fait foi sur la gouvernance : déviation déclarée</em> (décision 8). ⚠ <strong>Elle a été prise depuis, le 27 juillet 2026, par une autre passe et après cette rédaction</strong> : <em>sections dans l'existant, sans chapitre neuf</em> — <strong>des sections que ce Livre n'a pas écrites</strong>, et <em>le risque 14 n'en est pas comblé pour autant.</em> <em>Deux</em> : <strong>le ch. 37 § 37.6 le rencontre par l'autre bout</strong> — l'admission par passerelle y est nommée comme contrôle de chaîne d'approvisionnement, et <strong>ce qui exécute l'appel après l'admission n'y est pas traité davantage</strong>. <em>Trois</em> : ⚠ <strong>le plafond de cinquante chapitres rend le comblement coûteux et le déclare</strong> — <em>un chapitre neuf sur le harnais serait interdit sans la fusion qui le paie</em> (décision 13 du TOC). <strong>Le plafond ne tranche pas le risque 14 ; il en rend le coût explicite.</strong> ⚠ <strong>Et c'est sur cette contrainte-là que D-2 a écarté l'issue « chapitre neuf »</strong> — <em>par une contrainte de plan, non par un jugement de fond</em>, la décision le déclarant elle-même.</p>
 </div>
-
 <div class="avert">
   <p><strong>Le socle ne documente pas la couche d'exécution agentique</strong> : absence de documentation, non fait négatif vérifié (degré 3). <em>Et cette absence-ci n'est pas de la même nature que les autres du chapitre : les précédentes portent sur une matière que la somme prétend traiter, celle-ci sur une matière qu'elle déclare ne pas traiter.</em></p>
 </div>
-
-<p>## Synthèse : ce que le chapitre lègue à la somme</p>
-
+<h3>Synthèse : ce que le chapitre lègue à la somme</h3>
 <p><em>Section de sortie sans homologue direct dans la source — construction d'éditeur.</em></p>
-
 <div class="avert">
   <p><strong>Ce chapitre lègue moins que les autres, et le déclarer est le premier de ses legs.</strong></p>
 </div>
-
-<ol class="numeros">
-  <li><strong>La désambiguïsation d'« agent factory ».</strong> <strong>Quatre emplois, dont trois vivent dans le plan de la somme</strong> : le plan de production ici, la fabrique d'identité au <strong>ch. 43 § 43.1</strong>, le patron <em>factory</em> à l'<strong>Annexe G</strong> ; le quatrième est un titre d'éditeur. <strong>Aucun chapitre n'emploie le mot sans que le sens soit déterminable de sa phrase.</strong> <em>C'est le seul legs du chapitre qui ne dépende d'aucune instruction.</em></li>
-  <li><strong>Une question, posée une fois</strong> : <em>d'où vient l'agent admis, et par quel geste est-il réémis quand la mesure le condamne ?</em> Les <strong>ch. 37 à 40</strong> ne la posent pas ; <strong>elle est ici, et elle y est ouverte, non résolue</strong>.</li>
-  <li><strong>Quatre conditions de réfutation</strong>, dont <strong>deux sont les transpositions déclarées de celles du ch. 37 § 37.9</strong>. ⚠ <em>Une transposition est une lecture — le déclarer est ce qui la distingue d'un constat.</em></li>
-  <li><strong>Le rappel que le risque 14 n'est pas comblé.</strong> ⚠ <strong>C'est un legs négatif, et le plus opposable du chapitre</strong> : le <strong>ch. 49 § 49.12</strong> tient le registre des lacunes résiduelles, <strong>et celle-ci en fera partie quelle que soit l'issue de D-8</strong>.</li>
-  <li><strong>Cinq lots d'instruction formulés</strong>, avec leur corpus et leur critère de clôture (§ 41.2, § 41.3, § 41.4, § 41.5, § 41.7). ⚠ <strong>C'est ce que le chapitre produit <em>à la place</em> d'un contenu</strong>, et <em>une instruction infructueuse resterait un résultat.</em></li>
+<ol type="1">
+<li><strong>La désambiguïsation d'« agent factory ».</strong> <strong>Quatre emplois, dont trois vivent dans le plan de la somme</strong> : le plan de production ici, la fabrique d'identité au <strong>ch. 43 § 43.1</strong>, le patron <em>factory</em> à l'<strong>Annexe G</strong> ; le quatrième est un titre d'éditeur. ⚠ <strong>L'Annexe G n'est pas rédigée et ne le sera pas</strong> (décision 26 du TOC, 2 septembre 2026) : <em>son siège est le catalogue de patrons du <strong>Vol. III</strong>, <code>annexe-e-catalogue-patrons.md</code></em> — <strong>et l'Annexe E, glossaire, a le sien au <code>annexe-d-glossaire.md</code> des Vol. II et III</strong>. <em>Les deux renvois de cette pièce désignent donc un texte qui existe, au lieu d'attendre un texte qui ne viendra pas.</em> <strong>Aucun chapitre n'emploie le mot sans que le sens soit déterminable de sa phrase.</strong> <em>C'est le seul legs du chapitre qui ne dépende d'aucune instruction.</em></li>
+<li><strong>Une question, posée une fois</strong> : <em>d'où vient l'agent admis, et par quel geste est-il réémis quand la mesure le condamne ?</em> Les <strong>ch. 37 à 40</strong> ne la posent pas ; <strong>elle est ici, et elle y est ouverte, non résolue</strong>.</li>
+<li><strong>Quatre conditions de réfutation</strong>, dont <strong>deux sont les transpositions déclarées de celles du ch. 37 § 37.9</strong>. ⚠ <em>Une transposition est une lecture — le déclarer est ce qui la distingue d'un constat.</em></li>
+<li><strong>Le rappel que le risque 14 n'est pas comblé.</strong> ⚠ <strong>C'est un legs négatif, et le plus opposable du chapitre</strong> : le <strong>ch. 49 § 49.12</strong> tient le registre des lacunes résiduelles, <strong>et celle-ci en fera partie quelle que soit l'issue de D-8</strong>.</li>
+<li><strong>Cinq lots d'instruction formulés</strong>, avec leur corpus et leur critère de clôture (§ 41.2, § 41.3, § 41.4, § 41.5, § 41.7). ⚠ <strong>C'est ce que le chapitre produit <em>à la place</em> d'un contenu</strong>, et <em>une instruction infructueuse resterait un résultat.</em></li>
 </ol>
-
 <div class="avert">
   <p><strong>Ce que le chapitre ne lègue pas — et la liste est longue à dessein.</strong> Aucun <strong>fait</strong>. Aucune <strong>entrée de socle</strong>. Aucun <strong>chiffre</strong>, aucun <strong>seuil</strong>, aucun <strong>délai</strong>. Aucun <strong>outil nommé</strong>, aucune <strong>organisation nommée</strong>. Aucun <strong>modèle de maturité</strong> — <em>son siège est au ch. 43 § 43.5</em>. Aucune <strong>recette d'organisation</strong>. Et <strong>aucune garantie de survie</strong> : <em>D-8 a maintenu le chapitre sous réserve et laissé le retrait comme issue si les cinq lots échouent</em> — <strong>il disparaîtrait alors, et les ch. 42-50 redeviendraient les ch. 41-49</strong> ; la renumérotation inverse est prévue, et elle est le prix déclaré de l'insertion. ⚠ <strong>La fourchette « ch. 42-51 » que ce paragraphe portait décrivait l'état v0.22 du plan, à cinquante et un chapitres</strong> : <em>elle est périmée depuis la <strong>fusion v0.23</strong>, qui a payé l'insertion et ramené le plan à cinquante — un retrait ferait donc revenir neuf chapitres, non dix.</em> <strong>La carte de la décision 13d se chaîne à celle de la 12b ; elle ne la réécrit pas.</strong></p>
 </div>
+<hr />
 
 <footer class="pied">
   <p><strong>Vol. IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em></strong> · Livre IV, chapitre 41. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau, M.Sc. IT.</p>
-
   <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme (gel unique : 27 juillet 2026).</p>
-  <p><strong>†</strong> Renvoi à une section retirée de ce rendu — la note de statut, hors corps — conservée au fichier Markdown jumeau.</p>
 </footer>
 
 </main>

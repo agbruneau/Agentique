@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chapitre 47 — L&#x27;artefact livré : provenance des composants et mise en service · Interopérabilité et Orchestration en Entreprise Agentique</title>
-<meta name="description" content="Livre V — Livrer et clore : l&#x27;agent comme livrable logiciel, horizon et frontière. Premier mouvement — l&#x27;agent comme livrable logiciel : provenance, mise en service, sémantique d&#x27;effet (ch. 47-48). Chapitre d&#x27;ouverture du Livre, et chapitre à deux mouvements issu de la fusion v0.23 des ch. 47 et 48 ">
+<meta name="description" content="Livre V — Livrer et clore : l&#x27;agent comme livrable logiciel, horizon et frontière. Premier mouvement — l&#x27;agent comme livrable logiciel : provenance, mise en service, sémantique d&#x27;effet (ch. 47-48). Chapitre d&#x27;ouverture du Livre, et **chapitre à deux mouvements** issu de la fusion v0.23 des ch. 47 et 48 de la v0.22 : il porte deux thèses, deux lignes Fusion et deux tables d&#x27;appuis, conservées intégralement (décision 13 du TOC)">
 <meta name="author" content="André-Guy Bruneau, M.Sc. IT">
 <meta name="color-scheme" content="dark">
 <style>
@@ -443,6 +443,17 @@ tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
 tbody td:first-child { color: var(--texte); font-weight: 600; }
 .legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
 
+/* -------------------------------------------------------------- figures */
+/* Les SVG du volume sont dessinés pour le PDF, donc sur fond clair, et ils
+   portent ce fond eux-mêmes — sans quoi il faudrait maintenir deux variantes
+   de chaque figure. Sur ce thème sombre, ils se posent donc comme un carton ;
+   le padding empêche le fond de la figure de toucher le bord du cadre. */
+.figure { margin: 2.1rem 0 1.9rem; }
+.figure img { display: block; width: 100%; height: auto; border-radius: 7px;
+              border: 1px solid var(--trait); background: #fdfbf9; padding: 0.6rem; }
+.figure figcaption { font-size: 0.8rem; font-style: italic; color: var(--texte-faible);
+                     margin-top: 0.65rem; padding-left: 0.15rem; }
+
 /* --------------------------------------------------------------- listes */
 ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
 ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
@@ -531,18 +542,18 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <div class="nav__marque">Interopérabilité et Orchestration en Entreprise Agentique</div>
   <div class="nav__sous">Livre V · Chapitre 47</div>
   <ol>
-    <li><a href="#s471"><span class="num">47.1</span>L&#x27;agent comme artefact composé</a></li>
-    <li><a href="#s472"><span class="num">47.2</span>Nomenclatures logicielles et d&#x27;IA : état des normes et de l&#x27;outillage</a></li>
-    <li><a href="#s473"><span class="num">47.3</span>Signature et attestation d&#x27;artefacts</a></li>
-    <li><a href="#s474"><span class="num">47.4</span>Le rug-pull du ch. 20 relu comme défaut de provenance</a></li>
+    <li><a href="#s471"><span class="num">47.1</span>L'agent comme artefact composé</a></li>
+    <li><a href="#s472"><span class="num">47.2</span>Nomenclatures logicielles et d'IA : état des normes et de l'outillage</a></li>
+    <li><a href="#s473"><span class="num">47.3</span>Signature et attestation d'artefacts</a></li>
+    <li><a href="#s474"><span class="num">47.4</span>Le <em>rug-pull</em> du ch. 20 relu comme défaut de provenance</a></li>
     <li><a href="#s475"><span class="num">47.5</span>La provenance comme pièce candidate du passeport du ch. 16</a></li>
-    <li><a href="#s476"><span class="num">47.6</span>Les divulgations de chaîne d&#x27;approvisionnement du 1ᵉʳ semestre 2026</a></li>
-    <li><a href="#s477"><span class="num">47.7</span>Relève v0.10 : l&#x27;extension déclarative, composant que la nomenclature ne voit pas</a></li>
+    <li><a href="#s476"><span class="num">47.6</span>Les divulgations de chaîne d'approvisionnement du 1ᵉʳ semestre 2026</a></li>
+    <li><a href="#s477"><span class="num">47.7</span>Relève v0.10 : l'extension déclarative, composant que la nomenclature ne voit pas</a></li>
     <li><a href="#s478"><span class="num">47.8</span>Le versionnement à cinq horloges</a></li>
-    <li><a href="#s479"><span class="num">47.9</span>Jeux d&#x27;essai de référence et barrière d&#x27;évaluation au déploiement</a></li>
+    <li><a href="#s479"><span class="num">47.9</span>Jeux d'essai de référence et barrière d'évaluation au déploiement</a></li>
     <li><a href="#s4710"><span class="num">47.10</span>Promotion par environnements et GitOps du parc</a></li>
-    <li><a href="#s4711"><span class="num">47.11</span>Retour arrière d&#x27;un artefact à état</a></li>
-    <li><a href="#s4712"><span class="num">47.12</span>L&#x27;enregistrement de version au registre du ch. 15</a></li>
+    <li><a href="#s4711"><span class="num">47.11</span>Retour arrière d'un artefact à état</a></li>
+    <li><a href="#s4712"><span class="num">47.12</span>L'enregistrement de version au registre du ch. 15</a></li>
   </ol>
   <div class="nav__pied">
     Vol.&nbsp;IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em><br>
@@ -556,264 +567,276 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 <header class="titre">
   <div class="titre__fil">Livre V — Livrer et clore : l&#x27;agent comme livrable logiciel, horizon et frontière</div>
   <h1><span class="chap">Chapitre 47</span>L&#x27;artefact livré : provenance des composants et mise en service</h1>
-  <p class="titre__situe">Livre V — Livrer et clore : l'agent comme livrable logiciel, horizon et frontière. Premier mouvement — l'agent comme livrable logiciel : provenance, mise en service, sémantique d'effet (ch. 47-48). Chapitre d'ouverture du Livre, et <strong>chapitre à deux mouvements</strong> issu de la fusion v0.23 des ch. 47 et 48 de la v0.22 : il porte deux thèses, deux lignes Fusion et deux tables d'appuis, conservées intégralement (décision 13 du TOC)</p>
+  <p class="titre__situe">Livre V — Livrer et clore : l'agent comme livrable logiciel, horizon et frontière. Premier mouvement — l'agent comme livrable logiciel : provenance, mise en service, sémantique d'effet (ch. 47-48). Chapitre d'ouverture du Livre, et **chapitre à deux mouvements** issu de la fusion v0.23 des ch. 47 et 48 de la v0.22 : il porte deux thèses, deux lignes Fusion et deux tables d'appuis, conservées intégralement (décision 13 du TOC)</p>
 </header>
 
 <!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
      Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
-     que `build/assemble.py` pour le PDF. L'appareil de gouvernance vit au .md jumeau, qui reste la
-     seule source, et `verifier-piece.py` [6] refuse désormais un rendu qui le recopierait. -->
+     que `build/assemble.py` pour le PDF et que `PRD/decompte.sh` pour la volumétrie. L'appareil de
+     gouvernance vit au .md jumeau, qui reste la seule source, et `build/verifier-piece.py` refuse
+     un rendu qui le recopierait. -->
 
 <div class="avert">
-  <p><strong>Les deux mouvements portent leur ancien titre, comme la décision 13a du TOC l'exige de toute fusion</strong> — <em>une fusion supprime un en-tête de chapitre, jamais un intitulé de mouvement, et un lecteur qui entre par le milieu doit pouvoir savoir de quel objet il lit.</em></p>
+  <p><strong>Les deux mouvements portent leur ancien titre, comme la décision 13a du TOC l'exige de toute fusion</strong> — <em>une fusion supprime un en-tête de chapitre, jamais un intitulé de mouvement, et un lecteur qui entre par le milieu doit pouvoir savoir quel objet il lit.</em></p>
 </div>
-
 <p><strong>Premier mouvement — La provenance des composants : de quoi un agent est fait</strong> <em>(ch. 47 de la v0.22)</em> — thèse citée en tête ; sections <strong>§ 47.1 à § 47.7</strong>.</p>
-
 <p><strong>Second mouvement — La mise en service d'un artefact non reproductible</strong> <em>(ch. 48 de la v0.22)</em> — thèse ci-dessous ; sections <strong>§ 47.8 à § 47.12</strong>, renumérotées à la suite du premier mouvement.</p>
-
-<div class="encadre encadre--oeuvre">
-  <span class="encadre__label">Note</span>
-  <p><strong>Thèse du second mouvement</strong>, citée depuis le TOC v0.30, entrée du chapitre 47 — mettre en service un agent dont le comportement n'est pas reproductible à l'identique exige une discipline propre — jeux d'essai de référence, barrière d'évaluation au déploiement, versionnement à <strong>cinq</strong> horloges (modèle, invites, outils, politique — et le <strong>harnais</strong>, porteur de version autonome des quatre) — sans laquelle l'évaluation continue du ch. 39 mesure un artefact que l'organisation ne sait pas même désigner.</p>
-</div>
-
+<blockquote>
+<p><strong>Thèse du second mouvement</strong>, citée depuis le TOC v0.30, entrée du chapitre 47 — mettre en service un agent dont le comportement n'est pas reproductible à l'identique exige une discipline propre — jeux d'essai de référence, barrière d'évaluation au déploiement, versionnement à <strong>cinq</strong> horloges (modèle, invites, outils, politique — et le <strong>harnais</strong>, porteur de version autonome des quatre) — sans laquelle l'évaluation continue du ch. 39 mesure un artefact que l'organisation ne sait pas même désigner.</p>
+</blockquote>
 <div class="avert">
   <p><strong>Thèse réalignée au TOC v0.26</strong> (décisions 8 et 14), sur la remontée <strong>R-IV-62</strong> ouverte par cette pièce, <strong>et inchangée depuis — les deux thèses ont été collationnées mot à mot contre la v0.30, sans écart</strong>. La forme antérieure comptait <strong>quatre</strong> horloges ; la relève v0.10 en exhibait un <strong>cinquième porteur</strong> — le harnais —, et <em>la pièce avait écrit son corps sous la forme bornée avant de remonter, parce que la cinquième horloge est la matière du <strong>risque 14</strong>, dont l'arbitrage est une décision d'auteur.</em> ☑ <strong>D-2 est prise le 27 juillet 2026 — sections dans l'existant, sans chapitre neuf</strong> : le <strong>§ 47.8.1 est l'un des deux points d'atterrissage reconnus</strong>, avec le ch. 50 § 50.2. <strong>Le corps du chapitre n'a pas changé</strong> : il portait déjà la relève, sa qualification et son blocage. ⚠ <em>Le risque 14 est <strong>borné, non comblé</strong> — la somme n'a toujours aucun chapitre de la couche d'exécution.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>Deux thèses pour un chapitre, et les deux portent la même marque.</strong> Le ch. 47 est issu de la fusion v0.23 des ch. 47 et 48 de la v0.22 ; les deux entrées y sont conservées intégralement (décision 13a du TOC). <strong>Chacune des deux est déclarée <em>construction d'auteur, socle à constituer</em> par le TOC lui-même</strong> — ce qui est sans équivalent dans les vingt et une pièces des Livres I et II, où la thèse citée était toujours adossée à un volume source. <em>Citer verbatim une thèse que son propre plan déclare sans socle n'en fait pas un énoncé du chapitre</em> : les deux sont reprises comme <strong>programme de travail</strong>, et la décision 8 du TOC s'y applique doublement, comme le TOC l'écrit.</p>
 </div>
-
 <h2 id="s471"><span class="sig">§ 47.1</span>L'agent comme artefact composé</h2>
-
 <p>Les vingt et un chapitres rédigés du Livre I et du Livre II ont traité l'agent comme un <strong>interlocuteur</strong> : qui parle à quoi (ch. 8 à 11), sous quelle autorité (ch. 12 à 21). Ce chapitre le traite comme un <strong>artefact</strong> — une chose qu'une organisation assemble, signe, livre, met en service, remplace. C'est le déplacement que l'audit de couverture du 19 juillet 2026 a nommé en établissant qu'aucun des trois volumes ne le porte — ⚠ <em>constat de cet audit, non balayage de la présente pièce.</em></p>
-
 <p><span class="auteur">Lecture de l'auteur</span> l'inventaire qui suit est une construction de ce chapitre. <strong>Ce que le socle établit</strong> : rien, et cette ligne n'est pas une figure de style — le socle consolidé existe depuis le 28 juillet 2026, ce chapitre n'y a <strong>aucune entrée</strong>, et aucune des cinq lignes du tableau 47.1 ne résout contre une entrée numérotée d'aucun socle. <strong>Ce qu'il n'établit pas</strong> : que ces cinq composants soient les bons, qu'ils épuisent la composition d'un agent, ni qu'un inventaire soit le bon instrument pour la décrire. L'inventaire vaut comme <strong>vocabulaire de travail</strong>, non comme résultat.</p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Composant</th><th>Ce qui le fait changer</th><th>Qui en décide</th><th>Où la somme en traite</th></tr></thead>
-  <tbody>
-    <tr><td><strong>Poids de modèle</strong></td><td>version publiée par son fournisseur ; retrait d'une version antérieure</td><td>le fournisseur, pas l'exploitant</td><td>ch. 6 § 6.3 (évaluation) ; § 47.8</td></tr>
-    <tr><td><strong>Serveurs d'outils</strong></td><td>révision d'une définition d'outil ; ajout ou retrait d'un serveur</td><td>l'éditeur du serveur, et le protocole autorise le changement à l'exécution</td><td><strong>ch. 20 § 20.1</strong> (siège du retournement) ; § 47.4</td></tr>
-    <tr><td><strong>Bibliothèques et hôte d'exécution</strong></td><td>mise à jour de dépendance ; correctif de sécurité</td><td>la chaîne de distribution du logiciel</td><td>§ 47.2, § 47.3</td></tr>
-    <tr><td><strong>Invites et fichiers d'instructions</strong></td><td>édition d'un fichier, sans compilation ni déploiement</td><td>quiconque a accès au dépôt ou au répertoire de configuration</td><td>§ 47.7 (relève v0.10) ; § 47.8</td></tr>
-    <tr><td><strong>Politique d'autorisation</strong></td><td>révision d'une règle, d'une portée, d'un seuil d'approbation</td><td>l'exploitant, et c'est le seul des cinq</td><td>ch. 3 (socle IAM) ; § 47.8</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Composant</th>
+<th>Ce qui le fait changer</th>
+<th>Qui en décide</th>
+<th>Où la somme en traite</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Poids de modèle</strong></td>
+<td>version publiée par son fournisseur ; retrait d'une version antérieure</td>
+<td>le fournisseur, pas l'exploitant</td>
+<td>ch. 6 § 6.3 (évaluation) ; § 47.8</td>
+</tr>
+<tr>
+<td><strong>Serveurs d'outils</strong></td>
+<td>révision d'une définition d'outil ; ajout ou retrait d'un serveur</td>
+<td>l'éditeur du serveur, et le protocole autorise le changement à l'exécution</td>
+<td><strong>ch. 20 § 20.1</strong> (siège du retournement) ; § 47.4</td>
+</tr>
+<tr>
+<td><strong>Bibliothèques et hôte d'exécution</strong></td>
+<td>mise à jour de dépendance ; correctif de sécurité</td>
+<td>la chaîne de distribution du logiciel</td>
+<td>§ 47.2, § 47.3</td>
+</tr>
+<tr>
+<td><strong>Invites et fichiers d'instructions</strong></td>
+<td>édition d'un fichier, sans compilation ni déploiement</td>
+<td>quiconque a accès au dépôt ou au répertoire de configuration</td>
+<td>§ 47.7 (relève v0.10) ; § 47.8</td>
+</tr>
+<tr>
+<td><strong>Politique d'autorisation</strong></td>
+<td>révision d'une règle, d'une portée, d'un seuil d'approbation</td>
+<td>l'exploitant, et c'est le seul des cinq</td>
+<td>ch. 3 (socle IAM) ; § 47.8</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 47.1 — Les cinq composants d'un agent et leurs horloges propres, construction d'auteur du présent chapitre au 27 juillet 2026. <strong>Aucune ligne ne résout contre une entrée de socle</strong> ; la colonne de droite renvoie aux sièges qui traitent la matière, jamais à une source qui l'établirait.</p>
-
-<p><strong>Ce que l'inventaire fait voir, et qui est la seule chose qu'il établisse : les cinq horloges ne sont pas synchrones, et une seule appartient à l'exploitant.</strong> Un agent dont la politique n'a pas changé depuis six mois peut avoir changé quatre fois de comportement observable : nouveau millésime de modèle, définition d'outil révisée, dépendance mise à jour, fichier d'instructions édité. <em>La question « quelle version de cet agent est en production » n'a donc pas de réponse à un seul terme</em> — c'est le constat que le § 47.8 reprend sous le nom de <strong>versionnement à cinq horloges</strong>,</p>
-
-<div class="avert">
-  <p><em>dont le quintet ne se superpose pas à celui de ce tableau : le § 47.8 le déclare plutôt que de les fondre.</em></p>
-</div>
-
+<p><strong>Ce que l'inventaire fait voir, et qui est la seule chose qu'il établisse : les cinq horloges ne sont pas synchrones, et une seule appartient à l'exploitant.</strong> Un agent dont la politique n'a pas changé depuis six mois peut avoir changé quatre fois de comportement observable : nouveau millésime de modèle, définition d'outil révisée, dépendance mise à jour, fichier d'instructions édité. <em>La question « quelle version de cet agent est en production » n'a donc pas de réponse à un seul terme</em> — c'est le constat que le § 47.8 reprend sous le nom de <strong>versionnement à cinq horloges</strong>, ⚠ <em>dont le quintet ne se superpose pas à celui de ce tableau : le § 47.8 le déclare plutôt que de les fondre.</em></p>
 <div class="avert">
   <p><strong>Ce que la thèse citée affirme, et le seul point où ce chapitre peut l'appuyer sur du texte rédigé.</strong> « L'identité du Livre II certifie le porteur, jamais la composition » : le <strong>tableau 16.1 du ch. 16 § 16.1</strong> énumère les quatre pièces du passeport et, pour chacune, ce que le socle établit et n'établit pas. <strong>Aucune des quatre ne porte un composant</strong> — la carte signée démontre l'intégrité d'un contenu canonicalisé au regard d'une clé, l'inscription au registre porte des outils invocables et des bornes de portée, la chaîne de mandat exprime une délégation, les attestations de conformité n'ont qu'un nom de champ facultatif. <em>La thèse se vérifie donc par l'absence d'une ligne dans une table rédigée, ce qui est une vérification faible mais réelle</em> — et c'est tout ce dont ce chapitre dispose. <strong>Elle ne se vérifie pas comme un fait négatif</strong> : le socle que mobilise le ch. 16 ne documente pas de mécanisme d'identité portant la composition, et <em>c'est une absence de documentation, non un fait négatif vérifié</em> (degré 3 de l'échelle R-14 du Vol. III).</p>
 </div>
-
+<figure class="figure">
+  <img src="../figures/f-47-01-cinq-horloges.svg" alt="Figure 47.1 — Les cinq composants d&#39;un agent et leurs horloges propres : ce qui les fait changer, et qui en décide." />
+  <figcaption><strong>Figure 47.1</strong> — Les cinq composants d'un agent et leurs horloges propres : ce qui les fait changer, et qui en décide.</figcaption>
+</figure>
 <h2 id="s472"><span class="sig">§ 47.2</span>Nomenclatures logicielles et d'IA : état des normes et de l'outillage</h2>
-
 <div class="avert">
   <p><strong>Cette section est l'une des deux du chapitre dont le plan déclare le socle « à constituer avant rédaction », et la manière dont elle est écrite en découle entièrement.</strong> La ligne Fusion porte « <em>sources primaires à constituer</em> » ; elles ne l'ont pas été. Le seul geste admissible est donc d'<strong>exposer l'état de ce qui a été relevé, et de formuler le lot d'instruction</strong> — jamais d'écrire le contenu d'une spécification qu'on n'a pas ouverte. <em>C'est la règle que le § 17.5 du ch. 17 a établie au prix d'une remontée bloquante et d'une décision d'auteur (D-9) ; elle s'applique ici sans adaptation.</em></p>
 </div>
-
 <p><strong>Ce que le plan porte, et à quel régime.</strong> La relève v0.19, versée au TOC le 26 juillet 2026, nomme <strong>cinq documents</strong> que la ligne Fusion ne nommait pas, tous relevés à leur source ce jour-là. Le tableau ci-dessous les reprend <strong>avec leurs réserves d'origine</strong>, sans en ajouter ni en retirer.</p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Document relevé</th><th>Ce que la relève porte</th><th>Réserve portée par la relève elle-même</th></tr></thead>
-  <tbody>
-    <tr><td><strong>SLSA v1.2</strong></td><td>statut <em>approuvé</em>, publiée sous la <strong>Fondation Linux</strong>, organisée en <strong>deux pistes</strong> — <em>Build</em> et <em>Source</em> ; ☑ <strong>approuvée le 24 novembre 2025</strong>, précédée de deux candidates (20 juin et 10 novembre 2025)</td><td>☑ <strong>Réserve LEVÉE le 30 juillet 2026</strong> sur le journal du projet, lu à sa source : <em>la page de spécification porte le statut sans la date, l'annonce porte la date</em> — ⚠ <strong>l'énumération des niveaux, elle, reste non relevée</strong></td></tr>
-    <tr><td><strong><em>in-toto Attestation Framework</strong></em> (spécification v1)</td><td>cadre d'attestation du projet <em>in-toto</em>, hébergé par la <strong>CNCF</strong></td><td>⚠ le <strong>niveau de maturité CNCF</strong> du projet <strong>n'est pas porté</strong> par la page relevée</td></tr>
-    <tr><td><strong>CycloneDX 1.7</strong></td><td>publiée le <strong>21 octobre 2025</strong> par l'<strong>OWASP</strong> et <strong>Ecma International</strong>, <strong>normalisée ECMA-424 le 10 décembre 2025</strong> ; ☑ précision relevée le 30 juillet 2026 : c'en est la <strong>2ᵉ édition</strong>, la 1ʳᵉ ayant normalisé <strong>CycloneDX 1.6</strong> en juin 2024</td><td>fait à distinguer d'un format d'éditeur : c'est une nomenclature devenue <strong>norme d'organisme</strong>. ⚠ <strong>Et l'édition compte</strong> : <em>une norme d'organisme qui en est à sa deuxième édition en dix-huit mois se cite avec son édition, faute de quoi « ECMA-424 » désigne deux textes</em></td></tr>
-    <tr><td><strong>SPDX 3.0</strong></td><td>courante ; le projet se déclare norme internationale <strong>ISO/IEC 5962:2021</strong></td><td>☑ ⚠ <strong>Réserve LEVÉE le 30 juillet 2026, et elle se résout CONTRE l'énoncé du projet.</strong> La norme s'intitule <em>Information technology — SPDX® Specification V2.2.1</em> : <strong>ISO/IEC 5962:2021 fixe SPDX 2.2.1, non 3.x.</strong> <em>Le projet est fondé à se dire normalisé et il ne l'est pas dans la version qu'il sert</em> — c'est exactement l'écart que la réserve pressentait, et la prudence du relevé était justifiée</td></tr>
-    <tr><td><strong>NIST SP 800-218A</strong></td><td><em>Secure Software Development Practices for Generative AI and Dual-Use Foundation Models: An SSDF Community Profile</em>, <strong>finale, 26 juillet 2024</strong> ; profil communautaire du <strong>SSDF v1.1</strong>, adressé aux producteurs de modèles, aux producteurs de systèmes qui les emploient et à leurs acquéreurs</td><td><strong>profil</strong>, non norme imposant conformité</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Document relevé</th>
+<th>Ce que la relève porte</th>
+<th>Réserve portée par la relève elle-même</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>SLSA v1.2</strong></td>
+<td>statut <em>approuvé</em>, publiée sous la <strong>Fondation Linux</strong>, organisée en <strong>deux pistes</strong> — <em>Build</em> et <em>Source</em> ; ☑ <strong>approuvée le 24 novembre 2025</strong>, précédée de deux candidates (20 juin et 10 novembre 2025)</td>
+<td>☑ <strong>Réserve LEVÉE le 30 juillet 2026</strong> sur le journal du projet, lu à sa source : <em>la page de spécification porte le statut sans la date, l'annonce porte la date</em> — ⚠ <strong>l'énumération des niveaux, elle, reste non relevée</strong></td>
+</tr>
+<tr>
+<td><strong><em>in-toto Attestation Framework</em></strong> (spécification v1)</td>
+<td>cadre d'attestation du projet <em>in-toto</em>, hébergé par la <strong>CNCF</strong></td>
+<td>⚠ le <strong>niveau de maturité CNCF</strong> du projet <strong>n'est pas porté</strong> par la page relevée</td>
+</tr>
+<tr>
+<td><strong>CycloneDX 1.7</strong></td>
+<td>publiée le <strong>21 octobre 2025</strong> par l'<strong>OWASP</strong> et <strong>Ecma International</strong>, <strong>normalisée ECMA-424 le 10 décembre 2025</strong> ; ☑ précision relevée le 30 juillet 2026 : c'en est la <strong>2ᵉ édition</strong>, la 1ʳᵉ ayant normalisé <strong>CycloneDX 1.6</strong> en juin 2024</td>
+<td>fait à distinguer d'un format d'éditeur : c'est une nomenclature devenue <strong>norme d'organisme</strong>. ⚠ <strong>Et l'édition compte</strong> : <em>une norme d'organisme qui en est à sa deuxième édition en dix-huit mois se cite avec son édition, faute de quoi « ECMA-424 » désigne deux textes</em></td>
+</tr>
+<tr>
+<td><strong>SPDX 3.0</strong></td>
+<td>courante ; le projet se déclare norme internationale <strong>ISO/IEC 5962:2021</strong></td>
+<td>☑ ⚠ <strong>Réserve LEVÉE le 30 juillet 2026, et elle se résout CONTRE l'énoncé du projet.</strong> La norme s'intitule <em>Information technology — SPDX® Specification V2.2.1</em> : <strong>ISO/IEC 5962:2021 fixe SPDX 2.2.1, non 3.x.</strong> <em>Le projet est fondé à se dire normalisé et il ne l'est pas dans la version qu'il sert</em> — c'est exactement l'écart que la réserve pressentait, et la prudence du relevé était justifiée</td>
+</tr>
+<tr>
+<td><strong>NIST SP 800-218A</strong></td>
+<td><em>Secure Software Development Practices for Generative AI and Dual-Use Foundation Models: An SSDF Community Profile</em>, <strong>finale, 26 juillet 2024</strong> ; profil communautaire du <strong>SSDF v1.1</strong>, adressé aux producteurs de modèles, aux producteurs de systèmes qui les emploient et à leurs acquéreurs</td>
+<td><strong>profil</strong>, non norme imposant conformité</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 47.2 — Les cinq documents de la relève v0.19 pour les nomenclatures et la signature d'artefacts, relevés à leur source le 26 juillet 2026. ⚠ <strong>Aucun n'entre au socle</strong> — ce chapitre n'en a pas, la décision 9 du TOC le déclare : ce sont des <strong>candidates à instruire</strong>, jamais des faits acquis. ⚠ <strong>Les organismes publiants sont nommés, et ils ne sont pas anonymisables</strong> : <em>un lot d'instruction dont le corpus ne porte pas l'identifiant de ses sources n'a pas de critère de clôture exécutable</em>, et la parade de péremption qui vaut pour une dénomination commerciale ne vaut pas pour l'éditeur d'une spécification.</p>
-
 <div class="avert">
   <p><strong>Trois choses que cette table ne dit pas, et qu'aucune lecture ne doit lui prêter.</strong> <em>(1)</em> Elle ne dit pas <strong>ce que chacune de ces spécifications prescrit</strong> : le contenu normatif n'a pas été ouvert, et <em>une notice de page n'est pas un texte</em>. <em>(2)</em> Elle ne dit pas qu'elles soient <strong>adoptées</strong> par quiconque : aucune métrique d'adoption n'a été relevée, et une métrique auto-déclarée devrait de toute façon être attribuée à sa source à chaque occurrence (PRD Vol. II §8.2). <em>(3)</em> Elle ne dit pas qu'elles <strong>s'appliquent à un agent</strong> : quatre des cinq portent sur le logiciel en général, la cinquième sur le développement de modèles, et <em>aucune ne nomme l'objet composé du § 47.1</em>. <strong>Le socle ne documente aucune nomenclature dont le périmètre déclaré couvre les cinq composants du tableau 47.1 — degré 3</strong>, et il ne s'ensuit pas qu'il n'en existe pas.</p>
 </div>
-
 <p><strong>La distinction que la relève établit, en revanche, et qui a une portée d'architecture.</strong> Une nomenclature <em>devenue norme d'organisme</em> — CycloneDX 1.7 par ECMA-424 — et un <em>format d'éditeur</em> n'ont pas le même régime d'évolution : la première a un forum, un cycle et une procédure de révision ; le second a un propriétaire. C'est exactement le critère que le ch. 49 § 49.3 applique aux forums de gouvernance, et le § 47.10 y revient au grain du déploiement. ⚠ <strong>Ce que la relève n'établit pas</strong> : que la normalisation confère l'interopérabilité. <em>Qualifier un mécanisme par ce que sa spécification démontre, jamais par ce qu'un statut de norme laisse attendre</em> (R-02 du Vol. III) — et rien de ce qui a été relevé ne démontre que deux outils lisant CycloneDX 1.7 produisent le même inventaire d'un même agent.</p>
-
 <p><strong>Le lot d'instruction, formulé pour qu'il puisse être ouvert.</strong> <em>Question</em> : existe-t-il une nomenclature dont la spécification prescrit la description des cinq composants d'un agent — poids de modèle, serveurs d'outils, bibliothèques, invites, politique —, et sous quelle forme vérifiable ? <em>Corpus à ouvrir</em> : les cinq documents du tableau 47.2 dans leur texte intégral, <strong>et la RFC 9334 du § 47.3</strong> ; les profils d'IA de CycloneDX et de SPDX s'ils existent ; le corps de NIST SP 800-218A pour ce qu'il attend d'un producteur de systèmes. <em>Critère de clôture</em> : un énoncé normatif, cité et daté, nommant un champ qui porte un composant de modèle ou d'invite — non une page de présentation, non un billet de projet. <em>Résultat d'un échec</em> : si le corpus ne porte pas cette description, l'échec est un résultat, il s'écrit, et la section garde la forme qu'elle a ici.</p>
-
 <h3>47.2.1 Exécution partielle du lot L1 — ce que les profils d'IA portent, et ce qu'ils ne portent pas</h3>
-
 <p>☑ ⚠ <strong>Le volet « profils d'IA » du corpus est INSTRUIT le 30 juillet 2026 (D-11), par lecture des schémas à leur source.</strong> <em>Deux des cinq documents cessent d'être des notices de page ; trois le demeurent.</em> Le critère de clôture exigeait « un énoncé normatif, cité et daté, nommant un champ qui porte un composant de modèle ou d'invite » — <strong>il est satisfait pour le modèle, et il ne l'est pas pour l'invite.</strong></p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Source lue</th><th>Ce que la spécification nomme</th></tr></thead>
-  <tbody>
-    <tr><td><strong>CycloneDX 1.7</strong>, schéma JSON (ECMA-424 2ᵉ éd.)</td><td>deux valeurs énumérées du type de composant : <strong><code>machine-learning-model</code></strong> — « un modèle fondé sur des données d'entraînement, capable de prédire ou de décider sans avoir été explicitement programmé pour cela » — et <strong><code>data</code></strong>, « une collection de valeurs discrètes porteuses d'information »</td></tr>
-    <tr><td><strong>SPDX 3.0</strong>, profil <strong>AI</strong></td><td>la classe <strong><code>AIPackage</code></strong> et ses <strong>dix-huit propriétés</strong>, dont <strong><code>typeOfModel</code></strong>, <strong><code>hyperparameter</code></strong>, <strong><code>modelDataPreprocessing</code></strong>, <strong><code>modelExplainability</code></strong>, <strong><code>limitation</code></strong>, <strong><code>metric</code></strong>, <strong><code>metricDecisionThreshold</code></strong>, <strong><code>autonomyType</code></strong>, <strong><code>safetyRiskAssessment</code></strong>, <strong><code>standardCompliance</code></strong>, <strong><code>useSensitivePersonalInformation</code></strong></td></tr>
-    <tr><td><strong>SPDX 3.0</strong>, profil <strong>Dataset</strong></td><td>la classe <strong><code>DatasetPackage</code></strong> et ses <strong>treize propriétés</strong>, dont <strong><code>datasetType</code></strong>, <strong><code>dataCollectionProcess</code></strong>, <strong><code>knownBias</code></strong>, <strong><code>intendedUse</code></strong>, <strong><code>confidentialityLevel</code></strong>, <strong><code>anonymizationMethodUsed</code></strong>, <strong><code>hasSensitivePersonalInformation</code></strong>, <strong><code>sensor</code></strong></td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Source lue</th>
+<th>Ce que la spécification nomme</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>CycloneDX 1.7</strong>, schéma JSON (ECMA-424 2ᵉ éd.)</td>
+<td>deux valeurs énumérées du type de composant : <strong><code>machine-learning-model</code></strong> — « un modèle fondé sur des données d'entraînement, capable de prédire ou de décider sans avoir été explicitement programmé pour cela » — et <strong><code>data</code></strong>, « une collection de valeurs discrètes porteuses d'information »</td>
+</tr>
+<tr>
+<td><strong>SPDX 3.0</strong>, profil <strong>AI</strong></td>
+<td>la classe <strong><code>AIPackage</code></strong> et ses <strong>dix-huit propriétés</strong>, dont <strong><code>typeOfModel</code></strong>, <strong><code>hyperparameter</code></strong>, <strong><code>modelDataPreprocessing</code></strong>, <strong><code>modelExplainability</code></strong>, <strong><code>limitation</code></strong>, <strong><code>metric</code></strong>, <strong><code>metricDecisionThreshold</code></strong>, <strong><code>autonomyType</code></strong>, <strong><code>safetyRiskAssessment</code></strong>, <strong><code>standardCompliance</code></strong>, <strong><code>useSensitivePersonalInformation</code></strong></td>
+</tr>
+<tr>
+<td><strong>SPDX 3.0</strong>, profil <strong>Dataset</strong></td>
+<td>la classe <strong><code>DatasetPackage</code></strong> et ses <strong>treize propriétés</strong>, dont <strong><code>datasetType</code></strong>, <strong><code>dataCollectionProcess</code></strong>, <strong><code>knownBias</code></strong>, <strong><code>intendedUse</code></strong>, <strong><code>confidentialityLevel</code></strong>, <strong><code>anonymizationMethodUsed</code></strong>, <strong><code>hasSensitivePersonalInformation</code></strong>, <strong><code>sensor</code></strong></td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 47.3 — Les champs normatifs relevés dans les profils d'IA et de jeu de données, lus à leur source le 30 juillet 2026.</p>
-
 <div class="avert">
   <p><strong>La réponse à la question du lot est donc PARTIELLE, et sa partition est le résultat.</strong> Des cinq composants du § 47.1 : les <strong>poids de modèle</strong> sont couverts par des champs nommés dans les deux nomenclatures ; les <strong>bibliothèques</strong> le sont par la nomenclature logicielle ordinaire, qui est l'objet historique des deux formats ; les <strong>jeux de données</strong> — que le § 47.1 ne comptait pas parmi les cinq — reçoivent un profil entier. ⚠ <strong>Mais les deux composants proprement agentiques n'ont AUCUN champ</strong> : <em>ni les <strong>invites</strong>, ni la <strong>politique</strong> d'autorisation ne portent de propriété dans l'un ou l'autre schéma</em>, et les <strong>serveurs d'outils</strong> n'y sont descriptibles que comme des composants logiciels quelconques, sans que rien n'exprime qu'un agent en dépend pour agir.</p>
 </div>
-
 <div class="avert">
-  <p><strong>Trois bornes sur ce résultat, et la seconde est celle qui compte pour la suite du chapitre.</strong> <em>(1)</em> <strong>Le relevé porte sur les schémas et les modèles de données, non sur les textes normatifs complets</strong> : <em>l'existence d'un champ est établie ; ce que la spécification en prescrit — obligation, cardinalité, sémantique — ne l'est pas.</em> <strong>Élévation partielle</strong>, et le lot L1 <strong>reste ouvert</strong> pour les trois autres documents (in-toto, SLSA, NIST SP 800-218A) et pour la RFC 9334. <em>(2)</em> ⚠ <strong>Le constat central du § 47.2 n'est pas levé — il est PRÉCISÉ, et il en sort plus fort.</strong> La formule « le socle ne documente aucune nomenclature dont le périmètre déclaré couvre les cinq composants — degré 3 » cesse d'être une absence de documentation : c'est désormais un <strong>fait négatif établi</strong>, borné aux deux nomenclatures lues et à leurs profils d'IA. <strong><em>Deux nomenclatures qui décrivent finement un modèle, ses hyperparamètres, son seuil de décision et son évaluation de risque, et qui n'ont pas un champ pour l'invite qui pilote l'agent : c'est la mesure exacte de l'écart entre l'outillage de l'IA et l'outillage de l'agentique.</strong></em> <em>(3)</em> ⚠ <strong>Rien de cela n'entre au socle</strong> : ce chapitre n'en a pas (décision 9 du TOC), et <strong>D-8 comme D-3 demeurent</strong> — <em>instruire un lot n'est pas constituer un socle</em>, et le retrait reste l'issue si les lots échouent.</p>
+  <p><strong>Trois bornes sur ce résultat, et la seconde est celle qui compte pour la suite du chapitre.</strong> <em>(1)</em> <strong>Le relevé porte sur les schémas et les modèles de données, non sur les textes normatifs complets</strong> : <em>l'existence d'un champ est établie ; ce que la spécification en prescrit — obligation, cardinalité, sémantique — ne l'est pas.</em> <strong>Élévation partielle</strong>, et le lot L1 <strong>reste ouvert</strong> pour les trois autres documents (in-toto, SLSA, NIST SP 800-218A) et pour la RFC 9334. <em>(2)</em> ⚠ <strong>Le constat central du § 47.2 n'est pas levé — il est PRÉCISÉ, et il en sort plus fort.</strong> La formule « le socle ne documente aucune nomenclature dont le périmètre déclaré couvre les cinq composants — degré 3 » cesse d'être une absence de documentation : c'est désormais un <strong>fait négatif établi</strong>, borné aux deux nomenclatures lues et à leurs profils d'IA. <strong><em>Deux nomenclatures qui décrivent finement un modèle, ses hyperparamètres, son seuil de décision et son évaluation de risque, et qui n'ont pas un champ pour l'invite qui pilote l'agent : c'est la mesure exacte de l'écart entre l'outillage de l'IA et l'outillage de l'agentique.</em></strong> <em>(3)</em> ⚠ <strong>Rien de cela n'entre au socle</strong> : ce chapitre n'en a pas (décision 9 du TOC), et <strong>D-8 comme D-3 demeurent</strong> — <em>instruire un lot n'est pas constituer un socle</em>, et le retrait reste l'issue si les lots échouent.</p>
 </div>
-
 <div class="avert">
   <p><strong>Un fait secondaire mérite d'être relevé parce qu'il touche le Livre III.</strong> Le profil <strong>AI</strong> de SPDX porte <strong><code>standardCompliance</code></strong>, <strong><code>safetyRiskAssessment</code></strong> et <strong><code>useSensitivePersonalInformation</code></strong>, et le profil <strong>Dataset</strong> porte <strong><code>hasSensitivePersonalInformation</code></strong> et <strong><code>anonymizationMethodUsed</code></strong> : <em>une nomenclature logicielle a commencé à porter des champs de conformité réglementaire.</em> <span class="auteur">Lecture de l'auteur</span> c'est un déplacement de la frontière entre inventaire technique et dossier de conformité, et <strong>le socle ne l'établit pas</strong> : ni l'usage effectif de ces champs, ni leur reconnaissance par un régulateur ne sont documentés. <em>Le champ existe ; que quiconque le remplisse ou l'exige demeure au degré 3.</em></p>
 </div>
-
 <h2 id="s473"><span class="sig">§ 47.3</span>Signature et attestation d'artefacts</h2>
-
 <p><strong>Le point de départ n'est pas dans ce chapitre : il est dans une section rédigée du Livre II, et il est négatif.</strong> Le <strong>ch. 20 § 20.3</strong> a posé la question — <em>existe-t-il un mécanisme documenté par lequel un vérificateur établit, à l'exécution, que ce qui s'exécute est ce qui avait été vérifié ?</em> — et conclu sur <strong>trois constats de portées très inégales, dont le troisième est un trou déclaré</strong> : la recherche d'un mécanisme normalisé d'attestation d'intégrité <strong>au-delà du protocole examiné</strong> n'a pas été menée, registre officiel, mécanismes de provenance de paquets et catalogues d'éditeurs n'ayant pas été ouverts. <em>Le socle ne documente ni l'existence ni l'absence d'un tel mécanisme du côté de la chaîne d'approvisionnement — degré 3.</em> ⚠ <strong>Cardinal et ordinal repris de la section citée, et re-vérifiés contre elle au 28 juillet 2026</strong> ; le relevé antérieur écrivait « quatre constats, dont le quatrième » — <em>un renvoi se re-vérifie contre sa cible, non contre le souvenir qu'on en a.</em></p>
-
 <div class="avert">
   <p><strong>Ce chapitre ne comble pas ce trou, et il faut dire précisément ce qu'il fait à la place.</strong> Il <strong>nomme</strong> deux des candidates que ce balayage n'avait pas ouvertes — SLSA v1.2 et le cadre d'attestation d'<em>in-toto</em> (tableau 47.2) — et <strong>s'arrête là</strong>. <em>Une lacune déclarée ne se comble pas par une source de moindre qualité</em>, et une notice de page relevée est très exactement une source de moindre qualité qu'une spécification extraite. <strong>La lacune du ch. 20 § 20.3 reste ouverte au terme de ce chapitre</strong> ; ce qui change est qu'elle a désormais un corpus nommé, ce qui est le préalable d'une instruction et non son résultat.</p>
 </div>
-
 <h3>47.3.1 « Attestation » recouvre deux objets, et un seul est sourcé dans la somme</h3>
-
 <div class="avert">
   <p><strong>C'est une distinction facile à perdre, et elle décide de ce que le mot signifie dans chacun des chapitres de la somme qui l'emploient.</strong> ⚠ <em>Le cardinal que cette phrase portait — « vingt-deux chapitres » — est retiré : son domaine n'avait jamais été balayé, et une pièce ne peut pas re-mesurer au commit un décompte de corpus que d'autres passes éditent (décision 16). Le domaine est déclaré, sans cardinal.</em> Dans le Livre II, « attestation » désigne partout l'attestation d'<strong>identité ou de mandat</strong> — ce que la quatrième pièce du passeport porterait (ch. 16 § 16.1). L'attestation de <strong>plate-forme</strong> — établir qu'un hôte exécute bien l'état attendu — est un <strong>objet différent</strong>, et la relève v0.19 en nomme l'architecture : <strong>RFC 9334</strong>, <em>Remote ATtestation procedureS (RATS) Architecture</em>, <strong>janvier 2023</strong>, dont les rôles relevés sont l'<em>Attester</em> qui produit l'<strong>évidence</strong>, le <em>Verifier</em> qui l'apprécie et émet des <strong>résultats d'attestation</strong>, la <em>Relying Party</em> qui en tire une décision d'autorisation, l'<em>Endorser</em> et le <em>Reference Value Provider</em>.</p>
 </div>
-
 <div class="avert">
   <p><strong>Un statut à ne pas surinterpréter, et la relève le porte elle-même : <em>Informational</em>.</strong> C'est une architecture et un vocabulaire, <strong>non une norme imposant conformité</strong> — distinction du même ordre que celle que le ch. 21 § 21.1 tient sur un brouillon portant des jalons. <em>Écrire que la provenance d'un agent « s'appuie sur RFC 9334 » attribuerait à un document de vocabulaire une force normative qu'il ne revendique pas.</em> Document consulté à l'éditeur de RFC le 26 juillet 2026 ; <strong>n'entre pas au socle</strong>.</p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>ce que la séparation des deux sens permet de dire</strong>, et c'est le seul apport propre de cette section : les deux attestations répondent à <strong>deux questions différentes du même vérificateur</strong>, et le passeport du ch. 16 n'en pose qu'une. <em>Qui est cet agent et sous quelle autorité agit-il</em> est la question du Livre II ; <em>l'hôte qui l'exécute est-il dans l'état attendu, et de quoi est-il fait</em> est la question de ce chapitre. <strong>Ce que le socle établit</strong> : rien de la seconde, hors les rôles relevés d'un document <em>Informational</em>. <strong>Ce qu'il n'établit pas</strong> : que les deux questions se composent, ni qu'un mécanisme réponde aux deux. <em>Le § 47.5 en tire la seule conséquence qu'il peut en tirer — une pièce candidate, pas une pièce.</em></p>
-
 <h2 id="s474"><span class="sig">§ 47.4</span>Le <em>rug-pull</em> du ch. 20 relu comme défaut de provenance</h2>
-
 <p><strong>Cette section ne rejoue pas le retournement : elle le relit.</strong> Le <strong>ch. 20 § 20.1</strong> en est le siège — mécanique, niveaux de preuve, bornes du balayage, réserve temporelle sur la révision protocolaire annoncée au brouillon (R-09 du Vol. III). Il établit ceci, et le présent chapitre le reprend sans le reconstruire : <em>le retournement n'exploite aucun défaut du mécanisme d'admission ; il exploite le fait que la décision d'invocation s'appuie sur un objet que le protocole autorise à changer après l'octroi de la confiance, sans prescrire de le relier à ce qui avait été consenti.</em></p>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>la relecture proposée est d'un seul pas, et c'est ce qui la rend défendable</strong> : ce que le ch. 20 décrit comme un défaut de <strong>vérification dans le temps</strong> se décrit aussi comme un défaut de <strong>provenance</strong>. Vérifier dans le temps suppose de savoir <em>à quoi</em> comparer ; or l'objet auquel comparer — la définition consentie, avec sa version et son empreinte — est précisément ce que le § 47.1 range parmi les composants et que rien n'inventorie. <strong>Ce que le socle établit</strong> (par le ch. 20 § 20.1) : l'énumération des huit champs du type qui décrit un outil, dont aucun ne porte de version, d'empreinte ni de signature, sur une page nommée d'une révision nommée. <strong>Ce qu'il n'établit pas</strong> : qu'une nomenclature ou une attestation d'artefact aurait empêché un retournement, ni qu'un retournement ait été observé en production. <em>Le chapitre décrit un maillon, non un incident</em> — c'est la formule du ch. 20, et elle vaut ici mot pour mot.</p>
-
 <div class="avert">
   <p><strong>Un renvoi entrant se referme ici.</strong> Le ch. 20 § 20.1 porte une relève « portée ici et non consommée » qui désigne nommément ce chapitre : <em>le retournement a un grain plus fin que le serveur d'outils — l'extension déclarative du harnais —, et l'incident public candidat est décrit au ch. 47 § 47.7, qui l'instruit et déclare son propre défaut d'attribution.</em> ⚠ <strong>Forme re-vérifiée mot à mot contre sa cible au 28 juillet 2026</strong> : le relevé antérieur en citait une variante que le ch. 20 ne porte pas — « décrit au ch. 47, non rédigé » —, et <em>une relève citée de mémoire est une relève qu'on n'a pas rouverte.</em> Les deux termes de l'annonce sont tenus au § 47.7 : <strong>l'incident y est décrit comme candidat</strong>, et <strong>le défaut d'attribution y est déclaré</strong> — <em>aucun énoncé du ch. 20 ne s'y adosse, et aucun énoncé du présent chapitre ne l'établit.</em> ⚠ <em>Le superlatif que ce paragraphe portait — « le seul de tout le Livre à l'être » — est retiré : le domaine des renvois entrants du Livre n'a pas été relevé, et un superlatif sans domaine balayé est un relevé, non une couverture.</em></p>
 </div>
-
+<figure class="figure">
+  <img src="../figures/f-47-04-provenance-miroir.svg" alt="Figure 47.4 — Le retournement du ch. 20 relu comme défaut de provenance : la même attaque, vue de l&#39;autre bout." />
+  <figcaption><strong>Figure 47.4</strong> — Le retournement du ch. 20 relu comme défaut de provenance : la même attaque, vue de l'autre bout.</figcaption>
+</figure>
 <h2 id="s475"><span class="sig">§ 47.5</span>La provenance comme pièce candidate du passeport du ch. 16</h2>
-
 <div class="avert">
   <p><strong>Cette section est une construction d'auteur sur un objet qui n'existe dans aucune spécification, et le cumul des deux impose de la lire avec la plus grande réserve du chapitre.</strong> Le passeport d'agent est déclaré par le ch. 16 comme <strong>objet de synthèse construit par la somme</strong> ; lui proposer une <strong>cinquième pièce</strong> est donc un geste d'auteur sur un objet déjà virtuel. Le TOC le signale à cette section précise, et la réserve est reprise ici plutôt que déplacée.</p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>la proposition, énoncée en une phrase</strong> : la provenance des composants est la pièce que les quatre autres présupposent sans la porter. <strong>Ce que le socle établit</strong> : le tableau 16.1 du ch. 16 § 16.1, pour chacune des quatre pièces, ce qu'elle démontre et ce qu'elle ne démontre pas — et <strong>le constat que le ch. 16 en tire lui-même</strong> : <em>sur les quatre pièces, aucune ne fournit à une autre l'ancrage qui lui manque</em>, constat borné à ces quatre matières nommées. <strong>Ce qu'il n'établit pas</strong>, et la liste est plus longue que la proposition : ni qu'une cinquième pièce comblerait cet écart, ni qu'un format existe pour la porter, ni qu'un émetteur l'émettrait, ni qu'un vérificateur saurait quoi en faire. <em>Une pièce candidate n'est pas une pièce ; c'est une question posée à un plan.</em></p>
-
 <div class="avert">
   <p><strong>Et la comparaison avec la quatrième pièce interdit d'aller plus loin.</strong> Le ch. 16 § 16.1 établit que <strong>des quatre, l'attestation de conformité est la moins documentée</strong> : les trois autres sont adossées à au moins une spécification instruite, elle n'a qu'un nom de champ facultatif relevé hors socle. <em>Une cinquième pièce serait, à ce jour, moins documentée encore que la quatrième</em> — elle n'a ni champ, ni nom de champ. <strong>Le socle ne documente aucun mécanisme d'identité d'agent portant la composition de l'agent — degré 3.</strong> Le § 47.12 rencontre la même limite du côté du registre.</p>
 </div>
-
 <h2 id="s476"><span class="sig">§ 47.6</span>Les divulgations de chaîne d'approvisionnement du 1ᵉʳ semestre 2026</h2>
-
 <div class="avert">
   <p><strong>Cette section n'a pas de contenu, et son absence de contenu est le contenu.</strong> Le plan la porte comme relève 7 de la v0.7, avec sa qualification propre : <em>candidates, à instruire à sources primaires</em>. Aucune passe d'instruction n'a été conduite ; <strong>aucune source primaire n'a été extraite</strong> ; et <em>écrire ici la description d'incidents qu'on n'a pas ouverts produirait exactement la faute que le § 17.5 du ch. 17 a refusé de commettre au prix d'une remontée bloquante.</em></p>
 </div>
-
 <p><strong>Ce que la relève porte, tel quel et sans ajout</strong> : des candidats du 1ᵉʳ semestre 2026 <strong>existent</strong> — compromissions de plateformes d'agents, divulgations en conférence de sécurité —, et ils sont <strong>à instruire à sources primaires avant de déclarer l'événement survenu</strong>. C'est aussi, mot pour mot, ce que le ch. 50 § 50.2 porte pour son septième événement de péremption — ⚠ <strong>dont l'intitulé se lit désormais « premier incident public documentant l'usurpation du justificatif propre d'un agent »</strong>, la forme « premier incident public d'identité agentique » que le TOC portait ayant été corrigée par sa source le 22 juillet 2026. ⚠ <strong>La formulation restreinte de cette absence a son siège au ch. 19 § 19.6</strong>, qui la pose une seule fois pour toute la somme ; elle est <strong>reprise ici, non reformulée</strong>.</p>
-
 <div class="avert">
   <p><strong>Trois bornes, parce qu'une section vide se lit mal.</strong> <em>(1)</em> <strong>Le socle ne documente aucune divulgation de compromission de chaîne d'approvisionnement visant un agent d'entreprise, à aucun niveau — degré 3</strong> ; il ne s'ensuit <strong>pas</strong> qu'il n'en existe pas, et la prudence du ch. 20 § 20.0 sur l'interprétation des absences s'applique intégralement. <em>(2)</em> Le jugement de la thèse — « le front le plus mûr des trois » — <strong>s'appuie en partie sur cette relève</strong>, qui n'établit rien : <em>la relève confirme sans le prouver</em>, comme le TOC l'écrit lui-même. <strong>Le jugement de maturité reste donc une construction d'auteur de l'audit v0.3, non un constat.</strong> <em>(3)</em> Le § 47.7 porte, lui, <strong>un</strong> incident candidat plus précisément décrit — et il reste candidat.</p>
 </div>
-
-<p><strong>Le lot d'instruction.</strong> <em>Question</em> : existe-t-il, au 1ᵉʳ semestre 2026, une divulgation publique documentée d'une compromission par la chaîne d'approvisionnement d'un composant d'agent — serveur d'outils, extension, modèle, dépendance — avec identifiant, date et périmètre ? <em>Corpus à ouvrir</em> :</p>
-
-<div class="avert">
-  <p><strong>la relève 7 de la v0.7 ne porte aucun identifiant — ni identifiant de vulnérabilité, ni nom d'éditeur, ni nom de conférence —, et l'établir est donc le premier acte du lot, non son résultat.</strong> Le corpus se nomme par ses instruments : le <strong>catalogue CVE</strong> et la base <strong>NVD</strong> du NIST pour les identifiants de vulnérabilité ; les <strong>avis de sécurité publiés par les éditeurs et les projets</strong> des composants visés, à leurs propres canaux ; les <strong>actes des conférences de sécurité du 1ᵉʳ semestre 2026</strong>, dont la liste est à arrêter à l'ouverture du lot. <em>Critère de clôture</em> : un identifiant de vulnérabilité <strong>ou</strong> un avis daté de l'éditeur du composant, <strong>l'un et l'autre nommés</strong> — éditeur, composant, vecteur, date —, non une reprise journalistique, non un billet de blogue d'un fournisseur de sécurité seul. ⚠ <em>Un critère de clôture qui ne nomme pas la source qu'il attend n'est pas opposable</em> : c'est la raison pour laquelle aucun terme de ce lot n'est laissé anonyme. <em>Échec documenté</em> : si aucune divulgation ne satisfait ce critère, l'énoncé qui en sort est <em>le socle ne documente aucun incident de cette classe</em>, au degré 3 — jamais « aucun n'a eu lieu ».</p>
-</div>
-
+<p><strong>Le lot d'instruction.</strong> <em>Question</em> : existe-t-il, au 1ᵉʳ semestre 2026, une divulgation publique documentée d'une compromission par la chaîne d'approvisionnement d'un composant d'agent — serveur d'outils, extension, modèle, dépendance — avec identifiant, date et périmètre ? <em>Corpus à ouvrir</em> : ⚠ <strong>la relève 7 de la v0.7 ne porte aucun identifiant — ni identifiant de vulnérabilité, ni nom d'éditeur, ni nom de conférence —, et l'établir est donc le premier acte du lot, non son résultat.</strong> Le corpus se nomme par ses instruments : le <strong>catalogue CVE</strong> et la base <strong>NVD</strong> du NIST pour les identifiants de vulnérabilité ; les <strong>avis de sécurité publiés par les éditeurs et les projets</strong> des composants visés, à leurs propres canaux ; les <strong>actes des conférences de sécurité du 1ᵉʳ semestre 2026</strong>, dont la liste est à arrêter à l'ouverture du lot. <em>Critère de clôture</em> : un identifiant de vulnérabilité <strong>ou</strong> un avis daté de l'éditeur du composant, <strong>l'un et l'autre nommés</strong> — éditeur, composant, vecteur, date —, non une reprise journalistique, non un billet de blogue d'un fournisseur de sécurité seul. ⚠ <em>Un critère de clôture qui ne nomme pas la source qu'il attend n'est pas opposable</em> : c'est la raison pour laquelle aucun terme de ce lot n'est laissé anonyme. <em>Échec documenté</em> : si aucune divulgation ne satisfait ce critère, l'énoncé qui en sort est <em>le socle ne documente aucun incident de cette classe</em>, au degré 3 — jamais « aucun n'a eu lieu ».</p>
 <h2 id="s477"><span class="sig">§ 47.7</span>Relève v0.10 : l'extension déclarative, composant que la nomenclature ne voit pas</h2>
-
 <p><strong>Ce que la relève établit du mécanisme, et c'est un point d'architecture, non un incident.</strong> Les harnais admettent des extensions par <strong>simple configuration</strong> — fichiers d'instructions réutilisables, serveurs d'outils déclarés en notation JSON. <em>L'installation d'une telle extension n'est ni une compilation ni un déploiement</em> : elle ne franchit aucune des étapes où les nomenclatures du § 47.2 se produisent, et elle ne laisse donc <strong>aucune trace là où l'inventaire se constitue</strong>. C'est la seule proposition de cette section qui ne dépende d'aucun incident, et c'est elle qui vaut : <em>un inventaire de composants qui se construit à la compilation ne voit pas un composant qui s'installe par édition de fichier.</em></p>
-
 <div class="avert">
   <p><strong>L'incident, lui, est candidat, et sa description ne va pas au-delà de ce que la relève porte.</strong> Des chercheurs d'un éditeur de sécurité ont relevé <strong>fin janvier 2026</strong> une extension tierce d'un <em>runtime</em> largement déployé pratiquant exfiltration de données et injection d'invite à l'insu de l'utilisateur. ⚠ <strong>Incident candidat, relevé en sources ouvertes, aucune source primaire extraite</strong> : <em>il ne fonde rien tant qu'il n'est pas instruit.</em> ⚠ <strong>Ces quatre termes sont anonymes dans la relève v0.10 elle-même, et l'anonymat n'est pas ici une parade de péremption mais une lacune d'attribution</strong> : <em>l'éditeur qui attribue le relevé, les chercheurs qui le signent, le nom de l'extension et celui du <strong>runtime</strong> sont les identifiants sans lesquels ce paragraphe n'est instruisible par personne</em> — les établir appartient au lot du § 47.6, qui les nomme à son corpus. <strong>Le socle ne documente ni son identifiant, ni le nom de l'extension, ni celui du <em>runtime</em>, ni la mécanique de l'exfiltration — degré 3</strong>, et rien de ce que ce paragraphe contient ne peut être versé à un dossier.</p>
 </div>
-
 <div class="avert">
   <p><strong>Une conséquence pour la révocation, qui est due et qui n'est pas payée.</strong> Le ch. 20 § 20.4 tient l'inventaire de la révocation, mécanisme par mécanisme, et le ch. 20 § 20.1 relève que l'extension déclarative <strong>n'a, à cette date, aucun mécanisme de révocation relevé</strong>. <em>Un composant qui s'installe sans déploiement et se retire sans révocation n'a d'existence dans aucun des deux inventaires que la somme tient</em> — celui des composants (§ 47.1, construction d'auteur) et celui de la révocation (ch. 20 § 20.4, adossé à un socle). <strong>Le socle ne documente aucun mécanisme de révocation d'une extension déclarative — degré 3.</strong></p>
 </div>
-
+<hr />
 <p><strong>Second mouvement — La mise en service d'un artefact non reproductible</strong> <em>(ch. 48 de la v0.22 ; ancien titre conservé, décision 13a du TOC ; thèse citée en tête)</em></p>
-
 <h2 id="s478"><span class="sig">§ 47.8</span>Le versionnement à cinq horloges</h2>
-
 <p><strong>La thèse du second mouvement pose cinq horloges — modèle, invites, outils, politique, et le harnais — et le § 47.1 en a inventorié cinq composants ; les deux quintets ne se recouvrent pas.</strong> L'écart n'est pas une erreur d'arithmétique : le tableau 47.1 <strong>distingue</strong> les bibliothèques et l'hôte d'exécution des serveurs d'outils, là où la thèse les range ensemble, et il <strong>ne porte pas le harnais</strong>, que la thèse porte depuis son réalignement en v0.26. <em>Le chapitre suit la thèse pour le décompte et le tableau pour l'inventaire, et le signale plutôt que d'aligner l'un sur l'autre</em> — la décision 8 du TOC veut que le chapitre corrige le plan, et <strong>ce chapitre n'est pas en position de le faire</strong> : il n'a pas de socle qui l'autoriserait à trancher. ☑ <strong>L'intitulé de cette section portait « quatre horloges » et suit désormais le plan</strong> : <em>la table détaillée du TOC a été réalignée en v0.29 sur la remontée que cette pièce avait ouverte, et c'est le sens de l'escalade — le rédacteur remonte, le plan tranche, la pièce s'aligne ensuite.</em></p>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>ce que « version d'un agent » veut dire, et pourquoi la question n'est pas rhétorique.</strong> Une version, dans l'ingénierie logicielle ordinaire, est un identifiant qui suffit à reconstituer un artefact. Pour un agent, <strong>aucun terme unique ne le fait</strong> : le millésime de modèle n'appartient pas à l'exploitant, la définition d'un outil peut changer après consentement (§ 47.4), un fichier d'instructions s'édite sans déploiement (§ 47.7), et le harnais qui exécute le tout se révise au rythme d'un produit d'éditeur (§ 47.8.1). <strong>Ce que le socle établit</strong> : rien de cette proposition — elle est entièrement construite. <strong>Ce qu'il n'établit pas</strong> : qu'un identifiant composite de quatre ou cinq termes soit la bonne réponse, ni qu'une organisation qui le tiendrait saurait pour autant reproduire un comportement.</p>
-
 <h3>47.8.1 La cinquième horloge : point d'atterrissage reconnu, matière sans socle</h3>
-
 <div class="avert">
   <p><strong>La relève v0.10 porte un cinquième porteur de version, et c'est le point du chapitre qui touche une décision d'auteur.</strong> Les pièces écrites de 2026 exhibent un <strong>harnais</strong> versionné par son éditeur, dont le changement modifie le comportement observable <strong>à modèle, invites, outils et politique constants</strong> — modes, seuils de compression de contexte, ordre des règles d'approbation, format d'événements. Le TOC en tirait, à la rédaction, la qualification suivante, reprise telle quelle : <em>si la relève s'instruit, la thèse est <strong>sous-spécifiée, non fausse</strong></em>.</p>
 </div>
-
-<p>☑ <strong>D-2 a été prise le 27 juillet 2026, et l'état réel se lit en deux temps qu'il ne faut pas confondre.</strong> <em>À la rédaction de cette section</em>, la couche d'exécution — le harnais — était l'objet du <strong>risque 14</strong> du TOC sans arbitrage : <strong>D-2 n'était pas prise</strong>, la porte <strong>G-5</strong> — qui conditionne nommément <em>« le Livre IV et le premier mouvement du Livre V »</em> — n'était pas franchie, <strong>et le mouvement a été écrit quand même</strong> ; <em>écrire alors une cinquième horloge aurait tranché par la rédaction ce que le plan réservait à l'auteur</em> — la faute que D-9 a nommée au § 17.5 du ch. 17. <em>Depuis</em>, <strong>D-2 est prise — sections dans l'existant, sans chapitre neuf</strong>, le plafond de cinquante interdisant d'ouvrir un chapitre de la couche d'exécution sans fusion (décision 13b) —, <strong>le § 47.8.1 est l'un des deux points d'atterrissage reconnus</strong>, avec le ch. 50 § 50.2, et la cinquième horloge est entrée à la thèse par le réalignement v0.26. ⚠ <strong>Trois choses que cela ne change pas.</strong> <em>(1)</em> <strong>Le risque 14 est borné, non comblé</strong> : la somme n'a toujours aucun chapitre de la couche d'exécution. <em>(2)</em> <strong>G-5 n'est pas franchie pour autant</strong> — <em>une décision prise n'est pas une porte franchie</em>, et l'infraction de rédaction n'est pas rattrapée par l'arbitrage qui l'a suivie. <em>(3)</em> <strong>Le régime de preuve n'a pas bougé</strong> : la relève reste un repérage [C] non extrait, et <em>le contenu de la cinquième horloge ne peut pas davantage s'écrire ici qu'hier</em> — ce qui a changé est qu'il a désormais un domicile, non une source. La section porte donc la relève, sa qualification et son domicile, et la remontée qui l'a produite est <strong>R-IV-60</strong> (§&nbsp;47.13&nbsp;†). ☐ <strong>Une obligation en découle et elle n'est pas payée</strong> : le jalon <strong>J-IV-7</strong> exige que <em>la cinquième horloge du présent § 47.8.1 soit confrontée au texte des ch. 37 à 40</em>, rédigés hors de la passe qui a pris D-2 — <strong>confrontation non faite</strong>, et <em>elle n'est pas de la compétence d'une passe qui ne relit qu'une pièce.</em></p>
-
+<p>☑ <strong>D-2 a été prise le 27 juillet 2026, et l'état réel se lit en deux temps qu'il ne faut pas confondre.</strong> <em>À la rédaction de cette section</em>, la couche d'exécution — le harnais — était l'objet du <strong>risque 14</strong> du TOC sans arbitrage : <strong>D-2 n'était pas prise</strong>, la porte <strong>G-5</strong> — qui conditionne nommément <em>« le Livre IV et le premier mouvement du Livre V »</em> — n'était pas franchie, <strong>et le mouvement a été écrit quand même</strong> ; <em>écrire alors une cinquième horloge aurait tranché par la rédaction ce que le plan réservait à l'auteur</em> — la faute que D-9 a nommée au § 17.5 du ch. 17. <em>Depuis</em>, <strong>D-2 est prise — sections dans l'existant, sans chapitre neuf</strong>, le plafond de cinquante interdisant d'ouvrir un chapitre de la couche d'exécution sans fusion (décision 13b) —, <strong>le § 47.8.1 est l'un des deux points d'atterrissage reconnus</strong>, avec le ch. 50 § 50.2, et la cinquième horloge est entrée à la thèse par le réalignement v0.26. ⚠ <strong>Trois choses que cela ne change pas.</strong> <em>(1)</em> <strong>Le risque 14 est borné, non comblé</strong> : la somme n'a toujours aucun chapitre de la couche d'exécution. <em>(2)</em> <strong>G-5 n'est pas franchie pour autant</strong> — <em>une décision prise n'est pas une porte franchie</em>, et l'infraction de rédaction n'est pas rattrapée par l'arbitrage qui l'a suivie. <em>(3)</em> <strong>Le régime de preuve n'a pas bougé</strong> : la relève reste un repérage [C] non extrait, et <em>le contenu de la cinquième horloge ne peut pas davantage s'écrire ici qu'hier</em> — ce qui a changé est qu'il a désormais un domicile, non une source. La section porte donc la relève, sa qualification et son domicile, et la remontée qui l'a produite est <strong>R-IV-60</strong> (§ 47.13). ☐ <strong>Une obligation en découle et elle n'est pas payée</strong> : le jalon <strong>J-IV-7</strong> exige que <em>la cinquième horloge du présent § 47.8.1 soit confrontée au texte des ch. 37 à 40</em>, rédigés hors de la passe qui a pris D-2 — <strong>confrontation non faite</strong>, et <em>elle n'est pas de la compétence d'une passe qui ne relit qu'une pièce.</em></p>
 <h2 id="s479"><span class="sig">§ 47.9</span>Jeux d'essai de référence et barrière d'évaluation au déploiement</h2>
-
 <p><strong>La thèse impose des jeux d'essai de référence pour un artefact non reproductible, et c'est une difficulté nommée, pas une difficulté d'outillage.</strong> Un jeu d'essai suppose une <strong>sortie attendue</strong> ; un comportement non déterministe n'en fournit pas. La relève v0.19 nomme la difficulté — le <strong>problème de l'oracle</strong> — et une réponse constituée : le <strong>test métamorphique</strong>, qui vérifie des <strong>relations nécessaires entre plusieurs exécutions</strong> au lieu d'une sortie attendue. Source de référence relevée le 26 juillet 2026 : Chen, Kuo, Liu, Poon, Towey, Tse et Zhou, <em>Metamorphic Testing: A Review of Challenges and Opportunities</em>, <strong>ACM Computing Surveys</strong> 51(1), article 4, 2018, DOI 10.1145/3143561.</p>
-
 <div class="avert">
   <p><strong>Ce que la relève établit, et ce qu'elle n'établit pas — la borne est dans la relève elle-même.</strong> Elle établit que <strong>la barrière d'évaluation de cette section est un problème d'oracle</strong>, non un problème d'outillage : <em>l'énoncer autrement ferait prescrire un dispositif qui ne peut pas fonctionner</em>. Elle n'établit <strong>pas</strong> l'applicabilité du test métamorphique à un agent d'entreprise, <strong>nulle part documentée</strong> — <strong>degré 3</strong> — et <em>une réponse constituée dans une discipline voisine n'est pas une réponse disponible.</em> <strong>À instruire à la source primaire ; n'entre pas au socle.</strong></p>
 </div>
-
 <p><strong>Ce que la somme porte déjà, et qui n'est pas reconstruit ici.</strong> Le <strong>ch. 6 § 6.3</strong> traite l'évaluation et ses difficultés propres — pourquoi évaluer un agent est difficile, le modèle comme juge et ses biais, les bancs de capacité. <em>Ce chapitre ne rejoue ni la difficulté ni les bancs</em> : il ajoute le seul grain qui lui appartient, celui de la <strong>mise en service</strong> — une barrière franchie ou non franchie à un instant, sur un artefact nommé, avec une conséquence de déploiement.</p>
-
 <div class="avert">
   <p><strong>Deux barrières, deux grains, à ne jamais fondre.</strong> Celle-ci porte sur <strong>l'artefact et sa mise en service</strong> ; la barrière de <strong>certification</strong> du ch. 41 § 41.4 porte sur <strong>l'admission au parc</strong>. <em>Le problème de l'oracle vaut pour les deux et ne se dissout pas en changeant d'échelle</em> — c'est la seule chose que ce chapitre puisse dire du ch. 41, <strong>rédigé le même jour hors de la présente passe</strong>. ☑ <strong>Son sort a été tranché depuis, et l'arbitrage n'est pas un acquittement</strong> : <strong>D-8 est prise le 27 juillet 2026 — socle non constitué, chapitre maintenu sous réserve, retrait non exécuté</strong> ; le <strong>risque 16 du TOC reste ouvert</strong>, et <em>le retrait demeure l'issue si les lots d'instruction du ch. 41 échouent.</em></p>
 </div>
-
 <h2 id="s4710"><span class="sig">§ 47.10</span>Promotion par environnements et GitOps du parc</h2>
-
 <p><strong>Cette section applique au grain du déploiement ce que le ch. 39 § 39.4 traite au grain du cycle de vie, et elle ne le reconstruit pas.</strong> ⚠ <strong>Les ch. 39 et 40 ont été rédigés le même jour, hors de la présente passe, et n'étaient pas committés à l'heure où ces lignes ont été écrites</strong> : la nuance a été déclarée plutôt que lissée, et ☑ <strong>la re-vérification due est faite au 28 juillet 2026</strong> — les deux pièces sont au dépôt, et les renvois de cette section résolvent contre leur texte.</p>
-
 <p>☑ <strong>Un renvoi entrant se referme ici.</strong> Le <strong>ch. 40 § 40.6</strong> déclare son pont vers ce chapitre sans le franchir : <em>ce que devient la pré-production gouvernée — jeux d'évaluation figés, déploiement fantôme, non-régression avant promotion — quand l'objet promu est un artefact non reproductible y est renvoyé au ch. 47.</em> <strong>Le présent chapitre est ce domicile, et ce qu'il peut en dire est borné par ce qui suit</strong> : il ne dispose d'aucune source sur la promotion d'un tel artefact, et <em>nommer un domicile n'est pas répondre à la question qu'on y adresse.</em></p>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>ce que la promotion par environnements suppose, et que les cinq horloges du § 47.1 rendent problématique.</strong> Promouvoir un artefact d'un environnement au suivant suppose que <em>l'artefact promu soit celui qui a été éprouvé</em>. Or trois des cinq composants peuvent changer entre l'épreuve et la promotion sans qu'aucun acte de déploiement n'ait lieu : le millésime de modèle appartient à son fournisseur, la définition d'un outil peut être révisée par l'éditeur du serveur (§ 47.4), une extension déclarative s'installe par édition de fichier (§ 47.7). <strong>Ce que le socle établit</strong> : rien de cette proposition. <strong>Ce qu'il n'établit pas</strong> : qu'un dispositif de promotion existe pour un artefact ainsi composé, ni qu'une organisation ait publié le sien.</p>
-
 <div class="avert">
   <p><strong>Faux ami à déclarer plutôt qu'à fuir.</strong> Le « plan de contrôle » d'un maillage de services <strong>pré-agentique</strong> (ch. 1 § 1.3.4) n'est pas le <em>control plane</em> agentique que <strong>R-13 du Vol. III</strong> proscrit d'employer nu ; le premier n'est pas employé dans cette section, et le second ne l'est qu'accompagné de ses termes. <em>La déclaration a plus de valeur que l'évitement</em> : un chapitre qui contourne un mot ne prouve pas qu'il a balayé le garde-fou.</p>
 </div>
-
 <h2 id="s4711"><span class="sig">§ 47.11</span>Retour arrière d'un artefact à état</h2>
-
 <p><strong>La question de cette section est étroite, et son étroitesse est ce qui rend sa réponse partiellement adossée : elle porte sur ce que le retour arrière <em>ne restaure pas</em>.</strong> Un retour arrière restitue un artefact ; il ne restitue ni la mémoire accumulée, ni les délégations en cours. Les deux termes ont des sièges dans la somme, et c'est ce qui rend la section défendable là où les autres du mouvement le sont moins.</p>
-
-<p><strong>La mémoire.</strong> Le plan situe la dérive de mémoire au ch. 39 § 39.2 — ☑ <strong>renvoi re-vérifié au 28 juillet 2026, et la re-vérification le borne plutôt qu'elle ne le confirme</strong> : la section existe, mais elle traite <strong>la dérive de modèle, d'outil et d'autonomie</strong>, et son § 39.2.4 déclare la mémoire <strong>quatrième source de dérive portée par le plan, repérage [C] non consommé, hors socle</strong>. <em>Le siège que ce paragraphe invoque est donc lui-même un front ouvert</em>, et c'est ce que la suite constate. Le Vol. I range par ailleurs la mémoire persistante et l'apprentissage continu parmi ses <strong>frontières non résolues</strong> (Vol. I <em>Monographie</em> §2.13.2, en <strong>[C]</strong>), et le ch. 49 § 49.13 reprend cette question transmise. <em>Ce chapitre n'en ajoute rien</em> : il constate que l'objet dont le retour arrière devrait rendre compte est, chez sa source, un front ouvert.</p>
-
+<p><strong>La mémoire.</strong> Le plan situe la dérive de mémoire au ch. 39 § 39.2 — ☑ <strong>renvoi re-vérifié au 28 juillet 2026, et la re-vérification le borne plutôt qu'elle ne le confirme</strong> : la section existe, mais elle traite <strong>la dérive de modèle, d'outil et d'autonomie</strong>, et son § 39.2.4 déclare la mémoire <strong>quatrième source de dérive portée par le plan, repérage [C] non consommé, hors socle</strong>. <em>Le siège que ce paragraphe invoque est donc lui-même un front ouvert</em>, et c'est ce que la suite constate. Le Vol. I range par ailleurs la mémoire persistante et l'apprentissage continu parmi ses <strong>frontières non résolues</strong> (Vol. I <em>Monographie</em> §2.13.2, en <strong>[C]</strong>), et le ch. 49 § 49.13 reprend cette question transmise. <em>Ce chapitre n'y ajoute rien</em> : il constate que l'objet dont le retour arrière devrait rendre compte est, chez sa source, un front ouvert.</p>
 <p><strong>Les délégations en cours.</strong> Le <strong>ch. 17</strong> est le siège de la chaîne de mandat, et son <strong>§ 17.6</strong> établit le problème des deux sauts : <em>le socle n'établit pas qu'une chaîne ainsi formée soit interrogeable à un instant quelconque.</em> <span class="auteur">Lecture de l'auteur</span> <strong>la conséquence pour le retour arrière est immédiate et elle est neuve</strong> : ramener un agent à une version antérieure suppose de savoir quelles délégations étaient en vigueur sous cette version ; <em>si la chaîne n'est pas interrogeable à l'instant t, elle ne l'est pas davantage à l'instant t − 1.</em> <strong>Ce que le socle établit</strong> : la non-interrogeabilité, par le ch. 17 § 17.6, avec ses niveaux propres. <strong>Ce qu'il n'établit pas</strong> : qu'un mécanisme de retour arrière ait été spécifié pour un artefact à état, ni qu'une révocation en cascade (ch. 20 § 20.6) puisse tenir lieu de retour arrière. <strong>Le socle ne documente aucun mécanisme de retour arrière d'un artefact d'agent restituant son état de délégation — degré 3.</strong></p>
-
 <h2 id="s4712"><span class="sig">§ 47.12</span>L'enregistrement de version au registre du ch. 15</h2>
-
 <div class="avert">
   <p><strong>Construction d'auteur, et le plan en donne la raison en une ligne : le registre gouverné n'enregistre pas de version dans les spécifications relevées.</strong> Le <strong>ch. 15 § 15.3</strong> est le siège des registres gouvernés ; il établit deux champs obligatoires portant les outils invocables et les limites de portée, sur un dispositif dont le <strong>statut de brouillon de laboratoire est dit à chaque mention</strong>, et dont l'ancrage protocolaire est <strong>non entretenu</strong>. <em>Rien de ce que ce chapitre propose n'y est prescrit.</em></p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>la proposition</strong> : le registre est le seul des trois mécanismes d'émission (ch. 15) dont la fonction déclarée — inventaire, découverte, cycle de vie, conformité — puisse accueillir un enregistrement de version. <strong>Ce que le socle établit</strong> : les deux champs obligatoires et le statut du dispositif (ch. 15 § 15.3.1) ; que le protocole agent-agent <strong>décline la voie du registre en toutes lettres</strong>, fait négatif <strong>établi</strong> et non vérifié (ch. 16 § 16.1, tableau 16.1). <strong>Ce qu'il n'établit pas</strong> : qu'un champ de version existe, ni qu'un enregistrement de version serait opposable, ni qu'un vérificateur le consulterait. <em>Et la borne du ch. 20 § 20.3 s'applique telle quelle : à supposer même l'intégrité d'un enregistrement acquise, elle ne documenterait pas sa validité courante.</em></p>
-
 <div class="avert">
   <p><strong>Deux réserves ferment le mouvement, et elles se cumulent.</strong> <em>(1)</em> <strong>R-02</strong> : rien de ce qui précède ne se qualifie par ce qu'un registre <strong>promet</strong> ; le dispositif relevé ne <strong>démontre</strong> ni l'unicité, ni la fraîcheur, ni la révocabilité d'un enregistrement. <em>(2)</em> <strong>Le socle ne documente aucun registre d'agents portant un champ de version d'artefact — degré 3</strong>, et il ne s'ensuit pas qu'aucun n'en porte. <em>Une construction d'auteur posée là où le socle est muet est celle qu'aucune relecture ne peut réfuter, faute de fait auquel la confronter</em> : c'est le motif pour lequel cette section s'arrête à une proposition nommée.</p>
 </div>
+<hr />
 
 <footer class="pied">
   <p><strong>Vol. IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em></strong> · Livre V, chapitre 47. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau, M.Sc. IT.</p>
   <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme (gel unique : 27 juillet 2026).</p>
-  <p><strong>†</strong> Renvoi à une section retirée de ce rendu — la note de statut, hors corps — conservée au fichier Markdown jumeau.</p>
 </footer>
 
 </main>

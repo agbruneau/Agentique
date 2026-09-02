@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chapitre 12 — L&#x27;héritage et les standards étirés : un demi-siècle d&#x27;identités non humaines, puis OAuth, OIDC et SCIM face à l&#x27;agent · Interopérabilité et Orchestration en Entreprise Agentique</title>
-<meta name="description" content="Livre II — Faire confiance : identité, délégation et fabrique de confiance. Premier mouvement — émettre (ch. 12-18). Premier chapitre du mouvement, et premier chapitre du Livre. Chapitre à deux mouvements, issu de la fusion v0.20 des anciens ch. 12 et 13">
+<meta name="description" content="Livre II — Faire confiance : identité, délégation et fabrique de confiance. Premier mouvement — émettre (ch. 12-18). **Premier chapitre du mouvement, et premier chapitre du Livre.** Chapitre à deux mouvements, issu de la fusion v0.20 des anciens ch. 12 et 13">
 <meta name="author" content="André-Guy Bruneau, M.Sc. IT">
 <meta name="color-scheme" content="dark">
 <style>
@@ -443,6 +443,17 @@ tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
 tbody td:first-child { color: var(--texte); font-weight: 600; }
 .legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
 
+/* -------------------------------------------------------------- figures */
+/* Les SVG du volume sont dessinés pour le PDF, donc sur fond clair, et ils
+   portent ce fond eux-mêmes — sans quoi il faudrait maintenir deux variantes
+   de chaque figure. Sur ce thème sombre, ils se posent donc comme un carton ;
+   le padding empêche le fond de la figure de toucher le bord du cadre. */
+.figure { margin: 2.1rem 0 1.9rem; }
+.figure img { display: block; width: 100%; height: auto; border-radius: 7px;
+              border: 1px solid var(--trait); background: #fdfbf9; padding: 0.6rem; }
+.figure figcaption { font-size: 0.8rem; font-style: italic; color: var(--texte-faible);
+                     margin-top: 0.65rem; padding-left: 0.15rem; }
+
 /* --------------------------------------------------------------- listes */
 ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
 ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
@@ -531,20 +542,18 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <div class="nav__marque">Interopérabilité et Orchestration en Entreprise Agentique</div>
   <div class="nav__sous">Livre II · Chapitre 12</div>
   <ol>
-    <li><a href="#s120"><span class="num">12.0</span>Introduction : ce dont l&#x27;entreprise agentique hérite</a></li>
-    <li><a href="#s121"><span class="num">12.1</span>Généalogie : de l&#x27;hypothèse humaine à l&#x27;identité de charge de travail</a></li>
-    <li><a href="#s122"><span class="num">12.2</span>L&#x27;écart de gouvernance des identités non humaines</a></li>
-    <li><a href="#s123"><span class="num">12.3</span>Pourquoi l&#x27;agent casse le modèle : identité stable et comportement variable</a></li>
-    <li><a href="#s124"><span class="num">12.4</span>OAuth 2.x et l&#x27;agent : client ou détenteur de ressource ?</a></li>
-    <li><a href="#s125"><span class="num">12.5</span>Les brouillons de l&#x27;IETF : quatre statuts, et ce que leurs dates disent ou ne disent pas</a></li>
-    <li><a href="#s126"><span class="num">12.6</span>SCIM et le provisionnement d&#x27;agents</a></li>
+    <li><a href="#s120"><span class="num">12.0</span>Introduction : ce dont l'entreprise agentique hérite</a></li>
+    <li><a href="#s121"><span class="num">12.1</span>Généalogie : de l'hypothèse humaine à l'identité de charge de travail</a></li>
+    <li><a href="#s122"><span class="num">12.2</span>L'écart de gouvernance des identités non humaines</a></li>
+    <li><a href="#s123"><span class="num">12.3</span>Pourquoi l'agent casse le modèle : identité stable et comportement variable</a></li>
+    <li><a href="#s124"><span class="num">12.4</span>OAuth 2.x et l'agent : <em>client</em> ou détenteur de ressource ?</a></li>
+    <li><a href="#s125"><span class="num">12.5</span>Les brouillons de l'IETF : quatre statuts, et ce que leurs dates disent ou ne disent pas</a></li>
+    <li><a href="#s126"><span class="num">12.6</span>SCIM et le provisionnement d'agents</a></li>
     <li><a href="#s127"><span class="num">12.7</span>Entra Agent ID comme extension des RFC</a></li>
     <li><a href="#s128"><span class="num">12.8</span>Ce que les RFC ne disent pas — et à quel degré</a></li>
-
   </ol>
   <div class="nav__pied">
     Vol.&nbsp;IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em><br>
-
     <a href="12-heritage-standards-etires.md">Version Markdown</a>
   </div>
 </nav>
@@ -555,265 +564,260 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 <header class="titre">
   <div class="titre__fil">Livre II — Faire confiance : identité, délégation et fabrique de confiance</div>
   <h1><span class="chap">Chapitre 12</span>L&#x27;héritage et les standards étirés : un demi-siècle d&#x27;identités non humaines, puis OAuth, OIDC et SCIM face à l&#x27;agent</h1>
-  <p class="titre__situe">Livre II — Faire confiance : identité, délégation et fabrique de confiance. Premier mouvement — émettre (ch. 12-18). <strong>Premier chapitre du mouvement, et premier chapitre du Livre.</strong> Chapitre à deux mouvements, issu de la fusion v0.20 des anciens ch. 12 et 13</p>
+  <p class="titre__situe">Livre II — Faire confiance : identité, délégation et fabrique de confiance. Premier mouvement — émettre (ch. 12-18). **Premier chapitre du mouvement, et premier chapitre du Livre.** Chapitre à deux mouvements, issu de la fusion v0.20 des anciens ch. 12 et 13</p>
 </header>
 
-<div class="encadre encadre--oeuvre">
-  <span class="encadre__label">Note</span>
-  <p><strong>Thèse du second mouvement</strong>, citée depuis le TOC v0.28, entrée du chapitre 12 — la première vague de l'identité agentique est une extension des RFC existantes, non une rupture — et chaque extension révèle une hypothèse implicite (un humain au bout du flux) qui cesse de tenir.</p>
-</div>
+<!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
+     Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
+     que `build/assemble.py` pour le PDF et que `PRD/decompte.sh` pour la volumétrie. L'appareil de
+     gouvernance vit au .md jumeau, qui reste la seule source, et `build/verifier-piece.py` refuse
+     un rendu qui le recopierait. -->
 
+<blockquote>
+<p><strong>Thèse du second mouvement</strong>, citée depuis le TOC v0.28, entrée du chapitre 12 — la première vague de l'identité agentique est une extension des RFC existantes, non une rupture — et chaque extension révèle une hypothèse implicite (un humain au bout du flux) qui cesse de tenir.</p>
+</blockquote>
 <div class="avert">
   <p><strong>Deux thèses pour un chapitre, et ce n'est pas une négligence de rédaction.</strong> Le ch. 12 est issu de la <strong>fusion v0.20</strong> des anciens ch. 12 et 13 (décision 11 du TOC) : les deux entrées y sont conservées <strong>intégralement</strong>, en deux mouvements portant chacun son ancien titre et son ancienne thèse. Rien n'a été soustrait, et la présente pièce ne fond pas les deux thèses en une troisième — ce serait réécrire ce que la fusion s'interdisait de toucher.</p>
 </div>
-
 <h2 id="s120"><span class="sig">§ 12.0</span>Introduction : ce dont l'entreprise agentique hérite</h2>
-
 <p>Le Livre I a établi comment les agents <strong>coopèrent</strong> : les protocoles qui les font parler aux outils et entre eux, la couche de découverte qui les fait se trouver, les modes d'échec de cette couche. Le présent Livre change de question. Il ne demande plus <em>comment les agents se parlent</em>, mais <strong>à quelles conditions une organisation peut leur faire confiance</strong> — et la première de ces conditions est de savoir à qui elle parle.</p>
-
 <p>Le chapitre qui l'ouvre ne commence pas par les agents. Il commence par ce qui les précède, et le motif n'est pas de politesse historique : <strong>une organisation qui met des agents en production n'ouvre pas un chantier vierge</strong>. Elle ajoute une strate à un empilement d'identités machines déjà en place, dont elle a rarement l'inventaire, et elle emploie d'abord ce qu'elle exploite déjà — un serveur d'autorisation, un annuaire alimenté par SCIM, une chaîne de certificats.</p>
-
 <div class="avert">
   <p><strong>Le titre de ce chapitre annonce un demi-siècle ; le socle n'en documente pas le tiers, et cette borne fait partie de l'énoncé.</strong> La généalogie documentée s'ouvre au <strong>RFC 6749, d'octobre 2012</strong> (Vol. III F-27, <strong>[B]</strong>). Les comptes de service, les clés d'API et les secrets d'atelier logiciel que la thèse nomme <strong>ne font l'objet d'aucune entrée</strong> : le socle ne documente ni leur histoire ni leur volumétrie — c'est une <strong>absence de documentation</strong> dans le corpus du Vol. III, <strong>non un fait négatif vérifié</strong> (R-14 du Vol. III, degré 3). <em>Le passif antérieur est nommé ; il n'est pas décrit.</em></p>
 </div>
-
 <p><strong>Le chapitre se lit en deux mouvements et huit temps.</strong> Le premier mouvement établit d'où vient l'identité machine (§ 12.1), ce que sa gouvernance a laissé ouvert (§ 12.2) et pourquoi l'agent en casse le modèle (§ 12.3). Le second montre ce que les RFC existantes supportent d'étirement avant de céder — OAuth (§ 12.4), les brouillons de l'IETF (§ 12.5), SCIM (§ 12.6), un produit d'éditeur qui les étend (§ 12.7) — et ce qu'elles ne disent pas, à trois degrés distincts (§ 12.8).</p>
-
 <div class="avert">
-  <p><strong>Ce que ce chapitre ne traite pas, et qui n'est pas un oubli.</strong> Le <strong>socle IAM pré-agentique</strong> — identité fédérée, autorisation déléguée, <em>zero-trust</em>, identité de charge de travail — est <strong>posé au ch. 3</strong> pour toute la somme, et n'est <strong>pas repris ici</strong> : ce chapitre s'y adosse. C'est la contrepartie de l'économie de fusion déclarée au ch. 3, et l'abstention est contrôlée par <a class="lien" href="../PRD/check-sieges.py">0</a>. De même, le <strong>traitement d'Entra Agent ID comme annuaire commercial</strong> appartient au <strong>ch. 15</strong> ; le § 12.7 n'en retient que le versant « extension des RFC ». Enfin, les garde-fous <strong>R-2 et R-3 du Vol. II</strong> n'ont pas leur siège ici : leur siège unique est le <strong>ch. 16 § 16.2</strong>, où l'encadré des affirmations écartées les pose une seule fois pour toute la somme ; le <strong>ch. 15 § 15.3.1</strong> ne fait qu'<strong>appliquer</strong> R-3, ce qui n'en est pas un second siège.</p>
+  <p><strong>Ce que ce chapitre ne traite pas, et qui n'est pas un oubli.</strong> Le <strong>socle IAM pré-agentique</strong> — identité fédérée, autorisation déléguée, <em>zero-trust</em>, identité de charge de travail — est <strong>posé au ch. 3</strong> pour toute la somme, et n'est <strong>pas repris ici</strong> : ce chapitre s'y adosse. C'est la contrepartie de l'économie de fusion déclarée au ch. 3, et l'abstention est contrôlée par <a href="../PRD/check-sieges.py"><code>PRD/check-sieges.py</code></a>. De même, le <strong>traitement d'Entra Agent ID comme annuaire commercial</strong> appartient au <strong>ch. 15</strong> ; le § 12.7 n'en retient que le versant « extension des RFC ». Enfin, les garde-fous <strong>R-2 et R-3 du Vol. II</strong> n'ont pas leur siège ici : leur siège unique est le <strong>ch. 16 § 16.2</strong>, où l'encadré des affirmations écartées les pose une seule fois pour toute la somme ; le <strong>ch. 15 § 15.3.1</strong> ne fait qu'<strong>appliquer</strong> R-3, ce qui n'en est pas un second siège.</p>
 </div>
-
 <h2 id="s121"><span class="sig">§ 12.1</span>Généalogie : de l'hypothèse humaine à l'identité de charge de travail</h2>
-
 <p>Cinq moments documentés, de 2012 à 2026 — le dernier millésime en portant deux. Chacun a sa date, son statut et sa borne ; les fondre en une continuité produirait un récit là où le socle ne porte que des jalons.</p>
-
 <p><strong>2012 — l'humain n'est pas dans les définitions, il est dans le flux.</strong> Le RFC 6749 définit en sa §1.1 le détenteur de ressource (<em>resource owner</em>) comme « an entity capable of granting access to a protected resource », et réserve explicitement le terme <em>end-user</em> au cas où cette entité est une personne ; le rôle de client y est celui d'« an application making protected resource requests on behalf of the resource owner and with its authorization » (Vol. III F-27, <strong>[B]</strong>). La dissymétrie est <strong>lexicale, non prohibitive</strong> : rien dans ces définitions n'exclut un détenteur de ressource non humain. L'hypothèse humaine se loge ailleurs, dans la <strong>procédure</strong> — la §4.1.1 prescrit que le client dirige le détenteur de ressource vers l'URI construite « using an HTTP redirection response, or by other means available to it via the user-agent », et le flux de la §4.1 fait authentifier ce détenteur par le serveur d'autorisation via cet agent utilisateur (Vol. III F-27).</p>
-
 <p><em>Le standard fondateur de la délégation d'accès admet donc une machine comme mandant dans son vocabulaire, et présuppose un navigateur humain dans son déroulé.</em> C'est le premier écart, et il commande tout le second mouvement de ce chapitre.</p>
-
 <p><strong>2015 — l'annuaire d'entreprise s'écrit au vocabulaire de la personne.</strong> La §4 du RFC 7643 (<em>SCIM Core Schema</em>, septembre 2015) annonce définir « the default resource schemas present in a SCIM server » et ne comporte que <strong>trois sous-sections</strong> : <em>User</em>, <em>Group</em>, <em>Enterprise User Schema Extension</em>. Aucune ne définit de type de ressource pour un mandataire logiciel autonome (Vol. III F-28, <strong>[B, degré 1]</strong>). ⚠ <strong>Fait négatif vérifié de degré 1, et sa borne fait partie de l'énoncé</strong> : le balayage porte sur l'énumération des sous-sections de la §4 de ce seul RFC ; il ne dit rien du RFC 7644, rien des extensions de schéma enregistrées ailleurs, rien des profils propriétaires. Au sein de ce périmètre, au moins deux descriptions d'attributs sont libellées en termes de personne — <code>title</code> est décrit comme « The user's title, such as "Vice President". », et <code>employeeNumber</code>, dans l'extension <em>Enterprise User</em>, comme un identifiant « assigned to a person, typically based on order of hire ». <em>Constat de sémantique rédactionnelle, non d'interdiction normative</em> : rien n'empêche de peupler ces attributs pour une entité non humaine.</p>
-
 <p><strong>2018-2022 — l'identité de charge de travail se constitue en objet propre.</strong> La spécification SPIFFE-ID, de statut « Stable », définit l'identité SPIFFE comme un URI conforme au RFC 3986 composé d'un nom de domaine de confiance et d'un chemin, et le SVID comme le mécanisme par lequel une charge de travail <strong>communique</strong> son identité à une ressource ou à un appelant ; elle énonce qu'un SVID est considéré valide s'il a été signé par une autorité du domaine de confiance de l'identité SPIFFE qu'il porte (Vol. III F-87, <strong>[B]</strong>). ⚠ <strong>Ce que cette spécification démontre est une vérification de signature dans un domaine de confiance</strong> (R-02 du Vol. III). ⚠ <strong>Et le degré de ce qu'elle tait se déclare</strong> : elle <strong>n'énonce pas</strong> ce que cette vérification n'établit pas — ni preuve de propriété d'une entité, ni décision d'autorisation —, ce qui est une <strong>absence de documentation</strong> dans le corpus du Vol. III, <strong>non un fait négatif vérifié</strong>. Elle porte en revanche sa propre mise en garde, en sa §4.1.1 : le nom d'un propriétaire de service, un rôle, une appartenance à un groupe et des politiques d'accès sont autant d'assertions susceptibles de changer entre le moment de l'émission d'un SVID et celui de sa validation ou de son usage.</p>
-
 <p>Côté fondation, la CNCF classe SPIFFE et SPIRE au niveau « Graduated » : les deux projets y ont été acceptés le <strong>29 mars 2018</strong>, sont passés en « Incubating » le <strong>22 juin 2020</strong>, puis en « Graduated » — le <strong>23 août 2022</strong> selon la page projet SPIFFE, le <strong>22 août 2022</strong> selon la page projet SPIRE (Vol. III F-88, <strong>[B]</strong>). ⚠ <strong>Divergence d'un jour entre deux pages du même organisme, reproduite telle quelle et non arbitrée</strong> : la page d'annonce de graduation a renvoyé un HTTP 404 le 21 juillet 2026, et la date n'a pas pu être recoupée. « Graduated » est un <strong>niveau de maturité de fondation</strong> ; il ne mesure aucune adoption en entreprise, et le lot d'instruction du Vol. III déclare n'avoir cherché aucune métrique de déploiement.</p>
-
 <div class="avert">
   <p><strong>L'identité de charge de travail n'est pas re-décrite ici.</strong> Son socle pré-agentique est <strong>posé au ch. 3</strong> et ce chapitre s'y adosse ; ce qui appartient au présent § est le <strong>jalon</strong> — la date à laquelle un objet d'identité distinct de l'utilisateur se constitue —, non le mécanisme.</p>
 </div>
-
 <p><strong>2026 — un seul document sur sept est soumis à l'IESG, et l'architecture range les intermédiaires d'IA parmi les charges de travail déléguées.</strong> Au 21 juillet 2026, la page des documents du groupe de travail WIMSE (<em>Workload Identity in Multi System Environments</em>) de l'IETF recense <strong>sept</strong> <em>Internet-Drafts</em> de groupe de travail, <strong>tous non publiés en RFC</strong> ; <strong>un seul</strong> — <code>draft-ietf-wimse-workload-identity-practices-05</code>, du 30 juin 2026 — porte l'état « Submitted to IESG for Publication », en visée <em>Informational</em> (Vol. III F-85, <strong>[B]</strong>). ⚠ <strong>Deux bornes se reportent avec l'entrée</strong> : le relevé porte sur les documents <strong>de groupe de travail</strong> — les brouillons individuels apparentés, listés sur la même page, n'ont été ni ouverts ni énumérés —, et il est horodaté au point d'être périssable, l'un des sept expirant six semaines après la consultation.</p>
-
 <p>Le document d'architecture du groupe, <code>draft-ietf-wimse-arch-08</code> — <em>Internet-Draft</em> du 6 juillet 2026, expirant le 7 janvier 2027, à l'état « I-D Exists », en visée <em>Informational</em> — définit la charge de travail comme « an independently addressable and executable software entity » et énonce en sa §3.4.11, <strong>du point de vue WIMSE</strong>, que les intermédiaires d'IA (<em>AI intermediaries</em>) sont un cas particulier de charges de travail déléguées : « From WIMSE perspective, AI intermediaries are a special case of delegated workloads. » (Vol. III F-86, <strong>[B]</strong>). ⚠ <strong>Section d'architecture d'un brouillon en cours, non prescription protocolaire</strong> (R-09 du Vol. III) : elle ne fait autorité sur rien et peut changer à la révision suivante. ⚠ <strong>Le tri prospectif ne trouve rien à trier dans ce relevé, et c'est le constat</strong> : <strong>aucune date de publication en RFC n'est annoncée pour aucun des sept documents</strong> (Vol. III F-85). Or un <strong>PROGRAMMÉ</strong> suppose un <em>engagement daté réel</em> — le siège des trois statuts est au <strong>ch. 49 § 49.0</strong> et n'est pas redéfini ici. <em>À défaut de date, la mise en RFC ne reçoit aucun statut prospectif, et un état de procédure n'en tient pas lieu.</em> ⚠ <strong>Écart déclaré avec la source, et il n'est pas arbitré ici</strong> : le Vol. III <em>Monographie</em> §2.2 classe cette mise en RFC « <strong>PROGRAMMÉE sans date d'engagement</strong> » ; le siège rend ce classement indisponible à la somme. <em>Les deux états sont exposés, aucun n'est corrigé.</em></p>
-
 <p><strong>2026, encore — et la boucle se referme sur 2015.</strong> La spécification « Agent Registry » de CSA Labs, publiée le <strong>27 mars 2026</strong>, ancre son profil d'agent sur SCIM 2.0 — c'est-à-dire sur le RFC 7643 — et sur <code>draft-abbey-scim-agent-extension-00</code>, brouillon IETF <strong>expiré le 19 avril 2026</strong>, vingt-trois jours après la publication de la spécification qui s'y adosse (Vol. III H-03, <strong>[A, statut BROUILLON]</strong>). Elle est elle-même un <strong>brouillon de laboratoire, non une norme ratifiée</strong> (R-09 du Vol. III ; PRD Vol. II §8.2.5). Le registre gouverné est l'objet du <strong>ch. 15</strong> ; ce qui appartient ici est la boucle : <em>le schéma dont la §4 ne définit aucun type de ressource pour un mandataire logiciel est celui sur lequel la première spécification de registre d'agents choisit de s'ancrer, onze ans plus tard.</em></p>
-
 <p><span class="auteur">Lecture de l'auteur</span> le socle établit les deux faits <strong>séparément</strong> : l'énumération des trois sous-sections de la §4 du RFC 7643 (Vol. III F-28) et l'ancrage du profil d'agent de la spécification CSA sur ce RFC (Vol. III H-03). Ce qu'il n'établit pas : que cet ancrage produise une difficulté quelconque, ni que les rédacteurs de la spécification l'aient tenu pour une contrainte — aucune source consultée ne documente leur motif.</p>
-
 <p><strong>Où cette généalogie aboutit en production, et à quel statut.</strong> Les offres commerciales sont retenues ici comme <strong>cas d'instanciation documentés, jamais comme recommandations</strong>. Google Cloud date au <strong>22 avril 2026</strong> la disponibilité générale d'« Agent Identity » dans IAM, tout en plaçant son gestionnaire d'authentification (<em>auth manager</em>) en <strong>préversion</strong> à la même date ; le mécanisme repose sur une identité SPIFFE matérialisée par des certificats X.509 <strong>de vingt-quatre heures</strong> (Vol. III F-36, <strong>[C]</strong>). Chez AWS, le mécanisme documenté comparable est <strong>Amazon Bedrock AgentCore Identity</strong>, où l'identité d'agent est une identité de charge de travail dotée d'attributs propres plutôt qu'un type d'objet distinct (Vol. III F-36, <strong>[C]</strong>). ⚠ <strong>Le statut de cette dernière offre a été daté depuis, et l'écart mérite d'être dit plutôt que lissé</strong> : le lot d'instruction du 21 juillet 2026 déclarait n'avoir pu ouvrir aucune source primaire pour le dater ; le billet <em>What's New</em> de l'éditeur, <strong>du 13 octobre 2025</strong>, donne pourtant l'offre nommée — volet identité compris — pour <strong>généralement disponible</strong>, ce que la re-datation du socle consolidé a constaté le 28 juillet 2026. <em>Ce n'est pas un fait survenu depuis le gel : c'est une source primaire que le lot n'avait pas ouverte.</em> ⚠ <strong>La conséquence de niveau n'est pas tirée ici</strong> : F-36 du Vol. III demeure une entrée <strong>[C]</strong> tout entière — elle corrobore la généalogie, elle ne porte aucune affirmation centrale —, et son réexamen relève du PRD §7.1, non d'une pièce.</p>
-
 <p><em>Annonce, feuille de route, préversion et disponibilité générale documentée sont quatre choses différentes ; chez un même fournisseur, la même date du 22 avril 2026 en porte deux, et les citer ensemble est la seule façon de ne pas lire la préversion pour la disponibilité générale.</em></p>
-
+<figure class="figure">
+  <img src="../figures/f-12-01-genealogie.svg" alt="Figure 12.1 — Cinq moments documentés, de 2012 à 2026 : l&#39;hypothèse humaine quitte les définitions." />
+  <figcaption><strong>Figure 12.1</strong> — Cinq moments documentés, de 2012 à 2026 : l'hypothèse humaine quitte les définitions.</figcaption>
+</figure>
 <h2 id="s122"><span class="sig">§ 12.2</span>L'écart de gouvernance des identités non humaines</h2>
-
 <p><strong>Ce que cette section ne chiffrera pas, et pourquoi elle le dit d'entrée.</strong> Le plan annonce pour ce point un « ratio machines/humaines » et une « prolifération des secrets ». <strong>Le socle du Vol. III ne documente aucun de ces deux ordres de grandeur : c'est une absence de documentation dans le corpus de cet ouvrage, non un fait négatif vérifié</strong> (R-14 du Vol. III, degré 3). Son lot d'instruction déclare explicitement n'avoir cherché aucune métrique d'adoption ou de déploiement, pour aucun de ses objets ; et la règle d'attribution range de toute manière ces ratios parmi les <strong>illustrations</strong> et jamais parmi les preuves (PRD Vol. II §8.2). <strong>Aucun énoncé de la présente section ne dépend d'un ordre de grandeur.</strong></p>
-
 <div class="avert">
   <p><strong>Un autre volume de la somme en porte un, et le fait se déclare plutôt qu'il ne s'exploite.</strong> Le Vol. I <em>Monographie</em> §4.1.3 rapporte, sur le ratio des identités non humaines aux identités humaines, un rapport de <strong>82 pour 1</strong> <strong>attribué à Rubrik Zero Labs (2025)</strong> — chiffre de fournisseur, issu d'une enquête commanditée, que le Vol. I marque lui-même « à re-vérifier à la publication ». ⚠ <strong>Cela ne comble pas la lacune du Vol. III, et il faut dire pourquoi</strong> : une métrique auto-déclarée est une illustration, jamais une preuve, à chaque occurrence et sans exception d'usage illustratif — c'est la règle que les deux volumes appliquent également. <em>Un chiffre auto-déclaré qu'on cesse d'attribuer devient, en trois citations, un fait.</em> La lacune du Vol. III reste donc ouverte au degré 3, et le chiffre du Vol. I reste une illustration attribuée : <strong>les deux énoncés sont exacts dans leur périmètre, et ils ne se corrigent pas l'un l'autre</strong>. Le fait est remonté au plan (voir la note de statut), non arbitré ici.</p>
 </div>
-
 <p><strong>Ce qui tient sans chiffre : un incident public, daté, à l'échelle.</strong> La campagne suivie sous la désignation <strong>UNC6395</strong> a donné accès, du <strong>8 août 2025</strong> à au moins le <strong>18 août 2025</strong>, à des instances Salesforce <strong>au moyen de jetons OAuth compromis</strong> d'une application tierce ; l'ensemble des jetons a été révoqué le <strong>20 août 2025</strong> (Vol. III F-21, <strong>[A]</strong>). Le maillon qui cède y est nommé, et il est architectural : le <strong>jeton porteur</strong> (<em>bearer token</em>) n'est lié ni à l'appelant, ni à un appareil, ni à une session — <em>quiconque le détient est l'intégration.</em></p>
-
 <div class="avert">
   <p><strong>Cet incident borne un garde-fou du Vol. III, et la borne se reporte ici.</strong> On ne peut pas écrire, au sujet des identités non humaines, qu'aucun incident public majeur ne serait documenté : l'affirmation d'absence générale a été <strong>écartée au vote adversarial</strong> du lot correspondant, et le garde-fou est depuis restreint à son objet réel — l'usurpation du <strong>justificatif propre d'un agent</strong>, dont le Vol. III dit l'absence de documentation, <strong>et de cela seul</strong>. Le siège de cette restriction est le ch. 19 § 19.6 ; elle n'est pas rejouée ici.</p>
 </div>
-
 <p><strong>L'écart, tel que le socle permet de le poser.</strong> Trois observations, chacune tracée, et aucune ne suppose un dénombrement.</p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Observation</th><th>Ce que le socle porte</th></tr></thead>
-  <tbody>
-    <tr><td>L'annuaire d'entreprise ne porte pas l'objet</td><td>La §4 du RFC 7643 ne définit aucun type de ressource pour un mandataire logiciel autonome (Vol. III F-28, <strong>[B, degré 1]</strong>, borné aux sous-sections de cette §4) ; la spécification de registre d'agents de CSA Labs du 27 mars 2026 s'y ancre néanmoins, via une extension IETF expirée (Vol. III H-03, <strong>[A, statut BROUILLON]</strong>)</td></tr>
-    <tr><td>Le justificatif n'est pas lié à son porteur</td><td>Le jeton porteur de la campagne UNC6395 n'est lié ni à l'appelant, ni à un appareil, ni à une session (Vol. III F-21, <strong>[A]</strong>)</td></tr>
-    <tr><td>Le domaine se dote d'un contre-modèle avant de se doter d'un inventaire</td><td>Un SVID est considéré valide s'il a été signé par une autorité du domaine de confiance de l'identité SPIFFE qu'il porte (Vol. III F-87, <strong>[B]</strong>) ; un fournisseur infonuagique matérialise l'identité d'agent par des certificats X.509 de vingt-quatre heures (Vol. III F-36, <strong>[C]</strong> — corroboration)</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Observation</th>
+<th>Ce que le socle porte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>L'annuaire d'entreprise ne porte pas l'objet</td>
+<td>La §4 du RFC 7643 ne définit aucun type de ressource pour un mandataire logiciel autonome (Vol. III F-28, <strong>[B, degré 1]</strong>, borné aux sous-sections de cette §4) ; la spécification de registre d'agents de CSA Labs du 27 mars 2026 s'y ancre néanmoins, via une extension IETF expirée (Vol. III H-03, <strong>[A, statut BROUILLON]</strong>)</td>
+</tr>
+<tr>
+<td>Le justificatif n'est pas lié à son porteur</td>
+<td>Le jeton porteur de la campagne UNC6395 n'est lié ni à l'appelant, ni à un appareil, ni à une session (Vol. III F-21, <strong>[A]</strong>)</td>
+</tr>
+<tr>
+<td>Le domaine se dote d'un contre-modèle avant de se doter d'un inventaire</td>
+<td>Un SVID est considéré valide s'il a été signé par une autorité du domaine de confiance de l'identité SPIFFE qu'il porte (Vol. III F-87, <strong>[B]</strong>) ; un fournisseur infonuagique matérialise l'identité d'agent par des certificats X.509 de vingt-quatre heures (Vol. III F-36, <strong>[C]</strong> — corroboration)</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 12.1 — L'écart de gouvernance posé sans dénombrement, au 21 juillet 2026.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> raccourcir la durée de vie d'un justificatif et gouverner un parc d'identités sont deux dispositifs distincts, et le second ne se déduit pas du premier. <strong>Ce que le socle établit</strong> : la durée de vingt-quatre heures chez un fournisseur nommé (Vol. III F-36, <strong>[C]</strong> — corroboration, jamais fait central) et le critère de validité d'un SVID (Vol. III F-87, <strong>[B]</strong>). <strong>Ce qu'il n'établit pas</strong> : qu'une durée courte compense un défaut d'inventaire ou d'imputabilité — aucune source consultée ne met les deux dispositifs en rapport, et aucune ne mesure l'effet de l'un sur l'autre.</p>
-
 <p><strong>Deux pièces formulent cet écart comme un déplacement de fonction.</strong> L'<em>OWASP Top 10 For Agentic Applications 2026</em>, dont il faut citer ensemble le <strong>millésime 2026</strong> et la <strong>date de publication de décembre 2025</strong> (Vol. III F-16, <strong>[A]</strong>), fournit l'énoncé d'inadéquation architecturale : « Without a distinct, governed identity of its own, an agent operates in an attribution gap that makes enforcing true least privilege impossible. » (Vol. III F-19, <strong>[A]</strong> ; siège d'analyse au ch. 19). Et le rapport <em>State of Agentic AI Security and Governance</em>, version 2.01 de juin 2026, pose « identity as the new control plane » (Vol. III F-20, <strong>[A]</strong>).</p>
-
 <div class="avert">
   <p><strong>Deux réserves d'emploi, l'une et l'autre opposables.</strong> <em>Attribution</em> : ce dernier rapport reprend des métriques auto-déclarées d'éditeur ; <strong>aucune n'est reprise ici</strong>, et aucune ne le serait sans attribution nominative à chaque occurrence (PRD Vol. II §8.2). <em>Homonymie</em> : l'expression relève du garde-fou d'homonymie à quatre branches, dont le <strong>siège est le ch. 7 § 7.5</strong> et qui recense notamment le sigle <strong>ACP</strong>, le plan de contrôle au sens infrastructure et le maillage d'agents (R-8 du Vol. II ; R-13 et R-04 du Vol. III). Le socle <strong>ne caractérise pas</strong> laquelle de ces branches le rapport vise : la formule est donc <strong>laissée en langue originale</strong>, ni traduite ni assimilée à l'un des emplois recensés. <em>L'encadré de désambiguïsation n'est pas reconstruit ici — il se lit au ch. 7 § 7.5.</em></p>
 </div>
-
 <h2 id="s123"><span class="sig">§ 12.3</span>Pourquoi l'agent casse le modèle : identité stable et comportement variable</h2>
-
 <p>Le même rapport porte la distinction qui commande la suite du Livre. L'identité non humaine (<em>non-human identity</em>, NHI) « verifies that a credential is authorized to connect » ; l'identité d'agent, elle, « has to verify what the holder is doing with that authorization, <strong>continuously</strong> » (Vol. III F-20, <strong>[A]</strong>). Le premier énoncé porte sur une <strong>autorisation de connexion</strong>. Le second porte sur <strong>l'usage fait de cette autorisation</strong>, et il porte l'adverbe <em>continuously</em>.</p>
-
 <p>Ce déplacement n'invente pas une faiblesse : il en rend une <strong>structurelle</strong>. La pile héritée sait vérifier une <strong>détention</strong>. Le socle porte ce constat au niveau du justificatif plutôt qu'au niveau du flux, et c'est ce qui le rend citable : le jeton porteur n'est lié ni à l'appelant, ni à un appareil, ni à une session (Vol. III F-21, <strong>[A]</strong>). Un justificatif éphémère resserre la fenêtre d'exploitation sans changer la nature de ce qui est vérifié — la spécification SPIFFE-ID le dit d'elle-même, en nommant l'écart entre le moment de l'émission et celui de l'usage, et en le rapportant à des assertions susceptibles de changer entre les deux (Vol. III F-87, <strong>[B]</strong>).</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> l'agent déplace cet écart d'un cran, de l'assertion attachée à l'identité vers l'action entreprise sous cette identité. <strong>Ce que le socle établit</strong> : la spécification SPIFFE-ID nomme un écart entre émission et usage, portant sur des assertions (Vol. III F-87) ; un référentiel de 2026 pose que la vérification d'une identité d'agent porte sur l'usage fait de l'autorisation, en continu (Vol. III F-20). <strong>Ce qu'il n'établit pas</strong> : que le second écart soit une conséquence du premier, ni qu'aucun mécanisme documenté ne les traite ensemble — aucune source consultée ne les met en rapport.</p>
-
-<p><strong>Le terme « non déterministe » n'appartient pas au socle ; la variabilité après déploiement, si — et ce sont des superviseurs qui la nomment.</strong> La ligne directrice <strong>E-23</strong> du BSIF, publiée le 11 septembre 2025 et en vigueur le <strong>1ᵉʳ mai 2027</strong>, range expressément parmi les objets de sa surveillance continue l'« autonomous decision making, autonomous re-parametrization » (Vol. III H-04, <strong>[A/B mixte]</strong> ; siège au ch. 25). ⚠ <strong>Modalité, et elle n'est pas négociable</strong> : E-23 est une ligne directrice fondée sur des principes, rédigée au conditionnel — ce qu'elle formule est <strong>attendu par</strong> E-23, jamais « exigé ». ⚠ Et sa portée agentique n'est pas écrite : vérification mécanique sur le texte intégral, en anglais comme en français, « agentique » et « agent(s) » comptent <strong>zéro occurrence</strong>, « orchestration » également, « autonom\* » en compte <strong>huit</strong> (Vol. III H-04, fait négatif vérifié). Du côté des valeurs mobilières, l'avis <strong>11-348</strong> des ACVM, publié le 5 décembre 2024, définit le système d'IA en y incluant des <strong>niveaux variables d'autonomie et d'adaptativité après déploiement</strong> (Vol. III H-07, <strong>[B]</strong> ; siège au ch. 28).</p>
-
+<p><strong>Le terme « non déterministe » n'appartient pas au socle ; la variabilité après déploiement, si — et ce sont des superviseurs qui la nomment.</strong> La ligne directrice <strong>E-23</strong> du BSIF, publiée le 11 septembre 2025 et en vigueur le <strong>1ᵉʳ mai 2027</strong>, range expressément parmi les objets de sa surveillance continue l'« autonomous decision making, autonomous re-parametrization » (Vol. III H-04, <strong>[A/B mixte]</strong> ; siège au ch. 25). ⚠ <strong>Modalité, et elle n'est pas négociable</strong> : E-23 est une ligne directrice fondée sur des principes, rédigée au conditionnel — ce qu'elle formule est <strong>attendu par</strong> E-23, jamais « exigé ». ⚠ Et sa portée agentique n'est pas écrite : vérification mécanique sur le texte intégral, en anglais comme en français, « agentique » et « agent(s) » comptent <strong>zéro occurrence</strong>, « orchestration » également, « autonom* » en compte <strong>huit</strong> (Vol. III H-04, fait négatif vérifié). Du côté des valeurs mobilières, l'avis <strong>11-348</strong> des ACVM, publié le 5 décembre 2024, définit le système d'IA en y incluant des <strong>niveaux variables d'autonomie et d'adaptativité après déploiement</strong> (Vol. III H-07, <strong>[B]</strong> ; siège au ch. 28).</p>
 <div class="avert">
   <p><strong>Ces deux textes sont cités ici pour un seul motif — ils nomment la variabilité après déploiement — et pour rien d'autre.</strong> Ce qu'ils demandent, à qui, et sous quelle modalité relève du <strong>Livre III</strong>, seul fondé à l'établir. Aucun rapprochement entre un mécanisme d'identité et une attente réglementaire n'est proposé ici : ce serait une inférence d'auteur, et son siège est le ch. 25 § 25.2.</p>
 </div>
-
 <p>Ce que ces deux textes nomment, chacun dans son ordre, c'est un <strong>comportement qui change après la mise en service</strong>. L'identifiant, lui, ne change pas : c'est sa fonction. <em>Un identifiant stable répond à qui se connecte ; il ne répond pas à ce qui est fait de l'autorisation obtenue.</em> La conséquence, telle que le référentiel de 2026 la formule, n'est pas d'abord un risque d'intrusion mais une <strong>impossibilité d'imputer</strong> : sans identité propre et gouvernée, l'agent opère dans un écart d'attribution qui rend le moindre privilège inapplicable (Vol. III F-19, <strong>[A]</strong>).</p>
-
 <p><em>C'est cet écart d'attribution que tout le Livre II entreprend de refermer — et le ch. 14 en fera la cinquième de ses cinq questions.</em></p>
-
 <h2 id="s124"><span class="sig">§ 12.4</span>OAuth 2.x et l'agent : <em>client</em> ou détenteur de ressource ?</h2>
-
 <p>Le RFC 6749 répartit <strong>quatre rôles</strong> en sa §1.1, et deux d'entre eux décident du sort de l'agent. Les définitions ont été citées au § 12.1 ; ce qui appartient ici est ce qu'on en tire.</p>
-
 <p>Deux constats en découlent, sans autre appui que ces définitions. Le premier : le détenteur de ressource est une <em>entité</em>, et le terme d'utilisateur final est <strong>réservé</strong> au cas où cette entité est une personne. Le second : le client est déjà, par construction, une application agissant pour le compte d'autrui. Rien dans ces deux phrases n'écarte un mandataire logiciel de l'un ou l'autre rôle (Vol. III F-27, <strong>[B]</strong>). <em>Le point mérite d'être tenu contre une facilité de lecture</em> : écrire qu'« OAuth suppose un humain » prête au texte une interdiction qu'il ne porte pas, et déplace le débat vers une réécriture de la norme là où le problème est ailleurs.</p>
-
 <p>L'hypothèse humaine siège en effet dans le <strong>flux</strong>. L'agent utilisateur interposé — un navigateur, en pratique — n'est pas un détail d'implémentation : c'est le lieu où le détenteur de ressource comparaît, s'authentifie et consent. <em>(Borne conservée du socle : cette hypothèse se cite comme rattachée au <strong>flux de la §4.1</strong>, jamais à un numéro fin de sous-section, le rendu du texte ayant varié entre deux interrogations.)</em></p>
-
 <p>Deux options s'offrent alors, et aucune n'est neutre. Si l'agent est traité en <strong>client</strong>, le flux reste conforme, mais le mandat qui l'autorise doit être exprimé par un autre mécanisme que la RFC ne fournit pas à cet endroit — c'est l'objet du § 12.5 et, pour la chaîne complète, du <strong>ch. 17</strong>. Si l'agent est traité en <strong>détenteur de ressource</strong>, l'agent utilisateur interposé perd son siège : il n'y a plus personne à rediriger.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> le socle établit que les définitions de la §1.1 n'excluent pas une entité non humaine et que le flux de la §4.1 présuppose un agent utilisateur interposé (Vol. III F-27). Il n'établit pas que l'agent doive occuper l'un des deux rôles plutôt que l'autre, ni qu'une réponse figure dans le texte de la RFC. <em>La lecture proposée — le point de rupture est procédural avant d'être définitionnel — est une construction d'auteur.</em></p>
-
 <p>Le mode d'octroi par justificatifs de client (<em>client credentials grant</em>) est le complément direct de ce constat : la <strong>§4.4 du RFC 6749</strong> prévoit que le client demande un jeton d'accès « using only its client credentials », lorsqu'il accède à des ressources protégées placées sous son propre contrôle ou à celles d'un autre détenteur de ressource convenues à l'avance avec le serveur d'autorisation (Vol. III F-84, <strong>[B]</strong>). ⚠ <strong>Trois bornes tiennent à cette entrée et se reportent ici</strong> : le passage est relevé dans la <strong>section de ce que le lot déclare n'avoir pas couvert</strong>, il a été écarté du plafond d'affirmations et n'a donc subi <strong>ni vote ni contrôle de bornage</strong> ; et la citation <strong>porte une élision</strong>, elle n'est pas revendiquée comme verbatim continu.</p>
-
-<p><strong>Ce que le Vol. I ajoute, en régime [C], et qui déplace la question.</strong> Le Vol. I <em>Monographie</em> §3.6.1 pose que l'identité non humaine et le jeton OAuth reposent sur une hypothèse que l'agent autonome rend caduque : <strong>un sujet stable agissant dans un mode unique et connu</strong>. Un agent piloté par un modèle de langue alterne en réalité entre agir <strong>pour son propre compte</strong> — déclencher une tâche planifiée, interroger un registre — et agir <strong>au nom d'un humain mandant</strong>, sans qu'aucune trace du mode actif ne soit portée par le jeton classique. Le Vol. I rapporte la formalisation qu'en donne le livre blanc du groupe AIIM de l'<em>OpenID Foundation</em> (South et coll., 2025) — <strong>au moins trois entités</strong> à identifier et à relier : le modèle ou le moteur d'exécution sous-jacent, l'instance d'agent qui exécute, et l'humain délégant —, et il en tire que l'identité agentique est <strong>composite plutôt qu'atomique</strong>.</p>
-
+<p><strong>Ce que le Vol. I ajoute, en régime [C], et qui déplace la question.</strong> Le Vol. I <em>Monographie</em> §3.6.1 pose que l'identité non humaine et le jeton OAuth reposent sur une hypothèse que l'agent autonome rend caduque : <strong>un sujet stable agissant dans un mode unique et connu</strong>. Un agent piloté par un modèle de langage alterne en réalité entre agir <strong>pour son propre compte</strong> — déclencher une tâche planifiée, interroger un registre — et agir <strong>au nom d'un humain mandant</strong>, sans qu'aucune trace du mode actif ne soit portée par le jeton classique. Le Vol. I rapporte la formalisation qu'en donne le livre blanc du groupe AIIM de l'<em>OpenID Foundation</em> (South et coll., 2025) — <strong>au moins trois entités</strong> à identifier et à relier : le modèle ou le moteur d'exécution sous-jacent, l'instance d'agent qui exécute, et l'humain délégant —, et il en tire que l'identité agentique est <strong>composite plutôt qu'atomique</strong>.</p>
 <div class="avert">
   <p><strong>Régime de cet apport, et il n'est pas décoratif.</strong> Les faits du Vol. I entrent dans la somme en <strong>[C]</strong> (PRD §7.1) : sa vérification porte sur ses références, non sur le contenu de ses affirmations. <strong>Aucun énoncé de ce paragraphe n'est central</strong>, et l'élévation en [B] supposerait la lecture de la source primaire que le Vol. I cite. <em>Ce que cet apport fait ici est de nommer la question ; ce n'est pas de la trancher.</em></p>
 </div>
-
+<figure class="figure">
+  <img src="../figures/f-12-04-client-ou-detenteur.svg" alt="Figure 12.4 — L&#39;agent dans OAuth : client ou détenteur de ressource ? Les deux placements, et ce que chacun engage." />
+  <figcaption><strong>Figure 12.4</strong> — L'agent dans OAuth : client ou détenteur de ressource ? Les deux placements, et ce que chacun engage.</figcaption>
+</figure>
 <h2 id="s125"><span class="sig">§ 12.5</span>Les brouillons de l'IETF : quatre statuts, et ce que leurs dates disent ou ne disent pas</h2>
-
 <p>Un <em>Internet-Draft</em> n'est pas une norme : il a une <strong>révision</strong>, une <strong>date de publication</strong>, une <strong>date d'expiration à six mois</strong> et un <strong>état de procédure</strong>, et ces quatre attributs ne se résument pas en un mot. La discipline est imposée par R-09 du Vol. III, et elle décide de ce qu'une institution peut inscrire dans un dossier de diligence raisonnable.</p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Document</th><th>Révision et date</th><th>Expiration</th><th>État relevé au 21 juillet 2026</th><th>Nature</th></tr></thead>
-  <tbody>
-    <tr><td><code>draft-ietf-oauth-transaction-tokens</code></td><td><strong>-09</strong>, 6 juillet 2026</td><td><strong>7 janvier 2027</strong></td><td><em>In WG Last Call</em>, groupe de travail OAuth</td><td>document de groupe de travail (Vol. III F-29, <strong>[A]</strong>)</td></tr>
-    <tr><td><code>draft-abbey-scim-agent-extension</code></td><td><strong>-00</strong>, 16 octobre 2025</td><td><strong>19 avril 2026</strong> — expiré</td><td><em>Expired Internet-Draft (individual)</em> — sans flux, sans adoption par un groupe de travail</td><td>soumission individuelle expirée et archivée (Vol. III F-41, <strong>[B, degré 2]</strong> ; expiration par H-03, <strong>[A]</strong>)</td></tr>
-    <tr><td><code>draft-wzdk-scim-agent-resource</code></td><td><strong>-00</strong>, 5 juin 2026</td><td><strong>7 décembre 2026</strong></td><td>actif</td><td>soumission individuelle (Vol. III F-42, <strong>[B, degré 2]</strong>)</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>Document</th>
+<th>Révision et date</th>
+<th>Expiration</th>
+<th>État relevé au 21 juillet 2026</th>
+<th>Nature</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>draft-ietf-oauth-transaction-tokens</code></td>
+<td><strong>-09</strong>, 6 juillet 2026</td>
+<td><strong>7 janvier 2027</strong></td>
+<td><em>In WG Last Call</em>, groupe de travail OAuth</td>
+<td>document de groupe de travail (Vol. III F-29, <strong>[A]</strong>)</td>
+</tr>
+<tr>
+<td><code>draft-abbey-scim-agent-extension</code></td>
+<td><strong>-00</strong>, 16 octobre 2025</td>
+<td><strong>19 avril 2026</strong> — expiré</td>
+<td><em>Expired Internet-Draft (individual)</em> — sans flux, sans adoption par un groupe de travail</td>
+<td>soumission individuelle expirée et archivée (Vol. III F-41, <strong>[B, degré 2]</strong> ; expiration par H-03, <strong>[A]</strong>)</td>
+</tr>
+<tr>
+<td><code>draft-wzdk-scim-agent-resource</code></td>
+<td><strong>-00</strong>, 5 juin 2026</td>
+<td><strong>7 décembre 2026</strong></td>
+<td>actif</td>
+<td>soumission individuelle (Vol. III F-42, <strong>[B, degré 2]</strong>)</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 12.2 — Trois documents de l'IETF, trois statuts distincts, au 21 juillet 2026.</p>
-
 <p>Des trois documents, <code>draft-ietf-oauth-transaction-tokens</code> — les <strong>jetons de transaction</strong> (<em>transaction tokens</em>) — est le <strong>seul adopté par un groupe de travail</strong>. Son abrégé énonce l'objet : « Transaction Tokens (Txn-Tokens) are designed to maintain and propagate user identity, workload identity and authorization context throughout the Call Chain within a trusted domain during the processing of external requests (e.g. such as API calls) or requests initiated internally within the Trust Domain. » <em>(Source primaire ouverte et citée hors socle par le Vol. III ; l'affirmation correspondante de son lot n'est pas versée.)</em> L'appel de dernière relecture est un <strong>état de groupe de travail</strong> ; il n'est ni une approbation de l'IESG, ni une publication.</p>
-
 <div class="avert">
   <p><strong>La date du 7 janvier 2027 se lit avec précaution</strong> : c'est l'<strong>expiration automatique</strong> du document, mécanique, et <strong>PROGRAMMÉE</strong> au sens du tri prospectif ; elle ne dit rien d'une adoption ni d'un calendrier de publication. Il en va de même du 7 décembre 2026 pour le troisième document du tableau.</p>
 </div>
-
 <p>Le <strong>protocole agent-outil</strong> offre le cas d'une extension hors IETF. Interface client-serveur JSON-RPC 2.0, il porte un <strong>cadre d'autorisation</strong> fondé sur OAuth (Vol. III H-09, <strong>[A]</strong>). ⚠ <strong>La formule est la sienne et se reprend telle quelle</strong> : un cadre d'autorisation décrit une <strong>procédure d'octroi</strong>, non une propriété de sûreté démontrée — écrire « sécurisé » serait la faute que la réserve Vol. II F-01 proscrit et que R-02 du Vol. III interdit. Une révision majeure de la spécification est <strong>annoncée au brouillon</strong> ; la revalidation du Vol. III en confirme la substance et <strong>ne confirme pas la date</strong>. <em>Le chapitre n'écrit donc aucune date de publication pour cette révision.</em></p>
-
 <p>Restent les <strong>extensions d'identité d'agent</strong>, et c'est là que le tri des statuts cesse d'être une formalité. Le brouillon <code>draft-abbey-scim-agent-extension</code> n'existe qu'en une version <strong>-00</strong> du 16 octobre 2025 ; il est expiré et archivé, sans flux ni adoption par un groupe de travail, et le registre porte la mention type selon laquelle un <em>Internet-Draft</em> n'est ni endossé par l'IETF ni doté d'un statut formel dans le processus de normalisation (Vol. III F-41, <strong>[B, degré 2]</strong>). ⚠ <strong>Deux entrées, deux objets, à porter ensemble à chaque mention</strong> : la version et le statut d'adoption viennent de F-41, la date d'expiration du 19 avril 2026 vient de H-03 (R-09 du Vol. III).</p>
-
 <p>À la session du groupe de travail SCIM de l'<strong>IETF 125</strong>, tenue le <strong>19 mars 2026</strong>, une consolidation de deux brouillons a été présentée ; la conclusion consignée au procès-verbal est qu'il faut <strong>d'abord apporter des cas d'usage</strong> avant d'aller plus loin, et <strong>aucun appel à adoption n'y est consigné</strong> (Vol. III F-42, <strong>[B, degré 2]</strong>). Un troisième document, <code>draft-wzdk-scim-agent-resource-00</code>, publié le 5 juin 2026 et expirant le 7 décembre 2026, est <strong>actif</strong> — mais demeure une <strong>soumission individuelle</strong>, non un document du groupe de travail.</p>
-
 <div class="avert">
   <p><strong>Le nom complet d'un brouillon s'écrit à chaque citation, préfixe d'auteur compris.</strong> Le registre de l'IETF héberge une <strong>seconde fiche au nom voisin</strong> <code>draft-scim-agent-extension</code>, sans préfixe d'auteur, de même titre et de mêmes auteurs, version -00 du <strong>11 octobre 2025</strong>, elle aussi « Expired Internet-Draft (individual) » <em>(source primaire ouverte et citée hors socle par le Vol. III, non versée)</em>. Deux documents à cinq jours d'écart qu'un renvoi abrégé ne distingue pas. <strong>La relation entre les deux fiches — reprise, doublon d'enregistrement ou dépôt distinct — n'est établie par aucune source ouverte</strong> : absence de documentation, degré 3.</p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> le socle établit quatre statuts distincts : document de groupe de travail en appel de dernière relecture, soumission individuelle active, soumission individuelle expirée et archivée, spécification hors IETF portant un cadre d'autorisation fondé sur OAuth (Vol. III F-29, F-41, F-42, H-09). <strong>Il n'établit aucun ordre de solidité entre eux, ni aucune probabilité d'aboutissement.</strong> Le classement qu'on serait tenté d'en tirer — un document adopté par un groupe de travail engage une procédure là où une soumission individuelle n'engage que ses auteurs — est une construction d'auteur, et il ne préjuge d'aucune adoption.</p>
-
 <p><strong>Ce que le Vol. I ajoute sur la délégation multi-saut, en régime [C].</strong> Le Vol. I <em>Monographie</em> §3.6.2 rappelle que l'échange de jetons du <strong>RFC 8693</strong> répond au besoin de la chaîne par sa revendication <code>act</code>, <strong>imbricable</strong>, qui inscrit dans le jeton la suite des acteurs ayant relayé l'autorité ; et il en nomme la limite en l'attribuant au même livre blanc de l'<em>OpenID Foundation</em> (South et coll., 2025) : <em>OAuth atteste la délégation mais ne contraint pas en lui-même l'atténuation de privilège entre sauts</em> — rien dans le protocole n'oblige le saut aval à réduire la portée reçue, qui demeure une responsabilité d'implémentation et de politique.</p>
-
 <div class="avert">
   <p><strong>Ce point est un jalon, non un développement, et son siège est ailleurs.</strong> Le <strong>ch. 17 § 17.1</strong> instruit le RFC 8693 sur pièce — sa §4.1, sa §1, la distinction qu'il pose entre délégation et usurpation d'identité —, et le <strong>ch. 17 § 17.6</strong> en tire le problème des deux sauts. Le présent § ne fait que le situer dans la trajectoire des textes, à son régime <strong>[C]</strong>.</p>
 </div>
-
 <div class="avert">
   <p><strong>Relève du plan à instruire, portée ici sans être consommée.</strong> Le TOC signale que la filière ne s'est pas éteinte : des brouillons successeurs sont actifs à mi-2026 — applicabilité de WIMSE aux agents d'IA, cadre composant WIMSE/SPIFFE/OAuth 2.0, extension SCIM d'éditeur pour le provisionnement d'agents —, <strong>tous pré-normatifs</strong>. Ils sont à recenser au gel, <strong>sources primaires à extraire</strong>, et le garde-fou des statuts pré-normatifs demeure inchangé. <strong>Aucun n'est instruit ici</strong>, le volet résiduel de G-1 n'ayant pas été ouvert : ils sont <strong>nommés, non repris comme faits</strong>.</p>
 </div>
-
 <h2 id="s126"><span class="sig">§ 12.6</span>SCIM et le provisionnement d'agents</h2>
-
 <p>SCIM — <em>System for Cross-domain Identity Management</em> — est le mécanisme par lequel une organisation crée, met à jour et désactive des comptes d'un système à l'autre. C'est donc le premier endroit où se pose la question du <strong>provisionnement</strong> d'un agent, c'est-à-dire de son entrée et de sa sortie de l'annuaire.</p>
-
 <p>Le constat de la §4 du RFC 7643 a été posé au § 12.1 et n'est pas rejoué. Sa <strong>borne</strong> compte autant que son contenu : il est établi par l'énumération des sous-sections de cette §4, telle que consultée le 21 juillet 2026. Il ne dit rien du <strong>RFC 7644</strong>, le protocole SCIM, que le lot d'instruction n'a pas ouvert ; rien des extensions de schéma enregistrées ailleurs ; rien d'une contrainte de validation. <em>Rien, dans le RFC 7643, n'interdit de peupler ces attributs pour une entité non humaine.</em></p>
-
 <p><span class="auteur">Lecture de l'auteur</span> le socle établit qu'aucune des trois sous-sections de la §4 ne définit un type de ressource pour un mandataire logiciel, et qu'au moins deux descriptions d'attributs sont libellées en termes de personne (Vol. III F-28). <strong>Il n'établit pas</strong> qu'un type de ressource dédié soit nécessaire, ni qu'inscrire un agent dans un objet <em>User</em> produise un défaut. La lecture proposée — provisionner un agent dans un schéma qui décrit un employé est une <strong>convention d'exploitation</strong> et non une modélisation — est une construction d'auteur, et la charge de la preuve reste du côté de qui l'avance.</p>
-
 <p><strong>Le mouvement de correction, lui, est documenté, et son résultat l'est aussi.</strong> La spécification de laboratoire de la Cloud Security Alliance — page portant en en-tête « White Paper | 2026-03-27 | Status: draft », l'espace qui l'héberge se décrivant comme accueillant des travaux qui ne sont pas encore un projet officiel de l'organisation (Vol. III F-38, <strong>[A]</strong>) — ancre son profil d'agent sur SCIM 2.0, c'est-à-dire sur le RFC 7643 (Vol. III H-03), et cite <code>draft-abbey-scim-agent-extension</code> <strong>dans sa seule version -00</strong> (Vol. III F-41) — celle qui a expiré le 19 avril 2026.</p>
-
 <p>Le registre gouverné est l'objet du <strong>ch. 15</strong>, qui en est le siège ; ce qui appartient ici est l'<strong>écart de statut</strong>, et il se date. <em>Une spécification de laboratoire publiée le 27 mars 2026 continue, en juillet 2026, de citer un brouillon expiré le 19 avril suivant — vingt-trois jours après sa propre publication.</em> <strong>Ce n'est pas un adossement à un texte mort : au 27 mars 2026, le brouillon désigné était vivant.</strong> C'est un <strong>adossement non entretenu</strong>, et la nuance décide de ce qu'on peut en conclure.</p>
-
 <p>Ce que ce brouillon ajoute renseigne au passage sur ce qu'il vient chercher. Son schéma de profil d'agent range parmi ses <strong>champs obligatoires</strong> un <code>toolAccessList</code>, qui énumère les outils et les serveurs du protocole agent-outil que l'agent est autorisé à invoquer, et des <code>permissionBoundaries</code>, qui portent les limites de portée (Vol. III F-40, <strong>[B]</strong>). ⚠ <strong>Ce sont des déclarations de champs, non des propriétés démontrées</strong> : le document décrit un <strong>régime d'inscription</strong>, il n'établit rien de cryptographique par ce seul fait (R-02 du Vol. III). Leur instruction complète est au ch. 15 § 15.3.1 ; ils sont nommés ici parce qu'ils disent ce que l'extension SCIM venait chercher, et rien de plus.</p>
-
 <h2 id="s127"><span class="sig">§ 12.7</span>Entra Agent ID comme extension des RFC</h2>
-
 <p>Ce paragraphe traite <strong>un seul aspect</strong> d'un produit d'éditeur : ce qu'il fait des RFC. ⚠ <strong>Son traitement comme annuaire commercial — disponibilité générale, capacités en préversion, licences, risque de standard de fait — est au ch. 15 § 15.2</strong> et n'est pas repris ici. La distinction n'est pas formelle : le même produit est ici un <strong>cas d'extension normative</strong>, il y sera un <strong>cas de marché</strong>, et les deux lectures ne se mélangent pas.</p>
-
 <p>Microsoft Entra Agent ID est en <strong>disponibilité générale</strong>, datée d'<strong>avril 2026</strong> par les notes de version de l'éditeur (Vol. III F-33, <strong>[B]</strong>), et le socle du Vol. II situe la même bascule « vers avril-mai 2026 » (Vol. II F-07, <strong>[A]</strong>). ⚠ <strong>La borne de ce fait est aussi instructive que le fait</strong> : les notes de version regroupent leurs entrées <strong>par mois et ne portent aucun quantième</strong>. <em>Écrire « avril 2026 » est exact ; écrire une date précise ne le serait pas.</em></p>
-
 <p>Le produit se déclare fondé sur <strong>OAuth 2.0</strong> pour l'autorisation et sur <strong>OpenID Connect</strong> pour l'authentification, et documente deux familles de scénarios — <em>app-only</em> et délégués (Vol. II F-07, <strong>[A]</strong>). Reste la réserve qui commande ce paragraphe, et le socle du Vol. II l'impose en toutes lettres : les flux d'agissement pour le compte d'autrui (<em>on-behalf-of</em>) et de jeton d'agent <strong>étendent les RFC</strong> — <strong>le dispositif ne doit pas être présenté comme du « pur RFC »</strong> (Vol. III H-02, <strong>[A]</strong> ; Vol. II F-07, <strong>[A]</strong>).</p>
-
 <div class="avert">
   <p><strong>L'énoncé porte sur ce que le socle prescrit d'écrire, non sur ce que l'éditeur dirait ou tairait de son propre produit</strong> : cette seconde assertion serait un constat sur la communication d'un fournisseur, et le présent chapitre n'en rend pas.</p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> le socle établit que ces flux étendent les RFC et interdit de présenter le dispositif comme du « pur RFC » (Vol. III H-02 ; Vol. II F-07) ; il n'établit rien sur les <strong>conséquences</strong> de cette extension. La portée que l'auteur lui prête est celle que le Vol. II formulait déjà : <em>un mécanisme conforme à un RFC ratifié est vérifiable contre un texte public, tandis qu'un mécanisme qui étend un RFC est un mécanisme d'éditeur, dont la pérennité et l'interopérabilité engagent la responsabilité de cet éditeur.</em> À ce compte, l'ancrage dans les standards existants qu'affirme la thèse du second mouvement est <strong>réel mais partiel</strong> : c'est un point de départ, non une garantie de portabilité.</p>
-
 <p>Un dernier fait de statut appartient ici, parce qu'il porte sur le vocabulaire d'annuaire et non sur le marché. Le terme <em>blueprint</em> — gabarit d'identité d'agent, au sens que l'éditeur donne au mot — désigne un <strong>objet d'annuaire</strong> servant de patron à la création d'identités d'agent ; il est <strong>spécifié et publié</strong> dans la version stable de l'interface de programmation de cet éditeur, sous un type de ressource qui hérite du type <code>application</code> (Vol. III F-37, <strong>[B]</strong>). ⚠ <strong>Cette entrée est prélevée hors du périmètre de fusion du chapitre, et la déviation se déclare</strong> : elle vient du <strong>Vol. III <em>Monographie</em> §6.1</strong>, source du <strong>ch. 15</strong> ; elle n'est retenue ici que pour son volet de <strong>vocabulaire d'annuaire</strong>, et <strong>son instruction complète — dont sa soumission à la grille du ch. 14 — est au ch. 15</strong>. ⚠ <strong>Elle lève une réserve de l'héritage</strong> : le socle du Vol. II donnait le terme pour <strong>non défini</strong> (Vol. II F-07, Vol. III H-02), et l'énumérait aux côtés des identités d'agents sans en préciser la nature. Elle ne va pas plus loin : <strong>le socle ne documente pas de spécification normative externe définissant ce terme — absence de documentation, degré 3</strong>. <em>La définition n'est opposable qu'au produit qui la porte.</em></p>
-
 <h2 id="s128"><span class="sig">§ 12.8</span>Ce que les RFC ne disent pas — et à quel degré</h2>
-
 <p>Une absence n'a pas de valeur en soi : elle vaut par <strong>la façon dont elle a été établie</strong>. Le Vol. III impose trois degrés, et les confondre est la faute que R-14 proscrit. <strong>Cette section en produit un de chaque</strong>, et c'est ce qu'elle apporte.</p>
-
 <p><strong>Fait négatif VÉRIFIÉ, borné.</strong> La §4 du RFC 7643 ne comporte que trois sous-sections et aucune ne définit de type de ressource pour un mandataire logiciel autonome (Vol. III F-28, <strong>[B, degré 1]</strong>). L'absence est établie par le <strong>balayage documenté d'un texte</strong> — l'énumération des intitulés de sous-sections de cette section, à cette date. Elle ne s'étend ni au protocole SCIM, ni aux extensions enregistrées ailleurs, ni à un éventuel travail postérieur. <em>Un fait négatif borné tient ; le même énoncé étendu au corpus SCIM entier tomberait au premier contre-exemple.</em></p>
-
 <p><strong>Fait négatif ÉTABLI.</strong> Les extensions d'identité d'agent portent la <strong>réserve du registre lui-même</strong> : <code>draft-abbey-scim-agent-extension</code> est donné pour expiré, sans flux ni groupe de travail adoptant, et non endossé par l'IETF (Vol. III F-41, <strong>[B, degré 2]</strong>) ; la session de l'IETF 125 s'est conclue sur une demande de cas d'usage, sans appel à adoption consigné (Vol. III F-42, <strong>[B, degré 2]</strong>). <em>Ces absences reposent sur la réserve explicite que portent les sources, non sur un balayage exhaustif des actes de normalisation.</em></p>
-
 <p><strong>Absence de documentation.</strong> Le titre du chapitre source a nommé <strong>OIDC</strong> jusqu'au 22 juillet 2026, date à laquelle un arbitrage du Vol. III l'en a retiré ; <strong>le socle du Vol. III ne documente pas le corps des spécifications OpenID Connect</strong> — absence de documentation, non fait négatif vérifié. Une entrée héritée mentionne le protocole au titre d'un produit qui s'en réclame (Vol. III H-02, <strong>[A]</strong>), ce qui ne renseigne ni sur son texte, ni sur ce qu'il prévoit ou tait d'un mandataire logiciel. ⚠ <strong>Retirer un mot d'un titre ne retire pas un trou du socle : il cesse seulement de le promettre.</strong></p>
-
 <div class="avert">
   <p><strong>Et le titre du présent chapitre porte toujours « OIDC », lui.</strong> Le TOC l'a conservé au titre du second mouvement, la fusion v0.20 ayant repris les entrées <strong>intégralement</strong>, à la seule renumérotation près — arbitrage <strong>reconduit en v0.25</strong> sur la remontée <strong>R-IV-15</strong> : la décision 11a interdit de réécrire une entrée fusionnée, et <em>une correction de titre serait une réécriture</em>. ⚠ <strong>Ce qui a changé, c'est que le plan porte désormais la réserve ET la lacune qui la fonde</strong> : la <strong>lacune 19 du Vol. III</strong> — OpenID Connect, non instruite — est entrée au registre de l'Annexe C. <em>Une réserve de titre sans lacune enregistrée est une prudence sans adresse.</em> <strong>La pièce ne corrige pas ce titre</strong> — un rédacteur ne corrige jamais le TOC, il remonte —, et la contradiction est <strong>portée en remontée</strong> plutôt que lissée : le chapitre traite d'OIDC uniquement par ce qu'un produit d'éditeur en déclare (§ 12.7), et <strong>rien de son texte n'est établi</strong>.</p>
 </div>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Degré</th><th>Ce qui l'établit</th><th>Occurrence dans ce chapitre</th></tr></thead>
-  <tbody>
-    <tr><td><strong>1 — fait négatif vérifié</strong></td><td>balayage documenté d'un texte nommé, à une date</td><td>la §4 du RFC 7643 ne définit aucun type de ressource pour un mandataire logiciel (Vol. III F-28)</td></tr>
-    <tr><td><strong>2 — fait négatif établi</strong></td><td>réserve explicite portée par la source elle-même</td><td>statut d'expiration et de non-adoption des extensions SCIM pour agents (Vol. III F-41, F-42)</td></tr>
-    <tr><td><strong>3 — absence de documentation</strong></td><td>le corpus consulté est muet ; <strong>n'autorise aucune conclusion</strong></td><td>le corps des spécifications OpenID Connect ; la relation entre les deux fiches homonymes de l'IETF ; ce que la vérification d'un SVID n'établit pas (Vol. III F-87)</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Degré</th>
+<th>Ce qui l'établit</th>
+<th>Occurrence dans ce chapitre</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1 — fait négatif vérifié</strong></td>
+<td>balayage documenté d'un texte nommé, à une date</td>
+<td>la §4 du RFC 7643 ne définit aucun type de ressource pour un mandataire logiciel (Vol. III F-28)</td>
+</tr>
+<tr>
+<td><strong>2 — fait négatif établi</strong></td>
+<td>réserve explicite portée par la source elle-même</td>
+<td>statut d'expiration et de non-adoption des extensions SCIM pour agents (Vol. III F-41, F-42)</td>
+</tr>
+<tr>
+<td><strong>3 — absence de documentation</strong></td>
+<td>le corpus consulté est muet ; <strong>n'autorise aucune conclusion</strong></td>
+<td>le corps des spécifications OpenID Connect ; la relation entre les deux fiches homonymes de l'IETF ; ce que la vérification d'un SVID n'établit pas (Vol. III F-87)</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 12.3 — Les trois degrés d'absence, un exemple de chacun, au 21 juillet 2026.</p>
-
 <p><strong>L'ordre des faits est donc celui-ci, et il est daté du 21 juillet 2026</strong> : un produit en disponibilité générale étend des RFC (Vol. III H-02 ; F-33) ; un document de groupe de travail en appel de dernière relecture propose un mécanisme de propagation du contexte (Vol. III F-29) ; une spécification de laboratoire à l'état de brouillon, publiée le 27 mars 2026, cite toujours une extension expirée le 19 avril 2026 (Vol. III H-03 ; F-41) ; et la consolidation présentée à l'IETF 125 a été renvoyée à ses cas d'usage (Vol. III F-42).</p>
-
 <p><strong>Ce qui manque à cet inventaire n'est pas une pièce, c'est l'objet qui les tiendrait ensemble.</strong> Le Vol. II <em>Monographie</em> l'écrivait déjà en son ch. 8 §8.4, et l'énoncé entre ici comme <strong>thèse d'un volume antérieur, attribuée</strong> : « Un architecte qui chercherait aujourd'hui, pour son dossier de conformité, la norme d'identité et de registre des agents ne la trouverait pas : elle n'existe pas. » ⚠ <strong>Le « passeport d'agent » ne figure dans aucune spécification de 2026</strong> : c'est un <strong>objet de synthèse</strong> que la somme construit au <strong>ch. 16</strong>, en assemblant une carte signée, une inscription au registre, une chaîne de mandat et des attestations. Jusque-là, il n'existe pas — et ce chapitre n'en préjuge rien.</p>
-
 <h3>Synthèse : ce que le chapitre lègue à la somme</h3>
-
 <p><em>Section de sortie sans homologue direct dans la source — construction d'éditeur.</em></p>
-
 <p>Ce chapitre pose <strong>quatre acquis</strong> que les chapitres aval citeront sans les reconstruire.</p>
-
-<ol class="numeros">
-  <li><strong>La borne du demi-siècle.</strong> La généalogie documentée s'ouvre en 2012 ; le passif antérieur est nommé et non décrit, au degré 3. Tout chapitre qui invoquerait « des décennies d'identités machines » comme un fait outrepasserait le socle.</li>
-  <li><strong>Le maillon architectural qui cède.</strong> Le jeton porteur n'est lié ni à l'appelant, ni à un appareil, ni à une session (Vol. III F-21). Les <strong>ch. 19 et 20</strong> le retrouvent comme le premier maillon de leur taxonomie ; ils n'ont pas à le re-établir.</li>
-  <li><strong>Le déplacement de fonction.</strong> Vérifier une <strong>connexion</strong> et vérifier un <strong>usage continu</strong> de l'autorisation sont deux opérations distinctes (Vol. III F-20). C'est la matière de la cinquième des cinq questions du <strong>ch. 14</strong> — <em>qui en répond ?</em> —, que ce chapitre n'a pas à poser deux fois.</li>
-  <li><strong>La discipline des quatre statuts.</strong> Annonce, feuille de route, préversion et disponibilité générale documentée ; document de groupe de travail, soumission individuelle active, soumission expirée, spécification hors IETF. Les <strong>ch. 13, 15, 16 et 18</strong> l'appliquent à leurs propres corpus ; elle est posée ici une fois.</li>
+<ol type="1">
+<li><strong>La borne du demi-siècle.</strong> La généalogie documentée s'ouvre en 2012 ; le passif antérieur est nommé et non décrit, au degré 3. Tout chapitre qui invoquerait « des décennies d'identités machines » comme un fait outrepasserait le socle.</li>
+<li><strong>Le maillon architectural qui cède.</strong> Le jeton porteur n'est lié ni à l'appelant, ni à un appareil, ni à une session (Vol. III F-21). Les <strong>ch. 19 et 20</strong> le retrouvent comme le premier maillon de leur taxonomie ; ils n'ont pas à le re-établir.</li>
+<li><strong>Le déplacement de fonction.</strong> Vérifier une <strong>connexion</strong> et vérifier un <strong>usage continu</strong> de l'autorisation sont deux opérations distinctes (Vol. III F-20). C'est la matière de la cinquième des cinq questions du <strong>ch. 14</strong> — <em>qui en répond ?</em> —, que ce chapitre n'a pas à poser deux fois.</li>
+<li><strong>La discipline des quatre statuts.</strong> Annonce, feuille de route, préversion et disponibilité générale documentée ; document de groupe de travail, soumission individuelle active, soumission expirée, spécification hors IETF. Les <strong>ch. 13, 15, 16 et 18</strong> l'appliquent à leurs propres corpus ; elle est posée ici une fois.</li>
 </ol>
-
 <div class="avert">
   <p><strong>Ce que le chapitre ne lègue pas, et qu'il faut aller chercher ailleurs.</strong> Le socle IAM pré-agentique reste au <strong>ch. 3</strong>. La valeur probante d'une carte signée est au <strong>ch. 15 § 15.1</strong>. Le mandat et sa chaîne sont au <strong>ch. 17</strong>. Le registre comme objet réglementaire est au <strong>ch. 15 § 15.3.3</strong> et au <strong>ch. 25</strong>. Et la question que ce chapitre ouvre sans y répondre — <em>que faut-il pouvoir établir d'un agent ?</em> — est l'objet propre du <strong>ch. 14</strong>.</p>
 </div>
+<hr />
 
 <footer class="pied">
   <p><strong>Vol. IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em></strong> · Livre II, chapitre 12. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau, M.Sc. IT.</p>
-
   <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme (gel unique : 27 juillet 2026).</p>
 </footer>
 

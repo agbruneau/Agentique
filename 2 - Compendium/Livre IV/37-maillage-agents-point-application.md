@@ -861,7 +861,7 @@ constituer, et **l'état du socle est que ce lieu existe comme syntaxe, pas comm
 ⚠ *Un lecteur qui refuse la thèse ne perd aucun des faits cités* — c'est la propriété que R-01 du
 Vol. III protège, et elle vaut ici comme au ch. 16.
 
-## Synthèse : ce que le chapitre lègue à la somme
+### Synthèse : ce que le chapitre lègue à la somme
 
 *Section de sortie sans homologue direct dans la source — construction d'éditeur, conformément à la
 table détaillée du TOC.*

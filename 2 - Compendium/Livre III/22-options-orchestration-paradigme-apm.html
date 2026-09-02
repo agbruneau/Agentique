@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chapitre 22 — Options d&#x27;orchestration et paradigme APM : la taxonomie OO1-OO4 et l&#x27;autonomie encadrée · Interopérabilité et Orchestration en Entreprise Agentique</title>
-<meta name="description" content="Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier. Premier mouvement — autonomie encadrée : orchestration en entreprise (ch. 22-24). Chapitre d'ouverture du Livre, et chapitre à deux mouvements issu de la fusion v0.20 : il porte deux thèses, deux l">
+<meta name="description" content="Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier. Premier mouvement — autonomie encadrée : orchestration en entreprise (ch. 22-24). Chapitre d&#x27;ouverture du Livre, et **chapitre à deux mouvements** issu de la fusion v0.20 : il porte deux thèses, deux lignes Fusion et deux tables de couverture, conservées intégralement (décision 11a du TOC)">
 <meta name="author" content="André-Guy Bruneau, M.Sc. IT">
 <meta name="color-scheme" content="dark">
 <style>
@@ -443,6 +443,17 @@ tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
 tbody td:first-child { color: var(--texte); font-weight: 600; }
 .legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
 
+/* -------------------------------------------------------------- figures */
+/* Les SVG du volume sont dessinés pour le PDF, donc sur fond clair, et ils
+   portent ce fond eux-mêmes — sans quoi il faudrait maintenir deux variantes
+   de chaque figure. Sur ce thème sombre, ils se posent donc comme un carton ;
+   le padding empêche le fond de la figure de toucher le bord du cadre. */
+.figure { margin: 2.1rem 0 1.9rem; }
+.figure img { display: block; width: 100%; height: auto; border-radius: 7px;
+              border: 1px solid var(--trait); background: #fdfbf9; padding: 0.6rem; }
+.figure figcaption { font-size: 0.8rem; font-style: italic; color: var(--texte-faible);
+                     margin-top: 0.65rem; padding-left: 0.15rem; }
+
 /* --------------------------------------------------------------- listes */
 ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
 ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
@@ -532,8 +543,8 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <div class="nav__sous">Livre III · Chapitre 22</div>
   <ol>
     <li><a href="#s220"><span class="num">22.0</span>Ouverture : deux mouvements, une seule question</a></li>
-    <li><a href="#s221"><span class="num">22.1</span>Les quatre options d&#x27;orchestration (OO1-OO4)</a></li>
-    <li><a href="#s222"><span class="num">22.2</span>Les cinq propriétés d&#x27;évaluation</a></li>
+    <li><a href="#s221"><span class="num">22.1</span>Les quatre options d'orchestration (OO1-OO4)</a></li>
+    <li><a href="#s222"><span class="num">22.2</span>Les cinq propriétés d'évaluation</a></li>
     <li><a href="#s223"><span class="num">22.3</span>Les sept critères de sélection</a></li>
     <li><a href="#s224"><span class="num">22.4</span>Les métriques quantitatives et les résultats expérimentaux</a></li>
     <li><a href="#s225"><span class="num">22.5</span>Exécution durable, pipelines et orchestration agentique</a></li>
@@ -541,12 +552,10 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
     <li><a href="#s227"><span class="num">22.7</span>Frames normatifs, frames opérationnels, trois scénarios</a></li>
     <li><a href="#s228"><span class="num">22.8</span>Les quatre capacités requises</a></li>
     <li><a href="#s229"><span class="num">22.9</span>Les frames locaux comme frontière de sécurité</a></li>
-    <li><a href="#s2210"><span class="num">22.10</span>L&#x27;écart de responsabilité, ou qui répond de ce que personne n&#x27;a décidé</a></li>
-
+    <li><a href="#s2210"><span class="num">22.10</span>L'écart de responsabilité, ou qui répond de ce que personne n'a décidé</a></li>
   </ol>
   <div class="nav__pied">
     Vol.&nbsp;IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em><br>
-
     <a href="22-options-orchestration-paradigme-apm.md">Version Markdown</a>
   </div>
 </nav>
@@ -557,311 +566,275 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 <header class="titre">
   <div class="titre__fil">Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier</div>
   <h1><span class="chap">Chapitre 22</span>Options d&#x27;orchestration et paradigme APM : la taxonomie OO1-OO4 et l&#x27;autonomie encadrée</h1>
-  <p class="titre__situe">Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier. Premier mouvement — autonomie encadrée : orchestration en entreprise (ch. 22-24). Chapitre d'ouverture du Livre, et <strong>chapitre à deux mouvements</strong> issu de la fusion v0.20 : il porte deux thèses, deux lignes Fusion et deux tables de couverture, conservées intégralement (décision 11a du TOC)</p>
+  <p class="titre__situe">Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier. Premier mouvement — autonomie encadrée : orchestration en entreprise (ch. 22-24). Chapitre d'ouverture du Livre, et **chapitre à deux mouvements** issu de la fusion v0.20 : il porte deux thèses, deux lignes Fusion et deux tables de couverture, conservées intégralement (décision 11a du TOC)</p>
 </header>
 
-<div class="encadre encadre--oeuvre">
-  <span class="encadre__label">Note</span>
-  <p><strong>Thèse du second mouvement</strong>, citée depuis le TOC v0.30, entrée du chapitre 22 <em>(ancien ch. 26)</em> — l'autonomie n'est pas l'automatisation ; elle se gouverne par des frames normatifs et opérationnels et quatre capacités (encadrement, explicabilité, actionnabilité conversationnelle, auto-modification).</p>
-</div>
+<!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
+     Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
+     que `build/assemble.py` pour le PDF et que `PRD/decompte.sh` pour la volumétrie. L'appareil de
+     gouvernance vit au .md jumeau, qui reste la seule source, et `build/verifier-piece.py` refuse
+     un rendu qui le recopierait. -->
 
+<blockquote>
+<p><strong>Thèse du second mouvement</strong>, citée depuis le TOC v0.30, entrée du chapitre 22 <em>(ancien ch. 26)</em> — l'autonomie n'est pas l'automatisation ; elle se gouverne par des frames normatifs et opérationnels et quatre capacités (encadrement, explicabilité, actionnabilité conversationnelle, auto-modification).</p>
+</blockquote>
 <div class="avert">
   <p><strong>Deux thèses pour un chapitre, et ce n'est pas une négligence de rédaction.</strong> Le ch. 22 est issu de la <strong>fusion v0.20</strong> des anciens ch. 25 et 26 (décision 11 du TOC) : les deux entrées y sont conservées <strong>intégralement</strong>, en deux mouvements portant chacun son ancien titre et son ancienne thèse. Rien n'a été soustrait, et la présente pièce <strong>ne fond pas les deux thèses en une troisième</strong> — ce serait réécrire ce que la fusion s'interdisait de toucher.</p>
 </div>
-
 <div class="avert">
   <p><strong>Les deux thèses ont été collationnées contre le texte rédigé de leur source avant la rédaction</strong>, conformément à la <strong>décision 14</strong> du TOC. <strong>Domaine de balayage : deux thèses examinées, zéro réalignée.</strong> L'une et l'autre reprennent mot pour mot la thèse du chapitre correspondant du Vol. II — ch. 5 et ch. 6 de sa <em>Monographie</em> — à sa forme du 16-17 juillet 2026, et aucune n'a été bornée depuis à sa source. <em>Un balayage qui ne trouve rien se déclare comme un balayage qui trouve : c'est le domaine qui fait la couverture, pas le résultat.</em> ☑ <strong>La collation inverse a été refaite le 28 juillet 2026</strong>, sous la <strong>décision 17</strong> du TOC : les deux blocs ci-dessus ont été <strong>comparés caractère à caractère</strong> à l'entrée courante du plan — <strong>TOC v0.30, deux thèses examinées, zéro écart</strong> —, et <em>le plan ne les a pas touchées depuis la passe qui les a écrites.</em> <strong>Aucune des deux ne figure parmi les quatorze pièces que la décision 17 déclarait désalignées.</strong></p>
 </div>
-
 <h2 id="s220"><span class="sig">§ 22.0</span>Ouverture : deux mouvements, une seule question</h2>
-
 <p>Le Livre I a décrit ce qui rend la coopération possible — protocoles, sémantique, identité, ancrage, modes d'échec. Le Livre II a décrit ce qui rend la confiance opposable — émission, mandat, révocation. Le Livre III ouvre sur une question d'un autre ordre, et c'est celle qui intéresse l'architecte d'entreprise avant toute autre : <strong>qui commande à quoi, et jusqu'où</strong>.</p>
-
 <p>Le chapitre y répond en deux temps, parce que sa matière vient de deux chapitres distincts du Vol. II que la condensation v0.20 a réunis sans les fondre. Le premier mouvement fournit un <strong>vocabulaire de position</strong> : quatre options d'orchestration, cinq propriétés pour en mesurer le prix, sept critères pour choisir. Le second fournit un <strong>principe de gouvernance</strong> : l'autonomie encadrée, ses deux natures de cadres, ses quatre capacités requises. Les deux se répondent — le premier dit où l'on est, le second dit ce qu'il faut poser pour y tenir — mais ils ne se confondent pas, et <em>les fondre en une troisième thèse serait précisément ce que la décision 11a du TOC interdit.</em></p>
-
 <p><strong>Ce que le chapitre ne traite pas, et qui pourrait manquer au lecteur.</strong> Il ne traite ni des produits qui portent ces patrons — le ch. 23 s'en charge —, ni du passage à l'échelle d'un parc — ch. 24 —, ni d'aucune exigence réglementaire canadienne : les ch. 25 à 30 en établissent le contenu et le <strong>ch. 29</strong> en opère la traduction en contraintes d'architecture. Il ne traite pas davantage de la couche d'exploitation qui mesure ces systèmes une fois déployés : elle est au Livre IV. ⚠ <strong>Et il n'emploie jamais « autonomie graduée » ni « <em>control plane</em> » nus</strong> (R-13 du Vol. III) : les échelles d'autonomie se nomment par leur cardinal et leur numérotation, et la première d'entre elles est posée au ch. 14 § 14.4.</p>
-
 <div class="avert">
   <p><strong>Une dernière sortie de périmètre mérite d'être nommée ici parce qu'elle est un arbitrage de forme, non de matière.</strong> Les deux dispositifs d'encadré hérités du Vol. I — « Perspective recherche » et « Mise en œuvre » — sont reconduits dans le Livre I et <strong>cessent au Livre III</strong>. Le § 22.5 provient d'un passage du Vol. I qui en portait deux ; sa matière est intégralement reprise, en prose. <em>Un encadré supprimé n'est pas une matière coupée, et la table de couverture le déclare.</em></p>
 </div>
-
+<hr />
 <p><strong>Premier mouvement — Les options d'orchestration : la taxonomie OO1-OO4</strong> <em>(ancien ch. 25)</em></p>
-
 <h2 id="s221"><span class="sig">§ 22.1</span>Les quatre options d'orchestration (OO1-OO4)</h2>
-
 <p>L'architecte à qui l'on demande d'« introduire de l'agentique » dans un processus d'octroi de crédit reçoit une question mal posée. Elle suggère une alternative binaire — un processus déterministe <em>ou</em> des agents — là où le problème est de savoir <strong>qui commande à qui</strong>. Un agent peut appeler un processus ; un processus peut appeler un agent ; les deux peuvent s'ignorer, ou se connaître. Ces situations ne diffèrent pas par le degré d'intelligence mise en œuvre : elles diffèrent par la <strong>localisation du contrôle</strong>.</p>
-
 <div class="avert">
   <p><strong>Le cadre repris ici vient d'une source unique, et il faut le dire avant d'aller plus loin plutôt qu'après.</strong> Il est porté par un préprint du <strong>30 juin 2026</strong> dû à <strong>Rinderle-Ma, Mangler et coll.</strong> (TU Munich), <strong>non révisé par les pairs</strong>, dont les auteurs déclarent eux-mêmes des menaces à la validité de leurs propres expériences — expériences initiales, invites non comparées entre elles, facteurs confondants (Vol. II F-37, <strong>[B]</strong> pour le cadre). <strong>Le cadre conceptuel est repris ; les résultats chiffrés ne le sont qu'à titre d'illustration.</strong> Cette réserve n'est pas une clause de style : elle commande la manière dont le chapitre distingue, à chaque section, ce qui relève d'une construction conceptuelle réutilisable de ce qui relève d'une expérimentation initiale dont nul ne prétend qu'elle est concluante. ⚠ <strong>Elle est en outre portée au registre des lacunes</strong> — la <strong>lacune PRD Vol. II §10.10</strong> déclare que la taxonomie OO1-OO4 repose sur une source unique et que le <em>frame</em> opérationnel n'y est pas caractérisé ; elle est reprise au registre de l'Annexe C et son état final est enregistré au <strong>ch. 49</strong>.</p>
 </div>
-
 <p>La taxonomie compte quatre <strong>options d'orchestration</strong> (<em>orchestration options</em>), notées OO1 à OO4. Elles se lisent le long de deux axes : la <strong>connaissance du processus</strong> — qui, de l'agent ou du cadre d'exécution, la détient — et le <strong>commandement de l'enchaînement</strong>, c'est-à-dire qui décide de l'ordre des opérations.</p>
-
 <p><strong>OO1 — l'orchestration agentique agnostique au processus.</strong> Des agents collaborent sans qu'aucun cadre explicite ne décrive le processus qu'ils accomplissent. Les moyens techniques en sont ceux que le Livre I a décrits : le protocole agent-outil pour l'accès des agents à leurs outils, le protocole agent-agent pour leur collaboration (ch. 8). Ce qui importe ici est la conséquence architecturale : en OO1, le processus n'existe nulle part sous forme explicite — ni dans un modèle, ni dans un moteur, ni dans une invite. Il n'existe qu'à titre de <strong>propriété émergente</strong> de la conversation entre agents. On peut l'observer <em>a posteriori</em> dans les journaux, si tant est qu'il y en ait ; on ne peut pas le <em>lire</em> avant l'exécution.</p>
-
 <p><strong>OO2 — l'orchestration agentique consciente d'un cadre.</strong> Les agents restent maîtres de l'enchaînement, mais un cadre leur est communiqué — par l'invite ou par le contexte. La différence avec OO1 est réelle : le processus est désormais quelque part, il est écrit.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> il est écrit à l'endroit précis où sa force exécutoire dépend de la coopération du modèle : <em>un cadre transmis par le contexte est une consigne, non une contrainte.</em> <strong>Ce que le socle établit</strong> : la définition d'OO2 par le canal de transmission du cadre — invite, contexte. <strong>Ce qu'il n'établit pas</strong> : la force exécutoire de ce cadre, sur laquelle il ne se prononce pas.</p>
-
 <p><strong>OO3 — l'orchestration de processus invoquant des agents agnostiques.</strong> L'inversion s'opère ici. C'est le processus qui orchestre, et il invoque des agents qui ignorent le processus dans lequel ils s'insèrent. L'agent devient une ressource appelée par une activité, au même titre qu'un service. Il conserve son autonomie <em>à l'intérieur</em> de la tâche qui lui est confiée — c'est bien un agent, non une fonction — mais l'enchaînement, lui, n'est plus négociable.</p>
-
 <p><strong>OO4 — l'orchestration explicite d'agents conscients du processus.</strong> Le processus orchestre, et les agents savent qu'ils opèrent dans un processus. C'est la seule des quatre options où les deux axes sont saturés : le cadre commande <em>et</em> l'agent le connaît.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> la conscience du processus par l'agent n'y est donc pas un substitut à l'encadrement mais un ajout à celui-ci ; c'est vraisemblablement l'option la plus exigeante à construire. <strong>Ce que le socle établit</strong> : la définition des quatre options. <strong>Ce qu'il n'établit pas</strong> : aucun ordre de coût entre elles.</p>
-
 <p>Deux propriétés de cette taxonomie conditionnent son usage. La première est qu'elle déclare des <strong>transitions fluides entre options</strong> : il ne s'agit pas de quatre catégories étanches dans lesquelles ranger un système, mais de positions sur un continuum, entre lesquelles une architecture peut se déplacer — et, ajoutons-le, <strong>dériver</strong>. La seconde est qu'aucun des deux axes n'est celui de la capacité. Rien, dans cette taxonomie, ne dit qu'un système OO4 emploie des modèles plus faibles ou des agents moins autonomes qu'un système OO1. Ce qui se déplace d'un bout à l'autre du continuum, c'est le lieu où réside la connaissance du processus et la main qui en commande l'enchaînement — donc le lieu où l'on peut <strong>agir</strong> sur lui.</p>
-
 <p>Le socle établit que, de OO1 à OO2, on ajoute une description ; que de OO3 à OO4, on ajoute une connaissance ; et que de OO2 à OO3, la main qui tient l'enchaînement change — l'agent cesse d'orchestrer et devient orchestré.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> c'est donc entre OO2 et OO3 que se situe la seule discontinuité véritable de la série. Un architecte qui hésite entre les deux ne choisit pas entre deux degrés d'une même chose, mais entre <strong>deux régimes de responsabilité</strong> : dans l'un, l'écart au processus est un comportement possible du système ; dans l'autre, il n'est pas exprimable. <strong>Ce que le socle établit</strong> : la définition de chaque option et la fluidité des transitions. <strong>Ce qu'il n'établit pas</strong> : aucune hiérarchie entre ces transitions, et aucune désignation de l'une d'elles comme un seuil.</p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Option</th><th>Qui détient la connaissance du processus</th><th>Qui commande l'enchaînement</th><th>Ce qu'on peut lire avant l'exécution</th></tr></thead>
-  <tbody>
-    <tr><td><strong>OO1</strong></td><td>personne — aucun cadre explicite</td><td>les agents</td><td>rien</td></tr>
-    <tr><td><strong>OO2</strong></td><td>les agents, par l'invite ou le contexte</td><td>les agents</td><td>une description, sans force exécutoire établie</td></tr>
-    <tr><td><strong>OO3</strong></td><td>le cadre seul — les agents l'ignorent</td><td>le cadre</td><td>l'enchaînement complet</td></tr>
-    <tr><td><strong>OO4</strong></td><td>le cadre <strong>et</strong> les agents</td><td>le cadre</td><td>l'enchaînement complet</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Option</th>
+<th>Qui détient la connaissance du processus</th>
+<th>Qui commande l'enchaînement</th>
+<th>Ce qu'on peut lire avant l'exécution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>OO1</strong></td>
+<td>personne — aucun cadre explicite</td>
+<td>les agents</td>
+<td>rien</td>
+</tr>
+<tr>
+<td><strong>OO2</strong></td>
+<td>les agents, par l'invite ou le contexte</td>
+<td>les agents</td>
+<td>une description, sans force exécutoire établie</td>
+</tr>
+<tr>
+<td><strong>OO3</strong></td>
+<td>le cadre seul — les agents l'ignorent</td>
+<td>le cadre</td>
+<td>l'enchaînement complet</td>
+</tr>
+<tr>
+<td><strong>OO4</strong></td>
+<td>le cadre <strong>et</strong> les agents</td>
+<td>le cadre</td>
+<td>l'enchaînement complet</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 22.1 — Les quatre options d'orchestration, lues par les deux axes qui les ordonnent. La seule discontinuité est le passage OO2 → OO3, où change la main qui commande — <strong>lecture de l'auteur</strong> pour la colonne de droite, que le socle ne porte pas.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> cette taxonomie fournit à un comité d'architecture ce que le vocabulaire courant lui refuse : <strong>une question fermée</strong>. Demander « ce système est-il agentique ? » n'appelle pas de réponse vérifiable ; demander « où est écrit le processus, et qui peut s'en écarter ? » n'admet, dans ce cadre, que quatre réponses. <strong>Ce que le socle établit</strong> : la taxonomie et ses transitions. <strong>Ce qu'il n'établit pas</strong> : qu'elle suffise à classer tout système réel sans ambiguïté — et la somme ne le prétend pas.</p>
-
+<figure class="figure">
+  <img src="../figures/f-22-01-options-orchestration.svg" alt="Figure 22.1 — Les quatre options d&#39;orchestration, lues par les deux axes qui les ordonnent." />
+  <figcaption><strong>Figure 22.1</strong> — Les quatre options d'orchestration, lues par les deux axes qui les ordonnent.</figcaption>
+</figure>
 <h2 id="s222"><span class="sig">§ 22.2</span>Les cinq propriétés d'évaluation</h2>
-
 <p>Une taxonomie qui ne se paie pas ne sert à rien. Le cadre associe donc aux quatre options cinq <strong>propriétés d'évaluation</strong> : l'autonomie (<em>autonomy</em>), la spécificité de tâche (<em>task specificity</em>), la réactivité (<em>responsiveness</em>), l'<strong>assurance de correction</strong> (<em>correctness assurance</em>) et la <strong>traçabilité/tractabilité</strong> (<em>traceability / tractability</em>). Ce sont les cinq dimensions sur lesquelles se lit le prix d'un positionnement.</p>
-
 <p>L'<strong>autonomie</strong> est la latitude laissée à l'agent de décider. La <strong>spécificité de tâche</strong> exprime le degré auquel le comportement est taillé pour une tâche déterminée plutôt que général. La <strong>réactivité</strong> désigne la capacité à répondre à un événement dans les délais requis. L'<strong>assurance de correction</strong> est la garantie que le résultat est conforme à l'attendu. La <strong>traçabilité/tractabilité</strong> est la capacité à reconstituer et à suivre l'exécution.</p>
-
 <div class="avert">
   <p><strong>Il faut résister à la tentation de remplir mentalement la grille de quatre options par cinq propriétés.</strong> L'intuition selon laquelle l'autonomie décroîtrait mécaniquement de OO1 à OO4 tandis que la correction et la traçabilité croîtraient dans le même mouvement est plausible ; mais le seul résultat rapporté au § 22.4 n'en corrobore que le volet correction, aucune mesure n'y porte sur la traçabilité par option, et l'autonomie n'y dispose d'aucune métrique. <strong>Le socle n'établit pas cette matrice comme une propriété générale de la taxonomie</strong> — <em>absence de documentation dans le corpus, degré 3 de l'échelle R-14 du Vol. III, et non fait négatif vérifié.</em> Un architecte qui présenterait à son comité de risque une matrice complète 4 × 5 en la créditant à cette source lui ferait dire ce qu'elle ne dit pas.</p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> le choix même des cinq propriétés mérite d'être commenté, et le partage qui suit est une proposition de la somme. <strong>Quatre d'entre elles</strong> — la spécificité de tâche, l'assurance de correction, la réactivité et la traçabilité — sont des propriétés que l'on <strong>démontre à un tiers</strong> ; ce sont exactement celles que le § 22.4 montrera instrumentées, et l'instrumentation est précisément ce qui rend une propriété opposable. Elles ne décrivent pas ce que le système sait faire, mais ce que l'exploitant peut <strong>établir</strong> à son sujet. Seule l'autonomie échappe à ce registre : elle qualifie la latitude de la machine, non ce qu'on peut en prouver. <strong>Ce que le socle établit</strong> : l'énumération des cinq propriétés. <strong>Ce qu'il n'établit pas</strong> : leur répartition en deux registres, qui est une construction d'auteur reprise du Vol. II.</p>
-
 <p>La conséquence pour l'objet du présent Livre est directe. Une grille orientée vers la démonstrabilité est celle dont un régulateur peut se servir ; c'est ce qui fonde la pertinence de cet instrument pour un dossier canadien. Mais <strong>le contenu des obligations canadiennes ne se déduit pas de cette grille</strong> : les ch. 25 à 30 l'établissent à partir des textes eux-mêmes, et le ch. 29 en opère la traduction en contraintes d'architecture. Le socle du présent chapitre ne porte aucune caractérisation de ces obligations.</p>
-
 <h2 id="s223"><span class="sig">§ 22.3</span>Les sept critères de sélection</h2>
-
 <p>Aux propriétés — qui décrivent ce qu'une orchestration <em>procure</em> — répondent des critères, qui décrivent ce que la situation <em>exige</em>. Le cadre en énonce sept, <strong>qualitatifs</strong> : la complexité du but, la supervision humaine, les contraintes, l'action humaine, l'espace de décision, l'effort initial et la maintenance.</p>
-
 <p>Les cinq premiers caractérisent le processus lui-même. La <strong>complexité du but</strong> est celle de l'objectif poursuivi. La <strong>supervision humaine</strong> est le degré de contrôle humain requis sur l'exécution. Les <strong>contraintes</strong> sont les obligations qui pèsent sur le déroulement — le socle emploie le terme général, et il faut se garder de le rétrécir : <em>les contraintes réglementaires en sont une espèce, non le genre.</em> L'<strong>action humaine</strong> désigne la présence d'interventions humaines dans le processus. L'<strong>espace de décision</strong> est l'étendue des choix ouverts à chaque point.</p>
-
 <p>Que la supervision humaine et l'action humaine figurent comme <strong>deux critères séparés</strong>, et non comme un seul, est le détail le plus instructif de cette liste. Le socle les énonce distinctement ; il n'en donne pas la définition différentielle, et la somme ne la fabriquera pas.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> la distinction paraît recouvrir celle d'un humain qui <em>surveille</em> un processus et d'un humain qui y <em>accomplit une tâche</em> : deux situations qu'une architecture ne traite pas de la même façon, la première appelant un <strong>point d'observation</strong>, la seconde un <strong>point d'arrêt</strong>, c'est-à-dire un humain-dans-la-boucle (<em>human-in-the-loop</em>). <strong>Ce que le socle établit</strong> : que les deux critères sont énumérés séparément. <strong>Ce qu'il n'établit pas</strong> : leur définition différentielle. ⚠ <strong>Le lecteur canadien mesurera l'enjeu au ch. 27</strong>, qui traite de la révision humaine de l'article 12.1 de la Loi 25 et de son rapport à ces deux figures — et <strong>le ch. 17 § 17.5 en donne la limite empirique</strong>, sous une réserve que le § 22.7 rappelle. Le présent chapitre note seulement que la grille de sélection distingue <strong>deux formes de présence humaine</strong> là où le discours d'architecture courant n'en connaît qu'une.</p>
-
 <p>Les deux derniers critères — l'<strong>effort initial</strong> et la <strong>maintenance</strong> — changent de nature, et c'est ce qui rend cette liste intéressante. Ils ne caractérisent pas le processus : ils caractérisent son <strong>coût de possession</strong>. Le socle établit qu'ils figurent explicitement parmi les sept ; il ne documente pas l'intention des auteurs du cadre.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> leur présence dans la grille interdit de traiter le choix d'orchestration comme une pure question de conformité fonctionnelle. Un positionnement OO3 ou OO4 exige d'expliciter le processus ; expliciter un processus coûte, à la construction comme à l'entretien — et la grille place ce coût <strong>parmi les termes de la décision</strong> plutôt que hors d'elle. C'est là que se joue la sincérité d'une décision d'architecture en institution financière : la discipline de l'encadrement se paie en effort initial et en maintenance, et il est plus confortable de justifier un positionnement OO1 par son agilité que par son moindre coût d'entrée. <strong>Ce que le socle établit</strong> : que l'effort initial et la maintenance figurent explicitement parmi les critères de sélection, ce qui interdit de les traiter comme des considérations subalternes. <strong>Ce qu'il n'établit pas</strong> : ni cette économie politique de la décision, ni aucun ordre de grandeur de ces coûts.</p>
-
 <p>Une remarque de méthode, enfin. Le socle qualifie ces sept critères de <strong>qualitatifs</strong> : ils orientent un jugement, ils ne calculent pas une réponse. <strong>Aucune fonction de score, aucune pondération, aucun arbre de décision ne les relie aux quatre options</strong> — <em>absence de documentation, degré 3.</em> Une institution qui voudrait industrialiser ce choix — et il est légitime qu'elle le veuille, pour le rendre reproductible d'un projet à l'autre — devra construire elle-même cette pondération et l'<strong>assumer comme sa propre décision d'entreprise</strong> plutôt que comme une conclusion de la littérature. Le <strong>ch. 34</strong> reprend ces critères pour positionner des cas d'usage financiers sur la taxonomie ; il le fait sous cette réserve.</p>
-
 <h2 id="s224"><span class="sig">§ 22.4</span>Les métriques quantitatives et les résultats expérimentaux</h2>
-
 <div class="avert">
   <p><strong>Garde-fou de section : source unique, préprint v1.</strong> Tout ce qui suit est <strong>illustration, jamais preuve</strong> (assignation du TOC v0.30, entrée du chapitre 22).</p>
 </div>
-
 <p>Le cadre propose une instrumentation des propriétés du § 22.2. La spécificité de tâche s'y mesure par la complexité cyclomatique (<em>cyclomatic complexity</em>) et par la métrique ABC ; l'assurance de correction, par la précision, le rappel et le F1 (<em>precision, recall, F1</em>) ; la réactivité, par le taux de faux négatifs (<em>false negative rate</em>, FNR) et par la vitesse de réaction ; la traçabilité, par la correction du journal (<em>log correctness</em>).</p>
-
 <p>Deux observations s'imposent, et la première porte sur ce qui <strong>ne figure pas</strong> dans cette liste : <strong>l'entrée du socle ne rapporte aucune métrique quantitative pour l'autonomie</strong>. Le lecteur remarquera que les quatre propriétés instrumentées sont exactement celles que le § 22.2 range du côté de la démonstrabilité, et que la seule qui reste sans mesure est celle qui décrit la latitude laissée à la machine. ⚠ <strong>La somme ne conclut rien de ce silence</strong> : l'entrée du socle n'en rapporte aucune, et établir si l'article lui-même n'en propose pas relèverait d'une relecture ciblée du préprint, <strong>qui n'a pas été conduite</strong> — <em>absence de documentation dans le corpus, degré 3, et non fait négatif vérifié.</em> C'est le volet <em>(c)</em> de la <strong>lacune PRD Vol. II §10.10</strong>, celui-là même dont la source nomme le remède : la relecture du préprint déposé. Le fait est signalé parce qu'un architecte qui bâtirait un tableau de bord sur ces métriques trouverait le trou lui-même.</p>
-
 <p>La seconde observation est que ces métriques sont, dans leur majorité, <strong>empruntées à des disciplines établies</strong> — le génie logiciel pour la complexité cyclomatique et la métrique ABC, l'évaluation des classifieurs pour la précision, le rappel et le F1.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> cet emprunt est un atout pratique, ce sont des mesures que les fonctions de validation d'une institution financière savent déjà lire ; et il appelle une prudence, car une métrique importée <strong>conserve les hypothèses de son domaine d'origine</strong>. <strong>Ce que le socle établit</strong> : la liste des métriques proposées. <strong>Ce qu'il n'établit pas</strong> : leur validité comme indicateurs de risque en contexte financier. Le <strong>Livre IV</strong> examine leur candidature à ce titre, et la présente comme telle.</p>
-
 <p>Viennent les résultats. Sur un scénario d'éclairage prédictif, le cadre rapporte un F1 de <strong>0,40 pour l'orchestration non encadrée (OO1)</strong>, de <strong>0,97 pour l'orchestration encadrée d'agents (OO4)</strong> et de <strong>1,00 pour le déterministe pur</strong>. ⚠ <strong>Ces trois nombres sont des illustrations et rien d'autre.</strong> Les auteurs déclarent eux-mêmes des menaces à la validité — expériences initiales, invites non comparées entre elles, facteurs confondants. Un scénario d'éclairage n'est pas un processus de crédit ; un F1 obtenu une fois sur une tâche d'éclairage prédictif ne se transporte pas dans un dossier réglementaire canadien. <strong>Ces chiffres n'entrent dans la somme ni comme preuve, ni comme ordre de grandeur transposable, ni comme argument.</strong></p>
-
 <p>Deux enseignements plus robustes accompagnent ces mesures, et ceux-là sont des <strong>énoncés de conception</strong>, non des mesures ponctuelles. Le premier, tel que le socle l'énonce : la journalisation confiée aux agents « n'est généralement pas recommandée ».</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> si la trace n'est pas produite par l'agent, elle doit l'être ailleurs, faute de quoi la traçabilité dépend de la bonne volonté de la partie dont on cherche justement à contrôler le comportement. <strong>Ce que le socle établit</strong> : que le producteur est déconseillé. <strong>Ce qu'il n'établit pas</strong> : quel autre producteur désigner — le choix de ce lieu reste une décision d'architecture, et le <strong>ch. 23 § 23.3</strong> montre une des réponses que l'industrie y apporte.</p>
-
 <p>Le second enseignement : <strong>les contraintes temporelles exigent des <em>frames</em> ou des outils externes</strong>, les temps de raisonnement des modèles de langage étant imprévisibles. Un délai qui doit être tenu ne se confie pas à un composant dont la durée d'exécution n'est pas bornée. Le troisième mouvement du présent Livre examine les contraintes temporelles des rails de paiement canadiens (<strong>ch. 33</strong>), où cette règle cesse d'être théorique.</p>
-
 <p>Reste le verdict, que le socle rattache à la même entrée. Sur un scénario soumis à une réglementation stricte — un processus de don de sang régi par la <strong>directive européenne 2002/98/CE</strong> —, le cadre conclut que <strong>l'orchestration non encadrée est « inacceptable » lorsque des exigences strictes d'exécution et de documentation s'appliquent, et que les tâches essentielles doivent être imposées de façon déterministe par le cadre</strong>.</p>
-
 <div class="avert">
   <p><strong>Il faut manier ce verdict avec exactitude.</strong> Il est adossé au même préprint et aux mêmes réserves ; il porte sur un scénario européen, dans un domaine qui n'est pas la finance, sous une directive qui <strong>n'a aucune application au Canada</strong>.</p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> ce qui paraît transposable n'est pas le verdict mais son <strong>mécanisme</strong> : dès lors qu'une exigence porte sur la <em>manière</em> dont une tâche doit être exécutée et documentée, et non seulement sur son résultat, un dispositif qui ne peut ni garantir l'exécution ni produire la trace échoue à l'exigence, <strong>quel que soit son taux de réussite moyen</strong>. <strong>Ce que le socle établit</strong> : le verdict pour son scénario. <strong>Ce qu'il n'établit pas</strong> : sa transposition au cadre canadien — transposition qui est l'objet du <strong>ch. 29</strong>, lequel la conduit explicitement et l'expose comme un raisonnement, non comme un fait rapporté. ⚠ <strong>Et le mécanisme ne se qualifie que par ce que la source démontre</strong> (R-02 du Vol. III) : le préprint mesure un F1 sur un scénario, il ne démontre pas une propriété générale des architectures encadrées.</p>
-
 <h2 id="s225"><span class="sig">§ 22.5</span>Exécution durable, pipelines et orchestration agentique</h2>
-
-<p>*Section <strong>reçue en entier du ch. 1</strong> (Livre I), qui déclare son départ à sa table de couverture. Elle résout contre le Vol. I <em>Monographie</em> §1.6.3, en <strong>[C]</strong>.*</p>
-
+<p><em>Section <strong>reçue en entier du ch. 1</strong> (Livre I), qui déclare son départ à sa table de couverture. Elle résout contre le Vol. I </em>Monographie* §1.6.3, en <strong>[C]</strong>.*</p>
 <p>Le § 22.1 a posé où le processus est écrit. Cette section pose <strong>comment il survit</strong> — car un enchaînement décrit ne vaut que si son exécution résiste à la panne, et c'est un acquis <strong>pré-agentique</strong> que le Livre III reprend sans le redécouvrir.</p>
-
 <h3>22.5.1 Moteurs BPMN et <em>workflow-as-code</em> à exécution durable</h3>
-
 <p>L'exécution fiable d'un processus long suppose qu'une panne du moteur n'en perde pas l'état : c'est la promesse de l'<strong>exécution durable</strong> (<em>durable execution</em>), où la progression est journalisée et rejouable. Deux familles s'y opposent.</p>
-
-<p>Les <strong>moteurs BPMN</strong> exécutent un modèle graphique. Un moteur de cette famille distribue l'état du processus en partitions et le réplique par un protocole de consensus de type Raft pour survivre aux défaillances de nœud, en préservant la lisibilité métier du diagramme. À l'opposé, le paradigme <strong><em>workflow-as-code</strong></em> exprime le processus directement en langage de programmation : un moteur de cette seconde famille garantit qu'un <em>workflow</em> interrompu reprend exactement à son point d'arrêt, par journalisation et <strong>rejeu déterministe</strong> de son historique d'exécution. La différence d'ingénierie est notable — ici, la durabilité et la réplication ne reposent pas sur un consensus interne au moteur mais sont déléguées au magasin de persistance répliqué qu'il pilote.</p>
-
+<p>Les <strong>moteurs BPMN</strong> exécutent un modèle graphique. Un moteur de cette famille distribue l'état du processus en partitions et le réplique par un protocole de consensus de type Raft pour survivre aux défaillances de nœud, en préservant la lisibilité métier du diagramme. À l'opposé, le paradigme <strong><em>workflow-as-code</em></strong> exprime le processus directement en langage de programmation : un moteur de cette seconde famille garantit qu'un <em>workflow</em> interrompu reprend exactement à son point d'arrêt, par journalisation et <strong>rejeu déterministe</strong> de son historique d'exécution. La différence d'ingénierie est notable — ici, la durabilité et la réplication ne reposent pas sur un consensus interne au moteur mais sont déléguées au magasin de persistance répliqué qu'il pilote.</p>
 <p>Au-delà de ce duopole, une génération de moteurs élargit l'éventail des compromis, en proposant l'exécution durable sous des formes plus légères ou embarquées dans la base de données. Sur le plan formel, la robustesse de ces moteurs s'appuie sur des modèles d'orchestration de réessais fiables, du type des acteurs à réessai, qui établissent les garanties d'exactement-une-fois sous défaillance. <strong>La conséquence d'architecture est nette : l'état durable du moteur devient le contrat de fiabilité du processus</strong>, découplant la logique métier des aléas de l'infrastructure.</p>
-
 <div class="avert">
   <p><strong>Cette matière entre dans la somme en [C]</strong> — repérage documentaire du Vol. I, dont la vérification porte sur les références et non sur le contenu des affirmations. <em>Aucun énoncé de cette sous-section ne porte un fait central</em>, et une élévation en [B] supposerait la lecture des sources primaires que le Vol. I cite. La <strong>sémantique d'effet</strong> — idempotence, compensation, réconciliation — que ces garanties supposent est traitée au <strong>ch. 48</strong>, qui en est le siège.</p>
 </div>
-
 <h3>22.5.2 Continuum lots/flux et orchestration de pipelines</h3>
-
 <p>L'intégration de données a longtemps opposé le traitement par lots (<em>batch</em>) au traitement en flux (<em>streaming</em>), de même que le schéma ETL — transformer avant de charger — à son inversion ELT — charger puis transformer dans l'entrepôt cible. Cette opposition s'est muée en <strong>continuum</strong> : la capture de données de changement (<em>Change Data Capture</em>, CDC) publie en flux les mutations d'une base transactionnelle, rapprochant l'alimentation analytique du temps réel et brouillant la frontière.</p>
-
 <p>L'<strong>orchestration de pipelines</strong> coordonne ces traitements de bout en bout en ordonnançant des graphes de tâches ou d'actifs de données. Ces orchestrateurs se distinguent des moteurs de processus métier du § 22.5.1 par leur <strong>granularité</strong> — le lot de données, non la transaction d'affaires. Deux écoles y coexistent : l'une ordonnance des graphes acycliques dirigés de tâches, l'autre réoriente l'ordonnancement autour des <strong>actifs de données produits</strong> plutôt que des seules tâches.</p>
-
 <p>La distinction de granularité n'est pas anodine pour la suite du Livre. Un processus réglementé se décrit à la maille de la transaction d'affaires — c'est celle dont une institution répond ; un pipeline se décrit à la maille du lot. <em>Confondre les deux mailles fait croire qu'un ordonnanceur de pipelines documente un processus décisionnel, ce qu'il ne fait pas.</em></p>
-
 <h3>22.5.3 Orchestration déterministe et orchestration agentique — la charnière</h3>
-
 <p>Ce point articule le basculement central de la période 2025-2026, et il est la <strong>charnière avec le § 22.1</strong>.</p>
-
 <p>L'orchestration classique — qu'elle soit portée par un moteur BPMN ou par du <em>workflow-as-code</em> — est <strong>déterministe</strong> : la séquence des étapes est spécifiée à l'avance par un concepteur, et le moteur ne fait que l'exécuter fidèlement, garantissant reproductibilité, fiabilité et auditabilité <strong>par construction</strong>. L'<strong>orchestration agentique</strong> déplace la frontière : un agent fondé sur un grand modèle de langage planifie dynamiquement l'enchaînement des appels de services et d'outils en fonction de l'objectif et du contexte, <strong>sans plan préétabli</strong>. Le gain est l'adaptabilité à des situations non anticipées ; le coût est une <strong>perte de garanties</strong> — un planificateur stochastique ne fournit ni reproductibilité ni traçabilité immédiate, ce qui heurte les exigences de fiabilité et d'auditabilité des processus critiques.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> la correspondance avec la taxonomie du § 22.1 se lit d'elle-même, et c'est pourquoi la somme place les deux passages dans le même chapitre : <strong>l'orchestration déterministe est le régime des options OO3 et OO4</strong>, où le cadre commande ; <strong>l'orchestration agentique au sens strict est le régime d'OO1 et d'OO2</strong>, où l'agent commande. <strong>Ce que le socle établit</strong> : la définition des deux régimes, chez le Vol. I ; la taxonomie des quatre options, chez le Vol. II. <strong>Ce qu'il n'établit pas</strong> : le rapprochement entre les deux, qui est une construction d'éditeur de la somme — <em>deux sources distinctes, gelées à deux dates, qu'aucun document ne relie.</em></p>
-
 <p>Le pont qui se dessine consiste à <strong>encadrer le planificateur agentique par une mécanique déterministe</strong> : l'agent propose le plan, mais son exécution transite par un moteur durable qui en assure la fiabilité, la compensation et la trace. Cette hybridation — déterminisme pour les garanties, agentivité pour la flexibilité — constitue l'enjeu d'ingénierie ouvert de la période. ⚠ <strong>Elle n'est pas un acquis</strong> : le Vol. I la présente comme un front ouvert, et la somme la reprend comme tel. C'est exactement la position que le second mouvement du présent chapitre va nommer <em>autonomie encadrée</em>, et la coïncidence n'est pas fortuite — <em>deux littératures distinctes ont convergé sur la même figure, et la somme le note sans en tirer une corroboration.</em></p>
-
+<hr />
 <p><strong>Second mouvement — Le paradigme APM : l'autonomie encadrée</strong> <em>(ancien ch. 26)</em></p>
-
 <h2 id="s226"><span class="sig">§ 22.6</span>Le système APM et la ligne de partage entre autonomie et automatisation</h2>
-
 <p>Le premier mouvement a fourni une carte. Une carte ne dit pas pourquoi le terrain a la forme qu'il a. Ce mouvement s'attache à la question que la taxonomie laisse ouverte : <strong>qu'est-ce, au juste, qu'encadrer un agent</strong> — et pourquoi l'encadrement, plutôt que la supervision, l'audit ou la restriction des droits, est-il présenté comme le mécanisme <em>premier</em> de gouvernance des systèmes agentiques ?</p>
-
 <div class="avert">
   <p><strong>La réponse examinée ici vient d'un texte de recherche, et son statut commande tout ce qui suit.</strong> C'est un <strong>manifeste</strong> sur l'<em>Agentic Business Process Management</em> (APM) — Calvanese, De Giacomo, Dumas, Kampik, Montali, Rinderle-Ma, Weber et coll. —, signé par <strong>dix-huit auteurs</strong> issus du monde universitaire et de l'industrie, né d'un séminaire, déposé en préimpression — <strong>arXiv, troisième version datée du 12 avril 2026</strong> — et publié en revue (Vol. II F-36). ⚠ <em>Le socle date la version, non le dépôt initial : il porte trois versions au registre et ne donne la date que de la dernière.</em> Un manifeste de recherche <strong>n'établit pas des faits</strong> : il propose un vocabulaire, une architecture conceptuelle et un programme de travail. Le socle lui attribue une confiance haute <strong>pour l'attribution</strong> — ce que la somme affirme avec certitude, c'est que ces auteurs soutiennent ces thèses, avec ces arguments. Sa valeur pour une institution financière canadienne ne tient donc pas à une autorité normative qu'il n'a pas, mais à ceci : <strong>il nomme, avec une précision que la littérature de fournisseurs n'atteint pas, les objets qu'un dossier de gouvernance devra de toute façon décrire.</strong></p>
 </div>
-
 <p>Le manifeste définit un <strong>système APM</strong> comme un <strong>système sociotechnique composé d'agents au moins partiellement conscients du processus</strong>. Chacun des trois éléments de cette définition mérite d'être pesé ; le socle donne la définition, il n'en commente pas les termes, et la glose qui suit est celle de la somme.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> « sociotechnique » situe <strong>dans</strong> le système les humains qui y participent — celui qui approuve, celui qui conteste, celui qui répond du résultat — au même titre que les composants automatisés : la lecture purement logicielle manque l'objet. Le pluriel d'« agents » signale que ce qui intéresse le manifeste est la <strong>pluralité</strong> et ce qu'elle produit. Et « au moins partiellement conscients du processus » est la clause la plus lourde de conséquences : elle admet dans le périmètre les systèmes dont les agents n'ont qu'une vue <strong>fragmentaire</strong> de la chaîne à laquelle ils contribuent — soit le cas normal en entreprise, l'agent qui exécute correctement sa tâche sans rien savoir de ce qui la précède ni de ce qui en dépend. <strong>Ce que le socle établit</strong> : la définition. <strong>Ce qu'il n'établit pas</strong> : que ce cas fragmentaire soit la situation de référence à gouverner plutôt qu'une déviation à corriger — c'est la lecture de la somme.</p>
-
 <p>De cette définition découle la <strong>distinction fondatrice</strong> du manifeste, celle que la thèse du mouvement cite : <strong>l'autonomie n'est pas l'automatisation</strong>. Automatiser, c'est <strong>fixer le comportement</strong> : l'ingénieur décide à l'avance de la suite des opérations, et la machine l'exécute. Rendre autonome, c'est <strong>déléguer la décision</strong> : l'ingénieur ne fixe plus la suite des opérations, il fixe <strong>ce qui borne le choix</strong> de l'agent. La différence n'est pas de degré, elle est de nature.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> c'est cette ligne que le vocabulaire courant de l'« automatisation intelligente » efface, et l'effacement a une conséquence pratique immédiate pour une institution financière fédérale. <strong>Un contrôle automatisé se documente par sa spécification</strong> : il fait ce qui est écrit, la preuve de conformité est la lecture du code et le rejeu du cas. <strong>Une décision autonome ne se documente pas ainsi</strong>, parce qu'il n'y a rien à lire qui la prédise. Ce que l'on peut documenter, en revanche, c'est <strong>ce qui la bornait</strong>. <strong>Ce que le socle établit</strong> : la distinction autonomie/automatisation. <strong>Ce qu'il n'établit pas</strong> : cette conséquence documentaire, ni aucune critique du vocabulaire courant. Elle est la raison pour laquelle tout le reste de ce mouvement porte sur <strong>les bornes</strong>, et non sur les décisions — et c'est le fil que le <strong>ch. 25</strong> reprendra du côté du risque de modèle.</p>
-
 <div class="avert">
   <p><strong>Garde-fou R-1 du Vol. II — une mention datée à ne pas reprendre comme état des lieux.</strong> Le manifeste cite, parmi les protocoles d'interopérabilité, le protocole de communication d'agents désigné par le sigle <strong>ACP</strong> dans son acception protocolaire, dont le Livre I a établi qu'il a <strong>fusionné dans le protocole agent-agent le 29 août 2025</strong> et que son développement actif a cessé. Cette mention est <strong>antérieure à la fusion</strong> et ne peut donc pas être reprise telle quelle. ⚠ <strong>Le sigle n'est jamais employé nu</strong> (R-8 du Vol. II) : ses quatre emplois sont désambiguïsés une seule fois pour toute la somme, à l'<strong>encadré du ch. 7 § 7.5</strong>, et la <strong>mécanique de la fusion</strong> est posée au <strong>ch. 8 § 8.5.1</strong>. Ni l'un ni l'autre n'est reconstruit ici. <em>Cette mention ne diminue en rien la valeur du cadre conceptuel du manifeste : elle rappelle qu'un texte de recherche fixe l'état d'un domaine à la date de sa rédaction, et que ce domaine-ci se périme par trimestres.</em></p>
 </div>
-
+<figure class="figure">
+  <img src="../figures/f-22-06-ligne-de-partage.svg" alt="Figure 22.6 — Encadrer plutôt que superviser : la ligne de partage entre autonomie et automatisation." />
+  <figcaption><strong>Figure 22.6</strong> — Encadrer plutôt que superviser : la ligne de partage entre autonomie et automatisation.</figcaption>
+</figure>
 <h2 id="s227"><span class="sig">§ 22.7</span>Frames normatifs, frames opérationnels, trois scénarios</h2>
-
 <p>Le mécanisme que le manifeste érige en gouvernance première porte le nom qui donne son titre au Vol. II et son verbe au présent Livre : l'<strong>autonomie encadrée</strong> (<em>framed autonomy</em>). L'agent y dispose d'une latitude de décision réelle, mais <strong>bornée par un cadre (<em>frame</em>) explicite</strong>. L'apport décisif du manifeste est la distinction qu'il opère entre <strong>deux natures de cadres</strong>.</p>
-
 <p>Le <strong>frame normatif</strong> (<em>normative frame</em>) est de nature <strong>déontique</strong> : il énonce des obligations, des permissions et des interdictions. Il dit ce qui <strong>doit</strong> être fait, ce qui <strong>peut</strong> l'être et ce qui ne le <strong>doit</strong> pas. Le manifeste le donne pour <strong>distinct du frame opérationnel</strong> (<em>operational frame</em>) — et c'est tout ce que le socle en rapporte : <strong>la distinction des deux natures est établie, la seconde n'est pas caractérisée</strong>. ⚠ <em>Absence de documentation, degré 3 de l'échelle R-14 du Vol. III</em> : le corpus ne caractérise pas le frame opérationnel, ce qui ne dit rien de ce que le manifeste en dit ailleurs, et <strong>c'est le cœur de la lacune PRD Vol. II §10.10</strong> portée par ce chapitre.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> la distinction n'a de sens que si le frame opérationnel est <strong>d'une autre nature que déontique</strong> : le premier relèverait alors du <strong>devoir-être</strong>, le second du <strong>pouvoir-faire</strong>. Cette glose est celle de la somme, reprise du Vol. II ; le manifeste sépare les deux cadres sans que le socle dise ce que le second contient. <strong>Ce que le socle établit</strong> : la distinction. <strong>Ce qu'il n'établit pas</strong> : le contenu du second terme — et <em>une distinction dont un terme n'est pas caractérisé se cite, elle ne s'exploite pas comme un critère.</em></p>
-
 <div class="avert">
   <p><span class="auteur">Lecture de l'auteur</span> <strong>ce que la confusion des deux cadres coûte mérite d'être écrit, et ce paragraphe entier est une construction d'auteur, dont le marquage se porte à l'ouverture.</strong> Un frame normatif sans frame opérationnel correspondant énonce une règle que rien n'empêche de violer : c'est la politique interne que l'agent ignore parce qu'aucun mécanisme ne la lui impose. Un frame opérationnel sans frame normatif correspondant restreint l'agent <strong>sans dire au nom de quoi</strong> : c'est le contrôle technique dont personne ne sait, deux ans plus tard, quelle exigence il servait — et que le premier gain d'efficacité fera sauter. Les deux frames ne sont donc pas deux couches d'un même dispositif mais <strong>deux objets qui doivent se répondre</strong>, et le travail de gouvernance consiste précisément à <strong>tenir la correspondance entre eux</strong>. <strong>Ce que le socle établit</strong> : la distinction des deux natures de cadres. <strong>Ce qu'il n'établit pas</strong> : qu'elles doivent se répondre, ni ce que leur confusion coûte — <em>le second terme n'y est pas même caractérisé.</em> Le <strong>ch. 29</strong> reprend cette exigence de traçabilité pour son propre compte, et en fait une contrainte d'architecture.</p>
 </div>
-
 <p>Le manifeste ne s'arrête pas à la typologie : il énumère <strong>trois scénarios types</strong> d'encadrement, qui se distinguent par le <strong>nombre de décideurs</strong> et par le <strong>niveau auquel le cadre s'applique</strong>.</p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Scénario</th><th>Décideurs</th><th>Niveau du cadre</th><th>Objet sur lequel une garantie peut porter <em>(lecture de l'auteur)</em></th></tr></thead>
-  <tbody>
-    <tr><td><strong>1</strong></td><td>un seul</td><td>le processus entier</td><td>la chaîne, bornée en un point</td></tr>
-    <tr><td><strong>2</strong></td><td>plusieurs</td><td>chaque agent, individuellement</td><td>chaque agent pris isolément</td></tr>
-    <tr><td><strong>3</strong></td><td>plusieurs</td><td>un ou plusieurs cadres de processus</td><td>le processus, non les agents</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Scénario</th>
+<th>Décideurs</th>
+<th>Niveau du cadre</th>
+<th>Objet sur lequel une garantie peut porter <em>(lecture de l'auteur)</em></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>un seul</td>
+<td>le processus entier</td>
+<td>la chaîne, bornée en un point</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>plusieurs</td>
+<td>chaque agent, individuellement</td>
+<td>chaque agent pris isolément</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>plusieurs</td>
+<td>un ou plusieurs cadres de processus</td>
+<td>le processus, non les agents</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 22.2 — Les trois scénarios types d'encadrement du manifeste. <strong>La colonne de droite est une construction d'auteur</strong> : le socle énumère les scénarios et n'énonce, pour aucun des trois, ce sur quoi une garantie porterait.</p>
-
 <p>Le premier scénario est celui que l'on croit connaître, et c'est pourquoi il faut s'y arrêter. Un décideur unique sous un frame de processus : la latitude est concentrée, les bornes sont posées au niveau de la chaîne entière. On serait tenté d'y voir le cas simple dont les deux autres seraient des complications, et d'y reconnaître l'assistant encadré par une procédure. <strong>Ce serait confondre décideur unique et agent unique.</strong> Le socle ne dit rien du nombre d'agents dans ce scénario ; ce qui s'y concentre, c'est la <strong>latitude de décision</strong>, non l'exécution — rien n'interdit qu'un décideur unique borne une chaîne que plusieurs agents parcourent.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> l'intérêt de cette énumération est qu'elle rend visible un arbitrage que le vocabulaire des plateformes masque. Le deuxième scénario et le troisième décrivent tous deux un système multi-agents, mais <strong>l'objet sur lequel une garantie peut être offerte n'y est pas le même</strong> : chaque agent pris isolément d'un côté, le processus de l'autre. Sous frames individuels, rien dans le cadre ne s'énonce sur ce que la <strong>composition</strong> des agents produira ; sous frame de processus, c'est au cadre, non aux agents, qu'il revient de tenir la promesse. <strong>Ce que le socle établit</strong> : l'énumération des trois scénarios. <strong>Ce qu'il n'établit pas</strong> : cet arbitrage, ni ce sur quoi une garantie porterait dans chacun. <em>Le choix entre encadrer les agents et encadrer le processus est un choix de l'objet garanti — et il précède, logiquement, toute discussion de plateforme.</em></p>
-
 <div class="avert">
   <p><strong>Le premier mouvement nomme un arbitrage voisin, et la somme se garde d'en faire une corroboration.</strong> Les deux cadres — la taxonomie OO1-OO4 du § 22.1 et le manifeste — sont <strong>distincts</strong>, et le socle n'établit entre eux <strong>aucune filiation</strong> ; il ne les tient pas pour indépendants pour autant, <strong>Rinderle-Ma cosignant le Vol. II F-37 et le Vol. II F-36</strong>. C'est leur <strong>convergence</strong> qui est établie, et elle vaut comme <strong>faisceau</strong>, jamais comme corroboration par sources indépendantes (Vol. II F-46, dont l'adjectif « indépendantes » a été retiré du socle par sa source elle-même). Le <strong>ch. 29 § 29.2</strong> en fait l'objet d'une section entière ; il n'est pas anticipé ici.</p>
 </div>
-
 <div class="avert">
   <p><strong>Relève v0.10 du TOC — à instruire comme <em>cas</em>, jamais comme fondement.</strong> Les harnais documentés en 2026 résolvent les permissions par une <strong>chaîne ordonnée de règles à premier appariement gagnant</strong> : refus par outil, auto-approbation globale, politique par outil, octrois de session par outil puis par catégorie, politique par catégorie, et par défaut <em>demander</em> — avec des octrois <strong>persistant d'une session à l'autre</strong>. C'est la première réalisation concrète et datée d'un <em>frame</em> opérationnel — <strong>celui des deux termes que le socle ne caractérise pas</strong>. ⚠ <strong>Elle ne fonde rien</strong> : elle est un cas, et le socle de la taxonomie du § 22.1 est déjà sous la lacune §10.10 ; l'y adosser reviendrait à combler une lacune déclarée par une source de moindre qualité, ce que le régime du dépôt interdit. ⚠ <strong>Elle n'est pas non plus instruite, et elle ne peut pas l'être en l'état</strong> : le volet résiduel de G-1 la couvre et n'a pas été exécuté — <em>repérage, non fait</em> —, mais <strong>le plan ne nomme aucun des harnais qu'elle décrit</strong>, si bien que l'instruction due n'a pas de document à ouvrir (décision 15b du TOC, troisième interdit). L'écart est remonté ; il n'est pas comblé de mémoire ici. Et elle se qualifie par ce que sa documentation <strong>démontre</strong>, non par ce qu'elle promet (R-02 du Vol. III) : ce qui est documenté est un <strong>ordre de résolution</strong>, non une garantie d'opposabilité au point d'application.</p>
 </div>
-
 <div class="avert">
   <p><strong>Deux points de cette relève atterrissent ailleurs, et l'un des deux n'est pas arrivé.</strong> <em>(a)</em> Un <strong>octroi de catégorie qui survit à la session est un élargissement de mandat sans acte de délégation</strong> — point assigné au <strong>ch. 17</strong>, déjà rédigé, <strong>où il ne figure pas</strong> ; l'écart est remonté (voir la note de statut, remontée <strong>R-IV-76</strong>), il n'est pas comblé ici. <em>(b)</em> Un <strong>mode d'auto-approbation globale n'est pas un contrôle</strong> au sens de la supervision <strong>attendue par</strong> E-23 — point assigné au <strong>ch. 25</strong>, qui le reçoit dans le présent Livre.</p>
 </div>
-
 <h2 id="s228"><span class="sig">§ 22.8</span>Les quatre capacités requises</h2>
-
 <p>Un système APM, soutient le manifeste, requiert <strong>quatre capacités</strong>. Elles ne sont pas présentées comme un catalogue de fonctionnalités souhaitables, mais comme les conditions <strong>sans lesquelles l'autonomie encadrée reste une intention</strong>.</p>
-
 <p>La première est l'<strong>encadrement</strong> lui-même : la capacité de poser les frames, de les rendre effectifs et de les faire porter <strong>par le système</strong> plutôt que par la bonne volonté de ses composants. C'est l'objet des deux sections précédentes.</p>
-
 <p>La deuxième est l'<strong>explicabilité</strong>, et c'est celle qui intéresse le plus directement le présent Livre. Le manifeste ne la traite pas comme une propriété désirable de l'ingénierie : il la relie <strong>explicitement à la conformité réglementaire</strong>, en nommant deux instruments <strong>européens</strong> — le règlement général sur la protection des données et le règlement européen sur l'intelligence artificielle —, et en désignant <strong>la finance comme domaine à haut risque</strong>. ⚠ <strong>La portée exacte de ce fait doit être tenue</strong> : ces deux instruments sont européens, et <strong>le socle n'établit aucun lien entre ce texte et les instruments canadiens</strong> — ni la ligne directrice E-23 du Bureau du surintendant des institutions financières, ni la ligne directrice sur l'intelligence artificielle de l'Autorité des marchés financiers, ni l'article 12.1 de la Loi 25. <em>Absence de documentation, degré 3.</em> Ces rapprochements sont l'objet des <strong>ch. 25 à 30</strong>, qui les établissent <strong>à partir des textes canadiens eux-mêmes et non par transposition</strong>. Ce que le manifeste établit, et qui suffit ici : l'explicabilité est posée par ses auteurs comme une <strong>exigence de conformité</strong>, dans un secteur qu'ils qualifient de haut risque, et non comme un raffinement d'ingénierie qu'on ajoute si le temps le permet.</p>
-
 <p>La troisième est l'<strong>actionnabilité conversationnelle</strong>, que le manifeste inscrit au rang des quatre capacités requises. ⚠ <strong>Le socle la nomme et la range parmi les quatre, mais n'en rapporte ni caractérisation, ni terme anglais, ni critère de satisfaction ; aucune autre entrée ne la traite</strong> — <em>absence de documentation, degré 3, vérifiée au corpus le 16 juillet 2026 par la source</em>, et c'est le volet <em>(b)</em> de la <strong>lacune PRD Vol. II §10.10</strong> que le § 22.1 a déclarée. La somme s'en tient donc à ce qu'elle peut établir — <strong>que ces auteurs la tiennent pour requise</strong> — et <strong>ne construit sur elle aucune exigence d'architecture</strong>. <em>Une capacité qu'on ne sait pas caractériser ne peut pas devenir un point de contrôle</em>, et le <strong>ch. 29</strong> ne l'inscrit à aucune ligne de sa table de traduction.</p>
-
-<p>La quatrième est l'<strong>auto-modification</strong>, et le manifeste la scinde en <strong>deux régimes qu'il importe de ne jamais confondre</strong>. L'<strong>adaptation</strong> est <strong>éphémère</strong> : elle porte sur une instance d'exécution, et ne survit pas à elle. L'<strong>évolution</strong> est <strong>persistante</strong> : elle modifie le modèle de processus lui-même, et vaut donc pour toutes les instances à venir. La formulation est symétrique ; les enjeux ne le sont pas. <em>Une adaptation dévie d'un cas ; une évolution déplace la règle.</em></p>
-
+<p>La quatrième est l'<strong>auto-modification</strong>, et le manifeste la scinde en <strong>deux régimes qu'il importe de ne jamais confondre</strong>. L'<strong>adaptation</strong> est <strong>éphémère</strong> : elle porte sur une instance d'exécution, et ne lui survit pas. L'<strong>évolution</strong> est <strong>persistante</strong> : elle modifie le modèle de processus lui-même, et vaut donc pour toutes les instances à venir. La formulation est symétrique ; les enjeux ne le sont pas. <em>Une adaptation dévie d'un cas ; une évolution déplace la règle.</em></p>
 <p><span class="auteur">Lecture de l'auteur</span> cette dernière distinction est probablement le legs le plus opérationnel du manifeste pour un responsable de la gouvernance de modèles. Le manifeste distingue les deux régimes ; <strong>il n'énonce pas qu'ils doivent relever de deux régimes d'autorisation distincts</strong>. C'est pourtant ce que la somme soutient : <em>un système qui traite l'adaptation et l'évolution par le même chemin technique rend indétectable, dans ses journaux, le moment où une exception est devenue une règle.</em> <strong>Ce que le socle établit</strong> : les deux régimes et leur asymétrie de portée. <strong>Ce qu'il n'établit pas</strong> : qu'il faille les autoriser séparément. La proposition est confrontée aux exigences canadiennes au <strong>ch. 25</strong>, où la définition réglementaire de « modèle » et l'attente de surveillance continue en dépendent directement.</p>
-
 <h2 id="s229"><span class="sig">§ 22.9</span>Les frames locaux comme frontière de sécurité</h2>
-
 <p>Le manifeste ajoute un argument qu'on n'attendait pas d'un texte de gestion des processus, et qui déplace l'encadrement du terrain de la conformité vers celui de la <strong>sécurité</strong> : l'opérationnalisation <strong>locale</strong> des frames constitue une <strong>frontière de sécurité et de confidentialité</strong>. Restreindre le contexte et les capacités de chaque agent <strong>limite l'impact d'un agent compromis</strong>.</p>
-
 <p>L'argument est d'une simplicité désarmante et sa portée est considérable. Le frame n'était jusqu'ici qu'un instrument de gouvernance — il dit ce que l'agent a le droit de faire. Posé <strong>localement</strong>, il devient aussi un instrument de <strong>confinement</strong> : ce que l'agent ne peut pas faire, un attaquant qui en prend le contrôle ne le peut pas davantage. L'encadrement cesse d'être un coût qu'on consent à la conformité pour devenir une mesure dont la valeur se lit <strong>en réduction de surface d'attaque</strong>.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> le même mécanisme sert ainsi deux dossiers que l'organisation des institutions sépare généralement en deux directions distinctes. <strong>Ce que le socle établit</strong> : l'argument de confinement. <strong>Ce qu'il n'établit pas</strong> : cette observation d'organisation, qui est une lecture de la somme.</p>
-
 <div class="avert">
   <p><strong>Cette lecture n'est pas une extrapolation optimiste, car le manifeste ne dissimule pas le revers.</strong> Parmi ses défis transversaux, il inscrit la <strong>sécurité holistique</strong>, qui recense l'injection d'invites (<em>prompt injection</em>), l'empoisonnement de mémoire (<em>memory poisoning</em>), deux patrons d'architecture défensive, et — ce qui touche directement la section précédente — un <strong>« paradoxe de confidentialité » de l'explicabilité</strong>. Le <strong>ch. 11</strong> traite la taxonomie des risques protocolaires et <strong>le ch. 19</strong> celle des attaques d'identité et de délégation ; ni l'un ni l'autre n'est repris ici. On se contentera de nommer la tension que ce défi fait peser sur l'édifice du présent mouvement : <strong>l'explicabilité exigée par la deuxième capacité suppose d'exposer ce que l'agent a vu et retenu ; la confidentialité, comme le confinement de la présente section, suppose de restreindre l'exposition.</strong> Les deux capacités que le manifeste tient pour requises tirent, sur ce point, en sens contraire.</p>
 </div>
-
 <div class="avert">
   <p><strong>Le manifeste nomme ce paradoxe, il ne le résout pas — et la somme ne prétendra pas le faire non plus.</strong> Il faut le dire nettement, parce que la tentation inverse est forte : <strong>rien, dans le socle, n'établit qu'un système puisse être simultanément aussi explicable qu'une exigence de conformité l'imposerait et aussi cloisonné qu'une exigence de sécurité le voudrait.</strong> C'est un <strong>arbitrage</strong>, et un arbitrage se documente ; <em>il ne se déclare pas résolu.</em> ⚠ Le point se retrouvera au <strong>ch. 31 § 31.3</strong>, où l'auditabilité financière rencontre la résidence des traces, et au <strong>ch. 30 § 30.1.5</strong>, où l'<em>e-discovery</em> réglementaire en fait une contrainte d'architecture.</p>
 </div>
-
 <h2 id="s2210"><span class="sig">§ 22.10</span>L'écart de responsabilité, ou qui répond de ce que personne n'a décidé</h2>
-
 <p><em>Section <strong>préparée ici, exploitée au ch. 29 § 29.3</strong> (imputabilité du comportement émergent).</em></p>
-
 <p>Reste le défi que ce mouvement prépare sans le traiter. Le manifeste inscrit parmi ses défis transversaux l'<strong>écart de responsabilité</strong> (<em>responsibility gap</em>) : l'<strong>indétermination de l'imputabilité juridique</strong> entre le développeur, l'organisation qui impose le frame, le fournisseur du modèle et le <strong>comportement émergent</strong> du système multi-agents.</p>
-
 <p>L'énumération est plus intéressante que la formule. Elle nomme <strong>quatre porteurs candidats</strong>, et l'on remarquera que le deuxième terme — l'organisation qui impose le frame — est précisément l'<strong>institution financière</strong>. Non pas celle qui écrit le code, non pas celle qui entraîne le modèle : <strong>celle qui pose les bornes</strong>. ⚠ <strong>Le manifeste ne dit pas que la responsabilité lui échoit</strong> ; il la nomme comme l'un des quatre candidats entre lesquels l'imputabilité reste <strong>juridiquement indéterminée</strong>. <em>Lui faire dire davantage serait précisément l'usage que le garde-fou de neutralité du présent Livre interdit.</em></p>
-
 <p>Et le quatrième candidat n'est pas une organisation du tout : c'est un <strong>comportement</strong> — celui qui émerge de la composition d'agents dont aucun, pris isolément, n'a produit le résultat. Ce quatrième terme est d'une autre espèce que les trois premiers. Développeur, organisation, fournisseur de modèle : ce sont des personnes, morales ou physiques, qu'on peut assigner, interroger, condamner. Le comportement émergent n'est rien de tel.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> en le plaçant sur la même liste, le manifeste ne suggère pas qu'un comportement puisse répondre de lui-même. Ce quatrième terme signale que l'imputabilité, dans un système multi-agents, <strong>bute sur des résultats dont aucun des trois porteurs identifiables n'est l'auteur au sens ordinaire</strong>. L'écart que le manifeste nomme n'est alors pas un partage difficile entre trois responsables : c'est <strong>l'existence, entre eux, d'une zone dont le socle atteste seulement qu'elle est juridiquement indéterminée</strong>. <strong>Ce que le socle établit</strong> : l'énumération des quatre candidats et l'indétermination. <strong>Ce qu'il n'établit pas</strong> : cette caractérisation de la zone, qui est une lecture de la somme.</p>
-
 <p>C'est ici, exactement, que le paradigme de l'autonomie encadrée cesse d'être une préférence d'architecture pour devenir une <strong>question d'imputabilité</strong>.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> si le frame est ce qui borne la décision, <strong>celui qui pose le frame est le seul acteur du système dont on puisse dire ce qu'il a effectivement décidé</strong>. <strong>Ce que le socle établit</strong> : l'indétermination dont cette proposition prétend sortir. <strong>Ce qu'il n'établit pas</strong> : la proposition elle-même, qui est celle du Vol. II et que la somme reprend comme telle. Le <strong>ch. 29 § 29.3</strong> — le pivot du présent Livre — la confronte aux exigences canadiennes et en tire les conséquences d'architecture ; le présent chapitre se borne à <strong>poser la pièce sur l'échiquier</strong>.</p>
-
 <p>Deux autres défis transversaux du manifeste méritent d'être signalés, ne serait-ce que pour que le lecteur sache que l'inventaire est complet : la <strong>migration du patrimoine de gestion des processus</strong> et la <strong>contamination des jeux d'évaluation</strong>. Le premier rappelle qu'<strong>aucune institution ne part d'une page blanche</strong> — le ch. 24 en fait sa prémisse ; le second, que <strong>les mesures par lesquelles on juge ces systèmes sont elles-mêmes suspectes</strong> — le Livre IV le reprend au titre de l'évaluation continue. Le socle ne les développe pas davantage, et la somme ne les développera donc pas ici.</p>
-
 <h3>Synthèse : ce que le chapitre lègue à la somme</h3>
-
 <p><em>Section de sortie sans homologue direct dans la source — construction d'éditeur.</em></p>
-
-<ol class="numeros">
-  <li><strong>Une question fermée, posée une seule fois.</strong> « Où est écrit le processus, et qui peut s'en écarter ? » — quatre réponses, transitions fluides, une seule discontinuité (OO2 → OO3). Le <strong>ch. 23 § 23.5</strong> applique cette grille aux patrons livrés par l'industrie ; le <strong>ch. 34 § 34.6</strong> la pose sur des cas d'usage financiers. <strong>Ni l'un ni l'autre ne la redécide.</strong></li>
-  <li><strong>Le partage démonstrabilité / latitude.</strong> Quatre des cinq propriétés se <strong>démontrent à un tiers</strong> ; la cinquième — l'autonomie — n'est pas instrumentée au socle. C'est ce partage qui rend la grille utilisable dans un dossier réglementaire, et c'est lui que le <strong>ch. 29</strong> consomme.</li>
-  <li><strong>Deux critères qui interdisent de dire l'encadrement gratuit.</strong> L'effort initial et la maintenance sont <strong>dans</strong> la grille de sélection. Le <strong>ch. 24 § 24.9</strong> en tire les conséquences de modèle opérationnel.</li>
-  <li><strong>Deux enseignements de conception, opposables immédiatement.</strong> La journalisation ne se confie généralement pas aux agents — d'où la question, ouverte, du lieu où la trace se produit (<strong>ch. 23 § 23.3</strong>) ; un délai à tenir ne se confie pas à un composant dont la durée d'exécution est imprévisible (<strong>ch. 33</strong>).</li>
-  <li><strong>La distinction autonomie / automatisation, et sa conséquence documentaire.</strong> Ce qui se documente dans un système autonome, ce sont <strong>les bornes</strong>. Le <strong>ch. 25</strong> rencontre exactement cette distinction du côté de la définition réglementaire de « modèle ».</li>
-  <li><strong>Deux natures de cadres, dont l'une n'est pas caractérisée.</strong> Le frame normatif est déontique ; le frame opérationnel en est distinct et <strong>le socle n'en dit pas plus</strong> — lacune <strong>PRD Vol. II §10.10</strong>, portée ici, enregistrée au <strong>ch. 49</strong>. <em>Une distinction dont un terme est vide se cite, elle ne s'applique pas.</em></li>
-  <li><strong>Adaptation et évolution.</strong> Une adaptation dévie d'un cas ; une évolution déplace la règle. La proposition d'en faire deux régimes d'autorisation distincts est une <strong>construction d'auteur</strong>, et elle est confrontée au réel réglementaire au <strong>ch. 25</strong>.</li>
-  <li><strong>L'écart de responsabilité, posé et non résolu.</strong> Quatre porteurs candidats, dont l'un n'est pas une personne. Le <strong>ch. 29 § 29.3</strong> l'exploite ; <strong>aucun autre chapitre ne le repose</strong>.</li>
+<ol type="1">
+<li><strong>Une question fermée, posée une seule fois.</strong> « Où est écrit le processus, et qui peut s'en écarter ? » — quatre réponses, transitions fluides, une seule discontinuité (OO2 → OO3). Le <strong>ch. 23 § 23.5</strong> applique cette grille aux patrons livrés par l'industrie ; le <strong>ch. 34 § 34.6</strong> la pose sur des cas d'usage financiers. <strong>Ni l'un ni l'autre ne la redécide.</strong></li>
+<li><strong>Le partage démonstrabilité / latitude.</strong> Quatre des cinq propriétés se <strong>démontrent à un tiers</strong> ; la cinquième — l'autonomie — n'est pas instrumentée au socle. C'est ce partage qui rend la grille utilisable dans un dossier réglementaire, et c'est lui que le <strong>ch. 29</strong> consomme.</li>
+<li><strong>Deux critères qui interdisent de dire l'encadrement gratuit.</strong> L'effort initial et la maintenance sont <strong>dans</strong> la grille de sélection. Le <strong>ch. 24 § 24.9</strong> en tire les conséquences de modèle opérationnel.</li>
+<li><strong>Deux enseignements de conception, opposables immédiatement.</strong> La journalisation ne se confie généralement pas aux agents — d'où la question, ouverte, du lieu où la trace se produit (<strong>ch. 23 § 23.3</strong>) ; un délai à tenir ne se confie pas à un composant dont la durée d'exécution est imprévisible (<strong>ch. 33</strong>).</li>
+<li><strong>La distinction autonomie / automatisation, et sa conséquence documentaire.</strong> Ce qui se documente dans un système autonome, ce sont <strong>les bornes</strong>. Le <strong>ch. 25</strong> rencontre exactement cette distinction du côté de la définition réglementaire de « modèle ».</li>
+<li><strong>Deux natures de cadres, dont l'une n'est pas caractérisée.</strong> Le frame normatif est déontique ; le frame opérationnel en est distinct et <strong>le socle n'en dit pas plus</strong> — lacune <strong>PRD Vol. II §10.10</strong>, portée ici, enregistrée au <strong>ch. 49</strong>. <em>Une distinction dont un terme est vide se cite, elle ne s'applique pas.</em></li>
+<li><strong>Adaptation et évolution.</strong> Une adaptation dévie d'un cas ; une évolution déplace la règle. La proposition d'en faire deux régimes d'autorisation distincts est une <strong>construction d'auteur</strong>, et elle est confrontée au réel réglementaire au <strong>ch. 25</strong>.</li>
+<li><strong>L'écart de responsabilité, posé et non résolu.</strong> Quatre porteurs candidats, dont l'un n'est pas une personne. Le <strong>ch. 29 § 29.3</strong> l'exploite ; <strong>aucun autre chapitre ne le repose</strong>.</li>
 </ol>
-
 <div class="avert">
   <p><strong>Ce que le chapitre ne lègue pas.</strong> Il ne lègue aucun fait canadien : ni E-23, ni la ligne directrice de l'AMF, ni l'article 12.1 n'y sont rattachés par le socle. Il ne lègue aucune preuve de supériorité d'un positionnement sur un autre — <em>un F1 mesuré une fois sur un scénario d'éclairage n'est pas un argument d'architecture.</em> Il ne lègue pas la caractérisation du frame opérationnel, qui reste une lacune déclarée. Et il ne lègue <strong>aucun produit</strong> : le ch. 23 montrera qu'aucun n'arbitre à la place de l'architecte.</p>
 </div>
+<hr />
+<figure class="figure">
+  <img src="../figures/f-22-10-ecart-responsabilite.svg" alt="Figure 22.10 — L&#39;écart de responsabilité : quatre parties, et personne qui ait décidé." />
+  <figcaption><strong>Figure 22.10</strong> — L'écart de responsabilité : quatre parties, et personne qui ait décidé.</figcaption>
+</figure>
 
 <footer class="pied">
   <p><strong>Vol. IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em></strong> · Livre III, chapitre 22. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau, M.Sc. IT.</p>
-
   <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme (gel unique : 27 juillet 2026).</p>
 </footer>
 

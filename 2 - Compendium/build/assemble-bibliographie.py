@@ -156,7 +156,13 @@ def rendre(brutes, liste, fondus, socle):
     a("|---|---|---|")
     a("| [`annexe-references.md`](annexe-references.md) | les **faits** sur lesquels la somme s'adosse — 159 entrées `S-nnn` | abrégé du socle ; le socle fait foi |")
     a("| **La présente annexe** | les **documents** d'où ces faits et leur contexte proviennent | réunion des sources ; **aucune autorité propre** |")
-    a("| [`audit-references.md`](audit-references.md) | la **validation** des 159 références sur cinq critères | rapport de mesure, **jamais citable à l'appui d'un énoncé** |")
+    # ⚠ `audit-references.md` n'est PAS au dépôt : le rapport de validation a été
+    # retiré avec les pièces d'audit internes. Le lien a donc été défait à la main
+    # dans l'annexe versionnée, et le générateur a continué de l'émettre — d'où
+    # l'échec de `--verifier` : *un générateur qui ne reproduit plus son livrable
+    # cesse d'être l'autorité de ce livrable.* La ligne est alignée sur la forme
+    # versionnée (2 septembre 2026), avec la mention d'absence plutôt qu'un lien mort.
+    a("| `audit-references.md` — ⚠ **non versé au dépôt** | la **validation** des 159 références sur cinq critères | rapport de mesure, **jamais citable à l'appui d'un énoncé** |")
     a("")
     a("⚠ **Trois bornes.** *(a)* **Le Vol. I fournit la quasi-totalité des entrées**, parce qu'il est")
     a("le seul des trois à tenir une bibliographie séparée ; les **Vol. II et III** portent leurs")

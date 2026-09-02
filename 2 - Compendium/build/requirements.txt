@@ -1,0 +1,18 @@
+# Dépendances Python de la composition du compendium (Vol. IV).
+#   python3 -m pip install -r build/requirements.txt
+#
+# ⚠ Ce fichier existe parce qu'une dépendance non déclarée avait rendu une porte
+# silencieuse : `build-pdf.sh` dégradait la vérification des mille pages en
+# simple avertissement quand `pypdf` manquait, et le rendu canonique s'écrivait
+# sans que la cible d'auteur du 9 août 2026 ait été mesurée. *Une porte dont
+# l'outil n'est pas déclaré est une porte qu'on franchit sans le savoir.*
+
+# Porte de pagination de `build-pdf.sh` — OBLIGATOIRE pour le rendu canonique.
+# Sans elle, le build échoue désormais au lieu d'avertir.
+pypdf>=4.0
+
+# Outil de design `echantillon.py`, qui compose deux gabarits côte à côte pour
+# les juger sur mesures. FACULTATIF : il n'entre pas dans la composition du
+# volume, et son import est différé — `build-pdf.sh` n'en dépend pas.
+#   python3 -m pip install pymupdf
+# pymupdf>=1.24

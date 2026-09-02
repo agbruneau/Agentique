@@ -24,6 +24,7 @@
 #
 # Usage :
 #   ./decompte.sh --verifier            # rejoue la validation des trois corpus
+#   ./decompte.sh --registre            # oppose le registre de gel à la mesure
 #   ./decompte.sh <fichier.md> ...      # décompte des fichiers donnés (Vol. IV)
 
 set -eu
@@ -36,14 +37,30 @@ jetons() {
 	tr -s '[:space:]' '\n' | LC_ALL=C.UTF-8 grep -cE '[[:alnum:]]' || true
 }
 
+# ⚠ LE `\r` OPTIONNEL DES DEUX MOTIFS N'EST PAS UNE PRÉCAUTION, C'EST UN DÉFAUT
+# MESURÉ LE 2 SEPTEMBRE 2026 — et il touchait l'autorité de décompte du volume.
+#
+# Le `.gitattributes` de la racine impose `eol=lf` et nomme la conséquence d'un
+# CRLF : « les sept *.sh du dépôt cessent de se lancer ». La conséquence SECONDE
+# n'y était pas écrite, et elle est pire, parce qu'elle est SILENCIEUSE : sur un
+# arbre de travail rendu en CRLF — l'état de la machine d'auteur, `core.autocrlf`
+# valant `true` —, la ligne de séparation se lit « ---\r » et `/^---$/` ne
+# l'apparie plus. Le drapeau `f` ne se lève jamais, `awk` n'émet rien, et le
+# script rapporte **0 mot** pour la pièce, SANS ERREUR ET SANS CODE DE RETOUR.
+#
+# *Une autorité de décompte qui rend zéro sans le dire est pire qu'une autorité
+# absente : la seconde arrête la passe, la première la laisse publier un total
+# faux.* Le motif tolère donc le `\r`, et la vérification ci-dessous refuse le
+# zéro plutôt que de le rapporter.
+
 # Corps d'une pièce au gabarit Vol. II / Vol. III.
 corps_monographie() {
-	awk '/^---$/{f=1;next} /^## Notes/{exit} /^<!--/{exit} f' "$1"
+	awk '/^---\r?$/{f=1;next} /^## Notes\r?/{exit} /^<!--/{exit} f' "$1"
 }
 
 # Corps d'une pièce du compendium : la note de statut hors plan est exclue.
 corps_compendium() {
-	awk '/^---$/{f=1;next} /Note de statut/{exit} f' "$1"
+	awk '/^---\r?$/{f=1;next} /Note de statut/{exit} f' "$1"
 }
 
 verifier() {
@@ -91,6 +108,68 @@ verifier() {
 	return 1
 }
 
+# Confrontation du registre de gel À LA MESURE ELLE-MÊME.
+#
+# ⚠ Ajouté le 2 septembre 2026, et le motif est une lacune de contrôle, non un
+# confort. Le contrôle P6 de `check-compendium.py` oppose le `Réel` du registre
+# au `Réel` de l'en-tête de la pièce — DEUX COPIES DU MÊME CHIFFRE. Il passe
+# donc tant que les deux dérivent ENSEMBLE, et c'est ce qui s'est produit : les
+# vingt-six en-têtes qui publient leur mesure étaient périmés de +1 à +772 mots
+# le 2 septembre 2026, P6 vert du premier au dernier jour.
+#
+# Le contrôle manquant ne pouvait pas vivre dans `check-compendium.py` : y
+# porter un tokéniseur créerait une SECONDE AUTORITÉ de décompte, c'est-à-dire
+# une divergence qui attend. Il vit donc ici, dans l'autorité elle-même, qui
+# se confronte à ce que le dépôt déclare d'elle.
+#
+# Usage : ./decompte.sh --registre
+registre() {
+	reg="$RACINE/2 - Compendium/PRD/registre-gel.md"
+	if [ ! -f "$reg" ]; then
+		echo "ÉCART — registre-gel.md introuvable."
+		return 1
+	fi
+	ecarts=0
+	vus=0
+	# Chaque rangée numérotée du registre : on en tire le fichier et la colonne
+	# `Réel`, on mesure le fichier, on oppose. L'espace de milliers est retiré.
+	while IFS='|' read -r _ _ _ fichier _ _ _ reel _; do
+		chemin=$(printf '%s' "$fichier" | sed -n 's/.*(\.\.\/\([^)]*\)).*/\1/p' |
+			sed 's/%20/ /g')
+		[ -n "$chemin" ] || continue
+		piece="$RACINE/2 - Compendium/$chemin"
+		if [ ! -f "$piece" ]; then
+			printf '  ☐ %-52s FICHIER INTROUVABLE\n' "$chemin"
+			ecarts=1
+			continue
+		fi
+		declare=$(printf '%s' "$reel" | tr -cd '0-9')
+		mesure=$(corps_compendium "$piece" | jetons)
+		vus=$((vus + 1))
+		if [ "$declare" -ne "$mesure" ]; then
+			printf '  ☐ %-52s %8d  (registre : %d)\n' \
+				"$(basename "$chemin")" "$mesure" "$declare"
+			ecarts=$((ecarts + 1))
+		fi
+	done <<EOF
+$(grep -E '^\| [0-9]+ \|' "$reg")
+EOF
+
+	echo ""
+	if [ "$vus" -ne 50 ]; then
+		echo "ÉCART — $vus rangées lues, cinquante attendues."
+		return 1
+	fi
+	if [ "$ecarts" -eq 0 ]; then
+		echo "OK — les cinquante lignes du registre tiennent contre la mesure."
+		return 0
+	fi
+	echo "ÉCART — $ecarts ligne(s) du registre ne reproduisent plus la mesure."
+	echo "  Un corps a bougé sans que le registre suive, ou l'inverse. La passe"
+	echo "  due re-mesure les cinquante en-têtes ET le registre au même commit."
+	return 1
+}
+
 controle() {
 	if [ "$2" -eq "$3" ]; then
 		printf '  ☑ %-52s %8d\n' "$1" "$2"
@@ -110,6 +189,24 @@ if [ "$1" = "--verifier" ]; then
 	exit $?
 fi
 
+if [ "$1" = "--registre" ]; then
+	registre
+	exit $?
+fi
+
+ecarts=0
 for f in "$@"; do
-	printf '%8d  %s\n' "$(corps_compendium "$f" | jetons)" "$f"
+	n="$(corps_compendium "$f" | jetons)"
+	# ⚠ Le zéro se refuse, il ne se rapporte pas. Une pièce du compendium fait
+	# des milliers de mots ; zéro ne signifie jamais « pièce vide », il signifie
+	# « la délimitation du corps a échoué » — séparateur introuvable, fichier
+	# absent, ou fin de ligne que le motif n'apparie pas. *Rapporter ce zéro
+	# comme une mesure, c'est laisser une passe publier un total faux.*
+	if [ "$n" -eq 0 ]; then
+		printf '  ECART  %s : corps vide — la delimitation a echoue, ce n est pas une mesure.\n' "$f" >&2
+		ecarts=1
+		continue
+	fi
+	printf '%8d  %s\n' "$n" "$f"
 done
+exit "$ecarts"

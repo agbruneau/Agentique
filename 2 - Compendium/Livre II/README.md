@@ -86,7 +86,7 @@ position. *L'arbitrage n'efface aucune des trois infractions ; il en solde les c
 ⚠ **Ce tableau est un constat daté et deux de ses lignes ont été DÉPASSÉES depuis — le rappel est du
 8 août 2026, il ne réécrit rien.** ☑ **La porte G-3 est franchie le 28 juillet 2026** et le socle
 consolidé ne compte plus zéro entrée mais **159**, `S-001`…`S-159`
-([`PRD/socle-consolide.md`](../PRD/socle-consolide.md) ; `python PRD/check-compendium.py` → *P1-P8,
+([`PRD/socle-consolide.md`](../PRD/socle-consolide.md) ; `python PRD/check-compendium.py` → *P1-P10,
 sortie 0*). ☑ **La table `SIEGES` porte 26 sièges sur 50 pièces** (`python PRD/check-sieges.py`).
 ⚠ **Rien d'autre n'a bougé** : *aucun énoncé n'est central au sens de CA-IV-01, CA-IV-11 et CA-IV-13
 demeurent non satisfaisables, et les pièces restent un brouillon arrêté, non publiable* — **une porte
@@ -115,9 +115,11 @@ jamais** — sa réf. [220] décrit un cadrage sans chapitre, et **cela reste vr
 
 ## Volumétrie réelle — et la leçon du Livre I appliquée sans effet
 
-☑ **Mesure du jour : 68 752 mots** de corps pour les dix pièces, relevés le **10 août 2026** par
+☑ **Mesure du jour : 68 743 mots** de corps pour les dix pièces, relevés le **2 septembre 2026** au terme de la passe de fond (**D-16**) par
 [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — contre une enveloppe
 de Livre de **50 000** au TOC, soit **+37,5 %**.
+
+⚠ *Le Livre portait **68 723 mots** avant la passe de fond, et **68 743** après — soit **+20**, **entièrement d'appareil** : reprises datées, remontées soldées, revalidations consignées. **Aucun énoncé de fond n'a été ajouté.***
 
 ⚠ **Le chiffre publié ici — 62 054 mots au 28 juillet 2026 — ne se reproduit plus, et les pièces de
 ce dossier le démentaient déjà.** La somme des cardinaux que **leurs dix en-têtes déclarent** vaut
@@ -150,19 +152,19 @@ PRD §13 déclare pour ce Livre une « condensation réelle d'environ **52 %** s
 héritées », avec pour parade un **re-calibrage éventuel**. **La passe a fourni à D-4 une mesure plutôt
 qu'un avis** (remontée **R-IV-17**). ☑ **D-4 est tranchée depuis le 27 juillet 2026, sur cette mesure** : **enveloppes maintenues**, re-calibrage remis à une **passe unique de clôture** portant sur les cinq Livres — jamais Livre par Livre, un Livre sur cinq étant un échantillon. ⚠ **La partie opérante de la décision est une interdiction** : aucun rédacteur des Livres III à V ne traite son enveloppe comme un plafond à couper — *amputer une borne et couper un hors-périmètre produisent le même chiffre*, et seule la seconde coupe est légitime.
 
-| Pièce | Cible dérivée | Réel | Écart |
-|---|---|---|---|
-| [Ch. 12](12-heritage-standards-etires.md) | 6 200 | **7 372** | +18,9 % |
-| [Ch. 13](13-identite-decentralisee-vc-did.md) | 4 000 | **3 947** | **−1,3 %** |
-| [Ch. 14](14-grille-cinq-questions.md) | 3 000 | **3 514** | +17,1 % |
-| [Ch. 15](15-emettre-carte-annuaires-registres.md) | 5 800 | **8 187** | +41,2 % |
-| [Ch. 16](16-passeport-agent.md) | 4 500 | **4 828** | +7,3 % |
-| [Ch. 17](17-chaine-mandat-deux-sauts.md) | 5 700 | **6 970** | +22,3 % |
-| [Ch. 18](18-know-your-agent.md) | 3 800 | **4 252** | +11,9 % |
-| [Ch. 19](19-taxonomie-attaques-identite-delegation.md) | 5 000 | **5 529** | +10,6 % |
-| [Ch. 20](20-usurpation-revocation-boucle-defensive.md) | 6 200 | **8 868** | **+43,0 %** |
-| [Ch. 21](21-horloge-post-quantique.md) | 5 800 | **8 587** | **+48,1 %** |
-| **Livre** | **50 000** | **62 054** | **+24,1 %** |
+| Pièce | Cible dérivée | Réel | Écart | **Réel (2 sept. 2026)** |
+|---|---|---|---|---|
+| [Ch. 12](12-heritage-standards-etires.md) | 6 200 | **7 372** | +18,9 % | **7 742** |
+| [Ch. 13](13-identite-decentralisee-vc-did.md) | 4 000 | **3 947** | **−1,3 %** | **5 055** |
+| [Ch. 14](14-grille-cinq-questions.md) | 3 000 | **3 514** | +17,1 % | **3 798** |
+| [Ch. 15](15-emettre-carte-annuaires-registres.md) | 5 800 | **8 187** | +41,2 % | **8 525** |
+| [Ch. 16](16-passeport-agent.md) | 4 500 | **4 828** | +7,3 % | **5 523** |
+| [Ch. 17](17-chaine-mandat-deux-sauts.md) | 5 700 | **6 970** | +22,3 % | **7 680** |
+| [Ch. 18](18-know-your-agent.md) | 3 800 | **4 252** | +11,9 % | **4 576** |
+| [Ch. 19](19-taxonomie-attaques-identite-delegation.md) | 5 000 | **5 529** | +10,6 % | **6 133** |
+| [Ch. 20](20-usurpation-revocation-boucle-defensive.md) | 6 200 | **8 868** | **+43,0 %** | **9 987** |
+| [Ch. 21](21-horloge-post-quantique.md) | 5 800 | **8 587** | **+48,1 %** | **9 724** |
+| **Livre** | **50 000** | **62 054** | **+24,1 %** | **68 743** |
 
 : Volumétrie du Livre II, re-mesurée le 28 juillet 2026 au commit de la passe de correction. ⚠ **Constat daté et dépassé — ce tableau et les paragraphes d'analyse qui le suivent** — *ces valeurs sont inférieures aux cardinaux que les dix pièces portent en tête ; voir l'avertissement ci-dessus, et la mesure du 10 août 2026.* *L'écart se documente ; il ne se corrige ni par amputation ni par gonflement.*
 

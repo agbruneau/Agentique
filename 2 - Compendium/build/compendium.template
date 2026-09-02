@@ -123,11 +123,23 @@
 // ⚠ Porté à 16,95 pt le 9 août 2026, soit un interligne de 1,304 : c'est le
 // RÉGLAGE DE CALAGE de la cible de mille pages, et il n'est pas décoratif. La
 // pagination est une fonction en escalier, mesurée au voisinage de la cible sur
-// le rendu complet — 17,00 pt donne 1001 pages, 16,95 pt en donne 1000, 16,90 pt
-// en donne 999. Les cinq centièmes de point sont ce qui sépare deux marches ;
-// le corps de 13 pt et la mesure de 79 caractères, eux, ne bougent pas.
+// le rendu complet. ⚠ **La marche se déplace quand le corpus bouge, et il faut
+// la re-mesurer, jamais la déduire.** Relevé du 31 juillet 2026 : 17,00 pt
+// donnait 1001 pages, 16,95 pt en donnait 1000, 16,90 pt en donnait 999.
+// Relevé du 2 septembre 2026, passe d'appareil (D-15), après la normalisation des
+// dix titres « Synthèse » du Livre IV en h3 : 16,95 pt ne donnait plus que 999,
+// 16,99 pt en donnait 1001, et 16,98 pt en donnait 1000.
+// ⚠ Relevé du 2 septembre 2026, passe de FOND (D-16), LE MÊME JOUR : le corps a
+// pris 1 584 mots — reprises datées, remontées soldées, revalidations consignées —
+// et 16,98 pt donne désormais 1003 pages. La marche s'est déplacée de dix-huit
+// centièmes en une passe : 16,90 pt donne 1002, 16,86 pt et 16,83 pt en donnent
+// 1001, et **16,80 pt en donne 1000**.
+// *Le calage n'est donc PAS une constante du gabarit : c'est une fonction du
+// corpus, et il se re-mesure à chaque passe qui touche un corps.* Le corps de
+// 13 pt et la mesure de 79 caractères, eux, ne bougent pas — et ne sont pas le
+// levier.
 #let CORPS = 13pt
-#let PAS   = 16.95pt
+#let PAS   = 16.80pt
 // ⚠ `top-edge` est FIGÉ en em plutôt que laissé à la fonte effective : sans
 // cela, une ligne portant un ⚠ ou un ☑ — rendus par la fonte de repli — prend
 // une hauteur différente et décroche de la grille. Onze pour cent des lignes du

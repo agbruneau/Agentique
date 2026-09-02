@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chapitre 39 — Le cycle de vie opérationnel : évaluation continue, dérive et incident · Interopérabilité et Orchestration en Entreprise Agentique</title>
-<meta name="description" content="Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d'agents et synthèse architecturale. Second mouvement — exploiter (ch. 38-40). Deuxième chapitre du mouvement : il traite la deuxième des trois capacités que l'exploitation distingue — agir sur ce qu'on voit">
+<meta name="description" content="Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d&#x27;agents et synthèse architecturale. Second mouvement — exploiter (ch. 38-40). Deuxième chapitre du mouvement : il traite la deuxième des trois capacités que l&#x27;exploitation distingue — **agir sur ce qu&#x27;on voit**">
 <meta name="author" content="André-Guy Bruneau, M.Sc. IT">
 <meta name="color-scheme" content="dark">
 <style>
@@ -443,6 +443,17 @@ tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
 tbody td:first-child { color: var(--texte); font-weight: 600; }
 .legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
 
+/* -------------------------------------------------------------- figures */
+/* Les SVG du volume sont dessinés pour le PDF, donc sur fond clair, et ils
+   portent ce fond eux-mêmes — sans quoi il faudrait maintenir deux variantes
+   de chaque figure. Sur ce thème sombre, ils se posent donc comme un carton ;
+   le padding empêche le fond de la figure de toucher le bord du cadre. */
+.figure { margin: 2.1rem 0 1.9rem; }
+.figure img { display: block; width: 100%; height: auto; border-radius: 7px;
+              border: 1px solid var(--trait); background: #fdfbf9; padding: 0.6rem; }
+.figure figcaption { font-size: 0.8rem; font-style: italic; color: var(--texte-faible);
+                     margin-top: 0.65rem; padding-left: 0.15rem; }
+
 /* --------------------------------------------------------------- listes */
 ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
 ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
@@ -531,18 +542,16 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <div class="nav__marque">Interopérabilité et Orchestration en Entreprise Agentique</div>
   <div class="nav__sous">Livre IV · Chapitre 39</div>
   <ol>
-    <li><a href="#s390"><span class="num">39.0</span>Introduction : agir sur ce qu&#x27;on voit</a></li>
-    <li><a href="#s391"><span class="num">39.1</span>L&#x27;évaluation en production : des jeux d&#x27;essai à l&#x27;évaluation continue</a></li>
-    <li><a href="#s392"><span class="num">39.2</span>La dérive agentique : dérive de modèle, dérive d&#x27;outil, dérive d&#x27;autonomie</a></li>
+    <li><a href="#s390"><span class="num">39.0</span>Introduction : agir sur ce qu'on voit</a></li>
+    <li><a href="#s391"><span class="num">39.1</span>L'évaluation en production : des jeux d'essai à l'évaluation continue</a></li>
+    <li><a href="#s392"><span class="num">39.2</span>La dérive agentique : dérive de modèle, dérive d'outil, dérive d'autonomie</a></li>
     <li><a href="#s393"><span class="num">39.3</span>La réponse à incident agentique : révoquer, confiner, imputer</a></li>
-    <li><a href="#s394"><span class="num">39.4</span>GitOps du parc d&#x27;agents : versionner le mandat protocolaire, promouvoir, revenir en arrière</a></li>
-    <li><a href="#s395"><span class="num">39.5</span>L&#x27;agent qui apprend : ce que le passeport date, et ce qu&#x27;il ne date pas</a></li>
+    <li><a href="#s394"><span class="num">39.4</span>GitOps du parc d'agents : versionner le mandat protocolaire, promouvoir, revenir en arrière</a></li>
+    <li><a href="#s395"><span class="num">39.5</span>L'agent qui apprend : ce que le passeport date, et ce qu'il ne date pas</a></li>
     <li><a href="#s396"><span class="num">39.6</span>Cycle de vie et modèles de maturité</a></li>
-
   </ol>
   <div class="nav__pied">
     Vol.&nbsp;IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em><br>
-
     <a href="39-cycle-de-vie-operationnel.md">Version Markdown</a>
   </div>
 </nav>
@@ -553,251 +562,196 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 <header class="titre">
   <div class="titre__fil">Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d&#x27;agents et synthèse architecturale</div>
   <h1><span class="chap">Chapitre 39</span>Le cycle de vie opérationnel : évaluation continue, dérive et incident</h1>
-  <p class="titre__situe">Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d'agents et synthèse architecturale. Second mouvement — exploiter (ch. 38-40). Deuxième chapitre du mouvement : il traite la deuxième des trois capacités que l'exploitation distingue — <strong>agir sur ce qu'on voit</strong></p>
+  <p class="titre__situe">Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d'agents et synthèse architecturale. Second mouvement — exploiter (ch. 38-40). Deuxième chapitre du mouvement : il traite la deuxième des trois capacités que l'exploitation distingue — **agir sur ce qu'on voit**</p>
 </header>
 
+<!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
+     Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
+     que `build/assemble.py` pour le PDF et que `PRD/decompte.sh` pour la volumétrie. L'appareil de
+     gouvernance vit au .md jumeau, qui reste la seule source, et `build/verifier-piece.py` refuse
+     un rendu qui le recopierait. -->
+
 <h2 id="s390"><span class="sig">§ 39.0</span>Introduction : agir sur ce qu'on voit</h2>
-
 <p>Le ch. 38 s'est arrêté sur un constat qu'il n'a pas comblé — <strong>le legs négatif de sa synthèse, repris ici tel qu'il l'écrit</strong> : <em>l'identité serait la clé de jointure de l'observabilité agentique, et rien ne la constitue.</em> ⚠ <strong>L'énoncé est celui du chapitre amont ; il n'est pas reformulé ici.</strong> <em>Ce que la présente pièce y ajoute est borné et lui appartient : l'objet qui porterait cette clé — le passeport — ne figure dans aucune spécification à date</em> (§ 39.5). Celui-ci traite la deuxième capacité du mouvement : <strong>agir sur ce qu'on voit</strong>. Évaluer en continu, détecter la dérive (<em>drift</em>), répondre à l'incident, réviser le mandat — quatre gestes que l'exploitation d'un parc enchaîne, et dont ce chapitre demande, un à un, <strong>ce que le socle en documente</strong>.</p>
-
 <div class="avert">
-  <p><strong>Deux des chapitres amont portent, à trois endroits, une lacune là où celui-ci les consomme, et le fait se déclare avant la première section.</strong> Le <strong>ch. 20</strong> porte un front ouvert sur l'attestation d'intégrité à l'exécution et un autre sur la <strong>révocation en cascade</strong> — <em>aucune passe de recherche n'a été conduite</em> ; le <strong>ch. 38 § 38.5</strong> porte le troisième, sur la <strong>corrélation trace ↔ chaîne de mandat</strong>. <strong>Le maillon « répondre à l'incident » s'appuie donc sur des chapitres qui déclarent ne pas savoir.</strong> <em>Ce n'est pas un défaut de la thèse ; c'est une contrainte de rédaction, et le § 39.3 l'écrit plutôt que de la contourner.</em></p>
+  <p><strong>Deux des chapitres amont portent, à trois endroits, une lacune là où celui-ci les consomme, et le fait se déclare avant la première section.</strong> Le <strong>ch. 20</strong> porte un front ouvert sur l'attestation d'intégrité à l'exécution et un autre sur la <strong>révocation en cascade</strong> — <em>aucune passe de recherche n'a été conduite</em> ; le <strong>ch. 38 § 38.5</strong> porte le troisième, sur la <strong>corrélation trace ↔︎ chaîne de mandat</strong>. <strong>Le maillon « répondre à l'incident » s'appuie donc sur des chapitres qui déclarent ne pas savoir.</strong> <em>Ce n'est pas un défaut de la thèse ; c'est une contrainte de rédaction, et le § 39.3 l'écrit plutôt que de la contourner.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>Ce que le chapitre ne traite pas.</strong> Les <strong>fondements de l'évaluation</strong> ne sont pas ici : ils restent au <strong>ch. 6</strong>, et le Vol. I <em>Monographie</em> §2.9 n'est pas repris ici — <em>son §2.9.6 arrive au ch. 38, non dans cette pièce.</em> La <strong>barrière d'évaluation au déploiement</strong> est au <strong>ch. 47</strong>, au grain de l'artefact, où se tient aussi le <strong>grain du déploiement</strong>. Et la <strong>science de l'évaluation</strong> est hors périmètre de bout en bout : <em>l'évaluation n'entre dans la somme que par la revalidation du passeport après apprentissage</em> (§ 39.5).</p>
 </div>
-
 <p><strong>Le chapitre se lit en six temps</strong> : évaluer (§ 39.1), détecter (§ 39.2), répondre (§ 39.3), versionner et revenir en arrière (§ 39.4), revalider ce qui a appris (§ 39.5), et situer le tout dans un modèle de maturité dont <strong>le corpus d'appui annoncé n'a jamais été déposé</strong> (§ 39.6).</p>
-
 <h2 id="s391"><span class="sig">§ 39.1</span>L'évaluation en production : des jeux d'essai à l'évaluation continue</h2>
-
 <p><strong>Ce que cette section vérifie est étroit et se formule ainsi</strong> : <em>une évaluation conduite en production est ce qui daterait un verdict que le mécanisme d'admission ne date pas.</em></p>
-
 <p>Le <strong>ch. 20</strong> l'a établi sur la carte d'agent signée : l'en-tête protégé n'admet <strong>ni <code>nbf</code>, ni <code>iat</code>, ni <code>exp</code></strong>, de sorte qu'<strong>une signature ne périme que par sa clé</strong> (Vol. III <strong>F-03</strong>, <strong>[A, degré 1]</strong>), et les <strong>quatorze champs</strong> du message normatif de carte n'expriment <strong>ni date d'émission, ni fenêtre de validité, ni indicateur de révocation</strong> (Vol. III <strong>F-05</strong>, <strong>[A, degré 1]</strong>). <em>Un verdict sans terme exprimé est un verdict qui se prolonge par défaut.</em></p>
-
 <div class="avert">
   <p><strong>Ce n'est pas une clause d'exclusivité</strong> : <strong>le socle ne documente pas les moyens par lesquels un verdict d'admission pourrait être daté hors de cette boucle</strong> — absence de documentation, non fait négatif vérifié (R-14 du Vol. III, degré 3).</p>
 </div>
-
 <p><strong>Le corpus nomme l'exigence, et il la nomme comme exigence.</strong> Le rapport <em>State of Agentic AI Security and Governance</em>, <strong>v2.01, juin 2026</strong>, distingue l'identité non humaine — qui « verifies that a credential is authorized to connect » — de l'identité d'agent, laquelle « has to verify what the holder is doing with that authorization, <strong>continuously</strong> » (Vol. III <strong>F-20</strong>, <strong>[A]</strong>, citation en langue originale). ⚠ <strong>L'attributeur se nomme plutôt qu'il ne s'anonymise</strong> (décision 15, alinéa a), et <strong>deux réserves voyagent avec l'entrée</strong> : la formule est celle de ce rapport, <strong>à sa date et à sa version, non un consensus du domaine</strong> ; et le rapport reprend par ailleurs des <strong>métriques auto-déclarées d'éditeur</strong>, dont rien n'est repris ici. <em>Ce que l'entrée établit est qu'un référentiel daté <strong>énonce</strong> la vérification continue comme propriété distinctive — pas qu'un mécanisme la réalise.</em></p>
-
 <p><strong>Ce que l'instrument normalisé en porte est un événement, et son statut relevé est le premier échelon.</strong> Sur les <strong>deux fichiers agentiques ouverts</strong> — et <em>le relevé ne documente pas le statut des autres documents du dépôt</em> —, l'évaluation d'un agent est couverte par un événement dont <strong>quatre attributs</strong> portent la valeur <code>stability: development</code> (Vol. III <strong>F-77</strong>, <strong>[B]</strong>) ; les deux fichiers affichent en tête « Status: [Development] », <strong>premier des cinq échelons</strong> (Vol. III <strong>F-76</strong>, <strong>[B]</strong> ; <strong>siège ch. 38 § 38.2</strong>, qui n'est pas reconstruit ici). ⚠ <strong>Ce que ce constat autorise est borné</strong> : <em>un producteur de télémétrie peut consigner un résultat d'évaluation dans un format nommé.</em> Il ne documente <strong>ni ce que ce résultat mesure, ni à quelle identité il se rattache</strong>.</p>
-
 <p><strong>Ce que les outils d'éditeur en portent est un catalogue, et son écart au sujet est le résultat de la section.</strong> La page de référence des évaluateurs intégrés d'une plateforme d'éditeur nommée — <strong>Microsoft Foundry</strong>, horodatée du 2 juin 2026 — nomme <strong>onze évaluateurs d'agents, dont cinq portent la mention « (preview) »</strong> (Vol. III <strong>F-97</strong>, <strong>[B]</strong>). ⚠ <strong>Qualifications auto-déclarées par cet éditeur, attribuées à chaque occurrence, sans exception d'usage illustratif</strong> ; l'éditeur est nommé parce que <strong>l'anonymiser serait une faute</strong>, et la page est retenue comme <strong>cas d'instanciation documenté, jamais comme recommandation</strong>. ⚠ <strong>L'absence de la mention « (preview) » sur une ligne n'est pas une déclaration de disponibilité générale</strong> : <em>ne pas écrire que les six autres le seraient.</em></p>
-
-<p>Deux évaluateurs de risque visent nommément l'agent, et l'un d'eux a pour finalité déclarée de mesurer « an AI agent's ability to engage in behaviors that violate explicitly disallowed actions ».</p>
-
-<div class="avert">
-  <p><strong>C'est ce que le corpus ouvert offre de plus proche d'un indicateur de mandat, et l'écart reste entier</strong> : <em>mesurer la <strong>capacité</strong> d'un agent à s'engager dans des comportements interdits est un instrument d'épreuve adverse, non un indicateur de conformité d'un mandat en production.</em> ⚠ <strong>Un évaluateur n'est pas une métrique normalisée</strong> : instrument propriétaire, <strong>sans définition partagée d'unité ni de cardinalité</strong>, et <strong>aucune page ouverte n'établit de correspondance</strong> avec les attributs d'instrumentation.</p>
-</div>
-
+<p>Deux évaluateurs de risque visent nommément l'agent, et l'un d'eux a pour finalité déclarée de mesurer « an AI agent's ability to engage in behaviors that violate explicitly disallowed actions ». ⚠ <strong>C'est ce que le corpus ouvert offre de plus proche d'un indicateur de mandat, et l'écart reste entier</strong> : <em>mesurer la <strong>capacité</strong> d'un agent à s'engager dans des comportements interdits est un instrument d'épreuve adverse, non un indicateur de conformité d'un mandat en production.</em> ⚠ <strong>Un évaluateur n'est pas une métrique normalisée</strong> : instrument propriétaire, <strong>sans définition partagée d'unité ni de cardinalité</strong>, et <strong>aucune page ouverte n'établit de correspondance</strong> avec les attributs d'instrumentation.</p>
 <p><strong>Et rien ne relie un résultat d'évaluation à une identité.</strong> Trois sources ouvertes nomment <strong>trois grains d'indicateur</strong> — l'instrument normalisé au grain de l'<strong>opération</strong>, la plateforme d'éditeur au grain de l'<strong>évaluateur</strong> avec deux niveaux déclarés, une troisième plateforme au grain de quatre mesures et neuf dimensions de découpage, <strong>consultée sans numéro de version, sans date et sans mention de statut</strong> —, et <strong>aucun identifiant n'est commun aux trois</strong> (Vol. III <strong>F-98</strong>, <strong>[B]</strong>). ⚠ <strong>Trois sources ne font pas un marché</strong> : l'entrée ne soutient <strong>aucun énoncé sur l'état du domaine</strong>, et <strong>huit plateformes qu'elle nomme n'ont pas été instruites</strong>.</p>
-
 <div class="avert">
   <p><strong>Report de re-datation dû sur le cardinal qui précède.</strong> Le volet résiduel de <strong>G-1</strong> a été appliqué au socle le 28 juillet 2026 et y enregistre cette entrée <strong>changée sur un cardinal</strong> : <em>la page de la troisième plateforme nomme <strong>quatre</strong> dimensions, non neuf ; la date du changement n'y est pas établie.</em> Le chiffre écrit ci-dessus est celui de l'entrée <strong>à son gel</strong>, et <em>sa rectification n'est pas opérée ici</em> (en-tête, champ Date de gel). ⚠ <strong>Ce que la section en tire — l'absence d'identifiant commun aux trois sources — ne dépend pas de ce cardinal et n'est pas touché.</strong></p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : un verdict d'admission <strong>sans terme exprimé</strong> (F-03, F-05) ; un référentiel daté qui <strong>énonce</strong> la vérification continue (F-20) ; un événement d'évaluation normalisé <strong>au premier échelon</strong> (F-77) ; onze évaluateurs dont cinq en préversion déclarée, <strong>le plus proche du sujet mesurant une capacité et non une conformité</strong> (F-97) ; l'absence d'identifiant commun entre trois sources nommées (F-98). <strong>Ce qu'il n'établit pas</strong> : qu'un dispositif d'évaluation en production existe <strong>qui daterait un verdict d'identité</strong>, ni qu'un résultat d'évaluation se rattache à un mandat, <strong>ni qu'aucun outil ne le fasse ailleurs</strong>. La lecture proposée est que <strong>l'évaluation continue est instrumentée comme mesure de performance et non comme acte de vérification d'identité</strong> : <em>les deux se ressemblent parce qu'elles produisent des chiffres, et elles diffèrent parce que l'une répond d'un modèle et l'autre d'un mandataire.</em> Elle se réfute par la production d'un évaluateur dont la sortie porte <strong>un identifiant d'agent émis et vérifiable</strong>.</p>
-
 <h2 id="s392"><span class="sig">§ 39.2</span>La dérive agentique : dérive de modèle, dérive d'outil, dérive d'autonomie</h2>
-
 <p><strong>La dérive est ce qui rend faux, après coup, un verdict qui était vrai.</strong> Trois dérives sont annoncées par le plan ; ⚠ <strong>elles ne sont pas documentées au même degré, et les présenter à parité serait la première faute possible ici.</strong></p>
-
 <h3>39.2.1 La dérive d'outil est la mieux documentée, parce qu'un chapitre l'a instruite</h3>
-
-<p>Le <strong>ch. 20</strong> la traite <strong>comme attaque</strong> — le retournement d'un serveur d'outils (<em>rug-pull</em>), où un serveur initialement bénin <strong>modifie après coup la définition d'un outil approuvé</strong>. ⚠ <strong>Relue en signal d'exploitation, la même mécanique pose une question de supervision : <em>sur quoi comparerait-on ?</strong></em> Sur la page de description des outils de la révision du protocole agent-outil de novembre 2025, l'énumération du type compte <strong>huit champs, dont aucun n'exprime une version, une empreinte cryptographique ou une signature</strong> (Vol. III <strong>F-52</strong>, <strong>[B, degré 1]</strong> — <strong>fait négatif VÉRIFIÉ, borné à cette page de cette révision</strong>).</p>
-
+<p>Le <strong>ch. 20</strong> la traite <strong>comme attaque</strong> — le retournement d'un serveur d'outils (<em>rug-pull</em>), où un serveur initialement bénin <strong>modifie après coup la définition d'un outil approuvé</strong>. ⚠ <strong>Relue en signal d'exploitation, la même mécanique pose une question de supervision : <em>sur quoi comparerait-on ?</em></strong> Sur la page de description des outils de la révision du protocole agent-outil de novembre 2025, l'énumération du type compte <strong>huit champs, dont aucun n'exprime une version, une empreinte cryptographique ou une signature</strong> (Vol. III <strong>F-52</strong>, <strong>[B, degré 1]</strong> — <strong>fait négatif VÉRIFIÉ, borné à cette page de cette révision</strong>).</p>
 <div class="avert">
   <p><strong>La borne ne se détache pas de l'énoncé</strong> : elle ne dit rien des autres pages de la spécification, et une <strong>révision majeure est annoncée au brouillon sans que sa date soit confirmée à la source</strong> (R-09) — <em>le constat est à rejouer sur la révision publiée.</em> ⚠ <strong>Aucun des trois tris prospectifs n'est attribué à cette révision, et l'abstention est motivée</strong> : le <strong>PROGRAMMÉ exige un engagement daté réel</strong>, et <em>c'est précisément la date qui manque</em> (Vol. III <strong>H-33</strong>, <strong>[C]</strong>, instrument de tri et non fait). <em>La motivation est celle que le ch. 38 § 38.5 pose sur la même révision, reprise ici plutôt que supposée.</em></p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> ce que le socle établit est <strong>l'absence de ces trois champs sur une page nommée</strong> ; ce qu'il n'établit pas est <strong>qu'une supervision ne puisse pas comparer hors protocole</strong>. La lecture proposée est qu'<strong>une dérive ne se détecte que contre une référence conservée</strong>, et que le mécanisme examiné <strong>n'offre, sur cette page, aucun champ qui tiendrait lieu de référence</strong>.</p>
-
 <h3>39.2.2 La dérive de modèle n'est pas au socle, et le mot ne doit pas faire croire l'inverse</h3>
-
 <div class="avert">
   <p><strong>Le socle ne documente pas de mécanisme de détection d'une dérive de comportement d'un modèle en production</strong> : absence de documentation, non fait négatif vérifié (R-14 du Vol. III, degré 3).</p>
 </div>
-
 <p>Ce que le corpus porte est <strong>voisin sans être identique</strong> : l'<strong>empoisonnement de la mémoire longue ou de la base de récupération</strong> est documenté par une publication <strong>revue par les pairs</strong> parue dans des actes de conférence de 2024, dont <strong>les auteurs déclarent</strong> des taux de réussite « ≥ 80 % » pour « &lt; 0,1 % » de contenu empoisonné sur trois configurations (Vol. III <strong>F-23</strong>, <strong>[A]</strong> ; siège <strong>ch. 19</strong>). ⚠ <strong>Données mesurées et déclarées par les auteurs, attribuées à eux à chaque occurrence</strong> ; <em>le présent chapitre n'en tire aucune grandeur.</em></p>
-
 <div class="avert">
   <p><strong>Le traitement défensif tient l'exposé au niveau du maillon</strong> (R-12 du Vol. III) : <strong>le comportement d'un agent change sans qu'aucun de ses artefacts d'identité ne change</strong> — c'est cette phrase, et non une recette, qui appartient à ce chapitre.</p>
 </div>
-
-<p>Côté instrument, la dimension de modèle existe : le groupe d'attributs qui alimente la métrique de durée d'invocation <strong>ne référence qu'un nom d'agent lisible par un humain et un identifiant de modèle de requête</strong> (Vol. III <strong>F-92</strong>, <strong>[B, degré 1]</strong>, <strong>portée bornée aux trois fichiers nommés</strong>).</p>
-
-<div class="avert">
-  <p><strong>Entrée sur laquelle le vote adversarial est dû et n'a pas été conduit</strong> : <em>elle est adossée au relevé d'ensemble et ne porte aucune thèse ici.</em></p>
-</div>
-
+<p>Côté instrument, la dimension de modèle existe : le groupe d'attributs qui alimente la métrique de durée d'invocation <strong>ne référence qu'un nom d'agent lisible par un humain et un identifiant de modèle de requête</strong> (Vol. III <strong>F-92</strong>, <strong>[B, degré 1]</strong>, <strong>portée bornée aux trois fichiers nommés</strong>). ⚠ <strong>Entrée sur laquelle le vote adversarial est dû et n'a pas été conduit</strong> : <em>elle est adossée au relevé d'ensemble et ne porte aucune thèse ici.</em></p>
 <h3>39.2.3 La dérive d'autonomie est nommée par les cadres, et le seul relevé d'instrumentation ne l'instrumente pas</h3>
-
 <div class="avert">
   <p><strong>C'est le résultat le plus net de la section, et il tient à la superposition de deux constats indépendants.</strong></p>
 </div>
-
-<p><strong>Les cadres la nomment.</strong> Le cycle de vie <strong>attendu par</strong> la ligne directrice E-23 — ligne directrice <strong>fondée sur des principes, dont les douze énoncés numérotés sont au <em>should</strong></em> (Vol. III <strong>F-64</strong>, <strong>[B, degré 1]</strong>), la forme « attendu » étant portée <strong>au titre du document d'information de son éditeur du 11 septembre 2025</strong> et non du texte de la ligne directrice (Vol. III <strong>F-66</strong>, <strong>[B, degré 1]</strong>) — comporte une <strong>surveillance continue visant nommément la décision autonome et la reparamétrisation autonome</strong> (Vol. III <strong>H-04</strong>, <strong>[A/B mixte]</strong> ; <strong>F-65</strong>, <strong>[B]</strong>). ⚠ <strong>On écrit « attendu par E-23 », jamais « exigé par E-23 »</strong> (R-06 du Vol. III ; siège <strong>ch. 25</strong>). La ligne directrice de l'AMF formule ses attentes sur le mode « L'Autorité s'attend à ce que… », <strong>pour effet au 1er mai 2027</strong> — échéance datée d'un texte publié, donc <strong>PROGRAMMÉE</strong> —, sur une définition du système d'IA incluant des <strong>« degrés variables d'autonomie et d'adaptabilité après déploiement »</strong> (Vol. III <strong>F-68</strong>, <strong>[B]</strong> ; siège <strong>ch. 27</strong>). Un avis d'organisme de valeurs mobilières retient une définition incluant des <strong>niveaux variables d'autonomie et d'adaptativité après déploiement</strong> (Vol. III <strong>H-07</strong>, <strong>[B]</strong>) — ⚠ <strong>borne de l'entrée</strong> : l'avis porte sur les marchés de capitaux, il <strong>déclare de lui-même ne créer ni modifier aucune exigence</strong>, et le socle n'établit pas qu'il porte au-delà. ⚠ <strong>Jalons « visés », jamais « fixés »</strong> (R-11 du Vol. III) partout où un jalon d'organisme de normalisation est cité.</p>
-
+<p><strong>Les cadres la nomment.</strong> Le cycle de vie <strong>attendu par</strong> la ligne directrice E-23 — ligne directrice <strong>fondée sur des principes, dont les douze énoncés numérotés sont au <em>should</em></strong> (Vol. III <strong>F-64</strong>, <strong>[B, degré 1]</strong>), la forme « attendu » étant portée <strong>au titre du document d'information de son éditeur du 11 septembre 2025</strong> et non du texte de la ligne directrice (Vol. III <strong>F-66</strong>, <strong>[B, degré 1]</strong>) — comporte une <strong>surveillance continue visant nommément la décision autonome et la reparamétrisation autonome</strong> (Vol. III <strong>H-04</strong>, <strong>[A/B mixte]</strong> ; <strong>F-65</strong>, <strong>[B]</strong>). ⚠ <strong>On écrit « attendu par E-23 », jamais « exigé par E-23 »</strong> (R-06 du Vol. III ; siège <strong>ch. 25</strong>). La ligne directrice de l'AMF formule ses attentes sur le mode « L'Autorité s'attend à ce que… », <strong>pour effet au 1ᵉʳ mai 2027</strong> — échéance datée d'un texte publié, donc <strong>PROGRAMMÉE</strong> —, sur une définition du système d'IA incluant des <strong>« degrés variables d'autonomie et d'adaptabilité après déploiement »</strong> (Vol. III <strong>F-68</strong>, <strong>[B]</strong> ; siège <strong>ch. 27</strong>). Un avis d'organisme de valeurs mobilières retient une définition incluant des <strong>niveaux variables d'autonomie et d'adaptativité après déploiement</strong> (Vol. III <strong>H-07</strong>, <strong>[B]</strong>) — ⚠ <strong>borne de l'entrée</strong> : l'avis porte sur les marchés de capitaux, il <strong>déclare de lui-même ne créer ni modifier aucune exigence</strong>, et le socle n'établit pas qu'il porte au-delà. ⚠ <strong>Jalons « visés », jamais « fixés »</strong> (R-11 du Vol. III) partout où un jalon d'organisme de normalisation est cité.</p>
 <p><strong>Le seul relevé d'instrumentation versé au socle ne la mesure pas.</strong> Un cadre empirique relève que <strong>quatre propriétés sur cinq sont instrumentées, l'autonomie n'en ayant aucune</strong> (Vol. III <strong>H-12</strong>, <strong>[B]</strong> — <em>entrée héritée du Vol. II <strong>F-37</strong>, les deux fondues au socle consolidé ; c'est ici, et non ailleurs, que ce constat est porté</em>) — ⚠ <strong>préimpression non révisée par les pairs, source unique, sans reproduction indépendante</strong> : <em>constat de cette préimpression sur les cinq propriétés qu'elle instrumente elle-même, non propriété établie du domaine.</em></p>
-
 <div class="avert">
   <p><strong>L'échelle qui permettrait de graduer cette dérive vient d'un volume antérieur, et sa mention porte son cardinal</strong> (R-13 du Vol. III) : l'<strong>échelle à quatre paliers non numérotés</strong> — <em>assistance → copilote → orchestration sous revue → autonomie bornée</em> — (Vol. III <strong>H-31</strong>, <strong>[C]</strong>). ⚠ <strong>Entrée non élevable</strong> : c'est une <strong>construction d'auteur du Vol. I</strong>, qui entre comme <strong>thèse à attribuer</strong> et ne porte jamais un fait. <strong>Son emploi comme instrument de graduation appartient au ch. 43 § 43.5</strong> ; <em>ce chapitre la nomme et ne la mobilise pas.</em></p>
 </div>
-
 <h3>39.2.4 Une quatrième source de dérive est portée par le plan, et elle n'entre pas au socle</h3>
-
 <div class="avert">
   <p><strong>Relève v0.10 du TOC, citée ici à son régime et non comme fait.</strong> Le plan porte une <strong>quatrième source de dérive : la mémoire</strong>, quand le contexte de travail est <strong>continûment réécrit par des modèles auxiliaires</strong> — un observateur qui extrait des observations structurées, un réflecteur qui les compresse, déclenchés à seuil de jetons et à l'inactivité. ⚠ <strong>Le dispositif est décrit par son éditeur</strong> comme parade au pourrissement de contexte ; <strong>aucune propriété de conservation n'est publiquement établie</strong>, et <em>un état de mémoire produit par un autre modèle est un <strong>artefact dérivé et daté</strong></em>.</p>
 </div>
-
 <div class="avert">
   <p><strong>Cette relève est un repérage [C] à instruire à la source primaire ; elle n'entre pas au socle</strong>, et son instruction relève de <strong>G-1</strong>, <strong>avec le ch. 5</strong> — qui porte l'ancrage informationnel. <strong>Aucun énoncé de ce chapitre ne s'y adosse</strong> : elle est nommée comme <strong>front ouvert</strong>, et le § 39.2 continue de traiter les <strong>trois</strong> dérives que le plan annonce, non quatre — <em>et, comme l'ouverture de la section le pose, elles ne sont pas documentées au même degré : la dérive d'outil est la seule qu'un chapitre de la somme ait instruite.</em></p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : l'absence de champ de version, d'empreinte ou de signature au type décrivant un outil, <strong>sur une page nommée</strong> (F-52) ; l'empoisonnement de la mémoire avec ses taux <strong>attribués à leurs auteurs</strong> (F-23) ; la mention de la décision et de la reparamétrisation autonomes par le cycle de vie <strong>attendu par</strong> E-23 (H-04, F-65, F-66) ; l'adaptabilité après déploiement dans deux définitions réglementaires (F-68, H-07) ; l'absence d'instrumentation de l'autonomie <strong>dans une préimpression</strong> (H-12). <strong>Ce qu'il n'établit pas</strong> : qu'il existe une métrique d'autonomie, ni que les trois dérives soient les seules, ni qu'elles se détectent par les mêmes moyens. La lecture proposée est que <strong>des trois dérives, celle que les cadres canadiens nomment sous les termes d'autonomie et d'adaptativité après déploiement est aussi celle que le seul relevé d'instrumentation versé au socle n'instrumente pas</strong>. ⚠ <strong>Aucun balayage n'a porté sur les instruments relevés par ailleurs</strong> : <strong>le socle ne documente pas s'ils mesurent l'autonomie</strong> — absence de documentation, non fait négatif vérifié. ⚠ <strong>Et la conséquence pour l'exploitation n'est pas un manque d'outillage, mais une obligation de conception</strong> : <em>ce qui n'est pas instrumenté doit être borné à l'émission, c'est-à-dire au mandat lui-même.</em></p>
-
+<figure class="figure">
+  <img src="../figures/f-39-02-quatre-derives.svg" alt="Figure 39.2 — Les quatre dérives, et le degré de documentation de chacune." />
+  <figcaption><strong>Figure 39.2</strong> — Les quatre dérives, et le degré de documentation de chacune.</figcaption>
+</figure>
 <h2 id="s393"><span class="sig">§ 39.3</span>La réponse à incident agentique : révoquer, confiner, imputer</h2>
-
 <p><strong>Trois leviers, et aucun n'est complet : les deux premiers butent sur une limite que leur chapitre amont déclare, le troisième n'est fourni par aucun mécanisme documenté.</strong></p>
-
 <p><strong>Révoquer en urgence, c'est agir sur un mécanisme prescrit sans être outillé.</strong> Le <strong>ch. 20</strong> a relevé l'inventaire texte par texte, et <strong>trois formes s'en dégagent : le silence, l'interdiction sans le moyen, l'état sans la fraîcheur</strong>. La deuxième est celle que la réponse à incident heurte de front : « Expired or revoked keys <strong>MUST NOT</strong> be used for verification » est posé au niveau normatif le plus fort, <strong>sans aucun mécanisme permettant au client d'établir l'expiration ou la révocation</strong> (Vol. III <strong>F-07</strong>, <strong>[A]</strong>), la section pertinente de la spécification agent-agent <strong>ne mentionnant ni liste de révocation, ni protocole d'état en ligne, ni point de terminaison de statut, ni délai de revalidation</strong>, et sa procédure en six étapes ne comportant <strong>aucune étape de contrôle de fraîcheur</strong> (Vol. III <strong>F-06</strong>, <strong>[A, degré 1]</strong>, borné à cette seule section). ⚠ <strong>La rotation est outillée ; le retrait d'une clé compromise ne l'est pas</strong> (Vol. III <strong>F-10</strong>, <strong>[B]</strong>). ⚠ <strong>Le précédent des infrastructures à clé publique n'offre pas le secours qu'on lui prête</strong> (Vol. III <strong>F-53</strong>, <strong>[B]</strong>), et un brouillon de registre <strong>prescrit quatre états d'agent sans fixer, aux sections consultées, aucun délai de propagation</strong> (Vol. III <strong>F-55</strong>, <strong>[C, degré 1]</strong>, corroboration seule ; document de statut « draft » du 27 mars 2026 hébergé dans un espace de laboratoire — <strong>travaux émergents, non une norme ratifiée</strong>, Vol. III <strong>F-38</strong>, <strong>[A]</strong> ; R-09).</p>
-
 <p><strong>Ce que le socle documente d'une réponse réelle est une révocation de masse.</strong> Lors d'une campagne publique <strong>du 8 août 2025 à au moins le 18 août 2025</strong>, des instances d'un fournisseur de gestion de la relation client ont été atteintes au moyen de <strong>jetons OAuth compromis d'une application tierce</strong>, et <strong>l'ensemble des jetons de cette application a été révoqué le 20 août 2025</strong> (Vol. III <strong>F-21</strong>, <strong>[A]</strong>). <strong>Le maillon qui cède est nommé</strong> : le jeton porteur (<em>bearer token</em>) <strong>n'est lié ni à l'appelant, ni à un appareil, ni à une session</strong>. Le <strong>ch. 20</strong> en tire, <strong>sous marquage d'inférence</strong>, que cette invalidation indifférenciée <strong>tient lieu de cascade faute de mécanisme documenté qui en exercerait une</strong> — et il écrit <strong>au degré 3</strong> que le socle ne documente pas de mécanisme de révocation en cascade dans une chaîne de délégation. <em>Le présent chapitre reprend ce constat de son siège et n'en dérive rien de neuf : <strong>l'exemple daté que le socle porte d'une réponse d'urgence est une réponse à granularité maximale.</strong></em></p>
-
 <p><strong>Confiner, c'est déplacer le lieu de l'échec, et le point d'application le documente à sa borne.</strong> Le <strong>ch. 37 § 37.5</strong> a établi qu'une autorisation par arête possède une syntaxe documentée dans un mandataire ouvert de la <strong>Linux Foundation</strong>, dont la publication la plus récente est <strong>pré-version auto-déclarée</strong> (Vol. III <strong>F-71</strong>, <strong>F-70</strong>, <strong>[B]</strong> ; <em>l'attributeur d'une qualification de maturité se nomme</em>), et qu'un <strong>écart de couverture entre deux plans d'identité est déclaré par l'éditeur lui-même</strong> (Vol. III <strong>F-35</strong>, <strong>[A, degré 2]</strong>, fait négatif <strong>ÉTABLI</strong>). ⚠ <strong>La conséquence pour l'incident est directe, et c'est la première condition de renversement du ch. 37 § 37.9</strong> : <em>un confinement dont on ne peut pas énumérer les arêtes qu'il ne médiatise pas confine d'une part inconnue.</em></p>
-
 <div class="avert">
   <p><strong>Report de re-datation dû sur la qualification de maturité, et sur elle seule.</strong> Le volet résiduel de <strong>G-1</strong> a été appliqué au socle le 28 juillet 2026 et y enregistre <strong>F-70</strong> <em>changée sur un terme des trois</em> : <em>la version du mandataire publiée le 27 juillet 2026 n'y est plus marquée pré-version.</em> La qualification écrite ci-dessus est celle de l'entrée <strong>à son gel</strong>, et <em>sa rectification n'est pas opérée ici</em> (en-tête, champ Date de gel). ⚠ <strong>Ce dont la section tire sa conséquence est l'écart de couverture déclaré (F-35), que ce changement ne touche pas.</strong></p>
 </div>
-
-<p>Le motif de principe est hérité : le Vol. I pose <strong>l'injection d'invite comme non résoluble au niveau du modèle</strong>, le confinement relevant du <strong>contenir</strong> et non du <strong>prévenir</strong> (Vol. III <strong>H-26</strong>, <strong>[C]</strong> ; repérage). Un manifeste de recherche enseigne de son côté que <strong>restreindre le contexte et les capacités limite l'impact d'un agent compromis</strong> (Vol. III <strong>H-11</strong>, <strong>[B]</strong>), thèse que le Vol. II reprend à son <strong>cinquième point de contrôle obligatoire</strong> — le confinement local (Vol. III <strong>H-15</strong>, ⚠ <strong>construction d'auteur, à attribuer, jamais un fait de socle</strong> ; <strong>siège ch. 43 § 43.3</strong>).</p>
-
-<div class="avert">
-  <p><strong>Le <em>frame</em> opérationnel n'est pas caractérisé par le socle</strong> — seul le normatif l'est : <em>le chapitre ne s'adosse pas à cette notion</em>, et la lacune est déclarée au § 39.5.</p>
-</div>
-
-<p><strong>Imputer, c'est le levier qu'aucun mécanisme documenté ne fournit.</strong> Un référentiel de sécurité applicative énonce que <strong>sans identité propre et gouvernée, un agent opère dans un écart d'attribution qui rend le moindre privilège inapplicable</strong> (Vol. III <strong>F-19</strong>, <strong>[A]</strong>) ; le manifeste range parmi ses défis l'<strong>écart de responsabilité</strong> entre le développeur, l'organisation qui impose le cadre, le fournisseur de modèle et le comportement émergent (<strong>H-11</strong>, <strong>[B]</strong>). ⚠ <strong>Et les répondants sont eux-mêmes des agents</strong> : la documentation d'un agent de triage d'hameçonnage de <strong>Microsoft</strong>, mise à jour le 1er juillet 2026, offre <strong>deux modèles d'identité</strong> — une identité d'agent créée pour lui, ou <strong>un compte utilisateur existant dont l'agent hérite les accès</strong> — et <strong>déclare la seconde option incompatible</strong> avec deux dispositifs de sécurité d'accès privilégié (Vol. III <strong>F-57</strong>, <strong>[A]</strong> ; siège <strong>ch. 15</strong>). <em>Cas d'instanciation documenté, jamais recommandation.</em></p>
-
+<p>Le motif de principe est hérité : le Vol. I pose <strong>l'injection d'invite comme non résoluble au niveau du modèle</strong>, le confinement relevant du <strong>contenir</strong> et non du <strong>prévenir</strong> (Vol. III <strong>H-26</strong>, <strong>[C]</strong> ; repérage). Un manifeste de recherche enseigne de son côté que <strong>restreindre le contexte et les capacités limite l'impact d'un agent compromis</strong> (Vol. III <strong>H-11</strong>, <strong>[B]</strong>), thèse que le Vol. II reprend à son <strong>cinquième point de contrôle obligatoire</strong> — le confinement local (Vol. III <strong>H-15</strong>, ⚠ <strong>construction d'auteur, à attribuer, jamais un fait de socle</strong> ; <strong>siège ch. 43 § 43.3</strong>). ⚠ <strong>Le <em>frame</em> opérationnel n'est pas caractérisé par le socle</strong> — seul le normatif l'est : <em>le chapitre ne s'adosse pas à cette notion</em>, et la lacune est déclarée au § 39.5.</p>
+<p><strong>Imputer, c'est le levier qu'aucun mécanisme documenté ne fournit.</strong> Un référentiel de sécurité applicative énonce que <strong>sans identité propre et gouvernée, un agent opère dans un écart d'attribution qui rend le moindre privilège inapplicable</strong> (Vol. III <strong>F-19</strong>, <strong>[A]</strong>) ; le manifeste range parmi ses défis l'<strong>écart de responsabilité</strong> entre le développeur, l'organisation qui impose le cadre, le fournisseur de modèle et le comportement émergent (<strong>H-11</strong>, <strong>[B]</strong>). ⚠ <strong>Et les répondants sont eux-mêmes des agents</strong> : la documentation d'un agent de triage d'hameçonnage de <strong>Microsoft</strong>, mise à jour le 1ᵉʳ juillet 2026, offre <strong>deux modèles d'identité</strong> — une identité d'agent créée pour lui, ou <strong>un compte utilisateur existant dont l'agent hérite les accès</strong> — et <strong>déclare la seconde option incompatible</strong> avec deux dispositifs de sécurité d'accès privilégié (Vol. III <strong>F-57</strong>, <strong>[A]</strong> ; siège <strong>ch. 15</strong>). <em>Cas d'instanciation documenté, jamais recommandation.</em></p>
 <h3>39.3.1 Ce que le Vol. I ajoute à ce levier, en [C]</h3>
-
 <p>Le Vol. I traite la fiabilité d'un agent en production <strong>comme une propriété du système, non du modèle</strong>, et pose trois choses que ce chapitre reprend <strong>en repérage [C]</strong>, à attribuer. <em>Un</em> : les patrons classiques de résilience restent indispensables — <strong>temporisation exponentielle sur les appels d'outils faillibles, disjoncteurs, budgets de réessais bornés</strong> —, et l'<strong>exécution durable</strong>, qui journalise l'état et chaque effet de bord, permet la reprise après panne <strong>sans rejouer les actions déjà engagées, à condition que les appels d'outils soient idempotents</strong>. ⚠ <strong>L'idempotence devient ainsi une exigence de conception d'outil de premier ordre</strong> : <em>sans elle, une reprise transforme un agent en multiplicateur d'effets de bord.</em> ⚠ <strong>Le versant <em>sémantique d'effet</em> de ce constat est au ch. 48</strong> — <em>non rédigé à la date de cette pièce, rédigé depuis, hors portes</em> : ce chapitre le nomme et ne le développe pas. <em>Deux</em> : l'<strong>intervention humaine</strong> doit être traitée comme <strong>une primitive d'architecture et non comme un correctif tardif</strong> — points d'interruption où l'exécution se suspend en attendant une approbation, modes d'approbation gradués selon la sensibilité de l'action, interruptibilité, <strong>modélisation en machine à états explicite</strong> qui rend la trajectoire auditable. <em>Trois</em> : la réponse à incident exige des primitives propres — <strong>un dispositif d'arrêt d'urgence capable de stopper net une flotte d'agents</strong>, des indicateurs de délai de remédiation <strong>adaptés à des défaillances probabilistes</strong>, et des analyses post-incident <strong>nourries par les traces d'observabilité</strong> du ch. 38.</p>
-
 <div class="avert">
   <p><strong>Repérage [C], et la conséquence est nette</strong> : <em>aucun de ces trois éléments n'est central au sens de CA-IV-01</em>, et <strong>le socle du Vol. III n'en porte aucun équivalent</strong>. C'est de nouveau une <strong>lacune de couverture couverte, non comblée</strong> : les deux états sont datés, <strong>compatibles</strong>, et l'énoncé du Vol. III <strong>reste exact dans son périmètre</strong>.</p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : l'interdiction d'employer une clé révoquée <strong>sans moyen d'en établir le statut</strong> (F-06, F-07) ; la rotation outillée <strong>sans procédure de retrait</strong> (F-10) ; les limites déclarées du précédent des infrastructures à clé publique (F-53) ; <strong>une révocation de masse datée</strong> en réponse à un incident public (F-21) ; une syntaxe d'autorisation par arête <strong>en pré-version auto-déclarée</strong> (F-70, F-71) ; un <strong>écart de couverture déclaré par un éditeur nommé</strong> (F-35) ; l'écart d'attribution (F-19) ; deux modèles d'identité pour un agent défensif nommé (F-57). <strong>Ce qu'il n'établit pas</strong> : qu'une <strong>révocation sélective</strong> soit possible, qu'un confinement couvre l'ensemble des arêtes, ni qu'une action se rattache après coup à un mandat. La lecture proposée est que <strong>la réponse à incident agentique dispose, à date, d'un geste à granularité maximale et d'un geste à couverture inconnue</strong> — <em>révoquer tout, ou confiner en partie</em> —, et que <strong>le geste intermédiaire — retirer un mandat précis et constater sa propagation — n'est documenté par aucune entrée</strong>. Elle se réfute par la production d'un mécanisme de retrait sélectif <strong>dont la propagation soit constatable</strong>.</p>
-
+<figure class="figure">
+  <img src="../figures/f-39-03-incident.svg" alt="Figure 39.3 — Révoquer, confiner, imputer : la séquence de réponse à incident agentique." />
+  <figcaption><strong>Figure 39.3</strong> — Révoquer, confiner, imputer : la séquence de réponse à incident agentique.</figcaption>
+</figure>
 <h2 id="s394"><span class="sig">§ 39.4</span>GitOps du parc d'agents : versionner le mandat protocolaire, promouvoir, revenir en arrière</h2>
-
 <p><strong>Ce que cette section vérifie.</strong> Elle demande ce qui permettrait de restituer, après coup, <strong>quel mandat et quelles bornes de privilège étaient en vigueur au moment d'une action donnée</strong> — et d'y revenir. <em>C'est une question de preuve opposable avant d'être une question d'outillage : sans elle, un dossier de diligence raisonnable porte un état courant et jamais un état daté.</em></p>
-
 <div class="avert">
   <p><strong>Le socle ne documente aucune définition de « GitOps » appliqué à un parc d'agents, ni aucun dispositif de promotion entre environnements</strong> : absence de documentation, non fait négatif vérifié (R-14 du Vol. III, degré 3). <em>Le terme est employé au vocabulaire du plan, et la section écrit ce que les mécanismes déjà instruits portent — rien de plus.</em></p>
 </div>
-
 <p><strong>Le versionnement existe, à trois endroits et à trois régimes.</strong></p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Objet versionné</th><th>Ce que le socle établit</th><th>Ce qu'il n'établit pas</th></tr></thead>
-  <tbody>
-    <tr><td><strong>Le mandat lui-même</strong></td><td>sérialisation en SD-JWT, <strong>attribut de type versionné</strong>, attributs temporels d'émission et d'expiration, <strong>v0.2.0 du 28 avril 2026</strong> — ⚠ <strong>spécification de projet, non texte normatif d'un organisme de normalisation</strong> (Vol. III <strong>F-46</strong>, [B] ; R-09)</td><td>qu'un <strong>retrait</strong> soit documenté : le <strong>ch. 20</strong> l'écrit au <strong>degré 3</strong></td></tr>
-    <tr><td><strong>La spécification de la carte</strong>, non son artefact</td><td>spécification versionnée — v1.0.0 du 12 mars 2026, champ de signatures introduit en v0.3.0 le 30 juillet 2025 (Vol. III <strong>F-12</strong>, [B]) ; ⚠ <strong>écart consigné et non arbitré</strong> : le registre affiche une étiquette <strong>v1.0.1 du 28 mai 2026</strong> quand l'en-tête déclare « Latest Released Version 1.0.0 », <strong>et la v1.0.1 n'a pas été ouverte</strong></td><td>que l'<strong>artefact</strong> émis soit daté : les quatorze champs n'expriment <strong>ni date d'émission, ni fenêtre de validité, ni indicateur de révocation</strong> (<strong>F-05</strong>, [A, degré 1]) ; <em>le champ de version qu'il porte est la version <strong>de l'agent</strong>, non une date ni un numéro de série</em></td></tr>
-    <tr><td><strong>La déclaration des bornes</strong></td><td>deux champs <strong>obligatoires</strong> au schéma de profil d'agent d'un brouillon de laboratoire — énumération des outils invocables, limites de portée (Vol. III <strong>F-40</strong>, [B]) ; un type de ressource d'annuaire héritant d'un type applicatif (Vol. III <strong>F-37</strong>, [B])</td><td>⚠ <strong>que la disponibilité générale d'un produit vaille disponibilité générale de ses capacités</strong> : plusieurs capacités nommées demeuraient étiquetées <em>Preview</em> au 21 juillet 2026 (Vol. III <strong>F-34</strong>, [A])</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Objet versionné</th>
+<th>Ce que le socle établit</th>
+<th>Ce qu'il n'établit pas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Le mandat lui-même</strong></td>
+<td>sérialisation en SD-JWT, <strong>attribut de type versionné</strong>, attributs temporels d'émission et d'expiration, <strong>v0.2.0 du 28 avril 2026</strong> — ⚠ <strong>spécification de projet, non texte normatif d'un organisme de normalisation</strong> (Vol. III <strong>F-46</strong>, [B] ; R-09)</td>
+<td>qu'un <strong>retrait</strong> soit documenté : le <strong>ch. 20</strong> l'écrit au <strong>degré 3</strong></td>
+</tr>
+<tr>
+<td><strong>La spécification de la carte</strong>, non son artefact</td>
+<td>spécification versionnée — v1.0.0 du 12 mars 2026, champ de signatures introduit en v0.3.0 le 30 juillet 2025 (Vol. III <strong>F-12</strong>, [B]) ; ⚠ <strong>écart consigné et non arbitré</strong> : le registre affiche une étiquette <strong>v1.0.1 du 28 mai 2026</strong> quand l'en-tête déclare « Latest Released Version 1.0.0 », <strong>et la v1.0.1 n'a pas été ouverte</strong></td>
+<td>que l'<strong>artefact</strong> émis soit daté : les quatorze champs n'expriment <strong>ni date d'émission, ni fenêtre de validité, ni indicateur de révocation</strong> (<strong>F-05</strong>, [A, degré 1]) ; <em>le champ de version qu'il porte est la version <strong>de l'agent</strong>, non une date ni un numéro de série</em></td>
+</tr>
+<tr>
+<td><strong>La déclaration des bornes</strong></td>
+<td>deux champs <strong>obligatoires</strong> au schéma de profil d'agent d'un brouillon de laboratoire — énumération des outils invocables, limites de portée (Vol. III <strong>F-40</strong>, [B]) ; un type de ressource d'annuaire héritant d'un type applicatif (Vol. III <strong>F-37</strong>, [B])</td>
+<td>⚠ <strong>que la disponibilité générale d'un produit vaille disponibilité générale de ses capacités</strong> : plusieurs capacités nommées demeuraient étiquetées <em>Preview</em> au 21 juillet 2026 (Vol. III <strong>F-34</strong>, [A])</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 39.1 — Les trois régimes de versionnement documentés par le socle du Vol. III, et leurs bornes. ⚠ <em>Le mécanisme se versionne, l'artefact porte une version d'agent — et ni l'un ni l'autre ne le date.</em></p>
-
 <div class="avert">
   <p><strong>Deux relevés ne couvrent pas les mêmes propriétés, et la comparaison ne se complète pas d'elle-même</strong> : <strong>le socle ne documente pas si le type décrivant un outil exprime une fenêtre de validité</strong> — absence de documentation, non fait négatif vérifié. ⚠ <strong>La comparaison est en outre bornée à ces trois mécanismes nommés</strong> : <em>aucun balayage des mécanismes d'émission n'a été conduit, et rien n'est affirmé des autres.</em></p>
 </div>
-
 <p><strong>Le retour arrière (<em>rollback</em>), lui, n'a pas d'objet là où cette section le cherche.</strong> Revenir à la définition antérieure d'un outil suppose de savoir laquelle était en vigueur : <strong>les huit champs du type n'en portent ni version, ni empreinte, ni signature</strong> (F-52). Un retour arrière sur un mandat suppose de savoir <strong>qu'il a été retiré</strong> : le <strong>ch. 20</strong> écrit au degré 3 l'absence de mécanisme de propagation.</p>
-
 <div class="avert">
   <p><strong>Et promouvoir suppose un gabarit à promouvoir, que ce chapitre ne fournit pas.</strong> Le plan de production qui <strong>fixe et corrige</strong> ce gabarit est au <strong>ch. 41 § 41.5</strong> — matière neuve, <strong>risque 16</strong>, et <em>le renvoi est un renvoi, jamais une reconstruction</em>.</p>
 </div>
-
 <h3>39.4.1 Ce que le Vol. I ajoute, en [C] : l'exploitation qui maintient <em>que cela tourne</em></h3>
-
 <p>Le Vol. I distingue deux disciplines que <strong>la somme reprend et ne fond pas</strong> : l'AgentOps répond du <strong>dossier de gouvernance</strong> d'un agent, l'exploitation assistée par l'IA répond de la <strong>santé de l'infrastructure</strong> qui l'héberge. ⚠ <strong>Les confondre reconduit l'anti-patron d'une supervision d'exploitation tenant lieu de piste de gouvernance, ou l'inverse.</strong> Sa mécanique est une <strong>boucle de contrôle — observer, corréler, décider, agir</strong> —, et deux notions lui donnent sa portée : la <strong>résilience mesurée</strong>, qui transpose aux agents les grandeurs d'exploitation éprouvées, et l'<strong>auto-remédiation</strong>, où la boucle <strong>agit</strong> au lieu d'alerter seulement.</p>
-
 <div class="avert">
   <p><strong>Deux bornes du Vol. I sont reprises parce qu'elles portent la matière du Livre, et non la supervision.</strong> <em>Un</em> : <strong>une remédiation autonome est elle-même une action, soumise au calibrage d'autonomie</strong> — réversible et à faible matérialité, elle peut s'exécuter seule ; engageante, elle reste <strong>sous libération humaine</strong>. La <strong>dégradation sûre par défaut</strong> — un agent privé de son plan de contrôle <strong>retombe au rang d'assistant plutôt que d'agir sans garde-fou</strong> — est le mode de repli qui la rend acceptable en environnement régulé. <em>Deux</em> : ⚠ <strong>les agents d'exploitation sont des agents.</strong> Un agent qui observe, corrèle et remédie <strong>possède une identité non humaine, une surface d'outils et un pouvoir d'action sur l'infrastructure</strong> : il relève <strong>du même régime que les agents métier qu'il surveille</strong>, faute de quoi <em>l'exploitation auto-remédiante devient elle-même un angle mort de gouvernance</em>. ⚠ <strong>C'est exactement le constat que le ch. 20 pose du côté défensif</strong> — les agents d'un centre d'opérations de sécurité agentique sont les premiers à devoir porter le passeport —, et <strong>les deux se rejoignent ici sans se reconstruire</strong>.</p>
 </div>
-
 <div class="avert">
   <p><strong>Repérage [C]</strong> : <em>le critère discriminant qu'énonce le Vol. I — <strong>une remédiation automatique doit porter l'identité de l'agent qui l'exécute, respecter son niveau d'autonomie et écrire sa propre entrée d'audit</strong></em> — est une <strong>thèse d'un volume antérieur, à attribuer</strong>, et <strong>aucun mécanisme ne la réalise au socle</strong>.</p>
 </div>
-
-<div class="encadre encadre--oeuvre">
-  <span class="encadre__label">Note</span>
-  <p><strong>État de la recherche — la restitution datée du mandat et des bornes de privilège.</strong> <strong>Question</strong> : par quel mécanisme documenté restitue-t-on, après coup, <strong>la version du mandat et des bornes de privilège en vigueur au moment d'une action donnée</strong>, et comment revient-on à un état antérieur ? <strong>État</strong> : lacune ouverte le 21 juillet 2026 chez sa source ; <strong>aucune passe de recherche n'a été conduite</strong> — ce chapitre n'a pas de lot d'instruction, et <strong>aucun lot n'avait cet objet à son périmètre</strong>. <strong>Corpus à ouvrir</strong> : la documentation d'exploitation des annuaires et registres nommés au socle (Vol. III F-37, F-40), les dispositions de conservation d'historique des spécifications de registre dans leurs révisions courantes, et la littérature d'exploitation déclarative <strong>sous réserve d'une filiation établie explicitement plutôt que réinventée</strong>. <strong>Critère de clôture</strong> : qu'un mécanisme documenté restitue un état daté, ou que son absence soit établie par balayage. ⚠ <strong>La question reste ouverte ; aucune inférence n'est proposée ici.</strong></p>
-</div>
-
+<blockquote>
+<p><strong>État de la recherche — la restitution datée du mandat et des bornes de privilège.</strong> <strong>Question</strong> : par quel mécanisme documenté restitue-t-on, après coup, <strong>la version du mandat et des bornes de privilège en vigueur au moment d'une action donnée</strong>, et comment revient-on à un état antérieur ? <strong>État</strong> : lacune ouverte le 21 juillet 2026 chez sa source ; <strong>aucune passe de recherche n'a été conduite</strong> — ce chapitre n'a pas de lot d'instruction, et <strong>aucun lot n'avait cet objet à son périmètre</strong>. <strong>Corpus à ouvrir</strong> : la documentation d'exploitation des annuaires et registres nommés au socle (Vol. III F-37, F-40), les dispositions de conservation d'historique des spécifications de registre dans leurs révisions courantes, et la littérature d'exploitation déclarative <strong>sous réserve d'une filiation établie explicitement plutôt que réinventée</strong>. <strong>Critère de clôture</strong> : qu'un mécanisme documenté restitue un état daté, ou que son absence soit établie par balayage. ⚠ <strong>La question reste ouverte ; aucune inférence n'est proposée ici.</strong></p>
+</blockquote>
 <p><span class="auteur">Lecture de l'auteur</span> la lecture proposée est que <strong>le versionnement documenté par le socle porte sur les descriptions et non sur les décisions</strong> : <em>on sait versionner ce qu'un agent est autorisé à faire, on ne sait pas restituer ce qu'il était autorisé à faire à l'instant où il l'a fait.</em> Ce que le socle établit sont les trois régimes du tableau 39.1 ; ce qu'il n'établit pas est <strong>qu'un dispositif quelconque assure la seconde restitution — ni qu'il n'en existe aucun</strong>.</p>
-
 <h2 id="s395"><span class="sig">§ 39.5</span>L'agent qui apprend : ce que le passeport date, et ce qu'il ne date pas</h2>
-
 <p><strong>C'est par cette section que l'évaluation entre dans la somme</strong> : <em>par la revalidation du passeport après apprentissage, non par la science de l'évaluation en général.</em> <strong>La question est donc étroite : si un agent modifie son propre comportement, que devient la vérification dont il a fait l'objet ?</strong></p>
-
 <p><strong>Le socle documente la distinction, et elle vient d'un manifeste de recherche.</strong> L'auto-modification s'y scinde en <strong>deux régimes qu'il importe de ne pas confondre</strong> : l'<strong>adaptation</strong> est <strong>éphémère</strong> — elle porte sur une instance d'exécution et ne lui survit pas ; l'<strong>évolution</strong> est <strong>persistante</strong> — elle modifie le modèle de processus lui-même et <strong>vaut pour toutes les instances à venir</strong> (Vol. III <strong>H-11</strong>, <strong>[B]</strong>).</p>
-
 <div class="avert">
   <p><strong>La distinction n'est pas reconstruite ici : son siège est au ch. 22</strong>, qui traite la capacité d'auto-modification du paradigme dont elle vient. Ce chapitre <strong>y renvoie</strong> et en tire la seule conséquence qui lui appartient — <em>le moment où une exception devient une règle</em>. Le Vol. II en tire, <strong>sous marquage d'auteur</strong>, que les deux devraient emprunter <strong>deux chemins techniques et deux régimes d'autorisation distincts</strong>, faute de quoi <strong>ce moment est indétectable dans les journaux</strong> (Vol. III <strong>H-15</strong> ; siège <strong>ch. 43 § 43.3</strong>). ⚠ <strong>Ce ne sont pas des faits de socle</strong> : ils portent le marquage « Lecture de l'auteur » dans leur volume d'origine. <em>La forme absolue qu'en tire la somme est une décision d'architecture, non la reprise d'un constat.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>Une lacune est déclarée ici pour qu'aucun développement de ce chapitre ne s'y adosse.</strong> <strong>Le <em>frame</em> opérationnel du paradigme n'est pas caractérisé par le socle</strong> — seul le <em>frame</em> <strong>normatif</strong> l'est —, et la question de son articulation à l'autre <strong>reste ouverte</strong> : <em>aucune passe de recherche n'a été conduite</em>. Le confinement du § 39.3 est cité <strong>au titre du <em>frame</em> normatif</strong> et de la restriction de contexte et de capacités, <strong>jamais au titre d'un <em>frame</em> opérationnel que le socle ne caractérise pas.</strong></p>
 </div>
-
 <p><strong>Ce que le passeport porterait, et ce qu'il ne porterait pas.</strong> ⚠ <strong>Le passeport d'agent ne figure dans aucune spécification à date : c'est un objet de synthèse construit par la somme</strong> (R-01 du Vol. III ; <strong>siège ch. 16</strong>). <strong>Trois de ses quatre pièces sont, au regard du temps, dans le même état</strong> : l'en-tête protégé d'une carte signée <strong>ne porte aucun paramètre temporel</strong> (F-03) ; la carte elle-même <strong>ne porte ni validité ni indicateur de révocation</strong> (F-05) ; les états prescrits par un brouillon de registre le sont <strong>sans délai de propagation</strong> (F-55, <strong>[C]</strong>, corroboration).</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> la lecture proposée est qu'un tel assemblage <strong>n'assemble que des pièces datées à leur émission</strong>, et que <strong>rien de ce qu'il assemble ne porte sur le comportement courant</strong>. Ce que le socle établit sont <strong>les trois absences ci-dessus, chacune bornée à son texte</strong> ; ce qu'il n'établit pas est <strong>qu'elles se composent</strong>, ni <strong>qu'un assemblage ne puisse pas ajouter ce que ses pièces ne portent pas</strong>. ⚠ <em>Le report est une lecture, et il est réfutable par la production d'un mécanisme qui daterait sa propre vérification.</em></p>
-
 <p><strong>Et le mécanisme de revalidation n'est pas au socle.</strong> ⚠ <strong>Le socle ne documente pas de mécanisme par lequel l'identité ou le mandat d'un agent serait revalidé après une modification de son comportement</strong> : absence de documentation, non fait négatif vérifié. Ce qui s'en approche a été relevé au § 39.1 <strong>et n'y répond pas</strong> : un événement d'évaluation normalisé au premier échelon (F-77), onze évaluateurs dont cinq en préversion déclarée (F-97), et <strong>aucun identifiant commun entre les trois sources ouvertes</strong> (F-98) — <em>de sorte qu'un résultat d'évaluation, à supposer qu'il détecte une évolution persistante, ne se rattache à aucun artefact d'identité que la somme ait instruit.</em></p>
-
 <div class="avert">
   <p><strong>Relève v0.11 du TOC — l'auto-évolution ferait de la dérive une fonctionnalité, et la relève ne l'établit pas.</strong> Le plan porte deux relevés de synthèse de 2025 tenus à jour en 2026, décrivant des agents qui <strong>optimisent en production leurs invites, leurs outils et leurs mémoires</strong> : <em>la dérive que le § 39.2 veut détecter y deviendrait un comportement <strong>recherché</strong>, et la revalidation après apprentissage cesserait d'être un cas limite pour devenir le régime nominal.</em> Une troisième préimpression, de juillet 2026, propose d'encadrer l'auto-modification par des <strong>certificats à garanties d'erreur auditables</strong>. ⚠ <strong>Les trois sont des préimpressions dont seuls les résumés ont été consultés : repérages [C], jamais des faits</strong>, et leur instruction relève de <strong>G-1</strong>. ⚠ <strong>Le versant versionnement est au ch. 47</strong> — <em>non rédigé à la date de cette pièce, rédigé depuis, hors portes</em> —, <em>un artefact qui se modifie en production n'ayant plus d'horloge fixe du tout.</em> <strong>Aucun énoncé de ce chapitre ne s'y adosse.</strong></p>
 </div>
-
 <h2 id="s396"><span class="sig">§ 39.6</span>Cycle de vie et modèles de maturité</h2>
-
 <div class="avert">
   <p><strong>Cette section est la plus courte du chapitre, et sa brièveté est un résultat.</strong> Le plan l'annonce adossée à un <strong>corpus d'appui</strong> ; ⚠ <strong>ce corpus n'est pas une source</strong> : sa filiation a été <strong>retirée le 21 juillet 2026</strong>, arbitrage clos par <strong>échec documenté et réversible par dépôt ultérieur</strong>, et <strong>aucun des trois ouvrages n'a jamais été déposé</strong>. Les mentions qui suivent sont des <strong>marqueurs conditionnels de réouverture</strong>, jamais des appuis. <em>Aucun chapitre ne se rédige en s'appuyant sur ces ouvrages sans dépôt effectif.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>Le socle ne documente aucun modèle de maturité de l'exploitation agentique</strong> : absence de documentation, non fait négatif vérifié (R-14, degré 3). <strong>Et l'énoncé qu'on écrirait spontanément à sa place est précisément celui que le régime des trois degrés interdit</strong> : <em>« aucun modèle de maturité ne traite le non-déterminisme agentique » serait un fait négatif de corpus sur un corpus non balayé.</em></p>
 </div>
-
 <p><strong>Ce que la somme peut écrire ici tient en deux renvois et une abstention.</strong> <em>Renvoi premier</em> : le <strong>modèle de maturité de l'entreprise agentique</strong> — confrontation de trois modèles et de l'échelle à quatre paliers non numérotés — a <strong>son siège au ch. 43 § 43.5</strong>, où le même marqueur de corpus d'appui est porté et où la <strong>désambiguïsation des trois échelles homonymes du Vol. I</strong> est tenue (R-13 du Vol. III). ⚠ <em>Ce chapitre ne le reconstruit pas, et ne nomme aucune échelle nue.</em> <em>Renvoi second</em> : la <strong>feuille de route par plateaux</strong> est au <strong>ch. 46</strong>, séquencée sur une entrée en vigueur datée. <em>Abstention</em> : <strong>ce chapitre ne propose aucun modèle de maturité propre.</strong> <em>Un modèle de maturité produit à l'endroit exact où le socle est muet est celui qu'aucune relecture ne peut réfuter, faute de fait auquel le confronter.</em></p>
-
-<p>## Synthèse : ce que le chapitre lègue à la somme</p>
-
+<h3>Synthèse : ce que le chapitre lègue à la somme</h3>
 <p><em>Section de sortie sans homologue direct dans la source — construction d'éditeur.</em></p>
-
-<ol class="numeros">
-  <li><strong>La boucle, et son statut de lecture.</strong> Évaluer, détecter, répondre, réviser : c'est une <strong>construction d'auteur</strong>, non un fait, et <em>le socle n'établit pas qu'elle réalise le quatrième terme de l'invariant</em>. Les <strong>ch. 40 et 41</strong> la consomment comme structure, jamais comme acquis.</li>
-  <li><strong>Le constat qui commande le ch. 41.</strong> Des trois dérives, <strong>celle que les cadres nomment est celle que le seul relevé d'instrumentation n'instrumente pas</strong>. ⚠ <em>Et la conséquence n'est pas un manque d'outillage mais une obligation de conception : ce qui n'est pas instrumenté doit être borné à l'émission.</em> Le <strong>ch. 41 § 41.2</strong> en tire ce qu'un gabarit gouverné doit fixer d'avance.</li>
-  <li><strong>Les deux gestes de la réponse à incident, et le geste manquant.</strong> <em>Révoquer tout</em> ou <em>confiner en partie</em> ; <strong>le geste intermédiaire n'est documenté par aucune entrée</strong>. Le <strong>ch. 45 § 45.10</strong> instancie la mort d'un agent contre cette limite, et <strong>ne la comble pas</strong>.</li>
-  <li><strong>La restitution datée, posée comme question et non comme réponse.</strong> <em>On sait versionner ce qu'un agent est autorisé à faire, on ne sait pas restituer ce qu'il était autorisé à faire à l'instant où il l'a fait.</em> Le <strong>ch. 45 § 45.9</strong> en dépend pour la « vie » de son agent-témoin.</li>
-  <li><strong>La récursivité de l'exploitation.</strong> <em>Les agents qui maintiennent le parc sont des agents</em> — même régime, même registre, même audit. Posé ici une fois, avec le <strong>ch. 20</strong> pour homologue défensif.</li>
-  <li><strong>L'abstention du § 39.6.</strong> Aucun modèle de maturité n'est produit là où le socle est muet, et <strong>le siège de cette matière est au ch. 43 § 43.5</strong>. <em>C'est un legs négatif, et il est opposable.</em></li>
+<ol type="1">
+<li><strong>La boucle, et son statut de lecture.</strong> Évaluer, détecter, répondre, réviser : c'est une <strong>construction d'auteur</strong>, non un fait, et <em>le socle n'établit pas qu'elle réalise le quatrième terme de l'invariant</em>. Les <strong>ch. 40 et 41</strong> la consomment comme structure, jamais comme acquis.</li>
+<li><strong>Le constat qui commande le ch. 41.</strong> Des trois dérives, <strong>celle que les cadres nomment est celle que le seul relevé d'instrumentation n'instrumente pas</strong>. ⚠ <em>Et la conséquence n'est pas un manque d'outillage mais une obligation de conception : ce qui n'est pas instrumenté doit être borné à l'émission.</em> Le <strong>ch. 41 § 41.2</strong> en tire ce qu'un gabarit gouverné doit fixer d'avance.</li>
+<li><strong>Les deux gestes de la réponse à incident, et le geste manquant.</strong> <em>Révoquer tout</em> ou <em>confiner en partie</em> ; <strong>le geste intermédiaire n'est documenté par aucune entrée</strong>. Le <strong>ch. 45 § 45.10</strong> instancie la mort d'un agent contre cette limite, et <strong>ne la comble pas</strong>.</li>
+<li><strong>La restitution datée, posée comme question et non comme réponse.</strong> <em>On sait versionner ce qu'un agent est autorisé à faire, on ne sait pas restituer ce qu'il était autorisé à faire à l'instant où il l'a fait.</em> Le <strong>ch. 45 § 45.9</strong> en dépend pour la « vie » de son agent-témoin.</li>
+<li><strong>La récursivité de l'exploitation.</strong> <em>Les agents qui maintiennent le parc sont des agents</em> — même régime, même registre, même audit. Posé ici une fois, avec le <strong>ch. 20</strong> pour homologue défensif.</li>
+<li><strong>L'abstention du § 39.6.</strong> Aucun modèle de maturité n'est produit là où le socle est muet, et <strong>le siège de cette matière est au ch. 43 § 43.5</strong>. <em>C'est un legs négatif, et il est opposable.</em></li>
 </ol>
-
 <div class="avert">
   <p><strong>Ce que le chapitre ne lègue pas.</strong> Aucun <strong>indicateur</strong> : ils sont au <strong>ch. 40</strong>. Aucune <strong>sémantique d'effet</strong> : l'idempotence est nommée ici comme exigence de conception héritée en [C], et <strong>le ch. 48 en est le siège</strong> — <em>non rédigé à la date de cette pièce, rédigé depuis, hors portes</em>. Aucune <strong>quatrième dérive</strong> : la mémoire est un <strong>front ouvert</strong>, pas une dérive documentée. Et aucun <strong>verdict sur l'auto-évolution</strong> : trois préimpressions non instruites ne font pas un régime nominal.</p>
 </div>
+<hr />
 
 <footer class="pied">
   <p><strong>Vol. IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em></strong> · Livre IV, chapitre 39. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau, M.Sc. IT.</p>
-
   <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme (gel unique : 27 juillet 2026).</p>
 </footer>
 

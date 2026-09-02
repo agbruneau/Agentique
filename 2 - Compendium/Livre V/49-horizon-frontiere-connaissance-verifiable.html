@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chapitre 49 — L&#x27;horizon 2027-2032 et la frontière de la connaissance vérifiable · Interopérabilité et Orchestration en Entreprise Agentique</title>
-<meta name="description" content="Livre V — Livrer et clore : l&#x27;agent comme livrable logiciel, horizon et frontière. Second mouvement — horizon et frontière de la connaissance vérifiable (ch. 49-50). Premier des deux chapitres de clôture, et chapitre à deux mouvements issu de la fusion v0.20 des anciens ch. 55 et 56 (décision 11 du ">
+<meta name="description" content="Livre V — Livrer et clore : l&#x27;agent comme livrable logiciel, horizon et frontière. Second mouvement — horizon et frontière de la connaissance vérifiable (ch. 49-50). Premier des deux chapitres de clôture, et **chapitre à deux mouvements** issu de la fusion v0.20 des anciens ch. 55 et 56 (décision 11 du TOC)">
 <meta name="author" content="André-Guy Bruneau, M.Sc. IT">
 <meta name="color-scheme" content="dark">
 <style>
@@ -443,6 +443,17 @@ tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
 tbody td:first-child { color: var(--texte); font-weight: 600; }
 .legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
 
+/* -------------------------------------------------------------- figures */
+/* Les SVG du volume sont dessinés pour le PDF, donc sur fond clair, et ils
+   portent ce fond eux-mêmes — sans quoi il faudrait maintenir deux variantes
+   de chaque figure. Sur ce thème sombre, ils se posent donc comme un carton ;
+   le padding empêche le fond de la figure de toucher le bord du cadre. */
+.figure { margin: 2.1rem 0 1.9rem; }
+.figure img { display: block; width: 100%; height: auto; border-radius: 7px;
+              border: 1px solid var(--trait); background: #fdfbf9; padding: 0.6rem; }
+.figure figcaption { font-size: 0.8rem; font-style: italic; color: var(--texte-faible);
+                     margin-top: 0.65rem; padding-left: 0.15rem; }
+
 /* --------------------------------------------------------------- listes */
 ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
 ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
@@ -532,16 +543,16 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <div class="nav__sous">Livre V · Chapitre 49</div>
   <ol>
     <li><a href="#s490"><span class="num">49.0</span>Orientation : lire un chapitre prospectif sans céder à la prédiction</a></li>
-    <li><a href="#s491"><span class="num">49.1</span>La grappe d&#x27;échéances 2027-2032 : le squelette daté (PROGRAMMÉ)</a></li>
+    <li><a href="#s491"><span class="num">49.1</span>La grappe d'échéances 2027-2032 : le squelette daté (PROGRAMMÉ)</a></li>
     <li><a href="#s492"><span class="num">49.2</span>Trajectoire des protocoles : vers la coexistence stratifiée gouvernée</a></li>
-    <li><a href="#s493"><span class="num">49.3</span>La bifurcation de la gouvernance par couche</a></li>
-    <li><a href="#s494"><span class="num">49.4</span>Identité vérifiable et PQC : l&#x27;horloge</a></li>
+    <li><a href="#s493"><span class="num">49.3</span>La bifurcation de la gouvernance par couche : AAIF, FIDO, W3C, IETF, DIF</a></li>
+    <li><a href="#s494"><span class="num">49.4</span>Identité vérifiable et PQC : l'horloge</a></li>
     <li><a href="#s495"><span class="num">49.5</span>Trajectoire de la menace</a></li>
     <li><a href="#s496"><span class="num">49.6</span>Le programme de recherche</a></li>
     <li><a href="#s497"><span class="num">49.7</span>Trajectoire technologique et macro</a></li>
-    <li><a href="#s498"><span class="num">49.8</span>Prospective d&#x27;entreprise</a></li>
-    <li><a href="#s499"><span class="num">49.9</span>La finance à l&#x27;horizon</a></li>
-    <li><a href="#s4910"><span class="num">49.10</span>Responsabilité, assurabilité et gouvernance de l&#x27;émergence</a></li>
+    <li><a href="#s498"><span class="num">49.8</span>Prospective d'entreprise</a></li>
+    <li><a href="#s499"><span class="num">49.9</span>La finance à l'horizon</a></li>
+    <li><a href="#s4910"><span class="num">49.10</span>Responsabilité, assurabilité et gouvernance de l'émergence</a></li>
     <li><a href="#s4911"><span class="num">49.11</span>Scénarios 2027-2032 et synthèse</a></li>
     <li><a href="#s4912"><span class="num">49.12</span>Les lacunes résiduelles du socle unifié</a></li>
     <li><a href="#s4913"><span class="num">49.13</span>Les questions de recherche transmises</a></li>
@@ -559,612 +570,682 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 <header class="titre">
   <div class="titre__fil">Livre V — Livrer et clore : l&#x27;agent comme livrable logiciel, horizon et frontière</div>
   <h1><span class="chap">Chapitre 49</span>L&#x27;horizon 2027-2032 et la frontière de la connaissance vérifiable</h1>
-  <p class="titre__situe">Livre V — Livrer et clore : l'agent comme livrable logiciel, horizon et frontière. Second mouvement — horizon et frontière de la connaissance vérifiable (ch. 49-50). Premier des deux chapitres de clôture, et <strong>chapitre à deux mouvements</strong> issu de la fusion v0.20 des anciens ch. 55 et 56 (décision 11 du TOC)</p>
+  <p class="titre__situe">Livre V — Livrer et clore : l'agent comme livrable logiciel, horizon et frontière. Second mouvement — horizon et frontière de la connaissance vérifiable (ch. 49-50). Premier des deux chapitres de clôture, et **chapitre à deux mouvements** issu de la fusion v0.20 des anciens ch. 55 et 56 (décision 11 du TOC)</p>
 </header>
 
 <!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
      Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
-     que `build/assemble.py` pour le PDF. L'appareil de gouvernance vit au .md jumeau, qui reste la
-     seule source, et `verifier-piece.py` [6] refuse désormais un rendu qui le recopierait. -->
+     que `build/assemble.py` pour le PDF et que `PRD/decompte.sh` pour la volumétrie. L'appareil de
+     gouvernance vit au .md jumeau, qui reste la seule source, et `build/verifier-piece.py` refuse
+     un rendu qui le recopierait. -->
 
-<div class="encadre encadre--oeuvre">
-  <span class="encadre__label">Note</span>
-  <p><strong>Thèse du second mouvement</strong>, citée depuis le TOC, entrée du chapitre 49 <em>(<strong>collationnée verbatim contre la v0.30 le 28 juillet 2026</strong>)</em> — ce que l'on ne sait pas encore, dit honnêtement — lacunes <strong>des trois socles sources</strong>, questions ouvertes, agenda de recherche, dont le problème des deux sauts (ch. 17) et les indicateurs manquants (ch. 40).</p>
-</div>
-
+<blockquote>
+<p><strong>Thèse du second mouvement</strong>, citée depuis le TOC, entrée du chapitre 49 <em>(<strong>collationnée verbatim contre la v0.30 le 28 juillet 2026</strong>)</em> — ce que l'on ne sait pas encore, dit honnêtement — lacunes <strong>des trois socles sources</strong>, questions ouvertes, agenda de recherche, dont le problème des deux sauts (ch. 17) et les indicateurs manquants (ch. 40).</p>
+</blockquote>
 <div class="avert">
   <p><strong>Deux thèses pour un chapitre, et la seconde porte une date de péremption que la première phrase doit nommer.</strong> Elle a été <strong>réalignée au TOC v0.26</strong> (décisions 8 et 14), sur la remontée <strong>R-IV-69</strong> ouverte par cette pièce : la forme antérieure disait « lacunes du <strong>socle consolidé</strong> », et ce socle comptait alors <strong>zéro entrée</strong> — <em>la forme n'était pas fausse, elle était prématurée d'une porte.</em> <strong>Le corps du chapitre n'a rien réécrit de son côté</strong> : la décision 8 veut que le chapitre corrige le plan, et le réalignement s'est <strong>remonté</strong> avant d'être porté au TOC ; le § 49.12 déclarait déjà, à son ouverture, qu'il enregistre les lacunes des trois socles sources.</p>
 </div>
-
 <div class="avert">
-  <p><strong>Et la condition de retour que le TOC avait écrite est désormais remplie.</strong> Le plan posait que « <em>la thèse redeviendra celle du socle consolidé quand G-3 sera franchie</em> » — et <strong>G-3 est franchie depuis le 28 juillet 2026</strong>, le socle consolidé comptant <strong>159 entrées</strong>. La thèse citée ci-dessus demeure celle du plan et <strong>se cite telle qu'elle est</strong> (décision 17) ; <em>le réalignement inverse appartient à une passe de plan, non à cette pièce</em>, et il est <strong>remonté au titre de R-IV-69, dont l'objet se rouvre</strong> (§&nbsp;49.15&nbsp;†). ⚠ <strong>Le registre du § 49.12 ne devient pas pour autant celui du socle consolidé</strong> : <em>une porte franchie ouvre le droit de refaire le registre, elle ne le refait pas</em> — le socle consolidé recense des <strong>faits</strong>, non des lacunes, et les huit entrées qui portent la matière du premier mouvement y sont <strong>toutes en [C]</strong>.</p>
+  <p><strong>Et la condition de retour que le TOC avait écrite est désormais remplie.</strong> Le plan posait que « <em>la thèse redeviendra celle du socle consolidé quand G-3 sera franchie</em> » — et <strong>G-3 est franchie depuis le 28 juillet 2026</strong>, le socle consolidé comptant <strong>159 entrées</strong>. La thèse citée ci-dessus demeure celle du plan et <strong>se cite telle qu'elle est</strong> (décision 17) ; <em>le réalignement inverse appartient à une passe de plan, non à cette pièce</em>, et il est <strong>remonté au titre de R-IV-69, dont l'objet se rouvre</strong> (§ 49.15). ⚠ <strong>Le registre du § 49.12 ne devient pas pour autant celui du socle consolidé</strong> : <em>une porte franchie ouvre le droit de refaire le registre, elle ne le refait pas</em> — le socle consolidé recense des <strong>faits</strong>, non des lacunes, et les huit entrées qui portent la matière du premier mouvement y sont <strong>toutes en [C]</strong>.</p>
 </div>
-
 <h2 id="s490"><span class="sig">§ 49.0</span>Orientation : lire un chapitre prospectif sans céder à la prédiction</h2>
-
-<div class="encadre encadre--oeuvre">
-  <span class="encadre__label">Note</span>
-  <p>⚠ <strong>SIÈGE DU TRI PROSPECTIF POUR TOUTE LA SOMME.</strong> Les <strong>trois statuts</strong> et leur définition sont posés <strong>ici une seule fois</strong>, et <strong>aucune autre pièce ne les redéfinit</strong>. Les <strong>ch. 15</strong>, <strong>ch. 16 § 16.4</strong> et <strong>ch. 21</strong> y renvoient depuis le TOC v0.26 (remontée <strong>R-IV-37</strong>) ; toute pièce qui trie un énoncé prospectif emploie ces statuts <strong>sans les redéfinir</strong>. <em>L'instrument est hérité du Vol. I</em> <code>Monographie</code> <em>§7.0.2, en <strong>[C]</strong> — et un instrument de tri n'est pas un fait : il ne devient pas central en recevant un siège.</em></p>
+<blockquote>
+<div class="avert">
+  <p><strong>SIÈGE DU TRI PROSPECTIF POUR TOUTE LA SOMME.</strong> Les <strong>trois statuts</strong> et leur définition sont posés <strong>ici une seule fois</strong>, et <strong>aucune autre pièce ne les redéfinit</strong>. Les <strong>ch. 15</strong>, <strong>ch. 16 § 16.4</strong> et <strong>ch. 21</strong> y renvoient depuis le TOC v0.26 (remontée <strong>R-IV-37</strong>) ; toute pièce qui trie un énoncé prospectif emploie ces statuts <strong>sans les redéfinir</strong>. <em>L'instrument est hérité du Vol. I</em> <code>Monographie</code> <em>§7.0.2, en <strong>[C]</strong> — et un instrument de tri n'est pas un fait : il ne devient pas central en recevant un siège.</em></p>
 </div>
-
+</blockquote>
 <p>Un chapitre tourné vers l'avenir n'obéit pas au même contrat de lecture qu'un chapitre descriptif. Les quarante-huit chapitres qui précèdent ont arrêté un état des lieux ; celui-ci ne pose aucun état nouveau — il <strong>projette</strong> cet acquis sur la fenêtre 2027-2032. La distinction n'est pas de style : elle décide de ce qu'un lecteur peut verser à un dossier.</p>
-
 <h3>49.0.1 Les trois statuts épistémiques</h3>
-
 <p>Trois statuts, et un libellé d'ancrage qui n'est pas prospectif.</p>
-
-<ul class="puces">
-  <li><strong>PROGRAMMÉ</strong> — un <strong>engagement daté réel</strong> : texte réglementaire à entrée en vigueur future, feuille de route publiée, échéance de standard. C'est un <em>fait sur le futur</em>, qui <strong>doit porter sa source et sa date</strong>, et que la prudence impose de marquer « à re-vérifier » pour toute échéance 2026-2028.</li>
-  <li><strong>PROJETÉ</strong> — une <strong>prévision d'analyste ou d'institution</strong>. Elle exige <strong>source nominative, millésime et périmètre explicites</strong>, à chaque occurrence.</li>
-  <li><strong>SPÉCULATIF</strong> — un <strong>pari de recherche</strong>, un scénario, une discontinuité.</li>
-  <li><strong>FAIT ÉTABLI</strong> — libellé d'ancrage pour un fait <strong>passé</strong>, daté et démontré par une source primaire ; distinct par nature d'un engagement futur.</li>
+<ul>
+<li><strong>PROGRAMMÉ</strong> — un <strong>engagement daté réel</strong> : texte réglementaire à entrée en vigueur future, feuille de route publiée, échéance de standard. C'est un <em>fait sur le futur</em>, qui <strong>doit porter sa source et sa date</strong>, et que la prudence impose de marquer « à re-vérifier » pour toute échéance 2026-2028.</li>
+<li><strong>PROJETÉ</strong> — une <strong>prévision d'analyste ou d'institution</strong>. Elle exige <strong>source nominative, millésime et périmètre explicites</strong>, à chaque occurrence.</li>
+<li><strong>SPÉCULATIF</strong> — un <strong>pari de recherche</strong>, un scénario, une discontinuité.</li>
+<li><strong>FAIT ÉTABLI</strong> — libellé d'ancrage pour un fait <strong>passé</strong>, daté et démontré par une source primaire ; distinct par nature d'un engagement futur.</li>
 </ul>
-
 <div class="avert">
   <p><strong>La règle absolue qui en découle, et c'est le garde-fou anti-emballement de tout le Livre :</strong> <em>ne jamais présenter du PROJETÉ ni du SPÉCULATIF comme acquis.</em> Elle se double d'une seconde règle, que <strong>CA-IV-10</strong> impose à la somme : le tri prospectif et les niveaux <strong>[A]/[B]/[C]</strong> sont <strong>deux instruments distincts</strong>, jamais l'un pour l'autre. <em>Un énoncé peut être PROGRAMMÉ et en [C] — c'est le cas de la quasi-totalité de ce premier mouvement.</em></p>
 </div>
-
 <h3>49.0.2 Le cône d'incertitude, et la discipline de re-datation</h3>
-
 <p>L'outil qui structure le chapitre est le <strong>cône d'incertitude</strong>, dont la propriété centrale est de <strong>s'élargir avec le temps</strong> : 2027 est dense en PROGRAMMÉ, 2032 est dominé par le PROJETÉ et le SPÉCULATIF, à mesure que les engagements fermes se raréfient. La frise du § 49.1 en est l'ossature ; c'est par rattachement à elle que se positionnent les trajectoires.</p>
-
 <div class="avert">
   <p><strong>Un statut n'est pas un état figé du document, et le Vol. I en donne le cas d'école.</strong> Le règlement omnibus européen portant report des échéances du régime haut-risque est resté <strong>des mois en statut conditionnel</strong> — accord politique provisoire du 7 mai 2026, fiche de suivi législatif « close to adoption » au 22 mai 2026 — avant son adoption par le Conseil le <strong>29 juin 2026</strong>, <em>la publication au Journal officiel restant à suivre</em>. <strong>Les reports qu'il porte sont donc passés, en quelques semaines, de suspendus à PROGRAMMÉS.</strong> De là la marque « <strong>à re-vérifier</strong> » apposée systématiquement à toute date 2026-2028 : <em>le programmé d'aujourd'hui peut être le projeté de demain.</em></p>
 </div>
-
+<figure class="figure">
+  <img src="../figures/f-49-00-cone-incertitude.svg" alt="Figure 49.0 — Le cône d&#39;incertitude et les trois statuts épistémiques." />
+  <figcaption><strong>Figure 49.0</strong> — Le cône d'incertitude et les trois statuts épistémiques.</figcaption>
+</figure>
 <h3>49.0.3 Ce que le chapitre ne fait pas</h3>
-
 <p>Il ne prédit <strong>ni fonctionnalité produit, ni date d'intelligence générale</strong> : il lit des agendas de gouvernance, des calendriers réglementaires et des programmes de recherche. La distinction n'est pas rhétorique — <em>annoncer qu'un modèle « saura faire X en 2029 » relèverait de la prédiction de capacité</em>, là où le chapitre se borne à constater qu'un groupe de travail est chargé d'un livrable, qu'un texte entre en vigueur à une date, ou qu'une communauté formule un problème ouvert. Les horizons de capacité eux-mêmes sont traités en <strong>incertitude bornée</strong> (§ 49.7).</p>
-
 <div class="avert">
   <p><strong>La conséquence de conception est directe et elle est reprise du Vol. I</strong> : puisque la date d'une éventuelle rupture est indécidable, <em>concevoir l'autonomie pour être robuste à l'incertitude</em> plutôt que l'optimiser pour un futur particulier. Un appel d'offres « à l'épreuve du futur » s'écrit autour d'<strong>engagements vérifiables</strong> — un standard a-t-il un forum, un cycle de dépréciation, une échéance ? — et non autour de promesses de performance.</p>
 </div>
-
 <h2 id="s491"><span class="sig">§ 49.1</span>La grappe d'échéances 2027-2032 : le squelette daté (PROGRAMMÉ)</h2>
-
 <p><strong>Avant les trajectoires, l'ossature :</strong> ce qui, dans la fenêtre, n'est ni prévision d'analyste ni pari de recherche, mais <strong>engagement daté</strong>. Cette section ne réexplique aucun régime déjà traité aux Livres III et IV ; elle n'ajoute que la <strong>temporalité</strong> et l'<strong>effet conjoint</strong> de ces échéances sur les déploiements agentiques.</p>
-
 <div class="avert">
   <p><strong>Deux bornes valent pour toute la frise, et sans elles rien de ce qui suit n'est utilisable.</strong> <em>(1)</em> <strong>Toutes ces échéances entrent en [C]</strong> : elles viennent du Vol. I, dont la vérification porte sur ses références et non sur le contenu de ses affirmations. <em>(2)</em> ⚠ <strong>Le volet de faits de G-1 a été levé le 28 juillet 2026, et il ne couvre qu'une part de cette frise.</strong> Les jalons d'identité et de standards du § 49.1.2 sont portés au socle consolidé par <strong>deux entrées seulement</strong> — <code>S-143</code> (l'horloge) et <code>S-144</code> (les jalons de normalisation) —, <strong>instruites à leur source primaire</strong> : <code>S-144</code> est <strong>changée</strong>, son brouillon d'architecture étant passé de la révision <code>-07</code> à la révision <code>-08</code> le 6 juillet 2026, <em>sans qu'aucun jalon daté de l'entrée bouge</em> ; ⚠ <strong>et <code>S-143</code> n'est instruite que PARTIELLEMENT</strong>, l'instruction ayant constaté <em>le statut du document de transition, non son contenu</em> — <strong>les deux figures de dépréciation et de retrait que cette section reprend n'ont pas été extraites verbatim</strong>. ⚠ <strong>La grappe de 2027 du § 49.1.1 et les échéances financières du § 49.1.3 n'ont, elles, aucune entrée qui les reçoive du Vol. I au socle consolidé</strong> : <em>aucune de leurs dates n'a été reprise à sa source primaire, ni par cette passe ni par le volet levé.</em> <strong>Une frise de dates non revérifiées est un objet dangereux, et c'est pourquoi la marque de sa source est reconduite ligne à ligne.</strong></p>
 </div>
-
 <h3>49.1.1 La concentration de 2027</h3>
-
 <p><strong>2027 n'est pas une date parmi d'autres : c'est le moment où les exigences pesant sur les déploiements agentiques cessent d'être indicatives pour devenir contraignantes.</strong> Le Vol. I recense, pour cette seule année : le report du régime haut-risque européen — Annexe III au <strong>2 décembre 2027</strong>, Annexe I au <strong>2 août 2028</strong> —, <strong>adopté par le Conseil le 29 juin 2026, publication au Journal officiel à suivre</strong> ; l'application du règlement anti-blanchiment au <strong>10 juillet 2027</strong>, sous l'autorité instituée en 2024 ; la fin des frais de changement de fournisseur d'informatique en nuage au <strong>12 janvier 2027</strong>, levier direct de portabilité ; la montée du plancher de production prudentiel à <strong>60 % au 1ᵉʳ janvier 2027</strong>, sur une trajectoire vers 72,5 % au 1ᵉʳ janvier 2030 ; et, au Canada et au Québec, l'entrée en vigueur de la ligne directrice <strong>E-23</strong> du BSIF et de la ligne directrice sur l'IA de l'AMF le <strong>1ᵉʳ mai 2027</strong>.</p>
-
 <div class="avert">
   <p><strong>La formulation imposée s'applique ici et à chaque occurrence de la somme</strong> : la ligne directrice canadienne pose des <strong>attentes</strong> — on écrit « <strong>attendu par E-23</strong> », jamais « exigé par » —, et la « supervision humaine » n'est pas l'une des cinq attentes au socle. Le <strong>ch. 25</strong> en est le siège, et ce chapitre n'en développe rien.</p>
 </div>
-
 <p><strong>Le critère de lecture que le Vol. I en tire, et qui vaut pour l'architecte</strong> : séparer les <strong>dates fermes déjà en vigueur</strong> des <strong>dates stabilisées par un acte encore en cours de publication</strong>. Seule cette distinction permet de calibrer un plan de conformité qui ne soit ni en avance sur le droit ni en retard sur lui.</p>
-
 <h3>49.1.2 Identité, standards, et l'horloge de fond</h3>
-
 <div class="avert">
   <p><strong>Le siège de l'horloge post-quantique est au ch. 21 § 21.1, et ce chapitre n'y re-date rien.</strong> La formulation imposée par <strong>R-11 du Vol. III</strong> vaut à chaque mention : les jalons de dépréciation (2030) et de retrait (2035) sont <strong>visés</strong>, jamais « fixés », et <strong>le statut du document qui les porte se dit</strong> — c'est un projet, non une norme finale. <em>Un chapitre prospectif est exactement l'endroit où cette règle se casse, et c'est pourquoi elle est répétée ici.</em></p>
 </div>
-
 <p>Du côté des standards, le Vol. I relève un agenda d'identité décentralisée dont les jalons sont <strong>visés et non engagés</strong> : une recommandation candidate de modèle de données d'accréditations vérifiables <strong>visée en 2027</strong>, des interfaces de cycle de vie <strong>visées en 2028</strong>, un stade de recommandation candidate atteint le <strong>5 mars 2026</strong> pour les identifiants décentralisés, une architecture d'<strong>identité de charge de travail</strong> — ⚠ <em>matière du <strong>socle IAM</strong>, dont le siège est le <strong>ch. 3</strong> et qui n'est pas reconstruite ici</em> — dont la publication est <strong>visée sur 2026-2027 sans date d'engagement ferme</strong>, propre aux processus de l'organisme concerné. ⚠ <strong>Ces dates de livraison demeurent « à re-vérifier »</strong>, et le <strong>ch. 13</strong> en est le siège pour la matière elle-même.</p>
-
 <h3>49.1.3 Les échéances financières et de règlement</h3>
-
 <p>Le vertical financier ajoute sa propre frise, dont <strong>seule la temporalité</strong> est retenue ici — le détail est au § 49.9 et aux chapitres du Livre III. Le Vol. I relève : l'entrée en vigueur statutaire d'un encadrement des jetons de paiement adossés au dollar <strong>au plus tard le 18 janvier 2027</strong> ; une phase pilote de monnaie numérique de banque centrale européenne <strong>au second semestre 2027</strong>, une première émission n'étant qu'une <strong>éventualité</strong> évoquée pour 2029 ; l'obligation de recevoir les messages de reporting <strong>en novembre 2027</strong> et la fin de coexistence <strong>à l'horizon 2028</strong> pour la migration de messagerie financière ; une vérification obligatoire du bénéficiaire hors zone euro le <strong>9 juillet 2027</strong> ; et la reconnaissance d'un organisme de normalisation de banque ouverte états-unien <strong>jusqu'au 8 janvier 2030</strong>.</p>
-
 <div class="avert">
   <p><strong>Le rail temps réel canadien fait exception, et la formulation est imposée par la réserve F-29 et le garde-fou R-4 du Vol. II</strong> : il s'inscrit dans la fenêtre <strong>par vagues, sans date ferme unique</strong>, et sa cible a connu <strong>quatre cibles successives — 2019, 2022, 2023, 2026</strong>. <em>On n'écrit jamais qu'il est « lancé » ni « en production ».</em> Le <strong>ch. 33</strong> en est le siège.</p>
 </div>
-
 <h3>49.1.4 Le caractère mouvant du « programmé »</h3>
-
 <p><strong>Un engagement daté n'est pas pour autant un fait stable, et c'est la discipline de re-datation qui garde cette mouvance visible.</strong> Le cas du règlement omnibus (§ 49.0.2) l'illustre : l'ensemble des reports dépendait de son adoption, et <em>les avoir présentés comme acquis avant celle-ci aurait été une faute de statut</em>. La règle qui en découle structure tout le chapitre : <strong>tout engagement daté porte sa source et son statut, et toute affirmation portant sur 2027-2028 est révisable.</strong></p>
-
 <div class="avert">
   <p><strong>Ce que cette section lègue au ch. 50, et qui n'est pas repris ici</strong> : les échéances de cette frise qui <strong>périment</strong> des passages de la somme sont <strong>événements de péremption</strong>, et leur registre est au <strong>ch. 50 § 50.2</strong>. <em>Une frise dit quand quelque chose arrive ; un registre de péremption dit ce qui tombe quand cela arrive.</em> Les deux ne se confondent pas, et le second n'est pas dupliqué ici.</p>
 </div>
-
+<figure class="figure">
+  <img src="../figures/f-49-01-grappe-echeances.svg" alt="Figure 49.1 — La grappe d&#39;échéances 2027-2032, et la concentration de 2027." />
+  <figcaption><strong>Figure 49.1</strong> — La grappe d'échéances 2027-2032, et la concentration de 2027.</figcaption>
+</figure>
 <h2 id="s492"><span class="sig">§ 49.2</span>Trajectoire des protocoles : vers la coexistence stratifiée gouvernée</h2>
-
 <p><strong>La couche protocolaire est, pour l'essentiel, livrée.</strong> Ce qui reste ouvert pour l'horizon n'est donc plus de savoir <em>quelles fonctionnalités</em> viendront, mais <em>comment ces standards évolueront</em> — par quels mécanismes de gouvernance, à quelle cadence, sous quelle forme de cohabitation. Le Vol. I signale une <strong>rupture de méthode</strong> survenue après juin 2026 : là où les protocoles annonçaient des échéances de livraison, ils publient désormais des <strong>programmes de priorité sans engagement temporel</strong>.</p>
-
 <div class="avert">
   <p><strong>La conséquence de lecture est nette : il faut lire des agendas de gouvernance, non des feuilles de route produit.</strong> La feuille de route d'un protocole agent-outil abandonne la cadence par jalons datés au profit d'aires de priorité pilotées par des groupes de travail, <strong>sans dates de livraison engagées</strong>. <em>Ce déplacement est un fait documenté quant à la structure de gouvernance — donc PROGRAMMÉ à ce seul titre — mais il interdit d'en déduire un calendrier de fonctionnalités.</em></p>
 </div>
-
-<p><strong>Deux instruments structurent cette nouvelle économie d'évolution</strong>, et l'un des deux est le plus directement actionnable de tout le chapitre. <em>Premièrement</em>, les <strong>extensions en notation inversée</strong> deviennent la voie par laquelle une proposition expérimentale chemine vers le statut normatif, ce qui institutionnalise un espace d'expérimentation distinct du cœur stable. <em>Deuxièmement</em>, un <strong>cycle de vie <em>actif → déprécié → retiré</strong></em>, assorti d'une <strong>fenêtre de dépréciation d'au moins douze mois</strong>, formalise la mise hors service.</p>
-
+<p><strong>Deux instruments structurent cette nouvelle économie d'évolution</strong>, et l'un des deux est le plus directement actionnable de tout le chapitre. <em>Premièrement</em>, les <strong>extensions en notation inversée</strong> deviennent la voie par laquelle une proposition expérimentale chemine vers le statut normatif, ce qui institutionnalise un espace d'expérimentation distinct du cœur stable. <em>Deuxièmement</em>, un <strong>cycle de vie <em>actif → déprécié → retiré</em></strong>, assorti d'une <strong>fenêtre de dépréciation d'au moins douze mois</strong>, formalise la mise hors service.</p>
 <div class="avert">
   <p><strong>Pour le praticien, la conséquence est une compétence d'architecture à part entière</strong> : cibler une révision précise, suivre les avis de dépréciation, planifier la migration <strong>dans la fenêtre de douze mois</strong>. <em>Au-delà, l'interopérabilité se rompt silencieusement</em> — la survie aux dépréciations se conçoit <em>ex ante</em>, par découplage du connecteur et contractualisation de la version.</p>
 </div>
-
 <p><strong>Du côté du protocole agent-agent</strong>, le Vol. I relève trois chantiers annoncés — une spécification d'interopérabilité, la consolidation des efforts de registre, un programme de conformité assorti d'une certification — <strong>sans aucune date de livraison</strong> : <em>feuille de route publiée, non échéancier engagé</em>. ⚠ <strong>Et le point critique est une distinction que R-02 du Vol. III commande de tenir</strong> : une certification atteste qu'une implémentation <strong>respecte une spécification</strong>, non qu'elle <strong>interopère effectivement</strong> avec une autre implémentation conforme. <em>Un programme de certification crédible suppose des bancs d'essai inter-fournisseurs capables d'éprouver un comportement non déterministe — dispositif qui reste largement à construire (§ 49.6).</em></p>
-
 <h3>49.2.1 Convergence ou coexistence ?</h3>
-
 <p><strong>C'est l'une des incertitudes centrales du chapitre, et son statut est SPÉCULATIF.</strong> Une « spécification d'interopérabilité conjointe » entre les deux protocoles, évoquée dans le discours d'écosystème, reste <strong>attendue et non publiée</strong> à juin 2026 : ni la feuille de route de l'un ni le communiqué de l'autre n'y renvoient par un livrable daté. ⚠ <em>La présenter comme acquise serait une erreur de qualification</em> — c'est le cas d'école du garde-fou du § 49.0.</p>
-
 <p><strong>La proposition du Vol. I, reprise ici comme thèse attribuée et non comme fait</strong> : l'horizon consacrera plutôt une <strong>coexistence stratifiée et gouvernée</strong> qu'un protocole unifié, par analogie avec la cohabitation durable de plusieurs protocoles de transport sur la pile web, chacun occupant une niche d'usage stable. Le Vol. I <code>Monographie</code> <strong>§3.13.2</strong> l'établit au présent — <em>l'écosystème de 2026 ne converge pas vers un protocole unique et ne devrait pas le faire</em> — et ajoute la condition qui compte : <strong>cette coexistence n'est une force d'interopérabilité qu'à la condition que les frontières inter-protocoles soient elles-mêmes spécifiées.</strong> <em>D'où l'enjeu du pont entre les deux protocoles, attendu sans brouillon public à juin 2026 — le ch. 8 § 8.5 en est le siège.</em></p>
-
 <h3>49.2.2 Le verrou de la portabilité d'agent neutre</h3>
-
-<p><strong>Le dernier verrou protocolaire de l'horizon.</strong> Malgré l'existence de conventions de documentation d'agent, d'un cadre de schéma agentique ouvert et d'un langage de définition d'agent présenté comme le premier ouvert pour l'entreprise, <strong>il n'existe toujours pas de format d'agent portable <em>de jure</strong></em>. ⚠ <strong>Et la distinction que le Vol. I ajoute est celle qui décide de l'affaire</strong> : la portabilité de la <strong>définition</strong> ne résout ni celle de l'<strong>état</strong> ni celle de l'<strong>exécution durable</strong> — mémoire de travail, sessions longues et points de reprise restent attachés au <em>runtime</em> qui les héberge. <em>Tant qu'un agent ne peut être déplacé entre exécuteurs sans réécriture ni perte d'état, le découplage promis par la couche protocolaire reste partiel.</em></p>
-
+<p><strong>Le dernier verrou protocolaire de l'horizon.</strong> Malgré l'existence de conventions de documentation d'agent, d'un cadre de schéma agentique ouvert et d'un langage de définition d'agent présenté comme le premier ouvert pour l'entreprise, <strong>il n'existe toujours pas de format d'agent portable <em>de jure</em></strong>. ⚠ <strong>Et la distinction que le Vol. I ajoute est celle qui décide de l'affaire</strong> : la portabilité de la <strong>définition</strong> ne résout ni celle de l'<strong>état</strong> ni celle de l'<strong>exécution durable</strong> — mémoire de travail, sessions longues et points de reprise restent attachés au <em>runtime</em> qui les héberge. <em>Tant qu'un agent ne peut être déplacé entre exécuteurs sans réécriture ni perte d'état, le découplage promis par la couche protocolaire reste partiel.</em></p>
 <div class="avert">
-  <p><strong>L'enjeu dépasse la commodité technique, et le Vol. I</strong> <code>Monographie</code> <strong>§3.13.2 le dit en toutes lettres</strong> : la portabilité inter-modèles et inter-cadriciels <strong>cesse d'être une commodité d'ingénierie pour devenir un levier de souveraineté</strong> — pouvoir substituer un modèle ou un cadriciel sans réécrire la couche d'interopérabilité, c'est éviter la dépendance à un fournisseur extra-juridictionnel. <em>Le découplage y prend une valeur politique</em>, et le § 49.7 y revient sous l'angle de la fragmentation juridictionnelle.</p>
+  <p><strong>L'enjeu dépasse la commodité technique, et le Vol. I</strong> <code>Monographie</code> <strong>§3.13.2 le dit en toutes lettres</strong> : la portabilité inter-modèles et inter-cadriciels <strong>cesse d'être une commodité d'ingénierie pour devenir un levier de souveraineté</strong> — pouvoir remplacer un modèle ou un cadriciel sans réécrire la couche d'interopérabilité, c'est éviter la dépendance à un fournisseur extra-juridictionnel. <em>Le découplage y prend une valeur politique</em>, et le § 49.7 y revient sous l'angle de la fragmentation juridictionnelle.</p>
 </div>
-
 <div class="avert">
   <p><strong>Une réserve de qualification, imposée par R-02</strong> : les trois conventions nommées ci-dessus sont des <strong>conventions de fait</strong>, non des <strong>garanties de réversibilité</strong>. Une exigence de portabilité dans un appel d'offres ne peut, à juin 2026, s'adosser à aucun format normatif contraignant ; elle s'écrit contractuellement, en exigeant l'exportabilité de la définition <strong>et</strong> de l'état.</p>
 </div>
-
-<h2 id="s493"><span class="sig">§ 49.3</span>La bifurcation de la gouvernance par couche</h2>
-
+<h2 id="s493"><span class="sig">§ 49.3</span>La bifurcation de la gouvernance par couche : AAIF, FIDO, W3C, IETF, DIF</h2>
 <p><strong>La proposition selon laquelle le verrou de l'horizon est moins technique qu'institutionnel trouve ici son illustration la plus nette.</strong> À juin 2026, la couche agentique ne souffre plus d'une absence de forums de gouvernance : <strong>elle souffre de leur prolifération non coordonnée.</strong> Et la structure n'est pas une simple pluralité — <em>la gouvernance se stratifie couche par couche</em>.</p>
-
-<p>Le Vol. I cartographie trois strates. La couche <strong>agent-outil et agent-agent</strong> relève d'une fondation constituée le <strong>9 décembre 2025</strong> sous une fondation faîtière, ancrée par la contribution de projets fondateurs. La couche <strong>paiement et identité-commerce</strong> a basculé vers une alliance d'authentification, qui a créé le <strong>28 avril 2026</strong> deux groupes de travail techniques distincts, avec pour contributions de départ un protocole de paiement agentique donné par son éditeur et une spécification d'intention vérifiable portée par un réseau de cartes. La couche <strong>identité, sémantique et découverte décentralisée</strong> est <strong>la plus éclatée</strong> : elle se disperse entre un consortium du web, un organisme de normalisation de l'Internet et une fondation d'identité décentralisée.</p>
-
+<p>Le Vol. I cartographie trois strates. La couche <strong>agent-outil et agent-agent</strong> relève de l'<strong>Agentic AI Foundation</strong> (<strong>AAIF</strong>), dont la <strong>Linux Foundation</strong> a annoncé la formation le <strong>9 décembre 2025</strong>, ancrée par la contribution de projets fondateurs. La couche <strong>paiement et identité-commerce</strong> a basculé vers la <strong>FIDO Alliance</strong>, qui a créé le <strong>28 avril 2026</strong> deux groupes de travail techniques distincts, avec pour contributions de départ un protocole de paiement agentique donné par son éditeur et une spécification d'intention vérifiable portée par un réseau de cartes. La couche <strong>identité, sémantique et découverte décentralisée</strong> est <strong>la plus éclatée</strong> : elle se disperse entre le <strong>W3C</strong>, l'<strong>IETF</strong> et la <strong>Decentralized Identity Foundation</strong> (<strong>DIF</strong>).</p>
 <div class="avert">
   <p><strong>Le critère actionnable, et il est opposable dans un appel d'offres</strong> : déterminer, <strong>exigence par exigence</strong>, sur quel forum elle repose réellement et sous quelle gouvernance — modèle de membre, politique de propriété intellectuelle, cadence de révision. <em>Deux exigences voisines peuvent dépendre de deux maisons aux contrats d'évolution incompatibles.</em> Le Vol. I en tire la conséquence d'architecture : une décision d'écosystème <strong>ne se prend plus « pour les agents » en bloc, mais couche par couche</strong> — faute de quoi <em>le découplage visé au niveau protocole se reconstitue en couplage au niveau institutionnel</em>.</p>
 </div>
-
 <h3>49.3.1 Les groupes communautaires comme signal faible</h3>
-
 <p>La multiplication des groupes communautaires consacrés aux agents entre 2025 et 2026 — protocoles inter-agents et identité, registre d'identité d'agent proposé le <strong>22 avril 2026</strong>, communication agentique sémantique visant une ontologie d'intention, de délégation et de capacité, interopérabilité de la mémoire proposée le <strong>18 mai 2026</strong> et lancée le <strong>3 juin 2026</strong> — est un <strong>indicateur de trajectoire, non un engagement daté</strong>.</p>
-
 <div class="avert">
   <p><strong>La distinction statutaire est décisive et elle est facile à perdre</strong> : <em>un groupe communautaire n'est pas un groupe de travail</em> — il ne produit pas de recommandation et n'engage aucun calendrier normatif. <strong>L'existence de ces groupes est un fait PROGRAMMÉ ; leur conversion en standards reste SPÉCULATIVE.</strong></p>
 </div>
-
 <h3>49.3.2 Neutralité contestée</h3>
-
 <p><strong>La dispersion des forums et la nature de leurs sponsors exposent la normalisation agentique à un risque de capture, que la neutralité affichée ne neutralise pas.</strong> Le Vol. I relève l'analyse critique de l'<strong>Electronic Frontier Foundation</strong> — <strong>McSherry et Noble</strong>, <em>The Free and Open Web Is Under Attack at the IETF</em>, blogue <em>Deeplinks</em>, <strong>17 juin 2026</strong> —, qui soutient que les travaux de <strong>Web Bot Auth</strong> menés à l'<strong>IETF</strong> risquent de <strong>consolider des positions dominantes</strong> plutôt que d'ouvrir le web aux agents.</p>
-
 <div class="avert">
   <p><strong>L'attribution est restituée le 30 juillet 2026, et elle l'est parce que ce paragraphe la devait.</strong> Une analyse critique est <strong>une prise de position d'un acteur nommé</strong>, non un constat d'état : la rendre anonyme — « une organisation de défense des libertés numériques » — la déguisait en fait sans auteur, ce que <strong>CA-IV-03</strong> interdit et que la note de clôture de ce chapitre relevait elle-même comme une infraction. <em>Un argument qu'on ne peut pas rattacher à qui le porte ne se pèse pas ; il se subit.</em></p>
 </div>
-
 <p><strong>L'argument est structurel, et c'est pour cela qu'il compte</strong> : un mécanisme d'authentification du trafic automatisé, en imposant des identités signées et reconnues, <em>peut servir d'outil de filtrage et d'exclusion autant que d'ouverture, selon qui contrôle la liste des émetteurs admis</em>. Que l'architecture soit co-portée par des acteurs d'infrastructure majeurs n'invalide pas la démarche ; cela illustre pourquoi <strong>ceux qui maîtrisent l'infrastructure de vérification maîtrisent la porte</strong>.</p>
-
 <div class="avert">
   <p><strong>La leçon pour le praticien n'est pas de rejeter ces mécanismes, mais de les évaluer à l'aune de leur gouvernance de confiance</strong> : <em>qui décide des émetteurs reconnus, selon quels critères, avec quelle voie de recours ?</em> <strong>Un mécanisme techniquement ouvert peut produire une fermeture de fait.</strong> <em>C'est la distinction conformité ≠ interopérabilité, appliquée à l'admission.</em></p>
 </div>
-
 <h3>49.3.3 La normalisation institutionnelle</h3>
-
 <p>À côté des forums techniques rapides, une couche <strong>plus lente mais juridiquement structurante</strong> : les travaux de l'<strong>ISO/IEC JTC 1/SC 42</strong> — l'amendement 1 « Generative AI » de l'<strong>ISO/IEC 22989</strong> (stade DAmd), l'<strong>ISO/IEC DIS 42102</strong> (taxonomie des méthodes et capacités) et l'<strong>ISO/IEC DIS 42105</strong> (orientations sur la supervision humaine), tous à des stades intermédiaires de leur cycle —, les normes harmonisées du <strong>CEN-CENELEC JTC 21</strong> qui conditionnent l'application effective du régime haut-risque de l'AI Act, et l'<strong>AI Agent Standards Initiative</strong> lancée le <strong>17 février 2026</strong> par le <strong>NIST</strong>, au sein de son <em>Center for AI Standards and Innovation</em> (CAISI), avec un volet identité et sécurité.</p>
-
 <div class="avert">
   <p><strong>Le constat que le Vol. I en tire est le cœur du verrou institutionnel, et il est repris tel quel</strong> : à juin 2026, et selon toute trajectoire projetée pour 2027-2032, <strong>aucun standard mondial d'identité, de découverte ou d'interopérabilité des agents n'est juridiquement ancré</strong>. <em>Cette absence n'est pas un détail technique : c'est le verrou.</em> ⚠ <strong>Et elle s'énonce au degré exact</strong> : le corpus du Vol. I n'en documente aucun — <em>absence de documentation dans un corpus, degré 3</em>, non fait négatif vérifié.</p>
 </div>
-
 <div class="avert">
   <p><strong>Un objet de recherche naît de cette section, et il conditionne toute projection</strong> : le <strong>décalage de cadence</strong> entre pré-standardisation technique (mois) et normalisation institutionnelle (années). <em>Caractériser ce délai de transposition — combien de temps un patron éprouvé met à acquérir un statut opposable — conditionne la fiabilité de toute projection sur la date d'ancrage juridique d'un standard d'identité.</em></p>
 </div>
-
 <h2 id="s494"><span class="sig">§ 49.4</span>Identité vérifiable et PQC : l'horloge</h2>
-
 <div class="avert">
   <p><strong>Cette section est un renvoi, et elle l'est par construction : sa matière a été prélevée par le Livre II.</strong> Les quatre sous-sections que le Vol. I consacre à l'identité vérifiable et à la cryptographie post-quantique sont réparties entre le <strong>ch. 13</strong> et le <strong>ch. 16</strong> côté émission, et le <strong>ch. 21</strong> côté horloge. <em>Ce chapitre n'en reconstruit rien, et c'est une décision de plan (table de couverture du ch. 49), non une lacune.</em></p>
 </div>
-
 <p><strong>Ce qui reste ici est le seul énoncé de trajectoire que la répartition laisse au chapitre prospectif :</strong> l'horloge post-quantique est <strong>la seule échéance de l'horizon qui surplombe toutes les autres</strong>, parce qu'elle ne dépend d'aucun forum de gouvernance et d'aucune adoption de marché — elle dépend d'un calendrier de dépréciation cryptographique. ⚠ <strong>Et sa formulation est imposée</strong> : les jalons sont <strong>visés</strong>, jamais fixés ; <strong>le statut du document qui les porte se dit à chaque mention</strong> ; les origines de jalons <strong>ne se fusionnent pas</strong> (R-11 du Vol. III). <strong>Le siège est le ch. 21 § 21.1</strong>, qui porte les libellés verbatim et la clause de document successeur ; <em>aucun n'est reproduit ici</em>.</p>
-
 <div class="avert">
   <p><strong>Une conséquence de cette section pour le ch. 50, et elle est datée</strong> : les jalons post-quantiques sont des <strong>événements de péremption</strong> de la somme (ch. 50 § 50.2), et <em>un document dont la valeur probante repose sur des signatures classiques se périme avec elles</em> — le § 49.10 y revient pour la piste d'audit.</p>
 </div>
-
 <h2 id="s495"><span class="sig">§ 49.5</span>Trajectoire de la menace</h2>
-
 <div class="avert">
   <p><strong>Renvoi, pour le même motif que le § 49.4</strong> : la matière est <strong>prélevée par le ch. 20</strong>, qui porte le seuil franchi de l'attaque largement autonome (§ 20.7), l'état des offres de défense agentique (§ 20.8), la symétrie attaque/défense relue par l'identité (§ 20.9) et les référentiels de sécurité en mouvement (§ 20.10). <em>Ce chapitre y renvoie sans reprendre.</em></p>
 </div>
-
 <p><strong>Ce que la trajectoire ajoute au grain de l'horizon, et rien de plus :</strong> la symétrie attaque/défense fait de la sécurité agentique <strong>un domaine où les deux camps s'outillent du même substrat</strong>, de sorte qu'aucune projection d'avantage durable ne s'y soutient. ⚠ <strong>Le socle de la somme ne documente aucune mesure de l'asymétrie entre attaque et défense agentiques dans le temps — degré 3</strong> ; <em>une trajectoire sans mesure est une hypothèse de travail, et le ch. 20 § 20.11 la range parmi ses agendas de recherche.</em></p>
-
 <h2 id="s496"><span class="sig">§ 49.6</span>Le programme de recherche</h2>
-
-<div class="encadre encadre--oeuvre">
-  <span class="encadre__label">Note</span>
-  <p>⚠ <strong>SIÈGE DU VERROU SÉMANTIQUE ET PRAGMATIQUE POUR TOUTE LA SOMME.</strong> Le verrou est posé <strong>ici une seule fois</strong>, hérité du Vol. I <code>Monographie</code> §7.6.1 et §3.13.3. Le <strong>ch. 2</strong> (données et sémantique), le <strong>ch. 9</strong> (découverte) et le <strong>ch. 43</strong> en <strong>appliquent</strong> la matière sans la redémontrer. ⚠ <strong>Relevé re-mesuré le 28 juillet 2026 sur l'arbre de travail, et le corpus est nommé parce que des passes concurrentes l'écrivent</strong> : le <strong>ch. 2 § 2.3</strong> renvoie désormais ici <strong>au grain de la section</strong> ; les <strong>ch. 9 et ch. 43</strong> renvoient au <strong>ch. 49</strong>, sans ce grain. <em>Le siège est donc nommé par les trois pièces au chapitre, par une seule à la section</em> — c'est pourquoi son contrôle <strong>S5 reste désactivé</strong> à l'appareil, et ce motif <strong>se re-mesure au commit</strong>. <em>L'entrée est en <strong>[C]</strong> : le siège organise, il n'établit pas.</em></p>
+<blockquote>
+<div class="avert">
+  <p><strong>SIÈGE DU VERROU SÉMANTIQUE ET PRAGMATIQUE POUR TOUTE LA SOMME.</strong> Le verrou est posé <strong>ici une seule fois</strong>, hérité du Vol. I <code>Monographie</code> §7.6.1 et §3.13.3. Le <strong>ch. 2</strong> (données et sémantique), le <strong>ch. 9</strong> (découverte) et le <strong>ch. 43</strong> en <strong>appliquent</strong> la matière sans la redémontrer. ⚠ <strong>Relevé re-mesuré le 28 juillet 2026 sur l'arbre de travail, et le corpus est nommé parce que des passes concurrentes l'écrivent</strong> : le <strong>ch. 2 § 2.3</strong> renvoie désormais ici <strong>au grain de la section</strong> ; les <strong>ch. 9 et ch. 43</strong> renvoient au <strong>ch. 49</strong>, sans ce grain. <em>Le siège est donc nommé par les trois pièces au chapitre, par une seule à la section</em> — c'est pourquoi son contrôle <strong>S5 reste désactivé</strong> à l'appareil, et ce motif <strong>se re-mesure au commit</strong>. <em>L'entrée est en <strong>[C]</strong> : le siège organise, il n'établit pas.</em></p>
 </div>
-
+</blockquote>
 <p><strong>À l'horizon 2027-2032, l'interopérabilité agentique cesse d'être un problème de transport.</strong> Le passage de messages entre agents est, pour l'essentiel, résolu au niveau <strong>syntaxique</strong> ; les protocoles existent, sont gouvernés et coexistent (§ 49.2). Ce qui demeure ouvert relève d'un autre registre : <strong>comment partager le <em>sens</em> d'une intention déléguée, comment <em>garantir</em> un comportement sur une chaîne d'acteurs probabilistes, et comment <em>mesurer</em> l'interopérabilité de manière reproductible.</strong> Le statut dominant de cette section est le <strong>SPÉCULATIF</strong>, ponctué de jalons PROGRAMMÉS.</p>
-
 <h3>49.6.1 Le verrou sémantique et pragmatique</h3>
-
 <p><strong>Le programme dominant de la fenêtre consiste à faire remonter l'alignement d'intentions et de tâches du niveau applicatif — où il est aujourd'hui négocié par des invites interprétées par un grand modèle de langage — vers le protocole lui-même.</strong> Le Vol. I <code>Monographie</code> <strong>§3.13.3</strong> en donne le constat de départ : les standards actuels <strong>excellent aux niveaux technique et syntaxique mais demeurent pauvres en clarification, en alignement et en vérification sémantiques</strong> — <em>deux agents peuvent échanger des messages valides tout en divergeant sur l'intention</em>.</p>
-
 <p><strong>La proposition du Vol. I, reprise comme thèse attribuée</strong> : <em>ce verrou restera largement ouvert au-delà de 2030</em>. Sa résolution suppose de doter le protocole d'une <strong>représentation explicite et partagée de l'intention, de la délégation et de la capacité</strong> — le passage d'un contrat syntaxique à un contrat sémantique.</p>
-
 <div class="avert">
   <p><strong>La difficulté de fond n'est pas la notation, et c'est ce que la première tentative de standardisation révèle</strong> : un groupe communautaire travaille à une ontologie des notions d'intention, de délégation et de capacité, assortie d'un langage de description d'interface inter-agents. <em>Mais la difficulté est la convergence des référentiels sémantiques entre fournisseurs</em> : une intention exprimée dans l'ontologie d'un émetteur doit <strong>conserver son sens chez un destinataire conçu indépendamment</strong>, sans quoi le partage du sens régresse vers une traduction avec perte. ⚠ <strong>Statut mixte à tenir</strong> : <em>la charte d'un groupe communautaire est un jalon PROGRAMMÉ ; l'aboutissement d'une ontologie normative et interopérable demeure SPÉCULATIF.</em></p>
 </div>
-
 <h3>49.6.2 Garanties composables sur des acteurs probabilistes</h3>
-
 <p><strong>Un contrat comportemental peut être posé sur un agent isolé ; l'enjeu prospectif est d'obtenir des garanties <em>composables</em> sur des chaînes de délégation hétérogènes</strong>, où chaque maillon est un acteur probabiliste. Le Vol. I relève des travaux qui formalisent des contrats comportementaux d'agents avec application à l'exécution, <strong>tout en posant explicitement la composition de ces contrats comme un travail futur</strong> : <em>garantir un agent ne garantit pas, en l'état des connaissances, la chaîne d'agents qui l'invoque.</em></p>
-
 <div class="avert">
   <p><strong>La question théorique sous-jacente est nommée et elle n'est pas résolue</strong> : <em>sous quelles conditions une propriété vérifiée localement sur chaque agent se transmet-elle à leur agencement ?</em> Les méthodes formelles classiques supposent des composants déterministes et des interfaces stables ; <strong>les chaînes d'agents violent les deux hypothèses</strong>. Le programme consiste donc à substituer des garanties <strong>probabilistes ou contractuelles</strong> aux garanties absolues. <em>C'est le pendant formel du verrou sémantique : sans représentation partagée de ce qui est promis, aucune composition de promesses n'est vérifiable.</em> ⚠ <strong>Statut SPÉCULATIF</strong> : aucune de ces voies n'offre de garantie composable établie sur des collectifs ouverts à juin 2026.</p>
 </div>
-
 <h3>49.6.3 L'héritage des systèmes multi-agents, relu</h3>
-
 <p>Le Vol. I relève un travail de position soutenant que <strong>la sémantique mentaliste non vérifiable</strong> — fonder l'interopérabilité sur les états internes supposés d'un agent, croyances et désirs — a constitué <strong>la limite des approches anciennes</strong> : <em>on ne peut auditer une intention inobservable</em>. La voie proposée privilégie les <strong>engagements sociaux observables</strong>, vérifiables de l'extérieur.</p>
-
 <div class="avert">
   <p><strong>Le rapprochement avec l'agentique contemporaine est le point qui vaut, et il est déjà posé au ch. 6</strong> : <em>l'intention d'un agent fondé sur un grand modèle de langage n'est pas davantage inspectable que l'état mental d'un agent à croyances et désirs</em> — ce qui ramène la vérifiabilité vers des engagements observables et des contrats comportementaux à garanties probabilistes. <em>Un engagement social observable est, par construction, un contrat vérifiable à l'exécution</em> : c'est ainsi que ce front alimente le § 49.6.2.</p>
 </div>
-
 <h3>49.6.4 Vers une science de l'évaluation</h3>
-
 <p><strong>Ce front conditionne en aval la conformité d'entreprise et tout programme de certification.</strong> À juin 2026, l'évaluation des systèmes d'agents demeure largement immature : le Vol. I relève l'absence de <strong>bancs d'essai inter-fournisseurs reconnus</strong> et de <strong>métriques d'interopérabilité réellement mesurables</strong>. Le programme prospectif consiste à passer d'une taxonomie des <strong>modes de défaillance</strong> à des <strong>métriques opérationnelles</strong> : fidélité de transfert d'intention, taux de réussite d'une tâche déléguée, certification de conformité.</p>
-
 <div class="avert">
   <p><strong>Un manque structurant, et c'est le plus cité de tout le corpus</strong> : <em>il n'existe pas de métrique d'horizon de tâche <strong>déléguée</strong></em> — l'horizon mesuré porte sur un <strong>agent isolé</strong>, non sur une délégation inter-agents. Le <strong>ch. 40 § 40.1</strong> en porte le versant d'indicateurs manquants, et le <strong>§ 49.13</strong> l'enregistre comme question transmise, <strong>par la lacune 7 du Vol. III</strong> qui la déclare <strong>non instruite</strong>.</p>
 </div>
-
 <div class="avert">
   <p><strong>La conséquence pratique est immédiate et elle est contraignante pour un appel d'offres</strong> : <em>ce qui n'est pas mesurable n'est pas contractualisable.</em> Tant qu'une science de l'évaluation n'aura pas produit des bancs reproductibles, l'exigence d'interopérabilité devra rester adossée à des <strong>essais d'intégration réels entre fournisseurs</strong>, non à une attestation de conformité.</p>
 </div>
-
 <h3>49.6.5 Sécurité formelle des frontières et systèmes auto-organisés</h3>
-
 <p><strong>Il s'agit d'étendre à des collectifs ouverts des patrons de sécurité aujourd'hui établis sur un agent ou une frontière donnée</strong> — contrôle de flux d'information, modèle de capacités, séparation stricte des instructions et des données. Le défi prospectif est de <strong>généraliser ces principes à des réseaux d'agents dont la composition n'est pas connue à l'avance</strong>.</p>
-
 <div class="avert">
   <p><strong>La tension centrale de ce front est irréductible et elle se formule en une phrase</strong> : <em>l'ouverture est la condition même de l'interopérabilité — elle suppose d'admettre des agents non préalablement connus — et le confinement formel suppose de borner ce qu'un agent peut faire.</em> Concilier les deux — garantir des propriétés de sécurité sur un collectif dont la frontière se redéfinit dynamiquement — <strong>demeure une question ouverte</strong>, et c'est le pont vers la gouvernance de l'émergence (§ 49.10).</p>
 </div>
-
 <h3>49.6.6 Les visions d'ensemble, et ce que leur statut interdit</h3>
-
 <p>Plusieurs visions structurantes coexistent à juin 2026 — un web agentique, un internet des agents, un internet syntaxique-sémantique pour systèmes autonomes —, appuyées sur des cartographies de l'écosystème qui en consolident le vocabulaire. ⚠ <strong>La distinction épistémique est ici décisive</strong> : ces travaux sont des <strong>agendas de recherche</strong> — du SPÉCULATIF —, <em>qu'il ne faut pas confondre avec des engagements datés</em>. <strong>Seuls les groupes communautaires assortis de chartes publiées relèvent du PROGRAMMÉ.</strong></p>
-
 <div class="avert">
   <p><strong>Et la clôture de ce front est une condition, non une prédiction</strong> : la promesse économique de la somme — le passage d'un coût d'intégration quadratique à un coût linéaire — <em>ne se réalisera que si ces agendas franchissent le seuil du spéculatif vers le programmé</em>. Le § 49.11 en fait l'une de ses six conditions.</p>
 </div>
-
 <h2 id="s497"><span class="sig">§ 49.7</span>Trajectoire technologique et macro</h2>
-
 <p><strong>Cette section change de focale : elle examine les forces de fond qui rendent l'interopérabilité non plus un raffinement souhaitable mais une condition structurelle de viabilité.</strong> Ces forces ne se décrètent ni par un texte réglementaire ni par une feuille de route de standard : <em>elles s'imposent par la pente économique et physique.</em></p>
-
 <p><strong>La courbe de capacité.</strong> Le Vol. I relève un travail de mesure d'un organisme d'évaluation selon lequel la durée des tâches qu'un agent accomplit avec un taux de réussite donné <strong>double environ tous les sept mois</strong>, tendance affinée dans une mise à jour ultérieure avec un signe d'accélération après 2024. ⚠ <strong>Métrique attribuée à son auteur, à son millésime et à son périmètre</strong>, et <strong>la distinction que le Vol. I impose est reprise</strong> : <em>extrapoler la droite de doublement est une lecture mesurée ; prédire une capacité datée est un pari.</em> ⚠ <strong>Et le verrou décisif pour l'interopérabilité est ailleurs</strong> : ces métriques évaluent <strong>un agent isolé face à une tâche close</strong> (§ 49.6.4).</p>
-
 <p><strong>L'économie de l'inférence.</strong> Le coût du jeton d'inférence s'est effondré — baisse <strong>rapide mais inégale selon les tâches</strong>, documentée par un organisme de recherche cité nominativement par le Vol. I —, mais <strong>absorbée par l'explosion du calcul au moment de l'inférence et par la multiplication du nombre d'agents</strong> : <em>la dépense totale ne décroît pas mécaniquement</em>. Deux trajectoires en découlent : la bascule vers des <strong>modèles petits ou embarqués</strong>, thèse attribuée à un laboratoire industriel qui soutient que les petits modèles de langage sont l'avenir de l'agentique ; et l'émergence d'<strong>architectures hétérogènes</strong>. ⚠ <strong>L'argument central, et il est le moteur de tout l'ouvrage</strong> : <em>sans coût marginal bas, pas de flottes d'agents ; mais avec des flottes hétérogènes assemblant des modèles de fournisseurs et de natures différentes, l'interopérabilité cesse d'être optionnelle pour devenir obligatoire.</em> ⚠ <strong>Un angle mort subsiste</strong> : le coût marginal réel d'une trajectoire <strong>multi-saut</strong>, où chaque délégation ajoute des appels, demeure <strong>mal modélisé et difficile à imputer</strong>.</p>
-
 <p><strong>La soutenabilité.</strong> Une agence internationale de l'énergie projette un <strong>quasi-doublement de la consommation électrique des centres de données à l'horizon 2030</strong> — ⚠ <em>projection d'institution, à citer comme telle et non comme un fait acquis</em> —, à quoi s'ajoute une empreinte hydrique documentée tant côté gouvernemental qu'académique. La conséquence prospective est l'émergence d'un <strong>budget énergie-eau-carbone par agent et par trajectoire</strong>, érigé en critère de conception et de localisation. ⚠ <strong>Mais ce mouvement bute sur un verrou de mesure</strong> : <strong>aucun standard d'attribution d'empreinte par appel d'agent n'existe à juin 2026</strong> — <em>le socle du Vol. I n'en documente aucun, degré 3</em> —, et <em>sans méthode normalisée pour imputer une consommation à une délégation précise dans une chaîne multi-saut, la soutenabilité reste un objectif sans instrument de mesure interopérable.</em></p>
-
 <p><strong>La souveraineté.</strong> Du côté européen, une pile souveraine se met en place — plan d'action pour un continent de l'IA, usines d'IA d'une entreprise commune de calcul haute performance, gigafactories adossées à une facilité d'investissement <strong>d'environ 20 milliards d'euros</strong> —, tandis que du côté américain la trajectoire est marquée par la <strong>volatilité des contrôles à l'exportation</strong>. ⚠ <strong>Le risque prospectif porte un nom et il est de nature réglementaire, non technique</strong> : une <strong>fragmentation juridictionnelle du calcul</strong> rendant certains agents non interopérables <strong>par construction</strong> — <em>deux agents conformes chacun dans leur ressort pourraient se révéler incapables de coopérer non pour une raison technique mais réglementaire.</em> La portabilité inter-modèles (§ 49.2.2) fonctionne comme contre-feu.</p>
-
 <p><strong>Les horizons de capacité.</strong> Ils sont traités <strong>délibérément comme une incertitude bornée</strong>, non comme une trajectoire : le chapitre <strong>ne prédit aucune date d'intelligence générale</strong> (§ 49.0.3). Les scénarios disponibles couvrent un large éventail — exercices de prospective modélisant des décollages rapides à partir de courbes de calcul, paris sur des architectures non purement linguistiques, critiques pointant un goulot d'étranglement de calcul ou de données. ⚠ <strong>La posture est de présenter cet ensemble comme une distribution, non comme une feuille de route</strong>, et d'en tirer une conséquence de conception robuste : <em>calibrer l'autonomie et les garde-fous d'irréversibilité pour résister à l'incertitude, indépendamment de toute date.</em></p>
-
 <div class="avert">
   <p><strong>Relève v0.11, portée ici et non consommée.</strong> La littérature de prépublication 2025-2026 se donne des <strong>échelles au-delà de l'agentique</strong> — niveaux croisant performance, généralité et autonomie (arXiv 2311.02462) ; « chemin vers la superintelligence artificielle » assumé jusque dans les titres (arXiv 2507.21046). ⚠ <strong>Si ces échelles entrent, la trajectoire d'infrastructure s'écrit en PROJETÉ et la visée superintelligence en SPÉCULATIF</strong> — <em>le tri de ce chapitre existe pour ce cas exact</em>. <strong>Seuls des résumés ont été consultés : repérages [C], jamais des faits</strong>, et <em>l'autonomie graduée du ch. 22 y trouve un vis-à-vis publié, jamais une validation.</em> ⚠ <strong>« Autonomie graduée » n'est jamais employé nu</strong> (R-13 du Vol. III) : le ch. 22 en est le siège, sous ses termes.</p>
 </div>
-
 <h2 id="s498"><span class="sig">§ 49.8</span>Prospective d'entreprise</h2>
-
 <p><strong>Cette section lit la fenêtre à travers les prévisions de cabinets d'analystes et les enquêtes d'entreprise, dont chaque énoncé porte son millésime et le statut PROJETÉ.</strong> L'objet n'est pas de prédire un état du marché, mais de prolonger en trajectoire la proposition de sortir du <strong>pilote perpétuel</strong>.</p>
-
 <p><strong>L'état des lieux de juin 2026 est préoccupant, et il est mesuré.</strong> Le Vol. I relève l'enquête d'un projet universitaire établissant que la grande majorité des initiatives d'IA générative — <strong>de l'ordre de quatre-vingt-quinze pour cent dans son périmètre</strong> — n'atteignent aucun effet mesurable sur le compte de résultat ; ⚠ <strong>métrique attribuée à sa source, à son millésime et à son périmètre, et le périmètre est ici la borne qui compte</strong>. Un cabinet décrit symétriquement un paradoxe où l'adoption massive ne se convertit pas en valeur à l'échelle.</p>
-
 <div class="avert">
   <p><strong>Ce qui détermine la pente n'est pas un saut de capacité des modèles, mais des conditions organisationnelles</strong> : qualité et accessibilité des données, existence d'un centre d'excellence, gouvernance, redéfinition des processus métier. <em>Le franchissement n'est donc pas une date : c'est un seuil de maturité organisationnelle.</em> ⚠ <strong>Et la dispersion des prévisions est elle-même une incertitude à signaler</strong> : les anticipations 2026 divergent sensiblement d'un cabinet à l'autre.</p>
 </div>
-
 <p><strong>L'assainissement du marché.</strong> Un cabinet prévoit que <strong>plus de quarante pour cent des projets d'IA agentique seront annulés d'ici la fin de 2027</strong>, sous l'effet de coûts mal maîtrisés, d'une valeur métier floue et de contrôles du risque insuffisants — ⚠ <strong>projection attribuée, de statut PROJETÉ : elle décrit une probabilité d'attrition, non une certitude de calendrier</strong>. <em>Pour le praticien, la conséquence porte sur les paris d'écosystème : choisir aujourd'hui entre les forums qui structurent la pile (§ 49.3) revient à parier sur les survivants d'une décantation.</em></p>
-
 <p><strong>Les tailles de marché.</strong> ⚠ <strong>C'est ici que la consigne méthodologique de la somme est la plus exigeante : il faut lire — et surtout ne pas additionner — des prévisions qui divergent d'un facteur considérable, de l'ordre de trente-cinq fois selon le périmètre retenu.</strong> Le Vol. I recense des chiffrages d'impact du commerce agentique à l'horizon 2030, des projections de dépense informatique agentique jusqu'à des ordres de grandeur de mille milliards, et des estimations de marché du logiciel agentique <strong>sans périmètre commun</strong>. ⚠ <strong>La clé de lecture est unique et elle est décisive</strong> : <em>il n'existe pas de définition standard de la « transaction agentique » ni de frontière partagée entre assistance et autonomie.</em> <strong>Ces chiffres ne sont pas des faits mais des projections d'analystes millésimées ; les juxtaposer pour fonder un dossier d'investissement serait une erreur de méthode.</strong></p>
-
 <p><strong>L'organisation agentique.</strong> Un cabinet projette un déplacement de la supervision humaine du « dans la boucle » vers un positionnement « <strong>au-dessus de la boucle</strong> », où l'humain ne valide plus chaque action mais pilote des résultats et arbitre les exceptions — accompagné de nouveaux rôles, dont l'exploitation d'agents et la responsabilité de leur identité. ⚠ <strong>Statut intégralement PROJETÉ</strong> : <em>modèle cible plausible, non état observé.</em> ⚠ <strong>Et le rapprochement que ce chapitre peut faire, lui, est un renvoi</strong> : le rôle de responsable d'identité d'agents renvoie à la fabrique de confiance du <strong>ch. 43 § 43.1</strong> — ⚠ <em>« fabrique » y désigne la fabrique d'identité, non la fabrique d'agents du ch. 41</em> (décision 12c du TOC).</p>
-
 <p><strong>La recomposition du travail.</strong> ⚠ <strong>C'est la section où la distinction mesuré / projeté doit être la plus rigoureuse.</strong> Du côté PROJETÉ, une organisation internationale anticipe à l'horizon 2030 un <strong>solde net d'emplois positif</strong> assorti d'une transformation profonde des compétences. Du côté des premiers signaux <strong>mesurés</strong>, une étude universitaire documente un <strong>recul relatif de l'emploi des jeunes travailleurs de vingt-deux à vingt-cinq ans</strong> dans les métiers les plus exposés. ⚠ <strong>Le verrou analytique est explicite</strong> : <em>attribuer causalement à l'IA agentique — plutôt qu'au cycle conjoncturel ou à d'autres facteurs structurels — la variation d'emploi observée reste méthodologiquement contesté.</em> <strong>Le signal est un fait mesuré sur une cohorte et une fenêtre données ; sa généralisation est une projection.</strong></p>
-
 <div class="avert">
-  <p><strong>Le fil économique de la somme se referme ici, et sur un aveu de statut.</strong> Si les protocoles et les architectures multi-agents atteignent la maturité, la mutualisation des connecteurs ferait basculer le coût d'intégration de l'ordre quadratique à l'ordre linéaire. <strong>Mais aucune étude chiffrée publique ne quantifie, à juin 2026, la baisse de coût d'intégration imputable spécifiquement aux standards ouverts agentiques.</strong> <em>L'énoncé demeure donc SPÉCULATIF — un pari conceptuel cohérent, non un résultat mesuré ; le présenter autrement confondrait une hypothèse séduisante avec un fait établi.</em> ⚠ <strong>Et le verrou est autant définitionnel que mesurable</strong> : tant que « transaction agentique » et « intégration » ne sont pas définies de façon stable, <em>la baisse de coût imputable aux standards ouverts restera non identifiable empiriquement.</em></p>
+  <p><strong>Le fil économique de la somme se referme ici, et sur un aveu de statut.</strong> Si les protocoles et les architectures multi-agents atteignaient la maturité, la mutualisation des connecteurs ferait basculer le coût d'intégration de l'ordre quadratique à l'ordre linéaire. <strong>Mais aucune étude chiffrée publique ne quantifie, à juin 2026, la baisse de coût d'intégration imputable spécifiquement aux standards ouverts agentiques.</strong> <em>L'énoncé demeure donc SPÉCULATIF — un pari conceptuel cohérent, non un résultat mesuré ; le présenter autrement confondrait une hypothèse séduisante avec un fait établi.</em> ⚠ <strong>Et le verrou est autant définitionnel que mesurable</strong> : tant que « transaction agentique » et « intégration » ne sont pas définies de façon stable, <em>la baisse de coût imputable aux standards ouverts restera non identifiable empiriquement.</em></p>
 </div>
-
 <h2 id="s499"><span class="sig">§ 49.9</span>La finance à l'horizon</h2>
-
 <p><strong>Le vertical financier franchit dans la fenêtre un seuil de nature plutôt que de degré</strong> : l'agentique ne se surajoute plus à des copilotes encadrés, elle s'insère dans des <strong>rails de paiement et de règlement de plus en plus instantanés, irrévocables et tokenisés</strong>, sous la pression d'un faisceau d'échéances datées (§ 49.1.3).</p>
-
 <p><strong>Le patron directeur, de statut PROJETÉ, est celui qu'expose une note d'une institution financière internationale</strong> : <em>l'intelligence agentique demeure <strong>en amont</strong>, dans la formation de l'intention et l'orchestration, tandis que l'<strong>autorisation et le règlement restent déterministes</strong>, ancrés dans les rails réglementés existants.</em> ⚠ <strong>C'est la déclinaison financière du fil conducteur de la somme</strong>, et le <strong>ch. 34</strong> en est le siège pour le présent ; ce chapitre n'en projette que la trajectoire.</p>
-
 <p><strong>La course aux rails de mandat.</strong> La gouvernance d'un protocole de paiement agentique a basculé vers une alliance d'authentification le <strong>28 avril 2026</strong>, avec deux groupes de travail techniques (§ 49.3) ; en parallèle se généralisent des offres de paiement agentique de réseaux de cartes, et coexistent plusieurs protocoles de mandat vérifiable. ⚠ <strong>Une tension réglementaire structure cette trajectoire, et elle est de fond</strong> : l'authentification forte du client est conçue comme <strong>liée au payeur présent</strong>, alors que les paiements pré-autorisés exécutés par un agent relèvent d'un schéma <strong>« humain non présent »</strong> qu'il faut requalifier juridiquement. <em>La fragmentation des protocoles de mandat reste l'inconnue décisive pour le coût d'intégration du commerce agentique.</em></p>
-
 <p><strong>Monnaie programmable et règlement.</strong> Les objets monétaires sur lesquels un agent peut déclencher un règlement se diversifient selon des trajectoires de statuts contrastés : <strong>PROGRAMMÉ</strong> pour les calendriers d'encadrement des jetons de paiement et pour la phase pilote de la monnaie numérique de banque centrale européenne au second semestre 2027 ; <strong>PROJETÉ non ferme</strong> pour une première émission évoquée en 2029 ; <strong>PROJETÉ, et à citer comme tel</strong>, pour la tokenisation des actifs réels, dont les estimations d'analystes à l'horizon 2030-2034 <strong>divergent fortement</strong>. ⚠ <strong>Le piège central est déplacé, et il est irréversible</strong> : <em>le règlement y est sans mécanisme de rétrofacturation, de sorte qu'une erreur d'agent sur monnaie programmable n'est pas rattrapable a posteriori.</em> <strong>C'est le point que le ch. 48 § 48.4 reprend au grain de la sémantique d'effet, et qu'il ne reconstruit pas.</strong></p>
-
 <div class="avert">
   <p><strong>Une exigence croise les deux horloges de l'horizon</strong> : les signatures et l'identité qui autorisent ces règlements <strong>devront être re-signées avant les échéances de dépréciation cryptographique</strong> (§ 49.4 ; siège au ch. 21 § 21.1). <em>Concilier crypto-agilité, débit élevé de règlements et identités d'agent éphémères reste un problème non résolu.</em></p>
 </div>
-
-<p><strong>Le risque systémique des agents corrélés.</strong> Il ne s'agit plus du risque d'une décision isolée mais de <strong>la corrélation des comportements lorsque de nombreux agents partagent les mêmes modèles, fournisseurs et signaux</strong>. Le Vol. I relève une convergence de vues prudentielles — comité européen du risque systémique, conseil de stabilité financière avec des indicateurs de suivi et un constat de <strong>concentration des fournisseurs</strong>, banque centrale nationale intégrant l'IA à son cadre de stabilité, banque des règlements internationaux — ⚠ <strong>toutes de statut PROJETÉ : ce sont des analyses prospectives et des indicateurs, non des mesures de réalisation, et aucune ne quantifie un seuil systémique établi.</strong> Côté SPÉCULATIF, une modélisation académique suggère une <strong>croissance non linéaire du risque avec la densité d'agents corrélés</strong>. ⚠ <strong>Le verrou ouvert est prudentiel</strong> : <em>faut-il des exigences nouvelles — contracycliques, ou de type « peau dans le jeu » — pour internaliser le risque de monoculture ?</em></p>
-
+<p><strong>Le risque systémique des agents corrélés.</strong> ⚠ <strong>Le siège en est le ch. 31 § 31.1.2</strong>, qui pose la chaîne causale une seule fois ; <em>ce paragraphe la projette sur la fenêtre et ne la re-dérive pas.</em> Il ne s'agit plus du risque d'une décision isolée mais de <strong>la corrélation des comportements lorsque de nombreux agents partagent les mêmes modèles, fournisseurs et signaux</strong>. Le Vol. I relève une convergence de vues prudentielles — comité européen du risque systémique, conseil de stabilité financière avec des indicateurs de suivi et un constat de <strong>concentration des fournisseurs</strong>, banque centrale nationale intégrant l'IA à son cadre de stabilité, banque des règlements internationaux — ⚠ <strong>toutes de statut PROJETÉ : ce sont des analyses prospectives et des indicateurs, non des mesures de réalisation, et aucune ne quantifie un seuil systémique établi.</strong> Côté SPÉCULATIF, une modélisation académique suggère une <strong>croissance non linéaire du risque avec la densité d'agents corrélés</strong>. ⚠ <strong>Le verrou ouvert est prudentiel</strong> : <em>faut-il des exigences nouvelles — contracycliques, ou de type « peau dans le jeu » — pour internaliser le risque de monoculture ?</em></p>
 <p><strong>La migration des standards de données.</strong> ⚠ <strong>Le patron le plus fort transféré à l'horizon est conceptuellement décisif</strong> : <em>le standard cesse d'être un texte que l'agent doit deviner pour devenir un <strong>code versionné, exécutable</strong>, adossé à un modèle de données</em> — réduisant l'hallucination et rendant la production auditable. <strong>C'est l'incarnation financière du fil contrat/évolution</strong> : un schéma versionné est le contrat stable sur lequel un agent peut s'appuyer sans réinterpréter à chaque exécution. Le <strong>ch. 33</strong> en est le siège ; ⚠ <strong>le rail temps réel canadien y est nommé sans jamais être dit lancé</strong> (R-4 du Vol. II, réserve F-29).</p>
-
-<p><strong>La maturation de l'autonomie bornée.</strong> Le goulot d'étranglement n'est pas la qualité du raisonnement mais <strong>la fiabilité de bout en bout du flux de travail</strong> : les bancs d'essai financiers publiés convergent sur des <strong>taux de réussite faibles sur des tâches réalistes</strong>. <em>La trajectoire la plus crédible n'est donc pas l'autonomie pleine mais l'émergence d'agents robustes sur des opérations circonscrites, et le recours à des bacs à sable réglementaires comme voie de production graduée.</em></p>
-
-<div class="avert">
-  <p><strong>Un vide doit être signalé au titre de la discipline anti-emballement</strong> : <strong>il n'existe, à juin 2026, aucun banc d'essai public mature côté assurance ni pour les processus de lutte contre le blanchiment agentiques</strong> — <em>absence de documentation dans le corpus du Vol. I, degré 3</em> —, de sorte que <strong>toute affirmation d'autonomie dans ces domaines relève de la projection non étayée</strong>.</p>
-</div>
-
+<p><strong>La maturation de l'autonomie bornée.</strong> Le goulot d'étranglement n'est pas la qualité du raisonnement mais <strong>la fiabilité de bout en bout du flux de travail</strong> : les bancs d'essai financiers publiés convergent sur des <strong>taux de réussite faibles sur des tâches réalistes</strong>. <em>La trajectoire la plus crédible n'est donc pas l'autonomie pleine mais l'émergence d'agents robustes sur des opérations circonscrites, et le recours à des bacs à sable réglementaires comme voie de production graduée.</em> ⚠ <strong>Un vide doit être signalé au titre de la discipline anti-emballement</strong> : <strong>il n'existe, à juin 2026, aucun banc d'essai public mature côté assurance ni pour les processus de lutte contre le blanchiment agentiques</strong> — <em>absence de documentation dans le corpus du Vol. I, degré 3</em> —, de sorte que <strong>toute affirmation d'autonomie dans ces domaines relève de la projection non étayée</strong>.</p>
 <h2 id="s4910"><span class="sig">§ 49.10</span>Responsabilité, assurabilité et gouvernance de l'émergence</h2>
-
 <p><strong>La proposition institutionnelle de la somme atteint ici son point de tension.</strong> Les protocoles sont livrés et gouvernés (§ 49.2, § 49.3) ; ce qui demeure à construire relève des <strong>régimes de responsabilité, des mécanismes d'attribution et de la gouvernance du comportement collectif</strong>. La fenêtre porte des jalons datés réels, mais l'essentiel reste <strong>un agenda à trancher</strong>, du PROGRAMMÉ au SPÉCULATIF.</p>
-
 <p><strong>Le vide de responsabilité.</strong> La trajectoire part d'un fait : le <strong>retrait de la directive européenne sur la responsabilité en matière d'intelligence artificielle</strong>, confirmé au programme de travail de la Commission pour 2025. Le contentieux se rabat donc sur la <strong>directive révisée du fait des produits défectueux</strong>, qui inclut explicitement le logiciel et les systèmes d'IA dans la notion de produit, dont la <strong>transposition est due au 9 décembre 2026 — date à re-vérifier</strong> — et qui ne s'applique qu'aux produits mis sur le marché après ce terme. ⚠ <strong>Subsistent des angles morts structurels, et ils sont exactement ceux de la somme</strong> : <em>le régime couvre mal les relations entre entreprises et exclut largement les pertes purement économiques</em> — <strong>deux configurations centrales pour des chaînes de délégation inter-organisationnelles.</strong> <em>La question ouverte est nette : la directive suffit-elle aux préjudices nés d'actions autonomes franchissant les frontières d'organisations, ou faudra-t-il un instrument dédié ?</em></p>
-
 <p><strong>La piste d'audit comme substitut de fait au droit.</strong> En l'absence de régime dédié, la charge bascule vers la <strong>preuve</strong>. Le critère d'architecture qui en découle : les journaux doivent être <strong>infalsifiables, attribuables et admissibles</strong>. <em>Attribuables</em> suppose de relier chaque action à une identité non humaine et à sa chaîne de délégation — <strong>ch. 17</strong>, dont le § 17.6 établit que l'interrogeabilité de cette chaîne n'est pas acquise. <em>Admissibles</em> ajoute une contrainte procédurale : survivre en litige, résister aux exigences de communication de la preuve, s'articuler à des seuils de divulgation qui <strong>diffèrent d'une juridiction à l'autre</strong>. ⚠ <strong>Et une exigence montante croise l'horloge de l'horizon</strong> : <em>la propriété rendant toute altération détectable doit elle-même devenir post-quantique</em> — <strong>un journal scellé en 2027 par un algorithme classique pourrait voir sa valeur probante contestée au-delà de 2030</strong> (§ 49.4).</p>
-
 <p><strong>L'assurabilité comme régulateur de fait.</strong> ⚠ <strong>C'est la proposition la plus contre-intuitive du chapitre, et elle est reprise du Vol. I comme thèse attribuée</strong> : <em>faute de régime de responsabilité tranché, c'est le marché de la couverture qui fixera de facto le prix du risque agentique et, par-là, les bornes du déployable.</em> La trajectoire observée part de l'<strong>exclusion</strong> — polices générales écartant les préjudices liés à l'IA générative — vers l'émergence d'<strong>offres affirmatives dédiées</strong>, analysées par une association de recherche du secteur comme une réponse naissante. ⚠ <strong>La question prospective est SPÉCULATIVE et trois propriétés contrarient les hypothèses actuarielles classiques</strong> : <em>la dérive comportementale des modèles dans le temps, l'émergence de comportements non prévus, et la corrélation systémique entre agents partageant des modèles ou des fournisseurs</em> — <strong>cette dernière détruisant l'indépendance des sinistres sur laquelle repose la mutualisation</strong> (§ 49.9). Deux issues se dessinent : des <strong>garanties paramétriques</strong>, et un <strong>résiduel non assurable</strong> que devrait absorber le bilan de l'entreprise ou un fonds public.</p>
-
 <div class="avert">
   <p><strong>Pour l'architecte, l'assurabilité devient un critère de conception</strong> : une offre affirmative exigera vraisemblablement des <strong>preuves</strong> — journaux admissibles, bornage de l'autonomie sous contrôle de finalité, points de coupure vérifiables. <em>À défaut de standard d'attestation reconnu, chaque assureur imposera son propre référentiel</em>, ce qui plaide pour une instrumentation neutre et portable de la traçabilité. ⚠ <strong>Et « attestation » y désigne l'attestation de conformité, quatrième pièce du passeport (ch. 16 § 16.1), non l'attestation de plate-forme du ch. 47 § 47.3.</strong></p>
 </div>
-
 <p><strong>La gouvernance de l'émergence.</strong> Les modes de défaillance multi-agents et les cascades, traités comme défauts à corriger aux ch. 6 et 11, <strong>deviennent des objets de gouvernance</strong> lorsqu'on cherche à régir le comportement collectif d'un réseau d'agents. ⚠ <strong>Le verrou est formel, et c'est un résultat d'impossibilité</strong> : le Vol. I relève un théorème selon lequel <strong>aucun cadre de gouvernance ne peut satisfaire simultanément quatre propriétés</strong> — attributabilité, borne de prévisibilité, non-vacuité et complétude — pour des collectifs humains-agents. ⚠ <strong>Statut SPÉCULATIF mais argumenté, et la conséquence est directive</strong> : <em>aucune architecture de responsabilité ne sera parfaite ; tout choix sacrifie l'une de ces propriétés, et la gouvernance consiste à arbitrer ce compromis explicitement plutôt qu'à prétendre l'éliminer.</em> Côté faits datés, les premiers cadres dédiés apparaissent — un cadre national de gouvernance de l'IA agentique <strong>lancé le 22 janvier 2026</strong> ; et l'exigence de <strong>visibilité et d'identité vérifiable</strong> est posée comme <strong>condition nécessaire, non suffisante</strong>, de toute imputation.</p>
-
 <div class="avert">
   <p><strong>Relève v0.11, portée ici et non consommée.</strong> Une préimpression de juillet 2026 (arXiv 2607.11999) propose une <strong>pile d'assurance des agents à huit composantes</strong>, à l'horizon 2030 — <em>première architecture candidate pour une section jusqu'ici sans objet instruit</em>. ⚠ <strong>À l'entrée, en PROJETÉ, l'horizon 2030 étant celui des auteurs et non un jalon</strong> ; <strong>seul le résumé a été consulté : repérage [C], jamais un fait.</strong></p>
 </div>
-
 <p><strong>Les risques de second ordre.</strong> Trois se consolident à l'horizon. <em>La déqualification</em> : le déchargement cognitif sur des agents érode les compétences humaines, au point que <strong>la capacité de reprise en main — pourtant supposée par tout dispositif de supervision — se dégrade silencieusement</strong> ; ⚠ <em>mesuré naissant et projeté, à attribuer causalement</em>, et le <strong>ch. 17 § 17.5</strong> en porte la limite empirique, dont <strong>D-9</strong> a ouvert le lot d'instruction. <em>La concentration</em> : la couche agentique s'appuie sur un petit nombre de fournisseurs de modèles et d'hébergeurs, configuration qu'une qualification réglementaire de tiers critiques reconnaît déjà comme un <strong>point de défaillance systémique unique potentiel</strong> — ⚠ <em>l'interopérabilité multiplie les dépendances vers ces mêmes nœuds plutôt qu'elle ne les disperse</em>, et la <strong>prolifération des identités machines</strong> amplifie la surface exposée ; ⚠ <strong>métrique auto-déclarée par son éditeur d'origine, attribuée à ce titre, et jamais une preuve.</strong> <em>La sur-confiance</em> : plus un système est fiable, plus l'opérateur relâche sa vigilance, de sorte que <strong>les défaillances résiduelles surviennent précisément quand l'attention humaine a le plus reculé.</strong></p>
-
 <div class="avert">
   <p><strong>Reconnaître ces externalités est le prix de crédibilité de la thèse de la somme</strong> : <em>sans quoi l'argument économique — le passage d'un coût quadratique à un coût linéaire, qui demeure un pari non chiffré (§ 49.8) — se retournerait en justification de monocultures fragiles.</em></p>
 </div>
-
 <h2 id="s4911"><span class="sig">§ 49.11</span>Scénarios 2027-2032 et synthèse</h2>
-
 <p><strong>La clôture du premier mouvement refuse l'exercice de la prédiction unique.</strong> À sa place : un jeu de <strong>scénarios contrastés</strong>, les <strong>conditions</strong> sous lesquelles la promesse de la somme pourrait se réaliser, et les <strong>questions ouvertes</strong> projetées à 2032.</p>
-
 <h3>49.11.1 Tenir le cône d'incertitude dans la durée</h3>
-
 <div class="avert">
   <p><strong>La difficulté centrale du tri n'est pas la distinction entre les trois statuts : c'est leur instabilité.</strong> Un énoncé PROGRAMMÉ peut se <strong>déclasser en PROJETÉ</strong> lorsque l'engagement devient conditionnel — et le cas du règlement omnibus (§ 49.0.2) montre le mouvement inverse, la fermeté d'une date se gagnant <strong>par étapes</strong>. <em>La conséquence méthodologique est une discipline de re-datation et de re-qualification permanente : le tri n'est pas un état figé du document, c'est une posture de lecture à reconduire à chaque consultation.</em> <strong>Le ch. 50 § 50.3 en fait un protocole.</strong></p>
 </div>
-
 <h3>49.11.2 Trois axes, et des futurs qui se lisent différemment</h3>
-
 <p>Trois axes, chacun instruit séparément plus haut, engendrent le jeu de futurs : <strong>convergence contre fragmentation</strong> des écosystèmes de protocoles (§ 49.2) ; <strong>intensité réglementaire élevée contre régime dérégulé</strong>, en faisant varier la fermeté de la grappe de 2027 (§ 49.1) et la consistance du régime de responsabilité (§ 49.10) ; <strong>souveraineté contre ouverture</strong> (§ 49.7).</p>
-
 <div class="avert">
   <p><strong>Ce que le croisement fait voir, et c'est l'apport de l'outil</strong> : <em>les mêmes acquis se relisent sous des trajectoires opposées</em> — <strong>une même carte d'agent signée n'a pas la même valeur selon qu'elle circule dans un web ouvert et convergent ou dans des jardins clos juridictionnellement cloisonnés</strong> (ch. 15 § 15.1 pour ce que la signature démontre). <em>L'intérêt n'est pas de désigner le scénario le plus probable, mais de concevoir des décisions <strong>robustes à plusieurs futurs</strong> plutôt qu'optimisées pour un seul.</em></p>
 </div>
-
+<figure class="figure">
+  <img src="../figures/f-49-11-trois-axes.svg" alt="Figure 49.11 — Trois axes, et des futurs qui s&#39;y lisent différemment." />
+  <figcaption><strong>Figure 49.11</strong> — Trois axes, et des futurs qui s'y lisent différemment.</figcaption>
+</figure>
 <h3>49.11.3 Discontinuités à faible probabilité et fort impact</h3>
-
-<p>Trois discontinuités dont la matérialisation invaliderait l'hypothèse même sur laquelle reposent les autres trajectoires. <em>(1)</em> <strong>La rupture cryptographique</strong> : l'apparition d'un ordinateur quantique cryptographiquement pertinent dans une fenêtre parfois avancée — ⚠ <strong>SPÉCULATIF</strong> — casserait les algorithmes à clé publique classiques sur lesquels repose <strong>toute l'identité agentique du Livre II</strong>. <em>(2)</em> <strong>L'incident systémique d'un réseau d'agents</strong> : une cascade corrélée par monoculture parmi des agents financiers, dont <strong>l'irréversibilité du règlement interdirait la correction a posteriori</strong> (§ 49.9 ; ch. 48 § 48.4). <em>(3)</em> <strong>La discontinuité de capacité</strong> — percée ou plateau — qui briserait l'extrapolation de la courbe d'horizon de tâche (§ 49.7).</p>
-
+<p>Trois discontinuités dont la matérialisation invaliderait l'hypothèse même sur laquelle reposent les autres trajectoires. <em>(1)</em> <strong>La rupture cryptographique</strong> : l'apparition d'un calculateur quantique cryptographiquement pertinent dans une fenêtre parfois avancée — ⚠ <strong>SPÉCULATIF</strong> — casserait les algorithmes à clé publique classiques sur lesquels repose <strong>toute l'identité agentique du Livre II</strong>. <em>(2)</em> <strong>L'incident systémique d'un réseau d'agents</strong> : une cascade corrélée par monoculture parmi des agents financiers, dont <strong>l'irréversibilité du règlement interdirait la correction a posteriori</strong> (<strong>ch. 31 § 31.1.1</strong>, siège du patron d'irréversibilité ; § 49.9 ; ch. 48 § 48.4). <em>(3)</em> <strong>La discontinuité de capacité</strong> — percée ou plateau — qui briserait l'extrapolation de la courbe d'horizon de tâche (§ 49.7).</p>
 <div class="avert">
   <p><strong>Le critère de conception qui en découle est constant, et c'est le legs pratique du chapitre</strong> : <em>concevoir des points de coupure et de réversibilité <strong>indépendants du scénario nominal</strong></em> — des dispositifs de confinement et d'arrêt qui ne supposent pas que le futur ressemblera à la trajectoire centrale.</p>
 </div>
-
 <h3>49.11.4 Six conditions, et aucune n'est acquise</h3>
-
 <p>Sous forme de <strong>conditions et non de prédictions</strong>, ce qui devrait être tranché d'ici 2032 pour que le pari économique de la somme se réalise. <em>(1)</em> La <strong>résolution au moins partielle du verrou sémantique</strong> (§ 49.6.1), faute de quoi l'interopérabilité reste syntaxique. <em>(2)</em> Une <strong>identité et une confiance composables</strong>, déployées dans un régime post-quantique respectant l'horloge (§ 49.4 ; ch. 21). <em>(3)</em> Une <strong>certification mesurable</strong>, adossée à une science de l'évaluation aujourd'hui largement absente (§ 49.6.4). <em>(4)</em> Un <strong>régime de responsabilité et d'attribution</strong> comblant le vide laissé par le retrait de la directive (§ 49.10). <em>(5)</em> Une <strong>soutenabilité outillée d'un standard d'attribution d'empreinte par appel d'agent</strong>, qui n'existe pas (§ 49.7). <em>(6)</em> Une <strong>portabilité neutre des agents</strong>, à défaut de quoi l'effet économique reste capté par les exécuteurs dominants (§ 49.2.2).</p>
-
 <div class="avert">
   <p><strong>Aucune de ces six conditions n'est acquise à ce jour</strong> : <em>leur réunion conditionne la réalisation de la promesse, et le défaut d'une seule suffit à la compromettre.</em></p>
 </div>
-
 <div class="avert">
-  <p><strong>Relève v0.10, portée ici et non consommée.</strong> Une thèse de trajectoire sur la couche d'exécution est candidate à ce chapitre : *« tout harnais s'étend jusqu'à devenir un <strong><em>claw</strong></em> »*, décalque d'une loi d'ingénierie, énoncée en conférence le <strong>21 juillet 2026</strong>. ⚠ <strong>Si elle entre, elle entre en PROJETÉ, attribuée nommément à son auteur, jamais en PROGRAMMÉ</strong> : <em>sa forme d'origine est une loi d'humour d'ingénierie — ce qui n'en fait pas une prédiction fausse, mais interdit de la citer comme une régularité établie.</em> Le régime qu'elle décrit — agent hors session, déclenché par événement, sollicitant l'humain sur ses propres canaux — <strong>touche aussi les ch. 37, 39 et 40</strong>, et il est la matière du <strong>risque 14</strong>. ☑ <strong>Son arbitrage — la décision D-2 — a été pris le 27 juillet 2026, après la rédaction de cette section : sections dans l'existant, sans chapitre neuf</strong>, les deux points d'atterrissage reconnus étant le <strong>ch. 47 § 47.8.1</strong> et le <strong>ch. 50 § 50.2</strong>. ⚠ <strong>Ce chapitre n'en est pas un, et la relève reste donc portée ici sans être consommée</strong> : <em>le risque 14 est borné, non comblé</em> — la somme n'a aucun chapitre de la couche d'exécution —, la porte <strong>G-5</strong> n'est pas franchie pour autant, et la thèse citée demeure un repérage [C] non extrait.</p>
+  <p><strong>Relève v0.10, portée ici et non consommée.</strong> Une thèse de trajectoire sur la couche d'exécution est candidate à ce chapitre : <em>« tout harnais s'étend jusqu'à devenir un </em><strong>claw</strong>* »<em>, décalque d'une loi d'ingénierie, énoncée en conférence le <strong>21 juillet 2026</strong>. ⚠ <strong>Si elle entre, elle entre en PROJETÉ, attribuée nommément à son auteur, jamais en PROGRAMMÉ</strong> : </em>sa forme d'origine est une loi d'humour d'ingénierie — ce qui n'en fait pas une prédiction fausse, mais interdit de la citer comme une régularité établie.* Le régime qu'elle décrit — agent hors session, déclenché par événement, sollicitant l'humain sur ses propres canaux — <strong>touche aussi les ch. 37, 39 et 40</strong>, et il est la matière du <strong>risque 14</strong>. ☑ <strong>Son arbitrage — la décision D-2 — a été pris le 27 juillet 2026, après la rédaction de cette section : sections dans l'existant, sans chapitre neuf</strong>, les deux points d'atterrissage reconnus étant le <strong>ch. 47 § 47.8.1</strong> et le <strong>ch. 50 § 50.2</strong>. ⚠ <strong>Ce chapitre n'en est pas un, et la relève reste donc portée ici sans être consommée</strong> : <em>le risque 14 est borné, non comblé</em> — la somme n'a aucun chapitre de la couche d'exécution —, la porte <strong>G-5</strong> n'est pas franchie pour autant, et la thèse citée demeure un repérage [C] non extrait.</p>
 </div>
-
 <h3>49.11.5 Ce que la clôture du premier mouvement lègue</h3>
-
 <p><strong>La proposition cardinale, et elle est de statut mixte</strong> : <em>les protocoles d'interopérabilité agentique sont, pour l'essentiel, livrés, gouvernés, déployés et formalisés ; ce qui reste ouvert pour la fenêtre n'est plus surtout technique mais <strong>institutionnel et économique</strong>.</em> Le verrou de 2027-2032 est <strong>moins de connecter que de gouverner, de garantir et d'imputer</strong>.</p>
-
 <div class="avert">
   <p><strong>Et la clôture honnête consiste à rouvrir</strong> : les <strong>deux ancrages datés</strong> de l'horizon — la grappe réglementaire de 2027 et la migration post-quantique de 2030-2035 — <em>sont les seuls points quasi certains d'un cône qui, vers 2032, se trouve dominé par le projeté et le spéculatif.</em> Le second mouvement de ce chapitre dit ce que la somme ne sait pas ; le <strong>ch. 50</strong> dit quand elle cessera d'être actuelle.</p>
 </div>
-
+<hr />
 <h2 id="s4912"><span class="sig">§ 49.12</span>Les lacunes résiduelles du socle unifié</h2>
-
 <p><strong>Ce que ce chapitre dit ici, aucun autre ne le dit : ce que la somme n'établit pas.</strong> C'est le chapitre qu'un auteur ayant quelque chose à vendre ne pourrait pas écrire de bonne foi — et un registre de lacunes n'est pas un aveu de faiblesse, c'est un <strong>instrument de travail</strong> : l'architecte qui construit sur les conclusions de la somme a besoin de savoir lesquelles reposent sur un vote à trois juges, lesquelles sur une extraction de source primaire, lesquelles sur un repérage que nul n'a confirmé.</p>
-
 <div class="avert">
   <p><strong>Trois avertissements précèdent tout registre, et le premier dit ce que la thèse de ce mouvement enregistre exactement.</strong></p>
 </div>
-
-<p><em>(1)</em> <strong>La thèse parle des « lacunes des trois socles sources », et ce registre est cela — pas autre chose.</strong> ⚠ <strong>Ce n'est pas un registre du socle consolidé</strong> : <em>une lacune du socle consolidé serait un trou dans un objet refondu ; celles-ci sont des trous hérités, dont la refonte n'a pas décidé du sort.</em> ⚠ <strong>La thèse a porté la forme « lacunes du socle consolidé » jusqu'au réalignement v0.26</strong> — le socle comptait alors <strong>zéro entrée</strong>, <em>elle n'était pas fausse mais prématurée d'une porte</em>, et la remontée <strong>R-IV-69</strong> l'a fait borner. ⚠ <strong>Et la condition de retour est remplie depuis le 28 juillet 2026</strong> : <strong>G-3 est franchie</strong>, l'<strong>Annexe B existe</strong> et compte <strong>159 entrées</strong>. <em>Le registre devra donc être refait contre elle</em> — <strong>il ne l'est pas au commit de cette pièce</strong>, et <strong>aucune ligne de ce qui suit n'a été rapprochée d'un identifiant <code>S-nnn</code></strong>.</p>
-
+<p><em>(1)</em> <strong>La thèse parle des « lacunes des trois socles sources », et ce registre est cela — pas autre chose.</strong> ⚠ <strong>Ce n'est pas un registre du socle consolidé</strong> : <em>une lacune du socle consolidé serait un trou dans un objet refondu ; celles-ci sont des trous hérités, dont la refonte n'a pas décidé du sort.</em> ⚠ <strong>La thèse a porté la forme « lacunes du socle consolidé » jusqu'au réalignement v0.26</strong> — le socle comptait alors <strong>zéro entrée</strong>, <em>elle n'était pas fausse mais prématurée d'une porte</em>, et la remontée <strong>R-IV-69</strong> l'a fait borner. ⚠ <strong>Et la condition de retour est remplie depuis le 28 juillet 2026</strong> : <strong>G-3 est franchie</strong>, l'<strong>Annexe B existe</strong> et compte <strong>159 entrées</strong>. ⚠ <strong>Et le réexamen du 2 septembre 2026 a conclu que cette condition ne commandait rien</strong> (D-16, décision 24) : <em>franchir G-3 fait exister l'Annexe B, cela n'arbitre aucune lacune</em>, et le socle consolidé — <strong>« constitué, non arbitré »</strong>, sans registre de lacunes propre — n'en porte aucune qui lui soit imputable. <strong>La thèse garde donc sa forme, définitivement.</strong> ☐ <em>Ce qui reste dû, en revanche, ne dépendait pas d'elle</em> : <strong>aucune ligne de ce qui suit n'est rapprochée d'un identifiant <code>S-nnn</code></strong>, et ce rapprochement relève de la collation de fond de <strong>G-4</strong>.</p>
 <p><em>(2)</em> ⚠ <strong>La distinction qui gouverne tout ce mouvement, reprise du Vol. II</strong> <code>Monographie</code> <strong>§21.1 et de l'échelle R-14 du Vol. III.</strong> <em>Le socle ne documente pas X</em> signifie qu'aucune source du corpus n'atteste X : c'est une <strong>absence de documentation</strong> — degré 3 —, <strong>non un fait négatif vérifié</strong>. La formule « fait négatif vérifié » est réservée aux cas où le socle établit l'absence <strong>par un balayage documenté</strong>. <em>Confondre les deux régimes transforme une ignorance en constat</em>, et c'est la faute que ce chapitre a pour fonction d'empêcher.</p>
-
 <p><em>(3)</em> ⚠ <strong>Le registre est hérité, pas soldé.</strong> Chaque volume donne l'état de ses lacunes <strong>à son gel</strong> ; certaines étaient déjà « réduites » sans être fermées. <strong>Aucune ne se déclare close ici sans source primaire nouvelle datée</strong>, et <em>le simple fait de figurer dans une table ne vaut ni instruction ni clôture.</em></p>
-
 <h3>49.12.1 Les onze lacunes du Vol. II, reprises une à une par leur identifiant</h3>
-
-<p><strong>Le Vol. II recense onze lacunes ouvertes à sa date de gel</strong>, et son ch. 21 le dit en toutes lettres.</p>
-
-<div class="avert">
-  <p><strong>Le cardinal appartient au PRD du Vol. II, qui fait autorité sur le socle et les lacunes — non à son TOC, qui en compte dix</strong> : la §10.11 a été ouverte le <strong>17 juillet 2026</strong>, après la rédaction de la table d'assignation, à l'occasion de la construction d'une frise chronologique. <em>Un format de restitution nouveau — frise, matrice, tableau — est un révélateur de ce que la prose absorbe en silence</em>, et c'est ainsi que cette onzième est apparue.</p>
-</div>
-
+<p><strong>Le Vol. II recense onze lacunes ouvertes à sa date de gel</strong>, et son ch. 21 le dit en toutes lettres. ⚠ <strong>Le cardinal appartient au PRD du Vol. II, qui fait autorité sur le socle et les lacunes — non à son TOC, qui en compte dix</strong> : la §10.11 a été ouverte le <strong>17 juillet 2026</strong>, après la rédaction de la table d'assignation, à l'occasion de la construction d'une frise chronologique. <em>Un format de restitution nouveau — frise, matrice, tableau — est un révélateur de ce que la prose absorbe en silence</em>, et c'est ainsi que cette onzième est apparue.</p>
 <div class="tableau">
 <table>
-  <thead><tr><th>Lacune</th><th>Objet</th><th>Chapitre(s) porteur(s)</th><th>État repris</th></tr></thead>
-  <tbody>
-    <tr><td><strong>§10.1</strong></td><td>Désignation de l'organisme de normalisation technique du cadre bancaire — <strong>fait négatif vérifié</strong> au 16 juillet 2026, aucun arrêté</td><td>ch. 30 (instruit), ch. 32 (R-5)</td><td>ouverte — <em>attend un acte réglementaire</em></td></tr>
-    <tr><td><strong>§10.2</strong></td><td>Institutions sans socle complet — résidus [C] et absence de sources primaires agentiques pour une banque nommée</td><td>ch. 35</td><td>ouverte</td></tr>
-    <tr><td><strong>§10.3</strong></td><td>Frameworks d'orchestration — réduite en amont, ne subsiste qu'un moteur d'exécution durable ; chiffres d'adoption non vérifiés</td><td>ch. 23</td><td>ouverte</td></tr>
-    <tr><td><strong>§10.4</strong></td><td>Réglementaire fin : <strong>contenu de la ligne directrice IA de l'AMF article par article</strong>, positions de la commission d'accès à l'information sur l'art. 12.1, suites de la consultation en valeurs mobilières — ⚠ <strong>la plus coûteuse de l'ouvrage</strong></td><td>ch. 27, ch. 28, ch. 29</td><td>ouverte — ⚠ <em>elle n'attend pas une autorité mais <strong>un lecteur</strong> : le texte est final depuis <strong>avril 2026</strong>, et c'est l'extraction primaire qui n'a pas été faite</em>. ⚠ <strong>Corrigé le 30 juillet 2026</strong> : cette ligne écrivait « depuis le 30 mars 2026 », date que <strong>R-IV-88 a défaite</strong> — <em>aucun des deux quantièmes arbitrés ne figure aux pages officielles</em>, et le ch. 27 § 27.1 déclare les trois états. <strong>Ne jamais rétablir « 30 mars 2026 »</strong></td></tr>
-    <tr><td><strong>§10.5</strong></td><td>Articulation d'un protocole de paiement agentique avec les rails canadiens</td><td>ch. 36 (prospectif)</td><td>ouverte</td></tr>
-    <tr><td><strong>§10.6</strong></td><td>Portefeuille d'intégration : position au quadrant iPaaS <strong>non vérifiée</strong> (R-6), chaîne de transformation de messagerie financière au niveau <strong>[C]</strong> après élévation tentée et <strong>échouée</strong>, annonces canadiennes</td><td>ch. 45, ch. 50</td><td>ouverte — <em>une élévation peut échouer sans négligence, et l'échec s'écrit</em></td></tr>
-    <tr><td><strong>§10.7</strong></td><td>Composante homonyme d'un cadre d'écosystème — <strong>quatrième branche du garde-fou R-8 du Vol. II</strong> ; ni intitulé complet ni identité avec le protocole homonyme</td><td>ch. 7</td><td>ouverte — <em>aucune passe de recherche conduite</em></td></tr>
-    <tr><td><strong>§10.8</strong></td><td>Mécanique et attestation des risques protocolaires ; <strong>aucune attaque propre au protocole agent-agent au socle</strong></td><td>ch. 11, ch. 19</td><td>⚠ <strong>requalifiée le 27 juillet 2026 (TOC v0.24)</strong> — trois volets sur quatre <strong>couverts au régime [C]</strong> par le texte rédigé du Vol. I ; <strong>le volet agent-agent reste ouvert</strong></td></tr>
-    <tr><td><strong>§10.9</strong></td><td>Anatomie technique non documentée des trois protocoles — dont <strong>§10.9e, gouvernance du protocole de paiement</strong></td><td>ch. 8, ch. 10</td><td>⚠ <strong>§10.9e instruite le 27 juillet 2026</strong> par source primaire nouvelle datée ; <strong>le reste — l'anatomie technique — demeure ouvert</strong></td></tr>
-    <tr><td><strong>§10.10</strong></td><td>Sous-caractérisation du socle académique : <em>frame</em> opérationnel, actionnabilité conversationnelle, métrique d'autonomie ; taxonomie d'orchestration <strong>sur source unique</strong></td><td>ch. 22</td><td>ouverte</td></tr>
-    <tr><td><strong>§10.11</strong></td><td>Datation du budget fédéral 2025 — un fait structurant du cadre bancaire attribué sans être daté</td><td>ch. 32</td><td>ouverte</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Lacune</th>
+<th>Objet</th>
+<th>Chapitre(s) porteur(s)</th>
+<th>État repris</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>§10.1</strong></td>
+<td>Désignation de l'organisme de normalisation technique du cadre bancaire — <strong>fait négatif vérifié</strong> au 16 juillet 2026, aucun arrêté</td>
+<td>ch. 30 (instruit), ch. 32 (R-5)</td>
+<td>ouverte — <em>attend un acte réglementaire</em></td>
+</tr>
+<tr>
+<td><strong>§10.2</strong></td>
+<td>Institutions sans socle complet — résidus [C] et absence de sources primaires agentiques pour une banque nommée</td>
+<td>ch. 35</td>
+<td>ouverte</td>
+</tr>
+<tr>
+<td><strong>§10.3</strong></td>
+<td>Frameworks d'orchestration — réduite en amont, ne subsiste qu'un moteur d'exécution durable ; chiffres d'adoption non vérifiés</td>
+<td>ch. 23</td>
+<td>ouverte</td>
+</tr>
+<tr>
+<td><strong>§10.4</strong></td>
+<td>Réglementaire fin : <strong>contenu de la ligne directrice IA de l'AMF article par article</strong>, positions de la commission d'accès à l'information sur l'art. 12.1, suites de la consultation en valeurs mobilières — ⚠ <strong>la plus coûteuse de l'ouvrage</strong></td>
+<td>ch. 27, ch. 28, ch. 29</td>
+<td>ouverte — ⚠ <em>elle n'attend pas une autorité mais <strong>un lecteur</strong> : le texte est final depuis <strong>avril 2026</strong>, et c'est l'extraction primaire qui n'a pas été faite</em>. ⚠ <strong>Corrigé le 30 juillet 2026</strong> : cette ligne écrivait « depuis le 30 mars 2026 », date que <strong>R-IV-88 a défaite</strong> — <em>aucun des deux quantièmes arbitrés ne figure aux pages officielles</em>, et le ch. 27 § 27.1 déclare les trois états. <strong>Ne jamais rétablir « 30 mars 2026 »</strong></td>
+</tr>
+<tr>
+<td><strong>§10.5</strong></td>
+<td>Articulation d'un protocole de paiement agentique avec les rails canadiens</td>
+<td>ch. 36 (prospectif)</td>
+<td>ouverte</td>
+</tr>
+<tr>
+<td><strong>§10.6</strong></td>
+<td>Portefeuille d'intégration : position au quadrant iPaaS <strong>non vérifiée</strong> (R-6), chaîne de transformation de messagerie financière au niveau <strong>[C]</strong> après élévation tentée et <strong>échouée</strong>, annonces canadiennes</td>
+<td>ch. 45, ch. 50</td>
+<td>ouverte — <em>une élévation peut échouer sans négligence, et l'échec s'écrit</em></td>
+</tr>
+<tr>
+<td><strong>§10.7</strong></td>
+<td>Composante homonyme d'un cadre d'écosystème — <strong>quatrième branche du garde-fou R-8 du Vol. II</strong> ; ni intitulé complet ni identité avec le protocole homonyme</td>
+<td>ch. 7</td>
+<td>ouverte — <em>aucune passe de recherche conduite</em></td>
+</tr>
+<tr>
+<td><strong>§10.8</strong></td>
+<td>Mécanique et attestation des risques protocolaires ; <strong>aucune attaque propre au protocole agent-agent au socle</strong></td>
+<td>ch. 11, ch. 19</td>
+<td>⚠ <strong>requalifiée le 27 juillet 2026 (TOC v0.24)</strong> — trois volets sur quatre <strong>couverts au régime [C]</strong> par le texte rédigé du Vol. I ; <strong>le volet agent-agent reste ouvert</strong></td>
+</tr>
+<tr>
+<td><strong>§10.9</strong></td>
+<td>Anatomie technique non documentée des trois protocoles — dont <strong>§10.9e, gouvernance du protocole de paiement</strong></td>
+<td>ch. 8, ch. 10</td>
+<td>⚠ <strong>§10.9e instruite le 27 juillet 2026</strong> par source primaire nouvelle datée ; <strong>le reste — l'anatomie technique — demeure ouvert</strong></td>
+</tr>
+<tr>
+<td><strong>§10.10</strong></td>
+<td>Sous-caractérisation du socle académique : <em>frame</em> opérationnel, actionnabilité conversationnelle, métrique d'autonomie ; taxonomie d'orchestration <strong>sur source unique</strong></td>
+<td>ch. 22</td>
+<td>ouverte</td>
+</tr>
+<tr>
+<td><strong>§10.11</strong></td>
+<td>Datation du budget fédéral 2025 — un fait structurant du cadre bancaire attribué sans être daté</td>
+<td>ch. 32</td>
+<td>ouverte</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 49.1 — Les onze lacunes du PRD du Vol. II, reprises par identifiant, avec leur chapitre porteur dans la somme et leur état au 27 juillet 2026. ⚠ <strong>Aucune n'est silencieusement omise</strong> (CA-IV-06) ; les états repris sont ceux que le registre de l'Annexe C du TOC porte, <strong>non une ré-instruction conduite ici</strong>.</p>
-
 <div class="avert">
   <p><strong>Deux mouvements de la v0.24 figurent dans cette table et ils ne sont pas de même nature — la distinction est la règle de toute la collation de fond.</strong> <strong>Instruire</strong> une lacune, c'est lui verser une <strong>source primaire nouvelle datée</strong> : c'est le cas de §10.9e. <strong>Requalifier</strong> une lacune, c'est constater que sa <strong>couverture</strong> a changé <strong>sans qu'aucune source nouvelle soit entrée</strong> : c'est le cas de §10.8, couvert par le texte rédigé d'un autre volume, au régime <strong>[C]</strong>. ⚠ <em>Une lacune requalifiée reste une lacune ; elle change de motif, pas d'état</em> — et <strong>couverte au régime [C] ne vaut pas comblée</strong>, une entrée [C] ne portant jamais un fait central (CA-IV-01).</p>
 </div>
-
 <h3>49.12.2 Les vingt-deux lacunes numérotées du Vol. III, et quatre de plus</h3>
-
 <div class="avert">
   <p><strong>Ce que cette sous-section fait, et que le plan tenait pour un préalable coûteux.</strong> Le registre de l'Annexe C du TOC porte, pour le Vol. III, <strong>une seconde table de deux entrées</strong> — les lacunes 16 et 19 —, qui <strong>se déclare incomplète</strong> et renvoie le dressage de l'inventaire au volet de fond de la porte <strong>G-4</strong>, <em>« seul un balayage pouvant en dresser l'inventaire »</em>. ⚠ <strong>Or l'inventaire existe déjà au texte rédigé de sa source</strong> : le Vol. III <code>Monographie</code> <strong>§28.5</strong> porte <strong>les vingt-deux, en un seul tableau</strong>, avec pour chacune son <strong>état réel d'instruction</strong>, le <strong>gabarit</strong> que sa forme impose et son <strong>siège</strong>. <em>Le dresser ne demandait donc pas un balayage, mais une lecture</em> — et c'est la remontée <strong>R-IV-67</strong> de ce chapitre.</p>
 </div>
-
 <p><strong>Le cardinal, re-mesuré sur la table de la source et non recopié : vingt-deux lacunes numérotées, dont quatre closes.</strong> Deux closes par instruction aboutie (valeur probante des cartes signées ; mécanique et attestation des risques protocolaires), <strong>une close par instruction infructueuse</strong> (le corpus d'appui annoncé et non déposé — <em>échec documenté, et l'échec est un résultat</em>), <strong>une close par décision et non par instruction</strong> (un fichier de faits partagés que le Vol. III a décidé de ne pas créer — décision que <strong>l'Annexe C du TOC rouvre expressément</strong>, comme il l'y autorisait). <strong>Sept sont instruites sans être closes ; dix ne sont pas instruites ; une est repérée sans extraction.</strong></p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Lacune (PRD Vol. III)</th><th>Objet</th><th>État repris de sa source</th><th>Où la somme la porte</th></tr></thead>
-  <tbody>
-    <tr><td><strong>1</strong></td><td>Valeur probante des cartes d'agent signées</td><td><strong>instruite et close</strong> — ancrage renvoyé hors protocole, révocation non outillée, gouvernance des clés absente</td><td>ch. 15 § 15.1</td></tr>
-    <tr><td><strong>2</strong></td><td>Mécanique et attestation des risques protocolaires</td><td><strong>instruite et close</strong> — ⚠ <strong>deux énoncés de statuts différents, à ne jamais fondre</strong> : la spécification ne <strong>nomme</strong> aucune menace d'identité classique (<strong>degré 1</strong>) ; aucun identifiant de vulnérabilité visant le protocole (<strong>degré 3</strong>)</td><td>ch. 19 § 19.1, ch. 11</td></tr>
-    <tr><td><strong>3</strong></td><td>Désignation de l'organisme de normalisation technique</td><td><strong>instruite, non close</strong> — au 27 juin 2026 le texte officiel écrit encore « sera désigné » ; quatre chaînes cherchées, zéro occurrence (R-5)</td><td>ch. 30, ch. 32</td></tr>
-    <tr><td><strong>4</strong></td><td>Contenu de la ligne directrice IA de l'AMF</td><td><strong>instruite, non close</strong> — attentes relevées, <strong>aucune des deux dates en divergence ne figure à la source</strong></td><td>ch. 27</td></tr>
-    <tr><td><strong>5</strong></td><td>Ce qui n'existe pas encore en matière de registre</td><td><strong>instruite, non close</strong> — quatre dispositifs, quatre réserves de statut</td><td>ch. 15 § 15.3</td></tr>
-    <tr><td><strong>6</strong></td><td><strong>Délégation au-delà de deux sauts</strong></td><td><strong>non instruite</strong> — front ouvert hérité du Vol. I</td><td>ch. 17 § 17.6 ; § 49.13</td></tr>
-    <tr><td><strong>7</strong></td><td><strong>Métrique d'horizon de tâche déléguée</strong></td><td><strong>non instruite</strong> — ⚠ <em>un balayage d'un document n'instruit pas une lacune de la littérature</em> ; <strong>distincte de la lacune 15, à ne pas fusionner</strong></td><td>ch. 40 § 40.1 ; § 49.13</td></tr>
-    <tr><td><strong>8</strong></td><td>Composante homonyme d'un cadre d'écosystème</td><td><strong>non instruite</strong> — garde-fou hérité, sans niveau</td><td>ch. 7 § 7.5</td></tr>
-    <tr><td><strong>9</strong></td><td>Caractérisation du <em>frame</em> opérationnel</td><td><strong>non instruite</strong> — question du Vol. II que ce volume ne reprend pas</td><td>ch. 29</td></tr>
-    <tr><td><strong>10</strong></td><td>Gouvernance du protocole de paiement</td><td><strong>instruite, non arbitrée</strong> — annonce établie, matérialisation non établie ; <strong>divergence dissoute par le fait</strong></td><td>ch. 10 ; Annexe C</td></tr>
-    <tr><td><strong>11</strong></td><td>Corpus d'appui non déposé</td><td><strong>instruite et infructueuse, close</strong> — trois ouvrages annoncés, <strong>zéro déposé</strong></td><td>avant-propos, Annexe A</td></tr>
-    <tr><td><strong>12</strong></td><td>Fichier de faits partagés inexistant</td><td><strong>close par décision, non par instruction</strong></td><td>Annexe C (⚠ <strong>décision rouverte</strong> par le TOC)</td></tr>
-    <tr><td><strong>13</strong></td><td>Statut réel du projet portant l'horloge post-quantique</td><td><strong>instruite, non close</strong> — demeure un projet public initial</td><td>ch. 21 § 21.1</td></tr>
-    <tr><td><strong>14</strong></td><td>Jetons de transaction</td><td><strong>instruite, non close</strong> — révision du 6 juillet 2026, <strong>expirant le 7 janvier 2027</strong></td><td>ch. 17 § 17.1</td></tr>
-    <tr><td><strong>15</strong></td><td>Métriques d'observabilité</td><td><strong>instruite, non close</strong> — neuf entrées versées ; <strong>les seize métriques relevées mesurent des opérations, pas un parc</strong> (<strong><code>F-96</code> du Vol. III</strong>, ⚖ <strong>vote dû, non conduit</strong> ; <strong>exclue du socle consolidé</strong> à ce titre)</td><td>ch. 38, ch. 40</td></tr>
-    <tr><td><strong>16</strong></td><td><strong>RGPD</strong></td><td><strong>non instruite</strong> — « absent du socle et du programme de constitution » ; <strong>degré 3</strong></td><td>ch. 30</td></tr>
-    <tr><td><strong>17</strong></td><td>Sous-comité international sur l'IA</td><td><strong>non instruite</strong> — nommé par un intitulé, documenté par aucune entrée ; <strong>degré 3</strong></td><td>ch. 30</td></tr>
-    <tr><td><strong>18</strong></td><td>Comité européen de normalisation</td><td><strong>non instruite</strong> — même constat, même régime ; <strong>degré 3</strong></td><td>ch. 30</td></tr>
-    <tr><td><strong>19</strong></td><td><strong>OpenID Connect</strong></td><td><strong>non instruite</strong> — deux corpus normatifs sur trois au socle ; <strong>aucune entrée ne porte OpenID Connect</strong> ; ⚠ <em>retirer un mot d'un titre ne retire pas un trou du socle</em></td><td>ch. 12, second mouvement</td></tr>
-    <tr><td><strong>20</strong></td><td>Cadre d'architecture d'un portefeuille européen d'identité numérique</td><td><strong>source repérée, non extraite</strong> — niveau <strong>[C]</strong>, jamais fait central</td><td>ch. 13</td></tr>
-    <tr><td><strong>21</strong></td><td><strong>Corrélation entre trace d'exécution et chaîne de mandat</strong></td><td><strong>non instruite</strong> — la pièce de jonction n'a été ouverte par aucun lot</td><td>ch. 38 § 38.5 ; ch. 48 § 48.5</td></tr>
-    <tr><td><strong>22</strong></td><td>Notation d'architecture du Vol. I</td><td><strong>non instruite</strong> — nommée cinq fois par le cadrage, <strong>zéro fois</strong> dans les sections balayées ; <strong>degré 3</strong></td><td>ch. 44</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Lacune (PRD Vol. III)</th>
+<th>Objet</th>
+<th>État repris de sa source</th>
+<th>Où la somme la porte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1</strong></td>
+<td>Valeur probante des cartes d'agent signées</td>
+<td><strong>instruite et close</strong> — ancrage renvoyé hors protocole, révocation non outillée, gouvernance des clés absente</td>
+<td>ch. 15 § 15.1</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>Mécanique et attestation des risques protocolaires</td>
+<td><strong>instruite et close</strong> — ⚠ <strong>deux énoncés de statuts différents, à ne jamais fondre</strong> : la spécification ne <strong>nomme</strong> aucune menace d'identité classique (<strong>degré 1</strong>) ; aucun identifiant de vulnérabilité visant le protocole (<strong>degré 3</strong>)</td>
+<td>ch. 19 § 19.1, ch. 11</td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>Désignation de l'organisme de normalisation technique</td>
+<td><strong>instruite, non close</strong> — au 27 juin 2026 le texte officiel écrit encore « sera désigné » ; quatre chaînes cherchées, zéro occurrence (R-5)</td>
+<td>ch. 30, ch. 32</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>Contenu de la ligne directrice IA de l'AMF</td>
+<td><strong>instruite, non close</strong> — attentes relevées, <strong>aucune des deux dates en divergence ne figure à la source</strong></td>
+<td>ch. 27</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td>Ce qui n'existe pas encore en matière de registre</td>
+<td><strong>instruite, non close</strong> — quatre dispositifs, quatre réserves de statut</td>
+<td>ch. 15 § 15.3</td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td><strong>Délégation au-delà de deux sauts</strong></td>
+<td><strong>non instruite</strong> — front ouvert hérité du Vol. I</td>
+<td>ch. 17 § 17.6 ; § 49.13</td>
+</tr>
+<tr>
+<td><strong>7</strong></td>
+<td><strong>Métrique d'horizon de tâche déléguée</strong></td>
+<td><strong>non instruite</strong> — ⚠ <em>un balayage d'un document n'instruit pas une lacune de la littérature</em> ; <strong>distincte de la lacune 15, à ne pas fusionner</strong></td>
+<td>ch. 40 § 40.1 ; § 49.13</td>
+</tr>
+<tr>
+<td><strong>8</strong></td>
+<td>Composante homonyme d'un cadre d'écosystème</td>
+<td><strong>non instruite</strong> — garde-fou hérité, sans niveau</td>
+<td>ch. 7 § 7.5</td>
+</tr>
+<tr>
+<td><strong>9</strong></td>
+<td>Caractérisation du <em>frame</em> opérationnel</td>
+<td><strong>non instruite</strong> — question du Vol. II que ce volume ne reprend pas</td>
+<td>ch. 29</td>
+</tr>
+<tr>
+<td><strong>10</strong></td>
+<td>Gouvernance du protocole de paiement</td>
+<td><strong>instruite, non arbitrée</strong> — annonce établie, matérialisation non établie ; <strong>divergence dissoute par le fait</strong></td>
+<td>ch. 10 ; Annexe C</td>
+</tr>
+<tr>
+<td><strong>11</strong></td>
+<td>Corpus d'appui non déposé</td>
+<td><strong>instruite et infructueuse, close</strong> — trois ouvrages annoncés, <strong>zéro déposé</strong></td>
+<td>avant-propos, Annexe A</td>
+</tr>
+<tr>
+<td><strong>12</strong></td>
+<td>Fichier de faits partagés inexistant</td>
+<td><strong>close par décision, non par instruction</strong></td>
+<td>Annexe C (⚠ <strong>décision rouverte</strong> par le TOC)</td>
+</tr>
+<tr>
+<td><strong>13</strong></td>
+<td>Statut réel du projet portant l'horloge post-quantique</td>
+<td><strong>instruite, non close</strong> — demeure un projet public initial</td>
+<td>ch. 21 § 21.1</td>
+</tr>
+<tr>
+<td><strong>14</strong></td>
+<td>Jetons de transaction</td>
+<td><strong>instruite, non close</strong> — révision du 6 juillet 2026, <strong>expirant le 7 janvier 2027</strong></td>
+<td>ch. 17 § 17.1</td>
+</tr>
+<tr>
+<td><strong>15</strong></td>
+<td>Métriques d'observabilité</td>
+<td><strong>instruite, non close</strong> — neuf entrées versées ; <strong>les seize métriques relevées mesurent des opérations, pas un parc</strong> (<strong><code>F-96</code> du Vol. III</strong>, ⚖ <strong>vote dû, non conduit</strong> ; <strong>exclue du socle consolidé</strong> à ce titre)</td>
+<td>ch. 38, ch. 40</td>
+</tr>
+<tr>
+<td><strong>16</strong></td>
+<td><strong>RGPD</strong></td>
+<td><strong>non instruite</strong> — « absent du socle et du programme de constitution » ; <strong>degré 3</strong></td>
+<td>ch. 30</td>
+</tr>
+<tr>
+<td><strong>17</strong></td>
+<td>Sous-comité international sur l'IA</td>
+<td><strong>non instruite</strong> — nommé par un intitulé, documenté par aucune entrée ; <strong>degré 3</strong></td>
+<td>ch. 30</td>
+</tr>
+<tr>
+<td><strong>18</strong></td>
+<td>Comité européen de normalisation</td>
+<td><strong>non instruite</strong> — même constat, même régime ; <strong>degré 3</strong></td>
+<td>ch. 30</td>
+</tr>
+<tr>
+<td><strong>19</strong></td>
+<td><strong>OpenID Connect</strong></td>
+<td><strong>non instruite</strong> — deux corpus normatifs sur trois au socle ; <strong>aucune entrée ne porte OpenID Connect</strong> ; ⚠ <em>retirer un mot d'un titre ne retire pas un trou du socle</em></td>
+<td>ch. 12, second mouvement</td>
+</tr>
+<tr>
+<td><strong>20</strong></td>
+<td>Cadre d'architecture d'un portefeuille européen d'identité numérique</td>
+<td><strong>source repérée, non extraite</strong> — niveau <strong>[C]</strong>, jamais fait central</td>
+<td>ch. 13</td>
+</tr>
+<tr>
+<td><strong>21</strong></td>
+<td><strong>Corrélation entre trace d'exécution et chaîne de mandat</strong></td>
+<td><strong>non instruite</strong> — la pièce de jonction n'a été ouverte par aucun lot</td>
+<td>ch. 38 § 38.5 ; ch. 48 § 48.5</td>
+</tr>
+<tr>
+<td><strong>22</strong></td>
+<td>Notation d'architecture du Vol. I</td>
+<td><strong>non instruite</strong> — nommée cinq fois par le cadrage, <strong>zéro fois</strong> dans les sections balayées ; <strong>degré 3</strong></td>
+<td>ch. 44</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 49.2 — Les vingt-deux lacunes numérotées du PRD du Vol. III, reprises de son <code>Monographie</code> §28.5 avec leur état d'instruction, et rattachées à leur chapitre porteur dans la somme. ⚠ <strong>Cardinal et répartition re-mesurés sur la colonne d'état de la source</strong>, non recopiés d'un document amont. ⚠ <strong>Borne reprise de la source</strong> : cette colonne reprend les qualifications que le PRD du Vol. III porte lui-même — <em>ce n'est pas une ré-instruction, et aucune passe de recherche n'a été conduite ici sur aucune d'elles.</em></p>
-
 <div class="avert">
   <p><strong>Quatre lacunes de plus, ouvertes par la rédaction du Vol. III et non portées à son propre registre.</strong> Sa source les déclare et remonte leur ouverture : le <strong>coût d'exploitation d'un point d'application par arête</strong> — latence, coût, disponibilité introduits entre deux agents (ch. 37) ; la <strong>restitution datée du mandat et des bornes de privilège</strong> (ch. 25) ; l'<strong>organisation d'une fabrique de confiance agentique</strong> — répartition des responsabilités, compétences, conduite du changement (ch. 43) ; et la <strong>résidence des renseignements personnels appliquée à un agent</strong> (ch. 30). ⚠ <strong>Ici, « fabrique » désigne la fabrique de confiance du ch. 43 § 43.1, non la fabrique d'agents du ch. 41</strong> (décision 12c du TOC). ⚠ <strong>Aucune passe de recherche n'a été conduite sur ces quatre</strong> ; la quatrième est déclarée hors du périmètre de <strong>tous</strong> les lots d'instruction de sa source.</p>
 </div>
-
 <h3>49.12.3 Trois absences déclarées au degré 3, qui ne sont ni d'une série ni de l'autre</h3>
-
 <div class="avert">
   <p><strong>Une troisième série existe, et il faut d'abord dire pourquoi elle ne peut rejoindre aucune des deux précédentes.</strong> La rédaction du Livre II a rencontré trois absences que le <strong>texte rédigé</strong> du Vol. III déclare au <strong>degré 3</strong> et que <strong>le §10 de son PRD ne numérote pas</strong>. <em>Les verser dans l'une des deux tables aurait périmé un cardinal contrôlé</em> — exactement comme la fusion des deux séries d'identifiants factuels que la décision 7 du TOC proscrit. <strong>Elles forment une série propre, sans numéro parce que leur source ne leur en donne pas.</strong></p>
 </div>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Absence déclarée</th><th>Ce que le Vol. I en porte</th><th>Qualification</th><th>Chapitre porteur</th></tr></thead>
-  <tbody>
-    <tr><td><strong>Ratio des identités machines aux identités humaines</strong> et prolifération des secrets — aucun ordre de grandeur au socle</td><td>un ordre de grandeur <strong>attribué à son éditeur d'origine</strong>, daté de 2025</td><td>⚠ <strong>illustrée au régime [C], NON instruite</strong> — le chiffre est une <strong>métrique auto-déclarée</strong> : <em>illustration, jamais preuve</em></td><td>ch. 12 § 12.2</td></tr>
-    <tr><td><strong>Contenu technique d'un corpus de normalisation du web</strong> — aucun extrait des quatre documents ; profils d'interopérabilité non documentés</td><td>modèle de données des accréditations vérifiables, méthode d'identifiant ancrée au web, distinction <em>qui est l'agent</em> / <em>ce qu'il a le droit de faire</em></td><td><strong>couverte au régime [C]</strong>, à instruire à la source primaire pour élévation</td><td>ch. 13 § 13.1-13.2</td></tr>
-    <tr><td><strong>Chaîne d'approvisionnement</strong> — aucune définition normative de l'expression, aucun mécanisme d'attestation d'intégrité à l'exécution</td><td>la chaîne d'approvisionnement des outils et <strong>trois contrôles</strong> — vérification de provenance, épinglage de version, admission par passerelle</td><td><strong>couverte au régime [C]</strong>, à instruire pour élévation</td><td>ch. 20 § 20.3 et § 20.8 ; <strong>ch. 47 § 47.2-47.3</strong></td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Absence déclarée</th>
+<th>Ce que le Vol. I en porte</th>
+<th>Qualification</th>
+<th>Chapitre porteur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ratio des identités machines aux identités humaines</strong> et prolifération des secrets — aucun ordre de grandeur au socle</td>
+<td>un ordre de grandeur <strong>attribué à son éditeur d'origine</strong>, daté de 2025</td>
+<td>⚠ <strong>illustrée au régime [C], NON instruite</strong> — le chiffre est une <strong>métrique auto-déclarée</strong> : <em>illustration, jamais preuve</em></td>
+<td>ch. 12 § 12.2</td>
+</tr>
+<tr>
+<td><strong>Contenu technique d'un corpus de normalisation du web</strong> — aucun extrait des quatre documents ; profils d'interopérabilité non documentés</td>
+<td>modèle de données des accréditations vérifiables, méthode d'identifiant ancrée au web, distinction <em>qui est l'agent</em> / <em>ce qu'il a le droit de faire</em></td>
+<td><strong>couverte au régime [C]</strong>, à instruire à la source primaire pour élévation</td>
+<td>ch. 13 § 13.1-13.2</td>
+</tr>
+<tr>
+<td><strong>Chaîne d'approvisionnement</strong> — aucune définition normative de l'expression, aucun mécanisme d'attestation d'intégrité à l'exécution</td>
+<td>la chaîne d'approvisionnement des outils et <strong>trois contrôles</strong> — vérification de provenance, épinglage de version, admission par passerelle</td>
+<td><strong>couverte au régime [C]</strong>, à instruire pour élévation</td>
+<td>ch. 20 § 20.3 et § 20.8 ; <strong>ch. 47 § 47.2-47.3</strong></td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 49.3 — Les trois absences déclarées au degré 3 dans le texte rédigé du Vol. III, non numérotées par son PRD, avec ce que le Vol. I en porte au régime [C]. ⚠ <strong>Aucune n'est comblée</strong>, et la table est écrite pour que cela ne puisse pas se lire autrement.</p>
-
 <div class="avert">
   <p><strong>Ces trois cas ne sont pas des contradictions entre volumes, et c'est la règle la plus utile que la somme ait produite sur elle-même.</strong> <em>« Le socle de A ne documente pas X » et « B documente X » sont <strong>logiquement compatibles</strong></em> : c'est une <strong>lacune de couverture</strong>, non une divergence, <strong>l'énoncé du volume le plus ancien reste exact dans son périmètre</strong>, et <em>le volume le plus ancien ne se corrige pas</em> — sa lacune est une information datée, du même ordre que la date d'une revue publiée. ⚠ <strong>Et leur répétition est ce qui compte</strong> : <em>une classe de défaut qui se produit dans deux Livres — les ch. 10 et 11 du Livre I, les trois entrées de cette table — est une propriété du corpus, pas un accident de chapitre.</em> ⚠ <strong>Aucun cardinal d'ensemble n'est annoncé</strong> : <em>ces occurrences ne sont énumérées nulle part, et seul le volet de fond de G-4 peut en dresser l'inventaire.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>Les trois tables de cette section sont incomplètes, et elles le déclarent — la troisième pour une raison plus forte que les deux autres.</strong> Le tableau 49.1 est complet <strong>pour le Vol. II</strong> (onze sur onze). Le tableau 49.2 est complet <strong>pour les lacunes numérotées du Vol. III</strong>, mais son inventaire des lacunes <strong>non numérotées</strong> — les quatre de sa phase de rédaction — n'est borné qu'aux <strong>sept pièces</strong> que sa source a relevées. Le tableau 49.3 ne porte que <strong>les entrées rencontrées</strong> : les absences au degré 3 <strong>ne sont énumérées à leur source nulle part</strong> — elles vivent dans le texte de trente-quatre pièces —, et <strong>seul le volet de fond de G-4 peut en dresser l'inventaire</strong>. <em>Aucun cardinal en toutes lettres n'est annoncé pour cette troisième série.</em></p>
 </div>
-
 <h2 id="s4913"><span class="sig">§ 49.13</span>Les questions de recherche transmises</h2>
-
 <p><strong>Une lacune dit ce qui manque ; une question de recherche dit ce qui la trancherait.</strong> Cette section énonce les secondes, telles que leurs volumes les formulent, <strong>pour qu'un chercheur puisse les instruire</strong> — jamais reformulées, jamais fusionnées.</p>
-
 <div class="avert">
   <p><strong>La convention de nommage est ici une condition de lisibilité, et elle est imposée par la décision 7 du TOC</strong> : <strong>deux séries « Q n » coexistent au Vol. II</strong> — cinq questions au Vol. II <code>Monographie</code> §16.3 sur l'articulation d'un protocole de paiement avec les rails canadiens, et six questions d'agenda au Vol. II <code>Monographie</code> §21.2 — et <em>leurs étiquettes sont homonymes sans être de la même série</em>. ⚠ <strong>Chacune des deux se nomme ici par son document et son volume</strong>, et non par un « ch. N » nu : <em>le compendium a lui aussi un ch. 16 et un ch. 21, et un renvoi qui ne nomme pas son document est indécidable entre les deux.</em> <strong>Toute occurrence nomme sa série et son volume.</strong></p>
 </div>
-
 <h3>49.13.1 Les six questions d'agenda du Vol. II</h3>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>#</th><th>Question <em>(Vol. II</em> <code>Monographie</code> <em>ch. 21 §21.2)</em></th><th>Ce qui la trancherait</th><th>Où la somme la porte</th></tr></thead>
-  <tbody>
-    <tr><td><strong>Q1</strong></td><td>La taxonomie des options d'orchestration résiste-t-elle à une reproduction indépendante ?</td><td>une <strong>réplication par une équipe distincte</strong>, et une application documentée à un processus d'institution financière — <em>aucune des deux n'existe au socle</em></td><td>ch. 22</td></tr>
-    <tr><td><strong>Q2</strong></td><td>Quelle est la mécanique des risques protocolaires nommés ; existe-t-il des attaques propres au protocole agent-agent ?</td><td>une source primaire consacrée, un identifiant de vulnérabilité, un incident public daté</td><td>ch. 19</td></tr>
-    <tr><td><strong>Q3</strong></td><td>Que vaut cryptographiquement une carte d'agent signée ?</td><td>la documentation de l'<strong>ancrage de confiance</strong>, de la <strong>révocation</strong> et de la <strong>gouvernance des clés</strong></td><td>ch. 15 § 15.1</td></tr>
-    <tr><td><strong>Q4</strong></td><td>L'article 12.1 s'applique-t-il à une décision prise par un système multi-agents avec humain dans la boucle ?</td><td>une position de l'autorité de protection des renseignements personnels ou une décision judiciaire</td><td>ch. 27</td></tr>
-    <tr><td><strong>Q5</strong></td><td>Quelle organisation sera désignée organisme de normalisation technique du cadre bancaire ?</td><td><strong>un arrêté ministériel</strong> — publication à surveiller (R-5)</td><td>ch. 30, ch. 32</td></tr>
-    <tr><td><strong>Q6</strong></td><td>Comment le <em>frame</em> opérationnel s'articule-t-il au <em>frame</em> normatif ?</td><td>une relecture ciblée du manifeste dont le document est au dépôt : <em>élévation possible en une passe</em></td><td>ch. 29</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>#</th>
+<th>Question <em>(Vol. II</em> <code>Monographie</code> <em>ch. 21 §21.2)</em></th>
+<th>Ce qui la trancherait</th>
+<th>Où la somme la porte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Q1</strong></td>
+<td>La taxonomie des options d'orchestration résiste-t-elle à une reproduction indépendante ?</td>
+<td>une <strong>réplication par une équipe distincte</strong>, et une application documentée à un processus d'institution financière — <em>aucune des deux n'existe au socle</em></td>
+<td>ch. 22</td>
+</tr>
+<tr>
+<td><strong>Q2</strong></td>
+<td>Quelle est la mécanique des risques protocolaires nommés ; existe-t-il des attaques propres au protocole agent-agent ?</td>
+<td>une source primaire consacrée, un identifiant de vulnérabilité, un incident public daté</td>
+<td>ch. 19</td>
+</tr>
+<tr>
+<td><strong>Q3</strong></td>
+<td>Que vaut cryptographiquement une carte d'agent signée ?</td>
+<td>la documentation de l'<strong>ancrage de confiance</strong>, de la <strong>révocation</strong> et de la <strong>gouvernance des clés</strong></td>
+<td>ch. 15 § 15.1</td>
+</tr>
+<tr>
+<td><strong>Q4</strong></td>
+<td>L'article 12.1 s'applique-t-il à une décision prise par un système multi-agents avec humain dans la boucle ?</td>
+<td>une position de l'autorité de protection des renseignements personnels ou une décision judiciaire</td>
+<td>ch. 27</td>
+</tr>
+<tr>
+<td><strong>Q5</strong></td>
+<td>Quelle organisation sera désignée organisme de normalisation technique du cadre bancaire ?</td>
+<td><strong>un arrêté ministériel</strong> — publication à surveiller (R-5)</td>
+<td>ch. 30, ch. 32</td>
+</tr>
+<tr>
+<td><strong>Q6</strong></td>
+<td>Comment le <em>frame</em> opérationnel s'articule-t-il au <em>frame</em> normatif ?</td>
+<td>une relecture ciblée du manifeste dont le document est au dépôt : <em>élévation possible en une passe</em></td>
+<td>ch. 29</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 49.4 — Les six questions d'agenda du Vol. II, avec leur critère de clôture et leur chapitre porteur dans la somme. ⚠ <strong>Q5 est instruite sans être close par le Vol. III</strong> (sa lacune 3) ; <strong>Q4 est prolongée et non tranchée</strong> ; <strong>Q1 et Q6 restent au Vol. II</strong>, le Vol. III ne les reprenant pas.</p>
-
 <div class="avert">
   <p><strong>Trois inconforts se lisent derrière cette table, et il faut d'abord dire sur quoi chacun porte : seul le premier est l'une des six questions.</strong> <em>(1)</em> <strong>Q1</strong>, celle du tableau, l'est parce que la taxonomie qu'elle interroge <strong>structure trois parties du Vol. II</strong> et repose sur une <strong>source unique</strong> : une préimpression de première version non révisée par les pairs, <em>dont les auteurs déclarent eux-mêmes des menaces à la validité</em> — expériences initiales, invites non comparées, facteurs confondants. <em>Le cadre conceptuel est repris ; les chiffres, à titre d'illustration seulement.</em> <em>(2)</em> Le deuxième <strong>ne figure à aucune des six questions</strong> : il porte sur <strong>la convergence érigée en principe directeur du blueprint</strong>, formulée par un manifeste académique, une expérimentation et un patron de fournisseur, <strong>dont deux partagent une autrice et deux une organisation</strong>. ⚠ <em>La convergence est un faisceau réel ; elle ne vaut pas corroboration indépendante.</em> <em>(3)</em> Le troisième n'y figure pas davantage, et il est <strong>méthodologique</strong> — il porte sur l'appareil de vérification du Vol. II lui-même, non sur son agenda : sur les <strong>384 affirmations</strong> extraites par les trois passes du Vol. II, <strong>75 seulement ont atteint le vote adversarial à trois juges</strong> — <em>un peu moins d'un cinquième</em> —, dont 69 confirmées à l'unanimité et 6 réfutées. ⚠ <strong>Le plafond était budgétaire et il est documenté.</strong> <em>Lecture de l'auteur</em> — <strong>ce que cela établit</strong> : les décomptes et la limite ; <strong>ce que cela n'établit pas</strong> : que les entrées non votées soient moins exactes — <em>seulement qu'elles sont moins vérifiées.</em> ⚠ <em>Les trois se lisent ensemble parce qu'ils bornent la même chose — ce que la table peut soutenir —, non parce qu'ils seraient trois lignes de la table.</em></p>
 </div>
-
 <h3>49.13.2 Les questions transmises par le Vol. III</h3>
-
-<p><strong>Trois questions propres, formulées pour instruction plutôt que résolues</strong>, et sa source les énonce ainsi : par quel mécanisme documenté une révocation se propage-t-elle le long d'une chaîne de délégation (ch. 20 § 20.6) ; <strong>par quelle clé de jointure une trace se rattache-t-elle au mandat qui autorisait l'action tracée</strong> (ch. 38 § 38.5 ; ch. 48 § 48.5) ; et quelle grandeur mesurerait la portée d'une tâche déléguée à travers plusieurs agents plutôt que l'horizon d'un agent isolé (ch. 40 § 40.1).</p>
-
-<p><strong>La plus développée des trois est celle des deux sauts, et sa source la décompose en cinq.</strong> ⚠ <strong>La mécanique reste au ch. 17 § 17.6 ; ici, l'énoncé de recherche qui en sort</strong> — le partage est déclaré au plan et il est tenu. <em>Question d'ensemble</em> : existe-t-il un mécanisme documenté par lequel <strong>un vérificateur situé au-delà du premier maillon</strong> établisse, à l'instant où il agit, l'identité du mandant d'origine, la portée du mandat et sa validité courante ? Les cinq sous-questions, avec leur corpus et leur critère de clôture, portent sur <strong>l'atténuation</strong> de la portée d'un maillon au suivant, la <strong>fraîcheur</strong> de l'autorité à chaque saut, l'<strong>ancrage transitif</strong> lorsque l'ancrage de confiance est renvoyé au déploiement, la <strong>preuve</strong> opposable devant un tiers, et l'<strong>imputabilité</strong> — <em>au troisième maillon, qui répond de l'acte ?</em> —, dont le critère de clôture est <strong>le rattachement documenté d'un acte de maillon terminal à une entité juridique nommée</strong>. ⚠ <strong>La cinquième est nommée ici plutôt que renvoyée à sa source</strong> : <em>une sous-question laissée anonyme dans une liste de cinq se lit comme une ellipse, et un énoncé de recherche transmis sans son objet n'est pas instruisible.</em></p>
-
-<div class="avert">
-  <p><em>Lecture de l'auteur reprise de la source</em> — <strong>ce que le socle établit</strong> : les périmètres déclarés et les états de piste. <strong>Ce qu'il n'établit pas</strong> : <em>que ces cinq sous-questions soient les bonnes, ni qu'elles épuisent le problème, ni qu'une réponse à chacune composerait une réponse à l'ensemble</em> — c'est <strong>la présomption de composition</strong> que la non-compositionnalité de la sûreté invite à traiter avec méfiance (§ 49.6.2).</p>
-</div>
-
+<p><strong>Trois questions propres, formulées pour instruction plutôt que résolues</strong>, et sa source les énonce ainsi : par quel mécanisme documenté une révocation se propage-t-elle le long d'une chaîne de délégation (ch. 20 § 20.6) ; <strong>par quelle clé de jointure une trace se rattache-t-elle au mandat qui autorisait l'action tracée</strong> (ch. 38 § 38.5 ; ch. 48 § 48.5) ; et quelle grandeur mesurerait la portée d'une tâche déléguée à travers plusieurs agents plutôt que l'horizon d'un agent isolé (ch. 40 § 40.1) ?</p>
+<p><strong>La plus développée des trois est celle des deux sauts, et sa source la décompose en cinq.</strong> ⚠ <strong>La mécanique reste au ch. 17 § 17.6 ; ici, l'énoncé de recherche qui en sort</strong> — le partage est déclaré au plan et il est tenu. <em>Question d'ensemble</em> : existe-t-il un mécanisme documenté par lequel <strong>un vérificateur situé au-delà du premier maillon</strong> établisse, à l'instant où il agit, l'identité du mandant d'origine, la portée du mandat et sa validité courante ? Les cinq sous-questions, avec leur corpus et leur critère de clôture, portent sur <strong>l'atténuation</strong> de la portée d'un maillon au suivant, la <strong>fraîcheur</strong> de l'autorité à chaque saut, l'<strong>ancrage transitif</strong> lorsque l'ancrage de confiance est renvoyé au déploiement, la <strong>preuve</strong> opposable devant un tiers, et l'<strong>imputabilité</strong> — <em>au troisième maillon, qui répond de l'acte ?</em> —, dont le critère de clôture est <strong>le rattachement documenté d'un acte de maillon terminal à une entité juridique nommée</strong>. ⚠ <strong>La cinquième est nommée ici plutôt que renvoyée à sa source</strong> : <em>une sous-question laissée anonyme dans une liste de cinq se lit comme une ellipse, et un énoncé de recherche transmis sans son objet n'est pas instruisible.</em> ⚠ <em>Lecture de l'auteur reprise de la source</em> — <strong>ce que le socle établit</strong> : les périmètres déclarés et les états de piste. <strong>Ce qu'il n'établit pas</strong> : <em>que ces cinq sous-questions soient les bonnes, ni qu'elles épuisent le problème, ni qu'une réponse à chacune composerait une réponse à l'ensemble</em> — c'est <strong>la présomption de composition</strong> que la non-compositionnalité de la sûreté invite à traiter avec méfiance (§ 49.6.2).</p>
 <p><strong>La métrique d'horizon de tâche déléguée est transmise avec un constat qui la borne, et il est précis.</strong> Le Vol. III établit que les compteurs d'appels des conventions relevées comptent les appels <strong>directs</strong>, les appels de sous-agents ou d'agents auxquels la tâche est transférée étant <strong>attribués séparément</strong>. <em>Une chaîne de délégation n'est donc pas reconstituable par sommation de ces compteurs</em> — <strong>non par insuffisance de l'instrument, mais par construction déclarée de sa sémantique</strong>. ⚠ <strong>Et la lecture que sa source en tire est celle que la somme reprend</strong> : <em>la couche de mesure ne sait pas de quel agent elle parle au sens où l'entend le Livre II</em> — elle agrège par un libellé applicatif renommable et facultatif (<strong><code>F-92</code> du Vol. III</strong>, ⚖ <strong>vote dû, non conduit</strong> ; <strong>exclue du socle consolidé</strong> à ce titre, comme <code>F-96</code>), quand l'entreprise doit répondre d'un <strong>mandataire identifié</strong>.</p>
-
 <div class="avert">
   <p><strong>Deux divergences non arbitrées sont transmises telles quelles, et l'arbitrage par chronologie est interdit</strong> : la <strong>gouvernance du protocole de paiement</strong>, <em>dissoute par le fait et non tranchée</em> — ⚠ <strong>instruite depuis, le 27 juillet 2026, par extraction de source primaire</strong> (§ 49.12.1) — et la <strong>date de publication de la ligne directrice IA de l'AMF</strong>, <strong>entière</strong>, <em>aucune des deux dates ne figurant à la source</em>. ⚠ <strong>La seconde est CLOSE depuis le 28 juillet 2026, et la manière dont elle l'est vaut plus que la clôture</strong> : le volet de faits de <strong>G-1</strong> l'a instruite — <strong>quatre URL de l'autorité, quatre refus 403</strong> —, et <em>aucune des deux dates ne se lit à la source</em>. <strong>Elle est donc close par l'instruction, non par un arbitrage</strong> : la somme écrit « <strong>avril 2026</strong> » <strong>en déclarant ses trois états</strong>. ⚠ <em>Une divergence dont on découvre qu'aucun de ses termes n'est à la source n'est plus une divergence : c'est une absence de datation</em> — et <strong>l'Annexe C du TOC reste le siège où une source primaire nouvelle datée la rouvrirait</strong>.</p>
 </div>
-
 <h3>49.13.3 Les quatre frontières du Vol. I</h3>
-
 <p>Le Vol. I <code>Monographie</code> <strong>§2.13.2</strong> transmet quatre frontières non résolues, <strong>en [C]</strong>, et elles arrivent ici depuis le <strong>ch. 6</strong> — <em>arrivée déclarée aux deux bouts, conformément à la table de couverture du ch. 49</em>.</p>
-
 <p><em>(1)</em> <strong>L'effondrement sur les tâches à horizon long</strong> : une boucle qui réussit fréquemment un pas isolé <strong>échoue à composer des trajectoires de plusieurs dizaines d'étapes</strong> ; ⚠ <em>mesurer le potentiel par « au moins une réussite sur k essais » masque l'effondrement de la consistance, que « réussite sur les k essais » révèle.</em> <em>(2)</em> <strong>L'évaluation non contaminée</strong> : on évalue un <strong>système</strong> et non un modèle, dans un contexte non déterministe où la dérive des versions d'interfaces fermées et la contamination des jeux d'essai <strong>érodent la reproductibilité</strong> (§ 49.6.4). <em>(3)</em> <strong>La sécurité</strong>, et elle se distingue des deux autres par sa nature : <em>ce n'est pas un retard de capacité que le progrès comblera, mais une propriété structurelle</em> — l'injection d'invite reste non résoluble au niveau du modèle <strong>parce qu'instructions et données partagent le même flux de jetons</strong>, et l'asymétrie joue contre le défenseur. <em>(4)</em> <strong>La mémoire persistante et l'apprentissage continu</strong> : consolider, oublier et apprendre en continu <strong>sans dériver ni corrompre l'état interne</strong> — et sans ouvrir un nouveau vecteur d'empoisonnement de la mémoire — <strong>n'a pas de solution éprouvée à l'échelle de la production</strong> (ch. 47 § 47.11 pour ce que le retour arrière ne restaure pas).</p>
-
 <h2 id="s4914"><span class="sig">§ 49.14</span>Les frontières de la fabrique de confiance</h2>
-
 <div class="avert">
   <p><strong>« Fabrique » y désigne la fabrique de confiance — l'étage d'émission et de vérification du Livre II —, non la fabrique d'agents du ch. 41</strong> (décision 12c du TOC ; <strong>le siège de la collision est au ch. 43 § 43.1</strong>, qui n'est pas reconstruit ici) ; les deux vivent dans la somme, et l'ambiguïté se lève par la phrase, jamais par le contexte.</p>
 </div>
-
 <div class="avert">
   <p><strong>Le partage avec le ch. 50 est déclaré</strong> : la matière de <strong>péremption</strong> du Vol. II <code>Monographie</code> <strong>§21.3</strong> part <strong>en entier</strong> au ch. 50 § 50.2 et § 50.3 ; cette section n'en reprend rien. <em>Ce qui reste ici est la question de fond que la clôture du Vol. II laissait ouverte : jusqu'où la fabrique de confiance porte-t-elle ?</em></p>
 </div>
-
 <p><strong>Trois frontières, et chacune est déjà établie ailleurs — la section les rassemble, elle ne les démontre pas.</strong></p>
-
-<p><em>Première frontière : le deuxième saut.</em> Le <strong>ch. 17 § 17.6</strong> établit que le socle n'établit pas qu'une chaîne de mandat soit <strong>interrogeable à un instant quelconque</strong>, et que la frontière <strong>ne passe pas à un rang numéroté de sauts</strong> mais <strong>au premier changement de régime</strong> — lorsque le vérificateur cesse d'être celui qui a ancré le mandat, ou cesse d'appartenir au domaine où le contexte se propage.</p>
-
-<div class="avert">
-  <p><em>C'est la frontière la plus dure de la somme, parce qu'elle borne ce que l'architecture peut promettre : au-delà, la vérification devient une question de recherche</em> (§ 49.13.2).</p>
-</div>
-
+<p><em>Première frontière : le deuxième saut.</em> Le <strong>ch. 17 § 17.6</strong> établit que le socle n'établit pas qu'une chaîne de mandat soit <strong>interrogeable à un instant quelconque</strong>, et que la frontière <strong>ne passe pas à un rang numéroté de sauts</strong> mais <strong>au premier changement de régime</strong> — lorsque le vérificateur cesse d'être celui qui a ancré le mandat, ou cesse d'appartenir au domaine où le contexte se propage. ⚠ <em>C'est la frontière la plus dure de la somme, parce qu'elle borne ce que l'architecture peut promettre : au-delà, la vérification devient une question de recherche</em> (§ 49.13.2).</p>
 <p><em>Deuxième frontière : les indicateurs manquants.</em> Le <strong>ch. 40 § 40.1</strong> porte les indicateurs de l'AgentOps et l'absence de grandeur de parc — ⚠ <strong>rédigé le même jour hors de cette passe, à re-vérifier au commit</strong>. Ce que la somme en sait vient du Vol. III : <strong>aucune grandeur de parc, aucune dimension d'identité ou de mandat dans une métrique, aucun délai de révocation, aucun horodatage d'évaluation exportable</strong>. ⚠ <em>Exposer un instrument qui ne mesure pas ce dont on doit répondre est un résultat ; fabriquer le chiffre qui manque serait la faute que le Vol. III prend pour objet</em> — et <strong>la somme ne le fabrique pas davantage</strong>.</p>
-
 <p><em>Troisième frontière : ce que la composition ne compose pas.</em> Les <strong>garanties ne se composent pas</strong> (§ 49.6.2) ; <strong>les quatre pièces du passeport ne se complètent pas</strong> — <em>sur les quatre, aucune ne fournit à une autre l'ancrage qui lui manque</em> (ch. 16 § 16.1) ; et <strong>une cinquième pièce candidate serait moins documentée encore</strong> (ch. 47 § 47.5). ⚠ <em>Le point commun des trois est une même erreur de raisonnement, et la nommer est le legs de cette section : <strong>la présomption qu'un assemblage hérite des propriétés de ses parties</strong>.</em></p>
-
 <div class="avert">
   <p><strong>Deux frontières de plus, propres au Livre V, s'ajoutent à celles du Vol. II et sont enregistrées ici parce que ce chapitre est le lieu de l'état final.</strong> <em>(1)</em> <strong>L'accord entre agents sous asynchronie et défaillance partielle n'est pas traité par la somme</strong> : la décision d'auteur <strong>D-7</strong>, prise le 27 juillet 2026, l'a arbitré en <strong>périmètre assumé et déclaré</strong>, ce qui <strong>ferme</strong> les ch. 6, 37 et 48. ⚠ <em>Un périmètre assumé n'est pas un angle mort résorbé : c'est un angle mort dont le lecteur est prévenu</em> — et <strong>les architectures inter-institutions que la somme prescrit opèrent sous un régime de défaillance qu'elle ne caractérise pas</strong> (ch. 1 § 1.6.2.2, siège). <em>(2)</em> <strong>La sémantique d'effet n'a aucun mécanisme</strong> : le <strong>ch. 48</strong> en est le siège, et il lègue <em>une taxonomie de travail et deux lots d'instruction, aucun dispositif</em> — ni idempotence prescrite, ni compensation spécifiée, ni clé de jointure entre un effet et l'appel qui l'a produit.</p>
 </div>
-
 <div class="avert">
   <p><strong>Ce que ce mouvement n'établit pas, et il faut le dire avec la même netteté que le reste.</strong> Il n'établit <strong>pas</strong> que ces lacunes invalident les conclusions de la somme : <em>une conclusion tracée à un socle qui porte ses niveaux de preuve reste utilisable à hauteur du niveau qu'elle invoque.</em> Il n'établit <strong>pas</strong> que le registre soit complet — <strong>il est exhaustif au regard des recensements arrêtés aux trois gels</strong>, ce qui n'est pas la même chose, et <strong>la part non rédigée de la somme en produira d'autres</strong>. Il n'établit <strong>pas</strong>, enfin, qu'aucune de ces questions n'ait de réponse : <em>il dit que cet ouvrage ne la connaît pas, et qu'il se l'interdit plutôt que de la deviner.</em></p>
 </div>
-
 <p><strong>C'est le seul engagement qu'une somme datée puisse honnêtement tenir. Elle ne promet pas d'avoir raison longtemps. Elle promet de dire où elle ignore.</strong></p>
+<hr />
 
 <footer class="pied">
   <p><strong>Vol. IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em></strong> · Livre V, chapitre 49. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau, M.Sc. IT.</p>
   <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme (gel unique : 27 juillet 2026).</p>
-  <p><strong>†</strong> Renvoi à une section retirée de ce rendu — la note de statut, hors corps — conservée au fichier Markdown jumeau.</p>
 </footer>
 
 </main>

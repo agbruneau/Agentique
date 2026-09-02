@@ -443,6 +443,17 @@ tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
 tbody td:first-child { color: var(--texte); font-weight: 600; }
 .legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
 
+/* -------------------------------------------------------------- figures */
+/* Les SVG du volume sont dessinés pour le PDF, donc sur fond clair, et ils
+   portent ce fond eux-mêmes — sans quoi il faudrait maintenir deux variantes
+   de chaque figure. Sur ce thème sombre, ils se posent donc comme un carton ;
+   le padding empêche le fond de la figure de toucher le bord du cadre. */
+.figure { margin: 2.1rem 0 1.9rem; }
+.figure img { display: block; width: 100%; height: auto; border-radius: 7px;
+              border: 1px solid var(--trait); background: #fdfbf9; padding: 0.6rem; }
+.figure figcaption { font-size: 0.8rem; font-style: italic; color: var(--texte-faible);
+                     margin-top: 0.65rem; padding-left: 0.15rem; }
+
 /* --------------------------------------------------------------- listes */
 ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
 ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
@@ -531,12 +542,12 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <div class="nav__marque">Interopérabilité et Orchestration en Entreprise Agentique</div>
   <div class="nav__sous">Livre II · Chapitre 13</div>
   <ol>
-    <li><a href="#s130"><span class="num">13.0</span>Introduction : un vocabulaire, et la question de savoir qui l&#x27;emploie</a></li>
+    <li><a href="#s130"><span class="num">13.0</span>Introduction : un vocabulaire, et la question de savoir qui l'emploie</a></li>
     <li><a href="#s131"><span class="num">13.1</span>VC Data Model et DID Core : à quel stade en sont les recommandations</a></li>
-    <li><a href="#s132"><span class="num">13.2</span>Les profils d&#x27;interopérabilité : une lacune de couverture assumée</a></li>
+    <li><a href="#s132"><span class="num">13.2</span>Les profils d'interopérabilité : une lacune de couverture assumée</a></li>
     <li><a href="#s133"><span class="num">13.3</span>Les Community Groups agentiques du W3C</a></li>
     <li><a href="#s134"><span class="num">13.4</span>Identité de charge et identité décentralisée : SPIFFE/SPIRE, DID, WIMSE</a></li>
-    <li><a href="#s135"><span class="num">13.5</span>Le fossé d&#x27;adoption : qui vérifie quoi, en production, à date</a></li>
+    <li><a href="#s135"><span class="num">13.5</span>Le fossé d'adoption : qui vérifie quoi, en production, à date</a></li>
   </ol>
   <div class="nav__pied">
     Vol.&nbsp;IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em><br>
@@ -555,169 +566,147 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 
 <!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
      Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
-     que `build/assemble.py` pour le PDF. L'appareil de gouvernance vit au .md jumeau, qui reste la
-     seule source, et `verifier-piece.py` [6] refuse désormais un rendu qui le recopierait. -->
+     que `build/assemble.py` pour le PDF et que `PRD/decompte.sh` pour la volumétrie. L'appareil de
+     gouvernance vit au .md jumeau, qui reste la seule source, et `build/verifier-piece.py` refuse
+     un rendu qui le recopierait. -->
 
 <h2 id="s130"><span class="sig">§ 13.0</span>Introduction : un vocabulaire, et la question de savoir qui l'emploie</h2>
-
 <p>Le chapitre précédent a montré une pile héritée qui <strong>s'étire</strong> : des RFC écrits pour un humain au bout du flux, réemployés pour un mandataire logiciel, et des extensions qui n'ont pas encore le statut de leurs supports. Une autre voie existe, et elle ne procède pas par étirement : le corpus du <strong>W3C</strong> — accréditations vérifiables (<em>verifiable credentials</em>, VC) et identifiants décentralisés (<em>decentralized identifiers</em>, DID) — propose un vocabulaire conçu d'emblée pour des assertions portables, vérifiables et détachées de l'annuaire qui les a émises.</p>
-
 <p>C'est de ce vocabulaire que la somme tire les mots du <strong>passeport d'agent</strong>. ⚠ <strong>Et c'est tout ce qu'elle en tire à ce stade</strong> : le Vol. I, qui porte le terme au titre d'une section, <strong>ne le définit ni ne le réemploie dans le corps de celle-ci</strong> (Vol. III H-18, <strong>[C]</strong>) — et <strong>le socle n'a extrait aucun contenu des spécifications que ce chapitre relève</strong>, de sorte que ce qu'elles en diraient est une <strong>absence de documentation, non un fait négatif vérifié</strong>. ⚠ <strong>La borne est celle du corpus consulté, non celle du domaine, et elle vaut aux deux échelles</strong> : écrire que le terme ne figure dans aucune spécification de 2026 serait un quantificateur universel négatif sur un corpus non balayé ; écrire qu'aucune des spécifications relevées ici ne le définit supposerait ouvert le contenu que le régime de traçabilité posé plus bas déclare non extrait. C'est un <strong>objet de synthèse</strong> que le <strong>ch. 16</strong> construit en assemblant une carte signée, une inscription au registre, une chaîne de mandat et des attestations. Le présent chapitre fournit le lexique ; il ne fournit pas l'objet.</p>
-
 <p><strong>Le fil du chapitre est une distinction, et il faut la poser avant les faits : promesse contre production.</strong> Un stade de normalisation dit où en est un texte ; il ne dit pas qui l'emploie. Les deux registres se confondent d'autant plus aisément que le premier est public, daté et facile à citer, tandis que le second se mesure mal. Le chapitre les tient séparés section par section : les stades (§ 13.1), une lacune de couverture assumée sur les profils d'interopérabilité (§ 13.2), les groupes communautaires et ce que leur statut interdit d'en conclure (§ 13.3), l'articulation avec l'identité de charge de travail (§ 13.4), et le fossé d'adoption tel que le corpus permet de l'écrire (§ 13.5).</p>
-
 <div class="avert">
   <p><strong>Régime de traçabilité, posé d'entrée parce qu'il commande la lecture.</strong> Le lot d'instruction du Vol. III a ouvert les quatre documents du W3C le 21 juillet 2026 et en a extrait <strong>le stade et sa date</strong> ; il n'a extrait <strong>ni le modèle de données, ni les mécanismes de preuve, ni les méthodes de résolution</strong> que ces documents spécifient. <em>L'état d'origine se conserve ici, au passé</em> (décision 17c). <strong>Le socle ne documentait donc pas le contenu technique du <em>Verifiable Credentials Data Model</em> ni de <em>Decentralized Identifiers</em> : absence de documentation, non fait négatif vérifié</strong> (R-14 du Vol. III, degré 3).</p>
 </div>
-
 <p>☑ ⚠ <strong>EXTRACTION CONDUITE LE 30 JUILLET 2026 (D-11), et elle porte sur les deux Recommandations elles-mêmes.</strong> L'arbitrage externe relevait qu'un chapitre intitulé « identité décentralisée : VC et DID » sans son contenu technique n'honore pas son titre. Les deux documents ont été lus à leur source ce jour.</p>
-
-<p><strong>Le modèle de données</strong> — <em>Verifiable Credentials Data Model 2.0</em>, Recommandation du W3C. Une accréditation vérifiable conforme <strong>doit</strong> porter quatre propriétés : <strong><code>@context</code></strong>, dont le premier élément <strong>doit</strong> être <code>https://www.w3.org/ns/credentials/v2</code> ; <strong><code>type</code></strong>, dont la valeur <strong>doit</strong> inclure <code>VerifiableCredential</code> ; <strong><code>issuer</code></strong> ; et <strong><code>credentialSubject</code></strong>. ⚠ <strong>Un document conforme doit en outre être <em>sécurisé par au moins un mécanisme de sécurisation</strong></em>, ce qui n'est pas une propriété de plus mais une condition de conformité distincte.</p>
-
-<p><strong>Les mécanismes de preuve, et leur partition est le fait le plus utile de l'extraction.</strong> La Recommandation en admet <strong>deux familles, non une</strong> : la <strong>preuve incorporée</strong>, portée par la propriété <strong><code>proof</code></strong> — dont les exemples portent <code>type</code>, <code>created</code>, <code>verificationMethod</code>, <code>cryptosuite</code> et <code>proofValue</code> —, et la <strong>preuve enveloppante</strong>, où l'accréditation est encapsulée dans un format JOSE ou COSE. ⚠ <strong>Deux familles de preuve pour un même modèle de données signifie que deux implémentations conformes peuvent être mutuellement illisibles</strong> : <em>c'est, transposé au niveau du justificatif, exactement le constat de conformité ≠ interopérabilité du ch. 3 § 3.4.4</em>, et le § 13.2 le retrouvera du côté des profils.</p>
-
+<p><strong>Le modèle de données</strong> — <em>Verifiable Credentials Data Model 2.0</em>, Recommandation du W3C. Une accréditation vérifiable conforme <strong>doit</strong> porter quatre propriétés : <strong><code>@context</code></strong>, dont le premier élément <strong>doit</strong> être <code>https://www.w3.org/ns/credentials/v2</code> ; <strong><code>type</code></strong>, dont la valeur <strong>doit</strong> inclure <code>VerifiableCredential</code> ; <strong><code>issuer</code></strong> ; et <strong><code>credentialSubject</code></strong>. ⚠ <strong>Un document conforme doit en outre être <em>sécurisé par au moins un mécanisme de sécurisation</em></strong>, ce qui n'est pas une propriété de plus mais une condition de conformité distincte.</p>
+<p><strong>Les mécanismes de preuve, et leur partition est le fait le plus utile de l'extraction.</strong> La Recommandation en admet <strong>deux familles, non une</strong> : la <strong>preuve incorporée</strong>, portée par la propriété <strong><code>proof</code></strong> — dont les exemples portent <code>type</code>, <code>created</code>, <code>verificationMethod</code>, <code>cryptosuite</code> et <code>proofValue</code> —, et la <strong>preuve enveloppante</strong>, où l'accréditation est encapsulée dans un format JOSE ou COSE. ⚠ <strong>Deux familles de preuve pour un même modèle de données signifient que deux implémentations conformes peuvent être mutuellement illisibles</strong> : <em>c'est, transposé au niveau du justificatif, exactement le constat de conformité ≠ interopérabilité du ch. 3 § 3.4.4</em>, et le § 13.2 le retrouvera du côté des profils.</p>
 <p><strong>Le statut, et il n'est pas dans ce document.</strong> La propriété <strong><code>credentialStatus</code></strong> existe au modèle de données, mais <em>la vérification du statut est renvoyée aux spécifications de mécanisme de sécurisation</em> et à une spécification distincte de liste d'état. ⚠ <strong>La révocation n'est donc pas spécifiée par la Recommandation qui définit l'accréditation</strong> — c'est le versant W3C du constat que le <strong>tableau 20.1</strong> du ch. 20 dresse pour toute la couche.</p>
-
-<p><strong>Les identifiants décentralisés</strong> — <em>Decentralized Identifiers v1.1</em>, <strong>instantané de recommandation candidate du 5 mars 2026</strong>, dont le document déclare lui-même qu'il <em>n'est pas attendu au rang de Recommandation avant le 5 avril 2026</em>. ⚠ <strong>Une seule propriété y est obligatoire : <code>id</code>.</strong> <code>controller</code>, <code>verificationMethod</code>, <code>authentication</code>, <code>service</code> sont <strong>toutes facultatives</strong>. <strong>La résolution</strong> est confiée à un composant — le résolveur — qui prend un identifiant et rend un document ; ⚠ <strong><em>la résolution d'une méthode donnée est déclarée hors périmètre de la spécification</strong></em> et renvoyée à un document distinct, chaque méthode définissant ses propres opérations.</p>
-
+<p><strong>Les identifiants décentralisés</strong> — <em>Decentralized Identifiers v1.1</em>, <strong>instantané de recommandation candidate du 5 mars 2026</strong>, dont le document déclare lui-même qu'il <em>n'est pas attendu au rang de Recommandation avant le 5 avril 2026</em>. ⚠ <strong>Une seule propriété y est obligatoire : <code>id</code>.</strong> <code>controller</code>, <code>verificationMethod</code>, <code>authentication</code>, <code>service</code> sont <strong>toutes facultatives</strong>. <strong>La résolution</strong> est confiée à un composant — le résolveur — qui prend un identifiant et rend un document ; ⚠ <strong><em>la résolution d'une méthode donnée est déclarée hors périmètre de la spécification</em></strong> et renvoyée à un document distinct, chaque méthode définissant ses propres opérations.</p>
 <div class="avert">
   <p><strong>Trois conséquences, et la troisième est celle qui compte pour la thèse du Livre.</strong> <em>(1)</em> <strong>Le régime de preuve du chapitre s'élève partiellement</strong> : le stade et la date restaient le seul acquis, le <strong>contenu normatif des deux documents est désormais lu</strong> — mais <em>lu, non collationné adversarialement</em>, et <strong>rien n'entre au socle</strong>, le versement relevant d'une passe de socle. <em>(2)</em> ⚠ <strong>Aucune qualification cryptographique n'est tirée</strong> : R-02 tient, et <em>ce qui précède décrit ce que les documents <strong>spécifient</strong>, jamais ce qu'une implémentation <strong>démontre</strong></em>. <em>(3)</em> ⚠ <strong>L'extraction mesure l'écart au besoin du passeport du ch. 16, et il est plus large qu'il n'y paraissait</strong> : un modèle de données à quatre propriétés obligatoires et <strong>deux familles de preuve incompatibles</strong>, un identifiant à <strong>une seule propriété obligatoire</strong> et une <strong>résolution hors périmètre</strong> — <em>ce corpus spécifie un format d'attestation, il ne fournit ni ancrage organisationnel, ni chaînage, ni statut interrogeable.</em> <strong>C'est exactement ce que le ch. 17 § 17.6.2 en disait sans l'avoir lu ; la lecture le confirme, et ce n'est pas rien : une prudence validée par extraction cesse d'être une prudence.</strong></p>
 </div>
-
 <div class="avert">
-  <p><strong>Ce que ce chapitre ne traite pas.</strong> Le socle <em>zero-trust</em> pré-agentique et l'identité de charge de travail au sens de l'infrastructure d'entreprise sont <strong>posés au ch. 3</strong> et n'y sont pas reconstruits. La <strong>valeur probante</strong> d'une assertion signée est au <strong>ch. 15 § 15.1</strong>. Le versant <em>trust fabric</em> du §7.4.3 du Vol. I — l'admission d'un agent tiers entre organisations — est <strong>partagé déclaré avec le ch. 18</strong>, qui en prend la moitié institutionnelle ; le § 13.5 n'en prend que la moitié « adoption ».</p>
+  <p><strong>Ce que ce chapitre ne traite pas.</strong> Le socle <em>zero-trust</em> pré-agentique et l'identité de charge de travail au sens de l'infrastructure d'entreprise sont <strong>posés au ch. 3</strong> et ne sont pas reconstruits ici. La <strong>valeur probante</strong> d'une assertion signée est au <strong>ch. 15 § 15.1</strong>. Le versant <em>trust fabric</em> du §7.4.3 du Vol. I — l'admission d'un agent tiers entre organisations — est <strong>partagé déclaré avec le ch. 18</strong>, qui en prend la moitié institutionnelle ; le § 13.5 n'en prend que la moitié « adoption ».</p>
 </div>
-
 <h2 id="s131"><span class="sig">§ 13.1</span>VC Data Model et DID Core : à quel stade en sont les recommandations</h2>
-
 <p>Ce qui est établi sur pièce est l'<strong>état de la voie normative</strong>, à une date, document par document.</p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Document</th><th>Stade au 21 juillet 2026</th><th>Date du stade</th><th>Groupe et voie</th></tr></thead>
-  <tbody>
-    <tr><td><em>Verifiable Credentials Data Model</em> v2.0</td><td><strong>Recommandation</strong> du W3C</td><td>15 mai 2025</td><td><em>Verifiable Credentials Working Group</em>, voie Recommandation (Vol. III F-79, <strong>[B]</strong>)</td></tr>
-    <tr><td><em>Verifiable Credentials Data Model</em> v2.1</td><td><strong>brouillon de travail</strong> (<em>Working Draft</em>)</td><td>11 mai 2026</td><td>même groupe, voie Recommandation (Vol. III F-80, <strong>[B]</strong>)</td></tr>
-    <tr><td><em>Decentralized Identifiers</em> (DID) v1.0</td><td><strong>Recommandation</strong> du W3C, <em>errata</em> signalés</td><td>19 juillet 2022</td><td><strong>non relevé</strong> (Vol. III F-81, <strong>[B]</strong>)</td></tr>
-    <tr><td><em>Decentralized Identifiers</em> (DID) v1.1</td><td><strong>instantané de recommandation candidate</strong></td><td>5 mars 2026</td><td>voie Recommandation (Vol. III F-82, <strong>[A]</strong>)</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Document</th>
+<th>Stade au 21 juillet 2026</th>
+<th>Date du stade</th>
+<th>Groupe et voie</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Verifiable Credentials Data Model</em> v2.0</td>
+<td><strong>Recommandation</strong> du W3C</td>
+<td>15 mai 2025</td>
+<td><em>Verifiable Credentials Working Group</em>, voie Recommandation (Vol. III F-79, <strong>[B]</strong>)</td>
+</tr>
+<tr>
+<td><em>Verifiable Credentials Data Model</em> v2.1</td>
+<td><strong>brouillon de travail</strong> (<em>Working Draft</em>)</td>
+<td>11 mai 2026</td>
+<td>même groupe, voie Recommandation (Vol. III F-80, <strong>[B]</strong>)</td>
+</tr>
+<tr>
+<td><em>Decentralized Identifiers</em> (DID) v1.0</td>
+<td><strong>Recommandation</strong> du W3C, <em>errata</em> signalés</td>
+<td>19 juillet 2022</td>
+<td><strong>non relevé</strong> (Vol. III F-81, <strong>[B]</strong>)</td>
+</tr>
+<tr>
+<td><em>Decentralized Identifiers</em> (DID) v1.1</td>
+<td><strong>instantané de recommandation candidate</strong></td>
+<td>5 mars 2026</td>
+<td>voie Recommandation (Vol. III F-82, <strong>[A]</strong>)</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 13.1 — Quatre documents du W3C, quatre stades, au 21 juillet 2026.</p>
-
 <p><strong>Trois bornes accompagnent ce tableau et n'en sont pas détachables.</strong> La colonne de droite est laissée <strong>incomplète</strong> pour les deux documents DID : le rapport de lot ne relève pas leur groupe éditeur, et <em>une case remplie de mémoire vaudrait moins qu'une case vide</em>. La ligne de la version 2.0 tient d'un relevé de son historique de publication, consulté le 21 juillet 2026, qui <strong>ne porte aucune entrée postérieure au 15 mai 2025</strong>. Et la mention d'<em>errata</em> de la version 1.0 des identifiants décentralisés est exactement cela — une mention : <strong>leur contenu n'a pas été ouvert</strong>, ce qui est une <strong>absence de documentation, non un fait négatif vérifié</strong>.</p>
-
 <p>☑ <strong>Reportés à leur source le 28 juillet 2026, les quatre stades tiennent</strong> (volet de faits du volet résiduel de G-1) : aucune entrée postérieure au 15 mai 2025 à l'historique de la version 2.0 (Vol. III F-79) ; la 2.1 toujours brouillon de travail du 11 mai 2026 (Vol. III F-80) ; la version 1.0 des identifiants décentralisés toujours Recommandation à <em>errata</em> signalés — ⚠ <strong>dont le contenu n'a toujours pas été ouvert</strong> (Vol. III F-81) ; le quatrième, la version 1.1 des identifiants décentralisés (Vol. III F-82), est repris plus bas, avec l'échéance qu'il a dépassée. ⚠ <strong>Un stade reconduit n'est pas un stade promu</strong> : les niveaux ne bougent pas, et le tableau garde la date de son relevé.</p>
-
 <p><strong>Quatre stades, et ils ne se valent pas</strong> — c'est la discipline que R-09 du Vol. III impose à chaque mention. La version 2.0 du modèle de données et la version 1.0 des identifiants décentralisés portent le stade de <strong>Recommandation</strong>, terme du parcours d'un groupe de travail. La version 2.1 porte celui de <strong>brouillon de travail</strong>, et le document énonce lui-même sa réserve, en langue originale : « It is inappropriate to cite this document as other than a work in progress » (Vol. III F-80). Le socle en tire la conséquence prospective, et le chapitre la reprend : <strong>aucune date de passage à un stade ultérieur n'ayant été relevée, toute affirmation sur l'aboutissement de la 2.1 relève du SPÉCULATIF</strong>.</p>
-
 <p>Le quatrième stade est le plus instructif, et il tient à lui seul l'argument de la section. La version 1.1 des identifiants décentralisés est un <strong>instantané de recommandation candidate</strong> daté du <strong>5 mars 2026</strong>, dont le texte porte son propre engagement : « This Candidate Recommendation is not expected to advance to Recommendation any earlier than 05 April 2026 ». <strong>Cette date était dépassée de plus de trois mois au relevé du 21 juillet 2026</strong> — et de près de quatre au 28 juillet suivant, toujours <strong>sans transition constatée</strong>. Ce que le socle porte ici est un <strong>relevé de la liste des versions publiées</strong> : seize entrées y figurent, du premier brouillon de travail public du 28 janvier 2025 à cet instantané du 5 mars 2026, et <strong>aucune entrée étiquetée « Proposed Recommendation » ni « Recommendation »</strong> — hors l'instantané lui-même (Vol. III F-82, <strong>[A]</strong>, votée 3-0).</p>
-
 <div class="avert">
   <p><strong>Aucun degré d'absence n'est porté sur ce dernier constat, et c'est délibéré</strong> : le contrôle de bornage du lot a inscrit l'affirmation en faute de « degré injustifié » et retenu un <strong>relevé de liste</strong>, non le balayage d'un texte — « fait négatif vérifié » et « degré 1 » y sont interdits tant que le degré n'a pas été réarbitré. Le même document subordonne par ailleurs ses critères de sortie de phase à une condition externe : que la spécification <em>DID Resolution</em> v0.3 ait satisfait les siens.</p>
 </div>
-
 <p><em>Une échéance auto-déclarée dépassée sans transition constatée n'autorise, en l'état du socle, aucune inférence — ni retard, ni présage. Elle interdit seulement de présenter la version 1.1 comme un standard établi.</em></p>
-
 <p><span class="auteur">Lecture de l'auteur</span> ce que le socle établit est le <strong>stade</strong> de quatre documents à une date ; ce qu'il n'établit pas est leur <strong>contenu</strong>. Il s'ensuit qu'<strong>aucune exigence d'architecture</strong> — format d'accréditation, méthode de résolution, mécanisme de révocation — ne peut être dérivée de ce chapitre : le corpus du W3C y entre comme <strong>jalon de normalisation</strong>, non comme spécification lue. <em>La distinction n'est pas rhétorique : un dossier de diligence raisonnable qui citerait « la Recommandation W3C » à l'appui d'une exigence de conception s'appuierait sur un stade et non sur un texte.</em></p>
-
 <div class="avert">
   <p><strong>Un agenda hérité circule dans la somme, et il faut dire à quel titre.</strong> L'entrée héritée <strong>H-18 [C]</strong> porte l'agenda que le Vol. I dressait à son gel de juin 2026 — modèle de données 2.1 en recommandation candidate à l'horizon 2027, interfaces de cycle de vie en Recommandation en 2028, <code>did:webvh</code> v1.0, <em>Web Bot Auth</em>, seconde version du service de noms d'agents (ANS v2). ⚠ <strong>Ces échéances sont PROJETÉES</strong> : elles viennent d'un agenda dressé par un volume antérieur, <strong>sans engagement daté du W3C qui les porte</strong>. Un agenda est un <strong>repérage</strong> : il n'établit pas les échéances qu'il liste, et H-18 étant en <strong>[C]</strong>, aucune de ces dates ne porte ici de fait central.</p>
 </div>
-
 <h2 id="s132"><span class="sig">§ 13.2</span>Les profils d'interopérabilité : une lacune de couverture assumée</h2>
-
 <p>Le périmètre déclaré du lot d'instruction du Vol. III nommait trois sources : les recommandations datées du W3C, les chartes des groupes communautaires, et la <em>Decentralized Identity Foundation</em> (DIF). <strong>Le rapport ne porte aucune affirmation sur la DIF.</strong> La section s'écrit donc comme ce qu'elle est : <strong>une lacune de couverture, déclarée plutôt que comblée</strong>. Le socle ne documente pas les profils d'interopérabilité de la DIF — <strong>absence de documentation, non fait négatif vérifié</strong> (degré 3).</p>
-
 <p>Ce que le socle porte de la DIF vient d'un autre lot, dont le siège est le <strong>ch. 18</strong>, et ne concerne pas les profils d'interopérabilité. Deux entrées y touchent. La première établit que le sigle <strong>KYA</strong> désigne <strong>au moins deux objets distincts</strong>, chacun documenté par son éditeur : une spécification communautaire remise à la DIF, et un cadre commercial annoncé le 15 juin 2026 (Vol. III F-49, <strong>[B, degré 3]</strong>). La seconde établit qu'<strong>aucune des propositions consultées n'était ratifiée ni adoptée</strong> : la spécification remise à la DIF ne l'était pas au 22 juin 2026, et les deux <em>Internet-Drafts</em> consultés sur l'identité d'agent sont des soumissions individuelles non adoptées par un groupe de travail (Vol. III F-50, <strong>[B, degré 2]</strong>).</p>
-
 <div class="avert">
-  <p><strong>Ces deux entrées ne sont pas instruites ici</strong> : le <strong>ch. 18 § 18.1 est le siège unique du KYA</strong> pour toute la somme, et le présent § s'y borne à les nommer pour dire ce que la DIF porte <strong>et ne porte pas</strong> dans ce corpus. <em>Le sigle n'est ni défini ni employé ailleurs dans ce chapitre.</em></p>
+  <p><strong>Ces deux entrées ne sont pas instruites ici</strong> : le <strong>ch. 18 § 18.1 est le siège unique du KYA</strong> pour toute la somme, et le présent § se borne à les nommer pour dire ce que la DIF porte <strong>et ne porte pas</strong> dans ce corpus. <em>Le sigle n'est ni défini ni employé ailleurs dans ce chapitre.</em></p>
 </div>
-
 <p><strong>Un élément a été relevé et délibérément non converti en affirmation, et le motif est celui qui compte.</strong> Le <strong>cadre d'architecture du portefeuille européen d'identité numérique</strong> porte une matière directement pertinente pour une section consacrée aux profils d'interopérabilité. Le lot l'a écarté parce que <strong>la version et la date du document n'étaient attestées que par son adresse</strong>, le corps de la page n'en affichant aucune ; deux tentatives d'accès à ce corpus figurent parmi les échecs de source consignés. ⚠ <strong>Le document est nommé, sa substance ne l'est pas</strong> : ni l'objet de sa note, ni le sens de sa portée ne sont rapportés ici — les rapporter transmettrait ce que le lot a refusé de retenir, tandis que taire son identité rendrait inexécutable l'instruction qui doit le reprendre. <em>Un document dont la version n'est attestée que par son adresse est un document dont on ignore ce qu'on a lu.</em></p>
-
 <h2 id="s133"><span class="sig">§ 13.3</span>Les Community Groups agentiques du W3C</h2>
-
-<p>Le Vol. I avait identifié le signal : il recensait <strong>quatre</strong> groupes communautaires (<em>Community Groups</em>) agentiques, dont trois datés, et posait la règle qui gouverne cette section — <strong>un <em>Community Group</em> n'est pas un <em>Working Group</em> : il ne produit pas de Recommandation et n'engage aucun calendrier normatif</strong> (Vol. III H-20, <strong>[C]</strong>). Le tri prospectif qu'il y attache est double : l'existence des groupes est PROGRAMMÉE, leur conversion en standards demeure <strong>SPÉCULATIVE</strong>.</p>
-
-<div class="avert">
-  <p><strong>Les trois statuts de ce tri ne sont pas définis ici</strong> : leur siège est le <strong>ch. 49 § 49.0</strong>, et ce chapitre les emploie sans les re-poser.</p>
-</div>
-
+<p>Le Vol. I avait identifié le signal : il recensait <strong>quatre</strong> groupes communautaires (<em>Community Groups</em>) agentiques, dont trois datés, et posait la règle qui gouverne cette section — <strong>un <em>Community Group</em> n'est pas un <em>Working Group</em> : il ne produit pas de Recommandation et n'engage aucun calendrier normatif</strong> (Vol. III H-20, <strong>[C]</strong>). Le tri prospectif qu'il y attache est double : l'existence des groupes est PROGRAMMÉE, leur conversion en standards demeure <strong>SPÉCULATIVE</strong>. ⚠ <strong>Les trois statuts de ce tri ne sont pas définis ici</strong> : leur siège est le <strong>ch. 49 § 49.0</strong>, et ce chapitre les emploie sans les re-poser.</p>
 <p>Le lot du Vol. III a ouvert <strong>trois</strong> groupes sur pièce le 21 juillet 2026 : deux que le Vol. I portait, et un qu'il ne portait pas.</p>
-
-<p>Le premier, le groupe <strong>AI Agent Protocol</strong>, existe depuis le <strong>8 mai 2025</strong> — statut qui, selon les règles de publication du W3C, <strong>ne place ses travaux ni sur la voie des normes ni au rang de norme du W3C</strong> (Vol. III F-83, <strong>[B]</strong>), et la clause se répète à chaque mention plutôt que de se poser une fois en tête de section. Sa charte déclare comme objet, parmi d'autres, un modèle d'identité pour les agents d'IA, et sa page de participants affichait <strong>254 participants non-présidents</strong> au relevé.</p>
-
-<div class="avert">
-  <p><strong>Ce nombre est affiché par la plateforme du W3C</strong> : il compte des inscriptions individuelles, non des organisations contributrices ni une activité rédactionnelle — <strong>donnée auto-déclarée, non vérifiée indépendamment</strong>, attribuée à cette page à chaque occurrence. ⚠ <strong>Et il a bougé</strong> : la même page en affichait <strong>260</strong> au 28 juillet 2026, six de plus en sept jours, <strong>sans que la date du changement s'établisse au jour près</strong> (Vol. III F-83, re-daté au volet résiduel de G-1). <em>Un décompte d'inscrits n'est pas une mesure d'adoption ; c'est une mesure d'attention — et un compteur affiché n'est pas un fait stable.</em> ⚠ <strong>Aucun document produit par ce groupe n'a été ouvert.</strong></p>
-</div>
-
+<p>Le premier, le groupe <strong>AI Agent Protocol</strong>, existe depuis le <strong>8 mai 2025</strong> — statut qui, selon les règles de publication du W3C, <strong>ne place ses travaux ni sur la voie des normes ni au rang de norme du W3C</strong> (Vol. III F-83, <strong>[B]</strong>), et la clause se répète à chaque mention plutôt que de se poser une fois en tête de section. Sa charte déclare comme objet, parmi d'autres, un modèle d'identité pour les agents d'IA, et sa page de participants affichait <strong>254 participants non-présidents</strong> au relevé. ⚠ <strong>Ce nombre est affiché par la plateforme du W3C</strong> : il compte des inscriptions individuelles, non des organisations contributrices ni une activité rédactionnelle — <strong>donnée auto-déclarée, non vérifiée indépendamment</strong>, attribuée à cette page à chaque occurrence. ⚠ <strong>Et il a bougé</strong> : la même page en affichait <strong>260</strong> au 28 juillet 2026, six de plus en sept jours, <strong>sans que la date du changement s'établisse au jour près</strong> (Vol. III F-83, re-daté au volet résiduel de G-1). <em>Un décompte d'inscrits n'est pas une mesure d'adoption ; c'est une mesure d'attention — et un compteur affiché n'est pas un fait stable.</em> ⚠ <strong>Aucun document produit par ce groupe n'a été ouvert.</strong></p>
 <p>Le deuxième est celui qui touche le plus directement l'objet de la somme. Un groupe <strong>Agent Identity Registry Protocol</strong> — groupe communautaire, donc sans production de Recommandation ni calendrier normatif engagé — a été <strong>proposé le 22 avril 2026</strong>, et ses livrables annoncés comprennent <strong>une méthode DID et un format d'accréditation d'agent fondé sur les accréditations vérifiables</strong> (Vol. III F-30, <strong>[B]</strong>) ; <strong>aucun rapport ni brouillon n'était publié</strong> à la date de consultation (Vol. III F-50, <strong>[B, degré 2]</strong>) — et la page n'en portait <strong>toujours aucun au 28 juillet 2026</strong>, ni section de rapports, ni brouillon, ni spécification (Vol. III F-30, re-daté). <em>La distinction entre annoncé et publié est ici toute la matière : une charte énonce des intentions de production, non des documents constatés.</em></p>
-
 <p>Le troisième, le groupe <strong>Agent Trust Protocol</strong> — même statut, mêmes conséquences —, a été proposé le <strong>4 juin 2026</strong>, et sa page pose en constat d'ouverture, en langue originale : « Autonomous AI agents are being deployed at scale with no open standard governing how they prove identity, establish trust, or protect the privacy of the humans they represent ». ⚠ <strong>Source primaire ouverte hors socle</strong> : <strong>aucune entrée du socle ne documente ce groupe</strong> — balayage du PRD du Vol. III pour ce syntagme, zéro occurrence —, et l'énoncé n'est donc pas porté ici comme fait central. <em>Un groupe qui se constitue en déclarant l'absence de norme ouverte sur l'identité des agents est une pièce à verser au dossier du ch. 16 ; il n'est pas la norme qu'il appelle.</em></p>
-
 <p><strong>Trois bornes encadrent ce relevé, et aucune n'est facultative.</strong> <em>Premièrement</em>, le lot n'a mené <strong>aucun inventaire exhaustif</strong> des groupes communautaires du W3C : un groupe agentique supplémentaire a été repéré en résultat de recherche et <strong>n'a pas été ouvert</strong>. ⚠ <em>Il ne faut donc jamais écrire que les groupes communautaires agentiques du W3C sont au nombre de trois</em> — le relevé porte sur trois groupes <strong>lus</strong>, non sur la population des groupes existants. <em>Deuxièmement</em>, <strong>aucun document produit par ces groupes n'a été ouvert</strong> : ce que ces textes affirment de la liaison entre un agent et son organisation reste à instruire. <em>Troisièmement</em>, une affirmation portant sur les exigences de publication auxquelles les rapports de groupe communautaire sont soumis a été <strong>écartée au vote adversarial, deux réfutations sur trois</strong> ; le chapitre ne la reprend sous aucune forme.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> le socle établit qu'un groupe communautaire annonce, depuis le 22 avril 2026, deux livrables dont le vocabulaire recouvre <strong>deux des quatre pièces</strong> du passeport construit au ch. 16 : une méthode d'identifiant et un format d'accréditation (Vol. III F-30). <strong>Il n'établit ni que ces livrables existent, ni qu'ils convergent avec l'objet du ch. 16, ni qu'ils aboutiront.</strong> La convergence est donc <strong>lexicale et constatée</strong>, non technique et non normative. <em>Elle mérite d'être suivie ; elle ne fonde rien.</em></p>
-
 <h2 id="s134"><span class="sig">§ 13.4</span>Identité de charge et identité décentralisée : SPIFFE/SPIRE, DID, WIMSE</h2>
-
 <p>Deux familles de solutions se disputent l'ancrage de l'identité agentique <strong>sous</strong> le niveau applicatif, et le Vol. I les oppose en régime <strong>[C]</strong>.</p>
-
 <p>L'<strong>identité de charge de travail</strong> attribue à l'agent une identité d'exécution. SPIFFE et SPIRE délivrent un identifiant SPIFFE matérialisé par un justificatif à courte durée de vie, permettant une authentification mutuelle sans secret partagé — profil bien adapté aux agents éphémères que la découverte à l'exécution fait apparaître et disparaître (Vol. I <em>Monographie</em> §3.6.4, <strong>[C]</strong>). Ses limites, telles que le Vol. I les formule à son gel de juin 2026, tiennent à l'<strong>infrastructure dédiée</strong> qu'il exige et au <strong>coût de rotation</strong> des certificats. Le groupe de travail <strong>WIMSE</strong> de l'IETF cherche à généraliser l'identité de charge de travail à des environnements multi-systèmes, c'est-à-dire au <strong>franchissement de frontières</strong> que requiert l'interopérabilité agentique.</p>
-
 <div class="avert">
   <p><strong>Le socle <em>zero-trust</em> et le socle IAM pré-agentiques ne sont pas reconstruits ici</strong> : ils sont <strong>posés au ch. 3</strong> pour toute la somme, et ce chapitre s'y adosse. Ce qui appartient au présent § est l'<strong>articulation</strong> de deux familles d'ancrage, non le mécanisme de l'une ou de l'autre.</p>
 </div>
-
 <p>L'<strong>alternative décentralisée</strong> s'appuie sur les identifiants décentralisés du W3C, dont une méthode portée par un protocole de réseau agentique ancre l'identité dans le Web <strong>sans autorité centrale</strong>, avec authentification de requêtes signées (Vol. I <em>Monographie</em> §3.6.4, <strong>[C]</strong>). <em>Le compromis est celui, déjà connu, de la décentralisation contre la gouvernance</em> : un identifiant décentralisé supprime l'autorité centrale mais <strong>reporte sur l'écosystème la révocation et la mise à jour</strong>, là où un serveur d'identité de charge de travail les centralise au prix d'une infrastructure propre.</p>
-
 <div class="avert">
   <p><strong>Ce paragraphe entre en régime [C], et la conséquence se tire.</strong> La vérification du Vol. I porte sur ses <strong>références</strong>, non sur le contenu de ses affirmations : <strong>aucun énoncé de ce § n'est central</strong>, et l'élévation en [B] supposerait la lecture des sources primaires que le Vol. I cite.</p>
 </div>
-
 <p><strong>Ce que le socle propre du Vol. III ajoute, et qui recadre l'opposition.</strong> La spécification SPIFFE-ID énonce qu'un SVID est considéré valide <strong>s'il a été signé par une autorité du domaine de confiance de l'identité SPIFFE qu'il porte</strong> (Vol. III F-87, <strong>[B]</strong>). ⚠ <strong>L'énoncé est intra-domaine par construction</strong> : il ne dit rien de ce qu'une autorité d'un <strong>autre</strong> domaine devrait faire pour l'accepter. Et ce que cette spécification <strong>démontre</strong> est une vérification de signature dans un domaine de confiance ; <strong>elle n'énonce pas ce que cette vérification n'établit pas</strong> — absence de documentation, degré 3 (R-02 et R-14 du Vol. III).</p>
-
 <p>Du côté de l'IETF, le §3.4.11 du document d'architecture de WIMSE — <em>Internet-Draft</em> du 6 juillet 2026, expirant le 7 janvier 2027, de visée <em>Informational</em>, <strong>section d'architecture et non prescription protocolaire</strong> — énonce, <strong>du point de vue WIMSE</strong>, que les intermédiaires d'IA sont un cas particulier de charges de travail déléguées (Vol. III F-86, <strong>[B]</strong> ; établi au <strong>ch. 12 § 12.1</strong>, non rejoué ici, et <strong>reconduit sans changement</strong> au 28 juillet 2026).</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> les deux familles répondent à des questions différentes, et le chapitre le pose comme lecture et non comme résultat. <strong>Ce que le socle établit</strong> : le critère de validité d'un SVID, relatif à un domaine (Vol. III F-87) ; le stade des documents du W3C (Vol. III F-79 à F-82) ; l'opposition infrastructure-contre-écosystème telle que le Vol. I la formule en <strong>[C]</strong>. <strong>Ce qu'il n'établit pas</strong> : qu'une famille soit préférable à l'autre, ni qu'elles soient exclusives, ni qu'un déploiement documenté les combine. <em>L'identité de charge de travail répond à « d'où ceci s'exécute-t-il et dans quel domaine » ; l'identité décentralisée répond à « que puis-je présenter hors de ce domaine ». La question de l'admission inter-domaines, qui est celle du ch. 18, n'est traitée par aucune des deux.</em></p>
-
+<figure class="figure">
+  <img src="../figures/f-13-04-ancrages.svg" alt="Figure 13.4 — Deux familles qui se disputent l&#39;ancrage de l&#39;identité sous le niveau applicatif." />
+  <figcaption><strong>Figure 13.4</strong> — Deux familles qui se disputent l'ancrage de l'identité sous le niveau applicatif.</figcaption>
+</figure>
 <h2 id="s135"><span class="sig">§ 13.5</span>Le fossé d'adoption : qui vérifie quoi, en production, à date</h2>
-
 <p>La thèse du chapitre porte sur une adoption « à démontrer ». L'énoncé qui la soutient est un énoncé <strong>sur l'état de la documentation</strong>, et il s'écrit au troisième degré d'absence : <strong>le corpus consulté le 21 juillet 2026 ne documente aucun établissement financier réglementé, nommément désigné, exploitant en production des accréditations vérifiables du W3C ou des identifiants décentralisés.</strong> C'est une <strong>absence de documentation, non un fait négatif vérifié</strong> — et elle <strong>ne soutient en aucun cas</strong> l'énoncé « aucune banque n'emploie ces mécanismes » (R-14 du Vol. III). ⚠ Le lot a par ailleurs <strong>refusé de combler ce vide par un billet d'éditeur</strong>, conformément à la règle du dépôt : <em>une lacune déclarée ne se comble pas par une source de moindre qualité.</em></p>
-
 <p><strong>Une illustration, et elle est présentée comme telle.</strong> Le rapport d'interopérabilité du modèle de données v2.0, publié sur le dépôt du groupe de travail du W3C, énumère <strong>dix implémentations</strong>, dont aucun intitulé ne porte la dénomination d'une banque, d'un assureur ou d'une infrastructure de marché financier (Vol. III F-31, <strong>[C, degré 1]</strong>). ⚠ <strong>Cette entrée est en [C]</strong> : elle ne porte pas le propos de la section. Ses <strong>deux bornes sont plus instructives que son résultat</strong>. D'une part, le relevé porte sur des <strong>intitulés</strong>, non sur la nature des organisations : une implémentation peut être exploitée pour le compte d'un établissement financier sans figurer sous son nom. D'autre part, une suite de tests ne recense que ses <strong>participants volontaires</strong> — <em>elle mesure qui a bien voulu se soumettre à une épreuve d'interopérabilité publique, pas qui déploie.</em></p>
-
 <div class="avert">
   <p><strong>Sa date, elle, a changé, et le changement enseigne plus que le chapitre.</strong> L'entrée portait un rapport daté du <strong>19 juillet 2026</strong> ; le document consulté le 28 juillet suivant porte en tête <strong>26 juillet 2026</strong>. <strong>Le fait négatif tient intégralement</strong> — dix implémentations, aucun intitulé financier, degré et niveau inchangés : <em>la portée du changement est la date seule.</em> ⚠ <strong>Et cette date n'est pas une date de publication</strong> : le rapport est <strong>régénéré à chaque exécution de la suite de tests</strong>, de sorte que toute date portée sur lui sera périmée à l'exécution suivante <strong>sans qu'aucun fait ait changé</strong>. <em>Un horodatage d'exécution cité comme une date de publication est une péremption que rien ne signale</em> — le chapitre n'en porte donc plus aucune.</p>
 </div>
-
 <p><strong>Un contrepoint existe, et il vient d'un champ voisin.</strong> Le cadre de gouvernance de l'écosystème vLEI de la GLEIF, dans sa version du <strong>25 mars 2026</strong>, désigne son socle technique par « Technical Requirements Part 1: KERI Infrastructure » et déclare avoir été construit en conformité avec les normes et recommandations de la <em>Trust over IP Foundation</em> (Vol. III F-32, <strong>[B]</strong>). ⚠ <strong>Borne explicite</strong> : le fait porte sur <strong>les intitulés des documents contrôlés et sur la phrase de filiation</strong>, tels qu'affichés sur la page consultée. <em>Il ne s'ensuit pas que le vLEI exclue le modèle du W3C</em> : le contenu de la seconde partie des exigences techniques n'a pas été ouvert, et <strong>un intitulé n'est pas un contenu</strong>. ☑ <strong>Reporté à sa source le 28 juillet 2026, le cadre ne porte aucune version postérieure au 25 mars 2026</strong> (Vol. III F-32).</p>
-
 <p>La <em>Bank of Japan Review</em> <strong>2026-E-6</strong>, du <strong>10 avril 2026</strong>, figure au dossier, et il faut dire à quel titre exactement. ⚠ <strong>Elle n'est portée par aucune entrée du socle</strong> : seule sa page de présentation a pu être lue, son texte intégral n'ayant pas pu être extrait. Cette page situe l'emploi des accréditations vérifiables en finance <strong>au registre de l'exploration</strong> ; <strong>la qualification n'est donc pas portée ici comme fait</strong>, et l'affirmation n'est pas centrale. ⚠ <strong>L'attributeur est nommé plutôt qu'abrégé en « une revue de banque centrale »</strong> : la parade de péremption couvre les dénominations commerciales et les versions, <strong>jamais l'attributeur d'une affirmation</strong> (décision 15 du TOC). La revue porte enfin la réserve d'usage de son éditeur, en langue originale : « Views expressed are those of the author(s) and do not necessarily reflect those of the Bank. »</p>
-
 <div class="avert">
   <p><strong>Six échecs de source bornent ce chapitre autant que ses résultats</strong>, et ils sont exposés au même titre : la fiche de la norme <strong>ISO 17442-3</strong> relative au vLEI, inaccessible ; le glossaire du cadre de gouvernance vLEI, introuvable ; deux accès au <strong>cadre d'architecture du portefeuille européen d'identité numérique</strong>, l'un introuvable et l'autre redirigé hors de son hôte ; le texte intégral de la <em>Bank of Japan Review</em> 2026-E-6, récupéré mais non extractible ; une section du processus des groupes communautaires du W3C, consultée sans que la phrase recherchée soit restituée. <em>Chacun retire quelque chose au chapitre.</em> ⚠ <strong>Les identifiants sont portés parce qu'ils conditionnent la reprise</strong> : <em>un échec de source dont on tait l'identité rend inexécutable l'instruction qui doit le solder</em> (décision 15 du TOC). L'existence d'une norme ISO relative au vLEI, en particulier, n'est établie que par une <strong>source secondaire</strong> — la revue ci-dessus, qui en porte le numéro — et <strong>n'a pas été retenue comme affirmation</strong> : le numéro figure ici comme <strong>identifiant d'une source à instruire</strong>, jamais comme fait.</p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> ce que le socle établit est un <strong>écart entre deux registres</strong> : d'un côté, quatre documents du W3C dont deux portent le stade de Recommandation depuis 2022 et 2025 (Vol. III F-79, F-81) ; de l'autre, un relevé d'implémentations où aucun intitulé financier n'apparaît (Vol. III F-31, <strong>[C]</strong>) et un corpus qui ne documente aucun déploiement en production nommément désigné. <strong>Ce que le socle n'établit pas, c'est la cause de cet écart</strong> — ni immaturité des spécifications, ni prudence réglementaire, ni discrétion des exploitants ne peuvent être invoquées, aucune n'étant documentée. La seule construction retenue est <strong>comparative</strong>, et elle tient au contrepoint du vLEI : là où un écosystème financier a effectivement produit un dispositif d'accréditation opérant, ce qu'il a ajouté au vocabulaire technique est un <strong>cadre de gouvernance nommé, versionné et adossé à une filiation déclarée</strong> (Vol. III F-32). <em>L'hypothèse que la pièce manquante côté agentique soit institutionnelle plutôt que lexicale demeure une hypothèse, et le socle ne la démontre pas.</em></p>
-
 <div class="avert">
-  <p><strong>Cette hypothèse a un siège, et ce n'est pas ici.</strong> Elle est instruite au <strong>ch. 18 § 18.3</strong>, sur trois précédents de fédération, et le §7.4.3 du Vol. I qui la nourrit est <strong>partagé déclaré</strong> entre ce chapitre et le ch. 18. Le présent § en prend le versant <strong>adoption</strong> ; le ch. 18 en prend le versant <strong><em>trust fabric</strong></em>. <em>Le partage est écrit à la table de couverture du TOC, et ni l'un ni l'autre ne reconstruit la moitié de l'autre.</em></p>
+  <p><strong>Cette hypothèse a un siège, et ce n'est pas ici.</strong> Elle est instruite au <strong>ch. 18 § 18.3</strong>, sur trois précédents de fédération, et le §7.4.3 du Vol. I qui la nourrit est <strong>partagé déclaré</strong> entre ce chapitre et le ch. 18. Le présent § en prend le versant <strong>adoption</strong> ; le ch. 18 en prend le versant <strong><em>trust fabric</em></strong>. <em>Le partage est écrit à la table de couverture du TOC, et ni l'un ni l'autre ne reconstruit la moitié de l'autre.</em></p>
 </div>
-
 <h3>Synthèse : ce que le chapitre lègue à la somme</h3>
-
 <p><em>Section de sortie sans homologue direct dans la source — construction d'éditeur.</em></p>
-
-<ol class="numeros">
-  <li><strong>Le lexique du passeport, et sa borne.</strong> Les mots — accréditation vérifiable, identifiant décentralisé, méthode, résolution — viennent d'ici ; <strong>leur contenu technique n'y est pas établi</strong>. Le <strong>ch. 16</strong> assemble l'objet avec ce vocabulaire et <strong>sans</strong> ce contenu, et il le dit.</li>
-  <li><strong>Le stade n'est pas l'adoption.</strong> Deux Recommandations et zéro déploiement financier nommément documenté coexistent sans contradiction. Les <strong>ch. 15 et 18</strong> rencontrent la même dissociation sur d'autres corpus ; elle est posée ici une fois.</li>
-  <li><strong>Ce qu'un groupe communautaire n'est pas.</strong> Ni voie des normes, ni Recommandation, ni calendrier engagé. Les <strong>ch. 16 § 16.4</strong> et <strong>ch. 18 § 18.1</strong> citent des groupes communautaires ; ils n'auront pas à re-poser la clause.</li>
-  <li><strong>Le contrepoint institutionnel du vLEI.</strong> Un cadre de gouvernance publié, versionné, à filiation déclarée, produit hors du champ agentique. Le <strong>ch. 18 § 18.3</strong> en fait l'un de ses trois précédents ; le présent chapitre l'introduit comme <strong>matière de comparaison</strong>, jamais comme transposition.</li>
+<ol type="1">
+<li><strong>Le lexique du passeport, et sa borne.</strong> Les mots — accréditation vérifiable, identifiant décentralisé, méthode, résolution — viennent d'ici ; <strong>leur contenu technique n'y est pas établi</strong>. Le <strong>ch. 16</strong> assemble l'objet avec ce vocabulaire et <strong>sans</strong> ce contenu, et il le dit.</li>
+<li><strong>Le stade n'est pas l'adoption.</strong> Deux Recommandations et zéro déploiement financier nommément documenté coexistent sans contradiction. Les <strong>ch. 15 et 18</strong> rencontrent la même dissociation sur d'autres corpus ; elle est posée ici une fois.</li>
+<li><strong>Ce qu'un groupe communautaire n'est pas.</strong> Ni voie des normes, ni Recommandation, ni calendrier engagé. Les <strong>ch. 16 § 16.4</strong> et <strong>ch. 18 § 18.1</strong> citent des groupes communautaires ; ils n'auront pas à re-poser la clause.</li>
+<li><strong>Le contrepoint institutionnel du vLEI.</strong> Un cadre de gouvernance publié, versionné, à filiation déclarée, produit hors du champ agentique. Le <strong>ch. 18 § 18.3</strong> en fait l'un de ses trois précédents ; le présent chapitre l'introduit comme <strong>matière de comparaison</strong>, jamais comme transposition.</li>
 </ol>
+<hr />
+<figure class="figure">
+  <img src="../figures/f-13-05-fosse-adoption.svg" alt="Figure 13.5 — Le fossé d&#39;adoption : ce que le corpus documente, et à quel degré d&#39;absence." />
+  <figcaption><strong>Figure 13.5</strong> — Le fossé d'adoption : ce que le corpus documente, et à quel degré d'absence.</figcaption>
+</figure>
 
 <footer class="pied">
   <p><strong>Vol. IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em></strong> · Livre II, chapitre 13. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau, M.Sc. IT.</p>

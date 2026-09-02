@@ -58,6 +58,7 @@ CH09 = "Livre I/09-decouverte-registres-pile.md"
 CH11 = "Livre I/11-modes-echec-risques-protocolaires.md"
 CH26 = "Livre III/26-vide-federal-c27-c36.md"
 CH28 = "Livre III/28-valeurs-mobilieres-acvm-11-348.md"
+CH21 = "Livre II/21-horloge-post-quantique.md"
 CH42 = "Livre IV/42-matrice-protocoles-exigences.md"
 CH46 = "Livre IV/46-instrumentation-feuille-route.md"
 REGISTRE = "PRD/registre-gel.md"
@@ -177,6 +178,44 @@ def m3_identifiants_nus(tmp):
     pas quand la matière bouge ne mesure rien.
     """
     inserer(tmp / CH42, "\n\nLes entrées F-77 et H-31 corroborent ce point sans le porter.\n")
+
+
+def m3b_piece_non_mixte(tmp):
+    """P3 — un identifiant nu dans une pièce qui ne cite QU'UN seul socle.
+
+    ⚠ Cette mutation éprouve la **garde** de P3, non son décompte, et elle
+    attend un cardinal **inchangé**. Le ch. 21 ne cite, dans son corps, que le
+    Vol. III : un `F-xx` nu n'y est pas indécidable, une seule série étant en
+    jeu. La garde antérieure — `"Vol. II" in b` — était vraie par PRÉFIXE dès
+    que « Vol. III » l'était, et rangeait cette pièce parmi les mixtes : le
+    rapport y comptait 104 emplois qui n'avaient pas à y être.
+    *Sans cette mutation, la garde peut redevenir fautive sans que rien ne le
+    dise — c'est exactement ce qui s'est produit entre G-3 et le 2 septembre 2026.*
+    """
+    inserer(tmp / CH21, "\n\nLe relevé F-77 corrobore la datation sans la porter.\n")
+
+
+def m9_remontee_dupliquee(tmp):
+    """P9 — le même numéro de remontée ouvert par deux pièces (PRD §13).
+
+    `R-IV-42` est ouverte par le ch. 38. La rouvrir ailleurs reproduit
+    exactement l'incident du 27 juillet 2026, où deux passes parallèles ont pris
+    **dix numéros deux fois** faute d'allocateur.
+    """
+    inserer(tmp / CH46, "\n\n- **R-IV-42 — non bloquante, de cardinal.** Ouverture concurrente.\n")
+
+
+def m9b_cloture_du_meme_numero(tmp):
+    """P9 — *ne doit pas voir* : une CLÔTURE n'est pas une ouverture.
+
+    ⚠ C'est la mutation qui protège le contrôle de son propre bruit. Les
+    cinquante pièces closent leurs remontées dans une seconde liste, **de la
+    même forme** que la première, et citent celles des autres pièces. Un
+    contrôle qui compterait ces lignes pour des ouvertures signalerait une
+    collision à chaque clôture — *et un contrôle qui crie à chaque page est un
+    contrôle qu'on désarme.*
+    """
+    inserer(tmp / CH46, "\n\n- **R-IV-42 — close par réalignement de la thèse.** Voir le ch. 38.\n")
 
 
 def m4_identifiant_de_socle_inconnu(tmp):
@@ -333,6 +372,55 @@ def m7e_mention_metalinguistique(tmp):
 #   « echec »   — l'étiquette doit apparaître dans un échec NEUF ;
 #   « rapport » — le cardinal du rapport déclaratif doit CROÎTRE ;
 #   « muet »    — la mutation ne doit produire AUCUN échec neuf.
+
+def _table(cellule):
+    """Un tableau minimal, inséré au corps — hors de tout champ d'en-tête.
+
+    ⚠ Les trois mutations de P10 sont d'abord passées par la rangée « Statut »
+    de l'en-tête : **P1 les voyait avant P10**, et la garde « ne doit pas voir »
+    échouait sur un défaut qu'elle n'introduisait pas. *Une mutation n'introduit
+    que sa classe, sinon elle mesure le voisin.*
+    """
+    return """
+
+| Objet | Constat |
+|---|---|
+| une rangee | CELLULE |
+
+""".replace("CELLULE", cellule)
+
+
+def m10_colonne_surnumeraire(tmp):
+    """P10 — une rangée porte une colonne vide de plus que son séparateur.
+
+    C'est le défaut trouvé le 2 septembre 2026 au §1 du PRD et au bandeau du
+    TOC : une rangée finissant par « | | ». *Pandoc l'absorbe ; GFM ouvre une
+    troisième colonne et décale la rangée* — et le dépôt se lit sur GitHub
+    autant qu'il se compose.
+    """
+    inserer(tmp / CH01, _table("un constat | "))
+
+
+def m10b_pipe_dans_un_span_de_code(tmp):
+    """P10 — un pipe littéral non échappé dans un span de code.
+
+    Le défaut de l'en-tête du ch. 49 : `2030|2035|post-quantique|IR 8547`. Le
+    span protège le pipe du rendu, **pas de la table** — GFM découpe la rangée
+    avant d'avoir lu le code.
+    """
+    inserer(tmp / CH01, _table("un motif `a|b`"))
+
+
+def m10c_pipe_echappe_legitime(tmp):
+    r"""P10 — *ne doit pas voir* : un pipe échappé est la forme CORRECTE.
+
+    ⚠ La garde du contrôle. Un P10 qui compterait « \| » signalerait la seule
+    écriture qui rend un pipe littéral sans casser la rangée, et rendrait le
+    contrôle impossible à satisfaire.
+    """
+    inserer(tmp / CH01, _table(r"un motif `a\|b`"))
+
+
 MUTATIONS = [
     ("M8  P8 — le TOC cite un identifiant que l'Annexe B ne connaît pas",
      m8_toc_identifiant_pendant, "[P8]", "echec"),
@@ -352,6 +440,15 @@ MUTATIONS = [
     ("M7c P7 — jalon NIST « fixé »", m7c_jalon_fixe, "[P7]", "echec"),
     ("M7d P7 — MCP « sécurisé »", m7d_mcp_securise, "[P7]", "echec"),
     ("M7e P7 — mention métalinguistique légitime", m7e_mention_metalinguistique, "[P7]", "muet"),
+    ("M3b P3 — pièce non mixte (garde à frontière)", m3b_piece_non_mixte, "[P3", "rapport-stable"),
+    ("M9  P9 — un numéro de remontée ouvert deux fois", m9_remontee_dupliquee, "[P9]", "echec"),
+    ("M9b P9 — une CLÔTURE cite le même numéro", m9b_cloture_du_meme_numero, "[P9]", "muet"),
+    ("M10  P10 — colonne vide surnuméraire en fin de rangée",
+     m10_colonne_surnumeraire, "[P10]", "echec"),
+    ("M10b P10 — pipe littéral dans un span de code",
+     m10b_pipe_dans_un_span_de_code, "[P10]", "echec"),
+    ("M10c P10 — un pipe ÉCHAPPÉ est la forme correcte",
+     m10c_pipe_echappe_legitime, "[P10]", "muet"),
 ]
 
 
@@ -381,6 +478,15 @@ def main():
             if genre == "rapport":
                 vu = compte_rapport(sortie, attendu + " — DÉCLARATIF") > base_p3
                 verdict = "cardinal en hausse" if vu else "cardinal inchangé"
+            elif genre == "rapport-stable":
+                # Le pendant du « muet » pour un rapport : la matière bouge, le
+                # cardinal ne doit PAS bouger. C'est ainsi qu'une GARDE s'éprouve —
+                # un rapport dont le cardinal monte à chaque insertion, où qu'elle
+                # tombe, ne mesure pas un domaine, il compte des motifs.
+                mesure = compte_rapport(sortie, attendu + " — DÉCLARATIF")
+                vu = mesure == base_p3 and not neufs
+                verdict = ("cardinal inchangé (attendu)" if mesure == base_p3
+                           else f"cardinal passé de {base_p3} à {mesure}")
             elif genre == "muet":
                 vu = not neufs
                 verdict = "aucun échec neuf" if vu else f"échec indu : {neufs[0][:70]}"

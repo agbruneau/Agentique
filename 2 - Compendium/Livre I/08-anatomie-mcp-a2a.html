@@ -443,6 +443,17 @@ tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
 tbody td:first-child { color: var(--texte); font-weight: 600; }
 .legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
 
+/* -------------------------------------------------------------- figures */
+/* Les SVG du volume sont dessinés pour le PDF, donc sur fond clair, et ils
+   portent ce fond eux-mêmes — sans quoi il faudrait maintenir deux variantes
+   de chaque figure. Sur ce thème sombre, ils se posent donc comme un carton ;
+   le padding empêche le fond de la figure de toucher le bord du cadre. */
+.figure { margin: 2.1rem 0 1.9rem; }
+.figure img { display: block; width: 100%; height: auto; border-radius: 7px;
+              border: 1px solid var(--trait); background: #fdfbf9; padding: 0.6rem; }
+.figure figcaption { font-size: 0.8rem; font-style: italic; color: var(--texte-faible);
+                     margin-top: 0.65rem; padding-left: 0.15rem; }
+
 /* --------------------------------------------------------------- listes */
 ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
 ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
@@ -535,7 +546,7 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
     <li><a href="#s82"><span class="num">8.2</span>Jalons datés, autorisation et sémantique des résultats</a></li>
     <li><a href="#s83"><span class="num">8.3</span>Conformité, registre, dépréciation et gouvernance</a></li>
     <li><a href="#s84"><span class="num">8.4</span>A2A v1.0 : la délégation entre pairs</a></li>
-    <li><a href="#s85"><span class="num">8.5</span>L&#x27;ACP protocolaire, l&#x27;alternative décentralisée et l&#x27;état de la standardisation</a></li>
+    <li><a href="#s85"><span class="num">8.5</span>L'ACP protocolaire, l'alternative décentralisée et l'état de la standardisation</a></li>
     <li><a href="#s86"><span class="num">8.6</span>La frontière : une complémentarité déclarée, et par qui</a></li>
     <li><a href="#s87"><span class="num">8.7</span>Les intégrations infonuagiques : lire le statut, pas la présence</a></li>
   </ol>
@@ -556,428 +567,389 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 
 <!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
      Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
-     que `build/assemble.py` pour le PDF. L'appareil de gouvernance vit au .md jumeau, qui reste la
-     seule source, et `verifier-piece.py` [6] refuse désormais un rendu qui le recopierait. -->
+     que `build/assemble.py` pour le PDF et que `PRD/decompte.sh` pour la volumétrie. L'appareil de
+     gouvernance vit au .md jumeau, qui reste la seule source, et `build/verifier-piece.py` refuse
+     un rendu qui le recopierait. -->
 
 <h2 id="s81"><span class="sig">§ 8.1</span>MCP comme couche de contrat : problème N×M, primitives, transports</h2>
-
 <h3>8.1.1 Le problème N×M et la critique du slogan</h3>
-
 <p>Ce que le protocole agent-outil standardise <strong>n'est pas l'appel d'outil en lui-même</strong> — la façon dont un modèle émet une invocation relève de l'ingénierie et a été traitée au ch. 4 § 4.4 — mais le <strong>contrat</strong> entre un client, hébergé par l'hôte agentique, et un serveur, exposé par un fournisseur de capacités.</p>
-
 <p>Le problème traité est combinatoire et <strong>familier de l'intégration d'entreprise</strong> (ch. 1 § 1.3.1) : faire dialoguer <em>N</em> agents avec <em>M</em> outils sans standard impose <em>N</em>×<em>M</em> intégrations point-à-point ; une couche de contrat partagée ramène ce coût à <em>N</em>+<em>M</em>. C'est exactement le geste du modèle de données canonique (ch. 1 § 1.6.1), transposé à l'axe agent-outil — et il vaut d'être reconnu comme tel plutôt que présenté comme une nouveauté.</p>
-
 <div class="avert">
   <p><strong>Le slogan promotionnel d'un « port universel de l'IA » capture l'ambition, mais reste un objet de critique légitime, et la critique est précise.</strong> Un port universel <strong>négocie électriquement ses modes</strong> ; ce protocole, lui, <strong>ne porte pas de couche riche de négociation de capacités ni de confiance établie</strong> entre les parties. L'appariement est conforme <strong>au transport et au schéma, non au sens</strong> : un client peut se brancher sur un serveur <strong>sans qu'aucun mécanisme ne garantisse que l'intention de l'agent corresponde au comportement réel de l'outil</strong>.</p>
 </div>
-
 <p><em>Le contrat est donc réel mais étroit : il fixe la forme de l'échange, pas son interprétation.</em> C'est le verrou que le ch. 9 § 9.4 prend pour objet, et la première illustration concrète de la thèse du ch. 2 — les protocoles agentiques <strong>présupposent</strong> l'accord sémantique et ne le fournissent pas.</p>
-
+<figure class="figure">
+  <img src="../figures/f-08-01-n-fois-m.svg" alt="Figure 8.1 — La réduction de N×M à N+M par une couche de contrat, et les trois choses que cette couche ne porte pas." />
+  <figcaption><strong>Figure 8.1</strong> — La réduction de N×M à N+M par une couche de contrat, et les trois choses que cette couche ne porte pas.</figcaption>
+</figure>
 <h3>8.1.2 Architecture et primitives, sous l'angle de la bidirectionnalité négociée</h3>
-
 <p>L'architecture repose sur un triangle <strong>hôte / client / serveur</strong> communiquant par appels de procédure en JSON : l'hôte instancie <strong>un client par serveur connecté</strong>, et chaque serveur expose ses capacités.</p>
-
 <p>L'apport propre à l'analyse d'interopérabilité tient moins à l'inventaire des primitives — outils, ressources, gabarits d'invite, déjà décrits au ch. 4 § 4.4 — qu'à la <strong>grille de contrôle</strong> qui les distingue :</p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Primitive</th><th>Contrôlée par</th><th>Ce que cela prescrit</th></tr></thead>
-  <tbody>
-    <tr><td><strong>Outils</strong></td><td>le <strong>modèle</strong></td><td>c'est le modèle qui décide de les invoquer</td></tr>
-    <tr><td><strong>Ressources</strong></td><td>l'<strong>application</strong></td><td>l'hôte décide quel contexte injecter</td></tr>
-    <tr><td><strong>Gabarits d'invite</strong></td><td>l'<strong>utilisateur</strong></td><td>déclenchement explicite</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Primitive</th>
+<th>Contrôlée par</th>
+<th>Ce que cela prescrit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Outils</strong></td>
+<td>le <strong>modèle</strong></td>
+<td>c'est le modèle qui décide de les invoquer</td>
+</tr>
+<tr>
+<td><strong>Ressources</strong></td>
+<td>l'<strong>application</strong></td>
+<td>l'hôte décide quel contexte injecter</td>
+</tr>
+<tr>
+<td><strong>Gabarits d'invite</strong></td>
+<td>l'<strong>utilisateur</strong></td>
+<td>déclenchement explicite</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 8.1 — La répartition du contrôle entre primitives : une clause du contrat, non un détail d'implémentation.</p>
-
 <div class="avert">
   <p><strong>Cette répartition est elle-même une clause du contrat</strong> : elle prescrit <strong>qui, dans la chaîne, est autorisé à mettre une primitive en mouvement</strong>. La lire comme un simple classement fonctionnel fait manquer ce qu'elle porte de gouvernance.</p>
 </div>
-
 <p>Le trait le plus distinctif au regard d'une API REST classique est l'existence de <strong>primitives client</strong>, qui <strong>inversent le sens du dialogue</strong> :</p>
-
-<ul class="puces">
-  <li>l'<strong>échantillonnage</strong> — le serveur peut demander à l'hôte une complétion du modèle ;</li>
-  <li>la <strong>sollicitation</strong> — le serveur peut demander une information structurée manquante, en cours d'exécution ;</li>
-  <li>les <strong>racines</strong> — l'hôte délimite le périmètre de système de fichiers accessible.</li>
+<ul>
+<li>l'<strong>échantillonnage</strong> — le serveur peut demander à l'hôte une complétion du modèle ;</li>
+<li>la <strong>sollicitation</strong> — le serveur peut demander une information structurée manquante, en cours d'exécution ;</li>
+<li>les <strong>racines</strong> — l'hôte délimite le périmètre de système de fichiers accessible.</li>
 </ul>
-
 <p>Ces canaux instaurent une interopérabilité <strong>négociée et interactive, bidirectionnelle</strong>, absente du modèle requête-réponse unidirectionnel. <em>Le contrat n'est plus un appel et son retour, mais un échange où le serveur peut, à son tour, interroger l'hôte.</em></p>
-
 <p>☑ ⚠ <strong>Revalidation du 30 juillet 2026 — et c'est ici que la révision <code>2026-07-28</code> mord le plus fort.</strong> La description ci-dessus est celle de la révision <strong>2025-11-25</strong>, et elle reste exacte pour elle. Le texte neuf, lu à sa source, <strong>retire le mécanisme et déprécie deux des trois primitives</strong> : <em>(1)</em> les <strong>racines</strong> et l'<strong>échantillonnage</strong> passent à l'état <strong>déprécié</strong> — avec la <strong>journalisation</strong> —, la spécification recommandant de leur substituer, respectivement, le passage des répertoires par paramètres d'outil ou URI de ressource, et l'intégration directe aux interfaces des fournisseurs de modèles ; <em>(2)</em> le <strong>mécanisme</strong> de requête serveur-vers-client est remplacé par le patron des <strong>requêtes à tours multiples</strong> (<em>Multi Round-Trip Requests</em>, MRTR) : le serveur ne lance plus une requête à l'hôte, il <strong>renvoie un résultat typé <code>input_required</code></strong> portant ses demandes, et le client <strong>rejoue la requête d'origine</strong> en y joignant ses réponses.</p>
-
 <div class="avert">
   <p><strong>Le renversement que ce paragraphe analysait n'est pas annulé — il change de forme, et la nuance est le résultat de la revalidation.</strong> L'appelé peut toujours exiger de l'appelant une information qu'il n'avait pas ; mais il l'exige désormais <strong>par la valeur de retour et non par un appel entrant</strong>, ce qui rétablit un flux à sens unique au niveau du transport tout en conservant la négociation au niveau du contrat. <em>Le protocole de conversation subsiste ; il cesse d'être un protocole à deux appelants.</em> ⚠ <strong>La sollicitation, elle, n'est pas dépréciée</strong> : elle passe sous MRTR, et sa notification de complétion — introduite en 2025-11-25 — est <strong>retirée</strong>.</p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> c'est le premier endroit de la somme où un contrat d'interface autorise explicitement l'appelé à solliciter l'appelant. Le ch. 1 § 1.1.3 posait le contrat comme publication de ce qu'un système offre et exige ; ici, il devient un <strong>protocole de conversation</strong>. Le socle établit l'existence des trois primitives client et la direction de leur appel ; il <strong>n'établit ni cette lecture, ni le caractère inédit qu'elle prête à ce renversement</strong> dans l'histoire des contrats d'interface. Elle est proposée comme telle. ⚠ <strong>Et la lecture survit à la revalidation sous une forme bornée</strong> : <em>ce que la révision <code>2026-07-28</code> montre, c'est qu'un renversement de sens d'appel est une propriété coûteuse qu'un standard peut choisir de rendre à l'état de résultat typé</em> — la bidirectionnalité était un choix, non une nécessité de la couche agentique.</p>
-
 <h3>8.1.3 Transports : une trajectoire du couplage vers le découplage</h3>
-
 <p>L'histoire des transports <strong>se lit comme une décroissance progressive du couplage</strong>, et c'est l'illustration la plus nette de l'invariant du Livre dans tout le mouvement.</p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Étape</th><th>Mécanisme</th><th>Couplage résiduel</th></tr></thead>
-  <tbody>
-    <tr><td><strong>Entrée-sortie standard</strong></td><td>le serveur est un sous-processus local de l'hôte</td><td><strong>fort</strong> — cycle de vie et machine partagés</td></tr>
-    <tr><td><strong>HTTP à deux points d'accès</strong></td><td>un point pour les requêtes, un pour le flux d'événements</td><td>déprécié dès la révision suivante</td></tr>
-    <tr><td><strong>HTTP diffusable à point unique</strong></td><td>un seul point d'accès</td><td><strong>résiduel</strong> — un identifiant de session épingle un client à une instance</td></tr>
-    <tr><td><strong>Cœur sans état</strong> <em>(ratifié le 28 juill. 2026)</em></td><td>suppression de la poignée de main, de l'identifiant de session et de la reprise de flux</td><td><strong>aucun</strong> — serveur déployable derrière un répartiteur à tourniquet</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Étape</th>
+<th>Mécanisme</th>
+<th>Couplage résiduel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Entrée-sortie standard</strong></td>
+<td>le serveur est un sous-processus local de l'hôte</td>
+<td><strong>fort</strong> — cycle de vie et machine partagés</td>
+</tr>
+<tr>
+<td><strong>HTTP à deux points d'accès</strong></td>
+<td>un point pour les requêtes, un pour le flux d'événements</td>
+<td>déprécié dès la révision suivante</td>
+</tr>
+<tr>
+<td><strong>HTTP diffusable à point unique</strong></td>
+<td>un seul point d'accès</td>
+<td><strong>résiduel</strong> — un identifiant de session épingle un client à une instance</td>
+</tr>
+<tr>
+<td><strong>Cœur sans état</strong> <em>(ratifié le 28 juill. 2026)</em></td>
+<td>suppression de la poignée de main, de l'identifiant de session et de la reprise de flux</td>
+<td><strong>aucun</strong> — serveur déployable derrière un répartiteur à tourniquet</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 8.2 — La trajectoire des transports : quatre étapes, un couplage qui décroît jusqu'à l'absence d'état partagé.</p>
-
 <p>☑ ⚠ <strong>Revalidation du 30 juillet 2026 : la dernière étape n'est plus une cible, elle est le contrat.</strong> Trois termes du texte neuf, lus à sa source. <em>(1)</em> Les <strong>sessions de protocole</strong> et l'en-tête qui les portait disparaissent du transport diffusable ; l'état qu'un serveur doit conserver d'un appel à l'autre passe par des <strong>poignées explicites, frappées par le serveur et transmises comme arguments d'outil ordinaires</strong>. <em>(2)</em> La <strong>poignée de main d'initialisation</strong> disparaît : chaque requête porte désormais sa version de protocole et les capacités du client dans ses métadonnées, et une méthode de <strong>découverte</strong> permet la sélection de version en amont. <em>(3)</em> ⚠ <strong>Le découplage se paie, et le prix n'était pas au tableau</strong> : la <strong>reprise de flux et la retransmission de messages sont retirées</strong> — un flux de réponse interrompu <strong>perd la requête en vol</strong>, que le client doit réémettre sous un identifiant neuf.</p>
-
 <div class="avert">
   <p><strong>C'est le fait le plus instructif de la revalidation, et il corrige la lecture d'origine.</strong> Le tableau lisait la trajectoire comme une décroissance monotone du couplage ; la révision montre que <em>la dernière marche échange un couplage d'infrastructure contre une obligation de réémission côté client</em>. <strong>Le couplage ne disparaît pas davantage ici qu'ailleurs : il se déplace vers l'appelant</strong> — exactement ce que le ch. 1 § 1.3 énonce, et que ce chapitre croyait pour une fois pouvoir écarter. L'<strong>HTTP à deux points d'accès</strong>, déprécié depuis 2025-03-26, est en outre <strong>reclassé</strong> sous la politique de cycle de vie neuve.</p>
 </div>
-
 <h3>8.1.4 Une interface d'outillage assortie d'un cadre d'autorisation</h3>
-
 <div class="avert">
   <p><strong>Formulation imposée, tenue ici et à ses trois autres occurrences marquées (réserve F-01 du Vol. II) : ce protocole est assorti d'un <em>cadre d'autorisation</em>, jamais d'un protocole « sécurisé ».</strong> La distinction n'est pas de style. Un cadre fournit les mécanismes ; <strong>la sécurité dépend de l'implémentation qui les met en œuvre</strong>, et le ch. 11 expose ce que le socle nomme comme risques attachés. Écrire « protocole sécurisé » attribuerait à la spécification une propriété que seule une mise en œuvre peut porter — et c'est exactement ce que le garde-fou R-02 du Vol. III proscrit en matière cryptographique.</p>
 </div>
-
+<hr />
 <h2 id="s82"><span class="sig">§ 8.2</span>Jalons datés, autorisation et sémantique des résultats</h2>
-
 <h3>8.2.1 Les cinq jalons : trajectoire de maturation d'un standard</h3>
-
 <p>La succession des révisions constitue une <strong>étude de cas de gouvernance d'un standard</strong> (ch. 1 § 1.2.2), où chaque jalon ajoute une couche au contrat.</p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Révision</th><th>Date</th><th>Apports majeurs pour le contrat</th></tr></thead>
-  <tbody>
-    <tr><td><strong>2024-11-05</strong></td><td>5 nov. 2024</td><td>version initiale ; primitives de base ; transports local et HTTP à deux points d'accès</td></tr>
-    <tr><td><strong>2025-03-26</strong></td><td>26 mars 2025</td><td>transport diffusable à point unique ; <strong>cadre</strong> d'autorisation</td></tr>
-    <tr><td><strong>2025-06-18</strong></td><td>18 juin 2025</td><td>sorties structurées ; sollicitation ; racines ; serveur qualifié serveur de ressources</td></tr>
-    <tr><td><strong>2025-11-25</strong></td><td>25 nov. 2025</td><td>découverte d'identité ; schémas 2020-12 ; tâches asynchrones <strong>expérimentales</strong></td></tr>
-    <tr><td><strong>2026-07-28</strong></td><td><strong>ratifiée le 28 juill. 2026</strong></td><td>cœur <strong>sans état</strong> — suppression des sessions de protocole et de la poignée de main ; <code>server/discover</code> ; <strong>cadre d'extensions</strong> ; <strong>politique de cycle de vie et de dépréciation</strong> à fenêtre de douze mois ; dépréciation des <strong>racines, de l'échantillonnage et de la journalisation</strong> ; dépréciation de l'<strong>enregistrement dynamique de client</strong></td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Révision</th>
+<th>Date</th>
+<th>Apports majeurs pour le contrat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>2024-11-05</strong></td>
+<td>5 nov. 2024</td>
+<td>version initiale ; primitives de base ; transports local et HTTP à deux points d'accès</td>
+</tr>
+<tr>
+<td><strong>2025-03-26</strong></td>
+<td>26 mars 2025</td>
+<td>transport diffusable à point unique ; <strong>cadre</strong> d'autorisation</td>
+</tr>
+<tr>
+<td><strong>2025-06-18</strong></td>
+<td>18 juin 2025</td>
+<td>sorties structurées ; sollicitation ; racines ; serveur qualifié serveur de ressources</td>
+</tr>
+<tr>
+<td><strong>2025-11-25</strong></td>
+<td>25 nov. 2025</td>
+<td>découverte d'identité ; schémas 2020-12 ; tâches asynchrones <strong>expérimentales</strong></td>
+</tr>
+<tr>
+<td><strong>2026-07-28</strong></td>
+<td><strong>ratifiée le 28 juill. 2026</strong></td>
+<td>cœur <strong>sans état</strong> — suppression des sessions de protocole et de la poignée de main ; <code>server/discover</code> ; <strong>cadre d'extensions</strong> ; <strong>politique de cycle de vie et de dépréciation</strong> à fenêtre de douze mois ; dépréciation des <strong>racines, de l'échantillonnage et de la journalisation</strong> ; dépréciation de l'<strong>enregistrement dynamique de client</strong></td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 8.3 — Cinq jalons en moins de deux ans, et un cinquième qui n'était pas acquis au gel — il l'est depuis.</p>
-
 <p>☑ ⚠ <strong>REVALIDATION EXÉCUTÉE LE 30 JUILLET 2026, sur la source primaire.</strong> <em>L'historique de la péremption se conserve ci-dessous, au passé, parce qu'il est le seul cas du corpus où le dispositif du ch. 50 a été éprouvé par le réel</em> (décision 17c).</p>
-
-<p><strong>Ce que le chapitre déclarait, et ce qui a été fait.</strong> À la rédaction — 27 juillet 2026 —, le cinquième jalon était <strong>une révision candidate et non une révision publiée</strong> : gelée le <strong>21 mai 2026</strong>, sa ratification était <strong>annoncée pour le lendemain</strong>, et l'anatomie des § 8.1 et § 8.2 décrivait la révision <strong>2025-11-25</strong>. Le <strong>28 juillet 2026</strong>, la bascule a été <strong>constatée</strong> à la date annoncée (socle consolidé <code>S-001</code> ; <a class="lien" href="../PRD/gel-2026-07-28-volet-residuel.md">registre du volet résiduel de G-1</a>), et le chapitre a écrit — c'était le geste juste — que <em>constater une bascule n'est pas lire le texte qui a basculé</em>, laissant la revalidation <strong>ouverte et non exécutée</strong>. ⚠ <strong>Elle est exécutée ici</strong> : le <strong>journal des changements de la révision <code>2026-07-28</code></strong> a été extrait à sa source le <strong>30 juillet 2026</strong>, et les § 8.1.2, § 8.1.3, § 8.2.1, § 8.2.2 et § 8.2.3 sont revalidés <strong>en bloc</strong>, comme la règle l'exigeait — <em>non par retouche d'un texte gelé, mais par confrontation de chaque énoncé au texte neuf</em>.</p>
-
+<p><strong>Ce que le chapitre déclarait, et ce qui a été fait.</strong> À la rédaction — 27 juillet 2026 —, le cinquième jalon était <strong>une révision candidate et non une révision publiée</strong> : gelée le <strong>21 mai 2026</strong>, sa ratification était <strong>annoncée pour le lendemain</strong>, et l'anatomie des § 8.1 et § 8.2 décrivait la révision <strong>2025-11-25</strong>. Le <strong>28 juillet 2026</strong>, la bascule a été <strong>constatée</strong> à la date annoncée (socle consolidé <code>S-001</code> ; <a href="../PRD/gel-2026-07-28-volet-residuel.md">registre du volet résiduel de G-1</a>), et le chapitre a écrit — c'était le geste juste — que <em>constater une bascule n'est pas lire le texte qui a basculé</em>, laissant la revalidation <strong>ouverte et non exécutée</strong>. ⚠ <strong>Elle est exécutée ici</strong> : le <strong>journal des changements de la révision <code>2026-07-28</code></strong> a été extrait à sa source le <strong>30 juillet 2026</strong>, et les § 8.1.2, § 8.1.3, § 8.2.1, § 8.2.2 et § 8.2.3 sont revalidés <strong>en bloc</strong>, comme la règle l'exigeait — <em>non par retouche d'un texte gelé, mais par confrontation de chaque énoncé au texte neuf</em>.</p>
 <div class="avert">
   <p><strong>Ce que la revalidation change de régime, et ce qu'elle ne change pas.</strong> Les énoncés portant sur la révision <code>2026-07-28</code> résolvent désormais contre <strong>un texte lu</strong>, non contre une annonce : ils quittent le repérage pour l'extraction. ⚠ <strong>Mais le socle n'est pas modifié par cette pièce</strong> — <code>S-001</code> et <code>S-098</code> conservent leur état, et <em>un rédacteur ne verse pas au socle : il remonte</em>. Le versement est <strong>dû</strong>, et il est porté à la passe de socle.</p>
 </div>
-
 <div class="avert">
   <p><strong>La divergence interne à la source, elle, n'est pas rejouée et reste consignée.</strong> Le 28 juillet 2026, la page de versionnement déclarait encore courante la révision précédente (<code>S-098</code>), quand la page servie sous la révision neuve la rangeait parmi les révisions héritées <strong>tout en la nommant courante</strong> — divergence interne à une seule page. <em>Ce constat est daté du 28 juillet et ne se corrige pas depuis le 30</em> : il décrit l'état du site à sa date, et le registre le laisse ouvert.</p>
 </div>
-
-<p><em>(b)</em> <strong>Cette révision porte des changements cassants</strong>, et non seulement des ajouts — le § 8.1.2 et le § 8.1.3 en portent désormais le détail lu. Sa ratification <strong>a périmé l'anatomie en bloc</strong>, et non par retouches : c'est pourquoi la revalidation a porté sur cinq sous-sections d'un coup.</p>
-
-<p><em>(c)</em> <strong>La cadence elle-même est un fait d'interopérabilité</strong> : cinq jalons en moins de deux ans témoignent d'un standard <strong>en maturation rapide</strong>, où la rétrocompatibilité et la dépréciation deviennent des objets de spécification à part entière. C'est un signe de maturité — et, simultanément, un coût pour qui doit épingler une version.</p>
-
+<p><em>(a)</em> <strong>Cette révision porte des changements cassants</strong>, et non seulement des ajouts — le § 8.1.2 et le § 8.1.3 en portent désormais le détail lu. Sa ratification <strong>a périmé l'anatomie en bloc</strong>, et non par retouches : c'est pourquoi la revalidation a porté sur cinq sous-sections d'un coup.</p>
+<p><em>(b)</em> <strong>La cadence elle-même est un fait d'interopérabilité</strong> : cinq jalons en moins de deux ans témoignent d'un standard <strong>en maturation rapide</strong>, où la rétrocompatibilité et la dépréciation deviennent des objets de spécification à part entière. C'est un signe de maturité — et, simultanément, un coût pour qui doit épingler une version.</p>
 <div class="encadre encadre--recherche">
   <span class="encadre__label">Perspective recherche</span>
   <p>La densité de révisions millésimées rejoint une critique adressée à l'écosystème : <em>un protocole d'interopérabilité ne vaut que par la stabilité de son contrat dans le temps</em>, et <strong>la profusion de spécifications versionnées par date constitue elle-même une source de fragmentation</strong>. Une grille d'analyse sémantique situe ces gains <strong>essentiellement aux niveaux technique et syntaxique</strong> — transports, schémas, autorisation. Le niveau sémantique reste <strong>repoussé vers la couche applicative</strong> (ch. 9 § 9.4).</p>
 </div>
-
 <h3>8.2.2 Autorisation et identité : le serveur comme serveur de ressources</h3>
-
 <p>L'autorisation est <strong>un cas d'étagement plutôt que de réinvention</strong> : elle réutilise massivement la pile d'identité classique posée au ch. 3 § 3.2.</p>
-
 <p>Une révision qualifie le serveur de <strong>serveur de ressources</strong>, en lui imposant la <strong>validation d'audience</strong> des jetons et la <strong>découverte de ses métadonnées</strong> par des mécanismes normalisés. ⚠ <strong>La validation d'audience est ici décisive, et sa fonction mérite d'être nommée précisément : elle confine un jeton à un destinataire déclaré, et prive ainsi de son ressort la classe d'attaque du mandataire confus</strong> — celle-là même que le ch. 3 § 3.1.1 identifiait comme défaut structurel des architectures déléguées. C'est l'un des rares endroits du mouvement où un mécanisme protocolaire <strong>prend nommément pour cible</strong> une classe d'attaque connue ; la fermer reste à la charge de l'implémentation.</p>
-
 <p>Une révision ultérieure ajoute la découverte d'identité, des documents de métadonnées de client, et le <strong>consentement incrémental</strong> — élargir le périmètre d'accès au fil des besoins plutôt que d'exiger d'emblée une autorisation large. C'est le moindre privilège du ch. 6 § 6.5.2, porté par le protocole plutôt que par l'exploitant.</p>
-
 <p>☑ ⚠ <strong>Revalidation du 30 juillet 2026 : la révision <code>2026-07-28</code> déplace l'enregistrement du client, et c'est un changement d'ancrage de confiance.</strong> L'<strong>enregistrement dynamique de client</strong> (RFC 7591) est <strong>déprécié</strong> comme mécanisme d'enregistrement, au profit des <strong>documents de métadonnées d'identifiant client</strong> (<em>Client ID Metadata Documents</em>) ; il demeure disponible pour compatibilité avec les serveurs d'autorisation qui ne les prennent pas en charge. S'y ajoutent trois durcissements : le serveur d'autorisation <strong>devrait</strong> porter le paramètre <code>iss</code> de la RFC 9207 et le client <strong>doit</strong> le valider contre l'émetteur enregistré avant d'échanger le code ; le client <strong>doit</strong> déclarer un <code>application_type</code> approprié à l'enregistrement, pour éviter les conflits d'URI de redirection avec OpenID Connect ; et les <strong>identifiants de client sont liés au serveur d'autorisation qui les a émis</strong> — ils se conservent indexés par émetteur, ne se réutilisent pas ailleurs, et un changement de serveur <strong>impose un réenregistrement</strong>.</p>
-
 <div class="avert">
   <p><strong>Qualification, au sens de R-02 : ce que ce déplacement démontre et ne démontre pas.</strong> Il <strong>démontre</strong> que la spécification a nommé et fermé une classe de confusion d'émetteur au niveau du contrat. Il <strong>ne démontre pas</strong> que le parc déployé suive : <em>une dépréciation ouvre une fenêtre de douze mois pendant laquelle les deux mécanismes coexistent</em>, et c'est précisément la fenêtre où une institution doit savoir lequel elle exploite.</p>
 </div>
-
 <div class="avert">
   <p><strong>Qualification, au sens de R-02 du Vol. III, et rappel de la réserve F-01.</strong> Ce que ce cadre <strong>démontre</strong> : qu'un jeton présenté est confiné à l'audience déclarée, et que les métadonnées du serveur sont découvrables par un chemin normalisé. Ce qu'il <strong>ne démontre pas</strong> : que l'implémentation valide effectivement l'audience, que le serveur est digne de confiance, ni que l'outil invoqué se comporte comme sa description l'annonce. <strong>Cadre d'autorisation, jamais « sécurisé ».</strong></p>
 </div>
-
 <div class="avert">
-  <p><strong>Une réserve de statut sur le socle sous-jacent</strong> : le cadre d'autorisation de nouvelle génération sur lequel s'appuie cette pile <strong>demeure un projet à la date d'arrêt des sources</strong>, la version antérieure restant la base normative en vigueur. Le ch. 3 § 3.2.1 porte la même réserve, et le <strong>volet Livre I de la porte G-1 les a instruites toutes deux le 27 juillet 2026</strong> (<a class="lien" href="../PRD/gel-2026-07-27.md"> 0 </a>, fait 8) : le document <strong>est toujours à l'état de projet</strong>, désormais daté, et <strong>aucune version normative n'en est issue</strong>. <em>La réserve n'est pas levée ; elle est datée</em> — et c'est le seul effet qu'une instruction à la source pouvait avoir sur un texte qui n'a pas bougé.</p>
+  <p><strong>Une réserve de statut sur le socle sous-jacent</strong> : le cadre d'autorisation de nouvelle génération sur lequel s'appuie cette pile <strong>demeure un projet à la date d'arrêt des sources</strong>, la version antérieure restant la base normative en vigueur. Le ch. 3 § 3.2.1 porte la même réserve, et le <strong>volet Livre I de la porte G-1 les a instruites toutes deux le 27 juillet 2026</strong> (<a href="../PRD/gel-2026-07-27.md"><code>gel-2026-07-27.md</code></a>, fait 8) : le document <strong>est toujours à l'état de projet</strong>, désormais daté, et <strong>aucune version normative n'en est issue</strong>. <em>La réserve n'est pas levée ; elle est datée</em> — et c'est le seul effet qu'une instruction à la source pouvait avoir sur un texte qui n'a pas bougé.</p>
 </div>
-
 <h3>8.2.3 Vers une sémantique des résultats : sorties structurées et tâches</h3>
-
 <p>L'effort pour donner un <strong>sens machine-vérifiable</strong> aux résultats d'outils progresse par étapes : des <strong>sorties structurées</strong> et des <strong>liens de ressources</strong> permettent à un serveur de renvoyer non plus un bloc de texte libre mais une <strong>charge utile typée</strong> ; une révision ultérieure adopte un dialecte de schéma normalisé pour les décrire.</p>
-
 <p>S'y ajoutent les <strong>tâches asynchrones</strong>, ⚠ <strong>expérimentales</strong> : un appel d'outil peut renvoyer un identifiant de tâche — logique « appeler maintenant, récupérer plus tard » — au lieu d'un résultat immédiat. Ce mécanisme <strong>se rapproche, sans s'y identifier</strong>, de l'exécution durable de l'intégration d'entreprise : il gère la longue durée, mais <strong>ne fournit pas les garanties de reprise et d'idempotence</strong> d'un moteur durable. Le contrat de ces tâches <strong>ne saurait être présenté comme stable</strong>.</p>
-
 <p>☑ ⚠ <strong>Revalidation du 30 juillet 2026 : la réserve ci-dessus a été validée par l'événement, et c'est le seul endroit de la somme où cela se produit.</strong> La révision <code>2026-07-28</code> <strong>sort les tâches du cœur du protocole</strong> et les reverse à une <strong>extension officielle</strong> ; la refonte remplace la récupération bloquante par une <strong>interrogation périodique</strong>, ajoute une méthode d'<strong>apport client</strong> en cours de tâche, <strong>supprime l'énumération des tâches</strong>, et autorise le serveur à renvoyer une poignée de tâche <strong>sans opt-in préalable de la requête</strong>. <em>Le chapitre écrivait que « le contrat de ces tâches ne saurait être présenté comme stable » ; huit mois plus tard, il a changé de cœur et de forme.</em> ⚠ <strong>Ce n'est pas une confirmation de la thèse du chapitre, c'est une confirmation de sa prudence</strong> — la distinction importe : <em>avoir eu raison de ne pas s'engager n'est pas avoir établi un fait.</em></p>
-
 <div class="avert">
   <p><strong>Et un résultat s'ajoute au corps de la section, qui n'y était pas</strong> : tous les résultats du protocole portent désormais un champ de type obligatoire — <code>complete</code> pour un résultat ordinaire, <code>input_required</code> pour un tour intermédiaire —, et les résultats des méthodes d'énumération et de lecture portent une <strong>durée de fraîcheur</strong> et une <strong>portée de cache</strong>. <em>La sémantique des résultats, que cette section décrivait comme un chantier, a reçu sa première clause de cache.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>Une limite de fond demeure, et elle est la plus importante de la section : un schéma n'est pas une ontologie.</strong> Un dialecte de schéma contraint la <strong>forme</strong> d'une sortie, <strong>non son interprétation</strong> ; il ne dit ni ce que les valeurs signifient, ni comment elles se relient à un vocabulaire partagé. Que ce verrou n'ait pas de réponse protocolaire relève d'une <strong>absence de documentation</strong> au sens de R-14 : le socle n'en recense aucune, ce qui n'établit pas qu'il n'en existe pas. Le ch. 9 § 9.4 l'instruit.</p>
 </div>
-
+<hr />
+<figure class="figure">
+  <img src="../figures/f-08-02-cinq-jalons.svg" alt="Figure 8.2 — Cinq jalons du protocole agent-outil en moins de deux ans, et ce que chacun ajoute au contrat." />
+  <figcaption><strong>Figure 8.2</strong> — Cinq jalons du protocole agent-outil en moins de deux ans, et ce que chacun ajoute au contrat.</figcaption>
+</figure>
 <h2 id="s83"><span class="sig">§ 8.3</span>Conformité, registre, dépréciation et gouvernance</h2>
-
 <h3>8.3.1 Du projet d'éditeur à la fondation : l'appareil de gouvernance</h3>
-
 <p>La maturation en standard interopérable passe par un <strong>appareil qui dépasse la spécification</strong>.</p>
-
 <p>Le <strong>registre officiel</strong> fournit un catalogue de serveurs reposant sur un descripteur normalisé et une <strong>vérification de propriété d'espace de noms</strong> ; il distingue la <strong>découverte</strong> (registre) de la <strong>distribution</strong> (place de marché) — distinction que le ch. 9 § 9.1 approfondit.</p>
-
 <p>Le versant <strong>conformité</strong> s'appuie sur un cadre dédié et un outil d'inspection, qui <strong>ciblent les révisions datées</strong>. ⚠ Conformément à la réserve F-01, ces outils valident qu'une implémentation <strong>respecte une révision</strong> ; ils ne la déclarent pas sécurisée.</p>
-
 <p>La <strong>politique de dépréciation formelle</strong> introduite par la cinquième révision — statuts <em>actif</em>, <em>déprécié</em>, <em>retiré</em>, assortis d'un préavis d'au moins douze mois entre dépréciation et retrait — constitue un mécanisme de maturité <strong>comparable à ceux des organismes de normalisation classiques</strong> (ch. 3 § 3.4.4) : <em>elle rend l'évolution du contrat prévisible</em>. C'est, de toutes les nouveautés annoncées, celle qui intéresse le plus une institution réglementée — et celle dont le ch. 7 § 7.1.5 faisait le troisième terme de l'invariant.</p>
-
-<p>☑ ⚠ <strong>Revalidation du 30 juillet 2026 : la politique est en vigueur, et elle s'est appliquée à elle-même dès sa ratification.</strong> Le texte neuf adopte la politique <strong>et l'exerce dans la même révision</strong> : trois primitives dépréciées, un transport reclassé, un mécanisme d'enregistrement déprécié, et un <strong>registre des fonctions dépréciées</strong> publié comme pièce de la spécification.</p>
-
-<div class="avert">
-  <p><strong>C'est ce qu'une institution réglementée doit lire, et le sens n'est pas celui qu'on attend</strong> : <em>la première application d'une politique de dépréciation est toujours une vague, parce qu'elle solde l'arriéré accumulé avant elle.</em> La cadence des retraits à venir ne se déduit donc pas de celle-ci — et la fenêtre de douze mois place le premier retrait possible <strong>après juillet 2027</strong>, soit <strong>au-delà de l'entrée en vigueur commune du 1ᵉʳ mai 2027</strong> que l'horloge de la somme prend pour pivot.</p>
-</div>
-
+<p>☑ ⚠ <strong>Revalidation du 30 juillet 2026 : la politique est en vigueur, et elle s'est appliquée à elle-même dès sa ratification.</strong> Le texte neuf adopte la politique <strong>et l'exerce dans la même révision</strong> : trois primitives dépréciées, un transport reclassé, un mécanisme d'enregistrement déprécié, et un <strong>registre des fonctions dépréciées</strong> publié comme pièce de la spécification. ⚠ <strong>C'est ce qu'une institution réglementée doit lire, et le sens n'est pas celui qu'on attend</strong> : <em>la première application d'une politique de dépréciation est toujours une vague, parce qu'elle solde l'arriéré accumulé avant elle.</em> La cadence des retraits à venir ne se déduit donc pas de celle-ci — et la fenêtre de douze mois place le premier retrait possible <strong>après juillet 2027</strong>, soit <strong>au-delà de l'entrée en vigueur commune du 1ᵉʳ mai 2027</strong> que l'horloge de la somme prend pour pivot.</p>
 <p>La bascule la plus significative reste le <strong>passage du projet d'un éditeur à une fondation neutre</strong>, en décembre 2025 (ch. 7 § 7.4) : le standard est soustrait au contrôle d'un acteur unique.</p>
-
 <h3>8.3.2 Registres, passerelles et découverte d'entreprise — versant outillage</h3>
-
 <div class="avert">
   <p><strong>Cette sous-section traite le versant <em>outillage</em> seul.</strong> La <strong>pile protocolaire</strong> est au ch. 9 § 9.2 ; les <strong>registres gouvernés</strong>, au versant identité et conformité, sont au <strong>ch. 15</strong> (Livre II). Trois traitements distincts d'un même objet, et le partage est déclaré au plan.</p>
 </div>
-
 <p>À mesure que les serveurs se multiplient, <strong>la découverte et la gouvernance deviennent des problèmes d'ingénierie distincts</strong>. L'écosystème dépasse les <strong>dix mille serveurs publics</strong> — ordre de grandeur qui <strong>change la nature du risque</strong>.</p>
-
 <p>En entreprise, une <strong>passerelle</strong> s'interpose entre les agents et les serveurs pour centraliser l'authentification, l'autorisation à granularité fine, la journalisation et l'application de politiques — jouant le rôle qu'une passerelle d'API tient dans l'intégration classique (ch. 1 § 1.4.3). ⚠ <strong>Cette médiation est aussi une nécessité de sécurité</strong> : un catalogue ouvert de plusieurs milliers de serveurs constitue <strong>une surface de chaîne d'approvisionnement de premier plan</strong>.</p>
-
 <p>Un serveur peut être <strong>malveillant dès l'origine</strong> ou <strong>le devenir par mise à jour silencieuse</strong>, et une description d'outil piégée peut détourner l'agent. Ces vecteurs sont analysés au <strong>ch. 11</strong>.</p>
-
 <p>La découverte d'entreprise impose donc une posture de <strong>liste d'admission</strong>, d'<strong>épinglage de versions</strong> et de <strong>revue des serveurs admis</strong> — par analogie avec la gestion d'un registre d'artefacts logiciels. <em>Le contrat d'outil ne suffit pas si sa provenance n'est pas garantie : l'évolution non maîtrisée d'un serveur est elle-même un risque.</em></p>
-
+<hr />
 <h2 id="s84"><span class="sig">§ 8.4</span>A2A v1.0 : la délégation entre pairs</h2>
-
 <h3>8.4.1 Du Contract Net aux patrons transposés</h3>
-
 <p>La coordination par appel d'offres <strong>précède de plusieurs décennies</strong> l'ère des grands modèles. Le <strong>Contract Net</strong> de Reid G. Smith formalisait dès 1980 un cycle d'allocation de tâches entre nœuds d'un solveur distribué : <strong>annonce → appel d'offres → soumissions → attribution</strong>. Ce schéma a été repris et standardisé, aux côtés d'un langage de communication à performatifs (ch. 7 § 7.2.1).</p>
-
-<p>Transposé aux essaims d'agents, le patron <strong>reste pertinent</strong> : un coordinateur peut solliciter plusieurs agents spécialisés et retenir celui dont la réponse, le coût ou la disponibilité conviennent le mieux.</p>
-
+<p>Transposé aux essaims d'agents, le patron <strong>reste pertinent</strong> : un coordonnateur peut solliciter plusieurs agents spécialisés et retenir celui dont la réponse, le coût ou la disponibilité conviennent le mieux.</p>
 <div class="avert">
   <p><strong>Mais le constat d'état est net, et il se pose sans détour comme il se borne.</strong> À l'état 2024-2026 que la source déclare, <strong>aucun des trois protocoles majeurs examinés ici — agent-outil, agent-agent, alternative décentralisée — ne normalise un cycle d'enchères complet à la manière historique.</strong> La négociation y demeure soit <strong>implicite</strong>, portée par le langage naturel dans l'invite, soit <strong>ad hoc</strong>, codée au cas par cas dans la logique applicative. <em>Le constat porte sur trois spécifications à une date ; il ne vaut pas pour l'ensemble des protocoles agentiques.</em></p>
 </div>
-
 <p>La leçon d'adoption de la lignée historique — <strong>l'échec relatif d'un formalisme lourd</strong> (ch. 7 § 7.2.1) — pèse manifestement sur les choix de conception actuels, qui privilégient des <strong>contrats minimaux</strong>. C'est un arbitrage assumé, dont le § 8.6.2 mesure le prix.</p>
-
 <h3>8.4.2 Agent Card signée, modèle de tâche et structure des messages</h3>
-
 <p>Le protocole agent-agent constitue la <strong>référence de l'axe horizontal</strong>. Sa version 1.0 en fixe les structures essentielles.</p>
-
 <p>L'<strong>auto-description</strong> repose sur l'<strong>Agent Card</strong> : un document publié à un emplacement <strong>bien connu</strong>, conforme à un mécanisme normalisé, qui déclare <strong>l'identité, les capacités et les modalités d'interaction</strong> de l'agent.</p>
-
 <p>L'unité de travail est la <strong>tâche</strong>, objet à état traversant un cycle de vie défini — soumise, en cours, requérant une entrée ou une authentification, puis achevée, échouée, annulée ou rejetée. Les échanges s'articulent autour d'une hiérarchie <strong>message / partie / artefact</strong>.</p>
-
 <p>Trois consolidations de la version 1.0 méritent d'être relevées :</p>
-
-<ol class="numeros">
-  <li>la <strong>signature des Agent Cards</strong>, qui lie l'authenticité de la carte <strong>à son domaine d'origine</strong> ;</li>
-  <li>la prise en charge de la <strong>multi-location</strong> ;</li>
-  <li>la <strong>pluralité de liaisons de transport</strong> — JSON sur HTTP, appels de procédure en JSON, appels de procédure binaires.</li>
+<ol type="1">
+<li>la <strong>signature des Agent Cards</strong>, qui lie l'authenticité de la carte <strong>à son domaine d'origine</strong> ;</li>
+<li>la prise en charge de la <strong>multi-location</strong> ;</li>
+<li>la <strong>pluralité de liaisons de transport</strong> — JSON sur HTTP, appels de procédure en JSON, appels de procédure binaires.</li>
 </ol>
-
 <div class="avert">
   <p><strong>La troisième illustre l'argument d'étagement du ch. 7 § 7.1.6</strong> : ce protocole <strong>ne réinvente pas la couche de transport</strong>, il réemploie la pile classique.</p>
 </div>
-
 <div class="avert">
   <p><strong>Qualification, au sens de R-02 du Vol. III — et la nuance porte sur ce qu'une signature établit.</strong> Une Agent Card signée <strong>démontre</strong> que la carte a été émise par le détenteur de la clé associée au domaine déclaré, et qu'elle n'a pas été altérée. Elle <strong>ne démontre pas</strong> que l'agent se comporte conformément aux capacités qu'il déclare, ni que le domaine est digne de confiance. <em>Signer une déclaration l'authentifie ; cela ne la rend pas vraie.</em> Le ch. 16 rencontrera la même limite sur le passeport d'agent.</p>
 </div>
-
 <div class="avert">
   <p><strong>Lacune héritée, portée et non comblée</strong> <em>(PRD du Vol. II §10.9)</em>. Quatre objets <strong>ne sont pas au socle</strong> : l'<strong>ancrage de confiance</strong> des Agent Cards signées — c'est-à-dire à quelle autorité remonte la chaîne —, la <strong>date exacte de la v1.0</strong>, la <strong>multi-location</strong>, et l'<strong>inventaire infonuagique</strong> du protocole agent-outil (§ 8.7). Ils sont <strong>signalés ici, encadrés, et renvoyés au ch. 49</strong>. Les combler par une source de moindre qualité serait la faute que la règle du dépôt proscrit. ⚠ <strong>Constat du 28 juillet 2026, qui ne comble rien</strong> : l'instruction du volet résiduel de G-1 a relevé un matériau touchant la <strong>date de la v1.0</strong> et <strong>ne l'a pas versé au socle</strong>, l'instruction d'une lacune relevant d'une passe de socle. <em>Un matériau relevé n'est pas une entrée.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>Mais « la date n'est pas au socle » ne se tient plus tel quel depuis que le socle consolidé existe, et l'écart se déclare plutôt qu'il ne se lisse.</strong> <code>S-002</code> continue de porter la lacune pour le périmètre du Vol. II ; <code>S-058</code>, entrée du socle propre du Vol. III au niveau <code>[B]</code> <strong>non voté</strong>, porte la date de publication de la v1.0. <em>Ce n'est pas une contradiction mais une lacune de couverture : l'énoncé du Vol. II reste exact dans son périmètre.</em> <strong>Les deux états sont consignés, aucun n'est arbitré ici, et la lacune n'est PAS close</strong> — ses trois autres objets ne sont pas touchés, et une date à <code>[B]</code> non votée ne comble pas une lacune de socle. L'écart au plan est <strong>remonté</strong> (note de statut) ; ce chapitre continue de s'abstenir sur les quatre objets.</p>
 </div>
-
 <div class="avert">
   <p><strong>Métrique auto-déclarée, attribuée</strong> : le franchissement d'un seuil de <strong>plus de 150 organisations de soutien</strong> en avril 2026 est <strong>rapporté par la Linux Foundation</strong>, qui gère le protocole. Le socle qualifie lui-même « organisation de soutien » de <strong>notion non définie</strong>, et la réserve du ch. 7 § 7.6 s'applique intégralement — <em>soutien n'est pas production</em>.</p>
 </div>
-
 <h3>8.4.3 Délégation de tâches et collaboration inter-cadriciels</h3>
-
 <p>La valeur propre de ce protocole réside dans la <strong>délégation</strong> : un agent client confie une tâche à un agent distant — relevant d'un autre cadriciel, d'un autre fournisseur, <strong>voire d'une autre organisation</strong> — qui exécute le travail et renvoie des artefacts.</p>
-
 <p>Le mécanisme franchit ainsi la <strong>frontière organisationnelle</strong>, c'est-à-dire <strong>le niveau le plus élevé de l'interopérabilité conceptuelle</strong> (ch. 1 § 1.1.2) : deux systèmes développés indépendamment collaborent <strong>sans intégration préalable</strong>, sur la seule base du contrat exposé par la carte et du cycle de vie de la tâche.</p>
-
 <div class="avert">
   <p><strong>Une caractéristique de conception mérite d'être soulignée parce qu'elle est contre-intuitive : l'opacité voulue.</strong> L'agent distant <strong>n'expose ni son raisonnement interne, ni les outils qu'il mobilise, ni son modèle sous-jacent</strong> ; il ne présente qu'une interface de tâche et ses résultats.</p>
 </div>
-
 <p>Cette opacité est <strong>le pendant agentique du découplage</strong> : elle protège l'autonomie et la confidentialité du fournisseur <strong>tout en garantissant la substituabilité</strong> de l'agent délégataire derrière son contrat. Elle marque aussi la frontière avec l'axe vertical : <em>là où un serveur d'outils expose des capacités à contrôler finement par le client, un agent expose une capacité encapsulée à déléguer en bloc.</em></p>
-
 <p><span class="auteur">Lecture de l'auteur</span> cette opacité est une force pour le découplage et une difficulté pour tout ce que le Livre III exigera. Un exploitant tenu de démontrer devant un tiers <strong>ce qui s'est passé</strong> ne peut pas produire l'état d'un traitement qu'il a délégué en bloc à un agent opaque. Le socle n'établit pas cette tension ; elle est proposée comme lecture, et le ch. 29 l'instruit.</p>
-
+<hr />
+<figure class="figure">
+  <img src="../figures/f-08-04-agent-card-tache.svg" alt="Figure 8.4 — L&#39;auto-description et l&#39;unité de travail de l&#39;axe horizontal : la carte, la tâche, le message." />
+  <figcaption><strong>Figure 8.4</strong> — L'auto-description et l'unité de travail de l'axe horizontal : la carte, la tâche, le message.</figcaption>
+</figure>
 <h2 id="s85"><span class="sig">§ 8.5</span>L'ACP protocolaire, l'alternative décentralisée et l'état de la standardisation</h2>
-
 <h3>8.5.1 La convergence par fusion — mécanique</h3>
-
-<div class="encadre encadre--oeuvre">
-  <span class="encadre__label">Note</span>
-  <p>⚠ <strong>SIÈGE DE LA MÉCANIQUE DE LA FUSION POUR TOUTE LA SOMME.</strong> Elle est <strong>posée ici une seule fois</strong> ; sa <strong>portée de risque</strong> siège au <strong>ch. 10 § 10.5</strong>. Aucun autre chapitre ne refait l'un ni l'autre — l'abstention est contrôlée par <code>PRD/check-sieges.py</code>.</p>
+<blockquote>
+<div class="avert">
+  <p><strong>SIÈGE DE LA MÉCANIQUE DE LA FUSION POUR TOUTE LA SOMME.</strong> Elle est <strong>posée ici une seule fois</strong> ; sa <strong>portée de risque</strong> siège au <strong>ch. 10 § 10.5</strong>. Aucun autre chapitre ne refait l'un ni l'autre — l'abstention est contrôlée par <code>PRD/check-sieges.py</code>.</p>
 </div>
-
+</blockquote>
 <div class="avert">
   <p><strong>Partage déclaré avec le ch. 10 (décision 2 du TOC).</strong> La <strong>mécanique</strong> de la convergence se traite <strong>ici</strong>, sur la source du Vol. I ; la <strong>portée de risque</strong> de cette fusion se traite <strong>au ch. 10 § 10.5</strong>, sur la source du Vol. II. <em>Ni l'un ni l'autre ne reconstruit ce que porte son voisin</em> — et ce partage est l'un des deux écarts que la révision v0.17 du plan a soldés, l'objet ayant été revendiqué par les deux chapitres.</p>
 </div>
-
 <div class="avert">
   <p><strong>Convention de nomenclature, rappelée ici comme à chaque occurrence (R-8 du Vol. II, R-13 du Vol. III).</strong> L'<strong>ACP protocolaire</strong> désigne l'<em>Agent Communication Protocol</em> d'un centre de recherche et de son projet ouvert, sur l'axe agent-agent — <strong>à ne pas confondre</strong> avec l'<strong>ACP commercial</strong>, sur l'axe du commerce, traité au ch. 10 § 10.3.2. <strong>Le siège de l'encadré des quatre branches est au ch. 7 § 7.5</strong> ; il n'est pas reconstruit ici.</p>
 </div>
-
 <p>Conçu au début de 2025, l'ACP protocolaire reposait sur une approche <strong>résolument classique</strong> : une interface REST sur HTTP, des messages multipartites, des modes synchrone et asynchrone, et une découverte <strong>fonctionnant même hors ligne</strong>.</p>
-
 <p><strong>Sa trajectoire constitue l'enseignement central de cette sous-section.</strong> Le 29 août 2025, il <strong>a rejoint le protocole agent-agent</strong> sous l'égide de la fondation, accompagné de <strong>guides de migration</strong>. Plutôt qu'une concurrence prolongée entre standards homologues — qui aurait fragmenté l'écosystème et <strong>reproduit la dispersion qu'avait connue le monde des services web</strong> —, l'industrie a opté pour une <strong>convergence par fusion</strong>.</p>
-
 <p>Cette issue, où un protocole <strong>se fond dans un autre</strong> sous une fondation neutre, illustre un mode de <strong>standardisation par consolidation institutionnelle</strong>. Elle conforte la proposition du ch. 7 § 7.4 : la neutralité de gouvernance agit comme <strong>mécanisme anti-fragmentation</strong>.</p>
-
 <div class="avert">
   <p><strong>Garde-fou R-1 du Vol. II</strong> : <strong>l'ACP protocolaire n'est pas un standard vivant.</strong> Son développement actif a cessé ; il ne subsiste qu'à travers le protocole absorbant et des adaptateurs.</p>
 </div>
-
 <h3>8.5.2 L'alternative décentralisée</h3>
-
 <div class="avert">
   <p><strong>Un écart de titre est assumé et déclaré par le plan.</strong> Le protocole décentralisé arrive dans ce chapitre <strong>par l'intervalle</strong> de sa ligne Fusion, et il <strong>n'est pas nommé au titre</strong> — lequel reste « MCP (agent-outil) et A2A (agent-agent) ». Retoucher ce titre déplacerait — <strong>selon le plan</strong> — un renvoi <strong>cité en clair dans huit chapitres</strong>, et cet objet y est traité <strong>comme un tiers comparé, non comme un objet du même rang</strong>. L'écart est déclaré, non oublié : c'est la même classe que le § 1.2 du ch. 1, couvert par l'intervalle sans être glosé au titre.</p>
 </div>
-
 <p>Ce protocole emprunte une voie <strong>résolument distincte</strong> : décentralisée, pair-à-pair. Son architecture s'organise en <strong>trois couches</strong> :</p>
-
-<ul class="puces">
-  <li>à la base, une couche d'<strong>identité</strong> fondée sur des <strong>identifiants décentralisés</strong>, déclinés dans une méthode propre, assortie de chiffrement et d'une authentification par signatures de message ;</li>
-  <li>au sommet, une couche de <strong>protocole applicatif</strong> ;</li>
-  <li>entre les deux, <strong>l'élément le plus original</strong> : un <strong>négociateur de méta-protocole</strong>, capable de négocier dynamiquement <strong>le protocole d'échange lui-même</strong>, à l'exécution.</li>
+<ul>
+<li>à la base, une couche d'<strong>identité</strong> fondée sur des <strong>identifiants décentralisés</strong>, déclinés dans une méthode propre, assortie de chiffrement et d'une authentification par signatures de message ;</li>
+<li>au sommet, une couche de <strong>protocole applicatif</strong> ;</li>
+<li>entre les deux, <strong>l'élément le plus original</strong> : un <strong>négociateur de méta-protocole</strong>, capable de négocier dynamiquement <strong>le protocole d'échange lui-même</strong>, à l'exécution.</li>
 </ul>
-
 <p>La sémantique des messages s'appuie sur des formats du Web sémantique (ch. 2 § 2.3.1).</p>
-
 <div class="avert">
   <p><strong>Cette négociation de méta-protocole constitue la réponse la plus aboutie au problème de la négociation de capacités</strong>, en cela qu'elle relève du <strong>niveau dynamique</strong> du modèle LCIM (ch. 7 § 7.1.3) — celui où <em>le protocole lui-même devient objet d'accord à l'exécution</em>.</p>
 </div>
-
 <p>Sa <strong>maturité reste néanmoins conditionnée</strong> à celle de l'infrastructure d'identité décentralisée sous-jacente, dont l'adoption à large échelle <strong>n'est pas attendue avant 2027 environ</strong> — projection à traiter comme telle, non comme un fait daté.</p>
-
 <h3>8.5.3 Comparaison et état de la standardisation</h3>
-
 <p>L'état à la mi-2026 se laisse résumer par la confrontation de trois familles : le protocole agent-agent, <strong>stable et largement adopté</strong>, occupe le centre de gravité de l'axe horizontal ; l'ACP protocolaire y est <strong>désormais fusionné</strong> ; l'alternative décentralisée demeure <strong>plus expérimentale et tributaire</strong> de son socle d'identité.</p>
-
 <p>Au-delà des trois protocoles, <strong>plusieurs forums travaillent à coordonner l'ensemble</strong> — groupes communautaires de normalisation du Web, projets de spécification à l'organisme des protocoles d'Internet, initiatives de fondation autour d'un langage de définition d'agent.</p>
-
 <div class="avert">
   <p><strong>Une perspective doit être maniée au conditionnel, et l'avertissement est explicite dans la source</strong> : une <strong>spécification conjointe</strong> rapprochant formellement l'axe vertical et l'axe horizontal <strong>est attendue, et le socle n'en recense aucun projet public</strong> à la date d'arrêt — <em>ce qui n'établit pas qu'il n'en existe pas.</em> <strong>Toute affirmation sur son contenu ou son calendrier relève de la projection.</strong></p>
 </div>
-
+<hr />
 <h2 id="s86"><span class="sig">§ 8.6</span>La frontière : une complémentarité déclarée, et par qui</h2>
-
 <h3>8.6.1 Limites et modes d'échec de l'axe vertical</h3>
-
 <p>Le contrat agent-outil présente des modes d'échec <strong>qui lui sont propres</strong> et tiennent à la nature <strong>lue-par-le-modèle</strong> de ses descriptions :</p>
-
-<ul class="puces">
-  <li><strong>l'empoisonnement d'outils</strong> — injecter des instructions malveillantes dans la <strong>description</strong> d'un outil, ingérée par le modèle <strong>comme si elle émanait d'une source de confiance</strong> ;</li>
-  <li><strong>le mandataire confus et le vol de jeton</strong> — exploiter une autorisation mal confinée, ce à quoi répond précisément la validation d'audience (§ 8.2.2) ;</li>
-  <li><strong>l'absence de versionnement sémantique des outils</strong> — <em>le contrat ne signale pas qu'un outil a changé de comportement</em> ;</li>
-  <li><strong>une découverte pauvre</strong>, qui ne permet pas un appariement fin entre tâche et outil (ch. 9 § 9.1).</li>
+<ul>
+<li><strong>l'empoisonnement d'outils</strong> — injecter des instructions malveillantes dans la <strong>description</strong> d'un outil, ingérée par le modèle <strong>comme si elle émanait d'une source de confiance</strong> ;</li>
+<li><strong>le mandataire confus et le vol de jeton</strong> — exploiter une autorisation mal confinée, ce à quoi répond précisément la validation d'audience (§ 8.2.2) ;</li>
+<li><strong>l'absence de versionnement sémantique des outils</strong> — <em>le contrat ne signale pas qu'un outil a changé de comportement</em> ;</li>
+<li><strong>une découverte pauvre</strong>, qui ne permet pas un appariement fin entre tâche et outil (ch. 9 § 9.1).</li>
 </ul>
-
 <p>Le troisième point mérite d'être souligné : c'est <strong>l'évolution</strong>, troisième terme de l'invariant, qui manque ici. Un schéma stable peut recouvrir un comportement changé, et rien ne le signale.</p>
-
 <div class="avert">
   <p><strong>Deux faits datés, et une qualification contestée qu'il faut rapporter comme telle. Les parties se nomment : une attribution anonymisée n'est pas une attribution.</strong> La <strong>Cloud Security Alliance</strong> a fait le point sur l'accumulation de vulnérabilités dans une note de 2026 ; une divulgation d'<strong>OX Security</strong> (avril 2026) a <strong>estimé à environ 200 000 le nombre d'instances exposées</strong> par un comportement de transport par défaut. ⚠ <strong>La qualification de ce comportement comme « défaut de conception » demeure contestée</strong>, <strong>Anthropic</strong> le tenant pour <strong>un choix intentionnel documenté</strong>. La somme <strong>rapporte le désaccord et ne le tranche pas</strong> — et le chiffre demeure <strong>une estimation d'un tiers, attribuée à chaque occurrence à celui qui la produit</strong>. Que ce désaccord n'ait pas été arbitré publiquement relève d'une <strong>absence de documentation</strong> au sens de R-14.</p>
 </div>
-
 <div class="avert">
   <p>Et la réserve F-01 tient jusque dans la description des échecs : ce sont des <strong>risques attachés à un cadre d'autorisation</strong>, non la démonstration qu'un protocole « sécurisé » aurait failli.</p>
 </div>
-
 <h3>8.6.2 Modes d'échec propres à l'axe horizontal</h3>
-
 <p>La coordination agent-agent se déploie <strong>sur un spectre</strong>. À une extrémité, la <strong>négociation implicite</strong>, portée par le langage naturel dans l'invite — elle <strong>domine la pratique</strong>, au prix d'une <strong>absence de garantie vérifiable</strong> sur l'accord conclu. À l'autre, la <strong>négociation explicite</strong> — plus rigoureuse, <strong>peu déployée</strong>.</p>
-
 <p>Cette gradation détermine les modes d'échec :</p>
-
-<ul class="puces">
-  <li>un <strong>transport syntaxiquement valide n'exclut pas un désaccord sémantique</strong> sur l'intention : deux agents peuvent « s'entendre » sur des messages bien formés tout en <strong>interprétant divergemment la tâche</strong> ;</li>
-  <li>la délégation introduit ses pathologies — <strong>boucles et interblocages</strong> lorsque des agents se renvoient indéfiniment une tâche, <strong>ambiguïté des capacités annoncées</strong>, <strong>perte de l'engagement</strong> en cours de chaîne ;</li>
-  <li>multiplier les arêtes du graphe d'interaction <strong>élargit d'autant la surface d'attaque</strong>.</li>
+<ul>
+<li>un <strong>transport syntaxiquement valide n'exclut pas un désaccord sémantique</strong> sur l'intention : deux agents peuvent « s'entendre » sur des messages bien formés tout en <strong>interprétant divergemment la tâche</strong> ;</li>
+<li>la délégation introduit ses pathologies — <strong>boucles et interblocages</strong> lorsque des agents se renvoient indéfiniment une tâche, <strong>ambiguïté des capacités annoncées</strong>, <strong>perte de l'engagement</strong> en cours de chaîne ;</li>
+<li>multiplier les arêtes du graphe d'interaction <strong>élargit d'autant la surface d'attaque</strong>.</li>
 </ul>
-
 <p>Ces défaillances, <strong>irréductibles à un agent isolé</strong>, sont caractéristiques des systèmes composés, et le <strong>ch. 11</strong> en donne la taxonomie unifiée.</p>
-
 <div class="encadre encadre--recherche">
   <span class="encadre__label">Perspective recherche</span>
   <p>Les protocoles à <strong>engagements sociaux observables</strong> (ch. 7 § 7.2.1) offrent une réponse théorique à la non-vérifiabilité de la sémantique mentaliste, en ancrant l'accord dans des <strong>engagements publics</strong> plutôt que dans des états mentaux supposés — pont direct vers les contrats comportementaux probabilistes du ch. 7 § 7.1.5. La nécessité, pour les systèmes multi-agents, de <strong>poser des questions de clarification</strong> plutôt que de présumer l'accord est étayée empiriquement.</p>
 </div>
-
 <h3>8.6.3 « Dans les agents, entre les agents » : une doctrine déclarée par une partie</h3>
-
 <p>Reste la doctrine qui donne son titre au chapitre et porte sa thèse.</p>
-
 <p>Elle est <strong>explicite</strong> : le protocole agent-agent se déclare <strong>complémentaire du protocole agent-outil et non un remplacement</strong>. La répartition est énoncée sans ambiguïté — <em>l'un pour l'intégration des outils et du contexte au niveau de l'agent individuel, l'autre pour la communication et la coordination entre agents</em> —, et se résume dans la formule « <strong>dans les agents, entre les agents</strong> ».</p>
-
 <div class="avert">
   <p><strong>Deux précisions d'attribution s'imposent, et elles sont le cœur de cette section.</strong></p>
 </div>
-
 <p><strong>Première : cette doctrine est celle du projet agent-agent.</strong> Le socle la trace <strong>au site de ce protocole</strong>, dans l'annonce de sa version 1.0. Elle <strong>n'est pas un accord conjoint publié par les deux projets</strong>, et la somme <strong>ne dispose d'aucune source établissant que l'autre projet l'a endossée dans ces termes</strong>. Cela n'en diminue pas la valeur — une déclaration publique de non-remplacement est un engagement que les spécifications ultérieures pourront confirmer ou démentir — <strong>mais cela en fixe le statut : une position déclarée par une partie, non un traité entre deux parties.</strong></p>
-
 <p><strong>Seconde : la formule « de nombreux systèmes utilisent les deux » n'est pas une métrique.</strong> Elle n'est ni chiffrée, ni datée, ni définie, et <strong>elle émane du même projet</strong>. Elle établit que la combinaison est <strong>prévue et revendiquée par les mainteneurs</strong> ; elle n'établit <strong>aucun volume de déploiement</strong>. ⚠ Le lecteur reconnaîtra ici la réserve centrale du ch. 7 § 7.6 — <em>le soutien déclaré ne vaut pas déploiement</em> — <strong>dans une variante plus discrète, et pour cela plus insidieuse</strong>.</p>
-
 <div class="avert">
   <p><strong>Précision de régime, datée du 28 juillet 2026, et elle porte sur la forme de la trace, non sur son fond.</strong> L'instruction à la source primaire <strong>confirme la doctrine</strong> et <strong>échoue à retrouver le verbatim</strong> que le socle citait, à une adresse qui ne résout plus (<code>S-013</code>). <em>Le fond est attesté, la citation littérale ne l'est pas</em> — ce chapitre rend donc la doctrine en français et <strong>ne reproduit ce verbatim nulle part</strong>. ⚠ <strong>À ne pas confondre avec la formule « dans les agents, entre les agents »</strong>, que la thèse et le titre de cette section portent bien entre guillemets : c'est le rendu français du positionnement, porté comme tel par le socle (<code>S-002</code>), <strong>non</strong> le verbatim demeuré introuvable.</p>
 </div>
-
 <p>Ces réserves posées, reste à dire ce que la doctrine vaut. <span class="auteur">Lecture de l'auteur</span> <strong>sa valeur n'est pas descriptive mais prescriptive</strong>. Elle fournit un <strong>critère de découpage</strong> — l'accès aux outils d'un côté, la délégation entre agents de l'autre —, et un critère de découpage est ce dont <strong>manque cruellement une organisation qui débute</strong>. Le socle établit la doctrine et son attribution ; il <strong>n'établit ni cette valeur prescriptive, ni le besoin qu'elle prétend combler</strong>.</p>
-
 <div class="avert">
   <p><strong>Mais un critère n'est pas une contrainte, et c'est le troisième terme de la thèse.</strong> Rien, dans les protocoles eux-mêmes tels que le socle les documente, <strong>n'empêche une équipe de faire transiter par des appels d'outils ce qui est en réalité une délégation entre agents</strong>, ou l'inverse. <em>La frontière entre les deux axes est une décision d'architecture que l'organisation doit prendre, documenter et défendre — elle n'est pas donnée par la technique.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>Et la frontière est floue en pratique — constat de la source, arrêté à juin 2026, non une opinion</strong> : les <strong>tâches asynchrones</strong> de l'axe vertical (§ 8.2.3) <strong>empiètent sur le terrain de la délégation</strong> de l'axe horizontal — recouvrement <strong>postérieur</strong> aux revues d'interopérabilité de l'écosystème, qui ne pouvaient donc pas en tenir compte. Mieux vaut retenir un <strong>critère de choix pragmatique</strong> qu'une frontière nette : <em>l'axe vertical lorsqu'on consomme une capacité bien délimitée sous le contrôle de l'hôte ; l'axe horizontal lorsqu'on délègue une tâche à un acteur opaque et autonome.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>Il serait enfin malhonnête de laisser croire que cette doctrine est le seul découpage disponible.</strong> Le socle en documente <strong>au moins deux autres</strong> : une feuille de route séquentielle antérieure, <strong>dont le ch. 7 § 7.3 a montré que la deuxième étape est devenue obsolète comme prescription</strong> ; et le positionnement d'une couche d'infrastructure articulant l'espace <strong>par les couches plutôt que par les axes</strong>, que le ch. 10 § 10.2 examine. Que ces découpages soient moins commodes ou datés est défendable ; <strong>qu'ils n'existent pas ne l'est pas.</strong></p>
 </div>
-
+<hr />
+<figure class="figure">
+  <img src="../figures/f-08-06-dans-entre.svg" alt="Figure 8.6 — « Dans les agents, entre les agents » : la répartition déclarée des deux axes." />
+  <figcaption><strong>Figure 8.6</strong> — « Dans les agents, entre les agents » : la répartition déclarée des deux axes.</figcaption>
+</figure>
 <h2 id="s87"><span class="sig">§ 8.7</span>Les intégrations infonuagiques : lire le statut, pas la présence</h2>
-
 <p>Un protocole ouvert <strong>ne vaut, pour une institution, que par les plateformes qui l'implémentent</strong>. Sur ce point, le socle documente l'axe horizontal avec précision — ⚠ <strong>et il faut d'abord relever une asymétrie : cette précision ne porte que sur lui.</strong></p>
-
 <p>L'état documenté au printemps 2026 est le suivant. Chez un premier fournisseur, le protocole est intégré à une plateforme d'atelier en <strong>préversion</strong>, et à un produit d'assistant en <strong>disponibilité générale depuis avril 2026</strong>. Chez un deuxième, l'intégration est portée par un environnement d'exécution d'agents. Chez le troisième, elle est <strong>d'origine</strong>, le protocole y étant né.</p>
-
 <div class="avert">
   <p><strong>Ces statuts sont documentés par des sources d'avril 2026, et l'instruction du 28 juillet 2026 ne les a rouverts qu'à moitié</strong> (socle consolidé <code>S-003</code>). <strong>Les deux statuts du premier fournisseur tiennent</strong> : la plateforme d'atelier porte toujours sa mention de préversion, le produit d'assistant n'en porte aucune. <strong>Le volet du deuxième fournisseur n'a pas été consulté.</strong> <em>Une confirmation partielle n'est pas une confirmation</em> — l'inventaire reste borné à ce qui a été rouvert, et le reste demeure à la date de sa source.</p>
 </div>
-
 <p>Cet inventaire dit <strong>deux choses</strong>.</p>
-
 <p><strong>La première</strong> : les trois grands fournisseurs d'infonuagique public implémentent le protocole, et les trois <strong>siègent au comité de pilotage technique</strong> (ch. 7 § 7.4.1). <span class="auteur">Lecture de l'auteur</span> le socle établit les intégrations et la composition du comité ; <strong>la convergence qu'on y lit, et son caractère peu commun dans un marché disputé, est une inférence d'architecture</strong>, non un fait documenté.</p>
-
 <p><strong>La seconde est plus utile encore à qui prépare un dossier : les statuts diffèrent, et c'est la différence qui compte.</strong> Une <strong>préversion</strong> et une <strong>disponibilité générale</strong> n'engagent pas le fournisseur au même degré. <span class="auteur">Lecture de l'auteur</span> ⚠ le socle établit <strong>les statuts</strong>, <strong>pas ce qu'ils emportent</strong> : la somme ne documente ni les garanties de service attachées à chaque statut, ni leur réception par une seconde ligne de défense. Ce qui en découle tient en une consigne : <em>l'architecte prudent lit le statut avant de lire la marque.</em></p>
-
 <div class="avert">
   <p><strong>Il faut enfin nommer une limite de ce chapitre plutôt que la laisser se combler par le silence.</strong> Le socle fournit cet inventaire pour l'axe horizontal ; <strong>il ne fournit pas d'inventaire équivalent, plateforme par plateforme et statut par statut, pour l'axe vertical</strong>. Ce qu'il documente de ce dernier se trouve du côté des <strong>cadriciels d'orchestration</strong>, et relève du ch. 23.</p>
 </div>
-
 <div class="avert">
   <p><strong>L'absence d'un inventaire infonuagique de l'axe vertical dans le socle n'établit pas l'absence d'un tel support</strong> : elle établit que <strong>la somme ne peut pas en dresser la carte</strong>. C'est, au sens de R-14 du Vol. III, une <strong>absence de documentation</strong> — degré 3, qui n'autorise aucune conclusion. <em>La distinction est celle entre ce qui n'existe pas et ce qui n'a pas été vérifié ; la somme s'astreint à ne jamais la franchir.</em></p>
 </div>
+<hr />
 
 <footer class="pied">
   <p><strong>Vol. IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em></strong> · Livre I, chapitre 8. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau, M.Sc. IT.</p>

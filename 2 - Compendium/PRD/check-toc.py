@@ -53,6 +53,7 @@ if not CONSPECTUS.exists():        # layout PRD/ : le README (conspectus) vit à
 
 N_CHAPTERS = 50             # v0.20 : 57 → 50 (déc. 11) ; v0.22 : +ch. 41 (déc. 12) ; v0.23 : 47+48 → 47 (déc. 13)
 CHAPTER_CAP = 50            # plafond dur, décision 13a — ne jamais relever sans instruction d'auteur
+TABLES_DETAILLEES = 58      # C16 : 50 entrées, dont 8 fusions portant deux tables de source
 BOOKS = ["I", "II", "III", "IV", "V"]           # v0.20 : dix livres → cinq
 ROMAN_OK = set(BOOKS)
 N_HEAD_ENVELOPES = 6        # cinq livres + avant-propos
@@ -304,12 +305,56 @@ def main():
         fail("C15", f"{len(nums)} chapitres — le plafond de la décision 13a est {CHAPTER_CAP} ; "
                     f"toute insertion se paie par une fusion dans la même passe (décision 13b)")
 
+    # C16 — chaque en-tête de table détaillée déclare l'entrée qui le porte.
+    #
+    # ⚠ Contrôle ajouté le 2 septembre 2026. Les en-têtes « Table des matières
+    # détaillée du chapitre N » citent, pour 45 des 58, une numérotation
+    # ANTÉRIEURE à la condensation : l'écart va de +1 au ch. 12 à +7 au ch. 50.
+    # Ce n'est pas une erreur — c'est une convention, et le seul endroit qui
+    # l'écrivait était la note du ch. 41, à quatorze cents lignes de la première
+    # occurrence. Cinq pièces rédigées l'ont remontée comme un désalignement.
+    #
+    # ⚠ Le remappage sur la numérotation courante, que ces remontées demandaient,
+    # AURAIT DÉTRUIT DE L'INFORMATION : huit entrées sont des fusions et portent
+    # DEUX tables — ch. 12 (sources 12 et 13), 20, 21, 22, 37, 45, 47, 49. Les
+    # renuméroter les rendrait homonymes. *Le numéro de source distingue les deux
+    # mouvements ; c'est l'absence de la mention, non le numéro, qui trompait.*
+    #
+    # La règle opposable est donc : chaque en-tête porte « entrée courante :
+    # ch. M », et M est le numéro de l'entrée qui le contient.
+    entree = None
+    vus = 0
+    for i, l in enumerate(lines):
+        m = re.match(r"^### Chapitre (\d+) — ", l)
+        if m:
+            entree = int(m.group(1))
+            continue
+        if not l.startswith("**Table des matières détaillée du chapitre "):
+            continue
+        vus += 1
+        if entree is None:
+            fail("C16", f"ligne {i+1} : table détaillée hors de toute entrée de chapitre")
+            continue
+        m2 = re.search(r"entrée courante : \*\*ch\. (\d+)\*\*", l)
+        if not m2:
+            fail("C16", f"ligne {i+1} (ch. {entree}) : en-tête de table sans mention "
+                        f"« entrée courante : **ch. N** ». Le numéro qu'il cite est celui "
+                        f"de la SOURCE, pas de l'entrée — sans la mention, il se lit "
+                        f"comme un renvoi faux.")
+        elif int(m2.group(1)) != entree:
+            fail("C16", f"ligne {i+1} : l'en-tête déclare « entrée courante : ch. "
+                        f"{m2.group(1)} » sous l'entrée du ch. {entree}.")
+    if vus != TABLES_DETAILLEES:
+        fail("C16", f"{vus} en-têtes de table détaillée, {TABLES_DETAILLEES} attendus "
+                    f"(50 entrées, dont 8 fusions qui en portent deux).")
+
+
     if failures:
         print(f"ÉCHEC — {len(failures)} défaut(s) :")
         for f_ in failures:
             print("  " + f_)
         return 1
-    print("OK — tous les contrôles passent (C1-C15).")
+    print("OK — tous les contrôles passent (C1-C16).")
     return 0
 
 

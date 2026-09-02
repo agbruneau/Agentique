@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chapitre 26 — Le vide fédéral : de C-27 à C-36 · Interopérabilité et Orchestration en Entreprise Agentique</title>
-<meta name="description" content="Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier. Deuxième mouvement — le cadre réglementaire canadien (ch. 25-30). Deuxième chapitre du mouvement, et l'un des plus brefs : il établit un fait négatif et en tire les conséquences">
+<meta name="description" content="Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier. Deuxième mouvement — le cadre réglementaire canadien (ch. 25-30). Deuxième chapitre du mouvement, et l&#x27;un des plus brefs : il établit un fait négatif et en tire les conséquences">
 <meta name="author" content="André-Guy Bruneau, M.Sc. IT">
 <meta name="color-scheme" content="dark">
 <style>
@@ -443,6 +443,17 @@ tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
 tbody td:first-child { color: var(--texte); font-weight: 600; }
 .legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
 
+/* -------------------------------------------------------------- figures */
+/* Les SVG du volume sont dessinés pour le PDF, donc sur fond clair, et ils
+   portent ce fond eux-mêmes — sans quoi il faudrait maintenir deux variantes
+   de chaque figure. Sur ce thème sombre, ils se posent donc comme un carton ;
+   le padding empêche le fond de la figure de toucher le bord du cadre. */
+.figure { margin: 2.1rem 0 1.9rem; }
+.figure img { display: block; width: 100%; height: auto; border-radius: 7px;
+              border: 1px solid var(--trait); background: #fdfbf9; padding: 0.6rem; }
+.figure figcaption { font-size: 0.8rem; font-style: italic; color: var(--texte-faible);
+                     margin-top: 0.65rem; padding-left: 0.15rem; }
+
 /* --------------------------------------------------------------- listes */
 ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
 ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
@@ -531,15 +542,13 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <div class="nav__marque">Interopérabilité et Orchestration en Entreprise Agentique</div>
   <div class="nav__sous">Livre III · Chapitre 26</div>
   <ol>
-    <li><a href="#s260"><span class="num">26.0</span>Ouverture : chercher la loi qui n&#x27;existe pas</a></li>
+    <li><a href="#s260"><span class="num">26.0</span>Ouverture : chercher la loi qui n'existe pas</a></li>
     <li><a href="#s261"><span class="num">26.1</span>La prorogation du 6 janvier 2025 et la mort de C-27</a></li>
-    <li><a href="#s262"><span class="num">26.2</span>Le ministre de l&#x27;IA et le projet de loi C-36</a></li>
+    <li><a href="#s262"><span class="num">26.2</span>Le ministre de l'IA et le projet de loi C-36</a></li>
     <li><a href="#s263"><span class="num">26.3</span>Conséquences : le vide persiste, la charge est sectorielle</a></li>
-
   </ol>
   <div class="nav__pied">
     Vol.&nbsp;IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em><br>
-
     <a href="26-vide-federal-c27-c36.md">Version Markdown</a>
   </div>
 </nav>
@@ -553,106 +562,115 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <p class="titre__situe">Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier. Deuxième mouvement — le cadre réglementaire canadien (ch. 25-30). Deuxième chapitre du mouvement, et l'un des plus brefs : il établit un fait négatif et en tire les conséquences</p>
 </header>
 
+<!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
+     Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
+     que `build/assemble.py` pour le PDF et que `PRD/decompte.sh` pour la volumétrie. L'appareil de
+     gouvernance vit au .md jumeau, qui reste la seule source, et `build/verifier-piece.py` refuse
+     un rendu qui le recopierait. -->
+
 <div class="avert">
   <p><strong>La thèse a été collationnée contre le texte rédigé de sa source avant la rédaction</strong> (décision 14 du TOC). <strong>Domaine de balayage : une thèse examinée, zéro réalignée</strong> — et le bloc ci-dessus a été <strong>recollationné caractère à caractère contre le TOC v0.30</strong>, sans écart (décision 17). Elle reprend la thèse du Vol. II ch. 10 à sa forme du 16-17 juillet 2026 ; la parenthèse « loi sur la vie privée, non loi IA autonome » <strong>condense</strong> la proposition incidente de la source — « c'est une loi de protection des renseignements personnels » — <strong>sans rien lui ajouter</strong>, et elle en reprend la qualification de portée en toutes lettres.</p>
 </div>
-
 <h2 id="s260"><span class="sig">§ 26.0</span>Ouverture : chercher la loi qui n'existe pas</h2>
-
 <p>L'architecte qui, à l'été 2026, ouvre le dossier réglementaire d'un programme agentique dans une institution financière fédérale <strong>commence en général par chercher la loi</strong>. Il cherche le texte fédéral qui nommerait les systèmes d'intelligence artificielle, en établirait les classes de risque, en fixerait les obligations d'évaluation et de journalisation, et lui donnerait <strong>une cible de conformité datée</strong>.</p>
-
 <p><strong>Ce texte n'existe pas.</strong> Il a été déposé, débattu, puis il est mort ; et ce qui a été déposé depuis à sa place <strong>ne le remplace pas</strong>.</p>
-
 <p>Ce chapitre établit ce <strong>fait négatif</strong> — que le socle porte <strong>positivement</strong>, en <code>S-022</code> (<strong>[B]</strong>), et non par absence de documentation — et en tire les conséquences d'architecture. Il soutient trois propositions. La première : <strong>le vide fédéral n'est pas un accident de calendrier en voie de résorption</strong>, mais un état documenté qui dure. La deuxième : <strong>le projet de loi C-36, régulièrement présenté comme la réponse fédérale à l'intelligence artificielle, est en réalité une réforme de la protection des renseignements personnels</strong> qui porte des volets d'IA — <em>la distinction n'est pas byzantine, elle décide de ce qu'une institution inscrit à son registre d'obligations</em>. La troisième : ce vide persistant, <strong>la charge réglementaire effective repose entièrement sur les régulateurs sectoriels</strong> — le Bureau du surintendant des institutions financières, l'Autorité des marchés financiers et les Autorités canadiennes en valeurs mobilières —, dont les ch. 25, 27 et 28 traitent respectivement. ⚠ <strong>Une réserve borne cette troisième proposition, et le § 26.3 la pose</strong> : <em>des quatre instruments qui portent effectivement la charge, <strong>l'un relève du droit général québécois et non d'un régulateur sectoriel</strong> — l'y ranger serait inexact.</em></p>
-
 <h2 id="s261"><span class="sig">§ 26.1</span>La prorogation du 6 janvier 2025 et la mort de C-27</h2>
-
 <p><strong>Le point de départ est une date de procédure parlementaire, et c'est déjà instructif : le cadre fédéral canadien de l'IA n'a pas été voté, il est mort au feuilleton.</strong></p>
-
 <p>Le projet de loi C-27 réunissait <strong>deux textes distincts</strong> : une loi destinée à refondre le régime fédéral de protection des renseignements personnels, et la <strong>Loi sur l'intelligence artificielle et les données</strong> (LIAD) — premier et, à ce jour, unique projet fédéral de régulation spécifique des systèmes d'IA. À la <strong>prorogation du 6 janvier 2025</strong>, C-27 est mort au feuilleton, <strong>emportant les deux volets ensemble</strong> (Vol. II <code>F-24</code> → <code>S-022</code>, <strong>[B]</strong>, revalidé par consultation directe).</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>il faut mesurer ce qu'a été cet attelage.</strong> Le volet IA voyageait dans le même véhicule législatif qu'une réforme de la vie privée ; les deux sont morts ensemble. <em>L'attelage paraît avoir décidé du sort du volet IA</em> — <strong>ce que le socle établit</strong> : la concomitance. <strong>Ce qu'il n'établit pas</strong> : la causalité, ni les motifs politiques de la prorogation, ni le contenu des obligations que la loi aurait imposées. ⚠ <strong>Ce dernier point n'est pas anodin</strong> : <em>la somme ne compare donc ce vide à rien</em>, faute de savoir ce qui aurait été comblé.</p>
-
 <p><strong>Ce qu'il faut retenir, c'est la durée.</strong> Du 6 janvier 2025 au <strong>27 juillet 2026</strong>, gel de la somme, il s'écoule <strong>dix-huit mois et vingt et un jours</strong> sans qu'aucun texte fédéral ne vienne réguler les systèmes d'IA <strong>en tant que tels</strong>. ⚠ <strong>Ce n'est pas un intervalle : c'est l'état stable du droit fédéral canadien sur toute la période que couvre la somme.</strong></p>
-
 <p>Le constat se mesure au reste du corpus. La couche protocolaire agent-agent a été lancée, transférée sous gouvernance neutre et portée à sa première spécification stable <strong>pendant ce vide</strong> (<strong>ch. 7</strong>) ; les mises en production agentiques canadiennes documentées au <strong>ch. 35</strong> s'y sont déroulées ; les deux régimes sectoriels datés du 1ᵉʳ mai 2027 y ont été finalisés. ⚠ <strong>Aucun des faits que la somme rapporte n'a eu de loi fédérale d'IA pour cadre.</strong></p>
-
 <p><span class="auteur">Lecture de l'auteur</span> l'enseignement pratique de janvier 2025 n'est pas qu'un texte a échoué, mais qu'<strong>une planification de conformité adossée à un projet de loi en cours d'examen est une planification adossée à rien</strong>. <strong>Ce que le socle établit</strong> : la mort de C-27 et l'absence de reprise ultérieure du volet IA. <strong>Ce qu'il n'établit pas</strong> : de règle générale sur la fiabilité des trajectoires législatives. <em>La règle que la somme en tire — ne dater un programme de conformité que sur des textes en vigueur ou publiés en version finale — est une inférence, mais c'est celle que la suite du chapitre valide.</em> ⚠ <strong>Elle est aussi le versant fédéral de R-5 du Vol. II</strong> : <em>ce qui n'est pas publié ne se décrit pas.</em></p>
-
 <h2 id="s262"><span class="sig">§ 26.2</span>Le ministre de l'IA et le projet de loi C-36</h2>
-
 <p><strong>La séquence qui suit paraît, de loin, corriger le tir.</strong> En <strong>mai 2025</strong>, le gouvernement fédéral nomme le premier titulaire d'un portefeuille de l'IA et de l'innovation numérique. Le <strong>15 juin 2026</strong>, ce même ministre dépose le <strong>projet de loi C-36</strong> (Vol. II <code>F-24</code> → <code>S-022</code>, <strong>[B]</strong>). Entre la nomination et le dépôt, <strong>treize mois</strong> ; entre la prorogation qui a tué C-27 et ce dépôt, <strong>dix-sept mois</strong>.</p>
-
 <p><strong>Un ministre de l'IA dépose un projet de loi dix-sept mois après la mort du seul texte fédéral d'IA : la lecture par raccourci s'impose d'elle-même, et elle est fausse.</strong></p>
-
-<p>Le titre officiel de C-36 est <strong><em>Protecting Privacy and Consumer Data Act</strong></em>. ⚠ <strong>Le texte est une réforme de la protection des renseignements personnels</strong> : il modifie la loi fédérale sur la protection des renseignements personnels et les documents électroniques, et prévoit la création d'une commission de sécurité numérique et de protection des données. Il porte, il est vrai, <strong>trois volets</strong> — un droit à la suppression des renseignements, une protection des données des enfants, et un volet de <strong>transparence algorithmique</strong>, seul des trois que le socle qualifie d'IA — ⚠ <strong>mais il les porte comme composantes d'une loi sur la vie privée, non comme les dispositifs d'une loi IA autonome.</strong></p>
-
+<p>Le titre officiel de C-36 est <strong><em>Protecting Privacy and Consumer Data Act</em></strong>. ⚠ <strong>Le texte est une réforme de la protection des renseignements personnels</strong> : il modifie la loi fédérale sur la protection des renseignements personnels et les documents électroniques, et prévoit la création d'une commission de sécurité numérique et de protection des données. Il porte, il est vrai, <strong>trois volets</strong> — un droit à la suppression des renseignements, une protection des données des enfants, et un volet de <strong>transparence algorithmique</strong>, seul des trois que le socle qualifie d'IA — ⚠ <strong>mais il les porte comme composantes d'une loi sur la vie privée, non comme les dispositifs d'une loi IA autonome.</strong></p>
 <div class="avert">
   <p><strong>La qualification n'est pas affaire de purisme terminologique : elle décide de ce qu'une institution inscrit à son registre d'obligations.</strong> <em>Un responsable de la conformité qui inscrirait C-36 à son plan comme « cadre IA fédéral à venir » construirait son inventaire sur une qualification erronée : il attendrait un régime de conformité propre aux systèmes d'IA et recevrait une réforme de la protection des renseignements personnels.</em></p>
 </div>
-
 <p><strong>Deux précisions de statut s'imposent, et elles sont datées.</strong> ⚠ <strong>Premièrement, C-36 est un projet de loi et non une loi</strong> : première lecture le 15 juin 2026 ; <strong>à l'étape de la deuxième lecture au 16 juillet 2026, date de consultation du socle</strong>, étape <strong>reconduite inchangée au 28 juillet 2026</strong> par l'instruction du résidu de G-1 — <em>douze jours sans progression au registre parlementaire officiel</em>. <em>Aucune obligation n'en découle, et la somme ne se prononce pas sur son adoption</em> (R-5 du Vol. II — <em>ne rien anticiper</em>). ⚠ <strong>Deuxièmement, la commission qu'il prévoit n'existe pas</strong> : sa création est un <strong>effet projeté</strong> du texte, non un fait.</p>
-
 <div class="avert">
   <p><strong>Que prescrit exactement le volet de transparence algorithmique ?</strong> Les sources du socle établissent l'existence des trois volets et la nature générale du texte ; <strong>elles n'en établissent pas le contenu article par article</strong>, et le texte demeure susceptible d'amendement. <em>Absence de documentation dans le corpus, degré 3 de l'échelle R-14 du Vol. III — non un fait négatif vérifié.</em> <strong>La question reste ouverte ; aucune inférence n'est proposée ici</strong> — ⚠ <strong>et l'instruction du 28 juillet 2026 ne l'a pas comblée</strong> : <em>elle a reconduit l'étape parlementaire et la qualification de portée du texte, non son contenu.</em></p>
 </div>
-
 <h2 id="s263"><span class="sig">§ 26.3</span>Conséquences : le vide persiste, la charge est sectorielle</h2>
-
 <p><strong>La proposition centrale peut maintenant être énoncée dans les termes exacts du socle.</strong> <strong>La LIAD ne sera pas ravivée telle quelle</strong>, et <strong>le vide fédéral sur la régulation spécifique de l'IA persiste</strong> (Vol. II <code>F-24</code> → <code>S-022</code>, <strong>[B]</strong>). Une formule résume le constat, et la somme la cite en langue originale : « <em>Canada remains the only G7 nation without a binding AI regulatory framework</em> » — <em>AIMag</em>, juin 2026. ⚠ <strong>Cette formule est citée comme illustration d'un constat de presse, jamais comme source d'un fait central</strong> ; le fait central — la persistance du vide — est porté par l'entrée elle-même. ⚠ <strong>Et une divergence d'attribution est signalée à sa source</strong> : l'entrée l'attribue à « des juristes », le rapport de revalidation du Vol. II à ce seul périodique ; <em>le corps retient l'attribution la plus restrictive, et <strong>il la nomme</strong> — une affirmation ne s'anonymise pas</em> (décision 15 du TOC).</p>
-
 <div class="avert">
   <p><strong>Il faut cependant énoncer avec autant de soin ce que ce vide n'est pas, car la formule prête à contresens.</strong> <strong>Le Canada n'est pas un espace de non-droit pour les systèmes agentiques.</strong> Le vide est <strong>spécifique</strong> : il porte sur l'absence d'un <strong>régime fédéral contraignant qui régulerait les systèmes d'IA en tant que tels</strong>. Les Autorités canadiennes en valeurs mobilières l'énoncent pour leur champ : leurs indications <strong>ne créent ni ne modifient aucune exigence</strong>, et <strong>les lois sur les valeurs mobilières existantes s'appliquent</strong> aux systèmes d'IA (<strong>ch. 28</strong>). ⚠ <em>L'énoncé de l'avis est un rendu français — l'instrument est rédigé en anglais et le socle n'en porte pas le libellé d'origine : il ne se cite pas entre guillemets de verbatim, et la borne « valeurs mobilières » ne s'en retire pas.</em></p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> le même raisonnement vaut <strong>par construction</strong> pour les autres branches du droit général — protection des renseignements personnels, droit des contrats, responsabilité civile —, <strong>qu'aucun régime d'IA n'est venu écarter</strong>. <strong>Ce que le socle établit</strong> : ce point pour les seules valeurs mobilières. <strong>Ce qu'il n'établit pas</strong> : sa généralisation.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> ⚠ <strong>une conséquence de périmètre se pose tôt, et elle demeure une hypothèse de travail.</strong> <strong>Ce que le socle établit</strong> : que C-36 modifie la loi fédérale sur les renseignements personnels — <em>une loi dont l'objet est le traitement des renseignements personnels</em>. <strong>Ce qu'il n'établit pas</strong> : le périmètre d'application des volets d'IA du projet, et le § 26.2 dit pourquoi. Mais <strong>la nature du véhicule autorise au moins une lecture prudente</strong> : <em>un régime greffé sur une loi de protection des renseignements personnels a vocation à saisir les traitements de renseignements personnels, non l'ensemble des décisions d'un système agentique.</em> Un agent qui orchestre un rapprochement comptable, une chaîne de messages de paiement interbancaires ou une supervision d'infrastructure ne manipule pas nécessairement de renseignements personnels ; <strong>un agent de pré-adjudication hypothécaire, lui, en manipule par construction — et le ch. 35 § 35.1 en documente un cas canadien.</strong> ⚠ <em>L'inférence porte sur la logique du véhicule législatif, pas sur le texte de C-36, dont le libellé n'est pas au socle : elle est indiquée comme hypothèse de travail à vérifier, jamais comme fondement d'une position de conformité.</em></p>
-
 <p><strong>Pour l'institution financière fédérale, la conséquence est un déplacement complet de la charge vers les régulateurs sectoriels, et ce déplacement est daté.</strong></p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Instrument</th><th>État</th><th>Date opposable</th><th>Chapitre</th></tr></thead>
-  <tbody>
-    <tr><td><strong>E-23</strong> — risque de modèle, fédéral prudentiel</td><td>version finale publiée le 11 septembre 2025</td><td><strong>1ᵉʳ mai 2027</strong></td><td>ch. 25</td></tr>
-    <tr><td><strong>Ligne directrice IA de l'AMF</strong> — Québec, sectoriel</td><td>⚠ <strong>finale</strong>, jamais « en attente » ni « en projet » (réserve Vol. II <code>F-25</code> → <code>S-023</code>) — ⚠ <em>sa publication n'est pas datée au jour près : <strong>aucune</strong> des deux dates autrefois arbitrées ne figure aux pages officielles, et la somme écrit <strong>avril 2026</strong> en déclarant ses trois états (ch. 27 § 27.1)</em></td><td><strong>1ᵉʳ mai 2027</strong></td><td>ch. 27</td></tr>
-    <tr><td><strong>Art. 12.1 de la Loi 25</strong> — Québec, droit général des renseignements personnels</td><td><strong>en vigueur</strong></td><td><strong>22 septembre 2023</strong> — opposable depuis près de trois ans</td><td>ch. 27</td></tr>
-    <tr><td><strong>Avis 11-348 des ACVM</strong> — valeurs mobilières</td><td>publié le 5 décembre 2024 ; <strong>ne crée ni ne modifie aucune exigence</strong> <em>(rendu français)</em></td><td><strong>aucune</strong> — les lois <strong>sur les valeurs mobilières</strong> existantes s'appliquent</td><td>ch. 28</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Instrument</th>
+<th>État</th>
+<th>Date opposable</th>
+<th>Chapitre</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>E-23</strong> — risque de modèle, fédéral prudentiel</td>
+<td>version finale publiée le 11 septembre 2025</td>
+<td><strong>1ᵉʳ mai 2027</strong></td>
+<td>ch. 25</td>
+</tr>
+<tr>
+<td><strong>Ligne directrice IA de l'AMF</strong> — Québec, sectoriel</td>
+<td>⚠ <strong>finale</strong>, jamais « en attente » ni « en projet » (réserve Vol. II <code>F-25</code> → <code>S-023</code>) — ⚠ <em>sa publication n'est pas datée au jour près : <strong>aucune</strong> des deux dates autrefois arbitrées ne figure aux pages officielles, et la somme écrit <strong>avril 2026</strong> en déclarant ses trois états (ch. 27 § 27.1)</em></td>
+<td><strong>1ᵉʳ mai 2027</strong></td>
+<td>ch. 27</td>
+</tr>
+<tr>
+<td><strong>Art. 12.1 de la Loi 25</strong> — Québec, droit général des renseignements personnels</td>
+<td><strong>en vigueur</strong></td>
+<td><strong>22 septembre 2023</strong> — opposable depuis près de trois ans</td>
+<td>ch. 27</td>
+</tr>
+<tr>
+<td><strong>Avis 11-348 des ACVM</strong> — valeurs mobilières</td>
+<td>publié le 5 décembre 2024 ; <strong>ne crée ni ne modifie aucune exigence</strong> <em>(rendu français)</em></td>
+<td><strong>aucune</strong> — les lois <strong>sur les valeurs mobilières</strong> existantes s'appliquent</td>
+<td>ch. 28</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 26.1 — Les quatre instruments qui portent effectivement la charge, au gel du 27 juillet 2026. ⚠ <strong>L'un d'eux relève du droit général québécois, non d'un régulateur sectoriel</strong> — l'y ranger serait inexact.</p>
-
 <div class="avert">
   <p><strong>Un mot sur la portée d'E-23, et la formulation est imposée.</strong> E-23 <strong>ne nomme ni l'agentique ni les agents</strong> ; sa définition de « modèle » englobe les méthodes d'IA et d'apprentissage automatique, d'où une <strong>couverture implicite</strong> que les analystes juridiques canadiens <strong>tiennent pour acquise</strong> (PRD Vol. II §8.2.4). <em>La couverture est une inférence d'analystes, non une attente du Bureau</em>, et <strong>le ch. 25 § 25.3 en porte le développement</strong> ; le présent chapitre ne fait que la renvoyer. ⚠ <strong>Et on écrit « attendu par E-23 », jamais « exigé »</strong> (PRDPlan Vol. II §4.4).</p>
 </div>
-
 <p><strong>Un calcul suffit à mesurer la situation d'une institution au gel de la somme.</strong> Du 27 juillet 2026 au 1ᵉʳ mai 2027, il reste <strong>neuf mois et quatre jours</strong> avant l'entrée en vigueur <strong>simultanée</strong> d'E-23 et de la ligne directrice de l'AMF. <strong>L'article 12.1, lui, est opposable depuis près de trois ans.</strong></p>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>l'ordre de priorité qu'un architecte devrait en tirer est l'inverse exact de celui que suggère l'actualité législative.</strong> <strong>Ce que le socle établit</strong> : trois faits — le vide fédéral persiste, un projet de loi fédéral de vie privée est en deuxième lecture, et quatre instruments sont soit en vigueur, soit finalisés avec une date d'entrée en vigueur ferme. <strong>Ce qu'il n'établit pas</strong> : d'ordre de priorité entre eux. <em>Celui-ci est une inférence, et elle est néanmoins difficile à contester : la veille sur un texte non adopté, dont le contenu détaillé n'est pas au socle et qui n'est pas une loi d'IA, ne saurait mobiliser les ressources qu'appellent quatre instruments datés dont l'un est déjà opposable.</em> <strong>La conséquence d'architecture — traduire ces exigences sectorielles en cadres déterministes — est l'objet du ch. 29, pivot du Livre.</strong></p>
-
 <h3>Synthèse : ce que le chapitre lègue à la somme</h3>
-
 <p><em>Section de sortie sans homologue direct dans la source — construction d'éditeur.</em></p>
-
-<ol class="numeros">
-  <li><strong>Un fait négatif, daté et mesuré.</strong> Pas de régime fédéral contraignant propre aux systèmes d'IA ; <strong>dix-huit mois et vingt et un jours</strong> au gel de la somme. <em>Aucun chapitre aval ne le redémontre</em>, et la table de traduction du <strong>ch. 29 § 29.1</strong> n'en tire aucune contrainte — <em>un vide n'en produit pas.</em></li>
-  <li><strong>La qualification de C-36, et ce qu'elle interdit.</strong> Loi de vie privée portant des volets d'IA, <strong>non loi IA autonome</strong>. <em>L'inscrire comme « cadre IA fédéral à venir » est une erreur de registre d'obligations</em>, et le <strong>ch. 30</strong> n'en tire aucun élément du maillage international.</li>
-  <li><strong>Le vide est spécifique, non général.</strong> Le droit général s'applique. ⚠ <em>Le socle ne l'établit que pour les valeurs mobilières</em> (<strong>ch. 28</strong>) ; la généralisation est une lecture.</li>
-  <li><strong>La table des quatre instruments, et son ordre de priorité.</strong> ⚠ <strong>Un seul y est déjà opposable</strong>, et ce n'est pas celui qu'on attend. Le <strong>ch. 27</strong> le développe ; les quatre instruments forment <strong>toute</strong> la table de traduction du <strong>ch. 29</strong>, qui n'en tire aucun autre texte.</li>
+<ol type="1">
+<li><strong>Un fait négatif, daté et mesuré.</strong> Pas de régime fédéral contraignant propre aux systèmes d'IA ; <strong>dix-huit mois et vingt et un jours</strong> au gel de la somme. <em>Aucun chapitre aval ne le redémontre</em>, et la table de traduction du <strong>ch. 29 § 29.1</strong> n'en tire aucune contrainte — <em>un vide n'en produit pas.</em></li>
+<li><strong>La qualification de C-36, et ce qu'elle interdit.</strong> Loi de vie privée portant des volets d'IA, <strong>non loi IA autonome</strong>. <em>L'inscrire comme « cadre IA fédéral à venir » est une erreur de registre d'obligations</em>, et le <strong>ch. 30</strong> n'en tire aucun élément du maillage international.</li>
+<li><strong>Le vide est spécifique, non général.</strong> Le droit général s'applique. ⚠ <em>Le socle ne l'établit que pour les valeurs mobilières</em> (<strong>ch. 28</strong>) ; la généralisation est une lecture.</li>
+<li><strong>La table des quatre instruments, et son ordre de priorité.</strong> ⚠ <strong>Un seul y est déjà opposable</strong>, et ce n'est pas celui qu'on attend. Le <strong>ch. 27</strong> le développe ; les quatre instruments forment <strong>toute</strong> la table de traduction du <strong>ch. 29</strong>, qui n'en tire aucun autre texte.</li>
 </ol>
-
 <div class="avert">
   <p><strong>Ce que le chapitre ne lègue pas.</strong> Il ne dit pas que C-36 sera adopté, ni qu'il ne le sera pas : <em>le socle documente une étape parlementaire, pas une issue.</em> Il ne dit pas ce que prescrit le volet de transparence algorithmique. Il ne dit pas que le vide serait une <strong>lacune de protection</strong>. Et <strong>ce que la loi morte aurait exigé n'est pas au socle</strong> : <em>la somme ne le compare donc à rien.</em></p>
 </div>
-
 <p><strong>L'absence d'une loi fédérale sur l'IA n'est pas une permission. C'est une redistribution de la charge.</strong></p>
+<hr />
+<figure class="figure">
+  <img src="../figures/f-26-03-vide-federal.svg" alt="Figure 26.3 — Le vide fédéral, et les quatre instruments qui portent effectivement la charge." />
+  <figcaption><strong>Figure 26.3</strong> — Le vide fédéral, et les quatre instruments qui portent effectivement la charge.</figcaption>
+</figure>
 
 <footer class="pied">
   <p><strong>Vol. IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em></strong> · Livre III, chapitre 26. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau, M.Sc. IT.</p>
-
   <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme (gel unique : 27 juillet 2026).</p>
 </footer>
 

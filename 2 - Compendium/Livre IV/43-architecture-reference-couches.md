@@ -488,7 +488,7 @@ d'avis** sans se refaire.* **Ce que le socle établit** : l'absence de désignat
 documenté**. **Ce qu'il n'établit pas** : que cette absence dure, ni qu'une désignation future soit
 compatible avec l'un des protocoles de la pile.
 
-## Synthèse : ce que le chapitre lègue à la somme
+### Synthèse : ce que le chapitre lègue à la somme
 
 *Section de sortie sans homologue direct dans la source — construction d'éditeur.*
 
@@ -556,6 +556,8 @@ ré-adossement aux `S-nnn` reste dû.* **G-4 et G-5 demeurent ouvertes.**
    rejeu du harnais relèvent de la passe qui verse, non de celle-ci ; un marqueur de siège qu'aucune
    table ne contrôle laisserait passer une reconstruction ailleurs dans la somme.*
 5. **CA-IV-13 n'est pas satisfaite** — aucune relecture par un relecteur distinct du rédacteur.
+
+   ☑ **STATUT ARRÊTÉ LE 2 SEPTEMBRE 2026** (décision 26 du TOC, **D-16**) : *l'**annexe H** n'est pas rédigée et **ne le sera pas** — le dépôt est clos, et **D-13** ne prévoit plus de passe de rédaction.* ☑ **Son siège est nommé aux sources** : `Annexe B - Architecture de Solutions.md` du **Vol. I**. ⚠ **Le renvoi de cette pièce n'est donc plus une attente, c'est une désignation** — *il visait un livrable à venir, il vise désormais un texte qui existe.*
 
 **Remontées ouvertes par ce chapitre :**
 

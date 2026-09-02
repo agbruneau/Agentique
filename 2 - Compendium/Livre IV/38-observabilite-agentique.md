@@ -519,7 +519,7 @@ mécanisme qu'il faudrait mieux chercher : c'est une lacune ouverte, et le chapi
 qu'il ne la comble.** *L'exposer est le résultat ; la combler par inférence serait la faute que la
 somme prend pour objet.*
 
-## Synthèse : ce que le chapitre lègue à la somme
+### Synthèse : ce que le chapitre lègue à la somme
 
 *Section de sortie sans homologue direct dans la source — construction d'éditeur.*
 

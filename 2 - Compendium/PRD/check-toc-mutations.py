@@ -12,8 +12,16 @@ du dossier). Versionné pour que la validation soit rejouable depuis le dépôt
 
 ⚠ Les motifs `ancien` des mutations sont du contenu : si une passe du TOC les
 réécrit, la mutation devient inapplicable et le harnais échoue en le disant —
-réancrer le motif sur le texte courant, ne pas supprimer la mutation."""
+réancrer le motif sur le texte courant, ne pas supprimer la mutation.
+
+⚠ Un `ancien` peut être une **chaîne littérale** ou un **motif compilé**
+(`re.compile`). Le second existe pour les ancres qui portent un numéro de
+version : un littéral s'y périme à chaque révision du plan, et le réancrage
+manuel a échoué deux fois de suite sur M14 — v0.28, puis v0.33 réancrée le
+21 août et périmée par la v0.34 du 25 août. *Une ancre qui doit être réécrite
+à chaque passe n'est pas une ancre : c'est une dette à échéance.*"""
 import io
+import re
 import shutil
 import subprocess
 import sys
@@ -108,15 +116,31 @@ MUTATIONS = [
     # pas, et M14 échappait sans que le motif soit absent — le harnais ne pouvait
     # pas le dire, `old not in content` étant vrai.
     # ⚠ Règle : ancrer sur le PRÉFIXE DE RANGÉE + la version de tête, jamais sur une
-    # version seule. Le préfixe garantit que la substitution (`replace(..., 1)`)
-    # frappe la valeur active. **La version de tête reste à réancrer à chaque passe**
-    # — faiblesse de conception connue, qu'un motif au lieu d'un littéral corrigerait.
+    # version seule. Le préfixe garantit que la substitution frappe la valeur active.
+    # ⚠ Réancrage du 2 septembre 2026 — le littéral est remplacé par un MOTIF, ce que
+    # le commentaire ci-dessus annonçait comme la correction de sa propre faiblesse.
+    # Le littéral avait été réancré sur la v0.33 le 21 août 2026 ; **la v0.34 du
+    # 25 août (D-14, révision du titre) l'a périmé six jours plus tard**, et le
+    # harnais a passé une semaine à déclarer « des mutations échappent au script »
+    # pendant que le conspectus affichait « 23 sur 23 ». *Le motif ci-dessous capture
+    # la version de tête quelle qu'elle soit et la remplace par une valeur basse :
+    # il ne se périme plus qu'avec la FORME de la rangée, que C14 lit déjà.*
     ("M14", "README.md",
-     "| Source | [`TOC.md`](PRD/TOC.md) **v0.33** (8 août 2026)",
-     "| Source | [`TOC.md`](PRD/TOC.md) **v0.10** (21 juillet 2026)", "C14"),
+     re.compile(r"(\| Source \| \[`TOC\.md`\]\(PRD/TOC\.md\) \*\*v0\.)\d+(\*\*)"),
+     r"\g<1>10\g<2>", "C14"),
     # M15 — plafond dur (décision 13a) : un chapitre de plus doit être refusé.
     ("M15", "TOC.md", "### Chapitre 50 — Péremption",
      "### Chapitre 51 — Chapitre de test du plafond\n\n### Chapitre 50 — Péremption", "C15"),
+    # C16 — l'en-tête de table détaillée sans sa mention d'entrée : le numéro
+    # qu'il cite est celui de la SOURCE, et sans la mention il se lit comme un
+    # renvoi faux. C'est ce que cinq pièces rédigées ont remonté.
+    ("M16", "TOC.md",
+     "**Table des matières détaillée du chapitre 13** — *entrée courante : **ch. 12**",
+     "**Table des matières détaillée du chapitre 13** — *sans mention : **ch. 12**", "C16"),
+    # C16 — la mention présente mais FAUSSE : elle désigne une autre entrée.
+    ("M16b", "TOC.md",
+     "**Table des matières détaillée du chapitre 14** — *entrée courante : **ch. 13**",
+     "**Table des matières détaillée du chapitre 14** — *entrée courante : **ch. 31**", "C16"),
 ]
 
 
@@ -147,11 +171,21 @@ def main():
                 shutil.copy(_src(f), d / f)
             target = d / fname
             content = target.read_text(encoding="utf-8")
-            if old not in content:
-                results.append((mid, f"MUTATION INAPPLICABLE — motif absent : {old[:60]}", False))
+            # Deux formes d'ancre : littérale (la règle) ou compilée (les ancres
+            # qui portent un numéro de version). La seconde substitue par `sub`,
+            # à une occurrence, pour frapper la valeur de tête comme le fait le
+            # `replace(..., 1)` du cas littéral.
+            if isinstance(old, re.Pattern):
+                applique, motif = old.search(content) is not None, old.pattern
+                mute = old.sub(new, content, count=1)
+            else:
+                applique, motif = old in content, old
+                mute = content.replace(old, new, 1)
+            if not applique:
+                results.append((mid, f"MUTATION INAPPLICABLE — motif absent : {motif[:60]}", False))
                 ok = False
                 continue
-            target.write_text(content.replace(old, new, 1), encoding="utf-8")
+            target.write_text(mute, encoding="utf-8")
             r = run_in(d)
             failed = r.returncode != 0
             tagged = f"[{ctrl}]" in r.stdout

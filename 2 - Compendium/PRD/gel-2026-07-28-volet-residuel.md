@@ -108,6 +108,38 @@
 
 ---
 
+
+## Critère de reprise — quelles classes se résorbent, et par quoi
+
+☑ **Section ajoutée le 2 septembre 2026, remontée `R-IV-111`, allouée et soldée.**
+*Le ch. 35 § 35.10 l'a ouverte le 28 juillet 2026 en demandant que la distinction **dette d'outillage
+/ refus d'accès** soit portée ici « comme critère de reprise ». Les classes existaient — c'est le
+**critère** qui manquait, et un classement sans critère de reprise range sans dire quoi faire.*
+
+| Classe | Nombre | Se résorbe par | Verdict de reprise |
+|---|---|---|---|
+| *(i)* **Accès refusé par l'hôte** | 11 | rien que la passe contrôle — l'hôte décide | ☐ **NON RÉSORBABLE PAR L'APPAREIL.** *Une reprise ne se planifie pas : elle se retente, et son échec se redate.* La reprise est **opportuniste**, jamais un jalon |
+| *(ii)* **Source retirée du dépôt** | 5 | l'historique git, ou rien — décision d'auteur **D-5** | ☐ **NON RÉSORBABLE SANS DÉCISION.** *Instruire contre un objet supprimé n'est pas une re-datation, c'est une exhumation* |
+| *(iii)* **Dette d'outillage, non d'accès** | 4 | **un instrument** : convertisseur PDF→texte, client exécutant JavaScript | ☑ **RÉSORBABLE, ET C'EST LA SEULE CLASSE QUI L'EST.** *La source répond ; c'est l'outil qui manque, et un outil s'acquiert.* **Reprise à planifier** |
+| *(iv)* **Structure de l'entrée** | 1 | une **correction du socle**, pas une re-datation | ☑ Résorbable, mais hors du volet : `S-104` doit **nommer ses quatre sources** |
+| *(v)* **Objet fictif** | 1 | rien, et c'est juste | ☑ **SANS OBJET, définitivement.** *Un objet fictif n'a pas de source primaire* |
+
+⚠ **La conséquence pratique tient en une phrase, et elle n'était pas écrite** : *sur vingt-deux
+verdicts, **quatre seulement** appellent un travail que le dépôt peut décider d'entreprendre.* Les
+onze refus d'hôte ne se lèvent que si l'hôte change d'avis ; les cinq sources retirées relèvent de
+D-5 ; l'objet fictif est clos. **Une passe qui prévoirait de « lever les vingt-deux » planifierait
+donc dix-huit échecs.**
+
+☑ **Le point prioritaire que la remontée nomme, et il n'est pas dans les vingt-deux.** Le
+**§ 35.8.1** corrige une lecture antérieure : le chiffre **« 8 000 »** désigne **des employés de
+première ligne**, non des politiques, et il provient d'une **soumission à un concours sectoriel**
+distincte du communiqué. ⚠ **La moitié NÉGATIVE de la correction est re-constatée** — le communiqué
+ne porte pas ce chiffre — ; **la moitié POSITIVE ne l'est pas**, la page de la soumission n'ayant pas
+été récupérée. *Un chiffre dont on a établi qu'il ne vient pas d'une source, sans établir de quelle
+source il vient, est un chiffre à mi-chemin* — et il est cité comme s'il l'était entièrement.
+**Classe : *(iii)*, dette d'outillage — donc résorbable, et à ce titre prioritaire.**
+
+
 ## ⚠ Quatre faits notables qui dépassent la re-datation
 
 **Ils sont CONSIGNÉS et NON ARBITRÉS.** *Une passe qui re-date constate un état à une date ; elle ne tranche pas ce qu'elle trouve en chemin.* Chacun est porté ici pour que la passe compétente n'ait pas à le retrouver.

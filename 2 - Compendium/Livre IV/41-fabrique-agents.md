@@ -363,7 +363,7 @@ négatif vérifié (degré 3). *Et cette absence-ci n'est pas de la même nature
 chapitre : les précédentes portent sur une matière que la somme prétend traiter, celle-ci sur une
 matière qu'elle déclare ne pas traiter.*
 
-## Synthèse : ce que le chapitre lègue à la somme
+### Synthèse : ce que le chapitre lègue à la somme
 
 *Section de sortie sans homologue direct dans la source — construction d'éditeur.*
 
@@ -371,7 +371,11 @@ matière qu'elle déclare ne pas traiter.*
 
 1. **La désambiguïsation d'« agent factory ».** **Quatre emplois, dont trois vivent dans le plan de la
    somme** : le plan de production ici, la fabrique d'identité au **ch. 43 § 43.1**, le patron
-   *factory* à l'**Annexe G** ; le quatrième est un titre d'éditeur. **Aucun chapitre n'emploie le mot
+   *factory* à l'**Annexe G** ; le quatrième est un titre d'éditeur. ⚠ **L'Annexe G n'est pas rédigée et ne le
+   sera pas** (décision 26 du TOC, 2 septembre 2026) : *son siège est le catalogue de patrons du
+   **Vol. III**, `annexe-e-catalogue-patrons.md`* — **et l'Annexe E, glossaire, a le sien au
+   `annexe-d-glossaire.md` des Vol. II et III**. *Les deux renvois de cette pièce désignent donc un
+   texte qui existe, au lieu d'attendre un texte qui ne viendra pas.* **Aucun chapitre n'emploie le mot
    sans que le sens soit déterminable de sa phrase.** *C'est le seul legs du chapitre qui ne dépende
    d'aucune instruction.*
 2. **Une question, posée une fois** : *d'où vient l'agent admis, et par quel geste est-il réémis quand

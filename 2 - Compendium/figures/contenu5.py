@@ -121,13 +121,13 @@ f(49, "49.11", "f-49-11-trois-axes",
   ]))
 
 f(50, "50.2", "f-50-02-evenements-peremption",
-  "Les onze événements de péremption, et ce que chacun ferait refaire.",
-  "Les onze evenements de peremption de la somme, avec leur tri prospectif.",
+  "Les quatorze événements de péremption, et ce que chacun ferait refaire.",
+  "Les quatorze evenements de peremption de la somme, avec leur tri prospectif.",
   "Tableau 50.1, § 50.2, chapitre 50 — état au gel.", r"^## § 50\.3 ", "bandes",
-  "⚠ UN ÉVÉNEMENT SURVENU N'EST PAS UN ÉVÉNEMENT PAYÉ. L'un des onze est survenu à moitié — "
+  "⚠ UN ÉVÉNEMENT SURVENU N'EST PAS UN ÉVÉNEMENT PAYÉ. L'un des quatorze est survenu à moitié — "
   "l'annonce est établie, la suite ne l'est pas —, et un autre est le seul du corpus dont le "
   "dispositif ait été éprouvé par le réel (ch. 8, revalidation du 30 juillet 2026).",
-  dict(titre="ONZE ÉVÉNEMENTS, ET TROIS ÉTATS", cols=3, items=[
+  dict(titre="QUATORZE ÉVÉNEMENTS, ET TROIS ÉTATS", cols=3, items=[
       ("survenu", "Révisions protocolaires", "La couche protocolaire du Livre I se périme au rythme de ses DEUX spécifications, non de la seule première.", "payé — ch. 8, revalidation du 30 juillet 2026"),
       ("à moitié", "Transfert de gouvernance", "L'annonce du don est établie ; la suite ne l'est pas.", "candidat survenu à moitié, et c'est la moitié qui compte"),
       ("attendu", "Désignation de l'organisme", "Fait négatif vérifié : quatre chaînes, trois textes, zéro occurrence.", "ch. 32 — ce qui se refait est tout le chapitre"),
@@ -141,7 +141,7 @@ f(50, "50.3", "f-50-03-protocole-revalidation",
   "Revalider n'est pas retoucher un texte gelé — c'est confronter chaque énoncé au texte neuf "
   "(ch. 8, revalidation du 30 juillet 2026).",
   dict(titre="CE QUI SE REFAIT, ET DANS QUEL ORDRE", boucle=True, maillons=[
-      ("Événement", "l'un des onze survient, et la veille le constate"),
+      ("Événement", "l'un des quatorze survient, et la veille le constate"),
       ("Extraction", "le texte neuf est extrait à sa source, à sa date"),
       ("Confrontation", "chaque énoncé y est confronté — non retouché"),
       ("Registre", "le gel est repoussé, et la date inscrite"),

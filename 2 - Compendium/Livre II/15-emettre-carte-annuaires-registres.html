@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chapitre 15 — Émettre : Agent Card signée, annuaires, registres gouvernés · Interopérabilité et Orchestration en Entreprise Agentique</title>
-<meta name="description" content="Livre II — Faire confiance : identité, délégation et fabrique de confiance. Premier mouvement — émettre (ch. 12-18). Quatrième chapitre du mouvement, et celui qui porte le mouvement : les trois mécanismes d'émission y sont instruits sur pièce">
+<meta name="description" content="Livre II — Faire confiance : identité, délégation et fabrique de confiance. Premier mouvement — émettre (ch. 12-18). Quatrième chapitre du mouvement, et **celui qui porte le mouvement** : les trois mécanismes d&#x27;émission y sont instruits sur pièce">
 <meta name="author" content="André-Guy Bruneau, M.Sc. IT">
 <meta name="color-scheme" content="dark">
 <style>
@@ -443,6 +443,17 @@ tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
 tbody td:first-child { color: var(--texte); font-weight: 600; }
 .legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
 
+/* -------------------------------------------------------------- figures */
+/* Les SVG du volume sont dessinés pour le PDF, donc sur fond clair, et ils
+   portent ce fond eux-mêmes — sans quoi il faudrait maintenir deux variantes
+   de chaque figure. Sur ce thème sombre, ils se posent donc comme un carton ;
+   le padding empêche le fond de la figure de toucher le bord du cadre. */
+.figure { margin: 2.1rem 0 1.9rem; }
+.figure img { display: block; width: 100%; height: auto; border-radius: 7px;
+              border: 1px solid var(--trait); background: #fdfbf9; padding: 0.6rem; }
+.figure figcaption { font-size: 0.8rem; font-style: italic; color: var(--texte-faible);
+                     margin-top: 0.65rem; padding-left: 0.15rem; }
+
 /* --------------------------------------------------------------- listes */
 ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
 ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
@@ -532,14 +543,12 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <div class="nav__sous">Livre II · Chapitre 15</div>
   <ol>
     <li><a href="#s150"><span class="num">15.0</span>Introduction : trois mécanismes, une même question</a></li>
-    <li><a href="#s151"><span class="num">15.1</span>L&#x27;Agent Card signée : anatomie et valeur probante</a></li>
+    <li><a href="#s151"><span class="num">15.1</span>L'Agent Card signée : anatomie et valeur probante</a></li>
     <li><a href="#s152"><span class="num">15.2</span>Les annuaires commerciaux : Entra Agent ID et ses pairs</a></li>
     <li><a href="#s153"><span class="num">15.3</span>Les registres gouvernés : de la spécification CSA aux registres A2A</a></li>
-
   </ol>
   <div class="nav__pied">
     Vol.&nbsp;IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em><br>
-
     <a href="15-emettre-carte-annuaires-registres.md">Version Markdown</a>
   </div>
 </nav>
@@ -550,324 +559,309 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 <header class="titre">
   <div class="titre__fil">Livre II — Faire confiance : identité, délégation et fabrique de confiance</div>
   <h1><span class="chap">Chapitre 15</span>Émettre : Agent Card signée, annuaires, registres gouvernés</h1>
-  <p class="titre__situe">Livre II — Faire confiance : identité, délégation et fabrique de confiance. Premier mouvement — émettre (ch. 12-18). Quatrième chapitre du mouvement, et <strong>celui qui porte le mouvement</strong> : les trois mécanismes d'émission y sont instruits sur pièce</p>
+  <p class="titre__situe">Livre II — Faire confiance : identité, délégation et fabrique de confiance. Premier mouvement — émettre (ch. 12-18). Quatrième chapitre du mouvement, et **celui qui porte le mouvement** : les trois mécanismes d'émission y sont instruits sur pièce</p>
 </header>
 
+<!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
+     Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
+     que `build/assemble.py` pour le PDF et que `PRD/decompte.sh` pour la volumétrie. L'appareil de
+     gouvernance vit au .md jumeau, qui reste la seule source, et `build/verifier-piece.py` refuse
+     un rendu qui le recopierait. -->
+
 <h2 id="s150"><span class="sig">§ 15.0</span>Introduction : trois mécanismes, une même question</h2>
-
 <p>Le ch. 14 a fourni l'instrument ; ce chapitre l'éprouve sur les trois mécanismes par lesquels une organisation <strong>émet</strong> aujourd'hui l'identité d'un agent : une <strong>carte signée</strong>, une <strong>inscription dans un annuaire d'entreprise</strong>, une <strong>inscription dans un registre gouverné</strong>. Les trois sont documentés, datés, et <strong>aucun n'est une norme ratifiée</strong>.</p>
-
 <div class="avert">
   <p><strong>Ce chapitre est celui où la convention cardinale de la somme coûte le plus cher, et il faut la poser avant la première ligne.</strong> Un mécanisme cryptographique se qualifie par ce que sa spécification <strong>démontre</strong>, jamais par ce qu'elle <strong>promet</strong> (R-02 du Vol. III). <em>La règle n'est pas une précaution de style</em> : la spécification agent-agent écrit elle-même, en ouverture de sa section sur la signature, que les cartes « <strong>MAY</strong> be digitally signed using JSON Web Signature (JWS) as defined in RFC 7515 <strong>to ensure authenticity and integrity</strong> ». La clause finale énonce une <strong>finalité poursuivie</strong>, non une propriété établie ; la reprendre comme qualification du mécanisme reviendrait à commettre, dès la première page, la faute que ce chapitre a pour objet de nommer.</p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> la thèse du chapitre est une construction d'auteur, et sa première moitié énonce une composition. <strong>Ce que le socle établit</strong> : douze faits bornés sur le format, l'ancrage, la révocation et la gouvernance de projet de la spécification agent-agent en v1.0.0 (Vol. III F-01 à F-12). <strong>Ce qu'il n'établit pas</strong> : qu'une signature « vaille » ce que valent trois éléments plutôt que quatre ou deux, ni qu'il existe une mesure de cette valeur. <em>La composition proposée — la valeur probante d'une signature se lit à la somme de son ancrage, de son régime de révocation et de la gouvernance de ses clés — est une lecture ; les faits qui la portent sont cités un à un, et le lecteur peut la refuser sans qu'aucun d'eux tombe.</em></p>
-
 <div class="avert">
   <p><strong>Ce que ce chapitre ne traite pas, et où cela se lit.</strong> Le versant « <strong>extension des RFC</strong> » du produit d'éditeur du § 15.2 est au <strong>ch. 12 § 12.7</strong> et n'est pas repris ici. L'<strong>inventaire complet de la révocation</strong>, mécanisme par mécanisme, est au <strong>ch. 20 § 20.4</strong> ; le § 15.1.3 n'en traite que ce qui borne la carte. Le versant <strong>protocolaire</strong> de la découverte — chemin conventionnel, stratégies, catalogues fédérés — est au <strong>ch. 9</strong>, avec lequel le Vol. I <em>Monographie</em> §3.4 est <strong>partagé déclaré</strong> ; le § 15.3.2 n'en prend que le versant <em>identité et conformité</em>. Enfin, la section « <strong>ce qui n'existe toujours pas</strong> » du chapitre source est <strong>prélevée par le ch. 16 § 16.2</strong> : la ligne Fusion du présent chapitre porte son « hors §7.4 », et l'inventaire des manques n'est pas dressé ici.</p>
 </div>
-
 <h2 id="s151"><span class="sig">§ 15.1</span>L'Agent Card signée : anatomie et valeur probante</h2>
-
 <h3>15.1.1 Le format et la chaîne de signature</h3>
-
 <p><strong>Le format est spécifié avec soin, et ce constat doit précéder tous les autres</strong> : ce qui suit ne décrit pas un mécanisme bâclé, mais un mécanisme <strong>complet sur ce qu'il couvre et muet sur ce qu'il ne couvre pas</strong>.</p>
-
 <p><strong>Ce que la spécification démontre.</strong> La signature d'une carte d'agent est une signature JSON Web Signature au sens du <strong>RFC 7515</strong>. Avant signature, le contenu de la carte <strong>MUST</strong> être canonicalisé selon le <em>JSON Canonicalization Scheme</em> du <strong>RFC 8785</strong> ; le champ <code>signatures</code> lui-même <strong>MUST</strong> être exclu du contenu signé, « to avoid circular dependencies » (Vol. III F-01, <strong>[A]</strong>). L'objet qui porte la signature est <strong>clos à trois membres</strong> — <code>protected</code>, <code>signature</code>, <code>header</code> — et ne comporte aucun membre de charge utile ; le vérificateur <strong>reconstruit</strong> la charge en re-canonicalisant la carte reçue (Vol. III F-02, <strong>[A]</strong>).</p>
-
 <div class="avert">
   <p><strong>Une borne de méthode se déclare ici plutôt qu'en note.</strong> Sur le balayage relevé par le lot du Vol. III — spécification lue sur l'étiquette v1.0.0 et sur la branche principale, définition Protobuf lue sur cette branche, les trois concordant —, la spécification <strong>ne nomme pas</strong> ce dispositif « detached » et <strong>ne désigne aucune</strong> des sérialisations du RFC 7515 : <em>le mécanisme est décrit sans être rattaché au vocabulaire de son texte d'origine.</em> La borne de cet énoncé est celle de son instrument, et elle est <strong>ouverte</strong> : le rapport du lot déclare que son outil de récupération distante a été <strong>pris en défaut sur un test de contrôle</strong>, et subordonne l'emploi de cet énoncé à une re-vérification par balayage local <strong>qui n'a pas eu lieu</strong>. L'énoncé est donc versé ici comme <strong>constat borné</strong>, non comme fait négatif vérifié.</p>
 </div>
-
 <p><strong>Ce que ce dispositif établit se laisse énoncer exactement</strong> : <em>le détenteur d'une clé désignée par un identifiant de clé a signé une forme canonicalisée d'une carte donnée.</em> L'intégrité du contenu au regard de cette clé est <strong>démontrée</strong> ; <strong>le lien entre cette clé et une organisation réelle ne l'est pas</strong> — c'est l'objet du § 15.1.2.</p>
-
-<p><strong>Ce que l'en-tête protégé porte, et ce qu'il ne porte pas.</strong> L'énumération normative compte <strong>quatre entrées</strong> : <code>alg</code>, <code>typ</code> et <code>kid</code> <strong>obligatoires</strong>, <code>jku</code> seul paramètre facultatif nommé. <strong>Ni <code>nbf</code>, ni <code>iat</code>, ni <code>exp</code></strong> (Vol. III F-03, <strong>[A]</strong>, fait négatif <strong>VÉRIFIÉ</strong>, degré 1, borné aux deux listes normatives telles que récupérées le 21 juillet 2026). La conséquence est structurante et l'entrée la porte elle-même : <strong>aucun paramètre temporel ne borne la signature ; elle ne périme que par sa clé</strong> — dont le statut est précisément ce que le vérificateur ne peut pas établir (§ 15.1.3).</p>
-
-<div class="avert">
-  <p><strong>Deux bornes ne se perdent pas</strong> : l'absence porte sur l'<strong>énumération</strong>, non sur ce qu'un émetteur peut ajouter de son propre chef ; et une <strong>tension interne</strong> est consignée — l'étape 2 de la procédure de vérification fait reposer la récupération de clé sur « the <code>kid</code> and <code>jku</code> » alors que <code>jku</code> n'est que <strong>facultatif</strong>, de sorte qu'une carte conforme dépourvue de <code>jku</code> n'offre au vérificateur <strong>aucun chemin de récupération défini par le texte</strong>, hors magasin de clés préétabli.</p>
-</div>
-
+<p><strong>Ce que l'en-tête protégé porte, et ce qu'il ne porte pas.</strong> L'énumération normative compte <strong>quatre entrées</strong> : <code>alg</code>, <code>typ</code> et <code>kid</code> <strong>obligatoires</strong>, <code>jku</code> seul paramètre facultatif nommé. <strong>Ni <code>nbf</code>, ni <code>iat</code>, ni <code>exp</code></strong> (Vol. III F-03, <strong>[A]</strong>, fait négatif <strong>VÉRIFIÉ</strong>, degré 1, borné aux deux listes normatives telles que récupérées le 21 juillet 2026). La conséquence est structurante et l'entrée la porte elle-même : <strong>aucun paramètre temporel ne borne la signature ; elle ne périme que par sa clé</strong> — dont le statut est précisément ce que le vérificateur ne peut pas établir (§ 15.1.3). ⚠ <strong>Deux bornes ne se perdent pas</strong> : l'absence porte sur l'<strong>énumération</strong>, non sur ce qu'un émetteur peut ajouter de son propre chef ; et une <strong>tension interne</strong> est consignée — l'étape 2 de la procédure de vérification fait reposer la récupération de clé sur « the <code>kid</code> and <code>jku</code> » alors que <code>jku</code> n'est que <strong>facultatif</strong>, de sorte qu'une carte conforme dépourvue de <code>jku</code> n'offre au vérificateur <strong>aucun chemin de récupération défini par le texte</strong>, hors magasin de clés préétabli.</p>
 <p><strong>Le régime d'obligation, qui décide de tout le reste.</strong> Les cartes <strong>MAY</strong> être signées ; les clients <strong>SHOULD</strong> vérifier au moins une signature avant d'accorder confiance à une carte (Vol. III F-04, <strong>[A]</strong>). ⚠ <strong>La conséquence excède le chapitre : une chaîne entièrement conforme peut ne comporter aucune signature apposée ni aucune vérification effectuée.</strong> <em>Un dispositif dont l'apposition est facultative et la vérification recommandée ne fonde aucune obligation opposable ; il fonde une faculté.</em></p>
-
 <p><strong>Quel texte fait foi, et à quelle date.</strong> La version lue est la <strong>1.0.0</strong>, publiée le <strong>12 mars 2026</strong> ; le champ <code>signatures</code> a été introduit à la v0.3.0, publiée le 30 juillet 2025 (Vol. III F-12, <strong>[B]</strong>). ⚠ <strong>Un écart de version est consigné et non arbitré</strong> : le registre porte une étiquette <strong>v1.0.1 du 28 mai 2026</strong> alors que l'en-tête du document déclare « Latest Released Version 1.0.0 », et <strong>la v1.0.1 n'a pas été ouverte</strong>. L'entrée héritée, elle, la donne pour « dernier correctif » (Vol. III H-01) : les deux formulations coexistent au socle et <strong>ne sont pas tranchées ici</strong>. <em>Tout énoncé du présent chapitre vaut donc pour la 1.0.0 et n'est pas revalidé sur la 1.0.1.</em></p>
-
 <div class="avert">
   <p><strong>Rien de ce chapitre ne porte sur les implémentations.</strong> Le lot porte sur ce que la spécification <strong>prescrit</strong>, jamais sur ce que les trousses de développement font. Ce que le code fait lorsque <code>jku</code> est absent, lorsqu'il pointe vers un domaine tiers, ou lorsqu'aucun magasin de clés n'est configuré : <strong>absence de documentation, non fait négatif vérifié</strong> (degré 3).</p>
 </div>
-
 <p><strong>Ce que le Vol. I ajoute, en régime [C].</strong> Le §3.6.3 de sa <em>Monographie</em> pose la distinction que la somme reprendra partout : <em>un justificatif qui établit <strong>qui est l'agent</strong> et un justificatif qui établit <strong>ce qu'il a le droit de faire et au nom de qui</strong> sont deux objets, et les confondre reconduit l'angle mort où authentifier l'agent passe pour autoriser sa chaîne de délégation.</em> ⚠ <strong>Régime</strong> : les faits du Vol. I entrent en <strong>[C]</strong> ; cet apport <strong>nomme</strong> une distinction, il n'en établit aucun mécanisme, et le <strong>ch. 17</strong> en fait sa matière.</p>
-
 <h3>15.1.2 Ancrage : qui signe les signataires ?</h3>
-
 <p><em>Une signature ne devient une preuve d'origine qu'au moment où le vérificateur peut rattacher la clé à une entité.</em> C'est la question de l'<strong>ancrage de confiance</strong> (<em>trust anchor</em>), et la spécification y répond <strong>en la renvoyant hors d'elle-même</strong>.</p>
-
 <p><strong>L'ancrage est renvoyé hors du protocole.</strong> La récupération de la clé publique passe par <code>kid</code> et <code>jku</code>, ou depuis un magasin de clés de confiance que les clients « <strong>MAY</strong> maintain » — dispositif <strong>facultatif et non spécifié</strong>, dont le texte ne définit ni la provenance, ni le format, ni les critères d'inscription (Vol. III F-09, <strong>[B]</strong>). ⚠ <strong>La conjonction est ce qui compte</strong> : la vérification d'au moins une signature est un <strong>SHOULD</strong>, la tenue d'un magasin de clés un <strong>MAY</strong>. <em>La spécification prescrit donc de vérifier une signature sans prescrire par rapport à quoi l'ancrer.</em></p>
-
 <p><strong>Le niveau du projet ne le rattrape pas davantage, et deux documents nommés l'établissent.</strong> Le fichier de politique de sécurité publié à la racine du dépôt de spécification tient en <strong>deux phrases</strong> et ne décrit qu'une procédure de signalement de vulnérabilité ; le balayage y relève <strong>zéro occurrence</strong> des chaînes relatives aux clés, à la signature, à la rotation, à la révocation et à la compromission, et il est <strong>exhaustif par construction</strong>, le document entier tenant en trois lignes (Vol. III F-08, <strong>[A]</strong>, fait négatif <strong>VÉRIFIÉ</strong>, degré 1, <strong>borné à ce fichier et à ce dépôt</strong>). La charte de gouvernance décrit un comité de pilotage technique doté de huit sièges nominatifs et <strong>n'attribue à aucun organe</strong> une responsabilité de gestion des clés (Vol. III F-11, <strong>[B]</strong>).</p>
-
 <div class="avert">
   <p><strong>La double borne du premier constat n'est pas une précaution de forme.</strong> <em>Nommer le dépôt décide de ce que le lecteur trouvera s'il l'ouvre</em> : le rapport du même lot relève que les points d'entrée de signalement de vulnérabilité <strong>divergent d'un dépôt à l'autre</strong> de la même organisation — deux trousses renvoient au programme de leur éditeur d'origine, une troisième à quatre adresses individuelles chez un tiers, une quatrième ne publie aucun fichier de politique. <em>« Le dépôt », sans autre indication, couvre cinq dépôts dont un seul porte le texte qui a été balayé.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>Ces deux constats ne s'additionnent pas en un troisième.</strong> Écrire que la gouvernance des clés « n'existe pas comme document » serait un <strong>négatif de corpus</strong>, et c'est précisément la forme qu'un vote adversarial à trois juges a <strong>écartée 3-0</strong>. Ce que le balayage couvre, ce sont <strong>deux fichiers, nommés un à un</strong> ; le reste du corpus du projet — listes de diffusion, comptes rendus de comité, demandes de tirage, dépôts des trousses — <strong>n'a pas été balayé</strong> : absence de documentation, degré 3.</p>
 </div>
-
 <p><strong>La voie du tiers de confiance est déclinée au niveau du protocole.</strong> La spécification agent-agent normalise la découverte par un chemin conventionnel et trois stratégies, et <strong>déclare explicitement qu'aucune interface de registre n'est prescrite</strong> (Vol. III F-43, <strong>[B]</strong>, fait négatif <strong>ÉTABLI</strong>, degré 2). <em>Le registre curé serait la voie naturelle d'un ancrage tiers ; le protocole ne l'emprunte pas, et le dit.</em></p>
-
 <p><strong>Le manque est reconnu au suivi du projet, et son statut se dit.</strong> Une proposition déposée au dépôt de spécification — <strong>ouverte le 22 mars 2026 et non close au 21 juillet 2026</strong> — énonce qu'un agent qui découvre la carte d'un autre « has no protocol-level mechanism to verify that the card is authentic ». <em>(Source primaire ouverte et citée hors socle par le Vol. III, non versée.)</em> ⚠ <strong>Une proposition déposée par un contributeur n'est ni adoptée, ni close, ni une feuille de route</strong> : tout énoncé sur son aboutissement est <strong>SPÉCULATIF</strong>, et les pistes discutées ailleurs au même suivi sont des <strong>paris de recherche</strong>, jamais des mécanismes du protocole.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : le dispositif d'ancrage prévu par la procédure de vérification est <strong>facultatif et non spécifié</strong> (Vol. III F-09) ; deux documents de projet nommés ne portent aucune disposition de gouvernance des clés (F-08, F-11) ; le protocole décline l'interface de registre (F-43). <strong>Ce qu'il n'établit pas</strong> : qu'un ancrage soit impossible, ni qu'un déploiement donné n'en tienne pas un. <em>La lecture proposée — la spécification ne résout pas la question de l'ancrage, elle la <strong>déplace</strong> vers un plan qu'elle ne décrit pas — est une construction d'auteur, et elle est réfutable par la production d'un texte du projet qui décrirait ce plan.</em></p>
-
 <h3>15.1.3 Révocation et durée de vie</h3>
-
 <p><strong>C'est ici que le mécanisme porte sa contradiction.</strong></p>
-
 <p><strong>L'interdiction est posée au niveau normatif le plus fort.</strong> « Expired or revoked keys <strong>MUST NOT</strong> be used for verification » — l'énoncé figure sous l'intitulé <em>Security Considerations</em>, au même niveau que des recommandations en SHOULD et MAY, et il emploie néanmoins <strong>MUST NOT</strong>. L'obligation est explicite, et elle est <strong>privée de tout moyen</strong> permettant au client d'établir l'expiration ou la révocation (Vol. III F-07, <strong>[A]</strong>). ⚠ <strong>La borne décide du sens de la phrase, et elle est portée par l'entrée : l'interdiction vise la clé de signature, non la carte.</strong> <em>Une carte signée demeure vérifiable tant que sa clé est réputée valide ; déplacer la prescription de la clé vers la carte, ou vers l'identifiant de l'agent, fabriquerait une obligation que le texte ne pose pas.</em></p>
-
 <p><strong>Aucun moyen n'est fourni, et le balayage le borne.</strong> La section consacrée à la signature ne mentionne <strong>ni liste de révocation, ni protocole d'état en ligne, ni point de terminaison de statut, ni chaîne de certificats, ni délai de re-validation</strong> ; et sa procédure de vérification en <strong>six étapes</strong> ne comporte <strong>aucune étape de contrôle de statut ou de fraîcheur</strong> (Vol. III F-06, <strong>[A]</strong>, degré 1, borné à cette section telle que récupérée et relue intégralement le 21 juillet 2026). <em>Un implémenteur qui respecte la lettre du texte ne peut pas établir qu'il la respecte : l'obligation est vérifiable par son auteur, non par son destinataire.</em></p>
-
 <p><strong>La carte, de son côté, ne porte ni validité ni statut.</strong> Le message normatif compte <strong>quatorze champs</strong>, dont aucun n'exprime une date d'émission, une expiration, une fenêtre de validité ni un indicateur de révocation (Vol. III F-05, <strong>[A]</strong>, degré 1). <em>Ni la signature ni la carte ne portent d'horloge. Ce qui périme, c'est une clé dont le statut n'est pas interrogeable.</em></p>
-
 <p><strong>La rotation est outillée ; le retrait ne l'est pas.</strong> Plusieurs signatures <strong>MAY</strong> être portées par une même carte « to support key rotation », et c'est le <strong>seul</strong> dispositif de rotation que la section prévoie ; <strong>dans cette même section</strong>, aucune procédure de retrait d'une clé compromise n'est décrite — ni période de recouvrement, ni périodicité (Vol. III F-10, <strong>[B]</strong>). ⚠ <em>Un mécanisme qui sait remplacer sans savoir retirer accumule ses identités successives au lieu de les substituer.</em> L'inventaire complet est au <strong>ch. 20 § 20.4</strong>, dont c'est la thèse ; il n'est pas dressé ici.</p>
-
 <p><strong>La durée de vie, enfin, n'est pas où on la cherche.</strong> Le socle <strong>ne verse aucune entrée</strong> sur la fraîcheur de la ressource qui sert la carte. Le guide de découverte du projet — <strong>documentation d'accompagnement, non normative</strong> — rattache cette fraîcheur à la sémantique de cache du transport et renvoie, pour les exigences normatives, à une section que <strong>le lot n'a pas pu ouvrir</strong> : troncature du récupérateur, confirmée par trois tentatives, qui atteint également une seconde section normative. <strong>Le socle ne documente pas ce que ces deux sections prescrivent — absence de documentation, non fait négatif vérifié</strong> (degré 3). ⚠ <em>La borne porte sur le siège annoncé des exigences de fraîcheur, c'est-à-dire sur l'endroit même où la durée de vie d'une carte se déciderait.</em></p>
-
 <div class="avert">
   <p><strong>Une précaution s'impose contre un réflexe de lecture, et le socle la fournit.</strong> Le manque constaté ici pourrait sembler appeler un retour au précédent des infrastructures à clés publiques ; <strong>le socle refroidit cette attente</strong> : le RFC 5280 borne la granularité de la révocation par liste à la période d'émission de cette liste — jusqu'à une heure, un jour ou une semaine —, et le RFC 6960 énonce que l'état « good » <strong>ne signifie pas nécessairement</strong> que le certificat ait jamais été émis (Vol. III F-53, <strong>[B]</strong>). <em>Mobilisé ici en corroboration seulement ; le siège est le ch. 20 § 20.5.</em></p>
 </div>
-
 <h3>15.1.4 Verdict par la grille du ch. 14 : ce que la carte établit, ce qu'elle affirme, ce qu'elle tait</h3>
-
 <div class="avert">
   <p><strong>Cet intitulé a été corrigé au TOC v0.25, et le défaut qu'il portait n'avait été remonté par personne.</strong> Le plan écrivait « ce que la carte <strong>prouve</strong> ». Or <strong>R-02 du Vol. III — que ce même plan assigne en garde-fou à ce chapitre — est la convention cardinale de sa source</strong> : un mécanisme cryptographique se qualifie par ce que sa spécification <strong>démontre</strong>, jamais par ce qu'elle <strong>promet</strong>, et la carte signée est exactement un tel mécanisme. <em>Le plan proscrivait le verbe dans le corps du chapitre et le portait dans son propre intitulé de section.</em> ⚠ <strong>Le défaut est hérité, et il reste ouvert chez la source</strong> : le Vol. III porte la même forme au §5.4 de sa <em>Monographie</em>, sous sa remontée <strong>R-G-48, volet 2, réservée à son auteur</strong>. <strong>Le compendium corrige chez lui et ne corrige rien chez elle.</strong></p>
 </div>
-
 <p>Les règles d'emploi de la grille sont posées au <strong>ch. 14 § 14.1</strong> et ne sont pas répétées ; deux commandent directement ce verdict — application <strong>par mécanisme</strong>, et <strong>trois verdicts seulement</strong>. S'y ajoute la règle du régime d'absence : <em>une case laissée vide n'est pas un verdict — c'est l'état de la preuve qui est déclaré.</em></p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Question</th><th>Verdict</th><th>Trace</th></tr></thead>
-  <tbody>
-    <tr><td><strong>Q-A</strong> <em>qui es-tu</em></td><td><strong>répond partiellement</strong> — <em>vérifiable</em> oui, en un sens exact ; <strong>résistance à l'usurpation non établie</strong>, l'ancrage étant renvoyé hors du protocole ; <em>révocable</em> non ; <strong><em>stable</em>, degré 3</strong></td><td>F-04, F-05, F-06, F-07, F-09</td></tr>
-    <tr><td><strong>Q-B</strong> <em>qui t'a créé</em></td><td><strong>ne répond pas</strong> — ancrage renvoyé hors du protocole, aucun organe de projet responsable des clés, interface de registre déclinée</td><td>F-08, F-09, F-11, F-43</td></tr>
-    <tr><td><strong>Q-C</strong> <em>pour qui agis-tu</em></td><td><em>case vide</em> — <strong>degré 3</strong>, aucun balayage sur le mandat</td><td>—</td></tr>
-    <tr><td><strong>Q-D</strong> <em>que peux-tu faire</em></td><td><em>case vide</em> — <strong>degré 3</strong>, aucun balayage sur le privilège</td><td>—</td></tr>
-    <tr><td><strong>Q-E</strong> <em>qui en répond</em></td><td><em>case vide</em> — <strong>degré 3</strong>, aucun balayage sur l'imputabilité</td><td>—</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Question</th>
+<th>Verdict</th>
+<th>Trace</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Q-A</strong> <em>qui es-tu</em></td>
+<td><strong>répond partiellement</strong> — <em>vérifiable</em> oui, en un sens exact ; <strong>résistance à l'usurpation non établie</strong>, l'ancrage étant renvoyé hors du protocole ; <em>révocable</em> non ; <strong><em>stable</em>, degré 3</strong></td>
+<td>F-04, F-05, F-06, F-07, F-09</td>
+</tr>
+<tr>
+<td><strong>Q-B</strong> <em>qui t'a créé</em></td>
+<td><strong>ne répond pas</strong> — ancrage renvoyé hors du protocole, aucun organe de projet responsable des clés, interface de registre déclinée</td>
+<td>F-08, F-09, F-11, F-43</td>
+</tr>
+<tr>
+<td><strong>Q-C</strong> <em>pour qui agis-tu</em></td>
+<td><em>case vide</em> — <strong>degré 3</strong>, aucun balayage sur le mandat</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Q-D</strong> <em>que peux-tu faire</em></td>
+<td><em>case vide</em> — <strong>degré 3</strong>, aucun balayage sur le privilège</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Q-E</strong> <em>qui en répond</em></td>
+<td><em>case vide</em> — <strong>degré 3</strong>, aucun balayage sur l'imputabilité</td>
+<td>—</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 15.1 — Verdict de la grille du ch. 14 appliqué à la carte d'agent signée en v1.0.0, au 21 juillet 2026.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> une observation bornée, versée sans être élevée en verdict. <strong>Q-C</strong> exige une chaîne de mandat interrogeable <strong>à l'instant t</strong> ; or ni l'en-tête protégé (F-03) ni la carte (F-05) ne portent de paramètre temporel. <strong>Ce que le socle établit</strong> : l'absence de paramètre temporel dans deux structures nommées. <strong>Ce qu'il n'établit pas</strong> : ce que la carte porterait par ailleurs du mandat, ni qu'une chaîne interrogeable soit incompatible avec ce format. ⚠ <em>En tirer un « ne répond pas » transformerait le périmètre d'un balayage en propriété du mécanisme.</em></p>
-
 <div class="avert">
   <p><strong>Un écart de verdict est déclaré et non arbitré.</strong> Une version antérieure du plan portait, pour ce mécanisme, « <strong>Q-C non</strong> ». Le présent chapitre laisse la case <strong>vide au degré 3</strong>, en cohérence avec le ch. 14 § 14.2 et avec le régime des trois degrés d'absence : <em>aucun balayage ne couvre ce que la carte porte du mandat, et un « ne répond pas » convertirait une absence de documentation en fait négatif.</em> L'écart est <strong>remonté</strong>, non opéré par la pièce.</p>
 </div>
-
 <p><strong>Un dernier fait ferme la section, et il est gênant pour une institution qui inscrirait ce mécanisme à un dossier de diligence raisonnable.</strong> La documentation du projet énonce que le dispositif « enables cryptographic verification of Agent Card <strong>integrity</strong> » ; un communiqué de fondation daté du 9 avril 2026 en parle, lui, comme d'une « cryptographic <strong>identity</strong> verification ». <em>(Source primaire ouverte et citée hors socle par le Vol. III, non versée.)</em> ⚠ <strong>Les deux registres ne sont pas équivalents, et l'écart entre eux tient en un mot</strong> — celui que R-02 interdit de franchir : <em>ce que la spécification démontre est une vérification d'intégrité relative à une clé, et rien de ce qui est établi ici ne permet d'en faire une vérification d'identité.</em></p>
-
+<figure class="figure">
+  <img src="../figures/f-15-01-ancrage-signature.svg" alt="Figure 15.1 — La carte signée et la question de l&#39;ancrage : qui signe les signataires ?" />
+  <figcaption><strong>Figure 15.1</strong> — La carte signée et la question de l'ancrage : qui signe les signataires ?</figcaption>
+</figure>
 <h2 id="s152"><span class="sig">§ 15.2</span>Les annuaires commerciaux : Entra Agent ID et ses pairs</h2>
-
 <p>Le paragraphe précédent instruisait une <strong>spécification</strong> ; celui-ci instruit des <strong>produits</strong>, et le changement d'objet impose un changement de discipline. <em>Une spécification se lit ; un produit se date.</em> Quatre choses y sont distinctes et se confondent en une phrase de brochure : l'<strong>annonce</strong>, la <strong>feuille de route</strong>, la <strong>préversion</strong> et la <strong>disponibilité générale documentée</strong>.</p>
-
 <div class="avert">
   <p><strong>Deux conséquences sont posées d'entrée.</strong> <em>La neutralité fournisseur est une interdiction de recommander, non une interdiction de nommer</em> — anonymiser un produit rendrait le fait non revalidable au gel suivant, ce qui est une faute et non une précaution. Et <strong>aucun rapprochement n'est proposé ici entre un composant de ces produits et une attente réglementaire</strong> : un tel rapprochement serait une inférence d'auteur (R-07 du Vol. III), et son siège est le § 15.3.3 et le <strong>ch. 25 § 25.2</strong>.</p>
 </div>
-
 <h3>15.2.1 Ce que la disponibilité générale couvre, et ce qu'elle ne couvre pas</h3>
-
 <p>L'entrée héritée <strong>Vol. III H-02</strong> situe la bascule « vers avril-mai 2026 » ; le relevé du Vol. III la resserre : <strong>Microsoft</strong> situe la disponibilité générale de sa plateforme d'identité d'agent au <strong>mois d'avril 2026</strong>, par ses propres notes de version (Vol. III F-33, <strong>[B]</strong>). ⚠ <strong>C'est l'éditeur qui date sa propre disponibilité générale</strong> : la somme la rapporte, elle ne l'établit pas. ⚠ <strong>La borne est aussi instructive que l'énoncé</strong> : ces notes regroupent leurs entrées <strong>par mois et ne portent aucun quantième</strong>. <em>Écrire « avril 2026 » est exact ; écrire une date précise ne le serait pas.</em></p>
-
-<p><strong>Le fait suivant commande tout le paragraphe, et il a été soumis au vote adversarial : la disponibilité générale d'un produit ne vaut pas disponibilité générale de ses capacités.</strong> À l'intérieur du produit annoncé en disponibilité générale, <strong>plusieurs capacités nommées demeuraient étiquetées <em>Preview</strong></em> dans la documentation consultée le 21 juillet 2026 — assistant de création de gabarit d'identité, options d'affectation, cibles d'application, conditions de risque et d'environnement d'exécution (Vol. III F-34, <strong>[A]</strong>). ⚠ <strong>Ce constat porte sa borne</strong> : il est établi sur <strong>trois pages nommées</strong>, à leur état du 21 juillet 2026, et l'énumération <strong>n'est pas présentée comme couvrant toutes les préversions du produit</strong>.</p>
-
+<p><strong>Le fait suivant commande tout le paragraphe, et il a été soumis au vote adversarial : la disponibilité générale d'un produit ne vaut pas disponibilité générale de ses capacités.</strong> À l'intérieur du produit annoncé en disponibilité générale, <strong>plusieurs capacités nommées demeuraient étiquetées <em>Preview</em></strong> dans la documentation consultée le 21 juillet 2026 — assistant de création de gabarit d'identité, options d'affectation, cibles d'application, conditions de risque et d'environnement d'exécution (Vol. III F-34, <strong>[A]</strong>). ⚠ <strong>Ce constat porte sa borne</strong> : il est établi sur <strong>trois pages nommées</strong>, à leur état du 21 juillet 2026, et l'énumération <strong>n'est pas présentée comme couvrant toutes les préversions du produit</strong>.</p>
 <p>Sur les <strong>licences</strong>, l'héritage et le relevé se répondent. Les fonctions de sécurité étendues aux agents relèvent de <strong>licences additionnelles</strong> (Vol. III H-02, <strong>[A]</strong>). Le relevé en donne l'articulation, dans la forme corrigée par le contrôle de bornage : la documentation décrit <strong>deux régimes distincts</strong> — la plateforme d'identité d'agent donnée pour disponible aux clients de l'annuaire, <em>la portée universelle étant la formulation de l'éditeur, rapportée et non établie</em> ; l'extension des fonctions de sécurité aux agents conditionnée à des références de licence supérieures ou à une combinaison de deux licences. ⚠ <strong>Deux réserves l'accompagnent</strong> : le texte de licence est <strong>identique mot pour mot</strong> sur les deux pages relevées, ce qui en fait un <strong>bloc réutilisé</strong> et non deux constats indépendants ; et <strong>les montants ne sont pas établis</strong>, la page tarifaire étant hors du périmètre documentaire du lot.</p>
-
 <p><strong>Un dernier point de statut mérite d'être isolé, parce qu'il illustre exactement ce que le tri en quatre catégories sert à empêcher.</strong> Au 21 juillet 2026, <strong>le même relevé — hors socle, aucune entrée ne le porte</strong> — rapporte que la documentation de Microsoft annonce que l'exigence de licence <strong>n'est pas encore appliquée techniquement</strong> pour deux fonctions, et qu'elle l'annonce par des formules <strong>sans échéance datée</strong> — « coming soon », « Starting soon », « will soon be required » —, sur des pages d'états de juin 2026. ⚠ <strong>PROJETÉ</strong> au sens du tri prospectif : un changement futur y est annoncé <strong>sans quantième ni trimestre</strong>, et rien dans les pages consultées ne dit ce qu'il advient d'un locataire non licencié après l'entrée en vigueur. <em>Ce n'est ni une feuille de route datée, ni une disponibilité générale : c'est une intention publiée.</em></p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Statut</th><th>Ce qu'il autorise à écrire</th><th>Occurrence relevée dans ce chapitre</th></tr></thead>
-  <tbody>
-    <tr><td><strong>Disponibilité générale documentée</strong></td><td>l'existence de la capacité à la date que porte la source</td><td>plateforme d'identité d'agent, <strong>avril 2026</strong>, notes de version de <strong>Microsoft</strong> (F-33) — mois, sans quantième</td></tr>
-    <tr><td><strong>Préversion</strong></td><td>l'existence de la capacité, <strong>sans</strong> engagement de service ni stabilité</td><td>six libellés « (Preview) » relevés sur trois pages nommées, 21 juillet 2026 (F-34)</td></tr>
-    <tr><td><strong>Feuille de route</strong></td><td>une intention <strong>datée</strong>, attribuée à son auteur</td><td><em>aucune occurrence de ce statut dans le périmètre de ce chapitre</em></td></tr>
-    <tr><td><strong>Annonce</strong></td><td>une intention <strong>non datée</strong>, attribuée à son auteur — tri <strong>PROJETÉ</strong></td><td>application de l'exigence de licence, annoncée par <strong>Microsoft</strong> : « coming soon », « Starting soon », « will soon be required », trois pages d'états de juin 2026</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Statut</th>
+<th>Ce qu'il autorise à écrire</th>
+<th>Occurrence relevée dans ce chapitre</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Disponibilité générale documentée</strong></td>
+<td>l'existence de la capacité à la date que porte la source</td>
+<td>plateforme d'identité d'agent, <strong>avril 2026</strong>, notes de version de <strong>Microsoft</strong> (F-33) — mois, sans quantième</td>
+</tr>
+<tr>
+<td><strong>Préversion</strong></td>
+<td>l'existence de la capacité, <strong>sans</strong> engagement de service ni stabilité</td>
+<td>six libellés « (Preview) » relevés sur trois pages nommées, 21 juillet 2026 (F-34)</td>
+</tr>
+<tr>
+<td><strong>Feuille de route</strong></td>
+<td>une intention <strong>datée</strong>, attribuée à son auteur</td>
+<td><em>aucune occurrence de ce statut dans le périmètre de ce chapitre</em></td>
+</tr>
+<tr>
+<td><strong>Annonce</strong></td>
+<td>une intention <strong>non datée</strong>, attribuée à son auteur — tri <strong>PROJETÉ</strong></td>
+<td>application de l'exigence de licence, annoncée par <strong>Microsoft</strong> : « coming soon », « Starting soon », « will soon be required », trois pages d'états de juin 2026</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 15.2 — Les quatre statuts et ce que chacun autorise, au 21 juillet 2026.</p>
-
 <p><strong>Reste ce qui relève de la couverture et non du statut.</strong> La documentation porte une <strong>réserve explicite d'absence de couverture entre les deux plans d'identité d'agent</strong> : une politique d'accès conditionnel ciblant des identités d'agent — y compris par gabarit — <strong>ne s'applique pas</strong> au compte d'utilisateur de l'agent, et une politique ciblant « tous les utilisateurs » <strong>n'inclut pas</strong> ces comptes (Vol. III F-35, <strong>[A]</strong>, <strong>degré 2</strong>). ⚠ <strong>Le degré compte</strong> : l'absence est énoncée par l'éditeur dans sa propre liste des configurations non prises en charge, à l'état du 19 juin 2026 ; <em>elle ne résulte ni d'un balayage de spécification ni d'un essai en locataire</em>, et le mot « currently » est de la source. <strong>C'est un écart de point d'application, non une nuance de licence.</strong></p>
-
 <h3>15.2.2 Les mécanismes documentés chez les autres fournisseurs infonuagiques : un état daté</h3>
-
 <div class="avert">
   <p><strong>Avertissement de niveau, et il commande la lecture de tout ce paragraphe.</strong> Ce que le socle porte sur les autres fournisseurs tient dans <strong>une entrée unique, Vol. III F-36, de niveau [C]</strong> — repérage. L'entrée agrège trois affirmations dont la dernière est elle-même en [C] : la règle de composition du socle lui impose <strong>le niveau le plus faible de ses composantes</strong>, et son niveau a été <strong>corrigé de [B] en [C]</strong> le 21 juillet 2026 — ⚠ <strong>et ce niveau est à réexaminer depuis le 28 juillet 2026</strong>, pour un motif exposé plus bas. <em>Une affirmation tracée vers une entrée [C] n'est pas centrale, ou n'est pas rédigée.</em> <strong>Rien de ce qui suit ne porte la thèse du chapitre.</strong></p>
 </div>
-
 <p>Chez <strong>Google Cloud</strong>, la disponibilité générale de l'identité d'agent dans son service de gestion des identités et des accès est datée du <strong>22 avril 2026</strong> ; à la <strong>même date</strong>, le gestionnaire d'authentification de la même fonction est placé <strong>en préversion</strong>. Le mécanisme repose sur une <strong>identité de charge de travail</strong> matérialisée par des certificats <strong>d'une validité de vingt-quatre heures</strong>, renouvelés par le fournisseur (Vol. III F-36, <strong>[C]</strong>). ⚠ <strong>Le socle de cette famille d'identité est posé au ch. 3</strong> et n'est pas reconstruit ici. <em>Le partage est net et il recoupe celui du § 15.2.1 : identité en disponibilité générale, mécanismes d'authentification aux tiers en préversion.</em></p>
-
 <div class="avert">
   <p><strong>La qualification de ce mécanisme appelle la convention cardinale.</strong> La source est une <strong>documentation de produit</strong>, non une spécification soumise à revue ni une preuve de sécurité. Elle décrit la liaison du jeton d'accès au certificat par une <strong>formule de moyen</strong> — « to help prevent token theft » — et qualifie l'identité de « strongly attested ». <em>Ces deux formulations sont de Google Cloud, reproduites en langue originale et non reprises au compte de la somme : ce qu'une documentation de produit promet n'est pas ce qu'une spécification démontre</em> (R-02). La <strong>conformité effective au standard d'identité de charge de travail — quel profil, quelle version — n'est pas documentée</strong> sur la page consultée.</p>
 </div>
-
 <p>Chez <strong>AWS</strong>, le mécanisme documenté comparable est une identité de charge de travail dotée d'attributs propres plutôt qu'un type d'objet distinct, inscrite dans un annuaire d'identités d'agent et adossée à un coffre à jetons (Vol. III F-36, <strong>[C]</strong>). ⚠ <strong>Deux retraits sont conservés</strong> : la formulation ne revendique <strong>ni</strong> unicité au sein de l'offre du fournisseur, <strong>ni</strong> équivalence fonctionnelle avec les mécanismes précédents.</p>
-
 <p><strong>Et c'est ici que la comparaison s'arrêtait, faute de ce que ce chapitre lui demande : une date de statut.</strong> Trois adresses d'annonce essayées, <strong>trois réponses HTTP 404</strong> ; deux adresses d'historique documentaire rendant une page réduite à son titre ; une page produit dont le texte converti ne porte <strong>aucun libellé de statut</strong> rattaché à une capacité. ⚠ <strong>L'absence de bannière de préversion dans les pages ouvertes n'établit rien</strong> : la conversion en texte supprime les encadrés.</p>
-
 <div class="avert">
-  <p><strong>Ce constat d'absence est levé depuis, et la manière dont il l'est instruit plus que le fait lui-même.</strong> La re-datation du socle consolidé du <strong>28 juillet 2026</strong> (<a class="lien" href="../PRD/socle-consolide.md">0</a> v1.2, entrée <code>S-082</code>, qui consolide Vol. III F-36) porte le statut à sa <strong>source primaire</strong> : un billet d'annonce d'<strong>AWS daté du 13 octobre 2025</strong>, où l'offre — volet identité compris — est donnée pour <strong>généralement disponible</strong>. ⚠ <strong>Ce n'est pas un fait survenu depuis le gel : c'est une source primaire que le lot n'avait pas ouverte</strong>, antérieure de neuf mois à lui — <em>la mention « statut non daté » était déjà fausse le 21 juillet 2026, et c'est l'instrument qui a manqué, non la source.</em> ⚠ <strong>La conséquence de niveau n'est pas tirée ici</strong> : la rétrogradation de <strong>[B]</strong> en <strong>[C]</strong> de cette entrée reposait sur cette absence, son réexamen relève du <a class="lien" href="../PRD/PRD.md">PRD</a> du Vol. IV §7.1, et <strong>tant qu'il n'est pas fait, l'entrée demeure [C] et ce paragraphe ne porte toujours rien</strong>.</p>
+  <p><strong>Ce constat d'absence est levé depuis, et la manière dont il l'est instruit plus que le fait lui-même.</strong> La re-datation du socle consolidé du <strong>28 juillet 2026</strong> (<a href="../PRD/socle-consolide.md"><code>socle-consolide.md</code></a> v1.2, entrée <code>S-082</code>, qui consolide Vol. III F-36) porte le statut à sa <strong>source primaire</strong> : un billet d'annonce d'<strong>AWS daté du 13 octobre 2025</strong>, où l'offre — volet identité compris — est donnée pour <strong>généralement disponible</strong>. ⚠ <strong>Ce n'est pas un fait survenu depuis le gel : c'est une source primaire que le lot n'avait pas ouverte</strong>, antérieure de neuf mois à lui — <em>la mention « statut non daté » était déjà fausse le 21 juillet 2026, et c'est l'instrument qui a manqué, non la source.</em> ⚠ <strong>La conséquence de niveau n'est pas tirée ici</strong> : la rétrogradation de <strong>[B]</strong> en <strong>[C]</strong> de cette entrée reposait sur cette absence, son réexamen relève du <a href="../PRD/PRD.md">PRD</a> du Vol. IV §7.1, et <strong>tant qu'il n'est pas fait, l'entrée demeure [C] et ce paragraphe ne porte toujours rien</strong>.</p>
 </div>
-
 <div class="avert">
   <p><strong>Aucune métrique d'adoption n'est citée dans ce paragraphe, et l'omission est délibérée</strong> : le socle n'en porte aucune pour les trois annuaires commerciaux instruits au § 15.2 — nombre de locataires, d'identités gérées, de déploiements en production —, <strong>absence de documentation, degré 3</strong>. Les chiffres qui circulent sur ces produits sont <strong>auto-déclarés par leurs éditeurs</strong> et devraient, pour entrer ici, être attribués nominativement à chaque occurrence ; aucun n'ayant été vérifié, <strong>ce chapitre n'en avance aucun</strong>.</p>
 </div>
-
 <h3>15.2.3 Le risque de standard de fait : un annuaire commercial dominant fixe la norme sans passer par une norme</h3>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>ce paragraphe entier est une construction d'auteur, et il porte son marquage à l'ouverture.</strong> <strong>Ce que le socle établit</strong> : un produit en disponibilité générale datée d'avril 2026 (F-33), dont un type d'objet d'annuaire est spécifié et versionné dans l'interface de programmation de son éditeur (F-37), et dont les flux <strong>étendent les RFC</strong> (H-02) ; et, du côté des travaux de normalisation, l'<strong>état non ratifié et non adopté</strong> des propositions concurrentes (F-38, F-41, F-42, F-43, F-50). <strong>Ce qu'il n'établit pas</strong> : qu'un produit disponible <strong>structure</strong> un marché ; qu'il <strong>préempte</strong> une normalisation ; qu'une norme aurait été publiée plus tôt en son absence ; qu'un éditeur ait poursuivi cet effet. ⚠ <em>Aucune des entrées mobilisées ne porte de mesure d'adoption, de part de marché ni d'influence sur un organisme de normalisation.</em></p>
-
 <p>L'expression retenue — un <strong>standard de fait</strong> — désigne un usage qui s'impose par le <strong>déploiement</strong> plutôt que par la <strong>ratification</strong>. L'asymétrie qui la motive est documentée <strong>des deux côtés</strong>, et c'est ce qui rend la lecture discutable plutôt que gratuite.</p>
-
 <p>D'un côté, <strong>un schéma d'éditeur</strong> : un type de ressource nommé, hérité d'un type préexistant, publié dans la version <strong>stable</strong> d'une interface de programmation (F-37). Il est daté, versionné, documenté, et <strong>administrable dès aujourd'hui</strong> par toute organisation qui exploite l'annuaire correspondant.</p>
-
-<p>De l'autre, <strong>l'état des propositions ouvertes</strong>, chacune avec sa borne. La spécification de registre d'agents porte en tête « White Paper | 2026-03-27 | Status: draft » et relève d'un espace de travaux qui <strong>ne sont pas encore</strong> un projet officiel de son organisme (F-38, <strong>[A]</strong>). L'extension SCIM sur laquelle elle s'adosse n'existe qu'en une révision <strong>-00</strong> du 16 octobre 2025, <strong>expirée et archivée</strong>, sans flux ni adoption (F-41, <strong>[B, degré 2]</strong>). La consolidation présentée à l'IETF 125 le 19 mars 2026 s'est conclue sur la demande d'apporter <strong>d'abord des cas d'usage</strong>, et le troisième document du dossier demeure une <strong>soumission individuelle</strong> (F-42, <strong>[B, degré 2]</strong>). La spécification agent-agent <strong>décline explicitement</strong> l'interface de registre (F-43, <strong>[B, degré 2]</strong>). Enfin, sur l'admission inter-domaines, <strong>aucune des propositions relevées n'était ratifiée ni adoptée</strong> (F-50, <strong>[B, degré 2]</strong>) — instruction au <strong>ch. 18 § 18.1</strong>, siège unique.</p>
-
+<p>De l'autre, <strong>l'état des propositions ouvertes</strong>, chacune avec sa borne. La spécification de registre d'agents porte en tête « White Paper | 2026-03-27 | Status: draft » et relève d'un espace de travaux qui <strong>ne sont pas encore</strong> un projet officiel de son organisme (F-38, <strong>[A]</strong>). L'extension SCIM à laquelle elle s'adosse n'existe qu'en une révision <strong>-00</strong> du 16 octobre 2025, <strong>expirée et archivée</strong>, sans flux ni adoption (F-41, <strong>[B, degré 2]</strong>). La consolidation présentée à l'IETF 125 le 19 mars 2026 s'est conclue sur la demande d'apporter <strong>d'abord des cas d'usage</strong>, et le troisième document du dossier demeure une <strong>soumission individuelle</strong> (F-42, <strong>[B, degré 2]</strong>). La spécification agent-agent <strong>décline explicitement</strong> l'interface de registre (F-43, <strong>[B, degré 2]</strong>). Enfin, sur l'admission inter-domaines, <strong>aucune des propositions relevées n'était ratifiée ni adoptée</strong> (F-50, <strong>[B, degré 2]</strong>) — instruction au <strong>ch. 18 § 18.1</strong>, siège unique.</p>
 <p>Le Vol. II avait formulé le constat avant que ce socle n'existe, et il l'écrivait ainsi : « Un architecte qui chercherait aujourd'hui, pour son dossier de conformité, la norme d'identité et de registre des agents ne la trouverait pas : elle n'existe pas. » <em>(Thèse d'un volume antérieur, attribuée ; elle n'entre pas au socle du Vol. III comme fait.)</em> Ce que les entrées ci-dessus ajoutent, c'est <strong>la datation de chacune des branches de cette absence</strong>, et un fait que le socle du Vol. II ne portait pas : <strong>pendant que les propositions demeurent au brouillon, un schéma d'annuaire est publié en version stable chez un éditeur</strong> (F-37). ⚠ La page qui le porte est <strong>antérieure au gel du Vol. II</strong> ; <em>le socle de ce volume ne l'a pas relevée, ce qui est une absence dans un corpus et non une impossibilité pour l'auteur de ce corpus.</em></p>
-
 <p><strong>La lecture proposée est celle-ci.</strong> Lorsqu'une organisation doit inscrire un agent quelque part, elle ne choisit pas entre un produit et une norme : <strong>elle choisit entre un produit et rien</strong>. Le vocabulaire qu'elle adoptera — objet d'annuaire, gabarit, parrain, périmètre de permissions héritables — sera celui de l'outil dont elle dispose, et <strong>il façonnera ce qu'elle saura ensuite demander à une norme</strong>. C'est en ce sens, et en ce sens seulement, que le précédent commercial préempte : <em>non parce qu'il empêcherait une normalisation, mais parce qu'il fixe des attentes avant qu'elle n'arrive.</em></p>
-
 <div class="avert">
-  <p><strong>Et l'objection tient debout.</strong> Un schéma de produit n'est pas un standard, et rien au socle n'établit qu'il en tienne lieu pour quiconque. Il se peut aussi bien qu'un organisme de normalisation reprenne ces objets, les réfute, ou les ignore. <strong>Le tri en quatre statuts est la parade</strong> : il n'empêche pas la préemption, il empêche de la <strong>confondre avec une normalisation</strong>. <em>Écrire « disponible » quand la source écrit</em> Preview*, ou « publié » quand elle écrit « coming soon », c'est déjà avoir cédé.*</p>
+  <p><strong>Et l'objection tient debout.</strong> Un schéma de produit n'est pas un standard, et rien au socle n'établit qu'il en tienne lieu pour quiconque. Il se peut aussi bien qu'un organisme de normalisation reprenne ces objets, les réfute, ou les ignore. <strong>Le tri en quatre statuts est la parade</strong> : il n'empêche pas la préemption, il empêche de la <strong>confondre avec une normalisation</strong>. <em>Écrire « disponible » quand la source écrit</em> Preview<em>, ou « publié » quand elle écrit « coming soon », c'est déjà avoir cédé.</em></p>
 </div>
-
 <h3>15.2.4 La grille du ch. 14 appliquée</h3>
-
 <p>La grille s'applique <strong>par mécanisme, et non par produit</strong> : le mécanisme évalué est <strong>l'identité d'agent gérée dans un annuaire d'entreprise</strong>, telle que le socle la documente.</p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Question</th><th>Verdict</th><th>Ce qui le porte, et sa borne</th></tr></thead>
-  <tbody>
-    <tr><td><strong>Q-A</strong> <em>qui es-tu</em></td><td><strong>répond partiellement</strong></td><td>Un type d'objet d'annuaire est spécifié, nommé et administrable (F-37, <strong>[B]</strong>). Mais l'agent est porté par <strong>deux</strong> objets, et une politique posée sur l'un ne couvre pas l'autre (F-35, <strong>[A]</strong>, degré 2) : <strong>l'identifiant n'est pas unique</strong>. La <em>révocabilité</em>, que Q-A demande explicitement, n'est documentée par aucune des entrées mobilisées — <strong>degré 3</strong>, comme les volets <em>vérifiable</em> et <em>résistant à l'usurpation</em></td></tr>
-    <tr><td><strong>Q-B</strong> <em>qui t'a créé</em></td><td><strong>répond partiellement</strong></td><td>Le type de ressource est spécifié et publié dans la version stable de l'interface de son éditeur, héritant du type <code>application</code> (F-37) : <strong>une provenance est déclarée dans les bornes du locataire</strong>. ⚠ Le détail du schéma n'est pas porté par l'entrée : il vit dans l'affirmation qu'elle condense, employé <strong>en corroboration seulement</strong>. L'<strong>ancrage de confiance</strong>, second terme de Q-B, n'est documenté par aucune entrée — <strong>degré 3</strong></td></tr>
-    <tr><td><strong>Q-C</strong> <em>pour qui agis-tu</em></td><td><strong>répond partiellement</strong></td><td>Les scénarios d'agissement pour le compte d'autrui <strong>expriment</strong> un mandat (H-02, <strong>[A]</strong>). Rien au socle ne documente son <strong>interrogation à l'instant t</strong> ; et la réserve de couverture (F-35) sépare précisément les deux objets entre lesquels ce mandat court</td></tr>
-    <tr><td><strong>Q-D</strong> <em>que peux-tu faire</em></td><td><strong>répond partiellement</strong></td><td>Le type hérite du type <code>application</code> (F-37) et porte donc ses bornes de permissions : <strong>des bornes sont déclarées</strong>. Elles ne sont opposables qu'à <strong>un</strong> des deux plans, la source déclarant elle-même l'autre non couvert (F-35)</td></tr>
-    <tr><td><strong>Q-E</strong> <em>qui en répond</em></td><td><em>case vide, degré 3</em></td><td><span class="auteur">Lecture de l'auteur</span> le socle établit qu'un type d'objet d'annuaire est spécifié et hérité (F-37) ; <strong>il n'établit ni qu'un mécanisme d'imputabilité y soit attaché, ni qu'un objet d'annuaire désigne une personne ou une entité juridique</strong></td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Question</th>
+<th>Verdict</th>
+<th>Ce qui le porte, et sa borne</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Q-A</strong> <em>qui es-tu</em></td>
+<td><strong>répond partiellement</strong></td>
+<td>Un type d'objet d'annuaire est spécifié, nommé et administrable (F-37, <strong>[B]</strong>). Mais l'agent est porté par <strong>deux</strong> objets, et une politique posée sur l'un ne couvre pas l'autre (F-35, <strong>[A]</strong>, degré 2) : <strong>l'identifiant n'est pas unique</strong>. La <em>révocabilité</em>, que Q-A demande explicitement, n'est documentée par aucune des entrées mobilisées — <strong>degré 3</strong>, comme les volets <em>vérifiable</em> et <em>résistant à l'usurpation</em></td>
+</tr>
+<tr>
+<td><strong>Q-B</strong> <em>qui t'a créé</em></td>
+<td><strong>répond partiellement</strong></td>
+<td>Le type de ressource est spécifié et publié dans la version stable de l'interface de son éditeur, héritant du type <code>application</code> (F-37) : <strong>une provenance est déclarée dans les bornes du locataire</strong>. ⚠ Le détail du schéma n'est pas porté par l'entrée : il vit dans l'affirmation qu'elle condense, employé <strong>en corroboration seulement</strong>. L'<strong>ancrage de confiance</strong>, second terme de Q-B, n'est documenté par aucune entrée — <strong>degré 3</strong></td>
+</tr>
+<tr>
+<td><strong>Q-C</strong> <em>pour qui agis-tu</em></td>
+<td><strong>répond partiellement</strong></td>
+<td>Les scénarios d'agissement pour le compte d'autrui <strong>expriment</strong> un mandat (H-02, <strong>[A]</strong>). Rien au socle ne documente son <strong>interrogation à l'instant t</strong> ; et la réserve de couverture (F-35) sépare précisément les deux objets entre lesquels ce mandat court</td>
+</tr>
+<tr>
+<td><strong>Q-D</strong> <em>que peux-tu faire</em></td>
+<td><strong>répond partiellement</strong></td>
+<td>Le type hérite du type <code>application</code> (F-37) et porte donc ses bornes de permissions : <strong>des bornes sont déclarées</strong>. Elles ne sont opposables qu'à <strong>un</strong> des deux plans, la source déclarant elle-même l'autre non couvert (F-35)</td>
+</tr>
+<tr>
+<td><strong>Q-E</strong> <em>qui en répond</em></td>
+<td><em>case vide, degré 3</em></td>
+<td><span class="auteur">Lecture de l'auteur</span> le socle établit qu'un type d'objet d'annuaire est spécifié et hérité (F-37) ; <strong>il n'établit ni qu'un mécanisme d'imputabilité y soit attaché, ni qu'un objet d'annuaire désigne une personne ou une entité juridique</strong></td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 15.3 — Verdict de la grille du ch. 14, mécanisme « identité d'agent gérée en annuaire d'entreprise », au 21 juillet 2026.</p>
-
 <p><strong>Quatre verdicts partiels et une case vide au degré 3</strong> : un mécanisme en disponibilité générale, spécifié et administrable <strong>n'infirme donc pas</strong> la thèse falsifiable du ch. 14. ⚠ <strong>Le motif de ce résultat n'est pas une faiblesse de conception, et il vaut d'être nommé</strong> : les deux questions dont un terme manque — la <strong>révocabilité</strong> et l'<strong>ancrage de confiance</strong> — sont exactement celles qui <strong>excèdent le périmètre d'un annuaire</strong>. <em>Un annuaire nomme, classe et administre ; il ne fonde pas la confiance qu'on accorde à ce qu'il nomme.</em></p>
-
 <h2 id="s153"><span class="sig">§ 15.3</span>Les registres gouvernés : de la spécification CSA aux registres A2A</h2>
-
-<p>Une organisation qui met des agents en production doit d'abord répondre à une <strong>question de tenue de livres</strong> : lesquels possède-t-elle. Le résultat de l'instruction n'est pas un vide — <strong>c'est un encombrement</strong>. Quatre dispositifs prescrivent quelque chose du registre, et <strong>ils ne se qualifient pas les uns comme les autres</strong>.</p>
-
+<p>Une organisation qui met des agents en production doit d'abord répondre à une <strong>question de tenue de livres</strong> : lesquels possède-t-elle ? Le résultat de l'instruction n'est pas un vide — <strong>c'est un encombrement</strong>. Quatre dispositifs prescrivent quelque chose du registre, et <strong>ils ne se qualifient pas les uns comme les autres</strong>.</p>
 <p><span class="auteur">Lecture de l'auteur</span> la typologie qui structure ce paragraphe — <strong>registre d'entreprise, registre de fédération, annuaire protocolaire</strong> — est une construction d'auteur. <strong>Ce que le socle établit</strong> : le statut, la date et le contenu prescriptif des quatre dispositifs (Vol. III F-38 à F-43 ; H-03). <strong>Ce qu'il n'établit pas</strong> : qu'ils forment trois modèles, que ces modèles soient concurrents, ni qu'un registre d'agents soit <strong>en voie de devenir</strong> une pièce de conformité. ⚠ <strong>Ce dernier énoncé est prospectif, et son tri est SPÉCULATIF</strong> : aucune entrée du socle ne date d'engagement une telle trajectoire. La thèse le portait <strong>au présent de constat</strong> jusqu'au <strong>TOC v0.24</strong> — « le registre gouverné <strong>devient</strong> » — et <strong>l'écart a été soldé par la remontée R-IV-23</strong>, qui l'a réalignée au <strong>TOC v0.25</strong> en « <strong>tend à devenir — mouvement SPÉCULATIF, qu'aucune entrée du socle ne date</strong> ». <em>Le chapitre l'écrivait déjà en hypothèse, jamais en constat ; la thèse citée en tête le fait désormais aussi.</em></p>
-
 <h3>15.3.1 La spécification CSA (<code>toolAccessList</code>, <code>permissionBoundaries</code>) : ce qu'un brouillon de laboratoire prescrit, et ce qu'il traîne</h3>
-
 <p>La spécification porte son statut dans son propre en-tête : « <strong>White Paper | 2026-03-27 | Status: draft</strong> », et l'espace de laboratoire qui l'héberge se décrit comme accueillant des travaux qui <strong>ne sont pas encore</strong> un projet officiel de l'organisme (Vol. III F-38, <strong>[A]</strong>). <em>C'est un brouillon de laboratoire, non une norme ratifiée</em>, et la qualification <strong>se répète à chaque mention</strong> plutôt que de se poser une fois en tête.</p>
-
-<p><strong>Ce statut commande ce qu'une institution peut inscrire dans un dossier de diligence raisonnable, et il commande la lecture de ce qui suit — car le brouillon prescrit beaucoup.</strong> Son schéma de profil d'agent range parmi ses <strong>champs obligatoires</strong> un <code>toolAccessList</code>, qui énumère les outils et les serveurs du protocole agent-outil que l'agent est autorisé à invoquer, et des <code>permissionBoundaries</code>, qui portent les limites de portée (Vol. III F-40, <strong>[B]</strong> ; Vol. II F-08, <strong>[A, statut BROUILLON]</strong>).</p>
-
-<div class="avert">
-  <p><strong>La borne compte</strong> : le socle porte <strong>ces deux champs et leur caractère obligatoire</strong>, non l'inventaire complet du schéma.</p>
-</div>
-
+<p><strong>Ce statut commande ce qu'une institution peut inscrire dans un dossier de diligence raisonnable, et il commande la lecture de ce qui suit — car le brouillon prescrit beaucoup.</strong> Son schéma de profil d'agent range parmi ses <strong>champs obligatoires</strong> un <code>toolAccessList</code>, qui énumère les outils et les serveurs du protocole agent-outil que l'agent est autorisé à invoquer, et des <code>permissionBoundaries</code>, qui portent les limites de portée (Vol. III F-40, <strong>[B]</strong> ; Vol. II F-08, <strong>[A, statut BROUILLON]</strong>). ⚠ <strong>La borne compte</strong> : le socle porte <strong>ces deux champs et leur caractère obligatoire</strong>, non l'inventaire complet du schéma.</p>
 <p><strong>Il faut peser ce que signifie rendre ces deux champs obligatoires dans un profil d'identité.</strong> Cela revient à poser qu'on ne peut pas enregistrer un agent <strong>sans déclarer, de façon explicite et lisible par machine</strong>, l'ensemble des outils qu'il peut atteindre et les bornes de ce qu'il peut faire. <em>La déclaration cesse d'être une documentation d'accompagnement pour devenir une condition d'existence de l'agent dans l'annuaire.</em></p>
-
 <p><strong>Deux règles attachées à ces champs éclairent la nature de l'objet, et elles ne sont pas au socle</strong> — relevées à la source primaire par le lot du Vol. III et <strong>non versées</strong>. La première : une expansion de capacités — l'ajout de nouvelles entrées aux champs de capacités ou d'accès aux outils — <strong>invalide le profil de confiance</strong>. La seconde : le tableau des empreintes comportementales et le détail complet des bornes de permission sont <strong>exclus par défaut des réponses fédérées</strong>. <em>L'une fait du profil de confiance un objet à durée de vie conditionnelle ; l'autre borne ce qu'une fédération de registres expose à ses pairs.</em> ⚠ <strong>Ce que ces règles décrivent est un régime de champs et d'invalidation</strong> ; le document <strong>ne démontre par ce seul fait aucune propriété cryptographique</strong> (R-02).</p>
-
 <div class="avert">
   <p><strong>Une affirmation doit être écartée, et c'est le garde-fou R-3 du Vol. II qui l'impose.</strong> Rien au socle n'établit que cette spécification <strong>exigerait</strong> une identité de charge de travail au sens SPIFFE — ni identifiant sous forme d'URI de ce type, ni justificatif correspondant. <strong>Elle s'appuie sur SPIFFE et SPIRE comme <em>fondation</em> ; l'exigence stricte n'est pas établie.</strong> ⚠ <em>L'écart entre ces deux formulations décide de la portée d'une décision d'architecture : un substrat sur lequel une spécification s'appuie laisse ouvert le choix de l'architecte, une exigence stricte le fermerait.</em> <strong>Aucun dossier de conception ne devrait tenir la seconde lecture pour acquise.</strong> ⚠ Le socle de l'identité de charge de travail est <strong>posé au ch. 3</strong> et n'est pas reconstruit ici ; l'<strong>encadré « Affirmations écartées » qui porte R-2 et R-3 reste au ch. 16 § 16.2</strong>, et ce paragraphe <strong>applique</strong> le garde-fou sans le re-siéger.</p>
 </div>
-
 <p><strong>Reste l'ancrage, et c'est là que le brouillon traîne quelque chose.</strong> Il désigne comme son modèle d'interopérabilité pour l'approvisionnement inter-domaines d'agents un brouillon IETF qu'il <strong>cite toujours dans sa version -00</strong> (Vol. III F-41, <strong>[B, degré 2]</strong>), lequel a <strong>expiré le 19 avril 2026 — vingt-trois jours après la publication de la spécification qui s'y adosse</strong> (Vol. III H-03, <strong>[A, statut BROUILLON]</strong>). ⚠ <strong>La conclusion qu'autorise cette chronologie est plus étroite que celle qu'on serait tenté d'en tirer</strong> : <em>au 27 mars 2026, le brouillon désigné était vivant.</em> <strong>Ce n'est donc pas un adossement à un texte mort, c'est un adossement non entretenu.</strong></p>
-
 <h3>15.3.2 Registres et découverte : A2A normalise le chemin, AGNTCY spécifie le magasin</h3>
-
 <div class="avert">
   <p><strong>Ce paragraphe est le versant <em>identité et conformité</em> d'une matière partagée.</strong> Le §3.4 du Vol. I est <strong>partagé déclaré</strong> entre le <strong>ch. 9</strong>, qui en prend le versant <strong>protocolaire</strong> — la leçon des annuaires universels, les trois moments de la découverte, les catalogues fédérés, les modes d'échec des registres —, et le présent paragraphe, qui en prend <strong>ce qui décide de la confiance</strong>. <em>Le ch. 9 n'est pas rejoué ici, et sa matière n'y est pas reconstruite.</em></p>
 </div>
-
 <p>Ce que la documentation du projet agent-agent établit vaut <strong>décision d'architecture</strong>. Elle définit un <strong>chemin de découverte normalisé</strong>, énumère <strong>trois stratégies</strong> — adresse conventionnelle, registres organisés, configuration directe — et <strong>déclare explicitement qu'aucune interface normalisée n'est prescrite pour les registres organisés</strong> (Vol. III F-43, <strong>[B, degré 2]</strong>). ⚠ <strong>Le fait négatif est de degré 2</strong> : la réserve est portée <strong>en toutes lettres par la documentation du projet lui-même</strong>, non par un balayage du texte normatif.</p>
-
 <div class="avert">
   <p><strong>Deux réserves s'y attachent, toutes deux consignées.</strong> La section d'enregistrement du chemin conventionnel <strong>n'a pas pu être extraite</strong> — contenu tronqué à la récupération, la table des matières attestant seulement l'existence de la section : <strong>l'enregistrement effectif du chemin auprès de l'autorité de numérotation n'est donc pas constaté ici</strong>. Et la documentation note qu'une carte porteuse de données sensibles doit être protégée par authentification et autorisation : <em>c'est une exigence de déploiement, non une propriété démontrée du format</em> (R-02).</p>
 </div>
-
 <p><strong>Le service d'annuaire de l'autre écosystème prend l'option inverse.</strong> Il est spécifié par un <em>Internet-Draft</em> de <strong>soumission individuelle</strong>, à sa révision <strong>-02 du 6 juillet 2026</strong> (Vol. III F-43) — travaux émergents, non une norme ratifiée. Le reste est <strong>source primaire ouverte hors socle</strong> : statut visé <em>Informational</em>, expiration au <strong>7 janvier 2027</strong> — échéance automatique, <strong>PROGRAMMÉE au sens mécanique</strong>, qui ne dit rien d'une adoption —, stockage des enregistrements sous forme d'artefacts adressés par contenu, annonce et découverte par table de hachage distribuée, signature de provenance. ⚠ <strong>Ces mécanismes sont déclarés par la spécification</strong> ; <em>ce qu'une mise en œuvre en démontre effectivement n'a pas été vérifié</em> (R-02).</p>
-
 <div class="avert">
   <p><strong>Un sigle de cet écosystème ne s'emploie jamais nu, et la raison est documentée.</strong> L'intitulé complet de sa composante « ACP » et son identité éventuelle avec le protocole homonyme fusionné dans la couche agent-agent <strong>ne sont établis par aucune source ouverte</strong> : la question est <strong>ouverte, aucune passe de recherche n'ayant été conduite</strong>. L'<strong>encadré de désambiguïsation à quatre branches est au ch. 7 § 7.5</strong> et n'est pas reconstruit ici ; la <strong>mécanique de la fusion</strong> est au <strong>ch. 8 § 8.5.1</strong>. <em>Le sigle n'est employé dans ce chapitre qu'accompagné de sa branche, et la branche de l'annuaire n'est jamais agrégée à celle du protocole.</em></p>
 </div>
-
 <p><strong>Une entrée de repérage corrobore le cycle de vie que le brouillon de registre prescrit</strong> : quatre états — <em>active</em>, <em>suspended</em>, <em>deprecated</em>, <em>revoked</em> — et le rejet imposé d'un agent suspendu ou révoqué, <strong>sans aucun délai de propagation ni budget de fraîcheur</strong> ; côté annuaire, le document <strong>présente</strong> l'adressage par contenu comme fondant l'intégrité, <strong>sans démonstration fournie</strong> (Vol. III F-55, <strong>[C, degré 1]</strong>). ⚠ <strong>Cette entrée est en [C] : elle corrobore, elle ne porte pas</strong>, et son balayage a été mené sur la <strong>révision -01</strong>, que le socle sait supplantée par la -02 et <strong>non rebalayée</strong>. <em>La révocation est l'objet du ch. 20 ; ce qui appartient ici est le constat de statut.</em></p>
-
 <p><span class="auteur">Lecture de l'auteur</span> la lecture proposée est que les trois dispositifs répondent à des <strong>questions distinctes de la grille du ch. 14</strong> : l'<strong>annuaire protocolaire</strong> travaille sur <strong>Q-A</strong> — le chemin de découverte normalisé en est le préalable, non la réponse —, le <strong>registre d'entreprise</strong> sur <strong>Q-D</strong> — bornes déclarées, le socle ne portant pas leur opposabilité au point d'application —, et le <strong>registre de fédération</strong> sur ce que <strong>Q-D cesse d'exposer</strong> au franchissement d'une frontière de domaine. ⚠ <strong>Aucun verdict par la grille n'est porté ici</strong> : les sièges d'application sont les § 15.1.4 et § 15.2.4, et ce paragraphe <strong>instruit la matière sans la juger</strong>.</p>
-
 <h3>15.3.3 Le registre comme objet réglementaire — et la quatrième pièce du passeport</h3>
-
 <p><strong>Le registre change de nature quand on le regarde depuis un cadre prudentiel.</strong> Ce n'est plus un annuaire de résolution : c'est un <strong>inventaire</strong>, et l'inventaire figure parmi les composantes majeures de ce que les cadres canadiens <strong>attendent</strong>.</p>
-
 <p>La ligne directrice <strong>E-23</strong>, publiée le 11 septembre 2025 et <strong>en vigueur le 1ᵉʳ mai 2027</strong> — échéance réglementaire datée, donc <strong>PROGRAMMÉE</strong> —, est <strong>fondée sur des principes et rédigée au conditionnel</strong> (Vol. III H-04, <strong>[A/B mixte]</strong>). Ses douze énoncés numérotés sont au <em>should</em> : le balayage du corps de la version anglaise en rendu HTML n'y relève <strong>aucune occurrence</strong> de <em>must</em>, ni des formules d'attente directe (Vol. III F-64, <strong>[B, degré 1]</strong>). ⚠ <strong>Deux bornes</strong> : un appendice n'a pas été extrait, et le volet français n'a pas été balayé — <em>ce décompte ne couvre donc pas les deux langues.</em> Ce que le texte porte, l'institution le <strong>devrait</strong> : « a comprehensive inventory of models whose inherent risk is determined to be non-negligible to the institution », à l'échelle de l'entreprise, l'identification et l'inventaire figurant parmi les composantes majeures du cadre, et le cycle de vie visant nommément la prise de décision autonome et la reparamétrisation autonome (Vol. III F-65, <strong>[B]</strong>).</p>
-
 <div class="avert">
   <p><strong>La modalité se tient, et elle a sa source.</strong> On écrit « <strong>attendu par</strong> E-23 », <strong>jamais « exigé par E-23 »</strong> ; et « E-23 attend » ne s'écrit qu'au titre du <strong>document d'information</strong> du même jour (Vol. III F-66, <strong>[B, degré 1]</strong>), jamais au titre du texte de la ligne directrice. On écrit « inventaire » et « documentation de modèle », <strong>jamais « fiche de modèle »</strong> — expression dont H-04 établit qu'elle compte <strong>zéro occurrence</strong>, en anglais comme en français.</p>
 </div>
-
 <div class="avert">
-  <p><strong>E-23 ne nomme ni l'agentique, ni les agents, ni l'orchestration</strong> : vérification mécanique sur le texte intégral, dans les deux langues — « agentique » = 0, « agent(s) » = 0, « orchestration » = 0, « autonom\* » = 8 (Vol. III H-04). Sa définition de « modèle », laissée « intentionally broad », englobe les méthodes d'IA et d'apprentissage automatique ; d'où une <strong>couverture implicite</strong> que des analystes juridiques tiennent pour acquise, et qui est <strong>attribuée aux analystes, jamais au régulateur</strong>.</p>
+  <p><strong>E-23 ne nomme ni l'agentique, ni les agents, ni l'orchestration</strong> : vérification mécanique sur le texte intégral, dans les deux langues — « agentique » = 0, « agent(s) » = 0, « orchestration » = 0, « autonom* » = 8 (Vol. III H-04). Sa définition de « modèle », laissée « intentionally broad », englobe les méthodes d'IA et d'apprentissage automatique ; d'où une <strong>couverture implicite</strong> que des analystes juridiques tiennent pour acquise, et qui est <strong>attribuée aux analystes, jamais au régulateur</strong>.</p>
 </div>
-
 <p>Les deux autres autorités que la somme mobilise prennent le même appui. L'<strong>AMF</strong> formule ses attentes sur le mode « L'Autorité s'attend à ce que… », pour effet au <strong>1ᵉʳ mai 2027</strong> — même échéance, <strong>PROGRAMMÉE</strong> au même titre —, et reprend une définition du système d'IA incluant des « degrés variables d'autonomie et d'adaptabilité après déploiement » (Vol. III F-68, <strong>[B]</strong>). L'avis des <strong>ACVM</strong> du 5 décembre 2024 pose que les lois <strong>sur les valeurs mobilières</strong> existantes s'appliquent aux systèmes d'IA — <em>les indications qu'il donne ne créent ni ne modifient aucune exigence, et cette formule est un rendu français, non un verbatim</em> — et retient une définition incluant des niveaux variables d'autonomie et d'adaptativité après déploiement (Vol. III H-07, <strong>[B]</strong>). ⚠ <strong>La borne de portée ne se perd pas</strong> : <em>le socle n'établit pas que cet avis porte au-delà des marchés de capitaux.</em></p>
-
 <div class="avert">
   <p><strong>Ces deux entrées n'ont pas pu être re-constatées à leur source le 28 juillet 2026</strong> — accès refusé par l'hôte pour la première, source servie mais non extractible pour la seconde (socle consolidé v1.2, <code>S-114</code> et <code>S-024</code>). Leurs niveaux ne bougent pas ; <em>mais une entrée en vigueur au 1ᵉʳ mai 2027 est un fait à échéance, et l'absence de re-datation se déclare plutôt qu'elle ne se présume stable.</em></p>
 </div>
-
 <p><em>Trois cadres, une même prise : ce qui varie après le déploiement est ce que chacun attend de voir rester connu. Un registre est le lieu où cette connaissance s'inscrit.</em> ⚠ <strong>L'analyse de ce que ces cadres demandent, à qui et sous quelle modalité relève du Livre III — ch. 25 § 25.2 en est le siège — et n'est pas conduite ici.</strong></p>
-
 <div class="avert">
   <p><strong>Le rapprochement s'arrête là où le socle s'arrête.</strong> Le rapprochement entre le schéma de profil d'agent du brouillon de registre et l'inventaire attendu par E-23 est une <strong>inférence d'auteur</strong> (R-07 du Vol. III). ⚠ Et la <strong>formulation renforcée</strong> que ce garde-fou réserve à certains objets — « l'éditeur ne revendique aucune conformité, et aucune source ne documente ce lien », <strong>fait négatif établi</strong> — <strong>ne s'applique pas ici</strong> : pour le brouillon de registre, <strong>le socle est muet — absence de documentation, degré 3</strong>. <em>Les deux formules ne s'échangent pas : l'une dit qu'on a cherché et consigné une réserve, l'autre dit qu'on est muet.</em></p>
 </div>
-
-<p><strong>Ce paragraphe est l'un des deux sièges de la quatrième pièce du passeport d'agent — les attestations de conformité —, l'autre étant le ch. 25 § 25.2 ; elle n'a pas de chapitre dédié et n'en aura pas.</strong></p>
-
-<div class="avert">
-  <p><strong>Le passeport d'agent ne figure dans aucune spécification de 2026 : c'est un objet de synthèse construit par la somme</strong> (R-01 du Vol. III ; assemblage au <strong>ch. 16</strong>) — <em>dire « sa quatrième pièce » ne suppose donc l'existence ni du passeport ni de la pièce, mais nomme une place dans une construction déclarée.</em></p>
-</div>
-
+<p><strong>Ce paragraphe est l'un des deux sièges de la quatrième pièce du passeport d'agent — les attestations de conformité —, l'autre étant le ch. 25 § 25.2 ; elle n'a pas de chapitre dédié et n'en aura pas.</strong> ⚠ <strong>Le passeport d'agent ne figure dans aucune spécification de 2026 : c'est un objet de synthèse construit par la somme</strong> (R-01 du Vol. III ; assemblage au <strong>ch. 16</strong>) — <em>dire « sa quatrième pièce » ne suppose donc l'existence ni du passeport ni de la pièce, mais nomme une place dans une construction déclarée.</em></p>
 <p><strong>Ce qui s'en documente ici tient en peu de choses, et l'asymétrie se déclare plutôt qu'elle ne se masque.</strong> Dans le schéma du brouillon, le relevé ne fait apparaître <strong>qu'un point d'ancrage</strong> : un champ nommé <code>externalCertifications</code>, qui figure parmi les champs <strong>facultatifs</strong>, aux côtés de trois autres. <em>(Source primaire ouverte et citée hors socle par le Vol. III, non versée.)</em> ⚠ <strong>Le relevé nomme le champ et son caractère facultatif ; il ne documente ni son format, ni ce qu'une attestation y porterait, ni qui l'émettrait — absence de documentation, degré 3.</strong></p>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : trois cadres canadiens attendent un inventaire et visent ce qui varie après le déploiement (H-04, F-65, F-68, H-07) ; un brouillon de laboratoire prescrit un schéma de profil d'agent à champs obligatoires (F-40). <strong>Ce qu'il n'établit pas</strong> : que le second réponde au premier, ni qu'une inscription au registre vaille pièce de conformité. <em>La lecture proposée est que la quatrième pièce du passeport est, des quatre, la moins documentée</em> — comparaison <strong>bornée à ces quatre pièces nommées</strong> : chacune des trois autres est adossée à au moins une spécification instruite, tandis que l'attestation n'a ici <strong>qu'un nom de champ facultatif, relevé hors socle</strong>.</p>
-
 <h3>Synthèse : ce que le chapitre lègue à la somme</h3>
-
 <p><em>Section de sortie sans homologue direct dans la source — construction d'éditeur.</em></p>
-
-<ol class="numeros">
-  <li><strong>Ce que la signature démontre, et rien de plus.</strong> <em>Le détenteur d'une clé a signé une forme canonicalisée d'une carte donnée.</em> Les <strong>ch. 16, 17, 20 et 21</strong> reprennent cet énoncé sans le re-établir, et <strong>aucun ne l'élargit en vérification d'identité</strong>.</li>
-  <li><strong>L'asymétrie émission/révocation, établie sur pièce.</strong> Rotation outillée, retrait non outillé ; interdiction posée sans le moyen de s'y conformer. C'est la matière du <strong>ch. 20 § 20.4</strong>, qui la généralise à neuf mécanismes.</li>
-  <li><strong>Le tri en quatre statuts de produit</strong>, éprouvé sur trois offres et une intention publiée. Les <strong>ch. 18 et 20</strong> l'appliquent à leurs propres corpus.</li>
-  <li><strong>Les deux champs obligatoires du profil d'agent</strong>, et leur borne : <em>déclarer une borne et l'opposer sont deux actes distincts.</em> Le <strong>ch. 16 § 16.1</strong> en fait la deuxième pièce du passeport ; le <strong>ch. 25</strong> en examinera la portée réglementaire.</li>
-  <li><strong>La quatrième pièce, et son déficit déclaré.</strong> Un nom de champ facultatif, relevé hors socle, contre trois pièces adossées à des spécifications instruites. Le <strong>ch. 16 § 16.1</strong> le déclare plutôt que de présenter les quatre à parité.</li>
+<ol type="1">
+<li><strong>Ce que la signature démontre, et rien de plus.</strong> <em>Le détenteur d'une clé a signé une forme canonicalisée d'une carte donnée.</em> Les <strong>ch. 16, 17, 20 et 21</strong> reprennent cet énoncé sans le re-établir, et <strong>aucun ne l'élargit en vérification d'identité</strong>.</li>
+<li><strong>L'asymétrie émission/révocation, établie sur pièce.</strong> Rotation outillée, retrait non outillé ; interdiction posée sans le moyen de s'y conformer. C'est la matière du <strong>ch. 20 § 20.4</strong>, qui la généralise à neuf mécanismes.</li>
+<li><strong>Le tri en quatre statuts de produit</strong>, éprouvé sur trois offres et une intention publiée. Les <strong>ch. 18 et 20</strong> l'appliquent à leurs propres corpus.</li>
+<li><strong>Les deux champs obligatoires du profil d'agent</strong>, et leur borne : <em>déclarer une borne et l'opposer sont deux actes distincts.</em> Le <strong>ch. 16 § 16.1</strong> en fait la deuxième pièce du passeport ; le <strong>ch. 25</strong> en examinera la portée réglementaire.</li>
+<li><strong>La quatrième pièce, et son déficit déclaré.</strong> Un nom de champ facultatif, relevé hors socle, contre trois pièces adossées à des spécifications instruites. Le <strong>ch. 16 § 16.1</strong> le déclare plutôt que de présenter les quatre à parité.</li>
 </ol>
-
 <div class="avert">
   <p><strong>Ce que le chapitre ne lègue pas.</strong> L'<strong>inventaire des manques côté émission</strong> est au <strong>ch. 16 § 16.2</strong>, qui le prélève : la ligne Fusion du présent chapitre porte son « hors §7.4 ». La <strong>chaîne de mandat</strong> est au <strong>ch. 17</strong>. L'<strong>admission d'un agent tiers</strong> est au <strong>ch. 18</strong>. Et le <strong>verdict des cinq questions sur un objet composé</strong> n'existe qu'au <strong>ch. 16 § 16.5</strong>, où il est explicitement <em>sur le papier</em>.</p>
 </div>
+<hr />
+<figure class="figure">
+  <img src="../figures/f-15-03-chemin-magasin.svg" alt="Figure 15.3 — Deux moitiés d&#39;un même mécanisme : le protocole normalise le chemin, l&#39;infrastructure spécifie le magasin." />
+  <figcaption><strong>Figure 15.3</strong> — Deux moitiés d'un même mécanisme : le protocole normalise le chemin, l'infrastructure spécifie le magasin.</figcaption>
+</figure>
 
 <footer class="pied">
   <p><strong>Vol. IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em></strong> · Livre II, chapitre 15. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau, M.Sc. IT.</p>
-
   <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme (gel unique : 27 juillet 2026).</p>
 </footer>
 

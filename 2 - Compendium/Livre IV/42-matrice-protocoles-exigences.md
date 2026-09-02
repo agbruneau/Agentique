@@ -311,7 +311,7 @@ protocolaire. ⚠ **Son contenu n'est documenté au regard d'aucune exigence can
 *Ce que cette révision change à la matrice n'est documenté par rien, et l'inférer serait la faute que
 la somme prend pour objet.*
 
-## Synthèse : ce que le chapitre lègue à la somme
+### Synthèse : ce que le chapitre lègue à la somme
 
 *Section de sortie sans homologue direct dans la source — construction d'éditeur.*
 
@@ -392,6 +392,8 @@ ouvertes**, et le volet résiduel de G-1 reste dû.
 4. **Le cardinal de quinze est re-mesuré sur la source, non recopié** ; ☐ **la re-mesure contre la
    matrice consolidée de l'Annexe F reste due**, cette annexe n'étant pas rédigée.
 5. **CA-IV-13 n'est pas satisfaite** — aucune relecture par un relecteur distinct du rédacteur.
+
+   ☑ **STATUT ARRÊTÉ LE 2 SEPTEMBRE 2026** (décision 26 du TOC, **D-16**) : *l'**annexe F** n'est pas rédigée et **ne le sera pas** — le dépôt est clos, et **D-13** ne prévoit plus de passe de rédaction.* ☑ **Son siège est nommé aux sources** : `annexe-b-matrice.md` des **Vol. II et III**. ⚠ **Le renvoi de cette pièce n'est donc plus une attente, c'est une désignation** — *il visait un livrable à venir, il vise désormais un texte qui existe.*
 
 **Remontées ouvertes par ce chapitre :**
 

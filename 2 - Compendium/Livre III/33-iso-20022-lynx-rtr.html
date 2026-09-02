@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chapitre 33 — ISO 20022 : Lynx accompli, RTR visé · Interopérabilité et Orchestration en Entreprise Agentique</title>
-<meta name="description" content="Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier. Troisième mouvement — le terrain canadien : interopérabilité financière et adoption (ch. 31-36). Troisième chapitre du mouvement : un rail accompli et un rail visé, à ne jamais laisser confondre">
+<meta name="description" content="Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier. Troisième mouvement — le terrain canadien : interopérabilité financière et adoption (ch. 31-36). Troisième chapitre du mouvement : **un rail accompli et un rail visé, à ne jamais laisser confondre**">
 <meta name="author" content="André-Guy Bruneau, M.Sc. IT">
 <meta name="color-scheme" content="dark">
 <style>
@@ -443,6 +443,17 @@ tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
 tbody td:first-child { color: var(--texte); font-weight: 600; }
 .legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
 
+/* -------------------------------------------------------------- figures */
+/* Les SVG du volume sont dessinés pour le PDF, donc sur fond clair, et ils
+   portent ce fond eux-mêmes — sans quoi il faudrait maintenir deux variantes
+   de chaque figure. Sur ce thème sombre, ils se posent donc comme un carton ;
+   le padding empêche le fond de la figure de toucher le bord du cadre. */
+.figure { margin: 2.1rem 0 1.9rem; }
+.figure img { display: block; width: 100%; height: auto; border-radius: 7px;
+              border: 1px solid var(--trait); background: #fdfbf9; padding: 0.6rem; }
+.figure figcaption { font-size: 0.8rem; font-style: italic; color: var(--texte-faible);
+                     margin-top: 0.65rem; padding-left: 0.15rem; }
+
 /* --------------------------------------------------------------- listes */
 ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
 ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
@@ -534,8 +545,8 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
     <li><a href="#s330"><span class="num">33.0</span>Ouverture : un rail accompli, un rail visé</a></li>
     <li><a href="#s331"><span class="num">33.1</span>Lynx : une migration achevée, et ce que cela veut dire</a></li>
     <li><a href="#s332"><span class="num">33.2</span>RTR : une chronologie vérifiée, une cible annoncée, une cible reportée</a></li>
-    <li><a href="#s333"><span class="num">33.3</span>By-law no 10 : l&#x27;instrument juridique précède le rail</a></li>
-    <li><a href="#s334"><span class="num">33.4</span>Ce que la couche sémantique commune change — et ce que le socle n&#x27;en dit pas</a></li>
+    <li><a href="#s333"><span class="num">33.3</span>By-law no 10 : l'instrument juridique précède le rail</a></li>
+    <li><a href="#s334"><span class="num">33.4</span>Ce que la couche sémantique commune change — et ce que le socle n'en dit pas</a></li>
   </ol>
   <div class="nav__pied">
     Vol.&nbsp;IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em><br>
@@ -549,195 +560,172 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 <header class="titre">
   <div class="titre__fil">Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier</div>
   <h1><span class="chap">Chapitre 33</span>ISO 20022 : Lynx accompli, RTR visé</h1>
-  <p class="titre__situe">Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier. Troisième mouvement — le terrain canadien : interopérabilité financière et adoption (ch. 31-36). Troisième chapitre du mouvement : <strong>un rail accompli et un rail visé, à ne jamais laisser confondre</strong></p>
+  <p class="titre__situe">Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier. Troisième mouvement — le terrain canadien : interopérabilité financière et adoption (ch. 31-36). Troisième chapitre du mouvement : **un rail accompli et un rail visé, à ne jamais laisser confondre**</p>
 </header>
 
 <!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
      Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
-     que `build/assemble.py` pour le PDF. L'appareil de gouvernance vit au .md jumeau, qui reste la
-     seule source, et `verifier-piece.py` [6] refuse désormais un rendu qui le recopierait. -->
+     que `build/assemble.py` pour le PDF et que `PRD/decompte.sh` pour la volumétrie. L'appareil de
+     gouvernance vit au .md jumeau, qui reste la seule source, et `build/verifier-piece.py` refuse
+     un rendu qui le recopierait. -->
 
 <div class="avert">
   <p><strong>La thèse a été collationnée contre le texte rédigé de sa source avant la rédaction</strong> (décision 14 du TOC). <strong>Domaine de balayage : une thèse examinée, zéro réalignée — et un réalignement déjà fait par le plan, dans le bon sens.</strong> ⚠ <strong>Le Vol. II intitule son chapitre « RTR <em>imminent</em> » et sa thèse porte « visé au T4 2026 » ; le plan a retenu « visé » jusque dans le titre, et y a ajouté la parenthèse « cible plusieurs fois repoussée — attribuer, ne pas affirmer au futur catégorique ».</strong> <em>C'est <strong>l'inverse du cas ordinaire</strong> : le plan est ici <strong>plus borné que sa source</strong>, et il le devient sur le mot exact que la réserve F-29 vise.</em> <strong>Le corps écrit la forme du plan.</strong></p>
 </div>
-
 <h2 id="s330"><span class="sig">§ 33.0</span>Ouverture : un rail accompli, un rail visé</h2>
-
 <p><strong>Un architecte d'entreprise qui conçoit aujourd'hui une chaîne de paiement canadienne travaille sur un terrain d'une asymétrie singulière.</strong> <em>D'un côté, <strong>un rail achevé</strong> : le système de paiements de grande valeur a terminé sa migration, et l'alternative technique qui subsistait a été retirée. De l'autre, <strong>un rail annoncé, daté, testé</strong> — ⚠ <strong>mais qui n'a pas encore traité un paiement en exploitation</strong>.</em></p>
-
 <p><strong>Les deux parleront le même langage sémantique. L'un le parle déjà ; l'autre le parlera dès son premier jour, si ce jour arrive à la date visée.</strong></p>
-
 <div class="avert">
-  <p><strong>Le chapitre soutient que la couche sémantique commune est en place, et il faut prendre ce verbe au sérieux dans les deux directions.</strong> <em>« En place » signifie que <strong>le choix de format n'est plus une variable d'architecture</strong> : sur le premier rail, il est <strong>arrêté et irréversible</strong> ; sur le second, il est <strong>arrêté par construction</strong>.</em> ⚠ <strong><em>« En place » ne signifie pas « en exploitation partout »</strong></em> — <em>et la distinction entre un rail accompli et un rail visé est précisément ce que ce chapitre s'attache à ne pas laisser confondre, <strong>parce que c'est la confusion la plus coûteuse qu'un dossier d'architecture puisse commettre</strong>.</em></p>
+  <p><strong>Le chapitre soutient que la couche sémantique commune est en place, et il faut prendre ce verbe au sérieux dans les deux directions.</strong> <em>« En place » signifie que <strong>le choix de format n'est plus une variable d'architecture</strong> : sur le premier rail, il est <strong>arrêté et irréversible</strong> ; sur le second, il est <strong>arrêté par construction</strong>.</em> ⚠ <strong><em>« En place » ne signifie pas « en exploitation partout »</em></strong> — <em>et la distinction entre un rail accompli et un rail visé est précisément ce que ce chapitre s'attache à ne pas laisser confondre, <strong>parce que c'est la confusion la plus coûteuse qu'un dossier d'architecture puisse commettre</strong>.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>Deux garde-fous se recouvrent ici, et les deux sont nommés.</strong> <em>La <strong>réserve F-29 du Vol. II</strong> — entrée <strong>S-027</strong> du socle consolidé — interdit d'écrire <strong>« lancé »</strong> et <strong>« en production »</strong> ; et <strong>R-11 du Vol. III</strong> veut qu'un jalon soit <strong>visé</strong>, jamais <strong>fixé</strong>.</em> ⚠ <strong>Le second est plus général, le premier plus strict</strong> : <em>R-11 interdit d'écrire « fixé » ; F-29 interdit en outre d'écrire « lancé ».</em> ⚠ <strong>R-11 est ici appliqué hors de son domaine d'origine</strong> — <em>sa source le formule sur les jalons du NIST</em> — <strong>et l'extension se déclare plutôt qu'elle ne se tait</strong>.</p>
 </div>
-
 <p><strong>Ce que le chapitre ne traite pas.</strong> ⚠ <em>Le <strong>substrat sémantique financier</strong> — les trois couches, le détail des standards — est au <strong>ch. 31 § 31.2</strong>, qui le pose ; <strong>le flux instancié de bout en bout</strong> est au <strong>ch. 45</strong> (Livre IV). Le <strong>cadre bancaire</strong> est au <strong>ch. 32</strong> ; <strong>l'articulation avec les protocoles de paiement agentique</strong> au <strong>ch. 36</strong>, explicitement prospectif.</em></p>
-
 <h2 id="s331"><span class="sig">§ 33.1</span>Lynx : une migration achevée, et ce que cela veut dire</h2>
-
 <p><strong>Le fait central est daté.</strong> Le <strong>22 novembre 2025</strong>, la coexistence des deux familles de messages prend fin sur le rail de grande valeur : <em>les messages hérités sont <strong>retirés</strong> au profit des messages structurés, et <strong>ils ne sont plus pris en charge</strong>.</em> <strong>Paiements Canada annonce l'achèvement le 26 novembre 2025.</strong> ⚠ <strong>La bascule technique est alignée sur l'échéance mondiale du réseau de messagerie interbancaire</strong> (Vol. II F-28, entrée <strong>S-026</strong> du socle consolidé).</p>
-
 <p><strong>Cette date clôt une transition longue.</strong> <em>La coexistence avait été ouverte en <strong>mars 2023</strong> ; il s'écoule donc <strong>quelque trente-deux mois</strong> — deux ans et huit mois durant lesquels le rail a accepté l'un et l'autre format, <strong>chaque institution restant maîtresse du moment où elle basculait ses propres chaînes</strong>.</em></p>
-
 <div class="avert">
   <p><strong>Et la bascule finale n'a pas été un basculement.</strong> <em>Selon <strong>Paiements Canada</strong>, <strong>plus de 98 % des messages étaient déjà au format structuré en octobre 2025</strong></em> — ⚠ <strong>métrique d'exploitant, attribuée à Paiements Canada à chaque occurrence</strong> — <em>moins de 2 % du trafic déclaré restait donc à l'ancien format à cette date.</em></p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>le 22 novembre n'a vraisemblablement pas déplacé le volume ; il a supprimé un reliquat, et surtout il a supprimé <em>l'option</em>.</strong> <strong>Ce que le socle établit</strong> : la part déjà basculée en octobre 2025, et le retrait des messages hérités. <strong>Ce qu'il n'établit pas</strong> : la part résiduelle à la date de bascule elle-même — <em>absence de documentation, degré 3 de l'échelle R-14 du Vol. III.</em></p>
-
 <div class="avert">
   <p><strong>Pour l'architecte, la valeur de cette date ne tient donc pas à la nouveauté d'un format : elle tient à la <em>disparition d'une alternative</em>.</strong> <em>Tant que la coexistence durait, la question « <strong>quel format ce flux émet-il ?</strong> » restait ouverte et devait être tranchée <strong>composant par composant</strong>, avec la logique conditionnelle, les tests et la dette que cela suppose.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>Mais la borne est stricte</strong> : <em>ce que la fin de la coexistence garantit, c'est qu'<strong>à la frontière du rail</strong> il n'existe plus de branche à maintenir. <strong>Ce qu'elle ne garantit pas</strong>, c'est qu'il n'en subsiste aucune <strong>à l'intérieur des institutions</strong> — question qui relève de l'inventaire de chacune, non de ce chapitre.</em></p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>un mot sur l'alignement de la date, souvent lu comme un détail de calendrier.</strong> <em>Il <strong>situe la date canadienne sur un calendrier qui n'est pas propre au Canada</strong>, mais commun aux correspondants bancaires du monde entier — et un architecte qui aurait cherché à négocier un report de sa bascule interne <strong>aurait négocié contre un calendrier qu'aucun acteur canadien ne maîtrisait</strong>.</em> <strong>Ce que le socle établit</strong> : l'alignement. <strong>Ce qu'il n'établit pas</strong> : <em>que l'échéance mondiale ait été la <strong>cause</strong> de la date canadienne, seulement qu'elles <strong>coïncident</strong></em>. ⚠ <em>La nuance est mince, mais elle sépare une observation d'une reconstruction rétrospective.</em></p>
-
 <div class="avert">
   <p><strong>Le rail a une histoire industrielle, et elle se rapporte sous neutralité fournisseur.</strong> <em>Un partenaire technologique principal a été sélectionné le <strong>2 mai 2019</strong> — hébergement, intégration, bascule et exploitation ; le système est <strong>lancé le 1ᵉʳ septembre 2021</strong>, à un jour près vingt-huit mois après l'annonce ; un centre de données additionnel s'y ajoute en octobre 2023</em> (Vol. II <strong>F-45</strong>, entrée <strong>S-043</strong>). ⚠ <strong>Le mot « lancé » se dit ici sans réserve, et il faut voir pourquoi</strong> : <em>il porte sur <strong>le rail de grande valeur</strong>, dont le lancement est un fait daté du socle — <strong>la réserve F-29, qui interdit d'écrire « lancé », vise le rail en temps réel du § 33.2, et lui seul</strong>.</em> ⚠ <strong>Deux réserves accompagnent ce fait et se portent avec lui</strong> : <em>les <strong>montants des contrats ne sont pas publics</strong>, et — conformément à la neutralité fournisseur (PRD Vol. II §8.4) — <strong>ce rôle est un fait de contexte, jamais un argument de conformité réglementaire</strong>.</em> ⚠ <strong>Le socle ne documente aucun lien entre ce rôle et les lignes directrices du régulateur prudentiel</strong> — <em>absence de documentation, non un fait négatif vérifié.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>Une borne de régime s'attache à ce paragraphe, et à lui seul dans tout le chapitre.</strong> L'entrée <strong>S-043</strong> — celle qui porte cette histoire industrielle — est la seule des trois du chapitre dont la re-datation au gel du 28 juillet 2026 soit <strong>☐ non établie</strong>, pour <strong>accès refusé par l'hôte</strong> ; <strong>un seul de ses volets a été re-constaté à une source tierce, et ce n'est pas celui-ci</strong> — c'est le rôle de partenaire de livraison du rail en temps réel. ⚠ <strong>Conséquence opposable, posée au franchissement de G-3</strong> : <em>aucun énoncé de ce chapitre adossé aux trois dates ci-dessus n'est central au sens de CA-IV-01.</em> ⚠ <em>Et le fait négatif du paragraphe précédent <strong>n'a pas été re-balayé</strong> : il n'est pas tenu à jour, il est <strong>daté</strong>.</em></p>
 </div>
-
 <h2 id="s332"><span class="sig">§ 33.2</span>RTR : une chronologie vérifiée, une cible annoncée, une cible reportée</h2>
-
 <div class="avert">
   <p><strong>Le rail de paiement en temps réel n'est pas un projet dont on ignorerait l'état d'avancement.</strong> <em>Il est, au contraire, l'un des objets les mieux jalonnés du socle du Vol. II — <strong>neuf affirmations confirmées par vote adversarial unanime</strong>, sur quatre pages officielles de <strong>Paiements Canada</strong> (F-29, entrée <strong>S-027</strong>).</em> ⚠ <strong>La difficulté n'est pas de savoir où il en est ; elle est de dire son statut sans le surqualifier ni le sous-qualifier — <em>deux fautes symétriques et également disqualifiantes</em> dans un dossier d'architecture.</strong></p>
 </div>
-
 <p><strong>La chronologie, telle que Paiements Canada la communique, est la suivante.</strong></p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Jalon</th><th>Date</th></tr></thead>
-  <tbody>
-    <tr><td>Livraison de la composante d'échange par un premier partenaire</td><td><strong>juin 2023</strong></td></tr>
-    <tr><td><strong>Reprise du programme</strong>, avec deux nouveaux partenaires de livraison et d'exploitation</td><td><strong>16 avril 2024</strong></td></tr>
-    <tr><td>Construction de la composante compensation et règlement, <strong>complétée</strong></td><td><strong>T3 2025</strong></td></tr>
-    <tr><td>Tests internes, <strong>complétés</strong></td><td><strong>T4 2025</strong></td></tr>
-    <tr><td>Tests d'acceptation utilisateur, <strong>complétés</strong></td><td><strong>T1 2026</strong></td></tr>
-    <tr><td>Tests industriels</td><td>⚠ <strong>en cours à la mi-2026</strong></td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Jalon</th>
+<th>Date</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Livraison de la composante d'échange par un premier partenaire</td>
+<td><strong>juin 2023</strong></td>
+</tr>
+<tr>
+<td><strong>Reprise du programme</strong>, avec deux nouveaux partenaires de livraison et d'exploitation</td>
+<td><strong>16 avril 2024</strong></td>
+</tr>
+<tr>
+<td>Construction de la composante compensation et règlement, <strong>complétée</strong></td>
+<td><strong>T3 2025</strong></td>
+</tr>
+<tr>
+<td>Tests internes, <strong>complétés</strong></td>
+<td><strong>T4 2025</strong></td>
+</tr>
+<tr>
+<td>Tests d'acceptation utilisateur, <strong>complétés</strong></td>
+<td><strong>T1 2026</strong></td>
+</tr>
+<tr>
+<td>Tests industriels</td>
+<td>⚠ <strong>en cours à la mi-2026</strong></td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 33.1 — La chronologie du rail de paiement en temps réel, telle que Paiements Canada la communique (Vol. II F-29, entrée <strong>S-027</strong>, <strong>neuf affirmations votées à l'unanimité</strong>). ⚠ <strong>La page officielle des partenaires en liste quatre, dont un dernier sans en détailler le rôle</strong> — <em>le socle enregistre la présence, pas la fonction, et la somme n'en dira pas davantage.</em></p>
-
 <p><strong>D'où l'énoncé qui doit être tenu mot pour mot, et que le lecteur pressé retiendra de préférence à tout le reste</strong> :</p>
-
-<div class="encadre encadre--oeuvre">
-  <span class="encadre__label">Note</span>
-  <p>⚠ <strong>À la mi-juillet 2026, le rail de paiement en temps réel n'est pas en production.</strong></p>
-</div>
-
+<blockquote>
 <div class="avert">
-  <p><strong><em>Aucune formulation de ce chapitre — ni d'aucun autre chapitre de la somme — ne doit laisser entendre qu'il serait lancé ou exploité</strong></em> (réserve F-29 du Vol. II).</p>
+  <p><strong>À la mi-juillet 2026, le rail de paiement en temps réel n'est pas en production.</strong></p>
 </div>
-
+</blockquote>
 <div class="avert">
-  <p><strong>Symétriquement, et c'est l'autre versant du garde-fou, il serait tout aussi faux d'écrire qu'aucune date n'aurait été annoncée.</strong> <strong><em>Paiements Canada vise un lancement au T4 2026</strong></em>, <em>à l'issue des tests industriels en cours ;</em> ⚠ <strong>et la formulation qui suit est imposée</strong> (PRDPlan Vol. II §4.4) :</p>
+  <p><strong><em>Aucune formulation de ce chapitre — ni d'aucun autre chapitre de la somme — ne doit laisser entendre qu'il serait lancé ou exploité</em></strong> (réserve F-29 du Vol. II).</p>
 </div>
-
-<div class="encadre encadre--oeuvre">
-  <span class="encadre__label">Note</span>
-  <p><strong>La cible a été successivement reportée : 2019, puis 2022, puis 2023, puis 2026.</strong></p>
-</div>
-
 <div class="avert">
-  <p><strong><em>Ces quatre valeurs sont les cibles successives, non les dates auxquelles les reports ont été décidés</strong></em> — <em>la distinction importe, faute de quoi la phrase raconterait une histoire que le socle ne porte pas.</em> ⚠ <strong>Écrire « quatre reports » serait la faute exacte que la formulation imposée proscrit.</strong></p>
+  <p><strong>Symétriquement, et c'est l'autre versant du garde-fou, il serait tout aussi faux d'écrire qu'aucune date n'aurait été annoncée.</strong> <strong><em>Paiements Canada vise un lancement au T4 2026</em></strong>, <em>à l'issue des tests industriels en cours ;</em> ⚠ <strong>et la formulation qui suit est imposée</strong> (PRDPlan Vol. II §4.4) :</p>
 </div>
-
+<blockquote>
+<p><strong>La cible a été successivement reportée : 2019, puis 2022, puis 2023, puis 2026.</strong></p>
+</blockquote>
+<div class="avert">
+  <p><strong><em>Ces quatre valeurs sont les cibles successives, non les dates auxquelles les reports ont été décidés</em></strong> — <em>la distinction importe, faute de quoi la phrase raconterait une histoire que le socle ne porte pas.</em> ⚠ <strong>Écrire « quatre reports » serait la faute exacte que la formulation imposée proscrit.</strong></p>
+</div>
 <p><strong>Paiements Canada annonce un lancement <em>graduel</em>, dont le déploiement se poursuivrait en 2027</strong> — ⚠ <em>et, point décisif pour ce chapitre, <strong>le format structuré dès le lancement</strong>.</em></p>
-
 <p><strong>Posons l'écart, puisqu'il structure toute planification qui s'appuierait sur ce rail.</strong> ⚠ <em>En retenant le trimestre civil — <strong>le socle ne précise pas la convention de Paiements Canada</strong>, et un exercice financier décalé déplacerait tout intervalle ancré sur cette ouverture — l'ouverture du T4 2026 tombe le 1ᵉʳ octobre.</em> <em>De la reprise du programme à cette ouverture, il s'écoule <strong>un peu moins de trente mois</strong>. Et de la première cible annoncée à la cible en vigueur, <strong>sept ans</strong> séparent l'intention initiale de l'échéance actuellement visée</em> — ⚠ <em>ce second intervalle, lui, ne dépend d'aucune convention de trimestre.</em></p>
-
 <div class="avert">
   <p><strong>Un contrôle de provenance du 30 juillet 2026 borne le cardinal, et il ne l'abolit pas.</strong> Le rapport d'arbitrage externe relevait que « quatre cibles successives » n'est pas attestable sur source primaire ; <strong>la re-vérification confirme ce point exact, et rien de plus</strong>. La page officielle de Paiements Canada porte la <strong>cible courante — T4 2026 —</strong> et le <strong>règlement administratif du 24 août 2026</strong> ; elle ne dresse <strong>aucun historique de cibles</strong>. <em>Les quatre millésimes — 2019, 2022, 2023, 2026 — sont documentés par la presse spécialisée, non par une page de l'exploitant.</em> ⚠ <strong>Le cardinal reste écrit, pour trois motifs qu'il faut donner ensemble.</strong> <em>(1)</em> La formule est imposée par le <strong>garde-fou R-4 du Vol. II</strong>, et <em>un rédacteur ne modifie pas un garde-fou hérité — il remonte.</em> <em>(2)</em> Le fait n'est pas infirmé : il est <strong>établi à un régime plus faible que la formule ne le laisse croire</strong>. <em>(3)</em> La reformulation que l'arbitrage propose — « reports successifs documentés » — <strong>entre en conflit frontal avec R-4</strong>, qui proscrit précisément « quatre reports » au profit de « quatre cibles ». <strong>Remontée ouverte</strong>, à l'instance d'arbitrage : <em>le garde-fou R-4 doit-il porter la mention de son régime de preuve secondaire ?</em> La réponse appartient au Vol. II, non à la somme.</p>
 </div>
-
-<p><span class="auteur">Lecture de l'auteur</span> ⚠ <strong>ces deux nombres ne disent pas la même chose et ne doivent pas être lus ensemble sans précaution.</strong> <strong>Ce que le socle établit</strong> : quatre cibles successives, ⚠ <strong>par corroboration secondaire et non par une page de l'exploitant</strong> (contrôle du 30 juillet 2026). <strong>Ce qu'il n'établit pas</strong> : ni les causes des reports, ni une quelconque probabilité que la cible soit tenue.</p>
-
 <div class="avert">
-  <p><strong><em>Un historique de reports n'est pas un pronostic</strong></em> — <em>il est une information sur la <strong>classe de risque</strong> à laquelle appartient l'engagement, non sur l'engagement lui-même.</em> ⚠ <strong>Ce que l'architecte prudent en tire n'est donc pas « le rail sera reporté », affirmation que rien n'autorise, mais une exigence de conception</strong> : <strong><em>tout plan dont la valeur dépend d'une date de disponibilité de ce rail doit porter son scénario de report</strong></em>, au même titre qu'il porterait celui de tout fournisseur externe. ⚠ <strong>Et R-4 du Vol. II borne l'énoncé dans l'autre sens</strong> : <em>la cible <strong>est</strong> officiellement annoncée — l'attribuer à son auteur, <strong>ne pas l'affirmer au futur catégorique</strong>.</em></p>
+  <p><strong>INSTRUITE, NON SOLDÉE — 2 septembre 2026</strong> (D-16). <em>Le Vol. II a été rouvert pour mesure, et il n'a pas bougé</em> : son <strong>§14</strong> applique R-4 avec la réserve F-29, son <strong>§23</strong> le reprend en note, son <strong>glossaire §D.7</strong> pose la double contrainte — <strong>et aucun des trois ne mentionne le régime de preuve du cardinal</strong>. <em>L'historique « 2019 → 2022 → 2023 → 2026 » y figure sans sa provenance.</em> ⚠ <strong>La remontée reste donc ouverte à son instance, et c'est le bon endroit</strong> : <em>une somme ne modifie pas le garde-fou du volume dont elle hérite, fût-ce pour l'améliorer.</em> ☑ <strong>Ce que la somme pouvait faire, elle l'a fait</strong> : le présent chapitre écrit « par corroboration secondaire et non par une page de l'exploitant » <strong>à chaque emploi du cardinal</strong>. <em>La formule imposée est tenue ; son régime est déclaré à côté d'elle.</em></p>
 </div>
-
+<p><span class="auteur">Lecture de l'auteur</span> ⚠ <strong>ces deux nombres ne disent pas la même chose et ne doivent pas être lus ensemble sans précaution.</strong> <strong>Ce que le socle établit</strong> : quatre cibles successives, ⚠ <strong>par corroboration secondaire et non par une page de l'exploitant</strong> (contrôle du 30 juillet 2026). <strong>Ce qu'il n'établit pas</strong> : ni les causes des reports, ni une quelconque probabilité que la cible soit tenue. ⚠ <strong><em>Un historique de reports n'est pas un pronostic</em></strong> — <em>il est une information sur la <strong>classe de risque</strong> à laquelle appartient l'engagement, non sur l'engagement lui-même.</em> ⚠ <strong>Ce que l'architecte prudent en tire n'est donc pas « le rail sera reporté », affirmation que rien n'autorise, mais une exigence de conception</strong> : <strong><em>tout plan dont la valeur dépend d'une date de disponibilité de ce rail doit porter son scénario de report</em></strong>, au même titre qu'il porterait celui de tout fournisseur externe. ⚠ <strong>Et R-4 du Vol. II borne l'énoncé dans l'autre sens</strong> : <em>la cible <strong>est</strong> officiellement annoncée — l'attribuer à son auteur, <strong>ne pas l'affirmer au futur catégorique</strong>.</em></p>
 <div class="avert">
   <p><strong>Une dernière précision, négative, mérite d'être consignée parce qu'elle protège le lecteur d'une source vieillie.</strong> <em>Aucune source primaire du socle <strong>ne mentionne deux organisations souvent citées</strong> parmi les partenaires <strong>actuels</strong> du rail — ⚠ <strong>l'entrée S-027 les nomme l'une et l'autre</strong>, et c'est là que se vérifie qui la réserve vise ; les partenaires établis sont les <strong>quatre</strong> que la page officielle des partenaires liste (tableau 33.1, légende).</em> ⚠ <strong>Un dossier qui citerait ces deux organisations-là comme partenaires actuels contredirait les sources primaires disponibles au 16 juillet 2026</strong>, ⚠ <strong>et la réserve a été re-constatée au gel du 28 juillet 2026</strong> — ⚠ <em>le socle ne dit rien, en revanche, d'une éventuelle association <strong>passée</strong>, et la somme n'en infère aucune : absence de documentation, degré 3.</em> ⚠ <strong>Neutralité fournisseur</strong> : <em>aucun partenaire n'est nommé dans ce chapitre ; le rôle industriel, là où il est rapporté, l'est comme <strong>fait de contexte</strong>, avec les mêmes réserves qu'au § 33.1 — <strong>montants non publics, aucun argument de conformité</strong>.</em></p>
 </div>
-
+<figure class="figure">
+  <img src="../figures/f-33-02-chronologie-rtr.svg" alt="Figure 33.2 — La chronologie du rail de paiement en temps réel, telle que l&#39;exploitant la communique." />
+  <figcaption><strong>Figure 33.2</strong> — La chronologie du rail de paiement en temps réel, telle que l'exploitant la communique.</figcaption>
+</figure>
 <h2 id="s333"><span class="sig">§ 33.3</span>By-law no 10 : l'instrument juridique précède le rail</h2>
-
 <p><strong>Le règlement administratif du rail — le <em>By-law No. 10</em> de Paiements Canada — a été publié dans la <em>Gazette du Canada</em>, partie II, le 1ᵉʳ juillet 2026, et il entre en vigueur le 24 août 2026</strong> (Vol. II F-29, entrée <strong>S-027</strong>).</p>
-
 <div class="avert">
-  <p><strong>Au gel de la somme — 27 juillet 2026 —, l'instrument est donc <em>publié</em> mais <em>pas encore en vigueur</strong></em> (R-09 du Vol. III : <em>le statut se dit à chaque mention</em> — ⚠ <strong>garde-fou lui aussi appliqué hors de son domaine d'origine, qui est celui des statuts de normalisation</strong>). ⚠ <strong>Il reste vingt-huit jours avant son entrée en vigueur.</strong> <em>Le Vol. II en comptait trente-neuf à son propre gel ; <strong>le chiffre a été refait et il a bougé</strong>.</em></p>
+  <p><strong>Au gel de la somme — 27 juillet 2026 —, l'instrument est donc <em>publié</em> mais <em>pas encore en vigueur</em></strong> (R-09 du Vol. III : <em>le statut se dit à chaque mention</em> — ⚠ <strong>garde-fou lui aussi appliqué hors de son domaine d'origine, qui est celui des statuts de normalisation</strong>). ⚠ <strong>Il reste vingt-huit jours avant son entrée en vigueur.</strong> <em>Le Vol. II en comptait trente-neuf à son propre gel ; <strong>le chiffre a été refait et il a bougé</strong>.</em></p>
 </div>
-
+<p>☑ <strong>ET IL EST EN VIGUEUR DEPUIS LE 24 AOÛT 2026</strong> — revalidé à sa source le 2 septembre 2026 (<a href="../PRD/revalidation-2026-09-02.md">rapport de revalidation</a>) : <strong>DORS/2026-133</strong>, enregistré le <strong>18 juin 2026</strong>, dont la disposition finale se lit <em>« This By-law comes into force on August 24, 2026 »</em>. ⚠ <strong>Ce qui se dit du statut change donc, et une seule chose change</strong> : <em>l'instrument n'est plus « publié, pas encore en vigueur » — il est <strong>en vigueur</strong>.</em> ⚠ <strong>Ce qui ne change PAS, et c'est le point que ce chapitre existe pour tenir</strong> : <strong>le rail n'est pas lancé.</strong> <em>La cible demeure le <strong>T4 2026</strong>, l'historique de reports n'est pas rallongé, et la réserve <code>F-29</code> s'applique exactement comme avant.</em> <strong><em>L'entrée en vigueur du cadre juridique n'est pas la mise en service du système qu'il encadre</em></strong> — et <strong>c'est la confusion précise que la réserve interdit d'écrire</strong>.</p>
 <p><strong>Les intervalles se calculent simplement.</strong> <em>De la publication à l'entrée en vigueur : <strong>cinquante-quatre jours</strong>. De l'entrée en vigueur à l'ouverture du trimestre visé pour le lancement — sous la réserve de convention posée au § 33.2 : <strong>trente-huit jours</strong>, un peu plus de cinq semaines.</em></p>
-
 <div class="avert">
   <p><strong>Ce que le socle établit ici s'arrête à ces trois dates et à leur ordre. Il n'établit <em>pas</em> le contenu du By-law No. 10</strong>, <em>et le chapitre s'interdit donc d'en décrire les obligations, les seuils ou les mécanismes</em> — ⚠ <strong>absence de documentation, degré 3.</strong> ⚠ <em>Ce dont on n'a pas le texte ne se décrit pas, et la borne se tient sur le seul socle : <strong>aucun garde-fou hérité ne la porte</strong>.</em></p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>la seule chose que la séquence autorise à observer, c'est que l'instrument juridique <em>entre en vigueur avant</em> l'ouverture du trimestre visé, et non après.</strong> <em>C'est l'ordonnancement attendu d'un rail dont la participation est réglementée</em> — ⚠ <strong>et le passage des contraintes réglementaires aux cadres déterministes est l'objet du ch. 29</strong>, qui en porte le principe. <strong>Ce que le socle établit</strong> : la chronologie. <strong>Ce qu'il n'établit pas</strong> : <em>ni le contenu du règlement, ni l'intention qui a produit cet ordonnancement, et la somme ne les lui prête pas.</em></p>
-
 <div class="avert">
   <p><strong>Il faut par ailleurs relever ce que cette date fait au reste du chapitre.</strong> <em>Le 24 août 2026 est <strong>postérieur au gel de la somme</strong>, ce qui en fait <strong>l'un de ses points de revalidation</strong> : au 27 juillet 2026, <strong>l'entrée en vigueur est un fait annoncé, pas un fait constaté</strong>.</em></p>
 </div>
-
 <div class="avert">
-  <p><strong>La distinction paraîtra excessive ; elle ne l'est pas.</strong> <strong><em>C'est exactement la même distinction que celle qui sépare une cible de lancement d'un lancement</strong></em> — <em>et la discipline qui consiste à la tenir partout, <strong>y compris là où elle semble ne rien coûter</strong>, est ce qui permet de la tenir <strong>là où elle coûte cher</strong>.</em> <strong>Le ch. 50 enregistrera les deux échéances comme événements de péremption.</strong></p>
+  <p><strong>La distinction paraîtra excessive ; elle ne l'est pas.</strong> <strong><em>C'est exactement la même distinction que celle qui sépare une cible de lancement d'un lancement</em></strong> — <em>et la discipline qui consiste à la tenir partout, <strong>y compris là où elle semble ne rien coûter</strong>, est ce qui permet de la tenir <strong>là où elle coûte cher</strong>.</em> <strong>Le ch. 50 enregistrera les deux échéances comme événements de péremption.</strong></p>
 </div>
-
 <h2 id="s334"><span class="sig">§ 33.4</span>Ce que la couche sémantique commune change — et ce que le socle n'en dit pas</h2>
-
 <p><strong>Reste la question que le mouvement pose : qu'est-ce que tout cela change pour des agents ?</strong></p>
-
 <p><strong>Commençons par ce que le socle établit, et qui n'est pas rien.</strong> ⚠ <em>Après le 22 novembre 2025, le rail de grande valeur <strong>ne connaît plus qu'un jeu de messages</strong> ; le rail en temps réel, <strong>s'il est lancé au T4 2026 comme Paiements Canada le vise</strong>, le sera <strong>nativement au format structuré</strong>.</em></p>
-
-<p><strong>Ces deux rails auront donc une <em>couche sémantique commune</strong></em> — ⚠ <em>et cette communauté n'est pas le fruit d'une convergence progressive à laquelle il faudrait encore laisser du temps : elle est <strong>acquise sur l'un par retrait de l'alternative</strong>, et <strong>posée sur l'autre par construction</strong>.</em></p>
-
-<p><span class="auteur">Lecture de l'auteur</span> ⚠ <strong>la conséquence d'architecture est une conséquence de <em>surface</em>, pas de <em>capacité</em>.</strong> <em>Un système appelé à interagir avec les deux rails n'a plus <strong>deux vocabulaires</strong> à apprendre, mais <strong>un</strong> ; <strong>ce qui était une question de traduction devient une question de routage</strong>. Pour un composant logiciel — agentique ou non — cela <strong>réduit le nombre de représentations à maintenir</strong>, donc <strong>le nombre d'endroits où une erreur de correspondance peut naître</strong>.</em> <strong>Ce que le socle établit</strong> : l'unicité du format sur le premier rail et son adoption native prévue sur le second.</p>
-
-<div class="avert">
-  <p><strong>Ce qu'il n'établit pas</strong> : <em>que cette unicité produise <strong>un gain mesurable</strong> — <strong>aucune source de la somme ne le quantifie</strong>, absence de documentation, degré 3.</em> ⚠ <strong>Ni, plus en amont, aucun attribut de richesse des données</strong> : <em>ni structure des données de remise, ni granularité des identifiants, ni comparaison avec le format retiré</em> — <strong>les deux entrées mobilisées ici, S-026 et S-027, n'en portent aucun</strong>, et <em>toute affirmation sur ce que le format structuré « porte de plus » excéderait ce que ce socle permet d'écrire.</em></p>
-</div>
-
+<p><strong>Ces deux rails auront donc une <em>couche sémantique commune</em></strong> — ⚠ <em>et cette communauté n'est pas le fruit d'une convergence progressive à laquelle il faudrait encore laisser du temps : elle est <strong>acquise sur l'un par retrait de l'alternative</strong>, et <strong>posée sur l'autre par construction</strong>.</em></p>
+<p><span class="auteur">Lecture de l'auteur</span> ⚠ <strong>la conséquence d'architecture est une conséquence de <em>surface</em>, pas de <em>capacité</em>.</strong> <em>Un système appelé à interagir avec les deux rails n'a plus <strong>deux vocabulaires</strong> à apprendre, mais <strong>un</strong> ; <strong>ce qui était une question de traduction devient une question de routage</strong>. Pour un composant logiciel — agentique ou non — cela <strong>réduit le nombre de représentations à maintenir</strong>, donc <strong>le nombre d'endroits où une erreur de correspondance peut naître</strong>.</em> <strong>Ce que le socle établit</strong> : l'unicité du format sur le premier rail et son adoption native prévue sur le second. ⚠ <strong>Ce qu'il n'établit pas</strong> : <em>que cette unicité produise <strong>un gain mesurable</strong> — <strong>aucune source de la somme ne le quantifie</strong>, absence de documentation, degré 3.</em> ⚠ <strong>Ni, plus en amont, aucun attribut de richesse des données</strong> : <em>ni structure des données de remise, ni granularité des identifiants, ni comparaison avec le format retiré</em> — <strong>les deux entrées mobilisées ici, S-026 et S-027, n'en portent aucun</strong>, et <em>toute affirmation sur ce que le format structuré « porte de plus » excéderait ce que ce socle permet d'écrire.</em></p>
 <div class="avert">
   <p><strong>Il faut ici marquer nettement la frontière, car c'est le point où un chapitre de cette nature dérape ordinairement.</strong> <em>Le bénéfice <strong>agentique</strong> que le <strong>ch. 31 § 31.2.2</strong> énonce — des champs nommés et typés donnant à un agent de quoi exécuter un criblage déterministe et une réconciliation automatisée — est <strong>une lecture d'architecture</strong>, non un fait mesuré ; ⚠ <strong>et le socle du Vol. II ne documente aucun déploiement agentique sur ces deux rails</strong> : absence de documentation, degré 3.</em></p>
 </div>
-
 <div class="avert">
-  <p><strong>Une conséquence de la règle du ch. 31 § 31.1.1 se rappelle enfin, et elle est plus contraignante que la sémantique.</strong> Le rail en temps réel, <strong>s'il est lancé</strong>, portera un règlement <strong>à finalité immédiate</strong> : ⚠ <strong>la sémantique commune ne change rien à l'irréversibilité</strong>, et le patron directeur — <em>préparation par l'agent, libération humaine sur l'action irréversible</em> — <strong>s'y applique intégralement</strong>. Et <strong>le ch. 22 § 22.4</strong> ajoute la contrainte de temps : <strong><em>un délai qui doit être tenu ne se confie pas à un composant dont la durée d'exécution n'est pas bornée</strong></em> — ⚠ <em>ce que le <strong>ch. 24 § 24.8</strong> déclare n'avoir aucun modèle de service pour dimensionner.</em></p>
+  <p><strong>Une conséquence de la règle du ch. 31 § 31.1.1 se rappelle enfin, et elle est plus contraignante que la sémantique.</strong> Le rail en temps réel, <strong>s'il est lancé</strong>, portera un règlement <strong>à finalité immédiate</strong> : ⚠ <strong>la sémantique commune ne change rien à l'irréversibilité</strong>, et le patron directeur — <em>préparation par l'agent, libération humaine sur l'action irréversible</em> — <strong>s'y applique intégralement</strong>. Et <strong>le ch. 22 § 22.4</strong> ajoute la contrainte de temps : <strong><em>un délai qui doit être tenu ne se confie pas à un composant dont la durée d'exécution n'est pas bornée</em></strong> — ⚠ <em>ce que le <strong>ch. 24 § 24.8</strong> déclare n'avoir aucun modèle de service pour dimensionner.</em></p>
 </div>
-
 <div class="avert">
-  <p><strong>Et la borne du chapitre se redit une dernière fois</strong> : <strong><em>le rail visé n'est pas lancé</strong></em>, sa cible est <strong>annoncée et attribuée</strong>, elle <strong>a été successivement reportée</strong> — 2019, puis 2022, puis 2023, puis 2026 —, et <strong>rien ici n'affirme au futur catégorique</strong> (R-4 du Vol. II ; R-11 du Vol. III).</p>
+  <p><strong>Et la borne du chapitre se redit une dernière fois</strong> : <strong><em>le rail visé n'est pas lancé</em></strong>, sa cible est <strong>annoncée et attribuée</strong>, elle <strong>a été successivement reportée</strong> — 2019, puis 2022, puis 2023, puis 2026 —, et <strong>rien ici n'affirme au futur catégorique</strong> (R-4 du Vol. II ; R-11 du Vol. III).</p>
 </div>
-
 <h3>Synthèse : ce que le chapitre lègue à la somme</h3>
-
 <p><em>Section de sortie sans homologue direct dans la source — construction d'éditeur.</em></p>
-
-<ol class="numeros">
-  <li><strong>Une couche sémantique commune, acquise de deux manières différentes</strong> : <em>par <strong>retrait de l'alternative</strong> sur un rail, <strong>par construction</strong> sur l'autre.</em> ⚠ <strong>La conséquence est de <em>surface</em>, non de <em>capacité</strong></em> — <em>le nombre de représentations à maintenir baisse ; aucune source ne quantifie le gain.</em></li>
-  <li>⚠ <strong>La formulation imposée sur les cibles</strong>, posée ici : <em>« quatre <strong>cibles successives</strong> — 2019, 2022, 2023, 2026 », <strong>jamais</strong> « quatre reports ».</em> <strong>Le ch. 36 la reprend telle quelle.</strong></li>
-  <li>⚠ <strong>La réserve F-29, la plus stricte du Livre</strong> : <em>ne jamais écrire « lancé » ni « en production ».</em> <strong>Le ch. 36, explicitement prospectif, en dépend entièrement.</strong></li>
-  <li><strong>Un historique de reports n'est pas un pronostic</strong> — <em>c'est une information sur la classe de risque de l'engagement.</em> ⚠ <strong>La conséquence de conception est qu'un plan adossé à cette date doit porter son scénario de report.</strong></li>
-  <li><strong>L'ordonnancement juridique précède le rail</strong> : <em>le règlement administratif entre en vigueur <strong>avant</strong> l'ouverture du trimestre visé.</em> <strong>Le ch. 29 en porte le principe général.</strong></li>
+<ol type="1">
+<li><strong>Une couche sémantique commune, acquise de deux manières différentes</strong> : <em>par <strong>retrait de l'alternative</strong> sur un rail, <strong>par construction</strong> sur l'autre.</em> ⚠ <strong>La conséquence est de <em>surface</em>, non de <em>capacité</em></strong> — <em>le nombre de représentations à maintenir baisse ; aucune source ne quantifie le gain.</em></li>
+<li>⚠ <strong>La formulation imposée sur les cibles</strong>, posée ici : <em>« quatre <strong>cibles successives</strong> — 2019, 2022, 2023, 2026 », <strong>jamais</strong> « quatre reports ».</em> <strong>Le ch. 36 la reprend telle quelle.</strong></li>
+<li>⚠ <strong>La réserve F-29, la plus stricte du Livre</strong> : <em>ne jamais écrire « lancé » ni « en production ».</em> <strong>Le ch. 36, explicitement prospectif, en dépend entièrement.</strong></li>
+<li><strong>Un historique de reports n'est pas un pronostic</strong> — <em>c'est une information sur la classe de risque de l'engagement.</em> ⚠ <strong>La conséquence de conception est qu'un plan adossé à cette date doit porter son scénario de report.</strong></li>
+<li><strong>L'ordonnancement juridique précède le rail</strong> : <em>le règlement administratif entre en vigueur <strong>avant</strong> l'ouverture du trimestre visé.</em> <strong>Le ch. 29 en porte le principe général.</strong></li>
 </ol>
-
 <div class="avert">
   <p><strong>Ce que le chapitre ne lègue pas.</strong> Il ne lègue <strong>aucun rail lancé</strong>. Il ne lègue <strong>aucun contenu du By-law No. 10</strong> : <em>le socle n'en porte que trois dates.</em> Il ne lègue <strong>aucun gain mesuré</strong> de l'unicité sémantique, <strong>aucun attribut de richesse des données</strong>, ni <strong>aucun déploiement agentique documenté</strong> sur ces rails. Et il ne lègue <strong>aucune convention de trimestre</strong> : <em>civil ou financier, le socle ne le précise pas</em> — ⚠ <strong>et deux de ses quatre intervalles en dépendent</strong> : <em>le « un peu moins de trente mois » du § 33.2 et le « trente-huit jours » du § 33.3.</em></p>
 </div>
+<hr />
 
 <footer class="pied">
   <p><strong>Vol. IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em></strong> · Livre III, chapitre 33. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau, M.Sc. IT.</p>

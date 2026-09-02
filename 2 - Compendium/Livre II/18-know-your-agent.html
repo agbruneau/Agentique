@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chapitre 18 — Know Your Agent : la vérification d&#x27;agent tiers inter-domaines · Interopérabilité et Orchestration en Entreprise Agentique</title>
-<meta name="description" content="Livre II — Faire confiance : identité, délégation et fabrique de confiance. Premier mouvement — émettre (ch. 12-18). Dernier chapitre du mouvement : il porte la question à la frontière de l&#x27;organisation, là où l&#x27;émission cesse d&#x27;être un acte interne">
+<meta name="description" content="Livre II — Faire confiance : identité, délégation et fabrique de confiance. Premier mouvement — émettre (ch. 12-18). **Dernier chapitre du mouvement** : il porte la question à la frontière de l&#x27;organisation, là où l&#x27;émission cesse d&#x27;être un acte interne">
 <meta name="author" content="André-Guy Bruneau, M.Sc. IT">
 <meta name="color-scheme" content="dark">
 <style>
@@ -443,6 +443,17 @@ tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
 tbody td:first-child { color: var(--texte); font-weight: 600; }
 .legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
 
+/* -------------------------------------------------------------- figures */
+/* Les SVG du volume sont dessinés pour le PDF, donc sur fond clair, et ils
+   portent ce fond eux-mêmes — sans quoi il faudrait maintenir deux variantes
+   de chaque figure. Sur ce thème sombre, ils se posent donc comme un carton ;
+   le padding empêche le fond de la figure de toucher le bord du cadre. */
+.figure { margin: 2.1rem 0 1.9rem; }
+.figure img { display: block; width: 100%; height: auto; border-radius: 7px;
+              border: 1px solid var(--trait); background: #fdfbf9; padding: 0.6rem; }
+.figure figcaption { font-size: 0.8rem; font-style: italic; color: var(--texte-faible);
+                     margin-top: 0.65rem; padding-left: 0.15rem; }
+
 /* --------------------------------------------------------------- listes */
 ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
 ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
@@ -531,11 +542,11 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <div class="nav__marque">Interopérabilité et Orchestration en Entreprise Agentique</div>
   <div class="nav__sous">Livre II · Chapitre 18</div>
   <ol>
-    <li><a href="#s180"><span class="num">18.0</span>Introduction : le point où l&#x27;identité cesse d&#x27;être interne</a></li>
+    <li><a href="#s180"><span class="num">18.0</span>Introduction : le point où l'identité cesse d'être interne</a></li>
     <li><a href="#s181"><span class="num">18.1</span>État des propositions KYA</a></li>
     <li><a href="#s182"><span class="num">18.2</span>Admettre un agent tiers : ce que les protocoles remettent à celui qui décide</a></li>
-    <li><a href="#s183"><span class="num">18.3</span>Fédérations de confiance : ce que trois précédents portent d&#x27;institutionnel</a></li>
-    <li><a href="#s184"><span class="num">18.4</span>Relève v0.11, à instruire : l&#x27;agent mutable prive la réputation de son ancrage</a></li>
+    <li><a href="#s183"><span class="num">18.3</span>Fédérations de confiance : ce que trois précédents portent d'institutionnel</a></li>
+    <li><a href="#s184"><span class="num">18.4</span>Relève v0.11, à instruire : l'agent mutable prive la réputation de son ancrage</a></li>
   </ol>
   <div class="nav__pied">
     Vol.&nbsp;IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em><br>
@@ -549,179 +560,218 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 <header class="titre">
   <div class="titre__fil">Livre II — Faire confiance : identité, délégation et fabrique de confiance</div>
   <h1><span class="chap">Chapitre 18</span>Know Your Agent : la vérification d&#x27;agent tiers inter-domaines</h1>
-  <p class="titre__situe">Livre II — Faire confiance : identité, délégation et fabrique de confiance. Premier mouvement — émettre (ch. 12-18). <strong>Dernier chapitre du mouvement</strong> : il porte la question à la frontière de l'organisation, là où l'émission cesse d'être un acte interne</p>
+  <p class="titre__situe">Livre II — Faire confiance : identité, délégation et fabrique de confiance. Premier mouvement — émettre (ch. 12-18). **Dernier chapitre du mouvement** : il porte la question à la frontière de l'organisation, là où l'émission cesse d'être un acte interne</p>
 </header>
 
 <!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
      Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
-     que `build/assemble.py` pour le PDF. L'appareil de gouvernance vit au .md jumeau, qui reste la
-     seule source, et `verifier-piece.py` [6] refuse désormais un rendu qui le recopierait. -->
+     que `build/assemble.py` pour le PDF et que `PRD/decompte.sh` pour la volumétrie. L'appareil de
+     gouvernance vit au .md jumeau, qui reste la seule source, et `build/verifier-piece.py` refuse
+     un rendu qui le recopierait. -->
 
 <h2 id="s180"><span class="sig">§ 18.0</span>Introduction : le point où l'identité cesse d'être interne</h2>
-
 <p>Une organisation qui admet chez elle <strong>l'agent d'une autre organisation</strong> prend une décision dont elle ne maîtrise <strong>ni l'émission, ni le mandant, ni le cycle de vie</strong>. Elle ne peut pas auditer la fabrique d'identité d'un tiers ; elle ne peut pas révoquer ce qu'elle n'a pas émis ; et elle ne dispose, pour trancher, que de <strong>ce que le tiers veut bien lui présenter</strong>.</p>
-
 <p><em>C'est le point où la question de l'identité cesse d'être interne et devient une question de frontière.</em> C'est aussi le point où <strong>le vocabulaire du domaine devance ses institutions</strong>, et le chapitre commence par poser cet écart plutôt que de l'employer.</p>
-
 <p><strong>Le statut du terme, posé avant tout usage.</strong> <em>À juin 2026, la connaissance de l'agent <strong>n'est pas un standard établi</strong> ; les initiatives existantes relèvent du <strong>positionnement fournisseur</strong></em> (Vol. I <em>Monographie</em> §5.5.4, en <strong>[C]</strong>, à son gel). ⚠ Et <strong>aucun forum n'avait tranché à juin 2026</strong> quelle instance porterait le standard — <strong>ni la FIDO Alliance, ni le W3C, ni l'ISO</strong> (Vol. III H-19, <strong>[C]</strong> ; les trois noms sont ceux que la source écrit, restitués ici par la décision 18 du TOC).</p>
-
 <div class="avert">
   <p><strong>Deux précisions que la somme doit à sa propre vérification, et elles ne sont pas de forme.</strong> <em>Premièrement</em> : la formule commode « <strong>terme de marché avant d'être terme de norme</strong> » <strong>ne figure pas au Vol. I</strong> — l'expression y est introuvable —, c'est une <strong>construction d'auteur du Vol. III</strong>. <em>Deuxièmement</em> : H-19 est une entrée de <strong>repérage</strong>, et <strong>une entrée [C] ne porte jamais un fait central</strong>. L'énoncé « aucun forum n'avait tranché » entre donc ici comme <strong>thèse d'un volume antérieur, attribuée et datée de son gel</strong>, non comme fait vérifié par la somme. <em>Ce que le Vol. III a lui-même relevé au 21 juillet 2026 fait l'objet du § 18.1, et il ne dit pas la même chose.</em></p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>la thèse de ce chapitre est une construction d'auteur, et c'est le rapport d'instruction lui-même qui l'impose</strong> : <em>aucune des sources consultées n'énonce sous cette forme ce qui manquerait au dispositif agentique.</em> <strong>Ce que le socle établit</strong> : l'état, la date et le statut de <strong>neuf chantiers pré-normatifs</strong> (§ 18.1) ; ce que deux protocoles <strong>remettent à la partie qui admet</strong> (§ 18.2) ; <strong>trois précédents institutionnels</strong> (§ 18.3). <strong>Ce qu'il n'établit pas</strong> : que la logique de la connaissance du client soit <strong>transposable</strong> à l'agent ; qu'un dispositif institutionnel soit <strong>nécessaire</strong> à cette transposition ; qu'aucune organisation n'en ait constitué un <strong>hors des pages ouvertes</strong>. <em>Le rapprochement entre ces trois précédents et le vide agentique est une lecture, non un constat de source.</em></p>
-
 <div class="avert">
-  <p><strong>Ce que ce chapitre ne traite pas.</strong> Le versant <strong>adoption</strong> du fossé entre stade et production est au <strong>ch. 13 § 13.5</strong>, avec lequel le §7.4.3 du Vol. I est <strong>partagé déclaré</strong> ; le présent chapitre en prend le versant <strong><em>trust fabric</strong></em>. La <strong>valeur probante</strong> des mécanismes qu'un tiers présente est au <strong>ch. 15</strong>. La <strong>révocation après admission</strong> est au <strong>ch. 20</strong>. Et l'<strong>assemblage</strong> que l'admission supposerait est au <strong>ch. 16</strong>.</p>
+  <p><strong>Ce que ce chapitre ne traite pas.</strong> Le versant <strong>adoption</strong> du fossé entre stade et production est au <strong>ch. 13 § 13.5</strong>, avec lequel le §7.4.3 du Vol. I est <strong>partagé déclaré</strong> ; le présent chapitre en prend le versant <strong><em>trust fabric</em></strong>. La <strong>valeur probante</strong> des mécanismes qu'un tiers présente est au <strong>ch. 15</strong>. La <strong>révocation après admission</strong> est au <strong>ch. 20</strong>. Et l'<strong>assemblage</strong> que l'admission supposerait est au <strong>ch. 16</strong>.</p>
 </div>
-
 <h2 id="s181"><span class="sig">§ 18.1</span>État des propositions KYA</h2>
-
-<div class="encadre encadre--oeuvre">
-  <span class="encadre__label">Note</span>
-  <p>⚠ <strong>SIÈGE UNIQUE DU KYA POUR TOUTE LA SOMME.</strong> La connaissance de l'agent — <em>Know Your Agent</em>, KYA — est <strong>posée ici une seule fois</strong>, au présent § 18.1. Les <strong>ch. 13 § 13.2, ch. 15 § 15.2.3 et ch. 16 § 16.3</strong> nomment le sigle sans l'instruire et y renvoient ; <strong>ils ne reconstruisent ni son statut, ni son inventaire</strong>. C'est l'économie de la fusion sur cette matière, et l'abstention est contrôlée par <a class="lien" href="../PRD/check-sieges.py"> 0 </a>.</p>
+<blockquote>
+<div class="avert">
+  <p><strong>SIÈGE UNIQUE DU KYA POUR TOUTE LA SOMME.</strong> La connaissance de l'agent — <em>Know Your Agent</em>, KYA — est <strong>posée ici une seule fois</strong>, au présent § 18.1. Les <strong>ch. 13 § 13.2, ch. 15 § 15.2.3 et ch. 16 § 16.3</strong> nomment le sigle sans l'instruire et y renvoient ; <strong>ils ne reconstruisent ni son statut, ni son inventaire</strong>. C'est l'économie de la fusion sur cette matière, et l'abstention est contrôlée par <a href="../PRD/check-sieges.py"><code>PRD/check-sieges.py</code></a>.</p>
 </div>
-
+</blockquote>
 <p>Le Vol. I décrivait, à son gel de juin 2026, des formes « encore concurrentes » et un <strong>verrou institutionnel</strong> (H-19, <strong>[C]</strong>). <em>L'instruction du 21 juillet 2026 ne renverse pas ce constat : elle en change l'échelle.</em> La situation ne s'est pas décantée, <strong>elle s'est densifiée</strong> — et la densité, ici, <em>n'est pas un progrès vers la norme, c'est une multiplication des candidats</em>.</p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Instance</th><th>Objet</th><th>État relevé au 21 juillet 2026</th><th>Entrée</th></tr></thead>
-  <tbody>
-    <tr><td><strong>Consortium du Web</strong></td><td>Groupe communautaire « Agent Identity Registry Protocol » — <em>ni voie des normes, ni Recommandation</em></td><td>proposé le <strong>22 avril 2026</strong> ; livrables annoncés : une méthode d'identifiant décentralisé et un format d'accréditation d'agent ; <strong>36 participants non-présidents</strong> affichés ; <strong>ni rapport ni brouillon publié</strong></td><td>F-30 <strong>[B]</strong> ; F-50 <strong>[B, degré 2]</strong></td></tr>
-    <tr><td><strong>Consortium du Web</strong></td><td>Groupe communautaire « AI Agent Protocol » — <em>même statut</em></td><td>hébergé depuis le <strong>8 mai 2025</strong> ; charte déclarant un modèle d'identité pour les agents d'IA ; <strong>254 participants non-présidents</strong> affichés ; <strong>aucun document produit n'a été ouvert</strong></td><td>F-83 <strong>[B]</strong></td></tr>
-    <tr><td><strong>Fondation d'identité ouverte</strong></td><td>Groupe communautaire « Artificial Intelligence Identity Management »</td><td>sa charte place <strong>hors de son périmètre</strong> le développement de protocoles de normalisation mondiaux liés à l'identité des agents, <strong>et renvoie ce travail à un groupe de travail</strong></td><td><strong>F-48 [A, degré 2]</strong></td></tr>
-    <tr><td><strong>Fondation d'identité décentralisée</strong></td><td>Spécification communautaire de connaissance de l'agent</td><td><strong>non ratifiée au 22 juin 2026</strong> : version 1 encore soumise à la relecture du groupe de travail et à l'approbation du comité de pilotage</td><td>F-50 <strong>[B, degré 2]</strong></td></tr>
-    <tr><td><strong>IETF</strong></td><td>Brouillon d'identité d'agent (soumission individuelle)</td><td>déposé le <strong>26 mars 2026</strong>, expirant le <strong>27 septembre 2026</strong> ; <strong>non adopté</strong> par un groupe de travail</td><td>F-50</td></tr>
-    <tr><td><strong>IETF</strong></td><td>Brouillon de registre d'identité d'agent (soumission individuelle)</td><td>déposé le <strong>23 mai 2026</strong>, expirant le <strong>24 novembre 2026</strong> ; <strong>non adopté</strong> par un groupe de travail</td><td>F-50</td></tr>
-    <tr><td><strong>Institut national de normalisation — centre d'excellence</strong></td><td>Document de concept sur l'identité et l'autorisation des agents logiciels et d'IA</td><td>publié le <strong>5 février 2026</strong>, à l'état de <strong>projet public initial</strong></td><td>F-73 <strong>[B]</strong></td></tr>
-    <tr><td><strong>Institut national de normalisation — centre d'innovation</strong></td><td>Initiative de normalisation des agents d'IA</td><td>annoncée le <strong>17 février 2026</strong> ; troisième axe portant sur la sécurité et l'identité ; <strong>volet identité à l'état de projet de document de concept</strong></td><td>F-56 <strong>[C]</strong></td></tr>
-    <tr><td><strong>Fournisseur de sécurité applicative</strong></td><td>Cadre commercial « Know Your Agent »</td><td><strong>annoncé le 15 juin 2026</strong> au sein d'un cadre de sécurité agentique</td><td>F-49 <strong>[B, degré 3]</strong></td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Instance</th>
+<th>Objet</th>
+<th>État relevé au 21 juillet 2026</th>
+<th>Entrée</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>W3C</strong></td>
+<td>Groupe communautaire « Agent Identity Registry Protocol » — <em>ni voie des normes, ni Recommandation</em></td>
+<td>proposé le <strong>22 avril 2026</strong> ; livrables annoncés : une méthode d'identifiant décentralisé et un format d'accréditation d'agent ; <strong>36 participants non-présidents</strong> affichés ; <strong>ni rapport ni brouillon publié</strong></td>
+<td>F-30 <strong>[B]</strong> ; F-50 <strong>[B, degré 2]</strong></td>
+</tr>
+<tr>
+<td><strong>W3C</strong></td>
+<td>Groupe communautaire « AI Agent Protocol » — <em>même statut</em></td>
+<td>hébergé depuis le <strong>8 mai 2025</strong> ; charte déclarant un modèle d'identité pour les agents d'IA ; <strong>254 participants non-présidents</strong> affichés ; <strong>aucun document produit n'a été ouvert</strong></td>
+<td>F-83 <strong>[B]</strong></td>
+</tr>
+<tr>
+<td><strong>OpenID Foundation</strong></td>
+<td>Groupe communautaire « Artificial Intelligence Identity Management » (AIIM)</td>
+<td>sa charte place <strong>hors de son périmètre</strong> le développement de protocoles de normalisation mondiaux liés à l'identité des agents, <strong>et renvoie ce travail à un groupe de travail</strong></td>
+<td><strong>F-48 [A, degré 2]</strong></td>
+</tr>
+<tr>
+<td><strong>Decentralized Identity Foundation</strong></td>
+<td>Spécification communautaire « KYA-OS »</td>
+<td><strong>non ratifiée au 22 juin 2026</strong> : version 1 encore soumise à la relecture du groupe de travail et à l'approbation du comité de pilotage</td>
+<td>F-50 <strong>[B, degré 2]</strong></td>
+</tr>
+<tr>
+<td><strong>IETF</strong></td>
+<td><code>draft-sharif-openid-agent-identity</code> (soumission individuelle)</td>
+<td>déposé le <strong>26 mars 2026</strong> en <code>-00</code> ; ☑ <strong>revalidé le 2 septembre 2026</strong> : <strong><code>-01</code> déposé le 26 août 2026</strong>, expirant le <strong>27 février 2027</strong> — <em>l'échéance de septembre est sans objet</em> ; <strong>toujours non adopté</strong> par un groupe de travail</td>
+<td>F-50</td>
+</tr>
+<tr>
+<td><strong>IETF</strong></td>
+<td><code>draft-drake-agent-identity-registry-03</code> (soumission individuelle)</td>
+<td>déposé le <strong>23 mai 2026</strong>, expirant le <strong>24 novembre 2026</strong> ; <strong>non adopté</strong> par un groupe de travail</td>
+<td>F-50</td>
+</tr>
+<tr>
+<td><strong>NIST — NCCoE</strong></td>
+<td>Document de concept sur l'identité et l'autorisation des agents logiciels et d'IA</td>
+<td>publié le <strong>5 février 2026</strong>, à l'état de <strong>projet public initial</strong></td>
+<td>F-73 <strong>[B]</strong></td>
+</tr>
+<tr>
+<td><strong>NIST — CAISI</strong></td>
+<td><em>AI Agent Standards Initiative</em></td>
+<td>annoncée le <strong>17 février 2026</strong> ; troisième axe portant sur la sécurité et l'identité ; <strong>volet identité à l'état de projet de document de concept</strong></td>
+<td>F-56 <strong>[C]</strong></td>
+</tr>
+<tr>
+<td><strong>Akamai</strong></td>
+<td>Cadre « Know Your Agent »</td>
+<td><strong>annoncé le 15 juin 2026</strong> au sein d'un cadre de sécurité agentique</td>
+<td>F-49 <strong>[B, degré 3]</strong></td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 18.1 — Neuf chantiers, six organisations, zéro texte ratifié, au 21 juillet 2026.</p>
-
 <div class="avert">
   <p><strong>Tri prospectif des trois énoncés futurs du tableau</strong> — le <strong>siège du tri prospectif</strong> est au <strong>ch. 49 § 49.0</strong>, qui définit les trois statuts ; ils sont ici <strong>appliqués, jamais redéfinis.</strong> Les deux <strong>dates d'expiration</strong> des <em>Internet-Drafts</em> sont <strong>PROGRAMMÉES au sens strict</strong> : elles découlent mécaniquement de la règle des six mois et sont affichées par le registre ; <strong>elles n'annoncent aucun résultat de normalisation</strong>. La <strong>ratification</strong> de la version 1 de la spécification communautaire est <strong>PROJETÉE</strong> : prévision attribuée à son organisme, millésimée du 22 juin 2026, <strong>sans date annoncée</strong> et <strong>non revérifiée</strong> entre cette date et le relevé — degré 3 pour cet intervalle.</p>
 </div>
-
 <p><strong>Neuf lignes, six organisations, et aucune ligne ne porte un texte ratifié ni adopté.</strong> ⚠ <strong>La borne de cet énoncé est celle de l'entrée qui le porte</strong> : F-50 couvre la spécification non ratifiée au 22 juin 2026, les <strong>deux</strong> <em>Internet-Drafts</em> consultés, et le groupe communautaire correspondant sans rapport ni brouillon publié — c'est un <strong>fait négatif ÉTABLI</strong>, degré 2, <em>porté par la réserve explicite des sources elles-mêmes, non par un balayage exhaustif du champ</em>. <strong>Il ne dit rien d'un texte qui existerait hors de ces pages.</strong></p>
-
 <p><strong>Quatre observations se dégagent, et la dernière est un refus.</strong></p>
-
-<p><strong>Le statut d'un groupe communautaire se répète à chaque mention, il ne se pose pas une fois pour toutes.</strong> <em>Un groupe communautaire n'est pas un groupe de travail</em> : ses travaux ne sont <strong>ni sur la voie des normes ni au rang de norme</strong>, il <strong>ne produit pas de Recommandation</strong> et <strong>n'engage aucun calendrier normatif</strong> (F-83). Les deux groupes du tableau sont donc, ensemble, <strong>un indicateur d'activité et non un jalon de normalisation</strong> : le premier annonce des livrables <strong>sans en avoir publié</strong>, le second déclare un objet d'identité dans sa charte <strong>sans qu'aucune de ses productions ait été ouverte</strong>. ⚠ Le décompte de <strong>254 participants</strong> est <strong>affiché par la page du groupe « AI Agent Protocol » du Consortium du Web</strong>, à qui il est attribué à chaque occurrence : il compte des <strong>inscriptions individuelles</strong>, non des organisations contributrices ni une activité rédactionnelle.</p>
-
-<div class="avert">
-  <p><strong>Les deux décomptes du tableau ont été re-datés depuis, et ils ont bougé</strong> : au 28 juillet 2026, les pages du même consortium affichent <strong>37 participants non-présidents</strong> pour le groupe de registre (<code>S-096</code>) et <strong>260</strong> pour celui-ci (<code>S-129</code>), les composantes de fond des deux entrées étant confirmées. ⚠ <strong>La première des deux re-datations porte une réserve d'identification que la refonte déclare, et elle n'est pas de forme</strong> : <code>S-096</code> <strong>ne nomme pas le groupe</strong> dont elle compte les participants — quatre groupes communautaires du domaine sont candidats et rien dans l'entrée ne tranche —, de sorte que <em>le rattachement de ce décompte au groupe de registre n'est que <strong>probable</strong></em>. C'est la classe même que la décision 7 du TOC proscrit, rencontrée cette fois dans le socle. <em>Un compteur affiché n'est pas un fait stable</em> — le tableau conserve le relevé du 21 juillet 2026, qui porte sa date.</p>
-</div>
-
+<p><strong>Le statut d'un groupe communautaire se répète à chaque mention, il ne se pose pas une fois pour toutes.</strong> <em>Un groupe communautaire n'est pas un groupe de travail</em> : ses travaux ne sont <strong>ni sur la voie des normes ni au rang de norme</strong>, il <strong>ne produit pas de Recommandation</strong> et <strong>n'engage aucun calendrier normatif</strong> (F-83). Les deux groupes du tableau sont donc, ensemble, <strong>un indicateur d'activité et non un jalon de normalisation</strong> : le premier annonce des livrables <strong>sans en avoir publié</strong>, le second déclare un objet d'identité dans sa charte <strong>sans qu'aucune de ses productions ait été ouverte</strong>. ⚠ Le décompte de <strong>254 participants</strong> est <strong>affiché par la page du groupe « AI Agent Protocol » du W3C</strong>, à qui il est attribué à chaque occurrence : il compte des <strong>inscriptions individuelles</strong>, non des organisations contributrices ni une activité rédactionnelle. ⚠ <strong>Les deux décomptes du tableau ont été re-datés depuis, et ils ont bougé</strong> : au 28 juillet 2026, les pages du même consortium affichent <strong>37 participants non-présidents</strong> pour le groupe de registre (<code>S-096</code>) et <strong>260</strong> pour celui-ci (<code>S-129</code>), les composantes de fond des deux entrées étant confirmées. ⚠ <strong>La première des deux re-datations porte une réserve d'identification que la refonte déclare, et elle n'est pas de forme</strong> : <code>S-096</code> <strong>ne nomme pas le groupe</strong> dont elle compte les participants — quatre groupes communautaires du domaine sont candidats et rien dans l'entrée ne tranche —, de sorte que <em>le rattachement de ce décompte au groupe de registre n'est que <strong>probable</strong></em>. C'est la classe même que la décision 7 du TOC proscrit, rencontrée cette fois dans le socle. <em>Un compteur affiché n'est pas un fait stable</em> — le tableau conserve le relevé du 21 juillet 2026, qui porte sa date.</p>
 <p><strong>L'instance qui a compilé le livre blanc de référence décline la normalisation, et elle le fait par écrit.</strong> C'est <strong>la seule entrée du lot à porter le niveau [A]</strong> : la charte place <strong>hors de son périmètre</strong> le développement de protocoles de normalisation <strong>mondiaux</strong> liés à l'identité des agents, <strong>et renvoie ce travail à un groupe de travail</strong> de l'organisme ou d'une organisation en liaison (F-48, <strong>[A, degré 2]</strong>). ⚠ <strong>Les deux moitiés de l'énoncé comptent également</strong> : la première établit que cette instance <strong>ne conduit pas elle-même</strong> ce travail ; la seconde <strong>interdit d'en conclure à un renoncement</strong> — <em>le socle décrit un aiguillage, pas un abandon.</em> ⚠ Le livre blanc lui-même <strong>n'est pas au socle</strong> du Vol. III : <em>source primaire ouverte et citée hors socle</em>, et son versement est remonté.</p>
-
 <p><strong>Le nom lui-même n'est pas stable.</strong> Au 21 juillet 2026, « Know Your Agent » désigne <strong>au moins deux objets distincts, documentés chacun par son propre éditeur</strong> : une spécification communautaire, et un cadre commercial annoncé le 15 juin 2026 (F-49, <strong>[B, degré 3]</strong>). ⚠ <strong>L'énoncé dit « au moins deux » et ne porte aucune clause d'exclusivité.</strong> ⚠ Le communiqué du second <strong>ne qualifie pas le statut de disponibilité</strong> du cadre : ni disponibilité générale, ni préversion, ni feuille de route datée n'y figurent, et le cadre <strong>n'est rattaché à aucune spécification publiée</strong> — <em>annonce et disponibilité générale documentée sont deux choses différentes.</em> ⚠ <strong>Aucun lien de dépendance, de compatibilité ou de filiation entre les deux objets n'a été recherché</strong> : absence de documentation, degré 3. Une <strong>troisième occurrence</strong> du même nom, datée du 4 février 2026, est signalée par une source secondaire dont l'instruction <strong>n'a pas pu localiser le document primaire</strong> ; elle est consignée comme <strong>échec de source</strong> et <strong>ne porte aucun énoncé</strong>.</p>
-
 <p><strong>Et le refus : une jonction que le socle ne fait pas, et que le chapitre ne fera donc pas.</strong> Deux entrées datent, à douze jours d'écart, deux pièces d'un même organisme national de normalisation — une initiative annoncée le 17 février 2026 dont le volet identité est à l'état de projet de document de concept (F-56, <strong>[C]</strong>), et un document de concept publié le 5 février 2026 à l'état de projet public initial (F-73, <strong>[B]</strong>). ⚠ <strong>Le socle ne documente pas si ces deux pièces désignent le même document — absence de documentation, non fait négatif vérifié.</strong> <em>Les deux lignes sont donc portées séparément, et le lecteur qui a besoin de la réponse doit l'établir lui-même.</em> ⚠ <strong>Le niveau de la première a été porté à <code>[C]</code> par la refonte du socle</strong> (<code>S-102</code>, règle de composition : une entrée reçoit le niveau de sa composante la plus faible) — <em>et la composante en cause est exactement celle qui est employée ici</em>, le volet identité, que son lot n'a pas pu ouvrir. <strong>Le repérage tient ; il ne porte aucun fait central.</strong></p>
-
 <div class="avert">
   <p><strong>La question de l'instance porteuse reste ouverte, et deux constats de rapport la bornent sans être versés.</strong> Aucune des pages consultées <strong>ne désigne un forum unique</strong> ; et la page du groupe communautaire de registre y <strong>annonce une coordination avec quatre autres instances</strong>. <em>Ces deux constats ne sont versés à aucune entrée et ne portent aucune affirmation centrale ; leur versement est remonté.</em> ⚠ <strong>Le relevé n'établit pas non plus qu'aucune désignation ne soit intervenue hors des sources ouvertes</strong> — degré 3.</p>
 </div>
-
+<figure class="figure">
+  <img src="../figures/f-18-01-neuf-chantiers.svg" alt="Figure 18.1 — Neuf chantiers, six organisations, zéro texte ratifié." />
+  <figcaption><strong>Figure 18.1</strong> — Neuf chantiers, six organisations, zéro texte ratifié.</figcaption>
+</figure>
 <h2 id="s182"><span class="sig">§ 18.2</span>Admettre un agent tiers : ce que les protocoles remettent à celui qui décide</h2>
-
 <p><em>Admettre est un acte, et un acte a un contenu vérifiable ou n'en a pas.</em> La question de cette section est donc étroite : <strong>quand un agent se présente à la frontière d'une organisation qui ne l'a pas émis, que celle-ci reçoit-elle, et que doit-elle produire elle-même ?</strong></p>
-
 <div class="avert">
   <p><strong>La grille du ch. 14 n'est pas appliquée ici</strong> : le chapitre appartient au mouvement qui <em>instruit</em> Q-C plutôt que de porter un verdict mécanisme par mécanisme (ch. 17 § 17.0).</p>
 </div>
-
 <p><strong>La découverte est spécifiée ; l'admission ne l'est pas.</strong> Le protocole agent-agent normalise la découverte d'un agent — chemin conventionnel, trois stratégies documentées — et <strong>déclare explicitement qu'aucune interface de registre n'est prescrite</strong> (F-43, <strong>[B, degré 2]</strong>). ⚠ <strong>L'écart est structurant</strong> : <em>trouver un agent et décider de l'admettre sont deux opérations distinctes, et la spécification outille la première en renvoyant la seconde à celui qui la prend.</em> Le service d'annuaire de l'autre écosystème est, lui, spécifié par un <em>Internet-Draft</em> de <strong>soumission individuelle</strong>, à sa révision -02 du 6 juillet 2026 (F-43) — <strong>statut pré-normatif, non une norme ratifiée</strong>.</p>
-
 <p><strong>La vérification de signature est facultative des deux côtés.</strong> Les cartes d'agent <strong>MAY</strong> être signées ; les clients <strong>SHOULD</strong> vérifier au moins une signature avant d'accorder confiance (F-04, <strong>[A]</strong>). ⚠ <strong>La conséquence est à écrire sans atténuation, parce qu'elle décide de ce qu'une organisation peut inscrire dans un dossier de diligence raisonnable : une chaîne entièrement conforme peut ne comporter aucune signature apposée ni aucune vérification effectuée.</strong> <em>L'admission d'un agent tiers ne dispose donc, <strong>du côté de ce protocole et de lui seul</strong>, d'aucun plancher normatif — elle en dispose d'un du côté de la politique interne de l'organisation qui admet, et c'est elle qui devra l'écrire.</em></p>
-
 <p><strong>L'ancrage, qui est le cœur du problème inter-domaines, est renvoyé hors du protocole.</strong> La récupération de la clé passe par deux paramètres, ou depuis un magasin de clés de confiance que les clients <strong>MAY</strong> maintenir — <strong>facultatif et non spécifié</strong> (F-09, <strong>[B]</strong>). <em>Une partie de confiance qui reçoit l'agent d'un tiers doit donc <strong>constituer elle-même</strong> le lien entre une signature et une autorité qu'elle tient pour légitime : c'est très exactement la fonction qu'une infrastructure de fédération assume ailleurs</em> (§ 18.3).</p>
-
 <p><strong>Et ce que la vérification peut établir est lui-même borné.</strong> La section balayée ne mentionne <strong>ni liste de révocation, ni répondeur de statut, ni chaîne de certificats, ni délai de re-validation</strong>, et sa procédure en six étapes <strong>ne comporte aucune étape de contrôle de statut ou de fraîcheur</strong> (F-06, <strong>[A]</strong>, fait négatif <strong>VÉRIFIÉ</strong>, degré 1, borné à cette seule section). ⚠ <strong>La borne n'est pas décorative</strong> : une section normative que le lot <strong>n'a pas pu ouvrir</strong> pourrait porter des exigences de fraîcheur — <strong>absence de documentation, degré 3</strong>. Le même texte pose pourtant, au niveau normatif le plus fort, que les clés expirées ou révoquées <strong>MUST NOT</strong> servir à la vérification, <strong>sans mécanisme</strong> permettant au client de l'établir (F-07, <strong>[A]</strong>). ⚠ <em>Ce que ce mécanisme démontre est la vérification d'une signature ; il ne documente pas le moyen d'en établir la <strong>validité courante</strong></em> (R-02). L'objet propre de cette asymétrie est le <strong>ch. 20 § 20.4</strong>.</p>
-
 <p><strong>La validité, quand elle est définie, l'est à l'intérieur d'un domaine.</strong> Un justificatif d'identité de charge de travail est <strong>considéré valide s'il a été signé par une autorité du domaine de confiance de l'identité qu'il porte</strong> (F-87, <strong>[B]</strong>). ⚠ <strong>L'énoncé est intra-domaine par construction</strong> : <em>il ne dit rien de ce qu'une autorité d'un autre domaine devrait faire pour l'accepter.</em> ⚠ Le socle de cette famille d'identité est <strong>posé au ch. 3</strong> et n'est pas reconstruit ici. Du côté de l'IETF, une section d'architecture — <strong>brouillon en cours, non prescription protocolaire</strong> — range les intermédiaires d'IA parmi les charges de travail déléguées (F-86, <strong>[B]</strong> ; établi au ch. 12 § 12.1).</p>
-
 <p><strong>Le registre, lui, décrit ce qu'il faudrait inscrire, non ce qu'il faudrait vérifier.</strong> La spécification de registre — <strong>brouillon de laboratoire</strong> (F-38, <strong>[A]</strong>) — range parmi les champs obligatoires de son profil d'agent la liste des outils invocables et les bornes de portée (F-40, <strong>[B]</strong>). ⚠ <em>Ce sont des déclarations de champs, non des propriétés démontrées</em> (R-02). L'instruction complète est au <strong>ch. 15 § 15.3.1</strong>.</p>
-
 <p><strong>Un dernier constat, interne cette fois, mesure la difficulté à sa juste échelle.</strong> La documentation d'un éditeur porte une <strong>réserve explicite d'absence de couverture entre les deux plans d'identité d'agent</strong> de son propre produit (F-35, <strong>[A]</strong>, degré 2). ⚠ <strong>C'est un écart de point d'application à l'intérieur d'un seul locataire</strong> (<em>tenant</em>). <em>Si la couverture n'est pas assurée dans un locataire unique, la question de savoir ce qu'un tiers peut en inférer de l'extérieur ne se pose même pas dans les mêmes termes.</em></p>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : la découverte est spécifiée et le registre décliné (F-43) ; la signature est facultative et sa vérification recommandée (F-04) ; l'ancrage est renvoyé hors protocole (F-09) ; le statut d'une clé n'est pas établissable par les moyens décrits dans la <strong>seule section balayée</strong> (F-06, F-07) ; la validité d'un justificatif est définie <strong>relativement à un domaine</strong> (F-87) ; deux plans d'identité coexistent sans recouvrement dans un produit donné (F-35). <strong>Ce qu'il n'établit pas</strong> : que ces constats <strong>se composent</strong> en une difficulté d'admission inter-domaines — <em>aucune entrée du socle ne raisonne sur la composition.</em> <strong>La lecture proposée</strong> — <em>l'admission d'un agent tiers est intégralement à la charge de celui qui admet, et les mécanismes de 2026 lui fournissent des pièces sans lui fournir de procédure</em> — <strong>est une construction d'auteur, et elle se refuse sans qu'aucun des faits cités ne tombe.</strong></p>
-
+<figure class="figure">
+  <img src="../figures/f-18-02-admettre.svg" alt="Figure 18.2 — Admettre un agent tiers : ce que la frontière reçoit, et ce qu&#39;elle doit produire elle-même." />
+  <figcaption><strong>Figure 18.2</strong> — Admettre un agent tiers : ce que la frontière reçoit, et ce qu'elle doit produire elle-même.</figcaption>
+</figure>
 <h2 id="s183"><span class="sig">§ 18.3</span>Fédérations de confiance : ce que trois précédents portent d'institutionnel</h2>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>le KYC ne repose pas sur une technique ; il repose sur des institutions qui rendent la technique opposable.</strong> <strong>Trois précédents documentés</strong> permettent de nommer ces institutions sans les inventer — et ⚠ <strong>deux des trois ne sont pas des textes réglementaires</strong>, <em>ce qui interdit de réduire la question à une affaire de législateur.</em></p>
-
 <p><strong>Le précédent réglementaire.</strong> Un règlement européen institue deux dispositifs à l'appui de la confiance transfrontalière : un <strong>audit des prestataires de services de confiance qualifiés au moins tous les vingt-quatre mois, à leurs frais, par un organisme d'évaluation de la conformité</strong> ; et <strong>l'établissement, la tenue et la publication par chaque État membre de listes de confiance</strong> des prestataires qualifiés (F-51, <strong>[B]</strong>). ⚠ <strong>Trois bornes, et elles décident de ce que ce paragraphe autorise.</strong> Le texte cité est celui du <strong>règlement de base</strong>, et <strong>les modifications apportées par sa révision n'ont pas été vérifiées sur ces deux articles précis</strong> — degré 3. Le règlement <strong>ne vise pas les agents logiciels</strong> : <em>toute transposition au domaine agentique est une lecture d'auteur, non un constat du texte.</em> Et les deux articles décrivent <strong>une procédure institutionnelle</strong> — un audit périodique, une liste publiée — <strong>non une propriété de sécurité démontrée</strong> (R-02).</p>
-
 <p><strong>Le précédent industriel.</strong> Une alliance industrielle documente deux dispositifs qu'elle exploite elle-même : un <strong>programme de certification confié à des laboratoires accrédités</strong>, assorti de niveaux de sécurité, et un <strong>service de métadonnées</strong> dont les parties de confiance téléchargent un fichier signé contenant les données de registre des modèles certifiés (F-51, <strong>[B]</strong>). ⚠ <strong>Ces niveaux de certification d'authentificateur ne se confondent avec aucune des trois échelles d'autonomie du Vol. I</strong>, et notamment pas avec la graduation à quatre niveaux préfixés d'une lettre, <em>qui mesure tout autre chose</em> — l'homonymie est déclarée au <strong>ch. 14 § 14.4</strong>. ⚠ Le mécanisme est ici encore <strong>qualifié par ce que l'alliance documente comme procédure</strong>, non par une propriété démontrée : <em>les pages consultées ne présentent aucune démonstration cryptographique.</em> ⚠ <strong>La procédure de retrait ou de révocation d'une entrée du service de métadonnées n'apparaît pas</strong> dans les deux pages relevées : <strong>absence de documentation, degré 3</strong>. ⚠ Ces pages <strong>ne portent ni version ni date de publication affichées</strong> — <em>ressource vivante, à rejouer avant toute reprise.</em></p>
-
 <p><strong>Un troisième précédent, hors du champ agentique et hors du champ réglementaire.</strong> Le cadre de gouvernance d'un écosystème d'identifiants d'entités juridiques, dans sa version du <strong>25 mars 2026</strong>, s'adosse à un socle technique nommé et se déclare conforme aux recommandations d'une fondation de confiance (F-32, <strong>[B]</strong>). ⚠ Il est retenu <strong>comme matière de comparaison</strong> : <em>il montre qu'une infrastructure de confiance vérifiable peut se doter d'un cadre de gouvernance publié sans attendre un texte législatif.</em> <strong>Le socle n'établit aucun lien entre ce cadre et l'identité des agents</strong>, et le chapitre n'en tire donc <strong>aucune transposition</strong>. <em>Son versant adoption est au ch. 13 § 13.5.</em></p>
-
 <p><strong>Ce que ces pièces ont en commun ne va pas jusqu'au triplet.</strong> <em>Seule la première le porte en entier</em> — une autorité désignée qui évalue, un rythme d'évaluation inscrit, une liste consultable ; la deuxième documente <strong>l'autorité et la liste sans le rythme</strong> ; la troisième, <strong>la seule publication d'un cadre</strong>.</p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Précédent</th><th>Autorité qui évalue</th><th>Rythme inscrit</th><th>Liste publiée</th><th>Nature du texte</th></tr></thead>
-  <tbody>
-    <tr><td><strong>Réglementaire</strong></td><td>organisme d'évaluation de la conformité</td><td><strong>oui</strong> — au moins tous les vingt-quatre mois</td><td><strong>oui</strong> — listes de confiance par État membre</td><td>règlement ; <strong>ne vise pas les agents logiciels</strong></td></tr>
-    <tr><td><strong>Industriel</strong></td><td>laboratoires accrédités par l'alliance</td><td><em>non relevé</em></td><td><strong>oui</strong> — service de métadonnées signé</td><td>programme d'alliance ; <strong>procédure, non propriété démontrée</strong></td></tr>
-    <tr><td><strong>Hors champ agentique</strong></td><td><em>non relevé</em></td><td><em>non relevé</em></td><td><em>non relevé</em></td><td><strong>cadre de gouvernance publié et versionné</strong></td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+<col style="width: 20%" />
+</colgroup>
+<thead>
+<tr>
+<th>Précédent</th>
+<th>Autorité qui évalue</th>
+<th>Rythme inscrit</th>
+<th>Liste publiée</th>
+<th>Nature du texte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Réglementaire</strong></td>
+<td>organisme d'évaluation de la conformité</td>
+<td><strong>oui</strong> — au moins tous les vingt-quatre mois</td>
+<td><strong>oui</strong> — listes de confiance par État membre</td>
+<td>règlement ; <strong>ne vise pas les agents logiciels</strong></td>
+</tr>
+<tr>
+<td><strong>Industriel</strong></td>
+<td>laboratoires accrédités par l'alliance</td>
+<td><em>non relevé</em></td>
+<td><strong>oui</strong> — service de métadonnées signé</td>
+<td>programme d'alliance ; <strong>procédure, non propriété démontrée</strong></td>
+</tr>
+<tr>
+<td><strong>Hors champ agentique</strong></td>
+<td><em>non relevé</em></td>
+<td><em>non relevé</em></td>
+<td><em>non relevé</em></td>
+<td><strong>cadre de gouvernance publié et versionné</strong></td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 18.2 — Trois précédents de fédération et ce que chacun porte d'institutionnel, au 21 juillet 2026.</p>
-
-<p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : les deux dispositifs du précédent réglementaire, les deux du précédent industriel, le cadre de gouvernance publié du troisième ; et, du côté agentique, qu'<strong>aucune des propositions consultées n'est ratifiée ni adoptée</strong> (F-50) et que l'instance qui a compilé le livre blanc <strong>renvoie la normalisation à un groupe de travail plutôt que de la conduire</strong> (F-48). <strong>Ce qu'il n'établit pas</strong> : qu'un organisme d'évaluation, un rythme d'audit inscrit ou une liste de confiance publiée <strong>fassent défaut</strong> au domaine agentique <strong>au-delà des pages ouvertes</strong>.</p>
-
+<p><span class="auteur">Lecture de l'auteur</span> <strong>ce que le socle établit</strong> : les deux dispositifs du précédent réglementaire, les deux du précédent industriel, le cadre de gouvernance publié du troisième ; et, du côté agentique, qu'<strong>aucune des propositions consultées n'est ratifiée ni adoptée</strong> (F-50) et que l'instance qui a compilé le livre blanc <strong>renvoie la normalisation à un groupe de travail plutôt que de la conduire</strong> (F-48). <strong>Ce qu'il n'établit pas</strong> : qu'un organisme d'évaluation, un rythme d'audit inscrit ou une liste de confiance publiée <strong>fassent défaut</strong> au domaine agentique <strong>au-delà des pages ouvertes</strong>. ⚠ <em>Aucune source consultée n'énonce ce manque sous cette forme ; le constat est <strong>borné aux pages effectivement ouvertes, et de degré 3 au-delà</strong></em> — <strong>écrire que ces dispositifs n'existent pas serait la faute que R-14 proscrit.</strong> <em>La lecture proposée est celle-ci : la connaissance de l'agent n'est pas d'abord bloquée par un problème cryptographique, elle est bloquée par <strong>l'absence d'une instance qui réponde de la vérification</strong> — et c'est le sens qu'il faut donner au <strong>verrou institutionnel plus que technique</strong> que le Vol. I nommait à son gel</em> (H-19, <strong>[C]</strong>, thèse attribuée).</p>
 <div class="avert">
-  <p><em>Aucune source consultée n'énonce ce manque sous cette forme ; le constat est <strong>borné aux pages effectivement ouvertes, et de degré 3 au-delà</strong></em> — <strong>écrire que ces dispositifs n'existent pas serait la faute que R-14 proscrit.</strong> <em>La lecture proposée est celle-ci : la connaissance de l'agent n'est pas d'abord bloquée par un problème cryptographique, elle est bloquée par <strong>l'absence d'une instance qui réponde de la vérification</strong> — et c'est le sens qu'il faut donner au <strong>verrou institutionnel plus que technique</strong> que le Vol. I nommait à son gel</em> (H-19, <strong>[C]</strong>, thèse attribuée).</p>
+  <p><strong>Trois pièces qui commandent cette question n'ont pas été instruites, et la lacune est déclarée</strong> : la <strong>révision</strong> du règlement européen et le portefeuille d'identité numérique qu'elle porte, <strong>non ouverts</strong>, alors qu'ils sont postérieurs au texte cité ; l'<strong>organisme international de normalisation</strong>, sur lequel <strong>aucune recherche n'a été menée</strong>, alors que le Vol. I le nomme parmi les forums n'ayant pas tranché ; et les composantes d'identité de l'un des écosystèmes, <strong>non instruites par ce lot</strong>. <em>La question reste ouverte ; aucune inférence n'est proposée.</em></p>
 </div>
-
-<div class="avert">
-  <p><strong>Trois pièces qui commandent cette question n'ont pas été instruites, et la lacune est déclarée</strong> : la <strong>révision</strong> du règlement européen et le portefeuille d'identité numérique qu'elle porte, <strong>non ouverts</strong>, alors qu'ils postdatent le texte cité ; l'<strong>organisme international de normalisation</strong>, sur lequel <strong>aucune recherche n'a été menée</strong>, alors que le Vol. I le nomme parmi les forums n'ayant pas tranché ; et les composantes d'identité de l'un des écosystèmes, <strong>non instruites par ce lot</strong>. <em>La question reste ouverte ; aucune inférence n'est proposée.</em></p>
-</div>
-
 <p><strong>Une conséquence pratique se dégage, et elle est le motif pour lequel ce chapitre existe.</strong> Une institution qui veut admettre l'agent d'un partenaire <strong>aujourd'hui</strong> ne peut pas déléguer sa décision à un cadre externe : <strong>aucune des propositions consultées n'est ratifiée ni adoptée</strong> (F-50, degré 2, borné à ses trois composantes). <em>Elle doit donc <strong>écrire son propre régime d'admission</strong> — quelles autorités d'émission elle reconnaît, à quelle fréquence elle les réévalue, et ce qu'elle fait lorsqu'une signature ne peut pas être rattachée à un ancrage qu'elle contrôle</em> (F-09). ⚠ <strong>Ce régime est une construction privée</strong> ; il n'est opposable qu'à ceux qui y consentent <strong>par contrat</strong> ; et <strong>il ne compose pas avec celui du partenaire suivant</strong>.</p>
-
-<p><em>C'est en ce sens, et en ce sens seulement, que « l'entreprise agentique » s'arrête à ses murs : non parce qu'une frontière technique l'y contraint, mais parce qu'aucune des instances relevées au § 18.1 n'a pris en charge, à la date de gel, ce qu'elle aimerait cesser de vérifier elle-même.</em> ⚠ <strong>Le terme n'est jamais une catégorie établie</strong>, et sa qualification en <em>terme de fournisseur avant d'être terme de norme</em> est une <strong>construction d'auteur</strong> — de la famille de celle relevée au § 18.0, non une formule de source ; la définition d'auteur du syntagme a son siège unique à l'avant-propos de la somme.</p>
-
-<div class="avert">
-  <p><strong>Et la borne du constat n'est pas une précaution de style</strong> : le socle <strong>ne documente ni l'existence ni l'absence</strong> d'un tel dispositif hors des pages ouvertes — <strong>degré 3</strong>.</p>
-</div>
-
+<p><em>C'est en ce sens, et en ce sens seulement, que « l'entreprise agentique » s'arrête à ses murs : non parce qu'une frontière technique l'y contraint, mais parce qu'aucune des instances relevées au § 18.1 n'a pris en charge, à la date de gel, ce qu'elle aimerait cesser de vérifier elle-même.</em> ⚠ <strong>Le terme n'est jamais une catégorie établie</strong>, et sa qualification en <em>terme de fournisseur avant d'être terme de norme</em> est une <strong>construction d'auteur</strong> — de la famille de celle relevée au § 18.0, non une formule de source ; la définition d'auteur du syntagme a son siège unique à l'avant-propos de la somme. ⚠ <strong>Et la borne du constat n'est pas une précaution de style</strong> : le socle <strong>ne documente ni l'existence ni l'absence</strong> d'un tel dispositif hors des pages ouvertes — <strong>degré 3</strong>.</p>
 <h2 id="s184"><span class="sig">§ 18.4</span>Relève v0.11, à instruire : l'agent mutable prive la réputation de son ancrage</h2>
-
 <div class="avert">
   <p><strong>Cette section porte une relève du plan, et non un fait.</strong> Une <strong>préimpression révisée en mai 2026</strong> — <strong>arXiv 2605.30169</strong>, identifiant reporté du TOC — soutient que les architectures d'agents à <strong>poids, invites et mémoire mutables</strong> n'offrent pas la <strong>persistance d'identité</strong> que tout mécanisme de réputation présuppose : <em>l'objet vérifié à l'admission peut cesser d'être l'objet admis.</em> ⚠ <strong>L'identifiant est écrit plutôt qu'élidé, et ce n'est pas une commodité</strong> : <em>le critère de clôture de cette relève est l'extraction de son texte intégral, et une source qu'un lot doit instruire ne s'anonymise pas — sans son identifiant, le lot n'est pas exécutable.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>Régime, et c'est le plus bas que cette pièce porte.</strong> <strong>Préimpression non révisée par les pairs, résumé seul consulté</strong> : c'est un <strong>repérage [C]</strong>, <strong>jamais un fait</strong>. <em>Le texte intégral n'a pas été ouvert ; rien de ce que sa construction démontrerait, de son modèle de menace ou de ses hypothèses n'est établi ici</em> — <strong>absence de documentation, degré 3</strong>. ⚠ <strong>Et le régime de preuve du Livre II l'interdit doublement</strong> : le PRD range les relèves parmi les <strong>repérages qui n'entrent au socle consolidé qu'après extraction de la source primaire en G-1</strong>, et <strong>cette extraction n'a pas eu lieu</strong>.</p>
 </div>
-
 <p><strong>Ce qui peut néanmoins s'écrire, c'est la portée que la thèse aurait si elle tenait</strong>, et c'est le seul contenu que cette section porte.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>si la thèse tient, elle pèse sur trois endroits de la somme, et pas seulement sur l'admission.</strong> <em>(1)</em> Sur la <strong>cinquième question de la grille</strong> — <strong>Q-E</strong>, <em>qui en répond</em> (ch. 14 § 14.1) : une imputabilité traçable suppose que l'entité à laquelle on impute <strong>soit restée la même</strong>. <em>(2)</em> Sur la <strong>révocation</strong> (ch. 20) : on ne révoque pas utilement l'identifiant d'un objet dont la substance a changé sans que l'identifiant bouge — <em>c'est le versant « identité » de ce que le ch. 20 § 20.1 instruit sous l'angle du retournement d'un serveur d'outils.</em> <em>(3)</em> Sur l'<strong>admission</strong> elle-même (§ 18.2) : <em>un régime d'admission privé, écrit par celui qui admet, vérifie un objet à un instant ; si cet objet est mutable, le verdict ne dit rien de l'instant suivant.</em> ⚠ <strong>Ce que le socle établit</strong> : rien de la thèse. <strong>Ce qu'il n'établit pas</strong> : tout le reste — <em>y compris qu'elle soit fausse.</em></p>
-
 <div class="avert">
   <p><strong>La relève est portée ici et n'est consommée nulle part.</strong> Son instruction relève du <strong>volet des relèves de G-1</strong>, resté dû après la levée du volet de faits le 28 juillet 2026 ; son critère de clôture est celui que le PRD impose aux préimpressions : <strong>extraction du texte intégral</strong>, et <strong>niveau plafonné tant qu'aucune révision par les pairs n'est constatée</strong>. <em>Aucun énoncé du présent chapitre ne s'y adosse.</em></p>
 </div>
-
 <h3>Synthèse : ce que le chapitre lègue à la somme</h3>
-
 <p><em>Section de sortie sans homologue direct dans la source — construction d'éditeur.</em></p>
-
-<ol class="numeros">
-  <li><strong>Le siège unique du KYA</strong>, avec son statut de terme, ses neuf chantiers et son fait négatif établi de degré 2. Les <strong>ch. 13, 15 et 16</strong> y renvoient ; <strong>aucun ne le reconstruit</strong>.</li>
-  <li><strong>Le partage entre spécifié et remis.</strong> <em>La découverte est spécifiée ; l'admission ne l'est pas.</em> Le <strong>ch. 20 § 20.2</strong> le prolonge dans le temps — <em>la vérification à l'admission ne protège pas contre la dérive après admission.</em></li>
-  <li><strong>Les trois précédents institutionnels et leur triplet incomplet</strong> — autorité, rythme, liste. Le <strong>ch. 16 § 16.3</strong> les nomme comme dispositifs de reconnaissance mutuelle ; <strong>ils sont instruits ici</strong>.</li>
-  <li><strong>La conclusion qui décide de la portée du Livre.</strong> <em>Une institution qui admet aujourd'hui écrit son propre régime, opposable par contrat seulement, et qui ne compose pas avec celui du partenaire suivant.</em> C'est ce que le <strong>ch. 21 § 21.5</strong> retrouvera sous l'angle cryptographique, et ce que le <strong>ch. 37</strong> rencontrera au point d'application.</li>
+<ol type="1">
+<li><strong>Le siège unique du KYA</strong>, avec son statut de terme, ses neuf chantiers et son fait négatif établi de degré 2. Les <strong>ch. 13, 15 et 16</strong> y renvoient ; <strong>aucun ne le reconstruit</strong>.</li>
+<li><strong>Le partage entre spécifié et remis.</strong> <em>La découverte est spécifiée ; l'admission ne l'est pas.</em> Le <strong>ch. 20 § 20.2</strong> le prolonge dans le temps — <em>la vérification à l'admission ne protège pas contre la dérive après admission.</em></li>
+<li><strong>Les trois précédents institutionnels et leur triplet incomplet</strong> — autorité, rythme, liste. Le <strong>ch. 16 § 16.3</strong> les nomme comme dispositifs de reconnaissance mutuelle ; <strong>ils sont instruits ici</strong>.</li>
+<li><strong>La conclusion qui décide de la portée du Livre.</strong> <em>Une institution qui admet aujourd'hui écrit son propre régime, opposable par contrat seulement, et qui ne compose pas avec celui du partenaire suivant.</em> C'est ce que le <strong>ch. 21 § 21.5</strong> retrouvera sous l'angle cryptographique, et ce que le <strong>ch. 37</strong> rencontrera au point d'application.</li>
 </ol>
+<hr />
 
 <footer class="pied">
   <p><strong>Vol. IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em></strong> · Livre II, chapitre 18. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau, M.Sc. IT.</p>

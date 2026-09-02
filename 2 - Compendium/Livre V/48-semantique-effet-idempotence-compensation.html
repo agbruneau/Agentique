@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chapitre 48 — La sémantique d&#x27;effet : idempotence, compensation, réconciliation · Interopérabilité et Orchestration en Entreprise Agentique</title>
-<meta name="description" content="Livre V — Livrer et clore : l&#x27;agent comme livrable logiciel, horizon et frontière. Premier mouvement — l&#x27;agent comme livrable logiciel : provenance, mise en service, sémantique d&#x27;effet (ch. 47-48). Second et dernier chapitre du mouvement, et troisième des trois fronts de matière neuve que l&#x27;audit v0">
+<meta name="description" content="Livre V — Livrer et clore : l&#x27;agent comme livrable logiciel, horizon et frontière. Premier mouvement — l&#x27;agent comme livrable logiciel : provenance, mise en service, sémantique d&#x27;effet (ch. 47-48). Second et dernier chapitre du mouvement, et **troisième des trois fronts** de matière neuve que l&#x27;audit v0.3 avait nommés puis écartés (décision 9 du TOC)">
 <meta name="author" content="André-Guy Bruneau, M.Sc. IT">
 <meta name="color-scheme" content="dark">
 <style>
@@ -443,6 +443,17 @@ tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
 tbody td:first-child { color: var(--texte); font-weight: 600; }
 .legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
 
+/* -------------------------------------------------------------- figures */
+/* Les SVG du volume sont dessinés pour le PDF, donc sur fond clair, et ils
+   portent ce fond eux-mêmes — sans quoi il faudrait maintenir deux variantes
+   de chaque figure. Sur ce thème sombre, ils se posent donc comme un carton ;
+   le padding empêche le fond de la figure de toucher le bord du cadre. */
+.figure { margin: 2.1rem 0 1.9rem; }
+.figure img { display: block; width: 100%; height: auto; border-radius: 7px;
+              border: 1px solid var(--trait); background: #fdfbf9; padding: 0.6rem; }
+.figure figcaption { font-size: 0.8rem; font-style: italic; color: var(--texte-faible);
+                     margin-top: 0.65rem; padding-left: 0.15rem; }
+
 /* --------------------------------------------------------------- listes */
 ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
 ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
@@ -531,11 +542,11 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <div class="nav__marque">Interopérabilité et Orchestration en Entreprise Agentique</div>
   <div class="nav__sous">Livre V · Chapitre 48</div>
   <ol>
-    <li><a href="#s481"><span class="num">48.1</span>Taxonomie des effets d&#x27;une action d&#x27;agent</a></li>
-    <li><a href="#s482"><span class="num">48.2</span>Idempotence et rejouabilité des appels d&#x27;outils</a></li>
-    <li><a href="#s483"><span class="num">48.3</span>Compensation et sagas au grain de l&#x27;agent</a></li>
+    <li><a href="#s481"><span class="num">48.1</span>Taxonomie des effets d'une action d'agent</a></li>
+    <li><a href="#s482"><span class="num">48.2</span>Idempotence et rejouabilité des appels d'outils</a></li>
+    <li><a href="#s483"><span class="num">48.3</span>Compensation et sagas au grain de l'agent</a></li>
     <li><a href="#s484"><span class="num">48.4</span>Réconciliation des flux financiers</a></li>
-    <li><a href="#s485"><span class="num">48.5</span>Tracer l&#x27;effet, pas seulement l&#x27;appel</a></li>
+    <li><a href="#s485"><span class="num">48.5</span>Tracer l'effet, pas seulement l'appel</a></li>
   </ol>
   <div class="nav__pied">
     Vol.&nbsp;IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em><br>
@@ -549,152 +560,151 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 <header class="titre">
   <div class="titre__fil">Livre V — Livrer et clore : l&#x27;agent comme livrable logiciel, horizon et frontière</div>
   <h1><span class="chap">Chapitre 48</span>La sémantique d&#x27;effet : idempotence, compensation, réconciliation</h1>
-  <p class="titre__situe">Livre V — Livrer et clore : l'agent comme livrable logiciel, horizon et frontière. Premier mouvement — l'agent comme livrable logiciel : provenance, mise en service, sémantique d'effet (ch. 47-48). Second et dernier chapitre du mouvement, et <strong>troisième des trois fronts</strong> de matière neuve que l'audit v0.3 avait nommés puis écartés (décision 9 du TOC)</p>
+  <p class="titre__situe">Livre V — Livrer et clore : l'agent comme livrable logiciel, horizon et frontière. Premier mouvement — l'agent comme livrable logiciel : provenance, mise en service, sémantique d'effet (ch. 47-48). Second et dernier chapitre du mouvement, et **troisième des trois fronts** de matière neuve que l'audit v0.3 avait nommés puis écartés (décision 9 du TOC)</p>
 </header>
 
 <!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
      Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
-     que `build/assemble.py` pour le PDF. L'appareil de gouvernance vit au .md jumeau, qui reste la
-     seule source, et `verifier-piece.py` [6] refuse désormais un rendu qui le recopierait. -->
+     que `build/assemble.py` pour le PDF et que `PRD/decompte.sh` pour la volumétrie. L'appareil de
+     gouvernance vit au .md jumeau, qui reste la seule source, et `build/verifier-piece.py` refuse
+     un rendu qui le recopierait. -->
 
 <div class="avert">
   <p><strong>Thèse réalignée au TOC v0.26</strong> (décisions 8 et 14), sur la remontée <strong>R-IV-65</strong> ouverte par cette pièce, <strong>et inchangée depuis</strong> : le plan est passé en v0.29 puis en <strong>v0.30</strong>, versions qui déclarent l'une et l'autre n'avoir touché aucune thèse, et <em>la concordance mot à mot de la thèse citée ci-dessus avec l'entrée du ch. 48 du TOC courant a été re-vérifiée le 28 juillet 2026</em>. La forme antérieure écrivait « <strong>n'est spécifié ni</strong> par les protocoles <strong>ni</strong> par l'encadrement » — un <strong>quantificateur universel négatif qu'aucun balayage ne soutient</strong>. Ce que le corpus établit est une <strong>absence de documentation</strong>, au <strong>degré 3</strong> de l'échelle R-14 du Vol. III, et <em>non un fait négatif vérifié</em>. <strong>Le corps du chapitre n'a pas changé à la rédaction</strong> : il écrivait déjà l'énoncé sous la forme bornée. ⚠ <strong>Le chapeau, en revanche, disséquait encore le libellé antérieur ; il est réécrit sur la forme courante au commit du 28 juillet 2026</strong> — <em>un corps qui commente une thèse que sa propre tête ne porte plus fait se contredire la pièce sous les yeux du lecteur qui ne lit pas ce bloc.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>Ce bloc était absent du rendu <code>.html</code> jusqu'au 28 juillet 2026, et son emplacement en était la cause</strong> : placé <strong>entre la thèse et le séparateur</strong>, il tombait hors du corps que le générateur projette. Il est déplacé <strong>après le séparateur</strong>, où les ch. 47 et 49 placent le leur. <em>Le défaut n'était pas un rendu régénéré depuis un état intermédiaire mais une omission silencieuse du générateur : le <code>.md</code> faisait foi et le <code>.html</code> ne le disait pas.</em> ⚠ <strong>La dette est d'appareil et elle reste ouverte</strong> — <em>un contrôle de parité qui compare les titres de section ne voit pas cette classe</em>, et rien de versionné ne l'attrape aujourd'hui.</p>
 </div>
-
 <div class="avert">
   <p><strong>La thèse est déclarée <em>construction d'auteur, socle à constituer</em> par le TOC lui-même</strong>, et elle porte deux propositions de statuts inégaux qu'il faut séparer avant d'entrer dans le chapitre. La seconde — <em>un virement à moitié réussi est un écart comptable</em> — est une <strong>lecture d'auteur</strong>, et elle est reprise comme telle. La première — <em>cela n'est documenté par rien de ce que la somme a instruit, ni du côté des protocoles ni du côté de l'encadrement</em> — est une <strong>absence</strong>, et la forme que la thèse porte depuis son réalignement dit exactement à quoi elle est bornée : ⚠ <strong>elle porte sur le corpus instruit par la somme, non sur les protocoles ni sur l'encadrement eux-mêmes.</strong> C'est une <em>absence de documentation dans le corpus de la somme</em>, au <strong>degré 3</strong> de l'échelle R-14 du Vol. III, <strong>non un fait négatif vérifié</strong> — et <strong>aucun balayage documenté ne l'élève au-dessus de ce degré</strong>. ⚠ <em>La borne est désormais dans la thèse, et elle se lit comme une borne, non comme une atténuation de style</em> : le chapitre ne peut pas écrire que les protocoles n'en disent rien ; il écrit que rien de ce que la somme a instruit ne le documente, ce qui n'est pas la même proposition et n'autorise pas la même conclusion.</p>
 </div>
-
 <div class="avert">
-  <p><strong>Un fait neuf du 28 juillet 2026 change ce que ce chapitre pourrait un jour établir, sans rien changer à ce qu'il établit aujourd'hui.</strong> Le <strong>socle consolidé existe</strong> depuis le franchissement de G-3 : <em>pour la première fois, « ce que la somme a instruit » désigne un corpus fini, numéroté et balayable</em>, là où la thèse visait jusqu'ici un objet qu'aucun instrument ne délimitait. <strong>Le degré ne bouge pas pour autant</strong> — <em>un balayage de chaînes n'est pas un balayage sémantique</em>, et le conduire est un acte d'instruction, non de relecture. ⚠ <strong>R-IV-65 offrait deux issues et une seule a été prise</strong> : le réalignement de la thèse, ☑ soldé en v0.26 ; le <strong>balayage documenté qui l'établirait</strong> ne l'a pas été, et il n'était alors conductible sur aucun corpus fini. <em>Il l'est depuis le 28 juillet 2026</em>, et le constat est porté au §&nbsp;48.6&nbsp;† sans qu'un identifiant de remontée y soit alloué — <em>une passe qui court en parallèle d'autres n'alloue pas dans une série partagée</em> (PRD §13).</p>
+  <p><strong>Un fait neuf du 28 juillet 2026 change ce que ce chapitre pourrait un jour établir, sans rien changer à ce qu'il établit aujourd'hui.</strong> Le <strong>socle consolidé existe</strong> depuis le franchissement de G-3 : <em>pour la première fois, « ce que la somme a instruit » désigne un corpus fini, numéroté et balayable</em>, là où la thèse visait jusqu'ici un objet qu'aucun instrument ne délimitait. <strong>Le degré ne bouge pas pour autant</strong> — <em>un balayage de chaînes n'est pas un balayage sémantique</em>, et le conduire est un acte d'instruction, non de relecture. ⚠ <strong>R-IV-65 offrait deux issues et une seule a été prise</strong> : le réalignement de la thèse, ☑ soldé en v0.26 ; le <strong>balayage documenté qui l'établirait</strong> ne l'a pas été, et il n'était alors conductible sur aucun corpus fini. <em>Il l'est depuis le 28 juillet 2026</em>, et le constat est porté au § 48.6 sans qu'un identifiant de remontée y soit alloué — <em>une passe qui court en parallèle d'autres n'alloue pas dans une série partagée</em> (PRD §13).</p>
 </div>
-
 <h2 id="s481"><span class="sig">§ 48.1</span>Taxonomie des effets d'une action d'agent</h2>
-
-<div class="encadre encadre--oeuvre">
-  <span class="encadre__label">Note</span>
-  <p>⚠ <strong>SIÈGE DE LA SÉMANTIQUE D'EFFET POUR TOUTE LA SOMME.</strong> La matière — <em>idempotence, compensation, réconciliation</em> — est posée <strong>ici une seule fois</strong>. Le <strong>ch. 1 § 1.5.2</strong> et <strong>§ 1.6.2.2</strong> en posent les fondements <strong>au grain pré-agentique</strong> et y renvoient ; les <strong>ch. 22 § 22.5</strong>, <strong>ch. 23</strong>, <strong>ch. 24</strong> et <strong>ch. 27</strong> l'<strong>appliquent</strong> et y renvoient nommément ; aucun de ces chapitres ne la reconstruit. <em>C'est l'économie de la fusion côté « effets d'une action », et elle n'a lieu que si ces chapitres s'y tiennent.</em></p>
+<blockquote>
+<div class="avert">
+  <p><strong>SIÈGE DE LA SÉMANTIQUE D'EFFET POUR TOUTE LA SOMME.</strong> La matière — <em>idempotence, compensation, réconciliation</em> — est posée <strong>ici une seule fois</strong>. Le <strong>ch. 1 § 1.5.2</strong> et <strong>§ 1.6.2.2</strong> en posent les fondements <strong>au grain pré-agentique</strong> et y renvoient ; les <strong>ch. 22 § 22.5</strong>, <strong>ch. 23</strong>, <strong>ch. 24</strong> et <strong>ch. 27</strong> l'<strong>appliquent</strong> et y renvoient nommément ; aucun de ces chapitres ne la reconstruit. <em>C'est l'économie de la fusion côté « effets d'une action », et elle n'a lieu que si ces chapitres s'y tiennent.</em></p>
 </div>
-
+</blockquote>
 <p><span class="auteur">Lecture de l'auteur</span> la taxonomie qui suit est une construction de ce chapitre. <strong>Ce que le socle établit</strong> : rien — <strong>aucune des trois classes ne résout contre une entrée numérotée</strong>, ni du socle consolidé, ni d'aucun des trois socles sources. <strong>Ce qu'il n'établit pas</strong> : que ces trois classes soient les bonnes, qu'elles soient exhaustives, ni qu'une action réelle se rattache à une seule d'entre elles. Elle vaut comme <strong>vocabulaire de travail</strong> — et son seul mérite est de faire tenir ensemble trois questions que les chapitres amont posent séparément : <em>le rejeu d'un appel d'outil</em> (ch. 4 § 4.4.2), <em>l'annulation sémantique d'une étape engagée</em> (ch. 1 § 1.6.2.2) et <em>la reprise d'une trajectoire interrompue</em> (ch. 22 § 22.5).</p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Classe d'effet</th><th>Ce qu'une reprise produit</th><th>Ce qui la borne</th><th>Où la somme en traite</th></tr></thead>
-  <tbody>
-    <tr><td><strong>Lecture</strong></td><td>rien : rejouer une lecture ne change pas l'état du système d'enregistrement</td><td>le coût et la fraîcheur, non la correction</td><td>ch. 1 § 1.5.2 (déduplication, condition de version)</td></tr>
-    <tr><td><strong>Écriture</strong></td><td>un doublon, <strong>sauf si l'opération est idempotente</strong></td><td>l'idempotence est une <strong>propriété de l'outil</strong>, jamais du protocole qui l'invoque (ch. 4 § 4.4.2)</td><td>§ 48.2 ; ch. 22 § 22.5 (reprise d'un moteur durable)</td></tr>
-    <tr><td><strong>Engagement</strong></td><td>un second engagement, <strong>que rien ne défait</strong></td><td>seule la <strong>compensation</strong> agit, et elle est sémantique, non transactionnelle</td><td>§ 48.3 ; § 48.4 pour le cas financier</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Classe d'effet</th>
+<th>Ce qu'une reprise produit</th>
+<th>Ce qui la borne</th>
+<th>Où la somme en traite</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lecture</strong></td>
+<td>rien : rejouer une lecture ne change pas l'état du système d'enregistrement</td>
+<td>le coût et la fraîcheur, non la correction</td>
+<td>ch. 1 § 1.5.2 (déduplication, condition de version)</td>
+</tr>
+<tr>
+<td><strong>Écriture</strong></td>
+<td>un doublon, <strong>sauf si l'opération est idempotente</strong></td>
+<td>l'idempotence est une <strong>propriété de l'outil</strong>, jamais du protocole qui l'invoque (ch. 4 § 4.4.2)</td>
+<td>§ 48.2 ; ch. 22 § 22.5 (reprise d'un moteur durable)</td>
+</tr>
+<tr>
+<td><strong>Engagement</strong></td>
+<td>un second engagement, <strong>que rien ne défait</strong></td>
+<td>seule la <strong>compensation</strong> agit, et elle est sémantique, non transactionnelle</td>
+<td>§ 48.3 ; § 48.4 pour le cas financier</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 48.1 — Les trois classes d'effet d'une action d'agent, construction d'auteur du présent chapitre au 27 juillet 2026. <strong>Aucune ligne ne résout contre une entrée de socle</strong> ; la colonne de droite renvoie aux sièges qui traitent la matière, jamais à une source qui l'établirait.</p>
-
 <p><strong>Ce que la taxonomie fait voir, et c'est le seul point qu'elle établisse : la frontière qui compte n'est pas celle du succès et de l'échec, mais celle de la reprise.</strong> Un système qui reprend une trajectoire interrompue rejoue des lectures sans conséquence, des écritures avec conséquence si l'outil n'est pas idempotent, et des engagements qu'aucune reprise ne peut annuler. <em>La question « l'action a-t-elle réussi » est mal posée ; la question opérante est « que produit son rejeu ».</em></p>
-
 <div class="avert">
   <p><strong>Le fondement de cette distinction est un résultat d'impossibilité, et il est déjà posé.</strong> Le <strong>ch. 1 § 1.5.2</strong> établit que la livraison exactement-une-fois est <strong>irréalisable sous pannes</strong> — instance du problème des deux généraux —, et que la voie praticable est le <strong>traitement</strong> exactement-une-fois, obtenu en combinant une livraison au-moins-une-fois avec un consommateur idempotent. Ce chapitre en tire la conséquence que le ch. 1 lui assigne : <em>si la livraison ne peut être garantie, l'effet doit l'être ; et c'est l'effet, non le message, que la sémantique de ce chapitre prend pour objet.</em></p>
 </div>
-
+<figure class="figure">
+  <img src="../figures/f-48-01-classes-effet.svg" alt="Figure 48.1 — Les trois classes d&#39;effet d&#39;une action d&#39;agent, et ce qu&#39;une reprise produit." />
+  <figcaption><strong>Figure 48.1</strong> — Les trois classes d'effet d'une action d'agent, et ce qu'une reprise produit.</figcaption>
+</figure>
 <h2 id="s482"><span class="sig">§ 48.2</span>Idempotence et rejouabilité des appels d'outils</h2>
-
 <div class="avert">
-  <p><strong>Le plan borne cette section par une formule qu'il faut appliquer à la lettre : « ce que les spécifications protocolaires en disent — </strong>à instruire, jamais présumé<strong> ».</strong> Aucune passe d'instruction protocolaire n'a été conduite pour ce chapitre. Ce qui suit est donc <strong>ce que des pièces rédigées de la somme portent déjà</strong>, plus l'état de l'absence — jamais une lecture de spécification faite ici.</p>
+  <p><strong>Le plan borne cette section par une formule qu'il faut appliquer à la lettre : « ce que les spécifications protocolaires en disent — <em>à instruire, jamais présumé</em> ».</strong> Aucune passe d'instruction protocolaire n'a été conduite pour ce chapitre. Ce qui suit est donc <strong>ce que des pièces rédigées de la somme portent déjà</strong>, plus l'état de l'absence — jamais une lecture de spécification faite ici.</p>
 </div>
-
 <p><strong>Ce que la somme porte, et c'est peu mais c'est précis.</strong> Le <strong>ch. 8 § 8.2.3</strong> établit que les <strong>tâches asynchrones</strong> du protocole agent-outil sont <strong>expérimentales</strong>, que le mécanisme <em>se rapproche, sans s'y identifier</em>, de l'exécution durable de l'intégration d'entreprise, et surtout qu'il <strong>ne fournit pas les garanties de reprise et d'idempotence</strong> d'un moteur durable — <em>leur contrat ne saurait être présenté comme stable</em>. ⚠ <strong>C'est un énoncé sur ce que le mécanisme ne démontre pas, et il est repris tel quel</strong> : R-02 du Vol. III veut qu'un mécanisme se qualifie par ce que sa spécification démontre, jamais par la parenté qu'on lui prête. <em>Le rapprochement avec un moteur durable est précisément ce que le ch. 8 refuse de tenir pour une équivalence.</em></p>
-
 <p><strong>Ce que la somme porte du côté de l'outil.</strong> Le <strong>ch. 4 § 4.4.2</strong> range l'idempotence parmi les propriétés de conception d'un outil — <em>une même requête répétée produit le même état</em>, ce qui protège des réessais et des duplications d'effets de bord. <span class="auteur">Lecture de l'auteur</span> <strong>la conséquence est dissymétrique et elle est le cœur de la section</strong> : <em>l'idempotence est une propriété de l'outil invoqué, pas du protocole qui l'invoque, ni de l'agent qui décide de l'invoquer.</em> <strong>Ce que le socle établit</strong> : la propriété et son intérêt, par le ch. 4. <strong>Ce qu'il n'établit pas</strong> : qu'un protocole agentique la prescrive, l'exprime dans un champ, ou permette à un appelant de savoir si l'outil qu'il appelle la possède.</p>
-
 <div class="avert">
   <p><strong>L'absence, à son degré exact.</strong> <strong>Le socle consolidé de la somme ne documente aucune spécification protocolaire prescrivant l'idempotence d'un appel d'outil, ni aucun champ qui la déclarerait — degré 3, absence de documentation dans le corpus de cet ouvrage.</strong> Deux bornes accompagnent ce constat, et sans elles il serait faux. <em>(1)</em> Le balayage sur lequel il s'appuie n'a pas été mené pour cette question : le <strong>ch. 20 § 20.1</strong> rapporte l'énumération des <strong>huit champs</strong> du type qui décrit un outil, dont aucun ne porte de version, d'empreinte ni de signature — <em>ce balayage-là portait sur l'intégrité, non sur l'idempotence</em>, et il était <strong>borné à une page d'une révision nommée</strong>. <em>L'étendre à l'idempotence serait exactement l'élargissement que le contrôle de bornage du Vol. III écarte.</em> <em>(2)</em> ⚠ <strong>Une révision majeure du protocole agent-outil est annoncée au brouillon</strong> — dont la date n'est pas confirmée à la source (R-09 du Vol. III) — et <strong>tout constat de cette section est à rejouer sur la révision publiée</strong> : il ne vaut pas par avance pour elle.</p>
 </div>
-
 <p><strong>Le lot d'instruction, formulé pour qu'il soit ouvrable.</strong> <em>Question</em> : une spécification protocolaire agentique prescrit-elle, exprime-t-elle ou permet-elle de déclarer l'idempotence d'une opération invocable, et sous quelle forme un appelant peut-il l'établir avant d'invoquer ? <em>Corpus à ouvrir</em>, ⚠ <strong>nommé par ses identifiants et non par des périphrases, faute de quoi le critère de clôture ne serait pas exécutable</strong> : les pages de définition d'outil des révisions courantes de <strong>MCP</strong> (agent-outil) et d'<strong>A2A</strong> (agent-agent), les deux protocoles dont le <strong>ch. 8</strong> tient l'anatomie, dans leur texte intégral ; côté IETF, <strong>RFC 9110</strong> (<em>HTTP Semantics</em>, Fielding, Nottingham et Reschke, 2022), qui définit les méthodes idempotentes — ⚠ <em>le document de l'IETF sur les clés de requête (« Idempotency-Key ») n'est nommé par aucune pièce ni par aucune relève du plan : son identifiant est à établir à l'ouverture du lot, et cet établissement en est le premier acte</em> ; les contrats de tâche des moteurs d'exécution durable relevés au ch. 22 § 22.5. <em>Critère de clôture</em> : un champ nommé, ou un énoncé normatif cité et daté, portant l'idempotence d'une opération — non une recommandation de bonne pratique dans une page de guide. <em>Échec documenté</em> : si le corpus n'en porte pas, l'énoncé qui en sort reste au degré 3, et la thèse du chapitre est <strong>confirmée dans sa lettre sans être établie</strong> — nuance qui doit survivre à l'instruction.</p>
-
+<figure class="figure">
+  <img src="../figures/f-48-02-exactement-une-fois.svg" alt="Figure 48.2 — La seule composition qui tienne sous pannes : livraison au-moins-une-fois et consommateur idempotent." />
+  <figcaption><strong>Figure 48.2</strong> — La seule composition qui tienne sous pannes : livraison au-moins-une-fois et consommateur idempotent.</figcaption>
+</figure>
 <h2 id="s483"><span class="sig">§ 48.3</span>Compensation et sagas au grain de l'agent</h2>
-
 <p><strong>Le patron est acquis et ne se reconstruit pas ici.</strong> Le <strong>ch. 1 § 1.6.2.2</strong> pose la saga — renoncement à l'atomicité globale au profit d'une suite de transactions locales, chacune assortie d'une <strong>compensation</strong> qui <strong>annule sémantiquement</strong> son effet —, ses deux variantes orchestrée et chorégraphiée, et le régime de cohérence dans lequel ce renoncement s'inscrit. Le <strong>ch. 22 § 22.5</strong> porte l'exécution durable, sa reprise et son rejeu. <em>Ce chapitre applique ; il ne réexpose ni l'un ni l'autre.</em></p>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>ce que « au grain de l'agent » change, et c'est la seule proposition propre de la section.</strong> Une saga classique suppose que l'ensemble des étapes soit <strong>connu du concepteur</strong> : la compensation de l'étape <em>k</em> est écrite en même temps que l'étape <em>k</em>. Un agent qui <strong>compose sa trajectoire à l'exécution</strong> — c'est la définition même que le ch. 22 donne de l'orchestration pilotée par un agent générateur de plans — produit des suites d'étapes que personne n'a écrites, donc des suites dont personne n'a écrit les compensations. <strong>Ce que le socle établit</strong> : le patron et ses variantes (ch. 1 § 1.6.2.2) ; que la trajectoire d'un agent générateur de plans n'est pas fixée à la conception (ch. 22 § 22.5, avec ses niveaux propres). <strong>Ce qu'il n'établit pas</strong> : qu'un mécanisme de compensation ait été spécifié pour une trajectoire composée à l'exécution, ni qu'un moteur durable en fournisse un. <strong>Le socle consolidé ne documente aucun dispositif de compensation dont la portée soit une trajectoire d'agent non fixée à la conception — degré 3.</strong></p>
-
 <div class="avert">
   <p><strong>Deux bornes ferment cette section, et la seconde est une décision d'auteur qu'il est interdit de rouvrir ici.</strong></p>
 </div>
-
 <p><em>(1)</em> <strong>La compensation n'est pas l'annulation.</strong> Elle <em>annule sémantiquement</em> — un remboursement compense un débit, il ne le supprime pas ; les deux écritures subsistent. C'est la formule du <strong>ch. 1 § 1.6.2.2</strong>, et elle décide de tout le § 48.4 : <em>dans un système d'enregistrement, la compensation laisse une trace, et c'est cette trace que la réconciliation lit.</em></p>
-
 <p><em>(2)</em> ⚠ <strong>L'accord entre agents sous asynchronie et défaillance partielle n'est pas traité, et cette absence est un périmètre assumé, non un oubli.</strong> Le <strong>ch. 1 § 1.6.2.2</strong> pose les résultats d'impossibilité <strong>au grain pré-agentique</strong> et déclare qu'il est le <strong>seul endroit de l'ouvrage</strong> où ils figurent ; la <strong>décision d'auteur D-7</strong>, prise le 27 juillet 2026 (risque 15 du TOC), a arbitré la matière en <strong>périmètre assumé et déclaré</strong>, ce qui <strong>ferme</strong> les ch. 6, 37 et <strong>48</strong>. <em>Y ouvrir une section ne rouvrirait pas ce chapitre : elle rouvrirait la décision.</em> ⚠ <strong>Et la conséquence pour le lecteur est celle que le ch. 1 énonce</strong> : les architectures inter-institutions que la somme prescrit — maillage inter-domaines, vérification d'agent tiers, rails de paiement — <strong>opèrent sous un régime de défaillance que l'ouvrage ne caractérise pas</strong>. <em>Un périmètre assumé n'est pas un angle mort résorbé : c'est un angle mort dont le lecteur est prévenu.</em> Le <strong>ch. 49</strong> en enregistre l'état final.</p>
-
 <div class="avert">
   <p><strong>Un fait de plan est consigné ici parce qu'il est le motif du risque 15 et qu'il se lit mal ailleurs</strong> : cette section est, selon le TOC — <strong>v0.25 au constat d'origine, mention reconduite jusqu'à la v0.30</strong> —, la <strong>seule occurrence de « sagas » de toute la zone des chapitres</strong>, et elle l'est <strong>au grain d'une action unique</strong>. <em>C'est ce constat, et non une préférence d'architecture, qui a fondé le risque 15 — et D-7 l'a borné sans le combler.</em></p>
 </div>
-
+<figure class="figure">
+  <img src="../figures/f-48-03-compensation.svg" alt="Figure 48.3 — Compensation et sagas au grain de l&#39;agent : ce qui se défait, et ce qui se compense." />
+  <figcaption><strong>Figure 48.3</strong> — Compensation et sagas au grain de l'agent : ce qui se défait, et ce qui se compense.</figcaption>
+</figure>
 <h2 id="s484"><span class="sig">§ 48.4</span>Réconciliation des flux financiers</h2>
-
 <p><strong>La thèse place ici le coût maximal du silence, et cette section dit pourquoi — sans pouvoir l'établir.</strong> Trois propriétés se cumulent dans un système d'enregistrement financier, et chacune est portée par un renvoi, non par une source de ce chapitre.</p>
-
 <p><em>Premièrement, l'irréversibilité.</em> Le <strong>Vol. I</strong> <code>Monographie</code> <strong>§5.7.5</strong> traite les paiements temps réel et leur irréversibilité, et son <strong>§7.9.3</strong> — repris au <strong>ch. 49 § 49.9</strong> — pose que le règlement sur monnaie programmable est <strong>sans mécanisme de rétrofacturation</strong>, de sorte qu'une erreur d'agent n'y est pas rattrapable <em>a posteriori</em>. ⚠ <strong>Les deux entrées sont en [C]</strong> : le Vol. I entre au régime le plus faible, sa vérification portant sur ses références et non sur le contenu de ses affirmations (PRD §7.1) — <em>elles corroborent, elles ne portent pas</em>. ⚠ <strong>Et une formulation est imposée</strong> : le rail temps réel canadien se nomme sans jamais s'écrire « lancé » (réserve <strong>F-29 du Vol. II</strong>, garde-fou <strong>R-4</strong> du même volume — ⚠ <em>le Vol. III porte lui aussi une F-29, sur tout autre objet : la forme nue serait indécidable</em>) ; le ch. 33 en est le siège, et ce chapitre n'en date rien.</p>
-
 <p><em>Deuxièmement, l'encapsulation.</em> Le <strong>Vol. I</strong> <code>Monographie</code> <strong>§5.7.6</strong> porte la règle invariante selon laquelle <strong>aucun agent n'accède en écriture directe au grand livre</strong>, la couche d'exposition ne publiant que des capacités <strong>bornées et idempotentes</strong> — en <strong>[C]</strong> de nouveau. <em>L'idempotence y est donc une exigence de l'exposition, ce qui rejoint exactement le constat dissymétrique du § 48.2 : la propriété est portée par ce qui expose l'outil, jamais par ce qui l'appelle.</em></p>
-
 <p><em>Troisièmement, l'écart comptable.</em> <span class="auteur">Lecture de l'auteur</span> <strong>c'est la seconde proposition de la thèse, et elle est une lecture, non un fait</strong> : un virement dont l'ordre est parti et dont la confirmation n'est pas revenue laisse deux systèmes dans deux états, et <em>ce désaccord n'est pas un défaut de supervision, c'est une différence entre deux enregistrements</em>. <strong>Ce que le socle établit</strong> : l'irréversibilité et l'encapsulation, en [C]. <strong>Ce qu'il n'établit pas</strong> : qu'un tel écart ait été observé sur un flux agentique, ni qu'un dispositif de réconciliation ait été spécifié pour ce cas. <strong>Le socle consolidé ne documente aucun mécanisme de réconciliation dont le périmètre déclaré couvre les effets d'une action d'agent — degré 3.</strong></p>
-
 <div class="avert">
   <p><strong>Trois renvois de cette section portent la matière que le chapitre n'a pas, et leurs trois cibles sont désormais dans le MÊME état — ce qui déplace la réserve sans la lever.</strong> Le plan situe les flux ISO 20022 au <strong>ch. 33</strong> et au <strong>ch. 45 § 45.12</strong>, et le <strong>trou de responsabilité</strong> au <strong>ch. 36 § 36.2.6</strong> : ⚠ <strong>les trois chapitres sont écrits et committés depuis, hors de cette passe, et aucun n'a été relu par elle</strong> — les deux derniers étaient encore des renvois de plan à la rédaction. <em>La conséquence est à écrire plutôt qu'à taire : la partie de cette section qui rattacherait la sémantique d'effet à un flux de règlement réel reste celle qui manque, mais elle ne manque plus faute de chapitre — elle manque faute d'une confrontation que cette passe n'a pas conduite, et <strong>une cible qui existe sans avoir été lue n'est pas plus opposable qu'une cible absente</strong>.</em></p>
 </div>
-
 <h2 id="s485"><span class="sig">§ 48.5</span>Tracer l'effet, pas seulement l'appel</h2>
-
 <p><strong>La question est étroite : ce qu'une trace d'exécution enregistre est un appel, non son effet.</strong> Le plan situe le <em>chaînon manquant</em> au <strong>ch. 38 § 38.5</strong> — ⚠ <strong>écrit et committé depuis, hors de cette passe, et non relu par elle</strong> —, et ce chapitre le prolonge au seul grain qui lui appartient : <em>ce qui manque n'est pas la trace de l'appel, c'est la jointure entre l'appel tracé et l'effet enregistré ailleurs.</em></p>
-
 <p><strong>Deux constats hérités du Vol. III cadrent la difficulté, et ils sont plus précis que ce que ce chapitre pourrait produire.</strong> <em>(1)</em> Sa <strong>lacune 21</strong> — <em>corrélation entre trace d'exécution et chaîne de mandat protocolaire</em> — est déclarée <strong>non instruite</strong> : la pièce de jonction n'a été ouverte par aucun de ses lots. <em>(2)</em> Le <code>Monographie</code> <strong>§26.3</strong> du même volume établit que les compteurs d'appels des conventions relevées comptent les appels <strong>directs</strong>, les appels de sous-agents ou d'agents auxquels la tâche est transférée étant <strong>attribués séparément</strong> — de sorte qu'<em>une chaîne de délégation n'est pas reconstituable par sommation de ces compteurs</em>, non par insuffisance de l'instrument mais <strong>par construction déclarée de sa sémantique</strong>. ⚠ <strong>Les deux constats entrent sous G-4 non franchie</strong> : ils viennent d'un volume qui se déclare <em>rédigé mais non publiable</em>, et <em>le volet de fond de la collation reste dû</em>.</p>
-
 <div class="avert">
   <p><strong>Le franchissement de G-3 a durci la réserve du second plutôt que de la lever, et c'est le fait neuf de cette section.</strong> L'entrée qui l'établit est <strong><code>F-96</code> du Vol. III</strong>, portée par sa source avec la marque <em>vote dû, non conduit</em> ; le <strong>socle consolidé l'EXCLUT</strong> — elle est l'une des <strong>deux entrées écartées pour dette de vote</strong>, avec <strong><code>F-92</code> du Vol. III</strong> (§6.1 du socle). ⚠ <strong>Elle ne porte donc aucun identifiant <code>S-nnn</code> et n'est versable à aucun titre</strong> : <em>elle reste citable avec sa marque, exactement comme ici, et elle ne peut jamais devenir centrale.</em> La <strong>lacune 21</strong>, elle, entre au socle avec l'entrée qui la déclare — <strong><code>S-140</code></strong>, dont la re-datation du 28 juillet 2026 constate qu'elle <strong>demeure ouverte et non instruite</strong>. <em>La réserve du premier constat trouve donc un appui au socle, celle du second une exclusion — et aucun des deux ne devient un fait.</em></p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>ce que ces deux constats permettent de dire de l'effet, et c'est neuf :</strong> si une chaîne d'appels n'est pas reconstituable, <em>l'effet observé au bout de la chaîne n'est rattachable à aucun mandat déterminé</em>. <strong>Ce que le socle établit</strong> : la sémantique des compteurs et la non-instruction de la jointure (Vol. III, avec ses réserves). <strong>Ce qu'il n'établit pas</strong> : qu'une clé de jointure existe, ni qu'aucune n'existe. <strong>Le socle consolidé ne documente aucune clé rattachant un effet enregistré à la trace de l'appel qui l'a produit — degré 3.</strong></p>
-
 <div class="avert">
   <p><strong>Une taxonomie candidate existe déjà, en vocabulaire de sûreté, et elle dit la même chose depuis l'autre bout.</strong> Une <strong>préimpression adverse de mai 2026</strong> tient la <strong>détection des divergences entre l'action effectuée et son enregistrement d'audit</strong> pour la propriété porteuse d'un <em>runtime</em> agentique, et en énumère <strong>quatre</strong> : contournement de garde, falsification du journal, échec silencieux de l'hôte, cible erronée. <em>C'est, dit autrement, la question de ce chapitre.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>Deux réserves, et aucune n'est facultative.</strong> <em>(1)</em> La préimpression <strong>n'est pas révisée par les pairs</strong>, et <strong>son texte n'a pas été ouvert par cette passe</strong> — ce qui est rapporté est ce que la relève du plan en porte, <strong>degré 3</strong> sur tout le reste. <em>(2)</em> Elle <strong>propose une implémentation concurrente de l'objet qu'elle mesure</strong> : son intérêt est inverse de celui de l'éditeur, <em>ce qui ne le neutralise pas</em> mais interdit de la lire comme un relevé neutre. <strong>Taxonomie à instruire ; aucun de ses résultats chiffrés n'est repris ici</strong> — et <em>un chiffre non repris ne se devine pas davantage qu'il ne se cite</em>.</p>
 </div>
-
 <div class="avert">
-  <p><strong>Le lot d'instruction, et il commence par un identifiant qui manque.</strong> <em>Question</em> : la taxonomie des quatre divergences résiste-t-elle à l'ouverture de son texte, et l'une des quatre porte-t-elle une clé rattachant un effet enregistré à l'appel qui l'a produit ? <em>Corpus à ouvrir</em> : ⚠ <strong>la relève v0.10 du plan ne porte ni identifiant arXiv, ni titre, ni auteurs pour cette préimpression de mai 2026 — seule sa date et ses quatre divergences nommées la désignent.</strong> <em>Établir cet identifiant est le premier acte du lot, non son résultat</em> : sans lui, aucun tiers ne peut ouvrir la même source, et <em>un critère de clôture qui ne nomme pas la source qu'il attend n'est pas opposable.</em> S'y ajoutent les entrées nommées ci-dessus : <strong><code>S-140</code></strong> pour la <strong>lacune 21</strong>, et <strong><code>F-96</code> du Vol. III</strong> pour le <code>Monographie</code> <strong>§26.3</strong> — ⚠ <em>cette dernière hors socle consolidé, l'instruction du lot devant donc passer par sa source et non par une ligne de l'Annexe B.</em> <em>Critère de clôture</em> : le texte de la préimpression, cité par son identifiant et sa version, énonçant la clé de jointure <strong>ou</strong> son absence. <em>Échec documenté</em> : si le texte ne la porte pas, l'énoncé qui en sort reste au <strong>degré 3</strong>, et la préimpression sort du corpus candidat plutôt que d'y demeurer indéfinie.</p>
+  <p><strong>Le lot d'instruction, et il commence par un identifiant qui manque.</strong> <em>Question</em> : la taxonomie des quatre divergences résiste-t-elle à l'ouverture de son texte, et l'une des quatre porte-t-elle une clé rattachant un effet enregistré à l'appel qui l'a produit ? <em>Corpus à ouvrir</em> : ⚠ <strong>la relève v0.10 du plan ne porte ni identifiant arXiv, ni titre, ni auteurs pour cette préimpression de mai 2026 — seules sa date et ses quatre divergences nommées la désignent.</strong> <em>Établir cet identifiant est le premier acte du lot, non son résultat</em> : sans lui, aucun tiers ne peut ouvrir la même source, et <em>un critère de clôture qui ne nomme pas la source qu'il attend n'est pas opposable.</em> S'y ajoutent les entrées nommées ci-dessus : <strong><code>S-140</code></strong> pour la <strong>lacune 21</strong>, et <strong><code>F-96</code> du Vol. III</strong> pour le <code>Monographie</code> <strong>§26.3</strong> — ⚠ <em>cette dernière hors socle consolidé, l'instruction du lot devant donc passer par sa source et non par une ligne de l'Annexe B.</em> <em>Critère de clôture</em> : le texte de la préimpression, cité par son identifiant et sa version, énonçant la clé de jointure <strong>ou</strong> son absence. <em>Échec documenté</em> : si le texte ne la porte pas, l'énoncé qui en sort reste au <strong>degré 3</strong>, et la préimpression sort du corpus candidat plutôt que d'y demeurer indéfinie.</p>
 </div>
-
 <p>☑ ⚠ <strong>DEUX DEMI-RÉPONSES EXISTENT DÉJÀ, et ne pas les inventorier était le reproche le plus fondé que l'arbitrage externe adresse à ce chapitre.</strong> <em>La question qu'il pose est neuve ; le domaine n'est pas vierge, et une question neuve posée sur un domaine réputé vierge est une question mal posée.</em> Les deux ont été relevées à leur source le 30 juillet 2026 — <strong>fiches de document, non textes extraits</strong>.</p>
-
 <p><strong>Première demi-réponse — l'en-tête d'idempotence, côté appel</strong> (relève le § 48.2). Le brouillon <strong><code>draft-ietf-httpapi-idempotency-key-header</code></strong>, <em>The Idempotency-Key HTTP Header Field</em>, de <strong>Jena et Dalal</strong>, groupe de travail <strong>httpapi</strong> de l'IETF, spécifie un en-tête par lequel un client marque une requête non idempotente — POST, PATCH — d'une clé permettant au serveur de <strong>reconnaître un réessai plutôt que de l'exécuter deux fois</strong>. ⚠ <strong>Son statut se dit à chaque mention et il est sévère (R-09)</strong> : <strong>révision -07 du 15 octobre 2025</strong>, et le document est <strong>EXPIRÉ</strong> — <em>il n'a pas atteint le stade de RFC, et rien n'établit qu'il l'atteindra.</em> ⚠ <strong>La conclusion du § 48.2 n'est donc pas levée</strong> : <em>l'écosystème n'a même pas d'en-tête normalisé pour dire « ceci est un réessai » — il en a eu un projet, et ce projet a expiré</em>, ce qui est un constat plus dur que l'absence pure.</p>
-
 <p><strong>Seconde demi-réponse — la clé de bout en bout, côté effet</strong> (relève le § 48.4 et la question propre de cette section). L'écosystème des paiements normalisés porte depuis des années <strong>exactement l'objet que ce chapitre déclare introuvable</strong> : l'<strong>UETR</strong> — <em>Unique End-to-end Transaction Reference</em> —, identifiant <strong>UUID de version 4</strong> (RFC 4122), <strong>obligatoire</strong> dans les messages de valeur ISO 20022 <code>pacs.008</code>, <code>pacs.009</code> et <code>pacs.004</code>, <strong>inchangé sur toute la chaîne de paiement</strong>, et exploité par le dispositif de suivi qui recueille l'état auprès de chaque établissement traversé. S'y ajoute la <strong>pratique de réconciliation</strong> attachée — messages d'exception et d'investigation adossés à cette même clé.</p>
-
 <div class="avert">
-  <p><strong>Quatre bornes, et la troisième interdit d'en conclure ce qu'on aimerait en conclure.</strong> <em>(1)</em> <strong>L'UETR répond à la question dans le domaine du paiement, et il y répond bien</strong> : <em>une clé unique, obligatoire, immuable, portée par le message lui-même et non par l'infrastructure qui le transporte.</em> <em>(2)</em> ⚠ <strong>Il ne rattache pas un effet à l'appel d'agent qui l'a produit</strong> : il rattache un <strong>message de paiement</strong> à ses <strong>états successifs</strong>. <em>Entre l'appel d'outil qu'un agent émet et le <code>pacs.008</code> qu'un système bancaire finit par produire, l'UETR ne dit rien</em> — <strong>la jointure que ce chapitre cherche reste absente, degré 3</strong>, et l'écrire autrement serait la transposition abusive que le ch. 22 proscrit. <em>(3)</em> ⚠ <strong>Le patron, en revanche, est instructif et il est transférable</strong> : <em>une clé de jointure ne s'obtient pas en corrélant des traces après coup — elle s'obtient en la rendant <strong>obligatoire dans le contrat</strong>, portée par la charge utile, immuable, et vérifiable par chaque maillon.</em> <strong>Lecture de l'auteur</strong> : c'est la seule voie que ce chapitre puisse nommer, et <strong>le socle ne l'établit pour aucun protocole agentique</strong> — ni MCP, ni A2A, ni AP2 n'imposent un identifiant de bout en bout de cette nature. <em>(4)</em> <strong>Aucun des deux ne monte au socle</strong> : repérages datés, ni l'un ni l'autre extrait.</p>
+  <p><strong>Quatre bornes, et la troisième interdit d'en conclure ce qu'on aimerait en conclure.</strong> <em>(1)</em> <strong>L'UETR répond à la question dans le domaine du paiement, et il y répond bien</strong> : <em>une clé unique, obligatoire, immuable, portée par le message lui-même et non par l'infrastructure qui le transporte.</em> <em>(2)</em> ⚠ <strong>Il ne rattache pas un effet à l'appel d'agent qui l'a produit</strong> : il rattache un <strong>message de paiement</strong> à ses <strong>états successifs</strong>. <em>Entre l'appel d'outil qu'un agent émet et le <code>pacs.008</code> qu'un système bancaire finit par produire, l'UETR ne dit rien</em> — <strong>la jointure que ce chapitre cherche reste absente, degré 3</strong>, et l'écrire autrement serait la transposition abusive que le ch. 22 proscrit. <em>(3)</em> ⚠ <strong>Le patron, en revanche, est instructif et il est transférable</strong> : <em>une clé de jointure ne s'obtient pas en corrélant des traces après coup — elle s'obtient en la rendant <strong>obligatoire dans le contrat</strong>, portée par la charge utile, immuable, et vérifiable par chaque maillon.</em> <span class="auteur">Lecture de l'auteur</span> c'est la seule voie que ce chapitre puisse nommer, et <strong>le socle ne l'établit pour aucun protocole agentique</strong> — ni MCP, ni A2A, ni AP2 n'imposent un identifiant de bout en bout de cette nature. <em>(4)</em> <strong>Aucun des deux ne monte au socle</strong> : repérages datés, ni l'un ni l'autre extrait.</p>
 </div>
-
 <div class="avert">
   <p><strong>Le lot du § 48.5 s'en trouve élargi, non clos</strong> : à la préimpression de mai 2026 s'ajoutent <strong>deux corpus nommés et opposables</strong> — le registre de documents de l'IETF pour l'en-tête d'idempotence, le corpus ISO 20022 pour l'UETR et les messages d'investigation. <em>Un lot qui nomme trois corpus est exécutable ; un lot qui n'en nommait qu'un, dont l'identifiant manquait, ne l'était pas.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>Ce que ce chapitre lègue, et ce qu'il ne lègue pas.</strong> Il lègue <strong>une taxonomie de travail</strong> (§ 48.1), <strong>deux lots d'instruction</strong> (§ 48.2, § 48.5) — ⚠ <em>le second élargi le 30 juillet 2026 à deux corpus nommés</em> — et <strong>le siège</strong> que cinq pièces rédigées attendaient. Il ne lègue <strong>aucun mécanisme</strong> : ni idempotence prescrite, ni compensation spécifiée, ni clé de jointure — ⚠ <em>mais il lègue désormais le <strong>patron</strong> d'une clé de jointure qui fonctionne ailleurs, et la borne qui interdit de la transposer sans travail.</em> <em>La somme sait désormais nommer ce qui advient quand une action d'agent réussit à moitié ; elle ne sait pas encore ce qu'un exploitant doit en faire, et le ch. 49 § 49.14 l'enregistre à ce titre.</em></p>
 </div>
+<hr />
 
 <footer class="pied">
   <p><strong>Vol. IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em></strong> · Livre V, chapitre 48. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau, M.Sc. IT.</p>
   <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme (gel unique : 27 juillet 2026).</p>
-  <p><strong>†</strong> Renvoi à une section retirée de ce rendu — la note de statut, hors corps — conservée au fichier Markdown jumeau.</p>
 </footer>
 
 </main>

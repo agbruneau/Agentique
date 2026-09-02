@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chapitre 29 — Le pont : des contraintes réglementaires aux frames déterministes · Interopérabilité et Orchestration en Entreprise Agentique</title>
-<meta name="description" content="Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier. Deuxième mouvement — le cadre réglementaire canadien (ch. 25-30). Cinquième chapitre du mouvement, et pivot du Livre : les quatre précédents ont établi un état du droit ; celui-ci dit ce qu&#x27;il faut">
+<meta name="description" content="Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier. Deuxième mouvement — le cadre réglementaire canadien (ch. 25-30). Cinquième chapitre du mouvement, et **pivot du Livre** : les quatre précédents ont établi un état du droit ; celui-ci dit ce qu&#x27;il faut construire. ⚠ **Chapitre conservé intact au plan** — la structure de sa source est reprise sans redécoupage">
 <meta name="author" content="André-Guy Bruneau, M.Sc. IT">
 <meta name="color-scheme" content="dark">
 <style>
@@ -443,6 +443,17 @@ tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
 tbody td:first-child { color: var(--texte); font-weight: 600; }
 .legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
 
+/* -------------------------------------------------------------- figures */
+/* Les SVG du volume sont dessinés pour le PDF, donc sur fond clair, et ils
+   portent ce fond eux-mêmes — sans quoi il faudrait maintenir deux variantes
+   de chaque figure. Sur ce thème sombre, ils se posent donc comme un carton ;
+   le padding empêche le fond de la figure de toucher le bord du cadre. */
+.figure { margin: 2.1rem 0 1.9rem; }
+.figure img { display: block; width: 100%; height: auto; border-radius: 7px;
+              border: 1px solid var(--trait); background: #fdfbf9; padding: 0.6rem; }
+.figure figcaption { font-size: 0.8rem; font-style: italic; color: var(--texte-faible);
+                     margin-top: 0.65rem; padding-left: 0.15rem; }
+
 /* --------------------------------------------------------------- listes */
 ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
 ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
@@ -531,10 +542,10 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <div class="nav__marque">Interopérabilité et Orchestration en Entreprise Agentique</div>
   <div class="nav__sous">Livre III · Chapitre 29</div>
   <ol>
-    <li><a href="#s290"><span class="num">29.0</span>Ouverture : traduire n&#x27;est pas lire</a></li>
+    <li><a href="#s290"><span class="num">29.0</span>Ouverture : traduire n'est pas lire</a></li>
     <li><a href="#s291"><span class="num">29.1</span>La table de traduction : ce que les exigences imposent aux frames</a></li>
     <li><a href="#s292"><span class="num">29.2</span>Le verdict empirique et la convergence à trois sources</a></li>
-    <li><a href="#s293"><span class="num">29.3</span>L&#x27;imputabilité : qui répond du comportement émergent ?</a></li>
+    <li><a href="#s293"><span class="num">29.3</span>L'imputabilité : qui répond du comportement émergent ?</a></li>
     <li><a href="#s294"><span class="num">29.4</span>Le principe directeur</a></li>
   </ol>
   <div class="nav__pied">
@@ -549,221 +560,226 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 <header class="titre">
   <div class="titre__fil">Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier</div>
   <h1><span class="chap">Chapitre 29</span>Le pont : des contraintes réglementaires aux frames déterministes</h1>
-  <p class="titre__situe">Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier. Deuxième mouvement — le cadre réglementaire canadien (ch. 25-30). Cinquième chapitre du mouvement, et <strong>pivot du Livre</strong> : les quatre précédents ont établi un état du droit ; celui-ci dit ce qu'il faut construire. ⚠ <strong>Chapitre conservé intact au plan</strong> — la structure de sa source est reprise sans redécoupage</p>
+  <p class="titre__situe">Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier. Deuxième mouvement — le cadre réglementaire canadien (ch. 25-30). Cinquième chapitre du mouvement, et **pivot du Livre** : les quatre précédents ont établi un état du droit ; celui-ci dit ce qu'il faut construire. ⚠ **Chapitre conservé intact au plan** — la structure de sa source est reprise sans redécoupage</p>
 </header>
 
 <!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
      Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
-     que `build/assemble.py` pour le PDF. L'appareil de gouvernance vit au .md jumeau, qui reste la
-     seule source, et `verifier-piece.py` [6] refuse désormais un rendu qui le recopierait. -->
+     que `build/assemble.py` pour le PDF et que `PRD/decompte.sh` pour la volumétrie. L'appareil de
+     gouvernance vit au .md jumeau, qui reste la seule source, et `build/verifier-piece.py` refuse
+     un rendu qui le recopierait. -->
 
 <div class="avert">
   <p><strong>La thèse a été collationnée contre le texte rédigé de sa source avant la rédaction</strong> (décision 14 du TOC). <strong>Domaine de balayage : une thèse examinée, zéro réalignée — et deux membres retranchés dont l'un se transporte.</strong> La thèse du Vol. II <em>Monographie</em> ch. 13 porte <strong>trois</strong> propositions ; celle du plan en reprend deux. <strong>Le membre retranché est le troisième</strong> — « le <em>responsibility gap</em> éclaire l'imputabilité — <strong>sous l'article 12.1 du moins</strong>, elle pèse sur l'assujetti, qui ne peut désigner de tiers » — ⚠ <em>et il n'a pas disparu : le plan l'a versé à la thèse du <strong>ch. 27</strong>, où il est arrivé <strong>sans sa restriction</strong></em> (remontée R-IV-87, ouverte là-bas). Le second retranchement est <strong>le cardinal</strong> — « neuf des onze entrées de la table du §13.1 » —, ⚠ <strong>et le plan le retranche à bon droit</strong> : <em>il déclare expressément que ces cardinaux sont ceux du Vol. II, qu'ils ne se recopient pas, et que <strong>le compte se re-mesure à la rédaction</strong>.</em> <strong>Il l'a été</strong> — voir § 29.1.</p>
 </div>
-
 <h2 id="s290"><span class="sig">§ 29.0</span>Ouverture : traduire n'est pas lire</h2>
-
 <p><strong>Les quatre chapitres qui précèdent ont établi un état du droit ; aucun n'a dit ce qu'il fallait construire.</strong> C'est l'office de celui-ci, <strong>et il faut dire d'emblée à quel prix il s'en acquitte</strong>.</p>
-
 <div class="avert">
   <p><strong>Traduire une exigence juridique en contrainte d'architecture n'est pas une opération de lecture : c'est un raisonnement d'auteur, qui engage la somme et non le régulateur.</strong> <em>Le lecteur trouvera donc ici plus d'inférences marquées que partout ailleurs dans le Livre — les ch. 25 à 28 rapportaient des textes ; celui-ci construit.</em> ⚠ <strong>Et la somme n'émet aucun avis juridique</strong> (PRD Vol. II §3).</p>
 </div>
-
 <p>Le chapitre soutient <strong>trois propositions</strong>. <em>La première</em> : la plupart des exigences canadiennes examinées se traduisent en cadres (<em>frames</em>) d'architecture — ⚠ <strong>mais la forme de la table mesure d'abord ce que le socle a lu, et non ce que les textes exigent</strong>. <em>La seconde</em> : trois sources convergent sur l'encadrement déterministe des processus réglementés — ⚠ <strong>mais elles ne sont pas indépendantes, et le socle n'établit, pour aucune, d'application au Canada</strong>. <em>La troisième</em> : l'écart de responsabilité posé au <strong>ch. 22 § 22.10</strong> rencontre dans les textes canadiens une constante que le manifeste ne pouvait pas connaître — ⚠ <strong>constante qui est une lecture de l'auteur, non un énoncé du socle</strong>.</p>
-
 <h2 id="s291"><span class="sig">§ 29.1</span>La table de traduction : ce que les exigences imposent aux frames</h2>
-
 <div class="avert">
   <p><strong>Une précaution de méthode s'impose, faute de quoi la table serait un exercice de plausibilité.</strong> <em>Une exigence ne devient une contrainte d'architecture que si <strong>trois choses sont connues</strong> : ce que le texte impose, <strong>à qui</strong>, et <strong>sur quel objet</strong>. Lorsque l'un des trois manque au socle, aucune contrainte n'en est dérivée.</em></p>
 </div>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Texte</th><th>Ce que le socle établit</th><th>Ce que le cadre doit porter</th><th>Statut du lien</th></tr></thead>
-  <tbody>
-    <tr><td><strong>E-23 — périmètre</strong> <em>(F-09 du Vol. II, strate [A] ; anticipation en [B])</em></td><td>définition de « modèle » englobant les méthodes d'IA et d'apprentissage automatique ; en vigueur le 1ᵉʳ mai 2027, institutions financières fédérales ; <strong>en [B]</strong> : l'anticipation de modèles à apprentissage et décision autonomes</td><td>⚠ <strong>un périmètre, non un cadre</strong> : cette entrée <strong>ouvre la porte</strong> que les cinq suivantes franchissent</td><td>périmètre établi ; <strong>couverture implicite via la définition de modèle</strong>, tenue pour acquise par les analystes — ⚠ <strong>inférence d'analystes</strong> (PRD Vol. II §8.2.4)</td></tr>
-    <tr><td><strong>E-23 — inventaire</strong> <em>(strate [B])</em></td><td>est <strong>attendu</strong> un inventaire d'entreprise des modèles à risque inhérent non négligeable, « accurate, evergreen, and subject to robust controls » ; champs minimaux à l'appendice</td><td>l'ensemble de ce qui peut être invoqué doit être <strong>énumérable avant l'exécution</strong>, donc <strong>déclaré par le cadre</strong></td><td>⚠ <strong>inférence d'auteur</strong> : E-23 <strong>attend</strong> un inventaire exact ; <em>elle ne dit pas ce qui le rend exact</em></td></tr>
-    <tr><td><strong>E-23 — cotation de risque</strong> <em>(strate [B])</em></td><td>une cote de risque <strong>devrait</strong> être assignée à chaque modèle ; l'intensité du dispositif « commensurate with » le risque ; le <strong>degré d'autonomie</strong> est un <strong>facteur qualitatif</strong> de cotation</td><td>la cote doit être <strong>connue au point d'invocation</strong> — sans quoi la proportionnalité attendue n'a aucune prise sur le système en exécution</td><td>⚠ <strong>inférence d'auteur, et la plus longue de la table</strong> : <em>E-23 attend qu'une cote soit assignée, non qu'elle soit lisible à l'exécution.</em> ⚠ <strong>L'objet coté est le modèle, non l'assemblage</strong></td></tr>
-    <tr><td><strong>E-23 — cycle de vie</strong> <em>(strate [B])</em></td><td>cinq composantes — conception, revue, déploiement, surveillance, mise hors service —, « <strong>not necessarily sequential</strong> »</td><td>la <strong>mise hors service</strong> doit s'interposer <strong>entre la décision et l'invocation</strong> : un point de passage, non une écriture au registre</td><td>⚠ <strong>inférence d'auteur</strong> — <em>la plus nette des cinq</em></td></tr>
-    <tr><td><strong>E-23 — documentation</strong> <em>(strate [B])</em></td><td>normes de documentation de modèle, dont les <strong>limites et restrictions d'usage</strong> ; usages approuvés, dépendances, sources de données</td><td>l'<strong>usage approuvé</strong> doit être <strong>opposable</strong>, donc porté par ce qui autorise l'invocation — <em>et non seulement consigné</em></td><td>⚠ <strong>inférence d'auteur</strong> — <em>écart maximal entre ce que le texte attend (consigner) et ce que l'auteur en tire (refuser)</em></td></tr>
-    <tr><td><strong>E-23 — surveillance continue</strong> <em>(strate [B])</em></td><td>fréquence, portée et critères par palier ; suivi de la performance, de l'<strong>usage</strong>, des <strong>données d'entrée</strong> et des <strong>dépendances externes</strong> ; processus traitant « <strong>autonomous decision making, autonomous re-parametrization</strong> » et la dérive</td><td>les observations d'usage et de données d'entrée n'existent que si un point de passage les <strong>émet</strong> : <em>le cadre est producteur d'observations avant d'être producteur de décisions</em></td><td>⚠ <strong>inférence d'auteur — la mieux ancrée textuellement</strong> : <em>c'est la seule attente dont le libellé <strong>nomme les opérations autonomes</strong></em></td></tr>
-    <tr><td><strong>Ligne directrice IA de l'AMF</strong> <em>(F-25 du Vol. II)</em></td><td>⚠ <strong>le calendrier seulement</strong> — et une modalité, une articulation et une définition versées par le Vol. III (ch. 27 § 27.1)</td><td>⚠ <strong>rien de dérivable</strong> — <em>le contenu du texte n'est pas au socle</em></td><td><strong>lacune ouverte</strong> (PRD Vol. II §10.4) — <em>la seule entrée qui ne produise rien du tout</em></td></tr>
-    <tr><td><strong>ACVM 11-348 — définition</strong> <em>(F-26 du Vol. II)</em></td><td>définition incluant explicitement des niveaux variables d'<strong>autonomie</strong> et d'<strong>adaptativité après déploiement</strong> ⚠ <em>(instrument en anglais ; le socle n'en porte pas le libellé d'origine — CA-5 du Vol. II)</em> ; doctrine : les lois existantes s'appliquent, l'avis ne crée ni ne modifie aucune exigence</td><td>distinguer l'<strong>adaptation</strong> d'instance de l'<strong>évolution</strong> du modèle de processus (<strong>ch. 22 § 22.8</strong>) et <strong>soumettre la seconde à un régime propre</strong></td><td>⚠ <strong>inférence d'auteur</strong> : <em>le socle établit les deux textes, non leur rapprochement</em></td></tr>
-    <tr><td><strong>Art. 12.1 — informer</strong> <em>(F-27 du Vol. II)</em></td><td>informer « au plus tard au moment de la décision » — ⚠ <strong>seule des obligations à n'être subordonnée à aucune demande</strong></td><td>le <strong>moment de la décision</strong> doit être un <strong>événement émis par le cadre</strong>, identifiable et daté</td><td>⚠ <strong>inférence d'auteur</strong> (préparée au ch. 27 § 27.8)</td></tr>
-    <tr><td><strong>Art. 12.1 — expliquer</strong> <em>(F-27 du Vol. II)</em></td><td>sur demande : « les raisons, ainsi que les principaux facteurs et paramètres, ayant mené à la décision » — ⚠ <strong>l'instance, non le modèle</strong></td><td>une <strong>trace d'instance</strong> produite <strong>par le cadre</strong>, non par les agents</td><td>⚠ <strong>inférence d'auteur</strong>, adossée à un enseignement du ch. 22 § 22.4</td></tr>
-    <tr><td><strong>Art. 12.1 — réviser</strong> <em>(F-27 du Vol. II)</em></td><td>« l'occasion de présenter ses observations à un membre du personnel de l'entreprise <strong>en mesure de réviser la décision</strong> »</td><td>un <strong>point de reprise</strong>, et des <strong>effets aval bornés</strong> — donc défaisables</td><td>⚠ <strong>inférence d'auteur</strong> (préparée au ch. 27 § 27.8)</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Texte</th>
+<th>Ce que le socle établit</th>
+<th>Ce que le cadre doit porter</th>
+<th>Statut du lien</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>E-23 — périmètre</strong> <em>(F-09 du Vol. II, strate [A] ; anticipation en [B])</em></td>
+<td>définition de « modèle » englobant les méthodes d'IA et d'apprentissage automatique ; en vigueur le 1ᵉʳ mai 2027, institutions financières fédérales ; <strong>en [B]</strong> : l'anticipation de modèles à apprentissage et décision autonomes</td>
+<td>⚠ <strong>un périmètre, non un cadre</strong> : cette entrée <strong>ouvre la porte</strong> que les cinq suivantes franchissent</td>
+<td>périmètre établi ; <strong>couverture implicite via la définition de modèle</strong>, tenue pour acquise par les analystes — ⚠ <strong>inférence d'analystes</strong> (PRD Vol. II §8.2.4)</td>
+</tr>
+<tr>
+<td><strong>E-23 — inventaire</strong> <em>(strate [B])</em></td>
+<td>est <strong>attendu</strong> un inventaire d'entreprise des modèles à risque inhérent non négligeable, « accurate, evergreen, and subject to robust controls » ; champs minimaux à l'appendice</td>
+<td>l'ensemble de ce qui peut être invoqué doit être <strong>énumérable avant l'exécution</strong>, donc <strong>déclaré par le cadre</strong></td>
+<td>⚠ <strong>inférence d'auteur</strong> : E-23 <strong>attend</strong> un inventaire exact ; <em>elle ne dit pas ce qui le rend exact</em></td>
+</tr>
+<tr>
+<td><strong>E-23 — cotation de risque</strong> <em>(strate [B])</em></td>
+<td>une cote de risque <strong>devrait</strong> être assignée à chaque modèle ; l'intensité du dispositif « commensurate with » le risque ; le <strong>degré d'autonomie</strong> est un <strong>facteur qualitatif</strong> de cotation</td>
+<td>la cote doit être <strong>connue au point d'invocation</strong> — sans quoi la proportionnalité attendue n'a aucune prise sur le système en exécution</td>
+<td>⚠ <strong>inférence d'auteur, et la plus longue de la table</strong> : <em>E-23 attend qu'une cote soit assignée, non qu'elle soit lisible à l'exécution.</em> ⚠ <strong>L'objet coté est le modèle, non l'assemblage</strong></td>
+</tr>
+<tr>
+<td><strong>E-23 — cycle de vie</strong> <em>(strate [B])</em></td>
+<td>cinq composantes — conception, revue, déploiement, surveillance, mise hors service —, « <strong>not necessarily sequential</strong> »</td>
+<td>la <strong>mise hors service</strong> doit s'interposer <strong>entre la décision et l'invocation</strong> : un point de passage, non une écriture au registre</td>
+<td>⚠ <strong>inférence d'auteur</strong> — <em>la plus nette des cinq</em></td>
+</tr>
+<tr>
+<td><strong>E-23 — documentation</strong> <em>(strate [B])</em></td>
+<td>normes de documentation de modèle, dont les <strong>limites et restrictions d'usage</strong> ; usages approuvés, dépendances, sources de données</td>
+<td>l'<strong>usage approuvé</strong> doit être <strong>opposable</strong>, donc porté par ce qui autorise l'invocation — <em>et non seulement consigné</em></td>
+<td>⚠ <strong>inférence d'auteur</strong> — <em>écart maximal entre ce que le texte attend (consigner) et ce que l'auteur en tire (refuser)</em></td>
+</tr>
+<tr>
+<td><strong>E-23 — surveillance continue</strong> <em>(strate [B])</em></td>
+<td>fréquence, portée et critères par palier ; suivi de la performance, de l'<strong>usage</strong>, des <strong>données d'entrée</strong> et des <strong>dépendances externes</strong> ; processus traitant « <strong>autonomous decision making, autonomous re-parametrization</strong> » et la dérive</td>
+<td>les observations d'usage et de données d'entrée n'existent que si un point de passage les <strong>émet</strong> : <em>le cadre est producteur d'observations avant d'être producteur de décisions</em></td>
+<td>⚠ <strong>inférence d'auteur — la mieux ancrée textuellement</strong> : <em>c'est la seule attente dont le libellé <strong>nomme les opérations autonomes</strong></em></td>
+</tr>
+<tr>
+<td><strong>Ligne directrice IA de l'AMF</strong> <em>(F-25 du Vol. II)</em></td>
+<td>⚠ <strong>le calendrier seulement</strong> — et une modalité, une articulation et une définition versées par le Vol. III (ch. 27 § 27.1)</td>
+<td>⚠ <strong>rien de dérivable</strong> — <em>le contenu du texte n'est pas au socle</em></td>
+<td><strong>lacune ouverte</strong> (PRD Vol. II §10.4) — <em>la seule entrée qui ne produise rien du tout</em></td>
+</tr>
+<tr>
+<td><strong>ACVM 11-348 — définition</strong> <em>(F-26 du Vol. II)</em></td>
+<td>définition incluant explicitement des niveaux variables d'<strong>autonomie</strong> et d'<strong>adaptativité après déploiement</strong> ⚠ <em>(instrument en anglais ; le socle n'en porte pas le libellé d'origine — CA-5 du Vol. II)</em> ; doctrine : les lois existantes s'appliquent, l'avis ne crée ni ne modifie aucune exigence</td>
+<td>distinguer l'<strong>adaptation</strong> d'instance de l'<strong>évolution</strong> du modèle de processus (<strong>ch. 22 § 22.8</strong>) et <strong>soumettre la seconde à un régime propre</strong></td>
+<td>⚠ <strong>inférence d'auteur</strong> : <em>le socle établit les deux textes, non leur rapprochement</em></td>
+</tr>
+<tr>
+<td><strong>Art. 12.1 — informer</strong> <em>(F-27 du Vol. II)</em></td>
+<td>informer « au plus tard au moment de la décision » — ⚠ <strong>seule des obligations à n'être subordonnée à aucune demande</strong></td>
+<td>le <strong>moment de la décision</strong> doit être un <strong>événement émis par le cadre</strong>, identifiable et daté</td>
+<td>⚠ <strong>inférence d'auteur</strong> (préparée au ch. 27 § 27.8)</td>
+</tr>
+<tr>
+<td><strong>Art. 12.1 — expliquer</strong> <em>(F-27 du Vol. II)</em></td>
+<td>sur demande : « les raisons, ainsi que les principaux facteurs et paramètres, ayant mené à la décision » — ⚠ <strong>l'instance, non le modèle</strong></td>
+<td>une <strong>trace d'instance</strong> produite <strong>par le cadre</strong>, non par les agents</td>
+<td>⚠ <strong>inférence d'auteur</strong>, adossée à un enseignement du ch. 22 § 22.4</td>
+</tr>
+<tr>
+<td><strong>Art. 12.1 — réviser</strong> <em>(F-27 du Vol. II)</em></td>
+<td>« l'occasion de présenter ses observations à un membre du personnel de l'entreprise <strong>en mesure de réviser la décision</strong> »</td>
+<td>un <strong>point de reprise</strong>, et des <strong>effets aval bornés</strong> — donc défaisables</td>
+<td>⚠ <strong>inférence d'auteur</strong> (préparée au ch. 27 § 27.8)</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 29.1 — La table de traduction, reprise <strong>intacte</strong> de sa source (chapitre-pivot). ⚠ <strong>Cardinal re-mesuré à la rédaction, comme le plan l'exige</strong> : <strong>onze entrées</strong>, dont <strong>neuf produisent une contrainte</strong> — cinq d'E-23, trois de l'article 12.1, une de l'avis 11-348 —, <strong>une produit un périmètre</strong> et <strong>une ne produit rien</strong>.</p>
-
 <div class="avert">
   <p><strong>Le compte a été refait sur la table elle-même, ligne à ligne, et non recopié du plan</strong> — <em>c'est ce que la ligne « ces deux cardinaux sont ceux du Vol. II et ne se recopient pas » impose.</em> <strong>Il est inchangé : onze et neuf.</strong></p>
 </div>
-
 <div class="avert">
-  <p><strong>Mais le domaine de la table, lui, a bougé depuis sa mesure — et le chapitre le signale plutôt que de l'absorber.</strong> <em>L'articulation de l'article 12.1 a été <strong>corrigée</strong> par une extraction postérieure du texte officiel</em> : elle compte <strong>une obligation inconditionnelle, trois informations dues sur demande — dont le </strong>droit de faire rectifier<strong>, que l'entrée héritée omettait — et un alinéa distinct</strong> (<strong>ch. 27 § 27.2</strong>). <em>Deux de ces éléments — le 1° et le 3° — n'ont <strong>aucune ligne</strong> dans la table ci-dessus.</em> ⚠ <strong>La somme ne les y ajoute pas</strong> : <em>ce chapitre est conservé intact au plan, et dériver deux contraintes neuves serait le redécouper.</em> <strong>L'écart est remonté</strong> (§&nbsp;29.5&nbsp;†, remontée <strong>R-IV-91</strong>).</p>
+  <p><strong>Mais le domaine de la table, lui, a bougé depuis sa mesure — et le chapitre le signale plutôt que de l'absorber.</strong> <em>L'articulation de l'article 12.1 a été <strong>corrigée</strong> par une extraction postérieure du texte officiel</em> : elle compte <strong>une obligation inconditionnelle, trois informations dues sur demande — dont le <em>droit de faire rectifier</em>, que l'entrée héritée omettait — et un alinéa distinct</strong> (<strong>ch. 27 § 27.2</strong>). <em>Deux de ces éléments — le 1° et le 3° — n'ont <strong>aucune ligne</strong> dans la table ci-dessus.</em> ⚠ <strong>La somme ne les y ajoute pas</strong> : <em>ce chapitre est conservé intact au plan, et dériver deux contraintes neuves serait le redécouper.</em> <strong>L'écart est remonté</strong> (§ 29.5, remontée <strong>R-IV-91</strong>).</p>
 </div>
-
 <p><strong>Cette table a changé de forme le 17 juillet 2026 chez sa source, et il faut dire pourquoi plutôt que de livrer le résultat comme s'il avait toujours été là.</strong> <em>Dans son premier état, elle comptait <strong>six entrées dont deux ne produisaient rien</strong>, et l'article 12.1 fournissait trois des quatre contraintes restantes. E-23 n'y décidait que d'un périmètre — <strong>non par la volonté du régulateur, mais parce que le socle ne portait alors du texte que sa définition de « modèle »</strong>.</em> L'extraction du texte intégral y a versé les attentes opératoires en <strong>[B]</strong>, et la traduction a été conduite depuis.</p>
-
 <div class="avert">
   <p><strong>Le chapitre avait posé, dans son premier état, une lecture que sa propre correction vérifie</strong> : <em>la densité de contraintes dérivables d'un texte <strong>ne mesure pas son exigence propre</strong>, mais ce que le socle en a extrait.</em> <strong>L'article 12.1 dominait la table parce qu'on l'avait lu ; E-23 la domine désormais pour la même raison, et non parce qu'elle serait devenue plus contraignante entre-temps.</strong> <em>Le lecteur est fondé à se demander ce que produirait la ligne directrice de l'AMF si on la lisait.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>Les cinq entrées d'E-23 qui produisent une contrainte se paient d'un pas dont il faut mesurer la longueur</strong> — la sixième, celle du périmètre, n'en produit aucune. <em>E-23 <strong>attend</strong> ces cinq choses d'un <strong>programme</strong> de gestion du risque de modélisation — un dispositif d'organisation, de rôles et de contrôles. <strong>Elle n'attend rien d'une architecture</strong>, ne nomme ni les agents ni l'orchestration, et <strong>ne dit nulle part qu'il faille construire un cadre</strong>.</em></p>
 </div>
-
-<p><span class="auteur">Lecture de l'auteur</span> ce que la somme ajoute est <strong>une observation sur les conditions de possibilité</strong>. <em>Déployées sur un système agentique, ces attentes portent toutes sur des objets <strong>qu'un programme ne peut pas rendre vrais par ses seules procédures</strong> : un inventaire n'est « evergreen » que si l'ensemble des modèles invoqués est énumérable ailleurs que dans la trace de ce qui a déjà eu lieu ; une mise hors service n'a d'effet que si quelque chose s'interpose entre la décision et l'invocation ; un usage approuvé n'est opposable que si l'usage non approuvé peut être refusé ; une intensité « commensurate with » le risque ne règle rien à l'exécution si la cote n'y est pas lisible ; une surveillance de l'usage et des données d'entrée n'observe rien si aucun point de passage n'émet ces observations.</em> ⚠ <strong>Là où l'agent résout lui-même ses modèles au moment de l'exécution, ces cinq propriétés cessent d'être des propriétés du registre pour devenir des propriétés de l'exécution</strong> — c'est-à-dire <strong>des constats <em>a posteriori</strong></em>. <em>Le cadre est le seul objet qui les rende vraies par construction.</em></p>
-
+<p><span class="auteur">Lecture de l'auteur</span> ce que la somme ajoute est <strong>une observation sur les conditions de possibilité</strong>. <em>Déployées sur un système agentique, ces attentes portent toutes sur des objets <strong>qu'un programme ne peut pas rendre vrais par ses seules procédures</strong> : un inventaire n'est « evergreen » que si l'ensemble des modèles invoqués est énumérable ailleurs que dans la trace de ce qui a déjà eu lieu ; une mise hors service n'a d'effet que si quelque chose s'interpose entre la décision et l'invocation ; un usage approuvé n'est opposable que si l'usage non approuvé peut être refusé ; une intensité « commensurate with » le risque ne règle rien à l'exécution si la cote n'y est pas lisible ; une surveillance de l'usage et des données d'entrée n'observe rien si aucun point de passage n'émet ces observations.</em> ⚠ <strong>Là où l'agent résout lui-même ses modèles au moment de l'exécution, ces cinq propriétés cessent d'être des propriétés du registre pour devenir des propriétés de l'exécution</strong> — c'est-à-dire <strong>des constats <em>a posteriori</em></strong>. <em>Le cadre est le seul objet qui les rende vraies par construction.</em></p>
 <div class="avert">
   <p><strong>Le pas est cependant plus long sur deux d'entre elles, et il se concède ligne à ligne plutôt qu'en bloc.</strong> <em>Pour l'inventaire, la mise hors service et l'usage approuvé, l'attente porte sur une propriété — exactitude, effectivité, opposabilité — que l'exécution peut contredire : l'écart entre le texte et l'inférence est celui d'un constat. Pour la <strong>cotation</strong>, E-23 n'attend qu'une cote assignée et une intensité proportionnée ; « connue au point d'invocation » <strong>ajoute un lieu que le texte ne mentionne pas</strong>. Pour la <strong>surveillance</strong>, le texte attend des <strong>processus</strong>, non un <strong>émetteur d'événements</strong>.</em> ⚠ <strong>Ces deux lignes sont les plus exposées de la table, et leur marqueur travaille plus dur qu'ailleurs. Aucune de ces phrases n'est dans E-23 : le texte attend, l'auteur infère où l'attente se loge.</strong></p>
 </div>
-
 <div class="avert">
   <p><strong>Une limite est structurelle, et elle n'est comblée par personne.</strong> <em>L'objet d'E-23 est le <strong>modèle</strong> : c'est lui qu'on inventorie, lui qu'on cote, lui qu'on met hors service. <strong>Un système agentique compose plusieurs modèles, des outils et un enchaînement</strong>, et E-23 <strong>ne dit pas ce qu'est « le modèle » d'un tel assemblage</strong> — ni s'il faut coter les composants, la composition, ou les deux.</em> ⚠ <strong>Le silence est entier : ni le texte, ni le socle, ni la somme ne le comblent</strong> — <em>absence de documentation, degré 3 de l'échelle R-14 du Vol. III.</em> <strong>C'est la question que les institutions fédérales auront à trancher d'ici le 1ᵉʳ mai 2027, et ce chapitre ne peut que la désigner.</strong></p>
 </div>
-
 <p><strong>Des quatre entrées qui restent — les six d'E-23 et la ligne de l'AMF une fois écartées —, trois proviennent du même texte, et la différence importe plus que leur nombre.</strong> ⚠ <em>E-23 est <strong>fondée sur des principes</strong> et rédigée au conditionnel : elle <strong>attend</strong>. L'article 12.1 est une <strong>disposition législative</strong> rédigée à l'impératif : il <strong>oblige</strong>.</em> <strong>Les cinq contraintes tirées d'E-23 sont donc des conditions de possibilité d'un programme attendu ; les trois tirées de l'article 12.1 sont des conditions de possibilité d'une obligation.</strong> <em>L'inférence est de même nature — c'est toujours l'auteur qui la conduit — mais ce qu'elle sert à défendre ne l'est pas.</em></p>
-
 <p><strong>La quatrième naît de la rencontre de deux textes que rien ne relie.</strong> La définition de l'avis capte les systèmes dont le comportement se modifie <strong>après déploiement</strong> ; le manifeste scinde l'auto-modification en <strong>deux régimes</strong> — l'adaptation, éphémère, et l'évolution, persistante (<strong>ch. 22 § 22.8</strong>).</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>le rapprochement produit une contrainte que ni l'un ni l'autre n'énonce</strong> : <em>si l'adaptativité après déploiement est ce que la définition capte, <strong>un système qui traite l'adaptation et l'évolution par le même chemin technique rend indétectable, dans ses journaux, le moment où une exception est devenue une règle</strong>.</em> <strong>Ce que le socle établit</strong> : les deux textes. <strong>Ce qu'il n'établit pas</strong> : leur rapprochement. ⚠ <em>Le ch. 22 posait cette proposition <strong>sans exigence externe où l'adosser</strong> ; l'avis 11-348 lui en fournit une.</em></p>
-
 <p><strong>L'entrée de l'obligation d'explication procède du même mouvement, et engage le plus l'architecture.</strong> L'article exige, sur demande, les raisons et facteurs ayant mené à <strong>cette</strong> décision : <strong>l'objet de l'obligation est l'instance</strong>. Or l'un des enseignements de conception repris au <strong>ch. 22 § 22.4</strong> est que <strong>la journalisation confiée aux agents « n'est généralement pas recommandée »</strong>.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>la conjonction désigne le cadre comme lieu de production de la trace</strong> — <em>non parce qu'une source le prescrirait, mais parce que <strong>les deux autres candidats sont écartés</strong> : l'agent par l'enseignement du préprint, et le modèle par le rapport conjoint repris au <strong>ch. 25 § 25.8</strong> (<strong>F-10 du Vol. II</strong>), dont le socle établit que <strong>les relations causales entre entrées et sorties sont souvent indéterminables</strong>.</em> <strong>Si l'on ne peut extraire l'explication du modèle <em>a posteriori</em>, ni raisonnablement la confier à l'agent, il reste ce qui les entoure.</strong> ⚠ <strong>Aucune des trois sources ne dit cela ; c'est leur conjonction, et elle est de l'auteur.</strong></p>
-
+<figure class="figure">
+  <img src="../figures/f-29-01-table-traduction.svg" alt="Figure 29.1 — La table de traduction : ce que chaque exigence impose au cadre, et le statut du lien." />
+  <figcaption><strong>Figure 29.1</strong> — La table de traduction : ce que chaque exigence impose au cadre, et le statut du lien.</figcaption>
+</figure>
 <h2 id="s292"><span class="sig">§ 29.2</span>Le verdict empirique et la convergence à trois sources</h2>
-
 <p><strong>L'argument qui suit porte le titre du Livre ; il faut donc l'exposer avec plus de sévérité qu'aucun autre.</strong></p>
-
 <p><strong>Le premier terme est un verdict</strong> (<strong>F-37 du Vol. II</strong>). Sur un processus réglementé européen hors finance, le cadre repris au <strong>ch. 22 § 22.4</strong> conclut que <strong>l'orchestration non encadrée est « inacceptable » lorsque des exigences strictes d'exécution et de documentation s'appliquent</strong>, et que les tâches essentielles doivent être <strong>imposées de façon déterministe par le cadre</strong>. ⚠ <strong>Il provient d'un préprint non révisé par les pairs dont les auteurs déclarent eux-mêmes des menaces à la validité</strong> — <em>le cadre conceptuel est repris, les résultats chiffrés à titre d'illustration seulement</em>, et le ch. 22 a refusé d'en faire un argument.</p>
-
-<p><span class="auteur">Lecture de l'auteur</span> <strong>ce qui se transporte, ce n'est pas un chiffre, c'est un mécanisme.</strong> *Le socle borne le verdict à un processus européen ; sa généralisation est de l'auteur : <strong>dès lors qu'une exigence porte sur la <em>manière</em> dont une tâche est exécutée et documentée, et non sur son seul résultat, un dispositif incapable de garantir l'exécution et de produire la trace échoue à l'exigence, quel que soit son taux de réussite moyen</strong>.* ⚠ <strong>Et le mécanisme se qualifie par ce que la source démontre, non par ce qu'elle promet</strong> (R-02 du Vol. III) : <em>un préprint mesure un F1 sur un scénario ; il ne démontre pas une propriété générale des architectures encadrées.</em></p>
-
-<p><strong>Le deuxième terme est conceptuel</strong> (<strong>F-36 du Vol. II</strong>). Le manifeste érige l'<strong>autonomie encadrée</strong> en mécanisme premier de gouvernance et distingue les cadres <strong>normatifs</strong> des cadres <strong>opérationnels</strong> (<strong>ch. 22 § 22.7</strong>).</p>
-
-<div class="avert">
-  <p><strong>Le socle lui attribue une confiance haute <em>pour l'attribution</strong></em> : <em>ce qui est certain, c'est que ces auteurs soutiennent cette thèse.</em> <strong>Un manifeste ne fait pas autorité ; il fournit un vocabulaire. Il recommande, il ne juge pas.</strong></p>
-</div>
-
-<p><strong>Le troisième terme est celui d'un fournisseur, et son statut se pose avant son contenu</strong> (<strong>F-46 du Vol. II</strong>). Le patron d'architecture agentique publié par <strong>IBM</strong> recommande <strong>explicitement les flux de travail statiques</strong> pour les processus sous surveillance réglementaire, au nom de l'auditabilité, de la conformité et de transferts définis. ⚠ <strong>L'éditeur est nommé : « un fournisseur » n'est pas une attribution</strong> (décision 15b du TOC). ⚠ <strong>Deux réserves l'encadrent.</strong> <em>Neutralité fournisseur d'abord</em> : cette position est retenue comme <strong>cas d'instanciation documenté par sources primaires</strong>, jamais comme recommandation ni verdict comparatif (PRD Vol. II §8.4). <em>Portée ensuite</em> :</p>
-
-<div class="avert">
-  <p><strong>le socle établit que ce patron est générique et qu'IBM ne publie aucune architecture agentique spécifique aux services financiers</strong> — <em>la recommandation vise « les processus sous surveillance réglementaire » en général, non un processus de crédit canadien.</em> <strong>Là encore, il recommande — il ne juge pas.</strong></p>
-</div>
-
+<p><span class="auteur">Lecture de l'auteur</span> <strong>ce qui se transporte, ce n'est pas un chiffre, c'est un mécanisme.</strong> <em>Le socle borne le verdict à un processus européen ; sa généralisation est de l'auteur : <strong>dès lors qu'une exigence porte sur la <em>manière</em> dont une tâche est exécutée et documentée, et non sur son seul résultat, un dispositif incapable de garantir l'exécution et de produire la trace échoue à l'exigence, quel que soit son taux de réussite moyen</strong>.</em> ⚠ <strong>Et le mécanisme se qualifie par ce que la source démontre, non par ce qu'elle promet</strong> (R-02 du Vol. III) : <em>un préprint mesure un F1 sur un scénario ; il ne démontre pas une propriété générale des architectures encadrées.</em></p>
+<p><strong>Le deuxième terme est conceptuel</strong> (<strong>F-36 du Vol. II</strong>). Le manifeste érige l'<strong>autonomie encadrée</strong> en mécanisme premier de gouvernance et distingue les cadres <strong>normatifs</strong> des cadres <strong>opérationnels</strong> (<strong>ch. 22 § 22.7</strong>). ⚠ <strong>Le socle lui attribue une confiance haute <em>pour l'attribution</em></strong> : <em>ce qui est certain, c'est que ces auteurs soutiennent cette thèse.</em> <strong>Un manifeste ne fait pas autorité ; il fournit un vocabulaire. Il recommande, il ne juge pas.</strong></p>
+<p><strong>Le troisième terme est celui d'un fournisseur, et son statut se pose avant son contenu</strong> (<strong>F-46 du Vol. II</strong>). Le patron d'architecture agentique publié par <strong>IBM</strong> recommande <strong>explicitement les flux de travail statiques</strong> pour les processus sous surveillance réglementaire, au nom de l'auditabilité, de la conformité et de transferts définis. ⚠ <strong>L'éditeur est nommé : « un fournisseur » n'est pas une attribution</strong> (décision 15b du TOC). ⚠ <strong>Deux réserves l'encadrent.</strong> <em>Neutralité fournisseur d'abord</em> : cette position est retenue comme <strong>cas d'instanciation documenté par sources primaires</strong>, jamais comme recommandation ni verdict comparatif (PRD Vol. II §8.4). <em>Portée ensuite</em> : ⚠ <strong>le socle établit que ce patron est générique et qu'IBM ne publie aucune architecture agentique spécifique aux services financiers</strong> — <em>la recommandation vise « les processus sous surveillance réglementaire » en général, non un processus de crédit canadien.</em> <strong>Là encore, il recommande — il ne juge pas.</strong></p>
 <div class="avert">
   <p><strong>Le socle érige la rencontre de ces trois énoncés en convergence à trois sources, et il l'a d'abord qualifiée d'« indépendantes ». L'adjectif en a été retiré par un correctif daté du 16 juillet 2026, parce qu'il était réfuté par le socle lui-même.</strong> <em>La rétractation étant acquise, ce qui suit n'en est plus la contestation mais l'exposé du motif</em> — <strong>et la démonstration reste due au lecteur, puisque c'est d'elle que dépend la portée exacte du principe directeur.</strong></p>
 </div>
-
 <p><strong>Une convergence tire sa force de l'indépendance de ses termes. Or le socle établit lui-même que ces trois-là ne sont pas indépendants, et il le fait deux fois.</strong> <em>Premièrement</em>, <strong>une même autrice — Rinderle-Ma — cosigne les deux sources académiques</strong>. <em>Deuxièmement</em>, <strong>IBM Research figure parmi les organisations dont proviennent les auteurs du manifeste, et c'est IBM qui publie le patron</strong>. ⚠ <strong>Ni l'un ni l'autre recoupement n'est une conjecture : tous deux se lisent dans les entrées du socle.</strong></p>
-
 <p><span class="auteur">Lecture de l'auteur</span> <strong>trois sources qui se recoupent deux à deux ne valent pas trois sources indépendantes.</strong> <em>Ce faisceau n'établit pas que trois observateurs séparés ont abouti au même diagnostic, mais qu'<strong>un même milieu — académique et industriel, partiellement chevauchant — l'a formulé dans trois registres</strong> : moins qu'une corroboration indépendante, davantage qu'une opinion isolée.</em> ⚠ <strong>La distinction décide de ce qu'une institution peut inscrire dans une note d'architecture</strong> : <em>« trois sources indépendantes recommandent l'encadrement déterministe » serait <strong>faux</strong> ; « le principe est formulé, dans la littérature de la mi-2026, par un manifeste académique, une expérimentation et un patron de fournisseur, <strong>dont deux partagent une autrice et deux une organisation</strong> » est <strong>exact, et suffit</strong>.</em></p>
-
 <div class="avert">
   <p><strong>Et la convergence n'est établie pour aucun contexte canadien.</strong> <em>Le socle établit un verdict borné à un processus européen, un manifeste qui relie l'explicabilité à deux instruments <strong>européens</strong>, et un patron générique.</em> ⚠ <strong>Le socle n'établit, pour aucune des trois sources, d'application au Canada, à la finance canadienne, à E-23, à la ligne directrice de l'AMF, à l'avis 11-348 ni à l'article 12.1, et il n'établit aucun lien entre elles et ces textes.</strong></p>
 </div>
-
 <div class="avert">
   <p><strong>Ce n'est pas pour autant un fait négatif vérifié.</strong> <em>Aucune recherche exhaustive de ces chaînes dans les trois sources n'a été conduite</em> — <strong>absence de documentation, degré 3</strong> — <em>à la différence des faits négatifs que le socle établit par balayage documenté.</em> ⚠ <strong>La distinction est celle-là même que ce chapitre applique à E-23 au § 29.1 : une absence <em>au socle</em> n'est pas une absence <em>dans la source</em>.</strong> <em>Le manifeste compte au contraire une affiliation canadienne, dont le socle ne dit pas si elle emporte quelque application au droit canadien.</em> <strong>La transposition au contexte canadien conduite dans ce chapitre est donc entièrement une inférence d'auteur, et le lecteur est fondé à en exiger l'examen plutôt qu'à en recevoir l'autorité.</strong></p>
 </div>
-
 <h2 id="s293"><span class="sig">§ 29.3</span>L'imputabilité : qui répond du comportement émergent ?</h2>
-
 <p><em>Section qui <strong>exploite</strong> ce que le <strong>ch. 22 § 22.10</strong> a préparé sans le jouer.</em></p>
-
 <p>Le manifeste inscrit parmi ses défis transversaux l'<strong>écart de responsabilité</strong> : l'indétermination de l'imputabilité juridique entre <strong>quatre porteurs candidats</strong> — le développeur, l'organisation qui impose le cadre, le fournisseur du modèle et <strong>le comportement émergent</strong> du système multi-agents. <em>Le quatrième n'est pas une personne : il est le nom de ce dont aucun des trois autres n'est l'auteur au sens ordinaire.</em> <strong>Confrontons-le aux textes canadiens sur le seul point que le socle autorise : la désignation du porteur.</strong></p>
-
 <p><strong>Le socle porte ici trois choses de nature différente.</strong> <em>Pour l'article 12.1</em>, un <strong>fait générateur</strong> : l'obligation pèse sur toute personne qui exploite une entreprise et rend une « décision fondée exclusivement sur un traitement automatisé » — <strong>sans condition tenant à l'auteur du système, ni partage avec le fournisseur du modèle</strong>. <em>Pour E-23</em>, un <strong>périmètre d'application</strong> : les institutions financières fédérales. <em>Pour l'avis 11-348</em>, <strong>un périmètre également, et rien de plus</strong> : il ne crée aucune obligation — il énonce que les lois existantes s'appliquent, et à qui.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> ⚠ <strong>aucun des trois ne désigne un porteur en des termes que le socle rapproche des deux autres : le rapprochement est de l'auteur, et l'expression « l'entité qui exploite » est la sienne — elle ne figure ni dans les textes, ni au socle.</strong> <em>Sous cette réserve : <strong>trois textes, trois régimes, une constante — le porteur est, dans chacun, celui qui exploite le système, non celui qui l'a construit</strong>.</em> Rapportée à l'énumération du manifeste, <strong>cette constante désigne le deuxième des quatre candidats : l'organisation qui impose le cadre.</strong> ⚠ <strong>Le socle n'établit ni ce rapprochement, ni son exactitude juridique.</strong></p>
-
 <div class="avert">
   <p><strong>Cette constante ne dit pas que le droit canadien résolve l'écart de responsabilité</strong> : <em>ce que le manifeste nomme est l'indétermination de l'<strong>allocation</strong> de l'imputabilité entre quatre porteurs, question que ces textes ne traitent pas et que la somme n'a ni la vocation ni la compétence de trancher.</em> ⚠ <strong>Elle ne dit pas davantage que ces régimes se cumulent sur une même chaîne</strong> : <em>le ch. 27 § 27.3 a laissé ouverte la question de savoir si l'article 12.1 atteint les institutions sous charte fédérale.</em></p>
 </div>
-
 <p><strong>Ce que le socle permet de dire est plus modeste et suffit à l'architecture.</strong> ⚠ <strong>L'article 12.1 n'offre pas à l'entreprise assujettie la ressource de désigner un tiers</strong> : ni développeur, ni fournisseur de modèle, ni l'émergence elle-même.</p>
-
-<p><span class="auteur">Lecture de l'auteur</span> ⚠ <strong>et la restriction est portante</strong> : <em>les attentes d'E-23 versées au socle <strong>ne traitent pas de ce point</strong>, et aucune vérification négative n'y porte ; le socle ne porte pas davantage le corps de l'avis 11-348.</em> <strong>La somme ne peut donc dire ce que ces deux textes prévoient — ou ne prévoient pas — sur ce point ; elle se refuse l'argument du silence.</strong> ⚠ <strong><em>Sous l'article 12.1 du moins</strong>, l'écart de responsabilité n'est pas un moyen de défense devant le régulateur : il est le problème de l'assujetti.</em></p>
-
+<p><span class="auteur">Lecture de l'auteur</span> ⚠ <strong>et la restriction est portante</strong> : <em>les attentes d'E-23 versées au socle <strong>ne traitent pas de ce point</strong>, et aucune vérification négative n'y porte ; le socle ne porte pas davantage le corps de l'avis 11-348.</em> <strong>La somme ne peut donc dire ce que ces deux textes prévoient — ou ne prévoient pas — sur ce point ; elle se refuse l'argument du silence.</strong> ⚠ <em><strong>Sous l'article 12.1 du moins</strong>, l'écart de responsabilité n'est pas un moyen de défense devant le régulateur : il est le problème de l'assujetti.</em></p>
 <p><strong>C'est là que la proposition posée au ch. 22 § 22.10 se joue.</strong> <em>Si le cadre est ce qui borne la décision, <strong>celui qui pose le cadre est le seul acteur dont on puisse dire ce qu'il a effectivement décidé</strong></em> — inférence de la somme, non du manifeste ; <strong>elle reçoit ici sa raison d'être</strong>. <em>L'entreprise assujettie répond d'un comportement qu'elle n'a pas spécifié et qu'elle ne peut pas reconstituer depuis le modèle. Le seul objet dont elle puisse démontrer la teneur — parce qu'elle l'a écrit, qu'il précède l'exécution et ne dépend pas de la coopération d'un agent — est <strong>le cadre qu'elle a posé</strong>.</em></p>
-
 <div class="avert">
   <p><strong>L'encadrement n'est donc pas, dans cette lecture, une bonne pratique d'ingénierie : c'est le seul objet que l'assujetti puisse produire pour répondre de ce dont il répond de toute façon.</strong> <strong>Ce que le socle établit</strong> : certaines prémisses. <strong>Ce qu'il n'établit pas</strong> : la conséquence — <em>la constante du porteur est une lecture de l'auteur, et l'absence de ressource pour désigner un tiers n'est établie que pour l'article 12.1.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>Une réserve, enfin : cette lecture explique pourquoi l'encadrement est nécessaire, non qu'il soit suffisant.</strong> <em>Rien, au socle, ne dit qu'un cadre correctement posé libère l'assujetti de quoi que ce soit, ni que la démonstrabilité d'un cadre vaille preuve de conformité.</em> <strong>La question est juridique, et reste ouverte</strong> ; <strong>la somme n'émet aucun avis juridique</strong>, et le <strong>ch. 49</strong> enregistrera l'état final de cette lacune.</p>
 </div>
-
 <h2 id="s294"><span class="sig">§ 29.4</span>Le principe directeur</h2>
-
 <p><strong>Ce qui précède se resserre en un énoncé, que les Livres IV et V reprennent.</strong></p>
-
 <div class="avert">
   <p><strong>Sous exigence réglementaire stricte, le processus est imposé de façon déterministe par le cadre, qui invoque les agents ; les agents n'orchestrent pas le processus.</strong></p>
 </div>
-
 <p>Dans le vocabulaire des options d'orchestration du <strong>ch. 22 § 22.1</strong>, ce sont <strong>les positions OO3 et OO4</strong> — <em>celles où la main qui commande l'enchaînement est le cadre, la différence entre les deux tenant à ce que l'agent <strong>sait</strong> du processus, non à ce qu'il <strong>commande</strong></em>. ⚠ <strong>Ce sigle et ce cardinal se citent tels quels</strong> : <em>ils ne se paraphrasent pas en « autonomie graduée », terme que R-13 du Vol. III proscrit nu.</em></p>
-
 <p><strong>Ce principe porte quatre conditions, qu'il faut énoncer avec lui sous peine de le falsifier.</strong></p>
-
-<ol class="numeros">
-  <li>⚠ <strong>Il est une inférence d'auteur</strong>, construite par transposition de trois sources dont le socle n'établit l'application <strong>ni au Canada ni à la finance canadienne</strong>, et <strong>dont deux partagent une autrice et deux une organisation</strong>.</li>
-  <li>⚠ <strong>« Exigence réglementaire stricte » n'est pas défini par le socle.</strong> <em>Le verdict du préprint borne son domaine aux situations où des exigences strictes d'exécution et de documentation s'appliquent ; <strong>qualifier un processus canadien au regard de ce critère reste un travail d'institution</strong>.</em></li>
-  <li>⚠ <strong>L'encadrement se paie.</strong> <em>L'effort initial et la maintenance figurent explicitement parmi les critères de sélection du cadre</em> (<strong>ch. 22 § 22.3</strong>) — <em>un positionnement OO3 ou OO4 exige d'expliciter le processus, et expliciter coûte, à la construction comme à l'entretien.</em></li>
-  <li>⚠ <strong>Le principe dit où placer la main qui commande ; il ne dit ni ce qu'un cadre doit contenir, ni comment on l'écrit.</strong> <em>La table du § 29.1 en donne <strong>cinq attentes</strong> — inventaire, cotation, cycle de vie, documentation, surveillance — mais elles disent ce que le cadre doit <strong>rendre possible</strong>, non ce qu'il doit <strong>décider</strong>.</em> ⚠ <strong>Et de la ligne directrice de l'AMF, l'un des deux textes dont l'entrée en vigueur commune est fixée au 1ᵉʳ mai 2027, ce chapitre ne dit toujours rien.</strong></li>
+<ol type="1">
+<li>⚠ <strong>Il est une inférence d'auteur</strong>, construite par transposition de trois sources dont le socle n'établit l'application <strong>ni au Canada ni à la finance canadienne</strong>, et <strong>dont deux partagent une autrice et deux une organisation</strong>.</li>
+<li>⚠ <strong>« Exigence réglementaire stricte » n'est pas défini par le socle.</strong> <em>Le verdict du préprint borne son domaine aux situations où des exigences strictes d'exécution et de documentation s'appliquent ; <strong>qualifier un processus canadien au regard de ce critère reste un travail d'institution</strong>.</em></li>
+<li>⚠ <strong>L'encadrement se paie.</strong> <em>L'effort initial et la maintenance figurent explicitement parmi les critères de sélection du cadre</em> (<strong>ch. 22 § 22.3</strong>) — <em>un positionnement OO3 ou OO4 exige d'expliciter le processus, et expliciter coûte, à la construction comme à l'entretien.</em></li>
+<li>⚠ <strong>Le principe dit où placer la main qui commande ; il ne dit ni ce qu'un cadre doit contenir, ni comment on l'écrit.</strong> <em>La table du § 29.1 en donne <strong>cinq attentes</strong> — inventaire, cotation, cycle de vie, documentation, surveillance — mais elles disent ce que le cadre doit <strong>rendre possible</strong>, non ce qu'il doit <strong>décider</strong>.</em> ⚠ <strong>Et de la ligne directrice de l'AMF, l'un des deux textes dont l'entrée en vigueur commune est fixée au 1ᵉʳ mai 2027, ce chapitre ne dit toujours rien.</strong></li>
 </ol>
-
 <h3>29.4.1 Rendre la condition 2 exécutable — un test, et ce qu'il n'est pas</h3>
-
 <div class="avert">
   <p><strong>Cette sous-section est ajoutée le 30 juillet 2026 (D-11), et elle répond à un reproche exact de l'arbitrage externe : le principe directeur est inapplicable tant que son antécédent n'est pas décidable.</strong> <em>Un praticien qui lit « sous exigence réglementaire stricte » doit pouvoir dire si son processus y tombe ; à défaut, le principe ne se réfute ni ne s'applique — il s'invoque.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>Ce qui suit n'est PAS une définition, et le confondre avec une définition annulerait la condition 2 plutôt que de la satisfaire.</strong> <em>Le socle ne définit pas le terme, et cette passe ne le définit pas davantage</em> — elle propose un <strong>test de qualification, construction d'auteur</strong>, dérivé des seuls éléments que le socle porte : le déclencheur écrit de l'article 12.1 (ch. 27 § 27.2), la distinction attente / obligation du § 29.2, et les trois régimes de preuve négatifs du ch. 30.</p>
 </div>
-
 <p><strong>Un processus relève de l'exigence réglementaire stricte si les trois conditions sont réunies.</strong></p>
-
-<ol class="numeros">
-  <li><strong>Un texte opposable en nomme le résultat.</strong> <em>Non pas « attend » un programme, mais <strong>impose</strong> un résultat à l'égard d'une personne — une décision, un refus, une communication.</em> ⚠ <strong>Le critère discriminant est le verbe du texte, pas son sujet</strong> : « doit » qualifie, « devrait » ne qualifie pas — c'est la distinction que le § 29.2 pose et que le ch. 25 tient sur E-23.</li>
-  <li><strong>Une trace en est exigible par un tiers.</strong> <em>Quelqu'un d'autre que l'exploitant — un régulateur, une personne concernée, un tribunal — peut demander <strong>comment</strong> le résultat a été produit, et l'exploitant doit pouvoir répondre.</em> ⚠ <em>C'est cette condition, et non la première, qui impose le déterminisme</em> : <strong>un processus dont nul ne peut demander le chemin n'a pas besoin d'un chemin reproductible.</strong></li>
-  <li><strong>L'écart au résultat n'est pas réparable par la reprise.</strong> <em>Si une erreur se corrige en rejouant le processus sans dommage subsistant, l'exigence n'est pas stricte au sens utile ici.</em> ⚠ <strong>C'est le patron d'irréversibilité du ch. 31</strong>, appliqué à la qualification plutôt qu'à la conception.</li>
+<ol type="1">
+<li><strong>Un texte opposable en nomme le résultat.</strong> <em>Non pas « attend » un programme, mais <strong>impose</strong> un résultat à l'égard d'une personne — une décision, un refus, une communication.</em> ⚠ <strong>Le critère discriminant est le verbe du texte, pas son sujet</strong> : « doit » qualifie, « devrait » ne qualifie pas — c'est la distinction que le § 29.2 pose et que le ch. 25 tient sur E-23.</li>
+<li><strong>Une trace en est exigible par un tiers.</strong> <em>Quelqu'un d'autre que l'exploitant — un régulateur, une personne concernée, un tribunal — peut demander <strong>comment</strong> le résultat a été produit, et l'exploitant doit pouvoir répondre.</em> ⚠ <em>C'est cette condition, et non la première, qui impose le déterminisme</em> : <strong>un processus dont nul ne peut demander le chemin n'a pas besoin d'un chemin reproductible.</strong></li>
+<li><strong>L'écart au résultat n'est pas réparable par la reprise.</strong> <em>Si une erreur se corrige en rejouant le processus sans dommage subsistant, l'exigence n'est pas stricte au sens utile ici.</em> ⚠ <strong>C'est le patron d'irréversibilité du ch. 31</strong>, appliqué à la qualification plutôt qu'à la conception.</li>
 </ol>
-
 <div class="avert">
   <p><strong>Quatre bornes, et la dernière est celle qui compte pour la condition 2.</strong> <em>(a)</em> <strong>Les trois conditions sont cumulatives</strong> : deux sur trois ne qualifient pas. <em>(b)</em> <strong>Le test qualifie un processus, jamais une technologie</strong> — <em>« l'agentique est-elle sous exigence stricte » est une question mal formée</em>, exactement comme au ch. 27 où le déclencheur de l'article 12.1 est une propriété d'architecture et non un vocabulaire. <em>(c)</em> <strong>Aucune des trois conditions n'est portée par une source</strong> : ce sont des <strong>lectures de l'auteur</strong> (CA-IV-07), et <em>le socle établit les matériaux, non leur composition en test.</em> <em>(d)</em> ⚠ <strong>La condition 2 du principe directeur n'est donc PAS levée</strong> : elle disait que <em>« qualifier un processus canadien au regard de ce critère reste un travail d'institution »</em>, et <strong>cela demeure vrai</strong> — <em>ce test dit à une institution <strong>quoi</strong> décider, il ne décide à sa place ni ne l'en dispense.</em> <strong>Ce qui change est qu'il y a désormais quelque chose à réfuter</strong> : un praticien qui juge le test faux peut dire laquelle des trois conditions il rejette, ce qu'un terme indéfini ne permettait pas.</p>
 </div>
-
 <h3>Synthèse : ce que le chapitre lègue à la somme</h3>
-
 <p><em>Section de sortie sans homologue direct dans la source — construction d'éditeur.</em></p>
-
-<ol class="numeros">
-  <li><strong>Le principe directeur, énoncé une fois avec ses quatre conditions.</strong> <em>Sous exigence réglementaire stricte, le cadre commande et invoque ; les agents n'orchestrent pas.</em> Le <strong>Livre IV</strong> en fait sa méthode de construction, le <strong>ch. 47</strong> son critère de mise en service — <strong>aucun ne le redémontre</strong>.</li>
-  <li><strong>La règle qui gouverne toute table de traduction.</strong> ⚠ <em>La densité de contraintes dérivables d'un texte mesure <strong>ce que le socle en a extrait</strong>, non son exigence propre.</em> <strong>Le ch. 49 la reprendra pour lire l'état final des lacunes.</strong></li>
-  <li><strong>La distinction entre une attente et une obligation.</strong> <em>Cinq conditions de possibilité d'un <strong>programme attendu</strong> ; trois conditions de possibilité d'une <strong>obligation</strong>.</em> ⚠ <strong>Ne pas les confondre est ce qui sépare une note de conformité d'une erreur de droit.</strong></li>
-  <li><strong>La convergence, à sa portée exacte.</strong> ⚠ <em>Trois sources <strong>non indépendantes</strong>, sans application canadienne établie.</em> <strong>La formule opposable est écrite au § 29.2, et aucun chapitre aval n'en emploie une autre.</strong></li>
-  <li><strong>Le porteur, sous restriction.</strong> <em>Sous l'article 12.1 du moins, l'assujetti ne peut désigner de tiers.</em> ⚠ <strong>La restriction se transporte avec l'énoncé</strong> — le <strong>ch. 27 § 27.8</strong> la porte aussi.</li>
-  <li><strong>Un silence structurel, désigné et non comblé.</strong> ⚠ <em>E-23 ne dit pas ce qu'est « le modèle » d'un assemblage d'agents.</em> <strong>Le ch. 49 l'enregistrera.</strong></li>
+<ol type="1">
+<li><strong>Le principe directeur, énoncé une fois avec ses quatre conditions.</strong> <em>Sous exigence réglementaire stricte, le cadre commande et invoque ; les agents n'orchestrent pas.</em> Le <strong>Livre IV</strong> en fait sa méthode de construction, le <strong>ch. 47</strong> son critère de mise en service — <strong>aucun ne le redémontre</strong>.</li>
+<li><strong>La règle qui gouverne toute table de traduction.</strong> ⚠ <em>La densité de contraintes dérivables d'un texte mesure <strong>ce que le socle en a extrait</strong>, non son exigence propre.</em> <strong>Le ch. 49 la reprendra pour lire l'état final des lacunes.</strong></li>
+<li><strong>La distinction entre une attente et une obligation.</strong> <em>Cinq conditions de possibilité d'un <strong>programme attendu</strong> ; trois conditions de possibilité d'une <strong>obligation</strong>.</em> ⚠ <strong>Ne pas les confondre est ce qui sépare une note de conformité d'une erreur de droit.</strong></li>
+<li><strong>La convergence, à sa portée exacte.</strong> ⚠ <em>Trois sources <strong>non indépendantes</strong>, sans application canadienne établie.</em> <strong>La formule opposable est écrite au § 29.2, et aucun chapitre aval n'en emploie une autre.</strong></li>
+<li><strong>Le porteur, sous restriction.</strong> <em>Sous l'article 12.1 du moins, l'assujetti ne peut désigner de tiers.</em> ⚠ <strong>La restriction se transporte avec l'énoncé</strong> — le <strong>ch. 27 § 27.8</strong> la porte aussi.</li>
+<li><strong>Un silence structurel, désigné et non comblé.</strong> ⚠ <em>E-23 ne dit pas ce qu'est « le modèle » d'un assemblage d'agents.</em> <strong>Le ch. 49 l'enregistrera.</strong></li>
 </ol>
-
 <div class="avert">
   <p><strong>Ce que le chapitre ne lègue pas.</strong> Il ne lègue pas qu'E-23 <strong>attende un cadre</strong> : <em>elle attend un programme</em>, et ce sont les <strong>conditions de possibilité</strong> de ce programme sur un système agentique que la table dérive. Il ne lègue <strong>rien de la ligne directrice de l'AMF</strong>. Il ne lègue <strong>aucune allocation d'imputabilité</strong>, et <strong>n'émet aucun avis juridique</strong>. Il ne lègue pas que <strong>l'orchestration non encadrée soit démontrée indéfendable au Canada</strong> : <em>le verdict dont il part est européen, hors finance, adossé à un préprint dont les auteurs déclarent des menaces à la validité — et les deux autres sources ne portent aucun verdict, elles recommandent.</em> Et il ne lègue pas que <strong>l'encadrement suffise</strong> — seulement qu'il est <strong>le seul objet dont l'assujetti puisse démontrer la teneur</strong>.</p>
 </div>
-
 <p><strong>Le pont du Livre n'est donc pas une déduction. C'est un raisonnement, exposé pour être contesté — et sa partie la plus solide n'est ni la convergence de trois sources, ni la constante que l'auteur lit dans trois textes : c'est ce qu'un seul texte, l'article 12.1, fait peser sur l'entreprise qui rend la décision.</strong> ⚠ <strong>Et cette partie la plus solide porte elle-même une réserve datée</strong> : <em>l'entrée <code>S-025</code> qui la soutient n'a pas été rouverte à sa source au gel unique du 28 juillet 2026 — <strong>LégisQuébec</strong>, l'éditeur officiel du texte, a refusé l'accès —, et le fait tient à sa date d'extraction, non à celle de la somme.</em></p>
+<hr />
 
 <footer class="pied">
   <p><strong>Vol. IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em></strong> · Livre III, chapitre 29. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau, M.Sc. IT.</p>
   <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme (gel unique : 27 juillet 2026).</p>
-  <p><strong>†</strong> Renvoi à une section retirée de ce rendu — la note de statut, hors corps — conservée au fichier Markdown jumeau.</p>
 </footer>
 
 </main>

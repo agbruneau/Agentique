@@ -78,7 +78,7 @@ du TOC).
 ⚠ **Ce tableau est un constat daté et deux de ses lignes ont été DÉPASSÉES depuis — le rappel est du
 8 août 2026, il ne réécrit rien.** ☑ **La porte G-3 est franchie le 28 juillet 2026** et le socle
 consolidé ne compte plus zéro entrée mais **159**, `S-001`…`S-159`
-([`PRD/socle-consolide.md`](../PRD/socle-consolide.md) ; `python PRD/check-compendium.py` → *P1-P8,
+([`PRD/socle-consolide.md`](../PRD/socle-consolide.md) ; `python PRD/check-compendium.py` → *P1-P10,
 sortie 0*). ☑ **La table `SIEGES` porte 26 sièges sur 50 pièces** (`python PRD/check-sieges.py`).
 ⚠ **Rien d'autre n'a bougé** : *aucun énoncé n'est central au sens de CA-IV-01, CA-IV-11 et CA-IV-13
 demeurent non satisfaisables, et les pièces restent un brouillon arrêté, non publiable* — **une porte
@@ -111,9 +111,11 @@ compte courant se lit à [`PRD/check-sieges.py`](../PRD/check-sieges.py), jamais
 
 ## Volumétrie réelle — et l'écart en défaut qui est un résultat
 
-☑ **Mesure du jour : 30 719 mots** de corps pour les quatre pièces, relevés le **10 août 2026** par
+☑ **Mesure du jour : 31 710 mots** de corps pour les quatre pièces, relevés le **2 septembre 2026** au terme de la passe de fond (**D-16**) par
 [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — contre une enveloppe
-de Livre de **34 000** au TOC, soit **−9,6 %**.
+de Livre de **34 000** au TOC, soit **−6,7 %**.
+
+⚠ *Le Livre portait **30 754 mots** avant la passe de fond, et **31 710** après — soit **+956**, **entièrement d'appareil** : reprises datées, remontées soldées, revalidations consignées. **Aucun énoncé de fond n'a été ajouté.***
 
 ⚠ **Le chiffre publié ici — 26 474 mots au 28 juillet 2026 — ne se reproduit plus, et les pièces de ce
 dossier le démentaient déjà.** La somme des cardinaux que **leurs quatre en-têtes déclarent** vaut
@@ -149,13 +151,13 @@ l'amputation, et que le régime de preuve de la matière neuve interdit une seco
 **9 300 + 4 700 + 15 800 + 4 200 = 34 000**, exactement l'enveloppe. *L'écart ne vient donc ni de la
 dérivation ni d'un oubli d'addition — il vient de ce que la matière neuve n'a pas de matière.*
 
-| Pièce | Cible dérivée | Réel au 27 juillet | **Réel au 28 juillet** | **Écart** |
-|---|---|---|---|---|
-| [Ch. 47](47-artefact-livre-provenance-mise-en-service.md) — l'artefact livré | 9 300 | 5 326 | **5 897** | **−36,6 %** |
-| [Ch. 48](48-semantique-effet-idempotence-compensation.md) — la sémantique d'effet | 4 700 | 2 793 | **3 305** | **−29,7 %** |
-| [Ch. 49](49-horizon-frontiere-connaissance-verifiable.md) — horizon et frontière | 15 800 | 13 458 | **13 740** | −13,0 % |
-| [Ch. 50](50-peremption-protocole-revalidation.md) — péremption et revalidation | 4 200 | 3 440 | **3 532** | −15,9 % |
-| **Livre V** | **34 000** | 25 017 | **26 474** | **−22,1 %** |
+| Pièce | Cible dérivée | Réel au 27 juillet | **Réel au 28 juillet** | **Écart** | **Réel (2 sept. 2026)** |
+|---|---|---|---|---|---|
+| [Ch. 47](47-artefact-livre-provenance-mise-en-service.md) — l'artefact livré | 9 300 | 5 326 | **5 897** | **−36,6 %** | **7 195** |
+| [Ch. 48](48-semantique-effet-idempotence-compensation.md) — la sémantique d'effet | 4 700 | 2 793 | **3 305** | **−29,7 %** | **4 442** |
+| [Ch. 49](49-horizon-frontiere-connaissance-verifiable.md) — horizon et frontière | 15 800 | 13 458 | **13 740** | −13,0 % | **14 469** |
+| [Ch. 50](50-peremption-protocole-revalidation.md) — péremption et revalidation | 4 200 | 3 440 | **3 532** | −15,9 % | **5 604** |
+| **Livre V** | **34 000** | 25 017 | **26 474** | **−22,1 %** | **31 710** |
 
 : Tableau — Volumétrie du Livre V, cible dérivée et mesures réelles au commit de rédaction (27 juillet 2026) et au commit de correction (28 juillet 2026). ⚠ **Constat daté et dépassé — ce tableau et les paragraphes d'analyse qui l'entourent** — *ces valeurs sont inférieures aux cardinaux que les quatre pièces portent en tête ; voir l'avertissement ci-dessus, et la mesure du 10 août 2026.* ⚠ **Les deux dérivations ne suivent pas la même règle, et c'est délibéré** : le premier mouvement dérive **par front** — 14 000 mots pour les *trois* fronts que la vérification v0.3 avait chiffrés, dont deux au ch. 47 —, le second **au prorata des sections**. *Dériver le premier mouvement par section aurait produit un chiffre sans rapport avec l'estimation d'origine.* ⚠ **Le ch. 49 porte le plus faible écart des quatre, le ch. 50 venant au second rang** — *le superlatif que l'en-tête du ch. 50 s'attribuait était faux dès la rédaction, et il est corrigé.*
 
@@ -166,7 +168,7 @@ dérivation ni d'un oubli d'addition — il vient de ce que la matière neuve n'
 | **Ch. 47** — L'artefact livré : provenance des composants et mise en service | deux mouvements (fusion v0.23) : les cinq composants d'un agent et leurs horloges ; les cinq spécifications relevées ; les **deux sens du mot « attestation »** ; le retournement relu comme défaut de provenance ; la provenance comme **cinquième pièce candidate** du passeport ; les **cinq horloges** du versionnement ; le **problème de l'oracle** ; ce que le retour arrière ne restaure pas | **matière neuve** — le plus dur des trois (PRD §7.2) ; **zéro socle, zéro vote, zéro extraction** |
 | **Ch. 48** — La sémantique d'effet : idempotence, compensation, réconciliation | ⚠ **SIÈGE** pour toute la somme : la taxonomie **lecture / écriture / engagement** ; l'idempotence comme propriété de **l'outil**, jamais du protocole ; la saga au grain d'une trajectoire composée à l'exécution ; l'écart comptable ; la jointure manquante entre l'effet et l'appel | **matière neuve** ; ⚠ **fermé à l'accord entre agents sous défaillance par D-7** |
 | **Ch. 49** — L'horizon 2027-2032 et la frontière de la connaissance vérifiable | deux mouvements (fusion v0.20) : ⚠ **SIÈGE du tri prospectif** et **SIÈGE du verrou sémantique** ; la grappe d'échéances ; la bifurcation de la gouvernance par couche ; six fronts de recherche ; les forces macro ; l'assurabilité comme régulateur de fait ; **le registre unifié des lacunes des trois volumes** — onze du Vol. II, vingt-deux du Vol. III, trois absences au degré 3 | **sources gelées** ; premier mouvement **intégralement en [C]** (Vol. I) ; second sous **G-4 non franchie** |
-| **Ch. 50** — Péremption et protocole de revalidation | **dernier chapitre de la somme** : les cinq lacunes du blueprint ; **onze événements de péremption** avec leur tri ; le protocole de revalidation et sa limite ; la convention de datation à deux termes — ⚠ *dont le registre de gel qui n'existe pas* | **sources gelées** ; niveaux d'origine conservés |
+| **Ch. 50** — Péremption et protocole de revalidation | **dernier chapitre de la somme** : les cinq lacunes du blueprint ; **quatorze événements de péremption** avec leur tri — *onze à la rédaction, trois ajoutés le 2 septembre 2026 (D-16)* ; le protocole de revalidation et sa limite ; la convention de datation à deux termes — ⚠ *dont le registre de gel qui n'existe pas* | **sources gelées** ; niveaux d'origine conservés |
 
 ## Trois sièges posés ici pour toute la somme
 
@@ -309,9 +311,18 @@ clôture, issue d'échec —, et *le vide exposé reste le seul geste que le ré
 1. ⚠ **Le titre du § 47.8 au TOC écrit encore « Le versionnement à quatre horloges »** alors que la
    thèse qu'il gouverne en compte cinq depuis la v0.26. *Le corps est corrigé, l'intitulé de plan ne
    l'est pas : un rédacteur ne réécrit pas un titre du TOC.*
+
+   ☑ **SOLDÉE.** Le TOC écrit « **§ 47.8 — Le versionnement à cinq horloges** » depuis la v0.29 ;
+   *la remontée avait été portée, entendue et corrigée, et personne n'était revenu la fermer ici.*
 2. ⚠ **Le siège du verrou sémantique n'a aucun renvoi entrant** : les **ch. 2, ch. 9 et ch. 43** — que
    le § 49.6 nomme comme consommateurs — ne le citent nulle part. *S5 ne peut donc pas être activé
    pour ce siège sans produire trois échecs sur des pièces hors zone.*
+
+   ☑ **SOLDÉE le 2 septembre 2026, passe d'audit** : **S5 est armé** pour ce siège, et re-mesuré,
+   **quatre pièces déclenchent, les quatre renvoient**. ⚠ *La prémisse était fausse au moment où
+   elle a été écrite* — le **ch. 2 § 2.3** portait déjà « leur siège au ch. 49 § 49.6 », et le
+   **ch. 43** n'emploie pas le déclencheur, donc ne déclenche pas. **Le contrôle n'aurait produit
+   aucun des trois échecs redoutés.**
 3. ⚠ **Le générateur de rendu écarte silencieusement tout bloc placé entre la thèse et le premier
    séparateur**, et **le contrôle [1] du vérificateur ne le voit pas** — il apparie les titres de
    section, non les blocs. *C'est la cause réelle du constat V.2, et elle est d'appareil.*
@@ -327,7 +338,7 @@ clôture, issue d'échec —, et *le vide exposé reste le seul geste que le ré
 
 **Il couvre** : l'agent traité comme **artefact** plutôt que comme interlocuteur — sa composition, sa
 mise en service, ses effets ; l'**horizon 2027-2032** trié selon les trois statuts ; le **registre
-unifié des lacunes** des trois volumes, dressé pour la première fois ; les **onze événements** qui
+unifié des lacunes** des trois volumes, dressé pour la première fois ; les **quatorze événements** qui
 périment la somme, et la procédure pour la redater.
 
 **Il ne couvre pas**, et chaque absence a un motif écrit : *(a)* **l'accord entre agents sous

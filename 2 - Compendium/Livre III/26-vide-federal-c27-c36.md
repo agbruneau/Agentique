@@ -303,6 +303,8 @@ fondaient cette note sont donc tombés — et une porte franchie après coup ne 
   exclusion porte son motif**. ⚠ *La demande est jumelle de celle que la relecture du ch. 28 a ouverte
   le même jour pour la doctrine de l'avis 11-348 — **deux pièces du même mouvement, même manque** ; les
   arbitrer ensemble évitera de motiver deux fois la même exclusion.*
+
+  ☑ **SOLDÉE le 2 septembre 2026** (D-16) : **la rangée est inscrite au tableau 50.1**, qui passe de **onze à quatorze** événements. ⚠ *Aucun motif d'exclusion n'a résisté à l'examen* — les trois objets remontés (ch. 9, ch. 26, ch. 28) sont **du genre exact que le tableau recense**, et leur absence tenait à ce que nul ne les y avait portés. **Les trois demandes jumelles ont été arbitrées ensemble**, comme le ch. 26 le suggérait, *pour ne pas motiver trois fois la même exclusion*. **Tri retenu : PROJETÉ** — *une reprise législative est une prévision d'institution, non un engagement daté ; aucune date n'est portée, et c'est le renseignement.*
   *(e)* ⚠ **Le titre de la table détaillée du ch. 26 au TOC nomme un autre chapitre** — de la classe
   *désalignement interne au plan*, celle qu'aucun des quinze contrôles ne voit. L'entrée du chapitre 26
   est suivie de « **Table des matières détaillée du chapitre 30** », et **30 est le numéro de ce

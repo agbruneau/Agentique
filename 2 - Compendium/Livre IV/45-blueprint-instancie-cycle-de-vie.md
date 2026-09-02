@@ -620,7 +620,7 @@ mêmes contraintes produisent les mêmes vides.* **Ce que cela ne montre pas** :
 ceux qu'un observateur indépendant relèverait* — ⚠ **le socle ne documente aucune confrontation
 externe** : absence de documentation, non fait négatif vérifié (degré 3).
 
-## Synthèse : ce que le chapitre lègue à la somme
+### Synthèse : ce que le chapitre lègue à la somme
 
 *Section de sortie sans homologue direct dans la source — construction d'éditeur.*
 
@@ -688,6 +688,8 @@ Instruction d'auteur du **27 juillet 2026**.
    **F-39 à F-42 et F-44 à F-46**, ni F-38 ni F-43.* **La pièce l'écrit ainsi et ne recopie pas la
    plage large.**
 5. **CA-IV-13 n'est pas satisfaite** — aucune relecture par un relecteur distinct du rédacteur.
+
+   ☑ **STATUT ARRÊTÉ LE 2 SEPTEMBRE 2026** (décision 26 du TOC, **D-16**) : *l'**annexe H** n'est pas rédigée et **ne le sera pas** — le dépôt est clos, et **D-13** ne prévoit plus de passe de rédaction.* ☑ **Son siège est nommé aux sources** : `Annexe B - Architecture de Solutions.md` du **Vol. I**. ⚠ **Le renvoi de cette pièce n'est donc plus une attente, c'est une désignation** — *il visait un livrable à venir, il vise désormais un texte qui existe.*
 
 **Remontées ouvertes par ce chapitre :**
 

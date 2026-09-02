@@ -60,7 +60,17 @@ echo "Rendu : $OUT ($PAGES pages)"
 CIBLE=1000
 if [ "$GABARIT" = compendium ] && [ "$OUT" = "$DIR/Compendium.pdf" ]; then
   if [ "$PAGES" = '?' ]; then
-    echo "[build] Avertissement : pypdf introuvable ; la cible de $CIBLE pages n'a PAS ete verifiee." >&2
+    # ⚠ ECHEC et non avertissement (2 septembre 2026). La forme anterieure
+    # degradait la porte en avertissement quand `pypdf` manquait : le rendu
+    # canonique s'ecrivait alors sans que la cible ait ete verifiee, et
+    # l'avertissement se perdait dans la sortie du build. *Une porte qui ne
+    # s'execute pas doit faire echouer le build, sinon elle enseigne qu'on peut
+    # composer sans elle* — c'est la meme doctrine que le `renvoi: None` de
+    # `check-sieges.py` : une desactivation se declare, elle ne se subit pas.
+    echo "[build] ECHEC : pypdf introuvable, la cible de $CIBLE pages n'a PAS pu etre verifiee." >&2
+    echo "[build]   Le PDF est ecrit, sa conformite n'est pas etablie." >&2
+    echo "[build]   Installer la dependance : python3 -m pip install -r build/requirements.txt" >&2
+    exit 1
   elif [ "$PAGES" -ne "$CIBLE" ]; then
     echo "[build] ECHEC : $PAGES pages rendues, $CIBLE attendues. Le PDF est ecrit, il n'est pas conforme." >&2
     echo "[build]   Le calage se prend sur PAS dans build/compendium.template, et sur lui seul :" >&2

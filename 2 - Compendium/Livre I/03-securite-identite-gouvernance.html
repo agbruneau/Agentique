@@ -443,6 +443,17 @@ tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
 tbody td:first-child { color: var(--texte); font-weight: 600; }
 .legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
 
+/* -------------------------------------------------------------- figures */
+/* Les SVG du volume sont dessinés pour le PDF, donc sur fond clair, et ils
+   portent ce fond eux-mêmes — sans quoi il faudrait maintenir deux variantes
+   de chaque figure. Sur ce thème sombre, ils se posent donc comme un carton ;
+   le padding empêche le fond de la figure de toucher le bord du cadre. */
+.figure { margin: 2.1rem 0 1.9rem; }
+.figure img { display: block; width: 100%; height: auto; border-radius: 7px;
+              border: 1px solid var(--trait); background: #fdfbf9; padding: 0.6rem; }
+.figure figcaption { font-size: 0.8rem; font-style: italic; color: var(--texte-faible);
+                     margin-top: 0.65rem; padding-left: 0.15rem; }
+
 /* --------------------------------------------------------------- listes */
 ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
 ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
@@ -534,7 +545,7 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
     <li><a href="#s31"><span class="num">3.1</span>Du périmètre réseau à la confiance par échange</a></li>
     <li><a href="#s32"><span class="num">3.2</span>Identité fédérée et autorisation déléguée</a></li>
     <li><a href="#s33"><span class="num">3.3</span>Zero-trust, identité de charge de travail et confiance décentralisée</a></li>
-    <li><a href="#s34"><span class="num">3.4</span>Gouvernance, test et observabilité de l&#x27;interopérabilité</a></li>
+    <li><a href="#s34"><span class="num">3.4</span>Gouvernance, test et observabilité de l'interopérabilité</a></li>
   </ol>
   <div class="nav__pied">
     Vol.&nbsp;IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em><br>
@@ -553,300 +564,229 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 
 <!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
      Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
-     que `build/assemble.py` pour le PDF. L'appareil de gouvernance vit au .md jumeau, qui reste la
-     seule source, et `verifier-piece.py` [6] refuse désormais un rendu qui le recopierait. -->
+     que `build/assemble.py` pour le PDF et que `PRD/decompte.sh` pour la volumétrie. L'appareil de
+     gouvernance vit au .md jumeau, qui reste la seule source, et `build/verifier-piece.py` refuse
+     un rendu qui le recopierait. -->
 
 <h2 id="s31"><span class="sig">§ 3.1</span>Du périmètre réseau à la confiance par échange</h2>
-
 <p>La sécurité n'est pas une couche superposée à l'interopérabilité : elle en est une <strong>propriété émergente</strong>, qui se construit et se vérifie à chaque échange. Dès lors que deux systèmes administrés séparément coopèrent par contrat (ch. 1 § 1.1.1), la frontière de confiance se déplace du périmètre réseau vers <strong>le message lui-même</strong>.</p>
-
 <p>Ce déplacement est le sujet du chapitre, et il se formule en une exigence : un appel inter-services doit prouver <strong>qui</strong> l'émet, <strong>au nom de qui</strong> il agit et <strong>sur quoi</strong> il porte, indépendamment du chemin réseau emprunté. Le contrat de sécurité — schéma de jeton, profil d'autorisation, identité de charge de travail — devient alors un artefact aussi explicite et versionné que le contrat d'interface.</p>
-
 <div class="avert">
   <p><strong>Ce chapitre est posé une seule fois pour toute la somme, et c'est sa raison d'être.</strong> Les ch. 12 (transposition d'OAuth, d'OIDC et de SCIM aux agents), ch. 13 (identité décentralisée agentique), ch. 21 (horloge post-quantique), ch. 37 (zero-trust au grain de l'infrastructure) et ch. 38 (observabilité agentique) <strong>y renvoient sans le reconstruire</strong>. C'est la principale économie de la refonte des trois volumes côté identité, et elle n'a lieu que si ces cinq chapitres s'y tiennent. Un lecteur qui trouverait OAuth réexpliqué au ch. 12 devrait considérer que l'économie a été perdue.</p>
 </div>
-
 <h3>3.1.1 Modèle de menace de l'intégration</h3>
-
 <p>L'intégration multiplie les frontières de confiance, et chacune introduit une classe d'attaques propre. Quatre méritent d'être nommées, parce que la couche agentique les retrouvera toutes.</p>
-
 <p>Le <strong>mandataire confus</strong> (<em>confused deputy</em>) — un service privilégié induit à agir pour le compte d'un appelant non autorisé — est un défaut <strong>structurel</strong> des architectures déléguées, et non un défaut d'implémentation. Une passerelle qui réutilise ses propres droits au lieu de propager ceux du client transforme tout point d'entrée en vecteur d'escalade. C'est le défaut le plus important de cette sous-section pour la suite du Livre : il connaît une variante moderne dans les architectures agentiques, où une injection d'invite indirecte détourne le plan d'un agent en lui faisant traiter comme instructions des contenus externes.</p>
-
 <p>Le <strong>vol et le rejeu de jetons porteurs</strong> constituent la menace corollaire, et elle est analytique plutôt qu'empirique : un jeton porteur intercepté est, <strong>par définition</strong>, rejouable par quiconque le détient. Ce n'est pas une faiblesse d'implémentation qu'un correctif effacerait ; c'est la conséquence directe de ce qu'un jeton porteur <em>est</em>. La liaison cryptographique du jeton à son porteur (§ 3.2.2) n'est donc pas un durcissement optionnel dans une intégration exposée.</p>
-
 <p>S'y ajoutent l'<strong>escalade latérale</strong> — un appel exploitant une relation de confiance implicite entre services — et la <strong>falsification de requête côté serveur</strong>, particulièrement aiguë en passerelle, où un composant légitime est détourné pour atteindre des ressources internes autrement inaccessibles.</p>
-
 <p>Ces vecteurs convergent vers un principe directeur : <em>ne jamais faire confiance, toujours vérifier</em>. <strong>Aucune position dans la topologie</strong> — réseau interne, sous-réseau de confiance, maillage — ne confère d'autorité par elle-même. Chaque requête est authentifiée et autorisée sur ses propres mérites.</p>
-
 <div class="avert">
   <p>Que cette liste soit exhaustive n'est pas établi : le socle hérité recense ces classes sans prétendre à un balayage systématique. Il s'agit d'une <strong>absence de documentation</strong> au sens de R-14 du Vol. III, non d'un fait négatif vérifié — et la taxonomie proprement agentique du ch. 19 procédera, elle, par balayage documenté.</p>
 </div>
-
 <div class="encadre encadre--recherche">
   <span class="encadre__label">Perspective recherche</span>
   <p>Le mandataire confus se modélise comme une <strong>perte d'information sur l'identité du mandant</strong> le long d'une chaîne de délégation : le système préserve l'<em>authentification</em> mais perd l'<em>autorisation</em> d'origine. C'est une formulation qui vaut d'être retenue, parce qu'elle dit exactement ce que les profils de propagation de contexte (§ 3.2.3) réparent — rendre la chaîne de mandants explicite et vérifiable à chaque saut, plutôt que reconstruite par inférence. Le problème des deux sauts du ch. 17 en est la forme agentique.</p>
 </div>
-
 <h3>3.1.2 OWASP API Security Top 10 et contrôles</h3>
-
 <p>Les API étant le substrat dominant de l'intégration moderne, leur classe de vulnérabilités propre mérite une cartographie sur le pipeline d'échange. L'<strong>OWASP API Security Top 10</strong>, publié et tenu à jour par la fondation <strong>OWASP</strong>, hiérarchise ces risques et place en tête les <strong>défauts d'autorisation au niveau de l'objet</strong> : l'accès à des ressources d'un autre locataire faute de contrôle par identifiant, et la granularité du contrôle qui s'arrête à la ressource sans couvrir ses propriétés sensibles.</p>
-
 <p>Ces deux défauts sont, au fond, <strong>des fautes de contrat</strong> : l'interface expose une surface d'objets plus large que la politique d'autorisation ne la garde. Les lire ainsi plutôt que comme des bogues change la parade — on corrige le contrat, pas seulement le code.</p>
-
-<p>L'<strong>authentification cassée</strong> — gestion défaillante des jetons, absence de rotation, points de terminaison non protégés — complète le tableau et fait le lien direct avec les mécanismes d'identité fédérée du § 3.2.</p>
-
+<p>L'<strong>authentification cassée</strong> — gestion défaillante des jetons, absence de rotation, points d'extrémité non protégés — complète le tableau et fait le lien direct avec les mécanismes d'identité fédérée du § 3.2.</p>
 <p>La valeur opératoire du référentiel tient à sa transposition sur les étapes de l'intégration : validation du jeton et de son audience en passerelle ; <strong>contrôle d'autorisation au plus près de la ressource</strong>, et non seulement au point d'entrée ; limitation des propriétés sérialisées par le contrat de réponse ; application des quotas et limites de débit (§ 3.4.2). Chaque risque se règle ainsi par un contrôle attaché à <strong>un point de contrat identifiable</strong>, et non par une mesure de périmètre.</p>
-
+<hr />
 <h2 id="s32"><span class="sig">§ 3.2</span>Identité fédérée et autorisation déléguée</h2>
-
-<div class="encadre encadre--oeuvre">
-  <span class="encadre__label">Note</span>
-  <p>⚠ <strong>SIÈGE DU SOCLE IAM POUR TOUTE LA SOMME.</strong> Ce socle pré-agentique est <strong>posé ici une seule fois</strong>, au § 3.2 et au § 3.3. Les <strong>ch. 12, 13, 21, 37 et 38</strong> le transposent aux agents et <strong>n'en reconstruisent aucun mécanisme</strong> — ils y renvoient. C'est la principale économie de la fusion côté identité, et elle n'a lieu que si ces chapitres s'y tiennent ; l'abstention est contrôlée par <code>PRD/check-sieges.py</code>. Ce qui suit est donc l'état de l'art <em>avant</em> que l'agent n'entre en scène — c'est délibérément une photographie, et sa valeur pour la somme tient à ce qu'elle serve de point de comparaison.</p>
+<blockquote>
+<div class="avert">
+  <p><strong>SIÈGE DU SOCLE IAM POUR TOUTE LA SOMME.</strong> Ce socle pré-agentique est <strong>posé ici une seule fois</strong>, au § 3.2 et au § 3.3. Les <strong>ch. 12, 13, 21, 37 et 38</strong> le transposent aux agents et <strong>n'en reconstruisent aucun mécanisme</strong> — ils y renvoient. C'est la principale économie de la fusion côté identité, et elle n'a lieu que si ces chapitres s'y tiennent ; l'abstention est contrôlée par <code>PRD/check-sieges.py</code>. Ce qui suit est donc l'état de l'art <em>avant</em> que l'agent n'entre en scène — c'est délibérément une photographie, et sa valeur pour la somme tient à ce qu'elle serve de point de comparaison.</p>
 </div>
-
+</blockquote>
 <h3>3.2.1 SAML, OAuth 2.x/2.1 et OpenID Connect</h3>
-
 <p>L'identité fédérée résout un problème d'interopérabilité précis : permettre à un système d'accepter des identités <strong>émises et garanties par un autre domaine administratif</strong>. C'est le premier mécanisme de la somme où une organisation accepte de faire dépendre une décision d'accès d'une assertion produite ailleurs — geste dont le Livre II montrera qu'il ne se transpose pas mécaniquement aux agents.</p>
-
 <p>Le format historique de cette fédération est l'<strong>assertion SAML 2.0</strong>, encore omniprésente dans l'intégration interentreprises et l'authentification unique vers les applications d'entreprise. La trajectoire dominante est néanmoins une migration vers <strong>OpenID Connect</strong>, qui adosse l'authentification à la couche d'autorisation <strong>OAuth 2.0</strong> et substitue à l'assertion XML un jeton d'identité JSON plus léger, mieux adapté aux API et aux clients publics.</p>
-
 <div class="avert">
-  <p><strong>Ce chapitre est le SIÈGE du socle IAM pour toute la somme, et cinq chapitres aval y renvoient sans le reconstruire</strong> — ce qui interdit d'expédier SAML en une phrase. <em>Trois traits de l'assertion SAML 2.0 sont donc posés ici une fois, parce que les Livres II et IV s'y adossent.</em> <strong>(a) Le porteur de la confiance est le document, non le canal</strong> : une assertion est un fragment XML <strong>signé par l'émetteur</strong>, que le consommateur valide contre une clé publiée d'avance — <em>la fédération SAML est un échange de documents signés entre deux domaines qui se sont préalablement reconnus, et cette reconnaissance préalable est hors protocole.</em> <strong>(b) Le lien de confiance est bilatéral et négocié hors bande</strong> : chaque couple fournisseur d'identité / fournisseur de service échange ses métadonnées et ses certificats, ce qui rend l'ajout d'un partenaire <strong>linéairement coûteux</strong> — <em>c'est le problème N×M du ch. 1 § 1.1, appliqué à la confiance plutôt qu'aux données.</em> <strong>(c) L'assertion transporte des attributs, non une autorisation</strong> : elle dit <em>qui</em> est le sujet et ce qu'on sait de lui ; <em>ce que le sujet a le droit de faire reste une décision du consommateur</em>.</p>
+  <p><strong>Ce chapitre est le SIÈGE du socle IAM pour toute la somme, et cinq chapitres aval y renvoient sans le reconstruire</strong> — ce qui interdit d'expédier SAML en une phrase. <em>Trois traits de l'assertion SAML 2.0 sont donc posés ici une fois, parce que les Livres II et IV s'y adossent.</em> <strong>(a) Le porteur de la confiance est le document, non le canal</strong> : une assertion est un fragment XML <strong>signé par l'émetteur</strong>, que le consommateur valide contre une clé publiée d'avance — <em>la fédération SAML est un échange de documents signés entre deux domaines qui se sont préalablement reconnus, et cette reconnaissance préalable est hors protocole.</em> <strong>(b) Le lien de confiance est bilatéral et négocié hors bande</strong> : chaque couple fournisseur d'identité / fournisseur de service échange ses métadonnées et ses certificats, ce qui rend l'ajout d'un partenaire <strong>linéairement coûteux</strong> — <em>c'est la croissance combinatoire du ch. 1 § 1.6.1, appliquée à la confiance plutôt qu'aux données.</em> <strong>(c) L'assertion transporte des attributs, non une autorisation</strong> : elle dit <em>qui</em> est le sujet et ce qu'on sait de lui ; <em>ce que le sujet a le droit de faire reste une décision du consommateur</em>.</p>
 </div>
-
 <div class="avert">
-  <p><strong>C'est le troisième trait qui voyage le plus loin dans la somme, et il faut le retenir sous cette forme</strong> : <em>la fédération d'identité résout l'authentification entre domaines et laisse l'autorisation entière</em> — <strong>le ch. 17 retrouve exactement cette frontière au niveau du mandat d'agent</strong>, et le ch. 14 en fait l'une de ses cinq questions. <strong>Lecture de l'auteur</strong> : la migration de SAML vers OpenID Connect change le <strong>format</strong> et le <strong>poids</strong> du jeton, non cette répartition ; <em>le socle établit la substitution de format, il n'établit pas que le partage des rôles ait bougé.</em></p>
+  <p><strong>C'est le troisième trait qui voyage le plus loin dans la somme, et il faut le retenir sous cette forme</strong> : <em>la fédération d'identité résout l'authentification entre domaines et laisse l'autorisation entière</em> — <strong>le ch. 17 retrouve exactement cette frontière au niveau du mandat d'agent</strong>, et le ch. 14 en fait l'une de ses cinq questions. <span class="auteur">Lecture de l'auteur</span> la migration de SAML vers OpenID Connect change le <strong>format</strong> et le <strong>poids</strong> du jeton, non cette répartition ; <em>le socle établit la substitution de format, il n'établit pas que le partage des rôles ait bougé.</em></p>
 </div>
-
 <p>Sur le versant de l'<strong>autorisation déléguée</strong>, le socle évolue d'OAuth 2.0 vers <strong>OAuth 2.1</strong>, dont l'objet est de consolider les flux éprouvés et de proscrire ceux jugés dangereux : l'échange de code avec preuve de clé devient obligatoire, et le flux implicite est retiré.</p>
-
 <div class="avert">
   <p><strong>Point de statut à ne pas lisser</strong> : à la date d'arrêt des sources (mi-2026), <strong>OAuth 2.1 est encore à l'état de projet</strong>. La consolidation est en revanche codifiée comme <em>bonne pratique de sécurité actuelle</em> par la <strong>BCP 240</strong> de l'IETF (<strong>RFC 9700</strong>, 2025), qui constitue la référence pour durcir un déploiement existant <strong>sans attendre</strong> la finalisation. Citer OAuth 2.1 comme un standard établi serait une faute de fait ; s'appuyer sur la BCP 240 ne l'est pas.</p>
 </div>
-
 <div class="encadre encadre--oeuvre">
   <span class="encadre__label">Mise en œuvre</span>
-  <p>Pour un nouveau service, le couple OpenID Connect pour l'authentification et OAuth 2.1 avec preuve de clé obligatoire pour l'autorisation déléguée constitue le défaut raisonnable, en appliquant dès la conception les recommandations de la <strong>BCP 240</strong>. SAML 2.0 demeure pertinent pour interopérer avec un parc applicatif existant, sans être retenu pour de nouvelles intégrations orientées API.</p>
+  <p>Pour un nouveau service, le couple OpenID Connect pour l'authentification et OAuth 2.1 avec preuve de clé obligatoire pour l'autorisation déléguée constitue le choix par défaut raisonnable, en appliquant dès la conception les recommandations de la <strong>BCP 240</strong>. SAML 2.0 demeure pertinent pour interopérer avec un parc applicatif existant, sans être retenu pour de nouvelles intégrations orientées API.</p>
 </div>
-
 <h3>3.2.2 Jetons, anti-rejeu et profils à haute sécurité</h3>
-
 <p>Le <strong>jeton est le contrat de sécurité matérialisé</strong> : sa structure et ses garanties déterminent la confiance qu'un consommateur peut lui accorder. Le format pivot est le jeton web JSON, <strong>signé</strong> pour l'intégrité et l'authenticité, et <strong>chiffré</strong> lorsque la confidentialité de ses revendications l'exige.</p>
-
 <p>Il faut ici être exact sur ce qu'une signature apporte, parce que c'est le point où la lecture rapide se trompe. <strong>Un jeton signé reste un jeton porteur, donc rejouable s'il est dérobé.</strong> La signature démontre l'<em>origine</em> et l'<em>intégrité</em> de la revendication ; elle ne démontre <strong>rien</strong> sur l'identité de celui qui présente le jeton. Confondre les deux, c'est croire protégé ce qui ne l'est pas.</p>
-
 <p>La parade consiste à <strong>lier cryptographiquement le jeton à son détenteur légitime</strong>, et deux mécanismes le font à des niveaux différents :</p>
-
-<ul class="puces">
-  <li>la <strong>liaison par certificat client</strong> en TLS mutuel ancre le jeton à la clé TLS du client — elle démontre la possession de cette clé lors de la poignée de main, et suppose une infrastructure de certificats mutuels ;</li>
-  <li>la <strong>démonstration de possession de clé</strong> au niveau applicatif atteint le même objectif <strong>sans</strong> cette infrastructure, en exigeant une preuve de possession à chaque requête.</li>
+<ul>
+<li>la <strong>liaison par certificat client</strong> en TLS mutuel ancre le jeton à la clé TLS du client — elle démontre la possession de cette clé lors de la poignée de main, et suppose une infrastructure de certificats mutuels ;</li>
+<li>la <strong>démonstration de possession de clé</strong> au niveau applicatif atteint le même objectif <strong>sans</strong> cette infrastructure, en exigeant une preuve de possession à chaque requête.</li>
 </ul>
-
 <div class="avert">
   <p><strong>Qualification, au sens de R-02 du Vol. III.</strong> Ces deux mécanismes <strong>démontrent</strong> qu'un requérant possède une clé au moment de la requête. Ils ne démontrent pas que cette clé est détenue par l'entité légitime, ni qu'elle n'a pas été extraite d'un environnement compromis : ces propriétés relèvent de la protection de la clé, non du protocole de liaison. Écrire qu'un jeton lié est « non rejouable » serait qualifier par la promesse ; écrire qu'il « n'est plus rejouable par un tiers ne possédant pas la clé » est qualifier par ce qui est démontré.</p>
 </div>
-
 <p>Ces mécanismes se composent en <strong>profils de haute sécurité</strong> pour les contextes les plus exposés. Le profil <strong>FAPI 2.0</strong> de l'<strong>OpenID Foundation</strong>, <strong>finalisé le 22 février 2025</strong>, agrège ces exigences — jetons liés au porteur, indication explicite de la ressource cible, validation stricte des paramètres — en une cible de conformité éprouvée, notamment dans l'écosystème de la finance ouverte que le Livre III reprendra.</p>
-
 <p>Adopter un tel profil revient à <strong>figer un contrat de sécurité interopérable et certifiable</strong>, plutôt qu'à recomposer <em>ad hoc</em> un assemblage de contrôles. C'est le même geste que celui du modèle de données canonique au ch. 1 § 1.6.1 : substituer un pivot gouverné à une combinatoire de décisions locales.</p>
-
 <h3>3.2.3 Provisionnement et propagation de contexte</h3>
-
 <p>L'identité fédérée présuppose que les comptes <strong>existent et restent synchronisés</strong> entre domaines : c'est le rôle du provisionnement. Le standard <strong>SCIM</strong> — <em>System for Cross-domain Identity Management</em> — en fournit le schéma et le protocole, automatisant le cycle de vie des comptes — création, mise à jour, désactivation — d'un fournisseur d'identité vers les applications consommatrices.</p>
-
 <div class="avert">
-  <p><strong>Deux traits de SCIM sont posés ici, au titre du siège, parce que le Livre II les mobilise et que le ch. 12 est nommément chargé de leur transposition aux agents.</strong> <strong>(a) SCIM est un protocole de <em>ressource</em>, pas de <em>session</strong></em> : il expose des collections d'utilisateurs et de groupes sur une interface REST, avec un schéma extensible, et il agit <strong>hors du chemin de l'authentification</strong> — <em>le provisionnement se fait avant, l'authentification pendant, et les deux ne se voient pas.</em> <strong>(b) Sa désactivation est un état, non un événement</strong> : SCIM porte un attribut d'activité que le fournisseur d'identité met à jour, et <em>rien dans le protocole ne garantit qu'une application consommatrice observe ce changement dans un délai borné.</em></p>
+  <p><strong>Deux traits de SCIM sont posés ici, au titre du siège, parce que le Livre II les mobilise et que le ch. 12 est nommément chargé de leur transposition aux agents.</strong> <strong>(a) SCIM est un protocole de <em>ressource</em>, pas de <em>session</em></strong> : il expose des collections d'utilisateurs et de groupes sur une interface REST, avec un schéma extensible, et il agit <strong>hors du chemin de l'authentification</strong> — <em>le provisionnement se fait avant, l'authentification pendant, et les deux ne se voient pas.</em> <strong>(b) Sa désactivation est un état, non un événement</strong> : SCIM porte un attribut d'activité que le fournisseur d'identité met à jour, et <em>rien dans le protocole ne garantit qu'une application consommatrice observe ce changement dans un délai borné.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>Le second trait est le plus lourd, et c'est la raison pour laquelle ce paragraphe existe.</strong> <em>Un protocole de provisionnement qui pousse un état sans borner sa propagation ne ferme pas la fenêtre de révocation — il la déplace du poste manuel vers le calendrier de synchronisation.</em> <strong>C'est exactement la question que le ch. 20 pose à la couche agentique</strong> — un budget de fraîcheur écrit dans un texte — et <strong>le socle IAM pré-agentique n'y répond pas davantage que les protocoles d'agents</strong> : <em>absence de documentation, non fait négatif vérifié.</em> <span class="auteur">Lecture de l'auteur</span> la couche agentique n'hérite donc pas d'une solution qu'elle aurait perdue : <em>elle hérite d'un problème que l'entreprise avait appris à tolérer sur des cycles humains, et que des agents parcourent en secondes.</em></p>
 </div>
-
 <p>Sans ce maillon, la révocation d'accès reste manuelle et tardive, ce qui <strong>rouvre la fenêtre d'attaque que l'authentification fédérée prétendait fermer</strong>. Le provisionnement est donc la facette <em>évolution</em> du contrat d'identité : il garantit que l'état d'autorisation suit l'état réel des personnes et des charges. Une identité fédérée sans provisionnement n'est pas une identité fédérée imparfaite — c'est une identité fédérée dont la principale garantie est absente.</p>
-
 <p>La seconde exigence est la <strong>propagation du contexte d'autorisation</strong> le long d'une chaîne d'appels, sans perte du mandant d'origine (§ 3.1.1). Deux mécanismes s'y emploient :</p>
-
-<ul class="puces">
-  <li>l'<strong>échange de jetons</strong> permet à un service intermédiaire d'obtenir, à partir d'un jeton entrant, un jeton dérivé <strong>restreint</strong> pour appeler le service suivant, en conservant la trace du sujet initial ;</li>
-  <li>les <strong>jetons de transaction</strong> poussent cette logique vers une preuve d'autorisation propre à une transaction métier, traversant l'ensemble des sauts internes.</li>
+<ul>
+<li>l'<strong>échange de jetons</strong> permet à un service intermédiaire d'obtenir, à partir d'un jeton entrant, un jeton dérivé <strong>restreint</strong> pour appeler le service suivant, en conservant la trace du sujet initial ;</li>
+<li>les <strong>jetons de transaction</strong> poussent cette logique vers une preuve d'autorisation propre à une transaction métier, traversant l'ensemble des sauts internes.</li>
 </ul>
-
 <p>Ces approches matérialisent la délégation en chaîne comme un <strong>contrat explicite et vérifiable de bout en bout</strong>, là où une simple réémission de jeton porteur effacerait l'identité du mandant et rouvrirait le risque de mandataire confus.</p>
-
 <div class="avert">
-  <p><strong>C'est ici que se joue la thèse du chapitre</strong>, et il vaut de le dire au moment où le mécanisme est posé plutôt qu'au moment où il rompt. Ces dispositifs ont été conçus pour des chaînes <strong>courtes, prévues à l'avance, et dont les maillons sont des services</strong>. Un agent qui compose son plan à l'exécution, invoque des outils non anticipés et délègue à d'autres agents ne satisfait aucune de ces trois hypothèses. Le ch. 17 mesure ce que la chaîne de mandat devient dans ces conditions ; le présent chapitre pose ce qu'elle <strong>était</strong> — et l'écart entre les deux est ce que la thèse appelle <em>l'étirement jusqu'à rupture</em>.</p>
+  <p><strong>C'est ici que se joue la thèse du chapitre</strong>, et cela vaut d'être dit au moment où le mécanisme est posé plutôt qu'au moment où il rompt. Ces dispositifs ont été conçus pour des chaînes <strong>courtes, prévues à l'avance, et dont les maillons sont des services</strong>. Un agent qui compose son plan à l'exécution, invoque des outils non anticipés et délègue à d'autres agents ne satisfait aucune de ces trois hypothèses. Le ch. 17 mesure ce que la chaîne de mandat devient dans ces conditions ; le présent chapitre pose ce qu'elle <strong>était</strong> — et l'écart entre les deux est ce que la thèse appelle <em>l'étirement jusqu'à rupture</em>.</p>
 </div>
-
+<hr />
+<figure class="figure">
+  <img src="../figures/f-03-02-saml-oauth-oidc.svg" alt="Figure 3.2 — SAML, OAuth 2.x et OpenID Connect : trois protocoles, et ce que chacun établit." />
+  <figcaption><strong>Figure 3.2</strong> — SAML, OAuth 2.x et OpenID Connect : trois protocoles, et ce que chacun établit.</figcaption>
+</figure>
 <h2 id="s33"><span class="sig">§ 3.3</span>Zero-trust, identité de charge de travail et confiance décentralisée</h2>
-
-<div class="encadre encadre--oeuvre">
-  <span class="encadre__label">Note</span>
-  <p><strong>Socle pré-agentique, posé ici une seule fois.</strong> Les ch. 37 (zero-trust au grain de l'infrastructure), ch. 13 (identité décentralisée agentique) et ch. 21 (horloge post-quantique) y renvoient <strong>sans le reconstruire</strong>.</p>
-</div>
-
+<blockquote>
+<p><strong>Socle pré-agentique, posé ici une seule fois.</strong> Les ch. 37 (zero-trust au grain de l'infrastructure), ch. 13 (identité décentralisée agentique) et ch. 21 (horloge post-quantique) y renvoient <strong>sans le reconstruire</strong>.</p>
+</blockquote>
 <h3>3.3.1 Zero-trust et identité de charge de travail : SPIFFE/SPIRE, WIMSE</h3>
-
 <p>Le <strong>zero-trust</strong> formalise le principe <em>ne jamais faire confiance, toujours vérifier</em> en une architecture où <strong>aucune confiance n'est dérivée de la localisation réseau</strong>. L'architecture de référence <strong>NIST SP 800-207</strong> en pose les composants — point de décision et point d'application de politique, évaluation continue par requête — que l'intégration transpose en exigeant authentification et autorisation à chaque appel, <strong>y compris à l'intérieur d'un même périmètre</strong>. Dans un maillage de services (ch. 1 § 1.3.4), ce principe se concrétise par du TLS mutuel systématique entre charges, déchargeant l'authentification mutuelle vers l'infrastructure plutôt que vers le code applicatif.</p>
-
 <div class="avert">
   <p><strong>Précision de vocabulaire, à tenir pour tout le Livre.</strong> « Point d'application de politique » et « point de décision » sont ici employés au sens <strong>pré-agentique</strong> de cette architecture de référence. Ils ne sont pas les termes que le garde-fou R-13 du Vol. III proscrit nus — celui-ci vise « AgentMesh », « control plane », « ACP » et « autonomie graduée ». Le sigle <strong>« ACP »</strong> désigne à lui seul au moins quatre objets distincts ; l'encadré de désambiguïsation qui les sépare est au <strong>ch. 7 § 7.5</strong>, siège unique pour toute la somme, et n'est pas reconstruit ici. Le ch. 37 reprendra la paire au grain de l'agent, et c'est <strong>là</strong> que la vigilance terminologique s'impose.</p>
 </div>
-
 <p>L'application du zero-trust aux services exige une <strong>identité pour les acteurs non humains</strong>, à durée de vie courte et vérifiable. <strong>SPIFFE</strong> et son implémentation de référence <strong>SPIRE</strong> fournissent à chaque charge un identifiant et un document d'identité vérifiable, émis et renouvelé automatiquement, qui <strong>remplace les secrets statiques à longue durée de vie par une attestation cryptographique éphémère</strong>. Des travaux de standardisation <strong>encore pré-normatifs</strong> — le groupe <strong>WIMSE</strong> de l'IETF — visent à harmoniser ces mécanismes.</p>
-
 <div class="avert">
   <p><strong>Qualification, au sens de R-02 du Vol. III.</strong> Ce que SPIFFE démontre est précis et borné : qu'une charge présentant un document d'identité valide <strong>a été attestée par le nœud d'émission au moment de l'émission</strong>, et que ce document n'a pas expiré. Il ne démontre pas que la charge n'a pas été compromise depuis, ni que le processus attesté est celui qu'il prétend être au-delà de ce que la plateforme d'attestation peut établir. La différence entre « identité vérifiable » et « identité vérifiée en continu » n'est pas rhétorique : c'est l'écart que l'évaluation continue du zero-trust est censée combler, et qu'elle ne comble qu'à la granularité de la requête.</p>
 </div>
-
 <p>Le découplage s'applique ici à l'identité elle-même : elle devient un <strong>contrat émis par l'infrastructure</strong>, indépendant de l'adresse réseau, et <strong>révocable par expiration plutôt que par rotation manuelle de secrets</strong>. C'est le remplacement d'un geste opérationnel faillible par une propriété structurelle.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> c'est l'un des rares endroits de ce Livre où une classe entière d'incidents disparaît plutôt que de se déplacer. Le socle n'établit ni cette disparition ni sa rareté ; l'une et l'autre sont proposées comme lecture.</p>
-
 <div class="encadre encadre--recherche">
   <span class="encadre__label">Perspective recherche</span>
   <p>L'identité non humaine à durée de vie courte déplace la sécurité d'un modèle de <strong>secrets partagés</strong> vers un modèle d'<strong>attestation continue</strong>. La question ouverte porte sur la <strong>composition</strong> de ces identités le long d'une chaîne d'appels : articuler l'identité de charge — qui <em>exécute</em> — et l'identité déléguée du mandant humain — au nom de <em>qui</em> — sans confondre les deux reste un problème de modélisation actif. C'est exactement la question que les ch. 16 et 17 reprennent pour l'agent, où un troisième terme s'ajoute : <em>sous quel mandat, et pour combien de temps</em>.</p>
 </div>
-
 <h3>3.3.2 Identité décentralisée, eIDAS 2.0 et cryptographie post-quantique</h3>
-
 <p>À l'horizon de la confiance inter-organisationnelle, l'identité fédérée centralisée cède progressivement la place à des modèles <strong>décentralisés</strong> où le sujet présente lui-même des attestations vérifiables, sans dépendance à un fournisseur d'identité commun.</p>
-
 <p>Un modèle de données porté par une <strong>recommandation du W3C du 15 mai 2025</strong> en fixe le format : une attestation signée par un émetteur, conservée par le détenteur, présentée à un vérifieur, avec <strong>divulgation sélective</strong> des seules revendications nécessaires — divulgation que des mécanismes de jeton à divulgation sélective et des protocoles de présentation rendent opérationnelle. Cette architecture <strong>découple l'émission de la vérification</strong>, condition d'une interopérabilité de l'identité à l'échelle de plusieurs juridictions.</p>
-
 <p>Le cadre réglementaire européen <strong>eIDAS 2.0</strong> ancre cette logique dans le droit et organise le déploiement d'un portefeuille d'identité numérique, dont la généralisation est <strong>attendue à compter de 2026</strong> — échéance à re-vérifier, et non à citer comme acquise.</p>
-
 <div class="avert">
   <p><strong>Qualification, au sens de R-02 du Vol. III.</strong> Une attestation vérifiable démontre qu'un émetteur identifié a signé un ensemble de revendications à une date donnée, et que le porteur peut en prouver la possession. Elle <strong>ne démontre pas</strong> que les revendications sont vraies, ni que l'émetteur était fondé à les émettre, ni que le sujet n'a pas changé d'état depuis. La confiance dans une attestation reste une confiance dans son <strong>émetteur</strong> — le format déplace le problème de la confiance, il ne le résout pas. Le ch. 16 rencontrera exactement cette limite en posant qu'un passeport d'agent ne vaut que ce que vaut son autorité d'émission.</p>
 </div>
-
-<p>La couche cryptographique sous-jacente entre simultanément dans une <strong>transition de fond</strong>. Anticipant la menace que poserait un calculateur quantique sur les algorithmes asymétriques actuels, le <strong>NIST</strong> a <strong>publié en août 2024</strong> ses premiers standards post-quantiques : un mécanisme d'encapsulation de clés et deux mécanismes de signature.</p>
-
+<p>La couche cryptographique sous-jacente entre simultanément dans une <strong>transition de fond</strong>. Anticipant la menace que ferait peser un calculateur quantique sur les algorithmes asymétriques actuels, le <strong>NIST</strong> a <strong>publié en août 2024</strong> ses premiers standards post-quantiques : un mécanisme d'encapsulation de clés et deux mécanismes de signature.</p>
 <div class="avert">
   <p><strong>Deux précisions de statut, et la seconde relève de R-11 du Vol. III.</strong> <em>(a)</em> Ces standards sont <strong>publiés</strong> — c'est un fait daté, non une annonce. <em>(b)</em> En revanche, les <strong>jalons de migration</strong> que le même organisme associe à cette transition sont <strong>visés</strong>, jamais <em>fixés</em>, et le document qui les porte a son propre statut, qu'il faut citer avec lui. Écrire qu'une date de dépréciation est « fixée » serait attribuer à une projection l'autorité d'une norme. Le ch. 21, qui prend l'horloge post-quantique pour objet, porte cette distinction comme règle de rédaction.</p>
 </div>
-
 <div class="avert">
   <p><strong>Qualification, au sens de R-02 du Vol. III — la plus importante du chapitre.</strong> Ces algorithmes sont conçus pour résister à des attaques par calculateur quantique <strong>sur la base de problèmes mathématiques dont aucune attaque quantique efficace n'est connue</strong>. Ce n'est pas la même chose qu'une preuve de résistance, et la nuance n'est pas académique : la sélection a déjà éliminé des candidats après publication de leur analyse. La formulation défendable est « résistant en l'état des attaques connues », jamais « inviolable » ni « sûr contre le quantique ».</p>
 </div>
-
 <p>Ces algorithmes appellent une migration des jetons, certificats et canaux qui sous-tendent toute l'identité fédérée : la signature des attestations, l'authentification mutuelle des charges et les profils de haute sécurité (§ 3.2.2) devront intégrer des suites résistantes. Le contrat de sécurité acquiert ainsi une dimension d'<strong>évolution algorithmique</strong> — l'agilité cryptographique — qui prolonge, jusque dans le choix des primitives, l'invariant du Livre.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> l'agilité cryptographique est le troisième terme de l'invariant appliqué à un objet qui, historiquement, n'était pas censé changer. Un format de message évolue ; on s'y attendait. Une primitive de signature évolue ; on ne s'y attendait pas, et la plupart des systèmes déployés ne portent nulle part la négociation qui le permettrait. Le socle n'établit pas cette lecture ; elle est proposée comme telle, et le ch. 21 l'instruit sous le nom de <strong>dette de migration</strong>.</p>
-
 <div class="encadre encadre--oeuvre">
   <span class="encadre__label">Mise en œuvre</span>
   <p>La transition relève d'abord d'un <strong>inventaire</strong> : recenser où des primitives asymétriques signent ou protègent des jetons et des canaux d'intégration, puis privilégier une cryptographie agile — négociation d'algorithme, hybridation classique et post-quantique — plutôt qu'un remplacement en bloc. Aligner ce chantier sur l'introduction des attestations vérifiables évite de figer prématurément des formats appelés à changer.</p>
 </div>
-
+<hr />
+<figure class="figure">
+  <img src="../figures/f-03-03-zero-trust.svg" alt="Figure 3.3 — Du périmètre réseau au zero-trust : ce que la confiance cesse de dériver de la localisation." />
+  <figcaption><strong>Figure 3.3</strong> — Du périmètre réseau au zero-trust : ce que la confiance cesse de dériver de la localisation.</figcaption>
+</figure>
 <h2 id="s34"><span class="sig">§ 3.4</span>Gouvernance, test et observabilité de l'interopérabilité</h2>
-
 <p>Les sections précédentes ont établi <em>comment</em> des systèmes s'authentifient et se délèguent l'autorité. Celle-ci traite les préoccupations qui traversent toutes les couches une fois l'intégration <strong>en production</strong> : la gouvernance des contrats, la définition et l'application des niveaux de service, le test d'interopérabilité et sa certification, et l'observabilité comme condition opérationnelle.</p>
-
 <p>L'invariant y trouve son prolongement organisationnel, et il vaut d'être énoncé ainsi : <em>un contrat n'est interopérable que s'il est gouverné, vérifié et observé tout au long de sa vie.</em> Un contrat correct qui n'est ni vérifié ni observé est une intention.</p>
-
 <h3>3.4.1 Modèles de gouvernance et politique exécutable</h3>
-
 <p>La gouvernance de l'intégration se décline selon un continuum : du modèle <strong>centralisé</strong>, où une équipe unique conçoit et publie tous les contrats, au modèle <strong>décentralisé</strong>, où chaque équipe-produit possède ses interfaces, en passant par un modèle <strong>fédéré</strong> qui combine standards communs et autonomie locale. Ce dernier prolonge la logique du couplage faible au plan organisationnel et rejoint la perspective du maillage de données (ch. 2 § 2.2.2). Un centre d'excellence incarne fréquemment ce compromis : plutôt que de produire les intégrations, il édite des guides de style, des gabarits et des règles partagées que les équipes appliquent elles-mêmes.</p>
-
 <p>L'apport décisif de la dernière décennie est la traduction de ces règles en <strong>politique exécutable</strong> (<em>policy-as-code</em>) : des contraintes vérifiées automatiquement plutôt que recommandées. Un vérificateur de description d'API évalue chaque définition contre un jeu de règles versionnées — nommage, sécurité obligatoire, présence d'exemples — et signale les écarts <strong>dès la validation</strong>, en amont de la chaîne d'intégration continue.</p>
-
 <p>Ce déplacement vers l'amont intègre la gouvernance au flux de développement : la conformité au guide de style devient une <strong>condition de fusion</strong> plutôt qu'un audit <em>a posteriori</em>. C'est la même doctrine que celle du registre de schémas au ch. 2 § 2.1.6, et que celle qui gouverne ce dépôt : une règle sans motif exécutable qui la contrôle n'en est pas une.</p>
-
 <div class="encadre encadre--oeuvre">
   <span class="encadre__label">Mise en œuvre</span>
   <p>Une chaîne d'intégration continue typique enchaîne, à chaque modification d'un contrat : un contrôle de style <strong>bloquant</strong> sur les règles critiques, la publication de la version validée dans un registre de schémas, et la propagation contrôlée vers les consommateurs. La gouvernance d'ensemble peut s'aligner sur <strong>ISO/IEC 38500:2024</strong>, norme internationale de gouvernance des systèmes d'information, pour articuler responsabilités, conformité et performance.</p>
 </div>
-
 <h3>3.4.2 Cycle de vie des contrats, niveaux de service et application à l'exécution</h3>
-
 <p>Un contrat d'interface <strong>vit</strong> : il naît, évolue et meurt. Maintenir l'interopérabilité sous changement (ch. 1 § 1.1.4) exige une discipline de versionnement et de <strong>dépréciation explicite</strong>. L'écosystème HTTP fournit deux en-têtes normalisés par l'IETF — <strong><code>Deprecation</code></strong> et <strong><code>Sunset</code></strong> — permettant d'annoncer, dans la réponse même, qu'une ressource est dépréciée et la date à laquelle elle cessera d'être servie, donnant aux consommateurs une <strong>fenêtre de migration prévisible</strong> plutôt qu'une rupture silencieuse.</p>
-
 <p>Ce mécanisme est modeste, et sa fréquence d'emploi n'est établie nulle part dans le corpus mobilisé.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> son omission est un bon révélateur : une organisation qui ne signale pas ses dépréciations dans le protocole les signalera par courriel, donc mal, donc tard. Le socle n'établit ni cette fréquence ni cette conséquence ; l'une et l'autre sont proposées comme lecture.</p>
-
 <p>Au-delà de la structure du contrat, son <strong>exécution</strong> se gouverne par des objectifs mesurables. La discipline de l'ingénierie de fiabilité distingue trois objets qu'il ne faut pas confondre :</p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th></th><th>Nature</th><th>Portée</th></tr></thead>
-  <tbody>
-    <tr><td><strong>Indicateur</strong> (SLI)</td><td>grandeur <strong>mesurée</strong> — taux de succès, latence au centile élevé</td><td>interne, factuel</td></tr>
-    <tr><td><strong>Objectif</strong> (SLO)</td><td><strong>seuil visé</strong> sur cet indicateur</td><td>interne, décidé</td></tr>
-    <tr><td><strong>Accord</strong> (SLA)</td><td><strong>engagement contractuel</strong> envers le consommateur</td><td>externe, opposable</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>Nature</th>
+<th>Portée</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Indicateur</strong> (SLI)</td>
+<td>grandeur <strong>mesurée</strong> — taux de succès, latence au centile élevé</td>
+<td>interne, factuel</td>
+</tr>
+<tr>
+<td><strong>Objectif</strong> (SLO)</td>
+<td><strong>seuil visé</strong> sur cet indicateur</td>
+<td>interne, décidé</td>
+</tr>
+<tr>
+<td><strong>Accord</strong> (SLA)</td>
+<td><strong>engagement contractuel</strong> envers le consommateur</td>
+<td>externe, opposable</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 3.1 — Indicateur, objectif et accord de niveau de service : trois objets distincts, souvent confondus.</p>
-
 <p>De ces objectifs dérive le <strong>budget d'erreur</strong> : la part d'indisponibilité tolérée, qui arbitre entre vélocité de changement et stabilité. À l'exécution, la passerelle d'API applique ces engagements par des quotas et une limitation de débit qui protègent le producteur et répartissent équitablement la capacité entre consommateurs.</p>
-
 <p>L'interopérabilité, sous-caractéristique de la compatibilité dans le modèle de qualité produit (ch. 1 § 1.1.1), ne se réduit donc pas à la définition <strong>statique</strong> du contrat : elle inclut la tenue, vérifiable, de ses niveaux de service. C'est ce qui la rend mesurable en continu plutôt qu'auditable ponctuellement — la piste que le ch. 1 § 1.2.2 identifiait comme dépassement des modèles de maturité à paliers, et que le Livre IV reprendra sous le nom d'AgentOps.</p>
-
 <h3>3.4.3 Conformité, interopérabilité et test piloté par le consommateur</h3>
-
 <p>Il importe de distinguer deux propriétés que la pratique confond, et dont la confusion coûte cher.</p>
-
 <p>La <strong>conformité</strong> atteste qu'une implémentation respecte une spécification de référence <strong>prise isolément</strong>. L'<strong>interopérabilité</strong> atteste que <strong>deux</strong> implémentations, fussent-elles chacune conformes, fonctionnent effectivement ensemble. L'interopérabilité est une <strong>relation entre systèmes</strong>, non une propriété intrinsèque de l'un d'eux (ch. 1 § 1.1.1) : deux participants conformes peuvent diverger sur des choix laissés libres par la norme et échouer à coopérer.</p>
-
 <p>Le test d'interopérabilité vise donc l'<strong>appariement réel</strong>, là où le test de conformité vise l'adéquation au modèle. Une suite de conformité verte des deux côtés ne prouve rien sur leur coopération.</p>
-
 <p>Le <strong>test de contrat piloté par le consommateur</strong> (<em>consumer-driven contract testing</em>) opérationnalise cette distinction : le consommateur exprime ses attentes sous forme d'un contrat ; le producteur vérifie <strong>en continu</strong> qu'il les honore. L'outillage automatise ce cycle — chaque partie publie ses contrats, et une commande d'autorisation de déploiement interroge le registre pour n'autoriser une livraison que si toutes les paires consommateur-producteur restent compatibles.</p>
-
 <p>On rejoint ici la vérification de compatibilité comportementale (ch. 1 § 1.1.4) : ce test en fournit une approximation <strong>pragmatique et automatisable</strong>, fondée sur des exemples plutôt que sur une preuve exhaustive.</p>
-
 <div class="avert">
   <p>Que cet écart entre couverture empirique et garantie formelle ne soit comblé par aucune méthode industrielle relève d'une <strong>absence de documentation</strong> au sens de R-14 du Vol. III : le socle hérité n'en recense pas, ce qui n'établit pas qu'il n'en existe aucune.</p>
 </div>
-
 <div class="encadre encadre--recherche">
   <span class="encadre__label">Perspective recherche</span>
   <p>Ce test vérifie la compatibilité <strong>par échantillons d'interactions</strong>, non par raisonnement sur l'ensemble des comportements admissibles. Les formalismes du ch. 1 § 1.1.4 — types de session, automates d'interface — visent au contraire une garantie comportementale décidée sur la structure des protocoles. L'écart entre cette garantie et la couverture empirique reste un front de recherche, et il s'élargit quand le participant est un agent dont les comportements ne sont pas énumérables à l'avance.</p>
 </div>
-
 <h3>3.4.4 Suites de certification et organismes de normalisation</h3>
-
 <p>Lorsque l'interopérabilité doit être garantie à l'échelle d'un <strong>écosystème ouvert</strong>, les acteurs s'appuient sur des <strong>profils d'interopérabilité</strong> — sous-ensembles précisés d'une norme, fermant les options ambiguës — et sur une <strong>certification tierce</strong> qui atteste leur respect. Dans le domaine de l'identité, le programme de certification de l'<strong>OpenID Foundation</strong> valide qu'une implémentation se comporte comme attendu ; celui de la <strong>FIDO Alliance</strong> certifie l'authentification forte.</p>
-
 <p>Cette certification transforme une compatibilité <strong>espérée</strong> en compatibilité <strong>attestée</strong> — condition d'adoption dans les secteurs régulés, comme le Livre III le montrera. C'est aussi l'héritage direct de la discipline LISI que le ch. 1 § 1.2.2 relevait : l'évaluation par preuves plutôt que par déclaration d'intention.</p>
-
 <p>La gouvernance des normes elles-mêmes se répartit entre organismes aux périmètres complémentaires : l'IETF publie les documents des protocoles d'Internet, le W3C les recommandations du Web, OASIS et l'OMG des standards d'entreprise, l'ISO et la CEI les normes internationales. Cartographier cette répartition aide à situer la <strong>maturité et l'autorité</strong> d'une spécification donnée.</p>
-
 <div class="avert">
   <p><strong>Une recommandation finalisée, un document promu au rang de norme et un travail en cours ne portent pas le même poids contractuel.</strong> C'est la distinction que le marqueur de ressource vivante matérialise dans tout ce dépôt, et elle est la seule protection contre une classe d'erreur très répandue : citer un brouillon comme s'il engageait ses auteurs. Le ch. 7, qui traite la généalogie et la gouvernance des standards agentiques, en fait son critère central.</p>
 </div>
-
 <h3>3.4.5 Traçage distribué : OpenTelemetry et W3C Trace Context</h3>
-
 <p>Dans une architecture distribuée, une requête traverse de nombreux services avant de produire une réponse ; comprendre une <strong>défaillance d'interopérabilité</strong> suppose de reconstituer ce parcours. Le traçage distribué répond à ce besoin en propageant un identifiant de trace de bout en bout.</p>
-
 <p>Pour que la corrélation survive aux frontières entre services hétérogènes, <strong>le format de propagation doit lui-même être interopérable</strong> : la recommandation <strong>W3C Trace Context</strong> normalise les en-têtes de contexte de trace, et une spécification complémentaire y ajoute la propagation de contexte applicatif.</p>
-
 <p>Ce point mérite d'être souligné parce qu'il est contre-intuitif : <strong>l'observabilité est un problème d'interopérabilité à part entière</strong>. Sans format de contexte commun, les traces se rompent à chaque changement de fournisseur, et le système reste opaque précisément là où il est le plus distribué.</p>
-
 <p>Le cadre d'instrumentation <strong>OpenTelemetry</strong> fournit le protocole d'export qui unifie les trois signaux — traces, métriques et journaux —, tandis que ses <strong>conventions sémantiques</strong> standardisent le nommage des attributs, condition d'une corrélation effective entre signaux et entre équipes. La littérature de l'observabilité insiste sur cette bascule : l'enjeu n'est plus de <strong>surveiller des seuils connus d'avance</strong>, mais d'<strong>interroger librement</strong> un système pour expliquer des comportements imprévus — ce qui suppose des données émises selon des conventions partagées.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> cette bascule est la raison pour laquelle l'observabilité, et non la supervision, est le socle que le Livre IV réemploie. Un agent produit par construction des comportements imprévus ; un dispositif conçu pour vérifier des seuils connus d'avance n'a rien à en dire. Le socle n'établit pas cette conséquence ; elle est proposée comme lecture, et le ch. 38 l'instruit.</p>
-
 <div class="encadre encadre--oeuvre">
   <span class="encadre__label">Mise en œuvre</span>
   <p>Une instrumentation conforme aux conventions sémantiques, propageant le contexte de trace normalisé, permet de suivre une transaction à travers une passerelle d'API, un maillage de services et des consommateurs d'événements. Au niveau du transport, des outils fondés sur des sondes noyau offrent une visibilité réseau <strong>sans instrumentation applicative</strong>, complémentaire des traces de niveau service.</p>
 </div>
-
 <h3>3.4.6 Auditabilité et conformité réglementaire des intégrations</h3>
-
 <p>L'observabilité ne sert pas que le diagnostic : elle fonde l'<strong>auditabilité</strong>, c'est-à-dire la capacité à <strong>démontrer après coup, preuves à l'appui</strong>, comment une intégration s'est comportée.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> la différence entre les deux est celle du destinataire. Le diagnostic sert l'exploitant, qui sait ce qu'il cherche ; l'auditabilité sert un <strong>tiers</strong>, qui ne le sait pas et qui n'accordera aucun crédit à une reconstitution produite par la partie contrôlée. C'est cette asymétrie qui rend l'auditabilité coûteuse, et c'est elle que le Livre III retrouvera comme contrainte plutôt que comme confort. Le socle établit que l'observabilité fonde l'auditabilité ; il n'établit ni cette asymétrie de destinataire ni le coût qui en découlerait — l'une et l'autre sont proposées comme lecture.</p>
-
 <p>Cette exigence devient contraignante dès lors que la réglementation impose des <strong>interfaces ouvertes</strong> et la <strong>traçabilité des accès</strong>. Dans la banque ouverte, la directive européenne <strong>PSD2</strong> (2015) oblige les établissements à exposer des interfaces d'accès aux comptes, dont l'usage par des tiers doit être journalisé et vérifiable ; l'auditabilité des appels y est une <strong>condition de conformité</strong>, non un agrément.</p>
-
 <div class="avert">
   <p><strong>Ce cas est cité comme illustration du mécanisme, et à ce titre seul.</strong> Il n'est ni un modèle pour le cadre canadien, ni un précédent transposable au vertical financier que le Livre III instruit à son propre grain. Ce qui se transporte d'ici vers les ch. 25 à 36 est la <strong>forme</strong> — une exigence d'auditabilité opposable, adossée à une obligation d'interface —, jamais son contenu. La même réserve avait été posée au ch. 1 § 1.2.3 pour le dispositif européen d'évaluation obligatoire, et elle vaut pour la même raison : le Livre III ne raisonne pas par analogie européenne.</p>
 </div>
-
 <p>Cette section clôt le socle pré-agentique de l'identité et de la gouvernance. Ce qui suit, dans le Livre I, est la couche protocolaire proprement agentique — et ce qui la précède, dans les ch. 4 à 6, est l'ingénierie de l'agent lui-même. Le lecteur qui arrive au ch. 12 y trouvera ces mécanismes <strong>transposés</strong>, jamais réexpliqués : c'est le contrat que ce chapitre passe avec le reste de la somme.</p>
+<hr />
 
 <footer class="pied">
   <p><strong>Vol. IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em></strong> · Livre I, chapitre 3. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau, M.Sc. IT.</p>

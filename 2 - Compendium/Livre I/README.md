@@ -76,7 +76,7 @@ recevable** — et la porte qui manque, G-3, est celle dont tout le reste dépen
 ⚠ **Ce tableau est un constat daté et deux de ses lignes ont été DÉPASSÉES depuis — le rappel est du
 8 août 2026, il ne réécrit rien.** ☑ **La porte G-3 est franchie le 28 juillet 2026** et le socle
 consolidé ne compte plus zéro entrée mais **159**, `S-001`…`S-159`
-([`PRD/socle-consolide.md`](../PRD/socle-consolide.md) ; `python PRD/check-compendium.py` → *P1-P8,
+([`PRD/socle-consolide.md`](../PRD/socle-consolide.md) ; `python PRD/check-compendium.py` → *P1-P10,
 sortie 0*). ☑ **La table `SIEGES` porte 26 sièges sur 50 pièces** (`python PRD/check-sieges.py`).
 ⚠ **Rien d'autre n'a bougé** : *aucun énoncé n'est central au sens de CA-IV-01, CA-IV-11 et CA-IV-13
 demeurent non satisfaisables, et les pièces restent un brouillon arrêté, non publiable* — **une porte
@@ -96,10 +96,12 @@ jamais** — sa réf. [220] décrit un cadrage sans chapitre, et cela reste vrai
 
 ### Volumétrie réelle — publiable depuis G-2
 
-☑ **Mesure du jour : 72 483 mots** de corps pour les onze pièces, relevés le **10 août 2026** par
+☑ **Mesure du jour : 72 584 mots** de corps pour les onze pièces, relevés le **2 septembre 2026** au terme de la passe de fond (**D-16**) par
 [`PRD/decompte.sh`](../PRD/decompte.sh), seule autorité de décompte du volume — contre une enveloppe
-de Livre de **65 000** au TOC, soit **+11,5 %**. *C'est le seul cardinal de cette section qu'on
+de Livre de **65 000** au TOC, soit **+11,7 %**. *C'est le seul cardinal de cette section qu'on
 reproduise en exécutant la commande sur ce dossier.*
+
+⚠ *Le Livre portait **72 483 mots** avant la passe de fond, et **72 584** après — soit **+101**, **entièrement d'appareil** : reprises datées, remontées soldées, revalidations consignées. **Aucun énoncé de fond n'a été ajouté.***
 
 ⚠ **Le chiffre longtemps publié ici — 64 750 mots — ne se reproduit plus, et il était déjà démenti
 par les pièces de ce dossier. Trois écarts, qui se déclarent séparément.**

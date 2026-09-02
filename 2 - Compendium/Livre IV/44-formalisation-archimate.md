@@ -608,7 +608,7 @@ conduite** (§ 44.0.4) : *c'est précisément l'énoncé que le préalable non t
 ⚠ **La question reste ouverte, et le blueprint assume sa réponse — l'overlay — comme un choix daté et
 révisable, non comme une vérité du langage.**
 
-## Synthèse : ce que le chapitre lègue à la somme
+### Synthèse : ce que le chapitre lègue à la somme
 
 *Section de sortie sans homologue direct dans la source — construction d'éditeur.*
 
@@ -678,6 +678,8 @@ avant elle*, et **G-4, G-5 et le préalable propre au chapitre demeurent entiers
    version de référence n'est attestée* — ⚠ **CA-IV-14 : « conforme » s'écrit depuis une constatation
    sur pièce, jamais depuis un document amont.**
 5. **CA-IV-13 n'est pas satisfaite** — aucune relecture par un relecteur distinct du rédacteur.
+
+   ☑ **STATUT ARRÊTÉ LE 2 SEPTEMBRE 2026** (décision 26 du TOC, **D-16**) : *l'**annexe H** n'est pas rédigée et **ne le sera pas** — le dépôt est clos, et **D-13** ne prévoit plus de passe de rédaction.* ☑ **Son siège est nommé aux sources** : `Annexe B - Architecture de Solutions.md` du **Vol. I**. ⚠ **Le renvoi de cette pièce n'est donc plus une attente, c'est une désignation** — *il visait un livrable à venir, il vise désormais un texte qui existe.*
 
 **Remontées ouvertes par ce chapitre :**
 

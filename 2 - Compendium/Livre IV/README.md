@@ -73,7 +73,7 @@ du PRD §6**, qui plaçait son second mouvement après les Livres I et III.
 ⚠ **Ce tableau est un constat daté et deux de ses lignes ont été DÉPASSÉES depuis — le rappel est du
 8 août 2026, il ne réécrit rien.** ☑ **La porte G-3 est franchie le 28 juillet 2026** et le socle
 consolidé ne compte plus zéro entrée mais **159**, `S-001`…`S-159`
-([`PRD/socle-consolide.md`](../PRD/socle-consolide.md) ; `python PRD/check-compendium.py` → *P1-P8,
+([`PRD/socle-consolide.md`](../PRD/socle-consolide.md) ; `python PRD/check-compendium.py` → *P1-P10,
 sortie 0*). ☑ **La table `SIEGES` porte 26 sièges sur 50 pièces** (`python PRD/check-sieges.py`).
 ⚠ **Rien d'autre n'a bougé** : *aucun énoncé n'est central au sens de CA-IV-01, CA-IV-11 et CA-IV-13
 demeurent non satisfaisables, et les pièces restent un brouillon arrêté, non publiable* — **une porte
@@ -121,9 +121,11 @@ main.**
 
 ## Volumétrie réelle — et une leçon symétrique de celle du Livre II
 
-☑ **Mesure du jour : 59 962 mots** de corps pour les dix pièces, relevés le **10 août 2026** par
+☑ **Mesure du jour : 60 025 mots** de corps pour les dix pièces, relevés le **2 septembre 2026** au terme de la passe de fond (**D-16**) par
 [`PRD/decompte.sh`](../PRD/decompte.sh), **seule autorité de décompte du volume** — contre une
-enveloppe de Livre de **69 000** au TOC, soit **−13,1 %**.
+enveloppe de Livre de **69 000** au TOC, soit **−13,0 %**.
+
+⚠ *Le Livre portait **59 962 mots** avant la passe de fond, et **60 025** après — soit **+63**, **entièrement d'appareil** : reprises datées, remontées soldées, revalidations consignées. **Aucun énoncé de fond n'a été ajouté.***
 
 ⚠ **Le chiffre publié ici — 56 025 mots au 28 juillet 2026 — ne se reproduit plus, et les pièces de ce
 dossier le démentaient déjà** : le champ *Volumétrie cible* du
@@ -151,19 +153,19 @@ changé de signe.** *Les dix cibles dérivées ont été additionnées **avant l
 elle ; celui-ci reste en deçà malgré elle.** ⚠ **La dérivation n'est donc en cause dans aucun des trois
 cas** : *ce qui varie est la matière.*
 
-| Pièce | Cible dérivée | Réel au 27 juill. (publié) | **Réel au 28 juill. (commit)** | Écart à la cible |
-|---|---|---|---|---|
-| [Ch. 37](37-maillage-agents-point-application.md) | 11 000 | 9 724 | **9 756** | −11,3 % |
-| [Ch. 38](38-observabilite-agentique.md) | 6 000 | 5 628 | **5 693** | **−5,1 %** |
-| [Ch. 39](39-cycle-de-vie-operationnel.md) | 6 500 | 6 136 | **6 165** | **−5,2 %** |
-| [Ch. 40](40-indicateurs-agentops-finops.md) | 6 500 | 5 541 | **5 564** | −14,4 % |
-| [Ch. 41](41-fabrique-agents.md) | 5 000 | 3 329 | **3 765** | **−24,7 %** |
-| [Ch. 42](42-matrice-protocoles-exigences.md) | 4 000 | 3 529 | **3 529** | −11,8 % |
-| [Ch. 43](43-architecture-reference-couches.md) | 6 500 | 5 839 | **5 839** | −10,2 % |
-| [Ch. 44](44-formalisation-archimate.md) | 8 500 | 6 016 | **6 016** | **−29,2 %** |
-| [Ch. 45](45-blueprint-instancie-cycle-de-vie.md) | 12 000 | 6 751 | **6 781** | **−43,5 %** |
-| [Ch. 46](46-instrumentation-feuille-route.md) | 3 000 | 2 756 | **2 917** | −2,8 % |
-| **Livre** | **69 000** | 55 249 | **56 025** | **−18,8 %** |
+| Pièce | Cible dérivée | Réel au 27 juill. (publié) | **Réel au 28 juill. (commit)** | Écart à la cible | **Réel (2 sept. 2026)** |
+|---|---|---|---|---|---|
+| [Ch. 37](37-maillage-agents-point-application.md) | 11 000 | 9 724 | **9 756** | −11,3 % | **10 286** |
+| [Ch. 38](38-observabilite-agentique.md) | 6 000 | 5 628 | **5 693** | **−5,1 %** | **6 169** |
+| [Ch. 39](39-cycle-de-vie-operationnel.md) | 6 500 | 6 136 | **6 165** | **−5,2 %** | **6 542** |
+| [Ch. 40](40-indicateurs-agentops-finops.md) | 6 500 | 5 541 | **5 564** | −14,4 % | **6 105** |
+| [Ch. 41](41-fabrique-agents.md) | 5 000 | 3 329 | **3 765** | **−24,7 %** | **4 430** |
+| [Ch. 42](42-matrice-protocoles-exigences.md) | 4 000 | 3 529 | **3 529** | −11,8 % | **3 931** |
+| [Ch. 43](43-architecture-reference-couches.md) | 6 500 | 5 839 | **5 839** | −10,2 % | **6 125** |
+| [Ch. 44](44-formalisation-archimate.md) | 8 500 | 6 016 | **6 016** | **−29,2 %** | **6 303** |
+| [Ch. 45](45-blueprint-instancie-cycle-de-vie.md) | 12 000 | 6 751 | **6 781** | **−43,5 %** | **7 130** |
+| [Ch. 46](46-instrumentation-feuille-route.md) | 3 000 | 2 756 | **2 917** | −2,8 % | **3 004** |
+| **Livre** | **69 000** | 55 249 | **56 025** | **−18,8 %** | **60 025** |
 
 : Volumétrie du Livre IV, aux commits des 27 et 28 juillet 2026. ⚠ **Constat daté et dépassé — ce tableau et les paragraphes d'analyse qui le suivent** — *voir l'avertissement ci-dessus, et la mesure du 10 août 2026.* *L'écart se documente ; il ne se corrige ni par amputation ni par **gonflement** — et c'est la seconde interdiction qui porte ici.* ⚠ **Trois pièces sont inchangées** — ch. 42, 43 et 44 —, *toutes leurs corrections tombant dans l'en-tête ou dans la note de statut, que la commande de décompte exclut du corps.*
 

@@ -6,6 +6,19 @@
 // Tout le reste du fichier est identique à l'original — si les deux divergent
 // ailleurs, c'est une dérive, pas une intention.
 //
+// ⚠ ÉTAT MESURÉ AU 2 SEPTEMBRE 2026 : LA DÉRIVE A EU LIEU, et ce fichier la
+// déclare plutôt que de la laisser se découvrir à l'usage. La copie est restée
+// au 31 juillet 2026 ; `compendium.template` a reçu depuis le calage du
+// 9 août 2026 — marges verticales ramenées de 24/26 mm à 18/18 mm et PAS porté
+// à 16,95 pt pour tenir la cible de MILLE PAGES EXACTEMENT. **Une comparaison
+// conduite avec ce gabarit se fait donc contre une base périmée d'un calage**,
+// et ses mesures de pagination ne sont pas transposables au rendu canonique.
+// *L'outil reste utilisable pour ce qu'il compare — la mesure de ligne et la
+// saillance —, non pour ce qui dépend de la verticale.* Le re-synchroniser est
+// un acte de design, non d'appareil : il appartient à la passe qui rouvrirait
+// le gabarit, et il consisterait à recopier `compendium.template` puis à y
+// reporter le seul bloc « delta d'échantillon » ci-dessous.
+//
 // ============ Gabarit « identité propre » — compendium (Vol. IV) ============
 // Refonte du 31 juillet 2026, sur instruction d'auteur. Il SUCCÈDE au gabarit
 // `springer.template`, relevé le 29 juillet sur deux monographies Springer, et

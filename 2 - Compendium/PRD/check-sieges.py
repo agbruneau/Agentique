@@ -112,8 +112,15 @@ SIEGES = [
         # rangées nommées : « KYA » nu est un renvoi, une table d'instances est
         # un siège bis.
         "signature": [
-            r"^\|\s*\*\*Fondation d'identité décentralisée\*\*",
-            r"^\|\s*\*\*Fondation d'identité ouverte\*\*",
+            # ☑ Restitué le 2 septembre 2026 avec la rangée voisine, même motif :
+            # le Vol. III écrit « Decentralized Identity Foundation ».
+            r"^\|\s*\*\*Decentralized Identity Foundation\*\*",
+            # ☑ Nom restitué le 2 septembre 2026 : « Fondation d'identité ouverte »
+            # était une périphrase, et la décision 18 du TOC fait primer la citation
+            # nominative. Restitué DEPUIS LA SOURCE et non par inférence — le Vol. I
+            # ch. 3 écrit « OpenID Foundation, AIIM Community Group ». *La passe du
+            # 30 juillet avait déduit ce même nom ailleurs, et à tort ; ici il est lu.*
+            r"^\|\s*\*\*OpenID Foundation\*\*",
         ],
         "declencheur": r"\bKYA\b",
         "renvoi": r"ch\.\s*18\b",
@@ -255,19 +262,19 @@ SIEGES = [
             r"aucune\s+compensation\s+déterministe",
             r"recouvrement\s+incertain\s+et\s+coûteux",
         ],
-        # ⚠ S5 DÉSACTIVÉ, et le motif est mesuré, non commode : DEUX pièces hors
-        # siège touchent la matière sous sa forme composée, UNE renvoie (ch. 34
-        # du Livre III), UNE ne renvoie pas — le **ch. 49 § 49.10** du Livre V,
-        # dont le scénario de rupture écrit « l'irréversibilité du règlement
-        # interdirait la correction a posteriori » en renvoyant à § 49.9 et au
-        # ch. 48 § 48.4, jamais au ch. 31. ⚠ **Le marqueur du siège lui-même est
-        # en écart** : re-mesuré le 28 juillet 2026, il énumère ses renvois
-        # entrants sans nommer le ch. 49. Remontée : instruire l'écart au ch. 49
-        # ET au relevé du siège, PUIS remplacer None par r"ch\.\s*31\b".
-        # *Un siège contrôlé contre la reconstruction mais non contre l'omission
-        # de renvoi est à moitié contrôlé, et cela se déclare.*
+        # ☑ S5 ARMÉ le 2 septembre 2026, et la dette qui l'empêchait est payée.
+        # Motif d'origine, conservé parce qu'il porte l'histoire de l'écart :
+        # DEUX pièces hors siège touchaient la matière sous sa forme composée,
+        # UNE renvoyait (ch. 34 du Livre III), UNE ne renvoyait pas — le
+        # **ch. 49 § 49.11.3** du Livre V, dont le scénario de rupture écrivait
+        # « l'irréversibilité du règlement interdirait la correction a
+        # posteriori » en renvoyant à § 49.9 et au ch. 48 § 48.4, jamais au
+        # ch. 31. *Le ch. 31 avait signalé l'omission chez autrui plutôt que de
+        # la corriger — c'était le geste juste, et il laissait le contrôle à
+        # moitié armé.* ☑ Le ch. 49 § 49.11.3 nomme désormais le siège ; TROIS
+        # pièces déclenchent, les TROIS renvoient.
         "declencheur": r"irréversibilité\s+du\s+règlement|patron\s+d'irréversibilité",
-        "renvoi": None,
+        "renvoi": r"ch\.\s*31\b",
     },
     {
         "id": "siège du risque systémique (agents corrélés)",
@@ -283,17 +290,17 @@ SIEGES = [
             r"mimétisme",
             r"auto-amplifiés",
         ],
-        # ⚠ S5 DÉSACTIVÉ, motif mesuré : DEUX pièces touchent, UNE renvoie
-        # (ch. 34), UNE ne renvoie pas — le **ch. 49 § 49.10**, dont le
-        # paragraphe « Le risque systémique des agents corrélés » reprend la
-        # matière depuis le Vol. I sans nommer le ch. 31. ⚠ **Le marqueur du
-        # siège affirme le contraire** : re-mesuré le 28 juillet 2026, il écrit
-        # « aucune autre pièce de la somme ne le consomme » — énoncé que ce
-        # contrôle réfute. *Le premier passage d'un contrôle inter-pièces trouve
-        # les écarts qu'aucune pièce ne peut voir seule ; celui-ci en est un.*
-        # Remontée : instruire les deux, PUIS remplacer None par r"ch\.\s*31\b".
+        # ☑ S5 ARMÉ le 2 septembre 2026. Motif d'origine conservé : DEUX pièces
+        # touchaient, UNE renvoyait (ch. 34), UNE ne renvoyait pas — le
+        # **ch. 49 § 49.9**, dont le paragraphe « Le risque systémique des agents
+        # corrélés » reprenait la matière depuis le Vol. I sans nommer le ch. 31.
+        # ⚠ *Le marqueur du siège affirmait alors le contraire* — « aucune autre
+        # pièce de la somme ne le consomme » —, énoncé que ce contrôle réfutait :
+        # **le premier passage d'un contrôle inter-pièces trouve les écarts
+        # qu'aucune pièce ne peut voir seule.** ☑ Le ch. 49 § 49.9 nomme désormais
+        # le siège ; DEUX pièces déclenchent, les DEUX renvoient.
         "declencheur": r"risque\s+systémique",
-        "renvoi": None,
+        "renvoi": r"ch\.\s*31\b",
     },
     {
         "id": "siège du patron-signature de la double-qualification (modèle ET tiers TIC)",
@@ -355,18 +362,21 @@ SIEGES = [
             r"liés\s+à\s+des\s+identités\s+distinctes",
             r"ne\s+partager\s+aucun\s+canal\s+latéral",
         ],
-        # ⚠ S5 DÉSACTIVÉ, motif mesuré : DEUX pièces touchent, UNE renvoie
-        # (ch. 34), UNE ne renvoie pas — le **ch. 44 § 44.5**, qui écrit « le
-        # contrôle à quatre yeux appelle une construction particulière,
-        # justifiée ici une seule fois » et **ne cite le ch. 31 nulle part**
-        # (zéro occurrence dans la pièce). ⚠ Ce qu'il construit est le RENDU
-        # ArchiMate du patron — deux Roles, aucun Flow direct —, non le patron :
-        # S4 ne tire donc pas, et c'est correct. *Mais une pièce qui déclare
-        # justifier « une seule fois » une matière dont le siège est ailleurs
-        # doit nommer ce siège.* Remontée : aligner le ch. 44, PUIS remplacer
-        # None par r"ch\.\s*31\b".
+        # ☑ S5 ARMÉ le 2 septembre 2026, et le motif qui l'empêchait était
+        # PÉRIMÉ AVANT MÊME D'ÊTRE ÉCRIT — c'est ce que la re-mesure établit.
+        # Motif d'origine : le **ch. 44** écrivait « le contrôle à quatre yeux
+        # appelle une construction particulière, justifiée ici une seule fois »
+        # sans citer le ch. 31. ⚠ *Ce qu'il construit est le RENDU du patron —
+        # deux Roles, aucun Flow direct —, non le patron : S4 ne tire pas, et
+        # c'est correct ; mais une pièce qui déclare justifier « une seule fois »
+        # une matière dont le siège est ailleurs doit nommer ce siège.*
+        # ☑ Le ch. 44 § 44.1.7 le nomme — la pièce l'a fait le 28 juillet 2026,
+        # le jour même où ce commentaire l'en accusait, et **le contrôle est
+        # resté désarmé cinq semaines faute de re-mesure**. DEUX pièces
+        # déclenchent, les DEUX renvoient. *Une désactivation ne se reconduit pas
+        # sur son propre commentaire : elle se re-mesure.*
         "declencheur": r"quatre[- ]yeux",
-        "renvoi": None,
+        "renvoi": r"ch\.\s*31\b",
     },
     {
         "id": "siège du patron AML agentique (asymétrie d'autorité)",
@@ -498,20 +508,18 @@ SIEGES = [
             r"prévision d'analyste",
             r"pari de recherche",
         ],
-        # ⚠ S5 reste DÉSACTIVÉ, mais le motif est RE-MESURÉ le 28 juillet 2026 et
-        # il a bougé : QUATORZE pièces hors siège trient des énoncés prospectifs,
-        # DIX renvoient au siège, QUATRE ne renvoient pas — ch. 12, 13, 19 et 20
-        # du Livre II. Le relevé du versement en comptait six ; les passes de
-        # correction ont aligné le ch. 25 du Livre III et le ch. 37 du Livre IV,
-        # le ch. 18 a cessé d'employer le motif, et le ch. 12 est entré au
-        # domaine. *Le compte diminue, il ne s'annule pas : quatre pièces du
-        # Livre II emploient encore le tri sans nommer son siège.* Remontée
-        # R-IV-68, toujours ouverte : aligner les quatre, PUIS réactiver en
-        # remplaçant None par r"ch\.\s*49\b". *Un siège contrôlé contre la
-        # reconstruction mais non contre l'omission de renvoi est à moitié
-        # contrôlé, et cela se déclare.*
+        # ☑ S5 ARMÉ le 2 septembre 2026 — la remontée R-IV-68 est SOLDÉE par la
+        # mesure, et sa trajectoire mérite d'être conservée parce qu'elle montre
+        # un contrôle qui rattrape son corpus. Au versement (27 juillet 2026) :
+        # treize pièces triaient, SIX ne renvoyaient pas. Re-mesuré le 28 juillet :
+        # quatorze pièces, QUATRE muettes — ch. 12, 13, 19 et 20 du Livre II.
+        # Re-mesuré le 2 septembre 2026 : **DIX-SEPT pièces déclenchent, les
+        # DIX-SEPT renvoient**. *Le compte a fini de décroître, et personne ne
+        # l'avait constaté : le contrôle est resté désarmé après que la dernière
+        # pièce eut été alignée.* **Un motif de désactivation est une mesure, et
+        # une mesure se refait — sans quoi elle devient une exemption acquise.**
         "declencheur": r"\btri prospectif\b",
-        "renvoi": None,
+        "renvoi": r"ch\.\s*49\b",
     },
     {
         "id": "siège du verrou sémantique et pragmatique (programme de recherche)",
@@ -527,22 +535,26 @@ SIEGES = [
             r"excellent\s+aux\s+niveaux\s+technique\s+et\s+syntaxique",
             r"contrat\s+syntaxique\s+à\s+un\s+contrat\s+sémantique",
         ],
-        # ⚠ S5 DÉSACTIVÉ, et le motif mesuré est plus dur que prévu — il porte
-        # sur le siège lui-même. Le siège DÉCLARE que « le ch. 2 (données et
+        # ☑ S5 ARMÉ le 2 septembre 2026. Motif d'origine, conservé : il portait
+        # sur le siège LUI-MÊME. Le siège DÉCLARE que « le ch. 2 (données et
         # sémantique), le ch. 9 (découverte) et le ch. 43 l'appliquent et y
-        # renvoient » ; mesuré le 28 juillet 2026, cette déclaration est fausse
-        # pour deux des trois : le **ch. 2 ne cite le ch. 49 nulle part** (zéro
-        # occurrence), et le **ch. 43 n'emploie « verrou » nulle part**. Sur le
-        # déclencheur retenu, QUATRE pièces touchent la matière, TROIS renvoient
-        # (ch. 9 du Livre I ; ch. 24 et ch. 34 du Livre III), UNE ne renvoie pas
-        # — le ch. 2, que le siège nomme pourtant en premier.
-        # ⚠ Et la chaîne du siège n'existe nulle part ailleurs : « verrou
-        # sémantique » et « 49.6 » ont ZÉRO occurrence hors de la pièce. *Un
-        # siège qu'aucune pièce ne nomme est un siège que personne ne peut
-        # respecter par autre chose que le hasard.* Remontée : aligner le ch. 2,
-        # PUIS remplacer None par r"ch\.\s*49\b".
+        # renvoient » ; mesurée le 28 juillet 2026, la déclaration était fausse
+        # pour deux des trois — le **ch. 2 ne citait le ch. 49 nulle part**, et
+        # le **ch. 43 n'emploie « verrou » nulle part**. QUATRE pièces
+        # touchaient, TROIS renvoyaient, UNE ne renvoyait pas : le ch. 2, que le
+        # siège nommait pourtant en premier.
+        # ☑ Le **ch. 2 § 2.3** nomme le siège au grain de la section — « leur
+        # siège au ch. 49 § 49.6 » —, et la pièce l'a écrit en ouvrant la
+        # remontée qui demandait ce réarmement. Re-mesuré le 2 septembre 2026 :
+        # QUATRE pièces déclenchent et les QUATRE renvoient. ⚠ *Rien n'a été
+        # édité pour obtenir ce résultat* : le motif de désactivation avait
+        # cessé d'être vrai, et personne n'était revenu le mesurer. ⚠ *Ce que la re-mesure ne lève pas* : la chaîne « verrou
+        # sémantique » n'existe toujours nulle part hors du siège — **le contrôle
+        # arme l'obligation de renvoi, non la visibilité du siège**, et un siège
+        # qu'aucune pièce ne nomme par son nom reste un siège qu'on respecte par
+        # le déclencheur plutôt que par la lecture.
         "declencheur": r"interopérabilité\s+sémantique",
-        "renvoi": None,
+        "renvoi": r"ch\.\s*49\b",
     },
     # --------------------------------------------------------------------
     # Les trois sièges du Livre IV, versés le 27 juillet 2026 avec sa passe
@@ -566,22 +578,22 @@ SIEGES = [
             r"^\|\s*\*\*PC3\*\*",
             r"^\|\s*\*\*PC5\*\*",
         ],
-        # ⚠ S5 reste DÉSACTIVÉ, motif RE-MESURÉ le 28 juillet 2026 : CINQ pièces
-        # hors siège emploient « points de contrôle obligatoires », QUATRE
-        # renvoient (ch. 37, 38, 39, 45 du Livre IV), UNE ne le fait pas — le
-        # ch. 17 du Livre II, inchangé depuis le versement. ⚠ Sa muette n'est pas
-        # un oubli mais une HOMONYMIE, et la pièce la déclare elle-même en
-        # en-tête : « un faux ami est déclaré — le “point de contrôle” du
-        # glossaire du Vol. II traduit une notion de reprise sur incident et
-        # n'est pas le “point de contrôle obligatoire” de son ch. 19 ; la
-        # collision est signalée et non résolue (§ 17.4) ». *Son renvoi est exact
-        # dans son périmètre* — il vise le ch. 19 du Vol. II, sa source, non le
-        # ch. 43 de la somme. Aligner obligerait à toucher le corps d'une pièce
-        # dont la volumétrie est publiée, périmant un cardinal contrôlé pour
-        # satisfaire un motif. Remontée : trancher l'homonymie à la passe qui
-        # rouvrira le Livre II, PUIS remplacer None par r"ch\.\s*43\b".
+        # ☑ S5 ARMÉ le 2 septembre 2026, et la re-mesure DÉMENT le motif qui le
+        # tenait désarmé. Celui-ci, écrit le 28 juillet 2026, portait que CINQ
+        # pièces employaient « points de contrôle obligatoires », QUATRE
+        # renvoyant (ch. 37, 38, 39, 45), une non — le ch. 17 du Livre II, dont
+        # la muette était qualifiée d'HOMONYMIE irréductible : « aligner
+        # obligerait à toucher le corps d'une pièce dont la volumétrie est
+        # publiée, périmant un cardinal contrôlé pour satisfaire un motif ».
+        # ⚠ **Le ch. 17 renvoie en fait au siège**, et en toutes lettres : « la
+        # somme ne pose ces cinq points qu'une seule fois, au ch. 43 § 43.3, qui
+        # en est le siège ». *Le faux ami qu'il déclare porte sur le glossaire du
+        # Vol. II, non sur son renvoi — les deux coexistent dans la pièce, et le
+        # motif avait pris le premier pour l'absence du second.* CINQ pièces
+        # déclenchent, les CINQ renvoient. **Un motif de désactivation qui n'a
+        # pas été relu contre sa pièce désarme un contrôle sur une lecture.**
         "declencheur": r"points? de contrôle obligatoires?",
-        "renvoi": None,
+        "renvoi": r"ch\.\s*43\b",
     },
     {
         "id": "siège du modèle de maturité et des trois échelles d'autonomie",
@@ -598,23 +610,28 @@ SIEGES = [
             r"continuum à six niveaux numérotés",
             r"graduation à quatre niveaux préfixés",
         ],
-        # ⚠ S5 reste DÉSACTIVÉ, motif RE-MESURÉ le 28 juillet 2026, et la mesure
-        # requalifie la dette plus qu'elle ne la réduit : SIX pièces hors siège
-        # emploient « modèle de maturité », TROIS renvoient (ch. 24 du Livre III,
-        # ch. 39 et ch. 41 du Livre IV), TROIS ne renvoient pas — et les trois ne
-        # sont pas de même nature.
-        #  — ch. 1 et ch. 9 du Livre I : HOMONYMIE mesurée, non omission. Leur
-        #    § 1.2 s'intitule « Cadres de référence et modèles de maturité » et
-        #    traite les échelles d'interopérabilité PRÉ-agentiques ; le ch. 9
-        #    renvoie explicitement au ch. 1 § 1.2.2. *Autre objet, autre siège* —
-        #    les aligner sur le ch. 43 serait introduire un renvoi faux.
-        #  — ch. 34 du Livre III : seule muette de fond, et elle est motivée —
-        #    la pièce déclare le modèle de maturité financier « hors périmètre :
-        #    il va au Livre IV », renvoi de LIVRE et non de chapitre.
-        # *La dette n'est donc pas de quatre pièces à aligner mais d'une seule à
-        # préciser* ; le déclencheur, lui, reste homonymique et c'est ce qui
-        # interdit d'armer S5. Remontée : préciser le renvoi du ch. 34 et borner
-        # le déclencheur au modèle de maturité AGENTIQUE, PUIS remplacer None.
+        # ⚠ S5 reste DÉSACTIVÉ — **le SEUL des sept qui le reste après la
+        # re-mesure du 2 septembre 2026**, et son motif est le seul des sept qui
+        # ait tenu. Les six autres avaient été désarmés sur des muettes que le
+        # corpus avait comblées depuis sans que personne ne re-mesure ; celle-ci
+        # est irréductible, et elle l'est pour une raison de langue.
+        # Mesure au 2 septembre 2026 : SIX pièces hors siège emploient « modèle
+        # de maturité », QUATRE renvoient (ch. 24 et ch. 34 du Livre III, ch. 39
+        # et ch. 41 du Livre IV — *le ch. 34 a été aligné depuis le relevé du
+        # 28 juillet, qui le disait muet*), DEUX ne renvoient pas :
+        #  — ch. 1 et ch. 9 du Livre I : **HOMONYMIE, non omission**. Le § 1.2
+        #    s'intitule « Cadres de référence et modèles de maturité » et traite
+        #    les échelles d'interopérabilité PRÉ-agentiques — lignée militaire,
+        #    LCIM, Richardson ; le ch. 9 renvoie explicitement au ch. 1 § 1.2.2.
+        #    *Autre objet, autre siège : les aligner sur le ch. 43 introduirait
+        #    un renvoi faux, ce qui est pire qu'un contrôle désarmé.*
+        # ⚠ **Et le déclencheur ne peut pas se borner à l'agentique**, ce que la
+        # remontée d'origine proposait : le ch. 1 écrit « aucun **modèle de
+        # maturité** ne traite le non-déterminisme **agentique** » — *la phrase
+        # même que R-14 fait citer pour l'interdire*. Un motif qualifié la
+        # ramasserait comme les autres. **La levée suppose la machinerie que P7
+        # de `check-compendium.py` porte pour les mentions métalinguistiques ;
+        # tant qu'elle n'est pas ici, la désactivation est le geste juste.**
         "declencheur": r"modèles? de maturité",
         "renvoi": None,
     },

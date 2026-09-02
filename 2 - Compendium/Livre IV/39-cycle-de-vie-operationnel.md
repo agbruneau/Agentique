@@ -546,7 +546,7 @@ Vol. III). ⚠ *Ce chapitre ne le reconstruit pas, et ne nomme aucune échelle n
 produit à l'endroit exact où le socle est muet est celui qu'aucune relecture ne peut réfuter, faute de
 fait auquel le confronter.*
 
-## Synthèse : ce que le chapitre lègue à la somme
+### Synthèse : ce que le chapitre lègue à la somme
 
 *Section de sortie sans homologue direct dans la source — construction d'éditeur.*
 

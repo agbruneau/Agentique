@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chapitre 5 — Ancrage informationnel : mémoire, contexte, RAG agentique · Interopérabilité et Orchestration en Entreprise Agentique</title>
-<meta name="description" content="Livre I — Coopérer : fondements de l'interopérabilité et couche protocolaire agentique. Premier mouvement — les fondements (ch. 1-6)">
+<meta name="description" content="Livre I — Coopérer : fondements de l&#x27;interopérabilité et couche protocolaire agentique. Premier mouvement — les fondements (ch. 1-6)">
 <meta name="author" content="André-Guy Bruneau, M.Sc. IT">
 <meta name="color-scheme" content="dark">
 <style>
@@ -443,6 +443,17 @@ tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
 tbody td:first-child { color: var(--texte); font-weight: 600; }
 .legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
 
+/* -------------------------------------------------------------- figures */
+/* Les SVG du volume sont dessinés pour le PDF, donc sur fond clair, et ils
+   portent ce fond eux-mêmes — sans quoi il faudrait maintenir deux variantes
+   de chaque figure. Sur ce thème sombre, ils se posent donc comme un carton ;
+   le padding empêche le fond de la figure de toucher le bord du cadre. */
+.figure { margin: 2.1rem 0 1.9rem; }
+.figure img { display: block; width: 100%; height: auto; border-radius: 7px;
+              border: 1px solid var(--trait); background: #fdfbf9; padding: 0.6rem; }
+.figure figcaption { font-size: 0.8rem; font-style: italic; color: var(--texte-faible);
+                     margin-top: 0.65rem; padding-left: 0.15rem; }
+
 /* --------------------------------------------------------------- listes */
 ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
 ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
@@ -531,16 +542,14 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <div class="nav__marque">Interopérabilité et Orchestration en Entreprise Agentique</div>
   <div class="nav__sous">Livre I · Chapitre 5</div>
   <ol>
-    <li><a href="#s50"><span class="num">5.0</span>Ce que ce chapitre traite, et ce qu&#x27;il ne traite pas</a></li>
-    <li><a href="#s51"><span class="num">5.1</span>Du modèle sans état à l&#x27;agent persistant : mémoire et ingénierie du contexte</a></li>
+    <li><a href="#s50"><span class="num">5.0</span>Ce que ce chapitre traite, et ce qu'il ne traite pas</a></li>
+    <li><a href="#s51"><span class="num">5.1</span>Du modèle sans état à l'agent persistant : mémoire et ingénierie du contexte</a></li>
     <li><a href="#s52"><span class="num">5.2</span>Architectures de mémoire long terme et pile de récupération</a></li>
     <li><a href="#s53"><span class="num">5.3</span>RAG agentique : planifier-récupérer-critiquer-itérer</a></li>
-    <li><a href="#s54"><span class="num">5.4</span>Données structurées, accès d&#x27;entreprise et gouvernance d&#x27;ancrage</a></li>
-
+    <li><a href="#s54"><span class="num">5.4</span>Données structurées, accès d'entreprise et gouvernance d'ancrage</a></li>
   </ol>
   <div class="nav__pied">
     Vol.&nbsp;IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em><br>
-
     <a href="05-ancrage-informationnel.md">Version Markdown</a>
   </div>
 </nav>
@@ -554,311 +563,265 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <p class="titre__situe">Livre I — Coopérer : fondements de l'interopérabilité et couche protocolaire agentique. Premier mouvement — les fondements (ch. 1-6)</p>
 </header>
 
+<!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
+     Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
+     que `build/assemble.py` pour le PDF et que `PRD/decompte.sh` pour la volumétrie. L'appareil de
+     gouvernance vit au .md jumeau, qui reste la seule source, et `build/verifier-piece.py` refuse
+     un rendu qui le recopierait. -->
+
 <h2 id="s50"><span class="sig">§ 5.0</span>Ce que ce chapitre traite, et ce qu'il ne traite pas</h2>
-
 <p><em>Cadrage d'ouverture. La table détaillée du TOC ouvre ce chapitre à § 5.1 ; ce paragraphe liminaire n'est pas une section du plan mais l'apparat qui en déclare la frontière, comme le ch. 4 le fait pour la sienne.</em></p>
-
 <p>Un modèle de langage est <strong>intrinsèquement sans état</strong> : chaque appel d'inférence ne connaît du monde que ce que sa fenêtre de contexte contient à l'instant de l'invocation, et tout ce qui en sort est oublié dès la requête suivante. Or un agent, par définition, <strong>agit dans la durée</strong> — il enchaîne des tours, poursuit un but sur plusieurs pas, reprend une tâche interrompue.</p>
-
 <p>L'écart entre un modèle amnésique et un agent persistant se comble par une discipline d'ingénierie : la gestion de l'<strong>état informationnel</strong> que l'agent écrit et relit. C'est l'objet de ce chapitre, et il repose sur une distinction qu'il faut tenir fermement parce que la pratique la brouille :</p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th></th><th>Ce que c'est</th><th>Provenance</th></tr></thead>
-  <tbody>
-    <tr><td><strong>Mémoire</strong></td><td>ce que l'agent <strong>produit et conserve</strong> de sa propre activité</td><td>interne, écrite par l'agent</td></tr>
-    <tr><td><strong>Récupération</strong> (RAG)</td><td>ce qu'il <strong>va chercher</strong> dans un corpus tiers</td><td>externe, écrite par d'autres</td></tr>
-    <tr><td><strong>Protocole d'accès</strong></td><td>la tuyauterie qui relie l'un et l'autre aux sources</td><td>ni l'un ni l'autre — un transport</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>Ce que c'est</th>
+<th>Provenance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mémoire</strong></td>
+<td>ce que l'agent <strong>produit et conserve</strong> de sa propre activité</td>
+<td>interne, écrite par l'agent</td>
+</tr>
+<tr>
+<td><strong>Récupération</strong> (RAG)</td>
+<td>ce qu'il <strong>va chercher</strong> dans un corpus tiers</td>
+<td>externe, écrite par d'autres</td>
+</tr>
+<tr>
+<td><strong>Protocole d'accès</strong></td>
+<td>la tuyauterie qui relie l'un et l'autre aux sources</td>
+<td>ni l'un ni l'autre — un transport</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 5.1 — Trois objets que la pratique confond, et qui n'ont ni le même cycle de vie ni la même gouvernance.</p>
-
 <p>Le troisième — le protocole d'accès agent-outil, soit le <strong>Model Context Protocol</strong> (MCP) — n'est pas traité ici : son anatomie est au <strong>ch. 8</strong>. Les deux premiers occupent respectivement les § 5.1-5.2 et les § 5.3-5.4.</p>
-
 <div class="avert">
   <p><strong>Ce chapitre ne traite pas l'empoisonnement de la mémoire et des sources, et cette absence est un constat de source, non un oubli.</strong> Un balayage documenté des §2.6-2.7 du Vol. I <em>Monographie</em> n'y relève <strong>aucune occurrence</strong> de cette matière : elle vit ailleurs dans le volume source — au §2.10.2.2 —, et le plan l'affecte au <strong>ch. 19</strong>, qui la relit comme un risque d'<strong>identité des sources</strong>. C'est, au sens de l'échelle R-14 du Vol. III, un <strong>fait négatif vérifié</strong> — établi par balayage — et non une absence de documentation. La distinction compte : ici on peut affirmer que la matière n'est pas dans la source ; ailleurs dans ce Livre, on n'a pu affirmer que ne pas l'avoir trouvée.</p>
 </div>
-
 <p>Le partage est donc net et il vaut d'être posé d'emblée : <strong>ce chapitre pose l'ancrage ; le ch. 19 en pose le versant hostile.</strong> Le § 5.4.2 marque le point de jonction sans le franchir.</p>
-
 <p>Le fil du <strong>coût</strong> domine par ailleurs tout ce qui suit. Chaque jeton conservé dans la fenêtre est facturé <strong>à chaque tour</strong> — ce qui fait de la budgétisation du contexte une contrainte d'ingénierie de premier ordre, non un raffinement d'optimisation.</p>
-
+<hr />
+<figure class="figure">
+  <img src="../figures/f-05-00-trois-objets.svg" alt="Figure 5.0 — Mémoire, récupération et protocole d&#39;accès : trois objets que la pratique confond." />
+  <figcaption><strong>Figure 5.0</strong> — Mémoire, récupération et protocole d'accès : trois objets que la pratique confond.</figcaption>
+</figure>
 <h2 id="s51"><span class="sig">§ 5.1</span>Du modèle sans état à l'agent persistant : mémoire et ingénierie du contexte</h2>
-
-<p><em>Le TOC intitule cette section « Du <strong>LLM</strong> sans état à l'agent persistant » ; la pièce traduit le sigle, le registre du corpus n'admettant un terme technique anglais qu'entre parenthèses à sa première occurrence. Déviation d'intitulé déclarée au titre de la décision 8 du TOC, remontée en §&nbsp;5.5&nbsp;† ; la matière et la provenance sont inchangées.</em></p>
-
+<p><em>Le TOC intitule cette section « Du <strong>LLM</strong> sans état à l'agent persistant » ; la pièce traduit le sigle, le registre du corpus n'admettant un terme technique anglais qu'entre parenthèses à sa première occurrence. Déviation d'intitulé déclarée au titre de la décision 8 du TOC, remontée en § 5.5 ; la matière et la provenance sont inchangées.</em></p>
 <h3>5.1.1 Taxonomie de la mémoire</h3>
-
 <p>Le passage du modèle sans état à l'agent persistant emprunte sa structuration aux architectures cognitives classiques (ch. 4 § 4.2.2), qui distinguaient déjà mémoire de travail et mémoire à long terme.</p>
-
 <p>La <strong>mémoire de travail</strong> correspond au contenu effectivement présent dans la fenêtre de contexte au moment de l'inférence : invite système, historique récent, observations d'outils du tour courant, bloc de raisonnement actif. Elle est <strong>volatile, bornée et coûteuse</strong> — son occupation se paie en jetons à chaque appel.</p>
-
 <p>La <strong>mémoire à long terme</strong> vit hors de la fenêtre, dans un magasin externe que l'agent interroge sélectivement. Les revues du domaine — Zhang et coll. (2024), Wu et coll. (2025) — reprennent une tripartition issue de la psychologie cognitive et des architectures symboliques :</p>
-
-<ul class="puces">
-  <li>la mémoire <strong>épisodique</strong> consigne des événements situés et datés — « lors de la session du 3 mars, l'utilisateur a refusé telle option » ;</li>
-  <li>la mémoire <strong>sémantique</strong> retient des faits décontextualisés et stables — « l'utilisateur préfère le français canadien » ;</li>
-  <li>la mémoire <strong>procédurale</strong> encode des compétences, des routines et des consignes d'action — « pour déployer, exécuter ces étapes dans cet ordre ».</li>
+<ul>
+<li>la mémoire <strong>épisodique</strong> consigne des événements situés et datés — « lors de la session du 3 mars, l'utilisateur a refusé telle option » ;</li>
+<li>la mémoire <strong>sémantique</strong> retient des faits décontextualisés et stables — « l'utilisateur préfère le français canadien » ;</li>
+<li>la mémoire <strong>procédurale</strong> encode des compétences, des routines et des consignes d'action — « pour déployer, exécuter ces étapes dans cet ordre ».</li>
 </ul>
-
 <div class="avert">
   <p><strong>Cette taxonomie n'est pas une commodité descriptive : elle oriente les choix d'implémentation</strong>, parce que chaque type appelle un magasin, un rythme d'écriture et une politique de récupération <strong>distincts</strong>. L'épisodique se prête à un journal horodaté et à une recherche par similarité ; le sémantique, à un profil structuré ou à un graphe de faits ; le procédural, à des fichiers relus à chaque démarrage (§ 5.1.4).</p>
 </div>
-
 <p>La cohérence d'un agent persistant tient précisément à ce que ces registres soient <strong>gérés explicitement</strong> plutôt que noyés dans un historique conversationnel indifférencié. Un agent dont toute la mémoire est un historique est un agent dont la mémoire ne se gouverne pas.</p>
-
 <div class="encadre encadre--recherche">
   <span class="encadre__label">Perspective recherche</span>
   <p>La transposition de la mémoire humaine vers les agents est un programme de recherche actif, non une simple métaphore. Les revues de Wu et coll. (2025) et de Zhang et coll. (2024) cartographient les mécanismes — encodage, stockage, rappel, oubli — et soulignent que <strong>la frontière entre mémoire et apprentissage paramétrique reste théoriquement floue</strong> : ce que l'agent retient dans un magasin externe relève d'une mémoire <strong>non paramétrique</strong>, distincte de l'auto-amélioration par mise à jour des poids (ch. 4 § 4.3.5). C'est la même distinction que le ch. 4 posait entre adaptation en contexte et mise à jour du modèle, vue du côté de l'état plutôt que du côté de l'apprentissage.</p>
 </div>
-
 <h3>5.1.2 L'ingénierie du contexte comme discipline</h3>
-
 <p>La gestion de la mémoire de travail s'est constituée en <strong>discipline d'ingénierie à part entière</strong>. Son point de départ est empirique, et il est contre-intuitif : <strong>les modèles n'exploitent pas uniformément leur fenêtre de contexte</strong>.</p>
-
 <p>Deux phénomènes documentés le montrent. La <strong>perte au milieu</strong> (<em>lost in the middle</em>, Liu et coll., 2023) établit que l'information placée au centre d'un long contexte est nettement moins bien utilisée que celle située en tête ou en queue, dessinant une courbe de performance en U. La <strong>dégradation progressive</strong> de la qualité à mesure que la fenêtre se remplit (<em>context rot</em>) s'y ajoute.</p>
-
 <div class="avert">
   <p><strong>Ensemble, ces deux constats ruinent une intuition répandue</strong> : élargir indéfiniment la fenêtre ne résout pas le problème de la mémoire. <em>Un contexte plus grand n'est pas un contexte mieux utilisé</em>, et il coûte plus cher à chaque tour. C'est le point le plus important de la section, et celui que les annonces de fenêtres toujours plus vastes rendent le plus facile à oublier.</p>
 </div>
-
 <p>L'ingénierie du contexte répond par un répertoire d'opérations désormais standardisé, que la formulation de LangChain (2025) ordonne en <strong>quatre verbes</strong> :</p>
-
-<ul class="puces">
-  <li><strong>écrire</strong> — déporter hors fenêtre, dans un espace de travail ou une mémoire, ce qui doit survivre au-delà du tour ;</li>
-  <li><strong>sélectionner</strong> — n'admettre dans la fenêtre que ce qui sert le tour courant ;</li>
-  <li><strong>compacter</strong> — résumer ou comprimer l'historique pour libérer du budget ;</li>
-  <li><strong>isoler</strong> — cloisonner les contextes entre sous-tâches ou sous-agents pour éviter la contamination croisée.</li>
+<ul>
+<li><strong>écrire</strong> — déporter hors fenêtre, dans un espace de travail ou une mémoire, ce qui doit survivre au-delà du tour ;</li>
+<li><strong>sélectionner</strong> — n'admettre dans la fenêtre que ce qui sert le tour courant ;</li>
+<li><strong>compacter</strong> — résumer ou comprimer l'historique pour libérer du budget ;</li>
+<li><strong>isoler</strong> — cloisonner les contextes entre sous-tâches ou sous-agents pour éviter la contamination croisée.</li>
 </ul>
-
 <div class="avert">
   <p><strong>Le quatrième verbe fait débat, et le débat mérite d'être rapporté plutôt que tranché.</strong> Cognition (Yan, 2025) plaide au contraire pour un <strong>fil de contexte continu et un rédacteur unique</strong> (<em>single writer</em>) plutôt qu'un cloisonnement multi-agents, au motif que l'isolation <strong>fragmente le contexte partagé</strong> dont dépend la cohérence. Le ch. 6 § 6.1 retrouvera exactement cette tension en pesant le surcoût du multi-agent.</p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> les deux positions ne portent vraisemblablement pas sur les mêmes tâches, ce qui expliquerait qu'elles coexistent sans se réfuter. Le socle <strong>rapporte les deux prises de position et le motif de la seconde</strong> ; il <strong>n'établit pas</strong> leurs domaines de validité respectifs, qu'aucune des deux ne déclare. La conciliation est proposée comme lecture, non comme constat.</p>
-
 <p>Anthropic (2025) présente l'ensemble de ces opérations comme la pratique consistant à <strong>curer délibérément l'ensemble minimal de jetons à haute valeur informationnelle</strong>, plutôt qu'à accumuler. C'est l'expression directe du fil du coût : chaque opération vise à maximiser le rendement informationnel <strong>par jeton facturé</strong>.</p>
-
 <div class="encadre encadre--oeuvre">
   <span class="encadre__label">Mise en œuvre</span>
   <p>Deux conséquences opérationnelles nettes. <em>(a)</em> <strong>La taille effectivement utile de la fenêtre est inférieure à sa taille nominale</strong>, et la <strong>position</strong> de l'information dans le contexte est une variable de conception, non un détail : placer les consignes critiques et les données saillantes en tête ou en queue. <em>(b)</em> Traiter le budget de jetons comme une <strong>ressource rare à allouer explicitement</strong> — d'autant que les jetons de raisonnement des modèles de réflexion (ch. 4 § 4.3.4) grèvent <strong>le même budget</strong>.</p>
 </div>
-
 <h3>5.1.3 Compaction réversible, résumé et oubli actif</h3>
-
 <p>La <strong>compaction</strong> est l'opération par laquelle un agent réduit l'empreinte de son historique pour rester sous le seuil de sa fenêtre tout en préservant l'essentiel de ce qu'il a accompli.</p>
-
 <p>Le mécanisme canonique est l'<strong>auto-compaction à seuil</strong> : lorsque l'occupation approche d'une limite configurée, l'agent déclenche un résumé de la portion ancienne de l'historique, qui remplace les tours détaillés par une synthèse compacte. Une fonction produit apparentée, documentée par Anthropic (2025) — l'<strong>édition de contexte</strong> (<em>context editing</em>) —, permet de retirer ou de condenser des éléments devenus inutiles, par exemple des observations d'outils volumineuses dont <strong>seul le verdict importe encore</strong>.</p>
-
 <div class="avert">
   <p><strong>Cette fonction est en bêta</strong>, avec une version d'interface datée que son éditeur prescrit de fixer au moment d'intégrer, son comportement et son contrat pouvant évoluer. Elle est citée comme telle et <strong>jamais présentée comme une disponibilité générale</strong>. ⚠ <strong>Statut re-vérifié à la documentation d'Anthropic le 27 juillet 2026, au gel unique : toujours en bêta</strong>, en-tête d'activation daté inchangé (registre du gel, fait 9). <em>C'est la seule des deux fonctions produit de ce chapitre à l'être encore.</em></p>
 </div>
-
 <p>L'enjeu de conception est la <strong>réversibilité</strong>. Une compaction agressive risque d'effacer un détail qui redeviendra pertinent ; une compaction trop prudente ne libère pas assez de budget. La bonne pratique consiste à <strong>compacter en conservant un pointeur vers la trace intégrale</strong>, déportée dans un magasin persistant, de sorte que le résumé reste <strong>augmentable à la demande</strong> sans peser sur la fenêtre courante.</p>
-
 <p>L'<strong>oubli actif</strong> complète le dispositif : plutôt que de tout retenir, l'agent élague délibérément les éléments à faible valeur — bruit conversationnel, tentatives avortées, redondances. Le bénéfice est double, et le second est moins évident que le premier : réduire le contexte améliore le coût, <strong>et</strong> atténue la dégradation décrite en § 5.1.2.</p>
-
 <p>La compaction n'est donc <strong>pas une simple troncature, mais une politique d'allocation</strong> : elle arbitre, tour après tour, ce qui mérite de rester dans la mémoire de travail et ce qui peut être résumé ou écarté.</p>
-
 <h3>5.1.4 Mémoire procédurale et fichiers de configuration d'agent</h3>
-
 <p>La mémoire procédurale se matérialise par une stratification claire entre trois plans :</p>
-
-<ol class="numeros">
-  <li>le <strong>contexte actif</strong> — ce qui occupe la fenêtre au tour courant ;</li>
-  <li>l'<strong>espace de travail</strong> (<em>scratchpad</em>) — où l'agent note des résultats partiels qu'il relira <strong>au sein de la même tâche</strong> ;</li>
-  <li>le <strong>magasin persistant</strong> — ce qui survit <strong>entre les sessions</strong>.</li>
+<ol type="1">
+<li>le <strong>contexte actif</strong> — ce qui occupe la fenêtre au tour courant ;</li>
+<li>l'<strong>espace de travail</strong> (<em>scratchpad</em>) — où l'agent note des résultats partiels qu'il relira <strong>au sein de la même tâche</strong> ;</li>
+<li>le <strong>magasin persistant</strong> — ce qui survit <strong>entre les sessions</strong>.</li>
 </ol>
-
-<p>L'<strong>outil de mémoire</strong> d'Anthropic (2025) instrumente ce dernier plan en tant que primitive, offrant à l'agent des opérations explicites pour écrire, relire et mettre à jour une mémoire externe.</p>
-
-<div class="avert">
-  <p><strong>Cette fonction était en bêta au gel de la source (juin 2026) ; elle est en disponibilité générale au gel unique de la somme</strong> — constat pris à la documentation d'Anthropic le 27 juillet 2026, qui déclare l'absence de tout en-tête d'activation de bêta (registre du gel, fait 10). Son identifiant de type reste daté, et c'est <strong>lui</strong> qui fixe le contrat : une fonction généralement disponible n'est pas une fonction dont l'interface a cessé de se versionner.</p>
-</div>
-
-<p>Au-dessus de cette mécanique, une convention s'est imposée pour la mémoire procédurale <strong>durable</strong> : les <strong>fichiers de configuration d'agent</strong> relus au démarrage. Le format <code>AGENTS.md</code>, contribué à l'Agentic AI Foundation de la Linux Foundation le <strong>9 décembre 2025</strong>, et son équivalent <code>CLAUDE.md</code> codifient, dans un fichier <strong>versionné avec le projet</strong>, les consignes, conventions et routines que l'agent doit appliquer à chaque exécution.</p>
-
+<p>L'<strong>outil de mémoire</strong> d'Anthropic (2025) instrumente ce dernier plan en tant que primitive, offrant à l'agent des opérations explicites pour écrire, relire et mettre à jour une mémoire externe. ⚠ <strong>Cette fonction était en bêta au gel de la source (juin 2026) ; elle est en disponibilité générale au gel unique de la somme</strong> — constat pris à la documentation d'Anthropic le 27 juillet 2026, qui déclare l'absence de tout en-tête d'activation de bêta (registre du gel, fait 10). Son identifiant de type reste daté, et c'est <strong>lui</strong> qui fixe le contrat : une fonction généralement disponible n'est pas une fonction dont l'interface a cessé de se versionner.</p>
+<p>Au-dessus de cette mécanique, une convention s'est imposée pour la mémoire procédurale <strong>durable</strong> : les <strong>fichiers de configuration d'agent</strong> relus au démarrage. Le format <code>AGENTS.md</code>, confié à l'Agentic AI Foundation de la Linux Foundation le <strong>9 décembre 2025</strong>, et son équivalent <code>CLAUDE.md</code> codifient, dans un fichier <strong>versionné avec le projet</strong>, les consignes, conventions et routines que l'agent doit appliquer à chaque exécution.</p>
 <p>Ces fichiers jouent un <strong>double rôle</strong> qui mérite d'être explicité, parce qu'il est rarement nommé : ils sont à la fois une <strong>mémoire procédurale</strong> — le « comment faire » stable de l'agent — et une <strong>spécification d'agent</strong> — le contrat explicite de son comportement attendu.</p>
-
 <p>C'est l'invariant du Livre au plan mémoriel : la procédure est <strong>découplée</strong> de toute session particulière, exprimée comme un <strong>contrat</strong> lisible par l'humain et par la machine, et elle <strong>évolue</strong> par édition du fichier plutôt que par ré-entraînement. Le passage de ces formats sous gouvernance de fondation confirme leur statut de <strong>point d'interopérabilité</strong> plutôt que de détail d'implémentation propriétaire — et c'est à ce titre que le ch. 7 les reprend.</p>
-
 <div class="encadre encadre--oeuvre">
   <span class="encadre__label">Mise en œuvre</span>
   <p>En déploiement, la mémoire procédurale gagne à être <strong>traitée comme du code</strong> : fichiers versionnés dans le dépôt, revus en revue de code, et <strong>tenus courts</strong> pour ne pas gonfler la fenêtre à chaque démarrage. Cette dernière contrainte est réelle et souvent négligée : un fichier de consignes qui grossit sans discipline devient un coût fixe payé à chaque exécution.</p>
 </div>
-
+<hr />
 <h2 id="s52"><span class="sig">§ 5.2</span>Architectures de mémoire long terme et pile de récupération</h2>
-
 <h3>5.2.1 Architectures de mémoire long terme et pile de récupération</h3>
-
 <p>Au-delà des fichiers de configuration, plusieurs architectures proposent des magasins structurés et des politiques de gestion explicites. Elles se distinguent moins par leur mécanique de stockage que par la <strong>métaphore d'organisation</strong> qu'elles retiennent, et cette métaphore commande leurs propriétés.</p>
-
 <p>Une première lignée pose l'<strong>analogie du système d'exploitation</strong>. MemGPT (Packer et coll., 2023), aujourd'hui porté par le projet Letta, fait gérer au modèle lui-même une hiérarchie mémoire à trois niveaux — un contexte principal en fenêtre, une mémoire d'archives et une mémoire de rappel hors fenêtre — en <strong>paginant</strong> l'information entre ces niveaux comme un système d'exploitation gère la mémoire virtuelle.</p>
-
 <p>Une deuxième introduit un <strong>flux de mémoire horodaté</strong> : les Generative Agents (Park et coll., 2023) l'assortissent d'un mécanisme de récupération combinant <strong>récence, importance et pertinence</strong>, et d'une réflexion qui synthétise des souvenirs de plus haut niveau.</p>
-
 <p>D'autres visent la mise en production — Mem0 (Chhikara et coll., 2025), couche extensible extrayant et consolidant les faits saillants au fil des échanges —, organisent la mémoire en système multi-agents dédié — MIRIX (Wang et Chen, 2025) — ou appliquent un principe d'interconnexion dynamique entre souvenirs — A-MEM (Xu et coll., 2025).</p>
-
 <p>Une dernière lignée structure la mémoire comme un <strong>graphe de connaissances temporel</strong>, où faits et relations portent une <strong>validité datée</strong> : Zep, fondé sur le moteur Graphiti (Rasmussen et coll., 2025). C'est la seule des lignées ci-dessus dont la description porte explicitement la <strong>révision</strong> d'un fait ; les autres n'en disent rien, ce qui n'établit pas qu'elles n'en traitent pas.</p>
-
 <p>Sous ces architectures opère une <strong>pile de récupération mutualisée</strong> avec celle du RAG (§ 5.3.2) : bases vectorielles pour la recherche dense, recherche <strong>hybride</strong> combinant dense et lexical, <strong>réordonnancement</strong> des candidats.</p>
-
 <div class="avert">
   <p><strong>Ce partage est délibéré et il éclaire la thèse.</strong> La différence entre mémoire et récupération tient <strong>moins à la mécanique qu'à la provenance et au cycle de vie</strong> de ce qui est stocké : état produit par l'agent d'un côté, corpus externe de l'autre. Deux objets qui partagent leur outillage et diffèrent par leur gouvernance — c'est exactement la configuration où l'on confond les deux, et où la confusion coûte cher.</p>
 </div>
-
 <div class="encadre encadre--recherche">
   <span class="encadre__label">Perspective recherche</span>
   <p>Ces architectures convergent vers une représentation <strong>hybride</strong> où le graphe temporel concurrence l'index vectoriel pur. Chez Zep/Graphiti (Rasmussen et coll., 2025), modéliser explicitement l'évolution des faits dans le temps — <strong>une relation peut devenir caduque sans être effacée</strong> — répond au problème de la cohérence d'une mémoire qui doit oublier ou réviser plutôt qu'accumuler. La parenté avec les graphes de connaissances du ch. 2 § 2.3.5 n'est pas fortuite : mémoire à long terme et récupération structurée partagent un même substrat.</p>
 </div>
-
 <h3>5.2.2 Consolidation, ancrage et évaluation de la mémoire</h3>
-
 <p>Une mémoire à long terme n'a de valeur que si elle est correctement <strong>écrite</strong>, <strong>consolidée</strong> et, au besoin, <strong>oubliée</strong>. Ces trois opérations sont distinctes :</p>
-
-<ul class="puces">
-  <li>l'<strong>écriture</strong> décide ce qui mérite d'être retenu et sous quelle forme ;</li>
-  <li>la <strong>consolidation</strong> fusionne, met à jour et abstrait des souvenirs épars en représentations plus stables — c'est elle qui transforme une série d'épisodes en un fait sémantique, ou qui <strong>révise un fait obsolète</strong> ;</li>
-  <li>l'<strong>oubli</strong> élague ce qui est périmé ou contradictoire, pour éviter que la mémoire ne dérive en magasin incohérent.</li>
+<ul>
+<li>l'<strong>écriture</strong> décide ce qui mérite d'être retenu et sous quelle forme ;</li>
+<li>la <strong>consolidation</strong> fusionne, met à jour et abstrait des souvenirs épars en représentations plus stables — c'est elle qui transforme une série d'épisodes en un fait sémantique, ou qui <strong>révise un fait obsolète</strong> ;</li>
+<li>l'<strong>oubli</strong> élague ce qui est périmé ou contradictoire, pour éviter que la mémoire ne dérive en magasin incohérent.</li>
 </ul>
-
 <div class="avert">
   <p><strong>Ces opérations touchent directement à la fiabilité, et par un mécanisme qu'il faut nommer.</strong> Une mémoire mal gérée devient <strong>une source d'hallucinations</strong> : un agent qui rappelle un fait erroné avec aplomb propage l'erreur sur toute la trajectoire.</p>
 </div>
-
-<p><span class="auteur">Lecture de l'auteur</span> la différence avec une hallucination ordinaire tiendrait à ce que celle-ci est <em>persistante</em> et <em>auto-confirmante</em>, l'agent relisant le souvenir erroné à la session suivante. Le socle <strong>établit la propagation de l'erreur sur la trajectoire</strong> ; il <strong>ne caractérise pas</strong> cette persistance entre sessions, et ne la mesure pas.</p>
-
+<p><span class="auteur">Lecture de l'auteur</span> la différence avec une hallucination ordinaire tiendrait à ce que l'hallucination mémorielle est <em>persistante</em> et <em>auto-confirmante</em>, l'agent relisant le souvenir erroné à la session suivante. Le socle <strong>établit la propagation de l'erreur sur la trajectoire</strong> ; il <strong>ne caractérise pas</strong> cette persistance entre sessions, et ne la mesure pas.</p>
 <p>Deux pratiques atténuent ce risque, et elles reviendront à l'identique côté récupération (§ 5.4.2) :</p>
-
-<ul class="puces">
-  <li>les <strong>citations</strong> — ancrer chaque assertion mémorisée à sa source ou à l'épisode qui l'a produite, de sorte que l'agent puisse <strong>justifier</strong> ce qu'il avance plutôt que de le confabuler ;</li>
-  <li>l'<strong>abstention</strong> — reconnaître qu'il ne sait pas, plutôt qu'inventer un souvenir absent.</li>
+<ul>
+<li>les <strong>citations</strong> — ancrer chaque assertion mémorisée à sa source ou à l'épisode qui l'a produite, de sorte que l'agent puisse <strong>justifier</strong> ce qu'il avance plutôt que de le confabuler ;</li>
+<li>l'<strong>abstention</strong> — reconnaître qu'il ne sait pas, plutôt qu'inventer un souvenir absent.</li>
 </ul>
-
 <p>L'évaluation de la mémoire fait l'objet de bancs dédiés : LongMemEval (Wu et coll., 2024) mesure la mémoire interactive à long terme sur des historiques étendus, LoCoMo (Maharana et coll., 2024) la mémoire conversationnelle sur de très longues durées, MemoryAgentBench (Hu et coll., 2025) la mémoire au fil d'interactions incrémentales.</p>
-
 <div class="avert">
   <p><strong>Ce que ces bancs vérifient dépasse le rappel</strong>, et c'est ce qui en fait autre chose qu'une mesure de stockage : ils éprouvent la capacité à <strong>mettre un fait à jour</strong>, à <strong>l'oublier quand il le faut</strong> et à <strong>raisonner sur plusieurs souvenirs</strong> — c'est-à-dire la qualité de la <strong>consolidation</strong>. Qu'il n'existe pas de mesure consolidée de cette qualité au-delà de ces bancs relève d'une <strong>absence de documentation</strong> au sens de R-14 du Vol. III, non d'un fait négatif vérifié.</p>
 </div>
-
 <div class="encadre encadre--oeuvre">
   <span class="encadre__label">Mise en œuvre</span>
   <p>En production, l'évaluation de la mémoire s'inscrit dans la boucle d'évaluation continue que le ch. 39 instruit : constituer, <strong>à partir des traces réelles</strong>, des jeux d'épreuve mesurant le rappel, la mise à jour et l'abstention. ⚠ <strong>La consolidation et l'oubli doivent être instrumentés et observables au même titre que les appels d'outils</strong> — faute de quoi une dérive silencieuse de la mémoire passe inaperçue jusqu'à ce qu'elle se traduise en erreur visible. C'est, transposé à l'état interne, le principe d'observabilité du ch. 3 § 3.4.5.</p>
 </div>
-
+<hr />
 <h2 id="s53"><span class="sig">§ 5.3</span>RAG agentique : planifier-récupérer-critiquer-itérer</h2>
-
 <p>L'ancrage par la mémoire dote l'agent d'un état interne qu'il écrit et relit ; il reste néanmoins <strong>coupé des corpus volumineux et mouvants</strong> — bases documentaires, entrepôts relationnels, graphes de connaissances — qui dépassent la fenêtre de contexte.</p>
-
 <p>La <strong>génération augmentée par récupération</strong> (<em>Retrieval-Augmented Generation</em>, RAG), introduite par Lewis et coll. (2020) pour les tâches à forte intensité de connaissances, constitue le second pilier de l'ancrage. Là où la mémoire est l'état que l'agent <strong>possède</strong>, la récupération est l'information qu'il <strong>va chercher au moment voulu</strong>.</p>
-
 <h3>5.3.1 Du RAG statique au RAG agentique</h3>
-
 <p>Le RAG dit <em>naïf</em> enchaîne une fois pour toutes trois étapes — encoder la requête, récupérer les passages les plus proches, conditionner la génération.</p>
-
 <div class="avert">
   <p><strong>Cette linéarité fait sa fragilité, et le constat est documenté plutôt qu'intuitif</strong> : Barnett et coll. (2024) recensent <strong>sept</strong> points de défaillance récurrents de l'ingénierie d'un système de récupération, du contenu manquant au passage pertinent mais non extrait — autant de pannes qu'<strong>une passe unique ne peut ni détecter ni corriger</strong>.</p>
 </div>
-
 <p>Le RAG <strong>agentique</strong> répond en transformant le pipeline figé en <strong>boucle de contrôle</strong> : l'agent planifie sa stratégie de recherche, déclenche une ou plusieurs récupérations, <strong>critique</strong> la suffisance et la pertinence des éléments obtenus, puis décide d'itérer, de reformuler ou de s'arrêter. La revue de Singh et coll. (2025) cartographie cet espace, où la récupération devient <strong>une action outillée parmi d'autres</strong> plutôt qu'une étape préalable — ce qui la place, structurellement, dans la boucle du ch. 4 § 4.2.1.</p>
-
 <p>Deux mécanismes auto-correcteurs en constituent l'ossature. Self-RAG (Asai et coll., 2023) entraîne le modèle à émettre des jetons de réflexion qui décident <strong>à la volée</strong> s'il faut récupérer, puis évaluent la pertinence des passages et l'étayage de chaque affirmation produite. Corrective RAG (Yan et coll., 2024) ajoute un <strong>évaluateur léger</strong> qui note la qualité de la récupération et, lorsqu'elle est jugée incorrecte ou ambiguë, déclenche un <strong>repli</strong> plutôt que de générer sur des bases erronées.</p>
-
 <p>La <strong>récupération itérative entrelacée au raisonnement</strong> — IRCoT (Trivedi et coll., 2023), FLARE (Jiang et coll., 2023), Self-Ask (Press et coll., 2023) — pousse la même idée : chaque étape de raisonnement peut déclencher une nouvelle requête, ce qui réduit les hallucinations sur les questions <strong>multi-sauts</strong> en rapprochant la génération de ses sources à chaque pas.</p>
-
 <div class="encadre encadre--recherche">
   <span class="encadre__label">Perspective recherche</span>
   <p>La frontière entre RAG agentique <em>invité</em> et <em>entraîné</em> se déplace vers l'<strong>apprentissage de la politique de récupération</strong> : Search-R1 (Jin et coll., 2025) optimise par renforcement une politique qui intercale raisonnement et appels à un moteur de recherche, et instancie ainsi, pour la récupération, la logique du renforcement multi-tours du ch. 4 § 4.3.5. La boucle cesse alors d'être un échafaudage d'invite pour devenir un <strong>comportement appris</strong>, vérifiable contre la justesse finale.</p>
 </div>
-
 <div class="encadre encadre--oeuvre">
   <span class="encadre__label">Mise en œuvre</span>
   <p>La boucle auto-correctrice <strong>échange du coût contre de la fiabilité</strong> : chaque tour de critique et de re-récupération consomme des jetons et de la latence. Le <strong>critère d'arrêt</strong> — nombre maximal de tours, budget d'appels, seuil de confiance de l'évaluateur — est donc un paramètre de conception au même titre que pour toute boucle agentique, et non un détail. Un évaluateur de pertinence léger, à la manière de Corrective RAG, est souvent <strong>plus économique qu'une re-génération complète</strong> par un modèle frontière.</p>
 </div>
-
 <h3>5.3.2 Stratégies de récupération, ingestion et structures</h3>
-
 <p>La qualité d'un système de récupération se joue <strong>d'abord au stade de la récupération et de l'ingestion</strong>, en amont de toute boucle agentique. C'est un ordre de priorité que la fascination pour la boucle fait souvent oublier.</p>
-
-<p><strong>Côté récupération</strong>, la pratique a convergé vers l'<strong>hybridation</strong>. La recherche <strong>dense</strong> par plongements — DPR (Karpukhin et coll., 2020), Contriever (Izacard et coll., 2022) — est forte sur la proximité sémantique ; la recherche <strong>lexicale</strong> creuse, de type BM25, reste supérieure sur les termes rares, les identifiants et les correspondances exactes. Les listes de résultats sont fusionnées par la <strong>fusion de rangs réciproques</strong> (<em>Reciprocal Rank Fusion</em>, RRF), qui <strong>combine les rangs sans recalibrer les scores</strong>, puis un <strong>réordonnanceur</strong> — modèle d'interaction tardive comme ColBERT (Khattab et Zaharia, 2020), ou réordonnanceur croisé — affine le classement final sur un petit ensemble de candidats. Le choix des encodeurs et des réordonnanceurs s'appuie sur des bancs dédiés : BEIR (Thakur et coll., 2021) pour la généralisation zéro-coup, MTEB (Muennighoff et coll., 2023) pour les plongements de texte. Les techniques d'<strong>expansion de requête</strong> — HyDE (Gao et coll., 2023), qui génère un document hypothétique pour densifier la recherche — complètent l'arsenal.</p>
-
+<p><strong>Côté récupération</strong>, la pratique a convergé vers l'<strong>hybridation</strong>. La recherche <strong>dense</strong> par plongements — DPR (Karpukhin et coll., 2020), Contriever (Izacard et coll., 2022) — est forte sur la proximité sémantique ; la recherche <strong>lexicale</strong> creuse, de type BM25, reste supérieure sur les termes rares, les identifiants et les correspondances exactes. Les listes de résultats sont fusionnées par la <strong>fusion de rangs réciproques</strong> (<em>Reciprocal Rank Fusion</em>, RRF), qui <strong>combine les rangs sans recalibrer les scores</strong>, puis un <strong>réordonnanceur</strong> — modèle d'interaction tardive comme ColBERT (Khattab et Zaharia, 2020), ou réordonnanceur croisé — affine le classement final sur un petit ensemble de candidats. Le choix des encodeurs et des réordonnanceurs s'appuie sur des bancs dédiés : BEIR (Thakur et coll., 2021) pour la généralisation sans exemple (<em>zero-shot</em>), MTEB (Muennighoff et coll., 2023) pour les plongements de texte. Les techniques d'<strong>expansion de requête</strong> — HyDE (Gao et coll., 2023), qui génère un document hypothétique pour densifier la recherche — complètent l'arsenal.</p>
 <p><strong>Côté ingestion</strong>, le découpage naïf en fenêtres de taille fixe <strong>brise le contexte et dégrade la pertinence</strong>. Deux techniques y répondent : le découpage <strong>contextuel</strong>, qui préfixe chaque fragment d'un résumé situant sa place dans le document, et le découpage <strong>tardif</strong> (<em>late chunking</em>), qui encode le document entier <strong>avant</strong> de le segmenter, pour que chaque fragment hérite du contexte global.</p>
-
 <p><strong>Pour les questions exigeant l'agrégation d'informations dispersées</strong>, les structures hiérarchiques et de graphe deviennent décisives : RAPTOR (Sarthi et coll., 2024) construit récursivement un arbre de résumés autorisant une récupération à plusieurs niveaux de granularité ; GraphRAG (Edge et coll., 2024) extrait du corpus un graphe de connaissances dont les communautés servent les requêtes globales de synthèse ; HippoRAG (Jimenez Gutierrez et coll., 2024) s'inspire de la consolidation neurobiologique pour la récupération multi-sauts.</p>
-
 <div class="encadre encadre--oeuvre">
   <span class="encadre__label">Mise en œuvre</span>
-  <p>Le pont avec le graphe de connaissances et la pile du Web sémantique a été posé au ch. 2 § 2.4.2, où GraphRAG a son traitement ; la récupération structurée le matérialise du côté agentique. En pratique, la chaîne <em>dense + BM25 → RRF → réordonnancement</em> forme un <strong>contrat de récupération stable</strong> dont chaque maillon se substitue indépendamment sans réécrire l'appelant — application directe du découplage à des corpus qui évoluent en continu. Le réordonnancement, par son coût marginal, se réserve aux quelques dizaines de candidats de tête.</p>
+  <p>Le pont avec le graphe de connaissances et la pile du Web sémantique a été posé au ch. 2 § 2.4.2, où GraphRAG a son traitement ; la récupération structurée le matérialise du côté agentique. En pratique, la chaîne <em>dense + BM25 → RRF → réordonnancement</em> forme un <strong>contrat de récupération stable</strong> dont chaque maillon se remplace indépendamment sans réécrire l'appelant — application directe du découplage à des corpus qui évoluent en continu. Le réordonnancement, par son coût marginal, se réserve aux quelques dizaines de candidats de tête.</p>
 </div>
-
+<hr />
+<figure class="figure">
+  <img src="../figures/f-05-03-rag-agentique.svg" alt="Figure 5.3 — Du RAG statique au RAG agentique : d&#39;une passe unique à une boucle de contrôle." />
+  <figcaption><strong>Figure 5.3</strong> — Du RAG statique au RAG agentique : d'une passe unique à une boucle de contrôle.</figcaption>
+</figure>
 <h2 id="s54"><span class="sig">§ 5.4</span>Données structurées, accès d'entreprise et gouvernance d'ancrage</h2>
-
 <h3>5.4.1 Données structurées et accès d'entreprise</h3>
-
 <div class="avert">
   <p><strong>Une part majeure de l'information d'entreprise ne réside pas dans des documents non structurés</strong> mais dans des bases relationnelles, où l'accès passe par une <strong>requête</strong> plutôt que par une similarité vectorielle. La récupération documentaire, à elle seule, laisse cette part hors d'atteinte.</p>
 </div>
-
 <p>La traduction d'une question en langage naturel vers une requête exécutable — le <em>text-to-SQL</em> — est le <strong>pendant structuré</strong> de la récupération, et sa version agentique en hérite la boucle : générer une requête, l'exécuter, <strong>observer le résultat ou l'erreur</strong>, corriger, recommencer.</p>
-
 <p>Les bancs d'essai jalonnent une montée en difficulté instructive. Spider (Yu et coll., 2018) a posé le cadre de l'analyse sémantique inter-domaines ; BIRD (Li et coll., 2023) a introduit les <strong>grandes bases bruitées</strong> et la contrainte d'<strong>efficacité d'exécution</strong>, rapprochant l'évaluation des conditions réelles ; Spider 2.0 (Lei et coll., 2025) franchit un seuil en confrontant les modèles à des flux d'entreprise réalistes — schémas massifs, dialectes multiples, requêtes imbriquées sur des entrepôts infonuagiques.</p>
-
 <div class="avert">
   <p><strong>C'est sur ce dernier que le constat porte</strong> : Lei et coll. (2025) y observent que les méthodes <strong>en une passe s'effondrent</strong>, et que seule une démarche agentique — exploration du schéma, exécution incrémentale, correction d'erreurs — maintient une performance utile. Itérer contre le moteur est précisément ce que la boucle apporte au-delà de la simple génération, et le constat est ici <strong>mesuré plutôt qu'argumenté</strong>.</p>
 </div>
-
 <p>L'accès aux données structurées rejoint ici la question du <strong>transport</strong>, traitée au ch. 8. Un serveur MCP exposant une base offre à l'agent un <strong>contrat d'outil stable</strong> — interroger, lister les schémas, décrire une table — qui découple l'agent de la mécanique de connexion et d'authentification.</p>
-
 <p>Cette couche est <strong>complémentaire de la récupération documentaire, non concurrente</strong> : l'une récupère du texte non structuré pertinent, l'autre donne accès à la <strong>donnée structurée vivante</strong>. Un agent d'entreprise combine couramment les deux — récupérer une note de politique, l'agréger à des chiffres tirés d'un entrepôt.</p>
-
 <div class="encadre encadre--oeuvre">
   <span class="encadre__label">Mise en œuvre</span>
   <p>Exposer un entrepôt par un serveur MCP plutôt que par une connexion codée en dur applique le découplage au niveau des données : <strong>le contrat d'outil survit aux changements de moteur sous-jacent</strong>, et la gouvernance d'accès se centralise à la passerelle au lieu de se disperser dans chaque agent. La génération de requêtes agentique réclame en contrepartie des <strong>garde-fous d'exécution</strong> — requêtes en lecture seule, périmètre de tables limité, plafonds de lignes et de temps — pour éviter qu'une boucle de correction n'engendre des requêtes coûteuses ou destructrices sur une base de production.</p>
 </div>
-
 <h3>5.4.2 Gouvernance d'accès, ancrage et évaluation</h3>
-
 <p>Dès lors qu'un agent récupère et restitue de l'information d'entreprise, <strong>trois exigences se superposent</strong> : que l'accès respecte les droits de l'utilisateur, que la réponse soit ancrée et traçable, et que le tout soit mesurable.</p>
-
 <p><strong>La gouvernance d'accès</strong> impose que le contrôle des permissions — par rôles (RBAC) ou par attributs (ABAC) — s'applique <strong>au niveau du document, voire du fragment</strong>, et non seulement à l'interface de l'agent.</p>
-
 <div class="avert">
   <p><strong>Le mode d'échec ici est silencieux, et c'est ce qui le rend grave.</strong> Un index vectoriel qui mélange sans cloisonnement des documents soumis à des habilitations distinctes <strong>contourne le modèle d'autorisation sans jamais lever d'erreur</strong>. La récupération doit donc filtrer les candidats selon l'identité de l'<strong>utilisateur effectif</strong> avant la génération — faute de quoi <strong>l'agent devient un canal de fuite de contrôle d'accès</strong>. C'est la propagation d'identité du ch. 3 § 3.2.3 appliquée aux données, et le ch. 17 en montrera la version multi-saut. Ce chapitre pose le principe ; son application à l'échelle du parc d'entreprise a son domicile au <strong>ch. 24 § 24.4.2</strong>, qui n'est pas refait ici.</p>
 </div>
-
 <p><strong>L'ancrage.</strong> Réduire les hallucinations exige davantage que de bons passages : il faut une <strong>attribution vérifiable</strong> et un <strong>comportement d'abstention</strong>. La citation <strong>affirmation par affirmation</strong> — rattacher chaque énoncé de la réponse au fragment source précis qui l'étaye — rend le résultat auditable ; l'abstention assumée — répondre « information indisponible » plutôt que combler le vide — est préférable à une réponse plausible mais non étayée. Ce sont les deux mêmes pratiques qu'au § 5.2.2, et leur récurrence n'est pas fortuite : mémoire et récupération échouent de la même manière.</p>
-
 <p><strong>L'évaluation</strong> doit porter sur <strong>deux axes distincts</strong>, et les découpler est indispensable :</p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Axe</th><th>Ce qu'on mesure</th><th>Instruments</th></tr></thead>
-  <tbody>
-    <tr><td><strong>Récupération</strong></td><td>le rappel — les bons passages ont-ils été trouvés ?</td><td>métriques classiques de recherche d'information, dont le <em>Recall@K</em></td></tr>
-    <tr><td><strong>Génération augmentée</strong></td><td>fidélité au contexte, pertinence de la réponse et du contexte</td><td>RAGAS (Es et coll., 2023), sans référence humaine ; ARES (Saad-Falcon et coll., 2024), juges légers entraînés ; le banc CRAG (Yang et coll., 2024) pour les systèmes complets</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Axe</th>
+<th>Ce qu'on mesure</th>
+<th>Instruments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Récupération</strong></td>
+<td>le rappel — les bons passages ont-ils été trouvés ?</td>
+<td>métriques classiques de recherche d'information, dont le <em>Recall@K</em></td>
+</tr>
+<tr>
+<td><strong>Génération augmentée</strong></td>
+<td>fidélité au contexte, pertinence de la réponse et du contexte</td>
+<td>RAGAS (Es et coll., 2023), sans référence humaine ; ARES (Saad-Falcon et coll., 2024), juges légers entraînés ; le banc CRAG (Yang et coll., 2024) pour les systèmes complets</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 5.2 — Les deux axes d'évaluation d'un système de récupération, à mesurer séparément.</p>
-
 <div class="avert">
   <p><strong>Une réponse fausse peut tenir à un bon générateur nourri de mauvais passages, ou l'inverse</strong> — et <strong>seul le diagnostic séparé oriente la correction</strong>. Mesurer la seule qualité finale dit qu'il y a un problème, jamais où il est.</p>
 </div>
-
 <div class="avert">
   <p><strong>Point de jonction avec le ch. 19, marqué et non franchi.</strong> La récupération agentique n'est pas qu'un mécanisme d'ancrage : elle est aussi un <strong>vecteur d'attaque</strong>. En récupérant du contenu non fiable — courriel, page web, document partagé — et en l'injectant dans le flux de raisonnement d'un agent qui dispose par ailleurs de données privées et d'un canal de sortie, elle réunit les conditions d'une exfiltration. <strong>Tout passage récupéré doit être traité comme du contenu non fiable susceptible de porter une injection d'invite indirecte.</strong></p>
 </div>
-
 <p>Conformément au fil de la sécurité posé au ch. 4 § 4.0.1, <strong>ce risque ne se résout pas au niveau du modèle</strong> : il appelle une défense en profondeur — étiquetage de provenance des fragments, cloisonnement des privilèges, contrôle du canal de sortie. Le modèle de menace, la triade de conditions et les incidents documentés sont <strong>au ch. 19</strong> ; la défense architecturale, <strong>au ch. 6 § 6.5</strong>. Ce chapitre s'arrête ici, et c'est l'arbitrage du plan.</p>
+<hr />
 
 <footer class="pied">
   <p><strong>Vol. IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em></strong> · Livre I, chapitre 5. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau, M.Sc. IT.</p>
-
   <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme (gel unique : 27 juillet 2026).</p>
-  <p><strong>†</strong> Renvoi à une section retirée de ce rendu — la note de statut, hors corps — conservée au fichier Markdown jumeau.</p>
 </footer>
 
 </main>

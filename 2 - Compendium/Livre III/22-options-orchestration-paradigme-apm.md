@@ -963,6 +963,8 @@ R-IV-60…69, reproduite si on la devine.
   réserve que cette phrase renforce est juste ; l'intervalle qui la chiffre ne l'est pas*, et le présent
   chapitre s'en tient donc au fait sans le chiffrer. **Demande remontée** : correction de l'intervalle
   à l'Annexe B, ou déclaration de ce qu'il mesure réellement.
+
+  ☑ **SOLDÉE le 2 septembre 2026** (D-16) : l'Annexe B porte **vingt-neuf jours au 28 juillet 2026, deux mois au 2 septembre**, ⚠ **et elle déclare enfin ce que l'intervalle mesure** — *du dépôt à la dernière re-vérification, non à la date de lecture*. **Les deux moitiés de la demande sont donc payées, et la seconde était la vraie** : *un intervalle corrigé sans point de départ nommé se serait périmé le mois suivant.*
 - **(iii) — non bloquante, au PRD. Aucun régime n'est posé pour les pièces rédigées AVANT G-3.**
   Cinquante chapitres existent, écrits sur un socle à zéro entrée, et le socle existe désormais. La
   passe a **rattaché** les trois entrées de cette pièce par les tables de correspondance ; elle ne l'a
@@ -971,6 +973,14 @@ R-IV-60…69, reproduite si on la devine.
   **Demande remontée** : que le régime soit tranché — et, s'il l'est dans le sens du réadossement,
   qu'il le soit **pour les cinquante pièces à la fois**, une convention par relecteur produisant
   cinquante conventions.
+
+  ☑ **TRANCHÉE le 2 septembre 2026** (**D-16**, PRD §19), **et dans l'autre sens** : *le régime est
+  celui du **rattachement**, qui existe et suffit ; **le réadossement n'aura pas lieu**.* ⚠ **Le motif
+  n'est pas que le travail serait inutile** — il ferait résoudre **524 emplois nus** que `P3` mesure —
+  **mais qu'une passe unique sur les cinquante pièces EST une passe de rédaction**, et que le dépôt
+  est clos depuis **D-13**. ☑ **La demande de forme est néanmoins honorée** : *le régime est tranché
+  **pour les cinquante pièces à la fois**, une seule fois, au PRD — jamais pièce par pièce.* **Le
+  manque devient donc définitif, daté et chiffré, plutôt qu'une dette qui attendrait.**
 - **(iv) — non bloquante, au README du Livre. La volumétrie de la pièce est périmée par cette passe.**
   Le tableau du dossier porte **8 464 mots** au 28 juillet 2026, mesure antérieure à la présente
   relecture, qui a ajouté de l'appareil sans toucher au propos. ⚠ *Le rédacteur ne corrige pas le

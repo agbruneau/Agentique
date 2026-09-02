@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chapitre 24 — Le passage à l&#x27;échelle de l&#x27;entreprise · Interopérabilité et Orchestration en Entreprise Agentique</title>
-<meta name="description" content="Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier. Premier mouvement — autonomie encadrée : orchestration en entreprise (ch. 22-24). Troisième et dernier chapitre du mouvement : il ferme le versant d'architecture avant que le deuxième mouvement n'o">
+<meta name="description" content="Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier. Premier mouvement — autonomie encadrée : orchestration en entreprise (ch. 22-24). Troisième et dernier chapitre du mouvement : il ferme le versant d&#x27;architecture avant que le deuxième mouvement n&#x27;ouvre le versant réglementaire">
 <meta name="author" content="André-Guy Bruneau, M.Sc. IT">
 <meta name="color-scheme" content="dark">
 <style>
@@ -443,6 +443,17 @@ tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
 tbody td:first-child { color: var(--texte); font-weight: 600; }
 .legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
 
+/* -------------------------------------------------------------- figures */
+/* Les SVG du volume sont dessinés pour le PDF, donc sur fond clair, et ils
+   portent ce fond eux-mêmes — sans quoi il faudrait maintenir deux variantes
+   de chaque figure. Sur ce thème sombre, ils se posent donc comme un carton ;
+   le padding empêche le fond de la figure de toucher le bord du cadre. */
+.figure { margin: 2.1rem 0 1.9rem; }
+.figure img { display: block; width: 100%; height: auto; border-radius: 7px;
+              border: 1px solid var(--trait); background: #fdfbf9; padding: 0.6rem; }
+.figure figcaption { font-size: 0.8rem; font-style: italic; color: var(--texte-faible);
+                     margin-top: 0.65rem; padding-left: 0.15rem; }
+
 /* --------------------------------------------------------------- listes */
 ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
 ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
@@ -531,21 +542,19 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <div class="nav__marque">Interopérabilité et Orchestration en Entreprise Agentique</div>
   <div class="nav__sous">Livre III · Chapitre 24</div>
   <ol>
-    <li><a href="#s240"><span class="num">24.0</span>L&#x27;enjeu d&#x27;entreprise : de la dette d&#x27;intégration à la prolifération d&#x27;agents</a></li>
-    <li><a href="#s241"><span class="num">24.1</span>Intégrer les agents au tissu d&#x27;intégration existant</a></li>
-    <li><a href="#s242"><span class="num">24.2</span>Plateformes d&#x27;agents d&#x27;entreprise et stratégie de standards ouverts</a></li>
-    <li><a href="#s243"><span class="num">24.3</span>Identité et accès des agents à l&#x27;échelle du parc</a></li>
-    <li><a href="#s244"><span class="num">24.4</span>Accès aux données d&#x27;entreprise et ancrage gouverné</a></li>
+    <li><a href="#s240"><span class="num">24.0</span>L'enjeu d'entreprise : de la dette d'intégration à la prolifération d'agents</a></li>
+    <li><a href="#s241"><span class="num">24.1</span>Intégrer les agents au tissu d'intégration existant</a></li>
+    <li><a href="#s242"><span class="num">24.2</span>Plateformes d'agents d'entreprise et stratégie de standards ouverts</a></li>
+    <li><a href="#s243"><span class="num">24.3</span>Identité et accès des agents à l'échelle du parc</a></li>
+    <li><a href="#s244"><span class="num">24.4</span>Accès aux données d'entreprise et ancrage gouverné</a></li>
     <li><a href="#s245"><span class="num">24.5</span>Orchestration et collaboration humain-agent inter-équipes et B2B</a></li>
-    <li><a href="#s246"><span class="num">24.6</span>Sécurité du parc d&#x27;agents à l&#x27;échelle</a></li>
+    <li><a href="#s246"><span class="num">24.6</span>Sécurité du parc d'agents à l'échelle</a></li>
     <li><a href="#s247"><span class="num">24.7</span>Interopérabilité inter-entreprises (B2B), commerce agentique et écosystème</a></li>
-    <li><a href="#s248"><span class="num">24.8</span>Capacité d&#x27;inférence, budget de latence et contention</a></li>
+    <li><a href="#s248"><span class="num">24.8</span>Capacité d'inférence, budget de latence et contention</a></li>
     <li><a href="#s249"><span class="num">24.9</span>Adoption organisationnelle, modèle opérationnel et maturité</a></li>
-
   </ol>
   <div class="nav__pied">
     Vol.&nbsp;IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em><br>
-
     <a href="24-passage-echelle-entreprise.md">Version Markdown</a>
   </div>
 </nav>
@@ -559,608 +568,446 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <p class="titre__situe">Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier. Premier mouvement — autonomie encadrée : orchestration en entreprise (ch. 22-24). Troisième et dernier chapitre du mouvement : il ferme le versant d'architecture avant que le deuxième mouvement n'ouvre le versant réglementaire</p>
 </header>
 
+<!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
+     Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
+     que `build/assemble.py` pour le PDF et que `PRD/decompte.sh` pour la volumétrie. L'appareil de
+     gouvernance vit au .md jumeau, qui reste la seule source, et `build/verifier-piece.py` refuse
+     un rendu qui le recopierait. -->
+
 <div class="avert">
   <p><strong>La thèse a été collationnée contre le texte rédigé de sa source avant la rédaction</strong> (décision 14 du TOC), puis <strong>re-comparée mot à mot à l'entrée du TOC v0.30 le 28 juillet 2026</strong> (décision 17) : <em>elle y résout à l'identique, et la citation ci-dessus est une copie, non une re-frappe.</em> <strong>Domaine de balayage : une thèse examinée, zéro réalignée.</strong> Le ch. 4 du Vol. I ne porte pas de thèse formelle mais un <strong>résumé de chapitre</strong>, dont la thèse du TOC est une <strong>construction d'éditeur</strong> fidèle : elle en reprend le fil conducteur — trois plans d'interaction, passage N×M → N+M, quatre dettes — sans lui ajouter de portée. ⚠ <strong>Le membre « sans dupliquer l'IAM et l'observabilité en place » est l'apport propre du plan</strong> : la source l'énonce comme principe de greffe (« réutiliser plutôt que dupliquer »), et le corps l'écrit sous cette forme.</p>
 </div>
-
 <h2 id="s240"><span class="sig">§ 24.0</span>L'enjeu d'entreprise : de la dette d'intégration à la prolifération d'agents</h2>
-
 <p>Les deux chapitres précédents ont établi où le processus est écrit (ch. 22) et ce que l'industrie livre pour le porter (ch. 23). Ce chapitre change d'échelle : du couple isolé agent-outil, ou du système multi-agents de laboratoire, vers <strong>l'organisation comme système-de-systèmes</strong>.</p>
-
 <p>Cette organisation agrège des humains aux rôles et autorités hétérogènes, un parc applicatif mêlant progiciels du commerce, développements maison et services logiciels hérités, et désormais une couche d'agents qui s'y superpose. <strong>Ce qui distingue ce contexte d'un système multi-agents conçu d'un seul tenant, c'est précisément l'absence de conception unifiée</strong> : les composants préexistent, appartiennent à des propriétaires différents, obéissent à des contrats de service disjoints et <strong>ne peuvent être réécrits à volonté</strong>. <em>Les problèmes propres à cette échelle — héritage, silos, conformité sectorielle, gouvernance répartie — ne se résolvent pas au niveau du protocole mais à celui de l'architecture d'entreprise et de son modèle opérationnel.</em></p>
-
 <p><strong>Trois plans d'interaction</strong> organisent la matière, et ils sont repris tels quels de la source. Le <strong>plan agent-outil</strong> régit l'accès gouverné aux systèmes et aux données ; il est traité aux § 24.1 et § 24.4. Le <strong>plan agent-agent</strong> régit la collaboration inter-équipes et inter-organisations ; il est traité aux § 24.5 et § 24.7. Le <strong>plan agent-humain</strong> — autorité, délégation, responsabilité — est <strong>transverse</strong> : il n'a pas de section propre et s'ancre en trois points, la collaboration humaine (§ 24.5), la supervision sécuritaire (§ 24.6) et la redevabilité socio-technique (§ 24.9). ⚠ <em>La source lui en donne un quatrième — la gouvernance de la décision automatisée — qui part au <strong>ch. 30</strong> avec le §4.8 : trois ancrages ici par effet de périmètre, non par réduction.</em></p>
-
 <h3>24.0.1 Continuité et rupture de la dette</h3>
-
 <p>La <strong>dette d'intégration</strong> classique est un acquis du <strong>ch. 1</strong> : connexions point-à-point qui se multiplient, bus d'entreprise devenus monolithes de médiation, flux d'échange de documents rigides, couplage fort entre systèmes que nul n'ose plus modifier. <strong>L'arrivée des agents ne supprime pas cette dette ; elle en ajoute une couche</strong>, en partie continue, en partie nouvelle.</p>
-
 <p>La <strong>continuité</strong> tient à ce que les agents consomment et écrivent dans les mêmes systèmes hérités, dont ils héritent les contrats fragiles. La <strong>rupture</strong> tient à des bloqueurs inédits : un patrimoine informationnel mal catalogué, sans lignage ni définitions certifiées, devient le frein dominant à toute mise à l'échelle ; des copilotes déployés en silos, chacun dans son service logiciel, non composables entre eux ; des exécutions et des mémoires fragmentées, chaque plateforme conservant son propre état conversationnel.</p>
-
-<p>Le cadre qui rend ce paysage analysable est celui des <strong>quatre dettes</strong>, et il structure la progression du chapitre. La <strong>dette de données</strong> conditionne l'ancrage gouverné (§ 24.4). La <strong>dette d'intégration</strong> conditionne la greffe sur le tissu existant (§ 24.1). La <strong>dette d'identité</strong>, propre à des entités non humaines qui se multiplient sans propriétaire ni cycle de vie clairs, conditionne l'accès à l'échelle (§ 24.3). La <strong>dette de gouvernance</strong> conditionne la conformité et le contrôle —</p>
-
-<div class="avert">
-  <p><strong>et elle sort du périmètre de ce chapitre</strong> : son traitement est au <strong>ch. 30</strong>, qui reçoit le §4.8 de la source en entier. <em>Chacune nomme un déficit accumulé que l'introduction d'agents rend soudain coûteux, et qu'aucun protocole ne solde de lui-même.</em></p>
-</div>
-
+<p>Le cadre qui rend ce paysage analysable est celui des <strong>quatre dettes</strong>, et il structure la progression du chapitre. La <strong>dette de données</strong> conditionne l'ancrage gouverné (§ 24.4). La <strong>dette d'intégration</strong> conditionne la greffe sur le tissu existant (§ 24.1). La <strong>dette d'identité</strong>, propre à des entités non humaines qui se multiplient sans propriétaire ni cycle de vie clairs, conditionne l'accès à l'échelle (§ 24.3). La <strong>dette de gouvernance</strong> conditionne la conformité et le contrôle — ⚠ <strong>et elle sort du périmètre de ce chapitre</strong> : son traitement est au <strong>ch. 30</strong>, qui reçoit le §4.8 de la source en entier. <em>Chacune nomme un déficit accumulé que l'introduction d'agents rend soudain coûteux, et qu'aucun protocole ne solde de lui-même.</em></p>
 <h3>24.0.2 Prolifération d'agents et explosion des identités non humaines</h3>
-
 <p>La <strong>prolifération d'agents</strong> (<em>agent sprawl</em>) désigne un phénomène propre à l'entreprise : la multiplication non maîtrisée d'agents et, surtout, <strong>des identités machine qui les portent</strong>. Là où un développeur instancie un agent isolé, une organisation en voit naître des centaines par essaimage d'équipes, chacun requérant justificatifs d'accès, jetons et droits.</p>
-
 <div class="avert">
   <p><strong>Les chiffres qui circulent sur ce phénomène portent tous leur statut, et aucun n'est une mesure auditée</strong> — ⚠ <em>et chacun porte son attributeur, que la parade de péremption ne couvre pas</em> (décision 15b du TOC). <strong>Rubrik Zero Labs (2025)</strong> avance un <strong>ratio de 82 identités non humaines pour 1 identité humaine</strong> et indique que <strong>89 % des organisations sondées</strong> ont intégré des agents à leur infrastructure d'identité : ⚠ <strong>chiffre fournisseur issu d'une enquête commanditée</strong> — Wakefield Research, 1 625 décideurs —, à re-vérifier. Le <strong>Forum économique mondial (2025)</strong> documente par ailleurs la fréquence des organisations dépourvues de gouvernance claire de ces identités. Et sur le versant prospectif, ⚠ <strong>une projection d'analyste — non une mesure</strong> — de <strong>Gartner (2025)</strong> anticipe que les agents dépasseront en nombre les vendeurs d'un facteur dix d'ici 2028, et thématise un <strong>écart d'autorité</strong> (<em>authority gap</em>) entre ce que les agents sont <strong>techniquement capables</strong> de faire et ce que l'organisation les a <strong>explicitement habilités</strong> à faire.</p>
 </div>
-
 <p><em>Cet écart est le cœur du problème : une identité non humaine sur-habilitée et mal suivie devient une surface d'attaque et un angle mort de conformité.</em> Le traitement détaillé de l'identité, de son cycle de vie et de ses grilles de risque est au § 24.3 ; la présente sous-section n'établit que <strong>l'ampleur du phénomène et sa nature spécifiquement organisationnelle</strong>.</p>
-
 <h3>24.0.3 Pilotes d'affaires, valeur, et le fil N×M → N+M</h3>
-
 <p>La valeur de l'interopérabilité agentique se matérialise là où une tâche <strong>cesse de s'arrêter à la frontière d'un système</strong>. L'automatisation de bout en bout qui traverse plusieurs applications est le pilote d'affaires central, et le décloisonnement inter-systèmes en est la condition. Or les enquêtes de terrain signalent un <strong>décalage persistant entre investissement et valeur captée</strong> : le rapport <em>GenAI Divide</em> (<strong>Challapally et coll., MIT Project NANDA, 2025</strong>) — ⚠ <strong>non audité, fondé sur cinquante-deux entretiens</strong> — documente une majorité de projets bloqués au stade pilote, tandis que <strong>McKinsey &amp; Company (2025)</strong> estime que près de 80 % des entreprises ne constatent pas d'effet significatif sur leur résultat — ⚠ <strong>étude tierce à statut d'enquête, non une mesure auditée</strong>. <em>Le coût du statu quo n'est donc pas l'absence de technologie, mais l'incapacité à la transformer en valeur opérationnelle sous contrainte d'intégration.</em></p>
-
 <p>C'est ici qu'intervient le <strong>fil rouge économique</strong> du chapitre. Sans standard partagé, connecter N agents à M systèmes suppose un développement spécifique par couple, dont le coût croît en <strong>N×M</strong>. Des protocoles ouverts — le protocole agent-outil côté outils, le protocole agent-agent côté pairs — ramènent ce coût à <strong>N+M</strong> en substituant un contrat commun à la prolifération d'adaptateurs sur mesure, exactement comme un modèle canonique réduisait jadis le câblage point-à-point (<strong>ch. 1 § 1.6.1</strong>). Le coût marginal d'orchestration d'un agent supplémentaire, dans un parc déjà standardisé, tend ainsi vers le seul <strong>branchement au contrat partagé</strong>.</p>
-
 <div class="avert">
   <p><strong>Cette proposition est une thèse d'architecture, non un fait mesuré.</strong> Le Vol. I la porte comme fil conducteur ; ⚠ <strong>le socle n'en établit aucune vérification empirique en entreprise</strong> — <em>absence de documentation, degré 3 de l'échelle R-14 du Vol. III.</em> Elle est rouverte au § 24.2, où la stratégie d'écosystème en fait l'argument des standards ouverts (§ 24.2.4) puis la referme sur le coût total de possession (§ 24.2.5), et <strong>elle reparaît deux fois</strong> — appliquée à la sémantique des données (§ 24.4.4), puis aux places de marché d'agents (§ 24.7.3) ; <strong>le ch. 29 en fera l'un des termes de sa traduction réglementaire</strong>, et il n'en tirera aucune preuve.</p>
 </div>
-
 <div class="avert">
   <p><strong>Ce que le chapitre ne traite pas, et où le trouver.</strong> La <strong>gouvernance et la conformité d'entreprise</strong> — qualification sous le règlement européen sur l'IA, normes volontaires, registre d'agents comme pièce de conformité, régime européen de protection des données, résidence et <em>e-discovery</em> — sont au <strong>ch. 30</strong>, qui reçoit le §4.8 de la source <strong>en entier</strong>. L'<strong>observabilité, la fiabilité, l'évaluation en production et la discipline financière</strong> sont au <strong>Livre IV</strong>, qui reçoit le §4.9. Les <strong>architectures de référence</strong> sont au <strong>Livre IV</strong> également, qui reçoit le §4.12. ⚠ <strong>Ce sont trois sorties de périmètre déclarées à la table de couverture, non trois oublis.</strong></p>
 </div>
-
 <h2 id="s241"><span class="sig">§ 24.1</span>Intégrer les agents au tissu d'intégration existant</h2>
-
 <p><strong>L'erreur structurante consisterait à traiter la couche agentique comme un système d'information neuf, déployé à côté du parc existant plutôt qu'à l'intérieur.</strong> L'entreprise réelle ne reconstruit ni son bus d'entreprise, ni sa plateforme d'intégration, ni ses passerelles d'API, ni son maillage d'événements, ni ses canaux d'échange de documents parce qu'un nouveau type d'acteur y fait son apparition. <em>La proposition de cette section est inverse : greffer les agents sur ce tissu éprouvé, en réutilisant ses mécanismes de découplage, de contrôle d'accès et de supervision plutôt qu'en les dupliquant.</em> C'est la première moitié du membre de la thèse « sans dupliquer l'IAM et l'observabilité en place ».</p>
-
 <h3>24.1.1 Le modèle de référence : l'agent comme acteur du tissu</h3>
-
 <p>Le modèle repose sur une <strong>dualité de rôles</strong>. Un agent se comporte en <strong>agent-consommateur</strong> lorsqu'il invoque une API ou un outil, lit un flux d'événements ou interroge une source pour fonder son raisonnement ; il se comporte en <strong>agent-producteur</strong> lorsqu'il déclenche un <em>workflow</em>, émet un événement ou écrit dans un système d'information. Cette distinction recoupe celle de l'acteur émetteur et récepteur du <strong>ch. 1</strong>.</p>
-
 <p>Ce qui sépare l'agent d'entreprise d'un agent isolé ne tient pas à sa boucle de raisonnement mais à <strong>son contexte d'exécution</strong>, et quatre propriétés le caractérisent. Le <strong>volume et la variabilité du trafic</strong> : un parc génère des rafales d'appels au coût unitaire imprévisible. La <strong>gouvernance d'accès à l'échelle</strong>, qui doit appliquer des politiques cohérentes à des centaines d'identités non humaines. Le <strong>paysage hétérogène</strong> — ordinateur central, progiciel de gestion, service logiciel, entrepôt-lac coexistants — qui interdit toute hypothèse d'homogénéité. La <strong>souveraineté et la résidence</strong> des données, qui contraignent le lieu d'exécution de l'inférence et le transit des jetons.</p>
-
+<figure class="figure">
+  <img src="../figures/f-24-01-acteur-du-tissu.svg" alt="Figure 24.1 — L&#39;agent comme acteur du tissu d&#39;intégration : une dualité de rôles." />
+  <figcaption><strong>Figure 24.1</strong> — L'agent comme acteur du tissu d'intégration : une dualité de rôles.</figcaption>
+</figure>
 <h3>24.1.2 La plateforme d'intégration comme fabrique de serveurs d'outils</h3>
-
 <div class="avert">
   <p><strong>Désambiguïsation obligatoire (décision 12c du TOC).</strong> Le mot « fabrique » désigne ici, et uniquement ici dans ce chapitre, <strong>une plateforme d'intégration qui produit des serveurs d'outils</strong> ; ce n'est ni la <em>fabrique d'identité</em> du <strong>ch. 43</strong>, ni la <em>fabrique d'agents</em> du <strong>ch. 41</strong>, ni le patron de conception homonyme.</p>
 </div>
-
 <p>Le patron consiste à traiter la plateforme d'intégration non comme un héritage à contourner mais comme une <strong>fabrique de serveurs d'outils</strong>. Les grandes plateformes disposent déjà d'un catalogue de connecteurs vers des centaines d'applications d'entreprise, assorti de journalisation, de reprise sur erreur, de contrôle d'accès et de supervision. <strong>Générer automatiquement des serveurs d'outils à partir de ce catalogue</strong> fait de chaque connecteur existant un outil gouverné exposable à un agent — et les mécanismes de fiabilité hérités servent de garde-fous <strong>sans réécriture</strong>.</p>
-
 <p><strong>Le bénéfice architectural n'est pas la nouveauté fonctionnelle mais la réutilisation du plan de contrôle existant.</strong> ⚠ <strong>Faux ami à ne pas confondre</strong> : ce « plan de contrôle » est celui du <strong>maillage de services pré-agentique</strong> (ch. 1 § 1.3.4) — <em>ce n'est pas le</em> control plane <em>agentique que R-13 du Vol. III proscrit nu</em>, et le présent chapitre n'emploie jamais ce second terme.</p>
-
 <div class="avert">
   <p><strong>Le mouvement des éditeurs vers l'agentique est daté au régime [C], et les statuts se disent.</strong> Plusieurs plateformes d'intégration ont annoncé en 2025-2026 des registres d'agents, des courtiers d'agents et des passerelles exposant les deux protocoles ; l'une d'elles a annoncé une plateforme d'outils d'entreprise <strong>en octobre 2025</strong>, une autre un studio d'agents <strong>en mars 2025</strong>. ⚠ <strong>Ce sont des jalons de communiqués d'éditeurs, à re-vérifier</strong> — le volet résiduel de G-1 ne les a pas repris, et la <strong>neutralité fournisseur</strong> interdit d'en tirer un classement.</p>
 </div>
-
 <p>Un mouvement mérite d'être isolé parce qu'il change la nature du geste : l'<strong>écriture d'intégration par intention</strong>, où un agent interprète un objectif exprimé en langage naturel, en dérive un plan, puis construit et déploie le flux correspondant — là où l'assemblage visuel exigeait encore la construction manuelle du graphe.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> l'enjeu n'est pas la commodité de génération mais sa <strong>gouvernabilité</strong>. <em>Une intégration ainsi produite n'a de valeur d'entreprise que si elle hérite des contrats, de la propagation d'identité et des reprises de la plateforme — c'est-à-dire si l'agent <strong>peuple</strong> le tissu gouverné au lieu d'ouvrir un canal parallèle.</em> <strong>Ce que le socle établit</strong> : l'existence de ces capacités, au régime [C]. <strong>Ce qu'il n'établit pas</strong> : leur gouvernabilité effective. <em>Une greffe qu'on ne peut ni versionner, ni tracer, ni rejouer reconduit, sous l'apparence de l'automatisation, la dette d'intégration que le découplage par contrat visait à résorber.</em></p>
-
 <h3>24.1.3 Passerelle d'API, passerelle d'IA et point de sortie unique</h3>
-
 <div class="avert">
   <p><strong>Cette sous-section est le domicile de la mécanique</strong> de la passerelle et du cache ; <strong>sa dimension financière — allocation, refacturation — est au Livre IV</strong>, et le renvoi croisé est volontaire.</p>
 </div>
-
 <p>Ce qui distingue le trafic d'agents du trafic d'API classique est <strong>triple</strong> : la <strong>variabilité extrême du coût par appel</strong> — un même point d'entrée peut coûter quelques centimes ou plusieurs dollars selon la longueur de contexte —, les <strong>rafales</strong> consécutives aux boucles de raisonnement, et la <strong>duplication d'invites quasi identiques</strong>.</p>
-
 <p>À ces propriétés répondent des capacités nouvelles : <strong>limitation de débit exprimée en jetons</strong> et non en requêtes ; <strong>cache sémantique</strong> rapprochant les requêtes proches ; <strong>disjoncteurs déclenchés sur la vélocité de coût</strong> plutôt que sur le taux d'erreur ; <strong>routage de modèles</strong> selon la difficulté de la tâche ; et <strong>chaînes de repli inter-fournisseurs</strong>. ⚠ Les offres qui les portent sont documentées au régime [C] et à des statuts inégaux : préversion pour certaines, disponibilité générale datée d'avril 2026 pour au moins une, et <strong>statut non confirmé à la date de référence de la source</strong> pour une autre.</p>
-
 <p><strong>Le critère d'architecture demeure constant, et c'est lui le legs de la sous-section : faire transiter tout le trafic agentique par un point d'application unique où le coût et l'accès deviennent observables et maîtrisables.</strong> <em>Sans point de sortie unique, ni le plafonnement par jetons, ni le cache sémantique, ni les disjoncteurs de coût ne sont applicables à l'échelle.</em></p>
-
 <h3>24.1.4 Encapsuler le patrimoine : ordinateur central, progiciel de gestion, bases historiques</h3>
-
 <p>Le critère directeur est de <strong>ne pas réécrire les systèmes d'enregistrement</strong> mais de les exposer comme des <strong>outils gouvernés</strong>. Le patron applicable est une variante agentique de l'étranglement progressif : l'agent accède au cœur historique par une interface encapsulante, <strong>sans que la migration du système sous-jacent ne soit jamais un préalable</strong>.</p>
-
 <p>Trois enjeux structurent cette encapsulation. La <strong>performance</strong> : interroger un ordinateur central ou un progiciel transactionnel en lecture directe est rarement soutenable, d'où le recours à des répliques en lecture, des vues matérialisées et un groupement de connexions. Le <strong>périmètre</strong> : distinguer un accès en lecture seule, à risque maîtrisé, d'un accès en écriture complet qui engage l'intégrité des données de référence. L'<strong>autorisation</strong> : propager l'identité de l'appelant plutôt que d'employer un compte de service partagé — <em>exigence dont le § 24.3 fait une mécanique.</em></p>
-
 <p>À cette encapsulation, qui <strong>donne accès</strong> au cœur historique, répond une seconde trajectoire qui le <strong>transforme</strong> : la modernisation assistée par agent s'attaque au code lui-même — compréhension de programmes hérités, cartographie des dépendances, refactorisation, génération de tests de non-régression. Deux propriétés la rattachent au fil de la somme. L'<strong>évolution</strong> : moderniser n'est pas migrer d'un bloc mais réduire la dette progressivement, contrat d'outil par contrat d'outil. La <strong>libération humaine sur l'irréversible</strong> : transformer un système d'enregistrement reste une action engageante, et <strong>la sortie de l'assistant demeure une proposition soumise à revue, jamais une écriture autonome</strong>. <em>L'agent y déplace le coût marginal de la compréhension du patrimoine, non la responsabilité de sa transformation</em> — et le <strong>ch. 31 § 31.1.1</strong> montrera que cette règle cesse d'être une préférence d'ingénierie quand l'action est un règlement financier.</p>
-
 <h3>24.1.5 Maillage d'événements et échange de documents agentiques</h3>
-
 <p>Le branchement des agents sur le temps réel s'appuie sur une <strong>épine dorsale déjà familière</strong> : un bus de messages pour le transport, un moteur de flux pour le traitement, les deux protocoles agentiques pour l'accès et la collaboration, et un <strong>contrat de gouvernance des canaux d'événements</strong> (ch. 1 § 1.5). Dans ce schéma, l'agent-producteur émet des événements consommables par d'autres systèmes, et l'agent-consommateur réagit à des flux métier <strong>sans couplage point-à-point</strong> ; le maillage préserve le découplage temporel et spatial qui fait la robustesse de l'architecture événementielle.</p>
-
 <p>Le second volet vise le <strong>B2B installé</strong> : des agents interprètent, valident et optimisent des messages d'échange de documents — formats longtemps réputés rigides — pour automatiser le rapprochement, la correction d'anomalies et l'orchestration de la chaîne d'approvisionnement. ⚠ Les illustrations sont datées et relèvent de communiqués d'éditeurs, au régime [C].</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> l'intérêt de ce mouvement n'est pas la promesse d'automatisation mais <strong>l'échelle de confiance qu'elle présuppose</strong>. Raccorder un partenaire par intention ne dispense ni de l'identité opposable de l'agent, ni du contrat de message versionné, ni de la piste d'audit : <em>à l'échelle d'un réseau de partenaires, ce sont des conditions de sûreté, non des options.</em> <strong>Ce que le socle établit</strong> : l'existence de ces offres. <strong>Ce qu'il n'établit pas</strong> : que la confiance qu'elles supposent soit outillée. <strong>Le siège de cette question est le ch. 18</strong> — la connaissance de l'agent —, et le § 24.7 y renvoie sans le reconstruire.</p>
-
 <h3>24.1.6 Catalogue, registre et coexistence à l'échelle du parc</h3>
-
 <p>Le problème devient proprement <strong>organisationnel</strong> dès lors qu'il faut gouverner non pas un serveur d'outils mais <strong>des centaines</strong>, doublés de plusieurs protocoles concurrents. Le critère directeur est la <strong>curation gouvernée</strong> : substituer aux installations sauvages un <strong>registre interne</strong> où chaque serveur est catalogué, signé, analysé et versionné.</p>
-
 <p>Au-delà du catalogue, l'enjeu spécifiquement d'entreprise est la <strong>coexistence et le versionnement de protocoles à l'échelle du parc</strong> : dépréciation ordonnée d'un serveur, compatibilité ascendante des contrats d'outils, et confinement de la fragmentation née de la cohabitation de plusieurs protocoles et de variantes propriétaires. ⚠ <strong>La mécanique de découverte et de nommage est au ch. 9</strong>, qui en est le siège protocolaire, et elle n'est pas reprise ici.</p>
-
 <p><em>Sans politique explicite de versionnement et de dépréciation, un parc d'agents accumule une <strong>dette de fragmentation</strong> analogue à la dette d'intégration point-à-point qu'on cherchait précisément à éviter.</em> Cette discipline de coexistence ouvre la question stratégique du § 24.2 : <strong>sur quel écosystème parier</strong>.</p>
-
 <h2 id="s242"><span class="sig">§ 24.2</span>Plateformes d'agents d'entreprise et stratégie de standards ouverts</h2>
-
 <p>L'intégration au tissu existant résout <strong>le branchement</strong> ; elle ne résout pas <strong>l'industrialisation</strong>. Dès qu'une organisation dépasse la poignée de copilotes isolés et vise un parc gouverné, la question cesse d'être « comment connecter un agent » pour devenir « <strong>sur quelle plateforme bâtir, opérer et porter des dizaines de cas d'usage sans se verrouiller</strong> ».</p>
-
 <h3>24.2.1 Le modèle de référence à six couches</h3>
-
 <p>Comparer des suites hétérogènes exige un cadre <strong>indépendant des marques</strong>, et six couches le fournissent. <em>(1)</em> La <strong>couche de construction</strong> oppose l'assemblage visuel, accessible aux profils métier, au développement par bibliothèque, qui donne le contrôle fin — la plupart des plateformes offrant désormais les deux registres. <em>(2)</em> Le <strong>temps d'exécution</strong> porte l'isolation de session entre locataires et entre tâches, la prise en charge de fenêtres de raisonnement longues, et le confinement du code et des navigateurs pilotés — exigences d'autant plus fortes que les agents <strong>agissent</strong>, et non plus seulement répondent. <em>(3)</em> Le <strong>plan de gouvernance</strong> concentre politiques, garde-fous, observabilité et discipline financière ; ⚠ <strong>c'est la couche qui transforme un agent en actif gouverné</strong>, et son détail est au <strong>ch. 30</strong> et au <strong>Livre IV</strong>. <em>(4)</em> La <strong>couche identité et accès</strong> établit qui est l'agent et quels droits il porte — <strong>domicile au § 24.3</strong>. <em>(5)</em> La <strong>couche d'intégration</strong> expose connecteurs, serveurs d'outils et API. <em>(6)</em> La <strong>portabilité du modèle</strong> sous-jacent conditionne le coût et l'anti-verrouillage.</p>
-
 <div class="avert">
   <p><strong>Ces six couches ne sont pas une échelle d'autonomie</strong> (R-13 du Vol. III) : ce sont des couches d'architecture, et les confondre avec un palier de latitude confondrait ce qu'une plateforme <strong>offre</strong> avec ce qu'une organisation <strong>consent</strong>.</p>
 </div>
-
 <h3>24.2.2 Plateformes infusées dans la suite métier</h3>
-
 <p>Une première famille loge l'agent <strong>à l'intérieur du logiciel d'affaires qui détient déjà la donnée et le processus</strong>. Le critère est la <strong>proximité donnée-processus</strong> : l'agent hérite du modèle de données, des règles métier et des contrôles d'accès du système d'enregistrement, ce qui raccourcit le délai de valeur et réduit la surface d'intégration. ⚠ <strong>Le revers est un risque de verrouillage accru</strong>, l'agent étant arrimé au schéma propriétaire de l'éditeur.</p>
-
 <div class="avert">
   <p><strong>Les trajectoires nommées par la source portent des statuts distincts, dits à chaque mention</strong> : une suite dévoilée en octobre 2025 dont une version a atteint la disponibilité générale le 23 février 2026, avec un langage d'agent <strong>en bêta</strong> ; une autre dont le constructeur d'agents a atteint la disponibilité générale le 19 décembre 2025 ; une troisième déployant ses agents au sein d'une plateforme de flux de travail. <strong>Dans les trois cas, la valeur naît de l'ancrage natif ; la dépendance est le prix à arbitrer.</strong></p>
 </div>
-
 <h3>24.2.3 Plateformes infonuagiques horizontales</h3>
-
 <p>Une seconde famille <strong>découple l'exécution agentique du logiciel métier</strong> : la plateforme est multi-cadriciel et multi-modèle. Le critère est ici la <strong>neutralité</strong> — aucune adhérence à un système d'enregistrement particulier — <strong>au prix d'une intégration métier à construire</strong>. ⚠ Les trois offres que la source nomme portent des jalons datés d'octobre 2025 à avril 2026, à des statuts inégaux. <strong>Sur la grille des six couches, ces plateformes maximisent temps d'exécution, intégration et portabilité ; la couche métier reste à l'ouvrage de l'entreprise.</strong></p>
-
 <h3>24.2.4 Jardins clos, standards ouverts et stratégie d'écosystème</h3>
-
 <p><strong>La décision structurante n'est pas le choix d'une suite mais le choix d'une stratégie d'écosystème.</strong> Les suites intégrées offrent expérience cohérente et délai de valeur court, <strong>au prix d'un verrouillage</strong> ; une pile ouverte multi-fournisseurs préserve l'optionnalité, <strong>au prix d'un effort d'assemblage</strong>. L'arbitrage reboucle la proposition N×M → N+M du § 24.0.3 : standardiser les interfaces fait chuter le coût marginal d'intégration d'un agent ou d'un outil supplémentaire.</p>
-
 <div class="avert">
   <p><strong>Trois piliers de standardisation existent, et leurs gouvernances sont distinctes — les confondre est la faute que le Livre I a nommée.</strong> Le plan agent-outil, le plan agent-agent et une troisième initiative d'infrastructure relèvent de <strong>fondations et de trajectoires différentes</strong> ; leur généalogie complète, avec ses dates et ses transferts de gouvernance, est au <strong>ch. 7</strong> et au <strong>ch. 10</strong>, qui en sont les sièges. <em>La vraie question n'est pas « quel produit » mais « sur quel écosystème parier » sans hypothéquer l'avenir.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>Un garde-fou tempère l'enthousiasme, et il porte son attributeur autant que son statut</strong> : <strong>Gartner (2025)</strong> alerte sur le « lavage agentique » (<em>agent washing</em>) et anticipe que <strong>plus de 40 % des projets d'IA agentique seront annulés d'ici fin 2027</strong> — <strong>projection d'analyste, non une mesure</strong>. <em>Attribuer, ne pas affirmer.</em></p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> la parade d'architecture consiste à exiger des <strong>standards ouverts scorables en appel d'offres</strong>, de sorte que la portabilité reste un <strong>attribut contractuel</strong> plutôt qu'une promesse : traiter les trois piliers comme trois exigences séparées, vérifier l'appartenance de gouvernance déclarée et la conformité effective plutôt que l'allégation, et exiger des <strong>critères de sortie explicites</strong> — export des définitions d'agents, portabilité des registres, absence de format propriétaire bloquant. <strong>Ce que le socle établit</strong> : l'existence des trois piliers et de leurs gouvernances distinctes. <strong>Ce qu'il n'établit pas</strong> : qu'une exigence contractuelle suffise à garantir la portabilité — <em>une clause n'est pas un mécanisme</em>, et le <strong>ch. 47</strong> traitera de la provenance des composants au grain de l'artefact.</p>
-
 <h3>24.2.5 Portabilité du modèle, coût total de possession et rendement</h3>
-
 <p>Sous la portabilité des plateformes se loge un levier plus profond : <strong>la portabilité du modèle lui-même</strong>, déterminante pour le coût total de possession, la souveraineté et l'anti-verrouillage. Le découplage entre l'agent et son modèle permet d'arbitrer entre modèle propriétaire de frontière — performance, mais dépendance — et modèle ouvert exécutable sur site ou en infonuagique souverain.</p>
-
 <p><strong>Le coût total de possession d'un parc agentique ne se réduit pas au prix des jetons</strong> : il agrège l'orchestration, l'intégration au tissu existant, l'identité et la sécurité, l'observabilité et la discipline financière, et la conduite du changement. ⚠ <strong>Le rendement, lui, demeure difficile à établir</strong> : selon <strong>McKinsey (2025)</strong>, une part importante des organisations ne constate pas d'impact significatif sur le résultat — ⚠ <strong>étude tierce, à re-vérifier</strong> —, et le rapport <em>GenAI Divide</em> déjà cité au § 24.0.3 (<strong>Challapally et coll., 2025</strong>) documente l'écart entre budgets engagés et valeur captée — ⚠ <strong>rapport non audité</strong>.</p>
-
 <p><em>L'effet plateforme — réutilisation des connecteurs, des garde-fous et des évaluations à travers les cas d'usage — est précisément ce qui, en abaissant le coût marginal du cas suivant, peut faire pencher le coût total du bon côté</em>, refermant la boucle N×M → N+M. ⚠ <strong>La mesure du rendement se prend en coût par résultat métier, jamais en coût par jeton</strong> : c'est la seule grandeur qui rende l'effet plateforme visible, et le <strong>Livre IV</strong> en fait une discipline.</p>
-
 <h2 id="s243"><span class="sig">§ 24.3</span>Identité et accès des agents à l'échelle du parc</h2>
-
 <p><em>⚠ <strong>Application du Livre II au grain de la plateforme, sans reconstruire sa doctrine.</strong> La chaîne de mandat est au <strong>ch. 17</strong>, l'émission aux <strong>ch. 15-16</strong>, la connaissance de l'agent au <strong>ch. 18</strong>, la taxonomie des attaques au <strong>ch. 19</strong> ; et le <strong>socle IAM pré-agentique — identité fédérée, autorisation déléguée, identité de charge de travail, confiance nulle — est posé une seule fois pour toute la somme au ch. 3</strong>, qui en est le siège. Aucun de ces cinq lieux n'est reconstruit ici.</em></p>
-
 <p>La couche identité et accès est le <strong>pivot où la prolifération d'agents cesse d'être un problème de capacité pour devenir un problème de contrôle</strong>. Le cadrage est délibérément étroit : cette section traite de <strong>qui est l'agent</strong> et de <strong>quels droits il détient</strong> au grain du parc. La manière dont le parc est attaqué et défendu est au § 24.6 ; l'application des permissions à la récupération de connaissances est au § 24.4.</p>
-
 <h3>24.3.1 Le cycle de vie de l'identité d'agent à l'échelle</h3>
-
 <p>Le critère d'ouverture est simple : <strong>aucune identité d'agent ne devrait exister sans un cycle de vie gouverné de bout en bout, de l'enregistrement à la révocation</strong>. Tout agent admis dans le parc doit être enregistré avec un <strong>propriétaire humain responsable</strong> identifié, un parrainage explicite, une attestation de sa raison d'être et une <strong>certification périodique de ses accès</strong> — faute de quoi l'organisation accumule des identités <strong>dont plus personne ne répond</strong>.</p>
-
 <div class="avert">
   <p><strong>Le risque dominant n'est pas l'attribution initiale mais la mise hors service</strong> : la révocation fiable des justificatifs lorsqu'un agent est retiré, remplacé ou dérivé. C'est le premier item de la grille de risque du § 24.3.4.</p>
 </div>
-
 <p>Une distinction structurante oppose les identités <strong>durables</strong> — un agent de service stable, longévité mesurée en mois — aux identités <strong>éphémères</strong> qu'imposent les agents instanciés à la demande, dont la durée de vie se compte en minutes et qui exigent des <strong>justificatifs de courte durée</strong> plutôt que des secrets persistants. Le défaut récurrent à l'échelle est l'accumulation d'<strong>orphelins de justificatifs</strong> — jetons, clés et certificats survivant à l'agent qui les portait.</p>
-
-<p><em>La gouvernance du parc transpose donc à l'agentique les disciplines classiques de gouvernance des identités : revue d'accès, recertification, traçabilité du parrain, automatisation de la dépréciation.</em></p>
-
-<div class="avert">
-  <p><strong>Cette exigence d'attribution durable d'un agent à un responsable humain sert par ailleurs la preuve de redevabilité que le ch. 30 réclamera au titre de la conformité</strong> — et c'est la même exigence que le <strong>ch. 25 § 25.5</strong> rencontrera sous la forme du registre comme pièce d'inventaire.</p>
-</div>
-
+<p><em>La gouvernance du parc transpose donc à l'agentique les disciplines classiques de gouvernance des identités : revue d'accès, recertification, traçabilité du parrain, automatisation de la dépréciation.</em> ⚠ <strong>Cette exigence d'attribution durable d'un agent à un responsable humain sert par ailleurs la preuve de redevabilité que le ch. 30 réclamera au titre de la conformité</strong> — et c'est la même exigence que le <strong>ch. 25 § 25.5</strong> rencontrera sous la forme du registre comme pièce d'inventaire.</p>
 <div class="avert">
   <p><strong>Les plateformes qui industrialisent ce cycle de vie portent des statuts inégaux, dits à chaque mention</strong> : une offre d'un grand fournisseur d'identité est passée d'une préversion de mai 2025 à la <strong>disponibilité générale en avril 2026</strong> ; ⚠ <strong>le ch. 14 § 14.2 a montré que cette disponibilité générale ne vaut pas disponibilité générale de ses capacités</strong>, plusieurs demeurant étiquetées préversion à une date postérieure — <em>et c'est le régime de preuve, non l'offre, qui commande cette nuance.</em> Des plateformes natives d'identités non humaines ciblent par ailleurs explicitement la découverte, le moindre privilège et le cycle de vie.</p>
 </div>
-
+<figure class="figure">
+  <img src="../figures/f-24-03-cycle-identite.svg" alt="Figure 24.3 — Le cycle de vie de l&#39;identité d&#39;agent à l&#39;échelle du parc, de l&#39;enregistrement à la révocation." />
+  <figcaption><strong>Figure 24.3</strong> — Le cycle de vie de l'identité d'agent à l'échelle du parc, de l'enregistrement à la révocation.</figcaption>
+</figure>
 <h3>24.3.2 Délégation multi-saut, autorisation fine et gestion des secrets</h3>
-
 <div class="avert">
-  <p><strong>Le patron directeur est la délégation traçable sans réutilisation de jeton</strong>, et sa règle d'or est explicite : <strong>ne jamais réacheminer le jeton de l'utilisateur tel quel à un service en aval</strong>, sous peine de dissoudre toute traçabilité et d'ouvrir la voie au député confus (<em>confused deputy</em>).</p>
+  <p><strong>Le patron directeur est la délégation traçable sans réutilisation de jeton</strong>, et sa règle d'or est explicite : <strong>ne jamais réacheminer le jeton de l'utilisateur tel quel à un service en aval</strong>, sous peine de dissoudre toute traçabilité et d'ouvrir la voie au mandataire confus (<em>confused deputy</em>).</p>
 </div>
-
 <p>Le mécanisme normatif est l'<strong>échange de jetons</strong>, dont deux revendications nommées matérialisent une chaîne de délégation vérifiable. ⚠ <strong>Le siège de cette mécanique est le ch. 17</strong>, qui l'a instruite à la source primaire — et <em>l'extraction y établit davantage que le repérage n'annonçait</em>. Ce chapitre ne la reconstruit pas ; il en tire la conséquence de parc.</p>
-
 <div class="avert">
   <p><strong>Un problème ouvert subsiste, et il faut l'écrire au bon degré</strong> : la délégation à plus de deux sauts n'est pas standardisée de bout en bout, et <strong>le corpus de la somme ne documente aucun contrat universel</strong> pour propager l'autorité sur une chaîne arbitraire d'agents — <em>absence de documentation, degré 3, et non fait négatif vérifié.</em> Le <strong>ch. 17</strong> en fait son objet sous le nom de <strong>problème des deux sauts</strong>, et le <strong>ch. 24 n'y ajoute rien</strong> sinon que le problème se multiplie par le cardinal du parc.</p>
 </div>
-
 <p>Côté <strong>autorisation</strong>, la finesse exigée par des identités éphémères et nombreuses impose d'<strong>externaliser la décision</strong> : contrôle par rôles, par attributs ou par relations, servi par un <strong>point de décision distinct du point d'application</strong>. ⚠ <strong>La mécanique du couple point de décision / point d'application est au ch. 37</strong>, qui en est le siège dans le maillage d'agents ; elle n'est pas reposée ici.</p>
-
-<p>La <strong>gestion des secrets</strong> boucle l'exigence : coffres et rotation pour les secrets durables, mais surtout <strong>bascule vers des justificatifs éphémères sans secret</strong> lorsque la topologie le permet.</p>
-
-<div class="avert">
-  <p><strong>Un mécanisme se qualifie par ce que sa spécification démontre</strong> (R-02 du Vol. III) : un justificatif de courte durée <strong>réduit la fenêtre d'exposition</strong>, il ne démontre pas l'absence de fuite.</p>
-</div>
-
+<p>La <strong>gestion des secrets</strong> boucle l'exigence : coffres et rotation pour les secrets durables, mais surtout <strong>bascule vers des justificatifs éphémères sans secret</strong> lorsque la topologie le permet. ⚠ <strong>Un mécanisme se qualifie par ce que sa spécification démontre</strong> (R-02 du Vol. III) : un justificatif de courte durée <strong>réduit la fenêtre d'exposition</strong>, il ne démontre pas l'absence de fuite.</p>
 <h3>24.3.3 Plateformes d'identité d'agents et confiance nulle à l'exécution</h3>
-
 <p>Le critère décisif pour une grille d'appel d'offres est de <strong>classer les offres en deux familles distinctes</strong>. La première <strong>étend un fournisseur d'identité généraliste</strong> aux agents : l'agent hérite alors de l'infrastructure existante — accès conditionnel, gouvernance des identités, détection de risque. La seconde est constituée de <strong>plateformes natives d'identités non humaines</strong>, conçues spécifiquement pour les identités machine et agentiques.</p>
-
 <p><strong>La distinction n'est pas cosmétique</strong> : la première mutualise la gouvernance humaine et machine <strong>au prix d'un modèle parfois mal ajusté aux agents éphémères</strong> ; la seconde traite l'agent comme un citoyen de première classe <strong>mais ajoute une plateforme à intégrer</strong>. Dans les deux cas, l'exigence est d'<strong>étendre aux agents l'accès conditionnel, la gouvernance des accès et la détection de risque</strong> historiquement réservés aux humains.</p>
-
 <p>Le modèle cible est la <strong>confiance nulle à l'exécution</strong> : vérification par requête, micro-segmentation et révocation immédiate. ⚠ <strong>Le socle IAM qui la porte — y compris ses documents normatifs de référence — est posé au ch. 3 pour toute la somme</strong> ; ce chapitre n'en refait ni l'exposé ni la généalogie, et se borne à en tirer la conséquence de parc : <em>les trois propriétés répondent directement à la réutilisation d'identité et au défaut d'isolation que la grille du § 24.3.4 nomme.</em></p>
-
 <div class="avert">
   <p><strong>La normalisation reste en chantier, et son statut se dit</strong> : un groupe de travail de l'IETF vise un cadre interopérable d'identité de charge de travail, <strong>bâti sur le même échange de jetons</strong>, mais <strong>seuls les brouillons stables devraient être engagés dans une architecture de production</strong> — <em>un brouillon d'Internet expire, et le ch. 18 a montré ce que cette péremption coûte à un cardinal.</em></p>
 </div>
-
 <h3>24.3.4 La grille de risque des identités non humaines — domicile</h3>
-
 <div class="avert">
   <p><strong>Cette sous-section est le domicile unique de cette grille dans la somme</strong> : le § 24.6 ne fait qu'y renvoyer.</p>
 </div>
-
 <div class="avert">
-  <p><strong>La grille est nommée et attribuée, et elle doit l'être</strong> : il s'agit du <strong>OWASP Non-Human Identities Top 10 (2025)</strong>. <em>La parade de péremption qui autorise ailleurs à taire une dénomination commerciale <strong>ne couvre pas l'auteur et la date d'un instrument repris</strong> — une grille dont on ne peut remonter la provenance n'est plus vérifiable, et <strong>c'est ici le domicile même de cette matière</strong>.</em></p>
+  <p><strong>La grille est nommée et attribuée, et elle doit l'être</strong> : il s'agit de l'<strong>OWASP Non-Human Identities Top 10 (2025)</strong>. <em>La parade de péremption qui autorise ailleurs à taire une dénomination commerciale <strong>ne couvre pas l'auteur et la date d'un instrument repris</strong> — une grille dont on ne peut remonter la provenance n'est plus vérifiable, et <strong>c'est ici le domicile même de cette matière</strong>.</em></p>
 </div>
-
 <p>La grille énumère <strong>dix risques</strong> qui forment une liste de contrôle d'architecture et d'appel d'offres directement actionnable : mise hors service défaillante ; fuite de secret ; identité non humaine tierce vulnérable ; authentification non sûre ; identité sur-privilégiée ; configuration infonuagique non sûre ; secrets à longue durée de vie ; isolation d'environnement ; réutilisation d'identité ; et usage humain d'une identité non humaine.</p>
-
 <p>Sa valeur opérationnelle tient à <strong>deux usages</strong>. D'une part, elle <strong>se cartographie vers les référentiels de contrôle reconnus</strong>, ce qui permet de raccrocher la sécurité des identités d'agents au corpus d'audit existant de l'entreprise <strong>plutôt que d'en inventer un parallèle</strong> — <em>et c'est exactement la deuxième moitié du membre de thèse « sans dupliquer l'IAM et l'observabilité en place ».</em> D'autre part, elle <strong>se lit comme une grille d'évaluation des fournisseurs</strong> : chaque item devient un critère scorable.</p>
-
 <p><strong>Le cas des agents mérite une attention propre.</strong> À la différence d'une identité machine statique, un agent doté d'autonomie peut <strong>escalader ses propres droits</strong> — enchaîner des outils pour obtenir un accès non prévu, ou exploiter une délégation mal bornée. <em>La grille doit donc être appliquée non comme un instantané mais comme un <strong>invariant vérifié en continu</strong> sur un parc dont les membres raisonnent et agissent.</em></p>
-
 <p><span class="auteur">Lecture de l'auteur</span> la transposition d'une grille pensée pour des identités machine <strong>passives</strong> à des agents <strong>autonomes</strong> ouvre une question que le corpus ne referme pas : les contrôles d'accès classiques présupposent un sujet aux intentions fixes, alors qu'un agent <strong>compose dynamiquement ses appels</strong>. <strong>Ce que le socle établit</strong> : la grille et sa cartographie vers les référentiels d'audit. <strong>Ce qu'il n'établit pas</strong> : qu'elle suffise à couvrir un sujet composant. <em>Déplacer la frontière de l'autorisation du <strong>qui</strong> statique vers le <strong>pour-le-compte-de-qui-et-via-quels-intermédiaires</strong> est le prolongement direct du problème que le ch. 17 laisse ouvert.</em></p>
-
 <h2 id="s244"><span class="sig">§ 24.4</span>Accès aux données d'entreprise et ancrage gouverné</h2>
-
 <p>Un agent qui formule des réponses à partir du patrimoine informationnel de l'organisation <strong>ne saurait s'affranchir des règles qui encadrent déjà l'accès des humains et des applications à ces mêmes données</strong>. Le principe directeur <strong>inverse la perspective courante</strong> : l'ancrage n'est pas seulement un mécanisme de qualité destiné à réduire l'affabulation, <strong>c'est d'abord un point d'application des politiques de gouvernance</strong>.</p>
-
 <div class="avert">
   <p><strong>L'ancrage informationnel proprement dit — mémoire, contexte, récupération augmentée — est au ch. 5</strong>, qui en est le siège. Ce chapitre en traite <strong>la seule dimension d'entreprise</strong> : la greffe sur l'intégration de données gouvernée — catalogue, lignage, classification, fraîcheur.</p>
 </div>
-
 <h3>24.4.1 Du prototype à la connaissance d'entreprise gouvernée</h3>
-
 <p>Le patron distingue radicalement la <strong>récupération plate</strong> — un index vectoriel unique alimenté par un corpus indifférencié, suffisant pour un démonstrateur — de la <strong>connaissance d'entreprise</strong>, qui repose sur des <strong>sources autoritatives</strong>, des <strong>définitions certifiées</strong> et des <strong>données sensibles dont la divulgation engage la responsabilité de l'organisation</strong>.</p>
-
 <p>Le passage de l'un à l'autre exige une pile en <strong>étages explicites</strong> : sources hétérogènes → ingestion et classification → indexation → récupération filtrée par politique → génération → vérification → audit. <strong>Chaque étage est un point de contrôle distinct, et l'absence d'un seul — typiquement la classification ou le filtrage par politique — ramène la pile au prototype, quelles que soient les performances du modèle.</strong></p>
-
 <p><em>Le socle de cette architecture n'est pas l'index mais le triptyque <strong>catalogue / lignage / classification</strong>, qui détermine ce qui est autoritatif, d'où provient chaque donnée et quel niveau de sensibilité s'y attache.</em> ⚠ Les plateformes de catalogue ont réorienté leur offre vers cet usage en 2025 ; ⚠ <strong>les dates citées par la source relèvent de communiqués de fournisseurs, à re-vérifier</strong>.</p>
-
 <h3>24.4.2 Récupération consciente des permissions et mémoire de flotte — domicile</h3>
-
 <div class="avert">
   <p><strong>Cette sous-section est le domicile unique de l'application des permissions à la récupération</strong>, et le critère qui la gouverne est strict : <strong>un agent ne doit jamais récupérer ni restituer un fragment que son mandataire humain ne pourrait lire directement à la source.</strong></p>
 </div>
-
 <p>Faire respecter les permissions admet une <strong>hiérarchie de robustesse</strong>. Le pré-filtrage par rôles, qui restreint l'espace de recherche aux documents autorisés <strong>avant</strong> la requête, constitue le minimum exigible ; le contrôle par attributs, qui module l'accès selon des attributs contextuels, offre une granularité supérieure et résiste mieux aux matrices d'habilitation complexes.</p>
-
-<p><strong>Le point d'architecture déterminant tient au moment du filtrage.</strong> Les permissions doivent être appliquées <strong>à l'intérieur</strong> de la recherche du plus proche voisin approximatif, <strong>et non en post-traitement</strong> sur les résultats — <em>car un filtrage a posteriori fuit</em> : la seule présence d'un document dans l'index, ou les statistiques de pertinence renvoyées, peut <strong>révéler l'existence d'informations interdites</strong>, réalisant un cas de député confus où l'agent privilégié sert d'intermédiaire à un appelant qui ne l'est pas.</p>
-
+<p><strong>Le point d'architecture déterminant tient au moment du filtrage.</strong> Les permissions doivent être appliquées <strong>à l'intérieur</strong> de la recherche du plus proche voisin approximatif, <strong>et non en post-traitement</strong> sur les résultats — <em>car un filtrage a posteriori fuit</em> : la seule présence d'un document dans l'index, ou les statistiques de pertinence renvoyées, peut <strong>révéler l'existence d'informations interdites</strong>, réalisant un cas de mandataire confus où l'agent privilégié sert d'intermédiaire à un appelant qui ne l'est pas.</p>
 <p>À ce canal s'ajoute, propre à l'entreprise, la <strong>gouvernance de la mémoire de flotte</strong> : la mémoire partagée et la mémoire à long terme des agents constituent <strong>un canal de fuite inter-locataire distinct du corpus documentaire</strong>, où une donnée sensible mémorisée au profit d'un locataire peut ressurgir dans le contexte d'un autre. ⚠ <strong>Le corpus ne décrit aucune formalisation consensuelle de la propagation des étiquettes de sensibilité à travers les états mémoriels persistants d'un parc</strong> — <em>absence de documentation, degré 3</em> —, ce qui en fait <strong>un canal moins outillé que le corpus documentaire</strong>.</p>
-
 <h3>24.4.3 Couche sémantique, graphe de connaissances, interrogation gouvernée</h3>
-
 <p>Le critère central est l'<strong>interposition d'une couche sémantique entre l'agent et les données structurées</strong>, de sorte que l'agent <strong>choisisse parmi des définitions certifiées</strong> plutôt que de composer une requête brute. Une couche sémantique — métriques et dimensions définies <strong>une fois</strong>, en code, et versionnées — agit comme un <strong>contrat d'ancrage</strong> : le « chiffre d'affaires net » ou la « marge » désignent une formule unique et auditée, ce qui supprime à la fois le risque d'affabulation analytique <strong>et la divergence des résultats entre agents</strong>.</p>
-
 <p>Cette logique prolonge directement la proposition du modèle canonique du <strong>ch. 1</strong> : <em>on factorise les définitions plutôt que de les réécrire à chaque appel.</em> Pour les interrogations relationnelles complexes, des approches combinant récupération vectorielle et parcours d'un <strong>graphe de connaissances</strong> améliorent la qualité des synthèses à coût maîtrisé — ⚠ <strong>leur mécanique est au ch. 2 et au ch. 5</strong>, qui en sont les sièges. Lorsque l'agent doit néanmoins interroger directement l'entrepôt, l'<strong>interrogation gouvernée</strong> applique la sécurité <strong>au niveau du moteur</strong>.</p>
-
 <p><strong>Le critère discriminant tient à l'emplacement de l'application</strong> : <em>une sécurité par rangée évaluée à la compilation de la requête est plus robuste qu'un filtrage applicatif posé au-dessus du moteur.</em></p>
-
 <h3>24.4.4 Le serveur d'outils comme point d'application, et les contrats de données pour agents</h3>
-
 <p>Le patron consiste à faire du <strong>serveur d'outils le point d'application des politiques d'entreprise au niveau de chaque opération</strong>. ⚠ <strong>La mécanique d'autorisation du protocole agent-outil est acquise au ch. 8</strong>, avec sa trajectoire de révisions datées, et <strong>elle n'est pas reprise ici</strong>.</p>
-
 <p>À l'échelle de l'entreprise, ce qui compte n'est pas le protocole mais <strong>l'enveloppe de gouvernance qu'on lui adjoint</strong> : contrôle par rôles ou par attributs <strong>évalué par opération exposée</strong> ; journalisation <strong>au niveau de l'attribution</strong> — quel agent, pour quel mandataire, a invoqué quelle ressource ; et <strong>propagation des étiquettes de sensibilité</strong> depuis la source jusqu'à la réponse, de sorte que le serveur <strong>relaie le contrat de données plutôt que de le court-circuiter</strong>.</p>
-
 <p>Les <strong>contrats de données</strong> s'étendent ainsi aux agents comme consommateurs : un standard ouvert publié le 7 décembre 2025 formalise les attentes de schéma, de qualité et de sémantique qu'un agent récupérateur doit respecter. Au plan de l'interopérabilité sémantique ouverte, une initiative de consortium annoncée en septembre 2025 et dont la spécification a été publiée le 27 janvier 2026 vise un format neutre pour jeux de données, métriques, dimensions et relations. ⚠ <strong>Ce sont des jalons de dépôts publics au régime [C], à re-vérifier.</strong> <em>Un vocabulaire de métriques portable réduit le coût marginal d'alignement entre une définition certifiée et chaque agent consommateur</em> : c'est la proposition N×M → N+M appliquée à la sémantique.</p>
-
 <h3>24.4.5 Observabilité et traçabilité de l'ancrage</h3>
-
 <p>L'exigence qui clôt la section est la <strong>traçabilité de bout en bout</strong> : <strong>toute réponse doit être reliée à ses sources, à leurs permissions et à la décision de récupération qui les a sélectionnées.</strong></p>
-
 <p>Trois capacités la matérialisent. L'<strong>attribution des sources</strong>, c'est-à-dire des citations vérifiables permettant de remonter de l'énoncé au document d'origine. La <strong>détection d'affabulation et de contradiction</strong>, qui confronte la réponse générée aux passages récupérés pour signaler les écarts non étayés. Et la <strong>journalisation reliant réponse → documents → permissions</strong>, ⚠ <strong>qui constitue la pièce probante de la conformité</strong> : elle démontre <em>a posteriori</em> que chaque fragment mobilisé était bien accessible au mandataire <strong>au moment de la requête</strong>.</p>
-
 <div class="avert">
   <p><strong>C'est le point où ce chapitre touche le plus directement le deuxième mouvement du Livre.</strong> La piste d'audit infalsifiable et son admissibilité réglementaire sont au <strong>ch. 31 § 31.3.2</strong> ; le registre d'agents comme pièce d'inventaire est au <strong>ch. 25 § 25.5</strong> ; la résidence des traces est au <strong>ch. 30 § 30.1.5</strong> et au <strong>ch. 31 § 31.5.1</strong>. ⚠ <strong>Aucun de ces quatre lieux n'est anticipé ici.</strong></p>
 </div>
-
 <div class="avert">
   <p><strong>Une question demeure ouverte et se déclare comme telle</strong> : la détection automatique de contradiction entre réponse générée et passages récupérés est <strong>un problème de recherche actif, sans métrique consensuelle</strong> pour distinguer une synthèse fidèle d'une extrapolation non étayée. <em>La qualité de l'attribution conditionne donc à la fois la confiance de l'utilisateur et la valeur probante du journal d'ancrage</em> — et le <strong>ch. 25 § 25.6</strong> montrera qu'un cadre dont la parade est un humain qui révise suppose que cette révision porte sur quelque chose de vérifiable.</p>
 </div>
-
 <h2 id="s245"><span class="sig">§ 24.5</span>Orchestration et collaboration humain-agent inter-équipes et B2B</h2>
-
 <p>Le passage à l'échelle organisationnelle <strong>transforme l'orchestration</strong> : ce qui relevait, pour un système multi-agents de laboratoire, d'un choix d'ingénierie devient en entreprise une question de <strong>propriété, de contrat et de responsabilité distribuée</strong>.</p>
-
 <h3>24.5.1 Quand le multi-agent aide, et quand il nuit — à lire d'abord</h3>
-
 <p><strong>La première décision n'est pas architecturale mais économique : faut-il un système multi-agents du tout ?</strong></p>
-
 <p>Les retours d'expérience publiés en 2025 convergent sur un avertissement. Les gains réels d'un système multi-agents face à <strong>un agent unique bien conçu</strong> sont souvent minces, tandis que le surcoût en jetons, en latence et en complexité de coordination <strong>croît rapidement</strong> ; ⚠ <strong>une mesure rapportée par la source — Hadfield et coll. (2025), au régime [C] — évoque qu'un système de recherche multi-agents peut consommer de l'ordre de quinze fois les jetons d'une interaction de clavardage simple.</strong> Des praticiens recommandent explicitement de <strong>ne pas construire de systèmes multi-agents par défaut</strong> (Yan, 2025), le partage de contexte entre agents concurrents étant fragile et propice aux décisions incohérentes. À l'inverse, des travaux sur la collaboration multi-agents en entreprise (Shu et coll., 2024) montrent que des architectures bien conçues apportent une valeur mesurable <strong>lorsque la tâche s'y prête</strong>.</p>
-
 <p>La synthèse opérationnelle tient en trois heuristiques. <strong>Le multi-agent se justifie</strong> quand il existe un <strong>parallélisme réel exploitable</strong>, quand une <strong>séparation des responsabilités ou de sécurité</strong> l'impose, ou quand des <strong>frontières organisationnelles incontournables</strong> interdisent un contexte partagé. Hors de ces cas, <strong>un contexte partagé et un agent unique demeurent préférables</strong>.</p>
-
 <p><strong>L'anti-patron à proscrire consiste à multiplier les agents par mimétisme d'un organigramme humain</strong> : <em>la structure de l'entreprise n'est pas un plan d'architecture logicielle.</em> Le <strong>Livre IV</strong> en tire la règle de sa grille de décision, <strong>dont l'option par défaut demeure le mono-agent</strong>.</p>
-
 <div class="avert">
   <p><strong>Une question reste ouverte et se déclare</strong> : la métrique d'utilité marginale isolant l'apport de la décomposition de l'effet du budget de calcul <strong>n'existe pas dans le corpus</strong> — <em>absence de documentation, degré 3.</em> Les modes d'échec des systèmes multi-agents sont en revanche catalogués de façon empirique (Cemri et coll., 2025), et une part substantielle des défaillances tient à <strong>la spécification et à la coordination</strong> plutôt qu'aux capacités individuelles. ⚠ <strong>Le siège de cette taxonomie est le ch. 6</strong>, qui traite l'évaluation et la sûreté des systèmes multi-agents ; elle n'est pas reconstruite ici.</p>
 </div>
-
 <h3>24.5.2 Trois échelles d'orchestration, et le choix de patron</h3>
-
 <p>L'orchestration agentique se déploie sur <strong>trois échelles que distingue moins la technique que la structure de propriété et de confiance</strong>.</p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Échelle</th><th>Ce qui change</th><th>Ce que l'architecture doit produire</th></tr></thead>
-  <tbody>
-    <tr><td><strong>Intra-équipe</strong></td><td>domaine unique, un propriétaire responsable</td><td>plan de contrôle homogène, contexte partagé sans friction de gouvernance</td></tr>
-    <tr><td><strong>Inter-équipes</strong></td><td>plusieurs propriétaires internes</td><td>accords de niveau de service croisés, contrats d'interface stables, <strong>attribution claire des défaillances</strong></td></tr>
-    <tr><td><strong>Inter-organisations</strong></td><td>une <strong>frontière de confiance</strong> — contrats juridiques, responsabilité distribuée, <strong>aucune autorité centrale commune</strong></td><td>ce que le § 24.7 traite ; <em>la nature du problème change</em></td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Échelle</th>
+<th>Ce qui change</th>
+<th>Ce que l'architecture doit produire</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Intra-équipe</strong></td>
+<td>domaine unique, un propriétaire responsable</td>
+<td>plan de contrôle homogène, contexte partagé sans friction de gouvernance</td>
+</tr>
+<tr>
+<td><strong>Inter-équipes</strong></td>
+<td>plusieurs propriétaires internes</td>
+<td>accords de niveau de service croisés, contrats d'interface stables, <strong>attribution claire des défaillances</strong></td>
+</tr>
+<tr>
+<td><strong>Inter-organisations</strong></td>
+<td>une <strong>frontière de confiance</strong> — contrats juridiques, responsabilité distribuée, <strong>aucune autorité centrale commune</strong></td>
+<td>ce que le § 24.7 traite ; <em>la nature du problème change</em></td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 24.1 — Les trois échelles d'orchestration, ordonnées par structure de propriété. ⚠ Le « plan de contrôle » de la première rangée est celui du <strong>maillage de services pré-agentique</strong> (ch. 1 § 1.3.4), non le <em>control plane</em> que R-13 du Vol. III proscrit nu.</p>
-
 <p>Sur le <strong>choix de patron</strong>, la production se stabilise sur un nombre restreint de formes éprouvées. Le patron <strong>superviseur</strong> — un orchestrateur dirige des sous-agents spécialisés — et le <strong>pipeline séquentiel</strong> dominent les déploiements réels ; les patrons <strong>hiérarchiques</strong> conviennent au complexe inter-domaines, tandis que les formes en <strong>essaim</strong> ou à <strong>tableau noir</strong> restent surtout cantonnées à la recherche. ⚠ <strong>Les topologies et le raisonnement collectif sont au ch. 6</strong> ; ce chapitre n'en retient que le critère de sélection à l'échelle.</p>
-
 <p><strong>Le critère décisif d'industrialisation est le découplage entre la logique d'orchestration et l'exécution des étapes</strong> — et <em>le patron retenu doit rester portable d'un cadriciel à l'autre</em>, faute de quoi il redevient un verrou (§ 24.2.4).</p>
-
+<figure class="figure">
+  <img src="../figures/f-24-05-trois-echelles.svg" alt="Figure 24.5 — Les trois échelles d&#39;orchestration, ordonnées par structure de propriété." />
+  <figcaption><strong>Figure 24.5</strong> — Les trois échelles d'orchestration, ordonnées par structure de propriété.</figcaption>
+</figure>
 <h3>24.5.3 Collaboration inter-départementale et inter-organisations</h3>
-
 <p>Le protocole agent-agent fournit <strong>le contrat de collaboration</strong>, mais <strong>sa valeur d'entreprise tient à la façon dont il se greffe sur le tissu d'intégration existant</strong>. À l'échelle intra-entreprise, le patron consiste à laisser <strong>chaque département publier ses agents de manière découvrable</strong>, à autoriser les compétences à portée selon des étendues d'autorisation, et à <strong>réutiliser le tissu existant — maillage d'événements, passerelles, registres — comme bus de service d'agents plutôt que de bâtir une infrastructure parallèle</strong>.</p>
-
 <div class="avert">
   <p><strong>La mécanique de la fiche d'agent et de sa publication est au ch. 15</strong>, qui en est le siège dans la somme ; le <strong>ch. 9</strong> en tient le versant protocolaire. Aucun des deux n'est reconstruit ici.</p>
 </div>
-
 <p>À l'échelle inter-organisations, la même mécanique soutient des scénarios d'appel d'offres, d'approvisionnement et de chaîne logistique, où <strong>l'orchestration devient fédérée</strong> : chaque firme conserve son orchestrateur, et la coordination s'opère <strong>par contrats inter-agents sans orchestrateur central unique</strong>. <em>Cette orchestration sans point de contrôle commun est précisément ce qui distingue le B2B agentique du multi-agents intra-firme</em>, et elle appelle les dispositifs du § 24.7.</p>
-
 <h3>24.5.4 Exécution durable, collaboration humain-agent et gestion des exceptions</h3>
-
 <div class="avert">
   <p><strong>Cette sous-section est le premier des trois ancrages du plan agent-humain</strong> annoncés au § 24.0.</p>
 </div>
-
 <p>Les flux de travail agentiques de longue durée — qui s'étendent sur des heures, attendent des approbations ou survivent à des pannes — exigent une <strong>exécution durable, reprenable et rejouable</strong>. Le patron consiste à journaliser durablement chaque étape pour pouvoir <strong>déshydrater puis réhydrater</strong> un flux sans perdre son état, en s'appuyant sur l'<strong>idempotence</strong> et sur des <strong>compensations</strong>. ⚠ <strong>La mécanique des moteurs durables est au ch. 22 § 22.5.1</strong> ; la <strong>sémantique d'effet</strong> — idempotence, compensation, réconciliation — est au <strong>ch. 48</strong>, qui en est le siège. Ni l'une ni l'autre n'est reprise ici.</p>
-
 <p>Sur le <strong>plan agent-humain</strong> proprement dit, la collaboration s'organise par une <strong>boîte de réception d'agents</strong> offrant des modes d'approbation explicites — accepter, éditer, répondre, ignorer — et par des <strong>interruptions adaptatives</strong> déclenchées selon un score de confiance, plus fréquentes là où l'enjeu est élevé.</p>
-
 <div class="avert">
   <p><strong>Et c'est ici que le Livre III rencontre pour la première fois sa limite empirique.</strong> Un dispositif d'approbation ne vaut que si l'humain qui approuve <strong>exerce réellement son jugement</strong> ; le <strong>ch. 17 § 17.5</strong> traite du biais d'automatisation et de la supervision de façade, et <strong>il déclare son propre vide</strong> — le socle n'y porte pas de mesure. <em>Cette limite est le préalable des ch. 25 et 27, qui prescriront l'un et l'autre une parade humaine.</em> ⚠ <strong>Elle n'est pas comblée ici, et elle ne peut pas l'être depuis ce chapitre.</strong></p>
 </div>
-
 <p>La <strong>gestion des exceptions</strong> traduit enfin en stratégies d'ingénierie la taxonomie des modes d'échec : escalade vers un opérateur humain, agents vérificateurs, disjoncteurs sur les actions à risque, et files de messages morts pour les tâches non résolues.</p>
-
 <h2 id="s246"><span class="sig">§ 24.6</span>Sécurité du parc d'agents à l'échelle</h2>
-
 <p>La sécurité d'un agent isolé et celle de la couche d'interopérabilité sont des <strong>prérequis acquis</strong> — <strong>ch. 6</strong> et <strong>ch. 11</strong> en sont les sièges. Ce qui demeure à traiter est la sécurisation d'un <strong>parc</strong> intégré au tissu d'entreprise.</p>
-
 <div class="avert">
   <p><strong>Le cadrage de frontière est strict</strong> : cette section traite la manière dont le parc est <strong>attaqué</strong> et <strong>défendu</strong>, tandis que l'identité et les droits relèvent du § 24.3 — où la grille de risque a son domicile — et que l'application des permissions à la récupération est au § 24.4.2. ⚠ <strong>La posture directrice tient en un principe : aucune défense contre l'injection n'est fiable à cent pour cent</strong>, ce qui impose la <strong>défense en profondeur</strong> plutôt que la confiance en un contrôle unique.</p>
 </div>
-
 <h3>24.6.1 Le modèle de menace du parc</h3>
-
 <p><strong>La surface d'attaque d'un parc n'est pas la somme des surfaces de ses agents : elle est élargie</strong> par l'intégration au tissu existant et par la composition des protocoles. Chaque serveur d'outils encapsulant un système hérité, chaque liaison inter-départementale et chaque outil exposé devient un <strong>point d'entrée ou un canal de propagation</strong>.</p>
-
-<p>Plusieurs cadres de référence publiés en 2025-2026 structurent cette modélisation, et ⚠ <strong>chacun porte son auteur et sa date, la parade de péremption ne couvrant pas l'attribution d'un instrument repris</strong> (décision 15b du TOC) : l'<strong>OWASP Top 10 for Agentic Applications (2026)</strong>, publié le 9 décembre 2025 — ⚠ <em>du même éditeur que la grille du § 24.3.4, mais d'objet distinct</em> ; <strong>MITRE ATLAS</strong>, base de connaissances vivante des tactiques adverses ; le cadre <strong>MAESTRO</strong> de la <strong>Cloud Security Alliance (Huang et coll., 2025)</strong>, qui décompose la menace en sept couches ; et les <strong>Control Overlays for Securing AI Systems</strong> du <strong>CAISI (NIST/CAISI, 2025)</strong>, surcouche aux contrôles de sécurité fédéraux américains dont un <strong>brouillon de discussion</strong> est daté du 8 janvier 2026. ⚠ <strong>Leur pluralité signale un domaine encore en consolidation</strong> : aucune ne fait autorité unique, et leur recouvrement partiel oblige l'architecte à un travail de correspondance.</p>
-
+<p>Plusieurs cadres de référence publiés en 2025-2026 structurent cette modélisation, et ⚠ <strong>chacun porte son auteur et sa date, la parade de péremption ne couvrant pas l'attribution d'un instrument repris</strong> (décision 15b du TOC) : l'<strong>OWASP Top 10 for Agentic Applications (2026)</strong>, publié le 9 décembre 2025 — ⚠ <em>du même éditeur que la grille du § 24.3.4, mais d'objet distinct</em> ; <strong>MITRE ATLAS</strong>, base de connaissances vivante des tactiques adverses ; le cadre <strong>MAESTRO</strong> de la <strong>Cloud Security Alliance (Huang et coll., 2025)</strong>, qui décompose la menace en sept couches ; et les <strong>Control Overlays for Securing AI Systems</strong> du <strong>CAISI (NIST/CAISI, 2025)</strong>, surcouche aux contrôles de sécurité fédéraux américains dont un <strong>brouillon de discussion</strong> est daté du 8 janvier 2026. ⚠ <strong>Leur pluralité signale un domaine encore en consolidation</strong> : aucun ne fait autorité unique, et leur recouvrement partiel oblige l'architecte à un travail de correspondance.</p>
 <div class="avert">
   <p><strong>La triade létale — le modèle de menace qui fournit le critère de déclenchement — est posée au ch. 19 § 19.2</strong>, siège unique pour toute la somme, et <strong>elle n'est pas reconstruite ici</strong>. Ce que le présent chapitre y ajoute est propre à l'échelle : <em>l'échelle multiplie les combinaisons fortuites de ces trois facteurs entre agents jusque-là cloisonnés</em> — un agent qui n'en réunit aucun peut, par composition, en fournir un troisième à un pair qui en détenait deux.</p>
 </div>
-
 <h3>24.6.2 Injection indirecte par les données d'entreprise et fuites sans clic</h3>
-
 <p><strong>L'entreprise constitue le pire cas pour l'injection indirecte de consignes</strong>, parce que ses canaux d'ingestion sont <strong>innombrables et largement non fiables</strong> : courriels, espaces documentaires, tickets de support, wikis, fiches de gestion de la relation client, enregistrements de progiciel, tables de l'entrepôt-lac — <em>autant de vecteurs par lesquels un contenu empoisonné atteint le contexte d'un agent sans intervention de l'attaquant au moment de l'exécution.</em></p>
-
 <div class="avert">
   <p><strong>L'étude de cas fondatrice est référencée au ch. 11</strong>, qui en est le siège protocolaire : divulguée en juin 2025 et affectant un assistant bureautique majeur, elle constitue <strong>la première exfiltration sans clic démontrée en production</strong> — c'est-à-dire sans aucune action de la victime — et a introduit la notion de <strong>violation de portée</strong>, l'agent franchissant la frontière censée séparer données fiables et instructions exécutables. ⚠ <strong>Les deux scores de gravité attribués à cette vulnérabilité diffèrent selon l'organisme qui les publie</strong> ; la somme les attribue là où elle les cite, et ne les moyenne pas.</p>
 </div>
-
 <p>Les défenses se déclinent en couches : <strong>classification de la provenance et du niveau de confiance</strong> des données ingérées, <strong>démarcation</strong> du contenu non fiable, et <strong>séparation du plan de contrôle et du flux de données non fiable</strong> — ⚠ <strong>faux ami à désambiguïser ici comme partout ailleurs dans la pièce</strong> : ce « plan de contrôle » est celui du <strong>maillage de services pré-agentique</strong> (<strong>ch. 1 § 1.3.4</strong>), <strong>non le</strong> <em>control plane</em> que <strong>R-13 du Vol. III</strong> proscrit nu. Le principe directeur, propre à l'échelle d'un parc où l'on ne maîtrise pas l'origine de chaque document, est de <strong>traiter toute donnée comme potentiellement empoisonnée</strong> — <em>l'injection demeurant un risque non résoluble plutôt qu'un défaut corrigible</em>, et le <strong>ch. 11</strong> en porte la démonstration.</p>
-
 <h3>24.6.3 Prévention de fuite, chaîne d'approvisionnement et confinement</h3>
-
 <p><strong>À l'échelle, le plus gros canal d'exfiltration n'est plus le courriel ou la clé de stockage mais l'IA générative elle-même</strong> : les outils de prévention de fuite hérités sont <strong>aveugles à l'invite et à la trajectoire d'un agent</strong>.</p>
-
 <p>Le critère d'architecture est donc de <strong>déplacer le contrôle de sortie à la passerelle d'agents</strong> — celle du § 24.1.3, où transitent les appels : <strong>listes d'autorisation de destinations</strong>, <strong>blocage du rendu d'images et de liens cliquables</strong> — vecteur exploité par la fuite du § 24.6.2 — et <strong>détection de l'IA fantôme</strong>, ces agents et serveurs d'outils déployés hors gouvernance.</p>
-
 <p>La <strong>chaîne d'approvisionnement</strong> forme un second front : paquets malveillants, serveurs exposés sans authentification, et attaques d'empoisonnement d'outil, de retrait brutal et de saut de file documentées par la recherche. ⚠ <strong>Le siège de ces attaques et de leur boucle défensive est le ch. 20</strong> — il en porte la mécanique, la révocation et le centre opérationnel agentique — et <strong>ce chapitre n'y ajoute que la contre-mesure de parc</strong> : un <strong>registre interne sous curation</strong> (§ 24.1.6) imposant <strong>signature, verrouillage de version et vérification préalable</strong> avant admission, plutôt que la consommation directe de serveurs publics.</p>
-
 <p>Le <strong>confinement multi-couches</strong> — isolation d'environnement, bac à sable du temps d'exécution, moindre privilège systématique — limite enfin le <strong>rayon d'explosion</strong> d'un agent compromis. ⚠ <strong>Aucune de ces mesures n'étant suffisante isolément, elles s'empilent</strong> : <em>c'est la définition même de la défense en profondeur, et un mécanisme se qualifie par ce que sa spécification démontre</em> (R-02 du Vol. III) — aucun de ces contrôles ne démontre l'absence de compromission, tous réduisent une surface.</p>
-
 <h3>24.6.4 L'humain dans la boucle à l'échelle, et la réponse aux incidents</h3>
-
 <div class="avert">
   <p><strong>Cette sous-section est le second des trois ancrages du plan agent-humain.</strong> ⚠ <strong>Elle n'est pas dépliée par la table détaillée du TOC, qui s'arrête au volet précédent</strong> — elle est reprise ici parce que <strong>la ligne Fusion et la table de couverture portent le §4.7 en entier</strong> ; l'écart est remonté (voir la note de statut, remontée <strong>R-IV-80</strong>).</p>
 </div>
-
 <p><strong>À l'échelle d'une organisation, l'intervention humaine ne peut être systématique sans détruire la valeur de l'automatisation.</strong> Le critère est donc une <strong>classification des actions par impact</strong> — irréversibles, financières, mouvements de données, transactions B2B — assortie de <strong>seuils de confiance</strong> qui déclenchent une passerelle d'approbation <strong>pour les seules actions à fort enjeu</strong>.</p>
-
 <p><strong>Le risque inverse est la fatigue d'approbation</strong>, où la multiplication des sollicitations vide le contrôle de sa substance ; la <strong>traçabilité de qui a approuvé quoi</strong> devient alors le garde-fou. <em>Et c'est la seconde rencontre du chapitre avec la limite empirique du ch. 17 § 17.5, qui la nomme sans la mesurer.</em></p>
-
-<p>La <strong>réponse aux incidents propre à la couche agentique</strong> définit enfin des classes d'incidents distinctes des incidents d'infrastructure ; l'<em>AI Incident Response Framework</em> (version 1.0) de la <strong>Coalition for Secure AI (CoSAI/OASIS, 2025)</strong>, annoncé le 18 novembre 2025, en fournit le cadre.</p>
-
-<div class="avert">
-  <p><strong>Le centre opérationnel agentique et le coupe-circuit de parc sont au ch. 20</strong>, siège de la boucle défensive, et ne sont pas reconstruits ici. <em>La synthèse est une défense en profondeur adossée à la confiance nulle : vérification par requête, micro-segmentation et privilège minimal, appliqués au parc d'agents comme à toute charge de travail</em> — <strong>socle posé au ch. 3</strong>.</p>
-</div>
-
+<p>La <strong>réponse aux incidents propre à la couche agentique</strong> définit enfin des classes d'incidents distinctes des incidents d'infrastructure ; l'<em>AI Incident Response Framework</em> (version 1.0) de la <strong>Coalition for Secure AI (CoSAI/OASIS, 2025)</strong>, annoncé le 18 novembre 2025, en fournit le cadre. ⚠ <strong>Le centre opérationnel agentique et le coupe-circuit de parc sont au ch. 20</strong>, siège de la boucle défensive, et ne sont pas reconstruits ici. <em>La synthèse est une défense en profondeur adossée à la confiance nulle : vérification par requête, micro-segmentation et privilège minimal, appliqués au parc d'agents comme à toute charge de travail</em> — <strong>socle posé au ch. 3</strong>.</p>
 <h2 id="s247"><span class="sig">§ 24.7</span>Interopérabilité inter-entreprises (B2B), commerce agentique et écosystème</h2>
-
 <p>Le B2B traditionnel suppose une <strong>relation préétablie</strong> : deux firmes qui s'accordent à l'avance sur un format, un canal sécurisé ou une API contractuelle, puis échangent des messages dont la sémantique est figée par convention bilatérale. <strong>La couche agentique brise cette hypothèse.</strong> Un agent agissant pour le compte d'une organisation peut désormais <strong>découvrir</strong> un partenaire qu'il ne connaissait pas, <strong>négocier</strong> des termes qui n'étaient pas pré-câblés et <strong>transiger</strong> — engager des fonds, signer un mandat — par-delà la frontière de la firme.</p>
-
 <p><em>Ce déplacement déporte le verrou de l'interopérabilité du format de message vers la <strong>confiance</strong> : non plus « comment lire ce que l'autre envoie », mais « <strong>qui est cet agent, qui le contrôle, et qu'engage-t-il</strong> ».</em></p>
-
 <h3>24.7.1 Confiance inter-organisationnelle et registres inter-firmes</h3>
-
 <div class="avert">
   <p><strong>Le siège de la connaissance de l'agent (KYA) est le ch. 18 § 18.1</strong>, unique pour toute la somme : son statut de terme, son inventaire de chantiers et son fait négatif y sont posés, et <strong>ce chapitre ne les reconstruit pas</strong>. Ce qui suit en est <strong>la seule conséquence de parc</strong>.</p>
 </div>
-
 <p>Le premier critère d'architecture du B2B agentique est un patron de <strong>vérification d'identité préalable à la transaction</strong>, transposé du monde humain : là où la finance impose une vérification du client avant d'ouvrir un compte, l'inter-firmes agentique exige l'équivalent <strong>avant d'accepter qu'un agent étranger lise un catalogue, négocie ou paie</strong>. ⚠ <strong>La question que ce patron laisse ouverte ne se résout pas par la seule technique</strong> : établir <strong>qui porte la responsabilité juridique</strong> des actes de l'agent. <em>L'enjeu déclaré est précisément d'ancrer une redevabilité humaine derrière l'entité non humaine</em> — et le <strong>ch. 18</strong> montre à quel degré cet enjeu est aujourd'hui outillé.</p>
-
 <div class="avert">
   <p><strong>Deux familles de registres inter-firmes coexistent, et le choix entre elles est une décision d'architecture structurante.</strong> D'un côté, des <strong>catalogues sous curation</strong> où un opérateur vérifie et publie ; de l'autre, des <strong>registres ouverts et décentralisés</strong>, dont certains reposent sur un enregistrement en chaîne structuré en trois registres distincts — identité, réputation, validation. ⚠ <strong>La mécanique de découverte et de registres est au ch. 9 et au ch. 15</strong> ; ⚠ <strong>et la relève du ch. 36 § 36.5 documente que ces rails décentralisés existent déjà et sont fragiles</strong> — <em>elle relève de préimpressions dont seuls les résumés ont été consultés, et ne fonde aucun fait.</em></p>
 </div>
-
 <p><em>La distinction est un critère d'appel d'offres : un registre sous curation offre une responsabilité d'opérateur claire mais introduit un goulot et un verrou ; un registre décentralisé maximise l'ouverture au prix d'une gouvernance de la confiance plus difficile à imputer en cas de litige.</em></p>
-
 <h3>24.7.2 Commerce et paiement agentiques B2B</h3>
-
 <div class="avert">
   <p><strong>La pile de protocoles de commerce et de paiement est au ch. 10</strong>, qui en est le siège dans la somme : son anatomie, ses dates et sa gouvernance y sont posées, et <strong>ce chapitre ne les reprend pas</strong>. ⚠ <strong>Le sigle des protocoles de communication d'agents n'est jamais employé nu</strong> (R-8 du Vol. II) : l'encadré de désambiguïsation à quatre branches est au <strong>ch. 7 § 7.5</strong>, et <strong>le protocole de commerce agentique dont le sigle coïncide</strong> relève de l'une de ces branches.</p>
 </div>
-
 <p>Ce que ce chapitre retient est le <strong>critère d'étagement</strong> : la pile se lit en <strong>trois couches découplées</strong> dont chacune a son contrat propre — <strong>commerce</strong> (produits, panier, termes), <strong>autorisation/mandat</strong> (l'agent a-t-il le droit d'engager l'organisation), <strong>règlement</strong> (comment les fonds circulent). <em>Ce découplage permet de combiner librement les standards plutôt que d'adopter une suite monolithique</em> — et <strong>la séparation entre intention, panier et paiement matérialise le découplage contractuel</strong> : chaque étape porte sa propre preuve signée, vérifiable indépendamment.</p>
-
 <p><strong>La couche de règlement est celle où l'arbitrage est le plus délicat, car deux familles de rails coexistent durablement</strong> : des rails de règlement machine-à-machine natifs du web d'un côté, les réseaux de cartes de l'autre. <em>Ils ne se remplacent pas mais cohabitent ; un architecte B2B doit prévoir les deux selon la contrepartie, la juridiction et le profil de risque.</em> ⚠ <strong>Le versant canadien de cette question est au ch. 36</strong>, qui est explicitement prospectif et <strong>déclare que le corpus ne documente pas l'articulation</strong> entre ces protocoles et les rails canadiens.</p>
-
 <div class="avert">
   <p><strong>Les estimations du gisement économique relèvent de la projection d'analyste et se lisent comme telles, attributeur nommé</strong> : <strong>McKinsey &amp; Company (2025)</strong> avance des ordres de grandeur en milliers de milliards de dollars à l'horizon 2030 pour le commerce agentique, et <strong>Gartner (2025)</strong> — déjà cité au § 24.0.2 — attribue aux agents un dépassement en nombre des vendeurs d'ici 2028. ⚠ <strong>Chiffres de projection, non audités.</strong> <em>Ces ordres de grandeur situent l'enjeu sans le mesurer ; la pile de protocoles en est la condition d'infrastructure, non la preuve de réalisation.</em></p>
 </div>
-
 <h3>24.7.3 Espaces de données souverains, places de marché et web agentique</h3>
-
 <p>Le critère dominant est l'<strong>exécutabilité de la politique de partage</strong> : dans un espace de données, l'accès n'est pas régi par une entente hors bande mais par des <strong>politiques machine-vérifiables attachées à la ressource</strong> — ce qui prend une acuité particulière quand <strong>le consommateur est lui-même un agent</strong> susceptible de combiner et de reformuler les données.</p>
-
 <div class="avert">
   <p><strong>Les instruments européens qui portent ce socle sont datés et portent leurs statuts</strong> : un protocole d'espace de données dans une version 2025, avec une soumission normative <strong>non acquise</strong> ; une mise en œuvre de référence sous licence ouverte ; et un cadre de confiance fournissant des attestations de conformité vérifiables par un agent avant qu'il ne consomme une donnée. <em>Quand le consommateur est un agent, la politique de partage exécutable devient <strong>le contrat d'accès du plan B2B</strong> : elle remplace la confiance bilatérale par une vérification continue.</em></p>
 </div>
-
 <p>Les <strong>places de marché d'agents</strong> constituent l'autre forme de l'écosystème inter-firmes. ⚠ <strong>Le critère est la portabilité</strong> : <em>un agent publié sur une place de marché propriétaire est-il invocable depuis l'extérieur par des standards ouverts, ou la place de marché est-elle un jardin clos imposant le temps d'exécution de l'éditeur ?</em> <strong>La réponse détermine si elle participe au passage N×M → N+M ou reproduit le verrouillage qu'elle prétend résoudre.</strong></p>
-
 <p><span class="auteur">Lecture de l'auteur</span> la tension de fond oppose <strong>deux visions du web agentique</strong> : un web ouvert et décentralisé, index au-delà du système de noms de domaine et découverte sans autorité centrale ; et une <strong>souveraineté réglementée</strong>, où le partage de données et l'inférence s'exécutent à l'intérieur d'un périmètre juridiquement maîtrisé. <strong>Ce que le socle établit</strong> : l'existence des deux trajectoires et de leurs instruments. <strong>Ce qu'il n'établit pas</strong> : laquelle prévaudra. <em>Parier sur l'une ou sur l'autre n'est pas qu'un choix technique : c'est un pari sur la juridiction où la responsabilité sera tranchée</em> — et <strong>le ch. 30 en donne la carte réglementaire</strong>, le <strong>ch. 49</strong> l'état final.</p>
-
 <h3>24.7.4 Sécurité, responsabilité et modes d'échec à la frontière</h3>
-
 <p><strong>À la frontière inter-organisationnelle, la défense ne peut plus présumer un périmètre de confiance partagé</strong> : chaque firme est une zone potentiellement hostile pour l'autre, et le pire cas du § 24.6 se conjugue avec <strong>l'impossibilité de réviser le code ou la configuration de l'agent d'en face</strong>.</p>
-
 <p>Quatre classes de risques en découlent. Un agent compromis peut <strong>traverser</strong> les frontières de firmes, transformant une intrusion locale en propagation inter-organisationnelle. Une fraude multi-étapes peut être <strong>coordonnée</strong> entre plusieurs agents complices répartis sur plusieurs organisations, échappant à toute détection mono-firme. Une transaction agent-à-agent peut être <strong>répudiée ou mal attribuée</strong>, faute de preuve opposable de qui a réellement engagé quoi. Enfin, <strong>la chaîne de responsabilité se brise</strong> : quand un préjudice résulte d'une interaction entre agents de firmes distinctes, <strong>désigner le responsable devient un problème ouvert</strong>.</p>
-
 <p>Les contre-mesures composent une défense en profondeur <strong>recalibrée pour la frontière</strong> : les <strong>mandats cryptographiquement signés</strong> fournissent la non-répudiation, la vérification d'identité et d'autorité <strong>avant tout engagement</strong> refuse la confiance implicite au partenaire, et une <strong>attestation indépendante du comportement</strong> est opposable sans dépendre de la bonne foi de la contrepartie. ⚠ <strong>Les trois relèvent de sièges déjà posés</strong> : ch. 10 pour les mandats, ch. 18 pour la vérification, ch. 15 pour les registres.</p>
-
 <div class="avert">
   <p><strong>Au-delà des contrôles techniques subsistent des questions sans réponse stabilisée, qui relèvent du droit autant que de l'architecture — et le corpus les transmet plutôt qu'il ne les résout.</strong> Quel <strong>recours</strong> en cas de préjudice causé par une transaction agent-à-agent inter-firmes, et selon quel régime ? ⚠ <strong>Le vide est réel et daté, et les deux instruments sont nommés</strong> : la proposition de directive européenne sur la responsabilité en matière d'IA a été <strong>retirée le 6 octobre 2025</strong>, laissant le rabattement sur la <strong>directive (UE) 2024/2853</strong> — la directive révisée sur la responsabilité du fait des produits —, <strong>à transposer d'ici le 9 décembre 2026</strong>. Comment <strong>assurer</strong> un risque dont la causalité se distribue sur plusieurs agents autonomes de firmes différentes ? Comment trancher une <strong>responsabilité transfrontalière</strong> quand l'agent demandeur, l'agent répondeur et le rail de règlement relèvent de <strong>trois juridictions</strong> ?</p>
 </div>
-
 <div class="avert">
   <p><strong>Ces questions ne sont pas résolues par l'état de l'art ; elles sont transmises comme telles</strong>, et <em>la piste d'audit y sert de substitut imparfait à un régime de responsabilité dédié.</em> <strong>Le ch. 29 § 29.3 rencontre le même problème du côté canadien</strong>, sous le nom d'imputabilité du comportement émergent, et <strong>le ch. 49 en enregistrera l'état final</strong>.</p>
 </div>
-
 <h2 id="s248"><span class="sig">§ 24.8</span>Capacité d'inférence, budget de latence et contention</h2>
-
 <div class="avert">
   <p><strong>Cette section est une construction d'auteur, et son socle est déclaré « à établir avant rédaction ».</strong> Le TOC v0.30 pose, pour ce seul emplacement du chapitre, qu'<strong>aucune sous-section du ch. 4 du Vol. I <em>Monographie</em> ne porte cet objet</strong> — capacité d'inférence, budget de latence, contention — et que les appuis les plus proches y sont le §4.3.5, qui l'aborde <strong>par le coût</strong>, et le §4.6.1, qui l'aborde <strong>par le surcoût du multi-agent</strong> : <em>ni l'un ni l'autre par le dimensionnement.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>Les sources primaires n'ont pas été établies, et la section s'écrit donc au régime de repli que le plan lui-même prescrit</strong> : « à défaut, la section se replie sur ces deux appuis <strong>et cesse d'être autonome</strong> ». <em>C'est le seul geste admissible</em> — écrire ici une doctrine du dimensionnement produirait <strong>une construction d'auteur à l'endroit exact où le socle est muet, c'est-à-dire celle qu'aucune relecture ne peut réfuter, faute de fait auquel la confronter.</strong></p>
 </div>
-
 <p><strong>Ce que les deux appuis permettent d'écrire, et rien de plus.</strong> Le § 24.2.5 établit que le coût total de possession d'un parc <strong>agrège six postes</strong> dont les jetons ne sont qu'un, et que la mesure pertinente est <strong>le coût par résultat métier</strong>. Le § 24.5.1 établit qu'un système multi-agents <strong>consomme davantage</strong> qu'un agent unique — ⚠ un ordre de grandeur de quinze fois est rapporté par Hadfield et coll. (2025), au régime [C], pour un cas de recherche — et que <strong>le surcoût porte sur les jetons, la latence et la complexité de coordination</strong>. <em>De ces deux appuis, il découle que le dimensionnement d'un parc est un problème réel ; il n'en découle <strong>aucune méthode</strong> pour le conduire.</em></p>
-
 <div class="avert">
   <p><strong>Trois choses que la somme ne peut pas écrire ici, et qu'elle déclare plutôt que de les inférer.</strong> <em>(1)</em> <strong>Aucun modèle de capacité</strong> ne relie, dans le corpus, le nombre d'agents d'un parc à la capacité d'inférence requise — <em>absence de documentation, degré 3, et non fait négatif vérifié.</em> <em>(2)</em> <strong>Aucun budget de latence</strong> de référence n'y est établi pour un flux agentique de bout en bout, ni aucune méthode de répartition de ce budget entre les maillons — <em>degré 3.</em> <em>(3)</em> <strong>Aucune caractérisation de la contention</strong> entre agents concurrents sur une capacité d'inférence partagée n'y figure — <em>degré 3.</em></p>
 </div>
-
-<p><strong>La question instruisible se formule, et c'est ce que la section produit à la place d'une doctrine.</strong> <em>Quelle est la loi de service d'une capacité d'inférence partagée entre N agents concurrents, et comment un budget de latence de bout en bout se répartit-il sur une chaîne dont un maillon est un appel de modèle à durée non bornée ?</em> <strong>Critère de clôture</strong> : une source primaire, extraite et datée, établissant <em>(a)</em> une caractérisation de la variabilité de latence sous charge partagée, et <em>(b)</em> une méthode de dimensionnement transposée à un parc d'agents, où la ressource contendue est le jeton plutôt que le cœur de calcul.</p>
-
+<p><strong>La question instruisible se formule, et c'est ce que la section produit à la place d'une doctrine.</strong> <em>Quelle est la loi de service d'une capacité d'inférence partagée entre N agents concurrents, et comment un budget de latence de bout en bout se répartit-il sur une chaîne dont un maillon est un appel de modèle à durée non bornée ?</em> <strong>Critère de clôture</strong> : une source primaire, extraite et datée, établissant <em>(a)</em> une caractérisation de la variabilité de latence sous charge partagée, et <em>(b)</em> une méthode de dimensionnement transposée à un parc d'agents, où la ressource en contention est le jeton plutôt que le cœur de calcul.</p>
 <div class="avert">
   <p><strong>Une relève du plan désigne une source primaire canonique pour la première moitié de cette question, et elle n'a pas été instruite.</strong> La <strong>relève v0.19 du TOC</strong> identifie <strong>Dean et Barroso, <em>The Tail at Scale</em>, <em>Communications of the ACM</em> 56(2), p. 74-80, 1ᵉʳ février 2013, DOI 10.1145/2408776.2408794</strong> — ⚠ <em>l'identifiant est écrit parce qu'un lot dont la source n'est pas nommée a un critère de clôture inexécutable</em> (décision 15b du TOC) —, dont la thèse est que <strong>la variabilité de latence se tolère par construction logicielle</strong>, et qu'à l'échelle <strong>un incident de performance rare touche une fraction significative des requêtes</strong>. ⚠ <strong>Elle porte exactement l'objet de cette section — et la somme ne l'écrit pas comme un fait</strong> : elle est <strong>marquée « à instruire à la source primaire ; n'entre pas au socle »</strong>, et le <strong>volet résiduel de G-1 ne l'a pas exécutée</strong>. ⚠ <strong>La transposition à un parc d'agents n'est en outre pas dans la source</strong> — <em>où un appel de modèle domine le budget et où la contention porte sur des jetons plutôt que sur des cœurs</em> : elle <strong>demeure une construction d'auteur</strong>, et c'est la marque de la présente section qui la porte.</p>
 </div>
-
 <p><span class="auteur">Lecture de l'auteur</span> le seul énoncé que cette section verse à la somme est <strong>négatif, et il est utile</strong> : <em>un parc d'agents est dimensionné par une ressource — la capacité d'inférence — dont ni le plan ni le socle ne fournit le modèle de service.</em> <strong>Ce que le socle établit</strong> : que le coût agrège six postes et que le multi-agent en majore un. <strong>Ce qu'il n'établit pas</strong> : tout le reste. ⚠ <strong>Le ch. 33 rencontrera la conséquence de ce vide sur un cas concret</strong> — un rail de paiement dont le délai est contractuel —, et le <strong>ch. 22 § 22.4</strong> en a déjà posé la règle : <em>un délai qui doit être tenu ne se confie pas à un composant dont la durée d'exécution n'est pas bornée.</em> <strong>La règle est connue ; le dimensionnement qui la rendrait opposable ne l'est pas.</strong></p>
-
 <h2 id="s249"><span class="sig">§ 24.9</span>Adoption organisationnelle, modèle opérationnel et maturité</h2>
-
 <p><strong>Le passage à l'échelle bute moins sur la disponibilité des protocoles — réputée acquise au terme des sections précédentes — que sur la capacité de l'organisation à se restructurer pour les exploiter.</strong> <em>Le goulot d'étranglement est socio-organisationnel, non technique.</em></p>
-
 <h3>24.9.1 Le modèle opérationnel : centre d'excellence et essaimage</h3>
-
 <p>Le modèle qui s'impose en 2025-2026 est de type <strong>moyeu et rayons</strong> : un noyau central léger — le <strong>centre d'excellence agentique</strong> — fixe les normes transversales (politiques de gouvernance, plateformes homologuées, dispositifs d'évaluation, cadre financier, identité des agents), tandis que les unités d'affaires <strong>industrialisent les cas d'usage au plus près de leurs processus métier</strong>.</p>
-
 <p><em>Le moyeu mutualise la contrainte — référentiel d'inventaire, modèle d'identité non humaine, grilles d'évaluation — pour que les unités conservent leur vélocité sans rejouer les arbitrages de conformité à chaque projet.</em> <strong>C'est la contrepartie organisationnelle du principe de greffe du § 24.1</strong> : <em>ne pas dupliquer ce qui est déjà gouverné.</em></p>
-
 <p>Le moyeu fait par ailleurs émerger <strong>des rôles inédits dont la fonction des ressources humaines classique n'a pas l'équivalent</strong> : responsable de produit d'un agent, ingénieur d'exploitation agentique, ingénieur d'évaluations — gardien des bancs et des juges versionnés —, et responsable de l'identité des agents, propriétaire du registre. ⚠ <strong>La maturité de ce modèle se mesure moins à la taille du moyeu qu'à la part de la contrainte qu'il parvient à exécuter de façon réutilisable plutôt qu'à la répéter.</strong></p>
-
 <h3>24.9.2 La transposition du modèle de maturité — construction d'auteur</h3>
-
 <p><span class="auteur">Lecture de l'auteur</span> ⚠ <strong>cette sous-section porte une transposition que le Vol. I déclare propriétaire</strong>, c'est-à-dire une construction d'auteur, et <strong>le régime s'applique de bout en bout</strong>.</p>
-
 <p>Le modèle des niveaux d'interopérabilité conceptuelle — <strong>Tolk et Muguira, 2003</strong>, l'auteur et la date de l'instrument repris ne s'anonymisant pas (décision 15b du TOC) —, acquis au <strong>ch. 1</strong>, échelonne l'interopérabilité en niveaux croissants : <strong>technique</strong> — les bits transitent ; <strong>syntaxique</strong> — la structure des messages est commune ; <strong>sémantique</strong> — le sens des données est partagé ; <strong>pragmatique</strong> — le contexte d'usage est compris ; <strong>dynamique</strong> — les états évoluent de concert ; <strong>conceptuel</strong> — les modèles du monde sont alignés.</p>
-
 <p>Appliqué à un parc d'agents, ce barème éclaire <strong>ce que des protocoles fonctionnels ne garantissent pas</strong> : deux agents peuvent échanger des messages bien formés — niveau syntaxique — <strong>sans s'accorder sur le sens</strong> d'une « commande » ou d'un « client », ni sur l'effet d'une action dans le temps.</p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Niveau</th><th>Définition</th><th>Transposition agentique</th></tr></thead>
-  <tbody>
-    <tr><td><strong>0 — aucune</strong></td><td>systèmes isolés, aucun échange</td><td>agents cloisonnés par plateforme ; aucun contrat d'échange entre parcs</td></tr>
-    <tr><td><strong>1 — technique</strong></td><td>les bits transitent</td><td>transport disponible ; un agent peut en atteindre un autre <strong>sans en partager le format</strong></td></tr>
-    <tr><td><strong>2 — syntaxique</strong></td><td>structure de messages commune</td><td>messages bien formés ; fiche d'agent et schémas d'outils partagés (<strong>ch. 15</strong>)</td></tr>
-    <tr><td><strong>3 — sémantique</strong></td><td>le sens des données est partagé</td><td>accord sur le sens des entités métier, par contrat sémantique (<strong>ch. 2</strong>, § 24.4.3)</td></tr>
-    <tr><td><strong>4 — pragmatique</strong></td><td>contexte d'usage compris</td><td>accord sur <strong>l'effet attendu</strong> d'une action selon le contexte</td></tr>
-    <tr><td><strong>5 — dynamique</strong></td><td>états évoluant de concert</td><td>coordination des états au fil d'une trajectoire observable (<strong>Livre IV</strong>)</td></tr>
-    <tr><td><strong>6 — conceptuel</strong></td><td>modèles du monde alignés</td><td>alignement des modèles de tâche et d'autorité entre agents hétérogènes — ⚠ <strong>étage le plus exigeant, encore largement non atteint</strong></td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>Niveau</th>
+<th>Définition</th>
+<th>Transposition agentique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>0 — aucune</strong></td>
+<td>systèmes isolés, aucun échange</td>
+<td>agents cloisonnés par plateforme ; aucun contrat d'échange entre parcs</td>
+</tr>
+<tr>
+<td><strong>1 — technique</strong></td>
+<td>les bits transitent</td>
+<td>transport disponible ; un agent peut en atteindre un autre <strong>sans en partager le format</strong></td>
+</tr>
+<tr>
+<td><strong>2 — syntaxique</strong></td>
+<td>structure de messages commune</td>
+<td>messages bien formés ; fiche d'agent et schémas d'outils partagés (<strong>ch. 15</strong>)</td>
+</tr>
+<tr>
+<td><strong>3 — sémantique</strong></td>
+<td>le sens des données est partagé</td>
+<td>accord sur le sens des entités métier, par contrat sémantique (<strong>ch. 2</strong>, § 24.4.3)</td>
+</tr>
+<tr>
+<td><strong>4 — pragmatique</strong></td>
+<td>contexte d'usage compris</td>
+<td>accord sur <strong>l'effet attendu</strong> d'une action selon le contexte</td>
+</tr>
+<tr>
+<td><strong>5 — dynamique</strong></td>
+<td>états évoluant de concert</td>
+<td>coordination des états au fil d'une trajectoire observable (<strong>Livre IV</strong>)</td>
+</tr>
+<tr>
+<td><strong>6 — conceptuel</strong></td>
+<td>modèles du monde alignés</td>
+<td>alignement des modèles de tâche et d'autorité entre agents hétérogènes — ⚠ <strong>étage le plus exigeant, encore largement non atteint</strong></td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 24.2 — La transposition du modèle de maturité aux agents ; barème d'origine de Tolk et Muguira (2003), acquis au ch. 1. ⚠ <strong>Construction d'auteur du Vol. I, reprise en [C]</strong> : aucune validation empirique ne fixe le seuil à partir duquel l'alignement conceptuel devient mesurable plutôt que postulé.</p>
-
 <p><strong>Ce que le socle établit</strong> : le barème d'origine et sa transposition, comme proposition du Vol. I. <strong>Ce qu'il n'établit pas</strong> : sa validité empirique. ⚠ <strong>Cette grille fait écho à des modèles de maturité praticiens publiés, sans s'y substituer</strong> — celui de <strong>Microsoft (2025)</strong>, à cinq niveaux progressifs, et celui de <strong>ServiceNow avec Oxford Economics (2025)</strong>, fondé sur une enquête auprès d'environ 4 500 dirigeants dans seize pays, dont le score moyen <strong>recule</strong> d'un millésime à l'autre et qui n'identifie qu'environ 18 % d'organisations avancées. ⚠ <strong>Chiffres d'étude tierce, millésimés 2025, à re-vérifier.</strong></p>
-
 <p><em>La valeur opérationnelle de la transposition tient à ses <strong>indicateurs vérifiables</strong>, qui la distinguent d'une échelle déclarative</em> : <strong>couverture d'inventaire des agents</strong> — part du parc effectivement enregistrée —, <strong>pourcentage d'agents soumis à une politique exécutable plutôt qu'à une consigne</strong>, et <strong>traçabilité reconstructible d'une trajectoire complète</strong>. ⚠ <strong>Ces trois métriques rendent la maturité auditable</strong>, et <strong>le ch. 25 § 25.5 montrera que la première d'entre elles est exactement ce qu'un régulateur canadien attend d'un inventaire.</strong></p>
-
 <div class="avert">
   <p><strong>Ce barème n'est pas une échelle d'autonomie</strong> (R-13 du Vol. III) : il mesure ce que deux systèmes partagent, non la latitude consentie à l'un d'eux. <em>Les échelles d'autonomie de la somme sont nommées par leur cardinal et leur numérotation au ch. 14 § 14.4, et ne se confondent pas avec celle-ci.</em></p>
 </div>
-
 <h3>24.9.3 Conduite du changement, compétences et droit du travail</h3>
-
 <p>Le goulot du déploiement est socio-organisationnel avant d'être technique : <strong>l'héritage applicatif et les exigences de conformité figurent au premier rang des freins</strong>, devant la disponibilité des modèles ou des protocoles.</p>
-
 <p>La conduite du changement engage d'abord une <strong>recomposition des compétences</strong>. ⚠ Le <em>Future of Jobs Report 2025</em> du <strong>Forum économique mondial (2025)</strong>, fondé sur plus de mille entreprises, projette un solde net de l'ordre de <strong>+78 millions d'emplois d'ici 2030</strong> et estime qu'environ <strong>39 % des compétences requises évolueront</strong> — ⚠ <strong>projection à statut prospectif, à re-vérifier.</strong> Un effet de structure préoccupe particulièrement : <strong>l'érosion du vivier junior</strong>, l'automatisation des tâches d'entrée de gamme tarissant le réservoir dont sont issus les profils expérimentés de demain ; <strong>Brynjolfsson, Chandar et Chen (2025)</strong> documentent des effets d'emploi récents <strong>concentrés sur les jeunes travailleurs des métiers les plus exposés</strong>.</p>
-
 <div class="avert">
   <p><strong>La distinction entre augmentation et substitution structure l'analyse</strong>, et elle réfute une intuition courante : selon <strong>Shao, Zope, Jiang et coll. (2025)</strong>, au sein du cadre <em>Future of Work with AI Agents</em> de Stanford, la frontière <strong>ne suit pas la hiérarchie attendue</strong>, nombre de tâches relevant d'une augmentation souhaitée par les travailleurs plutôt que d'une substitution. <em>Cette nuance disqualifie le raisonnement par mimétisme d'organigramme du § 24.5.1 et invite à calibrer le déploiement sur la nature réelle des tâches, non sur leur étiquette de poste.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>En Europe, le droit social constitue un blocage de déploiement et non un simple paramètre de conformité</strong> : consultation des comités d'entreprise, co-détermination et encadrement de la surveillance algorithmique des travailleurs <strong>peuvent suspendre la mise en production</strong> d'un agent dont l'action affecte l'organisation du travail. Le <strong>Parlement européen (2025)</strong> a adopté sur ce point une résolution — ⚠ <strong>non contraignante</strong> — qui signale un encadrement à venir. S'y ajoutent les obligations d'accessibilité de la <strong>directive (UE) 2019/882</strong>, <strong>en application depuis le 28 juin 2025</strong> avec transition jusqu'au 28 juin 2030, qui contraignent les interfaces agent-humain destinées au public.</p>
 </div>
-
 <div class="avert">
   <p><strong>Le versant canadien de cette question n'est pas ici</strong> : le <strong>ch. 26</strong> traite du vide fédéral, le <strong>ch. 27</strong> du régime québécois, et <strong>aucun des deux ne se déduit du droit européen</strong>.</p>
 </div>
-
 <h3>24.9.4 Gouvernance socio-technique, redevabilité et déqualification</h3>
-
 <div class="avert">
   <p><strong>Cette sous-section est le troisième et dernier ancrage du plan agent-humain.</strong></p>
 </div>
-
 <p>La gouvernance socio-technique d'un parc affronte d'abord la <strong>diffusion de la responsabilité</strong> entre concepteurs, déployeurs, utilisateurs et agents eux-mêmes. ⚠ <strong>Dans un réseau d'agents coordonnés, attribuer la redevabilité d'une décision composée devient quasi impossible</strong> : la chaîne causale traverse plusieurs propriétaires, plusieurs temps d'exécution et plusieurs organisations, <strong>de sorte que le journal d'audit probant devient le seul substrat d'imputation</strong>.</p>
-
 <p><em>La gouvernance ne peut donc se réduire à des contrôles techniques : elle doit fixer, <strong>en amont du déploiement</strong>, qui répond de quoi.</em> ⚠ <strong>C'est exactement l'écart de responsabilité que le ch. 22 § 22.10 a posé et que le ch. 29 § 29.3 exploitera</strong> ; ce chapitre en fournit la contrepartie organisationnelle, non l'arbitrage.</p>
-
 <p><strong>Le maintien d'un humain dans la boucle ou en supervision est ici traité comme un dispositif organisationnel de redevabilité, non comme un garde-fou d'ingénierie.</strong> La conception du système doit soutenir <strong>la conscience situationnelle de l'opérateur, la calibration de la confiance et la clarté des rôles</strong>, faute de quoi s'installent la <strong>sur-confiance</strong> et la <strong>déqualification</strong> : <em>l'humain, déchargé puis désaccoutumé de la tâche, perd la compétence même qui justifiait sa présence dans la boucle.</em></p>
-
 <div class="avert">
   <p><strong>Et c'est la troisième et dernière rencontre du chapitre avec la limite du ch. 17 § 17.5.</strong> Trois sections l'ont croisée sous trois angles — l'approbation d'ingénierie (§ 24.5.4), la fatigue d'approbation en sécurité (§ 24.6.4), la déqualification organisationnelle (ici) — et <strong>aucune ne peut la combler</strong> : <em>le socle ne porte pas de mesure de l'efficacité de la supervision humaine.</em> ⚠ <strong>Les ch. 25 et 27 prescriront pourtant l'un et l'autre une parade dont c'est la limite empirique</strong>, et le plan le déclare.</p>
 </div>
-
 <div class="avert">
   <p><strong>Un premier cadre national dédié à cette gouvernance existe</strong>, et l'instrument porte son auteur et sa date : le <em>Model AI Governance Framework for Agentic AI</em> (version 1.0) de l'<strong>IMDA/MDDI de Singapour (2026)</strong>, lancé le 22 janvier 2026, <strong>d'adhésion volontaire</strong>. Son apport pratique est de <strong>calibrer les exigences de supervision sur le degré d'autonomie de l'agent</strong>. ⚠ <strong>Il n'est ni une norme ni un instrument canadien</strong> — <em>le ch. 30 § 30.3.3 traite de la normalisation internationale, et il ne l'y range pas comme instrument contraignant.</em></p>
 </div>
-
 <h3>Synthèse : ce que le chapitre lègue à la somme</h3>
-
 <p><em>Section de sortie sans homologue direct dans la source — construction d'éditeur.</em></p>
-
-<ol class="numeros">
-  <li><strong>Le principe de greffe, énoncé une fois.</strong> <em>Ne pas dupliquer l'IAM et l'observabilité en place</em> — c'est le membre opérant de la thèse, et il vaut pour tout le reste de la somme : le <strong>ch. 37</strong> le retrouve au grain du maillage, le <strong>Livre IV</strong> au grain de l'exploitation.</li>
-  <li><strong>Les quatre dettes, et leur répartition.</strong> Données (§ 24.4), intégration (§ 24.1), identité (§ 24.3), gouvernance (<strong>ch. 30</strong>). <em>La quatrième n'est pas ici, et son absence est un arbitrage déclaré.</em></li>
-  <li><strong>Le point de sortie unique.</strong> Sans lui, ni plafonnement par jetons, ni cache sémantique, ni disjoncteur de coût ne sont applicables. Le <strong>Livre IV</strong> en fait le siège de sa discipline financière.</li>
-  <li><strong>Le filtrage à l'intérieur de la recherche, jamais après.</strong> <em>Un filtrage a posteriori fuit.</em> Posé ici une seule fois ; le <strong>ch. 31 § 31.3.2</strong> en tire la conséquence probante.</li>
-  <li><strong>La domiciliation de la grille des dix risques d'identités non humaines</strong> (§ 24.3.4) et sa cartographie vers les référentiels d'audit existants. Aucun chapitre aval ne la reconstruit.</li>
-  <li><strong>Les trois échelles d'orchestration, et ce qui change à la troisième.</strong> <em>La frontière de confiance change la nature du problème</em> — et c'est ce que le <strong>ch. 36</strong> rencontrera sur les rails canadiens.</li>
-  <li><strong>Les trois indicateurs vérifiables de maturité.</strong> Couverture d'inventaire, part d'agents sous politique exécutable, traçabilité reconstructible. ⚠ <strong>Le ch. 25 § 25.5 montre que le premier est ce qu'un régulateur attend.</strong></li>
-  <li><strong>Un vide, formulé plutôt que comblé</strong> (§ 24.8). <em>Le dimensionnement d'un parc n'a pas de modèle de service au socle</em>, et la question instruisible est écrite avec son critère de clôture. <strong>Le ch. 33 en rencontrera la conséquence sur un délai contractuel.</strong></li>
+<ol type="1">
+<li><strong>Le principe de greffe, énoncé une fois.</strong> <em>Ne pas dupliquer l'IAM et l'observabilité en place</em> — c'est le membre opérant de la thèse, et il vaut pour tout le reste de la somme : le <strong>ch. 37</strong> le retrouve au grain du maillage, le <strong>Livre IV</strong> au grain de l'exploitation.</li>
+<li><strong>Les quatre dettes, et leur répartition.</strong> Données (§ 24.4), intégration (§ 24.1), identité (§ 24.3), gouvernance (<strong>ch. 30</strong>). <em>La quatrième n'est pas ici, et son absence est un arbitrage déclaré.</em></li>
+<li><strong>Le point de sortie unique.</strong> Sans lui, ni plafonnement par jetons, ni cache sémantique, ni disjoncteur de coût ne sont applicables. Le <strong>Livre IV</strong> en fait le siège de sa discipline financière.</li>
+<li><strong>Le filtrage à l'intérieur de la recherche, jamais après.</strong> <em>Un filtrage a posteriori fuit.</em> Posé ici une seule fois ; le <strong>ch. 31 § 31.3.2</strong> en tire la conséquence probante.</li>
+<li><strong>La domiciliation de la grille des dix risques d'identités non humaines</strong> (§ 24.3.4) et sa cartographie vers les référentiels d'audit existants. Aucun chapitre aval ne la reconstruit.</li>
+<li><strong>Les trois échelles d'orchestration, et ce qui change à la troisième.</strong> <em>La frontière de confiance change la nature du problème</em> — et c'est ce que le <strong>ch. 36</strong> rencontrera sur les rails canadiens.</li>
+<li><strong>Les trois indicateurs vérifiables de maturité.</strong> Couverture d'inventaire, part d'agents sous politique exécutable, traçabilité reconstructible. ⚠ <strong>Le ch. 25 § 25.5 montre que le premier est ce qu'un régulateur attend.</strong></li>
+<li><strong>Un vide, formulé plutôt que comblé</strong> (§ 24.8). <em>Le dimensionnement d'un parc n'a pas de modèle de service au socle</em>, et la question instruisible est écrite avec son critère de clôture. <strong>Le ch. 33 en rencontrera la conséquence sur un délai contractuel.</strong></li>
 </ol>
-
 <div class="avert">
   <p><strong>Ce que le chapitre ne lègue pas.</strong> Il ne lègue <strong>aucun fait au régime [B]</strong> : toute sa matière vient du Vol. I et entre en <strong>[C]</strong>. Il ne lègue aucun classement de produit ni aucune adoption mesurée. Il ne lègue <strong>aucune doctrine du dimensionnement</strong>. Et il ne lègue <strong>aucune mesure de l'efficacité de la supervision humaine</strong> — <em>il l'a croisée trois fois et l'a déclarée trois fois manquante.</em></p>
 </div>
+<hr />
 
 <footer class="pied">
   <p><strong>Vol. IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em></strong> · Livre III, chapitre 24. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau, M.Sc. IT.</p>
-
   <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme (gel unique : 27 juillet 2026).</p>
 </footer>
 

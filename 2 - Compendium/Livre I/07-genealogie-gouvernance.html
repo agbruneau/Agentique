@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Chapitre 7 — Généalogie et gouvernance : des projets propriétaires aux standards ouverts · Interopérabilité et Orchestration en Entreprise Agentique</title>
-<meta name="description" content="Livre I — Coopérer : fondements de l'interopérabilité et couche protocolaire agentique. Second mouvement — la couche protocolaire agentique (ch. 7-11). Premier chapitre du mouvement.">
+<meta name="description" content="Livre I — Coopérer : fondements de l&#x27;interopérabilité et couche protocolaire agentique. Second mouvement — la couche protocolaire agentique (ch. 7-11). **Premier chapitre du mouvement.**">
 <meta name="author" content="André-Guy Bruneau, M.Sc. IT">
 <meta name="color-scheme" content="dark">
 <style>
@@ -443,6 +443,17 @@ tbody tr:nth-child(even) { background: rgba(255, 255, 255, 0.014); }
 tbody td:first-child { color: var(--texte); font-weight: 600; }
 .legende { font-size: 0.8rem; font-style: italic; color: var(--texte-faible); margin: 0.65rem 0 1.9rem; padding-left: 0.15rem; }
 
+/* -------------------------------------------------------------- figures */
+/* Les SVG du volume sont dessinés pour le PDF, donc sur fond clair, et ils
+   portent ce fond eux-mêmes — sans quoi il faudrait maintenir deux variantes
+   de chaque figure. Sur ce thème sombre, ils se posent donc comme un carton ;
+   le padding empêche le fond de la figure de toucher le bord du cadre. */
+.figure { margin: 2.1rem 0 1.9rem; }
+.figure img { display: block; width: 100%; height: auto; border-radius: 7px;
+              border: 1px solid var(--trait); background: #fdfbf9; padding: 0.6rem; }
+.figure figcaption { font-size: 0.8rem; font-style: italic; color: var(--texte-faible);
+                     margin-top: 0.65rem; padding-left: 0.15rem; }
+
 /* --------------------------------------------------------------- listes */
 ul.puces, ol.numeros { margin: 1.15rem 0; padding-left: 1.35rem; }
 ul.puces li, ol.numeros li { margin-bottom: 0.7rem; padding-left: 0.3rem; }
@@ -531,18 +542,16 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <div class="nav__marque">Interopérabilité et Orchestration en Entreprise Agentique</div>
   <div class="nav__sous">Livre I · Chapitre 7</div>
   <ol>
-    <li><a href="#s70"><span class="num">7.0</span>Introduction : de l&#x27;échange de données à l&#x27;échange d&#x27;intentions</a></li>
-    <li><a href="#s71"><span class="num">7.1</span>Définir l&#x27;interopérabilité agentique et ses niveaux</a></li>
+    <li><a href="#s70"><span class="num">7.0</span>Introduction : de l'échange de données à l'échange d'intentions</a></li>
+    <li><a href="#s71"><span class="num">7.1</span>Définir l'interopérabilité agentique et ses niveaux</a></li>
     <li><a href="#s72"><span class="num">7.2</span>Filiation historique et taxonomie des quatre axes</a></li>
     <li><a href="#s73"><span class="num">7.3</span>Chronologie 2024-2026 : dix-sept mois de consolidation</a></li>
     <li><a href="#s74"><span class="num">7.4</span>Gouvernance comparée : ce que « neutre » veut dire</a></li>
     <li><a href="#s75"><span class="num">7.5</span>Encadré de désambiguïsation R-8 : la collision « (agentic) control plane » à quatre branches</a></li>
-    <li><a href="#s76"><span class="num">7.6</span>Lecture critique des métriques d&#x27;adoption : « soutien » n&#x27;est pas « production »</a></li>
-
+    <li><a href="#s76"><span class="num">7.6</span>Lecture critique des métriques d'adoption : « soutien » n'est pas « production »</a></li>
   </ol>
   <div class="nav__pied">
     Vol.&nbsp;IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em><br>
-
     <a href="07-genealogie-gouvernance.md">Version Markdown</a>
   </div>
 </nav>
@@ -553,331 +562,332 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
 <header class="titre">
   <div class="titre__fil">Livre I — Coopérer : fondements de l&#x27;interopérabilité et couche protocolaire agentique</div>
   <h1><span class="chap">Chapitre 7</span>Généalogie et gouvernance : des projets propriétaires aux standards ouverts</h1>
-  <p class="titre__situe">Livre I — Coopérer : fondements de l'interopérabilité et couche protocolaire agentique. Second mouvement — la couche protocolaire agentique (ch. 7-11). <strong>Premier chapitre du mouvement.</strong></p>
+  <p class="titre__situe">Livre I — Coopérer : fondements de l'interopérabilité et couche protocolaire agentique. Second mouvement — la couche protocolaire agentique (ch. 7-11). **Premier chapitre du mouvement.**</p>
 </header>
 
+<!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
+     Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
+     que `build/assemble.py` pour le PDF et que `PRD/decompte.sh` pour la volumétrie. L'appareil de
+     gouvernance vit au .md jumeau, qui reste la seule source, et `build/verifier-piece.py` refuse
+     un rendu qui le recopierait. -->
+
 <h2 id="s70"><span class="sig">§ 7.0</span>Introduction : de l'échange de données à l'échange d'intentions</h2>
-
 <p>Le second mouvement du Livre s'ouvre ici. Les ch. 1 à 3 ont posé le socle <strong>pré-agentique</strong> ; les ch. 4 à 6, l'<strong>ingénierie de l'agent</strong>. Ce mouvement traite la <strong>couche d'interopérabilité agentique proprement dite</strong> — le contrat entre un agent et ses outils, le dialogue entre agents, la découverte, le règlement commercial, et les modes d'échec qui leur sont propres.</p>
-
 <p>La proposition directrice tient en un déplacement, et il vaut d'être énoncé avec précision : ce qui transite entre systèmes d'IA n'est plus seulement de la <strong>donnée structurée</strong>, comme dans l'intégration d'entreprise classique (ch. 2), mais des <strong>intentions</strong>, des <strong>tâches</strong> et des <strong>capacités</strong> négociées à l'exécution.</p>
-
 <p>Ce déplacement se lit comme un <strong>glissement des noms vers les verbes</strong>. Une interface REST est orientée <strong>ressources</strong> : elle expose des entités — un client, une commande, un compte — que l'on crée, lit, modifie ou supprime. Un agent est orienté <strong>actions</strong> : il reçoit un but exprimé en langage naturel, sélectionne des opérations et les compose pour produire un résultat <strong>dont la forme n'était pas entièrement prédéterminée</strong>.</p>
-
 <p>L'objet de l'échange se déplace ainsi de l'<strong>état partagé</strong> vers l'<strong>action déléguée</strong>. Ce glissement réactive la distinction posée au ch. 1 § 1.1.1 : l'interopérabilité n'est ni la connectivité, ni la compatibilité de formats, mais la capacité d'échanger de l'information <strong>et d'en faire un usage utile</strong>.</p>
-
 <div class="avert">
   <p><strong>C'est précisément parce que l'unité d'échange devient l'intention</strong> — entité non déterministe, sous-spécifiée, interprétée à l'inférence — <strong>que la connectivité cesse de garantir l'interopérabilité</strong>. Le problème se déplace de la plomberie vers la négociation du sens, et c'est ce déplacement que le ch. 9 § 9.4 mesure.</p>
 </div>
-
+<hr />
 <h2 id="s71"><span class="sig">§ 7.1</span>Définir l'interopérabilité agentique et ses niveaux</h2>
-
 <h3>7.1.1 Définition de travail</h3>
-
 <p>L'<strong>interopérabilité agentique</strong> se définit comme la capacité de systèmes d'intelligence artificielle agentique — autonomes, hétérogènes, pilotés par grand modèle de langage — à <strong>se découvrir mutuellement, se comprendre, déléguer des tâches et collaborer sans intégration point-à-point préalable</strong>.</p>
-
 <p>Trois traits la distinguent de l'interopérabilité des systèmes d'information :</p>
-
-<ol class="numeros">
-  <li><strong>l'absence d'intégration préétablie</strong> — la mise en relation se négocie <strong>à l'exécution</strong> ;</li>
-  <li><strong>l'hétérogénéité radicale des acteurs</strong> — modèles, cadriciels et fournisseurs distincts ;</li>
-  <li><strong>la nature de ce qui transite</strong> — non plus des données structurées mais des intentions et des tâches.</li>
+<ol type="1">
+<li><strong>l'absence d'intégration préétablie</strong> — la mise en relation se négocie <strong>à l'exécution</strong> ;</li>
+<li><strong>l'hétérogénéité radicale des acteurs</strong> — modèles, cadriciels et fournisseurs distincts ;</li>
+<li><strong>la nature de ce qui transite</strong> — non plus des données structurées mais des intentions et des tâches.</li>
 </ol>
-
 <div class="avert">
   <p><strong>Cette définition appelle une contrepartie opérationnelle, et son absence est le défaut le plus répandu du domaine.</strong> Un système n'est dit interopérable que si une tâche déléguée d'un agent à un autre <strong>aboutit avec un taux de réussite et une fidélité de transfert d'intention vérifiables</strong> — et non au seul constat que la connexion s'établit. Le ch. 9 § 9.5 reprend cette exigence comme problème de conformité.</p>
 </div>
-
 <h3>7.1.2 Les niveaux LCIM appliqués aux agents</h3>
-
 <p>Le modèle des niveaux d'interopérabilité conceptuelle, introduit au ch. 1 § 1.1.2, se transpose directement à la pile agentique :</p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Niveau</th><th>Ce qu'il couvre, côté agentique</th></tr></thead>
-  <tbody>
-    <tr><td><strong>Technique</strong></td><td>transport et connectivité — HTTP, appels de procédure en JSON, flux d'événements, entrée-sortie standard</td></tr>
-    <tr><td><strong>Syntaxique</strong></td><td>structure des messages — appels d'outils, cartes d'agent, cycle de vie des tâches</td></tr>
-    <tr><td><strong>Sémantique</strong></td><td>sens partagé — alignement des intentions, ancrage des termes sur des référents communs</td></tr>
-    <tr><td><strong>Pragmatique</strong></td><td>inférence de <strong>l'action effectivement voulue</strong> à partir d'un message</td></tr>
-    <tr><td><strong>Dynamique</strong></td><td>capacité à s'adapter, renégocier, découvrir des partenaires <strong>à l'exécution</strong></td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>Niveau</th>
+<th>Ce qu'il couvre, côté agentique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Technique</strong></td>
+<td>transport et connectivité — HTTP, appels de procédure en JSON, flux d'événements, entrée-sortie standard</td>
+</tr>
+<tr>
+<td><strong>Syntaxique</strong></td>
+<td>structure des messages — appels d'outils, cartes d'agent, cycle de vie des tâches</td>
+</tr>
+<tr>
+<td><strong>Sémantique</strong></td>
+<td>sens partagé — alignement des intentions, ancrage des termes sur des référents communs</td>
+</tr>
+<tr>
+<td><strong>Pragmatique</strong></td>
+<td>inférence de <strong>l'action effectivement voulue</strong> à partir d'un message</td>
+</tr>
+<tr>
+<td><strong>Dynamique</strong></td>
+<td>capacité à s'adapter, renégocier, découvrir des partenaires <strong>à l'exécution</strong></td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 7.1 — Les cinq niveaux du LCIM appliqués à la pile agentique.</p>
-
 <h3>7.1.3 Pragmatique et dynamique : des niveaux existants devenus verrous opérationnels</h3>
-
 <div class="avert">
   <p><strong>Il importe de souligner ce que ces deux derniers niveaux ne sont pas : des inventions de l'ère agentique.</strong> Le pragmatique et le dynamique figurent <strong>en propre dans le modèle d'origine</strong>. Ce qui change n'est pas leur existence, mais leur <strong>centralité opérationnelle</strong>. Écrire que l'agentique « ajoute deux niveaux » serait une erreur de fait, et elle est fréquente.</p>
 </div>
-
 <p>Le déplacement est ailleurs, et il est plus intéressant. Dans l'intégration classique, le verrou dominant se situait au <strong>sémantique</strong> : faire correspondre des schémas et des vocabulaires (ch. 2). Avec des acteurs pilotés par modèle, le <strong>pragmatique</strong> — inférer l'action voulue, et non seulement décoder le contenu — devient le verrou prépondérant.</p>
-
 <p>Ce niveau se manifeste d'une manière propre aux agents : <strong>le sens n'est plus calculé par un programme déterministe mais lu par le modèle à l'inférence</strong>, à partir de descriptions en langage naturel interprétées au moment de l'exécution. Le niveau <strong>dynamique</strong>, lui, recouvre la négociation et la découverte à l'exécution — ce qui n'avait <strong>pas d'équivalent généralisé</strong> dans les piles d'intégration figées au temps de conception.</p>
-
 <p>Ces deux niveaux, anciens dans la théorie, deviennent ainsi <strong>le terrain effectif où se joue — ou échoue — l'interopérabilité agentique</strong>.</p>
-
 <h3>7.1.4 Ce qui change quand les acteurs sont autonomes et non déterministes</h3>
-
 <p>Quatre ruptures distinguent l'interopérabilité agentique de l'intégration classique :</p>
-
-<ul class="puces">
-  <li><strong>le non-déterminisme</strong> — un acteur piloté par modèle ne garantit pas une réponse identique à entrée identique, ce qui <strong>substitue des garanties probabilistes aux garanties exactes</strong> ;</li>
-  <li><strong>l'auto-description et la découverte à l'exécution</strong> — l'acteur publie ses capacités sous une forme interprétable, et un pair les découvre puis les sélectionne au moment de l'échange ;</li>
-  <li><strong>le langage naturel comme surface d'interface</strong> — souple, mais <strong>ambigu et non vérifiable mécaniquement</strong> ;</li>
-  <li><strong>l'orientation vers les buts</strong> — l'acteur poursuit des objectifs plutôt qu'il n'exécute des instructions littérales, ce qui érige <strong>la négociation et la clarification en primitives d'interaction</strong>.</li>
+<ul>
+<li><strong>le non-déterminisme</strong> — un acteur piloté par modèle ne garantit pas une réponse identique à entrée identique, ce qui <strong>substitue des garanties probabilistes aux garanties exactes</strong> ;</li>
+<li><strong>l'auto-description et la découverte à l'exécution</strong> — l'acteur publie ses capacités sous une forme interprétable, et un pair les découvre puis les sélectionne au moment de l'échange ;</li>
+<li><strong>le langage naturel comme surface d'interface</strong> — souple, mais <strong>ambigu et non vérifiable mécaniquement</strong> ;</li>
+<li><strong>l'orientation vers les buts</strong> — l'acteur poursuit des objectifs plutôt qu'il n'exécute des instructions littérales, ce qui érige <strong>la négociation et la clarification en primitives d'interaction</strong>.</li>
 </ul>
-
 <div class="avert">
   <p><strong>Ces traits, qui font la puissance des systèmes agentiques, sont aussi la racine de leurs modes d'échec</strong> — lesquels ne se résolvent pas au niveau du modèle isolé (ch. 6) mais <strong>aux frontières entre acteurs</strong> (ch. 11).</p>
 </div>
-
 <h3>7.1.5 Reformuler la triade pour des acteurs probabilistes</h3>
-
 <p>Les trois termes de l'invariant doivent être réénoncés.</p>
-
 <p>Le <strong>contrat</strong>, déterministe dans le monde des API — une requête valide produit une réponse conforme au schéma (ch. 1 § 1.4.2) —, devient un <strong>contrat comportemental probabiliste</strong> : on ne peut plus garantir qu'une entrée valide produira <strong>invariablement</strong> la sortie attendue, seulement qu'elle la produira <strong>avec une certaine probabilité</strong>. Les travaux sur les contrats comportementaux d'agents (Bhardwaj, 2026) formalisent cette idée en spécifiant la satisfaction d'un contrat par un triplet — <strong>probabilité minimale, tolérance, nombre d'essais</strong> — assorti d'une <strong>vérification à l'exécution</strong>.</p>
-
-<p>Le <strong>découplage</strong> s'enrichit de deux dimensions absentes du ch. 1 : le découplage de <strong>modèle</strong> — l'application ne doit pas être liée à un fournisseur de modèle particulier — et de <strong>cadriciel</strong> — elle ne doit pas être liée à un framework d'orchestration donné. Le ch. 9 § 9.3 les développe.</p>
-
-<p>L'<strong>évolution</strong> prend enfin la forme d'un <strong>versionnage des capacités</strong> et d'une <strong>politique de dépréciation</strong> : un agent ou un outil doit pouvoir faire évoluer ce qu'il offre sans briser ses consommateurs.</p>
-
+<p>Le <strong>découplage</strong> s'enrichit de deux dimensions absentes du ch. 1 : le découplage de <strong>modèle</strong> — l'application ne doit pas être liée à un fournisseur de modèle particulier — et de <strong>cadriciel</strong> — elle ne doit pas être liée à un cadriciel d'orchestration donné. Le ch. 9 § 9.3 les développe.</p>
+<p>L'<strong>évolution</strong> prend enfin la forme d'un <strong>versionnement des capacités</strong> et d'une <strong>politique de dépréciation</strong> : un agent ou un outil doit pouvoir faire évoluer ce qu'il offre sans briser ses consommateurs.</p>
 <div class="encadre encadre--recherche">
   <span class="encadre__label">Perspective recherche</span>
   <p>Le passage du contrat déterministe au contrat comportemental probabiliste <strong>reformule la garantie d'interopérabilité comme une propriété statistique vérifiée à l'exécution</strong> plutôt que comme une propriété structurelle vérifiée à la compilation. La spécification par probabilité cible, marge tolérée et répétitions fournit un <strong>objet formel mesurable</strong>, et son contrôle continu rapproche le contrat d'agent des <strong>engagements observables</strong> de la tradition multi-agents plutôt que des sémantiques mentalistes (§ 7.2.1).</p>
 </div>
-
 <h3>7.1.6 Pourquoi l'interopérabilité classique ne suffit pas : l'argument de l'étagement</h3>
-
 <p>L'interopérabilité classique — appel de procédure à distance, API REST, bus de service (ch. 1 § 1.3 et § 1.4) — atteint ses limites devant les acteurs agentiques sur quatre points :</p>
-
-<ol class="numeros">
-  <li>elle <strong>ne prévoit pas d'auto-description exploitable à l'exécution</strong> — un contrat décrit des points de terminaison au temps de conception, non des capacités négociées à l'inférence ;</li>
-  <li>elle est orientée <strong>ressources</strong> là où les agents sont orientés <strong>actions</strong> ;</li>
-  <li>elle suppose un <strong>appelant déterministe</strong> capable de composer correctement les requêtes ;</li>
-  <li>elle n'offre <strong>aucune primitive native</strong> pour les tâches de longue durée ni pour la négociation.</li>
+<ol type="1">
+<li>elle <strong>ne prévoit pas d'auto-description exploitable à l'exécution</strong> — un contrat décrit des points d'extrémité au temps de conception, non des capacités négociées à l'inférence ;</li>
+<li>elle est orientée <strong>ressources</strong> là où les agents sont orientés <strong>actions</strong> ;</li>
+<li>elle suppose un <strong>appelant déterministe</strong> capable de composer correctement les requêtes ;</li>
+<li>elle n'offre <strong>aucune primitive native</strong> pour les tâches de longue durée ni pour la négociation.</li>
 </ol>
-
 <div class="avert">
   <p><strong>Ces limites ne justifient pas de remplacer la pile classique, et c'est le point d'équilibre essentiel contre la surenchère.</strong> Les protocoles agentiques majeurs <strong>réemploient massivement l'existant</strong> : le protocole agent-outil s'appuie sur des appels de procédure en JSON et sur HTTP, et adosse son autorisation à des mécanismes éprouvés ; le protocole agent-agent propose plusieurs liaisons de transport.</p>
 </div>
-
 <p><em>La couche agentique <strong>s'étage</strong> au-dessus de la pile éprouvée — transport, sérialisation, autorisation — plutôt qu'elle ne s'y substitue.</em> L'apport propre se situe <strong>au-dessus</strong> : auto-description, découverte à l'exécution, modèle de tâche, négociation. C'est l'argument que le ch. 9 § 9.2 systématise sous le nom d'étagement.</p>
-
+<hr />
 <h2 id="s72"><span class="sig">§ 7.2</span>Filiation historique et taxonomie des quatre axes</h2>
-
 <h3>7.2.1 KQML, FIPA-ACL, actes de langage et protocoles à engagements</h3>
-
 <p>L'interopérabilité agentique <strong>n'est pas sans ascendance</strong>, et l'ignorer conduit à réinventer des échecs documentés.</p>
-
 <p>Le langage <strong>KQML</strong> proposait dès le milieu des années 1990 un jeu de <strong>performatifs</strong> — des verbes de communication typés — pour structurer les échanges entre agents (Finin et coll., 1994). Les spécifications <strong>FIPA-ACL</strong> ont prolongé cet effort en normalisant la structure des messages et une bibliothèque d'<strong>actes communicatifs</strong> (FIPA, 2002). Cette tradition s'enracine dans la théorie des actes de langage, qui montre que <strong>dire, c'est faire</strong> — promettre, ordonner, demander étant des actions accomplies par la parole (Austin, 1962 ; Searle, 1969).</p>
-
 <div class="avert">
   <p><strong>Le verrou historique mérite d'être nommé, parce qu'il se rejoue aujourd'hui.</strong> La sémantique de FIPA-ACL reposait sur une lecture <strong>mentaliste</strong>, définissant la signification d'un message par les <strong>croyances et intentions présumées</strong> de l'émetteur. Or ces états mentaux <strong>ne sont pas observables, donc pas vérifiables</strong> : un agent ne peut prouver qu'un pair <em>croit</em> ou <em>veut</em> ce qu'il déclare. C'est la <strong>perte de sémantique vérifiable</strong>.</p>
 </div>
-
 <p>La réponse historique fut de fonder la signification sur des <strong>engagements sociaux observables</strong> plutôt que sur des états mentaux privés (Singh, 1998 ; 2000), et de spécifier les protocoles par les engagements qu'ils créent et règlent (Yolum et Singh, 2002) — pont direct vers les contrats comportementaux du § 7.1.5.</p>
-
 <div class="avert">
   <p><strong>La leçon d'adoption est tout aussi instructive, et elle vaut avertissement</strong> : le formalisme lourd de FIPA <strong>n'a jamais connu de déploiement à grande échelle</strong>. Ce constat plaide, pour la pile agentique actuelle, en faveur de <strong>mécanismes plus légers que des logiques mentalistes complètes</strong>.</p>
 </div>
-
 <div class="encadre encadre--recherche">
   <span class="encadre__label">Perspective recherche</span>
   <p>Le déplacement de la sémantique mentaliste vers une sémantique d'engagements (Singh, 1998 ; 2000 ; Yolum et Singh, 2002) constitue <strong>le précédent théorique le plus pertinent</strong> pour l'interopérabilité agentique contemporaine : il troque une signification fondée sur des états internes inaccessibles contre une signification fondée sur des <strong>obligations sociales observables et vérifiables</strong>. Cette filiation éclaire pourquoi le grand modèle de langage — qui <strong>infère</strong> le sens à la lecture plutôt qu'il ne le calcule formellement — <strong>réintroduit, sous une autre forme, le problème de vérifiabilité</strong> que FIPA n'avait pas résolu.</p>
 </div>
-
 <h3>7.2.2 Taxonomie des quatre axes d'interopérabilité</h3>
-
 <p>La couche agentique s'organise autour de <strong>quatre axes</strong>, qui constituent la carte du mouvement :</p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th>Axe</th><th>Nature</th><th>Ce qu'il porte</th><th>Où il est traité</th></tr></thead>
-  <tbody>
-    <tr><td><strong>Agent-outil</strong></td><td>vertical</td><td>un agent invoque des outils et ressources pour étendre ses capacités</td><td>ch. 8 § 8.1-8.3</td></tr>
-    <tr><td><strong>Agent-agent</strong></td><td>horizontal</td><td>des agents autonomes se délèguent des tâches par-delà les frontières</td><td>ch. 8 § 8.4-8.6</td></tr>
-    <tr><td><strong>Agent-humain</strong></td><td>—</td><td>négociation de l'interaction : points de validation, consentement, modalités</td><td>Livre II</td></tr>
-    <tr><td><strong>Agent-données</strong></td><td>—</td><td>accès gouverné aux données, récupération inter-organisationnelle</td><td>ch. 2, ch. 9 § 9.4</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Axe</th>
+<th>Nature</th>
+<th>Ce qu'il porte</th>
+<th>Où il est traité</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Agent-outil</strong></td>
+<td>vertical</td>
+<td>un agent invoque des outils et ressources pour étendre ses capacités</td>
+<td>ch. 8 § 8.1-8.3</td>
+</tr>
+<tr>
+<td><strong>Agent-agent</strong></td>
+<td>horizontal</td>
+<td>des agents autonomes se délèguent des tâches par-delà les frontières</td>
+<td>ch. 8 § 8.4-8.6</td>
+</tr>
+<tr>
+<td><strong>Agent-humain</strong></td>
+<td>—</td>
+<td>négociation de l'interaction : points de validation, consentement, modalités</td>
+<td>Livre II</td>
+</tr>
+<tr>
+<td><strong>Agent-données</strong></td>
+<td>—</td>
+<td>accès gouverné aux données, récupération inter-organisationnelle</td>
+<td>ch. 2, ch. 9 § 9.4</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 7.2 — Les quatre axes de l'interopérabilité agentique et leur lieu de traitement dans la somme.</p>
-
 <div class="avert">
   <p><strong>Cette quadripartition n'est pas une cloison étanche</strong> : un système de production mobilise simultanément plusieurs axes (ch. 9 § 9.2.4). Elle fournit le squelette analytique du mouvement et fixe le périmètre de chaque chapitre.</p>
 </div>
-
 <div class="avert">
   <p><strong>Elle est aussi le socle amont d'un instrument du Livre II.</strong> La <strong>grille des cinq questions</strong> du ch. 14 se construit sur cette taxonomie ; le lecteur qui la rencontrera là-bas doit pouvoir en retrouver la racine ici. C'est l'une des économies de la refonte, et elle suppose que ce paragraphe ne disparaisse pas d'une révision ultérieure.</p>
 </div>
-
 <h3>7.2.3 Panorama introductif des modes d'échec</h3>
-
 <p>Avant d'examiner chaque axe, il est utile de poser le cadre des modes d'échec spécifiques. <strong>Six familles</strong> se dégagent, dont la taxonomie complète est au <strong>ch. 11</strong> :</p>
-
-<ul class="puces">
-  <li><strong>la dérive sémantique en chaîne de délégations</strong> — à mesure qu'une intention est retransmise d'agent en agent, son sens <strong>se déforme insensiblement</strong>, chaque relais réinterprétant un message en langue naturelle ;</li>
-  <li><strong>l'échec d'ancrage</strong> — un terme n'est pas rattaché au même référent par l'émetteur et le récepteur, <strong>qui croient pourtant s'entendre</strong> ;</li>
-  <li><strong>l'ambiguïté non résolue</strong> — un acteur agit sur une interprétation arbitraire <strong>au lieu de demander une clarification</strong>, faute de mécanisme de négociation déclenché ;</li>
-  <li><strong>les capacités mal décrites ou mal versionnées</strong> — une description inexacte ou périmée conduit à un mauvais appariement ;</li>
-  <li><strong>le non-déterminisme propageant des erreurs non reproductibles</strong> — une faute survenue à une frontière <strong>ne se reproduit pas à l'identique</strong>, ce qui en complique le diagnostic ;</li>
-  <li><strong>la perte de portabilité</strong> — une intégration fonctionnelle avec un fournisseur cesse de l'être avec un autre, faute de contrat partagé.</li>
+<ul>
+<li><strong>la dérive sémantique en chaîne de délégations</strong> — à mesure qu'une intention est retransmise d'agent en agent, son sens <strong>se déforme insensiblement</strong>, chaque relais réinterprétant un message en langage naturel ;</li>
+<li><strong>l'échec d'ancrage</strong> — un terme n'est pas rattaché au même référent par l'émetteur et le récepteur, <strong>qui croient pourtant s'entendre</strong> ;</li>
+<li><strong>l'ambiguïté non résolue</strong> — un acteur agit sur une interprétation arbitraire <strong>au lieu de demander une clarification</strong>, faute de mécanisme de négociation déclenché ;</li>
+<li><strong>les capacités mal décrites ou mal versionnées</strong> — une description inexacte ou périmée conduit à un mauvais appariement ;</li>
+<li><strong>le non-déterminisme propageant des erreurs non reproductibles</strong> — une faute survenue à une frontière <strong>ne se reproduit pas à l'identique</strong>, ce qui en complique le diagnostic ;</li>
+<li><strong>la perte de portabilité</strong> — une intégration fonctionnelle avec un fournisseur cesse de l'être avec un autre, faute de contrat partagé.</li>
 </ul>
-
 <p>Ces familles forment la trame que le mouvement spécifie axe par axe, en remontant chaque défaillance <strong>au contrat établi — ou défaillant — entre les acteurs</strong>.</p>
-
+<hr />
+<figure class="figure">
+  <img src="../figures/f-07-02-quatre-axes.svg" alt="Figure 7.2 — Les quatre axes de l&#39;interopérabilité agentique et le lieu de traitement de chacun." />
+  <figcaption><strong>Figure 7.2</strong> — Les quatre axes de l'interopérabilité agentique et le lieu de traitement de chacun.</figcaption>
+</figure>
 <h2 id="s73"><span class="sig">§ 7.3</span>Chronologie 2024-2026 : dix-sept mois de consolidation</h2>
-
 <p>Une institution financière ne bâtit pas son architecture sur le produit d'un seul éditeur sans se demander <strong>ce qu'il adviendra s'il change d'avis</strong>. La question n'a rien de théorique : elle est au cœur du risque de tiers, elle figure dans les questionnaires de diligence raisonnable, et <strong>elle décide souvent, seule, de la mise en production</strong>.</p>
-
 <p>C'est pourquoi cette chronologie n'est pas une chronique d'initiés : elle est la <strong>condition préalable</strong> au reste de la somme.</p>
-
 <div class="avert">
   <p><strong>Cette chronologie s'ordonne par protocole, non par date de lancement — et l'ordre importe, parce que les versions v0.1 à v0.5 du plan portaient une flèche « MCP → A2A → AGNTCY » qui était fausse dans les deux lectures.</strong> Elle était fausse comme ordre de lancement, et fausse comme ordre de passage sous fondation. Les deux séquences sont <strong>inverses l'une de l'autre</strong>, et c'est le fait le plus instructif de la section.</p>
 </div>
-
 <p><strong>Lancements.</strong> Le point de départ est <strong>novembre 2024</strong> : publication du protocole agent-outil, une interface client-serveur destinée à l'invocation d'outils et à l'échange de données typées, assortie d'un <strong>cadre d'autorisation</strong> — le protocole naît propriétaire au sens strict : un éditeur, une spécification, un intendant.</p>
-
 <p>L'essaimage est rapide, et <strong>deux initiatives apparaissent presque simultanément en mars 2025</strong> : une <strong>couche d'infrastructure</strong> — annuaires de découverte et transport dédié — explicitement pensée comme complémentaire des protocoles d'échange plutôt que rivale ; et, le <strong>17 mars 2025</strong>, un <strong>protocole de communication entre agents</strong> — l'ACP protocolaire d'IBM Research et du projet BeeAI, sigle toujours qualifié (§ 7.5) —, en version pré-alpha et d'abord conçu comme une extension du protocole agent-outil.</p>
-
 <p>En <strong>avril 2025</strong> paraît le protocole <strong>agent-agent</strong>, qui traite un problème distinct : non plus l'accès d'un agent à ses outils, mais la <strong>délégation de tâches de pair à pair</strong>, au moyen de descripteurs appelés <strong>cartes d'agent</strong>. En <strong>septembre 2025</strong> s'y ajoute un protocole compagnon dédié aux <strong>transactions pilotées par agents</strong>, dont le ch. 10 traite.</p>
-
 <div class="avert">
   <p><strong>Le protocole d'infrastructure de mars 2025 est donc antérieur au protocole agent-agent d'avril 2025.</strong> L'ordre inverse, longtemps répété, ne résiste pas aux dates.</p>
 </div>
-
 <p><strong>Passages sous fondation — et l'ordre s'inverse.</strong> <strong>Juin 2025</strong> : le protocole agent-agent est transféré à une fondation neutre <strong>sous licence permissive</strong>. <strong>29 juillet 2025</strong> : la couche d'infrastructure suit. <strong>29 août 2025</strong> : l'ACP protocolaire <strong>fusionne officiellement</strong> dans le protocole agent-agent — le développement actif cesse, ses actifs y sont versés, des guides de migration sont fournis. <strong>Décembre 2025</strong>, enfin : la gouvernance du protocole agent-outil est transférée à une fondation dédiée, elle-même sous la même faîtière ; son créateur <strong>demeure le créateur, mais cesse d'en être l'unique intendant</strong>.</p>
-
 <p>De novembre 2024 à <strong>avril 2026</strong> — date à laquelle un bilan public de la première année du protocole agent-agent est dressé —, <strong>dix-sept mois</strong> s'écoulent. En dix-sept mois, quatre protocoles nés dans quatre entreprises différentes — le protocole agent-outil, la couche d'infrastructure, l'ACP protocolaire et le protocole agent-agent — ont convergé vers <strong>deux fondations, dont l'une héberge l'autre</strong>. ⚠ <strong>Le cinquième, le protocole de transaction, n'est pas de ce décompte</strong> : il relève d'une autre fondation, que le § 7.4.2 situe.</p>
-
 <div class="avert">
-  <p><strong>Un mot sur ce que cette chronologie a rendu caduc, et c'est le garde-fou R-1 du Vol. II.</strong> Le survey académique de référence de la période (Ehtesham et coll., <strong>mai 2025</strong>) proposait une trajectoire d'adoption séquentielle plaçant l'ACP protocolaire en deuxième étape. <strong>La fusion d'août 2025 a vidé cette étape de sa substance moins de quatre mois après la publication.</strong> Le document conserve toute sa valeur de <strong>jalon historiographique</strong> — il documente ce qu'un observateur informé pouvait raisonnablement croire au printemps 2025 — mais <strong>il ne peut plus servir de guidance d'architecture</strong>. Le ch. 10 § 10.6 en fait son objet. <em>La vitesse à laquelle il s'est périmé est elle-même une donnée sur le domaine, et un avertissement pour la somme.</em></p>
+  <p><strong>Un mot sur ce que cette chronologie a rendu caduc, et c'est le garde-fou R-1 du Vol. II.</strong> L'article de synthèse de référence de la période (Ehtesham et coll., <strong>mai 2025</strong>) proposait une trajectoire d'adoption séquentielle plaçant l'ACP protocolaire en deuxième étape. <strong>La fusion d'août 2025 a vidé cette étape de sa substance moins de quatre mois après la publication.</strong> Le document conserve toute sa valeur de <strong>jalon historiographique</strong> — il documente ce qu'un observateur informé pouvait raisonnablement croire au printemps 2025 — mais <strong>il ne peut plus servir de guidance d'architecture</strong>. Le ch. 10 § 10.6 en fait son objet. <em>La vitesse à laquelle il s'est périmé est elle-même une donnée sur le domaine, et un avertissement pour la somme.</em></p>
 </div>
-
 <div class="avert">
   <p><strong>Et la stabilité d'une gouvernance ne signifie pas l'immobilité d'une spécification</strong> : à la date de gel du Vol. II, une <strong>révision majeure du protocole agent-outil était attendue douze jours plus tard</strong>. Le ch. 8 porte cette réserve comme condition de lecture de son anatomie.</p>
 </div>
-
+<hr />
+<figure class="figure">
+  <img src="../figures/f-07-03-chronologie.svg" alt="Figure 7.3 — Dix-sept mois : les lancements, puis les passages sous fondation — et l&#39;ordre s&#39;inverse." />
+  <figcaption><strong>Figure 7.3</strong> — Dix-sept mois : les lancements, puis les passages sous fondation — et l'ordre s'inverse.</figcaption>
+</figure>
 <h2 id="s74"><span class="sig">§ 7.4</span>Gouvernance comparée : ce que « neutre » veut dire</h2>
-
 <h3>7.4.1 Trois arrangements sous une destination commune</h3>
-
 <p>La destination commune masque <strong>trois arrangements distincts</strong>, et la nuance importe pour qui doit documenter une dépendance technologique dans un dossier de conformité.</p>
-
 <p>Deux protocoles relèvent <strong>directement</strong> de la fondation faîtière ; le troisième relève d'une <strong>fondation dédiée</strong> formée en décembre 2025 et <strong>hébergée par</strong> la première. ⚠ <strong>La différence est de degré, non de nature</strong> : dans les trois cas, la propriété intellectuelle et le processus de décision <strong>quittent l'entreprise fondatrice</strong>. Pour l'architecte, la conséquence pratique est identique — <em>la disparition ou le revirement stratégique du créateur ne fait plus disparaître le protocole</em>.</p>
-
 <p>Encore faut-il préciser ce que « quitter l'entreprise fondatrice » recouvre, car <strong>c'est ici que se joue la valeur du transfert</strong> pour une institution réglementée. Le socle documente un élément décisif : le protocole agent-agent a été versé <strong>sous licence permissive</strong>, irrévocable, assortie d'une <strong>concession expresse de brevets</strong>.</p>
-
 <p>Cette précision, d'apparence technique, porte une <strong>garantie juridique concrète</strong>. L'institution qui construit sur ce protocole n'obtient pas seulement la <em>probabilité</em> qu'il survive à son créateur ; elle obtient le <strong>droit opposable</strong> de continuer à l'utiliser, de le modifier, et — dans l'hypothèse la plus défavorable — <strong>d'en poursuivre elle-même le développement</strong> si la fondation venait à l'abandonner. C'est exactement le type de garantie qu'un dossier de risque de tiers cherche à établir, et <strong>que nulle assurance contractuelle d'un éditeur ne procure au même degré</strong>.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> le passage sous fondation neutre <strong>transforme la nature de la question posée en diligence raisonnable</strong>. Devant un protocole propriétaire, l'institution doit évaluer la solidité financière, la stratégie et les intentions d'une entreprise : un exercice de <strong>prospective</strong>. Devant un protocole sous licence permissive et gouvernance multipartite, elle évalue la vitalité d'un projet et la robustesse de ses règles : un exercice de <strong>constat</strong>. Le socle ne l'établit pas ; il en fournit les éléments — transfert d'intendance, licence, composition du comité.</p>
-
 <p>Le comité de pilotage technique du protocole agent-agent mérite l'examen le plus attentif, parce que <strong>c'est le lieu où se décide concrètement l'évolution</strong>. Le socle en documente la <strong>composition</strong> : huit organisations, dont <strong>les trois grands fournisseurs d'infonuagique public ensemble</strong>, alors qu'ils sont concurrents frontaux sur à peu près tout le reste — et le créateur du protocole <strong>au même titre que les sept autres</strong>.</p>
-
 <p><span class="auteur">Lecture de l'auteur</span> une instance où siègent huit organisations concurrentes, <strong>dont aucune n'est le créateur en position dominante</strong>, offre à un tiers évaluateur une garantie <strong>qualitativement différente</strong> de celle d'un comité consultatif convoqué par un éditeur. ⚠ Le socle établit une <strong>composition</strong>, non un <strong>règlement intérieur</strong> : ni la répartition des droits de vote, ni les règles de décision. <strong>L'inférence porte sur la structure, pas sur la procédure</strong>, et elle mérite d'être vérifiée par toute institution qui en ferait un argument de dossier.</p>
-
 <p>La présence, à ce comité, de l'organisation qui portait l'ACP protocolaire illustre le mécanisme de la consolidation mieux qu'aucune déclaration d'intention : elle <strong>n'y est pas arrivée par adhésion, mais par fusion</strong>. En <strong>mai 2025</strong>, elle présentait encore son protocole comme complémentaire du protocole agent-outil ; <strong>trois mois plus tard</strong>, elle en versait les actifs, arrêtait le développement, et sa responsable entrait au comité de pilotage de l'absorbant. <em>Un concurrent déclaré est devenu un codécideur</em> — trajectoire inverse de la fragmentation que le domaine redoutait, jouée en un trimestre.</p>
-
 <div class="avert">
   <p><strong>De cet épisode découle une règle de rédaction qui vaut pour toute la somme (R-1 du Vol. II) : l'ACP protocolaire ne doit jamais être présenté comme un standard vivant.</strong> Son développement actif a cessé ; il ne subsiste qu'à travers le protocole absorbant et des adaptateurs.</p>
 </div>
-
 <div class="avert">
   <p><strong>Ce qui frappe enfin, c'est la régularité des trajectoires</strong> : quatre mois pour la couche d'infrastructure, deux pour le protocole agent-agent, treize pour le protocole agent-outil — le plus lent des trois. <strong>Aucun des protocoles étudiés n'est demeuré propriétaire au-delà de treize mois.</strong> <span class="auteur">Lecture de l'auteur</span> on peut y lire une conviction partagée du secteur : dans un domaine où la valeur naît de l'interconnexion, <strong>la propriété exclusive d'un protocole détruit plus de valeur qu'elle n'en capte</strong>. Le socle ne l'établit pas.</p>
 </div>
-
 <h3>7.4.2 Les fondations neutres : l'Agentic AI Foundation (Linux Foundation) et la FIDO Alliance</h3>
-
 <p>Le passage d'un protocole du contrôle de son auteur vers une fondation neutre est, dans l'histoire de l'interopérabilité, <strong>le signal de maturation le plus fiable</strong> (ch. 1 § 1.2.2).</p>
-
 <p>La fondation dédiée — l'<strong>Agentic AI Foundation</strong>, constituée sous la <strong>Linux Foundation</strong> — accueille <strong>au même endroit</strong> le protocole agent-outil, un environnement d'exécution d'agents et un format de configuration d'agent (ch. 5 § 5.1.4), c'est-à-dire des contributions de <strong>fournisseurs directement concurrents</strong>. Le mécanisme de la faîtière — comité technique de pilotage, charte de neutralité — <strong>découple la spécification de tout acteur unique</strong>, et c'est ce découplage institutionnel qui <strong>rend crédible</strong> la politique de dépréciation formelle du ch. 8 § 8.3.</p>
-
 <p>Une seconde fondation, la <strong>FIDO Alliance</strong>, spécialisée dans l'authentification, prend une importance qui n'apparaîtra qu'au ch. 10 : c'est elle qui a reçu le <strong>protocole de transaction</strong>, le <strong>28 avril 2026</strong>.</p>
-
 <div class="avert">
   <p><strong>Ce fait est porté par le Vol. I <em>Monographie</em> §3.13.1, au régime [C], et le socle du Vol. II ne le documentait pas</strong> — <em>absence de documentation</em>, <strong>degré 3 de l'échelle R-14 du Vol. III</strong>, et non une négation. Les deux énoncés sont <strong>compatibles</strong>, et le <strong>ch. 10 § 10.1.3</strong> en instruit l'écart.</p>
 </div>
-
 <p>L'analogie volontiers invoquée est celle du <strong>« playbook Kubernetes/CNCF »</strong> (<em>Cloud Native Computing Foundation</em>) : <strong>un projet d'éditeur dominant, donné tôt à une fondation, attire des contributeurs concurrents précisément parce que sa neutralité est garantie</strong>.</p>
-
+<hr />
 <h2 id="s75"><span class="sig">§ 7.5</span>Encadré de désambiguïsation R-8 : la collision « (agentic) control plane » à quatre branches</h2>
-
-<div class="encadre encadre--oeuvre">
-  <span class="encadre__label">Note</span>
-  <p>⚠ <strong>SIÈGE DU GARDE-FOU R-8 POUR TOUTE LA SOMME.</strong> Cet encadré est <strong>posé ici une seule fois</strong>. Le ch. 10, qui reçoit par ailleurs le chapitre source du Vol. II dont il provient, <strong>y renvoie sans le reconstruire</strong> — c'est un partage déclaré (décision 6 du TOC), et l'un des deux écarts que la révision v0.17 du plan a soldés.</p>
+<blockquote>
+<div class="avert">
+  <p><strong>SIÈGE DU GARDE-FOU R-8 POUR TOUTE LA SOMME.</strong> Cet encadré est <strong>posé ici une seule fois</strong>. Le ch. 10, qui reçoit par ailleurs le chapitre source du Vol. II dont il provient, <strong>y renvoie sans le reconstruire</strong> — c'est un partage déclaré (décision 6 du TOC), et l'un des deux écarts que la révision v0.17 du plan a soldés.</p>
 </div>
-
+</blockquote>
 <p>Le sigle <strong>« ACP »</strong> désigne <strong>au moins quatre objets distincts</strong>, et le garde-fou R-8 du Vol. II — comme R-13 du Vol. III — <strong>proscrit son emploi nu dans tout l'ouvrage</strong>. Chaque emploi porte son qualificatif complet. ⚠ <em>« Distincts » ne veut pas dire « tous vivants » : la branche (a) a cessé d'être un standard vivant, et la table le dit.</em></p>
-
 <div class="tableau">
 <table>
-  <thead><tr><th></th><th>Objet</th><th>Statut</th></tr></thead>
-  <tbody>
-    <tr><td><strong>(a)</strong></td><td><strong>l'ACP protocolaire</strong> — <em>Agent Communication Protocol</em> d'IBM Research et BeeAI</td><td>fusionné dans le protocole agent-agent en août 2025 ; ⚠ <strong>jamais un standard vivant</strong> (R-1 du Vol. II)</td></tr>
-    <tr><td><strong>(b)</strong></td><td>l'<strong>Agentic Control Plane</strong> d'un consortium d'institutions financières et de télécommunications</td><td>programme annoncé en juillet 2026 ; traité au Livre III</td></tr>
-    <tr><td><strong>(c)</strong></td><td>l'expression <strong>agentic control plane</strong> employée par <strong>IBM</strong> pour positionner un produit d'orchestration</td><td>positionnement commercial, <strong>à attribuer à IBM à chaque occurrence</strong> ; traité au Livre III</td></tr>
-    <tr><td><strong>(d)</strong></td><td>la <strong>composante ACP</strong> de la couche d'infrastructure agentique</td><td>⚠ <strong>ni intitulé complet ni identité établis</strong> — voir la lacune ci-dessous</td></tr>
-  </tbody>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>Objet</th>
+<th>Statut</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>(a)</strong></td>
+<td><strong>l'ACP protocolaire</strong> — <em>Agent Communication Protocol</em> d'IBM Research et BeeAI</td>
+<td>fusionné dans le protocole agent-agent en août 2025 ; ⚠ <strong>jamais un standard vivant</strong> (R-1 du Vol. II)</td>
+</tr>
+<tr>
+<td><strong>(b)</strong></td>
+<td>l'<strong>Agentic Control Plane</strong> d'un consortium d'institutions financières et de télécommunications</td>
+<td>programme annoncé en juillet 2026 ; traité au Livre III</td>
+</tr>
+<tr>
+<td><strong>(c)</strong></td>
+<td>l'expression <strong>agentic control plane</strong> employée par <strong>IBM</strong> pour positionner un produit d'orchestration</td>
+<td>positionnement commercial, <strong>à attribuer à IBM à chaque occurrence</strong> ; traité au Livre III</td>
+</tr>
+<tr>
+<td><strong>(d)</strong></td>
+<td>la <strong>composante ACP</strong> de la couche d'infrastructure agentique</td>
+<td>⚠ <strong>ni intitulé complet ni identité établis</strong> — voir la lacune ci-dessous</td>
+</tr>
+</tbody>
 </table>
 </div>
-
 <p class="legende">Tableau 7.3 — Les quatre branches de la collision « ACP » / « (agentic) control plane », et le statut de chacune.</p>
-
 <div class="avert">
   <p><strong>Le socle n'établit l'absence de lien que pour un seul de ces couples</strong>, et il faut être précis sur ce que « distincts » recouvre. Une entrée du socle du Vol. II pose que l'<em>Agentic Control Plane</em> du consortium <strong>n'a aucun lien</strong> avec l'ACP protocolaire — <strong>pure homonymie</strong>, et c'est un <strong>fait négatif établi</strong>. Sur le couple <strong>(a)/(c)</strong>, en revanche, <strong>le socle ne dit rien de tel, et le silence mérite d'être relevé plutôt que comblé</strong> : ce sont <strong>deux objets d'IBM</strong>, et rien n'établit qu'ils soient étrangers l'un à l'autre — <strong>ni qu'ils soient liés</strong>. C'est une <strong>absence de documentation</strong> au sens de R-14 du Vol. III, <strong>non un fait négatif vérifié</strong>.</p>
 </div>
-
 <div class="avert">
   <p><strong>Lacune héritée, portée et non comblée</strong> <em>(PRD du Vol. II §10.7)</em>. La <strong>quatrième branche (d)</strong> est relevée lors de la rédaction du chapitre source : le socle mentionne une « composante ACP » propre à la couche d'infrastructure, dont des <strong>analyses tierces</strong> relèvent un chevauchement avec le protocole agent-agent. <strong>Le socle n'établit ni son intitulé complet, ni son identité — ou sa non-identité — avec l'ACP protocolaire.</strong> En l'absence de source primaire, la somme <strong>ne tranche pas</strong> : elle désigne cet objet par « la composante ACP de la couche d'infrastructure », <strong>toujours qualifié</strong>, et s'interdit de l'agréger aux trois autres.</p>
 </div>
-
 <p>Cette lacune est <strong>portée ici, encadrée, et renvoyée au ch. 49</strong> pour son état final. Elle n'est pas comblée — et la combler par une analyse tierce serait précisément la faute que la règle du dépôt proscrit : <em>aucune lacune déclarée ne se comble par une source de moindre qualité</em>.</p>
-
+<hr />
+<figure class="figure">
+  <img src="../figures/f-07-05-collision-acp.svg" alt="Figure 7.5 — Les quatre branches de la collision « ACP » / « (agentic) control plane », et le statut de chacune." />
+  <figcaption><strong>Figure 7.5</strong> — Les quatre branches de la collision « ACP » / « (agentic) control plane », et le statut de chacune.</figcaption>
+</figure>
 <h2 id="s76"><span class="sig">§ 7.6</span>Lecture critique des métriques d'adoption : « soutien » n'est pas « production »</h2>
-
 <p>Il reste à examiner <strong>les chiffres par lesquels ces protocoles annoncent leur réussite</strong>, et à le faire avec une sévérité que la littérature promotionnelle ne s'impose pas.</p>
-
 <p>Les données disponibles sont les suivantes, <strong>et chacune est attribuée à sa source, comme elle doit l'être à chaque occurrence</strong> (PRD du Vol. II §8.2.1). En <strong>avril 2026</strong>, <strong>la Linux Foundation — fondation faîtière des deux protocoles — annonce que plus de 150 organisations déclarent leur soutien</strong> au protocole agent-agent, contre plus de 50 au lancement. Un <strong>communiqué de la Linux Foundation du 29 juillet 2025</strong> fait état de <strong>plus de 65 entreprises</strong> déclarant leur soutien à la couche d'infrastructure.</p>
-
 <div class="avert">
   <p><strong>Ces deux chiffres ne se rapprochent pas</strong> : plus de huit mois les séparent, et le socle n'enregistre <strong>aucune actualisation ultérieure</strong> du second. Les comparer serait fautif.</p>
 </div>
-
 <p>Ces chiffres sont réels, datés, adossés à des communiqués officiels. Ils sont aussi — <strong>et c'est là tout le problème</strong> — <strong>auto-déclarés</strong>.</p>
-
 <p><strong>Trois réserves s'imposent, par ordre de gravité croissante.</strong></p>
-
 <p><strong>La première : la notion même d'« organisation de soutien » n'est définie nulle part.</strong> Elle ne distingue pas l'entreprise qui a inscrit son logo sur une page d'annonce de celle qui a affecté une équipe d'ingénierie au protocole pendant un an. <em>Une métrique dont l'unité n'est pas définie ne mesure rien de vérifiable</em> ; elle indique une <strong>direction</strong>, pas une <strong>grandeur</strong>. Un responsable de la conformité qui recevrait un tel chiffre à l'appui d'une décision d'architecture serait fondé à demander ce qu'on y a compté — <strong>et ne trouverait pas la réponse dans la source</strong>.</p>
-
 <p><strong>La deuxième : le soutien déclaré ne vaut pas déploiement en production.</strong> C'est la réserve centrale, et elle traverse toute la somme. Un architecte qui lirait le chiffre <strong>annoncé par la Linux Foundation en avril 2026</strong> comme « 150 systèmes agentiques interopérables en exploitation » <strong>commettrait une erreur de catégorie</strong>. Le Livre III établit que le nombre d'institutions financières canadiennes documentant par sources primaires un déploiement agentique <strong>se compte sur les doigts de deux mains</strong>. ⚠ <em>L'écart entre les deux ordres de grandeur — la centaine d'organisations qui déclarent leur soutien à un protocole mondial, la poignée d'institutions qui documentent une mise en production — est l'un des enseignements les plus robustes de la somme.</em></p>
-
 <p><strong>La troisième porte sur la croissance elle-même.</strong> Le passage de plus de 50 à plus de 150 organisations en douze mois, <strong>tel que la Linux Foundation le rapporte en avril 2026</strong>, est un triplement apparent. Mais <strong>un triplement d'une grandeur non définie reste non défini</strong>. La progression établit qu'un nombre croissant d'organisations jugent utile d'<strong>associer publiquement leur nom</strong> au protocole : information sur la <strong>dynamique</strong> du domaine, non sur sa <strong>maturité technique</strong>.</p>
-
 <p><strong>Faut-il pour autant écarter ces chiffres ? Non — et il serait malhonnête de le faire.</strong> Ils constituent le meilleur indicateur public disponible de <strong>l'attention</strong> que le secteur porte à ces protocoles, et cette attention est elle-même un fait pertinent pour une institution qui évalue le risque de pérennité d'un standard. Un protocole auquel <strong>la Linux Foundation recense plus de 150 organisations déclarant leur soutien</strong> a peu de chances d'être abandonné dans les dix-huit mois. <em>C'est exactement ce que ces chiffres établissent, et rien de plus.</em></p>
-
 <div class="avert">
   <p><strong>Le lecteur exigeant en retiendra la portée exacte.</strong> La <strong>composition du comité de pilotage technique</strong> — huit organisations concurrentes — est un indicateur de gouvernance <strong>nettement plus solide</strong> que le décompte des soutiens : ses membres sont <strong>nommés</strong>, leur engagement est <strong>vérifiable</strong> dans les dépôts publics, et leur nombre restreint <strong>interdit la comptabilité complaisante</strong>. <em>Quand la somme devra juger de la pérennité d'un protocole, elle regardera qui décide, non combien applaudissent.</em></p>
 </div>
-
 <p><strong>Ce que ce chapitre établit — trois acquis pour la suite du mouvement.</strong></p>
-
 <p><em>(1)</em> <strong>La couche protocolaire agentique est sortie du régime propriétaire</strong> : aucun des quatre protocoles retenus ici n'est gouverné par son créateur seul. La restriction s'étend au <strong>protocole de transaction, mais par une seconde fondation</strong> — la <strong>FIDO Alliance</strong>, qui l'a reçu le <strong>28 avril 2026</strong> (Vol. I <em>Monographie</em> §3.13.1, régime <strong>[C]</strong> ; ch. 10 § 10.1.3). ⚠ <strong>Le socle du Vol. II, lui, n'en documentait aucun transfert</strong> : <em>absence de documentation</em>, et <strong>non un fait négatif vérifié</strong> — une lacune de couverture ouverte à son registre, non une propriété établie ; les deux énoncés sont <strong>compatibles</strong>. ⚠ <strong>Pour la thèse, la conséquence est une précision, non une révision</strong> : la couche protocolaire est sortie du régime propriétaire <strong>par plusieurs fondations distinctes, organisées par axe</strong>, non par une seule.</p>
-
 <p><em>(2)</em> <strong>La consolidation ne s'est pas faite par coexistence polie mais par fusion réelle.</strong></p>
-
 <p><em>(3)</em> <strong>Les métriques publiées mesurent l'attention, non la production.</strong></p>
-
 <p><strong>Ce que ce chapitre ne dit pas mérite d'être énoncé aussi clairement.</strong> Il ne dit pas que ces protocoles sont <strong>sûrs</strong> : la gouvernance neutre ne préjuge en rien de la robustesse d'une implémentation, et le ch. 11 expose les surfaces d'attaque que le socle <strong>nomme</strong> — sans en dater la documentation ni en établir la mécanique. Il ne dit pas que les protocoles agent-outil et agent-agent soient interchangeables ni concurrents : le ch. 8 § 8.6 examine la doctrine de complémentarité qui les articule, <strong>et par qui elle est déclarée</strong>. Il ne dit pas enfin que la neutralité de la gouvernance <strong>suffise</strong> à emporter la décision d'une institution réglementée — c'est l'objet du Livre III que d'établir tout ce qu'il faut y ajouter.</p>
-
 <p><em>La consolidation protocolaire est le point de départ du mouvement. Elle n'en est pas la conclusion.</em></p>
+<hr />
 
 <footer class="pied">
   <p><strong>Vol. IV — <em>Interopérabilité et Orchestration en Entreprise Agentique</em></strong> · Livre I, chapitre 7. Compendium intégral des trois monographies du dépôt <em>Agentique</em>, André-Guy Bruneau, M.Sc. IT.</p>
-
   <p><strong>Avertissements.</strong> Aucun avis juridique ni conseil d'investissement. Aucune recommandation de fournisseur. Les statuts et versions de normes cités portent le gel de leur source et non celui de la somme (gel unique : 27 juillet 2026).</p>
 </footer>
 

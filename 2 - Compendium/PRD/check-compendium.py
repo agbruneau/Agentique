@@ -24,7 +24,7 @@ C'est un contrôle **de forme**, exécuté sur des **motifs de ligne** et des
 collation de fond de la porte G-4 (lacune de couverture / contradiction), **ni**
 la relecture dédiée que CA-IV-11 et CA-IV-13 exigent d'un tiers — et que **D-6
 ne fournit pas**. *Un contrôle de forme qui passe n'atteste pas qu'une pièce est
-recevable ; il atteste qu'elle ne porte pas les sept classes de défaut ci-dessous.*
+recevable ; il atteste qu'elle ne porte pas les dix classes de défaut ci-dessous.*
 
 Deux verdicts, et la distinction est doctrinale
 ------------------------------------------------
@@ -35,7 +35,8 @@ Deux verdicts, et la distinction est doctrinale
   supprimé est une spécification.* Chaque désactivation porte son **motif
   chiffré** et sa **condition de réactivation**.
 
-Domaine : les cinquante pièces `NN-slug.md` sous `2 - Compendium/Livre */`.
+Domaine : les cinquante pièces `NN-slug.md` sous `2 - Compendium/Livre */` —
+**et, pour P10 seul, tout le markdown du compendium**, gouvernance comprise.
 Sortie 0 si tout passe, 1 sinon.
 """
 
@@ -320,6 +321,33 @@ RENVOI = re.compile(r"(.{0,70}?)\bch\.\s*(\d{1,3})\b(.{0,25})", re.S)
 MARQUEUR_SOURCE = re.compile(r"Vol\.\s*I{1,3}\b|Monographie|Synthèse|PRDPlan")
 CORRESPONDANCE_GELEE = re.compile(r"\bancien(?:s|ne|nes)?\s*$|\bfusion v0\.\d+\s*(?:des|du)\s*$")
 
+# --------------------------------------------------------------------------
+# P9 — unicité des identifiants de remontée (PRD §13).
+#
+# Le PRD §13 consigne l'incident et écrit la règle : la série `R-IV-nnn` est
+# **partagée**, elle n'a **pas d'allocateur**, et deux passes parallèles y ont
+# pris **dix numéros deux fois** le 27 juillet 2026 (R-IV-60 à R-IV-69). La
+# règle est écrite ; **aucun exécutable ne la portait** — R-IV-75 est close « à
+# moitié » pour ce motif exact, et vingt-deux pièces déclarent depuis renoncer à
+# allouer un numéro faute de pouvoir constater le maximum. *Une règle sans
+# contrôle est une consigne : elle tient tant que personne ne se trompe.*
+#
+# Ce que le contrôle mesure, et pourquoi il ne mesure pas plus.
+#   - Une **ouverture** est un élément de liste de la forme `- **R-IV-NN — …`.
+#     C'est la forme que les cinquante pièces emploient sans exception.
+#   - Une **clôture** ou un **renvoi** porte la même forme : les pièces closent
+#     leurs remontées dans une seconde liste, et citent celles des autres. Ils
+#     sont donc écartés par leur incipit (« close », « soldée », « voir le »,
+#     « reconduite ») — le seul discriminant que la forme offre.
+#   - Le contrôle **échoue** sur une collision : un même numéro ouvert par deux
+#     pièces distinctes. Il **rapporte** son domaine, pour qu'un cardinal en
+#     baisse se voie — *un contrôle dont le domaine se vide en silence atteste
+#     l'absence de son objet, non son respect.*
+# --------------------------------------------------------------------------
+OUVERTURE_REMONTEE = re.compile(r"^[^\S\n]*(?:☑|◐|☐|⚠)?[^\S\n]*-[^\S\n]+"
+                                r"\*\*R-IV-(\d+)[^\S\n]*(?:—|–|-)[^\S\n]*(.{0,60})", re.M)
+ISSUE_DE_REMONTEE = re.compile(r"clos|sold|voir le|reconduite", re.I)
+
 
 def controler():
     echecs, rapport = [], []
@@ -332,6 +360,8 @@ def controler():
         echecs.append("[P4] socle-consolide.md est absent — les identifiants ne résolvent contre rien.")
 
     nus_par_piece, exclus_cites, decomptes_rapportes = {}, [], []
+    frontiere_de_corps = []  # P5 — écarts imputables au seul bloc de thèse
+    ouvertures = {}  # P9 — numéro de remontée → pièces qui l'ouvrent
 
     for piece in corpus:
         nom = piece.relative_to(RACINE).as_posix()
@@ -363,7 +393,21 @@ def controler():
         # ---- P3 : identifiants de socle préfixés de leur volume -------
         # Segmentation par phrase, doctrine du contrôle C8 de `check-toc.py` :
         # la mention de volume gouverne la phrase où elle vit, pas le document.
-        if "Vol. II" in b and "Vol. III" in b:
+        #
+        # ⚠ Garde à FRONTIÈRE (2 septembre 2026), et la correction n'est pas
+        # cosmétique. La forme antérieure était `"Vol. II" in b and "Vol. III" in b` :
+        # « Vol. II » étant un PRÉFIXE de « Vol. III », le premier terme était vrai
+        # dès que le second l'était, et la garde se réduisait à « la pièce cite le
+        # Vol. III ». Elle rangeait donc parmi les pièces MIXTES neuf pièces qui ne
+        # citent, dans leur corps, que le Vol. III — où un `F-xx` nu n'est pas
+        # indécidable, puisqu'une seule série y est en jeu.
+        # **Effet mesuré de la correction** : le rapport passe de **674 emplois sur
+        # 29 pièces** à **524 sur 26**. Les trois pièces qui en sortent sont les
+        # ch. 13 (2 emplois), ch. 18 (44) et ch. 21 (104) — *le ch. 21 portait à lui
+        # seul un sixième du cardinal rapporté depuis le 28 juillet 2026.*
+        # ⚠ Le cardinal « 670 » que le PRD §7.1 cite quatre fois est celui de la
+        # garde fautive : sa re-mesure appartient à la passe qui touche le PRD.
+        if re.search(r"Vol\. II(?!I)", b) and "Vol. III" in b:
             nus = 0
             for seg in re.split(r"[.;|\n]", segments(sans_citations(b))):
                 for m in re.finditer(r"\b[FH]-\d{2,3}[a-z]?\b", seg):
@@ -404,8 +448,26 @@ def controler():
                     echecs.append(
                         f"[P5] {ligne} — décompte annoncé sur le marqueur littéral de "
                         f"l'identifiant (décision 16a du TOC).")
+                elif len(re.findall(r"\b" + re.escape(ident) + r"\b",
+                                    apres_la_these(b))) == n:
+                    # La pièce compte le corps À PARTIR DE LA PREMIÈRE SECTION ;
+                    # le script le compte à partir de la thèse citée. Les deux
+                    # lectures sont défendables et **le corpus ne les a pas
+                    # départagées** : le ch. 44 déclare compter « thèse citée et
+                    # son commentaire de collation compris », ces pièces-ci non.
+                    frontiere_de_corps.append(
+                        f"{ligne} — l'écart est ENTIÈREMENT dans le bloc de thèse "
+                        f"et de collation, que la pièce exclut et que le script inclut.")
                 else:
                     decomptes_rapportes.append(ligne)
+
+        # ---- P9 : relevé des ouvertures de remontée -------------------
+        # Sur le texte entier : la note de statut, qui porte les remontées, vit
+        # hors du corps que P5 mesure — l'y chercher ne trouverait rien.
+        for m in OUVERTURE_REMONTEE.finditer(texte):
+            if ISSUE_DE_REMONTEE.search(m.group(2)):
+                continue
+            ouvertures.setdefault(m.group(1), set()).add(nom)
 
         # ---- P7 : les formulations imposées du PRD §8 -----------------
         propre = sans_citations(b)
@@ -422,6 +484,18 @@ def controler():
 
     # ---- P8 : le seuil de J-IV-2 ---------------------------------------
     echecs += controler_resolution_du_toc()
+
+    # ---- P10 : la forme des tableaux, tout le markdown ----------------
+    echecs += controler_tableaux()
+
+    # ---- P9 : unicité des identifiants de remontée (PRD §13) -----------
+    for numero, pieces_ouvrantes in sorted(ouvertures.items(), key=lambda x: int(x[0])):
+        if len(pieces_ouvrantes) > 1:
+            echecs.append(
+                f"[P9] « R-IV-{numero} » est ouvert par {len(pieces_ouvrantes)} pièces — "
+                f"{', '.join(sorted(pieces_ouvrantes))}. La série est partagée et sans "
+                f"allocateur (PRD §13) : une plage neuve se prend au-dessus du maximum "
+                f"CONSTATÉ sur pièces, jamais au-dessus du maximum supposé.")
 
     # ---- Les trois rapports déclaratifs -------------------------------
     #
@@ -451,6 +525,30 @@ def controler():
             f"leur réserve, jamais versables**, et les pièces concernées portent la réserve. "
             f"L'écart devient bloquant le jour où l'une d'elles porte une thèse.\n"
             + "\n".join(f"      {n}  ←  {i}" for n, i in exclus_cites))
+    if ouvertures:
+        numeros = sorted(int(n) for n in ouvertures)
+        rapport.append(
+            f"[P9 — DOMAINE] {len(numeros)} ouvertures de remontée relevées sur les cinquante "
+            f"pièces, de R-IV-{numeros[0]:02d} à R-IV-{numeros[-1]}, **aucune collision**.\n"
+            f"    ⚠ Le domaine se déclare parce qu'il borne le contrôle : sont relevés les "
+            f"éléments de liste de la forme « - **R-IV-NN — », **hors clôtures et renvois**, "
+            f"écartés par leur incipit. Une remontée qu'une pièce n'annonce QUE sous sa forme "
+            f"close échappe donc au relevé — c'est le cas des cinq du ch. 50, ouvertes et "
+            f"soldées dans la même liste. **Réactivation d'un domaine plein** : quand chaque "
+            f"pièce ouvrira ses remontées sous une rubrique nommée avant de les solder.")
+    if frontiere_de_corps:
+        rapport.append(
+            f"[P5 — CONVENTION] {len(frontiere_de_corps)} cardinaux dont l'écart s'explique "
+            f"ENTIÈREMENT par la frontière du corps, non par une erreur de mesure.\n"
+            f"    ⚠ Deux lectures coexistent dans le corpus et **aucune décision ne les "
+            f"départage**. La décision 16a exclut « en-tête et note de statut » : ce script "
+            f"commence donc à la thèse citée. Ces pièces-ci comptent à partir de la première "
+            f"section ; le **ch. 44** déclare au contraire compter « thèse citée et son "
+            f"commentaire de collation compris, comme l'appareil le mesure ». *Les deux sont "
+            f"défendables, et c'est le problème : une convention non tranchée produit des "
+            f"attestations justes qui se contredisent.* **Réactivation** : quand la décision 16 "
+            f"dira où commence le corps — l'écart tombe alors d'un côté ou de l'autre.\n"
+            + "\n".join(f"      {x}" for x in frontiere_de_corps))
     if decomptes_rapportes:
         rapport.append(
             f"[P5 — DÉCLARATIF] {len(decomptes_rapportes)} cardinaux d'en-tête que le décompte "
@@ -464,6 +562,25 @@ def controler():
             + "\n".join(f"      {x}" for x in decomptes_rapportes))
 
     return echecs, rapport
+
+
+PREMIERE_SECTION = re.compile(r"^##\s", re.M)
+
+
+def apres_la_these(corps_de_piece):
+    """Le corps à partir de la PREMIÈRE SECTION — thèse et collation exclues.
+
+    ⚠ Cette seconde lecture n'est pas une commodité : elle sert à *imputer* un
+    écart de cardinal. `corps()` commence à la thèse citée, parce que la
+    décision 16 exclut « en-tête et note de statut » et rien d'autre ; plusieurs
+    pièces comptent, elles, à partir de la première section. **Quand l'écart
+    déclaré/mesuré s'annule sous cette seconde lecture, la pièce n'a pas mal
+    compté : elle a compté un autre domaine** — et le rapport le dit au lieu de
+    la ranger avec celles qui se trompent. *Un rapport qui mêle une divergence
+    de convention et une erreur de mesure enseigne à ignorer les deux.*
+    """
+    m = PREMIERE_SECTION.search(corps_de_piece)
+    return corps_de_piece[m.start():] if m else corps_de_piece
 
 
 def segments(texte):
@@ -604,6 +721,50 @@ def controler_resolution_du_toc():
     return []
 
 
+# P10 — la forme des tableaux, sur tout le markdown du compendium.
+#
+# ⚠ **Classe relevée le 2 septembre 2026, et rien ne la voyait.** Trois défauts
+# tenaient dans le dépôt : deux rangées finissant par « | | » — une colonne vide
+# surnuméraire au §1 du PRD et au bandeau du TOC — et un span de code portant des
+# pipes littéraux à l'en-tête du ch. 49 (`2030|2035|post-quantique|IR 8547`).
+# *Pandoc les absorbe ; GFM les lit comme des séparateurs et casse la rangée en
+# silence* — le dépôt se lit sur GitHub autant qu'il se compose, et un tableau
+# faux à la lecture est un tableau faux.
+#
+# Le contrôle est littéral : dans un tableau, le nombre de pipes d'une rangée
+# égale celui de son séparateur. Les pipes échappés (« \| ») ne comptent pas —
+# c'est la forme correcte pour un pipe littéral, code compris.
+#
+# Domaine : TOUT le markdown du compendium, pas seulement les cinquante pièces.
+# *Les deux tiers des défauts trouvés étaient dans la gouvernance, et un contrôle
+# qui s'arrête au corpus laisse le plan écrire ce qu'il interdit aux pièces.*
+SEPARATEUR = re.compile(r"^\s*\|[\s:|-]+\|\s*$")
+
+
+def controler_tableaux():
+    """P10 — chaque rangée d'un tableau porte les colonnes de son séparateur."""
+    echecs = []
+    for f in sorted(RACINE.rglob("*.md")):
+        attendu = None
+        for i, ligne in enumerate(f.read_text(encoding="utf-8").splitlines(), 1):
+            if SEPARATEUR.match(ligne):
+                attendu = ligne.count("|")
+                continue
+            if not ligne.strip():
+                attendu = None
+                continue
+            if attendu is None or not ligne.lstrip().startswith("|"):
+                continue
+            vu = ligne.replace(r"\|", "").count("|")
+            if vu != attendu:
+                echecs.append(
+                    f"[P10] {f.relative_to(RACINE).as_posix()}:{i} — la rangée porte "
+                    f"{vu} pipes non échappés, son séparateur en porte {attendu}. "
+                    f"Un pipe littéral s'écrit « \| », span de code compris : "
+                    f"pandoc l'absorbe, GFM casse la rangée en silence.")
+    return echecs
+
+
 def main():
     echecs, rapport = controler()
     for bloc in rapport:
@@ -614,7 +775,7 @@ def main():
         for e in echecs:
             print(f"  {e}")
         return 1
-    print(f"OK — les {len(pieces())} pièces tiennent (P1-P8), "
+    print(f"OK — les {len(pieces())} pièces tiennent (P1-P10), "
           f"{len(rapport)} rapport(s) déclaratif(s) ci-dessus.")
     return 0
 

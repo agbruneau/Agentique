@@ -827,6 +827,8 @@ pièces**. *Prendre un numéro sous cette contrainte reproduirait la collision d
   quand la somme en fait un siège » —, et **une signature d'appareil ne se réécrit pas depuis une pièce
   qui n'est pas le siège**.* **Demande remontée** : aligner le ch. 18 § 18.1 et sa signature dans la même
   passe, jamais l'un sans l'autre.
+
+  ☑ **CONSOMMÉE le 2 septembre 2026, passe d'audit.** Le **ch. 18 § 18.1** et la **signature** de [`check-sieges.py`](../PRD/check-sieges.py) écrivent l'un et l'autre **OpenID Foundation**, et le harnais est rejoué dans le même commit. ⚠ **La passe est allée plus loin que la demande, et sur une règle déjà prise** : la **décision 18** fait primer la citation nominative, et *huit des neuf rangées de la table 18.1 étaient encore des périphrases de la décision 15a qu'elle a renversée*. Les huit noms sont **restitués depuis la source** — le Vol. III ch. 11 les porte en toutes lettres — et non par inférence : W3C, Decentralized Identity Foundation, NIST — NCCoE, NIST — CAISI, Akamai, et les deux *Internet-Drafts* par leur identifiant. *La décision 18 a été prise le 30 juillet 2026 ; elle n'avait été appliquée à aucune table du corpus.*
 - **Non bloquante, de tension entre deux règles opposables, non arbitrée ici.** Au § 30.3.2, la date de
   disponibilité générale d'une offre d'identité d'agent est attribuée à « **son éditeur** ». ⚠ **La
   décision 15b(i) écarte nommément « un éditeur » comme attribution ; le PRD Vol. II §8.4 — neutralité
