@@ -16,11 +16,13 @@ page de présentation ni de publication GitHub Pages — voir « Structure du do
 > « Interopérabilité et Orchestration en Entreprise Agentique ». *Les deux se citent désormais par
 > leur seul intitulé.*
 
-> ⚠ **Dépôt clos et final le 8 août 2026** — décision d'auteur **D-13**
+> ⚠ **Dépôt clos et final — clôture portée au 1er septembre 2026** — décision d'auteur **D-13**, prise le 8 août 2026
 > ([`2 - Compendium/PRD/PRD.md`](../../2%20-%20Compendium/PRD/PRD.md) v0.17 §16). Aucune passe
 > n'est plus prévue, sur ce volume ni sur aucun autre du dépôt : ce qui suit décrit un état
 > **définitif**. ⚠ *Clore n'est ni terminer ni publier* — rien n'est levé, rien n'est soldé, et
 > ce qui restait dû devient un **manque définitif, daté et écrit**.
+>
+> ⚠ **La date de clôture a porté « 8 août 2026 » jusqu'au 3 septembre 2026, et elle confondait deux choses** : *une décision se date de sa prise, une clôture de l'état qu'elle arrête.* **D-13 reste prise le 8 août 2026** ; **la clôture court du 1er septembre 2026**, dernier jour où une pièce est entrée au dépôt — l'article de `6 - Article/`, commit `da6255b`. ⚠ *La passe d'audit et de fond du 2 septembre 2026 (D-15, D-16) lui est postérieure d'un jour : elle porte sur l'appareil, le plan et le domaine de livraison du Vol. IV, et **aucune pièce n'y entre ni n'en sort**.* Motif complet au **PRD §16.5**.
 
 > **Où vous êtes.** Ce dossier est le **deuxième des trois volumes** du corpus, dans le dépôt
 > [*Agentique*](../../README.md). Il **présuppose le volume I**
@@ -32,7 +34,7 @@ page de présentation ni de publication GitHub Pages — voir « Structure du do
 
 | Champ | Valeur |
 |---|---|
-| Livrable | millésime **`mono-v1.0`** — publiée le 17 juillet 2026 ; ☑ **l'étiquette git `mono-v1.0` est posée le 8 août 2026, au commit de clôture du dépôt** (décision d'auteur, passe D-13). ⚠ *Elle l'a été vingt-deux jours après le millésime éditorial qu'elle nomme, et elle marque donc l'arbre clos, non l'arbre du 17 juillet : `git show mono-v1.0` le montre.* Les documents de gouvernance du volume qui l'annonçaient posée depuis juillet **cessent d'être faux sans devenir exacts pour autant** |
+| Livrable | millésime **`mono-v1.0`** — publiée le 17 juillet 2026 ; ☑ **l'étiquette git `mono-v1.0` est posée le 8 août 2026, au commit où D-13 est prise** (décision d'auteur, passe D-13). ⚠ *Elle l'a été vingt-deux jours après le millésime éditorial qu'elle nomme, et elle marque donc l'arbre du 8 août, non l'arbre du 17 juillet : `git show mono-v1.0` le montre.* ⚠⚠ **Et elle ne marque pas davantage l'arbre clos** : *la clôture est portée au 1er septembre 2026* — l'étiquette est restée sur l'arbre de la prise, et **aucune étiquette ne porte l'état arrêté**. Les documents de gouvernance du volume qui l'annonçaient posée depuis juillet **cessent d'être faux sans devenir exacts pour autant** |
 | Volumétrie | **92 056 mots**, 29 pièces (24 chapitres, avant-propos, annexes A-D) — commande de référence [PRDPlan §4.2](prd/PRDPlan.md) (corps borné, jetons alphanumériques, locale C), rejouée sur les 29 pièces le 10 août 2026. ⚠ **92 059 au 17 juillet 2026**, chiffre que l'[index de lecture](monographie/README.md) porte encore à sa date : le commit `659241b` a retiré **trois jetons du corps** de trois pièces (§ 6.2, § 13.2, glossaire de l'annexe D) au renommage du volume — *l'écart touche les deux commandes de décompte, non la seule `decompte.sh`* |
 | Rendu | `Monographie.pdf` **387 p.** (article de synthèse retiré du dossier le 22 juillet 2026) |
 | Gel de l'information | 16 juillet 2026 (22 pièces) · 17 juillet 2026 (7 pièces) |

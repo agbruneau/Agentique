@@ -14,10 +14,12 @@ huit autres restent à v0.23, qui est la version d'où ils ont été copiés et 
 bougé. *Une étiquette de citation date la copie, pas la lecture du fichier.* En cas d'écart entre une pièce de ce dossier et le TOC, **le TOC prime** — sauf déviation
 fondée, qui se déclare (décision 8 du TOC) et se remonte, jamais se corrige au plan depuis ici.
 
-## ⚠ Le dépôt est CLOS depuis le 8 août 2026 — et « clos » n'est ni « terminé » ni « publiable »
+## ⚠ Le dépôt est CLOS, sa clôture portée au 1er septembre 2026 — et « clos » n'est ni « terminé » ni « publiable »
 
-La décision d'auteur **D-13** ([PRD **v0.17** §16](../PRD/PRD.md), [TOC **v0.33**](../PRD/TOC.md))
-**clôt la passe de révision ouverte par D-11** le 30 juillet 2026 — *close, non achevée* — et
+⚠ **La date de clôture a porté « 8 août 2026 » jusqu'au 3 septembre 2026, et elle confondait deux choses** : *une décision se date de sa prise, une clôture de l'état qu'elle arrête.* **D-13 reste prise le 8 août 2026** ; **la clôture court du 1er septembre 2026**, dernier jour où une pièce est entrée au dépôt — l'article de `6 - Article/`, commit `da6255b`. ⚠ *La passe d'audit et de fond du 2 septembre 2026 (D-15, D-16) lui est postérieure d'un jour : elle porte sur l'appareil, le plan et le domaine de livraison du Vol. IV, et **aucune pièce n'y entre ni n'en sort**.* Motif complet au **PRD §16.5**.
+
+La décision d'auteur **D-13**, prise le 8 août 2026 ([PRD **v0.17** §16](../PRD/PRD.md),
+[TOC **v0.33**](../PRD/TOC.md)), **clôt la passe de révision ouverte par D-11** le 30 juillet 2026 — *close, non achevée* — et
 **clôt le dépôt entier**. **Trois conséquences pour ce Livre.** *(1)* **Aucune passe n'est plus
 prévue**, ni de rédaction, ni de révision, ni d'appareil : ce qui suit décrit un état **définitif**.
 *(2)* ⚠ **Rien n'est levé, et rien n'est soldé** : le régime de D-10 ci-dessous est inchangé et

@@ -3,11 +3,13 @@
 📖 **Lire :** [`Monographie.pdf`](Monographie.pdf) (**427 p.**) dans ce dossier.
 ⚠ **Rédigé de bout en bout, non publiable en l'état** — voir « État » plus bas.
 
-> ⚠ **Dépôt clos et final le 8 août 2026** — décision d'auteur **D-13**
+> ⚠ **Dépôt clos et final — clôture portée au 1er septembre 2026** — décision d'auteur **D-13**, prise le 8 août 2026
 > ([`2 - Compendium/PRD/PRD.md`](../../2%20-%20Compendium/PRD/PRD.md) v0.17 §16). Aucune passe
 > n'est plus prévue, sur ce volume ni sur aucun autre du dépôt : ce qui suit décrit un état
 > **définitif**. ⚠ *Clore n'est ni terminer ni publier* — rien n'est levé, rien n'est soldé, et
 > ce qui restait dû devient un **manque définitif, daté et écrit**.
+>
+> ⚠ **La date de clôture a porté « 8 août 2026 » jusqu'au 3 septembre 2026, et elle confondait deux choses** : *une décision se date de sa prise, une clôture de l'état qu'elle arrête.* **D-13 reste prise le 8 août 2026** ; **la clôture court du 1er septembre 2026**, dernier jour où une pièce est entrée au dépôt — l'article de `6 - Article/`, commit `da6255b`. ⚠ *La passe d'audit et de fond du 2 septembre 2026 (D-15, D-16) lui est postérieure d'un jour : elle porte sur l'appareil, le plan et le domaine de livraison du Vol. IV, et **aucune pièce n'y entre ni n'en sort**.* Motif complet au **PRD §16.5**.
 
 > ⚠ **L'APPAREIL DE VÉRIFICATION DE CE VOLUME A ÉTÉ SUPPRIMÉ le 8 août 2026**, par un commit
 > **postérieur à la clôture** (`659241b`). Le répertoire `verification/` et ses **30 rapports** —
@@ -96,7 +98,8 @@ vers un chapitre amont, soit une inférence à marquer.
 
 ⚠ **Rédigé ne vaut pas publiable, et c'est le seul énoncé d'état qui compte.** Les 34 pièces sont
 rédigées, relues adversarialement et corrigées — **jalon J-5 atteint le 22 juillet 2026** —, et la
-phase de finalisation **P5 est CLOSE SANS ÊTRE ACHEVÉE** depuis la clôture du dépôt, le 8 août 2026.
+phase de finalisation **P5 est CLOSE SANS ÊTRE ACHEVÉE** depuis la clôture du dépôt — *prononcée le
+8 août 2026 par D-13, et **portée au 1er septembre 2026** le 3 septembre*.
 *Trente-quatre pièces rédigées, relues et corrigées font un ouvrage complet, ce qui est autre chose
 qu'un ouvrage publiable* — et **la clôture ne l'en rapproche pas** : elle déclare seulement que
 personne ne finira P5. ⚠ **Les quinze remontées R-G-43 à R-G-57 et la dette de vote sur F-92 et

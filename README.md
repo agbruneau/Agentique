@@ -50,16 +50,31 @@ fusion ni écrasement.* **Historique du 24 juin au 28 août 2026**, bornes du pr
 commit — **305 commits au 28 août**, dont onze pris depuis le 24. ⚠ *Au 24 août,
 `git rev-list --count` en rend **294** et non les 293 que cette page écrivait.*
 
-⚠ **Le dépôt est déclaré clos et final depuis le 8 août 2026** — décision d'auteur **D-13**,
+⚠ **Le dépôt est déclaré clos et final, et sa clôture est portée au 1er septembre 2026** — décision
+d'auteur **D-13**, prise le 8 août 2026,
 [`2 - Compendium/PRD/PRD.md`](<2%20-%20Compendium/PRD/PRD.md>) §16 ; l'unique étiquette du dépôt,
-`mono-v1.0`, est posée sur ce commit de clôture. Il a été rouvert une dizaine de fois depuis, chaque
+`mono-v1.0`, est posée sur le commit du 8 août — *celui de la prise, non de l'état arrêté*.
+Il a été rouvert une dizaine de fois depuis le 8 août 2026, chaque
 fois pour une pièce nommée et pour elle seule : la chronique datée est en tête de
 [`1 - Collection/README.md`](<1%20-%20Collection/README.md>) — ⚠ *qui s'arrête à la onzième
 réouverture, celle du 21 août 2026, et ne porte aucune des passes du 22 août au 1er septembre : la
 compter là revient à compter court.* **La dernière réouverture est du 1er septembre 2026, pour
 l'article de `6 - Article/`** — ⚠ *c'est la deuxième d'affilée qui fasse entrer un document neuf
 plutôt que réparer une pièce existante, la première étant celle du 28 août, et la première depuis le
-20 août 2026 qui crée un dossier numéroté.*
+20 août 2026 qui crée un dossier numéroté.* ⚠ **Une passe l'a suivie le 2 septembre 2026** — l'audit
+et le fond du seul Vol. IV (D-15, D-16) —, *mais elle ne fait entrer aucune pièce : la dernière
+entrée reste celle du 1er septembre.*
+
+⚠ **Cette page a écrit « clos et final depuis le 8 août 2026 » jusqu'au 3 septembre 2026, et elle
+confondait deux dates** : *une décision se date de sa prise, une clôture de l'état qu'elle arrête.*
+**D-13 reste prise le 8 août 2026 ; la clôture, elle, est portée au 1er septembre 2026** — dernier
+jour où une pièce est entrée au dépôt, l'article de [`6 - Article/`](<6%20-%20Article/>), commit
+`da6255b`. ⚠ *La passe d'audit et de fond du 2 septembre 2026 (D-15, D-16) lui est postérieure d'un
+jour et ne la redate pas : elle porte sur l'appareil, le plan et le domaine de livraison du Vol. IV,
+et **aucune pièce n'y entre ni n'en sort** — le critère se lit sur l'entrée d'une pièce, non sur la
+dernière passe.* Le motif complet est au
+[PRD §16.5](<2%20-%20Compendium/PRD/PRD.md>) ; ⚠ **la redatation ne rouvre rien** : aucune porte
+franchie, aucun manque définitif redevenu dette, aucun régime touché.
 
 ☑ **[`LICENSE`](LICENSE) à la racine — CC BY 4.0, posée le 21 août 2026 sur instruction d'auteur**,
 et elle couvre le dépôt entier : les huit documents, leurs rendus, le simulateur, les chaînes et les

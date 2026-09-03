@@ -56,10 +56,15 @@ sont des livrables.*
 > subsistent ci-dessus datent un état révolu** et ne sont pas des erreurs : *le dépôt écrit sa
 > chronique en couches, jamais en écrasant.*
 >
-> ⚠ **Le dépôt est clos depuis le 8 août 2026** — décision d'auteur **D-13**
+> ⚠ **Le dépôt est clos, sa clôture portée au 1er septembre 2026** — décision d'auteur **D-13**,
+> prise le 8 août 2026
 > ([`2 - Compendium/PRD/PRD.md`](../2%20-%20Compendium/PRD/PRD.md) v0.17 §16). *Ces deux livrables
-> sont postérieurs à la clôture, et chacun l'a rouverte pour lui seul.* La clôture reste en vigueur
-> pour les quatre volumes ; **rien de ce dossier ne la lève**.
+> sont postérieurs à la **prise** de D-13, et chacun l'a rouverte pour lui seul* — ⚠ **ils sont en
+> revanche antérieurs à la date de clôture**, qui court du 1er septembre 2026 et englobe donc leurs
+> deux réouvertures. La clôture reste en vigueur pour les quatre volumes ; **rien de ce dossier ne la
+> lève**.
+>
+> ⚠ **La date de clôture a porté « 8 août 2026 » jusqu'au 3 septembre 2026, et elle confondait deux choses** : *une décision se date de sa prise, une clôture de l'état qu'elle arrête.* **D-13 reste prise le 8 août 2026** ; **la clôture court du 1er septembre 2026**, dernier jour où une pièce est entrée au dépôt — l'article de `6 - Article/`, commit `da6255b`. ⚠ *La passe d'audit et de fond du 2 septembre 2026 (D-15, D-16) lui est postérieure d'un jour : elle porte sur l'appareil, le plan et le domaine de livraison du Vol. IV, et **aucune pièce n'y entre ni n'en sort**.* Motif complet au **PRD §16.5**.
 >
 > ⚠ **Édition du 15 août 2026 — les deux livrables ont été rouverts et re-vérifiés intégralement.**
 > Les références des deux ont été reprises à leur source primaire — **303 à la veille et 176 à la

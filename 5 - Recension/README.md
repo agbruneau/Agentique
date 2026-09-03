@@ -78,9 +78,13 @@ les figures des deux : corriger un fait se fait à un seul endroit.*
 > ☑ **Recompté sur l'arbre le 20 août 2026** : **cinq dossiers numérotés**, **quinze `README.md`** —
 > *seize avec celui-ci, qui est le seul de ce dossier.* ⚠ La racine porte encore un fichier de
 > contenu, `NiveauMaturité.html`.
-> ⚠ **Le dépôt est clos depuis le 8 août 2026** — décision d'auteur **D-13**
+> ⚠ **Le dépôt est clos, sa clôture portée au 1er septembre 2026** — décision d'auteur **D-13**,
+> prise le 8 août 2026
 > ([`2 - Compendium/PRD/PRD.md`](../2%20-%20Compendium/PRD/PRD.md) v0.17 §16). *Ce document est
-> postérieur à la clôture ; il ne la lève pour rien d'autre que lui.*
+> postérieur à la **prise** de D-13 ; il ne la lève pour rien d'autre que lui* — ⚠ **et il est
+> antérieur à la date de clôture**, qui court du 1er septembre 2026 et englobe sa réouverture.
+>
+> ⚠ **La date de clôture a porté « 8 août 2026 » jusqu'au 3 septembre 2026, et elle confondait deux choses** : *une décision se date de sa prise, une clôture de l'état qu'elle arrête.* **D-13 reste prise le 8 août 2026** ; **la clôture court du 1er septembre 2026**, dernier jour où une pièce est entrée au dépôt — l'article de `6 - Article/`, commit `da6255b`. ⚠ *La passe d'audit et de fond du 2 septembre 2026 (D-15, D-16) lui est postérieure d'un jour : elle porte sur l'appareil, le plan et le domaine de livraison du Vol. IV, et **aucune pièce n'y entre ni n'en sort**.* Motif complet au **PRD §16.5**.
 
 ---
 

@@ -1,14 +1,16 @@
 # Orchestration agentique
 
-> ⚠ **Dépôt clos et final le 8 août 2026** — décision d'auteur **D-13**
+> ⚠ **Dépôt clos et final — clôture portée au 1er septembre 2026** — décision d'auteur **D-13**, prise le 8 août 2026
 > ([`2 - Compendium/PRD/PRD.md`](../../../2%20-%20Compendium/PRD/PRD.md) v0.17 §16). Aucune passe
 > n'est plus prévue : ce qui suit décrit un état **définitif**.
+>
+> ⚠ **La date de clôture a porté « 8 août 2026 » jusqu'au 3 septembre 2026, et elle confondait deux choses** : *une décision se date de sa prise, une clôture de l'état qu'elle arrête.* **D-13 reste prise le 8 août 2026** ; **la clôture court du 1er septembre 2026**, dernier jour où une pièce est entrée au dépôt — l'article de `6 - Article/`, commit `da6255b`. ⚠ *La passe d'audit et de fond du 2 septembre 2026 (D-15, D-16) lui est postérieure d'un jour : elle porte sur l'appareil, le plan et le domaine de livraison du Vol. IV, et **aucune pièce n'y entre ni n'en sort**.* Motif complet au **PRD §16.5**.
 
 **Interopérabilité et orchestration agentique dans les services financiers canadiens — protocoles ouverts, cadre réglementaire et blueprint d'intégration d'entreprise (état des lieux 2024-2026)**
 
 | Champ | Valeur |
 |---|---|
-| Version | millésime **`mono-v1.0`** — millésime éditorial du 17 juillet 2026 ; ☑ **l'étiquette git du même nom est posée le 8 août 2026**, au commit de clôture du dépôt. ⚠ *Elle marque donc l'arbre clos, non celui du 17 juillet* |
+| Version | millésime **`mono-v1.0`** — millésime éditorial du 17 juillet 2026 ; ☑ **l'étiquette git du même nom est posée le 8 août 2026**, au commit où D-13 est prise. ⚠ *Elle marque donc l'arbre du 8 août, non celui du 17 juillet — ni l'arbre clos, la clôture étant portée au 1er septembre 2026* |
 | Date de publication | 17 juillet 2026 |
 | Dates de gel | 16 juillet 2026 (22 pièces) ; 17 juillet 2026 (7 pièces) — registre : [`99-registre-gel.md`](99-registre-gel.md) |
 | Volumétrie | **92 059 mots** sur 29 pièces — mesure du 17 juillet 2026, après la passe corrective de l'[audit global](../prd/audit.md) (méthode et commande de référence : [PRDPlan §4.2](../prd/PRDPlan.md), dont le défaut connu y est documenté) |
