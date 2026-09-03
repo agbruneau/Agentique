@@ -3,11 +3,21 @@
 *Projection de l'état de ressource et délégation multicritère dans une plateforme HPC à
 processeurs quantiques* — **38 p.**, prépublication au gabarit arXiv, v3 (révisée), datée du
 **31 août 2026** en page de titre et composée le **1er septembre 2026**. Entrée au dépôt le même
-jour, au commit `da6255b` (« Article ») : **une réouverture de plus** d'un dépôt déclaré clos le
-8 août 2026, et **la première qui crée un dossier numéroté depuis le 20 août** — ⚠ *la chronique
-datée de [`1 - Collection/README.md`](../1%20-%20Collection/README.md) s'arrête à la onzième
-réouverture, celle du 21 août 2026 ; elle ne porte aucune des passes du 22 au 28 août, ni celle-ci.
-Un lecteur qui compte les réouvertures sur cette chronique compte court.*
+jour, au commit `da6255b` (« Article ») : **une réouverture de plus** d'un dépôt clos par la
+décision d'auteur **D-13** du 8 août 2026, et **la première qui crée un dossier numéroté depuis le
+20 août** — ⚠ *la chronique datée de [`1 - Collection/README.md`](../1%20-%20Collection/README.md)
+s'arrête à la onzième réouverture, celle du 21 août 2026 ; elle ne porte aucune des passes du 22 au
+28 août, ni celle-ci. Un lecteur qui compte les réouvertures sur cette chronique compte court.*
+
+⚠⚠ **ET C'EST DÉSORMAIS CETTE ENTRÉE QUI DATE LA CLÔTURE DU DÉPÔT.** *Depuis la redatation du
+3 septembre 2026, la clôture ne se date plus de la prise de D-13 mais de l'état qu'elle arrête, et
+le critère est l'entrée d'une pièce au dépôt* : le dernier jour où une pièce y est entrée est le
+**1er septembre 2026**, et cette pièce est celle-ci. **D-13 reste prise le 8 août 2026 ; la clôture
+court du 1er septembre.** ⚠ *Le paradoxe est nommé plutôt que tu — **le document qui date la clôture
+n'est pas un livrable, et le PRD ne porte aucune décision sur lui** : le critère porte sur l'entrée
+d'une pièce, non sur son rang, et c'est la seule lecture qui ne dépende pas d'un compte que le
+[`README` de la racine](../README.md) dit lui-même renversable d'un mot de l'auteur.* Motif complet
+au [PRD §16.5](../2%20-%20Compendium/PRD/PRD.md).
 
 ⚠ **Ce document n'instruit pas la question du dépôt.** Les huit livrables tiennent une seule
 question — *comment une entreprise de services financiers canadienne déploie, gouverne et exploite

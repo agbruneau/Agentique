@@ -12,7 +12,9 @@
 > ⚠ **La date de clôture a porté « 8 août 2026 » jusqu'au 3 septembre 2026, et elle confondait deux choses** : *une décision se date de sa prise, une clôture de l'état qu'elle arrête.* **D-13 reste prise le 8 août 2026** ; **la clôture court du 1er septembre 2026**, dernier jour où une pièce est entrée au dépôt — l'article de `6 - Article/`, commit `da6255b`. ⚠ *La passe d'audit et de fond du 2 septembre 2026 (D-15, D-16) lui est postérieure d'un jour : elle porte sur l'appareil, le plan et le domaine de livraison du Vol. IV, et **aucune pièce n'y entre ni n'en sort**.* Motif complet au **PRD §16.5**.
 
 > ⚠ **L'APPAREIL DE VÉRIFICATION DE CE VOLUME A ÉTÉ SUPPRIMÉ le 8 août 2026**, par un commit
-> **postérieur à la clôture** (`659241b`). Le répertoire `verification/` et ses **30 rapports** —
+> **postérieur à la prise de D-13** (`659241b`) — ⚠ *ce bandeau écrivait « postérieur à la clôture »,
+> ce que la redatation du 3 septembre 2026 rend faux : la clôture court du 1er septembre 2026, et ce
+> commit lui est antérieur. **Le fait ne change pas, sa qualification si.*** Le répertoire `verification/` et ses **30 rapports** —
 > 15 lots d'instruction, 11 relectures, 2 revalidations, la confrontation des thèses et le registre
 > `remontees-gouvernance.md` — **ne se lisent plus qu'à l'historique git**. Les renvois de ce fichier
 > qui les visaient sont **retirés en conservant leurs noms et en datant le retrait**, selon la règle

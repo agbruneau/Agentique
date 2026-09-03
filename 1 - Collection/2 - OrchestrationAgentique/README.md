@@ -46,8 +46,10 @@ page de présentation ni de publication GitHub Pages — voir « Structure du do
 ⚠ **Un point n'avait pas bougé non plus et restait dû à cette date** : l'**étiquette git `mono-v1.0`
 n'était alors pas posée** alors que quatre documents de gouvernance l'annonçaient comme telle — *un
 millésime éditorial n'est pas un point de restauration*. ☑ **Le constat est dépassé depuis le 8 août
-2026** : l'étiquette est posée au commit de clôture (`git tag -l` la rend), et la ligne « Livrable »
-ci-dessus porte la réserve qui subsiste — *elle marque l'arbre clos, non celui du 17 juillet.*
+2026** : l'étiquette est posée au commit où D-13 est prise (`git tag -l` la rend), et la ligne
+« Livrable » ci-dessus porte la réserve qui subsiste — *elle marque l'arbre du 8 août, ni celui du
+17 juillet, ni l'arbre clos : la clôture est portée au 1er septembre 2026, et **aucune étiquette ne
+porte l'état arrêté**.*
 
 **Contribution la plus citable — un résultat négatif :** en croisant trois protocoles (MCP, A2A, AP2) et cinq corpus de textes canadiens, **aucun lien documenté par source primaire** — quinze croisements, zéro lien. D'où la thèse : sous exigence réglementaire stricte, le cadre déterministe invoque les agents, jamais l'inverse.
 

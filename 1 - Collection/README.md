@@ -158,7 +158,8 @@ puisse démontrer la teneur devant un tiers.
 📖 **Documents sources :** [`3 - EntrepriseAgentique/Monographie.pdf`](3%20-%20EntrepriseAgentique/Monographie.pdf) (**427 p.**) · [`Monographie.md`](3%20-%20EntrepriseAgentique/Monographie.md)
 
 ⚠ **L'appareil de vérification du volume a été supprimé le 8 août 2026** (commit `659241b`, postérieur
-à la clôture) : le répertoire `verification/` et ses **30 rapports** — 15 lots d'instruction,
+à la prise de D-13 — ⚠ *ce texte écrivait « postérieur à la clôture », ce que la redatation du
+3 septembre 2026 rend faux : la clôture court du 1er septembre, et ce commit lui est antérieur*) : le répertoire `verification/` et ses **30 rapports** — 15 lots d'instruction,
 11 relectures, 2 revalidations, la confrontation des thèses et `remontees-gouvernance.md` — **ne se
 lisent plus qu'à l'historique git**. ⚠ *Rien de ce qu'ils portaient n'est soldé* : les quinze
 remontées R-G-43 à R-G-57 et la dette de vote sur F-92 et F-96 restent ouvertes à titre définitif, et
