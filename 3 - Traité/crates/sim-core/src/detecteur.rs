@@ -141,6 +141,62 @@ pub struct Detecteur {
     messages: u64,
 }
 
+/// Bornes du délai de détection d'un agent réellement arrêté.
+///
+/// Borne basse : l'arrêt survient juste avant une sonde, il reste les
+/// `seuil − 1` échecs suivants, plus l'expiration du dernier. Borne haute :
+/// l'arrêt survient juste après une sonde réussie, il faut attendre une période
+/// entière de plus. Aux défauts documentés — 10 s de période, 1 s d'expiration,
+/// 3 échecs — cela donne **21 à 31 s**, que NF-15 exige de retrouver par le
+/// calcul et jamais de recopier.
+///
+/// **Une fonction, trois écritures dans le traité.** Le §4.3 ([`Detecteur`]), le
+/// §6.1 (`sim_agents::cycle_de_vie::retirer`) et le §7.3
+/// (`sim_agents::soupcon::DetecteurInfectieux`) dérivent le même encadrement, et
+/// le dérivaient chacun de son côté. La règle du comptage de PD7 porte sur ce
+/// qui est **écrit dans le traité** : les trois exemplaires y restent trois, et
+/// elle est satisfaite, non suspendue. DT6, qui porte sur l'*objet* détecteur,
+/// reste posée et non tenue.
+///
+/// # Erreurs
+///
+/// `seuil = 0` est **refusé**, et non écrêté : la dérivation compte `seuil − 1`
+/// intervalles entre échecs, et à zéro échec il n'y a pas de détection dont on
+/// encadre le délai. L'écrêtage rendait `(1, 11)` aux défauts — un encadrement
+/// d'allure plausible que rien ne distingue d'une mesure, ce qui est pire qu'un
+/// débordement (SPEC §7, clause 4 : « une configuration invalide est un refus
+/// rendu à l'appelant, jamais un abandon »).
+///
+/// # Saturation
+///
+/// Le produit et les sommes **saturent** : les réglages viennent de champs
+/// publics et le profil release du dépôt ne pose pas `overflow-checks`. Sans
+/// cela, `periode` = 2⁶³ et `seuil` = 3 rendaient une borne basse de **1 tic**
+/// au lieu de 2⁶⁴ — une détection annoncée instantanée là où elle est la plus
+/// lente.
+pub fn encadrement_de_detection(
+    periode: Duree,
+    expiration: Duree,
+    seuil: u32,
+) -> Result<(Duree, Duree), String> {
+    if seuil == 0 {
+        return Err(
+            "seuil d'échec nul refusé : l'encadrement compte les intervalles entre `seuil` \
+             échecs consécutifs, et à zéro échec il n'y a pas de détection à encadrer. Le délai \
+             rendu serait une valeur d'allure plausible sans réglage derrière (§4.3, §6.1 et \
+             §7.3 du traité)."
+                .to_string(),
+        );
+    }
+    let min = Duree(
+        periode
+            .0
+            .saturating_mul(u64::from(seuil - 1))
+            .saturating_add(expiration.0),
+    );
+    Ok((min, min + periode))
+}
+
 impl Detecteur {
     /// Construit un détecteur. Les trois paramètres actifs sont obligatoires :
     /// il n'existe pas de constructeur par défaut, parce qu'un détecteur sans
@@ -207,26 +263,16 @@ impl Detecteur {
     }
 
     /// Complétude dérivée : bornes du délai de détection d'un agent réellement
-    /// arrêté (§4.3, EX-A23).
+    /// arrêté (§4.3, EX-A23). Voir [`encadrement_de_detection`], dont ceci est
+    /// l'application au réglage porté par ce détecteur.
     ///
-    /// Borne basse : l'arrêt survient juste avant une sonde, il reste les
-    /// `seuil − 1` échecs suivants, plus l'expiration du dernier.
-    /// Borne haute : l'arrêt survient juste après une sonde réussie, il faut
-    /// attendre une période entière de plus.
+    /// # Panique
     ///
-    /// Le produit sature : `periode` et `seuil` sont publics et le profil
-    /// release du dépôt ne pose pas `overflow-checks`. Sans cela, `periode`
-    /// = 2⁶³ et `seuil` = 3 rendaient une borne basse de **1 tic** au lieu de
-    /// 2⁶⁴ — un détecteur annoncé instantané là où il est le plus lent.
+    /// Jamais : [`Detecteur::nouveau`] refuse déjà le seuil nul, seul cas que
+    /// l'encadrement rejette, et `seuil` n'est pas modifiable ensuite.
     pub fn completude(&self) -> (Duree, Duree) {
-        let echecs_restants = Duree(
-            self.periode
-                .0
-                .saturating_mul(u64::from(self.seuil.saturating_sub(1))),
-        );
-        let min = echecs_restants + self.expiration;
-        let max = min + self.periode;
-        (min, max)
+        encadrement_de_detection(self.periode, self.expiration, u32::from(self.seuil))
+            .expect("`Detecteur::nouveau` refuse déjà le seuil nul")
     }
 
     /// Les deux propriétés formelles, à afficher avec le détecteur (PD12).

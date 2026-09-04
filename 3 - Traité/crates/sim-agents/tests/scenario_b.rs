@@ -141,16 +141,22 @@ fn la_borne_dexploration_tient() {
         let r = scenario_b(params(), graine, 20_000).unwrap();
         assert!(r.borne_tenue(), "graine {graine} : {:?}", r.violations);
         let b = r.bornes.as_ref().unwrap();
+        let plancher = r
+            .mesures
+            .plancher_observe
+            .expect("mesuré : au moins un cycle");
+        let hors_dominante = r
+            .mesures
+            .hors_dominante_observee
+            .expect("mesuré : au moins un cycle");
         assert!(
-            r.mesures.plancher_observe >= b.plancher_tirage * (1.0 - 1e-12),
-            "graine {graine} : plancher observé {:.9} sous la borne {:.9}",
-            r.mesures.plancher_observe,
+            plancher >= b.plancher_tirage * (1.0 - 1e-12),
+            "graine {graine} : plancher observé {plancher:.9} sous la borne {:.9}",
             b.plancher_tirage
         );
         assert!(
-            r.mesures.hors_dominante_observee >= b.fraction_hors_dominante * (1.0 - 1e-12),
-            "graine {graine} : fraction hors dominante {:.9} sous la borne {:.9}",
-            r.mesures.hors_dominante_observee,
+            hors_dominante >= b.fraction_hors_dominante * (1.0 - 1e-12),
+            "graine {graine} : fraction hors dominante {hors_dominante:.9} sous la borne {:.9}",
             b.fraction_hors_dominante
         );
     }

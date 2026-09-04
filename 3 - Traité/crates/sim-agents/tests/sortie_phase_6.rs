@@ -106,7 +106,10 @@ fn les_sept_bornes_seffacent_sur_le_reglage_et_la_borne_effacee_nest_pas_grisee(
     // mesuré. `is_finite()` ne l'établissait pas — une constante l'est aussi ;
     // ce qui l'établit est que la grandeur soit une **fraction d'effort**, dans
     // l'intervalle qu'un minimum de 1 − p_max peut atteindre sur m ressources.
-    let mesure = conforme.hors_dominante.0;
+    let mesure = conforme
+        .hors_dominante
+        .0
+        .expect("mesuré : au moins un cycle");
     assert!(
         mesure > 0.0 && mesure <= 1.0 - 1.0 / f64::from(params().m),
         "fraction hors dominante {mesure} : ce n'est pas une fraction d'effort mesurée"
@@ -158,7 +161,7 @@ fn aucun_oracle_de_surete_ne_tombe_pendant_leffacement() {
                  le scénario prouverait autre chose que ce qu'il annonce"
             );
             // Effacer une borne n'efface pas une mesure — clause 1.
-            let mesure = r.hors_dominante.0;
+            let mesure = r.hors_dominante.0.expect("mesuré : au moins un cycle");
             assert!(
                 mesure > 0.0 && mesure <= plafond,
                 "part = {part}, graine = {graine} : fraction hors dominante {mesure}, \

@@ -142,8 +142,9 @@ WebGL 2 est requis — `eframe` n'a pas de repli logiciel.
 
 Le déploiement est un dépôt de fichiers statiques : `index.html`, `sim_viz.js`,
 `sim_viz_bg.wasm` côte à côte, aucune dépendance serveur (DT4). Module compressé :
-**1 448 336 octets compressés** — *1 447 704 le 2 septembre ; les 632 octets de plus sont ceux du cache de l'écran A et des noms neufs de la lecture par plages* — pour une cible de
-8 Mo (NF-08), sur **3 669 619 octets bruts**. La cible reste tenue d'un facteur
+**1 447 728 octets compressés** — *1 447 704 le 2 septembre ; les phases 2 à 4 de
+[`audit.md`](audit.md) laissent donc **+24 octets** compressés en tout* — pour une cible de
+8 Mo (NF-08), sur **3 670 027 octets bruts**. La cible reste tenue d'un facteur
 cinq et demi.
 
 Ces deux chiffres sortent d'**une** construction, celle du **4 septembre 2026**,
@@ -157,12 +158,13 @@ printf "brut=%s gz9=%s\n" "$(stat -c%s web/sim_viz_bg.wasm)" \
                           "$(gzip -9 -c web/sim_viz_bg.wasm | wc -c)"
 ```
 
-☑ **Re-mesuré le 4 septembre 2026, après la phase 3 du plan d'exécution de
-[`audit.md`](audit.md)** : **3 669 619** octets bruts et **1 448 336** compressés,
-soit **+282 et +632** sur la construction du 2 septembre. *Ce que ces octets
-portent : le cache de l'écran A — qui cesse de rejouer cinquante `scenario_a` par
-image —, et les noms de la lecture par plages que la phase 2 a introduits dans
-`sim-milieu`.* ⚠ **Le module embarque les quatre crates, pas seulement
+☑ **Re-mesuré le 4 septembre 2026, après la phase 4 du plan d'exécution de
+[`audit.md`](audit.md)** : **3 670 027** octets bruts et **1 447 728** compressés,
+soit **+690 et +24** sur la construction du 2 septembre. *La phase 3 était montée
+à 1 448 336 ; la phase 4 en a rendu 608, les refactorisations du registre
+supprimant plus de code qu'elles n'en ajoutent — deux constantes de couplage par
+chaîne, leurs deux tests de garde, une structure de clé de cache et six
+transcriptions de défauts.* ⚠ **Le module embarque les quatre crates, pas seulement
 `sim-viz`** : les lignes de panique de `stigmergie.rs` et de `journal.rs` y sont,
 donc toute édition d'une des quatre le périme — c'est plus large que ce que la
 règle de péremption ci-dessous laisse entendre, et `check-empaquetage.py` le voit

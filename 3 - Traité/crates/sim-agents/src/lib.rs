@@ -53,7 +53,9 @@ pub use conformite::Conformite;
 pub use dettes::{Dette, EtatDeBorne, DETTES};
 pub use essaim::{Membre, Perception};
 pub use glossaire::{glossaire, Terme};
-pub use scenario::{scenario_a, scenario_b, Bloc, Comparaison, ResultatB, BLOC_A, BLOC_B};
+pub use scenario::{
+    scenario_a, scenario_b, Bloc, Comparaison, ParamsA, ResultatB, Vainqueur, BLOC_A, BLOC_B,
+};
 pub use scenario_d::{Choix, ScenarioD, BLOC_D};
 pub use scenario_m::{scenario_m, ResultatM, BLOC_M};
 pub use stigmergie::{Bornes, Evt, Fourragement, Mesures, MomentTrace, Params};
@@ -82,8 +84,8 @@ pub fn hors_perimetre() -> &'static [&'static str] {
         "tableau 15 — les six mécanismes d'allocation rendent les valeurs citées du \
          traité, pas une mesure : aucune tâche n'est allouée, la graine est ignorée \
          (scénario F)",
-        "nombre de partitions du scénario A — « scenario_a » reçoit « p » et le jette : aucun \
-         des comptes du tableau 3 n'en dépend. Le curseur « p — partitions » de l'écran, \
+        "nombre de partitions du scénario A — « scenario_a » reçoit « p » dans « ParamsA » et le \
+         jette : aucun des comptes du tableau 3 n'en dépend. Le curseur « p — partitions » de l'écran, \
          gradué de 1 à 64, ne déplace donc aucun chiffre affiché, et rien à côté de lui ne \
          le dit",
         "prix de l'anarchie — « rapport_mesure » est renseigné par l'appelant ; aucun \

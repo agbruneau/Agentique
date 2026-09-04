@@ -94,7 +94,11 @@ pub struct ResultatM {
     /// des familles viole l'indépendance des tirages, c'est-à-dire d'après le
     /// **réglage** et jamais d'après Φ_c mesuré (`dettes::verdicts`, §0.1 du PRD).
     /// La première, elle, reste : effacer une borne n'efface pas une mesure.
-    pub hors_dominante: (f64, Option<f64>),
+    ///
+    /// Les deux `None` ne disent pas la même chose, et c'est voulu : à gauche,
+    /// rien n'a été mesuré ; à droite, l'hypothèse est violée et la borne est
+    /// retirée. L'écran les distingue par leur libellé.
+    pub hors_dominante: (Option<f64>, Option<f64>),
 }
 
 impl ResultatM {

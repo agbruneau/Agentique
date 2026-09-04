@@ -323,13 +323,13 @@ awk '/pub fn hors_perimetre/,/^}/' crates/sim-agents/src/lib.rs | grep -cE '^\s*
   refaire sur la mesure, comme DT1 l'a été.
 - **NF-07 n'est pas mesurée** — 30 images/s à n ≤ 2 000 en WASM demande un
   navigateur en avant-plan avec une horloge d'images. L'empaquetage web, lui,
-  est fait et NF-08 est tenue : **1 448 336 octets compressés** — *1 447 704 le 2 septembre ; les 632 octets de plus sont ceux du cache de l'écran A et des noms neufs de la lecture par plages, phases 2 et 3 de `audit.md`* — sur 3 669 619 octets bruts, contre une cible de 8 Mo.
+  est fait et NF-08 est tenue : **1 447 728 octets compressés** — *1 447 704 le 2 septembre ; les phases 2 à 4 de `audit.md` laissent +24 octets en tout* — sur 3 670 027 octets bruts, contre une cible de 8 Mo.
   **Ce couple est une mesure d'une construction précise, pas une constante** :
   celle du **4 septembre 2026**, et il se périme à la première édition de **l'une
   des quatre crates** — le module les embarque toutes, lignes de panique
-  comprises, et non `crates/sim-viz/` seule. ☑ *Re-mesuré le 4 septembre 2026 après les phases 2 et 3 :
-  **+282 octets bruts et +632 compressés** sur la construction du 2 septembre — le cache de l'écran A
-  et les noms de la lecture par plages —, `check-empaquetage.py` à jour et les six empreintes du banc
+  comprises, et non `crates/sim-viz/` seule. ☑ *Re-mesuré le 4 septembre 2026 après les phases 2 à 4 :
+  **+690 octets bruts et +24 compressés** sur la construction du 2 septembre — la phase 3 était montée
+  à 1 448 336, la phase 4 en a rendu 608 —, `check-empaquetage.py` à jour et les six empreintes du banc
   `parite-wasm` **inchangées**.* ⚠ **Et `python Python/check-empaquetage.py` le tient désormais**,
   en refaisant le module et en comparant les octets, non les dates. Il se refait par les deux lignes du `README.md` (§ « 2.
   L'interface web »), qui sont ce qui se cite ici, jamais le nombre.

@@ -92,7 +92,35 @@ pub struct Comparaison {
     pub journal_tours: u64,
 }
 
+/// Lequel des deux régimes informe toute la population le premier.
+///
+/// Le vainqueur en temps est **une donnée**, et la phrase de
+/// [`Comparaison::verdict_temps`] n'en est que le rendu : un appelant qui veut
+/// savoir qui gagne lit cette énumération, pas la phrase. C'était l'inverse
+/// jusqu'ici, et une reformulation de la phrase aurait fait annoncer « aucun
+/// croisement » partout à la figure du scénario A, sans erreur de compilation.
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+pub enum Vainqueur {
+    /// La maille : un aller simple.
+    Maille,
+    /// Le journal : deux tours de journal à ℓ₉₉.
+    Journal,
+}
+
 impl Comparaison {
+    /// Lequel des deux régimes gagne **en temps**.
+    ///
+    /// L'égalité va à la maille — c'est la comparaison large que le tableau 3
+    /// écrit, et elle n'est pas atteignable par les réglages de l'interface,
+    /// les deux temps étant des multiples de grandeurs distinctes.
+    pub fn qui_gagne_en_temps(&self) -> Vainqueur {
+        if self.maille_temps <= self.journal_temps {
+            Vainqueur::Maille
+        } else {
+            Vainqueur::Journal
+        }
+    }
+
     /// Nomme **lequel des trois comptes** est croisé, et dans quel sens. Le PRD
     /// l'exige : un point de croisement sans le compte qu'il croise est un
     /// nombre sans provenance.
@@ -130,10 +158,9 @@ impl Comparaison {
              — {}",
             g.ms_depuis_tics(self.maille_temps),
             g.ms_depuis_tics(self.journal_temps),
-            if self.maille_temps <= self.journal_temps {
-                "la maille gagne en temps"
-            } else {
-                "le journal gagne en temps"
+            match self.qui_gagne_en_temps() {
+                Vainqueur::Maille => "la maille gagne en temps",
+                Vainqueur::Journal => "le journal gagne en temps",
             }
         )
     }
@@ -145,6 +172,46 @@ impl Comparaison {
             "journal : 2 en permanence (§1.3, p. 18, 4ᵉ éd.)",
             Maille::DIAMETRE,
         )
+    }
+}
+
+/// Le réglage d'une exécution du scénario A.
+///
+/// Les valeurs de [`Default`] sont **les défauts du tableau du §7 du PRD**, et
+/// elles sont désormais écrites ici : `sim-viz` les transcrivait, faute d'un
+/// constructeur de défaut de ce côté-ci, et rien ne tenait la transcription en
+/// accord avec le PRD. La graine fait exception — elle ne figure dans aucun
+/// tableau, et 1 est le choix de cette crate, montré figé à l'écran (EX-V07).
+#[derive(Clone, Copy, PartialEq, Debug)]
+pub struct ParamsA {
+    /// Nombre de nœuds. §7 du PRD : 64.
+    pub n: u32,
+    /// Nombre de partitions. §7 du PRD : 8. **Aucun compte n'en dépend** — voir
+    /// [`scenario_a`] et [`crate::hors_perimetre`].
+    pub p: u32,
+    /// ℓ₉₉ du journal, en millisecondes. §7 du PRD : 20.
+    pub l99_ms: f64,
+    /// Délai d'un aller simple dans la maille, en millisecondes. §7 du PRD : 2.
+    pub aller_simple_ms: f64,
+    /// Degré de dépôt de la maille. §7 du PRD : 3.
+    pub degre_depot: u32,
+    /// Probabilité qu'un message soit omis. §7 du PRD : 0,01.
+    pub taux_omission: f64,
+    /// Graine du tirage. Ne figure dans aucun tableau du §7.
+    pub graine: u64,
+}
+
+impl Default for ParamsA {
+    fn default() -> Self {
+        ParamsA {
+            n: 64,
+            p: 8,
+            l99_ms: 20.0,
+            aller_simple_ms: 2.0,
+            degre_depot: 3,
+            taux_omission: 0.01,
+            graine: 1,
+        }
     }
 }
 
@@ -162,15 +229,16 @@ impl Comparaison {
 /// L'écran du scénario A porte pourtant un curseur « p — partitions » de 1 à 64
 /// dont le déplacement ne change aucun chiffre affiché : un réglage qui ne règle
 /// rien, déclaré par [`crate::hors_perimetre`] au même rang que le reste (PD6).
-pub fn scenario_a(
-    n: u32,
-    p: u32,
-    l99_ms: f64,
-    aller_simple_ms: f64,
-    degre_depot: u32,
-    taux_omission: f64,
-    graine: u64,
-) -> Comparaison {
+pub fn scenario_a(params: &ParamsA) -> Comparaison {
+    let &ParamsA {
+        n,
+        p,
+        l99_ms,
+        aller_simple_ms,
+        degre_depot,
+        taux_omission,
+        graine,
+    } = params;
     let g = Granularite::Micro;
     let mut alea = sim_core::alea::Alea::nouveau(graine);
     let mut maille = Maille::nouvelle(n, degre_depot, aller_simple_ms, taux_omission, 1_000.0, g);
@@ -780,27 +848,74 @@ mod tests {
     /// gagne **en temps** : un aller simple contre deux tours de journal.
     #[test]
     fn a_petite_echelle_la_maille_gagne_en_temps() {
-        let c = scenario_a(8, 8, 200.0, 2.0, 3, 0.0, 1);
+        let c = scenario_a(&ParamsA {
+            n: 8,
+            l99_ms: 200.0,
+            taux_omission: 0.0,
+            ..Default::default()
+        });
         assert!(c.maille_temps < c.journal_temps);
-        assert!(c
-            .verdict_temps(Granularite::Micro)
-            .contains("la maille gagne"));
+        assert_eq!(c.qui_gagne_en_temps(), Vainqueur::Maille);
+    }
+
+    /// La phrase de verdict **dit** ce que l'énumération porte, dans les deux
+    /// régimes.
+    ///
+    /// C'est l'accord d'un rendu avec sa donnée, et non plus le couplage par
+    /// chaîne qu'il remplace : ce test peut échouer, et alors seul le texte est
+    /// faux ; aucun appelant ne peut plus l'être avec lui.
+    #[test]
+    fn la_phrase_de_verdict_nomme_le_meme_vainqueur_que_l_enumeration() {
+        let g = Granularite::Micro;
+        for (n, p, l99, aller, attendu, mot) in [
+            (
+                8_u32,
+                1_u32,
+                200.0_f64,
+                1.0_f64,
+                Vainqueur::Maille,
+                "la maille gagne",
+            ),
+            (8, 1, 1.0, 50.0, Vainqueur::Journal, "le journal gagne"),
+        ] {
+            let c = scenario_a(&ParamsA {
+                n,
+                p,
+                l99_ms: l99,
+                aller_simple_ms: aller,
+                taux_omission: 0.0,
+                ..Default::default()
+            });
+            assert_eq!(c.qui_gagne_en_temps(), attendu);
+            assert!(c.verdict_temps(g).contains(mot), "{}", c.verdict_temps(g));
+        }
     }
 
     /// Et à ℓ₉₉ faible, le journal reprend l'avantage : le croisement est
     /// déplaçable par le curseur, comme l'exige le scénario.
     #[test]
     fn a_faible_l99_le_journal_gagne_en_temps() {
-        let c = scenario_a(8, 8, 0.5, 20.0, 3, 0.0, 1);
+        let c = scenario_a(&ParamsA {
+            n: 8,
+            l99_ms: 0.5,
+            aller_simple_ms: 20.0,
+            taux_omission: 0.0,
+            ..Default::default()
+        });
         assert!(c.journal_temps < c.maille_temps);
+        assert_eq!(c.qui_gagne_en_temps(), Vainqueur::Journal);
     }
 
     /// Scénario A, critère d'acceptation — à n élevé, l'entretien de vue croît
     /// quadratiquement alors que le compte de lectures reste en Θ(n).
     #[test]
     fn a_grande_echelle_lentretien_de_vue_ecrase_la_maille() {
-        let petit = scenario_a(16, 8, 20.0, 2.0, 3, 0.0, 1);
-        let grand = scenario_a(160, 8, 20.0, 2.0, 3, 0.0, 1);
+        let nominal = ParamsA {
+            taux_omission: 0.0,
+            ..Default::default()
+        };
+        let petit = scenario_a(&ParamsA { n: 16, ..nominal });
+        let grand = scenario_a(&ParamsA { n: 160, ..nominal });
         let facteur_entretien = grand.maille_entretien as f64 / petit.maille_entretien as f64;
         let facteur_lectures = grand.journal_lectures as f64 / petit.journal_lectures as f64;
         assert!(

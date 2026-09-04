@@ -421,12 +421,21 @@ pub struct Bornes {
 }
 
 impl Bornes {
+    /// La provenance des deux bornes : section, page et **édition**.
+    ///
+    /// Le §3 de l'écran B l'affiche sous chaque borne, à quatre lignes de
+    /// [`Bornes::LEGENDE`] qui la porte aussi. Les deux ont déjà annoncé deux
+    /// pages différentes pour une seule source, dans un seul cadre ; la vue lit
+    /// désormais cette constante au lieu d'en tenir une copie.
+    pub const SOURCE: &'static str = "§1.2, p. 16, 4ᵉ éd.";
+
     /// Légende obligatoire (EX-A11c), citée du traité.
     ///
     /// La provenance **nomme son édition** : `BLOC_B` cite la même page à
     /// l'autre bout du même écran avec sa mention, et une page citée sans elle
-    /// est une provenance fausse, pas imprécise (F2). `sim-viz` recopie cette
-    /// chaîne dans `SOURCE_BORNES` et tient la copie accordée par un test.
+    /// est une provenance fausse, pas imprécise (F2). Elle est écrite ici en
+    /// toutes lettres — une citation ne se compose pas — et
+    /// `la_legende_porte_la_provenance` la tient accordée à [`Bornes::SOURCE`].
     pub const LEGENDE: &'static str =
         "un essaim stigmergique n'atteint pas l'optimum, il campe à distance bornée de lui, et \
          cette distance est un réglage et non un défaut à corriger (§1.2, p. 16, 4ᵉ éd.)";
@@ -501,9 +510,17 @@ pub struct Mesures {
     /// distance, et l'interface ne la chiffre pas non plus.
     pub utilite_optimale: f64,
     /// Minimum, sur tous les cycles, de la probabilité de tirage la plus faible.
-    pub plancher_observe: f64,
+    ///
+    /// `None` tant qu'aucun cycle n'a été mesuré — une exécution de budget nul,
+    /// ou dont tous les poids sont restés à zéro. C'était `f64::INFINITY`, une
+    /// sentinelle qui se lisait comme un résultat en face de « plancher
+    /// observé » (F2) et qu'aucun type n'obligeait à traiter.
+    pub plancher_observe: Option<f64>,
     /// Minimum, sur tous les cycles, de la fraction d'effort hors dominante.
-    pub hors_dominante_observee: f64,
+    ///
+    /// `None` dans les mêmes conditions que [`Mesures::plancher_observe`], et
+    /// pour la même raison.
+    pub hors_dominante_observee: Option<f64>,
     /// EX-A10 « rejeu » — effets dupliqués par une action non idempotente.
     pub effets_dupliques: u64,
     /// EX-A10 « incomparabilité M2 » — décisions jouées sur un écart de φ
@@ -702,8 +719,6 @@ impl Fourragement {
         }
 
         let mesures = Mesures {
-            plancher_observe: f64::INFINITY,
-            hors_dominante_observee: f64::INFINITY,
             effort: vec![0; params.m as usize],
             effort_apres_bascule: vec![0; params.m as usize],
             effort_par_tranche: vec![vec![0; params.m as usize]; NB_TRANCHES],
@@ -1039,9 +1054,16 @@ impl Fourragement {
         // l'état de l'hypothèse, sans quoi un réglage qui efface la borne
         // effacerait du même geste ce qu'il fallait précisément regarder à sa
         // place.
-        self.mesures.plancher_observe = self.mesures.plancher_observe.min(p_min);
-        self.mesures.hors_dominante_observee =
-            self.mesures.hors_dominante_observee.min(hors_dominante);
+        self.mesures.plancher_observe = Some(
+            self.mesures
+                .plancher_observe
+                .map_or(p_min, |m| m.min(p_min)),
+        );
+        self.mesures.hors_dominante_observee = Some(
+            self.mesures
+                .hors_dominante_observee
+                .map_or(hors_dominante, |m| m.min(hors_dominante)),
+        );
 
         let bornes = match &self.bornes {
             Ok(b) => *b,
@@ -1268,6 +1290,22 @@ impl Fourragement {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    /// La légende affichée porte la provenance que les panneaux citent.
+    ///
+    /// Les deux sont côte à côte dans le même cadre de l'écran B, et ils ont
+    /// déjà annoncé deux pages différentes pour une seule source. Une
+    /// repagination du traité fait échouer ce test au lieu de laisser l'écran
+    /// citer une page qui n'existe plus (F2).
+    #[test]
+    fn la_legende_porte_la_provenance() {
+        assert!(
+            Bornes::LEGENDE.contains(Bornes::SOURCE),
+            "SOURCE = {}, LEGENDE = {}",
+            Bornes::SOURCE,
+            Bornes::LEGENDE
+        );
+    }
 
     /// EX-A11c — la borne nominale est celle que le traité démontre, et elle est
     /// finie. Sert d'ancre aux tests de bord qui suivent.

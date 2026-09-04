@@ -164,43 +164,31 @@ pub struct Retrait {
 
 /// Simule le retrait d'un agent selon l'ordre de chute.
 ///
-/// `seuil_echec = 0` est **refusé**, et non écrêté : les champs de
-/// [`ReglagesSonde`] sont publics, `seuil_echec − 1` sur un entier non signé
-/// abandonnait, et l'écrêter rendait une durée de mise à mort d'allure
-/// plausible sous un réglage qui ne décrit aucune politique de sonde — zéro
-/// échec toléré n'est pas un seuil serré, c'est l'absence de seuil. « Une
-/// configuration invalide est un refus rendu à l'appelant, jamais un abandon »
-/// (SPEC §7, clause 4) — même arbitrage que `sim_core::detecteur::Detecteur` et
-/// que [`crate::soupcon::DetecteurInfectieux::completude`], qui dérivent le même
-/// encadrement de 21 à 31 s.
+/// La mise à mort survient à la **borne haute** de
+/// [`sim_core::detecteur::encadrement_de_detection`] : `seuil_echec` échecs
+/// consécutifs, l'expiration du dernier, et la période entière que coûte un
+/// arrêt survenu juste après une sonde réussie. Le §6.1 dérive le même
+/// encadrement que le §4.3 et le §7.3, refus du seuil nul et saturation
+/// compris ; les réglages sont ici en **secondes**, d'où la conversion.
 ///
-/// La durée **sature**, pour la même raison que dans les deux autres : les
-/// champs de [`ReglagesSonde`] sont publics et le profil release du dépôt ne
-/// pose pas `overflow-checks`, de sorte qu'une période proche de 2⁶⁴ rendait une
-/// mise à mort enroulée, donc annoncée immédiate là où elle est la plus lente.
+/// # Erreurs
+///
+/// `seuil_echec = 0` est refusé pour les deux ordres de chute, et non seulement
+/// pour celui qui calcule une durée : un réglage qui ne décrit aucune politique
+/// de sonde ne décrit pas non plus le retrait qu'elle encadre.
 pub fn retirer(ordre: OrdreDeChute, r: ReglagesSonde) -> Result<Retrait, String> {
-    if r.seuil_echec == 0 {
-        return Err(
-            "seuil d'échec nul refusé : la mise à mort suit `seuil_echec` échecs consécutifs, et \
-             à zéro échec il n'y a pas de politique de sonde à simuler — la durée rendue serait \
-             une valeur d'allure plausible sans réglage derrière (§6.1 du traité)."
-                .to_string(),
-        );
-    }
+    let (_, mise_a_mort) = sim_core::detecteur::encadrement_de_detection(
+        Duree(r.periode_s),
+        Duree(r.expiration_s),
+        u32::from(r.seuil_echec),
+    )?;
     Ok(match ordre {
         OrdreDeChute::DisponibiliteDabord => Retrait {
             validation_de_decalage_achevee: true,
             ..Default::default()
         },
         OrdreDeChute::VivaciteDabord => Retrait {
-            // Trois échecs consécutifs à `periode_s` d'intervalle, plus
-            // l'expiration du dernier : une trentaine de secondes.
-            duree_avant_mise_a_mort: Duree(
-                r.periode_s
-                    .saturating_mul(u64::from(r.seuil_echec - 1))
-                    .saturating_add(r.expiration_s)
-                    .saturating_add(r.periode_s),
-            ),
+            duree_avant_mise_a_mort: mise_a_mort,
             redemarrages: 1,
             reequilibrages_rouverts: 1,
             validation_de_decalage_achevee: false,

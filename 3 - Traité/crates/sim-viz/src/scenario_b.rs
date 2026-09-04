@@ -58,21 +58,6 @@ use sim_agents::{scenario_b, ResultatB, BLOC_B};
 /// Largeur en deçà de laquelle les paires de panneaux passent sur une colonne.
 const ETROIT: f32 = 640.0;
 
-/// La provenance des deux bornes du traité, telle que `sim-agents` la porte.
-///
-/// **Couplage par chaîne assumé et nommé**, comme `VAINQUEUR_MAILLE` au
-/// scénario A. Cette crate ne contient aucun texte du traité, et une référence
-/// de section et de page en est un : la seule copie qui fasse autorité est celle
-/// de [`Bornes::LEGENDE`], affichée deux lignes plus bas dans le même cadre. La
-/// recopier ici sans garde-fou a déjà produit le défaut exact que F2 vise — le
-/// panneau annonçait « p. 13 » sous une légende qui disait « p. 16 », soit deux
-/// pages pour une seule source, dans un seul cadre.
-///
-/// Le test `la_provenance_des_bornes_suit_encore_sim_agents` échoue dès que les
-/// deux divergent de nouveau. Le correctif de fond est un accesseur de
-/// provenance dans `sim-agents`, hors de la portée de la vue.
-const SOURCE_BORNES: &str = "§1.2, p. 16, 4ᵉ éd.";
-
 /// Réglage complet d'une exécution : paramètres, graine, budget.
 ///
 /// La vue le garde pour comparer ce qui est affiché à ce qui est réglé. Quand
@@ -583,13 +568,13 @@ impl VueB {
                                     ui,
                                     "plancher d'exploration",
                                     format!("{plancher_tirage:.6}"),
-                                    SOURCE_BORNES,
+                                    Bornes::SOURCE,
                                 );
                                 du_traite(
                                     ui,
                                     "fraction d'effort hors dominante",
                                     format!("{fraction_hors_dominante:.6}"),
-                                    SOURCE_BORNES,
+                                    Bornes::SOURCE,
                                 );
                             }
                             // NF-14 : la borne est **effacée**, pas grisée ni
@@ -1097,20 +1082,18 @@ fn deux_colonnes(
 
 /// Un minimum sur les cycles qui n'a jamais été mis à jour vaut `+∞`.
 ///
-/// L'écrire tel quel le donnerait pour une mesure, alors que c'est l'absence
-/// d'une mesure : « inf » affiché en face de « plancher observé » se lirait comme
-/// un résultat (F2).
+/// L'écrire autrement le donnerait pour une mesure, alors que c'est l'absence
+/// d'une mesure : la sentinelle « inf » que ce champ portait jusqu'au
+/// 4 septembre 2026 s'affichait en face de « plancher observé » et s'y lisait
+/// comme un résultat (F2). Elle est maintenant un `None`, et c'est le type qui
+/// oblige l'écran à choisir un libellé.
 ///
-/// **Le cas de γ = 1 ne le produit plus.** `Fourragement::verifier_bornes` relève
+/// **Le cas de γ = 1 ne le produit pas.** `Fourragement::verifier_bornes` relève
 /// les deux minimums avant de consulter le portail NF-14, donc une borne effacée
-/// n'efface plus la mesure. La sentinelle ne subsiste que pour une exécution
+/// n'efface pas la mesure. L'absence ne subsiste que pour une exécution
 /// qu'aucun cycle n'a traversée.
-fn jamais_vu(v: f64) -> String {
-    if v.is_finite() {
-        format!("{v:.6}")
-    } else {
-        "jamais observé".to_string()
-    }
+fn jamais_vu(v: Option<f64>) -> String {
+    v.map_or_else(|| "jamais observé".to_string(), |v| format!("{v:.6}"))
 }
 
 /// Le chiffre auquel l'écran répond : gros, et toujours étiqueté « simulé »
@@ -1396,22 +1379,6 @@ mod tests {
         let d = differences(&nominal, &Params::essaim_aveugle());
         assert_eq!(d.len(), 2, "{d:?}");
         assert_eq!(d[0], "T : 50 ms puis 5 ms", "{d:?}");
-    }
-
-    /// La page citée sous les deux bornes est celle que `sim-agents` porte.
-    ///
-    /// Ce test est le garde-fou de `SOURCE_BORNES` : le panneau du §3 et la
-    /// légende d'EX-A11c sont affichés dans le même cadre, à quatre lignes l'un
-    /// de l'autre, et ils ont déjà annoncé deux pages différentes pour une seule
-    /// source. Une repagination du traité fait maintenant échouer ce test au
-    /// lieu de laisser l'écran citer une page qui n'existe plus (F2).
-    #[test]
-    fn la_provenance_des_bornes_suit_encore_sim_agents() {
-        assert!(
-            Bornes::LEGENDE.contains(SOURCE_BORNES),
-            "SOURCE_BORNES = {SOURCE_BORNES}, Bornes::LEGENDE = {}",
-            Bornes::LEGENDE
-        );
     }
 
     /// Chaque préréglage de la table désigne un endroit de l'écran, jamais rien.

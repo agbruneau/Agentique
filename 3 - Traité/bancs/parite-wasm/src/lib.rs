@@ -87,8 +87,22 @@ pub fn empreinte(cas: u32, graine: u64, budget: u64) -> u64 {
         absorber(phi.to_bits());
     }
     absorber(r.mesures.utilite_recoltee.to_bits());
-    absorber(r.mesures.plancher_observe.to_bits());
-    absorber(r.mesures.hors_dominante_observee.to_bits());
+    // Les deux grandeurs sont des `Option<f64>` depuis le 4 septembre 2026.
+    // L'absence retrouve ici la sentinelle qu'elles portaient avant, pour que
+    // les six empreintes de NF-03 ne bougent pas d'un bit sur ce changement de
+    // type — le banc mesure la parité natif/WASM, pas la forme de l'API.
+    absorber(
+        r.mesures
+            .plancher_observe
+            .unwrap_or(f64::INFINITY)
+            .to_bits(),
+    );
+    absorber(
+        r.mesures
+            .hors_dominante_observee
+            .unwrap_or(f64::INFINITY)
+            .to_bits(),
+    );
     h
 }
 

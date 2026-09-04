@@ -193,38 +193,16 @@ impl DetecteurInfectieux {
     /// Aux défauts documentés — 10 s de période, 1 s d'expiration, 3 échecs —
     /// cela donne **21 à 31 s**, et NF-15 exige qu'un test le retrouve.
     ///
-    /// `seuil = 0` est **refusé**, et non ramené à 1 : la dérivation du §7.3
-    /// compte `seuil − 1` intervalles entre échecs, et à zéro échec il n'y a
-    /// pas de détection dont on encadre le délai. Un écrêtage silencieux
-    /// rendrait `(1 s, 11 s)` — un encadrement d'allure plausible que rien ne
-    /// distingue d'une mesure, ce qui est pire qu'un débordement (SPEC §7,
-    /// clause 4 : « une configuration invalide est un refus rendu à l'appelant,
-    /// jamais un abandon »). C'est l'arbitrage que `sim_core::detecteur` et
-    /// `crate::cycle_de_vie::retirer` tiennent aussi, sur la même dérivation.
-    ///
-    /// Le produit **sature**, pour la raison qui vaut dans les trois : le profil
-    /// release du dépôt ne pose pas `overflow-checks`, et une période proche de
-    /// 2⁶⁴ rendrait sinon un encadrement enroulé, c'est-à-dire une détection
-    /// annoncée instantanée là où elle est la plus lente.
+    /// La dérivation elle-même — refus du seuil nul et saturation comprises —
+    /// est celle de [`sim_core::detecteur::encadrement_de_detection`], que le
+    /// §4.3 et le §6.1 appliquent aussi. Il ne reste ici que la conversion : les
+    /// réglages du §7.3 sont en **secondes**, et l'encadrement en tics.
     pub fn completude(
         periode_s: u64,
         expiration_s: u64,
         seuil: u32,
     ) -> Result<(Duree, Duree), String> {
-        if seuil == 0 {
-            return Err(
-                "seuil d'échec nul refusé : l'encadrement du §7.3 compte les intervalles entre \
-                 `seuil` échecs consécutifs, et à zéro échec il n'y a pas de détection à encadrer. \
-                 Le délai rendu serait une valeur d'allure plausible sans mesure derrière."
-                    .to_string(),
-            );
-        }
-        let min = Duree(
-            periode_s
-                .saturating_mul(u64::from(seuil - 1))
-                .saturating_add(expiration_s),
-        );
-        Ok((min, Duree(min.0.saturating_add(periode_s))))
+        sim_core::detecteur::encadrement_de_detection(Duree(periode_s), Duree(expiration_s), seuil)
     }
 }
 

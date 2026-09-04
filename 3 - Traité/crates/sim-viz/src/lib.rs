@@ -934,14 +934,14 @@ fn limites(ui: &mut egui::Ui) {
 
                 // PD6 tranche dans les deux sens : ce que la vue tient et
                 // qu'elle affirme ailleurs ne pas tenir s'affiche au même rang
-                // que ce qu'elle n'a pas. Ces trois énoncés étaient déclarés
+                // que ce qu'elle n'a pas. Ces énoncés étaient déclarés
                 // dans le code — le `//!` de `scenario_b.rs` et le rustdoc de
                 // `situe_la_tranche` — et nulle part à l'écran.
                 section(
                     ui,
                     "Ce que cette interface décide à la place de « sim-agents »",
                     "Le contrat de cette crate est « zéro logique de simulation, zéro définition \
-                     de scénario ». Voici les trois endroits où il ne tient pas, et ce que \
+                     de scénario ». Voici les deux endroits où il ne tient pas, et ce que \
                      chacun coûte à la lecture.",
                     &[
                         "Le découpage du budget en tranches de largeur égale. La figure du \
@@ -953,20 +953,15 @@ fn limites(ui: &mut egui::Ui) {
                          « après la bascule » mentirait sans qu'aucune erreur de compilation ne \
                          le signale.",
                         "Les trois valeurs d'ouverture du scénario B : n = 16, budget de \
-                         150 000 événements, graine 1. Les deux premières sont les défauts du \
+                         150 000 événements, graine 1. Le scénario A n'y est plus : ses six \
+                         valeurs d'ouverture viennent de « sim_agents::ParamsA », depuis le \
+                         4 septembre 2026. Les deux premières sont les défauts du \
                          tableau du §7 du PRD, transcrits ici et non lus dans « sim-agents » — \
                          « Params::scenario_b() » pose n = 64, et l'exécution étant en Θ(n²), 64 \
                          ferait payer seize fois le premier tracé. La conséquence est qu'aucun \
                          des six préréglages n'est marqué « chargé » à l'ouverture ; le bouton \
                          « nominal » ramène le n du scénario. La graine, elle, ne vient d'aucun \
                          tableau.",
-                        "Les six valeurs d'ouverture du scénario A — n = 64, p = 8, ℓ₉₉ = 20 ms, \
-                         aller simple = 2 ms, degré de dépôt = 3, taux d'omission = 0,01 — sont \
-                         les défauts du même tableau du §7 du PRD, transcrits ici pour la même \
-                         raison : « sim_agents::scenario_a » est une fonction à sept paramètres, \
-                         sans constructeur de défaut. Rien ne tient ces transcriptions en accord \
-                         avec le PRD ; seules les plages des curseurs portent leur source à \
-                         l'écran.",
                     ],
                 );
 
