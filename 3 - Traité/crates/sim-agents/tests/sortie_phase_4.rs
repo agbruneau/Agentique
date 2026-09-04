@@ -13,15 +13,13 @@ use sim_agents::allocation::{tableau_15, Mecanisme};
 use sim_agents::cascade::{Cascade, Params, SondeVivacite};
 use sim_agents::gouvernance::Levier;
 use sim_agents::soupcon::{ArbitrageDepoque, Reconfiguration};
-use sim_core::alea::Alea;
 use sim_core::temps::{Duree, Instant};
 use sim_core::ActeurId;
 
 fn derouler(params: Params, pas: u32) -> Cascade {
     let mut c = Cascade::nouvelle(params);
-    let mut alea = Alea::nouveau(1);
     for _ in 0..pas {
-        c.pas(&mut alea);
+        c.pas();
     }
     c
 }
@@ -30,7 +28,7 @@ fn derouler(params: Params, pas: u32) -> Cascade {
 /// traité en regard.
 #[test]
 fn critere_1_le_tableau_15_se_remplit_par_la_mesure() {
-    let t = tableau_15(64, 0.9, 0.01, &mut Alea::nouveau(1));
+    let t = tableau_15(64, 0.9, 0.01);
     assert_eq!(t.len(), 6, "les six mécanismes d'EX-A05");
     for l in &t {
         assert!(!l.repere_du_traite.is_empty(), "{:?}", l.mecanisme);
@@ -86,7 +84,7 @@ fn critere_4_s1w_tient_et_s1_ne_tient_pas() {
     avec.reconfigurer(0, m, Instant(0));
     let epoque_de_m = avec.epoque(0);
     avec.reconfigurer(0, ActeurId(2), Instant(100));
-    assert!(!avec.ecrire(0, m, epoque_de_m, Instant(300)));
+    assert!(!avec.ecrire(0, epoque_de_m, Instant(300)));
     assert!(avec.s1w_tient());
 
     // Sans arbitrage : S1w tombe **exactement** au retour de m, pas avant.
@@ -95,7 +93,7 @@ fn critere_4_s1w_tient_et_s1_ne_tient_pas() {
     let e = sans.epoque(0);
     sans.reconfigurer(0, ActeurId(2), Instant(100));
     assert!(sans.s1w_tient(), "rien avant le retour");
-    assert!(sans.ecrire(0, m, e, Instant(300)));
+    assert!(sans.ecrire(0, e, Instant(300)));
     assert!(!sans.s1w_tient(), "et elle tombe à l'instant du retour");
 
     // La durée de double détention est affichée, et **jamais** comme S1.

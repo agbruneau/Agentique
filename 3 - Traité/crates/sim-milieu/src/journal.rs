@@ -279,11 +279,6 @@ impl Partition {
         &self.journal
     }
 
-    /// Nombre d'enregistrements durables.
-    pub fn durables(&self) -> usize {
-        self.journal.iter().filter(|e| e.durable).count()
-    }
-
     /// M1 — les décalages sont strictement croissants.
     fn m1_tient(&self) -> bool {
         self.journal

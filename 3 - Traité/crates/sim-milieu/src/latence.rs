@@ -145,11 +145,18 @@ impl Mesures {
     /// qui rende la moyenne seule : la règle est tenue par le type, pas par la
     /// discipline de l'appelant.
     pub fn moyenne_et_queue(&self) -> Option<(f64, Duree, Duree)> {
-        Some((
-            self.moyenne()?,
-            self.percentile(0.99)?,
-            self.percentile(0.999)?,
-        ))
+        // Un seul tri pour les deux percentiles : `percentile` clone et trie à
+        // chaque appel, et les appeler deux fois triait deux fois la même suite.
+        if self.valeurs.is_empty() {
+            return None;
+        }
+        let mut tri = self.valeurs.clone();
+        tri.sort_unstable();
+        let rang = |p: f64| {
+            let r = ((p * tri.len() as f64).ceil() as usize).saturating_sub(1);
+            Duree(tri[r.min(tri.len() - 1)])
+        };
+        Some((self.moyenne()?, rang(0.99), rang(0.999)))
     }
 }
 

@@ -116,8 +116,6 @@ pub struct Iteration {
     arretes: Vec<bool>,
     /// Tours écoulés.
     pub tours: u64,
-    /// Écart maximal observé au tour précédent, pour le critère local.
-    dernier_ecart: f64,
     /// Tours consécutifs sous ε.
     tours_sous_epsilon: u32,
 }
@@ -134,7 +132,6 @@ impl Iteration {
             mode,
             alpha: alpha_facteur / delta,
             tours: 0,
-            dernier_ecart: f64::INFINITY,
             tours_sous_epsilon: 0,
         }
     }
@@ -172,11 +169,6 @@ impl Iteration {
             self.x[i] = anciens[i] + self.alpha * somme;
         }
         self.tours += 1;
-
-        let ecart = self.ecart();
-        if ecart < self.dernier_ecart {
-            self.dernier_ecart = ecart;
-        }
     }
 
     /// Écart maximal entre états — la dispersion.

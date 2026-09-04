@@ -108,7 +108,6 @@ impl Proprietes {
 struct Vue {
     etat: Etat,
     echecs_consecutifs: u8,
-    derniere_sonde: Instant,
 }
 
 /// Le détecteur paramétré.
@@ -260,6 +259,15 @@ impl Detecteur {
     /// cette information (§8.3 du PRD).
     ///
     /// Rend l'état après la sonde.
+    ///
+    /// `maintenant` **n'est pas consommé**, et la signature le garde quand même.
+    /// La vue portait un champ `derniere_sonde` que rien ne lisait — écrit à
+    /// chaque sonde, jamais relu — et son retrait laisse ce paramètre sans
+    /// usage. Il reste parce que le retirer changerait l'interface d'un objet
+    /// dont la sonde est datée dans le traité (§4.3), et parce qu'un appelant
+    /// qui daterait ses sondes n'aurait rien à changer le jour où la vue
+    /// redeviendrait historisée. C'est le seul paramètre du dépôt dans ce cas,
+    /// et il est nommé ici plutôt que découvert.
     pub fn sonder(
         &mut self,
         cible: ActeurId,
@@ -267,11 +275,11 @@ impl Detecteur {
         latence: Duree,
         maintenant: Instant,
     ) -> Etat {
+        let _ = maintenant;
         self.messages += 2; // aller et retour (EX-A23, coût nominal)
         let seuil = self.seuil;
         let expiration = self.expiration;
         let vue = self.vues.entry(cible.0).or_default();
-        vue.derniere_sonde = maintenant;
 
         if vue.etat == Etat::Retire {
             return Etat::Retire;
@@ -453,10 +461,15 @@ mod tests {
 
     #[test]
     fn le_detecteur_refuse_une_expiration_plus_longue_que_sa_periode() {
-        let r = std::panic::catch_unwind(|| {
-            Detecteur::nouveau(Duree(1), Duree(10), 3).expect("réglage valide")
-        });
-        assert!(r.is_err());
+        // Un `Result`, pas une panique : le constructeur assertait jusqu'au banc
+        // du 17 août 2026, et ce test enveloppait encore l'appel dans un
+        // `catch_unwind` — il vérifiait donc qu'un `expect` panique, ce qui est
+        // vrai de tout `expect` sur une `Err` et ne dit rien du refus lui-même.
+        let motif = Detecteur::nouveau(Duree(1), Duree(10), 3)
+            .expect_err("expiration ≥ période : refus attendu");
+        assert!(motif.contains("§4.3 du traité"), "{motif}");
+        // Et le réglage voisin passe : la garde ne mange pas le domaine utile.
+        assert!(Detecteur::nouveau(Duree(10), Duree(9), 3).is_ok());
     }
 
     /// PD6 dans les deux sens : « inactif » quand le réglage est nul, la valeur

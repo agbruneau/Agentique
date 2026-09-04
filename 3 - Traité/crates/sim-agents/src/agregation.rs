@@ -279,6 +279,15 @@ impl PushPull {
 
             // Désaccord d'époque : l'agent en retard se réinitialise, celui en
             // avance ignore. Deux traitements **opposés** du même fait.
+            //
+            // ⚠ **Cette branche est inatteignable, et c'est déclaré** : la
+            // relance ci-dessus incrémente *toutes* les époques du même bloc, et
+            // rien d'autre n'y touche — deux époques ne divergent jamais. Le
+            // mode est donc écrit et non provocable, ce que
+            // `crate::hors_perimetre()` dit, et que
+            // `les_epoques_ne_divergent_jamais` fixe : le jour où la relance
+            // deviendra un bavardage, ce test tombera, et c'est ce qu'il est
+            // fait pour.
             if self.epoque[i as usize] != self.epoque[j as usize] {
                 let (retard, avance) = if self.epoque[i as usize] < self.epoque[j as usize] {
                     (i, j)
@@ -831,6 +840,46 @@ mod tests {
         let (_, etiquette) = p.critere_local_heuristique(1e-3);
         assert!(etiquette.contains("heuristique"));
         assert!(!etiquette.contains("convergé"));
+    }
+
+    /// **Le mode « époque » n'est produit par rien, et ce test le fixe** (PD6,
+    /// NF-10). Sous relance courte, omission forte, crash et partition — tout ce
+    /// que le mécanisme sait injecter, en même temps —, les époques restent
+    /// égales et aucune rupture n'est attribuée à `Ligne::Epoque`. La cause est
+    /// dans le modèle et non dans le réglage : la relance incrémente *toutes*
+    /// les époques d'un bloc. `crate::hors_perimetre()` le déclare ; ce test
+    /// tombera le jour où la relance deviendra un bavardage, et c'est alors que
+    /// le mode deviendra provocable.
+    #[test]
+    fn les_epoques_ne_divergent_jamais() {
+        let params = Params {
+            omission: 0.30,
+            relance: Some(7),
+            crash_au_cycle: Some(11),
+            partition: true,
+            biais: Biais::Uniforme,
+            ..Params::default()
+        };
+        let mut p = PushPull::nouveau(etats(64), params);
+        let mut s = ServiceDePairs::nouveau(64, params.biais);
+        let mut alea = Alea::nouveau(37);
+        for c in 0..400 {
+            p.cycle(&mut s, &mut alea, Instant(c));
+            assert!(
+                p.epoque.windows(2).all(|w| w[0] == w[1]),
+                "cycle {c} : les époques ont divergé — {:?}",
+                &p.epoque[..8]
+            );
+        }
+        assert!(
+            !p.ruptures.iter().any(|r| r.ligne == Ligne::Epoque),
+            "une rupture d'époque a été produite : le mode est devenu provocable"
+        );
+        // Et le reste du mécanisme tourne bien : les autres modes, eux, sortent.
+        assert!(
+            p.ruptures.iter().any(|r| r.ligne == Ligne::Ligne4PullPerdu),
+            "sans perte de PULL, ce test ne prouverait rien"
+        );
     }
 
     /// EX-A37 — le crash-arrêt emporte la masse détenue, et l'oracle l'attribue

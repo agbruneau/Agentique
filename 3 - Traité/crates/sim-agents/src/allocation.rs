@@ -8,7 +8,6 @@
 //! restent affichées en regard, en gris.
 
 use crate::Bloc;
-use sim_core::alea::Alea;
 
 /// Le bloc de trois du **scénario F** — allocation comparée (PD8).
 pub const BLOC_F: Bloc = Bloc {
@@ -226,10 +225,10 @@ pub fn fluctuation_relative(n: u32) -> f64 {
 /// vraie enchère, dont le compte de tours alimente `messages`, `tours` et
 /// `qualite` ; l'auto-affectation à d sondes calcule son rapport de temps de
 /// séjour. Les quatre autres portent les valeurs citées du traité. **Aucune tâche
-/// n'est allouée et la graine est ignorée** — `crate::hors_perimetre()` le
-/// déclare, et le critère de sortie de la phase 4 le porte comme non atteint.
-pub fn tableau_15(n: u32, lambda: f64, epsilon: f64, alea: &mut Alea) -> Vec<LigneTableau15> {
-    let _ = alea;
+/// n'est allouée et aucune graine n'entre** — la fonction n'en demande pas, et
+/// `crate::hors_perimetre()` le déclare : le critère de sortie de la phase 4 le
+/// porte comme non atteint.
+pub fn tableau_15(n: u32, lambda: f64, epsilon: f64) -> Vec<LigneTableau15> {
     let mut enchere = EnchereEpsilon::nouvelle(n, epsilon, 100.0);
     let tours_enchere = enchere.executer(1_000_000).unwrap_or(1_000_000);
 
@@ -339,7 +338,7 @@ mod tests {
         assert_eq!(HYPOTHESES_GLOUTON.len(), 2);
         assert!(LIBELLE_GLOUTON.contains("achète l'écart contre l'une des deux hypothèses"));
 
-        let t = tableau_15(64, 0.9, 0.01, &mut Alea::nouveau(1));
+        let t = tableau_15(64, 0.9, 0.01);
         let glouton = t
             .iter()
             .find(|l| l.mecanisme == Mecanisme::GloutonEnLigne)
@@ -405,7 +404,7 @@ mod tests {
     /// **aucune** condition d'arrêt.
     #[test]
     fn le_sixieme_mecanisme_coute_zero_et_ne_sarrete_jamais() {
-        let t = tableau_15(250, 0.9, 0.01, &mut Alea::nouveau(2));
+        let t = tableau_15(250, 0.9, 0.01);
         let stochastique = t
             .iter()
             .find(|l| l.mecanisme == Mecanisme::PolitiqueStochastique)
@@ -421,7 +420,7 @@ mod tests {
     /// **affiché en regard**.
     #[test]
     fn le_tableau_15_porte_les_six_mecanismes_et_leurs_reperes() {
-        let t = tableau_15(64, 0.9, 0.01, &mut Alea::nouveau(3));
+        let t = tableau_15(64, 0.9, 0.01);
         assert_eq!(t.len(), 6);
         for l in &t {
             assert!(!l.repere_du_traite.is_empty(), "{:?}", l.mecanisme);

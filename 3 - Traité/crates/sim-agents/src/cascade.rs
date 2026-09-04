@@ -10,7 +10,6 @@
 //! reporte sur les survivants, et la génération suivante commence.
 
 use crate::Bloc;
-use sim_core::alea::Alea;
 use sim_core::temps::Duree;
 
 /// Le bloc de trois du **scénario J** — la cascade de l'agent saturé (PD8).
@@ -209,7 +208,13 @@ impl Cascade {
     }
 
     /// Un pas de sonde, de durée `periode_s`.
-    pub fn pas(&mut self, _alea: &mut Alea) {
+    ///
+    /// **Aucun aléa n'entre ici, et la signature n'en demande plus.** La cascade
+    /// n'injecte aucune faute — c'est sa condition de démonstration —, donc le
+    /// `&mut Alea` qu'elle recevait n'était jamais tiré. Le jour où la file par
+    /// agent d'EX-C15 sera branchée, elle amènera la sienne, avec la sémantique
+    /// qu'elle aura alors.
+    pub fn pas(&mut self) {
         self.pas += 1;
         let actifs = self.actifs();
 
@@ -420,9 +425,8 @@ mod tests {
 
     fn derouler(params: Params, pas: u32) -> Cascade {
         let mut c = Cascade::nouvelle(params);
-        let mut alea = Alea::nouveau(1);
         for _ in 0..pas {
-            c.pas(&mut alea);
+            c.pas();
         }
         c
     }

@@ -51,6 +51,34 @@ use serde::{Deserialize, Serialize};
 /// Version du crate, écrite dans tout export (NF-03).
 pub const VERSION: &str = env!("CARGO_PKG_VERSION");
 
+/// Constante de départ de FNV-1a 64 bits.
+///
+/// L'empreinte du produit ne vient pas du traité : c'est un choix, retenu parce
+/// qu'il n'a besoin d'aucune dépendance et se réimplante à l'identique sur toute
+/// cible (NF-02). Les deux bancs de `bancs/` la réécrivent, et c'est délibéré —
+/// le banc DT1 ne doit dépendre de rien, c'est sa méthode.
+pub(crate) const FNV_DEPART: u64 = 0xcbf2_9ce4_8422_2325;
+/// Nombre premier de FNV-1a 64 bits.
+pub(crate) const FNV_PREMIER: u64 = 0x0000_0100_0000_01b3;
+
+/// Absorbe des octets dans un hachage FNV-1a.
+///
+/// Les deux empreintes de cette crate passent par ici : [`Config::hachage`],
+/// qui avale la sérialisation JSON, et [`moteur::Trace::absorber`], qui avale
+/// les huit octets de poids faible d'un `u64`. ⚠ *Le commentaire de `hachage`
+/// affirmait le contraire — « les réunir changerait toutes les empreintes de
+/// NF-03 » — et c'est faux : les deux absorbaient déjà **octet par octet**,
+/// `(x >> 8i) & 0xff` étant exactement `x.to_le_bytes()[i]`. Ce qui les
+/// distingue est ce qu'elles donnent à manger, jamais la façon de manger.*
+/// Mesuré : les six empreintes du banc de parité sont inchangées.
+pub(crate) fn absorber_octets(mut h: u64, octets: &[u8]) -> u64 {
+    for octet in octets {
+        h ^= u64::from(*octet);
+        h = h.wrapping_mul(FNV_PREMIER);
+    }
+    h
+}
+
 /// Identifiant d'un acteur. Un acteur est ce que le moteur sait dater ; il peut
 /// être un agent, une partition, ou le milieu lui-même — `sim-core` ne tranche
 /// pas, puisqu'il ne les connaît pas.
@@ -93,22 +121,8 @@ impl Config {
     /// d'un fichier ne peut pas être dans cet état, la même règle JSON valant à
     /// la lecture.
     pub fn hachage(&self) -> u64 {
-        // FNV-1a 64 bits, base et premier — mêmes constantes que
-        // `bancs/dt1-flottant/src/noyau.rs`, qui les nomme aussi. Elles ne
-        // viennent pas du traité : c'est un choix d'empreinte du produit, retenu
-        // parce qu'il n'a besoin d'aucune dépendance et se réimplante à
-        // l'identique sur toute cible (NF-02). Le hachage avale la chaîne
-        // **octet par octet**, ce qui le distingue de `moteur::Trace`, qui avale
-        // des `u64` : les réunir changerait toutes les empreintes de NF-03.
-        const FNV_DEPART: u64 = 0xcbf2_9ce4_8422_2325;
-        const FNV_PREMIER: u64 = 0x0000_0100_0000_01b3;
         let json = serde_json::to_string(self).expect("configuration sérialisable");
-        let mut h: u64 = FNV_DEPART;
-        for octet in json.as_bytes() {
-            h ^= *octet as u64;
-            h = h.wrapping_mul(FNV_PREMIER);
-        }
-        h
+        absorber_octets(FNV_DEPART, json.as_bytes())
     }
 
     /// En-tête écrit dans tout export (NF-03).

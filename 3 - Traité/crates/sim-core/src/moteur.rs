@@ -141,22 +141,16 @@ impl Budget {
 pub struct Trace(u64);
 
 impl Trace {
-    const DEPART: u64 = 0xcbf2_9ce4_8422_2325;
-    const PREMIER: u64 = 0x0000_0100_0000_01b3;
-
     /// Trace vide, avant tout événement.
     pub fn nouvelle() -> Trace {
-        Trace(Trace::DEPART)
+        Trace(crate::FNV_DEPART)
     }
 
     /// Absorbe une valeur dans le hachage. L'ordre des appels compte : deux
     /// exécutions qui absorbent les mêmes valeurs dans un ordre différent
     /// donnent des traces différentes, et c'est le comportement voulu.
     pub fn absorber(&mut self, x: u64) {
-        for i in 0..8 {
-            self.0 ^= (x >> (i * 8)) & 0xff;
-            self.0 = self.0.wrapping_mul(Trace::PREMIER);
-        }
+        self.0 = crate::absorber_octets(self.0, &x.to_le_bytes());
     }
 
     /// Le hachage courant, tel qu'il s'écrit dans un export (NF-01, NF-04).

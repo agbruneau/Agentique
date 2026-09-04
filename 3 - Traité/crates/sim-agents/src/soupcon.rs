@@ -523,13 +523,11 @@ impl Reconfiguration {
     ///
     /// **S1w** — sous arbitrage, aucune écriture d'époque inférieure n'est
     /// acceptée. C'est une propriété d'**écriture**, distincte de S1.
-    pub fn ecrire(
-        &mut self,
-        plage: usize,
-        auteur: ActeurId,
-        epoque: u64,
-        maintenant: Instant,
-    ) -> bool {
+    ///
+    /// **L'auteur n'entre pas, et la signature ne le demande plus.** S1w se
+    /// décide sur l'époque seule, et aucun compteur du module ne distingue
+    /// l'ancien propriétaire d'un tiers — ce qu'EX-A41 n'exige pas.
+    pub fn ecrire(&mut self, plage: usize, epoque: u64, maintenant: Instant) -> bool {
         let courante = self.epoques[plage];
         let perimee = epoque < courante;
 
@@ -555,10 +553,7 @@ impl Reconfiguration {
                 }
                 true
             }
-            (_, false) => {
-                let _ = auteur;
-                true
-            }
+            (_, false) => true,
         }
     }
 
@@ -851,7 +846,7 @@ mod tests {
         r.reconfigurer(0, i, Instant(100));
         // m revient et écrit avec son époque périmée.
         assert!(
-            !r.ecrire(0, m, epoque_de_m, Instant(200)),
+            !r.ecrire(0, epoque_de_m, Instant(200)),
             "l'écriture est rejetée"
         );
         assert!(r.s1w_tient());
@@ -868,7 +863,7 @@ mod tests {
         r.reconfigurer(0, m, Instant(0));
         let epoque_de_m = r.epoque(0);
         r.reconfigurer(0, ActeurId(2), Instant(100));
-        r.ecrire(0, m, epoque_de_m, Instant(350));
+        r.ecrire(0, epoque_de_m, Instant(350));
 
         assert!(
             r.duree_double_detention.0 > 0,
@@ -897,7 +892,7 @@ mod tests {
         r.reconfigurer(0, ActeurId(2), Instant(100));
         assert_eq!(r.acceptations_perimees, 0, "rien avant le retour de m");
 
-        assert!(r.ecrire(0, m, epoque_de_m, Instant(300)), "acceptée");
+        assert!(r.ecrire(0, epoque_de_m, Instant(300)), "acceptée");
         assert_eq!(r.acceptations_perimees, 1);
         assert!(!r.s1w_tient(), "S1w tombe sans arbitrage");
         assert_eq!(
@@ -914,7 +909,7 @@ mod tests {
         r.reconfigurer(0, ActeurId(1), Instant(0));
         let e = r.epoque(0);
         r.reconfigurer(0, ActeurId(2), Instant(10));
-        r.ecrire(0, ActeurId(1), e, Instant(20));
+        r.ecrire(0, e, Instant(20));
         assert_eq!(r.acceptations_perimees, 1);
         assert_eq!(r.doubles_effets, 0);
     }

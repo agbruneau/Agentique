@@ -145,8 +145,8 @@ pub fn scenario_m(
     // qui l'impose, et DT14 qui tranche le lieu. Le scénario B range toutes ses
     // ressources sur la partition 0 par défaut ; si l'appelant les a réparties,
     // l'estimation refuse, et c'est le bon comportement.
-    let decisions = f.milieu.partition(0).enregistrements().to_vec();
-    let conformite = conformite::estimer(&decisions).map_err(str::to_string)?;
+    let conformite =
+        conformite::estimer(f.milieu.partition(0).enregistrements()).map_err(str::to_string)?;
     // NF-14 s'applique au **réglage**, non à la mesure : c'est la structure des
     // familles qui viole démontrablement l'indépendance des tirages. Φ_c ne le
     // ferait pas, faute de séparer ses deux causes (CONSTAT_DE_MESURE).

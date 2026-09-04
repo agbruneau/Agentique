@@ -142,6 +142,7 @@ pub fn hors_perimetre() -> &'static [&'static str] {
          (EX-A59) sont implantés et testés unitairement, et aucun scénario ne les exécute. \
          La file n'a même pas d'émetteur, faute de régime du §8.3 du traité dans le monde \
          clos (T3) : le panneau d'EX-V23 n'a donc rien à afficher et n'est pas câblé",
+        "mode « époque » du push-pull, lignes 5 et 6 de l'algorithme 4.1 — deux traitements          opposés du même désaccord d'époque, déclarés comme mode de défaillance et que rien          ne peut produire. La relance de la ligne 11 est modélisée comme une remise à zéro          instantanée et globale, qui incrémente toutes les époques du même bloc ; ni le          crash-arrêt, ni la partition, ni l'omission n'en font diverger deux. « Ligne::Epoque »          n'est donc construite par aucune exécution ni aucun test, et NF-10 n'est pas tenue          pour ce mode. Ce qu'il faudrait : modéliser la relance comme le bavardage qu'elle est          dans l'algorithme, un initiateur et une propagation par les échanges — ce qui déplace          les grandeurs du critère (3) de la phase 3, donc une décision de produit",
         "tableau 21 à l'écran (EX-A58) — « dettes::verdicts » est calculé par le scénario M et \
          par personne d'autre ; « sim-viz » ne lit pas le module, donc l'hypothèse \
          d'indépendance de chaque énoncé n'est pas affichée à côté de sa valeur",
