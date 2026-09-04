@@ -16,7 +16,9 @@ use std::time::Instant;
 
 fn main() {
     println!("banc NF-05 — cible : ≥ 1000 s simulées / s-cœur à n = 1000, p = 16\n");
-    println!("     n     p    événements   s simulées   s-cœur   débit (s sim./s-cœur)  retard max");
+    println!(
+        "     n     p    événements   s simulées   s-cœur   débit (s sim./s-cœur)  retard max"
+    );
 
     for (n, p, budget) in [
         (64u32, 8u32, 200_000u64),

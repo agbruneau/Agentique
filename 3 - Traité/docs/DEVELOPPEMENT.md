@@ -169,7 +169,11 @@ cargo run -p sim-agents --example diagnostic_conformite --release
 
 Il n'y a pas d'intégration continue dans ce dépôt — NF-13 et NF-16 nomment un
 mécanisme d'application qu'il ne contient pas. Ce que ces exigences obtiennent
-vient donc de ces **cinq** commandes, lancées à la main, dans cet ordre :
+vient donc de ces **six** commandes, lancées à la main, dans cet ordre :
+
+```bash
+cargo fmt --all --check
+```
 
 ```bash
 cargo test --workspace --release
@@ -196,6 +200,15 @@ sont restés verts pendant que `cargo doc` sortait en 101 sur deux renvois
 rustdoc cassés : la procédure d'avant commit était structurellement incapable de
 voir le seul défaut mécanique que le dépôt portait en cours. Les trois sortent
 non nulles à la première violation.
+
+☑ **La première a été ajoutée le 4 septembre 2026.** Le dépôt n'avait jamais passé
+`rustfmt` : 60 fichiers et 225 différences de mise en page, mesurées ce jour-là et
+appliquées en un commit isolé — `rustfmt` ne touche ni les chaînes, ni les
+commentaires, ni les rustdoc, et les six empreintes du banc de parité comme les
+467 tests l'ont confirmé sur-le-champ. ⚠ *Ce n'était pas une règle du dossier, et
+son absence coûtait à chaque revue : un diff de fond traînait les replis de mise
+en page des lignes qu'il touchait.* La commande sort non nulle à la première
+divergence, comme les cinq autres.
 
 ☑ **Les deux dernières ont été ajoutées le 2 septembre 2026, et pour le même
 motif : elles couvrent deux postes que les trois premières ne voient pas.**

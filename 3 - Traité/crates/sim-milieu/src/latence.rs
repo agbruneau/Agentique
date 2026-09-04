@@ -16,9 +16,9 @@
 //!   portent des libellés distincts dans toute l'interface, et un affichage qui
 //!   les mêlerait est un défaut bloquant.
 
+use serde::{Deserialize, Serialize};
 use sim_core::alea::Alea;
 use sim_core::temps::{Duree, Granularite};
-use serde::{Deserialize, Serialize};
 
 /// Le quantile à 99 % d'une exponentielle vaut sa moyenne fois ln(100).
 /// `libm::log` et non `f64::ln` : le banc DT1 mesure que la seconde diverge

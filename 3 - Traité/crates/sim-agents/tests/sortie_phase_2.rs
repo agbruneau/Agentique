@@ -11,10 +11,10 @@
 
 use sim_agents::elasticite::{Controleur, Params as ParamsElasticite};
 use sim_agents::partage::Lien;
+use sim_agents::scenario_b;
 use sim_agents::scenario_d::{Choix, Etape, ScenarioD};
 use sim_agents::stigmergie::Params;
 use sim_agents::usl::{ajuster_avec_ic, Charge};
-use sim_agents::scenario_b;
 use sim_core::alea::Alea;
 
 /// **(1)** Le scénario C retrouve σ et κ injectés, dans son intervalle de
@@ -56,7 +56,10 @@ fn critere_2_r1_tombe_exactement_a_t4_et_jamais_avant() {
     }
     assert_eq!(d.isr.pannes, 2);
     d.choisir(Choix::ElireHorsIsr);
-    assert!(d.violation_r1().is_some(), "R1 doit tomber à l'élection hors ISR");
+    assert!(
+        d.violation_r1().is_some(),
+        "R1 doit tomber à l'élection hors ISR"
+    );
 
     // Et jamais si l'on attend : le prix payé est l'indisponibilité.
     let mut attente = ScenarioD::defaut();
@@ -73,9 +76,13 @@ fn critere_3_lisr_muet_ne_leve_aucune_erreur_et_linterface_le_nomme() {
         d.pas();
     }
     // Le producteur écrit encore, et reçoit son accusé.
-    let decalage = d.isr.ecrire().expect("avec m = 1, la partition accuse encore");
+    let decalage = d
+        .isr
+        .ecrire()
+        .expect("avec m = 1, la partition accuse encore");
     for id in d.isr.isr().to_vec() {
-        d.isr.repliquer(id, decalage + 1, sim_core::temps::Instant(99));
+        d.isr
+            .repliquer(id, decalage + 1, sim_core::temps::Instant(99));
     }
     assert_eq!(d.isr.derniere_largeur(), Some(1));
     assert_eq!(d.isr.tolerances().0, Some(0), "tolérance tombée à 0");
@@ -86,9 +93,12 @@ fn critere_3_lisr_muet_ne_leve_aucune_erreur_et_linterface_le_nomme() {
     // L'affichage EX-V15 montre les trois grandeurs sans jamais les additionner.
     let v15 = d.isr.affichage_v15();
     assert!(v15.iter().any(|(k, _)| *k == "|ISR| courant"));
-    assert!(v15.iter().any(|(k, _)| *k == "largeur d'accusé du dernier validé"));
-    assert!(v15.iter().any(|(k, v)| *k == "marge d'accusé |ISR| − m"
-        && v.contains("grandeur dérivée du produit")));
+    assert!(v15
+        .iter()
+        .any(|(k, _)| *k == "largeur d'accusé du dernier validé"));
+    assert!(v15.iter().any(
+        |(k, v)| *k == "marge d'accusé |ISR| − m" && v.contains("grandeur dérivée du produit")
+    ));
 }
 
 /// **(4)** Un lien partagé reproduit la figure **exactement** chez le
@@ -143,7 +153,11 @@ fn critere_5_loscillation_diverge_sans_aucune_panne() {
         "amplitude {}",
         oscillant.amplitude_totale()
     );
-    assert!(oscillant.inversions >= 4, "{} inversions", oscillant.inversions);
+    assert!(
+        oscillant.inversions >= 4,
+        "{} inversions",
+        oscillant.inversions
+    );
     assert!(
         !oscillant.affichage_point_fixe().contains("stabilis"),
         "l'interface n'affiche jamais « stabilisé »"

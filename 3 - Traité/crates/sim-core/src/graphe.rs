@@ -303,7 +303,10 @@ mod tests {
                 }
             }
         }
-        assert!(asymetries > 0, "un graphe systématiquement symétrique n'est pas orienté");
+        assert!(
+            asymetries > 0,
+            "un graphe systématiquement symétrique n'est pas orienté"
+        );
     }
 
     /// Le voisinage **change d'un tour à l'autre**.
@@ -455,6 +458,10 @@ mod tests {
         // Sur un cycle, entrant = sortant : il faut un sommet déséquilibré pour
         // que Δ(G) départage les deux lectures. C'est le **sortant**, celui qui
         // borne la somme de l'itération linéaire.
-        assert_eq!(g.degre_max(), 2, "degré sortant de 0, non son degré entrant");
+        assert_eq!(
+            g.degre_max(),
+            2,
+            "degré sortant de 0, non son degré entrant"
+        );
     }
 }

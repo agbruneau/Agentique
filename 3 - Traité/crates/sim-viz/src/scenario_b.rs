@@ -251,8 +251,7 @@ impl VueB {
             Ok(r) => {
                 // Le repère de comparaison est pris **avant** d'écraser le
                 // résultat : c'est lui qui donne son écart au geste.
-                if let (Some(precedent), Some((p, _, _))) =
-                    (&self.resultat, &self.reglage_affiche)
+                if let (Some(precedent), Some((p, _, _))) = (&self.resultat, &self.reglage_affiche)
                 {
                     self.avant = Some((
                         p.clone(),
@@ -301,12 +300,7 @@ impl VueB {
                     // demande ce qui tourne, et les préréglages ne règlent pas
                     // tous le même modèle.
                     note(ui, &format!("modèle de panne : {}", r.modele_de_panne));
-                    ui.label(
-                        egui::RichText::new(&r.entete)
-                            .monospace()
-                            .weak()
-                            .small(),
-                    );
+                    ui.label(egui::RichText::new(&r.entete).monospace().weak().small());
                     for v in &r.violations {
                         ui.label(
                             egui::RichText::new(format!("violation d'oracle — {v}"))
@@ -476,7 +470,12 @@ impl VueB {
             }
 
             ui.add_space(6.0);
-            simule(ui, "cycles d'agent", format!("{}", r.mesures.cycles), "comptage");
+            simule(
+                ui,
+                "cycles d'agent",
+                format!("{}", r.mesures.cycles),
+                "comptage",
+            );
             simule(
                 ui,
                 "écart à l'optimum — mesure seule, sans borne",
@@ -1039,7 +1038,12 @@ fn schema_de_la_boucle(ui: &mut egui::Ui) {
             ligne(agent, 2.0, "il tire selon φ^α · η^β", petite.clone());
             ligne(milieu, 0.0, "le milieu — le journal", corps);
             ligne(milieu, 1.0, "il porte les traces φ", petite.clone());
-            ligne(milieu, 2.0, "il en oublie une part γ à chaque τ", petite.clone());
+            ligne(
+                milieu,
+                2.0,
+                "il en oublie une part γ à chaque τ",
+                petite.clone(),
+            );
 
             // Les deux flèches, décalées de part et d'autre de l'axe : posées à
             // la même hauteur, elles se superposeraient et la boucle se lirait
@@ -1178,7 +1182,12 @@ fn carte_de_chaleur(ui: &mut egui::Ui, r: &ResultatB) {
 
     // Le socle où tombent les étiquettes : sous la plus haute barre, en fraction
     // d'elle, pour que la marge suive l'échelle au lieu d'être un nombre en dur.
-    let haut = r.phi_moyen.iter().copied().fold(0.0_f64, f64::max).max(1e-9);
+    let haut = r
+        .phi_moyen
+        .iter()
+        .copied()
+        .fold(0.0_f64, f64::max)
+        .max(1e-9);
     let socle = -0.16 * haut;
 
     // Aucune légende en cartouche : `Legend` se pose par défaut en haut à droite,
@@ -1378,7 +1387,10 @@ mod tests {
         let d = differences(&nominal, &Params::verrouillage());
         assert_eq!(d.len(), 2, "{d:?}");
         assert_eq!(d[0], "γ : 0.90 puis 1.00", "{d:?}");
-        assert!(d[1].starts_with("dépôt unitaire : calibré puis fixé"), "{d:?}");
+        assert!(
+            d[1].starts_with("dépôt unitaire : calibré puis fixé"),
+            "{d:?}"
+        );
 
         // `essaim aveugle` ne touche qu'aux deux temps.
         let d = differences(&nominal, &Params::essaim_aveugle());

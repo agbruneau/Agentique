@@ -17,7 +17,8 @@ use sim_core::oracle::{Oracle, Registre};
 use sim_core::temps::{Duree, Instant};
 
 /// D1 — sûreté : l'ordre des époques est respecté à l'application.
-pub const D1: &str = "D1 [S] — aucune directive d'époque inférieure n'est appliquée après une supérieure";
+pub const D1: &str =
+    "D1 [S] — aucune directive d'époque inférieure n'est appliquée après une supérieure";
 /// D2 — vivacité **bornée** par la latence du chemin de commande. Elle ne
 /// s'énonce jamais sans son horizon (PD2).
 pub const D2: &str = "D2 [L] — toute directive finit par être accusée par les agents vivants";
@@ -268,7 +269,11 @@ mod tests {
         for agent in 0..2 {
             s.appliquer(agent, &d, Instant(200));
         }
-        assert_eq!(s.etat(d.epoque), EtatDirective::Indeterminee, "2 < a_min = 3");
+        assert_eq!(
+            s.etat(d.epoque),
+            EtatDirective::Indeterminee,
+            "2 < a_min = 3"
+        );
         s.appliquer(2, &d, Instant(200));
         assert_eq!(s.etat(d.epoque), EtatDirective::Appliquee);
 
@@ -334,7 +339,11 @@ mod tests {
     fn le_retard_et_le_cout_du_reequilibrage_sont_affiches() {
         let mut s = sujet();
         let d = s.ecrire("n", 32.0, Instant(0));
-        assert_eq!(s.retard(d.epoque, Instant(150)), None, "aucun accusé encore");
+        assert_eq!(
+            s.retard(d.epoque, Instant(150)),
+            None,
+            "aucun accusé encore"
+        );
         s.appliquer(0, &d, Instant(150));
         assert_eq!(s.retard(d.epoque, Instant(150)), Some(Duree(150)));
 

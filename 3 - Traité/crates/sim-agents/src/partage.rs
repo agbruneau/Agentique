@@ -233,7 +233,10 @@ mod tests {
             chez_lemetteur.trace, chez_le_destinataire.trace,
             "les deux exécutions doivent avoir la même trace"
         );
-        assert_eq!(chez_lemetteur.mesures.effort, chez_le_destinataire.mesures.effort);
+        assert_eq!(
+            chez_lemetteur.mesures.effort,
+            chez_le_destinataire.mesures.effort
+        );
         assert_eq!(
             chez_lemetteur.mesures.effort_par_tranche,
             chez_le_destinataire.mesures.effort_par_tranche,
@@ -305,7 +308,10 @@ mod tests {
             depot_unitaire: Some(Params::scenario_b().depot()),
             ..Params::scenario_b()
         };
-        let a = Lien { params: p, ..lien() };
+        let a = Lien {
+            params: p,
+            ..lien()
+        };
         let b = Lien::decoder(&a.encoder(), sim_core::VERSION).unwrap();
         assert_eq!(a, b);
     }

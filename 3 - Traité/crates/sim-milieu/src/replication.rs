@@ -472,7 +472,10 @@ impl Isr {
             ("pannes réelles", format!("{}", self.pannes)),
             (
                 "retraits pour retard",
-                format!("{} — jamais comptés comme pannes (EX-M07)", self.retraits_pour_retard),
+                format!(
+                    "{} — jamais comptés comme pannes (EX-M07)",
+                    self.retraits_pour_retard
+                ),
             ),
         ]
     }
@@ -607,7 +610,10 @@ mod tests {
         }
         i.repliquer(1, 5, Instant(1));
         i.repliquer(2, 3, Instant(1));
-        assert_eq!(i.borne_visibilite, 3, "la plus en retard borne la visibilité");
+        assert_eq!(
+            i.borne_visibilite, 3,
+            "la plus en retard borne la visibilité"
+        );
     }
 
     /// Sans meneur, il n'y a pas de « meneur ultérieur » : R1 ne peut pas être

@@ -596,7 +596,11 @@ impl Fourragement {
     /// indexe un vecteur vide dans `sim-milieu`. Un refus rendu à l'appelant
     /// vaut mieux qu'un abandon deux couches plus loin, d'autant que `p` arrive
     /// d'un lien partagé sans contrôle (EX-V09, NF-03).
-    pub fn nouveau(params: Params, granularite: Granularite, alea: &mut Alea) -> Result<Self, String> {
+    pub fn nouveau(
+        params: Params,
+        granularite: Granularite,
+        alea: &mut Alea,
+    ) -> Result<Self, String> {
         if params.p == 0 {
             return Err(
                 "p = 0 : un journal sans partition n'est pas un milieu. Le renforcement \
@@ -637,10 +641,7 @@ impl Fourragement {
         // que le hachage de configuration continue de distinguer les graines.
         let _ = alea.bits();
 
-        let tirage = TirageDeDecision::nouveau(Familles::interpole(
-            params.n,
-            params.part_conforme,
-        ));
+        let tirage = TirageDeDecision::nouveau(Familles::interpole(params.n, params.part_conforme));
 
         let perception = Perception::IntervalleMilieu {
             enregistrements_max: params.intervalle_lecture,
@@ -708,7 +709,8 @@ impl Fourragement {
     }
 
     fn periode(&self) -> Duree {
-        self.granularite.tics_depuis_ms(self.params.periode_cycle_ms)
+        self.granularite
+            .tics_depuis_ms(self.params.periode_cycle_ms)
     }
 
     /// Traite un événement. C'est la boucle de l'appelant qui l'appelle, le
@@ -753,9 +755,8 @@ impl Fourragement {
         let retard: u64 = (0..self.milieu.nb_partitions())
             .map(|p| {
                 self.milieu.partition(p).enregistrements().len() as u64
-                    - self.agents[i].curseurs[p as usize].min(
-                        self.milieu.partition(p).enregistrements().len() as u64,
-                    )
+                    - self.agents[i].curseurs[p as usize]
+                        .min(self.milieu.partition(p).enregistrements().len() as u64)
             })
             .sum();
         self.mesures.retard_consommation_max = self.mesures.retard_consommation_max.max(retard);
@@ -789,7 +790,9 @@ impl Fourragement {
                 // Aucune ressource ne porte de poids : l'écrêtage garantit que
                 // cela ne peut pas arriver, mais si cela arrivait, le
                 // simulateur ne fabrique pas de choix par défaut.
-                moteur.couverture.atteindre("tirage impossible — tous les poids nuls");
+                moteur
+                    .couverture
+                    .atteindre("tirage impossible — tous les poids nuls");
                 return;
             }
         };
@@ -806,7 +809,9 @@ impl Fourragement {
                 self.agents[i].en_vol.push(e);
                 if !self.agir(moteur, i, choix) {
                     self.mesures.depots_sans_effet += 1;
-                    moteur.couverture.atteindre("dépôt sans effet — trace optimiste");
+                    moteur
+                        .couverture
+                        .atteindre("dépôt sans effet — trace optimiste");
                 }
             }
             MomentTrace::Apres => {
@@ -848,8 +853,17 @@ impl Fourragement {
     /// enregistrement lu, et `exp` coûte moins que `pow`. Les deux viennent de
     /// `libm`, donc la portabilité de DT1 tient. Quand γ = 1, `ln γ = 0` et le
     /// facteur vaut 1 sans qu'aucune transcendante soit évaluée.
-    fn actualiser_phi(&mut self, i: usize, maintenant: Instant, lus: &[sim_milieu::Enregistrement]) {
-        let tau = self.granularite.tics_depuis_ms(self.params.fenetre_tau_ms).0.max(1) as f64;
+    fn actualiser_phi(
+        &mut self,
+        i: usize,
+        maintenant: Instant,
+        lus: &[sim_milieu::Enregistrement],
+    ) {
+        let tau = self
+            .granularite
+            .tics_depuis_ms(self.params.fenetre_tau_ms)
+            .0
+            .max(1) as f64;
         let ln_gamma = if self.params.gamma >= 1.0 {
             0.0
         } else {
@@ -929,7 +943,8 @@ impl Fourragement {
         // effacerait du même geste ce qu'il fallait précisément regarder à sa
         // place.
         self.mesures.plancher_observe = self.mesures.plancher_observe.min(p_min);
-        self.mesures.hors_dominante_observee = self.mesures.hors_dominante_observee.min(hors_dominante);
+        self.mesures.hors_dominante_observee =
+            self.mesures.hors_dominante_observee.min(hors_dominante);
 
         let bornes = match self.params.bornes_applicables() {
             Ok(b) => b,
@@ -990,7 +1005,11 @@ impl Fourragement {
         if self.ressources[a].partition == self.ressources[b].partition {
             return;
         }
-        let tau = self.granularite.tics_depuis_ms(self.params.fenetre_tau_ms).0.max(1) as f64;
+        let tau = self
+            .granularite
+            .tics_depuis_ms(self.params.fenetre_tau_ms)
+            .0
+            .max(1) as f64;
         let fenetre = self.granularite.tics_depuis_ms(self.params.l99_milieu_ms).0 as f64;
         // Même écrêtage du bord bas que dans `actualiser_phi` : `pow` d'une base
         // négative à exposant fractionnaire rend `NaN`, et un seuil `NaN` rend
@@ -1080,7 +1099,9 @@ impl Fourragement {
 
         // EX-A10 « rejeu » — crash entre l'action et la validation du décalage.
         if moteur.alea.bernoulli(self.params.crash_avant_validation) {
-            moteur.couverture.atteindre("crash avant validation de décalage");
+            moteur
+                .couverture
+                .atteindre("crash avant validation de décalage");
             // Le point de reprise reste au dernier décalage validé : au cycle
             // suivant, l'agent relit et refait. φ ne bouge pas — le dépôt est
             // idempotent par M1 + M4 — mais l'effet de l'action, lui, se
@@ -1160,7 +1181,9 @@ mod tests {
     /// finie. Sert d'ancre aux tests de bord qui suivent.
     #[test]
     fn les_bornes_nominales_sont_finies_et_dans_zero_un() {
-        let b = Params::scenario_b().bornes_applicables().expect("réglage nominal");
+        let b = Params::scenario_b()
+            .bornes_applicables()
+            .expect("réglage nominal");
         assert!(b.plancher_tirage.is_finite() && b.plancher_tirage > 0.0);
         assert!(b.plancher_tirage <= 1.0, "un plancher est une probabilité");
         assert!(b.fraction_hors_dominante.is_finite());
@@ -1174,20 +1197,94 @@ mod tests {
     #[test]
     fn aucun_reglage_de_bord_ne_rend_une_probabilite_hors_domaine() {
         let bords: Vec<(&str, Params)> = vec![
-            ("γ = 1", Params { gamma: 1.0, ..Params::scenario_b() }),
+            (
+                "γ = 1",
+                Params {
+                    gamma: 1.0,
+                    ..Params::scenario_b()
+                },
+            ),
             // Le domaine (0, 1) a **deux** bords, et la moitié basse ne
             // produisait ni écrêtage, ni avertissement, ni refus.
-            ("γ = 0", Params { gamma: 0.0, ..Params::scenario_b() }),
-            ("γ < 0", Params { gamma: -0.5, ..Params::scenario_b() }),
-            ("γ = NaN", Params { gamma: f64::NAN, ..Params::scenario_b() }),
-            ("φ_min = 0", Params { phi_min: 0.0, ..Params::scenario_b() }),
-            ("φ vide", Params { phi_min: 2.0, phi_max: 1.0, ..Params::scenario_b() }),
-            ("η_max = 0", Params { eta_max: 0.0, ..Params::scenario_b() }),
-            ("η nuls", Params { eta_min: 0.0, eta_max: 0.0, ..Params::scenario_b() }),
-            ("η_min < 0", Params { eta_min: -0.5, ..Params::scenario_b() }),
-            ("m = 0", Params { m: 0, ..Params::scenario_b() }),
-            ("α < 0", Params { alpha: -1.0, ..Params::scenario_b() }),
-            ("β < 0", Params { beta: -1.0, ..Params::scenario_b() }),
+            (
+                "γ = 0",
+                Params {
+                    gamma: 0.0,
+                    ..Params::scenario_b()
+                },
+            ),
+            (
+                "γ < 0",
+                Params {
+                    gamma: -0.5,
+                    ..Params::scenario_b()
+                },
+            ),
+            (
+                "γ = NaN",
+                Params {
+                    gamma: f64::NAN,
+                    ..Params::scenario_b()
+                },
+            ),
+            (
+                "φ_min = 0",
+                Params {
+                    phi_min: 0.0,
+                    ..Params::scenario_b()
+                },
+            ),
+            (
+                "φ vide",
+                Params {
+                    phi_min: 2.0,
+                    phi_max: 1.0,
+                    ..Params::scenario_b()
+                },
+            ),
+            (
+                "η_max = 0",
+                Params {
+                    eta_max: 0.0,
+                    ..Params::scenario_b()
+                },
+            ),
+            (
+                "η nuls",
+                Params {
+                    eta_min: 0.0,
+                    eta_max: 0.0,
+                    ..Params::scenario_b()
+                },
+            ),
+            (
+                "η_min < 0",
+                Params {
+                    eta_min: -0.5,
+                    ..Params::scenario_b()
+                },
+            ),
+            (
+                "m = 0",
+                Params {
+                    m: 0,
+                    ..Params::scenario_b()
+                },
+            ),
+            (
+                "α < 0",
+                Params {
+                    alpha: -1.0,
+                    ..Params::scenario_b()
+                },
+            ),
+            (
+                "β < 0",
+                Params {
+                    beta: -1.0,
+                    ..Params::scenario_b()
+                },
+            ),
         ];
         for (nom, p) in bords {
             match p.bornes_applicables() {
@@ -1211,16 +1308,26 @@ mod tests {
     #[test]
     fn les_deux_bords_du_domaine_de_gamma_sont_ecretes_et_signales() {
         for gamma in [0.0, -0.5, f64::NAN] {
-            let p = Params { gamma, ..Params::scenario_b() };
+            let p = Params {
+                gamma,
+                ..Params::scenario_b()
+            };
             let d = p.depot();
             assert!(d.is_finite() && d > 0.0, "γ = {gamma} : dépôt {d}");
             assert!(
-                p.avertissements().iter().any(|a| a.contains("hors du domaine (0, 1)")),
+                p.avertissements()
+                    .iter()
+                    .any(|a| a.contains("hors du domaine (0, 1)")),
                 "γ = {gamma} : le bord bas doit être signalé"
             );
         }
         // Le bord haut, lui, reste écrêté comme avant : γ = 1 est un préréglage.
-        assert!(Params { gamma: 1.0, ..Params::scenario_b() }.depot().is_finite());
+        assert!(Params {
+            gamma: 1.0,
+            ..Params::scenario_b()
+        }
+        .depot()
+        .is_finite());
         // Et le domaine utile n'est pas mangé par les gardes.
         assert!(Params::scenario_b().avertissements().is_empty());
     }
@@ -1245,7 +1352,10 @@ mod tests {
             a.iter().map(|x| format!("{x}")).collect::<Vec<_>>(),
             b.iter().map(|x| format!("{x}")).collect::<Vec<_>>()
         );
-        assert!(a[0].is_nan(), "l'ordre total place `NaN` à un rang fixe, {a:?}");
+        assert!(
+            a[0].is_nan(),
+            "l'ordre total place `NaN` à un rang fixe, {a:?}"
+        );
         assert_eq!(&a[1..], &[3.0, 2.0, 1.0]);
     }
 
@@ -1256,9 +1366,17 @@ mod tests {
     fn une_part_de_conformite_non_nulle_efface_la_borne() {
         assert!(Params::scenario_b().bornes_applicables().is_ok());
         for part in [0.25, 0.5, 0.75, 1.0] {
-            let p = Params { part_conforme: part, ..Params::scenario_b() };
-            let motif = p.bornes_applicables().expect_err("la borne doit être effacée");
-            assert!(motif.contains("tirages"), "le motif doit nommer l'hypothèse violée");
+            let p = Params {
+                part_conforme: part,
+                ..Params::scenario_b()
+            };
+            let motif = p
+                .bornes_applicables()
+                .expect_err("la borne doit être effacée");
+            assert!(
+                motif.contains("tirages"),
+                "le motif doit nommer l'hypothèse violée"
+            );
         }
     }
 
@@ -1269,11 +1387,27 @@ mod tests {
     fn un_reglage_sans_partition_ou_sans_ressource_est_refuse_et_ne_panique_pas() {
         let mut alea = Alea::nouveau(7);
         for (nom, params) in [
-            ("p = 0", Params { p: 0, ..Params::scenario_b() }),
-            ("m = 0", Params { m: 0, ..Params::scenario_b() }),
+            (
+                "p = 0",
+                Params {
+                    p: 0,
+                    ..Params::scenario_b()
+                },
+            ),
+            (
+                "m = 0",
+                Params {
+                    m: 0,
+                    ..Params::scenario_b()
+                },
+            ),
             (
                 "p = 0, multipartition",
-                Params { p: 0, ressources_sur_une_partition: false, ..Params::scenario_b() },
+                Params {
+                    p: 0,
+                    ressources_sur_une_partition: false,
+                    ..Params::scenario_b()
+                },
             ),
         ] {
             assert!(

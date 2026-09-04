@@ -249,8 +249,8 @@ impl Charge {
     pub fn mesurer(&self, n: u32, cycles: u32, alea: &mut Alea) -> f64 {
         let actifs = n.min(self.p) as f64;
         let nf = n as f64;
-        let t_nominal = self.t0_ms * (1.0 + self.injectes.sigma * (nf - 1.0)
-            + self.injectes.kappa * nf * (nf - 1.0));
+        let t_nominal = self.t0_ms
+            * (1.0 + self.injectes.sigma * (nf - 1.0) + self.injectes.kappa * nf * (nf - 1.0));
         let mut total = 0.0;
         for _ in 0..cycles {
             // Bruit multiplicatif centré : la mesure n'est jamais exacte, et
@@ -342,7 +342,11 @@ mod tests {
     #[test]
     fn un_systeme_degenere_est_refuse() {
         assert!(ajuster(&[]).is_none());
-        assert!(ajuster(&[Point { n: 1.0, debit_relatif: 1.0 }]).is_none());
+        assert!(ajuster(&[Point {
+            n: 1.0,
+            debit_relatif: 1.0
+        }])
+        .is_none());
     }
 
     /// **Critère d'acceptation (1) du scénario C** — sur un milieu à contention

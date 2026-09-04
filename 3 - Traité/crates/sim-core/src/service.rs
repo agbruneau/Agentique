@@ -263,7 +263,10 @@ mod tests {
         // file, et chacune attend celles qui la précèdent.
         let premiere = s.soumettre(Instant(0)).unwrap();
         let deuxieme = s.soumettre(Instant(0)).unwrap();
-        let dixieme = (0..8).map(|_| s.soumettre(Instant(0)).unwrap()).last().unwrap();
+        let dixieme = (0..8)
+            .map(|_| s.soumettre(Instant(0)).unwrap())
+            .last()
+            .unwrap();
         assert_eq!(premiere, Duree(10));
         assert_eq!(deuxieme, Duree(20));
         assert_eq!(dixieme, Duree(100));

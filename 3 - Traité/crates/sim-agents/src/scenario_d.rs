@@ -151,16 +151,14 @@ impl ScenarioD {
         self.horloge = Instant(self.horloge.0 + 1);
         self.etape = self.etape.suivante();
         match self.etape {
-            Etape::T0 => {
-                match self.isr.ecrire() {
-                    Ok(d) => {
-                        self.repliquer_isr();
-                        let l = self.isr.derniere_largeur().unwrap_or(0);
-                        self.noter(format!("r₁ écrit au décalage {d}, accusé à largeur {l}"));
-                    }
-                    Err(e) => self.noter(format!("r₁ refusé : {e:?}")),
+            Etape::T0 => match self.isr.ecrire() {
+                Ok(d) => {
+                    self.repliquer_isr();
+                    let l = self.isr.derniere_largeur().unwrap_or(0);
+                    self.noter(format!("r₁ écrit au décalage {d}, accusé à largeur {l}"));
                 }
-            }
+                Err(e) => self.noter(format!("r₁ refusé : {e:?}")),
+            },
             Etape::T1 => {
                 // Retrait pour retard : le compteur de pannes ne bouge pas.
                 self.isr.retirer_pour_retard(2);
@@ -169,21 +167,19 @@ impl ScenarioD {
                     self.isr.pannes, self.isr.retraits_pour_retard
                 ));
             }
-            Etape::T2 => {
-                match self.isr.ecrire() {
-                    Ok(d) => {
-                        self.repliquer_isr();
-                        let l = self.isr.derniere_largeur().unwrap_or(0);
-                        self.noter(format!(
-                            "r₂ écrit au décalage {d}, accusé à largeur {l} — C ne le détient pas"
-                        ));
-                    }
-                    Err(Refus::SousLeSeuil { isr, m }) => self.noter(format!(
-                        "r₂ refusé : |ISR| = {isr} sous m = {m}"
-                    )),
-                    Err(e) => self.noter(format!("r₂ refusé : {e:?}")),
+            Etape::T2 => match self.isr.ecrire() {
+                Ok(d) => {
+                    self.repliquer_isr();
+                    let l = self.isr.derniere_largeur().unwrap_or(0);
+                    self.noter(format!(
+                        "r₂ écrit au décalage {d}, accusé à largeur {l} — C ne le détient pas"
+                    ));
                 }
-            }
+                Err(Refus::SousLeSeuil { isr, m }) => {
+                    self.noter(format!("r₂ refusé : |ISR| = {isr} sous m = {m}"))
+                }
+                Err(e) => self.noter(format!("r₂ refusé : {e:?}")),
+            },
             Etape::T3 => {
                 self.isr.arreter(1);
                 let refus = self.isr.ecrire();
@@ -203,7 +199,12 @@ impl ScenarioD {
                 self.noter(format!(
                     "A arrêté ; pannes = {} ; seul C vit, et sa fin de journal est {}",
                     self.isr.pannes,
-                    self.isr.repliques.iter().find(|r| r.id == 2).map(|r| r.fin).unwrap_or(0)
+                    self.isr
+                        .repliques
+                        .iter()
+                        .find(|r| r.id == 2)
+                        .map(|r| r.fin)
+                        .unwrap_or(0)
                 ));
             }
             _ => {}
@@ -286,7 +287,9 @@ mod tests {
         assert_eq!(d.isr.retraits_pour_retard, 1, "C retiré sans être tombé");
 
         d.choisir(Choix::ElireHorsIsr);
-        let (_, details) = d.violation_r1().expect("R1 doit tomber à l'élection hors ISR");
+        let (_, details) = d
+            .violation_r1()
+            .expect("R1 doit tomber à l'élection hors ISR");
         assert!(details.contains("largeur 2"), "{details}");
         assert!(d.isr.tronques > 0, "la troncature doit détruire r₂");
     }
@@ -362,7 +365,10 @@ mod tests {
 
         // Rien dans le protocole ne le dit ; seul l'affichage le trahit.
         let avertissement = d.isr.perte_muette().expect("l'interface doit le nommer");
-        assert!(avertissement.contains("aucune erreur n'est émise"), "{avertissement}");
+        assert!(
+            avertissement.contains("aucune erreur n'est émise"),
+            "{avertissement}"
+        );
         assert!(avertissement.contains("EX-M15"), "{avertissement}");
     }
 
@@ -375,11 +381,11 @@ mod tests {
         d.pas();
         d.pas();
         d.pas(); // t₃ : |ISR| = 1 < m = 2
-        assert_eq!(
-            d.isr.ecrire(),
-            Err(Refus::SousLeSeuil { isr: 1, m: 2 })
+        assert_eq!(d.isr.ecrire(), Err(Refus::SousLeSeuil { isr: 1, m: 2 }));
+        assert!(
+            d.isr.perte_muette().is_none(),
+            "avec m = 2, la perte n'est pas muette"
         );
-        assert!(d.isr.perte_muette().is_none(), "avec m = 2, la perte n'est pas muette");
     }
 
     /// F2 — **la page exacte du bloc D**, seule chose que les tests de

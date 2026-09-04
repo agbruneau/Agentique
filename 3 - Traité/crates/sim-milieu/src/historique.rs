@@ -225,7 +225,10 @@ mod tests {
         h.verifier(qui(6), Issue::Confirmee);
         h.verifier(qui(6), Issue::NonVerifiable);
         assert!(h.poids(qui(6)).is_err(), "la voie facturée refuse");
-        assert!(h.compte(qui(6)).fiabilite().is_err(), "la voie directe aussi");
+        assert!(
+            h.compte(qui(6)).fiabilite().is_err(),
+            "la voie directe aussi"
+        );
         assert!(
             h.identites().all(|(_, c)| c.fiabilite().is_err()),
             "et la voie par la population"

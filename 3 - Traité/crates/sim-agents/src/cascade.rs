@@ -196,7 +196,10 @@ impl Cascade {
     }
 
     fn actifs(&self) -> u32 {
-        self.etats.iter().filter(|e| **e == EtatAgent::Actif).count() as u32
+        self.etats
+            .iter()
+            .filter(|e| **e == EtatAgent::Actif)
+            .count() as u32
     }
 
     fn allumer(&mut self, e: Etape) {
@@ -234,7 +237,11 @@ impl Cascade {
         // manque est consigné dans `hors_perimetre()`. Conséquence directe : les
         // générations de la cascade viennent du décalage de phase posé au
         // constructeur, pas de la saturation.
-        let utilisation = if capacite > 0.0 { charge / capacite } else { f64::INFINITY };
+        let utilisation = if capacite > 0.0 {
+            charge / capacite
+        } else {
+            f64::INFINITY
+        };
         let l99 = if utilisation < 1.0 {
             // File M/M/1 : la latence explose en 1/(1 − ρ).
             self.params.temps_service_ms / 1_000.0 / (1.0 - utilisation)
@@ -442,8 +449,15 @@ mod tests {
             c.generations
         );
         assert_eq!(c.pannes_reelles, 0, "AUCUNE faute n'a été injectée");
-        assert!(c.redemarrages > 0, "et pourtant des agents ont été redémarrés");
-        assert_eq!(c.etapes.len(), 4, "les quatre étapes du bandeau sont allumées");
+        assert!(
+            c.redemarrages > 0,
+            "et pourtant des agents ont été redémarrés"
+        );
+        assert_eq!(
+            c.etapes.len(),
+            4,
+            "les quatre étapes du bandeau sont allumées"
+        );
         assert!(c.bandeau().contains("pannes réelles : 0"));
     }
 
@@ -551,7 +565,9 @@ mod tests {
         minoritaire.cote_minoritaire = true;
 
         assert!(majoritaire.reparer(sim_core::temps::Instant(0)).is_ok());
-        let e = minoritaire.reparer(sim_core::temps::Instant(0)).unwrap_err();
+        let e = minoritaire
+            .reparer(sim_core::temps::Instant(0))
+            .unwrap_err();
         assert!(e.contains("aucun redémarrage n'a lieu"), "{e}");
         assert!(e.contains("prix assumé de sa sûreté"), "{e}");
         assert_eq!(minoritaire.reparations, 0);
@@ -565,7 +581,10 @@ mod tests {
         let mut a = AutoGuerir::nouveau(3, 5, Duree(10), Duree(60));
         a.reparer(sim_core::temps::Instant(0)).unwrap();
         a.reparer(sim_core::temps::Instant(100)).unwrap();
-        assert!(a.boucle_auto_entretenue, "T_froid < redémarrage : la boucle se réamorce");
+        assert!(
+            a.boucle_auto_entretenue,
+            "T_froid < redémarrage : la boucle se réamorce"
+        );
 
         let mut sain = AutoGuerir::nouveau(3, 5, Duree(120), Duree(60));
         sain.reparer(sim_core::temps::Instant(0)).unwrap();

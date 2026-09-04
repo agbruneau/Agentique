@@ -116,7 +116,8 @@ impl Maille {
     /// `vivant` dit, pour chaque agent, s'il répond — le détecteur, lui, ne
     /// voit qu'un délai.
     pub fn entretenir_vue(&mut self, vivants: &[bool], alea: &mut Alea) -> u64 {
-        let maintenant = sim_core::temps::Instant(self.comptes.periodes_sondage * self.detecteur.periode.0);
+        let maintenant =
+            sim_core::temps::Instant(self.comptes.periodes_sondage * self.detecteur.periode.0);
         let mut messages = 0u64;
         for cible in 0..self.n {
             let repond = vivants.get(cible as usize).copied().unwrap_or(true);

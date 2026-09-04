@@ -405,11 +405,7 @@ impl Bail {
                  {}) alors que l'échéance {} est passée. ε_vrai = {:.4} dépasse l'ε supposé. \
                  **Ni la latence ni le taux d'erreur ne le signalent** — seul l'oracle externe le \
                  voit (§7.2, EX-A33 clause 2).",
-                maintenant.0,
-                agent.0,
-                percu.0,
-                echeance.0,
-                horloges.epsilon_vrai
+                maintenant.0, agent.0, percu.0, echeance.0, horloges.epsilon_vrai
             ));
         }
         None
@@ -541,8 +537,7 @@ impl Reconfiguration {
         // détention s'achève ici.
         if perimee {
             if let Some(debut) = self.debut_double[plage].take() {
-                self.duree_double_detention =
-                    self.duree_double_detention + (maintenant - debut);
+                self.duree_double_detention = self.duree_double_detention + (maintenant - debut);
             }
         }
 
@@ -586,7 +581,10 @@ impl Reconfiguration {
                 if self.s1w_tient() {
                     format!("tient ; {} rejet(s)", self.rejets_pour_epoque)
                 } else {
-                    format!("VIOLÉE ; {} acceptation(s) périmée(s)", self.acceptations_perimees)
+                    format!(
+                        "VIOLÉE ; {} acceptation(s) périmée(s)",
+                        self.acceptations_perimees
+                    )
                 },
             ),
             (
@@ -606,7 +604,11 @@ impl Reconfiguration {
                 format!(
                     "{} — l'idempotence est {}",
                     self.doubles_effets,
-                    if self.idempotence { "active" } else { "désactivée" }
+                    if self.idempotence {
+                        "active"
+                    } else {
+                        "désactivée"
+                    }
                 ),
             ),
         ]
@@ -654,7 +656,13 @@ mod tests {
     #[test]
     fn les_couts_du_detecteur_sont_ceux_du_traite() {
         let d = DetecteurInfectieux::nouveau(128, Duree(2_000), 3);
-        assert_eq!(d.cout_nominal(), Cout { messages: 2, tours: 1 });
+        assert_eq!(
+            d.cout_nominal(),
+            Cout {
+                messages: 2,
+                tours: 1
+            }
+        );
         assert_eq!(
             d.cout_suspicion(),
             Cout {
@@ -745,7 +753,13 @@ mod tests {
         assert_eq!(b.messages, 6, "2q à q = 3");
         assert_eq!(b.tours, 1);
         assert_eq!(Bail::COUT_PAR_OBSERVATION, 0);
-        assert_eq!(b.cout_par_action(), Cout { messages: 6, tours: 2 });
+        assert_eq!(
+            b.cout_par_action(),
+            Cout {
+                messages: 6,
+                tours: 2
+            }
+        );
     }
 
     /// **EX-A33** — la condition d'arrêt est **locale**, donc terminante sans
@@ -801,8 +815,20 @@ mod tests {
     /// **jamais ensemble**.
     #[test]
     fn aucun_reglage_de_d_ne_supprime_les_deux_couts() {
-        let court = Bail::nouveau(2, Duree(1_000), Duree(10), Duree(100), PolitiqueExpiration::Maintenir);
-        let long = Bail::nouveau(2, Duree(100_000), Duree(10), Duree(100), PolitiqueExpiration::Maintenir);
+        let court = Bail::nouveau(
+            2,
+            Duree(1_000),
+            Duree(10),
+            Duree(100),
+            PolitiqueExpiration::Maintenir,
+        );
+        let long = Bail::nouveau(
+            2,
+            Duree(100_000),
+            Duree(10),
+            Duree(100),
+            PolitiqueExpiration::Maintenir,
+        );
         let l99 = Duree(200);
         let (bav_court, imm_court) = court.dimensionnement(l99);
         let (bav_long, imm_long) = long.dimensionnement(l99);
@@ -824,7 +850,10 @@ mod tests {
         // Faux soupçon : i reprend la plage, l'époque s'incrémente.
         r.reconfigurer(0, i, Instant(100));
         // m revient et écrit avec son époque périmée.
-        assert!(!r.ecrire(0, m, epoque_de_m, Instant(200)), "l'écriture est rejetée");
+        assert!(
+            !r.ecrire(0, m, epoque_de_m, Instant(200)),
+            "l'écriture est rejetée"
+        );
         assert!(r.s1w_tient());
         assert_eq!(r.rejets_pour_epoque, 1);
     }
@@ -841,9 +870,15 @@ mod tests {
         r.reconfigurer(0, ActeurId(2), Instant(100));
         r.ecrire(0, m, epoque_de_m, Instant(350));
 
-        assert!(r.duree_double_detention.0 > 0, "deux détenteurs ont coexisté");
+        assert!(
+            r.duree_double_detention.0 > 0,
+            "deux détenteurs ont coexisté"
+        );
         let affichage = r.affichage_s1(true);
-        let s1 = affichage.iter().find(|(k, _)| k.starts_with("S1 (")).unwrap();
+        let s1 = affichage
+            .iter()
+            .find(|(k, _)| k.starts_with("S1 ("))
+            .unwrap();
         assert!(s1.1.contains("non rétabli"), "{}", s1.1);
         assert!(s1.1.contains("non bornée en asynchrone"), "{}", s1.1);
         // Nulle part l'interface n'écrit « S1 tient ».
@@ -865,7 +900,10 @@ mod tests {
         assert!(r.ecrire(0, m, epoque_de_m, Instant(300)), "acceptée");
         assert_eq!(r.acceptations_perimees, 1);
         assert!(!r.s1w_tient(), "S1w tombe sans arbitrage");
-        assert_eq!(r.doubles_effets, 1, "et sans idempotence, l'effet est dupliqué");
+        assert_eq!(
+            r.doubles_effets, 1,
+            "et sans idempotence, l'effet est dupliqué"
+        );
     }
 
     /// L'idempotence laisse les acceptations périmées et annule leurs effets.

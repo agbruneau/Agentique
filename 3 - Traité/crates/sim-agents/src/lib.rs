@@ -49,11 +49,11 @@ pub mod stigmergie;
 pub mod taux_de_base;
 pub mod usl;
 
+pub use conformite::Conformite;
+pub use dettes::{Dette, EtatDeBorne, DETTES};
 pub use essaim::{Membre, Perception};
 pub use glossaire::{glossaire, Terme};
 pub use scenario::{scenario_a, scenario_b, Bloc, Comparaison, ResultatB, BLOC_A, BLOC_B};
-pub use conformite::Conformite;
-pub use dettes::{Dette, EtatDeBorne, DETTES};
 pub use scenario_d::{Choix, ScenarioD, BLOC_D};
 pub use scenario_m::{scenario_m, ResultatM, BLOC_M};
 pub use stigmergie::{Bornes, Evt, Fourragement, Mesures, MomentTrace, Params};

@@ -23,9 +23,15 @@ pub const ACCORD_LOCAL: &str = "EX-A02 — écart aux voisins ≤ ε pendant R t
 pub const SIGNATURE: &[(&str, &str)] = &[
     ("modèle de panne", "aucun — le mécanisme n'en tolère pas"),
     ("synchronisme", "synchrone, tours globaux"),
-    ("bruit", "nul — et c'est le bruit nul qui retire la transition de phase"),
+    (
+        "bruit",
+        "nul — et c'est le bruit nul qui retire la transition de phase",
+    ),
     ("coût", "Θ(n·d) messages par tour, 1 tour par mise à jour"),
-    ("condition d'arrêt", "aucune — la règle s'applique indéfiniment"),
+    (
+        "condition d'arrêt",
+        "aucune — la règle s'applique indéfiniment",
+    ),
 ];
 
 /// L'essaim aligné.
@@ -219,7 +225,11 @@ mod tests {
             a.tour(&mut alea);
         }
         assert!(depart > 0.3, "dispersion de départ {depart:.4}");
-        assert!(a.dispersion() < 1e-6, "dispersion finale {:.9}", a.dispersion());
+        assert!(
+            a.dispersion() < 1e-6,
+            "dispersion finale {:.9}",
+            a.dispersion()
+        );
     }
 
     /// NF-10 — le mode de défaillance nommé se **provoque**, et se produit :
@@ -254,7 +264,10 @@ mod tests {
         }
         assert!((0..64).all(|i| a.critere_local(i, 1e-3)));
         let message = a.critere_local_trompeur(1e-3, Instant(300)).unwrap();
-        assert!(message.contains("Aucun agent ne peut le détecter"), "{message}");
+        assert!(
+            message.contains("Aucun agent ne peut le détecter"),
+            "{message}"
+        );
     }
 
     /// La moyenne des caps est circulaire : deux caps opposés autour de ±π
@@ -284,7 +297,10 @@ mod tests {
     /// discipline tient par la revue et par le `//!` du module.
     #[test]
     fn aucun_parametre_dordre_nest_revendique() {
-        let bruit = SIGNATURE.iter().find(|(k, _)| *k == "bruit").expect("signature du bruit");
+        let bruit = SIGNATURE
+            .iter()
+            .find(|(k, _)| *k == "bruit")
+            .expect("signature du bruit");
         assert!(bruit.1.contains("nul"));
         assert!(
             bruit.1.contains("transition de phase"),
@@ -294,7 +310,9 @@ mod tests {
         // Et la dispersion n'est jamais présentée comme un paramètre d'ordre :
         // aucun seuil, aucun paramètre de contrôle ne l'accompagne.
         assert!(
-            !SIGNATURE.iter().any(|(k, _)| k.contains("paramètre d'ordre") || k.contains("seuil")),
+            !SIGNATURE
+                .iter()
+                .any(|(k, _)| k.contains("paramètre d'ordre") || k.contains("seuil")),
             "aucune ligne de signature ne revendique un paramètre d'ordre"
         );
     }

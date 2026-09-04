@@ -11,7 +11,10 @@ fn main() {
         ("verrouillage 600k", Params::verrouillage(), 600_000),
     ] {
         let r = scenario_b(params, 1, budget).unwrap();
-        println!("\n=== {nom} — meilleure après bascule : {} ===", r.meilleure_ressource);
+        println!(
+            "\n=== {nom} — meilleure après bascule : {} ===",
+            r.meilleure_ressource
+        );
         for (t, tranche) in r.mesures.effort_par_tranche.iter().enumerate() {
             let total: u64 = tranche.iter().sum();
             if total == 0 {

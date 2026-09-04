@@ -52,10 +52,7 @@ impl Horloges {
 
     /// Facteur de dérive d'un agent.
     pub fn facteur(&self, agent: ActeurId) -> f64 {
-        self.facteurs
-            .get(agent.0 as usize)
-            .copied()
-            .unwrap_or(1.0)
+        self.facteurs.get(agent.0 as usize).copied().unwrap_or(1.0)
     }
 
     /// L'instant tel que **cet agent** le perçoit, à partir du temps de
@@ -70,7 +67,11 @@ impl Horloges {
     /// `ε`. Quand elle le dépasse, la sûreté du bail tombe **sans qu'aucun
     /// compteur du protocole ne bouge**.
     pub fn ecart_maximal(&self, ecoule: Duree) -> Duree {
-        let max = self.facteurs.iter().cloned().fold(f64::NEG_INFINITY, f64::max);
+        let max = self
+            .facteurs
+            .iter()
+            .cloned()
+            .fold(f64::NEG_INFINITY, f64::max);
         let min = self.facteurs.iter().cloned().fold(f64::INFINITY, f64::min);
         Duree(((max - min) * ecoule.0 as f64) as u64)
     }
@@ -188,7 +189,9 @@ impl Domaines {
     ///
     /// C'est le **curseur du scénario L**, et ρ en est dérivé.
     pub fn interpole(n: u32, part: f64, probabilite: f64) -> Domaines {
-        let groupes = ((1.0 - part.clamp(0.0, 1.0)) * (n as f64 - 1.0) + 1.0).round().max(1.0) as u32;
+        let groupes = ((1.0 - part.clamp(0.0, 1.0)) * (n as f64 - 1.0) + 1.0)
+            .round()
+            .max(1.0) as u32;
         let taille = n.div_ceil(groupes);
         let mut domaines = Vec::new();
         let mut debut = 0;
@@ -257,9 +260,9 @@ impl Domaines {
     /// C'est la condition que le sondage indirect d'EX-A23 **ne vérifie pas** et
     /// qu'EX-C14 rend fausse à volonté.
     pub fn partagent(&self, agents: &[u32]) -> bool {
-        self.domaines.iter().any(|d| {
-            agents.iter().filter(|a| d.membres.contains(a)).count() >= 2
-        })
+        self.domaines
+            .iter()
+            .any(|d| agents.iter().filter(|a| d.membres.contains(a)).count() >= 2)
     }
 
     /// Affichage (EX-C14) : ρ porte l'étiquette « dérivé ».
@@ -338,7 +341,10 @@ mod tests {
         let mut precedent = 0.0;
         for k in 0..=10 {
             let r = Domaines::interpole(64, k as f64 / 10.0, 0.01).rho();
-            assert!(r >= precedent - 1e-9, "ρ doit croître : {precedent} puis {r}");
+            assert!(
+                r >= precedent - 1e-9,
+                "ρ doit croître : {precedent} puis {r}"
+            );
             precedent = r;
         }
         assert!(Domaines::disjoints(4, 0.0).affichage().contains("dérivée"));

@@ -128,8 +128,7 @@ pub fn scenario_m(
     params.part_conforme = part_conforme;
 
     let g = Granularite::Micro;
-    let mut moteur: Moteur<Evt> =
-        Moteur::nouveau(graine, g, Budget::evenements(budget_evenements));
+    let mut moteur: Moteur<Evt> = Moteur::nouveau(graine, g, Budget::evenements(budget_evenements));
     // Même amorce que le scénario B : à `part_conforme = 0`, les deux exécutions
     // doivent être **identiques**, ce qui interdit de semer autrement ici.
     let mut f = {
@@ -218,14 +217,20 @@ mod tests {
     #[test]
     fn le_curseur_au_repos_ne_partage_aucun_tirage() {
         let r = scenario_m(params(), 0.0, 7, 20_000).unwrap();
-        assert_eq!(r.tirages_partages, 0, "une famille par agent : aucun partage");
+        assert_eq!(
+            r.tirages_partages, 0,
+            "une famille par agent : aucun partage"
+        );
         assert!(r.structure.contains("décorrélée"));
     }
 
     #[test]
     fn la_famille_unique_fait_partager_les_tirages() {
         let r = scenario_m(params(), 1.0, 7, 20_000).unwrap();
-        assert!(r.tirages_partages > 0, "une famille unique rediffuse ses tirages");
+        assert!(
+            r.tirages_partages > 0,
+            "une famille unique rediffuse ses tirages"
+        );
         assert!(r.structure.contains("conforme"));
     }
 
@@ -236,7 +241,11 @@ mod tests {
         // `CONSTAT_DE_MESURE`).
         let p: Vec<u64> = [0.0, 0.25, 0.5, 0.75, 1.0]
             .iter()
-            .map(|part| scenario_m(params(), *part, 7, 20_000).unwrap().tirages_partages)
+            .map(|part| {
+                scenario_m(params(), *part, 7, 20_000)
+                    .unwrap()
+                    .tirages_partages
+            })
             .collect();
         assert!(
             p.windows(2).all(|w| w[0] <= w[1]),

@@ -170,8 +170,8 @@ impl PlanDeControle {
         self.elections += 1;
         let duree_ms =
             self.election_min_ms + alea.uniforme() * (self.election_max_ms - self.election_min_ms);
-        let diffusion_ms =
-            self.diffusion_min_ms + alea.uniforme() * (self.diffusion_max_ms - self.diffusion_min_ms);
+        let diffusion_ms = self.diffusion_min_ms
+            + alea.uniforme() * (self.diffusion_max_ms - self.diffusion_min_ms);
 
         // L'élection n'aboutit que si la diffusion tient dans son délai.
         if diffusion_ms >= duree_ms {
@@ -186,7 +186,10 @@ impl PlanDeControle {
     pub fn resume(&self) -> Vec<(&'static str, String)> {
         vec![
             ("nature", LIBELLE.to_string()),
-            ("k = 2f + 1", format!("{} membres, {} vivants", self.k, self.vivants)),
+            (
+                "k = 2f + 1",
+                format!("{} membres, {} vivants", self.k, self.vivants),
+            ),
             (
                 "quorum",
                 if self.quorum_accessible() {
@@ -198,7 +201,10 @@ impl PlanDeControle {
             ),
             (
                 "messages du plan de contrôle",
-                format!("{} — jamais additionnés à ceux du plan de données", self.messages),
+                format!(
+                    "{} — jamais additionnés à ceux du plan de données",
+                    self.messages
+                ),
             ),
             ("décisions", format!("{}", self.decisions)),
             (
@@ -207,7 +213,10 @@ impl PlanDeControle {
             ),
             (
                 "élections perpétuelles",
-                format!("{} — panne née de la charge, manifestée comme panne d'accord", self.elections_perpetuelles),
+                format!(
+                    "{} — panne née de la charge, manifestée comme panne d'accord",
+                    self.elections_perpetuelles
+                ),
             ),
         ]
     }

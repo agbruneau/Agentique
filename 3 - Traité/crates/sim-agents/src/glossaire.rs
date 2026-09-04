@@ -143,8 +143,7 @@ pub fn glossaire() -> &'static [Terme] {
         Terme {
             groupe: STIGMERGIE,
             terme: "φ",
-            definition:
-                "l'intensité de la trace sur une ressource : combien l'essaim l'a servie \
+            definition: "l'intensité de la trace sur une ressource : combien l'essaim l'a servie \
                  récemment. Elle monte à chaque dépôt et redescend toute seule entre deux \
                  fenêtres.",
             provenance: "§1.2, algorithme 1.2, p. 14 (4ᵉ éd.)",
@@ -246,8 +245,7 @@ pub fn glossaire() -> &'static [Terme] {
         Terme {
             groupe: REGLAGES,
             terme: "budget d'événements",
-            definition:
-                "ce qui arrête l'exécution — un compte d'événements, jamais un compte de \
+            definition: "ce qui arrête l'exécution — un compte d'événements, jamais un compte de \
                  secondes. C'est ce qui la rend reproductible d'une machine à l'autre.",
             provenance: "réglage de cette interface",
         },
@@ -291,8 +289,7 @@ pub fn glossaire() -> &'static [Terme] {
         Terme {
             groupe: JUGEMENT,
             terme: "borne",
-            definition:
-                "ce que le traité démontre d'avance, sans exécution. Elle repose sur des \
+            definition: "ce que le traité démontre d'avance, sans exécution. Elle repose sur des \
                  hypothèses ; quand un réglage les viole, elle est **effacée** et non grisée — y \
                  compris quand la mesure est meilleure qu'elle.",
             provenance: "§1.2, p. 16 (4ᵉ éd.)",

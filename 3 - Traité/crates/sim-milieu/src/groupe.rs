@@ -185,7 +185,12 @@ impl Groupe {
     /// que [`Groupe::suivre_vivacite`] met en attente. La supposer nulle
     /// rendrait la durée fausse — et non approximative — pour un groupe créé en
     /// cours d'exécution.
-    pub fn nouveau(p: u32, protocole: Protocole, delai_session: Duree, creation: Instant) -> Groupe {
+    pub fn nouveau(
+        p: u32,
+        protocole: Protocole,
+        delai_session: Duree,
+        creation: Instant,
+    ) -> Groupe {
         Groupe {
             protocole,
             membres: Vec::new(),
@@ -491,7 +496,11 @@ mod tests {
         let mut o = Registre::nouveau();
         g.armer_oracles(&mut o);
         g.suivre_vivacite(&mut o, Instant(0));
-        assert_eq!(o.attentes_ouvertes(), 1, "l'oracle voit l'orphelinat initial");
+        assert_eq!(
+            o.attentes_ouvertes(),
+            1,
+            "l'oracle voit l'orphelinat initial"
+        );
         g.entrer(0, Instant(500));
         g.suivre_vivacite(&mut o, Instant(500));
         assert_eq!(o.attentes_ouvertes(), 0);
@@ -508,7 +517,11 @@ mod tests {
     fn un_groupe_cree_en_cours_dexecution_ne_cumule_pas_davant() {
         let mut g = Groupe::nouveau(2, Protocole::BattementDeCoeur, Duree(45_000), Instant(700));
         g.entrer(0, Instant(900));
-        assert_eq!(g.duree_orpheline, Duree(400), "2 × 200 tics, et non 2 × 900");
+        assert_eq!(
+            g.duree_orpheline,
+            Duree(400),
+            "2 × 200 tics, et non 2 × 900"
+        );
     }
 
     /// EX-M17 — les trois protocoles ont trois coûts distincts, et le choix est
@@ -517,7 +530,11 @@ mod tests {
     fn les_trois_protocoles_ont_trois_couts() {
         assert_eq!(Protocole::BarriereUnique.messages(10), 40, "4n");
         assert_eq!(Protocole::CooperatifIncremental.messages(10), 80, "8n");
-        assert_eq!(Protocole::BattementDeCoeur.messages(10), 10, "Θ(1) par membre");
+        assert_eq!(
+            Protocole::BattementDeCoeur.messages(10),
+            10,
+            "Θ(1) par membre"
+        );
         assert_eq!(Protocole::BarriereUnique.phases(), 2);
         assert_eq!(Protocole::CooperatifIncremental.phases(), 4);
         assert!(Protocole::BarriereUnique.pose_une_barriere());
@@ -554,7 +571,13 @@ mod tests {
         let c = g.creer_agent_sans_etat();
         assert_eq!(c.messages, 0);
         assert_eq!(c.tours, 0);
-        assert_eq!(c, CoutChangement { ligne: c.ligne, ..Default::default() });
+        assert_eq!(
+            c,
+            CoutChangement {
+                ligne: c.ligne,
+                ..Default::default()
+            }
+        );
     }
 
     /// EX-M22 — l'entrée dans un groupe coûte Θ(n).
@@ -583,8 +606,15 @@ mod tests {
 
         g.entrer(0, Instant(20));
         let non_planifiee = g.sortir_non_planifie(0, Instant(30));
-        assert_eq!(non_planifiee.delai, Duree(45_000), "après expiration du délai de session");
-        assert_eq!(non_planifiee.validations_de_decalage, 0, "rien n'a été validé");
+        assert_eq!(
+            non_planifiee.delai,
+            Duree(45_000),
+            "après expiration du délai de session"
+        );
+        assert_eq!(
+            non_planifiee.validations_de_decalage, 0,
+            "rien n'a été validé"
+        );
     }
 
     /// EX-M19 — au-delà de p, les membres supplémentaires coûtent sans produire.
@@ -601,9 +631,16 @@ mod tests {
         for m in 4..12 {
             g.entrer(m, Instant(0));
         }
-        assert_eq!(g.parallelisme_utile(), 4, "le débit utile reste plafonné par p");
+        assert_eq!(
+            g.parallelisme_utile(),
+            4,
+            "le débit utile reste plafonné par p"
+        );
         assert_eq!(g.membres_inactifs(), 8);
-        assert!(g.messages > messages_a_4 * 3, "le coût de coordination, lui, a explosé");
+        assert!(
+            g.messages > messages_a_4 * 3,
+            "le coût de coordination, lui, a explosé"
+        );
         assert!(g.diagnostic_parallelisme().contains("Remède"));
         // L'interface nomme la cause mesurée, jamais une métaphore spatiale.
         assert!(!g.diagnostic_parallelisme().contains("espace"));
@@ -673,7 +710,11 @@ mod tests {
         for t in 0..10 {
             g.suivre_vivacite(&mut o, Instant(t));
         }
-        assert_eq!(o.attentes_ouvertes(), 1, "une attente, quel que soit le nombre de sondages");
+        assert_eq!(
+            o.attentes_ouvertes(),
+            1,
+            "une attente, quel que soit le nombre de sondages"
+        );
 
         g.entrer(0, Instant(10));
         g.suivre_vivacite(&mut o, Instant(10));

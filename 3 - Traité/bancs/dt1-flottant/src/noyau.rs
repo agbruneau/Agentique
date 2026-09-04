@@ -234,14 +234,8 @@ pub fn banc(g: Groupe, n: u32) -> u64 {
             Groupe::LibmLn => melange(&mut h, libm::log(b + 1.0)),
             Groupe::LibmExp => melange(&mut h, libm::exp(-a)),
             Groupe::LibmPow => melange(&mut h, libm::pow(b + 1.0, a * 5.0)),
-            Groupe::LibmSin => melange(
-                &mut h,
-                libm::sin(a * TAU - PI),
-            ),
-            Groupe::LibmCos => melange(
-                &mut h,
-                libm::cos(a * TAU - PI),
-            ),
+            Groupe::LibmSin => melange(&mut h, libm::sin(a * TAU - PI)),
+            Groupe::LibmCos => melange(&mut h, libm::cos(a * TAU - PI)),
             Groupe::LibmAtan2 => melange(&mut h, libm::atan2(a - 0.5, b - 0.5)),
             Groupe::LibmFma => {
                 acc = libm::fma(a, b, acc);

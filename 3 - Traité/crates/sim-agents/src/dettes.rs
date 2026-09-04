@@ -254,7 +254,9 @@ mod tests {
                 f.n()
             );
         }
-        assert!(verdicts(&Familles::unique(24))[0].libelle().contains("EFFACÉE"));
+        assert!(verdicts(&Familles::unique(24))[0]
+            .libelle()
+            .contains("EFFACÉE"));
     }
 
     #[test]

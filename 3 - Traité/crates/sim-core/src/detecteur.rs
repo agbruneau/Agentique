@@ -163,10 +163,12 @@ impl Detecteur {
     /// dérivent le même encadrement de 21 à 31 s.
     pub fn nouveau(periode: Duree, expiration: Duree, seuil: u8) -> Result<Detecteur, String> {
         if seuil == 0 {
-            return Err("seuil d'échec nul refusé : un détecteur qui suspecte sans indice n'a \
+            return Err(
+                "seuil d'échec nul refusé : un détecteur qui suspecte sans indice n'a \
                         aucune exactitude à mesurer, et l'encadrement de complétude compte les \
                         intervalles entre `seuil` échecs consécutifs (PD12)."
-                .to_string());
+                    .to_string(),
+            );
         }
         if expiration >= periode {
             return Err(format!(
@@ -202,11 +204,7 @@ impl Detecteur {
     /// Celles de [`Detecteur::nouveau`] : à `tics_par_seconde` nul, période et
     /// expiration valent toutes deux zéro et le réglage est refusé.
     pub fn defauts_documentes(tics_par_seconde: u64) -> Result<Detecteur, String> {
-        Detecteur::nouveau(
-            Duree(10 * tics_par_seconde),
-            Duree(tics_par_seconde),
-            3,
-        )
+        Detecteur::nouveau(Duree(10 * tics_par_seconde), Duree(tics_par_seconde), 3)
     }
 
     /// Complétude dérivée : bornes du délai de détection d'un agent réellement
@@ -307,7 +305,10 @@ impl Detecteur {
     /// transition automatique depuis la suspicion.
     pub fn retirer(&mut self, cible: ActeurId, action: &str, autorisation: &str) -> String {
         self.vues.entry(cible.0).or_default().etat = Etat::Retire;
-        format!("acteur {} retiré par « {action} », autorisé par {autorisation}", cible.0)
+        format!(
+            "acteur {} retiré par « {action} », autorisé par {autorisation}",
+            cible.0
+        )
     }
 
     /// Affichage du détecteur (PD6 : ses réglages sont montrés au même rang que
@@ -393,7 +394,10 @@ mod tests {
         assert_eq!(d.etat(cible), Etat::Suspect);
         let p = d.proprietes();
         assert_eq!(p.suspicions, 1);
-        assert_eq!(p.fausses_suspicions, 1, "l'agent répondait : la suspicion est fausse");
+        assert_eq!(
+            p.fausses_suspicions, 1,
+            "l'agent répondait : la suspicion est fausse"
+        );
         assert_eq!(p.exactitude(), Some(1.0));
     }
 
@@ -406,7 +410,11 @@ mod tests {
         }
         assert_eq!(d.etat(cible), Etat::Sain);
         assert_eq!(d.proprietes().suspicions, 0);
-        assert_eq!(d.proprietes().exactitude(), None, "aucune mesure : rien à afficher");
+        assert_eq!(
+            d.proprietes().exactitude(),
+            None,
+            "aucune mesure : rien à afficher"
+        );
     }
 
     /// La suspicion se dédit : un agent qui répond de nouveau redevient sain.
@@ -430,7 +438,11 @@ mod tests {
         let cible = ActeurId(3);
         d.sonder(cible, false, Duree(0), Instant(0));
         d.sonder(cible, false, Duree(0), Instant(10));
-        let ligne = d.retirer(cible, "reconfiguration sur soupçon", "budget de perturbation");
+        let ligne = d.retirer(
+            cible,
+            "reconfiguration sur soupçon",
+            "budget de perturbation",
+        );
         assert_eq!(d.etat(cible), Etat::Retire);
         assert!(ligne.contains("budget de perturbation"), "{ligne}");
         // Un retiré ne redevient pas sain sur une sonde réussie : le retrait est
@@ -441,7 +453,9 @@ mod tests {
 
     #[test]
     fn le_detecteur_refuse_une_expiration_plus_longue_que_sa_periode() {
-        let r = std::panic::catch_unwind(|| Detecteur::nouveau(Duree(1), Duree(10), 3).expect("réglage valide"));
+        let r = std::panic::catch_unwind(|| {
+            Detecteur::nouveau(Duree(1), Duree(10), 3).expect("réglage valide")
+        });
         assert!(r.is_err());
     }
 
@@ -470,7 +484,10 @@ mod tests {
         let s = ligne(&regle, "sondage indirect");
         assert!(s.contains('3'), "{s}");
         assert!(s.contains("14"), "2 + 4×3 = 14 messages : {s}");
-        assert!(!s.contains("inactif"), "un réglage posé ne s'affiche pas « inactif » : {s}");
+        assert!(
+            !s.contains("inactif"),
+            "un réglage posé ne s'affiche pas « inactif » : {s}"
+        );
         assert!(ligne(&regle, "extension par suspicion").contains("active"));
     }
 }

@@ -66,8 +66,8 @@ fn le_curseur_controle_le_partage_des_tirages_et_non_lamplitude_de_phi_c() {
     // PRD annonçait, et ce test fixe le constat pour qu'un changement soit un
     // événement plutôt qu'un glissement silencieux.
     let phi: Vec<f64> = mesures.iter().map(|m| m.2).collect();
-    let amplitude = phi.iter().cloned().fold(f64::MIN, f64::max)
-        - phi.iter().cloned().fold(f64::MAX, f64::min);
+    let amplitude =
+        phi.iter().cloned().fold(f64::MIN, f64::max) - phi.iter().cloned().fold(f64::MAX, f64::min);
     assert!(
         amplitude < 0.2,
         "l'amplitude de Φ_c sous le curseur vaut {amplitude:.3} : le constat de mesure a changé"

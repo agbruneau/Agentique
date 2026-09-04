@@ -365,7 +365,11 @@ mod tests {
     #[test]
     fn la_detection_conjointe_vaut_0343() {
         let c = Corroboration::default();
-        assert!((c.detection_conjointe() - 0.343).abs() < 1e-9, "{}", c.detection_conjointe());
+        assert!(
+            (c.detection_conjointe() - 0.343).abs() < 1e-9,
+            "{}",
+            c.detection_conjointe()
+        );
     }
 
     /// **EX-A31** — les deux régimes, et **jamais un seul chiffre**. Sous
@@ -412,7 +416,10 @@ mod tests {
         let mut precedent = 1.0;
         for k in 0..=10 {
             let (_, p) = scenario_l(&b, &c, 64, k as f64 / 10.0);
-            assert!(p <= precedent + 1e-9, "P(I|A) doit décroître : {precedent} puis {p}");
+            assert!(
+                p <= precedent + 1e-9,
+                "P(I|A) doit décroître : {precedent} puis {p}"
+            );
             precedent = p;
         }
     }
@@ -444,7 +451,10 @@ mod tests {
         // minimum de répliques synchronisées d'ISR(k, m).
         assert!(a.contains("3f + 1"), "{a}");
         assert!(a.contains("conditionnel au modèle P"), "{a}");
-        assert!(a.contains("La cryptographie ne relâche pas la borne"), "{a}");
+        assert!(
+            a.contains("La cryptographie ne relâche pas la borne"),
+            "{a}"
+        );
         // À trois participants, aucune solution ne résiste à un seul traître.
         assert!(!actif.resiste(3));
         assert!(actif.resiste(4));
@@ -454,7 +464,10 @@ mod tests {
     /// s'est produit dans [t₁, t₂] » l'est.
     #[test]
     fn ex_a34_classe_les_predicats() {
-        assert_eq!(classer("le système est présentement attaqué"), Predicat::Instable);
+        assert_eq!(
+            classer("le système est présentement attaqué"),
+            Predicat::Instable
+        );
         assert_eq!(
             classer("un événement de signature S s'est produit dans [t1, t2]"),
             Predicat::Stable
@@ -517,7 +530,10 @@ mod tests {
         use agreger_epidemique::*;
         assert!(verifier_branchement(false).is_ok());
         let e = verifier_branchement(true).unwrap_err();
-        assert!(e.contains("inadmissible pour établir un fait de sécurité"), "{e}");
+        assert!(
+            e.contains("inadmissible pour établir un fait de sécurité"),
+            "{e}"
+        );
     }
 
     /// PD8 — le bloc de trois.

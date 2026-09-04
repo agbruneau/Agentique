@@ -41,8 +41,8 @@ pub use historique::Historique;
 pub use journal::{
     Cle, Couts, Ecriture, Enregistrement, Identite, Milieu, Partition, M1, M2, M3, M4,
 };
-pub use quota::{Politique, Quotas};
 pub use latence::{Latence, Mesures};
+pub use quota::{Politique, Quotas};
 pub use replication::{Isr, Refus, Replique, R1, R2};
 
 /// Ce que le milieu ne sait pas produire, à afficher au même rang que ce qu'il

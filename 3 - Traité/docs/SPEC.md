@@ -671,7 +671,8 @@ qu'un lecteur suivrait pour retrouver une thèse.
 
 La ligne ci-dessous en rend **treize**, et **aucune n'est un défaut** : elles
 vivent toutes dans une prose qui porte sur la question d'édition elle-même — la
-table d'histoire de `scenario.rs` (l. 617-634), qui énumère les pages **fausses**
+table d'histoire de `scenario.rs` — le rustdoc de
+`les_dix_blocs_nomment_leur_edition` —, qui énumère les pages **fausses**
 en regard de leur remplaçante ; les commentaires qui expliquent pourquoi le champ
 `source` voisin porte `(4ᵉ éd.)` ; la continuation d'un champ dont la première
 ligne le porte (`scenario_m.rs`) ; et une phrase de `scenario_d.rs` qui parle

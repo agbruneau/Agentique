@@ -415,7 +415,9 @@ mod tests {
         m.pousser_a(Instant(30), ActeurId(0), 30);
         m.pousser_a(Instant(10), ActeurId(0), 10);
         m.pousser_a(Instant(20), ActeurId(0), 20);
-        let dates: Vec<u64> = std::iter::from_fn(|| m.suivant()).map(|e| e.date.0).collect();
+        let dates: Vec<u64> = std::iter::from_fn(|| m.suivant())
+            .map(|e| e.date.0)
+            .collect();
         assert_eq!(dates, vec![10, 20, 30]);
     }
 
@@ -427,7 +429,9 @@ mod tests {
         for i in 0..64u32 {
             m.pousser_a(Instant(5), ActeurId(i), i);
         }
-        let charges: Vec<u32> = std::iter::from_fn(|| m.suivant()).map(|e| e.charge).collect();
+        let charges: Vec<u32> = std::iter::from_fn(|| m.suivant())
+            .map(|e| e.charge)
+            .collect();
         assert_eq!(charges, (0..64).collect::<Vec<u32>>());
     }
 

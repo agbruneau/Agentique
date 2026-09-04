@@ -243,9 +243,15 @@ mod tests {
             assert!(!r.achete().is_empty());
             assert!(!r.coute().is_empty());
         }
-        assert!(RegimeDeCle::HachageDeLaCle.coute().contains("c'est M2, pas un défaut"));
-        assert!(RegimeDeCle::CleSemantique.coute().contains("partition chaude"));
-        assert!(RegimeDeCle::HachageCoherent.coute().contains("ne le supprime pas"));
+        assert!(RegimeDeCle::HachageDeLaCle
+            .coute()
+            .contains("c'est M2, pas un défaut"));
+        assert!(RegimeDeCle::CleSemantique
+            .coute()
+            .contains("partition chaude"));
+        assert!(RegimeDeCle::HachageCoherent
+            .coute()
+            .contains("ne le supprime pas"));
     }
 
     /// EX-A45 — la clé sémantique **importe la dissymétrie du domaine** : sous

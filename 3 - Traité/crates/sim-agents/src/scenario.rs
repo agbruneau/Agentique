@@ -60,8 +60,7 @@ pub const BLOC_A: Bloc = Bloc {
         "augmenter n fait croître en n² le compteur d'entretien de vue à gauche, sans toucher au \
          compte de lectures à droite ; augmenter ℓ₉₉ allonge les deux tours de journal à droite, \
          sans toucher à l'aller simple à gauche. Le croisement se déplace sous les deux curseurs.",
-    ne_demontre_pas:
-        "rien sur la sûreté. Les deux régimes propagent ; seul le prix diffère.",
+    ne_demontre_pas: "rien sur la sûreté. Les deux régimes propagent ; seul le prix diffère.",
 };
 
 /// Les trois comptes du scénario A, tenus séparés (§1.1, convention de
@@ -368,7 +367,11 @@ impl ResultatB {
 }
 
 /// Exécute le scénario B.
-pub fn scenario_b(params: Params, graine: u64, budget_evenements: u64) -> Result<ResultatB, String> {
+pub fn scenario_b(
+    params: Params,
+    graine: u64,
+    budget_evenements: u64,
+) -> Result<ResultatB, String> {
     let g = Granularite::Micro;
     // Le modèle de faute déclare **ce que le scénario injecte réellement**.
     // `ModeleFaute::default()` est sans faute ; l'écrire ici pendant que
@@ -414,7 +417,9 @@ pub fn scenario_b(params: Params, graine: u64, budget_evenements: u64) -> Result
     };
     f.armer_oracles(&mut moteur.oracles);
     moteur.couverture.declarer("cycle sans rétroaction");
-    moteur.couverture.declarer("crash avant validation de décalage");
+    moteur
+        .couverture
+        .declarer("crash avant validation de décalage");
     moteur
         .couverture
         .declarer("décision inter-partitions sous le seuil de fiabilité");
@@ -431,8 +436,8 @@ pub fn scenario_b(params: Params, graine: u64, budget_evenements: u64) -> Result
         .map(|v| format!("{} à {} : {}", v.oracle, v.date.0, v.details))
         .collect();
 
-    let conformite = crate::conformite::estimer(f.milieu.partition(0).enregistrements())
-        .map_err(str::to_string);
+    let conformite =
+        crate::conformite::estimer(f.milieu.partition(0).enregistrements()).map_err(str::to_string);
 
     Ok(ResultatB {
         conformite,
@@ -602,7 +607,10 @@ mod tests {
     fn les_dix_blocs_portent_leur_section_et_leur_page() {
         for (nom, b) in tous_les_blocs() {
             assert!(b.source.contains('§'), "bloc {nom} : aucune section");
-            assert!(b.source.contains("p. "), "bloc {nom} : aucune page — provenance absente (F2)");
+            assert!(
+                b.source.contains("p. "),
+                "bloc {nom} : aucune page — provenance absente (F2)"
+            );
             for (champ, valeur) in [
                 ("en_clair", b.en_clair),
                 ("these", b.these),
@@ -774,7 +782,9 @@ mod tests {
     fn a_petite_echelle_la_maille_gagne_en_temps() {
         let c = scenario_a(8, 8, 200.0, 2.0, 3, 0.0, 1);
         assert!(c.maille_temps < c.journal_temps);
-        assert!(c.verdict_temps(Granularite::Micro).contains("la maille gagne"));
+        assert!(c
+            .verdict_temps(Granularite::Micro)
+            .contains("la maille gagne"));
     }
 
     /// Et à ℓ₉₉ faible, le journal reprend l'avantage : le croisement est
@@ -793,8 +803,14 @@ mod tests {
         let grand = scenario_a(160, 8, 20.0, 2.0, 3, 0.0, 1);
         let facteur_entretien = grand.maille_entretien as f64 / petit.maille_entretien as f64;
         let facteur_lectures = grand.journal_lectures as f64 / petit.journal_lectures as f64;
-        assert!(facteur_entretien > 90.0, "entretien ×{facteur_entretien:.1}");
-        assert!((facteur_lectures - 10.0).abs() < 0.01, "lectures ×{facteur_lectures:.1}");
+        assert!(
+            facteur_entretien > 90.0,
+            "entretien ×{facteur_entretien:.1}"
+        );
+        assert!(
+            (facteur_lectures - 10.0).abs() < 0.01,
+            "lectures ×{facteur_lectures:.1}"
+        );
         assert_eq!(grand.journal_entretien, 0);
     }
 

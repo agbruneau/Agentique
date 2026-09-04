@@ -63,7 +63,9 @@ impl Synchronisme {
     pub fn affichage_fenetre(self) -> String {
         match self {
             Synchronisme::PartiellementSynchrone { delta_ms } => {
-                format!("fenêtre bornée par Δ = {delta_ms} ms, sous hypothèse de synchronisme partiel")
+                format!(
+                    "fenêtre bornée par Δ = {delta_ms} ms, sous hypothèse de synchronisme partiel"
+                )
             }
             Synchronisme::Asynchrone => {
                 "0, …, ∞ — aucune borne finie n'existe sans Δ. « Non bornée » ne veut pas dire \
@@ -302,8 +304,11 @@ mod tests {
     fn lidempotence_rend_les_doubles_inoffensifs_sans_les_supprimer() {
         let g = 1_000; // tics par milliseconde
         let executer = |idempotence: bool| {
-            let mut m =
-                Maillage::nouveau(8, Synchronisme::PartiellementSynchrone { delta_ms: 10.0 }, g);
+            let mut m = Maillage::nouveau(
+                8,
+                Synchronisme::PartiellementSynchrone { delta_ms: 10.0 },
+                g,
+            );
             m.idempotence = idempotence;
             let mut alea = Alea::nouveau(2);
 
@@ -348,7 +353,10 @@ mod tests {
         m.retirer(3, Instant(100 * g));
         // Juste après le retrait, personne ne l'a encore vu.
         m.construire_vue(0, Instant(100 * g), &mut alea);
-        assert!(m.vues[0].contains(&3), "le retrait n'est pas encore visible");
+        assert!(
+            m.vues[0].contains(&3),
+            "le retrait n'est pas encore visible"
+        );
         // Après Δ, il l'est.
         m.construire_vue(0, Instant(200 * g), &mut alea);
         assert!(!m.vues[0].contains(&3), "le retrait est passé");

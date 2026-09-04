@@ -114,7 +114,10 @@ impl RegistreHypotheses {
     /// cassé sous charge, et NF-16 exige qu'un test les rende fausses
     /// délibérément.
     pub fn dementies(&self) -> Vec<&Hypothese> {
-        self.hypotheses.values().filter(|h| h.dementis > 0).collect()
+        self.hypotheses
+            .values()
+            .filter(|h| h.dementis > 0)
+            .collect()
     }
 
     /// Affichage (EX-C12 : le registre est affiché, chaque entrée avec son
@@ -171,7 +174,10 @@ mod tests {
     #[test]
     fn une_hypothese_non_eprouvee_na_pas_de_taux() {
         assert_eq!(
-            registre().get("replica.lag.time.max.ms").unwrap().taux_de_dementi(),
+            registre()
+                .get("replica.lag.time.max.ms")
+                .unwrap()
+                .taux_de_dementi(),
             None
         );
         assert!(registre().resume("ms")[0].contains("jamais éprouvée"));

@@ -155,7 +155,11 @@ fn main() {
     let _ = writeln!(json, "{{");
     let _ = writeln!(json, "  \"entete\": \"{entete}\",");
     let _ = writeln!(json, "  \"libelle\": \"{LIBELLE}\",");
-    let _ = writeln!(json, "  \"injectes\": {{ \"sigma\": {}, \"kappa\": {} }},", args.sigma, args.kappa);
+    let _ = writeln!(
+        json,
+        "  \"injectes\": {{ \"sigma\": {}, \"kappa\": {} }},",
+        args.sigma, args.kappa
+    );
     let _ = writeln!(
         json,
         "  \"estimation\": {{ \"sigma\": {:.9}, \"kappa\": {:.11} }},",
@@ -186,13 +190,18 @@ fn main() {
         }
     }
     let _ = writeln!(json, "  \"points\": {},", points.len());
-    let _ = writeln!(json, "  \"reechantillonnages\": {},", ajustement.reechantillonnages);
+    let _ = writeln!(
+        json,
+        "  \"reechantillonnages\": {},",
+        ajustement.reechantillonnages
+    );
     let residu_max = ajustement
         .residus
         .iter()
         .fold(0.0f64, |a, r| a.max(r.abs()));
     let _ = writeln!(json, "  \"residu_relatif_max\": {residu_max:.6},");
-    let dans_ic = ajustement.ic_sigma.contient(args.sigma) && ajustement.ic_kappa.contient(args.kappa);
+    let dans_ic =
+        ajustement.ic_sigma.contient(args.sigma) && ajustement.ic_kappa.contient(args.kappa);
     let _ = writeln!(json, "  \"validation_croisee_reussie\": {dans_ic}");
     let _ = writeln!(json, "}}");
 
@@ -231,7 +240,10 @@ fn main() {
             "ÉCHEC — les paramètres injectés sont hors de l'intervalle"
         }
     );
-    println!("écrit dans {}/points.csv et {}/rapport.json", args.sortie, args.sortie);
+    println!(
+        "écrit dans {}/points.csv et {}/rapport.json",
+        args.sortie, args.sortie
+    );
     if !dans_ic {
         std::process::exit(1);
     }

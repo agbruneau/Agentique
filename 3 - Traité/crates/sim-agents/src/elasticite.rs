@@ -610,7 +610,11 @@ mod tests {
     #[test]
     fn tau_est_mesure_et_pas_saisi() {
         let mut c = Controleur::nouveau(Params::default());
-        assert_eq!(c.tau_mesure_s(), None, "rien à mesurer avant la première correction");
+        assert_eq!(
+            c.tau_mesure_s(),
+            None,
+            "rien à mesurer avant la première correction"
+        );
         for _ in 0..20 {
             c.periode(500.0, 10.0);
         }

@@ -137,7 +137,10 @@ impl Partition {
 
     /// Vrai si le lien entre ces deux acteurs est coupé.
     pub fn coupe(&self, de: ActeurId, vers: ActeurId) -> bool {
-        match (self.cotes.get(de.0 as usize), self.cotes.get(vers.0 as usize)) {
+        match (
+            self.cotes.get(de.0 as usize),
+            self.cotes.get(vers.0 as usize),
+        ) {
             (Some(a), Some(b)) => a != b,
             _ => false,
         }
@@ -395,7 +398,10 @@ impl ModeleFaute {
     /// EX-C06 — le modèle s'affiche, avec ses unités (F1).
     pub fn resume(&self) -> Vec<(&'static str, String)> {
         vec![
-            ("omission", format!("{:.4} (probabilité par message)", self.omission)),
+            (
+                "omission",
+                format!("{:.4} (probabilité par message)", self.omission),
+            ),
             ("retard moyen", format!("{:.3} ms", self.retard_moyen_ms)),
             (
                 "partition",
@@ -420,7 +426,10 @@ impl ModeleFaute {
             ),
             (
                 "corruption au redémarrage",
-                format!("{:.4} (probabilité par écriture non synchronisée)", self.corruption_au_redemarrage),
+                format!(
+                    "{:.4} (probabilité par écriture non synchronisée)",
+                    self.corruption_au_redemarrage
+                ),
             ),
             ("gigue de date", format!("{} tics", self.gigue_de_date)),
             ("points d'injection", format!("{}", self.injections.len())),
@@ -563,7 +572,10 @@ mod tests {
             }
             etait = p.en_cours();
         }
-        assert!(tics_partitionnes > 5_000, "partitionné {tics_partitionnes} tics");
+        assert!(
+            tics_partitionnes > 5_000,
+            "partitionné {tics_partitionnes} tics"
+        );
         // Peu d'entrées, longues durées : c'est la signature d'un processus à
         // deux états, par opposition à un scintillement.
         assert!(entrees < 50, "{entrees} entrées en partition");
@@ -582,7 +594,10 @@ mod tests {
         // La relation est symétrique.
         for i in 0..4u32 {
             for j in 0..4u32 {
-                assert_eq!(p.coupe(ActeurId(i), ActeurId(j)), p.coupe(ActeurId(j), ActeurId(i)));
+                assert_eq!(
+                    p.coupe(ActeurId(i), ActeurId(j)),
+                    p.coupe(ActeurId(j), ActeurId(i))
+                );
             }
         }
     }
@@ -699,7 +714,9 @@ mod tests {
         assert_eq!(m.retard_message(&mut alea), 0.0);
         assert_eq!(m.gigue(&mut alea), Duree(0));
         let domaines = vec![Domaine::default(); 4];
-        assert!(m.tirer_pannes(Instant(10_000), &domaines, &mut alea).is_empty());
+        assert!(m
+            .tirer_pannes(Instant(10_000), &domaines, &mut alea)
+            .is_empty());
         assert!(m.avertissements().is_empty());
     }
 
@@ -767,6 +784,9 @@ mod tests {
             crash_machine: 0.09,
             ..Default::default()
         };
-        assert!(decorrele.avertissements().is_empty(), "aucun niveau n'est réglé");
+        assert!(
+            decorrele.avertissements().is_empty(),
+            "aucun niveau n'est réglé"
+        );
     }
 }

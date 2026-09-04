@@ -266,7 +266,11 @@ mod tests {
         assert!((erreur_type() - 0.0230).abs() < 1e-4, "{}", erreur_type());
         // ≈ 1,3 ko par esquisse — le traité annonce « ≈ 1,5 ko ».
         assert_eq!(octets_par_esquisse(), 1_280);
-        assert_eq!(AgregatFenetre::TOURS, 0, "0 tour sous la convention du §7.1");
+        assert_eq!(
+            AgregatFenetre::TOURS,
+            0,
+            "0 tour sous la convention du §7.1"
+        );
     }
 
     /// L'estimation est correcte à l'erreur type près.

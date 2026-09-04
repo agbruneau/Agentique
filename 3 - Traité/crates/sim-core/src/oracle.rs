@@ -211,9 +211,9 @@ impl Registre {
         // l'horizon, c'est-à-dire la seule chose qui la rende testable (PD2).
         match self.classe(nom) {
             Some(Classe::Surete) => {}
-            Some(Classe::VivaciteBornee { .. }) => panic!(
-                "« {nom} » est armé comme vivacité bornée : on ne le viole pas, il échoit"
-            ),
+            Some(Classe::VivaciteBornee { .. }) => {
+                panic!("« {nom} » est armé comme vivacité bornée : on ne le viole pas, il échoit")
+            }
             None => panic!("oracle « {nom} » violé sans avoir été armé"),
         }
         self.violations.push(Violation {
@@ -322,8 +322,13 @@ mod tests {
     fn une_vivacite_sans_horizon_est_refusee() {
         let e = Oracle::depuis_declaration("couverture", "vivacite", None, "§4.2")
             .expect_err("une vivacité sans horizon doit être refusée");
-        assert!(e.contains("§3.2 du traité"), "le message doit citer §3.2 du traité : {e}");
-        assert!(Oracle::depuis_declaration("couverture", "vivacite", Some(Duree(10)), "§4.2").is_ok());
+        assert!(
+            e.contains("§3.2 du traité"),
+            "le message doit citer §3.2 du traité : {e}"
+        );
+        assert!(
+            Oracle::depuis_declaration("couverture", "vivacite", Some(Duree(10)), "§4.2").is_ok()
+        );
         assert!(Oracle::depuis_declaration("r1", "surete", None, "§2.1").is_ok());
     }
 
@@ -364,7 +369,10 @@ mod tests {
         r.armer(Oracle::vivacite_bornee("proprietaire", Duree(100), "§2.2"));
         r.attendre("proprietaire", Instant(0), "partition 3");
         r.echoir(Instant(100));
-        assert!(r.violations().is_empty(), "l'échéance elle-même n'est pas dépassée");
+        assert!(
+            r.violations().is_empty(),
+            "l'échéance elle-même n'est pas dépassée"
+        );
         r.echoir(Instant(101));
         assert_eq!(r.violations().len(), 1);
     }

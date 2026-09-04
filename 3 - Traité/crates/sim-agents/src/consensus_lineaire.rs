@@ -24,7 +24,10 @@ use sim_core::graphe::Graphe;
 
 /// Signature du mécanisme, affichée sans repli (EX-V07, PD8).
 pub const SIGNATURE: &[(&str, &str)] = &[
-    ("modèle de panne", "**vide** — ce mécanisme ne tolère aucune panne"),
+    (
+        "modèle de panne",
+        "**vide** — ce mécanisme ne tolère aucune panne",
+    ),
     ("synchronisme", "**parfait** — tours globaux, aucun retard"),
     ("coût", "Θ(n·d̄) messages par tour"),
     (
@@ -246,7 +249,10 @@ impl Iteration {
         let (bas, haut) = self.enveloppe_initiale();
         vec![
             ("limite atteinte", format!("{:.6}", self.limite())),
-            ("moyenne initiale", format!("{:.6}", self.moyenne_initiale())),
+            (
+                "moyenne initiale",
+                format!("{:.6}", self.moyenne_initiale()),
+            ),
             (
                 "enveloppe convexe des états initiaux",
                 format!(
@@ -345,9 +351,7 @@ mod tests {
         assert!(it.limite() >= bas - 1e-9 && it.limite() <= haut + 1e-9);
         let a = it.affichage();
         assert!(a.iter().any(|(k, _)| *k == "moyenne initiale"));
-        assert!(a
-            .iter()
-            .any(|(_, v)| v.contains("indéterminée")));
+        assert!(a.iter().any(|(_, v)| v.contains("indéterminée")));
     }
 
     /// EX-A43 (d), PD10 — un agent mort cesse de publier, ses voisins lisent un
@@ -367,12 +371,19 @@ mod tests {
             it.tour(&g);
             satisfait = it.critere_local(1e-6, 5);
         }
-        assert!(satisfait, "le critère local est satisfait, écart {}", it.ecart());
+        assert!(
+            satisfait,
+            "le critère local est satisfait, écart {}",
+            it.ecart()
+        );
         // Et pourtant la limite n'est pas la moyenne initiale : c'est l'état de
         // l'agent mort qui a tout décidé.
         assert!((it.limite() - 100.0).abs() < 1e-6);
         assert!((it.moyenne_initiale() - 50.0).abs() < 1e-9);
-        assert!(Mode::MortOuConverge.avertissement().unwrap().contains("HORS du modèle"));
+        assert!(Mode::MortOuConverge
+            .avertissement()
+            .unwrap()
+            .contains("HORS du modèle"));
     }
 
     /// EX-A43 (c) — le budget de retard décroît avec Δ(G), et le mode « moyeu »
@@ -441,16 +452,26 @@ mod tests {
             let g = gen.tour(&mut alea);
             it.tour(&g);
         }
-        assert!(it.ecart() < depart / 10.0, "écart {} depuis {depart}", it.ecart());
+        assert!(
+            it.ecart() < depart / 10.0,
+            "écart {} depuis {depart}",
+            it.ecart()
+        );
     }
 
     /// PD8 — la signature affiche le modèle de panne vide et le synchronisme
     /// parfait, qui sont l'inverse de ceux du reste du produit.
     #[test]
     fn la_signature_affiche_le_modele_vide_et_le_synchronisme_parfait() {
-        let m = SIGNATURE.iter().find(|(k, _)| *k == "modèle de panne").unwrap();
+        let m = SIGNATURE
+            .iter()
+            .find(|(k, _)| *k == "modèle de panne")
+            .unwrap();
         assert!(m.1.contains("vide"));
-        let s = SIGNATURE.iter().find(|(k, _)| *k == "synchronisme").unwrap();
+        let s = SIGNATURE
+            .iter()
+            .find(|(k, _)| *k == "synchronisme")
+            .unwrap();
         assert!(s.1.contains("parfait"));
         let c = SIGNATURE.iter().find(|(k, _)| *k == "convergence").unwrap();
         assert!(c.1.contains("jamais convertie en délai"));

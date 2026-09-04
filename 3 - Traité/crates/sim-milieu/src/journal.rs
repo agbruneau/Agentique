@@ -286,7 +286,9 @@ impl Partition {
 
     /// M1 — les décalages sont strictement croissants.
     fn m1_tient(&self) -> bool {
-        self.journal.windows(2).all(|p| p[0].decalage < p[1].decalage)
+        self.journal
+            .windows(2)
+            .all(|p| p[0].decalage < p[1].decalage)
     }
 
     /// EX-M10 — un sujet compacté est **impropre à la traçabilité**.
@@ -420,8 +422,13 @@ impl Milieu {
         // structurellement aucune place pour un auteur déclaré, et c'est
         // volontaire — la charge utile n'a pas à être inspectée pour que
         // l'attribution soit vraie. Coût : 0 message, 0 tour, quelques octets.
-        let decalage = self.partitions[partition as usize]
-            .ajouter(partition, cle, valeur, date_evenement, identite);
+        let decalage = self.partitions[partition as usize].ajouter(
+            partition,
+            cle,
+            valeur,
+            date_evenement,
+            identite,
+        );
         self.couts.ecritures += 1;
         self.couts.octets_ecrits += OCTETS_DEFAUT as u64;
         self.couts.octets_identite += OCTETS_IDENTITE as u64;
@@ -732,7 +739,11 @@ impl Milieu {
     pub fn verifier(&self, registre: &mut Registre, maintenant: Instant) {
         for (i, p) in self.partitions.iter().enumerate() {
             if !p.m1_tient() {
-                registre.violer(M1, maintenant, format!("partition {i} : décalages non croissants"));
+                registre.violer(
+                    M1,
+                    maintenant,
+                    format!("partition {i} : décalages non croissants"),
+                );
             }
         }
     }
@@ -843,7 +854,14 @@ mod tests {
     }
 
     fn ecrire_et_valider(m: &mut Milieu, p: u32, cle: Cle, v: u8, alea: &mut Alea) {
-        let e = m.ecrire(p, cle, v as f64, Instant(0), Identite::propre(ActeurId(0)), alea);
+        let e = m.ecrire(
+            p,
+            cle,
+            v as f64,
+            Instant(0),
+            Identite::propre(ActeurId(0)),
+            alea,
+        );
         m.valider(e);
     }
 
@@ -855,7 +873,14 @@ mod tests {
     fn m10_ne_fabrique_pas_de_violation_sur_une_charge_utile_nan() {
         let mut m = milieu(1);
         let mut alea = Alea::nouveau(9);
-        let e = m.ecrire(0, 1, f64::NAN, Instant(0), Identite::propre(ActeurId(0)), &mut alea);
+        let e = m.ecrire(
+            0,
+            1,
+            f64::NAN,
+            Instant(0),
+            Identite::propre(ActeurId(0)),
+            &mut alea,
+        );
         m.valider(e);
         let avant: Vec<Enregistrement> = m.partition(0).enregistrements().to_vec();
         let mut r = Registre::nouveau();
@@ -872,7 +897,14 @@ mod tests {
     fn un_accuse_de_durabilite_ne_se_rejoue_pas() {
         let mut m = milieu(1);
         let mut alea = Alea::nouveau(11);
-        let e = m.ecrire(0, 1, 1.0, Instant(0), Identite::propre(ActeurId(0)), &mut alea);
+        let e = m.ecrire(
+            0,
+            1,
+            1.0,
+            Instant(0),
+            Identite::propre(ActeurId(0)),
+            &mut alea,
+        );
         assert!(m.valider(e));
         assert!(!m.valider(e), "le second accusé n'accuse rien");
         assert_eq!(m.couts().tours_journal, 1);
@@ -905,8 +937,18 @@ mod tests {
     fn m3_un_enregistrement_non_valide_nest_pas_lisible() {
         let mut m = milieu(1);
         let mut alea = Alea::nouveau(2);
-        let e = m.ecrire(0, 1, 9.0, Instant(0), Identite::propre(ActeurId(0)), &mut alea);
-        assert!(e.delai_durabilite > Duree(0), "l'accusé est séparé par une latence");
+        let e = m.ecrire(
+            0,
+            1,
+            9.0,
+            Instant(0),
+            Identite::propre(ActeurId(0)),
+            &mut alea,
+        );
+        assert!(
+            e.delai_durabilite > Duree(0),
+            "l'accusé est séparé par une latence"
+        );
         assert!(m.lire(0, 0, 10).is_empty(), "non durable, donc non lisible");
         assert!(m.valider(e));
         assert_eq!(m.lire(0, 0, 10).len(), 1);
@@ -1048,8 +1090,11 @@ mod tests {
         m.verifier_m10(0, &avant, &mut r, Instant(1));
         assert!(r.violations().is_empty(), "{:?}", r.violations());
 
-        let lisible_apres: Vec<(Cle, f64)> =
-            m.lire(0, 0, 100).iter().map(|e| (e.cle, e.valeur)).collect();
+        let lisible_apres: Vec<(Cle, f64)> = m
+            .lire(0, 0, 100)
+            .iter()
+            .map(|e| (e.cle, e.valeur))
+            .collect();
         assert_eq!(
             lisible_apres,
             vec![(2, 20.0), (1, 11.0)],
@@ -1082,12 +1127,23 @@ mod tests {
         let mut r = Registre::nouveau();
         fautif.armer_oracles(&mut r);
         fautif.verifier_m4(0, &avant, &mut r, Instant(2));
-        assert!(r.violations().is_empty(), "M4 ne voit rien : {:?}", r.violations());
+        assert!(
+            r.violations().is_empty(),
+            "M4 ne voit rien : {:?}",
+            r.violations()
+        );
 
         fautif.verifier_m10(0, &avant, &mut r, Instant(2));
-        assert_eq!(r.violations().len(), 2, "une par clé : {:?}", r.violations());
+        assert_eq!(
+            r.violations().len(),
+            2,
+            "une par clé : {:?}",
+            r.violations()
+        );
         assert!(r.violations().iter().all(|v| v.oracle == M10));
-        assert!(r.violations()[0].details.contains("n'a plus aucun état lisible"));
+        assert!(r.violations()[0]
+            .details
+            .contains("n'a plus aucun état lisible"));
     }
 
     /// EX-M13 — le milieu expose son coût, et les tours de journal se comptent.
@@ -1113,7 +1169,14 @@ mod tests {
         let mut m = Milieu::nouveau(1, Latence::depuis_l99(20.0), Granularite::Micro);
         let mut alea = Alea::nouveau(8);
         for i in 0..20_000u32 {
-            let e = m.ecrire(0, i as Cle, 0.0, Instant(0), Identite::propre(ActeurId(0)), &mut alea);
+            let e = m.ecrire(
+                0,
+                i as Cle,
+                0.0,
+                Instant(0),
+                Identite::propre(ActeurId(0)),
+                &mut alea,
+            );
             m.valider(e);
         }
         let l99 = m.latences_durabilite.l99().unwrap();
@@ -1134,7 +1197,10 @@ mod tests {
         m.compacter(0);
         let avis = m.partition(0).impropre_a_la_tracabilite().unwrap();
         assert!(avis.contains("AU MOINS"), "{avis}");
-        assert!(avis.contains("interdit d'en revendiquer l'unicité"), "{avis}");
+        assert!(
+            avis.contains("interdit d'en revendiquer l'unicité"),
+            "{avis}"
+        );
     }
 
     /// EX-M20 — la rétention évapore la tête du journal, sans réordonner.

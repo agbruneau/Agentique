@@ -388,11 +388,7 @@ pub(crate) fn encart(ui: &mut egui::Ui, contenu: impl FnOnce(&mut egui::Ui)) {
 pub(crate) fn titre(ui: &mut egui::Ui, numero: &str, texte: &str) {
     ui.horizontal_wrapped(|ui| {
         ui.label(egui::RichText::new(numero).monospace().weak());
-        ui.label(
-            egui::RichText::new(texte)
-                .strong()
-                .size(TITRE_SECTION),
-        );
+        ui.label(egui::RichText::new(texte).strong().size(TITRE_SECTION));
     });
     ui.add_space(3.0);
 }
@@ -576,8 +572,12 @@ pub fn bloc_pd8(ui: &mut egui::Ui, bloc: &sim_agents::Bloc) {
             // Même taille et même graisse que la thèse : PD8 demande le même
             // rang typographique, et un rang se lit, il ne se déclare pas.
             ui.add(
-                egui::Label::new(egui::RichText::new(bloc.ne_demontre_pas).size(THESE).strong())
-                    .wrap(),
+                egui::Label::new(
+                    egui::RichText::new(bloc.ne_demontre_pas)
+                        .size(THESE)
+                        .strong(),
+                )
+                .wrap(),
             );
         });
 }
@@ -684,11 +684,7 @@ pub fn du_traite(ui: &mut egui::Ui, nom: &str, valeur: String, source: &str) {
                 .strong()
                 .color(teinte_traite(ui)),
         );
-        ui.label(
-            egui::RichText::new(source)
-                .small()
-                .color(teinte_traite(ui)),
-        );
+        ui.label(egui::RichText::new(source).small().color(teinte_traite(ui)));
     });
 }
 
@@ -786,11 +782,7 @@ fn reperes(ui: &mut egui::Ui, recherche: &mut String) {
                     if t.groupe != groupe_courant {
                         groupe_courant = t.groupe;
                         ui.add_space(6.0);
-                        ui.label(
-                            egui::RichText::new(t.groupe)
-                                .strong()
-                                .size(TITRE_SECTION),
-                        );
+                        ui.label(egui::RichText::new(t.groupe).strong().size(TITRE_SECTION));
                         ui.add_space(4.0);
                     }
                     encart(ui, |ui| {

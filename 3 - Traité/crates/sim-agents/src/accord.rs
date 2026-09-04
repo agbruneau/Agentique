@@ -88,7 +88,9 @@ impl Mecanisme {
             Mecanisme::SeuilDeQuorum => "accord, **sous partition réseau**",
             Mecanisme::MoyenneAlignement => "validité, et terminaison en temps fini",
             Mecanisme::FusionCrdt => "validité — **le refus est impossible**",
-            Mecanisme::Consensus => "disponibilité sous partition, et terminaison en asynchrone pur",
+            Mecanisme::Consensus => {
+                "disponibilité sous partition, et terminaison en asynchrone pur"
+            }
         }
     }
 
@@ -253,7 +255,9 @@ impl SeuilDeQuorum {
         }
         let m = qualites.len();
         Ok(SeuilDeQuorum {
-            opinion: (0..n as usize).map(|_| alea.entier(m as u64) as usize).collect(),
+            opinion: (0..n as usize)
+                .map(|_| alea.entier(m as u64) as usize)
+                .collect(),
             qualites,
             delta,
             k,
@@ -689,7 +693,11 @@ mod tests {
             avec.engagements_incompatibles() > 0,
             "l'oracle armé doit compter les engagements incompatibles"
         );
-        assert_ne!(sans.case_accord(), Case::Abandonnee, "sans partition, l'accord tient");
+        assert_ne!(
+            sans.case_accord(),
+            Case::Abandonnee,
+            "sans partition, l'accord tient"
+        );
     }
 
     /// **EX-A50** — aucun mécanisme n'affiche de verdict global.
@@ -776,7 +784,10 @@ mod tests {
             m.tour(&mut s, &mut alea, 4);
         }
         assert_eq!(m.x().len(), 2);
-        assert!(m.ecart_a_la_validite().expect("population non vide").is_finite());
+        assert!(m
+            .ecart_a_la_validite()
+            .expect("population non vide")
+            .is_finite());
     }
 
     /// SPEC §7, clause 4 — la population vide est **refusée** au quorum, dont
@@ -790,7 +801,11 @@ mod tests {
         assert!(refus.is_err(), "population vide au quorum : refus attendu");
 
         let vide = MoyenneLocale::nouvelle(Vec::new());
-        assert_eq!(vide.ecart_a_la_validite(), None, "aucune mesure, et non NaN");
+        assert_eq!(
+            vide.ecart_a_la_validite(),
+            None,
+            "aucune mesure, et non NaN"
+        );
         assert!(!vide.arret_local(0, 1), "hors population, aucun arrêt");
         // La grille le porte : la case reste **non livrée**, jamais « tenue ».
         let q = quorum(true).unwrap();

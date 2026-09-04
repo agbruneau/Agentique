@@ -387,7 +387,10 @@ mod tests {
     fn une_population_vide_ou_plus_petite_que_le_service_ne_panique_pas() {
         let mut r = Rumeur::nouvelle(0, Some(3));
         assert_eq!(r.n(), 1);
-        let mut s = crate::echantillonnage::ServiceDePairs::nouveau(1, crate::echantillonnage::Biais::Uniforme);
+        let mut s = crate::echantillonnage::ServiceDePairs::nouveau(
+            1,
+            crate::echantillonnage::Biais::Uniforme,
+        );
         let mut alea = Alea::nouveau(1);
         r.tour(&mut s, &mut alea);
 
@@ -513,7 +516,10 @@ mod tests {
         };
         let (sans, cout_sans) = mesurer(false);
         let (avec, cout_avec) = mesurer(true);
-        assert!(avec < sans, "le filet doit rattraper : {avec} contre {sans}");
+        assert!(
+            avec < sans,
+            "le filet doit rattraper : {avec} contre {sans}"
+        );
         assert_eq!(cout_sans, 0);
         assert!(cout_avec > 0, "et son coût est compté à part");
     }

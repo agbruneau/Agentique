@@ -175,7 +175,10 @@ mod tests {
         assert_eq!(f.octets_lot(1), 60, "un message seul");
         assert_eq!(f.octets_lot(100), 753, "un lot de 100");
         assert_eq!(f.octets_ancien(100), 3_400, "ancien format, 100 messages");
-        assert_eq!(f.marginal, 7, "≈ 7 octets marginaux par message additionnel");
+        assert_eq!(
+            f.marginal, 7,
+            "≈ 7 octets marginaux par message additionnel"
+        );
     }
 
     /// Le levier du lot : le coût amorti par message s'effondre avec b.
@@ -216,7 +219,10 @@ mod tests {
         let mut p = Producteur::nouveau(7);
         assert!(p.accepter(7, 0, 1));
         assert!(p.accepter(7, 0, 2));
-        assert!(!p.accepter(7, 0, 2), "même séquence, même partition : doublon");
+        assert!(
+            !p.accepter(7, 0, 2),
+            "même séquence, même partition : doublon"
+        );
         assert!(!p.accepter(7, 0, 1), "séquence antérieure : doublon");
         assert_eq!(p.doublons_rejetes, 2);
     }

@@ -121,7 +121,11 @@ impl Levier {
     /// **EX-V21** — la durée pendant laquelle l'invariant protégé peut être
     /// faux. `None` signifie **non bornée** — et l'affichage l'écrit ainsi,
     /// jamais « grande ».
-    pub fn fenetre_de_violation(self, asynchrone: bool, fenetre_etranglement: Duree) -> Option<Duree> {
+    pub fn fenetre_de_violation(
+        self,
+        asynchrone: bool,
+        fenetre_etranglement: Duree,
+    ) -> Option<Duree> {
         if asynchrone {
             // Sans Δ, aucune fenêtre n'est bornée (RQ8).
             return None;
@@ -353,7 +357,10 @@ mod tests {
                 (a - 1.1 * f64::from(clients)).abs() < 1e-6 * a.max(1.0),
                 "{clients} clients : agrégat {a}, attendu 1,1 × {clients}"
             );
-            assert!(a > precedent, "l'agrégat a cessé de croître à {clients} clients");
+            assert!(
+                a > precedent,
+                "l'agrégat a cessé de croître à {clients} clients"
+            );
             precedent = a;
         }
         assert_eq!(
@@ -384,8 +391,14 @@ mod tests {
             );
         }
         assert_eq!(b.consommees(), 5, "elles ont consommé au-delà du plafond");
-        assert!(!b.soumettre(Perturbation::Volontaire), "et le volontaire est refusé");
-        assert!(b.soumettre(Perturbation::SuppressionDirecte), "qui contourne");
+        assert!(
+            !b.soumettre(Perturbation::Volontaire),
+            "et le volontaire est refusé"
+        );
+        assert!(
+            b.soumettre(Perturbation::SuppressionDirecte),
+            "qui contourne"
+        );
     }
 
     /// **Critère (3)** — le rapport reste sous 4/3 en latence linéaire tant que
@@ -421,7 +434,9 @@ mod tests {
         assert!((ClasseDeLatence::Lineaire.borne() - 4.0 / 3.0).abs() < 1e-9);
         assert!((ClasseDeLatence::Polynomiale(3).borne() - 4.0).abs() < 1e-9);
         assert!(ClasseDeLatence::Generale.borne().is_infinite());
-        assert!(ClasseDeLatence::Generale.libelle().contains("DEUX FOIS le trafic"));
+        assert!(ClasseDeLatence::Generale
+            .libelle()
+            .contains("DEUX FOIS le trafic"));
     }
 
     /// **EX-A54** — une borne affichée sans la fraction du plus gros agent est
@@ -433,7 +448,9 @@ mod tests {
             classe: ClasseDeLatence::Lineaire,
             fraction_du_plus_gros: 0.02,
         };
-        assert!(p.affichage().contains("fraction de charge du plus gros agent"));
+        assert!(p
+            .affichage()
+            .contains("fraction de charge du plus gros agent"));
     }
 
     /// **Critère (4)** — le passage de l'estimation auto-déclarée à mesurée
@@ -441,7 +458,9 @@ mod tests {
     /// valeurs, elles, sont des repères externes.
     #[test]
     fn critere_4_lestimation_mesuree_reduit_la_part_non_utilisee() {
-        assert!(Estimation::Mesuree.part_non_utilisee() < Estimation::AutoDeclaree.part_non_utilisee());
+        assert!(
+            Estimation::Mesuree.part_non_utilisee() < Estimation::AutoDeclaree.part_non_utilisee()
+        );
         assert!(Estimation::PROVENANCE.contains("repère de provenance externe"));
         assert!(Estimation::EXTERNALITE.contains("Aucune règle locale"));
         assert!(Estimation::EXTERNALITE.contains("autorité"));

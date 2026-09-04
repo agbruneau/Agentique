@@ -100,7 +100,10 @@ fn critere_4_s1w_tient_et_s1_ne_tient_pas() {
 
     // La durée de double détention est affichée, et **jamais** comme S1.
     let affichage = avec.affichage_s1(true);
-    let ligne_s1 = affichage.iter().find(|(k, _)| k.starts_with("S1 (")).unwrap();
+    let ligne_s1 = affichage
+        .iter()
+        .find(|(k, _)| k.starts_with("S1 ("))
+        .unwrap();
     assert!(ligne_s1.1.contains("non rétabli"));
     assert!(ligne_s1.1.contains("non bornée en asynchrone"));
     assert!(!affichage.iter().any(|(_, v)| v.contains("S1 tient")));

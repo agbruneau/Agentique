@@ -174,8 +174,7 @@ impl VueA {
                     ui.add_space(6.0);
 
                     let croises = c.comptes_croises();
-                    let verdict =
-                        |i: usize| croises.get(i).map(String::as_str).unwrap_or_default();
+                    let verdict = |i: usize| croises.get(i).map(String::as_str).unwrap_or_default();
 
                     self.acte_diffusion(ui, &c, verdict(0));
                     ui.add_space(6.0);
@@ -286,53 +285,68 @@ impl VueA {
     /// simple contre deux tours de journal à ℓ₉₉. Le seul des quatre comptes
     /// dont le vainqueur change sous les curseurs.
     fn acte_temps(&mut self, ui: &mut egui::Ui, c: &Comparaison) {
-        acte(ui, 4, "Le temps qu'il faut pour que tout le monde sache", |ui| {
-            propos(
-                ui,
-                "Le prix en messages n'est pas le prix en temps. À gauche, un aller simple. À \
+        acte(
+            ui,
+            4,
+            "Le temps qu'il faut pour que tout le monde sache",
+            |ui| {
+                propos(
+                    ui,
+                    "Le prix en messages n'est pas le prix en temps. À gauche, un aller simple. À \
                  droite, deux tours de journal à ℓ₉₉. C'est ici, et ici seulement, que les deux \
                  barres se croisent.",
-            );
-            a_faire(
+                );
+                a_faire(
                 ui,
                 "Montez ℓ₉₉ : la maille passe devant. Montez le délai d'aller simple : le journal \
                  repasse. La figure du bas dit à quel endroit exactement le verdict change de \
                  camp.",
             );
-            poignee(
-                ui,
-                "ℓ₉₉ du chemin de durabilité (ms) — entrée du modèle",
-                "",
-                |ui| ui.add(egui::Slider::new(&mut self.l99_ms, PLAGE_L99.0..=PLAGE_L99.1)),
-            );
-            poignee(ui, "délai d'aller simple pair à pair (ms)", "", |ui| {
-                ui.add(egui::Slider::new(
-                    &mut self.aller_simple_ms,
-                    PLAGE_ALLER_SIMPLE.0..=PLAGE_ALLER_SIMPLE.1,
-                ))
-            });
-            let maille_ms = Granularite::Micro.ms_depuis_tics(c.maille_temps);
-            let journal_ms = Granularite::Micro.ms_depuis_tics(c.journal_temps);
-            simule(ui, "maille — un aller simple", format!("{maille_ms:.3}"), "ms");
-            simule(
-                ui,
-                "journal — deux tours de journal à ℓ₉₉",
-                format!("{journal_ms:.3}"),
-                "ms",
-            );
-            paire(ui, maille_ms, journal_ms);
-            constat(ui, &c.verdict_temps(Granularite::Micro));
+                poignee(
+                    ui,
+                    "ℓ₉₉ du chemin de durabilité (ms) — entrée du modèle",
+                    "",
+                    |ui| {
+                        ui.add(egui::Slider::new(
+                            &mut self.l99_ms,
+                            PLAGE_L99.0..=PLAGE_L99.1,
+                        ))
+                    },
+                );
+                poignee(ui, "délai d'aller simple pair à pair (ms)", "", |ui| {
+                    ui.add(egui::Slider::new(
+                        &mut self.aller_simple_ms,
+                        PLAGE_ALLER_SIMPLE.0..=PLAGE_ALLER_SIMPLE.1,
+                    ))
+                });
+                let maille_ms = Granularite::Micro.ms_depuis_tics(c.maille_temps);
+                let journal_ms = Granularite::Micro.ms_depuis_tics(c.journal_temps);
+                simule(
+                    ui,
+                    "maille — un aller simple",
+                    format!("{maille_ms:.3}"),
+                    "ms",
+                );
+                simule(
+                    ui,
+                    "journal — deux tours de journal à ℓ₉₉",
+                    format!("{journal_ms:.3}"),
+                    "ms",
+                );
+                paire(ui, maille_ms, journal_ms);
+                constat(ui, &c.verdict_temps(Granularite::Micro));
 
-            ui.add_space(6.0);
-            self.croisement(ui);
+                ui.add_space(6.0);
+                self.croisement(ui);
 
-            ui.add_space(6.0);
-            let (journal, maille) = Comparaison::diametres();
-            du_traite(ui, "diamètre du journal", "2".to_string(), journal);
-            // F1 — le traité ne donne pas de diamètre à la maille, et l'absence
-            // s'affiche au même rang plutôt que de se combler.
-            note(ui, &format!("diamètre de la maille : {maille}"));
-        });
+                ui.add_space(6.0);
+                let (journal, maille) = Comparaison::diametres();
+                du_traite(ui, "diamètre du journal", "2".to_string(), journal);
+                // F1 — le traité ne donne pas de diamètre à la maille, et l'absence
+                // s'affiche au même rang plutôt que de se combler.
+                note(ui, &format!("diamètre de la maille : {maille}"));
+            },
+        );
     }
 
     /// Le croisement, **dessiné** plutôt que nommé.

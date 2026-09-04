@@ -150,10 +150,7 @@ impl Quotas {
             // k-ième preneur distinct doit payer `1 + pente × (k − 1)`.
             Politique::PrixCroissant { pente } => Verdict::Acceptee {
                 prix: 1.0
-                    + pente
-                        * f64::from(
-                            (preneurs + u32::from(!deja_preneur)).saturating_sub(1),
-                        ),
+                    + pente * f64::from((preneurs + u32::from(!deja_preneur)).saturating_sub(1)),
             },
             Politique::SeuilDeConcentration { part_max } => {
                 if self.total == 0 {
@@ -255,7 +252,11 @@ mod tests {
         for a in 0..4 {
             assert!(matches!(q.soumettre(2, a), Verdict::Acceptee { .. }));
         }
-        assert_eq!(q.refus(), 0, "une taxe ne refuse rien, et l'affichage le dit");
+        assert_eq!(
+            q.refus(),
+            0,
+            "une taxe ne refuse rien, et l'affichage le dit"
+        );
         // Prix 1, 2, 3, 4 : le k-ième preneur distinct paie 1 + pente × (k − 1),
         // le soumissionnaire compris. Facturé sur l'état d'avant, le deuxième
         // preneur payait encore le nominal et le cumul valait 7.
@@ -304,8 +305,15 @@ mod tests {
             matches!(q.soumettre(1, 0), Verdict::Acceptee { .. }),
             "sinon aucune clé ne pourrait commencer"
         );
-        assert_eq!(q.concentration_max(), 1.0, "au-dessus du seuil, et mesurée telle quelle");
-        assert!(matches!(q.soumettre(1, 0), Verdict::Refusee { .. }), "la borne tient ensuite");
+        assert_eq!(
+            q.concentration_max(),
+            1.0,
+            "au-dessus du seuil, et mesurée telle quelle"
+        );
+        assert!(
+            matches!(q.soumettre(1, 0), Verdict::Refusee { .. }),
+            "la borne tient ensuite"
+        );
     }
 
     /// EX-M26 — le verdict porte sur l'état **d'avant** l'écriture : un quota qui se

@@ -45,8 +45,10 @@ impl Motif {
     /// Libellé affiché.
     pub fn libelle(self) -> &'static str {
         match self {
-            Motif::MandatsContradictoires => "mandats contradictoires entre agents (§8.3 du \
-                                              traité)",
+            Motif::MandatsContradictoires => {
+                "mandats contradictoires entre agents (§8.3 du \
+                                              traité)"
+            }
             Motif::Blocage => "blocage hors du périmètre de l'agent",
             Motif::AmbiguiteDeMandat => "ambiguïté de mandat — l'agent n'a pas autorité",
         }
@@ -116,10 +118,7 @@ impl FileDarbitrage {
     /// système** : ce module ne modélise pas la décision de l'humain, seulement
     /// l'instant où elle arrive.
     pub fn traiter_la_plus_ancienne(&mut self, maintenant: Instant) -> Option<u64> {
-        let d = self
-            .demandes
-            .iter_mut()
-            .find(|d| d.traitee_a.is_none())?;
+        let d = self.demandes.iter_mut().find(|d| d.traitee_a.is_none())?;
         d.traitee_a = Some(maintenant);
         Some(d.decalage)
     }
@@ -145,12 +144,18 @@ impl FileDarbitrage {
 
     /// Demandes en attente.
     pub fn en_attente(&self) -> usize {
-        self.demandes.iter().filter(|d| d.traitee_a.is_none()).count()
+        self.demandes
+            .iter()
+            .filter(|d| d.traitee_a.is_none())
+            .count()
     }
 
     /// Demandes traitées.
     pub fn traitees(&self) -> usize {
-        self.demandes.iter().filter(|d| d.traitee_a.is_some()).count()
+        self.demandes
+            .iter()
+            .filter(|d| d.traitee_a.is_some())
+            .count()
     }
 
     /// Écritures effectuées — le coût du mécanisme.

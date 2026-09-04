@@ -11,8 +11,8 @@
 //! graine — et NF-10 : chaque mode de défaillance nommé a un test qui le
 //! **provoque** et vérifie qu'il se produit.
 
-use sim_agents::stigmergie::{MomentTrace, Params};
 use sim_agents::scenario_b;
+use sim_agents::stigmergie::{MomentTrace, Params};
 
 /// Budget de référence du scénario B.
 ///
@@ -139,11 +139,7 @@ fn le_contraste_entre_gamma_inferieur_a_un_et_gamma_egal_a_un_est_net() {
 fn la_borne_dexploration_tient() {
     for graine in 1..=20u64 {
         let r = scenario_b(params(), graine, 20_000).unwrap();
-        assert!(
-            r.borne_tenue(),
-            "graine {graine} : {:?}",
-            r.violations
-        );
+        assert!(r.borne_tenue(), "graine {graine} : {:?}", r.violations);
         let b = r.bornes.as_ref().unwrap();
         assert!(
             r.mesures.plancher_observe >= b.plancher_tirage * (1.0 - 1e-12),
@@ -186,7 +182,15 @@ fn deux_graines_distinctes_produisent_des_traces_distinctes() {
 /// trace précédente soit durable ; la rétroaction disparaît.
 #[test]
 fn nf10_essaim_aveugle() {
-    let aveugle = scenario_b(Params { n: N_TEST, ..Params::essaim_aveugle() }, 3, 20_000).unwrap();
+    let aveugle = scenario_b(
+        Params {
+            n: N_TEST,
+            ..Params::essaim_aveugle()
+        },
+        3,
+        20_000,
+    )
+    .unwrap();
     let nominal = scenario_b(params(), 3, 20_000).unwrap();
     let part_aveugle =
         aveugle.mesures.cycles_sans_retroaction as f64 / aveugle.mesures.cycles.max(1) as f64;
@@ -210,7 +214,15 @@ fn nf10_essaim_aveugle() {
 /// cinquième reste de la conclusion ; il ne le supprime pas.
 #[test]
 fn nf10_rejeu_produit_des_effets_dupliques() {
-    let r = scenario_b(Params { n: N_TEST, ..Params::rejeu() }, 4, 20_000).unwrap();
+    let r = scenario_b(
+        Params {
+            n: N_TEST,
+            ..Params::rejeu()
+        },
+        4,
+        20_000,
+    )
+    .unwrap();
     assert!(
         r.mesures.effets_dupliques > 0,
         "le mode rejeu n'a produit aucun effet dupliqué"
@@ -228,7 +240,15 @@ fn nf10_rejeu_produit_des_effets_dupliques() {
 /// **sans objet**, et le simulateur le compte au lieu de le masquer.
 #[test]
 fn nf10_incomparabilite_m2() {
-    let r = scenario_b(Params { n: N_TEST, ..Params::incomparabilite_m2() }, 5, 20_000).unwrap();
+    let r = scenario_b(
+        Params {
+            n: N_TEST,
+            ..Params::incomparabilite_m2()
+        },
+        5,
+        20_000,
+    )
+    .unwrap();
     assert!(
         r.mesures.decisions_non_fiables > 0,
         "aucune décision inter-partitions n'a été comptée comme non fiable"
@@ -245,7 +265,15 @@ fn nf10_incomparabilite_m2() {
 /// son mode de défaillance.
 #[test]
 fn nf10_trace_optimiste_et_pessimiste_sont_deux_reglages() {
-    let optimiste = scenario_b(Params { n: N_TEST, ..Params::trace_optimiste() }, 6, 20_000).unwrap();
+    let optimiste = scenario_b(
+        Params {
+            n: N_TEST,
+            ..Params::trace_optimiste()
+        },
+        6,
+        20_000,
+    )
+    .unwrap();
     let pessimiste = scenario_b(params(), 6, 20_000).unwrap();
     assert_eq!(Params::trace_optimiste().moment_trace, MomentTrace::Avant);
     assert_eq!(Params::scenario_b().moment_trace, MomentTrace::Apres);

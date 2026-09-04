@@ -17,7 +17,11 @@ fn main() {
             "{}\t{:016x}\t{}\t{}",
             g,
             noyau::banc(groupe, n),
-            if groupe.exige_parite() { "exigée" } else { "constat" },
+            if groupe.exige_parite() {
+                "exigée"
+            } else {
+                "constat"
+            },
             groupe.nom(),
         );
     }

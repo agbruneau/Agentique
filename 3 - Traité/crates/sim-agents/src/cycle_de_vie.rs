@@ -314,7 +314,13 @@ mod tests {
     fn les_defauts_documentes_et_le_cout_des_sondes() {
         let r = ReglagesSonde::default();
         assert_eq!(
-            (r.delai_initial_s, r.periode_s, r.expiration_s, r.seuil_succes, r.seuil_echec),
+            (
+                r.delai_initial_s,
+                r.periode_s,
+                r.expiration_s,
+                r.seuil_succes,
+                r.seuil_echec
+            ),
             (0, 10, 1, 1, 3),
             "0/10/1/1/3"
         );
@@ -367,7 +373,10 @@ mod tests {
             seuil_echec: 0,
             ..ReglagesSonde::default()
         };
-        for ordre in [OrdreDeChute::VivaciteDabord, OrdreDeChute::DisponibiliteDabord] {
+        for ordre in [
+            OrdreDeChute::VivaciteDabord,
+            OrdreDeChute::DisponibiliteDabord,
+        ] {
             let motif = retirer(ordre, r).expect_err("seuil nul : refus attendu, pas une durée");
             assert!(motif.contains("zéro échec"), "{motif}");
         }
@@ -406,7 +415,11 @@ mod tests {
         // Une panne matérielle consomme le budget sans pouvoir être empêchée.
         assert!(b.soumettre(Perturbation::Involontaire));
         assert_eq!(b.involontaires_subies, 1);
-        assert_eq!(b.consommees(), 2, "au-delà du plafond, et rien ne l'empêche");
+        assert_eq!(
+            b.consommees(),
+            2,
+            "au-delà du plafond, et rien ne l'empêche"
+        );
     }
 
     /// EX-A27 — la suppression directe **contourne** le budget, et c'est une
@@ -417,7 +430,10 @@ mod tests {
         assert!(!b.soumettre(Perturbation::Volontaire));
         assert!(b.soumettre(Perturbation::SuppressionDirecte));
         assert_eq!(b.contournements_par_suppression_directe, 1);
-        assert!(b.soumettre(Perturbation::MiseAJourProgressive), "non limitée non plus");
+        assert!(
+            b.soumettre(Perturbation::MiseAJourProgressive),
+            "non limitée non plus"
+        );
         assert!(BudgetPerturbation::LIBELLE.contains("il n'empêche pas le monde"));
     }
 }

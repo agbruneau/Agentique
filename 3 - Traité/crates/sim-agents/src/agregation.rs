@@ -324,7 +324,9 @@ impl PushPull {
             }
         }
 
-        self.derive_max = self.derive_max.max((self.somme() - self.somme_initiale).abs());
+        self.derive_max = self
+            .derive_max
+            .max((self.somme() - self.somme_initiale).abs());
     }
 
     /// Rapporte les ruptures à l'oracle.
@@ -669,7 +671,10 @@ mod tests {
             "{} retours à zéro sur 24 relances attendues",
             avec.retours_a_zero
         );
-        assert!(avec.derive_max > 1e-6, "et elle redérive entre deux relances");
+        assert!(
+            avec.derive_max > 1e-6,
+            "et elle redérive entre deux relances"
+        );
 
         // Sans relance : aucun retour, jamais. L'erreur reste où elle est
         // tombée.
@@ -745,15 +750,18 @@ mod tests {
             for _ in 0..200 {
                 ps.cycle(&mut s, &mut alea);
             }
-            (
-                (ps.somme_valeurs() - ps.somme_initiale).abs(),
-                ps.messages,
-            )
+            ((ps.somme_valeurs() - ps.somme_initiale).abs(), ps.messages)
         };
         let (derive_sans, messages_sans) = mesurer(false);
         let (derive_avec, messages_avec) = mesurer(true);
-        assert!(derive_avec < 1e-9, "avec accusé, la somme est conservée : {derive_avec}");
-        assert!(derive_sans > 1.0, "sans accusé, elle dérive : {derive_sans}");
+        assert!(
+            derive_avec < 1e-9,
+            "avec accusé, la somme est conservée : {derive_avec}"
+        );
+        assert!(
+            derive_sans > 1.0,
+            "sans accusé, elle dérive : {derive_sans}"
+        );
         assert!(
             messages_avec > messages_sans,
             "le prix doit être visible : {messages_avec} contre {messages_sans}"

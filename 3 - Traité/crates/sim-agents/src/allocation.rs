@@ -105,10 +105,7 @@ impl Mecanisme {
 pub const BORNE_GLOUTON: f64 = 3.0;
 /// Les deux hypothèses de [`BORNE_GLOUTON`]. NF-14 : violer l'une **efface** la
 /// borne, elle ne la dégrade pas.
-pub const HYPOTHESES_GLOUTON: &[&str] = &[
-    "sans modèle des arrivées futures",
-    "sans réaffectation",
-];
+pub const HYPOTHESES_GLOUTON: &[&str] = &["sans modèle des arrivées futures", "sans réaffectation"];
 /// La borne énoncée en toutes lettres, hypothèses comprises, telle qu'elle
 /// s'affiche.
 pub const LIBELLE_GLOUTON: &str =
@@ -309,7 +306,11 @@ mod tests {
     /// NF-15 — les quatre chiffres du supermarché à d sondes sont **retrouvés**.
     #[test]
     fn le_supermarche_retrouve_les_quatre_chiffres_du_traite() {
-        assert!((temps_de_sejour(1, 0.90) - 10.00).abs() < 1e-9, "{}", temps_de_sejour(1, 0.90));
+        assert!(
+            (temps_de_sejour(1, 0.90) - 10.00).abs() < 1e-9,
+            "{}",
+            temps_de_sejour(1, 0.90)
+        );
         assert!((temps_de_sejour(1, 0.99) - 100.00).abs() < 1e-9);
         let d2_90 = temps_de_sejour(2, 0.90);
         let d2_99 = temps_de_sejour(2, 0.99);
@@ -382,7 +383,10 @@ mod tests {
         let independant = avantage(2.0);
         let correle = avantage(1.0);
         assert!(independant > 18.0);
-        assert!((correle - 1.0).abs() < 1e-9, "à corrélation totale, plus d'avantage");
+        assert!(
+            (correle - 1.0).abs() < 1e-9,
+            "à corrélation totale, plus d'avantage"
+        );
         assert!(independant > correle * 10.0);
     }
 
@@ -429,6 +433,8 @@ mod tests {
     #[test]
     fn le_scenario_porte_son_bloc_de_trois() {
         assert!(BLOC_F.these.contains("borne à battre"));
-        assert!(BLOC_F.ne_demontre_pas.contains("l'interface nomme laquelle"));
+        assert!(BLOC_F
+            .ne_demontre_pas
+            .contains("l'interface nomme laquelle"));
     }
 }

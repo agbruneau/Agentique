@@ -46,7 +46,11 @@ fn cent_graines_produisent_cent_traces_distinctes() {
     traces.sort_unstable();
     let avant = traces.len();
     traces.dedup();
-    assert_eq!(avant, traces.len(), "des graines distinctes ont produit la même trace");
+    assert_eq!(
+        avant,
+        traces.len(),
+        "des graines distinctes ont produit la même trace"
+    );
 }
 
 /// Le modèle de faute fait partie de l'identité d'une exécution (PD6) : deux
@@ -56,10 +60,34 @@ fn cent_graines_produisent_cent_traces_distinctes() {
 fn un_reglage_different_produit_une_trace_differente() {
     let nominal = scenario_b(params(), 1, BUDGET).unwrap();
     for (nom, p) in [
-        ("verrouillage", Params { n: 16, ..Params::verrouillage() }),
-        ("essaim aveugle", Params { n: 16, ..Params::essaim_aveugle() }),
-        ("rejeu", Params { n: 16, ..Params::rejeu() }),
-        ("incomparabilité M2", Params { n: 16, ..Params::incomparabilite_m2() }),
+        (
+            "verrouillage",
+            Params {
+                n: 16,
+                ..Params::verrouillage()
+            },
+        ),
+        (
+            "essaim aveugle",
+            Params {
+                n: 16,
+                ..Params::essaim_aveugle()
+            },
+        ),
+        (
+            "rejeu",
+            Params {
+                n: 16,
+                ..Params::rejeu()
+            },
+        ),
+        (
+            "incomparabilité M2",
+            Params {
+                n: 16,
+                ..Params::incomparabilite_m2()
+            },
+        ),
     ] {
         let autre = scenario_b(p, 1, BUDGET).unwrap();
         assert_ne!(

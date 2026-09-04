@@ -152,8 +152,13 @@ impl Conformite {
             Some(e) => format!(
                 "Φ_c = {:.4} ± {:.4} sur {} paires ({} agents) — accord observé {:.4}, \
                  attendu sous indépendance {:.4} — {}",
-                self.phi_c, e, self.paires, self.agents, self.accord_observe,
-                self.accord_sous_independance, SEUIL
+                self.phi_c,
+                e,
+                self.paires,
+                self.agents,
+                self.accord_observe,
+                self.accord_sous_independance,
+                SEUIL
             ),
             None => "Φ_c — jamais observé : aucune paire de décisions déposées".to_string(),
         }
@@ -197,7 +202,10 @@ pub fn estimer(decisions: &[Enregistrement]) -> Result<Conformite, &'static str>
         // exacte, sans tolérance. Deux agents qui « décident la même chose »
         // décident le même bit à bit — sinon c'est une décision voisine, et non
         // la même.
-        suites.entry(e.auteur.agent.0).or_default().push(e.valeur.to_bits());
+        suites
+            .entry(e.auteur.agent.0)
+            .or_default()
+            .push(e.valeur.to_bits());
     }
     let agents: Vec<&Vec<u64>> = suites.values().collect();
     let nb_agents = agents.len();
@@ -311,7 +319,10 @@ mod tests {
     #[test]
     fn une_population_conforme_approche_un() {
         let c = estimer(&journal(&conforme(10, 20))).unwrap();
-        assert_eq!(c.accord_observe, 1.0, "tous décident la même chose à chaque rang");
+        assert_eq!(
+            c.accord_observe, 1.0,
+            "tous décident la même chose à chaque rang"
+        );
         // Sous indépendance, chacun tirant dans sa propre loi uniforme sur cinq
         // valeurs, l'accord vaudrait 1/5.
         assert!((c.accord_sous_independance - 0.2).abs() < 1e-9);
@@ -427,7 +438,10 @@ mod tests {
         let a = estimer(&journal(&conforme(8, 12))).unwrap().affichage();
         assert!(a.contains("seuil inconnu"));
         for mot in ["conforme", "élevé", "faible", "critique"] {
-            assert!(!a.contains(mot), "l'affichage porte un jugement : « {mot} »");
+            assert!(
+                !a.contains(mot),
+                "l'affichage porte un jugement : « {mot} »"
+            );
         }
     }
 }

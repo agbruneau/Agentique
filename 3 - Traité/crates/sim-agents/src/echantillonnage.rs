@@ -416,13 +416,20 @@ mod tests {
         for _ in 0..20 {
             t.cycle(&mut s, &mut alea);
         }
-        assert_eq!(t.attribut().len(), 3, "la population reste celle du mécanisme");
+        assert_eq!(
+            t.attribut().len(),
+            3,
+            "la population reste celle du mécanisme"
+        );
         assert_eq!(t.vue(3), None, "hors population, aucune vue");
         // Aucune vue ne porte un agent que la population n'a pas : c'est
         // l'invariant qui rend `scission_silencieuse` indexable sans garde.
         for i in 0..3u32 {
             for j in t.vue(i).unwrap() {
-                assert!((*j as usize) < t.attribut().len(), "vue hors population : {j}");
+                assert!(
+                    (*j as usize) < t.attribut().len(),
+                    "vue hors population : {j}"
+                );
             }
         }
         let _ = t.scission_silencieuse();
@@ -442,7 +449,9 @@ mod tests {
         for _ in 0..100 {
             t.cycle(&mut s, &mut alea);
         }
-        let avis = t.scission_silencieuse().expect("les vues doivent s'être refermées");
+        let avis = t
+            .scission_silencieuse()
+            .expect("les vues doivent s'être refermées");
         assert!(avis.contains("aucun agent ne peut le détecter"), "{avis}");
     }
 }

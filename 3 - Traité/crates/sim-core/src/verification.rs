@@ -341,13 +341,55 @@ mod tests {
     #[test]
     fn des_parametres_hors_domaine_ne_rendent_aucun_verdict() {
         for (nom, p) in [
-            ("δ ≥ 2", Parametres { epsilon: 1e-2, delta: 2.0 }),
-            ("δ = NaN", Parametres { epsilon: 1e-2, delta: f64::NAN }),
-            ("ε = NaN", Parametres { epsilon: f64::NAN, delta: 1e-2 }),
-            ("δ < 0", Parametres { epsilon: 1e-2, delta: -1.0 }),
-            ("δ = 0", Parametres { epsilon: 1e-2, delta: 0.0 }),
-            ("ε = 0", Parametres { epsilon: 0.0, delta: 1e-2 }),
-            ("ε > 1", Parametres { epsilon: 1e9, delta: 1e-2 }),
+            (
+                "δ ≥ 2",
+                Parametres {
+                    epsilon: 1e-2,
+                    delta: 2.0,
+                },
+            ),
+            (
+                "δ = NaN",
+                Parametres {
+                    epsilon: 1e-2,
+                    delta: f64::NAN,
+                },
+            ),
+            (
+                "ε = NaN",
+                Parametres {
+                    epsilon: f64::NAN,
+                    delta: 1e-2,
+                },
+            ),
+            (
+                "δ < 0",
+                Parametres {
+                    epsilon: 1e-2,
+                    delta: -1.0,
+                },
+            ),
+            (
+                "δ = 0",
+                Parametres {
+                    epsilon: 1e-2,
+                    delta: 0.0,
+                },
+            ),
+            (
+                "ε = 0",
+                Parametres {
+                    epsilon: 0.0,
+                    delta: 1e-2,
+                },
+            ),
+            (
+                "ε > 1",
+                Parametres {
+                    epsilon: 1e9,
+                    delta: 1e-2,
+                },
+            ),
         ] {
             assert!(p.refus().is_some(), "{nom} devrait être refusé");
             let issue = Campagne::nouvelle(p, 0).conclure();
@@ -364,7 +406,12 @@ mod tests {
         }
         // Le domaine reste ouvert pour les réglages du §8.4.
         assert!(Parametres::default().refus().is_none());
-        assert!(Parametres { epsilon: 1.0, delta: 0.999 }.refus().is_none());
+        assert!(Parametres {
+            epsilon: 1.0,
+            delta: 0.999
+        }
+        .refus()
+        .is_none());
     }
 
     /// Les trois refus d'affichage sont énoncés.
