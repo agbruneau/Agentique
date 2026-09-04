@@ -251,7 +251,7 @@ sans les exécuter :
 cargo test -p sim-agents --release -- --list
 ```
 
-La suite complète — **467 tests, 0 échec**, exécutés le 17 août 2026 à 11 h 14.
+La suite complète — **470 tests, 0 échec**, exécutés le 4 septembre 2026.
 Le compte est une mesure : il se refait par la ligne ci-dessous, il ne se cite pas.
 
 ```bash
@@ -334,22 +334,25 @@ cargo doc --workspace --no-deps --open
 
 ## État
 
-Les **six** phases du PRD sont livrées : **467 tests, 0 échec**, suite rejouée le
-17 août 2026 à 11 h 14 ; clippy à 0 et rustdoc à 0 à 11 h 15 ; **treize**
+Les **six** phases du PRD sont livrées : **470 tests, 0 échec**, suite rejouée le
+4 septembre 2026 ; clippy à 0 et rustdoc à 0 le même jour ; **treize**
 scénarios **exécutables par leurs tests**, vingt-neuf bancs pour les cinq
-premières phases. La répartition est 424 unitaires — 254 `sim-agents`,
-96 `sim-core`, 68 `sim-milieu`, 6 `sim-viz` — et 43 d'intégration, qui sont les
+premières phases. La répartition est 427 unitaires — 257 `sim-agents`,
+96 `sim-core`, 69 `sim-milieu`, 5 `sim-viz` — et 43 d'intégration, qui sont les
 critères de sortie de phase. **Le compte a bougé cinq fois le même jour** —
-428 à 08 h 10, 447 à 08 h 32, 465 à 09 h 49, 466 à 10 h 26, 467 à 11 h 14 —,
-plusieurs agents d'audit écrivant en parallèle : ce qui se cite est la ligne de
-commande, jamais le nombre.
+428 à 08 h 10, 447 à 08 h 32, 465 à 09 h 49, 466 à 10 h 26, 467 à 11 h 14 le
+17 août 2026 —, plusieurs agents d'audit écrivant en parallèle : ce qui se cite
+est la ligne de commande, jamais le nombre. Les phases 1 à 4 de
+[`audit.md`](audit.md) l'ont porté à 470 le 4 septembre 2026, en ajoutant six tests et en
+en retirant trois avec les couplages par chaîne qu'ils gardaient.
 
 Les réserves ouvertes sont au §0 du PRD et au [registre des
 décisions](docs/decisions.md). Les principales :
 
-- **NF-05 n'est pas atteinte** — de l'ordre de 10 à 15 s simulées par
-  seconde-cœur à n = 1 000 contre une cible de 10³. L'écart est structurel, en
-  Θ(*n*²).
+- **NF-05 n'est pas atteinte** — de l'ordre de 20 à 25 s simulées par
+  seconde-cœur à n = 1 000 contre une cible de 10³, remesuré après la phase 2 de
+  [`audit.md`](audit.md) qui a doublé le débit. L'écart est structurel, en
+  Θ(*n*²), et un facteur 1,9 ne le comble pas.
 - **NF-07 n'est pas mesurée** — 30 images/s en WASM demande un navigateur en
   avant-plan avec une horloge d'images.
 - **L'interface s'arrête aux scénarios A et B.** Seize exigences `EX-V*` sur

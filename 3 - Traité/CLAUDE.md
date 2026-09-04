@@ -90,8 +90,8 @@ $env:PATH = "$env:USERPROFILE\.cargo\bin;$env:LOCALAPPDATA\Microsoft\WinGet\Pack
 Le second chemin est mingw-w64 : `dlltool.exe` en vient, et `sim-viz` ne compile
 pas sans lui (les trois autres crates n'en ont pas besoin).
 
-Suite complète — **467 tests, 0 échec**, mesurés le 17 août 2026 à 11 h 14, exit 0
-— 424 unitaires (254 `sim-agents`, 96 `sim-core`, 68 `sim-milieu`, 6 `sim-viz`) et
+Suite complète — **470 tests, 0 échec**, mesurés le 4 septembre 2026, exit 0
+— 427 unitaires (257 `sim-agents`, 96 `sim-core`, 69 `sim-milieu`, 5 `sim-viz`) et
 43 d'intégration. Le §0 du PRD enregistre 348 à la clôture de la phase 5 ; la
 phase 6 a porté le compte à 419, le banc du 13 août à 428, celui du 17 août à 447,
 puis 465, 466, 467. **Ce compte est une mesure, pas une constante** : il ne se cite
@@ -163,7 +163,7 @@ sim-core  ◄──── sim-milieu  ◄──── sim-agents  ◄───�
 | `sim-core` | Boucle à événements discrets, horloge logique, RNG semé, modèle de faute, détecteur, registre des hypothèses fortes, oracles, vérification statistique, **familles de décision** (EX-C19) | Ne connaît **ni** le journal partitionné, **ni** les agents |
 | `sim-milieu` | Journal partitionné M1–M4, réplication ISR(k, m), rétention, latences, groupe de consommation, plan de contrôle facturé à part, **identité apposée, historique par identité, quota par ressource** (EX-M24 à M26) | N'implante **aucun** algorithme d'agent, **aucun** protocole d'accord ; n'**évalue jamais** le contenu d'un enregistrement (PD14) |
 | `sim-agents` | Les mécanismes du traité, les oracles de propriétés, les paramètres d'ordre, **et les scénarios comme données** (paramètres, plages, critères d'acceptation) | Ne dessine **rien** |
-| `sim-viz` | egui/eframe, tracés, onglets « Limites » et « Repères », échelle typographique, schémas figés | Contient **zéro** logique de simulation, **zéro** définition de scénario et **zéro** texte du traité — le glossaire vient de `sim_agents::glossaire`, les reformulations de `Bloc::en_clair` —, **à trois exceptions nommées, toutes déclarées à l'écran dans l'onglet « Limites »** (PD6) : le découpage du budget en tranches réimplanté par `situe_la_tranche`, les neuf valeurs d'ouverture de `VueA::default` et `VueB::default` (défauts du §7 du PRD, transcrits faute d'accesseur), et `SOURCE_BORNES`. **Ni export, ni parcours « le fil »** : O6 n'est pas livré |
+| `sim-viz` | egui/eframe, tracés, onglets « Limites » et « Repères », échelle typographique, schémas figés | Contient **zéro** logique de simulation, **zéro** définition de scénario et **zéro** texte du traité — le glossaire vient de `sim_agents::glossaire`, les reformulations de `Bloc::en_clair` —, **à deux exceptions nommées, toutes deux déclarées à l'écran dans l'onglet « Limites »** (PD6) : le découpage du budget en tranches réimplanté par `situe_la_tranche`, et les trois valeurs d'ouverture de `VueB::default` (défauts du §7 du PRD, transcrits faute d'accesseur). *Les six de `VueA` sont dans `sim_agents::ParamsA` et la provenance des bornes dans `Bornes::SOURCE` depuis le 4 septembre 2026.* **Ni export, ni parcours « le fil »** : O6 n'est pas livré |
 
 La ligne de coupe est **le niveau de la boucle, pas le thème**. Un découpage
 thématique (`sim-consensus`, `sim-gouvernance`) est explicitement interdit par
@@ -276,7 +276,7 @@ violer casse un critère de sortie déjà atteint.
 
 **Les principales.** La liste complète — **vingt-deux entrées** au 17 août 2026,
 quatre ajoutées par le banc — est au §0 du PRD, et
-la liste vivante est dans le code : `sim_agents::hors_perimetre()` (**20**
+la liste vivante est dans le code : `sim_agents::hors_perimetre()` (**21**
 entrées), `sim_milieu::hors_perimetre()` (**13**), `ModeleFaute::hors_modele()`
 (**5**, dont la première en énumère neuf). Ces trois comptes se remesurent :
 
@@ -316,7 +316,7 @@ awk '/pub fn hors_perimetre/,/^}/' crates/sim-agents/src/lib.rs | grep -cE '^\s*
   `ModeleFaute::avertissements` — la moitié `[U]` d'EX-C06, tenue par personne.
   Trancher touche quatre documents et l'onglet « Limites » ; **ne pas créer la
   fonction sans la décision**, qui est au registre.
-- **NF-05 n'est pas atteinte** — de l'ordre de 10 à 15 secondes simulées par
+- **NF-05 n'est pas atteinte** — de l'ordre de 20 à 25 secondes simulées par
   seconde-cœur à n = 1 000, contre une cible de 10³. L'écart est structurel : chaque agent lit ce que toute la
   population écrit, donc Θ(n²). Voir
   [`bancs/nf05-debit/VERDICT.md`](bancs/nf05-debit/VERDICT.md). La cible est à

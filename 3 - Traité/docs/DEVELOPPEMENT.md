@@ -24,18 +24,24 @@ Les autres crates — `sim-core`, `sim-milieu`, `sim-agents` — n'en ont pas be
 
 ## Commandes
 
-Suite de tests complète — **467 tests** au 17 août 2026, 11 h 14, exit 0 :
+Suite de tests complète — **470 tests** au 4 septembre 2026, exit 0 :
 
 ```bash
 cargo test --workspace --release
 ```
 
-Le compte se répartit en 424 tests unitaires dans les modules — 254 dans
-`sim-agents`, 96 dans `sim-core`, 68 dans `sim-milieu`, 6 dans `sim-viz` — et 43
+Le compte se répartit en 427 tests unitaires dans les modules — 257 dans
+`sim-agents`, 96 dans `sim-core`, 69 dans `sim-milieu`, 5 dans `sim-viz` — et 43
 tests d'intégration, qui sont les critères de sortie de phase. Le §0 du PRD
 enregistre 348 à la clôture de la phase 5 ; la phase 6 a porté le compte à 419,
 le banc du 13 août à 428, et celui du 17 août à 447, puis 465, 466, 467 — des
 tests ajoutés pour fermer des trous que la révision a ouverts, aucun affaibli.
+Les phases 1 à 4 de [`audit.md`](../audit.md) l'ont porté à **470** le 4 septembre 2026 :
+six ajoutés — l'équivalence de la lecture par plages, la péremption du cache de
+l'écran A, la non-divergence des époques, l'accord de la phrase de verdict avec
+son énumération, la provenance des bornes, et le refus voisin du détecteur — et
+trois retirés avec les couplages par chaîne qu'ils gardaient, qui n'existent
+plus.
 **Le compte est une mesure et se refait ; c'est la répartition, elle, qui dit où
 le filet est lâche** — 43 tests d'intégration pour 424 unitaires, et six seulement
 sur toute l'interface. Le total a bougé **cinq** fois en trois heures le 17 août
@@ -205,7 +211,7 @@ non nulles à la première violation.
 `rustfmt` : 60 fichiers et 225 différences de mise en page, mesurées ce jour-là et
 appliquées en un commit isolé — `rustfmt` ne touche ni les chaînes, ni les
 commentaires, ni les rustdoc, et les six empreintes du banc de parité comme les
-467 tests l'ont confirmé sur-le-champ. ⚠ *Ce n'était pas une règle du dossier, et
+tests l'ont confirmé sur-le-champ. ⚠ *Ce n'était pas une règle du dossier, et
 son absence coûtait à chaque revue : un diff de fond traînait les replis de mise
 en page des lignes qu'il touchait.* La commande sort non nulle à la première
 divergence, comme les cinq autres.
@@ -225,7 +231,14 @@ motif : elles couvrent deux postes que les trois premières ne voient pas.**
   `pandoc` + `typst` ; sans elle, il se déclare **non mesuré** plutôt que de
   passer en silence. `--sans-parite` le saute, pour l'itération et rien d'autre.
 - `check-empaquetage.py` compare la date du module WASM à celles des sources de
-  `crates/sim-viz/`. ⚠ **Le défaut qu'il attrape s'est produit deux fois** : le
+  `crates/sim-viz/`, puis **le refait et compare les octets** — c'est ce second
+  mode qui décide, et il rend « à jour » ou « périmé », jamais « probablement ».
+  ⚠ *Il mord sur toute édition des **quatre** crates, et non de `crates/sim-viz/`
+  seule : le module les embarque toutes, lignes de panique comprises. Mesuré le
+  4 septembre 2026 — les phases 2 et 4 n'ont touché ni `sim-viz` ni son interface directe,
+  et le module a changé de taille deux fois.* Il demande `CARGO_TARGET_DIR` posé
+  hors du dépôt, sans quoi il se déclare **indéterminé** plutôt que de comparer
+  au produit d'une construction qui échoue. ⚠ **Le défaut qu'il attrape s'est produit deux fois** : le
   banc du 17 août 2026 a trouvé l'empaquetage vieux de deux révisions, puis son
   propre correctif périmé d'une révision en douze minutes ; l'audit du
   2 septembre l'a retrouvé périmé du commit `7a1b7f2`. *La règle « ce couple de

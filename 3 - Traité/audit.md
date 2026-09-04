@@ -198,7 +198,7 @@ Chacune est « le correctif de fond » que `docs/decisions.md` nomme pour un cho
 | 4.1 | R-01 | `pub enum Vainqueur { Maille, Journal }` et `Comparaison::qui_gagne_en_temps(&self) -> Vainqueur` dans `scenario.rs` ; `verdict_temps` s'en sert. `scenario_a.rs` lit l'énumération ; `VAINQUEUR_MAILLE` et `le_vainqueur_se_lit_encore_dans_la_phrase_de_verdict` disparaissent, remplacés par un test de `scenario.rs` sur les deux régimes. `decisions.md` : la ligne « Le vainqueur en temps » passe de **[R]** à *fermée*, avec la date. |
 | 4.2 | R-02 | `pub const SOURCE: &str = "§1.2, p. 16, 4ᵉ éd."` à côté de `Bornes::LEGENDE`, qui garde sa page en toutes lettres, et un test dans `sim-agents` que `LEGENDE.contains(SOURCE)` — la garde change de crate, elle ne disparaît pas. `scenario_b.rs` lit `Bornes::SOURCE` ; `SOURCE_BORNES` et son test disparaissent. |
 | 4.3 | R-03 | `pub struct ParamsA { n, p, l99_ms, aller_simple_ms, degre_depot, taux_omission, graine }` avec `impl Default` portant les défauts du §7 du PRD et leur provenance en doc ; `scenario_a(&ParamsA) -> Comparaison`. `VueA` garde un `ParamsA` et cesse de transcrire ; `hors_perimetre()` (entrée « nombre de partitions du scénario A ») et l'onglet « Limites » (section « Ce que cette interface décide ») sont à reformuler : six valeurs de moins, il n'en reste trois, celles de `VueB`. `decisions.md` : la ligne « Remonter dans `sim-agents` les neuf valeurs » devient « les trois de `VueB` ». |
-| 4.4 | R-04 | `plancher_observe: Option<f64>` et `hors_dominante_observee: Option<f64>` dans `Mesures` (le `Default` dérivé donne `None`, les deux `f64::INFINITY` de `nouveau` disparaissent) ; `verifier_bornes` met à jour par `Some(courant.map_or(x, |m| m.min(x)))` ; `ResultatM::hors_dominante` devient `(Option<f64>, Option<f64>)` ; `scenario_b.rs::jamais_vu` disparaît au profit d'un `match` ; les tests de `scenario_b.rs`, `scenario_m.rs` et `sortie_phase_6.rs` déballent par `expect("mesuré : au moins un cycle")`. **Le banc de parité absorbe `map_or(f64::INFINITY, |v| v).to_bits()`**, pour que les six empreintes ne bougent pas. Une douzaine de sites dans six fichiers, diff net négatif. Choix retenu au §4.8 ; c'est la première tâche à retirer si la phase doit raccourcir. |
+| 4.4 | R-04 | `plancher_observe: Option<f64>` et `hors_dominante_observee: Option<f64>` dans `Mesures` (le `Default` dérivé donne `None`, les deux `f64::INFINITY` de `nouveau` disparaissent) ; `verifier_bornes` met à jour par `Some(courant.map_or(x, \|m\| m.min(x)))` ; `ResultatM::hors_dominante` devient `(Option<f64>, Option<f64>)` ; `scenario_b.rs::jamais_vu` disparaît au profit d'un `match` ; les tests de `scenario_b.rs`, `scenario_m.rs` et `sortie_phase_6.rs` déballent par `expect("mesuré : au moins un cycle")`. **Le banc de parité absorbe `map_or(f64::INFINITY, \|v\| v).to_bits()`**, pour que les six empreintes ne bougent pas. Une douzaine de sites dans six fichiers, diff net négatif. Choix retenu au §4.8 ; c'est la première tâche à retirer si la phase doit raccourcir. |
 | 4.5 | R-05 | `pub fn encadrement_de_detection(periode: Duree, expiration: Duree, seuil: u32) -> Result<(Duree, Duree), String>` dans `sim_core::detecteur` — le refus du seuil nul avec le motif « zéro échec », les deux bornes saturantes, et rien d'autre. `Detecteur::completude` l'appelle (son seuil est garanti non nul par le constructeur : `expect` documenté) ; `DetecteurInfectieux::completude` devient la conversion secondes → `Duree` autour de l'appel ; `cycle_de_vie::retirer` prend la borne haute. Les trois tests « 21 à 31 s » et les trois tests de saturation restent tels quels : le chiffre est toujours **retrouvé** par le calcul, jamais recopié (NF-15). Entiers saturants : bit-identique. `SPEC.md` §8 réécrit son paragraphe « les trois copies n'ont pas été factorisées » ; `decisions.md` reçoit la ligne qui applique la règle du comptage de PD7 à cet exemplaire (phase 5). Choix retenu au §4.8. |
 
 Critère de sortie : empreintes identiques ; tests verts (le compte change : moins deux tests de garde dans `sim-viz`, plus un ou deux dans `sim-agents`) ; `check-empaquetage.py` et `parite-wasm` rejoués ; `decisions.md` et l'onglet « Limites » à jour.
@@ -326,3 +326,49 @@ cargo run --release --bin parite-natif -- 1 20000
 Le banc de parité complet, le réempaquetage et son contrôle, après toute édition de `crates/sim-viz/` : les lignes de `DEVELOPPEMENT.md`, § « Commandes », et `python Python/check-empaquetage.py`.
 
 Micro-banc `libm` de cet audit — un crate jetable de vingt lignes, `libm = "0.2"`, `opt-level = 3`, cible `x86_64-pc-windows-gnu` — dont les quatre chiffres du §2 sont la sortie ; il n'est pas versé au dépôt, et ce qui se cite d'ici est le protocole, pas le nombre.
+
+---
+
+## 7. Journal d'exécution — 4 septembre 2026
+
+*Écrit après coup, comme un verdict de banc : cette section dit ce que
+l'exécution a trouvé, y compris là où elle a démenti l'audit qui la planifiait.*
+
+**Les six phases sont exécutées**, en six commits : `063d8dc` (rustfmt),
+`b9b1879` (phase 1), `3548faa` (phase 2), `310c900` (phase 3), `367b602`
+(phase 4) et celui qui porte cette section (phase 5).
+
+### 7.1 Ce que la mesure a démenti dans cet audit
+
+| Ce que l'audit écrivait | Ce que l'exécution a mesuré |
+|---|---|
+| La copie du journal coûte « environ 1 µs par cycle », et la phase 2 rendra 20 à 35 % | Le profil de la phase 0 mesure **2 940 ns par cycle**, soit 96 % du coût de lecture, et la phase 2 rend **×1,9**. L'estimation était basse d'un facteur trois dans les deux sens. C'est la raison d'être de la phase 0, et elle a servi |
+| R-08 — `Registre::echoir` gagnerait à filtrer par `retain` | **Retiré sur mesure.** `retain` allouerait à chaque événement pour une liste presque toujours vide ; la boucle indicée existante n'alloue pas, et le pire cas quadratique qu'elle porte n'est atteint par aucun scénario. L'audit proposait un changement qui aurait coûté |
+| R-04 — `scenario_b.rs::jamais_vu` disparaît au profit d'un `match` | **Gardée**, retypée en `Option<f64>`. Deux sites d'appel, et son rustdoc porte la raison F2 qu'un `match` en ligne aurait perdue : trois lignes de moins ne valent pas la perte du motif |
+| Le couple NF-08 se périme « à la première édition de `crates/sim-viz/` » | Le module embarque **les quatre crates**, lignes de panique comprises : les phases 2 et 4 n'ont touché ni `sim-viz` ni son interface directe, et il a changé de taille deux fois. Corrigé au `README`, dans `CLAUDE.md` et dans `DEVELOPPEMENT.md` |
+| La phase 5 corrige l'attribution fausse du gain NF-05 dans deux fichiers | **Trois** : `docs/decisions.md` portait la même erreur — « périmée depuis que la rétention existe » — et le plan ne l'avait pas vue |
+| La phase 5 remesure le compte de tests dans `SPEC.md` et `DEVELOPPEMENT.md` | **Cinq fichiers** : `README.md`, `CLAUDE.md` et le §0 du PRD le portaient aussi. En laisser trois à 467 pendant que deux disent 470 aurait produit exactement le défaut que la règle du dépôt condamne |
+
+### 7.2 Ce qui a été prouvé, et comment
+
+**Identité bit à bit.** Les six empreintes de `parite-natif` sur deux réglages —
+`1 20000` et `7 150000` — sont **identiques** avant et après les cinq phases, y
+compris après `rustfmt`, après la refonte de la lecture du journal et après les
+cinq refactorisations d'interface. Les colonnes reproductibles du banc NF-05,
+`s simulées` et `retard max`, le sont aussi sur les quatre lignes. Le banc
+`parite-wasm` rend les **six mêmes empreintes** natif et WASM, inchangées depuis
+la phase 0.
+
+**Le seul changement de comportement observable** est le nombre de fois que
+l'écran A appelle `scenario_a` : cinquante par image, contre cinquante par
+changement de réglage. L'image elle-même est identique au pixel près.
+
+### 7.3 Un défaut de l'appareil, pas du code
+
+`Python/check-empaquetage.py` **plante après avoir rendu son verdict** :
+`UnicodeEncodeError` sur un `\u26a0` écrit vers une console `cp1252`. La sortie
+utile est déjà imprimée, et le code de sortie reste 0, donc la porte ne ment
+pas ; mais un contrôle d'avant commit qui trace une pile est un contrôle qu'on
+apprend à ignorer. Contourné ici par `PYTHONIOENCODING=utf-8`. **Non corrigé** :
+l'appareil Python n'est pas le périmètre de cet audit, et le corriger sans
+l'avoir lu en entier serait le geste que cet audit reproche ailleurs.
