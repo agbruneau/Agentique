@@ -142,13 +142,12 @@ WebGL 2 est requis — `eframe` n'a pas de repli logiciel.
 
 Le déploiement est un dépôt de fichiers statiques : `index.html`, `sim_viz.js`,
 `sim_viz_bg.wasm` côte à côte, aucune dépendance serveur (DT4). Module compressé :
-**1 447 704 octets compressés** — *1 447 624 au 17 août ; les 80 octets de plus sont les marqueurs d'édition passés à « 4ᵉ éd. » dans les chaînes que l'interface affiche* — pour une cible de
-8 Mo (NF-08), sur **3 669 337 octets bruts**. La cible reste tenue d'un facteur
+**1 448 336 octets compressés** — *1 447 704 le 2 septembre ; les 632 octets de plus sont ceux du cache de l'écran A et des noms neufs de la lecture par plages* — pour une cible de
+8 Mo (NF-08), sur **3 669 619 octets bruts**. La cible reste tenue d'un facteur
 cinq et demi.
 
-Ces deux chiffres sortent d'**une** construction, celle du **17 août 2026 à
-11 h 14** (`wasm-bindgen` a écrit `web/sim_viz_bg.wasm` à 11 h 14 min 07 s), et
-se refont par ces deux lignes et ces deux-là seulement :
+Ces deux chiffres sortent d'**une** construction, celle du **4 septembre 2026**,
+et se refont par ces deux lignes et ces deux-là seulement :
 
 ```bash
 cargo build -p sim-viz --release --lib --target wasm32-unknown-unknown \
@@ -157,6 +156,20 @@ cargo build -p sim-viz --release --lib --target wasm32-unknown-unknown \
 printf "brut=%s gz9=%s\n" "$(stat -c%s web/sim_viz_bg.wasm)" \
                           "$(gzip -9 -c web/sim_viz_bg.wasm | wc -c)"
 ```
+
+☑ **Re-mesuré le 4 septembre 2026, après la phase 3 du plan d'exécution de
+[`audit.md`](audit.md)** : **3 669 619** octets bruts et **1 448 336** compressés,
+soit **+282 et +632** sur la construction du 2 septembre. *Ce que ces octets
+portent : le cache de l'écran A — qui cesse de rejouer cinquante `scenario_a` par
+image —, et les noms de la lecture par plages que la phase 2 a introduits dans
+`sim-milieu`.* ⚠ **Le module embarque les quatre crates, pas seulement
+`sim-viz`** : les lignes de panique de `stigmergie.rs` et de `journal.rs` y sont,
+donc toute édition d'une des quatre le périme — c'est plus large que ce que la
+règle de péremption ci-dessous laisse entendre, et `check-empaquetage.py` le voit
+puisqu'il compare des octets. ☑ `python Python/check-empaquetage.py` : **à jour,
+identique à l'octet**. ☑ Le banc `bancs/parite-wasm` rejoué sur cette
+construction : **six cas, six empreintes identiques**, EX-V12 tenue, et ce sont
+les **mêmes six valeurs** qu'avant les trois phases.
 
 ⚠  ☑ **Re-mesuré DEUX FOIS le 2 septembre 2026.** *Au premier passage, avant toute édition du code : **3 669 337** octets bruts, **1 447 624** compressés, **inchangés**, le module refait étant **identique à l'octet** à celui du 17 août — la construction WASM est donc reproductible, ce que le dossier n'avait jamais mesuré.* ☑ **Au second, après la quatrième édition du traité** : **3 669 337** bruts et **1 447 704** compressés, soit **+80 octets** — *les marqueurs d'édition, qui vivent dans les chaînes que l'interface affiche, sont passés de « 3ᵉ éd. » à « 4ᵉ éd. ».* ⚠ **Et c'est le contrôle `check-empaquetage.py` qui l'a exigé** : il a refusé le module de la veille, sur comparaison d'octets et non de dates — *la construction WASM est donc reproductible, ce que le dossier n'avait jamais mesuré*, et l'unique commit qui a touché `sim-viz` depuis, `7a1b7f2`, ne portait que **deux lignes de commentaire de documentation**. **La règle de péremption reste juste ; elle n'était pas encore enfreinte.** ☑ Le banc `bancs/parite-wasm` est rejoué sur cette construction : **six cas, six empreintes identiques**, EX-V12 tenue.
 

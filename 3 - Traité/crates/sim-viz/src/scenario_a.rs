@@ -87,6 +87,34 @@ const GRAINE: u64 = 1;
 /// place. Le correctif de fond est au registre des décisions.
 const VAINQUEUR_MAILLE: &str = "la maille gagne";
 
+/// Les six entrées dont tout l'écran est fonction, plus la graine figée.
+///
+/// Les flottants sont comparés **sur leurs bits** : c'est l'égalité qui décide
+/// de rejouer la simulation, et deux réglages qui ne diffèrent que par le signe
+/// d'un zéro ne sont pas le même réglage.
+#[derive(Clone, Copy, PartialEq, Eq, Debug)]
+struct CleA {
+    n: u32,
+    p: u32,
+    l99: u64,
+    aller_simple: u64,
+    degre_depot: u32,
+    taux_omission: u64,
+}
+
+/// Tout ce que l'écran tire de `sim-agents` pour un réglage donné.
+///
+/// Les quarante-neuf points du balayage y sont **avec** la comparaison de tête :
+/// ils viennent des mêmes entrées, et les séparer laisserait l'un se périmer
+/// sans l'autre.
+struct CacheA {
+    cle: CleA,
+    comparaison: Comparaison,
+    maille: Vec<[f64; 2]>,
+    journal: Vec<[f64; 2]>,
+    croisement: Option<f64>,
+}
+
 /// L'état réglable du scénario A. Six paramètres, dont quatre agissent.
 pub struct VueA {
     n: u32,
@@ -95,8 +123,20 @@ pub struct VueA {
     aller_simple_ms: f64,
     degre_depot: u32,
     taux_omission: f64,
+    /// Ce que le réglage courant a produit — recalculé **au changement de
+    /// réglage**, jamais à l'image.
+    ///
+    /// Cet écran n'a pas de bouton « lancer », et il exécutait donc cinquante
+    /// `scenario_a` par image : un pour le bandeau et les quatre actes,
+    /// quarante-neuf pour la courbe du croisement, chacun tirant n Bernoulli de
+    /// diffusion et sondant n cibles au détecteur. À n = 2 000, c'est le seul
+    /// poste de l'interface qui pèse sur NF-07, et il tournait aussi quand rien
+    /// ne bougeait. Les cinquante résultats étant des fonctions pures de six
+    /// entrées et d'une graine figée, les garder rend le même écran au pixel
+    /// près et laisse l'image au repos à zéro calcul.
+    cache: Option<CacheA>,
     /// Temps mural du dernier recalcul, en millisecondes (EX-V07). Jamais un
-    /// temps simulé : c'est le coût de l'image, pas celui du système modélisé.
+    /// temps simulé : c'est le coût du recalcul, pas celui du système modélisé.
     duree_ms: f64,
 }
 
@@ -115,29 +155,90 @@ impl Default for VueA {
             aller_simple_ms: 2.0,
             degre_depot: 3,
             taux_omission: 0.01,
+            cache: None,
             duree_ms: 0.0,
         }
     }
 }
 
 impl VueA {
+    /// Les six entrées de l'écran, sous la forme qui décide du recalcul.
+    fn cle(&self) -> CleA {
+        CleA {
+            n: self.n,
+            p: self.p,
+            l99: self.l99_ms.to_bits(),
+            aller_simple: self.aller_simple_ms.to_bits(),
+            degre_depot: self.degre_depot,
+            taux_omission: self.taux_omission.to_bits(),
+        }
+    }
+
+    /// Rejoue les cinquante exécutions du réglage courant.
+    ///
+    /// Aucun temps n'est calculé ici : chaque point est un appel à
+    /// `sim_agents::scenario_a`, et le croisement est l'abscisse où **son**
+    /// `verdict_temps` change de camp. La vue lit, elle ne tranche pas.
+    fn calculer(&self, cle: CleA) -> CacheA {
+        let g = Granularite::Micro;
+        let pas = (PLAGE_ALLER_SIMPLE.1 - PLAGE_ALLER_SIMPLE.0) / POINTS_BALAYAGE as f64;
+        let mut maille = Vec::with_capacity(POINTS_BALAYAGE + 1);
+        let mut journal = Vec::with_capacity(POINTS_BALAYAGE + 1);
+        let mut croisement = None;
+        let mut precedent: Option<bool> = None;
+        for i in 0..=POINTS_BALAYAGE {
+            let aller = PLAGE_ALLER_SIMPLE.0 + pas * i as f64;
+            let c = scenario_a(
+                self.n,
+                self.p,
+                self.l99_ms,
+                aller,
+                self.degre_depot,
+                self.taux_omission,
+                GRAINE,
+            );
+            maille.push([aller, g.ms_depuis_tics(c.maille_temps)]);
+            journal.push([aller, g.ms_depuis_tics(c.journal_temps)]);
+            let gagne = c.verdict_temps(g).contains(VAINQUEUR_MAILLE);
+            if croisement.is_none() && matches!(precedent, Some(p) if p != gagne) {
+                croisement = Some(aller);
+            }
+            precedent = Some(gagne);
+        }
+        CacheA {
+            cle,
+            comparaison: scenario_a(
+                self.n,
+                self.p,
+                self.l99_ms,
+                self.aller_simple_ms,
+                self.degre_depot,
+                self.taux_omission,
+                GRAINE,
+            ),
+            maille,
+            journal,
+            croisement,
+        }
+    }
+
     /// Dessine l'écran entier, dans l'ordre où il se démontre.
     pub fn afficher(&mut self, ui: &mut egui::Ui) {
         // Le recalcul a lieu **avant** les curseurs, donc sur les valeurs de
         // l'image précédente. C'est ce que fait tout mode immédiat, et la seule
         // façon de placer chaque curseur sous son énoncé plutôt que tous en
-        // tête.
-        let depart = web_time::Instant::now();
-        let c = scenario_a(
-            self.n,
-            self.p,
-            self.l99_ms,
-            self.aller_simple_ms,
-            self.degre_depot,
-            self.taux_omission,
-            GRAINE,
-        );
-        self.duree_ms = depart.elapsed().as_secs_f64() * 1_000.0;
+        // tête. Il n'a lieu que si une entrée a bougé : voir `VueA::cache`.
+        let cle = self.cle();
+        if self.cache.as_ref().map(|c| c.cle) != Some(cle) {
+            let depart = web_time::Instant::now();
+            self.cache = Some(self.calculer(cle));
+            self.duree_ms = depart.elapsed().as_secs_f64() * 1_000.0;
+        }
+        let c = self
+            .cache
+            .as_ref()
+            .expect("le cache vient d'être rempli")
+            .comparaison;
 
         // Hors de la zone défilante. EX-V07 demande un affichage permanent, et
         // un bandeau qui sort par le haut au premier défilement ne l'est plus.
@@ -351,37 +452,20 @@ impl VueA {
 
     /// Le croisement, **dessiné** plutôt que nommé.
     ///
-    /// Aucun temps n'est calculé ici : chaque point est un appel à
-    /// `sim_agents::scenario_a`, et le croisement est l'abscisse où **son**
-    /// `verdict_temps` change de camp. La vue lit, elle ne tranche pas.
+    /// Les points viennent du cache : ils sont calculés par
+    /// [`VueA::calculer`], une fois par réglage.
     fn croisement(&self, ui: &mut egui::Ui) {
-        let g = Granularite::Micro;
         let (c_maille, c_journal) = teintes(ui);
         let pas = (PLAGE_ALLER_SIMPLE.1 - PLAGE_ALLER_SIMPLE.0) / POINTS_BALAYAGE as f64;
-
-        let mut maille = Vec::with_capacity(POINTS_BALAYAGE + 1);
-        let mut journal = Vec::with_capacity(POINTS_BALAYAGE + 1);
-        let mut bascule = None;
-        let mut precedent: Option<bool> = None;
-        for i in 0..=POINTS_BALAYAGE {
-            let aller = PLAGE_ALLER_SIMPLE.0 + pas * i as f64;
-            let c = scenario_a(
-                self.n,
-                self.p,
-                self.l99_ms,
-                aller,
-                self.degre_depot,
-                self.taux_omission,
-                GRAINE,
-            );
-            maille.push([aller, g.ms_depuis_tics(c.maille_temps)]);
-            journal.push([aller, g.ms_depuis_tics(c.journal_temps)]);
-            let gagne = c.verdict_temps(g).contains(VAINQUEUR_MAILLE);
-            if bascule.is_none() && matches!(precedent, Some(p) if p != gagne) {
-                bascule = Some(aller);
-            }
-            precedent = Some(gagne);
-        }
+        let cache = self
+            .cache
+            .as_ref()
+            .expect("le cache est rempli par `afficher`");
+        let (maille, journal, bascule) = (
+            cache.maille.clone(),
+            cache.journal.clone(),
+            cache.croisement,
+        );
 
         Plot::new("croisement_temps")
             .height(180.0)
@@ -707,13 +791,15 @@ fn comment_cet_ecran_sexecute(ui: &mut egui::Ui) {
         note(
             ui,
             &format!(
-                "Ce scénario n'a pas de bouton « lancer » : il se recalcule à chaque image, et le \
-                 temps mural du bandeau est celui de ce seul recalcul — le balayage de l'acte 4, \
-                 qui rappelle `scenario_a` {} fois de plus sur la plage du délai d'aller simple, \
-                 n'y est pas compté. Le temps logique n'est pas une horloge qui avance : les \
-                 comptes du tableau 3 sont des formules fermées, et les deux valeurs sont les deux \
-                 horizons comparés à l'acte 4. Le modèle de panne est lu du réglage — à la \
+                "Ce scénario n'a pas de bouton « lancer » : il se recalcule **dès qu'un réglage \
+                 change**, et pas autrement — au repos, une image ne coûte aucune simulation. Le \
+                 recalcul rejoue `scenario_a` {} fois : une pour les chiffres ci-dessous, {} pour \
+                 le balayage de l'acte 4 sur la plage du délai d'aller simple, et le temps mural \
+                 du bandeau les compte toutes. Le temps logique n'est pas une horloge qui avance : \
+                 les comptes du tableau 3 sont des formules fermées, et les deux valeurs sont les \
+                 deux horizons comparés à l'acte 4. Le modèle de panne est lu du réglage — à la \
                  différence du scénario B, `scenario_a` n'en déclare aucun.",
+                POINTS_BALAYAGE + 2,
                 POINTS_BALAYAGE + 1
             ),
         );
@@ -794,6 +880,45 @@ fn motif(ui: &mut egui::Ui, texte: &str) {
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    /// Le cache rend **exactement** ce que le recalcul rendait, et il se périme
+    /// dès qu'une des six entrées bouge.
+    ///
+    /// C'est ce qui autorise l'écran à ne plus rejouer cinquante `scenario_a`
+    /// par image. Les deux clauses comptent : sans la première, le cache
+    /// afficherait autre chose que la simulation ; sans la seconde, il
+    /// afficherait le réglage précédent — et la seconde est celle qui tomberait
+    /// si un champ était ajouté à `VueA` sans l'être à `CleA`.
+    #[test]
+    fn le_cache_rend_le_meme_ecran_et_se_perime_a_chaque_reglage() {
+        let v = VueA::default();
+        let a = v.calculer(v.cle());
+        let b = v.calculer(v.cle());
+        assert_eq!(a.maille, b.maille);
+        assert_eq!(a.journal, b.journal);
+        assert_eq!(a.croisement, b.croisement);
+        assert_eq!(
+            a.comparaison.maille_entretien,
+            b.comparaison.maille_entretien
+        );
+
+        // Les six entrées sont dans la clé — et la graine, figée, n'en est pas.
+        let cle = v.cle();
+        type Geste = (&'static str, fn(&mut VueA));
+        let bouger: [Geste; 6] = [
+            ("n", |v| v.n += 1),
+            ("p", |v| v.p += 1),
+            ("ℓ₉₉", |v| v.l99_ms += 1.0),
+            ("aller simple", |v| v.aller_simple_ms += 1.0),
+            ("degré de dépôt", |v| v.degre_depot += 1),
+            ("taux d'omission", |v| v.taux_omission += 0.01),
+        ];
+        for (nom, geste) in bouger {
+            let mut w = VueA::default();
+            geste(&mut w);
+            assert_ne!(w.cle(), cle, "{nom} ne périme pas le cache");
+        }
+    }
 
     /// Le vainqueur en temps se lit dans une **phrase formatée** de
     /// `sim-agents`, faute d'accesseur. Ce test est le garde-fou du couplage :
