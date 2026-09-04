@@ -19,6 +19,7 @@ use sim_core::oracle::{Oracle, Registre};
 use sim_core::temps::{Duree, Granularite, Instant};
 use sim_core::ActeurId;
 use sim_milieu::{Cle, Ecriture, Identite, Latence, Milieu};
+use std::ops::Range;
 
 /// Nombre de tranches de la série temporelle d'effort.
 ///
@@ -567,7 +568,41 @@ pub enum Evt {
 /// Le fourragement stigmergique complet.
 pub struct Fourragement {
     /// Les paramètres de l'exécution.
-    pub params: Params,
+    ///
+    /// **Privé, et lu par [`Fourragement::params`].** Sept grandeurs en sont
+    /// dérivées une fois pour toutes à la construction — les deux bornes, le
+    /// dépôt, la période, τ, `ln γ`, la fenêtre ℓ₉₉ et le seuil
+    /// d'incomparabilité —, parce qu'elles étaient recalculées à chaque cycle
+    /// sur des paramètres qui ne changent jamais. Un champ public rendrait le
+    /// désaccord exprimable : un `params` modifié après coup laisserait ces
+    /// caches sur l'ancien réglage sans qu'aucun test le voie.
+    params: Params,
+    /// Les deux bornes d'EX-A11c, ou la raison de leur effacement (NF-14).
+    /// Dérivé de `params` à la construction : `bornes_applicables` faisait deux
+    /// `libm::pow` par cycle et, borne effacée, un `format!` de trois cents
+    /// signes jeté aussitôt.
+    bornes: Result<Bornes, String>,
+    /// Intensité d'un dépôt unitaire — un `libm::log` par dépôt, sinon.
+    depot: f64,
+    /// Période de cycle, en tics.
+    periode: Duree,
+    /// Fenêtre τ, en tics, jamais nulle.
+    tau_tics: f64,
+    /// `ln γ` écrêté, ou zéro quand γ ≥ 1 — voir [`Fourragement::actualiser_phi`].
+    ln_gamma: f64,
+    /// Fenêtre ℓ₉₉, en tics : celle de la mesure de réattaque.
+    fenetre_l99: Duree,
+    /// Seuil de fiabilité d'une comparaison inter-partitions (EX-A10).
+    seuil_incomparabilite: f64,
+    /// Utilité maximale des ressources, tenue à jour par la bascule. `agir` la
+    /// cumulait en refaisant un `fold` sur m ressources à chaque action.
+    utilite_max: f64,
+    /// Tampon des curseurs de lecture, réutilisé d'un cycle à l'autre.
+    curseurs: Vec<(u32, u64)>,
+    /// Tampon des plages lues, réutilisé d'un cycle à l'autre.
+    plages: Vec<(u32, Range<usize>)>,
+    /// Tampon des poids de tirage, réutilisé d'un cycle à l'autre.
+    poids: Vec<f64>,
     /// Le journal partitionné dans lequel les agents déposent et lisent.
     pub milieu: Milieu,
     /// Les ressources à exploiter, avec leur utilité et leur partition.
@@ -578,7 +613,6 @@ pub struct Fourragement {
     /// chaque agent a sa famille et rien n'est partagé.
     pub tirage: TirageDeDecision,
     agents: Vec<Agent>,
-    granularite: Granularite,
     bascule_faite: bool,
     /// Dernière fois qu'un agent, quel qu'il soit, a agi sur chaque ressource.
     /// Sert **uniquement** à mesurer les réattaques : c'est une vue globale,
@@ -676,17 +710,61 @@ impl Fourragement {
             ..Default::default()
         };
 
+        // Les sept grandeurs dérivées, calculées **une fois** : elles ne
+        // dépendent que de `params`, qui ne change plus, et elles étaient
+        // refaites à chaque cycle. Voir les champs de `Fourragement`.
+        let tau_tics = granularite.tics_depuis_ms(params.fenetre_tau_ms).0.max(1) as f64;
+        let ln_gamma = if params.gamma >= 1.0 {
+            0.0
+        } else {
+            // Bord bas écrêté : à γ ≤ 0, `ln γ` vaut −∞ ou `NaN`, et le facteur
+            // de décroissance contaminerait tous les φ, puis les poids de
+            // tirage, puis les comparaisons qui les classent (PD1).
+            libm::log(params.gamma.max(Params::GAMMA_MIN))
+        };
+        let fenetre_l99 = granularite.tics_depuis_ms(params.l99_milieu_ms);
+        // Même écrêtage du bord bas : `pow` d'une base négative à exposant
+        // fractionnaire rend `NaN`, et un seuil `NaN` rend la comparaison fausse
+        // sans que rien ne le signale.
+        let seuil_incomparabilite = params.phi_max
+            * (1.0
+                - libm::pow(
+                    params.gamma.max(Params::GAMMA_MIN),
+                    fenetre_l99.0 as f64 / tau_tics,
+                ));
+        let utilite_max = ressources.iter().map(|r| r.utilite).fold(0.0f64, f64::max);
+
         Ok(Fourragement {
             derniere_action_sur: vec![Instant(0); params.m as usize],
+            bornes: params.bornes_applicables(),
+            depot: params.depot(),
+            periode: granularite.tics_depuis_ms(params.periode_cycle_ms),
+            tau_tics,
+            ln_gamma,
+            fenetre_l99,
+            seuil_incomparabilite,
+            utilite_max,
+            curseurs: Vec::with_capacity(params.p as usize),
+            plages: Vec::with_capacity(params.p as usize),
+            poids: Vec::with_capacity(params.m as usize),
             params,
             milieu,
             ressources,
             mesures,
             tirage,
             agents,
-            granularite,
             bascule_faite: false,
         })
+    }
+
+    /// Les paramètres de l'exécution, en lecture seule.
+    ///
+    /// Ils sont figés à la construction : sept grandeurs en sont dérivées et
+    /// gardées, et un réglage modifié après coup les laisserait à l'ancienne
+    /// valeur. Ce qu'il faut pour changer un paramètre est donc une nouvelle
+    /// exécution, ce que tous les appelants font déjà.
+    pub fn params(&self) -> &Params {
+        &self.params
     }
 
     /// Arme les oracles du mécanisme (EX-A11b, NF-11).
@@ -700,17 +778,12 @@ impl Fourragement {
     /// une période : sans cela, les n agents cycleraient exactement ensemble et
     /// la contention mesurée serait un artefact du démarrage.
     pub fn amorcer(&mut self, moteur: &mut Moteur<Evt>) {
-        let periode = self.periode();
+        let periode = self.periode;
         for i in 0..self.agents.len() {
             let decalage = Duree(moteur.alea.entier(periode.0.max(1)));
             let id = self.agents[i].id;
             moteur.pousser(decalage, id, Evt::Cycle);
         }
-    }
-
-    fn periode(&self) -> Duree {
-        self.granularite
-            .tics_depuis_ms(self.params.periode_cycle_ms)
     }
 
     /// Traite un événement. C'est la boucle de l'appelant qui l'appelle, le
@@ -740,29 +813,46 @@ impl Fourragement {
         }
 
         // 1. Lecture d'un intervalle borné du milieu (EX-A12).
+        //
+        // **En plages, pas en copie** : `lire_multi` rendait un `Vec` cloné du
+        // journal que ce cycle ne faisait que parcourir — deux allocations et
+        // deux `memcpy` de 16 ko par cycle à l'intervalle par défaut, mesurés à
+        // 2,9 µs contre 0,1 µs pour le parcours en place. Les deux tampons
+        // vivent dans `self` et sont repris à chaque cycle.
         let intervalle = self.agents[i].membre.intervalle_max();
-        let curseurs: Vec<(u32, u64)> = self.agents[i]
-            .curseurs
-            .iter()
-            .enumerate()
-            .map(|(p, d)| (p as u32, *d))
-            .collect();
-        let lus = self
-            .milieu
-            .lire_multi(&curseurs, intervalle, &mut moteur.alea);
+        let mut curseurs = std::mem::take(&mut self.curseurs);
+        curseurs.clear();
+        curseurs.extend(
+            self.agents[i]
+                .curseurs
+                .iter()
+                .enumerate()
+                .map(|(p, d)| (p as u32, *d)),
+        );
+        let mut plages = std::mem::take(&mut self.plages);
+        self.milieu
+            .lire_plages(&curseurs, intervalle, &mut moteur.alea, &mut plages);
 
         // Retard de consommation : ce que l'agent n'a pas encore vu.
         let retard: u64 = (0..self.milieu.nb_partitions())
             .map(|p| {
-                self.milieu.partition(p).enregistrements().len() as u64
-                    - self.agents[i].curseurs[p as usize]
-                        .min(self.milieu.partition(p).enregistrements().len() as u64)
+                let ecrits = self.milieu.partition(p).enregistrements().len() as u64;
+                ecrits - self.agents[i].curseurs[p as usize].min(ecrits)
             })
             .sum();
         self.mesures.retard_consommation_max = self.mesures.retard_consommation_max.max(retard);
 
         // 2. Décroissance depuis la dernière actualisation, puis dépôts lus.
-        self.actualiser_phi(i, maintenant, &lus);
+        Self::actualiser_phi(
+            &mut self.agents[i],
+            &self.milieu,
+            &plages,
+            maintenant,
+            self.ln_gamma,
+            self.tau_tics,
+        );
+        self.plages = plages;
+        self.curseurs = curseurs;
 
         // 3. Écrêtage.
         for phi in &mut self.agents[i].phi {
@@ -770,7 +860,8 @@ impl Fourragement {
         }
 
         // 4. Tirage α/β.
-        let poids = self.poids(i);
+        let mut poids = std::mem::take(&mut self.poids);
+        self.remplir_poids(i, &mut poids);
         self.verifier_bornes(moteur, &poids);
         self.compter_incomparabilite(moteur, i, &poids);
         // EX-C19 — le uniforme du tirage α/β vient de la famille de décision,
@@ -784,7 +875,11 @@ impl Fourragement {
         let u = self
             .tirage
             .uniforme(cible, "tirage α/β", tour, &mut moteur.alea);
-        let choix = match Alea::pondere_avec(&poids, u) {
+        let choix = Alea::pondere_avec(&poids, u);
+        // Le tampon revient à `self` **avant** tout retour, sans quoi le cycle
+        // qui sort par la branche ci-dessous le laisserait derrière lui.
+        self.poids = poids;
+        let choix = match choix {
             Some(j) => j,
             None => {
                 // Aucune ressource ne porte de poids : l'écrêtage garantit que
@@ -807,7 +902,7 @@ impl Fourragement {
             MomentTrace::Avant => {
                 let e = self.deposer(moteur, i, choix);
                 self.agents[i].en_vol.push(e);
-                if !self.agir(moteur, i, choix) {
+                if !self.agir(moteur, choix) {
                     self.mesures.depots_sans_effet += 1;
                     moteur
                         .couverture
@@ -821,7 +916,7 @@ impl Fourragement {
                 // surestimer autant que le mode optimiste, sans le dire — et
                 // `depots_sans_effet` restait à zéro parce qu'il n'était
                 // incrémenté que dans l'autre branche.
-                if self.agir(moteur, i, choix) {
+                if self.agir(moteur, choix) {
                     let e = self.deposer(moteur, i, choix);
                     self.agents[i].en_vol.push(e);
                 } else {
@@ -853,25 +948,21 @@ impl Fourragement {
     /// enregistrement lu, et `exp` coûte moins que `pow`. Les deux viennent de
     /// `libm`, donc la portabilité de DT1 tient. Quand γ = 1, `ln γ = 0` et le
     /// facteur vaut 1 sans qu'aucune transcendante soit évaluée.
+    /// `ln γ` et τ sont **passés** plutôt que recalculés : ils ne dépendent que
+    /// de `params`, et cette fonction est appelée une fois par cycle d'agent.
+    ///
+    /// Elle prend l'agent et le milieu séparément, et non `&mut self` : les
+    /// plages désignent le journal, donc l'appelant tient un emprunt sur
+    /// `self.milieu` pendant qu'il modifie `self.agents`. Ce sont deux champs
+    /// disjoints, et la signature est ce qui le dit au compilateur.
     fn actualiser_phi(
-        &mut self,
-        i: usize,
+        agent: &mut Agent,
+        milieu: &Milieu,
+        plages: &[(u32, Range<usize>)],
         maintenant: Instant,
-        lus: &[sim_milieu::Enregistrement],
+        ln_gamma: f64,
+        tau: f64,
     ) {
-        let tau = self
-            .granularite
-            .tics_depuis_ms(self.params.fenetre_tau_ms)
-            .0
-            .max(1) as f64;
-        let ln_gamma = if self.params.gamma >= 1.0 {
-            0.0
-        } else {
-            // Bord bas écrêté : à γ ≤ 0, `ln γ` vaut −∞ ou `NaN`, et le facteur
-            // de décroissance contaminerait tous les φ, puis les poids de
-            // tirage, puis les comparaisons qui les classent (PD1).
-            libm::log(self.params.gamma.max(Params::GAMMA_MIN))
-        };
         let decroissance = |duree: f64| {
             if ln_gamma == 0.0 {
                 1.0
@@ -880,27 +971,29 @@ impl Fourragement {
             }
         };
 
-        let ecoule = (maintenant - self.agents[i].derniere_actualisation).0 as f64;
+        let ecoule = (maintenant - agent.derniere_actualisation).0 as f64;
         let facteur = decroissance(ecoule);
         if facteur != 1.0 {
-            for phi in &mut self.agents[i].phi {
+            for phi in &mut agent.phi {
                 *phi *= facteur;
             }
         }
-        self.agents[i].derniere_actualisation = maintenant;
+        agent.derniere_actualisation = maintenant;
 
-        for e in lus {
-            let j = e.cle as usize;
-            if j >= self.agents[i].phi.len() {
-                continue;
+        for (p, plage) in plages {
+            for e in milieu.tranche(*p, plage.clone()) {
+                let j = e.cle as usize;
+                if j >= agent.phi.len() {
+                    continue;
+                }
+                let age = (maintenant - e.date_evenement).0 as f64;
+                agent.phi[j] += e.valeur * decroissance(age);
+                // Le curseur avance sur ce qui a été lu, dans la partition d'où
+                // l'enregistrement vient — et non dans celle de la ressource,
+                // qui n'est la même que par coïncidence.
+                let part = e.partition as usize;
+                agent.curseurs[part] = agent.curseurs[part].max(e.decalage + 1);
             }
-            let age = (maintenant - e.date_evenement).0 as f64;
-            self.agents[i].phi[j] += e.valeur * decroissance(age);
-            // Le curseur avance sur ce qui a été lu, dans la partition d'où
-            // l'enregistrement vient — et non dans celle de la ressource, qui
-            // n'est la même que par coïncidence.
-            let part = e.partition as usize;
-            self.agents[i].curseurs[part] = self.agents[i].curseurs[part].max(e.decalage + 1);
         }
     }
 
@@ -910,18 +1003,22 @@ impl Fourragement {
     /// traités sans appel à `pow`. Ce n'est pas une approximation : `x^1` vaut
     /// exactement `x`, bit pour bit. Sur le chemin le plus chaud du produit,
     /// c'est deux transcendantes de moins par ressource et par cycle.
-    fn poids(&self, i: usize) -> Vec<f64> {
+    /// `dst` est vidée puis remplie : le tampon vit dans `self` et ne
+    /// s'alloue qu'une fois pour toute l'exécution.
+    fn remplir_poids(&self, i: usize, dst: &mut Vec<f64>) {
         let (a, b) = (self.params.alpha, self.params.beta);
-        self.agents[i]
-            .phi
-            .iter()
-            .zip(&self.ressources)
-            .map(|(phi, r)| {
-                let t = if a == 1.0 { *phi } else { libm::pow(*phi, a) };
-                let h = if b == 1.0 { r.eta } else { libm::pow(r.eta, b) };
-                t * h
-            })
-            .collect()
+        dst.clear();
+        dst.extend(
+            self.agents[i]
+                .phi
+                .iter()
+                .zip(&self.ressources)
+                .map(|(phi, r)| {
+                    let t = if a == 1.0 { *phi } else { libm::pow(*phi, a) };
+                    let h = if b == 1.0 { r.eta } else { libm::pow(r.eta, b) };
+                    t * h
+                }),
+        );
     }
 
     /// EX-A11b — l'oracle porte sur la **probabilité de tirage calculée**, qui
@@ -946,8 +1043,8 @@ impl Fourragement {
         self.mesures.hors_dominante_observee =
             self.mesures.hors_dominante_observee.min(hors_dominante);
 
-        let bornes = match self.params.bornes_applicables() {
-            Ok(b) => b,
+        let bornes = match &self.bornes {
+            Ok(b) => *b,
             // NF-14 : hypothèse violée, borne effacée. Il n'y a alors rien à
             // vérifier — et surtout pas une borne affaiblie. Le libellé ne nomme
             // plus γ : les hypothèses effaçables sont six, et le motif exact est
@@ -1005,18 +1102,7 @@ impl Fourragement {
         if self.ressources[a].partition == self.ressources[b].partition {
             return;
         }
-        let tau = self
-            .granularite
-            .tics_depuis_ms(self.params.fenetre_tau_ms)
-            .0
-            .max(1) as f64;
-        let fenetre = self.granularite.tics_depuis_ms(self.params.l99_milieu_ms).0 as f64;
-        // Même écrêtage du bord bas que dans `actualiser_phi` : `pow` d'une base
-        // négative à exposant fractionnaire rend `NaN`, et un seuil `NaN` rend
-        // la comparaison fausse sans que rien ne le signale.
-        let seuil = self.params.phi_max
-            * (1.0 - libm::pow(self.params.gamma.max(Params::GAMMA_MIN), fenetre / tau));
-        if (self.agents[i].phi[a] - self.agents[i].phi[b]).abs() < seuil {
+        if (self.agents[i].phi[a] - self.agents[i].phi[b]).abs() < self.seuil_incomparabilite {
             self.mesures.decisions_non_fiables += 1;
             moteur
                 .couverture
@@ -1026,8 +1112,7 @@ impl Fourragement {
 
     /// L'agent agit sur la ressource et récolte son utilité. Rend `false` si
     /// l'action a échoué (EX-C07).
-    fn agir(&mut self, moteur: &mut Moteur<Evt>, i: usize, j: usize) -> bool {
-        let _ = i;
+    fn agir(&mut self, moteur: &mut Moteur<Evt>, j: usize) -> bool {
         let maintenant = moteur.maintenant();
 
         // Mesure de réattaque : un autre agent a-t-il traité cette ressource
@@ -1035,8 +1120,8 @@ impl Fourragement {
         // ℓ₉₉, c'est-à-dire le temps que met le milieu à rendre la trace
         // lisible. Cette comparaison est un privilège de l'observateur : aucun
         // agent ne dispose de cette information (§8.3 du PRD).
-        let fenetre = self.granularite.tics_depuis_ms(self.params.l99_milieu_ms);
-        if (maintenant - self.derniere_action_sur[j]) < fenetre && self.mesures.cycles > 0 {
+        if (maintenant - self.derniere_action_sur[j]) < self.fenetre_l99 && self.mesures.cycles > 0
+        {
             self.mesures.reattaques += 1;
             moteur
                 .couverture
@@ -1051,18 +1136,16 @@ impl Fourragement {
         }
 
         self.mesures.utilite_recoltee += self.ressources[j].utilite;
-        self.mesures.utilite_optimale += self
-            .ressources
-            .iter()
-            .map(|r| r.utilite)
-            .fold(0.0f64, f64::max);
+        // L'utilité maximale ne change qu'à la bascule : `agir` refaisait le
+        // `fold` sur m ressources à chaque action.
+        self.mesures.utilite_optimale += self.utilite_max;
         true
     }
 
     /// Dépôt de la trace dans le milieu, et planification de l'accusé de
     /// durabilité — événement distinct de l'écriture (M3).
     fn deposer(&mut self, moteur: &mut Moteur<Evt>, i: usize, j: usize) -> Ecriture {
-        let intensite = self.params.depot() * self.ressources[j].utilite;
+        let intensite = self.depot * self.ressources[j].utilite;
         let id = self.agents[i].id;
         // EX-M24 — l'identité est présentée au milieu, qui l'appose. Sous
         // `identite_partagee`, tous les agents se présentent sous la session 0 :
@@ -1106,18 +1189,22 @@ impl Fourragement {
             // suivant, l'agent relit et refait. φ ne bouge pas — le dépôt est
             // idempotent par M1 + M4 — mais l'effet de l'action, lui, se
             // duplique si l'action ne l'est pas.
-            self.agents[i].curseurs = self.agents[i].curseurs_valides.clone();
+            // `clone_from` plutôt que `clone` : les deux vecteurs ont toujours
+            // la même longueur p, et l'affectation allouait à chaque accusé —
+            // c'est-à-dire à la moitié des événements de l'exécution.
+            let agent = &mut self.agents[i];
+            agent.curseurs.clone_from(&agent.curseurs_valides);
             if !self.params.action_idempotente {
                 self.mesures.effets_dupliques += 1;
             }
         } else {
-            self.agents[i].curseurs_valides = self.agents[i].curseurs.clone();
+            let agent = &mut self.agents[i];
+            agent.curseurs_valides.clone_from(&agent.curseurs);
         }
     }
 
     fn replanifier(&mut self, moteur: &mut Moteur<Evt>, cible: ActeurId) {
-        let periode = self.periode();
-        moteur.pousser(periode, cible, Evt::Cycle);
+        moteur.pousser(self.periode, cible, Evt::Cycle);
     }
 
     /// Bascule d'utilité à mi-course : révèle si l'essaim sait désapprendre.
@@ -1136,6 +1223,11 @@ impl Fourragement {
         for (j, r) in self.ressources.iter_mut().enumerate() {
             r.utilite = 1.0 - 0.9 * ((n - 1 - j) as f64 / n as f64);
         }
+        self.utilite_max = self
+            .ressources
+            .iter()
+            .map(|r| r.utilite)
+            .fold(0.0f64, f64::max);
     }
 
     /// Vrai si la bascule d'utilité a eu lieu.

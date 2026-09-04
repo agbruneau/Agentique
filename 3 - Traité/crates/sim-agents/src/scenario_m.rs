@@ -153,7 +153,7 @@ pub fn scenario_m(
     let verdicts = dettes::verdicts(f.tirage.familles());
 
     let hors_dominante_mesuree = f.mesures.hors_dominante_observee;
-    let borne = f.params.bornes().fraction_hors_dominante;
+    let borne = f.params().bornes().fraction_hors_dominante;
     // La borne est **effacée**, pas grisée : `None` et non un drapeau.
     let borne_affichee = if verdicts
         .iter()
