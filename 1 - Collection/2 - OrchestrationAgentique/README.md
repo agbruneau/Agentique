@@ -22,7 +22,7 @@ page de présentation ni de publication GitHub Pages — voir « Structure du do
 > **définitif**. ⚠ *Clore n'est ni terminer ni publier* — rien n'est levé, rien n'est soldé, et
 > ce qui restait dû devient un **manque définitif, daté et écrit**.
 >
-> ⚠ **La date de clôture a porté « 8 août 2026 » jusqu'au 3 septembre 2026, et elle confondait deux choses** : *une décision se date de sa prise, une clôture de l'état qu'elle arrête.* **D-13 reste prise le 8 août 2026** ; **la clôture court du 1er septembre 2026**, dernier jour où une pièce est entrée au dépôt — l'article de `6 - Article/`, commit `da6255b`. ⚠ *La passe d'audit et de fond du 2 septembre 2026 (D-15, D-16) lui est postérieure d'un jour : elle porte sur l'appareil, le plan et le domaine de livraison du Vol. IV, et **aucune pièce n'y entre ni n'en sort**.* Motif complet au **PRD §16.5**.
+> ⚠ **La date de clôture a porté « 8 août 2026 » jusqu'au 3 septembre 2026, et elle confondait deux choses** : *une décision se date de sa prise, une clôture de l'état qu'elle arrête.* **D-13 reste prise le 8 août 2026** ; **la clôture court du 1er septembre 2026**, dernier jour où une pièce est entrée au dépôt — l'article entré au commit `da6255b` dans `6 - Article/`, *dossier porté sous `4 - Essais/2 - Article/` par la réorganisation du 5 septembre 2026 (commit `daacbec`)*. ⚠ *La passe d'audit et de fond du 2 septembre 2026 (D-15, D-16) lui est postérieure d'un jour : elle porte sur l'appareil, le plan et le domaine de livraison du Vol. IV, et **aucune pièce n'y entre ni n'en sort**.* Motif complet au **PRD §16.5**.
 
 > **Où vous êtes.** Ce dossier est le **deuxième des trois volumes** du corpus, dans le dépôt
 > [*Agentique*](../../README.md). Il **présuppose le volume I**

@@ -9,7 +9,8 @@
 # la racine », jamais avec quels arguments, et il fallait la reconstituer.
 # Elle est ici, et elle se lance DEPUIS CE DOSSIER : les dix-neuf figures que
 # `Traité.md` cite en chemin relatif sont passées de la racine du dépôt à
-# `3 - Traité/figures/` le 21 août 2026, ce qui décloue la chaîne.
+# `figures/` de ce dossier le 21 août 2026 — `4 - Essais/1 - Traité/figures/`
+# depuis la réorganisation du 5 septembre 2026 —, ce qui décloue la chaîne.
 #
 # Aucun gabarit n'est versionné, et ce n'est pas un manque : tout le réglage —
 # géométrie, fontes, redéfinition de `conf`, débord `pad(x: -45pt)` pour les

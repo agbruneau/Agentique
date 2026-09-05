@@ -7,7 +7,7 @@ page d'accueil, et [`CLAUDE.md`](../CLAUDE.md), chargé par Claude Code — et
 la mesure qui les produit.
 
 ⚠ **Et à une quatrième, qui n'est pas un choix : la source normative elle-même.**
-Depuis l'entrée de ce dossier dans le dépôt [Agentique](../../README.md), le
+Depuis l'entrée de ce dossier dans le dépôt [Agentique](../../../README.md), le
 14 août 2026, `Traité.md` et `Traité.pdf` sont **à la racine du dossier**, pas
 ici. *Ce document et le `README.md` d'accueil les visaient sous `docs/`, où ils
 vivaient du temps du dépôt autonome ; les trois renvois sont corrigés, celui de

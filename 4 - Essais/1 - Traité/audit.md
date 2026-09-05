@@ -1,4 +1,4 @@
-# Audit du code Rust de `3 - Traité` — optimisation et refactorisation, et plan d'exécution
+# Audit du code Rust de `4 - Essais/1 - Traité` — optimisation et refactorisation, et plan d'exécution
 
 *Audit conduit le 4 septembre 2026 sur l'arbre de travail (branche `main`, commit `a7df123`). Périmètre : le code Rust du simulateur `stigmergie-lab` — quatre crates (`sim-core`, `sim-milieu`, `sim-agents`, `sim-viz`), deux bancs (`dt1-flottant`, `parite-wasm`), un binaire (`campagne`), quatre exemples, sept fichiers de tests d'intégration — soit **78 fichiers `.rs` et 29 690 lignes** (`find crates bancs -name '*.rs' | xargs wc -l`). Chaque fichier a été lu en entier. Les documents (`docs/`, `VERDICT.md`, `README.md`, `CLAUDE.md`) ont été lus pour ce qu'ils contraignent, non audités pour eux-mêmes : c'était l'objet de l'audit du 2 septembre.*
 
@@ -295,7 +295,7 @@ L'ordre est contraint deux fois : la phase 0 précède tout (mise en forme et r�
 
 ## 6. Commandes de rejeu
 
-Depuis `3 - Traité/`, avec les deux lignes d'environnement de `DEVELOPPEMENT.md` posées (`PATH` et `CARGO_TARGET_DIR` hors de OneDrive).
+Depuis `4 - Essais/1 - Traité/`, avec les deux lignes d'environnement de `DEVELOPPEMENT.md` posées (`PATH` et `CARGO_TARGET_DIR` hors de OneDrive).
 
 ```bash
 cargo test --workspace --release

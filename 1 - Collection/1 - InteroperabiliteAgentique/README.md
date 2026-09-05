@@ -9,7 +9,7 @@ page de présentation ni de publication GitHub Pages — voir « Structure du do
 > **définitif**. ⚠ *Clore n'est ni terminer ni publier* — rien n'est levé, rien n'est soldé, et
 > ce qui restait dû devient un **manque définitif, daté et écrit**.
 >
-> ⚠ **La date de clôture a porté « 8 août 2026 » jusqu'au 3 septembre 2026, et elle confondait deux choses** : *une décision se date de sa prise, une clôture de l'état qu'elle arrête.* **D-13 reste prise le 8 août 2026** ; **la clôture court du 1er septembre 2026**, dernier jour où une pièce est entrée au dépôt — l'article de `6 - Article/`, commit `da6255b`. ⚠ *La passe d'audit et de fond du 2 septembre 2026 (D-15, D-16) lui est postérieure d'un jour : elle porte sur l'appareil, le plan et le domaine de livraison du Vol. IV, et **aucune pièce n'y entre ni n'en sort**.* Motif complet au **PRD §16.5**.
+> ⚠ **La date de clôture a porté « 8 août 2026 » jusqu'au 3 septembre 2026, et elle confondait deux choses** : *une décision se date de sa prise, une clôture de l'état qu'elle arrête.* **D-13 reste prise le 8 août 2026** ; **la clôture court du 1er septembre 2026**, dernier jour où une pièce est entrée au dépôt — l'article entré au commit `da6255b` dans `6 - Article/`, *dossier porté sous `4 - Essais/2 - Article/` par la réorganisation du 5 septembre 2026 (commit `daacbec`)*. ⚠ *La passe d'audit et de fond du 2 septembre 2026 (D-15, D-16) lui est postérieure d'un jour : elle porte sur l'appareil, le plan et le domaine de livraison du Vol. IV, et **aucune pièce n'y entre ni n'en sort**.* Motif complet au **PRD §16.5**.
 
 > **Où vous êtes.** Ce dossier est le **premier des trois volumes** du corpus, dans le dépôt
 > [*Agentique*](../../README.md) — le cadre général et mondial, dont le volume II tire le cas
@@ -56,10 +56,12 @@ dans le dépôt ; les renvois §7.x, eux, résolvent contre `Monographie.md` et 
 ## Veille technologique — déplacée hors de ce dossier
 
 La veille n'est **plus un livrable de ce dossier**. Elle vit désormais sous
-[`4 - Veille/`](../../4%20-%20Veille/)
-([`Veille Technologique.md`](../../4%20-%20Veille/Veille%20Technologique.md)) — ⚠ *à la
+[`3 - Veille/`](../../3%20-%20Veille/)
+([`Veille Technologique.md`](../../3%20-%20Veille/Veille%20Technologique.md)) — ⚠ *à la
 racine du dépôt du détachement jusqu'au 15 août 2026, puis sous `4 - Revue et Veille/` le même jour,
-**dossier renommé `4 - Veille/` dans la journée** (commit `71d5388`)* —, recoupe les quatre volumes et porte sa
+**dossier renommé `4 - Veille/` dans la journée** (commit `71d5388`), **puis `3 - Veille/` à la
+réorganisation du 5 septembre 2026** (commit `daacbec`) — trois noms, deux renommages, aucun
+déplacement de fichier* —, recoupe les quatre volumes et porte sa
 propre édition — **édition du 15 août 2026 (faits gelés à cette date), 144 p., 342 références**, dont deux (§4.12 et §8.4)
 citent explicitement ce volume et le volume II, et dont la section 13 rend compte des quatre volumes. Les mentions « 7 juillet 2026, 48 p., 116 références »
 qui figuraient ici décrivaient une édition antérieure, comme les « 100 p., 303 références » de l'édition
@@ -109,7 +111,7 @@ Le script prend un `.md` source en argument (défaut `Monographie.md`, désormai
 
 **Prérequis :** Pandoc ≥ 3.1.7, Typst ≥ 0.12, `python3` + `pypdf`, polices Liberation Sans et DejaVu Sans. Pour le rendu des diagrammes : Node ≥ 18 + [`@mermaid-js/mermaid-cli`](https://github.com/mermaid-js/mermaid-cli) (`mmdc`) et un Chromium. Le script exporte lui-même `PYTHONUTF8=1` (nécessaire sous Windows).
 
-La chaîne de la veille (depuis [`4 - Veille/`](../../4%20-%20Veille/) — *la racine du dépôt jusqu'au 15 août 2026*) et celle du volume II sont **distinctes** de celle-ci : voir le [README du dépôt](../../README.md).
+La chaîne de la veille (depuis [`3 - Veille/`](../../3%20-%20Veille/) — *la racine du dépôt jusqu'au 15 août 2026, `4 - Veille/` jusqu'au 5 septembre*) et celle du volume II sont **distinctes** de celle-ci : voir le [README du dépôt](../../README.md).
 
 ## État
 
@@ -118,7 +120,7 @@ La chaîne de la veille (depuis [`4 - Veille/`](../../4%20-%20Veille/) — *la r
 **Vérifié par passes adverses successives :**
 
 - **2026-06-24 → 06-30** — double puis triple passe de vérification adverse du contenu et des sept bibliographies (dates, versions, statuts GA/*preview*) ; ajout du *blueprint* d'ouverture de l'Annexe B (§0.1-0.2) ; corrections propagées dans le corps, `Monographie.md` et l'article de synthèse.
-- **2026-07** — cycle de révision (vérification et correctifs, PDF régénérés) ; rédaction de la **veille technologique**, depuis détachée de ce dossier et portée à la racine du dépôt *(⚠ puis sous `4 - Revue et Veille/` le 15 août 2026, dossier renommé **`4 - Veille/`** le jour même)*.
+- **2026-07** — cycle de révision (vérification et correctifs, PDF régénérés) ; rédaction de la **veille technologique**, depuis détachée de ce dossier et portée à la racine du dépôt *(⚠ puis sous `4 - Revue et Veille/` le 15 août 2026, dossier renommé **`4 - Veille/`** le jour même, **`3 - Veille/`** depuis le 5 septembre 2026)*.
 - **2026-07-14** — vérification intégrale de l'**article de synthèse** (bibliographie portée à 211 entrées, terminologie harmonisée ; article depuis retiré du dossier) puis de la **monographie** : 3 054 renvois vérifiés (aucun brisé), bilans des sept bibliographies recomptés, fidélité source ↔ PDF contrôlée. Correctifs : terminologie et typographie du corps, **143 identifiants stables ajoutés** aux bibliographies des ch. 1, 3 et 4 (URL de source primaire vérifiées sur le web), entrée ISO/IEC 27001:2022 créée. PDF régénérés (**569 p.**).
 - **2026-07-18** — `Chapitres/TOC.md` v1.0 : rétro-documentation du volume achevé (thèses, sections et décomptes relevés sur le texte livré, non projetés).
 - **2026-07-22** — retrait de l'article de synthèse et de la page `index.html` ; `README.md` resynchronisé sur l'arborescence réelle (569 p. et 28 diagrammes re-mesurés, 12 ADR).

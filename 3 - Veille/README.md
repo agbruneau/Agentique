@@ -14,13 +14,26 @@ un témoignage.* ⚠ **Le titre de ce fichier ne la nomme donc pas**, comme il n
 dossier : il nomme les deux livrables. ☑ *Le dossier porte trois documents publiés ; deux d'entre eux
 sont des livrables.*
 
-> **Où ce dossier vit.** Il est né le **15 août 2026**, **quatrième dossier numéroté** du dépôt
+> **Où ce dossier vit.** ⚠⚠ **Il porte le rang 3 depuis le 5 septembre 2026, et il a porté le
+> rang 4 pendant trois semaines** : la réorganisation du 5 septembre (commit `daacbec`) l'a renommé
+> **`4 - Veille/` → `3 - Veille/`**, le rang 3 se libérant du départ de `3 - Traité/` vers
+> [`4 - Essais/1 - Traité/`](../4%20-%20Essais/1%20-%20Trait%C3%A9/). *C'est un **renommage pur** —
+> `git` l'enregistre à 100 % —, et **rien du dossier ne bouge** : ni fichier, ni contenu, ni la
+> ligne de commande de quoi que ce soit qui se lance d'ici.* ⚠ **Ce qui bouge est ce qui le nomme de
+> l'extérieur** : les renvois des autres dossiers, et les invocations `python "4 - Veille/Python/…"`
+> que ce README et celui de [`5 - Recension/`](../5%20-%20Recension/) citaient depuis la racine —
+> *repointées le 5 septembre 2026, ci-dessous.* ☑ *Les mentions de `4 - Veille/` qui subsistent dans
+> cette page datent un état et ne se corrigent pas : le dépôt écrit sa chronique en couches.*
+>
+> Il est né le **15 août 2026**, **quatrième dossier numéroté** du dépôt
 > [Agentique](../README.md). ⚠ **Les quatre fichiers de livrable venaient de la racine**, où ils
 > vivaient depuis leurs dépôts respectifs — *inchangés au bit près, `git` enregistrant quatre
 > renommages purs*. Le dossier [`Python/`](Python/) les a suivis. ☑ **Depuis, la racine du dépôt ne
 > porte plus aucun livrable.**
 > ⚠⚠ **Et ce dossier a été renommé le jour même de sa création, ce que rien n'avait enregistré** :
-> `4 - Revue et Veille/` à 10 h 03, **`4 - Veille/` depuis** (commit `71d5388`). *Trente-deux renvois
+> `4 - Revue et Veille/` à 10 h 03, **`4 - Veille/` ensuite** (commit `71d5388`) — ⚠ *et
+> `3 - Veille/` depuis le 5 septembre 2026 : **trois noms, deux renommages, aucun déplacement**.*
+> *Trente-deux renvois
 > sont morts en silence pendant deux jours — aucun contrôle du dépôt ne résout un lien markdown —, et
 > ils ont été repointés le 17 août 2026.* ⚠ **Le titre de ce fichier porte encore l'ancien nom**, et
 > c'est délibéré : il nomme les deux livrables, non le dossier.
@@ -64,7 +77,7 @@ sont des livrables.*
 > deux réouvertures. La clôture reste en vigueur pour les quatre volumes ; **rien de ce dossier ne la
 > lève**.
 >
-> ⚠ **La date de clôture a porté « 8 août 2026 » jusqu'au 3 septembre 2026, et elle confondait deux choses** : *une décision se date de sa prise, une clôture de l'état qu'elle arrête.* **D-13 reste prise le 8 août 2026** ; **la clôture court du 1er septembre 2026**, dernier jour où une pièce est entrée au dépôt — l'article de `6 - Article/`, commit `da6255b`. ⚠ *La passe d'audit et de fond du 2 septembre 2026 (D-15, D-16) lui est postérieure d'un jour : elle porte sur l'appareil, le plan et le domaine de livraison du Vol. IV, et **aucune pièce n'y entre ni n'en sort**.* Motif complet au **PRD §16.5**.
+> ⚠ **La date de clôture a porté « 8 août 2026 » jusqu'au 3 septembre 2026, et elle confondait deux choses** : *une décision se date de sa prise, une clôture de l'état qu'elle arrête.* **D-13 reste prise le 8 août 2026** ; **la clôture court du 1er septembre 2026**, dernier jour où une pièce est entrée au dépôt — l'article entré au commit `da6255b` dans `6 - Article/`, *dossier porté sous `4 - Essais/2 - Article/` par la réorganisation du 5 septembre 2026 (commit `daacbec`)*. ⚠ *La passe d'audit et de fond du 2 septembre 2026 (D-15, D-16) lui est postérieure d'un jour : elle porte sur l'appareil, le plan et le domaine de livraison du Vol. IV, et **aucune pièce n'y entre ni n'en sort**.* Motif complet au **PRD §16.5**.
 >
 > ⚠ **Édition du 15 août 2026 — les deux livrables ont été rouverts et re-vérifiés intégralement.**
 > Les références des deux ont été reprises à leur source primaire — **303 à la veille et 176 à la
@@ -439,7 +452,8 @@ page ; les trois autres ne lisent que la source, et l'un d'eux la lisait mal.*
 ⚠ **`check-resume.py` mesure la marge basse contre une constante, et cette constante suit le YAML** :
 `MARGE_BASSE = 72.0` — 1 po, valeur de `margin: y` des trois en-têtes depuis le 15 août 2026, où
 elle valait 73,7 auparavant. Il mesure *tout* texte posé en page 1, **folio compris**. ☑ **Rejoué sur
-`../3 - Traité/Traité.pdf`, il sort 0** — dernière ligne à y = 194,3 pt, dégagement +122,3 pt : le
+`../4 - Essais/1 - Traité/Traité.pdf` — *`../3 - Traité/Traité.pdf` jusqu'au 5 septembre 2026, chemin
+repointé et **rejoué identique** ce jour-là* —, il sort 0** — dernière ligne à y = 194,3 pt, dégagement +122,3 pt : le
 traité compose sur la même géométrie et, le bloc de réglage commun n'imprimant aucun folio en page de
 titre, rien ne fausse plus la mesure. ⚠ *Il l'a longtemps faussée, et ce README a porté le contraire
 jusqu'au 17 août 2026 : le contrôle n'est plus calibré sur la seule veille, mais rien ne garantit
@@ -460,6 +474,37 @@ Budget de mise en page — Cinq schémas — état de l'art en services financie
   page de titre : 1093 lignes de texte, derniere a y = 84.6 pt
   marge basse   : 72.0 pt -> degagement +12.6 pt  [OK]
 ```
+
+⚠ **Ce bloc est une sortie datée et il n'est pas repointé : `4 - Veille/Python/` est le chemin qui
+était tapé le 20 août 2026.** *Le chemin d'aujourd'hui est `3 - Veille/Python/`, et c'est lui qu'il
+faut taper* — la ligne à copier est celle du bloc de commandes plus bas, ou, depuis la racine :
+`python "3 - Veille/Python/check-resume.py" <un .pdf>`.
+
+⚠⚠ **Rejoué depuis la racine le 5 septembre 2026, l'un des deux verdicts a changé — et ce n'est pas
+la réorganisation qui l'a changé.** Sortie brute du jour :
+
+```
+$ python "3 - Veille/Python/check-resume.py" "5 - Recension/État de l'art — services financiers.pdf"
+Budget de mise en page — État de l'art — services financiers.pdf
+  page de titre : 67 lignes de texte, derniere a y = 84.6 pt
+  marge basse   : 72.0 pt -> degagement +12.6 pt  [OK]
+
+$ python "3 - Veille/Python/check-resume.py" "5 - Recension/Cinq schémas — état de l'art en services financiers.pdf"
+Budget de mise en page — Cinq schémas — état de l'art en services financiers.pdf
+  page de titre : 1107 lignes de texte, derniere a y = 72.3 pt
+  marge basse   : 72.0 pt -> degagement +0.3 pt  [LIMITE]
+
+LIMITE : 0.3 pt de degagement seulement. Toute reprise du resume le fera deborder.
+```
+
+☑ *Le premier verdict est celui que le §« Le seul contrôle qui puisse s'appliquer ici » de
+[`5 - Recension/`](../5%20-%20Recension/README.md) enregistre au **21 août** — la page de titre a
+changé d'objet ce jour-là, et c'est le relevé du 20 qui est périmé, non le contrôle.* ⚠⚠ **Le
+second, lui, n'est enregistré nulle part** : la planche a été **recomposée le 25 août 2026**
+(commit `91ed417`, synchronisation des titres) et son dégagement est tombé de **+12,6 pt à
++0,3 pt** — *le contrôle sort toujours 0, mais il sort désormais `[LIMITE]`, et les deux README qui
+publient « 1 093 lignes, +12,6 pt » datent d'avant la recomposition.* **Constat de passe, non
+correction** : les deux blocs du 20 et du 21 août restent tels qu'ils sont tombés.
 
 ⚠⚠ **Et ces deux sorties disent moins que ce qu'elles ont l'air de dire.** *(a)* Sur l'**état de
 l'art**, le contrôle mesure bien un résumé posé sur une page de titre — mais **ce document déroge, et
@@ -489,7 +534,7 @@ compose.
 ## Structure du dossier
 
 ```
-4 - Veille/
+3 - Veille/                            ← `4 - Veille/` du 15 août au 5 septembre 2026
 ├── README.md                          ← ce fichier
 ├── Veille Technologique.md / .pdf      144 p., 342 réf. — édition du 15 août 2026, faits gelés à cette date
 ├── Revue de littérature.md / .pdf       59 p., 192 réf. — arrêtée au 15 août 2026

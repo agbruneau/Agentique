@@ -55,7 +55,7 @@ composer() {
   # La porte du résumé — le seul contrôle qui voie un résumé rogné sous la
   # marge basse, panne que ni Pandoc ni Typst ne signalent. Il vit chez la
   # veille ; ces deux documents partagent son gabarit de page de titre.
-  python3 "../4 - Veille/Python/check-resume.py" "$out" || {
+  python3 "../3 - Veille/Python/check-resume.py" "$out" || {
     echo "[build] ⚠ le résumé de « $out » déborde son bloc." >&2
     return 1
   }

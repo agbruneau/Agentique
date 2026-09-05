@@ -101,10 +101,12 @@ pas à la mesure** — l'édition de liens y échoue, et il faut dérouter
 `$env:CARGO_TARGET_DIR` **hors de OneDrive** avant toute commande `cargo`.
 ✎ *Ce fichier attribuait l'échec à l'accent du chemin — « le chemin contient un
 « é » », donc « un chemin ASCII » suffirait — jusqu'au 22 août 2026, et c'est
-faux : un workspace d'essai sous `…/3 - Traité/`, même accent et même espace,
-s'édite sans un mot hors de OneDrive. La seule variable qui change le verdict
-est la synchronisation ; l'accent, le cache vieilli et la longueur du chemin ont
-été éprouvés puis écartés le 21 août 2026, mesure à l'appui, à
+faux : un workspace d'essai sous `…/3 - Traité/` — le nom du dossier au 21 août
+2026, `4 - Essais/1 - Traité/` depuis la réorganisation du 5 septembre 2026 —,
+même accent et même espace, s'édite sans un mot hors de OneDrive. La seule
+variable qui change le verdict est la synchronisation ; l'accent, le cache
+vieilli et la longueur du chemin ont été éprouvés puis écartés le 21 août 2026,
+mesure à l'appui, à
 [`docs/DEVELOPPEMENT.md`](docs/DEVELOPPEMENT.md).*
 
 ```bash

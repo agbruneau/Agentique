@@ -25,7 +25,7 @@ Usage : python check-traite.py [Traité.pdf] [Traité.md] [--sans-parite]
         -> sortie 0 si le rendu
 tient sa cible, 1 sinon. Se lance de n'importe quel repertoire.
 
-Regle des chemins, reprise de `4 - Veille/Python/` : les defauts se resolvent
+Regle des chemins, reprise de `3 - Veille/Python/` : les defauts se resolvent
 contre l'emplacement du script, jamais contre le repertoire courant ; un chemin
 donne en argument, lui, reste relatif au repertoire courant.
 """

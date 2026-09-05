@@ -4,6 +4,8 @@
 **Date de l'évaluation :** 5 septembre 2026.
 **Cadre :** évaluation d'un corpus de recherche autonome, au niveau attendu d'un dossier de recherche de cycles supérieurs (mémoire de maîtrise étendu ou dossier d'habilitation), en science et génie informatiques. La grille est celle d'un jury : problématique, méthode, sources, contribution, artefacts, structure, rédaction, gouvernance.
 
+⚠ **Les chemins cités ci-dessous sont ceux de l'arbre évalué — commit `69eeee2` — et ils n'ont pas été réécrits.** Le commit suivant, `daacbec` (5 septembre 2026), réorganise le dépôt : `3 - Traité/` → `4 - Essais/1 - Traité/`, `4 - Veille/` → `3 - Veille/`, `6 - Article/` → `4 - Essais/2 - Article/`, et les dossiers numérotés passent de six à cinq. *Une évaluation datée mesure l'arbre qu'elle a lu ; la réécrire sur un arbre postérieur la rendrait invérifiable.* Le constat du §4.6 sur les numérotations vaut donc pour `69eeee2`, non pour l'état d'aujourd'hui.
+
 **Ce que ce document n'est pas :** une relecture de fond des 3 000 pages. Les huit livrables, les deux documents hors livrables et le code ont été lus par échantillonnage raisonné (en-têtes, chapitres pivots, conclusions, registres de décisions, bibliographies), et l'appareil de contrôle a été **rejoué** plutôt que cru.
 
 ---

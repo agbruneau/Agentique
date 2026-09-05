@@ -6,15 +6,16 @@ canadienne déploie, gouverne et exploite des agents d'IA autonomes sous contrai
 ⚠ *Cette page a longtemps écrit « 2 921 » : le compte datait du 21 août 2026 et n'avait pas suivi la
 recomposition du 24, qui porte l'état de l'art de 185 à 186 p.*
 ☑ **Un neuvième document est entré le 28 août 2026** — la
-[note de veille SDLC](<4%20-%20Veille/Note-veille-SDLC-agentique.md>), **49 p.**, qui porte le dépôt
+[note de veille SDLC](<3%20-%20Veille/Note-veille-SDLC-agentique.md>), **49 p.**, qui porte le dépôt
 à **2 971 pages sur dix PDF** —, ⚠ **et il n'est pas rangé parmi les livrables** : *lecture critique
 d'une source unique — un entretien de 4 h 26 —, bibliographie non appariée, aucun contrôle qui
-l'oppose à elle-même.* Le motif est donné au [`README` de `4 - Veille/`](<4%20-%20Veille/README.md>),
+l'oppose à elle-même.* Le motif est donné au [`README` de `3 - Veille/`](<3%20-%20Veille/README.md>),
 qui la range comme **document publié et non comme neuvième livrable** — ⚠ *ce n'est pas une
 instruction d'auteur, le PRD ne porte aucune décision sur ce document, et le compte se renverse d'un
 mot de sa part, comme le huitième.*
 ☑ **Un dixième document est entré le 1er septembre 2026**, au commit `da6255b`, dans un
-**sixième dossier numéroté** — [`6 - Article/`](<6%20-%20Article/>) : *Projection de l'état de
+**sixième dossier numéroté** — `6 - Article/`, aujourd'hui
+[`4 - Essais/2 - Article/`](<4%20-%20Essais/2%20-%20Article/>) : *Projection de l'état de
 ressource et délégation multicritère dans une plateforme HPC à processeurs quantiques*, **38 p.**,
 une prépublication au gabarit arXiv qui porte le dépôt à **3 009 pages sur onze PDF**.
 ⚠⚠ **Lui non plus n'est pas rangé parmi les livrables, et son motif est neuf : il n'instruit pas la
@@ -23,21 +24,38 @@ porte sur l'intégration de processeurs quantiques dans une plateforme de calcul
 La note de veille SDLC est tenue hors des huit pour **ce qui lui manque** ; celui-ci l'est pour
 **ce dont il traite** — *et ce que la note n'a pas, l'article l'a* : bibliographie close dans les
 deux sens — **77 entrées, 77 citées** — et **un contrôle qui l'oppose à lui-même**,
-[`rejeu-politique.py`](<6%20-%20Article/rejeu-politique.py>), ☑ **0**, seul contrôle du dépôt qui
+[`rejeu-politique.py`](<4%20-%20Essais/2%20-%20Article/rejeu-politique.py>), ☑ **0**, seul contrôle du dépôt qui
 **exécute une condition de réfutation** d'un document au lieu de mesurer sa forme. ☑ *Le voisinage
 avec le corpus est déclaré par l'article lui-même* : son § 2.8 fait de l'agent scientifique autonome
 le consommateur le plus exigeant de la chaîne qu'il spécifie. Le motif complet est au
-[`README` de `6 - Article/`](<6%20-%20Article/README.md>) — ⚠ *et, comme les deux précédents,
+[`README` de `4 - Essais/2 - Article/`](<4%20-%20Essais/2%20-%20Article/README.md>) — ⚠ *et, comme les deux précédents,
 ce n'est pas une instruction d'auteur : le PRD ne porte aucune décision sur ce document.*
 S'y ajoute **un simulateur en Rust** — 76 fichiers, 29 690 lignes — qui transpose l'un de ces
 documents en code exécutable sous une règle : *tout chiffre affiché doit être retrouvé par la
 mesure, ou l'écart consigné*. **Cinq écarts** le sont, **dont trois contredisent le traité**
-([`3 - Traité/docs/decisions.md`](<3%20-%20Trait%C3%A9/docs/decisions.md>)) — *et c'est la règle qui
+([`4 - Essais/1 - Traité/docs/decisions.md`](<4%20-%20Essais/1%20-%20Trait%C3%A9/docs/decisions.md>)) — *et c'est la règle qui
 tient, non un défaut : un écart consigné est ce que le dispositif produit quand il marche.*
+
+☑ **Le dépôt a été réorganisé le 5 septembre 2026**, au commit `daacbec`, et **aucune pièce n'y a
+changé d'un octet** : trois dossiers changent de place, rien d'autre. `3 - Traité/` et `6 - Article/`
+passent sous un toit commun, [`4 - Essais/`](<4%20-%20Essais/>) — **le premier dossier numéroté du
+dépôt à porter deux documents au lieu d'un** —, et `4 - Veille/` remonte au rang laissé libre,
+[`3 - Veille/`](<3%20-%20Veille/>). *Le dépôt compte désormais **cinq** dossiers numérotés et non
+six ; le sixième rang n'existe plus.* ⚠ **Tout chemin en `3 - Traité/`, `4 - Veille/` ou
+`6 - Article/` — plus bas dans cette page, où il date un fait, comme dans le reste du dépôt, où la
+documentation n'a pas suivi — nomme un dossier qui n'existe plus sous ce nom** : la table de la
+[carte du dépôt](#carte-du-dépôt) le traduit une fois pour toutes.
+☑☑ **Deux pièces sont entrées au même commit** :
+[`Évaluation académique.md`](<%C3%89valuation%20acad%C3%A9mique.md>) et son rendu
+[`.html`](<%C3%89valuation%20acad%C3%A9mique.html>), à la racine — **le dépôt jugé du dehors**,
+**78 / 100**, appareil *rejoué* plutôt que cru, 205 l. ⚠ *Elle porte sur l'arbre de la veille*
+(commit `69eeee2`) *et nomme donc les dossiers par leurs anciens noms.* ⚠⚠ **Son entrée déplace le
+critère de clôture** — « dernier jour où une pièce est entrée au dépôt », énoncé plus bas — **du 1er au 5 septembre 2026**. *Cette page relève l'écart et ne redate rien : la clôture
+est une décision d'auteur, et le PRD ne porte aucune décision sur ce document.*
 
 **Les textes sont d'une seule main** : André-Guy Bruneau, champ `/Author` des onze PDF signés —
 ⚠ *la mention « M.Sc. IT » n'accompagne le nom que sur sept ; les Vol. I, II et III le portent seul.*
-⚠⚠ **Et le onzième l'écrit autrement** : l'article de `6 - Article/` porte `André-Guy Bruneau,
+⚠⚠ **Et le onzième l'écrit autrement** : l'article de `4 - Essais/2 - Article/` porte `André-Guy Bruneau,
 M.Sc IT`, **sans le point après « Sc »** — *huitième PDF à porter la mention, seul des huit à
 l'écrire ainsi.* **Relevé le 1er septembre 2026, non corrigé** — la correction tient en un point à
 la source et demande une recomposition.
@@ -56,9 +74,11 @@ d'auteur **D-13**, prise le 8 août 2026,
 `mono-v1.0`, est posée sur le commit du 8 août — *celui de la prise, non de l'état arrêté*.
 Il a été rouvert une dizaine de fois depuis le 8 août 2026, chaque
 fois pour une pièce nommée et pour elle seule : la chronique datée est en tête de
-[`1 - Collection/README.md`](<1%20-%20Collection/README.md>) — ⚠ *qui s'arrête à la onzième
-réouverture, celle du 21 août 2026, et ne porte aucune des passes du 22 août au 1er septembre : la
-compter là revient à compter court.* **La dernière réouverture est du 1er septembre 2026, pour
+[`1 - Collection/README.md`](<1%20-%20Collection/README.md>) — ✎ *cette page l'a dite arrêtée « à la
+onzième réouverture » et muette sur les passes du 22 août au 1er septembre, et c'était faux : la
+chronique les porte toutes les sept, en bloc, depuis le commit `c81be4a` du 1er septembre 2026. Le
+motif du constat est au [`README` de `4 - Essais/2 - Article/`](<4%20-%20Essais/2%20-%20Article/README.md>),
+qui portait le même avertissement et ne le répète plus.* **La dernière réouverture est du 1er septembre 2026, pour
 l'article de `6 - Article/`** — ⚠ *c'est la deuxième d'affilée qui fasse entrer un document neuf
 plutôt que réparer une pièce existante, la première étant celle du 28 août, et la première depuis le
 20 août 2026 qui crée un dossier numéroté.* ⚠ **Une passe l'a suivie le 2 septembre 2026** — l'audit
@@ -68,13 +88,15 @@ entrée reste celle du 1er septembre.*
 ⚠ **Cette page a écrit « clos et final depuis le 8 août 2026 » jusqu'au 3 septembre 2026, et elle
 confondait deux dates** : *une décision se date de sa prise, une clôture de l'état qu'elle arrête.*
 **D-13 reste prise le 8 août 2026 ; la clôture, elle, est portée au 1er septembre 2026** — dernier
-jour où une pièce est entrée au dépôt, l'article de [`6 - Article/`](<6%20-%20Article/>), commit
+jour où une pièce est entrée au dépôt, l'article de [`4 - Essais/2 - Article/`](<4%20-%20Essais/2%20-%20Article/>), commit
 `da6255b`. ⚠ *La passe d'audit et de fond du 2 septembre 2026 (D-15, D-16) lui est postérieure d'un
 jour et ne la redate pas : elle porte sur l'appareil, le plan et le domaine de livraison du Vol. IV,
 et **aucune pièce n'y entre ni n'en sort** — le critère se lit sur l'entrée d'une pièce, non sur la
 dernière passe.* Le motif complet est au
 [PRD §16.5](<2%20-%20Compendium/PRD/PRD.md>) ; ⚠ **la redatation ne rouvre rien** : aucune porte
-franchie, aucun manque définitif redevenu dette, aucun régime touché.
+franchie, aucun manque définitif redevenu dette, aucun régime touché. ⚠⚠ **Et la redatation du
+3 septembre est déjà rattrapée** : deux pièces sont entrées le 5 septembre 2026 — voir plus haut —,
+si bien que le critère écrit ici porte la clôture au 5 et non au 1er.
 
 ☑ **[`LICENSE`](LICENSE) à la racine — CC BY 4.0, posée le 21 août 2026 sur instruction d'auteur**,
 et elle couvre le dépôt entier : les huit documents, leurs rendus, le simulateur, les chaînes et les
@@ -95,12 +117,13 @@ davantage, tant que l'arbre ancien tient*. Leurs renvois sont au
 | Temps                 | Ouvrir                                                                                                                                                                                                                                                                                                                                                            |
 | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **5 minutes**   | *Cinq schémas — état de l'art* : [`.pdf`](<5%20-%20Recension/Cinq%20sch%C3%A9mas%20%E2%80%94%20%C3%A9tat%20de%20l%27art%20en%20services%20financiers.pdf>) 7 p. ou [`.html`](<5%20-%20Recension/Cinq%20sch%C3%A9mas%20%E2%80%94%20%C3%A9tat%20de%20l%27art%20en%20services%20financiers.html>) 105 Ko autonome — cinq figures commentées et rien d'autre |
+| **un quart d'heure** | [`Évaluation académique.md`](<%C3%89valuation%20acad%C3%A9mique.md>) ou son [`.html`](<%C3%89valuation%20acad%C3%A9mique.html>) — le dépôt noté du dehors, **78 / 100** : les huit critères d'un jury, cinq critiques de fond, dix bonifications. ☑ *Le seul texte d'ici qui ne juge pas le corpus depuis l'intérieur ; il rejoue l'appareil au lieu de le croire* |
 | **20 minutes**  | [`NiveauMaturité.html`](NiveauMaturit%C3%A9.html) — **9 diapositives** 16:9, six paliers de maturité ; autonome, aucune dépendance                                                                                                                                                                                                                     |
-| **une demi-heure** | [`article-hpc-qpu.pdf`](<6%20-%20Article/article-hpc-qpu.pdf>) — 38 p. : une prépublication arXiv, 77 références toutes citées, 8 planches et 20 tableaux, 8 conditions de réfutation. ⚠ *Hors livrables, et hors sujet du corpus — voir plus haut* |
-| **une heure**   | [`Note-veille-SDLC-agentique.pdf`](<4%20-%20Veille/Note-veille-SDLC-agentique.pdf>) — 49 p. : une source unique instruite, 18 thèses horodatées, 40 affirmations triangulées. ⚠ *Hors livrables — voir plus haut*                                                                                                             |
-| **une soirée** | [`Veille Technologique.pdf`](<4%20-%20Veille/Veille%20Technologique.pdf>) — 144 p., l'état du champ déployé, 342 références                                                                                                                                                                                                                                |
+| **une demi-heure** | [`article-hpc-qpu.pdf`](<4%20-%20Essais/2%20-%20Article/article-hpc-qpu.pdf>) — 38 p. : une prépublication arXiv, 77 références toutes citées, 8 planches et 20 tableaux, 8 conditions de réfutation. ⚠ *Hors livrables, et hors sujet du corpus — voir plus haut* |
+| **une heure**   | [`Note-veille-SDLC-agentique.pdf`](<3%20-%20Veille/Note-veille-SDLC-agentique.pdf>) — 49 p. : une source unique instruite, 18 thèses horodatées, 40 affirmations triangulées. ⚠ *Hors livrables — voir plus haut*                                                                                                             |
+| **une soirée** | [`Veille Technologique.pdf`](<3%20-%20Veille/Veille%20Technologique.pdf>) — 144 p., l'état du champ déployé, 342 références                                                                                                                                                                                                                                |
 | **le fond**     | [`Compendium.pdf`](<2%20-%20Compendium/Compendium.pdf>) — 1 000 pages, la somme dédoublonnée des trois monographies                                                                                                                                                                                                                                           |
-| **du code**     | [`3 - Traité/`](<3%20-%20Trait%C3%A9/>) — le simulateur d'essaims : quatre *crates* et deux bancs, ☑ **467 `#[test]` au vert, clippy 0**                                                                                                                                                                                                              |
+| **du code**     | [`4 - Essais/1 - Traité/`](<4%20-%20Essais/1%20-%20Trait%C3%A9/>) — le simulateur d'essaims : quatre *crates* et deux bancs, ☑ **467 `#[test]` au vert, clippy 0** — ⚠ *470 au rejeu du 5 septembre 2026 de l'`Évaluation académique`*                                                                                                                                                                                                              |
 
 ## Les huit documents
 
@@ -110,9 +133,9 @@ davantage, tant que l'arbre ancien tient*. Leurs renvois sont au
 | **II**   | *Orchestration agentique*[`1 - Collection/2 - OrchestrationAgentique/`](<1%20-%20Collection/2%20-%20OrchestrationAgentique/>)                                                                  | Autonomie**encadrée** (*framed autonomy*). Portée Canada-Québec. Résultat négatif : quinze croisements protocole × texte canadien, **zéro lien documenté**                                                                                                                                                               | **387 p.**                                                                                                         | 3 306 l. / 0,87 Mo ·**29 pièces** assemblées · socle factuel de **46 entrées**, F-01 à F-48 |
 | **III**  | *L'entreprise agentique — la fabrique de confiance*[`1 - Collection/3 - EntrepriseAgentique/`](<1%20-%20Collection/3%20-%20EntrepriseAgentique/>)                                             | La confiance ne se décrète pas, elle se fabrique : émettre une identité, l'appliquer, l'exploiter                                                                                                                                                                                                                                          | **427 p.**                                                                                                         | 3 275 l. / 1,12 Mo ·**34 pièces** · socle propre de **98 entrées**, F-01 à F-98              |
 | **IV**   | *Conspectus — Interopérabilité et Orchestration **en Entreprise Agentique***[`2 - Compendium/`](<2%20-%20Compendium/>)                                                       | La somme des trois volumes, dédoublonnée et re-datée à la source                                                                                                                                                                                                                                                                           | **1 000 p. exactement** ⚠ *cible d'auteur vérifiée par le script de rendu, qui échoue à 999 comme à 1 001* | **50 chapitres**, 5 Livres, 2 annexes · **118 figures** · socle consolidé `S-001`…`S-159` |
-| **V**    | *Traité sur les systèmes multiagents en essaim*[`3 - Traité/`](<3%20-%20Trait%C3%A9/>)                                                                                              | La coordination par le milieu : ce qu'un essaim gagne à**ne pas** s'accorder, et ce qu'il le paie                                                                                                                                                                                                                                       | **143 p.**                                                                                                         | 1 875 l. · 8 chapitres, 24 sections,**123 notices**, 19 figures, 72 110 mots                           |
-| **VI**   | *Veille technologique en entreprise*[`4 - Veille/`](<4%20-%20Veille/>)                                                                                                            | Le non-déterminisme du modèle enfermé dans des étapes bornées, journalisées, compensables : «*l'agent d'entreprise fiable de 2026 est enveloppé* »                                                                                                                                                                                  | **144 p.**                                                                                                         | 1 932 l. · 94 sections, 24 tableaux,**342 références**, 25 questions ouvertes                        |
-| **VII**  | *Revue de la littérature académique*[`4 - Veille/`](<4%20-%20Veille/>)                                                                                                          | ⚠ Un résultat**sur son propre corpus, pas sur le champ** : **145 pièces sur 189 — 77 % — ne présentent aucun signe de revue par les pairs à leur notice**, 12 seulement portant une attestation. *La revue interdit expressément d'en tirer une part du champ : « le lire comme une part du champ serait circulaire »* | **59 p.**                                                                                                          | 1 052 l. ·**192 références**, 8 tableaux                                                             |
+| **V**    | *Traité sur les systèmes multiagents en essaim*[`4 - Essais/1 - Traité/`](<4%20-%20Essais/1%20-%20Trait%C3%A9/>)                                                                                              | La coordination par le milieu : ce qu'un essaim gagne à**ne pas** s'accorder, et ce qu'il le paie                                                                                                                                                                                                                                       | **143 p.**                                                                                                         | 1 875 l. · 8 chapitres, 24 sections,**123 notices**, 19 figures, 72 110 mots                           |
+| **VI**   | *Veille technologique en entreprise*[`3 - Veille/`](<3%20-%20Veille/>)                                                                                                            | Le non-déterminisme du modèle enfermé dans des étapes bornées, journalisées, compensables : «*l'agent d'entreprise fiable de 2026 est enveloppé* »                                                                                                                                                                                  | **144 p.**                                                                                                         | 1 932 l. · 94 sections, 24 tableaux,**342 références**, 25 questions ouvertes                        |
+| **VII**  | *Revue de la littérature académique*[`3 - Veille/`](<3%20-%20Veille/>)                                                                                                          | ⚠ Un résultat**sur son propre corpus, pas sur le champ** : **145 pièces sur 189 — 77 % — ne présentent aucun signe de revue par les pairs à leur notice**, 12 seulement portant une attestation. *La revue interdit expressément d'en tirer une part du champ : « le lire comme une part du champ serait circulaire »* | **59 p.**                                                                                                          | 1 052 l. ·**192 références**, 8 tableaux                                                             |
 | **VIII** | *État de l'art en services financiers*[`5 - Recension/`](<5%20-%20Recension/>)                                                                                                   | Le débat porte sur la pile protocolaire ; dans une coopérative régie,**la pile n'est pas ce qui décide**                                                                                                                                                                                                                             | **186 p.** + planche de **7 p.** (`.md`/`.pdf`/`.html`)                                                | 1 986 l. ·**15 sections** numérotées, **312 références** (1 à 312, sans trou), 5 figures    |
 
 ⚠ **Le chiffre « huit » est un constat, pas une décision d'auteur.** Le dépôt a longtemps compté
@@ -124,10 +147,10 @@ est publiée, signée, datée, rendue au gabarit de la maison et **elle ouvre sa
 motif exact qui avait fait passer le compte de sept à huit.* Ce qui la retient hors du tableau :
 **une source unique, une bibliographie de trente entrées en puces qu'aucun renvoi du corps
 n'apparie, et aucun contrôle qui la mesure** — hors
-[`check-resume.py`](<4%20-%20Veille/Python/check-resume.py>), qui ne regarde que sa page de titre.
+[`check-resume.py`](<3%20-%20Veille/Python/check-resume.py>), qui ne regarde que sa page de titre.
 *Le tableau reste donc à huit lignes, et le dépôt porte neuf documents publiés.*
 ⚠⚠⚠ **Et l'arbitrage s'est reposé une troisième fois le 1er septembre 2026, sur un motif que les
-deux précédents n'avaient pas eu à formuler.** L'article de `6 - Article/` a tout ce qui manquait à
+deux précédents n'avaient pas eu à formuler.** L'article de `4 - Essais/2 - Article/` a tout ce qui manquait à
 la note — **bibliographie close dans les deux sens, 77 entrées et 77 citées**, et un contrôle
 versionné qui l'oppose à lui-même. *Le critère méthodologique qui a fait passer le compte de sept à
 huit, puis retenu la note hors du tableau, le rangerait donc parmi les livrables.* **Ce qui l'en
@@ -164,7 +187,7 @@ rien, vérifié : Pandoc la relit et réémet le signe droit.* ☑ **Corrigé au
 dont le `dc:title` porte bien `à l'ère des agents` ; ⚠⚠ **l'état de l'art reste cassé** — *seul des
 douze PDF du dépôt, relevé le 1er septembre 2026, et la correction demande une recomposition.*
 ☑☑ **Le diagnostic a reçu sa corroboration la plus nette le 1er septembre 2026, et par un document
-qui ne visait pas cela** : l'article de `6 - Article/` porte un titre à apostrophe — *Projection de
+qui ne visait pas cela** : l'article de `4 - Essais/2 - Article/` porte un titre à apostrophe — *Projection de
 l'état de ressource…* — et **son `dc:title` la traverse intacte**. *C'est le seul PDF du dépôt
 composé **sans Pandoc**, en Typst direct : la variable qui distingue son cas de celui de l'état de
 l'art est exactement celle que le diagnostic accuse.*
@@ -206,16 +229,29 @@ la moitié des pièges de cette page sont des pièges de placement. Une annotati
 ⭑ ce qu'on ouvre en premier dans ce dossier, ⚠ le piège qu'on y trouve, renvoyé au point qui le
 développe.*
 
+**Trois dossiers ont changé de nom le 5 septembre 2026, et rien d'autre n'a bougé** — ni un octet de
+contenu, ni un fichier. *Cette table traduit une fois pour toutes les chemins que les paragraphes
+datés de cette page, et le reste du dépôt, écrivent encore à l'ancienne.*
+
+| Écrit avant le 5 septembre 2026 | À lire aujourd'hui         |
+| ------------------------------- | -------------------------- |
+| `3 - Traité/`                   | `4 - Essais/1 - Traité/`   |
+| `4 - Veille/`                   | `3 - Veille/`              |
+| `6 - Article/`                  | `4 - Essais/2 - Article/`  |
+
 ```
 Agentique/
 ├── README.md                        cette page. ⚠ Elle s'est dite « non versionnée » : c'était faux
 │                                      — `git ls-files` la rend, et `APPAREIL.md` avec elle
-├── APPAREIL.md                      ⭑ les douze contrôles avec leur verdict, la chaîne de
-│                                      fabrication, et la commande derrière chaque chiffre d'ici
+├── APPAREIL.md                      ⭑ les contrôles avec leur verdict, la chaîne de fabrication,
+│                                      et la commande derrière chaque chiffre d'ici
+├── Évaluation académique.md/.html   ⭑ le dépôt jugé du dehors — 78 / 100, 5 septembre 2026, appareil
+│                                      rejoué. ⚠ elle décrit l'arbre de la VEILLE, aux anciens noms
 ├── LICENSE                          ⭑ CC BY 4.0, 21 août 2026 — elle couvre le dépôt entier
 ├── .gitattributes                   `* text=auto eol=lf` : sans quoi un clone Windows rend les
 │                                      `.sh` inexécutables et fausse toute comparaison à l'octet
-├── NiveauMaturité.html              9 diapositives 16:9 — le seul contenu resté à la racine
+├── NiveauMaturité.html              9 diapositives 16:9 — ⚠ plus le seul contenu de la racine depuis
+│                                      le 5 septembre 2026 : l'évaluation académique l'y a rejoint
 │
 ├── 1 - Collection/                  Vol. I, II, III
 │   ├── README.md                       ⭑ à ouvrir avant le reste : la chronique datée
@@ -235,65 +271,82 @@ Agentique/
 │   │                                     `.claude/launch.json` les sert sur le port 8731
 │   ├── figures/                        ⭑ `programme.md` : pourquoi trois figures ne se regravent
 │   │                                     pas, et comment le graveur les tient tout de même → `APPAREIL.md`
-│   ├── PRD/                            la spécification et ses sept contrôles au même endroit —
-│   │                                     leurs commandes sont aux tableaux plus bas
-│   ├── build/                          quatre points d'entrée ; deux seulement figurent aux tableaux
+│   ├── PRD/                            la spécification et ses contrôles au même endroit — ⚠ huit
+│   │                                     points d'entrée aujourd'hui, sept seulement aux tableaux plus bas
+│   ├── build/                          ⚠ sept points d'entrée ; deux seulement figurent aux tableaux —
+│   │                                     ils étaient quatre au relevé du 1er septembre 2026
 │   └── annexe-bibliographie.md · annexe-references.md
 │
-├── 3 - Traité/                      Vol. V — le seul dossier qui porte à la fois un document et le
-│   │                                code qui le transpose
-│   ├── Traité.md / .pdf                ⚠ à la racine du dossier, PAS sous docs/ : la fusion du
-│   │                                     14 août 2026 les y a posés, et les renvois ont suivi
-│   ├── figures/                        les 19 planches du traité — ⚠ restées à la RACINE DU DÉPÔT
-│   │                                     du 14 au 21 août 2026, où elles clouaient son rendu → `APPAREIL.md`
-│   ├── build/build-pdf.sh              ⭑ la commande de composition, écrite le 21 août 2026 — elle
-│   │                                     n'existait nulle part au dépôt → `APPAREIL.md`
-│   ├── bancs/                          ⚠ ses 24 pièces, supprimées par accident le 17 août 2026,
-│   │                                     restaurées le 21 : c'est ce qui empêchait `cargo` de
-│   │                                     démarrer → `APPAREIL.md`. ⚠ un journal de boucle, restauré
-│   │                                     avec elles à la racine du dossier, en est ressorti le 22
-│   ├── docs/                           ⭑ `decisions.md` : les cinq écarts et les verdicts de banc
-│   ├── clippy.toml                     ⭑ ses interdictions sont des contrats, pas du style
-│   └── web/                            ⚠ `index.html` seul est du source
-│
-├── 4 - Veille/                      Vol. VI et VII, et depuis le 28 août 2026 la note SDLC : trois
-│   │                                documents dans un seul dossier, aucun dossier `figures/`
+├── 3 - Veille/                      Vol. VI et VII, et la note SDLC : trois documents dans un seul
+│                                      dossier, aucun dossier `figures/`. ⚠ c'était `4 - Veille/`
+│                                      jusqu'au 5 septembre 2026
 │   ├── Note-veille-SDLC-agentique.*    ⚠ le troisième document — hors livrables, et RIEN ne l'oppose
 │   │                                     à lui-même : ni `check-veille.py` ni `check-revue.py` ne le
-│   │                                     prennent en argument → `4 - Veille/README.md`
+│   │                                     prennent en argument → `3 - Veille/README.md`
 │   ├── Python/                         les trois contrôles ; ⚠ ils couvrent deux des trois documents
 │   └── build/build-pdf.sh              ⭑ les deux commandes des livrables, versionnées le 21 août
 │                                         2026 ; ⚠ pas celle de la note, qui se recopie à la main
 │
-├── 5 - Recension/                   Vol. VIII et sa planche
-│   ├── figures/                     `dessine.py` + 5 SVG, chez leur document — comme celles du
-│   │                                traité depuis le 21 août 2026
-│   └── build/build-pdf.sh           ⭑ les deux commandes de PDF ; ⚠ pas les `.html`, faute d'une
-│                                      feuille de style versionnée
+├── 4 - Essais/                      ⚠ créé le 5 septembre 2026 par simple déplacement — le seul
+│                                      dossier numéroté qui porte DEUX documents, et le seul sans
+│                                      `README.md` à lui : ses deux essais en portent chacun un
+│   ├── 1 - Traité/                     Vol. V — ⚠ c'était `3 - Traité/`. Le seul dossier qui porte à
+│   │                                     la fois un document et le code qui le transpose
+│   │   ├── Traité.md / .pdf                ⚠ à la racine du dossier, PAS sous docs/ : la fusion
+│   │   │                                     du 14 août 2026 les y a posés, les renvois ont suivi
+│   │   ├── crates/                         les quatre *crates* du simulateur — 76 `.rs`, et le
+│   │   │                                     seul code exécutable du dépôt
+│   │   ├── figures/                        les 19 planches du traité — ⚠ restées à la RACINE DU
+│   │   │                                     DÉPÔT du 14 au 21 août 2026 → `APPAREIL.md`
+│   │   ├── Python/                         `check-traite.py` et `check-empaquetage.py` — ⚠ le
+│   │   │                                     second est entré après le relevé des contrôles
+│   │   ├── build/build-pdf.sh              ⭑ la commande de composition, écrite le 21 août 2026
+│   │   │                                     — elle n'existait nulle part au dépôt → `APPAREIL.md`
+│   │   ├── bancs/                          ⚠ ses 24 pièces, supprimées par accident le 17 août
+│   │   │                                     2026, restaurées le 21 : c'est ce qui empêchait `cargo`
+│   │   │                                     de démarrer → `APPAREIL.md`. ⚠ un journal de boucle,
+│   │   │                                     restauré avec elles, en est ressorti le 22
+│   │   ├── docs/                           ⭑ `decisions.md` : les cinq écarts et les verdicts de banc
+│   │   ├── clippy.toml                     ⭑ ses interdictions sont des contrats, pas du style
+│   │   └── web/                            ⚠ `index.html` seul est du source
+│   └── 2 - Article/                    la prépublication HPC-QPU, 1er septembre 2026 — hors livrables.
+│       │                                 ⚠ c'était `6 - Article/`, et c'est le seul dossier de document
+│       │                                 dont la source ne soit pas du Markdown : Typst direct, sans Pandoc
+│       ├── README.md                       ⭑ pourquoi ce document n'est pas le neuvième livrable,
+│       │                                     et pourquoi le motif n'est pas celui de la note SDLC
+│       ├── article-hpc-qpu.typ/.pdf        la source et son rendu — 1 979 l. → 38 p.
+│       ├── references.bib                  77 entrées, ⭑ toutes citées — ☑ et `check-article.py`
+│       │                                     le vérifie depuis le 2 septembre 2026 ; rien ne le
+│       │                                     faisait au 1er
+│       ├── rejeu-politique.py              ⭑ le seul contrôle du dépôt qui EXÉCUTE une condition
+│       │                                     de réfutation (RÉF-6) au lieu de mesurer une forme
+│       ├── check-article*.py               le contrôle du document et son harnais de mutation —
+│       │                                     ⚠ entrés après le relevé des contrôles → `APPAREIL.md`
+│       └──  ⚠ pas de build/ : le PDF se fait par `typst compile`, la seule chaîne non
+│              scriptée du dépôt. ⚠ et deux de ses neuf fichiers sont des points —
+│              `.gabarit-arxiv.typ`, `.figures.typ` —, invisibles à un `ls` sans `-a`
 │
-└── 6 - Article/                     la prépublication HPC-QPU, 1er septembre 2026 — hors livrables,
-    │                                et le seul dossier de document dont la source ne soit pas du
-    │                                Markdown : Typst direct, sans Pandoc
-    ├── README.md                    ⭑ pourquoi ce document n'est pas le neuvième livrable, et
-    │                                  pourquoi le motif n'est pas celui de la note SDLC
-    ├── article-hpc-qpu.typ/.pdf     la source et son rendu — 1 979 l. → 38 p.
-    ├── references.bib               77 entrées, ⭑ toutes citées ; ⚠ aucun script du dépôt ne le
-    │                                  vérifie — c'est une mesure de passe, pas une garantie
-    ├── rejeu-politique.py           ⭑ le seul contrôle du dépôt qui EXÉCUTE une condition de
-    │                                  réfutation (RÉF-6) au lieu de mesurer une forme
-    └──  ⚠ pas de build/ : le PDF se fait par `typst compile`, la seule chaîne non scriptée du
-           dépôt. ⚠ et deux des sept fichiers sont des points — `.gabarit-arxiv.typ`,
-           `.figures.typ` —, invisibles à un `ls` sans `-a`, indispensables à la composition
+└── 5 - Recension/                   Vol. VIII et sa planche
+    ├── figures/                        `dessine.py` + 5 SVG, chez leur document — comme celles du
+    │                                     traité depuis le 21 août 2026
+    └── build/build-pdf.sh              ⭑ les deux commandes de PDF ; ⚠ pas les `.html`, faute d'une
+                                          feuille de style versionnée
 ```
 
-**571 fichiers versionnés, 76,4 Mo** (**76 423 624 octets**, relevé le 1er septembre 2026) : 217 `.md`, 142 `.svg`,
-76 `.rs`, 53 `.html`, 32 `.py`, 12 `.pdf`, 9 `.toml`, 8 `.sh`, 6 gabarits Pandoc, 4 `.gitignore`,
-3 `.typ`, 2 `.mjs`, 2 `LICENSE`, 1 `.lua`, 1 `Cargo.lock`, 1 `launch.json`, 1 `.gitattributes`,
-1 `.bib`. ⚠ *Les « 6 gabarits Typst » de la rédaction précédente étaient les six `.template`, qui
-sont des gabarits **Pandoc** écrits en Typst ; les trois `.typ` de `6 - Article/` sont du Typst
+**584 fichiers versionnés, 77,0 Mo** (**76 998 245 octets** à l'index, commit `daacbec`, relevé le 5 septembre 2026) : 220 `.md`, 142 `.svg`,
+76 `.rs`, 54 `.html`, 39 `.py`, 12 `.pdf`, 9 `.toml`, 8 `.sh`, 6 gabarits Pandoc, 4 `.gitignore`,
+3 `.typ`, 2 `.mjs`, 2 `LICENSE`, 1 gabarit HTML (`build/piece.template`), 1 `.lua`, 1 `.txt`, 1 `Cargo.lock`,
+1 `launch.json`, 1 `.gitattributes`, 1 `.bib`. ⚠ *Les « 6 gabarits Typst » de la rédaction précédente étaient les six `.template`, qui
+sont des gabarits **Pandoc** écrits en Typst ; les trois `.typ` de `4 - Essais/2 - Article/` sont du Typst
 propre, sans Pandoc — la distinction n'avait pas lieu d'être avant le 1er septembre 2026.*
-**Les sept fichiers entrés depuis le 28 août sont ceux de l'article** — six au commit `da6255b`,
-plus le `README.md` du dossier —, **+943 850 o. mesurés au format de l'index** pour les six.
+**Treize fichiers sont entrés depuis le relevé du 1er septembre 2026, et aucun n'est un
+document** : **sept points d'entrée d'appareil** — `check-article.py` et son harnais de mutation,
+`check-empaquetage.py`, et quatre au Compendium —, `build/piece.template` et `build/requirements.txt`,
+`PRD/revalidation-2026-09-02.md`, l'`audit.md` du traité, et **les deux fichiers de l'`Évaluation
+académique`**. ⚠ *La réorganisation du 5 septembre 2026 n'en fait entrer ni sortir aucun : elle
+renomme trois dossiers et ne touche pas un octet.*
+*Le relevé du 28 août comptait **sept** fichiers entrés, ceux de l'article — six au commit `da6255b`,
+plus le `README.md` du dossier —, **+943 850 o. mesurés au format de l'index** pour les six.*
 ⚠⚠ **Les deux nombres du relevé du 28 août 2026 étaient chacun 4 931 octets trop bas**, vérifié au
 commit `90ef7d1` : le dépôt y pesait **75 456 272 o. en blobs** quand la page écrivait 75 451 341
 pour un clone, et **75 574 708 o. au disque** quand elle écrivait 75 569 777. *Le même écart des
@@ -313,6 +366,12 @@ un retour chariot chacune —, et **cette passe-ci l'a bougé de +22 en réécri
 LF, une partie des `.md` qu'elle éditait**. *La composition du solde n'a pas été cherchée, et le
 commit n'en dépend pas : git normalise à l'entrée, le diff indexé ne porte aucune de ces lignes.*
 Au 1er septembre 2026 l'arbre ne porte rien d'autre que les éditions de cette passe.
+☑ **Au 5 septembre 2026, les deux mêmes passes**, sur l'arbre du commit `daacbec` : l'index rend
+**76 998 245 o.** — somme des blobs, prise par `git cat-file --batch-check` — et le disque
+**77 013 582 o.**, `cat` en flux et somme des `stat` concordant. **L'écart tombe à 15 337 o.**, de
+121 778 le 1er septembre. ⚠ *Sa composition n'a pas été cherchée ; ce qui est établi est qu'aucun
+fichier n'est entré ni sorti entre les deux relevés autrement que par les treize entrées ci-dessus,
+et que la réorganisation du 5 septembre n'en déplace pas un octet.*
 *Les **12 PDF** sont les **9 rendus des livrables**, la note de
 veille SDLC, l'article et le mémoire de maîtrise de l'auteur ; les **8 `.sh`** sont les
 **7 `build-pdf.sh`** — un par dossier de livrable, **les neuf PDF de livrable couverts, et eux
@@ -332,7 +391,7 @@ n'en rend que 1,8. *Il a gagné **62 fichiers**, pour un solde de **+56** — 51
 neufs** : la licence, les trois chaînes, le `README` de `0 - Références/`, `.gitattributes` et
 `APPAREIL.md`.
 Hors `git` mais sur le disque, il ne reste que **les deux artefacts `wasm-bindgen` de `web/`** —
-3,6 Mo, que [`web/index.html`](<3%20-%20Trait%C3%A9/web/index.html>) importe et que `wasm-pack`
+3,6 Mo, que [`web/index.html`](<4%20-%20Essais/1%20-%20Trait%C3%A9/web/index.html>) importe et que `wasm-pack`
 refait. ☑ **Tout le reste a été effacé le 25 août 2026** : `3 - Traité/target/` par `cargo clean`
 — **1 083 fichiers, 333,5 Mio** —, les **quatre `__pycache__`**, les **cinq PDF de tiers**
 (38 281 125 octets, que l'historique git garde seul désormais) et les **deux `natif.tsv`** de
@@ -340,10 +399,11 @@ bancs, que la commande inscrite au `VERDICT.md` de chaque banc régénère. ⚠ 
 été vidé le 21 août 2026 — **12 060 fichiers et 3,4 Gio**, en éprouvant sans succès la piste du
 cache vieilli —, et il se refait à la première construction.*
 
-**Dix-huit `README.md` versionnés, celui-ci compris** — un par dossier, un par Livre du
-compendium, plus `1 - Collection/2 -…/monographie/README.md`, `3 - Traité/docs/README.md` et
+**Dix-huit `README.md` versionnés, celui-ci compris** — un par dossier ⚠ *sauf `4 - Essais/`,
+créé le 5 septembre 2026, qui n'en a pas : ses deux essais en portent chacun un* —, un par Livre du
+compendium, plus `1 - Collection/2 -…/monographie/README.md`, `4 - Essais/1 - Traité/docs/README.md` et
 `0 - Références/README.md`, écrit le 21 août 2026 pour un dossier qui n'en avait pas. *Le
-dix-huitième est celui de [`6 - Article/`](<6%20-%20Article/README.md>), écrit le 1er septembre 2026
+dix-huitième est celui de [`4 - Essais/2 - Article/`](<4%20-%20Essais/2%20-%20Article/README.md>), écrit le 1er septembre 2026
 pour la même raison.* **C'est là que vit ce
 que cette page ne porte pas** : régimes de preuve, gels, dérogations, réserves, et l'historique des
 passes. Cette page dit *ce qu'il y a* ; ils disent *ce que ça vaut*.

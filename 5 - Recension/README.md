@@ -36,13 +36,20 @@ les figures des deux : corriger un fait se fait à un seul endroit.*
 > conservé parce qu'il date une passe :* ses cinq notices d'auto-citation **[1]-[5]** ne pointaient
 > que le dépôt **`agbruneau/Prospection`** — quatre par une URL `github.com`, la cinquième sans aucune
 > URL, vers un dépôt privé dont la notice disait elle-même que *« le lecteur ne peut pas l'ouvrir »* ;
-> *un lecteur qui suivait [1] ne tombait pas sur [`4 - Veille/`](../4%20-%20Veille/README.md).*
+> *un lecteur qui suivait [1] ne tombait pas sur [`4 - Veille/`](../3%20-%20Veille/README.md)* — ⚠ *dossier devenu [`3 - Veille/`](../3%20-%20Veille/) le 5 septembre 2026 ; le lien est repointé, le nom que la notice porte à sa date ne l'est pas.*
 > ☑ **Les six notices portent désormais le chemin de leur pièce dans le présent dépôt
 > `agbruneau/Agentique`**, mesuré fichier par fichier le 21 août 2026 :
 > `4 - Veille/Veille Technologique.md` — **1 932 lignes, 436 221 octets**, *la notice écrivait
 > « 424 Ko »* —, `4 - Veille/Revue de littérature.md` (1 052 l., 199 311 o.),
 > `3 - Traité/Traité.md` (1 875 l., 457 859 o.), `2 - Compendium/Compendium.pdf` (13 163 513 o.) et
 > `1 - Collection/2 - OrchestrationAgentique/Monographie.md` (3 306 l., 874 335 o.).
+> ⚠⚠ **Trois de ces cinq chemins ne résolvent plus, et les notices ne se corrigent pas** : la
+> réorganisation du **5 septembre 2026** (commit `daacbec`) porte `4 - Veille/` sous
+> [`3 - Veille/`](../3%20-%20Veille/) et `3 - Traité/` sous
+> [`4 - Essais/1 - Traité/`](../4%20-%20Essais/1%20-%20Trait%C3%A9/). *Les notices [1], [2] et [3]
+> gardent le chemin qu'elles portaient au 21 août 2026 — **une revue publiée décrit l'état de ses
+> sources à sa date**, et c'est la règle que la notice [4] applique déjà ci-dessous. Le renommage
+> est pur : les fichiers visés sont les mêmes, au bit près.*
 > ⚠ *Un de ces cinq relevés a bougé depuis* : `Compendium.pdf` a été **recomposé le 25 août 2026**
 > avec le titre révisé du Vol. IV — *« Interopérabilité et Orchestration en Entreprise Agentique »* —
 > et mesure **13 162 484 octets**, à pagination inchangée. **La notice [4] porte toujours
@@ -84,7 +91,7 @@ les figures des deux : corriger un fait se fait à un seul endroit.*
 > postérieur à la **prise** de D-13 ; il ne la lève pour rien d'autre que lui* — ⚠ **et il est
 > antérieur à la date de clôture**, qui court du 1er septembre 2026 et englobe sa réouverture.
 >
-> ⚠ **La date de clôture a porté « 8 août 2026 » jusqu'au 3 septembre 2026, et elle confondait deux choses** : *une décision se date de sa prise, une clôture de l'état qu'elle arrête.* **D-13 reste prise le 8 août 2026** ; **la clôture court du 1er septembre 2026**, dernier jour où une pièce est entrée au dépôt — l'article de `6 - Article/`, commit `da6255b`. ⚠ *La passe d'audit et de fond du 2 septembre 2026 (D-15, D-16) lui est postérieure d'un jour : elle porte sur l'appareil, le plan et le domaine de livraison du Vol. IV, et **aucune pièce n'y entre ni n'en sort**.* Motif complet au **PRD §16.5**.
+> ⚠ **La date de clôture a porté « 8 août 2026 » jusqu'au 3 septembre 2026, et elle confondait deux choses** : *une décision se date de sa prise, une clôture de l'état qu'elle arrête.* **D-13 reste prise le 8 août 2026** ; **la clôture court du 1er septembre 2026**, dernier jour où une pièce est entrée au dépôt — l'article entré au commit `da6255b` dans `6 - Article/`, *dossier porté sous `4 - Essais/2 - Article/` par la réorganisation du 5 septembre 2026 (commit `daacbec`)*. ⚠ *La passe d'audit et de fond du 2 septembre 2026 (D-15, D-16) lui est postérieure d'un jour : elle porte sur l'appareil, le plan et le domaine de livraison du Vol. IV, et **aucune pièce n'y entre ni n'en sort**.* Motif complet au **PRD §16.5**.
 
 ---
 
@@ -276,7 +283,7 @@ table des matières, page propre et corps de 9 pt comprises — **elles ne s'app
 **Prérequis :** police New Computer Modern, et une chaîne Pandoc + Typst. ⚠ *Les quatre commandes
 n'ont été essayées qu'avec **pandoc 3.10.2** et **typst 0.15.1** ; les minima que le dossier voisin
 annonce pour la même géométrie — Pandoc ≥ 3.1.7, Typst ≥ 0.12 — ne sont pas vérifiés ici.* Géométrie
-**identique à celle de [`4 - Veille/`](../4%20-%20Veille/README.md) et de [`3 - Traité/`](../3%20-%20Trait%C3%A9/README.md)** —
+**identique à celle de [`3 - Veille/`](../3%20-%20Veille/README.md) et de [`4 - Essais/1 - Traité/`](../4%20-%20Essais/1%20-%20Trait%C3%A9/README.md)** — *`4 - Veille/` et `3 - Traité/` jusqu'au 5 septembre 2026* —
 marges de 117 pt en x et 72 pt en y, corps de 378 pt sur 648, texte à 11 pt.
 ⚠ **Une seule dérogation, et le document la déclare lui-même** : **son résumé compose à 9,5 pt dans
 une gouttière de 1 em**, là où les trois autres gardent 10 pt dans 2 em. *Mesure faite au rendu du
@@ -322,8 +329,9 @@ les noms de fichier suivent l'ordre d'apparition, les noms de fonction non.*
 ## Le seul contrôle qui puisse s'appliquer ici
 
 **Ce dossier n'a aucun contrôle exécutable en propre** — pas de `check-*.py`, contrairement à
-[`4 - Veille/Python/`](../4%20-%20Veille/Python/). Le seul du dépôt qui accepte un PDF en argument
-est [`check-resume.py`](../4%20-%20Veille/Python/check-resume.py), et il a été **rejoué sur les deux
+[`3 - Veille/Python/`](../3%20-%20Veille/Python/) — *`4 - Veille/Python/` jusqu'au 5 septembre 2026*.
+Le seul du dépôt qui accepte un PDF en argument
+est [`check-resume.py`](../3%20-%20Veille/Python/check-resume.py), et il a été **rejoué sur les deux
 rendus le 20 août 2026**, puis **rejoué le 21 sur les fichiers du jour**. Sortie brute du 21 :
 
 ```
@@ -337,6 +345,39 @@ Budget de mise en page — Cinq schémas — état de l'art en services financie
   page de titre : 1093 lignes de texte, derniere a y = 84.6 pt
   marge basse   : 72.0 pt -> degagement +12.6 pt  [OK]
 ```
+
+⚠ **Le `4 - Veille/Python/` de ces deux invocations est le chemin qui était tapé le 21 août 2026, et
+il n'est pas repointé** : *une sortie brute se date, elle ne se récrit pas.* **Le chemin
+d'aujourd'hui est `3 - Veille/Python/`** — c'est celui du lien deux paragraphes plus haut, et c'est
+lui qu'il faut taper depuis la racine.
+
+⚠⚠ **Rejoué le 5 septembre 2026 avec le chemin d'aujourd'hui : le premier bloc retombe au signe
+près, le second non.** Sortie brute du jour :
+
+```
+$ python "3 - Veille/Python/check-resume.py" "5 - Recension/État de l'art — services financiers.pdf"
+Budget de mise en page — État de l'art — services financiers.pdf
+  page de titre : 67 lignes de texte, derniere a y = 84.6 pt
+  marge basse   : 72.0 pt -> degagement +12.6 pt  [OK]
+
+$ python "3 - Veille/Python/check-resume.py" "5 - Recension/Cinq schémas — état de l'art en services financiers.pdf"
+Budget de mise en page — Cinq schémas — état de l'art en services financiers.pdf
+  page de titre : 1107 lignes de texte, derniere a y = 72.3 pt
+  marge basse   : 72.0 pt -> degagement +0.3 pt  [LIMITE]
+
+LIMITE : 0.3 pt de degagement seulement. Toute reprise du resume le fera deborder.
+```
+
+⚠⚠ **La planche a perdu douze points de dégagement, et ce n'est pas la réorganisation qui les a
+pris** : elle a été **recomposée le 25 août 2026** (commit `91ed417`, la synchronisation des titres
+décrite plus haut), quatre jours après le relevé ci-dessus. *Le contrôle sort toujours 0 — sa marge
+basse est un seuil, non une égalité —, mais il sort désormais `[LIMITE]` : **+0,3 pt**, et
+`1 107` poses de texte au lieu de `1 093`.* ⚠ **Constat de la passe du 5 septembre, non correction**
+— le bloc du 21 août reste tel qu'il est tombé, et *ce que la nouvelle sortie établit n'est pas un
+débordement mais l'absence de tout mou : la moindre reprise de cette page de titre fera sortir 1.*
+☑ *Ce que ce contrôle appelle « lignes » n'en sont pas ici — la figure gravée est composée un signe
+à la fois ; le motif est donné au README de [`3 - Veille/`](../3%20-%20Veille/README.md), et il vaut
+pour les deux relevés.*
 
 **Les deux sortent 0.** ⚠⚠ **Mais sur le document long, le contrôle a changé d'objet le 21 août 2026,
 et c'est le fait de la journée.** *Au 20 août, la page de titre ne portait que le bloc de titre et le

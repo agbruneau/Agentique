@@ -9,24 +9,30 @@
 > **définitif**. ⚠ *Clore n'est ni terminer ni publier* — rien n'est levé, rien n'est soldé, et
 > ce qui restait dû devient un **manque définitif, daté et écrit**.
 >
-> ⚠ **La date de clôture a porté « 8 août 2026 » jusqu'au 3 septembre 2026, et elle confondait deux choses** : *une décision se date de sa prise, une clôture de l'état qu'elle arrête.* **D-13 reste prise le 8 août 2026** ; **la clôture court du 1er septembre 2026**, dernier jour où une pièce est entrée au dépôt — l'article de `6 - Article/`, commit `da6255b`. ⚠ *La passe d'audit et de fond du 2 septembre 2026 (D-15, D-16) lui est postérieure d'un jour : elle porte sur l'appareil, le plan et le domaine de livraison du Vol. IV, et **aucune pièce n'y entre ni n'en sort**.* Motif complet au **PRD §16.5**.
+> ⚠ **La date de clôture a porté « 8 août 2026 » jusqu'au 3 septembre 2026, et elle confondait deux choses** : *une décision se date de sa prise, une clôture de l'état qu'elle arrête.* **D-13 reste prise le 8 août 2026** ; **la clôture court du 1er septembre 2026**, dernier jour où une pièce est entrée au dépôt — l'article entré au commit `da6255b` dans `6 - Article/`, *dossier porté sous `4 - Essais/2 - Article/` par la réorganisation du 5 septembre 2026 (commit `daacbec`)*. ⚠ *La passe d'audit et de fond du 2 septembre 2026 (D-15, D-16) lui est postérieure d'un jour : elle porte sur l'appareil, le plan et le domaine de livraison du Vol. IV, et **aucune pièce n'y entre ni n'en sort**.* Motif complet au **PRD §16.5**.
 
 > ⚠ **L'APPAREIL DE VÉRIFICATION DE CE VOLUME A ÉTÉ SUPPRIMÉ le 8 août 2026**, par un commit
 > **postérieur à la prise de D-13** (`659241b`) — ⚠ *ce bandeau écrivait « postérieur à la clôture »,
 > ce que la redatation du 3 septembre 2026 rend faux : la clôture court du 1er septembre 2026, et ce
-> commit lui est antérieur. **Le fait ne change pas, sa qualification si.*** Le répertoire `verification/` et ses **30 rapports** —
-> 15 lots d'instruction, 11 relectures, 2 revalidations, la confrontation des thèses et le registre
-> `remontees-gouvernance.md` — **ne se lisent plus qu'à l'historique git**. Les renvois de ce fichier
-> qui les visaient sont **retirés en conservant leurs noms et en datant le retrait**, selon la règle
-> du dépôt.
+> commit lui est antérieur. **Le fait ne change pas, sa qualification si.*** ☑ **ET IL A ÉTÉ RESTAURÉ
+> LE 21 AOÛT 2026**, par la passe de réparation d'appareil (commit `696bcac`) : le répertoire
+> [`verification/`](verification/) et ses **30 rapports** — 15 lots d'instruction, 11 relectures,
+> 2 revalidations, la confrontation des thèses et le registre `remontees-gouvernance.md` — **sont sur
+> l'arbre et versionnés**, et se lisent dans ce dossier. ⚠⚠ *Ce bandeau a porté « ne se lisent plus
+> qu'à l'historique git » pendant les deux semaines qui ont suivi le retour des fichiers : les deux
+> faits sont datés, aucun n'efface l'autre, et c'est le **présent** de la phrase qui était faux, pas
+> son passé.* ⚠ **Les renvois de ce fichier qui les visaient ont été retirés le 8 août 2026**, en
+> conservant leurs noms et en datant le retrait selon la règle du dépôt ; **ils n'ont pas été rétablis
+> en liens** — *ce README nomme donc encore, en texte nu, des pièces qu'il pourrait à nouveau pointer.*
 >
-> ⚠ **Ce que la suppression ne fait pas, et il faut le lire avant le reste de ce fichier.** Elle **ne
-> solde aucune remontée**, **ne referme aucune dette**, **ne lève aucune réserve** : les quinze
+> ⚠ **Ce que la suppression n'a pas fait, et il faut le lire avant le reste de ce fichier.** Elle **n'a
+> soldé aucune remontée**, **n'a refermé aucune dette**, **n'a levé aucune réserve** : les quinze
 > remontées **R-G-43 à R-G-57** et la **dette de vote sur F-92 et F-96** restent ouvertes à titre
-> définitif — c'est seulement **l'inventaire qui les nommait** qui a quitté l'arbre. *Une dette dont
-> on supprime le registre reste une dette ; elle devient seulement plus difficile à lire.* ⚠ Toutes
-> les affirmations de conformité ci-dessous **s'adossaient à ces rapports** : elles restent exactes
-> comme **constats datés**, et **cessent d'être vérifiables sur l'arbre courant.**
+> définitif — c'est seulement **l'inventaire qui les nommait** qui avait quitté l'arbre. *Une dette dont
+> on supprime le registre reste une dette ; elle devient seulement plus difficile à lire.* ☑ **La
+> restauration n'en solde pas davantage** : elle rend les rapports lisibles, elle n'arbitre rien. Les
+> affirmations de conformité ci-dessous **s'adossent à ces rapports** : elles valent comme **constats
+> datés**, et sont **à nouveau vérifiables sur l'arbre courant**.
 
 > **Où vous êtes.** Ce dossier est le **troisième des trois volumes** du corpus, dans le dépôt
 > [*Agentique*](../../README.md). Il **prolonge les deux précédents sur leur verrou commun** :
@@ -52,9 +58,9 @@ distincts** : juin 2026 (Vol. I) et 16-17 juillet 2026 (Vol. II) ; ses 34 pièce
 | Socle hérité | **33 entrées** — H-01 à H-16 (Vol. II, **niveau conservé**), H-17 à H-33 (Vol. I, **abaissées en [C]**) |
 | Lots d'instruction | **15 clos sur 15** — quatorze par instruction aboutie, **L-15 par échec documenté** (filiation livresque retirée, réversible) |
 | Garde-fous | **R-01 à R-14** *(deux chiffres — ceux du Vol. II sont R-1 à R-8, un chiffre : ce ne sont pas les mêmes objets)* |
-| Conformité | **CA-01 à CA-14** ⚠ **CA-12 (dualité d'usage) n'est tenue sur aucune pièce de la phase P4** ; **16 pièces sur 34 n'en nommaient aucun compte rendu au relevé du 22 juillet 2026**, et **deux l'ont reçu depuis** par les correctifs de la relecture du 24 juillet (`relecture-revision-2026-07-24.md` §1 — ⚠ *fichier retiré du dépôt le 8 août 2026, historique git seul*) — le terme procédural reste non clos |
+| Conformité | **CA-01 à CA-14** ⚠ **CA-12 (dualité d'usage) n'est tenue sur aucune pièce de la phase P4** ; **16 pièces sur 34 n'en nommaient aucun compte rendu au relevé du 22 juillet 2026**, et **deux l'ont reçu depuis** par les correctifs de la relecture du 24 juillet ([`verification/relecture-revision-2026-07-24.md`](verification/relecture-revision-2026-07-24.md) §1 — ☑ *retiré du dépôt le 8 août 2026, **restauré le 21 août 2026** (`696bcac`)*) — le terme procédural reste non clos |
 | Dates de gel | **21 juillet 2026** pour les 34 pièces — registre [`monographie/99-registre-gel.md`](monographie/99-registre-gel.md) |
-| Revalidation | **22 juillet 2026** (`verification/revalidation-2026-07-22.md` — ⚠ *fichier retiré du dépôt le 8 août 2026, historique git seul*) : six lignes INCHANGÉ, une INACCESSIBLE (AMF, HTTP 403). Couvre une publication **jusqu'au 21 août 2026** (CA-04) ; au-delà, elle se rejoue — ⚠ *et elle ne se rejouera pas : le dépôt est clos, et le rapport qui l'établissait n'est plus sur l'arbre* |
+| Revalidation | **22 juillet 2026** ([`verification/revalidation-2026-07-22.md`](verification/revalidation-2026-07-22.md) — ☑ *retiré du dépôt le 8 août 2026, **restauré le 21 août 2026** (`696bcac`)*) : six lignes INCHANGÉ, une INACCESSIBLE (AMF, HTTP 403). Couvre une publication **jusqu'au 21 août 2026** (CA-04) ; au-delà, elle se rejoue — ⚠ *et elle ne se rejouera pas : le dépôt est clos ; le rapport qui l'établissait est de nouveau lisible, la revalidation, elle, n'est pas reconduite* |
 | Lacunes | **22 documentées** dont **3 closes** — le PRD §10 ne porte « INSTRUITE ET CLOSE » qu'aux entrées 1, 2 et 11 ; la 10 est « instruite, non arbitrée » et la 15 « instruite, **non close** ». Exposées plutôt que comblées |
 | Gouvernance | **PRD v1.3** · **TOC v0.8** · **PRDPlan v0.5**, sous [`prd/`](prd/) |
 
@@ -111,15 +117,15 @@ F-96 restent donc ouvertes à titre définitif** ; *une dette qu'on cesse de sui
 exhaustif des motifs de balayage (P5.2) conduits le 22 juillet 2026 ; réalignement des porteurs de
 décomptes (P5.3) ; pipeline de rendu créé le 23 juillet 2026 (P5.4) et PDF réassemblé le 24 ; relecture
 de révision complémentaire le 24 juillet 2026. Ce travail a produit **30 rapports** sous
-`verification/` — 15 rapports de lot, 11 relectures, 2 revalidations, la confrontation des thèses et
-le registre des remontées. ⚠ **Le répertoire entier a été supprimé le 8 août 2026** (commit
-`659241b`) et se relit à l'historique git : *le travail a eu lieu, sa trace a quitté l'arbre.*
-⚠ **Aucun des trois contrôles de P5 ne valait certificat, et un contrôle dont le rapport est
-introuvable en vaut encore moins.**
+[`verification/`](verification/) — 15 rapports de lot, 11 relectures, 2 revalidations, la confrontation
+des thèses et le registre des remontées. ⚠ **Le répertoire entier a été supprimé le 8 août 2026**
+(commit `659241b`), ☑ **puis restauré le 21 août 2026** (commit `696bcac`) : *la trace a quitté
+l'arbre treize jours, elle y est revenue entière.* ⚠ **Aucun des trois contrôles de P5 ne valait
+certificat, et le retour des rapports n'y change rien.**
 
-**Ce qui reste ouvert, et le restera** — le détail vivait au registre
-`verification/remontees-gouvernance.md`, ⚠ *retiré du dépôt le 8 août 2026 ; la liste ci-dessous est
-désormais le seul état de cette dette lisible sur l'arbre* :
+**Ce qui reste ouvert, et le restera** — le détail vit au registre
+[`verification/remontees-gouvernance.md`](verification/remontees-gouvernance.md), ☑ *retiré le
+8 août 2026, restauré le 21 ; la liste ci-dessous en est le résumé, non le seul état lisible* :
 
 - **Quinze remontées de gouvernance ouvertes** — R-G-43 à R-G-57 — dont plusieurs siègent au PRD ou au
   TOC plutôt que dans une pièce : leur arbitrage rouvrirait du texte tenu pour fait, **sur les
@@ -179,7 +185,9 @@ prd/                         gouvernance, par ordre d'autorité
   TOC.md                       v0.8 — autorité sur le découpage (28 chapitres, 9 parties, 34 pièces)
   PRDPlan.md                   v0.5 — plan d'exécution (phases P0 à P5)
 monographie/                 34 pièces rédigées + 99-registre-gel.md
-                             ⚠ verification/ (30 rapports) SUPPRIMÉ le 8 août 2026 — historique git seul
+verification/                30 rapports — 15 lots d'instruction, 11 relectures, 2 revalidations,
+                             theses-P4-confrontation.md et remontees-gouvernance.md
+                             ☑ supprimé le 8 août 2026 (659241b), restauré le 21 août 2026 (696bcac)
 build/                       pipeline FESP (troisième copie) + assemble.py
 Monographie.md / .pdf        assemblage des 34 pièces et son rendu (427 p.)
 ```
@@ -204,12 +212,16 @@ relative depuis le répertoire de la pièce — **19 renvois morts de moins dans
 ligne de prose touchée. ⚠ **Le `.pdf` versionné précède ce correctif** : il porte encore les anciennes
 cibles, et se régénérera à la prochaine passe de rendu.
 
-⚠ **Le correctif a été rendu sans objet le jour même, et il faut le dire ici.** Les cibles qu'il
+⚠ **Le correctif a été rendu sans objet le jour même, et il l'est resté treize jours.** Les cibles qu'il
 rebasait vivaient toutes sous `verification/`, **supprimé quelques heures plus tard** par le commit
-`659241b` : les dix-neuf renvois **résolvent désormais depuis le bon répertoire vers un fichier qui
-n'existe plus.** *Réparer le chemin d'un renvoi ne le rend pas vivant si l'on supprime sa cible —
-un rebasage juste vers un fichier absent reste un renvoi mort, et aucun contrôle du volume ne le
-voit.* **Rien n'est corrigé ici** : les pièces rédigées ne sont pas touchées, et le dépôt est clos.
+`659241b` : les dix-neuf renvois résolvaient depuis le bon répertoire vers un fichier qui n'existait
+plus. *Réparer le chemin d'un renvoi ne le rend pas vivant si l'on supprime sa cible — un rebasage
+juste vers un fichier absent reste un renvoi mort, et aucun contrôle du volume ne le voit.*
+☑ **La restauration du 21 août 2026 (`696bcac`) a redonné son objet au correctif** : les renvois de
+`Monographie.md` vers `verification/` **visent à nouveau des fichiers présents** — *mesure du
+5 septembre 2026 : **11 liens, 11 résolvent** ; l'écart avec le décompte de dix-neuf tient au fichier
+assemblé, il n'est pas instruit ici.* **Rien d'autre n'est corrigé** : les pièces rédigées ne sont pas
+touchées, et le dépôt est clos.
 
 **Prérequis :** Pandoc ≥ 3.1.7, Typst ≥ 0.12, `python3` + `pypdf`, polices Liberation Sans et DejaVu
 Sans. Le script exporte lui-même `PYTHONUTF8=1` (nécessaire sous Windows).

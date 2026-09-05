@@ -3,8 +3,17 @@
 Simulateur déterministe d'essaims d'agents logiciels coordonnés par le milieu.
 
 > **Où ce dossier vit.** Depuis le 14 août 2026, `stigmergie-lab` n'est plus un
-> dépôt autonome : c'est le dossier `3 - Traité/` du dépôt
-> [Agentique](../README.md), où il **héberge le traité qu'il transpose**. Deux
+> dépôt autonome : c'est un dossier du dépôt
+> [Agentique](../../README.md), où il **héberge le traité qu'il transpose**.
+> ⚠ **Il s'est appelé `3 - Traité/`, à la racine, du 14 août au 5 septembre 2026 ;
+> il est [`4 - Essais/1 - Traité/`](./) depuis** — premier dossier des *Essais*, aux
+> côtés de [l'article HPC-QPU](../2%20-%20Article/) (commit `daacbec`). *La
+> réorganisation est un **renommage pur** : `git` l'enregistre à 100 %, aucun
+> fichier n'est touché, et **aucune commande de cette page ne change** — elles se
+> lancent toutes de ce dossier, jamais de la racine.* ⚠ *Les mentions de
+> `3 - Traité/` qui subsistent ici et ailleurs au dépôt datent un état et ne se
+> corrigent pas ; **seuls les renvois ont été repointés le 5 septembre 2026**, le
+> `../README.md` ci-dessus devenant `../../README.md`.* Deux
 > conséquences, et il vaut mieux les lire avant de chercher un fichier.
 > *(a)* ⚠ **`Traité.md` / `.pdf` sont à la racine de ce dossier, PAS sous
 > `docs/`** — c'est là que la fusion les a posés, et les renvois qui visaient

@@ -1,13 +1,29 @@
-# 6 - Article — une prépublication, et pourquoi elle n'est pas le neuvième livrable
+# 4 - Essais / 2 - Article — une prépublication, et pourquoi elle n'est pas le neuvième livrable
+
+> **Où ce dossier vit.** Il est entré au dépôt le **1er septembre 2026** sous le nom
+> **`6 - Article/`**, à la racine, **sixième dossier numéroté** — et il vit depuis le
+> **5 septembre 2026** sous [`4 - Essais/2 - Article/`](./), second dossier des *Essais*, aux côtés
+> du [traité et de sa transposition exécutable](../1%20-%20Trait%C3%A9/). *La réorganisation
+> (commit `daacbec`) est un **renommage pur** — `git` enregistre **neuf** renommages à 100 %, un par
+> fichier du dossier, et aucun contenu n'est touché.* ⚠ **Les mentions de `6 - Article/` qui subsistent dans ce dossier et
+> ailleurs au dépôt datent un état et ne se corrigent pas** : elles nomment le dossier tel qu'il
+> était le jour dont elles parlent. ⚠⚠ **Ce que la réorganisation a cassé, en revanche, ce sont les
+> renvois de cette page** : elle est descendue d'un niveau, et ses `../` visaient la racine du dépôt
+> — *repointés en `../../` le 5 septembre 2026, ainsi que les deux renvois vers `4 - Veille/`,
+> devenu [`3 - Veille/`](../../3%20-%20Veille/).*
 
 *Projection de l'état de ressource et délégation multicritère dans une plateforme HPC à
 processeurs quantiques* — **38 p.**, prépublication au gabarit arXiv, v3 (révisée), datée du
 **31 août 2026** en page de titre et composée le **1er septembre 2026**. Entrée au dépôt le même
 jour, au commit `da6255b` (« Article ») : **une réouverture de plus** d'un dépôt clos par la
 décision d'auteur **D-13** du 8 août 2026, et **la première qui crée un dossier numéroté depuis le
-20 août** — ⚠ *la chronique datée de [`1 - Collection/README.md`](../1%20-%20Collection/README.md)
-s'arrête à la onzième réouverture, celle du 21 août 2026 ; elle ne porte aucune des passes du 22 au
-28 août, ni celle-ci. Un lecteur qui compte les réouvertures sur cette chronique compte court.*
+20 août** — ✎ *cette page a averti jusqu'au 5 septembre 2026 que la chronique datée de
+[`1 - Collection/README.md`](../../1%20-%20Collection/README.md) « s'arrête à la onzième
+réouverture » et ne porterait ni les passes du 22 au 28 août ni celle-ci, et **l'avertissement était
+faux du jour où il a été écrit** : le commit `c81be4a` du 1er septembre 2026 crée cette page **et**,
+du même geste, ajoute à cette chronique le bloc qui porte les sept passes du 22 août au
+1er septembre — celle-ci comprise. Ce qui reste vrai est plus étroit : ces sept y figurent **en
+bloc, à leur date et à leur commit**, sans le détail que les onze premières reçoivent.*
 
 ⚠⚠ **ET C'EST DÉSORMAIS CETTE ENTRÉE QUI DATE LA CLÔTURE DU DÉPÔT.** *Depuis la redatation du
 3 septembre 2026, la clôture ne se date plus de la prise de D-13 mais de l'état qu'elle arrête, et
@@ -16,15 +32,15 @@ le critère est l'entrée d'une pièce au dépôt* : le dernier jour où une pi�
 court du 1er septembre.** ⚠ *Le paradoxe est nommé plutôt que tu — **le document qui date la clôture
 n'est pas un livrable, et le PRD ne porte aucune décision sur lui** : le critère porte sur l'entrée
 d'une pièce, non sur son rang, et c'est la seule lecture qui ne dépende pas d'un compte que le
-[`README` de la racine](../README.md) dit lui-même renversable d'un mot de l'auteur.* Motif complet
-au [PRD §16.5](../2%20-%20Compendium/PRD/PRD.md).
+[`README` de la racine](../../README.md) dit lui-même renversable d'un mot de l'auteur.* Motif complet
+au [PRD §16.5](../../2%20-%20Compendium/PRD/PRD.md).
 
 ⚠ **Ce document n'instruit pas la question du dépôt.** Les huit livrables tiennent une seule
 question — *comment une entreprise de services financiers canadienne déploie, gouverne et exploite
 des agents d'IA autonomes sous contrainte réglementaire* — et celui-ci porte sur l'intégration de
 processeurs quantiques dans une plateforme de calcul haute performance. **Il est publié ici, signé
 de la même main, et il n'est pas rangé parmi les livrables** : *le motif est thématique, non
-méthodologique, et c'est un motif neuf.* La note de veille SDLC de `4 - Veille/` est tenue hors des
+méthodologique, et c'est un motif neuf.* La note de veille SDLC de [`3 - Veille/`](../../3%20-%20Veille/) — *`4 - Veille/` jusqu'au 5 septembre 2026* — est tenue hors des
 huit pour **ce qui lui manque** — source unique, bibliographie non appariée, aucun contrôle qui
 l'oppose à elle-même ; celui-ci l'est pour **ce dont il traite**. ⚠ *Le PRD ne porte aucune
 décision sur ce document, pas plus que sur le huitième ni sur la note : le compte se renverse d'un
@@ -62,8 +78,12 @@ tiers** sont énoncées. *Seule la politique dispose d'une implémentation de r�
 
 ## Ce que le dossier porte
 
-⚠ **Deux des dix fichiers sont des points** : `ls` sans `-a` en montre huit sur dix, et les deux
+⚠ **Deux des neuf fichiers sont des points** : `ls` sans `-a` en montre sept sur neuf, et les deux
 manquants sont le gabarit et les figures — *sans eux la source ne compile pas.*
+⚠⚠ **Ce paragraphe a écrit « dix » et « huit sur dix » jusqu'au 5 septembre 2026, et le compte
+était périmé de deux jours** : `audit.md` a été **supprimé le 3 septembre 2026** (commit `4a7ec0f`)
+et la table ci-dessous le listait encore. *Constat de la passe de réalignement du 5 septembre ;
+le fichier ne se relit plus qu'à l'historique git.*
 
 | Fichier | | |
 | --- | --- | --- |
@@ -73,7 +93,7 @@ manquants sont le gabarit et les figures — *sans eux la source ne compile pas.
 | `rejeu-politique.py` | **170 l.** | ⭑ l'implémentation de référence de la politique (§ 7.2) et de la machine d'états (§ 6.4) |
 | `check-article.py` | ⭑ | **les cinq contrôles de forme** : bibliographie close, parité source/rendu à l'octet, renvois « § » résolus, cardinaux de ce README, scores du rejeu opposés à l'article |
 | `check-article-mutations.py` | ⭑ | le harnais : une faute par classe, vue ; et une qui ne doit pas l'être |
-| `audit.md` | | l'audit du 2 septembre 2026, son plan et son journal d'exécution |
+| ~~`audit.md`~~ | ⚠ **supprimé** | l'audit du 2 septembre 2026, son plan et son journal d'exécution — **retiré du dépôt le 3 septembre 2026** (commit `4a7ec0f`) ; *historique git seul* |
 | `.gabarit-arxiv.typ` | 100 l. | le gabarit *arXiv preprint* d'après `arxiv.sty` (G. Kour), porté en Typst |
 | `.figures.typ` | 402 l. | les primitives de dessin des **8 planches** — aucun `#figure` n'y vit, elles sont toutes appelées du corps |
 
@@ -115,7 +135,7 @@ chose réfuterait la contribution. *C'est le seul contrôle du dépôt qui exéc
 réfutation d'un document plutôt que de mesurer sa forme.*
 
 **⚠⚠ `check-resume.py` sort 1 sur ce PDF, et le verdict est faux — ne pas l'enchaîner à cette
-chaîne.** Le contrôle de `4 - Veille/Python/` mesure l'ordonnée la plus basse où du texte est posé
+chaîne.** Le contrôle de [`3 - Veille/Python/`](../../3%20-%20Veille/Python/) — *`4 - Veille/Python/` jusqu'au 5 septembre 2026* — mesure l'ordonnée la plus basse où du texte est posé
 en page 1 et la confronte à une marge basse de 72 pt ; il rend ici **44,3 pt, soit −27,7 pt**. *Ses
 deux prémisses tombent avec le gabarit* : **(a)** le gabarit FESP ne numérote pas sa page de titre,
 celui d'arXiv y pose un folio en pied — et un pied de page vit **sous** la marge par construction,
@@ -143,7 +163,7 @@ recomposition dont la parité est vérifiée par `check-article.py`. *Le PDF liv
 
 ☑ **Le `dc:title` porte bien l'apostrophe** — *Projection de l'état de ressource…* — là où celui de
 l'état de l'art de `5 - Recension/` perd la sienne. **C'est une corroboration directe du diagnostic
-posé au [`README.md` de la racine](../README.md)** : la perte se produit dans la fonction
+posé au [`README.md` de la racine](../../README.md)** : la perte se produit dans la fonction
 `content-to-string` du gabarit **Pandoc**, qui rend vide sur le `smartquote` de Typst — et *cette
 chaîne-ci n'a pas de Pandoc*. Le seul PDF du dépôt composé sans Pandoc est aussi le seul dont un
 titre à apostrophe traverse intact.

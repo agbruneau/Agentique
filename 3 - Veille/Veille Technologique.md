@@ -50,7 +50,7 @@ header-includes: |
   //  ainsi un corps sous le texte, comme l'usage le veut — et surtout il
   //  tient sur sa page : le gabarit pose le bloc de titre en FLOTTANT NON
   //  SÉCABLE, et un résumé qui déborde est rogné sans que Pandoc ni Typst ne
-  //  le signalent. `4 - Veille/Python/check-resume.py` est la porte qui le
+  //  le signalent. `3 - Veille/Python/check-resume.py` est la porte qui le
   //  mesure, et elle est la seule.
   //
   //  ⚠ L'APPAREIL GARDE LA MESURE D'UN POUCE. Les dix-neuf figures du traité

@@ -52,8 +52,10 @@ périme sans que rien ne le signale, la ligne de commande ne se périme pas.
 ⚠ **`cargo` n'est pas dans le `PATH`, et l'édition de liens échoue dans le
 `target/` du dépôt.** ✎ *Le motif « le chemin contient un « é » » écrit ici
 jusqu'au 21 août 2026 est faux, et le corriger change ce qu'on peut tenter* :
-un workspace d'essai placé sous `…/3 - Traité/` — même accent, même espace —
-s'édite sans un mot, hors OneDrive. Ce qui échoue est l'édition de liens dans
+un workspace d'essai placé sous `…/3 - Traité/` — même accent, même espace ; le
+dossier porte ce nom le 21 août 2026, `4 - Essais/1 - Traité/` depuis la
+réorganisation du 5 septembre 2026 — s'édite sans un mot, hors OneDrive. Ce qui
+échoue est l'édition de liens dans
 un `target/` **synchronisé par OneDrive** : `ld.exe` ne trouve pas des `.o` que
 `rustc` vient d'écrire et que `ls` montre. *Renommer le dossier ne réparerait
 donc rien ; sortir le `target/` de OneDrive répare tout* — et c'est ce que fait
@@ -61,7 +63,8 @@ la seconde ligne ci-dessous.
 
 ⚠ **Trois pistes ont été éprouvées le 21 août 2026 et ÉCARTÉES ; les redire ici
 évite de les refaire.** *(a)* **L'accent** : un workspace d'essai sous
-`…/3 - Traité/`, même accent et même espace, s'édite sans un mot hors OneDrive.
+`…/3 - Traité/` — son nom d'alors, `4 - Essais/1 - Traité/` depuis le 5 septembre
+2026 —, même accent et même espace, s'édite sans un mot hors OneDrive.
 *(b)* **Le cache vieilli** : `cargo clean` a retiré 12 060 fichiers et 3,4 Gio,
 et la suite a **échoué de la même façon** sur une arborescence neuve — l'état du
 `target/` n'y est pour rien. *(c)* **La longueur du chemin** : la cible hors
