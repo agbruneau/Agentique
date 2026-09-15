@@ -17,7 +17,7 @@ abstract-title: "Résumé"
 abstract: |
   Cette note condense trois documents du dépôt pour le lecteur qui ne les lira pas en entier : la veille technologique en entreprise (Vol. VI, faits gelés au 15 août 2026), la revue de la littérature académique (Vol. VII, 15 août 2026) et l'état de l'art en services financiers (Vol. VIII, 20 août 2026). Chaque thèse et chaque chiffre y renvoient à la section du volume qui les porte, avec le niveau de preuve que ce volume déclare ; un contrôle versionné vérifie les renvois, les chiffres repris et la clôture de la bibliographie.
 
-  Trois résultats traversent les volumes. La couche d'échange — MCP, A2A, ANP — est adoptée avant d'être normalisée ou sûre, et ce qu'elle n'exprime se comble hors d'elle. Au-delà du premier saut de délégation, le déficit est d'adoption, non d'invention, et aucune trace ne dit aujourd'hui pour qui un agent agit. En institution financière régie, ce n'est pas la pile qui décide mais ce que l'institution peut démontrer, à des dates fermes.
+  Trois résultats traversent les volumes. La couche d'échange — MCP, A2A, ANP — est adoptée avant d'être normalisée ou sûre, et ce qu'elle n'exprime se comble hors d'elle. Au-delà de deux sauts de délégation, le déficit est d'adoption, non d'invention, et aucune trace ne dit aujourd'hui pour qui un agent agit. En institution financière régie, ce n'est pas la pile qui décide mais ce que l'institution peut démontrer, à des dates fermes.
 
   Synthèse produite par un modèle de langage, non relue par un humain, avant la relecture externe prévue ; quand une décision en dépend, le volume fait foi.
 header-includes: |
@@ -125,7 +125,7 @@ header-includes: |
 abstract-en: &abstract-en |
   This note condenses three documents in the repository for readers who will not read them in full: the enterprise technology watch (Vol. VI, facts frozen as of 15 August 2026), the academic literature review (Vol. VII, 15 August 2026) and the state of the art in financial services (Vol. VIII, 20 August 2026). Every thesis and every figure in it refers to the section of the volume that carries it, with the level of evidence that volume declares; a versioned check verifies the cross-references, the figures carried over and the closure of the bibliography.
 
-  Three results run across the volumes. The exchange layer — MCP, A2A, ANP — is adopted before it is standardized or secure, and what it does not express is filled outside it. Beyond the first delegation hop, the deficit is one of adoption, not of invention, and no trace today says on whose behalf an agent acts. In a regulated financial institution, it is not the stack that decides but what the institution can demonstrate, by firm dates.
+  Three results run across the volumes. The exchange layer — MCP, A2A, ANP — is adopted before it is standardized or secure, and what it does not express is filled outside it. Beyond two delegation hops, the deficit is one of adoption, not of invention, and no trace today says on whose behalf an agent acts. In a regulated financial institution, it is not the stack that decides but what the institution can demonstrate, by firm dates.
 
   Synthesis produced by a language model, not reviewed by a human, ahead of the planned external review; where a decision depends on it, the volume is authoritative.
 include-before:

@@ -83,6 +83,8 @@ f0d81e82c8ceff4d2056f15e6e21867efead8144bdcc2df9eba07168b18dea79  4 - Essais/1 -
 afb93f59c0d0f3fe4dcdb1d0ec2c7189b399260d1220df3df33bb7cc8c0e9614  1 - Collection/2 - OrchestrationAgentique/Monographie.pdf
 ```
 
+✎ *Les deux rendus sont entrés le même jour au commit `91ddce6`, à ces empreintes : `git show "91ddce6:<fichier>" | sha256sum` les rend.*
+
 ## 4. Quoi lire, quoi chercher à réfuter
 
 Lisez les pages indiquées en entier. Les énoncés ci-dessous sont ceux que la pièce donne elle-même pour centraux,

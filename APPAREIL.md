@@ -22,8 +22,8 @@ l'arbre.
 
 | Famille | Points d'entrée rejoués | Sortie 0 | Autre sortie, et pourquoi |
 |---|---|---|---|
-| Contrôles de document, renvois compris ([§ 3](#3-contrôles-de-document)) | 16 | 14 | `check-empaquetage.py` sort 1 sans `CARGO_TARGET_DIR` — « INDÉTERMINÉ », par construction — et 0 avec ; `check-resume.py` sort 0 sur les dix rendus qu'il sait lire, 1 sur l'article et sur le mémoire de 1997, où il est inapplicable ([§ 6](#6-alertes-que-la-mesure-porte-et-quaucun-contrôle-ne-bloque)) |
-| Harnais de mutation ([§ 4](#4-validation-par-mutation)) | 6 | 6 | — |
+| Contrôles de document, renvois compris ([§ 3](#3-contrôles-de-document)) | 16 | 14 | `check-empaquetage.py` sort 1 sans `CARGO_TARGET_DIR` — « INDÉTERMINÉ », par construction — et 0 avec ; `check-resume.py` sort 0 sur les dix rendus qu'il sait lire, 1 sur l'article et sur le mémoire de 1997, où il est inapplicable ([§ 6](#6-alertes-que-la-mesure-porte-et-quaucun-contrôle-ne-bloque)). ✎ *Après le relevé, le même jour : 19 points d'entrée, 17 à 0, avec `check-synthese.py`, `check-vol1.py` et `check-lisibilite.py` ; `check-resume.py` à 0 sur onze rendus, note de synthèse comprise* |
+| Harnais de mutation ([§ 4](#4-validation-par-mutation)) | 6 | 6 | — ✎ *9 et 9 après le relevé, le même jour, avec ceux de la note de synthèse, du Vol. I et de la lisibilité* |
 | Fabrication : graveurs, assembleurs, composition ([§ 5](#5-fabrication-et-simulateur)) | 7 | 7 | — ; les cinq graveurs et assembleurs rendent des fichiers identiques à l'octet à l'index |
 | Simulateur : cargo, bancs, exemples ([§ 5](#5-fabrication-et-simulateur)) | 11 | 11 | `banc_nf05` affiche ✗ NF-05 et sort 0 : écart consigné au registre du simulateur |
 
@@ -41,7 +41,7 @@ dossier.
 
 | Tâche | Ce qu'elle rejoue |
 |---|---|
-| Documents | les contrôles de document du § 3, sauf `check-empaquetage.py` et `check-renvois.py`, qui a sa tâche ; `check-resume.py` sur les dix rendus qu'il sait lire ; `genere.py --verifier` une seconde fois sans mode UTF-8, sous Windows ; les cinq harnais de mutation de document du § 4 ; puis, **dans l'arbre**, les cinq graveurs et assembleurs du § 5 avec `assemble-bibliographie.py` et — sous Linux seulement — `reporter-volumetrie.py` en mode écriture, suivis de deux gardes — `git status --porcelain` vide, aucun fichier en CRLF — ; et une garde qui refuse tout script portant ⚠ ou ☑ sans `sys.stdout.reconfigure` |
+| Documents | les contrôles de document du § 3, sauf `check-empaquetage.py` et `check-renvois.py`, qui a sa tâche ; `check-resume.py` sur les dix rendus qu'il sait lire ; `genere.py --verifier` une seconde fois sans mode UTF-8, sous Windows ; les cinq harnais de mutation de document du § 4 — ✎ *sept depuis le même jour : `check-synthese.py` et `check-vol1.py` y entrent avec leur harnais (tâches T7.2 et T6.5)* — ; puis, **dans l'arbre**, les cinq graveurs et assembleurs du § 5 avec `assemble-bibliographie.py` et — sous Linux seulement — `reporter-volumetrie.py` en mode écriture, suivis de deux gardes — `git status --porcelain` vide, aucun fichier en CRLF — ; et une garde qui refuse tout script portant ⚠ ou ☑ sans `sys.stdout.reconfigure` |
 | Renvois | `Python/check-renvois.py` et son harnais ; ✎ *depuis la tâche T4.4 du 15 septembre 2026, `Python/check-lisibilite.py` et son harnais* |
 | Simulateur | `cargo fmt --all --check`, `cargo clippy`, `cargo test`, avec un plancher de 470 tests |
 
@@ -77,7 +77,7 @@ badge n'a pas de verdict à rendre, et chaque sortie de cette page est celle du 
 |---|---|---|---|
 | `python Python/check-veille.py` | `3 - Veille/` | **0** | 94 sections, 24 tableaux, 25 questions ouvertes ; 342 entrées, 306 titres (3 homonymies arbitrées) ; 342 définies, 342 citées |
 | `python Python/check-revue.py` | `3 - Veille/` | **0** | 192 définies ; 142 sur 142 neuves citées nommément, 23 sur 50 du socle discutées ; 8 tableaux, 8 légendes ; 12 attestées, 32 autodéclarées, 145 sans revue sur 189 arXiv |
-| `python Python/check-synthese.py`, puis son harnais `python Python/check-synthese-mutations.py` | `3 - Veille/` | **0** et **0** | note de synthèse (T7.2), rejouée le 15 septembre 2026 après la reprise des écarts du critique : 21 pages ; parité du PDF, 269 331 octets hors horodatage ; 208 renvois de section résolus ; 349 chiffres sur 129 passages retrouvés dans la section citée ; niveaux de preuve conformes au vocabulaire de chaque volume, régime de publication des prépublications arXiv compris ; 54 notices listées et citées ; résumé à +165 pt ; 3 décompositions et parts qui tombent juste. Harnais : copie intacte tenue, 26 mutations au verdict attendu, dont 3 muettes. `--rendre` recompose le PDF ✎ *Après les résumés anglais du même jour (tâche T7.1) : 22 pages, borne haute du critère ; parité 272 197 octets hors horodatage ; résumé +359,1 pt ; harnais : copie intacte tenue, 26 mutations au verdict attendu* |
+| `python Python/check-synthese.py`, puis son harnais `python Python/check-synthese-mutations.py` | `3 - Veille/` | **0** et **0** | note de synthèse (T7.2), rejouée le 15 septembre 2026 après la reprise des écarts du critique : 21 pages ; parité du PDF, 269 331 octets hors horodatage — ✎ *22 pages et 272 187 octets le même jour, après le résumé anglais (T7.1) et la correction du résumé, qui disait « au-delà du premier saut » là où les trois volumes disent « deux sauts »* ; 208 renvois de section résolus ; 349 chiffres sur 129 passages retrouvés dans la section citée ; niveaux de preuve conformes au vocabulaire de chaque volume, régime de publication des prépublications arXiv compris ; 54 notices listées et citées ; résumé à +165 pt ; 3 décompositions et parts qui tombent juste. Harnais : copie intacte tenue, 26 mutations au verdict attendu, dont 3 muettes. `--rendre` recompose le PDF ✎ *Après les résumés anglais du même jour (tâche T7.1) : 22 pages, borne haute du critère ; parité 272 197 octets hors horodatage ; résumé +359,1 pt ; harnais : copie intacte tenue, 26 mutations au verdict attendu* |
 | `python Python/check-traite.py` | `4 - Essais/1 - Traité/` | **0** | 143 pages ; 72 511 mots, 19 figures ; 123 notices, 123 citées nommément ; parité du PDF, 1 551 326 octets hors horodatage, refait à l'identique ✎ *Après les résumés anglais du même jour (tâche T7.1) : 144 pages, dont une page « Abstract » sans folio, les 143 folios inchangés ; 73 113 mots, `MOTS_REF` recalé ; parité 1 555 019 octets hors horodatage* |
 | `python Python/check-empaquetage.py` | `4 - Essais/1 - Traité/` | **0** avec `CARGO_TARGET_DIR`, **1** sans | avec : module WASM refait dans un dossier jetable, 3 670 027 octets identiques à l'octet à celui de `web/`, glu 68 213 octets ; sans : « INDÉTERMINÉ », la construction irait dans le `target/` du dépôt |
 | `python PRD/check-compendium.py` | `2 - Compendium/` | **0** | 50 pièces, **P1-P10** ; **5 rapports déclaratifs** |
@@ -90,8 +90,8 @@ badge n'a pas de verdict à rendre, et chaque sortie de cette page est celle du 
 | `python figures/genere.py --verifier` | `2 - Compendium/` | **0**, et **0 sans `PYTHONUTF8`** | 118 figures : 115 gravées sur 49 pièces, 3 antérieures au programme vérifiées à l'empreinte, calculée sur les octets ramenés en LF. *À 8 h 44 le même jour, sur `e1b1b9e` sans correction, il sortait 1 — trois empreintes gelées sur des octets CRLF — et, sans `PYTHONUTF8`, `UnicodeEncodeError` sur le premier ⚠ : la condition B3 de l'évaluation, que les tâches T0.2 et T0.3 du plan lèvent* |
 | `python rejeu-politique.py` | `4 - Essais/2 - Article/` | **0** | déroulés A et B, sensibilité, table de transitions totale — 36 cases, 37 transitions exercées —, gardes de `hors_service` ; RÉF-6 non déclenchée. ✎ *Au relevé de 9 h 06 à 9 h 20, la sortie lisait « 36/36 » sous une réserve : 35 cases rejouées entières, la case (étalonnage, E2) à moitié, sa branche « sinon → G » exercée par aucune assertion. Levée le même jour par la tâche T6.7, qui donne au rejeu un verdict d'étalonnage en entrée : la sortie lit « 37/37 »* |
 | `python check-article.py` | `4 - Essais/2 - Article/` | **0** | 77 entrées définies, 77 citées ; parité du PDF, 751 989 octets hors horodatage ; 165 renvois « § » vers 42 cibles ; 10 cardinaux du `README` ; 8 scores ; ✎ *et, depuis la tâche T6.7 du même jour, un contrôle [6] qui exécute le rejeu : 37/37 transitions exercées* ✎ *Après les résumés anglais du même jour (tâche T7.1) : parité 757 261 octets hors horodatage ; mesures du `README` reportées* |
-| `python "3 - Veille/Python/check-resume.py" <fichier.pdf>` | racine | **0** sur dix, **1** sur deux | dégagement sous la marge basse de 72 pt : Vol. I +236,8 ; Vol. II +170,2 ; Vol. III +206,9 ; `Compendium.pdf` **+1,7, « LIMITE »** ; note SDLC +154,8 ; revue +151,2 ; veille +99,2 ; traité +122,3 ; planche *Cinq schémas* **+0,3, « LIMITE »** ; état de l'art +12,6. Sort 1 sur l'article (« déborde de 27.7 pt ») et sur le mémoire de 1997 (« page de titre illisible ») — [§ 6](#6-alertes-que-la-mesure-porte-et-quaucun-contrôle-ne-bloque) ✎ *Après les résumés anglais du même jour (tâche T7.1) : état de l'art +135,1, note de synthèse +359,1 — leur page de titre ne porte plus que le bloc de titre — ; Vol. I à III, note SDLC, revue, veille et traité inchangés ; l'article sort toujours 1, −27,7* |
-| `python Python/check-renvois.py` | racine | **0** | 225 `.md` suivis ou non ignorés, 2 079 renvois relatifs dont 75 à fragment ; 0 mort, 1 toléré — une ancre de citation verbatim de la spécification A2A, déclarée au script |
+| `python "3 - Veille/Python/check-resume.py" <fichier.pdf>` | racine | **0** sur dix, **1** sur deux | dégagement sous la marge basse de 72 pt : Vol. I +236,8 ; Vol. II +170,2 ; Vol. III +206,9 ; `Compendium.pdf` **+1,7, « LIMITE »** ; note SDLC +154,8 ; revue +151,2 ; veille +99,2 ; traité +122,3 ; planche *Cinq schémas* **+0,3, « LIMITE »** ; état de l'art +12,6. Sort 1 sur l'article (« déborde de 27.7 pt ») et sur le mémoire de 1997 (« page de titre illisible ») — [§ 6](#6-alertes-que-la-mesure-porte-et-quaucun-contrôle-ne-bloque) ✎ *Après les résumés anglais du même jour (tâche T7.1) : état de l'art +135,1, note de synthèse +359,1 — leur page de titre ne porte plus que le bloc de titre — ; Vol. I à III, note SDLC, revue, veille et traité inchangés ; l'article sort toujours 1, −27,7* ✎ *Et, depuis la tâche T4.5 du même jour (commit `fc33db1`), `Compendium.pdf` +21,5, sans « LIMITE » : rejoué sur `91ddce6`, 0 sur onze rendus, « LIMITE » sur la seule planche* |
+| `python Python/check-renvois.py` | racine | **0** | 225 `.md` suivis ou non ignorés, 2 079 renvois relatifs dont 75 à fragment ; 0 mort, 1 toléré — une ancre de citation verbatim de la spécification A2A, déclarée au script ✎ *Rejoué sur `91ddce6` : 238 `.md`, 2 794 renvois relatifs dont 426 à fragment ; 0 mort, 1 toléré* |
 | `python Python/check-vol1.py` | `1 - Collection/1 - InteroperabiliteAgentique/` | **0** | 570 pages, 570 au `README` du volume, `/Creator` Typst 0.15.1 ; 7 bibliographies, 1 199 notices : 1 099 retrouvées au corps, 45 déclarées « contexte non cité », 55 au registre du script ; parité du PDF, 6 359 694 octets hors horodatage, refait à l'identique — sans Pandoc ni mermaid-cli, « NON MESURÉ ». ✎ *Ajouté le 15 septembre 2026 après le relevé (tâche T6.5) ; la rangée lisait jusque-là « Le Vol. I n'a aucun contrôle propre »* ✎ *Après les résumés anglais du même jour (tâche T7.1) : 571 pages, 571 au `README` ; parité 6 365 677 octets hors horodatage, refait à l'identique sur ce poste avec Pandoc, Typst et mermaid-cli* |
 | `python Python/check-lisibilite.py` | racine | **0** | 18 `README.md` : 22 à 40 lignes, gras de 0,9 % à 2,9 % et tout entier en titres courants, aucun marqueur ⚠ ☑ ☐ ✎, chacun relié à un `JOURNAL.md` qui existe ; seuils écrits en tête du script. ✎ *Ajouté le 15 septembre 2026 après le relevé (tâche T4.4), avec la réécriture des pages d'accueil (T4.2) et les onze `JOURNAL.md` qui reçoivent leur chronique (T4.1)* |
 
@@ -147,7 +147,7 @@ dépôt.
 
 | Alerte | Mesure | Ce qu'elle veut dire |
 |---|---|---|
-| Résumé de `Compendium.pdf` | `check-resume.py` sort 0 et écrit « LIMITE : 1.7 pt de dégagement seulement » | la moindre reprise du résumé le fait rogner sous la marge basse, sans que Pandoc ni Typst le signalent ; la tâche T4.5 du plan le condense |
+| Résumé de `Compendium.pdf` | `check-resume.py` sort 0 et écrit « LIMITE : 1.7 pt de dégagement seulement » | la moindre reprise du résumé le fait rogner sous la marge basse, sans que Pandoc ni Typst le signalent ; la tâche T4.5 du plan le condense. ☑ *Levée le 15 septembre 2026 par cette tâche (commit `fc33db1`) : +21,5 pt, 1 000 pages tenues* |
 | Résumé de la planche *Cinq schémas* | « LIMITE : 0.3 pt » | même risque, plus serré |
 | Rejeu de l'article | 35,5 cases exercées sur 36 : 35 entières, la case (étalonnage, E2) à moitié | « 36/36 » dit que la table est totale, non que chaque branche est exercée ; la tâche T6.7 donne au rejeu un verdict d'étalonnage en entrée. ☑ *Levée le 15 septembre 2026 : 36 cases, 37 transitions exercées sur 37* |
 | `check-resume.py` sur `article-hpc-qpu.pdf` | sort 1, « le résumé déborde de 27.7 pt » | **verdict faux, contrôle inapplicable** : le gabarit arXiv pose un folio en pied de la page de titre, sous la marge par construction, et compose le résumé dans un bloc que Typst reporte à la page suivante au lieu de le rogner — le risque surveillé n'existe pas dans ce gabarit |
@@ -165,17 +165,17 @@ son § 8.4.
 |---|---|---|
 | `check-compendium.py` | P1-P8, 3 rapports déclaratifs | P1-P10, 5 rapports déclaratifs |
 | `check-toc.py` | C1-C15 | C1-C16 |
-| `check-sieges-mutations.py` | 108 mutations | 114 |
-| `check-compendium-mutations.py` | 17 sur 17 | 23 |
+| `check-sieges-mutations.py` | 108 mutations | 114 ✎ *115 après la tâche T4.3 du même jour (§ 4)* |
+| `check-compendium-mutations.py` | 17 sur 17 | 23 ✎ *30 après la tâche T4.3 du même jour (§ 4)* |
 | `cargo test` | 467 tests | 470 |
 | `check-toc-mutations.py` | 23 sur 23 | 24, M1 à M16b |
-| `check-traite.py` | 72 110 mots | 72 511 |
+| `check-traite.py` | 72 110 mots | 72 511 ✎ *73 113 après la tâche T7.1 du même jour (§ 3)* |
 | `genere.py --verifier` | 0 | 1 à 8 h 44 sur `e1b1b9e` ; 0 après les tâches T0.2 et T0.3 |
 | graveurs et assembleurs | « identiques à l'octet » | à 8 h 50, sur des scripts qui écrivaient en mode texte, 19 SVG du traité et les deux `Monographie.md` ne l'étaient que modulo fins de ligne ; identiques à l'octet après la tâche T0.4 |
 | `rejeu-politique.py` | table 36/36, sans réserve | 36 cases renseignées, 35 rejouées entières ; 37 transitions exercées sur 37 après la tâche T6.7 |
-| `check-resume.py` | 0 sur les neuf rendus livrés | 0 sur les neuf, et sur la note ; deux « LIMITE » (§ 6) |
-| `typst compile` de l'article | 750 902 octets | 752 159 |
-| renvois Markdown | 220 `.md`, 1 992 liens relatifs, 4 morts, par une mesure qu'aucun contrôle versionné ne portait | 225 `.md`, 2 079 renvois relatifs, 0 mort, par `check-renvois.py`, qui vérifie aussi les ancres |
+| `check-resume.py` | 0 sur les neuf rendus livrés | 0 sur les neuf, et sur la note ; deux « LIMITE » (§ 6) ✎ *une seule, la planche, après la tâche T4.5 du même jour* |
+| `typst compile` de l'article | 750 902 octets | 752 159 ✎ *757 438 après la tâche T7.1 du même jour* |
+| renvois Markdown | 220 `.md`, 1 992 liens relatifs, 4 morts, par une mesure qu'aucun contrôle versionné ne portait | 225 `.md`, 2 079 renvois relatifs, 0 mort, par `check-renvois.py`, qui vérifie aussi les ancres ✎ *238 `.md` et 2 794 renvois, 0 mort, sur `91ddce6`* |
 | points d'entrée absents des tableaux | sept : `check-article.py`, `check-article-mutations.py`, `check-empaquetage.py`, `verifier-piece.py`, `verifier-piece-mutations.py`, `rendre-piece.py`, `reporter-volumetrie.py` | aucun ; `rendre-piece.py` est rejoué au travers de `verifier-piece.py` |
 | intégration continue | « rien n'est câblé » | flux écrit, jamais exécuté (§ 2) |
 
@@ -186,7 +186,10 @@ son § 8.4.
   sont jugés ici que sur leurs sorties versionnées — pages, métadonnées, géométrie de la page de
   titre, et parité là où `check-traite.py` et `check-article.py` la mesurent. ✎ *Après le relevé,
   le même jour, ceux du Vol. I et de `5 - Recension/` ont été rejoués et leurs PDF recomposés
-  (tâches T6.1 à T6.3 et T6.6).*
+  (tâches T6.1 à T6.3 et T6.6).* ✎ *Puis, pour les résumés anglais (tâche T7.1, commit `91ddce6`),
+  les PDF des Vol. I, II et III, du traité, de la veille, de la revue, de l'état de l'art, de la note
+  SDLC, de la note de synthèse et de l'article ont été recomposés ; le compendium l'avait été par les
+  tâches T4.3 et T4.5 (commits `fc33db1`, `8e2feab`) ; la planche ne l'a pas été.*
 - `2 - Compendium/build/echantillon.py`, maquette de gabarit qui écrit deux PDF à la racine du
   volume.
 - Les deux `.html` de `5 - Recension/` : leur commande prend une feuille de style que le dépôt ne
@@ -217,7 +220,7 @@ Chaque commande se lance de la racine du dépôt ; la sortie est celle du 15 sep
 
 | Chiffre | Commande | Sortie |
 |---|---|---|
-| pages des PDF | `pymupdf.open(f).page_count` sur chaque `*.pdf` de `git ls-files` | 569, 387, 427, 1 000, 143, 144, 59, 186 et 7 pour les neuf rendus des huit livrables — **2 922** ✎ *le Vol. I passe à 570 le même jour, recomposé sous Typst 0.15.1 (tâche T6.6) : 2 923, et 3 010 sur onze PDF* ✎ *le même jour, la décision D-18 sort le Vol. IV (1 000) du compte : sept livrables, rendus en huit PDF* ; 49 pour la note SDLC et 38 pour l'article — **3 009** sur onze PDF composés ; 146 pour le mémoire de 1997 |
+| pages des PDF | `pymupdf.open(f).page_count` sur chaque `*.pdf` de `git ls-files` | 569, 387, 427, 1 000, 143, 144, 59, 186 et 7 pour les neuf rendus des huit livrables — **2 922** ✎ *le Vol. I passe à 570 le même jour, recomposé sous Typst 0.15.1 (tâche T6.6) : 2 923, et 3 010 sur onze PDF* ✎ *le même jour, la décision D-18 sort le Vol. IV (1 000) du compte : sept livrables, rendus en huit PDF* ; 49 pour la note SDLC et 38 pour l'article — **3 009** sur onze PDF composés ; 146 pour le mémoire de 1997 ✎ *après les résumés anglais du même jour (tâche T7.1), sur `91ddce6` : 571, 390, 428, 144, 145, 60, 187 et 7 pour les huit PDF des sept livrables — 1 932 — ; 1 000 pour le compendium ; 50 pour la note SDLC, 22 pour la note de synthèse, 38 pour l'article — 3 042 sur douze PDF composés* |
 | fichiers et octets au commit | `git ls-tree -r -l e1b1b9e \| awk '{s+=$4} END {print NR, s}'` | 589 fichiers, 79 704 921 octets |
 | fichiers par extension | `git -c core.quotepath=off ls-tree -r --name-only e1b1b9e` | 222 `.md`, 142 `.svg`, 76 `.rs`, 54 `.html`, 39 `.py`, 15 `.pdf`, 9 `.toml`, 8 `.sh`, 7 `.template`, 4 `.gitignore`, 3 `.typ`, 2 `.mjs`, 2 `LICENSE`, 1 `.txt`, 1 `.lua`, 1 `Cargo.lock`, 1 `.json`, 1 `.bib`, 1 `.gitattributes` |
 | lignes de Rust | `git ls-files -z '*.rs' \| xargs -0 cat \| wc -l` | 30 939 lignes dans 76 fichiers ; 30 488 dans les 71 de `crates/` |
@@ -226,4 +229,4 @@ Chaque commande se lance de la racine du dépôt ; la sortie est celle du 15 sep
 | diapositives de `NiveauMaturité.html` | `grep -c '<section class="slide"'` | 7 |
 | `README.md` versionnés | `git ls-files '*README.md' \| wc -l` | 18 |
 | historique | `git log --format=%an \| sort \| uniq -c` ; `git log --merges` ; `git tag` | 328 commits du 24 juin au 15 septembre 2026 — 306 André-Guy Bruneau, 20 `Claude`, 2 `agbruneau` ; 4 fusions ; une étiquette, `mono-v1.0` |
-| renvois Markdown | `python Python/check-renvois.py` | 225 `.md` suivis ou non ignorés, 2 079 renvois relatifs dont 75 à fragment ; 0 mort, 1 toléré — une ancre de citation verbatim de la spécification A2A, déclarée au script |
+| renvois Markdown | `python Python/check-renvois.py` | 225 `.md` suivis ou non ignorés, 2 079 renvois relatifs dont 75 à fragment ; 0 mort, 1 toléré — une ancre de citation verbatim de la spécification A2A, déclarée au script ✎ *sur `91ddce6` : 238 `.md`, 2 794 renvois dont 426 à fragment ; 0 mort, 1 toléré* |

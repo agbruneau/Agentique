@@ -3,7 +3,7 @@
 Le dossier porte deux choses. Le *Traité sur les systèmes multiagents en essaim*, [`Traité.pdf`](Trait%C3%A9.pdf) — quatrième édition du
 2 septembre 2026, 143 p. numérotées et une page « Abstract » : la coordination par le milieu, ce qu'un essaim gagne à ne pas s'accorder et ce qu'il le paie. Et
 `stigmergie-lab`, simulateur déterministe en Rust qui le transpose sous une règle : tout chiffre affiché doit être retrouvé par la
-mesure, ou l'écart consigné. Cinq écarts le sont, dont deux portent contre le traité, au [registre des décisions](docs/decisions.md).
+mesure, ou l'écart consigné. Cinq écarts le sont, dont deux portent contre le traité depuis le reclassement du 17 août 2026 — trois avant lui, compte que cite la troisième édition —, au [registre des décisions](docs/decisions.md).
 
 **Statut :** le traité est livrable (Vol. V) — fixé le 15 septembre 2026 par la décision [D-18](../../2%20-%20Compendium/PRD/PRD.md#d-18) ;
 le simulateur, sa transposition, est hors compte. Dépôt rouvert le même jour par [D-17](../../2%20-%20Compendium/PRD/PRD.md#d-17).

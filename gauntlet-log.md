@@ -201,3 +201,20 @@ T7.4) n'ont pas de critique à l'aveugle : l'orchestrateur rejoue leurs critère
 - Non tenu : `check-resume.py` sur l'article (1 avant comme après ; inapplicable déclaré, folio arXiv sous la marge). Note de synthèse à 22 p., borne haute de son critère.
 - Rejoué par l'orchestrateur : pymupdf → Abstract en p. 2 ou 3 des neuf PDF, pages 571 / 390 / 428 / 144 / 145 / 60 / 187 / 22 / 50, 7 « A-i » au Vol. II ; `check-resume.py` → 0 sur les huit applicables ; batterie de 17 contrôles et harnais → 0 (renvois 2 794 / 0 mort, lisibilité, compendium, `decompte.sh`, `genere.py`, veille, revue, synthèse et 26 mutations, traité, article et 9 mutations, rejeu 37/37, Vol. I et 5 mutations).
 - Coût : 577 k jetons, 160 appels, 50 min.
+- Commit `91ddce6` poussé (T7.1).
+
+## Phase 8
+- Non entreprise, par la condition du plan lui-même (« à n'entreprendre que si la phase 4 ne suffit pas au lecteur ») : le critique de M7a a jugé les pages d'accueil lisibles en une page, chronique retrouvée, victoire à l'aveugle contre la barre.
+
+## Passe de lissage finale
+- Lancée sur `91ddce6` : fidélité des dix résumés anglais au français ; « deux » / « trois » écarts du traité ; `CONTRIBUTIONS.md` (incise [A-i], pièces nées le 15 septembre) ; coutures chiffrées après recomposition. Vingtième agent, plafond atteint.
+- CI verte au run `35006324938` sur `91ddce6` (T7.1 ; parités de l'article et de la note de synthèse recomposés tenues sous Linux et Windows).
+- Lissage final rendu : aucune infidélité dans les dix résumés anglais ; 13 incohérences corrigées en six fichiers (« deux depuis le 17 août, trois avant » à l'accueil du traité et au registre ; `CONTRIBUTIONS.md` étendu aux pièces du jour, incise [A-i] ; empreintes de `RELECTURE.md` confirmées à `91ddce6` ; `APPAREIL.md` et `PRD.md:918` par incises datées). Signalés : `4 - Essais/` sans `README` ; `JOURNAL.md:77` dit « trois » (chronique reçue mot pour mot) ; guillemets devenus typographiques au Vol. II p. 150 ; « premier saut » de la note contre « deux sauts » de la veille. Coût : 424 k jetons, 118 appels, 39 min.
+- **Correction de fond par l'orchestrateur** sur le dernier signalement : le résumé de la note de synthèse disait « au-delà du premier saut de délégation » (et « beyond the first delegation hop ») quand les trois volumes et le corps de la note (l. 278, 334, 419) disent « deux sauts » — faute d'exactitude, non matière doctrinale. Source corrigée en français et en anglais, PDF recomposé (22 p.), `check-synthese.py` → 0, 26 mutations, `check-resume.py` → 0 ; `APPAREIL.md` par incise.
+- Rejoué avant commit : `check-renvois.py` et harnais, `check-lisibilite.py`, `check-compendium.py`, `check-toc.py`, `check-sieges.py`, `decompte.sh --verifier`, `check-traite.py`, `check-article.py`, `check-synthese.py` → 0.
+
+## Bilan de la suite « tout compléter »
+- **Agents** : 20 lancés sur un plafond annoncé d'environ 20 (7 à la première boucle ; 6 bâtisseurs, 5 critiques et 1 lissage ensuite, plus 2 reprises de bâtisseurs sans agent neuf). Environ 10,9 M jetons de sous-agents au total.
+- **Verdicts à l'aveugle contre la barre** : 8 sur 8 gagnés (M1, M2, M3, M4, M6, M7a, M7b, M8) ; deux victoires suivies d'une reprise parce que l'écart était une faute d'exactitude ou de statut (M8, M7b).
+- **Fermé** : phases 0, 1, 2, 3 ; phase 4 sauf le seuil de T4.3 (critère du plan intenable) ; phase 6 ; T5.4 ; T7.1 ; T7.2. CI verte à chaque commit poussé après correction.
+- **Non fermé, hors d'atteinte** : T5.1 (relecteurs à nommer, DA-4), T5.2, T5.3 (relecture humaine), T7.3 (re-clôture, DOI). **Soumis à l'auteur** : T7.4 (LFS et quota de bande passante de la CI) ; consigne « aucun statut au colophon » ; liste hors compte déduite par D-18 ; `LICENSE:44-45` « avant ». **Non entrepris** : phase 8 (condition du plan non remplie).

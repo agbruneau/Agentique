@@ -149,7 +149,11 @@ NF-15 : « un écart est un défaut du simulateur **ou** une erreur du traité, 
 les deux méritent d'être trouvés. » **Cinq** à ce jour, tous consignés dans le
 code à l'endroit où ils se constatent.
 
-**Trois** d'entre eux contredisent un énoncé du traité. Deux sont repris au §0 du
+**Trois** d'entre eux contredisent un énoncé du traité ✎ *— classement antérieur
+au 17 août 2026, celui que cite la troisième édition ; depuis le reclassement
+ci-dessous, **deux** portent contre l'édition livrée (Φ_c et le contrôleur
+d'élasticité), deux sont absorbés par elle et un est hors traité (`mul_add`)*.
+Deux sont repris au §0 du
 PRD — le budget de retard du mode « moyeu » et la dérive de la somme sans
 relance ; le troisième est Φ_c, relevé par la phase 6, et il porte contre le
 traité **autant que** contre le PRD, puisque c'est le §8.1 qui propose la
