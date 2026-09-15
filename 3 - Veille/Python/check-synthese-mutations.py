@@ -100,7 +100,7 @@ def m2c(tmp):
 
 def m3(tmp):
     """[3] — un renvoi vers une section que la veille n'a pas."""
-    note(tmp, "[VI §7.1, réf. 272 — individuel]", "[VI §7.19, réf. 272 — individuel]")
+    note(tmp, "[VI §7.1, réf. 272 — individuel, sans revue]", "[VI §7.19, réf. 272 — individuel, sans revue]")
 
 
 def m3b(tmp):
@@ -166,6 +166,28 @@ def m5d(tmp):
     note(tmp, "[VII §3.1 — corpus]", "[VII §3.1 — attestée]")
 
 
+def m5e(tmp):
+    """[5] — le régime de publication d'une prépublication arXiv retiré de l'étiquette : l'écart
+    que le critique de la reprise du 15 septembre 2026 a relevé sur le 91,8 %."""
+    note(tmp, "[VI §7.1, réf. 272 — individuel, sans revue]", "[VI §7.1, réf. 272 — individuel]")
+
+
+def m5f(tmp):
+    """[5] — un régime de publication prêté à une notice qui n'est pas une prépublication."""
+    note(tmp, "[VI §12.2, réf. 80 — individuel]", "[VI §12.2, réf. 80 — individuel, sans revue]")
+
+
+def m8(tmp):
+    """[8] — une décomposition qui ne somme plus, chaque terme restant celui de la source :
+    l'écart de l'audit du 8 août, six auto-citations omises."""
+    note(tmp, "269 = 179 + 54 + 30 + 6", "269 = 179 + 54 + 30")
+
+
+def m8b(tmp):
+    """[8] — une part qui n'est pas son pourcentage ; 63 % figure pourtant à la section citée."""
+    note(tmp, "145 sur 189 · 77 %", "145 sur 189 · 63 %")
+
+
 def m6(tmp):
     """[6] — une notice listée que rien ne cite."""
     note(tmp, "- **VI [80]**", "- **VI [1]** A survey of agent interoperability protocols\n- **VI [80]**")
@@ -173,7 +195,7 @@ def m6(tmp):
 
 def m6b(tmp):
     """[6] — une notice citée par un renvoi, absente des références."""
-    note(tmp, "[VI §7.1, réf. 272 — individuel]", "[VI §7.1, réf. 272, 271 — individuel]")
+    note(tmp, "[VI §7.1, réf. 272 — individuel, sans revue]", "[VI §7.1, réf. 272, 271 — individuel, sans revue]")
 
 
 def m6c(tmp):
@@ -219,11 +241,15 @@ MUTATIONS = [
     ("M5b [5] « pipeline » hors 4.6-4.13", m5b, "5", "echec", False, "ne vaut qu'aux sections"),
     ("M5c [5] étiquette hors vocabulaire", m5c, "5", "echec", False, "hors du vocabulaire du Vol. VIII"),
     ("M5d [5] régime sans notice", m5d, "5", "echec", False, "exige la notice"),
+    ("M5e [5] prépublication sans son régime", m5e, "5", "echec", False, "prépublication arXiv au régime « sans revue »"),
+    ("M5f [5] régime prêté à une notice non arXiv", m5f, "5", "echec", False, "exige la notice arXiv"),
     ("M6  [6] notice listée jamais citée", m6, "6", "echec", False, "VI [1] listée, citée par aucun renvoi"),
     ("M6b [6] notice citée jamais listée", m6b, "6", "echec", False, "VI réf. 271 citée par un renvoi"),
     ("M6c [6] fragment absent de la notice", m6c, "6", "echec", False, "ne se lit pas dans la notice 54"),
     ("M6d [6] clé appelée sans entrée", m6d, "6", "echec", False, "[PLANS] appelée dans le corps"),
     ("M7  [7] résumé qui déborde, PDF recomposé", m7, "7", "echec", True, "check-resume.py"),
+    ("M8  [8] décomposition qui ne somme plus", m8, "8", "echec", False, "les termes font 263"),
+    ("M8b [8] part fausse, pourcentage présent à la source", m8b, "8", "echec", False, "145 sur 189 font 76,7 %"),
 ]
 
 

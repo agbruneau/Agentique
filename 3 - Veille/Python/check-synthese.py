@@ -9,7 +9,7 @@ Chaque affirmation s'y ferme sur un renvoi de la forme
     [VI §2 — déclaration · VII §2.3 — déclaration]      [VIII §13, QO 5 — question]
 
 qui couvre le texte écoulé depuis le renvoi précédent du même paragraphe (une ligne
-de tableau entière). Sept contrôles :
+de tableau entière). Huit contrôles :
 
   [1] PAGES        — le PDF versionné compte 20 pages à 2 près (critère de T7.2) ;
   [2] PARITÉ       — ce PDF est celui que la source rend aujourd'hui, à l'octet hors
@@ -26,13 +26,17 @@ de tableau entière). Sept contrôles :
                      des deux côtés ;
   [5] NIVEAUX      — l'étiquette de preuve appartient au vocabulaire du volume ; pour
                      la revue, elle est le régime le plus faible des notices citées, lu
-                     à la notice ; pour la veille, « pipeline » ne vaut qu'aux sections
-                     4.6 à 4.13, que la veille déclare le haut du document (VI §2.2) ;
+                     à la notice ; pour la veille et l'état de l'art, elle porte en second
+                     terme ce régime quand une notice citée est une prépublication arXiv ;
+                     « pipeline » ne vaut qu'aux sections 4.6 à 4.13, que la veille
+                     déclare le haut du document (VI §2.2) ;
   [6] BIBLIOGRAPHIE — close dans les deux sens : toute notice citée par un renvoi est
                      listée, toute notice listée est citée, et son fragment se lit dans
                      la notice du volume sous ce numéro ; toute clé [CLÉ] du corps a son
                      entrée, et toute entrée est citée ;
-  [7] RÉSUMÉ       — `check-resume.py` rend « OK » sur la page de titre du PDF.
+  [7] RÉSUMÉ       — `check-resume.py` rend « OK » sur la page de titre du PDF ;
+  [8] SOMMES       — une décomposition « 269 = 179 + 54 + 30 + 6 » tombe juste, une part
+                     « 145 sur 189 · 77 % » est son pourcentage arrondi.
 
 ⚠ Ce que [4] ne voit pas, et c'est une limite déclarée : un chiffre remplacé par un
 autre qui figure AUSSI dans la section citée passe ; un chiffre écrit en lettres hors
@@ -453,18 +457,48 @@ def regime(notice):
     return "attestée"
 
 
+def regime_hors_revue(notice):
+    """Régime de publication d'une notice de la veille ou de l'état de l'art : il n'existe que
+    pour une pièce déposée sur arXiv. Sans DOI, sans actes ni `journal_ref` à la notice, c'est une
+    prépublication — « sans revue », au sens où la revue l'entend (VII §2.2) —, que la notice le
+    dise (« Aucune attestation de publication en notice ») ou qu'elle se taise."""
+    if "arXiv" not in notice:
+        return None
+    if re.search(r"doi:\s*10\.|Proceedings|journal_ref", notice) and "Aucune attestation" not in notice:
+        return "attestée"
+    return "autodéclarée" if "acceptation annoncée" in notice else "sans revue"
+
+
 def niveaux(unites, vols):
+    """Ajout de la reprise du 15 septembre 2026 : une étiquette de la veille ou de l'état de l'art
+    porte, après une virgule, le régime de publication de la pièce citée quand celle-ci est une
+    prépublication arXiv — « individuel, sans revue ». À régime égal, étiquette égale : sans ce
+    second terme, le 91,8 % d'un audit non révisé s'affichait « individuel » quand le 40,55 % d'une
+    pièce de même régime, cité par la revue, s'affichait « sans revue »."""
     bons, compte = True, {}
     for i, _, _, texte in unites:
         for m in RENVOI.finditer(texte):
             for p in parties(m.group(1)) or []:
-                v, tag = p["vol"], p["tag"]
-                compte[tag] = compte.get(tag, 0) + 1
-                ou = f"l. {i + 1} : [{v} §{p['sec']} — {tag}]"
-                if tag not in TAGS[v]:
+                v, etiquette = p["vol"], p["tag"]
+                compte[etiquette] = compte.get(etiquette, 0) + 1
+                ou = f"l. {i + 1} : [{v} §{p['sec']} — {etiquette}]"
+                tag, _, publication = etiquette.partition(", ")
+                if tag not in TAGS[v] or (publication and (v == "VII" or publication not in REGIMES)):
                     fail.append(f"[5] niveaux — {ou} : étiquette hors du vocabulaire du Vol. {v}")
                     bons = False
                     continue
+                if v != "VII":
+                    notices = vols[v]["notices"]
+                    faibles = [r for r in (regime_hors_revue(notices[n]) for n in p["refs"] if n in notices) if r]
+                    attendu = min(faibles, key=REGIMES.index) if faibles else None
+                    if attendu and publication != attendu:
+                        fail.append(f"[5] niveaux — {ou} : la notice citée est une prépublication arXiv "
+                                    f"au régime « {attendu} », que l'étiquette doit porter")
+                        bons = False
+                    elif publication and not attendu:
+                        fail.append(f"[5] niveaux — {ou} : un régime de publication exige la notice "
+                                    f"arXiv qui le porte")
+                        bons = False
                 if v == "VI" and tag == "pipeline":
                     maj = [int(x) for x in p["sec"].split(".")]
                     if not (maj[0] == 4 and len(maj) > 1 and 6 <= maj[1] <= 13):
@@ -540,6 +574,38 @@ def bibliographie(lignes, unites, vols):
               f"{len(cles)} documents, {len(listees)} notices listées, {len(citees)} citées")
 
 
+ENTIER = r"\d{1,3}(?:[   ]\d{3})+|\d+"
+SOMME = re.compile(rf"(?<![\w,.])({ENTIER})\s*=\s*((?:{ENTIER})(?:\s*\+\s*(?:{ENTIER}))+)(?![\w,])")
+PART = re.compile(r"(?<![\w,.])(\d+) sur (\d+)\s*·\s*(\d+(?:,\d+)?)\s*%")
+
+
+def sommes(unites):
+    """[8] — une décomposition écrite « 269 = 179 + 54 + 30 + 6 » tombe juste, et une part écrite
+    « 145 sur 189 · 77 % » est son pourcentage arrondi. [4] vérifie que chaque terme est celui de la
+    source ; [8] vérifie qu'ensemble ils forment ce que la note dit — ajouté à la reprise du
+    15 septembre 2026, après une décomposition de l'audit du 8 août qui ne sommait plus."""
+    bons, vues = True, 0
+    entier = lambda s: int(re.sub(r"[   ]", "", s))
+    for i, sec, _, texte in unites:
+        if sec in APPAREIL or sec is None:
+            continue
+        propre = RENVOI.sub(" ", texte)
+        for m in SOMME.finditer(propre):
+            vues += 1
+            total, termes = entier(m.group(1)), [entier(x) for x in m.group(2).split("+")]
+            if sum(termes) != total:
+                fail.append(f"[8] sommes — l. {i + 1} : « {m.group(0).strip()} » : les termes font {sum(termes)}")
+                bons = False
+        for m in PART.finditer(propre):
+            vues += 1
+            a, b, pct = int(m.group(1)), int(m.group(2)), float(m.group(3).replace(",", "."))
+            if b == 0 or abs(100 * a / b - pct) > 0.5:
+                reel = f"{100 * a / b:.1f}".replace(".", ",") if b else "—"
+                fail.append(f"[8] sommes — l. {i + 1} : « {m.group(0)} » : {a} sur {b} font {reel} %")
+                bons = False
+    return ok(8, "sommes", bons, f"{vues} décompositions et parts")
+
+
 def resume():
     if not PDF.exists():
         fail.append(f"[7] résumé — {PDF.name} absent")
@@ -572,6 +638,7 @@ def main():
     niveaux(unites, vols)
     bibliographie(lignes, unites, vols)
     resume()
+    sommes(unites)
     if fail:
         print("\nECHEC :")
         for f in fail:
