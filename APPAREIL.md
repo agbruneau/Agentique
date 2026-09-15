@@ -1,229 +1,220 @@
 # L'appareil du dépôt — refaire, ou vérifier
 
-*Ce fichier est l'annexe technique du [`README.md`](README.md), sortie de la page parce qu'elle ne
-sert à personne qui vient **lire** les huit documents : tout y est déjà rendu en PDF. Elle sert à les
-**refaire**, ou à vérifier qu'ils tiennent encore.* ✎ *Ce fichier s'est dit « non versionné », comme
-le `README.md` : c'était faux dans les deux cas — `git ls-files` les rend tous les deux.*
+*Annexe technique du [`README.md`](README.md). Elle ne sert pas à lire le corpus — les documents
+sont rendus en PDF —, mais à les refaire, ou à vérifier qu'ils tiennent encore : chaque point
+d'entrée, le dossier d'où il se lance, et ce qu'il rend.*
 
-⚠ **Les colonnes « Depuis » ont changé de nom le 5 septembre 2026, pas de contenu.** La
-réorganisation du commit `daacbec` a déplacé trois dossiers sans toucher un octet de ce qu'ils
-portent : `3 - Traité/` → **`4 - Essais/1 - Traité/`**, `4 - Veille/` → **`3 - Veille/`**,
-`6 - Article/` → **`4 - Essais/2 - Article/`**. *Toutes les commandes de cette page sont écrites au
-chemin d'aujourd'hui ; les verdicts, eux, gardent la date de leur relevé.* ⚠⚠ **Les anciens chemins
-qui subsistent plus bas sont des faits datés** — ce qui a été supprimé, restauré ou mesuré à telle
-date, sous le nom que le dossier portait alors — **et non des chemins à suivre.**
+**Relevé du 15 septembre 2026.** Chaque chiffre de cette page est la sortie d'une commande rejouée
+ce jour-là, entre 8 h 43 et 9 h 20 (heure de l'Est), sur le poste de l'auteur : Windows 11,
+Python 3.14.7, cargo et rustc 1.98.0, Typst 0.15.1, Pandoc 3.11, Node 24.19.0,
+wasm-bindgen 0.2.127, pymupdf 1.28.2 ; `PYTHONUTF8=1` sauf mention ; `CARGO_TARGET_DIR` hors du
+dépôt. **L'arbre rejoué** est le commit `e1b1b9e` plus les corrections non commitées que le
+[plan d'exécution](<Plan%20d%27ex%C3%A9cution%20%E2%80%94%20%C3%A9valuation%20acad%C3%A9mique.md>)
+y posait le même jour ; le [§ 9](#9-larbre-rejoué) dit lesquelles. Les graveurs et les assembleurs
+ont tourné dans une copie de leur dossier, ramenée aux octets de l'index : rien n'a été écrit dans
+l'arbre.
 
-## Les douze contrôles
+*La page précédente — relevés du 21 août au 5 septembre 2026 — se relit par
+`git show e1b1b9e:APPAREIL.md`, et ses chiffres y restent à leur date. Le
+[§ 7](#7-ce-que-ce-relevé-change-à-la-page-précédente) dit ce que ce relevé y change.*
 
-**Douze contrôles, douze à 0.** *Trois sortaient 1 jusqu'au 21 août 2026 ; la note ⚠ de leur ligne
-ci-dessous dit ce que chacun avait trouvé et ce qui a été fait.* ☑ *Le douzième est entré le
-1er septembre 2026 avec l'article de `6 - Article/`, aujourd'hui `4 - Essais/2 - Article/` —
-`rejeu-politique.py` —, et il ne fait pas ce
-que les onze autres font : **il exécute une condition de réfutation du document au lieu de mesurer
-sa forme.*** Rien
-n'est câblé en intégration continue — pas de `.github/` —, et chacun se lance seul, depuis le dossier
-indiqué. *Relevé du 21 août 2026 ; toutes les commandes ci-dessous ont été rejouées pour ce relevé,
-sauf mention contraire.*
+## 1. Verdict d'ensemble
 
-**a. « Ce document tient-il ? » — un contrôle par livrable**
+| Famille | Points d'entrée rejoués | Sortie 0 | Autre sortie, et pourquoi |
+|---|---|---|---|
+| Contrôles de document, renvois compris ([§ 3](#3-contrôles-de-document)) | 16 | 14 | `check-empaquetage.py` sort 1 sans `CARGO_TARGET_DIR` — « INDÉTERMINÉ », par construction — et 0 avec ; `check-resume.py` sort 0 sur les dix rendus qu'il sait lire, 1 sur l'article et sur le mémoire de 1997, où il est inapplicable ([§ 6](#6-alertes-que-la-mesure-porte-et-quaucun-contrôle-ne-bloque)) |
+| Harnais de mutation ([§ 4](#4-validation-par-mutation)) | 6 | 6 | — |
+| Fabrication : graveurs, assembleurs, composition ([§ 5](#5-fabrication-et-simulateur)) | 7 | 7 | — ; les cinq graveurs et assembleurs rendent des fichiers identiques à l'octet à l'index |
+| Simulateur : cargo, bancs, exemples ([§ 5](#5-fabrication-et-simulateur)) | 11 | 11 | `banc_nf05` affiche ✗ NF-05 et sort 0 : écart consigné au registre du simulateur |
 
-| Commande | Depuis | Verdict |
+**Non rejoué** : les sept chaînes Pandoc → Typst des PDF livrés, `inject-pagination.py`, `echantillon.py` et les deux `.html` de `5 - Recension/`, nommés au
+[§ 8](#8-ce-qui-na-pas-été-rejoué-le-15-septembre-2026).
+
+## 2. Intégration continue
+
+[![appareil](https://github.com/agbruneau/Agentique/actions/workflows/appareil.yml/badge.svg)](https://github.com/agbruneau/Agentique/actions/workflows/appareil.yml)
+
+Le flux [`.github/workflows/appareil.yml`](.github/workflows/appareil.yml) rejoue l'appareil à
+chaque poussée sur `main`, à chaque demande de tirage et à la demande, en trois tâches, chacune sur
+`ubuntu-latest` et sur `windows-latest`. Chaque étape est une commande de cette page, lancée du même
+dossier.
+
+| Tâche | Ce qu'elle rejoue |
+|---|---|
+| Documents | les contrôles de document du § 3, sauf `check-empaquetage.py` et `check-renvois.py`, qui a sa tâche ; `check-resume.py` sur les dix rendus qu'il sait lire ; `genere.py --verifier` une seconde fois sans mode UTF-8, sous Windows ; les cinq harnais de mutation de document du § 4 ; puis, **dans l'arbre**, les cinq graveurs et assembleurs du § 5 avec `assemble-bibliographie.py` et — sous Linux seulement — `reporter-volumetrie.py` en mode écriture, suivis de deux gardes — `git status --porcelain` vide, aucun fichier en CRLF — ; et une garde qui refuse tout script portant ⚠ ou ☑ sans `sys.stdout.reconfigure` |
+| Renvois | `Python/check-renvois.py` et son harnais |
+| Simulateur | `cargo fmt --all --check`, `cargo clippy`, `cargo test`, avec un plancher de 470 tests |
+
+**Ce que le flux ne rejoue pas encore** :
+
+- les sept `build/build-pdf.sh` — la chaîne Pandoc → Typst des PDF livrés, dont les polices sont
+  celles du poste de l'auteur ;
+- la parité de `Traité.pdf`, pour la même raison : sans Pandoc dans le `PATH`, `check-traite.py` la
+  déclare « NON MESURÉ » ;
+- la construction WASM et `check-empaquetage.py` ;
+- les deux bancs Node, les quatre exemples et `campagne` ;
+- `cargo doc` ;
+- l'assembleur du compendium, `build/assemble.py`, dont la sortie n'a pas de pendant versionné ;
+- `check-resume.py` sur l'article et sur le mémoire, où il est inapplicable.
+
+**Deux défauts de plateforme, contournés dans le flux et non corrigés dans les scripts**, relevés le 15 septembre 2026 sous Ubuntu 24.04 (WSL) ; le troisième, les polices du poste que `Traité.pdf` embarque, est à la liste ci-dessus :
+
+- `decompte.sh --verifier` dépend de la locale : son ancre `wc -w` du Vol. I, 233 257, est celle du `wc` de Git pour Windows ; le `wc` GNU en locale UTF-8 compte les espaces insécables comme séparateurs et rend 241 260. Le flux lance `decompte.sh` et `reporter-volumetrie.py` en `LC_ALL=C`, où les deux `wc` rendent 233 257 ;
+- `reporter-volumetrie.py` lance `bash` par `subprocess`, que Windows résout en `C:\Windows\System32\bash.exe` — le lanceur WSL, non le bash de Git : le flux ne le rejoue que sous Linux.
+
+La tâche Simulateur prend la chaîne `stable` de l'hôte — `msvc` sous Windows, `gnu` sous Linux —, quand le § 5 a tourné sur la chaîne `stable-x86_64-pc-windows-gnu` que fixe `rust-toolchain.toml` : ni l'une ni l'autre n'est encore éprouvée par le flux (tâche T1.1 du plan).
+
+**Au 15 septembre 2026, le flux n'a jamais tourné** : aucun commit qui le porte n'est poussé, le
+badge n'a pas de verdict à rendre, et chaque sortie de cette page est celle du poste de l'auteur.
+
+## 3. Contrôles de document
+
+*Ce document tient-il ?*
+
+| Commande | Depuis | Sortie | Ce qu'elle rend |
+|---|---|---|---|
+| `python Python/check-veille.py` | `3 - Veille/` | **0** | 94 sections, 24 tableaux, 25 questions ouvertes ; 342 entrées, 306 titres (3 homonymies arbitrées) ; 342 définies, 342 citées |
+| `python Python/check-revue.py` | `3 - Veille/` | **0** | 192 définies ; 142 sur 142 neuves citées nommément, 23 sur 50 du socle discutées ; 8 tableaux, 8 légendes ; 12 attestées, 32 autodéclarées, 145 sans revue sur 189 arXiv |
+| `python Python/check-traite.py` | `4 - Essais/1 - Traité/` | **0** | 143 pages ; 72 511 mots, 19 figures ; 123 notices, 123 citées nommément ; parité du PDF, 1 551 326 octets hors horodatage, refait à l'identique |
+| `python Python/check-empaquetage.py` | `4 - Essais/1 - Traité/` | **0** avec `CARGO_TARGET_DIR`, **1** sans | avec : module WASM refait dans un dossier jetable, 3 670 027 octets identiques à l'octet à celui de `web/`, glu 68 213 octets ; sans : « INDÉTERMINÉ », la construction irait dans le `target/` du dépôt |
+| `python PRD/check-compendium.py` | `2 - Compendium/` | **0** | 50 pièces, **P1-P10** ; **5 rapports déclaratifs** |
+| `python PRD/check-toc.py` | `2 - Compendium/` | **0** | **C1-C16** |
+| `python PRD/check-sieges.py` | `2 - Compendium/` | **0** | 26 sièges sur 50 pièces, S1-S5 |
+| `bash PRD/decompte.sh --verifier` | `2 - Compendium/` | **0** | Vol. I 225 258 mots (commande de référence) et 233 257 (`wc -w`) ; Vol. II 93 239, 29 pièces ; Vol. III 160 890, 34 pièces ; agrégat 479 387 ; hors du `wc` de Git pour Windows, en `LC_ALL=C` (§ 2) |
+| `python PRD/reporter-volumetrie.py --verifier` | `2 - Compendium/` | **0** | 333 416 mots de corps ; les trois sites qui publient la mesure concordent ; sur ce poste, le `bash` qu'il lance est celui de WSL (§ 2) |
+| `python build/verifier-piece.py` | `2 - Compendium/` | **0** | les 50 rendus `.html` sont ceux que les `.md` produisent : parité stricte, purge de l'appareil, figures. Il re-rend chaque pièce par Pandoc : sans Pandoc dans le `PATH`, il sort 1 sur `FileNotFoundError` |
+| `python build/assemble-bibliographie.py --verifier` | `2 - Compendium/` | **0** | 1 154 entrées uniques, 109 doublons fondus |
+| `python figures/genere.py --verifier` | `2 - Compendium/` | **0**, et **0 sans `PYTHONUTF8`** | 118 figures : 115 gravées sur 49 pièces, 3 antérieures au programme vérifiées à l'empreinte, calculée sur les octets ramenés en LF. *À 8 h 44 le même jour, sur `e1b1b9e` sans correction, il sortait 1 — trois empreintes gelées sur des octets CRLF — et, sans `PYTHONUTF8`, `UnicodeEncodeError` sur le premier ⚠ : la condition B3 de l'évaluation, que les tâches T0.2 et T0.3 du plan lèvent* |
+| `python rejeu-politique.py` | `4 - Essais/2 - Article/` | **0** | déroulés A et B, sensibilité, table de transitions totale — 36 cases sur 36 renseignées —, gardes de `hors_service` ; RÉF-6 non déclenchée. **Réserve** : 35 cases sont rejouées entières, la case (étalonnage, E2) à moitié — la branche « sinon → G » n'est exercée par aucune assertion, ce que le script déclare en commentaire |
+| `python check-article.py` | `4 - Essais/2 - Article/` | **0** | 77 entrées définies, 77 citées ; parité du PDF, 751 989 octets hors horodatage ; 165 renvois « § » vers 42 cibles ; 10 cardinaux du `README` ; 8 scores |
+| `python "3 - Veille/Python/check-resume.py" <fichier.pdf>` | racine | **0** sur dix, **1** sur deux | dégagement sous la marge basse de 72 pt : Vol. I +236,8 ; Vol. II +170,2 ; Vol. III +206,9 ; `Compendium.pdf` **+1,7, « LIMITE »** ; note SDLC +154,8 ; revue +151,2 ; veille +99,2 ; traité +122,3 ; planche *Cinq schémas* **+0,3, « LIMITE »** ; état de l'art +12,6. Sort 1 sur l'article (« déborde de 27.7 pt ») et sur le mémoire de 1997 (« page de titre illisible ») — [§ 6](#6-alertes-que-la-mesure-porte-et-quaucun-contrôle-ne-bloque) |
+| `python Python/check-renvois.py` | racine | **0** | 225 `.md` suivis ou non ignorés, 2 079 renvois relatifs dont 75 à fragment ; 0 mort, 1 toléré — une ancre de citation verbatim de la spécification A2A, déclarée au script |
+| *Le Vol. I n'a aucun contrôle propre.* | | | |
+
+## 4. Validation par mutation
+
+*Les contrôles tiennent-ils ?*
+
+Chaque harnais copie son corpus dans un dossier temporaire, vérifie que le corpus intact passe, y
+injecte des fautes connues, et exige que le contrôle les voie — et, pour certaines, qu'une matière
+légitime ne déclenche rien.
+
+| Commande | Depuis | Sortie | Ce qu'elle rend |
+|---|---|---|---|
+| `python PRD/check-sieges-mutations.py` | `2 - Compendium/` | **0** | passage intact ; **114** mutations attrapées |
+| `python PRD/check-toc-mutations.py` | `2 - Compendium/` | **0** | passage intact ; **24** mutations détectées, M1 à M16b, chacune par le contrôle attendu |
+| `python PRD/check-compendium-mutations.py` | `2 - Compendium/` | **0** | ligne de base tenue ; **23** mutations au verdict attendu, dont 6 matières légitimes qui ne doivent rien déclencher |
+| `python build/verifier-piece-mutations.py` | `2 - Compendium/` | **0** | ligne de base à zéro ; **6** mutations au verdict attendu |
+| `python check-article-mutations.py` | `4 - Essais/2 - Article/` | **0** | dossier intact tenu ; **7** mutations au verdict attendu |
+| `python Python/check-renvois-mutations.py` | racine | **0** | corpus propre et corpus réel passent ; **16** mutations, M0 à M15, au verdict attendu, dont 5 renvois à ignorer ou à tolérer |
+
+## 5. Fabrication et simulateur
+
+*La chaîne se refait-elle ?*
+
+Ordre réel de fabrication : graver les figures, assembler la source, composer le PDF. Un graveur ou
+un assembleur est jugé sur ce qu'il écrit, comparé au blob de l'index.
+
+| Commande | Depuis | Sortie | Ce qu'elle rend |
+|---|---|---|---|
+| `python figures/contenu.py` | `4 - Essais/1 - Traité/` | **0** | 19 SVG regravés, identiques à l'octet |
+| `python figures/dessine.py` | `5 - Recension/` | **0** | 5 SVG regravés, identiques à l'octet |
+| `python figures/genere.py` | `2 - Compendium/` | **0** | 118 figures, dont 115 regravées sur 49 pièces ; les 118 SVG et les 55 `.md` des cinq Livres identiques à l'octet — insertion idempotente |
+| `python build/assemble.py` | `1 - Collection/2 - OrchestrationAgentique/` | **0** | 38 blocs, 850 Ko ; `Monographie.md` identique à l'octet |
+| `python build/assemble.py` | `1 - Collection/3 - EntrepriseAgentique/` | **0** | 34 pièces, 1 094 Ko ; `Monographie.md` identique à l'octet |
+| `python build/assemble.py <sortie.md>` | `2 - Compendium/` | **0** | 50 chapitres, 5 livres, 2 annexes, 23 renvois à la note de statut marqués ; 31 095 lignes, 2 698 050 octets, sans pendant versionné |
+| `typst compile article-hpc-qpu.typ <sortie.pdf>` | `4 - Essais/2 - Article/` | **0** | 752 159 octets, la taille du PDF versionné ; la parité hors horodatage est celle de `check-article.py` |
+| `cargo test --workspace --release` | `4 - Essais/1 - Traité/` | **0** | **470 tests réussis, 0 échec, 0 ignoré** — 17 binaires de test, 6 cibles de doctest |
+| `cargo clippy --workspace --all-targets --release` | `4 - Essais/1 - Traité/` | **0** | aucun avertissement sur les six membres du workspace |
+| `cargo fmt --all --check` | `4 - Essais/1 - Traité/` | **0** | aucune ligne |
+| `cargo doc --workspace --no-deps` | `4 - Essais/1 - Traité/` | **0** | aucun avertissement |
+| banc DT1 : `dt1-natif 1000000 > <natif.tsv>`, puis `node bancs/dt1-flottant/banc.mjs <banc_dt1.wasm> <natif.tsv> 1000000` | `4 - Essais/1 - Traité/` | **0** | NF-02 tenue sur 8 groupes à parité exigée, 10⁶ itérations chacun ; 6 opérations de la bibliothèque de plateforme divergent — ln, exp, powf, sin, cos, atan2 —, ce qui est le résultat du banc et non une régression |
+| banc EX-V12 : `parite-natif 1 20000 > <natif.tsv>`, puis `node bancs/parite-wasm/banc.mjs <banc_parite.wasm> <natif.tsv> 1 20000` | `4 - Essais/1 - Traité/` | **0** | 6 cas sur 6 identiques natif / WASM |
+| `cargo run -p sim-agents --example banc_nf05 --release` | `4 - Essais/1 - Traité/` | **0** | ✗ NF-05 : 29,0 s simulées par s-cœur à n = 1 000, p = 16, sur 200 000 événements, et 23,1 sur 1 000 000, pour une cible de 1 000 — écart consigné, non échec du banc |
+| `cargo run -p sim-agents --release --example` `diagnostic_b`, `diagnostic_elasticite`, `diagnostic_conformite` | `4 - Essais/1 - Traité/` | **0** aux trois | `diagnostic_conformite` rend Φ_c = 0,1727 ± 0,0030 à curseur au repos : la mesure ne distingue pas la conformité de la coordination |
+| `cargo run -p sim-agents --bin campagne --release -- --sortie <dossier>` | `4 - Essais/1 - Traité/` | **0** | σ̂ = 0,019945, κ̂ = 0,00010018, û* = 98,9 agents ; les paramètres injectés sont dans l'intervalle de confiance |
+
+Les bancs, les exemples et `campagne` ont écrit leurs sorties (`natif.tsv`, `rapports/`) hors du
+dépôt.
+
+## 6. Alertes que la mesure porte, et qu'aucun contrôle ne bloque
+
+| Alerte | Mesure | Ce qu'elle veut dire |
 |---|---|---|
-| `python Python/check-veille.py` | `3 - Veille/` | ☑ **0** — 94 sections, 342 entrées, appariement cité ↔ défini clos dans les deux sens |
-| `python Python/check-revue.py` | `3 - Veille/` | ☑ **0** — 192 définies, 8 tableaux, 12 attestées / 32 auto-déclarées / 145 sans revue sur 189 arXiv |
-| `python Python/check-traite.py` | `4 - Essais/1 - Traité/` | ☑ **0** — 143 pages, recomptées à **deux sources du PDF qui doivent concorder** ; 123 notices citées nommément ; 72 110 mots |
-| `python PRD/check-compendium.py` | `2 - Compendium/` | ☑ **0** — les 50 pièces tiennent (P1-P8), 3 rapports déclaratifs |
-| `python PRD/check-toc.py` · `PRD/check-sieges.py` | `2 - Compendium/` | ☑ **0** — C1-C15 ; 26 sièges sur 50 pièces (S1-S5) |
-| `python "3 - Veille/Python/check-resume.py" <fichier.pdf>` | racine | ☑ **0 sur les neuf rendus livrés**, essayés un par un pour ce relevé — il mesure la **géométrie** de la page de titre : le gabarit compose le résumé dans un bloc qui ne se scinde pas, donc un résumé trop long se fait rogner sous la marge basse sans que Pandoc sorte autre chose que 0. ☑ *Il est désormais **enchaîné** aux chaînes de rendu de `3 - Veille/` et `5 - Recension/`, qui échouent s'il échoue.* ⚠⚠ *Il sort **1** sur le douzième PDF, celui de `4 - Essais/2 - Article/`, et **ce verdict est faux** — voir le bloc sous ce tableau. Ne pas l'enchaîner à cette chaîne-là* |
-| `bash PRD/decompte.sh --verifier` | `2 - Compendium/` | ☑ **0** — les quatre points d'ancrage tenus : Vol. I 225 258 / 233 257, Vol. II **93 239**, Vol. III 160 890. ⚠ *L'ancre du Vol. II a été **redatée** de 93 242 à 93 239 le 21 août 2026 : trois jetons étaient tombés du corps le 8 août avec le renommage du volume, et le script avait raison de le dire — le motif est en tête de son bloc d'attendus* |
-| `python rejeu-politique.py` | `4 - Essais/2 - Article/` | ☑ **0** — déroulés A et B du § 7.5, sensibilité du § 7.5.1, **table de transitions totale 36/36** (4 états × 9 événements), gardes de sortie de `hors_service`. *Seul contrôle du dépôt qui **exécute** une condition de réfutation — RÉF-6 — plutôt que de mesurer une forme : une divergence fait échouer une assertion, et réfute la contribution. Ajouté le 1er septembre 2026 ; ⚠ l'article n'est pas un livrable, ce contrôle n'en est pas moins le plus mordant du lot* |
-| ⚠ *Le Vol. I n'a aucun contrôle propre.* | | |
+| Résumé de `Compendium.pdf` | `check-resume.py` sort 0 et écrit « LIMITE : 1.7 pt de dégagement seulement » | la moindre reprise du résumé le fait rogner sous la marge basse, sans que Pandoc ni Typst le signalent ; la tâche T4.5 du plan le condense |
+| Résumé de la planche *Cinq schémas* | « LIMITE : 0.3 pt » | même risque, plus serré |
+| Rejeu de l'article | 35,5 cases exercées sur 36 : 35 entières, la case (étalonnage, E2) à moitié | « 36/36 » dit que la table est totale, non que chaque branche est exercée ; la tâche T6.7 donne au rejeu un verdict d'étalonnage en entrée |
+| `check-resume.py` sur `article-hpc-qpu.pdf` | sort 1, « le résumé déborde de 27.7 pt » | **verdict faux, contrôle inapplicable** : le gabarit arXiv pose un folio en pied de la page de titre, sous la marge par construction, et compose le résumé dans un bloc que Typst reporte à la page suivante au lieu de le rogner — le risque surveillé n'existe pas dans ce gabarit |
+| `check-resume.py` sur le mémoire de 1997 | sort 1, « page de titre illisible — contrôle inapplicable » | PDF produit par Acrobat 6.02, qui n'est pas un document composé ici |
+| `/Creator` de `1 - Collection/1 - InteroperabiliteAgentique/Monographie.pdf` | `Typst 0.15.0` ; les dix autres PDF composés portent `Typst 0.15.1` | la chaîne du Vol. I n'a pas été rejouée depuis la montée de version (tâche T6.6) |
+| `/Title` de `5 - Recension/État de l'art — services financiers.pdf` | `État de lart en services financiers` | apostrophe tombée à la composition ; la source YAML l'écrit bien (tâche T6.1) |
 
-⚠⚠ **`check-resume.py` sort 1 sur `4 - Essais/2 - Article/article-hpc-qpu.pdf`, et le verdict est faux — ne
-pas l'enchaîner à cette chaîne.** Il rend **44,3 pt** pour une marge basse de 72 pt, soit −27,7 pt.
-*Ses deux prémisses tombent avec le gabarit arXiv* : **(a)** le gabarit FESP ne numérote pas sa page
-de titre, celui d'arXiv y pose un folio en pied — et un pied vit **sous** la marge par construction ;
-c'est ce numéro de page, et rien d'autre, que le contrôle prend pour un débordement, puisqu'il
-mesure le `min` des ordonnées de tout `BT` de la page 1 ; **(b)** le gabarit FESP compose le résumé
-dans un bloc **qui ne se scinde pas** — d'où le rognage silencieux que le contrôle existe pour
-attraper —, quand celui-ci le compose en `pad()` de texte courant, que Typst **reporte** à la page
-suivante. *Le risque surveillé n'existe pas dans ce gabarit.* **Contrôle inapplicable, pas contrôle
-en échec** — et il reste ☑ 0 sur les neuf rendus livrés et sur la note SDLC.
+## 7. Ce que ce relevé change à la page précédente
 
-**b. « Les contrôles tiennent-ils ? » — validation par mutation**
+La colonne du milieu se lit par `git show e1b1b9e:APPAREIL.md` ; celle de droite est la sortie du
+15 septembre 2026. Les cinq premières lignes sont les écarts que l'évaluation académique relève à
+son § 8.4.
 
-Chaque harnais copie le corpus dans un dossier temporaire, y injecte des fautes connues et exige que
-le contrôle les attrape. À lancer après toute retouche du contrôle correspondant.
-
-| Commande | Depuis | Verdict |
+| Objet | Écrit au commit `e1b1b9e` | Rejoué le 15 septembre 2026 |
 |---|---|---|
-| `python PRD/check-sieges-mutations.py` | `2 - Compendium/` | ☑ **0** — attrape les **108** mutations |
-| `python PRD/check-toc-mutations.py` | `2 - Compendium/` | ☑ **0** — **23 sur 23**. ⚠ *M14 échappait à C14 jusqu'au 21 août 2026, et le harnais ne pouvait pas le dire : son ancre visait une entrée d'**historique** de la rangée `\| Source \|` du conspectus, quand C14 ne lit que la version de tête. Réancrée sur le préfixe de rangée — une ancre qui vise ce que le contrôle ne regarde pas cesse de tester sans que rien le signale* |
-| `python PRD/check-compendium-mutations.py` | `2 - Compendium/` | ☑ **0** — ligne de base tenue, **17 mutations sur 17**. ⚠ *Il s'arrêtait en `AssertionError` à M6 jusqu'au 21 août 2026 — ancre littérale « \| 11 000 \| 10 724 \| » périmée quand le ch. 1 s'est re-mesuré à 10 859 mots —, et **les huit mutations suivantes ne tournaient pas**. Réancrée sur la **colonne** du registre, non sur la valeur qui l'occupe* |
+| `check-compendium.py` | P1-P8, 3 rapports déclaratifs | P1-P10, 5 rapports déclaratifs |
+| `check-toc.py` | C1-C15 | C1-C16 |
+| `check-sieges-mutations.py` | 108 mutations | 114 |
+| `check-compendium-mutations.py` | 17 sur 17 | 23 |
+| `cargo test` | 467 tests | 470 |
+| `check-toc-mutations.py` | 23 sur 23 | 24, M1 à M16b |
+| `check-traite.py` | 72 110 mots | 72 511 |
+| `genere.py --verifier` | 0 | 1 à 8 h 44 sur `e1b1b9e` ; 0 après les tâches T0.2 et T0.3 |
+| graveurs et assembleurs | « identiques à l'octet » | à 8 h 50, sur des scripts qui écrivaient en mode texte, 19 SVG du traité et les deux `Monographie.md` ne l'étaient que modulo fins de ligne ; identiques à l'octet après la tâche T0.4 |
+| `rejeu-politique.py` | table 36/36, sans réserve | 36 cases renseignées, 35 rejouées entières |
+| `check-resume.py` | 0 sur les neuf rendus livrés | 0 sur les neuf, et sur la note ; deux « LIMITE » (§ 6) |
+| `typst compile` de l'article | 750 902 octets | 752 159 |
+| renvois Markdown | 220 `.md`, 1 992 liens relatifs, 4 morts, par une mesure qu'aucun contrôle versionné ne portait | 225 `.md`, 2 079 renvois relatifs, 0 mort, par `check-renvois.py`, qui vérifie aussi les ancres |
+| points d'entrée absents des tableaux | sept : `check-article.py`, `check-article-mutations.py`, `check-empaquetage.py`, `verifier-piece.py`, `verifier-piece-mutations.py`, `rendre-piece.py`, `reporter-volumetrie.py` | aucun ; `rendre-piece.py` est rejoué au travers de `verifier-piece.py` |
+| intégration continue | « rien n'est câblé » | flux écrit, jamais exécuté (§ 2) |
 
-**c. « La chaîne se refait-elle ? » — graver, assembler, composer**
+## 8. Ce qui n'a pas été rejoué le 15 septembre 2026
 
-Ordre réel de fabrication : **graver les figures → assembler la source → composer le PDF.**
-☑ **Les trois étapes ont été rejouées le 21 août 2026, et les neuf PDF livrés se refont désormais
-tous par un script versionné** — ils n'étaient que quatre à le pouvoir. ⚠ *Deux PDF entrés depuis
-échappent à cette phrase : la note de veille SDLC, dont la commande se recopie à la main, et
-l'article, dont la chaîne tient en une ligne mais n'est écrite nulle part ailleurs qu'ici.*
+- Les sept `build/build-pdf.sh` — Vol. I, II, III, compendium, traité, `3 - Veille/`,
+  `5 - Recension/` — et les trois `build/inject-pagination.py` qu'ils appellent : les PDF livrés ne
+  sont jugés ici que sur leurs sorties versionnées — pages, métadonnées, géométrie de la page de
+  titre, et parité là où `check-traite.py` et `check-article.py` la mesurent.
+- `2 - Compendium/build/echantillon.py`, maquette de gabarit qui écrit deux PDF à la racine du
+  volume.
+- Les deux `.html` de `5 - Recension/` : leur commande prend une feuille de style que le dépôt ne
+  versionne pas (tâche T6.4).
 
-| Commande | Depuis | Verdict |
+## 9. L'arbre rejoué
+
+- **Commit** : `e1b1b9e`, « plan », 15 septembre 2026 à 7 h 23.
+- **Premier passage, de 8 h 43 à 8 h 55**, sur ce commit, les corrections du plan arrivant pendant
+  qu'il tournait : les bancs, les exemples, `campagne`, `check-empaquetage.py` avec cible et
+  `typst compile` de l'article viennent de lui ; `cargo test`, `clippy`, `fmt` et `doc` ont rendu
+  la même sortie aux deux passages. Ce qu'il rend autrement que le passage final est au § 7.
+- **Passage final, de 9 h 06 à 9 h 20** : tout le reste, sur l'arbre qui portait, non commitées,
+  les empreintes de `genere.py` réancrées sur les octets LF (T0.2), `sys.stdout.reconfigure` dans
+  les scripts qui impriment ⚠ ou ☑ (T0.3), les écritures en `newline="\n"` des graveurs et des
+  assembleurs (T0.4), les trois PDF de travail de `5 - Recension/` sortis de l'index (T0.5), le
+  `repository` du `Cargo.toml` et les deux `README` du traité (T0.9), la décision D-17 (T0.1), les
+  renvois vers `2 - Compendium/audit.md` repointés (T0.8), `Python/check-renvois.py`, son harnais
+  et le flux d'intégration continue (T1.1 à T1.4), `ARCHIVES.md` (T2.3) ; `check-renvois.py` a été
+  rejoué en dernier, après l'entrée de `CONTRIBUTIONS.md` (T2.1) et les éditions de cette page.
+- **Les scripts n'ont pas bougé pendant le passage final** :
+  `git diff -- '*.py' '*.sh' '*.toml' | sha256sum` rend `ae59606d11c0…` avant et après.
+
+## 10. D'où viennent les chiffres du `README.md`
+
+Chaque commande se lance de la racine du dépôt ; la sortie est celle du 15 septembre 2026.
+
+| Chiffre | Commande | Sortie |
 |---|---|---|
-| `python figures/contenu.py` | `4 - Essais/1 - Traité/` | ☑ **19 SVG du traité regravés, identiques à l'octet** (`dessine.py` n'est pas un point d'entrée : il porte les primitives). ⚠ *Se lançait depuis la **racine du dépôt** jusqu'au 21 août 2026, les planches y étant restées quand le traité est entré — elles sont chez lui depuis* |
-| `python figures/dessine.py` | `5 - Recension/` | ☑ **5 SVG regravés, identiques à l'octet** |
-| `python figures/genere.py [--verifier]` | `2 - Compendium/` | ☑ **0** — **115 figures regravées** sur 49 pièces, identiques à l'octet ; insertion idempotente, aucune pièce touchée. ☑ *Depuis le 21 août 2026 il annonce **118** et non 115 : le registre `ANTERIEURES` compte les **trois figures antérieures au programme** et les gèle à l'empreinte SHA-256. Elles ne se regravent toujours pas — aucune primitive ne les rend —, mais elles ne peuvent plus bouger sans que le contrôle sorte 1* |
-| `python build/assemble.py` | `1 - Collection/2 -…/` et `/3 -…/` | ☑ **reproduit le `Monographie.md` livré à l'octet près**, sur les deux volumes |
-| `python build/assemble.py <sortie.md>` | `2 - Compendium/` | ☑ 50 chapitres, 5 livres, 2 annexes → 31 028 l. / 2,72 Mo |
-| `bash build/build-pdf.sh` | Vol. I, II, III, Compendium | **Non rejoué ici.** Prérequis déclarés dans les scripts : Pandoc ≥ 3.1.7, Typst ≥ 0.12, `python3` + `pypdf`, polices nommées ; Node ≥ 18 + `mermaid-cli` pour les 28 diagrammes du Vol. I |
-| `bash build/build-pdf.sh` | `4 - Essais/1 - Traité/` | ☑ **143 pages**, pagination inchangée. ⚠ *Chaîne **écrite** le 21 août 2026 : sa commande n'était nulle part au dépôt, et il a fallu la reconstituer. Elle se lance de ce dossier depuis que les figures y sont* |
-| `bash build/build-pdf.sh [veille\|revue]` | `3 - Veille/` | ☑ **144 et 59 pages**, pagination inchangée après le changement de titre. *Inscrit au dépôt les deux commandes qui n'y vivaient qu'en prose ; enchaîne `check-resume.py`* |
-| `bash build/build-pdf.sh [etat\|planche]` | `5 - Recension/` | ☑ **185 et 7 pages**, pagination inchangée. ⚠ *Il ne couvre PAS les deux `.html`, et le dit : leur commande prend `--css <feuille>`, et aucune feuille de style n'est versionnée* |
-| `typst compile article-hpc-qpu.typ` | `4 - Essais/2 - Article/` | ☑ **38 pages**, et la recomposition rend **exactement 750 902 octets** — la taille du PDF livré —, **une cinquantaine d'octets d'écart dans six champs, tous d'horodatage** *(« 60 en cinq endroits » au relevé du 1er septembre ; le sixième, le `/ID` du trailer, relevé le 2 par `check-article.py`)* : `ModDate`, `CreationDate`, `xmp:ModifyDate`, `xmp:CreateDate`, `xmpMM:InstanceID`. *Le `xmpMM:DocumentID`, dérivé du contenu, ne bouge pas, et c'est ce qui rend la comparaison concluante.* Rejoué le 1er septembre 2026, **Typst 0.15.1** — la version du `/Creator` livré —, polices New Computer Modern et DejaVu Sans Mono. ⚠ *Seule chaîne du dépôt **sans script versionné**, et la seule **sans Pandoc** : il n'y a rien à scripter d'autre que cette ligne — pas d'assemblage, pas d'injection de pagination, pas de gravure de figures, qui se dessinent à la composition.* ⚠ *`SOURCE_DATE_EPOCH` ne rend pas l'octet et **empire** : Typst compose alors en UTC — `D:20260901100946Z` au lieu de `D:20260901060946-04'00` —, six caractères de moins qui décalent tout ce qui suit, et l'écart passe de 60 à **45 342** octets* |
-| `cargo test --workspace --release` · `cargo clippy --workspace --all-targets --release` · `cargo doc --workspace --no-deps` | `4 - Essais/1 - Traité/` | ☑ **0 aux trois** — **467 tests, 0 échec, 0 ignoré**, aucun `#[ignore]` au code ; clippy 0 sur les six membres et toutes les cibles ; rustdoc 0. *Ce sont les trois commandes d'avant-commit de `docs/DEVELOPPEMENT.md`, et la troisième existe parce que les deux premières sont restées vertes pendant que rustdoc sortait 101.* ⚠⚠ *L'ensemble sortait **101 à l'instant** jusqu'au 21 août 2026 : deux membres du workspace manquaient au disque* |
-| `bancs/dt1-flottant/banc.mjs` · `bancs/parite-wasm/banc.mjs` | `4 - Essais/1 - Traité/` | ☑ **0 aux deux**, sous Node 24. **DT1** : NF-02 tenue sur 8 groupes à parité exigée, 10⁶ itérations chacun — *les 6 divergences de la bibliothèque de plateforme sont le **résultat** du banc, non une régression, et `mul_add` coïncide sur cette machine*. **EX-V12** : 6 cas identiques natif/WASM |
-| `cargo run -p sim-agents --example …` (×4) · `--bin campagne` | `4 - Essais/1 - Traité/` | ☑ **0 aux cinq**. *`banc_nf05` affiche ✗ NF-05 et sort 0 : la cible de 10³ s simulées/s-cœur n'est pas atteinte — c'est un écart consigné au registre, pas un échec de banc.* `diagnostic_conformite` reproduit le constat qui a réfuté le premier point du critère de sortie de la phase 6 |
-| `wasm-bindgen --target web` sur `sim_viz.wasm` | `4 - Essais/1 - Traité/` | ☑ **reproduit `web/sim_viz.js` et `web/sim_viz_bg.wasm` à l'octet** — 68 213 et 3 669 337 octets, et 1 447 624 en `gzip -9`. *Les deux chiffres du `README.md` du dossier, datés du 17 août 2026, sont donc encore valides ; ils ne l'étaient que jusqu'à la prochaine édition de `crates/sim-viz/`* |
-
-⚠⚠ **« Douze » est le compte du 1er septembre 2026, et il est dépassé de sept.** Sept points
-d'entrée sont entrés au dépôt depuis, qu'aucune ligne de cette page ne couvre :
-`check-article.py` et `check-article-mutations.py` (`4 - Essais/2 - Article/`),
-`Python/check-empaquetage.py` (`4 - Essais/1 - Traité/`), et quatre au Compendium —
-`build/verifier-piece.py`, `build/verifier-piece-mutations.py`, `build/rendre-piece.py`,
-`PRD/reporter-volumetrie.py`. *Ils n'ont pas été rejoués ici.*
-☑ **Ils l'ont été ailleurs, et par un tiers** : l'[`Évaluation
-académique`](<%C3%89valuation%20acad%C3%A9mique.md>) du 5 septembre 2026 rejoue l'appareil au lieu de
-le croire, et rend `check-article.py` ☑ **0** (77 entrées / 77 citées) et `check-empaquetage.py`
-☑ **INDÉTERMINÉ sans `CARGO_TARGET_DIR`**, comme il se déclare. ⚠ *Elle relève aussi un **plantage**
-de `python figures/genere.py --verifier` — `UnicodeEncodeError` sur une console cp1252, sur le
-caractère ⚠ ; c'est la console, pas la figure.* ⚠⚠ *Et trois de ses chiffres ne concordent pas avec
-ce tableau : **470** tests là où il en écrit 467, **C1-C16** là où il écrit C1-C15, **5** rapports
-déclaratifs là où il en écrit 3. Son relevé est du 5 septembre 2026 ; celui-ci du 21 août — c'est le
-tableau ci-dessus qui est en retard, pas elle.*
-
-⚠ **Points d'entrée qui n'ont pas été rejoués** : `2 - Compendium/build/assemble-bibliographie.py`,
-`build/echantillon.py` (maquette Springer, avec `echantillon.template` et `springer.template`), les
-trois `build/inject-pagination.py` des volumes du corpus, et les quatre `build-pdf.sh` des Vol. I, II,
-III et du Compendium.
-
-**d. « Les renvois tiennent-ils ? » — mesuré ici, non tenu là-bas**
-
-⚠ **1 879 renvois relatifs résolus dans les 227 `.md` du dépôt, et DEUX ROMPUS**, au 22 août 2026 —
-*ils étaient 243 à viser le vide avant la passe du 21, zéro après elle, et deux le lendemain.*
-⚠⚠ **Les deux morts avaient la même cause, une suppression du 22 août** : un journal de boucle est
-sorti de l'index, et deux `README.md` de `3 - Traité/` le citaient encore en lien — celui du dossier
-en tête d'une rangée de tableau, celui de `docs/` au corps, où il l'opposait au journal de la revue
-par les pairs. ☑ **La décision d'auteur que ce relevé laissait ouverte est prise le 25 août 2026** :
-les deux renvois sont retirés, la pièce n'est pas restaurée, et son nom est effacé du dépôt entier —
-*ce qu'elle a produit de durable est au §0.2 du PRD du traité et à son registre, non dans le journal — le dossier de banc qui en portait les dix rapports est lui-même sorti du dépôt le 25 août 2026.* ⚠ **Aucun contrôle du dépôt ne résout un lien markdown** : c'est
-une mesure faite pour ce relevé, pas une garantie que le dépôt tient. La commande est une résolution
-de chaque cible relative contre le système de fichiers, blocs et *spans* de code exclus — un
-`` `[…](cible)` `` cité en prose n'est pas un lien.
-☑ **Repris le 5 septembre 2026 sur les deux fichiers de la racine seulement**, après la
-réorganisation : **42 liens relatifs dans `README.md` et `APPAREIL.md`, 0 mort** — *décodage `%XX`
-compris, blocs et spans de code exclus, même règle qu'au relevé du 22 août.* ⚠ *Les 18 morts que la
-réorganisation y avait ouverts sont réparés.*
-☑☑ **Le reste du dépôt a été repris le même jour, et cette page a écrit le contraire** : trois passes
-s'en sont chargées sans se voir — les deux fichiers de la racine, les **quinze `README.md` de
-branche**, puis l'outillage et le texte courant —, et une quatrième a repointé les deux renvois qui
-tombaient entre elles : celui de `2 - Compendium/PRD/TOC.md` vers la veille, resté à `4 - Veille/`
-dans un fichier qu'aucune des trois n'avait ouvert, et celui de
-`4 - Essais/1 - Traité/docs/README.md` vers la racine du dépôt, descendu d'un niveau avec son
-dossier. **Relevé du 5 septembre 2026 sur les 220 `.md` versionnés : 1 992 liens relatifs, 4 morts**
-— même règle que ci-dessus.
-⚠ **Aucun des quatre ne vient de la réorganisation, et ils sont relevés plutôt que corrigés.**
-*Trois visent `2 - Compendium/audit.md`, sorti du dépôt le 2 septembre 2026 au commit `60e1b99` et
-cité encore par le PRD du compendium (deux fois) et par son TOC — la pièce est partie sur décision,
-la réécriture des trois renvois n'en est pas une. Le quatrième est un `../../prd/TOC.md` dans le
-**gabarit de fiche** de `1 - Collection/3 - EntrepriseAgentique/prd/PRDPlan.md`, en bloc de code : il
-n'a jamais résolu, et son défaut est antérieur au déplacement des dossiers.*
-⚠⚠ **Et les mentions d'anciens chemins ont AUGMENTÉ, de 70 à 100** — *100 occurrences dans
-21 fichiers, dont 16 `README.md`, comptées le 5 septembre 2026 après cette dernière passe ;
-⚠ le compte s'inclut lui-même, la phrase ci-dessus nommant un des trois anciens chemins.* C'est ce
-que la règle du dépôt produit, non une dette qui s'aggrave : **une phrase qui date un fait garde
-l'ancien nom et reçoit une incise vers le nom d'aujourd'hui**, si bien que réparer un renvoi daté
-*ajoute* une mention au lieu d'en retirer une. *Ce compte-là mesure le travail fait ; c'est celui des
-liens morts, ci-dessus, qui mesure ce qui reste.*
-
-## D'où viennent les chiffres du `README.md`
-
-Relevés le **21 août 2026** sur l'arbre de travail, par ces commandes et par elles seules — ⚠ *trois
-exceptés, redatés du **22 août 2026** et marqués comme tels au fil du texte : les titres et auteurs,
-le décompte d'octets avec deux de ses cardinaux, et les renvois du point d ci-dessus.*
-
-- **Pages** — `pypdf`, `len(PdfReader(f).pages)` sur les PDF versionnés — **10 au relevé du
-  21 août 2026, 12 depuis le 1er septembre** : la note de veille SDLC et l'article s'y sont ajoutés.
-  Aucun nombre de pages n'est repris d'un autre `README.md`. ⚠ *`pypdf` n'est pas installé sur la
-  machine de la passe du 1er septembre ; les deux derniers comptes sont pris au champ
-  `xmpTPg:NPages` du XMP, qui concorde avec le `/Count` de l'arbre des pages sur les onze PDF
-  composés par Typst — le mémoire de 1997, sorti d'Acrobat, ne porte pas ce champ.*
-- **Titres et auteurs** — champs `/Title` et `/Author` des PDF, et en-têtes YAML des sources.
-  *Les six PDF de tête portent six `/Title` distincts depuis l'échange titre ↔ sous-titre du
-  21 août 2026 ; ils n'en portaient que quatre.* ⚠ **Le champ ne vaut pas la source, et l'écart se
-  mesure des deux côtés — relevé du 22 août 2026.** *(a)* `/Title` : le PDF d'état de l'art lit
-  `État de lart en services financiers`, **apostrophe tombée à la composition Typst du 21 août**,
-  quand sa source YAML l'écrit bien. *(b)* `/Author` : **le nom est sur les neuf, la mention
-  « M.Sc. IT » sur six seulement** — les Vol. I, II et III portent `André-Guy Bruneau` seul. *Citer
-  l'en-tête YAML pour le champ du PDF, ou l'inverse, est le piège de cette ligne.*
-- **Lignes, octets, cardinaux de fichiers** — `wc -l` / `wc -c` / `git ls-files`. *Les tailles sont
-  décimales : 1 Mo = 10⁶ octets.* ⚠⚠ **Le décompte d'octets s'est périmé DEUX FOIS le 22 août
-  2026** : remesuré à 75 116 966 en début de passe, il est retombé le jour même avec la suppression
-  d'un journal de boucle de `3 - Traité/`, et il vaut **75 096 625** au dernier relevé — *trois passes
-  concordantes, `cat | wc -c` deux fois et la somme des `stat` une fois.* ⚠ **Deux cardinaux de la
-  même ligne sont tombés avec la pièce** — le total, **575 → 574**, et les `.md`, **228 → 227** ;
-  *les quinze autres extensions tiennent tels quels.* *Il était déjà faux avant, et sa fausseté a
-  survécu à deux causes distinctes : la suppression puis la restauration d'`APPAREIL.md` — 11 306
-  octets qui sortent et rentrent —, et les éditions du 22 août à `3 - Traité/README.md`,
-  `CLAUDE.md` et `docs/DEVELOPPEMENT.md`. **Ce nombre se périme à chaque commit**, y compris celui
-  qui l'écrit : il est auto-référentiel, le `README.md` étant lui-même compté. Le remesurer par la
-  ligne ci-dessous, et ne le corriger qu'en gardant le même nombre de chiffres — sans quoi
-  l'édition déplace le total qu'elle prétend fixer.*
-
-  ```bash
-  git ls-files -z | xargs -0 cat | wc -c
-  ```
-
-  ⚠⚠ **Un relevé unique ne se vérifie pas, et cette commande ne signale rien quand il est faux.**
-  Le 22 août 2026, un relevé pris juste après cinq éditions a rendu **75 116 696** — *270 octets de
-  moins* que les trois passes concordantes prises ensuite, et que la somme des tailles fichier par
-  fichier, qui donnent toutes **75 116 966**. La commande sort 0 dans les deux cas et les deux
-  nombres sont plausibles : rien ne distingue le bon du mauvais sans une seconde mesure.
-  ⚠ **La cause de ces 270 octets n'est pas établie**, et elle n'a pas été cherchée — *une piste
-  OneDrive a été écrite ici puis retirée le jour même, faute de mesure : le dossier est synchronisé,
-  ce qui suffit à casser l'édition de liens dans `target/`
-  ([`docs/DEVELOPPEMENT.md`](<4 - Essais/1 - Traité/docs/DEVELOPPEMENT.md>)), mais rien ne montre que ce soit
-  ce qui s'est passé ici.* Ce qui est établi est la règle, pas le mécanisme : **mesurer par deux
-  passes qui doivent concorder**, la seconde méthode servant de contrôle croisé puisqu'elle n'ouvre
-  pas les fichiers en flux.
-
-  ```bash
-  git ls-files -z | xargs -0 stat -c%s | awk '{s+=$1} END {print s}'
-  ```
-
-  ☑ **Relevé du 5 septembre 2026, au commit `daacbec`** : **584 fichiers**, **77 013 582 o. au
-  disque** — deux passes concordantes, `cat` en flux et somme des `stat` — et **76 998 245 o. à
-  l'index**, somme des blobs prise à part par `git cat-file --batch-check='%(objectsize)'` sur la
-  sortie de `git ls-files -s`. *C'est ce dernier que porte la tête du `README.md`, et c'est le seul
-  des deux qu'un tiers reproduise sans avoir la machine de l'auteur.* ⚠ *L'écart de **15 337 o.**
-  entre les deux n'a pas été décomposé.*
-
-  ☑ *Ce que la règle a effectivement attrapé, le même jour* : un écart de **23 538** octets entre
-  deux relevés, qui n'était pas une erreur de mesure du tout — un journal de boucle de
-  `3 - Traité/`, 24 566 octets au disque, avait été supprimé par un commit entre les deux. Une mesure qui ne
-  concorde pas est d'abord une question sur l'arbre, pas sur la commande.
-- **Historique** — `git log --format='%an'`, `git log --merges` (quatre fusions, et
-  `git log --all --grep='#4'` ne rend rien), `git tag`, `git branch -r`, et
-  `git log --all --diff-filter=A --name-only` pour ce que l'arbre ne porte plus. *C'est cette
-  dernière commande qui a rendu les 55 fichiers restaurés le 21 août 2026.*
-- **Références, sections, tableaux, mots** — sortie des contrôles du dépôt eux-mêmes
-  (`check-veille.py`, `check-revue.py`, `check-traite.py`, `decompte.sh`), rejoués ici ; les 312
-  notices de l'état de l'art recomptées à part sur sa bibliographie.
-- **Reproductibilité des chaînes** — assembleurs et graveurs relancés sur une copie de sauvegarde,
-  puis comparés fichier à fichier avec `cmp` ; l'arbre a été remis en état après chaque essai. *Les
-  cinq PDF nouvellement scriptés ont été composés vers une sortie d'essai (`OUT_PDF=`, `SUFFIXE=`)
-  avant de l'être en place.*
-- **Renvois morts** — résolution de chaque cible relative de **tous les `.md` versionnés**, et non
-  des seuls `README.md` : c'est ce qui a fait passer le compte de 35 à 243.
-- **Diagrammes Mermaid** — `grep -cFx` sur la ligne d'ouverture de bloc `mermaid` : 28 dans le
-  Vol. I, 64 dans tout le dépôt.
+| pages des PDF | `pymupdf.open(f).page_count` sur chaque `*.pdf` de `git ls-files` | 569, 387, 427, 1 000, 143, 144, 59, 186 et 7 pour les neuf rendus des huit livrables — **2 922** ; 49 pour la note SDLC et 38 pour l'article — **3 009** sur onze PDF composés ; 146 pour le mémoire de 1997 |
+| fichiers et octets au commit | `git ls-tree -r -l e1b1b9e \| awk '{s+=$4} END {print NR, s}'` | 589 fichiers, 79 704 921 octets |
+| fichiers par extension | `git -c core.quotepath=off ls-tree -r --name-only e1b1b9e` | 222 `.md`, 142 `.svg`, 76 `.rs`, 54 `.html`, 39 `.py`, 15 `.pdf`, 9 `.toml`, 8 `.sh`, 7 `.template`, 4 `.gitignore`, 3 `.typ`, 2 `.mjs`, 2 `LICENSE`, 1 `.txt`, 1 `.lua`, 1 `Cargo.lock`, 1 `.json`, 1 `.bib`, 1 `.gitattributes` |
+| lignes de Rust | `git ls-files -z '*.rs' \| xargs -0 cat \| wc -l` | 30 939 lignes dans 76 fichiers ; 30 488 dans les 71 de `crates/` |
+| lignes des sources | `wc -l` | Vol. I 7 257 ; Vol. II 3 306 ; Vol. III 3 275 ; traité 1 889 ; veille 1 932 ; revue 1 052 ; état de l'art 1 986 ; note SDLC 1 070 ; article, `.typ`, 1 979 |
+| diagrammes Mermaid | `grep -c` sur la ligne d'ouverture de bloc `mermaid` | 28 dans le Vol. I, 64 dans les `.md` versionnés |
+| diapositives de `NiveauMaturité.html` | `grep -c '<section class="slide"'` | 7 |
+| `README.md` versionnés | `git ls-files '*README.md' \| wc -l` | 18 |
+| historique | `git log --format=%an \| sort \| uniq -c` ; `git log --merges` ; `git tag` | 328 commits du 24 juin au 15 septembre 2026 — 306 André-Guy Bruneau, 20 `Claude`, 2 `agbruneau` ; 4 fusions ; une étiquette, `mono-v1.0` |
+| renvois Markdown | `python Python/check-renvois.py` | 225 `.md` suivis ou non ignorés, 2 079 renvois relatifs dont 75 à fragment ; 0 mort, 1 toléré — une ancre de citation verbatim de la spécification A2A, déclarée au script |

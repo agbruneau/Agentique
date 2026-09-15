@@ -32,6 +32,8 @@ import sys
 import tempfile
 import zlib
 from pathlib import Path
+sys.stdout.reconfigure(encoding="utf-8")  # console cp1252 : ⚠ et ☑ ne s'y encodent pas
+sys.stderr.reconfigure(encoding="utf-8")
 
 RACINE = Path(os.environ.get("ARTICLE_RACINE", Path(__file__).resolve().parent))
 SRC = RACINE / "article-hpc-qpu.typ"

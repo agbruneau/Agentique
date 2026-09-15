@@ -1,0 +1,325 @@
+# L'appareil de vérification du dépôt, rejoué à chaque poussée sur Linux et sur Windows.
+#
+# Chaque étape est une commande que l'on peut relancer à la main, depuis le dossier que
+# nomme son `working-directory` — rien ici n'existe seulement pour la CI. Trois blocs :
+#
+#   documents — les contrôles de document, leurs harnais de mutation, puis le REJEU des
+#               générateurs et deux gardes d'arbre : aucun fichier modifié, aucun CRLF ;
+#   renvois   — les renvois relatifs des .md, et le harnais qui prouve qu'un renvoi cassé
+#               est vu ;
+#   simulateur — cargo test / clippy / fmt du simulateur du traité.
+#
+# Ce qui NE tourne PAS ici, et pourquoi, est dit à l'étape la plus proche : les chaînes de
+# composition Pandoc → Typst des volumes et la parité de Traité.pdf (polices du poste
+# d'auteur), l'empaquetage WASM (check-empaquetage.py, wasm-bindgen), les bancs Node.
+
+name: Appareil
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: appareil-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+env:
+  # Contrat du dépôt : les contrôles se lancent en mode UTF-8. La garde « cp1252 » plus bas
+  # le retire exprès, sur Windows, pour attraper le §8.1 de l'évaluation du 15 septembre 2026.
+  PYTHONUTF8: "1"
+  PYTHON_VERSION: "3.14"
+  TYPST_VERSION: "0.15.1"
+  PANDOC_VERSION: "3.11"
+
+jobs:
+  documents:
+    name: Documents — ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 40
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      # Typst sert la parité de l'article (check-article.py [2], mutations M2 et M2b), qui ne
+      # dépend d'aucune police système : refaite à l'identique sous TYPST_IGNORE_SYSTEM_FONTS
+      # le 15 septembre 2026. Il va dans le PATH.
+      #
+      # Pandoc, lui, n'y va PAS : verifier-piece.py le lance pour re-rendre chaque pièce, et
+      # ses deux étapes le reçoivent seules. Dans le PATH, il armerait la parité de Traité.pdf
+      # (check-traite.py [4]), qui embarque des polices du poste d'auteur — Corbel, MS PGothic,
+      # Yu Gothic, Segoe UI Symbol, Gadugi, Arial — et ne se refait donc pas ailleurs : sans
+      # Pandoc, check-traite.py la déclare « NON MESURÉ », comme il est écrit pour le faire.
+      - name: Typst ${{ env.TYPST_VERSION }} (PATH) et Pandoc ${{ env.PANDOC_VERSION }} (hors PATH)
+        run: |
+          typst="https://github.com/typst/typst/releases/download/v$TYPST_VERSION"
+          pandoc="https://github.com/jgm/pandoc/releases/download/$PANDOC_VERSION"
+          mkdir -p "$RUNNER_TEMP/typst" "$RUNNER_TEMP/pandoc"
+          if [ "$RUNNER_OS" = "Windows" ]; then
+            curl -fsSL "$typst/typst-x86_64-pc-windows-msvc.zip" -o "$RUNNER_TEMP/typst.zip"
+            unzip -q "$RUNNER_TEMP/typst.zip" -d "$RUNNER_TEMP/typst"
+            tdir="$RUNNER_TEMP/typst/typst-x86_64-pc-windows-msvc"
+            curl -fsSL "$pandoc/pandoc-$PANDOC_VERSION-windows-x86_64.zip" -o "$RUNNER_TEMP/pandoc.zip"
+            unzip -q "$RUNNER_TEMP/pandoc.zip" -d "$RUNNER_TEMP/pandoc"
+            # forme POSIX : les étapes la préfixent à un PATH de bash, où « D:\… » se couperait au « : »
+            pdir=$(cygpath -u "$RUNNER_TEMP/pandoc/pandoc-$PANDOC_VERSION")
+          else
+            curl -fsSL "$typst/typst-x86_64-unknown-linux-musl.tar.xz" | tar -xJ -C "$RUNNER_TEMP/typst"
+            tdir="$RUNNER_TEMP/typst/typst-x86_64-unknown-linux-musl"
+            curl -fsSL "$pandoc/pandoc-$PANDOC_VERSION-linux-amd64.tar.gz" | tar -xz -C "$RUNNER_TEMP/pandoc"
+            pdir="$RUNNER_TEMP/pandoc/pandoc-$PANDOC_VERSION/bin"
+          fi
+          # Un outil absent ne fait pas échouer les contrôles : ils se déclarent « NON MESURÉ »
+          # et sortent 0. La version se vérifie donc ici, où l'absence est une faute.
+          "$tdir/typst" --version | grep -F "typst $TYPST_VERSION"
+          "$pdir/pandoc" --version | head -1 | grep -Fx "pandoc $PANDOC_VERSION"
+          echo "$tdir" >> "$GITHUB_PATH"
+          echo "PANDOC_DIR=$pdir" >> "$GITHUB_ENV"
+
+      - name: Garde cp1252 — tout script qui porte ⚠ ou ☑ reconfigure sa sortie
+        run: |
+          fautifs=$(git ls-files -z '*.py' | xargs -0 grep -lZ -e '⚠' -e '☑' | xargs -0 grep -L reconfigure || true)
+          if [ -n "$fautifs" ]; then
+            printf '%s\n' "$fautifs"
+            echo "::error::scripts sans sys.stdout.reconfigure(encoding=\"utf-8\") : ils plantent sur une console cp1252"
+            exit 1
+          fi
+
+      # ---------------------------------------------------------- a. un contrôle par livrable
+      - name: check-veille.py
+        working-directory: 3 - Veille
+        run: python Python/check-veille.py
+      - name: check-revue.py
+        working-directory: 3 - Veille
+        run: python Python/check-revue.py
+      - name: check-traite.py
+        working-directory: 4 - Essais/1 - Traité
+        run: python Python/check-traite.py
+      - name: check-compendium.py
+        working-directory: 2 - Compendium
+        run: python PRD/check-compendium.py
+      - name: check-toc.py
+        working-directory: 2 - Compendium
+        run: python PRD/check-toc.py
+      - name: check-sieges.py
+        working-directory: 2 - Compendium
+        run: python PRD/check-sieges.py
+      # LC_ALL=C : l'ancre « wc -w brut » (233 257) a été mesurée par le wc de Git pour
+      # Windows, qui ne coupe pas sur les espaces insécables ; le wc GNU en locale UTF-8 les
+      # compte comme séparateurs et rend 241 260 (constaté sous Ubuntu 24.04 le 15 septembre
+      # 2026). En locale C, les deux rendent 233 257.
+      - name: decompte.sh --verifier
+        working-directory: 2 - Compendium
+        env:
+          LC_ALL: C
+        run: bash PRD/decompte.sh --verifier
+      - name: verifier-piece.py
+        working-directory: 2 - Compendium
+        run: PATH="$PANDOC_DIR:$PATH" python build/verifier-piece.py
+      - name: genere.py --verifier — dont les trois figures gelées à l'empreinte
+        working-directory: 2 - Compendium
+        run: python figures/genere.py --verifier
+      - name: genere.py --verifier sans mode UTF-8 (console cp1252)
+        if: runner.os == 'Windows'
+        working-directory: 2 - Compendium
+        env:
+          PYTHONUTF8: "0"
+        run: python figures/genere.py --verifier
+      - name: rejeu-politique.py
+        working-directory: 4 - Essais/2 - Article
+        run: python rejeu-politique.py
+      - name: check-article.py
+        working-directory: 4 - Essais/2 - Article
+        env:
+          TYPST_IGNORE_SYSTEM_FONTS: "true"
+        run: python check-article.py
+      # check-resume.py mesure la géométrie de la page de titre. L'article en est exclu : son
+      # gabarit arXiv pose un folio sous la marge, et le verdict 1 y est documenté comme
+      # inapplicable (APPAREIL.md) ; le mémoire de 1997 en est exclu aussi, PDF non composé ici.
+      # Les dix autres rendus doivent sortir 0.
+      - name: check-resume.py — dix rendus
+        run: |
+          for pdf in \
+            "1 - Collection/1 - InteroperabiliteAgentique/Monographie.pdf" \
+            "1 - Collection/2 - OrchestrationAgentique/Monographie.pdf" \
+            "1 - Collection/3 - EntrepriseAgentique/Monographie.pdf" \
+            "2 - Compendium/Compendium.pdf" \
+            "3 - Veille/Note-veille-SDLC-agentique.pdf" \
+            "3 - Veille/Revue de littérature.pdf" \
+            "3 - Veille/Veille Technologique.pdf" \
+            "4 - Essais/1 - Traité/Traité.pdf" \
+            "5 - Recension/Cinq schémas — état de l'art en services financiers.pdf" \
+            "5 - Recension/État de l'art — services financiers.pdf"
+          do
+            echo "::group::$pdf"
+            python "3 - Veille/Python/check-resume.py" "$pdf"
+            echo "::endgroup::"
+          done
+
+      # ---------------------------------------------------------- b. les contrôles tiennent-ils ?
+      - name: check-sieges-mutations.py
+        working-directory: 2 - Compendium
+        run: python PRD/check-sieges-mutations.py
+      - name: check-toc-mutations.py
+        working-directory: 2 - Compendium
+        run: python PRD/check-toc-mutations.py
+      - name: check-compendium-mutations.py
+        working-directory: 2 - Compendium
+        run: python PRD/check-compendium-mutations.py
+      - name: verifier-piece-mutations.py
+        working-directory: 2 - Compendium
+        run: PATH="$PANDOC_DIR:$PATH" python build/verifier-piece-mutations.py
+      - name: check-article-mutations.py
+        working-directory: 4 - Essais/2 - Article
+        env:
+          TYPST_IGNORE_SYSTEM_FONTS: "true"
+        run: python check-article-mutations.py
+
+      # ---------------------------------------------------------- c. la chaîne se refait-elle ?
+      # Chaque générateur réécrit ce qu'il produit ; la garde qui suit exige que rien n'ait
+      # bougé, à l'octet, fins de ligne comprises. rendre-piece.py (HTML des pièces) n'y est
+      # pas : verifier-piece.py, plus haut, exige déjà que chaque .html soit à l'octet ce que
+      # Pandoc rend de son .md.
+      - name: Rejeu — figures du Compendium (genere.py)
+        working-directory: 2 - Compendium
+        run: python figures/genere.py
+      - name: Rejeu — bibliographie du Compendium (assemble-bibliographie.py)
+        working-directory: 2 - Compendium
+        run: python build/assemble-bibliographie.py
+      # Linux seulement : ce script lance `bash` par subprocess, et Windows résout ce nom en
+      # C:\Windows\System32\bash.exe — le lanceur WSL, pas le bash de Git (constaté le
+      # 15 septembre 2026 : `uname -s` y rend « Linux »). Un exécuteur sans distribution WSL
+      # échouerait sans que le script soit en cause.
+      - name: Rejeu — volumétrie du Compendium (reporter-volumetrie.py)
+        if: runner.os == 'Linux'
+        working-directory: 2 - Compendium
+        env:
+          LC_ALL: C
+        run: python PRD/reporter-volumetrie.py
+      - name: Rejeu — figures du traité (contenu.py)
+        working-directory: 4 - Essais/1 - Traité
+        run: python figures/contenu.py
+      - name: Rejeu — figures de la recension (dessine.py)
+        working-directory: 5 - Recension
+        run: python figures/dessine.py
+      - name: Rejeu — Monographie.md du Vol. II (assemble.py)
+        working-directory: 1 - Collection/2 - OrchestrationAgentique
+        run: python build/assemble.py
+      - name: Rejeu — Monographie.md du Vol. III (assemble.py)
+        working-directory: 1 - Collection/3 - EntrepriseAgentique
+        run: python build/assemble.py
+
+      - name: Garde — arbre propre après rejeu
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            git status --porcelain
+            git diff --stat
+            echo "::error::un rejeu a modifié l'arbre : le versionné n'est plus ce que la chaîne produit"
+            exit 1
+          fi
+          echo "git status --porcelain : vide"
+
+      - name: Garde — fins de ligne (aucun CRLF, ni à l'index ni dans l'arbre)
+        run: |
+          echo "git ls-files --eol | grep -c 'w/crlf' → $(git ls-files --eol | grep -c 'w/crlf' || true)"
+          fautifs=$(git ls-files --eol | grep -E '^i/(crlf|mixed)|w/(crlf|mixed)' || true)
+          if [ -n "$fautifs" ]; then
+            printf '%s\n' "$fautifs"
+            echo "::error::fichiers en CRLF : .gitattributes (eol=lf) contourné, ou générateur qui écrit en mode texte"
+            exit 1
+          fi
+
+  renvois:
+    name: Renvois Markdown — ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - name: check-renvois.py
+        run: python Python/check-renvois.py
+      - name: check-renvois-mutations.py
+        run: python Python/check-renvois-mutations.py
+
+  simulateur:
+    name: Simulateur (cargo) — ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    defaults:
+      run:
+        working-directory: 4 - Essais/1 - Traité
+    env:
+      # rust-toolchain.toml fixe stable-x86_64-pc-windows-gnu : c'est le choix du poste
+      # d'auteur, faute de MSVC, et le fichier dit qu'il ne touche aucune exigence du PRD.
+      # Ici, le stable de l'hôte : windows-msvc sur Windows (sans dlltool à fournir),
+      # x86_64-unknown-linux-gnu sur Linux, où la cible du fichier ne s'exécute pas.
+      RUSTUP_TOOLCHAIN: stable
+      CARGO_TERM_COLOR: never
+      # Plancher du compte de tests (470 au 4 septembre 2026, docs/DEVELOPPEMENT.md) : une
+      # suite qui perd des tests en silence reste verte sans lui. On le relève, jamais on ne
+      # le baisse sans décision écrite.
+      TESTS_PLANCHER: "470"
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Dépendances système d'eframe (Linux)
+        if: runner.os == 'Linux'
+        working-directory: .
+        run: sudo apt-get update -q && sudo apt-get install -yq --no-install-recommends pkg-config libwayland-dev libxkbcommon-dev
+
+      - name: Chaîne Rust et CARGO_TARGET_DIR hors de l'arbre
+        run: |
+          rustup component add clippy rustfmt
+          echo "CARGO_TARGET_DIR=$RUNNER_TEMP/cargo-target" >> "$GITHUB_ENV"
+          rustup show active-toolchain
+          cargo --version
+
+      - uses: actions/cache@v6
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            ${{ runner.temp }}/cargo-target
+          key: cargo-${{ runner.os }}-${{ hashFiles('4 - Essais/1 - Traité/Cargo.lock') }}
+          restore-keys: cargo-${{ runner.os }}-
+
+      - name: cargo fmt --all --check
+        run: cargo fmt --all --check
+
+      - name: cargo clippy --workspace --all-targets --release
+        run: cargo clippy --workspace --all-targets --release
+
+      - name: cargo test --workspace --release
+        run: |
+          cargo test --workspace --release 2>&1 | tee "$RUNNER_TEMP/cargo-test.log"
+          awk -v plancher="$TESTS_PLANCHER" '
+            /^test result:/ { p += $4; f += $6; i += $8 }
+            END {
+              printf "%d réussis, %d échecs, %d ignorés (plancher %d)\n", p, f, i, plancher
+              if (p < plancher) { print "::error::moins de tests qu’au plancher : des tests ont disparu"; exit 1 }
+            }' "$RUNNER_TEMP/cargo-test.log"

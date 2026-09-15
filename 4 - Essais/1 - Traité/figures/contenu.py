@@ -19,6 +19,8 @@ import math
 import sys
 
 import dessine as d
+sys.stdout.reconfigure(encoding="utf-8")  # console cp1252 : ⚠ et ☑ ne s'y encodent pas
+sys.stderr.reconfigure(encoding="utf-8")
 
 FIGURES = []
 

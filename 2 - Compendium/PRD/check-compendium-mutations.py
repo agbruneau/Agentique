@@ -142,7 +142,7 @@ def inserer(chemin, bloc):
     texte = chemin.read_text(encoding="utf-8")
     m = re.search(r"^##\s*§?\s*[\d.]*\s*—?\s*Note de statut", texte, re.M)
     i = m.start() if m else len(texte)
-    chemin.write_text(texte[:i] + bloc + texte[i:], encoding="utf-8")
+    chemin.write_text(texte[:i] + bloc + texte[i:], encoding="utf-8", newline="\n")
 
 
 # --- une mutation par classe --------------------------------------------------
@@ -152,7 +152,7 @@ def m1_champ_retire(tmp):
     p = tmp / CH05
     texte = p.read_text(encoding="utf-8")
     p.write_text(re.sub(r"^\|\s*\*\*Volumétrie cible\*\*.*\n", "", texte, flags=re.M),
-                 encoding="utf-8")
+                 encoding="utf-8", newline="\n")
 
 
 def m2_renvoi_hors_domaine(tmp):
@@ -248,7 +248,7 @@ def m8_toc_identifiant_pendant(tmp):
     assert ancre in texte, "ancre de mutation introuvable dans le TOC"
     p.write_text(texte.replace(
         ancre, "Renvoi de contrôle : le Vol. III F-99 fonde ce point.\n\n" + ancre, 1),
-        encoding="utf-8")
+        encoding="utf-8", newline="\n")
 
 
 def m8b_exclusion_declaree(tmp):
@@ -265,7 +265,7 @@ def m8b_exclusion_declaree(tmp):
     ancre = "## Annexes"
     p.write_text(texte.replace(
         ancre, "Renvoi de contrôle : le Vol. III F-92 porte sa dette de vote.\n\n" + ancre, 1),
-        encoding="utf-8")
+        encoding="utf-8", newline="\n")
 
 
 def m5_cardinal_fausse(tmp):
@@ -279,7 +279,7 @@ def m5_cardinal_fausse(tmp):
     neuf = texte.replace("**R-11 (jalons NIST « visés », jamais « fixés ») : une occurrence**",
                          "**R-11 (jalons NIST « visés », jamais « fixés ») : zéro occurrence**")
     assert neuf != texte, "la déclaration R-11 du ch. 3 a changé de forme"
-    p.write_text(neuf, encoding="utf-8")
+    p.write_text(neuf, encoding="utf-8", newline="\n")
 
 
 def m6_registre_desaligne(tmp):
@@ -305,7 +305,7 @@ def m6_registre_desaligne(tmp):
             break
     else:
         raise AssertionError("ligne du ch. 1 introuvable au registre")
-    p.write_text("".join(lignes), encoding="utf-8")
+    p.write_text("".join(lignes), encoding="utf-8", newline="\n")
 
 
 def m6b_ligne_manquante(tmp):
@@ -314,7 +314,7 @@ def m6b_ligne_manquante(tmp):
     texte = p.read_text(encoding="utf-8")
     neuf = re.sub(r"^\| 28 \|.*\n", "", texte, flags=re.M)
     assert neuf != texte, "la ligne 28 du registre a changé de forme"
-    p.write_text(neuf, encoding="utf-8")
+    p.write_text(neuf, encoding="utf-8", newline="\n")
 
 
 def m6c_date_de_gel_divergente(tmp):
@@ -328,7 +328,7 @@ def m6c_date_de_gel_divergente(tmp):
             break
     else:
         raise AssertionError("ligne 26 introuvable au registre")
-    p.write_text("".join(lignes), encoding="utf-8")
+    p.write_text("".join(lignes), encoding="utf-8", newline="\n")
 
 
 def m7_formulation_proscrite(tmp):

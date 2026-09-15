@@ -2,6 +2,9 @@
 # -*- coding: utf-8 -*-
 """Figures du barème A — Livre IV (chapitres 37 à 46)."""
 from spec import f, NOTE  # noqa: F401
+import sys
+sys.stdout.reconfigure(encoding="utf-8")  # console cp1252 : ⚠ et ☑ ne s'y encodent pas
+sys.stderr.reconfigure(encoding="utf-8")
 
 f(37, "37.3", "f-37-03-non-compositionnalite",
   "La non-compositionnalité de la sûreté : deux arêtes sûres, un chemin qui ne l'est pas.",

@@ -9,6 +9,11 @@
 #
 # Usage : python rejeu-politique.py
 
+import sys
+
+sys.stdout.reconfigure(encoding="utf-8")  # console cp1252 : ⚠ et ☑ ne s'y encodent pas
+sys.stderr.reconfigure(encoding="utf-8")
+
 # ---------------------------------------------------------------- politique § 7
 
 # direction d'optimisation par critère (C1..C5)

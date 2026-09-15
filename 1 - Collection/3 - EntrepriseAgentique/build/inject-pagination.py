@@ -12,5 +12,5 @@ marker = '\n# Avant-propos et note méthodologique\n'
 assert marker in src
 src = src.replace(marker, '\n' + arabic + '# Avant-propos et note méthodologique\n', 1)
 
-open(sys.argv[2], 'w', encoding='utf-8').write(src)
+open(sys.argv[2], 'w', encoding='utf-8', newline='\n').write(src)
 print("injecté ->", sys.argv[2])

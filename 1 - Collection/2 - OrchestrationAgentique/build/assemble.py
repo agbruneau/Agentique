@@ -16,6 +16,9 @@ collisions à la concaténation.
 import posixpath
 import re
 import pathlib
+import sys
+sys.stdout.reconfigure(encoding="utf-8")  # console cp1252 : ⚠ et ☑ ne s'y encodent pas
+sys.stderr.reconfigure(encoding="utf-8")
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 MONO = ROOT / "monographie"
@@ -192,7 +195,7 @@ def main():
             parts.append(f"# {PART_TITLES[prefix]}\n")
         text = (MONO / rel).read_text(encoding="utf-8")
         parts.append(clean_piece(text, prefix, rel))
-    OUT.write_text("\n\n".join(parts) + "\n", encoding="utf-8")
+    OUT.write_text("\n\n".join(parts) + "\n", encoding="utf-8", newline="\n")
     print(f"écrit -> {OUT}  ({len(parts)} blocs, {OUT.stat().st_size // 1024} Ko)")
 
 

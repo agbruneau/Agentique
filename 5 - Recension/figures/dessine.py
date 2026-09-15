@@ -694,6 +694,6 @@ if __name__ == "__main__":
     ici = pathlib.Path(__file__).parent
     for nom, fn in FIGURES:
         s = fn()
-        (ici / nom).write_text(s, encoding="utf-8")
+        (ici / nom).write_text(s, encoding="utf-8", newline="\n")
         h = s.split('height="', 1)[1].split('"', 1)[0]
         print(f"{nom:32s} {W} x {h}")

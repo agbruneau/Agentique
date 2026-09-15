@@ -39,6 +39,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import assemble  # noqa: E402  — piece(), brut(), echappe_typst()
+sys.stdout.reconfigure(encoding="utf-8")  # console cp1252 : ⚠ et ☑ ne s'y encodent pas
+sys.stderr.reconfigure(encoding="utf-8")
 
 RACINE = Path(__file__).resolve().parent.parent
 
@@ -144,10 +146,10 @@ def compose(gabarit, applique, sortie):
             f"[{assemble.echappe_typst(verbe)}][{assemble.echappe_typst(sous)}]")]
         for i, spec in enumerate(TRANCHES):
             src = tmp / f"tranche-{i}.md"
-            src.write_text(tranche(spec, applique), encoding="utf-8")
+            src.write_text(tranche(spec, applique), encoding="utf-8", newline="\n")
             corps, _ = assemble.piece(src, spec["rang"])
             morceaux.append(corps)
-        (tmp / "echantillon.md").write_text("\n".join(morceaux), encoding="utf-8")
+        (tmp / "echantillon.md").write_text("\n".join(morceaux), encoding="utf-8", newline="\n")
 
         subprocess.run(
             ["pandoc", str(tmp / "echantillon.md"), "-f", "markdown-raw_html",
@@ -158,7 +160,7 @@ def compose(gabarit, applique, sortie):
         typ = (tmp / "doc.typ").read_text(encoding="utf-8")
         typ = typ.replace("align(center)[#table", "align(left)[#table")
         typ = re.sub(r"^ *table\.hline\(\),$", "", typ, flags=re.M)
-        (tmp / "doc.typ").write_text(typ, encoding="utf-8")
+        (tmp / "doc.typ").write_text(typ, encoding="utf-8", newline="\n")
 
         subprocess.run(["typst", "compile", "--root", str(tmp),
                         str(tmp / "doc.typ"), str(sortie)], check=True)

@@ -28,7 +28,7 @@ import sys
 import tempfile
 from pathlib import Path
 
-sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 SRC = Path(__file__).resolve().parent
 
@@ -185,7 +185,7 @@ def main():
                 results.append((mid, f"MUTATION INAPPLICABLE — motif absent : {motif[:60]}", False))
                 ok = False
                 continue
-            target.write_text(mute, encoding="utf-8")
+            target.write_text(mute, encoding="utf-8", newline="\n")
             r = run_in(d)
             failed = r.returncode != 0
             tagged = f"[{ctrl}]" in r.stdout

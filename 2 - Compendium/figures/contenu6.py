@@ -7,6 +7,9 @@ lecture a fallu instruire séparément. Elles appartiennent aux Livres I, III ;
 ce module est un ordre de rédaction, non un rang du volume.
 """
 from spec import f, NOTE  # noqa: F401
+import sys
+sys.stdout.reconfigure(encoding="utf-8")  # console cp1252 : ⚠ et ☑ ne s'y encodent pas
+sys.stderr.reconfigure(encoding="utf-8")
 
 f(7, "7.3", "f-07-03-chronologie",
   "Dix-sept mois : les lancements, puis les passages sous fondation — et l'ordre s'inverse.",

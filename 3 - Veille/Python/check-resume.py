@@ -13,6 +13,8 @@ resume tient sur sa page, 1 sinon.
 """
 import io, re, sys, zlib
 from pathlib import Path
+sys.stdout.reconfigure(encoding="utf-8")  # console cp1252 : ⚠ et ☑ ne s'y encodent pas
+sys.stderr.reconfigure(encoding="utf-8")
 
 # Meme regle que les deux autres controles : le PDF par defaut se resout contre
 # l'emplacement du script, jamais contre le repertoire courant. Un chemin donne

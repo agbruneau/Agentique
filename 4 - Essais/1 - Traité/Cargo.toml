@@ -12,7 +12,7 @@ members = [
 [workspace.package]
 version = "0.1.0"
 edition = "2021"
-repository = "https://github.com/agbruneau/Stigmergie"
+repository = "https://github.com/agbruneau/Agentique"
 # Ces crates ne vont pas sur crates.io : ils n'ont de sens qu'ensemble, et la
 # spécification qui les justifie est dans docs/PRD.md.
 publish = false

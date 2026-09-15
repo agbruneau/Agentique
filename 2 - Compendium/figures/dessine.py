@@ -27,6 +27,9 @@ laisser croire. Ne pas le rendre optionnel.
 """
 import re
 from pathlib import Path
+import sys
+sys.stdout.reconfigure(encoding="utf-8")  # console cp1252 : ⚠ et ☑ ne s'y encodent pas
+sys.stderr.reconfigure(encoding="utf-8")
 
 RACINE = Path(__file__).resolve().parent
 
@@ -144,7 +147,7 @@ def rendu(nom, corps, hauteur, alt, source, reserve):
            f'  <rect x="0" y="0" width="{W}" height="{total}" fill="{FOND}"/>']
     svg += ["  " + e for e in corps + pied]
     svg.append("</svg>")
-    (RACINE / f"{nom}.svg").write_text("\n".join(svg) + "\n", encoding="utf-8")
+    (RACINE / f"{nom}.svg").write_text("\n".join(svg) + "\n", encoding="utf-8", newline="\n")
     return total
 
 

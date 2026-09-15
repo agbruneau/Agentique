@@ -19,6 +19,8 @@ import subprocess
 import sys
 import tempfile
 from pathlib import Path
+sys.stdout.reconfigure(encoding="utf-8")  # console cp1252 : ⚠ et ☑ ne s'y encodent pas
+sys.stderr.reconfigure(encoding="utf-8")
 
 RACINE = Path(__file__).resolve().parent.parent
 SCRIPT = RACINE / "build" / "verifier-piece.py"
@@ -70,7 +72,7 @@ def m1_source_revisee(tmp):
     f = tmp / (CH01 + ".md")
     t = f.read_text(encoding="utf-8")
     assert "coût continu" in t
-    f.write_text(t.replace("coût continu", "coût permanent", 1), encoding="utf-8")
+    f.write_text(t.replace("coût continu", "coût permanent", 1), encoding="utf-8", newline="\n")
 
 
 def m2_figure_retiree(tmp):
@@ -83,7 +85,7 @@ def m2_figure_retiree(tmp):
     t = f.read_text(encoding="utf-8")
     i = t.index('<figure class="figure">')
     j = t.index("</figure>", i) + len("</figure>")
-    f.write_text(t[:i] + t[j:], encoding="utf-8")
+    f.write_text(t[:i] + t[j:], encoding="utf-8", newline="\n")
 
 
 def m3_appareil_recopie(tmp):
@@ -98,7 +100,7 @@ def m3_appareil_recopie(tmp):
     i = t.index('<main class="corps">')
     bloc = ("\n<table>\n<thead><tr><th>Champ</th><th>Valeur</th></tr></thead>\n"
             "<tbody><tr><td>Statut</td><td>Brouillon</td></tr></tbody>\n</table>\n")
-    f.write_text(t[:i] + bloc + t[i:], encoding="utf-8")
+    f.write_text(t[:i] + bloc + t[i:], encoding="utf-8", newline="\n")
 
 
 def m4_rendu_absent(tmp):
@@ -120,7 +122,7 @@ def m5_commentaire_de_doctrine(tmp):
     t = f.read_text(encoding="utf-8")
     i = t.index('<main class="corps">')
     f.write_text(t[:i] + "\n<!-- Note de statut : Champ / Valeur, thèse citée. -->\n"
-                 + t[i:], encoding="utf-8")
+                 + t[i:], encoding="utf-8", newline="\n")
 
 
 def m6_figure_deplacee(tmp):
@@ -135,7 +137,7 @@ def m6_figure_deplacee(tmp):
     fa = t.index("</figure>", a) + len("</figure>")
     b = t.index('<figure class="figure">', fa)
     fb = t.index("</figure>", b) + len("</figure>")
-    f.write_text(t[:a] + t[b:fb] + t[fa:b] + t[a:fa] + t[fb:], encoding="utf-8")
+    f.write_text(t[:a] + t[b:fb] + t[fa:b] + t[a:fa] + t[fb:], encoding="utf-8", newline="\n")
 
 
 MUTATIONS = [

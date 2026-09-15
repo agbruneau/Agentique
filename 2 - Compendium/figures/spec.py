@@ -14,6 +14,9 @@ sans réserve, et ce refus est délibéré.
 ⚠ LE RANG D'UNE FIGURE EST CELUI DE SA SECTION. Cinq sections en portent deux ;
 elles se distinguent par un suffixe de lettre — « Figure 31.1a », « 31.1b ».
 """
+import sys
+sys.stdout.reconfigure(encoding="utf-8")  # console cp1252 : ⚠ et ☑ ne s'y encodent pas
+sys.stderr.reconfigure(encoding="utf-8")
 
 FIGURES = []
 

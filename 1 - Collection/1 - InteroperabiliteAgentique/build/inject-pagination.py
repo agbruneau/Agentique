@@ -11,5 +11,5 @@ arabic = '```{=typst}\n#pagebreak(weak: true)\n#set page(numbering: "1")\n#count
 assert '\n# Introduction\n' in src
 src = src.replace('\n# Introduction\n', '\n' + arabic + '# Introduction\n', 1)
 
-open(sys.argv[2], 'w', encoding='utf-8').write(src)
+open(sys.argv[2], 'w', encoding='utf-8', newline='\n').write(src)
 print("injecté ->", sys.argv[2])

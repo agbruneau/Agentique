@@ -83,7 +83,7 @@ def m1_marqueur_retire(tmp):
     p = tmp / CH07
     p.write_text(p.read_text(encoding="utf-8")
                  .replace("SIÈGE DU GARDE-FOU R-8 POUR TOUTE LA SOMME",
-                          "Encadré de désambiguïsation"), encoding="utf-8")
+                          "Encadré de désambiguïsation"), encoding="utf-8", newline="\n")
 
 
 def m2_signature_recopiee(tmp):
@@ -97,21 +97,21 @@ def m2_signature_recopiee(tmp):
             "\n: Tableau 6.9 — Les quatre branches.\n")
     texte = p.read_text(encoding="utf-8")
     coupe = texte.index("## § 6.3")
-    p.write_text(texte[:coupe] + faux + texte[coupe:], encoding="utf-8")
+    p.write_text(texte[:coupe] + faux + texte[coupe:], encoding="utf-8", newline="\n")
 
 
 def m3_renvoi_retire(tmp):
     """S5 — une pièce touche la matière du siège sans plus y renvoyer."""
     p = tmp / CH08
     texte = p.read_text(encoding="utf-8")
-    p.write_text(re.sub(r"ch\.\s*7\s*§\s*7\.5", "plus haut", texte), encoding="utf-8")
+    p.write_text(re.sub(r"ch\.\s*7\s*§\s*7\.5", "plus haut", texte), encoding="utf-8", newline="\n")
 
 
 def m4_signature_perimee(tmp):
     """S3 — le siège change de forme : sa signature ne le voit plus, ni une copie."""
     p = tmp / CH07
     texte = p.read_text(encoding="utf-8")
-    p.write_text(texte.replace("| **(d)** |", "| **(4)** |"), encoding="utf-8")
+    p.write_text(texte.replace("| **(d)** |", "| **(4)** |"), encoding="utf-8", newline="\n")
 
 
 def m5_siege_absent(tmp):
@@ -134,7 +134,7 @@ def m6_taxonomie_effet_recopiee(tmp):
             "\n: Tableau 50.2 — Les trois classes d'effet.\n")
     texte = p.read_text(encoding="utf-8")
     coupe = texte.index("## § 50.3")
-    p.write_text(texte[:coupe] + faux + texte[coupe:], encoding="utf-8")
+    p.write_text(texte[:coupe] + faux + texte[coupe:], encoding="utf-8", newline="\n")
 
 
 def m7_marqueur_tri_retire(tmp):
@@ -147,7 +147,7 @@ def m7_marqueur_tri_retire(tmp):
     p = tmp / CH49
     p.write_text(p.read_text(encoding="utf-8")
                  .replace("SIÈGE DU TRI PROSPECTIF POUR TOUTE LA SOMME",
-                          "Orientation méthodologique"), encoding="utf-8")
+                          "Orientation méthodologique"), encoding="utf-8", newline="\n")
 
 
 def m8_definition_tri_recopiee(tmp):
@@ -163,7 +163,7 @@ def m8_definition_tri_recopiee(tmp):
             "un pari de recherche ou un scénario.\n")
     texte = p.read_text(encoding="utf-8")
     coupe = texte.index("## § 48.2")
-    p.write_text(texte[:coupe] + faux + texte[coupe:], encoding="utf-8")
+    p.write_text(texte[:coupe] + faux + texte[coupe:], encoding="utf-8", newline="\n")
 
 
 def m9_table_points_controle_recopiee(tmp):
@@ -185,7 +185,7 @@ def m9_table_points_controle_recopiee(tmp):
             "\n: Tableau 45.9 — Les cinq points, redits.\n")
     texte = p.read_text(encoding="utf-8")
     coupe = texte.index("## § 45.7")
-    p.write_text(texte[:coupe] + faux + texte[coupe:], encoding="utf-8")
+    p.write_text(texte[:coupe] + faux + texte[coupe:], encoding="utf-8", newline="\n")
 
 
 def m10_renvoi_organisation_fabrique_retire(tmp):
@@ -197,7 +197,7 @@ def m10_renvoi_organisation_fabrique_retire(tmp):
     """
     p = tmp / CH41
     texte = p.read_text(encoding="utf-8")
-    p.write_text(texte.replace("ch. 45", "le chapitre voisin"), encoding="utf-8")
+    p.write_text(texte.replace("ch. 45", "le chapitre voisin"), encoding="utf-8", newline="\n")
 
 
 def m11_trois_echelles_recopiees(tmp):
@@ -213,7 +213,7 @@ def m11_trois_echelles_recopiees(tmp):
             "**graduation à quatre niveaux préfixés** L.\n")
     texte = p.read_text(encoding="utf-8")
     coupe = texte.index("## § 45.8")
-    p.write_text(texte[:coupe] + faux + texte[coupe:], encoding="utf-8")
+    p.write_text(texte[:coupe] + faux + texte[coupe:], encoding="utf-8", newline="\n")
 
 
 # --- le balayage générique, une mutation par classe et par siège --------------
@@ -256,7 +256,7 @@ def _inserer(chemin, bloc):
     texte = chemin.read_text(encoding="utf-8")
     coupe = CS.FIN_DE_CORPS.search(texte)
     i = coupe.start() if coupe else len(texte)
-    chemin.write_text(texte[:i] + bloc + texte[i:], encoding="utf-8")
+    chemin.write_text(texte[:i] + bloc + texte[i:], encoding="utf-8", newline="\n")
 
 
 def _lignes_de_signature(tmp, siege):
@@ -301,7 +301,7 @@ def _g_s2(siege):
         texte = p.read_text(encoding="utf-8")
         neuf = re.sub(siege["marqueur"], "Encadré ordinaire", texte, flags=re.M)
         assert neuf != texte, f"marqueur introuvable : {siege['id']}"
-        p.write_text(neuf, encoding="utf-8")
+        p.write_text(neuf, encoding="utf-8", newline="\n")
     return muter
 
 
@@ -311,7 +311,7 @@ def _g_s3(siege):
         texte = p.read_text(encoding="utf-8")
         neuf = re.sub(siege["signature"][0], "— forme changée —", texte, flags=re.M)
         assert neuf != texte, f"signature[0] introuvable : {siege['id']}"
-        p.write_text(neuf, encoding="utf-8")
+        p.write_text(neuf, encoding="utf-8", newline="\n")
     return muter
 
 

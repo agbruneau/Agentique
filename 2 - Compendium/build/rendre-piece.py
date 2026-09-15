@@ -39,6 +39,8 @@ import re
 import subprocess
 import sys
 from pathlib import Path
+sys.stdout.reconfigure(encoding="utf-8")  # console cp1252 : ⚠ et ☑ ne s'y encodent pas
+sys.stderr.reconfigure(encoding="utf-8")
 
 # ⚠ `COMPENDIUM_RACINE` surcharge la racine, comme pour `check-compendium.py` :
 # sans elle, le harnais de mutation ne pourrait pas travailler sur une copie
@@ -243,7 +245,7 @@ def composer(md):
 
 def rendre(md):
     cible = md.with_suffix(".html")
-    cible.write_text(composer(md), encoding="utf-8")
+    cible.write_text(composer(md), encoding="utf-8", newline="\n")
     return cible, cible.stat().st_size
 
 

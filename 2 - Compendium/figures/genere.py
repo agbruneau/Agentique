@@ -23,6 +23,10 @@ import re
 import sys
 from pathlib import Path
 
+# Console Windows en cp1252 : sans cette ligne, le premier ⚠ imprimé lève
+# `UnicodeEncodeError` et le contrôle meurt avant son verdict (évaluation du
+# 15 septembre 2026, §8.1).
+sys.stdout.reconfigure(encoding="utf-8")
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import dessine as D
 import contenu as C
@@ -61,13 +65,23 @@ def dessine_une(f):
 # pas, et son bilan disait « 115 figures » sur un volume qui en porte 118.
 # ⚠ Ce registre n'est PAS une chaîne de rendu : il gèle, il ne regrave pas.
 # Retoucher l'une des trois oblige à reporter son empreinte ici, à la main.
+#
+# ⚠ L'EMPREINTE PORTE SUR LES OCTETS NORMALISÉS EN LF, depuis le 15 septembre 2026.
+# Les trois valeurs gelées le 21 août (`e82d87c7412a…`, `7bc70d30bcee…`,
+# `6b51f826a50b…`) étaient celles des fichiers en CRLF du disque d'auteur, avant
+# que la règle `eol=lf` de `.gitattributes` ne normalise l'arbre : le contrôle
+# sortait 1 sur tout clone conforme (évaluation du 15 septembre 2026, §8.1). Elles
+# sont réancrées sur les octets LF de l'index — contenu inchangé depuis le
+# 31 juillet 2026 —, et le hachage lit le fichier après CRLF → LF : le verdict ne
+# dépend plus du réglage `core.autocrlf` de qui clone. Le défaut imprime
+# l'empreinte vue en entier, pour qu'une retouche voulue se reporte sans calcul.
 ANTERIEURES = {
     "f-01-00-invariant":      ("Livre I/01-interoperabilite-integration-entreprise.md",
-                               "e82d87c7412aa3f6a652ff56ef0435ae7256be68c191cd65e029eda1a98eb22a"),
+                               "732d287e181f41dd64467803275b6ef36cbd8472205c62561e83714c06023d81"),
     "f-01-01-pile-canonique": ("Livre I/01-interoperabilite-integration-entreprise.md",
-                               "7bc70d30bcee994e5fbdac69ceef03804385366b1a2f9fde499cce3725f01171"),
+                               "e586b774d1d11d7ca9e59d7f60e333441c7851a5132dc91b6c9f8fb051a7e33a"),
     "f-08-01-n-fois-m":       ("Livre I/08-anatomie-mcp-a2a.md",
-                               "6b51f826a50b6cd509275391522aa0a86da721467f7e04db8e5c6ba211773037"),
+                               "22b4002dc3dad30ba33a78379486c424a5573646e0cc70d2bb66b74c33234287"),
 }
 
 
@@ -79,9 +93,9 @@ def verifie_anterieures():
         if not svg.exists():
             defauts.append(f"{nom} : absente du dossier")
             continue
-        vue = hashlib.sha256(svg.read_bytes()).hexdigest()
+        vue = hashlib.sha256(svg.read_bytes().replace(b"\r\n", b"\n")).hexdigest()
         if vue != empreinte:
-            defauts.append(f"{nom} : empreinte {vue[:12]}… au lieu de {empreinte[:12]}…")
+            defauts.append(f"{nom} : empreinte {vue} au lieu de {empreinte[:12]}…")
         p = RACINE / piece_rel
         if not p.exists() or f"../figures/{nom}.svg" not in p.read_text(encoding="utf-8"):
             defauts.append(f"{nom} : plus appelée par {piece_rel}")
@@ -130,7 +144,7 @@ def main():
             texte, etat = insere(f, texte)
             etats.append((f["nom"], etat))
         if not verif:
-            chemin.write_text(texte, encoding="utf-8")
+            chemin.write_text(texte, encoding="utf-8", newline="\n")
 
     manques = [n for n, e in etats if e != "posée"]
     anterieures = verifie_anterieures()

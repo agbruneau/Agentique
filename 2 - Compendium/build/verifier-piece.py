@@ -38,6 +38,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import importlib.util
+sys.stdout.reconfigure(encoding="utf-8")  # console cp1252 : ⚠ et ☑ ne s'y encodent pas
+sys.stderr.reconfigure(encoding="utf-8")
 
 _spec = importlib.util.spec_from_file_location(
     "rendre_piece", Path(__file__).resolve().parent / "rendre-piece.py")

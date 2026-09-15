@@ -15,6 +15,8 @@ Usage : python check-revue.py            -> sortie 0 si tout passe, 1 sinon.
 """
 import re, sys, io, collections
 from pathlib import Path
+sys.stdout.reconfigure(encoding="utf-8")  # console cp1252 : ⚠ et ☑ ne s'y encodent pas
+sys.stderr.reconfigure(encoding="utf-8")
 
 # Meme regle que check-veille.py : le chemin se resout contre l'emplacement du
 # script, jamais contre le repertoire courant.

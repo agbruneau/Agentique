@@ -2,6 +2,9 @@
 # -*- coding: utf-8 -*-
 """Figures du barème A — Livre I (chapitres 1 à 11)."""
 from spec import f, NOTE  # noqa: F401
+import sys
+sys.stdout.reconfigure(encoding="utf-8")  # console cp1252 : ⚠ et ☑ ne s'y encodent pas
+sys.stderr.reconfigure(encoding="utf-8")
 
 # =============================== Livre I ===============================
 

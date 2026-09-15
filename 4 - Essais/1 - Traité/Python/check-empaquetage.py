@@ -66,6 +66,8 @@ import subprocess
 import sys
 import tempfile
 from pathlib import Path
+sys.stdout.reconfigure(encoding="utf-8")  # console cp1252 : ⚠ et ☑ ne s'y encodent pas
+sys.stderr.reconfigure(encoding="utf-8")
 
 RACINE = Path(os.environ.get('TRAITE_RACINE', Path(__file__).resolve().parent.parent))
 MODULE = RACINE / 'web' / 'sim_viz_bg.wasm'

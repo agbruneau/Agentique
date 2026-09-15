@@ -16,6 +16,8 @@ import subprocess
 import sys
 import tempfile
 from pathlib import Path
+sys.stdout.reconfigure(encoding="utf-8")  # console cp1252 : ⚠ et ☑ ne s'y encodent pas
+sys.stderr.reconfigure(encoding="utf-8")
 
 RACINE = Path(__file__).resolve().parent
 CHECK = RACINE / "check-article.py"
@@ -40,7 +42,7 @@ def copie():
 def remplacer(chemin: Path, vieux: str, neuf: str):
     t = chemin.read_text(encoding="utf-8")
     assert t.count(vieux) >= 1, f"{chemin.name} : « {vieux[:40]} » introuvable"
-    chemin.write_text(t.replace(vieux, neuf, 1), encoding="utf-8")
+    chemin.write_text(t.replace(vieux, neuf, 1), encoding="utf-8", newline="\n")
 
 
 # --- une mutation par classe ---------------------------------------------------
@@ -50,7 +52,7 @@ def m1_cle_morte(tmp):
     (tmp / "references.bib").write_text(
         (tmp / "references.bib").read_text(encoding="utf-8")
         + "\n@misc{orpheline,\n  title = {Une entrée que rien ne cite},\n  year = {2026}\n}\n",
-        encoding="utf-8")
+        encoding="utf-8", newline="\n")
 
 
 def m1b_cle_pendante(tmp):

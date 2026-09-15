@@ -31,6 +31,8 @@ donne en argument, lui, reste relatif au repertoire courant.
 """
 import io, re, shutil, subprocess, sys, tempfile, zlib
 from pathlib import Path
+sys.stdout.reconfigure(encoding="utf-8")  # console cp1252 : ⚠ et ☑ ne s'y encodent pas
+sys.stderr.reconfigure(encoding="utf-8")
 
 RACINE = Path(__file__).resolve().parent.parent
 PDF = RACINE / 'Traité.pdf'

@@ -69,18 +69,22 @@ longueur du chemin ont été éprouvés puis écartés le 21 août 2026, mesure 
 l'appui, à [`docs/DEVELOPPEMENT.md`](docs/DEVELOPPEMENT.md). Sortir `target/` de
 OneDrive répare tout ; renommer le dossier ne répare rien.
 
-Les deux lignes à poser avant tout `cargo`, dans chaque terminal — la première
-met `dlltool.exe` dans le `PATH` pour l'interface, la seconde sort `target/` de
-OneDrive :
+Les lignes à poser avant tout `cargo`, dans chaque terminal. `WINLIBS` désigne
+le dossier `mingw64` de **votre** installation de WinLibs — la valeur ci-dessous est
+celle d'une installation par `winget`, à remplacer si la vôtre est ailleurs ; la
+ligne suivante met `dlltool.exe` dans le `PATH` pour l'interface, la dernière sort
+`target/` de OneDrive :
 
 ```powershell
-$env:PATH = "$env:LOCALAPPDATA\Microsoft\WinGet\Packages\BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe\mingw64\bin;$env:PATH"
-$env:CARGO_TARGET_DIR = "C:\Users\agbru\AppData\Local\Temp\cargo-conso"
+$WINLIBS = "$env:LOCALAPPDATA\Microsoft\WinGet\Packages\BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe\mingw64"
+$env:PATH = "$WINLIBS\bin;$env:PATH"
+$env:CARGO_TARGET_DIR = "$env:TEMP\cargo-conso"
 ```
 
 ```bash
-export PATH="$LOCALAPPDATA/Microsoft/WinGet/Packages/BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe/mingw64/bin:$PATH"
-export CARGO_TARGET_DIR="C:/Users/agbru/AppData/Local/Temp/cargo-conso"
+WINLIBS="$LOCALAPPDATA/Microsoft/WinGet/Packages/BrechtSanders.WinLibs.POSIX.UCRT_Microsoft.Winget.Source_8wekyb3d8bbwe/mingw64"
+export PATH="$WINLIBS/bin:$PATH"
+export CARGO_TARGET_DIR="$TEMP/cargo-conso"
 ```
 
 ⚠ **`CARGO_TARGET_DIR` ne survit pas à la fermeture du terminal**, et un
@@ -384,7 +388,9 @@ décisions](docs/decisions.md). Les principales :
   titre, avec le motif de chacun ; la graine y est montrée figée à 1.
 - **Le contrôleur d'élasticité ne converge pas** aux valeurs documentées.
 - **Il n'y a pas d'intégration continue** : NF-13 et NF-16 nomment un mécanisme
-  d'application que le dépôt ne contient pas.
+  d'application que le dépôt ne contient pas. ✎ *Au 15 septembre 2026, un flux
+  [`appareil.yml`](../../.github/workflows/appareil.yml) est écrit pour rejouer `cargo test`,
+  `clippy` et `fmt` sous Linux et Windows ; il n'a jamais tourné ([`APPAREIL.md`](../../APPAREIL.md) § 2).*
 
 La liste vivante est dans le code — `sim_agents::hors_perimetre()`,
 `sim_milieu::hors_perimetre()`, `ModeleFaute::hors_modele()` — et s'affiche dans

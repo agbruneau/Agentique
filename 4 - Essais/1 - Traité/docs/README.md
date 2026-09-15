@@ -131,9 +131,10 @@ oubli :
   phase) et déjà écrites dans [`CLAUDE.md`](../CLAUDE.md),
   [`DEVELOPPEMENT.md`](DEVELOPPEMENT.md) et [`SPEC.md`](SPEC.md). Un quatrième
   document ne ferait que les répéter avec un décalage.
-- **`LICENCE`** — aucune n'est déclarée à ce jour. Ce n'est pas une question de
-  documentation mais une décision de l'auteur, et l'inventer serait pire que
-  l'absence. Les manifestes portent `publish = false` en attendant.
+- **`LICENCE`** — pas de fichier propre au dossier, et il n'en faut pas : le
+  [`LICENSE`](../../../LICENSE) de la racine du dépôt, posé le 21 août 2026,
+  place le simulateur sous CC BY 4.0 en le nommant. Les manifestes portent
+  `publish = false` : ces crates ne vont pas sur crates.io.
 
 Deux redites sont également refusées. Un **glossaire** existe au §12 C du PRD, et
 son pendant exécutable est `sim_agents::glossaire` — le recopier ici créerait une

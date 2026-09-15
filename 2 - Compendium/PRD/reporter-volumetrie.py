@@ -33,6 +33,8 @@ import re
 import subprocess
 import sys
 from pathlib import Path
+sys.stdout.reconfigure(encoding="utf-8")  # console cp1252 : ⚠ et ☑ ne s'y encodent pas
+sys.stderr.reconfigure(encoding="utf-8")
 
 RACINE = Path(os.environ.get("COMPENDIUM_RACINE",
                              Path(__file__).resolve().parent.parent))
@@ -92,7 +94,7 @@ def reporter(mes, ecrire):
             c[7], c[8] = f" {fmt(reel)} ", f" {pourcent(reel, cible)} "
             lignes[i] = "|".join(c)
     if ecrire:
-        reg.write_text("\n".join(lignes), encoding="utf-8")
+        reg.write_text("\n".join(lignes), encoding="utf-8", newline="\n")
 
     # --- site 2 : les en-têtes qui PUBLIENT leur mesure -------------------
     # ⚠ Vingt-six seulement le font ; les vingt-quatre autres renvoient au
@@ -110,7 +112,7 @@ def reporter(mes, ecrire):
                 ecarts.append(f"en-tête : {f} porte {m.group(2).strip()}, mesuré {fmt(reel)}")
                 lignes[i] = l[:m.start()] + m.group(1) + fmt(reel) + m.group(3) + l[m.end():]
                 if ecrire:
-                    p.write_text("\n".join(lignes), encoding="utf-8")
+                    p.write_text("\n".join(lignes), encoding="utf-8", newline="\n")
             break
 
     # --- site 3 : les README de Livre (table et total) --------------------
@@ -130,7 +132,7 @@ def reporter(mes, ecrire):
             if m2.group(0) != m2.group(1) + juste + m2.group(2):
                 t = t[:m2.start()] + m2.group(1) + juste + m2.group(2) + t[m2.end():]
         if ecrire:
-            p.write_text(t, encoding="utf-8")
+            p.write_text(t, encoding="utf-8", newline="\n")
 
     return ecarts, sum(mes.values())
 

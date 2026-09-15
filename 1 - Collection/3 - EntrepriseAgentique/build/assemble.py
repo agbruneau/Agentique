@@ -194,7 +194,7 @@ def main():
         if rel in PART_TITLES:
             parts.append(f"# {PART_TITLES[rel]}\n")
         parts.append(clean_piece((MONO / rel).read_text(encoding="utf-8"), rel))
-    OUT.write_text("\n\n".join(parts) + "\n", encoding="utf-8")
+    OUT.write_text("\n\n".join(parts) + "\n", encoding="utf-8", newline="\n")
     print(f"écrit -> {OUT}  ({len(PIECES)} pièces, {OUT.stat().st_size // 1024} Ko)")
 
 

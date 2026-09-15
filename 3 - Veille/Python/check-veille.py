@@ -15,6 +15,8 @@ motif y sont deja neutralises, ne pas les reintroduire :
 """
 import re, sys, io, collections
 from pathlib import Path
+sys.stdout.reconfigure(encoding="utf-8")  # console cp1252 : ⚠ et ☑ ne s'y encodent pas
+sys.stderr.reconfigure(encoding="utf-8")
 
 # La source vit un cran au-dessus de ce script. Le chemin se resout donc contre
 # l'emplacement du fichier et non contre le repertoire courant : le controle

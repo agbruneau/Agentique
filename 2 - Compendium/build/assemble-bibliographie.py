@@ -28,6 +28,8 @@ import re
 import sys
 import unicodedata
 from collections import OrderedDict
+sys.stdout.reconfigure(encoding="utf-8")  # console cp1252 : ⚠ et ☑ ne s'y encodent pas
+sys.stderr.reconfigure(encoding="utf-8")
 
 RACINE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CORPUS = os.path.join(os.path.dirname(RACINE), "1 - Collection")
@@ -259,7 +261,7 @@ def main():
             return 1
         print(f"OK — {len(liste)} entrées uniques, {fondus} doublons fondus.")
         return 0
-    with open(SORTIE, "w", encoding="utf-8") as fh:
+    with open(SORTIE, "w", encoding="utf-8", newline="\n") as fh:
         fh.write(contenu)
     print(
         f"OK — {len(liste)} entrées uniques écrites "

@@ -37,6 +37,8 @@ generale, reste a ecrire — et ne consomme aucun numero de chapitre.
 import re
 import sys
 from pathlib import Path
+sys.stdout.reconfigure(encoding="utf-8")  # console cp1252 : ⚠ et ☑ ne s'y encodent pas
+sys.stderr.reconfigure(encoding="utf-8")
 
 RACINE = Path(__file__).resolve().parent.parent
 
@@ -259,7 +261,7 @@ def main():
     annexes = [("annexe-references.md", False), ("annexe-bibliographie.md", True)]
     for nom, compacte in annexes:
         morceaux.append(annexe(RACINE / nom, compacte))
-    dest.write_text("\n".join(morceaux), encoding="utf-8")
+    dest.write_text("\n".join(morceaux), encoding="utf-8", newline="\n")
     print(f"[assemble] {numero} chapitres, 5 livres, {len(annexes)} annexes, "
           f"{dagues} renvois a la note de statut marques -> {dest}")
 

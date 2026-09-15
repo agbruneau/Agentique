@@ -2,6 +2,9 @@
 # -*- coding: utf-8 -*-
 """Figures du barème A — Livre III (chapitres 22 à 36)."""
 from spec import f, NOTE  # noqa: F401
+import sys
+sys.stdout.reconfigure(encoding="utf-8")  # console cp1252 : ⚠ et ☑ ne s'y encodent pas
+sys.stderr.reconfigure(encoding="utf-8")
 
 f(22, "22.1", "f-22-01-options-orchestration",
   "Les quatre options d'orchestration, lues par les deux axes qui les ordonnent.",
