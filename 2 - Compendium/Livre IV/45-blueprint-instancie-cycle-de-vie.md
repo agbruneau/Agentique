@@ -6,54 +6,17 @@ Quatrième mouvement — composer (ch. 42-46). Quatrième chapitre du mouvement,
 l'enveloppe dérivée est la plus haute du Livre** : il instancie ce que le ch. 43 a rangé et ce que le
 ch. 44 a formalisé.*
 
-⚠ **Chapitre issu de la fusion v0.20 du TOC** (décision 11) : il porte **deux mouvements** — *le
-blueprint instancié* (ancien ch. 49), *le cycle de vie complet d'un agent d'entreprise* (ancien
-ch. 50) — et donc **deux thèses**, conservées intégralement et **jamais fondues en une troisième**.
-
-| Champ | Valeur |
+| Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 45.16](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | **Brouillon de rédaction, non publiable** — rédigé sur instruction d'auteur du 27 juillet 2026, **avant** les portes **G-3**, **G-4** et **G-5**, et hors de l'ordre de rédaction du PRD §6. ⚠ **Ce chapitre hérite en outre d'une réserve du ch. 44** : *le registre des stéréotypes dont il dépend est publié sous réserve d'un préalable non tenu* (R-IV-101). ⚠ **R-IV-40 et R-IV-41, ouvertes au ch. 37, valent pour tout le Livre.** ⚠ **Le § 45.6 est un SIÈGE pour toute la somme** — le ch. 41 § 41.7 y renvoie sans le reprendre |
-| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** ([`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 — l'état a changé le 28 juillet 2026, et le motif se déclare** : la passe du volet résiduel a **instruit à la source primaire les 123 entrées à sensibilité temporelle du socle consolidé** ([`gel-2026-07-28-volet-residuel.md`](../PRD/gel-2026-07-28-volet-residuel.md)), ⚠ **mais cette pièce ne s'y ré-adosse pas** : *ses propres faits périssables — statuts de disponibilité, versions de produits, dates d'annonce, échéances de brouillons — **n'ont pas été repris à la source primaire**, et la reprise reste due.* ⚠ **Le superlatif antérieur — « le chapitre du Livre où ces faits sont les plus nombreux » — est retiré**, *aucun balayage comparatif des dix chapitres ne le soutenant.* Gels de source : **16 juillet 2026** (Vol. II, ch. 22-23), **21 juillet 2026** (Vol. III), **juin 2026** (Vol. I) |
-| **Socle mobilisé** | ⚠ **Écrite avant l'existence du socle consolidé, la pièce ne s'y ré-adosse pas.** L'Annexe B ([`PRD/socle-consolide.md`](../PRD/socle-consolide.md), **159 entrées `S-001`…`S-159`**) existe depuis le **28 juillet 2026**, **porte G-3 franchie** — *la formule « socle consolidé : zéro entrée » a cessé d'être vraie et n'est plus écrite ici* ; les énoncés ci-dessous résolvent **contre les socles des volumes, par leurs identifiants d'origine**, et **la correspondance vers les `S-nnn` reste due**. Vol. II — **F-38 à F-46** ⚠ **nommées une à une, la plage seule ne les désignant pas** : **F-38**, **F-39**, **F-40**, **F-41**, **F-42**, **F-43**, **F-44**, **F-45**, **F-46** ; plus **F-09**, **F-15**, **F-17**, **F-27**, **F-28**, **F-29**, **F-32**, **F-33**, **F-34**, **F-35**, **F-36**, **F-37**, **F-01**, **F-02**, **F-16**, **F-05**, **F-48** ; ⚠ **et le socle du second mouvement est une plage distincte, relevée sur l'en-tête de sa source** : **F-39 à F-42 et F-44 à F-46** — *ni F-38 ni F-43 n'y figurent* —, plus **F-27**, **F-28**, **F-34**, **F-35**. **PRD du Vol. II, Annexe B §B.1-B.4** (spécification du blueprint). Vol. III — **F-06**, **F-07**, **F-08**, **F-10**, **F-11**, **F-29**, **F-46**, **F-47**, **F-85**, **F-86**, **F-89** ; **H-13**, **H-30**, **H-32**. Vol. I — **Annexe B** (architecture de solutions) et *Monographie* **§6.8**, **en [C]**. ⚠ **La liste reprend l'assignation du plan, et toutes ses entrées ne sont pas citées au corps** : *Vol. II **F-02**, **F-05**, **F-09**, **F-16**, **F-27**, **F-34**, **F-35**, **F-43** et **F-48**, Vol. III **H-13**, n'y portent aucune occurrence — **déclarées mobilisables, non mobilisées***. ⚠ **Les deux séries F-xx sont préfixées de leur volume à chaque emploi** (décision 7). **Aucun énoncé n'est central au sens de CA-IV-01** — *les entrées [C] l'interdisent, et la pièce n'est adossée à aucune entrée `S-nnn` du socle consolidé* |
-| **Garde-fous balayés** | ⚠ **Règle de comptage, décision 16 du TOC** : les cardinaux ci-dessous portent sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — de la première section à la synthèse, **en-tête et note de statut exclus** —, et ils sont **re-mesurés sur le corpus que le commit produit**. ⚠ **Un garde-fou appliqué sans que son identifiant soit écrit voit son DOMAINE déclaré, sans cardinal** (alinéa c) : *le domaine balayé est le corps entier, et les cardinaux antérieurs — qui comptaient les **applications** et non le marqueur — n'étaient re-mesurables par aucune règle écrite.* **Les deux séries sont balayées intégralement, zéros compris.** Vol. II — **R-8 (sigle jamais nu, quatre branches) : trois occurrences**, § 45.2, § 45.6 et § 45.14, **renvoyées au siège du ch. 7 § 7.5** ; **R-5 (aucun standard technique désigné) : deux occurrences**, § 45.4 et § 45.13 ; **réserve F-37 (préimpression non révisée) : deux occurrences**, § 45.1 ; **R-6 (position à un classement d'analystes non vérifiée) : une occurrence**, § 45.3 ; **R-7 (instrumentation d'une attente réglementaire par un produit = inférence d'auteur) : une occurrence**, § 45.4, ⚠ **nommé par volume, à ne pas confondre avec R-07 du Vol. III** ; **réserve F-01 (« cadre d'autorisation », jamais « sécurisé ») : une occurrence**, § 45.2 ; **réserve F-29 (le rail temps réel porte quatre cibles successives) : deux occurrences**, § 45.4, ⚠ **à ne pas confondre avec F-29 du Vol. III**, *qui porte un tout autre objet au § 45.9* ; **métriques auto-déclarées (marqueur « auto-déclaré ») : quatre occurrences**, § 45.2, § 45.9 (deux) et § 45.11, **chacune attribuée à son éditeur ou à son institution nommée** ; **§8.4 (neutralité fournisseur : nommer, jamais recommander) et réserve F-09 : zéro occurrence de l'identifiant** — ⚠ *les deux sont tenus de bout en bout, la neutralité aux § 45.1 à § 45.3 et § 45.11, la formule « attendu par E-23 » au § 45.11 — le § 45.4 écrivant « **attentes** de risque de modèle » et **ne portant nulle part le mot proscrit « exigé »**, dont l'unique occurrence du corps est l'énoncé de la règle au § 45.11 : **domaine déclaré, sans cardinal** (décision 16, alinéa c)* ; **R-1 à R-4 : zéro occurrence**. Vol. III — **R-09 : trois occurrences**, § 45.5, § 45.8 et § 45.9 ; **R-01 : deux occurrences**, § 45.1 et § 45.8 ; **R-02 : une occurrence**, § 45.9 ; **R-07 (aucune conformité revendiquée : fait négatif ÉTABLI, non vérifié) : une occurrence**, § 45.4 ; **R-13 : une occurrence**, § 45.14, **renvoyée au siège du ch. 43 § 43.5** ; **R-14 : zéro occurrence de l'identifiant** — ⚠ *les trois degrés sont portés en toutes lettres aux § 45.1, § 45.2, § 45.4 à § 45.6, § 45.10, § 45.13, § 45.15 et à la synthèse : **domaine déclaré, sans cardinal***. **R-03 à R-06, R-08, R-10 à R-12 : zéro occurrence** |
-| **Volumétrie cible** | ≈ **12 000 mots** de corps (§ 45.0 à la synthèse), **cible dérivée** de l'enveloppe du Livre (**69 000 mots**, TOC v0.25) au prorata des **quinze sections en deux mouvements** — **la plus haute du Livre**, devant les ≈ 11 000 mots du ch. 37 ; *les dix cibles dérivées somment exactement l'enveloppe.* ☑ **Décompte publiable depuis G-2** ; **réel reporté au [`README.md`](README.md)**. ⚠ **D-4 s'applique**, et son interdiction d'amputation porte ici plus qu'ailleurs : *un chapitre d'instanciation est long parce que chaque composant porte son statut, sa date et son éditeur* |
+| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; brouillon non publiable : rédigé le 27 juillet 2026 avant G-3, G-4 et G-5, hors de l'ordre du PRD §6 ; hérite de la réserve R-IV-101 du ch. 44 ; § 45.6 siège pour la somme ; aucun énoncé central (CA-IV-01) |
+| **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source 16 juillet 2026 (Vol. II), 21 juillet 2026 (Vol. III), juin 2026 (Vol. I) ; faits périssables non repris à la source primaire |
+| **Socle mobilisé** | non ré-adossée, correspondance S-nnn due : Vol. II, F-38 à F-46 nommées une à une, Vol. III, Vol. I en [C] ; dix entrées assignées non citées au corps |
+| **Garde-fous balayés** | Vol. II — R-8 : trois occurrences ; R-5 : deux occurrences ; R-6 : une occurrence ; R-7 : une occurrence ; R-1 à R-4 : zéro occurrence · Vol. III — R-09 : trois occurrences ; R-01 : deux occurrences ; R-02 : une occurrence ; R-07 : une occurrence ; R-13 : une occurrence ; R-14 : zéro occurrence de l'identifiant ; R-03 à R-06, R-08, R-10 à R-12 : zéro occurrence |
+| **Volumétrie cible** | Réel : 7 130 mots de corps pour une cible ≈ 12 000 mots (−40,6 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) **v0.28**, entrée du chapitre 45, premier mouvement — **thèse réalignée en v0.28**, décisions 8 et 14, remontée R-IV-105)* — le blueprint applique les six principes directeurs à un portefeuille réel documenté ; chaque couche porte **son statut de preuve daté** et, ⚠ **lorsqu'il y en a un, un positionnement d'options d'orchestration qui est SANS EXCEPTION une** Lecture de l'auteur — *aucune source du corpus ne positionne un produit sur cette échelle, et plusieurs couches n'en portent aucun*. ⚠ **Les points d'intégration avec l'existant portent sur TROIS existants nommés, non sur chaque couche**, et *deux des trois ne sont pas documentés à ce grain* — **étendre, jamais dupliquer**.
 
 > **Thèse du second mouvement**, citée depuis le TOC **v0.28**, entrée du chapitre 45 *(thèse réalignée en v0.28, décisions 8 et 14 — remontée R-IV-103)* — le blueprint **s'éprouve** par le parcours — de l'enregistrement à la révocation, chaque transition est jouée contre l'architecture **au grain générique des mécanismes**, ⚠ **le cas financier canadien (continuité Boréalis) étant joué EN UNE PASSE UNIQUE en clôture** — *inversion que le Vol. III déclare en tête de son chapitre comme un choix de composition, non une prescription du cadrage*. ⚠ **Et l'épreuve ne « prouve » rien** : *sa confrontation ne vaut pas réfutation externe — c'est une **épreuve de cohérence interne**, le cas venant du même auteur et du même corpus.*
-
-⚠ **Les deux thèses portaient, à la rédaction, des formes que leurs sources avaient elles-mêmes
-bornées — la seconde était le désalignement le plus net du Livre, et le réalignement est FAIT**
-(décision 17 du TOC, alinéa c). ⚠ **Une seule accommodation typographique a été faite au report, et
-elle se déclare** : *dans la thèse du premier mouvement, la borne de gras qui se refermait sur
-« Lecture de l'auteur » a été rouverte devant ce marqueur — **aucun mot n'est changé, aucun mot ne
-perd son gras** —, parce que le générateur de la page reconnaît le marqueur CA-IV-07 avec sa balise
-fermante et produisait sinon un gras jamais refermé* (le contrôle [2] du vérificateur l'a trouvé).
-**Formes antérieures, v0.25** : *premier mouvement*, « le blueprint
-applique les principes directeurs […] ; **chaque couche** porte **son positionnement OO**, son statut
-de preuve et **son point d'intégration** avec l'IAM et l'observabilité en place » ; *second mouvement*,
-« le blueprint **se prouve** par le parcours — […] chaque transition est jouée contre l'architecture,
-**au grain d'un cas financier canadien** (continuité Boréalis) ».
-
-- **Premier mouvement — deux bornes.** *(a)* « chaque couche porte **son positionnement OO** » : le
-  Vol. II établit qu'**aucune source de son corpus ne positionne un produit sur l'échelle OO1-OO4**, et
-  que **tout positionnement avancé est, sans exception, une Lecture de l'auteur**. *La thèse ne le dit
-  pas ; le corps l'écrit à chaque ligne.* *(b)* « **chaque couche** porte […] son point d'intégration
-  avec l'IAM et l'observabilité » : *le Vol. III traite **trois existants**, non huit couches* — **le
-  quantificateur universel n'est porté par aucune des deux sources.**
-- **Second mouvement — et il porte sur ce que la source déclare avoir fait.** *(a)* « **chaque
-  transition est jouée** […] **au grain d'un cas financier canadien** » : ⚠ **le Vol. III déclare
-  expressément l'inverse** — *« les trois transitions ci-dessous sont jouées **au grain générique des
-  mécanismes**, et le cas fil rouge est joué **en une passe unique** » au terme du chapitre*, et il
-  qualifie cette inversion de **choix de composition, non de prescription du cadrage**. *(b)* « le
-  blueprint **se prouve** par le parcours » : ⚠ **le Vol. III écrit que sa confrontation « ne vaut pas
-  réfutation externe »** — *« c'est une **épreuve de cohérence**, et l'appeler autrement serait
-  exactement la faute que ce volume prend pour objet ».*
-
-**Le corps a été écrit sous les formes bornées** et les écarts avaient été **remontés** (R-IV-103 et
-R-IV-105, § 45.16). ☑ **Les deux remontées sont soldées par l'arbitrage v0.28 du TOC** (décisions 8
-et 14), et **les deux citations ci-dessus portent les formes réalignées**, reportées **par copie**
-depuis l'entrée courante du plan. *Ni la v0.29 ni la v0.30 du TOC ne modifient une thèse du Livre.*
 
 ---
 
@@ -795,3 +758,61 @@ d'arbitrage même qui publiait la mesure de volumétrie** — « SIÈGE UNIQUE D
 « SIÈGE DE L'ORGANISATION DE LA FABRIQUE… », un mot de plus — *d'où l'écart d'un mot entre la
 volumétrie publiée et la mesure ; il est corrigé au [`README.md`](README.md) du Livre, et la règle est
 qu'**une mesure se prend sur le corpus que le commit produit**.*
+
+---
+
+### En-tête de rédaction
+
+*Reporté ici le 15 septembre 2026, dans l'ordre et mot pour mot, depuis la tête de la pièce, où il précédait le premier filet (plan d'exécution, tâche T4.3). Les dates, les cardinaux et les renvois qui suivent sont ceux de leur passe ; la tête n'en garde qu'un résumé en cinq lignes.*
+
+#### Avant le tableau
+
+⚠ **Chapitre issu de la fusion v0.20 du TOC** (décision 11) : il porte **deux mouvements** — *le
+blueprint instancié* (ancien ch. 49), *le cycle de vie complet d'un agent d'entreprise* (ancien
+ch. 50) — et donc **deux thèses**, conservées intégralement et **jamais fondues en une troisième**.
+
+#### Tableau
+
+| Champ | Valeur |
+|---|---|
+| **Statut** | **Brouillon de rédaction, non publiable** — rédigé sur instruction d'auteur du 27 juillet 2026, **avant** les portes **G-3**, **G-4** et **G-5**, et hors de l'ordre de rédaction du PRD §6. ⚠ **Ce chapitre hérite en outre d'une réserve du ch. 44** : *le registre des stéréotypes dont il dépend est publié sous réserve d'un préalable non tenu* (R-IV-101). ⚠ **R-IV-40 et R-IV-41, ouvertes au ch. 37, valent pour tout le Livre.** ⚠ **Le § 45.6 est un SIÈGE pour toute la somme** — le ch. 41 § 41.7 y renvoie sans le reprendre |
+| **Date de gel** | **27 juillet 2026** — gel unique, **D-1 prise** ([`gel-2026-07-27.md`](../PRD/gel-2026-07-27.md)). ⚠ **Volet résiduel de G-1 — l'état a changé le 28 juillet 2026, et le motif se déclare** : la passe du volet résiduel a **instruit à la source primaire les 123 entrées à sensibilité temporelle du socle consolidé** ([`gel-2026-07-28-volet-residuel.md`](../PRD/gel-2026-07-28-volet-residuel.md)), ⚠ **mais cette pièce ne s'y ré-adosse pas** : *ses propres faits périssables — statuts de disponibilité, versions de produits, dates d'annonce, échéances de brouillons — **n'ont pas été repris à la source primaire**, et la reprise reste due.* ⚠ **Le superlatif antérieur — « le chapitre du Livre où ces faits sont les plus nombreux » — est retiré**, *aucun balayage comparatif des dix chapitres ne le soutenant.* Gels de source : **16 juillet 2026** (Vol. II, ch. 22-23), **21 juillet 2026** (Vol. III), **juin 2026** (Vol. I) |
+| **Socle mobilisé** | ⚠ **Écrite avant l'existence du socle consolidé, la pièce ne s'y ré-adosse pas.** L'Annexe B ([`PRD/socle-consolide.md`](../PRD/socle-consolide.md), **159 entrées `S-001`…`S-159`**) existe depuis le **28 juillet 2026**, **porte G-3 franchie** — *la formule « socle consolidé : zéro entrée » a cessé d'être vraie et n'est plus écrite ici* ; les énoncés ci-dessous résolvent **contre les socles des volumes, par leurs identifiants d'origine**, et **la correspondance vers les `S-nnn` reste due**. Vol. II — **F-38 à F-46** ⚠ **nommées une à une, la plage seule ne les désignant pas** : **F-38**, **F-39**, **F-40**, **F-41**, **F-42**, **F-43**, **F-44**, **F-45**, **F-46** ; plus **F-09**, **F-15**, **F-17**, **F-27**, **F-28**, **F-29**, **F-32**, **F-33**, **F-34**, **F-35**, **F-36**, **F-37**, **F-01**, **F-02**, **F-16**, **F-05**, **F-48** ; ⚠ **et le socle du second mouvement est une plage distincte, relevée sur l'en-tête de sa source** : **F-39 à F-42 et F-44 à F-46** — *ni F-38 ni F-43 n'y figurent* —, plus **F-27**, **F-28**, **F-34**, **F-35**. **PRD du Vol. II, Annexe B §B.1-B.4** (spécification du blueprint). Vol. III — **F-06**, **F-07**, **F-08**, **F-10**, **F-11**, **F-29**, **F-46**, **F-47**, **F-85**, **F-86**, **F-89** ; **H-13**, **H-30**, **H-32**. Vol. I — **Annexe B** (architecture de solutions) et *Monographie* **§6.8**, **en [C]**. ⚠ **La liste reprend l'assignation du plan, et toutes ses entrées ne sont pas citées au corps** : *Vol. II **F-02**, **F-05**, **F-09**, **F-16**, **F-27**, **F-34**, **F-35**, **F-43** et **F-48**, Vol. III **H-13**, n'y portent aucune occurrence — **déclarées mobilisables, non mobilisées***. ⚠ **Les deux séries F-xx sont préfixées de leur volume à chaque emploi** (décision 7). **Aucun énoncé n'est central au sens de CA-IV-01** — *les entrées [C] l'interdisent, et la pièce n'est adossée à aucune entrée `S-nnn` du socle consolidé* |
+| **Garde-fous balayés** | ⚠ **Règle de comptage, décision 16 du TOC** : les cardinaux ci-dessous portent sur le **marqueur littéral de l'identifiant** dans le **corps** de la pièce — de la première section à la synthèse, **en-tête et note de statut exclus** —, et ils sont **re-mesurés sur le corpus que le commit produit**. ⚠ **Un garde-fou appliqué sans que son identifiant soit écrit voit son DOMAINE déclaré, sans cardinal** (alinéa c) : *le domaine balayé est le corps entier, et les cardinaux antérieurs — qui comptaient les **applications** et non le marqueur — n'étaient re-mesurables par aucune règle écrite.* **Les deux séries sont balayées intégralement, zéros compris.** Vol. II — **R-8 (sigle jamais nu, quatre branches) : trois occurrences**, § 45.2, § 45.6 et § 45.14, **renvoyées au siège du ch. 7 § 7.5** ; **R-5 (aucun standard technique désigné) : deux occurrences**, § 45.4 et § 45.13 ; **réserve F-37 (préimpression non révisée) : deux occurrences**, § 45.1 ; **R-6 (position à un classement d'analystes non vérifiée) : une occurrence**, § 45.3 ; **R-7 (instrumentation d'une attente réglementaire par un produit = inférence d'auteur) : une occurrence**, § 45.4, ⚠ **nommé par volume, à ne pas confondre avec R-07 du Vol. III** ; **réserve F-01 (« cadre d'autorisation », jamais « sécurisé ») : une occurrence**, § 45.2 ; **réserve F-29 (le rail temps réel porte quatre cibles successives) : deux occurrences**, § 45.4, ⚠ **à ne pas confondre avec F-29 du Vol. III**, *qui porte un tout autre objet au § 45.9* ; **métriques auto-déclarées (marqueur « auto-déclaré ») : quatre occurrences**, § 45.2, § 45.9 (deux) et § 45.11, **chacune attribuée à son éditeur ou à son institution nommée** ; **§8.4 (neutralité fournisseur : nommer, jamais recommander) et réserve F-09 : zéro occurrence de l'identifiant** — ⚠ *les deux sont tenus de bout en bout, la neutralité aux § 45.1 à § 45.3 et § 45.11, la formule « attendu par E-23 » au § 45.11 — le § 45.4 écrivant « **attentes** de risque de modèle » et **ne portant nulle part le mot proscrit « exigé »**, dont l'unique occurrence du corps est l'énoncé de la règle au § 45.11 : **domaine déclaré, sans cardinal** (décision 16, alinéa c)* ; **R-1 à R-4 : zéro occurrence**. Vol. III — **R-09 : trois occurrences**, § 45.5, § 45.8 et § 45.9 ; **R-01 : deux occurrences**, § 45.1 et § 45.8 ; **R-02 : une occurrence**, § 45.9 ; **R-07 (aucune conformité revendiquée : fait négatif ÉTABLI, non vérifié) : une occurrence**, § 45.4 ; **R-13 : une occurrence**, § 45.14, **renvoyée au siège du ch. 43 § 43.5** ; **R-14 : zéro occurrence de l'identifiant** — ⚠ *les trois degrés sont portés en toutes lettres aux § 45.1, § 45.2, § 45.4 à § 45.6, § 45.10, § 45.13, § 45.15 et à la synthèse : **domaine déclaré, sans cardinal***. **R-03 à R-06, R-08, R-10 à R-12 : zéro occurrence** |
+| **Volumétrie cible** | ≈ **12 000 mots** de corps (§ 45.0 à la synthèse), **cible dérivée** de l'enveloppe du Livre (**69 000 mots**, TOC v0.25) au prorata des **quinze sections en deux mouvements** — **la plus haute du Livre**, devant les ≈ 11 000 mots du ch. 37 ; *les dix cibles dérivées somment exactement l'enveloppe.* ☑ **Décompte publiable depuis G-2** ; **réel reporté au [`README.md`](README.md)**. ⚠ **D-4 s'applique**, et son interdiction d'amputation porte ici plus qu'ailleurs : *un chapitre d'instanciation est long parce que chaque composant porte son statut, sa date et son éditeur* |
+
+#### Après la thèse
+
+
+⚠ **Les deux thèses portaient, à la rédaction, des formes que leurs sources avaient elles-mêmes
+bornées — la seconde était le désalignement le plus net du Livre, et le réalignement est FAIT**
+(décision 17 du TOC, alinéa c). ⚠ **Une seule accommodation typographique a été faite au report, et
+elle se déclare** : *dans la thèse du premier mouvement, la borne de gras qui se refermait sur
+« Lecture de l'auteur » a été rouverte devant ce marqueur — **aucun mot n'est changé, aucun mot ne
+perd son gras** —, parce que le générateur de la page reconnaît le marqueur CA-IV-07 avec sa balise
+fermante et produisait sinon un gras jamais refermé* (le contrôle [2] du vérificateur l'a trouvé).
+**Formes antérieures, v0.25** : *premier mouvement*, « le blueprint
+applique les principes directeurs […] ; **chaque couche** porte **son positionnement OO**, son statut
+de preuve et **son point d'intégration** avec l'IAM et l'observabilité en place » ; *second mouvement*,
+« le blueprint **se prouve** par le parcours — […] chaque transition est jouée contre l'architecture,
+**au grain d'un cas financier canadien** (continuité Boréalis) ».
+
+- **Premier mouvement — deux bornes.** *(a)* « chaque couche porte **son positionnement OO** » : le
+  Vol. II établit qu'**aucune source de son corpus ne positionne un produit sur l'échelle OO1-OO4**, et
+  que **tout positionnement avancé est, sans exception, une Lecture de l'auteur**. *La thèse ne le dit
+  pas ; le corps l'écrit à chaque ligne.* *(b)* « **chaque couche** porte […] son point d'intégration
+  avec l'IAM et l'observabilité » : *le Vol. III traite **trois existants**, non huit couches* — **le
+  quantificateur universel n'est porté par aucune des deux sources.**
+- **Second mouvement — et il porte sur ce que la source déclare avoir fait.** *(a)* « **chaque
+  transition est jouée** […] **au grain d'un cas financier canadien** » : ⚠ **le Vol. III déclare
+  expressément l'inverse** — *« les trois transitions ci-dessous sont jouées **au grain générique des
+  mécanismes**, et le cas fil rouge est joué **en une passe unique** » au terme du chapitre*, et il
+  qualifie cette inversion de **choix de composition, non de prescription du cadrage**. *(b)* « le
+  blueprint **se prouve** par le parcours » : ⚠ **le Vol. III écrit que sa confrontation « ne vaut pas
+  réfutation externe »** — *« c'est une **épreuve de cohérence**, et l'appeler autrement serait
+  exactement la faute que ce volume prend pour objet ».*
+
+**Le corps a été écrit sous les formes bornées** et les écarts avaient été **remontés** (R-IV-103 et
+R-IV-105, § 45.16). ☑ **Les deux remontées sont soldées par l'arbitrage v0.28 du TOC** (décisions 8
+et 14), et **les deux citations ci-dessus portent les formes réalignées**, reportées **par copie**
+depuis l'entrée courante du plan. *Ni la v0.29 ni la v0.30 du TOC ne modifient une thèse du Livre.*

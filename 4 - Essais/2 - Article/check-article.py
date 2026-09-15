@@ -185,25 +185,29 @@ def cardinaux(src: str, bib: str, readme: str):
     }
     # ⚠ Le README se lit sur ses formes exactes. Une forme qui change casse ce
     # contrôle AVANT de casser le lecteur : c'est voulu.
+    # Depuis la page d'accueil du 15 septembre 2026 (tâche T4.2), les formes ne portent
+    # plus de gras : l'ancrage que les `**` donnaient passe à l'UNICITÉ — une forme lue
+    # deux fois au README est un écart, comme une forme absente.
     motifs = {
-        "pages": r"\*\*(\d[\d \u202f]*) p\. / ",
-        "octets du PDF": r" p\. / (\d[\d \u202f]*) o\.\*\*",
-        "lignes de la source": r"\*\*(\d[\d \u202f]*) l\. / ",
-        "octets de la source": r" l\. / (\d[\d \u202f]*) o\.\*\*",
+        "pages": r"(?<!\d)(?<!\d )(?<!\d\u202f)(\d[\d \u202f]*) p\. / ",
+        "octets du PDF": r" p\. / (\d[\d \u202f]*) o\.",
+        "lignes de la source": r"(?<!\d)(?<!\d )(?<!\d\u202f)(\d[\d \u202f]*) l\. / ",
+        "octets de la source": r" l\. / (\d[\d \u202f]*) o\.",
         "titres de niveau 1": r"(\d+) sections de niveau 1",
         "titres de niveau 2": r"(\d+) de niveau 2",
-        "planches": r"\*\*(\d+) planches\*\*",
-        "tableaux": r"\*\*(\d+) tableaux\*\*",
-        "notices": r"\*\*(\d+) entrées / ",
-        "lignes du .bib": r" entrées / (\d+) l\.\*\*",
+        "planches": r"(\d+) planches",
+        "tableaux": r"(\d+) tableaux",
+        "notices": r"(\d+) entrées / ",
+        "lignes du .bib": r" entrées / (\d+) l\.",
     }
     ecarts = []
     for nom, motif in motifs.items():
-        m = re.search(motif, readme)
-        if not m:
-            ecarts.append(f"{nom} : forme introuvable au README")
+        trouves = re.findall(motif, readme)
+        if len(trouves) != 1:
+            ecarts.append(f"{nom} : forme " + ("introuvable" if not trouves else f"lue {len(trouves)} fois")
+                          + " au README")
             continue
-        publie, mesure = entier(m.group(1)), mesures[nom]
+        publie, mesure = entier(trouves[0]), mesures[nom]
         if publie != mesure:
             ecarts.append(f"{nom} : README {publie}, mesure {mesure}")
     for e in ecarts:

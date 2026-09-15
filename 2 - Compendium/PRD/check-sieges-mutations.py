@@ -42,6 +42,7 @@ CH03 = "Livre I/03-securite-identite-gouvernance.md"
 CH06 = "Livre I/06-multi-agents-evaluation-surete.md"
 CH07 = "Livre I/07-genealogie-gouvernance.md"
 CH08 = "Livre I/08-anatomie-mcp-a2a.md"
+CH15 = "Livre II/15-emettre-carte-annuaires-registres.md"
 CH41 = "Livre IV/41-fabrique-agents.md"
 CH43 = "Livre IV/43-architecture-reference-couches.md"
 CH45 = "Livre IV/45-blueprint-instancie-cycle-de-vie.md"
@@ -112,6 +113,21 @@ def m4_signature_perimee(tmp):
     p = tmp / CH07
     texte = p.read_text(encoding="utf-8")
     p.write_text(texte.replace("| **(d)** |", "| **(4)** |"), encoding="utf-8", newline="\n")
+
+
+def m12_apres_la_these_perdu(tmp):
+    """S5 — le bloc reporté en fin de pièce le 15 septembre 2026 cesse d'être relu devant le filet.
+
+    Le renvoi « ch. 49 § 49.0 » que S5 exige du ch. 15 vit dans ce qui suivait sa thèse, reporté
+    sous « En-tête de rédaction » › « Après la thèse ». Si le contrôle cessait de le remettre à sa
+    place — ou si le titre du bloc changeait —, S5 doit échouer : c'est la preuve que la relecture
+    du bloc porte, et qu'elle n'est pas une commodité.
+    """
+    p = tmp / CH15
+    texte = p.read_text(encoding="utf-8")
+    neuf = texte.replace("\n#### Après la thèse\n", "\n#### Collation de la thèse\n")
+    assert neuf != texte, "bloc « Après la thèse » introuvable au ch. 15"
+    p.write_text(neuf, encoding="utf-8", newline="\n")
 
 
 def m5_siege_absent(tmp):
@@ -365,6 +381,8 @@ MUTATIONS = [
      m10_renvoi_organisation_fabrique_retire, "[S5]"),
     ("M11 S4 — table des trois échelles recopiée (garde `renvoi: None`)",
      m11_trois_echelles_recopiees, "[S4]"),
+    ("M12 S5 — le bloc « Après la thèse » du ch. 15 n'est plus lu à sa place",
+     m12_apres_la_these_perdu, "[S5]"),
 ] + _balayage()
 
 

@@ -1,92 +1,31 @@
-# Orchestration agentique
+# Orchestration agentique — index de lecture
 
-> **Livrable** (Vol. II) — un des sept que fixe la décision d'auteur [**D-18**](../../../2%20-%20Compendium/PRD/PRD.md#d-18) du 15 septembre 2026 ([registre](../../../README.md#les-sept-livrables)) ; dépôt **rouvert** le même jour par [D-17](../../../2%20-%20Compendium/PRD/PRD.md#d-17), re-clôture prévue vers le 8 décembre 2026. *Le bandeau de clôture qui suit reste à sa date.*
+*Interopérabilité et orchestration agentique dans les services financiers canadiens — protocoles ouverts, cadre réglementaire et
+blueprint d'intégration d'entreprise (état des lieux 2024-2026).* Les 29 pièces du [Vol. II](../README.md), une par fichier, dans
+l'ordre de lecture ; leur assemblage est rendu en [`Monographie.pdf`](../Monographie.pdf).
 
-> ⚠ **Dépôt clos et final — clôture portée au 1er septembre 2026** — décision d'auteur **D-13**, prise le 8 août 2026
-> ([`2 - Compendium/PRD/PRD.md`](../../../2%20-%20Compendium/PRD/PRD.md) v0.17 §16). Aucune passe
-> n'est plus prévue : ce qui suit décrit un état **définitif**.
->
-> ⚠ **La date de clôture a porté « 8 août 2026 » jusqu'au 3 septembre 2026, et elle confondait deux choses** : *une décision se date de sa prise, une clôture de l'état qu'elle arrête.* **D-13 reste prise le 8 août 2026** ; **la clôture court du 1er septembre 2026**, dernier jour où une pièce est entrée au dépôt — l'article entré au commit `da6255b` dans `6 - Article/`, *dossier porté sous `4 - Essais/2 - Article/` par la réorganisation du 5 septembre 2026 (commit `daacbec`)*. ⚠ *La passe d'audit et de fond du 2 septembre 2026 (D-15, D-16) lui est postérieure d'un jour : elle porte sur l'appareil, le plan et le domaine de livraison du Vol. IV, et **aucune pièce n'y entre ni n'en sort**.* Motif complet au **PRD §16.5**.
+**Statut :** livrable — fixé le 15 septembre 2026 par la décision [D-18](../../../2%20-%20Compendium/PRD/PRD.md#d-18) ; gels du
+16 et du 17 juillet 2026, au [registre](99-registre-gel.md).
 
-**Interopérabilité et orchestration agentique dans les services financiers canadiens — protocoles ouverts, cadre réglementaire et blueprint d'intégration d'entreprise (état des lieux 2024-2026)**
+**Par où entrer :** l'[avant-propos](00-avant-propos.md) — méthode, niveaux de preuve, convention de datation, avertissements —, sans
+lequel les chapitres se lisent mal ; puis le [chapitre 13](03-partie-III/ch-13-pont-frames.md), pivot de l'ouvrage et premier à contester.
 
-| Champ | Valeur |
+| Partie | Chapitres |
 |---|---|
-| Version | millésime **`mono-v1.0`** — millésime éditorial du 17 juillet 2026 ; ☑ **l'étiquette git du même nom est posée le 8 août 2026**, au commit où D-13 est prise. ⚠ *Elle marque donc l'arbre du 8 août, non celui du 17 juillet — ni l'arbre clos, la clôture étant portée au 1er septembre 2026* |
-| Date de publication | 17 juillet 2026 |
-| Dates de gel | 16 juillet 2026 (22 pièces) ; 17 juillet 2026 (7 pièces) — registre : [`99-registre-gel.md`](99-registre-gel.md) |
-| Volumétrie | **92 059 mots** sur 29 pièces — mesure du 17 juillet 2026, après la passe corrective de l'[audit global](../prd/audit.md) (méthode et commande de référence : [PRDPlan §4.2](../prd/PRDPlan.md), dont le défaut connu y est documenté) |
-| Socle factuel | **46 entrées** F-01 à F-48 ([PRD §7](../prd/PRD.md)) |
-| Conformité | **CA-1 à CA-8 : 8/8** — ⚠ **partiellement démenti** par la vérification du 17 juillet 2026 (CA-1 et CA-7 portaient des écarts, depuis corrigés) : voir l'addendum de [`verification/relecture-CA.md`](../verification/relecture-CA.md) |
-| Revalidation | 17 juillet 2026 ([`verification/revalidation-2026-07-17.md`](../verification/revalidation-2026-07-17.md)) |
+| I — Fondements : les protocoles d'interopérabilité agentique | [1](01-partie-I/ch-01-genealogie-gouvernance.md) généalogie et gouvernance · [2](01-partie-I/ch-02-anatomie-mcp-a2a.md) anatomie de MCP et A2A · [3](01-partie-I/ch-03-ap2-agntcy-acp.md) AP2 et AGNTCY · [4](01-partie-I/ch-04-risques-protocolaires.md) risques protocolaires |
+| II — L'orchestration multi-agents en entreprise | [5](02-partie-II/ch-05-options-orchestration.md) options OO1-OO4 · [6](02-partie-II/ch-06-autonomie-encadree.md) autonomie encadrée · [7](02-partie-II/ch-07-frameworks.md) frameworks · [8](02-partie-II/ch-08-identite-registres.md) identité et registres |
+| III — Le cadre réglementaire canadien | [9](03-partie-III/ch-09-e23-risque-modele.md) E-23 · [10](03-partie-III/ch-10-vide-federal-c36.md) vide fédéral · [11](03-partie-III/ch-11-quebec-amf-loi25.md) AMF et Loi 25 · [12](03-partie-III/ch-12-acvm-11-348.md) ACVM 11-348 · [13](03-partie-III/ch-13-pont-frames.md) le pont vers les frames déterministes |
+| IV — L'interopérabilité financière canadienne | [14](04-partie-IV/ch-14-cadre-bancaire.md) cadre bancaire · [15](04-partie-IV/ch-15-iso20022-lynx-rtr.md) ISO 20022, Lynx et RTR · [16](04-partie-IV/ch-16-ap2-rails.md) AP2 sur les rails canadiens |
+| V — L'adoption par les institutions canadiennes | [17](05-partie-V/ch-17-etudes-de-cas.md) études de cas 2025-2026 |
+| VI — Synthèse : l'architecture de référence | [18](06-partie-VI/ch-18-matrice.md) matrice · [19](06-partie-VI/ch-19-architecture-reference.md) architecture par couches · [20](06-partie-VI/ch-20-instrumentation-feuille-route.md) feuille de route · [21](06-partie-VI/ch-21-frontiere.md) frontière de la connaissance |
+| VII — Le blueprint, instancié sur IBM | [22](07-partie-VII/ch-22-principes-couches.md) principes et couches · [23](07-partie-VII/ch-23-correspondance-flux.md) correspondance et flux · [24](07-partie-VII/ch-24-lacunes-revalidation.md) lacunes et revalidation |
+| Annexes | [A](90-annexes/annexe-a-methodologie.md) méthodologie · [B](90-annexes/annexe-b-matrice.md) matrice détaillée · [C](90-annexes/annexe-c-chronologie.md) chronologie · [D](90-annexes/annexe-d-glossaire.md) glossaire, dont §D.1 et §D.7 font autorité |
 
-**Commencer par l'[avant-propos](00-avant-propos.md).** Il expose la méthode, les niveaux de preuve, la convention de datation et les avertissements — sans lesquels les chapitres se lisent mal. Le **[chapitre 13](03-partie-III/ch-13-pont-frames.md)** est le pivot de l'ouvrage : c'est le chapitre à contester en premier.
+Chaque affirmation factuelle centrale renvoie à une entrée du socle F-xx et à son niveau de preuve ; la grille
+[CA-1 à CA-8](../verification/relecture-CA.md) consigne les contrôles exécutés et les écarts qu'ils ont trouvés.
 
----
+**Avertissements :** aucun avis juridique ni conseil d'investissement ; aucune recommandation de fournisseur, la partie VII étant un
+cas documenté et non un verdict comparatif ; l'ouvrage se périme pièce par pièce, et le [chapitre 24](07-partie-VII/ch-24-lacunes-revalidation.md)
+donne le protocole de revalidation ; onze lacunes sont exposées plutôt que comblées, au [chapitre 21](06-partie-VI/ch-21-frontiere.md).
 
-## Ordre de lecture
-
-| # | Pièce | Fichier |
-|---|---|---|
-| — | **Avant-propos et note méthodologique** | [`00-avant-propos.md`](00-avant-propos.md) |
-| | **Partie I — Fondements : les protocoles d'interopérabilité agentique** | |
-| 1 | Généalogie et gouvernance : des projets propriétaires aux standards ouverts | [`ch-01`](01-partie-I/ch-01-genealogie-gouvernance.md) |
-| 2 | Anatomie technique : MCP et A2A v1.0, une complémentarité déclarée | [`ch-02`](01-partie-I/ch-02-anatomie-mcp-a2a.md) |
-| 3 | La transaction agentique et la couche d'infrastructure : AP2 et AGNTCY | [`ch-03`](01-partie-I/ch-03-ap2-agntcy-acp.md) |
-| 4 | Taxonomie des risques protocolaires | [`ch-04`](01-partie-I/ch-04-risques-protocolaires.md) |
-| | **Partie II — L'orchestration multi-agents en entreprise** | |
-| 5 | Les options d'orchestration : la taxonomie OO1–OO4 | [`ch-05`](02-partie-II/ch-05-options-orchestration.md) |
-| 6 | L'autonomie encadrée : le paradigme APM | [`ch-06`](02-partie-II/ch-06-autonomie-encadree.md) |
-| 7 | Réalisations : les frameworks d'orchestration d'entreprise | [`ch-07`](02-partie-II/ch-07-frameworks.md) |
-| 8 | L'identité et les registres d'agents | [`ch-08`](02-partie-II/ch-08-identite-registres.md) |
-| | **Partie III — Le cadre réglementaire canadien** | |
-| 9 | E-23 : le risque de modèle à l'ère de l'IA | [`ch-09`](03-partie-III/ch-09-e23-risque-modele.md) |
-| 10 | Le vide fédéral : de C-27 à C-36 | [`ch-10`](03-partie-III/ch-10-vide-federal-c36.md) |
-| 11 | Québec : la ligne directrice IA de l'AMF et l'article 12.1 de la Loi 25 | [`ch-11`](03-partie-III/ch-11-quebec-amf-loi25.md) |
-| 12 | Valeurs mobilières : l'avis ACVM 11-348 | [`ch-12`](03-partie-III/ch-12-acvm-11-348.md) |
-| **13** | **Le pont : des contraintes réglementaires aux frames déterministes** *(pivot)* | [`ch-13`](03-partie-III/ch-13-pont-frames.md) |
-| | **Partie IV — L'interopérabilité financière canadienne** | |
-| 14 | Le cadre des services bancaires axés sur le consommateur | [`ch-14`](04-partie-IV/ch-14-cadre-bancaire.md) |
-| 15 | ISO 20022 : Lynx accompli, RTR imminent | [`ch-15`](04-partie-IV/ch-15-iso20022-lynx-rtr.md) |
-| 16 | Prospective : AP2 sur les rails canadiens ? | [`ch-16`](04-partie-IV/ch-16-ap2-rails.md) |
-| | **Partie V — L'adoption par les institutions financières canadiennes** | |
-| 17 | Études de cas : la production agentique canadienne (2025-2026) | [`ch-17`](05-partie-V/ch-17-etudes-de-cas.md) |
-| | **Partie VI — Synthèse : l'architecture de référence** | |
-| 18 | La matrice protocoles × exigences réglementaires | [`ch-18`](06-partie-VI/ch-18-matrice.md) |
-| 19 | L'architecture de référence par couches | [`ch-19`](06-partie-VI/ch-19-architecture-reference.md) |
-| 20 | Instrumentation et feuille de route vers le 1er mai 2027 | [`ch-20`](06-partie-VI/ch-20-instrumentation-feuille-route.md) |
-| 21 | La frontière de la connaissance vérifiable | [`ch-21`](06-partie-VI/ch-21-frontiere.md) |
-| | **Partie VII — Le blueprint : plateforme d'intégration d'entreprise (instanciation IBM)** | |
-| 22 | Principes directeurs et vue en couches (C1–C8) | [`ch-22`](07-partie-VII/ch-22-principes-couches.md) |
-| 23 | Correspondance réglementaire et flux illustratifs | [`ch-23`](07-partie-VII/ch-23-correspondance-flux.md) |
-| 24 | Lacunes du blueprint et conditions de revalidation | [`ch-24`](07-partie-VII/ch-24-lacunes-revalidation.md) |
-| | **Annexes** | |
-| A | Méthodologie de constitution du socle | [`annexe-a`](90-annexes/annexe-a-methodologie.md) |
-| B | Matrice détaillée protocoles × réglementation | [`annexe-b`](90-annexes/annexe-b-matrice.md) |
-| C | Chronologie réglementaire et normative 2023-2027 | [`annexe-c`](90-annexes/annexe-c-chronologie.md) |
-| D | Glossaire bilingue — **§D.1 et §D.7 font autorité** | [`annexe-d`](90-annexes/annexe-d-glossaire.md) |
-
----
-
-## Avertissements
-
-Ils sont développés dans l'[avant-propos](00-avant-propos.md) ; en voici la substance.
-
-- **Aucun avis juridique, aucun conseil d'investissement.** L'ouvrage rapporte des textes et en propose des lectures d'architecture. Ces lectures engagent l'auteur, jamais le régulateur.
-- **Aucune recommandation de fournisseur.** La Partie VII instancie un blueprint sur le portefeuille d'IBM : c'est un **cas documenté par sources primaires**, retenu parce que sa documentation publique permettait de tracer chaque composant. Ce n'est pas un verdict comparatif.
-- **L'ouvrage se périme par morceaux.** Chaque pièce porte sa date de gel. Une révision majeure de la spécification MCP est confirmée pour le **28 juillet 2026** — douze jours après le gel des chapitres 1, 2 et 7, qui décrivent donc en connaissance de cause un état déjà daté. Les conditions de péremption et le protocole de revalidation sont au [chapitre 24](07-partie-VII/ch-24-lacunes-revalidation.md).
-- **Onze lacunes ouvertes** sont exposées plutôt que comblées ([chapitre 21](06-partie-VI/ch-21-frontiere.md)). La plus coûteuse : le contenu de la ligne directrice sur l'IA de l'AMF n'est pas au socle, et l'ouvrage n'en dérive aucune contrainte.
-
-## Comment cet ouvrage a été vérifié
-
-Chaque affirmation factuelle centrale renvoie à une entrée du socle (F-xx), et chaque entrée porte son niveau de preuve : **[A]** vote adversarial 3-0, **[B]** source primaire lue et extraite sans vote, **[C]** repérage à confirmer. **[A] > [B] > [C]** — le niveau ne mesure pas la qualité de la source, mais **ce que l'affirmation a subi**. *Échelle réformée le 15 septembre 2026 : « [A] » se lit **[A-i]** — les trois votants sont des instances de modèle — et **[H]**, lu et non réfuté par un relecteur humain nommé, prend la tête sans qu'aucune entrée le porte ([annexe A, §A.9](90-annexes/annexe-a-methodologie.md)).*
-
-Les 29 pièces ont chacune passé la boucle qualité de [PRDPlan §4.2](../prd/PRDPlan.md), dont une **relecture adversariale par un relecteur distinct du rédacteur**. La grille [CA-1..CA-8](../verification/relecture-CA.md) consigne les contrôles exécutés — et les écarts qu'ils ont trouvés, corrigés plutôt qu'absorbés.
-
-Un résultat de cette vérification mérite d'être donné au lecteur, parce qu'il dit ce que vaut le reste : **tous les défauts lourds trouvés à la publication l'ont été par des relecteurs adversariaux, aucun par l'auto-contrôle de leur rédacteur.**
-
-## Gouvernance
-
-[`prd/PRD.md`](../prd/PRD.md) (autorité de contenu — socle, garde-fous, critères) · [`prd/PRDPlan.md`](../prd/PRDPlan.md) (exécution) · [`prd/TOC.md`](../prd/TOC.md) (découpage, thèses, volumétrie). En cas de conflit, **le PRD prime**.
-
-Ce fichier est l'**index de lecture** des 29 pièces, et rien d'autre : la gouvernance, le pipeline de rendu et la procédure de reprise sont au [`README.md`](../README.md) du volume ; la place du volume dans le corpus est au [README du dépôt](../../../README.md).
+**Journal :** l'index tel qu'il était écrit au 15 septembre 2026 est au [journal du volume](../JOURNAL.md#page-monographie).

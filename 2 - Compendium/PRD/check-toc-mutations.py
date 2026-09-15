@@ -125,9 +125,10 @@ MUTATIONS = [
     # pendant que le conspectus affichait « 23 sur 23 ». *Le motif ci-dessous capture
     # la version de tête quelle qu'elle soit et la remplace par une valeur basse :
     # il ne se périme plus qu'avec la FORME de la rangée, que C14 lit déjà.*
+    # Gras facultatif depuis le 15 septembre 2026 (T4.2), comme dans C14.
     ("M14", "README.md",
-     re.compile(r"(\| Source \| \[`TOC\.md`\]\(PRD/TOC\.md\) \*\*v0\.)\d+(\*\*)"),
-     r"\g<1>10\g<2>", "C14"),
+     re.compile(r"(\| Source \| \[`TOC\.md`\]\(PRD/TOC\.md\) (?:\*\*)?v0\.)\d+"),
+     r"\g<1>10", "C14"),
     # M15 — plafond dur (décision 13a) : un chapitre de plus doit être refusé.
     ("M15", "TOC.md", "### Chapitre 50 — Péremption",
      "### Chapitre 51 — Chapitre de test du plafond\n\n### Chapitre 50 — Péremption", "C15"),

@@ -1,179 +1,33 @@
-# 4 - Essais / 2 - Article — une prépublication, et pourquoi elle n'est pas le neuvième livrable
+# 4 - Essais / 2 - Article — une prépublication HPC-QPU
 
-> **Publié, hors livrables** — statut fixé le 15 septembre 2026 par la décision d'auteur [**D-18**](../../2%20-%20Compendium/PRD/PRD.md#d-18), qui fixe le compte à sept et ratifie le motif ci-dessous ; l'article reste sous `4 - Essais/`. Dépôt **rouvert** le même jour par [D-17](../../2%20-%20Compendium/PRD/PRD.md#d-17), re-clôture prévue vers le 8 décembre 2026. *Le « neuvième » du titre et la clôture que cette page date au 1er septembre restent à leur date.*
+*Projection de l'état de ressource et délégation multicritère dans une plateforme HPC à processeurs quantiques* — prépublication au
+gabarit arXiv, v3, datée du 31 août 2026. Les briques de l'intégration HPC-QPU existent ; ce qui manque est la chaîne entre elles, quand
+la qualité de sortie d'un processeur quantique dérive sans qu'aucune panne ne survienne. Quatre contributions : la projection de l'état de
+ressource en objet daté et périssable, une architecture de référence à machine d'états totale, une politique de délégation multicritère
+vérifiable sans matériel, sept exigences d'exploitabilité. Le travail est documentaire et énonce huit conditions de réfutation.
 
-> **Où ce dossier vit.** Il est entré au dépôt le **1er septembre 2026** sous le nom
-> **`6 - Article/`**, à la racine, **sixième dossier numéroté** — et il vit depuis le
-> **5 septembre 2026** sous [`4 - Essais/2 - Article/`](./), second dossier des *Essais*, aux côtés
-> du [traité et de sa transposition exécutable](../1%20-%20Trait%C3%A9/). *La réorganisation
-> (commit `daacbec`) est un **renommage pur** — `git` enregistre **neuf** renommages à 100 %, un par
-> fichier du dossier, et aucun contenu n'est touché.* ⚠ **Les mentions de `6 - Article/` qui subsistent dans ce dossier et
-> ailleurs au dépôt datent un état et ne se corrigent pas** : elles nomment le dossier tel qu'il
-> était le jour dont elles parlent. ⚠⚠ **Ce que la réorganisation a cassé, en revanche, ce sont les
-> renvois de cette page** : elle est descendue d'un niveau, et ses `../` visaient la racine du dépôt
-> — *repointés en `../../` le 5 septembre 2026, ainsi que les deux renvois vers `4 - Veille/`,
-> devenu [`3 - Veille/`](../../3%20-%20Veille/).*
+**Statut :** publié, hors livrables — fixé le 15 septembre 2026 par la décision [D-18](../../2%20-%20Compendium/PRD/PRD.md#d-18) : il
+n'instruit pas la question du corpus. Son voisinage avec elle — l'agent scientifique autonome comme consommateur d'états déclarés,
+au § 2.8 — est posé par l'article lui-même.
 
-*Projection de l'état de ressource et délégation multicritère dans une plateforme HPC à
-processeurs quantiques* — **38 p.**, prépublication au gabarit arXiv, v3 (révisée), datée du
-**31 août 2026** en page de titre et composée le **1er septembre 2026**. Entrée au dépôt le même
-jour, au commit `da6255b` (« Article ») : **une réouverture de plus** d'un dépôt clos par la
-décision d'auteur **D-13** du 8 août 2026, et **la première qui crée un dossier numéroté depuis le
-20 août** — ✎ *cette page a averti jusqu'au 5 septembre 2026 que la chronique datée de
-[`1 - Collection/README.md`](../../1%20-%20Collection/README.md) « s'arrête à la onzième
-réouverture » et ne porterait ni les passes du 22 au 28 août ni celle-ci, et **l'avertissement était
-faux du jour où il a été écrit** : le commit `c81be4a` du 1er septembre 2026 crée cette page **et**,
-du même geste, ajoute à cette chronique le bloc qui porte les sept passes du 22 août au
-1er septembre — celle-ci comprise. Ce qui reste vrai est plus étroit : ces sept y figurent **en
-bloc, à leur date et à leur commit**, sans le détail que les onze premières reçoivent.*
+**Lire :** [`article-hpc-qpu.pdf`](article-hpc-qpu.pdf).
 
-⚠⚠ **ET C'EST DÉSORMAIS CETTE ENTRÉE QUI DATE LA CLÔTURE DU DÉPÔT.** *Depuis la redatation du
-3 septembre 2026, la clôture ne se date plus de la prise de D-13 mais de l'état qu'elle arrête, et
-le critère est l'entrée d'une pièce au dépôt* : le dernier jour où une pièce y est entrée est le
-**1er septembre 2026**, et cette pièce est celle-ci. **D-13 reste prise le 8 août 2026 ; la clôture
-court du 1er septembre.** ⚠ *Le paradoxe est nommé plutôt que tu — **le document qui date la clôture
-n'est pas un livrable, et le PRD ne porte aucune décision sur lui** : le critère porte sur l'entrée
-d'une pièce, non sur son rang, et c'est la seule lecture qui ne dépende pas d'un compte que le
-[`README` de la racine](../../README.md) dit lui-même renversable d'un mot de l'auteur.* Motif complet
-au [PRD §16.5](../../2%20-%20Compendium/PRD/PRD.md). ✎ *Rattrapé deux fois : des pièces entrées le
-5 septembre 2026 (commits `daacbec`, `79ecdcf`), puis le 15 (commits `3b8236d`, `e1b1b9e`), portent
-la clôture à ces jours-là, et la décision D-17 la rouvre le 15 septembre 2026.*
+| Fichier | Mesure | Rôle |
+|---|---|---|
+| `article-hpc-qpu.pdf` | 38 p. / 752 159 o. | le rendu |
+| `article-hpc-qpu.typ` | 1 979 l. / 132 969 o. | la source, en Typst direct : 11 sections de niveau 1, 39 de niveau 2, 8 planches et 20 tableaux légendés |
+| `references.bib` | 77 entrées / 689 l. | la bibliographie, close dans les deux sens |
+| `rejeu-politique.py` | | l'implémentation de référence de la politique et de la machine d'états |
+| `check-article.py`, `check-article-mutations.py` | | le contrôle du dossier et son harnais |
+| `.gabarit-arxiv.typ`, `.figures.typ` | | le gabarit et les primitives des planches — fichiers à point, qu'un `ls` sans `-a` ne montre pas |
 
-⚠ **Ce document n'instruit pas la question du dépôt.** Les huit livrables — *sept depuis le
-15 septembre 2026, par D-18* — tiennent une seule question — *comment une entreprise de services financiers canadienne déploie, gouverne et exploite
-des agents d'IA autonomes sous contrainte réglementaire* — et celui-ci porte sur l'intégration de
-processeurs quantiques dans une plateforme de calcul haute performance. **Il est publié ici, signé
-de la même main, et il n'est pas rangé parmi les livrables** : *le motif est thématique, non
-méthodologique, et c'est un motif neuf.* La note de veille SDLC de [`3 - Veille/`](../../3%20-%20Veille/) — *`4 - Veille/` jusqu'au 5 septembre 2026* — est tenue hors des
-huit pour **ce qui lui manque** — source unique, bibliographie non appariée, aucun contrôle qui
-l'oppose à elle-même ; celui-ci l'est pour **ce dont il traite**. ⚠ *Le PRD ne porte aucune
-décision sur ce document, pas plus que sur le huitième ni sur la note : le compte se renverse d'un
-mot de l'auteur.* ☑ *Ce mot est venu le 15 septembre 2026 : la décision D-18 ratifie les trois
-rangements et fixe le compte à sept.*
+**Refaire :** depuis ce dossier, `typst compile article-hpc-qpu.typ`, avec Typst 0.15.1 et les polices New Computer Modern et DejaVu Sans
+Mono ; c'est la seule chaîne du dépôt sans Pandoc, et la recomposition rend le PDF livré à l'octet, hors six champs d'horodatage.
 
-☑ *Le lien n'est pourtant pas nul, et l'article le pose lui-même* : son § 2.8 fait des laboratoires
-autopilotés et des agents scientifiques autonomes le **consommateur le plus exigeant** de la chaîne
-de délégation qu'il spécifie — « pour lui, tout ce qui n'est pas publié comme état consommable
-n'existe pas ». *C'est la thèse du corpus — l'agent comme consommateur d'états déclarés — reportée
-sur un parc de ressources physiques. Ce n'est pas la même question ; c'en est un voisinage, et il
-est déclaré.*
+**Vérifier :** `python rejeu-politique.py` rejoue les déroulés publiés et exerce les 37 transitions de la machine d'états — la seule
+condition de réfutation que le dépôt exécute. `python check-article.py` vérifie la bibliographie, la parité du rendu, les renvois « § »,
+les mesures du tableau ci-dessus, les scores et le rejeu ; `python check-article-mutations.py` prouve qu'il voit ses fautes.
+`check-resume.py` ne s'applique pas à ce gabarit, qui pose un folio sous la marge de la page de titre.
 
-## Ce qu'il soutient
-
-Les briques de l'intégration HPC-QPU existent et mûrissent — architectures de référence, interfaces
-de dispositif et de ressource, intergiciel adaptatif, stratégies de partage mesurées, plateformes
-déployées. **Ce qui manque n'est pas une brique, c'est la chaîne entre elles** : décider quelle
-charge va sur quelle ressource en tenant compte du fait que la qualité de sortie d'un QPU *dérive
-dans le temps sans qu'aucune panne ne survienne*. Les interfaces existantes couvrent deux niveaux
-disjoints — les propriétés physiques changeantes du dispositif d'un côté, l'ordonnançabilité binaire
-de l'autre — et le cadre qui décrirait la chaîne complète est qualifié de **visionnaire par ses
-propres auteurs**.
-
-Quatre contributions, formulées pour pouvoir être contestées : la **projection de l'état de
-ressource** en objet de première classe daté et périssable ; une **architecture de référence** en
-trois vues, adossée à six invariants, avec une machine d'états totale de quatre états et neuf
-événements ; une **politique de délégation multicritère** déterministe et totale, vérifiable sans
-matériel ni accès expérimental ; sept exigences d'**exploitabilité** avec six procédures, vingt
-métriques et cinq objectifs de service, *là où la littérature opérationnelle n'en publie aucun*.
-
-⚠ **Le travail est documentaire, et il le dit** : la plateforme n'est pas implémentée, la structure
-livrée demeure numériquement non calibrée, et **huit conditions de réfutation observables par un
-tiers** sont énoncées. *Seule la politique dispose d'une implémentation de référence — c'est
-`rejeu-politique.py`, ci-dessous.*
-
-## Ce que le dossier porte
-
-⚠ **Deux des neuf fichiers sont des points** : `ls` sans `-a` en montre sept sur neuf, et les deux
-manquants sont le gabarit et les figures — *sans eux la source ne compile pas.*
-⚠⚠ **Ce paragraphe a écrit « dix » et « huit sur dix » jusqu'au 5 septembre 2026, et le compte
-était périmé de deux jours** : `audit.md` a été **supprimé le 3 septembre 2026** (commit `4a7ec0f`)
-et la table ci-dessous le listait encore. *Constat de la passe de réalignement du 5 septembre ;
-le fichier ne se relit plus qu'à l'historique git.*
-
-| Fichier | | |
-| --- | --- | --- |
-| `article-hpc-qpu.typ` | **1 979 l. / 132 969 o.** | la source, en Typst direct — 11 sections de niveau 1, 39 de niveau 2, **8 planches** et **20 tableaux** légendés, ~19 200 mots. ⚠ *Ce README a écrit « 26 figures » et « 134 947 o. » jusqu'au 2 septembre 2026 : le premier nombre comptait les flottants `#figure(` sans distinguer l'illustration du tableau — le PDF rend `Fig. 1-8` et `Tableau 1-20` —, le second comptait la source en CRLF, soit exactement 1 979 octets de trop, un par ligne.* |
-| `article-hpc-qpu.pdf` | **38 p. / 752 159 o.** | le rendu livré — *750 902 o. jusqu'au 2 septembre 2026 : les treize auteurs posés au `.bib` s'impriment dans les références, et le point de `M.Sc. IT` dans les métadonnées* |
-| `references.bib` | **77 entrées / 689 l.** | ⭑ close dans les deux sens, **et gardée** — voir plus bas. *Treize entrées `@misc` n'avaient pas de champ `author` et se rendaient sans auteur ; les auteurs ont été lus à la source arXiv le 2 septembre 2026, verbatim, jamais par inférence* |
-| `rejeu-politique.py` | **197 l.** | ⭑ l'implémentation de référence de la politique (§ 7.2) et de la machine d'états (§ 6.4) — *170 l. jusqu'au 15 septembre 2026, 175 avec la sortie reconfigurée en UTF-8 le même jour, 197 avec le verdict d'étalonnage en entrée (tâche T6.7)* |
-| `check-article.py` | ⭑ | **les cinq contrôles de forme** : bibliographie close, parité source/rendu à l'octet, renvois « § » résolus, cardinaux de ce README, scores du rejeu opposés à l'article ; **et un sixième, depuis le 15 septembre 2026, qui exécute le rejeu** et exige ses 37 transitions sur 37 |
-| `check-article-mutations.py` | ⭑ | le harnais : une faute par classe, vue ; et une qui ne doit pas l'être |
-| ~~`audit.md`~~ | ⚠ **supprimé** | l'audit du 2 septembre 2026, son plan et son journal d'exécution — **retiré du dépôt le 3 septembre 2026** (commit `4a7ec0f`) ; *historique git seul* |
-| `.gabarit-arxiv.typ` | 100 l. | le gabarit *arXiv preprint* d'après `arxiv.sty` (G. Kour), porté en Typst |
-| `.figures.typ` | 402 l. | les primitives de dessin des **8 planches** — aucun `#figure` n'y vit, elles sont toutes appelées du corps |
-
-## Refaire le PDF
-
-```bash
-typst compile article-hpc-qpu.typ
-```
-
-⚠ **C'est le seul dossier de document du dépôt sans `build/build-pdf.sh`**, et c'est aussi le seul
-dont la source n'est pas du Markdown : les sept chaînes des autres dossiers passent par
-**Pandoc → Typst**, celle-ci est du **Typst direct**. *Il n'y a donc rien à scripter d'autre que la
-ligne ci-dessus — pas d'assemblage, pas d'injection de pagination, pas de gravure de figures : elles
-se dessinent à la composition.* Prérequis : **Typst 0.15.1** (la version du champ `/Creator` du PDF
-livré), polices **New Computer Modern** et **DejaVu Sans Mono**.
-
-☑ **Vérifié le 1er septembre 2026, puis à chaque passage de `check-article.py` : la recomposition
-rend exactement la taille du PDF livré** — 750 902 octets alors, 752 159 depuis le 2 septembre —,
-et **une cinquantaine d'octets diffèrent, dans six champs, tous d'horodatage** — `ModDate`,
-`CreationDate`, `xmp:ModifyDate`, `xmp:CreateDate`, `xmpMM:InstanceID` **et le `/ID` du trailer**.
-⚠ *Le relevé du 1er septembre disait « 60 octets, cinq endroits » : il comptait tous les octets
-mais ne nommait que cinq champs, et c'est sur le sixième que `check-article.py` a échoué à son
-premier passage, à 51 octets de la fin du fichier. Le nombre d'octets suit les chiffres des
-horodatages — 62 un jour, 56 le lendemain — ; ce qui ne bouge pas est la liste des six champs.* *Le `xmpMM:DocumentID`,
-lui, ne bouge pas : il est dérivé du contenu, et c'est ce qui rend la comparaison concluante.*
-⚠ *`SOURCE_DATE_EPOCH` ne rend pas l'octet et ne sert à rien ici : Typst compose alors l'horodatage
-en UTC — `D:20260901100946Z` au lieu de `D:20260901060946-04'00` —, six caractères de moins qui
-décalent tout ce qui suit, et l'écart passe de 60 à 45 342 octets.*
-
-## Les contrôles
-
-**☑ `python rejeu-politique.py` → 0.** *« Rejeu conforme : déroulés A et B, sensibilité, table de
-transitions (36 cases, 37/37 transitions exercées), gardes de hors_service. RÉF-6 non déclenchée. »*
-Le script rejoue les deux
-déroulés publiés au § 7.5 et l'analyse de sensibilité du § 7.5.1, vérifie que la table de
-transitions est **totale** — 4 états × 9 événements, aucune case absente —, **exerce ses
-37 transitions** — la case (étalonnage, E2) en porte deux, « → D si conforme, sinon → G », sous un
-verdict d'étalonnage donné en entrée — et éprouve les gardes de
-sortie de `hors_service`. ✎ *Jusqu'au 15 septembre 2026, la sortie lisait « (36/36) » : la table
-était totale, mais la branche « sinon → G » n'était exercée par aucune assertion — 35 cases rejouées
-entières, la 36ᵉ à moitié. La tâche T6.7 du plan d'exécution l'a levé.* **Toute divergence fait échouer une assertion, et c'est l'exécution de la
-condition de réfutation RÉF-6** : un lecteur qui referait le calcul à la main et trouverait autre
-chose réfuterait la contribution. *C'est le seul contrôle du dépôt qui exécute une condition de
-réfutation d'un document plutôt que de mesurer sa forme.*
-
-**⚠⚠ `check-resume.py` sort 1 sur ce PDF, et le verdict est faux — ne pas l'enchaîner à cette
-chaîne.** Le contrôle de [`3 - Veille/Python/`](../../3%20-%20Veille/Python/) — *`4 - Veille/Python/` jusqu'au 5 septembre 2026* — mesure l'ordonnée la plus basse où du texte est posé
-en page 1 et la confronte à une marge basse de 72 pt ; il rend ici **44,3 pt, soit −27,7 pt**. *Ses
-deux prémisses tombent avec le gabarit* : **(a)** le gabarit FESP ne numérote pas sa page de titre,
-celui d'arXiv y pose un folio en pied — et un pied de page vit **sous** la marge par construction,
-c'est ce que le contrôle prend pour un débordement ; **(b)** le gabarit FESP compose le résumé dans
-un bloc qui **ne se scinde pas**, d'où le risque de rognage silencieux qui justifie le contrôle,
-quand celui-ci le compose en `pad()` de texte courant, que Typst **reporte** à la page suivante
-plutôt que de le rogner. *Le risque que le contrôle surveille n'existe pas dans ce gabarit ; son
-verdict n'y mesure que le numéro de page.* **Contrôle inapplicable, pas contrôle en échec.**
-
-**☑ La bibliographie est close dans les deux sens — 77 entrées, 77 citées, et toute clé `@…` du
-corps est définie.** *C'est exactement la propriété que `check-veille.py` vérifie pour la veille et
-que la note de veille SDLC n'a pas.* ☑ **Et c'est gardé depuis le 2 septembre 2026** : le contrôle [1] de `check-article.py` refait
-l'appariement à chaque passage, et son harnais prouve qu'il voit une entrée orpheline comme une
-citation pendante. *Ce paragraphe disait « une mesure faite pour cette passe, par aucun script du
-dépôt : rien ne la garde » — c'était vrai, et c'est ce que l'audit a corrigé en premier.* *Deux faux positifs sont à écarter à la mesure — `fig:chrono`, qui est
-une étiquette de figure, et `gmail`, pris dans l'adresse de l'auteur.*
-
-## Deux relevés de métadonnées
-
-⚠ **Le champ `/Author` lit `André-Guy Bruneau, M.Sc IT` — sans le point après « Sc ».** *Huitième
-PDF du dépôt à porter la mention, huitième graphie possible et la seule qui l'écrive ainsi* : sept
-PDF portent `M.Sc. IT`, les Vol. I, II et III portent le nom seul. **Relevé le 1er septembre 2026, corrigé le 2** — un point à la ligne 9 de la source, et une
-recomposition dont la parité est vérifiée par `check-article.py`. *Le PDF livré porte désormais
-`M.Sc. IT`, comme les sept autres.*
-
-☑ **Le `dc:title` porte bien l'apostrophe** — *Projection de l'état de ressource…* — là où celui de
-l'état de l'art de `5 - Recension/` perd la sienne. **C'est une corroboration directe du diagnostic
-posé au [`README.md` de la racine](../../README.md)** : la perte se produit dans la fonction
-`content-to-string` du gabarit **Pandoc**, qui rend vide sur le `smartquote` de Typst — et *cette
-chaîne-ci n'a pas de Pandoc*. Le seul PDF du dépôt composé sans Pandoc est aussi le seul dont un
-titre à apostrophe traverse intact.
+**Journal :** [`JOURNAL.md`](JOURNAL.md) — entrée au dépôt le 1er septembre 2026, motif du rangement hors livrables, relevés de
+métadonnées et de parité, et les corrections de la page qui les consignait.

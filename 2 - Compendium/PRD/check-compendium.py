@@ -79,13 +79,46 @@ CHAPITRES = range(1, 51)  # plafond dur de cinquante (décision 13a du TOC, cont
 FIN_DE_CORPS = re.compile(r"^##\s*§?\s*[\d.]*\s*—?\s*Note de statut", re.M)
 DEBUT_DE_CORPS = re.compile(r"^>\s|^##\s", re.M)
 
+# --------------------------------------------------------------------------
+# L'en-tête de rédaction reporté (15 septembre 2026, plan d'exécution, T4.3).
+#
+# La tête de chaque pièce ne porte plus qu'un résumé d'une ligne par champ ; l'en-tête
+# écrit à la rédaction est reporté MOT POUR MOT à la fin de la note de statut, sous
+# « En-tête de rédaction » — « Avant le tableau », « Tableau », « Après la thèse », dans
+# l'ordre où la tête les portait. Deux conséquences pour ce script, et aucune n'est un
+# assouplissement :
+#
+#  — le CORPS se lit avec le bloc « Après la thèse » remis à sa place, devant le premier
+#    filet. C'est le domaine sur lequel les en-têtes ont déclaré leurs cardinaux (le ch. 44
+#    compte « thèse citée et son commentaire de collation compris », le ch. 39 compte une
+#    occurrence « au bloc de collation de la thèse ») et sur lequel P2-P7 ont toujours
+#    mesuré : déplacer un bloc pour la lisibilité n'en retire rien à la mesure ;
+#  — il y a DEUX tableaux : la tête (`entete`), résumé daté du 15 septembre 2026, et le
+#    tableau de rédaction (`entete_de_redaction`), daté de ses passes. P1 exige les deux,
+#    P5 les oppose l'un à l'autre, P6 oppose la tête au registre.
+# --------------------------------------------------------------------------
+REPORT = "\n### En-tête de rédaction\n"
+APRES_LA_THESE = "\n#### Après la thèse\n\n"
+
+
+def apres_la_these_reporte(texte):
+    """Le bloc que la tête portait entre la thèse et le premier filet, tel que reporté."""
+    i = texte.find(REPORT)
+    j = texte.find(APRES_LA_THESE, i) if i >= 0 else -1
+    return texte[j + len(APRES_LA_THESE):].rstrip("\n") if j >= 0 else ""
+
 
 def corps(texte):
     """Le corps de la pièce : en-tête à cinq champs et note de statut exclus."""
+    bloc = apres_la_these_reporte(texte)
     debut = DEBUT_DE_CORPS.search(texte)
     texte = texte[debut.start():] if debut else texte
     coupe = FIN_DE_CORPS.search(texte)
-    return texte[: coupe.start()] if coupe else texte
+    b = texte[: coupe.start()] if coupe else texte
+    filet = b.find("\n---\n")
+    if bloc and filet >= 0:
+        b = b[:filet] + bloc + "\n" + b[filet:]
+    return b
 
 
 def sans_citations(texte):
@@ -109,14 +142,81 @@ def pieces():
     return sorted(p for p in RACINE.glob("Livre */[0-9][0-9]-*.md") if p.name != "README.md")
 
 
+RANGEE = re.compile(r"^\|\s*\*\*([^*]+)\*\*\s*\|(.*)\|\s*$")
+
+
+def rangees(lignes):
+    """[(champ, valeur)] des rangées « | **Champ** | valeur | », dans l'ordre."""
+    return [(m.group(1).strip(), m.group(2).strip())
+            for m in map(RANGEE.match, lignes) if m]
+
+
+def lignes_de_tete(texte):
+    """Les lignes de tête : du titre au premier filet « --- », exclu."""
+    lignes = texte.splitlines()
+    return lignes[: lignes.index("---")] if "---" in lignes else lignes
+
+
 def entete(texte):
-    """{champ: valeur} pour les cinq champs du tableau de tête."""
-    trouves = {}
-    for ligne in texte.splitlines():
-        m = re.match(r"^\|\s*\*\*([^*]+)\*\*\s*\|(.*)\|\s*$", ligne)
-        if m and m.group(1).strip() in CHAMPS:
-            trouves[m.group(1).strip()] = m.group(2).strip()
-    return trouves
+    """{champ: valeur} pour les cinq champs du tableau de TÊTE — le résumé."""
+    return {c: v for c, v in rangees(lignes_de_tete(texte)) if c in CHAMPS}
+
+
+# P1 — la tête tient en cinq lignes, et le détail existe en fin de pièce.
+#
+# ⚠ Borne relevée le 15 septembre 2026 : la plus longue valeur de tête des cinquante pièces
+# compte 411 caractères (garde-fous du ch. 50). Les valeurs de rédaction qu'elles résument en
+# comptaient jusqu'à 3 912 (garde-fous du ch. 39) : c'est la classe de défaut que la
+# critique n° 3 de l'évaluation du 15 septembre 2026 nomme — « 7 à 11 Ko d'en-tête avant la
+# première ligne de corps ». *Une tête qui regonfle en silence redevient l'en-tête qu'on a
+# reporté.*
+LONGUEUR_MAX = 440
+
+
+def forme_de_tete(nom, texte, redaction):
+    """P1 — cinq rangées dans l'ordre, courtes ; titre, situation, tableau, thèse, rien d'autre ;
+    le tableau de rédaction reporté après la note de statut."""
+    echecs = []
+    lignes = lignes_de_tete(texte)
+    ordre = [c for c, _ in rangees(lignes)]
+    if ordre != CHAMPS:
+        echecs.append(f"[P1] {nom} : la tête porte les rangées {ordre} ; elle en porte cinq, "
+                      f"dans l'ordre du PRD §6 — le reste vit sous « En-tête de rédaction ».")
+    for champ, valeur in rangees(lignes):
+        if len(valeur) > LONGUEUR_MAX:
+            echecs.append(f"[P1] {nom} : « {champ} » compte {len(valeur)} caractères en tête "
+                          f"(borne {LONGUEUR_MAX}) — le détail daté vit en fin de pièce.")
+    # Les paragraphes de tête, dans l'ordre : titre, situation, tableau, thèse(s).
+    paragraphes, courant = [], []
+    for ligne in lignes + [""]:
+        if ligne.strip():
+            courant.append(ligne)
+        elif courant:
+            paragraphes.append(courant)
+            courant = []
+    genres = ["titre" if p[0].startswith("# ") else "situation" if p[0].startswith("*")
+              else "tableau" if all(l.startswith("|") for l in p)
+              else "thèse" if p[0].startswith("> **Thèse") else "autre" for p in paragraphes]
+    attendu = ["titre", "situation", "tableau"]
+    if genres[:3] != attendu or len(genres) < 4 or set(genres[3:]) != {"thèse"}:
+        echecs.append(f"[P1] {nom} : la tête se lit {genres} ; elle porte titre, situation, "
+                      f"tableau et thèse citée, rien d'autre — un paragraphe d'appareil qui "
+                      f"remonte en tête se reporte sous « En-tête de rédaction ».")
+    manquants = [c for c in CHAMPS if c not in redaction]
+    note = FIN_DE_CORPS.search(texte)
+    if manquants:
+        echecs.append(f"[P1] {nom} : le tableau de rédaction n'est pas reporté en fin de pièce "
+                      f"(champs absents : {', '.join(manquants)}) — le détail daté n'existe plus.")
+    elif note is None or texte.find(REPORT) < note.start():
+        echecs.append(f"[P1] {nom} : « En-tête de rédaction » doit suivre la note de statut, "
+                      f"hors du corps que `decompte.sh`, `assemble.py` et `rendre-piece.py` coupent.")
+    return echecs
+
+
+def entete_de_redaction(texte):
+    """{champ: valeur} du tableau reporté en fin de note de statut — ou {} s'il manque."""
+    i = texte.find(REPORT)
+    return {} if i < 0 else {c: v for c, v in rangees(texte[i:].splitlines()) if c in CHAMPS}
 
 
 def nombre(chaine):
@@ -367,6 +467,7 @@ def controler():
         nom = piece.relative_to(RACINE).as_posix()
         texte = piece.read_text(encoding="utf-8")
         tete = entete(texte)
+        redaction = entete_de_redaction(texte)
         b = corps(texte)
 
         # ---- P1 : l'en-tête à cinq champs (PRD §6) --------------------
@@ -377,6 +478,7 @@ def controler():
                 echecs.append(f"[P1] {nom} : champ « {champ} » absent de l'en-tête.")
             elif not re.search(r"\w", tete[champ]):
                 echecs.append(f"[P1] {nom} : champ « {champ} » vide.")
+        echecs += forme_de_tete(nom, texte, redaction)
 
         # ---- P2 : les renvois « ch. N » résolvent dans 1-50 -----------
         for m in RENVOI.finditer(b):
@@ -433,12 +535,27 @@ def controler():
                     exclus_cites.append((nom, ident))
 
         # ---- P5 : les décomptes de l'en-tête se re-mesurent -----------
-        if "Garde-fous balayés" in tete:
-            vues, conflits = declarations(tete["Garde-fous balayés"])
+        # Deux cellules déclarent : le tableau de rédaction, et la tête qui le résume. Chacune
+        # se lit à la même grammaire ; un identifiant qu'elles déclarent toutes deux porte le
+        # même cardinal, sinon le résumé ne dit plus ce que la pièce déclare. Le tableau de
+        # rédaction se lit en premier : son « ancré » fait foi.
+        vues = {}
+        for source, cellule in (("tableau de rédaction", redaction.get("Garde-fous balayés")),
+                                ("en-tête", tete.get("Garde-fous balayés"))):
+            if cellule is None:
+                continue
+            propres, conflits = declarations(cellule)
             for ident, a, z in conflits:
                 echecs.append(
                     f"[P5] {nom} : « {ident} » est déclaré deux fois au champ "
-                    f"« Garde-fous balayés », à {a} puis à {z} — l'en-tête se contredit.")
+                    f"« Garde-fous balayés » ({source}), à {a} puis à {z} — l'en-tête se contredit.")
+            for ident, (n, ancre) in propres.items():
+                if ident in vues and vues[ident][0] != n:
+                    echecs.append(
+                        f"[P5] {nom} : « {ident} » déclaré {vues[ident][0]} au tableau de "
+                        f"rédaction, {n} en tête — le résumé ne dit plus ce que la pièce déclare.")
+                vues.setdefault(ident, (n, ancre))
+        if vues:
             for ident, (n, ancre) in sorted(vues.items()):
                 reel = len(re.findall(r"\b" + re.escape(ident) + r"\b", b))
                 if reel == n:
@@ -617,6 +734,10 @@ def date_de_gel(valeur):
     return f"{int(m.group(1))} {plein} {m.group(3)}"
 
 
+CIBLE = r"[≈~]\s*\*{0,2}\s*([\d   ]+?)\s*\*{0,2}\s*mots"
+REEL = r"[Rr]éel[^:]{0,25}:\s*\*{0,2}\s*([\d   ]+?)\s*\*{0,2}\s*mots"
+
+
 def controler_registre(corpus):
     """P6 — une ligne par pièce, date de gel et volumétrie concordantes.
 
@@ -649,25 +770,40 @@ def controler_registre(corpus):
             echecs.append(f"[P6] {nom} : aucune ligne au registre de gel.")
             continue
         _, gel_reg, cible_reg, reel_reg = lignes[nom]
-        tete = entete(piece.read_text(encoding="utf-8"))
+        texte = piece.read_text(encoding="utf-8")
+        tete = entete(texte)
+        redaction = entete_de_redaction(texte)
 
-        gel_tete = date_de_gel(tete.get("Date de gel", ""))
-        if gel_tete and date_de_gel(gel_reg) != gel_tete:
-            echecs.append(f"[P6] {nom} : date de gel « {gel_reg} » au registre, "
-                          f"« {gel_tete} » à l'en-tête.")
+        # La date de gel et la cible ne bougent pas : la tête et le tableau de rédaction
+        # les portent l'une et l'autre, et chacune concorde avec le registre.
+        for ou, champs in (("à l'en-tête", tete), ("au tableau de rédaction", redaction)):
+            gel_tete = date_de_gel(champs.get("Date de gel", ""))
+            if gel_tete and date_de_gel(gel_reg) != gel_tete:
+                echecs.append(f"[P6] {nom} : date de gel « {gel_reg} » au registre, "
+                              f"« {gel_tete} » {ou}.")
+
+        volumetrie = redaction.get("Volumétrie cible", "")
+        m = re.search(CIBLE, volumetrie)
+        if m and nombre(cible_reg) != nombre(m.group(1)):
+            echecs.append(f"[P6] {nom} : cible {cible_reg} au registre, "
+                          f"{m.group(1).strip()} au tableau de rédaction.")
 
         volumetrie = tete.get("Volumétrie cible", "")
-        m = re.search(r"[≈~]\s*\*{0,2}\s*([\d   ]+?)\s*\*{0,2}\s*mots", volumetrie)
+        m = re.search(CIBLE, volumetrie)
         if m and nombre(cible_reg) != nombre(m.group(1)):
             echecs.append(f"[P6] {nom} : cible {cible_reg} au registre, "
                           f"{m.group(1).strip()} à l'en-tête.")
 
-        # Vingt-six pièces publient leur mesure en tête ; vingt-quatre la
-        # renvoient au README de leur Livre. Là où la pièce la publie, les deux
-        # doivent coïncider — c'est le seul rapprochement que ce script fait
-        # sans se doter d'un second tokéniseur.
-        m = re.search(r"[Rr]éel[^:]{0,25}:\s*\*{0,2}\s*([\d   ]+?)\s*\*{0,2}\s*mots",
-                      volumetrie)
+        # La mesure se publie en TÊTE, pour les cinquante pièces depuis le 15 septembre 2026 ;
+        # vingt-six seulement la publiaient, les vingt-quatre autres la renvoyant au README de
+        # leur Livre. Le « Réel » du tableau de rédaction est daté de sa passe (« re-mesurés le
+        # 2 septembre 2026 ») : il se lit, il ne se confronte plus — sinon la prochaine
+        # re-mesure obligerait à réécrire une phrase datée. C'est le seul rapprochement que ce
+        # script fait sans se doter d'un second tokéniseur.
+        m = re.search(REEL, volumetrie)
+        if not m and "Volumétrie cible" in tete:
+            echecs.append(f"[P6] {nom} : la tête ne publie pas la mesure (« Réel : N mots ») "
+                          f"que le registre porte, {reel_reg} mots.")
         if m and nombre(reel_reg) != nombre(m.group(1)):
             echecs.append(f"[P6] {nom} : volumétrie réelle {reel_reg} au registre, "
                           f"{m.group(1).strip()} à l'en-tête.")
@@ -760,7 +896,7 @@ def controler_tableaux():
                 echecs.append(
                     f"[P10] {f.relative_to(RACINE).as_posix()}:{i} — la rangée porte "
                     f"{vu} pipes non échappés, son séparateur en porte {attendu}. "
-                    f"Un pipe littéral s'écrit « \| », span de code compris : "
+                    f"Un pipe littéral s'écrit « \\| », span de code compris : "
                     f"pandoc l'absorbe, GFM casse la rangée en silence.")
     return echecs
 

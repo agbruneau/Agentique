@@ -132,3 +132,45 @@ T7.4) n'ont pas de critique à l'aveugle : l'orchestrateur rejoue leurs critère
 - Globaux : `check-renvois.py` → 227 `.md`, 2 184 renvois, 0 mort ; `appareil.yml` analysé.
 - Signalés par M5, hors périmètre : `4 - Essais/1 - Traité/README.md:392` (« pas d'intégration continue ») ; `3 - Veille/README.md` dit l'état de l'art « cassé » ; harnais de l'article : une mutation compte comme vue quel que soit le contrôle qui échoue.
 - Coût du bâtisseur : 546 k jetons, 257 appels, 56 min.
+
+### M8 — critique (A = barre, B = Agentique)
+- **Verdict : B.** La note dit ce qu'elle est et ce qu'elle ne garantit pas ; `check-synthese.py` rejoué à 0 ; sections citées conformes aux signets PDF des volumes ; une trentaine d'affirmations rouvertes tiennent au chiffre et à la date. La barre : aperçus sans source ni niveau de certitude, portées grossies (`pd-overview.md:29`).
+- **Écart retenu (B)** : le 91,8 % de « L'essentiel » étiqueté « individuel » alors que sa source est une prépublication non révisée, quand le 40,55 %, de même régime, est « sans revue ». Relevés en plus : douze brouillons présentés comme un compte (la source dit un plancher) ; « supervision humaine démontrée nulle part » étiquetée « attestée » sur une seule notice ; audit du 8 août qui ne somme plus à 269 ; « aucune de ces échéances » étendu de quatre à six lignes ; désaccord interne du Vol. VI (400 M / un demi-milliard) non signalé.
+- Suite : victoire à l'aveugle, mais les écarts sont des fautes d'exactitude dans un livrable de recherche : **reprise du même bâtisseur** (pas d'agent neuf) pour les corriger, sans nouveau critique — le lissage final vérifiera.
+- Coût : 246 k jetons, 39 appels, 8 min.
+
+## Vague B — phase 4
+| Morceau | Tâches | Critique |
+|---|---|---|
+| **M7a — Pages d'accueil** | T4.1, T4.2, T4.4 ; discordances de comptes relevées sur M4 | à l'aveugle |
+| **M7b — En-têtes du compendium** | T4.3, T4.5 | à l'aveugle |
+
+## CI de la vague A
+- Run `34993444546` sur `5cdb5bb` : **rouge** sur une étape, `decompte.sh --verifier` (Linux et Windows) — Vol. II à 93 939 jetons contre une ancre à 93 239. Cause : l'annexe A § A.9 et la note d'avant-propos ajoutées par M6 (T5.4), qui n'avait pas rejoué ce script. Ajout voulu, ancre périmée : redatée selon la convention du script (`0fdb21b`), `APPAREIL.md` suit. Fait par l'orchestrateur.
+
+### M8 — reprise (même bâtisseur)
+- Écarts du critique corrigés, tous confirmés à la relecture des sources ; élargi au 41,6 % et à la taxonomie MAST (même régime). Contrôle : [5] exige le régime des notices arXiv, nouveau [8] sur les sommes et parts ; 26 mutations.
+- Rejoué par l'orchestrateur : `check-synthese.py` → 0 (huit contrôles), harnais → 26 au verdict attendu, 21 pages. Commit local `Note de synthèse : régime…`, poussé après la fin de la CI en cours.
+- Coût : 805 k jetons cumulés (reprise : 22 appels, 9 min).
+- CI verte au run `34993788011` sur `0fdb21b` : six tâches ; la parité de la note de synthèse et `check-vol1.py` tiennent sous Linux et Windows.
+- CI verte au run `34995160645` sur `5d2b221` (reprise de la note).
+
+### M7a — bâtisseur
+- Déclaré : T4.1 (11 `JOURNAL.md` ; 6 057 lignes reçues, 5 821 identiques à l'octet, 236 ne diffèrent que par une cible de lien ; 3 570 phrases d'origine toutes retrouvées), T4.2 (18 `README` de 22 à 40 lignes, gras 0,9 à 2,9 %, aucun ⚠ ni ☑, statut D-18 conservé, quatre discordances de comptes résorbées), T4.4 (`check-lisibilite.py`, 15 mutations, deux étapes de CI) — fermées ; 37 contrôles et harnais à 0.
+- Contrôles adaptés à la nouvelle forme, avec harnais : `check-toc.py` (C14), `check-article.py` (cardinaux, lus une seule fois), `reporter-volumetrie.py` (site 3, sans harnais, éprouvé sur copie).
+- Coût : 686 k jetons, 177 appels, 49 min.
+
+### M7a — critique (A = Agentique, B = barre)
+- **Verdict : A.** Toutes les pages d'accueil tiennent en 30 à 40 lignes sur un même plan (objet, statut, par où entrer, refaire, journal) ; 361 liens relatifs sur 18 `README`, 0 rompu ; pages des 12 PDF, 470 tests, 30 rapports, 46 entrées, 159 entrées de socle, D-17 / D-18 vérifiés ; renvois vers les journaux et l'historique conformes. La barre : racine de 1 442 lignes dont 1 308 de contributeurs, sans état ni reconstruction, affirmations d'accueil fausses.
+- **Écart retenu (A)** : `4 - Essais/1 - Traité/README.md:6` dit « deux » écarts contre le traité, alors que le registre cité (`docs/decisions.md:152`) en compte trois ; le reclassement n'est qu'au journal. Mineur : `4 - Essais/` n'a ni `README` ni `JOURNAL.md`.
+- Suite : victoire, le morceau sort de la boucle. L'écart va au lissage.
+- Coût : 153 k jetons, 27 appels, 6 min.
+
+### M7b — bâtisseur
+- Déclaré : **T4.5 fermée** — dégagement du résumé de +1,7 à +21,5 pt (notices des Livres I, II, V raccourcies, marge basse 26 → 33 mm) ; 1 000 pages tenues après re-mesure du pas (17,03 pt), les notes de collation de 14 pièces, absentes du HTML, ne s'imprimant plus.
+- Déclaré : **T4.3 non fermée sur son seuil** — « premier `---` ≤ 8 lignes » est hors d'atteinte : un tableau Markdown de cinq rangées prend sept lignes, et la forme du PRD §6 (situation, tableau, thèse) place le premier `---` entre les lignes 16 et 21 (16 à 58 avant). **Défaut du critère du plan**, que l'orchestrateur a rédigé. Tient : cinq rangées exactement dans les 50 têtes, statut « archive de travail (D-18) », têtes de 425 248 à 104 394 octets (−75,5 %), 530 lignes retirées retrouvées mot pour mot en « Note de statut », corps identique à l'octet, `.html` régénérés identiques.
+- Contrôles renforcés : P1 (forme de tête), P5 (tête contre détail), P6 (mesure publiée) ; `check-sieges.py` relit le bloc déplacé ; `reporter-volumetrie.py` adapté ; harnais à 30 et 115 mutations.
+- Coût : 673 k jetons, 158 appels, 59 min.
+
+### Vague B — contrôles rejoués par l'orchestrateur avant commit
+- 20 commandes à 0 : `check-renvois.py` (238 `.md`, 2 770 renvois, 0 mort) et son harnais ; `check-lisibilite.py` et son harnais ; `check-compendium.py` (30 mutations), `check-sieges.py` (115), `check-toc.py` et harnais ; `decompte.sh --verifier` ; `genere.py --verifier` ; `check-article.py` (9 mutations) ; `check-veille.py`, `check-revue.py`, `check-synthese.py` ; `check-resume.py` sur `Compendium.pdf` (+21,5 pt) ; `check-traite.py` ; `check-vol1.py` ; `appareil.yml` analysé. `verifier-piece.py` laissé à la CI (Pandoc 3.11).

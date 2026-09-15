@@ -95,7 +95,7 @@ def m3_renvoi_mort(tmp):
 
 def m4_cardinal_faux(tmp):
     """[4] — le README publie un nombre que la mesure ne rend pas."""
-    remplacer(tmp / "README.md", "**8 planches**", "**9 planches**")
+    remplacer(tmp / "README.md", "8 planches", "9 planches")
 
 
 def m5_score_divergent(tmp):

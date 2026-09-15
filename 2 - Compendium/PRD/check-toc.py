@@ -292,7 +292,9 @@ def main():
         fail("C14", "version du TOC introuvable au bandeau")
     elif CONSPECTUS.exists():
         ctext = CONSPECTUS.read_text(encoding="utf-8")
-        src = re.search(r"^\| Source \|.*?\*\*(v0\.\d+)\*\*", ctext, re.M)
+        # Première version de la rangée Source, en gras ou non : la page d'accueil
+        # réécrite le 15 septembre 2026 (tâche T4.2) réserve le gras aux titres courants.
+        src = re.search(r"^\| Source \|.*?\b(v0\.\d+)\b", ctext, re.M)
         head = "\n".join(ctext.splitlines()[:15]).lower()
         if (not src or src.group(1) != toc_version) and "retard déclaré" not in head:
             fail("C14", f"Conspectus non aligné sur {toc_version} et sans « retard déclaré » en tête")

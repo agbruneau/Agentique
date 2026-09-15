@@ -60,6 +60,7 @@ CH26 = "Livre III/26-vide-federal-c27-c36.md"
 CH28 = "Livre III/28-valeurs-mobilieres-acvm-11-348.md"
 CH21 = "Livre II/21-horloge-post-quantique.md"
 CH42 = "Livre IV/42-matrice-protocoles-exigences.md"
+CH44 = "Livre IV/44-formalisation-archimate.md"
 CH46 = "Livre IV/46-instrumentation-feuille-route.md"
 REGISTRE = "PRD/registre-gel.md"
 
@@ -153,6 +154,84 @@ def m1_champ_retire(tmp):
     texte = p.read_text(encoding="utf-8")
     p.write_text(re.sub(r"^\|\s*\*\*Volumétrie cible\*\*.*\n", "", texte, flags=re.M),
                  encoding="utf-8", newline="\n")
+
+
+# --- la tête en cinq lignes (15 septembre 2026, plan d'exécution, T4.3) ---------
+# La tête ne porte plus qu'un résumé ; l'en-tête de rédaction vit en fin de pièce. Six
+# mutations éprouvent ce que la forme neuve demande au contrôle : que la tête ne regonfle
+# pas (M1b, M1c, M1e), que le détail existe (M1d), que le résumé dise ce que la pièce
+# déclare (M5b), que le corps se relise avec le bloc reporté à sa place (M5c), et que la
+# mesure publiée en tête concorde avec le registre (M6d).
+
+def _ecrire(p, texte):
+    p.write_text(texte, encoding="utf-8", newline="\n")
+
+
+def m1b_rangee_surnumeraire(tmp):
+    """P1 — la tête regagne une sixième rangée : l'en-tête regonfle par le côté."""
+    p = tmp / CH05
+    texte = p.read_text(encoding="utf-8")
+    neuf = texte.replace("| **Volumétrie cible** |",
+                         "| **Remontées** | closes le 27 juillet 2026 |\n| **Volumétrie cible** |", 1)
+    assert neuf != texte, "rangée de volumétrie introuvable au ch. 5"
+    _ecrire(p, neuf)
+
+
+def m1c_valeur_regonflee(tmp):
+    """P1 — une valeur de tête reprend la longueur d'une cellule de rédaction."""
+    p = tmp / CH09
+    texte = p.read_text(encoding="utf-8")
+    i = texte.index("\n| **Statut** | ")
+    j = texte.index(" |\n", i + 1)
+    _ecrire(p, texte[:j] + " — et le motif détaillé de la passe, re-mesuré à son commit" * 8 + texte[j:])
+
+
+def m1d_report_retire(tmp):
+    """P1 — l'en-tête de rédaction disparaît de la fin de pièce : le détail daté n'existe plus."""
+    p = tmp / CH11
+    texte = p.read_text(encoding="utf-8")
+    _ecrire(p, texte[:texte.index("\n\n---\n\n### En-tête de rédaction\n")] + "\n")
+
+
+def m1e_appareil_remonte(tmp):
+    """P1 — un paragraphe d'appareil revient entre la thèse et le premier filet."""
+    p = tmp / CH01
+    texte = p.read_text(encoding="utf-8")
+    i = texte.index("\n---\n")
+    _ecrire(p, texte[:i] + "\n⚠ **La thèse a été re-collationnée contre le TOC v0.30.**\n" + texte[i:])
+
+
+def m5b_resume_diverge(tmp):
+    """P5 — le résumé de tête ne dit plus ce que le tableau de rédaction déclare."""
+    p = tmp / CH01
+    texte = p.read_text(encoding="utf-8")
+    i = texte.index("\n---\n")
+    tete = texte[:i].replace("R-14 : deux occurrences", "R-14 : trois occurrences", 1)
+    assert tete != texte[:i], "déclaration R-14 introuvable en tête du ch. 1"
+    _ecrire(p, tete + texte[i:])
+
+
+def m5c_apres_la_these_perdu(tmp):
+    """P5 — le bloc « Après la thèse » n'est plus relu devant le filet.
+
+    Le ch. 44 compte R-14 « thèse citée et son commentaire de collation compris » : son
+    occurrence vit dans ce bloc, reporté en fin de pièce. Le perdre du corps fait mentir un
+    cardinal que la pièce déclare juste.
+    """
+    p = tmp / CH44
+    texte = p.read_text(encoding="utf-8")
+    neuf = texte.replace("\n#### Après la thèse\n", "\n#### Collation de la thèse\n")
+    assert neuf != texte, "bloc « Après la thèse » introuvable au ch. 44"
+    _ecrire(p, neuf)
+
+
+def m6d_tete_desalignee(tmp):
+    """P6 — la mesure publiée en tête ne concorde plus avec le registre."""
+    p = tmp / CH26
+    texte = p.read_text(encoding="utf-8")
+    neuf = re.sub(r"(Réel : )\d[\d ]*( mots de corps)", r"\g<1>9 999\2", texte, count=1)
+    assert neuf != texte, "mesure de tête introuvable au ch. 26"
+    _ecrire(p, neuf)
 
 
 def m2_renvoi_hors_domaine(tmp):
@@ -426,6 +505,13 @@ MUTATIONS = [
      m8_toc_identifiant_pendant, "[P8]", "echec"),
     ("M8b P8 — une exclusion déclarée résout (F-92)", m8b_exclusion_declaree, "[P8]", "muet"),
     ("M1  P1 — champ d'en-tête retiré", m1_champ_retire, "[P1]", "echec"),
+    ("M1b P1 — sixième rangée en tête", m1b_rangee_surnumeraire, "[P1]", "echec"),
+    ("M1c P1 — valeur de tête regonflée", m1c_valeur_regonflee, "[P1]", "echec"),
+    ("M1d P1 — en-tête de rédaction retiré de la fin de pièce", m1d_report_retire, "[P1]", "echec"),
+    ("M1e P1 — paragraphe d'appareil remonté en tête", m1e_appareil_remonte, "[P1]", "echec"),
+    ("M5b P5 — résumé de tête contraire au tableau de rédaction", m5b_resume_diverge, "[P5]", "echec"),
+    ("M5c P5 — bloc « Après la thèse » perdu du corps", m5c_apres_la_these_perdu, "[P5]", "echec"),
+    ("M6d P6 — mesure de tête désalignée du registre", m6d_tete_desalignee, "[P6]", "echec"),
     ("M2  P2 — renvoi « ch. 62 » hors du domaine 1-50", m2_renvoi_hors_domaine, "[P2]", "echec"),
     ("M2b P2 — « ch. 62 du Vol. II » désigne une source", m2b_renvoi_a_une_source, "[P2]", "muet"),
     ("M3  P3 — identifiants de socle nus (rapport)", m3_identifiants_nus, "[P3", "rapport"),

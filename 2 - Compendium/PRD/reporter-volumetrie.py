@@ -41,7 +41,7 @@ RACINE = Path(os.environ.get("COMPENDIUM_RACINE",
 ENVELOPPES = {"I": 65000, "II": 50000, "III": 90000, "IV": 69000, "V": 34000}
 LETTRES = {"I": "onze", "II": "dix", "III": "quinze", "IV": "dix", "V": "quatre"}
 
-REEL_ENTETE = re.compile(r"([Rr]éel[^:]{0,25}:\s*\*{0,2}\s*)([\d   ]+?)(\s*\*{0,2}\s*mots)")
+VOLUMETRIE_TETE = re.compile(r"(Réel : )([\d ]+)( mots de corps pour une cible ≈ )([\d ]+)( mots \()([−+][\d,]+ %)(\))")
 RANGEE_REGISTRE = re.compile(r"^\| \d+ \|")
 FICHIER_REGISTRE = re.compile(r"Livre%20([IVX]+)/([\w.-]+\.md)")
 
@@ -96,24 +96,29 @@ def reporter(mes, ecrire):
     if ecrire:
         reg.write_text("\n".join(lignes), encoding="utf-8", newline="\n")
 
-    # --- site 2 : les en-têtes qui PUBLIENT leur mesure -------------------
-    # ⚠ Vingt-six seulement le font ; les vingt-quatre autres renvoient au
-    # README de leur Livre. On ne crée pas le champ là où il n'est pas.
+    # --- site 2 : la tête des cinquante pièces ------------------------------
+    # ⚠ Depuis le 15 septembre 2026 (plan d'exécution, T4.3), les CINQUANTE têtes publient
+    # la mesure, sous une forme fixe — « Réel : N mots de corps pour une cible ≈ C mots
+    # (±x,x %) » —, et l'écart se recalcule avec le réel. Vingt-six seulement la publiaient
+    # jusque-là. Le « Réel » du tableau de rédaction, reporté en fin de pièce, est daté de
+    # sa passe : il ne se touche pas. Une tête sans cette forme arrête le report — *la
+    # passer en silence rendrait le site muet, et le contrôle P6 le verrait trop tard.*
     for f, reel in sorted(mes.items()):
         p = RACINE / f
         lignes = p.read_text(encoding="utf-8").split("\n")
-        for i, l in enumerate(lignes[:20]):
-            if not l.startswith("| **Volumétrie cible**"):
-                continue
-            m = REEL_ENTETE.search(l)
-            if not m:
-                break
-            if int(re.sub(r"\D", "", m.group(2))) != reel:
-                ecarts.append(f"en-tête : {f} porte {m.group(2).strip()}, mesuré {fmt(reel)}")
-                lignes[i] = l[:m.start()] + m.group(1) + fmt(reel) + m.group(3) + l[m.end():]
-                if ecrire:
-                    p.write_text("\n".join(lignes), encoding="utf-8", newline="\n")
-            break
+        fin = lignes.index("---") if "---" in lignes else len(lignes)
+        i = next((k for k in range(fin) if lignes[k].startswith("| **Volumétrie cible**")), None)
+        m = VOLUMETRIE_TETE.search(lignes[i]) if i is not None else None
+        if not m:
+            raise SystemExit(f"[volumétrie] {f} : la tête ne porte pas la mesure sous la forme "
+                             f"« Réel : N mots de corps pour une cible ≈ C mots (±x,x %) ».")
+        juste = (m.group(1) + fmt(reel) + m.group(3) + m.group(4) + m.group(5)
+                 + pourcent(reel, int(re.sub(r"\D", "", m.group(4)))) + m.group(7))
+        if m.group(0) != juste:
+            ecarts.append(f"en-tête : {f} porte {m.group(2).strip()} ({m.group(6)}), mesuré {fmt(reel)}")
+            lignes[i] = lignes[i][:m.start()] + juste + lignes[i][m.end():]
+            if ecrire:
+                p.write_text("\n".join(lignes), encoding="utf-8", newline="\n")
 
     # --- site 3 : les README de Livre (table et total) --------------------
     par_livre = collections.Counter()
@@ -122,12 +127,19 @@ def reporter(mes, ecrire):
     for livre, total in sorted(par_livre.items()):
         p = RACINE / f"Livre {livre}" / "README.md"
         t = p.read_text(encoding="utf-8")
-        m = re.search(r"(☑ \*\*Mesure du jour : )([\d ]+)( mots\*\*)", t)
-        if m and int(re.sub(r"\D", "", m.group(2))) != total:
+        # Forme de la page d'accueil réécrite le 15 septembre 2026 (tâche T4.2), sans
+        # marqueur ni gras. Une forme introuvable est un écart : sans cela, réécrire la
+        # page éteindrait ce site en silence.
+        m = re.search(r"(Volumétrie : )([\d ]+)( mots de corps)", t)
+        if not m:
+            ecarts.append(f"README Livre {livre} : forme « Volumétrie : N mots de corps » introuvable")
+        elif int(re.sub(r"\D", "", m.group(2))) != total:
             ecarts.append(f"README Livre {livre} : porte {m.group(2)}, mesuré {fmt(total)}")
             t = t[:m.start()] + m.group(1) + fmt(total) + m.group(3) + t[m.end():]
-        m2 = re.search(r"(Livre de \*\*[\d ]+\*\* au TOC, soit \*\*)[−+][\d,]+ %(\*\*)", t)
-        if m2:
+        m2 = re.search(r"(enveloppe de Livre de [\d ]+ au TOC, soit )[−+][\d,]+ %()", t)
+        if not m2:
+            ecarts.append(f"README Livre {livre} : forme « enveloppe de Livre de N au TOC, soit ±x % » introuvable")
+        else:
             juste = pourcent(total, ENVELOPPES[livre])
             if m2.group(0) != m2.group(1) + juste + m2.group(2):
                 t = t[:m2.start()] + m2.group(1) + juste + m2.group(2) + t[m2.end():]

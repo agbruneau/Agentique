@@ -42,7 +42,7 @@ dossier.
 | Tâche | Ce qu'elle rejoue |
 |---|---|
 | Documents | les contrôles de document du § 3, sauf `check-empaquetage.py` et `check-renvois.py`, qui a sa tâche ; `check-resume.py` sur les dix rendus qu'il sait lire ; `genere.py --verifier` une seconde fois sans mode UTF-8, sous Windows ; les cinq harnais de mutation de document du § 4 ; puis, **dans l'arbre**, les cinq graveurs et assembleurs du § 5 avec `assemble-bibliographie.py` et — sous Linux seulement — `reporter-volumetrie.py` en mode écriture, suivis de deux gardes — `git status --porcelain` vide, aucun fichier en CRLF — ; et une garde qui refuse tout script portant ⚠ ou ☑ sans `sys.stdout.reconfigure` |
-| Renvois | `Python/check-renvois.py` et son harnais |
+| Renvois | `Python/check-renvois.py` et son harnais ; ✎ *depuis la tâche T4.4 du 15 septembre 2026, `Python/check-lisibilite.py` et son harnais* |
 | Simulateur | `cargo fmt --all --check`, `cargo clippy`, `cargo test`, avec un plancher de 470 tests |
 
 **Ce que le flux ne rejoue pas encore** :
@@ -77,7 +77,7 @@ badge n'a pas de verdict à rendre, et chaque sortie de cette page est celle du 
 |---|---|---|---|
 | `python Python/check-veille.py` | `3 - Veille/` | **0** | 94 sections, 24 tableaux, 25 questions ouvertes ; 342 entrées, 306 titres (3 homonymies arbitrées) ; 342 définies, 342 citées |
 | `python Python/check-revue.py` | `3 - Veille/` | **0** | 192 définies ; 142 sur 142 neuves citées nommément, 23 sur 50 du socle discutées ; 8 tableaux, 8 légendes ; 12 attestées, 32 autodéclarées, 145 sans revue sur 189 arXiv |
-| `python Python/check-synthese.py`, puis son harnais `python Python/check-synthese-mutations.py` | `3 - Veille/` | **0** et **0** | note de synthèse (T7.2), rejouée le 15 septembre 2026 : 20 pages ; parité du PDF, 260 053 octets hors horodatage ; 200 renvois de section résolus ; 339 chiffres sur 126 passages retrouvés dans la section citée ; niveaux de preuve conformes au vocabulaire de chaque volume ; 50 notices listées et citées ; résumé à +165 pt. Harnais : copie intacte tenue, 22 mutations au verdict attendu, dont 3 muettes. `--rendre` recompose le PDF |
+| `python Python/check-synthese.py`, puis son harnais `python Python/check-synthese-mutations.py` | `3 - Veille/` | **0** et **0** | note de synthèse (T7.2), rejouée le 15 septembre 2026 après la reprise des écarts du critique : 21 pages ; parité du PDF, 269 331 octets hors horodatage ; 208 renvois de section résolus ; 349 chiffres sur 129 passages retrouvés dans la section citée ; niveaux de preuve conformes au vocabulaire de chaque volume, régime de publication des prépublications arXiv compris ; 54 notices listées et citées ; résumé à +165 pt ; 3 décompositions et parts qui tombent juste. Harnais : copie intacte tenue, 26 mutations au verdict attendu, dont 3 muettes. `--rendre` recompose le PDF |
 | `python Python/check-traite.py` | `4 - Essais/1 - Traité/` | **0** | 143 pages ; 72 511 mots, 19 figures ; 123 notices, 123 citées nommément ; parité du PDF, 1 551 326 octets hors horodatage, refait à l'identique |
 | `python Python/check-empaquetage.py` | `4 - Essais/1 - Traité/` | **0** avec `CARGO_TARGET_DIR`, **1** sans | avec : module WASM refait dans un dossier jetable, 3 670 027 octets identiques à l'octet à celui de `web/`, glu 68 213 octets ; sans : « INDÉTERMINÉ », la construction irait dans le `target/` du dépôt |
 | `python PRD/check-compendium.py` | `2 - Compendium/` | **0** | 50 pièces, **P1-P10** ; **5 rapports déclaratifs** |
@@ -93,6 +93,7 @@ badge n'a pas de verdict à rendre, et chaque sortie de cette page est celle du 
 | `python "3 - Veille/Python/check-resume.py" <fichier.pdf>` | racine | **0** sur dix, **1** sur deux | dégagement sous la marge basse de 72 pt : Vol. I +236,8 ; Vol. II +170,2 ; Vol. III +206,9 ; `Compendium.pdf` **+1,7, « LIMITE »** ; note SDLC +154,8 ; revue +151,2 ; veille +99,2 ; traité +122,3 ; planche *Cinq schémas* **+0,3, « LIMITE »** ; état de l'art +12,6. Sort 1 sur l'article (« déborde de 27.7 pt ») et sur le mémoire de 1997 (« page de titre illisible ») — [§ 6](#6-alertes-que-la-mesure-porte-et-quaucun-contrôle-ne-bloque) |
 | `python Python/check-renvois.py` | racine | **0** | 225 `.md` suivis ou non ignorés, 2 079 renvois relatifs dont 75 à fragment ; 0 mort, 1 toléré — une ancre de citation verbatim de la spécification A2A, déclarée au script |
 | `python Python/check-vol1.py` | `1 - Collection/1 - InteroperabiliteAgentique/` | **0** | 570 pages, 570 au `README` du volume, `/Creator` Typst 0.15.1 ; 7 bibliographies, 1 199 notices : 1 099 retrouvées au corps, 45 déclarées « contexte non cité », 55 au registre du script ; parité du PDF, 6 359 694 octets hors horodatage, refait à l'identique — sans Pandoc ni mermaid-cli, « NON MESURÉ ». ✎ *Ajouté le 15 septembre 2026 après le relevé (tâche T6.5) ; la rangée lisait jusque-là « Le Vol. I n'a aucun contrôle propre »* |
+| `python Python/check-lisibilite.py` | racine | **0** | 18 `README.md` : 22 à 40 lignes, gras de 0,9 % à 2,9 % et tout entier en titres courants, aucun marqueur ⚠ ☑ ☐ ✎, chacun relié à un `JOURNAL.md` qui existe ; seuils écrits en tête du script. ✎ *Ajouté le 15 septembre 2026 après le relevé (tâche T4.4), avec la réécriture des pages d'accueil (T4.2) et les onze `JOURNAL.md` qui reçoivent leur chronique (T4.1)* |
 
 ## 4. Validation par mutation
 
@@ -104,13 +105,14 @@ légitime ne déclenche rien.
 
 | Commande | Depuis | Sortie | Ce qu'elle rend |
 |---|---|---|---|
-| `python PRD/check-sieges-mutations.py` | `2 - Compendium/` | **0** | passage intact ; **114** mutations attrapées |
+| `python PRD/check-sieges-mutations.py` | `2 - Compendium/` | **0** | passage intact ; **115** mutations attrapées, dont M12 : le bloc « Après la thèse » reporté en fin de pièce (T4.3) cesse d'être relu à sa place |
 | `python PRD/check-toc-mutations.py` | `2 - Compendium/` | **0** | passage intact ; **24** mutations détectées, M1 à M16b, chacune par le contrôle attendu |
-| `python PRD/check-compendium-mutations.py` | `2 - Compendium/` | **0** | ligne de base tenue ; **23** mutations au verdict attendu, dont 6 matières légitimes qui ne doivent rien déclencher |
+| `python PRD/check-compendium-mutations.py` | `2 - Compendium/` | **0** | ligne de base tenue ; **30** mutations au verdict attendu, dont 6 matières légitimes qui ne doivent rien déclencher ; M1b à M1e, M5b, M5c et M6d éprouvent la tête en cinq lignes (T4.3) |
 | `python build/verifier-piece-mutations.py` | `2 - Compendium/` | **0** | ligne de base à zéro ; **6** mutations au verdict attendu |
 | `python check-article-mutations.py` | `4 - Essais/2 - Article/` | **0** | dossier intact tenu ; **9** mutations au verdict attendu — ✎ *7 au relevé ; M2c, le xref décalé d'un rendu sous fuseau UTC, ajoutée le même jour pour la CI, et M6, la branche « sinon → G » faussée, par la tâche T6.7* |
 | `python Python/check-vol1-mutations.py` | `1 - Collection/1 - InteroperabiliteAgentique/` | **0** | dossier intact tenu ; **5** mutations au verdict attendu, dont une notice orpheline injectée et une qui ne doit rien déclencher ; les deux de parité sautées sans la chaîne complète. ✎ *Ajouté le 15 septembre 2026 après le relevé (tâche T6.5)* |
 | `python Python/check-renvois-mutations.py` | racine | **0** | corpus propre et corpus réel passent ; **16** mutations, M0 à M15, au verdict attendu, dont 5 renvois à ignorer ou à tolérer |
+| `python Python/check-lisibilite-mutations.py` | racine | **0** | corpus propre — 40 lignes en CRLF, titres courants, code — et corpus réel passent ; **15** mutations au verdict attendu, dont une page de 41 lignes vue, deux fois, et 4 formes légitimes qui ne déclenchent rien. ✎ *Ajouté le 15 septembre 2026 après le relevé (tâche T4.4)* |
 
 ## 5. Fabrication et simulateur
 

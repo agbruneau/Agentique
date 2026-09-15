@@ -134,12 +134,21 @@
 // et 16,98 pt donne désormais 1003 pages. La marche s'est déplacée de dix-huit
 // centièmes en une passe : 16,90 pt donne 1002, 16,86 pt et 16,83 pt en donnent
 // 1001, et **16,80 pt en donne 1000**.
+// ⚠ Relevé du 15 septembre 2026 (plan d'exécution, T4.3 et T4.5) : la tête des
+// cinquante pièces a été ramenée à cinq lignes, et les paragraphes de collation qui
+// suivaient la thèse de quatorze pièces (ch. 7, 8, 10, 11 et 37 à 46) — que
+// `assemble.py` laissait passer au rendu, quand `rendre-piece.py` les écartait déjà du
+// HTML — vivent désormais en fin de note de statut, hors du rendu. Aucun mot du corps n'a bougé (`decompte.sh --registre` :
+// les cinquante lignes tiennent). À 16,80 pt, le volume tombe à 993 pages. Relevé sur
+// le rendu complet : 16,90 pt donne 995 ; 16,92 à 16,96 pt, 996 ; 17,00 et 17,01 pt,
+// 997 ; **17,02 à 17,05 pt, 1000** ; 17,06 pt, 1001 ; 17,07 et 17,08 pt, 1002. Le
+// calage retient 17,03 pt, à l'intérieur de la marche.
 // *Le calage n'est donc PAS une constante du gabarit : c'est une fonction du
 // corpus, et il se re-mesure à chaque passe qui touche un corps.* Le corps de
 // 13 pt et la mesure de 79 caractères, eux, ne bougent pas — et ne sont pas le
 // levier.
 #let CORPS = 13pt
-#let PAS   = 16.80pt
+#let PAS   = 17.03pt
 // ⚠ `top-edge` est FIGÉ en em plutôt que laissé à la fonte effective : sans
 // cela, une ligne portant un ⚠ ou un ☑ — rendus par la fonte de repli — prend
 // une hauteur différente et décroche de la grille. Onze pour cent des lignes du
@@ -456,7 +465,16 @@
 // ⚠ Ces #v() et #v(1fr) sont le budget de la page : elle doit rester UNE page,
 // et le décompte de pages est le seul contrôle qui le voie. Toute addition au
 // colophon se paie ici, jamais en laissant déborder.
-#page(margin: (x: 34mm, top: 36mm, bottom: 26mm), header: none, footer: none)[
+// ⚠ Marge basse portée de 26 à 33 mm le 15 septembre 2026 (plan d'exécution, T4.5), et le
+// motif est une mesure. `check-resume.py` relevait la dernière ligne de la maxime à 73,7 pt
+// du pied, soit 1,7 pt au-dessus de sa marge de 72 pt (évaluation du 15 septembre 2026,
+// §8.5) : le colophon est calé au pied par `#v(1fr)`, et sa dernière ligne tombait donc
+// exactement sur la marge de 26 mm. Condenser le résumé ne l'aurait pas relevé d'un point
+// — le `1fr` aurait absorbé la place. Les notices des Livres I, II et V ont perdu une ligne
+// de rangée chacune (deux lignes au total, la rangée I-II et la rangée V), et ces deux
+// lignes, rendues au `1fr`, paient les 7 mm de marge : la signature garde sa distance au
+// colophon, et le dégagement mesuré passe au-dessus du seuil de 12 pt que le plan fixe.
+#page(margin: (x: 34mm, top: 36mm, bottom: 33mm), header: none, footer: none)[
 #block(width: 100%, {
   // ⚠ `hyphenate: false` : le titre ne tient pas sur une ligne de 148 mm et se
   // replie — mais césuré, il sort « Interopérabi-lité ». Il se replie au mot.
@@ -500,11 +518,11 @@
   // de sa notice ne justifie pas sa ligne — l'intitulé reste au fer à gauche.
   set par(justify: true, leading: 4.4pt, spacing: 7pt, first-line-indent: 0pt)
   grid(columns: (1fr, 1fr), column-gutter: 9mm, row-gutter: 7pt,
-    ..(([I], [Coopérer], [Fondements de l'interopérabilité et couche protocolaire : l'agent comme boucle, l'accord sur le sens que les protocoles présupposent, MCP et A2A, découverte et registres, modes d'échec.]),
-       ([II], [Faire confiance], [Identité non humaine, délégation vérifiable et fabrique de confiance : émettre un passeport opposable, tenir sous confiance hostile, compter avec l'horloge post-quantique.]),
+    ..(([I], [Coopérer], [Fondements de l'interopérabilité et couche protocolaire : l'agent comme boucle, l'accord sémantique, MCP et A2A, découverte et registres, modes d'échec.]),
+       ([II], [Faire confiance], [Identité non humaine et délégation vérifiable : émettre un passeport opposable, tenir sous confiance hostile, compter avec l'horloge post-quantique.]),
        ([III], [Encadrer], [Orchestration déterministe en entreprise, cadre réglementaire canadien et terrain des services financiers : l'autonomie sous contrôle de finalité.]),
        ([IV], [Appliquer, exploiter, produire et composer], [AgentMesh, AgentOps, fabrique d'agents et synthèse architecturale : le maillage admet, la mesure condamne, la fabrique réémet.]),
-       ([V], [Livrer et clore], [L'agent comme artefact logiciel : provenance des composants, mise en service d'un artefact non reproductible, sémantique d'effet, horizon et frontière.]),
+       ([V], [Livrer et clore], [L'agent comme artefact logiciel : provenance, mise en service, sémantique d'effet, horizon et frontière.]),
       ).map(e => block(width: 100%, {
         text(fill: ACCENT, weight: "bold")[Livre #e.at(0) — #e.at(1)]
         linebreak()

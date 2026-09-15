@@ -1,50 +1,22 @@
-# `0 - Références/` — ce que ce dossier porte, et ce qu'il ne porte plus
+# 0 - Références — une pièce déposée
 
-*Dossier de **pièces déposées**, non de sources instruites : **aucun document du dépôt ne cite
-aucune de ces quatre pièces**. Le régime a longtemps manqué ; il est écrit ici, le 21 août 2026.*
-⚠ *Le dossier en portait quatre à cette date ; **il n'en porte plus qu'une depuis le 25 août 2026** —
-le mémoire de l'auteur.*
+Le dossier porte une seule pièce, [`1997 - Mémoire Maitrise.pdf`](1997%20-%20M%C3%A9moire%20Maitrise.pdf) : le mémoire de maîtrise de l'auteur,
+146 pages, PDF produit par Acrobat 6.02 et non composé ici. Aucun document du dépôt ne le cite. C'est une œuvre de l'auteur, couverte
+par la licence CC BY 4.0 de la [racine](../../LICENSE).
 
-## Ce qui reste au dépôt
+**Statut :** pièce déposée, hors compte des livrables ([registre de la racine](../../README.md#les-sept-livrables)).
 
-| Fichier | Ce que c'est | Régime |
-|---|---|---|
-| `1997 - Mémoire Maitrise.pdf` | Le mémoire de maîtrise de l'auteur, 1997 | ☑ **Œuvre de l'auteur** — couverte par le [`LICENSE`](../../LICENSE) de la racine, CC BY 4.0 depuis le 21 août 2026 |
+**Ce qui n'y est plus :** trois ouvrages de tiers — *Enterprise Integration Patterns* (Hohpe et Woolf, 2003), *Distributed Systems:
+Principles and Paradigms* (Tanenbaum et van Steen, 2007), le *Systems Engineering Body of Knowledge* (2026) — et deux prépublications
+arXiv qui dormaient sous `2 - OrchestrationAgentique/prd/`. La licence du dépôt ne pouvant pas les couvrir, ils ont quitté l'index,
+puis le disque de l'auteur : l'historique git en est la seule copie. Les faits F-36 et F-37 du Vol. II citent les deux prépublications
+par leur identifiant arXiv, et rien du corps d'aucun volume ne dépend des fichiers.
 
-## Ce qui est sorti de l'arbre le 21 août 2026, et pourquoi
-
-⚠ **Trois ouvrages de tiers y étaient versionnés depuis le 8 août 2026** — **36,6 Mo, 3 130 pages**
-—, et **deux articles arXiv** dormaient sous
-[`2 - OrchestrationAgentique/prd/`](../2%20-%20OrchestrationAgentique/prd/). *Le dépôt n'avait alors
-aucune licence : le droit d'auteur par défaut s'appliquait, et l'anomalie restait latente.* **Poser
-une licence CC BY 4.0 à la racine l'a rendue opposable** — cette licence couvre nominalement tout ce
-que l'arbre porte, et l'auteur ne peut pas concéder ce qui n'est pas à lui.
-
-☑ **Les cinq fichiers sont donc sortis de l'index git, non détruits.** Ils sont restés sur le disque
-de l'auteur, ignorés par [`.gitignore`](../../.gitignore), et **restent dans l'historique git** — où
-la licence de la racine ne s'étend pas et n'a jamais été applicable.
-
-⚠⚠ **ET LES COPIES AU DISQUE ONT ÉTÉ EFFACÉES LE 25 AOÛT 2026, SUR INSTRUCTION D'AUTEUR** — les
-trois ouvrages d'ici et les deux articles arXiv de `2 - OrchestrationAgentique/prd/`, **38 281 125
-octets**. ☑ *L'historique git est désormais **la seule copie**, et la commande ci-dessous la seule
-façon de les relire.* ⚠ **Ce que l'effacement ne change pas** : ni le régime de licence, ni les
-faits **F-36** et **F-37**, ni un seul renvoi du corps — *ce qui disparaît est une copie de
-travail, jamais une citation.* Pour les relire :
+Pour relire un fichier sorti :
 
 ```bash
 git show 'd786adb:1 - Collection/0 - Références/2003 - Enterprise Integration Patterns.pdf' > eip.pdf
 ```
 
-*Un clone du dépôt ne les recevra plus ; c'est exactement ce qui est voulu.*
-
-| Ouvrage | Titulaire | Où le lire |
-|---|---|---|
-| **Enterprise Integration Patterns** — Gregor Hohpe, Bobby Woolf, 2003 | Addison-Wesley / Pearson | <https://www.enterpriseintegrationpatterns.com/> — le catalogue des 65 patrons est en libre accès chez l'auteur ; le livre, non |
-| **Distributed Systems: Principles and Paradigms** — Andrew S. Tanenbaum, Maarten van Steen, 2ᵉ éd., 2007 | Pearson | <https://www.distributed-systems.net/> — van Steen et Tanenbaum y diffusent gratuitement la **3ᵉ édition** (2017), qui remplace celle-ci |
-| **Systems Engineering Body of Knowledge (SEBoK)**, v2026 | INCOSE / IEEE / Stevens Institute — **CC BY-NC-SA 3.0**, incompatible avec la CC BY 4.0 de ce dépôt | <https://sebokwiki.org/> — le corps entier est en ligne, à jour, et le PDF versionné en était une capture |
-| **Agentic Business Process Management: A Research Manifesto** — Calvanese, De Giacomo, Dumas, Kampik, Montali, Rinderle-Ma, Weber *et al.*, 2026 — **fait F-36 du Vol. II** | Auteurs / *Information Systems* | arXiv:2603.18916 ; version journal *Information Systems* **140**, 102738 (2026), **à privilégier en citation** |
-| **Design and Implementation of Agentic Orchestrations and Orchestration of Agents** — Rinderle-Ma, Mangler, Loebbecke, Voigt, Klievtsova, Ehrendorfer, 2026 — **fait F-37 du Vol. II** | Auteurs (TU München) | arXiv:2606.31518 — **préprint** : le Vol. II en cite le cadre, jamais les chiffres |
-
-⚠ **Ce que la sortie ne change pas** : les faits **F-36** et **F-37** du socle du Vol. II sont
-inchangés, leurs notices portent déjà leur source à l'identifiant arXiv, et **rien du corps d'aucun
-volume ne dépendait du fichier**. *Ce qui sort est la copie, jamais la citation.*
+**Journal :** [`JOURNAL.md`](JOURNAL.md) — le régime écrit le 21 août 2026, l'effacement des copies au disque le 25, et où lire
+chaque ouvrage aujourd'hui, avec son titulaire et sa licence.

@@ -716,6 +716,15 @@ SIEGES = [
 FIN_DE_CORPS = re.compile(r"^##\s*§?\s*[\d.]*\s*—?\s*Note de statut", re.M)
 DEBUT_DE_CORPS = re.compile(r"^>\s|^##\s", re.M)
 
+# ⚠ Le bloc « Après la thèse », reporté le 15 septembre 2026 (plan d'exécution, T4.3) de la
+# tête de la pièce à la fin de sa note de statut, sous « En-tête de rédaction », se relit ici
+# à sa place, devant le premier filet. Il a toujours été lu comme corps, et deux renvois que
+# ce contrôle exige y vivent : « ch. 49 § 49.0 » aux ch. 15 et 16 (S5, tri prospectif). Le
+# lire en fin de pièce le ferait tomber avec la note de statut, et S5 échouerait sur deux
+# pièces que rien n'a changées. Reprise textuelle de `check-compendium.py`.
+REPORT = "\n### En-tête de rédaction\n"
+APRES_LA_THESE = "\n#### Après la thèse\n\n"
+
 
 def corps(texte):
     """Le corps de la pièce : en-tête à cinq champs et note de statut exclus.
@@ -723,10 +732,17 @@ def corps(texte):
     Le corps commence à la thèse citée (bloc « > ») ou au premier titre de
     section, selon ce qui vient en premier — donc après le tableau d'en-tête.
     """
+    i = texte.find(REPORT)
+    j = texte.find(APRES_LA_THESE, i) if i >= 0 else -1
+    bloc = texte[j + len(APRES_LA_THESE):].rstrip("\n") if j >= 0 else ""
     debut = DEBUT_DE_CORPS.search(texte)
     texte = texte[debut.start():] if debut else texte
     coupe = FIN_DE_CORPS.search(texte)
-    return texte[: coupe.start()] if coupe else texte
+    b = texte[: coupe.start()] if coupe else texte
+    filet = b.find("\n---\n")
+    if bloc and filet >= 0:
+        b = b[:filet] + bloc + "\n" + b[filet:]
+    return b
 
 
 def pieces():

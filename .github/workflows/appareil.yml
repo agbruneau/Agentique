@@ -6,7 +6,7 @@
 #   documents — les contrôles de document, leurs harnais de mutation, puis le REJEU des
 #               générateurs et deux gardes d'arbre : aucun fichier modifié, aucun CRLF ;
 #   renvois   — les renvois relatifs des .md, et le harnais qui prouve qu'un renvoi cassé
-#               est vu ;
+#               est vu ; puis la lisibilité des pages d'accueil et son harnais ;
 #   simulateur — cargo test / clippy / fmt du simulateur du traité.
 #
 # Ce qui NE tourne PAS ici, et pourquoi, est dit à l'étape la plus proche : les chaînes de
@@ -281,6 +281,12 @@ jobs:
         run: python Python/check-renvois.py
       - name: check-renvois-mutations.py
         run: python Python/check-renvois-mutations.py
+      # Les pages d'accueil (T4.4) : quarante lignes au plus, aucun marqueur, gras réservé aux
+      # titres courants, un lien vers le journal. Bibliothèque standard et git seuls.
+      - name: check-lisibilite.py
+        run: python Python/check-lisibilite.py
+      - name: check-lisibilite-mutations.py
+        run: python Python/check-lisibilite-mutations.py
 
   simulateur:
     name: Simulateur (cargo) — ${{ matrix.os }}
