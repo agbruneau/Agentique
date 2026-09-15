@@ -41,8 +41,9 @@ CE QUE CETTE LICENCE NE COUVRE PAS
   au 21 août 2026 — « Enterprise Integration Patterns » (2003), « Distributed
   Systems » (2007) et le « Systems Engineering Body of Knowledge » (2026) —,
   ainsi que deux articles arXiv sous « 1 - Collection/2 - OrchestrationAgentique/
-  prd/ ». Ils sont sortis de l'arbre le 21 août 2026, avant que la présente
-  licence ne soit posée, précisément parce qu'elle ne pouvait pas les couvrir.
+  prd/ ». Ils sont sortis de l'arbre le 21 août 2026, au commit même qui pose
+  la présente licence (696bcac), précisément parce qu'elle ne pouvait pas les
+  couvrir.
   Ils restent dans l'historique git, où ils demeurent la propriété de leurs
   titulaires : la présente licence ne s'y étend pas, et n'y a jamais été
   applicable. Leurs renvois sont à « 1 - Collection/0 - Références/README.md ».

@@ -6,6 +6,13 @@ chacune avec son critère d'acceptation vérifiable. Il ne planifie pas les proj
 ce sont des travaux de recherche, pas des corrections. Il est une proposition ; six décisions
 d'auteur le conditionnent, et elles sont nommées en premier.*
 
+✎ *État d'exécution au 15 septembre 2026, commit `730c68e`, CI verte : décisions DA-1 à DA-7
+prises le jour même aux défauts, sauf DA-6 en (b) ; DA-4 reste ouverte. Phases 0 à 4 et 6, T5.4,
+T7.1 et T7.2 exécutées ; D-17 rouvre le dépôt et D-18 fixe le compte des livrables. T5.1 à T5.3
+attendent les relecteurs, T7.3 et T7.4 la re-clôture ; la phase 8 n'est pas entreprise, sa
+condition n'étant pas remplie. Le détail, tâche par tâche et verdict par verdict, est au
+[journal de boucle](gauntlet-log.md).*
+
 ## 0. Régime du plan
 
 | Règle | Application |
@@ -98,6 +105,13 @@ Ferme la bonification 2 et la critique de fond n° 3 ; agit sur C7 et C8, les de
 | T4.5 | Résumé du `Compendium.pdf` condensé de deux lignes ; recomposition ; calage re-mesuré | `check-resume.py` → dégagement ≥ 12 pt ; 1 000 p. tenues ou la cible est retirée du script sur décision | 0,5 | A |
 
 **Sortie de phase** : un lecteur ouvre n'importe quel `README` et lit ce qu'il y a en une page ; la chronique existe entière, ailleurs.
+
+✎ *Erratum du 15 septembre 2026, constaté à l'exécution : le seuil de T4.3, « premier `---` à
+huit lignes au plus », est intenable. Un tableau Markdown de cinq rangées prend à lui seul sept
+lignes, et la forme de tête du PRD du compendium (§ 6 : situation, tableau, thèse) place ce filet
+entre les lignes 16 et 21. Le critère tenu à sa place : cinq rangées exactement dans les cinquante
+têtes, le détail retiré retrouvé mot pour mot en note de statut, `check-compendium.py` (P1, P5, P6)
+et `verifier-piece.py` à 0.*
 
 ### Phase 5 — Relecture humaine externe *(P0, tiers ; 6 à 10 semaines calendaires ; dépend de DA-4 et de la phase 4 pour le Vol. II)*
 

@@ -218,3 +218,10 @@ T7.4) n'ont pas de critique à l'aveugle : l'orchestrateur rejoue leurs critère
 - **Verdicts à l'aveugle contre la barre** : 8 sur 8 gagnés (M1, M2, M3, M4, M6, M7a, M7b, M8) ; deux victoires suivies d'une reprise parce que l'écart était une faute d'exactitude ou de statut (M8, M7b).
 - **Fermé** : phases 0, 1, 2, 3 ; phase 4 sauf le seuil de T4.3 (critère du plan intenable) ; phase 6 ; T5.4 ; T7.1 ; T7.2. CI verte à chaque commit poussé après correction.
 - **Non fermé, hors d'atteinte** : T5.1 (relecteurs à nommer, DA-4), T5.2, T5.3 (relecture humaine), T7.3 (re-clôture, DOI). **Soumis à l'auteur** : T7.4 (LFS et quota de bande passante de la CI) ; consigne « aucun statut au colophon » ; liste hors compte déduite par D-18 ; `LICENSE:44-45` « avant ». **Non entrepris** : phase 8 (condition du plan non remplie).
+- CI verte au run `35010692827` sur `730c68e` (lissage final).
+
+## Clôture — « Finir le travail »
+- `LICENSE:44-46` : « avant que la présente licence ne soit posée » devient « au commit même qui pose la présente licence (696bcac) » — vérifié : `git log --diff-filter=A -- LICENSE` et les cinq suppressions d'ouvrages de tiers tiennent au même commit. Relation temporelle corrigée, portée de la licence inchangée. `Évaluation académique.md:325`, pièce datée, garde sa formule.
+- Plan d'exécution : incise d'état d'exécution datée en tête, erratum daté sur le seuil intenable de T4.3 ; le texte des tâches n'est pas réécrit.
+- Examiné sans correction : les guillemets devenus typographiques à la p. 150 du Vol. II (liste de termes cherchés, effet de rendu sans changement de sens) ; `4 - Essais/` sans `README` (hors plan : T4.2 vise les dix-huit `README` existants, et une dix-neuvième page déplacerait les comptes datés) ; `JOURNAL.md:77` « trois » (chronique reçue mot pour mot).
+- Restent à l'auteur : DA-4 et la relecture (T5.1 à T5.3) ; re-clôture, `corpus-v1.0`, DOI (T7.3) ; LFS à la re-clôture (T7.4), avec son effet sur le quota de bande passante LFS de la CI ; consigne « aucun statut au colophon » du gabarit du compendium ; liste hors compte déduite par D-18.
