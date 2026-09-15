@@ -1,20 +1,27 @@
 #!/usr/bin/env bash
-# Compose les deux rendus du dossier — « État de l'art — services financiers.pdf »
-# (Vol. VIII, 185 p.) et sa planche « Cinq schémas… .pdf » (7 p.).
-#   Usage : bash build/build-pdf.sh [etat|planche]     # les deux par défaut
-#           SUFFIXE=-essai bash build/build-pdf.sh     # sans toucher aux livrés
+# Compose les rendus du dossier — « État de l'art — services financiers.pdf »
+# (Vol. VIII, 185 p. à l'écriture de ce script, 186 depuis le 24 août 2026) et sa
+# planche « Cinq schémas… .pdf » (7 p.), puis, sur demande, leurs `.html`.
+#   Usage : bash build/build-pdf.sh [etat|planche]     # les deux PDF par défaut
+#           bash build/build-pdf.sh html               # le .html de la planche
+#           SUFFIXE=-essai bash build/build-pdf.sh [cible]   # sans toucher aux livrés
+#           SUFFIXE=-essai bash build/build-pdf.sh html-etat # le .html du document long
 # Prérequis : Pandoc >= 3.1.7, Typst >= 0.12, police New Computer Modern.
 #
-# ⚠ Ce script ne fait qu'INSCRIRE au dépôt les deux commandes qui n'y vivaient
+# ⚠ Ce script ne fait qu'INSCRIRE au dépôt les commandes qui n'y vivaient
 # qu'en prose, dans le README du dossier, à recopier à la main. Elles ne
-# changent pas d'un signe.
+# changent pas d'un signe, hormis `--css` et `--eol=lf` sur les `.html`.
 #
-# ⚠ CE QU'IL NE COUVRE PAS, ET C'EST DÉCLARÉ : les deux rendus `.html`. Leur
-# commande prend `--css <feuille>`, et **aucune feuille de style n'est
-# versionnée** — celle de la planche ne survit qu'embarquée dans le `.html`
-# livré. Le `.html` du document long, lui, a été détruit le 21 août 2026 sur
-# décision d'auteur. *Un rendu dont une entrée manque au dépôt ne se rejoue pas ;
-# le dire vaut mieux que d'écrire une commande qui échouera.*
+# ☑ LES `.html` SE REFONT DEPUIS LE DÉPÔT SEUL DEPUIS LE 15 SEPTEMBRE 2026 (tâche
+# T6.4 du plan d'exécution). Jusque-là ce script ne les couvrait pas, faute de
+# feuille versionnée : elle ne survivait qu'embarquée dans le `.html` livré de
+# la planche. Elle en est extraite telle quelle dans `build/recension.css` —
+# 4 801 octets, ⚠ SANS SAUT DE LIGNE FINAL : en ajouter un change l'octet du
+# `.html` rendu. `--eol=lf` : Pandoc écrit en CRLF sous Windows, et le dépôt
+# est en LF (`.gitattributes`).
+# ⚠ Le `.html` du document long a été détruit le 21 août 2026 sur décision
+# d'auteur : `html-etat` refuse d'écrire sans SUFFIXE, pour ne pas le rétablir
+# au dossier en silence.
 #
 # La planche cite cinq figures en chemin relatif (`figures/*.svg`), gravées par
 # `python figures/dessine.py` depuis ce dossier : les composer d'ici, jamais
@@ -61,10 +68,32 @@ composer() {
   }
 }
 
+# Les deux commandes `.html` du README, datées du 20 août 2026 : le document long
+# se lit SANS `tex_math_dollars` et porte une table des matières que le PDF n'a pas.
+html_etat() {
+  [ -n "$SUFFIXE" ] || {
+    echo "[build] html-etat : le .html du document long a été détruit le 21 août 2026 sur décision d'auteur ;" >&2
+    echo "[build]   SUFFIXE=-essai pour le refaire sans le rétablir au dossier." >&2
+    exit 2
+  }
+  pandoc "État de l'art — services financiers.md" -f markdown-tex_math_dollars \
+    --standalone --embed-resources --toc --toc-depth=2 --css build/recension.css --eol=lf \
+    -o "État de l'art — services financiers${SUFFIXE}.html"
+  echo "Rendu : État de l'art — services financiers${SUFFIXE}.html"
+}
+html_planche() {
+  pandoc "Cinq schémas — état de l'art en services financiers.md" \
+    --standalone --embed-resources --css build/recension.css --eol=lf \
+    -o "Cinq schémas — état de l'art en services financiers${SUFFIXE}.html"
+  echo "Rendu : Cinq schémas — état de l'art en services financiers${SUFFIXE}.html"
+}
+
 case "${1:-tout}" in
-  etat)    composer "État de l'art — services financiers.md" ;;
-  planche) composer "Cinq schémas — état de l'art en services financiers.md" ;;
-  tout)    composer "État de l'art — services financiers.md"
-           composer "Cinq schémas — état de l'art en services financiers.md" ;;
-  *)       echo "[build] Argument inconnu : $1 (etat | planche | rien)" >&2; exit 2 ;;
+  etat)      composer "État de l'art — services financiers.md" ;;
+  planche)   composer "Cinq schémas — état de l'art en services financiers.md" ;;
+  tout)      composer "État de l'art — services financiers.md"
+             composer "Cinq schémas — état de l'art en services financiers.md" ;;
+  html)      html_planche ;;
+  html-etat) html_etat ;;
+  *)         echo "[build] Argument inconnu : $1 (etat | planche | html | html-etat | rien)" >&2; exit 2 ;;
 esac

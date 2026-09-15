@@ -8,7 +8,7 @@ la source et le rendu, la résolution des renvois écrits à la main, les cardin
 que le README publie, les valeurs que le script de rejeu attend. Ce fichier est
 ce qui les garde. ⚠ Il ne juge pas le propos : il mesure la forme, et il le dit.
 
-Cinq contrôles :
+Six contrôles — cinq jusqu'au 15 septembre 2026 :
   [1] la BIBLIOGRAPHIE est close dans les deux sens — toute clé définie est
       citée, toute clé citée est définie ;
   [2] la PARITÉ du rendu — le PDF versionné est CELUI que la source rend
@@ -18,7 +18,10 @@ Cinq contrôles :
   [4] les CARDINAUX que le README publie — pages, octets, lignes, planches,
       tableaux, notices, titres — sont ceux de la mesure ;
   [5] les SCORES que `rejeu-politique.py` attend sont ceux que l'article imprime
-      au § 7.5 — la copie opposée à l'original, pas à une autre copie.
+      au § 7.5 — la copie opposée à l'original, pas à une autre copie ;
+  [6] le REJEU lui-même — `rejeu-politique.py` sort 0 et exerce ses 37
+      transitions sur 37 : [5] lit ses attentes sans l'exécuter, et une branche
+      de la table fausse dans le script ne s'y voit pas (tâche T6.7).
 
 Usage : python check-article.py [--sans-parite]   -> 0 si tout tient, 1 sinon.
 Se lance de n'importe quel répertoire ; `ARTICLE_RACINE` déplace le dossier
@@ -226,12 +229,27 @@ def scores(src: str, rejeu: str):
     return ok(5, "scores", verdict, f"{len(attendus)} attendus par le script, {len(publies)} imprimés au § 7.5")
 
 
+# ----------------------------------------------------------------------- [6] rejeu
+
+def rejeu():
+    """RÉF-6 exécutée, et non lue : le script sort 0 et rend « 37/37 »."""
+    r = subprocess.run([sys.executable, REJEU.name], cwd=RACINE, capture_output=True,
+                       text=True, encoding="utf-8", errors="replace",
+                       env=dict(os.environ, PYTHONUTF8="1"))
+    sortie = (r.stdout + r.stderr).strip()
+    verdict = r.returncode == 0 and "37/37 transitions exercées" in sortie
+    if not verdict:
+        derniere = sortie.splitlines()[-1][:200] if sortie else "aucune sortie"
+        fail.append(f"rejeu — {REJEU.name} sort {r.returncode} sans « 37/37 » : {derniere}")
+    return ok(6, "rejeu", verdict, "37/37 transitions exercées" if verdict else "RÉF-6 déclenchée")
+
+
 def main():
     for p in (SRC, PDF, BIB, README, REJEU):
         if not p.exists():
             print(f"introuvable : {p}")
             return 1
-    src, bib, readme, rejeu = (x.read_text(encoding="utf-8") for x in (SRC, BIB, README, REJEU))
+    src, bib, readme, rejeu_txt = (x.read_text(encoding="utf-8") for x in (SRC, BIB, README, REJEU))
     print(f"Contrôles du dossier — {RACINE.name}")
     bibliographie(src, bib)
     if "--sans-parite" in sys.argv:
@@ -240,7 +258,8 @@ def main():
         parite()
     renvois(src)
     cardinaux(src, bib, readme)
-    scores(src, rejeu)
+    scores(src, rejeu_txt)
+    rejeu()
     if fail:
         print("\nECHEC :")
         for f in fail:

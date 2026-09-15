@@ -35,6 +35,8 @@ Le chiffre à retenir n'est pas 324, ni même 69 : c'est **75 sur 384**. Le vote
 
 ## A.3 Les niveaux de preuve : [A] > [B] > [C]
 
+*Échelle de juillet 2026, conservée telle quelle. Réformée le 15 septembre 2026 : « [A] » se lit **[A-i]** — la réfutation tentée par trois instances de modèle —, et **[H]**, la lecture non réfutée d'un relecteur humain nommé, prend la tête (§A.9).*
+
 Trois niveaux, dans un ordre strict[^3].
 
 - **[A]** — l'affirmation a passé le **vote adversarial à 3-0** : trois juges ont cherché à la réfuter, aucun n'y est parvenu. C'est le niveau le plus élevé du socle.
@@ -88,6 +90,25 @@ La conséquence est plus intéressante que la convention. Le domaine évolue par
 Une date de gel qui ne serait pas vérifiée ne vaudrait rien, et il faut donc dire ce qui la porte. Deux **passes de revalidation** ont rouvert les sources sur les faits déclarés sensibles au temps : le 16 juillet 2026 (neuf recherches ciblées), puis le 17 juillet 2026 — **revalidation finale avant publication**, huit faits chauds revérifiés à leurs sources primaires, verdict **« aucun amendement matériel requis »**. C'est cette seconde passe qui autorise la date de gel portée par cette annexe et par la chronologie de l'annexe C. Une passe qui ne trouve rien n'est pas une passe inutile : c'est la seule qui permette d'écrire une date sans la supposer[^13].
 
 **Lecture de l'auteur** — ce que cette méthode achète n'est pas la certitude ; c'est la **traçabilité de l'incertitude**. Pour chaque affirmation, le lecteur peut savoir ce qui la porte, à quel niveau, à quelle date, et jusqu'où elle porte. C'est moins que ce que le ton d'un ouvrage de référence laisse d'ordinaire entendre. C'est tout ce qu'un corpus daté peut honnêtement offrir.
+
+## A.9 Le renversement du 15 septembre 2026 : ce que vaut un vote de modèles
+
+*Section ajoutée le 15 septembre 2026, après la date de gel de cette annexe. Elle ne rouvre aucune source et ne change le niveau d'aucune entrée : elle renomme le niveau le plus élevé et lui retire le sommet. Les éditions composées avant cette date ne la portent pas.*
+
+La §A.3 plaçait le vote au sommet parce que l'affirmation votée « a essuyé trois tentatives de réfutation ». L'argument pesait les tentatives ; il ne pesait pas les juges. Ce sont des instances de modèle de langage, lancées par un même harnais — l'avant-propos les disait « indépendants », et la méthode ne nomme pas le modèle ni ne dit ce qui décorrélerait leurs erreurs. Un 3-0 établit que trois lectures automatisées ont échoué à réfuter ; il n'établit pas que trois observateurs ont regardé. L'évaluation académique du dépôt, le 15 septembre 2026, a fait de ce point sa première critique de fond — et elle est elle-même produite par un modèle.
+
+Le sommet de l'échelle revient donc à ce qu'aucune instance ne peut délivrer : la lecture d'une personne nommée, qui n'est pas l'auteur, qui répond de ce qu'elle signe, et dont le rapport est versé au dépôt sans retouche.
+
+| Niveau | Épreuve traversée | Ce qu'il établit | Ce qu'il n'établit pas |
+|---|---|---|---|
+| **[H]** | lu et non réfuté par un relecteur humain nommé, source ouverte, rapport signé versé sans édition | qu'une personne nommée, qui répond de ce qu'elle signe, a cherché à réfuter l'entrée, telle qu'elle l'a lue et dans le périmètre qu'elle déclare, sans y parvenir | que l'entrée est vraie ; qu'un autre relecteur conclurait de même ; quoi que ce soit d'une version modifiée depuis sa lecture |
+| **[A-i]** (anciennement [A]) | réfutation tentée par trois instances de modèle, aucune n'y est parvenue — vote 3-0, §A.2 | que trois tentatives automatisées de réfutation ont échoué à l'unanimité | que ces tentatives sont indépendantes ; qu'un humain a lu l'affirmation |
+| **[B]** | source primaire lue et extraite avec citation, sans vote | que la source dit ce que l'entrée lui fait dire, à la date de lecture | qu'une réfutation a été tentée ; qui a lu — agent ou personne, la méthode ne le nomme pas toujours |
+| **[C]** | source identifiée, contenu non extrait | qu'une piste existe | le contenu de l'affirmation : une entrée [C] ne porte jamais un fait central |
+
+Deux choses ne changent pas, et il faut les dire. **Aucune entrée n'a changé de niveau** : ce qui était [A] est [A-i], mot pour mot, et « [A/B mixte] » se lit « [A-i/B mixte] ». **L'ordre entre [A-i] et [B] est conservé.** L'évaluation le conteste aussi, tenant qu'une lecture directe de la source vaut mieux qu'un vote de modèles ; la réforme ne tranche pas ce point, parce qu'aucune des deux épreuves ne suppose un lecteur humain nommé — les extractions [B] dont la méthode nomme l'exécutant ont été conduites par des agents de modèle (cahier des charges, annexe A).
+
+**Au 15 septembre 2026, aucune entrée ne porte [H]** : aucun relecteur humain n'a lu ce livre. Dans les chapitres, les notes et les annexes — celle-ci comprise —, « [A] » se lit donc [A-i]. Une relecture humaine des chapitres 9 à 13 est préparée : la consigne remise au relecteur (`RELECTURE.md`, à la racine du dépôt) dit ce qui fait passer une entrée en [H], et que le silence d'un rapport n'y suffit pas. Cette section ajoute une limite à celles de la §A.7 : **tant qu'aucune entrée ne porte [H], tout ce que ce livre établit l'a été à l'intérieur d'une boucle fermée sur son auteur et ses instances.**
 
 ---
 
@@ -300,4 +321,10 @@ Commande de référence, SEULE AUTORITÉ (PRDPlan §4.2, fixée le 17 juill. 202
      ajouts qui portent des limites et des prises du dispositif, c.-à-d. la valeur propre de cette annexe.
      PRDPlan §4.2 : « un écart se documente, il ne se corrige pas par amputation ». Il est documenté ici, et
      remonté au TOC (G4). Calibrage : ch. 21 et ch. 24 sont à +10 % ; cette annexe est au-delà, et l'assume.
+
+  ✎ 15 sept. 2026 (T5.4 du plan d'exécution) : le corps reçoit une incise datée en tête de §A.3 et une
+    section §A.9 (le renversement de l'échelle des niveaux de preuve). Même commande de référence :
+    2046 mesurés à HEAD `7ad9e44`, **2656** après l'ajout. Aucune note ajoutée : les 15 notes tiennent.
+    Date de gel inchangée — la section ne rouvre aucune source. Le chiffre de (c) ci-dessus date du
+    17 juill. 2026 et reste tel quel ; il ne décrit plus le fichier.
 -->

@@ -3,6 +3,8 @@
 📖 **Lire :** [`Monographie.pdf`](Monographie.pdf) (387 p.) dans ce dossier. *(Le volume n'a plus de
 page de présentation ni de publication GitHub Pages — voir « Structure du dossier ».)*
 
+> **Livrable** — un des sept que fixe la décision d'auteur [**D-18**](../../2%20-%20Compendium/PRD/PRD.md#d-18) du 15 septembre 2026 ([registre](../../README.md#les-sept-livrables)) ; dépôt **rouvert** le même jour par [D-17](../../2%20-%20Compendium/PRD/PRD.md#d-17), re-clôture prévue vers le 8 décembre 2026. *Le bandeau de clôture plus bas reste à sa date.*
+
 > ⚠ **Le volume a été renommé le 8 août 2026** : *« L'autonomie encadrée »* du 17 juillet au 8 août
 > 2026, **« Orchestration agentique »** depuis. ⚠ *Le titre change, la thèse ne change pas* :
 > l'**autonomie encadrée** (*framed autonomy*) reste la thèse centrale de l'ouvrage, exposée au
@@ -16,6 +18,7 @@ page de présentation ni de publication GitHub Pages — voir « Structure du do
 > « Interopérabilité et Orchestration en Entreprise Agentique ». *Les deux se citent désormais par
 > leur seul intitulé.*
 
+> ✎ *Rouvert le 15 septembre 2026 par D-17 — voir le statut en tête ; ce bandeau reste à sa date.*
 > ⚠ **Dépôt clos et final — clôture portée au 1er septembre 2026** — décision d'auteur **D-13**, prise le 8 août 2026
 > ([`2 - Compendium/PRD/PRD.md`](../../2%20-%20Compendium/PRD/PRD.md) v0.17 §16). Aucune passe
 > n'est plus prévue, sur ce volume ni sur aucun autre du dépôt : ce qui suit décrit un état
@@ -109,7 +112,7 @@ Documents par ordre d'autorité — **en cas de conflit, le PRD prime** :
 2. [`PRDPlan.md`](prd/PRDPlan.md) — plan d'exécution et boucle qualité par chapitre (§4.2) ;
 3. [`TOC.md`](prd/TOC.md) — titre, abstract, table des matières commentée.
 
-Toute affirmation factuelle centrale est tracée à une entrée du socle F-xx avec son niveau de preuve — **[A]** vote adversarial 3-0 > **[B]** source primaire extraite > **[C]** repérage à confirmer.
+Toute affirmation factuelle centrale est tracée à une entrée du socle F-xx avec son niveau de preuve — **[A]** vote adversarial 3-0 > **[B]** source primaire extraite > **[C]** repérage à confirmer. *Échelle réformée le 15 septembre 2026 : **[H]**, lu et non réfuté par un relecteur humain nommé, prend la tête — aucune entrée ne le porte — et « [A] » se lit **[A-i]**, réfutation tentée par trois instances de modèle ([PRD §7](prd/PRD.md), annexe A §A.9 de la monographie).*
 
 ## Régénérer le PDF
 

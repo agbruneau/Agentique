@@ -46,6 +46,8 @@ Ces entrées ne se valent pas, et l'ouvrage refuse de faire comme si. Trois nive
 
 L'ordre importe, et il est contre-intuitif. **[B] est en dessous de [A]**, alors qu'il est tentant de croire l'inverse : lire le texte officiel semble plus sûr que trois avis concordants. Mais ce n'est pas la qualité de la source que le niveau mesure — c'est **ce que l'affirmation a subi**. Les trois niveaux se distinguent par une seule variable, la procédure traversée : un vote adversarial, une extraction sans vote, un repérage sans extraction. Une entrée [A] repose elle aussi sur des sources primaires ; une entrée [C] en identifie une. Ce qui les sépare est l'épreuve, non le document. Et une lecture directe, si proche de la source soit-elle, reste la lecture d'un seul lecteur — avec ce qu'il n'a pas vu.
 
+*Note du 15 septembre 2026 — cette échelle a été réformée après la publication. Les « trois vérificateurs indépendants » de [A] sont des instances de modèle de langage, lancées par un même harnais : le niveau se lit désormais **[A-i]**, « réfutation tentée par trois instances de modèle, aucune n'y est parvenue ». Le sommet revient à **[H]**, « lu et non réfuté par un relecteur humain nommé », qu'aucune entrée ne porte encore. Aucune entrée n'a changé de niveau. Le renversement est expliqué à l'annexe A, §A.9.*
+
 Ce livre a commis cette confusion, et le raconter vaut mieux que le taire. Le 16 juillet 2026, le texte intégral d'E-23 a été extrait de sa source officielle et versé au socle. L'opération a été consignée comme une **élévation « [C] → [B] »** de l'entrée F-09. Les deux termes étaient faux : l'entrée n'avait jamais été [C], et [B] est **sous** [A]. Le socle n'en a pas été dégradé — les faits votés 3-0 sont restés [A], et le contenu extrait s'y est ajouté au rang inférieur qui est le sien. C'est l'étiquette qui mentait : le projet croyait élever son entrée, il l'enrichissait, et l'annonçait fièrement à l'envers. L'erreur a été relevée non par son auteur, mais par la rédaction du chapitre 18, qui s'en servait ; l'entrée porte depuis un marquage explicite en deux strates, **[A/B mixte]**, et l'ouvrage attribue chaque fait d'E-23 à la strate dont il relève. C'est, de tout ce qui figure dans ce livre, la meilleure illustration de ce qu'une méthode peut et ne peut pas : elle n'a pas empêché la faute, elle l'a attrapée.
 
 Trois règles complètent la taxonomie.
@@ -215,4 +217,8 @@ DÉCOMPTE (PRDPlan §4.2, commande de référence — CORRIGÉE le 17 juill. 202
   bloc — 2308 annoncés pour 1854 réels. Défaut relevé par la relecture adversariale de CE fichier ;
   la commande avait été testée sur deux fichiers et publiée comme référence pour vingt-neuf.
   PRDPlan §4.2 corrigé ; les 29 pièces recomptées ; TOC réaligné.
+
+  ✎ 15 sept. 2026 (T5.4 du plan d'exécution) : une note datée sur l'échelle des niveaux de preuve est
+  ajoutée après le paragraphe « L'ordre importe » — seul changement du corps. Même commande : 2 319
+  mesurés à HEAD `7ad9e44`, **2 398** après l'ajout. Date de gel inchangée : la note ne rouvre aucune source.
 -->

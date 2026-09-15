@@ -24,7 +24,8 @@ DIR="$(cd "$(dirname "$0")/.." && pwd)"
 SRC="${1:-$DIR/Monographie.md}"
 case "$SRC" in /*) ;; *) SRC="$DIR/$SRC";; esac
 BASE="$(basename "$SRC" .md)"
-OUT="$DIR/$BASE.pdf"
+# OUT_PDF : écrire ailleurs qu'au dossier — c'est ce dont la parité de `Python/check-vol1.py` se sert.
+OUT="${OUT_PDF:-$DIR/$BASE.pdf}"
 TPL="$DIR/build/fesp.template"
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT   # nettoyage des SVG/typ intermédiaires (sauf DIAGCACHE, séparé).

@@ -3,9 +3,10 @@
 # délégation multicritère dans une plateforme HPC à processeurs quantiques ».
 #
 # Rejoue les déroulés A et B du § 7.5, l'analyse de sensibilité du § 7.5.1, et
-# vérifie la totalité de la table de transitions (36 cases) ainsi que les gardes
-# de sortie de hors_service. Toute divergence fait échouer une assertion : c'est
-# l'exécution de la condition de réfutation RÉF-6.
+# vérifie la totalité de la table de transitions (36 cases), exerce ses
+# 37 transitions — la case (étalonnage, E2) en porte deux, selon le verdict
+# d'étalonnage — ainsi que les gardes de sortie de hors_service. Toute divergence
+# fait échouer une assertion : c'est l'exécution de la condition de réfutation RÉF-6.
 #
 # Usage : python rejeu-politique.py
 
@@ -71,14 +72,13 @@ TABLE = {
     ("disponible", "E8"): None,
     ("disponible", "E9"): lambda c: ("degrade", c),
     ("etalonnage", "E1"): None,
-    # ⚠ La table publiée (§ 6.4) écrit « → D si conforme, sinon → G ». Ce script
-    # n'a PAS d'entrée de conformité : il n'implante que la branche conforme,
-    # et la branche « sinon → G » n'est exercée par aucune assertion. Sur les
-    # trente-six cases, trente-cinq sont rejouées entières ; celle-ci l'est à
-    # moitié, et RÉF-6 ne porte donc pas sur la requalification en échec.
-    # Relevé par l'audit du 2 septembre 2026 ; à lever en donnant au rejeu un
-    # verdict d'étalonnage en entrée.
-    ("etalonnage", "E2"): lambda c: ("disponible", c),
+    # La table publiée (§ 6.4) écrit « → D si conforme, sinon → G » : la seule case
+    # qui lit le verdict d'étalonnage, entrée du rejeu (VERDICTS, plus bas).
+    # ✎ Jusqu'au 15 septembre 2026, le script n'avait pas cette entrée : il
+    # n'implantait que la branche conforme, aucune assertion n'exerçait « sinon
+    # → G », et RÉF-6 ne portait pas sur la requalification en échec — relevé par
+    # l'audit du 2 septembre 2026, levé par la tâche T6.7 du plan d'exécution.
+    ("etalonnage", "E2"): lambda c, conforme: ("disponible", c) if conforme else ("degrade", c),
     ("etalonnage", "E3"): None,
     ("etalonnage", "E4"): None,
     ("etalonnage", "E5"): lambda c: ("hors_service", "perte_contact"),
@@ -107,11 +107,16 @@ TABLE = {
 }
 
 
-def transition(etat, cause, evenement):
+# Les cases qui lisent le verdict d'étalonnage, et les verdicts qu'elles distinguent.
+VERDICTS = {("etalonnage", "E2"): (True, False)}
+
+
+def transition(etat, cause, evenement, conforme=True):
+    """conforme : verdict d'étalonnage, lu par les seules cases de VERDICTS."""
     effet = TABLE[(etat, evenement)]
     if effet is None:
         return etat, cause
-    resultat = effet(cause)
+    resultat = effet(cause, conforme) if (etat, evenement) in VERDICTS else effet(cause)
     return (etat, cause) if resultat is None else resultat
 
 
@@ -153,6 +158,22 @@ def rejouer():
     assert set(TABLE) == {(e, v) for e in ETATS for v in EVENEMENTS}, "table non totale"
     assert len(TABLE) == 36
 
+    # Chaque transition exercée : les 36 cases, (etalonnage, E2) sous ses deux verdicts,
+    # chacune sous les trois causes possibles, et toujours vers un état de la machine.
+    exercees = 0
+    for (e, v) in TABLE:
+        for conforme in VERDICTS.get((e, v), (True,)):
+            for c in (None, "perte_contact", "retrait"):
+                assert transition(e, c, v, conforme)[0] in ETATS, f"({e}, {v}) sort de la machine"
+            exercees += 1
+    assert exercees == 37, f"{exercees} transitions exercées au lieu de 37"
+
+    # La case (etalonnage, E2) : → D si conforme, sinon → G (§ 6.4)
+    assert transition("etalonnage", None, "E2", conforme=True) == ("disponible", None), \
+        "E2 conforme : l'étalonnage doit rendre disponible"
+    assert transition("etalonnage", None, "E2", conforme=False) == ("degrade", None), \
+        "E2 non conforme : « sinon → G » en défaut"
+
     # Gardes de hors_service : la séquence E7, E5, E6 ne remet pas en route
     etat, cause = transition("disponible", None, "E7")   # retrait -> H
     etat, cause = transition(etat, cause, "E5")          # sans effet
@@ -167,8 +188,9 @@ def rejouer():
             e2, _ = transition("hors_service", c, ev)
             assert e2 != "disponible", f"{ev}/{c} : retour direct en disponible"
 
-    print("Rejeu conforme : déroulés A et B, sensibilité, table de transitions "
-          "(36/36), gardes de hors_service. RÉF-6 non déclenchée.")
+    print(f"Rejeu conforme : déroulés A et B, sensibilité, table de transitions "
+          f"({len(TABLE)} cases, {exercees}/37 transitions exercées), gardes de hors_service. "
+          f"RÉF-6 non déclenchée.")
 
 
 if __name__ == "__main__":

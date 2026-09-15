@@ -103,6 +103,13 @@ def m5_score_divergent(tmp):
     remplacer(tmp / "article-hpc-qpu.typ", 'bold("0,703")', 'bold("0,713")')
 
 
+def m6_branche_g(tmp):
+    """[6] — la branche « sinon → G » de la case (étalonnage, E2) rend disponible : un QPU
+    dont l'étalonnage échoue reviendrait en service. [5] ne le voit pas, [6] exécute."""
+    remplacer(tmp / "rejeu-politique.py", 'if conforme else ("degrade", c)',
+              'if conforme else ("disponible", c)')
+
+
 MUTATIONS = [
     ("M1  [1] entrée définie jamais citée", m1_cle_morte, "[1]", "echec"),
     ("M1b [1] citation jamais définie", m1b_cle_pendante, "[1]", "echec"),
@@ -112,6 +119,7 @@ MUTATIONS = [
     ("M3  [3] renvoi « § » vers une section absente", m3_renvoi_mort, "[3]", "echec"),
     ("M4  [4] cardinal du README faux", m4_cardinal_faux, "[4]", "echec"),
     ("M5  [5] score imprimé divergent du script", m5_score_divergent, "[5]", "echec"),
+    ("M6  [6] branche « sinon → G » de (étalonnage, E2) fausse", m6_branche_g, "[6]", "echec"),
 ]
 
 

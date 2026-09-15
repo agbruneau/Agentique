@@ -1,5 +1,7 @@
 # 4 - Essais / 2 - Article — une prépublication, et pourquoi elle n'est pas le neuvième livrable
 
+> **Publié, hors livrables** — statut fixé le 15 septembre 2026 par la décision d'auteur [**D-18**](../../2%20-%20Compendium/PRD/PRD.md#d-18), qui fixe le compte à sept et ratifie le motif ci-dessous ; l'article reste sous `4 - Essais/`. Dépôt **rouvert** le même jour par [D-17](../../2%20-%20Compendium/PRD/PRD.md#d-17), re-clôture prévue vers le 8 décembre 2026. *Le « neuvième » du titre et la clôture que cette page date au 1er septembre restent à leur date.*
+
 > **Où ce dossier vit.** Il est entré au dépôt le **1er septembre 2026** sous le nom
 > **`6 - Article/`**, à la racine, **sixième dossier numéroté** — et il vit depuis le
 > **5 septembre 2026** sous [`4 - Essais/2 - Article/`](./), second dossier des *Essais*, aux côtés
@@ -33,10 +35,12 @@ court du 1er septembre.** ⚠ *Le paradoxe est nommé plutôt que tu — **le do
 n'est pas un livrable, et le PRD ne porte aucune décision sur lui** : le critère porte sur l'entrée
 d'une pièce, non sur son rang, et c'est la seule lecture qui ne dépende pas d'un compte que le
 [`README` de la racine](../../README.md) dit lui-même renversable d'un mot de l'auteur.* Motif complet
-au [PRD §16.5](../../2%20-%20Compendium/PRD/PRD.md).
+au [PRD §16.5](../../2%20-%20Compendium/PRD/PRD.md). ✎ *Rattrapé deux fois : des pièces entrées le
+5 septembre 2026 (commits `daacbec`, `79ecdcf`), puis le 15 (commits `3b8236d`, `e1b1b9e`), portent
+la clôture à ces jours-là, et la décision D-17 la rouvre le 15 septembre 2026.*
 
-⚠ **Ce document n'instruit pas la question du dépôt.** Les huit livrables tiennent une seule
-question — *comment une entreprise de services financiers canadienne déploie, gouverne et exploite
+⚠ **Ce document n'instruit pas la question du dépôt.** Les huit livrables — *sept depuis le
+15 septembre 2026, par D-18* — tiennent une seule question — *comment une entreprise de services financiers canadienne déploie, gouverne et exploite
 des agents d'IA autonomes sous contrainte réglementaire* — et celui-ci porte sur l'intégration de
 processeurs quantiques dans une plateforme de calcul haute performance. **Il est publié ici, signé
 de la même main, et il n'est pas rangé parmi les livrables** : *le motif est thématique, non
@@ -44,7 +48,8 @@ méthodologique, et c'est un motif neuf.* La note de veille SDLC de [`3 - Veille
 huit pour **ce qui lui manque** — source unique, bibliographie non appariée, aucun contrôle qui
 l'oppose à elle-même ; celui-ci l'est pour **ce dont il traite**. ⚠ *Le PRD ne porte aucune
 décision sur ce document, pas plus que sur le huitième ni sur la note : le compte se renverse d'un
-mot de l'auteur.*
+mot de l'auteur.* ☑ *Ce mot est venu le 15 septembre 2026 : la décision D-18 ratifie les trois
+rangements et fixe le compte à sept.*
 
 ☑ *Le lien n'est pourtant pas nul, et l'article le pose lui-même* : son § 2.8 fait des laboratoires
 autopilotés et des agents scientifiques autonomes le **consommateur le plus exigeant** de la chaîne
@@ -90,8 +95,8 @@ le fichier ne se relit plus qu'à l'historique git.*
 | `article-hpc-qpu.typ` | **1 979 l. / 132 969 o.** | la source, en Typst direct — 11 sections de niveau 1, 39 de niveau 2, **8 planches** et **20 tableaux** légendés, ~19 200 mots. ⚠ *Ce README a écrit « 26 figures » et « 134 947 o. » jusqu'au 2 septembre 2026 : le premier nombre comptait les flottants `#figure(` sans distinguer l'illustration du tableau — le PDF rend `Fig. 1-8` et `Tableau 1-20` —, le second comptait la source en CRLF, soit exactement 1 979 octets de trop, un par ligne.* |
 | `article-hpc-qpu.pdf` | **38 p. / 752 159 o.** | le rendu livré — *750 902 o. jusqu'au 2 septembre 2026 : les treize auteurs posés au `.bib` s'impriment dans les références, et le point de `M.Sc. IT` dans les métadonnées* |
 | `references.bib` | **77 entrées / 689 l.** | ⭑ close dans les deux sens, **et gardée** — voir plus bas. *Treize entrées `@misc` n'avaient pas de champ `author` et se rendaient sans auteur ; les auteurs ont été lus à la source arXiv le 2 septembre 2026, verbatim, jamais par inférence* |
-| `rejeu-politique.py` | **170 l.** | ⭑ l'implémentation de référence de la politique (§ 7.2) et de la machine d'états (§ 6.4) |
-| `check-article.py` | ⭑ | **les cinq contrôles de forme** : bibliographie close, parité source/rendu à l'octet, renvois « § » résolus, cardinaux de ce README, scores du rejeu opposés à l'article |
+| `rejeu-politique.py` | **197 l.** | ⭑ l'implémentation de référence de la politique (§ 7.2) et de la machine d'états (§ 6.4) — *170 l. jusqu'au 15 septembre 2026, 175 avec la sortie reconfigurée en UTF-8 le même jour, 197 avec le verdict d'étalonnage en entrée (tâche T6.7)* |
+| `check-article.py` | ⭑ | **les cinq contrôles de forme** : bibliographie close, parité source/rendu à l'octet, renvois « § » résolus, cardinaux de ce README, scores du rejeu opposés à l'article ; **et un sixième, depuis le 15 septembre 2026, qui exécute le rejeu** et exige ses 37 transitions sur 37 |
 | `check-article-mutations.py` | ⭑ | le harnais : une faute par classe, vue ; et une qui ne doit pas l'être |
 | ~~`audit.md`~~ | ⚠ **supprimé** | l'audit du 2 septembre 2026, son plan et son journal d'exécution — **retiré du dépôt le 3 septembre 2026** (commit `4a7ec0f`) ; *historique git seul* |
 | `.gabarit-arxiv.typ` | 100 l. | le gabarit *arXiv preprint* d'après `arxiv.sty` (G. Kour), porté en Typst |
@@ -126,10 +131,15 @@ décalent tout ce qui suit, et l'écart passe de 60 à 45 342 octets.*
 ## Les contrôles
 
 **☑ `python rejeu-politique.py` → 0.** *« Rejeu conforme : déroulés A et B, sensibilité, table de
-transitions (36/36), gardes de hors_service. RÉF-6 non déclenchée. »* Le script rejoue les deux
+transitions (36 cases, 37/37 transitions exercées), gardes de hors_service. RÉF-6 non déclenchée. »*
+Le script rejoue les deux
 déroulés publiés au § 7.5 et l'analyse de sensibilité du § 7.5.1, vérifie que la table de
-transitions est **totale** — 4 états × 9 événements, aucune case absente — et éprouve les gardes de
-sortie de `hors_service`. **Toute divergence fait échouer une assertion, et c'est l'exécution de la
+transitions est **totale** — 4 états × 9 événements, aucune case absente —, **exerce ses
+37 transitions** — la case (étalonnage, E2) en porte deux, « → D si conforme, sinon → G », sous un
+verdict d'étalonnage donné en entrée — et éprouve les gardes de
+sortie de `hors_service`. ✎ *Jusqu'au 15 septembre 2026, la sortie lisait « (36/36) » : la table
+était totale, mais la branche « sinon → G » n'était exercée par aucune assertion — 35 cases rejouées
+entières, la 36ᵉ à moitié. La tâche T6.7 du plan d'exécution l'a levé.* **Toute divergence fait échouer une assertion, et c'est l'exécution de la
 condition de réfutation RÉF-6** : un lecteur qui referait le calcul à la main et trouverait autre
 chose réfuterait la contribution. *C'est le seul contrôle du dépôt qui exécute une condition de
 réfutation d'un document plutôt que de mesurer sa forme.*

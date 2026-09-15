@@ -1,5 +1,9 @@
 # Revue et Veille — les deux livrables qui mesurent le champ
 
+> **Statut au 15 septembre 2026** — la veille technologique (Vol. VI) et la revue de littérature (Vol. VII) sont **livrables** ; la note de veille SDLC est **publiée, hors livrables** — par la décision d'auteur [**D-18**](../2%20-%20Compendium/PRD/PRD.md#d-18), qui fixe le compte à sept ([registre](../README.md#les-sept-livrables)). Dépôt **rouvert** le même jour par [D-17](../2%20-%20Compendium/PRD/PRD.md#d-17), re-clôture prévue vers le 8 décembre 2026. *Les bandeaux de clôture et les « le PRD ne porte aucune décision » plus bas restent à leur date.*
+
+> **Note de synthèse, entrée le 15 septembre 2026** (tâche T7.2 du plan d'exécution) — [`Note de synthèse.md`](Note%20de%20synth%C3%A8se.md) → [`.pdf`](Note%20de%20synth%C3%A8se.pdf), 20 p. : la veille, la revue et l'état de l'art condensés pour le lecteur pressé, chaque affirmation renvoyée à sa section et au niveau de preuve déclaré ; gardée par [`check-synthese.py`](Python/check-synthese.py) et son harnais [`check-synthese-mutations.py`](Python/check-synthese-mutations.py), recomposée par `python Python/check-synthese.py --rendre` depuis ce dossier. ⚠ *Rédigée par un modèle de langage, non relue par un humain ; hors du compte des livrables, aucune décision d'auteur ne l'y range.*
+
 Deux documents publiés, et l'appareil qui les contrôle. Ils ne font pas partie du triptyque et ne
 s'y substituent pas : **ils mesurent l'état du champ que les volumes exposent**, chacun sur un
 versant. La [veille technologique](Veille%20Technologique.md) dit **ce que le monde déployé fait**,
@@ -64,11 +68,12 @@ sont des livrables.*
 > livrable**, cite les travaux de l'auteur comme sources externes et renvoie à un autre dépôt que
 > celui-ci. ⚠⚠ **Ce n'est pas une instruction d'auteur** : le PRD ne porte aucune décision sur ce
 > document ; ce README l'y range sur pièce, en donnant son motif, **et le compte se renverse d'un mot
-> de l'auteur.** ⚠ **Un indice joue contre le huitième, et il est déclaré** : le document ne se
+> de l'auteur.** ☑ *Ratifié le 15 septembre 2026 par la décision D-18, qui fixe le compte à sept.* ⚠ **Un indice joue contre le huitième, et il est déclaré** : le document ne se
 > présente jamais comme une pièce de ce dépôt. ⚠ **Les occurrences de « sept livrables » qui
 > subsistent ci-dessus datent un état révolu** et ne sont pas des erreurs : *le dépôt écrit sa
 > chronique en couches, jamais en écrasant.*
 >
+> ✎ *Rouvert le 15 septembre 2026 par D-17 — voir le statut en tête ; ce bandeau reste à sa date.*
 > ⚠ **Le dépôt est clos, sa clôture portée au 1er septembre 2026** — décision d'auteur **D-13**,
 > prise le 8 août 2026
 > ([`2 - Compendium/PRD/PRD.md`](../2%20-%20Compendium/PRD/PRD.md) v0.17 §16). *Ces deux livrables
@@ -262,7 +267,8 @@ sept à huit le 20 août 2026. *Contre* : une note de source unique, sans biblio
 sans contrôle qui la mesure, tient plus de l'appareil que du livrable. ⚠ **Ce README la range donc
 comme document publié et non comme neuvième livrable**, en donnant son motif — *et le compte se
 renverse d'un mot de l'auteur, comme le huitième.* ⚠ **Ce n'est pas une instruction d'auteur** : le
-PRD ne porte aucune décision sur ce document.
+PRD ne porte aucune décision sur ce document. ☑ *Ratifié le 15 septembre 2026 par la décision
+[D-18](../2%20-%20Compendium/PRD/PRD.md#d-18) : la note est publiée, hors des sept livrables.*
 
 ---
 

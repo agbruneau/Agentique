@@ -1,5 +1,7 @@
 # Orchestration agentique
 
+> **Livrable** (Vol. II) — un des sept que fixe la décision d'auteur [**D-18**](../../../2%20-%20Compendium/PRD/PRD.md#d-18) du 15 septembre 2026 ([registre](../../../README.md#les-sept-livrables)) ; dépôt **rouvert** le même jour par [D-17](../../../2%20-%20Compendium/PRD/PRD.md#d-17), re-clôture prévue vers le 8 décembre 2026. *Le bandeau de clôture qui suit reste à sa date.*
+
 > ⚠ **Dépôt clos et final — clôture portée au 1er septembre 2026** — décision d'auteur **D-13**, prise le 8 août 2026
 > ([`2 - Compendium/PRD/PRD.md`](../../../2%20-%20Compendium/PRD/PRD.md) v0.17 §16). Aucune passe
 > n'est plus prévue : ce qui suit décrit un état **définitif**.
@@ -77,7 +79,7 @@ Ils sont développés dans l'[avant-propos](00-avant-propos.md) ; en voici la su
 
 ## Comment cet ouvrage a été vérifié
 
-Chaque affirmation factuelle centrale renvoie à une entrée du socle (F-xx), et chaque entrée porte son niveau de preuve : **[A]** vote adversarial 3-0, **[B]** source primaire lue et extraite sans vote, **[C]** repérage à confirmer. **[A] > [B] > [C]** — le niveau ne mesure pas la qualité de la source, mais **ce que l'affirmation a subi**.
+Chaque affirmation factuelle centrale renvoie à une entrée du socle (F-xx), et chaque entrée porte son niveau de preuve : **[A]** vote adversarial 3-0, **[B]** source primaire lue et extraite sans vote, **[C]** repérage à confirmer. **[A] > [B] > [C]** — le niveau ne mesure pas la qualité de la source, mais **ce que l'affirmation a subi**. *Échelle réformée le 15 septembre 2026 : « [A] » se lit **[A-i]** — les trois votants sont des instances de modèle — et **[H]**, lu et non réfuté par un relecteur humain nommé, prend la tête sans qu'aucune entrée le porte ([annexe A, §A.9](90-annexes/annexe-a-methodologie.md)).*
 
 Les 29 pièces ont chacune passé la boucle qualité de [PRDPlan §4.2](../prd/PRDPlan.md), dont une **relecture adversariale par un relecteur distinct du rédacteur**. La grille [CA-1..CA-8](../verification/relecture-CA.md) consigne les contrôles exécutés — et les écarts qu'ils ont trouvés, corrigés plutôt qu'absorbés.
 

@@ -84,6 +84,8 @@ Ces entrées ne se valent pas, et l'ouvrage refuse de faire comme si. Trois nive
 
 L'ordre importe, et il est contre-intuitif. **[B] est en dessous de [A]**, alors qu'il est tentant de croire l'inverse : lire le texte officiel semble plus sûr que trois avis concordants. Mais ce n'est pas la qualité de la source que le niveau mesure — c'est **ce que l'affirmation a subi**. Les trois niveaux se distinguent par une seule variable, la procédure traversée : un vote adversarial, une extraction sans vote, un repérage sans extraction. Une entrée [A] repose elle aussi sur des sources primaires ; une entrée [C] en identifie une. Ce qui les sépare est l'épreuve, non le document. Et une lecture directe, si proche de la source soit-elle, reste la lecture d'un seul lecteur — avec ce qu'il n'a pas vu.
 
+*Note du 15 septembre 2026 — cette échelle a été réformée après la publication. Les « trois vérificateurs indépendants » de [A] sont des instances de modèle de langage, lancées par un même harnais : le niveau se lit désormais **[A-i]**, « réfutation tentée par trois instances de modèle, aucune n'y est parvenue ». Le sommet revient à **[H]**, « lu et non réfuté par un relecteur humain nommé », qu'aucune entrée ne porte encore. Aucune entrée n'a changé de niveau. Le renversement est expliqué à l'annexe A, §A.9.*
+
 Ce livre a commis cette confusion, et le raconter vaut mieux que le taire. Le 16 juillet 2026, le texte intégral d'E-23 a été extrait de sa source officielle et versé au socle. L'opération a été consignée comme une **élévation « [C] → [B] »** de l'entrée F-09. Les deux termes étaient faux : l'entrée n'avait jamais été [C], et [B] est **sous** [A]. Le socle n'en a pas été dégradé — les faits votés 3-0 sont restés [A], et le contenu extrait s'y est ajouté au rang inférieur qui est le sien. C'est l'étiquette qui mentait : le projet croyait élever son entrée, il l'enrichissait, et l'annonçait fièrement à l'envers. L'erreur a été relevée non par son auteur, mais par la rédaction du chapitre 18, qui s'en servait ; l'entrée porte depuis un marquage explicite en deux strates, **[A/B mixte]**, et l'ouvrage attribue chaque fait d'E-23 à la strate dont il relève. C'est, de tout ce qui figure dans ce livre, la meilleure illustration de ce qu'une méthode peut et ne peut pas : elle n'a pas empêché la faute, elle l'a attrapée.
 
 Trois règles complètent la taxonomie.
@@ -2912,6 +2914,8 @@ Le chiffre à retenir n'est pas 324, ni même 69 : c'est **75 sur 384**. Le vote
 
 ## A.3 Les niveaux de preuve : [A] > [B] > [C]
 
+*Échelle de juillet 2026, conservée telle quelle. Réformée le 15 septembre 2026 : « [A] » se lit **[A-i]** — la réfutation tentée par trois instances de modèle —, et **[H]**, la lecture non réfutée d'un relecteur humain nommé, prend la tête (§A.9).*
+
 Trois niveaux, dans un ordre strict[^aa-3].
 
 - **[A]** — l'affirmation a passé le **vote adversarial à 3-0** : trois juges ont cherché à la réfuter, aucun n'y est parvenu. C'est le niveau le plus élevé du socle.
@@ -2965,6 +2969,25 @@ La conséquence est plus intéressante que la convention. Le domaine évolue par
 Une date de gel qui ne serait pas vérifiée ne vaudrait rien, et il faut donc dire ce qui la porte. Deux **passes de revalidation** ont rouvert les sources sur les faits déclarés sensibles au temps : le 16 juillet 2026 (neuf recherches ciblées), puis le 17 juillet 2026 — **revalidation finale avant publication**, huit faits chauds revérifiés à leurs sources primaires, verdict **« aucun amendement matériel requis »**. C'est cette seconde passe qui autorise la date de gel portée par cette annexe et par la chronologie de l'annexe C. Une passe qui ne trouve rien n'est pas une passe inutile : c'est la seule qui permette d'écrire une date sans la supposer[^aa-13].
 
 **Lecture de l'auteur** — ce que cette méthode achète n'est pas la certitude ; c'est la **traçabilité de l'incertitude**. Pour chaque affirmation, le lecteur peut savoir ce qui la porte, à quel niveau, à quelle date, et jusqu'où elle porte. C'est moins que ce que le ton d'un ouvrage de référence laisse d'ordinaire entendre. C'est tout ce qu'un corpus daté peut honnêtement offrir.
+
+## A.9 Le renversement du 15 septembre 2026 : ce que vaut un vote de modèles
+
+*Section ajoutée le 15 septembre 2026, après la date de gel de cette annexe. Elle ne rouvre aucune source et ne change le niveau d'aucune entrée : elle renomme le niveau le plus élevé et lui retire le sommet. Les éditions composées avant cette date ne la portent pas.*
+
+La §A.3 plaçait le vote au sommet parce que l'affirmation votée « a essuyé trois tentatives de réfutation ». L'argument pesait les tentatives ; il ne pesait pas les juges. Ce sont des instances de modèle de langage, lancées par un même harnais — l'avant-propos les disait « indépendants », et la méthode ne nomme pas le modèle ni ne dit ce qui décorrélerait leurs erreurs. Un 3-0 établit que trois lectures automatisées ont échoué à réfuter ; il n'établit pas que trois observateurs ont regardé. L'évaluation académique du dépôt, le 15 septembre 2026, a fait de ce point sa première critique de fond — et elle est elle-même produite par un modèle.
+
+Le sommet de l'échelle revient donc à ce qu'aucune instance ne peut délivrer : la lecture d'une personne nommée, qui n'est pas l'auteur, qui répond de ce qu'elle signe, et dont le rapport est versé au dépôt sans retouche.
+
+| Niveau | Épreuve traversée | Ce qu'il établit | Ce qu'il n'établit pas |
+|---|---|---|---|
+| **[H]** | lu et non réfuté par un relecteur humain nommé, source ouverte, rapport signé versé sans édition | qu'une personne nommée, qui répond de ce qu'elle signe, a cherché à réfuter l'entrée, telle qu'elle l'a lue et dans le périmètre qu'elle déclare, sans y parvenir | que l'entrée est vraie ; qu'un autre relecteur conclurait de même ; quoi que ce soit d'une version modifiée depuis sa lecture |
+| **[A-i]** (anciennement [A]) | réfutation tentée par trois instances de modèle, aucune n'y est parvenue — vote 3-0, §A.2 | que trois tentatives automatisées de réfutation ont échoué à l'unanimité | que ces tentatives sont indépendantes ; qu'un humain a lu l'affirmation |
+| **[B]** | source primaire lue et extraite avec citation, sans vote | que la source dit ce que l'entrée lui fait dire, à la date de lecture | qu'une réfutation a été tentée ; qui a lu — agent ou personne, la méthode ne le nomme pas toujours |
+| **[C]** | source identifiée, contenu non extrait | qu'une piste existe | le contenu de l'affirmation : une entrée [C] ne porte jamais un fait central |
+
+Deux choses ne changent pas, et il faut les dire. **Aucune entrée n'a changé de niveau** : ce qui était [A] est [A-i], mot pour mot, et « [A/B mixte] » se lit « [A-i/B mixte] ». **L'ordre entre [A-i] et [B] est conservé.** L'évaluation le conteste aussi, tenant qu'une lecture directe de la source vaut mieux qu'un vote de modèles ; la réforme ne tranche pas ce point, parce qu'aucune des deux épreuves ne suppose un lecteur humain nommé — les extractions [B] dont la méthode nomme l'exécutant ont été conduites par des agents de modèle (cahier des charges, annexe A).
+
+**Au 15 septembre 2026, aucune entrée ne porte [H]** : aucun relecteur humain n'a lu ce livre. Dans les chapitres, les notes et les annexes — celle-ci comprise —, « [A] » se lit donc [A-i]. Une relecture humaine des chapitres 9 à 13 est préparée : la consigne remise au relecteur (`RELECTURE.md`, à la racine du dépôt) dit ce qui fait passer une entrée en [H], et que le silence d'un rapport n'y suffit pas. Cette section ajoute une limite à celles de la §A.7 : **tant qu'aucune entrée ne porte [H], tout ce que ce livre établit l'a été à l'intérieur d'une boucle fermée sur son auteur et ses instances.**
 
 ---
 

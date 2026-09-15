@@ -64,3 +64,71 @@ Trois victoires à l'aveugle sur trois ; la boucle sort par victoire, sans secon
 - Signalé sans correction : premier passage de la CI (run `34978980074`) en échec — parité de `check-article.py` sous Linux et Windows ; `cargo test` sous PowerShell côté Windows ; `LICENSE:44-45` porte « avant » ; bandeaux « clos et final » sans D-17 dans cinq `README` de volumes ; « pas d'intégration continue » au présent dans trois documents du traité ; `gauntlet-log.md` absent de la carte du `README`.
 - Contrôles rejoués sur `78ebf9c` + lissage : `check-renvois.py` (2 079 renvois, 0 mort), son harnais (16), `check-compendium.py`, `check-toc.py`, `check-sieges.py`, `genere.py --verifier`, deux harnais, `check-resume.py` × 10 — tous 0.
 - Coût : 344 k jetons, 85 appels, 24 min. Total de la boucle : 7 agents sur 12, ≈ 2,18 M jetons.
+
+---
+
+# Suite — « tout compléter » (15 septembre 2026, après-midi)
+
+*L'auteur demande l'exécution complète du plan. Portée retenue : correctif de la CI, phases 3, 4
+et 6, la part de la phase 5 qu'aucun tiers n'exige (T5.1 consigne, T5.4 échelle), T7.1, T7.2 et
+T7.4. Hors d'atteinte : la relecture elle-même (T5.2, T5.3), l'étiquette `corpus-v1.0` et le DOI
+(T7.3, après re-clôture et compte Zenodo de l'auteur). Écart assumé au plan : T7.1 et T7.2
+passent avant la phase 5, que le plan leur faisait attendre. Phase 8 : décidée au verdict de la
+phase 4. Plafond annoncé : environ 20 agents. Pushes sur `main` autorisés par l'auteur pour ce
+plan. Barre inchangée : `the-turing-way/the-turing-way`. Les tâches à critère binaire (CI, phase 6,
+T7.4) n'ont pas de critique à l'aveugle : l'orchestrateur rejoue leurs critères.*
+
+## Correctif de la CI — `7ad9e44`
+- Cause 1 (vérifiée) : la parité des PDF comparait les octets hors dates, mais pas les positions du xref, qu'une date UTC plus courte décale ; reproduite localement par la mutation M2c (rouge sur le comparateur de `e6eec1d`, verte sur le correctif), corrigée dans `check-article.py` et `check-traite.py`.
+- Cause 2 (lue au journal) : `defaults.run` de la tâche Simulateur sans `shell` → PowerShell sous Windows ; `shell: bash` ajouté.
+- Fait par l'orchestrateur, sans agent.
+
+## Vague A — bâtisseurs
+| Morceau | Tâches | Critique |
+|---|---|---|
+| **M4 — Livrables tranchés** | T3.1 (a), T3.2, T3.3 ; bandeaux « clos et final » sans D-17 ; `gauntlet-log.md` à la carte du `README` | à l'aveugle |
+| **M5 — Corrections locales** | T6.1 à T6.7 (T6.8 : DA-6 (b), rien) ; « pas d'intégration continue » au présent dans trois documents du traité | critères rejoués par l'orchestrateur |
+| **M6 — Préparer la relecture** | T5.1 (consigne ; relecteurs à nommer par l'auteur, DA-4), T5.4 | à l'aveugle |
+| **M8 — Note de synthèse** | T7.2, variante note | à l'aveugle |
+- **CI verte** au run `34986482375` sur `7ad9e44` : les six tâches (Documents, Renvois, Simulateur × Linux, Windows). T1.1 et T1.5 se ferment : premier passage réel du flux, badge vert.
+
+### M6 — bâtisseur
+- Déclaré : T5.4 fermée — échelle [H] > [A-i] > [B] > [C] aux PRD des Vol. II, III, IV ; conditions de passage en [H] écrites une fois (PRD Vol. II §7) ; annexe A §A.9 du Vol. II ; 46 + 131 entrées vérifiées sans changement de niveau, aucune en [H] ; motif CA-11 du Vol. III adapté, mêmes lignes relevées sur 34 pièces.
+- Déclaré : T5.1 non fermée — `RELECTURE.md` écrit (pièces remises avec SHA-256, pages imprimées, 9 + 7 énoncés à réfuter, gabarit de rapport, registre d'envoi) ; relecteurs à nommer (DA-4) et accusés de réception hors d'atteinte.
+- Laissé : `Monographie.pdf` du Vol. II non recomposé (porte l'ancienne échelle) → à reprendre avec T7.1 ; « [A] » dans des `README` de M4.
+- Coût : 507 k jetons, 140 appels, 43 min.
+
+### M6 — critique (A = Agentique, B = barre)
+- **Verdict : A.** `RELECTURE.md` dit quoi lire (pièces, correspondance folio / page PDF), quoi réfuter (T-1..T-9, V-1..V-7), comment rendre et sous quelles déclarations (indépendance, modèles de langage) ; empreintes, folios, bornes de parties et renvois rejoués sans écart ; niveaux appliqués à des entrées réelles conformes. La barre : guide générique de relecture, aucune déclaration d'outils, aucune valeur de l'approbation pour le lecteur.
+- **Écart retenu (A)** : le `Monographie.pdf` du Vol. II que reçoivent le relecteur et le lecteur porte encore l'ancienne échelle (0 « A-i » sur 387 pages) ; la réforme n'existe qu'en source. Mineur : `CONTRIBUTIONS.md:196` écrit « [A] » sans incise.
+- Suite : victoire, le morceau sort de la boucle. La recomposition du PDF du Vol. II rejoint T7.1 (vague C) ; le mineur va au lissage.
+- Coût : 153 k jetons, 27 appels, 6 min.
+
+### M4 — bâtisseur
+- Déclaré : T3.1 (compendium « archive de travail, hors compte », section « Les sept livrables » avec registre statut / réserve / décision), T3.2 (bandeau du Vol. III en 9 lignes, R-G-43 à R-G-57, dette F-92/F-96 ; anciens bandeaux conservés mot pour mot en chronique), bandeaux D-17 (20 dans 13 `README`), carte du `README` — fermés ; 40 critères rejoués.
+- **Écart au libellé du plan, déclaré** : T3.3 ouvre une décision **D-18** (« le compte des livrables est fixé par D-18 à sept »), D-17 disant ne prendre aucune des DA ; D-18 range hors compte la note SDLC, l'article, `NiveauMaturité.html`, l'appareil et la note de synthèse — **déduit de DA-2, non tranché par l'auteur**.
+- Signalé : le Vol. I a été recomposé par M5 pendant la passe (569 → 570 p.) ; totaux de pages retirés de ses phrases, pagination tenue par la table détaillée.
+- Coût : 424 k jetons, 186 appels, 52 min.
+
+### M8 — bâtisseur
+- Déclaré : critère tenu — `3 - Veille/Note de synthèse.md` et `.pdf`, 20 pages, 50 notices listées et citées, 200 renvois de section avec niveau de preuve ; `check-synthese.py` (sept contrôles, dont parité et 339 chiffres retrouvés dans les sections citées) et son harnais (22 mutations) sortent 0 ; étape de CI rejouée localement.
+- Limites déclarées par le contrôle lui-même : un chiffre remplacé par un autre présent dans la même section, une paraphrase fausse sans chiffre ne sont pas vus. Parité sous Linux non mesurée avant la CI.
+- Coût : 746 k jetons, 151 appels, 51 min.
+
+### M4 — critique (A = barre, B = Agentique)
+- **Verdict : B.** Un statut d'une ligne par document publié, avec « Fixé par » (D-18), retrouvé à l'identique dans les 14 `README` de dossier et de volume ; comptes rejoués concordants (8 PDF, 11 paginations, 50 pièces « non publiable », 15 remontées). La barre : versions citables discordantes entre `CITATION.cff`, `README.md`, `cite.md`, `release-drafter.yml` et les `README` traduits.
+- **Écart retenu (B)** : le compte des documents publiés hors livrables ne concorde pas — « deux » à `README.md:9`, quatre au tableau `README.md:181-184` et à D-18, « trois » à la carte (`README.md:361-367`) et à `3 - Veille/README.md:18` ; `1 - Collection/1 - InteroperabiliteAgentique/README.md:18` dit encore le compendium « quatrième livrable » sans date ; `PRD.md:918` borne les décisions « de D-1 à D-17 ».
+- Suite : victoire, le morceau sort de la boucle. Les discordances passent à la phase 4 (réécriture des `README`) comme contrainte, puis au lissage.
+- Coût : 172 k jetons, 34 appels, 5 min.
+
+### M5 — critères rejoués par l'orchestrateur
+- T6.1 : `/Title` = « État de l’art en services financiers », `Creator: Typst 0.15.1`, 186 p. — tenu.
+- T6.2 : `$` échappés en source ; au PDF, la notice [19] se lit « actif de 510,2 G$ » (p. 120) — tenu.
+- T6.3 : `check-resume.py` → OK, dégagement +12,6 pt — tenu (fusion [1]/[198] déclarée, non recomptée).
+- T6.5 : `check-vol1.py` → 0 ; harnais → 5 mutations vues — tenu.
+- T6.6 : Vol. I `Creator: Typst 0.15.1`, **570 p.** (et non 569, redaté) — tenu ; cause du saut de page non isolée (bibliographie, p. 379).
+- T6.7 : `rejeu-politique.py` → 37/37 ; `check-article.py` → 0 avec contrôle [6] ; harnais → 9 mutations vues — tenu.
+- T6.4 : non rejoué (exige Pandoc) ; déclaré identique à l'octet pour la planche.
+- Globaux : `check-renvois.py` → 227 `.md`, 2 184 renvois, 0 mort ; `appareil.yml` analysé.
+- Signalés par M5, hors périmètre : `4 - Essais/1 - Traité/README.md:392` (« pas d'intégration continue ») ; `3 - Veille/README.md` dit l'état de l'art « cassé » ; harnais de l'article : une mutation compte comme vue quel que soit le contrôle qui échoue.
+- Coût du bâtisseur : 546 k jetons, 257 appels, 56 min.

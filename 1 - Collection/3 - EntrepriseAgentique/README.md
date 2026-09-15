@@ -1,38 +1,15 @@
 # Volume III — « L'entreprise agentique : la fabrique de confiance »
 
 📖 **Lire :** [`Monographie.pdf`](Monographie.pdf) (**427 p.**) dans ce dossier.
-⚠ **Rédigé de bout en bout, non publiable en l'état** — voir « État » plus bas.
 
-> ⚠ **Dépôt clos et final — clôture portée au 1er septembre 2026** — décision d'auteur **D-13**, prise le 8 août 2026
-> ([`2 - Compendium/PRD/PRD.md`](../../2%20-%20Compendium/PRD/PRD.md) v0.17 §16). Aucune passe
-> n'est plus prévue, sur ce volume ni sur aucun autre du dépôt : ce qui suit décrit un état
-> **définitif**. ⚠ *Clore n'est ni terminer ni publier* — rien n'est levé, rien n'est soldé, et
-> ce qui restait dû devient un **manque définitif, daté et écrit**.
+> **Livrable sous réserve déclarée** — statut fixé le 15 septembre 2026 par la décision d'auteur [**D-18**](<../../2%20-%20Compendium/PRD/PRD.md#d-18>) (option DA-3 (a) du plan d'exécution) ; dépôt rouvert le même jour par [D-17](<../../2%20-%20Compendium/PRD/PRD.md#d-17>), re-clôture prévue vers le 8 décembre 2026.
+> **Réserves de lecture** — les quinze remontées ouvertes, R-G-43 à R-G-57, ni soldées ni levées ; un passage qu'elles touchent se lit en les sachant :
+> - **dette de vote sur F-92 et F-96** (R-G-44) : la thèse du **ch. 26** repose sur deux entrées que le vote adversarial dû n'a pas éprouvées, marquées ⚖ à chaque mobilisation ;
+> - **texte touché** : ch. 27 §27.2, ArchiMate sans socle (R-G-43) · ch. 24 §24.4 sans socle (R-G-45) · ch. 5 §5.4 et ch. 12 §12.4, intitulés de renvoi (R-G-48) · ch. 2, 19, 20 et 22, révision MCP du 28 juillet 2026 et ligne directrice de l'AMF (R-G-57) · sept sièges hérités et quatre verbatim devenus invérifiables (R-G-52, R-G-55) ;
+> - **critères non prononcés** : CA-09 (R-G-46) · CA-10, branche (c) (R-G-54) · CA-12 et ses huit retraits, dont deux révocables (R-G-53, R-G-56) ;
+> - **plan et appareil** : volumétrie (R-G-47) · attestations auto-délivrées et cellules tronquées des rapports de lot (R-G-49, R-G-50) · renvois `doc/` → `prd/` (R-G-51).
 >
-> ⚠ **La date de clôture a porté « 8 août 2026 » jusqu'au 3 septembre 2026, et elle confondait deux choses** : *une décision se date de sa prise, une clôture de l'état qu'elle arrête.* **D-13 reste prise le 8 août 2026** ; **la clôture court du 1er septembre 2026**, dernier jour où une pièce est entrée au dépôt — l'article entré au commit `da6255b` dans `6 - Article/`, *dossier porté sous `4 - Essais/2 - Article/` par la réorganisation du 5 septembre 2026 (commit `daacbec`)*. ⚠ *La passe d'audit et de fond du 2 septembre 2026 (D-15, D-16) lui est postérieure d'un jour : elle porte sur l'appareil, le plan et le domaine de livraison du Vol. IV, et **aucune pièce n'y entre ni n'en sort**.* Motif complet au **PRD §16.5**.
-
-> ⚠ **L'APPAREIL DE VÉRIFICATION DE CE VOLUME A ÉTÉ SUPPRIMÉ le 8 août 2026**, par un commit
-> **postérieur à la prise de D-13** (`659241b`) — ⚠ *ce bandeau écrivait « postérieur à la clôture »,
-> ce que la redatation du 3 septembre 2026 rend faux : la clôture court du 1er septembre 2026, et ce
-> commit lui est antérieur. **Le fait ne change pas, sa qualification si.*** ☑ **ET IL A ÉTÉ RESTAURÉ
-> LE 21 AOÛT 2026**, par la passe de réparation d'appareil (commit `696bcac`) : le répertoire
-> [`verification/`](verification/) et ses **30 rapports** — 15 lots d'instruction, 11 relectures,
-> 2 revalidations, la confrontation des thèses et le registre `remontees-gouvernance.md` — **sont sur
-> l'arbre et versionnés**, et se lisent dans ce dossier. ⚠⚠ *Ce bandeau a porté « ne se lisent plus
-> qu'à l'historique git » pendant les deux semaines qui ont suivi le retour des fichiers : les deux
-> faits sont datés, aucun n'efface l'autre, et c'est le **présent** de la phrase qui était faux, pas
-> son passé.* ⚠ **Les renvois de ce fichier qui les visaient ont été retirés le 8 août 2026**, en
-> conservant leurs noms et en datant le retrait selon la règle du dépôt ; **ils n'ont pas été rétablis
-> en liens** — *ce README nomme donc encore, en texte nu, des pièces qu'il pourrait à nouveau pointer.*
->
-> ⚠ **Ce que la suppression n'a pas fait, et il faut le lire avant le reste de ce fichier.** Elle **n'a
-> soldé aucune remontée**, **n'a refermé aucune dette**, **n'a levé aucune réserve** : les quinze
-> remontées **R-G-43 à R-G-57** et la **dette de vote sur F-92 et F-96** restent ouvertes à titre
-> définitif — c'est seulement **l'inventaire qui les nommait** qui avait quitté l'arbre. *Une dette dont
-> on supprime le registre reste une dette ; elle devient seulement plus difficile à lire.* ☑ **La
-> restauration n'en solde pas davantage** : elle rend les rapports lisibles, elle n'arbitre rien. Les
-> affirmations de conformité ci-dessous **s'adossent à ces rapports** : elles valent comme **constats
-> datés**, et sont **à nouveau vérifiables sur l'arbre courant**.
+> Chacune, avec ce qu'elle bloque : [`verification/remontees-gouvernance.md`](verification/remontees-gouvernance.md), qui fait foi. Bandeaux de tête antérieurs : [chronique](#chronique-des-bandeaux-de-tête).
 
 > **Où vous êtes.** Ce dossier est le **troisième des trois volumes** du corpus, dans le dépôt
 > [*Agentique*](../../README.md). Il **prolonge les deux précédents sur leur verrou commun** :
@@ -104,6 +81,11 @@ vers un chapitre amont, soit une inférence à marquer.
 
 ## État
 
+☑ *Depuis le 15 septembre 2026, le statut du volume est celui du bandeau de tête — **livrable sous
+réserve déclarée** (D-18). Cette section dit l'état qui l'a motivé : son « non publiable » vaut
+jusqu'à cette date ; les quinze remontées et la dette de vote qu'elle laisse ouvertes sont celles
+que le bandeau liste en réserves de lecture.*
+
 ⚠ **Rédigé ne vaut pas publiable, et c'est le seul énoncé d'état qui compte.** Les 34 pièces sont
 rédigées, relues adversarialement et corrigées — **jalon J-5 atteint le 22 juillet 2026** —, et la
 phase de finalisation **P5 est CLOSE SANS ÊTRE ACHEVÉE** depuis la clôture du dépôt — *prononcée le
@@ -144,6 +126,47 @@ certificat, et le retour des rapports n'y change rien.**
 portait en page 2 a été **retirée le 24 juillet 2026** sur demande de l'auteur : la page de titre est
 directement suivie du résumé. Le statut tient aux remontées ouvertes et à la dette de vote, qui ne sont
 pas des attributs du rendu.
+
+## Chronique des bandeaux de tête
+
+*Ces bandeaux ouvraient ce fichier jusqu'au 15 septembre 2026. Le bandeau de statut les y remplace ce
+jour-là (D-18) et ils sont déplacés ici sans un mot changé : leurs présents — « non publiable en
+l'état », « clos et final », « définitif » — valent à leur date, et leurs renvois de position
+(« plus bas », « ci-dessous », « avant le reste de ce fichier ») visent le fichier qu'ils ouvraient.
+Le dépôt est rouvert depuis le 15 septembre 2026 par D-17.*
+
+⚠ **Rédigé de bout en bout, non publiable en l'état** — voir « État » plus bas.
+
+> ⚠ **Dépôt clos et final — clôture portée au 1er septembre 2026** — décision d'auteur **D-13**, prise le 8 août 2026
+> ([`2 - Compendium/PRD/PRD.md`](../../2%20-%20Compendium/PRD/PRD.md) v0.17 §16). Aucune passe
+> n'est plus prévue, sur ce volume ni sur aucun autre du dépôt : ce qui suit décrit un état
+> **définitif**. ⚠ *Clore n'est ni terminer ni publier* — rien n'est levé, rien n'est soldé, et
+> ce qui restait dû devient un **manque définitif, daté et écrit**.
+>
+> ⚠ **La date de clôture a porté « 8 août 2026 » jusqu'au 3 septembre 2026, et elle confondait deux choses** : *une décision se date de sa prise, une clôture de l'état qu'elle arrête.* **D-13 reste prise le 8 août 2026** ; **la clôture court du 1er septembre 2026**, dernier jour où une pièce est entrée au dépôt — l'article entré au commit `da6255b` dans `6 - Article/`, *dossier porté sous `4 - Essais/2 - Article/` par la réorganisation du 5 septembre 2026 (commit `daacbec`)*. ⚠ *La passe d'audit et de fond du 2 septembre 2026 (D-15, D-16) lui est postérieure d'un jour : elle porte sur l'appareil, le plan et le domaine de livraison du Vol. IV, et **aucune pièce n'y entre ni n'en sort**.* Motif complet au **PRD §16.5**.
+
+> ⚠ **L'APPAREIL DE VÉRIFICATION DE CE VOLUME A ÉTÉ SUPPRIMÉ le 8 août 2026**, par un commit
+> **postérieur à la prise de D-13** (`659241b`) — ⚠ *ce bandeau écrivait « postérieur à la clôture »,
+> ce que la redatation du 3 septembre 2026 rend faux : la clôture court du 1er septembre 2026, et ce
+> commit lui est antérieur. **Le fait ne change pas, sa qualification si.*** ☑ **ET IL A ÉTÉ RESTAURÉ
+> LE 21 AOÛT 2026**, par la passe de réparation d'appareil (commit `696bcac`) : le répertoire
+> [`verification/`](verification/) et ses **30 rapports** — 15 lots d'instruction, 11 relectures,
+> 2 revalidations, la confrontation des thèses et le registre `remontees-gouvernance.md` — **sont sur
+> l'arbre et versionnés**, et se lisent dans ce dossier. ⚠⚠ *Ce bandeau a porté « ne se lisent plus
+> qu'à l'historique git » pendant les deux semaines qui ont suivi le retour des fichiers : les deux
+> faits sont datés, aucun n'efface l'autre, et c'est le **présent** de la phrase qui était faux, pas
+> son passé.* ⚠ **Les renvois de ce fichier qui les visaient ont été retirés le 8 août 2026**, en
+> conservant leurs noms et en datant le retrait selon la règle du dépôt ; **ils n'ont pas été rétablis
+> en liens** — *ce README nomme donc encore, en texte nu, des pièces qu'il pourrait à nouveau pointer.*
+>
+> ⚠ **Ce que la suppression n'a pas fait, et il faut le lire avant le reste de ce fichier.** Elle **n'a
+> soldé aucune remontée**, **n'a refermé aucune dette**, **n'a levé aucune réserve** : les quinze
+> remontées **R-G-43 à R-G-57** et la **dette de vote sur F-92 et F-96** restent ouvertes à titre
+> définitif — c'est seulement **l'inventaire qui les nommait** qui avait quitté l'arbre. *Une dette dont
+> on supprime le registre reste une dette ; elle devient seulement plus difficile à lire.* ☑ **La
+> restauration n'en solde pas davantage** : elle rend les rapports lisibles, elle n'arbitre rien. Les
+> affirmations de conformité ci-dessous **s'adossent à ces rapports** : elles valent comme **constats
+> datés**, et sont **à nouveau vérifiables sur l'arbre courant**.
 
 ## Fichiers cités qui ne sont plus au dépôt — consignés, non corrigés
 

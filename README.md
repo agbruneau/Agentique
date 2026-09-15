@@ -6,17 +6,20 @@
 
 | | |
 |---|---|
-| **Ce que le dépôt porte** | Un corpus de recherche en français sur une question : *comment une entreprise de services financiers canadienne déploie, gouverne et exploite des agents d'IA autonomes sous contrainte réglementaire ?* **Huit documents livrables**, 2 922 pages sur neuf PDF ([les huit documents](#les-huit-documents)) ; deux documents publiés hors livrables, la note de veille SDLC (49 p.) et l'article HPC-QPU (38 p.) ; un simulateur Rust qui transpose le traité — 30 488 lignes sous `crates/`, 470 tests. Licence CC BY 4.0 ([`LICENSE`](LICENSE)). |
-| **Dans quel état** | **Évalué** le 15 septembre 2026 : [`Évaluation académique.md`](<%C3%89valuation%20acad%C3%A9mique.md>), **75,5 / 100, corrections majeures requises**, conduite selon le [`Gabarit d'évaluation académique`](<Gabarit%20d%27%C3%A9valuation%20acad%C3%A9mique.md>) par un modèle de langage, non par un jury. Quatre conditions la plafonnent : aucun relecteur humain nommé sur aucune pièce (B1) ; les Vol. III et IV comptent parmi les livrables et se déclarent non publiables (B2) ; `genere.py --verifier` sortait 1 quand `APPAREIL.md` écrivait 0 (B3) ; l'assistance par modèle de langage est déclarée pour le dépôt, non pièce par pièce (B4). Le même jour, `genere.py --verifier` est ramené à 0 ([`APPAREIL.md`](APPAREIL.md) §3), une déclaration pièce par pièce entre au dépôt ([`CONTRIBUTIONS.md`](CONTRIBUTIONS.md)), et les pièces qui en sont sorties se retrouvent par [`ARCHIVES.md`](ARCHIVES.md). **Rouvert** le même jour par la décision **D-17** ([PRD du compendium, annexe A](<2%20-%20Compendium/PRD/PRD.md>)) pour exécuter le [plan d'exécution](<Plan%20d%27ex%C3%A9cution%20%E2%80%94%20%C3%A9valuation%20acad%C3%A9mique.md>) qui en tire les tâches ; **re-clôture prévue vers le 8 décembre 2026** — une prévision, que commande le calendrier des relecteurs tiers. |
+| **Ce que le dépôt porte** | Un corpus de recherche en français sur une question : *comment une entreprise de services financiers canadienne déploie, gouverne et exploite des agents d'IA autonomes sous contrainte réglementaire ?* **Sept documents livrables**, rendus en huit PDF, dont le Vol. III **sous réserve déclarée** ; le Vol. IV, 1 000 p., **archive de travail, hors compte des livrables** — compte et statuts fixés par la décision d'auteur [**D-18**](<2%20-%20Compendium/PRD/PRD.md#d-18>) du 15 septembre 2026 ([les sept livrables](#les-sept-livrables)) ; deux documents publiés hors livrables, la note de veille SDLC (49 p.) et l'article HPC-QPU (38 p.) ; un simulateur Rust qui transpose le traité — 30 488 lignes sous `crates/`, 470 tests. Licence CC BY 4.0 ([`LICENSE`](LICENSE)). |
+| **Dans quel état** | **Évalué** le 15 septembre 2026 : [`Évaluation académique.md`](<%C3%89valuation%20acad%C3%A9mique.md>), **75,5 / 100, corrections majeures requises**, conduite selon le [`Gabarit d'évaluation académique`](<Gabarit%20d%27%C3%A9valuation%20acad%C3%A9mique.md>) par un modèle de langage, non par un jury. Quatre conditions la plafonnent : aucun relecteur humain nommé sur aucune pièce (B1) ; les Vol. III et IV comptent parmi les livrables et se déclarent non publiables (B2) ; `genere.py --verifier` sortait 1 quand `APPAREIL.md` écrivait 0 (B3) ; l'assistance par modèle de langage est déclarée pour le dépôt, non pièce par pièce (B4). Le même jour, `genere.py --verifier` est ramené à 0 ([`APPAREIL.md`](APPAREIL.md) §3), une déclaration pièce par pièce entre au dépôt ([`CONTRIBUTIONS.md`](CONTRIBUTIONS.md)), et les pièces qui en sont sorties se retrouvent par [`ARCHIVES.md`](ARCHIVES.md). **Rouvert** le même jour par la décision **D-17** ([PRD du compendium, annexe A](<2%20-%20Compendium/PRD/PRD.md>)) pour exécuter le [plan d'exécution](<Plan%20d%27ex%C3%A9cution%20%E2%80%94%20%C3%A9valuation%20acad%C3%A9mique.md>) qui en tire les tâches ; **re-clôture prévue vers le 8 décembre 2026** — une prévision, que commande le calendrier des relecteurs tiers. **Le même jour, [D-18](<2%20-%20Compendium/PRD/PRD.md#d-18>) répond à B2** : le Vol. IV sort du compte des livrables comme archive de travail, le Vol. III y reste sous réserve déclarée. |
 | **Ce qui est vérifié, et comment** | La **forme**, par l'appareil. [`APPAREIL.md`](APPAREIL.md) donne chaque point d'entrée, son dossier et sa sortie **rejouée le 15 septembre 2026** — contrôles de document, harnais de mutation, graveurs et assembleurs, `cargo test`, bancs —, ce qui sort autrement que 0 et pourquoi, et ce qui n'a pas été rejoué. Le flux d'intégration continue [`.github/workflows/appareil.yml`](.github/workflows/appareil.yml) en rejoue l'essentiel sur Linux et sur Windows, et `APPAREIL.md` §2 dit ce qu'il ne rejoue pas encore ; *aucun commit qui le porte n'est poussé à cette date : le badge ci-dessus n'a encore rendu aucun verdict.* ✎ *Poussé le jour même à 10 h 02, au commit `78ebf9c` : le verdict de son premier passage se lit au badge.* |
-| **Ce que rien ne vérifie** | Le **fond**. Aucun énoncé central n'a été relu par un humain autre que l'auteur : le niveau de preuve le plus élevé des volumes, **[A]**, est rendu par des instances de modèle de langage, et l'évaluation en est une aussi. Aucun système réel n'est observé ; le simulateur est un monde clos. |
-| **Lire la suite** | Les tables — [par où entrer](#par-où-entrer-selon-le-temps-quon-a), [les huit documents](#les-huit-documents), la [carte du dépôt](#carte-du-dépôt) — disent ce qu'il y a. Les paragraphes qui les entourent sont une **chronique datée** : un chiffre y vaut à la date qui l'accompagne, et un chemin écrit avant le 5 septembre 2026 se traduit par la carte. |
+| **Ce que rien ne vérifie** | Le **fond**. Aucun énoncé central n'a été relu par un humain autre que l'auteur : le niveau de preuve le plus élevé des volumes, **[A]** *(se lit [A-i] depuis la réforme du même jour)*, est rendu par des instances de modèle de langage, et l'évaluation en est une aussi. Le niveau **[H]**, « lu et non réfuté par un relecteur humain nommé », prend la tête de l'échelle le 15 septembre 2026 et ne porte encore aucune entrée ; la relecture qui peut le remplir est préparée par [`RELECTURE.md`](RELECTURE.md), relecteurs à nommer (DA-4). Aucun système réel n'est observé ; le simulateur est un monde clos. |
+| **Lire la suite** | Les tables — [par où entrer](#par-où-entrer-selon-le-temps-quon-a), [les sept livrables](#les-sept-livrables), la [carte du dépôt](#carte-du-dépôt) — disent ce qu'il y a. Les paragraphes qui les entourent sont une **chronique datée** : un chiffre y vaut à la date qui l'accompagne, et un chemin écrit avant le 5 septembre 2026 se traduit par la carte. |
 
 ## Chronique datée
 
 **Un corpus de recherche** : Huit documents en français — **2 922 pages rendues**
 sur neuf PDF — instruisent une seule question : *comment une entreprise de services financiers
 canadienne déploie, gouverne et exploite des agents d'IA autonomes sous contrainte réglementaire ?*
+✎ *Au 15 septembre 2026, la décision D-18 en range sept parmi les livrables — huit PDF — et le
+Vol. IV en archive de travail : voir [les sept livrables](#les-sept-livrables).* ✎ *Le même jour, le
+Vol. I, recomposé sous Typst 0.15.1, passe de 569 à 570 p. : 2 923 pages sur ces neuf PDF, 3 010 sur onze.*
 ⚠ *Cette page a longtemps écrit « 2 921 » : le compte datait du 21 août 2026 et n'avait pas suivi la
 recomposition du 24, qui porte l'état de l'art de 185 à 186 p.*
 ☑ **Un neuvième document est entré le 28 août 2026** — la
@@ -26,7 +29,8 @@ d'une source unique — un entretien de 4 h 26 —, bibliographie non appariée,
 l'oppose à elle-même.* Le motif est donné au [`README` de `3 - Veille/`](<3%20-%20Veille/README.md>),
 qui la range comme **document publié et non comme neuvième livrable** — ⚠ *ce n'est pas une
 instruction d'auteur, le PRD ne porte aucune décision sur ce document, et le compte se renverse d'un
-mot de sa part, comme le huitième.*
+mot de sa part, comme le huitième.* ✎ *Ce mot est venu le 15 septembre 2026 : la décision D-18
+ratifie le rangement.*
 ☑ **Un dixième document est entré le 1er septembre 2026**, au commit `da6255b`, dans un
 **sixième dossier numéroté** — `6 - Article/`, aujourd'hui
 [`4 - Essais/2 - Article/`](<4%20-%20Essais/2%20-%20Article/>) : *Projection de l'état de
@@ -43,7 +47,8 @@ deux sens — **77 entrées, 77 citées** — et **un contrôle qui l'oppose à 
 avec le corpus est déclaré par l'article lui-même* : son § 2.8 fait de l'agent scientifique autonome
 le consommateur le plus exigeant de la chaîne qu'il spécifie. Le motif complet est au
 [`README` de `4 - Essais/2 - Article/`](<4%20-%20Essais/2%20-%20Article/README.md>) — ⚠ *et, comme les deux précédents,
-ce n'est pas une instruction d'auteur : le PRD ne porte aucune décision sur ce document.*
+ce n'est pas une instruction d'auteur : le PRD ne porte aucune décision sur ce document.* ✎ *Ratifié
+le 15 septembre 2026 par la décision D-18.*
 S'y ajoute **un simulateur en Rust** — 76 fichiers `.rs`, 30 939 lignes au `wc -l` du 15 septembre 2026, dont 71 et 30 488 sous `crates/` — qui transpose l'un de ces
 documents en code exécutable sous une règle : *tout chiffre affiché doit être retrouvé par la
 mesure, ou l'écart consigné*. **Cinq écarts** le sont, **dont trois contredisent le traité**
@@ -149,25 +154,56 @@ davantage, tant que l'arbre ancien tient*. Leurs renvois sont au
 | **un quart d'heure** | [`Évaluation académique.md`](<%C3%89valuation%20acad%C3%A9mique.md>) ou son [`.html`](<%C3%89valuation%20acad%C3%A9mique.html>) — le dépôt noté du dehors le 15 septembre 2026, **75,5 / 100**, *corrections majeures requises*, selon le [`Gabarit d'évaluation académique`](<Gabarit%20d%27%C3%A9valuation%20acad%C3%A9mique.md>) : neuf critères pondérés, quatre conditions bloquantes, six critiques de fond ; le [plan d'exécution](<Plan%20d%27ex%C3%A9cution%20%E2%80%94%20%C3%A9valuation%20acad%C3%A9mique.md>) en tire les tâches. ⚠ *Produite par un modèle de langage à la demande de l'auteur, non par un jury ; son §12 en fixe la portée* |
 | **20 minutes**  | [`NiveauMaturité.html`](NiveauMaturit%C3%A9.html) — **7 diapositives** 16:9, six paliers de maturité ; autonome, aucune dépendance                                                                                                                                                                                                                     |
 | **une demi-heure** | [`article-hpc-qpu.pdf`](<4%20-%20Essais/2%20-%20Article/article-hpc-qpu.pdf>) — 38 p. : une prépublication arXiv, 77 références toutes citées, 8 planches et 20 tableaux, 8 conditions de réfutation. ⚠ *Hors livrables, et hors sujet du corpus — voir plus haut* |
+| **trois quarts d'heure** | [`Note de synthèse.pdf`](<3%20-%20Veille/Note%20de%20synth%C3%A8se.pdf>) — 20 p. : la veille, la revue et l'état de l'art (Vol. VI, VII, VIII) condensés, chaque affirmation renvoyée à la section qui la porte et au niveau de preuve que le volume déclare ; [`check-synthese.py`](<3%20-%20Veille/Python/check-synthese.py>) vérifie renvois, chiffres et bibliographie. ⚠ *Rédigée par un modèle de langage le 15 septembre 2026 (tâche T7.2 du plan), non relue par un humain ; hors du compte des livrables, qu'aucune décision d'auteur ne lui a ouvert* |
 | **une heure**   | [`Note-veille-SDLC-agentique.pdf`](<3%20-%20Veille/Note-veille-SDLC-agentique.pdf>) — 49 p. : une source unique instruite, 18 thèses horodatées, 40 affirmations triangulées. ⚠ *Hors livrables — voir plus haut*                                                                                                             |
 | **une soirée** | [`Veille Technologique.pdf`](<3%20-%20Veille/Veille%20Technologique.pdf>) — 144 p., l'état du champ déployé, 342 références                                                                                                                                                                                                                                |
-| **le fond**     | [`Compendium.pdf`](<2%20-%20Compendium/Compendium.pdf>) — 1 000 pages, la somme dédoublonnée des trois monographies                                                                                                                                                                                                                                           |
+| **le fond**     | [`Compendium.pdf`](<2%20-%20Compendium/Compendium.pdf>) — 1 000 pages, la somme dédoublonnée des trois monographies. ⚠ *Archive de travail, hors compte des livrables (D-18) : ses cinquante pièces se déclarent non publiables*                                                                                                                                                                                                                                           |
 | **du code**     | [`4 - Essais/1 - Traité/`](<4%20-%20Essais/1%20-%20Trait%C3%A9/>) — le simulateur d'essaims : quatre *crates* et deux bancs, ☑ **470 tests réussis, 0 échec, 0 ignoré ; clippy 0 ; fmt 0** — rejoués le 15 septembre 2026, [`APPAREIL.md`](APPAREIL.md) §5                                                                                                                                                                                                              |
 
-## Les huit documents
+## Les sept livrables
+
+**Sept livrables, rendus en huit PDF.** Le compte et chaque statut ci-dessous sont fixés par
+la décision d'auteur [**D-18**](<2%20-%20Compendium/PRD/PRD.md#d-18>), prise le 15 septembre 2026
+sous la réouverture [D-17](<2%20-%20Compendium/PRD/PRD.md#d-17>) ; **toute entrée ou sortie passe
+par une décision**. *Réserve commune à tous les documents : aucun relecteur humain nommé — voir
+l'[état au 15 septembre 2026](#état-au-15-septembre-2026).*
+
+| Document | Statut | Réserve propre | Fixé par |
+|---|---|---|---|
+| **I** — *Interopérabilité agentique en entreprise…* | **livrable** | — | D-18, 15 sept. 2026 |
+| **II** — *Orchestration agentique* | **livrable** | — | D-18, 15 sept. 2026 |
+| **III** — *L'entreprise agentique* | **livrable sous réserve déclarée** | quinze remontées ouvertes, R-G-43 à R-G-57, et la dette de vote sur F-92 et F-96 — [bandeau du volume](<1%20-%20Collection/3%20-%20EntrepriseAgentique/README.md>), [registre](<1%20-%20Collection/3%20-%20EntrepriseAgentique/verification/remontees-gouvernance.md>) | D-18 (DA-3 (a)), 15 sept. 2026 |
+| **V** — *Traité sur les systèmes multiagents en essaim* | **livrable** | — | D-18, 15 sept. 2026 |
+| **VI** — *Veille technologique en entreprise* | **livrable** | — | D-18, 15 sept. 2026 |
+| **VII** — *Revue de la littérature académique* | **livrable** | — | D-18, 15 sept. 2026 |
+| **VIII** — *État de l'art en services financiers*, planche comprise | **livrable** | — | D-18, 15 sept. 2026 |
+| **IV** — *Conspectus — … en Entreprise Agentique* | **archive de travail, hors compte** | ses cinquante pièces se déclarent « non publiable » ; il reste au dépôt, entier — [`README`](<2%20-%20Compendium/README.md>) | D-18 (DA-2 (a)), 15 sept. 2026 |
+| Note de veille SDLC | publiée, hors livrables | source unique, bibliographie non appariée — [`README`](<3%20-%20Veille/README.md>) | rangée le 28 août 2026 ; D-18 |
+| Article HPC-QPU | publié, hors livrables | n'instruit pas la question du corpus — [`README`](<4%20-%20Essais/2%20-%20Article/README.md>) | rangé le 1er sept. 2026 ; D-18 |
+| Note de synthèse | publiée, hors livrables | condense les Vol. VI, VII et VIII ; rédigée par un modèle de langage, non relue par un humain — [`README`](<3%20-%20Veille/README.md>) | entrée le 15 sept. 2026 (T7.2) ; aucune décision ne la range parmi les sept (D-18) |
+| `NiveauMaturité.html` | publié, hors livrables | — | D-18 |
+| Évaluation, gabarit, plan d'exécution | appareil, hors livrables | évaluation produite par un modèle de langage, non par un jury | D-18 |
+| Mémoire de maîtrise (1997) | pièce déposée, que nul document ne cite | — | [`README` de `0 - Références/`](<1%20-%20Collection/0%20-%20R%C3%A9f%C3%A9rences/README.md>), 21 août 2026 |
+
+*Ce que chaque livrable soutient, et ce qu'il pèse :*
 
 | #              | Document et dossier                                                                                                                                                                       | Ce qu'il soutient                                                                                                                                                                                                                                                                                                                              | Rendu                                                                                                                    | Source                                                                                                        |
 | -------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------- |
-| **I**    | *Interopérabilité agentique en entreprise dans le domaine des services financiers*[`1 - Collection/1 - InteroperabiliteAgentique/`](<1%20-%20Collection/1%20-%20InteroperabiliteAgentique/>) | Autonomie**graduée** sous contrôle de finalité. Portée mondiale (UE, É.-U., R.-U., Asie)                                                                                                                                                                                                                                            | **569 p.**                                                                                                         | 7 257 l. / 1,74 Mo · 7 chapitres + Annexe B ·**28 diagrammes Mermaid** · 7 bibliographies            |
+| **I**    | *Interopérabilité agentique en entreprise dans le domaine des services financiers*[`1 - Collection/1 - InteroperabiliteAgentique/`](<1%20-%20Collection/1%20-%20InteroperabiliteAgentique/>) | Autonomie**graduée** sous contrôle de finalité. Portée mondiale (UE, É.-U., R.-U., Asie)                                                                                                                                                                                                                                            | **570 p.** *(569 jusqu'au 15 septembre 2026, recomposé sous Typst 0.15.1)*                                                                                                         | 7 257 l. / 1,74 Mo · 7 chapitres + Annexe B ·**28 diagrammes Mermaid** · 7 bibliographies            |
 | **II**   | *Orchestration agentique*[`1 - Collection/2 - OrchestrationAgentique/`](<1%20-%20Collection/2%20-%20OrchestrationAgentique/>)                                                                  | Autonomie**encadrée** (*framed autonomy*). Portée Canada-Québec. Résultat négatif : quinze croisements protocole × texte canadien, **zéro lien documenté**                                                                                                                                                               | **387 p.**                                                                                                         | 3 306 l. / 0,87 Mo ·**29 pièces** assemblées · socle factuel de **46 entrées**, F-01 à F-48 |
 | **III**  | *L'entreprise agentique — la fabrique de confiance*[`1 - Collection/3 - EntrepriseAgentique/`](<1%20-%20Collection/3%20-%20EntrepriseAgentique/>)                                             | La confiance ne se décrète pas, elle se fabrique : émettre une identité, l'appliquer, l'exploiter                                                                                                                                                                                                                                          | **427 p.**                                                                                                         | 3 275 l. / 1,12 Mo ·**34 pièces** · socle propre de **98 entrées**, F-01 à F-98              |
-| **IV**   | *Conspectus — Interopérabilité et Orchestration **en Entreprise Agentique***[`2 - Compendium/`](<2%20-%20Compendium/>)                                                       | La somme des trois volumes, dédoublonnée et re-datée à la source                                                                                                                                                                                                                                                                           | **1 000 p. exactement** ⚠ *cible d'auteur vérifiée par le script de rendu, qui échoue à 999 comme à 1 001* | **50 chapitres**, 5 Livres, 2 annexes · **118 figures** · socle consolidé `S-001`…`S-159` |
 | **V**    | *Traité sur les systèmes multiagents en essaim*[`4 - Essais/1 - Traité/`](<4%20-%20Essais/1%20-%20Trait%C3%A9/>)                                                                                              | La coordination par le milieu : ce qu'un essaim gagne à**ne pas** s'accorder, et ce qu'il le paie                                                                                                                                                                                                                                       | **143 p.**                                                                                                         | 1 889 l. · 8 chapitres, 24 sections,**123 notices**, 19 figures, 72 511 mots                           |
 | **VI**   | *Veille technologique en entreprise*[`3 - Veille/`](<3%20-%20Veille/>)                                                                                                            | Le non-déterminisme du modèle enfermé dans des étapes bornées, journalisées, compensables : «*l'agent d'entreprise fiable de 2026 est enveloppé* »                                                                                                                                                                                  | **144 p.**                                                                                                         | 1 932 l. · 94 sections, 24 tableaux,**342 références**, 25 questions ouvertes                        |
 | **VII**  | *Revue de la littérature académique*[`3 - Veille/`](<3%20-%20Veille/>)                                                                                                          | ⚠ Un résultat**sur son propre corpus, pas sur le champ** : **145 pièces sur 189 — 77 % — ne présentent aucun signe de revue par les pairs à leur notice**, 12 seulement portant une attestation. *La revue interdit expressément d'en tirer une part du champ : « le lire comme une part du champ serait circulaire »* | **59 p.**                                                                                                          | 1 052 l. ·**192 références**, 8 tableaux                                                             |
 | **VIII** | *État de l'art en services financiers*[`5 - Recension/`](<5%20-%20Recension/>)                                                                                                   | Le débat porte sur la pile protocolaire ; dans une coopérative régie,**la pile n'est pas ce qui décide**                                                                                                                                                                                                                             | **186 p.** + planche de **7 p.** (`.md`/`.pdf`/`.html`)                                                | 1 986 l. ·**15 sections** numérotées, **312 références** (1 à 312, sans trou), 5 figures    |
 
-⚠ **Le chiffre « huit » est un constat, pas une décision d'auteur.** Le dépôt a longtemps compté
+*L'archive de travail, hors compte des livrables depuis le 15 septembre 2026 (D-18) :*
+
+| #      | Document et dossier | Ce qu'il soutient | Rendu | Source |
+| ------ | ------------------- | ----------------- | ----- | ------ |
+| **IV** | *Conspectus — Interopérabilité et Orchestration **en Entreprise Agentique***[`2 - Compendium/`](<2%20-%20Compendium/>) | La somme des trois volumes, dédoublonnée et re-datée à la source | **1 000 p. exactement** ⚠ *cible d'auteur vérifiée par le script de rendu, qui échoue à 999 comme à 1 001* | **50 chapitres**, 5 Livres, 2 annexes · **118 figures** · socle consolidé `S-001`…`S-159` |
+
+⚠ **Jusqu'au 15 septembre 2026, le chiffre « huit » était un constat, pas une décision d'auteur.** Le dépôt a longtemps compté
 sept livrables ; le huitième — l'état de l'art — a été rangé parmi eux le 20 août 2026 par les
 `README.md` du dépôt, sur motif écrit, et **le PRD ne porte aucune décision sur ce document**. Un
 lecteur qui cite le compte doit dire à quelle date il le tire et d'où.
@@ -189,6 +225,10 @@ services financiers sous contrainte réglementaire. ⚠ *Un critère thématique
 ici, et il ne se déduit d'aucun des deux arbitrages antérieurs : c'est cette page qui le pose, sur
 pièce, et le PRD ne porte aucune décision sur ce document.*
 *Le tableau reste à huit lignes, et le dépôt porte **dix documents publiés**.*
+☑ **Le 15 septembre 2026, la décision [D-18](<2%20-%20Compendium/PRD/PRD.md#d-18>) remplace ce
+constat** : elle ratifie les trois rangements ci-dessus, sort le Vol. IV du compte comme archive de
+travail et fixe les livrables à **sept** — *le tableau a perdu sa ligne IV le même jour, et les
+« huit » de ce paragraphe restent à leur date.*
 
 ☑ **Trois documents portaient exactement le même titre ; ils ne le portent plus depuis le
 21 août 2026.** La veille, la revue et l'état de l'art déclaraient tous
@@ -214,7 +254,9 @@ réparer le bloc de titre, a donc cassé ce champ du même geste — et celle du
 précisément sur `/Title`, ne l'a pas vu.* ⚠ *Poser l'apostrophe typographique à la source n'y change
 rien, vérifié : Pandoc la relit et réémet le signe droit.* ☑ **Corrigé au seul en-tête de la note**,
 dont le `dc:title` porte bien `à l'ère des agents` ; ⚠⚠ **l'état de l'art reste cassé** — *seul des
-douze PDF du dépôt, relevé le 1er septembre 2026, et la correction demande une recomposition.*
+douze PDF du dépôt, relevé le 1er septembre 2026, et la correction demande une recomposition.* ☑ *Rendu
+le 15 septembre 2026 (tâche T6.1 du plan d'exécution) : la redéfinition de la note est reportée à
+l'en-tête de l'état de l'art, recomposé ce jour-là, dont le `/Title` lit `État de l’art en services financiers`.*
 ☑☑ **Le diagnostic a reçu sa corroboration la plus nette le 1er septembre 2026, et par un document
 qui ne visait pas cela** : l'article de `4 - Essais/2 - Article/` porte un titre à apostrophe — *Projection de
 l'état de ressource…* — et **son `dc:title` la traverse intacte**. *C'est le seul PDF du dépôt
@@ -281,6 +323,7 @@ Agentique/
 │                                      ses constats en tâches, chacune avec son critère d'acceptation
 ├── CONTRIBUTIONS.md                 qui a fait quoi, pièce par pièce : auteur, agents de modèle, relecteurs
 ├── ARCHIVES.md                      les pièces sorties du dépôt, et la commande qui relit chacune
+├── gauntlet-log.md                  journal, en ajout seul, de la boucle bâtisseur / critique qui exécute le plan
 ├── .github/workflows/appareil.yml   l'appareil en intégration continue, Linux et Windows → `APPAREIL.md` §2
 ├── Python/                          `check-renvois.py` et son harnais : les renvois relatifs des `.md`
 ├── LICENSE                          ⭑ CC BY 4.0, 21 août 2026 — elle couvre le dépôt entier
@@ -289,12 +332,13 @@ Agentique/
 ├── NiveauMaturité.html              7 diapositives 16:9 — ⚠ plus le seul contenu de la racine depuis
 │                                      le 5 septembre 2026 : l'évaluation académique l'y a rejoint
 │
-├── 1 - Collection/                  Vol. I, II, III
+├── 1 - Collection/                  Vol. I, II, III — livrables, le III sous réserve déclarée (D-18)
 │   ├── README.md                       ⭑ à ouvrir avant le reste : la chronique datée
 │   ├── 0 - Références/                 `README.md` + le mémoire de maîtrise de l'auteur (1997),
 │   │                                     seule pièce qui y reste : les 3 ouvrages de tiers ont quitté
 │   │                                     l'index le 21 août 2026, le disque le 25 → son `README`
-│   ├── 1 - InteroperabiliteAgentique/  `LICENSE` propre au Vol. I — mêmes termes que celle de la racine
+│   ├── 1 - InteroperabiliteAgentique/  `LICENSE` propre au Vol. I — mêmes termes que celle de la racine ;
+│   │                                     `Python/check-vol1.py`, son contrôle, depuis le 15 septembre 2026
 │   ├── 2 - OrchestrationAgentique/     ⭑ `verification/` : revalidations et grille de conformité
 │   ├── 3 - EntrepriseAgentique/        ⭑ `monographie/99-registre-gel.md` : ce qui est gelé, et depuis
 │   │                                     quand. ⚠ Son `verification/` — 30 pièces — avait été supprimé
@@ -302,7 +346,7 @@ Agentique/
 │   └──  ⤷ les trois build/ portent la même chaîne FESP : build-pdf.sh · fesp.template ·
 │          inject-pagination.py (+ assemble.py aux Vol. II et III)
 │
-├── 2 - Compendium/                  Vol. IV
+├── 2 - Compendium/                  Vol. IV — archive de travail, hors compte des livrables (D-18)
 │   ├── Livre I … Livre V/              ⚠ chaque chapitre existe deux fois, en .md et en .html ;
 │   │                                     `.claude/launch.json` les sert sur le port 8731
 │   ├── figures/                        ⭑ `programme.md` : pourquoi trois figures ne se regravent
@@ -369,7 +413,8 @@ Agentique/
     ├── figures/                        `dessine.py` + 5 SVG, chez leur document — comme celles du
     │                                     traité depuis le 21 août 2026
     └── build/build-pdf.sh              ⭑ les deux commandes de PDF ; ⚠ pas les `.html`, faute d'une
-                                          feuille de style versionnée
+                                          feuille de style versionnée — ✎ jusqu'au 15 septembre 2026 :
+                                          elle l'est depuis, `build/recension.css`, et le script les refait
 ```
 
 ☑ **Au commit `e1b1b9e` du 15 septembre 2026 : 589 fichiers, 79 704 921 octets**

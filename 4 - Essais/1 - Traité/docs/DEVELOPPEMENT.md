@@ -176,9 +176,16 @@ cargo run -p sim-agents --example diagnostic_conformite --release
 
 ## Avant de committer
 
-Il n'y a pas d'intégration continue dans ce dépôt — NF-13 et NF-16 nomment un
-mécanisme d'application qu'il ne contient pas. Ce que ces exigences obtiennent
-vient donc de ces **six** commandes, lancées à la main, dans cet ordre :
+☑ **Le dépôt a une intégration continue depuis le 15 septembre 2026** — le flux
+[`.github/workflows/appareil.yml`](../../../.github/workflows/appareil.yml), vert
+pour la première fois ce jour-là au commit `7ad9e44`, sous Linux et sous Windows.
+Il rejoue à chaque poussée **la première, la deuxième, la troisième et la
+cinquième** des commandes ci-dessous — `cargo test` sous un plancher de 470 tests,
+`check-traite.py` sans sa parité, faute des polices du poste d'auteur ; **pas**
+`cargo doc` ni `check-empaquetage.py`. ✎ *Jusque-là, ce paragraphe écrivait qu'il
+n'y en avait pas, et que NF-13 et NF-16 nommaient un mécanisme absent : vrai à sa
+date.* Ce que le flux ne rejoue pas reste donc à la main, et les **six** commandes
+se lancent avant de committer, dans cet ordre :
 
 ```bash
 cargo fmt --all --check

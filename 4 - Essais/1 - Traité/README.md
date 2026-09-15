@@ -2,6 +2,8 @@
 
 Simulateur déterministe d'essaims d'agents logiciels coordonnés par le milieu.
 
+> **Statut au 15 septembre 2026** — le *Traité sur les systèmes multiagents en essaim* (`Traité.pdf`, Vol. V) est **livrable**, un des sept que fixe la décision d'auteur [**D-18**](../../2%20-%20Compendium/PRD/PRD.md#d-18) ([registre](../../README.md#les-sept-livrables)) ; le simulateur est sa transposition, hors compte. Dépôt **rouvert** le même jour par [D-17](../../2%20-%20Compendium/PRD/PRD.md#d-17), re-clôture prévue vers le 8 décembre 2026.
+
 > **Où ce dossier vit.** Depuis le 14 août 2026, `stigmergie-lab` n'est plus un
 > dépôt autonome : c'est un dossier du dépôt
 > [Agentique](../../README.md), où il **héberge le traité qu'il transpose**.

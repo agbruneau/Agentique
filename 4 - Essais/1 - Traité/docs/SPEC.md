@@ -832,9 +832,16 @@ elle qui a laissé passer les deux renvois rustdoc cassés que le banc a trouvé
 la procédure était structurellement incapable de voir le seul défaut mécanique
 que le dépôt portait en cours.
 
-**Il n'y a pas d'intégration continue.** NF-13 et NF-16 nomment un mécanisme
-d'application que le dépôt ne contient pas : ce que ces exigences obtiennent vient
-de `cargo test --workspace` lancé à la main.
+**L'intégration continue existe depuis le 15 septembre 2026** : le flux
+[`.github/workflows/appareil.yml`](../../../.github/workflows/appareil.yml) rejoue
+`cargo fmt --all --check`, `cargo clippy` et `cargo test --workspace --release`, sous
+un plancher de 470 tests, à chaque poussée, sous Linux et sous Windows — vert pour
+la première fois au commit `7ad9e44`. NF-16 a donc le mécanisme qu'elle nomme ; **NF-13
+ne l'a toujours pas** : le flux ne lance aucune campagne de 1 000 graines, et
+l'agrégat de campagne n'a pas d'appelant. `cargo doc` reste à la main.
+✎ *Jusqu'à cette date, ce paragraphe écrivait « Il n'y a pas d'intégration
+continue », et ce que NF-13 et NF-16 obtenaient venait de `cargo test --workspace`
+lancé à la main.*
 
 ---
 

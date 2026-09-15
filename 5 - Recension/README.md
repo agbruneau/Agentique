@@ -1,5 +1,7 @@
 # Recension — l'état de l'art en services financiers
 
+> **Livrable** (Vol. VIII, planche comprise) — un des sept que fixe la décision d'auteur [**D-18**](../2%20-%20Compendium/PRD/PRD.md#d-18) du 15 septembre 2026 ([registre](../README.md#les-sept-livrables)) ; dépôt **rouvert** le même jour par [D-17](../2%20-%20Compendium/PRD/PRD.md#d-17), re-clôture prévue vers le 8 décembre 2026. *Le « constat de passe » et le bandeau de clôture plus bas restent à leur date.*
+
 Un document, son abrégé en cinq planches, et le graveur qui produit leurs figures.
 [`État de l'art — services financiers.md`](%C3%89tat%20de%20l%27art%20%E2%80%94%20services%20financiers.md)
 dresse l'état de l'interopérabilité et de l'orchestration agentiques **pour une coopérative
@@ -74,7 +76,7 @@ les figures des deux : corriger un fait se fait à un seul endroit.*
 > ses propres sources, porte son propre gel, sa propre chaîne de rendu, ses propres questions
 > ouvertes et ses propres réserves, exactement comme la veille et la revue. ⚠⚠ **Mais ce n'est pas
 > une instruction d'auteur** : le [PRD](../2%20-%20Compendium/PRD/PRD.md) ne porte **aucune décision**
-> sur ce document. ☑ *Le [README du dépôt](../README.md) porte le même constat à la même date — « les
+> sur ce document. ☑ *Ratifié le 15 septembre 2026 par la décision D-18, qui fixe le compte à sept.* ☑ *Le [README du dépôt](../README.md) porte le même constat à la même date — « les
 > huit livrables sous cinq dossiers numérotés » —, et les deux ont été écrits le même jour, ce qui
 > les rend concordants et non indépendants.* ⚠ **Les occurrences de « sept livrables » qui subsistent
 > ailleurs datent un état révolu** et ne sont pas des erreurs : *le dépôt écrit sa chronique en
@@ -85,6 +87,7 @@ les figures des deux : corriger un fait se fait à un seul endroit.*
 > ☑ **Recompté sur l'arbre le 20 août 2026** : **cinq dossiers numérotés**, **quinze `README.md`** —
 > *seize avec celui-ci, qui est le seul de ce dossier.* ⚠ La racine porte encore un fichier de
 > contenu, `NiveauMaturité.html`.
+> ✎ *Rouvert le 15 septembre 2026 par D-17 — voir le statut en tête ; ce bandeau reste à sa date.*
 > ⚠ **Le dépôt est clos, sa clôture portée au 1er septembre 2026** — décision d'auteur **D-13**,
 > prise le 8 août 2026
 > ([`2 - Compendium/PRD/PRD.md`](../2%20-%20Compendium/PRD/PRD.md) v0.17 §16). *Ce document est
@@ -101,8 +104,8 @@ les figures des deux : corriger un fait se fait à un seul endroit.*
 |---|---|---|
 | **Fichiers** | [`.md`](%C3%89tat%20de%20l%27art%20%E2%80%94%20services%20financiers.md) → [`.pdf`](%C3%89tat%20de%20l%27art%20%E2%80%94%20services%20financiers.pdf) · ⚠⚠ `.html` **détruit le 21 août 2026** | [`.md`](Cinq%20sch%C3%A9mas%20%E2%80%94%20%C3%A9tat%20de%20l%27art%20en%20services%20financiers.md) → [`.pdf`](Cinq%20sch%C3%A9mas%20%E2%80%94%20%C3%A9tat%20de%20l%27art%20en%20services%20financiers.pdf) · [`.html`](Cinq%20sch%C3%A9mas%20%E2%80%94%20%C3%A9tat%20de%20l%27art%20en%20services%20financiers.html) |
 | **Titre** | *État de l'art en services financiers* — sous-titre *Interopérabilité et Orchestration Agentiques*. ☑ **Les deux champs ont été échangés le 21 août 2026**, sur instruction d'auteur : le titre était jusque-là **identique mot pour mot** à ceux de la veille et de la revue, `/Title` du PDF compris. *Le radical commun reste — les trois documents sont d'une même série —, mais le titre les distingue seul* | *Cinq schémas — état de l'art en services financiers* — sous-titre *Interopérabilité et Orchestration Agentiques*. ☑ **Alignée sur la convention de série le 25 août 2026** : la planche est entrée au dépôt après l'échange du 21 et ne la suivait pas — secteur logé au sous-titre, nom de série absent, minuscules. *Le titre reprend celui du fichier ; le sous-titre redevient le nom de série.* ☑ *Le `/Title` du PDF recomposé lit `Cinq schémas — état de l'art en services financiers`, **apostrophe comprise** — la même chaîne qui la perd sur le document long la rend ici, ce qui écarte la chaîne comme cause* |
-| **Source** | **1 986 lignes, 604 051 octets**, relevé le 24 août 2026 — ☑ *la passe de conformité du 24 a corrigé cinq énoncés (+4 o.) : le décompte de jours qui sépare le gel de l'échéance E-21, **onze partout, douze en réalité** — 20 août au 1er septembre 2026 —, et le renvoi de la légende de la figure 5, §9.10 pour §9.12. 604 047 o. jusque-là.* ⚠ *Aucun mot ajouté : les 78 259 tiennent.* — ☑ *l'ajout du 24 est **un seul paragraphe**, au §14 : la portée exclue par ligne d'affaires (+2 l., +2 001 o.).* ⚠ *1 984 l. et 602 046 o. au 21 août ; 1 986 l. et 599 109 o. au gel du 20 ; la correction des notices a ajouté des octets à la bibliographie, et une **édition concurrente** a retiré deux lignes du résumé le même jour (voir « Les rendus », plus bas)* | 110 lignes, **11 277 octets**, relevé le 25 août 2026 — ☑ *la synchronisation des titres du 25 a retiré 126 o., à 110 l. inchangées — quatre lignes touchées : les deux champs du YAML et les deux renvois au titre du document long, qui le citaient sous sa forme d'avant l'échange du 21 ; 11 403 o. jusque-là.* ☑ *La passe de conformité du 24 avait corrigé cinq énoncés (+125 o.) ; 11 278 o. avant elle.* |
-| **Rendu** | **186 p.** — **15 sections numérotées** *(17 titres de rang 1, dont `Sommaire exécutif` et `Références` non numérotés)*, 77 de rang 2, 26 de rang 3 ; **312 références**, 11 tableaux, 5 figures, 14 questions ouvertes ; **78 259 mots de corps**, dont **53 514 hors bibliographie** — ☑ *le PDF a été **recomposé le 24 août 2026** par la même chaîne, **pandoc 3.10.2** et **typst 0.15.1** : la pagination passe de **185 à 186 p.** et la taille à **2 065 402 octets**, pour le seul paragraphe ajouté au §14 ; ☑ *recomposé une seconde fois le même jour, après la passe de conformité et la regravure de trois figures — **2 065 066 octets**, à pagination inchangée* ; 77 961 et 53 216 mots jusque-là.* ⚠⚠ *La recomposition **n'a pas rendu l'apostrophe** du `/Title` : le `dc:title` du PDF lit toujours `État de lart en services financiers` — le README du dépôt donnait la recomposition pour le remède, elle ne l'est pas.* ⚠ *☑ le PDF avait été **recomposé le 21 août 2026** par [`build/build-pdf.sh`](build/build-pdf.sh) sur la source corrigée, titre échangé compris, **à pagination inchangée** — 185 p. *Les pages et les mots portent donc le même état. Cette rangée a écrit le contraire, et elle avait tort deux fois : le PDF portait déjà la correction des notices, et il porte maintenant celle du titre.* 77 432 et 53 141 jusque-là* | **7 p.** — 6 titres de rang 1 *(cinq sections numérotées **à la main dans le titre**, faute de `section-numbering` au YAML, plus « Où lire la suite »)* ; 0 référence, 0 tableau, 5 figures, **1 324 mots** — ☑ *recomposé le 24 août 2026 après la passe de conformité, **à pagination inchangée** ; 1 304 mots jusque-là.* |
+| **Source** | **1 986 lignes, 604 051 octets**, relevé le 24 août 2026 — ✎ *2 001 l. et 603 377 o. le 15 septembre 2026, en LF, après les tâches T6.1 à T6.3 : quinze lignes de commentaire et de code à l'en-tête, trois `$` échappés, la fusion des notices [1] et [198]* — ☑ *la passe de conformité du 24 a corrigé cinq énoncés (+4 o.) : le décompte de jours qui sépare le gel de l'échéance E-21, **onze partout, douze en réalité** — 20 août au 1er septembre 2026 —, et le renvoi de la légende de la figure 5, §9.10 pour §9.12. 604 047 o. jusque-là.* ⚠ *Aucun mot ajouté : les 78 259 tiennent.* — ☑ *l'ajout du 24 est **un seul paragraphe**, au §14 : la portée exclue par ligne d'affaires (+2 l., +2 001 o.).* ⚠ *1 984 l. et 602 046 o. au 21 août ; 1 986 l. et 599 109 o. au gel du 20 ; la correction des notices a ajouté des octets à la bibliographie, et une **édition concurrente** a retiré deux lignes du résumé le même jour (voir « Les rendus », plus bas)* | 110 lignes, **11 277 octets**, relevé le 25 août 2026 — ☑ *la synchronisation des titres du 25 a retiré 126 o., à 110 l. inchangées — quatre lignes touchées : les deux champs du YAML et les deux renvois au titre du document long, qui le citaient sous sa forme d'avant l'échange du 21 ; 11 403 o. jusque-là.* ☑ *La passe de conformité du 24 avait corrigé cinq énoncés (+125 o.) ; 11 278 o. avant elle.* |
+| **Rendu** | **186 p.** — **15 sections numérotées** *(17 titres de rang 1, dont `Sommaire exécutif` et `Références` non numérotés)*, 77 de rang 2, 26 de rang 3 ; **312 références** *(311 documents distincts depuis le 15 septembre 2026 : le numéro [198], doublon de [1], est vacant et y renvoie)*, 11 tableaux, 5 figures, 14 questions ouvertes ; **78 259 mots de corps**, dont **53 514 hors bibliographie** — ☑ *le PDF a été **recomposé le 24 août 2026** par la même chaîne, **pandoc 3.10.2** et **typst 0.15.1** : la pagination passe de **185 à 186 p.** et la taille à **2 065 402 octets**, pour le seul paragraphe ajouté au §14 ; ☑ *recomposé une seconde fois le même jour, après la passe de conformité et la regravure de trois figures — **2 065 066 octets**, à pagination inchangée* ; 77 961 et 53 216 mots jusque-là.* ⚠⚠ *La recomposition **n'a pas rendu l'apostrophe** du `/Title` : le `dc:title` du PDF lit toujours `État de lart en services financiers` — le README du dépôt donnait la recomposition pour le remède, elle ne l'est pas.* ☑ *Rendue le 15 septembre 2026 (tâche T6.1) : l'en-tête redéfinit `content-to-string` comme celui de la note de veille SDLC, et le PDF recomposé ce jour-là par [`build/build-pdf.sh`](build/build-pdf.sh), **pandoc 3.11** et **typst 0.15.1**, lit `État de l’art en services financiers` — **186 p.**, pagination inchangée, **2 037 420 octets** —, notice [19] lisible (T6.2), doublon [1] / [198] fusionné (T6.3). Mots : +65, tous en bibliographie, mesurés par la même commande sur `HEAD` et sur l'arbre ; 53 514 hors bibliographie, inchangés.* ⚠ *☑ le PDF avait été **recomposé le 21 août 2026** par [`build/build-pdf.sh`](build/build-pdf.sh) sur la source corrigée, titre échangé compris, **à pagination inchangée** — 185 p. *Les pages et les mots portent donc le même état. Cette rangée a écrit le contraire, et elle avait tort deux fois : le PDF portait déjà la correction des notices, et il porte maintenant celle du titre.* 77 432 et 53 141 jusque-là* | **7 p.** — 6 titres de rang 1 *(cinq sections numérotées **à la main dans le titre**, faute de `section-numbering` au YAML, plus « Où lire la suite »)* ; 0 référence, 0 tableau, 5 figures, **1 324 mots** — ☑ *recomposé le 24 août 2026 après la passe de conformité, **à pagination inchangée** ; 1 304 mots jusque-là.* |
 | **Gel** | **20 août 2026** | **20 août 2026** |
 | **Périmètre** | Coopérative financière canadienne régie — 198 caisses, la Caisse Desjardins Ontario Credit Union Inc., la Fédération, ses filiales et le Fonds de sécurité | Le même, déclaré en chapeau |
 | **Thèse** | « Le débat porte sur la pile protocolaire ; dans une coopérative régie, la pile n'est pas ce qui décide » | « Rien ici n'est démontré, tout y est résumé » |
@@ -154,7 +157,20 @@ absence n'établit pas l'inexistence.*
 signe, et qui enchaîne le contrôle de résumé sur chaque rendu. ⚠ **Il ne couvre pas les deux `.html`,
 et le dit** : leur commande prend `--css <feuille>`, et **aucune feuille de style n'est versionnée** —
 celle de la planche ne survit qu'embarquée dans son `.html`. *Un rendu dont une entrée manque au dépôt
-ne se rejoue pas.*
+ne se rejoue pas.* ✎ *Vrai jusqu'au 15 septembre 2026.*
+
+☑ **Depuis le 15 septembre 2026, il couvre les `.html`** (tâche T6.4). La feuille est versionnée en
+[`build/recension.css`](build/recension.css), extraite à l'octet du `.html` de la planche — 4 801 o.,
+⚠ *sans saut de ligne final : en ajouter un change l'octet du rendu*. `bash build/build-pdf.sh html`
+refait le `.html` de la planche, identique à l'octet d'un rendu à l'autre ;
+`SUFFIXE=-essai bash build/build-pdf.sh html-etat` refait celui du document long **sans le rétablir au
+dossier** — sans `SUFFIXE`, la cible refuse —, et la feuille qu'il embarque est, à l'octet, celle du
+`.html` détruit le 21 août (`git show c216cb5^`). *Le `.html` de la planche a été rendu à nouveau ce
+jour-là, par Pandoc 3.11 : le versionné, rendu par 3.10.2, différait du rendu de sa source en quatre
+points — la mention `generator` ; une règle `.display.math` que Pandoc 3.11 ne pose plus ; deux
+passages non repliés, ceux dont la source a changé le 25 août, trace probable d'une retouche après
+rendu, non établie ; et la figure 2, embarquée à 10 225 o. quand `figures/f2-trois-surveillants.svg`
+en fait 10 206.*
 
 ```bash
 bash build/build-pdf.sh            # les deux PDF
@@ -236,7 +252,7 @@ tout.* ☑ **Le HTML de la planche se rejoue à l'octet près** (même SHA-256) 
 long se rejouait aussi — il a été détruit le 21 août, et la vérification ne porte plus que sur un
 HTML*, une fois les deux réglages ci-dessous fournis.
 
-⚠⚠ **`<feuille>` n'est versionnée nulle part au dépôt.** La feuille de style de **4 801 octets** qui
+⚠⚠ **`<feuille>` n'est versionnée nulle part au dépôt.** ✎ *Jusqu'au 15 septembre 2026 : elle l'est depuis, en [`build/recension.css`](build/recension.css).* La feuille de style de **4 801 octets** qui
 habillait les deux HTML **n'existe qu'inlinée dans celui qui reste, le HTML de la planche** —
 `--embed-resources` l'y a fondue. ⚠ *Ce README a écrit **4 797 octets** jusqu'au 20 août 2026, et
 4 797 est un compte de **caractères** : la feuille porte **quatre « é »**, qui font chacun deux octets
@@ -248,7 +264,7 @@ le fichier qu'on s'apprête à écraser. » L'un des deux a été **détruit** l
 est intacte* : ☑ **comparées ligne à ligne, celle de la planche et celle du HTML détruit ne diffèrent
 d'aucune ligne** — *l'écart de huit octets entre 4 801 et 4 809 tient aux fins de ligne, non au style.*
 ⚠ **Ce qui reste vrai** : *la feuille n'est toujours dans aucun fichier propre, et la commande HTML
-n'est toujours pas rejouable depuis le dépôt seul.* Elle l'a été le 20 août en **réextrayant la
+n'est toujours pas rejouable depuis le dépôt seul.* ✎ *— jusqu'au 15 septembre 2026 ; voir « Composer les rendus ».* Elle l'a été le 20 août en **réextrayant la
 feuille d'un HTML livré**, ce qui prouve la forme de la commande et rien de plus. ⚠ *Le jour où la
 planche devra être recomposée, la seule copie de sa feuille sera de nouveau dans le fichier qu'on
 s'apprête à écraser — **et il n'y aura plus de second exemplaire**.*
@@ -270,6 +286,8 @@ mathématique, que le rendu à math désactivée n'embarque pas — et sa taille
 du rendu à math **activée** (2 043 984 contre 2 013 159). ⚠⚠ **Le défaut n'est pas corrigé, et il a
 changé de portée le 21 août 2026** : *il n'est plus rattrapable par la lecture du HTML — le PDF est
 désormais le seul rendu du document, et la notice [19] y est brouillée sur toute sa longueur.*
+☑ *Corrigé le 15 septembre 2026 (tâche T6.2) : les trois `$` de la notice sont échappés ; la source ne
+compose plus en mathématiques que `$N \times M$`, et la notice se lit en clair au PDF recomposé.*
 ⚠ *Les tailles ci-dessus sont celles du PDF du 20 août ; celui qui est au dossier a été recomposé
 depuis, et fait 2 060 704 octets.*
 
@@ -427,6 +445,9 @@ nu, là où ses dix voisins portent une légende.*
 │                                     .pdf          185 p., 312 réf. — recomposé le 21 hors passe, SANS ces notices
 │                                     .html         ⚠⚠⚠ DÉTRUIT le 21 août 2026 — décision d'auteur ; reste dans git
 ├── Cinq schémas — … .md / .pdf / .html             110 l. — 7 p., l'abrégé en cinq planches
+├── build/
+│   ├── build-pdf.sh                                les deux PDF et, depuis le 15 sept. 2026, les .html
+│   └── recension.css                               la feuille des .html, 4 801 o. (15 sept. 2026)
 └── figures/
     ├── dessine.py                                  699 l. — le graveur, W = 468, stdlib seule
     └── f1..f5 *.svg                                générées ; ne pas retoucher à la main
@@ -447,17 +468,20 @@ nom, pas une reprise de contenu.*
 ## Réserves
 
 - ⚠⚠ **Le PDF compose en mathématiques deux passages que la source donne en texte**, dont **la notice
-  [19] de la bibliographie, brouillée sur toute sa longueur**. *Constaté, non corrigé.* ⚠⚠ **Le HTML
+  [19] de la bibliographie, brouillée sur toute sa longueur**. *Constaté, non corrigé* — ☑ *jusqu'au
+  15 septembre 2026, où ses `$` sont échappés et le PDF recomposé (T6.2).* ⚠⚠ **Le HTML
   ayant été détruit le 21 août 2026, le défaut n'a plus de rendu qui le rattrape** : *le seul rendu
   du document long est celui qui porte le défaut.*
 - ⚠⚠ **La feuille de style n'existe qu'à l'intérieur du seul HTML qui reste**, celui de la planche.
   Rien au dépôt ne la porte en fichier. *Le rendu HTML n'est pas reproductible depuis le dépôt seul,
   et il ne reste plus qu'un exemplaire de la feuille au lieu de deux.* ☑ *La destruction du 21 août
-  n'en a rien coûté : les deux copies ne différaient d'aucune ligne.*
+  n'en a rien coûté : les deux copies ne différaient d'aucune ligne.* ☑ *Levée le 15 septembre 2026 :
+  la feuille est versionnée en `build/recension.css`, et les deux `.html` se refont depuis le dépôt (T6.4).*
 - ☑ **Les six auto-citations renvoient à ce dépôt-ci depuis le 21 août 2026** — chemin vérifié pièce
   par pièce. ⚠ **Ce qui reste** : *le doublon **[1]** / **[198]**, deux numéros pour un seul document,
   **déclaré et non résorbé** — un lecteur qui compte les sources de ce document en comptera une de
-  trop s'il ne lit pas les deux notices ;* et l'adresse `agbruneau/Prospection`, conservée en second
+  trop s'il ne lit pas les deux notices ;* ☑ *fusionné le 15 septembre 2026 (T6.3) : [198] est vacant et
+  renvoie à [1], qui porte ce qu'elle portait, et ses huit renvois actifs pointent [1] ;* et l'adresse `agbruneau/Prospection`, conservée en second
   localisateur dans quatre notices, **que rien n'a vérifié**.
 - ☑ **Le `.pdf` du document long porte bien la correction des notices du 21 août** — *établi en
   rejouant la composition le jour même : 185 pages et 2 060 704 octets, la taille du fichier livré à

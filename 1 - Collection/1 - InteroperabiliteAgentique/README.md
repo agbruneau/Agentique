@@ -1,7 +1,9 @@
 # Volume I — Interopérabilité agentique en entreprise dans le domaine des services financiers
 
-📖 **Lire :** [`Monographie.pdf`](Monographie.pdf) (569 p.) dans ce dossier. *(Le volume n'a plus de
+📖 **Lire :** [`Monographie.pdf`](Monographie.pdf) (570 p.) dans ce dossier. *(569 p. jusqu'au 15 septembre 2026, recomposé ce jour-là sous Typst 0.15.1, source inchangée.)* *(Le volume n'a plus de
 page de présentation ni de publication GitHub Pages — voir « Structure du dossier ».)*
+
+> **Livrable** — un des sept que fixe la décision d'auteur [**D-18**](../../2%20-%20Compendium/PRD/PRD.md#d-18) du 15 septembre 2026 ([registre](../../README.md#les-sept-livrables)) ; dépôt **rouvert** le même jour par [D-17](../../2%20-%20Compendium/PRD/PRD.md#d-17), re-clôture prévue vers le 8 décembre 2026. *Le bandeau de clôture qui suit reste à sa date.*
 
 > ⚠ **Dépôt clos et final — clôture portée au 1er septembre 2026** — décision d'auteur **D-13**, prise le 8 août 2026
 > ([`2 - Compendium/PRD/PRD.md`](../../2%20-%20Compendium/PRD/PRD.md) v0.17 §16). Aucune passe
@@ -88,9 +90,10 @@ Chapitres/
   Chapitre N - Bibliographie - {Sujet}.md  références vérifiées (7)
   Annexe B - Architecture de Solutions.md  ADS (épine IBM) — corps de l'Annexe B
   TOC.md                                   table des matières commentée (v1.0, rétro-documentation)
-Monographie.md / .pdf                      assemblage : 7 chapitres + liminaires + Annexes A et B (569 p.)
+Monographie.md / .pdf                      assemblage : 7 chapitres + liminaires + Annexes A et B (570 p.)
 build/                                     pipeline de rendu PDF (Mermaid → Pandoc → Typst)
                                            build-pdf.sh, fesp.template, inject-pagination.py
+Python/                                    check-vol1.py et son harnais check-vol1-mutations.py (15 sept. 2026)
 LICENSE                                    seul `LICENSE` du dépôt — il ne vaut que pour ce volume
 .gitignore
 ```
@@ -111,11 +114,15 @@ Le script prend un `.md` source en argument (défaut `Monographie.md`, désormai
 
 **Prérequis :** Pandoc ≥ 3.1.7, Typst ≥ 0.12, `python3` + `pypdf`, polices Liberation Sans et DejaVu Sans. Pour le rendu des diagrammes : Node ≥ 18 + [`@mermaid-js/mermaid-cli`](https://github.com/mermaid-js/mermaid-cli) (`mmdc`) et un Chromium. Le script exporte lui-même `PYTHONUTF8=1` (nécessaire sous Windows).
 
+☑ **Rejouée le 15 septembre 2026** (tâche T6.6 du plan d'exécution) avec Pandoc 3.11, Typst 0.15.1 et mermaid-cli 11.16.0, sur `Monographie.md` inchangée : le PDF porte `Creator: Typst 0.15.1` — `Typst 0.15.0` jusque-là — et **570 p. au lieu de 569**. Les 378 premières pages rendent le même texte ; la première qui diffère est la p. 379 (folio 364), dans la bibliographie du chapitre 1, où une page porte une notice de moins. *La source n'ayant pas bougé, l'écart vient de la chaîne ; lequel de ses maillons, cela n'est pas isolé.* Deux rendus successifs sont identiques hors horodatage.
+
+☑ **Le volume a son contrôle depuis le même jour** — `python Python/check-vol1.py`, depuis ce dossier : **[1]** la pagination du PDF contre celle que publie la ligne « Lire » ci-dessus ; **[2]** l'appariement des sept bibliographies avec le corps, de la notice vers la citation — 1 199 notices, dont 45 déclarées « contexte non cité » et 55 que ses clés ne retrouvent pas, gelées dans son registre ; **[3]** la parité du PDF hors horodatage, qui refait le rendu et exige la chaîne complète, polices du poste d'auteur comprises (NON MESURÉ sans elle, et donc en intégration continue). Son harnais : `python Python/check-vol1-mutations.py`.
+
 La chaîne de la veille (depuis [`3 - Veille/`](../../3%20-%20Veille/) — *la racine du dépôt jusqu'au 15 août 2026, `4 - Veille/` jusqu'au 5 septembre*) et celle du volume II sont **distinctes** de celle-ci : voir le [README du dépôt](../../README.md).
 
 ## État
 
-**Rédaction terminée.** Les sept chapitres sont rédigés et assemblés ; l'ADS, intégrée en Annexe B, est rendue dans `Monographie.pdf` (569 p., vérifié le 22 juillet 2026, re-mesuré le 29 juillet et inchangé). ⚠ **Il n'y a plus de travail courant** : la finalisation qu'annonçait ce paragraphe — corrections, vérification adverse des citations, régénération du PDF — **ne sera pas conduite**, le dépôt étant clos depuis le 8 août 2026 (D-13, bandeau en tête). *Ce qui restait à faire devient un manque daté, non une conformité.*
+**Rédaction terminée.** Les sept chapitres sont rédigés et assemblés ; l'ADS, intégrée en Annexe B, est rendue dans `Monographie.pdf` (569 p., vérifié le 22 juillet 2026, re-mesuré le 29 juillet et inchangé ; ✎ *570 p. depuis sa recomposition du 15 septembre 2026 — voir « Construire les PDF »*). ⚠ **Il n'y a plus de travail courant** : la finalisation qu'annonçait ce paragraphe — corrections, vérification adverse des citations, régénération du PDF — **ne sera pas conduite**, le dépôt étant clos depuis le 8 août 2026 (D-13, bandeau en tête). *Ce qui restait à faire devient un manque daté, non une conformité.*
 
 **Vérifié par passes adverses successives :**
 

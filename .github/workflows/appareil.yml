@@ -10,8 +10,9 @@
 #   simulateur — cargo test / clippy / fmt du simulateur du traité.
 #
 # Ce qui NE tourne PAS ici, et pourquoi, est dit à l'étape la plus proche : les chaînes de
-# composition Pandoc → Typst des volumes et la parité de Traité.pdf (polices du poste
-# d'auteur), l'empaquetage WASM (check-empaquetage.py, wasm-bindgen), les bancs Node.
+# composition Pandoc → Typst des volumes et la parité de Traité.pdf et du Monographie.pdf du
+# Vol. I (polices du poste d'auteur), l'empaquetage WASM (check-empaquetage.py,
+# wasm-bindgen), les bancs Node.
 
 name: Appareil
 
@@ -107,9 +108,24 @@ jobs:
       - name: check-revue.py
         working-directory: 3 - Veille
         run: python Python/check-revue.py
+      # Note de synthèse (T7.2) : le contrôle, puis son harnais. Pandoc leur est donné à eux
+      # seuls, comme à verifier-piece.py : la parité [2] recompose la note par Pandoc et Typst,
+      # polices embarquées et date de création fixées par le script, et cinq mutations en ont
+      # besoin. Le contrôle appelle lui-même check-resume.py sur le PDF de la note ([7]).
+      - name: check-synthese.py et check-synthese-mutations.py
+        working-directory: 3 - Veille
+        run: |
+          PATH="$PANDOC_DIR:$PATH" python Python/check-synthese.py
+          PATH="$PANDOC_DIR:$PATH" python Python/check-synthese-mutations.py
       - name: check-traite.py
         working-directory: 4 - Essais/1 - Traité
         run: python Python/check-traite.py
+      # Pagination et appariement des sept bibliographies ; sa parité [3] exige Pandoc, Typst,
+      # mermaid-cli, un Chromium et les polices du poste d'auteur (Arial, Segoe UI Symbol, Corbel) :
+      # sans Pandoc ni mmdc dans le PATH, elle se déclare « NON MESURÉ ». Rejouable à la main.
+      - name: check-vol1.py
+        working-directory: 1 - Collection/1 - InteroperabiliteAgentique
+        run: python Python/check-vol1.py
       - name: check-compendium.py
         working-directory: 2 - Compendium
         run: python PRD/check-compendium.py
@@ -189,6 +205,10 @@ jobs:
         env:
           TYPST_IGNORE_SYSTEM_FONTS: "true"
         run: python check-article-mutations.py
+      # M4 et M4b, les mutations de parité, sont sautées ici pour la raison dite à check-vol1.py.
+      - name: check-vol1-mutations.py
+        working-directory: 1 - Collection/1 - InteroperabiliteAgentique
+        run: python Python/check-vol1-mutations.py
 
       # ---------------------------------------------------------- c. la chaîne se refait-elle ?
       # Chaque générateur réécrit ce qu'il produit ; la garde qui suit exige que rien n'ait

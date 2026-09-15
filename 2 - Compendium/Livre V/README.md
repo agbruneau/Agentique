@@ -1,5 +1,7 @@
 # Livre V — Livrer et clore : l'agent comme livrable logiciel, horizon et frontière
 
+> **Archive de travail, hors compte des livrables** — statut du Vol. IV fixé le 15 septembre 2026 par la décision d'auteur [**D-18**](../PRD/PRD.md#d-18) ; dépôt rouvert le même jour par [D-17](../PRD/PRD.md#d-17), re-clôture prévue vers le 8 décembre 2026. *La section « Le dépôt est CLOS » qui suit reste à sa date.*
+
 Répertoire de rédaction du **Livre V** du compendium *Interopérabilité et Orchestration en Entreprise Agentique* (Vol. IV) — le **dernier**
 du plan. Il ne porte aucune décision, aucun socle et aucun garde-fou propre : la spécification de
 contenu est le [`PRD/TOC.md`](../PRD/TOC.md) — ⚠ **les quatre pièces citent leurs thèses depuis la
