@@ -83,7 +83,7 @@ badge n'a pas de verdict à rendre, et chaque sortie de cette page est celle du 
 | `python PRD/check-compendium.py` | `2 - Compendium/` | **0** | 50 pièces, **P1-P10** ; **5 rapports déclaratifs** |
 | `python PRD/check-toc.py` | `2 - Compendium/` | **0** | **C1-C16** |
 | `python PRD/check-sieges.py` | `2 - Compendium/` | **0** | 26 sièges sur 50 pièces, S1-S5 |
-| `bash PRD/decompte.sh --verifier` | `2 - Compendium/` | **0** | Vol. I 225 258 mots (commande de référence) et 233 257 (`wc -w`) ; Vol. II 93 239, 29 pièces ; Vol. III 160 890, 34 pièces ; agrégat 479 387 ; hors du `wc` de Git pour Windows, en `LC_ALL=C` (§ 2) |
+| `bash PRD/decompte.sh --verifier` | `2 - Compendium/` | **0** | Vol. I 225 258 mots (commande de référence) et 233 257 (`wc -w`) ; Vol. II 93 939, 29 pièces (93 239 avant l'annexe A § A.9 du 15 septembre 2026) ; Vol. III 160 890, 34 pièces ; agrégat 479 387 ; hors du `wc` de Git pour Windows, en `LC_ALL=C` (§ 2) |
 | `python PRD/reporter-volumetrie.py --verifier` | `2 - Compendium/` | **0** | 333 416 mots de corps ; les trois sites qui publient la mesure concordent ; sur ce poste, le `bash` qu'il lance est celui de WSL (§ 2) |
 | `python build/verifier-piece.py` | `2 - Compendium/` | **0** | les 50 rendus `.html` sont ceux que les `.md` produisent : parité stricte, purge de l'appareil, figures. Il re-rend chaque pièce par Pandoc : sans Pandoc dans le `PATH`, il sort 1 sur `FileNotFoundError` |
 | `python build/assemble-bibliographie.py --verifier` | `2 - Compendium/` | **0** | 1 154 entrées uniques, 109 doublons fondus |

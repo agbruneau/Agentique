@@ -87,9 +87,15 @@ verifier() {
 	# en faire sa *thèse* : trois jetons sont tombés du corps. La correction est
 	# éditoriale et juste ; c'est l'ancre qui était périmée, non la prose. Le
 	# chiffre d'avant renommage reste lisible à `377f8ca`.
+	#
+	# ⚠ Vol. II REDATÉ le 15 septembre 2026 : 93 239 → 93 939. Le commit `5cdb5bb`
+	# (tâche T5.4 du plan d'exécution) a ajouté au Vol. II l'annexe A § A.9 et une
+	# note d'avant-propos, qui expliquent le passage de [A] à [A-i] et l'entrée de
+	# [H] : +700 jetons, ajout voulu. La CI l'a vu au run `34993444546`. Le chiffre
+	# d'avant reste lisible à `7ad9e44`.
 	controle "Vol. I  — Monographie.md, commande de référence" "$vol1" 225258 || ecarts=1
 	controle "Vol. I  — Monographie.md, wc -w brut (chiffre publié)" "$brut1" 233257 || ecarts=1
-	controle "Vol. II — 29 pièces, commande de référence" "$vol2" 93239 || ecarts=1
+	controle "Vol. II — 29 pièces, commande de référence" "$vol2" 93939 || ecarts=1
 	controle "Vol. III— 34 pièces, commande de référence" "$vol3" 160890 || ecarts=1
 
 	total=$((vol1 + vol2 + vol3))
