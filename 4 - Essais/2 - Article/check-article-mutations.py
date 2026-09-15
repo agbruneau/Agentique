@@ -74,6 +74,20 @@ def m2b_horodatage_seul(tmp):
     p.write_bytes(b2)
 
 
+def m2c_horodatage_utc(tmp):
+    """[2] — *ne doit pas voir* : les positions du xref décalées. Un rendu sous fuseau UTC
+    écrit « Z » au lieu de « -04'00 » ; la date est neutralisée (M2b), mais tout ce qui la
+    suit se décale de cinq octets — c'est ce qui a fait échouer le premier passage de la CI,
+    le 15 septembre 2026. On décale les positions sans toucher la longueur du fichier, que
+    le cardinal [4] publie."""
+    p = tmp / "article-hpc-qpu.pdf"
+    b = p.read_bytes()
+    b2 = re.sub(rb"(?m)^(\d{10})( \d{5} n)", lambda x: b"%010d" % (int(x.group(1)) - 5) + x.group(2), b)
+    b2 = re.sub(rb"startxref(\s+)(\d+)", lambda x: b"startxref%s%d" % (x.group(1), int(x.group(2)) - 5), b2)
+    assert b2 != b and len(b2) == len(b), "aucune position du xref à décaler"
+    p.write_bytes(b2)
+
+
 def m3_renvoi_mort(tmp):
     """[3] — un « § » vers une section qui n'existe pas."""
     remplacer(tmp / "article-hpc-qpu.typ", "§ 7.5", "§ 7.9")
@@ -94,6 +108,7 @@ MUTATIONS = [
     ("M1b [1] citation jamais définie", m1b_cle_pendante, "[1]", "echec"),
     ("M2  [2] source reprise, PDF non recomposé", m2_rendu_perime, "[2]", "echec"),
     ("M2b [2] seul l'horodatage du PDF bouge", m2b_horodatage_seul, "[2]", "muet"),
+    ("M2c [2] rendu sous fuseau UTC, xref décalé", m2c_horodatage_utc, "[2]", "muet"),
     ("M3  [3] renvoi « § » vers une section absente", m3_renvoi_mort, "[3]", "echec"),
     ("M4  [4] cardinal du README faux", m4_cardinal_faux, "[4]", "echec"),
     ("M5  [5] score imprimé divergent du script", m5_score_divergent, "[5]", "echec"),

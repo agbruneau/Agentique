@@ -272,6 +272,9 @@ jobs:
         os: [ubuntu-latest, windows-latest]
     defaults:
       run:
+        # Le `defaults.run` d'une tâche remplace celui du flux : sans `shell` ici, Windows
+        # repasse à PowerShell (premier passage de la CI, 15 septembre 2026).
+        shell: bash
         working-directory: 4 - Essais/1 - Traité
     env:
       # rust-toolchain.toml fixe stable-x86_64-pc-windows-gnu : c'est le choix du poste

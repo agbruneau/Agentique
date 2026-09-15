@@ -257,6 +257,11 @@ VOLATILS = [
     (rb'/ID\s*\[[^\]]*\]', rb'/ID[]'),
     (rb'<xmp:(ModifyDate|CreateDate|MetadataDate)>[^<]*</xmp:\1>', rb'<xmp:\1></xmp:\1>'),
     (rb'<xmpMM:InstanceID>[^<]*</xmpMM:InstanceID>', rb'<xmpMM:InstanceID></xmpMM:InstanceID>'),
+    # Ajout du 15 septembre 2026 : les positions du xref et `startxref`, que decale une
+    # date d'une autre longueur (fuseau UTC « Z » contre « -04'00 ») — meme defaut que
+    # check-article.py, vu au premier passage de la CI.
+    (rb'(?m)^\d{10} (\d{5} [nf])', rb'0000000000 \1'),
+    (rb'startxref\s+\d+', rb'startxref'),
 ]
 
 

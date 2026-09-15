@@ -87,6 +87,12 @@ VOLATILS = [
     # 1er septembre n'avait pas relevé — il comptait « cinq endroits », et le
     # premier passage de ce contrôle a échoué sur lui, à 51 octets de la fin.
     (rb"/ID\s*\[[^\]]*\]", rb"/ID[]"),
+    # ⚠ Ajout du 15 septembre 2026 — les POSITIONS du xref et `startxref`. Ce ne sont pas
+    # des champs, mais leur conséquence : une date écrite sous un fuseau UTC (« Z ») est
+    # plus courte que « -04'00 », et tout ce qui la suit se décale. Le premier passage de
+    # la CI y a échoué sur les deux systèmes ; la mutation M2c le garde.
+    (rb"(?m)^\d{10} (\d{5} [nf])", rb"0000000000 \1"),
+    (rb"startxref\s+\d+", rb"startxref"),
 ]
 
 
