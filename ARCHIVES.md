@@ -33,7 +33,7 @@ Cinq noms ont désigné plusieurs pièces. **Un renvoi par le nom seul ne dit pa
 
 | Nom | Pièces distinctes, de la plus ancienne à la plus récente | Empreintes |
 |---|---|---|
-| `gauntlet-log.md` (racine) | [audit du compendium, 30 juillet](#journal-compendium-2026-07-30) (sorti `377f8ca`) · [refonte de la veille, 8 août](#journal-veille-2026-08-08) (`79ef5d4`) · [audit du traité, 10 août](#journal-traite-2026-08-10) (`57e1afd`) · [documentation après réorganisation, 5 septembre](#journal-documentation-2026-09-05) (`79ecdcf`) · **journal de la boucle M1–M3 du 15 septembre 2026, non suivi par git au moment de ce registre** | `f70ebf715f00` · `1b82726ff00a` · `fefe09240108` · `1e2b5e7d6f16` · *aucune : pas dans l'index* |
+| `gauntlet-log.md` (racine) | [audit du compendium, 30 juillet](#journal-compendium-2026-07-30) (sorti `377f8ca`) · [refonte de la veille, 8 août](#journal-veille-2026-08-08) (`79ef5d4`) · [audit du traité, 10 août](#journal-traite-2026-08-10) (`57e1afd`) · [documentation après réorganisation, 5 septembre](#journal-documentation-2026-09-05) (`79ecdcf`) · **journal de la boucle M1–M3 du 15 septembre 2026, non suivi par git au moment de ce registre** ✎ *entré le jour même au commit `78ebf9c`* | `f70ebf715f00` · `1b82726ff00a` · `fefe09240108` · `1e2b5e7d6f16` · *aucune : pas dans l'index* ✎ `843aa55839cb` au commit `78ebf9c` |
 | `Évaluation académique.md` (racine) | [évaluation du 5 septembre 2026](#evaluation-2026-09-05), 78 / 100, entrée `daacbec`, sortie `79ecdcf` · évaluation du 15 septembre 2026, 75,5 / 100, entrée `e1b1b9e`, **présente** | `17516a452606` · `305dbfc03b81` |
 | `2 - Compendium/audit.md` | [audit de couverture, 24 juillet](#compendium-audit-2026-07-24) (sorti `f6183bf`) · [audit des cinq Livres, 28 juillet](#compendium-audit-2026-07-28) (`982ef3a`) · [audit intégral, 2 septembre](#compendium-audit-2026-09-02) (`60e1b99`) | `f4940a830000` · `812fb1546c08` · `908ef40ff340` |
 | `audit.md` du traité | [audit intégral du 2 septembre](#traite-audit-2026-09-02), `3 - Traité/audit.md`, sorti `99b3ecb` · audit du code Rust du 4 septembre, entré `c0bb8b2`, **présent** sous `4 - Essais/1 - Traité/audit.md` | `916dd314baf4` · `03cbefb29570` |
@@ -42,7 +42,7 @@ Cinq noms ont désigné plusieurs pièces. **Un renvoi par le nom seul ne dit pa
 ⚠ **Le `gauntlet-log.md` de la racine au 15 septembre 2026 n'est aucun des quatre journaux
 supprimés.** Il est écrit par l'orchestrateur de la boucle bâtisseur / critique qui produit ce
 registre ; `git ls-files gauntlet-log.md` ne rend rien, et `git log -- gauntlet-log.md` s'arrête au
-commit `79ecdcf`. S'il entre au dépôt, ce sera une cinquième pièce sous le même nom.
+commit `79ecdcf`. S'il entre au dépôt, ce sera une cinquième pièce sous le même nom. ✎ *Il y est entré le jour même, au commit `78ebf9c`.*
 
 ⚠ **Un renvoi à `Évaluation académique.md` écrit le 5 septembre 2026 vise la pièce du 5, à
 78 / 100.** Mort du 5 au 15 septembre, le même lien résout depuis vers l'évaluation du 15 : la cible
@@ -125,7 +125,7 @@ la commande les relit pour vérification, **elle ne donne aucun droit de redistr
 
 | Pièce | Nature | Retrait | Relire | Empreinte |
 |---|---|---|---|---|
-| <a id="recension-sorties-de-boucle"></a>`5 - Recension/Cinq schémas — état de l'art en services financiers-critique.pdf`, `…-essai.pdf` et `5 - Recension/État de l'art — services financiers-critique.pdf` | les rendus de travail de la boucle bâtisseur / critique du 5 septembre 2026, [journal ci-dessus](#journal-documentation-2026-09-05) ; 221 816, 221 816 et 2 065 255 o. Versionnés par `79ecdcf`, que rien ne décrivait (évaluation du 15 septembre, §8.2) | décision d'auteur DA-5 (a), exécutée le 15 septembre 2026 ; **retrait non encore commité à la rédaction de ce registre** | `git show 79ecdcf:"5 - Recension/Cinq schémas — état de l'art en services financiers-critique.pdf" > cinq-critique.pdf` · `git show 79ecdcf:"5 - Recension/Cinq schémas — état de l'art en services financiers-essai.pdf" > essai.pdf` · `git show 79ecdcf:"5 - Recension/État de l'art — services financiers-critique.pdf" > critique.pdf` | `ffd131e2af73` · `e46a64945e38` · `2f634228fba6` |
+| <a id="recension-sorties-de-boucle"></a>`5 - Recension/Cinq schémas — état de l'art en services financiers-critique.pdf`, `…-essai.pdf` et `5 - Recension/État de l'art — services financiers-critique.pdf` | les rendus de travail de la boucle bâtisseur / critique du 5 septembre 2026, [journal ci-dessus](#journal-documentation-2026-09-05) ; 221 816, 221 816 et 2 065 255 o. Versionnés par `79ecdcf`, que rien ne décrivait (évaluation du 15 septembre, §8.2) | décision d'auteur DA-5 (a), exécutée le 15 septembre 2026 ; **retrait non encore commité à la rédaction de ce registre** ; ✎ commité le jour même, au commit `78ebf9c` | `git show 79ecdcf:"5 - Recension/Cinq schémas — état de l'art en services financiers-critique.pdf" > cinq-critique.pdf` · `git show 79ecdcf:"5 - Recension/Cinq schémas — état de l'art en services financiers-essai.pdf" > essai.pdf` · `git show 79ecdcf:"5 - Recension/État de l'art — services financiers-critique.pdf" > critique.pdf` | `ffd131e2af73` · `e46a64945e38` · `2f634228fba6` |
 
 ## 7. Ce qui a quitté un chemin sans quitter le dépôt
 

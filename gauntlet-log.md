@@ -58,3 +58,9 @@ renvois `audit.md`). Édition par remplacement exact seulement.
 
 ### Bilan du tour 1
 Trois victoires à l'aveugle sur trois ; la boucle sort par victoire, sans second tour. Les trois écarts retenus convergent : **rien n'est commité ni poussé**, donc rien n'existe pour un tiers qui clone, et T1.1 / T1.5 ne se ferment qu'au premier passage réel du flux. Agents consommés : 6 sur 12, plus la passe de lissage.
+
+## Passe de lissage
+- Coutures corrigées : `/Author` de l'article et `bancs/` (12 fichiers suivis) par incises datées dans `README.md` ; `ARCHIVES.md:117,128` (commit `696bcac`, ordre des empreintes, relecture manquante) ; D-17 dans l'en-tête du PRD et du TOC du compendium ; défauts déclarés par M1 portés à `APPAREIL.md` ; mentions « non commité » périmées après `78ebf9c` (commit de l'auteur, 10 h 02).
+- Signalé sans correction : premier passage de la CI (run `34978980074`) en échec — parité de `check-article.py` sous Linux et Windows ; `cargo test` sous PowerShell côté Windows ; `LICENSE:44-45` porte « avant » ; bandeaux « clos et final » sans D-17 dans cinq `README` de volumes ; « pas d'intégration continue » au présent dans trois documents du traité ; `gauntlet-log.md` absent de la carte du `README`.
+- Contrôles rejoués sur `78ebf9c` + lissage : `check-renvois.py` (2 079 renvois, 0 mort), son harnais (16), `check-compendium.py`, `check-toc.py`, `check-sieges.py`, `genere.py --verifier`, deux harnais, `check-resume.py` × 10 — tous 0.
+- Coût : 344 k jetons, 85 appels, 24 min. Total de la boucle : 7 agents sur 12, ≈ 2,18 M jetons.

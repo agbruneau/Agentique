@@ -389,8 +389,8 @@ décisions](docs/decisions.md). Les principales :
 - **Le contrôleur d'élasticité ne converge pas** aux valeurs documentées.
 - **Il n'y a pas d'intégration continue** : NF-13 et NF-16 nomment un mécanisme
   d'application que le dépôt ne contient pas. ✎ *Au 15 septembre 2026, un flux
-  [`appareil.yml`](../../.github/workflows/appareil.yml) est écrit pour rejouer `cargo test`,
-  `clippy` et `fmt` sous Linux et Windows ; il n'a jamais tourné ([`APPAREIL.md`](../../APPAREIL.md) § 2).*
+  `.github/workflows/appareil.yml` est écrit pour rejouer `cargo test`,
+  `clippy` et `fmt` sous Linux et Windows ; il n'a jamais tourné (`APPAREIL.md` de la racine, § 2).*
 
 La liste vivante est dans le code — `sim_agents::hors_perimetre()`,
 `sim_milieu::hors_perimetre()`, `ModeleFaute::hors_modele()` — et s'affiche dans

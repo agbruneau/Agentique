@@ -65,7 +65,7 @@ dossier.
 La tâche Simulateur prend la chaîne `stable` de l'hôte — `msvc` sous Windows, `gnu` sous Linux —, quand le § 5 a tourné sur la chaîne `stable-x86_64-pc-windows-gnu` que fixe `rust-toolchain.toml` : ni l'une ni l'autre n'est encore éprouvée par le flux (tâche T1.1 du plan).
 
 **Au 15 septembre 2026, le flux n'a jamais tourné** : aucun commit qui le porte n'est poussé, le
-badge n'a pas de verdict à rendre, et chaque sortie de cette page est celle du poste de l'auteur.
+badge n'a pas de verdict à rendre, et chaque sortie de cette page est celle du poste de l'auteur. ✎ *À l'heure du relevé ; le flux a été poussé le jour même à 10 h 02, au commit `78ebf9c`, et le verdict de son premier passage n'est pas reporté ici : il se lit au badge.*
 
 ## 3. Contrôles de document
 
