@@ -263,3 +263,14 @@ Un résultat de cette vérification mérite d'être donné au lecteur, parce qu'
 [`prd/PRD.md`](prd/PRD.md) (autorité de contenu — socle, garde-fous, critères) · [`prd/PRDPlan.md`](prd/PRDPlan.md) (exécution) · [`prd/TOC.md`](prd/TOC.md) (découpage, thèses, volumétrie). En cas de conflit, **le PRD prime**.
 
 Ce fichier est l'**index de lecture** des 29 pièces, et rien d'autre : la gouvernance, le pipeline de rendu et la procédure de reprise sont au [`README.md`](README.md) du volume ; la place du volume dans le corpus est au [README du dépôt](../../README.md).
+
+---
+
+## 15 septembre 2026 — résumé anglais (tâche T7.1)
+
+`build/assemble.py` porte la traduction anglaise du « ## Abstract » de `prd/TOC.md`, faite avec assistance de modèle et
+non relue par un humain, et la pose en page « Abstract » après le Résumé ; `Monographie.md` réassemblé, `Monographie.pdf`
+recomposé : 387 → 390 p. Une page liminaire en chiffres romains ; deux pages à l'annexe A, dont le § A.9 et la note
+d'avant-propos du même jour — l'échelle [H] > [A-i] — entrent ainsi au PDF, qui ne les portait pas. Folio imprimé = page du
+PDF − 9 (− 8 avant) ; les folios des chapitres et de l'annexe A jusqu'à la p. 338 ne bougent pas, ceux des annexes B à D
+avancent de deux.

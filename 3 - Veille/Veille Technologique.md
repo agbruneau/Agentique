@@ -315,13 +315,59 @@ header-includes: |
   #show heading.where(level: 3): set text(size: 11pt)
   #show heading.where(level: 3): set block(above: 1.5em, below: 0.5em)
   ```
-include-before: |
-  ```{=typst}
-  // ⚠ LE CORPS DU DOCUMENT COMPOSE À 11 pt. `fontsize: 10pt` dans le YAML ne
-  // vaut que pour le bloc de titre et le résumé, que le gabarit compose avant
-  // d'entrer ici. Voir l'avertissement en tête de `header-includes`.
-  #set text(size: 11pt)
-  ```
+abstract-en: &abstract-en |
+  The interoperability of agents built on large language models (LLMs) has become a central architectural question. This article sets out its state of the art in the enterprise as of 15 August 2026 (facts frozen at that date), using a method in which every claim is checked against primary sources and subjected to challenge. Four questions guide it: the complementarity of protocols, the actual normative status of their governance, the gap between adoption and demonstrated security, and implicit layers.
+
+  We analyze the three structuring protocols — *Model Context Protocol* (MCP, access to tools), *Agent2Agent* (A2A, delegation between heterogeneous agents), *Agent Network Protocol* (ANP, decentralized discovery) — along with their governance, adoption and security. Three findings: rapid consolidation under foundations of declared neutrality, without any protocol being a *de jure* standard; an experimentally documented security deficit, which makes agent identity the most active and least stable area of work; a mismatch between protocol capabilities and regulatory requirements.
+
+  Seven layers left implicit complete this picture, each filled outside the common layer. Two drive the diagnosis. *Business process orchestration* is the only one whose core is standardized *de jure*, but it hooks into the common layer as a mere consumer, while holding the durable execution and traceability that sector law requires. *Operations* is the least mature: its conventions have published no version and describe no chain of mandate. A five-question grid locates the deficit on the third question: beyond two delegation hops, no *standardized* mechanism maintains enforceable traceability — three individual drafts submitted to the IETF within ten days describe such mechanisms, none is adopted. The deficit is no longer one of invention; it is one of adoption.
+
+  The edition of 15 August 2026 extends the watch pass and the full bibliography audit of 8 August — the first edition brought down to a fixed format — under the same declared regime, weaker than in the substantive sections. The clearest result of the sequence is that it refutes six of its own load-bearing claims in ten days: conformance suites exist, though not enforceable; European transparency rules have applied since 2 August 2026, not in December; the Commission explicitly includes agents within them, a first hook by the text rather than by inference; two readings of Canadian texts are corrected and referred to the companion corpus; an attribute survey that underpinned a negative fact changed value in ten days. Limitations, regimes and open questions are made explicit.
+include-before:
+  - |
+    ```{=typst}
+    // RÉSUMÉ ANGLAIS — tâche T7.1 du plan d'exécution, posée le 15 septembre 2026.
+    // Le texte est le champ `abstract-en` ci-dessus, que l'alias YAML `*abstract-en`
+    // rappelle ici : le gabarit de Pandoc ne passe que `abstract` au bloc de titre, et
+    // `include-before` est le seul de ses emplacements qui précède la table des matières.
+    // Traduction du résumé français avec assistance de modèle, non relue par un humain.
+    // ⚠ IL OUVRE LA PAGE QUI SUIT LA PAGE DE TITRE, et non le bas de celle-ci : le bloc
+    // de titre est un flottant non sécable, et un résumé anglais posé sous lui ferait
+    // porter la mesure de `check-resume.py` sur une ligne de texte courant tombée au
+    // hasard contre la marge basse. Même corps, même retrait et même amorce en
+    // demi-gras que le résumé français ; `lang: "en"` pour la césure et les guillemets.
+    // ⚠ Pandoc sépare les éléments de cette liste par une ligne vide, qui ferait
+    // d'« Abstract » un paragraphe à lui seul : `resume-en` retire les sauts de tête.
+    // ⚠ CETTE PAGE NE PREND PAS DE FOLIO ET NE DÉCALE PAS CEUX DU DOCUMENT : le compteur
+    // y revient à 1, comme sur la page de titre, dont le folio est tu. Les folios que
+    // d'autres pièces citent — simulateur et consigne de relecture pour le traité —
+    // ne se décalent pas ; seul le rang de page dans le PDF avance d'une unité.
+    #pagebreak(weak: true)
+    #counter(page).update(1)
+    #let resume-en(corps) = {
+      let enfants = if corps.has("children") { corps.children } else { (corps,) }
+      while enfants.len() > 0 and enfants.first().func() in (parbreak, [ ].func()) {
+        enfants = enfants.slice(1)
+      }
+      block(inset: (x: 2em))[
+        #set text(lang: "en", region: none)
+        #text(weight: "semibold")[Abstract] #h(1em) #enfants.join()
+      ]
+    }
+    #resume-en[
+    ```
+  - *abstract-en
+  - |
+    ```{=typst}
+    ]
+    ```
+  - |
+    ```{=typst}
+    // ⚠ LE CORPS DU DOCUMENT COMPOSE À 11 pt. `fontsize: 10pt` dans le YAML ne
+    // vaut que pour le bloc de titre et le résumé, que le gabarit compose avant
+    // d'entrer ici. Voir l'avertissement en tête de `header-includes`.
+    #set text(size: 11pt)
+    ```
 ---
 
 **Mots-clés —** interopérabilité des agents ; IA agentique ; Model Context Protocol (MCP) ; Agent2Agent (A2A) ; Agent Network Protocol (ANP) ; systèmes multi-agents ; architecture événementielle ; CloudEvents ; event mesh ; agent mesh ; paiements agentiques ; AP2 ; x402 ; commerce agentique ; interopérabilité sémantique ; OASF ; ontologie de capacités ; couche de confiance ; identité des agents ; délégation ; autorisation ; SPIFFE ; WIMSE ; AuthZEN ; gestion des processus d'affaires (GPA) ; robotisation des processus d'affaires (RBA) ; gestion des décisions ; BPMN ; DMN ; orchestration des processus ; exécution durable ; fouille de processus ; BOAT ; conformité sectorielle ; autonomie encadrée ; services financiers canadiens ; normalisation ; sécurité ; gouvernance ; exploitation des agents ; AgentOps ; observabilité agentique ; OpenTelemetry ; conventions sémantiques GenAI ; évaluation continue ; identité non humaine ; chaîne de mandat ; délégation multi-saut ; révocation ; Know Your Agent ; passeport d'agent ; crypto-agilité ; cryptographie post-quantique ; ML-DSA ; registre d'agents ; point d'application de politique ; zéro confiance agentique.

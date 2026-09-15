@@ -95,6 +95,18 @@ DESCRIPTOR = "Monographie en science et génie informatique"
 AUTHOR = "André-Guy Bruneau, M.Sc. IT"
 DATE = "Juillet 2026"
 
+# Résumé anglais de la page « Abstract » (tâche T7.1 du plan d'exécution, 15 septembre 2026) :
+# traduction de la « ## Thèse d'ensemble » de TOC.md, que la page « Résumé » reprend, faite
+# avec assistance de modèle et non relue par un humain. Elle ne suit pas sa source d'elle-même :
+# qui reprend la thèse d'ensemble reprend ce texte. Le signe d'avertissement de la source s'y
+# écrit en échappement : ce script ne reconfigure pas sa sortie, et la garde cp1252 de la CI
+# refuse un script qui porte le signe littéral sans le faire.
+ABSTRACT_EN = """\
+The agentic enterprise — one that entrusts non-human agents with tasks that engage its responsibility — does not yet exist as a discipline: protocols know how to make agents cooperate (Vol. I), frameworks know how to frame them (Vol. II), but the organization that deploys them cannot answer the prior question — *who is this agent, on whose behalf does it act, and how far is its delegation verifiable?* The thesis defended: **the agentic enterprise is built on an identity foundation, and that foundation will not be an invention but a governed extension** — existing standards (OAuth/OIDC, SCIM, X.509, VC/DID) are stretched to their breaking point, and it is the exact location of that breaking point, stratum by stratum, that constitutes the book's contribution. Structuring corollary: identity is the **foundation of defence** — \u26a0 **thesis re-articulated on 21 July 2026, at the close of batch L-08, which was meant to establish it and refuted it in its initial form** (escalation R-G-03). The justification is **not quantitative**: of the ten headings of the 2026 OWASP reference list, only one carries “Identity” and none carries “Delegation” (F-18, verified negative fact). It is **architectural**, and the domain's reference frameworks carry it themselves: **the absence of an agent's own, governed identity makes least privilege inapplicable** and deprives the organization of any attribution (F-19), to the point that identity is treated there as the **new control plane** (F-20). This is what allows the threat taxonomy (Q2 of Vol. II, ch. 21 §21.2) to be absorbed into the identity framework rather than made into a separate book — **a load-bearing lock, not a majority category**. The whole is held taut by a dated clock: the post-quantum migration (NIST milestones 2030/2035), which turns crypto-agility from a virtue into a design requirement.
+
+Three capabilities make the agentic enterprise, and they order the book. The first is to **issue**: give each agent an enforceable identity — the passport (Parts I-III). The second is to **apply**: an identity counts only where it is verified, and that place is the **agent mesh** (*maillage d'agents*), the agentic transposition of the *service mesh* that mediates every edge of the interaction graph (Part VII) — the mesh is to identity what the court is to the law: the place where it becomes enforceable. The third is to **operate**: an identity verified at admission says nothing about behaviour in operation, and it is **AgentOps** — observability, continuous evaluation, lifecycle, incident response (Part VIII) — that closes the loop, extending the fourth term that Vol. I had added to the invariant: *operation*. Threats (Part IV), the cryptographic clock (Part V) and the law (Part VI) cut across the three capabilities; the blueprint (Part IX) composes them into an organization — for the agentic enterprise is first of all an enterprise: roles, responsibilities, a maturity trajectory, not just a technical stack."""
+
+
 def read_resume():
     """Le résumé est la « ## Thèse d'ensemble » du TOC (jusqu'à la sous-section suivante)."""
     toc = TOC.read_text(encoding="utf-8")
@@ -170,6 +182,12 @@ def preamble():
 # Résumé {{.unnumbered}}
 
 {read_resume()}
+
+# Abstract {{.unnumbered}}
+
+::: {{lang=en}}
+{ABSTRACT_EN}
+:::
 
 ```{{=typst}}
 #pagebreak()

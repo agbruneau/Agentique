@@ -1,7 +1,7 @@
 # stigmergie-lab — le traité et sa transposition
 
 Le dossier porte deux choses. Le *Traité sur les systèmes multiagents en essaim*, [`Traité.pdf`](Trait%C3%A9.pdf) — quatrième édition du
-2 septembre 2026, 143 p. : la coordination par le milieu, ce qu'un essaim gagne à ne pas s'accorder et ce qu'il le paie. Et
+2 septembre 2026, 143 p. numérotées et une page « Abstract » : la coordination par le milieu, ce qu'un essaim gagne à ne pas s'accorder et ce qu'il le paie. Et
 `stigmergie-lab`, simulateur déterministe en Rust qui le transpose sous une règle : tout chiffre affiché doit être retrouvé par la
 mesure, ou l'écart consigné. Cinq écarts le sont, dont deux portent contre le traité, au [registre des décisions](docs/decisions.md).
 

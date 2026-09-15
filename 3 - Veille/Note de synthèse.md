@@ -122,10 +122,54 @@ header-includes: |
   // l'autre. `Python/check-synthese.py` lit la même forme dans la source.
   #show regex("\[(VI|VII|VIII) §[^\]]+\]"): set text(size: 8.5pt, fill: luma(38%))
   ```
-include-before: |
-  ```{=typst}
-  #set text(size: 11pt)
-  ```
+abstract-en: &abstract-en |
+  This note condenses three documents in the repository for readers who will not read them in full: the enterprise technology watch (Vol. VI, facts frozen as of 15 August 2026), the academic literature review (Vol. VII, 15 August 2026) and the state of the art in financial services (Vol. VIII, 20 August 2026). Every thesis and every figure in it refers to the section of the volume that carries it, with the level of evidence that volume declares; a versioned check verifies the cross-references, the figures carried over and the closure of the bibliography.
+
+  Three results run across the volumes. The exchange layer — MCP, A2A, ANP — is adopted before it is standardized or secure, and what it does not express is filled outside it. Beyond the first delegation hop, the deficit is one of adoption, not of invention, and no trace today says on whose behalf an agent acts. In a regulated financial institution, it is not the stack that decides but what the institution can demonstrate, by firm dates.
+
+  Synthesis produced by a language model, not reviewed by a human, ahead of the planned external review; where a decision depends on it, the volume is authoritative.
+include-before:
+  - |
+    ```{=typst}
+    // RÉSUMÉ ANGLAIS — tâche T7.1 du plan d'exécution, posée le 15 septembre 2026.
+    // Le texte est le champ `abstract-en` ci-dessus, que l'alias YAML `*abstract-en`
+    // rappelle ici : le gabarit de Pandoc ne passe que `abstract` au bloc de titre, et
+    // `include-before` est le seul de ses emplacements qui précède la table des matières.
+    // Traduction du résumé français avec assistance de modèle, non relue par un humain.
+    // ⚠ IL OUVRE LA PAGE QUI SUIT LA PAGE DE TITRE, et non le bas de celle-ci : le bloc
+    // de titre est un flottant non sécable, et un résumé anglais posé sous lui ferait
+    // porter la mesure de `check-resume.py` sur une ligne de texte courant tombée au
+    // hasard contre la marge basse. Même corps, même retrait et même amorce en
+    // demi-gras que le résumé français ; `lang: "en"` pour la césure et les guillemets.
+    // ⚠ Pandoc sépare les éléments de cette liste par une ligne vide, qui ferait
+    // d'« Abstract » un paragraphe à lui seul : `resume-en` retire les sauts de tête.
+    // ⚠ CETTE PAGE NE PREND PAS DE FOLIO ET NE DÉCALE PAS CEUX DU DOCUMENT : le compteur
+    // y revient à 1, comme sur la page de titre, dont le folio est tu. Les folios que
+    // d'autres pièces citent — simulateur et consigne de relecture pour le traité —
+    // ne se décalent pas ; seul le rang de page dans le PDF avance d'une unité.
+    #pagebreak(weak: true)
+    #counter(page).update(1)
+    #let resume-en(corps) = {
+      let enfants = if corps.has("children") { corps.children } else { (corps,) }
+      while enfants.len() > 0 and enfants.first().func() in (parbreak, [ ].func()) {
+        enfants = enfants.slice(1)
+      }
+      block(inset: (x: 2em))[
+        #set text(lang: "en", region: none)
+        #text(weight: "semibold")[Abstract] #h(1em) #enfants.join()
+      ]
+    }
+    #resume-en[
+    ```
+  - *abstract-en
+  - |
+    ```{=typst}
+    ]
+    ```
+  - |
+    ```{=typst}
+    #set text(size: 11pt)
+    ```
 ---
 
 # Statut de cette note {-}

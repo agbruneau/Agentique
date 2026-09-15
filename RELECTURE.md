@@ -28,7 +28,9 @@ niveau s'appelle **[A-i]** et n'est plus le premier : le sommet revient à **[H]
 Définition et conditions d'attribution : [PRD du Vol. II, §7, chapeau](<1 - Collection/2 - OrchestrationAgentique/prd/PRD.md>),
 qui en est le siège pour les Vol. II, III et IV. Exposé pour le lecteur : annexe A de la monographie du Vol. II, §A.9
 ([source](<1 - Collection/2 - OrchestrationAgentique/monographie/90-annexes/annexe-a-methodologie.md>)). Le Vol. II
-remis est antérieur à la réforme : **« [A] » s'y lit [A-i]**, « [A/B mixte] » s'y lit « [A-i/B mixte] ».
+remis est antérieur à la réforme : **« [A] » s'y lit [A-i]**, « [A/B mixte] » s'y lit « [A-i/B mixte] ». ✎ *Vrai du PDF
+de `7ad9e44`. Celui que la tâche T7.1 a recomposé le même jour porte la réforme dans sa note d'avant-propos et son annexe A ;
+ses chapitres gardent « [A] », qui s'y lit toujours [A-i].*
 
 ## 2. Qui relit quoi
 
@@ -62,8 +64,8 @@ pas : écrivez à l'auteur.
 
 | Fichier | Pour | Ce qu'il est |
 |---|---|---|
-| `4 - Essais/1 - Traité/Traité.pdf` | relecteur 1 | 143 p. **Le folio imprimé est la page du PDF.** |
-| `1 - Collection/2 - OrchestrationAgentique/Monographie.pdf` | relecteur 2 | 387 p. **Folio imprimé = page du PDF − 8** (liminaires en chiffres romains) : les p. 85 à 155 sont les pages 93 à 163 du PDF. Son annexe A (p. 332 à 338) est antérieure à la réforme des niveaux |
+| `4 - Essais/1 - Traité/Traité.pdf` | relecteur 1 | 143 p. **Le folio imprimé est la page du PDF.** ✎ *Recomposé le 15 septembre 2026 après `7ad9e44` (résumé anglais, tâche T7.1) : 144 p., la page 2 du PDF porte l'Abstract sans folio ; dès la page 3, folio imprimé = page du PDF − 1. Les folios cités ici ne bougent pas.* |
+| `1 - Collection/2 - OrchestrationAgentique/Monographie.pdf` | relecteur 2 | 387 p. **Folio imprimé = page du PDF − 8** (liminaires en chiffres romains) : les p. 85 à 155 sont les pages 93 à 163 du PDF. Son annexe A (p. 332 à 338) est antérieure à la réforme des niveaux. ✎ *Recomposé le même jour après `7ad9e44` (page « Abstract », tâche T7.1) : 390 p., folio imprimé = page du PDF − 9, les p. 85 à 155 sont les pages 94 à 164 ; l'annexe A court des p. 332 à 340 et porte la réforme.* |
 | `1 - Collection/2 - OrchestrationAgentique/prd/PRD.md`, §7 | relecteur 2, facultatif | le socle factuel : chaque entrée F-xx citée en note des chapitres, avec niveau, sources et réserves (Markdown, lisible comme texte) |
 | `RELECTURE.md`, la présente consigne | les deux | — |
 
@@ -72,6 +74,13 @@ Empreintes au commit `7ad9e44` — à revérifier le jour de l'envoi et à repor
 ```
 f0d81e82c8ceff4d2056f15e6e21867efead8144bdcc2df9eba07168b18dea79  4 - Essais/1 - Traité/Traité.pdf
 7b477e6b3225a2e63659ba6f2524ddcc6012d544b08c32a4101fe73cfc31914b  1 - Collection/2 - OrchestrationAgentique/Monographie.pdf
+```
+
+✎ *Empreintes des deux rendus recomposés le 15 septembre 2026 (tâche T7.1), sur l'arbre qui suit `fc33db1`, non commités à l'écriture — à revérifier de même :*
+
+```
+9788edb3863bbf5929cb63b040f2b73aa183b21a0da6cc1787a9eb57f04583c6  4 - Essais/1 - Traité/Traité.pdf
+afb93f59c0d0f3fe4dcdb1d0ec2c7189b399260d1220df3df33bb7cc8c0e9614  1 - Collection/2 - OrchestrationAgentique/Monographie.pdf
 ```
 
 ## 4. Quoi lire, quoi chercher à réfuter
@@ -221,6 +230,8 @@ for pdf, pages in [("4 - Essais/1 - Traité/Traité.pdf", (3, 130, 143)),
 EOF
 python Python/check-renvois.py
 ```
+
+✎ *Sur les rendus recomposés le 15 septembre 2026 (tâche T7.1), les pages à passer sont (4, 131, 144) et (94, 95, 164) ; attendu : 4→3, 131→130, 144→143 ; 94→85, 95→86, 164→155.*
 
 ## Annexe — gabarit du rapport
 

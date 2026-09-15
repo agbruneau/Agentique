@@ -326,13 +326,59 @@ header-includes: |
   #show heading.where(level: 3): set text(size: 11pt)
   #show heading.where(level: 3): set block(above: 1.5em, below: 0.5em)
   ```
-include-before: |
-  ```{=typst}
-  // ⚠ LE CORPS DU DOCUMENT COMPOSE À 11 pt. `fontsize: 10pt` dans le YAML ne
-  // vaut que pour le bloc de titre et le résumé, que le gabarit compose avant
-  // d'entrer ici. Voir l'avertissement en tête de `header-includes`.
-  #set text(size: 11pt)
-  ```
+abstract-en: &abstract-en |
+  This review examines the academic literature on the interoperability and orchestration of agents built on large language models in the enterprise, as of 15 August 2026. Its corpus comprises 192 items, 189 of them deposited on arXiv, each opened at its record and checked against the repository's canonical metadata.
+
+  The first result concerns the form of the retained corpus, not its content. **Twelve items out of 189 — 6% — carry an attestation of publication in their record.** Thirty-two others announce an acceptance only in the free-text comment field, which no one verifies. **The remaining 145, or 77% of this arXiv corpus, show no sign of peer review in their record.** The proportion measures a preprint repository read solely by the criterion of the record; it does not extend to the field, and a control pass over the databases of refereed literature bounds the gap in both directions. Sixty-three percent of the corpus was deposited in 2026, and more than half has never been revised. *A corpus three quarters of which declare no review committee cannot on its own ground an architectural decision on the same footing as an established literature, and this review says so before reporting its content.*
+
+  Ten fronts are examined — protocols, security, identity and delegation, multi-agent systems, evaluation, the transaction layer, business processes, governance, the agentic Web, choreography and swarm. For each, the review distinguishes what the literature establishes, where it genuinely contradicts itself, and what it does not address. Four disagreements deserve to be named: the very validity of the instruments that measure protocol risk, the usefulness of the multi-agent approach compared with a single agent, the choice between suspending the effect until confirmation or emitting it and organizing its revision, and the place of verification in a collective without a conductor.
+
+  Finally, the review sets three statements from the same author's technology watch against what the literature says about them. Two come out modified: the delegation deficit beyond two hops is a deficit of adoption, not of invention, and the asymmetry between agents and process formalisms is industrial, not scientific. The third — the absence of a trace vocabulary describing a chain of mandate — is confirmed by a second route, more severe than the first.
+include-before:
+  - |
+    ```{=typst}
+    // RÉSUMÉ ANGLAIS — tâche T7.1 du plan d'exécution, posée le 15 septembre 2026.
+    // Le texte est le champ `abstract-en` ci-dessus, que l'alias YAML `*abstract-en`
+    // rappelle ici : le gabarit de Pandoc ne passe que `abstract` au bloc de titre, et
+    // `include-before` est le seul de ses emplacements qui précède la table des matières.
+    // Traduction du résumé français avec assistance de modèle, non relue par un humain.
+    // ⚠ IL OUVRE LA PAGE QUI SUIT LA PAGE DE TITRE, et non le bas de celle-ci : le bloc
+    // de titre est un flottant non sécable, et un résumé anglais posé sous lui ferait
+    // porter la mesure de `check-resume.py` sur une ligne de texte courant tombée au
+    // hasard contre la marge basse. Même corps, même retrait et même amorce en
+    // demi-gras que le résumé français ; `lang: "en"` pour la césure et les guillemets.
+    // ⚠ Pandoc sépare les éléments de cette liste par une ligne vide, qui ferait
+    // d'« Abstract » un paragraphe à lui seul : `resume-en` retire les sauts de tête.
+    // ⚠ CETTE PAGE NE PREND PAS DE FOLIO ET NE DÉCALE PAS CEUX DU DOCUMENT : le compteur
+    // y revient à 1, comme sur la page de titre, dont le folio est tu. Les folios que
+    // d'autres pièces citent — simulateur et consigne de relecture pour le traité —
+    // ne se décalent pas ; seul le rang de page dans le PDF avance d'une unité.
+    #pagebreak(weak: true)
+    #counter(page).update(1)
+    #let resume-en(corps) = {
+      let enfants = if corps.has("children") { corps.children } else { (corps,) }
+      while enfants.len() > 0 and enfants.first().func() in (parbreak, [ ].func()) {
+        enfants = enfants.slice(1)
+      }
+      block(inset: (x: 2em))[
+        #set text(lang: "en", region: none)
+        #text(weight: "semibold")[Abstract] #h(1em) #enfants.join()
+      ]
+    }
+    #resume-en[
+    ```
+  - *abstract-en
+  - |
+    ```{=typst}
+    ]
+    ```
+  - |
+    ```{=typst}
+    // ⚠ LE CORPS DU DOCUMENT COMPOSE À 11 pt. `fontsize: 10pt` dans le YAML ne
+    // vaut que pour le bloc de titre et le résumé, que le gabarit compose avant
+    // d'entrer ici. Voir l'avertissement en tête de `header-includes`.
+    #set text(size: 11pt)
+    ```
 ---
 
 **Mots-clés —** revue de littérature ; interopérabilité des agents ; IA agentique ; Model Context Protocol ; Agent2Agent ; systèmes multi-agents ; chorégraphie agentique ; essaim multiagents ; coordination décentralisée ; identité non humaine ; chaîne de délégation ; révocation ; sécurité des agents ; injection d'invite indirecte ; bancs d'essai d'agents ; observabilité agentique ; provenance ; paiements agentiques ; collusion algorithmique ; gestion des processus d'affaires ; exécution durable ; conformité ; responsabilité ; Web agentique ; régime de preuve ; prépublication.

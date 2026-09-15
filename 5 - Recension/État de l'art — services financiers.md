@@ -351,13 +351,59 @@ header-includes: |
   #show heading.where(level: 3): set text(size: 11pt)
   #show heading.where(level: 3): set block(above: 1.5em, below: 0.5em)
   ```
-include-before: |
-  ```{=typst}
-  // ⚠ LE CORPS DU DOCUMENT COMPOSE À 11 pt. `fontsize: 10pt` dans le YAML ne
-  // vaut que pour le bloc de titre et le résumé, que le gabarit compose avant
-  // d'entrer ici. Voir l'avertissement en tête de `header-includes`.
-  #set text(size: 11pt)
-  ```
+abstract-en: &abstract-en |
+  This document sets out the state of the art of agentic interoperability and orchestration for a regulated Canadian financial cooperative — caisses, federation, insurance and brokerage subsidiaries — with facts frozen as of 20 August 2026, each claim checked against its primary source and dated. It extends an enterprise state of the art without a sectoral lens [1] and an academic literature review [2] by the same author, whose evidence regime it adopts: where those works treat Canadian sector law as a horizon of deadlines, this document establishes that here it is, in part, a regime in force.
+
+  The central result is a shift in the question: the enterprise debate is about the choice of protocol stack, but in a regulated financial cooperative the stack is not what decides. **Three supervisors share one base**: the AMF for the caisses, the Federation and certain insurance subsidiaries; OSFI for federal property and casualty insurance, securities custody and trust services; CIRO for brokerage [19, 20, 23]. The same agent execution changes regime depending on the legal entity that invokes it — and none of the protocols examined carries that entity in its trace (§5, §7).
+
+  Hence the trade-off that structures the document. B-10 places “*parent holding companies, affiliates, and subsidiaries*” among third-party arrangements, with no lighter regime for intragroup arrangements, and keeps the institution accountable [25]; the institution itself includes in them “les fournisseurs de service à l'interne (intragroupe)”, its in-house (intragroup) service providers [19]. **A shared platform is a third party** for the federal entity that consumes it and an internal asset for the provincial entity that operates it: the same tool server is two regulatory objects depending on the caller.
+
+  Four deadlines bound the window, in the reverse of the order one assumes, and the nearest does not come from a prudential regulator: the by-law of the real-time payment rail comes into force on **24 August 2026** and prohibits a message from being modified or revoked after issuance [115] — the approval point therefore precedes the effect, and **no field in the message portfolio declares that an order was formed by an agent** [116]. E-21 then requires end-to-end mapping of critical operations and a disruption tolerance tested against severe but plausible scenarios, with full compliance targeted for **1 September 2026** [19, 26]. E-23 and the AMF guideline on the use of AI come into force **on the same day, 1 May 2027**: a permanent inventory of models, whose definition encompasses AI methods without the words “agent” or “orchestration” appearing in it [28]; named accountability of an executive for all AI systems [265]. With the institution already declaring that it applies a model risk framework compliant with the AMF [19], **the agent enters a framework in force**, and continuity binds before the inventory does.
+include-before:
+  - |
+    ```{=typst}
+    // RÉSUMÉ ANGLAIS — tâche T7.1 du plan d'exécution, posée le 15 septembre 2026.
+    // Le texte est le champ `abstract-en` ci-dessus, que l'alias YAML `*abstract-en`
+    // rappelle ici : le gabarit de Pandoc ne passe que `abstract` au bloc de titre, et
+    // `include-before` est le seul de ses emplacements qui précède la table des matières.
+    // Traduction du résumé français avec assistance de modèle, non relue par un humain.
+    // ⚠ IL OUVRE LA PAGE QUI SUIT LA PAGE DE TITRE, et non le bas de celle-ci : le bloc
+    // de titre est un flottant non sécable, et un résumé anglais posé sous lui ferait
+    // porter la mesure de `check-resume.py` sur une ligne de texte courant tombée au
+    // hasard contre la marge basse. Même corps, même retrait et même amorce en
+    // demi-gras que le résumé français ; `lang: "en"` pour la césure et les guillemets.
+    // ⚠ Pandoc sépare les éléments de cette liste par une ligne vide, qui ferait
+    // d'« Abstract » un paragraphe à lui seul : `resume-en` retire les sauts de tête.
+    // ⚠ CETTE PAGE NE PREND PAS DE FOLIO ET NE DÉCALE PAS CEUX DU DOCUMENT : le compteur
+    // y revient à 1, comme sur la page de titre, dont le folio est tu. Les folios que
+    // d'autres pièces citent — simulateur et consigne de relecture pour le traité —
+    // ne se décalent pas ; seul le rang de page dans le PDF avance d'une unité.
+    #pagebreak(weak: true)
+    #counter(page).update(1)
+    #let resume-en(corps) = {
+      let enfants = if corps.has("children") { corps.children } else { (corps,) }
+      while enfants.len() > 0 and enfants.first().func() in (parbreak, [ ].func()) {
+        enfants = enfants.slice(1)
+      }
+      block(inset: (x: 2em))[
+        #set text(lang: "en", region: none)
+        #text(weight: "semibold")[Abstract] #h(1em) #enfants.join()
+      ]
+    }
+    #resume-en[
+    ```
+  - *abstract-en
+  - |
+    ```{=typst}
+    ]
+    ```
+  - |
+    ```{=typst}
+    // ⚠ LE CORPS DU DOCUMENT COMPOSE À 11 pt. `fontsize: 10pt` dans le YAML ne
+    // vaut que pour le bloc de titre et le résumé, que le gabarit compose avant
+    // d'entrer ici. Voir l'avertissement en tête de `header-includes`.
+    #set text(size: 11pt)
+    ```
 ---
 
 # Sommaire exécutif {-}

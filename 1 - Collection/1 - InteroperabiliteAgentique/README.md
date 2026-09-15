@@ -1,6 +1,6 @@
 # Volume I — Interopérabilité agentique en entreprise dans le domaine des services financiers
 
-**Lire :** [`Monographie.pdf`](Monographie.pdf) (570 p.) — sept chapitres et l'Annexe B, rendus en un seul volume.
+**Lire :** [`Monographie.pdf`](Monographie.pdf) (571 p.) — sept chapitres et l'Annexe B, rendus en un seul volume.
 
 Le premier des trois volumes du [corpus](../README.md) : le cadre général et mondial, dont le Vol. II tire le cas canadien
 réglementé et le Vol. III le verrou identitaire. Thèse : les systèmes agentiques ne rendent pas obsolètes les principes
@@ -25,7 +25,7 @@ même jour par [D-17](../../2%20-%20Compendium/PRD/PRD.md#d-17). Aucun relecteur
 **Par où entrer :** [`Chapitres/TOC.md`](Chapitres/TOC.md), la table des matières commentée ; chaque chapitre suppose les
 précédents. Les sources des chapitres et leurs sept bibliographies sont sous [`Chapitres/`](Chapitres/).
 
-**Refaire :** depuis ce dossier, `bash build/build-pdf.sh` recompose `Monographie.pdf` depuis `Monographie.md` — Pandoc, Typst, `mermaid-cli`
+**Refaire :** depuis ce dossier, `bash build/build-pdf.sh` recompose `Monographie.pdf` depuis `Monographie.md`, l'Abstract anglais tenu par `build/inject-pagination.py` — Pandoc, Typst, `mermaid-cli`
 pour les diagrammes, polices du poste d'auteur. `python Python/check-vol1.py` oppose la pagination du PDF à la ligne « Lire »
 ci-dessus, apparie les notices des bibliographies au corps et vérifie la parité du rendu ; son harnais est
 `python Python/check-vol1-mutations.py`.

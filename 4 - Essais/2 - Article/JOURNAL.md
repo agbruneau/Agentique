@@ -200,3 +200,11 @@ posé au [`README.md` de la racine](../../README.md)** : la perte se produit dan
 `content-to-string` du gabarit **Pandoc**, qui rend vide sur le `smartquote` de Typst — et *cette
 chaîne-ci n'a pas de Pandoc*. Le seul PDF du dépôt composé sans Pandoc est aussi le seul dont un
 titre à apostrophe traverse intact.
+
+---
+
+## 15 septembre 2026 — résumé anglais (tâche T7.1)
+
+`.gabarit-arxiv.typ` prend un paramètre `resume-en`, composé sous le résumé dans le même bandeau ; l'article le renseigne
+d'une traduction faite avec assistance de modèle et non relue par un humain. 38 p. inchangées, 752 159 → 757 438 o. ; source
+1 979 → 2 017 l., 132 969 → 136 490 o. `check-resume.py` y reste inapplicable : folio sous la marge de la page de titre.

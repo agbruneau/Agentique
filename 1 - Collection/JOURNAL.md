@@ -512,3 +512,11 @@ document, qui ne porte que le triptyque.* **Renvois hors triptyque réalignés u
 `4 - Veille/` → `3 - Veille/`, `6 - Article/` → `4 - Essais/2 - Article/` —, *les noms de dossier
 que la chronique cite à leur date restant écrits tels quels.* ⚠ **Rien des trois volumes n'est touché
 par ces réalignements** : leurs décomptes sont ceux du 8 août 2026, inchangés*
+
+---
+
+## 15 septembre 2026 — résumé anglais (tâche T7.1)
+
+Table du `README.md` : Vol. I 571 p., Vol. II 390, Vol. III 428 — 570, 387 et 427 avant la page « Abstract » que chaque
+volume reçoit ce jour-là entre son Résumé et sa table des matières, traduite avec assistance de modèle et non relue par un
+humain. Les folios arabes ne bougent pas ; le décompte des trois corpus non plus (`decompte.sh --verifier`, quatre ancres tenues).

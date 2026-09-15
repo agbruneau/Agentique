@@ -15,6 +15,7 @@
   auteurs: (),
   date: [],
   resume: [],
+  resume-en: none,
   motscles: (),
   corps,
 ) = {
@@ -96,6 +97,14 @@
   align(center, text(size: 10pt, tracking: 1.2pt)[#smallcaps[Résumé]])
   v(0.2em)
   pad(x: 0.4in, text(size: 9.5pt)[#resume])
+  // Résumé anglais (tâche T7.1 du plan d'exécution, 15 septembre 2026), sous le
+  // français et dans le même bandeau, au même corps ; `lang: "en"` pour la césure.
+  if resume-en != none {
+    v(0.5em)
+    align(center, text(size: 10pt, tracking: 1.2pt, lang: "en")[#smallcaps[Abstract]])
+    v(0.2em)
+    pad(x: 0.4in, text(size: 9.5pt, lang: "en", region: none)[#resume-en])
+  }
   v(0.4em)
   line(length: 100%, stroke: 0.6pt)
   v(0.6em)

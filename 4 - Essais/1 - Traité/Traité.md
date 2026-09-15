@@ -267,13 +267,53 @@ header-includes: |
   //    trois, et c'est par là que passe l'espacement des notices — voir la
   //    section « Bibliographies » du réglage commun ci-dessus.
   ```
-include-before: |
-  ```{=typst}
-  // ⚠ LE CORPS DU DOCUMENT COMPOSE À 11 pt. `fontsize: 10pt` dans le YAML ne
-  // vaut que pour le bloc de titre et le résumé, que le gabarit compose avant
-  // d'entrer ici. Voir l'avertissement en tête de `header-includes`.
-  #set text(size: 11pt)
-  ```
+abstract-en: &abstract-en |
+  As soon as the number of autonomous software agents exceeds a few dozen and partial failures become the normal state, the cost of explicit consensus — in messages, in tail latency, in temporal coupling — grows faster than the value it provides. The book argues that the winning architecture then shifts coordination to a shared event substrate, durable and locally ordered, where agents deposit and read traces rather than negotiate decisions: a transposition of stigmergy from swarm robotics. It refuses to conceal the trade-off — global safety traded for liveness, behaviour that is not reproducible at the scale of an execution, the burden of proof shifted onto traceability and the recovery point — and argues that there is an identifiable boundary between the two regimes, which it sets out to trace. Eight chapters cover it: foundations and transposition of the swarm model, scaling and saturation of the medium, formal modelling and verification, collective behaviours and self-organization, collective decision and allocation, implementation and operation, case studies, and — the contribution of the second edition — the regime specific to swarms whose agents rely on language models. Each mechanism there carries its failure model, its synchrony assumption, its cost in messages and in rounds, and the condition under which it ceases to hold; each transposition from robotics names what it preserves and what it breaks. The measurement campaign published on 13 August 2026 by Anthropic's Frontier Red Team requires adding a second axis to the boundary: the first sets the revocable decision against the invariant that must hold at every instant, the second sets the decorrelated population against the conforming population — and a medium that makes coordination cheap makes, by the same stroke, conformity, collusion and deception cheap.
+include-before:
+  - |
+    ```{=typst}
+    // RÉSUMÉ ANGLAIS — tâche T7.1 du plan d'exécution, posée le 15 septembre 2026.
+    // Le texte est le champ `abstract-en` ci-dessus, que l'alias YAML `*abstract-en`
+    // rappelle ici : le gabarit de Pandoc ne passe que `abstract` au bloc de titre, et
+    // `include-before` est le seul de ses emplacements qui précède la table des matières.
+    // Traduction du résumé français avec assistance de modèle, non relue par un humain.
+    // ⚠ IL OUVRE LA PAGE QUI SUIT LA PAGE DE TITRE, et non le bas de celle-ci : le bloc
+    // de titre est un flottant non sécable, et un résumé anglais posé sous lui ferait
+    // porter la mesure de `check-resume.py` sur une ligne de texte courant tombée au
+    // hasard contre la marge basse. Même corps, même retrait et même amorce en
+    // demi-gras que le résumé français ; `lang: "en"` pour la césure et les guillemets.
+    // ⚠ Pandoc sépare les éléments de cette liste par une ligne vide, qui ferait
+    // d'« Abstract » un paragraphe à lui seul : `resume-en` retire les sauts de tête.
+    // ⚠ CETTE PAGE NE PREND PAS DE FOLIO ET NE DÉCALE PAS CEUX DU DOCUMENT : le compteur
+    // y revient à 1, comme sur la page de titre, dont le folio est tu. Les folios que
+    // d'autres pièces citent — simulateur et consigne de relecture pour le traité —
+    // ne se décalent pas ; seul le rang de page dans le PDF avance d'une unité.
+    #pagebreak(weak: true)
+    #counter(page).update(1)
+    #let resume-en(corps) = {
+      let enfants = if corps.has("children") { corps.children } else { (corps,) }
+      while enfants.len() > 0 and enfants.first().func() in (parbreak, [ ].func()) {
+        enfants = enfants.slice(1)
+      }
+      block(inset: (x: 2em))[
+        #set text(lang: "en", region: none)
+        #text(weight: "semibold")[Abstract] #h(1em) #enfants.join()
+      ]
+    }
+    #resume-en[
+    ```
+  - *abstract-en
+  - |
+    ```{=typst}
+    ]
+    ```
+  - |
+    ```{=typst}
+    // ⚠ LE CORPS DU DOCUMENT COMPOSE À 11 pt. `fontsize: 10pt` dans le YAML ne
+    // vaut que pour le bloc de titre et le résumé, que le gabarit compose avant
+    // d'entrer ici. Voir l'avertissement en tête de `header-includes`.
+    #set text(size: 11pt)
+    ```
 ---
 
 ## Introduction {-}

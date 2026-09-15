@@ -520,3 +520,15 @@ dix-huitième est celui de [`4 - Essais/2 - Article/`](<4%20-%20Essais/2%20-%20A
 pour la même raison.* **C'est là que vit ce
 que cette page ne porte pas** : régimes de preuve, gels, dérogations, réserves, et l'historique des
 passes. Cette page dit *ce qu'il y a* ; ils disent *ce que ça vaut*.
+
+---
+
+## 15 septembre 2026 — résumés anglais (tâche T7.1)
+
+Dix documents publiés reçoivent, sous leur résumé français, un résumé anglais traduit avec assistance de modèle et non relu
+par un humain (bâtisseur M9 de la boucle du 15 septembre 2026, Claude Opus 5) : Vol. I, II, III, V, VI, VII et VIII, note
+SDLC, note de synthèse, article HPC-QPU. N'en reçoivent pas : la planche *Cinq schémas* et `NiveauMaturité.html`, qui n'ont
+pas de résumé, le compendium, archive de travail, et le mémoire de 1997, pièce déposée. Pages des PDF recomposés : Vol. I
+570 → 571, Vol. II 387 → 390, Vol. III 427 → 428, traité 143 → 144, veille 144 → 145, revue 59 → 60, état de l'art
+186 → 187, note SDLC 49 → 50, note de synthèse 21 → 22 ; l'article reste à 38. La table du `README.md` porte les nouveaux
+comptes ; ceux qui précèdent restent à leur date.

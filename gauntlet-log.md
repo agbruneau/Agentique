@@ -174,3 +174,30 @@ T7.4) n'ont pas de critique à l'aveugle : l'orchestrateur rejoue leurs critère
 
 ### Vague B — contrôles rejoués par l'orchestrateur avant commit
 - 20 commandes à 0 : `check-renvois.py` (238 `.md`, 2 770 renvois, 0 mort) et son harnais ; `check-lisibilite.py` et son harnais ; `check-compendium.py` (30 mutations), `check-sieges.py` (115), `check-toc.py` et harnais ; `decompte.sh --verifier` ; `genere.py --verifier` ; `check-article.py` (9 mutations) ; `check-veille.py`, `check-revue.py`, `check-synthese.py` ; `check-resume.py` sur `Compendium.pdf` (+21,5 pt) ; `check-traite.py` ; `check-vol1.py` ; `appareil.yml` analysé. `verifier-piece.py` laissé à la CI (Pandoc 3.11).
+- Commit `fc33db1` poussé (phase 4).
+
+## Vague C
+- **M9 — Résumés en anglais** (T7.1, dont la recomposition du PDF du Vol. II que le critique de M6 a relevée) : lancé. Pas de critique à l'aveugle (la barre, anglophone, ne compare pas une traduction) ; la fidélité des résumés sera confrontée au français par la passe de lissage finale.
+- **T7.3** (étiquette `corpus-v1.0`, DOI) : hors d'atteinte — suppose la re-clôture, donc la phase 5, et le compte Zenodo de l'auteur.
+- **T7.4** (Git LFS) : **différée et soumise à l'auteur**. Le plan la place « à partir de la re-clôture » ; l'appliquer aujourd'hui ferait passer par LFS tous les PDF recomposés par M9, et la CI, qui doit alors extraire les objets LFS à chaque passage sur deux systèmes, consommerait le quota de bande passante LFS du compte GitHub.
+
+### M7b — critique (A = barre, B = Agentique)
+- **Verdict : B.** Chaque pièce donne son état en cinq rangées dès la tête ; têtes concordantes avec la mesure (`decompte.sh` et `--registre`, 50/50), le registre de gel (50/50), les `README` de Livre (5/5), D-18 ; détail en fin de pièce identique à la tête d'avant `fc33db1` (50/50). La barre : aucun régime d'état par pièce, pièces inachevées signalées en pied ou pas du tout.
+- **Écart retenu (B)** : l'état n'existe que dans le `.md` — le rendu retire la tête (`build/rendre-piece.py:17-19`) : 49 `.html` sur 50 et le `Compendium.pdf` de 1 000 pages ne disent nulle part, en tête, qu'il s'agit d'une archive non publiable ; des paragraphes d'appareil rendus renvoient à une « thèse citée ci-dessus » absente (ch. 19, 25, 27, 48, 49). Mineurs : ch. 01 à v0.23 contre un TOC à v0.36 ; « −1,3 % » là où le calcul donne −0,6 %.
+- Suite : victoire, mais l'écart touche B2 (un PDF non publiable qui ne le dit pas) : **reprise du même bâtisseur**, sans agent neuf.
+- Coût : 181 k jetons, 47 appels, 10 min.
+- CI verte au run `35000614181` sur `fc33db1` (phase 4), dont `verifier-piece.py` sous Pandoc 3.11 et `check-lisibilite.py`.
+
+### M7b — reprise (même bâtisseur)
+- Statut au rendu : rangée « Statut » en tête des 50 pièces rendues, avis du volume en p. 2 du PDF ; `verifier-piece.py` [4] l'exige (8 mutations). Renvois « ci-dessus » : antérieurs (`5cdb5bb`), tenus par la thèse rendue. Défaut trouvé : Pandoc lisait [A]/[B]/[C] comme des citations (754 crochets effacés), corrigé. Mineurs v0.23 et −1,3 % : relevés datés, non corrigés, motif écrit.
+- **Décision soumise à l'auteur** : le gabarit porte une consigne du 30 juillet 2026, « aucun statut au colophon » (régime D-10) ; l'avis est hors colophon et n'ajoute aucune page, mais l'auteur dit s'il rouvre la consigne.
+- Rejoué par l'orchestrateur : pymupdf → 1 000 p., avis en p. 2, « non publiable » × 53 ; `check-compendium.py`, `check-sieges.py`, `check-toc.py`, `genere.py --verifier`, `check-resume.py`, `check-renvois.py` → 0. `decompte.sh --verifier` en échec sur l'arbre de travail à cause des modifications en cours de M9 au Vol. I (signalé à M9) ; tenu sur HEAD.
+- Coût : 779 k jetons cumulés (reprise : 77 appels, 26 min).
+- CI verte au run `35004194048` sur `8e2feab` (statut au rendu du compendium ; `verifier-piece.py` [4] sous Pandoc 3.11).
+
+### M9 — bâtisseur
+- Déclaré : résumé anglais sous le français dans dix documents (Vol. I, II, III, V, VI, VII, VIII, note SDLC, note de synthèse, article), page « Abstract » après la page de titre, sans folio (sources YAML) ou en chiffres romains (Vol. I-III) — aucun folio cité ne bouge ; Vol. II recomposé avec l'échelle [H] > [A-i]. Exclus : la planche et `NiveauMaturité.html` (sans résumé français), le compendium (consigne), le mémoire de 1997 (pièce déposée).
+- `decompte.sh` : le résumé sort du périmètre mesuré (Vol. I par `inject-pagination.py`), ancres inchangées. `check-traite.py` : `MOTS_REF` recalé avec note datée. Nouvelles empreintes SHA-256 dans `RELECTURE.md`.
+- Non tenu : `check-resume.py` sur l'article (1 avant comme après ; inapplicable déclaré, folio arXiv sous la marge). Note de synthèse à 22 p., borne haute de son critère.
+- Rejoué par l'orchestrateur : pymupdf → Abstract en p. 2 ou 3 des neuf PDF, pages 571 / 390 / 428 / 144 / 145 / 60 / 187 / 22 / 50, 7 « A-i » au Vol. II ; `check-resume.py` → 0 sur les huit applicables ; batterie de 17 contrôles et harnais → 0 (renvois 2 794 / 0 mort, lisibilité, compendium, `decompte.sh`, `genere.py`, veille, revue, synthèse et 26 mutations, traité, article et 9 mutations, rejeu 37/37, Vol. I et 5 mutations).
+- Coût : 577 k jetons, 160 appels, 50 min.

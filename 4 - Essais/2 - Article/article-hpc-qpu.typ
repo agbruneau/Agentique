@@ -58,6 +58,44 @@
     calibrée, et huit conditions de réfutation observables par un tiers sont énoncées, dont l'une a
     subi — et passé — son premier test lors de la révision.
   ],
+  // Traduction du résumé ci-dessus avec assistance de modèle, non relue par un humain.
+  resume-en: [
+    The integration of quantum processing units (QPUs) into high-performance computing platforms is
+    progressing piece by piece: reference architectures, device and resource management interfaces,
+    adaptive middleware, measured sharing strategies, deployed platforms. A two-tier critical review
+    — forty-two sources anchored claim by claim, thirty-three added by systematic search, the five
+    decisive ones of which were reread in full text — shows that the complete delegation chain —
+    deciding which workload goes to which resource, taking into account that a QPU's output quality
+    drifts over time — remains a target that its own authors call visionary. This article isolates
+    the missing link and specifies it. Existing interfaces cover two disjoint levels — the changing
+    physical properties of the device on one side, binary schedulability on the other. The generic
+    mechanism has a classical precedent — the federated grid published dated resource states
+    consumed by placement brokers — and fragments of the link exist — compilation scores, cloud
+    access schedulers, contractual snapshots — but no source consulted, including a full reading of
+    the four closest candidates, publishes the content the QPU imposes: the _projection_ of an
+    output-quality metric that drifts and goes stale into a first-class object, dated and consumed
+    by the resource manager. From it we derive a complete reference architecture, presented in three
+    views and backed by six design invariants: a projection function producing a dated resource
+    state, a total state machine of four states and nine events, an analysis of the four feedback
+    loops and of the four emergent effects they compose. We then specify a deterministic and total
+    multi-criteria delegation policy, whose verification requires neither hardware nor experimental
+    access — a reader can redo the calculation by hand, and a versioned replay script executes it —
+    a selection rule among three strategies for sharing a QPU, then seven operability requirements,
+    six operating procedures, twenty telemetry metrics and five service objectives, where the
+    operational literature publishes none. Validation proceeds by a coverage matrix over twenty
+    requirements, replay of six operational scenarios and comparison with three real platforms.
+    Seven sources added in the second revision place operations in the lineage of self-driving
+    laboratories and autonomous scientific agents: the delegation chain specified here is what this
+    non-human consumer would demand of a QPU centre, and the article answers it with an additional
+    stakeholder archetype, scenario, emergent effect and refutation condition, without modifying any
+    contribution. Every claim drawn from the first tier was checked against its source by an
+    anchoring pass whose trace is published; the uses of the twenty-eight second-tier sources not
+    reread in full are limited to what their abstracts establish. The work is documentary: the
+    platform is not implemented — the policy, for its part, has a reference implementation that
+    replays the published runs — the delivered structure remains numerically uncalibrated, and eight
+    refutation conditions observable by a third party are stated, one of which underwent — and
+    passed — its first test during the revision.
+  ],
 )
 
 = Introduction

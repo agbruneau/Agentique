@@ -14,8 +14,8 @@ au § 2.8 — est posé par l'article lui-même.
 
 | Fichier | Mesure | Rôle |
 |---|---|---|
-| `article-hpc-qpu.pdf` | 38 p. / 752 159 o. | le rendu |
-| `article-hpc-qpu.typ` | 1 979 l. / 132 969 o. | la source, en Typst direct : 11 sections de niveau 1, 39 de niveau 2, 8 planches et 20 tableaux légendés |
+| `article-hpc-qpu.pdf` | 38 p. / 757 438 o. | le rendu |
+| `article-hpc-qpu.typ` | 2 017 l. / 136 490 o. | la source, en Typst direct : 11 sections de niveau 1, 39 de niveau 2, 8 planches et 20 tableaux légendés |
 | `references.bib` | 77 entrées / 689 l. | la bibliographie, close dans les deux sens |
 | `rejeu-politique.py` | | l'implémentation de référence de la politique et de la machine d'états |
 | `check-article.py`, `check-article-mutations.py` | | le contrôle du dossier et son harnais |

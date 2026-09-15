@@ -77,6 +77,17 @@ SUBTITLE = ("Interopérabilité et orchestration agentique dans les services fin
 AUTHOR = "André-Guy Bruneau, M.Sc. IT"
 DATE = "Juillet 2026"
 
+# Résumé anglais de la page « Abstract » (tâche T7.1 du plan d'exécution, 15 septembre 2026) :
+# traduction du « ## Abstract » de TOC.md, que la page « Résumé » reprend, faite avec
+# assistance de modèle et non relue par un humain. Elle ne suit pas sa source d'elle-même :
+# qui reprend l'abstract de TOC.md reprend ce texte.
+ABSTRACT_EN = """\
+Between 2024 and 2026, two trajectories that had until then run in parallel converged in Canadian financial services. On one side, agentic interoperability protocols — MCP for agents' access to tools, A2A for collaboration between agents, AP2 for transactions, AGNTCY for infrastructure — moved from proprietary projects to open projects, integrating with the major cloud platforms; three of them are now under foundation governance — the evidence base documents no governance transfer for AP2 — and two have reached a first stable version (A2A v1.0; the MCP revision of 25 November 2025). On the other, Canadian financial institutions put agentic artificial intelligence into production — mortgage pre-adjudication, autonomous processing of commercial e-mail, enterprise agentic platforms — while the regulatory framework was being reorganized: OSFI Guideline E-23 and the AMF guideline on AI, both coming into force on 1 May 2027, the consumer-driven banking framework entrusted to the Bank of Canada, completion of the ISO 20022 migration on Lynx and the imminent launch of the Real-Time Rail.
+
+This monograph advances an architectural thesis: **framed autonomy** (*autonomie encadrée*) is the convergent state of the art for deploying multi-agent systems in a regulated financial context. Three sources — the academic manifesto of Agentic Business Process Management, the empirical work on orchestration options, and IBM's agentic reference architecture — formulate the same principle: processes under strict regulatory requirements run within deterministic frameworks that orchestrate the agents, never the reverse. The book establishes that these three sources are not independent — two share an author, two an organization — and draws from this the exact scope of their convergence rather than overstating its authority (ch. 13). The monograph develops this thesis in seven parts: the protocols (I), enterprise orchestration (II), the Canadian regulatory framework (III), Canadian financial interoperability (IV), adoption by institutions (V), the architectural synthesis (VI) and a detailed enterprise integration platform blueprint instantiated on the IBM portfolio (VII).
+
+The method is that of the PRD governing the book: a dated and cited factual evidence base, built through multi-judge adversarial verification and direct consultation of official sources, with explicit levels of evidence, systematic attribution of self-reported metrics, a strict distinction between documented link and author inference, and honest disclosure of gaps. Intended audiences: enterprise architects and technology leadership of Canadian financial institutions, risk and compliance officers, strategy leadership and researchers."""
+
 
 def read_abstract():
     """L'abstract est le §Abstract de TOC.md (entre '## Abstract' et la ligne '(≈ … mots)')."""
@@ -170,6 +181,12 @@ def preamble():
 # Résumé {{.unnumbered}}
 
 {abstract}
+
+# Abstract {{.unnumbered}}
+
+::: {{lang=en}}
+{ABSTRACT_EN}
+:::
 
 ```{{=typst}}
 #pagebreak()

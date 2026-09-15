@@ -292,3 +292,11 @@ Sans. Le script exporte lui-même `PYTHONUTF8=1` (nécessaire sous Windows).
 - **Assistance par agents.** Ce travail a été produit avec l'assistance de pipelines de recherche
   multi-agents, selon les méthodes de vérification décrites dans l'ouvrage ; la responsabilité
   éditoriale est celle de l'auteur.
+
+---
+
+## 15 septembre 2026 — résumé anglais (tâche T7.1)
+
+`build/assemble.py` porte la traduction anglaise de la « ## Thèse d'ensemble » de `prd/TOC.md`, faite avec assistance de
+modèle et non relue par un humain, et la pose en page « Abstract » après le Résumé ; `Monographie.md` réassemblé,
+`Monographie.pdf` recomposé : 427 → 428 p., une page liminaire en chiffres romains de plus, folios arabes inchangés.

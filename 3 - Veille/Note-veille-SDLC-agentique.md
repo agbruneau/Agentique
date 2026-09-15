@@ -357,13 +357,57 @@ header-includes: |
   #show heading.where(level: 3): set text(size: 11pt)
   #show heading.where(level: 3): set block(above: 1.5em, below: 0.5em)
   ```
-include-before: |
-  ```{=typst}
-  // ⚠ LE CORPS DU DOCUMENT COMPOSE À 11 pt. `fontsize: 10pt` dans le YAML ne
-  // vaut que pour le bloc de titre et le résumé, que le gabarit compose avant
-  // d'entrer ici. Voir l'avertissement en tête de `header-includes`.
-  #set text(size: 11pt)
-  ```
+abstract-en: &abstract-en |
+  This note examines what becomes of the software development life cycle when implementation ceases to be the limiting factor. Its single source is episode 501 of the *Lex Fridman Podcast*, published on 26 August 2026, in which David Heinemeier Hansson describes three months of developing a complete operating system of which he states he wrote no shipped line by hand. The official transcript — about 43,000 words — was read in full; eighteen timestamped theses were extracted from it and forty verifiable claims checked against external sources, each carrying one of four epistemic markers: **confirmé** (confirmed), **probable**, **hypothèse** (hypothesis), **à vérifier** (to be verified).
+
+  The testimony provides no measurement: none of the announced gains — 10×, 100×, 1000× — is instrumented, and its author himself disavows the metric he uses as shorthand. What it provides is rarer: an operational description of a coherent system — workstation, multi-model review protocol, token economy, specification mode, division of roles. The break is dated there to 24 November 2025 and attributed **to the harness, not the model**; human work is redeployed toward four activities — framing the problem, arbitrating between variants produced at low cost, judging the form of the result, deciding what is merged.
+
+  The testimony is credible within the scope it describes — a new project, open source, a single decision-maker, simple verification oracles, high tolerance for risk — and the episode itself contains the counterexample that bounds its reach: on an established codebase with high usage value, the same delegation produced an architectural drift that had to be repaired by hand. The note draws from it a generic recommendation, valid outside any sector: explicitly separate a regime of strong delegation, where verification oracles are solid and the cost of a failure is low, from a regime of framed delegation, where architecture, compliance or availability are at stake — then instrument delivery stability before any throughput indicator, so as to detect drift before it becomes structural.
+include-before:
+  - |
+    ```{=typst}
+    // RÉSUMÉ ANGLAIS — tâche T7.1 du plan d'exécution, posée le 15 septembre 2026.
+    // Le texte est le champ `abstract-en` ci-dessus, que l'alias YAML `*abstract-en`
+    // rappelle ici : le gabarit de Pandoc ne passe que `abstract` au bloc de titre, et
+    // `include-before` est le seul de ses emplacements qui précède la table des matières.
+    // Traduction du résumé français avec assistance de modèle, non relue par un humain.
+    // ⚠ IL OUVRE LA PAGE QUI SUIT LA PAGE DE TITRE, et non le bas de celle-ci : le bloc
+    // de titre est un flottant non sécable, et un résumé anglais posé sous lui ferait
+    // porter la mesure de `check-resume.py` sur une ligne de texte courant tombée au
+    // hasard contre la marge basse. Même corps, même retrait et même amorce en
+    // demi-gras que le résumé français ; `lang: "en"` pour la césure et les guillemets.
+    // ⚠ Pandoc sépare les éléments de cette liste par une ligne vide, qui ferait
+    // d'« Abstract » un paragraphe à lui seul : `resume-en` retire les sauts de tête.
+    // ⚠ CETTE PAGE NE PREND PAS DE FOLIO ET NE DÉCALE PAS CEUX DU DOCUMENT : le compteur
+    // y revient à 1, comme sur la page de titre, dont le folio est tu. Les folios que
+    // d'autres pièces citent — simulateur et consigne de relecture pour le traité —
+    // ne se décalent pas ; seul le rang de page dans le PDF avance d'une unité.
+    #pagebreak(weak: true)
+    #counter(page).update(1)
+    #let resume-en(corps) = {
+      let enfants = if corps.has("children") { corps.children } else { (corps,) }
+      while enfants.len() > 0 and enfants.first().func() in (parbreak, [ ].func()) {
+        enfants = enfants.slice(1)
+      }
+      block(inset: (x: 2em))[
+        #set text(lang: "en", region: none)
+        #text(weight: "semibold")[Abstract] #h(1em) #enfants.join()
+      ]
+    }
+    #resume-en[
+    ```
+  - *abstract-en
+  - |
+    ```{=typst}
+    ]
+    ```
+  - |
+    ```{=typst}
+    // ⚠ LE CORPS DU DOCUMENT COMPOSE À 11 pt. `fontsize: 10pt` dans le YAML ne
+    // vaut que pour le bloc de titre et le résumé, que le gabarit compose avant
+    // d'entrer ici. Voir l'avertissement en tête de `header-includes`.
+    #set text(size: 11pt)
+    ```
 ---
 
 **Mots-clés —** cycle de vie du développement logiciel ; SDLC ; ingénierie agentique ; agents de codage ; harnais d'exécution ; régimes de délégation ; sous-spécification ; évaluation différentielle ; revue de code multi-modèles ; débogage assisté ; économie de jetons ; parallélisation d'agents ; dérive architecturale ; gardien architectural ; malléabilité du logiciel ; tri des contributions entrantes ; poste de travail ; substrat système ; stabilité de livraison ; indicateurs DORA ; transposition organisationnelle ; recomposition des rôles ; gestion de produit ; registre de risques ; marqueurs épistémiques ; analyse de source unique ; triangulation ; Lex Fridman Podcast ; David Heinemeier Hansson ; *vibe coding*.

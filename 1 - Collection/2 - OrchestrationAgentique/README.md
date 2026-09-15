@@ -1,6 +1,6 @@
 # Volume II — Orchestration agentique
 
-**Lire :** [`Monographie.pdf`](Monographie.pdf) (387 p.) — ou pièce par pièce, depuis l'[index de lecture](monographie/README.md).
+**Lire :** [`Monographie.pdf`](Monographie.pdf) (390 p.) — ou pièce par pièce, depuis l'[index de lecture](monographie/README.md).
 
 Monographie sur l'interopérabilité et l'orchestration agentiques dans les services financiers canadiens : protocoles ouverts (MCP,
 A2A, AP2, AGNTCY), cadre réglementaire canadien (E-23, AMF, ACVM, Loi 25) et blueprint d'intégration d'entreprise, état des lieux

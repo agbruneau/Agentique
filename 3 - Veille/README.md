@@ -7,10 +7,10 @@ unique, un entretien ; la [note de synthèse](Note%20de%20synth%C3%A8se.md) cond
 
 | Document | Rendu | Gel ou rédaction | Statut, fixé le 15 septembre 2026 par [D-18](../2%20-%20Compendium/PRD/PRD.md#d-18) |
 |---|---|---|---|
-| Vol. VI — *Veille technologique en entreprise* | [PDF](Veille%20Technologique.pdf), 144 p., 342 références | 15 août 2026 | livrable |
-| Vol. VII — *Revue de la littérature académique* | [PDF](Revue%20de%20litt%C3%A9rature.pdf), 59 p., 192 références | 15 août 2026 | livrable |
-| *La transformation du cycle de vie du développement logiciel à l'ère des agents* | [PDF](Note-veille-SDLC-agentique.pdf), 49 p. | 27 août 2026 | publiée, hors livrables : source unique, bibliographie non appariée |
-| *Note de synthèse — veille, revue et état de l'art* | [PDF](Note%20de%20synth%C3%A8se.pdf), 21 p. | 15 septembre 2026 | publiée, hors livrables : rédigée par un modèle de langage, non relue par un humain |
+| Vol. VI — *Veille technologique en entreprise* | [PDF](Veille%20Technologique.pdf), 145 p., 342 références | 15 août 2026 | livrable |
+| Vol. VII — *Revue de la littérature académique* | [PDF](Revue%20de%20litt%C3%A9rature.pdf), 60 p., 192 références | 15 août 2026 | livrable |
+| *La transformation du cycle de vie du développement logiciel à l'ère des agents* | [PDF](Note-veille-SDLC-agentique.pdf), 50 p. | 27 août 2026 | publiée, hors livrables : source unique, bibliographie non appariée |
+| *Note de synthèse — veille, revue et état de l'art* | [PDF](Note%20de%20synth%C3%A8se.pdf), 22 p. | 15 septembre 2026 | publiée, hors livrables : rédigée par un modèle de langage, non relue par un humain |
 
 Dépôt rouvert le 15 septembre 2026 par [D-17](../2%20-%20Compendium/PRD/PRD.md#d-17) ; aucun des quatre n'a de relecteur humain nommé.
 

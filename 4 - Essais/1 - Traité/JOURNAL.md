@@ -594,3 +594,12 @@ n'est de toute façon pas là : c'est
 le §0.2 du [PRD](docs/PRD.md) et le [registre](docs/decisions.md) — *les dix rapports,
 cinq de morceau et cinq de critique, et la consolidation qui leur servait de
 verdict de banc, sont sortis du dépôt le 25 août 2026*.
+
+---
+
+## 15 septembre 2026 — résumé anglais (tâche T7.1)
+
+Champ YAML `abstract-en`, traduit du résumé avec assistance de modèle et non relu par un humain, composé en page
+« Abstract » sans folio après la page de titre : `Traité.pdf` 143 → 144 p. Les 143 folios ne bougent pas — le texte des
+pages 2 à 143 d'avant est celui des pages 3 à 144 —, et les pages que citent le simulateur, `docs/` et `RELECTURE.md`
+ne se décalent pas. `Python/check-traite.py` recale `MOTS_REF` de 72 511 à 73 113 ; sa parité refait le rendu à l'identique.

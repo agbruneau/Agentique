@@ -648,3 +648,14 @@ nommément**. ☑ *Corrigé le 28 août 2026, du même geste que l'ajout de la n
   **CC BY 4.0**, sur instruction d'auteur, et elle couvre le dépôt entier. *Jusque-là il n'en portait
   aucune — droit d'auteur par défaut —, et seul le Vol. I avait la sienne, mêmes termes, pour lui
   seul.* ⚠ Elle ne couvre pas les œuvres de tiers citées, qui restent à leurs titulaires.
+
+---
+
+## 15 septembre 2026 — résumé anglais (tâche T7.1)
+
+Chacune des quatre sources porte un champ YAML `abstract-en`, traduit du résumé avec assistance de modèle et non relu par
+un humain, que `include-before` compose en page « Abstract » sans folio après la page de titre. Veille 144 → 145 p., revue
+59 → 60, note SDLC 49 → 50, note de synthèse 21 → 22 ; les folios ne bougent pas, et le texte de chaque page d'avant, hors la
+première, se lit à la page qui suit. `check-resume.py` rend le même dégagement sur la veille, la revue et la note SDLC ; sur
+la note de synthèse, +165,0 → +359,1 pt, sa page de titre ne portant plus que le bloc de titre. La note touche ainsi la borne
+haute de son critère, 22 p. pour 20 à 2 près : une page de plus ferait échouer `check-synthese.py` [1].

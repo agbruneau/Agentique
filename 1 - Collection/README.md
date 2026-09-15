@@ -8,9 +8,9 @@ répondent ensemble à la question du [dépôt](../README.md). Chacun porte sa t
 
 | Vol. | Dossier | Thèse | Portée | Rendu |
 |---|---|---|---|---|
-| I | [`1 - InteroperabiliteAgentique/`](1%20-%20InteroperabiliteAgentique/) | l'autonomie graduée sous contrôle de finalité : l'agent prépare, l'humain ou le processus déterministe autorise | mondiale | 570 p. |
-| II | [`2 - OrchestrationAgentique/`](2%20-%20OrchestrationAgentique/) | l'autonomie encadrée : sous exigence réglementaire, le cadre déterministe invoque les agents, jamais l'inverse | Canada, Québec | 387 p. |
-| III | [`3 - EntrepriseAgentique/`](3%20-%20EntrepriseAgentique/) | la confiance ne se décrète pas, elle se fabrique : émettre une identité, l'appliquer, l'exploiter | organisation, identité non humaine | 427 p. |
+| I | [`1 - InteroperabiliteAgentique/`](1%20-%20InteroperabiliteAgentique/) | l'autonomie graduée sous contrôle de finalité : l'agent prépare, l'humain ou le processus déterministe autorise | mondiale | 571 p. |
+| II | [`2 - OrchestrationAgentique/`](2%20-%20OrchestrationAgentique/) | l'autonomie encadrée : sous exigence réglementaire, le cadre déterministe invoque les agents, jamais l'inverse | Canada, Québec | 390 p. |
+| III | [`3 - EntrepriseAgentique/`](3%20-%20EntrepriseAgentique/) | la confiance ne se décrète pas, elle se fabrique : émettre une identité, l'appliquer, l'exploiter | organisation, identité non humaine | 428 p. |
 
 **Par où entrer :** dans l'ordre I, II, III — le Vol. II présuppose le Vol. I, le Vol. III prolonge les deux sur leur verrou
 commun, l'identité non humaine. Architecte : Vol. I, chapitre 1. Praticien canadien : Vol. II, chapitre 13, le pivot.

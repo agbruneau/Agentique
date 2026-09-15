@@ -92,7 +92,15 @@ REFS = 123           # notices de la section « Références », mesure du 2 sep
 # projection annoncait donc « +0,6 page » a jamais, sur un rendu qui fait
 # 143 pages et n'en fera pas 144 pour autant. *Une ligne de base qui
 # derive d'un demi-jour rapporte une croissance qui n'existe pas.*
-MOTS_REF = 72511     # mots du `.md` entier — front-matter compris — qui rend 143 p.
+MOTS_REF = 73113     # mots du `.md` entier — front-matter compris — qui rend 144 p.
+# ⚠ RECALE LE 15 SEPTEMBRE 2026, de 72511 a 73113, sur un `.md` dont le PDF
+# vient d'etre oppose au rendu par [4] : le resume anglais de la tache T7.1
+# (287 mots de texte au champ `abstract-en`, et 315 jetons de balisage YAML,
+# de commentaire et de code Typst, cle du champ et `include-before` compris).
+# La page gagnee — 143 -> 144 — n'est PAS celle que l'etalonnage predit : c'est la page « Abstract » que la chaine ouvre apres
+# la page de titre, sans folio, et les 143 folios du traite sont inchanges
+# (pages 2 a 143 d'avant identiques en texte aux pages 3 a 144 d'apres).
+# Le « 143 p. » qui suit reste celui de l'edition, a sa date.
 # ⚠ RECALE UNE SECONDE FOIS LE 2 SEPTEMBRE 2026, de 72110 a 72511, apres la
 # QUATRIEME edition : treize legendes d'algorithme renumerotees, trois posees
 # au chapitre 2, vingt-deux tableaux numerotes dans la source, et la conclusion

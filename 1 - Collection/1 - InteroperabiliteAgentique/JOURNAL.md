@@ -158,3 +158,12 @@ La chaîne de la veille (depuis [`3 - Veille/`](../../3%20-%20Veille/) — *la r
 - **2026-07-29** — **passe de dépôt final du dépôt** : `README.md` relu, décomptes re-mesurés sur pièce et **inchangés** — `Monographie.pdf` **569 p.** (`pypdf`), **28 diagrammes** (motif ancré). Deux mises à jour de renvoi seulement : le Vol. IV cesse d'être décrit comme un « cadrage » — il porte **cinquante chapitres rédigés hors portes** et il est **arrêté en révision finale, non publiable** depuis le 29 juillet 2026 —, et le Vol. III porte désormais son propre `README.md`. ⚠ **Rien de ce volume n'est touché** : ni chapitre, ni bibliographie, ni PDF.
 
 Les ressources marquées ⚠ (*preview*, specs versionnées, acquisitions annoncées) restent à re-confirmer à la date exacte de citation avant toute diffusion formelle.
+
+---
+
+## 15 septembre 2026 — résumé anglais (tâche T7.1)
+
+Page « Abstract » entre le Résumé et la table des matières, traduite du Résumé avec assistance de modèle et non relue par
+un humain. Le texte vit dans `build/inject-pagination.py`, étape liminaire de la chaîne, et non dans `Monographie.md`, dont
+`2 - Compendium/PRD/decompte.sh --verifier` gèle le décompte à 225 258 et 233 257 mots. `Monographie.pdf` recomposé :
+570 → 571 p., une page liminaire en chiffres romains de plus, folios arabes inchangés.

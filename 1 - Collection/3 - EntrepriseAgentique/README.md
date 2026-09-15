@@ -1,6 +1,6 @@
 # Volume III — L'entreprise agentique : la fabrique de confiance
 
-**Lire :** [`Monographie.pdf`](Monographie.pdf) (427 p.) — 34 pièces : avant-propos, 28 chapitres en neuf parties, annexes A à E.
+**Lire :** [`Monographie.pdf`](Monographie.pdf) (428 p.) — 34 pièces : avant-propos, 28 chapitres en neuf parties, annexes A à E.
 
 Ce qu'une entreprise doit tenir pour que des agents y opèrent sous mandat vérifiable : identité non humaine, délégation vérifiable,
 maillage d'agents et AgentOps, sous l'horloge post-quantique. Thèse : la confiance ne se décrète pas, elle se fabrique — émettre une

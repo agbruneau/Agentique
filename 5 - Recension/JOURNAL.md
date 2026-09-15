@@ -530,3 +530,12 @@ nom, pas une reprise de contenu.*
   **CC BY 4.0**, sur instruction d'auteur, et elle couvre le dépôt entier. *Jusque-là il n'en portait
   aucune — droit d'auteur par défaut —, et seul le Vol. I avait la sienne, mêmes termes, pour lui
   seul.* ⚠ Elle ne couvre pas les œuvres de tiers citées, qui restent à leurs titulaires.
+
+---
+
+## 15 septembre 2026 — résumé anglais (tâche T7.1)
+
+Champ YAML `abstract-en` à l'état de l'art, traduit du résumé avec assistance de modèle et non relu par un humain, composé
+en page « Abstract » sans folio après la page de titre, le sommaire exécutif commençant sous lui : 186 → 187 p., folios
+inchangés. `check-resume.py` : +12,6 → +135,1 pt, la page de titre ne portant plus que le bloc de titre. La planche, sans
+résumé, n'est pas touchée.
