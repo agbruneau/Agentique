@@ -143,12 +143,21 @@
 // le rendu complet : 16,90 pt donne 995 ; 16,92 à 16,96 pt, 996 ; 17,00 et 17,01 pt,
 // 997 ; **17,02 à 17,05 pt, 1000** ; 17,06 pt, 1001 ; 17,07 et 17,08 pt, 1002. Le
 // calage retient 17,03 pt, à l'intérieur de la marche.
+// ⚠ Relevé du même 15 septembre 2026, reprise du morceau M7b : chaque chapitre
+// s'ouvre désormais sur son statut et sa thèse citée, la table des matières sur
+// l'avis de statut du volume, et les niveaux de preuve « [A] », « [B] », « [C] »
+// reprennent leurs crochets (`build-pdf.sh`, `-implicit_header_references`). À
+// 17,03 pt, le volume monte à 1015 pages. Relevé : 16,90 pt donne 1009 ; 16,80 pt,
+// 1006 ; 16,70 pt, 1002 ; 16,69 pt, 1002 ; **16,67, 16,675 et 16,68 pt, 1000** ;
+// 16,66 pt, 999 ; 16,64 pt, 998 ; 16,58 à 16,62 pt, 996 ; 16,55 pt, 995 ; 16,50 pt,
+// 992. La marche est étroite — deux centièmes : le calage retient 16,675 pt, en son
+// milieu.
 // *Le calage n'est donc PAS une constante du gabarit : c'est une fonction du
 // corpus, et il se re-mesure à chaque passe qui touche un corps.* Le corps de
 // 13 pt et la mesure de 79 caractères, eux, ne bougent pas — et ne sont pas le
 // levier.
 #let CORPS = 13pt
-#let PAS   = 17.03pt
+#let PAS   = 16.675pt
 // ⚠ `top-edge` est FIGÉ en em plutôt que laissé à la fonte effective : sans
 // cela, une ligne portant un ⚠ ou un ☑ — rendus par la fonte de repli — prend
 // une hauteur différente et décroche de la grille. Onze pour cent des lignes du
@@ -456,6 +465,19 @@
   body
 })
 
+// ---- statut du chapitre, sous la ligne de situation (15 septembre 2026) ----
+// La valeur de la rangée « Statut » de la tête de la pièce, recopiée par
+// `assemble.py` : le volume est une archive de travail hors compte des livrables
+// (D-18), chaque chapitre un brouillon non publiable, et un lecteur du PDF le lit
+// à l'ouverture du chapitre, avant la thèse citée qui suit. Filet fin, corps sans
+// empattement, gris : l'information se voit sans prendre le pas sur le chapitre.
+#let statut(body) = block(above: 0pt, below: 1.6 * PAS, width: 100%,
+  stroke: (top: 0.6pt + FILET, bottom: 0.6pt + FILET), inset: (y: 6pt), {
+  set par(justify: false, leading: 4.6pt, spacing: 4.6pt, first-line-indent: 0pt)
+  set text(font: SANS, size: 9.5pt, fill: GRIS)
+  body
+})
+
 // ================= Page de titre =================
 // ⚠ Elle sort de la grille du corps, et c'est nécessaire : composée sur les
 // 108 mm de la colonne de texte, elle déborde — le titre se replie sur deux
@@ -555,6 +577,23 @@
   align(right, counter(page).display())
 })
 #counter(page).update(1)
+
+// ⚠ AVIS DE STATUT DU VOLUME, en tête de la page qui suit la couverture (15 septembre
+// 2026, reprise du morceau M7b sur critique indépendante) : depuis la décision D-18, le
+// volume est une archive de travail hors compte des livrables, et le PDF ne l'écrivait
+// nulle part. L'avis n'est PAS au colophon, que l'instruction d'auteur du 30 juillet 2026
+// garde vierge de statut ; il n'ajoute pas de page blanche. ⚠ *Cette instruction portait
+// sur le régime de diffusion de D-10 ; D-18 est un régime postérieur, et c'est à l'auteur
+// de dire s'il tient l'avis pour une réouverture de l'instruction.*
+#block(width: 100%, above: 0pt, below: 1.4 * PAS, inset: (x: 10pt, y: 8pt),
+  stroke: 0.6pt + FILET, {
+  set par(justify: false, leading: 4.6pt, first-line-indent: 0pt)
+  set text(font: SANS, size: 9.5pt, fill: GRIS)
+  text(weight: "bold", fill: ENCRE)[Archive de travail, hors compte des livrables.]
+  [ Depuis le 15 septembre 2026 (décision D-18), ce volume n'est pas au nombre des sept
+  livrables du dépôt ; il y reste entier. Ses cinquante chapitres sont des brouillons de
+  rédaction non publiables, et chacun porte son statut en tête.]
+})
 
 #block(width: 100%, above: 0pt, below: 1.8 * PAS, {
   set par(justify: false, first-line-indent: 0pt)

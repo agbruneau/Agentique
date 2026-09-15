@@ -765,6 +765,8 @@ qu'**une mesure se prend sur le corpus que le commit produit**.*
 
 *Reporté ici le 15 septembre 2026, dans l'ordre et mot pour mot, depuis la tête de la pièce, où il précédait le premier filet (plan d'exécution, tâche T4.3). Les dates, les cardinaux et les renvois qui suivent sont ceux de leur passe ; la tête n'en garde qu'un résumé en cinq lignes.*
 
+✎ *Renvoi daté, repointé le 15 septembre 2026.* La mesure de cette pièce, que des phrases datées de la note de statut ou du tableau ci-dessous disent portée, reportée ou relevée au `README.md` du Livre, n'y figure plus : la page d'accueil réécrite ce jour-là (plan d'exécution, tâche T4.2) ne garde que la volumétrie du Livre entier. Elle se lit en tête de la pièce, à la rangée « Volumétrie cible », et au [registre de gel](../PRD/registre-gel.md), que `decompte.sh --registre` oppose à la mesure.
+
 #### Avant le tableau
 
 ⚠ **Chapitre issu de la fusion v0.20 du TOC** (décision 11) : il porte **deux mouvements** — *le

@@ -501,6 +501,8 @@ sont ce que la pièce produit à la place.*
 
 *Reporté ici le 15 septembre 2026, dans l'ordre et mot pour mot, depuis la tête de la pièce, où il précédait le premier filet (plan d'exécution, tâche T4.3). Les dates, les cardinaux et les renvois qui suivent sont ceux de leur passe ; la tête n'en garde qu'un résumé en cinq lignes.*
 
+✎ *Renvoi daté, repointé le 15 septembre 2026.* La mesure de cette pièce, que des phrases datées de la note de statut ou du tableau ci-dessous disent portée, reportée ou relevée au `README.md` du Livre, n'y figure plus : la page d'accueil réécrite ce jour-là (plan d'exécution, tâche T4.2) ne garde que la volumétrie du Livre entier. Elle se lit en tête de la pièce, à la rangée « Volumétrie cible », et au [registre de gel](../PRD/registre-gel.md), que `decompte.sh --registre` oppose à la mesure.
+
 #### Avant le tableau
 
 ⚠ **Ce chapitre n'a pas de volume source, et le Livre le déclare avant son premier mot.** Les ch. 37-40

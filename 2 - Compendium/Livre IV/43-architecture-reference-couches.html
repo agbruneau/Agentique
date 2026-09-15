@@ -214,6 +214,21 @@ body {
   border-left: 2px solid var(--orange-trait);
 }
 
+/* Le statut de la pièce, recopié de sa tête (15 septembre 2026) : une ligne sobre,
+   lisible avant la thèse et le corps. */
+.titre__statut {
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: var(--texte-doux);
+  margin: 1.4rem 0 0;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--trait);
+  border-radius: 6px;
+  text-align: left;
+}
+.titre .these { margin: 1.6rem 0 0; }
+
 /* --------------------------------------------------------------- en-tête à cinq champs */
 .entete {
   margin: 2.5rem 0 2.5rem;
@@ -563,13 +578,18 @@ dl.legs dd { margin: 0; color: var(--texte-doux); }
   <div class="titre__fil">Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d&#x27;agents et synthèse architecturale</div>
   <h1><span class="chap">Chapitre 43</span>L&#x27;architecture de référence unifiée par couches</h1>
   <p class="titre__situe">Livre IV — Appliquer, exploiter, produire et composer : AgentMesh, AgentOps, fabrique d'agents et synthèse architecturale. Quatrième mouvement — composer (ch. 42-46). Deuxième chapitre du mouvement : **là où le ch. 42 a constaté cinq vides, celui-ci construit ce qui les comble — et doit dire d'abord à quel titre.**</p>
+  <p class="titre__statut">Archive de travail, hors compte des livrables (<a href="../PRD/PRD.md#d-18">D-18</a>) ; brouillon non publiable : rédigé le 27 juillet 2026 avant G-3, G-4 et G-5, hors de l'ordre du PRD §6 ; porte trois sièges pour la somme, versés à check-sieges.py ; aucun énoncé central (CA-IV-01)</p>
+  <div class="these">
+  <p><strong>Thèse</strong> <em>(citée depuis le <a href="../PRD/TOC.md"><code>TOC.md</code></a> <strong>v0.28</strong>, entrée du chapitre 43 — <strong>thèse réalignée en v0.28</strong>, décisions 8 et 14, remontée R-IV-57)</em> — les Livres I-IV se composent en une architecture cible neutre à couches (protocoles, identité/registre, orchestration, maillage, exploitation, gouvernance) — ⚠ <strong>fusion déclarée des quatre couches du Vol. II et des trois étages du Vol. III</strong> —, structurée par OO1-OO4, avec <strong>OO3/OO4</strong> imposés sous exigence réglementaire stricte. ⚠ <strong>L'extension de cette formule d'obligation à la fabrique d'identité est une CONSTRUCTION D'AUTEUR, déclarée telle</strong> : <em>aucune des deux sources ne la porte, le Vol. III posant ses trois étages au titre de son cadrage et déclarant qu'aucune entrée ne les fonde.</em></p>
+  </div>
 </header>
 
-<!-- ⚠ NI EN-TÊTE À CINQ CHAMPS, NI THÈSE, NI NOTE DE STATUT dans ce rendu.
+<!-- ⚠ NI TABLEAU D'EN-TÊTE, NI NOTE DE STATUT dans ce rendu.
      Purge du 29 juillet 2026 : le .html ne porte que le corps technique du chapitre — même coupe
      que `build/assemble.py` pour le PDF et que `PRD/decompte.sh` pour la volumétrie. L'appareil de
      gouvernance vit au .md jumeau, qui reste la seule source, et `build/verifier-piece.py` refuse
-     un rendu qui le recopierait. -->
+     un rendu qui le recopierait. Depuis le 15 septembre 2026, la tête rendue porte le statut et la
+     thèse citée de la pièce, et le vérificateur exige le statut. -->
 
 <h2 id="s430"><span class="sig">§ 43.0</span>Ouverture : à quel titre une architecture de référence se construit</h2>
 <p><strong>Le ch. 42 s'achève sur un constat négatif</strong> : quinze croisements, aucun lien documenté, <strong>cinq zones où l'architecture doit compenser</strong>. <strong>Ce chapitre construit — et doit dire d'abord à quel titre.</strong></p>

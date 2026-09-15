@@ -39,7 +39,7 @@ def executer(racine):
 
 def echecs(sortie):
     return [l.strip() for l in sortie.splitlines()
-            if re.match(r"^\s*\[[123]\]", l)]
+            if re.match(r"^\s*\[[1234]\]", l)]
 
 
 def copier():
@@ -140,6 +140,34 @@ def m6_figure_deplacee(tmp):
     f.write_text(t[:a] + t[b:fb] + t[fa:b] + t[a:fa] + t[fb:], encoding="utf-8", newline="\n")
 
 
+def m7_statut_perdu(tmp):
+    """[4] — la tête rendue perd le statut de la pièce.
+
+    Le défaut que la critique indépendante du 15 septembre 2026 a relevé : un volume
+    archivé hors compte des livrables (D-18), cinquante brouillons non publiables, et
+    un lecteur du `.html` qui ne le voyait nulle part. *Un rendeur qui retirerait la
+    ligne de nouveau le ferait sans bruit.*
+    """
+    f = tmp / (CH25 + ".html")
+    t = f.read_text(encoding="utf-8")
+    neuf = re.sub(r'\n  <p class="titre__statut">.*?</p>', "", t, count=1, flags=re.S)
+    assert neuf != t, "ligne de statut introuvable au rendu du ch. 25"
+    f.write_text(neuf, encoding="utf-8", newline="\n")
+
+
+def m8_these_au_corps(tmp):
+    """[2] — la thèse citée, admise en tête depuis le 15 septembre 2026, recopiée au corps.
+
+    ⚠ La tête la porte à bon droit ; le corps, non. *Une règle levée pour la tête
+    ne se lève pas pour le reste du rendu.*
+    """
+    f = tmp / (CH01 + ".html")
+    t = f.read_text(encoding="utf-8")
+    i = t.index("</header>") + len("</header>")
+    f.write_text(t[:i] + "\n<p><strong>Thèse</strong> <em>(citée depuis le TOC)</em> — recopie.</p>\n"
+                 + t[i:], encoding="utf-8", newline="\n")
+
+
 MUTATIONS = [
     ("M1  [1] la source révisée, le rendu inchangé", m1_source_revisee, "[1]", "echec"),
     ("M2  [1][3] une figure retirée du rendu", m2_figure_retiree, "[3]", "echec"),
@@ -147,6 +175,8 @@ MUTATIONS = [
     ("M4  [1] la source versionnée sans son rendu", m4_rendu_absent, "[1]", "echec"),
     ("M5  [2] la règle citée EN COMMENTAIRE", m5_commentaire_de_doctrine, "[2]", "muet"),
     ("M6  [3] les figures dans le mauvais ordre", m6_figure_deplacee, "[3]", "echec"),
+    ("M7  [4] la tête rendue perd le statut", m7_statut_perdu, "[4]", "echec"),
+    ("M8  [2] la thèse citée recopiée au corps", m8_these_au_corps, "[2]", "echec"),
 ]
 
 

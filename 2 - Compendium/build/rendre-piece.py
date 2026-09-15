@@ -14,10 +14,20 @@ Ce que ce rendu porte, et ce qu'il ne porte pas
 ------------------------------------------------
 **Le corps technique du chapitre, et lui seul** — même coupe que
 `build/assemble.py` pour le PDF et que `PRD/decompte.sh` pour la volumétrie :
-du premier `---` jusqu'à la **note de statut**, exclue. ⚠ **Ni l'en-tête à cinq
-champs, ni la thèse citée, ni la note de statut** : *l'appareil de gouvernance
-vit au `.md`, qui reste la seule source.* La purge est celle du 29 juillet 2026,
-et `verifier-piece.py` refuse un rendu qui la recopierait.
+du premier `---` jusqu'à la **note de statut**, exclue. ⚠ **Ni le tableau
+d'en-tête, ni la note de statut** : *l'appareil de gouvernance vit au `.md`, qui
+reste la seule source.* La purge est celle du 29 juillet 2026, et
+`verifier-piece.py` refuse un rendu qui la recopierait.
+
+⚠ **Mais la tête rendue porte, depuis le 15 septembre 2026, le STATUT et la THÈSE
+CITÉE**, recopiés de la tête du `.md` sans un mot de plus. Deux défauts l'ont
+imposé, relevés par la critique indépendante du morceau M7b : *(a)* le volume est
+une archive de travail hors compte des livrables depuis la décision D-18, et le
+lecteur du `.html` ne le voyait nulle part — la purge retirait le seul endroit
+qui le disait ; *(b)* cinq corps (ch. 19, 25, 27, 48, 49) renvoient à « la thèse
+citée ci-dessus » ou au « bloc de tête ci-dessus », qui n'existaient pas au rendu.
+Le statut est la rangée « Statut » de la tête, la thèse son ou ses paragraphes
+de citation ; une tête qui ne les porte pas arrête le rendu.
 
 Les deux défauts du rendeur retiré, corrigés ici
 -------------------------------------------------
@@ -61,8 +71,11 @@ def pieces():
     return sorted(RACINE.glob("Livre */[0-9][0-9]-*.md"))
 
 
+STATUT = re.compile(r"^\| \*\*Statut\*\* \| (.+) \|$")
+
+
 def decouper(texte):
-    """Rend (numéro, titre, situe, corps markdown)."""
+    """Rend (numéro, titre, situe, corps markdown, statut markdown, thèse markdown)."""
     m = TITRE.search(texte)
     if not m:
         raise SystemExit("titre « # Chapitre N — … » introuvable")
@@ -80,7 +93,17 @@ def decouper(texte):
     fin = FIN_DU_CORPS.search(corps)
     if fin:
         corps = corps[:fin.start()]
-    return numero, titre, situe, corps.strip()
+
+    # La tête : la rangée « Statut », et le ou les paragraphes de thèse citée,
+    # lignes vides comprises entre deux thèses (ch. 37 et 45).
+    tete = texte[:i].split("\n")
+    statut = next((s.group(1) for s in map(STATUT.match, tete) if s), None)
+    citations = [k for k, l in enumerate(tete) if l.startswith(">")]
+    if statut is None or not citations:
+        raise SystemExit(f"chapitre {numero} : la tête ne porte pas de statut ou de thèse "
+                         f"citée — un rendu sans statut ne se publie pas.")
+    these = "\n".join(tete[citations[0]:citations[-1] + 1])
+    return numero, titre, situe, corps.strip(), statut, these
 
 
 def pandoc(markdown):
@@ -208,8 +231,15 @@ def composer(md):
     """Rend le HTML de la pièce, sans l'écrire — c'est ce que le contrôle de
     parité compare au fichier versionné."""
     texte = md.read_text(encoding="utf-8")
-    numero, titre, situe, corps_md = decouper(texte)
+    numero, titre, situe, corps_md, statut_md, these_md = decouper(texte)
     corps, nav_lignes = corps_et_nav(corps_md, numero)
+
+    # Statut et thèse passent par pandoc d'un seul appel : le premier paragraphe
+    # est le statut, chaque citation une thèse.
+    tete_html = pandoc(statut_md + "\n\n" + these_md)
+    statut_html = re.match(r"\s*<p>(.*?)</p>", tete_html, re.S).group(1).strip()
+    theses_html = "\n".join(
+        f'  <div class="these">\n  {c.strip()}\n  </div>' for c in CITATION.findall(tete_html))
 
     livre = md.parent.name                      # « Livre I »
     fil = situe.split(".")[0].strip()           # « Livre I — Coopérer : … »
@@ -228,6 +258,8 @@ def composer(md):
               f'  <div class="titre__fil">{e(fil)}</div>\n'
               f'  <h1><span class="chap">Chapitre {numero}</span>{e(titre)}</h1>\n'
               f'  <p class="titre__situe">{situe}</p>\n'
+              f'  <p class="titre__statut">{statut_html}</p>\n'
+              f'{theses_html}\n'
               f'</header>')
 
     sortie = GABARIT.read_text(encoding="utf-8")

@@ -35,7 +35,15 @@ python3 "$DIR/build/assemble.py" "$TMP/compendium.md"
 # `accentuation.lua` porte la regle d'accentuation du corps — le gras de
 # proposition rendu au romain, le ⚠ retire, une saillance par sous-section. Elle
 # opere sur l'ARBRE et non sur le texte : voir l'en-tete du filtre pour le motif.
-pandoc "$TMP/compendium.md" -f markdown-raw_html --template="$DIR/build/$GABARIT.template" \
+# ⚠ `-implicit_header_references` (15 septembre 2026) : sans lui, Pandoc lit les
+# niveaux de preuve « [A] », « [B] », « [C] » comme des renvois implicites aux titres
+# « A », « B », « C » de la bibliographie, et le PDF les composait sans crochets, en
+# liens vers l'annexe — 754 occurrences au rendu des sources de `5cdb5bb`, relevées
+# le 15 septembre 2026 quand la ligne de statut du ch. 1 est sortie « entrées du Vol. I
+# en C ». Le `.md` et le `.html` les portaient justes : Pandoc ne résout ces renvois que
+# dans un document qui contient les titres. Le corpus n'emploie aucun renvoi implicite
+# voulu : sans l'extension, le `.typ` ne porte plus aucun `#link(<…>)`.
+pandoc "$TMP/compendium.md" -f markdown-raw_html-implicit_header_references --template="$DIR/build/$GABARIT.template" \
        --lua-filter="$DIR/build/accentuation.lua" -t typst -o "$TMP/doc.typ"
 sed -i 's/align(center)\[#table/align(left)[#table/g' "$TMP/doc.typ"
 # Pandoc pose un `table.hline()` explicite sous la rangee de tete. Le gabarit

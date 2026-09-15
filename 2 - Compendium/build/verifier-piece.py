@@ -11,18 +11,23 @@ par substitution globale du titre, non par régénération. *Un fichier modifié
 même commit que sa source n'est pas un fichier régénéré, et rien ne les
 distinguait.*
 
-Ce script les distingue. Trois contrôles, dans cet ordre de sévérité :
+Ce script les distingue. Quatre contrôles, dans cet ordre de sévérité :
 
 **[1] Parité stricte** — le rendu re-fabriqué depuis le `.md` courant est
 identique, octet pour octet, au `.html` versionné. C'est le contrôle qui
 compte : il ne suppose rien de la forme du rendu, il refait le travail.
 
 **[2] Purge de l'appareil** — le rendu ne porte **ni l'en-tête à cinq champs, ni
-la thèse citée, ni la note de statut**. *La purge du 29 juillet 2026 est une
+la note de statut**, ni la thèse citée hors de sa tête. *La purge du 29 juillet 2026 est une
 règle de fond : le rendu publie le corps, la gouvernance vit au `.md`.* Le
 contrôle [1] la couvre déjà par construction ; celui-ci la rend **opposable au
 rendeur lui-même**, dont une évolution pourrait la lever sans que personne ne
 le voie.
+
+**[4] Statut** — la tête rendue porte le statut de la pièce, « hors compte des
+livrables » et « non publiable » compris (15 septembre 2026, décision D-18). *Un
+lecteur du `.html` ne doit pas avoir à ouvrir le `.md` pour savoir ce que vaut la
+pièce.*
 
 **[3] Figures** — chaque image du `.md` est dans le rendu, à la même source.
 Redondant avec [1], et c'est voulu : *c'est la classe de défaut qui a tenu cinq
@@ -48,13 +53,23 @@ _spec.loader.exec_module(rendre_piece)
 
 RACINE = rendre_piece.RACINE
 
-# Les trois marques de l'appareil de gouvernance, telles qu'elles apparaîtraient
-# dans un rendu qui les recopierait.
+# Les marques de l'appareil de gouvernance, telles qu'elles apparaîtraient dans un
+# rendu qui les recopierait. ⚠ Depuis le 15 septembre 2026, la TÊTE rendue
+# (`<header class="titre">`) porte la thèse citée et le statut de la pièce — voir
+# `rendre-piece.py` : la thèse n'est donc refusée qu'au CORPS, après la tête ; le
+# tableau d'en-tête et la note de statut le restent partout.
 APPAREIL = (
-    ("en-tête à cinq champs", re.compile(r"<th>Champ</th>\s*<th>Valeur</th>")),
-    ("thèse citée", re.compile(r"<strong>Thèse</strong>\s*<em>\(citée depuis")),
-    ("note de statut", re.compile(r"<h[1-6][^>]*>[^<]*Note de statut", re.I)),
+    ("en-tête à cinq champs", re.compile(r"<th>Champ</th>\s*<th>Valeur</th>"), "partout"),
+    ("thèse citée", re.compile(r"<strong>Thèse</strong>\s*<em>\(citée depuis"), "corps"),
+    ("note de statut", re.compile(r"<h[1-6][^>]*>[^<]*Note de statut", re.I), "partout"),
 )
+TETE = re.compile(r'<header class="titre">(.*?)</header>', re.S)
+
+# [4] — le statut rendu. Le volume est une archive de travail hors compte des
+# livrables (D-18, 15 septembre 2026), et chaque pièce un brouillon non publiable :
+# un lecteur du `.html` le lit en tête, sans ouvrir le `.md`.
+STATUT_RENDU = re.compile(r'<p class="titre__statut">(.*?)</p>', re.S)
+STATUT_EXIGE = ("hors compte des livrables", "non publiable")
 
 # ⚠ Les commentaires HTML sont retirés avant [2], et le motif est un piège
 # vécu : le gabarit porte lui-même, en commentaire, la phrase « NI EN-TÊTE À
@@ -93,11 +108,22 @@ def controler():
 
         # [2] — la purge du 29 juillet 2026.
         sans_commentaire = COMMENTAIRE.sub(" ", versionne)
-        for quoi, motif in APPAREIL:
-            if motif.search(sans_commentaire):
-                echecs.append(f"[2] {nom} : le rendu porte « {quoi} ». Le `.html` "
-                              f"publie le corps technique ; l'appareil de "
+        tete = TETE.search(sans_commentaire)
+        hors_tete = TETE.sub(" ", sans_commentaire)
+        for quoi, motif, ou in APPAREIL:
+            if motif.search(sans_commentaire if ou == "partout" else hors_tete):
+                echecs.append(f"[2] {nom} : le rendu porte « {quoi} »"
+                              + (" hors de sa tête" if ou == "corps" else "") +
+                              f". Le `.html` publie le corps technique ; l'appareil de "
                               f"gouvernance vit au `.md`, seule source.")
+
+        # [4] — le statut en tête, lisible sans le `.md`.
+        statut = STATUT_RENDU.search(tete.group(1)) if tete else None
+        manque = [s for s in STATUT_EXIGE if not statut or s not in statut.group(1)]
+        if manque:
+            echecs.append(f"[4] {nom} : la tête rendue ne dit pas « {' », « '.join(manque)} » — "
+                          f"le lecteur du `.html` ne voit pas que la pièce est un brouillon "
+                          f"non publiable d'une archive hors compte des livrables (D-18).")
 
         # [3] — les figures, nommément.
         attendues = IMAGE_MD.findall(md.read_text(encoding="utf-8"))
@@ -119,7 +145,7 @@ def main():
             print(f"  {e}")
         return 1
     print(f"OK — les {n} rendus `.html` sont ceux que les `.md` produisent "
-          f"(parité stricte, purge de l'appareil, figures).")
+          f"(parité stricte, purge de l'appareil, statut en tête, figures).")
     return 0
 
 

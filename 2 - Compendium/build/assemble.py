@@ -10,12 +10,22 @@ Ce que l'assemblage RETIRE, et pourquoi :
     `PRD/decompte.sh`, qui l'exclut du corps) ;
   - l'en-tete a cinq champs (Statut / Date de gel / Socle mobilise /
     Garde-fous balayes / Volumetrie ciblee), appareil de gouvernance et non
-    corps de chapitre (idem : hors du corps mesure par `decompte.sh`) ;
-  - la these citee depuis le TOC, qui est le cahier des charges de la piece et
-    non son propos (idem : hors du corps mesure) ;
+    corps de chapitre (idem : hors du corps mesure par `decompte.sh`) —
+    ⚠ SAUF la valeur de la rangee « Statut », composee sous la ligne de
+    situation depuis le 15 septembre 2026 ;
   - les filets `---`, qui ne sont que des separateurs de section.
 Les trois appareils sont neanmoins EXIGES a la lecture : leur absence fait
 echouer l'assemblage, faute de quoi une piece deformee passerait sans bruit.
+
+⚠ CE QUI A CHANGE LE 15 SEPTEMBRE 2026 (reprise du morceau M7b, sur critique
+independante). Jusque-la, l'assemblage retirait aussi la these citee et tout le
+tableau de tete : le PDF de mille pages n'ecrivait nulle part que le volume est
+une archive de travail hors compte des livrables (D-18) ni que ses chapitres
+sont des brouillons non publiables, et cinq corps (ch. 19, 25, 27, 48, 49)
+renvoyaient a « la these citee ci-dessus » ou au « bloc de tete ci-dessus » sans
+rien au-dessus. Chaque chapitre s'ouvre donc sur son statut, puis sa these
+citee ; l'avis de statut du volume est au gabarit, en tete de la table des
+matieres.
 
 Ce que l'assemblage NE FAIT PAS, et qu'il faut savoir en le lisant :
 l'ACCENTUATION du corps — le gras de proposition rendu au romain, le « ⚠ »
@@ -25,9 +35,11 @@ indecidable au niveau du texte (`*A **B***` et `**A *B***` s'ecrivent pareil).
 Le marqueur `#ouverture-annexe()` pose ci-dessous est ce qui l'arrete avant les
 deux annexes — ne pas le deplacer sans relire ce filtre.
 
-Ce qu'il conserve : titre, ligne de situation, et tout le corps. L'etat du
-volume (brouillon non publiable) est declare une fois, au colophon du gabarit —
-retire des pieces, il n'est pas efface.
+Ce qu'il conserve : titre, ligne de situation, statut, these citee, et tout le
+corps. ⚠ La phrase qui se lisait ici jusqu'au 15 septembre 2026 — « l'etat du
+volume (brouillon non publiable) est declare une fois, au colophon du gabarit » —
+etait fausse depuis l'instruction d'auteur du 30 juillet 2026, qui retire le
+statut du colophon : le PDF ne le declarait nulle part.
 
 Depuis le 29 juillet 2026, l'assemblage ajoute apres le chapitre 50 une ANNEXE
 HORS PLAN, `annexe-references.md` : la liste des 159 entrees du socle consolide.
@@ -72,6 +84,8 @@ RE_TITRE = re.compile(r"^# Chapitre (\d+) — (.+)$")
 RE_SECTION = re.compile(r"^## § (\d+\.\d+) — (.+)$")
 RE_MOUVEMENT = re.compile(r"^# ((?:Premier|Second|Troisième) mouvement — .+)$")
 RE_NOTE_STATUT = re.compile(r"^## § (\d+\.\d+) — Note de statut\b")
+RE_STATUT = re.compile(r"^\| \*\*Statut\*\* \| (.+) \|$")
+RE_LIEN = re.compile(r"\[([^\]]+)\]\([^)]*\)")
 # Les deux monographies Springer relevees en gabarit composent leur legende de
 # tableau « Table N.M » en GRAS, la suite en romain. Le corpus ecrit
 # « : Tableau N.M — … » : seule l'etiquette passe en gras, le tiret cadratin
@@ -120,17 +134,21 @@ def piece(chemin, numero):
             situation.append(lignes[i])
             i += 1
 
-    # --- en-tete a cinq champs : retire ---
+    # --- en-tete a cinq champs : retire, sauf la rangee « Statut » ---
+    statut = None
     while i < len(lignes):
         if lignes[i].startswith("| Champ "):
             while i < len(lignes) and lignes[i].startswith("|"):
+                m = RE_STATUT.match(lignes[i])
+                if m:
+                    statut = m.group(1)
                 i += 1
             break
         if lignes[i].startswith("> "):
             break
         i += 1
 
-    # --- these : retiree du rendu, comme l'en-tete et la note de statut ---
+    # --- these : composee en ouverture de chapitre depuis le 15 septembre 2026 ---
     while i < len(lignes) and not lignes[i].strip():
         i += 1
     if i < len(lignes) and lignes[i].startswith(">"):
@@ -147,6 +165,16 @@ def piece(chemin, numero):
         sortie.append(brut("]"))
     if not these:
         sys.exit(f"[assemble] {chemin} : these introuvable (borne d'en-tete)")
+    if statut is None:
+        sys.exit(f"[assemble] {chemin} : rangee « Statut » introuvable en tete — "
+                 f"un chapitre sans statut ne se compose pas")
+    # Depuis le 15 septembre 2026 : le statut, puis la these citee, ouvrent le
+    # chapitre. Les liens du statut visent des fichiers du depot : au PDF, leur
+    # texte seul.
+    sortie.append(brut("#statut["))
+    sortie.append(RE_LIEN.sub(r"\1", statut) + "\n")
+    sortie.append(brut("]"))
+    sortie.append("\n" + "\n".join(these) + "\n")
 
     # --- corps ---
     corps = []
