@@ -8,7 +8,7 @@ débat porte sur la pile protocolaire ; dans une coopérative régie, la pile n'
 [*Cinq schémas*](Cinq%20sch%C3%A9mas%20%E2%80%94%20%C3%A9tat%20de%20l%27art%20en%20services%20financiers.md) reprend ses cinq figures et les explique.
 
 **Statut :** livrable, planche comprise (Vol. VIII) — fixé le 15 septembre 2026 par la décision [D-18](../2%20-%20Compendium/PRD/PRD.md#d-18) ;
-dépôt rouvert le même jour par [D-17](../2%20-%20Compendium/PRD/PRD.md#d-17). Ni relecteur distinct du rédacteur, ni ronde adverse.
+dépôt rouvert le même jour par [D-17](../2%20-%20Compendium/PRD/PRD.md#d-17), re-clos le 16 septembre 2026 par [D-19](../2%20-%20Compendium/PRD/PRD.md#d-19). Ni relecteur distinct du rédacteur, ni ronde adverse.
 
 | Pièce | Rendus | Contenu |
 |---|---|---|

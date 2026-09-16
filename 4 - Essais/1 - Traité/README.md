@@ -6,7 +6,7 @@ Le dossier porte deux choses. Le *Traité sur les systèmes multiagents en essai
 mesure, ou l'écart consigné. Cinq écarts le sont, dont deux portent contre le traité depuis le reclassement du 17 août 2026 — trois avant lui, compte que cite la troisième édition —, au [registre des décisions](docs/decisions.md).
 
 **Statut :** le traité est livrable (Vol. V) — fixé le 15 septembre 2026 par la décision [D-18](../../2%20-%20Compendium/PRD/PRD.md#d-18) ;
-le simulateur, sa transposition, est hors compte. Dépôt rouvert le même jour par [D-17](../../2%20-%20Compendium/PRD/PRD.md#d-17).
+le simulateur, sa transposition, est hors compte. Dépôt rouvert le même jour par [D-17](../../2%20-%20Compendium/PRD/PRD.md#d-17), re-clos le 16 septembre 2026 par [D-19](../../2%20-%20Compendium/PRD/PRD.md#d-19).
 
 **Par où entrer :** le traité ; puis [`docs/README.md`](docs/README.md), l'index de la documentation — [`PRD.md`](docs/PRD.md) dit ce qui
 est exigé, [`SPEC.md`](docs/SPEC.md) ce que le code garantit — et [`CLAUDE.md`](CLAUDE.md) pour qui reprend le code.

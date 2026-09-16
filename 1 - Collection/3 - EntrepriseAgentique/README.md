@@ -9,7 +9,7 @@ l'ouvrage, qu'aucune spécification ne porte. Le volume prolonge les [Vol. I](..
 [II](../2%20-%20OrchestrationAgentique/) sur leur verrou commun ; ses pièces sont gelées au 21 juillet 2026.
 
 **Statut :** livrable sous réserve déclarée — fixé le 15 septembre 2026 par la décision [D-18](<../../2%20-%20Compendium/PRD/PRD.md#d-18>)
-(option DA-3 (a) du plan d'exécution) ; dépôt rouvert le même jour par [D-17](<../../2%20-%20Compendium/PRD/PRD.md#d-17>). Aucun relecteur humain nommé.
+(option DA-3 (a) du plan d'exécution) ; dépôt rouvert le même jour par [D-17](<../../2%20-%20Compendium/PRD/PRD.md#d-17>), re-clos le 16 septembre 2026 par [D-19](../../2%20-%20Compendium/PRD/PRD.md#d-19). Aucun relecteur humain nommé.
 
 > **Réserves de lecture :** les quinze remontées ouvertes, R-G-43 à R-G-57, ni soldées ni levées ; un passage qu'elles touchent se lit en les sachant.
 > - dette de vote sur F-92 et F-96 (R-G-44) : la thèse du ch. 26 repose sur deux entrées que le vote adversarial dû n'a pas éprouvées, marquées ⚖ à chaque mobilisation ;

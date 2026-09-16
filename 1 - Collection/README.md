@@ -4,7 +4,7 @@ Le triptyque du corpus : trois volumes conçus en progression — des protocoles
 répondent ensemble à la question du [dépôt](../README.md). Chacun porte sa thèse, son socle factuel et ses dates de gel.
 
 **Statut :** les trois sont livrables, le Vol. III sous réserve déclarée — fixé le 15 septembre 2026 par la décision
-[D-18](../2%20-%20Compendium/PRD/PRD.md#d-18) ; dépôt rouvert le même jour par [D-17](../2%20-%20Compendium/PRD/PRD.md#d-17). Aucun relecteur humain nommé.
+[D-18](../2%20-%20Compendium/PRD/PRD.md#d-18) ; dépôt rouvert le même jour par [D-17](../2%20-%20Compendium/PRD/PRD.md#d-17), re-clos le 16 septembre 2026 par [D-19](../2%20-%20Compendium/PRD/PRD.md#d-19). Aucun relecteur humain nommé.
 
 | Vol. | Dossier | Thèse | Portée | Rendu |
 |---|---|---|---|---|

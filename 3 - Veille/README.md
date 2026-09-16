@@ -12,7 +12,7 @@ unique, un entretien ; la [note de synthèse](Note%20de%20synth%C3%A8se.md) cond
 | *La transformation du cycle de vie du développement logiciel à l'ère des agents* | [PDF](Note-veille-SDLC-agentique.pdf), 50 p. | 27 août 2026 | publiée, hors livrables : source unique, bibliographie non appariée |
 | *Note de synthèse — veille, revue et état de l'art* | [PDF](Note%20de%20synth%C3%A8se.pdf), 22 p. | 15 septembre 2026 | publiée, hors livrables : rédigée par un modèle de langage, non relue par un humain |
 
-Dépôt rouvert le 15 septembre 2026 par [D-17](../2%20-%20Compendium/PRD/PRD.md#d-17) ; aucun des quatre n'a de relecteur humain nommé.
+Dépôt rouvert le 15 septembre 2026 par [D-17](../2%20-%20Compendium/PRD/PRD.md#d-17) , re-clos le 16 septembre 2026 par [D-19](../2%20-%20Compendium/PRD/PRD.md#d-19); aucun des quatre n'a de relecteur humain nommé.
 
 **Par où entrer :** la note de synthèse pour l'essentiel, chaque affirmation renvoyée à sa section et au niveau de preuve que le volume
 déclare ; la veille pour l'état du champ, sa section 13 rendant compte des volumes du corpus ; la revue pour ce qui a franchi un comité —

@@ -9,7 +9,7 @@ l'inverse. Son résultat le plus citable est négatif : trois protocoles croisé
 croisements, aucun lien documenté par source primaire. Il présuppose le [Vol. I](../1%20-%20InteroperabiliteAgentique/).
 
 **Statut :** livrable — fixé le 15 septembre 2026 par la décision [D-18](../../2%20-%20Compendium/PRD/PRD.md#d-18) ; dépôt rouvert le
-même jour par [D-17](../../2%20-%20Compendium/PRD/PRD.md#d-17). Aucun relecteur humain nommé.
+même jour par [D-17](../../2%20-%20Compendium/PRD/PRD.md#d-17), re-clos le 16 septembre 2026 par [D-19](../../2%20-%20Compendium/PRD/PRD.md#d-19). Aucun relecteur humain nommé.
 
 | Champ | Valeur |
 |---|---|

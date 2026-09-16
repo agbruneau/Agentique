@@ -9,7 +9,7 @@ de finalité. L'Annexe B projette l'ouvrage sur une coopérative fictive, Boréa
 pile IBM : 18 sections, 6 sous-annexes, 28 diagrammes Mermaid. Socle documentaire arrêté à juin 2026.
 
 **Statut :** livrable — fixé le 15 septembre 2026 par la décision [D-18](../../2%20-%20Compendium/PRD/PRD.md#d-18) ; dépôt rouvert le
-même jour par [D-17](../../2%20-%20Compendium/PRD/PRD.md#d-17). Aucun relecteur humain nommé.
+même jour par [D-17](../../2%20-%20Compendium/PRD/PRD.md#d-17), re-clos le 16 septembre 2026 par [D-19](../../2%20-%20Compendium/PRD/PRD.md#d-19). Aucun relecteur humain nommé.
 
 | Chapitre | Objet |
 |---|---|

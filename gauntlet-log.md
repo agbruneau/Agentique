@@ -225,3 +225,16 @@ T7.4) n'ont pas de critique à l'aveugle : l'orchestrateur rejoue leurs critère
 - Plan d'exécution : incise d'état d'exécution datée en tête, erratum daté sur le seuil intenable de T4.3 ; le texte des tâches n'est pas réécrit.
 - Examiné sans correction : les guillemets devenus typographiques à la p. 150 du Vol. II (liste de termes cherchés, effet de rendu sans changement de sens) ; `4 - Essais/` sans `README` (hors plan : T4.2 vise les dix-huit `README` existants, et une dix-neuvième page déplacerait les comptes datés) ; `JOURNAL.md:77` « trois » (chronique reçue mot pour mot).
 - Restent à l'auteur : DA-4 et la relecture (T5.1 à T5.3) ; re-clôture, `corpus-v1.0`, DOI (T7.3) ; LFS à la re-clôture (T7.4), avec son effet sur le quota de bande passante LFS de la CI ; consigne « aucun statut au colophon » du gabarit du compendium ; liste hors compte déduite par D-18.
+- CI verte au run `35018285434` sur `ea02edc` (clôture de l'exécution).
+
+---
+
+# Re-clôture — 16 septembre 2026
+
+*Instruction d'auteur : « Relecture complétée. recloture le tout ». Aucun rapport de relecture n'est au dépôt et le
+registre de `RELECTURE.md` est vide ; interrogé, l'auteur répond : pas de rapport versable, étiquette seule, Git LFS reporté.*
+
+- **Décision D-19** (PRD du compendium, annexe A) : dépôt re-clos au commit étiqueté `corpus-v1.0`, condition de re-clôture de D-17 remplie. Relecture déclarée complétée par l'auteur, sans rapport versable : **aucune entrée en [H]**, **B1 non levée sur pièce**, T5.2 et T5.3 closes sans exécution. DOI (T7.3) à obtenir par l'auteur ; LFS (T7.4) reporté.
+- Portée des écritures : D-19 et incises au PRD (D-17, statut, date, bornes des décisions) et au TOC ; état du `README.md` racine ; « re-clos le 16 septembre 2026 par D-19 » ajouté aux huit `README` qui disaient la réouverture ; incises datées au plan, à `RELECTURE.md`, à `CONTRIBUTIONS.md` ; passe datée en fin du `JOURNAL.md` racine. Aucune phrase datée réécrite.
+- Rejoué avant commit, tout à 0 : `check-renvois.py` (2 810 renvois, 0 mort) et harnais ; `check-lisibilite.py` et harnais ; `check-compendium.py` (30 mutations), `check-toc.py` et harnais, `check-sieges.py`, `decompte.sh --verifier` ; `check-veille.py`, `check-traite.py`, `check-vol1.py`.
+- Fait par l'orchestrateur, sans agent.

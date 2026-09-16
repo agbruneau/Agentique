@@ -532,3 +532,11 @@ pas de résumé, le compendium, archive de travail, et le mémoire de 1997, piè
 570 → 571, Vol. II 387 → 390, Vol. III 427 → 428, traité 143 → 144, veille 144 → 145, revue 59 → 60, état de l'art
 186 → 187, note SDLC 49 → 50, note de synthèse 21 → 22 ; l'article reste à 38. La table du `README.md` porte les nouveaux
 comptes ; ceux qui précèdent restent à leur date.
+
+## 16 septembre 2026 — re-clôture (décision D-19)
+
+L'auteur déclare la relecture humaine complétée, sans rapport versable, et fait re-clore le dépôt. La décision D-19, à
+l'annexe A du PRD du compendium, le re-clôt au commit étiqueté `corpus-v1.0` et remplit la condition de re-clôture de
+D-17. Aucun relecteur n'est nommé au dépôt, aucun rapport n'y est versé, aucune entrée ne passe en [H] ; la condition
+bloquante B1 de l'évaluation n'est pas levée sur pièce. Le DOI (T7.3) reste à obtenir ; Git LFS (T7.4) est reporté.
+L'état courant est à [`README.md`](README.md).

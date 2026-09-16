@@ -11,7 +11,9 @@ prises le jour même aux défauts, sauf DA-6 en (b) ; DA-4 reste ouverte. Phases
 T7.1 et T7.2 exécutées ; D-17 rouvre le dépôt et D-18 fixe le compte des livrables. T5.1 à T5.3
 attendent les relecteurs, T7.3 et T7.4 la re-clôture ; la phase 8 n'est pas entreprise, sa
 condition n'étant pas remplie. Le détail, tâche par tâche et verdict par verdict, est au
-[journal de boucle](gauntlet-log.md).*
+[journal de boucle](gauntlet-log.md).* ✎ *Le 16 septembre 2026, l'auteur déclare la relecture complétée, sans rapport
+versable, et fait re-clore le dépôt : décision D-19, étiquette `corpus-v1.0`. Aucune entrée ne passe en [H], B1 n'est pas
+levée sur pièce, T5.2 et T5.3 sont closes sans exécution ; le DOI (T7.3) reste à obtenir, Git LFS (T7.4) est reporté.*
 
 ## 0. Régime du plan
 

@@ -5,10 +5,10 @@
 Un corpus de recherche en français sur une seule question : *comment une entreprise de services financiers canadienne déploie, gouverne et exploite des agents d'IA
 autonomes sous contrainte réglementaire ?* Sept documents livrables l'instruisent, un simulateur Rust transpose l'un d'eux. André-Guy Bruneau en répond ; la rédaction est assistée par des agents de modèle, déclarés pièce par pièce à [`CONTRIBUTIONS.md`](CONTRIBUTIONS.md).
 
-**État :** rouvert le 15 septembre 2026 par la décision [D-17](<2%20-%20Compendium/PRD/PRD.md#d-17>) pour exécuter le [plan](<Plan%20d%27ex%C3%A9cution%20%E2%80%94%20%C3%A9valuation%20acad%C3%A9mique.md>) tiré de
-l'[évaluation académique](<%C3%89valuation%20acad%C3%A9mique.md>) du même jour — 75,5 / 100, corrections majeures requises, rendue par un modèle de langage ;
-re-clôture prévue vers le 8 décembre 2026. La forme est vérifiée par un appareil rejoué à chaque poussée ; le fond ne l'est par aucun humain
-autre que l'auteur : aucun relecteur nommé, relecture préparée à [`RELECTURE.md`](RELECTURE.md). Licence CC BY 4.0 ([`LICENSE`](LICENSE)).
+**État :** clos le 16 septembre 2026 par la décision [D-19](<2%20-%20Compendium/PRD/PRD.md#d-19>), étiquette `corpus-v1.0`, après le [plan](<Plan%20d%27ex%C3%A9cution%20%E2%80%94%20%C3%A9valuation%20acad%C3%A9mique.md>)
+tiré de l'[évaluation académique](<%C3%89valuation%20acad%C3%A9mique.md>) du 15 septembre — 75,5 / 100, corrections majeures requises, rendue par un modèle de langage —,
+exécuté sous la réouverture [D-17](<2%20-%20Compendium/PRD/PRD.md#d-17>). La forme est vérifiée par un appareil rejoué à chaque poussée. Le fond a une relecture humaine
+déclarée par l'auteur, sans rapport versé ni relecteur nommé : aucun énoncé n'est au niveau [H] ([`RELECTURE.md`](RELECTURE.md)). Licence CC BY 4.0 ([`LICENSE`](LICENSE)).
 
 | Temps | Par où entrer |
 |---|---|

@@ -214,6 +214,10 @@ La seule section de cette page qui change après l'envoi.
 | Issues envoyées : date | — | — |
 | Second tour clos : date | — | — |
 
+✎ *16 septembre 2026 : l'auteur déclare la relecture complétée, sans rapport versable. Le registre reste vide, faute de
+pièce à y porter ; aucune entrée ne passe en [H] (§ 2). Le dépôt est re-clos le même jour par la décision D-19, au PRD du
+compendium, annexe A.*
+
 ## 9. Rejouer
 
 Depuis la racine du dépôt, en Git Bash.
