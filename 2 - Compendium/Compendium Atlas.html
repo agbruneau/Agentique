@@ -32,7 +32,7 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;background:var(--paper)}
-body{overflow-x:clip;background:var(--paper);color:var(--ink);font-family:var(--f-ui);font-size:var(--step-0);line-height:1.6;-webkit-font-smoothing:antialiased;font-optical-sizing:auto;
+body{overflow-x:clip;background:var(--paper);color:var(--ink);font-family:var(--f-ui);font-size:var(--step-0);line-height:1.6;-webkit-font-smoothing:antialiased;font-optical-sizing:auto;font-weight:370;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:40;background:var(--paper)}
 ::selection{background:color-mix(in oklab,var(--accent) 45%,transparent);color:var(--ink)}
@@ -41,6 +41,7 @@ button{font:inherit;color:inherit}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
 h1,h2,h3,h4{text-wrap:balance;margin:0;letter-spacing:-.01em}
 p{margin:0;text-wrap:pretty}
+b,strong{font-weight:650}
 .mono{font-family:var(--f-mono);font-size:.84em;letter-spacing:0}
 .eyebrow{font-family:var(--f-mono);font-size:var(--step--1);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .wrap{max-width:1200px;margin:0 auto}
@@ -52,7 +53,7 @@ p{margin:0;text-wrap:pretty}
 /* ---------- barre supérieure ---------- */
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:color-mix(in oklab,var(--paper) 82%,transparent);backdrop-filter:blur(14px) saturate(1.3);-webkit-backdrop-filter:blur(14px) saturate(1.3);
   border-bottom:1px solid var(--rule);margin:0 calc(-1 * max(16px,env(safe-area-inset-right,0px))) 0 calc(-1 * max(16px,env(safe-area-inset-left,0px)));
-  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));view-transition-name:top}
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 .top-in{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:16px;min-height:60px;flex-wrap:wrap;padding-block:8px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--f-display);font-weight:700;font-size:1.05rem;letter-spacing:-.01em;white-space:nowrap}
 .brand svg{flex:none;transition:transform .8s var(--ease)}
@@ -81,16 +82,6 @@ html.is-ch .readbar{opacity:1}
 #view{padding-block:32px 88px}
 .view-enter{animation:viewIn .45s var(--ease)}
 @keyframes viewIn{from{opacity:.001;transform:translateY(12px)}to{opacity:1;transform:none}}
-::view-transition-old(root){animation:vtOut .2s var(--ease) both}
-::view-transition-new(root){animation:vtIn .42s var(--ease) both}
-@keyframes vtOut{to{opacity:0;transform:translateY(-8px)}}
-@keyframes vtIn{from{opacity:0;transform:translateY(14px)}}
-@supports (animation-timeline:view()){
-  @media (prefers-reduced-motion:no-preference){
-    .block,.viz,.schema,.sec-h,.mapbox,.chain{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 35%}
-  }
-}
-@keyframes rise{from{opacity:.25;transform:translateY(22px)}}
 section+section{margin-top:72px}
 .sec-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;margin-bottom:22px}
 .sec-h h2{font-family:var(--f-display);font-weight:650;font-size:var(--step-3);letter-spacing:-.025em;line-height:1.05}
@@ -117,6 +108,20 @@ button.chip:hover,a.chip:hover{border-color:var(--accent)}
 /* ---------- accueil ---------- */
 .hero{position:relative;display:grid;gap:24px;padding-block:44px 20px;isolation:isolate}
 .hero::before{content:"";position:absolute;z-index:-1;inset:-100px 0 -20px 35%;background:radial-gradient(closest-side,color-mix(in oklab,var(--accent) 26%,transparent),transparent);filter:blur(10px);opacity:.75;pointer-events:none}
+.hero{grid-template-columns:minmax(0,1fr) minmax(0,300px);align-items:end;gap:28px 40px}
+.hero-main{display:grid;gap:24px;min-width:0}
+@media (max-width:980px){.hero{grid-template-columns:minmax(0,1fr)}}
+.mine{display:grid;gap:12px;padding:20px;border:1px solid var(--rule-2);border-radius:var(--r);background:color-mix(in oklab,var(--surface) 85%,transparent);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.mine .eyebrow{color:var(--accent-2)}
+.mine-n{display:flex;align-items:baseline;gap:8px}
+.mine-n b{font-family:var(--f-display);font-size:2.6rem;font-weight:700;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.mine-n span{color:var(--muted);font-size:.88rem}
+.mine-l{display:grid;gap:6px}
+.mine-l a{display:grid;grid-template-columns:2.2em minmax(0,1fr);gap:8px;align-items:center;text-decoration:none;font-family:var(--f-read);font-size:.9rem;color:var(--c)}
+.mine-l i{height:6px;border-radius:3px;background:var(--surface-3);overflow:hidden}
+.mine-l em{display:block;height:100%;background:var(--c);border-radius:3px;transition:width .6s var(--ease)}
+.mine-l a:hover i{outline:1px solid var(--c)}
+.mine .btn.primary{justify-content:center}
 .hero h1{font-family:var(--f-display);font-weight:700;font-size:var(--step-4);line-height:.98;letter-spacing:-.035em;max-width:16ch}
 .hero h1 em{display:block;font-family:var(--f-read);font-style:italic;font-weight:400;letter-spacing:-.02em;background:linear-gradient(95deg,var(--accent-2),var(--accent) 45%,var(--accent-deep));-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.08em}
 .hero .sub{font-family:var(--f-read);font-size:var(--step-1);color:var(--ink-2);max-width:56ch;line-height:1.5}
@@ -143,12 +148,13 @@ button.chip:hover,a.chip:hover{border-color:var(--accent)}
 
 /* chaîne de l'argument (schéma des cinq Livres) */
 .chain{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:22px;counter-reset:lv}
-@media (max-width:1060px){.chain{grid-template-columns:minmax(0,1fr);gap:16px}}
+@media (max-width:1180px){.chain{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:minmax(240px,1fr);overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 12px;scrollbar-width:thin}.chain .livre-card{scroll-snap-align:start}}
+@media (max-width:640px){.chain{grid-auto-flow:row;grid-auto-columns:auto;grid-template-columns:minmax(0,1fr);overflow:visible;gap:16px}}
 .livre-card{position:relative;display:flex;flex-direction:column;gap:9px;text-decoration:none;background:linear-gradient(180deg,color-mix(in oklab,var(--c) 12%,var(--surface)),var(--surface) 55%);border:1px solid color-mix(in oklab,var(--c) 30%,var(--rule));border-radius:var(--r);padding:18px 18px 16px;transition:transform .3s var(--ease),box-shadow .3s,border-color .3s}
 .livre-card:hover{transform:translateY(-4px);border-color:var(--c);box-shadow:0 0 0 1px var(--c),0 18px 40px -20px var(--c)}
 .chain .livre-card:not(:last-child)::after{content:"";position:absolute;top:34px;right:-20px;width:18px;height:2px;background:linear-gradient(90deg,var(--c),var(--rule-2))}
 .chain .livre-card:not(:last-child)::before{content:"";position:absolute;top:30px;right:-21px;border:5px solid transparent;border-left:7px solid var(--rule-2);border-right:0}
-@media (max-width:1060px){.chain .livre-card:not(:last-child)::after{top:auto;bottom:-16px;right:auto;left:34px;width:2px;height:14px;background:linear-gradient(180deg,var(--c),var(--rule-2))}.chain .livre-card:not(:last-child)::before{top:auto;bottom:-17px;right:auto;left:30px;border:5px solid transparent;border-top:7px solid var(--rule-2);border-bottom:0}}
+@media (max-width:640px){.chain .livre-card:not(:last-child)::after{top:auto;bottom:-16px;right:auto;left:34px;width:2px;height:14px;background:linear-gradient(180deg,var(--c),var(--rule-2))}.chain .livre-card:not(:last-child)::before{top:auto;bottom:-17px;right:auto;left:30px;border:5px solid transparent;border-top:7px solid var(--rule-2);border-bottom:0}}
 .livre-card .num{font-family:var(--f-read);font-size:2.7rem;line-height:1;color:var(--c);font-weight:400;letter-spacing:.02em}
 .livre-card h3{font-family:var(--f-display);font-weight:650;font-size:1.22rem}
 .livre-card p{font-size:.88rem;color:var(--ink-2)}
@@ -189,7 +195,9 @@ button.chip:hover,a.chip:hover{border-color:var(--accent)}
 .lab-card p{font-size:.86rem;color:var(--ink-2)}
 .lab-card .src{font-family:var(--f-mono);font-size:.72rem;color:color-mix(in oklab,var(--c) 75%,var(--ink));display:inline-flex;align-items:center;gap:6px}
 
-.howto{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:14px}
+.howto{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+@media (max-width:1000px){.howto{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.howto{grid-template-columns:minmax(0,1fr)}}
 .howto .card .eyebrow{color:var(--accent)}
 
 /* ---------- livre ---------- */
@@ -299,6 +307,7 @@ button.chip:hover,a.chip:hover{border-color:var(--accent)}
 .concept .front{justify-content:space-between;background:radial-gradient(120% 100% at 0% 0%,color-mix(in oklab,var(--c) 16%,var(--surface)),var(--surface) 65%);transition:border-color .25s}
 .concept:hover .front{border-color:color-mix(in oklab,var(--c) 60%,var(--rule))}
 .concept .front h3{font-family:var(--f-display);font-size:1.2rem;font-weight:650;line-height:1.2}
+.concept .front .tease{font-size:.86rem;color:var(--ink-2);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .concept .front .hint{font-size:.78rem;color:var(--muted);display:flex;justify-content:space-between;gap:6px}
 .concept .back{transform:rotateY(180deg);font-size:.88rem;border-color:color-mix(in oklab,var(--c) 45%,var(--rule))}
 .concept .back h4{font-size:.92rem;font-weight:650;color:color-mix(in oklab,var(--c) 75%,var(--ink))}
@@ -652,7 +661,7 @@ button.chip:hover,a.chip:hover{border-color:var(--accent)}
 .totop.on{opacity:1;transform:none;pointer-events:auto}
 .totop:hover{border-color:var(--accent);box-shadow:var(--glow)}
 
-@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}::view-transition-group(*),::view-transition-old(*),::view-transition-new(*){animation:none!important}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 footer.foot{margin-top:80px;padding-top:20px;border-top:1px solid var(--rule);font-size:.8rem;color:var(--muted);display:flex;gap:10px 22px;flex-wrap:wrap;justify-content:space-between}
 /* correctifs de largeur */
 .legend-row .chip{white-space:normal;text-align:left;line-height:1.35}
@@ -767,15 +776,14 @@ function render() {
         CLEANUPS.splice(0).forEach(f => { try { f(); } catch { } });
         document.documentElement.classList.toggle('is-ch', h.startsWith('ch-'));
         fn(v, m);
-        if (!RM && !document.startViewTransition) { void v.offsetWidth; v.classList.add('view-enter'); }
+        if (!RM) { void v.offsetWidth; v.classList.add('view-enter'); }
         updateNav(h);
         onScroll();
       };
-      const same = CURRENT === h, first = !CURRENT;
+      const same = CURRENT === h;
       CURRENT = h;
-      if (document.startViewTransition && !RM && !same && !first && !document.hidden) { const t = document.startViewTransition(swap); [t.ready, t.finished, t.updateCallbackDone].forEach(q => q?.catch(() => { })); }
-      else swap();
-      if (!same) window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
+      swap();
+      if (!same) window.scrollTo({ top: 0, behavior: 'instant' });
       return;
     }
   }
@@ -1701,13 +1709,13 @@ const TOURS = [
 route(/^accueil$/, (v) => {
   const T = A.these_termes; // [{livre:1, texte:'un contrat protocolaire découplé de ses mises en œuvre', court:'Contrat protocolaire'}...]
   v.innerHTML = `
-  <section class="hero">
+  <section class="hero"><div class="hero-main">
     <div class="eyebrow">Compendium · Informatique et ingénierie des systèmes · ${esc(A.auteur)}</div>
     <h1>Interopérabilité et Orchestration en <em>Entreprise Agentique</em></h1>
     <p class="sub">${esc(A.sous_titre)}</p>
     <p class="by"><span><b>${CH.length}</b> chapitres</span><span><b>5</b> Livres</span><span><b>${A.pages_contenu}</b> pages de contenu</span><span><b>${countConcepts()}</b> concepts définis</span><span><b>${countAffs()}</b> énoncés qualifiés</span><span><b>${countDates()}</b> repères datés</span></p>
     <div class="cta"><a class="btn primary" href="#ch-1">Commencer au chapitre 1 →</a><a class="btn" href="#labos">${ICON.lab} Explorer les labos</a><button class="btn" type="button" id="herosearch">${ICON.search} Rechercher <span class="mono muted">${KBD}</span></button></div>
-  </section>
+  </div>${readingCard()}</section>
 
   <section>
     <div class="sec-h"><h2>Les cinq Livres <span class="k">en un schéma</span></h2><p>Les Livres dans l’ordre de la page de titre et de la table des matières, avec le terme de la thèse que l’atlas rattache à chacun (correspondance de lecture).</p></div>
@@ -1756,6 +1764,15 @@ route(/^accueil$/, (v) => {
   ro.observe($('#mapbox'));
   onCleanup(() => ro.disconnect());
 });
+/* carte « Votre lecture » : dernier chapitre ouvert et progression par Livre (stockage local, facultatif) */
+function readingCard() {
+  const last = byNum[store.get('dernier', 0)];
+  return `<aside class="mine" aria-label="Votre lecture"><div class="eyebrow">Votre lecture</div>
+    <div class="mine-n"><b>${SEEN.size}</b><span>/ ${CH.length} chapitres ouverts</span></div>
+    <div class="mine-l">${LIVRES.map(l => { const k = l.chapitres.filter(n => SEEN.has(n)).length; return `<a href="#livre-${l.n}" style="--c:var(--l${l.n})" title="Livre ${l.id} · ${esc(l.nom)} : ${k} / ${l.chapitres.length}"><span>${l.id}</span><i><em style="width:${k / l.chapitres.length * 100}%"></em></i></a>`; }).join('')}</div>
+    ${last ? `<a class="btn primary" href="#ch-${last.num}" style="--lc:${cvar(last.num)}">Reprendre au ch. ${last.num} →</a><p class="muted" style="font-size:.84rem">${esc(last.titre)}</p>` : `<p class="muted" style="font-size:.86rem">Les chapitres que vous ouvrez s’ajoutent ici, sur cet appareil.</p>`}
+  </aside>`;
+}
 function countConcepts() { return CH.reduce((s, c) => s + (c.concepts || []).length, 0); }
 function countAffs() { return CH.reduce((s, c) => s + (c.affirmations || []).length, 0); }
 function countDates() { return CH.reduce((s, c) => s + (c.dates || []).length, 0); }
@@ -1935,7 +1952,7 @@ route(/^ch-(\d{1,2})$/, (v, m) => {
   if (!c) { go('accueil'); return; }
   const l = livreOf(n);
   document.documentElement.style.setProperty('--lc', `var(--l${l.n})`);
-  markSeen(n);
+  markSeen(n); store.set('dernier', n);
   const labs = LABS.filter(x => x.ch.includes(n));
   const tour = activeTourFor(n);
   const blocks = [
@@ -1975,7 +1992,7 @@ route(/^ch-(\d{1,2})$/, (v, m) => {
 
     ${(c.concepts || []).length ? `<section class="block" id="b-concepts"><h2>Concepts clés</h2><p class="lede">Retournez une carte : la définition du livre au verso, puis la même idée dite simplement.</p>
       <div class="concepts">${c.concepts.map(k => `<button class="concept" type="button" aria-label="${esc(k.terme)} : retourner la carte" id="k-${esc(k.id)}"><div class="in">
-        <div class="face front"><h3>${esc(k.terme)}</h3><div class="hint"><span class="mono">${pref(k.page)}</span><span>retourner ↻</span></div></div>
+        <div class="face front"><h3>${esc(k.terme)}</h3>${k.vulgarisation ? `<p class="tease">${esc(k.vulgarisation)}</p>` : ''}<div class="hint"><span class="mono">${pref(k.page)}</span><span>retourner ↻</span></div></div>
         <div class="face back"><h4>${esc(k.terme)}</h4><p>${esc(k.definition)}</p>${k.vulgarisation ? `<p class="simple"><b>Dit simplement</b>${esc(k.vulgarisation)}</p>` : ''}</div>
       </div></button>`).join('')}</div></section>` : ''}
 
