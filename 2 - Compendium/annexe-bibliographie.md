@@ -22,12 +22,12 @@ distinguent par leur objet.**
 | **La présente annexe** | les **documents** d'où ces faits et leur contexte proviennent | réunion des sources ; **aucune autorité propre** |
 | `audit-references.md` — ⚠ **non versé au dépôt** | la **validation** des 159 références sur cinq critères | rapport de mesure, **jamais citable à l'appui d'un énoncé** |
 
-⚠ **Trois bornes.** *(a)* **Le Vol. I fournit la quasi-totalité des entrées**, parce qu'il est
+⚠ **Trois bornes.** *(a)* **Le Vol. I fournit la totalité des entrées**, parce qu'il est
 le seul des trois à tenir une bibliographie séparée ; les **Vol. II et III** portent leurs
-sources **dans le corps de leurs entrées de socle**, et seules leurs adresses primaires sont
-reprises ici, sous leur identifiant d'origine. *L'asymétrie est celle des sources, non un défaut
+sources **dans le corps de leurs entrées de socle**, et seules leurs adresses primaires seraient
+reprises ici, sous leur identifiant d'origine — le balayage n'en relève **aucune** (§ I.2). *L'asymétrie est celle des sources, non un défaut
 de la réunion.* *(b)* **Aucun lien n'est résolu par l'assemblage** : une entrée pointant une
-ressource disparue **reste exacte et cesse d'être opposable**. *(c)* ⚠ **La dédoublonnage porte
+ressource disparue **reste exacte et cesse d'être opposable**. *(c)* ⚠ **Le dédoublonnage porte
 sur un identifiant normalisé** — DOI, arXiv, URL — et, à défaut, sur une signature textuelle :
 *deux formes du même document ne se voient pas à l'œil.*
 
@@ -1284,7 +1284,7 @@ sur un identifiant normalisé** — DOI, arXiv, URL — et, à défaut, sur une 
 
 ⚠ **Constat mesuré le 30 juillet 2026, et il est le résultat le plus utile de l'assemblage :
 les socles des Vol. II et III ne portent PAS leurs sources sous une forme reprenable.**
-Le balayage de leurs deux PRD rend **une seule adresse pour l'ensemble des deux volumes** ;
+Le balayage de leurs deux PRD rendait, le 30 juillet 2026, **une seule adresse pour l'ensemble des deux volumes** ; il n'en rend plus **aucune** à l'audit du 19 octobre 2026 ;
 leurs entrées `F-xx` citent leurs sources **en prose et par leur nom** — « lautorite.qc.ca »,
 « Norton Rose Fulbright », « rapport annuel Desjardins 2025 » —, jamais par un identifiant
 résoluble.

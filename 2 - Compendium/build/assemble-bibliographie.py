@@ -166,12 +166,18 @@ def rendre(brutes, liste, fondus, socle):
     # versionnée (2 septembre 2026), avec la mention d'absence plutôt qu'un lien mort.
     a("| `audit-references.md` — ⚠ **non versé au dépôt** | la **validation** des 159 références sur cinq critères | rapport de mesure, **jamais citable à l'appui d'un énoncé** |")
     a("")
-    a("⚠ **Trois bornes.** *(a)* **Le Vol. I fournit la quasi-totalité des entrées**, parce qu'il est")
+    # Le cardinal se lit au balayage, non à la prose : il valait 1 le 30 juillet 2026, 0 au 19 octobre.
+    adresses = len({(v, i, u) for v, i, u in socle})
+    a(f"⚠ **Trois bornes.** *(a)* **Le Vol. I fournit {'la quasi-totalité' if adresses else 'la totalité'} des entrées**, parce qu'il est")
     a("le seul des trois à tenir une bibliographie séparée ; les **Vol. II et III** portent leurs")
-    a("sources **dans le corps de leurs entrées de socle**, et seules leurs adresses primaires sont")
-    a("reprises ici, sous leur identifiant d'origine. *L'asymétrie est celle des sources, non un défaut")
+    a("sources **dans le corps de leurs entrées de socle**, et seules leurs adresses primaires seraient")
+    a("reprises ici, sous leur identifiant d'origine — "
+      + (f"le balayage en relève **{adresses}** (§ I.2)."
+         if adresses else
+         "le balayage n'en relève **aucune** (§ I.2).")
+      + " *L'asymétrie est celle des sources, non un défaut")
     a("de la réunion.* *(b)* **Aucun lien n'est résolu par l'assemblage** : une entrée pointant une")
-    a("ressource disparue **reste exacte et cesse d'être opposable**. *(c)* ⚠ **La dédoublonnage porte")
+    a("ressource disparue **reste exacte et cesse d'être opposable**. *(c)* ⚠ **Le dédoublonnage porte")
     a("sur un identifiant normalisé** — DOI, arXiv, URL — et, à défaut, sur une signature textuelle :")
     a("*deux formes du même document ne se voient pas à l'œil.*")
     a("")
@@ -207,7 +213,10 @@ def rendre(brutes, liste, fondus, socle):
     a("")
     a("⚠ **Constat mesuré le 30 juillet 2026, et il est le résultat le plus utile de l'assemblage :")
     a("les socles des Vol. II et III ne portent PAS leurs sources sous une forme reprenable.**")
-    a("Le balayage de leurs deux PRD rend **une seule adresse pour l'ensemble des deux volumes** ;")
+    a("Le balayage de leurs deux PRD rend **une seule adresse pour l'ensemble des deux volumes** ;"
+      if adresses == 1 else
+      f"Le balayage de leurs deux PRD rendait, le 30 juillet 2026, **une seule adresse pour l'ensemble des deux volumes** ; "
+      + (f"il en rend **{adresses}** à l'audit du 19 octobre 2026 ;" if adresses else "il n'en rend plus **aucune** à l'audit du 19 octobre 2026 ;"))
     a("leurs entrées `F-xx` citent leurs sources **en prose et par leur nom** — « lautorite.qc.ca »,")
     a("« Norton Rose Fulbright », « rapport annuel Desjardins 2025 » —, jamais par un identifiant")
     a("résoluble.")

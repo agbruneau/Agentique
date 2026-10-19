@@ -2556,3 +2556,33 @@ python .claude/skills/chapitre-compendium/scripts/verifier-piece.py "2 - Compend
    *une attestation qui ne nomme pas son corpus n'est pas opposable* (CA-IV-14).
 7. **Remonter, jamais corriger** le TOC, le PRD ni le conspectus — et **prendre son numéro de
    remontée au-dessus du maximum constaté sur pièces**, non du maximum supposé (PRD §13).
+
+---
+
+# Passe du 19 octobre 2026 — audit de contenu et corrections
+
+*Sur instruction de l'auteur, le 19 octobre 2026, dépôt clos par [D-19](PRD/PRD.md#d-19) ; aucune décision
+d'auteur n'est numérotée pour cette passe. Elle corrige des défauts de cohérence interne, non le fond :
+aucune thèse, aucune entrée de socle, aucun décompte de corps n'y change.*
+
+**Constats corrigés.**
+
+| Constat | Pièces | Correction |
+|---|---|---|
+| L'en-tête de rédaction portait le réel re-mesuré le 2 septembre 2026, mais l'écart à la cible calculé sur l'ancien réel | ch. 1-9, 11, 12 | écart recalculé sur le réel en place, égal désormais à celui de la tête : ch. 1 −0,6 % · 2 −30,5 % · 3 −36,3 % · 4 −6,0 % · 5 −34,7 % · 6 −45,8 % · 7 −37,5 % · 8 −28,8 % · 9 −31,3 % · 11 +8,5 % · 12 +24,9 % |
+| Deux tableaux légendés « Tableau 16.2 » | ch. 16 | les scénarios de normalisation deviennent le Tableau 16.3, la grille le Tableau 16.4 ; aucun renvoi ne les visait par leur numéro |
+| L'Annexe I disait reprendre les adresses primaires des Vol. II et III et en relever une, alors que son propre décompte en donne 0 ; « la dédoublonnage » | `annexe-bibliographie.md`, `build/assemble-bibliographie.py` | la prose suit désormais le cardinal mesuré (0 au 19 octobre 2026, 1 au 30 juillet 2026, mention conservée) ; « le dédoublonnage » |
+| Deux rendus `.html` divergeaient de leur `.md` (largeur de tableau `100%`/`99%`, écart de version de pandoc) | ch. 14, 37 | régénérés, avec celui du ch. 16 |
+
+`Compendium.pdf` est recomposé à 1 000 pages (légende du ch. 16 et Annexe I). Les écarts d'en-tête des
+ch. 10 et 42 sont restés en l'état : ils sont datés d'une mesure antérieure et le disent.
+
+**Constats relevés, laissés en l'état.** *(a)* Ch. 31 : un rapport final « attendu en octobre 2026 »
+arrive à échéance ce mois-ci ; à revoir à la prochaine revalidation (ch. 50). *(b)* Ch. 12, 17, 25 :
+guillemets droits `"…"` imbriqués dans des citations en « … » ; ils reproduisent la source anglaise.
+*(c)* Les quatre rapports déclaratifs P5 de `check-compendium.py` restent ouverts, faute de la décision 16
+qu'ils attendent.
+
+**Contrôles au terme de la passe.** `check-toc.py`, `check-sieges.py`, `check-compendium.py`,
+`verifier-piece.py`, `assemble-bibliographie.py --verifier` et `decompte.sh --verifier` passent ;
+`build-pdf.sh` rend 1 000 pages.

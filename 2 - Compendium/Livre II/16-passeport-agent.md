@@ -379,7 +379,7 @@ jamais « exigé par ».*
 | **2 — fondation ou alliance** | **PROJETÉ** (mandat) / **SPÉCULATIF** (assemblage) | donation annoncée le 28 avril 2026 (F-44, **[A]**) ; transfert **non matérialisé** à trois mois, normalisation annoncée sans échéance (F-45, **[B, degré 1]**) | la publication, par le cessionnaire, d'une spécification d'identité ou de paiement agentiques ; la matérialisation documentée du transfert |
 | **3 — préemption par le produit, cadrage par le régulateur** | ancrages **PROGRAMMÉS** (1ᵉʳ mai 2027) / résultat **SPÉCULATIF** | disponibilité générale datée et bornée (F-33, F-34) ; attentes de deux cadres au 1ᵉʳ mai 2027 (F-65, F-68) ; désignation **écrite au futur** au 27 juin 2026 (F-69) | un cadre prudentiel qui nommerait un format d'identité d'agent ; ou l'inverse — une normalisation ouverte qui précéderait l'échéance |
 
-: Tableau 16.2 — Trois scénarios de normalisation du passeport d'agent, objet de synthèse construit par la somme, avec leur tri prospectif, au 21 juillet 2026.
+: Tableau 16.3 — Trois scénarios de normalisation du passeport d'agent, objet de synthèse construit par la somme, avec leur tri prospectif, au 21 juillet 2026.
 
 **Aucun des trois n'est PROGRAMMÉ, et c'est le résultat de la section.** ⚠ Ce qui est PROGRAMMÉ dans
 ce dossier **ne concerne pas le passeport** : les expirations d'*Internet-Drafts*, qui découlent
@@ -411,7 +411,7 @@ une note intermédiaire.
 | **Q-D** *que peux-tu faire* | **répond partiellement** | inscription au registre | bornes déclarées en champs obligatoires (F-40, **[B]**) ; ⚠ **opposabilité au point d'application non établie** — second terme de la question (ch. 14 § 14.2 ; F-35, **[A, degré 2]**) |
 | **Q-E** *qui en répond* | **répond partiellement** | attestations de conformité | **degré 3** ; une obligation légale ouvre l'occasion d'être entendu par **un membre du personnel en mesure de réviser** (F-89, **[B]**), dans un **alinéa distinct** et **sans prescription sur la trace** |
 
-: Tableau 16.3 — Le passeport d'agent soumis à la grille du ch. 14 — réponse sur le papier et état du socle, au 21 juillet 2026.
+: Tableau 16.4 — Le passeport d'agent soumis à la grille du ch. 14 — réponse sur le papier et état du socle, au 21 juillet 2026.
 
 **Ce que ce tableau autorise à conclure est étroit, et il faut l'écrire.** *Le passeport reçoit une
 réponse aux cinq questions parce qu'il a été construit pour en recevoir une : c'est la propriété d'un
