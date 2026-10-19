@@ -894,7 +894,7 @@ function shell() {
   document.getElementById('app').innerHTML = `
   <header class="top"><div class="top-in">
     <a class="brand" href="#accueil" aria-label="Atlas du Compendium — accueil">${brandMark()}<span>Atlas du Compendium<small>50 chapitres · 5 Livres</small></span></a>
-    <nav class="mainnav" aria-label="Sections">${navs.map(([k, l]) => `<a href="#${k === 'livres' ? 'livre-1' : k}" data-k="${k}">${l}</a>`).join('')}</nav>
+    <nav class="mainnav" aria-label="Sections">${navs.map(([k, l]) => `<a href="#${k === 'livres' ? 'livre-1' : k}" data-k="${k}">${l}</a>`).join('')}<a href="Explorateur/index.html" title="Compendium interactif : simulateurs et explorateur des 50 chapitres">Explorateur ↗</a></nav>
     <button class="searchbtn" id="sbtn" type="button">${ICON.search}<span class="lbl">Rechercher</span> <kbd>${KBD}</kbd></button>
   </div>
   <div class="bookbar" aria-label="Les 50 chapitres">${CH.map(c => `<a href="#ch-${c.num}" data-n="${c.num}" style="--c:${cvar(c.num)}" title="${c.num}. ${esc(c.titre)}" aria-label="Chapitre ${c.num}"></a>`).join('')}</div>
