@@ -4,522 +4,402 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Compendium Interactif — Entreprise Agentique (2024–2032)</title>
+<script>try{if(JSON.parse(localStorage.getItem('atlas.theme'))==='light')document.documentElement.dataset.theme='light'}catch(e){}</script>
 <style>
+/* Identité commune avec l'Atlas : fond noir chaud, orange brûlé pour l'actif, mêmes cinq couleurs de Livre.
+   Polices système uniquement : l'Explorateur doit rester utilisable hors ligne. */
 :root {
-  --bg: #070b14;
-  --bg-elev: #0f1629;
-  --bg-card: #151e36;
-  --bg-glass: rgba(15, 22, 41, 0.85);
-  --border: #253358;
-  --text: #f0f4ff;
-  --text-muted: #94a3b8;
-  --accent-1: #38bdf8;
-  --accent-2: #a855f7;
-  --accent-3: #10b981;
-  --accent-4: #f59e0b;
-  --accent-5: #f43f5e;
-  --font: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  color-scheme: dark;
+  --bg: #0C0A09;
+  --bg-elev: #15110E;
+  --bg-card: #1E1915;
+  --bg-glass: color-mix(in oklab, #0C0A09 84%, transparent);
+  --border: #2F2722;
+  --border-strong: #463931;
+  --border-subtle: #261F1B;
+  --text: #F3EBE2;
+  --text-2: #CDBFB2;
+  --text-muted: #9D8F83;
+  --brand: #EC7130;
+  --brand-2: #F08A4B;
+  --brand-ink: #150A04;
+  --b1: #C08A1E; --b2: #2FA08F; --b3: #DA5F24; --b4: #8A86DE; --b5: #C9607F;
+  --ok: #4FC08A; --warn: #E5AE3C; --bad: #FF6159; --info: #6FA3E0; --na: #7E7168;
+  --shadow: 0 22px 44px -24px rgba(0, 0, 0, .9);
+  --scrim: color-mix(in oklab, #000 62%, transparent);
+  --font: "Inter", "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  --mono: "JetBrains Mono", "Cascadia Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --radius-sm: 8px; --radius-md: 12px; --r: 14px;
+  --hh: 60px;
+  /* alias attendus par le balisage et les gabarits JS */
+  --accent-1: var(--b1); --accent-2: var(--b2); --accent-3: var(--b3); --accent-4: var(--b4); --accent-5: var(--b5);
+  --b1-color: var(--b1); --b2-color: var(--b2); --b3-color: var(--b3); --b4-color: var(--b4); --b5-color: var(--b5);
+  --accent: var(--brand); --primary: var(--brand); --accent-primary: var(--brand);
+  --accent-emerald: var(--ok); --accent-amber: var(--warn); --accent-danger: var(--bad); --danger: var(--bad); --warning: var(--warn);
+  --accent-rose: var(--b5); --accent-purple: var(--b4); --accent-cyan: var(--b2); --accent-blue: var(--info);
+  --text-primary: var(--text); --text-secondary: var(--text-2);
+  --bg-elevated: var(--bg-card); --font-mono: var(--mono);
 }
+/* thème clair : Livres assombris pour garder 4,5:1 sur papier */
 [data-theme="light"] {
-  --bg: #f8fafc;
-  --bg-elev: #ffffff;
-  --bg-card: #f1f5f9;
-  --bg-glass: rgba(255, 255, 255, 0.9);
-  --border: #cbd5e1;
-  --text: #0f172a;
-  --text-muted: #475569;
-  --accent-1: #0284c7;
-  --accent-2: #7e22ce;
-  --accent-3: #059669;
-  --accent-4: #d97706;
-  --accent-5: #e11d48;
+  color-scheme: light;
+  --bg: #F8F5F0;
+  --bg-elev: #FFFFFF;
+  --bg-card: #F2EDE6;
+  --bg-glass: color-mix(in oklab, #F8F5F0 86%, transparent);
+  --border: #E7E0D7;
+  --border-strong: #D4C9BC;
+  --border-subtle: #EEE8E0;
+  --text: #1D1713;
+  --text-2: #4B4038;
+  --text-muted: #706358;
+  --brand: #C2531A;
+  --brand-2: #A8440F;
+  --brand-ink: #FFFFFF;
+  --b1: #8F6410; --b2: #1D7A6C; --b3: #B8470F; --b4: #5B55C2; --b5: #A63E5E;
+  --ok: #23824F; --warn: #946100; --bad: #C8322B; --info: #2F65A8; --na: #8A7F76;
+  --shadow: 0 1px 2px rgba(60, 40, 20, .06), 0 14px 34px -20px rgba(60, 40, 20, .28);
+  --scrim: color-mix(in oklab, #2A1F18 38%, transparent);
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
+html { background: var(--bg); scroll-padding-top: calc(var(--hh) + 12px); }
 body {
   font-family: var(--font);
+  font-size: 15px;
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
-  overflow-x: hidden;
-  transition: background 0.3s, color 0.3s;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
 }
-/* Header & Top Nav */
+a { color: var(--brand-2); }
+strong, b { font-weight: 650; }
+h3 { font-size: 1.02rem; font-weight: 700; line-height: 1.35; letter-spacing: -.005em; }
+code { font-family: var(--mono); font-size: .86em; background: var(--bg-card); border: 1px solid var(--border); border-radius: 5px; padding: 0 .3em; }
+.mono { font-family: var(--mono); }
+::selection { background: color-mix(in oklab, var(--brand) 40%, transparent); }
+:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; border-radius: 6px; }
+
+/* En-tête : une seule ligne, la navigation défile si elle déborde */
 header {
   position: sticky;
   top: 0;
   z-index: 100;
   background: var(--bg-glass);
-  backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px) saturate(1.2);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
   border-bottom: 1px solid var(--border);
-  padding: 0.75rem 1.5rem;
+  padding: .55rem max(1rem, env(safe-area-inset-right, 0px)) .55rem max(1rem, env(safe-area-inset-left, 0px));
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
   gap: 1rem;
+  transition: transform .3s ease;
 }
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-.brand-badge {
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 800;
-  color: #fff;
-  font-size: 1rem;
-  box-shadow: 0 4px 14px rgba(56, 189, 248, 0.35);
-}
-.brand-title {
-  font-size: 0.98rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-}
-.brand-sub {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-}
-.nav-tabs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-}
+.brand { display: flex; align-items: center; gap: .65rem; flex: none; min-width: 0; color: inherit; text-decoration: none; }
+.brand-badge { width: 30px; height: 30px; flex: none; }
+.brand-badge path { fill: none; stroke-width: 4; stroke-linecap: round; }
+.brand-title { font-size: .95rem; font-weight: 700; letter-spacing: -.01em; white-space: nowrap; }
+.brand-sub { font-size: .72rem; color: var(--text-muted); white-space: nowrap; }
+.nav-tabs { display: flex; gap: 2px; flex: 1; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+.nav-tabs::-webkit-scrollbar { display: none; }
+.nav-tabs.ovf { -webkit-mask-image: linear-gradient(90deg, #000 88%, transparent); mask-image: linear-gradient(90deg, #000 88%, transparent); }
 .nav-tab {
-  background: transparent;
-  color: var(--text-muted);
-  border: 1px solid transparent;
-  padding: 0.45rem 0.85rem;
-  border-radius: 8px;
-  font-size: 0.82rem;
-  font-weight: 600;
+  flex: none;
+  white-space: nowrap;
+  background: none;
+  color: var(--text-2);
+  border: 0;
+  padding: .42rem .75rem;
+  border-radius: 999px;
+  font: inherit;
+  font-size: .84rem;
+  font-weight: 550;
   cursor: pointer;
-  transition: all 0.2s;
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: .45rem;
+  transition: background .2s, color .2s;
 }
-.nav-tab:hover {
-  color: var(--text);
-  background: var(--bg-card);
-}
-.nav-tab.active {
-  color: var(--text);
-  background: var(--bg-card);
-  border-color: var(--accent-1);
-  box-shadow: 0 0 12px rgba(56, 189, 248, 0.2);
-}
-.dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  display: inline-block;
-}
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
+.nav-tab:hover { color: var(--text); background: var(--bg-card); }
+.nav-tab.active { color: var(--text); background: color-mix(in oklab, var(--brand) 16%, var(--bg-elev)); }
+.dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; flex: none; }
+.header-actions { display: flex; align-items: center; gap: .4rem; flex: none; }
 .btn-icon {
-  background: var(--bg-card);
-  color: var(--text);
-  border: 1px solid var(--border);
-  padding: 0.45rem 0.75rem;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 0.8rem;
-  font-weight: 600;
-  transition: all 0.2s;
-}
-.btn-icon:hover {
-  border-color: var(--accent-1);
-}
-a.btn-icon { text-decoration: none; }
-
-/* Main Container */
-main {
-  max-width: 1380px;
-  margin: 0 auto;
-  padding: 1.75rem 1.5rem 4rem;
-}
-.view-section {
-  display: none;
-  animation: fadeIn 0.35s ease;
-}
-.view-section.active {
-  display: block;
-}
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Hero Banner */
-.hero {
-  background: radial-gradient(circle at top right, rgba(168, 85, 247, 0.16), transparent 55%),
-              radial-gradient(circle at bottom left, rgba(56, 189, 248, 0.14), transparent 50%),
-              var(--bg-elev);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 2rem;
-  margin-bottom: 1.75rem;
-  position: relative;
-  overflow: hidden;
-}
-.hero-meta {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-bottom: 1rem;
-}
-.badge {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  padding: 0.25rem 0.65rem;
+  gap: .4rem;
+  background: var(--bg-elev);
+  color: var(--text-2);
+  border: 1px solid var(--border-strong);
+  padding: .4rem .75rem;
   border-radius: 999px;
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  border: 1px solid var(--border);
-  background: var(--bg-card);
+  cursor: pointer;
+  font: inherit;
+  font-size: .8rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: border-color .2s, color .2s;
 }
-.badge-b1 { color: var(--accent-1); border-color: rgba(56, 189, 248, 0.4); }
-.badge-b2 { color: var(--accent-2); border-color: rgba(168, 85, 247, 0.4); }
-.badge-b3 { color: var(--accent-3); border-color: rgba(16, 185, 129, 0.4); }
-.badge-b4 { color: var(--accent-4); border-color: rgba(245, 158, 11, 0.4); }
-.badge-b5 { color: var(--accent-5); border-color: rgba(244, 63, 94, 0.4); }
+.btn-icon:hover { border-color: var(--brand); color: var(--text); }
+.btn-icon svg { flex: none; }
+@media (max-width: 1360px) { .brand-sub { display: none; } }
+@media (max-width: 1200px) and (min-width: 761px) { .brand-text, .btn-icon .lbl { display: none; } }
+@media (max-width: 760px) {
+  header { flex-wrap: wrap; gap: .5rem .75rem; }
+  .brand { flex: 1 1 0; }
+  .brand-text { min-width: 0; }
+  .brand-title { overflow: hidden; text-overflow: ellipsis; font-size: .9rem; }
+  .nav-tabs { order: 3; flex-basis: 100%; }
+  .header-actions { margin-left: auto; }
+  .btn-icon .lbl { display: none; }
+  /* l'en-tête s'efface en lisant et revient dès qu'on remonte */
+  html.top-hidden header:not(:focus-within) { transform: translateY(-100%); }
+}
 
-.hero h1 {
-  font-size: clamp(1.5rem, 2.6vw, 2.25rem);
-  font-weight: 800;
-  line-height: 1.25;
-  margin-bottom: 0.6rem;
+/* Conteneur et vues */
+main { max-width: 1280px; margin: 0 auto; padding: 1.75rem max(1rem, env(safe-area-inset-right, 0px)) 4rem max(1rem, env(safe-area-inset-left, 0px)); }
+.view-section { display: none; }
+.view-section.active { display: block; animation: fadeIn .35s ease; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+/* Bandeaux */
+.hero {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: clamp(1.25rem, 3vw, 2rem);
+  margin-bottom: 1.75rem;
+  position: relative;
 }
-.hero-sub {
-  font-size: 1.02rem;
-  color: var(--text-muted);
-  max-width: 920px;
-  margin-bottom: 1.25rem;
-}
+.hero h1 { font-size: clamp(1.6rem, 2.8vw, 2.35rem); font-weight: 750; line-height: 1.15; letter-spacing: -.02em; margin-bottom: .6rem; max-width: 32ch; }
+.hero h2 { letter-spacing: -.015em; line-height: 1.2; }
+.hero-meta { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1rem; }
+.hero-eyebrow { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem .75rem; font-size: .78rem; color: var(--text-muted); margin-bottom: .75rem; }
+.hero-sub, .hero-subtitle { font-size: 1rem; color: var(--text-2); max-width: 80ch; line-height: 1.65; }
+.hero-sub { margin-bottom: 1.25rem; }
 .quote-box {
   background: var(--bg-card);
-  border-left: 4px solid var(--accent-1);
+  border-left: 3px solid var(--brand);
   padding: 1rem 1.25rem;
-  border-radius: 0 12px 12px 0;
-  font-size: 0.92rem;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  font-family: var(--font-serif);
+  font-size: 1.04rem;
+  line-height: 1.6;
   color: var(--text);
   margin-top: 1rem;
 }
 
-/* KPI Grid */
-.kpi-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-  gap: 1rem;
-  margin-bottom: 1.75rem;
+/* Badges : couleur portée par --c */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  padding: .16rem .6rem;
+  border-radius: 999px;
+  font-size: .72rem;
+  font-weight: 650;
+  letter-spacing: .02em;
+  line-height: 1.5;
+  border: 1px solid var(--border-strong);
+  background: var(--bg-card);
+  color: var(--text-2);
 }
-.kpi-card {
-  background: var(--bg-elev);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.15rem;
-  transition: transform 0.2s, border-color 0.2s;
-}
-.kpi-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--accent-1);
-}
-.kpi-val {
-  font-size: 1.75rem;
-  font-weight: 800;
-  font-family: var(--mono);
-  margin-bottom: 0.2rem;
-}
-.kpi-label {
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--text);
-}
-.kpi-note {
-  font-size: 0.73rem;
-  color: var(--text-muted);
-  margin-top: 0.25rem;
+.b1, .badge-b1 { --c: var(--b1); } .b2, .badge-b2 { --c: var(--b2); } .b3, .badge-b3 { --c: var(--b3); }
+.b4, .badge-b4 { --c: var(--b4); } .b5, .badge-b5 { --c: var(--b5); }
+.badge-a, .badge-A, .lvl-a { --c: var(--ok); }
+.badge-b, .badge-B, .lvl-b { --c: var(--info); }
+.badge-c, .badge-amber, .badge-warn, .badge-proj { --c: var(--warn); }
+.badge-danger, .badge-spec { --c: var(--bad); }
+.badge-cyan, .badge-prog { --c: var(--b2); }
+.degree { --c: var(--b4); }
+.badge:is(.b1, .b2, .b3, .b4, .b5, .badge-b1, .badge-b2, .badge-b3, .badge-b4, .badge-b5, .badge-a, .badge-A, .lvl-a, .badge-b, .badge-B, .lvl-b,
+  .badge-c, .badge-amber, .badge-warn, .badge-proj, .badge-danger, .badge-spec, .badge-cyan, .badge-prog, .degree) {
+  color: var(--c);
+  border-color: color-mix(in oklab, var(--c) 45%, transparent);
+  background: color-mix(in oklab, var(--c) 9%, var(--bg-elev));
 }
 
-/* Grid Layouts & Cards */
-.grid-2 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-  gap: 1.25rem;
-  margin-bottom: 1.5rem;
-}
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.25rem;
-  margin-bottom: 1.5rem;
-}
-.grid-5 {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-@media (max-width: 600px) {
-  .grid-2, .grid-3 { grid-template-columns: 1fr; }
-}
+/* Indicateurs */
+.kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); gap: .85rem; margin-bottom: 1.75rem; }
+.kpi-card { background: var(--bg-elev); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem 1.1rem; transition: border-color .2s; }
+.kpi-card:hover { border-color: var(--border-strong); }
+.kpi-val { font-size: 1.55rem; font-weight: 750; font-family: var(--mono); letter-spacing: -.02em; margin-bottom: .15rem; font-variant-numeric: tabular-nums; }
+.kpi-label { font-size: .84rem; font-weight: 650; }
+.kpi-note { font-size: .76rem; color: var(--text-muted); margin-top: .25rem; }
+
+/* Grilles et cartes */
+.grid-2, .grid-3, .grid-5 { display: grid; gap: 1.25rem; margin-bottom: 1.5rem; }
+.grid-2 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); }
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr)); gap: .85rem; }
+.grid-5 { grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 1rem; }
+.grid-2 > *, .grid-3 > *, .grid-5 > * { min-width: 0; }
 .card {
   background: var(--bg-elev);
   border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 1.35rem;
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
+  gap: .85rem;
+  min-width: 0;
 }
+/* encarts de détail remplis par le JS : texte riche en ligne, donc pas de flex (qui éclaterait chaque bout de texte) */
+.card[id] { display: block; }
+.card[id] > * + * { margin-top: .6rem; }
+.card[onclick] { cursor: pointer; transition: border-color .2s, transform .2s; }
+.card[onclick]:hover { border-color: var(--border-strong); transform: translateY(-2px); }
 .card-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  gap: 0.75rem;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 0.75rem;
-}
-.card-title {
-  font-size: 1.05rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-.section-title {
-  font-size: 1.35rem;
-  font-weight: 800;
-  margin: 1.5rem 0 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-}
-
-/* Interactive Controls */
-.control-row {
-  display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 0.75rem;
-}
-.pill-btn {
-  background: var(--bg-card);
-  color: var(--text);
-  border: 1px solid var(--border);
-  padding: 0.45rem 0.9rem;
-  border-radius: 8px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.pill-btn:hover, .pill-btn.active {
-  background: var(--accent-1);
-  color: #070b14;
-  border-color: var(--accent-1);
-}
-input[type="range"] {
-  width: 100%;
-  accent-color: var(--accent-1);
-  cursor: pointer;
-}
-input[type="search"], select {
-  background: var(--bg-card);
-  color: var(--text);
-  border: 1px solid var(--border);
-  padding: 0.55rem 0.9rem;
-  border-radius: 8px;
-  font-size: 0.88rem;
-  outline: none;
-}
-input[type="search"]:focus, select:focus {
-  border-color: var(--accent-1);
-}
-
-/* Tables & Matrices */
-.table-wrap {
-  overflow-x: auto;
-}
-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.83rem;
-}
-th, td {
-  padding: 0.65rem 0.75rem;
+  gap: .5rem .75rem;
   border-bottom: 1px solid var(--border);
-  text-align: left;
-  vertical-align: top;
+  padding-bottom: .75rem;
 }
-th {
-  background: var(--bg-card);
-  font-weight: 700;
-  color: var(--text);
-}
-tr:hover td {
-  background: rgba(56, 189, 248, 0.05);
-}
+.card-title { font-size: 1rem; font-weight: 700; display: flex; align-items: center; gap: .5rem; }
+.section-title { font-size: 1.3rem; font-weight: 750; letter-spacing: -.015em; line-height: 1.25; margin: 2.25rem 0 1rem; display: flex; align-items: center; gap: .6rem; }
+.section-title::before { content: ""; width: 4px; height: 1em; border-radius: 2px; background: var(--brand); flex: none; }
 
-/* Interactive Canvas / SVG Boxes */
-.viz-box {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1rem;
-  position: relative;
-}
-.sim-output {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  padding: 0.9rem 1rem;
-  font-size: 0.86rem;
-}
+/* Simulateurs */
+.sim-box { background: var(--bg-elev); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1.25rem; min-width: 0; }
+.sim-header { border-bottom: 1px solid var(--border); padding-bottom: .85rem; margin-bottom: 1rem; }
+.sim-title { display: grid; gap: .4rem; justify-items: start; }
+.sim-title h3 { font-size: 1.05rem; }
+.sim-title p { font-size: .86rem; color: var(--text-2); line-height: 1.55; }
+.sim-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); transition: border-color .2s, opacity .2s; }
+.sim-card:hover { border-color: var(--border-strong); }
+.control-group { display: grid; gap: .4rem; margin-bottom: 1rem; }
+.control-label { display: flex; justify-content: space-between; align-items: baseline; gap: .75rem; font-size: .84rem; color: var(--text-2); }
+.control-label strong { font-family: var(--mono); color: var(--text); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.pill-selector { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1rem; }
+.svg-container { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); overflow-x: auto; }
+.stack-layer { padding: .6rem .85rem; background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); cursor: pointer; transition: border-color .2s, background .2s; }
+.stack-layer:hover, .stack-layer.selected { border-color: var(--border-strong); background: color-mix(in oklab, var(--brand) 7%, var(--bg-card)); }
+.q-code { font-family: var(--mono); font-size: .82rem; font-weight: 700; color: var(--brand-2); }
+.callout { padding: .85rem 1rem; border-radius: var(--radius-sm); border: 1px solid var(--border); border-left: 3px solid var(--info); background: var(--bg-card); font-size: .86rem; color: var(--text-2); }
+.callout-warn { border-left-color: var(--warn); }
+.callout-danger { border-left-color: var(--bad); }
+.viz-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1rem; position: relative; }
+.sim-output { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: .85rem 1rem; font-size: .86rem; color: var(--text-2); }
 
-/* Status Pills */
-.st-pill {
-  display: inline-block;
-  padding: 0.15rem 0.55rem;
-  border-radius: 6px;
-  font-size: 0.72rem;
-  font-weight: 700;
-  font-family: var(--mono);
-}
-.st-a { background: rgba(16, 185, 129, 0.18); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.4); }
-.st-b { background: rgba(56, 189, 248, 0.18); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); }
-.st-c { background: rgba(245, 158, 11, 0.18); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.4); }
-.st-spec { background: rgba(244, 63, 94, 0.18); color: #fb7185; border: 1px solid rgba(244, 63, 94, 0.4); }
-
-/* Chapter Cards */
-.chapter-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-  gap: 1rem;
-}
-.ch-card {
+/* Boutons et contrôles */
+.pill-btn, .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
   background: var(--bg-elev);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 1.1rem;
-  cursor: pointer;
-  transition: all 0.2s;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 0.65rem;
-}
-.ch-card:hover {
-  border-color: var(--accent-1);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-}
-.ch-num {
-  font-family: var(--mono);
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: var(--accent-1);
-}
-.ch-title {
-  font-size: 0.96rem;
-  font-weight: 700;
+  color: var(--text-2);
+  border: 1px solid var(--border-strong);
+  padding: .38rem .8rem;
+  border-radius: 999px;
+  font: inherit;
+  font-size: .8rem;
+  font-weight: 600;
   line-height: 1.35;
+  text-align: left;
+  text-decoration: none;
+  cursor: pointer;
+  transition: border-color .2s, background .2s, color .2s;
 }
-.ch-thesis {
-  font-size: 0.81rem;
-  color: var(--text-muted);
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+.btn { font-size: .84rem; padding: .45rem .9rem; color: var(--text); }
+.pill-btn:hover, .btn:hover { border-color: var(--brand); color: var(--text); }
+.pill-btn.active, .btn-primary { background: var(--brand); border-color: var(--brand); color: var(--brand-ink); }
+.btn-primary:hover, .pill-btn.active:hover { color: var(--brand-ink); filter: brightness(1.06); }
+input[type="range"] { width: 100%; accent-color: var(--brand); cursor: pointer; }
+input[type="search"], input[type="text"], select {
+  background: var(--bg-elev);
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+  padding: .55rem .95rem;
+  border-radius: 999px;
+  font: inherit;
+  font-size: .88rem;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
 }
+select { border-radius: 10px; cursor: pointer; }
+input[type="search"]:focus, input[type="text"]:focus, select:focus { border-color: var(--brand); box-shadow: 0 0 0 3px color-mix(in oklab, var(--brand) 22%, transparent); }
+.filter-bar { display: flex; flex-wrap: wrap; gap: .75rem; align-items: center; margin-bottom: .85rem; }
+.search-input { flex: 1 1 320px; min-width: min(100%, 260px); }
 
-/* Modal */
+/* Tableaux */
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: .84rem; }
+th, td { padding: .6rem .75rem; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+th { background: var(--bg-card); font-weight: 650; color: var(--text); font-size: .8rem; }
+tr:hover td { background: color-mix(in oklab, var(--brand) 5%, transparent); }
+@media (max-width: 760px) { .card > table, .sim-box > table { display: block; overflow-x: auto; } }
+
+/* Pastilles de statut */
+.st-pill { --c: var(--text-muted); display: inline-block; padding: .12rem .55rem; border-radius: 6px; font-size: .72rem; font-weight: 700; font-family: var(--mono); color: var(--c); background: color-mix(in oklab, var(--c) 12%, transparent); border: 1px solid color-mix(in oklab, var(--c) 40%, transparent); }
+.st-a { --c: var(--ok); } .st-b { --c: var(--info); } .st-c { --c: var(--warn); } .st-spec { --c: var(--bad); }
+
+/* Catalogue des chapitres */
+.chapter-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 1rem; }
+
+/* Fiche de chapitre */
 .modal-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.72);
-  backdrop-filter: blur(6px);
+  background: var(--scrim);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   z-index: 200;
   display: none;
   align-items: center;
   justify-content: center;
-  padding: 1.25rem;
+  padding: 1rem;
 }
-.modal-backdrop.open {
-  display: flex;
-}
+.modal-backdrop.open { display: flex; }
 .modal-content {
   background: var(--bg-elev);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: var(--r);
+  box-shadow: var(--shadow);
   max-width: 780px;
   width: 100%;
   max-height: 88vh;
   overflow-y: auto;
-  padding: 1.75rem;
+  padding: clamp(1.1rem, 3vw, 1.75rem);
   position: relative;
+  animation: fadeIn .25s ease;
 }
-.modal-close {
-  position: absolute;
-  top: 1.25rem;
-  right: 1.25rem;
-  background: var(--bg-card);
-  color: var(--text);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 0.35rem 0.65rem;
-  cursor: pointer;
-  font-weight: 700;
-}
-.progress-bar {
-  height: 8px;
-  background: var(--bg);
-  border-radius: 999px;
-  overflow: hidden;
-  margin-top: 0.35rem;
-}
-.progress-fill {
-  height: 100%;
-  border-radius: 999px;
-  transition: width 0.35s ease;
+#modalTitle:empty, #modalThesis:empty { display: none; }
+body.modal-open { overflow: hidden; }
+.progress-bar { height: 8px; background: var(--bg); border-radius: 999px; overflow: hidden; margin-top: .35rem; }
+.progress-fill { height: 100%; border-radius: 999px; transition: width .35s ease; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
 }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="brand">
-    <div class="brand-badge">EA</div>
-    <div>
+  <a class="brand" href="#overview" aria-label="Compendium — vue d'ensemble">
+    <!-- cinq arcs : les cinq Livres sur une même ligne (même marque que l'Atlas) -->
+    <svg class="brand-badge" viewBox="0 0 30 30" aria-hidden="true"><path d="M16.15 4.06A11 11 0 0 1 25.05 10.53" stroke="var(--b1)"/><path d="M25.76 12.71A11 11 0 0 1 22.36 23.17" stroke="var(--b2)"/><path d="M20.50 24.53A11 11 0 0 1 9.50 24.53" stroke="var(--b3)"/><path d="M7.64 23.17A11 11 0 0 1 4.24 12.71" stroke="var(--b4)"/><path d="M4.95 10.53A11 11 0 0 1 13.85 4.06" stroke="var(--b5)"/><circle cx="15" cy="15" r="3.2" fill="var(--text)"/></svg>
+    <div class="brand-text">
       <div class="brand-title">Compendium — Entreprise Agentique</div>
       <div class="brand-sub">André-Guy Bruneau, M.Sc. IT • Services financiers réglementés (2024–2032)</div>
     </div>
-  </div>
+  </a>
   <nav class="nav-tabs" id="mainNav">
-    <button class="nav-tab active" data-target="view-overview"><span class="dot" style="background:#fff"></span>Vue d'ensemble</button>
-    <button class="nav-tab" data-target="view-b1"><span class="dot" style="background:var(--accent-1)"></span>I. Coopérer</button>
-    <button class="nav-tab" data-target="view-b2"><span class="dot" style="background:var(--accent-2)"></span>II. Faire confiance</button>
-    <button class="nav-tab" data-target="view-b3"><span class="dot" style="background:var(--accent-3)"></span>III. Encadrer</button>
-    <button class="nav-tab" data-target="view-b4"><span class="dot" style="background:var(--accent-4)"></span>IV. Appliquer & Exploiter</button>
-    <button class="nav-tab" data-target="view-b5"><span class="dot" style="background:var(--accent-5)"></span>V. Livrer & Clore</button>
-    <button class="nav-tab" data-target="view-chapters">Explorateur (50 ch.)</button>
+    <button class="nav-tab active" data-target="view-overview"><span class="dot" style="background:var(--text)"></span>Vue d'ensemble</button>
+    <button class="nav-tab" data-target="view-b1" title="Livre I — Coopérer"><span class="dot" style="background:var(--accent-1)"></span>I. Coopérer</button>
+    <button class="nav-tab" data-target="view-b2" title="Livre II — Faire confiance"><span class="dot" style="background:var(--accent-2)"></span>II. Confiance</button>
+    <button class="nav-tab" data-target="view-b3" title="Livre III — Encadrer"><span class="dot" style="background:var(--accent-3)"></span>III. Encadrer</button>
+    <button class="nav-tab" data-target="view-b4" title="Livre IV — Appliquer, exploiter, produire et composer"><span class="dot" style="background:var(--accent-4)"></span>IV. Appliquer</button>
+    <button class="nav-tab" data-target="view-b5" title="Livre V — Livrer et clore"><span class="dot" style="background:var(--accent-5)"></span>V. Livrer</button>
+    <button class="nav-tab" data-target="view-chapters" title="Explorateur des 50 chapitres">50 chapitres</button>
   </nav>
   <div class="header-actions">
-    <a class="btn-icon" href="../Compendium%20Atlas.html" title="Retour à l'Atlas du Compendium">← Atlas du Compendium</a>
-    <button class="btn-icon" id="themeToggle" title="Basculer le thème clair/sombre">Thème Clair / Sombre</button>
+    <a class="btn-icon" href="../Compendium%20Atlas.html" title="Retour à l'Atlas du Compendium" aria-label="Retour à l'Atlas du Compendium">← <span class="lbl">Atlas du Compendium</span></a>
+    <button class="btn-icon" id="themeToggle" type="button">Thème</button>
   </div>
 </header>
 
@@ -619,7 +499,7 @@ tr:hover td {
           <div class="card-title">L'Invariant à 4 Termes & Principaux Garde-fous (R-1 à R-14)</div>
           <span class="st-pill st-c">Garde-fous d'écriture</span>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.65rem;font-size:0.82rem;">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:0.65rem;font-size:0.82rem;">
           <div class="sim-output"><strong>1. Découplage (Ch. 1)</strong><br>Réduire les dépendances de technologie, format, localisation, temporalité et interaction.</div>
           <div class="sim-output"><strong>2. Contrat (Ch. 1 & 7)</strong><br>Interface syntaxique, sémantique et comportementale (probabiliste à l'ère agentique).</div>
           <div class="sim-output"><strong>3. Évolution (Ch. 1 & 8)</strong><br>Compatibilité ascendante/descendante, <em>tolerant reader</em>, préavis de dépréciation ≥ 12 mois.</div>
@@ -1174,16 +1054,15 @@ tr:hover td {
     <input type="text" id="chapterSearchInput" class="search-input" placeholder="Rechercher dans les 50 chapitres (titre, thèse, protocole, loi, banque, concept)..." oninput="renderChaptersCatalog()">
     <div class="pill-selector" id="bookFilterPills" style="margin-bottom:0;">
       <button class="pill-btn active" onclick="setBookFilter('all', this)">Tous (50)</button>
-      <button class="pill-btn" onclick="setBookFilter(1, this)">Livre I : Coopérer (1–11)</button>
-      <button class="pill-btn" onclick="setBookFilter(2, this)">Livre II : Faire confiance (12–21)</button>
-      <button class="pill-btn" onclick="setBookFilter(3, this)">Livre III : Encadrer (22–36)</button>
-      <button class="pill-btn" onclick="setBookFilter(4, this)">Livre IV : Appliquer &amp; Composer (37–46)</button>
-      <button class="pill-btn" onclick="setBookFilter(5, this)">Livre V : Livrer &amp; Clore (47–50)</button>
+      <button class="pill-btn" onclick="setBookFilter('b1', this)">Livre I : Coopérer (1–11)</button>
+      <button class="pill-btn" onclick="setBookFilter('b2', this)">Livre II : Faire confiance (12–21)</button>
+      <button class="pill-btn" onclick="setBookFilter('b3', this)">Livre III : Encadrer (22–36)</button>
+      <button class="pill-btn" onclick="setBookFilter('b4', this)">Livre IV : Appliquer &amp; Composer (37–46)</button>
+      <button class="pill-btn" onclick="setBookFilter('b5', this)">Livre V : Livrer &amp; Clore (47–50)</button>
     </div>
+    <select id="chapterProofFilter" class="form-select" aria-label="Filtrer par niveau de preuve" onchange="renderChaptersCatalog()"><option value="all">Tous niveaux ([A]/[B]/[C])</option><option value="[A]">Niveau [A] (Vote adversarial)</option><option value="[B]">Niveau [B] (Source primaire)</option><option value="[C]">Niveau [C] (Repérage)</option><option value="Construction">Construction d'auteur</option></select>
   </div>
-
-  <select id="chapterProofFilter" class="form-select" style="width:auto; min-width:190px; margin-bottom:10px;" onchange="renderChaptersCatalog()"><option value="all">Tous niveaux ([A]/[B]/[C])</option><option value="[A]">Niveau [A] (Vote adversarial)</option><option value="[B]">Niveau [B] (Source primaire)</option><option value="[C]">Niveau [C] (Repérage)</option><option value="Construction">Construction d'auteur</option></select>
-      <div id="chaptersCountBadge" style="font-size:0.82rem; color:var(--text-secondary); margin-bottom:0.85rem; font-family:var(--font-mono);"></div>
+  <div id="chaptersCountBadge" style="font-size:0.82rem; color:var(--text-secondary); margin-bottom:0.85rem; font-family:var(--font-mono);"></div>
   <div id="chaptersCatalogGrid" class="chapter-grid"></div>
 </section>
 
@@ -1191,10 +1070,10 @@ tr:hover td {
 
 <!-- MODAL DE DÉTAIL DE CHAPITRE -->
 <div class="modal-backdrop" id="chapterModal" onclick="if(event.target===this) closeChapterModal()">
-  <div class="modal-content">
+  <div class="modal-content" role="dialog" aria-modal="true" aria-label="Fiche de chapitre">
     <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:1rem; margin-bottom:1rem;">
-      <div id="modalBadges"></div>
-      <button class="btn" onclick="closeChapterModal()">✕ Fermer (Échap)</button>
+      <div id="modalBadges" class="mono" style="font-size:0.74rem; color:var(--text-muted);">← → chapitre voisin</div>
+      <button class="btn" id="modalClose" onclick="closeChapterModal()">✕ Fermer (Échap)</button>
     </div>
     <h2 id="modalTitle" style="font-size:1.45rem; margin-bottom:0.75rem;"></h2>
     <div id="modalThesis" style="padding:1rem 1.2rem; background:var(--bg-elevated); border-left:4px solid var(--accent-blue); border-radius:var(--radius-sm); font-size:0.9rem; color:var(--text-primary); margin-bottom:1.2rem;"></div>
@@ -1233,25 +1112,65 @@ function cleanLatexText(root = document.body) {
 }
 
 // === NAVIGATION ENTRE LES VUES & THÈME ===
-function switchView(viewId) {
+// Chaque vue a son ancre (#overview, #b1…#b5, #chapters) : lien direct, bouton Précédent et rechargement fonctionnent.
+function showView(viewId) {
+  const target = document.getElementById(viewId);
+  if (!target || !target.classList.contains('view-section')) viewId = 'view-overview';
   document.querySelectorAll('.view-section').forEach(sec => {
     sec.classList.toggle('active', sec.id === viewId);
   });
   document.querySelectorAll('.nav-tab').forEach(tab => {
-    tab.classList.toggle('active', tab.getAttribute('data-target') === viewId);
+    const on = tab.getAttribute('data-target') === viewId;
+    tab.classList.toggle('active', on);
+    if (on) { tab.setAttribute('aria-current', 'page'); tab.scrollIntoView({ block: 'nearest', inline: 'nearest' }); }
+    else tab.removeAttribute('aria-current');
   });
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.scrollTo({ top: 0, behavior: 'instant' });
 }
+function switchView(viewId) {
+  const h = viewId.replace(/^view-/, '');
+  if (location.hash.slice(1) === h) showView(viewId); else location.hash = h;
+}
+window.addEventListener('hashchange', () => showView('view-' + (location.hash.slice(1) || 'overview')));
 
 document.querySelectorAll('.nav-tab').forEach(tab => {
   tab.addEventListener('click', () => switchView(tab.getAttribute('data-target')));
 });
 
+// Thème sombre par défaut ; le clair est mémorisé sur l'appareil (clé partagée avec l'Atlas).
+const THEME_ICON = {
+  sun: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>',
+  moon: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>'
+};
+function paintTheme() {
+  const light = document.documentElement.dataset.theme === 'light', b = document.getElementById('themeToggle');
+  b.innerHTML = light ? `${THEME_ICON.moon}<span class="lbl">Sombre</span>` : `${THEME_ICON.sun}<span class="lbl">Clair</span>`;
+  b.title = light ? 'Passer au thème sombre' : 'Passer au thème clair';
+  b.setAttribute('aria-label', b.title);
+}
+paintTheme();
 document.getElementById('themeToggle').addEventListener('click', () => {
-  const html = document.documentElement;
-  const next = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-  html.setAttribute('data-theme', next);
+  const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+  document.documentElement.dataset.theme = next;
+  try { localStorage.setItem('atlas.theme', JSON.stringify(next)); } catch (e) { }
+  paintTheme();
 });
+
+// En-tête : fondu de bord si la navigation déborde ; sur mobile, il s'efface en lisant et revient en remontant.
+(function () {
+  const head = document.querySelector('header'), nav = document.getElementById('mainNav');
+  const fit = () => {
+    document.documentElement.style.setProperty('--hh', head.offsetHeight + 'px');
+    nav.classList.toggle('ovf', nav.scrollWidth > nav.clientWidth + 1);
+  };
+  new ResizeObserver(fit).observe(head);
+  document.fonts?.ready.then(fit);
+  let lastY = 0;
+  window.addEventListener('scroll', () => {
+    const dy = scrollY - lastY;
+    if (Math.abs(dy) > 6 || scrollY < 200) { document.documentElement.classList.toggle('top-hidden', dy > 0 && scrollY > 200); lastY = scrollY; }
+  }, { passive: true });
+})();
 
 // === VUE D'ENSEMBLE : SIMULATEUR DES 5 PILIERS DE LA THÈSE ===
 const PILLARS_DATA = [
@@ -1259,7 +1178,7 @@ const PILLARS_DATA = [
     id: 'p1',
     name: '1. Contrat protocolaire découplé',
     book: 'Livre I (Ch. 1–11)',
-    color: '#38bdf8',
+    color: 'var(--b1)',
     okText: 'Contrat explicite (MCP v2026-07-28 sans état, A2A v1.0) réduisant le couplage N×M vers N+M.',
     failTitle: 'Rupture du Contrat Protocolaire (Explosion N×M & Dérive Sémantique)',
     failDesc: 'Sans contrat protocolaire découplé de ses mises en œuvre, chaque intégration redevient un adaptateur point-à-point fragile (dette quadratique N(N-1)/2) et le faux accord sémantique se propage en cascade sans barrière de schéma.'
@@ -1268,7 +1187,7 @@ const PILLARS_DATA = [
     id: 'p2',
     name: '2. Identité & délégation vérifiables',
     book: 'Livre II (Ch. 12–21)',
-    color: '#a855f7',
+    color: 'var(--b2)',
     okText: 'Passeport d’agent opposable au PEP/PDP, chaîne de mandat bornée et agilité post-quantique.',
     failTitle: 'Écart d’Attribution (« Attribution Gap », OWASP ASI03) & Confused Deputy',
     failDesc: 'Sans identité non humaine gouvernée ni chaîne de mandat vérifiable au point d’application, le moindre privilège est inapplicable : l’agent agit en député confus (Hardy, 1988), vulnérable au vol de jeton porteur (campagne UNC6395) et au problème des deux sauts.'
@@ -1277,7 +1196,7 @@ const PILLARS_DATA = [
     id: 'p3',
     name: '3. Contrôle de finalité opposable',
     book: 'Livre III (Ch. 22–36)',
-    color: '#f59e0b',
+    color: 'var(--b3)',
     okText: 'Orchestration déterministe (OO₃/OO₄), libération humaine sur l’irréversible et conformité E-23 / Loi 25.',
     failTitle: 'Perte de Contrôle sur l’Irréversible & Inexécutabilité Réglementaire',
     failDesc: 'Sans frame déterministe (OO₃/OO₄) commandant l’enchaînement, un planificateur stochastique (OO₁/OO₂, F1 = 0,40) peut déclencher un règlement financier irrévocable (Lynx/RTR) et rend inexécutables l’information synchrone et la révision humaine de l’art. 12.1 (Loi 25).'
@@ -1286,7 +1205,7 @@ const PILLARS_DATA = [
     id: 'p4',
     name: '4. Mesure du comportement (AgentOps)',
     book: 'Livre IV (Ch. 37–46)',
-    color: '#10b981',
+    color: 'var(--b4)',
     okText: 'Traces produites par le cadre (PC2), détection de dérive (modèle, outil, autonomie) et boucle vers la fabrique.',
     failTitle: 'Cécité Opérationnelle, Dérive Silencieuse & Verdict d’Admission Sans Terme',
     failDesc: 'Sans mesure continue par le cadre ni corrélation trace ↔ mandat, le verdict d’admission initial se prolonge indéfiniment par défaut : un retournement d’outil post-admission (rug-pull) ou une dérive d’autonomie passe inaperçu jusqu’à l’incident.'
@@ -1295,7 +1214,7 @@ const PILLARS_DATA = [
     id: 'p5',
     name: '5. Provenance attestée de l’artefact',
     book: 'Livre V (Ch. 47–50)',
-    color: '#f43f5e',
+    color: 'var(--b5)',
     okText: 'Nomenclature BOM/AI-BOM, versionnement à 5 horloges, sémantique d’effet (idempotence/UETR) et protocole de gel.',
     failTitle: 'Artefact Fantôme Non Reproductible & Écart Comptable',
     failDesc: 'Sans provenance attestée ni versionnement des 5 horloges (modèle, invites, outils, politique, harnais), l’organisation évalue un artefact qu’elle ne sait pas désigner, les extensions déclaratives échappent au SBOM, et une action réussie à moitié crée un écart comptable.'
@@ -1345,17 +1264,17 @@ function renderPillarsSimulator() {
   }).join(' ');
 
   const outerPoly = pts.map(pt => `${pt.x.toFixed(1)},${pt.y.toFixed(1)}`).join(' ');
-  const fillCol = activeCount === 5 ? 'rgba(16, 185, 129, 0.25)' : 'rgba(239, 68, 68, 0.22)';
-  const strokeCol = activeCount === 5 ? '#10b981' : '#ef4444';
+  const fillCol = activeCount === 5 ? 'color-mix(in oklab,var(--ok) 25%,transparent)' : 'color-mix(in oklab,var(--bad) 22%,transparent)';
+  const strokeCol = activeCount === 5 ? 'var(--ok)' : 'var(--bad)';
 
   svg.innerHTML = `
-    <polygon points="${outerPoly}" fill="none" stroke="rgba(148,163,184,0.25)" stroke-width="1.5" stroke-dasharray="4,4"/>
-    ${pts.map(pt => `<line x1="${cx}" y1="${cy}" x2="${pt.x.toFixed(1)}" y2="${pt.y.toFixed(1)}" stroke="rgba(148,163,184,0.2)" stroke-width="1"/>`).join('')}
+    <polygon points="${outerPoly}" fill="none" stroke="color-mix(in oklab,var(--text-muted) 25%,transparent)" stroke-width="1.5" stroke-dasharray="4,4"/>
+    ${pts.map(pt => `<line x1="${cx}" y1="${cy}" x2="${pt.x.toFixed(1)}" y2="${pt.y.toFixed(1)}" stroke="color-mix(in oklab,var(--text-muted) 20%,transparent)" stroke-width="1"/>`).join('')}
     <polygon points="${polyPoints}" fill="${fillCol}" stroke="${strokeCol}" stroke-width="2.5"/>
     ${pts.map((pt, idx) => {
       const isOn = activePillars[pt.p.id];
       return `
-        <circle cx="${pt.x.toFixed(1)}" cy="${pt.y.toFixed(1)}" r="${isOn ? 8 : 6}" fill="${isOn ? pt.p.color : '#ef4444'}" stroke="#0b0f19" stroke-width="2" style="cursor:pointer" onclick="togglePillar('${pt.p.id}')"/>
+        <circle cx="${pt.x.toFixed(1)}" cy="${pt.y.toFixed(1)}" r="${isOn ? 8 : 6}" fill="${isOn ? pt.p.color : 'var(--bad)'}" stroke="var(--bg)" stroke-width="2" style="cursor:pointer" onclick="togglePillar('${pt.p.id}')"/>
         <text x="${pt.lx.toFixed(1)}" y="${pt.ly.toFixed(1)}" text-anchor="middle" dominant-baseline="middle" fill="var(--text)" font-size="11" font-weight="700">P${idx + 1}</text>
       `;
     }).join('')}
@@ -1392,11 +1311,11 @@ window.togglePillar = function(id) {
 };
 
 const BOOKS_OVERVIEW = [
-  { id: 'view-b1', num: 'Livre I', title: 'Coopérer', ch: 'Chapitres 1 à 11 (p. 1–211)', color: '#38bdf8', desc: 'Fondements de l’interopérabilité, pile LCIM, anatomie de la boucle agentique, RAG agentique, MCP (agent-outil), A2A (agent-agent), AP2/AGNTCY et modes d’échec protocolaires.' },
-  { id: 'view-b2', num: 'Livre II', title: 'Faire confiance', ch: 'Chapitres 12 à 21 (p. 212–387)', color: '#a855f7', desc: 'Héritage IAM (OAuth, OIDC, SCIM), VC/DID W3C, grille des 5 questions (Q-A à Q-E), Agent Card signée, registres, passeport d’agent, problème des deux sauts, KYA, rug-pull et horloge post-quantique.' },
-  { id: 'view-b3', num: 'Livre III', title: 'Encadrer', ch: 'Chapitres 22 à 36 (p. 388–654)', color: '#f59e0b', desc: 'Options d’orchestration OO₁–OO₄, paradigme APM (frames normatifs/opérationnels), passage à l’échelle, cadre réglementaire canadien (E-23, C-36, AMF, art. 12.1 Loi 25, ACVM 11-348), Lynx/RTR et 10 cas canadiens.' },
-  { id: 'view-b4', num: 'Livre IV', title: 'Appliquer, exploiter, produire et composer', ch: 'Chapitres 37 à 46 (p. 655–829)', color: '#10b981', desc: 'Maillage d’agents (PEP/PDP & zero trust), observabilité OpenTelemetry GenAI, cycle de vie & dérive, indicateurs AgentOps & FinOps, fabrique d’agents, matrice 5×3, architecture à 6 couches, ArchiMate 4 et blueprint.' },
-  { id: 'view-b5', num: 'Livre V', title: 'Livrer et clore', ch: 'Chapitres 47 à 50 (p. 830–986)', color: '#f43f5e', desc: 'Provenance des composants (CycloneDX 1.7 / SPDX 3.0), versionnement à 5 horloges, sémantique d’effet (idempotence, sagas, UETR), horizon 2027–2032, registre des lacunes et protocole de revalidation.' }
+  { id: 'view-b1', num: 'Livre I', title: 'Coopérer', ch: 'Chapitres 1 à 11 (p. 1–211)', color: 'var(--b1)', desc: 'Fondements de l’interopérabilité, pile LCIM, anatomie de la boucle agentique, RAG agentique, MCP (agent-outil), A2A (agent-agent), AP2/AGNTCY et modes d’échec protocolaires.' },
+  { id: 'view-b2', num: 'Livre II', title: 'Faire confiance', ch: 'Chapitres 12 à 21 (p. 212–387)', color: 'var(--b2)', desc: 'Héritage IAM (OAuth, OIDC, SCIM), VC/DID W3C, grille des 5 questions (Q-A à Q-E), Agent Card signée, registres, passeport d’agent, problème des deux sauts, KYA, rug-pull et horloge post-quantique.' },
+  { id: 'view-b3', num: 'Livre III', title: 'Encadrer', ch: 'Chapitres 22 à 36 (p. 388–654)', color: 'var(--b3)', desc: 'Options d’orchestration OO₁–OO₄, paradigme APM (frames normatifs/opérationnels), passage à l’échelle, cadre réglementaire canadien (E-23, C-36, AMF, art. 12.1 Loi 25, ACVM 11-348), Lynx/RTR et 10 cas canadiens.' },
+  { id: 'view-b4', num: 'Livre IV', title: 'Appliquer, exploiter, produire et composer', ch: 'Chapitres 37 à 46 (p. 655–829)', color: 'var(--b4)', desc: 'Maillage d’agents (PEP/PDP & zero trust), observabilité OpenTelemetry GenAI, cycle de vie & dérive, indicateurs AgentOps & FinOps, fabrique d’agents, matrice 5×3, architecture à 6 couches, ArchiMate 4 et blueprint.' },
+  { id: 'view-b5', num: 'Livre V', title: 'Livrer et clore', ch: 'Chapitres 47 à 50 (p. 830–986)', color: 'var(--b5)', desc: 'Provenance des composants (CycloneDX 1.7 / SPDX 3.0), versionnement à 5 horloges, sémantique d’effet (idempotence, sagas, UETR), horizon 2027–2032, registre des lacunes et protocole de revalidation.' }
 ];
 
 function renderBooksOverview() {
@@ -1439,50 +1358,50 @@ window.updateNxM = function() {
   const showN = Math.min(N, 10);
   const showM = Math.min(M, 10);
   let html = `
-    <text x="145" y="18" text-anchor="middle" fill="#ef4444" font-size="11" font-weight="700">Point-à-Point : ${nxm} adaptateurs (N×M)</text>
-    <text x="435" y="18" text-anchor="middle" fill="#10b981" font-size="11" font-weight="700">Contrat Pivot (MCP / Canonique) : ${nplusm} liens (N+M)</text>
-    <line x1="290" y1="10" x2="290" y2="210" stroke="rgba(148,163,184,0.25)" stroke-dasharray="4,4"/>
+    <text x="145" y="18" text-anchor="middle" fill="var(--bad)" font-size="11" font-weight="700">Point-à-Point : ${nxm} adaptateurs (N×M)</text>
+    <text x="435" y="18" text-anchor="middle" fill="var(--ok)" font-size="11" font-weight="700">Contrat Pivot (MCP / Canonique) : ${nplusm} liens (N+M)</text>
+    <line x1="290" y1="10" x2="290" y2="210" stroke="color-mix(in oklab,var(--text-muted) 25%,transparent)" stroke-dasharray="4,4"/>
   `;
   for (let i = 0; i < showN; i++) {
     const y1 = 35 + i * (170 / Math.max(1, showN - 1));
     for (let j = 0; j < showM; j++) {
       const y2 = 35 + j * (170 / Math.max(1, showM - 1));
-      html += `<line x1="45" y1="${y1}" x2="245" y2="${y2}" stroke="rgba(239,68,68,0.28)" stroke-width="1"/>`;
+      html += `<line x1="45" y1="${y1}" x2="245" y2="${y2}" stroke="color-mix(in oklab,var(--bad) 28%,transparent)" stroke-width="1"/>`;
     }
   }
   for (let i = 0; i < showN; i++) {
     const y1 = 35 + i * (170 / Math.max(1, showN - 1));
-    html += `<circle cx="45" cy="${y1}" r="5" fill="#38bdf8"/>`;
+    html += `<circle cx="45" cy="${y1}" r="5" fill="var(--info)"/>`;
   }
   for (let j = 0; j < showM; j++) {
     const y2 = 35 + j * (170 / Math.max(1, showM - 1));
-    html += `<circle cx="245" cy="${y2}" r="5" fill="#a855f7"/>`;
+    html += `<circle cx="245" cy="${y2}" r="5" fill="var(--b4)"/>`;
   }
   const px = 435, py = 120;
   for (let i = 0; i < showN; i++) {
     const y1 = 35 + i * (170 / Math.max(1, showN - 1));
-    html += `<line x1="335" y1="${y1}" x2="${px}" y2="${py}" stroke="rgba(16,185,129,0.55)" stroke-width="1.5"/>`;
-    html += `<circle cx="335" cy="${y1}" r="5" fill="#38bdf8"/>`;
+    html += `<line x1="335" y1="${y1}" x2="${px}" y2="${py}" stroke="color-mix(in oklab,var(--ok) 55%,transparent)" stroke-width="1.5"/>`;
+    html += `<circle cx="335" cy="${y1}" r="5" fill="var(--info)"/>`;
   }
   for (let j = 0; j < showM; j++) {
     const y2 = 35 + j * (170 / Math.max(1, showM - 1));
-    html += `<line x1="${px}" y1="${py}" x2="535" y2="${y2}" stroke="rgba(16,185,129,0.55)" stroke-width="1.5"/>`;
-    html += `<circle cx="535" cy="${y2}" r="5" fill="#a855f7"/>`;
+    html += `<line x1="${px}" y1="${py}" x2="535" y2="${y2}" stroke="color-mix(in oklab,var(--ok) 55%,transparent)" stroke-width="1.5"/>`;
+    html += `<circle cx="535" cy="${y2}" r="5" fill="var(--b4)"/>`;
   }
-  html += `<rect x="${px - 28}" y="${py - 16}" width="56" height="32" rx="6" fill="#10b981" stroke="#0b0f19" stroke-width="2"/>`;
-  html += `<text x="${px}" y="${py + 4}" text-anchor="middle" fill="#0b0f19" font-size="10" font-weight="800">PIVOT</text>`;
+  html += `<rect x="${px - 28}" y="${py - 16}" width="56" height="32" rx="6" fill="var(--ok)" stroke="var(--bg)" stroke-width="2"/>`;
+  html += `<text x="${px}" y="${py + 4}" text-anchor="middle" fill="var(--bg)" font-size="10" font-weight="800">PIVOT</text>`;
   svg.innerHTML = html;
 };
 
 // === LIVRE I : PILE LCIM & PILE CANONIQUE ===
 const LCIM_LEVELS = [
-  { code: 'L6', name: 'Conceptuel (LCIM L6)', layer: 'Organisationnel / Conceptuel', color: '#f43f5e', mcp: false, desc: 'Alignement complet des modèles du monde, des hypothèses implicites et des contraintes théoriques sous-jacentes (Tolk & Muguira, 2003). Encore largement non atteint en entreprise agentique (Ch. 24 § 24.9.2).' },
-  { code: 'L5', name: 'Dynamique (LCIM L5)', layer: 'Exécution & Adaptation', color: '#ec4899', mcp: false, desc: 'Compréhension de l’évolution de l’état du système au fil du temps, négociation et découverte de partenaires à l’exécution (ex. négociateur de méta-protocole ANP, Ch. 8 § 8.5.2).' },
-  { code: 'L4', name: 'Pragmatique (LCIM L4)', layer: 'Intention & Effet en contexte', color: '#a855f7', mcp: false, desc: 'Verrou opérationnel majeur de l’agentique (Ch. 7 § 7.1.3) : inférer l’action effectivement voulue à partir d’un message en contexte (sémantique lue par le modèle vs force illocutoire FIPA-ACL).' },
-  { code: 'L3', name: 'Sémantique (LCIM L3 / Pile Canonique 3)', layer: 'Sens partagé & Ontologies', color: '#f59e0b', mcp: false, desc: 'Accord sur le sens des termes échangés (RDF, OWL 2, SHACL, FIBO, CDM, GraphRAG — Ch. 2). Thèse du Ch. 2 : c’est le niveau que MCP et A2A présupposent sans l’établir.' },
-  { code: 'L2', name: 'Syntaxique (LCIM L2 / Pile Canonique 2)', layer: 'Schémas & Grammaire', color: '#10b981', mcp: true, desc: 'PALIER OÙ OPÈRENT MCP ET A2A : structures de messages communes (JSON-RPC 2.0, JSON Schema 2020-12, Protobuf, Avro, Agent Card). Deux agents peuvent valider leurs schémas tout en divergeant sur l’intention (faux accord sémantique, Ch. 9 § 9.4).' },
-  { code: 'L1', name: 'Technique (LCIM L1 / Pile Canonique 1)', layer: 'Transport & Connectivité', color: '#38bdf8', mcp: true, desc: 'Acheminement des bits et connexions réseau (HTTP/2, Streamable HTTP sans état, SSE, stdio, gRPC, AMQP 1.0, MQTT). Nécessaire mais jamais suffisant.' },
-  { code: 'L0', name: 'Isolé (LCIM L0)', layer: 'Absence d’interopérabilité', color: '#64748b', mcp: false, desc: 'Systèmes et copilotes cloisonnés en silos propriétaires sans contrat d’échange partagé.' }
+  { code: 'L6', name: 'Conceptuel (LCIM L6)', layer: 'Organisationnel / Conceptuel', color: 'var(--b5)', mcp: false, desc: 'Alignement complet des modèles du monde, des hypothèses implicites et des contraintes théoriques sous-jacentes (Tolk & Muguira, 2003). Encore largement non atteint en entreprise agentique (Ch. 24 § 24.9.2).' },
+  { code: 'L5', name: 'Dynamique (LCIM L5)', layer: 'Exécution & Adaptation', color: 'var(--brand)', mcp: false, desc: 'Compréhension de l’évolution de l’état du système au fil du temps, négociation et découverte de partenaires à l’exécution (ex. négociateur de méta-protocole ANP, Ch. 8 § 8.5.2).' },
+  { code: 'L4', name: 'Pragmatique (LCIM L4)', layer: 'Intention & Effet en contexte', color: 'var(--b4)', mcp: false, desc: 'Verrou opérationnel majeur de l’agentique (Ch. 7 § 7.1.3) : inférer l’action effectivement voulue à partir d’un message en contexte (sémantique lue par le modèle vs force illocutoire FIPA-ACL).' },
+  { code: 'L3', name: 'Sémantique (LCIM L3 / Pile Canonique 3)', layer: 'Sens partagé & Ontologies', color: 'var(--warn)', mcp: false, desc: 'Accord sur le sens des termes échangés (RDF, OWL 2, SHACL, FIBO, CDM, GraphRAG — Ch. 2). Thèse du Ch. 2 : c’est le niveau que MCP et A2A présupposent sans l’établir.' },
+  { code: 'L2', name: 'Syntaxique (LCIM L2 / Pile Canonique 2)', layer: 'Schémas & Grammaire', color: 'var(--ok)', mcp: true, desc: 'PALIER OÙ OPÈRENT MCP ET A2A : structures de messages communes (JSON-RPC 2.0, JSON Schema 2020-12, Protobuf, Avro, Agent Card). Deux agents peuvent valider leurs schémas tout en divergeant sur l’intention (faux accord sémantique, Ch. 9 § 9.4).' },
+  { code: 'L1', name: 'Technique (LCIM L1 / Pile Canonique 1)', layer: 'Transport & Connectivité', color: 'var(--info)', mcp: true, desc: 'Acheminement des bits et connexions réseau (HTTP/2, Streamable HTTP sans état, SSE, stdio, gRPC, AMQP 1.0, MQTT). Nécessaire mais jamais suffisant.' },
+  { code: 'L0', name: 'Isolé (LCIM L0)', layer: 'Absence d’interopérabilité', color: 'var(--na)', mcp: false, desc: 'Systèmes et copilotes cloisonnés en silos propriétaires sans contrat d’échange partagé.' }
 ];
 
 function renderLcimStack() {
@@ -1589,18 +1508,18 @@ window.updatePassK = function() {
   const curYPow = padT + (1 - passPowK / 100) * plotH;
 
   svg.innerHTML = `
-    <line x1="${padL}" y1="${padT}" x2="${padL}" y2="${padT + plotH}" stroke="rgba(148,163,184,0.3)"/>
-    <line x1="${padL}" y1="${padT + plotH}" x2="${padL + plotW}" y2="${padT + plotH}" stroke="rgba(148,163,184,0.3)"/>
+    <line x1="${padL}" y1="${padT}" x2="${padL}" y2="${padT + plotH}" stroke="color-mix(in oklab,var(--text-muted) 30%,transparent)"/>
+    <line x1="${padL}" y1="${padT + plotH}" x2="${padL + plotW}" y2="${padT + plotH}" stroke="color-mix(in oklab,var(--text-muted) 30%,transparent)"/>
     <text x="${padL - 6}" y="${padT + 8}" text-anchor="end" fill="var(--text-muted)" font-size="10">100%</text>
     <text x="${padL - 6}" y="${padT + plotH}" text-anchor="end" fill="var(--text-muted)" font-size="10">0%</text>
     <text x="${padL + plotW / 2}" y="${h - 4}" text-anchor="middle" fill="var(--text-muted)" font-size="10">Nombre d'étapes / essais k (1 → 20)</text>
-    <polyline fill="none" stroke="#38bdf8" stroke-width="2.5" points="${ptsAt.join(' ')}"/>
-    <polyline fill="none" stroke="#ef4444" stroke-width="2.5" points="${ptsPow.join(' ')}"/>
+    <polyline fill="none" stroke="var(--info)" stroke-width="2.5" points="${ptsAt.join(' ')}"/>
+    <polyline fill="none" stroke="var(--bad)" stroke-width="2.5" points="${ptsPow.join(' ')}"/>
     <line x1="${curX}" y1="${padT}" x2="${curX}" y2="${padT + plotH}" stroke="var(--warning)" stroke-dasharray="3,3"/>
-    <circle cx="${curX}" cy="${curYAt}" r="5" fill="#38bdf8"/>
-    <circle cx="${curX}" cy="${curYPow}" r="5" fill="#ef4444"/>
-    <text x="${padL + 10}" y="${padT + 14}" fill="#38bdf8" font-size="10" font-weight="700">pass@k (Potentiel)</text>
-    <text x="${padL + 130}" y="${padT + 14}" fill="#ef4444" font-size="10" font-weight="700">pass^k = p^k (Consistance τ-bench)</text>
+    <circle cx="${curX}" cy="${curYAt}" r="5" fill="var(--info)"/>
+    <circle cx="${curX}" cy="${curYPow}" r="5" fill="var(--bad)"/>
+    <text x="${padL + 10}" y="${padT + 14}" fill="var(--info)" font-size="10" font-weight="700">pass@k (Potentiel)</text>
+    <text x="${padL + 130}" y="${padT + 14}" fill="var(--bad)" font-size="10" font-weight="700">pass^k = p^k (Consistance τ-bench)</text>
   `;
 };
 
@@ -1712,8 +1631,8 @@ const PROTO_TABS = {
 
 window.selectProtoTab = function(key, btn) {
   if (btn) {
-    btn.parentElement.querySelectorAll('.btn').forEach(b => b.classList.remove('btn-primary'));
-    btn.classList.add('btn-primary');
+    btn.parentElement.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
   }
   const el = document.getElementById('protoTabContent');
   if (el && PROTO_TABS[key]) el.innerHTML = PROTO_TABS[key];
@@ -1780,7 +1699,7 @@ const GRID_DATA = {
 
 window.selectGridMech = function(mechKey, btn) {
   if (btn) {
-    document.querySelectorAll('#gridMechTabs .sub-tab').forEach(b => b.classList.remove('active'));
+    btn.parentElement.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
   }
   const d = GRID_DATA[mechKey] || GRID_DATA.card;
@@ -1802,7 +1721,7 @@ window.selectGridMech = function(mechKey, btn) {
 
 window.setHopSim = function(mode, btn) {
   if (btn) {
-    btn.parentElement.querySelectorAll('.sub-tab').forEach(b => b.classList.remove('active'));
+    btn.parentElement.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
   }
   const svg = document.getElementById('hopsSvg');
@@ -1811,7 +1730,7 @@ window.setHopSim = function(mode, btn) {
 
   const isHop2 = mode === 'hop2';
   const isRevoke = mode === 'revoke';
-  const cOk = '#10b981', cWarn = '#f59e0b', cDanger = '#ef4444', cMuted = '#64748b';
+  const cOk = 'var(--ok)', cWarn = 'var(--warn)', cDanger = 'var(--bad)', cMuted = 'var(--na)';
 
   svg.innerHTML = `
     <defs>
@@ -1819,19 +1738,19 @@ window.setHopSim = function(mode, btn) {
       <marker id="arrDanger" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill="${cDanger}"/></marker>
     </defs>
     <!-- Mandant Humain -->
-    <rect x="15" y="45" width="125" height="65" rx="8" fill="rgba(59,130,246,0.15)" stroke="#3b82f6" stroke-width="1.5"/>
-    <text x="77" y="72" text-anchor="middle" fill="#e2e8f0" font-size="11" font-weight="700">Mandant Humain</text>
-    <text x="77" y="92" text-anchor="middle" fill="#94a3b8" font-size="9.5">${isRevoke ? 'Révoque à t₁' : 'Consentement initial'}</text>
+    <rect x="15" y="45" width="125" height="65" rx="8" fill="color-mix(in oklab,var(--info) 15%,transparent)" stroke="var(--info)" stroke-width="1.5"/>
+    <text x="77" y="72" text-anchor="middle" fill="var(--text)" font-size="11" font-weight="700">Mandant Humain</text>
+    <text x="77" y="92" text-anchor="middle" fill="var(--text-muted)" font-size="9.5">${isRevoke ? 'Révoque à t₁' : 'Consentement initial'}</text>
 
     <!-- Saut 1 -->
     <line x1="140" y1="77" x2="215" y2="77" stroke="${isRevoke ? cDanger : cOk}" stroke-width="2.5" marker-end="url(#${isRevoke ? 'arrDanger' : 'arrOk'})"/>
     <text x="177" y="65" text-anchor="middle" fill="${isRevoke ? cDanger : cOk}" font-size="9.5" font-weight="700">Saut 1 (Domaine A)</text>
-    <text x="177" y="96" text-anchor="middle" fill="#94a3b8" font-size="8.5">RFC 8693 act / Txn-Token</text>
+    <text x="177" y="96" text-anchor="middle" fill="var(--text-muted)" font-size="8.5">RFC 8693 act / Txn-Token</text>
 
     <!-- Agent 1 -->
-    <rect x="220" y="45" width="130" height="65" rx="8" fill="rgba(16,185,129,0.14)" stroke="${cOk}" stroke-width="1.5"/>
-    <text x="285" y="72" text-anchor="middle" fill="#e2e8f0" font-size="11" font-weight="700">Agent A (Primaire)</text>
-    <text x="285" y="92" text-anchor="middle" fill="#94a3b8" font-size="9.5">Porteur vérifié (Saut 1)</text>
+    <rect x="220" y="45" width="130" height="65" rx="8" fill="color-mix(in oklab,var(--ok) 14%,transparent)" stroke="${cOk}" stroke-width="1.5"/>
+    <text x="285" y="72" text-anchor="middle" fill="var(--text)" font-size="11" font-weight="700">Agent A (Primaire)</text>
+    <text x="285" y="92" text-anchor="middle" fill="var(--text-muted)" font-size="9.5">Porteur vérifié (Saut 1)</text>
 
     <!-- Frontière de domaine -->
     <line x1="390" y1="15" x2="390" y2="145" stroke="${cWarn}" stroke-width="1.5" stroke-dasharray="5,4"/>
@@ -1842,15 +1761,15 @@ window.setHopSim = function(mode, btn) {
     <text x="392" y="62" text-anchor="middle" fill="${cDanger}" font-size="9.5" font-weight="700">Saut 2 (Rupture)</text>
 
     <!-- Agent 2 -->
-    <rect x="440" y="45" width="135" height="65" rx="8" fill="rgba(239,68,68,0.14)" stroke="${cDanger}" stroke-width="1.5"/>
-    <text x="507" y="72" text-anchor="middle" fill="#e2e8f0" font-size="11" font-weight="700">Sous-Agent B (Tiers)</text>
-    <text x="507" y="92" text-anchor="middle" fill="#fca5a5" font-size="9">act antérieur = info only</text>
+    <rect x="440" y="45" width="135" height="65" rx="8" fill="color-mix(in oklab,var(--bad) 14%,transparent)" stroke="${cDanger}" stroke-width="1.5"/>
+    <text x="507" y="72" text-anchor="middle" fill="var(--text)" font-size="11" font-weight="700">Sous-Agent B (Tiers)</text>
+    <text x="507" y="92" text-anchor="middle" fill="var(--bad)" font-size="9">act antérieur = info only</text>
 
     <!-- Service / Vérificateur aval -->
     <line x1="575" y1="77" x2="625" y2="77" stroke="${cDanger}" stroke-width="2" stroke-dasharray="3,3" marker-end="url(#arrDanger)"/>
-    <rect x="630" y="45" width="115" height="65" rx="8" fill="rgba(245,158,11,0.12)" stroke="${cWarn}" stroke-width="1.5"/>
-    <text x="687" y="70" text-anchor="middle" fill="#e2e8f0" font-size="10.5" font-weight="700">Vérificateur Aval</text>
-    <text x="687" y="90" text-anchor="middle" fill="#fcd34d" font-size="8.5">Mandat initial opaque</text>
+    <rect x="630" y="45" width="115" height="65" rx="8" fill="color-mix(in oklab,var(--warn) 12%,transparent)" stroke="${cWarn}" stroke-width="1.5"/>
+    <text x="687" y="70" text-anchor="middle" fill="var(--text)" font-size="10.5" font-weight="700">Vérificateur Aval</text>
+    <text x="687" y="90" text-anchor="middle" fill="var(--warn)" font-size="8.5">Mandat initial opaque</text>
   `;
 
   const texts = {
@@ -1873,8 +1792,8 @@ window.updateMosca = function() {
   const late = sum > z;
   const box = document.getElementById('moscaVerdictBox');
   if (box) {
-    box.style.borderColor = late ? 'rgba(239,68,68,0.5)' : 'rgba(16,185,129,0.5)';
-    box.style.background = late ? 'rgba(239,68,68,0.08)' : 'rgba(16,185,129,0.08)';
+    box.style.borderColor = late ? 'color-mix(in oklab,var(--bad) 50%,transparent)' : 'color-mix(in oklab,var(--ok) 50%,transparent)';
+    box.style.background = late ? 'color-mix(in oklab,var(--bad) 8%,transparent)' : 'color-mix(in oklab,var(--ok) 8%,transparent)';
     box.innerHTML = `
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:0.35rem;">
         <strong style="color:${late ? 'var(--accent-danger)' : 'var(--accent-emerald)'};">
@@ -1891,7 +1810,7 @@ window.updateMosca = function() {
 
 window.selectTrustTab = function(tabKey, btn) {
   if (btn) {
-    btn.parentElement.querySelectorAll('.sub-tab').forEach(b => b.classList.remove('active'));
+    btn.parentElement.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
   }
   const el = document.getElementById('trustTabContent');
@@ -1939,7 +1858,7 @@ window.selectTrustTab = function(tabKey, btn) {
       <p style="font-size:0.84rem;color:var(--text-secondary);margin-bottom:0.75rem;">
         Le retournement d'un serveur d'outils après approbation (<em>rug-pull</em>) exploite le temps : sur la page « Tools » de MCP (rév. 2025-11-25), aucun des 8 champs du type <code>Tool</code> ne porte de version, d'empreinte ou de signature (S-098 [B, degré 1]). Et l'inventaire des 11 mécanismes de révocation (Tableau 20.1) dégage trois formes : <strong>le silence</strong>, <strong>l'interdiction sans le moyen</strong> (MUST NOT d'A2A § 8.4 sans CRL ni OCSP, S-052/S-053 [A]) et <strong>l'état sans la fraîcheur</strong> (CSA draft S-101 [C]).
       </p>
-      <div class="card" style="background:rgba(15,23,42,0.5);">
+      <div class="card" style="background:var(--bg-card);">
         <div style="font-weight:700;color:var(--accent-cyan);margin-bottom:0.35rem;">La symétrie attaque/défense : l'Agentic SOC (Ch. 20 § 20.8–20.9)</div>
         <p style="font-size:0.8rem;color:var(--text-secondary);">
           Après la démonstration d'une campagne d'intrusion conduite à 80–90 % de façon autonome via MCP (GTG-1002, Anthropic nov. 2025, en [C]), la défense s'agentifie elle-même (offres triées par statut au 21 juill. 2026 chez Microsoft, Google Cloud et CrowdStrike — S-104 [B]). Or un agent défensif qui hérite d'un compte utilisateur est incompatible avec l'élévation juste-à-temps PIM/TAP (documentation Microsoft du 1er juill. 2026, S-103 [A]) : les agents défensifs sont les premiers à devoir porter le passeport du Ch. 16.
@@ -1992,7 +1911,7 @@ const OO_DATA = {
 
 window.selectOO = function(ooKey, btn) {
   if (btn) {
-    document.querySelectorAll('#ooCardsGrid .oo-cell').forEach(c => c.classList.remove('active'));
+    btn.parentElement.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
   }
   const d = OO_DATA[ooKey] || OO_DATA.OO3;
@@ -2028,8 +1947,8 @@ window.evaluateStrictTest = function() {
   const strict = count === 3;
   const el = document.getElementById('strictTestResult');
   if (!el) return;
-  el.style.borderColor = strict ? 'rgba(239,68,68,0.5)' : 'rgba(59,130,246,0.4)';
-  el.style.background = strict ? 'rgba(239,68,68,0.09)' : 'rgba(59,130,246,0.07)';
+  el.style.borderColor = strict ? 'color-mix(in oklab,var(--bad) 50%,transparent)' : 'color-mix(in oklab,var(--info) 40%,transparent)';
+  el.style.background = strict ? 'color-mix(in oklab,var(--bad) 9%,transparent)' : 'color-mix(in oklab,var(--info) 7%,transparent)';
   el.innerHTML = strict
     ? `<div style="font-weight:700;color:var(--accent-danger);margin-bottom:0.25rem;">Verdict (3/3 conditions réunies) : EXIGENCE RÉGLEMENTAIRE STRICTE QUALIFIÉE</div>
        <div style="font-size:0.79rem;color:var(--text-secondary);">Application du Principe Directeur (Ch. 29 § 29.4) : <strong>positions OO3 ou OO4 requises</strong>. Le processus est imposé de façon déterministe par le cadre, qui invoque les agents ; la trace d'instance est produite par le cadre (PC2) et toute action irréversible est soumise à libération humaine (Ch. 31 § 31.1.1).</div>`
@@ -2039,7 +1958,7 @@ window.evaluateStrictTest = function() {
 
 window.selectRegTab = function(tabKey, btn) {
   if (btn) {
-    btn.parentElement.querySelectorAll('.sub-tab').forEach(b => b.classList.remove('active'));
+    btn.parentElement.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
   }
   const el = document.getElementById('regTabContent');
@@ -2054,11 +1973,11 @@ window.selectRegTab = function(tabKey, btn) {
         Publiée le 11 septembre 2025, en vigueur le <strong>1er mai 2027</strong> (278 jours restants au gel du 27 juillet 2026). Vérification mécanique bilingue sur le texte intégral : <code>agentique = 0</code>, <code>agent(s) = 0</code>, <code>orchestration = 0</code>, <code>fiche de modèle / model card = 0</code>, <code>autonom* = 8</code> (S-009 [A], fait négatif vérifié de degré 1).
       </p>
       <div class="grid-2" style="gap:0.75rem;font-size:0.8rem;">
-        <div class="card" style="background:rgba(15,23,42,0.45);">
+        <div class="card" style="background:var(--bg-card);">
           <strong style="color:var(--accent-cyan);">Voie définitionnelle & Inférence d'analystes (§ 25.2–25.3)</strong>
           <p style="color:var(--text-secondary);margin-top:0.3rem;">La définition de « modèle » est laissée <em>intentionally broad</em> et englobe les méthodes d'IA/AA ; la couverture de l'IA agentique est une <strong>inférence d'analystes juridiques canadiens</strong> (McCarthy Tétrault, Torys, Blakes, BLG, Sookman), jamais un énoncé du BSIF (garde-fou PRD Vol. II § 8.2.4). Le rapport conjoint BSIF-ACFC du 24 sept. 2024 (S-010 [A]) soulignait déjà que les relations causales entrées-sorties de l'IA sont <em>souvent indéterminables</em>.</p>
         </div>
-        <div class="card" style="background:rgba(15,23,42,0.45);">
+        <div class="card" style="background:var(--bg-card);">
           <strong style="color:var(--accent-amber);">Modalité au « should » & Les 5 attentes (§ 25.2 & § 25.7)</strong>
           <p style="color:var(--text-secondary);margin-top:0.3rem;">Les 12 énoncés numérotés sont au <code>should</code> (zéro <code>must</code>, S-110 [B, deg. 1]) : on écrit <strong>« attendu par E-23 »</strong>, jamais « exigé » (R-06). Les 5 attentes au socle sont : (1) cycle de vie à 5 volets, (2) inventaire d'entreprise <em>accurate, evergreen</em>, (3) cotation de risque par modèle, (4) documentation de modèle, (5) surveillance continue visant <em>autonomous decision making, autonomous re-parametrization</em> (S-111 [B]).</p>
         </div>
@@ -2070,11 +1989,11 @@ window.selectRegTab = function(tabKey, btn) {
         <div><span class="badge badge-b">S-135 [B]</span> <span class="badge badge-a">S-023 [A]</span></div>
       </div>
       <div class="grid-2" style="gap:0.75rem;font-size:0.8rem;">
-        <div class="card" style="background:rgba(15,23,42,0.45);">
+        <div class="card" style="background:var(--bg-card);">
           <strong style="color:var(--accent-emerald);">Article 12.1 de la Loi 25 — En vigueur depuis le 22 sept. 2023 (S-135 [B])</strong>
           <p style="color:var(--text-secondary);margin-top:0.3rem;">Se déclenche sur toute décision <em>« fondée exclusivement sur un traitement automatisé »</em> de renseignements personnels. Impose : <strong>1 obligation inconditionnelle</strong> (informer au plus tard au moment de la décision), <strong>3 informations sur demande</strong> (1° renseignements utilisés, 2° raisons, facteurs et paramètres menant à <em>cette</em> décision, 3° droit de rectification — omis par l'entrée héritée et rétabli sur le texte officiel), et <strong>1 alinéa distinct</strong> (occasion de présenter ses observations à un membre du personnel en mesure de réviser). Le flux outille un point d'arrêt humain, jamais « la révision de l'art. 12.1 ».</p>
         </div>
-        <div class="card" style="background:rgba(15,23,42,0.45);">
+        <div class="card" style="background:var(--bg-card);">
           <strong style="color:var(--accent-purple);">Ligne directrice IA de l'AMF — Finale, effet au 1er mai 2027 (S-023 [A])</strong>
           <p style="color:var(--text-secondary);margin-top:0.3rem;">Publiée en <strong>avril 2026</strong> (sans quantième aux pages officielles — S-113 [B, deg. 1] a défait l'arbitrage 30 mars / 7 avril), finale (jamais « en projet ») et convergeant au <strong>1er mai 2027</strong> avec E-23. Elle retient la définition OCDE (2024) incluant des <em>« degrés variables d'autonomie et d'adaptabilité après déploiement »</em> (S-114 [B]). Son détail article par article demeure la lacune § 10.4 du Vol. II (serveur en refus HTTP 403 à trois dates).</p>
         </div>
@@ -2098,11 +2017,11 @@ window.selectRegTab = function(tabKey, btn) {
         <div><span class="badge badge-a">S-033 [A, deg. 1]</span> <span class="badge badge-a">S-026 / S-027 [A]</span></div>
       </div>
       <div class="grid-2" style="gap:0.75rem;font-size:0.8rem;">
-        <div class="card" style="background:rgba(15,23,42,0.45);">
+        <div class="card" style="background:var(--bg-card);">
           <strong style="color:var(--accent-blue);">Cadre bancaire (C-15, sanctionné le 26 mars 2026, S-011 [A])</strong>
           <p style="color:var(--text-secondary);margin-top:0.3rem;">Abroge et remplace la loi partielle de 2024, crée un droit à la mobilité des données à l'échelle de l'économie et confie la supervision à la <strong>Banque du Canada</strong>. Règlement prépublié le 27 juin 2026 (commentaires clos le 26 août 2026, S-032 [A]). <strong>Fait négatif vérifié (9-0, S-033 [A, deg. 1]) :</strong> 4 chaînes (<code>FDX</code>, <code>Financial Data Exchange</code>, <code>OAuth</code>, <code>FAPI</code>) cherchées dans 3 textes officiels = <strong>zéro occurrence</strong>. Aucun standard technique n'est désigné (R-5).</p>
         </div>
-        <div class="card" style="background:rgba(15,23,42,0.45);">
+        <div class="card" style="background:var(--bg-card);">
           <strong style="color:var(--accent-emerald);">ISO 20022 : Lynx accompli, RTR visé (Ch. 33)</strong>
           <p style="color:var(--text-secondary);margin-top:0.3rem;"><strong>Lynx (grande valeur) :</strong> fin de coexistence MT/MX achevée le <strong>22 novembre 2025</strong> (S-026 [A]). <strong>RTR (temps réel) :</strong> le règlement administratif (By-law No. 10, DORS/2026-133) est en vigueur depuis le 24 août 2026, mais <strong>le rail n'est pas en production</strong> (en tests industriels). Paiements Canada vise le T4 2026, après <strong>quatre cibles successives : 2019, 2022, 2023, 2026</strong> (R-4, réserve F-29, S-027 [A]).</p>
         </div>
@@ -2139,7 +2058,7 @@ const CANADIAN_CASES = [
 
 window.filterCases = function(filterKey, btn) {
   if (btn) {
-    btn.parentElement.querySelectorAll('.sub-tab').forEach(b => b.classList.remove('active'));
+    btn.parentElement.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
   }
   const grid = document.getElementById('canadianCasesGrid');
@@ -2209,7 +2128,7 @@ window.renderMatrix42 = function() {
         <span class="badge badge-amber" style="margin-top:0.25rem;">${row.species}</span>
       </td>
       ${['mcp', 'a2a', 'ap2'].map(col => `
-        <td style="cursor:pointer;transition:background 0.15s;" onclick="showMatrix42Cell(${rIdx}, '${col}')" onmouseover="this.style.background='rgba(59,130,246,0.12)'" onmouseout="this.style.background='transparent'">
+        <td style="cursor:pointer;transition:background 0.15s;" onclick="showMatrix42Cell(${rIdx}, '${col}')" onmouseover="this.style.background='color-mix(in oklab,var(--info) 12%,transparent)'" onmouseout="this.style.background='transparent'">
           <div style="font-weight:600;color:var(--accent-cyan);font-size:0.78rem;">${row[col].label}</div>
           <div style="font-size:0.71rem;color:var(--text-muted);margin-top:0.15rem;">Cliquer pour inspecter →</div>
         </td>
@@ -2243,7 +2162,7 @@ const PC_DATA = {
 
 window.selectPC = function(pcKey, btn) {
   if (btn) {
-    btn.parentElement.querySelectorAll('.sub-tab').forEach(b => b.classList.remove('active'));
+    btn.parentElement.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
   }
   const d = PC_DATA[pcKey] || PC_DATA.PC1;
@@ -2255,7 +2174,7 @@ window.selectPC = function(pcKey, btn) {
 
 window.selectB4Tab = function(tabKey, btn) {
   if (btn) {
-    btn.parentElement.querySelectorAll('.sub-tab').forEach(b => b.classList.remove('active'));
+    btn.parentElement.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
   }
   const el = document.getElementById('b4TabContent');
@@ -2267,11 +2186,11 @@ window.selectB4Tab = function(tabKey, btn) {
         Les conventions sémantiques GenAI d'OpenTelemetry ont été déplacées vers un dépôt dédié par une rupture déclarée en <strong>v1.42.0 du 12 juin 2026</strong> (S-120 [B]). Au 21 juillet 2026, ce dépôt ne porte <strong>ni publication, ni étiquette, et son Schema URL est à « TODO »</strong> (S-121 [B, degré 2]). Ses fichiers agentiques sont au <strong>1er des 5 échelons de maturité (Development)</strong> (S-122, S-123 [B]).
       </p>
       <div class="grid-2" style="gap:0.75rem;font-size:0.8rem;">
-        <div class="card" style="background:rgba(15,23,42,0.45);">
+        <div class="card" style="background:var(--bg-card);">
           <strong style="color:var(--accent-cyan);">Ce que les 16 métriques comptent — et ne comptent pas (Ch. 40 § 40.1)</strong>
           <p style="color:var(--text-secondary);margin-top:0.3rem;">12 métriques GenAI + 4 métriques MCP = 16 histogrammes au grain de l'opération unitaire (S-136, S-140 [B]). <strong>Zéro métrique de parc</strong>, zéro dimension de mandat ou de révocation (S-138 [B, deg. 1]), et la dimension d'agent n'est qu'un nom lisible facultatif à faible cardinalité. Le chaînon manquant est la <strong>clé de jointure entre la trace et la chaîne de mandat</strong> (lacune 21, Ch. 38 § 38.5).</p>
         </div>
-        <div class="card" style="background:rgba(15,23,42,0.45);">
+        <div class="card" style="background:var(--bg-card);">
           <strong style="color:var(--accent-amber);">Grille minimale de l'auditeur & FinOps (Ch. 40 § 40.2–40.6)</strong>
           <p style="color:var(--text-secondary);margin-top:0.3rem;">Quatre grandeurs construites par l'auteur : (1) <em>Disponibilité du parc</em> (manque le dénominateur), (2) <em>Couverture de traçabilité</em> (manque la clé de jointure), (3) <em>Délai de révocation</em> (aucun délai fixé), (4) <em>Fraîcheur des évaluations</em>. Côté supervision humaine (§ 40.4), mesurer le délai médian ou le taux de renversement ne mesure pas le discernement (biais d'automatisation, D-9). Côté FinOps : passer du coût par jeton au <strong>coût par résultat métier</strong> (FOCUS 1.4 ratifiée le 4 juin 2026).</p>
         </div>
@@ -2283,11 +2202,11 @@ window.selectB4Tab = function(tabKey, btn) {
         Seul chapitre de matière neuve du Livre IV (zéro entrée au socle consolidé, construction d'auteur intégrale). Il distingue les <strong>4 emplois du mot « fabrique »</strong> (décision 12c) : <strong>F1</strong> la fabrique d'agents (plan de production du parc : gabarits gouvernés, catalogue interne, barrière de certification, boucle de réémission), <strong>F2</strong> la fabrique d'identité / de confiance (qui émet l'identité, siège Ch. 43 § 43.1), <strong>F3</strong> un titre d'éditeur (Microsoft, 24 sept. 2025), et <strong>F4</strong> le patron GoF.
       </p>
       <div class="grid-2" style="gap:0.75rem;font-size:0.8rem;">
-        <div class="card" style="background:rgba(15,23,42,0.45);">
+        <div class="card" style="background:var(--bg-card);">
           <strong style="color:var(--accent-emerald);">Catalogue interne ≠ Registre gouverné (§ 41.3)</strong>
           <p style="color:var(--text-secondary);margin-top:0.3rem;">Le registre gouverné (Ch. 15) vise l'opposabilité à des tiers ; le catalogue interne est l'instrument de gestion où l'organisation énumère ce qu'elle a produit et son gabarit d'origine (candidat au dénominateur manquant du Ch. 40). La boucle de réémission (§ 41.5) corrige le <em>gabarit</em> (la classe) plutôt que l'instance lorsque l'indicateur dérive.</p>
         </div>
-        <div class="card" style="background:rgba(15,23,42,0.45);">
+        <div class="card" style="background:var(--bg-card);">
           <strong style="color:var(--accent-danger);">Ce que la fabrique ne fait pas : le harnais (§ 41.8, Risque 14 / D-2)</strong>
           <p style="color:var(--text-secondary);margin-top:0.3rem;">Produire un agent n'est pas l'exécuter : le harnais d'exécution (persistance de session, compression de contexte, ordre des règles d'approbation) reste hors périmètre (risque 14 borné par D-2 aux § 47.8.1 et § 50.2).</p>
         </div>
@@ -2298,7 +2217,7 @@ window.selectB4Tab = function(tabKey, btn) {
       <p style="font-size:0.83rem;color:var(--text-secondary);margin-bottom:0.65rem;">
         <strong>Verrou méthodologique (Ch. 44) :</strong> Ni ArchiMate 3.2 (oct. 2022) ni ArchiMate 4 (The Open Group, doc. C260, 27 avril 2026 — qui substitue 7 domaines pairs aux couches et réduit le métamodèle d'~60 à ~42 éléments) ne possèdent d'élément natif pour l'agent, MCP, A2A, la NHI ou le Control Plane. La seule extension défendable est <code>Specialization + stéréotype &lt;&lt;...&gt;&gt; + Profiles</code>, sur le modèle du <em>Risk & Security Overlay</em> (W172, 2019). Preuve structurelle du <strong>quatre-yeux (§ 44.1.7)</strong> : absence délibérée de relation <code>Flow</code> directe entre le <code>Role</code> proposeur et le <code>Role</code> approbateur.
       </p>
-      <div class="card" style="background:rgba(15,23,42,0.45);font-size:0.8rem;">
+      <div class="card" style="background:var(--bg-card);font-size:0.8rem;">
         <strong style="color:var(--accent-purple);">Désambiguïsation obligatoire des 3 échelles d'autonomie (Garde-fou R-13, siège Ch. 43 § 43.5.1)</strong>
         <p style="color:var(--text-secondary);margin-top:0.25rem;">Le mot « copilote » ne s'emploie jamais nu car trois échelles coexistent au Vol. I : (1) <strong>l'échelle à 4 paliers non numérotés</strong> (<em>assistance → copilote → orchestration sous revue → autonomie bornée</em>, indexée sur matérialité × réversibilité, S-157 [C]) ; (2) <strong>le continuum à 6 niveaux numérotés de 0 à 5</strong> (par analogie SAE J3016, où copilote = niveau 2, Ch. 4 § 4.1.4) ; (3) <strong>la graduation à 4 niveaux préfixés L (L0–L3)</strong> (où copilote = L0).</p>
       </div>
@@ -2309,15 +2228,15 @@ window.selectB4Tab = function(tabKey, btn) {
         Les métriques académiques d'évaluation des orchestrations (assurance de correction via précision/rappel/F1, réactivité via FNR, traçabilité via correction du journal — S-035 [B]) sont présentées comme <strong>instrumentation candidate</strong> (« candidate » est un mot de l'auteur, absent du socle) des programmes E-23 et AMF.
       </p>
       <div class="grid-3" style="gap:0.75rem;font-size:0.8rem;">
-        <div class="card" style="background:rgba(16,185,129,0.08);border-color:rgba(16,185,129,0.3);">
+        <div class="card" style="background:color-mix(in oklab,var(--ok) 8%,transparent);border-color:color-mix(in oklab,var(--ok) 30%,transparent);">
           <strong style="color:var(--accent-emerald);">1. Inventorier (Immédiat)</strong>
           <p style="color:var(--text-secondary);margin-top:0.25rem;">Ne dépend d'aucune réserve métrologique : recenser tous les systèmes décisionnels selon l'Appendice d'E-23 en traitant la couverture implicite des agents comme acquise par prudence.</p>
         </div>
-        <div class="card" style="background:rgba(59,130,246,0.08);border-color:rgba(59,130,246,0.3);">
+        <div class="card" style="background:color-mix(in oklab,var(--info) 8%,transparent);border-color:color-mix(in oklab,var(--info) 30%,transparent);">
           <strong style="color:var(--accent-blue);">2. Coter, puis encadrer</strong>
           <p style="color:var(--text-secondary);margin-top:0.25rem;">Assigner la cote de risque, positionner chaque processus sur OO1–OO4, imposer OO3/OO4 sous exigence stricte et relier chaque <code>&lt;&lt;regulatory-requirement&gt;&gt;</code> à un composant exécutable (zéro exigence orpheline, Ch. 44 § 44.6).</p>
         </div>
-        <div class="card" style="background:rgba(245,158,11,0.08);border-color:rgba(245,158,11,0.3);">
+        <div class="card" style="background:color-mix(in oklab,var(--warn) 8%,transparent);border-color:color-mix(in oklab,var(--warn) 30%,transparent);">
           <strong style="color:var(--accent-amber);">3. Surveiller (Avant le 1er mai 2027)</strong>
           <p style="color:var(--text-secondary);margin-top:0.25rem;">Décider du producteur de la trace (le cadre PC2, jamais l'agent) et instrumenter les seuils de dépassement et la détection de la re-paramétrisation autonome.</p>
         </div>
@@ -2358,7 +2277,7 @@ const CLOCKS_DATA = [
 
 window.selectClock = function(idx, btn) {
   if (btn) {
-    document.querySelectorAll('#clocksTimeline .clock-node').forEach(n => n.classList.remove('active'));
+    btn.parentElement.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
   }
   const d = CLOCKS_DATA[idx] || CLOCKS_DATA[0];
@@ -2374,7 +2293,7 @@ window.selectClock = function(idx, btn) {
 
 window.selectEffectClass = function(clsKey, btn) {
   if (btn) {
-    btn.parentElement.querySelectorAll('.sub-tab').forEach(b => b.classList.remove('active'));
+    btn.parentElement.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
   }
   const el = document.getElementById('effectSimBox');
@@ -2399,7 +2318,7 @@ window.selectEffectClass = function(clsKey, btn) {
 
 window.selectB5Tab = function(tabKey, btn) {
   if (btn) {
-    btn.parentElement.querySelectorAll('.sub-tab').forEach(b => b.classList.remove('active'));
+    btn.parentElement.querySelectorAll('.pill-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
   }
   const el = document.getElementById('b5TabContent');
@@ -2442,7 +2361,7 @@ window.selectB5Tab = function(tabKey, btn) {
         Une somme datée ne promet pas d'avoir raison longtemps ; elle promet de dire où elle ignore. Le Ch. 49 consolide <strong>11 lacunes du Vol. II</strong> (§ 10.1 à § 10.11), <strong>22 lacunes numérotées du Vol. III</strong> (dont 4 closes, 7 instruites non closes, 10 non instruites, 1 repérée), plus <strong>4 lacunes ouvertes à la rédaction</strong> et <strong>3 absences au degré 3</strong>.
       </p>
       <div class="grid-2" style="gap:0.75rem;font-size:0.8rem;">
-        <div class="card" style="background:rgba(15,23,42,0.45);">
+        <div class="card" style="background:var(--bg-card);">
           <strong style="color:var(--accent-amber);">Les lacunes les plus structurantes</strong>
           <ul style="margin-left:1.1rem;margin-top:0.3rem;color:var(--text-secondary);">
             <li><strong>Vol. II § 10.4 (la plus coûteuse) :</strong> Contenu article par article de la ligne directrice finale de l'AMF (refus HTTP 403) et position de la CAI sur l'art. 12.1 appliqué au multi-agents (Q4 de la série d'agenda).</li>
@@ -2450,7 +2369,7 @@ window.selectB5Tab = function(tabKey, btn) {
             <li><strong>Vol. II § 10.10 :</strong> Caractérisation du <em>frame opérationnel</em> et de l'<em>actionnabilité conversationnelle</em> dans le manifeste APM, et dépendance de la taxonomie OO1–OO4 à une source unique (Q1 et Q6).</li>
           </ul>
         </div>
-        <div class="card" style="background:rgba(15,23,42,0.45);">
+        <div class="card" style="background:var(--bg-card);">
           <strong style="color:var(--accent-purple);">Les 5 frontières de la fabrique de confiance (§ 49.14)</strong>
           <ul style="margin-left:1.1rem;margin-top:0.3rem;color:var(--text-secondary);">
             <li><strong>1. Le deuxième saut :</strong> Interrogeabilité de la chaîne de mandat à l'instant t (lacune 6 du Vol. III, Ch. 17 § 17.6).</li>
@@ -2540,7 +2459,7 @@ window.selectB5Tab = function(tabKey, btn) {
 
   window.setBookFilter = function(bookFilter, btn) {
     currentBookFilter = bookFilter;
-    document.querySelectorAll('#bookFilterBtns .filter-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('#bookFilterPills .pill-btn').forEach(b => b.classList.remove('active'));
     if (btn) btn.classList.add('active');
     renderChaptersCatalog();
   };
@@ -2574,7 +2493,7 @@ window.selectB5Tab = function(tabKey, btn) {
     if (filtered.length === 0) {
       grid.innerHTML = `<div class="card" style="grid-column: 1 / -1; text-align:center; padding:2rem;">
         <p style="color:var(--text-secondary); margin-bottom:0.75rem;">Aucun chapitre ne correspond à votre recherche.</p>
-        <button class="btn btn-secondary" onclick="document.getElementById('chapterSearchInput').value=''; document.getElementById('chapterProofFilter').value='all'; setBookFilter('all', document.querySelector('#bookFilterBtns .filter-btn'));">Réinitialiser les filtres</button>
+        <button class="btn btn-secondary" onclick="document.getElementById('chapterSearchInput').value=''; document.getElementById('chapterProofFilter').value='all'; setBookFilter('all', document.querySelector('#bookFilterPills .pill-btn'));">Réinitialiser les filtres</button>
       </div>`;
       return;
     }
@@ -2588,7 +2507,7 @@ window.selectB5Tab = function(tabKey, btn) {
     };
 
     grid.innerHTML = filtered.map(item => `
-      <div class="card" style="cursor:pointer; border-top: 3px solid ${bookColors[item.book] || 'var(--accent-primary)'}; display:flex; flex-direction:column; justify-content:space-between;" onclick="openChapterModal(${item.ch})">
+      <div class="card" style="cursor:pointer; border-top: 3px solid ${bookColors[item.book] || 'var(--accent-primary)'}; display:flex; flex-direction:column; justify-content:space-between;" tabindex="0" role="button" onclick="openChapterModal(${item.ch})" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openChapterModal(${item.ch})}">
         <div>
           <div style="display:flex; justify-content:space-between; align-items:center; gap:0.5rem; margin-bottom:0.5rem;">
             <span class="mono" style="font-size:0.75rem; font-weight:700; color:${bookColors[item.book]};">CHAPITRE ${item.ch} • ${item.pages}</span>
@@ -2636,19 +2555,31 @@ window.selectB5Tab = function(tabKey, btn) {
           ${item.ch > 1 ? `<button class="btn btn-secondary" onclick="openChapterModal(${item.ch - 1})">← Ch. ${item.ch - 1}</button>` : ''}
           ${item.ch < 50 ? `<button class="btn btn-secondary" onclick="openChapterModal(${item.ch + 1})">Ch. ${item.ch + 1} →</button>` : ''}
         </div>
-        <button class="btn btn-primary" onclick="closeChapterModal(); switchView('${item.book}');">Aller à l'atelier du ${item.bookTitle.split('—')[0].trim()} →</button>
+        <button class="btn btn-primary" onclick="closeChapterModal(); switchView('view-${item.book}');">Aller à l'atelier du ${item.bookTitle.split('—')[0].trim()} →</button>
       </div>
     `;
+    if (!modal.classList.contains('open')) modalOpener = document.activeElement;
     modal.classList.add('open');
+    document.body.classList.add('modal-open');
+    modal.querySelector('.modal-content').scrollTop = 0;
+    modalChapter = item.ch;
+    document.getElementById('modalClose')?.focus();
   };
 
+  let modalChapter = 0, modalOpener = null;
   window.closeChapterModal = function() {
     const modal = document.getElementById('chapterModal');
-    if (modal) modal.classList.remove('open');
+    if (!modal || !modal.classList.contains('open')) return;
+    modal.classList.remove('open');
+    document.body.classList.remove('modal-open');
+    modalOpener?.focus?.();
   };
 
+  // Fiche ouverte : Échap ferme, ← → passent au chapitre voisin
   document.addEventListener('keydown', function(e) {
+    if (!document.getElementById('chapterModal')?.classList.contains('open')) return;
     if (e.key === 'Escape') closeChapterModal();
+    else if ((e.key === 'ArrowLeft' && modalChapter > 1) || (e.key === 'ArrowRight' && modalChapter < 50)) openChapterModal(modalChapter + (e.key === 'ArrowRight' ? 1 : -1));
   });
 
   document.addEventListener('DOMContentLoaded', function() {
@@ -2675,6 +2606,7 @@ window.selectB5Tab = function(tabKey, btn) {
     selectEffectClass('read');
     selectB5Tab('peremption');
     renderChaptersCatalog();
+    showView('view-' + (location.hash.slice(1) || 'overview'));
   });
 </script>
 </body>
