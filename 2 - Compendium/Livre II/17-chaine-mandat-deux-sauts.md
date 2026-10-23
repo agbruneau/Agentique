@@ -11,7 +11,7 @@ mécanisme.*
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source juin 2026 (Vol. I) et 21 juillet 2026 (Vol. III) ; une relève du 26 juillet 2026 reprise comme relève, non comme entrée |
 | **Socle mobilisé** | non adossée au socle consolidé : Vol. III, ch. 9-10, vingt-huit entrées dont cinq en [C] ; Vol. I, §2.11.2 et §3.6.6, en [C] ; l'objet du § 17.5 n'a aucun socle |
 | **Garde-fous balayés** | Vol. III — R-02 : trois marqueurs ; R-01, R-03 à R-14 : zéro marqueur · Vol. II — R-1 à R-8 : zéro marqueur |
-| **Volumétrie cible** | Réel : 7 680 mots de corps pour une cible ≈ 5 700 mots (+34,7 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 7 714 mots de corps pour une cible ≈ 5 700 mots (+35,3 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 17)* — la délégation est le maillon faible — les mécanismes instruits par le Vol. III **documentent** qu'un agent *a* une identité, **aucun d'eux ne documente** *au nom de qui* il agit à l'instant t ; au-delà de deux sauts, **aucun des mécanismes instruits ne documente** une traçabilité opposable de bout en bout.
 
@@ -209,7 +209,9 @@ publication**, expirant le 20 janvier 2027. ⚠ « **Soumis à l'IESG pour publi
 de procédure, non une publication**, et **aucun jalon daté n'est relevé** : le chapitre n'écrit donc
 aucune date d'aboutissement. **Son contenu n'a pas été extrait** — consigné au titre du « consulté mais
 non retenu », sans affirmation ni citation. *Rien n'est écrit ici de ce que ce document prescrit ou
-omet.*
+omet.* ☑ *L'état a changé : le document, toujours en révision −17, est approuvé par l'IESG et se
+trouve en file de l'éditeur des RFC (« RFC Ed Queue »), non encore publié — constat du 23 octobre
+2026 ([rapport](../PRD/revalidation-2026-10-23.md)).*
 
 ![**Figure 17.2** — Trois mécanismes, et le rang que chacun accorde à la chaîne de délégation.](../figures/f-17-02-rang-de-la-chaine.svg)
 

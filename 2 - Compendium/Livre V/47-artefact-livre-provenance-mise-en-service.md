@@ -12,7 +12,7 @@ d'appuis, conservées intégralement (décision 13 du TOC).*
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; aucun gel de source, pas de volume source ; volet résiduel de G-1 non instruit |
 | **Socle mobilisé** | aucune entrée : matière neuve, « Fusion : aucune » ; adossements internes et relèves du plan en repérage [C] ; énoncés d'absence à re-vérifier |
 | **Garde-fous balayés** | Vol. III — R-14 : un marqueur d'identifiant ; R-02 : deux marqueurs d'identifiant ; R-09 : un marqueur ; R-13 : un marqueur ; R-01, R-03 à R-08, R-10 à R-12 : zéro marqueur · Vol. II — R-8 : zéro marqueur ; R-1 à R-7 : zéro marqueur |
-| **Volumétrie cible** | Réel : 7 195 mots de corps pour une cible ≈ 9 300 mots (−22,6 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 7 201 mots de corps pour une cible ≈ 9 300 mots (−22,6 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 47, premier mouvement)* — l'identité du Livre II certifie le *porteur* d'un agent, jamais sa *composition* — poids de modèle, serveurs d'outils, bibliothèques, invites ; la provenance des composants (nomenclatures logicielles et d'IA, signature et attestation d'artefacts) est le chaînon entre le passeport du ch. 16 et l'intégrité en exécution du ch. 20 — et le front le plus mûr des trois (jugement v0.3, que les relèves 2 et 7 de la v0.7 confirment : politique de dépréciation protocolaire, compromissions de chaîne d'approvisionnement d'agents).
 
@@ -258,7 +258,7 @@ conséquence qu'il peut en tirer — une pièce candidate, pas une pièce.*
 
 **Cette section ne rejoue pas le retournement : elle le relit.** Le **ch. 20 § 20.1** en est le
 siège — mécanique, niveaux de preuve, bornes du balayage, réserve temporelle sur la révision
-protocolaire annoncée au brouillon (R-09 du Vol. III). Il établit ceci, et le présent chapitre le
+protocolaire annoncée au brouillon (R-09 du Vol. III), ☑ ratifiée depuis, le 28 juillet 2026. Il établit ceci, et le présent chapitre le
 reprend sans le reconstruire : *le retournement n'exploite aucun défaut du mécanisme d'admission ;
 il exploite le fait que la décision d'invocation s'appuie sur un objet que le protocole autorise à
 changer après l'octroi de la confiance, sans prescrire de le relier à ce qui avait été consenti.*

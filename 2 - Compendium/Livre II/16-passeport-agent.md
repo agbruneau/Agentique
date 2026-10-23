@@ -10,7 +10,7 @@ compose ce que les trois précédents ont instruit séparément, et il n'a pas d
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source juin 2026 (Vol. I), 16 juillet 2026 (Vol. II), 21 juillet 2026 (Vol. III) ; une échéance à venir au § 16.4, le 1ᵉʳ mai 2027 |
 | **Socle mobilisé** | aucun énoncé re-résolu au socle, aucun lot propre : Vol. III, ch. 8 et §7.4, Vol. II, §8.4 (F-07, F-08), Vol. I, §7.4.2, en [C] ; H-18 et F-55 en [C] |
 | **Garde-fous balayés** | Vol. II — R-2 et R-3 : quatre marqueurs chacun (siège) ; R-4 : zéro marqueur ; R-1, R-5 à R-8 : zéro marqueur · Vol. III — R-01 : trois marqueurs ; R-02 à R-14 : zéro marqueur |
-| **Volumétrie cible** | Réel : 5 523 mots de corps pour une cible ≈ 4 500 mots (+22,7 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 5 577 mots de corps pour une cible ≈ 4 500 mots (+23,9 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 16)* — le « passeport d'agent » n'existe dans aucune spécification de 2026 — objet de synthèse assemblant carte signée, inscription au registre, chaîne de mandat et attestations ; sa normalisation est projetée **à une échéance que le socle ne date pas**, en statut PROJETÉ. Pour l'entreprise, rien n'entre au maillage sans lui.
 
@@ -344,7 +344,10 @@ intermédiaires d'IA parmi les charges déléguées (F-86) ; un mécanisme de pr
 en appel de dernière relecture (F-29). ⚠ **Ce qui interdit d'écrire PROGRAMMÉ est un fait, non une
 prudence** : le tri PROGRAMMÉ exige un **engagement daté réel**, et aucune date de publication en RFC
 n'est annoncée pour aucun des sept documents relevés (F-85). *Le scénario est une intention lisible
-dans l'état d'une procédure, sans jalon.*
+dans l'état d'une procédure, sans jalon.* ☑ *Depuis le 15 septembre 2026, ce groupe a adopté un
+document consacré aux agents d'IA — `draft-ietf-wimse-aims-00`, non publié en RFC, sans date annoncée
+(constat du 23 octobre 2026, [rapport](../PRD/revalidation-2026-10-23.md)) : le tri ne change pas, mais
+la voie n'est plus sans document adopté.*
 
 **Scénario 2 — assemblage par une fondation ou une alliance industrielle. Tri : PROJETÉ pour la pièce
 du mandat, SPÉCULATIF pour l'assemblage.** Un précédent est documenté, **et il est instructif par son
@@ -375,7 +378,7 @@ jamais « exigé par ».*
 
 | Scénario | Tri | Ce sur quoi il s'appuie | Ce qui le réfuterait |
 |---|---|---|---|
-| **1 — extension d'un texte de l'IETF** | **PROJETÉ** | sept brouillons de groupe de travail, aucun publié en RFC, **aucune date annoncée** (F-85) ; intermédiaires d'IA rangés parmi les charges déléguées (F-86) ; appel de dernière relecture sur la propagation de contexte (F-29) | l'adoption d'un document couvrant l'assemblage des quatre pièces, ou au contraire l'expiration de la série sans reprise |
+| **1 — extension d'un texte de l'IETF** | **PROJETÉ** | sept brouillons de groupe de travail, aucun publié en RFC, **aucune date annoncée** (F-85) — ☑ huit au 23 octobre 2026, dont un adopté sur les agents d'IA ; intermédiaires d'IA rangés parmi les charges déléguées (F-86) ; appel de dernière relecture sur la propagation de contexte (F-29) | l'adoption d'un document couvrant l'assemblage des quatre pièces, ou au contraire l'expiration de la série sans reprise |
 | **2 — fondation ou alliance** | **PROJETÉ** (mandat) / **SPÉCULATIF** (assemblage) | donation annoncée le 28 avril 2026 (F-44, **[A]**) ; transfert **non matérialisé** à trois mois, normalisation annoncée sans échéance (F-45, **[B, degré 1]**) | la publication, par le cessionnaire, d'une spécification d'identité ou de paiement agentiques ; la matérialisation documentée du transfert |
 | **3 — préemption par le produit, cadrage par le régulateur** | ancrages **PROGRAMMÉS** (1ᵉʳ mai 2027) / résultat **SPÉCULATIF** | disponibilité générale datée et bornée (F-33, F-34) ; attentes de deux cadres au 1ᵉʳ mai 2027 (F-65, F-68) ; désignation **écrite au futur** au 27 juin 2026 (F-69) | un cadre prudentiel qui nommerait un format d'identité d'agent ; ou l'inverse — une normalisation ouverte qui précéderait l'échéance |
 

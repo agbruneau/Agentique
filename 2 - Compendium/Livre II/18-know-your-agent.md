@@ -10,7 +10,7 @@ frontière de l'organisation, là où l'émission cesse d'être un acte interne.
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source juin 2026 (Vol. I) et 21 juillet 2026 (Vol. III) ; le plus dense du mouvement en objets périssables |
 | **Socle mobilisé** | non réancrée sur la série consolidée : Vol. III, ch. 11, dix-neuf entrées propres et H-19 en [C] ; Vol. I, §5.5.4, §3.6.5 et §7.4.3, en [C] ; F-56 rétrogradée en [C] à la refonte |
 | **Garde-fous balayés** | Vol. III — R-02 : trois marqueurs ; R-14 : un marqueur ; R-01, R-03 à R-13 : zéro marqueur · Vol. II — R-1 à R-8 : zéro marqueur |
-| **Volumétrie cible** | Réel : 4 576 mots de corps pour une cible ≈ 3 800 mots (+20,4 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 4 627 mots de corps pour une cible ≈ 3 800 mots (+21,8 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.28, entrée du chapitre 18)* — le KYA transpose la logique du KYC — vérifier avant d'admettre — sans l'infrastructure institutionnelle qui rend le KYC possible ; la *trust fabric* inter-entreprises reste privée et fragmentée, et c'est elle qui décide si l'entreprise agentique s'arrête à ses murs.
 
@@ -161,6 +161,11 @@ remonté.* ⚠ **Le relevé n'établit pas non plus qu'aucune désignation ne so
 sources ouvertes** — degré 3.
 
 ![**Figure 18.1** — Neuf chantiers, six organisations, zéro texte ratifié.](../figures/f-18-01-neuf-chantiers.svg)
+
+☑ *Hors de ces pages, un texte est apparu depuis : le 15 septembre 2026, le groupe d'identité de
+charge de travail de l'IETF a adopté `draft-ietf-wimse-aims-00`, sur l'authentification et
+l'autorisation des agents d'IA, non publié en RFC — constat du 23 octobre 2026
+([rapport](../PRD/revalidation-2026-10-23.md)). Les neuf lignes du tableau 18.1 ne bougent pas.*
 
 ## § 18.2 — Admettre un agent tiers : ce que les protocoles remettent à celui qui décide
 

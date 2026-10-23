@@ -11,7 +11,7 @@ matière neuve que l'audit v0.3 avait nommés puis écartés (décision 9 du TOC
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; aucun gel de source consommé ; relève v0.10 du § 48.5 non instruite |
 | **Socle mobilisé** | aucune entrée : matière neuve ; adossements internes, deux repérages [C] du Vol. I, relève v0.10 en [C] ; CA-IV-07 porté à l'ouverture |
 | **Garde-fous balayés** | Vol. III — R-14 : neuf occurrences au corps ; R-02 : une occurrence de l'identifiant ; R-09 : deux occurrences ; R-13 : zéro occurrence ; R-01, R-03 à R-08, R-10 à R-12 : zéro occurrence · Vol. II — R-4 : une occurrence ; R-1 à R-3, R-5 à R-8 : zéro occurrence |
-| **Volumétrie cible** | Réel : 4 442 mots de corps pour une cible ≈ 4 700 mots (−5,5 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 4 461 mots de corps pour une cible ≈ 4 700 mots (−5,1 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 48)* — une action d'agent produit des effets dans des systèmes d'enregistrement, et ce qui advient quand elle réussit à moitié — idempotence, compensation, réconciliation — **n'est documenté par rien de ce que la somme a instruit, ni du côté des protocoles (Livre I) ni du côté de l'encadrement (Livre III)** ; c'est en finance que le coût de ce silence est maximal (un virement à moitié réussi n'est pas un incident d'observabilité, c'est un écart comptable).
 
@@ -142,7 +142,8 @@ révision nommée**.
 *L'étendre à l'idempotence serait exactement l'élargissement que le contrôle de bornage du Vol. III
 écarte.* *(2)* ⚠ **Une révision majeure du protocole agent-outil est annoncée au brouillon** — dont la
 date n'est pas confirmée à la source (R-09 du Vol. III) — et **tout constat de cette section est à
-rejouer sur la révision publiée** : il ne vaut pas par avance pour elle.
+rejouer sur la révision publiée** : il ne vaut pas par avance pour elle. ☑ *Elle est publiée depuis
+le 28 juillet 2026 (`2026-07-28`) ; le rejeu reste à faire — constat du 23 octobre 2026.*
 
 **Le lot d'instruction, formulé pour qu'il soit ouvrable.** *Question* : une spécification
 protocolaire agentique prescrit-elle, exprime-t-elle ou permet-elle de déclarer l'idempotence d'une

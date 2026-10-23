@@ -15,8 +15,8 @@ matière neuve, sans volume source ni socle, et sa publication est bloquée par 
 | 49 | [L'horizon 2027-2032 et la frontière de la connaissance vérifiable](49-horizon-frontiere-connaissance-verifiable.md) · [html](49-horizon-frontiere-connaissance-verifiable.html) | horizon et frontière |
 | 50 | [Péremption et protocole de revalidation](50-peremption-protocole-revalidation.md) · [html](50-peremption-protocole-revalidation.html) | horizon et frontière |
 
-Volumétrie : 31 710 mots de corps, mesurés par [`decompte.sh`](../PRD/decompte.sh) et reportés ici par `reporter-volumetrie.py`, pour une
-enveloppe de Livre de 34 000 au TOC, soit −6,7 %.
+Volumétrie : 31 817 mots de corps, mesurés par [`decompte.sh`](../PRD/decompte.sh) et reportés ici par `reporter-volumetrie.py`, pour une
+enveloppe de Livre de 34 000 au TOC, soit −6,4 %.
 
 **Par où entrer :** le ch. 48, ce qui advient quand un virement réussit à moitié ; puis le ch. 49, qui réunit en un registre les lacunes
 des trois volumes sources ; le ch. 50, dernier de la somme, dit ce qui la périme et comment la revalider.

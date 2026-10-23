@@ -11,7 +11,7 @@ c'est la description exacte de son objet.*
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source 16-17 juillet 2026 (Vol. II) et juin 2026 (Vol. I) ; obligations de pièce du Livre III dues, dont les quatre préimpressions du § 36.5 |
 | **Socle mobilisé** | non adossée : Vol. II, ch. 16 (F-04, F-29), Vol. I, §5.13, en [C] ; correspondances relevées vers S-004, S-027, S-090 ; le § 36.5 est un repérage [C] |
 | **Garde-fous balayés** | Vol. II — R-4 : une occurrence du sigle ; R-8 : une occurrence du sigle ; R-5 : une occurrence du sigle ; R-1 à R-3, R-6, R-7 : zéro occurrence · Vol. III — R-14 : une occurrence du sigle ; R-09 : deux occurrences du sigle ; R-11 : zéro occurrence du sigle ; R-02 : une occurrence du sigle ; R-01, R-03 à R-08, R-10, R-12, R-13 : zéro occurrence |
-| **Volumétrie cible** | Réel : 4 914 mots de corps pour une cible ≈ 5 000 mots (−1,7 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 5 000 mots de corps pour une cible ≈ 5 000 mots (+0,0 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 36 — **explicitement prospectif** ; ☑ **forme inchangée à la v0.30**, re-collationnée par copie le 28 juillet 2026, décision 17)* — aucune source ne documente l'articulation AP2 ↔ rails canadiens — le chapitre pose le cadre d'analyse et les conditions de possibilité, sans affirmer (énumérer des conditions n'est pas prédire).
 
@@ -302,7 +302,7 @@ encore en construction*.**
 
 *Le rail canadien de paiement en temps réel constitue **le pendant national de la couche de règlement
 déterministe** : son **règlement administratif** — que la source appelle « cadre de règles » — **doit
-entrer en vigueur le 24 août 2026**, et le lancement est
+entrer en vigueur le 24 août 2026** (☑ *en vigueur depuis cette date, DORS/2026-133*), et le lancement est
 annoncé par Paiements Canada **phasé à partir du quatrième trimestre 2026**, avec un élargissement en
 2027, **un règlement irrévocable** et la couche sémantique commune* — ⚠ **ressource vivante**. ⚠ **Le
 ch. 33 en est le siège**, et ses statuts y sont dits.
@@ -314,6 +314,13 @@ l'agent, libération humaine sur l'irréversible.***
 ⚠ *Côté monnaie tokenisée, **un cadre fédéral a été annoncé dans un contexte budgétaire et de réforme du
 secteur des paiements*** — ⚠ **annonce, non texte adopté** ; *et **R-5 du Vol. II interdit d'en décrire
 le contenu**.*
+
+☑ **Le cadre était légiféré avant le gel, et la somme ne l'avait pas constaté** — 23 octobre 2026
+([rapport de revalidation](../PRD/revalidation-2026-10-23.md)) : la *Loi sur les cryptomonnaies
+stables* est édictée par la **section 45 de la partie 5 de C-15**, sanctionnée le **26 mars 2026**, la
+Banque du Canada en assurant la supervision ; elle entrera en vigueur **par décret**. ⚠ *Constat
+établi par des analyses de cabinets concordantes, le texte consolidé n'ayant pas été consulté* ; **le
+contenu ne se décrit toujours pas ici**.
 
 ## § 36.3 — Conditions de possibilité
 

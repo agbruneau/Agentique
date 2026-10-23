@@ -2586,3 +2586,57 @@ qu'ils attendent.
 **Contrôles au terme de la passe.** `check-toc.py`, `check-sieges.py`, `check-compendium.py`,
 `verifier-piece.py`, `assemble-bibliographie.py --verifier` et `decompte.sh --verifier` passent ;
 `build-pdf.sh` rend 1 000 pages.
+
+# Passe du 23 octobre 2026 — revalidation des huit constats urgents
+
+*Sur instruction de l'auteur, le 23 octobre 2026 (« appliquer les 8 constats urgents » de
+l'[audit d'actualité du 22 octobre 2026](audit-actualite-2026-10-22.md)) ; dépôt clos par
+[D-19](PRD/PRD.md#d-19) ; aucune décision d'auteur n'est numérotée pour cette passe. C'est la troisième
+application du protocole du ch. 50 § 50.3 : le [rapport de revalidation](PRD/revalidation-2026-10-23.md)
+d'abord, le socle ensuite, les chapitres enfin. Les cinquante pièces gardent leur gel du 27 juillet 2026.*
+
+**Constats repris.** Chaque reprise est un paragraphe ou une incise ☑ datée du 23 octobre 2026, qui laisse
+l'énoncé gelé en place.
+
+| Constat | Ce qui a changé | Pièces |
+|---|---|---|
+| H-01 | report du haut risque de l'AI Act publié au JO le 24 juillet 2026 (règl. (UE) 2026/1744), avant le gel | ch. 10, 30, 34, 49 |
+| H-02 | A2A hébergé par l'Agentic AI Foundation depuis le 17 août 2026 | ch. 7, 37, 49, tableau 50.1 |
+| H-03 | révision MCP 2026-07-28 encore « annoncée au brouillon » | ch. 12, 19, 20, 39, 46, 47, 48 |
+| H-04 | loi sur les cryptomonnaies stables édictée par C-15 (26 mars 2026) ; règlement administratif du RTR en vigueur | ch. 36 |
+| H-05, H-06 | retrait Swift des adresses non structurées reporté ; rapport final du CSF publié le 15 octobre 2026 | ch. 31 |
+| H-07 | chaînage d'identité IETF approuvé, en file de l'éditeur des RFC | ch. 17 |
+| H-08 | WIMSE : huit documents, `draft-ietf-wimse-aims-00` adopté le 15 septembre 2026 | ch. 12, 16, 18, 30, 45, tableau 50.1 |
+
+**Socle et appareil.** `S-001`, `S-002` et `S-131` amendés dans leur colonne de re-datation ; leurs abrégés
+réalignés dans `annexe-references.md`. Le ch. 50 § 50.3 enregistre la troisième application.
+
+**Volumétrie.** Re-mesurée par `decompte.sh` et propagée par `reporter-volumetrie.py` : **334 151 mots**
+de corps, contre 333 416 au 2 septembre 2026 (+735, tous dans les vingt pièces reprises).
+
+**Rendus.** Vingt `.html` régénérés. `Compendium.pdf` est recomposé à 1 000 pages : les cinquante débuts
+de chapitre ne bougent pas, et les décalages internes restent de neuf lignes au plus. Pour y parvenir, les
+reprises des ch. 10, 12, 18 et 50 ont été resserrées ou déplacées hors des passages qui faisaient glisser
+une figure.
+
+**Pages dérivées.**
+- **`Compendium Atlas.html`** : 36 modifications de `window.ATLAS`. Vingt-huit portent sur le contenu
+  (dates, statuts, énoncés touchés par H-01 à H-08 et par l'entrée en vigueur du ch. 36). Huit sont des
+  pages déplacées : ch. 18, 19.4, 20.3, 31.4, deux repères du ch. 31, 36.3 et un concept du ch. 36. Les
+  359 intertitres tombent tous sur leur page.
+- **Explorateur** : neuf lignes reprises ; `index.html` et `compendium_entreprise_agentique.html` restent
+  identiques.
+
+**Relevés, laissés en l'état.**
+- *(a)* Les onze constats moyens et les vingt-deux bas de l'audit restent ouverts.
+- *(b)* Les balayages MCP des ch. 19 et 20 ne sont pas rejoués sur la révision 2026-07-28 : les reprises le
+  disent.
+- *(c)* Le ch. 7 § 7.6 n'est pas repris : la Linux Foundation y reste « faîtière », ce qui est exact.
+- *(d)* La revalidation du 2 septembre avait déclaré intacts les ch. 36 et 46 ; ils ne l'étaient pas, et le
+  rapport du 23 octobre le consigne (§ 2).
+
+**Contrôles au terme de la passe.** `check-toc.py` (C1-C16), `check-sieges.py` (26 sièges), `check-compendium.py`
+(P1-P10, mêmes cinq rapports déclaratifs qu'avant la passe), `verifier-piece.py`,
+`assemble-bibliographie.py --verifier`, `decompte.sh --verifier` et `--registre`, `reporter-volumetrie.py
+--verifier` passent ; `build-pdf.sh` rend 1 000 pages ; les scripts des deux pages dérivées passent
+`node --check`.

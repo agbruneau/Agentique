@@ -9,7 +9,7 @@ Second mouvement — la couche protocolaire agentique (ch. 7-11). **Premier chap
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; deux gels de source, juin 2026 (Vol. I) et 16 juillet 2026 (Vol. II) |
 | **Socle mobilisé** | Vol. I, §3.0-3.1 et §3.13.1, en [C] ; Vol. II, ch. 1 et §3.4 : S-001, S-002, S-004, S-005, S-041, plus S-040 et S-046 hors assignation (remonté) ; corps non réancré sur les S-nnn |
 | **Garde-fous balayés** | Vol. II — R-1 : trois occurrences ; R-8 : trois occurrences ; R-2 à R-7 : zéro occurrence · Vol. III — R-13 : une occurrence ; R-14 : deux occurrences ; R-01 à R-12 : zéro occurrence |
-| **Volumétrie cible** | Réel : 4 996 mots de corps pour une cible ≈ 8 000 mots (−37,5 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 5 049 mots de corps pour une cible ≈ 8 000 mots (−36,9 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.28, entrée du chapitre 7 — **forme inchangée en v0.29 et v0.30, re-collationnée mot à mot le 28 juillet 2026** ; la note ⚠ que le plan attache à la thèse est reprise deux paragraphes plus bas)* — en dix-sept mois, la couche protocolaire agentique s'est consolidée sous gouvernance neutre (Linux Foundation) — condition **nécessaire et non suffisante** de sa crédibilité en entreprise réglementée (formulation du ch. 1 du Vol. II, que les v0.1-v0.5 amputaient de sa restriction) ; mais « soutien ≠ production », et le transfert de gouvernance d'AP2 **est documenté depuis la v0.24** : don à la FIDO Alliance le **28 avril 2026**, version v0.2, cas *Human-Not-Present*, deux groupes de travail techniques — fait **constaté à la source primaire le 27 juillet 2026** (registre du gel, fait 12), instruit au ch. 10.
 
@@ -338,6 +338,10 @@ décision **quittent l'entreprise fondatrice**. Pour l'architecte, la conséquen
 identique — *la disparition ou le revirement stratégique du créateur ne fait plus disparaître le
 protocole*.
 
+☑ **Un des trois arrangements a changé le 17 août 2026** ([constat du 23 octobre](../PRD/revalidation-2026-10-23.md)) :
+le protocole agent-agent est passé de la faîtière directe à la **fondation dédiée**. *La couche
+d'infrastructure n'a pas été re-vérifiée.*
+
 Encore faut-il préciser ce que « quitter l'entreprise fondatrice » recouvre, car **c'est ici que se
 joue la valeur du transfert** pour une institution réglementée. Le socle documente un élément
 décisif : le protocole agent-agent a été versé **sous licence permissive**, irrévocable, assortie
@@ -400,6 +404,8 @@ format de configuration d'agent (ch. 5 § 5.1.4), c'est-à-dire des contribution
 directement concurrents**. Le mécanisme de la faîtière — comité technique de pilotage, charte de
 neutralité — **découple la spécification de tout acteur unique**, et c'est ce découplage
 institutionnel qui **rend crédible** la politique de dépréciation formelle du ch. 8 § 8.3.
+☑ *Depuis le 17 août 2026, elle héberge aussi le protocole agent-agent et le mandataire ouvert du
+ch. 37 (§ 7.4.1).*
 
 Une seconde fondation, la **FIDO Alliance**, spécialisée dans l'authentification, prend une
 importance qui n'apparaîtra qu'au ch. 10 : c'est elle qui a reçu le **protocole de transaction**, le

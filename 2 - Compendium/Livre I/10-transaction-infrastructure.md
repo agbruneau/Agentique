@@ -9,7 +9,7 @@ Second mouvement — la couche protocolaire agentique (ch. 7-11).*
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source juin 2026 (Vol. I) et 16 juillet 2026 (Vol. II), qui ne disent pas la même chose au § 10.1.3 |
 | **Socle mobilisé** | S-001, S-004, S-005, S-006 et S-090 en [A-i], S-041 en [B], niveaux conservés ; Vol. I, §3.9 et §3.13.1, en [C] ; décomptes de S-004 et S-005 non ré-établis (degré 3) |
 | **Garde-fous balayés** | Vol. II — R-1 : deux occurrences ; R-8 : deux occurrences ; R-2 à R-7 : zéro occurrence · Vol. III — R-02 : quatre occurrences ; R-13 : deux occurrences ; R-14 : huit occurrences ; R-01, R-03 à R-12 : zéro occurrence |
-| **Volumétrie cible** | Réel : 7 584 mots de corps pour une cible ≈ 7 000 mots (+8,3 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 7 592 mots de corps pour une cible ≈ 7 000 mots (+8,5 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) **v0.30**, entrée du chapitre 10, **inchangée depuis la v0.28** — **deux énoncés de statut inégal, à ne pas fondre**)* — que la transaction pilotée par agents (AP2) soit l'**aboutissement financier** de la pile est une **lecture d'auteur** — le socle établit qu'AP2 est un protocole compagnon d'A2A, rien de plus sur sa centralité ; qu'AGNTCY soit une couche d'infrastructure **et non un concurrent** est le **positionnement officiel déclaré du projet**, une déclaration et non un fait vérifié, que des analyses tierces nuancent.
 
@@ -527,7 +527,8 @@ c'est exactement la borne posée par le § 10.3.4.
 **Sur le plan réglementaire**, le règlement européen sur l'intelligence artificielle — **Règlement
 (UE) 2024/1689**, nommé ici parce qu'un instrument repris se désigne par son identifiant — encadre
 notamment les **modèles à usage général**, dont les obligations s'appliquent **depuis août 2025**, la
-mise en conformité générale se poursuivant **jusqu'au 2 août 2027**. ⚠ **Il fournit une partie du
+mise en conformité générale se poursuivant **jusqu'au 2 août 2027** (☑ *2028 pour le haut risque,
+règl. (UE) 2026/1744*). ⚠ **Il fournit une partie du
 contexte de conformité** dans lequel s'inscrit la responsabilité des transactions agentiques, **sans
 en épuiser le régime de litige** — et les sources **ne documentent aucun régime de litige propre à la
 transaction agentique** : *absence de documentation*, **R-14 degré 3**.

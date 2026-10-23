@@ -10,7 +10,7 @@ deux mouvements, issu de la fusion v0.20 des anciens ch. 21 et 22.*
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source juin 2026 (Vol. I) et 21 juillet 2026 (Vol. III) ; le plus exposé du Livre à la péremption produit |
 | **Socle mobilisé** | aucun énoncé re-résolu au socle : Vol. III, ch. 13-15, Vol. I, §7.5.1 à §7.5.4, en [C] ; onze entrées en [C], dont F-56 rétrogradée à la refonte ; F-26 à vote incomplet |
 | **Garde-fous balayés** | Vol. III — R-02 : sept marqueurs ; R-01, R-03 à R-14 : zéro marqueur · Vol. II — R-1 à R-8 : zéro marqueur |
-| **Volumétrie cible** | Réel : 9 987 mots de corps pour une cible ≈ 6 200 mots (+61,1 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 10 021 mots de corps pour une cible ≈ 6 200 mots (+61,6 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 20, premier mouvement)* — la vérification à l'admission ne protège pas contre la dérive après admission (rug-pull d'un serveur d'outils ou d'un agent tiers) ; et chaque mécanisme spécifie l'émission avec soin et la révocation avec négligence — asymétrie qui reproduit l'histoire des PKI.
 
@@ -165,6 +165,10 @@ un engagement daté portant sa source et sa date.* **Le chapitre écrit donc « 
 brouillon » et s'en tient là** ; les constats sont **à rejouer sur la révision publiée avant toute
 reprise**, et **ils ne valent pas par avance pour elle**.
 
+☑ **Publiée le 28 juillet 2026** (`2026-07-28`, [constat du 23 octobre](../PRD/revalidation-2026-10-23.md)) ;
+⚠ *rejeu non fait* : cette section et la rangée « Jeton — MCP » du § 20.4 **restent bornées à la
+révision 2025-11-25**.
+
 ## § 20.2 — Vérification continue et vérification à l'admission
 
 *La question que pose le retournement n'est pas de savoir si la vérification a eu lieu. Elle est de
@@ -316,7 +320,7 @@ inexécutable* (décision 15b-iii).
 | **Carte signée A2A — la clé** | interdiction au niveau **MUST NOT** d'employer une clé expirée ou révoquée, **sans mécanisme permettant au client de l'établir** ; ni liste de révocation, ni protocole d'état en ligne, ni point de terminaison de statut, ni délai de revalidation ; **aucune étape de contrôle de fraîcheur** dans la procédure en six étapes | §8.4 de la spécification A2A v1.0.0 | **F-07**, **F-06** **[A]** |
 | **Carte signée A2A — la rotation** | plusieurs signatures **MAY** coexister pour permettre la rotation ; **aucune procédure de retrait d'une clé compromise** | même section | **F-10** **[B]** |
 | **Jeton OAuth — RFC 7009** | point de terminaison de révocation spécifié ; l'invalidation des jetons d'accès issus de la même autorisation est en **SHOULD**, non en MUST ; si le serveur ne prend pas en charge la révocation des jetons d'accès, **ceux-ci ne sont pas immédiatement invalidés** | §2.1 et §5 | **F-53** **[B]** |
-| **Jeton — MCP, révision 2025-11-25, page « Authorization »** | **rien sous les termes cherchés** : les chaînes de révocation sont absentes ; la RFC 7009 ne figure pas parmi les documents de référence | **une page d'une révision**, balayée le 21 juillet 2026 | **F-52** **[B, degré 1]** |
+| **Jeton — MCP, révision 2025-11-25, page « Authorization »** | **rien sous les termes cherchés** : les chaînes de révocation sont absentes ; la RFC 7009 ne figure pas parmi les documents de référence | **une page d'une révision**, balayée le 21 juillet 2026 (☑ supplantée le 28 juillet, non rebalayée) | **F-52** **[B, degré 1]** |
 | **Entrée de registre — brouillon CSA du 27 mars 2026** | quatre états d'agent et rejet imposé au pair ; ⚠ **aucun délai de propagation ni budget de fraîcheur** aux sections consultées | sections des états et de la conduite du pair ; document portant son statut de brouillon, hébergé en espace de laboratoire | **F-55** **[C, degré 1]** ; statut par **F-38** **[A]** |
 | **Entrée de registre — annuaire AGNTCY** | intégrité fondée sur l'adressage par contenu, **présentée sans démonstration** ; aucune occurrence des chaînes de révocation cherchées | *Internet-Draft* `draft-mp-agntcy-ads`, de **soumission individuelle** ; balayage sur la **révision -01, supplantée par la -02 du 6 juillet 2026, non rebalayée** | **F-55** **[C]**, **F-43** **[B, degré 2]** |
 | **Mandat de paiement AP2** | attributs temporels d'émission et d'échéance, sérialisation, attribut de type versionné ; ⚠ **le socle ne documente pas de mécanisme de retrait — degré 3** | version v0.2.0 du 28 avril 2026 | **F-46** **[B]** |

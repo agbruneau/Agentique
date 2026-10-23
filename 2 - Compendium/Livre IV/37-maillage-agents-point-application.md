@@ -11,7 +11,7 @@ Livre** : il porte les deux désambiguïsations que le Livre impose à ses neuf 
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source 21 juillet 2026 (Vol. III) et juin 2026 (Vol. I) ; aucun fait périssable repris à la source primaire |
 | **Socle mobilisé** | aucune entrée consolidée, re-ancrage dû : Vol. III, ch. 22-23, source rédigée non publiable sans vote ; Vol. I, §1.3.4 et §2.10.3-2.10.4, en [C] ; Vol. II F-01 pour une réserve |
 | **Garde-fous balayés** | Vol. III — R-09 : neuf occurrences ; R-14 : sept occurrences ; R-02 : cinq occurrences ; R-01 : deux occurrences ; R-04 : trois occurrences ; R-12 : deux occurrences ; R-13 : une occurrence ; R-03 : une occurrence ; R-11 : une occurrence ; R-05 à R-08, R-10 : zéro occurrence · Vol. II — R-8 : trois occurrences ; R-1 à R-7 : zéro occurrence |
-| **Volumétrie cible** | Réel : 10 286 mots de corps pour une cible ≈ 11 000 mots (−6,5 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 10 315 mots de corps pour une cible ≈ 11 000 mots (−6,2 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) **v0.28**, entrée du chapitre 37, premier mouvement — **thèse réalignée en v0.28**, décisions 8 et 14, remontée R-IV-38)* — **le présent ouvrage définit** le maillage d'agents par filiation avec le patron *service mesh* — un plan de données qui médiatise chaque arête, un plan de contrôle qui centralise la politique ; **cette définition est celle de l'ouvrage, et le terme n'en a pas d'autre qui fasse autorité**. La filiation retenue fournit un **instrument de tri par statut** des offres que le Vol. III a ouvertes. ⚠ **Coût déclaré, repris de la source** : elle **n'affirme rien de l'écart entre le discours des fournisseurs et leurs réalisations** — *la forme antérieure, « trie ce que le terme recouvre réellement de ce qu'il recouvre en marketing », affirmait exactement l'énoncé que la source déclare ne pas faire.*
 
@@ -216,7 +216,7 @@ Le socle porte trois passerelles ou mandataires d'arête, chacun avec son statut
 |---|---|---|---|
 | Passerelle MCP | **Docker**, au titre de « Docker AI Governance » | **réservée sur invitation** — soit une **disponibilité restreinte**, distincte d'une disponibilité générale | rien d'un déploiement constaté |
 | **Amazon Bedrock AgentCore** (dont *Gateway* et *Identity*) | **AWS** | **généralement disponible depuis le 13 octobre 2025**, dans neuf régions nommées | disponibilité générale **annoncée par le fournisseur**, non déploiement constaté par un tiers |
-| **agentgateway**, mandataire ouvert | projet déclaré de la **Linux Foundation** | **v1.4.0-alpha.2, signalée pré-version** ; dernière publication non marquée pré-version : **v1.3.1 du 22 juin 2026** | qu'une syntaxe pré-version soit un contrat stable |
+| **agentgateway**, mandataire ouvert | projet déclaré de la **Linux Foundation** (☑ hébergé par l'AAIF au 17 août 2026) | **v1.4.0-alpha.2, signalée pré-version** ; dernière publication non marquée pré-version : **v1.3.1 du 22 juin 2026** | qu'une syntaxe pré-version soit un contrat stable |
 
 : Tableau 37.1 — Les trois offres portées par le socle du Vol. III, avec leurs statuts auto-déclarés au 21 juillet 2026. ⚠ **Chaque qualification est celle de son éditeur, nommé** ; aucune n'a fait l'objet d'une vérification indépendante.
 
@@ -269,7 +269,9 @@ conséquence.
 
 Le protocole A2A, lancé par **Google en avril 2025** et transféré à la **Linux Foundation en juin
 2025**, a pour première spécification stable sa **v1.0**, son dernier correctif **v1.0.1 datant du
-28 mai 2026** (Vol. III **H-01**, **[A ; ligne v1.0.1 en B]**). Sa documentation définit un chemin de
+28 mai 2026** (Vol. III **H-01**, **[A ; ligne v1.0.1 en B]**). ☑ *Il est hébergé par
+l'Agentic AI Foundation depuis le 17 août 2026, sans changement de version — constat du 23 octobre
+2026 ([rapport](../PRD/revalidation-2026-10-23.md)).* Sa documentation définit un chemin de
 découverte normalisé, énumère **trois stratégies** — URI bien connue, registres organisés,
 configuration directe — et **déclare explicitement qu'aucune API normalisée n'est prescrite pour les
 registres organisés** (Vol. III **F-43**, **[B, degré 2]**).

@@ -11,7 +11,7 @@ ch. 31 a posés une fois**.*
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gel de source juin 2026 (Vol. I, ch. 5) ; une quarantaine d'annonces produit datées, à re-vérifier au moment de citer |
 | **Socle mobilisé** | aucune entrée ne couvre les §5.7 à §5.11 du Vol. I, qui entrent en [C] ; S-157 touche la matière, non élevable |
 | **Garde-fous balayés** | Vol. II — R-5 : deux occurrences du sigle ; R-1 à R-4, R-6 à R-8 : zéro occurrence · Vol. III — R-09 : zéro occurrence du sigle ; R-14 : une occurrence du sigle ; R-13 : quatre occurrences du sigle ; R-02 : une occurrence du sigle ; R-01, R-03 à R-08, R-10 à R-12 : zéro occurrence |
-| **Volumétrie cible** | Réel : 9 918 mots de corps pour une cible ≈ 9 500 mots (+4,4 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 9 946 mots de corps pour une cible ≈ 9 500 mots (+4,7 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 34)* — l'agentique se décline différemment selon le sous-domaine — bancaire, IARD, assurance de personne, gestion de patrimoine, services TI financiers — chacun avec sa maturité et ses points de durcissement propres.
 
@@ -144,7 +144,8 @@ l'*orchestration agentique* qui l'entoure**, et il est le plus clair du chapitre
 > substitue pas au moteur de décision réglementé.***
 
 ⚠ **Le delta sectoriel empile deux régimes**, et il faut les tenir séparés : *le régime européen de haut
-risque — **échéance reportée au 2 décembre 2027, report adopté sous réserve de publication***
+risque — **échéance reportée au 2 décembre 2027, report publié le 24 juillet 2026** (règlement (UE)
+2026/1744 ; ☑ constat du 23 octobre 2026)*
 (**ch. 30 § 30.2.3**) — *et les régimes de **notification de décision automatisée** : le régime européen
 et **l'article 12.1 québécois**, dont le **ch. 27** est le siège et qui **n'est pas une interdiction**
 mais **un régime de transparence et de révision**.*
@@ -452,7 +453,8 @@ haut risque **l'évaluation du risque et la tarification en assurance vie et san
 physiques*** — ⚠ ***libellé exact, à ne pas étendre à l'assurance de dommage ni à confondre avec le point
 qui vise la notation de crédit.*** *L'échéance **était** fixée au 2 août 2026 ; ⚠ **le report de seize mois
 au 2 décembre 2027 a été adopté dans la fenêtre du socle, sous la seule réserve de la publication à
-suivre*** (**ch. 30 § 30.2.3**).
+suivre*** (**ch. 30 § 30.2.3**) — ☑ *publication intervenue le 24 juillet 2026, règlement (UE)
+2026/1744 (constat du 23 octobre 2026).*
 
 S'y articule, **sans nouvelles exigences propres**, l'avis de l'**Autorité européenne des assurances
 et des pensions professionnelles (EIOPA)** sur la gouvernance et la gestion du risque lié à l'IA, du
@@ -994,7 +996,7 @@ fenêtre **2026-2027** qui **transforme les attentes en contraintes opposables**
 
 | Jalon | Échéance | Statut au gel de la somme | Chapitre |
 |---|---|---|---|
-| **Régime européen de haut risque** | ⚠ **reportée au 2 décembre 2027**, report **adopté sous réserve de publication** | ⚠ *ressource vivante* | ch. 30 § 30.2.3 |
+| **Régime européen de haut risque** | ⚠ **reportée au 2 décembre 2027**, report **publié le 24 juillet 2026** (règl. (UE) 2026/1744 ; ☑ 23 oct. 2026) | ⚠ *ressource vivante* | ch. 30 § 30.2.3 |
 | **E-23** — risque de modèle fédéral | **1ᵉʳ mai 2027** | *finale, non en vigueur* | ch. 25 |
 | **Ligne directrice IA québécoise** | **1ᵉʳ mai 2027** | *finale, non en vigueur ; ⚠ **date de publication en divergence à trois termes*** | ch. 27 § 27.1 |
 | **Cadre bancaire canadien** | ⚠ **aucune échéance absolue** — toutes ancrées sur une publication finale non datée | *règlement **prépublié**, commentaires clos le 26 août 2026* | ch. 32 § 32.3 |

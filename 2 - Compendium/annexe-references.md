@@ -28,8 +28,8 @@ corroboration, jamais en appui.
 
 ## Vol. II, *L'autonomie encadrée* — 46 entrées, `S-001` à `S-046`
 
-- **S-001** — MCP. `[A]` — Vol. II `F-01` §7.1 + Vol. III `H-09` §7.2. Spécification rév. 2025-11-25, revalidée le 16 juill. 2026.
-- **S-002** — A2A. `[A]` — Vol. II `F-02` §7.1 + Vol. III `H-01` §7.2. Lancement avril 2025.
+- **S-001** — MCP. `[A]` — Vol. II `F-01` §7.1 + Vol. III `H-09` §7.2. Spécification rév. 2025-11-25, revalidée le 16 juill. 2026 ; rév. 2026-07-28 courante depuis le 28 juill. 2026.
+- **S-002** — A2A. `[A]` — Vol. II `F-02` §7.1 + Vol. III `H-01` §7.2. Lancement avril 2025 ; hébergé par l'AAIF depuis le 17 août 2026.
 - **S-003** — Intégrations infonuagiques d'A2A. `[A]` — Vol. II `F-03` §7.1. Azure AI Foundry en préversion.
 - **S-004** — AP2. `[A]` — Vol. II `F-04` §7.1. Lancement sept. 2025 (annonce Google Cloud du 16 sept. 2025).
 - **S-005** — AGNTCY. `[A]` — Vol. II `F-05` §7.1 + Vol. III `H-10` §7.2. Ouverture mars 2025.
@@ -161,7 +161,7 @@ corroboration, jamais en appui.
 - **S-128** — DID v1.1 n'a pas dépassé le Candidate Recommendation Snapshot, et ce qui l'établit est un relevé de liste. `[A]` — Vol. III `F-82` §7.10 · lot `L-02`. Snapshot 5 mars 2026.
 - **S-129** — Un Community Group du W3C, sa mission et son décompte affiché — avec son statut dit à la mention. `[B]` — Vol. III `F-83` §7.10 · lot `L-02`. CG depuis 8 mai 2025.
 - **S-130** — Le mode d'octroi par justificatifs de client existe, et c'est le pendant technique du constat de S-073. `[B]` — Vol. III `F-84` §7.10 · lot `L-01`.
-- **S-131** — Les sept Internet-Drafts du groupe WIMSE, datés, et aucun publié en RFC. `[B]` — Vol. III `F-85` §7.10 · lot `L-01`. Relevé 21 juill. 2026.
+- **S-131** — Les sept Internet-Drafts du groupe WIMSE, datés, et aucun publié en RFC. `[B]` — Vol. III `F-85` §7.10 · lot `L-01`. Relevé 21 juill. 2026 ; huit documents au 23 oct. 2026, dont `aims-00`, adopté.
 - **S-132** — Ce que WIMSE énonce des intermédiaires d'IA, et à quel titre. `[B]` — Vol. III `F-86` §7.10 · lot `L-01`. I-D du 6 juill. 2026, exp. 7 janv. 2027.
 - **S-133** — SPIFFE-ID. `[B]` — Vol. III `F-87` §7.10 · lot `L-01`.
 - **S-134** — La maturité CNCF de SPIFFE et de SPIRE, et la divergence d'un jour que la fondation porte elle-même. `[B]` — Vol. III `F-88` §7.10 · lot `L-01`. 22 / 23 août 2022.

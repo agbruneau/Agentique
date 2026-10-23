@@ -10,7 +10,7 @@ Livre.** Chapitre à deux mouvements, issu de la fusion v0.20 des anciens ch. 12
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source juin 2026 (Vol. I), 16-17 juillet 2026 (Vol. II), 21 juillet 2026 (Vol. III) ; deux entrées mobilisées « changées » au volet de faits de G-1 |
 | **Socle mobilisé** | identifiants des volumes sources, sans ré-adossement : Vol. III, ch. 1-2 (dix-neuf entrées propres, dont F-37 hors périmètre déclaré, et cinq héritées), Vol. II, ch. 8, Vol. I, §3.6.1-3.6.2 et §4.1.3, en [C] |
 | **Garde-fous balayés** | Vol. II — R-2 : un marqueur ; R-3 : deux marqueurs ; R-8 : un marqueur ; R-1, R-4 à R-7 : zéro marqueur · Vol. III — R-09 : quatre marqueurs ; R-02 : trois marqueurs ; R-14 : trois marqueurs ; R-04 : un marqueur ; R-13 : un marqueur ; R-01, R-03, R-05 à R-08, R-10 à R-12 : zéro marqueur |
-| **Volumétrie cible** | Réel : 7 742 mots de corps pour une cible ≈ 6 200 mots (+24,9 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 7 769 mots de corps pour une cible ≈ 6 200 mots (+25,3 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.28, entrée du chapitre 12, premier mouvement)* — l'identité machine n'est pas née avec les agents — comptes de service, X.509, clés d'API forment un passif mal gouverné dont l'entreprise agentique hérite avant d'y ajouter le sien.
 
@@ -133,7 +133,9 @@ IESG for Publication », en visée *Informational* (Vol. III F-85, **[B]**). ⚠
 reportent avec l'entrée** : le relevé porte sur les documents **de groupe de travail** — les
 brouillons individuels apparentés, listés sur la même page, n'ont été ni ouverts ni énumérés —, et
 il est horodaté au point d'être périssable, l'un des sept expirant six semaines après la
-consultation.
+consultation. ☑ *Rejoué le 23 octobre 2026 ([rapport](../PRD/revalidation-2026-10-23.md)) : huit
+documents, dont `draft-ietf-wimse-aims-00`, adopté le 15 septembre 2026 sur les agents d'IA ; aucun
+RFC.*
 
 Le document d'architecture du groupe, `draft-ietf-wimse-arch-08` — *Internet-Draft* du 6 juillet
 2026, expirant le 7 janvier 2027, à l'état « I-D Exists », en visée *Informational* — définit la
@@ -412,7 +414,7 @@ d'octroi**, non une propriété de sûreté démontrée — écrire « sécuris�
 réserve Vol. II F-01 proscrit et que R-02 du Vol. III interdit. Une révision majeure de la
 spécification est **annoncée au brouillon** ; la revalidation du Vol. III en confirme la substance et
 **ne confirme pas la date**. *Le chapitre n'écrit donc aucune date de publication pour cette
-révision.*
+révision.* ☑ *Parue le 28 juillet 2026 (`2026-07-28`).*
 
 Restent les **extensions d'identité d'agent**, et c'est là que le tri des statuts cesse d'être une
 formalité. Le brouillon `draft-abbey-scim-agent-extension` n'existe qu'en une version **-00** du

@@ -9,7 +9,7 @@ Deuxième mouvement — la confiance hostile (ch. 19-20). **Premier chapitre du 
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source juin 2026 (Vol. I) et 21 juillet 2026 (Vol. III) ; identifiants de vulnérabilité cités comme jalons datés |
 | **Socle mobilisé** | Vol. III, ch. 12, dix-sept entrées propres et quatre héritées, dont H-24 et H-26 en [C] ; Vol. I, §2.10.1-2.10.2, en [C] ; F-26 à vote adversarial incomplet ; re-citation en S-nnn due |
 | **Garde-fous balayés** | Vol. III — R-08 : un marqueur (siège) ; R-02 : un marqueur ; R-14 : un marqueur ; R-01, R-03 à R-07, R-09 à R-13 : zéro marqueur · Vol. II — R-1 à R-8 : zéro marqueur |
-| **Volumétrie cible** | Réel : 6 133 mots de corps pour une cible ≈ 5 000 mots (+22,7 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 6 153 mots de corps pour une cible ≈ 5 000 mots (+23,1 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 19)* — l'identité est le **verrou architectural** de la sécurité agentique — un agent dépourvu d'identité propre et gouvernée opère dans un écart d'attribution qui rend le moindre privilège inapplicable —, et les référentiels du domaine la traitent désormais comme un plan de contrôle à part entière : c'est ce qui justifie d'absorber la sécurité dans le cadre identitaire.
 
@@ -157,7 +157,9 @@ recense des techniques, des référentiels et des incidents ; **il ne mesure auc
 *c'est le motif direct du § 19.0.* *(3)* Le relevé est **arrêté au 21 juillet 2026 et se périme par
 trimestres** : une **révision majeure de la spécification du protocole agent-outil (MCP) est annoncée
 au brouillon**, dont la revalidation confirme la substance **et non la date**, de sorte qu'**aucun tri
-prospectif n'y est arrêté** et que **les décomptes portant sur ce protocole sont à rejouer**. ⚠ MCP
+prospectif n'y est arrêté** et que **les décomptes portant sur ce protocole sont à rejouer**. ☑ *La
+révision a paru le 28 juillet 2026 (`2026-07-28`) ; le rejeu n'est pas fait — constat du 23 octobre
+2026 ([rapport](../PRD/revalidation-2026-10-23.md)).* ⚠ MCP
 porte un **cadre d'autorisation** (H-09, **[A]**) — *formule imposée ; on n'écrit jamais « sécurisé ».*
 
 ⚠ **Un incident de méthode est consigné, et il appartient au propos de la somme** : une recherche

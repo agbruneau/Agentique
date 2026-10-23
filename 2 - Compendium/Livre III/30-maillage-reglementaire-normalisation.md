@@ -11,7 +11,7 @@ troisième mouvement n'ouvre le terrain**.*
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source juin 2026 (Vol. I), 16-17 juillet 2026 (Vol. II), 21 juillet 2026 (Vol. III) ; quatorze des seize entrées mobilisées re-datées |
 | **Socle mobilisé** | trois régimes : Vol. I, §4.8, §5.3, §2.11.3, en [C] ; Vol. III, ch. 21, en [A-i] et [B], F-56 rétrogradée en [C] ; Vol. II, ch. 21, Q5, question d'agenda |
 | **Garde-fous balayés** | Vol. II — R-5 : quatre occurrences du sigle ; R-1 à R-4, R-6 à R-8 : zéro occurrence · Vol. III — R-14 : deux occurrences du sigle ; R-09 : six occurrences du sigle ; R-11 : deux occurrences du sigle ; R-02 : une occurrence du sigle ; R-01 : une occurrence du sigle ; R-13 : deux occurrences du sigle ; R-03 à R-08, R-10, R-12 : zéro occurrence |
-| **Volumétrie cible** | Réel : 8 528 mots de corps pour une cible ≈ 7 500 mots (+13,7 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 8 636 mots de corps pour une cible ≈ 7 500 mots (+15,1 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 30 — citation reportée par copie, décision 17)* — hors Canada, l'AI Act, ISO 42001, le RGPD et les cadres sectoriels dessinent le maillage transversal que l'agent en finance régulée doit satisfaire ; et la désignation de l'organisme de normalisation technique du cadre bancaire canadien fixera qui écrit les règles d'identité des agents financiers.
 
@@ -116,6 +116,12 @@ compatibles — le second est postérieur au premier —, et la somme retient la
 récente : le report est adopté, sous réserve de publication.** ⚠ **R-5 du Vol. II s'applique dans les
 deux sens** : *ce qui n'est pas publié ne se décrit pas comme acquis, et **une architecture de
 conformité prudente conserve une trajectoire alignée sur les échéances actuelles**.*
+
+☑ **LA PUBLICATION ÉTAIT FAITE AU GEL, ET LA SOMME NE L'AVAIT PAS CONSTATÉE** — 23 octobre 2026
+([rapport de revalidation](../PRD/revalidation-2026-10-23.md)). Le report est porté par le
+**règlement (UE) 2026/1744**, adopté le 8 juillet 2026, publié au JO le **24 juillet 2026** et **en
+vigueur depuis le 27 juillet 2026**, trois jours avant le gel. ⚠ *La réserve de publication n'a donc
+plus d'objet, ni la trajectoire prudente qu'elle commandait.*
 
 ⚠ **Le déclencheur opérationnel n'est pas la date, mais l'inventaire.** *Un agent ne peut être qualifié
 que s'il figure au registre décrit au § 30.1.3, avec son périmètre de décision et ses outils.*
@@ -343,7 +349,8 @@ synthétiques au 2 décembre 2026* — ⚠ **et il est adopté dans la fenêtre 
 de la publication officielle à suivre** (R-09 du Vol. III : *le statut se dit à chaque mention*).
 **L'échéance opposable pour le régime autonome devient ainsi le 2 décembre 2027.** ⚠ **R-5 du Vol. II
 tient** : *tant que la publication n'est pas intervenue, une architecture prudente conserve la
-trajectoire antérieure.*
+trajectoire antérieure.* ☑ **Elle est intervenue le 24 juillet 2026** (règlement (UE) 2026/1744,
+§ 30.1.1) : *le 2 décembre 2027 est l'échéance opposable, sans réserve.*
 
 **Sur l'articulation avec le droit financier sectoriel**, deux autorités européennes ont posé le
 cadrage : l'**Autorité bancaire européenne** traite le règlement comme **complémentaire** du droit
@@ -668,7 +675,9 @@ il est **pré-normatif sans exception relevée**.* ⚠ **Un organisme désigné 
 une norme sectorielle canadienne à un corpus international *spécifique à l'identité d'agent* ne
 trouverait, dans ce que le Vol. III a ouvert, que des textes à des stades antérieurs à l'adoption.**
 *Le constat est daté ; il se rejoue à chaque gel — et l'une des entrées porte elle-même sa péremption,
-l'un des sept brouillons relevés expirant six semaines après la consultation.* ⚠ **Ces jalons ne sont
+l'un des sept brouillons relevés expirant six semaines après la consultation.* ☑ *Rejoué le
+23 octobre 2026 : huit documents, dont un adopté le 15 septembre 2026 sur les agents d'IA
+(`draft-ietf-wimse-aims-00`) ; aucun RFC.* ⚠ **Ces jalons ne sont
 pas *fixés* : ils sont *visés*, et leurs statuts se disent** (R-11 du Vol. III).
 
 ⚠ **Le second tient à ce que les instances déclarent elles-mêmes, et il est plus instructif qu'un

@@ -12,7 +12,7 @@ ch. 44 a formalisé.*
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source 16 juillet 2026 (Vol. II), 21 juillet 2026 (Vol. III), juin 2026 (Vol. I) ; faits périssables non repris à la source primaire |
 | **Socle mobilisé** | non ré-adossée, correspondance S-nnn due : Vol. II, F-38 à F-46 nommées une à une, Vol. III, Vol. I en [C] ; dix entrées assignées non citées au corps |
 | **Garde-fous balayés** | Vol. II — R-8 : trois occurrences ; R-5 : deux occurrences ; R-6 : une occurrence ; R-7 : une occurrence ; R-1 à R-4 : zéro occurrence · Vol. III — R-09 : trois occurrences ; R-01 : deux occurrences ; R-02 : une occurrence ; R-07 : une occurrence ; R-13 : une occurrence ; R-14 : zéro occurrence de l'identifiant ; R-03 à R-06, R-08, R-10 à R-12 : zéro occurrence |
-| **Volumétrie cible** | Réel : 7 130 mots de corps pour une cible ≈ 12 000 mots (−40,6 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 7 150 mots de corps pour une cible ≈ 12 000 mots (−40,4 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) **v0.28**, entrée du chapitre 45, premier mouvement — **thèse réalignée en v0.28**, décisions 8 et 14, remontée R-IV-105)* — le blueprint applique les six principes directeurs à un portefeuille réel documenté ; chaque couche porte **son statut de preuve daté** et, ⚠ **lorsqu'il y en a un, un positionnement d'options d'orchestration qui est SANS EXCEPTION une** Lecture de l'auteur — *aucune source du corpus ne positionne un produit sur cette échelle, et plusieurs couches n'en portent aucun*. ⚠ **Les points d'intégration avec l'existant portent sur TROIS existants nommés, non sur chaque couche**, et *deux des trois ne sont pas documentés à ce grain* — **étendre, jamais dupliquer**.
 
@@ -218,7 +218,9 @@ cours, qui ne fait autorité sur rien et peut changer à la révision suivante**
 *Deux* : **c'est une section d'*architecture*, non une prescription protocolaire.** *Trois* : ⚠ *la
 page des documents de ce groupe recense **sept** brouillons **dont aucune date de publication en norme
 n'est annoncée***, et **l'un d'eux expire pendant la période de rédaction** (Vol. III **F-85**,
-**[B]**) — *un relevé horodaté et périssable, à rejouer avant citation.*
+**[B]**) — *un relevé horodaté et périssable, à rejouer avant citation.* ☑ *Rejoué le 23 octobre
+2026 : huit documents, dont `draft-ietf-wimse-aims-00`, adopté le 15 septembre 2026 sur les agents
+d'IA ; aucun RFC.*
 
 Lecture de l'auteur — **ce que le socle établit** : qu'un groupe de travail **considère** les
 intermédiaires d'IA comme un cas particulier d'un objet qu'il spécifie déjà. **Ce qu'il n'établit

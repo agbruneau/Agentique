@@ -26,8 +26,8 @@ foi et seule à porter l'appareil, et en `.html`, page autonome. Le cahier des c
 | 35 | [Études de cas : la production agentique canadienne (2025-2026)](35-etudes-de-cas-production-canadienne.md) · [html](35-etudes-de-cas-production-canadienne.html) | terrain canadien |
 | 36 | [Prospective : AP2 sur les rails canadiens ?](36-prospective-ap2-rails-canadiens.md) · [html](36-prospective-ap2-rails-canadiens.html) | terrain canadien |
 
-Volumétrie : 100 354 mots de corps, mesurés par [`decompte.sh`](../PRD/decompte.sh) et reportés ici par `reporter-volumetrie.py`, pour
-une enveloppe de Livre de 90 000 au TOC, soit +11,5 %.
+Volumétrie : 100 613 mots de corps, mesurés par [`decompte.sh`](../PRD/decompte.sh) et reportés ici par `reporter-volumetrie.py`, pour
+une enveloppe de Livre de 90 000 au TOC, soit +11,8 %.
 
 **Par où entrer :** le ch. 22, qui place toute architecture agentique sur le continuum OO1-OO4 ; puis le ch. 29, le pont, pivot du
 plan « encadrer », qui traduit les exigences canadiennes en frames déterministes d'architecture.

@@ -11,7 +11,7 @@ et 56 (décision 11 du TOC).*
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source juin 2026 (Vol. I), 16-17 juillet 2026 (Vol. II), 21 juillet 2026 (Vol. III) ; aucune échéance du § 49.1 reprise |
 | **Socle mobilisé** | premier mouvement : S-143 à S-149 et S-159, toutes en [C] ; second : Vol. II, ch. 21, Vol. III, sous G-4 ; F-92 et F-96 exclues du socle |
 | **Garde-fous balayés** | Vol. III — R-14 : dix-neuf occurrences au corps ; R-11 : vingt-deux occurrences ; R-02 : deux occurrences de l'identifiant ; R-13 : deux occurrences du terme régi ; R-01, R-03 à R-10, R-12 : zéro occurrence · Vol. II — R-4 : deux occurrences ; R-5 : trois occurrences ; R-6 : une occurrence ; R-8 : une occurrence de l'identifiant ; R-1 à R-3, R-7 : zéro occurrence |
-| **Volumétrie cible** | Réel : 14 469 mots de corps pour une cible ≈ 15 800 mots (−8,4 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 14 525 mots de corps pour une cible ≈ 15 800 mots (−8,1 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md), entrée du chapitre 49, premier mouvement — **collationnée verbatim contre la v0.30 le 28 juillet 2026**)* — une grappe d'échéances datées (PROGRAMMÉ) structure l'horizon ; au-delà, la trajectoire des protocoles, de la gouvernance par couche, de l'identité vérifiable/PQC, de la menace et de la recherche se lit en PROJETÉ, jamais en SPÉCULATIF déguisé en certitude.
 
@@ -82,7 +82,9 @@ c'est par rattachement à elle que se positionnent les trajectoires.
 règlement omnibus européen portant report des échéances du régime haut-risque est resté **des mois
 en statut conditionnel** — accord politique provisoire du 7 mai 2026, fiche de suivi législatif
 « close to adoption » au 22 mai 2026 — avant son adoption par le Conseil le **29 juin 2026**, *la
-publication au Journal officiel restant à suivre*. **Les reports qu'il porte sont donc passés, en
+publication au Journal officiel restant à suivre*. ☑ *Elle est intervenue le 24 juillet 2026,
+règlement (UE) 2026/1744, en vigueur le 27 juillet — constat du 23 octobre 2026
+([rapport](../PRD/revalidation-2026-10-23.md)).* **Les reports qu'il porte sont donc passés, en
 quelques semaines, de suspendus à PROGRAMMÉS.** De là la marque « **à re-vérifier** » apposée
 systématiquement à toute date 2026-2028 : *le programmé d'aujourd'hui peut être le projeté de
 demain.*
@@ -133,7 +135,7 @@ un objet dangereux, et c'est pourquoi la marque de sa source est reconduite lign
 déploiements agentiques cessent d'être indicatives pour devenir contraignantes.** Le Vol. I recense,
 pour cette seule année : le report du régime haut-risque européen — Annexe III au **2 décembre
 2027**, Annexe I au **2 août 2028** —, **adopté par le Conseil le 29 juin 2026, publication au
-Journal officiel à suivre** ; l'application du règlement anti-blanchiment au **10 juillet 2027**,
+Journal officiel à suivre** (☑ *publié depuis, le 24 juillet 2026 : règlement (UE) 2026/1744*) ; l'application du règlement anti-blanchiment au **10 juillet 2027**,
 sous l'autorité instituée en 2024 ; la fin des frais de changement de fournisseur d'informatique en
 nuage au **12 janvier 2027**, levier direct de portabilité ; la montée du plancher de production
 prudentiel à **60 % au 1ᵉʳ janvier 2027**, sur une trajectoire vers 72,5 % au 1ᵉʳ janvier 2030 ; et,
@@ -284,7 +286,8 @@ n'est pas une simple pluralité — *la gouvernance se stratifie couche par couc
 
 Le Vol. I cartographie trois strates. La couche **agent-outil et agent-agent** relève de l'**Agentic AI Foundation**
 (**AAIF**), dont la **Linux Foundation** a annoncé la formation le **9 décembre 2025**, ancrée par la
-contribution de projets fondateurs. La couche **paiement et identité-commerce** a basculé vers la **FIDO
+contribution de projets fondateurs. ☑ *Pour la couche agent-agent, la cartographie a devancé le
+fait : le protocole n'y est hébergé que depuis le 17 août 2026 (constat du 23 octobre 2026).* La couche **paiement et identité-commerce** a basculé vers la **FIDO
 Alliance**, qui a créé le **28 avril 2026** deux groupes de travail techniques distincts, avec
 pour contributions de départ un protocole de paiement agentique donné par son éditeur et une
 spécification d'intention vérifiable portée par un réseau de cartes. La couche **identité, sémantique

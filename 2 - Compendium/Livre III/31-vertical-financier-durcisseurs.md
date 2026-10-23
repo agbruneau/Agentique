@@ -11,7 +11,7 @@ ailleurs** — quatre patrons, un risque et un critère.*
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gel de source juin 2026 (Vol. I, ch. 5) ; une vingtaine de jalons datés, aucun repris à la source primaire |
 | **Socle mobilisé** | S-157, non élevable, et S-159, toutes deux en [C] ; les §5.2 à §5.6 du Vol. I n'ont aucune entrée et entrent en [C] |
 | **Garde-fous balayés** | Vol. II — R-5 : une occurrence du sigle ; R-1 à R-4, R-6 à R-8 : zéro occurrence · Vol. III — R-09 : deux occurrences du sigle ; R-14 : une occurrence du sigle ; R-02 : trois occurrences du sigle ; R-13 : une occurrence du sigle ; R-11 : une occurrence du sigle ; R-01, R-03 à R-08, R-10, R-12 : zéro occurrence |
-| **Volumétrie cible** | Réel : 9 334 mots de corps pour une cible ≈ 8 500 mots (+9,8 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 9 371 mots de corps pour une cible ≈ 8 500 mots (+10,2 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée par copie depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 31 ; **re-collationnée mot à mot le 28 juillet 2026 contre la v0.29 puis contre la v0.30, version courante — identique aux deux**, ni la passe d'audit ni celle de la porte G-3 n'ayant touché aucune thèse)* — la finance durcit l'agentique par des contraintes transverses (standards de données, maillage réglementaire, risque-modèle, sécurité/AML-KYC/KYA, résidence/souveraineté) qui préexistent à l'agent et le contraignent.
 
@@ -141,6 +141,7 @@ l'IA, suivi son adoption et ses vulnérabilités dans le secteur, puis **ouvert 
 consultation** sur les pratiques saines d'adoption responsable* — ⚠ *rapport final **attendu en octobre
 2026**, postérieur au socle du Vol. I : **PROGRAMMÉ** au tri prospectif du **ch. 49 § 49.0**, siège de la
 discipline pour toute la somme, appliqué ici et jamais re-dérivé, et **non advenu** au gel de la somme.*
+☑ *Advenu : rapport final publié le 15 octobre 2026 ([constat du 23 octobre](../PRD/revalidation-2026-10-23.md)).*
 *La **Banque d'Angleterre** a consacré une publication d'avril 2025 à l'IA dans le système financier, en
 relevant explicitement **les canaux de corrélation et de concentration** ; le **comité scientifique
 consultatif du Comité européen du risque systémique** a publié un rapport dédié au risque systémique de
@@ -288,6 +289,8 @@ date. ⚠ **Une nuance doit être tenue fermement : il ne s'agit *pas* de la « 
 — **les rails domestiques suivent leurs propres calendriers**, et le **ch. 33** les porte pour le
 Canada.* ⚠ **Au-delà, le retrait des adresses non structurées est *attendu* en novembre 2026** — *une
 échéance annoncée, à re-vérifier, non un fait acquis* (R-11 du Vol. III : *visé, jamais fixé*).
+☑ **Échéance reportée le 27 août 2026**, *avec tous les changements « paiements » de la version
+2026 ; nouveau calendrier annoncé pour décembre (secondaires concordantes, 23 octobre 2026).*
 
 **Le bénéfice spécifiquement agentique est l'enrichissement sémantique du message** : *des champs
 **nommés et typés** pour le donneur d'ordre, le bénéficiaire et l'objet du paiement donnent à un agent

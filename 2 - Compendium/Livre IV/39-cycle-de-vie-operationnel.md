@@ -11,7 +11,7 @@ trois capacités que l'exploitation distingue — **agir sur ce qu'on voit**.*
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source 21 juillet 2026 (Vol. III) et juin 2026 (Vol. I) ; deux entrées « changées » au socle, report sur le corps dû |
 | **Socle mobilisé** | aucune entrée consolidée à l'appui d'un énoncé : Vol. III, ch. 25, Vol. I, §2.11.4-2.11.5, en [C] ; F-92 à dette de vote, écartée du socle |
 | **Garde-fous balayés** | Vol. III — R-14 : quatre occurrences ; R-09 : trois occurrences ; R-13 : deux occurrences ; R-01 : une occurrence ; R-06 : une occurrence ; R-11 : une occurrence ; R-12 : une occurrence ; R-02 : une occurrence de l'identifiant ; R-03 à R-05, R-07, R-08, R-10 : zéro occurrence de l'identifiant · Vol. II — R-1 à R-8 : zéro occurrence |
-| **Volumétrie cible** | Réel : 6 542 mots de corps pour une cible ≈ 6 500 mots (+0,6 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 6 558 mots de corps pour une cible ≈ 6 500 mots (+0,9 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) **v0.28**, entrée du chapitre 39 — **thèse réalignée en v0.28**, décisions 8 et 14, remontée R-IV-45)* — Lecture de l'auteur — l'exploitation d'un parc d'agents **forme** une boucle — évaluer, détecter la dérive, répondre à l'incident, réviser le mandat. ⚠ **Ce que le socle établit** : l'énoncé de l'invariant à quatre termes, entré en **[C]** comme thèse à attribuer. ⚠ **Ce qu'il n'établit pas** : **que cette boucle en soit la réalisation** — *le Vol. I ne décrit aucune boucle d'exploitation*. Sans elle, **le passeport n'assemble que des pièces datées à leur émission** — *et non « certifie », verbe qui prêterait une capacité à un objet ne figurant dans aucune spécification (R-01 du Vol. III).*
 
@@ -145,7 +145,8 @@ VÉRIFIÉ, borné à cette page de cette révision**).
 
 ⚠ **La borne ne se détache pas de l'énoncé** : elle ne dit rien des autres pages de la spécification,
 et une **révision majeure est annoncée au brouillon sans que sa date soit confirmée à la source**
-(R-09) — *le constat est à rejouer sur la révision publiée.* ⚠ **Aucun des trois tris prospectifs
+(R-09) — *le constat est à rejouer sur la révision publiée.* ☑ *Publiée le 28 juillet 2026
+(`2026-07-28`) ; le rejeu n'est pas fait — constat du 23 octobre 2026.* ⚠ **Aucun des trois tris prospectifs
 n'est attribué à cette révision, et l'abstention est motivée** : le **PROGRAMMÉ exige un engagement
 daté réel**, et *c'est précisément la date qui manque* (Vol. III **H-33**, **[C]**, instrument de tri
 et non fait). *La motivation est celle que le ch. 38 § 38.5 pose sur la même révision, reprise ici
