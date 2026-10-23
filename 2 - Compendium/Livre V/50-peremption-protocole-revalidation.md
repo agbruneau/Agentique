@@ -7,7 +7,7 @@ fait avant lui (décision 9 du TOC).*
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 50.5](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3, hors de l'ordre du PRD §6 ; G-4 ouverte ; CA-IV-11 et CA-IV-13 insatisfaites (D-6) ; aucun énoncé déclaré central |
+| **Statut** | Livrable du dépôt, au compte des huit ([D-21](../PRD/PRD.md#d-21)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3, hors de l'ordre du PRD §6 ; G-4 ouverte ; CA-IV-11 et CA-IV-13 insatisfaites (D-6) ; aucun énoncé déclaré central |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source 16-17 juillet 2026 (Vol. II) et 21 juillet 2026 (Vol. III) ; la révision du 28 juillet 2026, survenue, est revalidée le 30 juillet 2026 (D-11) |
 | **Socle mobilisé** | § 50.1 : S-036, S-037, S-039, S-042 à S-044, trois non établies ; § 50.2 : onze événements adossés au socle, trois aux seules pièces |
 | **Garde-fous balayés** | Vol. II — R-4 : trois occurrences du sigle ; R-5 : quatre occurrences du sigle ; R-6 : deux occurrences du sigle ; R-1 à R-3, R-7, R-8 : zéro occurrence · Vol. III — R-11 : une occurrence du sigle ; R-14 : une occurrence du sigle ; R-09 : une occurrence du sigle ; R-08 : deux occurrences du sigle ; R-01 : deux occurrences du sigle ; R-02 à R-07, R-10, R-12, R-13 : zéro occurrence |

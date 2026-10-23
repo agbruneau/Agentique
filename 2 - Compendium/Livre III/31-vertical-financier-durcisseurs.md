@@ -7,7 +7,7 @@ ailleurs** — quatre patrons, un risque et un critère.*
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 31.6](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026, G-3 ouverte ; volet de pièce de G-1 dû ; chapitre non conditionné par G-4 ni bloqué par D-9 ; aucun énoncé central (CA-IV-01) |
+| **Statut** | Livrable du dépôt, au compte des huit ([D-21](../PRD/PRD.md#d-21)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026, G-3 ouverte ; volet de pièce de G-1 dû ; chapitre non conditionné par G-4 ni bloqué par D-9 ; aucun énoncé central (CA-IV-01) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gel de source juin 2026 (Vol. I, ch. 5) ; une vingtaine de jalons datés, aucun repris à la source primaire |
 | **Socle mobilisé** | S-157, non élevable, et S-159, toutes deux en [C] ; les §5.2 à §5.6 du Vol. I n'ont aucune entrée et entrent en [C] |
 | **Garde-fous balayés** | Vol. II — R-5 : une occurrence du sigle ; R-1 à R-4, R-6 à R-8 : zéro occurrence · Vol. III — R-09 : deux occurrences du sigle ; R-14 : une occurrence du sigle ; R-02 : trois occurrences du sigle ; R-13 : une occurrence du sigle ; R-11 : une occurrence du sigle ; R-01, R-03 à R-08, R-10, R-12 : zéro occurrence |

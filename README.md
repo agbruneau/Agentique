@@ -3,7 +3,7 @@
 [![appareil](https://github.com/agbruneau/Agentique/actions/workflows/appareil.yml/badge.svg)](https://github.com/agbruneau/Agentique/actions/workflows/appareil.yml)
 
 Un corpus de recherche en français sur une seule question : *comment une entreprise de services financiers canadienne déploie, gouverne et exploite des agents d'IA
-autonomes sous contrainte réglementaire ?* Sept documents livrables l'instruisent, un simulateur Rust transpose l'un d'eux. André-Guy Bruneau en répond ; la rédaction est assistée par des agents de modèle, déclarés pièce par pièce à [`CONTRIBUTIONS.md`](CONTRIBUTIONS.md).
+autonomes sous contrainte réglementaire ?* Huit documents livrables l'instruisent, un simulateur Rust transpose l'un d'eux. André-Guy Bruneau en répond ; la rédaction est assistée par des agents de modèle, déclarés pièce par pièce à [`CONTRIBUTIONS.md`](CONTRIBUTIONS.md).
 
 **État :** clos le 16 septembre 2026 par la décision [D-19](<2%20-%20Compendium/PRD/PRD.md#d-19>), étiquette `corpus-v1.0`, après le [plan](<Plan%20d%27ex%C3%A9cution%20%E2%80%94%20%C3%A9valuation%20acad%C3%A9mique.md>)
 tiré de l'[évaluation académique](<%C3%89valuation%20acad%C3%A9mique.md>) du 15 septembre — 75,5 / 100, corrections majeures requises, rendue par un modèle de langage —,
@@ -17,22 +17,22 @@ déclarée par l'auteur, sans rapport versé ni relecteur nommé : aucun énonc�
 | le fond | les trois monographies de [`1 - Collection/`](<1%20-%20Collection/>), dans l'ordre ; la veille, 145 p., pour l'état du champ déployé |
 | du code | [`4 - Essais/1 - Traité/`](<4%20-%20Essais/1%20-%20Trait%C3%A9/>) — le simulateur d'essaims, 470 tests |
 
-## Les sept livrables
+## Les huit livrables
 
-Compte et statuts fixés par la décision [D-18](<2%20-%20Compendium/PRD/PRD.md#d-18>) du 15 septembre 2026 ; toute entrée ou sortie passe par une décision. Réserve commune aux sept : aucun relecteur humain nommé.
+<a id="les-sept-livrables"></a>Compte et statuts fixés par la décision [D-18](<2%20-%20Compendium/PRD/PRD.md#d-18>) du 15 septembre 2026, amendée par [D-21](<2%20-%20Compendium/PRD/PRD.md#d-21>) du 23 octobre 2026, qui fait entrer le Vol. IV ; toute entrée ou sortie passe par une décision. Réserve commune aux huit : aucun relecteur humain nommé.
 
 | Vol. | Document | Dossier | Rendu | Statut |
 |---|---|---|---|---|
 | I | *Interopérabilité agentique en entreprise dans le domaine des services financiers* | [`1 - Collection/1 - InteroperabiliteAgentique/`](<1%20-%20Collection/1%20-%20InteroperabiliteAgentique/>) | 571 p. | livrable |
 | II | *Orchestration agentique* | [`1 - Collection/2 - OrchestrationAgentique/`](<1%20-%20Collection/2%20-%20OrchestrationAgentique/>) | 390 p. | livrable |
 | III | *L'entreprise agentique — la fabrique de confiance* | [`1 - Collection/3 - EntrepriseAgentique/`](<1%20-%20Collection/3%20-%20EntrepriseAgentique/>) | 428 p. | livrable sous réserve déclarée : quinze remontées ouvertes, une dette de vote |
+| IV | *Interopérabilité et Orchestration en Entreprise Agentique* | [`2 - Compendium/`](<2%20-%20Compendium/>) | 1 000 p. | livrable depuis [D-21](<2%20-%20Compendium/PRD/PRD.md#d-21>), publiable pour l'édition de novembre 2026 ([D-20](<2%20-%20Compendium/PRD/PRD.md#d-20>)) |
 | V | *Traité sur les systèmes multiagents en essaim* | [`4 - Essais/1 - Traité/`](<4%20-%20Essais/1%20-%20Trait%C3%A9/>) | 144 p. | livrable |
 | VI | *Veille technologique en entreprise* | [`3 - Veille/`](<3%20-%20Veille/>) | 145 p. | livrable |
 | VII | *Revue de la littérature académique* | [`3 - Veille/`](<3%20-%20Veille/>) | 60 p. | livrable |
 | VIII | *État de l'art en services financiers*, et sa planche | [`5 - Recension/`](<5%20-%20Recension/>) | 187 p. et 7 p. | livrable |
 
-Hors compte, par la même décision : le Vol. IV, [`2 - Compendium/`](<2%20-%20Compendium/>), 1 000 p., archive de travail, publiable pour l'édition de novembre 2026 par [D-20](<2%20-%20Compendium/PRD/PRD.md#d-20>) ; quatre documents publiés — la note de veille SDLC (50 p.)
-et la note de synthèse (22 p.) sous `3 - Veille/`, l'article HPC-QPU (38 p.) sous `4 - Essais/2 - Article/`, [`NiveauMaturité.html`](NiveauMaturit%C3%A9.html) (7 diapositives) ; l'appareil — évaluation, gabarit, plan ; le mémoire de maîtrise de l'auteur (1997), pièce déposée.
+Hors compte, par la même décision : quatre documents publiés — la note de veille SDLC (50 p.) et la note de synthèse (22 p.) sous `3 - Veille/`, l'article HPC-QPU (38 p.) sous `4 - Essais/2 - Article/`, [`NiveauMaturité.html`](NiveauMaturit%C3%A9.html) (7 diapositives) ; l'appareil — évaluation, gabarit, plan ; le mémoire de maîtrise de l'auteur (1997), pièce déposée.
 
 **Refaire et vérifier :** [`APPAREIL.md`](APPAREIL.md) donne chaque point d'entrée, son dossier et sa dernière sortie ; [`appareil.yml`](.github/workflows/appareil.yml) les rejoue sous Linux et Windows ; chaque `README` dit ce qui se refait dans son dossier.
 

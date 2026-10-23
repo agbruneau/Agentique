@@ -7,7 +7,7 @@ directrice de l'AMF, et la question Q4 de la série d'agenda du Vol. II.*
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 27.9](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3, malgré le blocage nommé de D-9 ; G-4 ouverte et opposable ; écart de gouvernance le plus lourd du Livre, avec le ch. 25 ; aucun énoncé central (CA-IV-01) |
+| **Statut** | Livrable du dépôt, au compte des huit ([D-21](../PRD/PRD.md#d-21)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3, malgré le blocage nommé de D-9 ; G-4 ouverte et opposable ; écart de gouvernance le plus lourd du Livre, avec le ch. 25 ; aucun énoncé central (CA-IV-01) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source 16-17 juillet 2026 (Vol. II), 21 juillet 2026 (Vol. III), juin 2026 (Vol. I) ; chronologie de l'AMF et article 12.1 non établis au volet de faits de G-1 |
 | **Socle mobilisé** | sept entrées : S-023, S-025, S-135, S-113, S-114, S-024, S-034 ; six sur sept non établies à la re-datation |
 | **Garde-fous balayés** | Vol. II — R-5 : une occurrence du sigle ; R-1 à R-4, R-6 à R-8 : zéro occurrence · Vol. III — R-14 : zéro occurrence du sigle ; R-06 : une occurrence du sigle ; R-09 : deux occurrences du sigle ; R-11 : une occurrence du sigle ; R-04 : deux occurrences du sigle ; R-01 : une occurrence du sigle ; R-02, R-03, R-05, R-07, R-08, R-10, R-12, R-13 : zéro occurrence |

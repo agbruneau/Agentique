@@ -7,7 +7,7 @@ formalisme ce que le ch. 43 a rangé en couches, et rien d'autre.***
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 44.10](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3, G-4 et G-5, hors de l'ordre du PRD §6, et avant la re-vérification de C260 que le plan exige ; aucun énoncé central (CA-IV-01) |
+| **Statut** | Livrable du dépôt, au compte des huit ([D-21](../PRD/PRD.md#d-21)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3, G-4 et G-5, hors de l'ordre du PRD §6, et avant la re-vérification de C260 que le plan exige ; aucun énoncé central (CA-IV-01) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gel de source juin 2026 (Vol. I) ; recoupement de C260 (27 avril 2026) toujours dû |
 | **Socle mobilisé** | aucune entrée ne porte ce langage : tout le chapitre est en [C] (Vol. I, ch. 6) ; par exception au § 44.6, Vol. II F-09 et S-025 en [B] |
 | **Garde-fous balayés** | Vol. III — R-09 : une occurrence ; R-02 : une occurrence ; R-01 : une occurrence ; R-13 : une occurrence ; R-14 : une occurrence de l'identifiant ; R-03 à R-08, R-10 à R-12 : zéro occurrence · Vol. II — R-8 : une occurrence ; R-1 à R-7 : zéro occurrence |

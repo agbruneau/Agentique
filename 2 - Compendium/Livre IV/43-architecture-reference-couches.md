@@ -7,7 +7,7 @@ constaté cinq vides, celui-ci construit ce qui les comble — et doit dire d'ab
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 43.7](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3, G-4 et G-5, hors de l'ordre du PRD §6 ; porte trois sièges pour la somme, versés à check-sieges.py ; aucun énoncé central (CA-IV-01) |
+| **Statut** | Livrable du dépôt, au compte des huit ([D-21](../PRD/PRD.md#d-21)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3, G-4 et G-5, hors de l'ordre du PRD §6 ; porte trois sièges pour la somme, versés à check-sieges.py ; aucun énoncé central (CA-IV-01) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source 16 juillet 2026 (Vol. II), 21 juillet 2026 (Vol. III), juin 2026 (Vol. I) ; volet résiduel de G-1 non instruit |
 | **Socle mobilisé** | non ré-adossée, correspondance S-nnn due : Vol. II et Vol. III par identifiants d'origine, Vol. I en [C] ; F-92, F-96 et H-15 hors socle ; H-31 non élevable |
 | **Garde-fous balayés** | Vol. II — R-2 : une occurrence ; R-3 : une occurrence ; R-5 : une occurrence ; R-8 : une occurrence ; R-1, R-4, R-6, R-7 : zéro occurrence · Vol. III — R-09 : deux occurrences ; R-01 : une occurrence ; R-06 : une occurrence ; R-13 : une occurrence ; R-02 et R-14 : zéro occurrence de l'identifiant ; R-03 à R-05, R-07, R-08, R-10 à R-12 : zéro occurrence |

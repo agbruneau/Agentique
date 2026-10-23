@@ -6,7 +6,7 @@ Deuxième chapitre du mouvement : **un cadre légiféré dont l'interface techni
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 32.5](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3 ; énoncés ré-ancrés depuis au socle, CA-IV-11 et CA-IV-13 insatisfaites (D-6) ; aucun énoncé central (CA-IV-01) |
+| **Statut** | Livrable du dépôt, au compte des huit ([D-21](../PRD/PRD.md#d-21)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3 ; énoncés ré-ancrés depuis au socle, CA-IV-11 et CA-IV-13 insatisfaites (D-6) ; aucun énoncé central (CA-IV-01) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gel de source 16-17 juillet 2026 (Vol. II) ; période de commentaires du règlement prépublié close le 26 août 2026, à revalider |
 | **Socle mobilisé** | S-011, S-020, S-032 en [A-i], S-033 en [A-i] au degré 1 (fait négatif vérifié) ; S-009, S-022, S-023 en renvoi ; S-023 non établie |
 | **Garde-fous balayés** | Vol. II — R-5 : trois occurrences du sigle ; R-1 à R-4, R-6 à R-8 : zéro occurrence · Vol. III — R-14 : trois occurrences du sigle ; R-09 : deux occurrences du sigle ; R-11 : une occurrence du sigle ; R-01 à R-08, R-10, R-12, R-13 : zéro occurrence |

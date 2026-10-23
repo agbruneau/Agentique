@@ -8,7 +8,7 @@ rendent leurs verdicts d'architecture.*
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 42.5](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3, G-4 et G-5, hors de l'ordre du PRD §6 ; chapitre de méthode, dont la recevabilité tient à son rendement ; aucun énoncé central (CA-IV-01) |
+| **Statut** | Livrable du dépôt, au compte des huit ([D-21](../PRD/PRD.md#d-21)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3, G-4 et G-5, hors de l'ordre du PRD §6 ; chapitre de méthode, dont la recevabilité tient à son rendement ; aucun énoncé central (CA-IV-01) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; trois gels de source non fusionnés : 16 et 17 juillet 2026 (Vol. II), 21 juillet 2026 (Vol. III) |
 | **Socle mobilisé** | socle transversal, non re-cité en S-nnn : Vol. II, treize entrées et quatre en renvoi, dont onze résolues en S-nnn ; Vol. III, trente-cinq entrées propres et six héritées ; aucun vote adversarial |
 | **Garde-fous balayés** | Vol. II — R-5 : zéro occurrence de l'identifiant ; R-1, R-2, R-3, R-4, R-6, R-8 : zéro occurrence · Vol. III — R-02 : une occurrence ; R-09 : une occurrence ; R-14 : une occurrence ; R-01 : zéro occurrence de l'identifiant ; R-03 à R-08, R-10 à R-13 : zéro occurrence |

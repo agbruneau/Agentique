@@ -34,7 +34,7 @@ datée, et rien de ce qui précède ne s'y corrige.
 > décision d'auteur [**D-18**](PRD/PRD.md#d-18) (option DA-2 (a) du plan d'exécution). Le volume
 > reste au dépôt, entier ; ses cinquante pièces se déclarent « Brouillon de rédaction, non
 > publiable », et aucun rang de livrable ne les contredit plus. Les sept livrables sont au
-> [`README` de la racine](../README.md#les-sept-livrables). Dépôt rouvert le même jour par
+> [`README` de la racine](../README.md#les-huit-livrables). Dépôt rouvert le même jour par
 > [D-17](PRD/PRD.md#d-17), re-clôture prévue vers le 8 décembre 2026 ; *les bandeaux qui suivent
 > restent à leur date.*
 
@@ -2712,4 +2712,44 @@ La décision est numérotée [D-20](PRD/PRD.md#d-20) et consignée à l'annexe A
   `reporter-volumetrie --verifier` et `genere.py --verifier` passent.
 - **Harnais de mutation** : les quatre passent (`check-toc`, `check-sieges` à 115 mutations,
   `check-compendium` à 30, `verifier-piece` à 9).
+- **Pages dérivées** : leurs scripts passent `node --check`.
+
+# Passe du 23 octobre 2026, quatrième partie — le Vol. IV au compte des livrables (D-21)
+
+*Sur instruction de l'auteur du 23 octobre 2026 : « fais entrer le Vol. IV au compte des livrables (huit
+au lieu de sept), par une décision qui amende D-18, avec les README alignés ». La décision est
+[D-21](PRD/PRD.md#d-21), consignée à l'annexe A du PRD. La rangée de D-18 porte la mention de
+l'amendement.*
+
+**Ce qui change.**
+- **Compte** : il passe de sept à huit livrables (neuf PDF), le Vol. IV compris.
+- **Pièces** : la rangée « Statut » de tête des cinquante pièces passe de « Archive de travail, hors
+  compte des livrables (D-18) » à « Livrable du dépôt, au compte des huit (D-21) ».
+- **Registre et plan** : la colonne « Statut » du registre de gel et la rangée « Statut » du TOC sont
+  alignées.
+- **Avis du PDF** : la page ii dit « Livrable du dépôt ».
+- **README** : celui de la racine change de titre (« Les huit livrables »), de compte, de table (rangée IV
+  ajoutée) et de ligne « Hors compte ». Celui de ce dossier et ceux des cinq Livres disent « livrable ».
+- **Pages dérivées** : `statut_volume` et les cinquante `statut_redaction` de l'Atlas ; le badge et le
+  `LISEZMOI.md` de l'Explorateur.
+- **Contrôle** : `verifier-piece.py` exige « au compte des huit » et proscrit « hors compte des
+  livrables » ; la mutation M10 du harnais éprouve cette proscription.
+
+**Liens.** L'ancre `#les-sept-livrables` reste vivante au `README.md` de la racine, sous une ancre
+explicite. Les chroniques datées qui la visent, dans six `JOURNAL.md`, et la rangée de D-18 ne sont donc
+pas réécrites ; ce dossier-ci et `0 - Références/README.md` visent la nouvelle ancre. Le `README.md` de la
+racine reste à 40 lignes : la ligne « Hors compte » est fusionnée.
+
+**Ce qui ne change pas.**
+- CA-IV-11 et CA-IV-13 demeurent insatisfaites ; la réserve commune « aucun relecteur humain nommé »
+  vaut désormais pour les huit.
+- Le gel reste au 27 juillet 2026, et les niveaux de preuve ne bougent pas.
+- La revalidation du 23 octobre ne couvre qu'une publication antérieure au 22 novembre 2026.
+
+**Rendus et contrôles.**
+- **Rendus** : cinquante `.html`, la ligne de statut seule y change. `Compendium.pdf` est recomposé à
+  1 000 pages ; débuts de chapitre inchangés, aucun repère de l'Atlas déplacé.
+- **Contrôles du dossier** : tous passent ; les quatre harnais de mutation passent (`verifier-piece` à 10).
+- **Contrôles de la racine** : `check-renvois` (0 renvoi mort) et `check-lisibilite` passent, avec leurs
+  harnais.
 - **Pages dérivées** : leurs scripts passent `node --check`.

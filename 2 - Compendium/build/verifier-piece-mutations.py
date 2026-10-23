@@ -170,6 +170,20 @@ def m9_statut_ancien(tmp):
     f.write_text(neuf, encoding="utf-8", newline="\n")
 
 
+def m10_statut_archive(tmp):
+    """[4] — la tête rendue redit « hors compte des livrables » après D-21.
+
+    Le volume est l'un des huit livrables depuis le 23 octobre 2026 : une tête qui le dirait
+    encore archive hors compte contredirait la décision sans que rien ne le signale.
+    """
+    f = tmp / (CH25 + ".html")
+    t = f.read_text(encoding="utf-8")
+    neuf = re.sub(r'(<p class="titre__statut">.*?)(</p>)', r"\1 ; hors compte des livrables\2", t,
+                  count=1, flags=re.S)
+    assert neuf != t, "ligne de statut introuvable au rendu du ch. 25"
+    f.write_text(neuf, encoding="utf-8", newline="\n")
+
+
 def m8_these_au_corps(tmp):
     """[2] — la thèse citée, admise en tête depuis le 15 septembre 2026, recopiée au corps.
 
@@ -193,6 +207,7 @@ MUTATIONS = [
     ("M7  [4] la tête rendue perd le statut", m7_statut_perdu, "[4]", "echec"),
     ("M8  [2] la thèse citée recopiée au corps", m8_these_au_corps, "[2]", "echec"),
     ("M9  [4] la tête rendue garde le statut d'avant D-20", m9_statut_ancien, "[4]", "echec"),
+    ("M10 [4] la tête rendue redit « hors compte » après D-21", m10_statut_archive, "[4]", "echec"),
 ]
 
 

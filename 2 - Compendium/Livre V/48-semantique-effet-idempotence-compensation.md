@@ -7,7 +7,7 @@ matière neuve que l'audit v0.3 avait nommés puis écartés (décision 9 du TOC
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 48.6](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3, G-5 et G-6, hors de l'ordre du PRD §6 ; G-5 et G-6 ouvertes ; siège de la sémantique d'effet, fermé par D-7 ; aucun énoncé central (CA-IV-01) |
+| **Statut** | Livrable du dépôt, au compte des huit ([D-21](../PRD/PRD.md#d-21)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3, G-5 et G-6, hors de l'ordre du PRD §6 ; G-5 et G-6 ouvertes ; siège de la sémantique d'effet, fermé par D-7 ; aucun énoncé central (CA-IV-01) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; aucun gel de source consommé ; relève v0.10 du § 48.5 non instruite |
 | **Socle mobilisé** | aucune entrée : matière neuve ; adossements internes, deux repérages [C] du Vol. I, relève v0.10 en [C] ; CA-IV-07 porté à l'ouverture |
 | **Garde-fous balayés** | Vol. III — R-14 : neuf occurrences au corps ; R-02 : une occurrence de l'identifiant ; R-09 : deux occurrences ; R-13 : zéro occurrence ; R-01, R-03 à R-08, R-10 à R-12 : zéro occurrence · Vol. II — R-4 : une occurrence ; R-1 à R-3, R-5 à R-8 : zéro occurrence |

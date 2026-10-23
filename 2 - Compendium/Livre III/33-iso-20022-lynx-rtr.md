@@ -6,7 +6,7 @@ Troisième chapitre du mouvement : **un rail accompli et un rail visé, à ne ja
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 33.5](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3 ; énoncés ré-ancrés depuis au socle, CA-IV-11 et CA-IV-13 insatisfaites (D-6) ; aucun énoncé déclaré central, arbitrage remonté (§ 33.5) |
+| **Statut** | Livrable du dépôt, au compte des huit ([D-21](../PRD/PRD.md#d-21)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3 ; énoncés ré-ancrés depuis au socle, CA-IV-11 et CA-IV-13 insatisfaites (D-6) ; aucun énoncé déclaré central, arbitrage remonté (§ 33.5) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gel de source 16-17 juillet 2026 (Vol. II) ; deux échéances annoncées après le gel, le 24 août 2026 et le T4 2026 |
 | **Socle mobilisé** | S-026 et S-027 en [A-i], S-043 en [B] non établie ; aucun énoncé adossé à S-043 n'est central ; réserve : ne jamais écrire « lancé » |
 | **Garde-fous balayés** | Vol. II — R-4 : six occurrences du sigle ; R-1 à R-3, R-5 à R-8 : zéro occurrence · Vol. III — R-14 : une occurrence du sigle ; R-11 : quatre occurrences du sigle ; R-09 : une occurrence du sigle ; R-01 à R-08, R-10, R-12, R-13 : zéro occurrence |

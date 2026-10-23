@@ -7,7 +7,7 @@ trois capacités que l'exploitation distingue — **voir**.*
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 38.6](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3, G-4 et G-5, hors de l'ordre du PRD §6 ; G-5 conditionne le Livre entier ; aucun énoncé central (CA-IV-01) |
+| **Statut** | Livrable du dépôt, au compte des huit ([D-21](../PRD/PRD.md#d-21)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3, G-4 et G-5, hors de l'ordre du PRD §6 ; G-5 conditionne le Livre entier ; aucun énoncé central (CA-IV-01) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source 21 juillet 2026 (Vol. III) et juin 2026 (Vol. I) ; volet de faits de G-1 levé le lendemain, cinq entrées non établies |
 | **Socle mobilisé** | aucune entrée consolidée, pièce non ré-adossée : Vol. III, ch. 24, vingt-deux identifiants dont quatre sans marqueur au corps ; Vol. I, §2.9.6, §3.12.3 et §4.9.1-4.9.2, en [C] |
 | **Garde-fous balayés** | Vol. III — R-14 : quatre occurrences ; R-09 : deux occurrences ; R-01 : une occurrence ; R-02 : une occurrence ; R-03 : une occurrence ; R-04 : une occurrence ; R-06 : une occurrence ; R-07 : une occurrence ; R-05, R-08, R-10 à R-13 : zéro occurrence · Vol. II — R-7 : une occurrence ; R-8 : une occurrence ; R-1 à R-6 : zéro occurrence |

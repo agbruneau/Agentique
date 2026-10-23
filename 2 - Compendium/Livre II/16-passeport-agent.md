@@ -6,7 +6,7 @@ compose ce que les trois précédents ont instruit séparément, et il n'a pas d
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 16.6](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3 et G-4 ; G-4 ouverte ; chapitre de composition, où chaque affirmation se trace vers un chapitre amont ou se marque Lecture de l'auteur ; aucun énoncé central (CA-IV-01) |
+| **Statut** | Livrable du dépôt, au compte des huit ([D-21](../PRD/PRD.md#d-21)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3 et G-4 ; G-4 ouverte ; chapitre de composition, où chaque affirmation se trace vers un chapitre amont ou se marque Lecture de l'auteur ; aucun énoncé central (CA-IV-01) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source juin 2026 (Vol. I), 16 juillet 2026 (Vol. II), 21 juillet 2026 (Vol. III) ; une échéance à venir au § 16.4, le 1ᵉʳ mai 2027 |
 | **Socle mobilisé** | aucun énoncé re-résolu au socle, aucun lot propre : Vol. III, ch. 8 et §7.4, Vol. II, §8.4 (F-07, F-08), Vol. I, §7.4.2, en [C] ; H-18 et F-55 en [C] |
 | **Garde-fous balayés** | Vol. II — R-2 et R-3 : quatre marqueurs chacun (siège) ; R-4 : zéro marqueur ; R-1, R-5 à R-8 : zéro marqueur · Vol. III — R-01 : trois marqueurs ; R-02 à R-14 : zéro marqueur |

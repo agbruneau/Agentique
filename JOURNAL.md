@@ -540,3 +540,13 @@ l'annexe A du PRD du compendium, le re-clôt au commit étiqueté `corpus-v1.0` 
 D-17. Aucun relecteur n'est nommé au dépôt, aucun rapport n'y est versé, aucune entrée ne passe en [H] ; la condition
 bloquante B1 de l'évaluation n'est pas levée sur pièce. Le DOI (T7.3) reste à obtenir ; Git LFS (T7.4) est reporté.
 L'état courant est à [`README.md`](README.md).
+
+## 23 octobre 2026 — le Vol. IV publiable, puis au compte des livrables (décisions D-20 et D-21)
+
+À la suite de l'audit d'actualité du compendium (22 octobre) et de sa revalidation (23 octobre), deux décisions
+d'auteur s'ajoutent à l'annexe A du PRD du compendium. **D-20** rend le Vol. IV publiable pour l'édition de novembre
+2026, par dérogation à CA-IV-11 et CA-IV-13. **D-21**, qui amende D-18, le fait entrer au compte des livrables, qui
+passe de sept à huit (neuf PDF). Le `README.md` porte désormais « Les huit livrables », avec une rangée IV, et la ligne
+« Hors compte » ne nomme plus le compendium. L'ancre `#les-sept-livrables` y reste vivante pour les chroniques datées
+qui la visent. La réserve commune — aucun relecteur humain nommé — vaut pour les huit. Le détail est au
+[`JOURNAL.md`](<2%20-%20Compendium/JOURNAL.md>) du compendium ; l'état courant est à [`README.md`](README.md).

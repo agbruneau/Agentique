@@ -5,7 +5,7 @@ Premier mouvement — les fondements (ch. 1-6). **Dernier chapitre du mouvement.
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 6.6](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé hors portes le 27 juillet 2026 et malgré la remontée bloquante R-IV-01 ; non ré-adossé au socle, CA-IV-13 due ; aucun énoncé central (CA-IV-01) |
+| **Statut** | Livrable du dépôt, au compte des huit ([D-21](../PRD/PRD.md#d-21)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé hors portes le 27 juillet 2026 et malgré la remontée bloquante R-IV-01 ; non ré-adossé au socle, CA-IV-13 due ; aucun énoncé central (CA-IV-01) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gel de source juin 2026 (Vol. I) ; trois faits datés à re-vérifier |
 | **Socle mobilisé** | non adossée au socle entrée par entrée ; résout contre le Vol. I, §2.8.1-2.8.3, §2.9.1-2.9.5 et §2.10.3-2.10.5, en [C] |
 | **Garde-fous balayés** | Vol. II — R-8 : une occurrence ; R-1 à R-7 : zéro occurrence · Vol. III — R-13 : une occurrence ; R-14 : quatre occurrences ; R-01 à R-12 : zéro occurrence |

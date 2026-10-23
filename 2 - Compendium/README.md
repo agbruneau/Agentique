@@ -4,7 +4,7 @@
 les trois monographies de [`1 - Collection/`](../1%20-%20Collection/), dédoublonnées et re-datées à la source, en cinquante chapitres sur
 quatre plans : coopérer, faire confiance, encadrer, livrer.
 
-**Statut :** archive de travail, hors compte des livrables — fixé le 15 septembre 2026 par la décision [D-18](PRD/PRD.md#d-18), option DA-2 (a) ;
+**Statut :** livrable, le huitième — entré au compte le 23 octobre 2026 par la décision [D-21](PRD/PRD.md#d-21), qui amende [D-18](PRD/PRD.md#d-18) (archive de travail hors compte depuis le 15 septembre 2026, option DA-2 (a)) ;
 dépôt rouvert le même jour par [D-17](PRD/PRD.md#d-17), re-clos le 16 septembre 2026 par [D-19](PRD/PRD.md#d-19). Le volume reste au dépôt, entier ; ses cinquante pièces sont **publiables pour l'édition de
 novembre 2026** par la décision [D-20](PRD/PRD.md#d-20) du 23 octobre 2026, et les trois volumes sources font foi. Faute de relecteur distinct du rédacteur, CA-IV-11 et CA-IV-13 ne sont pas satisfaits : la publication se fait par dérogation d'auteur.
 

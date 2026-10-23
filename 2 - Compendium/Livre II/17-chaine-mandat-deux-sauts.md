@@ -7,7 +7,7 @@ mécanisme.*
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 17.7](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3 ; G-4 ouverte ; le § 17.5 est écrit contre le plan, ses sources primaires non établies (R-IV-27) ; aucun énoncé central (CA-IV-01) |
+| **Statut** | Livrable du dépôt, au compte des huit ([D-21](../PRD/PRD.md#d-21)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3 ; G-4 ouverte ; le § 17.5 est écrit contre le plan, ses sources primaires non établies (R-IV-27) ; aucun énoncé central (CA-IV-01) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source juin 2026 (Vol. I) et 21 juillet 2026 (Vol. III) ; une relève du 26 juillet 2026 reprise comme relève, non comme entrée |
 | **Socle mobilisé** | non adossée au socle consolidé : Vol. III, ch. 9-10, vingt-huit entrées dont cinq en [C] ; Vol. I, §2.11.2 et §3.6.6, en [C] ; l'objet du § 17.5 n'a aucun socle |
 | **Garde-fous balayés** | Vol. III — R-02 : trois marqueurs ; R-01, R-03 à R-14 : zéro marqueur · Vol. II — R-1 à R-8 : zéro marqueur |

@@ -1,6 +1,6 @@
 # Compendium Interactif — Entreprise Agentique (2024–2032)
 
-Application web interactive, visuelle et autonome synthétisant les 1 000 pages de la somme (édition publiable de novembre 2026, décision D-20, revalidée le 23 octobre 2026) :
+Application web interactive, visuelle et autonome synthétisant les 1 000 pages de la somme (l'un des huit livrables du dépôt par la décision D-21 ; édition publiable de novembre 2026, décision D-20, revalidée le 23 octobre 2026) :
 **« Interopérabilité et Orchestration en Entreprise Agentique : Autonomie encadrée et fabrique de confiance : déployer des agents en services financiers réglementés (2024-2032) »**
 par André-Guy Bruneau, M.Sc. IT.
 

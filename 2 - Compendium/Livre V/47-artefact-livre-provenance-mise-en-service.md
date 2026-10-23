@@ -8,7 +8,7 @@ d'appuis, conservées intégralement (décision 13 du TOC).*
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 47.13](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3, G-5 et G-6, hors de l'ordre du PRD §6 ; règle cardinale enfreinte à son degré maximal : aucun socle ; aucun énoncé central (CA-IV-01) |
+| **Statut** | Livrable du dépôt, au compte des huit ([D-21](../PRD/PRD.md#d-21)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3, G-5 et G-6, hors de l'ordre du PRD §6 ; règle cardinale enfreinte à son degré maximal : aucun socle ; aucun énoncé central (CA-IV-01) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; aucun gel de source, pas de volume source ; volet résiduel de G-1 non instruit |
 | **Socle mobilisé** | aucune entrée : matière neuve, « Fusion : aucune » ; adossements internes et relèves du plan en repérage [C] ; énoncés d'absence à re-vérifier |
 | **Garde-fous balayés** | Vol. III — R-14 : un marqueur d'identifiant ; R-02 : deux marqueurs d'identifiant ; R-09 : un marqueur ; R-13 : un marqueur ; R-01, R-03 à R-08, R-10 à R-12 : zéro marqueur · Vol. II — R-8 : zéro marqueur ; R-1 à R-7 : zéro marqueur |

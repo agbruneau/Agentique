@@ -5,7 +5,7 @@ Deuxième mouvement — la confiance hostile (ch. 19-20). **Premier chapitre du 
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 19.7](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3 et G-4 ; G-4 ouverte, ré-adossement dû ; CA-IV-11 insatisfaite, aucune relecture dédiée : rien ici n'est une attestation ; aucun énoncé central (CA-IV-01) |
+| **Statut** | Livrable du dépôt, au compte des huit ([D-21](../PRD/PRD.md#d-21)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3 et G-4 ; G-4 ouverte, ré-adossement dû ; CA-IV-11 insatisfaite, aucune relecture dédiée : rien ici n'est une attestation ; aucun énoncé central (CA-IV-01) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source juin 2026 (Vol. I) et 21 juillet 2026 (Vol. III) ; identifiants de vulnérabilité cités comme jalons datés |
 | **Socle mobilisé** | Vol. III, ch. 12, dix-sept entrées propres et quatre héritées, dont H-24 et H-26 en [C] ; Vol. I, §2.10.1-2.10.2, en [C] ; F-26 à vote adversarial incomplet ; re-citation en S-nnn due |
 | **Garde-fous balayés** | Vol. III — R-08 : un marqueur (siège) ; R-02 : un marqueur ; R-14 : un marqueur ; R-01, R-03 à R-07, R-09 à R-13 : zéro marqueur · Vol. II — R-1 à R-8 : zéro marqueur |

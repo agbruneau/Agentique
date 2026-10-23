@@ -6,7 +6,7 @@ deux mouvements, issu de la fusion v0.20 des anciens ch. 21 et 22.*
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 20.12](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé hors portes le 27 juillet 2026 ; G-4 ouverte ; CA-IV-11 insatisfaite, aucune relecture dédiée : rien ici n'est une attestation ; aucun énoncé central (CA-IV-01) |
+| **Statut** | Livrable du dépôt, au compte des huit ([D-21](../PRD/PRD.md#d-21)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé hors portes le 27 juillet 2026 ; G-4 ouverte ; CA-IV-11 insatisfaite, aucune relecture dédiée : rien ici n'est une attestation ; aucun énoncé central (CA-IV-01) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source juin 2026 (Vol. I) et 21 juillet 2026 (Vol. III) ; le plus exposé du Livre à la péremption produit |
 | **Socle mobilisé** | aucun énoncé re-résolu au socle : Vol. III, ch. 13-15, Vol. I, §7.5.1 à §7.5.4, en [C] ; onze entrées en [C], dont F-56 rétrogradée à la refonte ; F-26 à vote incomplet |
 | **Garde-fous balayés** | Vol. III — R-02 : sept marqueurs ; R-01, R-03 à R-14 : zéro marqueur · Vol. II — R-1 à R-8 : zéro marqueur |

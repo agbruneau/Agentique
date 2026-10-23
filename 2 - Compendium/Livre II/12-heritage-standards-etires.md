@@ -6,7 +6,7 @@ Livre.** Chapitre à deux mouvements, issu de la fusion v0.20 des anciens ch. 12
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 12.9](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3 et G-4 ; G-4, la collation contre le Vol. III, reste ouverte, et la pièce n'est pas ré-adossée au socle ; aucun énoncé central (CA-IV-01) |
+| **Statut** | Livrable du dépôt, au compte des huit ([D-21](../PRD/PRD.md#d-21)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3 et G-4 ; G-4, la collation contre le Vol. III, reste ouverte, et la pièce n'est pas ré-adossée au socle ; aucun énoncé central (CA-IV-01) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source juin 2026 (Vol. I), 16-17 juillet 2026 (Vol. II), 21 juillet 2026 (Vol. III) ; deux entrées mobilisées « changées » au volet de faits de G-1 |
 | **Socle mobilisé** | identifiants des volumes sources, sans ré-adossement : Vol. III, ch. 1-2 (dix-neuf entrées propres, dont F-37 hors périmètre déclaré, et cinq héritées), Vol. II, ch. 8, Vol. I, §3.6.1-3.6.2 et §4.1.3, en [C] |
 | **Garde-fous balayés** | Vol. II — R-2 : un marqueur ; R-3 : deux marqueurs ; R-8 : un marqueur ; R-1, R-4 à R-7 : zéro marqueur · Vol. III — R-09 : quatre marqueurs ; R-02 : trois marqueurs ; R-14 : trois marqueurs ; R-04 : un marqueur ; R-13 : un marqueur ; R-01, R-03, R-05 à R-08, R-10 à R-12 : zéro marqueur |

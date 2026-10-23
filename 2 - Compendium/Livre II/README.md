@@ -5,8 +5,8 @@ versants hostile (ch. 19-20) et post-quantique (ch. 21). Chaque pièce existe en
 l'appareil, et en `.html`, page autonome qui se lit hors ligne. Le cahier des charges de chaque chapitre est son entrée au
 [`TOC.md`](../PRD/TOC.md), qui prime.
 
-**Statut :** archive de travail, hors compte des livrables — le Vol. IV entier, par la décision [D-18](../PRD/PRD.md#d-18) du
-15 septembre 2026. Les dix pièces sont rédigées et arbitrées hors portes, publiables pour l'édition de novembre 2026 ([D-20](../PRD/PRD.md#d-20), réserves déclarées) ; aucun énoncé n'y est central au
+**Statut :** livrable — le Vol. IV entier, au compte des huit livrables par la décision [D-21](../PRD/PRD.md#d-21) du
+23 octobre 2026, qui amende [D-18](../PRD/PRD.md#d-18). Les dix pièces sont rédigées et arbitrées hors portes, publiables pour l'édition de novembre 2026 ([D-20](../PRD/PRD.md#d-20), réserves déclarées) ; aucun énoncé n'y est central au
 sens de CA-IV-01.
 
 | Ch. | Pièce | Plan |

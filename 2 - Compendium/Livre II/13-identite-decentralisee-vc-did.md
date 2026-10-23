@@ -5,7 +5,7 @@ Premier mouvement — émettre (ch. 12-18). Deuxième chapitre du mouvement.*
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 13.6](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026, G-3 et G-4 alors ouvertes ; G-4 reste ouverte, sous le régime de la source rédigée non publiable (PRD §7.2) ; aucun énoncé central (CA-IV-01) |
+| **Statut** | Livrable du dépôt, au compte des huit ([D-21](../PRD/PRD.md#d-21)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026, G-3 et G-4 alors ouvertes ; G-4 reste ouverte, sous le régime de la source rédigée non publiable (PRD §7.2) ; aucun énoncé central (CA-IV-01) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source juin 2026 (Vol. I) et 21 juillet 2026 (Vol. III) ; chapitre le plus périssable du mouvement |
 | **Socle mobilisé** | identifiants sources préfixés, non re-cités en S-nnn : Vol. III, ch. 3, douze entrées propres, H-18 et H-20 en [C] ; Vol. I, §3.6.4 et §7.4.3, en [C] |
 | **Garde-fous balayés** | Vol. III — R-14 : trois marqueurs ; R-02 : deux marqueurs ; R-09 : un marqueur ; R-01, R-03 à R-08, R-10 à R-13 : zéro marqueur · Vol. II — R-1 à R-8 : zéro marqueur |

@@ -6,7 +6,7 @@ l'un des plus brefs : il établit un fait négatif et en tire les conséquences.
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 26.4](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé hors portes le 27 juillet 2026, G-3 ouverte ; CA-IV-11 et CA-IV-13 insatisfaites ; chapitre non conditionné par G-4 ; aucun énoncé central (CA-IV-01) |
+| **Statut** | Livrable du dépôt, au compte des huit ([D-21](../PRD/PRD.md#d-21)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé hors portes le 27 juillet 2026, G-3 ouverte ; CA-IV-11 et CA-IV-13 insatisfaites ; chapitre non conditionné par G-4 ; aucun énoncé central (CA-IV-01) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gel de source 16-17 juillet 2026 (Vol. II) ; entrée reconduite inchangée le 28 juillet 2026, étape parlementaire : deuxième lecture |
 | **Socle mobilisé** | Vol. II, ch. 10 : S-022 en [B] porte le chapitre ; S-009, S-023, S-024, S-025 en renvoi ; confrontation de fond au socle non faite |
 | **Garde-fous balayés** | Vol. II — R-5 : deux occurrences du sigle ; R-1 à R-4, R-6 à R-8 : zéro occurrence · Vol. III — R-14 : une occurrence du sigle ; R-01 à R-13 : zéro occurrence |

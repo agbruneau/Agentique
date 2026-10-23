@@ -5,7 +5,7 @@ Premier mouvement — les fondements (ch. 1-6).*
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 3.5](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé hors portes le 27 juillet 2026, non ré-adossé au socle consolidé ; aucun vote adversarial, G-4 à G-6 ouvertes, CA-IV-11 et CA-IV-13 insatisfaites ; aucun énoncé central (CA-IV-01) |
+| **Statut** | Livrable du dépôt, au compte des huit ([D-21](../PRD/PRD.md#d-21)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé hors portes le 27 juillet 2026, non ré-adossé au socle consolidé ; aucun vote adversarial, G-4 à G-6 ouvertes, CA-IV-11 et CA-IV-13 insatisfaites ; aucun énoncé central (CA-IV-01) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gel de source juin 2026 (Vol. I) ; trois faits datés à re-vérifier, dont OAuth 2.1 encore en projet |
 | **Socle mobilisé** | aucune entrée, ré-adossement dû ; résout contre le Vol. I, §1.9-1.10, en [C] — réserve renforcée sur la matière cryptographique |
 | **Garde-fous balayés** | Vol. II — R-1 à R-8 : zéro occurrence · Vol. III — R-02 : quatre occurrences ; R-11 : une occurrence ; R-14 : deux occurrences ; R-13 : le marqueur figure une fois ; R-01, R-03 à R-10, R-12 : zéro occurrence |

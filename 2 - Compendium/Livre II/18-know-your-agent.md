@@ -6,7 +6,7 @@ frontière de l'organisation, là où l'émission cesse d'être un acte interne.
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 18.5](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : écrit le 27 juillet 2026 avant G-3 ; G-4 ouverte ; siège unique du KYA pour la somme (§ 18.1) ; aucun énoncé central (CA-IV-01) |
+| **Statut** | Livrable du dépôt, au compte des huit ([D-21](../PRD/PRD.md#d-21)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : écrit le 27 juillet 2026 avant G-3 ; G-4 ouverte ; siège unique du KYA pour la somme (§ 18.1) ; aucun énoncé central (CA-IV-01) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source juin 2026 (Vol. I) et 21 juillet 2026 (Vol. III) ; le plus dense du mouvement en objets périssables |
 | **Socle mobilisé** | non réancrée sur la série consolidée : Vol. III, ch. 11, dix-neuf entrées propres et H-19 en [C] ; Vol. I, §5.5.4, §3.6.5 et §7.4.3, en [C] ; F-56 rétrogradée en [C] à la refonte |
 | **Garde-fous balayés** | Vol. III — R-02 : trois marqueurs ; R-14 : un marqueur ; R-01, R-03 à R-13 : zéro marqueur · Vol. II — R-1 à R-8 : zéro marqueur |

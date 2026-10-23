@@ -7,7 +7,7 @@ c'est la description exacte de son objet.*
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 36.6](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026, G-3 ouverte ; non re-adossé, CA-IV-11 et CA-IV-13 insatisfaites ; porte la lacune la plus explicite du Livre ; aucun énoncé central (CA-IV-01) |
+| **Statut** | Livrable du dépôt, au compte des huit ([D-21](../PRD/PRD.md#d-21)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026, G-3 ouverte ; non re-adossé, CA-IV-11 et CA-IV-13 insatisfaites ; porte la lacune la plus explicite du Livre ; aucun énoncé central (CA-IV-01) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source 16-17 juillet 2026 (Vol. II) et juin 2026 (Vol. I) ; obligations de pièce du Livre III dues, dont les quatre préimpressions du § 36.5 |
 | **Socle mobilisé** | non adossée : Vol. II, ch. 16 (F-04, F-29), Vol. I, §5.13, en [C] ; correspondances relevées vers S-004, S-027, S-090 ; le § 36.5 est un repérage [C] |
 | **Garde-fous balayés** | Vol. II — R-4 : une occurrence du sigle ; R-8 : une occurrence du sigle ; R-5 : une occurrence du sigle ; R-1 à R-3, R-6, R-7 : zéro occurrence · Vol. III — R-14 : une occurrence du sigle ; R-09 : deux occurrences du sigle ; R-11 : zéro occurrence du sigle ; R-02 : une occurrence du sigle ; R-01, R-03 à R-08, R-10, R-12, R-13 : zéro occurrence |

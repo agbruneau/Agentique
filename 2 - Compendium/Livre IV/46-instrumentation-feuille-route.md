@@ -7,7 +7,7 @@ séquence dans le temps ce que les quatre précédents ont posé dans l'espace.*
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 46.4](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3, G-4 et G-5, hors de l'ordre du PRD §6 ; seul chapitre du Livre daté de bout en bout ; aucun énoncé central (CA-IV-01) |
+| **Statut** | Livrable du dépôt, au compte des huit ([D-21](../PRD/PRD.md#d-21)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3, G-4 et G-5, hors de l'ordre du PRD §6 ; seul chapitre du Livre daté de bout en bout ; aucun énoncé central (CA-IV-01) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gel de source 16 juillet 2026 (Vol. II) ; aucun jalon du § 46.3 repris à la source primaire |
 | **Socle mobilisé** | Vol. II : S-009 (F-09, deux strates), S-023, S-035, S-042 ; F-29, F-34, F-35 en renvoi ; F-25 et F-44 non établies |
 | **Garde-fous balayés** | Vol. II — R-7 : une occurrence ; R-4 : une occurrence ; R-5 : une occurrence ; R-1, R-2, R-3, R-6, R-8 : zéro occurrence · Vol. III — R-09 : une occurrence ; R-11 : une occurrence ; R-14 : zéro occurrence de l'identifiant ; R-01 à R-08, R-10, R-12, R-13 : zéro occurrence |

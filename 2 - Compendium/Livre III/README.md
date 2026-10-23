@@ -5,8 +5,8 @@ cadre réglementaire canadien (ch. 25-30), le terrain financier canadien (ch. 31
 foi et seule à porter l'appareil, et en `.html`, page autonome. Le cahier des charges de chaque chapitre est son entrée au
 [`TOC.md`](../PRD/TOC.md), qui prime.
 
-**Statut :** archive de travail, hors compte des livrables — le Vol. IV entier, par la décision [D-18](../PRD/PRD.md#d-18) du
-15 septembre 2026. Les quinze pièces sont rédigées et arbitrées hors portes, publiables pour l'édition de novembre 2026 ([D-20](../PRD/PRD.md#d-20), réserves déclarées).
+**Statut :** livrable — le Vol. IV entier, au compte des huit livrables par la décision [D-21](../PRD/PRD.md#d-21) du
+23 octobre 2026, qui amende [D-18](../PRD/PRD.md#d-18). Les quinze pièces sont rédigées et arbitrées hors portes, publiables pour l'édition de novembre 2026 ([D-20](../PRD/PRD.md#d-20), réserves déclarées).
 
 | Ch. | Pièce | Mouvement |
 |---|---|---|

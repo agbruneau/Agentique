@@ -6,7 +6,7 @@ mouvement** : les trois mécanismes d'émission y sont instruits sur pièce.*
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 15.4](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé hors portes le 27 juillet 2026 ; G-4 ouverte ; chapitre à plus haut risque de surinterprétation, sans relecture adversariale (CA-IV-13) ; aucun énoncé central (CA-IV-01) |
+| **Statut** | Livrable du dépôt, au compte des huit ([D-21](../PRD/PRD.md#d-21)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé hors portes le 27 juillet 2026 ; G-4 ouverte ; chapitre à plus haut risque de surinterprétation, sans relecture adversariale (CA-IV-13) ; aucun énoncé central (CA-IV-01) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source juin 2026 (Vol. I), 16 juillet 2026 (Vol. II), 21 juillet 2026 (Vol. III) ; corps non re-collationné contre le volet résiduel de G-1 |
 | **Socle mobilisé** | aucun énoncé re-résolu au socle : Vol. III, ch. 5-7 hors §7.4, Vol. II, §8.2 (F-08), Vol. I, §3.4 et §3.6.3, en [C] ; F-36 et F-55 du Vol. III en [C] |
 | **Garde-fous balayés** | Vol. II — R-3 : deux marqueurs ; R-2 : un marqueur ; R-1, R-4 à R-8 : zéro marqueur · Vol. III — R-02 : sept marqueurs ; R-07 : deux marqueurs ; R-01 : un marqueur ; R-03 à R-06, R-08 à R-14 : zéro marqueur |

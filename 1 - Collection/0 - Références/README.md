@@ -4,7 +4,7 @@ Le dossier porte une seule pièce, [`1997 - Mémoire Maitrise.pdf`](1997%20-%20M
 146 pages, PDF produit par Acrobat 6.02 et non composé ici. Aucun document du dépôt ne le cite. C'est une œuvre de l'auteur, couverte
 par la licence CC BY 4.0 de la [racine](../../LICENSE).
 
-**Statut :** pièce déposée, hors compte des livrables ([registre de la racine](../../README.md#les-sept-livrables)).
+**Statut :** pièce déposée, hors compte des livrables ([registre de la racine](../../README.md#les-huit-livrables)).
 
 **Ce qui n'y est plus :** trois ouvrages de tiers — *Enterprise Integration Patterns* (Hohpe et Woolf, 2003), *Distributed Systems:
 Principles and Paradigms* (Tanenbaum et van Steen, 2007), le *Systems Engineering Body of Knowledge* (2026) — et deux prépublications

@@ -7,7 +7,7 @@ leurs verdicts.*
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 14.5](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3 et G-4 ; G-4 ouverte, ré-adossement dû ; la grille est une construction d'auteur, qui ne dépend d'aucun fait ; aucun énoncé central (CA-IV-01) |
+| **Statut** | Livrable du dépôt, au compte des huit ([D-21](../PRD/PRD.md#d-21)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3 et G-4 ; G-4 ouverte, ré-adossement dû ; la grille est une construction d'auteur, qui ne dépend d'aucun fait ; aucun énoncé central (CA-IV-01) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source juin 2026 (Vol. I) et 21 juillet 2026 (Vol. III) ; l'application-témoin du § 14.2 est datée du 21 juillet 2026 |
 | **Socle mobilisé** | la grille n'appelle aucune entrée ; ses verdicts résolvent contre le Vol. III, ch. 4 (vingt et une entrées propres, H-02, H-03), l'échelle du § 14.4 contre H-31 en [C] ; re-citation en S-nnn due |
 | **Garde-fous balayés** | Vol. III — R-02 : deux marqueurs ; R-13 : un marqueur ; R-14 : un marqueur ; R-01, R-03 à R-12 : zéro marqueur · Vol. II — R-1 à R-8 : zéro marqueur |

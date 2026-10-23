@@ -7,7 +7,7 @@ ch. 31 a posés une fois**.*
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 34.8](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026, G-3 ouverte et volet résiduel de G-1 non instruit ; non ré-adossé ; chapitre non conditionné par G-4 ; aucun énoncé central (CA-IV-01) |
+| **Statut** | Livrable du dépôt, au compte des huit ([D-21](../PRD/PRD.md#d-21)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026, G-3 ouverte et volet résiduel de G-1 non instruit ; non ré-adossé ; chapitre non conditionné par G-4 ; aucun énoncé central (CA-IV-01) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gel de source juin 2026 (Vol. I, ch. 5) ; une quarantaine d'annonces produit datées, à re-vérifier au moment de citer |
 | **Socle mobilisé** | aucune entrée ne couvre les §5.7 à §5.11 du Vol. I, qui entrent en [C] ; S-157 touche la matière, non élevable |
 | **Garde-fous balayés** | Vol. II — R-5 : deux occurrences du sigle ; R-1 à R-4, R-6 à R-8 : zéro occurrence · Vol. III — R-09 : zéro occurrence du sigle ; R-14 : une occurrence du sigle ; R-13 : quatre occurrences du sigle ; R-02 : une occurrence du sigle ; R-01, R-03 à R-08, R-10 à R-12 : zéro occurrence |
