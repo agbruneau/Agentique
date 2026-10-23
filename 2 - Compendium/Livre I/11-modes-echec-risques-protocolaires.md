@@ -6,7 +6,7 @@ dernier chapitre du Livre.***
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 11.5](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; brouillon non publiable : rédigé hors portes le 27 juillet 2026, non ré-adossé au socle consolidé ; CA-IV-11 et CA-IV-13 insatisfaites ; aucun énoncé central (CA-IV-01) |
+| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé hors portes le 27 juillet 2026, non ré-adossé au socle consolidé ; CA-IV-11 et CA-IV-13 insatisfaites ; aucun énoncé central (CA-IV-01) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source juin 2026 (Vol. I) et 16 juillet 2026 (Vol. II) ; identifiants de vulnérabilité cités comme jalons datés |
 | **Socle mobilisé** | Vol. I, §3.10-3.11, en [C] ; Vol. II, ch. 4 ; entrées nommées sans ré-adossement : S-001, S-002, S-034, et S-150 à S-152 en [C] |
 | **Garde-fous balayés** | Vol. II — R-1 : une occurrence ; R-8 : une occurrence ; R-2 à R-7 : zéro occurrence · Vol. III — R-02 : cinq occurrences ; R-13 : une occurrence ; R-14 : huit occurrences ; R-01, R-03 à R-12 : zéro occurrence |

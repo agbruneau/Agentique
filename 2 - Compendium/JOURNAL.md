@@ -2677,3 +2677,39 @@ colonne de re-datation. Les abrégés de l'annexe des références sont réalign
 **Pages dérivées.**
 - **Atlas** : 32 modifications, dont six pages déplacées (ch. 1, ch. 37).
 - **Explorateur** : douze lignes, plus le badge de date ; ses deux copies restent identiques.
+
+# Passe du 23 octobre 2026, troisième partie — statut publiable (D-20)
+
+*Sur instruction de l'auteur du 23 octobre 2026 : « Mettre le statut publiable pour novembre 2026 ».
+La décision est numérotée [D-20](PRD/PRD.md#d-20) et consignée à l'annexe A du PRD, sans nouvelle version.*
+
+**Ce qui change.**
+- **Pièces** : la rangée « Statut » de tête des cinquante pièces passe de « brouillon non publiable » à
+  « publiable (D-20, nov. 2026) » ; leurs autres qualifications restent (« rédigé hors portes »,
+  « aucun énoncé central »…).
+- **Registre de gel** : la colonne « Statut » passe à « Publiable (D-20, nov. 2026) ».
+- **Avis du PDF** : l'avis de statut, page ii, dit « publiables pour l'édition de novembre 2026
+  (décision D-20) ».
+- **READMEs** : celui du dossier, ceux des cinq Livres et celui de la racine portent le nouveau statut.
+- **Pages dérivées** : `statut_volume` et les cinquante `statut_redaction` de l'Atlas ; le badge de
+  l'Explorateur et son `LISEZMOI.md`.
+- **Contrôle** : `build/verifier-piece.py` exige désormais « publiable (… nov. 2026) » et proscrit
+  « brouillon non publiable » au statut rendu. Son harnais gagne la mutation M9, qui est vue.
+
+**Ce qui ne change pas.**
+- Le volume reste hors du compte des sept livrables fixé par D-18.
+- CA-IV-11 et CA-IV-13 demeurent insatisfaites, faute de relecteur nommé : la publication se fait par
+  dérogation d'auteur.
+- Le gel reste au 27 juillet 2026.
+- La revalidation du 23 octobre ne couvre qu'une publication antérieure au 22 novembre 2026.
+
+**Rendus et contrôles.**
+- **Rendus** : cinquante `.html` régénérés, la ligne de statut seule y change. `Compendium.pdf` est
+  recomposé à 1 000 pages ; débuts de chapitre inchangés, une ligne glisse en ouverture des ch. 8 et
+  50, et aucun repère de l'Atlas ne change de page.
+- **Contrôles** : `check-toc`, `check-sieges`, `check-compendium` (mêmes cinq rapports déclaratifs),
+  `verifier-piece`, `assemble-bibliographie --verifier`, `decompte.sh --verifier` et `--registre`,
+  `reporter-volumetrie --verifier` et `genere.py --verifier` passent.
+- **Harnais de mutation** : les quatre passent (`check-toc`, `check-sieges` à 115 mutations,
+  `check-compendium` à 30, `verifier-piece` à 9).
+- **Pages dérivées** : leurs scripts passent `node --check`.

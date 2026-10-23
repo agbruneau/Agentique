@@ -7,7 +7,7 @@ troisième capacité — **mesurer un parc**.*
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 40.7](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; brouillon non publiable : rédigé le 27 juillet 2026 avant G-3, G-4 et G-5, hors de l'ordre du PRD §6 ; G-4 et G-5 ouvertes ; la grille du § 40.2 est entièrement une construction d'auteur ; aucun énoncé central (CA-IV-01) |
+| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3, G-4 et G-5, hors de l'ordre du PRD §6 ; G-4 et G-5 ouvertes ; la grille du § 40.2 est entièrement une construction d'auteur ; aucun énoncé central (CA-IV-01) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source 21 juillet 2026 (Vol. III) et juin 2026 (Vol. I) ; S-142 changée, entrées réglementaires non établies |
 | **Socle mobilisé** | non réancrée : Vol. III, ch. 26, Vol. I, §2.11.1 et §4.9.3-4.9.5, en [C] ; F-92 et F-96, qui porteraient seules la thèse, exclues du socle pour dette de vote |
 | **Garde-fous balayés** | Vol. III — R-09 : deux occurrences ; R-01 : une occurrence ; R-03 : une occurrence ; R-06 : une occurrence ; R-07 : une occurrence ; R-13 : une occurrence ; R-14 : une occurrence ; R-02 : zéro occurrence de l'identifiant ; R-04, R-05, R-08, R-10 à R-12 : zéro occurrence · Vol. II — R-7 : une occurrence ; R-1 à R-6, R-8 : zéro occurrence |

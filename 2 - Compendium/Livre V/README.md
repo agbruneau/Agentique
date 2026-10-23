@@ -5,7 +5,7 @@ l'horizon et la frontière de la connaissance vérifiable (ch. 49-50). Chaque pi
 porter l'appareil, et en `.html`, page autonome. Le cahier des charges de chaque chapitre est son entrée au [`TOC.md`](../PRD/TOC.md), qui prime.
 
 **Statut :** archive de travail, hors compte des livrables — le Vol. IV entier, par la décision [D-18](../PRD/PRD.md#d-18) du
-15 septembre 2026. Les quatre pièces sont rédigées et arbitrées hors portes, brouillon non publiable. Le premier mouvement est de la
+15 septembre 2026. Les quatre pièces sont rédigées et arbitrées hors portes, publiables pour l'édition de novembre 2026 ([D-20](../PRD/PRD.md#d-20), réserves déclarées). Le premier mouvement est de la
 matière neuve, sans volume source ni socle, et sa publication est bloquée par la décision d'auteur D-3 du [PRD](../PRD/PRD.md).
 
 | Ch. | Pièce | Mouvement |

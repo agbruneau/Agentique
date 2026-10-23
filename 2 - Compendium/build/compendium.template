@@ -468,7 +468,7 @@
 // ---- statut du chapitre, sous la ligne de situation (15 septembre 2026) ----
 // La valeur de la rangée « Statut » de la tête de la pièce, recopiée par
 // `assemble.py` : le volume est une archive de travail hors compte des livrables
-// (D-18), chaque chapitre un brouillon non publiable, et un lecteur du PDF le lit
+// (D-18), chaque chapitre publiable pour l'édition de novembre 2026 (D-20), et un lecteur du PDF le lit
 // à l'ouverture du chapitre, avant la thèse citée qui suit. Filet fin, corps sans
 // empattement, gris : l'information se voit sans prendre le pas sur le chapitre.
 #let statut(body) = block(above: 0pt, below: 1.6 * PAS, width: 100%,
@@ -590,14 +590,17 @@
 // garde vierge de statut ; il n'ajoute pas de page blanche. ⚠ *Cette instruction portait
 // sur le régime de diffusion de D-10 ; D-18 est un régime postérieur, et c'est à l'auteur
 // de dire s'il tient l'avis pour une réouverture de l'instruction.*
+// ☑ 23 octobre 2026, décision D-20 : « brouillons de rédaction non publiables » devient
+// « publiables pour l'édition de novembre 2026 ». Les réserves (CA-IV-11, CA-IV-13, seuil des trente
+// jours) vivent au PRD et dans la tête de chaque chapitre, non dans cet avis.
 #block(width: 100%, above: 0pt, below: 1.4 * PAS, inset: (x: 10pt, y: 8pt),
   stroke: 0.6pt + FILET, {
   set par(justify: false, leading: 4.6pt, first-line-indent: 0pt)
   set text(font: SANS, size: 9.5pt, fill: GRIS)
   text(weight: "bold", fill: ENCRE)[Archive de travail, hors compte des livrables.]
   [ Depuis le 15 septembre 2026 (décision D-18), ce volume n'est pas au nombre des sept
-  livrables du dépôt ; il y reste entier. Ses cinquante chapitres sont des brouillons de
-  rédaction non publiables, et chacun porte son statut en tête.]
+  livrables du dépôt ; il y reste entier. Ses cinquante chapitres sont publiables pour
+  l'édition de novembre 2026 (décision D-20), et chacun porte son statut en tête.]
 })
 
 #block(width: 100%, above: 0pt, below: 1.8 * PAS, {

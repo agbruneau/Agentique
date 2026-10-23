@@ -5,7 +5,7 @@ Premier mouvement — les fondements (ch. 1-6).*
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 2.5](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; brouillon non publiable : rédigé hors portes le 27 juillet 2026, ce qu'un franchissement postérieur ne rattrape pas ; CA-IV-11 et CA-IV-13 insatisfaisables (D-6) ; aucun énoncé central (CA-IV-01) |
+| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé hors portes le 27 juillet 2026, ce qu'un franchissement postérieur ne rattrape pas ; CA-IV-11 et CA-IV-13 insatisfaisables (D-6) ; aucun énoncé central (CA-IV-01) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gel de source juin 2026 (Vol. I) ; trois spécifications citées étaient en cours au gel de la source |
 | **Socle mobilisé** | aucune entrée : le socle consolidé ne couvre pas ce périmètre ; résout contre le Vol. I, §1.7-1.8, hors socle, en [C] |
 | **Garde-fous balayés** | Vol. II — R-1 à R-8 : zéro occurrence · Vol. III — R-01, R-03 à R-13 : zéro occurrence ; R-02 : le marqueur figure une fois ; R-14 : trois occurrences |

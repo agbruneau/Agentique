@@ -5,7 +5,7 @@ Second mouvement — la couche protocolaire agentique (ch. 7-11). **Premier chap
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 7.7](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; brouillon non publiable : rédigé hors portes le 27 juillet 2026 ; G-4 ouverte, aucun vote adversarial, CA-IV-11 et CA-IV-13 insatisfaisables ; aucun énoncé central (CA-IV-01) |
+| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé hors portes le 27 juillet 2026 ; G-4 ouverte, aucun vote adversarial, CA-IV-11 et CA-IV-13 insatisfaisables ; aucun énoncé central (CA-IV-01) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; deux gels de source, juin 2026 (Vol. I) et 16 juillet 2026 (Vol. II) |
 | **Socle mobilisé** | Vol. I, §3.0-3.1 et §3.13.1, en [C] ; Vol. II, ch. 1 et §3.4 : S-001, S-002, S-004, S-005, S-041, plus S-040 et S-046 hors assignation (remonté) ; corps non réancré sur les S-nnn |
 | **Garde-fous balayés** | Vol. II — R-1 : trois occurrences ; R-8 : trois occurrences ; R-2 à R-7 : zéro occurrence · Vol. III — R-13 : une occurrence ; R-14 : deux occurrences ; R-01 à R-12 : zéro occurrence |

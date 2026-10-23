@@ -6,7 +6,7 @@
 | **Décision** | **Aucune décision d'auteur numérotée** : passe exécutée sur instruction de l'auteur, le 23 octobre 2026, pour « appliquer les 8 constats urgents » de l'[audit d'actualité du 22 octobre 2026](../audit-actualite-2026-10-22.md). |
 | **Domaine** | **Les quarante et un constats de cet audit** : les huit d'urgence haute, H-01 à H-08 (§ 1 à § 5), puis, sur une seconde instruction du même jour, les onze moyens et les vingt-deux bas (§ 6). ⚠ *Le socle n'est pas rejoué entrée par entrée.* |
 | **Méthode** | Chaque objet est repris à sa source primaire quand elle répond. Elle n'a pas répondu dans deux cas : swift.com et le texte consolidé de la loi canadienne. Le régime « secondaires concordantes » est alors **dit à la mention**, jamais promu. |
-| **Seuil** | **CA-IV-04** compte trente jours **avant une publication**. ⚠ Ce rapport ne vaut que pour une publication survenant **avant le 22 novembre 2026** ; l'édition est datée de novembre 2026 (§ 6.1), mais aucune publication n'est décidée. |
+| **Seuil** | **CA-IV-04** compte trente jours **avant une publication**. ⚠ Ce rapport ne vaut que pour une publication survenant **avant le 22 novembre 2026** ; l'édition est datée de novembre 2026 (§ 6.1). ☑ *La décision [D-20](PRD.md#d-20), prise le même jour, la rend publiable : ce seuil devient sa condition.* |
 
 ---
 
@@ -129,7 +129,7 @@ gel, ni une décision de publication.**
 - Les cinquante pièces gardent leur gel du 27 juillet 2026.
 - L'avis de statut du volume, la décision D-18 et les en-têtes des pièces disent toujours « brouillon de
   rédaction non publiable » : CA-IV-11 et CA-IV-13 demeurent insatisfaites, faute de relecteur
-  distinct. *Changer ce statut est une décision d'auteur, que cette passe ne prend pas.*
+  distinct. *Changer ce statut est une décision d'auteur, que cette passe ne prend pas.* ☑ **Elle a été prise le même jour** : la décision [D-20](PRD.md#d-20) rend les cinquante pièces **publiables pour l'édition de novembre 2026**, par dérogation à CA-IV-11 et CA-IV-13, sous la condition de ce seuil.
 - **Seuil des trente jours (CA-IV-04).** Ce rapport ne couvre une publication que si elle survient
   **avant le 22 novembre 2026**. Une édition publiée plus tard en novembre exige une nouvelle
   revalidation, dont le premier objet serait le rail temps réel.

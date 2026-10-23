@@ -31,7 +31,7 @@ Compte et statuts fixés par la décision [D-18](<2%20-%20Compendium/PRD/PRD.md#
 | VII | *Revue de la littérature académique* | [`3 - Veille/`](<3%20-%20Veille/>) | 60 p. | livrable |
 | VIII | *État de l'art en services financiers*, et sa planche | [`5 - Recension/`](<5%20-%20Recension/>) | 187 p. et 7 p. | livrable |
 
-Hors compte, par la même décision : le Vol. IV, [`2 - Compendium/`](<2%20-%20Compendium/>), 1 000 p., archive de travail ; quatre documents publiés — la note de veille SDLC (50 p.)
+Hors compte, par la même décision : le Vol. IV, [`2 - Compendium/`](<2%20-%20Compendium/>), 1 000 p., archive de travail, publiable pour l'édition de novembre 2026 par [D-20](<2%20-%20Compendium/PRD/PRD.md#d-20>) ; quatre documents publiés — la note de veille SDLC (50 p.)
 et la note de synthèse (22 p.) sous `3 - Veille/`, l'article HPC-QPU (38 p.) sous `4 - Essais/2 - Article/`, [`NiveauMaturité.html`](NiveauMaturit%C3%A9.html) (7 diapositives) ; l'appareil — évaluation, gabarit, plan ; le mémoire de maîtrise de l'auteur (1997), pièce déposée.
 
 **Refaire et vérifier :** [`APPAREIL.md`](APPAREIL.md) donne chaque point d'entrée, son dossier et sa dernière sortie ; [`appareil.yml`](.github/workflows/appareil.yml) les rejoue sous Linux et Windows ; chaque `README` dit ce qui se refait dans son dossier.

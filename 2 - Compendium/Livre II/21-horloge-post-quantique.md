@@ -6,7 +6,7 @@ chapitre du Livre.** Chapitre à deux mouvements, issu de la fusion v0.20 des an
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 21.10](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; brouillon non publiable : rédigé le 27 juillet 2026 avant G-3 et G-4 ; G-4 ouverte ; siège de l'horloge post-quantique pour la somme (§ 21.1) ; aucun énoncé central (CA-IV-01) |
+| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3 et G-4 ; G-4 ouverte ; siège de l'horloge post-quantique pour la somme (§ 21.1) ; aucun énoncé central (CA-IV-01) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source juin 2026 (Vol. I) et 21 juillet 2026 (Vol. III) ; les cibles prêtées au QSFF par le Vol. I restent introuvables (§ 21.7) |
 | **Socle mobilisé** | aucun énoncé re-résolu au socle : Vol. III, ch. 16-18, Vol. I, §7.4.1 et §7.4.4, en [C] ; cinq entrées en [C] ; S-082 changée, S-153 non établie |
 | **Garde-fous balayés** | Vol. III — R-11 : trois marqueurs (siège) ; R-02 : quatre marqueurs ; R-01, R-03 à R-10, R-12 à R-14 : zéro marqueur · Vol. II — R-1 à R-8 : zéro marqueur |

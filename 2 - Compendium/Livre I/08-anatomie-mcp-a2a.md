@@ -5,7 +5,7 @@ Second mouvement — la couche protocolaire agentique (ch. 7-11).*
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 8.8](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; brouillon non publiable : rédigé hors portes le 27 juillet 2026 ; énoncés non ré-résolus contre les S-nnn, CA-IV-11 et CA-IV-13 insatisfaisables ; aucun énoncé central (CA-IV-01) |
+| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé hors portes le 27 juillet 2026 ; énoncés non ré-résolus contre les S-nnn, CA-IV-11 et CA-IV-13 insatisfaisables ; aucun énoncé central (CA-IV-01) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source juin 2026 (Vol. I) et 16 juillet 2026 (Vol. II) ; révision protocolaire ratifiée le 28 juillet 2026, revalidée en bloc le 30 juillet 2026 (D-11) |
 | **Socle mobilisé** | Vol. I, §3.2-3.3 et §2.5.4, en [C] ; Vol. II, ch. 2 : F-01, F-02, F-03, F-16, soit S-001, S-002, S-003, S-013 en [A-i] ; correspondance établie, ré-résolution due |
 | **Garde-fous balayés** | Vol. II — R-1 : une occurrence ; R-8 : une occurrence ; R-2 à R-7 : zéro occurrence · Vol. III — R-02 : quatre occurrences ; R-13 : une occurrence ; R-14 : trois occurrences ; R-01, R-03 à R-12 : zéro occurrence |

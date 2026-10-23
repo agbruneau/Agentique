@@ -7,7 +7,7 @@ Fusion et deux tables de couverture, conservées intégralement (décision 11a d
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 22.11](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; brouillon non publiable : rédigé le 27 juillet 2026 avant G-3, infraction que la porte franchie ne rattrape pas ; pièce non réadossée, CA-IV-11 et CA-IV-13 insatisfaites ; aucun énoncé central (CA-IV-01) |
+| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3, infraction que la porte franchie ne rattrape pas ; pièce non réadossée, CA-IV-11 et CA-IV-13 insatisfaites ; aucun énoncé central (CA-IV-01) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source 16-17 juillet 2026 (Vol. II) et juin 2026 (Vol. I) ; S-044 non établie au volet de faits de G-1 |
 | **Socle mobilisé** | Vol. II, ch. 5-6 : S-035 et S-034 en [B], S-044 en renvoi ; le § 22.5 n'a aucune entrée et résout contre le Vol. I, §1.6.3, en [C] |
 | **Garde-fous balayés** | Vol. II — R-1 : une occurrence ; R-8 : une occurrence ; R-4, R-5 : zéro occurrence ; R-2, R-3, R-6, R-7 : zéro occurrence · Vol. III — R-13 : une occurrence du sigle ; R-14 : deux occurrences du sigle ; R-02 : deux occurrences du sigle ; R-01, R-03 à R-12 : zéro occurrence |

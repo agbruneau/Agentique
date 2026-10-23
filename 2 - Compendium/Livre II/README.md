@@ -6,7 +6,7 @@ l'appareil, et en `.html`, page autonome qui se lit hors ligne. Le cahier des ch
 [`TOC.md`](../PRD/TOC.md), qui prime.
 
 **Statut :** archive de travail, hors compte des livrables — le Vol. IV entier, par la décision [D-18](../PRD/PRD.md#d-18) du
-15 septembre 2026. Les dix pièces sont rédigées et arbitrées hors portes, brouillon non publiable ; aucun énoncé n'y est central au
+15 septembre 2026. Les dix pièces sont rédigées et arbitrées hors portes, publiables pour l'édition de novembre 2026 ([D-20](../PRD/PRD.md#d-20), réserves déclarées) ; aucun énoncé n'y est central au
 sens de CA-IV-01.
 
 | Ch. | Pièce | Plan |

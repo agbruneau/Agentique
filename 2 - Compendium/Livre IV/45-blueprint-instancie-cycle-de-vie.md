@@ -8,7 +8,7 @@ ch. 44 a formalisé.*
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 45.16](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; brouillon non publiable : rédigé le 27 juillet 2026 avant G-3, G-4 et G-5, hors de l'ordre du PRD §6 ; hérite de la réserve R-IV-101 du ch. 44 ; § 45.6 siège pour la somme ; aucun énoncé central (CA-IV-01) |
+| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3, G-4 et G-5, hors de l'ordre du PRD §6 ; hérite de la réserve R-IV-101 du ch. 44 ; § 45.6 siège pour la somme ; aucun énoncé central (CA-IV-01) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source 16 juillet 2026 (Vol. II), 21 juillet 2026 (Vol. III), juin 2026 (Vol. I) ; faits périssables non repris à la source primaire |
 | **Socle mobilisé** | non ré-adossée, correspondance S-nnn due : Vol. II, F-38 à F-46 nommées une à une, Vol. III, Vol. I en [C] ; dix entrées assignées non citées au corps |
 | **Garde-fous balayés** | Vol. II — R-8 : trois occurrences ; R-5 : deux occurrences ; R-6 : une occurrence ; R-7 : une occurrence ; R-1 à R-4 : zéro occurrence · Vol. III — R-09 : trois occurrences ; R-01 : deux occurrences ; R-02 : une occurrence ; R-07 : une occurrence ; R-13 : une occurrence ; R-14 : zéro occurrence de l'identifiant ; R-03 à R-06, R-08, R-10 à R-12 : zéro occurrence |

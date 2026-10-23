@@ -7,7 +7,7 @@ des déclarations d'entreprises** — trait que sa source déclarait unique dans
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 35.10](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; brouillon non publiable : rédigé le 27 juillet 2026, G-3 ouverte ; aucun vote adversarial sur ses entrées, CA-IV-11 et CA-IV-13 insatisfaites ; matière qui se périme au trimestre ; aucun énoncé central (CA-IV-01) |
+| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026, G-3 ouverte ; aucun vote adversarial sur ses entrées, CA-IV-11 et CA-IV-13 insatisfaites ; matière qui se périme au trimestre ; aucun énoncé central (CA-IV-01) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gel de source 16-17 juillet 2026 (Vol. II) ; douze entrées re-datées : deux ré-établies, six partielles, quatre non établies |
 | **Socle mobilisé** | Vol. II, ch. 17 : douze entrées nommées, dont F-47 et F-48 en [B/C] ; re-citation en S-nnn due |
 | **Garde-fous balayés** | Vol. II — R-8 : deux occurrences ; R-5 : une occurrence du sigle ; R-1 à R-4, R-6, R-7 : zéro occurrence · Vol. III — R-14 : deux occurrences du sigle ; R-09 : une occurrence du sigle ; R-13 : une occurrence du sigle ; R-02 : une occurrence du sigle ; R-01, R-03 à R-08, R-10 à R-12 : zéro occurrence |

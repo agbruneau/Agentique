@@ -6,7 +6,7 @@ foi et seule à porter l'appareil, et en `.html`, page autonome. Le cahier des c
 [`TOC.md`](../PRD/TOC.md), qui prime.
 
 **Statut :** archive de travail, hors compte des livrables — le Vol. IV entier, par la décision [D-18](../PRD/PRD.md#d-18) du
-15 septembre 2026. Les quinze pièces sont rédigées et arbitrées hors portes, brouillon non publiable.
+15 septembre 2026. Les quinze pièces sont rédigées et arbitrées hors portes, publiables pour l'édition de novembre 2026 ([D-20](../PRD/PRD.md#d-20), réserves déclarées).
 
 | Ch. | Pièce | Mouvement |
 |---|---|---|

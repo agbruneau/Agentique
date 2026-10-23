@@ -7,7 +7,7 @@ neuve de ce Livre**.*
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 41.9](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; brouillon non publiable : rédigé le 27 juillet 2026 avant G-3 à G-6 et hors de l'ordre du PRD §6 ; matière neuve sans vote ni source primaire ; D-8 : chapitre maintenu sous réserve ; aucun énoncé central (CA-IV-01) |
+| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3 à G-6 et hors de l'ordre du PRD §6 ; matière neuve sans vote ni source primaire ; D-8 : chapitre maintenu sous réserve ; aucun énoncé central (CA-IV-01) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; aucun fait périssable, parce qu'aucun fait : un seul relevé de dépôt, hors socle |
 | **Socle mobilisé** | aucun : ni entrée consolidée, ni F-xx, ni garde-fou hérité ; appuis internes seulement, dont aucun n'est une source ; tout énoncé est au mieux un repérage [C] |
 | **Garde-fous balayés** | Vol. III — R-01 : une occurrence ; R-02 : une occurrence ; R-14 : zéro occurrence de l'identifiant ; R-03 à R-13 : zéro occurrence · Vol. II — R-1 à R-8 : zéro occurrence |

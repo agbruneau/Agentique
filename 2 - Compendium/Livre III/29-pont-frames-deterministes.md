@@ -8,7 +8,7 @@ redécoupage.*
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 29.5](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; brouillon non publiable : rédigé le 27 juillet 2026 avant G-3 ; aucun vote adversarial, CA-IV-11 et CA-IV-13 insatisfaites ; consomme les ch. 25 et 27, conditionnés par G-4 ; aucun énoncé central (CA-IV-01) |
+| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3 ; aucun vote adversarial, CA-IV-11 et CA-IV-13 insatisfaites ; consomme les ch. 25 et 27, conditionnés par G-4 ; aucun énoncé central (CA-IV-01) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gel de source 16-17 juillet 2026 (Vol. II) ; la table du § 29.1 a changé de forme le 17 juillet 2026 chez sa source |
 | **Socle mobilisé** | Vol. II, ch. 13 : S-009, S-023, S-024, S-025, S-034, S-035, S-044, S-010 en renvoi ; les contraintes d'E-23 viennent de sa strate [B] ; quatre entrées non établies |
 | **Garde-fous balayés** | Vol. II — R-1 à R-8 : zéro occurrence · Vol. III — R-14 : une occurrence du sigle ; R-02 : une occurrence du sigle ; R-13 : une occurrence du sigle ; R-01, R-03 à R-12 : zéro occurrence |

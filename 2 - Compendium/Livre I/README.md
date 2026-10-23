@@ -5,7 +5,7 @@ protocolaire agentique (ch. 7-11). Chaque pièce existe en `.md`, la source qui 
 page autonome qui se lit hors ligne. Le cahier des charges de chaque chapitre est son entrée au [`TOC.md`](../PRD/TOC.md), qui prime.
 
 **Statut :** archive de travail, hors compte des livrables — le Vol. IV entier, par la décision [D-18](../PRD/PRD.md#d-18) du
-15 septembre 2026. Les onze pièces sont rédigées et arbitrées hors portes, brouillon non publiable ; aucun énoncé n'y est central au
+15 septembre 2026. Les onze pièces sont rédigées et arbitrées hors portes, publiables pour l'édition de novembre 2026 ([D-20](../PRD/PRD.md#d-20), réserves déclarées) ; aucun énoncé n'y est central au
 sens de CA-IV-01.
 
 | Ch. | Pièce | Mouvement |

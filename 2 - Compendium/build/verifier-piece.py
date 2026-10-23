@@ -25,7 +25,7 @@ rendeur lui-même**, dont une évolution pourrait la lever sans que personne ne
 le voie.
 
 **[4] Statut** — la tête rendue porte le statut de la pièce, « hors compte des
-livrables » et « non publiable » compris (15 septembre 2026, décision D-18). *Un
+livrables » et « publiable (… nov. 2026) » compris (15 septembre 2026, décision D-18 ; 23 octobre 2026, décision D-20). *Un
 lecteur du `.html` ne doit pas avoir à ouvrir le `.md` pour savoir ce que vaut la
 pièce.*
 
@@ -66,10 +66,16 @@ APPAREIL = (
 TETE = re.compile(r'<header class="titre">(.*?)</header>', re.S)
 
 # [4] — le statut rendu. Le volume est une archive de travail hors compte des
-# livrables (D-18, 15 septembre 2026), et chaque pièce un brouillon non publiable :
-# un lecteur du `.html` le lit en tête, sans ouvrir le `.md`.
+# livrables (D-18, 15 septembre 2026), et chaque pièce est publiable pour l'édition
+# de novembre 2026 (D-20, 23 octobre 2026) : un lecteur du `.html` le lit en tête,
+# sans ouvrir le `.md`. ⚠ « publiable » est une sous-chaîne de « non publiable » :
+# l'exigence porte donc sur « publiable (», que la tête écrit devant le renvoi à D-20,
+# et l'ancien statut est PROSCRIT, sans quoi une tête restée en arrière passerait.
 STATUT_RENDU = re.compile(r'<p class="titre__statut">(.*?)</p>', re.S)
-STATUT_EXIGE = ("hors compte des livrables", "non publiable")
+STATUT_EXIGE = ("hors compte des livrables", "publiable (", "nov. 2026")
+# ⚠ « brouillon non publiable », non « non publiable » seul : le ch. 13 qualifie ainsi le régime
+# de sa SOURCE (« la source rédigée non publiable », PRD §7.2), qui n'est pas le statut de la pièce.
+STATUT_PROSCRIT = ("brouillon non publiable",)
 
 # ⚠ Les commentaires HTML sont retirés avant [2], et le motif est un piège
 # vécu : le gabarit porte lui-même, en commentaire, la phrase « NI EN-TÊTE À
@@ -122,8 +128,13 @@ def controler():
         manque = [s for s in STATUT_EXIGE if not statut or s not in statut.group(1)]
         if manque:
             echecs.append(f"[4] {nom} : la tête rendue ne dit pas « {' », « '.join(manque)} » — "
-                          f"le lecteur du `.html` ne voit pas que la pièce est un brouillon "
-                          f"non publiable d'une archive hors compte des livrables (D-18).")
+                          f"le lecteur du `.html` ne voit pas que la pièce est publiable pour "
+                          f"l'édition de novembre 2026 (D-20), dans une archive hors compte "
+                          f"des livrables (D-18).")
+        reste = [s for s in STATUT_PROSCRIT if statut and s in statut.group(1)]
+        if reste:
+            echecs.append(f"[4] {nom} : la tête rendue dit encore « {' », « '.join(reste)} » — "
+                          f"statut antérieur à D-20.")
 
         # [3] — les figures, nommément.
         attendues = IMAGE_MD.findall(md.read_text(encoding="utf-8"))

@@ -6,7 +6,7 @@ il pose le régime prudentiel fédéral sur lequel les cinq suivants se situent.
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 25.9](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; brouillon non publiable : rédigé le 27 juillet 2026, aucune des trois portes opposables franchie et malgré le blocage nommé de D-9 ; G-4 reste ouverte ; écart de gouvernance le plus lourd du Livre ; un seul énoncé avancé comme central (§ 25.3) |
+| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026, aucune des trois portes opposables franchie et malgré le blocage nommé de D-9 ; G-4 reste ouverte ; écart de gouvernance le plus lourd du Livre ; un seul énoncé avancé comme central (§ 25.3) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source 16-17 juillet 2026 (Vol. II) et 21 juillet 2026 (Vol. III) ; échéance structurante au 1ᵉʳ mai 2027 |
 | **Socle mobilisé** | identifiants sources résolus en S-009, S-010, S-023, S-110 à S-114 ; l'énoncé central du § 25.3 est porté par la strate [A-i] de S-009 ; aucun autre énoncé central |
 | **Garde-fous balayés** | Vol. II — R-1 à R-8 : zéro occurrence · Vol. III — R-06 : quatre occurrences du sigle ; R-14 : trois occurrences du sigle ; R-11 : une occurrence du sigle ; R-09 : une occurrence du sigle ; R-07 : une occurrence du sigle ; R-02 : une occurrence du sigle ; R-01, R-03 à R-05, R-08, R-10, R-12, R-13 : zéro occurrence |

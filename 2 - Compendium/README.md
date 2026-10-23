@@ -5,8 +5,8 @@ les trois monographies de [`1 - Collection/`](../1%20-%20Collection/), dédoublo
 quatre plans : coopérer, faire confiance, encadrer, livrer.
 
 **Statut :** archive de travail, hors compte des livrables — fixé le 15 septembre 2026 par la décision [D-18](PRD/PRD.md#d-18), option DA-2 (a) ;
-dépôt rouvert le même jour par [D-17](PRD/PRD.md#d-17), re-clos le 16 septembre 2026 par [D-19](PRD/PRD.md#d-19). Le volume reste au dépôt, entier ; ses cinquante pièces se déclarent brouillon non
-publiable, et les trois volumes sources font foi. Faute de relecteur distinct du rédacteur, CA-IV-11 et CA-IV-13 ne sont pas satisfaits.
+dépôt rouvert le même jour par [D-17](PRD/PRD.md#d-17), re-clos le 16 septembre 2026 par [D-19](PRD/PRD.md#d-19). Le volume reste au dépôt, entier ; ses cinquante pièces sont **publiables pour l'édition de
+novembre 2026** par la décision [D-20](PRD/PRD.md#d-20) du 23 octobre 2026, et les trois volumes sources font foi. Faute de relecteur distinct du rédacteur, CA-IV-11 et CA-IV-13 ne sont pas satisfaits : la publication se fait par dérogation d'auteur.
 
 | Champ | Valeur |
 |---|---|

@@ -7,7 +7,7 @@ trois capacités que l'exploitation distingue — **agir sur ce qu'on voit**.*
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 39.7](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; brouillon non publiable : rédigé le 27 juillet 2026 avant G-3, G-4 et G-5, hors de l'ordre du PRD §6 ; chapitre de composition sans lot propre ; aucun énoncé central (CA-IV-01) |
+| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026 avant G-3, G-4 et G-5, hors de l'ordre du PRD §6 ; chapitre de composition sans lot propre ; aucun énoncé central (CA-IV-01) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source 21 juillet 2026 (Vol. III) et juin 2026 (Vol. I) ; deux entrées « changées » au socle, report sur le corps dû |
 | **Socle mobilisé** | aucune entrée consolidée à l'appui d'un énoncé : Vol. III, ch. 25, Vol. I, §2.11.4-2.11.5, en [C] ; F-92 à dette de vote, écartée du socle |
 | **Garde-fous balayés** | Vol. III — R-14 : quatre occurrences ; R-09 : trois occurrences ; R-13 : deux occurrences ; R-01 : une occurrence ; R-06 : une occurrence ; R-11 : une occurrence ; R-12 : une occurrence ; R-02 : une occurrence de l'identifiant ; R-03 à R-05, R-07, R-08, R-10 : zéro occurrence de l'identifiant · Vol. II — R-1 à R-8 : zéro occurrence |

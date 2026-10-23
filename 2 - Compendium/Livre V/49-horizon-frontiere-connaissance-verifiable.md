@@ -7,7 +7,7 @@ et 56 (décision 11 du TOC).*
 
 | Champ | Valeur — résumé du 15 septembre 2026 ; en-tête entier en fin de pièce, [§ 49.15](#en-tête-de-rédaction) |
 |---|---|
-| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; brouillon non publiable : rédigé le 27 juillet 2026, G-4 ouverte ; G-3 franchie depuis, sans re-traçage entrée par entrée ; ordre du PRD §6 enfreint ; siège du tri prospectif et du verrou sémantique ; aucun énoncé central (CA-IV-01) |
+| **Statut** | Archive de travail, hors compte des livrables ([D-18](../PRD/PRD.md#d-18)) ; publiable ([D-20](../PRD/PRD.md#d-20), nov. 2026) : rédigé le 27 juillet 2026, G-4 ouverte ; G-3 franchie depuis, sans re-traçage entrée par entrée ; ordre du PRD §6 enfreint ; siège du tri prospectif et du verrou sémantique ; aucun énoncé central (CA-IV-01) |
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source juin 2026 (Vol. I), 16-17 juillet 2026 (Vol. II), 21 juillet 2026 (Vol. III) ; aucune échéance du § 49.1 reprise |
 | **Socle mobilisé** | premier mouvement : S-143 à S-149 et S-159, toutes en [C] ; second : Vol. II, ch. 21, Vol. III, sous G-4 ; F-92 et F-96 exclues du socle |
 | **Garde-fous balayés** | Vol. III — R-14 : dix-neuf occurrences au corps ; R-11 : vingt-deux occurrences ; R-02 : deux occurrences de l'identifiant ; R-13 : deux occurrences du terme régi ; R-01, R-03 à R-10, R-12 : zéro occurrence · Vol. II — R-4 : deux occurrences ; R-5 : trois occurrences ; R-6 : une occurrence ; R-8 : une occurrence de l'identifiant ; R-1 à R-3, R-7 : zéro occurrence |

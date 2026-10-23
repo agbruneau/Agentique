@@ -155,6 +155,21 @@ def m7_statut_perdu(tmp):
     f.write_text(neuf, encoding="utf-8", newline="\n")
 
 
+def m9_statut_ancien(tmp):
+    """[4] — la tête rendue garde le statut d'avant D-20.
+
+    ⚠ « publiable » est une sous-chaîne de « non publiable » : une exigence posée sur le seul
+    mot laisserait passer une tête restée en arrière. *Le contrôle doit voir l'ancien statut,
+    pas seulement l'absence du nouveau.*
+    """
+    f = tmp / (CH25 + ".html")
+    t = f.read_text(encoding="utf-8")
+    neuf = re.sub(r'(<p class="titre__statut">.*?)(</p>)', r"\1 ; brouillon non publiable\2", t,
+                  count=1, flags=re.S)
+    assert neuf != t, "ligne de statut introuvable au rendu du ch. 25"
+    f.write_text(neuf, encoding="utf-8", newline="\n")
+
+
 def m8_these_au_corps(tmp):
     """[2] — la thèse citée, admise en tête depuis le 15 septembre 2026, recopiée au corps.
 
@@ -177,6 +192,7 @@ MUTATIONS = [
     ("M6  [3] les figures dans le mauvais ordre", m6_figure_deplacee, "[3]", "echec"),
     ("M7  [4] la tête rendue perd le statut", m7_statut_perdu, "[4]", "echec"),
     ("M8  [2] la thèse citée recopiée au corps", m8_these_au_corps, "[2]", "echec"),
+    ("M9  [4] la tête rendue garde le statut d'avant D-20", m9_statut_ancien, "[4]", "echec"),
 ]
 
 
