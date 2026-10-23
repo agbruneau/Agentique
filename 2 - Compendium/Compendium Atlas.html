@@ -1845,10 +1845,11 @@ function livreCard(l) {
     <div class="meta"><span>ch. ${chs[0]}–${chs[chs.length - 1]}</span><span>p. ${folio(p0)}–${folio(p1)}</span></div></a>`;
 }
 
-/* Temple des cinq termes : fronton, entablement, cinq colonnes cannelées (une par Livre) sur trois degrés.
+/* Temple des cinq termes : fronton, entablement, cinq colonnes cannelées (une par Livre) sur deux degrés et un socle,
+   l'Entreprise Agentique, cadre où la thèse situe les deux propriétés (« En entreprise agentique, … »).
    Chaque colonne est dessinée deux fois, coupée en biseau : retirée, sa partie haute tombe et le tronçon reste. */
 function templeSVG(T) {
-  const W = 520, H = 386, m = 20, slot = (W - 2 * m) / 5;
+  const W = 520, H = 376, m = 20, slot = (W - 2 * m) / 5;
   const jag = (d) => [[1.2, .7], [.78, .665], [.56, .725], [.34, .675], [.14, .71], [-.2, .69]].map(([x, y]) => `${x},${y + d}`).join(' ');
   const col = (cx, l, part) => `<g class="${part}" clip-path="url(#tpl-${part})">
       <rect x="${cx - 25}" y="108" width="50" height="6" rx="1" fill="var(--l${l})"/>
@@ -1861,12 +1862,12 @@ function templeSVG(T) {
   const pillars = T.map((t, i) => {
     const cx = m + slot * (i + .5), l = t.livre, w = t.court.split(' '), half = Math.ceil(w.length / 2);
     return `<g class="pillar" data-i="${i}" data-cx="${cx}" tabindex="0" role="button" aria-pressed="true" aria-label="Retirer : ${esc(t.texte)}" style="--d:${i < 2 ? -1 : 1}">
-      <rect class="t-ring" x="${cx - slot / 2 + 4}" y="112" width="${slot - 8}" height="246" rx="10"/>
+      <rect class="t-ring" x="${cx - slot / 2 + 4}" y="112" width="${slot - 8}" height="260" rx="10"/>
       ${col(cx, l, 't-tronc')}${col(cx, l, 't-chute')}
       <g class="t-lbl" text-anchor="middle">
-        <text class="t-read" x="${cx}" y="314" font-size="19" fill="var(--l${l})">${LIVRES[l - 1].id}</text>
-        <text class="t-nm" x="${cx}" y="333">${esc(w.slice(0, half).join(' '))}</text>
-        <text class="t-nm" x="${cx}" y="347">${esc(w.slice(half).join(' '))}</text>
+        <text class="t-read" x="${cx}" y="328" font-size="19" fill="var(--l${l})">${LIVRES[l - 1].id}</text>
+        <text class="t-nm" x="${cx}" y="347">${esc(w.slice(0, half).join(' '))}</text>
+        <text class="t-nm" x="${cx}" y="361">${esc(w.slice(half).join(' '))}</text>
       </g>
     </g>`;
   }).join('');
@@ -1876,9 +1877,10 @@ function templeSVG(T) {
       <clipPath id="tpl-t-chute" clipPathUnits="objectBoundingBox"><polygon points="-.2,-.2 1.2,-.2 ${jag(.02)}"/></clipPath>
       <clipPath id="tpl-t-tronc" clipPathUnits="objectBoundingBox"><polygon points="-.2,1.2 1.2,1.2 ${jag(0)}"/></clipPath>
     </defs>
-    <rect x="12" y="264" width="${W - 24}" height="8" fill="var(--surface-3)" stroke="var(--rule-2)"/>
-    <rect x="6" y="272" width="${W - 12}" height="8" fill="var(--surface-2)" stroke="var(--rule-2)"/>
-    <rect x="1" y="280" width="${W - 2}" height="8" fill="var(--surface-2)" stroke="var(--rule)"/>
+    <rect x="12" y="264" width="${W - 24}" height="7" fill="var(--surface-3)" stroke="var(--rule-2)"/>
+    <rect x="6" y="271" width="${W - 12}" height="7" fill="var(--surface-2)" stroke="var(--rule-2)"/>
+    <rect x="1" y="278" width="${W - 2}" height="24" fill="var(--surface-2)" stroke="var(--rule-2)"/>
+    <text class="t-read" x="${W / 2}" y="295" text-anchor="middle" font-size="15" font-style="italic" fill="var(--accent-2)">Entreprise Agentique</text>
     ${pillars}
     <g class="beam" id="beam">
       <path d="M8 76L${W / 2} 16L${W - 8} 76Z" fill="var(--surface-3)" stroke="var(--rule-2)" stroke-linejoin="round"/>
@@ -1890,7 +1892,6 @@ function templeSVG(T) {
       <rect x="14" y="101" width="${W - 28}" height="7" fill="var(--surface-3)" stroke="var(--rule-2)"/>
       <path class="crack" id="crack" d="" stroke="var(--bad)" stroke-width="2.5" stroke-linejoin="round" fill="none"/>
     </g>
-    <text class="t-mono" x="${W / 2}" y="378" text-anchor="middle" font-size="10.5" fill="var(--muted)">un terme par Livre · correspondance de lecture</text>
   </svg>`;
 }
 function wireTemple(T) {
