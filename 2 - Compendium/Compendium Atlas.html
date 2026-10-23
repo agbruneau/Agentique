@@ -162,19 +162,20 @@ button.chip:hover,a.chip:hover{border-color:var(--accent)}
 .temple .t-read{font-family:var(--f-read)}
 .temple .t-mono{font-family:var(--f-mono)}
 .temple .pillar{cursor:pointer;outline:none}
-.temple .ring{fill:transparent;transition:fill .2s}
-.temple .pillar:hover .ring{fill:color-mix(in oklab,var(--ink) 5%,transparent)}
-.temple .pillar:focus-visible .ring{stroke:var(--accent);stroke-width:1.5}
-.temple .pillar:hover .shaft{filter:brightness(1.25)}
+.temple .t-ring{fill:transparent;transition:fill .2s}
+.temple .pillar:hover .t-ring{fill:color-mix(in oklab,var(--ink) 5%,transparent)}
+.temple .pillar:focus-visible .t-ring{stroke:var(--accent);stroke-width:1.5}
+.temple .pillar:hover .t-fut{filter:brightness(1.25)}
 /* restauration : la partie haute revient en place avec un léger rebond ; retrait : elle bascule vers l'extérieur et tombe */
-.temple .top{transform-box:fill-box;transform-origin:50% 70%;transition:transform .55s cubic-bezier(.2,.8,.3,1.15),opacity .3s}
-.temple .pillar.off .top{transform:translate(calc(var(--d) * 22px),58px) rotate(calc(var(--d) * 28deg));opacity:0;transition:transform .7s cubic-bezier(.55,0,1,.45),opacity .7s ease-in}
-.temple .stub,.temple .lbl{transition:opacity .4s}
-.temple .pillar.off .stub{opacity:.5}
-.temple .nm{fill:var(--ink-2);font-size:11px;font-weight:600}
-.temple .pillar:hover .nm{fill:var(--ink)}
-.temple .pillar.off .lbl{opacity:.55}
-.temple .pillar.off .nm{text-decoration:line-through;text-decoration-color:var(--bad)}
+.temple .t-chute{transform-box:fill-box;transform-origin:50% 70%;transition:transform .55s cubic-bezier(.2,.8,.3,1.15),opacity .3s}
+.temple .pillar.off .t-chute{transform:translate(calc(var(--d) * 22px),58px) rotate(calc(var(--d) * 28deg));opacity:0;transition:transform .7s cubic-bezier(.55,0,1,.45),opacity .7s ease-in}
+.temple .t-tronc,.temple .t-lbl{transition:opacity .4s}
+.temple .pillar.off .t-tronc{opacity:.5}
+.temple .t-nm{fill:var(--ink-2);font-size:11px;font-weight:600}
+@media (max-width:560px){.temple .t-nm{font-size:13px}}
+.temple .pillar:hover .t-nm{fill:var(--ink)}
+.temple .pillar.off .t-lbl{opacity:.55}
+.temple .pillar.off .t-nm{text-decoration:line-through;text-decoration-color:var(--bad)}
 .temple .beam{transition:transform .7s cubic-bezier(.3,1.3,.4,1);transform-origin:50% 50%;transform-box:fill-box}
 .temple .crack{opacity:0;transition:opacity .3s}
 .temple.broken .crack{opacity:1}
@@ -1852,7 +1853,7 @@ function templeSVG(T) {
   const col = (cx, l, part) => `<g class="${part}" clip-path="url(#tpl-${part})">
       <rect x="${cx - 25}" y="108" width="50" height="6" rx="1" fill="var(--l${l})"/>
       <path d="M${cx - 24} 114H${cx + 24}Q${cx + 23} 120 ${cx + 17} 122H${cx - 17}Q${cx - 23} 120 ${cx - 24} 114Z" fill="var(--l${l})"/>
-      <path class="shaft" d="M${cx - 17} 122H${cx + 17}Q${cx + 21.5} 186 ${cx + 20} 252H${cx - 20}Q${cx - 21.5} 186 ${cx - 17} 122Z" fill="url(#tpl-g${l})" stroke="var(--l${l})"/>
+      <path class="t-fut" d="M${cx - 17} 122H${cx + 17}Q${cx + 21.5} 186 ${cx + 20} 252H${cx - 20}Q${cx - 21.5} 186 ${cx - 17} 122Z" fill="url(#tpl-g${l})" stroke="var(--l${l})"/>
       ${[-1.5, -.5, .5, 1.5].map(k => `<path d="M${cx + k * 7} 125L${cx + k * 8.2} 249" stroke="color-mix(in oklab,var(--l${l}) 60%,var(--paper))" stroke-width="1.3"/>`).join('')}
       <rect x="${cx - 23}" y="252" width="46" height="6" rx="3" fill="var(--l${l})"/>
       <rect x="${cx - 25}" y="258" width="50" height="6" rx="1" fill="color-mix(in oklab,var(--l${l}) 75%,var(--paper))"/>
@@ -1860,20 +1861,20 @@ function templeSVG(T) {
   const pillars = T.map((t, i) => {
     const cx = m + slot * (i + .5), l = t.livre, w = t.court.split(' '), half = Math.ceil(w.length / 2);
     return `<g class="pillar" data-i="${i}" data-cx="${cx}" tabindex="0" role="button" aria-pressed="true" aria-label="Retirer : ${esc(t.texte)}" style="--d:${i < 2 ? -1 : 1}">
-      <rect class="ring" x="${cx - slot / 2 + 4}" y="112" width="${slot - 8}" height="246" rx="10"/>
-      ${col(cx, l, 'stub')}${col(cx, l, 'top')}
-      <g class="lbl" text-anchor="middle">
+      <rect class="t-ring" x="${cx - slot / 2 + 4}" y="112" width="${slot - 8}" height="246" rx="10"/>
+      ${col(cx, l, 't-tronc')}${col(cx, l, 't-chute')}
+      <g class="t-lbl" text-anchor="middle">
         <text class="t-read" x="${cx}" y="314" font-size="19" fill="var(--l${l})">${LIVRES[l - 1].id}</text>
-        <text class="nm" x="${cx}" y="333">${esc(w.slice(0, half).join(' '))}</text>
-        <text class="nm" x="${cx}" y="347">${esc(w.slice(half).join(' '))}</text>
+        <text class="t-nm" x="${cx}" y="333">${esc(w.slice(0, half).join(' '))}</text>
+        <text class="t-nm" x="${cx}" y="347">${esc(w.slice(half).join(' '))}</text>
       </g>
     </g>`;
   }).join('');
   return `<svg class="temple" id="temple" viewBox="0 0 ${W} ${H}" role="group" aria-label="Les cinq termes de la thèse">
     <defs>
       ${T.map(t => `<linearGradient id="tpl-g${t.livre}"><stop offset="0" style="stop-color:color-mix(in oklab,var(--l${t.livre}) 16%,var(--surface))"/><stop offset=".38" style="stop-color:color-mix(in oklab,var(--l${t.livre}) 42%,var(--surface))"/><stop offset="1" style="stop-color:color-mix(in oklab,var(--l${t.livre}) 10%,var(--surface))"/></linearGradient>`).join('')}
-      <clipPath id="tpl-top" clipPathUnits="objectBoundingBox"><polygon points="-.2,-.2 1.2,-.2 ${jag(.02)}"/></clipPath>
-      <clipPath id="tpl-stub" clipPathUnits="objectBoundingBox"><polygon points="-.2,1.2 1.2,1.2 ${jag(0)}"/></clipPath>
+      <clipPath id="tpl-t-chute" clipPathUnits="objectBoundingBox"><polygon points="-.2,-.2 1.2,-.2 ${jag(.02)}"/></clipPath>
+      <clipPath id="tpl-t-tronc" clipPathUnits="objectBoundingBox"><polygon points="-.2,1.2 1.2,1.2 ${jag(0)}"/></clipPath>
     </defs>
     <rect x="12" y="264" width="${W - 24}" height="8" fill="var(--surface-3)" stroke="var(--rule-2)"/>
     <rect x="6" y="272" width="${W - 12}" height="8" fill="var(--surface-2)" stroke="var(--rule-2)"/>
