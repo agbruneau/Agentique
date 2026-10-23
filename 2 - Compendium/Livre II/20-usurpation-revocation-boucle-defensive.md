@@ -10,7 +10,7 @@ deux mouvements, issu de la fusion v0.20 des anciens ch. 21 et 22.*
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source juin 2026 (Vol. I) et 21 juillet 2026 (Vol. III) ; le plus exposé du Livre à la péremption produit |
 | **Socle mobilisé** | aucun énoncé re-résolu au socle : Vol. III, ch. 13-15, Vol. I, §7.5.1 à §7.5.4, en [C] ; onze entrées en [C], dont F-56 rétrogradée à la refonte ; F-26 à vote incomplet |
 | **Garde-fous balayés** | Vol. III — R-02 : sept marqueurs ; R-01, R-03 à R-14 : zéro marqueur · Vol. II — R-1 à R-8 : zéro marqueur |
-| **Volumétrie cible** | Réel : 10 021 mots de corps pour une cible ≈ 6 200 mots (+61,6 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 10 026 mots de corps pour une cible ≈ 6 200 mots (+61,7 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 20, premier mouvement)* — la vérification à l'admission ne protège pas contre la dérive après admission (rug-pull d'un serveur d'outils ou d'un agent tiers) ; et chaque mécanisme spécifie l'émission avec soin et la révocation avec négligence — asymétrie qui reproduit l'histoire des PKI.
 
@@ -696,7 +696,7 @@ leur **état**, et l'état est ici la matière du chapitre :* **un centre d'opé
 consomme ces référentiels consomme une cible mouvante.**
 
 **Le corpus MITRE ATLAS est versionné, et deux de ses dates ne se citent jamais l'une pour
-l'autre.** La collection courante est la **2026.06**, au format 6.0.0 ; la date de modification
+l'autre.** La collection courante est la **2026.06** (☑ *v2026.09 au 23 octobre 2026*), au format 6.0.0 ; la date de modification
 déclarée dans le fichier est le **27 mai 2026**, et la publication correspondante a été mise en ligne
 le **30 juin 2026** (F-56). ⚠ **Le niveau de cette entrée a été TRANCHÉ depuis, et contre elle** : la
 pièce l'avait remonté comme contesté — l'entrée agrège une composante relevée en **[C]** quand la règle

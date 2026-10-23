@@ -11,7 +11,7 @@ ch. 31 a posés une fois**.*
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gel de source juin 2026 (Vol. I, ch. 5) ; une quarantaine d'annonces produit datées, à re-vérifier au moment de citer |
 | **Socle mobilisé** | aucune entrée ne couvre les §5.7 à §5.11 du Vol. I, qui entrent en [C] ; S-157 touche la matière, non élevable |
 | **Garde-fous balayés** | Vol. II — R-5 : deux occurrences du sigle ; R-1 à R-4, R-6 à R-8 : zéro occurrence · Vol. III — R-09 : zéro occurrence du sigle ; R-14 : une occurrence du sigle ; R-13 : quatre occurrences du sigle ; R-02 : une occurrence du sigle ; R-01, R-03 à R-08, R-10 à R-12 : zéro occurrence |
-| **Volumétrie cible** | Réel : 9 946 mots de corps pour une cible ≈ 9 500 mots (+4,7 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 9 953 mots de corps pour une cible ≈ 9 500 mots (+4,8 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 34)* — l'agentique se décline différemment selon le sous-domaine — bancaire, IARD, assurance de personne, gestion de patrimoine, services TI financiers — chacun avec sa maturité et ses points de durcissement propres.
 
@@ -784,7 +784,7 @@ nommées par la source ; aucune n'est recommandée** (PRD Vol. II §8.4).
 
 ⚠ **La transposition financière la plus aboutie est l'archétype du « système d'exploitation d'agents »
 bancaire** : *un lancement rapporté au **14 mai 2026**, avec disponibilité générale annoncée pour **août
-2026*** — ⚠ ***rapporté par l'analyse tierce de Klover.ai (2025-2026), à recouper avec les
+2026*** (☑ *échue, non constatée au 23 octobre 2026*) — ⚠ ***rapporté par l'analyse tierce de Klover.ai (2025-2026), à recouper avec les
 communiqués primaires de l'éditeur***.
 
 Lecture de l'auteur — **la passerelle devient le lieu où s'instancient des contrôles autrement

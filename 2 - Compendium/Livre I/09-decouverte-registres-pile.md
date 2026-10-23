@@ -9,7 +9,7 @@ Second mouvement — la couche protocolaire agentique (ch. 7-11).*
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gel de source juin 2026 (Vol. I) ; la matrice de maturité du § 9.2.5 se périme en bloc |
 | **Socle mobilisé** | aucune entrée, faute de couverture ; résout contre le Vol. I, §3.4, §3.5, §3.7-3.8 et §3.12, en [C] |
 | **Garde-fous balayés** | Vol. II — R-1 : une occurrence ; R-8 : une occurrence ; R-2 à R-7 : zéro occurrence · Vol. III — R-02 : deux occurrences ; R-13 : une occurrence ; R-14 : quatre occurrences ; R-01, R-03 à R-12 : zéro occurrence |
-| **Volumétrie cible** | Réel : 6 185 mots de corps pour une cible ≈ 9 000 mots (−31,3 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 6 189 mots de corps pour une cible ≈ 9 000 mots (−31,2 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.23, entrée du chapitre 9 — **forme inchangée au TOC v0.30**, re-collationnée mot à mot le 28 juillet 2026 ; décisions 14 et 17)* — la découverte et le nommage des agents, et la portabilité inter-modèles/inter-cadriciels, sont les propriétés que l'étagement de la pile protocolaire rend possibles — ou trahit.
 
@@ -355,7 +355,7 @@ se déplace.
 > état** : c'est le format que les passerelles émulent. La **Responses API** du même éditeur unifie
 > derrière une interface unique des **primitives agentiques et un état serveur** ; elle **remplace
 > l'Assistants API**, dont OpenAI a annoncé la dépréciation le **26 août 2025** et fixé le retrait
-> au **26 août 2026** — ⚠ *soit moins d'un mois après la date d'arrêt de cet ouvrage.* ⚠ **Cette
+> au **26 août 2026** (☑ *survenu à cette date*) — ⚠ *soit moins d'un mois après la date d'arrêt de cet ouvrage.* ⚠ **Cette
 > échéance n'est PAS au tableau 50.1, et l'écart se déclare plutôt qu'il ne se comble** : le tableau
 > porte **onze** événements, cardinal contrôlé et cité à trois endroits de la somme, et *y ajouter une
 > rangée depuis une pièce du Livre I serait le geste qu'un rédacteur ne fait jamais — il remonte.*

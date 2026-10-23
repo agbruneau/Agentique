@@ -11,7 +11,7 @@ troisième capacité — **mesurer un parc**.*
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source 21 juillet 2026 (Vol. III) et juin 2026 (Vol. I) ; S-142 changée, entrées réglementaires non établies |
 | **Socle mobilisé** | non réancrée : Vol. III, ch. 26, Vol. I, §2.11.1 et §4.9.3-4.9.5, en [C] ; F-92 et F-96, qui porteraient seules la thèse, exclues du socle pour dette de vote |
 | **Garde-fous balayés** | Vol. III — R-09 : deux occurrences ; R-01 : une occurrence ; R-03 : une occurrence ; R-06 : une occurrence ; R-07 : une occurrence ; R-13 : une occurrence ; R-14 : une occurrence ; R-02 : zéro occurrence de l'identifiant ; R-04, R-05, R-08, R-10 à R-12 : zéro occurrence · Vol. II — R-7 : une occurrence ; R-1 à R-6, R-8 : zéro occurrence |
-| **Volumétrie cible** | Réel : 6 105 mots de corps pour une cible ≈ 6 500 mots (−6,1 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 6 112 mots de corps pour une cible ≈ 6 500 mots (−6,0 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) **v0.28**, entrée du chapitre 40 — **thèse réalignée en v0.28**, décisions 8 et 14, remontée R-IV-48, TRIPLE)* — la discipline naissante n'a pas d'indicateur de référence **dans le corpus que le Vol. III a ouvert** ; les métriques **relevées** y sont **au grain de l'opération et auto-déclarées**, ⚠ **trois sources ne faisant pas un marché et aucun balayage de marché n'ayant été conduit** ; grille minimale dérivée de **ce que les cadres des Livres III-IV attendent ou imposent** — ⚠ **et les deux régimes ne se confondent pas : un seul des quatre instruments impose, deux attendent à échéance du 1ᵉʳ mai 2027, le quatrième déclare ne créer aucune exigence** (R-06 du Vol. III) —, présentée comme **construction d'auteur en totalité** ; le modèle de coût agentique est une contrainte d'ingénierie de premier ordre.
 
@@ -426,7 +426,7 @@ indiscernable d'une dérive d'agent par les instruments du § 40.1.*
 **Le coût d'un parc d'agents échappe aux outils classiques parce que la consommation de jetons est
 volatile, dupliquée et difficilement imputable.** Le cadre de référence relevé par le Vol. I est le
 travail de la **FinOps Foundation**, dont **la spécification ouverte de format de coûts a été ratifiée
-en version 1.4 le 4 juin 2026, l'économie des jetons étant cadrée pour la version suivante** ⚠ **—
+en version 1.4 le 4 juin 2026, l'économie des jetons étant cadrée pour la version suivante** (☑ *1.5, visée vers la fin de 2026*) ⚠ **—
 ressource vivante, statut et version à re-dater au gel** (R-09 du Vol. III). ⚠ **L'auteur de
 l'instrument se nomme même quand sa dénomination se périme** (décision 15 du TOC, alinéas a et b).
 

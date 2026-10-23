@@ -10,7 +10,7 @@ frontière de l'organisation, là où l'émission cesse d'être un acte interne.
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source juin 2026 (Vol. I) et 21 juillet 2026 (Vol. III) ; le plus dense du mouvement en objets périssables |
 | **Socle mobilisé** | non réancrée sur la série consolidée : Vol. III, ch. 11, dix-neuf entrées propres et H-19 en [C] ; Vol. I, §5.5.4, §3.6.5 et §7.4.3, en [C] ; F-56 rétrogradée en [C] à la refonte |
 | **Garde-fous balayés** | Vol. III — R-02 : trois marqueurs ; R-14 : un marqueur ; R-01, R-03 à R-13 : zéro marqueur · Vol. II — R-1 à R-8 : zéro marqueur |
-| **Volumétrie cible** | Réel : 4 627 mots de corps pour une cible ≈ 3 800 mots (+21,8 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 4 645 mots de corps pour une cible ≈ 3 800 mots (+22,2 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.28, entrée du chapitre 18)* — le KYA transpose la logique du KYC — vérifier avant d'admettre — sans l'infrastructure institutionnelle qui rend le KYC possible ; la *trust fabric* inter-entreprises reste privée et fragmentée, et c'est elle qui décide si l'entreprise agentique s'arrête à ses murs.
 
@@ -76,8 +76,8 @@ ici, *n'est pas un progrès vers la norme, c'est une multiplication des candidat
 | **W3C** | Groupe communautaire « AI Agent Protocol » — *même statut* | hébergé depuis le **8 mai 2025** ; charte déclarant un modèle d'identité pour les agents d'IA ; **254 participants non-présidents** affichés ; **aucun document produit n'a été ouvert** | F-83 **[B]** |
 | **OpenID Foundation** | Groupe communautaire « Artificial Intelligence Identity Management » (AIIM) | sa charte place **hors de son périmètre** le développement de protocoles de normalisation mondiaux liés à l'identité des agents, **et renvoie ce travail à un groupe de travail** | **F-48 [A, degré 2]** |
 | **Decentralized Identity Foundation** | Spécification communautaire « KYA-OS » | **non ratifiée au 22 juin 2026** : version 1 encore soumise à la relecture du groupe de travail et à l'approbation du comité de pilotage | F-50 **[B, degré 2]** |
-| **IETF** | `draft-sharif-openid-agent-identity` (soumission individuelle) | déposé le **26 mars 2026** en `-00` ; ☑ **revalidé le 2 septembre 2026** : **`-01` déposé le 26 août 2026**, expirant le **27 février 2027** — *l'échéance de septembre est sans objet* ; **toujours non adopté** par un groupe de travail | F-50 |
-| **IETF** | `draft-drake-agent-identity-registry-03` (soumission individuelle) | déposé le **23 mai 2026**, expirant le **24 novembre 2026** ; **non adopté** par un groupe de travail | F-50 |
+| **IETF** | `draft-sharif-openid-agent-identity` (soumission individuelle) | déposé le **26 mars 2026** en `-00` ; ☑ **revalidé le 2 septembre 2026** : **`-01` déposé le 26 août 2026**, expirant le **27 février 2027** — *l'échéance de septembre est sans objet* ; **toujours non adopté** par un groupe de travail ; ☑ *`-02` du 21 octobre 2026, exp. 24 avril 2027* | F-50 |
+| **IETF** | `draft-drake-agent-identity-registry-03` (soumission individuelle) | déposé le **23 mai 2026**, expirant le **24 novembre 2026** ; **non adopté** par un groupe de travail ; ☑ *`-04` du 25 septembre 2026, exp. 29 mars 2027* | F-50 |
 | **NIST — NCCoE** | Document de concept sur l'identité et l'autorisation des agents logiciels et d'IA | publié le **5 février 2026**, à l'état de **projet public initial** | F-73 **[B]** |
 | **NIST — CAISI** | *AI Agent Standards Initiative* | annoncée le **17 février 2026** ; troisième axe portant sur la sécurité et l'identité ; **volet identité à l'état de projet de document de concept** | F-56 **[C]** |
 | **Akamai** | Cadre « Know Your Agent » | **annoncé le 15 juin 2026** au sein d'un cadre de sécurité agentique | F-49 **[B, degré 3]** |
@@ -160,12 +160,12 @@ constats ne sont versés à aucune entrée et ne portent aucune affirmation cent
 remonté.* ⚠ **Le relevé n'établit pas non plus qu'aucune désignation ne soit intervenue hors des
 sources ouvertes** — degré 3.
 
-![**Figure 18.1** — Neuf chantiers, six organisations, zéro texte ratifié.](../figures/f-18-01-neuf-chantiers.svg)
-
 ☑ *Hors de ces pages, un texte est apparu depuis : le 15 septembre 2026, le groupe d'identité de
 charge de travail de l'IETF a adopté `draft-ietf-wimse-aims-00`, sur l'authentification et
 l'autorisation des agents d'IA, non publié en RFC — constat du 23 octobre 2026
 ([rapport](../PRD/revalidation-2026-10-23.md)). Les neuf lignes du tableau 18.1 ne bougent pas.*
+
+![**Figure 18.1** — Neuf chantiers, six organisations, zéro texte ratifié.](../figures/f-18-01-neuf-chantiers.svg)
 
 ## § 18.2 — Admettre un agent tiers : ce que les protocoles remettent à celui qui décide
 

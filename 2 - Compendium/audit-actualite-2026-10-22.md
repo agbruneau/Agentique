@@ -9,7 +9,7 @@
 | **Pagination** | « f. » = folio imprimé ; « PDF » = page du fichier ; PDF = f. + 14 (vérifié sur le rendu). |
 | **Méthode** | Texte extrait par `pdftotext` ; 2 076 phrases datées ou prospectives repérées, 1 318 retenues après retrait des dates de procédure interne, toutes lues ; index de départ : les 484 repères de `window.ATLAS`. Faits confrontés en ligne le 22 octobre 2026 (sources à la fin). |
 | **Régimes de preuve** | **Vérifié** : source primaire consultée. **Vérifié (secondaires)** : au moins deux sources secondaires concordantes, source primaire inaccessible ou non trouvée. **Supposé** : déduit ou non vérifié ; ce qui trancherait la question est nommé. |
-| **Suite** | ☑ **H-01 à H-08 appliqués le 23 octobre 2026** : [rapport de revalidation](PRD/revalidation-2026-10-23.md), entrée datée du [`JOURNAL.md`](JOURNAL.md). Les constats moyens et bas restent ouverts. |
+| **Suite** | ☑ **Les quarante et un constats sont traités le 23 octobre 2026** : H-01 à H-08 dans la première partie du [rapport de revalidation](PRD/revalidation-2026-10-23.md), M-01 à B-22 dans sa seconde partie (§ 6), qui dit ceux qui n'appelaient aucune correction ; entrées datées du [`JOURNAL.md`](JOURNAL.md). |
 | **Urgence** | **Haute** : l'énoncé est faux ou trompeur au 22 octobre 2026. **Moyenne** : version ou statut supplanté, ou échéance d'ici le 31 décembre 2026 qui imposera une reprise. **Basse** : temps grammatical, compte à rebours daté, version mineure, veille. |
 
 ---

@@ -2640,3 +2640,40 @@ une figure.
 `assemble-bibliographie.py --verifier`, `decompte.sh --verifier` et `--registre`, `reporter-volumetrie.py
 --verifier` passent ; `build-pdf.sh` rend 1 000 pages ; les scripts des deux pages dérivées passent
 `node --check`.
+
+# Passe du 23 octobre 2026, seconde partie — constats moyens et bas, date d'édition
+
+*Sur une seconde instruction de l'auteur du même jour : « corriger tous les constats, mettre à jour la
+date de publication à novembre 2026 et finaliser le travail ». Elle est rapportée au
+[§ 6 du rapport de revalidation](PRD/revalidation-2026-10-23.md), qui donne le traitement de chacun des
+trente-trois constats, y compris ceux qui n'appelaient aucune correction.*
+
+**Socle.** `S-022`, `S-027`, `S-030`, `S-075`, `S-091`, `S-102`, `S-116` et `S-126` amendés dans leur
+colonne de re-datation. Les abrégés de l'annexe des références sont réalignés (`S-020`, `S-027`,
+`S-030`, `S-075`, `S-102`).
+
+**Chapitres.**
+- Quarante-deux reprises ☑ datées, sur vingt-quatre pièces.
+- Les cinq « à ce jour » deviennent « au gel ».
+- La figure 50.4 est régénérée (« quatorze événements ») ; aucune autre figure ne bouge.
+- Au ch. 50 § 50.4, une note insérée au milieu d'une phrase est reportée en fin de phrase.
+
+**Date d'édition.**
+- La couverture porte « Novembre 2026 ».
+- Le pied de l'Atlas porte « édition de novembre 2026, rendu Typst du 23 octobre 2026 ». Il était
+  resté au 15 septembre.
+- L'Explorateur, le `README.md` et le `LISEZMOI.md` portent la même date.
+- ⚠ Le statut du volume est inchangé (« brouillon de rédaction non publiable », D-18), et le seuil des
+  trente jours ne couvre qu'une publication antérieure au 22 novembre 2026.
+
+**Volumétrie.** Re-mesurée et propagée : **334 457 mots** de corps.
+
+**Rendus.**
+- Vingt-quatre `.html` régénérés.
+- `Compendium.pdf` recomposé à 1 000 pages, débuts de chapitre et début de l'Annexe I inchangés. Les
+  notes ajoutées dans les cellules du tableau 50.1 ont été retirées : elles faisaient glisser la
+  figure 50.4. Le § 50.3 porte ce qu'elles disaient.
+
+**Pages dérivées.**
+- **Atlas** : 32 modifications, dont six pages déplacées (ch. 1, ch. 37).
+- **Explorateur** : douze lignes, plus le badge de date ; ses deux copies restent identiques.

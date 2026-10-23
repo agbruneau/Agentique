@@ -9,7 +9,7 @@ Premier mouvement — les fondements (ch. 1-6).*
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gel de source juin 2026 (Vol. I) ; trois faits datés à re-vérifier, dont OAuth 2.1 encore en projet |
 | **Socle mobilisé** | aucune entrée, ré-adossement dû ; résout contre le Vol. I, §1.9-1.10, en [C] — réserve renforcée sur la matière cryptographique |
 | **Garde-fous balayés** | Vol. II — R-1 à R-8 : zéro occurrence · Vol. III — R-02 : quatre occurrences ; R-11 : une occurrence ; R-14 : deux occurrences ; R-13 : le marqueur figure une fois ; R-01, R-03 à R-10, R-12 : zéro occurrence |
-| **Volumétrie cible** | Réel : 5 734 mots de corps pour une cible ≈ 9 000 mots (−36,3 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 5 766 mots de corps pour une cible ≈ 9 000 mots (−35,9 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.23, entrée du chapitre 3)* — le passage du périmètre réseau à la confiance par échange, et l'identité fédérée à autorisation déléguée, sont l'héritage IAM que la fabrique de confiance agentique (Livre II) étire jusqu'à rupture.
 
@@ -330,7 +330,7 @@ l'identité à l'échelle de plusieurs juridictions.
 
 Le cadre réglementaire européen **eIDAS 2.0** ancre cette logique dans le droit et organise le
 déploiement d'un portefeuille d'identité numérique, dont la généralisation est **attendue à compter
-de 2026** — échéance à re-vérifier, et non à citer comme acquise.
+de 2026** — échéance à re-vérifier, et non à citer comme acquise. ☑ *Re-vérifiée le 23 octobre 2026 (sources secondaires) : chaque État membre doit fournir au moins un portefeuille au plus tard le 24 décembre 2026 — une obligation de mise à disposition, non une généralisation.*
 
 ⚠ **Qualification, au sens de R-02 du Vol. III.** Une attestation vérifiable démontre qu'un émetteur
 identifié a signé un ensemble de revendications à une date donnée, et que le porteur peut en prouver

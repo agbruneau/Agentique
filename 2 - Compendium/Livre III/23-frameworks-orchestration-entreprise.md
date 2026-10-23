@@ -10,7 +10,7 @@ mouvement : il éprouve sur l'offre réelle le vocabulaire que le ch. 22 a posé
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source 16-17 juillet 2026 (Vol. II) et juin 2026 (Vol. I) ; Temporal et CrewAI hors socle, statuts à la date du Vol. II |
 | **Socle mobilisé** | Vol. II, ch. 7 : S-012 et S-013 en [A-i], S-030, S-031 et S-039 en [B] ; Temporal et CrewAI sans identifiant consolidé ; Vol. I, §2.8.4, en [C] |
 | **Garde-fous balayés** | Vol. II — R-1 : zéro occurrence ; R-8 : zéro occurrence ; R-2 à R-7 : zéro occurrence · Vol. III — R-09 : zéro occurrence du sigle ; R-14 : une occurrence du sigle ; R-02 : une occurrence du sigle ; R-13 : une occurrence du sigle ; R-01, R-03 à R-08, R-10 à R-12 : zéro occurrence |
-| **Volumétrie cible** | Réel : 5 059 mots de corps pour une cible ≈ 5 000 mots (+1,2 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 5 064 mots de corps pour une cible ≈ 5 000 mots (+1,3 %), mesure `decompte.sh` |
 
 > **Thèse** *(copiée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 23 — forme inchangée depuis la v0.25)* — l'offre s'est industrialisée en 2025-2026 (Agent Framework, LangGraph, orchestration événementielle Kafka/Confluent) avec un support MCP **répandu et inégalement établi** et un support A2A de périmètre inégal.
 
@@ -143,7 +143,7 @@ fait central**.
 ## § 23.2 — LangGraph Platform : la GA la plus ancienne, la frontière plateforme/bibliothèque
 
 Le deuxième jalon précède le premier de moins de onze mois : la disponibilité générale de
-**LangGraph Platform** est annoncée le **14 mai 2025**, pour le déploiement et la gestion d'agents à
+**LangGraph Platform** (☑ *LangSmith Deployment depuis octobre 2025*) est annoncée le **14 mai 2025**, pour le déploiement et la gestion d'agents à
 état et de longue durée (*stateful, long-running agents*) — Vol. II F-32, **[B]**, annonce primaire
 extraite avec citations verbatim. Le billet nomme des entreprises construisant des agents avec la
 **bibliothèque**, et **une** entreprise cliente pour la gestion centralisée, c'est-à-dire pour la

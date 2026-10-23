@@ -11,7 +11,7 @@ versant réglementaire.*
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gel de source juin 2026 (Vol. I, ch. 4) ; aucun fait du chapitre repris à la source primaire |
 | **Socle mobilisé** | aucune entrée : toute la matière vient du Vol. I, ch. 4, et entre en [C] ; aucun énoncé ne peut devenir central sans élévation en [B] |
 | **Garde-fous balayés** | Vol. II — R-8 : une occurrence du sigle ; R-1 à R-7 : zéro occurrence · Vol. III — R-14 : une occurrence du sigle ; R-09 : zéro occurrence du sigle ; R-13 : cinq occurrences du sigle ; R-02 : deux occurrences du sigle ; R-01, R-03 à R-08, R-10 à R-12 : zéro occurrence |
-| **Volumétrie cible** | Réel : 13 073 mots de corps pour une cible ≈ 9 500 mots (+37,6 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 13 080 mots de corps pour une cible ≈ 9 500 mots (+37,7 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée par copie depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 24 — décision 17)* — de la dette d'intégration à la prolifération d'agents, l'entreprise doit intégrer les agents à son tissu existant, gouverner le parc à l'échelle et instruire sa maturité — sans dupliquer l'IAM et l'observabilité en place.
 
@@ -993,7 +993,7 @@ droit autant que de l'architecture — et le corpus les transmet plutôt qu'il n
 régime ? ⚠ **Le vide est réel et daté, et les deux instruments sont nommés** : la
 proposition de directive européenne sur la responsabilité en matière d'IA a été **retirée le 6 octobre
 2025**, laissant le rabattement sur la **directive (UE) 2024/2853** — la directive révisée sur la
-responsabilité du fait des produits —, **à transposer d'ici le 9 décembre 2026**. Comment
+responsabilité du fait des produits —, **à transposer d'ici le 9 décembre 2026** (☑ *application après le 8 décembre, par rectificatif*). Comment
 **assurer** un risque dont la causalité se distribue sur plusieurs agents autonomes de firmes
 différentes ? Comment trancher une **responsabilité transfrontalière** quand l'agent demandeur, l'agent
 répondeur et le rail de règlement relèvent de **trois juridictions** ?

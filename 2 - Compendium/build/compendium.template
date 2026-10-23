@@ -530,6 +530,11 @@
   })
   v(1.5cm)
   text(font: SANS, size: 13pt, fill: ENCRE)[André-Guy Bruneau, M.Sc. IT]
+  // ⚠ Date d'édition posée le 23 octobre 2026, sur instruction d'auteur : « novembre 2026 ».
+  // Elle date l'édition, non le gel (27 juillet 2026) ni la revalidation (23 octobre 2026), que
+  // le corps porte ; le `v(1fr)` du colophon absorbe la ligne, la pagination ne bouge pas.
+  v(6pt)
+  text(font: SANS, size: 11pt, fill: GRIS)[Novembre 2026]
 })
 
 // -- colophon, au pied de la page de titre --

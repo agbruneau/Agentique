@@ -9,7 +9,7 @@ Premier mouvement — les fondements (ch. 1-6).*
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gel de source juin 2026 (Vol. I) ; trois spécifications citées étaient en cours au gel de la source |
 | **Socle mobilisé** | aucune entrée : le socle consolidé ne couvre pas ce périmètre ; résout contre le Vol. I, §1.7-1.8, hors socle, en [C] |
 | **Garde-fous balayés** | Vol. II — R-1 à R-8 : zéro occurrence · Vol. III — R-01, R-03 à R-13 : zéro occurrence ; R-02 : le marqueur figure une fois ; R-14 : trois occurrences |
-| **Volumétrie cible** | Réel : 5 557 mots de corps pour une cible ≈ 8 000 mots (−30,5 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 5 566 mots de corps pour une cible ≈ 8 000 mots (−30,4 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.23, entrée du chapitre 2 ; forme **inchangée en v0.30**, re-collationnée mot à mot **par copie** le 28 juillet 2026 — décisions 14 et 17)* — l'interopérabilité sémantique — accord sur le sens, pas seulement sur le format — est le niveau que les protocoles agentiques présupposent et que peu savent établir.
 
@@ -379,8 +379,7 @@ plus pernicieux de la section : une requête fédérée mal alignée ne lève pa
 un résultat vide ou partiel qui a toutes les apparences d'un résultat. Le préalable renvoie aux
 mécanismes d'alignement du § 2.3.4.
 
-⚠ **Une révision du langage était en cours au gel de la source** (juin 2026), alignée sur une
-révision du modèle RDF et sur son extension permettant d'interroger les assertions portant sur des
+⚠ **Une révision du langage était en cours au gel de la source** (juin 2026), alignée sur une révision du modèle RDF (☑ *candidate à la Recommandation depuis le 7 avril 2026*) et sur son extension permettant d'interroger les assertions portant sur des
 assertions. Ces travaux **ne sont pas cités comme acquis** : leur ancre de version se fixe au moment
 de citer, et cette réserve est reconduite ici sans être levée.
 

@@ -11,7 +11,7 @@ et 56 (décision 11 du TOC).*
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source juin 2026 (Vol. I), 16-17 juillet 2026 (Vol. II), 21 juillet 2026 (Vol. III) ; aucune échéance du § 49.1 reprise |
 | **Socle mobilisé** | premier mouvement : S-143 à S-149 et S-159, toutes en [C] ; second : Vol. II, ch. 21, Vol. III, sous G-4 ; F-92 et F-96 exclues du socle |
 | **Garde-fous balayés** | Vol. III — R-14 : dix-neuf occurrences au corps ; R-11 : vingt-deux occurrences ; R-02 : deux occurrences de l'identifiant ; R-13 : deux occurrences du terme régi ; R-01, R-03 à R-10, R-12 : zéro occurrence · Vol. II — R-4 : deux occurrences ; R-5 : trois occurrences ; R-6 : une occurrence ; R-8 : une occurrence de l'identifiant ; R-1 à R-3, R-7 : zéro occurrence |
-| **Volumétrie cible** | Réel : 14 525 mots de corps pour une cible ≈ 15 800 mots (−8,1 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 14 565 mots de corps pour une cible ≈ 15 800 mots (−7,8 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md), entrée du chapitre 49, premier mouvement — **collationnée verbatim contre la v0.30 le 28 juillet 2026**)* — une grappe d'échéances datées (PROGRAMMÉ) structure l'horizon ; au-delà, la trajectoire des protocoles, de la gouvernance par couche, de l'identité vérifiable/PQC, de la menace et de la recherche se lit en PROJETÉ, jamais en SPÉCULATIF déguisé en certitude.
 
@@ -207,8 +207,7 @@ ce qui tombe quand cela arrive.* Les deux ne se confondent pas, et le second n'e
 donc plus de savoir *quelles fonctionnalités* viendront, mais *comment ces standards évolueront* —
 par quels mécanismes de gouvernance, à quelle cadence, sous quelle forme de cohabitation. Le Vol. I
 signale une **rupture de méthode** survenue après juin 2026 : là où les protocoles annonçaient des
-échéances de livraison, ils publient désormais des **programmes de priorité sans engagement
-temporel**.
+échéances de livraison, ils publient désormais des **programmes de priorité sans engagement temporel**. ☑ *La feuille de route MCP du 22 août 2026 en est un cas : cinq priorités, dont l'identité d'agent, et aucune date.*
 
 ⚠ **La conséquence de lecture est nette : il faut lire des agendas de gouvernance, non des feuilles
 de route produit.** La feuille de route d'un protocole agent-outil abandonne la cadence par jalons
@@ -735,8 +734,7 @@ au SPÉCULATIF.
 européenne sur la responsabilité en matière d'intelligence artificielle**, confirmé au programme de
 travail de la Commission pour 2025. Le contentieux se rabat donc sur la **directive révisée du fait
 des produits défectueux**, qui inclut explicitement le logiciel et les systèmes d'IA dans la notion
-de produit, dont la **transposition est due au 9 décembre 2026 — date à re-vérifier** — et qui ne
-s'applique qu'aux produits mis sur le marché après ce terme. ⚠ **Subsistent des angles morts
+de produit, dont la **transposition est due au 9 décembre 2026 — date à re-vérifier** — et qui ne s'applique qu'aux produits mis sur le marché après ce terme (☑ *après le 8 décembre 2026, par rectificatif du 7 mai 2026*). ⚠ **Subsistent des angles morts
 structurels, et ils sont exactement ceux de la somme** : *le régime couvre mal les relations entre
 entreprises et exclut largement les pertes purement économiques* — **deux configurations centrales
 pour des chaînes de délégation inter-organisationnelles.** *La question ouverte est nette : la
@@ -871,7 +869,7 @@ le retrait de la directive (§ 49.10). *(5)* Une **soutenabilité outillée d'un
 d'empreinte par appel d'agent**, qui n'existe pas (§ 49.7). *(6)* Une **portabilité neutre des
 agents**, à défaut de quoi l'effet économique reste capté par les exécuteurs dominants (§ 49.2.2).
 
-⚠ **Aucune de ces six conditions n'est acquise à ce jour** : *leur réunion conditionne la réalisation
+⚠ **Aucune de ces six conditions n'est acquise au gel** : *leur réunion conditionne la réalisation
 de la promesse, et le défaut d'une seule suffit à la compromettre.*
 
 ⚠ **Relève v0.10, portée ici et non consommée.** Une thèse de trajectoire sur la couche d'exécution
@@ -1008,7 +1006,7 @@ instruites sans être closes ; dix ne sont pas instruites ; une est repérée sa
 | **11** | Corpus d'appui non déposé | **instruite et infructueuse, close** — trois ouvrages annoncés, **zéro déposé** | avant-propos, Annexe A |
 | **12** | Fichier de faits partagés inexistant | **close par décision, non par instruction** | Annexe C (⚠ **décision rouverte** par le TOC) |
 | **13** | Statut réel du projet portant l'horloge post-quantique | **instruite, non close** — demeure un projet public initial | ch. 21 § 21.1 |
-| **14** | Jetons de transaction | **instruite, non close** — révision du 6 juillet 2026, **expirant le 7 janvier 2027** | ch. 17 § 17.1 |
+| **14** | Jetons de transaction | **instruite, non close** — révision du 6 juillet 2026, **expirant le 7 janvier 2027** — ☑ *−11 du 30 juill. 2026, exp. 31 janv. 2027* | ch. 17 § 17.1 |
 | **15** | Métriques d'observabilité | **instruite, non close** — neuf entrées versées ; **les seize métriques relevées mesurent des opérations, pas un parc** (**`F-96` du Vol. III**, ⚖ **vote dû, non conduit** ; **exclue du socle consolidé** à ce titre) | ch. 38, ch. 40 |
 | **16** | **RGPD** | **non instruite** — « absent du socle et du programme de constitution » ; **degré 3** | ch. 30 |
 | **17** | Sous-comité international sur l'IA | **non instruite** — nommé par un intitulé, documenté par aucune entrée ; **degré 3** | ch. 30 |

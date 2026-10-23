@@ -10,7 +10,7 @@ compose ce que les trois précédents ont instruit séparément, et il n'a pas d
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source juin 2026 (Vol. I), 16 juillet 2026 (Vol. II), 21 juillet 2026 (Vol. III) ; une échéance à venir au § 16.4, le 1ᵉʳ mai 2027 |
 | **Socle mobilisé** | aucun énoncé re-résolu au socle, aucun lot propre : Vol. III, ch. 8 et §7.4, Vol. II, §8.4 (F-07, F-08), Vol. I, §7.4.2, en [C] ; H-18 et F-55 en [C] |
 | **Garde-fous balayés** | Vol. II — R-2 et R-3 : quatre marqueurs chacun (siège) ; R-4 : zéro marqueur ; R-1, R-5 à R-8 : zéro marqueur · Vol. III — R-01 : trois marqueurs ; R-02 à R-14 : zéro marqueur |
-| **Volumétrie cible** | Réel : 5 577 mots de corps pour une cible ≈ 4 500 mots (+23,9 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 5 585 mots de corps pour une cible ≈ 4 500 mots (+24,1 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 16)* — le « passeport d'agent » n'existe dans aucune spécification de 2026 — objet de synthèse assemblant carte signée, inscription au registre, chaîne de mandat et attestations ; sa normalisation est projetée **à une échéance que le socle ne date pas**, en statut PROJETÉ. Pour l'entreprise, rien n'entre au maillage sans lui.
 
@@ -353,8 +353,7 @@ la voie n'est plus sans document adopté.*
 du mandat, SPÉCULATIF pour l'assemblage.** Un précédent est documenté, **et il est instructif par son
 inachèvement** : le billet officiel du 28 avril 2026, signé d'un dirigeant nommé, annonce la donation
 de la spécification de paiement agentique à une alliance et qualifie l'opération de « Transitioning
-ownership to the FIDO Alliance » (F-44, **[A]**) ; **trois mois après, le transfert n'est pas
-matérialisé** sur les deux relevés bornés du lot, et la normalisation est annoncée dans deux groupes
+ownership to the FIDO Alliance » (F-44, **[A]**) ; **trois mois après, le transfert n'est pas matérialisé** (☑ *ni au 23 octobre 2026 : v0.2.0, dépôt d'origine*) sur les deux relevés bornés du lot, et la normalisation est annoncée dans deux groupes
 de travail **sans échéance** (F-45, **[B, degré 1]**). *Une normalisation annoncée sans jalon relève du
 PROJETÉ.* Que cette voie porte ensuite les trois autres pièces **n'est adossé à aucune source** :
 c'est du **SPÉCULATIF**. ⚠ Et la voie n'est pas dégagée : le brouillon de registre se déclare

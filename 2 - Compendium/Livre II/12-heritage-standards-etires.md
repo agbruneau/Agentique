@@ -10,7 +10,7 @@ Livre.** Chapitre à deux mouvements, issu de la fusion v0.20 des anciens ch. 12
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source juin 2026 (Vol. I), 16-17 juillet 2026 (Vol. II), 21 juillet 2026 (Vol. III) ; deux entrées mobilisées « changées » au volet de faits de G-1 |
 | **Socle mobilisé** | identifiants des volumes sources, sans ré-adossement : Vol. III, ch. 1-2 (dix-neuf entrées propres, dont F-37 hors périmètre déclaré, et cinq héritées), Vol. II, ch. 8, Vol. I, §3.6.1-3.6.2 et §4.1.3, en [C] |
 | **Garde-fous balayés** | Vol. II — R-2 : un marqueur ; R-3 : deux marqueurs ; R-8 : un marqueur ; R-1, R-4 à R-7 : zéro marqueur · Vol. III — R-09 : quatre marqueurs ; R-02 : trois marqueurs ; R-14 : trois marqueurs ; R-04 : un marqueur ; R-13 : un marqueur ; R-01, R-03, R-05 à R-08, R-10 à R-12 : zéro marqueur |
-| **Volumétrie cible** | Réel : 7 769 mots de corps pour une cible ≈ 6 200 mots (+25,3 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 7 780 mots de corps pour une cible ≈ 6 200 mots (+25,5 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.28, entrée du chapitre 12, premier mouvement)* — l'identité machine n'est pas née avec les agents — comptes de service, X.509, clés d'API forment un passif mal gouverné dont l'entreprise agentique hérite avant d'y ajouter le sien.
 
@@ -405,7 +405,7 @@ de travail** ; il n'est ni une approbation de l'IESG, ni une publication.
 ⚠ **La date du 7 janvier 2027 se lit avec précaution** : c'est l'**expiration automatique** du
 document, mécanique, et **PROGRAMMÉE** au sens du tri prospectif ; elle ne dit rien d'une adoption ni
 d'un calendrier de publication. Il en va de même du 7 décembre 2026 pour le troisième document du
-tableau.
+tableau. ☑ *Repoussée au 31 janvier 2027 par la −11 (23 octobre 2026).*
 
 Le **protocole agent-outil** offre le cas d'une extension hors IETF. Interface client-serveur
 JSON-RPC 2.0, il porte un **cadre d'autorisation** fondé sur OAuth (Vol. III H-09, **[A]**). ⚠ **La

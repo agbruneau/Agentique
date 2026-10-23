@@ -9,7 +9,7 @@ Premier mouvement — les fondements (ch. 1-6). **Dernier chapitre du mouvement.
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gel de source juin 2026 (Vol. I) ; trois faits datés à re-vérifier |
 | **Socle mobilisé** | non adossée au socle entrée par entrée ; résout contre le Vol. I, §2.8.1-2.8.3, §2.9.1-2.9.5 et §2.10.3-2.10.5, en [C] |
 | **Garde-fous balayés** | Vol. II — R-8 : une occurrence ; R-1 à R-7 : zéro occurrence · Vol. III — R-13 : une occurrence ; R-14 : quatre occurrences ; R-01 à R-12 : zéro occurrence |
-| **Volumétrie cible** | Réel : 4 605 mots de corps pour une cible ≈ 8 500 mots (−45,8 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 4 630 mots de corps pour une cible ≈ 8 500 mots (−45,5 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 6)* — le multi-agent a un surcoût que seuls certains gains justifient ; son évaluation (succès de tâche vs trajectoire) et sa sûreté (triade létale, vecteurs d'attaque) sont les deux fronts encore ouverts.
 
@@ -283,8 +283,7 @@ ouvertes.
 
 ⚠ **La trajectoire est plus instructive que le point, et c'est la seule manière défendable de citer
 ces chiffres.** Les agents de pilotage de poste plafonnaient **autour de 20 % en 2024** sur OSWorld ;
-leur taux a ensuite progressé vers le plafond de performance humaine, **approché entre fin 2025 et
-début 2026 sans encore le rejoindre**. L'écart résiduel à ce plafond est l'information utile — un
+leur taux a ensuite progressé vers le plafond de performance humaine, **approché entre fin 2025 et début 2026 sans encore le rejoindre**. ☑ *Des annonces d'éditeurs revendiquent depuis un dépassement du seuil humain (72,36 %) ; non vérifiées au classement officiel le 23 octobre 2026, elles ne s'écrivent pas ici.* L'écart résiduel à ce plafond est l'information utile — un
 instantané ne la porte pas.
 
 **Raisonnement général, outils et tâches d'entreprise.** Une seconde famille évalue le raisonnement

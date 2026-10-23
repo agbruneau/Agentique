@@ -47,17 +47,17 @@ corroboration, jamais en appui.
 - **S-017** — RBC, gouvernance. `[A]` — Vol. II `F-20` §7.5. Présidence FINOS datée août 2025.
 - **S-018** — Scotiabank / AIDox. `[A]` — Vol. II `F-21` §7.5. Capacités agentiques ajoutées en 2025.
 - **S-019** — Manuvie. `[A]` — Vol. II `F-22` §7.5. Annonce 10 mars 2026, plateforme en bêta à cette date.
-- **S-020** — Accréditation au cadre bancaire. `[A]` — Vol. II `F-23` §7.4. Modalités non encore définies (règlement à venir).
+- **S-020** — Accréditation au cadre bancaire. `[A]` — Vol. II `F-23` §7.4. Modalités non encore définies (règlement prépublié le 27 juin 2026, non final au 23 oct. 2026).
 - **S-021** — Desjardins. `[A]` — Vol. II `F-23b` §7.5. Rapport annuel 2025.
 - **S-022** — Post-C-27. `[B]` — Vol. II `F-24` §7.3. ⚠ Fait le plus périssable du socle du Vol. II : C-36 en deuxième lecture au 16 juillet 2026 — statut parlementaire vivant. Prorogation 6 janv. 2025.
 - **S-023** — AMF (Québec), ligne directrice IA. `[A]` — Vol. II `F-25` §7.3 + Vol. III `H-05` §7.2. Projet 3 juill. 2025.
 - **S-024** — ACVM, avis 11-348. `[B]` — Vol. II `F-26` §7.3 + Vol. III `H-07` §7.2. Publication 5 déc. 2024.
 - **S-025** — Loi 25 (Québec), art. 12.1. `[B]` — Vol. II `F-27` §7.3 + Vol. III `H-06` §7.2. En vigueur depuis le 22 sept. 2023.
 - **S-026** — Lynx / ISO 20022. `[A]` — Vol. II `F-28` §7.4. Fin de coexistence 22 nov. 2025 (fait accompli).
-- **S-027** — Real-Time Rail (RTR). `[A]` — Vol. II `F-29` §7.4. ⚠ Cible T4 2026 non réalisée, historique de reports.
+- **S-027** — Real-Time Rail (RTR). `[A]` — Vol. II `F-29` §7.4. ⚠ Cible T4 2026, non réalisée au 23 oct. 2026 ; historique de reports.
 - **S-028** — CIBC. `[B]` — Vol. II `F-30` §7.5. Communiqué 27 mai 2025.
 - **S-029** — Intact. `[B]` — Vol. II `F-31` §7.5. Rapport annuel 2025 publié le 26 mars 2026.
-- **S-030** — LangGraph Platform. `[B]` — Vol. II `F-32` §7.6. GA 14 mai 2025.
+- **S-030** — LangGraph Platform. `[B]` — Vol. II `F-32` §7.6. GA 14 mai 2025 ; renommée LangSmith Deployment en oct. 2025.
 - **S-031** — Confluent / orchestration événementielle. `[B]` — Vol. II `F-33` §7.6. Annonce août 2025.
 - **S-032** — Règlement sur les services bancaires axés sur le consommateur (prépublication). `[A]` — Vol. II `F-34` §7.4. ⚠ Texte au stade de la prépublication.
 - **S-033** — Standard technique du cadre bancaire : AUCUN désigné officiellement. `[A, degré 1 — fait négatif vérifié 9-0]` — Vol. II `F-35` §7.4 + Vol. III `H-08` §7.2. ⚠ Fait négatif à durée de vie courte : la désignation par arrêté ministériel est à venir.
@@ -105,7 +105,7 @@ corroboration, jamais en appui.
 - **S-072** — Quatre identifiants de vulnérabilité, vote incomplet. `[B]` — Vol. III `F-26` §7.8 · lot `L-08`. Vote à rejouer avant emploi central.
 - **S-073** — L'hypothèse humaine d'OAuth est dans le flux, pas dans les définitions. `[B]` — Vol. III `F-27` §7.9 · lot `L-01`.
 - **S-074** — La §4 de SCIM Core Schema ne définit aucun type de ressource pour un mandataire logiciel. `[B, degré 1]` — Vol. III `F-28` §7.9 · lot `L-01`.
-- **S-075** — Les jetons de transaction sont pré-normatifs, et datés. `[A]` — Vol. III `F-29` §7.9 · lot `L-01`. Rév. -09 du 6 juill. 2026, exp. 7 janv. 2027.
+- **S-075** — Les jetons de transaction sont pré-normatifs, et datés. `[A]` — Vol. III `F-29` §7.9 · lot `L-01`. Rév. -09 du 6 juill. 2026, exp. 7 janv. 2027 ; -11 du 30 juill. 2026, exp. 31 janv. 2027.
 - **S-076** — Community Groups, ce qu'ils produisent et ce qu'ils ne produisent pas. `[B]` — Vol. III `F-30` §7.9 · lot `L-02`. CG proposé 22 avr. 2026.
 - **S-077** — Le fossé d'adoption financière n'est pas comblé. `[C, degré 1]` — Vol. III `F-31` §7.9 · lot `L-02`. Rapport du 19 juill. 2026.
 - **S-078** — Un précédent institutionnel existe hors du champ agentique. `[B]` — Vol. III `F-32` §7.9 · lot `L-02`. Version du 25 mars 2026.
@@ -132,7 +132,7 @@ corroboration, jamais en appui.
 - **S-099** — Même le précédent PKI ne garantit pas ce qu'on lui prête. `[B]` — Vol. III `F-53` §7.9 · lot `L-09`.
 - **S-100** — Le précédent se rétracte. `[B]` — Vol. III `F-54` §7.9 · lot `L-09`. Arrêt 6 août 2025.
 - **S-101** — Les registres agentiques prescrivent des états sans délai de propagation. `[C, degré 1]` — Vol. III `F-55` §7.9 · lot `L-09`. Balayage sur rév. -01, supplantée le 6 juill. 2026.
-- **S-102** — Les référentiels sont datés et versionnés. `[C]` — Vol. III `F-56` §7.9 · lot `L-10`. ATLAS 2026.06 (27 mai / 30 juin 2026).
+- **S-102** — Les référentiels sont datés et versionnés. `[C]` — Vol. III `F-56` §7.9 · lot `L-10`. ATLAS 2026.06 (27 mai / 30 juin 2026) ; courante : v2026.09 (15 sept. 2026).
 - **S-103** — La défense agentique pose elle-même le problème d'identité du volume. `[A]` — Vol. III `F-57` §7.9 · lot `L-10`. Mise à jour du 1er juill. 2026.
 - **S-104** — Trois offres de sécurité relevées chez trois éditeurs, à trois dates, et elles ne sont pas au même stade. `[B]` — Vol. III `F-58` §7.9 · lot `L-10`. Statuts à la date du lot (21 juill. 2026).
 - **S-105** — NIST IR 8547 demeure un Initial Public Draft. `[B, degré 1]` — Vol. III `F-59` §7.9 · lot `L-11`. Consultation du 21 juill. 2026.

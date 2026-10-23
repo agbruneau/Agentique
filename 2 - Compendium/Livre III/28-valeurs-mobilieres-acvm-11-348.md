@@ -11,7 +11,7 @@ n'en a pas besoin**.*
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gel de source 16-17 juillet 2026 (Vol. II) ; l'entrée qui porte l'avis est revenue non établie du volet de faits de G-1 |
 | **Socle mobilisé** | Vol. II, ch. 12 : F-26 en [B] ; H-07 du Vol. III en renvoi ; fondues au socle en S-024, re-datation non établie ; re-citation en S-nnn due |
 | **Garde-fous balayés** | Vol. II — R-7 : zéro occurrence ; R-1 à R-6, R-8 : zéro occurrence · Vol. III — R-14 : deux occurrences du sigle ; R-09 : une occurrence du sigle ; R-01 à R-08, R-10 à R-13 : zéro occurrence |
-| **Volumétrie cible** | Réel : 2 532 mots de corps pour une cible ≈ 2 500 mots (+1,3 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 2 542 mots de corps pour une cible ≈ 2 500 mots (+1,7 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.25, entrée du chapitre 28)* — les lois existantes s'appliquent — la définition retenue des systèmes d'IA (autonomie et adaptativité variables) capture nativement l'agentique.
 
@@ -193,8 +193,7 @@ lacunes de la source** (PRD Vol. II §10.4).
 non une absence de production du régulateur* — **degré 3 de l'échelle R-14 du Vol. III**, et **non un
 fait négatif vérifié**. **La question reste ouverte ; aucune inférence n'est proposée ici.** ⚠ *En
 particulier, la somme ne présume rien du sens de ce silence sur quinze mois : **ni qu'il annonce un
-instrument à venir, ni qu'il traduise l'abandon du dossier, ni qu'il vaille approbation tacite des
-pratiques du marché**.*
+instrument à venir, ni qu'il traduise l'abandon du dossier, ni qu'il vaille approbation tacite des pratiques du marché**.* ☑ *Recherche du 23 octobre 2026 : aucune suite trouvée, degré 3.*
 
 **Reste ce que cette incertitude n'entame pas.**
 

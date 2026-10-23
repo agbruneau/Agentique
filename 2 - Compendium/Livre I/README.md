@@ -22,8 +22,8 @@ sens de CA-IV-01.
 | 10 | [Transaction et infrastructure : AP2 et AGNTCY](10-transaction-infrastructure.md) · [html](10-transaction-infrastructure.html) | couche protocolaire |
 | 11 | [Modes d'échec et taxonomie des risques protocolaires](11-modes-echec-risques-protocolaires.md) · [html](11-modes-echec-risques-protocolaires.html) | couche protocolaire |
 
-Volumétrie : 72 645 mots de corps, mesurés par [`decompte.sh`](../PRD/decompte.sh) et reportés ici par `reporter-volumetrie.py`, pour une
-enveloppe de Livre de 65 000 au TOC, soit +11,8 %.
+Volumétrie : 72 733 mots de corps, mesurés par [`decompte.sh`](../PRD/decompte.sh) et reportés ici par `reporter-volumetrie.py`, pour une
+enveloppe de Livre de 65 000 au TOC, soit +11,9 %.
 
 **Par où entrer :** le ch. 1, puis le ch. 3, charnière de l'héritage IAM auquel les Livres II et IV renvoient sans le reconstruire ;
 le ch. 7 porte au § 7.5, pour toute la somme, l'encadré de désambiguïsation du garde-fou R-8.

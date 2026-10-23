@@ -10,7 +10,7 @@ l'un des plus brefs : il établit un fait négatif et en tire les conséquences.
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gel de source 16-17 juillet 2026 (Vol. II) ; entrée reconduite inchangée le 28 juillet 2026, étape parlementaire : deuxième lecture |
 | **Socle mobilisé** | Vol. II, ch. 10 : S-022 en [B] porte le chapitre ; S-009, S-023, S-024, S-025 en renvoi ; confrontation de fond au socle non faite |
 | **Garde-fous balayés** | Vol. II — R-5 : deux occurrences du sigle ; R-1 à R-4, R-6 à R-8 : zéro occurrence · Vol. III — R-14 : une occurrence du sigle ; R-01 à R-13 : zéro occurrence |
-| **Volumétrie cible** | Réel : 2 551 mots de corps pour une cible ≈ 2 500 mots (+2,0 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 2 555 mots de corps pour une cible ≈ 2 500 mots (+2,2 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 26 — ⚠ **thèse inchangée depuis la v0.25**, sous laquelle la pièce a été rédigée : aucune passe de réalignement ne l'a touchée)* — la mort de la LIAD laisse le Canada sans régulation fédérale spécifique de l'IA ; C-36 (loi sur la vie privée, non loi IA autonome) ne comble pas ce vide — la couverture effective passe par les régulateurs sectoriels.
 
@@ -56,7 +56,7 @@ fédéral canadien de l'IA n'a pas été voté, il est mort au feuilleton.**
 
 Le projet de loi C-27 réunissait **deux textes distincts** : une loi destinée à refondre le régime
 fédéral de protection des renseignements personnels, et la **Loi sur l'intelligence artificielle et les
-données** (LIAD) — premier et, à ce jour, unique projet fédéral de régulation spécifique des systèmes
+données** (LIAD) — premier et, au gel, unique projet fédéral de régulation spécifique des systèmes
 d'IA. À la **prorogation du 6 janvier 2025**, C-27 est mort au feuilleton, **emportant les deux volets
 ensemble** (Vol. II `F-24` → `S-022`, **[B]**, revalidé par consultation directe).
 
@@ -115,7 +115,7 @@ des renseignements personnels.*
 **Deux précisions de statut s'imposent, et elles sont datées.** ⚠ **Premièrement, C-36 est un projet de
 loi et non une loi** : première lecture le 15 juin 2026 ; **à l'étape de la deuxième lecture au
 16 juillet 2026, date de consultation du socle**, étape **reconduite inchangée au 28 juillet 2026** par
-l'instruction du résidu de G-1 — *douze jours sans progression au registre parlementaire officiel*.
+l'instruction du résidu de G-1 — *douze jours sans progression au registre parlementaire officiel* (☑ *ni depuis, au 23 octobre*).
 *Aucune obligation n'en découle, et la somme ne se prononce pas sur son adoption* (R-5 du Vol. II —
 *ne rien anticiper*). ⚠ **Deuxièmement, la commission qu'il prévoit n'existe pas** : sa création est un
 **effet projeté** du texte, non un fait.

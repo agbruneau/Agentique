@@ -11,7 +11,7 @@ mécanisme.*
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source juin 2026 (Vol. I) et 21 juillet 2026 (Vol. III) ; une relève du 26 juillet 2026 reprise comme relève, non comme entrée |
 | **Socle mobilisé** | non adossée au socle consolidé : Vol. III, ch. 9-10, vingt-huit entrées dont cinq en [C] ; Vol. I, §2.11.2 et §3.6.6, en [C] ; l'objet du § 17.5 n'a aucun socle |
 | **Garde-fous balayés** | Vol. III — R-02 : trois marqueurs ; R-01, R-03 à R-14 : zéro marqueur · Vol. II — R-1 à R-8 : zéro marqueur |
-| **Volumétrie cible** | Réel : 7 714 mots de corps pour une cible ≈ 5 700 mots (+35,3 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 7 726 mots de corps pour une cible ≈ 5 700 mots (+35,5 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 17)* — la délégation est le maillon faible — les mécanismes instruits par le Vol. III **documentent** qu'un agent *a* une identité, **aucun d'eux ne documente** *au nom de qui* il agit à l'instant t ; au-delà de deux sauts, **aucun des mécanismes instruits ne documente** une traçabilité opposable de bout en bout.
 
@@ -131,7 +131,7 @@ seulement le versement possible.* Le **§ 17.1 en est le siège désigné**.
 **Les jetons de transaction : un mécanisme de propagation, borné à un domaine de confiance.** Le
 document en est, au 21 juillet 2026, à sa **révision -09 du 6 juillet 2026**, expirant le **7 janvier
 2027**, à l'état d'appel de dernière relecture du groupe de travail OAuth : *Internet-Draft* en cours,
-**non un RFC** (Vol. III F-29, **[A]** ; statut et expiration dits à chaque mention). ⚠ **La date du
+**non un RFC** (Vol. III F-29, **[A]** ; statut et expiration dits à chaque mention). ☑ *−11 du 30 juillet 2026 au 23 octobre, consensus du groupe atteint.* ⚠ **La date du
 7 janvier 2027 est l'expiration automatique du document — PROGRAMMÉE au sens mécanique**, elle ne dit
 rien d'une adoption ni d'un calendrier de publication. ⚠ **L'étiquette est celle du tri prospectif**
 posé au Vol. I *Monographie* §7.0.2 et repris par le Vol. III (H-33, **[C]**) ; **son siège dans la

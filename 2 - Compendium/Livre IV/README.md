@@ -22,8 +22,8 @@ sans volume source ni socle hérité.
 | 45 | [Le blueprint instancié et son cycle de vie : de Boréalis au portefeuille IBM, puis la naissance, la vie et la mort d'un agent d'entreprise](45-blueprint-instancie-cycle-de-vie.md) · [html](45-blueprint-instancie-cycle-de-vie.html) | composer |
 | 46 | [Instrumentation et feuille de route vers le 1ᵉʳ mai 2027](46-instrumentation-feuille-route.md) · [html](46-instrumentation-feuille-route.html) | composer |
 
-Volumétrie : 60 113 mots de corps, mesurés par [`decompte.sh`](../PRD/decompte.sh) et reportés ici par `reporter-volumetrie.py`, pour une
-enveloppe de Livre de 69 000 au TOC, soit −12,9 %.
+Volumétrie : 60 166 mots de corps, mesurés par [`decompte.sh`](../PRD/decompte.sh) et reportés ici par `reporter-volumetrie.py`, pour une
+enveloppe de Livre de 69 000 au TOC, soit −12,8 %.
 
 **Par où entrer :** le ch. 37, où le passeport d'agent devient opposable à chaque arête du maillage ; puis le ch. 43, l'architecture
 de référence qui compose protocoles, identité, orchestration, maillage, exploitation et gouvernance.

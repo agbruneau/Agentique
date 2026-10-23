@@ -22,8 +22,8 @@ sens de CA-IV-01.
 | 20 | [Usurpation, révocation et boucle défensive : du *rug-pull* à l'*agentic SOC*](20-usurpation-revocation-boucle-defensive.md) · [html](20-usurpation-revocation-boucle-defensive.html) | confiance hostile |
 | 21 | [L'horloge post-quantique : menace sur la pile identitaire, crypto-agilité et dette de migration](21-horloge-post-quantique.md) · [html](21-horloge-post-quantique.html) | horloge post-quantique |
 
-Volumétrie : 68 963 mots de corps, mesurés par [`decompte.sh`](../PRD/decompte.sh) et reportés ici par `reporter-volumetrie.py`, pour une
-enveloppe de Livre de 50 000 au TOC, soit +37,9 %.
+Volumétrie : 69 028 mots de corps, mesurés par [`decompte.sh`](../PRD/decompte.sh) et reportés ici par `reporter-volumetrie.py`, pour une
+enveloppe de Livre de 50 000 au TOC, soit +38,1 %.
 
 **Par où entrer :** le ch. 14, la grille des cinq questions — qui es-tu, qui t'a créé, pour qui agis-tu, que peux-tu faire, qui en
 répond —, instrument de lecture de tout mécanisme d'identité ; puis le passeport d'agent (ch. 16) et la chaîne de mandat (ch. 17).

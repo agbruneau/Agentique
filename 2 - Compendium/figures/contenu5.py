@@ -173,4 +173,4 @@ f(50, "50.4", "f-50-04-carte-fraicheur",
            (4, 0): ("", "27 juillet 2026"),
            (4, 1): ("", "transfert de gouvernance du protocole de paiement"),
        },
-       axes="Se reporter au Tableau 50.1 pour les onze événements, leur trace et leur tri prospectif."))
+       axes="Se reporter au Tableau 50.1 pour les quatorze événements, leur trace et leur tri prospectif."))

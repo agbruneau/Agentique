@@ -9,7 +9,7 @@ Deuxième mouvement — la confiance hostile (ch. 19-20). **Premier chapitre du 
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source juin 2026 (Vol. I) et 21 juillet 2026 (Vol. III) ; identifiants de vulnérabilité cités comme jalons datés |
 | **Socle mobilisé** | Vol. III, ch. 12, dix-sept entrées propres et quatre héritées, dont H-24 et H-26 en [C] ; Vol. I, §2.10.1-2.10.2, en [C] ; F-26 à vote adversarial incomplet ; re-citation en S-nnn due |
 | **Garde-fous balayés** | Vol. III — R-08 : un marqueur (siège) ; R-02 : un marqueur ; R-14 : un marqueur ; R-01, R-03 à R-07, R-09 à R-13 : zéro marqueur · Vol. II — R-1 à R-8 : zéro marqueur |
-| **Volumétrie cible** | Réel : 6 153 mots de corps pour une cible ≈ 5 000 mots (+23,1 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 6 159 mots de corps pour une cible ≈ 5 000 mots (+23,2 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 19)* — l'identité est le **verrou architectural** de la sécurité agentique — un agent dépourvu d'identité propre et gouvernée opère dans un écart d'attribution qui rend le moindre privilège inapplicable —, et les référentiels du domaine la traitent désormais comme un plan de contrôle à part entière : c'est ce qui justifie d'absorber la sécurité dans le cadre identitaire.
 
@@ -73,7 +73,7 @@ sur **l'existence d'attaques propres au protocole agent-agent (A2A)**. *Elle app
 présente section est ce socle, avec ses bornes.*
 
 **Le référentiel de techniques adverses.** Le corpus **MITRE ATLAS** est versionné — **collection
-2026.06**, format 6.0.0, modifiée le 27 mai 2026 et publiée le 30 juin 2026 (F-56, **[B]**). Il
+2026.06**, format 6.0.0, modifiée le 27 mai 2026 et publiée le 30 juin 2026 (F-56, **[B]**) ; ☑ *courante au 23 octobre 2026 : v2026.09.* Il
 fournit trois des éléments mobilisés ici. La technique **AML.T0104**, *Publish Poisoned AI Agent
 Tool* — **empoisonnement d'outil à la publication** —, relève d'une tactique de développement de
 ressources, est déclarée sur la plateforme agentique, de maturité *Realized*, créée le 30 janvier 2026

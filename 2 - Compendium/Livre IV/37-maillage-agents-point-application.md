@@ -11,7 +11,7 @@ Livre** : il porte les deux désambiguïsations que le Livre impose à ses neuf 
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source 21 juillet 2026 (Vol. III) et juin 2026 (Vol. I) ; aucun fait périssable repris à la source primaire |
 | **Socle mobilisé** | aucune entrée consolidée, re-ancrage dû : Vol. III, ch. 22-23, source rédigée non publiable sans vote ; Vol. I, §1.3.4 et §2.10.3-2.10.4, en [C] ; Vol. II F-01 pour une réserve |
 | **Garde-fous balayés** | Vol. III — R-09 : neuf occurrences ; R-14 : sept occurrences ; R-02 : cinq occurrences ; R-01 : deux occurrences ; R-04 : trois occurrences ; R-12 : deux occurrences ; R-13 : une occurrence ; R-03 : une occurrence ; R-11 : une occurrence ; R-05 à R-08, R-10 : zéro occurrence · Vol. II — R-8 : trois occurrences ; R-1 à R-7 : zéro occurrence |
-| **Volumétrie cible** | Réel : 10 315 mots de corps pour une cible ≈ 11 000 mots (−6,2 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 10 361 mots de corps pour une cible ≈ 11 000 mots (−5,8 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) **v0.28**, entrée du chapitre 37, premier mouvement — **thèse réalignée en v0.28**, décisions 8 et 14, remontée R-IV-38)* — **le présent ouvrage définit** le maillage d'agents par filiation avec le patron *service mesh* — un plan de données qui médiatise chaque arête, un plan de contrôle qui centralise la politique ; **cette définition est celle de l'ouvrage, et le terme n'en a pas d'autre qui fasse autorité**. La filiation retenue fournit un **instrument de tri par statut** des offres que le Vol. III a ouvertes. ⚠ **Coût déclaré, repris de la source** : elle **n'affirme rien de l'écart entre le discours des fournisseurs et leurs réalisations** — *la forme antérieure, « trie ce que le terme recouvre réellement de ce qu'il recouvre en marketing », affirmait exactement l'énoncé que la source déclare ne pas faire.*
 
@@ -228,7 +228,7 @@ publication la plus récente et la plus récente stable. **Le tableau ci-dessus 
 21 juillet 2026**, qui est celui du socle sur lequel ce chapitre est écrit ; ⚠ **ce que le constat
 périme est la citation du numéro et de la date, non le tri lui-même** — *un tri par statut reste un
 tri par statut quand un statut change*. ⚠ **La réserve de pré-version que les § 37.2.2, § 37.4 et
-§ 37.5.1 reprennent porte donc cette date**, et elle ne s'écrit nulle part au présent intemporel.
+§ 37.5.1 reprennent porte donc cette date**, et elle ne s'écrit nulle part au présent intemporel. ☑ *Au 23 octobre 2026, la dernière publication stable est v1.6.0, du 2 octobre.*
 
 ⚠ **Deux clauses d'exclusivité auto-déclarées ne sont pas reprises** : celle que la page produit
 d'AWS énonce sur elle-même, et celle du fichier de présentation d'`agentgateway`. Aucun balayage ne
@@ -432,7 +432,7 @@ le constat tient sans elle.
 passeport d'agent ne figure dans aucune spécification à date : c'est un objet de synthèse construit
 par la somme** en assemblant carte signée, inscription au registre, chaîne de mandat et attestations
 (R-01 du Vol. III ; siège **ch. 16**). **Aucune entrée n'établit qu'un maillage vérifie un tel
-objet**, et ce chapitre n'en dérive rien. Ce qu'il vérifie, à ce jour et dans le corpus ouvert, est
+objet**, et ce chapitre n'en dérive rien. Ce qu'il vérifie, au gel et dans le corpus ouvert, est
 une politique d'autorisation ; ce qu'il transporte n'est documenté par aucune entrée ; **ce qu'il
 ignore est tout ce que les cases vides déclarent.**
 
@@ -629,7 +629,7 @@ daté**, mais sur ce que ce document annonce (Vol. III **H-33**, **[C]**, instru
 fait). ⚠ **Les trois statuts du tri — PROGRAMMÉ, PROJETÉ, SPÉCULATIF — ne sont pas définis ici : leur
 siège pour toute la somme est au ch. 49 § 49.0**, et ce chapitre y **renvoie sans le reconstruire**.
 Le tri du rapport de lot classe la prospective en **PROJETÉ** — le document annonce l'intention
-de lancer un projet de démonstration, **sans engagement daté de livraison constaté**. L'aboutissement
+de lancer un projet de démonstration, **sans engagement daté de livraison constaté**. ☑ *Au 23 octobre 2026, le NCCoE a publié la synthèse des 614 commentaires reçus et annonce un projet de description, sans date.* L'aboutissement
 en spécification demeure **SPÉCULATIF**, aucune source ouverte ne portant de jalon en ce sens. ⚠ **La
 thèse du Vol. III écrit pour sa part « la transposition est PROGRAMMÉE pour le document » : l'écart
 entre ce tri et celui du rapport de lot est hérité, déclaré chez sa source, et non tranché ici.**
@@ -703,7 +703,7 @@ l'un ni l'autre.*
 *Premièrement* — **le mécanisme de propagation borne lui-même son périmètre**. Ce que le socle
 établit de lui est son **statut et sa date** : la spécification de jetons de transaction est à sa
 révision **-09 du 6 juillet 2026**, expirant le **7 janvier 2027**, à l'état de dernier appel de son
-groupe de travail — ***Internet-Draft* en cours, non un RFC** (Vol. III **F-29**, **[A]** ; R-09). La
+groupe de travail — ***Internet-Draft* en cours, non un RFC** (Vol. III **F-29**, **[A]** ; R-09 ; ☑ *−11 du 30 juillet 2026 au 23 octobre, au consensus du groupe*). La
 **clause de périmètre**, elle, est une source primaire citée **hors socle** : la propagation vaut « …
 throughout the Call Chain **within a trusted domain** … ». **Le mécanisme borne donc lui-même sa
 portée à un domaine de confiance** — frontière que l'entreprise franchit **dès qu'un agent tiers entre

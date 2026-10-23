@@ -11,7 +11,7 @@ troisième mouvement n'ouvre le terrain**.*
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source juin 2026 (Vol. I), 16-17 juillet 2026 (Vol. II), 21 juillet 2026 (Vol. III) ; quatorze des seize entrées mobilisées re-datées |
 | **Socle mobilisé** | trois régimes : Vol. I, §4.8, §5.3, §2.11.3, en [C] ; Vol. III, ch. 21, en [A-i] et [B], F-56 rétrogradée en [C] ; Vol. II, ch. 21, Q5, question d'agenda |
 | **Garde-fous balayés** | Vol. II — R-5 : quatre occurrences du sigle ; R-1 à R-4, R-6 à R-8 : zéro occurrence · Vol. III — R-14 : deux occurrences du sigle ; R-09 : six occurrences du sigle ; R-11 : deux occurrences du sigle ; R-02 : une occurrence du sigle ; R-01 : une occurrence du sigle ; R-13 : deux occurrences du sigle ; R-03 à R-08, R-10, R-12 : zéro occurrence |
-| **Volumétrie cible** | Réel : 8 636 mots de corps pour une cible ≈ 7 500 mots (+15,1 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 8 657 mots de corps pour une cible ≈ 7 500 mots (+15,4 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 30 — citation reportée par copie, décision 17)* — hors Canada, l'AI Act, ISO 42001, le RGPD et les cadres sectoriels dessinent le maillage transversal que l'agent en finance régulée doit satisfaire ; et la désignation de l'organisme de normalisation technique du cadre bancaire canadien fixera qui écrit les règles d'identité des agents financiers.
 
@@ -246,7 +246,7 @@ conception, non de configuration a posteriori.* **Le ch. 31 § 31.5 en porte le 
 la responsabilité en matière d'IA, publié officiellement le 6 octobre 2025, laisse un vide
 spécifique** : *à défaut de régime dédié, le recours se rabat sur une directive révisée sur la
 responsabilité du fait des produits, qui couvre désormais explicitement les logiciels et produits d'IA
-et **doit être transposée d'ici le 9 décembre 2026**.* ⚠ **Le ch. 24 § 24.7.4 porte le même constat au
+et **doit être transposée d'ici le 9 décembre 2026** (☑ application aux produits mis sur le marché après le 8 décembre, rectificatif du 7 mai 2026).* ⚠ **Le ch. 24 § 24.7.4 porte le même constat au
 grain de la frontière inter-firmes** ; il n'est pas doublé ici.
 
 ⚠ **Dans ce paysage, la piste d'audit tient lieu de substitut probatoire** : *c'est elle qui, à défaut
@@ -370,7 +370,7 @@ canadien est au **ch. 25**, et les approfondissements sectoriels du ch. 34 y ren
 **Le fait structurant est une divergence transatlantique d'approche.**
 
 **Aux États-Unis**, le **17 avril 2026** marque une bascule : une **guidance interagences de la Réserve
-fédérale, de l'OCC et de la FDIC** remplace le corpus que les deux premières avaient posé en **2011**.
+fédérale, de l'OCC et de la FDIC** (SR 26-2 ; bulletin OCC 2026-13) remplace le corpus que les deux premières avaient posé en **2011**.
 ⚠ **Deux propriétés en font un cas d'école de qualification.** *D'une part, elle **exclut
 explicitement de son périmètre l'IA générative et l'IA agentique**, jugées « novel and rapidly
 evolving », renvoyées à une demande d'information annoncée. D'autre part, elle demeure **non
@@ -413,7 +413,7 @@ imputable à l'entreprise***. **Le ch. 31 § 31.1.3 en porte le siège**, et **l
 versant sectoriel.
 
 Pour les crypto-actifs, le règlement **MiCA** encadre les prestataires de services **depuis le
-30 décembre 2024**, avec une période de transition s'étendant jusqu'à la fin juin 2026.
+30 décembre 2024**, avec une période de transition close à la fin juin 2026.
 
 ### 30.2.6 AML/CTF et capital : *single rulebook* 2027, AMLA, Bâle III
 

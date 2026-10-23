@@ -9,7 +9,7 @@ Premier mouvement — émettre (ch. 12-18). Deuxième chapitre du mouvement.*
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source juin 2026 (Vol. I) et 21 juillet 2026 (Vol. III) ; chapitre le plus périssable du mouvement |
 | **Socle mobilisé** | identifiants sources préfixés, non re-cités en S-nnn : Vol. III, ch. 3, douze entrées propres, H-18 et H-20 en [C] ; Vol. I, §3.6.4 et §7.4.3, en [C] |
 | **Garde-fous balayés** | Vol. III — R-14 : trois marqueurs ; R-02 : deux marqueurs ; R-09 : un marqueur ; R-01, R-03 à R-08, R-10 à R-13 : zéro marqueur · Vol. II — R-1 à R-8 : zéro marqueur |
-| **Volumétrie cible** | Réel : 5 055 mots de corps pour une cible ≈ 4 000 mots (+26,4 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 5 060 mots de corps pour une cible ≈ 4 000 mots (+26,5 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 13 — l'entrée ne porte aucune note de réalignement : la collation de la décision 14 n'a rien trouvé à borner ici)* — le corpus W3C (VC, DID) fournit le vocabulaire du « passeport d'agent », mais son adoption en entreprise financière reste à démontrer — la distinction promesse/production est le fil.
 
@@ -132,7 +132,7 @@ ce qui est une **absence de documentation, non un fait négatif vérifié**.
 
 ☑ **Reportés à leur source le 28 juillet 2026, les quatre stades tiennent** (volet de faits du volet
 résiduel de G-1) : aucune entrée postérieure au 15 mai 2025 à l'historique de la version 2.0
-(Vol. III F-79) ; la 2.1 toujours brouillon de travail du 11 mai 2026 (Vol. III F-80) ; la version
+(Vol. III F-79) ; la 2.1 toujours brouillon de travail du 11 mai 2026 (Vol. III F-80 ; ☑ *encore au 23 octobre 2026*) ; la version
 1.0 des identifiants décentralisés toujours Recommandation à *errata* signalés — ⚠ **dont le contenu
 n'a toujours pas été ouvert** (Vol. III F-81) ; le quatrième, la version 1.1 des identifiants
 décentralisés (Vol. III F-82), est repris plus bas, avec l'échéance qu'il a dépassée. ⚠ **Un stade
