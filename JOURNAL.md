@@ -550,3 +550,12 @@ passe de sept à huit (neuf PDF). Le `README.md` porte désormais « Les huit li
 « Hors compte » ne nomme plus le compendium. L'ancre `#les-sept-livrables` y reste vivante pour les chroniques datées
 qui la visent. La réserve commune — aucun relecteur humain nommé — vaut pour les huit. Le détail est au
 [`JOURNAL.md`](<2%20-%20Compendium/JOURNAL.md>) du compendium ; l'état courant est à [`README.md`](README.md).
+
+## 23 octobre 2026 — pages d'accueil et registres alignés sur les passes du compendium
+
+Après les audits, la revalidation et les décisions D-20 et D-21, les pages qui décrivaient encore le Vol. IV comme une
+archive de travail, ou qui ignoraient ses pages dérivées, sont alignées. Le `README.md` renvoie, à la rangée IV, à
+l'Atlas et à l'Explorateur, et reste à 40 lignes. `CONTRIBUTIONS.md` reçoit en annotations ✎ le statut du Vol. IV,
+Claude Opus 5.5 et les pages dérivées ; `ARCHIVES.md`, l'audit et l'évaluation du Vol. IV entrés et sortis le
+14 octobre 2026. `APPAREIL.md`, relevé daté du 15 septembre 2026, ne change pas. Le détail est au
+[`JOURNAL.md`](<2%20-%20Compendium/JOURNAL.md>) du compendium.

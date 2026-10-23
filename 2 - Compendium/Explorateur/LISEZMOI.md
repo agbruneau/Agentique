@@ -6,9 +6,18 @@ par André-Guy Bruneau, M.Sc. IT.
 
 ## Utilisation (100 % autonome / hors ligne)
 
-1. Décompressez cette archive `.zip` dans le dossier de votre choix.
-2. Ouvrez le fichier **`compendium_entreprise_agentique.html`** (ou **`index.html`**) dans n'importe quel navigateur web moderne (Chrome, Edge, Firefox, Safari).
-3. Aucune connexion Internet ni serveur local n'est requis : l'ensemble des styles, simulateurs interactifs, graphiques vectoriels SVG et données des 50 chapitres est intégré directement dans le fichier.
+1. Dans le dépôt, ouvrez **`index.html`** depuis ce dossier ; reçue en archive `.zip`, décompressez-la d'abord dans le dossier de votre choix.
+2. **`compendium_entreprise_agentique.html`** en est une copie identique à l'octet, pour une diffusion hors du dépôt ; toute reprise touche les deux fichiers.
+3. Aucune connexion Internet ni serveur local n'est requis : l'ensemble des styles, simulateurs interactifs, graphiques vectoriels SVG et données des 50 chapitres est intégré directement dans le fichier ; les polices sont celles du système.
+
+L'application est une page dérivée : elle ne fait pas foi. Le [`Compendium.pdf`](../Compendium.pdf) et les `.md` des cinquante pièces priment, et chacune de leurs reprises s'y reporte à la main.
+
+## Navigation
+
+- **Atlas** : le bouton « ← Atlas du Compendium » de l'en-tête ouvre l'[Atlas](../Compendium%20Atlas.html), qui renvoie ici par son lien « Explorateur ↗ ».
+- **Ancres** : chaque vue a son adresse — `#overview`, `#b1` à `#b5`, `#chapters` — et le bouton Précédent du navigateur y revient.
+- **Thème** : sombre par défaut ; le clair se choisit dans l'en-tête et se mémorise sur l'appareil, sous la même clé que l'Atlas.
+- **Fiche de chapitre** : ← et → passent au chapitre voisin, Échap la ferme et rend le focus à l'élément qui l'a ouverte.
 
 ## Contenu de l'application
 

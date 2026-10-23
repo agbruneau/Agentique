@@ -26,7 +26,7 @@ déclarée par l'auteur, sans rapport versé ni relecteur nommé : aucun énonc�
 | I | *Interopérabilité agentique en entreprise dans le domaine des services financiers* | [`1 - Collection/1 - InteroperabiliteAgentique/`](<1%20-%20Collection/1%20-%20InteroperabiliteAgentique/>) | 571 p. | livrable |
 | II | *Orchestration agentique* | [`1 - Collection/2 - OrchestrationAgentique/`](<1%20-%20Collection/2%20-%20OrchestrationAgentique/>) | 390 p. | livrable |
 | III | *L'entreprise agentique — la fabrique de confiance* | [`1 - Collection/3 - EntrepriseAgentique/`](<1%20-%20Collection/3%20-%20EntrepriseAgentique/>) | 428 p. | livrable sous réserve déclarée : quinze remontées ouvertes, une dette de vote |
-| IV | *Interopérabilité et Orchestration en Entreprise Agentique* | [`2 - Compendium/`](<2%20-%20Compendium/>) | 1 000 p. | livrable depuis [D-21](<2%20-%20Compendium/PRD/PRD.md#d-21>), publiable pour l'édition de novembre 2026 ([D-20](<2%20-%20Compendium/PRD/PRD.md#d-20>)) |
+| IV | *Interopérabilité et Orchestration en Entreprise Agentique* | [`2 - Compendium/`](<2%20-%20Compendium/>) | 1 000 p., avec son [Atlas](<2%20-%20Compendium/Compendium%20Atlas.html>) et son [Explorateur](<2%20-%20Compendium/Explorateur/index.html>) | livrable depuis [D-21](<2%20-%20Compendium/PRD/PRD.md#d-21>), publiable pour l'édition de novembre 2026 ([D-20](<2%20-%20Compendium/PRD/PRD.md#d-20>)) |
 | V | *Traité sur les systèmes multiagents en essaim* | [`4 - Essais/1 - Traité/`](<4%20-%20Essais/1%20-%20Trait%C3%A9/>) | 144 p. | livrable |
 | VI | *Veille technologique en entreprise* | [`3 - Veille/`](<3%20-%20Veille/>) | 145 p. | livrable |
 | VII | *Revue de la littérature académique* | [`3 - Veille/`](<3%20-%20Veille/>) | 60 p. | livrable |

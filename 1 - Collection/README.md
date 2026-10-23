@@ -18,7 +18,8 @@ Responsable de l'identité : Vol. III, partie II, le passeport d'agent. Pour l'�
 [veille technologique](../3%20-%20Veille/Veille%20Technologique.pdf).
 
 [`0 - Références/`](0%20-%20R%C3%A9f%C3%A9rences/) porte le mémoire de maîtrise de l'auteur (1997), pièce déposée que nul document ne cite. Le Vol. IV,
-qui réunit les trois en cinquante chapitres, est une archive de travail sous [`2 - Compendium/`](../2%20-%20Compendium/) : les trois volumes font foi.
+qui réunit les trois en cinquante chapitres sous [`2 - Compendium/`](../2%20-%20Compendium/), est le huitième livrable depuis la décision
+[D-21](../2%20-%20Compendium/PRD/PRD.md#d-21) du 23 octobre 2026, publiable pour l'édition de novembre 2026 : les trois volumes font foi.
 
 **Refaire :** chaque volume se recompose de son dossier par `bash build/build-pdf.sh`, précédé aux Vol. II et III de
 `python build/assemble.py`. Les trois chaînes sont des copies indépendantes : un correctif apporté à l'une ne se propage pas

@@ -2753,3 +2753,38 @@ racine reste à 40 lignes : la ligne « Hors compte » est fusionnée.
 - **Contrôles de la racine** : `check-renvois` (0 renvoi mort) et `check-lisibilite` passent, avec leurs
   harnais.
 - **Pages dérivées** : leurs scripts passent `node --check`.
+
+# Passe du 23 octobre 2026, cinquième partie — pages d'accueil et registres alignés
+
+*Sur instruction de l'auteur du 23 octobre 2026 : « suite aux mises à jour effectuées dans le compendium, mettre à jour
+les README et autres fichiers md correspondants ». Aucune pièce, aucun rendu, aucune décision : la passe ne touche que
+des `.md` d'accueil et de registre.*
+
+**Pages dérivées, jusqu'ici absentes de ce journal.**
+- **Atlas** : `Compendium Atlas.html` entre le 18 octobre 2026 (`8904f5e`) ; audit de conformité au PDF et refonte le
+  même jour (`271fe25`, `b7f98df`) ; ergonomie le 22 (`18c63a5`) ; temple de la thèse redessiné, puis posé sur le socle
+  de l'Entreprise Agentique, le 23 (`d819585`, `010fc71`).
+- **Explorateur** : `Explorateur/` entre le 19 octobre 2026 (`8d3fb92`, `f042f0b`), relié à l'Atlas le même jour
+  (`9837f48`) ; même identité visuelle que l'Atlas et quatre bogues corrigés le 22 (`18c63a5`).
+- Les passes du 23 octobre les ont tenues à jour (première à quatrième parties ci-dessus).
+
+**Ce qui change.**
+- **`README.md` de ce dossier** : rangée « Pages dérivées » (Atlas, Explorateur) ; l'audit d'actualité du 22 octobre
+  rattaché au rendu ; l'Atlas en entrée de vue d'ensemble ; la règle des deux copies identiques de l'Explorateur ; les
+  passes d'octobre au résumé du journal.
+- **`Explorateur/LISEZMOI.md`** : ouverture depuis le dépôt, copie identique, statut de page dérivée ; section
+  « Navigation » (lien vers l'Atlas, ancres des vues, thème mémorisé, fiche au clavier), lue sur `index.html`.
+- **`1 - Collection/README.md`** : le Vol. IV n'y est plus « une archive de travail » mais le huitième livrable (D-21).
+- **`README.md` de la racine** : la rangée IV renvoie à l'Atlas et à l'Explorateur ; la page reste à 40 lignes.
+- **`CONTRIBUTIONS.md`**, par annotations ✎ : statut du Vol. IV ; rangée Claude Opus 5.5 (13 commits co-signés, du 14 au
+  23 octobre 2026) ; passes d'octobre au Vol. IV ; rangée des pages dérivées (13 commits : 10 co-signés Opus 5.5,
+  3 sans trailer).
+- **`ARCHIVES.md`** : l'audit et l'évaluation du Vol. IV du 14 octobre 2026, entrés `c782daa` et sortis `e2338dc`, ont
+  leur ligne ; « Même nom, autre pièce » les ajoute à `2 - Compendium/audit.md` et à `Évaluation académique.md`.
+
+**Ce qui ne change pas.** Les relevés datés — `APPAREIL.md` au 15 septembre 2026, les comptes de `CONTRIBUTIONS.md` et
+d'`ARCHIVES.md` à leur date, `RELECTURE.md` — et les chroniques datées des autres `JOURNAL.md` restent tels quels.
+
+**Contrôles.** `check-renvois` (0 renvoi mort) et `check-lisibilite` (18 pages d'accueil dans les seuils) à la racine ;
+`check-toc`, `check-sieges`, `check-compendium` (mêmes cinq rapports déclaratifs) et `reporter-volumetrie --verifier`
+(334 457 mots, trois sites concordants) depuis ce dossier.
