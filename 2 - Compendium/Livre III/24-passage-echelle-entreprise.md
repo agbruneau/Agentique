@@ -11,7 +11,7 @@ versant réglementaire.*
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gel de source juin 2026 (Vol. I, ch. 4) ; aucun fait du chapitre repris à la source primaire |
 | **Socle mobilisé** | aucune entrée : toute la matière vient du Vol. I, ch. 4, et entre en [C] ; aucun énoncé ne peut devenir central sans élévation en [B] |
 | **Garde-fous balayés** | Vol. II — R-8 : une occurrence du sigle ; R-1 à R-7 : zéro occurrence · Vol. III — R-14 : une occurrence du sigle ; R-09 : zéro occurrence du sigle ; R-13 : cinq occurrences du sigle ; R-02 : deux occurrences du sigle ; R-01, R-03 à R-08, R-10 à R-12 : zéro occurrence |
-| **Volumétrie cible** | Réel : 13 080 mots de corps pour une cible ≈ 9 500 mots (+37,7 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 13 265 mots de corps pour une cible ≈ 9 500 mots (+39,6 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée par copie depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 24 — décision 17)* — de la dette d'intégration à la prolifération d'agents, l'entreprise doit intégrer les agents à son tissu existant, gouverner le parc à l'échelle et instruire sa maturité — sans dupliquer l'IAM et l'observabilité en place.
 
@@ -97,6 +97,14 @@ capables** de faire et ce que l'organisation les a **explicitement habilités** 
 surface d'attaque et un angle mort de conformité.* Le traitement détaillé de l'identité, de son cycle
 de vie et de ses grilles de risque est au § 24.3 ; la présente sous-section n'établit que **l'ampleur
 du phénomène et sa nature spécifiquement organisationnelle**.
+
+☑ **Le même analyste en fait une tendance** — 24 octobre 2026 ([veille](../PRD/veille-2026-10-24.md)) :
+**Gartner (2026)** range l'**identité des agents d'IA** parmi ses dix tendances stratégiques pour 2027.
+Des agents qui agissent pour plusieurs humains y exposent des systèmes hérités **incapables d'un accès
+juste-à-temps** ; la parade nommée remplace les **identifiants statiques** par un **accès dynamique régi
+par politique**, qui rattache modèle, invites et identifiants aux actes de l'agent. ⚠ **Liste de
+tendances d'analyste, non une mesure** ; la projection chiffrée qui l'accompagne est au **ch. 20
+§ 20.7**, avec son appareil.
 
 ### 24.0.3 Pilotes d'affaires, valeur, et le fil N×M → N+M
 
@@ -604,6 +612,14 @@ l'**interrogation gouvernée** applique la sécurité **au niveau du moteur**.
 
 **Le critère discriminant tient à l'emplacement de l'application** : *une sécurité par rangée évaluée
 à la compilation de la requête est plus robuste qu'un filtrage applicatif posé au-dessus du moteur.*
+
+☑ **Un analyste chiffre le levier** — 24 octobre 2026 ([veille](../PRD/veille-2026-10-24.md)) :
+**Gartner (2026)** fait des **plateformes de contexte d'IA** une tendance pour 2027 — la couche qui
+fournit aux agents le contexte métier dont ils ont besoin pour interpréter, décider et agir — et
+projette que, **d'ici 2027**, les organisations qui priorisent la sémantique dans des données prêtes
+pour l'IA accroîtront la précision de l'IA agentique **jusqu'à 80 %** et réduiront ses coûts **jusqu'à
+60 %**. ⚠ **PROJETÉ, en bornes hautes, sans méthode publiée au communiqué** : *le chiffre ne mesure pas
+le gain d'une couche sémantique ; il dit qu'un analyste en fait un levier de premier rang.*
 
 ### 24.4.4 Le serveur d'outils comme point d'application, et les contrats de données pour agents
 

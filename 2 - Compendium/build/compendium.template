@@ -152,18 +152,22 @@
 // 16,66 pt, 999 ; 16,64 pt, 998 ; 16,58 à 16,62 pt, 996 ; 16,55 pt, 995 ; 16,50 pt,
 // 992. La marche est étroite — deux centièmes : le calage retient 16,675 pt, en son
 // milieu.
+// ⚠ Relevé du 24 octobre 2026, veille Gartner (PRD/veille-2026-10-24.md) : le corps a
+// pris 517 mots aux ch. 20, 24 et 49, et 16,675 pt donne 1002 pages. Relevé : 16,67 pt,
+// 1002 ; **16,65 à 16,665 pt, 1000** ; 16,645 et 16,64 pt, 999 ; 16,63 pt, 998 ; 16,58
+// à 16,62 pt, 997. Le calage retient 16,655 pt, au milieu de la marche.
 // *Le calage n'est donc PAS une constante du gabarit : c'est une fonction du
 // corpus, et il se re-mesure à chaque passe qui touche un corps.* Le corps de
 // 13 pt et la mesure de 79 caractères, eux, ne bougent pas — et ne sont pas le
 // levier.
 #let CORPS = 13pt
-#let PAS   = 16.675pt
+#let PAS   = 16.655pt
 // ⚠ `top-edge` est FIGÉ en em plutôt que laissé à la fonte effective : sans
 // cela, une ligne portant un ⚠ ou un ☑ — rendus par la fonte de repli — prend
 // une hauteur différente et décroche de la grille. Onze pour cent des lignes du
 // corpus en portent un. Toute la verticale du gabarit dépend de cette valeur.
 #let HAUT  = 0.72
-#let INTER = PAS - HAUT * CORPS      // = 7,59 pt
+#let INTER = PAS - HAUT * CORPS      // = 7,295 pt (7,59 au pas de 16,95 pt)
 
 // ---------------- bibliographie ----------------
 // ⚠ L'Annexe I est composée PLUS SERRÉ QUE LE CORPS, et c'est le troisième

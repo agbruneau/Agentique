@@ -180,7 +180,7 @@ corroboration, jamais en appui.
 - **S-144** — Les jalons de normalisation 2027-2028. `[C]` — Vol. I, `Monographie.md` §7.4.2, par Vol. III `H-18` §7.3. Horizons 2026-2027, 2027-2028, 2027, 2028.
 - **S-145** — KYA et la trust fabric. `[C]` — Vol. I, `Monographie.md` §7.4.3 (réserve siégeant en §5.5.4), par Vol. III `H-19` §7.3. État « à juin 2026 ».
 - **S-146** — Les Community Groups agentiques du W3C. `[C]` — Vol. I, `Monographie.md` §7.3.2, par Vol. III `H-20` §7.3. 8 mai 2025.
-- **S-147** — Le SOC agentique. `[C]` — Vol. I, `Monographie.md` §7.5.2, par Vol. III `H-21` §7.3. Projection Gartner (2024) à horizon 2028.
+- **S-147** — Le SOC agentique. `[C]` — Vol. I, `Monographie.md` §7.5.2, par Vol. III `H-21` §7.3. Projection Gartner (2024) à horizon 2028 ; reprise par l'émetteur le 20 oct. 2026.
 - **S-148** — Les référentiels de sécurité agentique en mouvement. `[C]` — Vol. I, `Monographie.md` §7.5.3, par Vol. III `H-22` §7.3. NIST CAISI 17 févr. 2026.
 - **S-149** — La science de l'évaluation. `[C]` — Vol. I, `Monographie.md` §7.6.4, par Vol. III `H-23` §7.3. État « à juin 2026 ».
 - **S-150** — La non-compositionnalité de la sûreté. `[C]` — Vol. I, `Monographie.md` §3.10.1 (et §3.10.2), par Vol. III `H-24` §7.3.

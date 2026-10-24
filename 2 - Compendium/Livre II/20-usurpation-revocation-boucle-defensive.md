@@ -10,7 +10,7 @@ deux mouvements, issu de la fusion v0.20 des anciens ch. 21 et 22.*
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source juin 2026 (Vol. I) et 21 juillet 2026 (Vol. III) ; le plus exposé du Livre à la péremption produit |
 | **Socle mobilisé** | aucun énoncé re-résolu au socle : Vol. III, ch. 13-15, Vol. I, §7.5.1 à §7.5.4, en [C] ; onze entrées en [C], dont F-56 rétrogradée à la refonte ; F-26 à vote incomplet |
 | **Garde-fous balayés** | Vol. III — R-02 : sept marqueurs ; R-01, R-03 à R-14 : zéro marqueur · Vol. II — R-1 à R-8 : zéro marqueur |
-| **Volumétrie cible** | Réel : 10 026 mots de corps pour une cible ≈ 6 200 mots (+61,7 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 10 189 mots de corps pour une cible ≈ 6 200 mots (+64,3 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md) v0.30, entrée du chapitre 20, premier mouvement)* — la vérification à l'admission ne protège pas contre la dérive après admission (rug-pull d'un serveur d'outils ou d'un agent tiers) ; et chaque mécanisme spécifie l'émission avec soin et la révocation avec négligence — asymétrie qui reproduit l'histoire des PKI.
 
@@ -542,6 +542,13 @@ raisonnement du chapitre**.* ⚠ **Une passe antérieure écrivait « une projec
 nommer l'analyste, alors même que la phrase suivante exigeait qu'il le fût** : *l'attribution ne
 s'anonymise pas* (décision 15b-i).
 
+☑ **Reprise par l'émetteur, lue à sa source** — 24 octobre 2026 ([veille](../PRD/veille-2026-10-24.md)) :
+le communiqué de **Gartner** du 20 octobre 2026 sur ses tendances stratégiques pour 2027 porte la même
+projection — 25 % des brèches de sécurité d'entreprise remontant à l'abus d'agents d'IA d'ici 2028 —
+et en nomme la cause : des **privilèges machine non gérés** et des **pratiques d'identifiants
+héritées**. ⚠ *C'est un second document, non l'extraction du premier* : la projection reste **[C]** et
+**PROJETÉ**, sous les mêmes conditions de citation.
+
 ## § 20.8 — État de l'*agentic SOC* : offres datées, périmètres réels
 
 *Un centre des opérations de sécurité qui outille son tri d'alertes avec des mandataires logiciels ne
@@ -609,6 +616,14 @@ que le panorama versé ne soutient aucun énoncé de cette forme** ; le chapitre
 où elle siégeait** : l'entrée consolidée `S-104` est **bornée à ce que son rapport de lot soutient**,
 au titre de la condition de sortie *(a)* de la porte **G-3**, le 28 juillet 2026. *Un rédacteur ne
 corrige pas une entrée de socle depuis un chapitre ; il remonte, et la remontée a été soldée.*
+
+☑ **Une catégorie d'analyste, non une offre** — 24 octobre 2026 ([veille](../PRD/veille-2026-10-24.md)) :
+**Gartner** range la **remédiation autonome des expositions** parmi ses dix tendances pour 2027 —
+trouver, prioriser et corriger les vulnérabilités, jusqu'à **tester et déployer en production** des
+correctifs, réels ou virtuels. ⚠ *Une tendance n'a ni éditeur ni date de disponibilité : elle n'entre
+pas au tableau 20.2.* **Elle déplace pourtant la question de la section** : l'agent défensif n'y lit
+plus seulement des alertes, il **écrit en production**, et son effet relève des classes d'effet du
+**ch. 48 § 48.1**.
 
 ## § 20.9 — La symétrie attaque/défense relue par l'identité
 

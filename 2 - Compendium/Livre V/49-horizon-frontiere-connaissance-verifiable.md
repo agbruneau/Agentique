@@ -11,7 +11,7 @@ et 56 (décision 11 du TOC).*
 | **Date de gel** | 27 juillet 2026, gel unique (D-1) ; gels de source juin 2026 (Vol. I), 16-17 juillet 2026 (Vol. II), 21 juillet 2026 (Vol. III) ; aucune échéance du § 49.1 reprise |
 | **Socle mobilisé** | premier mouvement : S-143 à S-149 et S-159, toutes en [C] ; second : Vol. II, ch. 21, Vol. III, sous G-4 ; F-92 et F-96 exclues du socle |
 | **Garde-fous balayés** | Vol. III — R-14 : dix-neuf occurrences au corps ; R-11 : vingt-deux occurrences ; R-02 : deux occurrences de l'identifiant ; R-13 : deux occurrences du terme régi ; R-01, R-03 à R-10, R-12 : zéro occurrence · Vol. II — R-4 : deux occurrences ; R-5 : trois occurrences ; R-6 : une occurrence ; R-8 : une occurrence de l'identifiant ; R-1 à R-3, R-7 : zéro occurrence |
-| **Volumétrie cible** | Réel : 14 565 mots de corps pour une cible ≈ 15 800 mots (−7,8 %), mesure `decompte.sh` |
+| **Volumétrie cible** | Réel : 14 734 mots de corps pour une cible ≈ 15 800 mots (−6,7 %), mesure `decompte.sh` |
 
 > **Thèse** *(citée depuis le [`TOC.md`](../PRD/TOC.md), entrée du chapitre 49, premier mouvement — **collationnée verbatim contre la v0.30 le 28 juillet 2026**)* — une grappe d'échéances datées (PROGRAMMÉ) structure l'horizon ; au-delà, la trajectoire des protocoles, de la gouvernance par couche, de l'identité vérifiable/PQC, de la menace et de la recherche se lit en PROJETÉ, jamais en SPÉCULATIF déguisé en certitude.
 
@@ -570,6 +570,13 @@ construction** — *deux agents conformes chacun dans leur ressort pourraient se
 coopérer non pour une raison technique mais réglementaire.* La portabilité inter-modèles (§ 49.2.2)
 fonctionne comme contre-feu.
 
+☑ **Un analyste nomme ce contre-feu** — 24 octobre 2026 ([veille](../PRD/veille-2026-10-24.md)) :
+parmi ses tendances pour 2027, **Gartner (2026)** décrit des technologies **souveraines** conçues,
+techniquement et juridiquement, pour offrir des **stratégies de sortie réalistes** face aux
+fournisseurs critiques, et projette que **plus de 75 %** des organisations établies hors des États-Unis
+adopteront **d'ici 2030** une stratégie de souveraineté numérique. ⚠ **PROJETÉ, millésime 2026,
+périmètre mondial hors États-Unis** : *le Canada y est compris sans y être isolé.*
+
 **Les horizons de capacité.** Ils sont traités **délibérément comme une incertitude bornée**, non
 comme une trajectoire : le chapitre **ne prédit aucune date d'intelligence générale** (§ 49.0.3). Les
 scénarios disponibles couvrent un large éventail — exercices de prospective modélisant des décollages
@@ -633,6 +640,14 @@ l'exploitation d'agents et la responsabilité de leur identité. ⚠ **Statut in
 est un renvoi** : le rôle de responsable d'identité d'agents renvoie à la fabrique de confiance du
 **ch. 43 § 43.1** — ⚠ *« fabrique » y désigne la fabrique d'identité, non la fabrique d'agents du
 ch. 41* (décision 12c du TOC).
+
+☑ **Les tendances pour 2027** — 24 octobre 2026 ([veille](../PRD/veille-2026-10-24.md)). Le
+20 octobre 2026, **Gartner** groupe quatre de ses dix tendances stratégiques sous la gouvernance de la
+plateforme d'agents autonomes : plateformes de contexte, harnais des agents de codage, identité des
+agents, remédiation autonome des expositions ; une cinquième, la technologie souveraine, vise la sortie
+des fournisseurs critiques. ⚠ **Statut PROJETÉ, et une liste de tendances n'est pas une mesure** :
+*elle situe l'agenda de la somme — contexte, identité, preuve, sortie — dans celui d'un analyste, sans
+rien établir de plus.* Ses chiffres sont au **ch. 20 § 20.7**, au **ch. 24 § 24.4.3** et au § 49.7.
 
 **La recomposition du travail.** ⚠ **C'est la section où la distinction mesuré / projeté doit être la
 plus rigoureuse.** Du côté PROJETÉ, une organisation internationale anticipe à l'horizon 2030 un

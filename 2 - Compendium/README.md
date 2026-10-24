@@ -11,7 +11,7 @@ novembre 2026** par la décision [D-20](PRD/PRD.md#d-20) du 23 octobre 2026, et 
 | Champ | Valeur |
 |---|---|
 | Source | [`TOC.md`](PRD/TOC.md) v0.36, du 2 septembre 2026 — le plan, seul à faire autorité ; cette page le suit |
-| Rendu | [`Compendium.pdf`](Compendium.pdf), édition de novembre 2026, 1 000 pages, cible que la chaîne de composition vérifie ; revalidé le 23 octobre 2026 ([rapport](PRD/revalidation-2026-10-23.md)) sur l'[audit d'actualité du 22 octobre](audit-actualite-2026-10-22.md) |
+| Rendu | [`Compendium.pdf`](Compendium.pdf), édition de novembre 2026, 1 000 pages, cible que la chaîne de composition vérifie ; revalidé le 23 octobre 2026 ([rapport](PRD/revalidation-2026-10-23.md)) sur l'[audit d'actualité du 22 octobre](audit-actualite-2026-10-22.md) ; veille du 24 octobre 2026 sur les tendances 2027 de Gartner ([rapport](PRD/veille-2026-10-24.md)) |
 | Pièces | cinquante chapitres, chacun en `.md`, qui fait foi, et en `.html` : [Livre I](Livre%20I/README.md), ch. 1-11 · [II](Livre%20II/README.md), 12-21 · [III](Livre%20III/README.md), 22-36 · [IV](Livre%20IV/README.md), 37-46 · [V](Livre%20V/README.md), 47-50 |
 | Socle | [`PRD/socle-consolide.md`](PRD/socle-consolide.md), l'Annexe B : 159 entrées, S-001 à S-159 |
 | Annexes | [`annexe-bibliographie.md`](annexe-bibliographie.md), l'Annexe I, et [`annexe-references.md`](annexe-references.md), hors plan |
@@ -33,4 +33,4 @@ sites qui la publient ; `python build/verifier-piece.py`, qui oppose chaque `.ht
 
 **Journal :** [`JOURNAL.md`](JOURNAL.md) — arrêt en révision finale, clôture et réouvertures, renommages et recompositions, le conspectus
 entier et les pages des cinq Livres, tels qu'ils étaient écrits au 15 septembre 2026 ; puis les passes d'octobre 2026 — audits, revalidation,
-décisions D-20 et D-21, pages dérivées.
+décisions D-20 et D-21, pages dérivées, veille Gartner.

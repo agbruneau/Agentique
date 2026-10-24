@@ -2788,3 +2788,50 @@ d'`ARCHIVES.md` à leur date, `RELECTURE.md` — et les chroniques datées des a
 **Contrôles.** `check-renvois` (0 renvoi mort) et `check-lisibilite` (18 pages d'accueil dans les seuils) à la racine ;
 `check-toc`, `check-sieges`, `check-compendium` (mêmes cinq rapports déclaratifs) et `reporter-volumetrie --verifier`
 (334 457 mots, trois sites concordants) depuis ce dossier.
+
+# Passe du 24 octobre 2026 — veille : les tendances stratégiques 2027 de Gartner
+
+*Sur instruction de l'auteur du 24 octobre 2026 : réviser le compendium, puis l'Atlas, d'après l'article de Forbes du
+22 octobre 2026 sur les tendances stratégiques 2027 de Gartner, « afin d'y intégrer les points d'intérêt uniquement ».
+Aucune décision d'auteur numérotée ; ni audit, ni revalidation. Rapport : [veille du 24 octobre](PRD/veille-2026-10-24.md).*
+
+**Sources.** Forbes est la source secondaire ; les chapitres suivent les deux pages de Gartner du 20 octobre 2026, le
+communiqué et la page des trois thèmes, lues le 24 octobre. Elles corrigent Forbes sur trois points : l'horizon 2027 du
+gain sémantique, sa modalité, la cause des brèches.
+
+**Retenu.** Six reprises ☑ datées, chacune chez son siège ; l'énoncé gelé reste en place.
+
+| Point | Pièce |
+|---|---|
+| projection des 25 % de brèches dues à l'abus d'agents d'ici 2028, reprise par l'émetteur et lue à sa source pour la première fois, cause nommée | ch. 20 § 20.7 ; `S-147` |
+| remédiation autonome des expositions : une catégorie d'analyste, non une offre, qui écrit en production | ch. 20 § 20.8 |
+| identité des agents d'IA : accès dynamique régi par politique au lieu d'identifiants statiques | ch. 24 § 24.0.2 |
+| plateformes de contexte : jusqu'à 80 % de précision et 60 % de coûts d'ici 2027 par la sémantique, PROJETÉ | ch. 24 § 24.4.3 |
+| technologie souveraine : stratégies de sortie réalistes ; plus de 75 % des organisations hors des États-Unis d'ici 2030 | ch. 49 § 49.7 |
+| le thème « gouverner la plateforme d'agents autonomes », quatre tendances sur dix | ch. 49 § 49.8 |
+
+**Écarté.** Harnais des agents de codage (sans siège ; nommé seulement au § 49.8), modèles quantitatifs, modèles de
+raisonnement vocal, modèles du monde, applications jetables, *wetware* : hors objet.
+
+**Socle et appareil.** `S-147` amendé dans sa colonne de vérification ; ⚠ *le communiqué de 2024 reste non lu*, l'entrée
+reste `[C]`. Son abrégé est réaligné dans `annexe-references.md`. L'Annexe I n'est pas touchée.
+
+**Volumétrie.** **334 974 mots** de corps (+517), propagés aux trois sites.
+
+**Rendus.**
+- Trois `.html` régénérés (ch. 20, 24, 49).
+- `Compendium.pdf` : 1 002 pages au pas de 16,675 pt. Le pas est re-mesuré et calé à **16,655 pt** ; le relevé est
+  consigné au gabarit. Rendu : **1 000 pages**.
+- ⚠ Les débuts des ch. 25 à 35 avancent d'une page ; les annexes ne bougent pas.
+- ⚠ Le tableau 21.4 se coupe désormais après sa première rangée (pages 397-398) ; laissé en l'état.
+
+**Pages dérivées.**
+- **Atlas** : 519 repères reportés sur la nouvelle pagination, dont les bornes de onze chapitres et `schema.source_pages`.
+  Chaque ancre est suivie ligne à ligne de l'ancien rendu au nouveau ; cinq reports sont tranchés à la main. Les
+  359 intertitres tombent sur leur page.
+- Contenu de l'Atlas : deux entrées du ch. 20 reprises (projection des 25 %) ; six ajoutées, deux chiffres et quatre dates
+  (ch. 20, 24, 49). Le pied date le rendu du 24 octobre 2026.
+
+**Contrôles au terme de la passe.** `check-toc`, `check-sieges`, `check-compendium` (mêmes cinq rapports déclaratifs),
+`verifier-piece`, `assemble-bibliographie --verifier`, `decompte.sh --verifier` et `--registre`, `reporter-volumetrie
+--verifier` passent ; `build-pdf.sh` rend 1 000 pages ; les scripts de l'Atlas passent `node --check`.
