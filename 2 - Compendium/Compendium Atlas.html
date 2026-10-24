@@ -77,8 +77,6 @@ b,strong{font-weight:650}
 .mainnav a{position:relative;flex:none;white-space:nowrap;text-decoration:none;padding:6px 10px;border-radius:999px;font-size:.88rem;font-weight:500;color:var(--ink-2);transition:color .2s,background .2s}
 .mainnav a:hover{color:var(--ink);background:var(--surface-2)}
 .mainnav a[aria-current="page"]{color:var(--ink);background:color-mix(in oklab,var(--accent) 16%,var(--surface))}
-.mainnav a.ext{margin-left:6px;color:var(--muted)}
-.mainnav a.ext::before{content:"";position:absolute;left:-4px;top:25%;bottom:25%;width:1px;background:var(--rule-2)}
 .iconbtn{display:inline-grid;place-items:center;flex:none;width:34px;height:34px;padding:0;border-radius:999px;border:1px solid var(--rule-2);background:var(--surface);color:var(--ink-2);cursor:pointer;text-decoration:none;transition:border-color .2s,color .2s,background .2s}
 .iconbtn:hover{border-color:var(--accent);color:var(--ink)}
 .searchbtn{display:flex;align-items:center;gap:8px;border:1px solid var(--rule-2);background:var(--surface);border-radius:999px;padding:7px 12px;cursor:pointer;color:var(--muted);font-size:.9rem;transition:border-color .2s,color .2s}
@@ -942,7 +940,7 @@ function shell() {
   document.getElementById('app').innerHTML = `
   <header class="top"><div class="top-in">
     <a class="brand" href="#accueil" aria-label="Atlas du Compendium — accueil">${brandMark()}<span>Atlas du Compendium<small>50 chapitres · 5 Livres</small></span></a>
-    <nav class="mainnav" aria-label="Sections">${navs.map(([k, l]) => `<a href="#${k === 'livres' ? 'livre-1' : k}" data-k="${k}">${l}</a>`).join('')}<a class="ext" href="Explorateur/index.html" title="Compendium interactif : simulateurs et explorateur des 50 chapitres">Explorateur ↗</a></nav>
+    <nav class="mainnav" aria-label="Sections">${navs.map(([k, l]) => `<a href="#${k === 'livres' ? 'livre-1' : k}" data-k="${k}">${l}</a>`).join('')}</nav>
     <button class="searchbtn" id="sbtn" type="button">${ICON.search}<span class="lbl">Rechercher</span> <kbd>${KBD}</kbd></button>
     <button class="iconbtn" id="themebtn" type="button"></button>
   </div>
