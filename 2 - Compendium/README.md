@@ -17,14 +17,14 @@ novembre 2026** par la décision [D-20](PRD/PRD.md#d-20) du 23 octobre 2026, et 
 | Annexes | [`annexe-bibliographie.md`](annexe-bibliographie.md), l'Annexe I, et [`annexe-references.md`](annexe-references.md), hors plan |
 | Figures | 118, décrites par [`figures/contenu*.py`](figures/) et gravées par [`figures/genere.py`](figures/genere.py), selon le [programme](figures/programme.md) |
 | Gouvernance | [`PRD/PRD.md`](PRD/PRD.md), dont l'annexe A porte les décisions d'auteur ; [`PRD/registre-gel.md`](PRD/registre-gel.md) |
-| Pages dérivées | l'[Atlas](Compendium%20Atlas.html), les cinquante chapitres et leurs repères au PDF, et l'[Explorateur](Explorateur/LISEZMOI.md), application hors ligne à simulateurs ; écrites à la main, elles ne font pas foi et suivent chaque reprise du PDF |
+| Pages dérivées | l'[Atlas](Compendium%20Atlas.html), les cinquante chapitres et leurs repères au PDF ; écrites à la main, elles ne font pas foi et suivent chaque reprise du PDF |
 
 **Par où entrer :** pour une vue d'ensemble, l'[Atlas](Compendium%20Atlas.html) ; pour lire, l'[objet et la thèse](JOURNAL.md#lobjet-et-la-thèse), puis le [parcours de l'ouvrage](JOURNAL.md#parcours-de-louvrage), livre
 par livre, tels que le conspectus les écrivait au 15 septembre 2026 ; ensuite la page du Livre voulu.
 
 **Refaire :** depuis ce dossier, `bash build/build-pdf.sh` recompose `Compendium.pdf` et échoue si le rendu n'a pas mille pages ;
 `python build/rendre-piece.py` rend les cinquante `.html` depuis leurs `.md` ; `python figures/genere.py` regrave et pose les figures.
-L'Atlas et l'Explorateur se reprennent à la main ; les deux copies de l'Explorateur, `index.html` et `compendium_entreprise_agentique.html`, restent identiques.
+L'Atlas se reprend à la main.
 
 **Vérifier :** depuis ce dossier, un contrôle à la fois, jamais en chaîne `&&` — `python PRD/check-toc.py` pour le plan,
 `python PRD/check-sieges.py` pour les sièges, `python PRD/check-compendium.py` pour les pièces, chacun doublé de son harnais
