@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 272" width="880" height="272">
+<rect width="880" height="272" fill="#ffffff"/>
+<text x="165" y="24" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="12.5" font-weight="bold" fill="#2f5fd0">Avant</text>
+<text x="440" y="24" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="12.5" font-weight="bold" fill="#2f5fd0">Pendant</text>
+<text x="715" y="24" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="12.5" font-weight="bold" fill="#2f5fd0">Après</text>
+<rect x="40" y="36" width="250" height="56" rx="6" fill="#eef2fb" stroke="#2f5fd0" stroke-width="1.2"/>
+<text x="165" y="58.635" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="13" font-weight="bold" fill="#14233f">Dans la boucle</text>
+<text x="165" y="77.46" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#5f6b7a">Validation avant exécution</text>
+<rect x="315" y="36" width="250" height="56" rx="6" fill="#eef2fb" stroke="#2f5fd0" stroke-width="1.2"/>
+<text x="440" y="58.635" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="13" font-weight="bold" fill="#14233f">Sur la boucle</text>
+<text x="440" y="77.46" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#5f6b7a">Surveillance pendant l&#x27;exécution</text>
+<rect x="590" y="36" width="250" height="56" rx="6" fill="#eef2fb" stroke="#2f5fd0" stroke-width="1.2"/>
+<text x="715" y="58.635" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="13" font-weight="bold" fill="#14233f">Hors de la boucle</text>
+<text x="715" y="77.46" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#5f6b7a">Revue après coup</text>
+<line x1="40" y1="138" x2="355" y2="138" stroke="#9aa5b4" stroke-width="1.4"/>
+<line x1="525" y1="138" x2="840" y2="138" stroke="#9aa5b4" stroke-width="1.4"/>
+<polygon points="840,138 831,142 831,134" fill="#9aa5b4"/>
+<rect x="355" y="121" width="170" height="34" rx="6" fill="#f5f6f8" stroke="#5f6b7a" stroke-width="1.2"/>
+<text x="440" y="141.9" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="12" font-weight="bold" fill="#14233f">Exécution de l&#x27;action</text>
+<text x="840" y="158" text-anchor="end" font-family="Segoe UI, Calibri, sans-serif" font-size="11" font-style="italic" fill="#5f6b7a">temps</text>
+<line x1="165" y1="92" x2="165" y2="136" stroke="#2f5fd0" stroke-width="1.4"/>
+<polygon points="165,136 161,127 169,127" fill="#2f5fd0"/>
+<line x1="440" y1="92" x2="440" y2="121" stroke="#2f5fd0" stroke-width="1.4"/>
+<polygon points="440,121 436,112 444,112" fill="#2f5fd0"/>
+<line x1="715" y1="92" x2="715" y2="136" stroke="#2f5fd0" stroke-width="1.4"/>
+<polygon points="715,136 711,127 719,127" fill="#2f5fd0"/>
+<rect x="40" y="180" width="800" height="76" rx="6" fill="#eef2fb" stroke="#2f5fd0" stroke-width="1.2"/>
+<text x="440" y="205.045" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="13" font-weight="bold" fill="#14233f">Aux commandes</text>
+<text x="440" y="223.87" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#5f6b7a">Supervise l&#x27;activité d&#x27;ensemble, décide quand et comment utiliser le système, y compris de ne pas l&#x27;utiliser</text>
+<text x="440" y="239.05" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#5f6b7a">Ne se délègue pas : une personne désignée fixe les limites de l&#x27;agent et peut l&#x27;arrêter</text>
+</svg>

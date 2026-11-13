@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 360" width="880" height="360">
+<rect width="880" height="360" fill="#ffffff"/>
+<text x="24" y="30" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="10" font-weight="bold" letter-spacing="1.2" fill="#2f5fd0">NIVEAU</text>
+<text x="242" y="30" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="10" font-weight="bold" letter-spacing="1.2" fill="#2f5fd0">QUESTION</text>
+<text x="544" y="30" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="10" font-weight="bold" letter-spacing="1.2" fill="#2f5fd0">CE QUE FOURNISSENT LES PROTOCOLES EN 2026</text>
+<rect x="24" y="44" width="206" height="52" rx="6" fill="#eef2fb" stroke="#2f5fd0" stroke-width="1.2"/>
+<text x="127" y="74.0625" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="12.5" font-weight="bold" fill="#14233f">Juridique et de confiance</text>
+<rect x="242" y="44" width="290" height="52" rx="6" fill="#f5f6f8" stroke="#f5f6f8" stroke-width="1.2"/>
+<text x="256" y="74" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#5f6b7a">Ont-elles le droit d&#x27;agir, et peut-on le prouver ?</text>
+<rect x="544" y="44" width="312" height="52" rx="6" fill="#f9eaea" stroke="#9c2f2f" stroke-width="1.2"/>
+<text x="700" y="66.55" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" font-weight="bold" fill="#9c2f2f">Des mécanismes d&#x27;authentification; aucune</text>
+<text x="700" y="80.925" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" font-weight="bold" fill="#9c2f2f">expression des obligations</text>
+<rect x="24" y="104" width="206" height="52" rx="6" fill="#eef2fb" stroke="#2f5fd0" stroke-width="1.2"/>
+<text x="127" y="134.062" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="12.5" font-weight="bold" fill="#14233f">Organisationnel</text>
+<rect x="242" y="104" width="290" height="52" rx="6" fill="#f5f6f8" stroke="#f5f6f8" stroke-width="1.2"/>
+<text x="256" y="134" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#5f6b7a">Qui fait quoi, qui décide, qui répond ?</text>
+<rect x="544" y="104" width="312" height="52" rx="6" fill="#f9eaea" stroke="#9c2f2f" stroke-width="1.2"/>
+<text x="700" y="133.738" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" font-weight="bold" fill="#9c2f2f">Des états de tâche; presque rien d&#x27;autre</text>
+<rect x="24" y="164" width="206" height="52" rx="6" fill="#eef2fb" stroke="#2f5fd0" stroke-width="1.2"/>
+<text x="127" y="194.062" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="12.5" font-weight="bold" fill="#14233f">Sémantique</text>
+<rect x="242" y="164" width="290" height="52" rx="6" fill="#f5f6f8" stroke="#f5f6f8" stroke-width="1.2"/>
+<text x="256" y="194" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#5f6b7a">Comprennent-elles la même chose ?</text>
+<rect x="544" y="164" width="312" height="52" rx="6" fill="#f8f1e4" stroke="#8a5a12" stroke-width="1.2"/>
+<text x="700" y="186.55" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" font-weight="bold" fill="#8a5a12">Des descriptions en langage naturel;</text>
+<text x="700" y="200.925" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" font-weight="bold" fill="#8a5a12">l&#x27;interprétation revient au modèle</text>
+<rect x="24" y="224" width="206" height="52" rx="6" fill="#eef2fb" stroke="#2f5fd0" stroke-width="1.2"/>
+<text x="127" y="254.062" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="12.5" font-weight="bold" fill="#14233f">Syntaxique</text>
+<rect x="242" y="224" width="290" height="52" rx="6" fill="#f5f6f8" stroke="#f5f6f8" stroke-width="1.2"/>
+<text x="256" y="254" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#5f6b7a">Peuvent-elles lire le message ?</text>
+<rect x="544" y="224" width="312" height="52" rx="6" fill="#e9f3ef" stroke="#2c6b58" stroke-width="1.2"/>
+<text x="700" y="253.738" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" font-weight="bold" fill="#2c6b58">Standardisé</text>
+<rect x="24" y="284" width="206" height="52" rx="6" fill="#eef2fb" stroke="#2f5fd0" stroke-width="1.2"/>
+<text x="127" y="314.062" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="12.5" font-weight="bold" fill="#14233f">Technique</text>
+<rect x="242" y="284" width="290" height="52" rx="6" fill="#f5f6f8" stroke="#f5f6f8" stroke-width="1.2"/>
+<text x="256" y="314" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#5f6b7a">Les parties peuvent-elles se joindre ?</text>
+<rect x="544" y="284" width="312" height="52" rx="6" fill="#e9f3ef" stroke="#2c6b58" stroke-width="1.2"/>
+<text x="700" y="313.738" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" font-weight="bold" fill="#2c6b58">Standardisé</text>
+</svg>

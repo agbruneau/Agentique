@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 262" width="880" height="262">
+<rect width="880" height="262" fill="#ffffff"/>
+<rect x="114" y="14" width="652" height="200" rx="8" fill="#ffffff" stroke="#2f5fd0" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text x="126" y="34" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="10" font-weight="bold" letter-spacing="1.2" fill="#2f5fd0">PASSERELLE</text>
+<rect x="16" y="46" width="80" height="152" rx="6" fill="#eef2fb" stroke="#2f5fd0" stroke-width="1.2"/>
+<text x="56" y="126.225" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="13" font-weight="bold" fill="#14233f">Agent</text>
+<rect x="784" y="46" width="80" height="152" rx="6" fill="#f5f6f8" stroke="#5f6b7a" stroke-width="1.2"/>
+<text x="824" y="126.225" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="13" font-weight="bold" fill="#14233f">Outil</text>
+<rect x="126" y="46" width="108" height="92" rx="6" fill="#eef2fb" stroke="#2f5fd0" stroke-width="1.2"/>
+<text x="180" y="80.04" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="12" font-weight="bold" fill="#14233f">Identité</text>
+<text x="180" y="97.615" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#5f6b7a">Jeton émis pour</text>
+<text x="180" y="111.475" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#5f6b7a">ce destinataire</text>
+<rect x="256" y="46" width="108" height="92" rx="6" fill="#eef2fb" stroke="#2f5fd0" stroke-width="1.2"/>
+<text x="310" y="72.54" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="12" font-weight="bold" fill="#14233f">Autorisation</text>
+<text x="310" y="87.54" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="12" font-weight="bold" fill="#14233f">par outil</text>
+<text x="310" y="105.115" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#5f6b7a">Outil permis à</text>
+<text x="310" y="118.975" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#5f6b7a">cet appelant</text>
+<rect x="386" y="46" width="108" height="92" rx="6" fill="#eef2fb" stroke="#2f5fd0" stroke-width="1.2"/>
+<text x="440" y="80.04" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="12" font-weight="bold" fill="#14233f">Approbation</text>
+<text x="440" y="97.615" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#5f6b7a">Accord humain</text>
+<text x="440" y="111.475" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#5f6b7a">exigé ou non</text>
+<rect x="516" y="46" width="108" height="92" rx="6" fill="#eef2fb" stroke="#2f5fd0" stroke-width="1.2"/>
+<text x="570" y="65.61" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="12" font-weight="bold" fill="#14233f">Quota et</text>
+<text x="570" y="80.61" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="12" font-weight="bold" fill="#14233f">budget</text>
+<text x="570" y="98.185" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#5f6b7a">Débit ou</text>
+<text x="570" y="112.045" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#5f6b7a">enveloppe de</text>
+<text x="570" y="125.905" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#5f6b7a">l&#x27;appelant</text>
+<rect x="646" y="46" width="108" height="152" rx="6" fill="#eef2fb" stroke="#2f5fd0" stroke-width="1.2"/>
+<text x="700" y="88.68" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="12" font-weight="bold" fill="#14233f">Inspection des</text>
+<text x="700" y="103.68" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="12" font-weight="bold" fill="#14233f">contenus</text>
+<text x="700" y="121.255" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#5f6b7a">Arguments,</text>
+<text x="700" y="135.115" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#5f6b7a">réponse et</text>
+<text x="700" y="148.975" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#5f6b7a">définition de</text>
+<text x="700" y="162.835" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#5f6b7a">l&#x27;outil</text>
+<line x1="96" y1="92" x2="126" y2="92" stroke="#14233f" stroke-width="1.4"/>
+<polygon points="126,92 117,96 117,88" fill="#14233f"/>
+<line x1="234" y1="92" x2="256" y2="92" stroke="#14233f" stroke-width="1.4"/>
+<polygon points="256,92 247,96 247,88" fill="#14233f"/>
+<line x1="364" y1="92" x2="386" y2="92" stroke="#14233f" stroke-width="1.4"/>
+<polygon points="386,92 377,96 377,88" fill="#14233f"/>
+<line x1="494" y1="92" x2="516" y2="92" stroke="#14233f" stroke-width="1.4"/>
+<polygon points="516,92 507,96 507,88" fill="#14233f"/>
+<line x1="624" y1="92" x2="646" y2="92" stroke="#14233f" stroke-width="1.4"/>
+<polygon points="646,92 637,96 637,88" fill="#14233f"/>
+<line x1="754" y1="92" x2="784" y2="92" stroke="#14233f" stroke-width="1.4"/>
+<polygon points="784,92 775,96 775,88" fill="#14233f"/>
+<line x1="784" y1="176" x2="754" y2="176" stroke="#5f6b7a" stroke-width="1.4"/>
+<polygon points="754,176 763,172 763,180" fill="#5f6b7a"/>
+<line x1="646" y1="176" x2="96" y2="176" stroke="#5f6b7a" stroke-width="1.4"/>
+<polygon points="96,176 105,172 105,180" fill="#5f6b7a"/>
+<text x="371" y="168" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11" fill="#5f6b7a">Réponse balayée avant son retour à l&#x27;agent</text>
+<text x="440" y="244" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" font-weight="bold" fill="#14233f">Toute erreur vaut refus  ·  Chaque décision laisse une trace d&#x27;audit</text>
+</svg>

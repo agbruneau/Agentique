@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 320" width="880" height="320">
+<rect width="880" height="320" fill="#ffffff"/>
+<text x="30" y="26" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="10" font-weight="bold" letter-spacing="1.2" fill="#8a5a12">JUSQU&#x27;À 2025-11-25</text>
+<rect x="40" y="38" width="100" height="36" rx="6" fill="#f8f1e4" stroke="#8a5a12" stroke-width="1.2"/>
+<text x="90" y="60.225" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="13" font-weight="bold" fill="#14233f">Client</text>
+<rect x="320" y="38" width="100" height="36" rx="6" fill="#f8f1e4" stroke="#8a5a12" stroke-width="1.2"/>
+<text x="370" y="60.225" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="13" font-weight="bold" fill="#14233f">Serveur</text>
+<line x1="90" y1="74" x2="90" y2="262" stroke="#9aa5b4" stroke-width="1.3" stroke-dasharray="5 4"/>
+<line x1="370" y1="74" x2="370" y2="262" stroke="#9aa5b4" stroke-width="1.3" stroke-dasharray="5 4"/>
+<line x1="90" y1="112" x2="370" y2="112" stroke="#8a5a12" stroke-width="1.4"/>
+<polygon points="370,112 361,116 361,108" fill="#8a5a12"/>
+<text x="230" y="106" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#8a5a12">initialize : poignée de main</text>
+<line x1="370" y1="154" x2="90" y2="154" stroke="#8a5a12" stroke-width="1.4"/>
+<polygon points="90,154 99,150 99,158" fill="#8a5a12"/>
+<text x="230" y="148" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#8a5a12">session ouverte : Mcp-Session-Id</text>
+<line x1="90" y1="196" x2="370" y2="196" stroke="#8a5a12" stroke-width="1.4"/>
+<polygon points="370,196 361,200 361,192" fill="#8a5a12"/>
+<text x="230" y="190" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#8a5a12">requêtes avec Mcp-Session-Id</text>
+<line x1="370" y1="238" x2="90" y2="238" stroke="#8a5a12" stroke-width="1.4"/>
+<polygon points="90,238 99,234 99,242" fill="#8a5a12"/>
+<text x="230" y="232" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#8a5a12">requête initiée par le serveur</text>
+<text x="230" y="292" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#8a5a12">État de session côté serveur, canal de retour ouvert</text>
+<text x="470" y="26" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="10" font-weight="bold" letter-spacing="1.2" fill="#2c6b58">DEPUIS 2026-07-28</text>
+<rect x="480" y="38" width="100" height="36" rx="6" fill="#e9f3ef" stroke="#2c6b58" stroke-width="1.2"/>
+<text x="530" y="60.225" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="13" font-weight="bold" fill="#14233f">Client</text>
+<rect x="760" y="38" width="100" height="36" rx="6" fill="#e9f3ef" stroke="#2c6b58" stroke-width="1.2"/>
+<text x="810" y="60.225" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="13" font-weight="bold" fill="#14233f">Serveur</text>
+<line x1="530" y1="74" x2="530" y2="262" stroke="#9aa5b4" stroke-width="1.3" stroke-dasharray="5 4"/>
+<line x1="810" y1="74" x2="810" y2="262" stroke="#9aa5b4" stroke-width="1.3" stroke-dasharray="5 4"/>
+<line x1="530" y1="112" x2="810" y2="112" stroke="#2c6b58" stroke-width="1.4"/>
+<polygon points="810,112 801,116 801,108" fill="#2c6b58"/>
+<text x="670" y="106" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#2c6b58">requête + version et capacités</text>
+<line x1="810" y1="154" x2="530" y2="154" stroke="#2c6b58" stroke-width="1.4"/>
+<polygon points="530,154 539,150 539,158" fill="#2c6b58"/>
+<text x="670" y="148" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#2c6b58">input_required : ce qu&#x27;il manque</text>
+<line x1="530" y1="196" x2="810" y2="196" stroke="#2c6b58" stroke-width="1.4"/>
+<polygon points="810,196 801,200 801,192" fill="#2c6b58"/>
+<text x="670" y="190" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#2c6b58">requête d&#x27;origine réémise, avec les réponses</text>
+<line x1="810" y1="238" x2="530" y2="238" stroke="#2c6b58" stroke-width="1.4"/>
+<polygon points="530,238 539,234 539,242" fill="#2c6b58"/>
+<text x="670" y="232" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#2c6b58">complete</text>
+<text x="670" y="292" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#2c6b58">Aucune session : des paires requête-réponse HTTP ordinaires</text>
+<line x1="450" y1="20" x2="450" y2="300" stroke="#9aa5b4" stroke-width="1.3"/>
+</svg>

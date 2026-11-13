@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 318" width="880" height="318">
+<rect width="880" height="318" fill="#ffffff"/>
+<rect x="40" y="20" width="252" height="62" rx="6" fill="#eef2fb" stroke="#2f5fd0" stroke-width="1.2"/>
+<text x="166" y="46" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="13" font-weight="bold" fill="#14233f">Défauts de spécification</text>
+<text x="166" y="67" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#5f6b7a">v3 : 44,2 %  ·  v2 : 41,77 %</text>
+<text x="44" y="110" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="11" fill="#14233f">Consigne de tâche non respectée</text>
+<rect x="44" y="116" width="129.062" height="7" rx="1" fill="#2f5fd0" stroke="#2f5fd0" stroke-width="0.5"/>
+<text x="179.062" y="123.5" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#5f6b7a">11,8 %</text>
+<text x="44" y="146" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="11" fill="#14233f">Rôle non respecté</text>
+<rect x="44" y="152" width="16.4062" height="7" rx="1" fill="#2f5fd0" stroke="#2f5fd0" stroke-width="0.5"/>
+<text x="66.4062" y="159.5" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#5f6b7a">1,5 %</text>
+<text x="44" y="182" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="11" fill="#14233f">Répétition d&#x27;étapes</text>
+<rect x="44" y="188" width="171.719" height="7" rx="1" fill="#2f5fd0" stroke="#2f5fd0" stroke-width="0.5"/>
+<text x="221.719" y="195.5" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#5f6b7a">15,7 %</text>
+<text x="44" y="218" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="11" fill="#14233f">Perte de l&#x27;historique de conversation</text>
+<rect x="44" y="224" width="30.625" height="7" rx="1" fill="#2f5fd0" stroke="#2f5fd0" stroke-width="0.5"/>
+<text x="80.625" y="231.5" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#5f6b7a">2,8 %</text>
+<text x="44" y="254" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="11" fill="#14233f">Condition d&#x27;arrêt ignorée</text>
+<rect x="44" y="260" width="135.625" height="7" rx="1" fill="#2f5fd0" stroke="#2f5fd0" stroke-width="0.5"/>
+<text x="185.625" y="267.5" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#5f6b7a">12,4 %</text>
+<rect x="314" y="20" width="252" height="62" rx="6" fill="#eef2fb" stroke="#2f5fd0" stroke-width="1.2"/>
+<text x="440" y="46" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="13" font-weight="bold" fill="#14233f">Désalignement entre agents</text>
+<text x="440" y="67" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#5f6b7a">v3 : 32,4 %  ·  v2 : 36,94 %</text>
+<text x="318" y="110" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="11" fill="#14233f">Réinitialisation de la conversation</text>
+<rect x="318" y="116" width="24.0625" height="7" rx="1" fill="#2f5fd0" stroke="#2f5fd0" stroke-width="0.5"/>
+<text x="348.062" y="123.5" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#5f6b7a">2,2 %</text>
+<text x="318" y="146" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="11" fill="#14233f">Clarification non demandée</text>
+<rect x="318" y="152" width="74.375" height="7" rx="1" fill="#2f5fd0" stroke="#2f5fd0" stroke-width="0.5"/>
+<text x="398.375" y="159.5" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#5f6b7a">6,8 %</text>
+<text x="318" y="182" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="11" fill="#14233f">Dérive hors de la tâche</text>
+<rect x="318" y="188" width="80.9375" height="7" rx="1" fill="#2f5fd0" stroke="#2f5fd0" stroke-width="0.5"/>
+<text x="404.938" y="195.5" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#5f6b7a">7,4 %</text>
+<text x="318" y="218" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="11" fill="#14233f">Rétention d&#x27;information</text>
+<rect x="318" y="224" width="9.29688" height="7" rx="1" fill="#2f5fd0" stroke="#2f5fd0" stroke-width="0.5"/>
+<text x="333.297" y="231.5" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#5f6b7a">0,85 %</text>
+<text x="318" y="254" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="11" fill="#14233f">Apport d&#x27;un autre agent ignoré</text>
+<rect x="318" y="260" width="20.7812" height="7" rx="1" fill="#2f5fd0" stroke="#2f5fd0" stroke-width="0.5"/>
+<text x="344.781" y="267.5" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#5f6b7a">1,9 %</text>
+<text x="318" y="290" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="11" fill="#14233f">Écart entre raisonnement et action</text>
+<rect x="318" y="296" width="144.375" height="7" rx="1" fill="#2f5fd0" stroke="#2f5fd0" stroke-width="0.5"/>
+<text x="468.375" y="303.5" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#5f6b7a">13,2 %</text>
+<rect x="588" y="20" width="252" height="62" rx="6" fill="#eef2fb" stroke="#2f5fd0" stroke-width="1.2"/>
+<text x="714" y="46" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="13" font-weight="bold" fill="#14233f">Vérification de la tâche</text>
+<text x="714" y="67" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#5f6b7a">v3 : 23,5 %  ·  v2 : 21,30 %</text>
+<text x="592" y="110" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="11" fill="#14233f">Arrêt prématuré</text>
+<rect x="592" y="116" width="67.8125" height="7" rx="1" fill="#2f5fd0" stroke="#2f5fd0" stroke-width="0.5"/>
+<text x="665.812" y="123.5" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#5f6b7a">6,2 %</text>
+<text x="592" y="146" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="11" fill="#14233f">Vérification absente ou incomplète</text>
+<rect x="592" y="152" width="89.6875" height="7" rx="1" fill="#2f5fd0" stroke="#2f5fd0" stroke-width="0.5"/>
+<text x="687.688" y="159.5" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#5f6b7a">8,2 %</text>
+<text x="592" y="182" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="11" fill="#14233f">Vérification incorrecte</text>
+<rect x="592" y="188" width="99.5312" height="7" rx="1" fill="#2f5fd0" stroke="#2f5fd0" stroke-width="0.5"/>
+<text x="697.531" y="195.5" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#5f6b7a">9,1 %</text>
+</svg>

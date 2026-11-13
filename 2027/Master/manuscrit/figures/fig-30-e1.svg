@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 404" width="880" height="404">
+<rect width="880" height="404" fill="#ffffff"/>
+<rect x="16" y="20" width="150" height="54" rx="6" fill="#f5f6f8" stroke="#5f6b7a" stroke-width="1.2"/>
+<text x="91" y="51.225" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="13" font-weight="bold" fill="#14233f">Utilisateur</text>
+<rect x="236" y="20" width="170" height="54" rx="6" fill="#eef2fb" stroke="#2f5fd0" stroke-width="1.2"/>
+<text x="321" y="51.225" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="13" font-weight="bold" fill="#14233f">Agent</text>
+<rect x="476" y="20" width="170" height="54" rx="6" fill="#eef2fb" stroke="#2f5fd0" stroke-width="1.2"/>
+<text x="561" y="51.225" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="13" font-weight="bold" fill="#14233f">Sous-agent</text>
+<rect x="716" y="20" width="148" height="54" rx="6" fill="#f5f6f8" stroke="#5f6b7a" stroke-width="1.2"/>
+<text x="790" y="43.4" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="12" font-weight="bold" fill="#14233f">Serveur de</text>
+<text x="790" y="58.4" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="12" font-weight="bold" fill="#14233f">ressources</text>
+<line x1="166" y1="47" x2="236" y2="47" stroke="#5f6b7a" stroke-width="1.4"/>
+<polygon points="236,47 227,51 227,43" fill="#5f6b7a"/>
+<text x="201" y="40" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#5f6b7a">délègue</text>
+<line x1="406" y1="47" x2="476" y2="47" stroke="#5f6b7a" stroke-width="1.4"/>
+<polygon points="476,47 467,51 467,43" fill="#5f6b7a"/>
+<text x="441" y="40" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#5f6b7a">mandate</text>
+<line x1="646" y1="47" x2="716" y2="47" stroke="#5f6b7a" stroke-width="1.4"/>
+<polygon points="716,47 707,51 707,43" fill="#5f6b7a"/>
+<text x="681" y="40" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#5f6b7a">présente</text>
+<rect x="236" y="104" width="170" height="92" rx="6" fill="#ffffff" stroke="#2f5fd0" stroke-width="1.2"/>
+<text x="248" y="124" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" font-weight="bold" fill="#14233f">Jeton de l&#x27;agent</text>
+<text x="248" y="144" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="11" fill="#14233f">sub : utilisateur</text>
+<text x="248" y="161" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="11" fill="#14233f">act : agent</text>
+<rect x="491" y="104" width="140" height="92" rx="6" fill="#ffffff" stroke="#2f5fd0" stroke-width="1.2"/>
+<text x="503" y="124" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" font-weight="bold" fill="#14233f">Jeton du sous-agent</text>
+<text x="503" y="144" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="11" fill="#14233f">sub : utilisateur</text>
+<text x="503" y="161" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="11" fill="#14233f">act : sous-agent</text>
+<text x="517" y="178" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="11" font-style="italic" fill="#8a5a12">act : agent</text>
+<line x1="321" y1="74" x2="321" y2="104" stroke="#9aa5b4" stroke-width="1.3"/>
+<line x1="561" y1="74" x2="561" y2="104" stroke="#9aa5b4" stroke-width="1.3"/>
+<rect x="236" y="266" width="410" height="48" rx="6" fill="#f5f6f8" stroke="#5f6b7a" stroke-width="1.2"/>
+<text x="441" y="294.225" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="13" font-weight="bold" fill="#14233f">Serveur d&#x27;autorisation</text>
+<line x1="321" y1="266" x2="321" y2="196" stroke="#5f6b7a" stroke-width="1.4"/>
+<polygon points="321,196 325,205 317,205" fill="#5f6b7a"/>
+<text x="331" y="236" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#5f6b7a">émet</text>
+<line x1="561" y1="266" x2="561" y2="196" stroke="#2f5fd0" stroke-width="1.4"/>
+<polygon points="561,196 565,205 557,205" fill="#2f5fd0"/>
+<text x="571" y="214" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" font-weight="bold" fill="#2f5fd0">échange de jeton</text>
+<text x="571" y="228" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#2f5fd0">une seule audience</text>
+<text x="571" y="242" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#2f5fd0">moins de droits</text>
+<text x="571" y="256" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#2f5fd0">expire avant le parent</text>
+<rect x="716" y="104" width="148" height="92" rx="6" fill="#ffffff" stroke="#5f6b7a" stroke-width="1.2"/>
+<text x="790" y="124" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" font-weight="bold" fill="#14233f">Décide sur</text>
+<text x="790" y="144" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11" fill="#14233f">sub et acteur courant</text>
+<text x="790" y="168" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11" font-style="italic" fill="#8a5a12">Acteurs antérieurs :</text>
+<text x="790" y="182.52" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11" font-style="italic" fill="#8a5a12">informatifs</text>
+<line x1="790" y1="74" x2="790" y2="104" stroke="#9aa5b4" stroke-width="1.3"/>
+<text x="16" y="344" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="10" font-weight="bold" letter-spacing="1.2" fill="#8a5a12">CE QUE LA CHAÎNE PERD</text>
+<text x="16" y="366" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#14233f">Rien ne garantit que l&#x27;agent avait le droit de déléguer, ni qu&#x27;il a réduit ce qu&#x27;il transmettait.</text>
+<text x="16" y="384" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#14233f">L&#x27;orchestrateur consigne la chaîne complète, que le jeton ne porte pas de façon probante.</text>
+</svg>

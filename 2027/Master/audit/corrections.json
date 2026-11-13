@@ -1,0 +1,3206 @@
+[
+ {
+  "n": 1,
+  "fichier": "ouverture.md",
+  "avant": "La partie X, ajoutée ensuite, confronte",
+  "apres": "La partie X confronte",
+  "categorie": "residu",
+  "motif": "Règle 6 (résidu) : suppression du seul membre de phrase « ajoutée ensuite, »; aucun mot ajouté, texte raccourci.",
+  "origine": "tranche 01-0"
+ },
+ {
+  "n": 2,
+  "fichier": "ouverture.md",
+  "avant": "sas OPC-UA / jumeau numérique",
+  "apres": "sas OPC UA / jumeau numérique",
+  "categorie": "terminologie",
+  "motif": "Règle 3 : « OPC UA » 36 occurrences dans l'ouvrage contre 19; même réserve que pour la ligne 185 sur le contrôle de l'ouverture.",
+  "origine": "tranche 01-2"
+ },
+ {
+  "n": 3,
+  "fichier": "ouverture.md",
+  "avant": "Groupe Boréal Synergie Inc. (« Groupe Boréal »)",
+  "apres": "Groupe Boréal Inc. (« Groupe Boréal »)",
+  "categorie": "coherence",
+  "motif": "Règle 2 (majorité des occurrences) : « Groupe Boréal Inc. » figure à la ligne 10 et au titre 0.5 de l'ouverture et aux chapitres 1 (l. 594), 16 (l. 828), 43 (l. 455), contre deux occurrences de « Synergie » (ici et chapitre 45, l. 289). Aucun nom nouveau, texte raccourci.",
+  "origine": "tranche 01-4"
+ },
+ {
+  "n": 4,
+  "fichier": "ouverture.md",
+  "avant": "exposés en OPC-UA et MQTT",
+  "apres": "exposés en OPC UA et MQTT",
+  "categorie": "terminologie",
+  "motif": "Règle 3 : « OPC UA » 36 occurrences dans l'ouvrage contre 19; même réserve que pour la ligne 185 sur le contrôle de l'ouverture.",
+  "origine": "tranche 01-5"
+ },
+ {
+  "n": 5,
+  "fichier": "ouverture.md",
+  "avant": "| Chap. 5, 11, 34 et 47 |",
+  "apres": "| Chap. 5, 11, 13 et 34 |",
+  "categorie": "renvoi",
+  "motif": "Seul un numéro de chapitre change dans la cellule : le chapitre 47 ne contient aucune occurrence d'Agent Skills ni de SKILL.md (une seule d'AGENTS.md, l. 37), le chapitre 13 en compte 21. Le nombre 13 figure déjà dans l'ouverture.",
+  "origine": "tranche 01-6"
+ },
+ {
+  "n": 6,
+  "fichier": "ouverture.md",
+  "avant": "| Chap. 5 et 25 |",
+  "apres": "| Chap. 5 et 9 |",
+  "categorie": "renvoi",
+  "motif": "Seul un numéro de chapitre change : WebMCP est traité à la section 9.2 (chapitre 9, 26 occurrences), jamais au chapitre 25. Le nombre 9 figure déjà dans l'ouverture.",
+  "origine": "tranche 01-7"
+ },
+ {
+  "n": 7,
+  "fichier": "ouverture.md",
+  "avant": "| Chap. 6, 11 et 45 |",
+  "apres": "| Chap. 6, 7, 11 et 45 |",
+  "categorie": "renvoi",
+  "motif": "Un numéro de chapitre est ajouté dans la cellule, sans toucher aux lignes : la section 7.3 (« AGNTCY : annuaire, messagerie, schémas ») est l'exposé de référence (21 occurrences d'AGNTCY, OASF ou SLIM au chapitre 7, contre 8 au chapitre 11 et 6 au chapitre 45). Le nombre 7 figure déjà dans l'ouverture; la cellule gagne trois caractères.",
+  "origine": "tranche 01-8"
+ },
+ {
+  "n": 8,
+  "fichier": "ouverture.md",
+  "avant": "| Chap. 10 et 41 |",
+  "apres": "| Chap. 7 et 10 |",
+  "categorie": "renvoi",
+  "motif": "Seul un numéro de chapitre change : AG-UI est exposé à la section 7.1 (18 occurrences d'AG-UI, A2UI ou MCP-UI au chapitre 7) et mis en œuvre à la section 10.9; le chapitre 41 n'a aucune occurrence d'AG-UI (deux d'A2UI). Cellule de même longueur.",
+  "origine": "tranche 01-9"
+ },
+ {
+  "n": 9,
+  "fichier": "ouverture.md",
+  "avant": "| **OPC-UA & MQTT Sparkplug** |",
+  "apres": "| **OPC UA & MQTT Sparkplug** |",
+  "categorie": "terminologie",
+  "motif": "Règle 3 (forme la plus fréquente dans l'ouvrage) : « OPC UA » 36 occurrences (chapitres 28, 12, 7) contre « OPC-UA » 19; pas d'entrée à l'annexe A; l'annexe H (l. 30) écrit « OPC-UA » et devra suivre. Quatre occurrences dans l'ouverture, corrigées une à une. Réserve : si le contrôle de l'ouverture lit « UA » comme un sigle nouveau, laisser ces quatre occurrences.",
+  "origine": "tranche 01-10"
+ },
+ {
+  "n": 10,
+  "fichier": "ouverture.md",
+  "avant": "| Chap. 10, 30, 45 et 46 |",
+  "apres": "| Chap. 10, 29, 30, 45 et 46 |",
+  "categorie": "renvoi",
+  "motif": "Un numéro de chapitre est ajouté dans la cellule : le chapitre 29 (Identité agentique) est l'exposé de référence sur SPIFFE et les DID (18 occurrences; le chapitre 31, l. 56, renvoie lui-même aux chapitres 29 et 30). Le chapitre 46 reste cité à bon droit (SPIRE sur TPM, l. 598, 625, 847). Réserve : le nombre 29 n'apparaît pas ailleurs dans l'ouverture.",
+  "origine": "tranche 01-11"
+ },
+ {
+  "n": 11,
+  "fichier": "ouverture.md",
+  "avant": "| Chap. 38 et 41 |",
+  "apres": "| Chap. 35 et 38 |",
+  "categorie": "renvoi",
+  "motif": "Seul un numéro de chapitre change : ISO/IEC 42001 et NIST AI RMF sont traités au chapitre 35 (14 occurrences) et au chapitre 38 (12), une seule fois au chapitre 41. Le nombre 35 figure déjà dans l'ouverture (l. 134). Cellule de même longueur.",
+  "origine": "tranche 01-13"
+ },
+ {
+  "n": 12,
+  "fichier": "ouverture.md",
+  "avant": "| Chap. 1, 38, 46 et 47 |",
+  "apres": "| Chap. 1, 35, 38, 46 et 47 |",
+  "categorie": "renvoi",
+  "motif": "Un numéro de chapitre est ajouté dans la cellule : le chapitre 35 (Cadres internationaux) est celui qui traite l'AI Act (11 occurrences, contre une au chapitre 1) et que l'ouverture cite elle-même pour le report (l. 134). La cellule gagne quatre caractères.",
+  "origine": "tranche 01-14"
+ },
+ {
+  "n": 13,
+  "fichier": "ouverture.md",
+  "avant": "des ateliers industriels (OPC-UA, jumeaux numériques)",
+  "apres": "des ateliers industriels (OPC UA, jumeaux numériques)",
+  "categorie": "terminologie",
+  "motif": "Règle 3 : « OPC UA » 36 occurrences dans l'ouvrage contre 19; même réserve que pour la ligne 185 sur le contrôle de l'ouverture.",
+  "origine": "tranche 01-15"
+ },
+ {
+  "n": 14,
+  "fichier": "chapitre-01-entreprise-agentique.md",
+  "avant": "Une injection de prompt (OWASP ASI03) avait alors un impact maximal.",
+  "apres": "Une injection de prompt avait alors un impact maximal (OWASP ASI03).",
+  "categorie": "coherence",
+  "motif": "Règle 1 (le volet s'aligne sur l'exposé) : au chapitre 31, ASI01 est « l'entrée » et ASI03 (Identity & Privilege Abuse) « mesure l'étendue des dégâts » (l. 54 à 56 et 65). Le code est donc rattaché à l'impact, non à l'injection; aucun code ajouté ni retiré.",
+  "origine": "tranche 01-17"
+ },
+ {
+  "n": 15,
+  "fichier": "chapitre-01-entreprise-agentique.md",
+  "avant": "(\\< 12 outils cohérents par agent)",
+  "apres": "(12 outils cohérents au plus par agent)",
+  "categorie": "coherence",
+  "motif": "Même plafond que ci-dessous : « cinq à douze » (ligne 315), « 5–12 » (ligne 342) et « au plus 12 » (annexe F) contre « < 12 » ici.",
+  "origine": "tranche 01-18"
+ },
+ {
+  "n": 16,
+  "fichier": "chapitre-01-entreprise-agentique.md",
+  "avant": "Double couche normalisée AAIF : MCP (vertical) + A2A v1.0 / AGNTCY (horizontal)",
+  "apres": "Double couche normalisée : MCP (vertical) + A2A v1.0 / AGNTCY (horizontal)",
+  "categorie": "coherence",
+  "motif": "AGNTCY n'est pas un projet de l'AAIF : l'ouverture (tableau 0.6) le rattache à la Linux Foundation et la section 11.2 ne le compte pas parmi les dix projets de l'AAIF.",
+  "origine": "tranche 01-19"
+ },
+ {
+  "n": 17,
+  "fichier": "chapitre-01-entreprise-agentique.md",
+  "avant": "forment l’échelle propre à ce volet",
+  "apres": "forment l’échelle propre à l’ouvrage",
+  "categorie": "coherence",
+  "motif": "Règle 2 : l'ouverture (section 0.4, l. 99) dit l'échelle L0 à L4 « propre à l'ouvrage » et appliquée par tout le compendium; les volets des autres chapitres l'emploient aussi.",
+  "origine": "tranche 01-20"
+ },
+ {
+  "n": 18,
+  "fichier": "chapitre-01-entreprise-agentique.md",
+  "avant": "un poste électrique connecté en OPC-UA,",
+  "apres": "un poste électrique connecté en OPC UA,",
+  "categorie": "terminologie",
+  "motif": "Règle 3 : « OPC UA » 36 occurrences dans l'ouvrage contre 19; deux occurrences seulement dans ce chapitre.",
+  "origine": "tranche 01-22"
+ },
+ {
+  "n": 19,
+  "fichier": "chapitre-01-entreprise-agentique.md",
+  "avant": "interrogent en continu les serveurs OPC-UA,",
+  "apres": "interrogent en continu les serveurs OPC UA,",
+  "categorie": "terminologie",
+  "motif": "Règle 3 : « OPC UA » 36 occurrences dans l'ouvrage contre 19; deux occurrences seulement dans ce chapitre.",
+  "origine": "tranche 01-23"
+ },
+ {
+  "n": 20,
+  "fichier": "chapitre-01-entreprise-agentique.md",
+  "avant": "réévaluation annuelle lors des mises à jour majeures",
+  "apres": "réévaluation semestrielle lors des mises à jour majeures",
+  "categorie": "coherence",
+  "motif": "Règle 2 : l'en-tête de la fiche (l. 637) et le gabarit de l'annexe F (F.4, « review_trigger : Semestrielle ou changement majeur ») donnent une révision semestrielle; on corrige la condition. Même discordance aux ADR des chapitres 32 et 34, hors tranche.",
+  "origine": "tranche 01-25"
+ },
+ {
+  "n": 21,
+  "fichier": "chapitre-01-entreprise-agentique.md",
+  "avant": "manipule-t-il un ensemble cohérent de moins de douze outils MCP",
+  "apres": "manipule-t-il un ensemble cohérent d’au plus douze outils MCP",
+  "categorie": "coherence",
+  "motif": "Le plafond d'outils par spécialiste est « cinq à douze » (ligne 315), « 5–12 » (ligne 342) et « au plus 12 » (annexe F, ADR-005), mais « moins de douze » ici et « < 12 » ligne 294.",
+  "origine": "tranche 01-26"
+ },
+ {
+  "n": 22,
+  "fichier": "chapitre-02-genealogie.md",
+  "avant": "Le tableau de 2.4 suit désormais [1] pour la communication;",
+  "apres": "Le tableau de 2.4 suit [1] pour la communication;",
+  "categorie": "residu",
+  "motif": "Règle 6 (résidu) : suppression du seul mot « désormais », qui renvoie à une révision antérieure.",
+  "origine": "tranche 01-28"
+ },
+ {
+  "n": 23,
+  "fichier": "chapitre-05-mcp.md",
+  "avant": "Une seconde extension stable, OAuth Client Credentials,",
+  "apres": "Une autre extension stable, OAuth Client Credentials,",
+  "categorie": "coherence",
+  "motif": "La section 5.6 recense trois extensions stables (OAuth Client Credentials, Enterprise-Managed Authorization, MCP Apps) : « une seconde » laisse croire qu'il n'y en a que deux.",
+  "origine": "tranche 01-34"
+ },
+ {
+  "n": 24,
+  "fichier": "chapitre-05-mcp.md",
+  "avant": "Pages primaires lues le 12 novembre 2026 pour la reprise :",
+  "apres": "Pages primaires lues le 12 novembre 2026 :",
+  "categorie": "residu",
+  "motif": "« pour la reprise » renvoie à une étape de fabrication (reprise du chapitre).",
+  "origine": "tranche 01-35"
+ },
+ {
+  "n": 25,
+  "fichier": "chapitre-05-mcp.md",
+  "avant": "- La mention du « délégué confus » à propos du non-relais des jetons a été retirée : selon les chapitres 24 et 31, la spécification désigne ainsi un autre cas, celui du mandataire OAuth à identifiant client statique.\n",
+  "apres": "",
+  "categorie": "residu",
+  "motif": "Règle 6 (résidu) : la puce entière décrit une suppression faite en fabrication; on supprime la ligne complète, saut de ligne compris, pour ne pas laisser de ligne vide dans la liste.",
+  "origine": "tranche 01-36"
+ },
+ {
+  "n": 26,
+  "fichier": "chapitre-05-mcp.md",
+  "avant": "**Tip**",
+  "apres": "**Astuce**",
+  "categorie": "langue",
+  "motif": "Titre d'encadré laissé en anglais (seul encadré .tip de l'ouvrage).",
+  "origine": "tranche 01-37"
+ },
+ {
+  "n": 27,
+  "fichier": "chapitre-05-mcp.md",
+  "avant": "MCP-Protocol-Version: 2025-06-18",
+  "apres": "MCP-Protocol-Version: 2025-11-25",
+  "categorie": "factuel",
+  "motif": "Règle 5, vérification en ligne (https://modelcontextprotocol.io/specification/2025-11-25/client/elicitation : le mode URL est introduit par la révision 2025-11-25); règle 8, deux endroits font deux constats.",
+  "origine": "tranche 01-39"
+ },
+ {
+  "n": 28,
+  "fichier": "chapitre-05-mcp.md",
+  "avant": "\"protocolVersion\": \"2025-06-18\",",
+  "apres": "\"protocolVersion\": \"2025-11-25\",",
+  "categorie": "factuel",
+  "motif": "Règle 5, vérification en ligne : la révision 2025-06-18 ne connaît que `\"elicitation\": {}` (https://modelcontextprotocol.io/specification/2025-06-18/client/elicitation); les modes `form` et `url` sont introduits par la révision 2025-11-25 (https://modelcontextprotocol.io/specification/2025-11-25/client/elicitation), que l'exposé cite comme dernière version à poignée de main (l. 68). On corrige la version, non les capacités.",
+  "origine": "tranche 01-40"
+ },
+ {
+  "n": 29,
+  "fichier": "chapitre-05-mcp.md",
+  "avant": "Serveurs MCP en lecture seule sur OPC-UA et historiens d'usine",
+  "apres": "Serveurs MCP en lecture seule sur OPC UA et historiens d'usine",
+  "categorie": "terminologie",
+  "motif": "Règle 3 : « OPC UA » 36 occurrences dans l'ouvrage contre 19; deux occurrences seulement dans ce chapitre.",
+  "origine": "tranche 01-41"
+ },
+ {
+  "n": 30,
+  "fichier": "chapitre-05-mcp.md",
+  "avant": "une passerelle OPC-UA configurée en lecture seule",
+  "apres": "une passerelle OPC UA configurée en lecture seule",
+  "categorie": "terminologie",
+  "motif": "Règle 3 : « OPC UA » 36 occurrences dans l'ouvrage contre 19; deux occurrences seulement dans ce chapitre.",
+  "origine": "tranche 01-42"
+ },
+ {
+  "n": 31,
+  "fichier": "chapitre-45-reseaux-b2b-federes.md",
+  "avant": "agit au nom de Groupe Boréal Synergie Inc.",
+  "apres": "agit au nom de Groupe Boréal Inc.",
+  "categorie": "coherence",
+  "motif": "Règle 2 (majorité des occurrences : « Groupe Boréal Inc. » dans l'ouverture et aux chapitres 1, 16, 43, 46); règle 8, deux endroits font deux constats.",
+  "origine": "tranche 01-45"
+ },
+ {
+  "n": 32,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "MCP encadre des extensions officielles, dont deux en bêta",
+  "apres": "MCP encadre des extensions officielles, notamment deux en bêta",
+  "categorie": "coherence",
+  "motif": "Règle 2 : chapitre 5, l. 248-250 et annexe B, l. 27 (« Bêta : Tasks, Skills over MCP, Server Cards »); on garde l'énumération et on lève l'implication de décompte.",
+  "origine": "tranche 02-1"
+ },
+ {
+  "n": 33,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "Les noms d’opérations et de champs de configuration employés dans ce volet (`message/send`, `message/stream`, `tasks/get`, `tasks/cancel`, `tasks/resubscribe`, `agent/authenticatedExtendedCard`, `supportsAuthenticatedExtendedCard`, `pushNotificationConfig`, `blocking`) sont à vérifier contre la spécification 1.0 : l’exposé n’en donne pas les noms; il indique seulement que la version 1.0 renomme des opérations de la version 0.3 (section 6.4), qu’elle en compte onze (section 6.3) et que le paramètre qui permet de reprendre la main tout de suite est `returnImmediately` (section 6.3).\n\n",
+  "apres": "",
+  "categorie": "residu",
+  "motif": "Règles 5 et 6 : la page « What's new in v1.0 » donne les renommages (message/send → SendMessage, message/stream → SendStreamingMessage, tasks/get → GetTask, tasks/cancel → CancelTask, tasks/resubscribe → SubscribeToTask, agent/getAuthenticatedExtendedCard → GetExtendedAgentCard, supportsAuthenticatedExtendedCard → capabilities.extendedAgentCard) (https://a2a-protocol.org/latest/whats-new-v1/); la spécification donne returnImmediately et taskPushNotificationConfig (https://a2a-protocol.org/latest/specification/).",
+  "origine": "tranche 02-3"
+ },
+ {
+  "n": 34,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "(`supportsAuthenticatedExtendedCard: true`)",
+  "apres": "(`capabilities.extendedAgentCard: true`)",
+  "categorie": "factuel",
+  "motif": "Règle 5 : en 1.0 le champ passe du niveau supérieur de la carte à `capabilities.extendedAgentCard` (https://a2a-protocol.org/latest/whats-new-v1/).",
+  "origine": "tranche 02-4"
+ },
+ {
+  "n": 35,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "se lisent sur `agent/authenticatedExtendedCard`, avec un jeton valide",
+  "apres": "se lisent par l’opération `GetExtendedAgentCard`, avec un jeton valide",
+  "categorie": "factuel",
+  "motif": "Règle 5 : `agent/getAuthenticatedExtendedCard` → `GetExtendedAgentCard` (https://a2a-protocol.org/latest/whats-new-v1/).",
+  "origine": "tranche 02-5"
+ },
+ {
+  "n": 36,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "Lors d’un appel `message/send` ou `message/stream`",
+  "apres": "Lors d’un appel `SendMessage` ou `SendStreamingMessage`",
+  "categorie": "factuel",
+  "motif": "Règle 5 : renommages de la version 1.0 (https://a2a-protocol.org/latest/whats-new-v1/; section 9 de https://a2a-protocol.org/latest/specification/).",
+  "origine": "tranche 02-6"
+ },
+ {
+  "n": 37,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "rappeler `message/send` sur le même `taskId`",
+  "apres": "rappeler `SendMessage` sur le même `taskId`",
+  "categorie": "factuel",
+  "motif": "Règle 5 : `message/send` → `SendMessage` (https://a2a-protocol.org/latest/whats-new-v1/).",
+  "origine": "tranche 02-7"
+ },
+ {
+  "n": 38,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "Consentement hors bande (CIBA) ou jeton tiers requis.",
+  "apres": "Consentement hors bande (CIBA, *Client-Initiated Backchannel Authentication*) ou jeton tiers requis.",
+  "categorie": "terminologie",
+  "motif": "Règle 3 : aucune forme développée dans le manuscrit (Grep sans résultat); développement du sigle à sa seule occurrence du chapitre.",
+  "origine": "tranche 02-8"
+ },
+ {
+  "n": 39,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "après une requête `tasks/cancel`",
+  "apres": "après une requête `CancelTask`",
+  "categorie": "factuel",
+  "motif": "Règle 5 : `tasks/cancel` → `CancelTask` (https://a2a-protocol.org/latest/whats-new-v1/).",
+  "origine": "tranche 02-9"
+ },
+ {
+  "n": 40,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "**Reconnexion sans perte (`tasks/resubscribe`)**",
+  "apres": "**Reconnexion sans perte (`SubscribeToTask`)**",
+  "categorie": "factuel",
+  "motif": "Règle 5 : `tasks/resubscribe` → `SubscribeToTask` (https://a2a-protocol.org/latest/whats-new-v1/).",
+  "origine": "tranche 02-10"
+ },
+ {
+  "n": 41,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "invoque `tasks/resubscribe` avec le `taskId`",
+  "apres": "invoque `SubscribeToTask` avec le `taskId`",
+  "categorie": "factuel",
+  "motif": "Règle 5 : `tasks/resubscribe` → `SubscribeToTask` (https://a2a-protocol.org/latest/whats-new-v1/); la section de la spécification sur SubscribeToTask ne mentionne pas de rejeu (https://a2a-protocol.org/latest/specification/).",
+  "origine": "tranche 02-11"
+ },
+ {
+  "n": 42,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "émet aussitôt `tasks/cancel`",
+  "apres": "émet aussitôt `CancelTask`",
+  "categorie": "factuel",
+  "motif": "Règle 5 : `tasks/cancel` → `CancelTask` (https://a2a-protocol.org/latest/whats-new-v1/); champs `append` et `lastChunk` confirmés dans https://a2a-protocol.org/latest/specification/.",
+  "origine": "tranche 02-12"
+ },
+ {
+  "n": 43,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "#### Extrait 6.1 — Séquence JSON-RPC 2.0 A2A v1.0 : soumission asynchrone, suspension input-required et artefact typé",
+  "apres": "#### Extrait 6.1 — Séquence JSON-RPC 2.0 A2A (syntaxe de la version 0.3) : soumission asynchrone, suspension input-required et artefact typé",
+  "categorie": "coherence",
+  "motif": "Règles 1 et 5 : la version 1.0 supprime le discriminant `kind`, préfixe les états (`TASK_STATE_INPUT_REQUIRED`), renomme les méthodes et retire `final` (https://a2a-protocol.org/latest/whats-new-v1/); le titre n'est repris nulle part ailleurs dans le manuscrit (Grep).",
+  "origine": "tranche 02-13"
+ },
+ {
+  "n": 44,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "Dans l’extrait, les états sont en minuscules avec tiret et les parties se distinguent par un champ `kind`; l’exposé indique",
+  "apres": "L’extrait suit la syntaxe de la version 0.3 : les états sont en minuscules avec tiret et les parties se distinguent par un champ `kind`; pour la version 1.0, l’exposé indique",
+  "categorie": "coherence",
+  "motif": "Règles 1 et 5 : états en minuscules avec tiret et champ `kind` sont la syntaxe 0.3, remplacée en 1.0 (https://a2a-protocol.org/latest/whats-new-v1/).",
+  "origine": "tranche 02-14"
+ },
+ {
+  "n": 45,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "appellent la même réserve, expliquée plus haut (sections 6.3 et 6.4).",
+  "apres": "sont aussi ceux de la version 0.3; la version 1.0 les nomme `SendMessage`, `returnImmediately` et `taskPushNotificationConfig`.",
+  "categorie": "residu",
+  "motif": "Règles 5 et 6 : `SendMessage` (https://a2a-protocol.org/latest/whats-new-v1/); `returnImmediately` et `taskPushNotificationConfig` sont les champs de SendMessageConfiguration (https://a2a-protocol.org/latest/specification/).",
+  "origine": "tranche 02-15"
+ },
+ {
+  "n": 46,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "**Warning**",
+  "apres": "**Avertissement**",
+  "categorie": "langue",
+  "motif": "Titre d'encadré resté en anglais dans un ouvrage en français.",
+  "origine": "tranche 02-16"
+ },
+ {
+  "n": 47,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "épinglée qui parre le DNS rebinding",
+  "apres": "épinglée qui pare le DNS rebinding",
+  "categorie": "langue",
+  "motif": "Faute d'orthographe : verbe « parer », 3e personne du singulier « pare ».",
+  "origine": "tranche 02-17"
+ },
+ {
+  "n": 48,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "AGNTCY, collectif initié par Cisco (Outshift), LangChain, Galileo et Glean puis hébergé sous la Linux Foundation (chapitre 7)",
+  "apres": "AGNTCY, projet ouvert par Cisco (Outshift) avec LangChain et Galileo, puis confié à la Linux Foundation (chapitre 7)",
+  "categorie": "coherence",
+  "motif": "Règles 1 et 5 : communiqué de la Linux Foundation du 29 juillet 2025, « Initially open sourced by Cisco in March 2025, with collaboration from LangChain and Galileo » (https://www.linuxfoundation.org/press/linux-foundation-welcomes-the-agntcy-project-to-standardize-open-multi-agent-system-infrastructure-and-break-down-ai-agent-silos); Glean n'y figure pas.",
+  "origine": "tranche 02-18"
+ },
+ {
+  "n": 49,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "### SLIM sur QUIC et HTTP/2",
+  "apres": "### SLIM sur gRPC (HTTP/2 ou WebSocket)",
+  "categorie": "coherence",
+  "motif": "Règles 1 et 5 : draft-mpsb-agntcy-slim-03, section 3, « SLIM carries Protocol Buffers messages over streaming gRPC using HTTP/2, or over WebSocket »; QUIC n'y est pas mentionné (https://datatracker.ietf.org/doc/draft-mpsb-agntcy-slim/).",
+  "origine": "tranche 02-19"
+ },
+ {
+  "n": 50,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "Chaque nœud ne maintient qu’une connexion sortante persistante, sur QUIC (UDP/443) ou HTTP/2 gRPC",
+  "apres": "Chaque nœud ne maintient qu’une connexion sortante persistante, sur gRPC en flux (HTTP/2 ou WebSocket)",
+  "categorie": "coherence",
+  "motif": "Règles 1 et 5 : chapitre 7, l. 87 (« sur gRPC en flux (HTTP/2 ou WebSocket) »), confirmé par https://datatracker.ietf.org/doc/draft-mpsb-agntcy-slim/.",
+  "origine": "tranche 02-20"
+ },
+ {
+  "n": 51,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "- **Pas de blocage en tête de file** : sous QUIC, la perte d’un paquet pendant le transfert d’un lourd schéma CAO ne retarde pas les trames de contrôle urgentes multiplexées sur la même session.\n",
+  "apres": "",
+  "categorie": "coherence",
+  "motif": "Règles 1 et 5 : QUIC absent du brouillon (https://datatracker.ietf.org/doc/draft-mpsb-agntcy-slim/); la liste garde ses deux autres puces.",
+  "origine": "tranche 02-21"
+ },
+ {
+  "n": 52,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "Cette suite parre les collectes passives",
+  "apres": "Cette suite pare les collectes passives",
+  "categorie": "langue",
+  "motif": "Même faute d'orthographe qu'à la ligne 477 : « pare ».",
+  "origine": "tranche 02-22"
+ },
+ {
+  "n": 53,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "l’encapsulation JSON-RPC ou gRPC sur QUIC",
+  "apres": "l’encapsulation JSON-RPC ou gRPC sur HTTP/2",
+  "categorie": "coherence",
+  "motif": "Règles 1 et 5 : chapitre 7, l. 87; https://datatracker.ietf.org/doc/draft-mpsb-agntcy-slim/.",
+  "origine": "tranche 02-24"
+ },
+ {
+  "n": 54,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "se connecte en QUIC avec repli sur HTTP/2 gRPC",
+  "apres": "se connecte en gRPC sur HTTP/2 avec repli sur WebSocket",
+  "categorie": "coherence",
+  "motif": "Règles 1 et 5 : chapitre 7, l. 87; https://datatracker.ietf.org/doc/draft-mpsb-agntcy-slim/.",
+  "origine": "tranche 02-25"
+ },
+ {
+  "n": 55,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "  primaryProtocol: \"quic\"",
+  "apres": "  primaryProtocol: \"http2-grpc\"",
+  "categorie": "coherence",
+  "motif": "Règles 1 et 5 : changement local d'une valeur dans une configuration d'illustration; https://datatracker.ietf.org/doc/draft-mpsb-agntcy-slim/.",
+  "origine": "tranche 02-26"
+ },
+ {
+  "n": 56,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "  fallbackProtocol: \"http2-grpc\"",
+  "apres": "  fallbackProtocol: \"websocket\"",
+  "categorie": "coherence",
+  "motif": "Règles 1 et 5 : changement local; https://datatracker.ietf.org/doc/draft-mpsb-agntcy-slim/.",
+  "origine": "tranche 02-27"
+ },
+ {
+  "n": 57,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "\"quic://slim-mesh.boreal.ca:443\"",
+  "apres": "\"https://slim-mesh.boreal.ca:443\"",
+  "categorie": "coherence",
+  "motif": "Règles 1 et 5 : changement local; https://datatracker.ietf.org/doc/draft-mpsb-agntcy-slim/.",
+  "origine": "tranche 02-28"
+ },
+ {
+  "n": 58,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "**Négociation de méta-protocole** : avant d’ouvrir la tâche A2A v1.0",
+  "apres": "**Négociation de méta-protocole** (encore en brouillon, à réserver aux prototypes selon le chapitre 7) : avant d’ouvrir la tâche A2A v1.0",
+  "categorie": "coherence",
+  "motif": "Règle 1 : chapitre 7, l. 63 (méta-protocole en brouillon) et l. 151 (grille : « Ne pas l'adopter en production », « Recherche et prototypes »).",
+  "origine": "tranche 02-30"
+ },
+ {
+  "n": 59,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "Production mature (Linux Foundation)",
+  "apres": "Annuaire en version 1.0, à évaluer (Linux Foundation)",
+  "categorie": "coherence",
+  "motif": "Règle 1 : chapitre 7, l. 83, 85 et 152; chapitre 8, l. 124 et 187.",
+  "origine": "tranche 02-31"
+ },
+ {
+  "n": 60,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "Production haute sécurité (RFC 9420)",
+  "apres": "À l’essai : SLIM en brouillon IETF individuel; MLS normalisé (RFC 9420)",
+  "categorie": "coherence",
+  "motif": "Règle 1 : chapitre 7, l. 89, 153 et 165.",
+  "origine": "tranche 02-32"
+ },
+ {
+  "n": 61,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "Messagerie QUIC sans port entrant",
+  "apres": "Messagerie gRPC sans port entrant",
+  "categorie": "coherence",
+  "motif": "Règles 1 et 5 : chapitre 7, l. 87; https://datatracker.ietf.org/doc/draft-mpsb-agntcy-slim/.",
+  "origine": "tranche 02-33"
+ },
+ {
+  "n": 62,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "Déploiement B2B encadré par DMZ",
+  "apres": "À l’essai, derrière une DMZ",
+  "categorie": "coherence",
+  "motif": "Règle 1 : chapitre 7, l. 63, 65 et 150.",
+  "origine": "tranche 02-34"
+ },
+ {
+  "n": 63,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "**Boucle `input-required` auto-résolue entre BCA et BSN**",
+  "apres": "**Boucle `INPUT_REQUIRED` auto-résolue entre BCA et BSN**",
+  "categorie": "terminologie",
+  "motif": "Règles 1 et 5 : chapitre 6, l. 74 et 354; `input-required` → `TASK_STATE_INPUT_REQUIRED` (https://a2a-protocol.org/latest/whats-new-v1/), abrégé comme dans le chapitre.",
+  "origine": "tranche 02-37"
+ },
+ {
+  "n": 64,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "par l’état `input-required` (Extrait 6.1)",
+  "apres": "par l’état `INPUT_REQUIRED` (Extrait 6.1)",
+  "categorie": "terminologie",
+  "motif": "Règles 1 et 5 : chapitre 6, l. 74 et 354; https://a2a-protocol.org/latest/whats-new-v1/.",
+  "origine": "tranche 02-38"
+ },
+ {
+  "n": 65,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "qu’une liaison sortante QUIC (SLIM)",
+  "apres": "qu’une liaison sortante gRPC (SLIM)",
+  "categorie": "coherence",
+  "motif": "Règles 1 et 5 : chapitre 7, l. 87; https://datatracker.ietf.org/doc/draft-mpsb-agntcy-slim/.",
+  "origine": "tranche 02-39"
+ },
+ {
+  "n": 66,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "**Dossiers incomplets (`input-required`) résolus sans humain**",
+  "apres": "**Dossiers incomplets (`INPUT_REQUIRED`) résolus sans humain**",
+  "categorie": "terminologie",
+  "motif": "Règles 1 et 5 : chapitre 6, l. 74 et 354; https://a2a-protocol.org/latest/whats-new-v1/.",
+  "origine": "tranche 02-40"
+ },
+ {
+  "n": 67,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "réserve-t-il ses compétences sensibles à `authenticatedExtendedCard`",
+  "apres": "réserve-t-il ses compétences sensibles à la carte étendue (`GetExtendedAgentCard`)",
+  "categorie": "factuel",
+  "motif": "Règle 5 : opération `GetExtendedAgentCard`, capacité `capabilities.extendedAgentCard` (https://a2a-protocol.org/latest/whats-new-v1/).",
+  "origine": "tranche 02-41"
+ },
+ {
+  "n": 68,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "des notifications `pushNotificationConfig` qui réveillent",
+  "apres": "des notifications `taskPushNotificationConfig` qui réveillent",
+  "categorie": "factuel",
+  "motif": "Règle 5 : champ `taskPushNotificationConfig` de SendMessageConfiguration (https://a2a-protocol.org/latest/specification/).",
+  "origine": "tranche 02-42"
+ },
+ {
+  "n": 69,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "boucle d’interrogation `tasks/get`",
+  "apres": "boucle d’interrogation `GetTask`",
+  "categorie": "factuel",
+  "motif": "Règle 5 : `tasks/get` → `GetTask` (https://a2a-protocol.org/latest/whats-new-v1/).",
+  "origine": "tranche 02-43"
+ },
+ {
+  "n": 70,
+  "fichier": "chapitre-08-decouverte-registres.md",
+  "avant": "le connecteur EDC produit son catalogue selon les justificatifs présentés (chapitre 45)",
+  "apres": "le connecteur EDC (Eclipse Dataspace Components) produit son catalogue selon les justificatifs présentés (chapitre 45)",
+  "categorie": "terminologie",
+  "motif": "Règle 3 : forme développée de l'ouvrage, chapitre 37, l. 51 et 79 (« Eclipse Dataspace Components »).",
+  "origine": "tranche 02-45"
+ },
+ {
+  "n": 71,
+  "fichier": "chapitre-08-decouverte-registres.md",
+  "avant": " Il confirme les faits du chapitre, sauf trois précisions (Apigee, AWS, MuleSoft).",
+  "apres": "",
+  "categorie": "residu",
+  "motif": "Règle 6 : suppression de la phrase résiduelle, sans réécriture autour.",
+  "origine": "tranche 02-46"
+ },
+ {
+  "n": 72,
+  "fichier": "chapitre-09-web-agentique.md",
+  "avant": "dépôt NLWeb tel que lu ce jour",
+  "apres": "dépôt NLWeb tel que lu le 11 novembre 2026",
+  "categorie": "temporel",
+  "motif": "« ce jour » n'a pas de date explicite; les sources du chapitre ont été lues le 11 novembre 2026 (l. 179).",
+  "origine": "tranche 02-47"
+ },
+ {
+  "n": 73,
+  "fichier": "chapitre-09-web-agentique.md",
+  "avant": "reposent sur la lecture condensée de la veille",
+  "apres": "reposent sur la lecture condensée du 11 novembre 2026",
+  "categorie": "residu",
+  "motif": "Règle 6, au plus court : la date de lecture est donnée l. 179 (« Pages primaires lues le 11 novembre 2026 »).",
+  "origine": "tranche 02-48"
+ },
+ {
+  "n": 74,
+  "fichier": "chapitre-10-commerce-agentique.md",
+  "avant": "délai médian d’arbitrage humain éclairé en HOTL",
+  "apres": "délai médian d’arbitrage humain éclairé en mode humain sur la boucle (HOTL)",
+  "categorie": "terminologie",
+  "motif": "Règle 3 : entrée du glossaire, annexe A, l. 22 (« humain sur la boucle | human-on-the-loop … HOTL »).",
+  "origine": "tranche 02-53"
+ },
+ {
+  "n": 75,
+  "fichier": "chapitre-10-commerce-agentique.md",
+  "avant": "autour de quatre familles d’événements",
+  "apres": "autour de quatre familles principales d’événements",
+  "categorie": "coherence",
+  "motif": "Règle 1 : chapitre 7, l. 25; l'énumération du volet est gardée, le décompte n'est plus donné pour exhaustif.",
+  "origine": "tranche 02-55"
+ },
+ {
+  "n": 76,
+  "fichier": "chapitre-10-commerce-agentique.md",
+  "avant": "doit purger le tampon audio du client en moins de 180 ms",
+  "apres": "doit purger le tampon audio du client en moins de 200 ms",
+  "categorie": "coherence",
+  "motif": "Règle 2 : majorité des occurrences, l. 344, 346, 642 et 657 (200 ms); le résultat du fil rouge (165 ms, l. 621) respecte les deux valeurs.",
+  "origine": "tranche 02-56"
+ },
+ {
+  "n": 77,
+  "fichier": "chapitre-10-commerce-agentique.md",
+  "avant": "#### Extrait 10.2 — Intent Mandate et Cart Mandate AP2 (W3C VC 2.0 + assertion FIDO2)",
+  "apres": "#### Extrait 10.2 — Intent Mandate et Cart Mandate AP2, vocabulaire initial de 2025 (W3C VC 2.0 + assertion FIDO2)",
+  "categorie": "coherence",
+  "motif": "Règles 1 et 5 : la spécification v0.2 ne définit que « Checkout Mandate and Payment Mandate », en SD-JWT (https://ap2-protocol.org/ap2/specification/); l'annonce de Google de 2025 emploie Intent Mandate et Cart Mandate, signés par des justificatifs vérifiables (https://cloud.google.com/blog/products/ai-machine-learning/announcing-agents-to-payments-ap2-protocol).",
+  "origine": "tranche 02-57"
+ },
+ {
+  "n": 78,
+  "fichier": "chapitre-10-commerce-agentique.md",
+  "avant": "L’extrait illustre un mandat nommé Intent Mandate, au format W3C VC 2.0;",
+  "apres": "L’extrait suit le vocabulaire initial d’AP2 (2025) : un mandat nommé Intent Mandate, au format W3C VC 2.0;",
+  "categorie": "coherence",
+  "motif": "Règles 1 et 5 : mêmes sources que pour le titre (https://ap2-protocol.org/ap2/specification/; https://cloud.google.com/blog/products/ai-machine-learning/announcing-agents-to-payments-ap2-protocol).",
+  "origine": "tranche 02-58"
+ },
+ {
+  "n": 79,
+  "fichier": "chapitre-10-commerce-agentique.md",
+  "avant": "signe le Cart Mandate AP2 avec sa clé matérielle YubiKey FIDO2",
+  "apres": "signe le Checkout Mandate AP2 avec sa clé matérielle YubiKey FIDO2",
+  "categorie": "coherence",
+  "motif": "Règle 1 : chapitre 10, l. 44 (exposé), l. 345 et 643 (volet); spécification v0.2 (https://ap2-protocol.org/ap2/specification/).",
+  "origine": "tranche 02-59"
+ },
+ {
+  "n": 80,
+  "fichier": "chapitre-10-commerce-agentique.md",
+  "avant": "un Intent Mandate AP2 mensuel borné (Extrait 10.2)",
+  "apres": "un mandat ouvert AP2 mensuel borné (Extrait 10.2)",
+  "categorie": "coherence",
+  "motif": "Règle 1 : chapitre 10, l. 48 et 68 (exposé), l. 494 (volet : « mandats ouverts »).",
+  "origine": "tranche 02-60"
+ },
+ {
+  "n": 81,
+  "fichier": "chapitre-11-gouvernance-standards.md",
+  "avant": "Ouverts en février à tous les niveaux d'adhésion [4]",
+  "apres": "Ouverts en février 2026 à tous les niveaux d'adhésion [4]",
+  "categorie": "temporel",
+  "motif": "Mois sans année; la source [4] est le bilan du 24 février 2026 (l. 336).",
+  "origine": "tranche 02-61"
+ },
+ {
+  "n": 82,
+  "fichier": "chapitre-11-gouvernance-standards.md",
+  "avant": "Elle se vérifie donc projet par projet.",
+  "apres": "La gouvernance se vérifie donc projet par projet.",
+  "categorie": "langue",
+  "motif": "Pronom « Elle » sans antécédent : les sujets de la phrase précédente sont tous masculins; le sens visé est la gouvernance d'un projet.",
+  "origine": "tranche 02-62"
+ },
+ {
+  "n": 83,
+  "fichier": "chapitre-11-gouvernance-standards.md",
+  "avant": "un document de réflexion du NCCoE sur l'identité et l'autorisation",
+  "apres": "un document de réflexion du NCCoE (National Cybersecurity Center of Excellence) sur l'identité et l'autorisation",
+  "categorie": "terminologie",
+  "motif": "Règle 3 : aucune forme développée dans le manuscrit (Grep sans résultat); développement à la première occurrence en texte courant.",
+  "origine": "tranche 02-63"
+ },
+ {
+  "n": 84,
+  "fichier": "chapitre-11-gouvernance-standards.md",
+  "avant": "chiffrement de groupe post-quantique RFC 9420 (MLS sous SLIM)",
+  "apres": "chiffrement de groupe RFC 9420 (MLS sous SLIM)",
+  "categorie": "factuel",
+  "motif": "Règle 5 : RFC 9420, section 17.1, sept suites (DHKEM X25519, P-256, X448, P-521, P-384), aucune ML-KEM (https://www.rfc-editor.org/rfc/rfc9420.html).",
+  "origine": "tranche 02-64"
+ },
+ {
+  "n": 85,
+  "fichier": "chapitre-11-gouvernance-standards.md",
+  "avant": "(`working`, `input-required`)",
+  "apres": "(`WORKING`, `INPUT_REQUIRED`)",
+  "categorie": "terminologie",
+  "motif": "Règles 1 et 5 : chapitre 6, l. 73-74 et 348; la version 1.0 écrit les états en majuscules, préfixés `TASK_STATE_` (https://a2a-protocol.org/latest/whats-new-v1/), abrégés comme au chapitre 6.",
+  "origine": "tranche 02-66"
+ },
+ {
+  "n": 86,
+  "fichier": "chapitre-11-gouvernance-standards.md",
+  "avant": "par machine à états (`submitted`, `working`, `completed`)",
+  "apres": "par machine à états (`SUBMITTED`, `WORKING`, `COMPLETED`)",
+  "categorie": "terminologie",
+  "motif": "Règles 1 et 5 : chapitre 6, l. 72-76 et 348; https://a2a-protocol.org/latest/whats-new-v1/.",
+  "origine": "tranche 02-67"
+ },
+ {
+  "n": 87,
+  "fichier": "chapitre-11-gouvernance-standards.md",
+  "avant": "allowedProtocolVersions: [\"2025-06-18\", \"2026-03-01\"]",
+  "apres": "allowedProtocolVersions: [\"2025-06-18\", \"2026-07-28\"]",
+  "categorie": "coherence",
+  "motif": "Règles 2 et 5 : chapitre 5, l. 5, 68 et 338; la page de versionnement de MCP donne `2026-07-28` pour version courante et `2025-11-25` pour dernière révision à poignée de main, sans révision intermédiaire (https://modelcontextprotocol.io/specification/versioning).",
+  "origine": "tranche 02-69"
+ },
+ {
+  "n": 88,
+  "fichier": "chapitre-11-gouvernance-standards.md",
+  "avant": "**État initial (janvier 2027)** : l’audit des 47 initiatives dispersées entre BEL, BCA et BSN",
+  "apres": "**État initial (T4 2026)** : l’audit des 47 initiatives dispersées entre BEL, BCA et BSN",
+  "categorie": "coherence",
+  "motif": "Règle 2 : ouverture, l. 147 (« T4 2026 ») et l. 157 (« à l'automne 2026 »); chapitre 1, l. 602 et chapitre 6, l. 753 (« T4 2026 »); aucune autre occurrence de « janvier 2027 » dans le fil rouge.",
+  "origine": "tranche 02-71"
+ },
+ {
+  "n": 89,
+  "fichier": "chapitre-11-gouvernance-standards.md",
+  "avant": "Avant de mettre en œuvre la connectivité verticale (chapitre 5), il faut vérifier huit critères",
+  "apres": "Avant toute mise en production sur ce socle protocolaire, il faut vérifier huit critères",
+  "categorie": "coherence",
+  "motif": "Règle 6 (résidu de l'ancienne structure) : titre de la sous-section, l. 660 (« Liste de contrôle de mise en production »); la phrase n'est reprise nulle part ailleurs (Grep).",
+  "origine": "tranche 02-72"
+ },
+ {
+  "n": 90,
+  "fichier": "chapitre-12-couche-semantique-ontologies.md",
+  "avant": "multiplie silencieusement la valeur du contrat par le nombre d’avenants",
+  "apres": "multiplie silencieusement la valeur du contrat par le produit du nombre d’équipements et du nombre d’avenants",
+  "categorie": "factuel",
+  "motif": "Règle 5 (fait technique, sans source à consulter : arithmétique de la jointure) : contrats (1) × équipements (N) × avenants (M) donne N × M lignes par contrat, comme l'énonce la phrase elle-même (ligne 391).",
+  "origine": "tranche 03-3"
+ },
+ {
+  "n": 91,
+  "fichier": "chapitre-12-couche-semantique-ontologies.md",
+  "avant": "qui autorise le passage vers `PARTS_COMMITTED`;",
+  "apres": "qui autorise le passage vers `WARRANTY_AND_PARTS_COMMITTED`;",
+  "categorie": "coherence",
+  "motif": "Le nom d'état cité dans la prose n'existe pas dans l'Extrait 12.2 : le type WorkOrderState (ligne 594) et targetState (ligne 617) portent `WARRANTY_AND_PARTS_COMMITTED`.",
+  "origine": "tranche 03-4"
+ },
+ {
+  "n": 92,
+  "fichier": "chapitre-12-couche-semantique-ontologies.md",
+  "avant": "Action `AllocateReplacementPart` : accès à `safety_floor_qty`",
+  "apres": "Action `AllocateWarrantyReplacementPart` : accès à `safety_floor_qty`",
+  "categorie": "coherence",
+  "motif": "Le tableau nomme l'action `AllocateReplacementPart`, alors que l'Extrait 12.2 (ligne 612) et l'Extrait 12.3 (lignes 706, 735) la nomment `AllocateWarrantyReplacementPart`.",
+  "origine": "tranche 03-5"
+ },
+ {
+  "n": 93,
+  "fichier": "chapitre-13-ingenierie-contexte.md",
+  "avant": "les quatre opérations de LangChain, la taxonomie de dégradation de Drew Breunig, le modèle de délégation de Tomasev et coll.",
+  "apres": "les quatre opérations de LangChain et la taxonomie de dégradation de Drew Breunig.",
+  "categorie": "renvoi",
+  "motif": "La note de sources annonce un « modèle de délégation de Tomasev et coll. » que le chapitre n'utilise nulle part (aucune autre occurrence de « Tomasev » ni de ce modèle dans le fichier). Renvoi orphelin.",
+  "origine": "tranche 03-9"
+ },
+ {
+  "n": 94,
+  "fichier": "chapitre-13-ingenierie-contexte.md",
+  "avant": "TTFT sous la seconde",
+  "apres": "TTFT de l’ordre de la seconde",
+  "categorie": "coherence",
+  "motif": "Règle 2 : deux occurrences du même volet contredisent « sous la seconde » — fil rouge, TTFT p95 de 1,15 s (ligne 629), et tableau de 13.7, borne haute de 1,10 s (ligne 319); correction de l'occurrence isolée, sans chiffre nouveau.",
+  "origine": "tranche 03-11"
+ },
+ {
+  "n": 95,
+  "fichier": "chapitre-14-memoire.md",
+  "avant": "Ce défaut est l'inverse de celui que retient ce chapitre.",
+  "apres": "Ce réglage par défaut est l'inverse de celui que retient ce chapitre.",
+  "categorie": "langue",
+  "motif": "« Défaut » est employé au sens de « valeur par défaut » (anglicisme de sens), deux phrases après « le mode par défaut » et juste après un paragraphe où « défaut » désigne une faille (« un défaut trouvé en production », ligne 96). La phrase se lit d'abord comme « cette faille ».",
+  "origine": "tranche 03-12"
+ },
+ {
+  "n": 96,
+  "fichier": "chapitre-14-memoire.md",
+  "avant": "passe par un `MemoryWriteGuard`",
+  "apres": "passe par un `GovernedMemoryBlockController`",
+  "categorie": "coherence",
+  "motif": "Consigne de phase 2 (la prose dit ce que fait le code) : l'Extrait 14.2 ne définit que la classe `GovernedMemoryBlockController` (ligne 457); `MemoryWriteGuard` n'existe nulle part ailleurs dans l'ouvrage (2 occurrences, toutes deux dans la prose de ce chapitre).",
+  "origine": "tranche 03-13"
+ },
+ {
+  "n": 97,
+  "fichier": "chapitre-14-memoire.md",
+  "avant": "Le reçu (`ErasureReceipt`) ne conserve que l’empreinte irréversible de l’identifiant du demandeur.",
+  "apres": "Le reçu (`ErasureReceipt`) ne conserve l’identifiant du demandeur que sous forme d’empreinte irréversible, fondue dans le condensé `receipt_sha256`.",
+  "categorie": "coherence",
+  "motif": "Consigne de phase 2 (la prose dit ce que fait le code) : dans l'Extrait 14.3, `ErasureReceipt` (lignes 501–504) n'a pas de champ d'empreinte du sujet; `subject_pseudonym` (ligne 524) n'entre que dans le condensé `receipt_sha256` (ligne 528).",
+  "origine": "tranche 03-14"
+ },
+ {
+  "n": 98,
+  "fichier": "chapitre-14-memoire.md",
+  "avant": "validée par `MemoryWriteGuard`",
+  "apres": "validée par `GovernedMemoryBlockController`",
+  "categorie": "coherence",
+  "motif": "Consigne de phase 2 (la prose dit ce que fait le code) : nom de classe de l'Extrait 14.2, ligne 457; aucune autre occurrence de `MemoryWriteGuard` dans l'ouvrage.",
+  "origine": "tranche 03-15"
+ },
+ {
+  "n": 99,
+  "fichier": "chapitre-16-topologies-patrons.md",
+  "avant": "Le pipeline se dégrade le moins.",
+  "apres": "Le fan-out et le pipeline se dégradent le moins.",
+  "categorie": "coherence",
+  "motif": "Règle 2 : la valeur retenue est celle du tableau (lignes 214–216) : fan-out de 0,914 à 0,898 (−0,016), pipeline de 0,903 à 0,886 (−0,017), hiérarchique −0,038, réflexive −0,072.",
+  "origine": "tranche 03-18"
+ },
+ {
+  "n": 100,
+  "fichier": "chapitre-16-topologies-patrons.md",
+  "avant": "this.maxIterations = Math.min(Math.max(options.maxIterations ?? 3, 1), 4);",
+  "apres": "this.maxIterations = Math.min(Math.max(options.maxIterations ?? 3, 1), 3);",
+  "categorie": "coherence",
+  "motif": "Consigne de phase 2 (un ADR fixe une valeur que le code viole; changement local et sûr) : ADR-011, plafond dur N_max ≤ 3 (lignes 895 et 910), et section 16.10, N_max ∈ {2, 3} (ligne 438); seule la borne haute du bornage change, la valeur par défaut reste 3.",
+  "origine": "tranche 03-20"
+ },
+ {
+  "n": 101,
+  "fichier": "chapitre-16-topologies-patrons.md",
+  "avant": "entre deux barrières déterministes",
+  "apres": "entre trois barrières déterministes",
+  "categorie": "coherence",
+  "motif": "Règle 4 (décompte faux) : trois éléments suivent l'annonce (table DMN amont, minuteur `boundaryEvent`, passerelle `exclusiveGateway`, ligne 732); on corrige le nombre, pas l'énumération.",
+  "origine": "tranche 03-21"
+ },
+ {
+  "n": 102,
+  "fichier": "chapitre-16-topologies-patrons.md",
+  "avant": "## 16.12 Gouvernance anti-dérive : coupe-circuits topologiques et anti-patrons",
+  "apres": "## 16.12 Gouvernance anti-dérive : coupe-circuits topologiques et antipatrons",
+  "categorie": "terminologie",
+  "motif": "Règle 3 : « antipatron(s) » 20 occurrences dans l'ouvrage contre 3 pour « anti-patron(s) », toutes trois en 16.12 (moins de cinq dans le chapitre); pas d'entrée au glossaire de l'annexe A.",
+  "origine": "tranche 03-23"
+ },
+ {
+  "n": 103,
+  "fichier": "chapitre-16-topologies-patrons.md",
+  "avant": "est rejeté par la passerelle en HTTP 429 Too Many Hops",
+  "apres": "est rejeté par la passerelle en HTTP 429 Too Many Requests",
+  "categorie": "factuel",
+  "motif": "Règle 5 : vérifié sur https://www.rfc-editor.org/rfc/rfc6585.html — section 4, « 429 Too Many Requests ».",
+  "origine": "tranche 03-24"
+ },
+ {
+  "n": 104,
+  "fichier": "chapitre-16-topologies-patrons.md",
+  "avant": "### Anti-patrons observés en production",
+  "apres": "### Antipatrons observés en production",
+  "categorie": "terminologie",
+  "motif": "Règle 3 : « antipatron(s) » 20 occurrences dans l'ouvrage contre 3 pour « anti-patron(s) », toutes trois en 16.12 (moins de cinq dans le chapitre); pas d'entrée au glossaire de l'annexe A.",
+  "origine": "tranche 03-25"
+ },
+ {
+  "n": 105,
+  "fichier": "chapitre-16-topologies-patrons.md",
+  "avant": "| Anti-patron topologique | Description du dysfonctionnement |",
+  "apres": "| Antipatron topologique | Description du dysfonctionnement |",
+  "categorie": "terminologie",
+  "motif": "Règle 3 : « antipatron(s) » 20 occurrences dans l'ouvrage contre 3 pour « anti-patron(s) », toutes trois en 16.12 (moins de cinq dans le chapitre); pas d'entrée au glossaire de l'annexe A.",
+  "origine": "tranche 03-26"
+ },
+ {
+  "n": 106,
+  "fichier": "chapitre-16-topologies-patrons.md",
+  "avant": "limitée à $N_{\\max} = 2$ tours",
+  "apres": "limitée à $N_{\\max} = 3$ tours",
+  "categorie": "coherence",
+  "motif": "Consigne de phase 2 (la prose dit ce que fait le code) : en-tête `maxIterations` = 3 de l'Extrait 16.3 (ligne 756), conforme à l'ADR-011 (N_max ≤ 3, ligne 895); seule occurrence de la valeur 2 pour BCA dans l'ouvrage (Grep).",
+  "origine": "tranche 03-27"
+ },
+ {
+  "n": 107,
+  "fichier": "chapitre-17-deterministe-ou-agentique.md",
+  "avant": "cité par la carte, n'a pas été lu et n'est pas utilisé",
+  "apres": "cité par le plan initial, n'a pas été lu et n'est pas utilisé",
+  "categorie": "residu",
+  "motif": "Règle 6 bis : même plan de commande que la « carte thématique » de la ligne 316, mais sous la forme courte « la carte », qu'un remplacement global de « carte thématique » ne couvrirait pas; alignée ici sur la forme retenue pour tout l'ouvrage.",
+  "origine": "tranche 04-1"
+ },
+ {
+  "n": 108,
+  "fichier": "chapitre-17-deterministe-ou-agentique.md",
+  "avant": "Le corps de MAP a été lu le 12 novembre 2026",
+  "apres": "Le corps de [12] a été lu le 12 novembre 2026",
+  "categorie": "terminologie",
+  "motif": "Le sigle MAP n'est jamais introduit dans le chapitre 17, qui nomme l'étude « Measuring Agents in Production » (ligne 40, source [12]).",
+  "origine": "tranche 04-2"
+ },
+ {
+  "n": 109,
+  "fichier": "chapitre-17-deterministe-ou-agentique.md",
+  "avant": "(-96,7 %)",
+  "apres": "(-96,8 %)",
+  "categorie": "coherence",
+  "motif": "Règle 2 : les deux montants (1,85 $ aux lignes 667 et 676, 0,06 $ ligne 676) sont les valeurs de référence et le pourcentage n'apparaît qu'ici dans l'ouvrage; (1,85 − 0,06) / 1,85 = 96,76 %, soit 96,8 %.",
+  "origine": "tranche 04-3"
+ },
+ {
+  "n": 110,
+  "fichier": "chapitre-17-deterministe-ou-agentique.md",
+  "avant": "readonly rootCauseCode: \"BEARING_WEAR\" | \"VALVE_CAVITATION\" | \"SENSOR_DRIFT\" | \"UNKNOWN\";",
+  "apres": "readonly rootCauseCode: \"BEARING_WEAR\" | \"VALVE_CAVITATION\" | \"THERMAL_OVERLOAD\" | \"SENSOR_DRIFT\" | \"UNKNOWN\";",
+  "categorie": "coherence",
+  "motif": "L'énumération de l'extrait 17.2 compte quatre codes; le schéma de l'extrait 17.3 (ligne 620), auquel la sortie de la cellule est dite conforme (ligne 672), en compte cinq, dont THERMAL_OVERLOAD.",
+  "origine": "tranche 04-4"
+ },
+ {
+  "n": 111,
+  "fichier": "chapitre-18-execution-durable-transactions.md",
+  "avant": "- Fusion et ajustement : aucun. Les sept sections suivent la table des matières.\n",
+  "apres": "",
+  "categorie": "residu",
+  "motif": "Règle 6 : phrase qui n'a aucun sens pour le lecteur, même une fois « table des matières » devenue « plan initial »; la puce entière (dernière de la liste des Limites) est supprimée, ligne comprise.",
+  "origine": "tranche 04-6"
+ },
+ {
+  "n": 112,
+  "fichier": "chapitre-18-execution-durable-transactions.md",
+  "avant": "est journalisé. La section 18.6 ne donne aucune latence chiffrée.",
+  "apres": "est journalisé.",
+  "categorie": "residu",
+  "motif": "Phrase sans rapport avec la description des « services durables » : elle signale l'absence d'un chiffre qui n'est plus dans le texte (trace d'une correction).",
+  "origine": "tranche 04-8"
+ },
+ {
+  "n": 113,
+  "fichier": "chapitre-18-execution-durable-transactions.md",
+  "avant": "longue durée (T3 et T4) dans la banque",
+  "apres": "longue durée (régimes T3 et T4 du chapitre 1) dans la banque",
+  "categorie": "terminologie",
+  "motif": "Les régimes temporels T1 à T4 sont employés dans tout le volet (lignes 373, 382, 394, 690, 881, 931, 936) sans être définis ni rattachés à la section 1.9 qui les définit.",
+  "origine": "tranche 04-14"
+ },
+ {
+  "n": 114,
+  "fichier": "chapitre-18-execution-durable-transactions.md",
+  "avant": "et des étapes rejouables qui finiront par réussir",
+  "apres": "et des étapes réessayables qui finiront par réussir",
+  "categorie": "terminologie",
+  "motif": "Règle 3 : pour cette classe d'étapes de Saga, « réessayable » compte quatre occurrences dans l'ouvrage (chapitre 19, lignes 257, 401, 407, 670, et RETRIABLE dans l'extrait 19.2), « rejouable » trois (chapitre 18, lignes 218, 220, 303); pas d'entrée au glossaire de l'annexe A. « Rejouable » désigne partout ailleurs le rejeu du journal.",
+  "origine": "tranche 04-15"
+ },
+ {
+  "n": 115,
+  "fichier": "chapitre-18-execution-durable-transactions.md",
+  "avant": "soit lecture, compensable, pivot ou rejouable, s'inscrit au registre",
+  "apres": "soit lecture, compensable, pivot ou réessayable, s'inscrit au registre",
+  "categorie": "terminologie",
+  "motif": "Règle 3 : même harmonisation que ligne 218 (quatre « réessayable » contre trois « rejouable » dans ce sens; trois occurrences minoritaires dans le chapitre, toutes corrigées).",
+  "origine": "tranche 04-16"
+ },
+ {
+  "n": 116,
+  "fichier": "chapitre-18-execution-durable-transactions.md",
+  "avant": "le classement des étapes en compensables, pivot et rejouables",
+  "apres": "le classement des étapes en compensables, pivot et réessayables",
+  "categorie": "terminologie",
+  "motif": "Règle 3 : même harmonisation que lignes 218 et 220.",
+  "origine": "tranche 04-17"
+ },
+ {
+  "n": 117,
+  "fichier": "chapitre-18-execution-durable-transactions.md",
+  "avant": "réinterroge les listes de sanctions (CANAFE / FINTRAC)",
+  "apres": "réinterroge les listes de sanctions",
+  "categorie": "factuel",
+  "motif": "Règle 5, vérifié en ligne : la page de directives de CANAFE sur les sanctions (https://fintrac-canafe.canada.ca/guidance-directives/transaction-operation/sanctions/sanctions-eng) renvoie à la liste consolidée des sanctions autonomes canadiennes, tenue par Affaires mondiales Canada (international.gc.ca), et à la liste consolidée du Conseil de sécurité de l'ONU; CANAFE ne publie pas de liste. CANAFE et FINTRAC sont en outre les sigles français et anglais du même organisme.",
+  "origine": "tranche 04-18"
+ },
+ {
+  "n": 118,
+  "fichier": "chapitre-18-execution-durable-transactions.md",
+  "avant": "**Point de sauvegarde naïf**",
+  "apres": "**Point de contrôle naïf**",
+  "categorie": "terminologie",
+  "motif": "Règle 3 : « point(s) de contrôle » compte 73 occurrences dans l'ouvrage (dont 7 dans l'exposé et le volet du chapitre 18), « point(s) de sauvegarde » 4, toutes dans le volet du chapitre 18 (lignes 334, 879, 932, 934); pas d'entrée propre au glossaire. Les quatre sont corrigées.",
+  "origine": "tranche 04-19"
+ },
+ {
+  "n": 119,
+  "fichier": "chapitre-18-execution-durable-transactions.md",
+  "avant": "à points de sauvegarde simples",
+  "apres": "à points de contrôle simples",
+  "categorie": "terminologie",
+  "motif": "Règle 3 : même harmonisation que ligne 334 (73 « point de contrôle » contre 4 « point de sauvegarde » dans l'ouvrage).",
+  "origine": "tranche 04-20"
+ },
+ {
+  "n": 120,
+  "fichier": "chapitre-18-execution-durable-transactions.md",
+  "avant": "sur les seuls points de sauvegarde de bibliothèques conversationnelles",
+  "apres": "sur les seuls points de contrôle de bibliothèques conversationnelles",
+  "categorie": "terminologie",
+  "motif": "Règle 3 : même harmonisation que ligne 334.",
+  "origine": "tranche 04-21"
+ },
+ {
+  "n": 121,
+  "fichier": "chapitre-18-execution-durable-transactions.md",
+  "avant": "*Points de sauvegarde ad hoc par cadriciel",
+  "apres": "*Points de contrôle ad hoc par cadriciel",
+  "categorie": "terminologie",
+  "motif": "Règle 3 : même harmonisation que ligne 334.",
+  "origine": "tranche 04-22"
+ },
+ {
+  "n": 122,
+  "fichier": "chapitre-18-execution-durable-transactions.md",
+  "avant": "l'équipe BCA déploie deux mises à jour logicielles majeures (dont l'ajout de la garde",
+  "apres": "l'équipe BCA déploie deux mises à jour logicielles (dont l'ajout de la garde",
+  "categorie": "coherence",
+  "motif": "La présentation de l'extrait 18.1 (ligne 421) réserve `patched()` à « une règle mineure » et renvoie les refontes majeures au Worker Deployment Versioning; l'ajout de la garde par `patched()` est ici qualifié de mise à jour « majeure ».",
+  "origine": "tranche 04-23"
+ },
+ {
+  "n": 123,
+  "fichier": "chapitre-19-orchestration-evenementielle.md",
+  "avant": "[14] et [15] sont des billets de fournisseurs, signalés comme tels",
+  "apres": "[14] à [16] sont des billets de fournisseurs, signalés comme tels",
+  "categorie": "coherence",
+  "motif": "La liste des sources compte seize entrées; [16] (billet Confluent, cité ligne 122) est rangée avec les billets de fournisseurs mais absente de l'état de référence.",
+  "origine": "tranche 04-24"
+ },
+ {
+  "n": 124,
+  "fichier": "chapitre-19-orchestration-evenementielle.md",
+  "avant": "Le « maillage d'événements » de la carte et les autres courtiers ne sont pas traités",
+  "apres": "Le « maillage d'événements » du plan initial et les autres courtiers ne sont pas traités",
+  "categorie": "residu",
+  "motif": "Règle 6 bis : plan de commande sous la forme courte « la carte », qu'un remplacement global de « carte thématique » ne couvrirait pas; alignée sur la forme retenue pour tout l'ouvrage.",
+  "origine": "tranche 04-25"
+ },
+ {
+  "n": 125,
+  "fichier": "chapitre-19-orchestration-evenementielle.md",
+  "avant": "nommé parmi les appuis, n'a pas été retrouvé et n'est pas utilisé",
+  "apres": "nommé parmi les appuis du plan initial, n'a pas été retrouvé et n'est pas utilisé",
+  "categorie": "residu",
+  "motif": "Règle 6 bis : « les appuis » sont ceux du plan de commande (cf. « appui prévu par la table des matières », chapitre 18 ligne 301 et chapitre 20 ligne 257); la mention est complétée dans la forme retenue pour tout l'ouvrage plutôt que supprimée, sans quoi la puce n'aurait plus d'objet.",
+  "origine": "tranche 04-26"
+ },
+ {
+  "n": 126,
+  "fichier": "chapitre-19-orchestration-evenementielle.md",
+  "avant": "dont les agents avals ont besoin",
+  "apres": "dont les agents aval ont besoin",
+  "categorie": "langue",
+  "motif": "« aval », employé comme adjectif, est invariable (cf. « étape aval », « service aval », « mutation aval » ailleurs dans la tranche).",
+  "origine": "tranche 04-27"
+ },
+ {
+  "n": 127,
+  "fichier": "chapitre-19-orchestration-evenementielle.md",
+  "avant": "les verrous centraux sur le PSS par un maillage",
+  "apres": "les verrous centraux sur le système de services aux passagers (PSS) par un maillage",
+  "categorie": "terminologie",
+  "motif": "Constat détaché du précédent en phase 2 : le sigle PSS (Passenger Service System) n'apparaît qu'une fois dans le chapitre, sans développement, et n'est pas d'usage courant hors du transport aérien.",
+  "origine": "tranche 04-30"
+ },
+ {
+  "n": 128,
+  "fichier": "chapitre-19-orchestration-evenementielle.md",
+  "avant": "Un mardi à 14 h 22",
+  "apres": "Un vendredi à 14 h 22",
+  "categorie": "coherence",
+  "motif": "Règle 2 : l'extrait de code fait foi; l'événement de cette saga (extrait 19.1, lignes 335, 351 et 362) est daté du 9 avril 2027, qui est un vendredi; « mardi » n'apparaît qu'ici.",
+  "origine": "tranche 04-33"
+ },
+ {
+  "n": 129,
+  "fichier": "chapitre-19-orchestration-evenementielle.md",
+  "avant": "un groupe électrogène industriel installé chez un client aéronautique à Mirabel",
+  "apres": "un compresseur industriel installé chez un client aéronautique à Mirabel",
+  "categorie": "coherence",
+  "motif": "Règle 2 : l'extrait de code et la majorité des occurrences font foi; l'événement de cette saga (extrait 19.1, lignes 334 et 362) porte sur BOR-CMP-90441, compresseur dans tout l'ouvrage (chapitres 1, 5, 6, 10, 12, 18 et 30; sujets Solace et clé Kafka du chapitre 19, lignes 290 et 306), avec un spectre vibratoire en pièce jointe; « groupe électrogène » n'apparaît qu'ici dans l'ouvrage.",
+  "origine": "tranche 04-34"
+ },
+ {
+  "n": 130,
+  "fichier": "chapitre-19-orchestration-evenementielle.md",
+  "avant": "Périmètre : Fabrique Agentique Entreprise (BEL, BCA, BSN)",
+  "apres": "Périmètre : Fabrique Agentique d’Entreprise (BEL, BCA, BSN)",
+  "categorie": "terminologie",
+  "motif": "Règle 3 : dans les périmètres d'ADR, « Fabrique Agentique d’Entreprise » compte trois occurrences (chapitre 6 ligne 777, chapitre 17 ligne 688, chapitre 27 ligne 643) contre deux pour « Fabrique Agentique Entreprise » (chapitre 13 ligne 642 et ici); l'occurrence du chapitre 13 est hors de ma tranche.",
+  "origine": "tranche 04-35"
+ },
+ {
+  "n": 131,
+  "fichier": "chapitre-19-orchestration-evenementielle.md",
+  "avant": "(jusqu’à douze niveaux, ex.",
+  "apres": "(jusqu’à 128 niveaux, ex.",
+  "categorie": "factuel",
+  "motif": "Règle 5, vérifié en ligne : la documentation de Solace (https://docs.solace.com/Messaging/Topic-Architecture-Best-Practices.htm) indique « A topic is limited to a maximum of 250 characters, and 128 topic levels ».",
+  "origine": "tranche 04-36"
+ },
+ {
+  "n": 132,
+  "fichier": "chapitre-19-orchestration-evenementielle.md",
+  "avant": "(`IN_PROGRESS`, COMPLETED)",
+  "apres": "(`IN_PROGRESS`, `COMPLETED`)",
+  "categorie": "structure",
+  "motif": "Deux valeurs d'une même énumération, une seule balisée en code.",
+  "origine": "tranche 04-37"
+ },
+ {
+  "n": 133,
+  "fichier": "chapitre-22-humain-dans-la-boucle.md",
+  "avant": "Dans l'étude MAP, 66 % des agents déployés",
+  "apres": "Dans l'étude Measuring Agents in Production (MAP), 66 % des agents déployés",
+  "categorie": "terminologie",
+  "motif": "Le sigle MAP, employé aussi ligne 172, n'est jamais développé dans le corps du chapitre (seule la source [7] en donne le titre).",
+  "origine": "tranche 04-44"
+ },
+ {
+  "n": 134,
+  "fichier": "chapitre-22-humain-dans-la-boucle.md",
+  "avant": "| CSA [4] | Contrôles exigés |",
+  "apres": "| Cloud Security Alliance (CSA) [4] | Contrôles exigés |",
+  "categorie": "terminologie",
+  "motif": "Première occurrence du sigle CSA dans le chapitre, jamais développé dans le corps du texte (lignes 47, 53, 55, 57).",
+  "origine": "tranche 04-45"
+ },
+ {
+  "n": 135,
+  "fichier": "chapitre-24-passerelles-integration.md",
+  "avant": "de Kong et de MuleSoft Agent Fabric consultée à cette date.",
+  "apres": "de Kong et de MuleSoft Agent Fabric consultée les 11 et 12 novembre 2026.",
+  "categorie": "temporel",
+  "motif": "Relecture en phase 2 : la correction reprend les deux dates de lecture données en ligne 234 (« lues le 11 novembre 2026, sauf [12], lue le 12 »).",
+  "origine": "tranche 05-2"
+ },
+ {
+  "n": 136,
+  "fichier": "chapitre-24-passerelles-integration.md",
+  "avant": "Les scanners d'API « write policies from » ces plateformes, résultat par API : ils relèvent les politiques sans les écrire.",
+  "apres": "Les scanners d'API relèvent, API par API, les politiques de ces plateformes (les notes disent « write policies from »), sans les écrire.",
+  "categorie": "langue",
+  "motif": "Règle 8 (correction minimale d'une phrase mal construite) : aucun fait ajouté ni retiré; même lecture que la ligne 254 du chapitre.",
+  "origine": "tranche 05-3"
+ },
+ {
+  "n": 137,
+  "fichier": "chapitre-24-passerelles-integration.md",
+  "avant": "Le chiffre de « 43 % de serveurs MCP vulnérables », sans source, n'est pas repris. Aucune donnée",
+  "apres": "Aucune donnée",
+  "categorie": "residu",
+  "motif": "Règle 6 (résidu de fabrication : suppression de la phrase sans réécriture); Grep de « 43 % » sur les chapitres 5 à 8, 24 et 31 : seule occurrence.",
+  "origine": "tranche 05-4"
+ },
+ {
+  "n": 138,
+  "fichier": "chapitre-25-integration-patrimoine.md",
+  "avant": "et l'agent d'intégration de 25.1 gère lui aussi reprises et délais [1]",
+  "apres": "et l'agent d'intégration du patron décrit en 25.1 gère lui aussi reprises et délais [1]",
+  "categorie": "coherence",
+  "motif": "Règle 8 (correction minimale) : alignement sur la formule de la ligne 53 du même chapitre; l'appel [1] porte déjà l'attribution à l'article.",
+  "origine": "tranche 05-5"
+ },
+ {
+  "n": 139,
+  "fichier": "chapitre-25-integration-patrimoine.md",
+  "avant": "multiplie la latence par cent",
+  "apres": "multiplie la latence par mille",
+  "categorie": "coherence",
+  "motif": "Règle 2 (contradiction interne) : la valeur appuyée par le calcul explicite de la ligne 231 et par le tableau de la ligne 246 (15 à 80 ms contre 8 à 35 s) est retenue.",
+  "origine": "tranche 05-6"
+ },
+ {
+  "n": 140,
+  "fichier": "chapitre-25-integration-patrimoine.md",
+  "avant": "prend 8 à 30 secondes par écran, soit trois ordres de grandeur plus lent",
+  "apres": "prend 8 à 35 secondes par écran, soit trois ordres de grandeur plus lent",
+  "categorie": "coherence",
+  "motif": "Règle 2 (contradiction interne) : la valeur du tableau (ligne 246) l'emporte sur celle du texte.",
+  "origine": "tranche 05-7"
+ },
+ {
+  "n": 141,
+  "fichier": "chapitre-25-integration-patrimoine.md",
+  "avant": "traversent encore en 2027 des systèmes centraux",
+  "apres": "traversent encore des systèmes centraux",
+  "categorie": "temporel",
+  "motif": "État du monde réel daté de 2027 et affirmé au présent comme un fait, alors que la date de référence est le 13 novembre 2026 (et que le chiffre est sans source, ligne 227). Ce passage est hors fil rouge.",
+  "origine": "tranche 05-8"
+ },
+ {
+  "n": 142,
+  "fichier": "chapitre-25-integration-patrimoine.md",
+  "avant": "L’APA, illustrée en 2027 par UiPath Maestro",
+  "apres": "L’APA, illustrée par UiPath Maestro",
+  "categorie": "temporel",
+  "motif": "État d'un produit réel daté de 2027 et présenté comme acquis; la date de référence de l'édition est le 13 novembre 2026. Ce passage est hors fil rouge.",
+  "origine": "tranche 05-9"
+ },
+ {
+  "n": 143,
+  "fichier": "chapitre-25-integration-patrimoine.md",
+  "avant": "adossé à BPMN 2.0, MCP et A2A v1.0",
+  "apres": "adossé à BPMN 2.0, MCP et A2A",
+  "categorie": "coherence",
+  "motif": "Règles 1 et 5 : le volet s'aligne sur l'exposé du chapitre 26 (ligne 150), confirmé à la source : la page https://docs.uipath.com/orchestrator/automation-cloud/latest/user-guide/about-a2a-agents indique « A2A Agents is available in preview » et ne nomme aucune version.",
+  "origine": "tranche 05-10"
+ },
+ {
+  "n": 144,
+  "fichier": "chapitre-25-integration-patrimoine.md",
+  "avant": "l’oubli du caractère d’échappement ? défini par l’en-tête UNA devant un délimiteur +, `:` ou `'` corrompt",
+  "apres": "l’oubli du caractère d’échappement `?` défini par l’en-tête UNA devant un délimiteur `+`, `:` ou `'` corrompt",
+  "categorie": "structure",
+  "motif": "Deux des quatre caractères littéraux ne sont pas balisés en code : le « ? » se lit comme une ponctuation et rend la phrase ambiguë.",
+  "origine": "tranche 05-11"
+ },
+ {
+  "n": 145,
+  "fichier": "chapitre-25-integration-patrimoine.md",
+  "avant": "Le serveur MCP s’appuie sur z/OS Connect Enterprise Edition",
+  "apres": "Le serveur MCP s’appuie sur z/OS Connect",
+  "categorie": "terminologie",
+  "motif": "Règle 3 (forme la plus fréquente) : « z/OS Connect » seul, cinq occurrences dans l'ouvrage, contre une seule avec « Enterprise Edition ».",
+  "origine": "tranche 05-12"
+ },
+ {
+  "n": 146,
+  "fichier": "chapitre-25-integration-patrimoine.md",
+  "avant": "### Spécificités des grands systèmes IBM z/OS (CICS / IMS) : COMMAREA, RACF et MIPS",
+  "apres": "### Spécificités des ordinateurs centraux IBM z/OS (CICS / IMS) : COMMAREA, RACF et MIPS",
+  "categorie": "terminologie",
+  "motif": "Règle 3 (terminologie) : « ordinateur central », sept occurrences dans l'ouvrage et forme du glossaire (annexe A, ligne 76), contre une seule pour « grands systèmes ».",
+  "origine": "tranche 05-13"
+ },
+ {
+  "n": 147,
+  "fichier": "chapitre-25-integration-patrimoine.md",
+  "avant": "ou par un RACF PassTicket à usage unique (valide 10 s)",
+  "apres": "ou par un RACF PassTicket à usage unique (valide 10 minutes)",
+  "categorie": "factuel",
+  "motif": "Règle 5 (fait vérifié à la source primaire) : documentation IBM de CICS TS, https://www.ibm.com/docs/en/cics-ts/5.4.0?topic=cics-generating-using-passtickets-secure-sign (« must be used within 10 minutes of being generated »).",
+  "origine": "tranche 05-14"
+ },
+ {
+  "n": 148,
+  "fichier": "chapitre-25-integration-patrimoine.md",
+  "avant": "des 5 à 10 % d’écrans réellement fermés",
+  "apres": "des 5 à 8 % d’écrans réellement fermés",
+  "categorie": "coherence",
+  "motif": "Règle 2 (contradiction interne) : la valeur majoritaire du chapitre (lignes 219, 493 et 686) est retenue; l'occurrence isolée de l'ADR est corrigée.",
+  "origine": "tranche 05-15"
+ },
+ {
+  "n": 149,
+  "fichier": "chapitre-25-integration-patrimoine.md",
+  "avant": "En parallèle, BEL a encapsulé ses flux EDI X12",
+  "apres": "En parallèle, Boréal Équipements & Logistique (BEL) a encapsulé ses flux EDI X12",
+  "categorie": "terminologie",
+  "motif": "Règle 3 (terminologie) : développement repris tel quel des chapitres 27 (ligne 618) et 28 (ligne 588), forme constante dans l'ouvrage (quinze occurrences).",
+  "origine": "tranche 05-16"
+ },
+ {
+  "n": 150,
+  "fichier": "chapitre-26-plateformes-entreprise.md",
+  "avant": "Une passerelle neutre comme agentgateway, à l'AAIF, offre",
+  "apres": "Une passerelle neutre comme agentgateway, à l'Agentic AI Foundation (AAIF), offre",
+  "categorie": "terminologie",
+  "motif": "Règle 3 (terminologie) : développement conforme au glossaire (annexe A, ligne 191 : « AAIF | Agentic AI Foundation ») et aux chapitres 23 et 24.",
+  "origine": "tranche 05-18"
+ },
+ {
+  "n": 151,
+  "fichier": "chapitre-27-strategie-multi-plateformes.md",
+  "avant": "exige de traiter trois frictions structurelles",
+  "apres": "exige de traiter quatre frictions structurelles",
+  "categorie": "coherence",
+  "motif": "Quatre puces suivent (clés d'entités maîtres, quotas d'API, compensation sémantique, versionnement asynchrone), ce qu'annonce aussi le titre de la sous-section (quatre termes).",
+  "origine": "tranche 05-21"
+ },
+ {
+  "n": 152,
+  "fichier": "chapitre-27-strategie-multi-plateformes.md",
+  "avant": "une file à seau percé (*Token Bucket*)",
+  "apres": "une file à seau à jetons (*Token Bucket*)",
+  "categorie": "terminologie",
+  "motif": "« Seau percé » traduit leaky bucket, un autre algorithme; token bucket est le seau à jetons. Seule occurrence du terme dans l'ouvrage.",
+  "origine": "tranche 05-22"
+ },
+ {
+  "n": 153,
+  "fichier": "chapitre-27-strategie-multi-plateformes.md",
+  "avant": "\"method\": \"message/send\",",
+  "apres": "\"method\": \"SendMessage\",",
+  "categorie": "coherence",
+  "motif": "Règles 1 et 5 : le volet s'aligne sur l'exposé du chapitre 6 (la 1.0 renomme les opérations de la 0.3), vérifié à la source : spécification A2A, https://a2a-protocol.org/latest/specification/, sections 5.3 et 9.4.1 (« \"method\": \"SendMessage\" »).",
+  "origine": "tranche 05-23"
+ },
+ {
+  "n": 154,
+  "fichier": "chapitre-27-strategie-multi-plateformes.md",
+  "avant": "\"blocking\": false,",
+  "apres": "\"returnImmediately\": true,",
+  "categorie": "coherence",
+  "motif": "Règles 1 et 5 : spécification A2A, section 3.2.2, et définition `SendMessageConfiguration` du fichier https://raw.githubusercontent.com/a2aproject/A2A/main/specification/a2a.proto (champs `accepted_output_modes`, `task_push_notification_config`, `history_length`, `return_immediately`).",
+  "origine": "tranche 05-24"
+ },
+ {
+  "n": 155,
+  "fichier": "chapitre-27-strategie-multi-plateformes.md",
+  "avant": "\"pushNotificationConfig\": {",
+  "apres": "\"taskPushNotificationConfig\": {",
+  "categorie": "coherence",
+  "motif": "Règles 1 et 5 : spécification A2A, section 3.2.2, et `SendMessageConfiguration.task_push_notification_config` dans https://raw.githubusercontent.com/a2aproject/A2A/main/specification/a2a.proto.",
+  "origine": "tranche 05-25"
+ },
+ {
+  "n": 156,
+  "fichier": "chapitre-27-strategie-multi-plateformes.md",
+  "avant": "\"authentication\": { \"schemes\": [\"Bearer-SPIFFE-SVID\"] }",
+  "apres": "\"authentication\": { \"scheme\": \"Bearer-SPIFFE-SVID\" }",
+  "categorie": "coherence",
+  "motif": "Règles 1 et 5 : message `AuthenticationInfo` (champs `scheme` et `credentials`) dans https://raw.githubusercontent.com/a2aproject/A2A/main/specification/a2a.proto.",
+  "origine": "tranche 05-26"
+ },
+ {
+  "n": 157,
+  "fichier": "chapitre-27-strategie-multi-plateformes.md",
+  "avant": "\"role\": \"user\",",
+  "apres": "\"role\": \"ROLE_USER\",",
+  "categorie": "coherence",
+  "motif": "Règles 1 et 5 : spécification A2A, section 4.1.5 (https://a2a-protocol.org/latest/specification/), et énumération `Role` du fichier a2a.proto.",
+  "origine": "tranche 05-27"
+ },
+ {
+  "n": 158,
+  "fichier": "chapitre-27-strategie-multi-plateformes.md",
+  "avant": "\"kind\": \"data\",",
+  "apres": "",
+  "categorie": "coherence",
+  "motif": "Règles 1 et 5 : spécification A2A, annexe A.2.1 « Breaking Change: Kind Discriminator Removed » (https://a2a-protocol.org/latest/specification/), et message `Part` du fichier a2a.proto.",
+  "origine": "tranche 05-28"
+ },
+ {
+  "n": 159,
+  "fichier": "chapitre-27-strategie-multi-plateformes.md",
+  "avant": "\"mimeType\": \"application/vnd.boreal.ossie.spare-allocation.v2+json\",",
+  "apres": "\"mediaType\": \"application/vnd.boreal.ossie.spare-allocation.v2+json\",",
+  "categorie": "coherence",
+  "motif": "Règles 1 et 5 : spécification A2A, annexe A.2.1 (passage de `mimeType` à `mediaType`), et champ `media_type` du message `Part` dans a2a.proto.",
+  "origine": "tranche 05-29"
+ },
+ {
+  "n": 160,
+  "fichier": "chapitre-27-strategie-multi-plateformes.md",
+  "avant": "Façade A2A v1.0, outils MCP via MuleSoft",
+  "apres": "Façade A2A, outils MCP via MuleSoft",
+  "categorie": "coherence",
+  "motif": "Règles 1 et 5 : le volet s'aligne sur l'exposé du chapitre 26 (lignes 62 à 66), confirmé à la source : le guide https://www.salesforce.com/agentforce/resources/interoperability-guide/ ne nomme aucune version d'A2A ni de MCP.",
+  "origine": "tranche 05-30"
+ },
+ {
+  "n": 161,
+  "fichier": "chapitre-27-strategie-multi-plateformes.md",
+  "avant": "à une cohérence éventuelle vérifiée",
+  "apres": "à une cohérence à terme vérifiée",
+  "categorie": "langue",
+  "motif": "Faux ami : eventual consistency se dit « cohérence à terme » (forme employée au chapitre 46, ligne 127); « éventuelle » signifie « possible ». Le glossaire n'a pas d'entrée; le chapitre 19 (ligne 662) dit « cohérence finale ».",
+  "origine": "tranche 05-32"
+ },
+ {
+  "n": 162,
+  "fichier": "chapitre-27-strategie-multi-plateformes.md",
+  "avant": "a lieu, dix-huit mois plus tard, la bascule",
+  "apres": "a lieu, deux ans plus tard, la bascule",
+  "categorie": "coherence",
+  "motif": "Règle 2 (contradiction interne) : deux occurrences sur trois (lignes 582 et 588, première phrase) appuient un délai d'au moins deux ans; l'occurrence isolée est corrigée.",
+  "origine": "tranche 05-33"
+ },
+ {
+  "n": 163,
+  "fichier": "chapitre-27-strategie-multi-plateformes.md",
+  "avant": "la triple taxation inter-SaaS",
+  "apres": "la quadruple taxation inter-SaaS",
+  "categorie": "coherence",
+  "motif": "Règle 4 (décompte faux : on corrige le nombre annoncé, pas l'énumération); preuve en ligne 596 du même chapitre.",
+  "origine": "tranche 05-34"
+ },
+ {
+  "n": 164,
+  "fichier": "chapitre-27-strategie-multi-plateformes.md",
+  "avant": "fédération d'identités de charges de travail, ID-JAG et échange de jetons",
+  "apres": "fédération d'identités de charges de travail, ID-JAG (Identity Assertion JWT Authorization Grant) et échange de jetons",
+  "categorie": "terminologie",
+  "motif": "Règle 3 (terminologie) : développement repris du glossaire (annexe A, ligne 198) et du chapitre 5 (ligne 212).",
+  "origine": "tranche 05-35"
+ },
+ {
+  "n": 165,
+  "fichier": "chapitre-27-strategie-multi-plateformes.md",
+  "avant": "Le format relève de l'AAIF depuis le 22 octobre 2026",
+  "apres": "Le format relève de l'Agentic AI Foundation (AAIF) depuis le 22 octobre 2026",
+  "categorie": "terminologie",
+  "motif": "Première occurrence du sigle AAIF dans le chapitre, non développé; le nom complet ne figurait que dans la liste des sources.",
+  "origine": "tranche 05-36"
+ },
+ {
+  "n": 166,
+  "fichier": "chapitre-28-agents-industriels-peripherie.md",
+  "avant": "ces garde-fous doivent être rendues effectives par l'adaptateur",
+  "apres": "ces garde-fous doivent être rendus effectifs par l'adaptateur",
+  "categorie": "langue",
+  "motif": "Faute d'accord : « garde-fous » est masculin pluriel.",
+  "origine": "tranche 05-38"
+ },
+ {
+  "n": 167,
+  "fichier": "chapitre-28-agents-industriels-peripherie.md",
+  "avant": "convergence IT/OT, OPC-UA et jumeaux numériques",
+  "apres": "convergence IT/OT, OPC UA et jumeaux numériques",
+  "categorie": "terminologie",
+  "motif": "Règle 3 (terminologie) : « OPC UA », 36 occurrences dans l'ouvrage contre 21 pour « OPC-UA »; l'annexe A n'a pas d'entrée, et la forme minoritaire ne revient que quatre fois dans le chapitre.",
+  "origine": "tranche 05-39"
+ },
+ {
+  "n": 168,
+  "fichier": "chapitre-28-agents-industriels-peripherie.md",
+  "avant": "télémétrie OPC-UA / MQTT Sparkplug en lecture seule",
+  "apres": "télémétrie OPC UA / MQTT Sparkplug en lecture seule",
+  "categorie": "terminologie",
+  "motif": "Règle 3 (terminologie) : même décompte que pour la ligne 192 (36 contre 21 dans l'ouvrage; 34 contre 4 dans le chapitre).",
+  "origine": "tranche 05-40"
+ },
+ {
+  "n": 169,
+  "fichier": "chapitre-28-agents-industriels-peripherie.md",
+  "avant": "mappant l’espace sémantique OPC-UA (réplica IDMZ)",
+  "apres": "mappant l’espace sémantique OPC UA (réplica IDMZ)",
+  "categorie": "terminologie",
+  "motif": "Règle 3 (terminologie) : même décompte que pour la ligne 192 (36 contre 21 dans l'ouvrage; 34 contre 4 dans le chapitre).",
+  "origine": "tranche 05-41"
+ },
+ {
+  "n": 170,
+  "fichier": "chapitre-28-agents-industriels-peripherie.md",
+  "avant": "Toute consigne descendante franchit trois barrières déterministes :",
+  "apres": "Toute consigne descendante franchit trois barrières déterministes; les deux premières sont décrites ici, la troisième (le récepteur côté MES/SCADA) plus bas :",
+  "categorie": "coherence",
+  "motif": "Règles 2 et 8 : la règle 4 (corriger le nombre) ne s'applique pas, car « trois » est appuyé par les lignes 441 et 619 du même chapitre; ajout minimal d'un renvoi.",
+  "origine": "tranche 05-42"
+ },
+ {
+  "n": 171,
+  "fichier": "chapitre-28-agents-industriels-peripherie.md",
+  "avant": "(7 à 14B paramètres)",
+  "apres": "(7 à 14 milliards de paramètres)",
+  "categorie": "langue",
+  "motif": "Notation anglaise « 14B » (billion) dans le texte courant français.",
+  "origine": "tranche 05-43"
+ },
+ {
+  "n": 172,
+  "fichier": "chapitre-28-agents-industriels-peripherie.md",
+  "avant": "**Disponibilité globale (OEE) sur les 6 cellules**",
+  "apres": "**Taux de rendement synthétique (OEE) sur les 6 cellules**",
+  "categorie": "terminologie",
+  "motif": "Le sigle OEE est développé « taux de rendement synthétique » en ligne 204; la disponibilité n'est qu'une des trois composantes de l'OEE. Chaque forme n'apparaît qu'une fois dans l'ouvrage; la forme exacte est retenue.",
+  "origine": "tranche 05-44"
+ },
+ {
+  "n": 173,
+  "fichier": "chapitre-28-agents-industriels-peripherie.md",
+  "avant": "Deux standards industriels lèvent en 2027 l’ambiguïté",
+  "apres": "Deux standards industriels lèvent l’ambiguïté",
+  "categorie": "temporel",
+  "motif": "État du monde réel daté de 2027 et affirmé au présent; la date de référence de l'édition est le 13 novembre 2026, et ces deux standards sont antérieurs. Ce passage est hors fil rouge.",
+  "origine": "tranche 05-45"
+ },
+ {
+  "n": 174,
+  "fichier": "chapitre-28-agents-industriels-peripherie.md",
+  "avant": "des centres de distribution automatisés de 2027 :",
+  "apres": "des centres de distribution automatisés :",
+  "categorie": "temporel",
+  "motif": "État du monde réel daté de 2027 et présenté comme constaté, après la date de référence du 13 novembre 2026. Ce passage est hors fil rouge.",
+  "origine": "tranche 05-46"
+ },
+ {
+  "n": 175,
+  "fichier": "chapitre-28-agents-industriels-peripherie.md",
+  "avant": "(IDTA, partie 2)",
+  "apres": "(Industrial Digital Twin Association, IDTA, partie 2)",
+  "categorie": "terminologie",
+  "motif": "Règle 3 (terminologie) : sigle employé deux fois dans l'ouvrage (chapitre 28, lignes 42 et 186), sans développement ni entrée à l'annexe A; développé à sa première occurrence.",
+  "origine": "tranche 05-48"
+ },
+ {
+  "n": 176,
+  "fichier": "chapitre-28-agents-industriels-peripherie.md",
+  "avant": "à cycle fixe, entre 1 et 10 millisecondes",
+  "apres": "à cycle fixe, entre 0,5 et 10 millisecondes",
+  "categorie": "coherence",
+  "motif": "Règle 2 (contradiction interne) : la valeur du tableau (ligne 225) l'emporte sur celle du texte.",
+  "origine": "tranche 05-49"
+ },
+ {
+  "n": 177,
+  "fichier": "chapitre-29-identite-agentique.md",
+  "avant": "Aucun RFC n'est sorti du groupe WIMSE",
+  "apres": "Aucune RFC n'est sortie du groupe WIMSE",
+  "categorie": "terminologie",
+  "motif": "Règle 3 : le féminin domine dans l'ouvrage (25 occurrences de « la/une RFC » aux chapitres 6, 9, 10, 18 et 30, contre 14 au masculin dans l'ouverture, les chapitres 11 et 29 et l'annexe D); l'annexe A n'a pas d'entrée; le chapitre 29 n'a que trois occurrences masculines (l. 127, 163, 274), toutes corrigées.",
+  "origine": "tranche 06-0"
+ },
+ {
+  "n": 178,
+  "fichier": "chapitre-29-identite-agentique.md",
+  "avant": "Le RFC énonce ses propres limites.",
+  "apres": "La RFC énonce ses propres limites.",
+  "categorie": "terminologie",
+  "motif": "Règle 3 : le féminin domine dans l'ouvrage (25 occurrences de « la/une RFC » aux chapitres 6, 9, 10, 18 et 30, contre 14 au masculin dans l'ouverture, les chapitres 11 et 29 et l'annexe D); l'annexe A n'a pas d'entrée; le chapitre 29 n'a que trois occurrences masculines (l. 127, 163, 274), toutes corrigées.",
+  "origine": "tranche 06-1"
+ },
+ {
+  "n": 179,
+  "fichier": "chapitre-29-identite-agentique.md",
+  "avant": "et CIBA fournit une approbation hors bande",
+  "apres": "et CIBA, le flux d'authentification par canal secondaire d'OpenID, fournit une approbation hors bande",
+  "categorie": "terminologie",
+  "motif": "Sigle CIBA jamais développé ni glosé dans le chapitre 29 (première occurrence ici); le chapitre 30 (l. 112) le glose par « le flux d'authentification par canal secondaire d'OpenID ».",
+  "origine": "tranche 06-2"
+ },
+ {
+  "n": 180,
+  "fichier": "chapitre-29-identite-agentique.md",
+  "avant": "l'ID-JAG n'est pas un RFC",
+  "apres": "l'ID-JAG n'est pas une RFC",
+  "categorie": "terminologie",
+  "motif": "Règle 3 : le féminin domine dans l'ouvrage (25 occurrences de « la/une RFC » aux chapitres 6, 9, 10, 18 et 30, contre 14 au masculin dans l'ouverture, les chapitres 11 et 29 et l'annexe D); l'annexe A n'a pas d'entrée; le chapitre 29 n'a que trois occurrences masculines (l. 127, 163, 274), toutes corrigées.",
+  "origine": "tranche 06-3"
+ },
+ {
+  "n": 181,
+  "fichier": "chapitre-30-autorisation-delegation.md",
+  "avant": "son champ d'audit « sujet délégué » est au singulier",
+  "apres": "son champ d'audit « sujet délégant » est au singulier",
+  "categorie": "terminologie",
+  "motif": "Règles 5 et 3 : le brouillon AIMS écrit « delegated subject (user or system), when present » (section 11, https://www.ietf.org/archive/id/draft-ietf-wimse-aims-01.txt) : le champ désigne l'utilisateur ou le système qui délègue. « Délégué » est un calque qui, en français, désigne celui qui reçoit la délégation; le chapitre 29 (l. 85, l. 243) écrit « sujet délégant ». Décompte dans l'ouvrage : 2 contre 2, pas d'entrée au glossaire; on aligne sur le sens.",
+  "origine": "tranche 06-4"
+ },
+ {
+  "n": 182,
+  "fichier": "chapitre-30-autorisation-delegation.md",
+  "avant": "l'identifiant authentifié de l'agent, le sujet délégué, la ressource ou l'outil",
+  "apres": "l'identifiant authentifié de l'agent, le sujet délégant, la ressource ou l'outil",
+  "categorie": "terminologie",
+  "motif": "Règles 5 et 3 : le brouillon AIMS écrit « delegated subject (user or system), when present » (section 11, https://www.ietf.org/archive/id/draft-ietf-wimse-aims-01.txt) : le champ désigne l'utilisateur ou le système qui délègue. « Délégué » est un calque qui, en français, désigne celui qui reçoit la délégation; le chapitre 29 (l. 85, l. 243) écrit « sujet délégant ». Décompte dans l'ouvrage : 2 contre 2, pas d'entrée au glossaire; on aligne sur le sens.",
+  "origine": "tranche 06-6"
+ },
+ {
+  "n": 183,
+  "fichier": "chapitre-30-autorisation-delegation.md",
+  "avant": "(https://owasp.org/projects/mcp-top-10)",
+  "apres": "(https://owasp.org/www-project-mcp-top-10/)",
+  "categorie": "renvoi",
+  "motif": "Règle 2 : la même page du projet est citée à l'adresse https://owasp.org/www-project-mcp-top-10/ au chapitre 31 (l. 280) et dans l'annexe E, forme habituelle des pages de projet OWASP; l'adresse du chapitre 30 est la seule de sa forme dans l'ouvrage.",
+  "origine": "tranche 06-8"
+ },
+ {
+  "n": 184,
+  "fichier": "chapitre-30-autorisation-delegation.md",
+  "avant": "n'a pas été confirmée et n'est pas reprise. L'intitulé « Complex Delegation » de la version 1, non retrouvé, est retiré.",
+  "apres": "n'a pas été confirmée et n'est pas reprise.",
+  "categorie": "residu",
+  "motif": "Trace de fabrication : la phrase renvoie à une « version 1 » du chapitre que le lecteur n'a pas et décrit une correction de relecture.",
+  "origine": "tranche 06-9"
+ },
+ {
+  "n": 185,
+  "fichier": "chapitre-30-autorisation-delegation.md",
+  "avant": "Le mécanisme de liaison cryptographique du jeton à l’émetteur",
+  "apres": "Le mécanisme de liaison cryptographique du jeton au détenteur",
+  "categorie": "terminologie",
+  "motif": "mTLS (RFC 8705) et DPoP lient le jeton à la clé de celui qui le présente, non à son émetteur (le serveur d'autorisation). Le chapitre 29 dit « liés au détenteur » (grille, l. 258) et « lier un jeton à son détenteur » (l. 165).",
+  "origine": "tranche 06-10"
+ },
+ {
+  "n": 186,
+  "fichier": "chapitre-30-autorisation-delegation.md",
+  "avant": "homologué statiquement sur le plan directeur (*Blueprint*) de l’agent",
+  "apres": "homologué statiquement sur le gabarit (*Blueprint*) de l’agent",
+  "categorie": "terminologie",
+  "motif": "Règles 1 et 3 : l'exposé du chapitre 29 traduit *agent identity blueprint* par « gabarit d'identité d'agent » (l. 55) et emploie « gabarit » six fois; « plan directeur » n'apparaît que deux fois dans tout l'ouvrage, dans ce volet (l. 291 et 329); pas d'entrée au glossaire. Le volet s'aligne sur l'exposé.",
+  "origine": "tranche 06-12"
+ },
+ {
+  "n": 187,
+  "fichier": "chapitre-30-autorisation-delegation.md",
+  "avant": "son archétype L1–L4",
+  "apres": "son niveau d’autonomie L1–L4",
+  "categorie": "terminologie",
+  "motif": "L1 à L4 sont des niveaux d'autonomie (« Tout agent de niveau L1 à L4 » l. 721, « cote d'autonomie » l. 649; chapitre 1, l. 337), alors que « archétype » désigne les cinq archétypes fonctionnels numérotés (« Archétype 5 », « Archétype 2 », l. 690).",
+  "origine": "tranche 06-13"
+ },
+ {
+  "n": 188,
+  "fichier": "chapitre-30-autorisation-delegation.md",
+  "avant": "**Le plan directeur d’identité (*Agent Identity Blueprint*).**",
+  "apres": "**Le gabarit d’identité (*Agent Identity Blueprint*).**",
+  "categorie": "terminologie",
+  "motif": "Règles 1 et 3 : l'exposé du chapitre 29 traduit *agent identity blueprint* par « gabarit d'identité d'agent » (l. 55) et emploie « gabarit » six fois; « plan directeur » n'apparaît que deux fois dans tout l'ouvrage, dans ce volet (l. 291 et 329); pas d'entrée au glossaire. Le volet s'aligne sur l'exposé.",
+  "origine": "tranche 06-14"
+ },
+ {
+  "n": 189,
+  "fichier": "chapitre-31-menaces.md",
+  "avant": "et l'accès par relecture DNS à un serveur laissé en écoute",
+  "apres": "et l'accès par réassociation DNS à un serveur laissé en écoute",
+  "categorie": "terminologie",
+  "motif": "« DNS rebinding » est rendu par « relecture DNS », qui n'a pas de sens; le chapitre 5 (l. 138) écrit « réassociation DNS (DNS rebinding) ».",
+  "origine": "tranche 06-18"
+ },
+ {
+  "n": 190,
+  "fichier": "chapitre-31-menaces.md",
+  "avant": "Aucune ne mesure la fréquence de ces attaques en production.",
+  "apres": "Aucun ne mesure la fréquence de ces attaques en production.",
+  "categorie": "langue",
+  "motif": "Accord : l'antécédent est « les appuis » (masculin), repris par une énumération de genres mêlés.",
+  "origine": "tranche 06-19"
+ },
+ {
+  "n": 191,
+  "fichier": "chapitre-31-menaces.md",
+  "avant": "ne sont pas rapportées. L'avertissement de la table des matières n'est donc levé qu'en partie.",
+  "apres": "ne sont pas rapportées.",
+  "categorie": "residu",
+  "motif": "Règle 6, exception appliquée : même devenue « l'avertissement du plan initial », la phrase renvoie à un avertissement que le lecteur ne connaît pas et n'a plus de sens pour lui; à appliquer avant le remplacement global de « table des matières ».",
+  "origine": "tranche 06-20"
+ },
+ {
+  "n": 192,
+  "fichier": "chapitre-31-menaces.md",
+  "avant": "Ils confirment le texte, sauf le résumé de MCP01, corrigé.",
+  "apres": "Ils confirment le texte.",
+  "categorie": "residu",
+  "motif": "Note de relecture décrivant une correction déjà faite sur un état antérieur du chapitre; sans objet pour le lecteur.",
+  "origine": "tranche 06-21"
+ },
+ {
+  "n": 193,
+  "fichier": "chapitre-31-menaces.md",
+  "avant": "**Condition de révision** : Révision trimestrielle suivant les bulletins de menaces",
+  "apres": "**Condition de révision** : Révision semestrielle suivant les bulletins de menaces",
+  "categorie": "coherence",
+  "motif": "Règle 2 : la cadence semestrielle est celle de l'en-tête de statut de la même fiche, du gabarit de fiche de l'annexe F (annexe-F-decisions-architecture.md, l. 97, « Semestrielle ou changement majeur ») et des ADR voisins 018 et 021, cohérents aux deux endroits; on aligne la condition de révision sur le statut. Statut de l'ADR-019 : chapitre 31, l. 739.",
+  "origine": "tranche 06-23"
+ },
+ {
+  "n": 194,
+  "fichier": "chapitre-31-menaces.md",
+  "avant": "ou de notification `tools/list_changed` non autorisée",
+  "apres": "ou de notification `notifications/tools/list_changed` non autorisée",
+  "categorie": "coherence",
+  "motif": "Nom de la notification incohérent : partout ailleurs dans le chapitre (l. 365, 382, 567) c'est `notifications/tools/list_changed`.",
+  "origine": "tranche 06-24"
+ },
+ {
+  "n": 195,
+  "fichier": "chapitre-32-assurance.md",
+  "avant": "de prompt ou d'outil, ou de passage à un modèle distillé",
+  "apres": "de prompt ou d'outil, ou à chaque passage à un modèle distillé",
+  "categorie": "langue",
+  "motif": "Syntaxe : « à chaque changement de… ou de passage » fait dépendre « passage » de « changement ». La coordination doit reprendre « à chaque ».",
+  "origine": "tranche 06-25"
+ },
+ {
+  "n": 196,
+  "fichier": "chapitre-32-assurance.md",
+  "avant": "se répartit donc en quatre primitives complémentaires, fédérées par une couche protocolaire ouverte",
+  "apres": "se répartit donc en trois primitives complémentaires, fédérées par une couche protocolaire ouverte",
+  "categorie": "coherence",
+  "motif": "Règle 4 : l'énumération (l. 272 à 275) compte trois primitives (gVisor, microVM, WASI) et, en quatrième point, la couche OpenSandbox qui les fédère; on corrige le nombre annoncé, pas la liste.",
+  "origine": "tranche 06-26"
+ },
+ {
+  "n": 197,
+  "fichier": "chapitre-32-assurance.md",
+  "avant": "### Les quatre primitives d’isolation et le standard fédérateur OpenSandbox (AAIF)",
+  "apres": "### Les trois primitives d’isolation et le standard fédérateur OpenSandbox (AAIF)",
+  "categorie": "coherence",
+  "motif": "Règle 4 : l'énumération (l. 272 à 275) compte trois primitives (gVisor, microVM, WASI) et, en quatrième point, la couche OpenSandbox qui les fédère; on corrige le nombre annoncé, pas la liste.",
+  "origine": "tranche 06-27"
+ },
+ {
+  "n": 198,
+  "fichier": "chapitre-32-assurance.md",
+  "avant": "Le démarrage prend moins d’une milliseconde, pour une empreinte de quelques mégaoctets.",
+  "apres": "Le démarrage prend de 0,2 à 2 millisecondes, pour une empreinte de quelques mégaoctets.",
+  "categorie": "coherence",
+  "motif": "Règle 2 : le tableau comparatif du même volet (l. 282) donne « 0,2 – 2 ms » pour le composant WASI; aucune autre occurrence dans l'ouvrage; on aligne la prose sur le tableau.",
+  "origine": "tranche 06-28"
+ },
+ {
+  "n": 199,
+  "fichier": "chapitre-32-assurance.md",
+  "avant": "et des messages A2A (`tasks/send`)",
+  "apres": "et des messages A2A (`SendMessage`)",
+  "categorie": "coherence",
+  "motif": "Règle 5 : la spécification A2A 1.0.0 nomme la méthode JSON-RPC d'envoi `SendMessage` (section 9.4.1); ni `tasks/send` ni `message/send` n'y figurent (https://a2a-protocol.org/latest/specification/).",
+  "origine": "tranche 06-29"
+ },
+ {
+  "n": 200,
+  "fichier": "chapitre-32-assurance.md",
+  "avant": "peut ainsi poser cinq règles `forbid` cardinales",
+  "apres": "peut ainsi poser trois règles `forbid` cardinales",
+  "categorie": "coherence",
+  "motif": "Règle 4 : l'extrait 32.3 compte trois clauses `forbid` et sa présentation (l. 397) annonce « deux autorisations selon le montant, puis trois clauses `forbid` inconditionnelles »; on corrige le nombre annoncé.",
+  "origine": "tranche 06-31"
+ },
+ {
+  "n": 201,
+  "fichier": "chapitre-32-assurance.md",
+  "avant": "Désactivation de l’hyperthreading (SMT) ou ordonnancement",
+  "apres": "Désactivation de l’hyperthreading ou ordonnancement",
+  "categorie": "terminologie",
+  "motif": "Le sigle SMT désigne partout ailleurs dans le chapitre les solveurs de satisfiabilité (« solveur SMT », l. 257, 357, 626, 674, 688); il prend ici, sans le dire, le sens de multifil simultané.",
+  "origine": "tranche 06-32"
+ },
+ {
+  "n": 202,
+  "fichier": "chapitre-32-assurance.md",
+  "avant": "**Condition de révision** : Réévaluation annuelle selon l’évolution",
+  "apres": "**Condition de révision** : Réévaluation semestrielle selon l’évolution",
+  "categorie": "coherence",
+  "motif": "Règle 2 : la cadence semestrielle est celle de l'en-tête de statut de la même fiche, du gabarit de fiche de l'annexe F (annexe-F-decisions-architecture.md, l. 97, « Semestrielle ou changement majeur ») et des ADR voisins 018 et 021, cohérents aux deux endroits; on aligne la condition de révision sur le statut. Statut de l'ADR-020 : chapitre 32, l. 669.",
+  "origine": "tranche 06-33"
+ },
+ {
+  "n": 203,
+  "fichier": "chapitre-33-observabilite-evaluation.md",
+  "avant": "`gen_ai.usage.cache_read_input_tokens` / `cache_creation_input_tokens`",
+  "apres": "`gen_ai.usage.cache_read.input_tokens` / `cache_write.input_tokens`",
+  "categorie": "factuel",
+  "motif": "Règle 5 : le document client-inference.md du dépôt des conventions GenAI (branche main) liste `gen_ai.usage.cache_read.input_tokens`, `gen_ai.usage.cache_write.input_tokens` et `gen_ai.usage.reasoning.output_tokens`; aucun attribut « cache_creation » ni `reasoning_tokens` (https://raw.githubusercontent.com/open-telemetry/semantic-conventions-genai/main/docs/gen-ai/client-inference.md).",
+  "origine": "tranche 06-34"
+ },
+ {
+  "n": 204,
+  "fichier": "chapitre-33-observabilite-evaluation.md",
+  "avant": "`gen_ai.usage.reasoning_tokens`",
+  "apres": "`gen_ai.usage.reasoning.output_tokens`",
+  "categorie": "factuel",
+  "motif": "Règle 5 : le document client-inference.md du dépôt des conventions GenAI (branche main) liste `gen_ai.usage.cache_read.input_tokens`, `gen_ai.usage.cache_write.input_tokens` et `gen_ai.usage.reasoning.output_tokens`; aucun attribut « cache_creation » ni `reasoning_tokens` (https://raw.githubusercontent.com/open-telemetry/semantic-conventions-genai/main/docs/gen-ai/client-inference.md).",
+  "origine": "tranche 06-35"
+ },
+ {
+  "n": 205,
+  "fichier": "chapitre-34-exploitation.md",
+  "avant": "aucun agent L2 ou L3 (niveaux de la section 34.4) ne peut référencer un alias flottant",
+  "apres": "aucun agent L2 ou L3 (échelle d’autonomie de l’ouverture, section 0.4) ne peut référencer un alias flottant",
+  "categorie": "coherence",
+  "motif": "Règle 1 : le volet s'aligne, au plus court. Il emploie l'échelle L0-L4 de l'ouverture (ouverture.md, l. 97-107, section 0.4 « Conventions, échelle d'autonomie… »; « extracteurs L0/L1 », l. 399), non l'échelle L0-L3 de Solanke reprise en 34.4 (l. 116-121, où L0 = « Arrêté »); on corrige le renvoi fautif de la parenthèse.",
+  "origine": "tranche 07-1"
+ },
+ {
+  "n": 206,
+  "fichier": "chapitre-34-exploitation.md",
+  "avant": "| $\\tau^3$-bench / environnements fédérés | Graphe multi-agents A2A complet sous horizons longs et bruit",
+  "apres": "| Environnements fédérés | Graphe multi-agents A2A complet sous horizons longs et bruit",
+  "categorie": "factuel",
+  "motif": "Règle 5, vérifié à la source primaire : selon Sierra (https://sierra.ai/resources/research/tau-3-bench-knowledge et https://sierra.ai/resources/research/tau-3-bench), τ³-bench ajoute à τ-bench un domaine de bases de connaissances (banque, 97 tâches) et un mode vocal; il n'évalue pas de graphes multi-agents A2A. On retire l'attribution fautive, au plus court.",
+  "origine": "tranche 07-5"
+ },
+ {
+  "n": 207,
+  "fichier": "chapitre-36-responsabilite.md",
+  "avant": "Verisk, éditeur des formulaires ISO qu'utilisent les assureurs américains",
+  "apres": "Verisk, éditeur des formulaires ISO (Insurance Services Office) qu'utilisent les assureurs américains",
+  "categorie": "terminologie",
+  "motif": "Règle 3 : sigle homonyme d'un autre, omniprésent dans la tranche (ISO/IEC 42001 au chapitre 35, repris au chapitre 39, l. 203); on le développe à sa première occurrence, sans toucher aux suivantes (l. 119, l. 223).",
+  "origine": "tranche 07-7"
+ },
+ {
+  "n": 208,
+  "fichier": "chapitre-38-canada-quebec.md",
+  "avant": "Selon l’ajustement réglementaire européen, la pleine exigibilité sectorielle est arrimée à la disponibilité des normes harmonisées CEN-CENELEC, jusqu’en décembre 2027.",
+  "apres": "Selon l’ajustement réglementaire européen, la pleine exigibilité sectorielle est fixée au 2 décembre 2027, sans lien avec la disponibilité des normes harmonisées CEN-CENELEC.",
+  "categorie": "coherence",
+  "motif": "Règle 1 : le volet s'aligne sur l'exposé sourcé du chapitre 35 (l. 71 : « Les colégislateurs ont remplacé ce mécanisme conditionnel par des dates fixes »; tableau l. 81 : 2 décembre 2027, haut risque, annexe III; aussi chapitre 34, l. 192).",
+  "origine": "tranche 07-9"
+ },
+ {
+  "n": 209,
+  "fichier": "chapitre-38-canada-quebec.md",
+  "avant": "**Août 2026 à décembre 2027 (Annexe III, haut risque)**",
+  "apres": "**Décembre 2027 (Annexe III, haut risque)**",
+  "categorie": "coherence",
+  "motif": "L'intitulé laisse entendre que le haut risque de l'annexe III s'applique dès août 2026. Le chapitre 35 (l. 81), le chapitre 34 (l. 192), le titre de la section 38.9 et le tableau de la l. 351 donnent tous décembre 2027; août 2026 est l'échéance de l'article 50 seulement.",
+  "origine": "tranche 07-10"
+ },
+ {
+  "n": 210,
+  "fichier": "chapitre-38-canada-quebec.md",
+  "avant": "centrés sur trois piliers : l’évaluation reproductible des agents outillés, l’attribution cryptographique des délégations et le confinement déterministe des effets de bord",
+  "apres": "centrés sur trois axes : les standards portés par l’industrie, les protocoles communautaires et la recherche sur l’authentification et l’identité des agents",
+  "categorie": "coherence",
+  "motif": "Règle 1 : le volet s'aligne sur l'exposé sourcé du chapitre 35 (l. 178 : « trois axes : standards portés par l'industrie, protocoles communautaires, recherche sur l'authentification et l'identité des agents »).",
+  "origine": "tranche 07-11"
+ },
+ {
+  "n": 211,
+  "fichier": "chapitre-38-canada-quebec.md",
+  "avant": "l’obligation de littératie IA (art. 4, février 2025)",
+  "apres": "l’obligation de maîtrise de l’IA (art. 4, février 2025)",
+  "categorie": "terminologie",
+  "motif": "Règle 3 : pas d'entrée au glossaire de l'annexe A; dans l'ouvrage, l'obligation de l'article 4 est dite « maîtrise de l'IA » trois fois (chapitre 35, l. 95; chapitre 41, l. 174 et 328) contre une fois « littératie IA » (ici).",
+  "origine": "tranche 07-12"
+ },
+ {
+  "n": 212,
+  "fichier": "chapitre-38-canada-quebec.md",
+  "avant": "un référentiel AIMS unique pour quatre régimes légaux et premier contrat autonome AP2",
+  "apres": "un référentiel AIMS unique pour trois régimes légaux et premier contrat autonome AP2",
+  "categorie": "coherence",
+  "motif": "Règle 4 : on corrige le nombre annoncé. L'encadré nomme trois régimes (EU AI Act, BSIF E-23, Loi 25 : l. 517), comme le contexte de l'ADR-024 (l. 540); le NIST AI RMF de la synthèse (l. 244) est un référentiel volontaire (l. 351; chapitre 35, l. 190), non un régime légal.",
+  "origine": "tranche 07-14"
+ },
+ {
+  "n": 213,
+  "fichier": "chapitre-38-canada-quebec.md",
+  "avant": "*Comités manuels par juridiction* : Rejetée — lenteur (9 semaines) et dérive documentaire.",
+  "apres": "*Comités manuels par juridiction* : Rejetée — lenteur (9,5 semaines) et dérive documentaire.",
+  "categorie": "coherence",
+  "motif": "Le fil rouge de la section précédente chiffre le même délai d'homologation à 9,5 semaines (l. 517).",
+  "origine": "tranche 07-15"
+ },
+ {
+  "n": 214,
+  "fichier": "chapitre-38-canada-quebec.md",
+  "avant": "Lors de la revue préparatoire BSIF E-23, fin avril 2027, BCA a extrait",
+  "apres": "Lors de la revue préparatoire BSIF E-23, début avril 2027, BCA a extrait",
+  "categorie": "coherence",
+  "motif": "Règle 2 : la majorité des occurrences situe l'homologation plus tôt (chapitre 34, l. 607 : quitus « trois semaines avant » le 1er mai 2027; chapitre 43, l. 464 : pré-audit validé « fin T1 2027 »; ouverture, l. 163 : « avant le deuxième trimestre 2027 »); « fin avril » est l'occurrence isolée.",
+  "origine": "tranche 07-16"
+ },
+ {
+  "n": 215,
+  "fichier": "chapitre-38-canada-quebec.md",
+  "avant": "les journaux automatiques (art. 12 et 14) sont-ils actifs",
+  "apres": "les journaux automatiques (art. 12) sont-ils actifs",
+  "categorie": "coherence",
+  "motif": "L'article 14 de l'AI Act porte sur la supervision humaine, non sur la journalisation : le chapitre le dit lui-même (l. 330 : « journalisation automatique […] (art. 12) et contrôle humain effectif […] (art. 14) »), comme le chapitre 35 (l. 42).",
+  "origine": "tranche 07-17"
+ },
+ {
+  "n": 216,
+  "fichier": "chapitre-39-gouvernance-interne.md",
+  "avant": "Le guide du MCN ne porte que l'année 2026; celle du guide fédéral est la date, sans libellé, de sa page.",
+  "apres": "Le guide du MCN ne porte que l'année 2026; la date du guide fédéral est celle, sans libellé, de sa page.",
+  "categorie": "langue",
+  "motif": "Le pronom « celle » a pour antécédent « l'année 2026 », ce qui donne « l'année du guide fédéral est la date […] de sa page » : phrase boiteuse. Le chapitre 38 (l. 233) formule la même réserve correctement.",
+  "origine": "tranche 07-18"
+ },
+ {
+  "n": 217,
+  "fichier": "chapitre-40-finops-agentique.md",
+  "avant": "Les prix des éditeurs sont des prix de liste relevés le 11 novembre 2026, à revérifier avant publication; la page de Salesforce ne porte pas de date.",
+  "apres": "Les prix des éditeurs sont des prix de liste relevés le 11 novembre 2026; la page de Salesforce ne porte pas de date.",
+  "categorie": "residu",
+  "motif": "Règle 6 : membre de phrase supprimé sans rien réécrire autour; la phrase reste juste sans lui (date du relevé conservée, conforme à la date de référence du 11 novembre 2026 pour les chapitres 1 à 47).",
+  "origine": "tranche 07-20"
+ },
+ {
+  "n": 218,
+  "fichier": "chapitre-40-finops-agentique.md",
+  "avant": "**Zone d’économie forcée (`70 % à 95 %`)**",
+  "apres": "**Zone d’économie forcée (`70 % à 100 %`)**",
+  "categorie": "coherence",
+  "motif": "Les « trois régimes gradués » laissent un trou entre 95 % et 100 % du plafond. L'extrait 40.2 (l. 449-457) et la liste de contrôle (l. 602 : « repli SLM à 70 % et arrêt propre à 100 % ») appliquent le repli de 70 % jusqu'à 100 %.",
+  "origine": "tranche 07-22"
+ },
+ {
+  "n": 219,
+  "fichier": "chapitre-40-finops-agentique.md",
+  "avant": "disjoncteur progressif par saga sur agentgateway et refacturation trimestrielle",
+  "apres": "disjoncteur progressif par saga sur agentgateway et refacturation interne",
+  "categorie": "coherence",
+  "motif": "Règle 2 : l'extrait de code tranche (extrait 40.3, l. 515 : « billingCadence: monthly », seuils mensuels), appuyé par le chapitre 41 (l. 317 : « paie mensuellement »); on reprend la formule du titre de l'ADR-023 (l. 582 : « refacturation interne »), l'arbitrage trimestriel de portefeuille restant dit dans la décision (l. 591).",
+  "origine": "tranche 07-23"
+ },
+ {
+  "n": 220,
+  "fichier": "chapitre-40-finops-agentique.md",
+  "avant": "Zéro récidive de l'incident à 41 000 CAD et baisse de 61 %",
+  "apres": "Zéro récidive de l'incident à 41 000 \\$ CAD et baisse de 61 %",
+  "categorie": "coherence",
+  "motif": "Unité écrite « 41 000 CAD » dans le titre de l'encadré, « 41 000 \\$ CAD » partout ailleurs (l. 561, l. 565; chapitre 34, l. 424; chapitre 41, l. 543).",
+  "origine": "tranche 07-24"
+ },
+ {
+  "n": 221,
+  "fichier": "chapitre-41-modele-operationnel.md",
+  "avant": "sans remplacer l'expertise ni la supervision humaines, et que l'employé demeure imputable du travail assisté [2].",
+  "apres": "sans remplacer l'expertise ni la supervision humaines, et l'employé demeure imputable du travail assisté [2].",
+  "categorie": "langue",
+  "motif": "Rupture de construction : après les deux-points, la première proposition est indépendante (« l'IA appuie le travail… »), la seconde est introduite par un « que » sans verbe régisseur.",
+  "origine": "tranche 07-25"
+ },
+ {
+  "n": 222,
+  "fichier": "chapitre-41-modele-operationnel.md",
+  "avant": "Mais 37 % seulement font état d'un effet positif sur le résultat d'exploitation, et 11 %",
+  "apres": "Mais 37 % seulement font état d'un effet positif sur le résultat d'exploitation [3], et 11 %",
+  "categorie": "renvoi",
+  "motif": "Règle 2 : les Limites du chapitre rangent 37 % parmi les parts de l'enquête [3] (l. 283 : « ses parts de 40 %, 37 %, 14 %, 32 % et 39 % »); l'appel [2] en fin de phrase ne couvre donc que les 11 %, que la l. 284 rattache bien, sous réserve, aux chiffres de [2].",
+  "origine": "tranche 07-27"
+ },
+ {
+  "n": 223,
+  "fichier": "chapitre-41-modele-operationnel.md",
+  "avant": "### Transition vers la partie IX",
+  "apres": "### Vers la partie IX",
+  "categorie": "structure",
+  "motif": "Consigne du coordonnateur et plan réel (compendium-master-assemble.py, l. 32-33 : partie VIII = chapitres 40 à 43, partie IX = chapitres 44 à 47) : le chapitre 41 n'est pas le dernier de sa partie, le titre n'annonce donc plus une transition immédiate. Un seul mot retiré.",
+  "origine": "tranche 07-28"
+ },
+ {
+  "n": 224,
+  "fichier": "chapitre-41-modele-operationnel.md",
+  "avant": "Une fois la fabrique interne en régime nominal, deux chantiers s’ouvrent.",
+  "apres": "Une fois la fabrique interne en régime nominal, deux chantiers s’ouvrent en partie IX, après le plan de données d’inférence du chapitre 44.",
+  "categorie": "structure",
+  "motif": "Consigne du coordonnateur et plan réel (compendium-master-assemble.py, l. 33 : partie IX = chapitres 44 à 47; chapitre 44 = « Plan de données d'inférence et routage cognitif ») : les deux chantiers annoncés (chapitres 45-46, puis 47) sont situés dans la partie IX, et le chapitre 44, que la transition omettait, est nommé.",
+  "origine": "tranche 07-29"
+ },
+ {
+  "n": 225,
+  "fichier": "chapitre-42-etudes-de-cas.md",
+  "avant": "lues par leur résumé; celui d'ORCA-bench a été relu à l'audit.",
+  "apres": "lues par leur résumé.",
+  "categorie": "residu",
+  "motif": "Mention de l'« audit » de fabrication dans le corps du texte (hors des rubriques Sources et Limites, où la maison la tolère). À retirer ou à déplacer dans « Limites de ce chapitre ».",
+  "origine": "tranche 08-1"
+ },
+ {
+  "n": 226,
+  "fichier": "chapitre-43-maturite-prospective.md",
+  "avant": "Un premier agent rédige un courriel PDF récapitulatif",
+  "apres": "Un premier agent rédige un courriel ou un PDF récapitulatif",
+  "categorie": "langue",
+  "motif": "« un courriel PDF » n'a pas de sens; le tableau de la même section (ligne 274) dit « génère du texte ou un PDF ».",
+  "origine": "tranche 08-4"
+ },
+ {
+  "n": 227,
+  "fichier": "chapitre-43-maturite-prospective.md",
+  "avant": "**Transactionalité et idempotence",
+  "apres": "**Transactionnalité et idempotence",
+  "categorie": "langue",
+  "motif": "Orthographe : « transactionnalité » prend deux n (dérivé de « transactionnel »).",
+  "origine": "tranche 08-6"
+ },
+ {
+  "n": 228,
+  "fichier": "chapitre-43-maturite-prospective.md",
+  "avant": "Avant d’engager l’ingénierie détaillée des protocoles d’interopérabilité (MCP, A2A, OASF), traitée en partie II, confirmez ces huit points :",
+  "apres": "Confirmez ces huit points :",
+  "categorie": "residu",
+  "motif": "La liste de contrôle du chapitre 43 annonce comme à venir la partie II, que le lecteur a déjà traversée : trace de l'ancienne position du volet dans l'ouvrage.",
+  "origine": "tranche 08-11"
+ },
+ {
+  "n": 229,
+  "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+  "avant": "« Routage cognitif », expression du commanditaire absente des sources lues",
+  "apres": "« Routage cognitif », expression absente des sources lues",
+  "categorie": "residu",
+  "motif": "Le « commanditaire » est une trace de la commande de rédaction : le lecteur du livre n'a pas à savoir qu'un donneur d'ordre a imposé le terme.",
+  "origine": "tranche 08-13"
+ },
+ {
+  "n": 230,
+  "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+  "avant": "L'échelle à trois paliers vient du commanditaire; aucune source lue ne la présente comme un schéma unique.",
+  "apres": "Aucune source lue ne présente l'échelle à trois paliers comme un schéma unique.",
+  "categorie": "residu",
+  "motif": "Deuxième mention du « commanditaire » (voir ligne 26) : trace de fabrication.",
+  "origine": "tranche 08-14"
+ },
+ {
+  "n": 231,
+  "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+  "avant": "Le multiplexeur MCP intégré à agentgateway résout trois problèmes d’exploitation :",
+  "apres": "Le multiplexeur MCP intégré à agentgateway résout quatre problèmes d’exploitation :",
+  "categorie": "coherence",
+  "motif": "« Trois problèmes » annoncés, quatre puces suivent (agrégation du catalogue, continuité des sessions, traduction Open Responses, instrumentation et pré-réservation FinOps). Les deux dernières ne relèvent d'ailleurs pas du multiplexeur MCP : l'amorce pourrait aussi viser « la passerelle ».",
+  "origine": "tranche 08-16"
+ },
+ {
+  "n": 232,
+  "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+  "avant": "En 2027, l’extension Gateway API Inference Extension (architectures llm-d, SGLang RadixAttention, NVIDIA Dynamo) confie le choix du pod",
+  "apres": "L’extension Gateway API Inference Extension (architectures llm-d, SGLang RadixAttention, NVIDIA Dynamo) confie le choix du pod",
+  "categorie": "temporel",
+  "motif": "Un état de 2027 est énoncé comme un fait, alors que l'édition est arrêtée au 13 novembre 2026 (même tournure ligne 229 : « Le trafic d’une flotte agentique en 2027 les invalide toutes »). Le mécanisme existe déjà en 2026 (section 44.5) : la date est inutile.",
+  "origine": "tranche 08-21"
+ },
+ {
+  "n": 233,
+  "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+  "avant": "tel celui de llm-d (section 44.5)",
+  "apres": "tel celui de llm-d (section 44.2)",
+  "categorie": "renvoi",
+  "motif": "La phrase reprise (« réserve son EPP léger aux tests de conformité et renvoie la production vers un EPP existant, tel celui de llm-d ») figure à la section 44.2 (ligne 49), non à la section 44.5.",
+  "origine": "tranche 08-23"
+ },
+ {
+  "n": 234,
+  "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+  "avant": "Avant de fédérer les plateformes SaaS patrimoniales (chapitre 27), validez les huit points suivants :",
+  "apres": "Validez les huit points suivants :",
+  "categorie": "residu",
+  "motif": "La liste de contrôle du chapitre 44 présente le chapitre 27 comme l'étape suivante : trace de l'ancienne place du volet (ADR-014, entre les ADR-013 du chapitre 19 et ADR-015 du chapitre 27).",
+  "origine": "tranche 08-25"
+ },
+ {
+  "n": 235,
+  "fichier": "chapitre-45-reseaux-b2b-federes.md",
+  "avant": "Les constructions demandées sans source identifiée sont présentées comme des cibles de conception à valider.",
+  "apres": "Les constructions sans source identifiée sont présentées comme des cibles de conception à valider.",
+  "categorie": "residu",
+  "motif": "« demandées » renvoie à la commande de rédaction (voir « commanditaire » aux chapitres 44 et 46) : trace de fabrication.",
+  "origine": "tranche 08-27"
+ },
+ {
+  "n": 236,
+  "fichier": "chapitre-45-reseaux-b2b-federes.md",
+  "avant": "- **Éléments demandés sans source.** « Diplomate / Évaluateur interne »",
+  "apres": "- **Éléments sans source.** « Diplomate / Évaluateur interne »",
+  "categorie": "residu",
+  "motif": "« demandés » : même trace de la commande de rédaction qu'à la ligne 5.",
+  "origine": "tranche 08-28"
+ },
+ {
+  "n": 237,
+  "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+  "avant": "Les seuils demandés par le commanditaire et restés sans source sont présentés comme des cibles de conception à valider.",
+  "apres": "Les seuils restés sans source sont présentés comme des cibles de conception à valider.",
+  "categorie": "residu",
+  "motif": "Mention du « commanditaire » : trace de la commande de rédaction, comme au chapitre 44 (lignes 26 et 55).",
+  "origine": "tranche 08-37"
+ },
+ {
+  "n": 238,
+  "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+  "avant": "Le seuil demandé, « RTO inférieur à 15 minutes », n'a pas de source.",
+  "apres": "Le seuil « RTO inférieur à 15 minutes » n'a pas de source.",
+  "categorie": "residu",
+  "motif": "« demandé » renvoie au commanditaire (ligne 5) : trace de fabrication. Même tournure aux lignes 123 et 269.",
+  "origine": "tranche 08-38"
+ },
+ {
+  "n": 239,
+  "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+  "avant": "Le seuil demandé de « 72 heures » d'autonomie n'a pas de source.",
+  "apres": "Le seuil de « 72 heures » d'autonomie n'a pas de source.",
+  "categorie": "residu",
+  "motif": "« demandé » : trace de la commande de rédaction (voir ligne 110).",
+  "origine": "tranche 08-39"
+ },
+ {
+  "n": 240,
+  "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+  "avant": "- **Éléments demandés sans source.** « Six substrats d'état »",
+  "apres": "- **Éléments sans source.** « Six substrats d'état »",
+  "categorie": "residu",
+  "motif": "« demandés » : trace de la commande de rédaction (voir lignes 5 et 110).",
+  "origine": "tranche 08-41"
+ },
+ {
+  "n": 241,
+  "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+  "avant": "documentées dès 2024–2026",
+  "apres": "documentées de 2024 à 2026",
+  "categorie": "langue",
+  "motif": "« dès » suivi d'un intervalle est fautif (« dès 2024 » ou « de 2024 à 2026 »). Le chiffre qui suit (« jusqu’à 70 % des entités textuelles ») n'a aucun appui dans l'exposé : à vérifier.",
+  "origine": "tranche 08-43"
+ },
+ {
+  "n": 242,
+  "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+  "avant": "Quand la liaison revient après cinquante heures d’isolement",
+  "apres": "Quand la liaison revient après quarante-huit heures d’isolement",
+  "categorie": "coherence",
+  "motif": "Le scénario de la section 46.14 pose une coupure de quarante-huit heures (lignes 606 et 614 : « quarante-huit heures de journaux »); la durée devient « cinquante heures » ici.",
+  "origine": "tranche 08-48"
+ },
+ {
+  "n": 243,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "distribution globale, `PSI > 0,25`",
+  "apres": "distribution globale, `PSI > 0,20`",
+  "categorie": "coherence",
+  "motif": "Le cas C gèle la promotion au-delà de PSI 0,25, alors que la même section (ligne 665 : « Au-delà de PSI > 0,20, la promotion est verrouillée »), l'Extrait 47.5 (hard_psi_ceiling = 0.20, ligne 694) et le contrat de l'Extrait 47.4 (0.18 et 0.20) verrouillent dès 0,20.",
+  "origine": "tranche 09-0"
+ },
+ {
+  "n": 244,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "Sous la ligne directrice BSIF E-23, entrée en vigueur le 1er mai 2027,",
+  "apres": "Sous la ligne directrice BSIF E-23, qui entre en vigueur le 1er mai 2027,",
+  "categorie": "temporel",
+  "motif": "Le participe passé présente comme accomplie une entrée en vigueur postérieure au 13 novembre 2026; les chapitres 38 (ligne 46 : « prend effet ») et 49 (ligne 143) la donnent comme échéance à venir.",
+  "origine": "tranche 09-4"
+ },
+ {
+  "n": 245,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "Gouvernance des outils de génération de code sur systèmes matériels",
+  "apres": "Gouvernance des outils de génération de code sur systèmes importants",
+  "categorie": "langue",
+  "motif": "Faux ami : « matériel » calque l'anglais material (important, significatif) et se lit en français comme « physique » ou hardware. Même calque ligne 527.",
+  "origine": "tranche 09-7"
+ },
+ {
+  "n": 246,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "d’un système financier matériel ?",
+  "apres": "d’un système financier important ?",
+  "categorie": "langue",
+  "motif": "Même faux ami qu'à la ligne 524 : « matériel » au sens de material (d'importance significative).",
+  "origine": "tranche 09-8"
+ },
+ {
+  "n": 247,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "des SLM d’entreprise (4B–8B,",
+  "apres": "des SLM d’entreprise (3B–8B,",
+  "categorie": "coherence",
+  "motif": "La synthèse exécutive donne 4B–8B pour l'élève, la section 47.20 (ligne 1026) « 3B à 8B paramètres »; le chapitre 46 emploie aussi 3B–8B.",
+  "origine": "tranche 09-9"
+ },
+ {
+  "n": 248,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "490 ms (-80 % en médiane)",
+  "apres": "490 ms (-80 %)",
+  "categorie": "coherence",
+  "motif": "La ligne du tableau porte sur la latence p95 (2 450 ms à 490 ms, soit -80 %) : la mention « en médiane » contredit l'intitulé de la ligne.",
+  "origine": "tranche 09-10"
+ },
+ {
+  "n": 249,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "baisse de 68 % du coût par résultat du groupe par compilation DSPy et Multi-LoRA",
+  "apres": "baisse de 68 % du coût par résultat des huit flux majeurs par compilation DSPy et Multi-LoRA",
+  "categorie": "coherence",
+  "motif": "Le titre de l'encadré attribue la baisse de 68 % au groupe; le corps (ligne 1179) la limite aux 8 flux (0,91 $ à 0,29 $ CAD), la moyenne du groupe n'étant ramenée qu'à 0,41 $ CAD.",
+  "origine": "tranche 09-11"
+ },
+ {
+  "n": 250,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "**La couche d’anticorruption bidirectionnelle (ACL)**",
+  "apres": "**La couche d’anticorruption bidirectionnelle**",
+  "categorie": "terminologie",
+  "motif": "Le sigle ACL désigne déjà les listes de contrôle d'accès dans le même volet (« Droits ACL Git » ligne 308, « une ACL Git » ligne 330); il n'est pas réemployé ensuite pour la couche d'anticorruption.",
+  "origine": "tranche 09-15"
+ },
+ {
+  "n": 251,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "pour les écritures, il recommande d'écrire dans les deux systèmes",
+  "apres": "pour les écritures, le dépôt recommande d'écrire dans les deux systèmes",
+  "categorie": "langue",
+  "motif": "Pronom sans antécédent : la phrase d'introduction a pour sujet « Ses limites » (la bibliothèque Scientist, féminin) et aucun nom masculin ne précède « il ».",
+  "origine": "tranche 09-16"
+ },
+ {
+  "n": 252,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "Chaque requête a rendu les dix à vingt notices",
+  "apres": "Chaque requête a rendu les neuf à vingt notices",
+  "categorie": "coherence",
+  "motif": "Le tableau qui suit donne 9 notices rendues pour la requête « Mono-agent ou multi-agents » (ligne 34) : la borne basse est neuf, non dix.",
+  "origine": "tranche 09-19"
+ },
+ {
+  "n": 253,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "Les travaux de 2026 passent de la description à l'expérience, par injection de fautes.",
+  "apres": "Les travaux qui suivent passent de la description à l'expérience, par injection de fautes.",
+  "categorie": "coherence",
+  "motif": "Le tableau annoncé comme « travaux de 2026 » contient « Agents fautifs [47] », notice datée de 2024 dans la liste des sources (ligne 416, arXiv 2408.00989).",
+  "origine": "tranche 09-20"
+ },
+ {
+  "n": 254,
+  "fichier": "chapitre-49-veille-technologique.md",
+  "avant": "elle s'applique aux produits mis sur le marché après le 8 décembre",
+  "apres": "elle s'applique aux produits mis sur le marché après le 9 décembre",
+  "categorie": "coherence",
+  "motif": "Le chapitre 36 (lignes 5 et 89) et l'annexe D (ligne 77) donnent la directive (UE) 2024/2853 applicable aux produits mis sur le marché après le 9 décembre 2026, date de la même ligne du tableau.",
+  "origine": "tranche 09-21"
+ },
+ {
+  "n": 255,
+  "fichier": "annexe-A-glossaire.md",
+  "avant": "Primitive d'un moteur d'exécution durable (Restate, Temporal) qui suspend un flux",
+  "apres": "Primitive d'un moteur d'exécution durable (Restate) qui suspend un flux",
+  "categorie": "factuel",
+  "motif": "Règle 5, vérifié en ligne aux sources primaires : la documentation de Restate définit l'awakeable et `ctx.awakeable()` (https://docs.restate.dev/develop/ts/awakeables); la page de Temporal sur les messages de workflow ne connaît que Signals, Updates et Queries, sans awakeable (https://docs.temporal.io/encyclopedia/workflow-message-passing).",
+  "origine": "tranche 10-0"
+ },
+ {
+  "n": 256,
+  "fichier": "annexe-A-glossaire.md",
+  "avant": "| type répliqué sans conflit | conflict-free replicated data type (CRDT) |",
+  "apres": "| type de données répliqué sans conflit | conflict-free replicated data type (CRDT) |",
+  "categorie": "terminologie",
+  "motif": "Le chapitre 46 (lignes 127 et 599) développe CRDT en « types de données répliqués sans conflit »; le glossaire omet « de données », pourtant présent dans l'anglais qu'il cite.",
+  "origine": "tranche 10-1"
+ },
+ {
+  "n": 257,
+  "fichier": "annexe-A-glossaire.md",
+  "avant": "| adjoint confus | confused deputy |",
+  "apres": "| délégué confus | confused deputy |",
+  "categorie": "terminologie",
+  "motif": "Règle 6 bis : « confused deputy » se dit « délégué confus » dans tout l'ouvrage (chapitres 5 l. 401, 24 l. 65, 31 l. 19, 98, 202, 371). Contrainte de l'annexe A : la ligne reste à sa place, seule la cellule change; l'entrée « délégué confus » demeure donc en tête de A.5, hors de l'ordre alphabétique, ce que l'auteur peut rétablir en déplaçant la ligne.",
+  "origine": "tranche 10-2"
+ },
+ {
+  "n": 258,
+  "fichier": "annexe-A-glossaire.md",
+  "avant": "exerce ses droits au profit d'un attaquant |",
+  "apres": "exerce ses droits au profit d'un attaquant (31) |",
+  "categorie": "renvoi",
+  "motif": "Ajout de phase 2, distinct de la correction du terme (deux endroits, deux constats) : renvoi au chapitre qui traite la notion, vérifié par Grep (chapitre 31 : six occurrences; chapitres 5, 24 et 30 : mentions ponctuelles).",
+  "origine": "tranche 10-3"
+ },
+ {
+  "n": 259,
+  "fichier": "annexe-A-glossaire.md",
+  "avant": "| cycle de vie de développement agentique | Agent Development Lifecycle (ADLC) |",
+  "apres": "| cycle de vie agentique | Agent Development Lifecycle (ADLC) |",
+  "categorie": "terminologie",
+  "motif": "Règle propre aux annexes : l'annexe s'aligne sur le chapitre cité; le chapitre 34 (lignes 287 et 295) écrit « cycle de vie agentique (ADLC) ». L'entrée garde sa place dans l'ordre alphabétique de A.6.",
+  "origine": "tranche 10-4"
+ },
+ {
+  "n": 260,
+  "fichier": "annexe-D-chronologie.md",
+  "avant": "# Annexe D — Chronologie 2024-2027",
+  "apres": "# Annexe D — Chronologie 2024-2028",
+  "categorie": "coherence",
+  "motif": "Règle 4 (annonce fausse) : on corrige la borne annoncée, pas le tableau; D.4 se termine par l'échéance du 2 août 2028 (ligne 83), que le chapitre 35 (lignes 82 et 223) confirme. Le titre de l'annexe n'est cité nulle part ailleurs dans le manuscrit.",
+  "origine": "tranche 10-5"
+ },
+ {
+  "n": 261,
+  "fichier": "annexe-D-chronologie.md",
+  "avant": "Après le 11 novembre 2026, date de référence de l'ouvrage, il s'agit d'échéances annoncées.",
+  "apres": "Après le 11 novembre 2026, date de référence de l'ouvrage (13 novembre pour la partie X), il s'agit d'échéances annoncées.",
+  "categorie": "temporel",
+  "motif": "Règle 6 bis (date de référence), seconde occurrence dans l'annexe D.",
+  "origine": "tranche 10-6"
+ },
+ {
+  "n": 262,
+  "fichier": "annexe-D-chronologie.md",
+  "avant": "| 11 novembre 2026 | Date de référence de l'ouvrage | — |",
+  "apres": "| 11 novembre 2026 | Date de référence de l'ouvrage (13 novembre pour la partie X) | — |",
+  "categorie": "temporel",
+  "motif": "Règle 6 bis (date de référence) : 11 novembre 2026 pour les chapitres 1 à 47, 13 novembre pour la partie X (états de référence des chapitres 48 à 50; annexe E.4).",
+  "origine": "tranche 10-7"
+ },
+ {
+  "n": 263,
+  "fichier": "annexe-E-bibliographie.md",
+  "avant": "Les 47 chapitres en listent 709 au total; une source citée par plusieurs chapitres compte pour chacun.",
+  "apres": "Les chapitres 1 à 47 en listent 709 au total (la partie X est décomptée à la section E.4); une source citée par plusieurs chapitres compte pour chacun.",
+  "categorie": "coherence",
+  "motif": "Consigne de phase 2 pour l'annexe E : rendre E.1 exact pour 50 chapitres; décompte par script : 709 pour les chapitres 1 à 47, 227 pour la partie X (annexe E, ligne 82).",
+  "origine": "tranche 10-8"
+ },
+ {
+  "n": 264,
+  "fichier": "annexe-E-bibliographie.md",
+  "avant": "Les faits sont arrêtés au 11 novembre 2026; les relectures de l'audit",
+  "apres": "Les faits sont arrêtés au 11 novembre 2026 (13 novembre pour la partie X); les relectures de l'audit",
+  "categorie": "temporel",
+  "motif": "Règle 6 bis (date de référence) et consigne de phase 2 pour l'annexe E.",
+  "origine": "tranche 10-9"
+ },
+ {
+  "n": 265,
+  "fichier": "annexe-E-bibliographie.md",
+  "avant": "Entre parenthèses : les chapitres qui citent cette adresse; d'autres en citent une autre version (HTML d'arXiv, PDF, brouillon).",
+  "apres": "Entre parenthèses : ceux des chapitres 1 à 47 qui citent cette adresse; d'autres en citent une autre version (HTML d'arXiv, PDF, brouillon).",
+  "categorie": "renvoi",
+  "motif": "Consigne de phase 2 pour l'annexe E (sections écrites avant la partie X) : correction minimale qui borne le relevé aux chapitres 1 à 47; vérifié par script, les parenthèses de E.2 sont exactes pour ces chapitres, et les adresses citées par la partie X figurent à E.4.",
+  "origine": "tranche 10-10"
+ },
+ {
+  "n": 266,
+  "fichier": "annexe-E-bibliographie.md",
+  "avant": "Ces affirmations portent beaucoup et reposent sur une preuve mince : ce sont les premières à revérifier.",
+  "apres": "Ces affirmations des chapitres 1 à 47 portent beaucoup et reposent sur une preuve mince : ce sont les premières à revérifier; celles de la partie X sont à la section E.4.",
+  "categorie": "coherence",
+  "motif": "Consigne de phase 2 pour l'annexe E : correction minimale qui borne E.3 aux chapitres 1 à 47 et renvoie à E.4 (tableau « Points de la partie X à confirmer en priorité », lignes 108 à 118).",
+  "origine": "tranche 10-11"
+ },
+ {
+  "n": 267,
+  "fichier": "annexe-E-bibliographie.md",
+  "avant": "La partie X a été écrite après la clôture des chapitres 1 à 47, le 13 novembre 2026.",
+  "apres": "La partie X a été écrite le 13 novembre 2026, après la clôture des chapitres 1 à 47.",
+  "categorie": "coherence",
+  "motif": "Phrase ambiguë : elle se lit comme si les chapitres 1 à 47 avaient été clos le 13 novembre, alors que la section E.1 arrête leurs faits au 11 novembre (relectures le 12). Le 13 novembre est la date de lecture des sources de la partie X (états de référence des chapitres 48 à 50).",
+  "origine": "tranche 10-12"
+ },
+ {
+  "n": 268,
+  "fichier": "annexe-F-decisions-architecture.md",
+  "avant": "l’ADR-017 porte en outre une qualification critique de sûreté industrielle",
+  "apres": "les fiches ADR-017 et ADR-029 l’assortissent d’une réserve",
+  "categorie": "coherence",
+  "motif": "Règle propre à l'annexe F : alignement sur les fiches des volets. Seules deux fiches assortissent leur statut d'une réserve : ADR-017 (chapitre 28, ligne 613 : « recommandation du chapitre, non imposée par une norme lue ») et ADR-029 (chapitre 47, ligne 566 : « extrapolation à valider »); aucune ne porte de « qualification critique de sûreté industrielle ».",
+  "origine": "tranche 10-13"
+ },
+ {
+  "n": 269,
+  "fichier": "annexe-F-decisions-architecture.md",
+  "avant": "Au plus 12 outils cohérents par agent spécialiste; refus du mappage CRUD 1:1",
+  "apres": "Au plus 15 outils par serveur, orientés intention métier; refus du mappage CRUD 1:1",
+  "categorie": "coherence",
+  "motif": "Règle propre à l'annexe F : le registre s'aligne sur la fiche ADR-005 du volet (chapitre-05-mcp.md, ligne 869 : « limité à 15 outils au maximum par serveur, orientés intention métier »). Reste à l'auteur : le chapitre 5 (ligne 414 : « 5 à 12 outils par spécialiste ») et l'ADR-003 (chapitre 43, ligne 482 : « au plus douze outils MCP ») donnent un plafond de douze par agent; si la fiche ADR-005 est ramenée à douze, cette cellule devra suivre.",
+  "origine": "tranche 10-14"
+ },
+ {
+  "n": 270,
+  "fichier": "annexe-F-decisions-architecture.md",
+  "avant": "SLM spécialisé par défaut; affinité de préfixe du KV-cache activée",
+  "apres": "SLM là où une règle explicite l’établit, palier supérieur pour toute classe inconnue; affinité de préfixe du KV-cache activée",
+  "categorie": "coherence",
+  "motif": "Le registre résume l'ADR-014 par « SLM spécialisé par défaut », à l'inverse de la fiche (chapitre-44-plan-donnees-inference-routage.md, ligne 556 : « palier 1 SLM là où une règle explicite l’établit, palier supérieur pour toute classe inconnue ») et de la grille de décision du chapitre 44 (ligne 159 : classe inconnue vers le palier supérieur).",
+  "origine": "tranche 10-15"
+ },
+ {
+  "n": 271,
+  "fichier": "annexe-F-decisions-architecture.md",
+  "avant": "(`working`, `input-required`, `completed`)",
+  "apres": "(`WORKING`, `INPUT_REQUIRED`, `COMPLETED`)",
+  "categorie": "coherence",
+  "motif": "Pour A2A v1.0, le chapitre 6 (lignes 68 et 348) et la fiche B.3 indiquent des états écrits en majuscules et préfixés `TASK_STATE_`, que les tableaux abrègent en `WORKING`, `INPUT_REQUIRED`, `COMPLETED`; les formes en minuscules sont celles de la version 0.3.",
+  "origine": "tranche 10-17"
+ },
+ {
+  "n": 272,
+  "fichier": "annexe-F-decisions-architecture.md",
+  "avant": "arbitre matériel Simplex (`ISO 10218:2025` / IEC 61508)",
+  "apres": "arbitre matériel Simplex (`ISO 10218-1:2025` / IEC 61508)",
+  "categorie": "terminologie",
+  "motif": "Règles 3 et annexes : la désignation s'aligne sur l'exposé du chapitre 46, qui écrit « ISO 10218-1:2025 » (lignes 5, 182 et 259); la forme « ISO 10218:2025 » n'existe que dans les annexes F et G (une occurrence chacune).",
+  "origine": "tranche 10-18"
+ },
+ {
+  "n": 273,
+  "fichier": "annexe-G-listes-controle.md",
+  "avant": "une revue d’homologation opérationnelle (PRR)",
+  "apres": "une revue d’homologation opérationnelle (*Production Readiness Review*, PRR)",
+  "categorie": "terminologie",
+  "motif": "Le sigle PRR ne correspond pas aux initiales de l'expression française et n'est développé nulle part dans l'ouvrage (aucune autre occurrence dans les chapitres).",
+  "origine": "tranche 10-20"
+ },
+ {
+  "n": 274,
+  "fichier": "annexe-G-listes-controle.md",
+  "avant": "Fichier `mcp-lock.json` signé et alerte sur modification distante",
+  "apres": "Fichier `mcp-lockfile.yaml` signé et alerte sur modification distante",
+  "categorie": "coherence",
+  "motif": "Le manifeste d'épinglage s'appelle `mcp-lockfile.yaml` dans le chapitre 31 (Extrait 31.2, ligne 527; ADR-019, ligne 745; liste de contrôle, ligne 758). Le nom `mcp-lock.json` n'apparaît nulle part ailleurs dans l'ouvrage.",
+  "origine": "tranche 10-23"
+ },
+ {
+  "n": 275,
+  "fichier": "annexe-G-listes-controle.md",
+  "avant": "Politique de délégation de signature financière et mandats W3C VCs",
+  "apres": "Politique de délégation de signature financière et mandats SD-JWT",
+  "categorie": "coherence",
+  "motif": "Règles 1 et annexes : l'exposé du chapitre 10 prime (ligne 50 : « Les mandats sont des SD-JWT »; ligne 283); le volet reconnaît lui-même que le format W3C VC ne correspond pas à AP2 v0.2 (ligne 513).",
+  "origine": "tranche 10-25"
+ },
+ {
+  "n": 276,
+  "fichier": "annexe-G-listes-controle.md",
+  "avant": "Enveloppe matérielle Simplex (`ISO 10218:2025` / IEC 61508)",
+  "apres": "Enveloppe matérielle Simplex (`ISO 10218-1:2025` / IEC 61508)",
+  "categorie": "terminologie",
+  "motif": "Même arbitrage qu'à l'annexe F : alignement sur l'exposé du chapitre 46 (« ISO 10218-1:2025 », lignes 5, 182 et 259).",
+  "origine": "tranche 10-26"
+ },
+ {
+  "n": 277,
+  "fichier": "annexe-H-glossaire-normatif.md",
+  "avant": "`AGENTS.md`, Goose, Agent Router",
+  "apres": "`AGENTS.md`, goose, Agent Router",
+  "categorie": "terminologie",
+  "motif": "Le projet s'écrit « goose », en minuscules, au chapitre 11 (lignes 41 et suivantes) et à l'annexe D (9 décembre 2025).",
+  "origine": "tranche 10-27"
+ },
+ {
+  "n": 278,
+  "fichier": "annexe-H-glossaire-normatif.md",
+  "avant": "| **AP2** (*Agent Payments Protocol*) | Commerce agentique | FIDO Alliance |",
+  "apres": "| **AP2** (*Agent Payments Protocol*) | Commerce agentique | Google |",
+  "categorie": "coherence",
+  "motif": "Règle propre aux annexes : l'index s'aligne sur l'exposé du chapitre 10 (ligne 40 : « AP2 (Agent Payments Protocol), publié par Google »; ligne 327) et sur l'annexe B (lignes 14 et 90). Non vérifié en ligne (constat de cohérence, non factuel) : le chapitre 49 (ligne 112) relève un groupe de travail de la FIDO Alliance sur le commerce initié par des agents, créé en avril 2026; si l'auteur veut y rattacher AP2, c'est le chapitre 10 qu'il faut d'abord mettre à jour.",
+  "origine": "tranche 10-28"
+ },
+ {
+  "n": 279,
+  "fichier": "annexe-H-glossaire-normatif.md",
+  "avant": "Mandats cryptographiques vérifiables W3C qui encadrent les dépenses autonomes",
+  "apres": "Mandats cryptographiques vérifiables qui encadrent les dépenses autonomes",
+  "categorie": "coherence",
+  "motif": "Les mandats AP2 v0.2 sont des SD-JWT (chapitre 10, lignes 50, 283 et 491; annexe B.7), non des justificatifs W3C; le chapitre 10 (ligne 513) précise que le format W3C VC de son extrait ne correspond pas à la v0.2.",
+  "origine": "tranche 10-29"
+ },
+ {
+  "n": 280,
+  "fichier": "annexe-H-glossaire-normatif.md",
+  "avant": "| **x402** | Protocole de règlement | Linux Foundation (x402) |",
+  "apres": "| **x402** | Protocole de règlement | x402 Foundation |",
+  "categorie": "coherence",
+  "motif": "Le chapitre 10 (ligne 164) et l'annexe B.8 indiquent que x402, né chez Coinbase, a été transféré sous une « x402 Foundation », dont les statuts ne sont pas établis; aucun rattachement à la Linux Foundation n'est documenté dans l'ouvrage.",
+  "origine": "tranche 10-30"
+ },
+ {
+  "n": 281,
+  "fichier": "chapitre-30-autorisation-delegation.md",
+  "avant": "c’est le problème du député confus.",
+  "apres": "c’est le problème du délégué confus.",
+  "categorie": "terminologie",
+  "motif": "Troisième traduction de confused deputy dans l'ouvrage : les chapitres 5, 24 et 31 écrivent « délégué confus » (le glossaire, « adjoint confus »).",
+  "origine": "tranche 10-31"
+ },
+ {
+  "n": 282,
+  "fichier": "chapitre-30-autorisation-delegation.md",
+  "avant": "(vulnérabilité du député confus, secrets statiques exposés)",
+  "apres": "(vulnérabilité du délégué confus, secrets statiques exposés)",
+  "categorie": "terminologie",
+  "motif": "Même défaut qu'à la ligne 283 : les chapitres 5, 24 et 31 écrivent « délégué confus ».",
+  "origine": "tranche 10-32"
+ },
+ {
+  "n": 283,
+  "fichier": "chapitre-42-etudes-de-cas.md",
+  "avant": "et leurs coûts au chapitre 40.\n**Un document sur quatre",
+  "apres": "et leurs coûts au chapitre 40.\n\n**Un document sur quatre",
+  "categorie": "structure",
+  "motif": "Ligne vide manquante : deux paragraphes se fondaient en un seul.",
+  "origine": "arbitrage"
+ },
+ {
+  "n": 284,
+  "fichier": "chapitre-42-etudes-de-cas.md",
+  "avant": " La réserve de la version 1 sur le sigle SSR est levée : la relecture de [1] y trouve « self-service rate ».",
+  "apres": "",
+  "categorie": "residu",
+  "motif": "Note de suivi entre versions du manuscrit, sans objet pour le lecteur.",
+  "origine": "arbitrage"
+ },
+ {
+  "n": 285,
+  "fichier": "chapitre-43-maturite-prospective.md",
+  "avant": "son article 12.1 impose d’informer le citoyen",
+  "apres": "l’article 65.2 de la Loi sur l’accès impose d’informer le citoyen",
+  "categorie": "coherence",
+  "motif": "Encadré sur le secteur public : la règle y relève de l'article 65.2 de la Loi sur l'accès (chapitre 38), l'article 12.1 visant le secteur privé.",
+  "origine": "arbitrage"
+ },
+ {
+  "n": 286,
+  "fichier": "chapitre-43-maturite-prospective.md",
+  "avant": "à N3,1, prêt pour le déploiement protocolaire de la partie II.",
+  "apres": "à N3,1.",
+  "categorie": "residu",
+  "motif": "Le volet se situait encore avant la partie II, selon son ancienne place dans l'ouvrage.",
+  "origine": "arbitrage"
+ },
+ {
+  "n": 287,
+  "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+  "avant": "ctx.autonomy_level in {\"L0\", \"L1\"}:",
+  "apres": "ctx.autonomy_level in {\"L0\", \"L1\", \"L2\"}:",
+  "categorie": "coherence",
+  "motif": "L'extrait laissait un mandat L2 atteindre le palier 3, que le texte et l'Extrait 44.1 réservent aux mandats L3 et L4.",
+  "origine": "arbitrage"
+ },
+ {
+  "n": 288,
+  "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+  "avant": "au Programme des marchandises contrôlées du Canada (ITAR)",
+  "apres": "au Programme des marchandises contrôlées du Canada ou à l’ITAR américain",
+  "categorie": "factuel",
+  "motif": "L'ITAR est la réglementation américaine; le Programme des marchandises contrôlées est le régime canadien.",
+  "origine": "arbitrage"
+ },
+ {
+  "n": 289,
+  "fichier": "chapitre-45-reseaux-b2b-federes.md",
+  "avant": "la preuve physique IoT de réception et le certificat qualité",
+  "apres": "la preuve physique IoT de réception et la facture",
+  "categorie": "coherence",
+  "motif": "Le rapprochement à trois voies porte sur la commande, la réception et la facture (section 45.7, ADR-026, liste de contrôle).",
+  "origine": "arbitrage"
+ },
+ {
+  "n": 290,
+  "fichier": "chapitre-45-reseaux-b2b-federes.md",
+  "avant": "chiffré en SLIM (*Messaging Layer Security*)",
+  "apres": "chiffré par SLIM (au moyen de MLS, *Messaging Layer Security*)",
+  "categorie": "terminologie",
+  "motif": "La parenthèse se lisait comme le développement de SLIM; MLS est le protocole de chiffrement que SLIM emploie.",
+  "origine": "arbitrage"
+ },
+ {
+  "n": 291,
+  "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+  "avant": ", sauf « analyseur logique exclu », que [4] ne dit pas",
+  "apres": "",
+  "categorie": "residu",
+  "motif": "Renvoi à une formule qui ne figure plus dans le chapitre.",
+  "origine": "arbitrage"
+ },
+ {
+  "n": 292,
+  "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+  "avant": "Depuis mai 2027 au Canada (BSIF E-23 conjuguée à B-10)",
+  "apres": "À compter de mai 2027 au Canada (BSIF E-23 conjuguée à B-10)",
+  "categorie": "temporel",
+  "motif": "Échéance postérieure à la date de référence, donnée pour acquise.",
+  "origine": "arbitrage"
+ },
+ {
+  "n": 293,
+  "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+  "avant": "**ADR-027 — Géofencing de l'état complet",
+  "apres": "**ADR-027 — Géorepérage de l'état complet",
+  "categorie": "terminologie",
+  "motif": "Le chapitre dit « géorepérage » partout ailleurs.",
+  "origine": "arbitrage"
+ },
+ {
+  "n": 294,
+  "fichier": "annexe-F-decisions-architecture.md",
+  "avant": "| **ADR-027** | 46 | Géofencing de l’état complet",
+  "apres": "| **ADR-027** | 46 | Géorepérage de l’état complet",
+  "categorie": "terminologie",
+  "motif": "Titre de l'ADR-027 aligné sur la fiche du chapitre 46.",
+  "origine": "arbitrage"
+ },
+ {
+  "n": 295,
+  "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+  "avant": "routage géofencé",
+  "apres": "routage par géorepérage",
+  "categorie": "terminologie",
+  "motif": "Le chapitre dit « géorepérage » partout ailleurs.",
+  "origine": "arbitrage"
+ },
+ {
+  "n": 296,
+  "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+  "avant": "SIL 3 / PL d",
+  "apres": "SIL 3 / PL e",
+  "categorie": "factuel",
+  "motif": "Dans la correspondance usuelle entre IEC 62061 et ISO 13849-1, SIL 3 répond à PL e (PL d répond à SIL 2); le volet vise SIL 3 partout ailleurs.",
+  "origine": "arbitrage"
+ },
+ {
+  "n": 297,
+  "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+  "avant": "les signatures sans clé éphémère Sigstore / `cosign`",
+  "apres": "les signatures sans clé (à clés éphémères) de Sigstore / `cosign`",
+  "categorie": "factuel",
+  "motif": "Contresens : la signature « sans clé » de Sigstore repose sur des clés éphémères.",
+  "origine": "arbitrage"
+ },
+ {
+  "n": 298,
+  "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+  "avant": "au Nord-du-Québec (Nunavik / Côte-Nord)",
+  "apres": "dans le nord du Québec (Nunavik / Côte-Nord)",
+  "categorie": "factuel",
+  "motif": "La Côte-Nord n'appartient pas à la région administrative du Nord-du-Québec.",
+  "origine": "arbitrage"
+ },
+ {
+  "n": 299,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "Plusieurs éléments demandés par le commanditaire n'ont pas de source",
+  "apres": "Plusieurs éléments n'ont pas de source",
+  "categorie": "residu",
+  "motif": "Trace de la commande de rédaction.",
+  "origine": "arbitrage"
+ },
+ {
+  "n": 300,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "- **Éléments demandés sans source.**",
+  "apres": "- **Éléments sans source.**",
+  "categorie": "residu",
+  "motif": "Trace de la commande de rédaction, comme aux chapitres 45 et 46.",
+  "origine": "arbitrage"
+ },
+ {
+  "n": 301,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "au sens de l’article 12.1 de la Loi 25",
+  "apres": "au sens de l’article 65.2 de la Loi sur l’accès",
+  "categorie": "coherence",
+  "motif": "L'encadré vise des organismes publics : article 65.2 de la Loi sur l'accès (chapitre 38).",
+  "origine": "arbitrage"
+ },
+ {
+  "n": 302,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "*Pre-Approved Change Control Plan*",
+  "apres": "*Predetermined Change Control Plan*",
+  "categorie": "factuel",
+  "motif": "Le sigle PCCP de la FDA se développe en Predetermined Change Control Plan.",
+  "origine": "arbitrage"
+ },
+ {
+  "n": 303,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "### Conclusion générale",
+  "apres": "### Conclusion des parties I à IX",
+  "categorie": "structure",
+  "motif": "La conclusion précède la partie X, qu'elle ne couvre pas.",
+  "origine": "arbitrage"
+ },
+ {
+  "n": 304,
+  "fichier": "chapitre-49-veille-technologique.md",
+  "avant": "### Trois cadences",
+  "apres": "### Quatre cadences",
+  "categorie": "coherence",
+  "motif": "Le tableau sous ce titre compte quatre cadences.",
+  "origine": "arbitrage"
+ },
+ {
+  "n": 305,
+  "fichier": "chapitre-50-projection-etude-marche.md",
+  "avant": "0,49 G$ US pour les plateformes [52]; 15,8 G$ US en 2030",
+  "apres": "0,49 G$ US pour les plateformes, plus de 1 G$ US en 2030 [52]; 15,8 G$ US en 2030",
+  "categorie": "coherence",
+  "motif": "Le facteur 16 suppose la valeur de 2030 des plateformes (plus de 1 G$ US selon la même source), que la ligne ne donnait pas.",
+  "origine": "arbitrage"
+ },
+ {
+  "n": 306,
+  "fichier": "chapitre-50-projection-etude-marche.md",
+  "avant": "Facteur 16 en 2030, périmètres différents",
+  "apres": "Facteur 16 environ en 2030, périmètres différents",
+  "categorie": "coherence",
+  "motif": "Le rapport porte sur une borne (« plus de 1 G$ US ») : ordre de grandeur.",
+  "origine": "arbitrage"
+ },
+ {
+  "n": 307,
+  "fichier": "chapitre-50-projection-etude-marche.md",
+  "avant": "« Treize fois plus », « dix-sept fois plus »",
+  "apres": "« Quatre fois plus », « dix-sept fois plus »",
+  "categorie": "coherence",
+  "motif": "Le tableau des indicateurs d'éditeurs ne contient aucun multiple de treize; il donne quatre et dix-sept.",
+  "origine": "arbitrage"
+ },
+ {
+  "n": 308,
+  "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+  "avant": "> **Date de référence des faits :** 11 novembre 2026. État de référence : documentation",
+  "apres": "> **État de référence :** faits arrêtés au 11 novembre 2026; documentation",
+  "categorie": "structure",
+  "motif": "Bandeau ramené au gabarit des autres chapitres.",
+  "origine": "arbitrage"
+ },
+ {
+  "n": 309,
+  "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+  "avant": "> **Date de référence des faits :** 11 novembre 2026. État de référence : documentation",
+  "apres": "> **État de référence :** faits arrêtés au 11 novembre 2026; documentation",
+  "categorie": "structure",
+  "motif": "Bandeau ramené au gabarit des autres chapitres.",
+  "origine": "arbitrage"
+ },
+ {
+  "n": 310,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "> **Date de référence des faits :** 11 novembre 2026. État de référence : documentation",
+  "apres": "> **État de référence :** faits arrêtés au 11 novembre 2026; documentation",
+  "categorie": "structure",
+  "motif": "Bandeau ramené au gabarit des autres chapitres.",
+  "origine": "arbitrage"
+ },
+ {
+  "n": 311,
+  "fichier": "chapitre-45-reseaux-b2b-federes.md",
+  "avant": "> Faits arrêtés au 11 novembre 2026. État de référence : ODRL",
+  "apres": "> **État de référence :** faits arrêtés au 11 novembre 2026; ODRL",
+  "categorie": "structure",
+  "motif": "Bandeau ramené au gabarit des autres chapitres.",
+  "origine": "arbitrage"
+ },
+ {
+  "n": 312,
+  "fichier": "chapitre-34-exploitation.md",
+  "avant": "- **Condition de révision** : Révision annuelle des seuils",
+  "apres": "- **Condition de révision** : Révision semestrielle des seuils",
+  "categorie": "coherence",
+  "motif": "La fiche ADR-022 annonçait une révision semestrielle dans son statut et annuelle dans sa condition; même règle que pour les ADR-001, 019 et 020.",
+  "origine": "arbitrage"
+ },
+ {
+  "n": 313,
+  "fichier": "chapitre-40-finops-agentique.md",
+  "avant": "- **Condition de révision** : Révision trimestrielle des barèmes",
+  "apres": "- **Condition de révision** : Révision semestrielle des barèmes",
+  "categorie": "coherence",
+  "motif": "La fiche ADR-023 annonçait une révision semestrielle dans son statut et trimestrielle dans sa condition; même règle que pour les ADR-001, 019 et 020.",
+  "origine": "arbitrage"
+ },
+ {
+  "n": 314,
+  "fichier": "annexe-G-listes-controle.md",
+  "avant": "contrainte à l’émetteur (DPoP/mTLS)",
+  "apres": "contrainte au détenteur (DPoP/mTLS)",
+  "categorie": "terminologie",
+  "motif": "DPoP et mTLS lient le jeton à celui qui le présente, non au serveur qui l'émet (chapitres 29 et 30).",
+  "origine": "arbitrage"
+ },
+ {
+  "n": 315,
+  "fichier": "chapitre-23-architecture-reference.md",
+  "avant": "— résumé de recherche seulement; billet de fournisseur",
+  "apres": "— page introuvable au 13 novembre 2026 (erreur 404), connue par un résumé de recherche seulement; billet de fournisseur",
+  "categorie": "renvoi",
+  "motif": "Lien mort constaté au contrôle des adresses du 13 novembre 2026.",
+  "origine": "arbitrage"
+ },
+ {
+  "n": 316,
+  "fichier": "chapitre-02-genealogie.md",
+  "avant": "- L'intitulé de la section 2.2 nomme KQML avant FIPA-ACL, à l'inverse de la table des matières.\n",
+  "apres": "",
+  "categorie": "residu",
+  "motif": "Note de fabrication sur l'ordre des mots d'un intitulé.",
+  "origine": "arbitrage"
+ },
+ {
+  "n": 317,
+  "fichier": "chapitre-01-entreprise-agentique.md",
+  "avant": "reprise de la carte thématique.",
+  "apres": "reprise du plan initial.",
+  "categorie": "residu",
+  "motif": "Le plan de commande de l'ouvrage est nommé « plan initial » partout et défini dans « À propos de cette édition ».",
+  "origine": "global"
+ },
+ {
+  "n": 318,
+  "fichier": "chapitre-01-entreprise-agentique.md",
+  "avant": "de la carte thématique",
+  "apres": "du plan initial",
+  "categorie": "residu",
+  "motif": "Le plan de commande de l'ouvrage est nommé « plan initial » partout et défini dans « À propos de cette édition ».",
+  "origine": "global"
+ },
+ {
+  "n": 319,
+  "fichier": "chapitre-02-genealogie.md",
+  "avant": "de la table des matières",
+  "apres": "du plan initial",
+  "categorie": "residu",
+  "motif": "Le plan de commande de l'ouvrage est nommé « plan initial » partout et défini dans « À propos de cette édition ».",
+  "origine": "global"
+ },
+ {
+  "n": 320,
+  "fichier": "chapitre-03-dimensions-interoperabilite.md",
+  "avant": "la carte thématique",
+  "apres": "le plan initial",
+  "categorie": "residu",
+  "motif": "Le plan de commande de l'ouvrage est nommé « plan initial » partout et défini dans « À propos de cette édition ».",
+  "origine": "global"
+ },
+ {
+  "n": 321,
+  "fichier": "chapitre-07-protocoles-peripheriques.md",
+  "avant": "Carte thématique du compendium",
+  "apres": "Plan initial du compendium",
+  "categorie": "residu",
+  "motif": "Le plan de commande de l'ouvrage est nommé « plan initial » partout et défini dans « À propos de cette édition ».",
+  "origine": "global"
+ },
+ {
+  "n": 322,
+  "fichier": "chapitre-10-commerce-agentique.md",
+  "avant": "de la table des matières",
+  "apres": "du plan initial",
+  "categorie": "residu",
+  "motif": "Le plan de commande de l'ouvrage est nommé « plan initial » partout et défini dans « À propos de cette édition ».",
+  "origine": "global"
+ },
+ {
+  "n": 323,
+  "fichier": "chapitre-10-commerce-agentique.md",
+  "avant": "de la carte thématique",
+  "apres": "du plan initial",
+  "categorie": "residu",
+  "motif": "Le plan de commande de l'ouvrage est nommé « plan initial » partout et défini dans « À propos de cette édition ».",
+  "origine": "global"
+ },
+ {
+  "n": 324,
+  "fichier": "chapitre-12-couche-semantique-ontologies.md",
+  "avant": "La table des matières et la carte thématique annoncent",
+  "apres": "Le plan initial annonce",
+  "categorie": "residu",
+  "motif": "Le plan de commande de l'ouvrage est nommé « plan initial » partout et défini dans « À propos de cette édition ».",
+  "origine": "global"
+ },
+ {
+  "n": 325,
+  "fichier": "chapitre-12-couche-semantique-ontologies.md",
+  "avant": "reprise de la carte thématique.",
+  "apres": "reprise du plan initial.",
+  "categorie": "residu",
+  "motif": "Le plan de commande de l'ouvrage est nommé « plan initial » partout et défini dans « À propos de cette édition ».",
+  "origine": "global"
+ },
+ {
+  "n": 326,
+  "fichier": "chapitre-12-couche-semantique-ontologies.md",
+  "avant": "de la carte thématique",
+  "apres": "du plan initial",
+  "categorie": "residu",
+  "motif": "Le plan de commande de l'ouvrage est nommé « plan initial » partout et défini dans « À propos de cette édition ».",
+  "origine": "global"
+ },
+ {
+  "n": 327,
+  "fichier": "chapitre-12-couche-semantique-ontologies.md",
+  "avant": "La table des matières",
+  "apres": "Le plan initial",
+  "categorie": "residu",
+  "motif": "Le plan de commande de l'ouvrage est nommé « plan initial » partout et défini dans « À propos de cette édition ».",
+  "origine": "global"
+ },
+ {
+  "n": 328,
+  "fichier": "chapitre-16-topologies-patrons.md",
+  "avant": "est reprise de la carte thématique et d'un",
+  "apres": "est reprise du plan initial et d'un",
+  "categorie": "residu",
+  "motif": "Le plan de commande de l'ouvrage est nommé « plan initial » partout et défini dans « À propos de cette édition ».",
+  "origine": "global"
+ },
+ {
+  "n": 329,
+  "fichier": "chapitre-16-topologies-patrons.md",
+  "avant": "de la carte thématique",
+  "apres": "du plan initial",
+  "categorie": "residu",
+  "motif": "Le plan de commande de l'ouvrage est nommé « plan initial » partout et défini dans « À propos de cette édition ».",
+  "origine": "global"
+ },
+ {
+  "n": 330,
+  "fichier": "chapitre-16-topologies-patrons.md",
+  "avant": "à la table des matières",
+  "apres": "au plan initial",
+  "categorie": "residu",
+  "motif": "Le plan de commande de l'ouvrage est nommé « plan initial » partout et défini dans « À propos de cette édition ».",
+  "origine": "global"
+ },
+ {
+  "n": 331,
+  "fichier": "chapitre-16-topologies-patrons.md",
+  "avant": "la table des matières",
+  "apres": "le plan initial",
+  "categorie": "residu",
+  "motif": "Le plan de commande de l'ouvrage est nommé « plan initial » partout et défini dans « À propos de cette édition ».",
+  "origine": "global"
+ },
+ {
+  "n": 332,
+  "fichier": "chapitre-17-deterministe-ou-agentique.md",
+  "avant": "la carte thématique",
+  "apres": "le plan initial",
+  "categorie": "residu",
+  "motif": "Le plan de commande de l'ouvrage est nommé « plan initial » partout et défini dans « À propos de cette édition ».",
+  "origine": "global"
+ },
+ {
+  "n": 333,
+  "fichier": "chapitre-18-execution-durable-transactions.md",
+  "avant": "et la carte thématique n'en donne que le titre",
+  "apres": "et ce plan n'en donne que le titre",
+  "categorie": "residu",
+  "motif": "Le plan de commande de l'ouvrage est nommé « plan initial » partout et défini dans « À propos de cette édition ».",
+  "origine": "global"
+ },
+ {
+  "n": 334,
+  "fichier": "chapitre-18-execution-durable-transactions.md",
+  "avant": "la table des matières",
+  "apres": "le plan initial",
+  "categorie": "residu",
+  "motif": "Le plan de commande de l'ouvrage est nommé « plan initial » partout et défini dans « À propos de cette édition ».",
+  "origine": "global"
+ },
+ {
+  "n": 335,
+  "fichier": "chapitre-20-cadriciels-orchestration.md",
+  "avant": "de la table des matières",
+  "apres": "du plan initial",
+  "categorie": "residu",
+  "motif": "Le plan de commande de l'ouvrage est nommé « plan initial » partout et défini dans « À propos de cette édition ».",
+  "origine": "global"
+ },
+ {
+  "n": 336,
+  "fichier": "chapitre-20-cadriciels-orchestration.md",
+  "avant": "par la table des matières.",
+  "apres": "par le plan initial.",
+  "categorie": "residu",
+  "motif": "Le plan de commande de l'ouvrage est nommé « plan initial » partout et défini dans « À propos de cette édition ».",
+  "origine": "global"
+ },
+ {
+  "n": 337,
+  "fichier": "chapitre-20-cadriciels-orchestration.md",
+  "avant": "par la table des matières,",
+  "apres": "par le plan initial,",
+  "categorie": "residu",
+  "motif": "Le plan de commande de l'ouvrage est nommé « plan initial » partout et défini dans « À propos de cette édition ».",
+  "origine": "global"
+ },
+ {
+  "n": 338,
+  "fichier": "chapitre-20-cadriciels-orchestration.md",
+  "avant": "la table des matières",
+  "apres": "le plan initial",
+  "categorie": "residu",
+  "motif": "Le plan de commande de l'ouvrage est nommé « plan initial » partout et défini dans « À propos de cette édition ».",
+  "origine": "global"
+ },
+ {
+  "n": 339,
+  "fichier": "chapitre-20-cadriciels-orchestration.md",
+  "avant": "La table des matières",
+  "apres": "Le plan initial",
+  "categorie": "residu",
+  "motif": "Le plan de commande de l'ouvrage est nommé « plan initial » partout et défini dans « À propos de cette édition ».",
+  "origine": "global"
+ },
+ {
+  "n": 340,
+  "fichier": "chapitre-21-fiabilite-coordination.md",
+  "avant": "à la table des matières",
+  "apres": "au plan initial",
+  "categorie": "residu",
+  "motif": "Le plan de commande de l'ouvrage est nommé « plan initial » partout et défini dans « À propos de cette édition ».",
+  "origine": "global"
+ },
+ {
+  "n": 341,
+  "fichier": "chapitre-23-architecture-reference.md",
+  "avant": "la table des matières",
+  "apres": "le plan initial",
+  "categorie": "residu",
+  "motif": "Le plan de commande de l'ouvrage est nommé « plan initial » partout et défini dans « À propos de cette édition ».",
+  "origine": "global"
+ },
+ {
+  "n": 342,
+  "fichier": "chapitre-26-plateformes-entreprise.md",
+  "avant": "la table des matières",
+  "apres": "le plan initial",
+  "categorie": "residu",
+  "motif": "Le plan de commande de l'ouvrage est nommé « plan initial » partout et défini dans « À propos de cette édition ».",
+  "origine": "global"
+ },
+ {
+  "n": 343,
+  "fichier": "chapitre-26-plateformes-entreprise.md",
+  "avant": "la carte thématique",
+  "apres": "le plan initial",
+  "categorie": "residu",
+  "motif": "Le plan de commande de l'ouvrage est nommé « plan initial » partout et défini dans « À propos de cette édition ».",
+  "origine": "global"
+ },
+ {
+  "n": 344,
+  "fichier": "chapitre-34-exploitation.md",
+  "avant": "de la carte thématique",
+  "apres": "du plan initial",
+  "categorie": "residu",
+  "motif": "Le plan de commande de l'ouvrage est nommé « plan initial » partout et défini dans « À propos de cette édition ».",
+  "origine": "global"
+ },
+ {
+  "n": 345,
+  "fichier": "chapitre-34-exploitation.md",
+  "avant": "la table des matières",
+  "apres": "le plan initial",
+  "categorie": "residu",
+  "motif": "Le plan de commande de l'ouvrage est nommé « plan initial » partout et défini dans « À propos de cette édition ».",
+  "origine": "global"
+ },
+ {
+  "n": 346,
+  "fichier": "chapitre-40-finops-agentique.md",
+  "avant": "la table des matières",
+  "apres": "le plan initial",
+  "categorie": "residu",
+  "motif": "Le plan de commande de l'ouvrage est nommé « plan initial » partout et défini dans « À propos de cette édition ».",
+  "origine": "global"
+ },
+ {
+  "n": 347,
+  "fichier": "chapitre-41-modele-operationnel.md",
+  "avant": "la table des matières",
+  "apres": "le plan initial",
+  "categorie": "residu",
+  "motif": "Le plan de commande de l'ouvrage est nommé « plan initial » partout et défini dans « À propos de cette édition ».",
+  "origine": "global"
+ },
+ {
+  "n": 348,
+  "fichier": "chapitre-42-etudes-de-cas.md",
+  "avant": "que la table des matières nomme parmi les appuis n'est pas identifiée dans la carte thématique",
+  "apres": "que le plan initial nomme parmi les appuis n'y est pas identifiée",
+  "categorie": "residu",
+  "motif": "Le plan de commande de l'ouvrage est nommé « plan initial » partout et défini dans « À propos de cette édition ».",
+  "origine": "global"
+ },
+ {
+  "n": 349,
+  "fichier": "chapitre-42-etudes-de-cas.md",
+  "avant": "de la table des matières",
+  "apres": "du plan initial",
+  "categorie": "residu",
+  "motif": "Le plan de commande de l'ouvrage est nommé « plan initial » partout et défini dans « À propos de cette édition ».",
+  "origine": "global"
+ },
+ {
+  "n": 350,
+  "fichier": "annexe-H-glossaire-normatif.md",
+  "avant": "OPC-UA",
+  "apres": "OPC UA",
+  "categorie": "terminologie",
+  "motif": "Graphie « OPC UA » (celle de l'OPC Foundation), majoritaire dans l'ouvrage.",
+  "origine": "global"
+ },
+ {
+  "n": 351,
+  "fichier": "chapitre-19-orchestration-evenementielle.md",
+  "avant": "OPC-UA",
+  "apres": "OPC UA",
+  "categorie": "terminologie",
+  "motif": "Graphie « OPC UA » (celle de l'OPC Foundation), majoritaire dans l'ouvrage.",
+  "origine": "global"
+ },
+ {
+  "n": 352,
+  "fichier": "chapitre-30-autorisation-delegation.md",
+  "avant": "OPC-UA",
+  "apres": "OPC UA",
+  "categorie": "terminologie",
+  "motif": "Graphie « OPC UA » (celle de l'OPC Foundation), majoritaire dans l'ouvrage.",
+  "origine": "global"
+ },
+ {
+  "n": 353,
+  "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+  "avant": "alerte OPC-UA au",
+  "apres": "alerte OPC UA au",
+  "categorie": "terminologie",
+  "motif": "Graphie « OPC UA » (celle de l'OPC Foundation), majoritaire dans l'ouvrage.",
+  "origine": "global"
+ },
+ {
+  "n": 354,
+  "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+  "avant": "OPC-UA",
+  "apres": "OPC UA",
+  "categorie": "terminologie",
+  "motif": "Graphie « OPC UA » (celle de l'OPC Foundation), majoritaire dans l'ouvrage.",
+  "origine": "global"
+ },
+ {
+  "n": 355,
+  "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+  "avant": "OPC-UA",
+  "apres": "OPC UA",
+  "categorie": "terminologie",
+  "motif": "Graphie « OPC UA » (celle de l'OPC Foundation), majoritaire dans l'ouvrage.",
+  "origine": "global"
+ },
+ {
+  "n": 356,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "OPC-UA",
+  "apres": "OPC UA",
+  "categorie": "terminologie",
+  "motif": "Graphie « OPC UA » (celle de l'OPC Foundation), majoritaire dans l'ouvrage.",
+  "origine": "global"
+ }
+]

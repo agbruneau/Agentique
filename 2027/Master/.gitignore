@@ -1,0 +1,4 @@
+build/
+manuscrit/figures/essai-*.svg
+schemas/__pycache__/
+__pycache__/

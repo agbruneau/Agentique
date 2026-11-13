@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 340" width="880" height="340">
+<rect width="880" height="340" fill="#ffffff"/>
+<rect x="30" y="30" width="430" height="270" rx="6" fill="#eef2fb" stroke="#2f5fd0" stroke-width="1.2"/>
+<text x="50" y="56" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="10" font-weight="bold" letter-spacing="1.2" fill="#2f5fd0">HÔTE</text>
+<text x="50" y="124" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="12" fill="#14233f">Crée les clients</text>
+<text x="50" y="146" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="12" fill="#14233f">Applique les politiques</text>
+<text x="50" y="168" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="12" fill="#14233f">Garde l&#x27;historique complet</text>
+<text x="50" y="190" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="12" fill="#14233f">Contrôle toute interaction</text>
+<text x="50" y="212" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="12" fill="#14233f">entre serveurs</text>
+<rect x="260" y="59" width="170" height="56" rx="6" fill="#ffffff" stroke="#2f5fd0" stroke-width="1.2"/>
+<text x="345" y="91.225" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="13" font-weight="bold" fill="#14233f">Client 1</text>
+<line x1="430" y1="87" x2="600" y2="87" stroke="#5f6b7a" stroke-width="1.4"/>
+<polygon points="600,87 591,91 591,83" fill="#5f6b7a"/>
+<polygon points="430,87 439,83 439,91" fill="#5f6b7a"/>
+<text x="515" y="81" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" fill="#5f6b7a">JSON-RPC</text>
+<rect x="600" y="59" width="250" height="56" rx="6" fill="#f5f6f8" stroke="#5f6b7a" stroke-width="1.2"/>
+<text x="725" y="81.965" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="13" font-weight="bold" fill="#14233f">Fichiers d&#x27;un dépôt</text>
+<text x="725" y="100.315" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11" fill="#5f6b7a">outils · ressources · prompts</text>
+<rect x="260" y="137" width="170" height="56" rx="6" fill="#ffffff" stroke="#2f5fd0" stroke-width="1.2"/>
+<text x="345" y="169.225" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="13" font-weight="bold" fill="#14233f">Client 2</text>
+<line x1="430" y1="165" x2="600" y2="165" stroke="#5f6b7a" stroke-width="1.4"/>
+<polygon points="600,165 591,169 591,161" fill="#5f6b7a"/>
+<polygon points="430,165 439,161 439,169" fill="#5f6b7a"/>
+<rect x="600" y="137" width="250" height="56" rx="6" fill="#f5f6f8" stroke="#5f6b7a" stroke-width="1.2"/>
+<text x="725" y="159.965" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="13" font-weight="bold" fill="#14233f">Base de données</text>
+<text x="725" y="178.315" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11" fill="#5f6b7a">outils · ressources · prompts</text>
+<rect x="260" y="215" width="170" height="56" rx="6" fill="#ffffff" stroke="#2f5fd0" stroke-width="1.2"/>
+<text x="345" y="247.225" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="13" font-weight="bold" fill="#14233f">Client 3</text>
+<line x1="430" y1="243" x2="600" y2="243" stroke="#5f6b7a" stroke-width="1.4"/>
+<polygon points="600,243 591,247 591,239" fill="#5f6b7a"/>
+<polygon points="430,243 439,239 439,247" fill="#5f6b7a"/>
+<rect x="600" y="215" width="250" height="56" rx="6" fill="#f5f6f8" stroke="#5f6b7a" stroke-width="1.2"/>
+<text x="725" y="237.965" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="13" font-weight="bold" fill="#14233f">API externe</text>
+<text x="725" y="256.315" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11" fill="#5f6b7a">outils · ressources · prompts</text>
+<text x="600" y="48" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="10" font-weight="bold" letter-spacing="1.2" fill="#5f6b7a">SERVEURS</text>
+<text x="725" y="130" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" font-style="italic" fill="#5f6b7a">aucun lien direct</text>
+<text x="725" y="208" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" font-style="italic" fill="#5f6b7a">aucun lien direct</text>
+<text x="440" y="328" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#5f6b7a">Un client par serveur. Un serveur ne voit ni la conversation entière ni les autres serveurs.</text>
+</svg>

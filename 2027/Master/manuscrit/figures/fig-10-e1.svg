@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 350" width="880" height="350">
+<rect width="880" height="350" fill="#ffffff"/>
+<text x="40" y="28" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" font-weight="bold" fill="#2f5fd0">COUCHE</text>
+<text x="224" y="28" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" font-weight="bold" fill="#2f5fd0">QUESTION</text>
+<text x="544" y="28" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="10.5" font-weight="bold" fill="#2f5fd0">PROTOCOLES</text>
+<rect x="40" y="44" width="800" height="64" rx="6" fill="#ffffff" stroke="#9aa5b4" stroke-width="1.2"/>
+<rect x="40" y="44" width="170" height="64" rx="6" fill="#eef2fb" stroke="#2f5fd0" stroke-width="1.2"/>
+<text x="125" y="80.55" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="14" font-weight="bold" fill="#14233f">Découverte</text>
+<text x="224" y="79.625" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="12.5" font-style="italic" fill="#14233f">Que vend ce marchand, et par quelle interface ?</text>
+<rect x="530" y="52" width="302" height="48" rx="4" fill="#f5f6f8" stroke="#9aa5b4" stroke-width="1.2"/>
+<text x="544" y="71.56" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="12" fill="#5f6b7a">UCP : catalogue, profil /.well-known/ucp</text>
+<text x="544" y="87.4" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="12" fill="#5f6b7a">ACP : flux de produits</text>
+<rect x="40" y="118" width="800" height="64" rx="6" fill="#ffffff" stroke="#9aa5b4" stroke-width="1.2"/>
+<rect x="40" y="118" width="170" height="64" rx="6" fill="#eef2fb" stroke="#2f5fd0" stroke-width="1.2"/>
+<text x="125" y="154.55" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="14" font-weight="bold" fill="#14233f">Autorisation</text>
+<text x="224" y="153.625" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="12.5" font-style="italic" fill="#14233f">Qu&#x27;a permis l&#x27;utilisateur, et qui est l&#x27;agent ?</text>
+<rect x="530" y="126" width="302" height="48" rx="4" fill="#f5f6f8" stroke="#9aa5b4" stroke-width="1.2"/>
+<text x="544" y="145.56" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="12" fill="#5f6b7a">AP2, Verifiable Intent</text>
+<text x="544" y="161.4" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="12" fill="#5f6b7a">Visa Trusted Agent Protocol</text>
+<rect x="40" y="192" width="800" height="64" rx="6" fill="#ffffff" stroke="#9aa5b4" stroke-width="1.2"/>
+<rect x="40" y="192" width="170" height="64" rx="6" fill="#eef2fb" stroke="#2f5fd0" stroke-width="1.2"/>
+<text x="125" y="228.55" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="14" font-weight="bold" fill="#14233f">Paiement</text>
+<text x="224" y="219.375" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="12.5" font-style="italic" fill="#14233f">Quel justificatif à portée limitée</text>
+<text x="224" y="235.875" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="12.5" font-style="italic" fill="#14233f">l&#x27;agent présente-t-il ?</text>
+<rect x="530" y="200" width="302" height="48" rx="4" fill="#f5f6f8" stroke="#9aa5b4" stroke-width="1.2"/>
+<text x="544" y="219.56" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="12" fill="#5f6b7a">Jetons des réseaux et des prestataires</text>
+<text x="544" y="235.4" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="12" fill="#5f6b7a">de paiement</text>
+<rect x="40" y="266" width="800" height="64" rx="6" fill="#ffffff" stroke="#9aa5b4" stroke-width="1.2"/>
+<rect x="40" y="266" width="170" height="64" rx="6" fill="#eef2fb" stroke="#2f5fd0" stroke-width="1.2"/>
+<text x="125" y="302.55" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="14" font-weight="bold" fill="#14233f">Règlement</text>
+<text x="224" y="301.625" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="12.5" font-style="italic" fill="#14233f">Comment la valeur change-t-elle de mains ?</text>
+<rect x="530" y="274" width="302" height="48" rx="4" fill="#f5f6f8" stroke="#9aa5b4" stroke-width="1.2"/>
+<text x="544" y="293.56" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="12" fill="#5f6b7a">Rails de cartes existants</text>
+<text x="544" y="309.4" text-anchor="start" font-family="Segoe UI, Calibri, sans-serif" font-size="12" fill="#5f6b7a">x402; MPP</text>
+</svg>

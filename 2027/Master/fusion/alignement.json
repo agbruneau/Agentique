@@ -1,0 +1,929 @@
+{
+ "chapitre-01-volet-a": {
+  "id": "chapitre-01-volet-a",
+  "controle_conforme": true,
+  "traitements": [
+   {
+    "sujet": "Un agent ou plusieurs; solution la plus simple",
+    "traitement": "nuance",
+    "changement": "Relevé confirmé : l'exposé garde un seul agent par défaut (section 1.1, grille de décision), le volet impose cinq archétypes dès le jour 1. La règle est conservée et une phrase dit qu'elle va au-delà de l'exposé dans trois passages : synthèse exécutive (point 2), fin de l'intro de la section 1.7 (avec l'écart à peu près nul sur six bancs d'essai, section 1.5), et phrase d'introduction avant l'ADR-001."
+   },
+   {
+    "sujet": "Échelle et niveau d'autonomie",
+    "traitement": "nuance",
+    "changement": "Relevé confirmé : un paragraphe ajouté avant le tableau des archétypes précise que L0 à L4 est l'échelle propre au volet (L2 approbation préalable, L3 HOTL) et que ses numéros ne se transposent pas aux trois échelles de l'exposé (L3 « consultant » chez Feng et coll., 3 « conditionnelle » chez la CSA, section 1.3); le point 1 de la liste de contrôle reçoit une phrase disant que la règle du maillon le plus élevé va au-delà de l'exposé, qui fixe le niveau par agent et par classe d'action (section 1.3)."
+   },
+   {
+    "sujet": "Agent appelé comme un outil",
+    "traitement": "nuance",
+    "changement": "Relevé confirmé : la Loi 2 est conservée, et un paragraphe ajouté après ses deux puces rappelle que, selon le cadre de Singapour, un agent superviseur appelle un agent spécialisé comme il appellerait un outil (section 1.1), et que la délégation à un agent qu'on ne contrôle pas est l'objet d'A2A (chapitre 6)."
+   },
+   {
+    "sujet": "Preuve de production de MCP, A2A et du multi-agents",
+    "traitement": "laissé",
+    "changement": "Rien modifié : les 60 jours de production pilote, MCP, A2A et plusieurs agents appartiennent au cas fictif du Groupe Boréal (encadré fil rouge, section 1.10), qui ne contient aucune affirmation générale sur le monde réel."
+   }
+  ],
+  "remarques": "Le contrôle répond « conforme » (6469 -> 6434 mots). Les quatre divergences du relevé étaient exactes; aucun code, figure, formule, titre d'extrait ni titre d'ADR n'a été touché, et la liste de contrôle garde huit points. Hors relevé et non traités : la boîte « Éditeurs SaaS B2B » (section 1.8) dit qu'une plateforme moderne « expose désormais » un serveur MCP et une façade A2A, ce que l'exposé (section 1.5, aucun cas documenté en production) ne confirme pas; les chiffres et « études en facteurs humains » de la section 1.9 et le récit des limites de la génération 2 en production (section 1.6) ne viennent pas non plus de l'exposé. Les contradictions internes signalées (révision semestrielle ou annuelle de l'ADR, « cinq à douze » ou « moins de douze » outils, 1,20 ou 1,50 $ CAD, Logistique ou Stocks) sont laissées, l'exposé ne les tranchant pas."
+ },
+ "chapitre-05-volet-a": {
+  "id": "chapitre-05-volet-a",
+  "controle_conforme": true,
+  "traitements": [
+   {
+    "sujet": "Version du protocole, poignée de main et session",
+    "traitement": "avertissement",
+    "changement": "Extrait 5.1 intact; la phrase d'introduction dit qu'il suit le protocole d'avant la révision `2026-07-28` et rappelle que `initialize` est supprimée, que version et capacités voyagent dans chaque requête et que la découverte passe par `server/discover` (sections 5.1 et 5.2), avec « Dans cet échange » devant le commentaire de la réponse; l'encadré Tip est de plus corrigé (session et Mcp-Session-Id supprimés, état par identifiants explicites, section 5.2)."
+   },
+   {
+    "sujet": "Reprise d'un flux interrompu",
+    "traitement": "corrigé",
+    "changement": "Dans la règle « Streamable HTTP par défaut » (5.9), « avec reprise par Last-Event-ID » est remplacé par : flux SSE limité à la requête (section 5.3), reprise supprimée et requête interrompue réémise avec un nouvel identifiant (section 5.2)."
+   },
+   {
+    "sujet": "Échantillonnage (sampling) et racines (roots)",
+    "traitement": "nuance",
+    "changement": "Deux phrases ajoutées à l'introduction de 5.10 : racines et échantillonnage dépréciés depuis juillet 2026, encore fonctionnels pendant la fenêtre de dépréciation mais à ne pas adopter en nouvelle mise en œuvre (section 5.1), garde-fous conservés pour qui les utilise; mention « dépréciées/déprécié » dans les deux lignes du tableau et point 6 de la liste de contrôle reformulé au conditionnel (« Si l'échantillonnage, déprécié (section 5.1), est encore utilisé… »)."
+   },
+   {
+    "sujet": "Élicitation et requêtes initiées par le serveur",
+    "traitement": "corrigé",
+    "changement": "Puce Élicitation de 5.10 reformulée sur le mécanisme de l'exposé (le serveur renvoie `input_required`, le client réémet la requête d'origine, section 5.2), `elicitation/create` retiré de cette puce, de la règle de transport 5.9 et du point 6; `notifications/progress` sur le flux SSE n'était pas en contradiction et est conservé; `sampling/createMessage` reste, couvert par la divergence précédente."
+   },
+   {
+    "sujet": "Abonnements et notifications de changement de liste",
+    "traitement": "corrigé",
+    "changement": "Puce Ressources de 5.10 : `resources/subscribe` remplacé par un abonnement par flux `subscriptions/listen` (section 5.4); le blocage à la passerelle des `notifications/tools/list_changed` non scellées est laissé, l'exposé ne contredisant pas cette règle."
+   },
+   {
+    "sujet": "Passage de jeton et « délégué confus »",
+    "traitement": "corrigé",
+    "changement": "Dans la puce de la passerelle (5.9), « (délégué confus) » est retiré, le passage de jeton est défini comme la réutilisation du jeton reçu pour appeler une autre API, et le rejet d'un jeton à mauvaise audience est présenté comme ce qui empêche qu'un jeton émis pour un service serve à en atteindre un autre (section 5.5); l'expression « Token Passthrough » n'apparaissait plus dans le volet."
+   },
+   {
+    "sujet": "Modèle d'autorisation retenu",
+    "traitement": "nuance",
+    "changement": "Une phrase ajoutée dans la puce de la passerelle (5.9) et une dans la décision 1 de l'ADR-005 : exiger DPoP et l'échange On-Behalf-Of va au-delà de ce que retient la section 5.5 (option par défaut Enterprise-Managed Authorization (ID-JAG) si le fournisseur d'identité et les clients la prennent en charge, sinon flux OAuth de base; DPoP et RFC 8693 au programme d'un groupe de travail en formation); Synthèse, liste de contrôle et fil rouge laissés tels quels."
+   }
+  ],
+  "remarques": "Le contrôle répond « conforme » (5192 mots vers 5275, 102 %). Seul le volet a été modifié (12 lignes). Contradictions internes (plafond d'outils 5 à 12, 12 à 15 et 15; révision semestrielle ou annuelle) laissées : l'exposé ne les tranche pas. Résidus d'avant 2026-07-28 non relevés et non touchés : le second bloc JSON de l'Extrait 5.1 n'a pas de `resultType` (obligatoire selon 5.2), les capacités `roots` et `sampling` du bloc `initialize`, et « mode sans état privilégié » dans l'ADR-005 alors que le protocole est désormais sans état."
+ },
+ "chapitre-06-volet-a": {
+  "id": "chapitre-06-volet-a",
+  "controle_conforme": true,
+  "traitements": [
+   {
+    "sujet": "Date de la fusion d'ACP",
+    "traitement": "sans objet",
+    "changement": "Le passage « Fin 2025, les deux initiatives ont fusionné » est déjà retiré du volet (aucune occurrence), et le reste du volet ne date pas la fusion; rien n'a changé."
+   },
+   {
+    "sujet": "Maturité de production d'A2A",
+    "traitement": "corrigé",
+    "changement": "Le passage « généralisée en production en 2027 » est déjà retiré; dans le tableau de 6.11, la cellule « Standard industriel (LF / AAIF) » est remplacée par ce que l'exposé établit : spécification 1.0 stable, protocole par défaut dans l'écosystème ouvert d'origine occidentale (sections 6.4 et 6.5), usage en production affirmé sans organisation nommée (section 6.7)."
+   },
+   {
+    "sujet": "Noms des états de tâche",
+    "traitement": "corrigé",
+    "changement": "Dans le texte et les tableaux de 6.8, les états passent en majuscules à l'abréviation de l'exposé (`SUBMITTED` … `REJECTED`, `INPUT_REQUIRED`, `AUTH_REQUIRED`), avec une phrase sur le préfixe `TASK_STATE_` et les valeurs corrigées en 1.0.1 (sections 6.2 et 6.4), et l'Extrait 6.1 est laissé intact derrière une phrase d'avertissement; ADR-006 (option 1) harmonisé, fil rouge laissé (voir remarques)."
+   },
+   {
+    "sujet": "Noms des opérations et champs de configuration",
+    "traitement": "avertissement",
+    "changement": "L'exposé ne donne aucun nom d'opération de la 1.0 (seulement « onze opérations », « opérations renommées » et `returnImmediately`), donc rien n'est renommé : un paragraphe ajouté à la fin de « Choix de la version 1.0 » liste ces noms et les déclare à vérifier (sections 6.3 et 6.4), et l'avertissement de l'Extrait 6.1 y renvoie."
+   },
+   {
+    "sujet": "Types de parties",
+    "traitement": "corrigé",
+    "changement": "Le point 3 de « Choix de la version 1.0 » décrit maintenant un seul type `Part` (texte, octets, URL ou données structurées; sections 6.2 et 6.4) et le point 5 de la liste de contrôle parle de « parties de données structurées »; l'Extrait 6.1 (champ `kind`) est conservé et couvert par la phrase d'avertissement."
+   },
+   {
+    "sujet": "Suivi d'une tâche longue",
+    "traitement": "nuance",
+    "changement": "Les notifications poussées obligatoires au-delà de 60 secondes sont conservées dans la décision 3 de l'ADR-006 et au point 3 de la liste de contrôle, avec une phrase disant que la règle va au-delà de la grille de décision, qui garde les notifications poussées par défaut et admet l'interrogation périodique si le client ne peut pas recevoir d'appels entrants."
+   },
+   {
+    "sujet": "Structure de l'Agent Card",
+    "traitement": "sans objet",
+    "changement": "Le renvoi « structure présentée au chapitre 1 » n'existe plus : le volet renvoie déjà à la section 6.2 (« structure à la section 6.2 »); rien n'a changé."
+   }
+  ],
+  "remarques": "Le contrôle répond « conforme » (5387 mots, 5619 après, 104 %). Deux choix à valider : j'ai laissé les `input-required` du fil rouge (6.12) et de l'Extrait 6.1, par la règle des cas fictifs, ce qui laisse une incohérence de casse avec le reste du volet; et l'affirmation que les noms d'opérations diffèrent de la 1.0 repose sur « opérations renommées » (section 6.4), l'exposé n'en donnant aucun nom. Contradictions internes non touchées, l'exposé ne tranchant pas : flux SSE jusqu'à 3 minutes (T2) contre notifications dès 60 secondes, et vingt fournisseurs (6.11) contre 25 (fil rouge).\\n\\nPoints hors relevé, non modifiés : « hérité d'ACP » (liaison REST, distinction message/tâche) et « Migré vers la liaison REST d'A2A v1.0 » (tableau 6.8) ne figurent pas dans l'exposé de ce chapitre; les colonnes de maturité AGNTCY (« Production mature », « Production haute sécurité ») et l'encadré sectoriel « En 2027, les chargeurs… 38 heures à 14 minutes » sont des affirmations d'adoption que l'exposé ne couvre pas, et « JSON-RPC reste le profil universel » cadre mal avec l'équivalence des trois liaisons (section 6.4)."
+ },
+ "chapitre-10-volet-a": {
+  "id": "chapitre-10-volet-a",
+  "controle_conforme": true,
+  "traitements": [
+   {
+    "sujet": "Noms et format des mandats AP2",
+    "traitement": "corrigé",
+    "changement": "Dans la synthèse exécutive, le titre 10.11, la sous-section AP2, le tableau et l'ADR, Intent Mandate / Cart Mandate / W3C VC 2.0 sont remplacés par Checkout Mandate, Payment Mandate, ouverts ou fermés, SD-JWT (section 10.2), avec la liste de partenaires d'AP2 retirée; un avertissement précède l'Extrait 10.2, laissé intact, ainsi que le fil rouge."
+   },
+   {
+    "sujet": "Responsabilité en cas de litige",
+    "traitement": "corrigé",
+    "changement": "Le paragraphe de 10.11 qui disait qu'AP2 règle l'attribution de responsabilité dit maintenant qu'il l'exclut et ne répartit pas la responsabilité (sections 10.2 et 10.7), avec le renvoi à la piste d'audit; la cellule « gestion des litiges » du tableau est ramenée à « litiges hors du champ d'AP2 »."
+   },
+   {
+    "sujet": "Qui signe les mandats et détient les clés",
+    "traitement": "nuance",
+    "changement": "La règle de ségrégation des clés est gardée (encadré et point 6 de la liste de contrôle), avec une phrase précisant qu'elle va au-delà de l'exposé, selon lequel l'agent signe lui-même les mandats fermés avec sa propre clé publiée dans `cnf` (section 10.2)."
+   },
+   {
+    "sujet": "Lien entre AP2 et x402, et garanties de x402",
+    "traitement": "corrigé",
+    "changement": "« Extension d'AP2 » devient « protocole distinct, AP2 portant l'autorisation et x402 le règlement » (sections 10.1 et 10.5), l'origine « Coinbase et Cloudflare » est ramenée au dépôt chez Coinbase transféré sous la x402 Foundation, « reçu immuable » est retiré, la garantie d'idempotence est présentée comme relevant de la passerelle puisque l'exposé n'en décrit pas dans x402, et un avertissement précède l'Extrait 10.3, laissé intact."
+   }
+  ],
+  "remarques": "Le contrôle répond « conforme » (109 % de la longueur d'origine, près du plafond de 110 %). J'ai aussi changé « W3C VC » en « SD-JWT » dans le titre `## 10.11` et le titre `### AP2`, par cohérence : à annuler si les titres doivent rester fixes. Le volet garde « Intent Mandate » / « Cart Mandate » dans le fil rouge, les extraits et leurs commentaires; les deux avertissements l'expliquent. Non touchés : les seuils de 180 ms (purge audio) et de 200 ms (interruption), car l'exposé ne couvre pas WebRTC, et la contradiction SSE 3 minutes / notifications à 60 s signalée dans les remarques du relevé pour un autre volet. Pour la nuance sur les clés, j'ai jugé la règle du volet compatible avec l'exposé (clé de l'agent gardée à la passerelle), ce que l'exposé ne tranche pas."
+ },
+ "chapitre-11-volet-a": {
+  "id": "chapitre-11-volet-a",
+  "controle_conforme": true,
+  "traitements": [
+   {
+    "sujet": "Projets fondateurs de l'AAIF",
+    "traitement": "corrigé",
+    "changement": "Dans l'introduction du tableau (11.11), « dix projets fondateurs » devient « dix projets hébergés par l'AAIF au 11 novembre 2026 (section 11.2) », l'exposé ne comptant que trois projets fondateurs (MCP, goose, AGENTS.md)."
+   },
+   {
+    "sujet": "Composition et gouvernance de l'AAIF (passage retiré comme redite de 11.2)",
+    "traitement": "sans objet",
+    "changement": "Le passage sur les dix entreprises citées et la « gouvernance tripartite neutre » n'existe plus dans le volet (aucune occurrence de « tripartite »); Solo.io, Hugging Face et Alibaba ne subsistent que dans la colonne « Origine initiale » du tableau, laissée telle quelle."
+   },
+   {
+    "sujet": "Maturité des projets de l'AAIF",
+    "traitement": "corrigé",
+    "changement": "Dans le tableau de 11.11, la colonne de statut ne retient plus que ce que l'exposé établit (A2A au niveau Growth; MCP « texte mis en œuvre; niveau non établi »; « niveau non établi » pour les huit autres, avec « obligatoire pour code dynamique » conservé pour OpenSandbox); l'encadré « Important » ne donne plus agentgateway, Agent Skills et AGENTS.md pour matures fin 2026 mais pour des briques dont le niveau n'a pas pu être établi; une phrase signale que le fil rouge et l'ADR-004 (socle obligatoire) vont au-delà du seuil Growth ou Impact et de la vérification du niveau que retient l'exposé (sections 11.2 et 11.10), sans toucher au fil rouge ni à l'ADR."
+   },
+   {
+    "sujet": "Statut de l'IETF et de WIMSE",
+    "traitement": "corrigé",
+    "changement": "La puce de 11.11 ne dit plus que l'IETF « normalise la chaîne de confiance réseau, WIMSE comprise » : elle dit que l'IETF étend des standards existants sans RFC propre aux agents (section 11.4), et que WIMSE n'est qu'un document informatif sans RFC, à suivre de près (sections 11.4 et 11.10)."
+   },
+   {
+    "sujet": "Découverte et registres",
+    "traitement": "nuance",
+    "changement": "Une phrase ajoutée à la puce AGNTCY (11.11) indique que retenir OASF et Agent Directory au socle obligatoire (section 11.14, ADR-004) va au-delà de l'exposé, qui recommande d'adopter un registre interne et de suivre le reste (registre officiel en préversion, projet IEEE naissant; section 11.10); fil rouge et ADR laissés intacts."
+   },
+   {
+    "sujet": "WebMCP et groupes communautaires du W3C",
+    "traitement": "corrigé",
+    "changement": "« Le W3C encadre ... WebMCP » est remplacé, dans la puce de 11.11, par la mention d'un groupe communautaire hébergé sans aval du W3C, aux rapports qui ne sont pas des Recommandations (section 11.3); dans l'encadré « Important », WebMCP quitte la liste des standards déployés par paliers en 2027 et renvoie à la section 11.10 (rien de prêt côté groupes communautaires)."
+   }
+  ],
+  "remarques": "Seul chapitre-11-volet-a.md est modifié (15 lignes : introduction du tableau, 10 cellules de statut, 3 puces, l'encadré « Important »); le contrôle répond « conforme » (103 %). Le relevé est exact sur cinq points; l'exposé ne nomme jamais WebMCP, et le traitement s'appuie sur la mention « Community Group » que porte le volet lui-même, hypothèse à confirmer. Laissés tels quels, car ils ne figurent pas au relevé : le bloc de l'extrait 11.1, qui n'admet que deux versions MCP antérieures à la révision de juillet 2026 (exposé 11.6, sans identifiant de version); ANP à la couche 5; les déploiements AGNTCY et AP2/x402 « par paliers en 2027 », sur lesquels l'exposé est muet; la clause de 48 heures et la cible de moins de 4 heures, objets distincts que l'exposé ne tranche pas."
+ },
+ "chapitre-12-volet-a": {
+  "id": "chapitre-12-volet-a",
+  "controle_conforme": true,
+  "traitements": [
+   {
+    "sujet": "Version et maturité d'Ossie",
+    "traitement": "corrigé",
+    "changement": "Synthèse : « normalisée sous Apache Ossie » devient « décrite dans le format d’échange Apache Ossie (section 12.4), projet en incubation dont la seule version parue est la 0.1.1 »; ADR-009 : « versions majeures » devient « versions publiées », et une phrase avant l’encadré rappelle l'absence de version 1.0, la branche 0.3.0.dev0 impropre à la production et la recommandation de la grille de décision; une phrase avant l'Extrait 12.1 signale que son `version: \"1.0.0\"` ne correspond à aucune version existante (section 12.4); statut « Acceptée » laissé (décision fictive de Boréal)."
+   },
+   {
+    "sujet": "Statut du projet à l'ASF",
+    "traitement": "corrigé",
+    "changement": "Dans le tableau de 12.8, « Maximale (standard ASF) » devient « Maximale (format d’échange en incubation à l’ASF; section 12.4) »."
+   },
+   {
+    "sujet": "Cibles de compilation et exposition aux agents",
+    "traitement": "corrigé",
+    "changement": "En 12.9, une phrase précède la liste des cibles : le dépôt fournit des convertisseurs vers dbt, GoodData, Polaris et Salesforce, la spécification ne décrit aucune interface d’interrogation et l'exposition passe par des serveurs MCP propres à chaque éditeur (sections 12.4 et 12.5), l'architecture visant des cibles plus larges; la synthèse dit « vise à compiler »; avant l'Extrait 12.3, un avertissement signale que `OssieClient.query` suppose une interface que la spécification ne définit pas (travail futur de la feuille de route)."
+   },
+   {
+    "sujet": "SQL libre en production",
+    "traitement": "nuance",
+    "changement": "Une phrase avant la liste de contrôle dit que le point 1 et la décision (a) de l'ADR-009 vont au-delà de la section 12.5, qui borne le SQL libre (lecture seule, périmètre restreint, permissions de l'appelant) et l'admet en lecture seule pour l'exploration ponctuelle d'un analyste; l'interdiction est gardée."
+   },
+   {
+    "sujet": "Ontologie : quand l'imposer",
+    "traitement": "nuance",
+    "changement": "En 12.10, deux phrases ajoutées à la fin du paragraphe d'introduction : l'exigence de la décision (c) va au-delà de la section 12.3 (aucune ontologie au départ, réservée aux domaines bornés à fort enjeu ou aux secteurs dotés d'une ontologie de référence), et elle repose sur le registre de l'Extrait 12.2, non sur la spécification d'ontologie d'Ossie, jeune et sans moteur d'inférence défini (section 12.4)."
+   },
+   {
+    "sujet": "Terme à deux propriétaires (« client actif »)",
+    "traitement": "avertissement",
+    "changement": "Avant l'Extrait 12.1, une phrase dit que le manifeste arrête une définition unique du « client actif » alors que la section 12.7 recommande, pour un terme à deux propriétaires, deux métriques nommées, l'écart documenté et le terme nu retiré du catalogue exposé aux agents; le code et les synonymes sont inchangés."
+   },
+   {
+    "sujet": "Exactitude du SQL libre sur schéma d'entreprise",
+    "traitement": "corrigé",
+    "changement": "En 12.8, la phrase sur les « 90 % » et les huit tables est remplacée par le banc d'essai de 2023 de la section 12.1 (16 % en SQL direct contre 54 % sur graphe de connaissances, résumé d'article, modèle dépassé, 54 % n'étant pas un résultat de production); la cellule « 55–72 % sur ERP réels » du tableau reprend le 16 % avec le renvoi à la section 12.1."
+   }
+  ],
+  "remarques": "Le contrôle répond « conforme » (106 % de la longueur d'origine). Les chiffres du fil rouge Boréal, le statut « Acceptée » de l'ADR et le rappel « Structurante dès le jour 1 » de la synthèse sont laissés. Les incohérences internes relevées (Extraits 9.2 et 9.3, PARTS_COMMITTED, AllocateReplacementPart, vingt-cinq contre 24 agents) restent telles quelles, l'exposé ne tranchant pas. Non relevés donc non traités : les noms de champs du manifeste, que l'exposé dit à vérifier dans le dépôt, et quelques chiffres illustratifs sans source (« > 99 % compilé », 0,999, 14 000 tables, 8 à 25 %)."
+ },
+ "chapitre-13-volet-a": {
+  "id": "chapitre-13-volet-a",
+  "controle_conforme": true,
+  "traitements": [
+   {
+    "sujet": "Tarif de lecture au cache KV",
+    "traitement": "corrigé",
+    "changement": "Dans le paragraphe qui suit l'équation de la section 13.7, « cinq à dix fois inférieur au tarif plein » devient « un dixième du tarif plein sur la plupart des modèles, jusqu'à un quarantième sur certains », avec la mention du tarif d'un seul fournisseur (API de Claude) et le renvoi à la section 13.5; la formule est intacte."
+   },
+   {
+    "sujet": "Résumé génératif comme technique de compaction",
+    "traitement": "nuance",
+    "changement": "Une phrase ajoutée avant le tableau de la section 13.7 dit que le rejet du résumé glissant seul (tableau et ADR-008, section 13.12) va au-delà de la section 13.1, où la compaction par résumé est l'une des trois techniques de base et où les sous-agents ne renvoient qu'un résumé condensé; tableau et ADR inchangés."
+   },
+   {
+    "sujet": "Contexte de domaine chargé d'office",
+    "traitement": "relevé inexact",
+    "changement": "Rien modifié : la Strate 1 charge des définitions applicables, des politiques et des invariants, non une vue d'ensemble du domaine, et la section 13.5 place justement les politiques parmi ce qui est stable en tête de préfixe."
+   }
+  ],
+  "remarques": "Le contrôle répond « conforme » (4518 à 4573 mots). Le troisième point reste discutable, car la grille de décision déconseille la vue d'ensemble d'un domaine et le contexte permanent long; le relevé le dit lui-même. Je ne l'ai pas retenu parce que la Strate 1 est bornée (1 200 à 2 400 jetons) et ne contient que des éléments non déductibles. Non traités, faute d'appui dans l'exposé : le « quadruple » de la facture et de la latence en cas d'invalidation du préfixe, et le « 70 à 90 % » de l'ADR, qui sont des chiffres propres au volet. L'encadré sectoriel Juridique & Assurance et la liste de contrôle (point 6) rejettent aussi la paraphrase des clauses; la phrase de nuance ne les couvre pas."
+ },
+ "chapitre-14-volet-a": {
+  "id": "chapitre-14-volet-a",
+  "controle_conforme": true,
+  "traitements": [
+   {
+    "sujet": "Architecture par défaut",
+    "traitement": "nuance",
+    "changement": "Phrase ajoutée au début de la section 14.11, avant l'encadré ADR : la synthèse exécutive et l'ADR-010 vont au-delà de l'exposé, qui retient par défaut des fichiers par agent ou par projet, un graphe seulement si la temporalité et le lignage sont exigés, et aucune mémoire à long terme sans besoin établi entre sessions (section 14.2 et grille de décision)."
+   },
+   {
+    "sujet": "Contenu de la mémoire procédurale",
+    "traitement": "relevé inexact",
+    "changement": "Rien modifié : le volet restreint la mémoire procédurale à la part que l'entreprise gouverne (plans types et recettes validées dans un dépôt Git de compétences). Cela ne contredit pas l'exposé, dont les exemples en entreprise sont « consignes, compétences, prompts système » et qui range Agent Skills et AGENTS.md dans cette mémoire."
+   },
+   {
+    "sujet": "Datation d'une arête du graphe temporel",
+    "traitement": "corrigé",
+    "changement": "Au début de « Graphiti : mémoire partagée sans écrasement » (14.8), le texte attribuait à Graphiti les quatre horodatages et la fermeture sur deux axes. Il rapporte maintenant ce que l'exposé établit (graphe temporel, relation marquée invalide à partir d'une date, d'après un compte rendu secondaire, section 14.2), puis présente le modèle à quatre horodatages comme le contrat d'accès de l'architecture. Dans le paragraphe suivant, « le moteur » devient « le magasin bi-temporel »."
+   },
+   {
+    "sujet": "Effacement d'un fait dérivé",
+    "traitement": "nuance",
+    "changement": "Phrase ajoutée en 14.9, point 3, après les deux invariants : selon ZenML, Zep ne supprime un fait que si aucun épisode restant ne le soutient (section 14.6). La purge par sujet va au-delà en retirant toutes les arêtes personnelles. Elle suppose que data_subject_id suive chaque fait dérivé, car sans lignage l'effacement ne peut pas être exécuté avec certitude."
+   },
+   {
+    "sujet": "Protection contre les écritures malveillantes",
+    "traitement": "avertissement",
+    "changement": "Dans le paragraphe qui précède l'Extrait 14.2 (14.9, point 2), « correspond aux contrôles » devient « correspond à une partie des contrôles ». Une phrase ajoutée précise que l'exposé retient en outre, contre l'écriture différée par instruction dormante, la confirmation humaine avant d'enregistrer un souvenir (section 14.5), que le garde de l'extrait ne prévoit pas."
+   }
+  ],
+  "remarques": "Le contrôle répond « conforme » (4351 à 4500 mots). Il reste, hors du relevé et par choix de ne pas étendre la retouche, des attributions à Graphiti du modèle à quatre dates : la synthèse exécutive, le tableau comparatif (« arêtes à 4 dates », « insertion exacte sur valid_from »), l'option 3 de l'ADR et la légende de figure (intouchable). Je les ai laissées, mais un relecteur pourrait vouloir les harmoniser. Sur la mémoire procédurale, la définition du volet est plus étroite que celle de CoALA (poids et code compris, section 14.1). Une phrase de rappel serait possible si on la juge utile. Les incohérences internes signalées (renvoi « Extraits 10.1 à 10.3 », ADR-010, cibles chiffrées) ne sont pas tranchées par l'exposé et sont laissées telles quelles."
+ },
+ "chapitre-16-volet-a": {
+  "id": "chapitre-16-volet-a",
+  "controle_conforme": true,
+  "traitements": [
+   {
+    "sujet": "Débat et graphes cycliques libres",
+    "traitement": "nuance",
+    "changement": "Dans la section 16.9, après la mention du débat de la section 16.4, une phrase dit que l'interdiction du volet va au-delà de l'exposé, qui admet le débat à trois agents au plus, en lecture seule, sous un gestionnaire (section 16.4 et grille de décision), et traite le transfert et l'essaim comme des patrons valides (section 16.5); synthèse exécutive, ADR et « comité bavard » inchangés."
+   },
+   {
+    "sujet": "Mécanisme de coordination entre domaines",
+    "traitement": "nuance",
+    "changement": "Dans la section 16.9, à la fin du paragraphe sur la dualité, une phrase dit que la règle s'écarte de l'exposé (section 16.5 et grille : pair-à-pair par protocole entre domaines, centralisé à l'intérieur d'un domaine) et que la grille ne propose l'écart que pour une plateforme unique sous une seule autorité; la chorégraphie par événements est conservée."
+   },
+   {
+    "sujet": "État partagé modifiable entre agents concurrents",
+    "traitement": "nuance",
+    "changement": "À la fin de la topologie 4 (tableau noir), une phrase rappelle que Microsoft range parmi les antipatrons le partage d'un état modifiable entre agents concurrents (section 16.3, chapitre 14), que l'exposé ne traite pas le tableau noir, et que la concurrence optimiste (ETag) est la parade propre au volet."
+   },
+   {
+    "sujet": "Surcoût de la topologie centralisée",
+    "traitement": "relevé inexact",
+    "changement": "Rien modifié : l'exposé ne donne aucun multiplicateur en jetons pour le superviseur, ses mesures (4 appels contre 3, 27,7 tours contre 7,2) sont d'une autre nature, et le relevé admet lui-même qu'elles ne se comparent pas; la matrice ne contredit donc pas l'exposé."
+   },
+   {
+    "sujet": "Coût de la coordination décentralisée",
+    "traitement": "corrigé",
+    "changement": "Dans la section 16.9, l'affirmation « en production, elle échoue pour des raisons que l'on peut mesurer » est remplacée par les mesures de l'exposé (26,1 tours par essai contre 27,7 pour la centralisée; amplification d'erreurs de 7,8 fois, entre l'orchestrateur et les agents indépendants; sections 16.2 et 16.4), avec une phrase précisant que le calcul quadratique est un modèle, non une mesure; formules inchangées."
+   },
+   {
+    "sujet": "Taxonomie des patrons",
+    "traitement": "corrigé",
+    "changement": "Dans l'introduction de la section 16.10, l'affirmation que l'expérience de fin 2026 ramène la quasi-totalité des cas de production à six topologies est remplacée par : le volet retient six topologies, alors que l'exposé, qui ne cite aucune donnée d'adoption, classe neuf patrons selon trois topologies et un axe adaptatif (section 16.1); titre, figure, ADR et liste de contrôle inchangés."
+   }
+  ],
+  "remarques": "Le contrôle répond « conforme » (6984 mots -> 6878 mots, 98 %). Les incohérences internes sur N_max (2 ou 3, code entre 1 et 4, fil rouge à 2 contre maxIterations à 3 dans le BPMN) et les tâches BPMN non définies restent telles quelles : l'exposé ne fixe aucune valeur de plafond, seulement « un plafond d'itérations ». Ne figurent pas au relevé et n'ont pas été touchés : plusieurs chiffres que l'exposé ne confirme pas (multiplicateurs de la matrice, 60 %, 70 %, facteur 3 à 5, ratios 12:1 et 8×), les trois « dégradations » de la section 16.9, l'affirmation d'adoption « Entre 2024 et 2025, plusieurs cadriciels… » et le titre « Anti-patrons observés en production »."
+ },
+ "chapitre-17-volet-a": {
+  "id": "chapitre-17-volet-a",
+  "controle_conforme": true,
+  "traitements": [
+   {
+    "sujet": "Rôle du niveau de confiance dans la sortie d'un agent",
+    "traitement": "nuance",
+    "changement": "Le seuil de confiance τ est conservé; une phrase ajoutée avant l'Extrait 17.2 (section 17.9) dit qu'il s'ajoute aux issues nommées et va au-delà de l'exposé, qui demande des issues nommées et routables et ne tient le niveau de confiance que pour une information d'appoint, car un seuil reporte le problème sur le branchement suivant (section 17.2)."
+   },
+   {
+    "sujet": "Outils à effets offerts au modèle",
+    "traitement": "nuance",
+    "changement": "La restriction des outils à la lecture et à la simulation est conservée; une phrase ajoutée au même endroit rappelle que l'exposé admet comme outil d'agent borné une tâche de service, un sous-processus entier ou l'appel d'un autre processus, que le moteur exécute (section 17.2), et donne à un agent ouvert accès aux systèmes d'enregistrement par un processus exposé comme outil (section 17.5)."
+   }
+  ],
+  "remarques": "Les deux nuances tiennent en un seul paragraphe de trois phrases inséré entre la liste des quatre éléments de la section 17.9 et l'introduction de l'Extrait 17.2; rien d'autre n'a été touché (code, fil rouge, ADR-002 et liste de contrôle intacts). Le « effets compris » du relevé n'est pas littéral dans l'exposé : la phrase s'en tient à « le moteur exécute » et au processus exposé comme outil. Les incohérences internes du relevé (valeurs de rootCauseCode, N_max, K_max, interface TypeScript) sont dans des blocs de code ou des éléments à conserver, et l'exposé ne les tranche pas : laissées telles quelles."
+ },
+ "chapitre-18-volet-a": {
+  "id": "chapitre-18-volet-a",
+  "controle_conforme": true,
+  "traitements": [
+   {
+    "sujet": "Statut de l'extension durable de Microsoft Agent Framework",
+    "traitement": "corrigé",
+    "changement": "Section 18.9 : « s'appuie en production » devient « Son extension durable s'appuie sur » le moteur Durable Task Framework, et une phrase ajoute que les paquets sont en préversion et que le checkpointing durable ne rend pas les écritures externes transactionnelles ni exécutées exactement une fois (section 18.6); « Il unifie » devient « Le cadriciel unifie » pour lever l'ambiguïté du pronom."
+   },
+   {
+    "sujet": "Modèle d'état de Restate",
+    "traitement": "corrigé",
+    "changement": "Section 18.9 : retrait de « acteurs à état clé-valeur persistant » dans l'item Virtual Objects, avec une phrase renvoyant à la section 18.6 (journal rejoué, état porté par la requête, services sans état); cellule du tableau comparatif réécrite dans le même sens; avertissement ajouté dans l'introduction de l'Extrait 18.3 (code intact) sur l'état ctx.get/ctx.set."
+   },
+   {
+    "sujet": "Moteur durable côté AWS",
+    "traitement": "nuance",
+    "changement": "Section 18.9 : l'association Step Functions et Bedrock AgentCore pour les sagas T4 est gardée, suivie d'une phrase disant qu'elle va au-delà de l'exposé, qui présente côté AWS les Lambda durable functions (points de contrôle et rejeu, jusqu'à un an, attentes non facturées), situées par rapport à Step Functions (section 18.6)."
+   },
+   {
+    "sujet": "Latences de journalisation par moteur",
+    "traitement": "corrigé",
+    "changement": "Retrait des chiffres 8 à 25 ms, 1 à 5 ms, 10 à 35 ms (tableau, remplacés par « Aucune latence chiffrée (section 18.6) »), de « 1 à 4 millisecondes » (prose Restate, avec renvoi à 18.6), de « quelques millisecondes » (introduction de l'Extrait 18.3) et de « Latence sous 5 ms » (tableau de profils)."
+   },
+   {
+    "sujet": "Durée et taille d'une exécution Temporal",
+    "traitement": "corrigé",
+    "changement": "Tableau : « Mois à années » devient « Aucune limite de durée à une exécution (section 18.1) »; section 18.11 : le plafond de 51 200 événements ou 50 Mo est remplacé par l'énoncé de l'exposé (aucune limite de durée, l'état grossit, Continue-As-New poursuit l'exécution dans un nouveau maillon, section 18.2)."
+   },
+   {
+    "sujet": "Nom de l'en-tête d'idempotence",
+    "traitement": "avertissement",
+    "changement": "Extrait 18.2 : le code est intact; une phrase ajoutée dans l'introduction signale que le code emploie `X-Idempotency-Key` alors que l'exposé indique `Idempotency-Key`, normalisé par le brouillon de l'IETF (section 18.3)."
+   }
+  ],
+  "remarques": "Contrôle « conforme » (6878 à 6839 mots). L'incohérence Restate « 1 à 4 ms » contre « 1 à 5 ms » disparaît avec les chiffres; les trois compositions de la clé d'idempotence, l'écart de 14 jours contre 29 à 13,5 jours (fil rouge) et l'apostrophe de 18.13 sont laissés, l'exposé ne tranchant pas. Non relevés donc non touchés, à voir : seuils de 10 000 événements (tableau de profils) et M = 1 000 (18.11), « objets virtuels par équipement » (ADR et tableau de profils), et plusieurs affirmations absentes de l'exposé (« la référence » pour Temporal, Bedrock AgentCore, Dapr, Entra ID)."
+ },
+ "chapitre-19-volet-a": {
+  "id": "chapitre-19-volet-a",
+  "controle_conforme": true,
+  "traitements": [
+   {
+    "sujet": "Seuil d'emploi de la chorégraphie",
+    "traitement": "corrigé",
+    "changement": "Dans la section 19.10, le seuil « au-delà de trois acteurs » (absent de l'exposé) est remplacé par le critère de la section 19.7 (« dès qu'une transaction d'affaires traverse plusieurs agents », il faut un coordinateur); la proscription sous régime réglementé (BSIF E-23) est gardée, avec une phrase disant qu'elle va au-delà de la section 19.7, où la chorégraphie reste admise pour des réactions indépendantes, sans annulation ni ordre requis; l'ADR-013 (rejet de la chorégraphie pure) est compatible avec l'exposé et n'est pas touché."
+   },
+   {
+    "sujet": "Appel direct ou dorsale d'événements par défaut",
+    "traitement": "corrigé",
+    "changement": "Dans la Synthèse, le seuil « au-delà de trois systèmes d'enregistrement » est remplacé par les conditions de l'exposé (travail plus long qu'une connexion, consommateurs multiples, pointes de charge; section 19.1 et grille de décision) et une phrase rappelle que l'appel direct reste le défaut, sans dorsale tant qu'un déclencheur direct suffit; au début de la section 19.13, une phrase avant l'encadré ADR-013 indique que retenir le maillage Solace/Kafka pour toute mutation touchant deux systèmes d'enregistrement va au-delà de la grille de décision. La section 19.8 ne contient pas le seuil et reste inchangée."
+   }
+  ],
+  "remarques": "Le contrôle répond « conforme » (5057 à 5181 mots). Le second traitement combine une correction de la Synthèse (chiffre sans source dans l'exposé) et une nuance devant l'ADR, qui reste identique, titre compris; ce dosage est un jugement, car on pouvait aussi garder le seuil de trois systèmes avec une simple nuance. Non traité, hors relevé : l'exposé ne couvre ni Solace ni NATS (« autres courtiers non traités », Limites), donc le choix des courtiers de la section 19.8 et le socle Solace/Kafka n'ont pas d'appui dans l'exposé."
+ },
+ "chapitre-25-volet-a": {
+  "id": "chapitre-25-volet-a",
+  "controle_conforme": true,
+  "traitements": [
+   {
+    "sujet": "Interface utilisateur pilotée par un agent (CUA)",
+    "traitement": "avertissement",
+    "changement": "Ajouté une phrase au début de la section 25.6 : l'exposé ne traite pas le pilotage de l'interface par un agent (aucune source lue, « Limites de ce chapitre ») et les chiffres du volet à son sujet, dont le « jusqu'à 60 % » de la synthèse, ne reposent sur aucune source, hors cas fictif du Groupe Boréal; sections, tableaux et chiffres conservés."
+   },
+   {
+    "sujet": "Cache de lecture et lieu de la limite de débit",
+    "traitement": "nuance",
+    "changement": "Ajouté deux phrases à la fin du point 3 de la section 25.7 : une valeur en cache n'a pas d'autorité, la décision relit la source ou porte la date de sa copie (section 25.2); le limiteur propre aux outils va au-delà de la limite de débit par agent et par outil à la passerelle que retient l'exposé (section 25.5)."
+   },
+   {
+    "sujet": "Palier de départ et voie d'écriture",
+    "traitement": "laissé",
+    "changement": "Rien modifié : l'écriture du CUA par saisie d'écran (F9) relève du cas fictif du fil rouge en 25.10; la ligne MCP_IDEMPOTENCY_LOG de l'extrait 25.1 est la trace propre à l'adaptateur et non une écriture directe dans les tables d'affaires, et l'exposé (25.5) charge la couche de porter l'idempotence sans dire où la consigner."
+   },
+   {
+    "sujet": "Contenu de la couche d'encapsulation",
+    "traitement": "avertissement",
+    "changement": "Ajouté une phrase juste avant l'extrait 25.1 (code intact) : la borne de montant et le choix des codes retour ne sont à leur place dans l'adaptateur que s'ils relèvent de la validation des entrées, l'exposé limitant la couche à la traduction, sans règles d'affaires ni orchestration (section 25.4)."
+   }
+  ],
+  "remarques": "Divergence 3 : le volet n'énonce nulle part de règle contraire au palier de lecture seule; seule la fiction l'écrit. Si le relecteur veut tout de même un rappel du palier (section 25.3, grille de décision), une phrase en 25.8 suffirait. Les contradictions internes (part des CUA de 5 à 8 %, au plus 8 %, 5 à 10 % et 6,5 %; latence 8 à 30 s contre 8–35 s; « BEL » non défini) sont laissées : l'exposé ne tranche pas et ne couvre pas les CUA. Le fil rouge, les blocs de code, figures, extraits, titre ADR et liste de contrôle sont intacts; contrôle conforme à 105 % du volume."
+ },
+ "chapitre-27-volet-a": {
+  "id": "chapitre-27-volet-a",
+  "controle_conforme": true,
+  "traitements": [
+   {
+    "sujet": "Plan de contrôle d'ensemble : fédérer ou posséder",
+    "traitement": "nuance",
+    "changement": "Ajouté en fin du paragraphe de l'approche C (section 27.7) une phrase disant que posséder le plan neutre, comme le prescrit l'ADR-015 (section 27.11), va au-delà de ce que retient l'exposé, qui recommande à la section 27.4 de fédérer le plan de contrôle d'ensemble et de ne posséder que le registre de référence, l'identité et les politiques."
+   },
+   {
+    "sujet": "Essais de fédération entre plateformes",
+    "traitement": "laissé",
+    "changement": "Rien modifié : les résultats après 90 jours (4,15 à 0,68 $ CAD, 19 cycles bloqués, 100 % d'écritures nominatives) appartiennent au cas fictif du Groupe Boréal (section 27.10, encadré fil rouge) et ne contiennent aucune affirmation générale sur le monde réel."
+   },
+   {
+    "sujet": "Calendrier de référence",
+    "traitement": "corrigé",
+    "changement": "Retiré le « 2027 » pris pour le présent dans trois affirmations sur le monde réel : « en 2027, chaque grand éditeur… » devient « aujourd'hui, chaque grand éditeur… » dans la synthèse, « (2027) » est ôté de l'en-tête du tableau de la section 27.6, et « est en 2027 un motif de blocage immédiat » devient « est un motif de blocage immédiat » en 27.8; T1 et T2 2027 et les 90 jours du fil rouge (27.10) sont laissés."
+   },
+   {
+    "sujet": "Registre et annuaire des agents",
+    "traitement": "nuance",
+    "changement": "Ajouté à la fin de la puce « Versionnement asynchrone » (section 27.7) deux phrases : l'annuaire OASF derrière MuleSoft Agent Fabric n'est le registre de référence que si l'entreprise le désigne, sinon il compte parmi les registres sources (section 27.2); prendre un registre de référence chez un éditeur crée une dépendance de plus et son contenu doit rester exportable (section 27.5)."
+   }
+  ],
+  "remarques": "Le volet ne contredit pas frontalement l'exposé sur la divergence 4 (il se tait sur le statut de l'annuaire OASF); j'ai posé une nuance conditionnelle plutôt que d'affirmer que l'annuaire n'est pas le registre de référence, car l'exposé admet de le prendre chez un éditeur au prix d'une dépendance. Laissés faute d'arbitrage de l'exposé : les quatre contradictions internes relevées (trois frictions annoncées pour quatre listées, « triple taxation » pour quatre taxes, deux ans contre dix-huit mois dans l'encadré M&A, « Token Bucket »). Hors relevé mais à vérifier : l'encadré M&A « Jour 90 » (27.9) affirme ce que la fédération A2A « permet » alors que l'exposé dit qu'aucun essai de fédération n'a été trouvé, et SAP et Workday ne figurent pas parmi les éditeurs de l'exposé."
+ },
+ "chapitre-28-volet-a": {
+  "id": "chapitre-28-volet-a",
+  "controle_conforme": true,
+  "traitements": [
+   {
+    "sujet": "Validation humaine avant écriture",
+    "traitement": "corrigé",
+    "changement": "Relevé exact : ni la décision (c) de l'ADR ni la liste de contrôle ne prévoyaient de validation humaine. J'ai ajouté, avec renvoi à la section 28.4 et à la règle de l'exposé (obligatoire avant toute écriture), une phrase à la décision (c), une incise à l'introduction de la liste de contrôle (8 points inchangés) et une incise avant les quatre conditions du récepteur en 28.8."
+   },
+   {
+    "sujet": "Rôle de l'agent en exploitation",
+    "traitement": "nuance",
+    "changement": "Dans le premier paragraphe de 28.8, j'ai gardé le sas et dit qu'il va au-delà de ce que l'exposé retient (aide à la décision : lire, expliquer, proposer, section 28.5; commande simple seulement sur installation d'essai, confirmée par l'opérateur), en précisant que l'agent se borne à proposer et que seul le MES ou le SCADA charge la recette; 28.10 est un cas fictif, laissé tel quel."
+   },
+   {
+    "sujet": "Maturité et déploiement en production",
+    "traitement": "corrigé",
+    "changement": "Dans l'ADR, les conséquences positives sont qualifiées d'effets attendus, sans déploiement en production documenté par une source lue (section 28.5), et « sûreté physique démontrable » devient « sûreté physique visée »; les résultats vérifiés sur deux trimestres et l'homologation SL-3 de 28.10 (fil rouge fictif) et le statut « Acceptée » de l'ADR sont laissés."
+   },
+   {
+    "sujet": "Statut du qualificatif « obligatoire »",
+    "traitement": "corrigé",
+    "changement": "Le statut de l'ADR « norme critique de sûreté industrielle » est remplacé par « recommandation du chapitre, non imposée par une norme lue; section 28.4 »; la synthèse (puce 3) reçoit la même mention et 28.8 une phrase disant que « obligatoire » est, comme en 28.4, une recommandation du chapitre; les titres, la légende de figure et les points de la liste de contrôle sont inchangés."
+   },
+   {
+    "sujet": "Protocole A2A en atelier",
+    "traitement": "corrigé",
+    "changement": "Dans l'encadré des sites miniers (28.9), « les journaux A2A sont resynchronisés » devient « les journaux sont resynchronisés », puisque l'exposé (28.5) ne documente aucun usage agent-à-agent en atelier."
+   }
+  ],
+  "remarques": "Le contrôle répond « conforme » (4831 à 4974 mots, 103 %). Les trois incohérences internes du relevé (trois barrières annoncées mais deux énumérées, constante de temps de 0,5 à 10 ms contre 1 à 10 ms, OEE) sont laissées, l'exposé ne les tranchant pas. Hors relevé et donc non touchés : d'autres affirmations d'adoption dans 28.7 et 28.8 que l'exposé ne couvre pas (OPC UA FX sur TSN « déployé en 2026–2027 », VDA 5050, A2UI, normes IEC 62443 et IEC 61511) pourraient mériter un second relevé."
+ },
+ "chapitre-30-volet-a": {
+  "id": "chapitre-30-volet-a",
+  "controle_conforme": true,
+  "traitements": [
+   {
+    "sujet": "Chaîne des acteurs (act) et atténuation de saut en saut",
+    "traitement": "corrigé",
+    "changement": "Cellule « Généalogie des agents (act) » du tableau 30.7 ramenée à une chaîne imbriquée informative selon la RFC 8693 et consignée par l'orchestrateur; le serveur MCP « vérifie » seulement sub, ent_sponsor, le plafond et cnf, et lit les acteurs antérieurs, informatifs (section 30.2); phrase avant la formule : la loi est une cible, aucune norme ne garantit l'atténuation de saut en saut (section 30.2); corollaire déjà introduit par « Dans ce modèle », laissé; ADR traité par le renvoi placé avant l'encadré (nuance, sections 30.2 à 30.4)."
+   },
+   {
+    "sujet": "Approbation humaine par CIBA",
+    "traitement": "avertissement",
+    "changement": "Phrase ajoutée avant la séquence CIBA de 30.9 (code et extrait 30.3 intacts) : aucun standard ne couvre l'attestation de présence humaine, CIBA ne prévoit qu'une demande lancée par le client et la confirmation en cours d'exécution appelle une spécification supplémentaire (section 30.4); l'ADR est signalé comme allant plus loin dans la phrase placée avant lui."
+   },
+   {
+    "sujet": "RFC 9396 appliquée aux agents",
+    "traitement": "nuance",
+    "changement": "Phrase ajoutée à l'introduction de 30.9, après les quatre briques : cette combinaison va au-delà de ce que retient l'exposé, ni MCP ni AIMS ne s'appuient sur la RFC 9396 et aucun profil ne l'applique aux agents (section 30.3); l'exigence de l'ADR à chaque saut est signalée de la même façon avant l'encadré."
+   },
+   {
+    "sujet": "Chiffres d'adoption et de résultats",
+    "traitement": "corrigé",
+    "changement": "Dans la synthèse exécutive, le chiffre « plus de 70 % des déploiements initiaux audités fin 2026 » est retiré et la phrase décrit seulement ce qu'un agent peut faire (réutiliser le jeton de l'employé ou un compte de service statique); les résultats chiffrés du fil rouge (64 secrets à 0, -94 %, 6,8 ms) relèvent de la fiction et sont laissés."
+   },
+   {
+    "sujet": "Portée de l'interdiction du relais de jeton",
+    "traitement": "corrigé",
+    "changement": "Dans l'antipatron 1 de 30.7, « la spécification de sécurité de MCP interdit cette pratique » est remplacé par l'interdiction telle que l'exposé la formule (un serveur n'accepte ni ne relaie un jeton non émis pour lui, section 30.1), plus la règle de la section 30.2 pour la chaîne d'agents (un sous-agent ne reçoit jamais le jeton de son parent)."
+   }
+  ],
+  "remarques": "Contrôle « conforme » (6466 à 6551 mots); 8 passages modifiés, tous dans le volet. Contradictions internes laissées, l'exposé ne tranchant pas : transfert sous 72 heures ou suspension du renouvellement (30.8) contre révocation instantanée du ClusterSPIFFEID (tableau du cycle de vie), et renouvellement du SVID « à mi-vie » contre « aux 15 min ». Non touchés, hors relevé : « antipatrons observés lors de la vague 2024–2025 » et « approches observées dans l'industrie » (30.7), énoncés d'usage sans source que l'exposé ne confirme pas non plus; à décider par le relecteur."
+ },
+ "chapitre-31-volet-a": {
+  "id": "chapitre-31-volet-a",
+  "controle_conforme": true,
+  "traitements": [
+   {
+    "sujet": "Nom de l'instance qui publie le référentiel ASI",
+    "traitement": "corrigé",
+    "changement": "Dans la condition de révision de l'ADR-019 (corps, pas le titre), « l'OWASP Agentic Security Initiative » devient « le projet OWASP GenAI Security (section 31.2) », nom que donne l'exposé."
+   },
+   {
+    "sujet": "Intitulés de deux catégories ASI",
+    "traitement": "corrigé",
+    "changement": "Dans le tableau de 31.9, « Tool Misuse & Exploitation » devient « Tool Misuse » et « Unexpected Code Execution (RCE) » devient « Unexpected Code Execution », intitulés de la section 31.2; les gloses françaises sont inchangées."
+   },
+   {
+    "sujet": "Serveur local et transport stdio",
+    "traitement": "nuance",
+    "changement": "La règle sectorielle (aucun stdio en production) est conservée; une phrase ajoutée à la fin de son point 2 dit qu'elle va au-delà de l'exposé, qui retient liste d'autorisation, affichage de la commande et bac à sable (recommandé, non exigé), avec exception pour un poste de développement isolé sans secrets (section 31.5 et grille de décision)."
+   },
+   {
+    "sujet": "Force des garanties contre l'injection",
+    "traitement": "corrigé",
+    "changement": "Dans l'ADR-019, « neutralisation structurelle » et « confinement prouvable » sont remplacés par une limitation de ce que peut faire un agent détourné (31.4, 31.5), avec le constat qu'aucune source lue n'établit de parade fiable au niveau du modèle; dans l'encadré CaMeL, « l'état de l'art 2027 applique » devient « on peut recourir à » et une phrase donne le coût en utilité (77 % contre 84 %, chapitre 45, section 31.4). Le 0,00 % sur 2 500 variantes du fil rouge est laissé tel quel (fiction)."
+   },
+   {
+    "sujet": "Attaque de type rug pull : contre-mesure",
+    "traitement": "relevé inexact",
+    "changement": "Rien modifié : le volet ne contredit pas l'exposé. L'épinglage de l'empreinte SHA-256 des définitions et le blocage de tout changement sont équivalents à l'épinglage et à la vérification d'empreinte; la promotion CI/CD signée (Sigstore) à chaque mise à jour légitime, avec un lockfile approuvé par SecOps, tient lieu de nouvelle approbation à tout changement."
+   }
+  ],
+  "remarques": "Le contrôle répond « conforme » (94 %). Aucun changement dans les blocs de code, figures, formules, titres d'extraits ni titres d'ADR. Contradictions internes du relevé (révision « semestrielle » contre « trimestrielle » dans l'ADR-019) laissées telles quelles : l'exposé ne tranche pas. Éléments du volet sans équivalent dans l'exposé, non traités faute d'avoir été relevés comme contradictoires : date et gravité du CVE-2025-54136 (section 31.5 de l'exposé ne le mentionne pas), « Linux Foundation AAIF », la description P-LLM/Q-LLM de CaMeL (le texte complet de [8] n'a pas été lu), et la cible ASR_action à 0,00 % de la liste de contrôle, que le relecteur voudra peut-être nuancer par un renvoi à la section 31.4."
+ },
+ "chapitre-32-volet-a": {
+  "id": "chapitre-32-volet-a",
+  "controle_conforme": true,
+  "traitements": [
+   {
+    "sujet": "Portée de la preuve formelle et de l'application hors du modèle",
+    "traitement": "corrigé",
+    "changement": "Dans la section 32.7, « Les incidents de 2024–2025 enseignent » est devenu « Ce volet part de l'hypothèse », et le renvoi à la section 32.5 dit qu'elle ne l'établit pas (un signal, non une preuve, sur un seul point de mesure); dans l'ADR-020 (conséquences positives), « Garanties mathématiques opposables aux régulateurs » est ramené à une vérification hors du modèle, relativement aux invariants écrits, avec renvois aux sections 32.5 et 32.2; la « preuve mathématique » exigée par le comité dans le fil rouge est laissée, car elle relève de la fiction du Groupe Boréal."
+   },
+   {
+    "sujet": "Numéro du chapitre",
+    "traitement": "sans objet",
+    "changement": "L'expression « ce vingtième chapitre » ne figure plus dans le volet (déjà retirée à la section 32.6), et les renvois internes restent cohérents avec le chapitre 32; rien n'a été modifié."
+   }
+  ],
+  "remarques": "Seul le fichier du volet a été modifié, par deux éditions. Le contrôle répond « conforme ». Les affirmations d'adoption ou de maturité signalées dans le relevé (Cedar, OpenSandbox « standard d'entreprise », moteurs « dominants en 2027 », « immunité du cluster hôte », « arrêt d'urgence quasi instantané ») ne faisaient pas partie des deux divergences. Je les ai laissées telles quelles. Le relecteur pourrait les reprendre dans un passage distinct, car l'exposé n'en dit rien. De même, la phrase de la section 32.7 qui voit l'appel à `update_vendor_bank_account` échouer sur l'évaluation déterministe n'a pas été nuancée."
+ },
+ "chapitre-33-volet-a": {
+  "id": "chapitre-33-volet-a",
+  "controle_conforme": true,
+  "traitements": [
+   {
+    "sujet": "Statut des conventions GenAI et décision de les imposer",
+    "traitement": "corrigé",
+    "changement": "Section 33.8 : « l'industrie s'est alignée fin 2026 … de la CNCF … agentgateway » remplacé par OpenTelemetry comme format d'échange à retenir, conventions toutes « Development », aucune version publiée, schéma interne, normalisation au collecteur et épinglage (section 33.2); ADR-021 : « Standard ouvert CNCF » ramené au même constat, condition de révision « suivant les versions » devenue « suivant l'évolution … aucune version publiée », et phrase de nuance dans la Décision (imposer `gen_ai.*` va au-delà de la section 33.2); phrase équivalente ajoutée à la synthèse exécutive."
+   },
+   {
+    "sujet": "Échantillonnage des traces et piste d'audit",
+    "traitement": "nuance",
+    "changement": "Après les quatre règles de la section 33.9, deux phrases disent que l'échantillonnage en queue et la rétention à 100 % vont au-delà de l'exposé (trace échantillonnable, attributs posés à la création du span, section 33.6) et que la piste d'audit, distincte et jamais échantillonnée (section 33.1), n'est pas remplacée par l'index de traces; règles et encadré Merkle/WORM inchangés."
+   },
+   {
+    "sujet": "Bagages (baggage) propagés vers le serveur MCP",
+    "traitement": "avertissement",
+    "changement": "Phrase ajoutée dans le texte d'introduction de l'Extrait 33.1, avant le bloc de code laissé intact : l'extrait place `saga.id` et le budget restant dans le baggage, alors que l'exposé range les bagages parmi les fuites latérales car ils voyagent chez le tiers appelé (section 33.4)."
+   },
+   {
+    "sujet": "Message d'exception dans le span",
+    "traitement": "avertissement",
+    "changement": "Même phrase d'avertissement avant l'Extrait 33.1 : le code copie le message de l'exception dans le statut du span, alors que l'exposé le signale comme sensible (section 33.4)."
+   },
+   {
+    "sujet": "Accès au contenu pour l'évaluation",
+    "traitement": "nuance",
+    "changement": "Paragraphe ajouté après la liste des deux couloirs de la section 33.10 : le dispositif ne prévoit aucun accès au contenu pour l'évaluation, ce qui va au-delà de la section 33.4, où une zone de contenu sous accès restreint sert aux évaluateurs (humains ou automatiques) et à la boucle d'exemples d'entraînement, après masquage."
+   },
+   {
+    "sujet": "Propagation du contexte de trace sur A2A",
+    "traitement": "avertissement",
+    "changement": "Trois ajouts brefs signalent que les conventions lues ne décrivent ni le passage du contexte de trace client-serveur A2A ni le rattachement du span client au span interne (section 33.3) : fin de la strate 2 (section 33.9, avec `a2a.task.id` et l'identifiant d'affaires retenus par l'exposé), phrase sous le tableau des SLI (cible de 99,8 %) et point 1 de la liste de contrôle; cible, tableau et nombre de points inchangés."
+   }
+  ],
+  "remarques": "Contrôle automatique « conforme » (4113 à 4501 mots). Les six divergences étaient exactes; seul le fichier du volet a été modifié. Laissé tel quel : l'incohérence « couloir opérationnel à 100 % du flux » contre 5 à 10 % des interactions L1 à l'index de traces, que l'exposé ne tranche pas. Aussi non touchés, faute d'être au relevé : les attributs `cache_read_input_tokens`, `cache_creation_input_tokens` et `reasoning_tokens` (le tableau de la section 33.9 les donne en attributs distincts, alors que l'exposé range ces jetons dans les totaux d'entrée et de sortie, section 33.1) et le « couple CLIENT / SERVER » de la strate 2 (l'exposé n'en parle pas); à trancher par le relecteur."
+ },
+ "chapitre-34-volet-a": {
+  "id": "chapitre-34-volet-a",
+  "controle_conforme": true,
+  "traitements": [
+   {
+    "sujet": "Seuil de la barrière de rejeu",
+    "traitement": "nuance",
+    "changement": "Relevé exact : la section 34.2 retient un seuil sur pass^k (exemple illustratif : 90 % sur quatre tentatives); j'ai gardé pass^5 ≥ 0,95 et les valeurs du manifeste, et ajouté en fin de paragraphe de la section 34.9 une phrase disant qu'ils vont au-delà de ce que retient la section 34.2."
+   },
+   {
+    "sujet": "Unités de changement d'un agent",
+    "traitement": "corrigé",
+    "changement": "Relevé exact : j'ai ajouté en fin du paragraphe des six couches (section 34.8) une phrase d'après les sections 34.1 et 34.2 (la mémoire est une unité de changement et le manifeste regroupe les politiques de garde-fous et de mémoire), précisant que ces six couches ne la nomment pas; énumération, tableau et manifeste inchangés."
+   },
+   {
+    "sujet": "Échelle des niveaux d'autonomie",
+    "traitement": "corrigé",
+    "changement": "Relevé exact : le niveau L4 n'existe pas dans la section 34.4 (L0 à L3); j'ai ramené « L2 à L4 » à « L2 ou L3 (niveaux de la section 34.4) » après le manifeste, « L3/L4 » à « L3 » dans le tableau des référentiels, et « L2–L4 » à « L2–L3 » dans le périmètre et la décision de l'ADR-022 (titre de l'ADR intact)."
+   }
+  ],
+  "remarques": "Pour la divergence 3, j'ai supprimé L4 plutôt que de l'avertir, car l'exposé définit une échelle fermée à quatre niveaux; si L4 correspond à une échelle propre au Compendium (p. ex. un autre chapitre), il faudra choisir entre l'avertissement et la correction. Non touchés, faute d'arbitrage par l'exposé : l'incohérence entre les six couches du texte et les six lignes du tableau, « Révision : Semestrielle » face à la révision annuelle des seuils de l'ADR, et l'attribution de L0/L1 aux extracteurs et de L2/L3 aux spécialistes (dans l'exposé, les niveaux se règlent par la consommation du budget d'erreur, non par classe d'agent). Les 0,45 par résultat et 0,55 par saga restent tels quels (unités différentes, l'exposé ne tranche pas)."
+ },
+ "chapitre-38-volet-a": {
+  "id": "chapitre-38-volet-a",
+  "controle_conforme": true,
+  "traitements": [
+   {
+    "sujet": "Champ d'application de la ligne directrice E-23",
+    "traitement": "corrigé",
+    "changement": "Dans « Canada fédéral », la phrase qui étendait E-23 à tout système « agentique éclairant une décision » est remplacée par ce que dit la section 38.3 (le texte ne nomme pas les agents, sa définition large du modèle s'y applique sans peine); la cellule « Déclencheur » du tableau est alignée, et avant l'extrait 38.1 une phrase précise que le palier TIER_2_MATERIAL est un choix de l'entreprise puisque E-23 laisse la cote de risque des usages d'IA générative au jugement de chaque institution (section 38.3)."
+   },
+   {
+    "sujet": "Force de E-23 et validation de 2e ligne",
+    "traitement": "corrigé",
+    "changement": "La cellule « Statut » du tableau passe de « Opposable le 1er mai 2027 » à « Attentes du régulateur au 1er mai 2027 (section 38.7) », et « Trois obligations » devient « Trois exigences », avec une phrase disant que validation indépendante, surveillance continue et plan de repli vont au-delà de ce que retient la section 38.3 (inventaire, cote de risque inhérent, cote des modèles de tiers selon B-10, approbation avant tout changement)."
+   },
+   {
+    "sujet": "Seuil de l'article 12.1 de la Loi 25",
+    "traitement": "corrigé",
+    "changement": "Dans la puce « Décisions exclusivement automatisées (art. 12.1) », la condition « effets juridiques ou significatifs » est retirée et remplacée par une précision : « effets juridiques ou incidence importante » est la condition du projet de loi C-36 (art. 63; section 38.1), non de l'article 12.1."
+   },
+   {
+    "sujet": "Durée de conservation des traces",
+    "traitement": "nuance",
+    "changement": "La durée de sept ans (bloc YAML, ADR et encadré) est conservée; une phrase avant l'extrait 38.1 dit qu'elle est un choix de l'entreprise et rappelle ce que retient la section 38.4 (durée fixée par finalité, puis destruction ou anonymisation, sauf délai légal, art. 23), et dans l'encadré « l'inspection BSIF E-23 porte sur sept ans » devient « l'entreprise veut rejouer sur sept ans une décision soumise à l'inspection »."
+   },
+   {
+    "sujet": "Sanctions de la Loi 25",
+    "traitement": "relevé inexact",
+    "changement": "Aucun changement : l'exposé n'indique aucun plafond pénal sans le nier, donc le volet ne le contredit pas (le relevé le reconnaît lui-même), et je ne peux rien ajouter qui ne vienne pas de l'exposé."
+   }
+  ],
+  "remarques": "Les plafonds pénaux de 25 M$ CAD ou 4 % (art. 90.12 et 91 LPRPSP) restent dans le volet et ne sont pas vérifiables dans l'exposé : à confronter à la source [9] du chapitre. Je n'ai pas touché au reste du tableau comparatif (cellules E-23 « Séparation des tâches & plan de contingence », « suivi de dérive », « IA non déclarée »), à la liste de contrôle (point 3, « validation indépendante de 2e ligne ») ni à l'encadré « Triage de matérialité », qui présentent comme pratiques de l'entreprise des éléments que l'exposé ne décrit pas pour E-23; la phrase de nuance de la section 38.9 les couvre en partie. Les incohérences internes du volet (9 semaines dans l'ADR contre 9,5 dans le fil rouge, révision « Semestrielle » de l'ADR) restent, l'exposé ne les tranchant pas."
+ },
+ "chapitre-40-volet-a": {
+  "id": "chapitre-40-volet-a",
+  "controle_conforme": true,
+  "traitements": [
+   {
+    "sujet": "Refacturation interne",
+    "traitement": "nuance",
+    "changement": "Divergence confirmée (la section 40.10 et l'ADR-023 imposent la refacturation réelle à tout flux L2–L4, alors que l'exposé recommande d'afficher d'abord les coûts); une phrase ajoutée à la fin du premier paragraphe de 40.10 dit que cette règle va au-delà de ce que retient l'exposé et rappelle sa recommandation (section 40.2 et grille de décision), sans toucher à l'ADR ni à l'extrait."
+   },
+   {
+    "sujet": "Portée d'un plafond budgétaire",
+    "traitement": "corrigé",
+    "changement": "Dans l'ADR-023, « Risque d'emballement financier nul » devient « freiné, non exclu (un plafond est un frein, pas un mur : section 40.3) », et une phrase est ajoutée à la fin du premier paragraphe de 40.9 : l'exposé tient un quota à la passerelle pour un frein, non pour un mur (dépassement constaté après coup, requêtes concurrentes); « Zéro récidive » du fil rouge est laissé (fiction)."
+   },
+   {
+    "sujet": "Remise du cache de préfixe",
+    "traitement": "corrigé",
+    "changement": "Le « -75 à -90 % » du tableau de 40.7 et le « 75 à 90 % de remise … en mémoire GPU » du levier 1 de 40.9 sont remplacés par les prix de l'exposé (lecture à 0,1 fois le prix d'entrée sur la plupart des modèles, 0,05 ou 0,025 fois sur certains récents, section 40.6), et une phrase placée avant la démonstration arithmétique signale que la remise de 80 % est une hypothèse de calcul, sans modifier ses chiffres."
+   },
+   {
+    "sujet": "Effet du routage vers un petit modèle sur la qualité",
+    "traitement": "laissé",
+    "changement": "Le passage visé (76 % des appels absorbés par les SLM chez Groupe Boréal sans dégrader pass^5, section 40.11) relève du cas fictif : aucun changement."
+   }
+  ],
+  "remarques": "Contrôle automatique : « conforme » (3967 à 4128 mots). Les trois contradictions internes signalées (révision semestrielle ou trimestrielle de l'ADR-023, zone de 95 à 100 % non décrite, 50 à 75 % de réduction du numérateur contre une facture divisée par plus de onze) sont laissées : l'exposé ne tranche aucune d'elles. À examiner par le relecteur : la phrase de 40.9 « à constance pass^5 égale » (quatre leviers, dont la cascade SLM) est une affirmation générale que l'exposé nuance (routage à deux niveaux : -1,7 point de F1, perte de précision à mesurer); elle n'était pas dans le relevé, je n'y ai pas touché. Le « 80 % » de la démonstration peut se lire comme une remise effective sur l'ensemble de l'entrée, d'où la formulation prudente « hypothèse »; l'exposé précise aussi que les plafonds budgétaires d'agentgateway n'ont pas été lus."
+ },
+ "chapitre-41-volet-a": {
+  "id": "chapitre-41-volet-a",
+  "controle_conforme": true,
+  "traitements": [
+   {
+    "sujet": "Portée de l'obligation de maîtrise de l'IA (EU AI Act, art. 4)",
+    "traitement": "corrigé",
+    "changement": "Dans la section 41.8 (« Certification de littératie IA »), j'ai retiré « conformément à l'article 4 de l'EU AI Act », gardé la règle sur les droits CIBA et ajouté qu'elle va au-delà de ce que retient l'exposé, l'obligation européenne de maîtrise de l'IA (article 4) ayant été allégée par le Digital Omnibus (section 41.5, chapitre 35)."
+   },
+   {
+    "sujet": "Raison d'être et efficacité de la supervision humaine",
+    "traitement": "nuance",
+    "changement": "Dans l'introduction de la section 41.9, j'ai ajouté une phrase : selon l'exposé, le point d'approbation se justifie par l'imputabilité, non par la performance (section 41.2); l'effectivité visée par les règles et les canaris est celle d'un examen réellement exercé, non d'une meilleure décision moyenne. « Filet humain effectif » et « preuve empirique d'effectivité » sont intacts (ADR-025 aussi)."
+   },
+   {
+    "sujet": "Dimensionnement de la charge de supervision",
+    "traitement": "nuance",
+    "changement": "À la fin du paragraphe de la règle 3 (section 41.9), j'ai ajouté que le plafond calculé va au-delà de ce que retient l'exposé : aucune norme publiée ne fixe la charge d'un superviseur, et la supervision se dimensionne selon la charge mesurée d'exceptions et d'approbations (section 41.4). Formule, paramètres et 33 dossiers par quart sont conservés; les 24 superviseurs du fil rouge sont laissés (fiction)."
+   }
+  ],
+  "remarques": "Le contrôle répond « conforme » (4156 à 4071 mots). Pour la divergence 2, le volet n'affirme pas explicitement que l'humain améliore la décision; la tension vient de « filet » et de « preuve d'effectivité ». Je l'ai donc traitée par une nuance courte plutôt que par une correction, et le relecteur peut juger qu'un « relevé inexact » aurait suffi. Je n'ai pas touché au renvoi « chapitre 38 » (relations B2B), à l'assimilation propriétaire métier nominatif / propriétaire de l'agent ni aux 90 % et 95 % : l'exposé ne tranche pas ces points."
+ },
+ "chapitre-43-volet-a": {
+  "id": "chapitre-43-volet-a",
+  "controle_conforme": true,
+  "traitements": [
+   {
+    "sujet": "Modèle de maturité",
+    "traitement": "corrigé",
+    "changement": "Section 43.6 : « Le modèle de référence 2027 » devient « Cette grille », et deux phrases précisent qu'elle se distingue des cinq stades de 0 à 4 de la section 43.1 (mesurés par domaine d'affaires), que les deux échelles ne se correspondent pas et que, comme les stades, elle est une proposition sans validation empirique."
+   },
+   {
+    "sujet": "Découpage de la feuille de route",
+    "traitement": "corrigé",
+    "changement": "Section 43.9 : « trimestrielles » est retiré; les vagues sont dites « aux durées indicatives », avec renvoi à la section 43.2, qui découpe la feuille de route en jalons franchis sur preuve, non en trimestres."
+   },
+   {
+    "sujet": "Portée des constats sur le marché",
+    "traitement": "corrigé",
+    "changement": "Synthèse exécutive : « la plupart des grandes entreprises » devient « une entreprise peut… », avec la précision qu'aucune source lue ne répartit les entreprises par stade (section 43.1); encadré « Important » : le chiffre de 85 % est remplacé par « le niveau visé dépend du risque (section 43.1) »; section 43.7 : l'« audit des programmes en difficulté entre 2025 et 2027 » est retiré."
+   },
+   {
+    "sujet": "Catégories d'échec",
+    "traitement": "corrigé",
+    "changement": "Section 43.7 : « les échecs industriels découlent presque toujours de sept antipatterns » devient une liste présentée comme proposition non validée, sans correspondance établie avec la taxonomie MAST (quatorze modes d'échec, surtout de conception et de coordination, section 43.3)."
+   }
+  ],
+  "remarques": "Le relevé prête au volet que 85 % des flux « se situent » en N3 et N4 : le volet les donnait comme optimum de ces niveaux; le chiffre n'a de source nulle part et a été retiré. Les incohérences internes signalées (amnistie de 30 jours contre trois semaines, DECOMMISSION du fil rouge) sont laissées, l'exposé ne tranchant pas. Hors relevé, l'encadré sectoriel M&A garde deux chiffres généraux sans source dans l'exposé (« trois à cinq ans », « huit semaines »); je ne les ai pas touchés."
+ },
+ "chapitre-44-volet-a": {
+  "id": "chapitre-44-volet-a",
+  "controle_conforme": true,
+  "traitements": [
+   {
+    "sujet": "Nature du troisième palier",
+    "traitement": "corrigé",
+    "changement": "Le texte courant ne présente plus le palier 3 comme une catégorie de modèles ni comme un échelon : synthèse (cible de conception, « calcul au moment de l'inférence »), intro et puce du palier 3 de la section 44.8 (second axe, l'effort, qui ne rattrape pas un problème hors de portée du modèle), et phrase d'avertissement avant la formule, le tableau et l'Extrait 44.2, qui restent intacts (section 44.3)."
+   },
+   {
+    "sujet": "Activation du routage et palier par défaut",
+    "traitement": "corrigé",
+    "changement": "La décision de l'ADR-014 (« cible par défaut le palier 1 SLM ») devient un routage par classe de tâche, palier 1 là où une règle explicite l'établit et palier supérieur pour toute classe inconnue (section 44.3); une phrase avant l'Extrait 44.2 signale que le code arbitre sur un score de complexité et un nombre d'outils, alors que l'exposé active le routage par classe de tâche."
+   },
+   {
+    "sujet": "Rôle et nom d'Agent Router",
+    "traitement": "corrigé",
+    "changement": "Agent Router est rétabli comme nouveau nom d'Envoy AI Gateway, passerelle de l'AAIF distincte d'agentgateway (synthèse et section 44.7, avec renvoi à la section 44.2); le « module Agent Router » devient « routeur cognitif » dans l'intro de 44.8, la ligne « Routage intelligent » du tableau comparatif et l'option 3 de l'ADR; le titre de l'ADR est inchangé."
+   },
+   {
+    "sujet": "Version d'API de l'extension d'inférence",
+    "traitement": "avertissement",
+    "changement": "Le manifeste de l'Extrait 44.3 est inchangé; la phrase d'introduction signale qu'il utilise v1alpha2, alors que le site de l'extension publie une référence d'API v1 à côté de v1alpha1, sans préciser le statut de v1 (section 44.2)."
+   },
+   {
+    "sujet": "Grandeurs de latence mesurées",
+    "traitement": "nuance",
+    "changement": "Le p95 est conservé (synthèse, tableau des paliers, fil rouge), avec une mention en synthèse et une phrase avant le tableau précisant que l'exposé retient la médiane et le 99e centile, par classe de tâche (section 44.6); les chiffres du fil rouge ne sont pas touchés."
+   },
+   {
+    "sujet": "Niveau de preuve des gains du cache KV",
+    "traitement": "corrigé",
+    "changement": "Section 44.9 : « 80 % des FLOPS gaspillés, latence triple » est remplacé par les chiffres de l'exposé (débit de sortie triplé, TTFT deux fois plus court, Tesla et Red Hat, tourniquet comme base la plus faible, aucune évaluation indépendante; section 44.5); le « huit à douze fois plus rapide » du délestage est retiré, l'exposé n'en rapportant aucun gain; le 94 % de l'encadré télécoms devient une annonce sans évaluation indépendante; le 19 % à 88 % du cas Boréal est laissé (fiction)."
+   },
+   {
+    "sujet": "Origine de l'Endpoint Picker",
+    "traitement": "avertissement",
+    "changement": "Le manifeste de l'Extrait 44.3 est inchangé; la phrase d'introduction signale que boreal-kv-aware-epp est propre au Groupe Boréal, alors que le site de l'extension réserve son EPP léger aux tests de conformité et renvoie la production vers un EPP existant, tel celui de llm-d (section 44.5)."
+   }
+  ],
+  "remarques": "Le contrôle répond « conforme » (3970 à 4336 mots, 109 %); seul le volet a été modifié, 15 lignes touchées, sans toucher au code, aux figures, aux formules, aux titres d'extraits ni à la syntaxe des encadrés. Les contradictions internes du relevé (70 à 80 % contre 70 à 78 %, 150 ms contre 45 à 160 ms, L2 contre L3/L4, 4096 contre 6000 jetons, « trois problèmes » pour quatre puces) sont laissées, l'exposé ne tranchant pas. Hors relevé et non traités : « écrits en Rust », « ont émergé en 2026 » (44.7), « En production, 70 à 80 % » et « 3 à 7 % » (44.8), que l'exposé ne confirme pas."
+ },
+ "chapitre-45-volet-a": {
+  "id": "chapitre-45-volet-a",
+  "controle_conforme": true,
+  "traitements": [
+   {
+    "sujet": "Rôle du justificatif OOR pour un agent",
+    "traitement": "corrigé",
+    "changement": "Dans la strate 1 de 45.8, le texte dit désormais que le justificatif d'entité établit la contrepartie, que l'OOR établit le dirigeant qui peut l'engager et que l'agent agit sous une délégation distincte, bornée et révocable, avec la précision que rien ne prévoit l'émission d'un OOR à un agent et que l'acceptation du vLEI n'est pas vérifiée (section 45.3). Le point 1 de la liste de contrôle est reformulé dans le même sens. Une phrase d'avertissement précède l'Extrait 45.2, dont le champ `OOR:VP_SUPPLY_CHAIN_DELEGATE` reste intact. La décision (a) de l'ADR-026 est gardée, avec une phrase de nuance avant l'encadré : elle va au-delà du vLEI « si le réseau l'accepte » que retient l'exposé."
+   },
+   {
+    "sujet": "Application des politiques ODRL",
+    "traitement": "corrigé",
+    "changement": "« Interdit techniquement » devient « exprime l'interdiction », suivi d'une phrase (section 45.2) : ODRL n'applique rien, retirer un accord n'efface pas une copie, le respect dépend du consommateur et du contrat. « Exécutables » est retiré de la synthèse et remplacé par une mention que ODRL exprime sans appliquer. Dans le tableau de 45.8, « appliqué par le connecteur EDC » devient « négocié et surveillé par le connecteur EDC; le respect dépend du consommateur et du contrat »."
+   },
+   {
+    "sujet": "Moment d'émission du mandat AP2",
+    "traitement": "corrigé",
+    "changement": "À l'étape 1 de 45.10, le `CartMandate` devient un mandat contractuel (sans l'étiquette AP2), qui crée le bon de commande sans émettre de mandat de paiement AP2, et le texte renvoie à la section 45.7 : le mandat de paiement ne s'émet qu'après un rapprochement réussi. L'étape 4 place l'émission du mandat de paiement AP2 après la concordance, juste avant la libération de l'ordre de paiement."
+   },
+   {
+    "sujet": "Traitement du micropaiement x402",
+    "traitement": "corrigé",
+    "changement": "À l'étape 3 de 45.10, le x402 sort de la liste des demandes soumises au rapprochement préalable, et une phrase dit que le micropaiement x402 échappe à ce rapprochement et passe par un portefeuille dédié et plafonné avec rapprochement a posteriori (section 45.7). La mention x402 est retirée de l'étape 4, la synthèse (décision 3) et le point 7 de la liste de contrôle sont alignés, et une phrase de nuance avant l'ADR dit que la décision (c) et l'option retenue valent hors micropaiement x402."
+   },
+   {
+    "sujet": "Portée des protections annoncées",
+    "traitement": "corrigé",
+    "changement": "Dans les conséquences de l'ADR-026, « élimination de la fraude à la facturation autonome » devient une réduction du risque de paiement indu, que le rapprochement ne supprime pas (compensation, section 45.7), et la protection du secret d'affaires est limitée à la divulgation directe, les concessions révélant encore le prix de réserve (section 45.4). Les 0 % de fuite du fil rouge sont laissés (fiction). L'encadré sectoriel ne parle plus d'« irréprochable » : sans objet."
+   }
+  ],
+  "remarques": "Seul `Master/fusion/reecrit/chapitre-45-volet-a.md` est modifié; le contrôle répond « conforme » (102 %). Deux points à relire. Le renommage du `CartMandate` en mandat contractuel interprète le volet : l'exposé ne définit pas cet objet, et le tableau et le code (`MandateTerms`, « mandat signé ») gardent le mot « mandat » pour la première voie. Deux autres affirmations d'adoption, hors du relevé, n'ont pas été traitées : « déployé ... en 2027 » dans l'introduction des quatre strates de 45.8, et « vLEI et rôle OOR vérifiables instantanément » dans le tableau. Les contradictions internes signalées (Groupe Boréal Synergie Inc. contre Groupe Boréal Inc.) sont laissées, l'exposé ne tranchant pas."
+ },
+ "chapitre-46-volet-a": {
+  "id": "chapitre-46-volet-a",
+  "controle_conforme": true,
+  "traitements": [
+   {
+    "sujet": "Décompte et contenu des « six substrats d'état »",
+    "traitement": "corrigé",
+    "changement": "Dans l'introduction de 46.9, le volet dit maintenant que la grille de la section 46.1 est une proposition sans source qui compte six états autrement composés, que les six couches listées sont un inventaire proposé et non un décompte établi, et que « six substrats d'état » ne se retrouve dans aucune source; l'ADR (option 3) et le premier point de la liste de contrôle renvoient désormais à l'inventaire proposé de la section 46.9."
+   },
+   {
+    "sujet": "Portée des TEE et résistance à une injonction extraterritoriale",
+    "traitement": "corrigé",
+    "changement": "Synthèse (décision 2) : seuls les logiciels et les administrateurs de l'exploitant sont retirés de la base de confiance, et le TEE élève le coût de l'accès sans le rendre impossible (section 46.2); tableau des modèles de clés : visibilité « nulle pour les logiciels et les administrateurs de l'hébergeur » et résistance « la plus élevée du tableau, non absolue » au lieu de « Maximale (isolation matérielle prouvée) »; section 46.10 : la réquisition n'obtient « que ces blocs » devient ce que l'hébergeur peut remettre, avec rappel que les clés détenues ne sont pas une réponse juridique (section 46.1); ADR : « Conformité souveraine démontrable » remplacée par une réduction de ce que l'exploitant peut remettre, sans valoir réponse juridique."
+   },
+   {
+    "sujet": "Rôle de HYOK",
+    "traitement": "nuance",
+    "changement": "Paragraphe ajouté avant le tableau des modèles de clés en 46.10 : la visibilité nulle sur les PII vient de la pseudonymisation en amont, HYOK seul est un levier de révocation et non une barrière pendant le traitement, et selon AWS le risque pour la disponibilité dépasse le bénéfice pour la plupart des charges (section 46.3); la grille de décision réserve HYOK aux classes qui l'exigent, ce qui reste compatible avec l'exigence de l'ADR-027 pour C2 et C3."
+   },
+   {
+    "sujet": "Seuil RTO de 15 minutes",
+    "traitement": "corrigé",
+    "changement": "Synthèse : libellé « Exigée en résilience prudentielle » remplacé par « Cible de conception en résilience prudentielle », « bascule » devient « vise une bascule » et une phrase dit que le seuil n'a pas de source et se fixe par classe de tâche puis se valide par exercice (section 46.4); avertissement ajouté avant la formule de RTO_cog (plausible seulement pour le reroutage vers un modèle déjà qualifié, la requalification étant une seconde horloge); l'ADR (option 3) et le point 8 de la liste de contrôle présentent le seuil comme cible à mesurer; la formule, le fil rouge (11 min 14 s) et le code sont intacts."
+   },
+   {
+    "sujet": "Emplacement du modèle de secours",
+    "traitement": "nuance",
+    "changement": "Phrase ajoutée à la fin de l'introduction de 46.11 : le secours toujours souverain à poids ouverts va au-delà de la section 46.4, qui retient un modèle de secours par classe de tâche, chez un autre exploitant, et autohébergé pour les classes critiques; synthèse, piliers et ADR sont laissés tels quels."
+   }
+  ],
+  "remarques": "Contrôle « conforme » (4421 à 4655 mots). Non traités, hors relevé : la phrase de 46.10 sur le calcul confidentiel GPU « arrivé à maturité » sur Hopper et Blackwell, que l'exposé ne confirme pas (il n'a lu que la vue d'ensemble de NVIDIA), et le rapport d'attestation « signé par sa racine silicium », que TEE.fail met en cause (section 46.2). Les incohérences internes (pass^5 à 0,94 contre plancher de 0,90 dans le code, exercice « annuel » de l'encadré sectoriel contre trimestriel ailleurs, 96,4 % du fil rouge) sont laissées : l'exposé ne les tranche pas. L'ADR et le premier point de la liste de contrôle ont reçu un court renvoi à la section 46.9 pour ne plus présenter « 6 » comme un décompte établi."
+ },
+ "chapitre-46-volet-b": {
+  "id": "chapitre-46-volet-b",
+  "controle_conforme": true,
+  "traitements": [
+   {
+    "sujet": "Seuil de 72 heures d'autonomie",
+    "traitement": "corrigé",
+    "changement": "Dans la synthèse, « autonomie garantie ≥ 72 h » devient une durée de survie calculée par site et vérifiée par essai, avec 72 h comme cible sans source (section 46.5); même reformulation pour le point 1 de la liste de contrôle; phrases d'avertissement (section 46.5) avant la figure, le tableau des profils de nœud, les paliers de gradation et l'extrait 46.6; l'ADR-028 (a) est gardé, avec une nuance disant qu'il va au-delà de la section 46.5; fil rouge laissé tel quel."
+   },
+   {
+    "sujet": "Simplex, certification et conformité aux normes",
+    "traitement": "corrigé",
+    "changement": "« Certifié » et « certifiable » deviennent « vérifié » (synthèse, pont de la section 46.15, contrôleur de repli, ADR-028 (c)); « SIL 3 / PL d » est présenté comme niveau visé; une phrase (section 46.7) rappelle que Simplex est un patron d'architecture, non une voie de certification, dans la synthèse et avant le tableau des couches; dans l'ADR-028, « sûreté des personnes garantie » est ramenée à un contrôleur vérifié et isolé, et « non-conformité aux normes » à l'absence d'enveloppe vérifiée (section 46.7)."
+   },
+   {
+    "sujet": "Édition de l'ISO 10218",
+    "traitement": "corrigé",
+    "changement": "« ISO 10218-1/2:2025 » devient « ISO 10218-1:2025; l'intégration relève de l'ISO 10218-2, section 46.7 » dans la couche 3 de la section 46.15; l'intitulé gras de cette couche passe de « ISO 10218:2025 » à « ISO 10218-1:2025 »."
+   },
+   {
+    "sujet": "Retour arrière d'une mise à jour",
+    "traitement": "relevé inexact",
+    "changement": "Rien n'a changé : la règle de l'exposé (section 46.8) porte sur les métadonnées TUF, que le client refuse si leur version est inférieure, alors que le volet décrit un rebasculement local du chien de garde sur la partition A déjà installée, mécanisme que l'exposé n'aborde pas; le volet ne dit nulle part « sans livraison d'une nouvelle version »."
+   }
+  ],
+  "remarques": "Le contrôle répond « conforme »; seul chapitre-46-volet-b.md est modifié. Le relevé ne citait ni la figure ni l'extrait 46.6 pour le seuil de 72 h, ni l'option 2 de l'ADR-028 pour la « non-conformité aux normes »; je les ai traités par cohérence avec le même sujet. Le rejet du point 4 est un jugement : un relecteur qui juge ambigu l'intitulé « retour arrière automatique » pourrait ajouter une phrase renvoyant à la section 46.8. Laissés faute d'arbitrage par l'exposé : les écarts de watts, L1 contre L1/L2, la limite de 24 h, les « rôles » de signature du volet comparés aux rôles TUF de la section 46.8, et les dates 2027 du fil rouge."
+ },
+ "chapitre-47-volet-a": {
+  "id": "chapitre-47-volet-a",
+  "controle_conforme": true,
+  "traitements": [
+   {
+    "sujet": "Seuil de mutation",
+    "traitement": "corrigé",
+    "changement": "Le seuil de 85 % est signalé comme sans source et ramené aux trois conditions de la section 47.3 (code modifié, calibré par module à partir du score observé avant les agents, mutants équivalents exclus), dans la synthèse, le portier, le tableau des garde-fous, l'option 3 de l'ADR et le point 4 de la liste de contrôle."
+   },
+   {
+    "sujet": "Fenêtre et critère de l'exécution en miroir",
+    "traitement": "corrigé",
+    "changement": "Le « cycle mensuel » devient un cycle d'affaires complet, clôture périodique comprise; 30 jours et 0,00 $ sont donnés comme cibles de conception sans source (trente jours couvrent une fin de mois, pas une fin d'exercice) et chaque écart ignoré est une décision signée (section 47.4); « 0,00 $ constaté sur 30 j » devient une cible au tableau, et la synthèse et le point 7 de la liste de contrôle sont ajustés."
+   },
+   {
+    "sujet": "Exécution en miroir et écritures",
+    "traitement": "nuance",
+    "changement": "Dans la section 47.11, après la description du comparateur en essai à blanc, deux phrases rappellent la limite de la section 47.4 (sûre seulement sans modification de données; double écriture puis comparaison à la lecture; exécution parallèle sur le même fichier d'entrée pour les lots) et disent que l'essai à blanc est une variante propre au volet."
+   },
+   {
+    "sujet": "Index SCIP pour le patrimoine",
+    "traitement": "corrigé",
+    "changement": "Dans la synthèse, la liste de contrôle et les conséquences de l'ADR, SCIP ne vaut que là où un indexeur existe; la section 47.10 ajoute que, pour COBOL et RPG, l'index vient de l'outillage de l'éditeur ou n'existe pas (section 47.2) et que RPG n'est traité par aucune source lue (section 47.4)."
+   },
+   {
+    "sujet": "Statut de la séparation des rôles",
+    "traitement": "corrigé",
+    "changement": "La section 47.9 présente la séparation en deux rôles comme une extrapolation à valider avec approbation humaine entre les deux (section 47.1, chapitre 22), dit que les quatre rôles et la signature à la fusion vont au-delà de l'exposé, et le statut de l'ADR devient « Acceptée (… extrapolation à valider; section 47.1) »; la règle « le spécificateur ne voit jamais le code candidat » est laissée, car compatible avec les sections 47.1 et 47.3."
+   }
+  ],
+  "remarques": "Seul Master/fusion/reecrit/chapitre-47-volet-a.md est modifié (16 lignes); code, figures, formules, titres d'extraits et titre de l'ADR sont intacts, et le contrôle répond « conforme » (104 % de l'original). Laissés faute d'arbitrage par l'exposé : 85 % dans le texte contre minMutationKillScore 0.88 dans l'Extrait 47.2, 100 000 transactions et 10 000 à 100 000 cas (sans source dans l'exposé), 50 000 contre 60 000 cas, 1,5 contre 1,4 million de lignes, et les chiffres « ×5 », « échec > 70 % », « 8 % », « 250 lignes ». Je n'ai pas touché non plus au verdict « Standard de référence du compendium », à l'amorce ANTLR / Tree-sitter de l'étape 1, ni à PL/SQL (que l'exposé ne nomme pas parmi les langages sans indexeur SCIP)."
+ },
+ "chapitre-47-volet-b": {
+  "id": "chapitre-47-volet-b",
+  "controle_conforme": true,
+  "traitements": [
+   {
+    "sujet": "Version d'ODCS",
+    "traitement": "avertissement",
+    "changement": "Le bloc de l'Extrait 47.4 reste intact (il déclare la v3.0.1); une phrase ajoutée juste avant le bloc signale que l'exposé retient la version 3.2.0 selon le chapitre 15, une 4.0.0 étant annoncée (section 47.5); le texte « ODCS v3 » est laissé, car compatible avec la 3.2.0."
+   },
+   {
+    "sujet": "Isolement d'une rupture de schéma par la branche",
+    "traitement": "avertissement",
+    "changement": "Le champ driftOrSchemaBreak du YAML reste intact; une phrase ajoutée avant l'Extrait 47.4 précise que, selon l'exposé, le schéma de la table vaut pour toutes les branches et qu'une branche n'isole pas un changement de schéma (section 47.5)."
+   },
+   {
+    "sujet": "Balisage des champs libres des journaux",
+    "traitement": "corrigé",
+    "changement": "Dans la section 47.15, « neutralisent » devient « encadrent », et les balises <untrusted_external_input> ne « interdisent » plus l'interprétation : elles signalent un contenu non fiable, avec le rappel de l'exposé (consigne de ne rien exécuter : un modèle exécute encore dans 30 % des essais; ne pas compter sur le filtre; seules tiennent les mesures architecturales, section 47.6)."
+   }
+  ],
+  "remarques": "Seul le volet réécrit a été modifié; le contrôle répond « conforme » (102 % du volume d'origine). Dans le troisième point, j'assimile le balisage à une consigne pour le rattacher au résultat de 30 % de l'exposé : c'est une inférence que le relecteur peut vouloir confirmer. Les contradictions internes signalées dans les remarques du relevé (PSI 0,25 contre 0,20, 88 % contre le 85 % hors volet, paliers R1, « trois à quatre » sous-agents, 1,3 % gelé au fil rouge) sont laissées, l'exposé ne les tranchant pas; le fil rouge, qui parle d'un changement de format JSON intercepté sur la branche, relève de la fiction et reste inchangé."
+ },
+ "chapitre-47-volet-c": {
+  "id": "chapitre-47-volet-c",
+  "controle_conforme": true,
+  "traitements": [
+   {
+    "sujet": "Chargement des adaptateurs en production",
+    "traitement": "relevé inexact",
+    "changement": "Rien modifié : le volet ne parle jamais de chargement à chaud; conserver l'adaptateur N-1 en VRAM, router le canari de 10 % à 100 % et décommissionner « au profit du palier supérieur » (repli vers l'enseignant) ne suppose aucun chargement à l'exécution et reste compatible avec le chargement au démarrage de la section 47.8."
+   },
+   {
+    "sujet": "Référence de mesure de l'élève",
+    "traitement": "nuance",
+    "changement": "Une phrase ajoutée à la fin du point « Échantillonnage sentinelle » de 47.20 : le ratio de la porte de promotion et le taux d'accord situent l'élève par rapport à l'enseignant, ce qui va au-delà de la section 47.8, où l'élève se mesure sur le banc interne du chapitre 33, pas contre l'enseignant, dont il hérite les erreurs."
+   },
+   {
+    "sujet": "Statut de la recette Multi-LoRA (SFT + DPO)",
+    "traitement": "avertissement",
+    "changement": "Deux phrases ajoutées dans le texte courant : avant le tableau comparatif de 47.20 (chiffres présentés comme illustration d'une cible de conception, recette à valider, aucune mesure lue sur un élève distillé, section 47.8) et après la phrase d'ouverture de 47.22 devant l'ADR-031 (recette qui reste une cible de conception à valider); le statut « Acceptée », le titre de l'ADR et les chiffres du fil rouge (« vérifié ») sont laissés, car relevant de la décision et de la fiction du Groupe Boréal."
+   },
+   {
+    "sujet": "Protocole d'exposition des canaris",
+    "traitement": "nuance",
+    "changement": "Une phrase ajoutée à la fin du deuxième paragraphe de « Test d'exposition des canaris » : le protocole détaillé va au-delà de la section 47.7 (canari = séquence artificielle unique glissée dans le jeu d'entraînement, exposition mesurée dans le modèle, publication bloquée s'il ressort), le résumé lu de Carlini ne décrivant ni les canaris ni la métrique, et le nombre de canaris et de témoins, le seuil et le décodage n'étant décrits dans aucune source lue."
+   }
+  ],
+  "remarques": "Contrôle conforme (96 %), quatre lignes touchées dans le seul volet, rien d'autre. Sur la divergence 2, je n'ai pas touché au code ni aux libellés de la porte pass^5 : la parité compare deux scores mesurés sur le jeu de réserve scellé, mais l'exposé ne mentionne ni τ-bench ni pass^k, et rien ne dit que ce jeu est le « banc interne du chapitre 33 » (déduction, non vérifiée). Non traités, hors relevé : « un élève 8B distillé peut y égaler ou surpasser un modèle géant » (47.20) n'est pas confirmé par l'exposé, et les contradictions internes signalées par le relevé (200 contre 500 canaris, seuils de latence, 82/85/86 %) sont laissées, l'exposé ne les tranchant pas."
+ }
+}

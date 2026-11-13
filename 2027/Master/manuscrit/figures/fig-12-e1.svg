@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 380" width="880" height="380">
+<rect width="880" height="380" fill="#ffffff"/>
+<rect x="40" y="36" width="220" height="76" rx="6" fill="#eef2fb" stroke="#2f5fd0" stroke-width="1.2"/>
+<text x="150" y="78.225" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="13" font-weight="bold" fill="#14233f">Agent des ventes</text>
+<rect x="620" y="36" width="220" height="76" rx="6" fill="#eef2fb" stroke="#2f5fd0" stroke-width="1.2"/>
+<text x="730" y="78.225" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="13" font-weight="bold" fill="#14233f">Agent des finances</text>
+<line x1="260" y1="58" x2="620" y2="58" stroke="#14233f" stroke-width="1.4"/>
+<polygon points="620,58 611,62 611,54" fill="#14233f"/>
+<text x="440" y="49" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="12" fill="#14233f">demande le « revenu du trimestre »</text>
+<line x1="620" y1="90" x2="260" y2="90" stroke="#5f6b7a" stroke-width="1.4"/>
+<polygon points="260,90 269,86 269,94" fill="#5f6b7a"/>
+<text x="440" y="109" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="12" fill="#5f6b7a">réponse : revenue, nombre décimal</text>
+<text x="440" y="132" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" font-weight="bold" fill="#2c6b58">schéma respecté</text>
+<line x1="150" y1="112" x2="150" y2="158" stroke="#9aa5b4" stroke-width="1.3" stroke-dasharray="5 4"/>
+<rect x="40" y="158" width="220" height="70" rx="6" fill="#ffffff" stroke="#9aa5b4" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text x="150" y="187.75" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11" font-style="italic" fill="#5f6b7a">entend :</text>
+<text x="150" y="206.75" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="12.5" fill="#14233f">commandes signées</text>
+<line x1="730" y1="112" x2="730" y2="158" stroke="#9aa5b4" stroke-width="1.3" stroke-dasharray="5 4"/>
+<rect x="620" y="158" width="220" height="70" rx="6" fill="#ffffff" stroke="#9aa5b4" stroke-width="1.2" stroke-dasharray="5 4"/>
+<text x="730" y="179.5" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11" font-style="italic" fill="#5f6b7a">entend :</text>
+<text x="730" y="198.5" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="12.5" fill="#14233f">montants reconnus</text>
+<text x="730" y="215" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="12.5" fill="#14233f">en comptabilité</text>
+<text x="440" y="190" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="26" font-weight="bold" fill="#9c2f2f">≠</text>
+<text x="440" y="214" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="12" font-weight="bold" fill="#9c2f2f">même terme, deux sens</text>
+<line x1="40" y1="252" x2="840" y2="252" stroke="#dfe3ea" stroke-width="1.3"/>
+<rect x="40" y="272" width="390" height="74" rx="6" fill="#f5f6f8" stroke="#5f6b7a" stroke-width="1.2"/>
+<text x="235" y="303.305" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="13" font-weight="bold" fill="#14233f">Erreur de syntaxe</text>
+<text x="235" y="322.605" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="12" fill="#5f6b7a">Produit un rejet</text>
+<rect x="450" y="272" width="390" height="74" rx="6" fill="#f9eaea" stroke="#9c2f2f" stroke-width="1.2"/>
+<text x="645" y="295.385" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="13" font-weight="bold" fill="#9c2f2f">Erreur de sens : silencieuse</text>
+<text x="645" y="314.685" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="12" fill="#5f6b7a">Produit une réponse bien formée,</text>
+<text x="645" y="330.525" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="12" fill="#5f6b7a">que l&#x27;agent suivant reprend comme un fait</text>
+</svg>

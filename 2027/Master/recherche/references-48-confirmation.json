@@ -1,0 +1,1993 @@
+{
+ "Ehtesham2025": {
+  "titre": "A survey of agent interoperability protocols: Model Context Protocol (MCP), Agent Communication Protocol (ACP), Agent-to-Agent Protocol (A2A), and Agent Network Protocol (ANP)",
+  "auteur": "Ehtesham et coll.",
+  "lieu": "arXiv",
+  "annee": "2025",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "A survey of agent interoperability protocols: Model Context Protocol (MCP), Agent Communication Protocol (ACP), Agent-to-Agent Protocol (A2A), and Agent Network Protocol (ANP)",
+   "id": "2505.02279v2",
+   "date": "2025-05-04",
+   "auteur1": "Abul Ehtesham",
+   "nb_auteurs": 4
+  },
+  "crossref": {
+   "sim": 0.486,
+   "titre": "Model Context Protocol (MCP) or Agent-to-Agent (A2A) — Defining Right Communication Protocol for Agentic AI in Financial Services Use Cases",
+   "doi": "10.55524/ijirem.2026.13.4.5",
+   "lieu": "International Journal of Innovative Research in Engineering and Management",
+   "type": "journal-article",
+   "annee": 2026,
+   "auteur1": "Ghosh",
+   "nb_auteurs": 2
+  }
+ },
+ "Yang2025": {
+  "titre": "A Survey of AI Agent Protocols",
+  "auteur": "Yang et coll.",
+  "lieu": "arXiv",
+  "annee": "2025",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "A Survey of AI Agent Protocols",
+   "id": "2504.16736v3",
+   "date": "2025-04-23",
+   "auteur1": "Yingxuan Yang",
+   "nb_auteurs": 14
+  },
+  "crossref": {
+   "sim": 0.718,
+   "titre": "A survey on mobile agent communication protocols",
+   "doi": "10.1109/icet.2012.6375488",
+   "lieu": "2012 International Conference on Emerging Technologies",
+   "type": "proceedings-article",
+   "annee": 2012,
+   "auteur1": "Ahmed",
+   "nb_auteurs": 2
+  }
+ },
+ "Ferrag2026": {
+  "titre": "From LLM Reasoning to Autonomous AI Agents: A Comprehensive Review",
+  "auteur": "Ferrag et coll.",
+  "lieu": "IEEE Access",
+  "annee": "2026",
+  "groupe": "P",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "From LLM Reasoning to Autonomous AI Agents: A Comprehensive Review",
+   "id": "2504.19678v2",
+   "date": "2025-04-28",
+   "auteur1": "Mohamed Amine Ferrag",
+   "nb_auteurs": 3
+  },
+  "crossref": {
+   "sim": 1.0,
+   "titre": "From LLM Reasoning to Autonomous AI Agents: A Comprehensive Review",
+   "doi": "10.1109/access.2026.3698694",
+   "lieu": "IEEE Access",
+   "type": "journal-article",
+   "annee": 2026,
+   "auteur1": "Ferrag",
+   "nb_auteurs": 3
+  }
+ },
+ "Sander2026": {
+  "titre": "A Technical Taxonomy of LLM Agent Communication Protocols",
+  "auteur": "Sander et coll.",
+  "lieu": "Research Square",
+  "annee": "2026",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "A Technical Taxonomy of LLM Agent Communication Protocols",
+   "id": "2606.19135v1",
+   "date": "2026-06-17",
+   "auteur1": "Linus Sander",
+   "nb_auteurs": 4
+  },
+  "crossref": {
+   "sim": 1.0,
+   "titre": "A Technical Taxonomy of LLM Agent Communication Protocols",
+   "doi": "10.21203/rs.3.rs-10919831/v1",
+   "lieu": "",
+   "type": "posted-content",
+   "annee": 2026,
+   "auteur1": "Sander",
+   "nb_auteurs": 4
+  }
+ },
+ "Predoaia2026": {
+  "titre": "A Comparative Study of MCP and A2A for Inter-Agent Coordination in LLM-Based Systems",
+  "auteur": "Predoaia et coll.",
+  "lieu": "arXiv",
+  "annee": "2026",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "A Comparative Study of MCP and A2A for Inter-Agent Coordination in LLM-Based Systems",
+   "id": "2607.23884v1",
+   "date": "2026-07-26",
+   "auteur1": "Ionut Predoaia",
+   "nb_auteurs": 5
+  },
+  "crossref": {
+   "sim": 0.526,
+   "titre": "A Practical MCP×A2A Integration Framework for Interoperability in LLM-Based Autonomous Multi-Agent Systems",
+   "doi": "10.13088/jiis.2025.31.10.141",
+   "lieu": "Journal of Intelligence and Information Systems",
+   "type": "journal-article",
+   "annee": 2025,
+   "auteur1": "Jeong",
+   "nb_auteurs": 1
+  }
+ },
+ "Yuan2026": {
+  "titre": "Beyond Message Passing: A Semantic View of Agent Communication Protocols",
+  "auteur": "Yuan et coll.",
+  "lieu": "arXiv",
+  "annee": "2026",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "Beyond Message Passing: A Semantic View of Agent Communication Protocols",
+   "id": "2604.02369v3",
+   "date": "2026-03-30",
+   "auteur1": "Dun Yuan",
+   "nb_auteurs": 14
+  },
+  "crossref": {
+   "sim": 0.672,
+   "titre": "Semantic Web Technology for Agent Communication Protocols",
+   "doi": "10.1007/978-3-540-68234-9_4",
+   "lieu": "Lecture Notes in Computer Science",
+   "type": "book-chapter",
+   "annee": null,
+   "auteur1": "Berges",
+   "nb_auteurs": 4
+  }
+ },
+ "Anbiaee2026": {
+  "titre": "Security threat modeling for emerging AI-agent protocols: A comparative analysis of MCP, A2A, agora, and ANP",
+  "auteur": "Anbiaee et coll.",
+  "lieu": "Journal of Information Security and Applications",
+  "annee": "2026",
+  "groupe": "P",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "Security Threat Modeling for Emerging AI-Agent Protocols: A Comparative Analysis of MCP, A2A, Agora, and ANP",
+   "id": "2602.11327v2",
+   "date": "2026-02-11",
+   "auteur1": "Zeynab Anbiaee",
+   "nb_auteurs": 7
+  },
+  "crossref": {
+   "sim": 1.0,
+   "titre": "Security threat modeling for emerging AI-agent protocols: A comparative analysis of MCP, A2A, agora, and ANP",
+   "doi": "10.1016/j.jisa.2026.104645",
+   "lieu": "Journal of Information Security and Applications",
+   "type": "journal-article",
+   "annee": 2026,
+   "auteur1": "Anbiaee",
+   "nb_auteurs": 7
+  }
+ },
+ "Hou2026": {
+  "titre": "Model Context Protocol (MCP): Landscape, Security Threats, and Future Research Directions",
+  "auteur": "Hou et coll.",
+  "lieu": "ACM Transactions on Software Engineering and Methodology",
+  "annee": "2026",
+  "groupe": "P",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "Model Context Protocol (MCP): Landscape, Security Threats, and Future Research Directions",
+   "id": "2503.23278v3",
+   "date": "2025-03-30",
+   "auteur1": "Xinyi Hou",
+   "nb_auteurs": 4
+  },
+  "crossref": {
+   "sim": 1.0,
+   "titre": "Model Context Protocol (MCP): Landscape, Security Threats, and Future Research Directions",
+   "doi": "10.1145/3796519",
+   "lieu": "ACM Transactions on Software Engineering and Methodology",
+   "type": "journal-article",
+   "annee": 2026,
+   "auteur1": "Hou",
+   "nb_auteurs": 4
+  }
+ },
+ "ZhangMSB2025": {
+  "titre": "MCP Security Bench (MSB): Benchmarking Attacks Against Model Context Protocol in LLM Agents",
+  "auteur": "Zhang et coll.",
+  "lieu": "arXiv",
+  "annee": "2025",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "MCP Security Bench (MSB): Benchmarking Attacks Against Model Context Protocol in LLM Agents",
+   "id": "2510.15994v2",
+   "date": "2025-10-14",
+   "auteur1": "Dongsen Zhang",
+   "nb_auteurs": 6
+  },
+  "crossref": {
+   "sim": 0.555,
+   "titre": "FinMCP-Bench: Benchmarking LLM Agents for Real-World Financial Tool Use Under the Model Context Protocol",
+   "doi": "10.1109/icassp55912.2026.11460653",
+   "lieu": "ICASSP 2026 - 2026 IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)",
+   "type": "proceedings-article",
+   "annee": 2026,
+   "auteur1": "Zhu",
+   "nb_auteurs": 11
+  }
+ },
+ "Ahmad2026": {
+  "titre": "Model Context Protocol Servers: A Systematic Review of Designs, Use Cases and Future Directions",
+  "auteur": "Ahmad et coll.",
+  "lieu": "International Journal of Advanced Networking and Applications",
+  "annee": "2026",
+  "groupe": "P",
+  "arxiv": null,
+  "crossref": {
+   "sim": 1.0,
+   "titre": "Model Context Protocol Servers: A Systematic Review of Designs, Use Cases and Future Directions",
+   "doi": "10.35444/ijana.2026.17605",
+   "lieu": "International Journal of Advanced Networking and Application",
+   "type": "journal-article",
+   "annee": 2026,
+   "auteur1": "Ahmad",
+   "nb_auteurs": 2
+  }
+ },
+ "Qian2026": {
+  "titre": "MPAC: A Multi-Principal Agent Coordination Protocol for Interoperable Multi-Agent Collaboration",
+  "auteur": "Qian et coll.",
+  "lieu": "arXiv",
+  "annee": "2026",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "MPAC: A Multi-Principal Agent Coordination Protocol for Interoperable Multi-Agent Collaboration",
+   "id": "2604.09744v1",
+   "date": "2026-04-10",
+   "auteur1": "Kaiyang Qian",
+   "nb_auteurs": 3
+  },
+  "crossref": {
+   "sim": 0.517,
+   "titre": "Collaboration and Coordination in Multi-Agent Systems",
+   "doi": "10.36227/techrxiv.172902764.41177581/v1",
+   "lieu": "",
+   "type": "posted-content",
+   "annee": 2024,
+   "auteur1": "Ignise",
+   "nb_auteurs": 2
+  }
+ },
+ "Dobrovolskyi2026": {
+  "titre": "Empirical Comparison of Agent Communication Protocols for Task Orchestration",
+  "auteur": "Dobrovolskyi",
+  "lieu": "Radio Electronics, Computer Science, Control",
+  "annee": "2026",
+  "groupe": "P",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "Empirical Comparison of Agent Communication Protocols for Task Orchestration",
+   "id": "2603.22823v3",
+   "date": "2026-03-24",
+   "auteur1": "Ivan Dobrovolskyi",
+   "nb_auteurs": 1
+  },
+  "crossref": {
+   "sim": 1.0,
+   "titre": "EMPIRICAL COMPARISON OF AGENT COMMUNICATION PROTOCOLS FOR TASK ORCHESTRATION",
+   "doi": "10.15588/1607-3274-2026-3-9",
+   "lieu": "Radio Electronics, Computer Science, Control",
+   "type": "journal-article",
+   "annee": 2026,
+   "auteur1": "Dobrovolskyi",
+   "nb_auteurs": 1
+  }
+ },
+ "Lotfi2026": {
+  "titre": "A2ABreak: Systematic Security Analysis of the A2A Protocol",
+  "auteur": "Lotfi et coll.",
+  "lieu": "arXiv",
+  "annee": "2026",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "A2ABreak: Systematic Security Analysis of the A2A Protocol",
+   "id": "2609.10871v3",
+   "date": "2026-09-09",
+   "auteur1": "Alireza Lotfi",
+   "nb_auteurs": 4
+  },
+  "crossref": {
+   "sim": 0.889,
+   "titre": "A systematic security analysis of the AODV protocol",
+   "doi": "10.31274/rtd-20200716-10",
+   "lieu": "",
+   "type": "dissertation",
+   "annee": null,
+   "auteur1": "Jones",
+   "nb_auteurs": 1
+  }
+ },
+ "Prakash2026": {
+  "titre": "LDP: An Identity-Aware Protocol for Multi-Agent LLM Systems",
+  "auteur": "Prakash",
+  "lieu": "arXiv",
+  "annee": "2026",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "LDP: An Identity-Aware Protocol for Multi-Agent LLM Systems",
+   "id": "2603.08852v1",
+   "date": "2026-03-09",
+   "auteur1": "Sunil Prakash",
+   "nb_auteurs": 1
+  },
+  "crossref": {
+   "sim": 1.0,
+   "titre": "LDP: An Identity-Aware Protocol for Multi-Agent LLM Systems",
+   "doi": "10.21203/rs.3.rs-9121599/v1",
+   "lieu": "",
+   "type": "posted-content",
+   "annee": 2026,
+   "auteur1": "Prakash",
+   "nb_auteurs": 1
+  }
+ },
+ "Derouiche2025": {
+  "titre": "Agentic AI Frameworks: Architectures, Protocols, and Design Challenges",
+  "auteur": "Derouiche et coll.",
+  "lieu": "arXiv",
+  "annee": "2025",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "Agentic AI Frameworks: Architectures, Protocols, and Design Challenges",
+   "id": "2508.10146v1",
+   "date": "2025-08-13",
+   "auteur1": "Hana Derouiche",
+   "nb_auteurs": 3
+  },
+  "crossref": {
+   "sim": 0.609,
+   "titre": "Toward the Internet of Agentic AI: Protocols, Architecture, and Challenges",
+   "doi": "10.1109/mcom.001.2500309",
+   "lieu": "IEEE Communications Magazine",
+   "type": "journal-article",
+   "annee": 2026,
+   "auteur1": "Ren",
+   "nb_auteurs": 8
+  }
+ },
+ "Xing2026": {
+  "titre": "The Natural Language Interaction Protocol and Standard for AI Agents",
+  "auteur": "Xing et coll.",
+  "lieu": "Proceedings of the ACM AI Leadership Summit",
+  "annee": "2026",
+  "groupe": "P",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "The Natural Language Interaction Protocol and Standard for AI Agents",
+   "id": "2609.04135v1",
+   "date": "2026-09-03",
+   "auteur1": "Luyi Xing",
+   "nb_auteurs": 12
+  },
+  "crossref": {
+   "sim": 1.0,
+   "titre": "The Natural Language Interaction Protocol and Standard for AI Agents",
+   "doi": "10.1145/3806096.3844848",
+   "lieu": "Proceedings of the ACM AI Leadership Summit 2026",
+   "type": "proceedings-article",
+   "annee": 2026,
+   "auteur1": "Xing",
+   "nb_auteurs": 12
+  }
+ },
+ "Cemri2025": {
+  "titre": "Why Do Multi-Agent LLM Systems Fail?",
+  "auteur": "Cemri et coll.",
+  "lieu": "NeurIPS",
+  "annee": "2025",
+  "groupe": "P",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "Why Do Multi-Agent LLM Systems Fail?",
+   "id": "2503.13657v3",
+   "date": "2025-03-17",
+   "auteur1": "Mert Cemri",
+   "nb_auteurs": 13
+  },
+  "crossref": {
+   "sim": 1.0,
+   "titre": "Why Do Multi-Agent LLM Systems Fail?",
+   "doi": "10.52202/085713-4082",
+   "lieu": "Advances in Neural Information Processing Systems 38",
+   "type": "proceedings-article",
+   "annee": 2025,
+   "auteur1": "Cemri",
+   "nb_auteurs": 13
+  }
+ },
+ "Jia2026": {
+  "titre": "MAS-FIRE: Fault Injection and Reliability Evaluation for LLM-Based Multi-Agent Systems",
+  "auteur": "Jia et coll.",
+  "lieu": "arXiv",
+  "annee": "2026",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "MAS-FIRE: Fault Injection and Reliability Evaluation for LLM-Based Multi-Agent Systems",
+   "id": "2602.19843v1",
+   "date": "2026-02-23",
+   "auteur1": "Jin Jia",
+   "nb_auteurs": 5
+  },
+  "crossref": {
+   "sim": 0.631,
+   "titre": "PropUQ-MAS: Propagation-Aware Uncertainty Quantification for LLM Multi-Agent Systems",
+   "doi": "10.18653/2026.emnlp-main.891",
+   "lieu": "Proceedings of the 2026 Conference on Empirical Methods in Natural Language Processing",
+   "type": "proceedings-article",
+   "annee": 2026,
+   "auteur1": "Liu",
+   "nb_auteurs": 6
+  }
+ },
+ "Reid2025": {
+  "titre": "Risk Analysis Techniques for Governed LLM-based Multi-Agent Systems",
+  "auteur": "Reid et coll.",
+  "lieu": "arXiv",
+  "annee": "2025",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "Risk Analysis Techniques for Governed LLM-based Multi-Agent Systems",
+   "id": "2508.05687v1",
+   "date": "2025-08-06",
+   "auteur1": "Alistair Reid",
+   "nb_auteurs": 4
+  },
+  "crossref": {
+   "sim": 0.606,
+   "titre": "Law-governed multi-agent systems",
+   "doi": "10.1145/1082983.1082965",
+   "lieu": "ACM SIGSOFT Software Engineering Notes",
+   "type": "journal-article",
+   "annee": 2005,
+   "auteur1": "Minsky",
+   "nb_auteurs": 1
+  }
+ },
+ "Chang2025": {
+  "titre": "SagaLLM: Context Management, Validation, and Transaction Guarantees for Multi-Agent LLM Planning",
+  "auteur": "Chang et coll.",
+  "lieu": "Proceedings of the VLDB Endowment",
+  "annee": "2025",
+  "groupe": "P",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "SagaLLM: Context Management, Validation, and Transaction Guarantees for Multi-Agent LLM Planning",
+   "id": "2503.11951v3",
+   "date": "2025-03-15",
+   "auteur1": "Edward Y. Chang",
+   "nb_auteurs": 2
+  },
+  "crossref": {
+   "sim": 1.0,
+   "titre": "SagaLLM: Context Management, Validation, and Transaction Guarantees for Multi-Agent LLM Planning",
+   "doi": "10.14778/3750601.3750611",
+   "lieu": "Proceedings of the VLDB Endowment",
+   "type": "journal-article",
+   "annee": 2025,
+   "auteur1": "Chang",
+   "nb_auteurs": 2
+  }
+ },
+ "Paduraru2026": {
+  "titre": "A Trace-Based Assurance Framework for Agentic AI Orchestration: Contracts, Testing, and Governance",
+  "auteur": "Păduraru et coll.",
+  "lieu": "ENASE",
+  "annee": "2026",
+  "groupe": "P",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "A Trace-Based Assurance Framework for Agentic AI Orchestration: Contracts, Testing, and Governance",
+   "id": "2603.18096v1",
+   "date": "2026-03-18",
+   "auteur1": "Ciprian Paduraru",
+   "nb_auteurs": 3
+  },
+  "crossref": {
+   "sim": 1.0,
+   "titre": "A Trace-Based Assurance Framework for Agentic AI Orchestration: Contracts, Testing, and Governance",
+   "doi": "10.5220/0014840300004015",
+   "lieu": "Proceedings of the 21st International Conference on Evaluation of Novel Approaches to Software Engineering",
+   "type": "proceedings-article",
+   "annee": 2026,
+   "auteur1": "Paduraru",
+   "nb_auteurs": 3
+  }
+ },
+ "Xie2026": {
+  "titre": "From Spark to Fire: Modeling and Mitigating Error Cascades in LLM-Based Multi-Agent Collaboration",
+  "auteur": "Xie et coll.",
+  "lieu": "arXiv",
+  "annee": "2026",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "From Spark to Fire: Modeling and Mitigating Error Cascades in LLM-Based Multi-Agent Collaboration",
+   "id": "2603.04474v2",
+   "date": "2026-03-04",
+   "auteur1": "Yizhe Xie",
+   "nb_auteurs": 8
+  },
+  "crossref": {
+   "sim": 0.426,
+   "titre": "Mitigating LLM Hallucinations Using a Multi-Agent Framework",
+   "doi": "10.3390/info16070517",
+   "lieu": "Information",
+   "type": "journal-article",
+   "annee": 2025,
+   "auteur1": "Darwish",
+   "nb_auteurs": 3
+  }
+ },
+ "Huang2024": {
+  "titre": "On the Resilience of LLM-Based Multi-Agent Collaboration with Faulty Agents",
+  "auteur": "Huang et coll.",
+  "lieu": "arXiv",
+  "annee": "2024",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "On the Resilience of LLM-Based Multi-Agent Collaboration with Faulty Agents",
+   "id": "2408.00989v4",
+   "date": "2024-08-02",
+   "auteur1": "Jen-tse Huang",
+   "nb_auteurs": 9
+  },
+  "crossref": {
+   "sim": 0.568,
+   "titre": "LLM-Based Multi-Agent Collaboration for Constrained Multi-Objective Container Placement",
+   "doi": "10.1109/cloud72782.2026.00018",
+   "lieu": "2026 IEEE 19th International Conference on Cloud Computing (CLOUD)",
+   "type": "proceedings-article",
+   "annee": 2026,
+   "auteur1": "Sarkar",
+   "nb_auteurs": 4
+  }
+ },
+ "Yadav2026": {
+  "titre": "More Capable, Less Cooperative? When LLMs Fail At Zero-Cost Collaboration",
+  "auteur": "Yadav et coll.",
+  "lieu": "arXiv",
+  "annee": "2026",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "More Capable, Less Cooperative? When LLMs Fail At Zero-Cost Collaboration",
+   "id": "2604.07821v2",
+   "date": "2026-04-09",
+   "auteur1": "Advait Yadav",
+   "nb_auteurs": 3
+  },
+  "crossref": {
+   "sim": 0.438,
+   "titre": "Computers more capable, less costly",
+   "doi": "10.1029/eo062i052p01201-03",
+   "lieu": "Eos, Transactions American Geophysical Union",
+   "type": "journal-article",
+   "annee": 1981,
+   "auteur1": "Bell",
+   "nb_auteurs": 1
+  }
+ },
+ "Albayaydh2026": {
+  "titre": "Beyond the Leaderboard: A Synthesis of Tool-Use, Planning, and Reasoning Failures in Large Language Model Agents",
+  "auteur": "Albayaydh et coll.",
+  "lieu": "arXiv",
+  "annee": "2026",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "Beyond the Leaderboard: A Synthesis of Tool-Use, Planning, and Reasoning Failures in Large Language Model Agents",
+   "id": "2607.05775v1",
+   "date": "2026-07-07",
+   "auteur1": "Wael Albayaydh",
+   "nb_auteurs": 3
+  },
+  "crossref": {
+   "sim": 0.604,
+   "titre": "Beyond the Leaderboard: Understanding Performance Disparities in Large Language Models via Model Diffing",
+   "doi": "10.18653/v1/2025.emnlp-main.1598",
+   "lieu": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+   "type": "proceedings-article",
+   "annee": 2025,
+   "auteur1": "Boughorbel",
+   "nb_auteurs": 4
+  }
+ },
+ "Gao2025": {
+  "titre": "Single-agent or Multi-agent Systems? Why Not Both?",
+  "auteur": "Gao et coll.",
+  "lieu": "arXiv",
+  "annee": "2025",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "Single-agent or Multi-agent Systems? Why Not Both?",
+   "id": "2505.18286v1",
+   "date": "2025-05-23",
+   "auteur1": "Mingyan Gao",
+   "nb_auteurs": 7
+  },
+  "crossref": {
+   "sim": 0.625,
+   "titre": "Single agent control for multi-agent dynamical consensus systems",
+   "doi": "10.1049/iet-cta.2011.0236",
+   "lieu": "IET Control Theory &amp; Applications",
+   "type": "journal-article",
+   "annee": 2012,
+   "auteur1": "Yoon",
+   "nb_auteurs": 1
+  }
+ },
+ "YangDiv2026": {
+  "titre": "Understanding Agent Scaling in LLM-Based Multi-Agent Systems via Diversity",
+  "auteur": "Yang et coll.",
+  "lieu": "arXiv",
+  "annee": "2026",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "Understanding Agent Scaling in LLM-Based Multi-Agent Systems via Diversity",
+   "id": "2602.03794v1",
+   "date": "2026-02-03",
+   "auteur1": "Yingxuan Yang",
+   "nb_auteurs": 8
+  },
+  "crossref": {
+   "sim": 0.596,
+   "titre": "Automating De Novo Protein Design via LLM-Based Multi-agent Systems",
+   "doi": "10.1007/978-3-032-20235-2_2",
+   "lieu": "Lecture Notes in Electrical Engineering",
+   "type": "book-chapter",
+   "annee": 2026,
+   "auteur1": "Abdelaziz",
+   "nb_auteurs": 4
+  }
+ },
+ "SanderScal2026": {
+  "titre": "Scaling LLM-Driven Multi-Agent Systems: Design Principles and Architectural Scalability Analysis",
+  "auteur": "Sander et coll.",
+  "lieu": "arXiv",
+  "annee": "2026",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "Scaling LLM-Driven Multi-Agent Systems: Design Principles and Architectural Scalability Analysis",
+   "id": "2607.27942v1",
+   "date": "2026-07-30",
+   "auteur1": "Linus Sander",
+   "nb_auteurs": 6
+  },
+  "crossref": {
+   "sim": 0.566,
+   "titre": "MASA: LLM-Driven Multi-Agent Systems for Autoformalization",
+   "doi": "10.18653/v1/2025.emnlp-demos.44",
+   "lieu": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing: System Demonstrations",
+   "type": "proceedings-article",
+   "annee": 2025,
+   "auteur1": "Zhang",
+   "nb_auteurs": 3
+  }
+ },
+ "Zywot2026": {
+  "titre": "Can Small Agents Collaborate to Beat a Single Large Language Model?",
+  "auteur": "Żywot et coll.",
+  "lieu": "arXiv",
+  "annee": "2026",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "Can Small Agents Collaborate to Beat a Single Large Language Model?",
+   "id": "2601.11327v2",
+   "date": "2026-01-16",
+   "auteur1": "Agata Żywot",
+   "nb_auteurs": 5
+  },
+  "crossref": {
+   "sim": 0.43,
+   "titre": "Large Language Model Agents",
+   "doi": "10.1007/978-3-031-92285-5_8",
+   "lieu": "Engineering Information Systems with Large Language Models",
+   "type": "book-chapter",
+   "annee": 2025,
+   "auteur1": "Mathew",
+   "nb_auteurs": 2
+  }
+ },
+ "Tran2026": {
+  "titre": "Single-Agent LLMs Outperform Multi-Agent Systems on Multi-Hop Reasoning Under Equal Thinking Token Budgets",
+  "auteur": "Tran et coll.",
+  "lieu": "arXiv",
+  "annee": "2026",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "Single-Agent LLMs Outperform Multi-Agent Systems on Multi-Hop Reasoning Under Equal Thinking Token Budgets",
+   "id": "2604.02460v2",
+   "date": "2026-04-02",
+   "auteur1": "Dat Tran",
+   "nb_auteurs": 2
+  },
+  "crossref": {
+   "sim": 0.471,
+   "titre": "M3RAG: Orchestrating Multi-agent Reasoning for Multi-hop, Multi-modal Understanding",
+   "doi": "10.1007/978-981-95-6950-2_26",
+   "lieu": "Lecture Notes in Computer Science",
+   "type": "book-chapter",
+   "annee": 2026,
+   "auteur1": "Du",
+   "nb_auteurs": 2
+  }
+ },
+ "YuIB2026": {
+  "titre": "When Do Multi-Agent Systems Help? An Information Bottleneck Perspective",
+  "auteur": "Yu et coll.",
+  "lieu": "arXiv",
+  "annee": "2026",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "When Do Multi-Agent Systems Help? An Information Bottleneck Perspective",
+   "id": "2607.16133v1",
+   "date": "2026-07-17",
+   "auteur1": "Wendi Yu",
+   "nb_auteurs": 9
+  },
+  "crossref": {
+   "sim": 0.694,
+   "titre": "Multi-View Semantic-Aware Communication: An Information Bottleneck Perspective",
+   "doi": "10.1109/icc52391.2025.11161951",
+   "lieu": "ICC 2025 - IEEE International Conference on Communications",
+   "type": "proceedings-article",
+   "annee": 2025,
+   "auteur1": "Wang",
+   "nb_auteurs": 4
+  }
+ },
+ "Li2024": {
+  "titre": "More Agents Is All You Need",
+  "auteur": "Li et coll.",
+  "lieu": "arXiv",
+  "annee": "2024",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "More Agents Is All You Need",
+   "id": "2402.05120v2",
+   "date": "2024-02-03",
+   "auteur1": "Junyou Li",
+   "nb_auteurs": 5
+  },
+  "crossref": {
+   "sim": 0.851,
+   "titre": "More is All You Need",
+   "doi": "10.5040/9798216408598.ch-009",
+   "lieu": "Metallica",
+   "type": "other",
+   "annee": 2021,
+   "auteur1": null,
+   "nb_auteurs": 0
+  }
+ },
+ "Bertalanic2026": {
+  "titre": "The Ringelmann Effect in Multi-Agent LLM Systems: A Scaling Law for Effective Team Size",
+  "auteur": "Bertalanič et coll.",
+  "lieu": "arXiv",
+  "annee": "2026",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "The Ringelmann Effect in Multi-Agent LLM Systems: A Scaling Law for Effective Team Size",
+   "id": "2606.02646v1",
+   "date": "2026-05-31",
+   "auteur1": "Blaž Bertalanič",
+   "nb_auteurs": 2
+  },
+  "crossref": {
+   "sim": 0.434,
+   "titre": "Auto-scaling LLM-based multi-agent systems through dynamic integration of agents",
+   "doi": "10.3389/frai.2025.1638227",
+   "lieu": "Frontiers in Artificial Intelligence",
+   "type": "journal-article",
+   "annee": 2025,
+   "auteur1": "Perera",
+   "nb_auteurs": 3
+  }
+ },
+ "MacNet2024": {
+  "titre": "Scaling Large Language Model-based Multi-Agent Collaboration",
+  "auteur": "Qian et coll.",
+  "lieu": "arXiv",
+  "annee": "2024",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "Scaling Large Language Model-based Multi-Agent Collaboration",
+   "id": "2406.07155v3",
+   "date": "2024-06-11",
+   "auteur1": "Chen Qian",
+   "nb_auteurs": 12
+  },
+  "crossref": {
+   "sim": 0.787,
+   "titre": "Self-Healing Memory Architectures for Large Language Model-Based Multi-Agent Collaboration",
+   "doi": "10.71465/ajainn3659",
+   "lieu": "American Journal of Artificial Intelligence and Neural Networks",
+   "type": "journal-article",
+   "annee": 2026,
+   "auteur1": "Toby Walsh",
+   "nb_auteurs": 3
+  }
+ },
+ "Mohammadi2025": {
+  "titre": "Evaluation and Benchmarking of LLM Agents: A Survey",
+  "auteur": "Mohammadi et coll.",
+  "lieu": "KDD",
+  "annee": "2025",
+  "groupe": "P",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "Evaluation and Benchmarking of LLM Agents: A Survey",
+   "id": "2507.21504v1",
+   "date": "2025-07-29",
+   "auteur1": "Mahmoud Mohammadi",
+   "nb_auteurs": 4
+  },
+  "crossref": {
+   "sim": 1.0,
+   "titre": "Evaluation and Benchmarking of LLM Agents: A Survey",
+   "doi": "10.1145/3711896.3736570",
+   "lieu": "Proceedings of the 31st ACM SIGKDD Conference on Knowledge Discovery and Data Mining V.2",
+   "type": "proceedings-article",
+   "annee": 2025,
+   "auteur1": "Mohammadi",
+   "nb_auteurs": 4
+  }
+ },
+ "Xu2025": {
+  "titre": "TheAgentCompany: Benchmarking LLM Agents on Consequential Real World Tasks",
+  "auteur": "Xu et coll.",
+  "lieu": "NeurIPS",
+  "annee": "2025",
+  "groupe": "P",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "TheAgentCompany: Benchmarking LLM Agents on Consequential Real World Tasks",
+   "id": "2412.14161v3",
+   "date": "2024-12-18",
+   "auteur1": "Frank F. Xu",
+   "nb_auteurs": 21
+  },
+  "crossref": {
+   "sim": 1.0,
+   "titre": "TheAgentCompany: Benchmarking LLM Agents on Consequential Real World Tasks",
+   "doi": "10.52202/085713-0315",
+   "lieu": "Advances in Neural Information Processing Systems 38",
+   "type": "proceedings-article",
+   "annee": 2025,
+   "auteur1": "Xu",
+   "nb_auteurs": 21
+  }
+ },
+ "Nageshwaran2026": {
+  "titre": "Large Language Model Agent Evaluation and Benchmarking: A Systematic Survey, Meta-Taxonomy, and Critical Research Roadmap",
+  "auteur": "Nageshwaran et coll.",
+  "lieu": "Artificial Intelligence Review",
+  "annee": "2026",
+  "groupe": "P",
+  "arxiv": null,
+  "crossref": {
+   "sim": 1.0,
+   "titre": "Large language model agent evaluation and benchmarking: a systematic survey, meta-taxonomy, and critical research roadmap",
+   "doi": "10.1007/s10462-026-11678-4",
+   "lieu": "Artificial Intelligence Review",
+   "type": "journal-article",
+   "annee": 2026,
+   "auteur1": "Nageshwaran",
+   "nb_auteurs": 4
+  }
+ },
+ "Kapoor2025": {
+  "titre": "Holistic Agent Leaderboard: The Missing Infrastructure for AI Agent Evaluation",
+  "auteur": "Kapoor et coll.",
+  "lieu": "arXiv",
+  "annee": "2025",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "Holistic Agent Leaderboard: The Missing Infrastructure for AI Agent Evaluation",
+   "id": "2510.11977v1",
+   "date": "2025-10-13",
+   "auteur1": "Sayash Kapoor",
+   "nb_auteurs": 31
+  },
+  "crossref": {
+   "sim": 0.481,
+   "titre": "Cloudent: Ai Ai-Agent-Driven Cloud Infrastructure Manager",
+   "doi": "10.52783/cana.v33.6630",
+   "lieu": "Communications on Applied Nonlinear Analysis",
+   "type": "journal-article",
+   "annee": 2026,
+   "auteur1": "F. Margret Sharmila",
+   "nb_auteurs": 1
+  }
+ },
+ "Yao2024": {
+  "titre": "tau-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains",
+  "auteur": "Yao et coll.",
+  "lieu": "arXiv",
+  "annee": "2024",
+  "groupe": "A",
+  "arxiv": null,
+  "crossref": {
+   "sim": 0.686,
+   "titre": "T1-Bench: Benchmarking Multi-Scenario Agents in Real-World Domains",
+   "doi": "10.18653/2026.findings-emnlp.1929",
+   "lieu": "Findings of the Association for Computational Linguistics: EMNLP 2026",
+   "type": "proceedings-article",
+   "annee": 2026,
+   "auteur1": "Winata",
+   "nb_auteurs": 15
+  }
+ },
+ "Zhu2025": {
+  "titre": "Establishing Best Practices for Building Rigorous Agentic Benchmarks",
+  "auteur": "Zhu et coll.",
+  "lieu": "arXiv",
+  "annee": "2025",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "Establishing Best Practices for Building Rigorous Agentic Benchmarks",
+   "id": "2507.02825v5",
+   "date": "2025-07-03",
+   "auteur1": "Yuxuan Zhu",
+   "nb_auteurs": 25
+  },
+  "crossref": {
+   "sim": 0.963,
+   "titre": "Establishing Best Practices in Building Rigorous Agentic Benchmarks",
+   "doi": "10.52202/085713-5547",
+   "lieu": "Advances in Neural Information Processing Systems 38",
+   "type": "proceedings-article",
+   "annee": 2025,
+   "auteur1": "Zhu",
+   "nb_auteurs": 26
+  }
+ },
+ "ZhangConf2026": {
+  "titre": "The Double Measurement Confound in Agent Benchmarks: De-Scaffolding, Ground-Truth Scoring, and Reliability Beyond the Mean",
+  "auteur": "Zhang et coll.",
+  "lieu": "arXiv",
+  "annee": "2026",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "The Double Measurement Confound in Agent Benchmarks: De-Scaffolding, Ground-Truth Scoring, and Reliability Beyond the Mean",
+   "id": "2609.09218v1",
+   "date": "2026-09-06",
+   "auteur1": "Yonghong Zhang",
+   "nb_auteurs": 9
+  },
+  "crossref": {
+   "sim": 0.361,
+   "titre": "Skeleton Ground Truth Extraction: Methodology, Annotation Tool and Benchmarks",
+   "doi": "10.1007/s11263-023-01926-3",
+   "lieu": "International Journal of Computer Vision",
+   "type": "journal-article",
+   "annee": 2023,
+   "auteur1": "Yang",
+   "nb_auteurs": 8
+  }
+ },
+ "Gupta2026": {
+  "titre": "ReliabilityBench: Evaluating LLM Agent Reliability Under Production-Like Stress Conditions",
+  "auteur": "Gupta",
+  "lieu": "arXiv",
+  "annee": "2026",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "ReliabilityBench: Evaluating LLM Agent Reliability Under Production-Like Stress Conditions",
+   "id": "2601.06112v1",
+   "date": "2026-01-03",
+   "auteur1": "Aayush Gupta",
+   "nb_auteurs": 1
+  },
+  "crossref": {
+   "sim": 0.536,
+   "titre": "QueryDiagramEval: Evaluating and Benchmarking LLM Diagram Generation under Noisy Conditions",
+   "doi": "10.18653/2026.wnut-1.18",
+   "lieu": "Proceedings of the 11th Workshop on Natural User-generated Text",
+   "type": "proceedings-article",
+   "annee": 2026,
+   "auteur1": "Zhang",
+   "nb_auteurs": 6
+  }
+ },
+ "Wang2026": {
+  "titre": "Automated Benchmark Auditing for AI Agents and Large Language Models",
+  "auteur": "Wang et coll.",
+  "lieu": "arXiv",
+  "annee": "2026",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "Automated Benchmark Auditing for AI Agents and Large Language Models",
+   "id": "2605.26079v2",
+   "date": "2026-05-25",
+   "auteur1": "Junlin Wang",
+   "nb_auteurs": 7
+  },
+  "crossref": {
+   "sim": 0.712,
+   "titre": "Characteristic AI Agents via Large Language Models",
+   "doi": "10.63317/49fo32h8y595",
+   "lieu": "Proceedings of the Language Resources and Evaluation Conference",
+   "type": "proceedings-article",
+   "annee": 2024,
+   "auteur1": "Wang",
+   "nb_auteurs": 4
+  }
+ },
+ "Beurer2025": {
+  "titre": "Design Patterns for Securing LLM Agents against Prompt Injections",
+  "auteur": "Beurer-Kellner et coll.",
+  "lieu": "arXiv",
+  "annee": "2025",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "Design Patterns for Securing LLM Agents against Prompt Injections",
+   "id": "2506.08837v3",
+   "date": "2025-06-10",
+   "auteur1": "Luca Beurer-Kellner",
+   "nb_auteurs": 14
+  },
+  "crossref": {
+   "sim": 0.504,
+   "titre": "Defenses against LLM prompt injections in academic peer review",
+   "doi": "10.31234/osf.io/zxuwf_v2",
+   "lieu": "",
+   "type": "posted-content",
+   "annee": 2025,
+   "auteur1": "Zika",
+   "nb_auteurs": 1
+  }
+ },
+ "LiDrift2025": {
+  "titre": "DRIFT: Dynamic Rule-Based Defense with Injection Isolation for Securing LLM Agents",
+  "auteur": "Li et coll.",
+  "lieu": "NeurIPS",
+  "annee": "2025",
+  "groupe": "P",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "DRIFT: Dynamic Rule-Based Defense with Injection Isolation for Securing LLM Agents",
+   "id": "2506.12104v3",
+   "date": "2025-06-13",
+   "auteur1": "Hao Li",
+   "nb_auteurs": 6
+  },
+  "crossref": {
+   "sim": 1.0,
+   "titre": "DRIFT: Dynamic Rule-Based Defense with Injection Isolation for Securing LLM Agents",
+   "doi": "10.52202/085713-2791",
+   "lieu": "Advances in Neural Information Processing Systems 38",
+   "type": "proceedings-article",
+   "annee": 2025,
+   "auteur1": "Li",
+   "nb_auteurs": 6
+  }
+ },
+ "Zhao2026": {
+  "titre": "ClawGuard: A Runtime Security Framework for Tool-Augmented LLM Agents Against Indirect Prompt Injection",
+  "auteur": "Zhao et coll.",
+  "lieu": "arXiv",
+  "annee": "2026",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "ClawGuard: A Runtime Security Framework for Tool-Augmented LLM Agents Against Indirect Prompt Injection",
+   "id": "2604.11790v2",
+   "date": "2026-04-13",
+   "auteur1": "Wei Zhao",
+   "nb_auteurs": 4
+  },
+  "crossref": {
+   "sim": 0.615,
+   "titre": "Balancing Security and Performance in LLM Agents: Spotlight-Guard, a Layered Defense Against Indirect Prompt Injection",
+   "doi": "10.3390/app16157662",
+   "lieu": "Applied Sciences",
+   "type": "journal-article",
+   "annee": 2026,
+   "auteur1": "Demirol",
+   "nb_auteurs": 2
+  }
+ },
+ "Zhong2025": {
+  "titre": "RTBAS: Defending LLM Agents Against Prompt Injection and Privacy Leakage",
+  "auteur": "Zhong et coll.",
+  "lieu": "arXiv",
+  "annee": "2025",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "RTBAS: Defending LLM Agents Against Prompt Injection and Privacy Leakage",
+   "id": "2502.08966v2",
+   "date": "2025-02-13",
+   "auteur1": "Peter Yong Zhong",
+   "nb_auteurs": 7
+  },
+  "crossref": {
+   "sim": 0.661,
+   "titre": "Defending against prompt injection attacks in LLMs",
+   "doi": "10.1063/5.0286966",
+   "lieu": "AIP Conference Proceedings",
+   "type": "proceedings-article",
+   "annee": 2025,
+   "auteur1": "Thakur",
+   "nb_auteurs": 2
+  }
+ },
+ "Shi2025": {
+  "titre": "PromptArmor: Simple yet Effective Prompt Injection Defenses",
+  "auteur": "Shi et coll.",
+  "lieu": "arXiv",
+  "annee": "2025",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "PromptArmor: Simple yet Effective Prompt Injection Defenses",
+   "id": "2507.15219v1",
+   "date": "2025-07-21",
+   "auteur1": "Tianneng Shi",
+   "nb_auteurs": 16
+  },
+  "crossref": {
+   "sim": 0.527,
+   "titre": "MixPro: Simple yet Effective Data Augmentation for Prompt-based Learning",
+   "doi": "10.1007/s13042-025-02548-6",
+   "lieu": "International Journal of Machine Learning and Cybernetics",
+   "type": "journal-article",
+   "annee": 2025,
+   "auteur1": "Li",
+   "nb_auteurs": 9
+  }
+ },
+ "Khan2026": {
+  "titre": "Evaluating Indirect Prompt Injection Defenses in Tool-Using LLM Agents: Security, Utility, and Replication",
+  "auteur": "Khan et coll.",
+  "lieu": "Computers",
+  "annee": "2026",
+  "groupe": "P",
+  "arxiv": null,
+  "crossref": {
+   "sim": 1.0,
+   "titre": "Evaluating Indirect Prompt Injection Defenses in Tool-Using LLM Agents: Security, Utility, and Replication",
+   "doi": "10.3390/computers15090570",
+   "lieu": "Computers",
+   "type": "journal-article",
+   "annee": 2026,
+   "auteur1": "Khan",
+   "nb_auteurs": 3
+  }
+ },
+ "Debenedetti2026": {
+  "titre": "Defeating Prompt Injections by Design",
+  "auteur": "Debenedetti et coll.",
+  "lieu": "IEEE SaTML",
+  "annee": "2026",
+  "groupe": "P",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "Defeating Prompt Injections by Design",
+   "id": "2503.18813v2",
+   "date": "2025-03-24",
+   "auteur1": "Edoardo Debenedetti",
+   "nb_auteurs": 10
+  },
+  "crossref": {
+   "sim": 1.0,
+   "titre": "Defeating Prompt Injections by Design",
+   "doi": "10.1109/satml68715.2026.00040",
+   "lieu": "2026 IEEE Conference on Secure and Trustworthy Machine Learning (SaTML)",
+   "type": "proceedings-article",
+   "annee": 2026,
+   "auteur1": "Debenedetti",
+   "nb_auteurs": 10
+  }
+ },
+ "ShiTool2026": {
+  "titre": "Prompt Injection Attack to Tool Selection in LLM Agents",
+  "auteur": "Shi et coll.",
+  "lieu": "NDSS",
+  "annee": "2026",
+  "groupe": "P",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "Prompt Injection Attack to Tool Selection in LLM Agents",
+   "id": "2504.19793v3",
+   "date": "2025-04-28",
+   "auteur1": "Jiawen Shi",
+   "nb_auteurs": 6
+  },
+  "crossref": {
+   "sim": 1.0,
+   "titre": "Prompt Injection Attack to Tool Selection in LLM Agents",
+   "doi": "10.14722/ndss.2026.230675",
+   "lieu": "Proceedings 2026 Network and Distributed System Security Symposium",
+   "type": "proceedings-article",
+   "annee": 2026,
+   "auteur1": "Shi",
+   "nb_auteurs": 6
+  }
+ },
+ "An2025": {
+  "titre": "IPIGuard: A Novel Tool Dependency Graph-Based Defense Against Indirect Prompt Injection in LLM Agents",
+  "auteur": "An et coll.",
+  "lieu": "EMNLP",
+  "annee": "2025",
+  "groupe": "P",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "IPIGuard: A Novel Tool Dependency Graph-Based Defense Against Indirect Prompt Injection in LLM Agents",
+   "id": "2508.15310v1",
+   "date": "2025-08-21",
+   "auteur1": "Hengyu An",
+   "nb_auteurs": 7
+  },
+  "crossref": {
+   "sim": 1.0,
+   "titre": "IPIGuard: A Novel Tool Dependency Graph-Based Defense Against Indirect Prompt Injection in LLM Agents",
+   "doi": "10.18653/v1/2025.emnlp-main.53",
+   "lieu": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+   "type": "proceedings-article",
+   "annee": 2025,
+   "auteur1": "An",
+   "nb_auteurs": 7
+  }
+ },
+ "JiaTS2025": {
+  "titre": "The Task Shield: Enforcing Task Alignment to Defend Against Indirect Prompt Injection in LLM Agents",
+  "auteur": "Jia et coll.",
+  "lieu": "ACL",
+  "annee": "2025",
+  "groupe": "P",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "The Task Shield: Enforcing Task Alignment to Defend Against Indirect Prompt Injection in LLM Agents",
+   "id": "2412.16682v1",
+   "date": "2024-12-21",
+   "auteur1": "Feiran Jia",
+   "nb_auteurs": 4
+  },
+  "crossref": {
+   "sim": 1.0,
+   "titre": "The Task Shield: Enforcing Task Alignment to Defend Against Indirect Prompt Injection in LLM Agents",
+   "doi": "10.18653/v1/2025.acl-long.1435",
+   "lieu": "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+   "type": "proceedings-article",
+   "annee": 2025,
+   "auteur1": "Jia",
+   "nb_auteurs": 4
+  }
+ },
+ "ZhangMem2025": {
+  "titre": "A Survey on the Memory Mechanism of Large Language Model-based Agents",
+  "auteur": "Zhang et coll.",
+  "lieu": "ACM Transactions on Information Systems",
+  "annee": "2025",
+  "groupe": "P",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "A Survey on the Memory Mechanism of Large Language Model based Agents",
+   "id": "2404.13501v1",
+   "date": "2024-04-21",
+   "auteur1": "Zeyu Zhang",
+   "nb_auteurs": 9
+  },
+  "crossref": {
+   "sim": 1.0,
+   "titre": "A Survey on the Memory Mechanism of Large Language Model-based Agents",
+   "doi": "10.1145/3748302",
+   "lieu": "ACM Transactions on Information Systems",
+   "type": "journal-article",
+   "annee": 2025,
+   "auteur1": "Zhang",
+   "nb_auteurs": 9
+  }
+ },
+ "Luo2026": {
+  "titre": "From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms",
+  "auteur": "Luo et coll.",
+  "lieu": "Findings of ACL",
+  "annee": "2026",
+  "groupe": "P",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms",
+   "id": "2605.06716v1",
+   "date": "2026-05-07",
+   "auteur1": "Jinghao Luo",
+   "nb_auteurs": 9
+  },
+  "crossref": {
+   "sim": 1.0,
+   "titre": "From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms",
+   "doi": "10.18653/v1/2026.findings-acl.2069",
+   "lieu": "Findings of the Association for Computational Linguistics: ACL 2026",
+   "type": "proceedings-article",
+   "annee": 2026,
+   "auteur1": "Luo",
+   "nb_auteurs": 9
+  }
+ },
+ "DuP2026": {
+  "titre": "Memory for Autonomous LLM Agents: Mechanisms, Evaluation, and Emerging Frontiers",
+  "auteur": "Du",
+  "lieu": "arXiv",
+  "annee": "2026",
+  "groupe": "A",
+  "arxiv": null,
+  "crossref": {
+   "sim": 0.534,
+   "titre": "Breaking Agents: Compromising Autonomous LLM Agents Through Malfunction Amplification",
+   "doi": "10.18653/v1/2025.emnlp-main.1771",
+   "lieu": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+   "type": "proceedings-article",
+   "annee": 2025,
+   "auteur1": "Zhang",
+   "nb_auteurs": 7
+  }
+ },
+ "Hu2025": {
+  "titre": "Memory in the Age of AI Agents",
+  "auteur": "Hu et coll.",
+  "lieu": "arXiv",
+  "annee": "2025",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "Memory in the Age of AI Agents",
+   "id": "2512.13564v2",
+   "date": "2025-12-15",
+   "auteur1": "Yuyang Hu",
+   "nb_auteurs": 47
+  },
+  "crossref": {
+   "sim": 0.831,
+   "titre": "Legal Order in the Age of AI Agents",
+   "doi": "10.2139/ssrn.6001277",
+   "lieu": "",
+   "type": "posted-content",
+   "annee": 2026,
+   "auteur1": "Becher",
+   "nb_auteurs": 2
+  }
+ },
+ "WuY2026": {
+  "titre": "Memory in the LLM Era: Modular Architectures and Strategies in a Unified Framework",
+  "auteur": "Wu et coll.",
+  "lieu": "arXiv",
+  "annee": "2026",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "Memory in the LLM Era: Modular Architectures and Strategies in a Unified Framework",
+   "id": "2604.01707v3",
+   "date": "2026-04-02",
+   "auteur1": "Yanchen Wu",
+   "nb_auteurs": 10
+  },
+  "crossref": {
+   "sim": 0.564,
+   "titre": "From Modular to Distributed Open Architectures: A Unified Decision Framework",
+   "doi": "10.1002/sys.21348",
+   "lieu": "Systems Engineering",
+   "type": "journal-article",
+   "annee": 2016,
+   "auteur1": "Heydari",
+   "nb_auteurs": 3
+  }
+ },
+ "HuangMem2026": {
+  "titre": "A Survey of Agent Memory in the Second Half: Towards Self-Evolving and Long-Horizon Agents",
+  "auteur": "Huang et coll.",
+  "lieu": "arXiv",
+  "annee": "2026",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "A Survey of Agent Memory in the Second Half: Towards Self-Evolving and Long-Horizon Agents",
+   "id": "2602.06052v4",
+   "date": "2026-01-14",
+   "auteur1": "Wei-Chieh Huang",
+   "nb_auteurs": 60
+  },
+  "crossref": {
+   "sim": 0.581,
+   "titre": "Conflict-Aware Self-Evolving Memory for Long-Horizon Agents",
+   "doi": "10.1109/eecct71142.2026.11746545",
+   "lieu": "2026 International Conference on Electronic Engineering, Communications and Computer Technology (EECCT)",
+   "type": "proceedings-article",
+   "annee": 2026,
+   "auteur1": "Wang",
+   "nb_auteurs": 5
+  }
+ },
+ "Chhikara2025": {
+  "titre": "Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory",
+  "auteur": "Chhikara et coll.",
+  "lieu": "Frontiers in Artificial Intelligence and Applications",
+  "annee": "2025",
+  "groupe": "P",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory",
+   "id": "2504.19413v1",
+   "date": "2025-04-28",
+   "auteur1": "Prateek Chhikara",
+   "nb_auteurs": 5
+  },
+  "crossref": {
+   "sim": 1.0,
+   "titre": "Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory",
+   "doi": "10.3233/faia251160",
+   "lieu": "Frontiers in Artificial Intelligence and Applications",
+   "type": "book-chapter",
+   "annee": 2025,
+   "auteur1": "Chhikara",
+   "nb_auteurs": 5
+  }
+ },
+ "Oyewale2026": {
+  "titre": "LLM-Driven Ontology Construction for Enterprise Knowledge Graphs",
+  "auteur": "Oyewale et coll.",
+  "lieu": "IEEE ICSC",
+  "annee": "2026",
+  "groupe": "P",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "LLM-Driven Ontology Construction for Enterprise Knowledge Graphs",
+   "id": "2602.01276v1",
+   "date": "2026-02-01",
+   "auteur1": "Abdulsobur Oyewale",
+   "nb_auteurs": 2
+  },
+  "crossref": {
+   "sim": 1.0,
+   "titre": "LLM-Driven Ontology Construction for Enterprise Knowledge Graphs",
+   "doi": "10.1109/icsc67292.2026.00044",
+   "lieu": "2026 International Conference on Semantic Computing (ICSC)",
+   "type": "proceedings-article",
+   "annee": 2026,
+   "auteur1": "Oyewale",
+   "nb_auteurs": 2
+  }
+ },
+ "Tuan2026": {
+  "titre": "Ontology-Constrained Neural Reasoning in Enterprise Agentic Systems: A Neurosymbolic Architecture for Domain-Grounded AI Agents",
+  "auteur": "Tuan et coll.",
+  "lieu": "arXiv",
+  "annee": "2026",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "Ontology-Constrained Neural Reasoning in Enterprise Agentic Systems: A Neurosymbolic Architecture for Domain-Grounded AI Agents",
+   "id": "2604.00555v5",
+   "date": "2026-04-01",
+   "auteur1": "Thanh Luong Tuan",
+   "nb_auteurs": 2
+  },
+  "crossref": {
+   "sim": 0.444,
+   "titre": "Transformation Enterprise Architecture with Agentic AI",
+   "doi": "10.1007/979-8-8688-3109-6",
+   "lieu": "",
+   "type": "book",
+   "annee": 2026,
+   "auteur1": "Goniwada",
+   "nb_auteurs": 1
+  }
+ },
+ "Mandarapu2026": {
+  "titre": "Knowledge Graphs as the Missing Data Layer for LLM-Based Industrial Asset Operations",
+  "auteur": "Mandarapu et coll.",
+  "lieu": "arXiv",
+  "annee": "2026",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "Knowledge Graphs as the Missing Data Layer for LLM-Based Industrial Asset Operations",
+   "id": "2605.26874v3",
+   "date": "2026-05-26",
+   "auteur1": "Madhulatha Mandarapu",
+   "nb_auteurs": 2
+  },
+  "crossref": {
+   "sim": 0.481,
+   "titre": "Using Knowledge Graphs to Plausibly Infer Missing Associations in EMR Data",
+   "doi": "10.3233/shti210192",
+   "lieu": "Studies in Health Technology and Informatics",
+   "type": "book-chapter",
+   "annee": 2021,
+   "auteur1": "Van Woensel",
+   "nb_auteurs": 5
+  }
+ },
+ "Chethan2026": {
+  "titre": "Semantic Graph Unification for Industrial Digital Threads: Bridging 11 Heterogeneous Manufacturing Systems Through Ontology-Driven Knowledge Graphs",
+  "auteur": "Chethan",
+  "lieu": "arXiv",
+  "annee": "2026",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "Semantic Graph Unification for Industrial Digital Threads: Bridging 11 Heterogeneous Manufacturing Systems Through Ontology-Driven Knowledge Graphs",
+   "id": "2608.24918v1",
+   "date": "2026-08-11",
+   "auteur1": "Grama Chethan",
+   "nb_auteurs": 1
+  },
+  "crossref": {
+   "sim": 0.462,
+   "titre": "Cognitive Semantic Communication Systems Driven by Knowledge Graph",
+   "doi": "10.1109/icc45855.2022.9838470",
+   "lieu": "ICC 2022 - IEEE International Conference on Communications",
+   "type": "proceedings-article",
+   "annee": 2022,
+   "auteur1": "Zhou",
+   "nb_auteurs": 6
+  }
+ },
+ "Chong2026": {
+  "titre": "EvoOntology: A Self-Evolving Ontology Layer for Data Agents",
+  "auteur": "Chong et coll.",
+  "lieu": "arXiv",
+  "annee": "2026",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "EvoOntology: A Self-Evolving Ontology Layer for Data Agents",
+   "id": "2609.15779v2",
+   "date": "2026-09-14",
+   "auteur1": "Meiduo Chong",
+   "nb_auteurs": 4
+  },
+  "crossref": {
+   "sim": 0.575,
+   "titre": "Self-Evolving Software Agents",
+   "doi": "10.65109/hkpk4104",
+   "lieu": "Proceedings of the 25th International Conference on Autonomous Agents and Multiagent Systems",
+   "type": "proceedings-article",
+   "annee": null,
+   "auteur1": "Robol",
+   "nb_auteurs": 2
+  }
+ },
+ "Brynjolfsson2023": {
+  "titre": "Generative AI at Work",
+  "auteur": "Brynjolfsson et coll.",
+  "lieu": "National Bureau of Economic Research",
+  "annee": "2023",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "Generative AI at Work",
+   "id": "2304.11771v2",
+   "date": "2023-04-23",
+   "auteur1": "Erik Brynjolfsson",
+   "nb_auteurs": 3
+  },
+  "crossref": {
+   "sim": 1.0,
+   "titre": "Generative AI at Work",
+   "doi": "10.2139/ssrn.4426942",
+   "lieu": "",
+   "type": "posted-content",
+   "annee": 2023,
+   "auteur1": "Brynjolfsson",
+   "nb_auteurs": 3
+  }
+ },
+ "Noy2023": {
+  "titre": "Experimental evidence on the productivity effects of generative artificial intelligence",
+  "auteur": "Noy et Zhang",
+  "lieu": "Science",
+  "annee": "2023",
+  "groupe": "P",
+  "arxiv": null,
+  "crossref": {
+   "sim": 1.0,
+   "titre": "Experimental evidence on the productivity effects of generative artificial intelligence",
+   "doi": "10.1126/science.adh2586",
+   "lieu": "Science",
+   "type": "journal-article",
+   "annee": 2023,
+   "auteur1": "Noy",
+   "nb_auteurs": 2
+  }
+ },
+ "Ju2025": {
+  "titre": "Collaborating with AI Agents: Field Experiments on Teamwork, Productivity, and Performance",
+  "auteur": "Ju et Aral",
+  "lieu": "SSRN",
+  "annee": "2025",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "Collaborating with AI Agents: Field Experiments on Teamwork, Productivity, and Performance",
+   "id": "2503.18238v4",
+   "date": "2025-03-23",
+   "auteur1": "Harang Ju",
+   "nb_auteurs": 2
+  },
+  "crossref": {
+   "sim": 1.0,
+   "titre": "Collaborating with AI Agents: Field Experiments on Teamwork, Productivity, and Performance",
+   "doi": "10.2139/ssrn.5187466",
+   "lieu": "",
+   "type": "posted-content",
+   "annee": 2025,
+   "auteur1": "Ju",
+   "nb_auteurs": 2
+  }
+ },
+ "Cui2026": {
+  "titre": "The Effects of Generative AI on High-Skilled Work: Evidence from Three Field Experiments with Software Developers",
+  "auteur": "Cui et coll.",
+  "lieu": "Management Science",
+  "annee": "2026",
+  "groupe": "P",
+  "arxiv": null,
+  "crossref": {
+   "sim": 1.0,
+   "titre": "The Effects of Generative AI on High Skilled Work: Evidence from Three Field Experiments\nwith Software Developers",
+   "doi": "10.1257/rct.14530-1.0",
+   "lieu": "AEA Randomized Controlled Trials",
+   "type": "dataset",
+   "annee": 2024,
+   "auteur1": "peng",
+   "nb_auteurs": 1
+  }
+ },
+ "DellAcqua2026": {
+  "titre": "Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of Artificial Intelligence on Knowledge Worker Productivity and Quality",
+  "auteur": "Dell'Acqua et coll.",
+  "lieu": "Organization Science",
+  "annee": "2026",
+  "groupe": "P",
+  "arxiv": null,
+  "crossref": {
+   "sim": 1.0,
+   "titre": "Navigating the Jagged Technological Frontier: Field Experimental Evidence of the Effects of Artificial Intelligence on Knowledge Worker Productivity and Quality",
+   "doi": "10.2139/ssrn.4573321",
+   "lieu": "",
+   "type": "posted-content",
+   "annee": 2023,
+   "auteur1": "Dell'Acqua",
+   "nb_auteurs": 9
+  }
+ },
+ "Bottesch2026": {
+  "titre": "Faster, Higher, Stronger? The Impact of GenAI on Knowledge Work Productivity - Evidence from the Field",
+  "auteur": "Bottesch et coll.",
+  "lieu": "arXiv",
+  "annee": "2026",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "Faster, Higher, Stronger? The Impact of GenAI on Knowledge Work Productivity - Evidence from the Field",
+   "id": "2607.25922v1",
+   "date": "2026-07-28",
+   "auteur1": "Sven Bottesch",
+   "nb_auteurs": 5
+  },
+  "crossref": {
+   "sim": 0.37,
+   "titre": "Faster, Higher, Stronger",
+   "doi": "10.1164/rccm.201307-1371ed",
+   "lieu": "American Journal of Respiratory and Critical Care Medicine",
+   "type": "journal-article",
+   "annee": 2013,
+   "auteur1": "Rubin",
+   "nb_auteurs": 1
+  }
+ },
+ "Dillon2025": {
+  "titre": "Early Impacts of M365 Copilot",
+  "auteur": "Dillon et coll.",
+  "lieu": "SSRN",
+  "annee": "2025",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "Early Impacts of M365 Copilot",
+   "id": "2504.11443v1",
+   "date": "2025-04-15",
+   "auteur1": "Eleanor Wiske Dillon",
+   "nb_auteurs": 4
+  },
+  "crossref": {
+   "sim": 1.0,
+   "titre": "Early Impacts of M365 Copilot",
+   "doi": "10.2139/ssrn.5216968",
+   "lieu": "",
+   "type": "posted-content",
+   "annee": 2025,
+   "auteur1": "Dillon",
+   "nb_auteurs": 4
+  }
+ },
+ "Apostolou2026": {
+  "titre": "Agentic AI in Industry: Adoption Level and Deployment Barriers",
+  "auteur": "Alvanakis Apostolou et coll.",
+  "lieu": "arXiv",
+  "annee": "2026",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "Agentic AI in Industry: Adoption Level and Deployment Barriers",
+   "id": "2605.14675v2",
+   "date": "2026-05-14",
+   "auteur1": "Spyridon Alvanakis Apostolou",
+   "nb_auteurs": 3
+  },
+  "crossref": {
+   "sim": 0.503,
+   "titre": "The Agentic AI Adoption Paradox: Barriers to Enterprise Deployment in the Software Industry",
+   "doi": "10.61978/data.v4i3.1643",
+   "lieu": "Data : Journal of Information Systems and Management",
+   "type": "journal-article",
+   "annee": 2026,
+   "auteur1": "Tanudjaja",
+   "nb_auteurs": 2
+  }
+ },
+ "Edwards2026": {
+  "titre": "Agentic AI in Engineering and Manufacturing: Industry Perspectives on Utility, Adoption, Challenges, and Opportunities",
+  "auteur": "Edwards et coll.",
+  "lieu": "arXiv",
+  "annee": "2026",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "Agentic AI in Engineering and Manufacturing: Industry Perspectives on Utility, Adoption, Challenges, and Opportunities",
+   "id": "2604.09633v1",
+   "date": "2026-03-19",
+   "auteur1": "Kristen M. Edwards",
+   "nb_auteurs": 5
+  },
+  "crossref": {
+   "sim": 0.548,
+   "titre": "Adoption of AI across academia and industry: challenges and opportunities",
+   "doi": "10.21857/y54jof5jkm",
+   "lieu": "Rad Hrvatske akademije znanosti i umjetnosti. Tehničke znanosti",
+   "type": "journal-article",
+   "annee": 2026,
+   "auteur1": "Kragić",
+   "nb_auteurs": 5
+  }
+ },
+ "EAAMM2026": {
+  "titre": "Agentic AI in Enterprise Business Processes: A Systematic Review and Practitioner Survey on Adoption Readiness",
+  "auteur": null,
+  "lieu": "International Conference on Artificial Intelligence Management and Trends",
+  "annee": "2026",
+  "groupe": "P",
+  "arxiv": null,
+  "crossref": {
+   "sim": 1.0,
+   "titre": "Agentic AI in Enterprise Business Processes: A Systematic Review and Practitioner Survey on Adoption Readiness",
+   "doi": "10.63962/nxpa6137",
+   "lieu": "International Conference on Artificial Intelligence Management and Trends",
+   "type": "proceedings-article",
+   "annee": 2026,
+   "auteur1": null,
+   "nb_auteurs": 0
+  }
+ },
+ "Tanudjaja2026": {
+  "titre": "The Agentic AI Adoption Paradox: Barriers to Enterprise Deployment in the Software Industry",
+  "auteur": "Tanudjaja et coll.",
+  "lieu": "Data: Journal of Information Systems and Management",
+  "annee": "2026",
+  "groupe": "P",
+  "arxiv": null,
+  "crossref": {
+   "sim": 1.0,
+   "titre": "The Agentic AI Adoption Paradox: Barriers to Enterprise Deployment in the Software Industry",
+   "doi": "10.61978/data.v4i3.1643",
+   "lieu": "Data : Journal of Information Systems and Management",
+   "type": "journal-article",
+   "annee": 2026,
+   "auteur1": "Tanudjaja",
+   "nb_auteurs": 2
+  }
+ },
+ "Bahidika2026": {
+  "titre": "Agentic Accountability: The Buck Stops Where? Ethical Frameworks for Human Oversight of Autonomous AI Systems",
+  "auteur": "Bahidika",
+  "lieu": "International Journal of Advanced Computer Science and Applications",
+  "annee": "2026",
+  "groupe": "P",
+  "arxiv": null,
+  "crossref": {
+   "sim": 1.0,
+   "titre": "Agentic Accountability: “The Buck Stops Where?” Ethical Frameworks for Human Oversight of Autonomous AI Systems",
+   "doi": "10.14569/ijacsa.2026.0170502",
+   "lieu": "International Journal of Advanced Computer Science and Applications",
+   "type": "journal-article",
+   "annee": 2026,
+   "auteur1": "Bahidika",
+   "nb_auteurs": 1
+  }
+ },
+ "Mukherjee2025": {
+  "titre": "Agentic AI: Autonomy, Accountability, and the Algorithmic Society",
+  "auteur": "Mukherjee et Chang",
+  "lieu": "SSRN",
+  "annee": "2025",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "Agentic AI: Autonomy, Accountability, and the Algorithmic Society",
+   "id": "2502.00289v3",
+   "date": "2025-02-01",
+   "auteur1": "Anirban Mukherjee",
+   "nb_auteurs": 2
+  },
+  "crossref": {
+   "sim": 1.0,
+   "titre": "Agentic AI: Autonomy, Accountability, and the Algorithmic Society",
+   "doi": "10.2139/ssrn.5123621",
+   "lieu": "",
+   "type": "posted-content",
+   "annee": 2025,
+   "auteur1": "Mukherjee",
+   "nb_auteurs": 2
+  }
+ },
+ "Alibasic2026": {
+  "titre": "Governing Agentic AI in the Administrative State: Human Oversight, Cybersecurity Accountability, and Risk in Autonomous Digital Systems",
+  "auteur": "Alibašić",
+  "lieu": "Future Internet",
+  "annee": "2026",
+  "groupe": "P",
+  "arxiv": null,
+  "crossref": {
+   "sim": 1.0,
+   "titre": "Governing Agentic AI in the Administrative State: Human Oversight, Cybersecurity Accountability, and Risk in Autonomous Digital Systems",
+   "doi": "10.3390/fi18100528",
+   "lieu": "Future Internet",
+   "type": "journal-article",
+   "annee": 2026,
+   "auteur1": "Alibašić",
+   "nb_auteurs": 1
+  }
+ },
+ "Hacker2026": {
+  "titre": "A pragmatic approach to regulating AI agents",
+  "auteur": "Hacker et coll.",
+  "lieu": "arXiv",
+  "annee": "2026",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "A pragmatic approach to regulating AI agents",
+   "id": "2604.22819v1",
+   "date": "2026-04-16",
+   "auteur1": "Philipp Hacker",
+   "nb_auteurs": 2
+  },
+  "crossref": {
+   "sim": 1.0,
+   "titre": "A Pragmatic Approach to Regulating AI Agents",
+   "doi": "10.2139/ssrn.6509259",
+   "lieu": "",
+   "type": "posted-content",
+   "annee": 2026,
+   "auteur1": "Hacker",
+   "nb_auteurs": 2
+  }
+ },
+ "Gabison2025": {
+  "titre": "Inherent and emergent liability issues in LLM-based agentic systems: a principal-agent perspective",
+  "auteur": "Gabison et Xian",
+  "lieu": "atelier REALM",
+  "annee": "2025",
+  "groupe": "P",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "Inherent and emergent liability issues in LLM-based agentic systems: a principal-agent perspective",
+   "id": "2504.03255v2",
+   "date": "2025-04-04",
+   "auteur1": "Garry A. Gabison",
+   "nb_auteurs": 2
+  },
+  "crossref": {
+   "sim": 1.0,
+   "titre": "Inherent and emergent liability issues in LLM-based agentic systems: a principal-agent perspective",
+   "doi": "10.2139/ssrn.5210666",
+   "lieu": "",
+   "type": "posted-content",
+   "annee": 2025,
+   "auteur1": "Gabison",
+   "nb_auteurs": 2
+  }
+ },
+ "Kaul2026": {
+  "titre": "Behavioral Governance for Autonomous AI Agents: The AgentBound Framework",
+  "auteur": "Kaul et coll.",
+  "lieu": "arXiv",
+  "annee": "2026",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "Behavioral Governance for Autonomous AI Agents: The AgentBound Framework",
+   "id": "2606.30970v2",
+   "date": "2026-06-29",
+   "auteur1": "Anuj Kaul",
+   "nb_auteurs": 3
+  },
+  "crossref": {
+   "sim": 0.632,
+   "titre": "Adaptive Governance of Autonomous AI Agents",
+   "doi": "10.4018/979-8-3373-9594-4.ch004",
+   "lieu": "Advances in Computational Intelligence and Robotics",
+   "type": "book-chapter",
+   "annee": 2026,
+   "auteur1": "Almasria",
+   "nb_auteurs": 1
+  }
+ },
+ "South2025": {
+  "titre": "Authenticated Delegation and Authorized AI Agents",
+  "auteur": "South et coll.",
+  "lieu": "arXiv",
+  "annee": "2025",
+  "groupe": "A",
+  "arxiv": {
+   "sim": 1.0,
+   "titre": "Authenticated Delegation and Authorized AI Agents",
+   "id": "2501.09674v1",
+   "date": "2025-01-16",
+   "auteur1": "Tobin South",
+   "nb_auteurs": 8
+  },
+  "crossref": {
+   "sim": 0.536,
+   "titre": "Optimizing Delegation Between Human and AI Collaborative Agents",
+   "doi": "10.1007/978-3-031-74627-7_18",
+   "lieu": "Communications in Computer and Information Science",
+   "type": "book-chapter",
+   "annee": 2025,
+   "auteur1": "Fuchs",
+   "nb_auteurs": 3
+  }
+ }
+}

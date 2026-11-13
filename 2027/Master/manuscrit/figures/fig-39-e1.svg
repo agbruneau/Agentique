@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 228" width="880" height="228">
+<rect width="880" height="228" fill="#ffffff"/>
+<rect x="30" y="20" width="120" height="46" rx="6" fill="#eef2fb" stroke="#2f5fd0" stroke-width="1.2"/>
+<text x="90" y="47.225" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="13" font-weight="bold" fill="#14233f">Qualification</text>
+<line x1="150" y1="43" x2="170" y2="43" stroke="#2f5fd0" stroke-width="1.4"/>
+<polygon points="170,43 161,47 161,39" fill="#2f5fd0"/>
+<line x1="90" y1="66" x2="90" y2="84" stroke="#9aa5b4" stroke-width="1.3"/>
+<rect x="30" y="84" width="120" height="124" rx="6" fill="#f5f6f8" stroke="#9aa5b4" stroke-width="1.2"/>
+<text x="90" y="108" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#14233f">Une solution</text>
+<text x="90" y="123.18" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#14233f">moins autonome</text>
+<text x="90" y="138.36" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#14233f">suffirait-elle ?</text>
+<rect x="170" y="20" width="120" height="46" rx="6" fill="#eef2fb" stroke="#2f5fd0" stroke-width="1.2"/>
+<text x="230" y="47.225" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="13" font-weight="bold" fill="#14233f">Pilote</text>
+<line x1="290" y1="43" x2="310" y2="43" stroke="#2f5fd0" stroke-width="1.4"/>
+<polygon points="310,43 301,47 301,39" fill="#2f5fd0"/>
+<line x1="230" y1="66" x2="230" y2="84" stroke="#9aa5b4" stroke-width="1.3"/>
+<rect x="170" y="84" width="120" height="124" rx="6" fill="#f5f6f8" stroke="#9aa5b4" stroke-width="1.2"/>
+<text x="230" y="108" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#14233f">Propriétaire,</text>
+<text x="230" y="123.18" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#14233f">accès limités,</text>
+<text x="230" y="138.36" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#14233f">journaux,</text>
+<text x="230" y="153.54" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#14233f">critères</text>
+<text x="230" y="168.72" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#14233f">d&#x27;arrêt, plafond</text>
+<text x="230" y="183.9" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#14233f">de consommation</text>
+<text x="230" y="199.08" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#14233f">en place ?</text>
+<rect x="310" y="20" width="120" height="46" rx="6" fill="#eef2fb" stroke="#2f5fd0" stroke-width="1.2"/>
+<text x="370" y="47.225" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="13" font-weight="bold" fill="#14233f">Production</text>
+<line x1="430" y1="43" x2="450" y2="43" stroke="#2f5fd0" stroke-width="1.4"/>
+<polygon points="450,43 441,47 441,39" fill="#2f5fd0"/>
+<line x1="370" y1="66" x2="370" y2="84" stroke="#9aa5b4" stroke-width="1.3"/>
+<rect x="310" y="84" width="120" height="124" rx="6" fill="#f5f6f8" stroke="#9aa5b4" stroke-width="1.2"/>
+<text x="370" y="108" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#14233f">Mise en service</text>
+<text x="370" y="123.18" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#14233f">graduelle,</text>
+<text x="370" y="138.36" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#14233f">approuvée par</text>
+<text x="370" y="153.54" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#14233f">une autorité</text>
+<text x="370" y="168.72" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#14233f">imputable</text>
+<rect x="450" y="20" width="120" height="46" rx="6" fill="#eef2fb" stroke="#2f5fd0" stroke-width="1.2"/>
+<text x="510" y="47.225" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="13" font-weight="bold" fill="#14233f">Exploitation</text>
+<line x1="570" y1="43" x2="590" y2="43" stroke="#2f5fd0" stroke-width="1.4"/>
+<polygon points="590,43 581,47 581,39" fill="#2f5fd0"/>
+<line x1="510" y1="66" x2="510" y2="84" stroke="#9aa5b4" stroke-width="1.3"/>
+<rect x="450" y="84" width="120" height="124" rx="6" fill="#f5f6f8" stroke="#9aa5b4" stroke-width="1.2"/>
+<text x="510" y="108" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#14233f">Les usages réels</text>
+<text x="510" y="123.18" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#14233f">correspondent-ils</text>
+<text x="510" y="138.36" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#14233f">aux usages</text>
+<text x="510" y="153.54" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#14233f">autorisés ?</text>
+<rect x="590" y="20" width="120" height="46" rx="6" fill="#eef2fb" stroke="#2f5fd0" stroke-width="1.2"/>
+<text x="650" y="47.225" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="13" font-weight="bold" fill="#14233f">Changement</text>
+<line x1="710" y1="43" x2="730" y2="43" stroke="#2f5fd0" stroke-width="1.4"/>
+<polygon points="730,43 721,47 721,39" fill="#2f5fd0"/>
+<line x1="650" y1="66" x2="650" y2="84" stroke="#9aa5b4" stroke-width="1.3"/>
+<rect x="590" y="84" width="120" height="124" rx="6" fill="#f5f6f8" stroke="#9aa5b4" stroke-width="1.2"/>
+<text x="650" y="108" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#14233f">Ce changement</text>
+<text x="650" y="123.18" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#14233f">déclenche-t-il</text>
+<text x="650" y="138.36" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#14233f">une nouvelle</text>
+<text x="650" y="153.54" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#14233f">revue ?</text>
+<rect x="730" y="20" width="120" height="46" rx="6" fill="#eef2fb" stroke="#2f5fd0" stroke-width="1.2"/>
+<text x="790" y="47.225" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="13" font-weight="bold" fill="#14233f">Retrait</text>
+<line x1="790" y1="66" x2="790" y2="84" stroke="#9aa5b4" stroke-width="1.3"/>
+<rect x="730" y="84" width="120" height="124" rx="6" fill="#f5f6f8" stroke="#9aa5b4" stroke-width="1.2"/>
+<text x="790" y="108" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#14233f">Accès supprimés,</text>
+<text x="790" y="123.18" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#14233f">documents</text>
+<text x="790" y="138.36" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#14233f">archivés,</text>
+<text x="790" y="153.54" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#14233f">inscription</text>
+<text x="790" y="168.72" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="11.5" fill="#14233f">conservée</text>
+</svg>

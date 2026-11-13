@@ -1,0 +1,13 @@
+# Sorties de compilation Typst des annexes
+sources/**/*.pdf
+__pycache__/
+
+# Brouillons refusés par le contrôle mot à mot (composer.py), écrits à côté du PDF
+documents/*(rejeté).pdf
+
+# Répertoires de travail des revues (retirés le 4 novembre 2026, conservés dans l'historique)
+.agents/
+.review_chunks_*/
+documents/scratch/
+documents/DOCUMENT_TEXT_MAP.md
+

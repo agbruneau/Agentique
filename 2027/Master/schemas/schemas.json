@@ -1,0 +1,176 @@
+[
+ {
+  "nom": "fig-01-e1",
+  "chapitre": 1,
+  "ancre": "Un assistant fonctionne par tours : une demande, une réponse",
+  "legende": "L'assistant répond en un tour; l'agent boucle : le modèle utilise un outil, se règle sur le résultat que lui renvoie l'environnement et choisit la suite, avec un point de contrôle humain possible et une condition d'arrêt."
+ },
+ {
+  "nom": "fig-01-e2",
+  "chapitre": 1,
+  "ancre": "Cinq termes reviennent dans tout l'ouvrage, du plus simple a",
+  "legende": "Les cinq termes retenus par ce chapitre, du plus simple au plus englobant, avec qui décide du chemin dans chacun; workflow agentique, agent et système multi-agents sont aussi des systèmes d'IA composés."
+ },
+ {
+  "nom": "fig-02-e1",
+  "chapitre": 2,
+  "ancre": "Chaque génération a déplacé l'unité que l'on intègre et la f",
+  "legende": "Quatre générations d'intégration, avec pour chacune l'unité intégrée et la forme du contrat qui la décrit. Ces générations se chevauchent : chacune marque un centre de gravité, pas une étape d'une succession stricte."
+ },
+ {
+  "nom": "fig-03-e1",
+  "chapitre": 3,
+  "ancre": "Cet ouvrage retient cinq niveaux. Il part des quatre couches",
+  "legende": "Les cinq niveaux d'interopérabilité retenus par ce chapitre, à partir de l'EIF et du LCIM, avec la question que pose chacun et ce que les protocoles en fournissent en 2026."
+ },
+ {
+  "nom": "fig-05-e1",
+  "chapitre": 5,
+  "ancre": "Le protocole repose sur JSON-RPC. Il décrit les messages qui",
+  "legende": "Un hôte fait tourner un client par serveur; chaque serveur expose des outils, des ressources et des prompts, et ne voit ni la conversation entière ni les autres serveurs."
+ },
+ {
+  "nom": "fig-05-e2",
+  "chapitre": 5,
+  "ancre": "La révision du 28 juillet 2026 supprime cet état [2]. Sept c",
+  "legende": "Un échange entre client et serveur avant et depuis la révision du 28 juillet 2026 : la poignée de main, la session et les requêtes initiées par le serveur disparaissent au profit de requêtes autonomes et d'allers-retours multiples."
+ },
+ {
+  "nom": "fig-06-e1",
+  "chapitre": 6,
+  "ancre": "L'exemple canonique est celui d'un atelier de réparation aut",
+  "legende": "L'exemple de l'atelier de réparation automobile donné par la documentation d'A2A : les agents se relient horizontalement par A2A, et le mécanicien atteint verticalement ses outils par MCP."
+ },
+ {
+  "nom": "fig-08-e1",
+  "chapitre": 8,
+  "ancre": "Le relevé de référence sur le sujet compare cinq solutions —",
+  "legende": "Trois modèles de découverte, distingués par l'endroit où réside l'index : un dépôt unique, des registres qui indexent ce que chaque domaine publie et se renvoient les requêtes, ou un réseau pair-à-pair sans opérateur central. Ce découpage est celui que retient le chapitre, voisin de celui du relevé de référence."
+ },
+ {
+  "nom": "fig-10-e1",
+  "chapitre": 10,
+  "ancre": "Un achat par agent se décompose en quatre questions, auxquel",
+  "legende": "Un achat par agent décomposé en quatre couches, chacune avec sa question et les protocoles qui y répondent. Ce découpage est celui du chapitre : il est commode, pas normatif."
+ },
+ {
+  "nom": "fig-11-e1",
+  "chapitre": 11,
+  "ancre": "Sept familles d'instances produisent ou annoncent des règles",
+  "legende": "Les sept familles d'instances de la section 11.1, classées selon leur nature et selon le degré d'avancement de leur texte le plus avancé pour les agents : les seuls textes mis en œuvre viennent de l'AAIF, et les organismes formels n'ont encore rien publié."
+ },
+ {
+  "nom": "fig-12-e1",
+  "chapitre": 12,
+  "ancre": "L'erreur qui en résulte a une propriété gênante : elle est s",
+  "legende": "L'agent des ventes et l'agent des finances échangent un message conforme au schéma, mais donnent deux sens au « revenu du trimestre ». Une erreur de syntaxe produit un rejet; une erreur de sens produit une réponse bien formée, que l'agent suivant reprend comme un fait."
+ },
+ {
+  "nom": "fig-14-e1",
+  "chapitre": 14,
+  "ancre": "Le cadre le plus repris est CoALA (Cognitive Architectures f",
+  "legende": "Les quatre types de mémoire distingués par CoALA, avec ce que chacun contient et le risque propre à l'écriture, du plus faible (mémoire de travail) au plus élevé (mémoire procédurale). Le contenu suit CoALA; les risques des mémoires épisodique et sémantique sont qualifiés par le chapitre."
+ },
+ {
+  "nom": "fig-16-e1",
+  "chapitre": 16,
+  "ancre": "Le relevé de Zhu et coll. classe les systèmes selon trois to",
+  "legende": "Les trois topologies de coordination; les cercles figurent les agents. La taxonomie est celle du relevé de Zhu et coll., les définitions illustrées celles de l'usage courant, comme le précise le texte."
+ },
+ {
+  "nom": "fig-17-e1",
+  "chapitre": 17,
+  "ancre": "Entre ces deux pôles, la pratique d'entreprise occupe au moi",
+  "legende": "Les quatre positions que le chapitre distingue entre les pôles workflow et agent, selon qui décide du chemin et ce que décide le modèle. Entre les étapes agentiques et l'agent borné passe une frontière de visibilité."
+ },
+ {
+  "nom": "fig-18-e1",
+  "chapitre": 18,
+  "ancre": "Les outils d'un agent touchent des systèmes qui ne partagent",
+  "legende": "Le patron Saga : une suite de transactions locales; quand T3 échoue, les compensations des étapes déjà validées s'exécutent en ordre inverse, de C2 à C1. Entre chaque étape et sa compensation, l'état intermédiaire reste visible des autres agents."
+ },
+ {
+  "nom": "fig-19-e1",
+  "chapitre": 19,
+  "ancre": "En orchestration, un coordinateur détient le plan et déclenc",
+  "legende": "Orchestration et chorégraphie : d'un côté, un coordinateur détient le plan et déclenche les étapes; de l'autre, chaque agent réagit aux événements des autres, et le plan n'est écrit nulle part."
+ },
+ {
+  "nom": "fig-21-e1",
+  "chapitre": 21,
+  "ancre": "La version 3 publie le jeu de données complet, MAST-Data : 1",
+  "legende": "Les quatorze modes d'échec de MAST, groupés en trois catégories, avec la part de chacun dans la version 3. Les totaux v3 par catégorie sont des sommes calculées dans ce chapitre, que l'article ne publie pas; les totaux v2 sont ceux que publie la version 2."
+ },
+ {
+  "nom": "fig-22-e1",
+  "chapitre": 22,
+  "ancre": "Ces positions disent quand l'humain intervient par rapport à",
+  "legende": "Les positions de l'humain selon le moment où il intervient par rapport à l'action de l'agent (avant, pendant ou après); la position « aux commandes » englobe les trois. L'expression « hors de la boucle » vient de l'usage, non des lignes directrices de 2019."
+ },
+ {
+  "nom": "fig-23-e1",
+  "chapitre": 23,
+  "ancre": "Ici, il ne s'agit plus de structurer un agent, mais de faire",
+  "legende": "Vue en couches à l'échelle de l'entreprise : cinq couches et un plan de contrôle transversal qui réunit registre, identité, politique, observabilité et budgets. Ce découpage est une synthèse propre au chapitre, calée sur celui du compendium."
+ },
+ {
+  "nom": "fig-24-e1",
+  "chapitre": 24,
+  "ancre": "Rapproché de la documentation des produits, ce pipeline se r",
+  "legende": "Les cinq contrôles qu'une passerelle applique à un appel d'outil : l'appel traverse les cinq avant d'atteindre l'outil, et la réponse repasse par l'inspection avant son retour à l'agent. Le regroupement en cinq contrôles est une grille de lecture tirée du brouillon de Microsoft et de la documentation des produits, pas un résultat éprouvé."
+ },
+ {
+  "nom": "fig-30-e1",
+  "chapitre": 30,
+  "ancre": "AIMS ne comble pas ce vide. Le brouillon ne mentionne pas la",
+  "legende": "Une chaîne de délégation à deux sauts selon la RFC 8693 : le sous-agent obtient par échange un jeton plus étroit que celui de l'agent, mais le serveur de ressources ne décide que sur le sujet et l'acteur courant. Les règles de réduction sont celles que le chapitre déduit des textes."
+ },
+ {
+  "nom": "fig-31-e1",
+  "chapitre": 31,
+  "ancre": "Le détournement d'objectif (ASI01) est le résultat recherché",
+  "legende": "Le trajet d'une injection indirecte : un tiers dépose une consigne dans un contenu que l'agent lit pour une tâche légitime, et le résultat d'outil détourne l'objectif de l'agent. Ce que l'attaquant en tire dépend des capacités dont l'agent dispose."
+ },
+ {
+  "nom": "fig-35-e1",
+  "chapitre": 35,
+  "ancre": "La proposition initiale de la Commission, en novembre 2025, ",
+  "legende": "Dates d'application de l'AI Act telles que les fixe le Digital Omnibus (règlement (UE) 2026/1744) : les échéances de 2025 et d'août 2026 restent inchangées, une échéance s'ajoute en décembre 2026 et les obligations à haut risque sont reportées à 2027 et 2028."
+ },
+ {
+  "nom": "fig-36-e1",
+  "chapitre": 36,
+  "ancre": "Ce qui suit est une déduction. L'autorité réelle d'un agent ",
+  "legende": "L'autorité réelle d'un agent logiciel, ce que le mandant configure, et son autorité apparente, ce que le tiers perçoit : selon la déduction proposée dans ce chapitre, le risque juridique loge dans l'écart entre les deux."
+ },
+ {
+  "nom": "fig-39-e1",
+  "chapitre": 39,
+  "ancre": "Le guide québécois propose un parcours d'autorisation en tro",
+  "legende": "Les six étapes du cycle de vie d'un agent et la décision prise à chacune. Le guide québécois propose un parcours en trois étapes; les autres sources lues le portent à six."
+ },
+ {
+  "nom": "fig-40-e1",
+  "chapitre": 40,
+  "ancre": "L'inférence se paie au jeton, en entrée et en sortie. Ce que",
+  "legende": "Pour un document traité par un pipeline séquentiel, l'entrée pèse plus de 97 % des jetons; trois multiplicateurs s'y ajoutent : la boucle (mesure interne d'Anthropic), la topologie, à modèle égal, et les outils, payés en jetons d'entrée."
+ },
+ {
+  "nom": "fig-48-e1",
+  "chapitre": 48,
+  "ancre": "Une notice a été retenue à trois conditions",
+  "legende": "Du repérage au corpus retenu : 124 notices rendues par dix requêtes, 83 retenues après tri, 82 confirmées auprès d'arXiv ou de Crossref. À droite, les notices rendues et retenues pour chaque requête."
+ },
+ {
+  "nom": "fig-49-e1",
+  "chapitre": 49,
+  "ancre": "Les dates européennes viennent des pages d'information de la Commission",
+  "legende": "Échéances de 2027 à 2031 sur trois lignes : jalons de normalisation annoncés par les chartes de l'IETF, échéances réglementaires fixées par des textes adoptés, échéances de la transition post-quantique. Les jalons de normalisation sont des intentions; une échéance réglementaire peut être déplacée par un nouveau texte."
+ },
+ {
+  "nom": "fig-50-e1",
+  "chapitre": 50,
+  "ancre": "L'enveloppe de 2030, de 25 à 55 G$ US, contient aussi",
+  "legende": "Tailles publiées du marché de l'IA agentique pour 2025 et pour 2030, sur une échelle logarithmique. Les points pleins viennent de pages lues; les points creux, d'un blogue qui reprend des documents payants de Gartner. L'écart tient d'abord au périmètre compté."
+ }
+]

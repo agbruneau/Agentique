@@ -1,0 +1,240 @@
+{
+ "annexe-F": {
+  "id": "annexe-F",
+  "controle_conforme": true,
+  "mots_avant": 1761,
+  "mots_apres": 1775,
+  "changements": [
+   "Introduction, paragraphe de F.1 et textes d'introduction de F.2, F.3 et F.4 resserrés : retrait de « non négociable », « maître », « formels », « parfaitement », « insurmontable », « doctrine », « numéro un ».",
+   "Titres : « consolidé » retiré de F.1, « sélection » remplacé par « choix » en F.2, « arbitrage entre » par « choix entre » en F.3, « normatif » retiré en F.4; numéros de sections inchangés.",
+   "Cas limites de F.2 : amorces en gras alignées sur le patron « **Amorce.** texte »; « Edge » retiré de l'amorce 4, redondant avec « en périphérie »; « systématiquement » devient « toujours ».",
+   "Colonne de l'invariant : « Zéro » devient « Aucune » ou « aucun »; « egress », « ACL-aware », « pré/post-action », « décommissionnement », « 3-Way Match » et « Open-Weights » remplacés par un terme français; formules $\\tau$, $\\ge 85\\,\\%$ et pass^5 conservées telles quelles.",
+   "Phrase finale de F.4 reformulée en condition (« Si toutes les fiches suivent ce descripteur… ») au lieu de « l'adoption systématique »; blocs de code, figures, séparateur de tableau, colonnes « Code », « Chap. » et « Intitulé normatif » et renvois inchangés."
+  ],
+  "divergences": [],
+  "remarques": "Aucun texte d'appui n'est défini pour l'annexe F; aucune divergence à comparer, et le contrôle répond conforme (33 lignes de tableau conservées, colonnes 1 à 3 identiques selon un diff). À relire : « mille embranchements » est une hyperbole conservée parce que le chiffre est protégé, et « fréquente, observée en 2025–2026 » reste une affirmation sans source dans l'original. Les rapprochements « à trois voies » et « poids ouverts » reprennent le vocabulaire des chapitres 45 et 32 ou 46, que je n'ai lu que par recherche de termes, non par relecture des passages."
+ },
+ "annexe-G": {
+  "id": "annexe-G",
+  "controle_conforme": true,
+  "mots_avant": 2259,
+  "mots_apres": 2306,
+  "changements": [
+   "Introduction et encadré resserrés : « Règle d'homologation » devient une amorce sobre, « Go / No-Go » et l'expansion de PRR (sigle conservé) sont retirés.",
+   "Termes anglais remplacés par le français lorsqu'il existe : mode fantôme, déploiement canari, équipe rouge, confiance zéro, retour arrière, systèmes d'enregistrement, gigue, multilocataire, périphérie, reprise cognitive, poids ouverts, exécution miroir, coût par résultat, usine logicielle agentique, SRE autonome, agents d'utilisation d'interface graphique (CUA), géorepérage, jeu de réserve.",
+   "Intensifs et gloses anglaises retirés (strict, complet, transparente, Scope Attenuation, Segregation of Duties, Named Business Owner, Deployment Footprint, Kill Switch, PIA); « zéro » devient « aucun »; « staging » devient « pré-production ».",
+   "Titres des grilles en minuscules sauf le premier mot et les noms propres; en-tête de la 4e colonne : « Artefact de preuve exigé à la revue d'homologation ».",
+   "Les 75 points, leurs identifiants, criticités et mentions [BLOQUANT] sont inchangés (vérifié par comparaison des colonnes 1 et 3); séparateurs de tableau, formules et symboles (≥, ≤, →, ↔︎) repris à l'identique."
+  ],
+  "divergences": [],
+  "remarques": "Annexe sans texte d'appui (UNITES.annexe-G : liste vide), donc aucune divergence à comparer avec un exposé; les renvois externes (RFC, ISO, EU AI Act, Loi 25, E-23) sont repris tels quels, sans vérification contre une source. Choix de vocabulaire à valider : « équipe rouge », « mode fantôme » et « exécution miroir » suivent les chapitres 6, 34 et 47; « verrouillages actifs » (O-06) suit le chapitre 33. « Séparation des devoirs » (F-11) et « séparation des tâches » (S-15) sont laissées telles quelles, comme dans l'original. « Write-Audit-Publish », « rug pull », « On-Behalf-Of » et « Saga » restent en l'état (patron ou attaque nommés, objet de spécification)."
+ },
+ "annexe-H": {
+  "id": "annexe-H",
+  "controle_conforme": true,
+  "mots_avant": 2759,
+  "mots_apres": 2915,
+  "changements": [
+   "Entrées renvoyées à l'annexe A (19) : Agent Card (A.2), Agent Registry (A.2), Bac à sable d'exécution (A.5), Chorégraphie agentique (A.1), Confidential Clean Room / GPU TEE (A.5 et A.7), Context Engineering (A.3), Couche sémantique (A.3), Data Contract (A.3), Dataspace (A.7), Distillation LLM → SLM (A.6), Exécution durable (A.1), Human-in-the-Loop (A.1), Human-on-the-Loop (A.1), MCP Tool Poisoning (A.5), Ontologie d'entreprise (A.3), Patron Saga (A.1), Policy Decision Point / Policy Enforcement Point (A.4), Shadow Mirroring (A.6), Simplex cyber-physique (A.5). Chacune garde son intitulé, ne dit que ce que l'annexe A n'a pas (technologies, normes, mécanisme, portée) et se termine par « (voir annexe A, section A.k) ». Aucune ne se réduit au seul renvoi : toutes ajoutent quelque chose.",
+   "35 entrées absentes de l'annexe A gardent leur définition, resserrée : emphase retirée (« massivement », « strictement », « physiquement », « maîtresse »), métaphores remplacées (« sas », « maison neutre »), anglicismes francisés (« prompts », « nœud Edge », « B2B », « stateful », « Open Source », « pub/sub », « Physical AI », « Systems of Record »).",
+   "Introduction réécrite : plus de formule d'annonce ni de « mobilise simultanément »; elle dit la relation à l'annexe A (renvoi des entrées déjà définies, définitions qui fixent l'usage et non une norme).",
+   "Tableau H.2 : 27 lignes et séparateur conservés; en-têtes en minuscules, catégories corrigées (« Identité corporative » devient « Identité d'entreprise », « Bancs d'évaluation » devient « Bancs d'essai »), « LLM » devient « modèle de langage », « déc. 2027 » devient « décembre 2027 ».",
+   "Titres, ligne de séparation du tableau, formules $…$, 54 puces et 29 lignes de tableau conservés à l'identique ou en nombre; apostrophes typographiques de l'original gardées, comme dans les volets déjà réécrits."
+  ],
+  "divergences": [
+   {
+    "sujet": "Terme français de human-on-the-loop",
+    "expose": "Annexe A, section A.1 : « humain sur la boucle » (human-on-the-loop)",
+    "texte": "H.1 : « Humain en supervision — Niveau L3 »",
+    "traitement": "corrigé",
+    "changement": "Intitulé aligné sur l'annexe A : « HOTL / Humain sur la boucle — Niveau L3 ». C'est le seul intitulé de H.1 dont le français change avec le suivant."
+   },
+   {
+    "sujet": "Terme français de l'exécution en miroir",
+    "expose": "Annexe A, section A.6 : « exécution en miroir » (le figuier étrangleur y est défini à part)",
+    "texte": "H.1 : « Shadow Mirroring (Double exécution en ombre) », patron « Strangler Fig »",
+    "traitement": "corrigé",
+    "changement": "Intitulé « Shadow Mirroring (Exécution en miroir) »; « Strangler Fig » devient « figuier étrangleur ». L'identité des deux notions est une déduction (mêmes entrées, seul l'ancien chemin sert), non une lecture du chapitre 47."
+   },
+   {
+    "sujet": "Benchmark",
+    "expose": "Annexe A, section A.6 : « banc d'essai » (benchmark)",
+    "texte": "H.2 : catégorie « Bancs d'évaluation » pour Tau-bench",
+    "traitement": "corrigé",
+    "changement": "« Bancs d'essai »"
+   },
+   {
+    "sujet": "Système d'enregistrement",
+    "expose": "Annexe A, section A.3 : « système d'enregistrement » (system of record)",
+    "texte": "H.1, System of Action : « Systems of Record » en anglais",
+    "traitement": "corrigé",
+    "changement": "« systèmes d'enregistrement »"
+   },
+   {
+    "sujet": "Fenêtre de contexte",
+    "expose": "Annexe A, section A.3 : « fenêtre de contexte »",
+    "texte": "H.1, Context Engineering : « fenêtre d'attention d'un agent »",
+    "traitement": "corrigé",
+    "changement": "Le membre de phrase disparaît dans le renvoi à A.3; Context Rot emploie « fenêtre de contexte »."
+   },
+   {
+    "sujet": "Portée du mot « normatif »",
+    "expose": "Annexe A, en tête : chaque définition fixe l'usage du mot dans l'ouvrage, « pas une norme »",
+    "texte": "Titre « Glossaire normatif » et introduction « vocabulaire normatif »",
+    "traitement": "nuance",
+    "changement": "Introduction : « chaque définition fixe l'usage du mot dans l'ouvrage, non une norme ». Le titre reste, la première ligne étant imposée."
+   },
+   {
+    "sujet": "Protection d'un environnement d'exécution de confiance",
+    "expose": "Annexe A, section A.5 : protège des logiciels et des opérateurs de l'exploitant, « guère d'un accès physique »",
+    "texte": "H.1 : données non exposées « à l'hébergeur ni à la contrepartie », sans réserve",
+    "traitement": "nuance",
+    "changement": "Phrase ajoutée à l'entrée Confidential Clean Room / GPU TEE : la protection vaut contre les logiciels et les opérateurs de l'exploitant, guère contre un accès physique."
+   },
+   {
+    "sujet": "Sigle ACP",
+    "expose": "Annexe A, section A.8 : ACP désigne trois protocoles selon le chapitre (6, 7 ou 10)",
+    "texte": "H.2, A2A : « unifiant l'initiative ACP », sans dire lequel",
+    "traitement": "avertissement",
+    "changement": "Texte laissé. L'annexe A ne dit pas lequel des trois ACP A2A a unifié; le chapitre 6 le dit sans doute."
+   }
+  ],
+  "remarques": "Le texte est plus long que l'original (106 %), parce que chaque renvoi ajoute une dizaine de mots; le gain tient à la sobriété, non à la longueur. Quatre entrées ont été gardées entières bien qu'elles touchent une notion de l'annexe A, faute d'avoir le même terme : Clé d'idempotence (A.1), Dérive sémantique (A.6), KV-Cache Sharing (A.6) et HYOK (A.8, simple développement du sigle); à trancher par le relecteur. Les niveaux « L2 » et « L3 » des entrées HITL et HOTL n'ont pas pu être confrontés au chapitre 22, qui n'est pas un texte d'appui; le contenu de H.2 (dates, autorités, articles) est repris de l'original sans vérification externe."
+ },
+ "ouverture": {
+  "id": "ouverture",
+  "controle_conforme": true,
+  "mots_avant": 5027,
+  "mots_apres": 5518,
+  "changements": [
+   "Ton ramené à celui de l'exposé : phrases courtes, emphase et métaphores retirées (« fracture brutale », « sans concession », « silos cognitifs bavards », « volant d'inertie », « archipel », « boussole »), formule d'annonce finale remplacée par une phrase affirmative.",
+   "Termes français à la place des termes anglais (systèmes d'enregistrement, confiance zéro, coût par résultat, humain dans la boucle / sur la boucle, agents fantômes, ingénierie du contexte, coût de sortie, passerelles natives de l'IA); les noms de spécifications et de produits restent.",
+   "Titres des sections 0.1 à 0.6 et des sous-sections ramenés à la forme sobre; numéros et ordre des sections inchangés, titre du chapitre et titres d'encadrés intacts.",
+   "Gras limité aux amorces (listes, paragraphes, première cellule des lignes de tableau); amorces rédigées comme au chapitre 1.",
+   "Les 36 lignes de tableau, les six parcours (séquences exactes de chapitres et d'annexes), la formule de Lusser, la figure et l'encadré fil rouge (tous les faits et chiffres) sont conservés; cellules resserrées, en-tête « Standard de production » devenu « Cible de production ».",
+   "Alignement sur les chapitres 1, 4 et 11 : 17 corrections, nuances ou avertissements avec renvois de section; en 0.1, l'adoption est ramenée aux chiffres de la section 4.1 et au portrait de MAP (section 4.2)."
+  ],
+  "divergences": [
+   {
+    "sujet": "Statut de la thèse d'ouverture",
+    "expose": "Section 1.5 : la thèse est un argument, pas un constat; les deux conditions sont nécessaires par raisonnement, non démontrées par la mesure.",
+    "texte": "L'encadré d'ouverture présentait en « Constat fondamental » que la performance ne dépend plus du modèle mais du tissu conjonctif.",
+    "traitement": "corrigé",
+    "changement": "Amorce « Point de départ »; l'affirmation devient « l'ouvrage soutient » et une phrase renvoie à la section 1.5 (argument, non constat)."
+   },
+   {
+    "sujet": "Adoption des agents en 2026 et capacités des systèmes déployés",
+    "expose": "Section 4.1 : 40 % des organisations d'au moins 1 G$ US ont mis des agents à l'échelle dans au moins une fonction (27 % un an plus tôt), 22 % des plus petites, chiffres déclaratifs connus par un compte rendu de presse. Section 4.2 : agents en production étroits (68 % moins de dix étapes avant intervention humaine, 16 cas sur 20 en workflow prédéfini; collecte de 2025). Chapitre 4 : ce qui sépare pilote et production est la fiabilité, l'évaluation et les contrôles.",
+    "texte": "Disait que le centre de gravité avait basculé en 2026, que les organisations avaient franchi la frontière vers l'exécution autonome, que les systèmes déployés délèguent et maintiennent un état sur plusieurs jours, et qu'une « fracture brutale » était apparue au passage à l'échelle.",
+    "traitement": "corrigé",
+    "changement": "Paragraphe réécrit : une partie des organisations a commencé à passer à l'action; chiffres de 4.1 et de 4.2 avec renvois; la cause pilote-production est celle du chapitre 4; l'état sur plusieurs jours est retiré."
+   },
+   {
+    "sujet": "Effectif de l'AAIF",
+    "expose": "Section 11.2 : huit membres platine; un décompte approximatif de logos donne une cinquantaine de membres or et environ deux cents membres argent; aucun total de plus de 300.",
+    "texte": "L'AAIF fédérerait « plus de 300 organisations membres fin 2026 ».",
+    "traitement": "avertissement",
+    "changement": "Chiffre gardé au conditionnel; une phrase dit que le chapitre 11 ne le confirme pas et donne son propre décompte (section 11.2)."
+   },
+   {
+    "sujet": "Consolidation des standards ouverts",
+    "expose": "Section 11.8 : convergence réelle à la couche des protocoles, absente à celle de l'identité (trois modèles de confiance, section 11.7). Section 4.4 : le socle MCP et A2A existe, mais registre MCP en préversion, identité sans profil adopté, conventions OpenTelemetry au statut « Development ». Section 11.2 : l'AAIF est un foyer neutre pour des projets, pas un organisme de normalisation.",
+    "texte": "Parlait d'une « consolidation historique » et d'une « séparation architecturale claire » des rôles, sans limite, sous une « gouvernance neutre » liée au W3C et à l'IETF « en synergie ».",
+    "traitement": "corrigé",
+    "changement": "Séparation des rôles limitée à la couche des protocoles; ajout que la convergence est absente pour l'identité (11.7 et 11.8) et que le reste du socle est en chantier (4.4); AAIF décrite comme foyer neutre pour des projets, « aux côtés de » AGNTCY, ASF, W3C, IETF et FIDO."
+   },
+   {
+    "sujet": "Dix projets « initiaux » de l'AAIF",
+    "expose": "Section 11.2 : trois projets fondateurs au 9 décembre 2025; dix projets au 11 novembre 2026 (A2A admis à l'été 2026, Agent Skills le 22 octobre 2026).",
+    "texte": "Citait « les dix projets initiaux de l'AAIF ».",
+    "traitement": "corrigé",
+    "changement": "« les dix projets hébergés par l'AAIF au 11 novembre 2026, contre trois à sa création (section 11.2) »."
+   },
+   {
+    "sujet": "Statut « vérifié » des socles d'architecture",
+    "expose": "Section 1.5 : aucun cas documenté ne montre MCP, A2A ou un système multi-agents en production (chapitre 42). Section 4.4 : OpenTelemetry au statut « Development », registre MCP en préversion, identité des agents sans profil adopté.",
+    "texte": "MCP, A2A, OpenTelemetry gen_ai.* et les autres socles « correspondent à des réalités techniques vérifiées et documentées fin 2026 ».",
+    "traitement": "corrigé",
+    "changement": "« existent et sont documentés fin 2026 »; phrase ajoutée : cela ne vaut pas preuve d'usage (section 1.5, chapitre 42); les trois socles encore en chantier sont nommés (section 4.4)."
+   },
+   {
+    "sujet": "Cibles de production 2027 présentées comme standards",
+    "expose": "Section 4.2 : les agents en production sont étroits, construits sur mesure; les protocoles répondent à une étape que la plupart des équipes n'ont pas franchie. Section 1.5 : aucun cas documenté de MCP, A2A ou multi-agents en production.",
+    "texte": "Le tableau des sept ruptures opposait les prototypes 2024-2025 aux « standards de production d'entreprise (2027) », et la phrase d'introduction parlait de « standards de production 2027 ».",
+    "traitement": "corrigé",
+    "changement": "En-tête de colonne et phrase d'introduction : « cible de production »; phrase ajoutée disant que ces cibles ne décrivent pas l'état général de la pratique (4.2, 1.5, chapitre 42)."
+   },
+   {
+    "sujet": "Les modèles seraient devenus interchangeables",
+    "expose": "Section 4.2 : 17 cas sur 20 utilisent un modèle propriétaire; la perte d'un fournisseur de modèles se prépare (chapitre 46).",
+    "texte": "Postulat : les modèles fondationnels « sont devenus des composants interchangeables ».",
+    "traitement": "corrigé",
+    "changement": "Reformulé en posture (« doivent être traités comme des composants remplaçables ») avec une phrase : ce n'est pas l'état de la pratique, 17 cas sur 20 de MAP dépendent d'un modèle propriétaire (section 4.2)."
+   },
+   {
+    "sujet": "Calendrier réglementaire « simultané »",
+    "expose": "Section 4.4 : le règlement (UE) 2026/1744 (Digital Omnibus) a reculé le calendrier; annexe III au 2 décembre 2027, annexe I au 2 août 2028. Section 4.5 et points à retenir : le report donne du temps, pas une dispense.",
+    "texte": "Parlait d'une « entrée en vigueur simultanée » et d'une année 2027 qui « ferme définitivement la parenthèse de tolérance expérimentale ».",
+    "traitement": "corrigé",
+    "changement": "Échéances « échelonnées de 2026 à 2028 »; ajout du Digital Omnibus, des deux dates de l'AI Act et de la phrase « ce report donne du temps, non une dispense » (section 4.4); les dates du texte (E-23, article 50, Loi 25) sont gardées."
+   },
+   {
+    "sujet": "Source des échéances européennes",
+    "expose": "Section 4.4 et limites du chapitre 4 : le Digital Omnibus a été lu sur une reproduction non officielle; le chapitre 35 en confirme le report par les considérants publiés sur EUR-Lex.",
+    "texte": "Les échéances juridiques « reposent sur les textes officiels en vigueur ».",
+    "traitement": "corrigé",
+    "changement": "Phrase ajoutée en 0.4 : la date de décembre 2027 est connue par une reproduction non officielle du règlement (UE) 2026/1744, dont le chapitre 35 confirme le report."
+   },
+   {
+    "sujet": "Échelle L0 à L4 et « taxonomies purement cognitives »",
+    "expose": "Section 1.3 : trois échelles publiées (Feng et coll. L1 à L5, Singapour à quatre niveaux, CSA de 0 à 5), définies d'après le rôle de l'humain ou, pour Singapour, selon deux axes; elles ne se recouvrent qu'approximativement.",
+    "texte": "Opposait l'échelle L0 à L4 à des « taxonomies purement cognitives », sans la situer par rapport aux échelles publiées.",
+    "traitement": "corrigé",
+    "changement": "Opposition retirée; l'échelle est dite propre à l'ouvrage."
+   },
+   {
+    "sujet": "Numéros des niveaux L0 à L4",
+    "expose": "Section 1.3 : le L3 de Feng et coll. est « consultant », le niveau 3 de la CSA « conditionnelle ».",
+    "texte": "Présentait L0 à L4 comme échelle unique du compendium, sans dire que ses numéros diffèrent de ceux des échelles publiées.",
+    "traitement": "avertissement",
+    "changement": "Échelle laissée telle quelle; phrase ajoutée : ses numéros ne se transposent pas aux trois échelles de la section 1.3, avec l'exemple de L3 et du niveau 3."
+   },
+   {
+    "sujet": "Règle du maillon le plus élevé",
+    "expose": "Section 1.3 : le niveau d'autonomie se fixe par agent et par classe d'action; l'approbation est réservée à l'irréversible et au fort enjeu.",
+    "texte": "Impose à toute la chaîne le niveau d'exigence du maillon dont l'empreinte d'action est la plus élevée.",
+    "traitement": "nuance",
+    "changement": "Règle gardée; phrase ajoutée dans l'encadré : elle va au-delà de ce que retient le chapitre 1 (section 1.3)."
+   },
+   {
+    "sujet": "Identité décentralisée et justificatifs (DID, VCs) dans le tableau des standards",
+    "expose": "Sections 11.4 et 11.10 : aucun RFC propre aux agents; identité décentralisée, confiance et réputation : posture « attendre ».",
+    "texte": "Les lignes « Identité et sécurité » (SPIFFE/DID) et « SPIFFE / SPIRE & W3C DIDs / VCs » présentent DID comme brique d'identité de la cible 2027.",
+    "traitement": "avertissement",
+    "changement": "Lignes gardées; paragraphe ajouté après le tableau 0.6 : aucun RFC propre aux agents, DID en posture « attendre » (sections 11.4 et 11.10)."
+   },
+   {
+    "sujet": "ISO/IEC 42001 et NIST AI RMF comme référentiels « d'agents »",
+    "expose": "Sections 11.5 et 11.6 : aucune norme ISO/IEC propre aux agents repérée; l'initiative du NIST n'a produit aucun livrable normatif.",
+    "texte": "La cellule disait « référentiels de maîtrise des risques d'agents ».",
+    "traitement": "corrigé",
+    "changement": "« d'agents » retiré de la cellule; phrase ajoutée après le tableau 0.6 (sections 11.5 et 11.6)."
+   },
+   {
+    "sujet": "Maturité des projets de l'AAIF listés au tableau 0.6",
+    "expose": "Section 11.2 : trois niveaux (Sandbox, Growth, Impact); seul le niveau d'A2A (Growth) est établi; l'étiquette « projet de l'AAIF » ne dit rien de la maturité.",
+    "texte": "Le tableau liste les projets AAIF comme standards sans indiquer leur niveau.",
+    "traitement": "avertissement",
+    "changement": "Phrase ajoutée après le tableau 0.6 sur les trois niveaux et sur A2A au niveau Growth (section 11.2)."
+   },
+   {
+    "sujet": "Neutralité de la gouvernance par fondation (critère 1)",
+    "expose": "Section 11.2 : conseil et comité technique réglés par la cotisation; la gouvernance technique varie d'un projet à l'autre.",
+    "texte": "Le critère 1 oppose la « fondation ouverte multi-acteurs » à l'éditeur unique, sans nuance.",
+    "traitement": "avertissement",
+    "changement": "Question gardée; phrase ajoutée : au sein de l'AAIF, la gouvernance technique varie d'un projet à l'autre (section 11.2)."
+   }
+  ],
+  "remarques": "Le contrôle répond « conforme » (5027 → 5518 mots, 110 %, donc près du plafond de 110 %). Les 36 lignes de tableau, la formule, la figure, les encadrés et les séquences des six parcours sont conservés; seul fichier écrit : Master/fusion/reecrit/ouverture.md. Je n'ai pas pu vérifier contre les trois exposés le contenu de E-23 et de la Loi 25 (article 12.1, sanctions), l'article 50 de l'AI Act, ISO/IEC 42001 dans les appels d'offres, la formule de Forrester, l'architecture à six couches ni l'attribution des sujets aux chapitres 12 à 47 dans les parcours et le tableau 0.6 : ces éléments sont laissés tels quels. J'ai écrit « fictive mais réaliste » pour le Groupe Boréal (« fictive » vient de la consigne, non du texte d'origine)."
+ }
+}
