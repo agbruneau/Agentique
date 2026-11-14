@@ -75,24 +75,26 @@ vérifiés en ligne (spécification A2A 1.0, conventions GenAI d'OpenTelemetry, 
 
 ## Après l'audit : compléments du 14 novembre 2026
 
-Cet audit porte sur l'état du 13 novembre 2026. Le lendemain, 164 entrées ont été
+Cet audit porte sur l'état du 13 novembre 2026. Le lendemain, 193 entrées ont été
 ajoutées au registre, hors audit, sous deux catégories nouvelles.
 
-- **139 enrichissements** : sections ou sous-sections ajoutées aux exposés de vingt
+- **164 enrichissements** : sections ou sous-sections ajoutées aux exposés de vingt
   chapitres (4, 8, 14, 18, 20, 21, 22, 23, 24, 26, 33, 34, 35, 37, 38, 39, 40, 41, 42
   et 44), avec leurs sources, leurs limites et les lignes correspondantes des grilles de
-  décision et des points à retenir. Les chapitres 1 à 47 listent maintenant 774 sources,
-  contre 709.
-- **25 harmonisations** : chronologie (annexe D) et décompte des sources (annexe E) mis
+  décision et des points à retenir; puis révision de la partie X (chapitres 48 à 50) et
+  de l'ouverture pour tenir compte de ces sources. Les chapitres 1 à 47 listent
+  maintenant 774 sources, contre 709; la partie X, 244, contre 227.
+- **29 harmonisations** : chronologie (annexe D) et décompte des sources (annexe E) mis
   à jour, quatre renvois croisés vers les nouvelles sections, la contradiction des
-  limites du chapitre 19 sur le maillage d'événements, et trois retouches de forme.
-  Neuf lignes s'ajoutent au glossaire (annexe A), hors registre, ce que son contrôle
-  admet.
+  limites du chapitre 19 sur le maillage d'événements, trois retouches de forme, et le
+  passage des renvois de l'ouverture sous les repères des passages déclarés. Neuf lignes
+  s'ajoutent au glossaire (annexe A), hors registre, ce que son contrôle admet.
 
 Ces compléments passent tous les contrôles de `compendium-master-verifie.py`. Ils n'ont
 pas été relus selon la grille de cet audit : aucune lecture intégrale, aucun arbitrage.
-Le PDF compte 1 086 pages. Sa page « À propos de cette édition » décompte à part les
-356 corrections de l'audit et les 164 compléments.
+Le PDF compte 1 090 pages. Sa page « À propos de cette édition » décompte à part les
+356 corrections de l'audit et les 193 compléments. Une évaluation d'ensemble de
+l'édition, avec ses réserves, est dans `Master/evaluation/evaluation-academique.md`.
 
 Les sources ajoutées ont été chargées le 14 novembre 2026, sauf celles que les limites
 des chapitres donnent pour non lues. Aucun nouveau contrôle d'ensemble des adresses n'a

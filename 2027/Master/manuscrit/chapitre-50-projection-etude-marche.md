@@ -2,7 +2,7 @@
 
 *Question directrice : que vaut ce marché, où va-t-il d'ici 2030, et que peut-on en dire sans prêter aux chiffres une précision qu'ils n'ont pas ?*
 
-> **État de référence :** pages lues le 13 novembre 2026 : estimations de douze cabinets et firmes d'analyse; résultats trimestriels des éditeurs publiés d'août à novembre 2026; enquêtes d'adoption de 2026; Statistique Canada (juin et août 2026) et budget fédéral du 5 novembre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre, classées en pages de l'émetteur et en pages tierces. Les interpolations et les sommes signalées comme calculs de l'ouvrage ne figurent dans aucune source.
+> **État de référence :** pages lues le 13 novembre 2026 : estimations de douze cabinets et firmes d'analyse; résultats trimestriels des éditeurs publiés d'août à novembre 2026; enquêtes d'adoption de 2026; Statistique Canada (juin et août 2026) et budget fédéral du 5 novembre 2026; Eurostat et le Census Bureau, lus le 14 novembre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre, classées en pages de l'émetteur et en pages tierces. Les interpolations et les sommes signalées comme calculs de l'ouvrage ne figurent dans aucune source.
 
 Une étude de marché répond d'ordinaire par un chiffre : la taille du marché, son taux de croissance, sa valeur à l'horizon. Celle-ci aboutit à un constat d'une autre nature. Pour 2025, les estimations publiées de l'IA agentique vont de 1,5 à 88 milliards de dollars américains selon ce que l'on compte, et aucune ne mesure l'objet de cet ouvrage, la couche d'interopérabilité et d'orchestration. Les éditeurs déclarent des revenus qui se comptent en milliards, dans des unités qui ne s'additionnent pas. Les enquêtes situent l'adoption entre moins de 10 % et plus de 95 % des organisations, selon la définition du mot « déployé ».
 
@@ -197,7 +197,7 @@ Le Canada dispose d'une mesure que peu de pays ont : une enquête de l'organisme
 | Québec, deuxième trimestre de 2025 | 12,7 %; Ontario 13,3 % | [42] |
 | Dirigeants canadiens de sociétés d'au moins 50 millions de dollars de revenus qui disent utiliser des agents | 77 % | [39] |
 
-L'écart entre 19 % et 77 % mesure la distance entre l'ensemble des entreprises et les grandes, et entre l'usage de l'IA et une définition très large de l'agent. Une enquête de la Banque du Canada confirme le premier chiffre : plus de la moitié des entreprises n'utilisent pas l'IA et ne prévoient pas l'adopter dans l'année, ou l'utilisent rarement [43]. Aucune de ces enquêtes ne pose de question sur les agents autonomes.
+L'écart entre 19 % et 77 % mesure la distance entre l'ensemble des entreprises et les grandes, et entre l'usage de l'IA et une définition très large de l'agent. Une enquête de la Banque du Canada confirme le premier chiffre : plus de la moitié des entreprises n'utilisent pas l'IA et ne prévoient pas l'adopter dans l'année, ou l'utilisent rarement [43]. Aucune de ces enquêtes ne pose de question sur les agents autonomes. Les offices statistiques de l'Union européenne et des États-Unis donnent le même ordre de grandeur, sur des champs différents : 20,0 % des entreprises de dix employés ou plus en 2025, et 19,8 % des entreprises au 3 mai 2026 [74][75]. Statistique Canada n'observe par ailleurs aucune prime de productivité significative chez les entreprises qui ont adopté l'IA, une fois leurs autres capacités prises en compte (section 40.5).
 
 Trois réserves pèsent sur la suite. L'enquête de Statistique Canada a pris fin avec son cycle du troisième trimestre de 2026 [41] : la série s'arrête, et aucune source de remplacement n'est identifiée. La dernière mesure québécoise date de 2025; aucune mise à jour de 2026 n'a été trouvée. Et aucune estimation indépendante de la taille du marché canadien de l'IA agentique n'existe; seules des pages de vendeurs d'études en proposent.
 
@@ -439,6 +439,11 @@ Pages tierces lues le 13 novembre 2026, qui rapportent un émetteur dont la page
 72. [IT-Online — reprise du communiqué de Gartner du 11 juin 2025 sur les agents gardiens](https://it-online.co.za/?p=298626)
 73. [Kaohoon International — reprise du communiqué de Gartner du 15 septembre 2026, Top Strategic Predictions for 2027 and Beyond](https://www.kaohooninternational.com/technology/591985)
 
+Pages d'offices statistiques lues le 14 novembre 2026 :
+
+74. [Eurostat — 20% of EU enterprises use AI technologies (11 décembre 2025)](https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20251211-2)
+75. [U.S. Census Bureau — Large Firms With at Least 20 Employees Biggest AI Users (26 mai 2026)](https://census.gov/library/stories/2026/05/ai-use-businesses.html)
+
 ## Limites de ce chapitre
 
 - Les pages ont été lues par un outil qui en restitue des extraits. Cinq ont été relues à l'audit, sans écart : [3], [14], [40], [36] et [32]. Les autres chiffres n'ont pas été revérifiés sur le texte intégral.
@@ -450,4 +455,5 @@ Pages tierces lues le 13 novembre 2026, qui rapportent un émetteur dont la page
 - Les revenus annualisés d'OpenAI et d'Anthropic, le financement propre aux jeunes pousses d'agents et plusieurs rondes de 2026 n'ont été trouvés que dans des reprises de presse contradictoires; ils ne sont pas cités.
 - Les enquêtes d'adoption sont déclaratives, portent surtout sur de grandes organisations, et plusieurs sont commandées par des fournisseurs. L'enquête de McKinsey de 2026 est reprise du chapitre 4, sans relecture.
 - Les degrés de confiance de 50.6, le rapprochement des scénarios du chapitre 43 avec des ordres de grandeur et l'hypothèse d'un ancrage commun des estimations sont des interprétations.
+- Les mesures d'Eurostat et du Census Bureau, ajoutées le 14 novembre 2026, ne sont pas comparables terme à terme à celle de Statistique Canada : le champ, la période et la question diffèrent (section 4.1).
 - Le Québec n'est documenté que par une mesure de 2025. Aucune estimation indépendante du marché canadien n'a été trouvée.

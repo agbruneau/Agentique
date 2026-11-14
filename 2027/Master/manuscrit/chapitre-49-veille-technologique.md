@@ -2,7 +2,7 @@
 
 *Question directrice : comment suivre un domaine qui change au trimestre, et que faut-il surveiller d'ici 2030 ?*
 
-> **État de référence :** pages lues le 13 novembre 2026 : série d'horizon temporel de METR (mise à jour du 8 septembre 2026) et son fichier de données; chartes des groupes de travail de l'IETF créés en octobre 2026; calendrier de l'AI Act publié par la Commission européenne; rapport IR 8547 du NIST (version finale du 27 octobre 2026); base de vulnérabilités NVD, interrogée le même jour; vingt et une notices d'arXiv. Les numéros entre crochets renvoient aux sources en fin de chapitre.
+> **État de référence :** pages lues le 13 novembre 2026 : série d'horizon temporel de METR (mise à jour du 8 septembre 2026) et son fichier de données; chartes des groupes de travail de l'IETF créés en octobre 2026; calendrier de l'AI Act publié par la Commission européenne; rapport IR 8547 du NIST (version finale du 27 octobre 2026); base de vulnérabilités NVD, interrogée le même jour; vingt et une notices d'arXiv; deux échéances et cinq lignes du registre de veille ajoutées le 14 novembre 2026, par renvoi aux chapitres complétés ce jour-là. Les numéros entre crochets renvoient aux sources en fin de chapitre.
 
 Les faits de cet ouvrage sont arrêtés aux 11 et 12 novembre 2026. Ils vieilliront vite, et inégalement : un prix d'inférence en quelques mois, une spécification en un an, un règlement en plusieurs années. Le chapitre 43 désigne neuf signaux à surveiller. Celui-ci décrit le dispositif qui les suit, puis porte le regard plus loin, sur ce qui est déjà inscrit au calendrier de 2027 à 2030 et sur ce que la recherche prépare.
 
@@ -140,7 +140,8 @@ Les annonces de l'automne 2026 confirment l'adoption des deux protocoles du socl
 | 2 décembre 2026 | AI Act : fin de la période transitoire de l'article 50, paragraphe 2, pour les systèmes déjà sur le marché; nouvelles interdictions | [27] |
 | 9 décembre 2026 | Transposition de la directive révisée sur la responsabilité du fait des produits; elle s'applique aux produits mis sur le marché après le 9 décembre | [28] |
 | Fin de 2026 | Portefeuilles européens d'identité numérique fournis par les États membres | [29] |
-| 1er mai 2027 | Ligne directrice E-23 du BSIF | Chapitre 38 |
+| Janvier 2027, au plus tôt | Corée du Sud : fin du délai de grâce avant les amendes de la loi-cadre sur l'IA | Section 35.7 |
+| 1er mai 2027 | Ligne directrice E-23 du BSIF; ligne directrice de l'AMF sur l'utilisation de l'IA | Chapitre 38 |
 | 2 août 2027 | AI Act : mise en conformité des modèles à usage général mis sur le marché avant le 2 août 2025; un bac à sable réglementaire par État membre | [27][30] |
 | 2 décembre 2027 | AI Act : règles sur les systèmes à haut risque de l'annexe III | [27] |
 | 11 décembre 2027 | Règlement sur la cyberrésilience : obligations principales; le signalement des vulnérabilités exploitées s'applique depuis le 11 septembre 2026 | [31] |
@@ -157,11 +158,11 @@ Les dates européennes viennent des pages d'information de la Commission, qui di
 
 ### Trois lectures
 
-**L'année dense est 2027.** Mai pour les institutions financières fédérales canadiennes, décembre pour le haut risque européen et pour la cyberrésilience des produits numériques. Un programme d'agents qui vise ces périmètres a un an pour produire l'inventaire, la journalisation et la supervision humaine que ces textes exigent.
+**L'année dense est 2027.** Mai pour les institutions financières canadiennes, fédérales et à charte québécoise, décembre pour le haut risque européen et pour la cyberrésilience des produits numériques. Un programme d'agents qui vise ces périmètres a un an pour produire l'inventaire, la journalisation et la supervision humaine que ces textes exigent.
 
 **Le texte européen sera rouvert pendant la période.** Le rapport de réexamen est dû en août 2029, après les évaluations de 2028 [32]. Le report de 2026 a montré qu'un calendrier adopté peut bouger. Une architecture de conformité qui survit à un changement de date, parce qu'elle repose sur des preuves produites en continu, vaut mieux qu'un projet calé sur une échéance (chapitre 39).
 
-**Hors d'Europe, peu de textes visent les agents.** Au Canada, le projet de loi C-36 sur la protection des renseignements personnels, déposé le 15 juin 2026, était à l'étape de la deuxième lecture, sans activité [34]; aucun projet de loi fédéral propre à l'IA n'a été trouvé. Aux États-Unis, le décret du 29 septembre 2026 porte sur la terminologie [1], et aucune loi fédérale de préemption des lois d'États n'a été trouvée. La Californie a signé le 30 septembre 2026 un ensemble de lois sur les systèmes de décision automatisée en emploi et sur un registre d'auditeurs d'IA [35]; aucune ne vise nommément les agents autonomes. La Chine est le seul État pour lequel un texte obligatoire propre aux agents a été repéré, par une source de presse [68].
+**Hors d'Europe, peu de textes visent les agents.** Au Canada, le projet de loi C-36 sur la protection des renseignements personnels, déposé le 15 juin 2026, était à l'étape de la deuxième lecture, sans activité [34]; aucun projet de loi fédéral propre à l'IA n'a été trouvé. Aux États-Unis, le décret du 29 septembre 2026 porte sur la terminologie [1], et aucune loi fédérale de préemption des lois d'États n'a été trouvée. La Californie a signé le 30 septembre 2026 un ensemble de lois sur les systèmes de décision automatisée en emploi et sur un registre d'auditeurs d'IA [35]; aucune ne vise nommément les agents autonomes. La Chine est le seul État pour lequel un texte obligatoire propre aux agents a été repéré, par une source de presse [68]. Le relevé de la section 35.7 y ajoute des avis d'application chinois du 8 mai 2026, la loi-cadre coréenne en vigueur depuis le 22 janvier 2026, qui ne nomme pas les agents, et le plan japonais du 14 juillet 2026. Dans l'Union, la proposition de Cloud and AI Development Act du 3 juin 2026 nomme l'orchestration d'agents dans un considérant (section 37.1).
 
 ---
 
@@ -276,10 +277,15 @@ Ce registre complète les neuf signaux de la section 43.4 sans les répéter. Ch
 | Incidents d'agents | Recension de l'OWASP | Trimestrielle | Cas de juillet 2026 [45] | Hypothèses de confinement (chapitre 32) |
 | Composition des défenses entre agents | arXiv | Trimestrielle | Une prépublication [50] | Frontières de confiance entre agents (chapitre 31) |
 | Plans de contrôle des éditeurs | Annonces des éditeurs | À l'événement | Conférences de novembre et de décembre 2026 à venir [3] | Fédération des plans de contrôle (chapitre 27) |
+| Dérive des entrées du registre de MCP | Recensements du registre public | Semestrielle | 4,2 % des serveurs à plusieurs versions redirigés sous la même identité (section 8.8) | Épinglage et comparaison à la synchronisation (chapitre 8) |
+| Conformité à A2A | Trousse de compatibilité du projet | À chaque version | Aucune liste publique de résultats (section 26.9) | Preuve exigée d'un éditeur (chapitre 26) |
+| Souveraineté infonuagique européenne | Parlement, Conseil et ENISA | Semestrielle | Règlement proposé le 3 juin 2026; EUCS non adopté (section 37.1) | Preuve de souveraineté d'un fournisseur (chapitre 37) |
+| Régulateurs financiers canadiens | BSIF et AMF | Semestrielle | Deux lignes directrices en vigueur le 1er mai 2027 (section 38.3) | Inventaire et cote de risque (chapitre 39) |
+| Adoption mesurée par les offices statistiques | Statistique Canada, Eurostat, Census Bureau | Semestrielle | Environ une entreprise sur cinq (section 4.1) | Hypothèse H1 (chapitre 4) |
 | Littérature scientifique | Les dix requêtes du chapitre 48 | Trimestrielle | 83 notices retenues | Hypothèses H2 et H3 (chapitre 4) |
 | Vocabulaire des sources fédérales américaines | Pages du NIST | À l'événement | « SI » à la place de « AI » [1] | Requêtes de veille |
 
-Le registre vaut par son entretien. Une ligne dont la source n'a pas été relue depuis deux cadences est à retirer ou à réattribuer.
+Le registre vaut par son entretien. Une ligne dont la source n'a pas été relue depuis deux cadences est à retirer ou à réattribuer. Les cinq lignes qui renvoient à une section, et non à une source, datent du 14 novembre 2026.
 
 ---
 
@@ -403,4 +409,5 @@ Page tierce lue le 13 novembre 2026 :
 - Les incidents de la section 49.7 sont connus par la recension [45], non par les divulgations d'origine. La source [46] n'a été lue qu'en partie.
 - Les conférences Ignite et re:Invent de la fin de 2026 sont postérieures à la date de référence.
 - L'échelle de maturité de 49.6, la conjecture sur ce qui atteindra la production, la lecture de l'écart entre les deux horizons de METR et le rapprochement du calendrier de l'IETF avec les scénarios du chapitre 43 sont des interprétations.
+- Les deux échéances et les cinq lignes du registre ajoutées le 14 novembre 2026 renvoient aux sections des chapitres complétés ce jour-là; leurs sources et leurs réserves y figurent et n'ont pas été relues ici.
 - Les intervalles de confiance des horizons de METR sont convertis de minutes en heures et arrondis par l'ouvrage.

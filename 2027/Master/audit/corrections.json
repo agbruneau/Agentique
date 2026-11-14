@@ -4678,5 +4678,266 @@
   "categorie": "harmonisation",
   "motif": "Terminologie : « Streamable HTTP », forme employée partout ailleurs dans l'ouvrage.",
   "origine": "cohérence d'ensemble (14 novembre 2026)"
+ },
+ {
+  "n": 521,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "établi le même jour par un script sur le manuscrit.",
+  "apres": "établi le même jour par un script sur le manuscrit; quinze travaux relevés hors protocole le 14 novembre 2026 (section 48.11), date à laquelle le corpus de l'ouvrage est passé à 774 sources.",
+  "categorie": "enrichissement",
+  "motif": "Bandeau : état de référence mis à jour pour les travaux relevés hors protocole.",
+  "origine": "révision partie X et ouverture (14 novembre 2026)"
+ },
+ {
+  "n": 522,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "Les sections qui suivent s'attachent d'abord à ces apports.\n\n---",
+  "apres": "Les sections qui suivent s'attachent d'abord à ces apports.\n\nLes compléments du 14 novembre 2026 ont porté ce corpus à 774 sources. Les 65 ajoutées, classées à la main, comptent 21 prépublications, 2 articles de revue, 11 textes officiels ou d'organismes publics, 4 publications d'organismes de référence, 3 pages de projets ouverts, 14 documentations ou billets d'éditeurs et 10 analyses de cabinets, d'analystes ou de presse. Le tableau ci-dessus n'a pas été recalculé : il décrit le corpus du 13 novembre.\n\n---",
+  "categorie": "enrichissement",
+  "motif": "Section 48.2 : profil des 65 sources ajoutées au corpus de l'ouvrage.",
+  "origine": "révision partie X et ouverture (14 novembre 2026)"
+ },
+ {
+  "n": 523,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "- La littérature de gouvernance propose des cadres et n'en valide aucun.\n\n---",
+  "apres": "- La littérature de gouvernance propose des cadres et n'en valide aucun.\n- Quinze travaux relevés hors protocole le 14 novembre 2026 précisent trois cases de la synthèse : l'écosystème des registres de MCP, les défauts du logiciel qui porte les agents et le biais d'automatisation. Aucun ne mesure un déploiement de MCP ou d'A2A en production.\n\n---",
+  "categorie": "enrichissement",
+  "motif": "Points à retenir : complément tiré de la section 48.11.",
+  "origine": "révision partie X et ouverture (14 novembre 2026)"
+ },
+ {
+  "n": 524,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "— chapitre 4.\n\n## Limites de ce chapitre",
+  "apres": "— chapitre 4.\n\nTravaux relevés hors protocole le 14 novembre 2026 (section 48.11) :\n\n87. [Kraishan — Same Name, Different Server: A Security Census of Silent Drift in the Model Context Protocol Ecosystem (arXiv 2609.14119)](https://arxiv.org/abs/2609.14119) — résumé; chapitre 8.\n88. [Li et Gao — Toward Understanding Security Issues in the Model Context Protocol Ecosystem (arXiv 2510.16558)](https://arxiv.org/html/2510.16558v1) — chapitre 8.\n89. [Guo et coll. — A Measurement Study of Model Context Protocol (arXiv 2509.25292)](https://arxiv.org/html/2509.25292v1) — chapitre 8.\n90. [Chen et coll. — Rethinking MCP Security: A Large-Scale Study of Runtime MCP Servers and Security Scanner Reliability (arXiv 2607.11086)](https://arxiv.org/abs/2607.11086) — résumé; chapitres 8 et 24.\n91. [MCP-Guard: A Multi-Stage Defense-in-Depth Framework for Securing Model Context Protocol in Agentic AI (arXiv 2508.10991)](https://arxiv.org/html/2508.10991v4) — chapitre 24.\n92. [Shah et coll. — Characterizing Faults in Agentic AI: A Taxonomy of Types, Symptoms, and Root Causes (arXiv 2603.06847)](https://arxiv.org/html/2603.06847v2) — chapitre 21.\n93. [Zhang, Zhang et Tan — Dissecting Bug Triggers and Failure Modes in Modern Agentic Frameworks (arXiv 2604.08906)](https://arxiv.org/html/2604.08906v1) — chapitre 20.\n94. [Zhu et coll. — Where Agent Frameworks Fall Short (arXiv 2602.21806)](https://arxiv.org/abs/2602.21806) — résumé; chapitre 20.\n95. [She et coll. — Efficient Benchmarking in Production: A Study of an Evolving LLM Agent (arXiv 2609.21267)](https://arxiv.org/abs/2609.21267) — résumé; chapitre 33.\n96. [Kujanpää et coll. — Tool-Making and Self-Evolving LLM Agents in Low-Latency Systems (arXiv 2607.08010)](https://arxiv.org/abs/2607.08010) — résumé; chapitre 42.\n97. [Statistique Canada — Li et Liu, Artificial intelligence adoption and productivity in Canadian firms (22 avril 2026)](https://www150.statcan.gc.ca/n1/pub/36-28-0001/2026004/article/00002-eng.htm) — chapitre 40.\n98. [Goddard et coll. — Automation bias: a systematic review of frequency, effect mediators, and mitigators (Journal of the American Medical Informatics Association)](https://pmc.ncbi.nlm.nih.gov/articles/PMC3240751/) — chapitre 22.\n99. [Dhanorkar, Passi et Vorvoreanu — Human oversight of agentic systems in practice (arXiv 2606.05391)](https://arxiv.org/html/2606.05391) — chapitre 22.\n100. [Green — The Flaws of Policies Requiring Human Oversight of Government Algorithms (arXiv 2109.05067)](https://arxiv.org/abs/2109.05067) — résumé; chapitre 22.\n101. [Mitchell, Ghosh et Passi — AI Agents Push Humans Out of the Loop (arXiv 2608.23642)](https://arxiv.org/html/2608.23642) — chapitre 22.\n\n## Limites de ce chapitre",
+  "categorie": "enrichissement",
+  "motif": "Sources [87] à [101] ajoutées pour la section 48.11.",
+  "origine": "révision partie X et ouverture (14 novembre 2026)"
+ },
+ {
+  "n": 525,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "sont des interprétations, non des résultats.\n- La recherche sur l'orchestration événementielle",
+  "apres": "sont des interprétations, non des résultats.\n- La section 48.11 est hors protocole : ses quinze travaux viennent des recherches ciblées des chapitres, non des dix requêtes. Six ne sont connus que par leur résumé, et leur rattachement aux cases de la synthèse est une lecture de ce chapitre. Le profil du corpus de la section 48.2 n'a pas été recalculé sur les 774 sources.\n- La recherche sur l'orchestration événementielle",
+  "categorie": "enrichissement",
+  "motif": "Limites : portée de la section 48.11.",
+  "origine": "révision partie X et ouverture (14 novembre 2026)"
+ },
+ {
+  "n": 526,
+  "fichier": "chapitre-49-veille-technologique.md",
+  "avant": "vingt et une notices d'arXiv.",
+  "apres": "vingt et une notices d'arXiv; deux échéances et cinq lignes du registre de veille ajoutées le 14 novembre 2026, par renvoi aux chapitres complétés ce jour-là.",
+  "categorie": "enrichissement",
+  "motif": "Bandeau : état de référence mis à jour.",
+  "origine": "révision partie X et ouverture (14 novembre 2026)"
+ },
+ {
+  "n": 527,
+  "fichier": "chapitre-49-veille-technologique.md",
+  "avant": "| 1er mai 2027 | Ligne directrice E-23 du BSIF | Chapitre 38 |",
+  "apres": "| Janvier 2027, au plus tôt | Corée du Sud : fin du délai de grâce avant les amendes de la loi-cadre sur l'IA | Section 35.7 |\n| 1er mai 2027 | Ligne directrice E-23 du BSIF; ligne directrice de l'AMF sur l'utilisation de l'IA | Chapitre 38 |",
+  "categorie": "enrichissement",
+  "motif": "Section 49.4 : échéances coréenne et québécoise ajoutées.",
+  "origine": "révision partie X et ouverture (14 novembre 2026)"
+ },
+ {
+  "n": 528,
+  "fichier": "chapitre-49-veille-technologique.md",
+  "avant": "Mai pour les institutions financières fédérales canadiennes, décembre",
+  "apres": "Mai pour les institutions financières canadiennes, fédérales et à charte québécoise, décembre",
+  "categorie": "enrichissement",
+  "motif": "Section 49.4 : lecture mise en accord avec la section 38.3.",
+  "origine": "révision partie X et ouverture (14 novembre 2026)"
+ },
+ {
+  "n": 529,
+  "fichier": "chapitre-49-veille-technologique.md",
+  "avant": "par une source de presse [68].\n\n---\n\n## 49.5",
+  "apres": "par une source de presse [68]. Le relevé de la section 35.7 y ajoute des avis d'application chinois du 8 mai 2026, la loi-cadre coréenne en vigueur depuis le 22 janvier 2026, qui ne nomme pas les agents, et le plan japonais du 14 juillet 2026. Dans l'Union, la proposition de Cloud and AI Development Act du 3 juin 2026 nomme l'orchestration d'agents dans un considérant (section 37.1).\n\n---\n\n## 49.5",
+  "categorie": "enrichissement",
+  "motif": "Section 49.4 : textes hors d'Europe et proposition européenne relevés aux chapitres 35 et 37.",
+  "origine": "révision partie X et ouverture (14 novembre 2026)"
+ },
+ {
+  "n": 530,
+  "fichier": "chapitre-49-veille-technologique.md",
+  "avant": "Fédération des plans de contrôle (chapitre 27) |\n| Littérature scientifique",
+  "apres": "Fédération des plans de contrôle (chapitre 27) |\n| Dérive des entrées du registre de MCP | Recensements du registre public | Semestrielle | 4,2 % des serveurs à plusieurs versions redirigés sous la même identité (section 8.8) | Épinglage et comparaison à la synchronisation (chapitre 8) |\n| Conformité à A2A | Trousse de compatibilité du projet | À chaque version | Aucune liste publique de résultats (section 26.9) | Preuve exigée d'un éditeur (chapitre 26) |\n| Souveraineté infonuagique européenne | Parlement, Conseil et ENISA | Semestrielle | Règlement proposé le 3 juin 2026; EUCS non adopté (section 37.1) | Preuve de souveraineté d'un fournisseur (chapitre 37) |\n| Régulateurs financiers canadiens | BSIF et AMF | Semestrielle | Deux lignes directrices en vigueur le 1er mai 2027 (section 38.3) | Inventaire et cote de risque (chapitre 39) |\n| Adoption mesurée par les offices statistiques | Statistique Canada, Eurostat, Census Bureau | Semestrielle | Environ une entreprise sur cinq (section 4.1) | Hypothèse H1 (chapitre 4) |\n| Littérature scientifique",
+  "categorie": "enrichissement",
+  "motif": "Section 49.8 : cinq lignes ajoutées au registre de veille.",
+  "origine": "révision partie X et ouverture (14 novembre 2026)"
+ },
+ {
+  "n": 531,
+  "fichier": "chapitre-49-veille-technologique.md",
+  "avant": "est à retirer ou à réattribuer.\n\n---",
+  "apres": "est à retirer ou à réattribuer. Les cinq lignes qui renvoient à une section, et non à une source, datent du 14 novembre 2026.\n\n---",
+  "categorie": "enrichissement",
+  "motif": "Section 49.8 : date des lignes ajoutées.",
+  "origine": "révision partie X et ouverture (14 novembre 2026)"
+ },
+ {
+  "n": 532,
+  "fichier": "chapitre-49-veille-technologique.md",
+  "avant": "sont des interprétations.\n- Les intervalles de confiance",
+  "apres": "sont des interprétations.\n- Les deux échéances et les cinq lignes du registre ajoutées le 14 novembre 2026 renvoient aux sections des chapitres complétés ce jour-là; leurs sources et leurs réserves y figurent et n'ont pas été relues ici.\n- Les intervalles de confiance",
+  "categorie": "enrichissement",
+  "motif": "Limites : portée des ajouts.",
+  "origine": "révision partie X et ouverture (14 novembre 2026)"
+ },
+ {
+  "n": 533,
+  "fichier": "chapitre-50-projection-etude-marche.md",
+  "avant": "et budget fédéral du 5 novembre 2026.",
+  "apres": "et budget fédéral du 5 novembre 2026; Eurostat et le Census Bureau, lus le 14 novembre 2026.",
+  "categorie": "enrichissement",
+  "motif": "Bandeau : état de référence mis à jour.",
+  "origine": "révision partie X et ouverture (14 novembre 2026)"
+ },
+ {
+  "n": 534,
+  "fichier": "chapitre-50-projection-etude-marche.md",
+  "avant": "ne pose de question sur les agents autonomes.\n\nTrois réserves",
+  "apres": "ne pose de question sur les agents autonomes. Les offices statistiques de l'Union européenne et des États-Unis donnent le même ordre de grandeur, sur des champs différents : 20,0 % des entreprises de dix employés ou plus en 2025, et 19,8 % des entreprises au 3 mai 2026 [74][75]. Statistique Canada n'observe par ailleurs aucune prime de productivité significative chez les entreprises qui ont adopté l'IA, une fois leurs autres capacités prises en compte (section 40.5).\n\nTrois réserves",
+  "categorie": "enrichissement",
+  "motif": "Section 50.4 : mesures d'Eurostat et du Census Bureau, et renvoi à l'étude de productivité de la section 40.5.",
+  "origine": "révision partie X et ouverture (14 novembre 2026)"
+ },
+ {
+  "n": 535,
+  "fichier": "chapitre-50-projection-etude-marche.md",
+  "avant": "(https://www.kaohooninternational.com/technology/591985)\n\n## Limites de ce chapitre",
+  "apres": "(https://www.kaohooninternational.com/technology/591985)\n\nPages d'offices statistiques lues le 14 novembre 2026 :\n\n74. [Eurostat — 20% of EU enterprises use AI technologies (11 décembre 2025)](https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20251211-2)\n75. [U.S. Census Bureau — Large Firms With at Least 20 Employees Biggest AI Users (26 mai 2026)](https://census.gov/library/stories/2026/05/ai-use-businesses.html)\n\n## Limites de ce chapitre",
+  "categorie": "enrichissement",
+  "motif": "Sources [74] et [75] ajoutées.",
+  "origine": "révision partie X et ouverture (14 novembre 2026)"
+ },
+ {
+  "n": 536,
+  "fichier": "chapitre-50-projection-etude-marche.md",
+  "avant": "sont des interprétations.\n- Le Québec n'est documenté",
+  "apres": "sont des interprétations.\n- Les mesures d'Eurostat et du Census Bureau, ajoutées le 14 novembre 2026, ne sont pas comparables terme à terme à celle de Statistique Canada : le champ, la période et la question diffèrent (section 4.1).\n- Le Québec n'est documenté",
+  "categorie": "enrichissement",
+  "motif": "Limites : portée des mesures ajoutées.",
+  "origine": "révision partie X et ouverture (14 novembre 2026)"
+ },
+ {
+  "n": 537,
+  "fichier": "annexe-E-bibliographie.md",
+  "avant": "Ses trois chapitres listent 227 sources",
+  "apres": "Ses trois chapitres listent 244 sources",
+  "categorie": "enrichissement",
+  "motif": "Décompte des sources de la partie X mis à jour.",
+  "origine": "révision partie X et ouverture (14 novembre 2026)"
+ },
+ {
+  "n": 538,
+  "fichier": "annexe-E-bibliographie.md",
+  "avant": "| 48 — Revue de littérature | 86 | 31 publications en revue ou en conférence, 52 prépublications ou documents de travail, 3 sources reprises de l'ouvrage |",
+  "apres": "| 48 — Revue de littérature | 101 | 31 publications en revue ou en conférence, 52 prépublications ou documents de travail, 3 sources reprises de l'ouvrage, 15 travaux relevés hors protocole le 14 novembre 2026 |",
+  "categorie": "enrichissement",
+  "motif": "Décompte des sources du chapitre 48 mis à jour.",
+  "origine": "révision partie X et ouverture (14 novembre 2026)"
+ },
+ {
+  "n": 539,
+  "fichier": "annexe-E-bibliographie.md",
+  "avant": "| 50 — Projection 2027-2030 et étude de marché | 73 | 49 pages d'émetteur,",
+  "apres": "| 50 — Projection 2027-2030 et étude de marché | 75 | 51 pages d'émetteur,",
+  "categorie": "enrichissement",
+  "motif": "Décompte des sources du chapitre 50 mis à jour.",
+  "origine": "révision partie X et ouverture (14 novembre 2026)"
+ },
+ {
+  "n": 540,
+  "fichier": "ouverture.md",
+  "avant": "(section 1.5, chapitre 42). Certains de ces socles",
+  "apres": "(section 1.5, chapitre 42). Les statistiques officielles situent l’usage de l’IA, toutes formes confondues, à une entreprise sur cinq environ (section 4.1). Certains de ces socles",
+  "categorie": "enrichissement",
+  "motif": "Ouverture, faits vérifiés : renvoi aux statistiques officielles de la section 4.1.",
+  "origine": "révision partie X et ouverture (14 novembre 2026)"
+ },
+ {
+  "n": 541,
+  "fichier": "ouverture.md",
+  "avant": "(BSIF E-23 au 1er mai 2027,",
+  "apres": "(BSIF E-23 et ligne directrice de l’AMF sur l’IA au 1er mai 2027,",
+  "categorie": "enrichissement",
+  "motif": "Ouverture, échéances : ligne directrice de l’AMF (section 38.3).",
+  "origine": "révision partie X et ouverture (14 novembre 2026)"
+ },
+ {
+  "n": 542,
+  "fichier": "ouverture.md",
+  "avant": "échéance post-quantique).<!-- fin ajout -->\n- **Livrables",
+  "apres": "échéance post-quantique).<!-- fin ajout --> Pour la mesure : sections 8.8 (écosystème réel des serveurs MCP) et 24.5 (premières mesures de passerelles).\n- **Livrables",
+  "categorie": "enrichissement",
+  "motif": "Ouverture, parcours 3 : renvois aux sections 8.8 et 24.5.",
+  "origine": "révision partie X et ouverture (14 novembre 2026)"
+ },
+ {
+  "n": 543,
+  "fichier": "ouverture.md",
+  "avant": "registre de veille).<!-- fin ajout -->\n- **Livrables",
+  "apres": "registre de veille).<!-- fin ajout --> Pour l’essai et le retour arrière : sections 21.5 (injection de fautes) et 34.6 (versions et points d’accès).\n- **Livrables",
+  "categorie": "enrichissement",
+  "motif": "Ouverture, parcours 4 : renvois aux sections 21.5 et 34.6.",
+  "origine": "révision partie X et ouverture (14 novembre 2026)"
+ },
+ {
+  "n": 544,
+  "fichier": "ouverture.md",
+  "avant": "normatives de 2027 à 2030).<!-- fin ajout -->\n",
+  "apres": "normatives de 2027 à 2030).<!-- fin ajout --> Pour l’assurance et les régulateurs : sections 39.6 (lignes de défense et audit interne), 38.3 (AMF et valeurs mobilières) et 35.7 (autres juridictions).\n",
+  "categorie": "enrichissement",
+  "motif": "Ouverture, parcours 6 : renvois aux sections 39.6, 38.3 et 35.7.",
+  "origine": "révision partie X et ouverture (14 novembre 2026)"
+ },
+ {
+  "n": 545,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": " en instrumentant ses propres déploiements (chapitres 33 et 40).\n\n---\n\n## Grille de décision",
+  "apres": " en instrumentant ses propres déploiements (chapitres 33 et 40).\n\n---\n\n## 48.11 Travaux relevés après la clôture du corpus\n\nLe 14 novembre 2026, des recherches ciblées menées pour compléter vingt chapitres ont fait remonter des travaux que les dix requêtes n'avaient pas rendus. Ils sont hors protocole : ils ne comptent pas parmi les 83 notices, n'ont pas passé le même tri, et plusieurs ne sont connus que par leur résumé. Ils figurent ici parce qu'ils déplacent des cases du tableau de synthèse.\n\n| Thème | Travaux | Ce qu'ils mesurent | Effet sur la synthèse | Section |\n|---|---|---|---|---|\n| Protocoles | Recensements des registres et des places de marché de MCP [87][88][89] | 51,1 % des serveurs à plusieurs versions modifiés d'une version à l'autre; 516 serveurs détournables; la moitié des entrées sans valeur | Précise « faiblesses de l'écosystème » : le défaut est dans les registres autant que dans les serveurs | 8.8 |\n| Protocoles | Fiabilité des scanners de sécurité [90]; filtre évalué par ses auteurs [91] | Moins de la moitié des alertes vérifiées sont fondées | Affaiblit l'outillage de vérification, non la spécification | 8.8, 24.5 |\n| Coordination | Fautes signalées dans 40 dépôts [92]; défauts de cinq cadriciels [93][94] | Fautes surtout ordinaires; 16 bogues sur 35 transposables d'un cadriciel à l'autre | Complète « modes d'échec » par le logiciel qui porte les agents | 21.1, 20.7 |\n| Évaluation | Coût de l'évaluation récurrente d'un agent en production [95]; agent de tri d'alarmes en production [96] | 38,5 % du banc suffit pour 1,03 point d'erreur; temps de réponse médian réduit de 42 % | Première mesure sous « coûts publiés », sans chiffre en dollars | 33.6, 42.4 |\n| Effets économiques | Adoption de l'IA et productivité des entreprises canadiennes [97] | Prime de 16,8 %, non significative une fois les autres capacités prises en compte | Appuie la case « absent » : l'effet sur l'entreprise n'est pas établi | 40.5 |\n| Gouvernance | Biais d'automatisation [98]; supervision par des développeurs [99]; supervision prescrite [100]; article de position [101] | Un conseil faux accroît de 26 % le risque de décision incorrecte | Remplace « presque rien » par un acquis sur les aides à la décision, non sur les agents | 22.5 |\n\nDeux hypothèses du chapitre 4 en sont touchées. H1, la concentration dans les grandes organisations, que la recherche laissait hors champ, reçoit l'appui des statistiques officielles : l'usage de l'IA croît avec la taille de l'entreprise, au Canada comme aux États-Unis (section 4.1). H2, des agents bornés et supervisés, est confirmée par le cas de production relevé [96] (section 42.4).\n\nAucun de ces travaux ne répond aux questions 1, 3 ou 9 de la section 48.10. La question 10 reste entière : la littérature sur la supervision mesure un biais, non l'effet d'un cadre de gouvernance.\n\n---\n\n## Grille de décision",
+  "categorie": "enrichissement",
+  "motif": "Section 48.11 ajoutée : quinze travaux relevés hors protocole par les chapitres complétés.",
+  "origine": "révision partie X et ouverture (14 novembre 2026)"
+ },
+ {
+  "n": 546,
+  "fichier": "ouverture.md",
+  "avant": "échéance post-quantique).<!-- fin ajout --> Pour la mesure : sections 8.8 (écosystème réel des serveurs MCP) et 24.5 (premières mesures de passerelles).\n",
+  "apres": "échéance post-quantique). Pour la mesure : sections 8.8 (écosystème réel des serveurs MCP) et 24.5 (premières mesures de passerelles).<!-- fin ajout -->\n",
+  "categorie": "harmonisation",
+  "motif": "Renvoi placé sous les repères des passages déclarés, hors du contrôle de longueur de l'ouverture.",
+  "origine": "révision partie X et ouverture (14 novembre 2026)"
+ },
+ {
+  "n": 547,
+  "fichier": "ouverture.md",
+  "avant": "registre de veille).<!-- fin ajout --> Pour l’essai et le retour arrière : sections 21.5 (injection de fautes) et 34.6 (versions et points d’accès).\n",
+  "apres": "registre de veille). Pour l’essai et le retour arrière : sections 21.5 (injection de fautes) et 34.6 (versions et points d’accès).<!-- fin ajout -->\n",
+  "categorie": "harmonisation",
+  "motif": "Renvoi placé sous les repères des passages déclarés, hors du contrôle de longueur de l'ouverture.",
+  "origine": "révision partie X et ouverture (14 novembre 2026)"
+ },
+ {
+  "n": 548,
+  "fichier": "ouverture.md",
+  "avant": "normatives de 2027 à 2030).<!-- fin ajout --> Pour l’assurance et les régulateurs : sections 39.6 (lignes de défense et audit interne), 38.3 (AMF et valeurs mobilières) et 35.7 (autres juridictions).\n",
+  "apres": "normatives de 2027 à 2030). Pour l’assurance et les régulateurs : sections 39.6 (lignes de défense et audit interne), 38.3 (AMF et valeurs mobilières) et 35.7 (autres juridictions).<!-- fin ajout -->\n",
+  "categorie": "harmonisation",
+  "motif": "Renvoi placé sous les repères des passages déclarés, hors du contrôle de longueur de l'ouverture.",
+  "origine": "révision partie X et ouverture (14 novembre 2026)"
+ },
+ {
+  "n": 549,
+  "fichier": "ouverture.md",
+  "avant": " Les statistiques officielles situent l’usage de l’IA, toutes formes confondues, à une entreprise sur cinq environ (section 4.1). Certains",
+  "apres": " <!-- ajout partie X -->Les statistiques officielles situent l’usage de l’IA, toutes formes confondues, à une entreprise sur cinq environ (section 4.1).<!-- fin ajout --> Certains",
+  "categorie": "harmonisation",
+  "motif": "Renvoi placé sous les repères des passages déclarés, hors du contrôle de longueur de l'ouverture.",
+  "origine": "révision partie X et ouverture (14 novembre 2026)"
  }
 ]

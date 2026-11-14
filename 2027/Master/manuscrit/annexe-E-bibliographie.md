@@ -79,13 +79,13 @@ Le dernier point pèse sur la thèse de l'ouvrage : l'interopérabilité par pro
 
 ## E.4 Sources de la partie X
 
-La partie X a été écrite le 13 novembre 2026, après la clôture des chapitres 1 à 47. Ses trois chapitres listent 227 sources, qui s'ajoutent aux 774 de la section E.1 sans y être comptées.
+La partie X a été écrite le 13 novembre 2026, après la clôture des chapitres 1 à 47. Ses trois chapitres listent 244 sources, qui s'ajoutent aux 774 de la section E.1 sans y être comptées.
 
 | Chapitre | Sources | Nature | Lecture |
 |---|---|---|---|
-| 48 — Revue de littérature | 86 | 31 publications en revue ou en conférence, 52 prépublications ou documents de travail, 3 sources reprises de l'ouvrage | Résumés seulement; titre, auteurs et lieu de publication confirmés auprès d'arXiv ou de Crossref pour 82 notices sur 83 |
+| 48 — Revue de littérature | 101 | 31 publications en revue ou en conférence, 52 prépublications ou documents de travail, 3 sources reprises de l'ouvrage, 15 travaux relevés hors protocole le 14 novembre 2026 | Résumés seulement; titre, auteurs et lieu de publication confirmés auprès d'arXiv ou de Crossref pour 82 notices sur 83 |
 | 49 — Veille technologique | 68 | 46 pages d'émetteur, 21 notices d'arXiv, 1 page tierce | Extraction par outil; sept sources relues à l'audit |
-| 50 — Projection 2027-2030 et étude de marché | 73 | 49 pages d'émetteur, 24 pages tierces qui rapportent un émetteur non chargé | Extraction par outil; cinq sources relues à l'audit |
+| 50 — Projection 2027-2030 et étude de marché | 75 | 51 pages d'émetteur, 24 pages tierces qui rapportent un émetteur non chargé | Extraction par outil; cinq sources relues à l'audit |
 
 Trois réserves s'ajoutent à celles de la section E.1.
 

@@ -34,9 +34,9 @@ FIGURE = re.compile(r"(?m)^!\[.*\]\(figures/[^)\n]+\)$")
 RENVOI = re.compile(r"(?:[Cc]hapitres?|[Ss]ections?)\s\d+(?:\.\d+)?"
                     r"(?:(?:\s?,\s|\set\s|\sà\s)\d+(?:\.\d+)?)*")
 MINUSCULE = "a-zàâäçéèêëîïôöûùüÿœ"
-# Passages ajoutés après la fusion pour annoncer la partie X : ils n'ont pas d'original
-# dans l'édition G. Déclarés par ces deux repères, ils sortent du contrôle de conformité;
-# tout le reste du texte y reste soumis.
+# Passages ajoutés après la fusion, pour annoncer la partie X puis pour renvoyer aux
+# compléments du 14 novembre 2026 : ils n'ont pas d'original dans l'édition G. Déclarés par
+# ces deux repères, ils sortent du contrôle de conformité; tout le reste du texte y reste soumis.
 AJOUT = re.compile(r"<!-- ajout partie X -->.*?<!-- fin ajout -->", re.S)
 
 
