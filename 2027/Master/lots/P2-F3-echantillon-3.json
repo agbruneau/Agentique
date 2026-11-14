@@ -1,0 +1,842 @@
+[
+ {
+  "fichier": "chapitre-32-assurance.md",
+  "n": 9,
+  "source": "Pages primaires lues le 11 novembre 2026 : [The Attacker Moves Second (arXiv 2510.09023)](https://arxiv.org/abs/2510.09023) — résumé.",
+  "phrases": [
+   {
+    "ligne": 160,
+    "phrase": "Une prépublication d'octobre 2025 l'a montré : douze défenses récentes contre le débridage et l'injection de prompt, qui rapportaient pour la plupart un taux de succès d'attaque proche de zéro, cèdent le plus souvent à plus de 90 % devant un attaquant adaptatif, c'est-à-dire qui connaît la défense et optimise contre elle [9]."
+   },
+   {
+    "ligne": 238,
+    "phrase": "- Pour [9], [10] et [11], seuls les résumés ont été lus."
+   }
+  ],
+  "id": "F3-091"
+ },
+ {
+  "fichier": "chapitre-32-assurance.md",
+  "n": 10,
+  "source": "Pages primaires lues le 11 novembre 2026 : [AutoDojo (arXiv 2606.15057)](https://arxiv.org/abs/2606.15057) — résumé.",
+  "phrases": [
+   {
+    "ligne": 164,
+    "phrase": "AutoDojo, prépublication de juin 2026 révisée en septembre, transpose l'argument aux agents [10]."
+   },
+   {
+    "ligne": 238,
+    "phrase": "- Pour [9], [10] et [11], seuls les résumés ont été lus."
+   },
+   {
+    "ligne": 242,
+    "phrase": "- L'audit du 12 novembre 2026 a relu [1] (notice et texte), [3], [4], [5], [7], [10] et [11]."
+   }
+  ],
+  "id": "F3-092"
+ },
+ {
+  "fichier": "chapitre-32-assurance.md",
+  "n": 11,
+  "source": "Pages primaires lues le 11 novembre 2026 : [Adaptive Evaluation of Out-of-Band Defenses (arXiv 2606.26479)](https://arxiv.org/abs/2606.26479) — résumé.",
+  "phrases": [
+   {
+    "ligne": 168,
+    "phrase": "Une troisième prépublication examine les défenses qui appliquent une politique déterministe hors du modèle, plutôt que d'entraîner celui-ci à refuser [11]."
+   },
+   {
+    "ligne": 238,
+    "phrase": "- Pour [9], [10] et [11], seuls les résumés ont été lus."
+   },
+   {
+    "ligne": 242,
+    "phrase": "- L'audit du 12 novembre 2026 a relu [1] (notice et texte), [3], [4], [5], [7], [10] et [11]."
+   }
+  ],
+  "id": "F3-093"
+ },
+ {
+  "fichier": "chapitre-33-observabilite-evaluation.md",
+  "n": 13,
+  "source": "Pages primaires lues le 11 novembre 2026; [2], [5], [7], [11], [12] et [14] relues le 12 novembre 2026 : [τ-bench (arXiv 2406.12045)](https://arxiv.org/abs/2406.12045) — résumé seulement.",
+  "phrases": [
+   {
+    "ligne": 179,
+    "phrase": "Le banc d'essai τ-bench en fixe le modèle [13]."
+   },
+   {
+    "ligne": 239,
+    "phrase": "**Il juge un état.** Le critère de réussite est un état vérifiable du système, non une ressemblance de texte [13]."
+   },
+   {
+    "ligne": 240,
+    "phrase": "**Il répète.** Chaque tâche s'exécute plusieurs fois, et la constance se rapporte à part [13]."
+   }
+  ],
+  "id": "F3-094"
+ },
+ {
+  "fichier": "chapitre-33-observabilite-evaluation.md",
+  "n": 14,
+  "source": "Pages primaires lues le 11 novembre 2026; [2], [5], [7], [11], [12] et [14] relues le 12 novembre 2026 : [EnterpriseBench (arXiv 2510.27287, EMNLP 2025)](https://arxiv.org/abs/2510.27287) — résumé seulement.",
+  "phrases": [
+   {
+    "ligne": 230,
+    "phrase": "EnterpriseBench réunit ainsi 500 tâches dans quatre domaines, avec des sources fragmentées et des hiérarchies de contrôle d'accès; son résumé rapporte 41,8 % d'achèvement pour le meilleur agent testé [14]."
+   },
+   {
+    "ligne": 283,
+    "phrase": "Pages primaires lues le 11 novembre 2026; [2], [5], [7], [11], [12] et [14] relues le 12 novembre 2026 :"
+   }
+  ],
+  "id": "F3-095"
+ },
+ {
+  "fichier": "chapitre-33-observabilite-evaluation.md",
+  "n": 16,
+  "source": "Résumé seulement, relevé le 14 novembre 2026 : [She et coll. — Efficient Benchmarking in Production: A Study of an Evolving LLM Agent (arXiv 2609.21267)](https://arxiv.org/abs/2609.21267)",
+  "phrases": [
+   {
+    "ligne": 220,
+    "phrase": "Une prépublication de 2026 chiffre le problème sur un agent d'analyse en production, qui sert des dizaines de milliers d'utilisateurs actifs par mois [16]."
+   },
+   {
+    "ligne": 317,
+    "phrase": "- Une seule étude du coût de l'évaluation continue a été trouvée, le 14 novembre 2026 [16]."
+   }
+  ],
+  "id": "F3-096"
+ },
+ {
+  "fichier": "chapitre-34-exploitation.md",
+  "n": 3,
+  "source": "Pages primaires lues le 11 novembre 2026 : [Moshkovich et Zeltyn — Taming Uncertainty via Automation (arXiv 2507.11277)](https://arxiv.org/abs/2507.11277) — résumé seulement.",
+  "phrases": [
+   {
+    "ligne": 19,
+    "phrase": "Moshkovich et Zeltyn proposent une chaîne en six étapes, de l'observation du comportement à l'automatisation en cours d'exécution, et nomment quatre publics : développeurs, testeurs, ingénieurs de fiabilité et utilisateurs d'affaires [3]."
+   }
+  ],
+  "id": "F3-097"
+ },
+ {
+  "fichier": "chapitre-34-exploitation.md",
+  "n": 7,
+  "source": "Pages primaires lues le 11 novembre 2026 : [Bodapati Venkata — Evidence-Gated Search, JCSTS 8(5), 2026](https://al-kindipublisher.com/index.php/jcsts/article/view/12302) — résumé seulement.",
+  "phrases": [
+   {
+    "ligne": 200,
+    "phrase": "Une méthode de réponse aux incidents bloque de même toute action qui modifie l'état tant que la preuve requise manque, et la recueille par des vérifications bornées en lecture seule [7]."
+   },
+   {
+    "ligne": 283,
+    "phrase": "La section 34.6 s'appuie sur [5] et, par son seul résumé, sur [7], dont les résultats chiffrés ne sont pas repris."
+   }
+  ],
+  "id": "F3-098"
+ },
+ {
+  "fichier": "chapitre-34-exploitation.md",
+  "n": 9,
+  "source": "Source secondaire : [Xia et coll. — AgentOps Pattern Catalogue (SSRN 5534588; Information and Software Technology, 2026)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5534588) — page inaccessible; repris du plan initial et d'un résumé de recherche.",
+  "phrases": [
+   {
+    "ligne": 19,
+    "phrase": "Un catalogue de dix patrons d'architecture AgentOps est aussi paru en 2026 [9]; il n'a pas été lu ici."
+   },
+   {
+    "ligne": 284,
+    "phrase": "- Le catalogue [9] n'a pas été lu, et une nouvelle recherche, le 14 novembre 2026, ne l'a pas retrouvé; ses dix patrons ne sont ni nommés ni discutés."
+   }
+  ],
+  "id": "F3-099"
+ },
+ {
+  "fichier": "chapitre-35-cadres-internationaux.md",
+  "n": 1,
+  "source": "Pages primaires lues le 11 novembre 2026 : [Nannini et coll., « AI Agents Under EU Law », arXiv 2604.04604](https://arxiv.org/abs/2604.04604) — prépublication du 6 avril 2026; résumé et corps du texte, lu en partie.",
+  "phrases": [
+   {
+    "ligne": 17,
+    "phrase": "La référence est une prépublication d'avril 2026, « AI Agents Under EU Law », qui se présente comme la première cartographie réglementaire systématique pour les fournisseurs d'agents [1]."
+   },
+   {
+    "ligne": 21,
+    "phrase": "Les auteurs le rattachent à la définition du système d'IA de l'article 3(1), qui admet déjà des « niveaux d'autonomie variables » et une capacité d'adaptation après le déploiement [1]."
+   },
+   {
+    "ligne": 23,
+    "phrase": "Une organisation qui assemble un agent sur un modèle tiers hérite d'une chaîne documentaire : celle que le fournisseur du modèle doit lui remettre au titre de l'article 53 [1]."
+   },
+   {
+    "ligne": 27,
+    "phrase": "Le classement à haut risque dépend du domaine d'application et non de l'architecture [1]."
+   },
+   {
+    "ligne": 32,
+    "phrase": "Les interdictions de l'article 5 sur la manipulation et l'exploitation des vulnérabilités s'appliquent à tout agent, quel que soit son classement; les auteurs rapportent que l'AI Office les juge particulièrement pertinentes pour les systèmes agentiques [1]."
+   },
+   {
+    "ligne": 34,
+    "phrase": "Le fournisseur reste tenu de définir la destination du système et d'évaluer le mauvais usage raisonnablement prévisible (article 9(2)(b)) [1]."
+   },
+   {
+    "ligne": 38,
+    "phrase": "Pour un agent à haut risque, la prépublication relève quatre points de friction [1]."
+   },
+   {
+    "ligne": 47,
+    "phrase": "D'où la formule des auteurs : un système agentique à haut risque dont la dérive n'est pas traçable ne peut pas, aujourd'hui, satisfaire aux exigences essentielles du règlement [1]."
+   },
+   {
+    "ligne": 49,
+    "phrase": "Selon l'article 25, un déployeur ou un tiers devient fournisseur s'il appose son nom sur un système à haut risque, le modifie substantiellement ou en change la destination [1]."
+   },
+   {
+    "ligne": 53,
+    "phrase": "La prépublication en donne l'état de janvier 2026 [1] : prEN 18286 (système de management de la qualité), prEN 18228 (gestion des risques), prEN 18229-1 (journalisation, transparence, supervision), prEN 18229-2 (exactitude, robustesse), prEN 18282 (cybersécurité), prEN 18284 et prEN 18283 (qualité des données, biais)."
+   },
+   {
+    "ligne": 55,
+    "phrase": "Les auteurs recommandent de les traiter par des spécifications techniques internes [1]."
+   },
+   {
+    "ligne": 59,
+    "phrase": "Un fournisseur d'agents relève aussi, selon le cas, du RGPD, du Cyber Resilience Act, du Digital Services Act, du Data Act, de la directive NIS2, de la directive révisée sur la responsabilité du fait des produits et du droit sectoriel [1]."
+   },
+   {
+    "ligne": 61,
+    "phrase": "La tâche fondatrice, selon les auteurs, est un inventaire exhaustif : actions externes de l'agent, flux de données, systèmes connectés, personnes touchées [1]."
+   },
+   {
+    "ligne": 71,
+    "phrase": "La proposition initiale de la Commission, en novembre 2025, liait l'application des obligations à haut risque à la disponibilité des normes harmonisées [1]."
+   },
+   {
+    "ligne": 101,
+    "phrase": "L'argument vaut doublement pour les agents, dont les risques propres échappent aux normes harmonisées [1]."
+   },
+   {
+    "ligne": 101,
+    "phrase": "Il ne règle pas non plus le fond : la prépublication relevait que l'AI Office n'avait publié aucune orientation sur les agents ni sur la modification substantielle [1], et rien, dans les parties lues de l'Omnibus, ne traite de la dérive."
+   },
+   {
+    "ligne": 164,
+    "phrase": "La prépublication européenne range ISO/IEC 42001 hors du lot des normes harmonisées; le système de management de la qualité attendu au titre de l'AI Act fait l'objet d'un projet distinct, prEN 18286 [1]."
+   },
+   {
+    "ligne": 188,
+    "phrase": "| Thème | AI Act [1][3] | Singapour v1.5 [4] | ISO/IEC [7][10] | NIST AI RMF [5][6] |"
+   },
+   {
+    "ligne": 288,
+    "phrase": "Le contenu des articles 3, 6, 9, 12, 14, 15, 25, 43 et 50 est rapporté d'après la prépublication [1], dont environ un quart du texte (fin et conclusions) n'a pas été chargé."
+   },
+   {
+    "ligne": 292,
+    "phrase": "- Le résumé de [1] et les passages cités de [4] ont été relus à l'audit; du cadre de Singapour, les sections 2.3 et 2.4 et les études de cas restent survolées, et son caractère non contraignant est déduit de sa formulation."
+   }
+  ],
+  "id": "F3-100"
+ },
+ {
+  "fichier": "chapitre-35-cadres-internationaux.md",
+  "n": 12,
+  "source": "Sources ajoutées le 14 novembre 2026, pour la section 35.7 : [Cabinet du Japon — Summary of the Japan's Second AI Basic Plan (décision du 14 juillet 2026)](https://www8.cao.go.jp/cstp/ai/ai_plan/aiplan_g_eng_20260714.pdf) — résumé officiel, six pages.",
+  "phrases": [
+   {
+    "ligne": 211,
+    "phrase": "| Japon | Loi de promotion de l'IA; deuxième plan de base du 14 juillet 2026 [12] | Loi de principes et plan gouvernemental | Oui : l'IA agentique est le premier thème du plan |"
+   },
+   {
+    "ligne": 218,
+    "phrase": "Le deuxième plan, arrêté le 14 juillet 2026, s'ouvre sur l'adaptation à l'essor de l'IA agentique et retient deux axes : adopter l'IA agentique, y compris dans l'administration, et bâtir une « souveraineté de l'IA » [12]."
+   },
+   {
+    "ligne": 294,
+    "phrase": "Le Japon l'est d'après le résumé officiel de son plan [12], sans lecture de ses lignes directrices pour les entreprises."
+   }
+  ],
+  "id": "F3-101"
+ },
+ {
+  "fichier": "chapitre-40-finops-agentique.md",
+  "n": 10,
+  "source": "Pages primaires lues le 11 novembre 2026 : [Ong et coll. — RouteLLM: Learning to Route LLMs with Preference Data (arXiv 2406.18665)](https://arxiv.org/abs/2406.18665) — prépublication; résumé seulement.",
+  "phrases": [
+   {
+    "ligne": 210,
+    "phrase": "Une prépublication plus ancienne, RouteLLM, annonce des coûts réduits de plus de moitié dans certains cas, sans perte de qualité sur ses bancs d'essai [10]."
+   },
+   {
+    "ligne": 280,
+    "phrase": "L'audit a relu [1], [3], [4], [5], [7], [9], [11] et [12], pas [2], [6], [8] ni [10]."
+   }
+  ],
+  "id": "F3-102"
+ },
+ {
+  "fichier": "chapitre-40-finops-agentique.md",
+  "n": 14,
+  "source": "Sources ajoutées le 14 novembre 2026 : [Elsworth et coll. — Measuring the environmental impact of delivering AI at Google Scale (arXiv 2508.15734, 21 août 2025)](https://arxiv.org/abs/2508.15734) — prépublication d'un fournisseur; résumé seulement.",
+  "phrases": [
+   {
+    "ligne": 47,
+    "phrase": "Google mesure 0,24 Wh et 0,26 mL d'eau pour une requête textuelle médiane de Gemini, dans un périmètre qui inclut les accélérateurs, les serveurs hôtes, la capacité inactive et les frais généraux du centre de données; l'entreprise rapporte une énergie par requête divisée par 33 en un an [14]."
+   },
+   {
+    "ligne": 285,
+    "phrase": "- La sous-section sur l'énergie (40.1) et le paragraphe sur la productivité (40.5) datent du 14 novembre 2026. [14] n'est connu que par son résumé et mesure le service de son éditeur; [15] l'est par sa synthèse."
+   }
+  ],
+  "id": "F3-103"
+ },
+ {
+  "fichier": "chapitre-41-modele-operationnel.md",
+  "n": 5,
+  "source": "Pages primaires lues le 11 novembre 2026 : [Gonzalez et coll. — Toward a science of human–AI teaming for decision making, PNAS Nexus 5(3), 2026](https://par.nsf.gov/biblio/10696564-toward-science-humanai-teaming-decision-making-complementarity-framework) — notice et résumé.",
+  "phrases": [
+   {
+    "ligne": 53,
+    "phrase": "Un cadre publié en 2026 dans PNAS Nexus la fonde sur l'intelligence collective et sur trois processus cognitifs : raisonnement, mémoire, attention [5]."
+   },
+   {
+    "ligne": 53,
+    "phrase": "Il recense cinq facteurs sociotechniques, dont le calibrage de la confiance et la structure de la tâche, et cinq principes de conception : définir les buts et les contraintes, répartir les rôles, orchestrer l'attention et l'interrogation, bâtir des infrastructures de connaissance, former et évaluer en continu [5]."
+   },
+   {
+    "ligne": 296,
+    "phrase": "- Les travaux [5], [7], [8], [9] et [10] ne sont connus que par leur résumé."
+   }
+  ],
+  "id": "F3-104"
+ },
+ {
+  "fichier": "chapitre-41-modele-operationnel.md",
+  "n": 7,
+  "source": "Pages primaires lues le 11 novembre 2026 : [Dell'Acqua et coll. — The Cybernetic Teammate (NBER, document de travail 33641, avril 2025)](https://www.nber.org/papers/w33641) — résumé.",
+  "phrases": [
+   {
+    "ligne": 74,
+    "phrase": "Une expérience préenregistrée chez Procter & Gamble a réparti au hasard 776 professionnels sur de vrais problèmes d'innovation : seuls ou à deux, avec ou sans IA générative [7]."
+   },
+   {
+    "ligne": 74,
+    "phrase": "Avec l'IA, les propositions devenaient équilibrées entre technique et commercial, quelle que soit la spécialité de leur auteur [7]."
+   },
+   {
+    "ligne": 296,
+    "phrase": "- Les travaux [5], [7], [8], [9] et [10] ne sont connus que par leur résumé."
+   },
+   {
+    "ligne": 296,
+    "phrase": "L'article [7] aurait depuis paru dans Organization Science avec un échantillon légèrement différent (résumé de recherche non vérifié)."
+   }
+  ],
+  "id": "F3-105"
+ },
+ {
+  "fichier": "chapitre-41-modele-operationnel.md",
+  "n": 8,
+  "source": "Pages primaires lues le 11 novembre 2026 : [Bankins et coll. — A multilevel review of artificial intelligence in organizations, Journal of Organizational Behavior 45(2), 2024](https://merit.url.edu/en/publications/a-multilevel-review-of-artificial-intelligence-in-organizations-i/) — notice et résumé.",
+  "phrases": [
+   {
+    "ligne": 78,
+    "phrase": "Une revue systématique du Journal of Organizational Behavior situe les facteurs qui façonnent la relation entre humains et IA à trois niveaux : individu, groupe, organisation [8]."
+   },
+   {
+    "ligne": 296,
+    "phrase": "- Les travaux [5], [7], [8], [9] et [10] ne sont connus que par leur résumé."
+   }
+  ],
+  "id": "F3-106"
+ },
+ {
+  "fichier": "chapitre-41-modele-operationnel.md",
+  "n": 9,
+  "source": "Pages primaires lues le 11 novembre 2026 : [Fügener et coll. — Cognitive Challenges in Human–Artificial Intelligence Collaboration, Information Systems Research 33(2), 2022](https://ideas.repec.org/a/inm/orisre/v33y2022i2p678-696.html) — notice et résumé.",
+  "phrases": [
+   {
+    "ligne": 92,
+    "phrase": "Une expérience publiée dans Information Systems Research compare deux sens de délégation sur une tâche de classification [9]."
+   },
+   {
+    "ligne": 94,
+    "phrase": "Les auteurs la décrivent comme un trait inconscient [9], donc peu sensible à une simple consigne."
+   },
+   {
+    "ligne": 101,
+    "phrase": "- **L'escalade part de l'agent.** Le sens de délégation qui fonctionne est celui où le système renvoie des cas à l'humain [9], sur des critères définis d'avance."
+   },
+   {
+    "ligne": 164,
+    "phrase": "La recherche suggère une quatrième compétence, la métaconnaissance [9] : savoir ce qu'on sait conditionne la délégation."
+   },
+   {
+    "ligne": 296,
+    "phrase": "- Les travaux [5], [7], [8], [9] et [10] ne sont connus que par leur résumé."
+   }
+  ],
+  "id": "F3-107"
+ },
+ {
+  "fichier": "chapitre-41-modele-operationnel.md",
+  "n": 10,
+  "source": "Pages primaires lues le 11 novembre 2026 : [Dennis, Lakhiwal et Sachdeva — AI Agents as Team Members, Journal of Management Information Systems 40(2), 2023](https://jmis-web.org/articles/1614) — notice et résumé.",
+  "phrases": [
+   {
+    "ligne": 107,
+    "phrase": "Une expérience en laboratoire du Journal of Management Information Systems a fait varier la nature d'un coéquipier (humain ou IA) et sa performance [10]."
+   },
+   {
+    "ligne": 107,
+    "phrase": "La satisfaction à l'égard du processus de travail, elle, est plus faible avec un coéquipier IA [10]."
+   },
+   {
+    "ligne": 296,
+    "phrase": "- Les travaux [5], [7], [8], [9] et [10] ne sont connus que par leur résumé."
+   }
+  ],
+  "id": "F3-108"
+ },
+ {
+  "fichier": "chapitre-42-etudes-de-cas.md",
+  "n": 5,
+  "source": "Pages primaires lues le 11 novembre 2026; [1], [2], [3], [4], [6], [8], [10] et [11] relues à l'audit du 12 novembre 2026 : [Jha et coll. — ITBench (arXiv 2502.05352)](https://arxiv.org/abs/2502.05352) — prépublication; résumé seulement.",
+  "phrases": [
+   {
+    "ligne": 24,
+    "phrase": "| 4 | Banc d'essai ou expérience contrôlée | [4] [5] [6] [7] | Des ordres de grandeur et des modes d'échec, hors production |"
+   },
+   {
+    "ligne": 143,
+    "phrase": "| ITBench (IBM et Université de l'Illinois, février 2025) [5] | 94 scénarios d'automatisation TI | 13,8 % des scénarios de fiabilité résolus; 25,2 % en conformité et sécurité; 0 % en FinOps |"
+   },
+   {
+    "ligne": 213,
+    "phrase": "| Opérations TI | ServiceNow [3], MAP [2], bancs d'essai [5] [6] | 2 à 4 | Résultats mesurés en production |"
+   },
+   {
+    "ligne": 300,
+    "phrase": "- Les intitulés du plan initial sont conservés, mais la section 42.3 présente un banc d'essai et non un déploiement, et la section 42.4 repose en partie sur des bancs d'essai lus par leur seul résumé [5] [6] [7]."
+   }
+  ],
+  "id": "F3-109"
+ },
+ {
+  "fichier": "chapitre-42-etudes-de-cas.md",
+  "n": 6,
+  "source": "Pages primaires lues le 11 novembre 2026; [1], [2], [3], [4], [6], [8], [10] et [11] relues à l'audit du 12 novembre 2026 : [Gong et coll. — ORCA-bench: How Ready Are Language Model Agents for Oncall? (arXiv 2607.28545)](https://arxiv.org/abs/2607.28545) — prépublication; résumé seulement.",
+  "phrases": [
+   {
+    "ligne": 24,
+    "phrase": "| 4 | Banc d'essai ou expérience contrôlée | [4] [5] [6] [7] | Des ordres de grandeur et des modes d'échec, hors production |"
+   },
+   {
+    "ligne": 144,
+    "phrase": "| ORCA-bench (version 3, septembre 2026) [6] | 1 079 tâches d'analyse de cause première | Meilleure exactitude : 25,3 % au niveau moyen, 10,0 % au niveau difficile |"
+   },
+   {
+    "ligne": 213,
+    "phrase": "| Opérations TI | ServiceNow [3], MAP [2], bancs d'essai [5] [6] | 2 à 4 | Résultats mesurés en production |"
+   },
+   {
+    "ligne": 270,
+    "phrase": "Pages primaires lues le 11 novembre 2026; [1], [2], [3], [4], [6], [8], [10] et [11] relues à l'audit du 12 novembre 2026 :"
+   },
+   {
+    "ligne": 300,
+    "phrase": "- Les intitulés du plan initial sont conservés, mais la section 42.3 présente un banc d'essai et non un déploiement, et la section 42.4 repose en partie sur des bancs d'essai lus par leur seul résumé [5] [6] [7]."
+   }
+  ],
+  "id": "F3-110"
+ },
+ {
+  "fichier": "chapitre-42-etudes-de-cas.md",
+  "n": 7,
+  "source": "Pages primaires lues le 11 novembre 2026; [1], [2], [3], [4], [6], [8], [10] et [11] relues à l'audit du 12 novembre 2026 : [Roy et coll. — Exploring LLM-based Agents for Root Cause Analysis (arXiv 2403.04123)](https://arxiv.org/abs/2403.04123) — résumé seulement.",
+  "phrases": [
+   {
+    "ligne": 24,
+    "phrase": "| 4 | Banc d'essai ou expérience contrôlée | [4] [5] [6] [7] | Des ordres de grandeur et des modes d'échec, hors production |"
+   },
+   {
+    "ligne": 146,
+    "phrase": "Une étude de 2024, menée sur des incidents de production de Microsoft, explorait déjà l'idée de donner à un agent les outils de diagnostic qu'une équipe emploie à la main; son résumé ne rapporte aucun résultat de déploiement [7]."
+   },
+   {
+    "ligne": 300,
+    "phrase": "- Les intitulés du plan initial sont conservés, mais la section 42.3 présente un banc d'essai et non un déploiement, et la section 42.4 repose en partie sur des bancs d'essai lus par leur seul résumé [5] [6] [7]."
+   }
+  ],
+  "id": "F3-111"
+ },
+ {
+  "fichier": "chapitre-42-etudes-de-cas.md",
+  "n": 13,
+  "source": "Résumés seulement, relevés le 14 novembre 2026 : [Kujanpää et coll. — Tool-Making and Self-Evolving LLM Agents in Low-Latency Systems (arXiv 2607.08010, 9 juillet 2026)](https://arxiv.org/abs/2607.08010)",
+  "phrases": [
+   {
+    "ligne": 156,
+    "phrase": "En production, le temps de réponse médian baisse de 42 %; sur 1 500 alarmes historiques, le taux d'erreur de bout en bout baisse jusqu'à 53 % [13]."
+   }
+  ],
+  "id": "F3-112"
+ },
+ {
+  "fichier": "chapitre-42-etudes-de-cas.md",
+  "n": 14,
+  "source": "Résumés seulement, relevés le 14 novembre 2026 : RecSys Factory: Bounding LLM Agent Autonomy to Decision Points in the Industrial Recommender Lifecycle (prépublication, 2026) — résumé repris d'un index d'articles; page non retrouvée.",
+  "phrases": [
+   {
+    "ligne": 158,
+    "phrase": "Les auteurs précisent qu'aucune comparaison contrôlée avec la situation antérieure n'a été faite [14]."
+   }
+  ],
+  "id": "F3-113"
+ },
+ {
+  "fichier": "chapitre-42-etudes-de-cas.md",
+  "n": 15,
+  "source": "Résumés seulement, relevés le 14 novembre 2026 : [Apostolou, Bosch et Olsson — Agentic AI in Industry: Adoption Level and Deployment Barriers (arXiv 2605.14675, 14 mai 2026)](https://arxiv.org/abs/2605.14675)",
+  "phrases": [
+   {
+    "ligne": 160,
+    "phrase": "Quatre obstacles reviennent : la gestion du contexte, la performance sur des contenus propres à l'entreprise, le non-déterminisme et la qualification, la confidentialité des données [15]."
+   }
+  ],
+  "id": "F3-114"
+ },
+ {
+  "fichier": "chapitre-43-maturite-prospective.md",
+  "n": 3,
+  "source": "Pages primaires lues le 11 novembre 2026 : [Measuring Agents in Production (arXiv 2512.04123, version 4)](https://arxiv.org/abs/2512.04123) — résumé; première moitié du texte relue le 12 novembre 2026.",
+  "phrases": [
+   {
+    "ligne": 45,
+    "phrase": "Elle dépeint des agents de stade 1 : 68 % exécutent moins de dix étapes avant une intervention humaine (« au plus dix » selon le résumé), 14 cas sur 20 pilotent par prompt un modèle du commerce sans en ajuster les poids, 74 % des répondants dépendent surtout d'une évaluation humaine [3]."
+   },
+   {
+    "ligne": 123,
+    "phrase": "| Portée des agents en production | Moins de dix étapes pour 68 % des agents étudiés [3] | Étude comparable montrant des parcours longs : hypothèse H2 à revoir |"
+   },
+   {
+    "ligne": 202,
+    "phrase": "- Les articles [4], [6] et [7] ont été lus par leur résumé seulement; [3], par son résumé et la première moitié de son texte."
+   }
+  ],
+  "id": "F3-115"
+ },
+ {
+  "fichier": "chapitre-43-maturite-prospective.md",
+  "n": 4,
+  "source": "Pages primaires lues le 11 novembre 2026 : [Why Do Multi-Agent LLM Systems Fail? (arXiv 2503.13657, version 3)](https://arxiv.org/abs/2503.13657) — résumé.",
+  "phrases": [
+   {
+    "ligne": 105,
+    "phrase": "La taxonomie MAST recense quatorze modes d'échec, dont la plupart tiennent à la conception et à la coordination [4] (chapitre 21)."
+   },
+   {
+    "ligne": 124,
+    "phrase": "| Échecs de coordination | Quatorze modes recensés [4] | Analyse refaite sur des modèles récents : hypothèse H3 confirmée ou infirmée |"
+   },
+   {
+    "ligne": 202,
+    "phrase": "- Les articles [4], [6] et [7] ont été lus par leur résumé seulement; [3], par son résumé et la première moitié de son texte."
+   },
+   {
+    "ligne": 202,
+    "phrase": "Relues à l'audit : [1] à [4], [8] et [11]."
+   }
+  ],
+  "id": "F3-116"
+ },
+ {
+  "fichier": "chapitre-43-maturite-prospective.md",
+  "n": 6,
+  "source": "Pages primaires lues le 11 novembre 2026 : [Context Engineering: From Prompts to Corporate Multi-Agent Architecture (arXiv 2603.09619, version 2)](https://arxiv.org/abs/2603.09619) — résumé; prépublication.",
+  "phrases": [
+   {
+    "ligne": 19,
+    "phrase": "Une prépublication propose une pyramide à quatre étages, de l'ingénierie de prompt à celle de spécification, sans validation mesurée [6] (chapitre 13)."
+   },
+   {
+    "ligne": 202,
+    "phrase": "- Les articles [4], [6] et [7] ont été lus par leur résumé seulement; [3], par son résumé et la première moitié de son texte."
+   }
+  ],
+  "id": "F3-117"
+ },
+ {
+  "fichier": "chapitre-43-maturite-prospective.md",
+  "n": 7,
+  "source": "Pages primaires lues le 11 novembre 2026 : [Governance Gaps in Agent Interoperability Protocols (arXiv 2606.31498)](https://arxiv.org/abs/2606.31498) — résumé; prépublication.",
+  "phrases": [
+   {
+    "ligne": 89,
+    "phrase": "Une analyse de cinq protocoles, en prépublication, conclut que la gouvernance est une couche d'architecture manquante au-dessus des standards plutôt qu'une fonction à leur ajouter [7]."
+   },
+   {
+    "ligne": 121,
+    "phrase": "| Gouvernance dans les protocoles | Aucun des cinq protocoles analysés n'encode l'ensemble des primitives de gouvernance [7] | Extension officielle d'approbation ou d'audit : scénario A sur la couche qui manque le plus |"
+   },
+   {
+    "ligne": 202,
+    "phrase": "- Les articles [4], [6] et [7] ont été lus par leur résumé seulement; [3], par son résumé et la première moitié de son texte."
+   }
+  ],
+  "id": "F3-118"
+ },
+ {
+  "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+  "n": 9,
+  "source": "Pages primaires lues le 12 novembre 2026 : [Ong et coll. — RouteLLM (arXiv 2406.18665)](https://arxiv.org/abs/2406.18665) — prépublication; résumé seulement.",
+  "phrases": [
+   {
+    "ligne": 59,
+    "phrase": "Son résumé annonce des coûts réduits de plus de moitié dans certains cas, sans perte de qualité sur ses bancs d'essai, et une tenue des routeurs quand la paire de modèles change [9]."
+   }
+  ],
+  "id": "F3-119"
+ },
+ {
+  "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+  "n": 10,
+  "source": "Pages primaires lues le 12 novembre 2026 : [Chen, Zaharia et Zou — FrugalGPT (arXiv 2305.05176)](https://arxiv.org/abs/2305.05176) — prépublication; résumé seulement.",
+  "phrases": [
+   {
+    "ligne": 61,
+    "phrase": "Son résumé annonce jusqu'à 98 % de réduction de coût à performance égale au meilleur modèle de l'époque [10]."
+   }
+  ],
+  "id": "F3-120"
+ },
+ {
+  "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+  "n": 11,
+  "source": "Pages primaires lues le 12 novembre 2026 : [Snell et coll. — Scaling LLM Test-Time Compute Optimally (arXiv 2408.03314)](https://arxiv.org/abs/2408.03314) — prépublication; résumé seulement.",
+  "phrases": [
+   {
+    "ligne": 67,
+    "phrase": "Snell et ses coauteurs en étudient deux formes, la recherche guidée par un modèle vérificateur et l'ajustement adaptatif de la distribution de sortie; leur résumé en tire trois constats [11] :"
+   }
+  ],
+  "id": "F3-121"
+ },
+ {
+  "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+  "n": 12,
+  "source": "Pages primaires lues le 12 novembre 2026 : [Srivatsa et coll. — Preble (arXiv 2407.00023)](https://arxiv.org/abs/2407.00023) — prépublication; résumé seulement.",
+  "phrases": [
+   {
+    "ligne": 99,
+    "phrase": "Les prompts se répètent beaucoup : consignes de domaine, exemples d'usage d'outils, contexte long [12]."
+   },
+   {
+    "ligne": 101,
+    "phrase": "Preble note que les travaux antérieurs sur la réutilisation de l'état KV se limitaient à un seul GPU, alors que le service en production est distribué [12]."
+   },
+   {
+    "ligne": 126,
+    "phrase": "Preble annonce une latence moyenne de 1,5 à 14,5 fois meilleure et une latence au 99e centile de 2 à 10 fois meilleure que celle de systèmes de l'état de l'art, sur des charges réelles et deux modèles ouverts [12]."
+   },
+   {
+    "ligne": 203,
+    "phrase": "L'audit a relu [1], [2], [4], [6], [8], [12] et [13] : les chiffres cités y sont confirmés, sans recoupement sur le texte brut."
+   }
+  ],
+  "id": "F3-122"
+ },
+ {
+  "fichier": "chapitre-45-reseaux-b2b-federes.md",
+  "n": 7,
+  "source": "Pages primaires lues le 12 novembre 2026 : [Defeating Prompt Injections by Design (arXiv 2503.18813)](https://arxiv.org/abs/2503.18813) — résumé.",
+  "phrases": [
+   {
+    "ligne": 97,
+    "phrase": "CaMeL sépare le flux de contrôle, tiré de la requête de confiance, du flux de données, de sorte qu'une donnée non fiable ne puisse jamais modifier le déroulement du programme; des capacités empêchent une donnée privée de sortir par un flux non autorisé [7]."
+   },
+   {
+    "ligne": 253,
+    "phrase": "- **Articles.** [7], [8] et [10] à [12] sont connus par leur résumé."
+   }
+  ],
+  "id": "F3-123"
+ },
+ {
+  "fichier": "chapitre-45-reseaux-b2b-federes.md",
+  "n": 8,
+  "source": "Pages primaires lues le 12 novembre 2026 : [Behavioral Privacy Leakage in Agentic Negotiation (arXiv 2607.06815)](https://arxiv.org/abs/2607.06815) — résumé.",
+  "phrases": [
+   {
+    "ligne": 111,
+    "phrase": "Une prépublication de juillet 2026, acceptée à l'atelier AI4TCI d'ARES 2026, formalise cette fuite comportementale : un observateur infère le prix de réserve à partir des trajectoires de concession, du rythme et des schémas de convergence, sans qu'aucune valeur soit divulguée [8]."
+   },
+   {
+    "ligne": 253,
+    "phrase": "- **Articles.** [7], [8] et [10] à [12] sont connus par leur résumé."
+   }
+  ],
+  "id": "F3-124"
+ },
+ {
+  "fichier": "chapitre-45-reseaux-b2b-federes.md",
+  "n": 10,
+  "source": "Pages primaires lues le 12 novembre 2026 : [Calvano et coll., AER 110(10), 2020](https://www.aeaweb.org/articles?id=10.1257/aer.20190623) — résumé.",
+  "phrases": [
+   {
+    "ligne": 143,
+    "phrase": "Le résultat fondateur est évalué par les pairs : Calvano et ses coauteurs montrent en 2020 que des algorithmes de tarification par apprentissage Q, en concurrence répétée, apprennent de façon constante à pratiquer des prix supraconcurrentiels, sans communiquer entre eux [10]."
+   },
+   {
+    "ligne": 253,
+    "phrase": "- **Articles.** [7], [8] et [10] à [12] sont connus par leur résumé."
+   }
+  ],
+  "id": "F3-125"
+ },
+ {
+  "fichier": "chapitre-45-reseaux-b2b-federes.md",
+  "n": 11,
+  "source": "Pages primaires lues le 12 novembre 2026 : [Algorithmic Collusion by Large Language Models (arXiv 2404.00806)](https://arxiv.org/abs/2404.00806) — résumé.",
+  "phrases": [
+   {
+    "ligne": 145,
+    "phrase": "Fish, Gonczarowski et Shorrer étendent le constat aux modèles de langage [11]."
+   }
+  ],
+  "id": "F3-126"
+ },
+ {
+  "fichier": "chapitre-45-reseaux-b2b-federes.md",
+  "n": 12,
+  "source": "Pages primaires lues le 12 novembre 2026 : [Secret Collusion among AI Agents (arXiv 2402.07510)](https://arxiv.org/abs/2402.07510) — résumé.",
+  "phrases": [
+   {
+    "ligne": 151,
+    "phrase": "Une prépublication de Motwani et de ses coauteurs, révisée en juillet 2025, formalise la collusion secrète entre agents génératifs, où une coordination non voulue passe par des canaux stéganographiques difficiles à détecter [12]."
+   },
+   {
+    "ligne": 253,
+    "phrase": "- **Articles.** [7], [8] et [10] à [12] sont connus par leur résumé."
+   }
+  ],
+  "id": "F3-127"
+ },
+ {
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "n": 3,
+  "source": "Pages primaires lues le 12 novembre 2026 : [Maaz et coll. — Agentic Property-Based Testing, arXiv:2510.09907](https://arxiv.org/abs/2510.09907) — résumé",
+  "phrases": [
+   {
+    "ligne": 65,
+    "phrase": "Une prépublication d'octobre 2025 décrit un agent qui infère des propriétés à partir du code et de la documentation de modules Python, écrit et exécute les tests, puis rédige des rapports de bogue [3]."
+   },
+   {
+    "ligne": 267,
+    "phrase": "- **Articles.** Les sept articles n'ont été lus que par leur résumé. [3], [8] et [9] sont des prépublications."
+   }
+  ],
+  "id": "F3-128"
+ },
+ {
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "n": 4,
+  "source": "Pages primaires lues le 12 novembre 2026 : [Foster et coll. — Mutation-Guided LLM-based Test Generation at Meta, arXiv:2501.12862](https://arxiv.org/abs/2501.12862) — résumé",
+  "phrases": [
+   {
+    "ligne": 73,
+    "phrase": "Meta a publié le bilan de son système ACH [4]."
+   },
+   {
+    "ligne": 264,
+    "phrase": "- **Audit du 12 novembre 2026.** [1], [2], [4], [6], [8], [9], [11] et [14] relus : faits confirmés, l'attaque de [9] et le comptage de [8] précisés."
+   }
+  ],
+  "id": "F3-129"
+ },
+ {
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "n": 8,
+  "source": "Pages primaires lues le 12 novembre 2026 : [Shah — LogJack, arXiv:2604.15368](https://arxiv.org/abs/2604.15368) — résumé",
+  "phrases": [
+   {
+    "ligne": 140,
+    "phrase": "Une prépublication d'avril 2026, LogJack, mesure l'injection indirecte par des journaux infonuagiques contre des agents de débogage [8]."
+   },
+   {
+    "ligne": 264,
+    "phrase": "- **Audit du 12 novembre 2026.** [1], [2], [4], [6], [8], [9], [11] et [14] relus : faits confirmés, l'attaque de [9] et le comptage de [8] précisés."
+   },
+   {
+    "ligne": 264,
+    "phrase": "- **Audit du 12 novembre 2026.** [1], [2], [4], [6], [8], [9], [11] et [14] relus : faits confirmés, l'attaque de [9] et le comptage de [8] précisés."
+   },
+   {
+    "ligne": 267,
+    "phrase": "- **Articles.** Les sept articles n'ont été lus que par leur résumé. [3], [8] et [9] sont des prépublications."
+   }
+  ],
+  "id": "F3-130"
+ },
+ {
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "n": 9,
+  "source": "Pages primaires lues le 12 novembre 2026 : [Pasquini et coll. — When AIOps Become « AI Oops », arXiv:2508.06394](https://arxiv.org/abs/2508.06394) — résumé",
+  "phrases": [
+   {
+    "ligne": 142,
+    "phrase": "Une seconde prépublication, d'août 2025, montre que l'attaquant n'a besoin d'aucune connaissance préalable du système visé [9]."
+   },
+   {
+    "ligne": 264,
+    "phrase": "- **Audit du 12 novembre 2026.** [1], [2], [4], [6], [8], [9], [11] et [14] relus : faits confirmés, l'attaque de [9] et le comptage de [8] précisés."
+   },
+   {
+    "ligne": 264,
+    "phrase": "- **Audit du 12 novembre 2026.** [1], [2], [4], [6], [8], [9], [11] et [14] relus : faits confirmés, l'attaque de [9] et le comptage de [8] précisés."
+   },
+   {
+    "ligne": 267,
+    "phrase": "- **Articles.** Les sept articles n'ont été lus que par leur résumé. [3], [8] et [9] sont des prépublications."
+   }
+  ],
+  "id": "F3-131"
+ },
+ {
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "n": 10,
+  "source": "Pages primaires lues le 12 novembre 2026 : [Carlini et coll. — The Secret Sharer, arXiv:1802.08232](https://arxiv.org/abs/1802.08232) — résumé",
+  "phrases": [
+   {
+    "ligne": 165,
+    "phrase": "**Un modèle mémorise ce qu'il a vu.** Carlini et ses coauteurs proposent une méthode pour mesurer le risque qu'un modèle génératif mémorise involontairement des séquences rares de ses données d'entraînement [10]."
+   }
+  ],
+  "id": "F3-132"
+ },
+ {
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "n": 12,
+  "source": "Pages primaires lues le 12 novembre 2026 : [Hu et coll. — LoRA, arXiv:2106.09685](https://arxiv.org/abs/2106.09685) — résumé",
+  "phrases": [
+   {
+    "ligne": 185,
+    "phrase": "**LoRA** gèle les poids du modèle et entraîne de petites matrices de rang faible insérées dans chaque couche [12]."
+   }
+  ],
+  "id": "F3-133"
+ },
+ {
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "n": 13,
+  "source": "Pages primaires lues le 12 novembre 2026 : [Rafailov et coll. — Direct Preference Optimization, arXiv:2305.18290](https://arxiv.org/abs/2305.18290) — résumé",
+  "phrases": [
+   {
+    "ligne": 187,
+    "phrase": "**DPO** apprend des préférences : des paires où une sortie est jugée meilleure qu'une autre [13]."
+   }
+  ],
+  "id": "F3-134"
+ }
+]

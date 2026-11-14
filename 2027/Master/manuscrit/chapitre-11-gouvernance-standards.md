@@ -378,7 +378,7 @@ Page primaire lue lors de l'audit, le 12 novembre 2026 :
 - **AAIF.** Les pages [1], [2] et [4], relues le 12 novembre 2026, confirment les projets, les membres platine et le comité technique. Les effectifs or et argent restent un décompte approximatif de logos, qui varie d'une lecture à l'autre. Le niveau de neuf projets sur dix reste inconnu; la gouvernance de sept projets n'a pas été lue. Le billet [4] se contredit sur la présidence des groupes de travail; leur ouverture aux non-membres vient de la presse.
 - **NIST et IETF.** Le document du NCCoE est connu par sa page d'annonce. Les brouillons de l'IETF sont décrits d'après leur fiche, relue le 12 novembre 2026 pour [13] et [16], non d'après une lecture intégrale.
 - **Prépublication [26].** Le classement n'a pas été refait à partir des spécifications.
-- **Hors champ.** L'Union européenne (CEN-CENELEC, ETSI), le Japon et la Corée ne sont pas couverts ici; la section 35.7 donne un relevé des cadres japonais et coréen.
+- **Hors champ.** L'Union européenne (CEN-CENELEC, ETSI), le Japon et la Corée ne sont pas couverts ici. La section 35.1 donne l'état des normes harmonisées du CEN-CENELEC; la section 35.7 relève les cadres législatifs japonais et coréen, non leurs travaux de normalisation.
 - **Scénarios et grilles.** Les scénarios de la section 11.8, les seuils de maturité et les grilles de posture sont des propositions de ce chapitre.
 
 ## Mise en œuvre — Gouvernance des standards et anatomie de la pile interopérable {.volet}

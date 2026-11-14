@@ -1,0 +1,215 @@
+{
+  "constats": [
+    {
+      "n": 373,
+      "fichier": "chapitre-21-fiabilite-coordination.md",
+      "passage": "avancer pas à pas trouve mieux l'étape, sans dépasser 25,5 %",
+      "constat": "Contradiction apparente avec le paragraphe précédent, resté tel quel : « la meilleure méthode désigne le bon agent dans 53,5 % des cas et la bonne étape dans 14,2 % ». Le complément donne ensuite 25,5 % pour l'étape et 57,02 % pour l'agent, deux valeurs supérieures à celles de « la meilleure méthode », sans dire que les chiffres ne portent pas sur le même périmètre.",
+      "gravite": "majeur",
+      "preuve": "Section 21.6, « Attribuer l'échec », paragraphes 1 et 2. Source [7] lue le 14 novembre 2026 (https://arxiv.org/html/2505.00212, v3 du 2 juin 2025) : tableau 1, Step-by-Step, étape = 25.51 seulement sur le sous-ensemble généré par algorithme avec vérité terrain (7.02, 15.31 et 8.77 ailleurs); résumé : « The best method achieves 53.5% accuracy in identifying failure-responsible agents ». Que 53,5 % et 14,2 % soient des moyennes sur tout le jeu est déduit, non lu.",
+      "correction_proposee": "avancer pas à pas trouve mieux l'étape, sans dépasser 25,5 %, valeur atteinte sur un seul sous-ensemble (systèmes générés par algorithme, vérité terrain fournie), ce qui explique qu'elle dépasse les 14,2 % du résumé"
+    },
+    {
+      "n": 375,
+      "fichier": "chapitre-21-fiabilite-coordination.md",
+      "passage": "Sous faute injectée, ce qui protège est une boucle de vérification ou une règle déterministe.",
+      "constat": "Formulation plus tranchée que la source et que la section 21.5 elle-même. [10] décrit quatre étages de défense, et son résumé borne l'effet des boucles fermées à « plus de 40 % » des fautes qui font s'effondrer une chaîne linéaire. La section 21.5 rapporte que Table-Critic, système à boucle de critique, tombe à 6,32 % de robustesse sous confiance aveugle avec GPT-5 : la boucle n'y protège pas.",
+      "gravite": "majeur",
+      "preuve": "Section 21.5, « Ce que montre l'injection de fautes », puces 2 et 3. Source [10] lue le 14 novembre 2026 (https://arxiv.org/html/2602.19843) : « with iterative, closed-loop designs neutralizing over 40% of faults that cause catastrophic collapse in linear workflows »; « Table-Critic with GPT-5 achieves only RSf=6.32% ».",
+      "correction_proposee": "Sous faute injectée, une boucle de vérification ou une règle déterministe absorbe une partie des fautes, pas toutes : la confiance aveugle traverse aussi un système à boucle de critique."
+    },
+    {
+      "n": 370,
+      "fichier": "chapitre-21-fiabilite-coordination.md",
+      "passage": "pèsent 9,9 % et 1,6 % des fautes",
+      "constat": "Ces deux parts ne semblent pas publiées par [9] : la source donne des décomptes (38 et 6 fautes), et 9,9 % et 1,6 % correspondent à 38/385 et 6/385. Ce seraient donc des parts calculées dans le chapitre, alors que les limites disent les pourcentages « cités tels quels ». Elles sont en outre calculées sur 385, alors que les parts de causes de la phrase précédente (28,0 %, 21,9 %, 14,1 %) le sont sur 361 : deux dénominateurs dans le même paragraphe, sans le dire. La phrase ne porte pas d'appel [9].",
+      "gravite": "majeur",
+      "preuve": "Source [9] lue le 14 novembre 2026 (https://arxiv.org/html/2603.06847v2, 100 000 premiers caractères sur 143 017) : « Agent Lifecycle and State (38 faults) », « System Coordination (6 faults) »; tableau des causes : « Data Schema Mismatches | 101 | 28.0% » (101/361 = 28,0 %; 101/385 = 26,2 %). L'absence de pourcentage publié pour les deux catégories est le relevé de l'outil de lecture, sur la partie lue seulement : à confirmer sur le texte brut.",
+      "correction_proposee": "comptent 38 et 6 des 385 fautes, soit 9,9 % et 1,6 %, parts calculées ici [9]"
+    },
+    {
+      "n": 371,
+      "fichier": "chapitre-21-fiabilite-coordination.md",
+      "passage": "que le chapitre 34 reprend sous le nom d'ingénierie du chaos",
+      "constat": "Renvoi inexact. Le chapitre 34 ne reprend pas la méthode de MAS-FIRE et ne cite pas cette étude. Sa section 34.10, qui est dans le volet non sourcé, injecte cinq classes de perturbations de l'environnement (débit et transport, latence, JSON partiel, préconditions périmées, injection adversariale) sur les flux MCP et A2A, et aucune faute entre agents (confiance aveugle, tempête ou cycle de messages).",
+      "gravite": "mineur",
+      "preuve": "chapitre-34-exploitation.md, section 34.10 « Ingénierie du chaos agentique » (volet) : « elle injecte cinq classes de perturbations reproductibles sur les flux MCP et A2A ». Aucune occurrence de MAS-FIRE dans le chapitre 34.",
+      "correction_proposee": "voisine de l'ingénierie du chaos de la section 34.10, qui injecte des pannes d'outils et de protocole plutôt que des fautes entre agents"
+    },
+    {
+      "n": 374,
+      "fichier": "chapitre-21-fiabilite-coordination.md",
+      "passage": "Fautes de coordination injectées avant la mise en production (chapitre 34)",
+      "constat": "La grille renvoie au chapitre 34 pour l'injection de fautes de coordination, que ce chapitre ne décrit pas : sa section 34.10 n'injecte que des pannes d'outils, de transport et de données, et une injection adversariale. Le lecteur qui suit le renvoi n'y trouve pas la pratique recommandée.",
+      "gravite": "mineur",
+      "preuve": "chapitre-34-exploitation.md, section 34.10, cinq classes de perturbations; la grille de décision du chapitre 34 n'a pas de ligne sur les fautes entre agents (déduit de la recherche des mots « chaos » et « injection de fautes », absents de l'exposé du chapitre 34).",
+      "correction_proposee": "Fautes de coordination injectées avant la mise en production (section 21.5; pour les pannes d'outils et de protocole, section 34.10)"
+    },
+    {
+      "n": 379,
+      "fichier": "chapitre-22-humain-dans-la-boucle.md",
+      "passage": "Les mesures qui précèdent viennent d'éditeurs. Quatre sources extérieures vont dans le même sens, chacune avec sa limite.",
+      "constat": "Double inexactitude. D'une part, les mesures qui précèdent ne viennent pas toutes d'éditeurs : la mesure de 66 % est celle de l'étude MAP [7], universitaire, et le constat de fatigue d'alerte est celui du cadre de Singapour [2]; seule la mesure de 93 % vient d'un éditeur, un seul. D'autre part, deux des quatre sources dites extérieures et « indépendantes » (titre de la sous-section, point à retenir, limites) viennent d'employés d'éditeurs d'outils agentiques : [15] est signé de trois chercheurs de Microsoft, ce que le texte dit lui-même, et deux des trois auteurs de [14] sont de Hugging Face. Elles sont indépendantes du produit mesuré par [5] et [6], non des éditeurs.",
+      "gravite": "majeur",
+      "preuve": "Section 22.5, « L'approbation qui ne contrôle plus » (sources [2], [3], [6], [7]) et « Ce que dit la recherche indépendante ». Sources lues le 14 novembre 2026 : https://arxiv.org/html/2606.05391, affiliation imprimée « Microsoft, Redmond, USA »; https://arxiv.org/html/2608.23642, auteurs Mitchell (Hugging Face), Ghosh (Hugging Face), Passi (Data & Society).",
+      "correction_proposee": "La seule mesure de la fatigue d'approbation qui précède vient d'un éditeur, sur son propre produit [6]. Quatre sources qui ne portent pas sur le produit de leur auteur vont dans le même sens, chacune avec sa limite; deux d'entre elles, [14] et [15], comptent néanmoins des auteurs employés par des éditeurs d'outils agentiques."
+    },
+    {
+      "n": 359,
+      "fichier": "chapitre-23-architecture-reference.md",
+      "passage": "### Ce que ces acceptions partagent",
+      "constat": "L'intertitre ajouté attribue aux trois acceptions d'éditeurs la phrase qui le suit, écrite avant le complément pour le maillage en général : registre, protocoles standards et plan de données commun. Les pages lues ne l'appuient pas. Les limites disent que les pages de Solace ne décrivent pas la découverte entre agents; l'AgentMesh de Microsoft est donné pour une bibliothèque dont le plan de contrôle n'est pas mis en œuvre, sans plan de données commun. La sous-section suivante affirme en outre que les trois acceptions ne se substituent pas l'une à l'autre.",
+      "gravite": "majeur",
+      "preuve": "Section 23.3 : phrase « Ramené à ses éléments, le maillage désigne trois choses déjà décrites », tableau des acceptions, paragraphe « Le maillage n'est pas un produit interchangeable »; limites du chapitre : « Les pages de Solace ne décrivent pas la découverte entre agents ».",
+      "correction_proposee": "### Ce que le chapitre en retient"
+    },
+    {
+      "n": 362,
+      "fichier": "chapitre-23-architecture-reference.md",
+      "passage": "Le seul article de revue repéré qui nomme un « maillage agentique d'entreprise » est une proposition",
+      "constat": "Tension avec la sous-section précédente, qui donne [20] pour le « seul appui évalué par les pairs trouvé pour cette section ». Si [21] est un article de revue, il y a deux appuis de ce rang; s'il ne l'est pas (les limites disent que la qualité de la revue n'a pas été évaluée), le texte doit le dire ici, là où l'article est cité.",
+      "gravite": "mineur",
+      "preuve": "Section 23.3, « Ce que ces acceptions partagent » (phrase sur Chan et ses collègues) et « Niveau de preuve »; limites : « sans que la qualité de la revue ait été évaluée ».",
+      "correction_proposee": "Le seul article paru dans une revue qui nomme un « maillage agentique d'entreprise », revue dont l'évaluation par les pairs n'a pas été vérifiée, est une proposition"
+    },
+    {
+      "n": 365,
+      "fichier": "chapitre-23-architecture-reference.md",
+      "passage": "page de la revue non retrouvée; résumé repris d'un index d'articles.",
+      "constat": "La source [21] n'a ni adresse ni nom d'index : le lecteur ne peut pas retrouver le résumé sur lequel repose la description du « plan de contrôle sémantique ». Sa date de lecture ne se déduit que de l'intertitre placé plus haut.",
+      "gravite": "mineur",
+      "preuve": "Liste des sources, entrée 21, seule entrée du chapitre sans lien; règle 1.2 du plan (sources lues avec leur date et leur étendue de lecture).",
+      "correction_proposee": null
+    },
+    {
+      "n": 361,
+      "fichier": "chapitre-23-architecture-reference.md",
+      "passage": "La troisième est une bibliothèque dont le plan de contrôle reste à écrire [18].",
+      "constat": "Description réductrice par rapport à la page citée, qui présente AgentMesh à la fois comme une bibliothèque importée par le code et comme un mandataire de gouvernance. La même page donne aussi deux échelles pour le score de confiance (« 800-1000 scale » et « from 0 to 1000 »); le chapitre retient 0 à 1 000 sans signaler l'écart.",
+      "gravite": "mineur",
+      "preuve": "Source [18] lue le 14 novembre 2026 (https://microsoft.github.io/agent-governance-toolkit/packages/agent-mesh/) : « from agentmesh import AgentIdentity »; « AgentMesh acts as a transparent governance proxy »; « Per-agent trust scoring (800-1000 scale) »; « trust score from 0 to 1000 ».",
+      "correction_proposee": "La troisième est une bibliothèque, que sa page présente aussi comme un mandataire de gouvernance, et dont le plan de contrôle reste à écrire [18]."
+    },
+    {
+      "n": 403,
+      "fichier": "chapitre-24-passerelles-integration.md",
+      "passage": "Le dispositif n'a pas été placé devant de vrais serveurs, et les auteurs jugent sa latence trop élevée pour certains usages.",
+      "constat": "La première moitié de la phrase, et « L'évaluation est faite hors ligne » qui la précède, n'ont pas été retrouvées dans [15] à la lecture de contrôle : ce sont vraisemblablement des déductions du chapitre, tirées de la nature du jeu d'essai, et elles sont données sur le ton du fait rapporté, sans appel [15]. Seule la réserve sur la latence est attestée. Constat déduit d'une lecture par l'outil qui condense : à trancher sur le texte brut.",
+      "gravite": "mineur",
+      "preuve": "Source [15] lue le 14 novembre 2026 (https://arxiv.org/html/2508.10991v4) : « may still be prohibitive for ultra-low-latency applications »; aucune phrase relevée sur un essai hors ligne ou sur l'absence de serveurs réels. Les autres chiffres de la phrase précédente concordent (89.1 %, 455.9 ms, huit modèles, 70 448 échantillons, 96,77 % de débridage).",
+      "correction_proposee": "Rien, dans le texte lu, n'indique que le dispositif ait été placé devant de vrais serveurs, et les auteurs jugent sa latence encore trop élevée pour les usages à très faible latence [15]."
+    },
+    {
+      "n": 408,
+      "fichier": "chapitre-24-passerelles-integration.md",
+      "passage": "Sources ajoutées le 14 novembre 2026 :",
+      "constat": "L'intertitre donne la date d'ajout, non la date de lecture, alors que les autres chapitres du lot écrivent « Pages lues le 14 novembre 2026 ». Les entrées [14] et [15] ne disent pas leur étendue de lecture (texte entier ou début seulement), que le plan exige pour toute source ajoutée.",
+      "gravite": "mineur",
+      "preuve": "Liste des sources du chapitre 24, entrées 13 à 16; règle 1.3 du plan : la source s'ajoute « avec sa date de lecture et son étendue ». Comparer avec les chapitres 21, 22 et 23.",
+      "correction_proposee": "Pages lues le 14 novembre 2026 :"
+    },
+    {
+      "n": 439,
+      "fichier": "chapitre-20-cadriciels-orchestration.md",
+      "passage": "Les études de défauts montrent des bogues surtout ordinaires, concentrés dans l'intégration du modèle et souvent transposables d'un cadriciel à l'autre : la discipline d'essai compte plus que le produit.",
+      "constat": "Le point à retenir va plus loin que la section 20.7. « Concentrés » : la couche d'intégration du modèle est la plus touchée avec 24,7 % des bogues, soit moins du quart. « La discipline d'essai compte plus que le produit » est donné comme ce que les études montrent, alors que la section dit que [20] ne classe pas les produits et ne mesure pas de taux de défaut : c'est une déduction du chapitre, que les limites ne déclarent pas (elles ne déclarent que les trois précautions). La section présente aussi cette idée comme « la thèse du chapitre », qui est autre : convergence, caractère périssable et frontières sur protocoles ouverts.",
+      "gravite": "mineur",
+      "preuve": "Section 20.7, « Ce que disent les études de défauts » : « 24,7 % des bogues », « 16 des 35 bogues rejoués », « Les auteurs ne classent pas les produits »; introduction du chapitre (thèse); limites, avant-dernière puce.",
+      "correction_proposee": "Les études de défauts montrent des bogues surtout ordinaires, dont la couche d'intégration du modèle porte la plus grande part (un quart) et dont près de la moitié de ceux qui ont été rejoués se transposent à un autre cadriciel. Ce chapitre en déduit que la discipline d'essai compte au moins autant que le choix du produit."
+    },
+    {
+      "n": 434,
+      "fichier": "chapitre-20-cadriciels-orchestration.md",
+      "passage": "Certains produits font le pont : Agent Server sert la version 1.0 tout en acceptant les noms de méthode de la 0.3 [17].",
+      "constat": "Formulation plus favorable que celle de la section 20.2, d'après la même source : Agent Server n'y met en œuvre que la liaison JSON-RPC, sans gRPC ni HTTP+JSON, et « la forme des réponses reste celle de la 0.3 ». Placée sous « Les versions divergent », la phrase laisse croire à une compatibilité complète dans les deux sens. Constat tiré du chapitre lui-même; la page [17] n'a pas été relue.",
+      "gravite": "mineur",
+      "preuve": "Section 20.2, paragraphe « Les protocoles » : « gRPC et HTTP+JSON ne sont pas mis en œuvre, la forme des réponses reste celle de la 0.3 ».",
+      "correction_proposee": "Certains produits font un pont partiel : Agent Server accepte les noms de méthode de la 1.0 et de la 0.3 sur JSON-RPC, mais ses réponses gardent la forme de la 0.3 [17]."
+    },
+    {
+      "n": 435,
+      "fichier": "chapitre-20-cadriciels-orchestration.md",
+      "passage": "| LangGraph [1][2][3] | Graphe : état typé, nœuds, arêtes |",
+      "constat": "Les trois lignes complétées du tableau de 20.7 (LangGraph, CrewAI, Microsoft Agent Framework) portent maintenant des faits tirés de [17] et de [19] (licence MIT, A2A dans un produit distinct), mais les appels de la première colonne n'ont pas été mis à jour : ces faits n'ont pas d'appel dans le tableau.",
+      "gravite": "mineur",
+      "preuve": "Section 20.7, tableau : lignes « LangGraph [1][2][3] », « CrewAI [4][5] » et « Microsoft Agent Framework [6][7][8] »; entrées 435, 436 et 437 du registre.",
+      "correction_proposee": "| LangGraph [1][2][3][17][19] | Graphe : état typé, nœuds, arêtes |"
+    },
+    {
+      "n": 440,
+      "fichier": "chapitre-20-cadriciels-orchestration.md",
+      "passage": "(https://arxiv.org/html/2604.08906v1) — prépublication.",
+      "constat": "La source [20], dont viennent tous les chiffres de la sous-section sur les défauts, ne dit pas son étendue de lecture, et les limites ne la donnent pas non plus. L'intertitre « Sources ajoutées le 14 novembre 2026 » donne une date d'ajout; la date de lecture n'est dite, dans les limites, que pour [16] à [19].",
+      "gravite": "mineur",
+      "preuve": "Liste des sources, entrées 16 à 21; limites, puces 4 et 8; règle 1.3 du plan.",
+      "correction_proposee": null
+    },
+    {
+      "n": 416,
+      "fichier": "chapitre-08-decouverte-registres.md",
+      "passage": "(https://arxiv.org/html/2510.16558v1) — prépublication.",
+      "constat": "Les sources [24] et [25], dont viennent tous les chiffres des sous-sections « Des catalogues gonflés » et « Des identités qui se détournent », ne disent pas leur étendue de lecture. Les limites précisent seulement qu'elles ont été lues par l'outil d'extraction, qui d'après les autres chapitres ne restitue que le début des textes longs. Aucun autre écart relevé dans la section 8.8 : les chiffres de [23] et de [27] concordent avec leurs résumés.",
+      "gravite": "mineur",
+      "preuve": "Liste des sources, entrées 24 et 25; limites, avant-dernière puce; règle 1.3 du plan. Résumé de [23] lu le 14 novembre 2026 (https://arxiv.org/abs/2609.14119) : « 51.1% of multi-version servers changed what they advertise between versions », « 40.6% did so silently », « OR = 2.96 », « reduces to roughly 7.6% ».",
+      "correction_proposee": null
+    },
+    {
+      "n": 456,
+      "fichier": "chapitre-04-etat-des-lieux.md",
+      "passage": "Elles bornent toutefois les chiffres des enquêtes privées : si une entreprise sur cinq utilise l'IA sous une forme quelconque, la part de celles qui exploitent des agents en production est nécessairement plus faible (chapitre 50).",
+      "constat": "Le raisonnement ne tient que pour une même population. Les offices mesurent l'ensemble des entreprises, surtout petites; l'enquête McKinsey de la même section porte sur ses répondants, des organisations plus grandes, et y trouve 22 % d'organisations « plus petites » ayant mis des agents à l'échelle et 44 % ayant mis l'IA à l'échelle, soit plus que la « borne » de 20 %. Le paragraphe lui-même donne 37 % pour les entreprises américaines d'au moins 250 employés. Les statistiques officielles ne bornent donc pas les chiffres des enquêtes privées; elles bornent la part des agents dans l'ensemble des entreprises. Le lecteur peut en conclure à tort que les chiffres de McKinsey sont impossibles. Les chiffres cités eux-mêmes concordent avec la source contrôlée.",
+      "gravite": "majeur",
+      "preuve": "Section 4.1, tableau de l'enquête McKinsey (40 %, 22 %, 44 %) et phrase « aux États-Unis, la part atteint 37 % chez les entreprises d'au moins 250 employés ». Source [15] lue le 14 novembre 2026 (https://census.gov/library/stories/2026/05/ai-use-businesses.html) : « higher than the national rate (19.8%) »; « 37% of firms with at least 250 employees reported using AI in their business operations ».",
+      "correction_proposee": "Elles situent toutefois les chiffres des enquêtes privées : dans l'ensemble des entreprises, où une sur cinq utilise l'IA sous une forme quelconque, la part de celles qui exploitent des agents en production est nécessairement plus faible. Les parts de l'enquête McKinsey décrivent un autre champ, celui de ses répondants, des organisations plus grandes, et ne s'y comparent pas directement (chapitre 50)."
+    },
+    {
+      "n": 484,
+      "fichier": "chapitre-18-execution-durable-transactions.md",
+      "passage": "**Deux autres formes.** Deux produits que le tableau ne couvre pas montrent que la durabilité n'exige pas toujours un serveur d'orchestration.",
+      "constat": "Paragraphe mal placé : il est inséré sous l'intertitre « La durabilité entre organisations », entre le paragraphe sur les protocoles et la phrase de clôture de la section, alors qu'il complète le tableau de « Deux familles ». DBOS et Cloudflare Workflows n'ont rien d'interorganisationnel. La phrase d'attaque présente en outre comme nouveau ce que le tableau montre déjà : LangGraph (bibliothèque et magasin de points de contrôle) et Lambda durable functions (service géré) n'exigent pas non plus de serveur d'orchestration à exploiter. Les faits rapportés sur DBOS concordent avec la page lue.",
+      "gravite": "mineur",
+      "preuve": "Section 18.6 : ordre des intertitres « Deux familles », « Ce que les moteurs apportent aux agents », « La durabilité entre organisations »; tableau des moteurs. Source [16] lue le 14 novembre 2026 (https://docs.dbos.dev/architecture) : « There's no separate orchestration server and no infrastructure required besides Postgres »; « The workflow function must be deterministic »; « Steps should be idempotent ».",
+      "correction_proposee": null
+    },
+    {
+      "n": 514,
+      "fichier": "chapitre-11-gouvernance-standards.md",
+      "passage": "le Japon et la Corée ne sont pas couverts ici; la section 35.7 donne un relevé des cadres japonais et coréen.",
+      "constat": "Renvoi incomplet et de nature différente de ce qu'il annonce. La limite porte sur des organismes de normalisation (chapitre 11); la section 35.7 relève une loi coréenne et un plan gouvernemental japonais, non des travaux de normalisation. Et pour l'Union européenne, citée dans la même phrase comme non couverte, la section 35.1 donne l'état des normes harmonisées du CEN-CENELEC, vers lequel aucun renvoi n'est fait.",
+      "gravite": "mineur",
+      "preuve": "chapitre-35-cadres-internationaux.md : section 35.7, tableau (Corée du Sud : loi-cadre; Japon : loi de promotion et plan de base); section 35.1, « Des normes harmonisées qui s'arrêtent avant l'agent » (prEN 18286, 18228, 18229-1, 18229-2, 18282).",
+      "correction_proposee": "le Japon et la Corée ne sont pas couverts ici. La section 35.1 donne l'état des normes harmonisées du CEN-CENELEC; la section 35.7 relève les cadres législatifs japonais et coréen, non leurs travaux de normalisation."
+    },
+    {
+      "n": 517,
+      "fichier": "chapitre-19-orchestration-evenementielle.md",
+      "passage": "le volet de mise en œuvre présente celui de Solace (section 19.8).",
+      "constat": "La limite corrigée ne renvoie qu'au volet, non sourcé. Depuis les compléments du même jour, la section 23.3 décrit, d'après la documentation de Solace, la plateforme d'agents bâtie sur ce maillage d'événements, et renvoie elle-même deux fois au chapitre 19. « Faute de source lue » ne vaut donc plus pour l'ouvrage, seulement pour cet exposé; le renvoi vers 23.3 manque.",
+      "gravite": "mineur",
+      "preuve": "chapitre-23-architecture-reference.md, section 23.3, paragraphe « La dorsale événementielle » et source [14] (documentation Solace Agent Mesh, lue le 14 novembre 2026); chapitre-19, section 19.8, sous-section « Choix des courtiers : Kafka, Solace et NATS » (volet).",
+      "correction_proposee": "le volet de mise en œuvre présente celui de Solace (section 19.8), et la section 23.3 décrit, d'après la documentation de l'éditeur, la plateforme d'agents bâtie sur ce maillage."
+    }
+  ],
+  "bilan": {
+    "entrees_lues": 77,
+    "chapitres_relus": [21, 22, 23, 24, 20, 8, 4, 14, 18, 11, 19],
+    "lectures_web": [
+      {"url": "https://arxiv.org/html/2505.00212", "resultat": "lu"},
+      {"url": "https://arxiv.org/html/2602.19843", "resultat": "lu (100 000 premiers caractères sur 133 119)"},
+      {"url": "https://arxiv.org/html/2603.06847v2", "resultat": "lu (100 000 premiers caractères sur 143 017)"},
+      {"url": "https://arxiv.org/html/2608.23642", "resultat": "lu (100 000 premiers caractères sur 120 348)"},
+      {"url": "https://arxiv.org/html/2606.05391", "resultat": "lu (100 000 premiers caractères sur 157 810)"},
+      {"url": "https://microsoft.github.io/agent-governance-toolkit/packages/agent-mesh/", "resultat": "lu"},
+      {"url": "https://aimultiple.com/de/mcp-gateway", "resultat": "lu"},
+      {"url": "https://arxiv.org/html/2508.10991v4", "resultat": "lu"},
+      {"url": "https://arxiv.org/abs/2607.11086", "resultat": "lu (résumé, restitué en paraphrase par l'outil)"},
+      {"url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway.html", "resultat": "lu"},
+      {"url": "https://docs.langchain.com/oss/python/langchain/mcp", "resultat": "lu"},
+      {"url": "https://arxiv.org/abs/2609.14119", "resultat": "lu (résumé)"},
+      {"url": "https://census.gov/library/stories/2026/05/ai-use-businesses.html", "resultat": "lu (au second essai)"},
+      {"url": "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/overview", "resultat": "lu"},
+      {"url": "https://docs.dbos.dev/architecture", "resultat": "lu"}
+    ],
+    "non_fait": "Contrôle du 14 novembre 2026 : le fichier est un JSON valide de 21 constats; les passages des 5 derniers (chapitres 8, 4, 18, 11, 19) figurent une seule fois dans le manuscrit; ceux des 16 premiers (chapitres 21, 22, 23, 24, 20) n'y figurent plus tous, le commit afb5538 ayant appliqué des corrections à ces chapitres entre-temps. Chapitre 14 : aucun constat (les quatre entrées concordent avec la page lue). Plafond de 15 lectures web atteint : n'ont pas été vérifiés à la source [16] et [17] du chapitre 22 (Goddard, Green), [14] à [17], [19] et [21] du chapitre 23, [17], [18], [20] et [21] du chapitre 20, [24] à [26] du chapitre 8, [13] et [14] du chapitre 4, [17] du chapitre 18. Les lectures passent par un outil qui condense et s'arrête à 100 000 caractères : la fin de cinq prépublications n'a pas été lue, et trois constats (n° 370, 373, 403) reposent en partie sur une absence relevée par cet outil, à confirmer sur le texte brut. Les volets n'ont été parcourus que par recherche de mots-clés (chapitres 14, 18, 19, 34), non lus en entier; les chapitres 20, 21, 22, 23, 24, 8 et 4 n'ont pas de volet dans leur fichier. Les sections non touchées par un complément n'ont été relues que pour le contexte."
+  }
+}

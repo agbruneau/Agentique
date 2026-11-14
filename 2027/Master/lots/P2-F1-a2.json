@@ -1,0 +1,37 @@
+{
+ "id": "P2-F1-a2",
+ "origine": "plan 2027, lot P2-F1-a2",
+ "categorie": "coherence",
+ "remplacements": [
+  {
+   "fichier": "chapitre-04-etat-des-lieux.md",
+   "avant": "Elles bornent toutefois les chiffres des enquêtes privées : si une entreprise sur cinq utilise l'IA sous une forme quelconque, la part de celles qui exploitent des agents en production est nécessairement plus faible (chapitre 50).",
+   "apres": "Elles situent toutefois les chiffres des enquêtes privées : dans l'ensemble des entreprises, où une sur cinq utilise l'IA sous une forme quelconque, la part de celles qui exploitent des agents en production est nécessairement plus faible. Les parts de l'enquête McKinsey décrivent un autre champ, celui de ses répondants, des organisations plus grandes, et ne s'y comparent pas directement (chapitre 50).",
+   "motif": "Second audit (lot P2-F1, entrée n° 456, majeur) : Le raisonnement ne tient que pour une même population. Les offices mesurent l'ensemble des entreprises, surtout petites; l'enquête McKinsey de la même section porte sur ses répondants, des organisations plus grandes, et y trouve 22 % d'organisations « plus petites » ayant mis des agents à l'échelle et 44 % ayant mis l'IA à l'échelle, soit plus que la « borne » de 20 %. Le paragraphe lui-même donne 37 % pour les en…"
+  },
+  {
+   "fichier": "chapitre-11-gouvernance-standards.md",
+   "avant": "le Japon et la Corée ne sont pas couverts ici; la section 35.7 donne un relevé des cadres japonais et coréen.",
+   "apres": "le Japon et la Corée ne sont pas couverts ici. La section 35.1 donne l'état des normes harmonisées du CEN-CENELEC; la section 35.7 relève les cadres législatifs japonais et coréen, non leurs travaux de normalisation.",
+   "motif": "Second audit (lot P2-F1, entrée n° 514, mineur) : Renvoi incomplet et de nature différente de ce qu'il annonce. La limite porte sur des organismes de normalisation (chapitre 11); la section 35.7 relève une loi coréenne et un plan gouvernemental japonais, non des travaux de normalisation. Et pour l'Union européenne, citée dans la même phrase comme non couverte, la section 35.1 donne l'état des normes harmonisées du CEN-CENELEC, vers lequel aucun renvoi n'est fait."
+  },
+  {
+   "fichier": "chapitre-19-orchestration-evenementielle.md",
+   "avant": "le volet de mise en œuvre présente celui de Solace (section 19.8).",
+   "apres": "le volet de mise en œuvre présente celui de Solace (section 19.8), et la section 23.3 décrit, d'après la documentation de l'éditeur, la plateforme d'agents bâtie sur ce maillage.",
+   "motif": "Second audit (lot P2-F1, entrée n° 517, mineur) : La limite corrigée ne renvoie qu'au volet, non sourcé. Depuis les compléments du même jour, la section 23.3 décrit, d'après la documentation de Solace, la plateforme d'agents bâtie sur ce maillage d'événements, et renvoie elle-même deux fois au chapitre 19. « Faute de source lue » ne vaut donc plus pour l'ouvrage, seulement pour cet exposé; le renvoi vers 23.3 manque."
+  },
+  {
+   "fichier": "chapitre-08-decouverte-registres.md",
+   "avant": "Les auteurs comptent 516 serveurs détournables de l'une ou l'autre façon dans quatre registres.",
+   "apres": "Les auteurs comptent, dans quatre registres, 304 serveurs exposés au détournement par redirection et 212 comptes GitHub réenregistrables; le total de 516 cas est une somme faite ici, absente du texte relu.",
+   "motif": "Recollationnement (lot P2-F2, phrase F2-141) : le chiffre de 516 n'a pas été retrouvé dans la source [24], relue le 14 novembre 2026 par l'outil de lecture; elle donne 304 et 212, dont 516 est la somme."
+  },
+  {
+   "fichier": "chapitre-04-etat-des-lieux.md",
+   "avant": "69 % des agents étudiés lisent des données confidentielles [1]",
+   "apres": "69 % des systèmes décrits lisent des données confidentielles, sur une trentaine de réponses à cette question [1]",
+   "motif": "Recollationnement (lot P2-F2, phrase F2-012) : le chiffre est exact (annexe B.4.1 de l'étude MAP), mais sa base est de 27 à 29 réponses, non les 86 systèmes déployés ni les 306 répondants."
+  }
+ ]
+}

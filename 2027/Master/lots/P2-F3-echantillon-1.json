@@ -1,0 +1,898 @@
+[
+ {
+  "fichier": "chapitre-01-entreprise-agentique.md",
+  "n": 7,
+  "source": "Pages primaires lues le 11 novembre 2026; [4], [6] à [10] relues le 12 novembre 2026 : [Pan et coll. — Measuring Agents in Production (arXiv 2512.04123, version 4)](https://arxiv.org/abs/2512.04123) — résumé, puis première moitié du texte à l'audit.",
+  "phrases": [
+   {
+    "ligne": 117,
+    "phrase": "**La pratique est prudente.** L'étude MAP repose sur vingt études de cas et sur une enquête de 306 répondants, dont 86 décrivent des systèmes déployés, dans 26 domaines [7]."
+   },
+   {
+    "ligne": 167,
+    "phrase": "L'étude MAP rapporte que la fiabilité est la première difficulté des équipes, et qu'elles y répondent surtout par la conception du système [7]."
+   }
+  ],
+  "id": "F3-001"
+ },
+ {
+  "fichier": "chapitre-01-entreprise-agentique.md",
+  "n": 8,
+  "source": "Pages primaires lues le 11 novembre 2026; [4], [6] à [10] relues le 12 novembre 2026 : [Cemri et coll. — Why Do Multi-Agent LLM Systems Fail? (arXiv 2503.13657, version 3)](https://arxiv.org/abs/2503.13657) — résumé seulement.",
+  "phrases": [
+   {
+    "ligne": 167,
+    "phrase": "La taxonomie MAST, tirée de traces de sept cadriciels multi-agents, recense quatorze modes d'échec en trois catégories : conception du système, désalignement entre agents, vérification de la tâche [8] (chapitre 21)."
+   }
+  ],
+  "id": "F3-002"
+ },
+ {
+  "fichier": "chapitre-02-genealogie.md",
+  "n": 11,
+  "source": "Pages primaires lues le 11 novembre 2026 : [Kang et Diponegoro — Governance Gaps in Agent Interoperability Protocols (arXiv 2606.31498, 30 juin 2026)](https://arxiv.org/abs/2606.31498) — résumé seulement.",
+  "phrases": [
+   {
+    "ligne": 168,
+    "phrase": "Une analyse du 30 juin 2026 confronte cinq protocoles (MCP, A2A, ACP, ANP et ERC-8004) à six dimensions de gouvernance; d'après son résumé, le vote et la conservation de la dissidence sont absents des cinq, et la gouvernance d'une communauté d'agents y apparaît comme une couche manquante au-dessus des standards, non comme une fonction à leur ajouter [11] (chapitre 11)."
+   },
+   {
+    "ligne": 223,
+    "phrase": "- L'audit du 12 novembre 2026 a relu à la source [1] (version 4), [5], [6], [10] et le résumé de [11]; les faits attribués y figurent."
+   }
+  ],
+  "id": "F3-003"
+ },
+ {
+  "fichier": "chapitre-03-dimensions-interoperabilite.md",
+  "n": 14,
+  "source": "Prépublications dont seul le résumé a été lu : [From Multi-Agent Systems and the Semantic Web to Agentic AI: A Unified Narrative of the Web of Agents (arXiv 2507.10644)](https://arxiv.org/abs/2507.10644)",
+  "phrases": [
+   {
+    "ligne": 37,
+    "phrase": "Une synthèse historique décrit ce déplacement comme le passage d'une sémantique portée par les données à une sémantique portée par les modèles [14]."
+   },
+   {
+    "ligne": 149,
+    "phrase": "La synthèse historique déjà citée conclut que le progrès dépend désormais davantage de l'infrastructure sociotechnique que de la conception des protocoles [14]."
+   },
+   {
+    "ligne": 237,
+    "phrase": "- Les sources [14] à [16] ne sont connues que par leur résumé."
+   }
+  ],
+  "id": "F3-004"
+ },
+ {
+  "fichier": "chapitre-03-dimensions-interoperabilite.md",
+  "n": 15,
+  "source": "Prépublications dont seul le résumé a été lu : [Semantic Consensus: Process-Aware Conflict Detection and Resolution for Enterprise Multi-Agent LLM Systems (arXiv 2604.16339)](https://arxiv.org/abs/2604.16339)",
+  "phrases": [
+   {
+    "ligne": 88,
+    "phrase": "Son résumé rapporte une précision de détection de 27,9 %, obtenue sur des exécutions simulées selon le chapitre 21, ce qui situe la maturité de ce type de remède [15]."
+   }
+  ],
+  "id": "F3-005"
+ },
+ {
+  "fichier": "chapitre-03-dimensions-interoperabilite.md",
+  "n": 16,
+  "source": "Prépublications dont seul le résumé a été lu : [AI Agents Under EU Law (arXiv 2604.04604)](https://arxiv.org/abs/2604.04604)",
+  "phrases": [
+   {
+    "ligne": 145,
+    "phrase": "Un document de travail d'avril 2026 sur le droit européen applicable aux agents fait de l'inventaire complet des actions externes de l'agent, de ses flux de données et des systèmes connectés la première tâche de conformité d'un fournisseur, selon son résumé [16]."
+   },
+   {
+    "ligne": 237,
+    "phrase": "- Les sources [14] à [16] ne sont connues que par leur résumé."
+   }
+  ],
+  "id": "F3-006"
+ },
+ {
+  "fichier": "chapitre-04-etat-des-lieux.md",
+  "n": 1,
+  "source": "Pages primaires lues le 11 novembre 2026 : [Measuring Agents in Production (arXiv 2512.04123, version 4)](https://arxiv.org/abs/2512.04123) — résumé et première moitié du texte.",
+  "phrases": [
+   {
+    "ligne": 65,
+    "phrase": "La meilleure source sur les agents en production est une étude universitaire, « Measuring Agents in Production » (MAP), signée par vingt-cinq auteurs [1]."
+   },
+   {
+    "ligne": 79,
+    "phrase": "Les figures relues portent sur 22 à 69 de ces 86 réponses, selon la question [1]."
+   },
+   {
+    "ligne": 85,
+    "phrase": "**Le contrôle de qualité reste manuel.** Trois quarts des cas étudiés évaluent leur agent sans jeu de bancs d'essai, par tests comparatifs, retours d'utilisateurs et surveillance en production [1]."
+   },
+   {
+    "ligne": 87,
+    "phrase": "**L'interopérabilité entre agents est encore un besoin plus qu'une pratique.** Dans le sondage, 8 % seulement des systèmes servent autre chose que des personnes, et la plupart des cas étudiés sont construits sur mesure, même si 61 % des répondants disent utiliser un cadriciel [1]."
+   },
+   {
+    "ligne": 91,
+    "phrase": "Les auteurs les énoncent [1]."
+   },
+   {
+    "ligne": 111,
+    "phrase": "Parmi ses répondants, 39 % comparent leur agent à une solution non agentique, et 26 % disent qu'aucune base de comparaison valable n'existe [1]."
+   },
+   {
+    "ligne": 113,
+    "phrase": "**Les contrôles insuffisants.** Les praticiens de l'étude MAP désignent la fiabilité, soit un comportement correct et constant dans le temps, comme leur premier défi [1]."
+   },
+   {
+    "ligne": 117,
+    "phrase": "Un autre chiffre de MAP donne la mesure de l'enjeu : 69 % des agents étudiés lisent des données confidentielles [1]."
+   },
+   {
+    "ligne": 119,
+    "phrase": "Dans MAP, 38 % des praticiens placent la performance technique au premier rang de leurs priorités, contre 17 % pour la conformité et 3 % pour la gouvernance [1]."
+   },
+   {
+    "ligne": 160,
+    "phrase": "Les agents en production restent bornés et supervisés; l'autonomie s'élargit par classe de décision | Étude MAP [1] | Étude comparable montrant des parcours longs sans intervention |"
+   },
+   {
+    "ligne": 161,
+    "phrase": "Le verrou est la conception du système, non le modèle | MAP et MAST [1][2] | Disparition des échecs de coordination avec une nouvelle génération de modèles |"
+   }
+  ],
+  "id": "F3-007"
+ },
+ {
+  "fichier": "chapitre-04-etat-des-lieux.md",
+  "n": 2,
+  "source": "Pages primaires lues le 11 novembre 2026 : [Why Do Multi-Agent LLM Systems Fail? (arXiv 2503.13657)](https://arxiv.org/html/2503.13657v2) — résumé de la version 3 et première partie de la version 2.",
+  "phrases": [
+   {
+    "ligne": 113,
+    "phrase": "La taxonomie MAST précise où elle se perd dans les systèmes multi-agents : problèmes de spécification (41,77 % des échecs observés), désalignement entre agents (36,94 %) et vérification de la tâche (21,30 %) [2]."
+   },
+   {
+    "ligne": 115,
+    "phrase": "La conclusion des auteurs porte toutefois au-delà : les échecs tiennent largement à la conception du système et à l'organisation des agents, et l'amélioration des modèles ne suffira pas à les corriger tous [2]."
+   },
+   {
+    "ligne": 161,
+    "phrase": "Le verrou est la conception du système, non le modèle | MAP et MAST [1][2] | Disparition des échecs de coordination avec une nouvelle génération de modèles |"
+   }
+  ],
+  "id": "F3-008"
+ },
+ {
+  "fichier": "chapitre-07-protocoles-peripheriques.md",
+  "n": 17,
+  "source": "Pages primaires lues le 11 novembre 2026; [3], [4], [7], [8], [14] et [16] à [18] relues à l'audit, le 12 novembre : [LAP: An Agent-to-Instrument Protocol for Autonomous Science (arXiv 2606.03755v1)](https://arxiv.org/html/2606.03755) — texte intégral lu en partie; résumé relu",
+  "phrases": [
+   {
+    "ligne": 99,
+    "phrase": "Le Lab Agent Protocol (LAP), prépublié le 2 juin 2026 par cinq auteurs, illustre la seconde catégorie et montre ce qu'un domaine physique exige de plus [17]."
+   },
+   {
+    "ligne": 107,
+    "phrase": "D'après le texte intégral, LAP est une spécification de conception en version 0.1, sans mise en œuvre de référence ni évaluation empirique [17]."
+   }
+  ],
+  "id": "F3-009"
+ },
+ {
+  "fichier": "chapitre-07-protocoles-peripheriques.md",
+  "n": 18,
+  "source": "Pages primaires lues le 11 novembre 2026; [3], [4], [7], [8], [14] et [16] à [18] relues à l'audit, le 12 novembre : [AgentOrchestra et le protocole TEA (arXiv 2506.12508)](https://arxiv.org/abs/2506.12508) — résumé de la v6 et texte de la v5, lu en partie",
+  "phrases": [
+   {
+    "ligne": 117,
+    "phrase": "**TEA** (Tool-Environment-Agent) traite outils, environnements et agents comme des ressources versionnées, dotées d'un cycle de vie explicite [18]."
+   },
+   {
+    "ligne": 123,
+    "phrase": "Le sigle ACP désigne trois choses dans ce compendium : l'Agent Communication Protocol d'IBM, absorbé par A2A (chapitre 6); l'Agentic Commerce Protocol (chapitre 10); et l'Agent Context Protocol, sous-protocole de TEA [18]."
+   },
+   {
+    "ligne": 174,
+    "phrase": "Pages primaires lues le 11 novembre 2026; [3], [4], [7], [8], [14] et [16] à [18] relues à l'audit, le 12 novembre :"
+   }
+  ],
+  "id": "F3-010"
+ },
+ {
+  "fichier": "chapitre-07-protocoles-peripheriques.md",
+  "n": 19,
+  "source": "Pages primaires lues le 11 novembre 2026; [3], [4], [7], [8], [14] et [16] à [18] relues à l'audit, le 12 novembre : [Governance Gaps in Agent Interoperability Protocols (arXiv 2606.31498)](https://arxiv.org/abs/2606.31498) — résumé",
+  "phrases": [
+   {
+    "ligne": 119,
+    "phrase": "**L'analyse des lacunes de gouvernance** examine cinq protocoles (MCP, A2A, ACP, ANP et ERC-8004) selon six dimensions, dont le vote, l'escalade humaine et l'audit [19]."
+   },
+   {
+    "ligne": 205,
+    "phrase": "- LAP et TEA n'ont été lus qu'en partie, [19] à [21] par leur résumé seulement."
+   },
+   {
+    "ligne": 205,
+    "phrase": "Les cinq protocoles de [19] sont repris des chapitres 3 et 11."
+   }
+  ],
+  "id": "F3-011"
+ },
+ {
+  "fichier": "chapitre-07-protocoles-peripheriques.md",
+  "n": 20,
+  "source": "Pages primaires lues le 11 novembre 2026; [3], [4], [7], [8], [14] et [16] à [18] relues à l'audit, le 12 novembre : [A survey of agent interoperability protocols (arXiv 2505.02279)](https://arxiv.org/abs/2505.02279) — résumé",
+  "phrases": [
+   {
+    "ligne": 127,
+    "phrase": "Les relevés universitaires comparent les protocoles par leurs modes d'interaction, leur découverte et leur sécurité [20][21]."
+   }
+  ],
+  "id": "F3-012"
+ },
+ {
+  "fichier": "chapitre-07-protocoles-peripheriques.md",
+  "n": 21,
+  "source": "Pages primaires lues le 11 novembre 2026; [3], [4], [7], [8], [14] et [16] à [18] relues à l'audit, le 12 novembre : [A Survey of AI Agent Protocols (arXiv 2504.16736)](https://arxiv.org/abs/2504.16736) — résumé",
+  "phrases": [
+   {
+    "ligne": 99,
+    "phrase": "Un relevé des protocoles d'agents distingue les protocoles généralistes des protocoles propres à un domaine [21]."
+   },
+   {
+    "ligne": 127,
+    "phrase": "Les relevés universitaires comparent les protocoles par leurs modes d'interaction, leur découverte et leur sécurité [20][21]."
+   },
+   {
+    "ligne": 205,
+    "phrase": "- LAP et TEA n'ont été lus qu'en partie, [19] à [21] par leur résumé seulement."
+   }
+  ],
+  "id": "F3-013"
+ },
+ {
+  "fichier": "chapitre-08-decouverte-registres.md",
+  "n": 23,
+  "source": "Études de mesure, lues le 14 novembre 2026 pour la section 8.8 : [Kraishan — Same Name, Different Server: A Security Census of Silent Drift in the Model Context Protocol Ecosystem (arXiv 2609.14119, 12 septembre 2026)](https://arxiv.org/abs/2609.14119) — prépublication, un seul auteur; résumé seulement.",
+  "phrases": [
+   {
+    "ligne": 187,
+    "phrase": "Le recensement le plus proche du sujet de ce chapitre porte sur le registre public de MCP lui-même : 21 643 serveurs et 72 606 enregistrements de version, relevés en août 2026 [23]."
+   },
+   {
+    "ligne": 191,
+    "phrase": "Le recensement du registre public observe, après correction par la précision de son scanner, environ 7,6 % de constats de gravité élevée [23]."
+   },
+   {
+    "ligne": 201,
+    "phrase": "| Un serveur change ce qu'il annonce, ou son hôte, sous la même identité [23] | Épingler la version et le point d'accès; comparer les définitions à chaque synchronisation |"
+   },
+   {
+    "ligne": 202,
+    "phrase": "| La popularité protège peu [23] | Ne pas approuver sur le nombre d'étoiles ou de téléchargements |"
+   },
+   {
+    "ligne": 288,
+    "phrase": "- Les seules données chiffrées sur l'écosystème sont celles de la section 8.8, ajoutée le 14 novembre 2026. [23], [26] et [27] n'y sont connus que par leur résumé; [24] et [25] ont été lus par l'outil d'extraction."
+   },
+   {
+    "ligne": 288,
+    "phrase": "Le résumé de [23] ne dit pas si les 40,6 % se rapportent à tous les serveurs à plusieurs versions ou à ceux qui ont changé. [25] donne des décomptes différents dans son résumé et dans ses tableaux; ceux du tableau des serveurs sont retenus."
+   }
+  ],
+  "id": "F3-014"
+ },
+ {
+  "fichier": "chapitre-08-decouverte-registres.md",
+  "n": 26,
+  "source": "Études de mesure, lues le 14 novembre 2026 pour la section 8.8 : [Hasan et coll. — Model Context Protocol (MCP) at First Glance: Studying the Security and Maintainability of MCP Servers (arXiv 2506.13538, version 5 du 13 avril 2026)](https://arxiv.org/abs/2506.13538) — résumé seulement.",
+  "phrases": [
+   {
+    "ligne": 191,
+    "phrase": "Sur 1 899 serveurs à code ouvert, 7,2 % contiennent des vulnérabilités générales et 5,5 % un empoisonnement d'outil propre à MCP, d'après le résumé de l'étude, dont les auteurs demandent un balayage de sécurité automatisé dans les registres [26]."
+   },
+   {
+    "ligne": 288,
+    "phrase": "- Les seules données chiffrées sur l'écosystème sont celles de la section 8.8, ajoutée le 14 novembre 2026. [23], [26] et [27] n'y sont connus que par leur résumé; [24] et [25] ont été lus par l'outil d'extraction."
+   },
+   {
+    "ligne": 288,
+    "phrase": "La parution de [26] dans une revue, signalée par un index d'articles, ne figure pas sur la page lue."
+   }
+  ],
+  "id": "F3-015"
+ },
+ {
+  "fichier": "chapitre-08-decouverte-registres.md",
+  "n": 27,
+  "source": "Études de mesure, lues le 14 novembre 2026 pour la section 8.8 : [Chen et coll. — Rethinking MCP Security: A Large-Scale Study of Runtime MCP Servers and Security Scanner Reliability (arXiv 2607.11086, 13 juillet 2026)](https://arxiv.org/abs/2607.11086) — prépublication; résumé seulement.",
+  "phrases": [
+   {
+    "ligne": 191,
+    "phrase": "L'instrument lui-même est toutefois en cause : sur une collection de 64 611 serveurs, les scanners existants signalent 96,89 % des serveurs comme risqués, et moins de la moitié des alertes vérifiées à la main sont fondées [27]."
+   },
+   {
+    "ligne": 203,
+    "phrase": "| Les scanners se contredisent et surestiment [27] | Tenir un résultat de balayage pour un signal de tri, non pour une décision |"
+   },
+   {
+    "ligne": 288,
+    "phrase": "- Les seules données chiffrées sur l'écosystème sont celles de la section 8.8, ajoutée le 14 novembre 2026. [23], [26] et [27] n'y sont connus que par leur résumé; [24] et [25] ont été lus par l'outil d'extraction."
+   }
+  ],
+  "id": "F3-016"
+ },
+ {
+  "fichier": "chapitre-09-web-agentique.md",
+  "n": 18,
+  "source": "Pages primaires lues le 11 novembre 2026 : [Permission Manifests for Web Agents (arXiv 2601.02371)](https://arxiv.org/abs/2601.02371) — prépublication, résumé seulement.",
+  "phrases": [
+   {
+    "ligne": 127,
+    "phrase": "Une prépublication propose de le combler par un manifeste inspiré de robots.txt (chapitre 30) [18]."
+   }
+  ],
+  "id": "F3-017"
+ },
+ {
+  "fichier": "chapitre-10-commerce-agentique.md",
+  "n": 13,
+  "source": "Prépublications, résumé lu seulement : [A Formal Analysis of Agent Payment Protocols (arXiv 2609.00060)](https://arxiv.org/abs/2609.00060)",
+  "phrases": [
+   {
+    "ligne": 206,
+    "phrase": "Une analyse formelle modélise x402, MPP, ACP et AP2 dans le vérificateur Tamarin [13]."
+   }
+  ],
+  "id": "F3-018"
+ },
+ {
+  "fichier": "chapitre-10-commerce-agentique.md",
+  "n": 14,
+  "source": "Prépublications, résumé lu seulement : [SoK: Security of Autonomous LLM Agents in Agentic Commerce (arXiv 2604.15367)](https://arxiv.org/abs/2604.15367)",
+  "phrases": [
+   {
+    "ligne": 224,
+    "phrase": "Une systématisation des connaissances couvre sept protocoles, dont AP2, x402, ACP et MPP, et ordonne les menaces selon cinq dimensions, de l'intégrité de l'agent à la conformité réglementaire [14]."
+   }
+  ],
+  "id": "F3-019"
+ },
+ {
+  "fichier": "chapitre-10-commerce-agentique.md",
+  "n": 15,
+  "source": "Prépublications, résumé lu seulement : [Protocol-Level Attacks on Agentic Commerce Platforms (arXiv 2607.21824)](https://arxiv.org/abs/2607.21824)",
+  "phrases": [
+   {
+    "ligne": 212,
+    "phrase": "Une deuxième prépublication, signée d'un seul auteur, recense 33 vulnérabilités structurelles sur trois plateformes de commerce agentique, que son résumé ne nomme pas [15]."
+   }
+  ],
+  "id": "F3-020"
+ },
+ {
+  "fichier": "chapitre-10-commerce-agentique.md",
+  "n": 16,
+  "source": "Prépublications, résumé lu seulement : [Zero-Trust Runtime Verification for Agentic Payment Protocols (arXiv 2602.06345)](https://arxiv.org/abs/2602.06345)",
+  "phrases": [
+   {
+    "ligne": 218,
+    "phrase": "Une troisième étude porte sur le cycle de vie des mandats d'AP2 [16]."
+   }
+  ],
+  "id": "F3-021"
+ },
+ {
+  "fichier": "chapitre-11-gouvernance-standards.md",
+  "n": 27,
+  "source": "Pages primaires lues le 11 novembre 2026 : [A survey of agent interoperability protocols (arXiv 2505.02279), résumé](https://arxiv.org/abs/2505.02279)",
+  "phrases": [
+   {
+    "ligne": 208,
+    "phrase": "Un relevé de mai 2025 proposait encore d'adopter quatre protocoles en séquence, MCP, ACP, A2A puis ANP [27]; dix-huit mois plus tard, le deuxième n'existe plus comme protocole distinct et le quatrième reste un brouillon de groupe communautaire [9]."
+   }
+  ],
+  "id": "F3-022"
+ },
+ {
+  "fichier": "chapitre-12-couche-semantique-ontologies.md",
+  "n": 10,
+  "source": "Pages primaires lues le 11 novembre 2026 : [Semantic Consensus: Process-Aware Conflict Detection and Resolution for Enterprise Multi-Agent LLM Systems (arXiv 2604.16339)](https://arxiv.org/abs/2604.16339) — résumé seulement; le texte est lu au chapitre 21.",
+  "phrases": [
+   {
+    "ligne": 246,
+    "phrase": "Une prépublication de mars 2026 donne un nom au phénomène, la divergence d'intention sémantique, et y voit une cause première de ces échecs [10]."
+   },
+   {
+    "ligne": 250,
+    "phrase": "Cette prépublication propose un intergiciel à six composants, qui couvrent le contexte partagé, la représentation de l'intention, la détection des conflits, leur résolution, le suivi de la dérive et la gouvernance [10]."
+   },
+   {
+    "ligne": 360,
+    "phrase": "Celui-ci a relu [2] à [7], [10] et [11], qui confirment dates, versions, avertissement de production, constructions de l'ontologie, feuille de route et chiffres des résumés."
+   },
+   {
+    "ligne": 365,
+    "phrase": "- Les deux articles [10] et [11] ne sont connus ici que par leur résumé; le caractère simulé de l'évaluation de [10] est repris du chapitre 21."
+   },
+   {
+    "ligne": 365,
+    "phrase": "- Les deux articles [10] et [11] ne sont connus ici que par leur résumé; le caractère simulé de l'évaluation de [10] est repris du chapitre 21."
+   }
+  ],
+  "id": "F3-023"
+ },
+ {
+  "fichier": "chapitre-12-couche-semantique-ontologies.md",
+  "n": 11,
+  "source": "Pages primaires lues le 11 novembre 2026 : [A Benchmark to Understand the Role of Knowledge Graphs on LLM's Accuracy for Question Answering on Enterprise SQL Databases (arXiv 2311.07509)](https://arxiv.org/abs/2311.07509) — résumé seulement.",
+  "phrases": [
+   {
+    "ligne": 37,
+    "phrase": "Sur un schéma d'assurance et des questions d'entreprise allant du rapport à la métrique, GPT-4 interrogeant directement la base SQL, sans exemples, obtenait 16 % de bonnes réponses; les mêmes questions posées sur une représentation en graphe de connaissances, bâtie d'une ontologie et de correspondances, en obtenaient 54 % [11]."
+   },
+   {
+    "ligne": 117,
+    "phrase": "La seule donnée chiffrée lue ici est celle du banc d'essai cité en 12.1 [11]."
+   },
+   {
+    "ligne": 360,
+    "phrase": "Celui-ci a relu [2] à [7], [10] et [11], qui confirment dates, versions, avertissement de production, constructions de l'ontologie, feuille de route et chiffres des résumés."
+   },
+   {
+    "ligne": 365,
+    "phrase": "- Les deux articles [10] et [11] ne sont connus ici que par leur résumé; le caractère simulé de l'évaluation de [10] est repris du chapitre 21."
+   },
+   {
+    "ligne": 365,
+    "phrase": "Le banc d'essai [11] date de 2023; aucune mesure récente et indépendante du gain apporté par une couche sémantique ou une ontologie n'a été lue."
+   }
+  ],
+  "id": "F3-024"
+ },
+ {
+  "fichier": "chapitre-13-ingenierie-contexte.md",
+  "n": 3,
+  "source": "Pages primaires lues le 11 novembre 2026 : [Liu et coll. — Lost in the Middle: How Language Models Use Long Contexts (TACL, arXiv 2307.03172)](https://arxiv.org/abs/2307.03172) — résumé lu.",
+  "phrases": [
+   {
+    "ligne": 23,
+    "phrase": "Une étude de 2023, acceptée par la revue TACL, a montré que la précision d'un modèle varie selon la position de l'information utile dans une longue entrée : elle est meilleure au début et à la fin, plus faible au milieu, y compris pour des modèles conçus pour les longs contextes [3]."
+   },
+   {
+    "ligne": 264,
+    "phrase": "L'audit du 12 novembre 2026 a relu [3], [7] à [11], [15] et [20] : les chiffres principaux de [11] (v4) et la hausse de coût de [15] (v3) sont confirmés par leurs résumés; les autres chiffres de [11], [15] et [16] restent à recontrôler sur les tableaux des articles."
+   },
+   {
+    "ligne": 267,
+    "phrase": "La version de [3] publiée dans TACL n'a pas été lue."
+   }
+  ],
+  "id": "F3-025"
+ },
+ {
+  "fichier": "chapitre-13-ingenierie-contexte.md",
+  "n": 11,
+  "source": "Pages primaires lues le 11 novembre 2026 : [Li et coll. — SkillsBench (arXiv 2602.12670, v4)](https://arxiv.org/abs/2602.12670) — prépublication; résumé et première partie du texte lus.",
+  "phrases": [
+   {
+    "ligne": 111,
+    "phrase": "Une prépublication, SkillsBench, évalue 87 tâches dans huit domaines, avec et sans skills, sur 18 configurations de modèle et de harnais [11]."
+   },
+   {
+    "ligne": 190,
+    "phrase": "**Tester avant d'adopter.** Les trois évaluations lues convergent sur la méthode : comparer la même tâche avec et sans l'artefact [11][15][16]."
+   },
+   {
+    "ligne": 264,
+    "phrase": "L'audit du 12 novembre 2026 a relu [3], [7] à [11], [15] et [20] : les chiffres principaux de [11] (v4) et la hausse de coût de [15] (v3) sont confirmés par leurs résumés; les autres chiffres de [11], [15] et [16] restent à recontrôler sur les tableaux des articles."
+   },
+   {
+    "ligne": 264,
+    "phrase": "L'audit du 12 novembre 2026 a relu [3], [7] à [11], [15] et [20] : les chiffres principaux de [11] (v4) et la hausse de coût de [15] (v3) sont confirmés par leurs résumés; les autres chiffres de [11], [15] et [16] restent à recontrôler sur les tableaux des articles."
+   },
+   {
+    "ligne": 264,
+    "phrase": "L'audit du 12 novembre 2026 a relu [3], [7] à [11], [15] et [20] : les chiffres principaux de [11] (v4) et la hausse de coût de [15] (v3) sont confirmés par leurs résumés; les autres chiffres de [11], [15] et [16] restent à recontrôler sur les tableaux des articles."
+   },
+   {
+    "ligne": 265,
+    "phrase": "Les cinq études empiriques ([11], [12], [14] à [16]) sont des prépublications, dont trois ne portent que sur des agents de programmation."
+   },
+   {
+    "ligne": 267,
+    "phrase": "Les « modules » de [11] peuvent désigner des skills ou des parties de skill."
+   }
+  ],
+  "id": "F3-026"
+ },
+ {
+  "fichier": "chapitre-13-ingenierie-contexte.md",
+  "n": 12,
+  "source": "Pages primaires lues le 11 novembre 2026 : [Liu et coll. — Agent Skills in the Wild (arXiv 2601.10338)](https://arxiv.org/abs/2601.10338) — prépublication; résumé lu.",
+  "phrases": [
+   {
+    "ligne": 119,
+    "phrase": "Côté risque, une autre prépublication a analysé 31 132 skills tirées de deux places de marché : 26,1 % présentent au moins un motif de vulnérabilité, et celles qui embarquent des scripts sont environ deux fois plus exposées que les autres [12]."
+   },
+   {
+    "ligne": 265,
+    "phrase": "Les cinq études empiriques ([11], [12], [14] à [16]) sont des prépublications, dont trois ne portent que sur des agents de programmation."
+   }
+  ],
+  "id": "F3-027"
+ },
+ {
+  "fichier": "chapitre-13-ingenierie-contexte.md",
+  "n": 14,
+  "source": "Pages primaires lues le 11 novembre 2026 : [Chatlatanagulchai et coll. — Agent READMEs (arXiv 2511.12884, v2)](https://arxiv.org/abs/2511.12884) — prépublication; résumé lu.",
+  "phrases": [
+   {
+    "ligne": 131,
+    "phrase": "Une étude empirique de 2 303 fichiers de ce type, dans 1 925 dépôts, montre qu'ils évoluent comme du code de configuration, par petits ajouts fréquents, et deviennent difficiles à lire [14]."
+   },
+   {
+    "ligne": 188,
+    "phrase": "**Les gérer comme du code.** L'étude des fichiers de contexte montre qu'ils évoluent déjà ainsi, sans en avoir la discipline [14]."
+   },
+   {
+    "ligne": 265,
+    "phrase": "Les cinq études empiriques ([11], [12], [14] à [16]) sont des prépublications, dont trois ne portent que sur des agents de programmation."
+   }
+  ],
+  "id": "F3-028"
+ },
+ {
+  "fichier": "chapitre-13-ingenierie-contexte.md",
+  "n": 15,
+  "source": "Pages primaires lues le 11 novembre 2026 : [Gloaguen et coll. — Evaluating AGENTS.md (arXiv 2602.11988, v3)](https://arxiv.org/abs/2602.11988) — prépublication; résumé et texte lus.",
+  "phrases": [
+   {
+    "ligne": 135,
+    "phrase": "| | Gloaguen et coll. [15] | Lulla et coll. [16] |"
+   },
+   {
+    "ligne": 146,
+    "phrase": "La première étude constate que les agents suivent bien les instructions : un outil mentionné dans le fichier est utilisé en moyenne 1,6 fois par tâche, contre moins de 0,01 fois sinon [15]."
+   },
+   {
+    "ligne": 190,
+    "phrase": "**Tester avant d'adopter.** Les trois évaluations lues convergent sur la méthode : comparer la même tâche avec et sans l'artefact [11][15][16]."
+   },
+   {
+    "ligne": 264,
+    "phrase": "L'audit du 12 novembre 2026 a relu [3], [7] à [11], [15] et [20] : les chiffres principaux de [11] (v4) et la hausse de coût de [15] (v3) sont confirmés par leurs résumés; les autres chiffres de [11], [15] et [16] restent à recontrôler sur les tableaux des articles."
+   },
+   {
+    "ligne": 264,
+    "phrase": "L'audit du 12 novembre 2026 a relu [3], [7] à [11], [15] et [20] : les chiffres principaux de [11] (v4) et la hausse de coût de [15] (v3) sont confirmés par leurs résumés; les autres chiffres de [11], [15] et [16] restent à recontrôler sur les tableaux des articles."
+   },
+   {
+    "ligne": 264,
+    "phrase": "L'audit du 12 novembre 2026 a relu [3], [7] à [11], [15] et [20] : les chiffres principaux de [11] (v4) et la hausse de coût de [15] (v3) sont confirmés par leurs résumés; les autres chiffres de [11], [15] et [16] restent à recontrôler sur les tableaux des articles."
+   },
+   {
+    "ligne": 267,
+    "phrase": "- **Détails non tranchés.** Un écart entre l'introduction et un tableau de [15] a été relevé; seule la valeur du tableau est reprise."
+   }
+  ],
+  "id": "F3-029"
+ },
+ {
+  "fichier": "chapitre-13-ingenierie-contexte.md",
+  "n": 16,
+  "source": "Pages primaires lues le 11 novembre 2026 : [Lulla et coll. — On the Impact of AGENTS.md Files on the Efficiency of AI Coding Agents (arXiv 2601.20404, v2)](https://arxiv.org/abs/2601.20404) — prépublication; résumé et texte lus.",
+  "phrases": [
+   {
+    "ligne": 135,
+    "phrase": "| | Gloaguen et coll. [15] | Lulla et coll. [16] |"
+   },
+   {
+    "ligne": 190,
+    "phrase": "**Tester avant d'adopter.** Les trois évaluations lues convergent sur la méthode : comparer la même tâche avec et sans l'artefact [11][15][16]."
+   },
+   {
+    "ligne": 264,
+    "phrase": "L'audit du 12 novembre 2026 a relu [3], [7] à [11], [15] et [20] : les chiffres principaux de [11] (v4) et la hausse de coût de [15] (v3) sont confirmés par leurs résumés; les autres chiffres de [11], [15] et [16] restent à recontrôler sur les tableaux des articles."
+   },
+   {
+    "ligne": 265,
+    "phrase": "Les cinq études empiriques ([11], [12], [14] à [16]) sont des prépublications, dont trois ne portent que sur des agents de programmation."
+   }
+  ],
+  "id": "F3-030"
+ },
+ {
+  "fichier": "chapitre-14-memoire.md",
+  "n": 1,
+  "source": "Pages primaires lues le 11 novembre 2026 (articles d'arXiv : page de résumé, sauf [1] et [14], lus dans le texte); [5], [15], [17], [19], [20], [25], [26] et [27] relues le 12 novembre 2026 : [Cognitive Architectures for Language Agents — CoALA (arXiv 2309.02427)](https://arxiv.org/html/2309.02427v3)",
+  "phrases": [
+   {
+    "ligne": 17,
+    "phrase": "Le cadre le plus repris est CoALA (Cognitive Architectures for Language Agents) [1]."
+   },
+   {
+    "ligne": 21,
+    "phrase": "| Type | Ce qu'elle contient, selon CoALA [1] | Exemple en entreprise | Risque propre à l'écriture |"
+   },
+   {
+    "ligne": 28,
+    "phrase": "CoALA précise que l'apprentissage consiste à écrire dans la mémoire à long terme, et qu'écrire dans la mémoire procédurale est nettement plus risqué que d'écrire dans les deux autres : on peut y introduire des défauts ou laisser l'agent contourner l'intention de ses concepteurs [1]."
+   },
+   {
+    "ligne": 237,
+    "phrase": "Pages primaires lues le 11 novembre 2026 (articles d'arXiv : page de résumé, sauf [1] et [14], lus dans le texte); [5], [15], [17], [19], [20], [25], [26] et [27] relues le 12 novembre 2026 :"
+   }
+  ],
+  "id": "F3-031"
+ },
+ {
+  "fichier": "chapitre-14-memoire.md",
+  "n": 2,
+  "source": "Pages primaires lues le 11 novembre 2026 (articles d'arXiv : page de résumé, sauf [1] et [14], lus dans le texte); [5], [15], [17], [19], [20], [25], [26] et [27] relues le 12 novembre 2026 : [Memory in the Age of AI Agents (arXiv 2512.13564)](https://arxiv.org/abs/2512.13564)",
+  "phrases": [
+   {
+    "ligne": 34,
+    "phrase": "Elle distingue aussi la mémoire d'agent de la génération augmentée par récupération et de l'ingénierie du contexte [2]."
+   },
+   {
+    "ligne": 286,
+    "phrase": "Celle de Microsoft et la mémoire paramétrique ou latente [2] ne sont pas traitées."
+   }
+  ],
+  "id": "F3-032"
+ },
+ {
+  "fichier": "chapitre-14-memoire.md",
+  "n": 3,
+  "source": "Pages primaires lues le 11 novembre 2026 (articles d'arXiv : page de résumé, sauf [1] et [14], lus dans le texte); [5], [15], [17], [19], [20], [25], [26] et [27] relues le 12 novembre 2026 : [MemGPT: Towards LLMs as Operating Systems (arXiv 2310.08560)](https://arxiv.org/abs/2310.08560)",
+  "phrases": [
+   {
+    "ligne": 44,
+    "phrase": "MemGPT a posé en 2023 l'analogie qui structure encore le domaine : déplacer l'information entre une mémoire rapide et limitée, la fenêtre de contexte, et une mémoire lente et vaste, à la manière d'un système d'exploitation [3]."
+   }
+  ],
+  "id": "F3-033"
+ },
+ {
+  "fichier": "chapitre-14-memoire.md",
+  "n": 4,
+  "source": "Pages primaires lues le 11 novembre 2026 (articles d'arXiv : page de résumé, sauf [1] et [14], lus dans le texte); [5], [15], [17], [19], [20], [25], [26] et [27] relues le 12 novembre 2026 : [Claude API — Memory tool](https://platform.claude.com/docs/en/agents-and-tools/tool-use/memory-tool)",
+  "phrases": [
+   {
+    "ligne": 48,
+    "phrase": "L'outil de mémoire de l'API de Claude en donne la forme la plus dépouillée : six commandes sur un répertoire `/memories`, exécutées côté client, sur un stockage que l'application contrôle et dont elle assure les protections [4]."
+   },
+   {
+    "ligne": 171,
+    "phrase": "| Filtrage des données sensibles à l'écriture | La conservation de secrets ou de renseignements personnels | [4] |"
+   },
+   {
+    "ligne": 194,
+    "phrase": "L'outil de mémoire côté client laisse les données dans l'infrastructure de l'entreprise, qui en fixe la durée; une mémoire hébergée par le fournisseur suit les règles de rétention du fournisseur [4][5]."
+   }
+  ],
+  "id": "F3-034"
+ },
+ {
+  "fichier": "chapitre-14-memoire.md",
+  "n": 5,
+  "source": "Pages primaires lues le 11 novembre 2026 (articles d'arXiv : page de résumé, sauf [1] et [14], lus dans le texte); [5], [15], [17], [19], [20], [25], [26] et [27] relues le 12 novembre 2026 : [Claude Managed Agents — Using agent memory](https://platform.claude.com/docs/en/managed-agents/memory)",
+  "phrases": [
+   {
+    "ligne": 48,
+    "phrase": "Les *memory stores* de Claude Managed Agents, en bêta, appliquent le même principe côté serveur : chaque fonds est monté comme un répertoire dans le bac à sable de la session [5]."
+   },
+   {
+    "ligne": 86,
+    "phrase": "Les *memory stores* appliquent une concurrence optimiste : une précondition sur l'empreinte du contenu refuse l'écriture si celui-ci a changé depuis la lecture [5]."
+   },
+   {
+    "ligne": 98,
+    "phrase": "Contre l'injection, la documentation recommande de séparer un fonds de référence partagé, en lecture seule, du fonds propre à chaque session [5]."
+   },
+   {
+    "ligne": 108,
+    "phrase": "Chaque plateforme a son unité : un fichier [5], un document JSON [8], un fait extrait [10], une arête de graphe datée [11]."
+   },
+   {
+    "ligne": 166,
+    "phrase": "| Lecture seule par défaut; écriture accordée fonds par fonds | Qu'une injection réussie écrive dans une mémoire que d'autres sessions liront comme fiable | [5] |"
+   },
+   {
+    "ligne": 169,
+    "phrase": "| Versions immuables et retour arrière | La perte de l'état sain après une écriture malveillante | [5] |"
+   },
+   {
+    "ligne": 192,
+    "phrase": "Une opération `redact` retire le contenu d'une version passée en gardant la piste d'audit; elle est destinée aux demandes de suppression et au retrait de secrets [5]."
+   },
+   {
+    "ligne": 194,
+    "phrase": "L'outil de mémoire côté client laisse les données dans l'infrastructure de l'entreprise, qui en fixe la durée; une mémoire hébergée par le fournisseur suit les règles de rétention du fournisseur [4][5]."
+   },
+   {
+    "ligne": 237,
+    "phrase": "Pages primaires lues le 11 novembre 2026 (articles d'arXiv : page de résumé, sauf [1] et [14], lus dans le texte); [5], [15], [17], [19], [20], [25], [26] et [27] relues le 12 novembre 2026 :"
+   }
+  ],
+  "id": "F3-035"
+ },
+ {
+  "fichier": "chapitre-14-memoire.md",
+  "n": 6,
+  "source": "Pages primaires lues le 11 novembre 2026 (articles d'arXiv : page de résumé, sauf [1] et [14], lus dans le texte); [5], [15], [17], [19], [20], [25], [26] et [27] relues le 12 novembre 2026 : [Letta — Shared memory](https://docs.letta.com/concepts/shared-memory/index.md)",
+  "phrases": [
+   {
+    "ligne": 48,
+    "phrase": "Letta projette la mémoire de l'agent dans des fichiers Markdown tenus dans un dépôt Git [6]."
+   },
+   {
+    "ligne": 86,
+    "phrase": "Les dépôts partagés de Letta s'en remettent à la gestion de versions : chaque agent valide et pousse ses changements, les autres les tirent [6]."
+   }
+  ],
+  "id": "F3-036"
+ },
+ {
+  "fichier": "chapitre-14-memoire.md",
+  "n": 7,
+  "source": "Pages primaires lues le 11 novembre 2026 (articles d'arXiv : page de résumé, sauf [1] et [14], lus dans le texte); [5], [15], [17], [19], [20], [25], [26] et [27] relues le 12 novembre 2026 : [Letta — Multi-agent shared memory (blocs partagés, ancienne API)](https://docs.letta.com/guides/agents/multi-agent-shared-memory)",
+  "phrases": [
+   {
+    "ligne": 86,
+    "phrase": "Letta recommande de confier les réécritures à un seul agent, les autres se bornant à ajouter [7]."
+   }
+  ],
+  "id": "F3-037"
+ },
+ {
+  "fichier": "chapitre-14-memoire.md",
+  "n": 8,
+  "source": "Pages primaires lues le 11 novembre 2026 (articles d'arXiv : page de résumé, sauf [1] et [14], lus dans le texte); [5], [15], [17], [19], [20], [25], [26] et [27] relues le 12 novembre 2026 : [LangGraph — Memory overview](https://docs.langchain.com/oss/python/langgraph/memory)",
+  "phrases": [
+   {
+    "ligne": 30,
+    "phrase": "La documentation de LangGraph oppose une mémoire à court terme, limitée à un fil de conversation, à une mémoire à long terme rangée dans des espaces de noms et partagée entre fils, qu'elle classe en sémantique, épisodique et procédurale [8]."
+   },
+   {
+    "ligne": 72,
+    "phrase": "LangGraph décrit deux options : écrire pendant l'exécution, ce qui rend la mémoire disponible tout de suite mais ajoute de la latence, ou écrire en tâche de fond [8]."
+   },
+   {
+    "ligne": 108,
+    "phrase": "Chaque plateforme a son unité : un fichier [5], un document JSON [8], un fait extrait [10], une arête de graphe datée [11]."
+   }
+  ],
+  "id": "F3-038"
+ },
+ {
+  "fichier": "chapitre-14-memoire.md",
+  "n": 9,
+  "source": "Pages primaires lues le 11 novembre 2026 (articles d'arXiv : page de résumé, sauf [1] et [14], lus dans le texte); [5], [15], [17], [19], [20], [25], [26] et [27] relues le 12 novembre 2026 : [Amazon Bedrock AgentCore — Memory](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/memory.html)",
+  "phrases": [
+   {
+    "ligne": 30,
+    "phrase": "Amazon Bedrock AgentCore Memory retient la même coupure entre court et long terme [9]."
+   }
+  ],
+  "id": "F3-039"
+ },
+ {
+  "fichier": "chapitre-14-memoire.md",
+  "n": 10,
+  "source": "Pages primaires lues le 11 novembre 2026 (articles d'arXiv : page de résumé, sauf [1] et [14], lus dans le texte); [5], [15], [17], [19], [20], [25], [26] et [27] relues le 12 novembre 2026 : [Amazon Bedrock AgentCore — Memory organization](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/memory-organization.html)",
+  "phrases": [
+   {
+    "ligne": 98,
+    "phrase": "Le premier est l'**espace de noms** : AgentCore Memory range chaque mémoire à long terme sous un chemin hiérarchique qui peut inclure l'acteur et la session [10]."
+   },
+   {
+    "ligne": 108,
+    "phrase": "Chaque plateforme a son unité : un fichier [5], un document JSON [8], un fait extrait [10], une arête de graphe datée [11]."
+   }
+  ],
+  "id": "F3-040"
+ },
+ {
+  "fichier": "chapitre-14-memoire.md",
+  "n": 11,
+  "source": "Pages primaires lues le 11 novembre 2026 (articles d'arXiv : page de résumé, sauf [1] et [14], lus dans le texte); [5], [15], [17], [19], [20], [25], [26] et [27] relues le 12 novembre 2026 : [Zep: A Temporal Knowledge Graph Architecture for Agent Memory (arXiv 2501.13956)](https://arxiv.org/abs/2501.13956)",
+  "phrases": [
+   {
+    "ligne": 58,
+    "phrase": "Ses auteurs rapportent 94,8 % sur le banc DMR, contre 93,4 % pour MemGPT [11]."
+   },
+   {
+    "ligne": 108,
+    "phrase": "Chaque plateforme a son unité : un fichier [5], un document JSON [8], un fait extrait [10], une arête de graphe datée [11]."
+   }
+  ],
+  "id": "F3-041"
+ },
+ {
+  "fichier": "chapitre-14-memoire.md",
+  "n": 12,
+  "source": "Pages primaires lues le 11 novembre 2026 (articles d'arXiv : page de résumé, sauf [1] et [14], lus dans le texte); [5], [15], [17], [19], [20], [25], [26] et [27] relues le 12 novembre 2026 : [Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory (arXiv 2504.19413)](https://arxiv.org/abs/2504.19413)",
+  "phrases": [
+   {
+    "ligne": 54,
+    "phrase": "Ses auteurs rapportent, sur le banc d'essai LOCOMO, une amélioration relative de 26 % sur la mémoire d'OpenAI et un coût en jetons réduit de plus de 90 % par rapport à l'injection de l'historique complet [12]."
+   }
+  ],
+  "id": "F3-042"
+ },
+ {
+  "fichier": "chapitre-14-memoire.md",
+  "n": 13,
+  "source": "Pages primaires lues le 11 novembre 2026 (articles d'arXiv : page de résumé, sauf [1] et [14], lus dans le texte); [5], [15], [17], [19], [20], [25], [26] et [27] relues le 12 novembre 2026 : [LongMemEval (ICLR 2025, arXiv 2410.10813)](https://arxiv.org/abs/2410.10813)",
+  "phrases": [
+   {
+    "ligne": 68,
+    "phrase": "LongMemEval, publié à ICLR 2025, évalue cinq capacités de mémoire sur 500 questions et rapporte une chute d'exactitude de 30 % chez les assistants commerciaux et les modèles à long contexte au fil d'interactions soutenues [13]."
+   }
+  ],
+  "id": "F3-043"
+ },
+ {
+  "fichier": "chapitre-14-memoire.md",
+  "n": 14,
+  "source": "Pages primaires lues le 11 novembre 2026 (articles d'arXiv : page de résumé, sauf [1] et [14], lus dans le texte); [5], [15], [17], [19], [20], [25], [26] et [27] relues le 12 novembre 2026 : [Multi-Agent Memory from a Computer Architecture Perspective (arXiv 2603.10062)](https://arxiv.org/html/2603.10062v1)",
+  "phrases": [
+   {
+    "ligne": 44,
+    "phrase": "Un article de position de 2026 en tire un principe : la performance d'un agent dépend des déplacements de données entre ces couches [14]."
+   },
+   {
+    "ligne": 80,
+    "phrase": "L'article de position cité plus haut ramène la question à deux modèles classiques [14]."
+   },
+   {
+    "ligne": 84,
+    "phrase": "Les auteurs tiennent la cohérence pour le plus grand vide conceptuel et la décomposent en deux exigences [14]."
+   },
+   {
+    "ligne": 92,
+    "phrase": "Il ajoute que les protocoles comme MCP couvrent les entrées-sorties de contexte, pas l'accès à la mémoire [14]."
+   },
+   {
+    "ligne": 237,
+    "phrase": "Pages primaires lues le 11 novembre 2026 (articles d'arXiv : page de résumé, sauf [1] et [14], lus dans le texte); [5], [15], [17], [19], [20], [25], [26] et [27] relues le 12 novembre 2026 :"
+   }
+  ],
+  "id": "F3-044"
+ },
+ {
+  "fichier": "chapitre-14-memoire.md",
+  "n": 15,
+  "source": "Pages primaires lues le 11 novembre 2026 (articles d'arXiv : page de résumé, sauf [1] et [14], lus dans le texte); [5], [15], [17], [19], [20], [25], [26] et [27] relues le 12 novembre 2026 : [Governed Shared Memory for Multi-Agent LLM Systems (arXiv 2606.24535)](https://arxiv.org/abs/2606.24535)",
+  "phrases": [
+   {
+    "ligne": 88,
+    "phrase": "Son évaluation sur un service en production en a montré la fragilité : un filtre synchrone de quasi-doublons pouvait rejeter une écriture contradictoire avant le détecteur de contradictions [15]."
+   },
+   {
+    "ligne": 94,
+    "phrase": "La prépublication sur la mémoire de flotte nomme quatre modes de défaillance (fuite non autorisée, propagation de données périmées, persistance de contradictions, effondrement de la provenance) et y oppose quatre primitives, dont la récupération bornée par portée et le suivi de provenance [15]."
+   },
+   {
+    "ligne": 96,
+    "phrase": "Le défaut a été divulgué et corrigé pendant l'étude [15]."
+   },
+   {
+    "ligne": 168,
+    "phrase": "| Provenance attachée à chaque écriture | L'impossibilité de remonter à l'origine d'un fait | [15][16] |"
+   },
+   {
+    "ligne": 170,
+    "phrase": "| Autorisation avant l'assemblage du contexte | La fuite entre publics ou entre locataires | [15][25] |"
+   },
+   {
+    "ligne": 237,
+    "phrase": "Pages primaires lues le 11 novembre 2026 (articles d'arXiv : page de résumé, sauf [1] et [14], lus dans le texte); [5], [15], [17], [19], [20], [25], [26] et [27] relues le 12 novembre 2026 :"
+   }
+  ],
+  "id": "F3-045"
+ }
+]

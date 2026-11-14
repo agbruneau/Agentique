@@ -1,0 +1,455 @@
+[
+ {
+  "id": "F2-081",
+  "verdict": "confirme",
+  "chiffres": [
+   "40 %",
+   "30 %",
+   "30 %"
+  ],
+  "url_lue": "https://arxiv.org/html/2606.08867v1",
+  "citation_source": "We stratified the annotated dataset into train, validation, and test splits using a 40%/30%/30% ratio. (section 5.2)",
+  "note": "Même répartition 40/30/30. L'ouvrage dit « données d'étalonnage », la source dit « annotated dataset » (jeu annoté); écart de libellé seulement."
+ },
+ {
+  "id": "F2-082",
+  "verdict": "confirme",
+  "chiffres": [
+   "sept classes",
+   "300 incidents par classe",
+   "2 100",
+   "24 heures"
+  ],
+  "url_lue": "https://wjaets.com/sites/default/files/fulltext_pdf/WJAETS-2026-0466.pdf",
+  "citation_source": "For each failure class, 300 incidents were injected after a three-day warm-up and left unmitigated for 24 hours (section 7.1); résumé : seven agent failure classes; 2,100 injected incidents.",
+  "note": "PDF rendu en binaire par WebFetch; texte extrait localement (pdftotext) de la copie enregistrée, sans nouvel accès web."
+ },
+ {
+  "id": "F2-083",
+  "verdict": "confirme",
+  "chiffres": [
+   "3,6 à 6,0 heures",
+   "44 à 63 minutes",
+   "1,14 fausse alerte par 30 jours"
+  ],
+  "url_lue": "https://wjaets.com/sites/default/files/fulltext_pdf/WJAETS-2026-0466.pdf",
+  "citation_source": "The change-aware rule (M3c) addressed this for change-induced classes, cutting median detection from 3.6 to 6.0 hours down to 44 to 63 minutes, at a cost of 1.14 false pages per 30 days with daily changes.",
+  "note": "Texte extrait localement du PDF enregistré par WebFetch."
+ },
+ {
+  "id": "F2-084",
+  "verdict": "confirme",
+  "chiffres": [
+   "20 %",
+   "quatre semaines"
+  ],
+  "url_lue": "https://sre.google/workbook/error-budget-policy/",
+  "citation_source": "If a single incident consumes more than 20% of error budget over four weeks, then the team must conduct a postmortem.",
+  "note": ""
+ },
+ {
+  "id": "F2-085",
+  "verdict": "confirme",
+  "chiffres": [
+   "30 millions de wons",
+   "délai de grâce d'un an"
+  ],
+  "url_lue": "https://www.cooley.com/news/insight/2026/2026-01-27-south-koreas-ai-basic-act-overview-and-key-takeaways",
+  "citation_source": "Fines of up to 30 million KRW (about US$21,000) for: ... MSIT has indicated that it will grant subject businesses a grace period of one year before administrative fines are imposed",
+  "note": ""
+ },
+ {
+  "id": "F2-086",
+  "verdict": "confirme",
+  "chiffres": [
+   "10 millions de dollars",
+   "3 %",
+   "Commission canadienne de la sécurité numérique et de la protection des données"
+  ],
+  "url_lue": "https://www.canada.ca/fr/innovation-sciences-developpement-economique/nouvelles/2026/06/document-dinformation--le-gouvernement-du-canada-presente-un-projet-de-loi-visant-a-proteger-la-vie-privee-des-canadiens-a-lere-numerique.html",
+  "citation_source": "des sanctions administratives pécuniaires pouvant aller jusqu'à 10 millions de dollars ou 3 % [...] des recettes globales brutes de l'organisation selon le montant le plus élevé; La Commission aura la capacité d'émettre des ordonnances contraignantes",
+  "note": "Trois requêtes (extraits en fragments, limite de citation de l'outil). Pour les infractions les plus graves, la page donne 25 millions ou 5 %."
+ },
+ {
+  "id": "F2-087",
+  "verdict": "confirme",
+  "chiffres": [],
+  "url_lue": "https://www.publicationsduquebec.gouv.qc.ca/fileadmin/Fichiers_client/lois_et_reglements/LoisAnnuelles/fr/2021/2021C25F.PDF",
+  "citation_source": "3.3. Toute personne qui exploite une entreprise doit procéder à une évaluation des facteurs relatifs à la vie privée de tout projet d'acquisition, de développement et de refonte de système d'information ou de prestation électronique de services impliquant [...]",
+  "note": "Aucun chiffre dans la phrase; vérifié sur le contenu. PDF rendu en binaire par WebFetch; texte extrait localement (pdftotext), sans nouvel accès web. Texte de la loi : « et » (pas « ou ») entre acquisition, développement et refonte, et « ou de prestation électronique de services » en plus; portée équivalente. L'article 3.3 modifie la loi sur le secteur privé."
+ },
+ {
+  "id": "F2-088",
+  "verdict": "inaccessible",
+  "chiffres": [
+   "près de 60 %",
+   "environ 50 % un an plus tôt"
+  ],
+  "url_lue": "https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/tech-forward/state-of-ai-trust-in-2026-shifting-to-the-agentic-era",
+  "citation_source": "",
+  "note": "Trois requêtes WebFetch, trois fois « timeout of 60000ms exceeded ». Aucune page rendue."
+ },
+ {
+  "id": "F2-089",
+  "verdict": "confirme",
+  "chiffres": [
+   "moins de 40 %",
+   "55 %",
+   "51 %"
+  ],
+  "url_lue": "https://www.theiia.org/en/content/communications/press-releases/2026/new-survey-from-the-iia-and-auditboard-report-reveals-growing-awareness-of-ai-enabled-fraud-varying-perception-of-audit-preparedness/",
+  "citation_source": "Fewer than 40% believe their internal audit function is adequately prepared to detect AI-enabled fraud; insufficient staff with relevant skills or expertise (55%); advise management on AI-related governance or policy updates (51%)",
+  "note": "Le 55 % figure parmi les « primary barriers to increasing response effectiveness and preparedness »; le 51 % suit « many functions are already actively engaged ». Citations en fragments (l'outil limite la longueur des citations)."
+ },
+ {
+  "id": "F2-090",
+  "verdict": "confirme",
+  "chiffres": [
+   "286 jetons",
+   "804 jetons"
+  ],
+  "url_lue": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "citation_source": "Tableau « Tool use system prompt tokens: auto, none | any, tool » : Claude Opus 5.5 : 286 tokens; Claude Opus 4.7 : 675 tokens (auto, none) et 804 tokens (any, tool); Claude Sonnet 5.5 : 286 tokens.",
+  "note": "La page dépassait la limite de l'outil; copie locale enregistrée par WebFetch relue (sans nouvel accès web). Minimum de la colonne : 286, maximum : 804, selon le modèle et tool_choice (auto/none ou any/tool)."
+ },
+ {
+  "id": "F2-091",
+  "verdict": "confirme",
+  "chiffres": [
+   "0,08 $ l'heure"
+  ],
+  "url_lue": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "citation_source": "Claude Managed Agents is billed on two dimensions: tokens and session runtime. | Session runtime | $0.08 USD per session-hour | `running` status duration",
+  "note": "Lu dans la copie locale de la page enregistrée par WebFetch (sans nouvel accès web)."
+ },
+ {
+  "id": "F2-092",
+  "verdict": "confirme",
+  "chiffres": [
+   "1 192 répondants",
+   "83 milliards de dollars",
+   "98 %",
+   "31 %"
+  ],
+  "url_lue": "https://www.linuxfoundation.org/press/state-of-finops-survey-ai-value-and-skills-top-priorities-as-finops-matures-across-technology-value-98-manage-ai-90-saas-64-licensing-48-data-center-1",
+  "citation_source": "Almost all the 1,192 survey respondents (98%) are managing AI spend, it has become the norm, up from 31% just two years ago. The survey included responses from practitioners representing companies with more than $83 billion in annual cloud spend",
+  "note": "La source parle de 98 % des répondants, l'ouvrage de 98 % des pratiques; même sens."
+ },
+ {
+  "id": "F2-093",
+  "verdict": "confirme",
+  "chiffres": [
+   "125 $ par utilisateur par mois"
+  ],
+  "url_lue": "https://www.salesforce.com/agentforce/pricing/",
+  "citation_source": "\"$ 125\" / \"user / month\" (add-ons Sales, Service, Field Service and Operations); \"Unmetered Agentforce usage for employees\"",
+  "note": "Add-on Industries à 150 $; la licence Agentforce « metered » est à 5 $ par utilisateur et par mois (d'après le rendu de l'outil)."
+ },
+ {
+  "id": "F2-094",
+  "verdict": "confirme",
+  "chiffres": [
+   "0,99 $"
+  ],
+  "url_lue": "https://www.intercom.com/pricing",
+  "citation_source": "From$0.99 per Fin outcome; Fin is priced at $0.99 per outcome.",
+  "note": "Engagement mensuel minimal pour Fin avec un helpdesk existant (ex. 50 résultats), d'après la FAQ."
+ },
+ {
+  "id": "F2-095",
+  "verdict": "confirme",
+  "chiffres": [
+   "10,2 %",
+   "5,1 %"
+  ],
+  "url_lue": "https://www150.statcan.gc.ca/n1/pub/36-28-0001/2026004/article/00002-eng.htm",
+  "citation_source": "Under this adjustment, the estimated productivity premium declines to 10.2% [...] With these controls, the association between AI adoption and productivity falls to 5.1% and becomes statistically insignificant",
+  "note": "10,2 % après ajout de la productivité initiale; 5,1 % après ajout de capacités complémentaires (R-D, infonuagique, analyse de données, robotique, formation TIC, d'après le rendu de l'outil). L'ouvrage dit « capacités numériques et d'innovation » : approximation. Point de départ : 16,8 %."
+ },
+ {
+  "id": "F2-096",
+  "verdict": "confirme",
+  "chiffres": [
+   "0,1",
+   "0,05",
+   "0,025",
+   "1,25",
+   "2"
+  ],
+  "url_lue": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "citation_source": "5-minute cache write 1.25x base input price; 1-hour cache write 2x; Cache read (hit) 0.1x base input price on most models. Hits on Opus 5.5 and Sonnet 5.5 are priced at 0.05x; on Fable 5.2, Mythos 5.2, Fable 5.1, Mythos 5.1 at 0.025x.",
+  "note": "Lu dans la copie locale de la page enregistrée par WebFetch (sans nouvel accès web)."
+ },
+ {
+  "id": "F2-097",
+  "verdict": "confirme",
+  "chiffres": [
+   "0,171 $",
+   "−34,5 %",
+   "F1 0,924"
+  ],
+  "url_lue": "https://arxiv.org/html/2603.22651v1",
+  "citation_source": "Field-level | 0.924 | $0.171 | 29.3 | 38.7% (Table V); Field-level caching achieves the greatest cost reduction (34.5%) with a modest F1 decrease of 0.005. (réf. No cache : 0.929, $0.261)",
+  "note": "La ligne portant ces chiffres s'intitule « Field-level », non « sémantique ». Le texte précise : « We implement a semantic cache using embedding-based similarity matching »; le niveau champ est une granularité du cache sémantique. Écart de libellé, chiffres identiques."
+ },
+ {
+  "id": "F2-098",
+  "verdict": "confirme",
+  "chiffres": [
+   "0,127 $",
+   "−51,3 %",
+   "F1 0,912"
+  ],
+  "url_lue": "https://arxiv.org/html/2603.22651v1",
+  "citation_source": "2-tier (Claude + Mixtral) | 0.912 | $0.127 | 31.6 (Table VI); The 2-tier routing strategy reduces cost by 51.3% relative to all-Claude while retaining 98.2% of the F1 score.",
+  "note": "Référence all-Claude 3.5 Sonnet : F1 0,929, 0,261 $ par document."
+ },
+ {
+  "id": "F2-099",
+  "verdict": "confirme",
+  "chiffres": [
+   "0,247 $",
+   "−5,4 %",
+   "F1 inchangé"
+  ],
+  "url_lue": "https://arxiv.org/html/2603.22651v1",
+  "citation_source": "Adaptive threshold | 0.929 | $0.247 | 44.0 | 11.6% (Table VII); matches the baseline F1 while reducing cost by 5.4%.",
+  "note": "La référence est « Fixed retry (1x) » : F1 0,929, 0,261 $ (0,247/0,261 = −5,4 %). « No retry » : F1 0,908, 0,214 $."
+ },
+ {
+  "id": "F2-100",
+  "verdict": "confirme",
+  "chiffres": [
+   "coût divisé par deux (−51,3 %)",
+   "F1 −1,7 point"
+  ],
+  "url_lue": "https://arxiv.org/html/2603.22651v1",
+  "citation_source": "All Claude 3.5 Sonnet | 0.929 | $0.261; 2-tier (Claude + Mixtral) | 0.912 | $0.127; The 2-tier routing strategy reduces cost by 51.3% relative to all-Claude while retaining 98.2% of the F1 score.",
+  "note": "Le « 1,7 point » n'est pas écrit dans la source : il se calcule (0,929 − 0,912 = 0,017). La source dit 98,2 % du F1 conservé. En supposant que la phrase vise le routage à deux niveaux (non lu : contexte du chapitre)."
+ },
+ {
+  "id": "F2-101",
+  "verdict": "confirme",
+  "chiffres": [
+   "18 % de jetons de plus"
+  ],
+  "url_lue": "https://arxiv.org/html/2603.22651v1",
+  "citation_source": "Table XII (mean per document, Claude 3.5 Sonnet) : Sequential total 146,160; Parallel total 172,930. The parallel architecture is the least token-efficient (2.43%) due to overlapping context windows across branches",
+  "note": "Le « 18 % » n'est pas écrit dans la source : 172 930 / 146 160 = 1,183, soit +18,3 %. Le chevauchement des contextes entre branches est dit en toutes lettres. « Parallel » pris pour le fan-out (section III-B)."
+ },
+ {
+  "id": "F2-102",
+  "verdict": "inaccessible",
+  "chiffres": [
+   "37 %",
+   "11 %"
+  ],
+  "url_lue": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai",
+  "citation_source": "",
+  "note": "Les deux pages McKinsey appelées ([3] pour 37 %, [2] pour 11 %) ont expiré (« timeout of 60000ms exceeded ») à chaque requête; aucune page rendue."
+ },
+ {
+  "id": "F2-103",
+  "verdict": "inaccessible",
+  "chiffres": [
+   "40 %",
+   "huit répondants sur dix"
+  ],
+  "url_lue": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai",
+  "citation_source": "",
+  "note": "Page McKinsey expirée (« timeout of 60000ms exceeded ») à chaque requête; aucune page rendue."
+ },
+ {
+  "id": "F2-104",
+  "verdict": "confirme",
+  "chiffres": [
+   "68 %",
+   "dix étapes"
+  ],
+  "url_lue": "https://arxiv.org/abs/2512.04123",
+  "citation_source": "68% execute at most 10 steps before human intervention",
+  "note": "Annotée « non relu ici » dans l'ouvrage, mais l'adresse existe : résumé lu. Nuance de borne : la source dit « au plus 10 étapes » (≤ 10), l'ouvrage « moins de dix » (< 10)."
+ },
+ {
+  "id": "F2-105",
+  "verdict": "inaccessible",
+  "chiffres": [
+   "27 %",
+   "20 %"
+  ],
+  "url_lue": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-how-organizations-are-rewiring-to-capture-value",
+  "citation_source": "",
+  "note": "Page McKinsey expirée (« timeout of 60000ms exceeded ») à chaque requête; aucune page rendue."
+ },
+ {
+  "id": "F2-106",
+  "verdict": "inaccessible",
+  "chiffres": [
+   "25 attributs",
+   "21 %"
+  ],
+  "url_lue": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-how-organizations-are-rewiring-to-capture-value",
+  "citation_source": "",
+  "note": "Page McKinsey expirée (« timeout of 60000ms exceeded ») à chaque requête; aucune page rendue."
+ },
+ {
+  "id": "F2-107",
+  "verdict": "confirme",
+  "chiffres": [
+   "94 scénarios",
+   "13,8 %",
+   "25,2 %",
+   "0 %"
+  ],
+  "url_lue": "https://arxiv.org/abs/2502.05352",
+  "citation_source": "ITBench includes an initial set of 94 real-world scenarios; agents powered by state-of-the-art models resolve only 13.8% of SRE scenarios, 25.2% of CISO scenarios, and 0% of FinOps scenarios.",
+  "note": "Résumé lu seulement. SRE rendu par « fiabilité », CISO par « conformité et sécurité » (correspondance de libellé, non vérifiée dans le corps du texte)."
+ },
+ {
+  "id": "F2-108",
+  "verdict": "confirme",
+  "chiffres": [
+   "1 079 tâches",
+   "25,3 %",
+   "10,0 %"
+  ],
+  "url_lue": "https://arxiv.org/abs/2607.28545",
+  "citation_source": "ORCA-bench pairs 1,079 RCA tasks with six days of metrics, logs, and traces; the best RCA Accuracy is 25.3% on Medium-difficulty tasks (the realistic-input setting) [...] 10.0% on Hard",
+  "note": "Résumé lu seulement. Le « version 3, septembre 2026 » de l'ouvrage n'a pas été vérifié."
+ },
+ {
+  "id": "F2-109",
+  "verdict": "confirme",
+  "chiffres": [
+   "42 %",
+   "1 500 alarmes",
+   "53 %"
+  ],
+  "url_lue": "https://arxiv.org/abs/2607.08010",
+  "citation_source": "In production, tool calls reduce p50 latency by 42%. On 1,500 historical alarms, they reduce end-to-end error rate by up to 53%",
+  "note": "Résumé lu seulement."
+ },
+ {
+  "id": "F2-110",
+  "verdict": "confirme",
+  "chiffres": [
+   "68 %",
+   "dix étapes"
+  ],
+  "url_lue": "https://arxiv.org/abs/2512.04123",
+  "citation_source": "68% execute at most 10 steps before human intervention",
+  "note": "Même résumé que F2-104 (lu une seule fois). Nuance de borne : « au plus 10 étapes » (≤ 10) dans la source, « moins de dix » (< 10) dans l'ouvrage."
+ },
+ {
+  "id": "F2-111",
+  "verdict": "confirme",
+  "chiffres": [
+   "98 %"
+  ],
+  "url_lue": "https://arxiv.org/abs/2305.05176",
+  "citation_source": "FrugalGPT can match the performance of the best individual LLM (e.g. GPT-4) with up to 98% cost reduction",
+  "note": "Résumé lu seulement."
+ },
+ {
+  "id": "F2-112",
+  "verdict": "confirme",
+  "chiffres": [
+   "12 routeurs",
+   "3 commerciaux",
+   "9 ouverts ou universitaires",
+   "8 400 requêtes",
+   "9 domaines",
+   "3 niveaux de difficulté"
+  ],
+  "url_lue": "https://arxiv.org/html/2510.00202v3",
+  "citation_source": "Initial evaluations of 12 routers [...]; we evaluated nine representative systems [open-source]; Our final evaluation dataset consists of 8,400 queries sampled from 23 source datasets; It spans nine top-level domains and 44 categories; three bands—hard, medium, and easy",
+  "note": "Trois commerciaux : déduit de « 3 Included » (tableau 1, d'après l'outil) et de 12 = 9 + 3. L'introduction parle de « ~8,000 queries » ailleurs dans le texte; le jeu final est de 8 400. Affiliation « Rice University » relevée. Citations en fragments."
+ },
+ {
+  "id": "F2-113",
+  "verdict": "confirme",
+  "chiffres": [
+   "1,5 à 14,5 fois",
+   "2 à 10 fois",
+   "deux modèles ouverts"
+  ],
+  "url_lue": "https://arxiv.org/abs/2407.00023",
+  "citation_source": "Our evaluation of Preble with real workloads and request arrival patterns on two open-source LLMs shows that Preble outperforms the SOTA serving systems by 1.5X to 14.5X on average latency and 2X to 10X on p99 latency.",
+  "note": "Résumé lu seulement. La source dit « p99 », l'ouvrage « 99e centile »."
+ },
+ {
+  "id": "F2-114",
+  "verdict": "confirme",
+  "chiffres": [
+   "1,10",
+   "1,00",
+   "5 %"
+  ],
+  "url_lue": "https://learn.microsoft.com/en-us/dynamics365/finance/accounts-payable/accounts-payable-invoice-matching",
+  "citation_source": "An invoice arrives for 1,000 batteries at a price of 1.10 each. Your legal entity policy allows a 5 percent net unit price tolerance [...] A price of 1.05 would be acceptable, but 1.10 is not. [...] you can save the invoice until the discrepancy is resolved.",
+  "note": "Commande à 1,00 l'unité. La source dit que la facture peut être enregistrée jusqu'à résolution de l'écart; l'ouvrage dit « retenue » : même sens pour l'essentiel, libellé différent."
+ },
+ {
+  "id": "F2-115",
+  "verdict": "confirme",
+  "chiffres": [
+   "35 millisecondes"
+  ],
+  "url_lue": "https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html",
+  "citation_source": "To minimize network latency, create your external key store components in the AWS Region closest to your external key manager. If possible, choose a Region with a network round-trip time (RTT) of 35 milliseconds or less.",
+  "note": ""
+ },
+ {
+  "id": "F2-116",
+  "verdict": "confirme",
+  "chiffres": [
+   "60 jours"
+  ],
+  "url_lue": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+  "citation_source": "Anthropic notifies customers with active deployments for models with upcoming retirements, providing at least 60 days’ notice before model retirement for publicly released models. [...] Requests to retired models fail.",
+  "note": ""
+ },
+ {
+  "id": "F2-117",
+  "verdict": "confirme",
+  "chiffres": [],
+  "url_lue": "https://design.ros2.org/articles/ros_on_dds.html",
+  "citation_source": "decisions were made to use DDS and RTPS as the underlying communication standards for ROS 2 (note en tête); The DDSI-RTPS (DDS-Interoperability Real Time Publish Subscribe) protocol would replace ROS’s TCPROS",
+  "note": "Aucun chiffre dans la phrase; vérifié sur le contenu. La note en tête indique que la décision a été prise après la rédaction de l'article."
+ },
+ {
+  "id": "F2-118",
+  "verdict": "inaccessible",
+  "chiffres": [
+   "1 899 serveurs MCP"
+  ],
+  "url_lue": "https://doi.org/10.35444/ijana.2026.17605",
+  "citation_source": "",
+  "note": "Le DOI redirige (302) vers https://www.ijana.in/papers/V17I6-5.pdf; ce chargement échoue (« error:100000f7:SSL routines:OPENSSL_internal:WRONG_VERSION_NUMBER »). Aucune page rendue."
+ },
+ {
+  "id": "F2-119",
+  "verdict": "introuvable",
+  "chiffres": [
+   "plus de 1 600 traces",
+   "sept cadriciels",
+   "quatorze modes",
+   "150 traces",
+   "0,88"
+  ],
+  "url_lue": "http://www.proceedings.com/085713-4082.html",
+  "citation_source": "",
+  "note": "Le DOI redirige vers la notice proceedings.com : elle ne donne que les métadonnées (titre « Why Do Multi-Agent LLM Systems Fail? », NeurIPS 2025, 54 pages), sans résumé. Aucun des chiffres n'y figure. Une seconde requête sur la même page aurait redonné le même texte (cache de 15 min); lien PDF de la notice non ouvert."
+ },
+ {
+  "id": "F2-120",
+  "verdict": "confirme",
+  "chiffres": [
+   "27 articles",
+   "19 bancs d'essai"
+  ],
+  "url_lue": "https://arxiv.org/abs/2607.05775",
+  "citation_source": "This paper synthesizes 27 benchmark, taxonomy, and audit papers (2023-2026), [...] spanning 19 distinct benchmarks; failures compound nonlinearly with task length; additional scaffolding does not consistently improve reliability",
+  "note": "Résumé lu seulement. La source dit « 27 benchmark, taxonomy, and audit papers » et « 19 distinct benchmarks ». Les trois constats qualitatifs de la phrase figurent aussi au résumé (sous-tâches vs bout en bout : « strong performance on individual sub-tasks does not reliably translate into end-to-end success »)."
+ }
+]

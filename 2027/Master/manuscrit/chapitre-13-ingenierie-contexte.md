@@ -454,6 +454,8 @@ Ce compilateur apporte trois garanties. Toute inflation du catalogue d’outils 
 
 ## 13.9 Récupération hybride filtrée par ACL et preuves scellées
 
+L’exposé traite le filtrage par droits d’accès et la récupération à la section 13.6; les règles qui suivent sont celles de l’architecture prescrite.
+
 Une fenêtre bien compilée reste compromise si le moteur de recherche lui livre des documents illégitimes ou approximatifs. Deux antipatrons ont concentré les refus d’homologation sécurité en 2025–2026 :
 
 1.  **Le post-filtrage des permissions** : il extrait les $K = 20$ voisins vectoriels globaux, puis retire en mémoire applicative ceux que l’appelant n’a pas le droit de voir. Si les 20 premiers résultats appartiennent à des dossiers restreints de direction alors que la procédure destinée au technicien figurait au rang 24, l’agent n’obtient aucun résultat, et les écarts de temps de réponse ouvrent un canal auxiliaire d’énumération.
@@ -561,6 +563,8 @@ Dans l’instruction d’un sinistre industriel ou d’un litige en responsabili
 ---
 
 ## 13.10 Transferts entre agents (A2A) : compaction typée et passage par référence
+
+L’exposé aborde le contexte transmis aux sous-agents aux sections 13.2 et 13.6, sans prescrire de format de transfert; les règles qui suivent sont celles de l’architecture prescrite.
 
 Dans un graphe multi-agents, le contexte se dégrade surtout aux frontières de délégation entre pairs. Un orchestrateur sollicite successivement trois spécialistes par A2A v1.0 et copie à chacun tout le fil conversationnel précédent (copie de l’historique par valeur). Trois défauts apparaissent :
 

@@ -1,0 +1,31 @@
+{
+ "id": "P4-2",
+ "origine": "plan 2027, lot P4-2",
+ "categorie": "harmonisation",
+ "remplacements": [
+  {
+   "fichier": "chapitre-10-commerce-agentique.md",
+   "avant": "## 10.10 Agents vocaux et visuels temps réel : WebRTC en duplex intégral et gestion de l’interruption\n\nEn usine d’usinage",
+   "apres": "## 10.10 Agents vocaux et visuels temps réel : WebRTC en duplex intégral et gestion de l’interruption\n\nL’exposé ne traite pas les agents vocaux : aucune source n’a été lue pour cette section.\n\nEn usine d’usinage",
+   "motif": "Lot P4-2 : section de volet prescriptive sans aucun appui dans l'exposé (ni au chapitre 10, ni au chapitre 7). Son statut est dit en tête."
+  },
+  {
+   "fichier": "chapitre-13-ingenierie-contexte.md",
+   "avant": "## 13.9 Récupération hybride filtrée par ACL et preuves scellées\n\nUne fenêtre bien compilée",
+   "apres": "## 13.9 Récupération hybride filtrée par ACL et preuves scellées\n\nL’exposé traite le filtrage par droits d’accès et la récupération à la section 13.6; les règles qui suivent sont celles de l’architecture prescrite.\n\nUne fenêtre bien compilée",
+   "motif": "Lot P4-2 : section de volet prescriptive sans renvoi à son exposé; l'appui est la section 13.6."
+  },
+  {
+   "fichier": "chapitre-13-ingenierie-contexte.md",
+   "avant": "## 13.10 Transferts entre agents (A2A) : compaction typée et passage par référence\n\nDans un graphe multi-agents",
+   "apres": "## 13.10 Transferts entre agents (A2A) : compaction typée et passage par référence\n\nL’exposé aborde le contexte transmis aux sous-agents aux sections 13.2 et 13.6, sans prescrire de format de transfert; les règles qui suivent sont celles de l’architecture prescrite.\n\nDans un graphe multi-agents",
+   "motif": "Lot P4-2 : section de volet prescriptive sans renvoi à son exposé."
+  },
+  {
+   "fichier": "chapitre-38-canada-quebec.md",
+   "avant": "## 38.10 Droit des contrats B2B conclus entre agents autonomes, responsabilité civile et anti-collusion\n\nEn 2027, A2A v1.0",
+   "apres": "## 38.10 Droit des contrats B2B conclus entre agents autonomes, responsabilité civile et anti-collusion\n\nL’exposé de ce chapitre ne traite ni le droit des contrats, ni la responsabilité civile, ni le droit de la concurrence : aucune source n’a été lue pour cette section, qui ne remplace pas un avis juridique.\n\nEn 2027, A2A v1.0",
+   "motif": "Lot P4-2 : section juridique du volet sans aucun appui dans l'exposé ni source lue. Son statut est dit en tête, puisque l'ouvrage sert à fonder des décisions de conformité."
+  }
+ ]
+}

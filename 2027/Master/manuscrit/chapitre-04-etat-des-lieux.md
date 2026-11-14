@@ -54,7 +54,7 @@ Trois offices statistiques publient une mesure qui ne dépend ni d'un cabinet ni
 
 Les trois chiffres convergent vers une entreprise sur cinq, mais ne mesurent pas la même chose : le champ, la période et la question diffèrent. L'écart selon la taille est net. Au Canada, 27,8 % des entreprises de cent employés ou plus utilisent l'IA, contre 19,9 % de celles d'un à quatre employés; aux États-Unis, la part atteint 37 % chez les entreprises d'au moins 250 employés [13][15]. Dans l'Union, elle va de 5,2 % en Roumanie à 42,0 % au Danemark [14]. Au Canada, la finance et les assurances arrivent au deuxième rang des secteurs, à 40,4 %, et 40,0 % des entreprises jugent l'IA sans pertinence pour elles [13].
 
-Aucune de ces enquêtes ne compte les agents. Elles bornent toutefois les chiffres des enquêtes privées : si une entreprise sur cinq utilise l'IA sous une forme quelconque, la part de celles qui exploitent des agents en production est nécessairement plus faible (chapitre 50).
+Aucune de ces enquêtes ne compte les agents. Elles situent toutefois les chiffres des enquêtes privées : dans l'ensemble des entreprises, où une sur cinq utilise l'IA sous une forme quelconque, la part de celles qui exploitent des agents en production est nécessairement plus faible. Les parts de l'enquête McKinsey décrivent un autre champ, celui de ses répondants, des organisations plus grandes, et ne s'y comparent pas directement (chapitre 50).
 
 ---
 
@@ -114,7 +114,7 @@ La hausse des coûts, première cause citée, est traitée à la section 4.1. La
 
 Ces parts viennent de la version 2 de l'article (avril 2025), qui analyse un peu plus de 200 tâches menées sur sept cadriciels à code ouvert et recense déjà quatorze modes d'échec. La version 3 (octobre 2025) étend le corpus à 1 642 traces; la somme de ses parts par mode donne environ 44 %, 32 % et 24 % (chapitre 21). Il s'agit de systèmes de recherche, pas de déploiements d'entreprise. La conclusion des auteurs porte toutefois au-delà : les échecs tiennent largement à la conception du système et à l'organisation des agents, et l'amélioration des modèles ne suffira pas à les corriger tous [2].
 
-Un autre chiffre de MAP donne la mesure de l'enjeu : 69 % des agents étudiés lisent des données confidentielles [1]. Le contrôle d'accès n'est pas un raffinement tardif (chapitres 15 et 30).
+Un autre chiffre de MAP donne la mesure de l'enjeu : 69 % des systèmes décrits lisent des données confidentielles, sur une trentaine de réponses à cette question [1]. Le contrôle d'accès n'est pas un raffinement tardif (chapitres 15 et 30).
 
 **La gouvernance.** Ici, les données sont minces. Dans MAP, 38 % des praticiens placent la performance technique au premier rang de leurs priorités, contre 17 % pour la conformité et 3 % pour la gouvernance [1]. Il serait imprudent d'en conclure qu'elle compte peu : ces répondants construisent des systèmes déjà approuvés. La gouvernance agit plutôt en amont, comme condition d'entrée en production, et aucune des sources lues ne mesure son poids dans les annulations. Inventaire, cycle de vie et imputabilité : chapitre 39.
 

@@ -105,6 +105,8 @@ Le premier événement met à jour l’état d’un dossier sous contrôle de r�
 
 ## 10.10 Agents vocaux et visuels temps réel : WebRTC en duplex intégral et gestion de l’interruption
 
+L’exposé ne traite pas les agents vocaux : aucune source n’a été lue pour cette section.
+
 En usine d’usinage, en entrepôt frigorifique ou lors d’une intervention sur turbine, le technicien porte des gants isolants, tient un outil de mesure et travaille sous 85 dB(A) de bruit mécanique. L’écran tactile devient impraticable : l’audio mains libres et le flux caméra en temps réel deviennent le canal principal de la fabrique agentique.
 
 ### WebRTC plutôt que WebSockets sur TCP

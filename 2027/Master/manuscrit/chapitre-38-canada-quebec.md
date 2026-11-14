@@ -451,6 +451,8 @@ Quatre actions, coordonnées entre l’architecture et l’équipe de risque de 
 
 ## 38.10 Droit des contrats B2B conclus entre agents autonomes, responsabilité civile et anti-collusion
 
+L’exposé de ce chapitre ne traite ni le droit des contrats, ni la responsabilité civile, ni le droit de la concurrence : aucune source n’a été lue pour cette section, qui ne remplace pas un avis juridique.
+
 En 2027, A2A v1.0 et le protocole AP2 (*Agent Payments Protocol*) permettent la conclusion directe d’achats B2B entre l’agent acheteur d’un client industriel et l’agent commercial d’un fournisseur.
 
 ### Imputabilité directe, mandat apparent et erreur inexcusable
