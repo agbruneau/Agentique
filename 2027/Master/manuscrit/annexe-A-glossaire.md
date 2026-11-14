@@ -145,7 +145,7 @@ Classement par thème, puis alphabétique. Chaque définition fixe l'usage du mo
 | juge automatique | automated judge | Modèle qui note la sortie d'un autre modèle (33) |
 | jumeau numérique | digital twin | Modèle causal et physique, synchronisé avec une usine, un équipement ou une chaîne logistique; étape de simulation déterministe, obligatoire avant l'application d'une consigne issue d'un agent (28) |
 | livelock conversationnel | livelock | Pathologie multi-agents : deux agents ou plus échangent indéfiniment des demandes de clarification ou des reformulations polies, sans jamais atteindre l'état terminal ni lever d'erreur technique (33) |
-| maillage agentique | agentic AI mesh | Infrastructure qui rend les agents joignables et gouvernables (23) |
+| maillage agentique | agentic AI mesh, agent mesh, agentic mesh | Infrastructure qui rend les agents joignables et gouvernables (23) |
 | métrique `pass^k` | `pass^k` | Mesure de fiabilité opérationnelle introduite dans l'écosystème τ-bench : probabilité qu'un agent réussisse les k essais indépendants d'une même tâche; `pass@k` se contente d'un seul succès sur k tentatives (33, 34) |
 | mise à l'échelle | scaling | Passage d'un pilote à un usage étendu (4) |
 | observabilité | observability | Capacité de reconstituer une exécution à partir de ses signaux (33) |

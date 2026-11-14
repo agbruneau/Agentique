@@ -2,7 +2,7 @@
 
 *Question directrice : quelles couches faut-il, et laquelle gouverne ?*
 
-> **État de référence :** sept articles d'architecture logicielle parus de 2023 à 2026 (dont la taxonomie révisée le 9 septembre 2026), la documentation Microsoft sur le registre d'Agent 365 (mise à jour le 17 juin 2026) et le document de la Cloud Security Alliance du 22 juin 2026, dont seule la page de présentation a été lue. Les numéros entre crochets renvoient aux sources en fin de chapitre; [12] et [13] sont secondaires.
+> **État de référence :** sept articles d'architecture logicielle parus de 2023 à 2026 (dont la taxonomie révisée le 9 septembre 2026), la documentation Microsoft sur le registre d'Agent 365 (mise à jour le 17 juin 2026) et le document de la Cloud Security Alliance du 22 juin 2026, dont seule la page de présentation a été lue; pour la section 23.3, huit sources sur le maillage ajoutées le 14 novembre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre; [12], [13] et [21] sont secondaires.
 
 Les chapitres précédents ont décrit des pièces. Une architecture de référence dit comment ces pièces s'assemblent et, surtout, où se prennent les décisions qui engagent l'entreprise.
 
@@ -80,13 +80,53 @@ La révision sans état de MCP sert la première condition : en recopiant la mé
 
 ## 23.3 Le maillage agentique
 
+### Un terme, plusieurs objets
+
 L'expression « maillage agentique » (*agentic AI mesh*) a été popularisée par un rapport de McKinsey de juin 2025, qui n'a pas pu être lu pour ce chapitre. D'après les commentaires qui le résument, il repose sur cinq principes : composabilité, intelligence distribuée, découplage en couches, neutralité envers les fournisseurs et autonomie gouvernée [12]. Aucune des références évaluées par les pairs lues ici ne valide ce modèle.
+
+Depuis, des éditeurs ont repris le mot, sous les formes *agent mesh* et *agentic mesh*, pour désigner des objets différents. Trois ont été lus pour cette section.
+
+| Acception | Ce que le maillage désigne | Mécanisme central | Exemple lu |
+|---|---|---|---|
+| Réseau | Des contrôles sortis du code des agents et appliqués par l'infrastructure à chaque interaction | Maillage de services (identité de charge de travail, TLS mutuel) et passerelle agentique sur le chemin | Solo.io [15][16] |
+| Dorsale événementielle | Une plateforme de développement et d'exécution d'agents coordonnés par un courtier d'événements | Messages A2A publiés sur les sujets du courtier | Solace Agent Mesh [14] |
+| Couche de confiance | L'identité des agents et la confiance entre eux, portées par une bibliothèque | Identifiant décentralisé, score de confiance, délégation à portée décroissante | AgentMesh de Microsoft [18] |
+
+**Le réseau.** Solo.io a introduit son *Agent Mesh* le 24 avril 2025, en même temps qu'une passerelle, Agent Gateway, et lui assigne la sécurité, l'observabilité, la découverte et la gouvernance de toutes les interactions d'agents [16]. Sa documentation le définit comme une architecture pour exploiter des agents de façon sûre à grande échelle. L'identité de chaque charge de travail y est délivrée par l'infrastructure (SPIFFE et TLS mutuel), non déclarée par le code. La passerelle, agentgateway dans cette documentation (section 23.2), se place en entrée, en point de passage (*waypoint*) ou en sortie. Elle autorise un appel d'outil MCP selon l'identité de l'agent appelant et le nom de l'outil, plafonne les jetons par identité et rejette l'appel non autorisé [15].
+
+**La dorsale événementielle.** Solace présente Agent Mesh comme une plateforme de développement et d'exécution d'agents, qui coordonne tout sur un maillage d'événements. Tout message entre processus passe par le courtier : les agents publient et s'abonnent à des sujets, le courtier décide qui reçoit quoi, et le format des messages est celui d'A2A. Seul le point d'entrée est exposé à l'extérieur; il authentifie l'utilisateur et décide, avant toute publication, quels agents et quels outils la demande peut atteindre. Un service de plateforme gère les agents, les déploiements et l'audit sans figurer sur le chemin des requêtes [14]. On y reconnaît le partage de la section 23.2; le chemin obligé y est un courtier, non une passerelle (chapitre 19).
+
+**La couche de confiance.** AgentMesh, paquet de l'Agent Governance Toolkit de Microsoft (chapitre 24), se décrit comme la couche de confiance, d'identité et de gouvernance des systèmes d'agents. Chaque agent reçoit un identifiant décentralisé, une paire de clés et un parrain humain nommé; un score de confiance de 0 à 1 000 conditionne la poignée de main entre pairs; un sous-agent ne reçoit qu'une partie des capacités de son parent. La même page énumère ce qui manque : le plan de contrôle du maillage est un répertoire réservé, sans mise en œuvre; la vérification des chaînes de délégation est simulée; l'intégration à SPIRE est une ébauche; les cibles de latence n'ont pas été mesurées [18].
+
+Une quatrième acception, celle du rapport de McKinsey, ne désigne aucun mécanisme : c'est un modèle d'ensemble. Un billet publié par l'IEEE Computer Society en donne une variante en six couches : environnement d'exécution, identité et gouvernance, tissu de communication, abstraction des modèles, observabilité et sûreté, intégration aux systèmes de l'entreprise [19]. C'est un texte d'opinion, sans résultat empirique, dont l'auteur travaille chez un fournisseur infonuagique.
+
+### Ce que ces acceptions partagent
 
 Ramené à ses éléments, le maillage désigne trois choses déjà décrites : un registre pour se trouver, des protocoles standards pour se parler (MCP et A2A, chapitres 5 et 6) et un plan de données commun par lequel passe le trafic. C'est une propriété d'infrastructure, calquée sur le maillage de services des architectures de microservices.
 
-Une confusion est à éviter : le maillage n'est pas une topologie de coordination. Il dit qui *peut* joindre qui; l'orchestration dit qui *appelle* qui, et dans quel ordre (chapitre 16). La taxonomie de Zhou et de ses collègues indique ce qu'il en coûte de confondre les deux. Dans une configuration à forte autonomie, une coordination entièrement distribuée améliore la fiabilité, puisqu'elle supprime le point de défaillance unique, mais dégrade la performance et la maintenabilité, et complique l'IA responsable [3]. Le maillage rend les agents joignables; la conception décide lesquels se parlent, et les modes d'échec du chapitre 21 rappellent pourquoi.
+Les pages lues y ajoutent une idée commune : l'identité et la politique sont fournies à l'agent de l'extérieur, au lieu d'être déclarées par lui [15][18]. C'est la notion d'« infrastructure d'agents » de Chan et de ses collègues, seul appui évalué par les pairs trouvé pour cette section : des systèmes et des protocoles partagés, extérieurs aux agents, qui servent à attribuer leurs actions, à encadrer leurs interactions, puis à détecter et à corriger les actions nuisibles [20]. Le résumé de l'article n'emploie pas le mot « maillage », et il annonce un catalogue de pistes de recherche, non une évaluation.
 
-Le maillage s'arrête à la frontière de l'entreprise. Entre organisations, aucun plan de contrôle n'est commun : dans un espace de données, chaque partie garde le sien, qui négocie avec celui de l'autre, et le transfert passe par un plan de données distinct (chapitre 45). La topologie suit alors les frontières d'autorité (chapitre 16).
+### Ce que le maillage de services ne donne pas
+
+L'analogie a ses limites, et un éditeur qui la porte les formule lui-même [17].
+
+- **Trois identités au lieu d'une.** Un maillage de services authentifie une charge de travail. Une action d'agent en engage trois : l'utilisateur humain, l'agent qui agit pour lui et la délégation qui les lie. Les fondre dans un seul compte de service empêche de dire qui agit [17] (chapitres 29 et 30).
+- **Une politique qui lit le protocole.** Autoriser par nom d'outil ou plafonner en jetons suppose de comprendre MCP et les appels aux modèles. D'où le remplacement, pour ce trafic, du mandataire par défaut du maillage par une passerelle agentique [15][17] (chapitre 24).
+- **Des chemins imprévisibles.** Un microservice suit le même chemin à chaque appel; un agent peut appeler un outil que personne n'avait prévu. Les frontières de confiance doivent donc être plus fines qu'un périmètre [17].
+
+Le même billet en tire une conclusion d'éditeur : garder le maillage de services comme socle et y ajouter ces contrôles au même point d'application, sans second modèle de confiance [17].
+
+### Trois confusions à éviter
+
+**Le maillage n'est pas une topologie de coordination.** Il dit qui *peut* joindre qui; l'orchestration dit qui *appelle* qui, et dans quel ordre (chapitre 16). La taxonomie de Zhou et de ses collègues indique ce qu'il en coûte de confondre les deux. Dans une configuration à forte autonomie, une coordination entièrement distribuée améliore la fiabilité, puisqu'elle supprime le point de défaillance unique, mais dégrade la performance et la maintenabilité, et complique l'IA responsable [3]. Le maillage rend les agents joignables; la conception décide lesquels se parlent, et les modes d'échec du chapitre 21 rappellent pourquoi.
+
+**Le maillage n'est pas un produit interchangeable.** Les trois acceptions ne se substituent pas l'une à l'autre. La première suppose un maillage de services déjà en place. La deuxième fait du courtier d'événements le transport de tous les échanges, ce qui est une décision d'architecture (chapitre 19). La troisième est une bibliothèque dont le plan de contrôle reste à écrire [18]. Avant de retenir « un maillage », il faut nommer la fonction recherchée : appliquer une politique sur le chemin, transporter les échanges ou établir la confiance entre agents.
+
+**Le maillage s'arrête à la frontière de l'entreprise.** Entre organisations, aucun plan de contrôle n'est commun : dans un espace de données, chaque partie garde le sien, qui négocie avec celui de l'autre, et le transfert passe par un plan de données distinct (chapitre 45). La topologie suit alors les frontières d'autorité (chapitre 16).
+
+### Niveau de preuve
+
+Aucune des pages lues ne rapporte de mesure sur un déploiement. Ce sont des documentations et des billets d'éditeurs, de [14] à [18], et un texte d'opinion [19]. Le seul article de revue repéré qui nomme un « maillage agentique d'entreprise » est une proposition, connue ici par son seul résumé : un plan de contrôle sémantique qui route selon l'intention, un mandataire de gouvernance accolé à chaque agent (*sidecar*) et un registre distribué pour l'observabilité [21]. Le terme reste un vocabulaire d'éditeurs et de cabinets. Ce chapitre le retient pour la propriété qu'il nomme, non comme un modèle validé.
 
 ---
 
@@ -228,6 +268,7 @@ Un dernier antipatron tient au marché plutôt qu'à la conception : multiplier 
 | Où placer l'autorité | Plan de contrôle distinct des agents | Agent unique, sans effet de bord : garde-fous internes |
 | Application des politiques | Passerelle sur le chemin de chaque appel d'outil, d'agent et de modèle | Outil local sans donnée sensible |
 | Registre | Unique, et condition du routage | Plusieurs plateformes imposées : registres fédérés (chapitre 27) |
+| Maillage | Assembler le registre, les protocoles et la passerelle déjà retenus | Produit de maillage si son socle (maillage de services, courtier d'événements) est déjà la norme de l'entreprise |
 | Inventaire et identité | Deux fonctions rapprochées régulièrement | — |
 | Description des agents | Déclarative, versionnée, validée avant exécution | Prototype |
 | Coordination | Centralisée ou fédérée | Distribuée si la résilience prime et que le coût de maintenance est accepté |
@@ -246,7 +287,7 @@ Un dernier antipatron tient au marché plutôt qu'à la conception : multiplier 
 - Le nombre de couches varie selon les sources. La séparation entre l'intelligence et la gouvernance est la seule constante.
 - La couche qui gouverne est le plan de contrôle : registre, identité, politique, observabilité, budgets.
 - Ce plan ne gouverne qu'à trois conditions : un chemin obligé dans le plan de données, un registre qui fait autorité et une preuve de chaque décision.
-- Le maillage agentique est une propriété d'infrastructure, pas une topologie. Rendre les agents joignables ne dispense pas de concevoir leur coordination.
+- Le maillage agentique est une propriété d'infrastructure, pas une topologie. Rendre les agents joignables ne dispense pas de concevoir leur coordination. Chez les éditeurs, le mot recouvre trois objets distincts (réseau, dorsale événementielle, couche de confiance), et aucune source lue ne rapporte de mesure.
 - Un registre d'agents borne ce qu'un planificateur peut envisager; un registre de données lui évite de chercher à l'aveugle.
 - Décrire les agents par des données plutôt que par du code ou des prompts les rend validables et auditables.
 - Coût, précision et latence s'échangent à chaque décision d'architecture. Les sources les nomment sans les formaliser : c'est à l'entreprise d'en faire des budgets.
@@ -275,6 +316,20 @@ Sources secondaires :
 12. [McKinsey — Seizing the agentic AI advantage (juin 2025)](https://www.mckinsey.com/capabilities/quantumblack/our-insights/seizing-the-agentic-ai-advantage) — page non chargée; principes repris de résumés de recherche.
 13. [Gravitee — Blueprinting an AI Agent Control Plane](https://gravitee.io/corpus/gen-1223/electric-on-the-eel/blueprinting-an-ai-agent-control-plane-reference-architecture-data-flows-and-trust-boundaries.html) — page introuvable au 13 novembre 2026 (erreur 404), connue par un résumé de recherche seulement; billet de fournisseur qui reprend le partage « décider / appliquer ».
 
+Pages lues le 14 novembre 2026, pour la section 23.3 :
+
+14. [Solace — Solace Agent Mesh](https://docs.solace.com/Agent-Mesh/agent-mesh.htm) et [Architecture Overview](https://docs.solace.com/Agent-Mesh/Framework/concepts/architecture.htm) — documentation de l'éditeur.
+15. [Solo.io — About agentic mesh (Solo Enterprise for Istio 1.31.x)](https://docs.solo.io/istio/1.31.x/agentic-mesh/about/) — documentation de l'éditeur.
+16. [Solo.io — Solo.io Launches Agent Gateway and Introduces Agent Mesh (24 avril 2025)](https://solo.io/press-releases/solo-io-launches-agent-gateway-and-introduces-agent-mesh) — communiqué.
+17. [Vennam — From service mesh to agentic mesh, Solo.io (13 mai 2026)](https://www.solo.io/blog/from-service-mesh-to-agentic-mesh) — billet de l'éditeur.
+18. [Microsoft, Agent Governance Toolkit — AgentMesh](https://microsoft.github.io/agent-governance-toolkit/packages/agent-mesh/) — page du paquet; prise en charge des protocoles cotée « alpha ».
+19. [Talukdar — AI Agentic Mesh – A Foundational Architecture for Enterprise Autonomy, IEEE Computer Society, Tech News (3 novembre 2025)](https://www.computer.org/publications/tech-news/trends/ai-agentic-mesh) — billet d'opinion, non évalué par les pairs.
+20. [Chan et coll. — Infrastructure for AI Agents (arXiv 2501.10114, v3 du 19 juin 2025; accepté à TMLR)](https://arxiv.org/abs/2501.10114) — résumé seulement.
+
+Source secondaire, pour la même section :
+
+21. Debnath — The Enterprise Agentic Mesh: Architectural Convergence of Semantic Control Planes and Autonomous Multi-Agent Governance, International Journal of Scientific and Research Publications, 2025 — page de la revue non retrouvée; résumé repris d'un index d'articles.
+
 ## Limites de ce chapitre
 
 - Les pages web ont été lues au moyen d'un outil d'extraction qui en restitue le contenu en le résumant; seul le texte de SALLMA [7] a été lu intégralement.
@@ -283,8 +338,9 @@ Sources secondaires :
 - Les lieux de publication donnés par le plan initial (ICSA-C pour [1], Journal of Systems and Software pour [3], ICSA 2025 pour [5]) ne figurent pas sur les pages lues. L'affiliation de [6] à Megagon Labs n'y figure pas non plus; elle est reprise des chapitres 1 et 15, qui citent une version de 2025 de la même architecture (arXiv 2504.08148), non lue ici.
 - Du catalogue de patrons [2], la section sur le modèle de décision n'a pas été lue; de la taxonomie [3], la matrice complète en annexe non plus. Les cotes rapportées sont celles que le texte commente, parfois pour une configuration d'ensemble plutôt que pour une option isolée.
 - Le document complet de la CSA [10] et le rapport de Futurum [11] n'ont pas été lus : les couches sont nommées d'après une page de présentation et un communiqué, relus à l'audit. Le cadre de Futurum émane d'un cabinet qui vend ses services aux éditeurs et n'a pas été validé sur des déploiements.
-- Le rapport de McKinsey sur le maillage agentique [12] n'a pas été lu. Aucune source évaluée par les pairs sur le maillage à l'échelle de l'entreprise n'a été trouvée.
+- Le rapport de McKinsey sur le maillage agentique [12] n'a toujours pas été lu : sa page n'a pas pu être chargée le 14 novembre 2026, date à laquelle la section 23.3 a été étendue à partir de [14] à [21]. Ce sont des pages d'éditeurs et un billet d'opinion, lus par le même outil d'extraction; [20] n'est connu que par son résumé, et [21] par le résumé qu'en donne un index d'articles, sans que la qualité de la revue ait été évaluée. La recherche de littérature évaluée par les pairs s'est limitée à une requête dans cet index et à deux recherches web : elle n'a rien trouvé qui valide le maillage à l'échelle de l'entreprise.
+- Le relevé des acceptions n'est pas exhaustif. Trois éditeurs ont été lus; d'autres emploient le terme, et ni la documentation d'Istio ni celle de kagent n'ont été lues. Les pages de Solace ne décrivent pas la découverte entre agents. La continuité entre l'Agent Gateway du communiqué [16] et l'agentgateway de [9] et de [15] est déduite du nom, non lue.
 - La définition du plan de contrôle et du plan de données, de même que l'analogie avec le maillage de services, relèvent de la connaissance générale en réseautique. [13] n'est cité qu'à titre d'indice.
-- La vue en couches d'entreprise (23.1), les trois conditions (23.2), la règle des budgets (23.6) et les antipatrons (23.9) sont des synthèses de ce chapitre, non des résultats de recherche.
+- La vue en couches d'entreprise (23.1), les trois conditions (23.2), le classement des acceptions du maillage et la liste de ses écarts avec le maillage de services (23.3), la règle des budgets (23.6) et les antipatrons (23.9) sont des synthèses de ce chapitre, non des résultats de recherche.
 - La documentation d'agentgateway n'a pas été lue pour ce chapitre, seulement son billet d'annonce; le chapitre 24 en décrit davantage.
 - Les renvois aux chapitres 40, 44, 45, 46 et 47 reprennent leurs points à retenir ou la section visée, sans relecture de leurs sources.
