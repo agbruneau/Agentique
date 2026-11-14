@@ -2,7 +2,7 @@
 
 *Question directrice : pourquoi les systèmes multi-agents échouent-ils ?*
 
-> **État de référence :** taxonomie MAST, version 3 du 26 octobre 2025 (1 642 traces annotées), comparée à la version 2 du 22 avril 2025, d'où viennent les parts par catégorie citées ailleurs dans le compendium. Les numéros entre crochets renvoient aux sources en fin de chapitre, où l'étendue de lecture de chacune est précisée.
+> **État de référence :** taxonomie MAST, version 3 du 26 octobre 2025 (1 642 traces annotées), comparée à la version 2 du 22 avril 2025, d'où viennent les parts par catégorie citées ailleurs dans le compendium; sources [9] et [10] ajoutées, et sources [7] et [8] lues en texte, le 14 novembre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre, où l'étendue de lecture de chacune est précisée.
 
 Ajouter des agents ne rend pas un système plus fiable. Les auteurs de MAST partent de ce constat : sur les bancs d'essai courants, le gain des systèmes multi-agents sur un agent unique reste souvent minime [1]. Le chapitre 16 a établi quand la coordination paie. Celui-ci examine comment elle casse.
 
@@ -52,6 +52,14 @@ Les agents font rarement obstruction. Ils tournent en rond, ne savent pas quand 
 La version 3 rapporte des taux d'échec de 41 % à 86,7 % sur sept systèmes multi-agents à code ouvert [1]. Ces chiffres valent pour des cadriciels évalués sur des bancs d'essai. Ils ne décrivent pas des déploiements d'entreprise, bien qu'une prépublication les présente ainsi dans son résumé [3].
 
 Trois réserves encadrent l'usage de la taxonomie. Ses auteurs ne la disent pas exhaustive. Ils notent que des échecs d'apparence semblable peuvent avoir des causes différentes, et relèvent des corrélations modérées entre certains modes, jusqu'à 0,63 [1]. Enfin, les parts bougent d'une version à l'autre : la clarification non demandée passe de 11,65 % à 6,8 %. Elles décrivent un échantillon de cadriciels et de tâches, non une loi. Ce qui se transpose à l'entreprise est la grille et ses ordres de grandeur.
+
+### Hors des bancs d'essai
+
+MAST lit des traces d'exécution. Une étude de 2026 lit ce que les développeurs signalent : 13 602 billets et demandes de tirage tirés de 40 dépôts de systèmes agentiques à code ouvert, dont 385 fautes analysées à la main [9]. Le portrait qui en sort est celui d'un logiciel ordinaire. Les causes les plus fréquentes sont les schémas de données discordants (28,0 %), la dérive des dépendances (21,9 %) et la complexité de la gestion d'état (14,1 %). Les catégories les plus proches de la coordination, soit le cycle de vie et l'état des agents (délégation, transitions, terminaison) et la coordination du système, pèsent 9,9 % et 1,6 % des fautes.
+
+Les 145 praticiens consultés pour valider la taxonomie la jugent représentative : 83,8 % y reconnaissent leur expérience. Ils lui reprochent toutefois de sous-représenter la coordination multi-agents. L'un d'eux écrit que, dans ces systèmes, les plus gros problèmes viennent de la coordination entre agents plutôt que des pannes d'outils. Sont cités les messages mal interprétés entre agents, l'injection de prompt en cascade et les dépendances circulaires entre tâches [9].
+
+Les deux lectures se complètent. Un gestionnaire de billets recense ce qui plante : une exception, une erreur de validation, un échec de compilation. Un échec de coordination ne plante pas. Il se propage sans lever d'exception [10] et ne laisse de trace que dans le résultat. Il est donc mal compté là où l'on compte les pannes, et ces parts ne mesurent pas sa fréquence réelle. Aucune des deux sources ne porte sur un déploiement d'entreprise.
 
 ---
 
@@ -181,6 +189,25 @@ Le lien avec MAST est direct, bien que les auteurs ne le fassent pas. Rôle, sup
 
 La preuve reste modeste. L'étude de cas étend l'architecture SALLMA (chapitre 23) et ajoute un agent développeur à une équipe de deux agents. La tactique y évite toute modification du code d'orchestration, contre trois modules touchés dans la version de référence, au prix de 36 lignes de configuration [4]. Les auteurs signalent l'absence d'essai au-delà de trois agents, de mesure de performance et de second domaine, et jugent que l'infrastructure peut être superflue pour un petit système stable. Surtout, l'étude ne mesure aucun taux d'échec : elle montre que l'imputabilité se configure, pas qu'elle fiabilise.
 
+### Ce que montre l'injection de fautes
+
+Une autre voie consiste à provoquer l'échec. MAS-FIRE injecte quinze types de fautes, huit propres à un agent et sept entre agents, dans trois systèmes (MetaGPT, Table-Critic, Camel) animés par deux modèles, GPT-5 et DeepSeek-V3, puis observe ce qui les absorbe [10]. Les auteurs classent ces défenses en quatre étages.
+
+| Étage | D'où vient la tolérance |
+|---|---|
+| Mécanisme | Structure du système : boucle de critique, vote, chemins redondants |
+| Règle | Logique déterministe codée, comme la déduplication des messages |
+| Prompt | Robustesse des consignes, qui tiennent les rôles dans les cas limites |
+| Raisonnement | Réflexion du modèle, qui détecte une incohérence |
+
+Trois résultats intéressent ce chapitre.
+
+- **La confiance aveugle est la faute la plus destructrice.** Sous la faute que les auteurs nomment ainsi (*blind trust*), le score de robustesse de MetaGPT tombe à 0 % [10].
+- **Un meilleur modèle ne protège pas toujours.** Sous cette même faute, Table-Critic garde 70,61 % de robustesse avec DeepSeek-V3 et 6,32 % avec GPT-5 : selon les auteurs, le modèle le plus fort suit plus fidèlement une directive corrompue. Il fait mieux, en revanche, contre l'hallucination et les plans inexécutables [10].
+- **La structure compte autant que le modèle.** D'après le résumé, les architectures itératives en boucle fermée neutralisent plus de 40 % des fautes qui font s'effondrer une chaîne linéaire. Les fautes de communication (tempête, cycle ou amplification de messages) sont les moins destructrices dans MetaGPT, dont la robustesse reste au-dessus de 93 % [10].
+
+L'étude recoupe la section 21.2 : les deux étages qui ne dépendent pas du modèle, le mécanisme et la règle, sont ceux que la conception maîtrise. Elle fournit aussi une méthode d'essai, que le chapitre 34 reprend sous le nom d'ingénierie du chaos. Sa portée reste étroite : trois systèmes, deux modèles, un seul essai par cas, des comportements étiquetés par un modèle juge, et des fautes de communication éprouvées sur un seul des trois systèmes [10].
+
 ---
 
 ## 21.6 Évaluer la qualité de coordination
@@ -211,9 +238,13 @@ La comparaison à budget égal est le point de méthode essentiel. Anthropic rap
 
 MultiAgentBench évalue l'achèvement de la tâche et aussi la qualité de la collaboration, au moyen d'indicateurs fondés sur des jalons [8]. Anthropic conseille aussi d'évaluer, dans un workflow complexe, les points où un état précis doit changer [6]. Le principe se transpose : un processus d'affaires a des étapes intermédiaires vérifiables, et un système qui les franchit dans le désordre ou plusieurs fois se signale avant l'échec final.
 
+Le banc invite aussi à la prudence sur les notes de coordination. Son indicateur de jalons est la part des jalons auxquels chaque agent a contribué; sa note de coordination vient d'un modèle qui cote la communication et la planification sur cinq points [8]. Les deux peuvent diverger du résultat : dans le scénario Minecraft, un modèle obtient 75,00 en coordination et 0,21 en réussite de tâche, sur les échelles du tableau des auteurs. Ceux-ci en concluent que la capacité du modèle reste le premier facteur d'achèvement. Ils observent aussi que l'indicateur de jalons baisse quand le nombre d'agents passe de un à sept, et que la discussion de groupe est la pire des stratégies de planification essayées [8]. Une note de coordination élevée ne dit donc pas que le travail est fait.
+
 ### Attribuer l'échec
 
 Savoir quel agent a causé l'échec, et à quelle étape, est le préalable de toute correction. Sur le jeu de données Who&When, qui réunit les journaux d'échec de 127 systèmes multi-agents, la meilleure méthode désigne le bon agent dans 53,5 % des cas et la bonne étape dans 14,2 % [7]. Certaines méthodes font pire que le hasard, et même les modèles de raisonnement de pointe, comme o1 et DeepSeek R1, n'y atteignent pas un niveau utilisable.
+
+Le texte de l'article précise l'ampleur du problème [7]. Les méthodes essayées ont chacune leur défaut. Donner tout le journal au modèle juge désigne l'agent fautif environ une fois sur deux, mais trouve l'étape moins souvent que le hasard en moyenne; avancer pas à pas trouve mieux l'étape, sans dépasser 25,5 %. L'exactitude baisse à mesure que le journal s'allonge et, pour les plus longs (93 à 130 étapes), l'étape fautive n'est presque jamais trouvée. Combiner les deux méthodes porte l'attribution à l'agent à 57,02 %, pour près de neuf fois plus de jetons. L'annotation humaine elle-même est coûteuse et incertaine : trois experts y ont consacré environ 84 heures pour 184 cas, et ont signalé de 15 % à 30 % d'annotations incertaines [7].
 
 La conséquence est directe. L'analyse de cause après coup ne peut pas reposer sur un juge automatique. L'attribution se prépare à la conception : relations d'imputabilité déclarées (section 21.5), traces qui relient chaque délégation à son auteur (chapitre 33).
 
@@ -254,6 +285,7 @@ Entre entreprises, la difficulté s'accroît : nul ne conçoit l'organisation de
 | Imputabilité | Relations commettant-responsable déclarées, devoirs mesurables | Petit système stable de deux ou trois agents |
 | Mesure de la coordination | Échantillon de traces étiqueté selon MAST, surcoût, jalons | — |
 | Attribution d'un échec | Revue humaine appuyée sur les traces | Attribution automatique en aide au tri seulement |
+| Essai de robustesse | Fautes de coordination injectées avant la mise en production (chapitre 34) | Agent unique, ou tâche sans effet de bord |
 
 ---
 
@@ -267,6 +299,8 @@ Entre entreprises, la difficulté s'accroît : nul ne conçoit l'organisation de
 - Le consensus sémantique repose sur une évaluation simulée et un détecteur peu précis. Ses idées utiles, l'intention déclarée avant l'action et la hiérarchie d'arbitrage, se mettent en œuvre sans lui.
 - L'imputabilité architecturale transforme rôles, relations et devoirs en données validées. Elle est démontrée à très petite échelle, sans mesure de fiabilité.
 - L'attribution automatique d'un échec à un agent reste peu exacte. Elle se prépare à la conception, par les relations déclarées et les traces.
+- Hors des bancs d'essai, les fautes signalées dans les dépôts sont surtout celles d'un logiciel ordinaire. Les échecs de coordination y sont mal comptés, parce qu'ils ne lèvent pas d'exception.
+- Sous faute injectée, ce qui protège est une boucle de vérification ou une règle déterministe. Un modèle plus fort peut suivre plus fidèlement une directive corrompue.
 - Fiabiliser un système multi-agents est un travail de conception d'organisation : division du travail, autorité, information, contrôle, imputabilité.
 
 ---
@@ -282,10 +316,12 @@ Pages primaires lues le 11 novembre 2026 :
 5. [Kim et coll. — Towards a Science of Scaling Agent Systems (arXiv 2512.08296v3)](https://arxiv.org/html/2512.08296v3) — prépublication; résumé et première moitié du texte.
 6. [Anthropic — How we built our multi-agent research system, 13 juin 2025](https://www.anthropic.com/engineering/multi-agent-research-system) — billet de fournisseur.
 
-Résumés seulement :
+Pages lues le 14 novembre 2026 :
 
-7. [Zhang et coll. — Which Agent Causes Task Failures and When? (arXiv 2505.00212)](https://arxiv.org/abs/2505.00212)
-8. [Zhu et coll. — MultiAgentBench (arXiv 2503.01935)](https://arxiv.org/abs/2503.01935)
+7. [Zhang et coll. — Which Agent Causes Task Failures and When? (arXiv 2505.00212, version 3 du 2 juin 2025)](https://arxiv.org/html/2505.00212) — connu d'abord par son résumé; texte lu.
+8. [Zhu et coll. — MultiAgentBench (arXiv 2503.01935, version 1)](https://arxiv.org/html/2503.01935) — connu d'abord par son résumé; première moitié du texte.
+9. [Shah et coll. — Characterizing Faults in Agentic AI: A Taxonomy of Types, Symptoms, and Root Causes (arXiv 2603.06847, version 2 du 7 mai 2026)](https://arxiv.org/html/2603.06847v2) — prépublication; premiers deux tiers du texte.
+10. [Jia et coll. — MAS-FIRE: Fault Injection and Reliability Evaluation for LLM-Based Multi-Agent Systems (arXiv 2602.19843, 23 février 2026)](https://arxiv.org/html/2602.19843) — prépublication; premiers trois quarts du texte.
 
 Aucune source secondaire n'appuie une affirmation du chapitre.
 
@@ -297,5 +333,7 @@ Aucune source secondaire n'appuie une affirmation du chapitre.
 - Le lieu de publication de [4], IEEE BigData 2025, vient de la notice OpenAlex, non du document, dont le fichier se nomme « BigData_2026 ».
 - La page arXiv date [3] du 13 mars 2026, malgré un identifiant (2604) qui évoque avril.
 - Le rattachement de chaque remède à une catégorie de MAST, la répartition proposée en 21.2 et les cinq questions de 21.7 sont des synthèses de ce chapitre, non des résultats publiés.
-- Aucune source ne porte sur un système multi-agents d'entreprise en production. La transposition de leurs résultats reste une hypothèse.
+- Aucune source ne porte sur un système multi-agents d'entreprise en production, y compris après la recherche du 14 novembre 2026 : [9] étudie des dépôts à code ouvert et [10] des fautes injectées en laboratoire. La transposition de leurs résultats reste une hypothèse.
+- Les sources [7] à [10] ont été lues le 14 novembre 2026 par l'outil d'extraction, qui ne restitue que le début des textes longs : la fin de [8], de [9] (dont les menaces à la validité) et de [10] n'a pas été lue. Dans [9], les décomptes par catégorie restitués ne totalisent pas les 385 fautes, et les pourcentages semblent calculés sur un dénominateur plus petit; ils sont cités tels quels. Le rapprochement entre ses catégories « cycle de vie et état » et « coordination du système » et la coordination multi-agents est de ce chapitre. La définition exacte de la faute de confiance aveugle de [10] n'a pas été relevée, et le calcul du seuil de 40 % n'apparaît pas dans la partie lue.
+- Les sous-sections « Hors des bancs d'essai » (21.1) et « Ce que montre l'injection de fautes » (21.5), les compléments de 21.6 et la ligne « Essai de robustesse » de la grille datent du 14 novembre 2026; cette ligne et le renvoi à l'ingénierie du chaos du chapitre 34 sont des synthèses de ce chapitre.
 - Par rapport au plan initial, 21.5 ajoute deux familles de remèdes (consignes, vérification structurelle) et 21.6 l'attribution des échecs.

@@ -2,7 +2,7 @@
 
 *Question directrice : où appliquer les contrôles entre agents, outils et API ?*
 
-> **État de référence :** spécification MCP `2026-07-28`, brouillon « MCP Security Gateway 1.0 » de Microsoft, documentation d'agentgateway, d'Agent Router, d'Apigee, d'Azure API Management, de Kong et de MuleSoft Agent Fabric consultée les 11 et 12 novembre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre, toutes lues pour ce chapitre. [1] et [6] sont des billets d'annonce : ils établissent ce qu'un projet ou un éditeur déclare, pas ce qu'un tiers a constaté.
+> **État de référence :** spécification MCP `2026-07-28`, brouillon « MCP Security Gateway 1.0 » de Microsoft, documentation d'agentgateway, d'Agent Router, d'Apigee, d'Azure API Management, de Kong et de MuleSoft Agent Fabric consultée les 11 et 12 novembre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre, toutes lues pour ce chapitre; [13] à [16] ont été ajoutées le 14 novembre 2026, [16] par son seul résumé. [1] et [6] sont des billets d'annonce : ils établissent ce qu'un projet ou un éditeur déclare, pas ce qu'un tiers a constaté.
 
 MCP et A2A décrivent des messages. Ils ne disent pas qui, dans une organisation donnée, a le droit de les envoyer, combien de fois, ni ce qu'il faut en conserver. La spécification MCP rend l'autorisation facultative, recommande la validation humaine sans l'imposer et ne définit pas le comportement d'une passerelle (chapitre 5). Chaque hôte, chaque serveur et chaque équipe peut donc appliquer sa propre règle, ou aucune.
 
@@ -39,6 +39,8 @@ Quatre propriétés du trafic agentique mettent ce modèle en défaut.
 | iPaaS agentique | MuleSoft Agent Fabric | Un parc d'intégrations | Registre, détection sur d'autres plateformes, courtier |
 
 Ces familles se recouvrent; elles diffèrent surtout par ce que l'entreprise possède déjà.
+
+Une quatrième offre recoupe ces familles : la passerelle gérée par un fournisseur infonuagique. Amazon Bedrock AgentCore Gateway se décrit comme un point d'entrée unique pour le trafic agentique, vers les outils, les autres agents et les modèles [13]. Il convertit en outils MCP des API décrites en OpenAPI ou en Smithy et des fonctions Lambda, relaie d'autres agents, A2A compris, et route l'inférence entre fournisseurs de modèles. Il prend en charge l'authentification entrante de l'agent et l'authentification sortante vers chaque outil, avec injection des justificatifs. Sa recherche sémantique d'outils répond au catalogue trop gros (section 24.3) : l'agent cherche parmi les outils disponibles au lieu de les charger tous. La page lue est une présentation; les règles et le contrôle d'accès fin, décrits ailleurs dans la documentation, n'ont pas été lus.
 
 ---
 
@@ -169,15 +171,27 @@ agentgateway regroupe plusieurs serveurs MCP derrière un point d'accès, sous l
 
 La fédération déplace une garantie. Dans MCP, un serveur ne voit pas les autres, et l'hôte maintient cette isolation (chapitre 5). Derrière un serveur virtuel, l'hôte ne voit plus qu'un serveur : la séparation entre outils d'origines différentes repose sur la passerelle. Raison de plus d'y examiner les définitions d'outils, noms voisins compris (24.2).
 
+### Premières mesures
+
+Trois sources chiffrent quelque chose. Aucune ne suffit à départager les produits.
+
+**Un banc de cabinet d'analyse.** AIMultiple a mesuré six passerelles MCP devant un serveur factice de seize outils, avec un client déterministe, sans modèle [14]. Le surcoût médian d'un appel relayé va de 0,84 ms à 23 ms pour les trois passerelles autohébergées mesurées. Les deux passerelles hébergées, jointes par le réseau étendu, affichent 55,5 ms et 211,1 ms, délais de réseau compris. Activer les contrôles de contenu ajoute 11,5 % chez l'une et fait passer une autre de 55,5 ms à 172,1 ms. Sur 60 injections placées dans des réponses d'outils, une passerelle en arrête 60 et une autre 55; les quatre autres laissent l'instruction atteindre le client. Quatre produits sur six appliquent une autorisation par outil, trois livrent leurs contrôles de contenu désactivés, et deux ne journalisent pas les appels bloqués.
+
+Le banc ne teste ni le contournement de la passerelle ni le comportement d'un modèle, n'emploie que deux formes d'injection, et ses auteurs précisent qu'il n'établit pas de classement. L'un des éditeurs testés est client du cabinet pour ses services de mesure, ce que la page déclare [14].
+
+**Un filtre évalué par ses auteurs.** MCP-Guard, mandataire à trois étages (motifs, détecteur neuronal, arbitrage par un modèle), rapporte un score F1 moyen de 89,1 % et une latence moyenne de 455,9 ms sur huit modèles d'arbitrage, soit environ la moitié de celle d'un modèle employé seul [15]. L'évaluation est faite hors ligne, sur un jeu de 70 448 échantillons composé à 97 % d'instructions de débridage. Le dispositif n'a pas été placé devant de vrais serveurs, et les auteurs jugent sa latence trop élevée pour certains usages.
+
+**Des scanners qui se contredisent.** Sur une collection de 64 611 serveurs, les scanners existants signalent 96,89 % des serveurs comme risqués, et moins de la moitié des alertes vérifiées à la main sont fondées [16]. Le balayage des définitions d'outils (section 24.2) hérite de cette limite (chapitre 8).
+
 ### Ce qui manque
 
-Aucun banc d'essai indépendant n'a été trouvé, ni sur la latence ajoutée ni sur l'efficacité de la détection. La faible latence mise en avant par agentgateway est une déclaration du projet [1]. Le cadre de Narajala et Habler range lui-même le surcoût de performance de l'inspection parmi ses limites [5].
+Aucune de ces mesures ne porte sur les passerelles décrites dans ce chapitre, ni sur une charge de production. La faible latence mise en avant par agentgateway reste une déclaration du projet [1]. Le cadre de Narajala et Habler range lui-même le surcoût de performance de l'inspection parmi ses limites [5].
 
 ---
 
 ## 24.6 Critères de choix
 
-Faute de mesure comparative, le choix repose sur des questions dont la réponse se vérifie dans une documentation ou par un essai.
+Faute de mesure comparative probante (section 24.5), le choix repose sur des questions dont la réponse se vérifie dans une documentation ou par un essai.
 
 | Critère | Question vérifiable |
 |---|---|
@@ -188,6 +202,7 @@ Faute de mesure comparative, le choix repose sur des questions dont la réponse 
 | Inspection | Les réponses sont-elles lues sans rompre le flux ? Les définitions sont-elles balayées ? |
 | Défaillance | Une erreur vaut-elle refus ? Sous quelle forme le refus est-il signalé ? |
 | Audit | Toute décision est-elle tracée et exportable ? Où vont les charges utiles ? |
+| Réglages d'origine | Les contrôles de contenu sont-ils actifs sans configuration ? Les refus sont-ils journalisés ? |
 | Registre | Une entrée retirée du registre cesse-t-elle d'être joignable ? |
 | Emplacement | Où s'exécute le plan de données ? |
 | Gouvernance | Licence, fondation hôte, format des politiques |
@@ -212,6 +227,7 @@ Ce dernier essai fixe la limite du dispositif. Une passerelle réseau ne voit ni
 | Définitions d'outils | Balayage à l'inscription, empreinte suivie ensuite | — |
 | Erreur de la passerelle | Refus | — |
 | API existantes | Conversion suivie d'une curation, lectures d'abord | Prototype interne : conversion intégrale |
+| Réglages d'origine | Vérifier que les contrôles de contenu sont activés et que les refus sont journalisés | — |
 
 ---
 
@@ -224,7 +240,7 @@ Ce dernier essai fixe la limite du dispositif. Une passerelle réseau ne voit ni
 - Convertir une API en outils est mécanique; la rendre utilisable par un modèle demande une curation des opérations et des descriptions.
 - L'iPaaS agentique vise le plan de contrôle : MuleSoft applique des politiques aux API d'autres passerelles, pas encore aux agents ni aux serveurs MCP.
 - La fédération de serveurs transfère à la passerelle l'isolation que l'hôte assurait.
-- Aucun banc d'essai indépendant n'a été trouvé. Le brouillon de Microsoft et le cadre universitaire cité sont des propositions, pas des résultats mesurés.
+- Les premières mesures sont minces : un banc de cabinet d'analyse sur six passerelles, dont aucune n'est décrite ici, un filtre évalué par ses auteurs, et des scanners qui se contredisent. Le brouillon de Microsoft et le cadre universitaire cité restent des propositions.
 - Une passerelle contournable ne gouverne rien : serveurs locaux et justificatifs directs lui échappent.
 
 ---
@@ -246,6 +262,13 @@ Pages primaires lues le 11 novembre 2026, sauf [12], lue le 12 :
 11. [Agentic AI Foundation — projets](https://aaif.io/projects)
 12. [Agent Router — README du dépôt](https://github.com/theagentrouter/agent-router)
 
+Sources ajoutées le 14 novembre 2026 :
+
+13. [AWS — Amazon Bedrock AgentCore Gateway, guide du développeur](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway.html) — page de présentation.
+14. [AIMultiple — banc d'essai de passerelles MCP (page mise à jour le 9 novembre 2026)](https://aimultiple.com/de/mcp-gateway) — banc d'un cabinet d'analyse; version allemande lue.
+15. [MCP-Guard: A Multi-Stage Defense-in-Depth Framework for Securing Model Context Protocol in Agentic AI (arXiv 2508.10991, version 4 du 8 janvier 2026)](https://arxiv.org/html/2508.10991v4) — prépublication.
+16. [Chen et coll. — Rethinking MCP Security: A Large-Scale Study of Runtime MCP Servers and Security Scanner Reliability (arXiv 2607.11086, 13 juillet 2026)](https://arxiv.org/abs/2607.11086) — prépublication; résumé seulement.
+
 Sources secondaires : aucune n'est citée.
 
 ## Limites de ce chapitre
@@ -255,5 +278,6 @@ Sources secondaires : aucune n'est citée.
 - Le découpage en cinq contrôles est une synthèse de ce chapitre; aucun texte lu ne l'énonce tel quel.
 - Les fonctions d'une passerelle d'API classique viennent de la connaissance générale. Les remarques sur les descriptions d'API, la taille du catalogue, la clé de quota et l'approbation asynchrone sont des raisonnements.
 - [1], [2] et [9], seule page lue sur Kong, n'ont pas été relus. Les pages d'agentgateway sur l'authentification, l'autorisation et les garde-fous n'ont pas été lues.
-- AWS AgentCore Gateway, les autres iPaaS et les passerelles centrées sur l'inférence n'ont pas été lus.
-- Aucune donnée d'adoption ni de performance n'est citée, hormis les contributeurs déclarés par agentgateway.
+- D'AWS AgentCore Gateway, seule la page de présentation [13] a été lue. Les autres iPaaS et les passerelles centrées sur l'inférence n'ont pas été lus.
+- Les seules données de performance citées viennent des sources [14] à [16], ajoutées le 14 novembre 2026. [14] est le banc d'un cabinet d'analyse dont un des éditeurs testés est client; aucun des produits décrits dans ce chapitre n'y figure. [15] est évalué par ses auteurs, hors ligne. [16] n'est connu que par son résumé. Aucune donnée d'adoption n'est citée, hormis les contributeurs déclarés par agentgateway.
+- Le paragraphe sur la passerelle gérée (24.1), la sous-section « Premières mesures » (24.5) et les lignes « Réglages d'origine » du tableau de 24.6 et de la grille datent du 14 novembre 2026.

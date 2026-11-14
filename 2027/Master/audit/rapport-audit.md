@@ -73,6 +73,41 @@ vérifiés en ligne (spécification A2A 1.0, conventions GenAI d'OpenTelemetry, 
 - **Annexe E.** Les sections E.1 à E.3 disent maintenant qu'elles portent sur les
   chapitres 1 à 47 et renvoient à E.4 pour la partie X.
 
+## Après l'audit : compléments du 14 novembre 2026
+
+Cet audit porte sur l'état du 13 novembre 2026. Le lendemain, 164 entrées ont été
+ajoutées au registre, hors audit, sous deux catégories nouvelles.
+
+- **139 enrichissements** : sections ou sous-sections ajoutées aux exposés de vingt
+  chapitres (4, 8, 14, 18, 20, 21, 22, 23, 24, 26, 33, 34, 35, 37, 38, 39, 40, 41, 42
+  et 44), avec leurs sources, leurs limites et les lignes correspondantes des grilles de
+  décision et des points à retenir. Les chapitres 1 à 47 listent maintenant 774 sources,
+  contre 709.
+- **25 harmonisations** : chronologie (annexe D) et décompte des sources (annexe E) mis
+  à jour, quatre renvois croisés vers les nouvelles sections, la contradiction des
+  limites du chapitre 19 sur le maillage d'événements, et trois retouches de forme.
+  Neuf lignes s'ajoutent au glossaire (annexe A), hors registre, ce que son contrôle
+  admet.
+
+Ces compléments passent tous les contrôles de `compendium-master-verifie.py`. Ils n'ont
+pas été relus selon la grille de cet audit : aucune lecture intégrale, aucun arbitrage.
+Le PDF compte 1 086 pages. Sa page « À propos de cette édition » décompte à part les
+356 corrections de l'audit et les 164 compléments.
+
+Les sources ajoutées ont été chargées le 14 novembre 2026, sauf celles que les limites
+des chapitres donnent pour non lues. Aucun nouveau contrôle d'ensemble des adresses n'a
+été fait.
+
+Deux points s'ajoutent à ceux que l'auteur doit trancher.
+
+- **Sources connues par leur seul résumé.** Plusieurs compléments reposent sur le résumé
+  d'une prépublication ou sur une analyse de cabinet; les limites de chaque chapitre le
+  disent. Elles sont à lire en entier avant de s'y fier.
+- **Textes restés inaccessibles.** Directive fédérale sur la prise de décisions
+  automatisée, article 12.1 codifié de la loi québécoise sur le secteur privé, ligne
+  directrice de l'AMF sur l'IA, référentiel SecNumCloud, rapport Gartner sur la gestion
+  d'agents, documentation de ServiceNow, rapport McKinsey sur le maillage agentique.
+
 ## Ce qui reste à décider avant impression
 
 - **Auteur, mention légale, licence, ISBN** : la page de titre et les métadonnées du PDF

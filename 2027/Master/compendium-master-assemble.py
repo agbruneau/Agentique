@@ -134,13 +134,20 @@ def prepare(chemin, bilan):
     return "\n".join(sortie).strip() + "\n"
 
 
+# Catégories du registre postérieures à l'audit de publication : compléments de contenu et
+# harmonisations qui les accompagnent. Elles ne comptent pas comme corrections de l'audit.
+COMPLEMENTS = ("enrichissement", "harmonisation")
+
+
 def corrections():
-    """Nombre de corrections du registre de l'audit de publication (0 s'il n'existe pas)."""
+    """Décompte du registre : (corrections de l'audit de publication, compléments postérieurs)."""
     registre = os.path.join(ICI, "audit", "corrections.json")
     if not os.path.isfile(registre):
-        return 0
+        return 0, 0
     with open(registre, encoding="utf-8") as f:
-        return len(json.load(f))
+        entrees = json.load(f)
+    apres = sum(1 for c in entrees if c.get("categorie") in COMPLEMENTS)
+    return len(entrees) - apres, apres
 
 
 def unique(motif):
@@ -180,7 +187,8 @@ def main():
         "--lua-filter", os.path.join(ICI, "filtres", "typst.lua"),
         "-V", "titre=" + TITRE, "-V", "edition=" + EDITION,
         "-V", "nbvolets=%d" % bilan["volets"], "-V", "nbhotes=%d" % hotes,
-        "-V", "nbcorrections=%d" % corrections(),
+        "-V", "nbcorrections=%d" % corrections()[0],
+        "-V", "nbcomplements=%d" % corrections()[1],
         "-o", typst,
     ], check=True)
     with open(typst, encoding="utf-8") as f:

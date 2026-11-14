@@ -94,7 +94,7 @@ Deux propriétés se confondent sous ce mot. L'**interchangeabilité** permet d'
 
 **La mémoire** n'a pas de format d'échange. Le chapitre 14 recommande de conserver les sources en texte et de reconstruire les index.
 
-Règle de conduite : tout actif transférable vit dans un dépôt de l'entreprise, sous gestion de versions, et la plateforme n'en reçoit qu'une copie déployée. Ce qui ne s'écrit que dans la console d'un éditeur est captif. La preuve se fait par l'essai : redéployer périodiquement un agent représentatif sur une seconde cible et mesurer ce qu'il a fallu réécrire.
+Règle de conduite : tout actif transférable vit dans un dépôt de l'entreprise, sous gestion de versions, et la plateforme n'en reçoit qu'une copie déployée. Ce qui ne s'écrit que dans la console d'un éditeur est captif. La preuve se fait par l'essai : redéployer périodiquement un agent représentatif sur une seconde cible et mesurer ce qu'il a fallu réécrire; pour A2A, la trousse de compatibilité du protocole fournit un essai commun (section 26.9).
 
 ---
 

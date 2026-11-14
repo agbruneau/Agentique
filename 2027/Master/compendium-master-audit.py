@@ -15,6 +15,11 @@ même registre au texte de référence avant de comparer (fonction corrige), si 
 seules les corrections déclarées ici peuvent écarter le manuscrit de ses sources.
 Les volets, l'ouverture et les annexes F à H réécrits ont une copie dans
 Master/fusion/reecrit/ : la correction y est reportée.
+
+Le registre porte aussi, sous les catégories « enrichissement » et « harmonisation », les
+compléments postérieurs à l'audit (sections ajoutées aux exposés, mise à jour des annexes,
+renvois croisés) : même mécanisme, mêmes contrôles. compendium-master-assemble.py les
+décompte à part des corrections de l'audit.
 """
 import collections
 import glob

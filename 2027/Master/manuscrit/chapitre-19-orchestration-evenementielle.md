@@ -242,7 +242,7 @@ Billets de fournisseurs, lus; [15] relu le 12 novembre :
 - **A2A** : la section 13.2, lue pendant l'audit, lève la réserve sur la sécurité des notifications poussées; elle recommande (SHOULD) les nouvelles tentatives que la section 4.3.3 se borne à permettre (MAY). **MCP** : la page de l'extension Tasks [13] lève l'écart avec le chapitre 5, ses notifications passant par `subscriptions/listen`. Aucune page lue ne précise l'ordre de ces notifications; la relecture à la reconnexion est une recommandation de ce chapitre.
 - **CloudEvents** est repris du chapitre 2, sans lecture de sa spécification.
 - Les définitions de l'orchestration, de la chorégraphie et de l'event sourcing, l'exemple du superviseur en attente et la capture des changements appliquée au patrimoine relèvent de la connaissance générale. Les conditions d'emploi de la chorégraphie, les garde-fous de la section 19.7 et la grille de décision sont des recommandations de ce chapitre, non des résultats tirés d'une source.
-- Le « maillage d'événements » du plan initial et les autres courtiers ne sont pas traités, faute de source lue; DDS, la publication-abonnement de ROS 2, l'est au chapitre 46.
+- Le « maillage d'événements » du plan initial et les autres courtiers ne sont pas traités dans cet exposé, faute de source lue; le volet de mise en œuvre présente celui de Solace (section 19.8). DDS, la publication-abonnement de ROS 2, est traitée au chapitre 46.
 
 ## Mise en œuvre — Maillage événementiel asynchrone et patron Saga à compensation {.volet}
 

@@ -2,7 +2,7 @@
 
 *Question directrice : combien coûte un agent, et que rapporte-t-il ?*
 
-> **État de référence :** communiqué State of FinOps 2026 (19 février 2026), page « FinOps for AI » de la FinOps Foundation (mise à jour du 28 octobre 2026), annonce de la Tokenomics Foundation (4 août 2026) et pages de prix des éditeurs affichées le 11 novembre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre, toutes lues pour ce chapitre; [3] et [10] sont des prépublications, [4] et [6] des billets de fournisseurs. Les montants sont en dollars américains.
+> **État de référence :** communiqué State of FinOps 2026 (19 février 2026), page « FinOps for AI » de la FinOps Foundation (mise à jour du 28 octobre 2026), annonce de la Tokenomics Foundation (4 août 2026) et pages de prix des éditeurs affichées le 11 novembre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre, toutes lues pour ce chapitre; [3] et [10] sont des prépublications, [4] et [6] des billets de fournisseurs; [13] à [15] ont été ajoutées le 14 novembre 2026. Les montants sont en dollars américains.
 
 Une licence logicielle a un prix. Un agent a une distribution de coûts : la même demande peut se régler en trois appels au modèle ou en trente, selon le chemin que prend le raisonnement. La facture dépend d'une trajectoire que personne n'a écrite d'avance, et elle arrive après les faits.
 
@@ -41,6 +41,12 @@ Un banc d'essai sur l'extraction de données dans 10 000 dépôts réglementaire
 | Révision humaine | Temps des personnes qui valident ou corrigent (chapitre 22) |
 
 La Tokenomics Foundation, créée sous l'égide de la Linux Foundation, annonce un modèle de référence du coût total de l'IA et un cadre, Big-T, pour classer la complexité en jetons d'une charge avant de choisir un modèle [11]. Ce sont des livrables annoncés; aucune spécification publiée n'a été lue.
+
+### Un coût hors facture : l'énergie
+
+Le jeton est aussi une unité d'énergie. Google mesure 0,24 Wh et 0,26 mL d'eau pour une requête textuelle médiane de Gemini, dans un périmètre qui inclut les accélérateurs, les serveurs hôtes, la capacité inactive et les frais généraux du centre de données; l'entreprise rapporte une énergie par requête divisée par 33 en un an [14]. C'est la mesure d'un fournisseur sur son propre service. À l'échelle du système, l'Agence internationale de l'énergie chiffre la consommation des centres de données à 415 TWh en 2024, soit environ 1,5 % de l'électricité mondiale, et la projette à environ 945 TWh en 2030 dans son scénario de base. L'incertitude est forte : de 700 à 1 700 TWh en 2035 selon les scénarios [15].
+
+Aucune de ces sources ne mesure un agent. Le raisonnement qui suit reste donc une déduction : l'énergie suit les jetons, et un agent en consomme un multiple de ce que demande une requête simple. Les leviers de la section 40.6, soit le cache, le routage vers un modèle plus petit et la décomposition, réduisent l'une comme les autres. Une organisation tenue de déclarer ses émissions devrait demander à ses fournisseurs une mesure par requête et son périmètre, plutôt qu'une moyenne.
 
 ---
 
@@ -178,6 +184,8 @@ Anthropic tire de ses mesures une règle simple : un système multi-agents ne se
 
 **La part de travail accomplie sans intervention humaine**, mesure que la Tokenomics Foundation annonce vouloir normaliser [11], dit ce que l'agent fait seul, pas s'il le fait bien. Elle se lit avec le succès vérifié (chapitre 34).
 
+**Le gain de productivité à l'échelle de l'entreprise n'est pas établi.** Une étude de Statistique Canada observe, chez les entreprises canadiennes qui ont adopté l'IA, une prime de productivité du travail de 16,8 %. Elle tombe à 10,2 % quand on tient compte de leur productivité de départ, puis à 5,1 %, non significative, quand on ajoute leurs autres capacités numériques et d'innovation [13]. Les auteurs concluent que la prime reflète surtout quelles entreprises adoptent l'IA, et que les gains peuvent demander du temps et un changement d'organisation. L'étude porte sur l'IA en général; rien n'y concerne les agents.
+
 ---
 
 ## 40.6 Leviers : routage de modèles, cache, décomposition
@@ -237,6 +245,8 @@ Ces chiffres viennent d'une prépublication, sur un seul domaine, aux tarifs de 
 - La tarification au résultat déplace le risque vers la définition du résultat, que le fournisseur mesure lui-même.
 - La valeur se mesure au coût par résultat réussi, comparé à une base de référence et au coût de l'erreur.
 - Le cache de prompts vient en premier, car il ne touche pas à la qualité. Le routage réduit davantage le coût, au prix d'une perte de précision à mesurer.
+- L'énergie suit les jetons : les leviers de coût sont aussi des leviers d'empreinte. Aucune source lue ne mesure la consommation d'un agent.
+- À l'échelle de l'entreprise, la prime de productivité associée à l'IA disparaît statistiquement une fois les autres capacités prises en compte.
 
 ---
 
@@ -257,6 +267,12 @@ Pages primaires lues le 11 novembre 2026 :
 11. [Linux Foundation — lancement de la Tokenomics Foundation, communiqué du 4 août 2026](https://linuxfoundation.org/press/linux-foundation-launches-the-tokenomics-foundation-to-define-the-economics-and-roi-of-ai-value)
 12. [Microsoft Learn — politique `llm-token-limit` d'Azure API Management](https://learn.microsoft.com/en-us/azure/api-management/llm-token-limit-policy)
 
+Sources ajoutées le 14 novembre 2026 :
+
+13. [Statistique Canada — Li et Liu, Artificial intelligence adoption and productivity in Canadian firms (22 avril 2026)](https://www150.statcan.gc.ca/n1/pub/36-28-0001/2026004/article/00002-eng.htm)
+14. [Elsworth et coll. — Measuring the environmental impact of delivering AI at Google Scale (arXiv 2508.15734, 21 août 2025)](https://arxiv.org/abs/2508.15734) — prépublication d'un fournisseur; résumé seulement.
+15. [Agence internationale de l'énergie — Energy and AI, synthèse (2025)](https://www.iea.org/reports/energy-and-ai/executive-summary)
+
 Sources secondaires : aucune. Le constat de l'étude MAP vient du chapitre 4; les plafonds d'agentgateway et de MuleSoft, du chapitre 24.
 
 ## Limites de ce chapitre
@@ -266,6 +282,7 @@ Sources secondaires : aucune. Le constat de l'étude MAP vient du chapitre 4; le
 - L'« étude sur la génération de workflows » citée par le plan initial n'a pas été retrouvée ni utilisée.
 - Le résumé et les tableaux du banc d'essai [3] se contredisent par endroits : le résumé donne la configuration optimisée à 1,15 fois le coût du pipeline, les tableaux à 0,79 fois, et l'article dit ailleurs le fan-out économe en jetons. Ses coûts en dollars n'ont pas pu être rapprochés de ses décomptes de jetons; les prix de liste du modèle utilisé relèvent ici de la connaissance générale. Le coût par document entièrement correct et la part des jetons d'entrée sont des calculs faits pour ce chapitre.
 - Les multiples de consommation [6] sont des mesures internes d'un fournisseur, datées de 2025; aucune mesure indépendante n'a été trouvée.
+- La sous-section sur l'énergie (40.1) et le paragraphe sur la productivité (40.5) datent du 14 novembre 2026. [14] n'est connu que par son résumé et mesure le service de son éditeur; [15] l'est par sa synthèse. Aucune source ne mesure l'énergie consommée par un agent : le lien avec les multiples de jetons est une déduction de ce chapitre. L'étude [13] porte sur l'IA en général.
 - Un seul fournisseur de modèles (Anthropic) et une seule passerelle (Azure API Management) ont été lus. Les règles de cache, de lots et de quotas diffèrent ailleurs.
 - La proposition d'imputation (40.2), les choix de conception (40.3), les conséquences contractuelles (40.4) et l'ordre des leviers (40.6) sont des synthèses de l'auteur, non des pratiques documentées.
 

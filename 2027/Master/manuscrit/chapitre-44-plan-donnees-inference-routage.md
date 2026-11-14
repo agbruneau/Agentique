@@ -206,7 +206,7 @@ Sources secondaires : aucune. Le banc d'essai financier et l'indicateur de la Fi
 - Le billet de publication de llm-d 1.0 n'a été lu que par son extrait [15]; le README ne rattache pas ses chiffres à cette version. Le statut de l'API `v1` de l'extension d'inférence n'est pas précisé par son site.
 - La prise en charge de l'extension d'inférence par Agent Router est déduite de son sélecteur de point d'accès; le README ne cite ni `InferencePool` ni le contributeur d'origine.
 - Les pages d'agentgateway sur les contrôles de coût, l'observabilité et les bancs d'essai n'ont pas été lues.
-- RouterArena porte sur des questions isolées et des modèles de 2023 à 2025. Aucune mesure indépendante de routage sur des trajectoires d'agents n'a été trouvée.
+- RouterArena porte sur des questions isolées et des modèles de 2023 à 2025. Aucune mesure indépendante de routage sur des trajectoires d'agents n'a été trouvée, y compris par une nouvelle recherche le 14 novembre 2026.
 - Les renvois aux chapitres 13, 16, 21, 23, 24, 33, 40, 46 et 47 ont été vérifiés; aucune contradiction n'a été relevée.
 
 ## Mise en œuvre — Plan de données AI-natif, passerelles et routage cognitif hybride {.volet}

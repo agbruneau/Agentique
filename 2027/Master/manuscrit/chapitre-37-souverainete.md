@@ -2,7 +2,7 @@
 
 *Question directrice : où tournent les agents, et sous quelle juridiction ?*
 
-> **État de référence :** Cloud Sovereignty Framework 1.2.1 (octobre 2025), Gaia-X Compliance Document 25.10, IDSA Rulebook 2026-1 et document de position de l'IDSA (9 juillet 2026). Les numéros entre crochets renvoient aux sources en fin de chapitre, toutes lues.
+> **État de référence :** Cloud Sovereignty Framework 1.2.1 (octobre 2025), Gaia-X Compliance Document 25.10, IDSA Rulebook 2026-1 et document de position de l'IDSA (9 juillet 2026). Les numéros entre crochets renvoient aux sources en fin de chapitre, toutes lues; [12] à [15] ont été ajoutées le 14 novembre 2026, dont [14] et [15] sont secondaires.
 
 Une application classique a une adresse. Un agent en a plusieurs : le modèle de langage tourne chez un fournisseur d'inférence, la boucle d'orchestration ailleurs, la mémoire dans une base, les outils derrière des serveurs MCP, les traces dans une plateforme d'observabilité. Chaque appel fait circuler des données d'entreprise entre ces lieux, et chacun relève d'un exploitant, donc d'un droit.
 
@@ -37,6 +37,18 @@ La Commission européenne a traduit cette distinction en grille d'achat. Son Clo
 L'appel d'offres fixe un niveau minimal par objectif; l'offre qui ne l'atteint pas est rejetée. L'objectif juridique pèse l'exposition aux lois étrangères extraterritoriales. L'objectif « données et IA » y ajoute le contrôle exclusif du client sur les clés de chiffrement, l'auditabilité de l'usage des modèles, et la mesure dans laquelle les modèles sont développés, entraînés, hébergés et gouvernés sous contrôle européen [3]. Le modèle entre ainsi dans le périmètre de la souveraineté au même titre que le stockage.
 
 Ce cadre est un instrument de marché public européen : sa structure se transpose ailleurs, ses seuils non. Le cas canadien est traité au chapitre 38.
+
+### Trois instruments en mouvement
+
+Trois textes prolongent cette grille, à des stades inégaux.
+
+**SecNumCloud, en France.** Le référentiel de l'ANSSI, dont la version 3.2 date de mars 2022, ajoute aux exigences de sécurité une protection contre le droit extra-européen : le prestataire doit avoir son siège dans un État membre de l'Union, et son actionnariat est encadré pour limiter le poids d'entités non européennes [15]. Un arrêté du 12 août 2026 a approuvé ce référentiel pour les prestataires qui traitent des données particulièrement sensibles de l'État, de ses opérateurs et de ses groupements d'intérêt public; la conformité s'atteste par une qualification de l'ANSSI ou par une certification européenne jugée équivalente [14]. Le texte du référentiel n'a pas pu être chargé : ces éléments viennent de deux commentaires de cabinets.
+
+**EUCS, bloqué.** Le schéma européen de certification des services infonuagiques, dont l'ENISA a publié un premier projet en décembre 2020, devait porter au niveau de l'Union une exigence du même ordre : siège et contrôle européens pour le niveau d'assurance le plus élevé. Sept États s'y sont opposés en 2022; quatre l'ont soutenue, dont la France et l'Allemagne. La version de mars 2024 l'a retirée et a renvoyé la question aux régulateurs nationaux [13]. Le schéma n'était adopté ni en novembre 2025 [13] ni en juin 2026, selon la Commission, qui annonce la reprise des travaux [12].
+
+**Le Cloud and AI Development Act, proposé.** La Commission a déposé le 3 juin 2026 une proposition de règlement qui reprend l'idée par une autre voie [12]. Elle crée un cadre de souveraineté des services infonuagiques à quatre niveaux d'assurance, reconnus dans toute l'Union : le premier sur déclaration de conformité du fournisseur, les autres après audit. Les États membres évalueraient quels usages publics exigent quel niveau, l'objectif étant que les usages hautement critiques du secteur public reposent d'ici 2035 sur des services souverains. Un service contrôlé depuis un pays tiers ne pourrait prétendre au troisième niveau que si ce pays bénéficie d'une décision d'adéquation et n'a aucune mesure contraire aux règles d'accès de l'article 32 du Data Act. L'exposé des motifs chiffre la dépendance : la part de marché des fournisseurs européens est passée de 29 % en 2017 à 15 % en 2022, et trois fournisseurs non européens détiennent plus de 70 % du marché.
+
+La proposition nomme les agents. Un considérant prévoit des plateformes d'IA souveraines pour déployer et orchestrer des agents à grande échelle, avec des cadres d'orchestration qui assurent la transparence et l'imputabilité des interactions entre agents, et des méthodes d'essai pour limiter les comportements autonomes imprévus [12]. Ce n'est qu'un considérant d'un texte non adopté, applicable au plus tôt un an après son entrée en vigueur. Il signale toutefois que la souveraineté européenne s'étend de l'hébergement à l'orchestration.
 
 ---
 
@@ -125,6 +137,7 @@ Le plan de contrôle et les journaux font partie du périmètre : une inférence
 | Évaluation d'un fournisseur | Grille par objectifs, de type Cloud Sovereignty Framework | Hors UE : adapter les seuils |
 | Partage entre organisations | Espace de données, agent derrière un connecteur et sous identité déléguée | Échange bilatéral ponctuel |
 | Application des politiques d'usage | Hors du modèle : connecteur, passerelle, règles déterministes | — |
+| Preuve de souveraineté d'un fournisseur européen | Qualification nationale existante, comme SecNumCloud | Niveau d'assurance de l'Union, si le règlement proposé est adopté |
 
 ---
 
@@ -137,6 +150,7 @@ Le plan de contrôle et les journaux font partie du périmètre : une inférence
 - L'IDSA propose un justificatif d'agent délégué, vérifié par le connecteur; la délégation en cascade reste à normaliser, la responsabilité et les limites de décision à trancher.
 - Le modèle et son fournisseur sont des parties prenantes; les modèles réellement souverains restent un objectif de recherche.
 - Les politiques d'usage s'appliquent hors du modèle, au connecteur. L'IDSA le pose, et le seul résultat expérimental cité, sur un banc étroit, va dans ce sens.
+- La certification de la souveraineté reste nationale : SecNumCloud en France, le schéma européen EUCS n'étant pas adopté. La Commission propose depuis juin 2026 quatre niveaux d'assurance de l'Union, dans un texte qui nomme l'orchestration d'agents.
 
 ---
 
@@ -156,11 +170,18 @@ Pages lues les 11 et 12 novembre 2026 :
 10. [IDSA — Data Spaces and AI: Trustworthy Agentic Participation in Data Spaces (v1.0)](https://doi.org/10.5281/zenodo.21279055)
 11. [Grunewald et coll. — Agentic Orchestration of EDC Data Space Retrieval (arXiv 2610.26548)](https://arxiv.org/abs/2610.26548)
 
+Sources ajoutées le 14 novembre 2026 :
+
+12. [Commission européenne — proposition de règlement « Cloud and AI Development Act », COM(2026) 502 final, 3 juin 2026 (document du Conseil 10104/26)](https://data.consilium.europa.eu/doc/document/ST-10104-2026-INIT/en/pdf) — texte officiel, lu par passages.
+13. [Bômont — Technical is political: When a cloud certification scheme divides Europe, Institut d'études de sécurité de l'Union européenne, 3 novembre 2025](https://iss.europa.eu/publications/briefs/technical-political-when-cloud-certification-scheme-divides-europe)
+14. [Landot — billet du 17 août 2026 sur l'arrêté du 12 août 2026 approuvant le référentiel SecNumCloud](https://blog.landot-avocats.net/2026/08/17/important-notamment-pour-certains-marches-publics-evolution-du-referentiel-dexigences-relatif-aux-prestataires-de-services-dinformatique-en-nuage/) — commentaire de cabinet, secondaire.
+15. [CMS Francis Lefebvre — SecNumCloud : un référentiel technico-juridique désirable, bientôt incontournable ? (24 octobre 2022)](https://cms.law/fr/fra/news-information/secnumcloud-un-referentiel-technico-juridique-desirable-bientot-incontournable) — commentaire de cabinet, secondaire.
+
 ## Limites de ce chapitre
 
 - [3] et [9] ont été lus en texte intégral; les autres pages, par un outil qui en restitue le contenu, sans contrôle mot à mot. L'audit du 12 novembre a relu [5] à [8] et lu [11] en entier, ce qui en confirme les chiffres; [1], [2] et [4] n'ont pas été relues.
 - De [10], seuls la synthèse, le modèle d'identité et les perspectives ont été lus; les projets pilotes ne sont pas traités.
 - Aucune donnée d'adoption n'est citée (Gaia-X Magazine de juin 2026 non chargé).
 - Viennent de la connaissance générale : le rattachement de l'article 2713 au CLOUD Act et les réserves sur l'offre de modèles des fournisseurs locaux. L'état en clair des données pendant l'inférence est appuyé au chapitre 46.
-- Le régime des données personnelles, SecNumCloud et le schéma EUCS ne sont pas traités, faute de source lue.
+- Le régime des données personnelles n'est pas traité, faute de source lue. SecNumCloud, EUCS et la proposition de Cloud and AI Development Act le sont depuis le 14 novembre 2026 (37.1), avec trois réserves. Le référentiel SecNumCloud n'a pas pu être chargé (erreur 404) et n'est connu que par deux commentaires de cabinets [14][15], dont l'un date de 2022. L'état d'EUCS repose sur une note de novembre 2025 [13] et sur l'exposé des motifs de [12]. Enfin, [12] a été lu par recherche de passages dans ses 130 pages, sans lecture de son annexe II, qui définit les niveaux; l'avancement de la proposition après juin 2026 n'a pas été vérifié.
 - La décomposition d'un agent en composants (introduction, 37.5) est une grille proposée ici, sans source; le chapitre 46 la prolonge par état de l'agent.

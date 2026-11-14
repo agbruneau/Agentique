@@ -4,7 +4,7 @@
 
 ## E.1 Niveaux de preuve
 
-Chaque chapitre se termine par ses sources numérotées et par une section « Limites de ce chapitre ». Les chapitres 1 à 47 en listent 709 au total (la partie X est décomptée à la section E.4); une source citée par plusieurs chapitres compte pour chacun.
+Chaque chapitre se termine par ses sources numérotées et par une section « Limites de ce chapitre ». Les chapitres 1 à 47 en listent 774 au total (la partie X est décomptée à la section E.4); une source citée par plusieurs chapitres compte pour chacun.
 
 Trois marques qualifient une affirmation.
 
@@ -22,7 +22,7 @@ Cinq réserves valent pour tout l'ouvrage.
 - **Résumés seulement.** Plusieurs articles ne sont connus que par leur résumé, ce que leur source signale.
 - **Audit partiel.** L'audit n'a relu qu'une partie des sources; EUR-Lex, McKinsey, Gartner et ServiceNow sont restés inaccessibles. Les limites de chaque chapitre nomment les sources non revérifiées.
 - **Documentation d'éditeur.** Elle décrit ce qu'un produit annonce. Aucun essai indépendant n'est cité pour les moteurs d'exécution durable, les passerelles ou l'interopérabilité entre plateformes (chapitres 18, 24 et 26).
-- **Date de référence.** Les faits sont arrêtés au 11 novembre 2026 (13 novembre pour la partie X); les relectures de l'audit et les sources des chapitres 44 à 47 datent du 12. Brouillons et préversions ont pu changer depuis.
+- **Date de référence.** Les faits sont arrêtés au 11 novembre 2026 (13 novembre pour la partie X); les relectures de l'audit et les sources des chapitres 44 à 47 datent du 12; des compléments, signalés dans les sources et les limites de vingt chapitres, datent du 14. Brouillons et préversions ont pu changer depuis.
 
 ## E.2 Sources d'ancrage
 
@@ -79,7 +79,7 @@ Le dernier point pèse sur la thèse de l'ouvrage : l'interopérabilité par pro
 
 ## E.4 Sources de la partie X
 
-La partie X a été écrite le 13 novembre 2026, après la clôture des chapitres 1 à 47. Ses trois chapitres listent 227 sources, qui s'ajoutent aux 709 de la section E.1 sans y être comptées.
+La partie X a été écrite le 13 novembre 2026, après la clôture des chapitres 1 à 47. Ses trois chapitres listent 227 sources, qui s'ajoutent aux 774 de la section E.1 sans y être comptées.
 
 | Chapitre | Sources | Nature | Lecture |
 |---|---|---|---|

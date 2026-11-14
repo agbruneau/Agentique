@@ -2,7 +2,7 @@
 
 *Question directrice : quelles décisions un agent peut-il prendre seul ?*
 
-> **État de référence :** cadre de Singapour pour l'IA agentique, version 1.5 du 20 mai 2026; spécification MCP `2026-07-28`; article 14 du règlement européen sur l'IA, avec les dates d'application affichées le jour de la lecture. Les numéros entre crochets renvoient aux sources en fin de chapitre, toutes des pages primaires lues pour ce chapitre.
+> **État de référence :** cadre de Singapour pour l'IA agentique, version 1.5 du 20 mai 2026; spécification MCP `2026-07-28`; article 14 du règlement européen sur l'IA, avec les dates d'application affichées le jour de la lecture. Les numéros entre crochets renvoient aux sources en fin de chapitre, toutes des pages primaires lues pour ce chapitre; [14] à [17] ont été ajoutées le 14 novembre 2026.
 
 Placer un humain devant chaque action d'un agent semble la réponse prudente. Elle ne tient pas. Un agent qui demande une approbation à chaque pas n'apporte guère plus qu'un assistant, et l'approbateur trop sollicité cesse de lire ce qu'il approuve. À l'inverse, un agent laissé seul devant un paiement ou une suppression de données engage l'organisation sans que personne ait décidé.
 
@@ -131,6 +131,20 @@ Anthropic rapporte que les utilisateurs de son agent de programmation acceptent 
 
 Le goulot n'est pas le délai. Dans l'étude Measuring Agents in Production (MAP), 66 % des agents déployés tolèrent des temps de réponse de l'ordre de la minute ou plus [7], et une exécution suspendue peut attendre sans coût (chapitre 18). Ce qui manque est l'attention de l'approbateur.
 
+### Ce que dit la recherche indépendante
+
+Les mesures qui précèdent viennent d'éditeurs. Quatre sources extérieures vont dans le même sens, chacune avec sa limite.
+
+**Le biais d'automatisation est mesuré depuis longtemps.** Une revue systématique de 74 études, surtout sur l'aide à la décision clinique, établit que l'utilisateur d'un système d'aide suit aussi ses erreurs. Quand le conseil est faux, le risque de décision incorrecte augmente de 26 % (rapport de risques de 1,26, calculé à titre indicatif sur quatre études), et de 6 % à 11 % des réponses d'abord justes deviennent fausses après consultation du système [16]. La charge de travail, la complexité de la tâche et la pression du temps aggravent le biais. L'expérience le réduit sans l'éliminer, et l'effet de la formation est incertain. Ce qui aide tient à la conception : rendre l'utilisateur comptable de sa décision, afficher un niveau de confiance tenu à jour, fournir une information plutôt qu'une recommandation, et moins mettre le conseil en évidence [16]. La revue date de 2011 et porte sur des aides à la décision, non sur des agents.
+
+**Les développeurs supervisent par raccourcis.** Trois chercheurs de Microsoft ont interrogé 17 développeurs expérimentés, en juillet et en août 2025, sur leur façon de superviser des agents de programmation [15]. Ils distinguent quatre formes de travail : le cadrage préalable, la planification conjointe, la surveillance en temps réel et la révision après coup. La surveillance en temps réel est rarement pratiquée. La révision repose sur quatre raccourcis : tenir le plan de l'agent pour un reflet fidèle de son travail, tenir des tests réussis pour une garantie, parcourir des yeux plutôt que lire, et se fier à l'agent en terrain inconnu. Les auteurs y voient une supervision « suffisante », imposée par le coût d'une révision complète, et non de la négligence. L'étude est exploratoire, et douze participants travaillent chez l'employeur des auteurs [15].
+
+**La conception actuelle des agents use le superviseur.** Un article de position de chercheurs de Hugging Face et de Data & Society reprend le terme de fatigue d'approbation et en décrit les ressorts [14]. La même personne doit à la fois utiliser l'agent et autoriser ses actions. Une révision de routine mobilise une pensée rapide, peu propice à l'analyse. Déléguer fait perdre la pratique des tâches qu'il faudra ensuite juger. Enfin, un signal d'approbation dégradé, s'il sert à l'entraînement, apprend au système à réduire la friction. L'article ne rapporte aucune mesure propre.
+
+**La supervision prescrite n'est pas prouvée.** Green a recensé 41 politiques qui imposent une supervision humaine d'algorithmes gouvernementaux. Selon son résumé, les données disponibles suggèrent que les personnes ne peuvent pas exercer les fonctions qu'on attend d'elles, si bien que ces politiques légitiment des outils défaillants. Il propose d'exiger de l'organisme qu'il justifie, preuves empiriques à l'appui, la forme de supervision qu'il retient [17]. La cinquième règle ci-dessous répond à cette exigence.
+
+Ces sources confirment la direction, non l'ampleur : aucune ne mesure l'usure de l'approbation chez des approbateurs d'agents en entreprise.
+
 ### Six règles de conception
 
 **1. En demander moins.** Le premier levier est de borner plutôt que de demander. L'étude de cas Tencent du cadre de Singapour décrit des permissions graduées : lecture sans approbation, modification de fichiers approuvée pour la session, commandes et appels réseau approuvés, outils MCP régis par des règles d'autorisation, de demande ou de refus [2]. Le second levier est le réviseur automatique. Le mode automatique d'Anthropic confie à un classifieur l'examen des appels d'outils de l'agent. L'éditeur publie ses erreurs : 0,4 % de blocages à tort sur du trafic réel, mais 17 % d'actions excessives non détectées sur un échantillon de 52 cas. Il précise que ce mode ne remplace pas une révision humaine attentive sur une infrastructure à fort enjeu [6] : le réviseur raccourcit la file, sans remplacer l'approbateur au point de non-retour.
@@ -141,9 +155,16 @@ Le goulot n'est pas le délai. Dans l'étude Measuring Agents in Production (MAP
 
 **4. Choisir l'approbateur.** Il doit avoir l'expertise du domaine [2] et l'information nécessaire pour comprendre l'action, l'accepter, la modifier, la refuser ou l'escalader [12].
 
-**5. Mesurer la supervision.** Le cadre de Singapour propose trois indicateurs : le taux de rejet ou de modification, dont une valeur faible peut signaler une approbation machinale; le temps de réponse, dont la brièveté peut signaler la fatigue; et les approbateurs dont le profil s'écarte nettement de la norme [2].
+**5. Mesurer la supervision.** Le cadre de Singapour propose trois indicateurs : le taux de rejet ou de modification, dont une valeur faible peut signaler une approbation machinale; le temps de réponse, dont la brièveté peut signaler la fatigue; et les approbateurs dont le profil s'écarte nettement de la norme [2]; l'audit interne peut en être chargé (section 39.6).
 
 **6. Prévoir la panne.** Refus par défaut si l'approbateur est injoignable [2]; critères d'escalade fixés d'avance, par exemple des sources contradictoires, une incertitude élevée ou un seuil de coût dépassé [12]. Hors ligne, faute d'approbateur, l'autonomie se borne par des droits alloués avant la coupure (chapitre 46).
+
+**Quatre compléments.** L'article de position [14] ajoute à ces règles des moyens que les cadres cités plus haut ne nomment pas.
+
+- *Regrouper* (règle 1) : laisser l'agent finir un lot de changements liés, puis présenter l'ensemble, plutôt qu'une demande par action.
+- *Faire réfléchir avant de montrer* (règle 3) : pour une décision à fort enjeu, demander à l'approbateur de consigner son avis avant de voir la recommandation de l'agent.
+- *Séparer les intérêts* (règle 4) : l'approbateur ne devrait pas être celui qui profite de l'approbation, et aucun objectif de productivité ne devrait décourager l'examen.
+- *Glisser des tâches témoins* (règle 5) : insérer dans le flux des cas à réponse connue, pour vérifier que l'approbateur relève l'erreur; suivre aussi le temps de révision qui baisse à taux d'approbation constant, et les questions qui se raréfient.
 
 ### La mécanique
 
@@ -191,6 +212,7 @@ Les deux sources ont leurs limites : MAP ne prétend pas couvrir l'ensemble des 
 | Promotion d'autonomie | Par classe, sur preuve consignée, signée par l'autorité du niveau visé | — |
 | Rétrogradation | Automatique, sur signal | — |
 | Approbateur injoignable | Refus par défaut | Action réversible, déjà autorisée sur la boucle |
+| Preuve que la supervision reste effective | Taux de modification, temps de révision, tâches témoins | Classe laissée sans approbation humaine |
 
 ---
 
@@ -201,7 +223,7 @@ Les deux sources ont leurs limites : MAP ne prétend pas couvrir l'ensemble des 
 - Le niveau d'autonomie est un choix de conception, rattaché à une configuration. Un meilleur modèle ne le relève pas de lui-même.
 - La décision se gouverne par classe, selon la gravité, la réversibilité et la faisabilité de la supervision.
 - Une limite écrite seulement dans un prompt ou une politique n'est pas une limite.
-- L'approbation s'use : il faut en demander moins, la rendre lisible et la mesurer.
+- L'approbation s'use : il faut en demander moins, la rendre lisible et la mesurer. La recherche indépendante confirme la direction; l'ampleur, chez des approbateurs d'agents en entreprise, n'a pas été mesurée.
 - L'autonomie s'élargit sur preuve et se retire sur signal. La confiance déplace l'humain vers la surveillance; elle ne le retire pas.
 - Les textes réglementaires lus demandent une capacité effective de comprendre, de refuser et d'arrêter, non un clic par action.
 - En production, la courte portée est délibérée et les actions irréversibles sont rares.
@@ -226,10 +248,18 @@ Pages primaires lues le 11 novembre 2026 :
 12. [Ministère de la Cybersécurité et du Numérique — Guide sur l'utilisation responsable de l'intelligence artificielle agentique (2026)](https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/cybersecurite_numerique/Intelligence_artificielle/GU_IA_Agentique.pdf)
 13. [Gouvernement du Canada — guide sur la portée de la Directive sur la prise de décisions automatisée](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/guide-scope-directive-automated-decision-making.html)
 
+Pages lues le 14 novembre 2026, pour la section 22.5 :
+
+14. [Mitchell, Ghosh et Passi — AI Agents Push Humans Out of the Loop (arXiv 2608.23642, version 3 du 6 septembre 2026)](https://arxiv.org/html/2608.23642) — article de position; premiers cinq sixièmes du texte.
+15. [Dhanorkar, Passi et Vorvoreanu — Human oversight of agentic systems in practice: Examining the oversight work, challenges, and heuristics of developers using software agents (arXiv 2606.05391, 3 juin 2026)](https://arxiv.org/html/2606.05391) — prépublication; premiers deux tiers du texte.
+16. [Goddard et coll. — Automation bias: a systematic review of frequency, effect mediators, and mitigators (Journal of the American Medical Informatics Association)](https://pmc.ncbi.nlm.nih.gov/articles/PMC3240751/) — revue systématique; l'année 2011 vient d'un index d'articles.
+17. [Green — The Flaws of Policies Requiring Human Oversight of Government Algorithms (Computer Law & Security Review 45, 2022; arXiv 2109.05067)](https://arxiv.org/abs/2109.05067) — résumé seulement.
+
 ## Limites de ce chapitre
 
 - Les sources [3], [8] et [13] ont été lues par un outil qui résume la page, sans recoupement. À l'audit du 12 novembre 2026, les passages cités de [2], de [4] à [7] et de [9] à [11] ont été relus à la source; ils concordent, aux précisions près de 22.4 et 22.7. Les sources [1] et [12] ont été lues dans leur texte, par sections pour [1].
 - L'usage de « hors de la boucle » vient de la connaissance générale. « Autonomie méritée » n'est définie par aucune source lue.
-- Le texte de la Directive fédérale et celui de l'article 12.1 n'ont pas pu être chargés; la lecture de l'article 12.1 est reprise du chapitre 38, qui la transpose de la règle du secteur public par analogie. La norme ISO/IEC 42105 sur la supervision humaine, en cours de publication selon le chapitre 35, n'a pas été consultée.
+- Le texte de la Directive fédérale et celui de l'article 12.1 n'ont pas pu être chargés, ni à la rédaction ni le 14 novembre 2026; la lecture de l'article 12.1 est reprise du chapitre 38, qui la transpose de la règle du secteur public par analogie. La norme ISO/IEC 42105 sur la supervision humaine, en cours de publication selon le chapitre 35, n'a pas été consultée.
 - Sont des propositions de ce chapitre : la règle asymétrique de promotion et de rétrogradation, le tableau des classes de décision, la formulation des six règles de conception et la lecture de l'article 14 quant à l'approbation machinale.
-- Les mesures [5] et [6] portent sur les produits de l'éditeur qui les publie; aucune mesure indépendante de la fatigue d'approbation en entreprise n'a été trouvée.
+- Les mesures [5] et [6] portent sur les produits de l'éditeur qui les publie. Les sources [14] à [17], ajoutées le 14 novembre 2026, en sont indépendantes mais ne comblent pas ce manque : [14] est un article de position, [15] une étude par entretiens dont douze des dix-sept participants travaillent chez l'employeur des auteurs, [16] une revue de 2011 sur les aides à la décision, et [17] n'est connu que par son résumé. Aucune mesure indépendante de la fatigue d'approbation chez des approbateurs d'agents en entreprise n'a été trouvée.
+- Les sources [14] à [16] ont été lues par l'outil d'extraction, qui ne restitue que le début des textes longs : la fin de [14] et de [15] n'a pas été lue. La sous-section « Ce que dit la recherche indépendante », les quatre compléments aux règles et la ligne de la grille sur la preuve de la supervision datent du 14 novembre 2026; le rattachement de chaque complément à une règle est de ce chapitre.

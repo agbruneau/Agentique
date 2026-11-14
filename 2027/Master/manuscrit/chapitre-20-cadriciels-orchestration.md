@@ -2,7 +2,7 @@
 
 *Question directrice : sur quoi bâtir, et comment éviter le verrouillage ?*
 
-> **État de référence :** documentation des éditeurs telle que publiée à cette date (pages Microsoft datées des 22 et 23 octobre 2026, ADK 2.0, DSPy 3.5.0). Les numéros entre crochets renvoient aux sources en fin de chapitre; toutes sont des pages primaires lues pour ce chapitre, sauf [14], lue en résumé, et [15], secondaire et non lue.
+> **État de référence :** documentation des éditeurs telle que publiée à cette date (pages Microsoft datées des 22 et 23 octobre 2026, ADK 2.0, DSPy 3.5.0). Les numéros entre crochets renvoient aux sources en fin de chapitre; toutes sont des pages primaires lues pour ce chapitre, sauf [14], lue en résumé, et [15], secondaire et non lue; [16] à [21] ont été ajoutées le 14 novembre 2026, [21] par son seul résumé.
 
 Un modèle de langage produit une réponse à partir d'un contexte. Tout le reste est du code à écrire autour : la boucle qui enchaîne les appels d'outils, l'état qui survit d'une étape à l'autre, la répartition du travail entre agents, la pause qui attend une approbation. Un cadriciel d'orchestration fournit ce code, et son choix passe pour structurant.
 
@@ -54,6 +54,8 @@ Le routage dynamique passe par trois constructions : une arête conditionnelle, 
 
 **Les attaches.** LangGraph ne requiert pas LangChain. L'éditeur renvoie vers les agents LangChain ou Deep Agents pour une boucle de plus haut niveau, et réserve LangGraph aux cas qui exigent un contrôle explicite de l'état et du flux [1]. Le déploiement géré est un produit distinct, LangSmith Deployment; avec son Agent Server, la persistance n'est plus à configurer [1][3]. L'attache est donc graduée : nulle pour la bibliothèque, réelle dès que la persistance et l'exploitation sont déléguées au produit.
 
+**Les protocoles.** Deux points se précisent à la lecture de pages voisines. Côté outils, LangChain fournit un adaptateur MCP qui découvre les outils d'un serveur et les rend utilisables par un agent; il est en bêta, et la page prévient que son API peut changer [16]. Côté agents, la bibliothèque seule ne parle pas A2A : c'est Agent Server qui expose chaque assistant à `/a2a/{assistant_id}`, avec sa carte [17]. Il sert la liaison JSON-RPC de la version 1.0 et accepte encore les noms de méthode de la 0.3. gRPC et HTTP+JSON ne sont pas mis en œuvre, la forme des réponses reste celle de la 0.3, et le graphe doit porter une clé `messages`. LangGraph est distribué sous licence MIT [19].
+
 **La contrepartie.** Il faut écrire le schéma d'état, les nœuds et le routage, et le graphe doit prévoir les chemins. Une tâche réellement ouverte s'y plie mal.
 
 ---
@@ -65,6 +67,8 @@ Le routage dynamique passe par trois constructions : une arête conditionnelle, 
 CrewAI organise le travail autour de deux notions [4]. Une **Crew** est une équipe d'agents autonomes qui collaborent pour accomplir des tâches. Un **Flow** est un workflow structuré et événementiel qui gère l'état et contrôle l'exécution, avec branchements, boucles et persistance des données d'une étape à l'autre.
 
 Le rapport entre les deux a changé de sens. La documentation qualifie le Flow d'épine dorsale de l'application et recommande, pour toute application destinée à la production, de **commencer par un Flow**; une Crew s'insère dans une étape du Flow quand une tâche complexe demande une équipe [4]. Le cadriciel emblématique de l'approche par rôles conseille donc lui-même une enveloppe déterministe : c'est l'indice le plus net de la convergence.
+
+Pour les outils, un agent CrewAI déclare ses serveurs MCP dans un champ `mcps`, par URL ou par configuration, sur trois transports : stdio, SSE et Streamable HTTP. Seuls les outils sont adaptés; les ressources et les prompts de MCP ne sont pas intégrés. La page demande de ne brancher qu'un serveur de confiance et signale le risque de réassociation DNS sur le transport SSE [18]. Le cadriciel est sous licence MIT [19].
 
 ### Microsoft Agent Framework
 
@@ -86,7 +90,7 @@ Les workflows définissent des chemins d'exécution explicites et inspectables [
 
 Sur l'échelle de reprise, ces points de contrôle relèvent du niveau intermédiaire; une extension durable, en préversion, vise le niveau supérieur (chapitre 18).
 
-**État du produit.** Les paquets .NET cités s'installent encore avec l'option de préversion, le SDK Go est en préversion publique, sans agents déclaratifs ni workflows fonctionnels [6]. Une équipe qui s'engage doit vérifier le statut langage par langage.
+**État du produit.** Les paquets .NET cités s'installent encore avec l'option de préversion, le SDK Go est en préversion publique, sans agents déclaratifs ni workflows fonctionnels [6]. Une équipe qui s'engage doit vérifier le statut langage par langage. Le dépôt est sous licence MIT [19].
 
 **La leçon de la succession.** Une organisation qui avait bâti sur AutoGen ou sur Semantic Kernel fait face à une migration, guides à l'appui [6]. Le même mouvement s'observe ailleurs : l'OpenAI Agents SDK remplace Swarm [9], et le Claude Agent SDK remplace les paquets du Claude Code SDK [12]. La durée de vie d'un cadriciel se compte en années, celle d'un processus d'affaires en décennies.
 
@@ -148,7 +152,7 @@ L'idée centrale dépasse le projet : une procédure écrite, avec des livrables
 
 ### Ce que les protocoles rendent portable
 
-Deux frontières sont désormais standardisées. Un outil exposé par MCP est utilisable par tout cadriciel qui possède un client MCP : c'est le cas de Microsoft Agent Framework, de l'OpenAI Agents SDK, d'ADK et du Claude Agent SDK, d'après leurs propres pages [6][9][10][12]. Un agent exposé par A2A est appelable par un agent bâti autrement : CrewAI, Microsoft Agent Framework et ADK documentent les deux rôles, client et serveur [5][8][11]. Les protocoles eux-mêmes sont décrits aux chapitres 5 et 6.
+Deux frontières sont désormais standardisées. Un outil exposé par MCP est utilisable par tout cadriciel qui possède un client MCP : c'est le cas de Microsoft Agent Framework, de l'OpenAI Agents SDK, d'ADK et du Claude Agent SDK, d'après leurs propres pages [6][9][10][12]. LangChain et CrewAI en fournissent un aussi, limité aux outils dans les pages lues [16][18]. Un agent exposé par A2A est appelable par un agent bâti autrement : CrewAI, Microsoft Agent Framework et ADK documentent les deux rôles, client et serveur [5][8][11]. Les protocoles eux-mêmes sont décrits aux chapitres 5 et 6.
 
 D'autres actifs se transportent aussi : les Agent Skills, que lisent ADK et le Claude Agent SDK [10][12], dont le format voyage, mais non le comportement (chapitre 13); et les traces, si elles suivent OpenTelemetry (chapitre 33).
 
@@ -164,7 +168,7 @@ La documentation d'ADK donne la règle la plus utile [11]. Des sous-agents locau
 
 ### Les réserves
 
-**Les versions divergent.** La documentation de CrewAI donne 0.3.0 comme version de protocole par défaut de son serveur A2A [5]. Les exemples de Microsoft publient des cartes d'agent en version 1.0 et exigent la version 1 du SDK A2A [8]. Or la version 1.0 rompt avec la 0.3 (chapitre 6). Deux cadriciels qui « parlent A2A » ne s'entendent donc pas forcément sans réglage.
+**Les versions divergent.** La documentation de CrewAI donne 0.3.0 comme version de protocole par défaut de son serveur A2A [5]. Les exemples de Microsoft publient des cartes d'agent en version 1.0 et exigent la version 1 du SDK A2A [8]. Or la version 1.0 rompt avec la 0.3 (chapitre 6). Deux cadriciels qui « parlent A2A » ne s'entendent donc pas forcément sans réglage. Certains produits font le pont : Agent Server sert la version 1.0 tout en acceptant les noms de méthode de la 0.3 [17].
 
 **Le contrat reste lâche.** CrewAI permet de demander un format de réponse à un agent distant, puis précise qu'A2A ne l'impose pas : l'agent appelé n'est pas tenu de l'honorer [5]. La validation des sorties reste à la charge de l'appelant.
 
@@ -182,9 +186,9 @@ Le verrouillage se déplace donc plus qu'il ne disparaît. Il quitte la biblioth
 
 | Cadriciel | Unité de composition | État et reprise | Attaches relevées |
 |---|---|---|---|
-| LangGraph [1][2][3] | Graphe : état typé, nœuds, arêtes | Points de contrôle par fil; magasin à choisir | Bibliothèque autonome; déploiement géré en produit distinct |
-| CrewAI [4][5] | Flow qui enveloppe des Crews | État de Flow persistant | Production A2A renvoyée à la plateforme commerciale AMP |
-| Microsoft Agent Framework [6][7][8] | Agent, harnais, workflow à graphe | Sessions; points de contrôle par super-étape; extension durable | Multi-modèles; paquets en préversion selon le langage |
+| LangGraph [1][2][3] | Graphe : état typé, nœuds, arêtes | Points de contrôle par fil; magasin à choisir | Bibliothèque autonome sous licence MIT; déploiement géré et A2A dans un produit distinct |
+| CrewAI [4][5] | Flow qui enveloppe des Crews | État de Flow persistant | Licence MIT; production A2A renvoyée à la plateforme commerciale AMP |
+| Microsoft Agent Framework [6][7][8] | Agent, harnais, workflow à graphe | Sessions; points de contrôle par super-étape; extension durable | Multi-modèles; licence MIT; paquets en préversion selon le langage |
 | OpenAI Agents SDK [9] | Agent, transfert, garde-fou | Sessions; bac à sable reprenable | Pente vers l'API et le traçage de l'éditeur |
 | Google ADK [10][11] | Agents, workflows gabarits et à graphe | Sessions, état, mémoire; reprise non lue | Multi-modèles; déploiement libre ou Google Cloud |
 | Claude Agent SDK [12] | Harnais, sous-agents, hooks | Sessions à reprendre ou dupliquer | Binaire Claude Code; conditions commerciales |
@@ -196,6 +200,14 @@ Quatre questions, dans cet ordre, suffisent à réduire la liste.
 2. **Le chemin est-il connu d'avance ?** Si oui, un workflow à graphe ou un moteur de processus (chapitre 17). Si non, un harnais, borné par des permissions.
 3. **Que coûte une interruption ?** Une tâche de quelques secondes se relance. Une tâche de plusieurs heures, ou à effets irréversibles, exige des points de contrôle en base de données, voire un moteur d'exécution durable (chapitre 18).
 4. **Quelles attaches l'organisation accepte-t-elle ?** Modèle unique ou non, runtime exploité en interne ou géré, licence. C'est ici, et non sur les fonctionnalités, que les produits diffèrent le plus.
+
+### Ce que disent les études de défauts
+
+Deux études empiriques éclairent la fragilité de cette couche. La première analyse 409 bogues corrigés dans cinq cadriciels : LangChain, LangGraph, CrewAI, AutoGen et SmolAgents [20]. Plus de la moitié (52 %) sont des fautes de programmation ordinaires, 22 % des fautes propres aux agents, surtout liées au modèle, et 12 % des fautes de documentation, le plus souvent un exemple de code erroné. La couche qui intègre le modèle est la plus touchée (24,7 % des bogues), et moins de la moitié de ses correctifs sont accompagnés d'un test. Les conditions de déclenchement tiennent à la configuration dans 92 % des cas analysés, d'abord aux réglages du modèle. Enfin, 16 des 35 bogues rejoués se transposent à un autre cadriciel. Les auteurs ne classent pas les produits : leurs décomptes portent sur des bogues corrigés, non sur des taux de défaut.
+
+La seconde, connue par son résumé, porte sur 5 669 rapports de bogue et 809 demandes de fonction dans cinq cadriciels. Selon sa propre classification, 76 % des bogues se manifestent par un comportement fonctionnel incorrect, et leurs causes relèvent davantage des API, de la configuration, de l'analyse et de la sérialisation que dans les cadriciels d'apprentissage profond [21].
+
+Trois précautions en découlent, déduites ici : essayer la combinaison exacte de fournisseur et de modèle employée, plutôt que de se fier à la prise en charge annoncée; vérifier qu'un réglage est bien appliqué; ne pas tenir un exemple de documentation pour valide dans la version installée. La parenté des défauts d'un cadriciel à l'autre va dans le sens de la thèse du chapitre : le choix du produit pèse moins que la discipline d'essai (chapitre 34).
 
 ---
 
@@ -226,6 +238,7 @@ Quatre questions, dans cet ordre, suffisent à réduire la liste.
 - Une procédure écrite réduit les défauts de spécification et de coordination, mais laisse paraître plus d'échecs de vérification.
 - Le verrouillage se déplace de la bibliothèque vers le runtime géré, l'observabilité et la plateforme.
 - Aucun chiffre comparatif de coût en jetons n'a été lu; le critère vérifiable est la maîtrise du contexte envoyé au modèle.
+- Les études de défauts montrent des bogues surtout ordinaires, concentrés dans l'intégration du modèle et souvent transposables d'un cadriciel à l'autre : la discipline d'essai compte plus que le produit.
 
 ---
 
@@ -252,13 +265,23 @@ Source secondaire :
 
 15. [Zhu et coll. — LLM-Based Multi-Agent Orchestration: A Survey of Frameworks, Communication Protocols, and Emerging Patterns](https://www.preprints.org/manuscript/202604.2147) — prépublication non lue (accès refusé), citée comme appui par le plan initial.
 
+Sources ajoutées le 14 novembre 2026 :
+
+16. [LangChain — MCP](https://docs.langchain.com/oss/python/langchain/mcp)
+17. [LangSmith — point d'accès A2A d'Agent Server](https://docs.langchain.com/langsmith/server-a2a)
+18. [CrewAI — MCP, vue d'ensemble](https://docs.crewai.com/en/mcp/overview)
+19. Dépôts de [LangGraph](https://github.com/langchain-ai/langgraph), de [CrewAI](https://github.com/crewAIInc/crewAI) et de [Microsoft Agent Framework](https://github.com/microsoft/agent-framework) — licence indiquée sur la page d'accueil.
+20. [Zhang, Zhang et Tan — Dissecting Bug Triggers and Failure Modes in Modern Agentic Frameworks: An Empirical Study (arXiv 2604.08906, 10 avril 2026)](https://arxiv.org/html/2604.08906v1) — prépublication.
+21. [Zhu et coll. — Where Agent Frameworks Fall Short: Examining Functional Challenges and Usability Concerns (arXiv 2602.21806, version 4 du 6 août 2026)](https://arxiv.org/abs/2602.21806) — prépublication; résumé seulement.
+
 ## Limites de ce chapitre
 
 - Le relevé [15], appui prévu par le plan initial, n'a pas été lu, et sa parution dans *Future Internet* n'a pas été confirmée. Sa comparaison des cadriciels n'est donc pas reprise, et rien n'établit que les quatre critères de la section 20.1 en proviennent.
 - La plupart des pages ont été lues par un outil d'extraction qui en restitue le contenu en condensé; les pages de Microsoft et d'Anthropic l'ont été en texte intégral. La version A2A par défaut de CrewAI et la limite de récursion de LangGraph, à revérifier, ont été confirmées à la relecture.
 - La page d'accueil d'ADK n'annonce la version 2.0 en disponibilité générale que pour TypeScript; le statut des autres langages n'a pas été lu.
-- Une à trois pages par produit ont été lues; ne sont pas décrits : la reprise sur échec dans ADK et dans l'OpenAI Agents SDK, la prise en charge de MCP et d'A2A par LangGraph, celle de MCP par CrewAI, les modèles acceptés par le Claude Agent SDK, les licences de LangGraph, de CrewAI et de Microsoft Agent Framework.
+- Une à quatre pages par produit ont été lues; restent non décrits la reprise sur échec dans ADK et dans l'OpenAI Agents SDK, et les modèles acceptés par le Claude Agent SDK. La prise en charge de MCP par LangChain et par CrewAI, celle d'A2A par Agent Server et les licences de LangGraph, de CrewAI et de Microsoft Agent Framework ont été lues le 14 novembre 2026, de [16] à [19]; les licences viennent de la page d'accueil des dépôts, non du texte des licences.
 - Aucun chiffre de coût en jetons ni d'adoption n'est cité, faute de source lue; le raisonnement de la section 20.1 sur le coût des abstractions est une analyse. Les seuls chiffres de performance, sur MetaGPT et ChatDev, sont repris du chapitre 21 sans relecture de MAST.
 - La convergence des cadriciels, le déplacement du verrouillage et la distinction entre bibliothèque et harnais sont des synthèses de ce chapitre, non des thèses lues dans une source.
 - MetaGPT n'est connu que par le résumé de son article; son rangement parmi les approches « déclaratives » suit le plan initial et convient mieux à DSPy.
+- La sous-section sur les études de défauts (20.7) date du 14 novembre 2026. [21] n'est connue que par son résumé, et ses versions antérieures portaient un autre titre et un échantillon plus petit. Les trois précautions sont des déductions de ce chapitre; [20] ne classe pas les cadriciels.
 - Un critère (« attaches ») a été ajouté aux quatre du plan initial.

@@ -5,7 +5,7 @@ Corpus documentaire sur la conception, l'intégration, la gouvernance et la supe
 | Dossier | Contenu | Livrable principal |
 | ------- | ------- | ------------------ |
 | [`2026/`](2026/) | Six livrables en PDF (échelle de maturité, veille technologique, revue de littérature, cadre de référence, note AMF, compendium), une présentation en onze diapositives et la chaîne de recomposition des PDF. | [`2026/documents/`](2026/documents/) |
-| [`2027/`](2027/) | Compendium 2027 : édition consolidée en dix parties, cinquante chapitres et huit annexes (1 062 pages), avec son manuscrit et sa chaîne de composition. | [`2027/CompendiumMaster.pdf`](2027/CompendiumMaster.pdf) |
+| [`2027/`](2027/) | Compendium 2027 : édition consolidée en dix parties, cinquante chapitres et huit annexes (1 086 pages), avec son manuscrit et sa chaîne de composition. | [`2027/CompendiumMaster.pdf`](2027/CompendiumMaster.pdf) |
 
 ## Édition 2026
 
@@ -28,7 +28,7 @@ Le reste est sous `Master/` :
 - `manuscrit/` : manuscrit unifié (ouverture, 50 chapitres, annexes A à H, figures SVG), source du PDF. Les chapitres 48 à 50 (partie X, « Recherche scientifique ») n'ont pas d'édition d'origine : ils n'existent que là.
 - `fusion/` : volets avant (`origine/`) et après (`reecrit/`) réécriture, avec leurs comptes rendus.
 - `schemas/` : scripts qui produisent les schémas des exposés, et `schemas.json` qui les place.
-- `audit/` : audit de publication; `corrections.json` est le registre unique des corrections appliquées au manuscrit.
+- `audit/` : audit de publication; `corrections.json` est le registre unique des corrections de l'audit et des compléments postérieurs appliqués au manuscrit.
 - `recherche/` : fiches et notes à l'appui de la partie X.
 - `gabarit.typ`, `filtres/` : gabarit Typst et filtres pandoc.
 

@@ -202,7 +202,7 @@ $endif$
 ]
 
 #page[
-  #set text(size: 10pt)
+  #set text(size: 9.7pt)
   #let titre2(t) = block(above: 1.05em, below: 0.6em, text(size: 12pt, weight: "bold", fill: marine, t))
   #text(size: 17pt, weight: "bold", fill: marine)[À propos de cette édition]
   #v(-0.5em)
@@ -224,13 +224,13 @@ $endif$
   - *Renvois.* «~Chapitre 14~» et «~section 14.2~» désignent toujours la numérotation de ce volume.
   - *Sources.* Les numéros entre crochets renvoient aux sources de l'exposé de référence du chapitre. Les volets «~Mise en œuvre~» ne citent pas de sources.
   - *Fil rouge.* Le cas du Groupe Boréal, fiction située en 2027 et en 2028 et racontée au passé, se lit dans les volets; écrit dans un autre ordre que celui des chapitres, il évoque parfois une étape traitée plus loin.
-  - *Dates de référence.* Faits arrêtés au 11 novembre 2026 (chapitres 1 à 47) et au 13 novembre 2026 (partie X).
+  - *Dates de référence.* Faits arrêtés au 11 novembre 2026 (chapitres 1 à 47) et au 13 novembre 2026 (partie X); compléments du 14 novembre dans vingt chapitres.
   - *Plan initial.* Les sections «~Limites~» appellent ainsi le plan de commande de l'ouvrage et son relevé de sources.
   - *Encadrés.* Synthèse exécutive, fil rouge, décision d'architecture, éclairage sectoriel~: chaque genre garde la même présentation dans tout l'ouvrage.
 
   #titre2[Rapprochement des deux éditions]
 
-  Les volets «~Mise en œuvre~», l'ouverture et les annexes F à H ont été réécrits dans le ton des exposés; ce que l'exposé d'un chapitre établit déjà y est remplacé par un renvoi. Là où un volet contredisait l'exposé, qui est sourcé, il a été corrigé d'après lui. Quand un volet prescrit plus que l'exposé ne retient, ou qu'un extrait de code suit une version antérieure d'un protocole, une phrase le signale. Un audit de publication a ensuite relu tout l'ouvrage et y a porté $nbcorrections$ corrections, consignées dans un registre. Rapprochement et audit ont été faits par des agents sous contrôle automatique, sans relecture humaine intégrale~: des écarts peuvent subsister.
+  Les volets «~Mise en œuvre~», l'ouverture et les annexes F à H ont été réécrits dans le ton des exposés; ce que l'exposé d'un chapitre établit déjà y est remplacé par un renvoi. Là où un volet contredisait l'exposé, qui est sourcé, il a été corrigé d'après lui. Quand un volet prescrit plus que l'exposé ne retient, ou qu'un extrait de code suit une version antérieure d'un protocole, une phrase le signale. Un audit de publication a ensuite relu tout l'ouvrage et y a porté $nbcorrections$ corrections, consignées dans un registre. Après l'audit, $nbcomplements$ compléments et harmonisations, non audités, ont été inscrits au même registre. Rapprochement, audit et compléments ont été faits par des agents sous contrôle automatique, sans relecture humaine intégrale~: des écarts peuvent subsister.
 ]
 
 // Table des matières : parties, chapitres et volets.

@@ -2,7 +2,7 @@
 
 *Question directrice : comment s'organise une entreprise où des agents travaillent ?*
 
-> **État de référence :** articles de McKinsey du 26 septembre 2025 et du 5 octobre 2026, enquête State of AI du 25 août 2026, six travaux de recherche parus de 2022 à 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre : [1] à [10] ont été lues, les articles savants par leur résumé sauf [6]; [11] est secondaire.
+> **État de référence :** articles de McKinsey du 26 septembre 2025 et du 5 octobre 2026, enquête State of AI du 25 août 2026, six travaux de recherche parus de 2022 à 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre : [1] à [10] ont été lues, les articles savants par leur résumé sauf [6]; [11] est secondaire; [12] a été ajoutée le 14 novembre 2026.
 
 Les chapitres précédents traitent l'agent comme un objet technique. Or un agent en production a un propriétaire, des approbateurs et des collègues qui reçoivent ses sorties, relations qu'aucun protocole ne décrit.
 
@@ -173,6 +173,12 @@ Le modèle opérationnel doit donc prévoir comment se forme un superviseur qui 
 
 L'article de 2026 décrit une institution financière passée d'une formation générale à un apprentissage par rôle, avec accompagnement entre pairs, développement propre aux gestionnaires et démonstrations répétées en situation réelle [2]. Du côté réglementaire, l'obligation européenne de maîtrise de l'IA a été allégée par le Digital Omnibus (chapitre 35), tandis que la ligne directrice E-23 du BSIF demande à la haute direction de veiller aux compétences (chapitre 39).
 
+### Emploi et perte de pratique
+
+Deux effets sur les personnes débordent la question des compétences à acquérir. Le premier est l'emploi : les mesures disponibles portent sur l'IA générative plutôt que sur les agents, et la section 48.8 en fait le relevé. Le second est la perte de pratique. Un superviseur qui ne fait plus la tâche perd peu à peu la capacité de juger le travail de l'agent, et la révision de routine tourne à l'approbation machinale (section 22.5).
+
+Un article de position propose contre cet effet des mesures qui relèvent du modèle opérationnel : des exercices du métier sans IA, une alternance entre travail assisté et travail non assisté, du temps de révision prévu à l'horaire, et l'abandon des objectifs de productivité qui découragent l'examen [12]. Leur efficacité n'a pas été mesurée.
+
 ---
 
 ## 41.6 Conduite du changement
@@ -255,6 +261,7 @@ Deux modes de défaillance encadrent le choix. Un centre qui examine tout devien
 - Si les agents absorbent le travail d'entrée, la relève des superviseurs doit être organisée délibérément.
 - Le changement se mesure à la refonte des flux, des rôles et des incitatifs, pas au taux d'utilisation.
 - Centre d'excellence ou fédération : le choix se fait fonction par fonction, règles et plateforme au centre, refonte et propriété des agents dans les domaines.
+- La supervision s'use si le superviseur ne pratique plus le métier. L'alternance entre travail assisté et travail non assisté est proposée, sans mesure d'efficacité.
 
 ---
 
@@ -277,6 +284,10 @@ Source secondaire :
 
 11. [Measuring Agents in Production (étude MAP, arXiv 2512.04123)](https://arxiv.org/abs/2512.04123) — repris du chapitre 4, non relu ici.
 
+Source ajoutée le 14 novembre 2026 :
+
+12. [Mitchell, Ghosh et Passi — AI Agents Push Humans Out of the Loop (arXiv 2608.23642, version 3 du 6 septembre 2026)](https://arxiv.org/html/2608.23642) — article de position, lu pour le chapitre 22.
+
 ## Limites de ce chapitre
 
 - Le rapport State of Organizations 2026 de McKinsey, cité par le plan initial, n'a pas été lu. L'article [2] le remplace; la méthode des enquêtes qu'il cite n'y est pas publiée.
@@ -286,6 +297,7 @@ Source secondaire :
 - La recherche citée en 41.2 et 41.3 précède les agents à base de modèle de langage ou porte sur des assistants. Sa transposition aux agents autonomes est une hypothèse de ce chapitre.
 - Aucune étude évaluée par les pairs n'a été trouvée sur le nombre d'agents qu'une personne peut superviser, ni sur l'efficacité comparée d'un centre d'excellence et d'un modèle fédéré.
 - Le lien entre travail d'entrée et formation de l'expertise (41.5) relève de la connaissance générale et de l'argument de [2], non d'une mesure.
+- La sous-section « Emploi et perte de pratique » (41.5) date du 14 novembre 2026. Elle n'apporte aucune mesure sur l'emploi : elle renvoie à la section 48.8 et repose, pour la perte de pratique, sur un article de position [12].
 - Les tableaux de 41.4 et de 41.7 sont des synthèses de ce chapitre.
 
 ## Mise en œuvre — Modèle opérationnel cible, facteur humain (HOTL) et prospective 2028–2030 {.volet}

@@ -2,7 +2,7 @@
 
 *Question directrice : que montrent les déploiements documentés ?*
 
-> **État de référence :** article de Nubank publié à KDD 2026 (août 2026), étude *Measuring Agents in Production* dans sa version 4, portrait québécois des utilisations de l'IA au 15 juin 2026 et guide du MCN sur l'IA agentique (2026). Les numéros entre crochets renvoient aux sources en fin de chapitre; [1] à [11] sont des pages primaires lues pour ce chapitre, [12] est secondaire.
+> **État de référence :** article de Nubank publié à KDD 2026 (août 2026), étude *Measuring Agents in Production* dans sa version 4, portrait québécois des utilisations de l'IA au 15 juin 2026 et guide du MCN sur l'IA agentique (2026). Les numéros entre crochets renvoient aux sources en fin de chapitre; [1] à [11] sont des pages primaires lues pour ce chapitre, [12] est secondaire; [13] à [15], relevées le 14 novembre 2026, ne sont connues que par leur résumé.
 
 Les récits de déploiement d'agents abondent. Presque tous viennent de ceux qui vendent les agents : communiqués, résultats trimestriels, témoignages de clients. Ils donnent des chiffres sans dire qui a mesuré, par rapport à quoi, ni sur quelle période. Les textes où un déploiement est décrit avec sa méthode de mesure se comptent sur les doigts d'une main.
 
@@ -52,7 +52,7 @@ Les auteurs énoncent les limites de leur étude : recrutement par leurs réseau
 
 ### Le cas
 
-Le seul déploiement de premier niveau trouvé est celui de Nubank, banque numérique qui dit servir plus de cent millions d'utilisateurs. Onze de ses employés l'ont décrit dans un article publié à KDD 2026 [1]. Cinq agents de soutien y sont en production, bâtis sur le même cadre : livraison de carte, gestion de dettes, limite de crédit, gestion de carte, explication de produits.
+Le déploiement de premier niveau lu en entier est celui de Nubank, banque numérique qui dit servir plus de cent millions d'utilisateurs. Onze de ses employés l'ont décrit dans un article publié à KDD 2026 [1]. Cinq agents de soutien y sont en production, bâtis sur le même cadre : livraison de carte, gestion de dettes, limite de crédit, gestion de carte, explication de produits.
 
 ### Une architecture délibérément simple
 
@@ -149,6 +149,18 @@ Les deux textes sont des prépublications, lues par leur résumé. ORCA-bench é
 
 Les trois types de preuves convergent. Ce qui est documenté en production, c'est l'agent qui prépare : il génère un workflow, pose un diagnostic, propose un correctif. L'action sur un système en marche reste à l'humain ou à un moteur déterministe. Les bancs d'essai justifient cette prudence. Le chapitre 34 traite l'exploitation des agents eux-mêmes; la section 47.6, ce qu'exige le passage à une remédiation automatisée, dont un catalogue d'actions bornées contre l'injection par les journaux.
 
+### Trois publications de 2026
+
+Une recherche complémentaire a trouvé trois textes parus en 2026, connus ici par leur seul résumé.
+
+**Tri d'alarmes dans un centre de distribution.** Des auteurs d'Amazon décrivent un agent qui diagnostique des alarmes en suivant une procédure de 44 étapes sur plusieurs systèmes de mesure. Au lieu de générer du code à chaque requête, une chaîne préalable compile les étapes répétées en outils validés et versionnés, que l'agent appelle ensuite directement. En production, le temps de réponse médian baisse de 42 %; sur 1 500 alarmes historiques, le taux d'erreur de bout en bout baisse jusqu'à 53 % [13]. Le gain vient de ce qu'on retire au modèle : la variance d'une exécution à l'autre sur les étapes répétées.
+
+**Exploitation de systèmes de recommandation.** Une prépublication rapporte 78 jours de service d'une plateforme d'agents dans trois lignes d'affaires de Tencent : 1 624 lancements d'outils, dont 78,6 % réussis. Son principe est de borner l'autonomie aux points de décision d'une chaîne fixée d'avance, l'humain gardant la frontière entre le diagnostic et l'exécution. Les auteurs précisent qu'aucune comparaison contrôlée avec la situation antérieure n'a été faite [14].
+
+**Entretiens dans douze entreprises.** Seize praticiens du génie logiciel situent les usages en production aux niveaux 1 à 3 d'une échelle de maturité qui en compte six; quatre entreprises disposent de capacités expérimentales au-delà. Quatre obstacles reviennent : la gestion du contexte, la performance sur des contenus propres à l'entreprise, le non-déterminisme et la qualification, la confidentialité des données [15].
+
+Ces trois textes confirment le portrait de MAP : des agents étroits, enfermés dans une chaîne déterministe et qualifiés lentement. Lu en entier, le premier relèverait sans doute du niveau 1 de la hiérarchie de la section 42.1; les deux autres, des niveaux 3 et 2.
+
 ---
 
 ## 42.5 Secteur public
@@ -242,7 +254,7 @@ Le domaine le mieux documenté est aussi le plus borné : des questions de clien
 
 ## Points à retenir
 
-- Un seul déploiement d'agents à grande échelle a été trouvé dans un article évalué par les pairs avec mesure sur trafic réel : celui de Nubank, en service à la clientèle.
+- Un seul déploiement d'agents à grande échelle a été lu en entier dans un article évalué par les pairs avec mesure sur trafic réel : celui de Nubank, en service à la clientèle. Trois autres textes de 2026, connus par leur résumé, décrivent le même type d'agents étroits et bornés.
 - Ses gains sont relatifs à une base mal définie, et ses agents restent sous les experts humains dans les cinq domaines mesurés.
 - Pour les documents financiers, la preuve est un banc d'essai : au mieux, trois documents sur quatre sont entièrement corrects, et l'architecture la plus précise perd son avantage à fort volume.
 - En opérations TI, les agents documentés préparent, diagnostiquent ou génèrent un workflow. Les bancs d'essai situent l'analyse autonome d'incidents entre 10 % et 25 % de réussite.
@@ -273,6 +285,12 @@ Source secondaire :
 
 12. [ServiceNow AI Research — fiche de publication de l'article de Marquez Ayala et Béchard](https://www.servicenow.com/research/publication/orlando-marquez-gene-cain2025.html) — résultat de recherche seulement, page non lue.
 
+Résumés seulement, relevés le 14 novembre 2026 :
+
+13. [Kujanpää et coll. — Tool-Making and Self-Evolving LLM Agents in Low-Latency Systems (arXiv 2607.08010, 9 juillet 2026)](https://arxiv.org/abs/2607.08010)
+14. RecSys Factory: Bounding LLM Agent Autonomy to Decision Points in the Industrial Recommender Lifecycle (prépublication, 2026) — résumé repris d'un index d'articles; page non retrouvée.
+15. [Apostolou, Bosch et Olsson — Agentic AI in Industry: Adoption Level and Deployment Barriers (arXiv 2605.14675, 14 mai 2026)](https://arxiv.org/abs/2605.14675)
+
 ## Limites de ce chapitre
 
 - Toutes les pages, sauf le guide [10] lu en texte intégral, ont été lues au moyen d'un outil d'extraction automatique qui résume la page. À l'audit, les tableaux tirés de [1] et de [4], les chiffres de [2], le portrait [8] et le communiqué [11] ont été relus par le même outil et concordent; ils n'ont pas été collationnés à l'œil sur les PDF.
@@ -280,6 +298,6 @@ Source secondaire :
 - La hiérarchie en six niveaux est une proposition de ce chapitre, pas un résultat de recherche.
 - L'« étude sur la génération de workflows » que le plan initial nomme parmi les appuis n'y est pas identifiée. L'article de ServiceNow [3] a été retenu parce qu'il correspond à cette description, sans certitude que ce soit l'étude visée. Sa parution à CAIN 2025 ne repose que sur [12] : la page arXiv relue ne la mentionne pas.
 - Les intitulés du plan initial sont conservés, mais la section 42.3 présente un banc d'essai et non un déploiement, et la section 42.4 repose en partie sur des bancs d'essai lus par leur seul résumé [5] [6] [7]. Les résultats d'ITBench datent de février 2025; ni son résumé ni une mise à jour n'ont été relus à l'audit. Le banc d'essai financier [4] ne dit pas comment la charge de ses essais de mise à l'échelle a été produite.
-- La recherche de cas n'est pas exhaustive : une douzaine de pages ont été lues. D'autres articles industriels existent sans doute, et l'affirmation « un seul déploiement de premier niveau » vaut pour cette recherche seulement.
+- La recherche de cas n'est pas exhaustive : une douzaine de pages ont été lues en entier. Une recherche complémentaire du 14 novembre 2026, dans un index d'articles, a trouvé d'autres textes industriels, dont les trois de la section 42.4, connus par leur seul résumé. Un quatrième, sur un agent d'achat en ligne d'Amazon, n'est pas repris : son résumé ne donne aucun chiffre. Le rattachement de ces textes aux niveaux de la section 42.1 est provisoire, faute de lecture complète.
 - Le fichier de données du portrait [9] n'a été lu qu'à moitié, et la répartition des initiatives par statut, publiée sous forme d'image, n'a pas été lue. Aucun cas du secteur public hors Québec n'a été examiné; les guides du Canada et de la Nouvelle-Galles du Sud que cite le guide du MCN n'ont pas été relus ici.
 - La description de Nubank comme banque numérique et l'année de sortie des modèles du banc d'essai financier viennent de la connaissance générale.

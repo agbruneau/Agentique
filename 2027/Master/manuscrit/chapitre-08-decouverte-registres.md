@@ -2,7 +2,7 @@
 
 *Question directrice : comment un agent trouve-t-il un outil ou un pair, et pourquoi lui faire confiance ?*
 
-> **État de référence :** registre MCP en préversion (API `v0.1`), spécification A2A 1.0, proposition ARD v0.91 du 26 août 2026, AGNTCY Agent Directory v1.0 du 19 février 2026, documentation d'AWS, de Microsoft, de MuleSoft et d'Apigee consultée le 11 novembre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre; toutes sont des pages lues pour ce chapitre, [22] étant un communiqué d'éditeur.
+> **État de référence :** registre MCP en préversion (API `v0.1`), spécification A2A 1.0, proposition ARD v0.91 du 26 août 2026, AGNTCY Agent Directory v1.0 du 19 février 2026, documentation d'AWS, de Microsoft, de MuleSoft et d'Apigee consultée le 11 novembre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre; toutes sont des pages lues pour ce chapitre, [22] étant un communiqué d'éditeur; [23] à [27] ont été ajoutées le 14 novembre 2026, dont [23], [26] et [27] par leur seul résumé.
 
 Un protocole dit comment parler à un outil ou à un agent. Il ne dit pas lequel existe, où il se trouve, ni s'il mérite d'être appelé. Tant que le parc tient en dix serveurs, une liste dans un fichier de configuration suffit. Au-delà, il faut un mécanisme de découverte, et les candidats se multiplient : registre central, fichiers publiés sous `/.well-known`, annuaire pair-à-pair, catalogues de plateformes.
 
@@ -62,7 +62,7 @@ Cette preuve établit une chose : celui qui publie sous `com.example` contrôle 
 
 ### Ce que le registre ne promet pas
 
-La politique de modération est explicite : les consommateurs doivent présumer une modération minimale ou nulle [4]. Sont retirés les contenus illégaux, les maliciels, le pourriel et les serveurs qui ne fonctionnent pas. Ne sont **pas** retirés les serveurs de mauvaise qualité ni ceux qui présentent des vulnérabilités de sécurité. Un retrait prend la forme d'un statut `deleted`; la métadonnée reste accessible par l'API.
+La politique de modération est explicite : les consommateurs doivent présumer une modération minimale ou nulle [4]. Sont retirés les contenus illégaux, les maliciels, le pourriel et les serveurs qui ne fonctionnent pas. Ne sont **pas** retirés les serveurs de mauvaise qualité ni ceux qui présentent des vulnérabilités de sécurité. Un retrait prend la forme d'un statut `deleted`; la métadonnée reste accessible par l'API. La section 8.8 mesure ce que cette politique laisse passer.
 
 Le registre ne garantit ni sa disponibilité ni la durabilité de ses données [3]. Les métadonnées d'une version sont immuables, à l'exception du champ `status`, qui peut passer à `deprecated` ou à `deleted`.
 
@@ -170,6 +170,42 @@ Un agent qui cherche un outil à l'exécution ne devrait voir que les enregistre
 
 ---
 
+## 8.8 Ce que mesurent les études de l'écosystème
+
+Les sections précédentes décrivent des mécanismes. Cinq études récentes mesurent ce qui circule réellement dans les registres et les places de marché publics. Aucune ne porte sur un registre interne.
+
+### Des catalogues gonflés
+
+Une campagne de quatorze jours sur six places de marché a relevé près de 17 000 entrées de serveurs, dont un peu moins de la moitié sont des projets valides. Le reste est fait de dépôts vides, de gabarits, de copies inactives et de projets abandonnés [25]. Parmi les serveurs valides, 40,9 % ont été mis à jour dans les 90 jours, et 21,9 % sont inactifs depuis plus d'un an. Le nombre d'entrées d'un catalogue ne dit donc rien de l'offre utilisable.
+
+### Des identités qui se détournent
+
+Une étude de 67 057 serveurs dans six registres montre que le lien entre une entrée et son éditeur n'est pas entretenu [24]. Les registres étudiés ne vérifient ni les liens soumis ni leur propriétaire, et ne mettent pas leurs fiches à jour quand un compte change. Deux détournements en découlent. Quand le compte GitHub d'un mainteneur est supprimé, son nom redevient disponible après 90 jours, et quiconque le reprend hérite de l'entrée. Quand le compte est renommé, l'ancien nom devient lui aussi réclamable. Les auteurs comptent 516 serveurs détournables de l'une ou l'autre façon dans quatre registres. Sur npm, 80,6 % de 408 groupes de noms voisins sont tenus par des développeurs différents. S'y ajoutent des justificatifs laissés dans des exemples de configuration : neuf jetons d'accès GitHub, dont cinq encore valides.
+
+### Des entrées qui changent sous le même nom
+
+Le recensement le plus proche du sujet de ce chapitre porte sur le registre public de MCP lui-même : 21 643 serveurs et 72 606 enregistrements de version, relevés en août 2026 [23]. D'après son résumé, 51,1 % des serveurs à plusieurs versions ont changé ce qu'ils annoncent d'une version à l'autre, 40,6 % l'ont fait sans le signaler, et 4,2 % ont redirigé leur point d'accès distant vers un autre hôte en gardant la même identité au registre. Le protocole ne signale pas ce dernier changement aux clients déjà installés. Cette dérive silencieuse va de pair avec des chances presque trois fois plus élevées de constat de gravité élevée (rapport de cotes de 2,96). La popularité protège peu : le nombre d'étoiles d'un dépôt est un mauvais indicateur de sûreté.
+
+### Des défauts fréquents, des scanners peu fiables
+
+Sur 1 899 serveurs à code ouvert, 7,2 % contiennent des vulnérabilités générales et 5,5 % un empoisonnement d'outil propre à MCP, d'après le résumé de l'étude, dont les auteurs demandent un balayage de sécurité automatisé dans les registres [26]. Le recensement du registre public observe, après correction par la précision de son scanner, environ 7,6 % de constats de gravité élevée [23]. L'instrument lui-même est toutefois en cause : sur une collection de 64 611 serveurs, les scanners existants signalent 96,89 % des serveurs comme risqués, et moins de la moitié des alertes vérifiées à la main sont fondées [27].
+
+### Ce que ces mesures changent
+
+Elles donnent un contenu aux critères d'approbation de la section 8.7.
+
+| Constat mesuré | Conséquence pour le registre interne |
+|---|---|
+| La moitié des entrées des places de marché sont sans valeur [25] | Sélectionner, non refléter |
+| Une entrée peut changer de mains sans changer de nom [24] | Vérifier le propriétaire à l'inscription, puis périodiquement |
+| Un serveur change ce qu'il annonce, ou son hôte, sous la même identité [23] | Épingler la version et le point d'accès; comparer les définitions à chaque synchronisation |
+| La popularité protège peu [23] | Ne pas approuver sur le nombre d'étoiles ou de téléchargements |
+| Les scanners se contredisent et surestiment [27] | Tenir un résultat de balayage pour un signal de tri, non pour une décision |
+
+La colonne de droite est une lecture de ce chapitre. Ces études portent sur des registres publics et sur du code ouvert; la plupart sont des prépublications, et trois ne sont connues ici que par leur résumé.
+
+---
+
 ## Grille de décision
 
 | Décision | Option par défaut | Quand s'en écarter |
@@ -185,6 +221,7 @@ Un agent qui cherche un outil à l'exécution ne devrait voir que les enregistre
 | Catalogue de domaine | Attendre la stabilisation; sinon générer `ai-catalog.json` et `ard.json` d'une même source | Découvrabilité externe érigée en objectif d'affaires |
 | Découverte par les agents à l'exécution | Limitée aux entrées approuvées; métadonnées tenues pour non fiables | — |
 | Annuaire distribué | Veille | Écosystème entre organisations sans opérateur central acceptable |
+| Synchronisation depuis un registre public | Comparer les définitions et le point d'accès à la version approuvée; tout écart suspend l'entrée | — |
 
 ---
 
@@ -198,6 +235,7 @@ Un agent qui cherche un outil à l'exécution ne devrait voir que les enregistre
 - L'adressage par contenu d'AGNTCY garantit l'intégrité d'un enregistrement, pas son auteur ni sa qualité.
 - Les catalogues d'entreprise se distinguent par leur alimentation : déclaration, détection, ou les deux. AWS, le plus explicite, ne vérifie pas ce que ses enregistrements référencent.
 - Un registre ne gouverne que s'il a un cycle de vie, un propriétaire par entrée et une passerelle qui applique ses décisions. Une approbation vaut pour une version, pas pour un serveur.
+- Les mesures de l'écosystème public justifient l'approbation : la moitié des entrées des places de marché sont sans valeur, des entrées changent de mains ou de contenu sous le même nom, et les scanners se contredisent.
 
 ---
 
@@ -231,6 +269,14 @@ Communiqué d'éditeur :
 
 22. [Salesforce — découverte automatisée dans MuleSoft Agent Fabric (22 janvier 2026)](https://www.salesforce.com/news/stories/mulesoft-agent-fabric-automated-agent-discovery/)
 
+Études de mesure, lues le 14 novembre 2026 pour la section 8.8 :
+
+23. [Kraishan — Same Name, Different Server: A Security Census of Silent Drift in the Model Context Protocol Ecosystem (arXiv 2609.14119, 12 septembre 2026)](https://arxiv.org/abs/2609.14119) — prépublication, un seul auteur; résumé seulement.
+24. [Li et Gao — Toward Understanding Security Issues in the Model Context Protocol Ecosystem (arXiv 2510.16558, version 1 du 18 octobre 2025)](https://arxiv.org/html/2510.16558v1) — prépublication.
+25. [Guo et coll. — A Measurement Study of Model Context Protocol (arXiv 2509.25292, version 1 du 29 septembre 2025)](https://arxiv.org/html/2509.25292v1) — prépublication.
+26. [Hasan et coll. — Model Context Protocol (MCP) at First Glance: Studying the Security and Maintainability of MCP Servers (arXiv 2506.13538, version 5 du 13 avril 2026)](https://arxiv.org/abs/2506.13538) — résumé seulement.
+27. [Chen et coll. — Rethinking MCP Security: A Large-Scale Study of Runtime MCP Servers and Security Scanner Reliability (arXiv 2607.11086, 13 juillet 2026)](https://arxiv.org/abs/2607.11086) — prépublication; résumé seulement.
+
 ## Limites de ce chapitre
 
 - Plusieurs pages longues ([8], [11], [13], [14], [20], [21]) ont été lues par un outil d'extraction qui les condense; les formulations normatives rapportées ne sont pas des citations.
@@ -239,4 +285,5 @@ Communiqué d'éditeur :
 - NANDA n'est connu que par le relevé [14], cosigné par ses concepteurs. Entra Agent ID n'est abordé que par la page de convergence, et le schéma détaillé des Server Cards n'a pas été lu.
 - La documentation d'AWS n'emploie pas le terme « disponibilité générale » dans les pages lues. Chez MuleSoft, la normalisation au format de carte A2A ne repose que sur le communiqué [22].
 - Les remarques sur la compromission d'un domaine (8.4) et sur le retrait dans un réseau distribué (8.5), ainsi que les critères d'approbation (8.7), sont des raisonnements de ce chapitre.
-- Aucune donnée d'adoption n'est citée, faute de source primaire vérifiée.
+- Les seules données chiffrées sur l'écosystème sont celles de la section 8.8, ajoutée le 14 novembre 2026. [23], [26] et [27] n'y sont connus que par leur résumé; [24] et [25] ont été lus par l'outil d'extraction. Le résumé de [23] ne dit pas si les 40,6 % se rapportent à tous les serveurs à plusieurs versions ou à ceux qui ont changé. [25] donne des décomptes différents dans son résumé et dans ses tableaux; ceux du tableau des serveurs sont retenus. La parution de [26] dans une revue, signalée par un index d'articles, ne figure pas sur la page lue.
+- Ces études portent sur des registres et des places de marché publics. Aucune donnée sur des registres internes d'entreprise ni sur leur adoption n'a été trouvée, et la colonne « Conséquence pour le registre interne » est une lecture de ce chapitre.

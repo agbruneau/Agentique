@@ -153,7 +153,7 @@ Un serveur local est un programme téléchargé et exécuté sur le poste, avec 
 
 ### Le serveur fantôme
 
-MCP09 désigne les serveurs déployés hors de toute gouvernance, souvent avec des réglages par défaut faibles [3]. C'est l'informatique fantôme appliquée aux agents, avec une circonstance aggravante : un serveur local s'installe en une ligne de configuration et hérite aussitôt des accès du poste. Le registre officiel n'aide pas ici, puisqu'il authentifie l'éditeur sans vérifier le code et ignore les serveurs privés (chapitres 5 et 8).
+MCP09 désigne les serveurs déployés hors de toute gouvernance, souvent avec des réglages par défaut faibles [3]. C'est l'informatique fantôme appliquée aux agents, avec une circonstance aggravante : un serveur local s'installe en une ligne de configuration et hérite aussitôt des accès du poste. Le registre officiel n'aide pas ici, puisqu'il authentifie l'éditeur sans vérifier le code et ignore les serveurs privés (chapitres 5 et 8); la section 8.8 chiffre ce que les registres publics laissent passer.
 
 ### Contrôles
 

@@ -2,7 +2,7 @@
 
 *Question directrice : comment des agents partagent-ils ce qu'ils ont appris sans se corrompre ?*
 
-> **État de référence :** documentation des éditeurs et prépublications consultées le 11 novembre 2026; liste OWASP Top 10 for Agentic Applications du 9 décembre 2025 et bilan OWASP du troisième trimestre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre. Les articles d'arXiv ont été lus au niveau du résumé, sauf mention contraire; [30] à [32] sont des sources secondaires.
+> **État de référence :** documentation des éditeurs et prépublications consultées le 11 novembre 2026; liste OWASP Top 10 for Agentic Applications du 9 décembre 2025 et bilan OWASP du troisième trimestre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre. Les articles d'arXiv ont été lus au niveau du résumé, sauf mention contraire; [30] à [32] sont des sources secondaires; [33], page d'éditeur, a été lue le 14 novembre 2026.
 
 Un agent sans mémoire recommence chaque tâche à zéro. Un agent doté d'une mémoire conserve des préférences, des faits, des leçons tirées d'échecs, et s'en sert plus tard, souvent dans une autre session et parfois pour un autre utilisateur. Dès que plusieurs agents lisent et écrivent le même fonds, la mémoire devient un état partagé et mutable, alimenté par un modèle de langage à partir de contenus qu'il ne maîtrise pas.
 
@@ -124,6 +124,12 @@ Faute de standard, la portabilité se prépare à la conception. Ce qui suit est
 - **Traiter toute importation comme du contenu non fiable.** Une mémoire importée est un texte que l'agent tiendra pour vrai; la prépublication de mai range d'ailleurs la résistance à l'injection parmi les exigences de son protocole [26].
 
 Le chapitre 27 replace cette question dans la stratégie multi-plateformes et dans les clauses de sortie. Le chapitre 46 (section 46.4) recommande de garder la mémoire hors du fournisseur de modèles : une bascule de modèle ne perd alors que les caches.
+
+### La mémoire gérée d'une plateforme
+
+Les fournisseurs infonuagiques offrent aussi la mémoire comme service. Chez Google, Memory Bank conserve et restitue des informations tirées des sessions, comme les préférences durables d'un utilisateur; les souvenirs y sont produits par des modèles génératifs, dans la région du point d'accès du modèle employé [33]. La page de présentation renvoie à des guides sur la génération, l'ingestion d'événements, la consultation des révisions d'un souvenir et le contrôle d'accès par conditions IAM, et annonce le chiffrement par des clés gérées par le client ainsi que la résidence des données au repos. Elle ne décrit ni l'extraction, ni la portée d'un souvenir, ni son expiration, et ne mentionne aucun risque d'empoisonnement.
+
+Pour la portabilité, la conséquence est celle de cette section : une mémoire produite et conservée par la plateforme n'a de valeur de migration que si les sources dont elle est tirée restent chez l'entreprise.
 
 ---
 
@@ -266,6 +272,10 @@ Sources secondaires :
 31. [ZenML LLMOps Database — Provenance and Lineage Tracking in LLM-Powered Agent Memory Systems](https://www.zenml.io/llmops-database/provenance-and-lineage-tracking-in-llm-powered-agent-memory-systems) — compte rendu d'une présentation de Zep, page lue.
 32. [OWASP Top 10 for Agentic Applications 2026 — page de téléchargement](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/) — document PDF non lu.
 
+Page d'éditeur lue le 14 novembre 2026 :
+
+33. [Google Cloud — Memory Bank, vue d'ensemble](https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/overview)
+
 ## Limites de ce chapitre
 
 - Le texte officiel de l'entrée ASI06 [32] n'a pas été lu; sa description repose sur trois billets du projet OWASP [18][19][20].
@@ -273,7 +283,7 @@ Sources secondaires :
 - Le régime d'effacement de la LPRPDE n'est examiné ni ici ni au chapitre 38.
 - Le fonctionnement interne de Mem0 et de Graphiti, ainsi que la règle de suppression de Zep, viennent de textes de leurs éditeurs ou d'un compte rendu secondaire [31].
 - La page de Letta sur les dépôts partagés ne décrit pas la résolution des conflits.
-- La mémoire des plateformes de Microsoft et de Google et la mémoire paramétrique ou latente [2] ne sont pas traitées.
+- De la mémoire gérée de Google, seule la page de présentation [33] a été lue, le 14 novembre 2026. Celle de Microsoft et la mémoire paramétrique ou latente [2] ne sont pas traitées.
 - Les recommandations de la section 14.4, les colonnes « Exemple » et « Risque » du tableau de la section 14.1, le tableau comparatif de la section 14.2, la lecture des trois incidents OWASP en 14.5 et la grille de décision sont des synthèses de ce chapitre.
 
 ## Mise en œuvre — Architectures de mémoire agentique distribuée et bi-temporelle {.volet}

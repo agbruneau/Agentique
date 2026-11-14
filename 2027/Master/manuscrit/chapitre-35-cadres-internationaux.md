@@ -2,7 +2,7 @@
 
 *Question directrice : quelles obligations s'appliquent à un système d'agents ?*
 
-> **État de référence :** règlement (UE) 2024/1689 (AI Act) modifié par le règlement (UE) 2026/1744, en vigueur depuis le 27 juillet 2026; cadre de Singapour pour l'IA agentique, version 1.5 du 20 mai 2026; ISO/IEC 42105 au stade « en cours de publication » le 22 octobre 2026; NIST AI RMF 1.0, en révision. Les numéros entre crochets renvoient aux sources en fin de chapitre : [1] à [7] sont des pages primaires lues pour ce chapitre, [8] à [10] des sources secondaires.
+> **État de référence :** règlement (UE) 2024/1689 (AI Act) modifié par le règlement (UE) 2026/1744, en vigueur depuis le 27 juillet 2026; cadre de Singapour pour l'IA agentique, version 1.5 du 20 mai 2026; ISO/IEC 42105 au stade « en cours de publication » le 22 octobre 2026; NIST AI RMF 1.0, en révision. Les numéros entre crochets renvoient aux sources en fin de chapitre : [1] à [7] sont des pages primaires lues pour ce chapitre, [8] à [10] des sources secondaires; [11] à [15] ont été ajoutées le 14 novembre 2026 pour la section 35.7.
 
 Aucun des grands cadres de gouvernance de l'IA n'a été écrit pour les agents. Le règlement européen vise des systèmes d'IA et des modèles. La norme ISO/IEC 42001 vise le système de management d'une organisation. Le cadre du NIST vise des risques. Un agent qui planifie, appelle des outils et modifie des systèmes tiers entre dans ces catégories sans y être nommé. Parmi les cadres examinés ici, seul Singapour en a publié un dont l'agent est l'objet, et ce cadre n'oblige à rien.
 
@@ -201,6 +201,32 @@ Les cadres ne se contredisent pas : ils opèrent à des niveaux différents, et 
 
 ---
 
+## 35.7 Autres juridictions : un relevé
+
+Les sections précédentes couvrent quatre cadres. Cinq autres comptent pour une entreprise présente à l'international. Ce relevé en donne l'état d'après une source par juridiction, sans l'analyse des sections 35.1 à 35.5.
+
+| Juridiction | Instrument | Force | Les agents y sont-ils nommés ? |
+|---|---|---|---|
+| Corée du Sud | Loi-cadre sur l'IA, en vigueur le 22 janvier 2026 [11] | Loi; amendes après un délai de grâce | Non, d'après le commentaire lu |
+| Japon | Loi de promotion de l'IA; deuxième plan de base du 14 juillet 2026 [12] | Loi de principes et plan gouvernemental | Oui : l'IA agentique est le premier thème du plan |
+| Royaume-Uni | Aucune loi sur l'IA [13] | Régulateurs sectoriels | Non traité dans la source lue |
+| Chine | Avis d'application sur les agents intelligents, 8 mai 2026 [14] | Avis administratifs | Oui : les agents en sont l'objet |
+| OCDE | Rapport sur le paysage de l'IA agentique, février 2026 [15] | Travail d'experts, non contraignant | Oui : définitions comparées |
+
+**Corée du Sud.** La loi s'applique aux exploitants qui développent l'IA comme à ceux qui l'intègrent à leurs produits, y compris hors de Corée quand le système touche des utilisateurs ou des marchés coréens. Une entreprise étrangère sans établissement doit désigner un représentant local au-delà de seuils de revenu ou d'audience [11]. La loi crée une catégorie d'IA « à fort impact », pour des secteurs comme la santé, l'énergie, les transports, l'embauche et l'analyse biométrique, assortie d'obligations d'explication, de plan de protection des utilisateurs, d'intervention et de supervision humaines, et de documentation. Tout exploitant d'IA générative ou à fort impact doit en prévenir l'utilisateur. Les amendes, plafonnées à 30 millions de wons, ne seraient appliquées qu'après un délai de grâce d'un an [11]. Le classement suit l'usage, comme dans l'AI Act.
+
+**Japon.** La loi de promotion de l'IA est une loi de principes; le plan de base en est l'instrument. Le deuxième plan, arrêté le 14 juillet 2026, s'ouvre sur l'adaptation à l'essor de l'IA agentique et retient deux axes : adopter l'IA agentique, y compris dans l'administration, et bâtir une « souveraineté de l'IA » [12]. Il constate que les risques deviennent plus complexes, en particulier dans l'IA agentique, annonce une révision continue des lois et des lignes directrices, et confie à l'institut japonais de sécurité de l'IA l'évaluation des modèles, la traçabilité et les garde-fous. Le résumé lu n'énonce aucune obligation propre aux agents.
+
+**Royaume-Uni.** Selon un commentaire de septembre 2026, le pays reste sans cadre législatif d'ensemble sur l'IA, et un projet de loi n'est pas attendu avant la fin de 2027 [13]. La seule initiative parlementaire relevée, un projet de loi d'un député visant à interdire les systèmes de superintelligence, a peu de chances d'aboutir. Le régime applicable aux agents est donc celui des régulateurs sectoriels et du droit de la protection des données, que ce chapitre n'a pas lu.
+
+**Chine.** L'Administration du cyberespace a publié le 8 mai 2026 des avis d'application sur l'usage normalisé et le développement innovant des agents intelligents, qui tracent un cadre de gouvernance propre aux agents [14]. La fiche lue n'en donne ni le contenu ni la date d'effet. Avec la série de normes GB/Z 185-2026 (chapitre 11), la Chine est, des juridictions relevées ici, celle qui prend le plus directement l'agent pour objet.
+
+**OCDE.** Un groupe d'experts a publié en février 2026 un rapport sur le paysage de l'IA agentique et ses fondements conceptuels. Ses auteurs distinguent l'agent d'IA, système qui perçoit son environnement et y agit avec une certaine autonomie en se servant d'outils, de l'IA agentique, où plusieurs agents coordonnés décomposent des tâches et poursuivent des buts complexes dans la durée, avec peu de supervision [15]. Le rapport rattache ces traits à la définition du système d'IA de l'OCDE, que reprennent des régulateurs financiers canadiens (chapitre 38). Ses auteurs réclament des typologies utiles aux politiques, fondées sur le degré d'autonomie, l'adaptabilité, le domaine et l'échelle d'impact, et davantage de données d'adoption.
+
+Deux constats s'ajoutent à ceux de la section 35.6. Le texte contraignant nouveau, en Corée, classe par usage et ne nomme pas l'agent, comme le règlement européen. Les textes qui le nomment, au Japon, en Chine et à l'OCDE, sont des plans, des avis ou des travaux d'experts. L'écart relevé en ouverture de ce chapitre se retrouve donc hors d'Europe.
+
+---
+
 ## Grille de décision
 
 | Décision | Option par défaut | Quand s'en écarter |
@@ -213,6 +239,7 @@ Les cadres ne se contredisent pas : ils opèrent à des niveaux différents, et 
 | Supervision humaine | Approbation aux actions à fort enjeu ou irréversibles; refus par défaut si l'approbation est indisponible | Action réversible et à faible enjeu : vérification après coup |
 | Certification ISO/IEC 42001 | À rechercher si les clients ou le marché la demandent | Ne pas la présenter comme preuve de conformité à l'AI Act |
 | NIST AI RMF | Vocabulaire commun avec des partenaires américains | Attendre la révision avant d'y aligner un outillage coûteux |
+| Activité en Corée, au Japon, au Royaume-Uni ou en Chine | Vérifier le texte local, à partir du relevé de la section 35.7 | — |
 
 ---
 
@@ -226,6 +253,7 @@ Les cadres ne se contredisent pas : ils opèrent à des niveaux différents, et 
 - Le cadre de Singapour (version 1.5) est le seul des quatre à prendre l'agent pour objet. Il n'oblige à rien, mais fournit le mode d'emploi qui manque aux autres.
 - ISO/IEC 42001 certifie un système de management, pas un agent; ISO/IEC 42105, sur la supervision humaine, est en cours de publication. Le NIST AI RMF est volontaire, en révision, et sans profil pour les agents.
 - Le premier geste de conformité : inventorier ce que l'agent peut faire, à quoi il est branché et qui il touche.
+- Hors d'Europe, le même écart se retrouve : la loi coréenne classe par usage sans nommer l'agent; le Japon, la Chine et l'OCDE le nomment dans des plans, des avis ou des rapports.
 
 ---
 
@@ -247,6 +275,14 @@ Sources secondaires, lues :
 9. [Allen & Gledhill — lancement du cadre de Singapour, 13 février 2026](https://www.allenandgledhill.com/sg/publication/articles/32314/launches-new-model-ai-governance-framework-for-agentic-ai)
 10. [GAICC — état de la famille ISO/IEC 42000, 7 octobre 2026](https://gaicc.org/blog/iso-42000-standards-family/)
 
+Sources ajoutées le 14 novembre 2026, pour la section 35.7 :
+
+11. [Cooley — South Korea's AI Basic Act: Overview and Key Takeaways (27 janvier 2026)](https://www.cooley.com/news/insight/2026/2026-01-27-south-koreas-ai-basic-act-overview-and-key-takeaways) — commentaire de cabinet, secondaire.
+12. [Cabinet du Japon — Summary of the Japan's Second AI Basic Plan (décision du 14 juillet 2026)](https://www8.cao.go.jp/cstp/ai/ai_plan/aiplan_g_eng_20260714.pdf) — résumé officiel, six pages.
+13. [Lewis Silkin — AI judgment day on the horizon while UK lawmakers play catch up (14 septembre 2026)](https://www.lewissilkin.com/insights/2026/09/14/ai-judgment-day-on-the-horizon-while-uk-lawmakers-play-catch-up) — commentaire de cabinet, secondaire.
+14. [Digital Policy Alert — avis d'application de l'Administration du cyberespace de Chine sur les agents intelligents (8 mai 2026)](https://digitalpolicyalert.org/event/39795-cyberspace-administration-of-china-issued-implementation-opinion-on-standardised-application-and-innovative-development-of-intelligent-agents) — fiche d'un observatoire, secondaire.
+15. [OECD.AI — Can we create a clear understanding of what agentic AI is and does? (3 mars 2026)](https://oecd.ai/en/wonk/what-agentic-ai-is-and-does) — billet des auteurs du rapport de l'OCDE.
+
 ## Limites de ce chapitre
 
 - Le texte de l'AI Act n'a pas été lu directement. Le contenu des articles 3, 6, 9, 12, 14, 15, 25, 43 et 50 est rapporté d'après la prépublication [1], dont environ un quart du texte (fin et conclusions) n'a pas été chargé.
@@ -255,4 +291,4 @@ Sources secondaires, lues :
 - Le NIST AI RMF n'est connu que par sa page de présentation, relue à l'audit avec [6] : le contenu des quatre fonctions n'est pas détaillé.
 - Le résumé de [1] et les passages cités de [4] ont été relus à l'audit; du cadre de Singapour, les sections 2.3 et 2.4 et les études de cas restent survolées, et son caractère non contraignant est déduit de sa formulation.
 - La table 35.6 est une lecture propre à ce chapitre, non une correspondance officielle. Sont aussi des déductions : l'attribution d'un agent d'intégrateur aux autorités nationales, et l'extension de la modification substantielle au routage, à la bascule de fournisseur et à la distillation.
-- Chine, Japon, Corée, Royaume-Uni et OCDE ne sont pas couverts; la série chinoise GB/Z 185-2026 est présentée au chapitre 11.
+- La section 35.7, ajoutée le 14 novembre 2026, n'est qu'un relevé : une source par juridiction, dont trois secondaires. La loi coréenne est décrite d'après un commentaire de cabinet antérieur à la publication de tous ses décrets [11]. Le Japon l'est d'après le résumé officiel de son plan [12], sans lecture de ses lignes directrices pour les entreprises. Le Royaume-Uni l'est d'après un commentaire qui ne traite pas des régulateurs sectoriels [13]. La Chine l'est d'après la fiche d'un observatoire, qui ne donne ni le contenu ni la date d'effet des avis [14]. L'OCDE l'est d'après un billet des auteurs du rapport, non d'après le rapport [15]. La série chinoise GB/Z 185-2026 est présentée au chapitre 11.

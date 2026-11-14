@@ -52,6 +52,7 @@ Classement par thème, puis alphabétique. Chaque définition fixe l'usage du mo
 | serveur | server | Dans MCP, service qui expose des outils, des ressources et des prompts (5) |
 | sous-registre | subregistry | Registre dérivé d'un registre amont, qui y ajoute curation et politiques (8, 27) |
 | tâche | task | Unité de travail à état, suivie par un identifiant (5, 6) |
+| trousse de compatibilité | technology compatibility kit (TCK) | Suite d'essais qui vérifie qu'une mise en œuvre respecte un protocole; A2A en publie une (26) |
 
 ## A.3 Données, contexte et mémoire
 
@@ -109,11 +110,13 @@ Classement par thème, puis alphabétique. Chaque définition fixe l'usage du mo
 | bac à sable | sandbox | Environnement isolé qui borne ce que du code peut atteindre (31). Isolation matérielle ou logicielle (microVM Firecracker, OpenSandbox, WebAssembly/WASI) où s'exécutent le code généré et les outils tiers, sans accès implicite au système hôte ni au réseau interne. |
 | biais et complaisance d'automatisation | automation bias, rubber-stamping | Tendance d'un opérateur humain trop sollicité à approuver machinalement les recommandations fluides et persuasives d'un agent (OWASP ASI09); elle prive d'effet un contrôle HITL mal calibré (22) |
 | coupe-circuit | kill switch | Mécanisme d'urgence piloté par le centre d'opérations de sécurité (SOC) : il révoque immédiatement les jetons OAuth, suspend les sagas actives et isole un agent ou un serveur MCP compromis (32) |
+| dérive silencieuse | silent drift | Changement de ce qu'un serveur annonce, ou de son hôte, sous la même identité au registre et sans signalement (8) |
 | détention exclusive de clé en HSM | Hold Your Own Key (HYOK) | Modèle cryptographique souverain : les clés maîtresses de chiffrement d'état et de pseudonymisation résident exclusivement dans un module matériel (HSM) sous contrôle juridique du client, hors de portée de l'opérateur infonuagique (46) |
 | empoisonnement de mémoire | memory & context poisoning | Écriture malveillante en mémoire, à effet différé (14, 31) |
 | empoisonnement d'outil | tool poisoning | Instruction cachée dans la description d'un outil (31). Attaque par injection indirecte dont les directives malveillantes se cachent aussi dans les schémas de paramètres et dans les charges utiles qu'un serveur MCP retourne. |
 | environnement d'exécution de confiance | trusted execution environment | Zone isolée par le matériel, souvent une machine virtuelle entière, qui protège la donnée en calcul des logiciels et opérateurs de l'exploitant, guère d'un accès physique (45, 46). Chiffré par le matériel (AMD SEV-SNP, Intel TDX, NVIDIA H100/B200 CC) et attesté par racine silicium, il permet l'inférence souveraine sans exposer les données en clair à l'hébergeur. |
 | garde-fous | guardrails | Contrôles qui bornent les entrées, les sorties ou les actions d'un agent (23, 34) |
+| injection de fautes | fault injection | Essai qui provoque des défaillances pour observer ce qui les absorbe (21, 34) |
 | injection indirecte | indirect prompt injection | Consigne déposée par un tiers dans un contenu que l'agent lit (31) |
 | invariant | invariant | Règle du système qui doit tenir sur toute la trajectoire (32) |
 | piste d'audit | audit trail | Journal complet, jamais échantillonné, de qui a fait quoi et sous quelle autorité (30, 33) |
@@ -172,10 +175,12 @@ Classement par thème, puis alphabétique. Chaque définition fixe l'usage du mo
 | connecteur | connector | Composant qui met en œuvre les échanges d'un espace de données chez chaque participant (37, 45) |
 | empreinte de déploiement | deployment footprint | Règle de qualification juridique : le niveau de conformité applicable à un agent polyvalent se détermine d'après la criticité maximale des données et des systèmes aval auxquels il a effectivement accès (38) |
 | espace de données | data space | Cadre de partage de données entre organisations, sous règles communes (37). Les données ne sont pas centralisées : des connecteurs normalisés (EDC) appliquent techniquement des contrats d'usage ODRL et vérifient les identités légales vLEI. |
+| fatigue d'approbation | approval fatigue | Baisse d'attention de l'approbateur à force de demandes répétées, jusqu'à l'approbation machinale (22) |
 | haut risque | high-risk | Catégorie de l'AI Act, définie par l'usage du système (35) |
 | IA agentique fantôme | shadow agents | Agents autonomes que des employés créent ou connectent, par des outils infonuagiques ou des clés personnelles, à l'insu des équipes d'architecture, de sécurité et de conformité (43) |
 | imputabilité | accountability | Obligation, pour une personne désignée, de répondre d'un agent (39) |
 | inventaire | inventory | Liste tenue à jour des agents, de leurs droits et de leurs responsables (39) |
+| modèle des trois lignes | Three Lines Model | Répartition des rôles entre gestion du risque, surveillance et audit interne indépendant (39) |
 | prépublication | preprint | Article diffusé avant l'évaluation par les pairs (passim) |
 | prolifération anarchique d'agents | agent sprawl | Multiplication non coordonnée d'agents autonomes dans les unités d'affaires et les suites de logiciels en tant que service, d'où des redondances fonctionnelles, des angles morts de sécurité et un dérapage des coûts d'inférence (29, 43) |
 | rapprochement à trois voies | three-way matching | Concordance du bon de commande, de la réception et de la facture avant paiement (45) |
@@ -190,15 +195,19 @@ Classement par thème, puis alphabétique. Chaque définition fixe l'usage du mo
 | A2A | Agent2Agent Protocol | 6 |
 | AAIF | Agentic AI Foundation | 11 |
 | ACP | Agent Communication Protocol, Agentic Commerce Protocol ou Agent Context Protocol | 6, 7, 10 |
+| ACVM | Autorités canadiennes en valeurs mobilières | 38 |
+| AMF | Autorité des marchés financiers (Québec) | 38 |
 | AP2 | Agent Payments Protocol | 10 |
 | CRDT | Conflict-Free Replicated Data Type | 46 |
 | DID | Decentralized Identifier | 7, 29 |
 | DSP | Dataspace Protocol | 37, 45 |
+| EUCS | European Cybersecurity Certification Scheme for Cloud Services | 37 |
 | HYOK | Hold Your Own Key | 46 |
 | ID-JAG | Identity Assertion JWT Authorization Grant | 5, 29 |
 | MAST | Multi-Agent System Failure Taxonomy | 21 |
 | MCP | Model Context Protocol | 5 |
 | SEP | Specification Enhancement Proposal | 5, 11 |
+| TCK | Technology Compatibility Kit | 26 |
 | TEE | Trusted Execution Environment | 45, 46 |
 | TTFT | Time to First Token | 44 |
 | WIMSE | Workload Identity in Multi-System Environments | 11, 29 |

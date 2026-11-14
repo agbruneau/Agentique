@@ -2,7 +2,7 @@
 
 *Question directrice : que valent les promesses d'ouverture des éditeurs ?*
 
-> **État de référence :** documentation des éditeurs consultée le 11 novembre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre : [1] à [14] sont des pages primaires lues, [15] à [19] des sources secondaires, non lues ou lues lors de l'audit, marquées comme telles. Les pages d'éditeurs établissent ce qu'un éditeur déclare, pas ce qu'un tiers a constaté.
+> **État de référence :** documentation des éditeurs consultée le 11 novembre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre : [1] à [14] sont des pages primaires lues, [15] à [19] des sources secondaires, non lues ou lues lors de l'audit, marquées comme telles; [20] à [22], primaires, ont été ajoutées le 14 novembre 2026. Les pages d'éditeurs établissent ce qu'un éditeur déclare, pas ce qu'un tiers a constaté.
 
 Les grands éditeurs annoncent presque tous la prise en charge de MCP et d'A2A. L'acheteur qui s'arrête à cette mention conclut que la question de l'ouverture est réglée. Elle ne l'est pas. Un protocole fixe la forme des messages; il ne dit ni qui tient l'inventaire des agents, ni qui leur donne une identité, ni quelles règles s'appliquent à un agent venu d'ailleurs.
 
@@ -45,6 +45,10 @@ La page des agents partenaires montre comment un tiers y entre [3]. Elle recense
 La même page signale que les agents déjà construits sur Google Vertex AI ou Amazon Bedrock peuvent être rendus visibles dans le centre d'administration sans développement [3]. Elle ne dit pas qu'ils deviennent observables ou gouvernés : c'est le niveau 1 de l'échelle, déduit de ce que la page tait.
 
 Aucune des trois pages lues ne mentionne MCP ou A2A. L'entrée d'un agent tiers dans le plan de contrôle passe par le SDK d'Agent 365 et par une identité Entra. A2A est intégré ailleurs dans l'offre, à Azure AI Foundry et à Copilot Studio, selon le bilan de la Linux Foundation (chapitres 4 et 6), mais la gouvernance repose sur un mécanisme propre à l'éditeur.
+
+La documentation de Copilot Studio confirme le sens sortant [21]. Un agent Copilot Studio se connecte à un agent externe qui parle A2A, par son point d'accès et non par sa carte, avec trois modes d'authentification : aucun, clé d'API ou OAuth 2.0. La connexion emprunte l'infrastructure des connecteurs personnalisés, ce qui permet de joindre un agent sur site ou dans un réseau virtuel. La page renvoie à MCP pour les outils. Datée du 26 août 2026, elle ne donne ni statut de disponibilité ni version du protocole; elle cherche encore la carte à l'ancien chemin `/.well-known/agent.json`, et son exemple emploie le nom de méthode `message/send`, antérieur à la version 1.0 (chapitre 20).
+
+Une note y laisse au client le soin de vérifier, pour l'agent connecté, les flux de données, les permissions, l'observabilité et la supervision humaine [21]. La plateforme relie; elle ne gouverne pas l'agent d'autrui.
 
 ---
 
@@ -141,7 +145,9 @@ Les deux fournisseurs offrent des briques plutôt qu'une suite, mais leur plan d
 
 ### IBM
 
-IBM affirme que watsonx Orchestrate gère, évalue et optimise les agents sur tout leur cycle de vie, y compris ceux développés hors de ses technologies, et parle d'un plan de contrôle agentique [11]. Ces affirmations viennent d'un billet d'annonce, qui ne mentionne ni MCP ni A2A et ne décrit aucun mécanisme. La documentation du produit n'a pas été lue. IBM est, dans ce chapitre, l'éditeur pour lequel l'écart entre la visibilité chez les analystes et la preuve documentaire lue est le plus grand.
+IBM affirme que watsonx Orchestrate gère, évalue et optimise les agents sur tout leur cycle de vie, y compris ceux développés hors de ses technologies, et parle d'un plan de contrôle agentique [11]. Ces affirmations viennent d'un billet d'annonce, qui ne mentionne ni MCP ni A2A et ne décrit aucun mécanisme. La documentation du kit de développement décrit, elle, le mécanisme [20]. Un agent externe s'inscrit sous l'un de plusieurs types : un point d'accès de complétion de conversation à la manière d'OpenAI, que la page dit le plus courant; A2A, en version 0.3.0 ou 1.0.0, les versions antérieures étant dépréciées; ou un connecteur propre à une plateforme, dont Salesforce Agentforce et Microsoft Copilot Studio. Une commande de découverte recense les agents d'Amazon Bedrock, d'Azure AI Foundry et de Vertex AI, dans l'offre en mode service seulement. L'identité de l'utilisateur peut être transmise à un agent A2A par échange de jeton (RFC 8693).
+
+Les limites sont déclarées. Un agent externe ne peut servir que de collaborateur d'un agent natif. A2A n'est pris en charge que sur JSON-RPC, et les notifications poussées sont en aperçu technique, la plateforme procédant par interrogation périodique. La page ne décrit ni observation ni gouvernance appliquées à l'agent externe, hormis un réglage qui le réserve au plan de contrôle. Elle établit donc l'inventaire, premier niveau de l'échelle de la section 26.1, et rien au-delà. L'écart avec le billet d'annonce se réduit, sans disparaître.
 
 ### UiPath
 
@@ -181,14 +187,14 @@ Dans le tableau, « documenté » signifie écrit dans la documentation de l'éd
 
 | Éditeur | Sens documentés | Réserve principale |
 |---|---|---|
-| Microsoft | Agents tiers intégrés par SDK; inventaire d'agents Vertex AI et Bedrock [3] | Gouvernance par mécanisme propre; licences [1][2] |
+| Microsoft | Agents tiers intégrés par SDK; inventaire d'agents Vertex AI et Bedrock [3]; A2A sortant dans Copilot Studio [21] | Gouvernance par mécanisme propre; licences [1][2]; ni statut ni version d'A2A [21] |
 | Salesforce | MCP et A2A, entrant et sortant [4] | Aucun statut dans le guide; bêta en avril 2026 [19] |
 | ServiceNow | MCP et A2A; gouvernance d'agents tiers [6][16] | Documentation non lue; état de 2026 en source secondaire |
 | SAP | A2A entrant et sortant, passerelle MCP [7] | A2A 0.3.0; composants non disponibles; bidirectionnel à venir |
 | Workday | Inscription d'agents externes par API [8] | Rapports réservés aux agents natifs; condition contractuelle |
 | AWS | MCP et A2A; registre multi-nuage [9] | Aucun statut par service dans la page lue |
 | Google | MCP et A2A 1.0; composants distants [10][17] | Inscription manuelle hors de Google Cloud |
-| IBM | Agents tiers gérés [11] | Aucun mécanisme décrit dans la source lue |
+| IBM | A2A 0.3.0 et 1.0.0 sortant, connecteurs, découverte sur trois nuages [11][20] | Agent externe limité au rôle de collaborateur; gouvernance non documentée |
 | UiPath | Connecteurs; A2A entrant et sortant [12][13] | A2A en préversion |
 | Camunda | MCP dans trois sens [14] | A2A partiel (alpha) |
 
@@ -202,6 +208,8 @@ Dans le tableau, « documenté » signifie écrit dans la documentation de l'éd
 
 Aucun essai d'interopérabilité indépendant entre ces plateformes n'a été trouvé : l'interopérabilité « constatée » se réduit ici à ce que la documentation admet. Une entreprise ne comble ce manque que par ses propres essais, sur trois scénarios au moins : un agent externe appelle la plateforme, la plateforme appelle un agent externe, puis un agent tiers est inscrit, restreint et révoqué depuis le plan de contrôle.
 
+Un instrument commun existe pour le faire. Le projet A2A publie une trousse de compatibilité (TCK), suite d'essais qui valide une mise en œuvre sur trois transports : gRPC, JSON-RPC et HTTP+JSON [22]. Elle lit la carte de l'agent testé, crée un client pour chaque interface déclarée et classe ses essais selon le niveau d'exigence de la spécification : un « MUST » non respecté est un échec, un « SHOULD » ne bloque pas la compatibilité, un « MAY » n'est essayé que si la capacité est déclarée. Le dépôt prévient qu'un résultat automatisé de 100 % n'établit pas la conformité tant que des obligations à vérifier à la main restent en suspens. Il ne publie aucune liste de mises en œuvre qui l'ont passée, et la page lue ne dit pas quelles versions du protocole il couvre. Demander à un éditeur le rapport de la trousse sur son point d'accès A2A est une exigence vérifiable.
+
 ---
 
 ## Grille de décision
@@ -212,6 +220,7 @@ Aucun essai d'interopérabilité indépendant entre ces plateformes n'a été tr
 | Fonction admise en production | Disponibilité générale seulement | Préversion, si un plan d'adaptation est budgété |
 | Sens à valider | Entrant et sortant, pour chaque protocole | Plateforme utilisée comme seul système d'enregistrement : entrant d'abord |
 | Version d'A2A | Exiger la version mise en œuvre et un calendrier vers la 1.0 | — |
+| Conformité à A2A | Rapport de la trousse de compatibilité sur le point d'accès de l'éditeur | Éditeur qui ne sert pas A2A en entrée |
 | Agents tiers | Viser le niveau « gouverné »; noter l'écart avec l'agent natif | Niveau « inventorié » acceptable pour un simple recensement |
 | Identité des agents | Fournisseur d'identité de l'entreprise, non celui de la plateforme | Plateforme unique et pérenne |
 | Choix du plan de contrôle | Celui qui gouverne le plus d'agents déjà en place | Parc homogène chez un seul éditeur |
@@ -229,7 +238,7 @@ Aucun essai d'interopérabilité indépendant entre ces plateformes n'a été tr
 - Une liste de partenaires, un revenu récurrent ou un placement d'analyste ne sont pas des preuves d'interopérabilité.
 - Le premier Magic Quadrant sur la gestion d'agents n'a été lu qu'en reprises; le placement de ServiceNow y est rapporté de façon incohérente.
 - Chaque éditeur inventorie les agents des autres : la coexistence de plusieurs plans de contrôle est l'hypothèse de travail réaliste.
-- Faute d'essais indépendants, la seule interopérabilité constatée est celle que l'entreprise vérifie elle-même.
+- Faute d'essais indépendants, la seule interopérabilité constatée est celle que l'entreprise vérifie elle-même. La trousse de compatibilité d'A2A en fournit un instrument, sans liste publique de résultats.
 
 ---
 
@@ -260,14 +269,21 @@ Sources secondaires, non lues ou lues lors de l'audit :
 18. [Gartner — résumé du Magic Quadrant](https://www.gartner.com/doc/8557473) — accès refusé.
 19. [Salesforce — choisir un patron d'intégration pour Agentforce, 1er avril 2026](https://www.salesforce.com/blog/how-to-choose-integration-pattern-for-agentforce/) — billet d'éditeur, lu lors de l'audit.
 
+Pages primaires ajoutées le 14 novembre 2026 :
+
+20. [IBM watsonx Orchestrate — agents externes, documentation du kit de développement](https://developer.watson-orchestrate.ibm.com/agents/connect_agent.md)
+21. [Microsoft Learn — Copilot Studio, connexion à un agent par le protocole A2A (page datée du 26 août 2026)](https://learn.microsoft.com/en-us/microsoft-copilot-studio/add-agent-agent-to-agent)
+22. [A2A — trousse de compatibilité (TCK), dépôt](https://github.com/a2aproject/a2a-tck)
+
 ## Limites de ce chapitre
 
 - Le rapport de Gartner n'a pas été lu. Sa définition de la catégorie, ses placements et ses réserves ne sont connus que par le billet d'IBM et un compte rendu de presse, relus lors de l'audit; ce dernier se contredit toujours sur ServiceNow.
 - Les pages de produit et de documentation de ServiceNow ont refusé l'accès. L'état de 2026 repose sur un article de presse issu d'un breffage de l'éditeur.
 - La page de SAP n'emploie pas le terme « Agent Hub » que retient le plan initial; elle parle d'Agent Gateway. Le chapitre suit la page.
 - La date de disponibilité de l'Agent System of Record de Workday, que le plan initial situe en 2026, ne figure pas sur la page lue.
-- La documentation de watsonx Orchestrate, de Copilot Studio, d'Azure AI Foundry et de la passerelle d'agents de UiPath n'a pas été lue. L'absence de MCP ou d'A2A dans une page lue ne prouve pas son absence dans le produit.
+- De watsonx Orchestrate [20] et de Copilot Studio [21], une seule page a été lue, le 14 novembre 2026. La documentation d'Azure AI Foundry et de la passerelle d'agents de UiPath ne l'a pas été. L'absence de MCP ou d'A2A dans une page lue ne prouve pas son absence dans le produit.
 - Plusieurs pages ont été lues au moyen d'un outil d'extraction qui en condense le contenu; une nuance du texte d'origine peut avoir échappé. La date du registre de Google est déduite de la place de son entrée dans les notes de version.
 - L'échelle à quatre niveaux de la section 26.1 et l'essai en trois scénarios sont des propositions de ce chapitre, sans source externe.
-- Aucun essai d'interopérabilité entre plateformes n'a été réalisé ni trouvé.
+- Aucun essai d'interopérabilité entre plateformes n'a été réalisé ni trouvé. La trousse de compatibilité d'A2A [22] n'a pas été exécutée; seule la page d'accueil de son dépôt a été lue.
+- Les ajouts du 14 novembre 2026 sont les paragraphes sur Copilot Studio (26.2), sur la documentation d'IBM (26.7) et sur la trousse de compatibilité (26.9), avec les lignes correspondantes du tableau de 26.9 et de la grille. Le rattachement de la documentation d'IBM au premier niveau de l'échelle est une lecture de ce chapitre.
 - L'audit du 12 novembre 2026 a relu [1], [2], [3], [5], [11], [15], [17] et [19] : faits confirmés, réserve « résumé seulement » levée pour [17] et [19], date du registre de Google corrigée (un résumé indiquait le 25 juin). Les statuts chez Salesforce, ServiceNow, AWS, SAP et UiPath n'ont pas été revérifiés.

@@ -2,7 +2,7 @@
 
 *Question directrice : comment une organisation garde-t-elle la maîtrise de ses agents ?*
 
-> **État de référence :** cadre de Singapour pour l'IA agentique, version 1.5 du 20 mai 2026, mise à jour le 5 juin; enquête McKinsey sur la confiance envers l'IA, publiée le 25 mars 2026; guides québécois (2026) et fédéral (page datée du 15 septembre 2026) sur l'IA agentique; documentation des éditeurs dans son état d'octobre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre, toutes des pages primaires lues pour ce chapitre sauf [11].
+> **État de référence :** cadre de Singapour pour l'IA agentique, version 1.5 du 20 mai 2026, mise à jour le 5 juin; enquête McKinsey sur la confiance envers l'IA, publiée le 25 mars 2026; guides québécois (2026) et fédéral (page datée du 15 septembre 2026) sur l'IA agentique; documentation des éditeurs dans son état d'octobre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre, toutes des pages primaires lues pour ce chapitre sauf [11] et [14]; [12] à [15] ont été ajoutées le 14 novembre 2026.
 
 Protocoles, passerelles, identités et journaux sont des mécanismes. Aucun ne dit qui, dans l'organisation, décide qu'un agent existe, en répond et le retire.
 
@@ -149,6 +149,36 @@ Les cadres lus convergent sur un petit nombre de règles.
 
 ---
 
+## 39.6 Assurance : lignes de défense et audit interne
+
+Les sections précédentes disent qui décide et qui répond. Reste à savoir qui vérifie que le dispositif fonctionne. Les cadres propres aux agents lus pour ce chapitre demandent que les contrôles restent efficaces [2][3], sans dire qui s'en assure de façon indépendante.
+
+### Le modèle des trois lignes
+
+Le modèle de l'Institute of Internal Auditors (IIA), révisé en 2020, répartit les rôles [12]. La direction en porte deux types. Les rôles de première ligne livrent les produits et les services, et gèrent le risque. Ceux de deuxième ligne apportent expertise, surveillance et remise en question, par exemple en conformité ou en sécurité de l'information. L'audit interne, troisième ligne, fournit une assurance indépendante et objective sur l'adéquation et l'efficacité de la gouvernance et de la gestion des risques. Son indépendance tient à ce qu'il rend compte à l'organe de gouvernance, accède sans entrave aux personnes et aux données, et ne porte aucune responsabilité de gestion. Le modèle précise que ces « lignes » distinguent des rôles, non des structures, et que la gestion du risque reste une responsabilité de première ligne.
+
+Le tableau suivant, propre à ce chapitre, transpose ces rôles à un parc d'agents.
+
+| Ligne | Qui | Objets |
+|---|---|---|
+| Première | Le propriétaire de l'agent et son responsable technique | Finalité, limites, exploitation, incidents (39.3) |
+| Deuxième | Risque, conformité, sécurité, protection des renseignements personnels | Politiques (39.5), cote de risque, revue aux portes (39.2) |
+| Troisième | Audit interne | Exhaustivité de l'inventaire, respect des portes, effectivité de la supervision humaine et de l'arrêt |
+
+L'instance d'autorisation de la section 39.4 relève de la deuxième ligne. Trois vérifications reviennent à la troisième, parce qu'aucun responsable d'agent n'a intérêt à les faire : rapprocher l'inventaire des journaux d'identité et de passerelle, pour y chercher les agents non déclarés (39.1); contrôler sur échantillon que les changements ont bien rouvert la revue (39.2); vérifier que l'approbation humaine est exercée, et non machinale (chapitre 22).
+
+### Ce que demandent les régulateurs financiers
+
+E-23 exige l'indépendance là où elle compte le plus : la revue d'un modèle doit être indépendante de son développement, et la cote de risque en règle la fréquence, l'intensité et l'étendue. Le texte ne mentionne ni l'audit interne ni les lignes de défense; il renvoie à la ligne directrice du BSIF sur la gouvernance d'entreprise [6]. Du côté québécois, selon une analyse de cabinet, la version définitive de la ligne directrice de l'AMF sur l'IA a retiré le rôle confié à la fonction de gestion des risques et la mention de l'audit interne, qui figuraient dans le projet de 2025 [14] (chapitre 38). Les deux textes laissent donc à l'institution le soin de placer l'assurance.
+
+### L'état de préparation
+
+Deux enquêtes donnent un ordre de grandeur, avec leurs limites. Selon un rapport de la Cloud Security Alliance, commandé par un éditeur de sécurité, 54 % des organisations déclarent de 1 à 100 agents non autorisés, 15 % seulement disent que plus des trois quarts de leurs agents ont un responsable défini, et 43 % utilisent quatre plateformes d'agents ou plus [13]. La page lue ne donne ni la taille ni la composition de l'échantillon.
+
+Du côté de l'audit, une enquête de l'Internal Audit Foundation et d'AuditBoard, menée au dernier trimestre de 2025 auprès de 373 dirigeants d'audit interne nord-américains, porte sur la fraude facilitée par l'IA. Moins de 40 % jugent leur fonction prête à la détecter, 55 % citent le manque de personnel compétent, et 51 % conseillent déjà la direction sur la gouvernance de l'IA [15]. L'audit interne conseille donc plus qu'il n'assure, et aucune de ces enquêtes ne mesure l'assurance fournie sur des agents.
+
+---
+
 ## Grille de décision
 
 | Décision | Option par défaut | Quand s'en écarter |
@@ -160,6 +190,7 @@ Les cadres lus convergent sur un petit nombre de règles.
 | Autorisation | Portes de qualification, de pilote et de production | Usage interne et réversible : approbation déléguée, documentation légère |
 | Instance | Multidisciplinaire, saisie selon la cote de risque | Petite organisation : un responsable désigné et des avis ponctuels |
 | Changement | Revue déclenchée par tout changement de modèle, d'outil ou de source de données | Routage entre modèles : revue de la politique et des modèles qualifiés |
+| Assurance | Audit interne, sur l'inventaire, les portes et la supervision effective | Petite organisation : revue par une personne étrangère à l'exploitation des agents |
 
 ---
 
@@ -172,6 +203,7 @@ Les cadres lus convergent sur un petit nombre de règles.
 - L'autonomie ne déplace pas la responsabilité. Chaque agent a un responsable d'affaires et un responsable technique, sous-agents et agents d'un employé qui part compris.
 - Aucun des cadres lus ne prescrit de comité. Ils exigent une direction qui assume le risque et une autorité imputable qui autorise.
 - Les politiques sont peu nombreuses, proportionnées, et n'ont d'effet qu'appliquées à un point de contrôle technique.
+- Dire qui décide et qui répond ne suffit pas : une troisième ligne vérifie l'inventaire, les portes et la supervision. Les cadres propres aux agents ne la nomment pas, et E-23 n'exige d'indépendance que pour la revue des modèles.
 
 ---
 
@@ -194,6 +226,13 @@ Source secondaire :
 
 11. [Allen & Gledhill — lancement du cadre de Singapour (13 février 2026)](https://www.allenandgledhill.com/sg/publication/articles/32314/launches-new-model-ai-governance-framework-for-agentic-ai)
 
+Sources ajoutées le 14 novembre 2026, pour la section 39.6 :
+
+12. [Institute of Internal Auditors — The IIA's Three Lines Model (juillet 2020)](https://www.theiia.org/globalassets/documents/resources/the-iias-three-lines-model-an-update-of-the-three-lines-of-defense-july-2020/three-lines-model-updated-english.pdf) — principes 3 à 5 lus dans le texte.
+13. [Cloud Security Alliance — Enterprise AI Security Starts with AI Agents (15 avril 2026)](https://cloudsecurityalliance.org/artifacts/enterprise-ai-security-starts-with-ai-agents) — page de présentation d'un rapport commandé par Zenity.
+14. [BLG — L'AMF publie ses attentes sur l'utilisation de l'IA (12 mai 2026)](https://www.blg.com/fr/insights/2026/05/amf-publie-ses-attentes-sur-lutilisation-de-lia) — analyse de cabinet, secondaire.
+15. [Institute of Internal Auditors — communiqué sur l'enquête de l'Internal Audit Foundation et d'AuditBoard (17 février 2026)](https://www.theiia.org/en/content/communications/press-releases/2026/new-survey-from-the-iia-and-auditboard-report-reveals-growing-awareness-of-ai-enabled-fraud-varying-perception-of-audit-preparedness/) — communiqué; rapport non lu.
+
 ## Limites de ce chapitre
 
 - Du rapport McKinsey, seul le texte a été lu; les graphiques, donc les scores par dimension, n'étaient pas lisibles. Rechargée sans succès à l'audit, la page n'a été recoupée que par un résumé de recherche (score moyen, échantillon, période). L'enquête est déclarative et non évaluée par les pairs.
@@ -202,4 +241,5 @@ Source secondaire :
 - La documentation des éditeurs décrit des fonctions, non leur efficacité. ServiceNow, Salesforce, AWS et Google n'ont pas été examinés (chapitre 26).
 - ISO/IEC 42001 n'a pas été lue (chapitre 35).
 - La structure à trois niveaux, la découverte par les journaux, la revue des politiques de routage et le principe d'application technique des politiques sont des raisonnements de ce chapitre.
-- Aucune donnée sur le nombre d'agents par organisation ni sur la part d'agents non déclarés n'est citée, faute de source primaire vérifiée.
+- Les seules données citées sur les agents non autorisés et sans responsable viennent de la page de présentation d'un rapport commandé par un éditeur [13], qui ne donne pas la taille de l'échantillon. Aucune donnée indépendante sur le nombre d'agents par organisation n'a été trouvée.
+- La section 39.6 date du 14 novembre 2026. La transposition des trois lignes aux agents et les trois vérifications confiées à l'audit interne sont des propositions de ce chapitre. Du modèle de l'IIA [12], seuls les principes 3 à 5 ont été lus. Le passage sur l'AMF repose sur une analyse de cabinet [14], le texte du régulateur n'ayant pas pu être chargé. L'enquête [15], connue par son communiqué, porte sur la fraude facilitée par l'IA, non sur l'audit des agents. La ligne directrice du BSIF sur la gouvernance d'entreprise n'a pas été lue.

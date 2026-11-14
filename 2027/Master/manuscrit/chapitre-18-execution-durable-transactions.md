@@ -2,7 +2,7 @@
 
 *Question directrice : que se passe-t-il quand un agent tombe en panne au milieu d'une tâche ?*
 
-> **État de référence :** prépublication SagaLLM (arXiv 2503.11951, version 3 du 9 juillet 2025), brouillon IETF `draft-ietf-httpapi-idempotency-key-header-08` du 22 octobre 2026, documentation des éditeurs consultée le 11 novembre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre; [1] à [13] sont des pages primaires lues pour ce chapitre, [14] et [15] n'ont pas pu être lues.
+> **État de référence :** prépublication SagaLLM (arXiv 2503.11951, version 3 du 9 juillet 2025), brouillon IETF `draft-ietf-httpapi-idempotency-key-header-08` du 22 octobre 2026, documentation des éditeurs consultée le 11 novembre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre; [1] à [13] sont des pages primaires lues pour ce chapitre, [14] et [15] n'ont pas pu être lues; [16] et [17] ont été lues le 14 novembre 2026.
 
 Un agent chargé d'un remboursement a annulé la commande, crédité la carte, puis son processus est tué avant le courriel de confirmation. Au redémarrage, trois questions se posent : qu'est-ce qui a été fait, que peut-on refaire sans dommage, et que faut-il défaire ? Un agent qui ne sait pas y répondre recommence tout, et le client est remboursé deux fois, ou ne recommence rien, et la tâche reste à moitié faite.
 
@@ -203,6 +203,8 @@ Trois apports dépassent la reprise sur panne.
 
 Un moteur durable s'arrête à la frontière de l'organisation. Au-delà, ce sont les protocoles qui portent la poignée durable : l'identifiant de tâche de l'extension Tasks de MCP survit à la connexion (chapitre 5), et A2A définit un cycle de vie de tâche (chapitre 6). L'un et l'autre désignent une tâche; ils ne disent rien de ce que le serveur fait d'une réémission. L'effet unique redevient alors une clause d'interface : UCP demande au marchand d'imposer l'idempotence contre les doubles débits (chapitre 10), et le chapitre 45 subordonne tout règlement à un rapprochement à trois voies, un paiement indu se traitant par compensation (section 45.7).
 
+**Deux autres formes.** Deux produits que le tableau ne couvre pas montrent que la durabilité n'exige pas toujours un serveur d'orchestration. DBOS est une bibliothèque : elle enregistre dans Postgres les entrées du workflow et la sortie de chaque étape, puis, après un arrêt, relance le workflow interrompu en sautant les étapes déjà enregistrées. Aucune autre infrastructure que Postgres n'est requise; en contrepartie, le workflow doit être déterministe, les étapes idempotentes, et le débit est borné par le serveur Postgres [16]. Cloudflare Workflows offre le même modèle par étapes sur la plateforme Workers : relances automatiques, état conservé pendant des heures ou davantage, mise en sommeil, et attente d'un événement externe, par exemple une approbation humaine, avec un délai facultatif [17]. Les deux pages décrivent des mécanismes, non des mesures.
+
 Aucun banc d'essai indépendant comparant ces moteurs sous charge agentique n'a été lu pour ce chapitre. Le tableau reflète ce que chaque éditeur dit de son produit.
 
 ---
@@ -296,6 +298,11 @@ Sources non lues :
 14. [Garcia-Molina et Salem, « Sagas », SIGMOD 1987](https://www.cs.cornell.edu/andru/cs711/2002fa/reading/sagas.pdf) — PDF numérisé, illisible par l'outil; citée d'après [1].
 15. [Agentic AI Pipelines for Enterprise Decision-Making (Nexus)](https://consensus.app/papers/details/22a0c58efa5153b194fcbf5d89fbe04c/) — fiche inaccessible (erreur 403), original introuvable.
 
+Pages d'éditeurs lues le 14 novembre 2026 :
+
+16. [DBOS — architecture](https://docs.dbos.dev/architecture)
+17. [Cloudflare — Workflows](https://developers.cloudflare.com/workflows/)
+
 ## Limites de ce chapitre
 
 - **L'architecture Nexus, second appui prévu par le plan initial, n'a pas été lue** [15]. Deux recherches par titre n'ont retrouvé ni l'article ni son éditeur, et ce plan n'en donne que le titre. Le chapitre ne lui emprunte rien.
@@ -305,7 +312,7 @@ Sources non lues :
 - La page de LangGraph sur l'exécution durable n'a pas été obtenue : l'adresse sert désormais la page sur la persistance. Les règles de rejeu de ce cadriciel et la valeur par défaut du mode de durabilité ne sont donc pas décrites.
 - La publication de SagaLLM dans une revue n'est pas confirmée : l'arXiv n'indique aucune référence de revue, et la page porte un gabarit PVLDB aux champs non remplis. Ses 8 500 derniers caractères n'ont pas été lus.
 - Relues à la source pendant l'audit du 12 novembre : [1] (historique des versions, évaluation, conclusion), [4], [7], [8], [9], [10] et [11]. Le statut de préversion de l'extension de Microsoft, auparavant déduit, est confirmé : la page parle de paquets en préversion. Les pages [2], [3], [5], [6], [12] et [13] n'ont pas été relues.
-- DBOS, Inngest, Cloudflare Workflows, Dapr et Camunda ne sont pas couverts, faute de pages lues. Aucune donnée d'adoption ni de performance n'est citée.
+- De DBOS [16] et de Cloudflare Workflows [17], une seule page a été lue, le 14 novembre 2026. Inngest, Dapr et Camunda ne sont pas couverts, faute de pages lues. Aucune donnée d'adoption ni de performance n'est citée.
 - Les renvois aux chapitres 7, 10, 34, 45, 46 et 47 reprennent ce que ces chapitres affirment, sans relecture de leurs sources.
 
 ## Mise en œuvre — Moteurs d'exécution durable et gestion des cycles de vie de longue durée {.volet}

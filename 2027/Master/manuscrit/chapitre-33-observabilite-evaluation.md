@@ -2,7 +2,7 @@
 
 *Question directrice : comment savoir ce qu'un système d'agents a fait, et s'il l'a bien fait ?*
 
-> **État de référence :** conventions sémantiques GenAI d'OpenTelemetry telles qu'elles figurent sur la branche `main` du dépôt `open-telemetry/semantic-conventions-genai` le 11 novembre 2026 (aucune version publiée), et quatre articles parus entre juin 2024 et juin 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre; toutes sont des pages primaires lues pour ce chapitre, sauf [15], marquée secondaire.
+> **État de référence :** conventions sémantiques GenAI d'OpenTelemetry telles qu'elles figurent sur la branche `main` du dépôt `open-telemetry/semantic-conventions-genai` le 11 novembre 2026 (aucune version publiée), et quatre articles parus entre juin 2024 et juin 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre; toutes sont des pages primaires lues pour ce chapitre, sauf [15], marquée secondaire, et [16], connue par son résumé et relevée le 14 novembre 2026.
 
 Un service classique se surveille par trois signaux : disponibilité, latence, taux d'erreur. Un agent peut les satisfaire tous les trois et accomplir la mauvaise tâche : répondre vite, sans erreur technique, à côté de la demande. La question directrice se dédouble donc. Savoir ce que le système a fait relève de l'observabilité; savoir s'il l'a bien fait relève de l'évaluation.
 
@@ -215,6 +215,10 @@ L'étiquette a une raison d'être : un même score peut signifier des choses opp
 
 Rattaché à la trace, le verdict se lit dans le même entrepôt que la latence et le coût, par agent, par version et par outil. C'est le fondement des objectifs de niveau de service fondés sur les résultats (chapitre 34). Cet événement est lui aussi au statut « Development ».
 
+### Une mesure du coût
+
+Une prépublication de 2026 chiffre le problème sur un agent d'analyse en production, qui sert des dizaines de milliers d'utilisateurs actifs par mois [16]. Ses auteurs comparent, sur 574 exécutions historiques du banc interne, quatre façons d'éviter de tout rejouer : l'échantillonnage aléatoire, la reprise de résultats antérieurs, des sous-ensembles fixes représentatifs et un test adaptatif. Le test adaptatif est le plus fidèle : 200 questions, soit 38,5 % d'une exécution complète, suffisent pour une erreur moyenne de 1,03 point. L'équipe a pourtant déployé des sous-ensembles fixes, stratifiés par difficulté, plus simples à exploiter; ils se transposent sans recalibrage à cinq autres familles d'agents. Le texte n'est connu ici que par son résumé, et il mesure une part du banc rejoué, non un coût en dollars.
+
 ---
 
 ## 33.7 Bancs d'essai d'entreprise
@@ -297,6 +301,10 @@ Source secondaire :
 
 15. [John Hodge — état des conventions GenAI d'OpenTelemetry, mis à jour le 3 novembre 2026](https://john-hodge.com/blog/opentelemetry-genai-semantic-conventions/) — billet d'un particulier, lu et relu le 12 novembre 2026.
 
+Résumé seulement, relevé le 14 novembre 2026 :
+
+16. [She et coll. — Efficient Benchmarking in Production: A Study of an Evolving LLM Agent (arXiv 2609.21267)](https://arxiv.org/abs/2609.21267)
+
 ## Limites de ce chapitre
 
 - Les pages ont été lues au moyen d'un outil d'extraction qui résume le texte; les noms d'attributs et les valeurs sont repris tels que rapportés, sans relecture du texte brut. La fin de la page MCP [7] a été relue à l'audit; la seconde moitié de l'article [11] n'a pas été lue.
@@ -306,7 +314,7 @@ Source secondaire :
 - Les documents sur l'exécution d'outil, la récupération, les métriques et les fournisseurs n'ont pas été lus; le tableau de la section 33.1 les décrit d'après l'index et les pages voisines.
 - Les sections 33.5 à 33.7 reposent en bonne partie sur un seul déploiement, celui de Nubank, décrit par ses auteurs et non vérifié de façon indépendante.
 - La séparation de la trace et de la piste d'audit, le patron à deux zones, l'ordre des évaluateurs dans la grille et les six propriétés d'un banc interne sont des synthèses de ce chapitre, non des prescriptions d'une source.
-- Aucune étude du coût de l'évaluation continue n'a été trouvée.
+- Une seule étude du coût de l'évaluation continue a été trouvée, le 14 novembre 2026 [16]. Elle n'est connue que par son résumé, porte sur un seul agent et ne donne pas de coût en dollars.
 - Aucun produit d'observabilité commercial n'est comparé.
 
 ## Mise en œuvre — Observabilité distribuée de bout en bout avec OpenTelemetry GenAI {.volet}

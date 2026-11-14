@@ -2,7 +2,7 @@
 
 *Question directrice : où en sont réellement les entreprises ?*
 
-> **État de référence :** enquête McKinsey « The State of AI in 2026 », connue par un compte rendu du 1er septembre 2026; étude « Measuring Agents in Production » (version 4, juin 2026); taxonomie MAST (versions 2 et 3); pages de l'AAIF et du NIST consultées le 11 novembre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre, classées en pages primaires lues, sources secondaires lues et pages non chargées.
+> **État de référence :** enquête McKinsey « The State of AI in 2026 », connue par un compte rendu du 1er septembre 2026; étude « Measuring Agents in Production » (version 4, juin 2026); taxonomie MAST (versions 2 et 3); pages de l'AAIF et du NIST consultées le 11 novembre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre, classées en pages primaires lues, sources secondaires lues et pages non chargées; les statistiques officielles [13] à [15] ont été lues le 14 novembre 2026.
 
 Trois chiffres reviennent dans presque toutes les présentations sur l'IA agentique : la part des grandes organisations qui mettent des agents à l'échelle, la part des projets qui seront annulés, et le revenu que les éditeurs tirent de leurs agents. Aucun des trois ne mesure la même chose, et aucun ne dit ce que fait un agent une fois déployé.
 
@@ -41,6 +41,20 @@ Salesforce annonce, pour son deuxième trimestre de l'exercice 2027 (clos le 31 
 La Linux Foundation, dans son bilan de la première année d'A2A, compte plus de 150 organisations qui appuient le protocole, contre plus de 50 un an plus tôt, et cite son intégration à Azure AI Foundry, à Copilot Studio et à Amazon Bedrock AgentCore Runtime [3]. Le communiqué évoque des déploiements en production sans nommer de client ni donner de métrique. Appuyer un protocole n'est pas l'exploiter.
 
 La règle de lecture vaut pour tout l'ouvrage : distinguer l'enquête déclarative, la prévision d'analyste et l'indicateur de fournisseur, et n'en tenir aucun pour une mesure de ce que font les agents (chapitre 42).
+
+### Ce que mesurent les statistiques officielles
+
+Trois offices statistiques publient une mesure qui ne dépend ni d'un cabinet ni d'un fournisseur. Elle porte sur l'IA en général, non sur les agents.
+
+| Territoire | Mesure | Valeur | Un an plus tôt |
+|---|---|---|---|
+| Canada | Entreprises ayant utilisé l'IA pour produire des biens ou fournir des services dans les douze mois, deuxième trimestre de 2026 [13] | 19,2 % | 12,2 % |
+| Union européenne | Entreprises de dix employés ou plus utilisant une technologie d'IA, 2025 [14] | 20,0 % | 13,5 % |
+| États-Unis | Entreprises utilisant l'IA dans une fonction d'affaires, période close le 3 mai 2026 [15] | 19,8 % | Question modifiée en novembre 2025 |
+
+Les trois chiffres convergent vers une entreprise sur cinq, mais ne mesurent pas la même chose : le champ, la période et la question diffèrent. L'écart selon la taille est net. Au Canada, 27,8 % des entreprises de cent employés ou plus utilisent l'IA, contre 19,9 % de celles d'un à quatre employés; aux États-Unis, la part atteint 37 % chez les entreprises d'au moins 250 employés [13][15]. Dans l'Union, elle va de 5,2 % en Roumanie à 42,0 % au Danemark [14]. Au Canada, la finance et les assurances arrivent au deuxième rang des secteurs, à 40,4 %, et 40,0 % des entreprises jugent l'IA sans pertinence pour elles [13].
+
+Aucune de ces enquêtes ne compte les agents. Elles bornent toutefois les chiffres des enquêtes privées : si une entreprise sur cinq utilise l'IA sous une forme quelconque, la part de celles qui exploitent des agents en production est nécessairement plus faible (chapitre 50).
 
 ---
 
@@ -175,6 +189,7 @@ Ces hypothèses ne sont pas des prévisions chiffrées. Elles fixent le point de
 - Un revenu d'éditeur ou un nombre d'organisations qui appuient un protocole ne mesure pas l'usage en production.
 - Les plateformes vendent déjà la gouvernance que les standards ne fournissent pas encore. C'est le principal arbitrage de 2027.
 - Le report européen donne du temps, pas une dispense : les obligations sur le haut risque s'appliquent à partir de décembre 2027.
+- Selon les offices statistiques du Canada, de l'Union européenne et des États-Unis, environ une entreprise sur cinq utilise l'IA. Aucun ne compte les agents.
 
 ---
 
@@ -201,6 +216,12 @@ Pages non chargées :
 11. [McKinsey — The State of AI in 2026](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) — délai dépassé.
 12. [Gartner — communiqué du 25 juin 2025](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027) — accès refusé.
 
+Statistiques officielles, pages lues le 14 novembre 2026 :
+
+13. [Statistique Canada — Analysis on artificial intelligence use by businesses in Canada, second quarter of 2026 (11 juin 2026)](https://www150.statcan.gc.ca/n1/pub/11-621-m/11-621-m2026010-eng.htm)
+14. [Eurostat — 20% of EU enterprises use AI technologies (11 décembre 2025)](https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20251211-2)
+15. [U.S. Census Bureau — Large Firms With at Least 20 Employees Biggest AI Users (26 mai 2026)](https://census.gov/library/stories/2026/05/ai-use-businesses.html)
+
 ## Limites de ce chapitre
 
 - Le rapport de McKinsey n'a pu être chargé ni à la rédaction ni à l'audit. Ses chiffres viennent d'un compte rendu de presse, relu le 12 novembre 2026; l'échantillon et les dates de collecte et de publication restent inconnus.
@@ -209,4 +230,5 @@ Pages non chargées :
 - Le Digital Omnibus a été lu sur un site non officiel; le chapitre 35 confirme le report des dates par les considérants publiés sur EUR-Lex.
 - L'état du registre MCP, de l'identité des agents et des conventions d'observabilité est repris des chapitres 5, 29 et 33, sans relecture de leurs sources.
 - La lecture du rôle de la gouvernance en 4.3, la tentation décrite en 4.4, les hypothèses de 4.5 et les conséquences tirées de MAP pour les chapitres 46 et 47 sont des interprétations, non des résultats.
+- Les statistiques officielles de la section 4.1, lues le 14 novembre 2026 par l'outil d'extraction, portent sur l'IA en général et sur des champs différents. Leur rapprochement et la borne qu'il fixe à l'adoption des agents sont une lecture de ce chapitre.
 - Aucun cas d'entreprise nommé n'est cité, faute de source primaire vérifiée (chapitre 42). La gouvernance est traitée plus brièvement que les autres causes, faute de données.

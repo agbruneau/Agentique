@@ -2,7 +2,7 @@
 
 *Question directrice : quel cadre s'applique ici ?*
 
-> **État de référence :** stratégie fédérale « AI for All » (4 juin 2026), projet de loi C-36 à l'étape de la deuxième lecture, ligne directrice E-23 du BSIF (en vigueur le 1er mai 2027), Énoncé de principes québécois (édition 2025) et guide du MCN sur l'IA agentique (2026). Les numéros entre crochets renvoient aux sources en fin de chapitre; [1] à [15] sont des pages primaires lues pour ce chapitre, [16] et [17] n'ont pas pu l'être.
+> **État de référence :** stratégie fédérale « AI for All » (4 juin 2026), projet de loi C-36 à l'étape de la deuxième lecture, ligne directrice E-23 du BSIF (en vigueur le 1er mai 2027), Énoncé de principes québécois (édition 2025) et guide du MCN sur l'IA agentique (2026). Les numéros entre crochets renvoient aux sources en fin de chapitre; [1] à [15] sont des pages primaires lues pour ce chapitre, [16] et [17] n'ont pas pu l'être; [18] à [22] ont été ajoutées le 14 novembre 2026, dont [20] et [21] sont secondaires et [22] n'a pas pu être lue.
 
 Une entreprise qui déploie des agents au Canada cherche d'abord la loi sur l'IA. Il n'y en a pas, ni fédérale ni québécoise. Le cadre applicable est un empilement : le droit de la protection des renseignements personnels, une ligne directrice sectorielle pour les institutions financières fédérales et, pour les administrations, des instruments administratifs, dont deux guides récents sur l'IA agentique.
 
@@ -35,6 +35,8 @@ Le gouvernement fédéral encadre ses propres systèmes par un instrument admini
 
 Selon la page de l'EIA, une première évaluation se fait au début de la conception, une seconde avant la mise en production. L'évaluation est revue quand la fonctionnalité ou la portée du système change. Les résultats sont publiés sur le Portail du gouvernement ouvert.
 
+**Le champ d'application.** Le guide fédéral sur la portée de la Directive le précise [18]. La Directive vise l'automatisation, complète ou partielle, d'une décision administrative, soit une décision qui peut toucher les droits, les privilèges ou les intérêts d'une personne ou d'une entreprise. Elle s'applique donc aussi quand un agent public rend la décision finale : recommander des options à un décideur est dans le champ, comme l'est un agent conversationnel dont les agents publics se servent pour arrêter une conduite. Elle couvre les systèmes conçus ou acquis après le 1er avril 2020 et ceux qui sont modifiés de façon importante, dans une centaine d'institutions fédérales, et ne se limite pas à l'IA : un système à base de règles est visé autant qu'un modèle avancé. La recherche et l'expérimentation, sans effet sur de vrais clients, en sont exclues. La page nomme l'IA générative parmi les technologies couvertes; elle ne mentionne pas les agents.
+
 La règle de revue pèse sur un agent plus que sur un système classique. Brancher un nouvel outil élargit ce que l'agent peut faire; c'est, selon la lecture proposée ici, un changement de portée. Un registre d'outils tenu à jour (chapitre 8) devient alors une pièce de conformité.
 
 Le Secrétariat du Conseil du Trésor publie aussi un Guide sur l'utilisation de l'intelligence artificielle agentive, destiné aux ministères et organismes [5]. La page, datée du 15 septembre 2026, distingue quatre niveaux d'autonomie, de l'assistance à l'autonomie adaptative, et demande de vérifier si le cas d'utilisation est visé par la Directive, sans fixer de seuil. La section 38.5 le compare au guide québécois.
@@ -59,7 +61,30 @@ La définition du modèle est volontairement large [7][8] : l'application d'hypo
 
 La colonne de droite est une lecture, non le texte du BSIF. La cote de risque des usages d'IA générative est laissée au jugement de chaque institution [7].
 
-E-23 ne vise que les institutions de compétence fédérale; les institutions à charte québécoise relèvent d'un autre régulateur.
+E-23 ne vise que les institutions de compétence fédérale.
+
+### Institutions à charte québécoise : la ligne directrice de l'AMF
+
+Les institutions à charte québécoise relèvent de l'Autorité des marchés financiers (AMF). Son site refusant les requêtes, sa Ligne directrice sur l'utilisation de l'intelligence artificielle n'a pas pu être lue [22]. Ce qui suit vient de deux analyses de cabinets, qui concordent [20][21].
+
+La version définitive a été publiée le 7 avril 2026, après une consultation tenue à l'automne 2025, et prend effet le 1er mai 2027, le même jour que E-23 [20]. Elle vise les assureurs autorisés, les coopératives de services financiers, les sociétés de fiducie autorisées et les institutions de dépôts autorisées, pour toute utilisation d'un système d'IA, qu'elle touche ou non le dossier d'un client [20][21].
+
+| Attente rapportée | Portée pour un système d'agents |
+|---|---|
+| Répertoire centralisé des systèmes d'IA [20][21] | Même inventaire que pour E-23 (chapitre 39) |
+| Cote de risque par système, tenue à jour, qui module validation, approbations et surveillance; sa détermination est laissée à l'institution [20][21] | La cote d'un agent devrait refléter les actions permises |
+| Un membre de la haute direction imputable de l'ensemble des systèmes d'IA; un responsable par système, pendant tout son cycle de vie [20][21] | Recoupe le responsable nommé par agent |
+| Normes de surveillance par niveau de risque, avec une attention particulière aux systèmes autonomes ou à calibrage dynamique [20][21] | Seul passage rapporté qui vise l'autonomie |
+| Explication claire et simple des décisions prises ou recommandées; possibilité pour le client de demander l'intervention d'une personne; mention de tout contenu généré avec un système d'IA [20][21] | Vise aussi la décision recommandée, plus large que l'article 12.1 (section 38.4) |
+| EFVP lorsqu'un système traite des renseignements personnels [21] | Renvoie à la Loi 25 |
+
+Aucune des deux analyses ne relève de mention de l'IA agentique. La définition du système d'IA, proche de celle de l'OCDE, note seulement que ces systèmes présentent des degrés variables d'autonomie et d'adaptabilité après déploiement [20][21]. Selon l'une d'elles, la version définitive a retiré le rôle confié à la fonction de gestion des risques et la mention de l'audit interne, qui figuraient dans le projet de 2025 [21]. La colonne de droite est une lecture de ce chapitre.
+
+### Valeurs mobilières : l'avis 11-348 des ACVM
+
+Les personnes inscrites et les émetteurs relèvent du droit des valeurs mobilières. L'avis 11-348 du personnel des Autorités canadiennes en valeurs mobilières (ACVM), du 5 décembre 2024, explique comment ce droit s'applique aux systèmes d'IA [19]. Son principe : c'est l'activité, et non la technologie, qui est réglementée. Il ne nomme pas les agents, mais traite de l'autonomie. Les attentes quant à l'intervention humaine varient selon l'étendue des services fournis et le degré d'autonomie du système, et cette intervention suppose un niveau d'explicabilité approprié.
+
+Pour la gestion de portefeuille, le personnel est net. Un système qui concevrait des portefeuilles de façon autonome et discrétionnaire, sans qu'une personne physique inscrite prenne les décisions finales, mettrait la personne inscrite en difficulté de démontrer sa conformité; le personnel ne croit pas possible, à ce stade, de substituer des systèmes d'IA aux représentants-conseils [19]. C'est, parmi les textes canadiens lus, la position la plus explicite sur une décision qu'un agent ne devrait pas prendre seul.
 
 ---
 
@@ -154,6 +179,8 @@ Un système d'agents multiplie les trajets à évaluer : l'inférence chez un fo
 | Entreprise qui traite des renseignements personnels au Québec | Loi 25 : art. 12.1, art. 17, EFVP [9] | Loi en vigueur |
 | Entreprise de compétence fédérale ou active hors Québec | LPRPDE, régime actuel; C-36 s'il est adopté [3][4] | Projet à surveiller |
 | Institution financière fédérale | E-23, avec B-10 pour les tiers [7][8] | Attentes du régulateur au 1er mai 2027 |
+| Institution financière à charte québécoise | Ligne directrice de l'AMF sur l'IA [20][21] | Attentes du régulateur au 1er mai 2027 |
+| Personne inscrite en valeurs mobilières | Avis 11-348 des ACVM [19] | Indications du personnel sur le droit existant |
 | Fournisseur d'un organisme public québécois | Énoncé de principes et guide [12][13] | Indirecte, contractuelle |
 | Fournisseur d'un ministère fédéral | Directive, EIA et guide [5][6] | Indirecte, contractuelle |
 
@@ -179,6 +206,8 @@ Les obligations étrangères s'ajoutent à ce cadre sans le remplacer (chapitre 
 | Inférence et outils hors Québec | EFVP préalable et entente écrite | Aucun renseignement personnel dans le flux |
 | Marché public québécois | Hébergement au Québec, fournisseur québécois ou canadien | Justification documentée par l'organisme |
 | Institution financière fédérale | Agents inscrits à l'inventaire E-23 dès maintenant | — |
+| Institution financière à charte québécoise | Même inventaire et même cote de risque que pour E-23, pour le 1er mai 2027 | — |
+| Gestion de portefeuille discrétionnaire | Décision finale prise par une personne physique inscrite | — |
 | Ajout d'un outil à un agent | Réévaluation du risque et de l'EFVP | Outil sans accès à des données ni à des actions sensibles |
 | Mémoire et traces d'un agent | Durée fixée par finalité, puis destruction ou anonymisation | Délai de conservation imposé par une loi |
 
@@ -190,7 +219,8 @@ Les obligations étrangères s'ajoutent à ce cadre sans le remplacer (chapitre 
 - Le projet de loi C-36, non adopté, réforme la protection des renseignements personnels; sa définition du système décisionnel automatisé couvre aussi les systèmes qui appuient une décision.
 - L'article 12.1 de la loi québécoise sur le secteur privé est en vigueur depuis le 22 septembre 2023 : information, explication sur demande, révision par une personne habilitée.
 - Le caractère « exclusivement » automatisé d'une décision est une propriété de l'orchestration. Une validation de pure forme ne le fait pas disparaître.
-- E-23 prend effet le 1er mai 2027. Elle ne nomme pas les agents, mais sa définition du modèle et ses attentes d'inventaire et de cote de risque s'y appliquent sans peine.
+- E-23 prend effet le 1er mai 2027. Elle ne nomme pas les agents, mais sa définition du modèle et ses attentes d'inventaire et de cote de risque s'y appliquent sans peine. La ligne directrice de l'AMF sur l'IA prend effet le même jour pour les institutions à charte québécoise; elle n'est connue ici que par des analyses de cabinets.
+- En valeurs mobilières, le personnel des ACVM ne croit pas possible, à ce stade, de substituer un système d'IA au représentant-conseil pour une décision discrétionnaire.
 - Les guides fédéral et québécois convergent : moindre privilège, validation humaine avant toute action à effet, journaux hors de portée de l'agent, arrêt, inventaire.
 - Aucun de ces textes ne mentionne MCP ni A2A. Ils fixent des résultats, pas des moyens.
 - L'Énoncé québécois s'étend aux fournisseurs des organismes publics et fait de la souveraineté numérique un critère de choix.
@@ -223,13 +253,22 @@ Sources non lues :
 16. [Blakes — réforme fédérale](https://www.blakes.com/fr-ca/perspectives/nouvelle-tentative-du-canada-pour-reformer-le-cadre-federal-de-protection-des-renseignements-personn/) — résumé de recherche seulement.
 17. [Directive sur la prise de décisions automatisée](https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32592) — requête rejetée par le serveur.
 
+Sources ajoutées le 14 novembre 2026 :
+
+18. [Canada — guide sur la portée de la Directive sur la prise de décisions automatisée (page datée du 15 septembre 2026)](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/guide-scope-directive-automated-decision-making.html) — page primaire lue.
+19. [ACVM — Avis 11-348 du personnel et de consultation, Applicabilité du droit canadien des valeurs mobilières à l'utilisation des systèmes d'intelligence artificielle dans les marchés des capitaux (5 décembre 2024)](https://fcnb.ca/sites/default/files/2024-12/Avis%2011-348%20du%20personnel%20des%20ACVM%20et%20de%20consultation%20-%20Applicabilit%C3%A9%20du%20droit%20canadien%20des%20valeurs%20mobili%C3%A8res%20%C3%A0%20l%E2%80%99utilisation%20des%20syst%C3%A8mes%20d%E2%80%99intelligence%20artificielle%20dans%20les%20march%C3%A9s%20des%20capitaux.pdf) — texte officiel, copie hébergée par la Commission des services financiers et des services aux consommateurs du Nouveau-Brunswick; lu par passages.
+20. [Blakes — L'AMF publie sa ligne directrice sur l'utilisation de l'intelligence artificielle (20 avril 2026)](https://www.blakes.com/fr-ca/perspectives/l-amf-publie-sa-ligne-directrice-sur-l-utilisation-de-l-intelligence-artificielle-ce-que-les-insti/) — analyse de cabinet, secondaire.
+21. [BLG — L'AMF publie ses attentes sur l'utilisation de l'IA (12 mai 2026)](https://www.blg.com/fr/insights/2026/05/amf-publie-ses-attentes-sur-lutilisation-de-lia) — analyse de cabinet, secondaire.
+22. [AMF — Ligne directrice sur l'utilisation de l'intelligence artificielle, Bulletin de l'AMF, vol. 23, no 13](https://lautorite.qc.ca/files/pdf/bulletin/2026/vol23no13/vol23no13_5.pdf) — non lue : erreur 403.
+
 ## Limites de ce chapitre
 
-- La Directive fédérale [17] n'a pas pu être lue, même à l'audit. Son champ d'application, ses exigences par niveau et sa date ne sont pas décrits; la section 38.2 repose sur la page de l'EIA.
+- La Directive fédérale [17] n'a pas pu être lue, ni à l'audit ni le 14 novembre 2026. Son champ d'application est décrit d'après le guide sur sa portée [18]; ses exigences par niveau et sa date ne sont pas décrites, et la section 38.2 repose pour le reste sur la page de l'EIA.
 - Les pages web [1] à [8], [10], [11] et [14] ont été lues au moyen d'un outil d'extraction automatique, sans recollationnement des citations. Les documents [9], [12], [13] et [15] ont été lus en texte intégral. [1], [3], [4], [5], [8] et [9] ont été relus à l'audit du 12 novembre 2026.
 - Seule la première moitié du texte de C-36 a été lue; les sanctions viennent du document ministériel [2]. Le sort du projet C-27 vient de la connaissance générale et d'un résumé de recherche [16], comme la mention de la LPRPDE en 38.7, dont le régime d'effacement n'est pas décrit.
 - L'article 12.1 est cité d'après le texte sanctionné de 2021, la version codifiée étant inaccessible; les modifications ultérieures n'ont pas été vérifiées. Aucune décision ni ligne directrice de la Commission d'accès à l'information n'a été lue.
-- L'encadrement des institutions financières à charte québécoise et le droit des autres provinces ne sont pas traités.
+- L'encadrement des institutions financières à charte québécoise est décrit, depuis le 14 novembre 2026, d'après deux analyses de cabinets [20][21]. Le site de l'AMF refuse les requêtes (erreur 403) : la ligne directrice elle-même [22] n'a pas été lue, pas plus que la Ligne directrice de l'AMF sur la gestion du risque de modèle, et l'adresse donnée en [22] vient d'un résultat de recherche non vérifié. L'avis 11-348 [19] a été lu par recherche de passages dans une copie officielle, non en entier; les suites de sa consultation n'ont pas été cherchées. Le droit des autres provinces n'est pas traité.
+- Les ajouts du 14 novembre 2026 sont le paragraphe sur le champ d'application de la Directive (38.2), les deux sous-sections de 38.3 et les lignes correspondantes du tableau de 38.7, de la grille et des points à retenir. Les colonnes « Portée pour un système d'agents » sont des lectures de ce chapitre.
 - Le guide québécois ne porte pas de date plus précise que 2026, et celle du guide fédéral est la date sans libellé affichée sur sa page. Les lectures proposées en 38.2, 38.3, 38.4 et 38.6 sont des inférences, non des positions des autorités.
 
 ## Mise en œuvre — Conformité réglementaire internationale et canadienne, et droit B2B inter-agents {.volet}
