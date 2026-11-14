@@ -199,13 +199,13 @@ Un cas échappe au schéma : le micropaiement x402, où le service est rendu dan
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Droits d'usage | ODRL 2.2, validé par code avant toute offre | Partenaire unique sous contrat classique |
-| Accès aux données | DSP par un connecteur; l'agent passe par un outil étroit | Aucun espace commun : entente bilatérale (chapitre 29) |
-| Identité et délégation | Justificatif d'entité vérifiable (vLEI si le réseau l'accepte); délégation distincte, bornée, révocable | Réseau fermé à adhésion contractuelle |
-| Secrets de négociation | Hors du contexte du modèle exposé à la contrepartie | Paramètres publics |
-| Calcul sur données conjointes | TEE avec attestation, code revu, sortie agrégée | Données non sensibles : transfert sous accord |
-| Consignes de tarification | Versionnées et revues par le contentieux | — |
-| Règlement | Rapprochement à trois voies avant tout mandat ou signature | Micropaiement : plafond et rapprochement a posteriori |
+| Droits d'usage | ODRL 2.2, validé par code avant toute offre [N] | Partenaire unique sous contrat classique |
+| Accès aux données | DSP par un connecteur; l'agent passe par un outil étroit [N] | Aucun espace commun : entente bilatérale (chapitre 29) |
+| Identité et délégation | Justificatif d'entité vérifiable (vLEI si le réseau l'accepte); délégation distincte, bornée, révocable [S] | Réseau fermé à adhésion contractuelle |
+| Secrets de négociation | Hors du contexte du modèle exposé à la contrepartie [S] | Paramètres publics |
+| Calcul sur données conjointes | TEE avec attestation, code revu, sortie agrégée [É] | Données non sensibles : transfert sous accord |
+| Consignes de tarification | Versionnées et revues par le contentieux [S] | — |
+| Règlement | Rapprochement à trois voies avant tout mandat ou signature [S] | Micropaiement : plafond et rapprochement a posteriori |
 
 ---
 

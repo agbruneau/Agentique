@@ -267,15 +267,15 @@ Quatre orientations se dégagent, à titre d'hypothèses de travail.
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Autoriser un agent à acheter | Présence humaine : approbation du panier fermé sur une surface non agentique | Achats répétitifs de faible valeur : mandat ouvert, contraintes étroites, expiration courte |
-| Preuve d'autorisation | Mandats signés, vérifiés en code déterministe | — |
-| Protocole de caisse, côté marchand | Modèle interne et adaptateurs, selon les plateformes d'agents visées | Canal unique imposé par un partenaire |
-| Reconnaissance des agents à la périphérie | Vérification des signatures de requêtes HTTP (chapitre 9) | Site sans transaction |
-| Plafond de dépense | Imposé hors de l'agent : justificatif, portefeuille ou passerelle | — |
-| Règlement natif (x402, MPP) | Micropaiements de services, portefeuille dédié et plafonné | Contrepartie connue et volume élevé : contrat et facturation classiques |
-| Mandats à l'exécution | Usage unique, liaison au contexte, versement à la piste d'audit | — |
-| Achat interentreprises | Approbation dans l'orchestration, prix dans le système d'enregistrement, mandat après rapprochement à trois voies (chapitre 45) | Achats hors contrat sous un seuil : traitement de type détail |
-| Dépendance à un protocole | Aucun engagement exclusif; versions épinglées | Protocole stabilisé et passé sous gouvernance neutre |
+| Autoriser un agent à acheter | Présence humaine : approbation du panier fermé sur une surface non agentique [N] | Achats répétitifs de faible valeur : mandat ouvert, contraintes étroites, expiration courte |
+| Preuve d'autorisation | Mandats signés, vérifiés en code déterministe [N] | — |
+| Protocole de caisse, côté marchand | Modèle interne et adaptateurs, selon les plateformes d'agents visées [S] | Canal unique imposé par un partenaire |
+| Reconnaissance des agents à la périphérie | Vérification des signatures de requêtes HTTP (chapitre 9) [É] | Site sans transaction |
+| Plafond de dépense | Imposé hors de l'agent : justificatif, portefeuille ou passerelle [S] | — |
+| Règlement natif (x402, MPP) | Micropaiements de services, portefeuille dédié et plafonné [S] | Contrepartie connue et volume élevé : contrat et facturation classiques |
+| Mandats à l'exécution | Usage unique, liaison au contexte, versement à la piste d'audit [S] | — |
+| Achat interentreprises | Approbation dans l'orchestration, prix dans le système d'enregistrement, mandat après rapprochement à trois voies (chapitre 45) [S] | Achats hors contrat sous un seuil : traitement de type détail |
+| Dépendance à un protocole | Aucun engagement exclusif; versions épinglées [S] | Protocole stabilisé et passé sous gouvernance neutre |
 
 ---
 

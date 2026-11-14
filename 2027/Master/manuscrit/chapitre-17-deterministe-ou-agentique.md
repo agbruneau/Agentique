@@ -262,15 +262,15 @@ Plus la région agentique est petite, plus la part inexpliquée du dossier l'est
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Point de départ | Workflow; agent seulement si un problème du processus l'exige | Travail d'enquête ou de tri sans chemin stable |
-| Forme de la région agentique | Agent borné : liste fermée d'outils, plafond d'appels | Agent externe déjà en place : l'appeler comme tâche, avec contrat de sortie |
-| Processus à exceptions | Gestion de cas, règles d'abord, agent en repli, humain en dernier recours | Exceptions rares : BPMN avec quelques branchements |
-| Sortie d'un agent | Issues nommées, routables | Niveau de confiance seulement comme information d'appoint |
-| Procédures nombreuses et changeantes | Plan structuré rédigé par le métier, validé en aval | Séquence réglementaire : moteur de processus |
-| Accès d'un agent ouvert aux systèmes d'enregistrement | Processus exposé comme outil | Lecture seule : outil direct |
-| Appel d'un processus par un agent | Activité d'appel dans le même cluster | Autre cluster : MCP, avec corrélation explicite pour l'audit |
-| Effets irréversibles | Étape déterministe, approbation selon la classe d'action | — |
-| Agents distants par A2A depuis Camunda | Hors production tant que l'authentification manque côté connecteur | Pilote sans données sensibles |
+| Point de départ | Workflow; agent seulement si un problème du processus l'exige [É] | Travail d'enquête ou de tri sans chemin stable |
+| Forme de la région agentique | Agent borné : liste fermée d'outils, plafond d'appels [É] | Agent externe déjà en place : l'appeler comme tâche, avec contrat de sortie |
+| Processus à exceptions | Gestion de cas, règles d'abord, agent en repli, humain en dernier recours [É] | Exceptions rares : BPMN avec quelques branchements |
+| Sortie d'un agent | Issues nommées, routables [É] | Niveau de confiance seulement comme information d'appoint |
+| Procédures nombreuses et changeantes | Plan structuré rédigé par le métier, validé en aval [M] | Séquence réglementaire : moteur de processus |
+| Accès d'un agent ouvert aux systèmes d'enregistrement | Processus exposé comme outil [É] | Lecture seule : outil direct |
+| Appel d'un processus par un agent | Activité d'appel dans le même cluster [É] | Autre cluster : MCP, avec corrélation explicite pour l'audit |
+| Effets irréversibles | Étape déterministe, approbation selon la classe d'action [S] | — |
+| Agents distants par A2A depuis Camunda | Hors production tant que l'authentification manque côté connecteur [É] | Pilote sans données sensibles |
 
 ---
 

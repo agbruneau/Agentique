@@ -205,18 +205,18 @@ Une politique de rétention de la mémoire répond à quatre questions, par clas
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Faut-il une mémoire à long terme ? | Non, tant qu'un besoin entre sessions n'est pas établi | Tâches multi-sessions, personnalisation, apprentissage d'erreurs |
-| Architecture | Fichiers, par agent ou par projet | Vecteurs pour de grands volumes; graphe si la temporalité et le lignage sont exigés |
-| Moment de l'écriture | En tâche de fond, avec validation | Chemin chaud si le souvenir doit servir dans la même session |
-| Partage entre agents | Fonds de référence en lecture seule, plus un fonds propre par agent ou par session | Fonds commun en écriture seulement avec un écrivain désigné |
-| Concurrence | Écrivain unique, ou précondition sur le contenu lu | Ajouts seuls : écritures concurrentes acceptables |
-| Portée | Espace de noms par locataire, utilisateur et agent, vérifié à chaque lecture | — |
-| Mémoire procédurale | Écrite par des humains, versionnée, relue | Écriture par l'agent seulement avec revue avant activation |
-| Sources d'écriture | Aucune écriture à partir de contenu non fiable sans confirmation | Fonds jetable, limité à la session |
-| Provenance | Auteur, source et date sur chaque entrée | — |
-| Rétention | Durée par classe, expiration automatique, effacement testé | Obligation légale de conservation |
-| Portabilité | Sources conservées en texte; index reconstruits | Mémoire jetable sans valeur de migration |
-| Choix d'un produit | Évaluation interne sur données réelles | — |
+| Faut-il une mémoire à long terme ? | Non, tant qu'un besoin entre sessions n'est pas établi [S] | Tâches multi-sessions, personnalisation, apprentissage d'erreurs |
+| Architecture | Fichiers, par agent ou par projet [S] | Vecteurs pour de grands volumes; graphe si la temporalité et le lignage sont exigés |
+| Moment de l'écriture | En tâche de fond, avec validation [S] | Chemin chaud si le souvenir doit servir dans la même session |
+| Partage entre agents | Fonds de référence en lecture seule, plus un fonds propre par agent ou par session [É] | Fonds commun en écriture seulement avec un écrivain désigné |
+| Concurrence | Écrivain unique, ou précondition sur le contenu lu [É] | Ajouts seuls : écritures concurrentes acceptables |
+| Portée | Espace de noms par locataire, utilisateur et agent, vérifié à chaque lecture [M] | — |
+| Mémoire procédurale | Écrite par des humains, versionnée, relue [S] | Écriture par l'agent seulement avec revue avant activation |
+| Sources d'écriture | Aucune écriture à partir de contenu non fiable sans confirmation [S] | Fonds jetable, limité à la session |
+| Provenance | Auteur, source et date sur chaque entrée [S] | — |
+| Rétention | Durée par classe, expiration automatique, effacement testé [N] | Obligation légale de conservation |
+| Portabilité | Sources conservées en texte; index reconstruits [S] | Mémoire jetable sans valeur de migration |
+| Choix d'un produit | Évaluation interne sur données réelles [S] | — |
 
 ---
 

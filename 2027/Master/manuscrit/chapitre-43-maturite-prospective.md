@@ -155,12 +155,12 @@ Le chapitre 1 pose que l'interopérabilité et l'orchestration conditionnent la 
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Unité d'évaluation de la maturité | Le domaine d'affaires, noté par son critère le plus faible | Très petite organisation : une seule évaluation |
-| Stade à atteindre avant un second domaine | Stade 2 | Second domaine limité à des prototypes sans écriture |
-| Ordre des investissements | Noyau de gouvernance avant la composition | Agent unique en lecture seule |
-| Standard instable (identité, télémétrie) | Couche interne d'isolation | Standard devenu stable et pris en charge des deux côtés |
-| Élargissement de l'autonomie | Par classe de décision, sur mesures, avec retrait automatique | Actions irréversibles ou réglementées : approbation maintenue |
-| Hypothèse de planification | Scénario B, avec les investissements sans regret | Signaux convergents vers A ou C |
+| Unité d'évaluation de la maturité | Le domaine d'affaires, noté par son critère le plus faible [S] | Très petite organisation : une seule évaluation |
+| Stade à atteindre avant un second domaine | Stade 2 [S] | Second domaine limité à des prototypes sans écriture |
+| Ordre des investissements | Noyau de gouvernance avant la composition [S] | Agent unique en lecture seule |
+| Standard instable (identité, télémétrie) | Couche interne d'isolation [S] | Standard devenu stable et pris en charge des deux côtés |
+| Élargissement de l'autonomie | Par classe de décision, sur mesures, avec retrait automatique [S] | Actions irréversibles ou réglementées : approbation maintenue |
+| Hypothèse de planification | Scénario B, avec les investissements sans regret [S] | Signaux convergents vers A ou C |
 
 ---
 

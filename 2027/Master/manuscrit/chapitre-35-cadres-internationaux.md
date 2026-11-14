@@ -231,15 +231,15 @@ Deux constats s'ajoutent à ceux de la section 35.6. Le texte contraignant nouve
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Cadre interne | Un seul dispositif, calé sur l'exigence applicable la plus stricte, avec Singapour comme guide de mise en œuvre | Activité sans lien avec l'UE : le cadre local prime (chapitre 38) |
-| Classement d'un agent | Par cas d'usage, raisonnement documenté | Agent généraliste : borner la destination, sinon évaluer le pire usage prévisible |
-| Calendrier européen | Viser décembre 2027 et août 2028, en commençant maintenant | Transparence de l'article 50 : déjà applicable |
-| Lacunes des normes harmonisées | Spécifications internes pour l'orchestration, l'état entre sessions et la découverte d'outils | — |
-| Dérive de comportement | Enveloppe de comportement documentée et détection continue | Haut risque avec apprentissage continu : s'abstenir tant que la méthode d'évaluation manque |
-| Supervision humaine | Approbation aux actions à fort enjeu ou irréversibles; refus par défaut si l'approbation est indisponible | Action réversible et à faible enjeu : vérification après coup |
-| Certification ISO/IEC 42001 | À rechercher si les clients ou le marché la demandent | Ne pas la présenter comme preuve de conformité à l'AI Act |
-| NIST AI RMF | Vocabulaire commun avec des partenaires américains | Attendre la révision avant d'y aligner un outillage coûteux |
-| Activité en Corée, au Japon, au Royaume-Uni ou en Chine | Vérifier le texte local, à partir du relevé de la section 35.7 | — |
+| Cadre interne | Un seul dispositif, calé sur l'exigence applicable la plus stricte, avec Singapour comme guide de mise en œuvre [S] | Activité sans lien avec l'UE : le cadre local prime (chapitre 38) |
+| Classement d'un agent | Par cas d'usage, raisonnement documenté [S] | Agent généraliste : borner la destination, sinon évaluer le pire usage prévisible |
+| Calendrier européen | Viser décembre 2027 et août 2028, en commençant maintenant [N] | Transparence de l'article 50 : déjà applicable |
+| Lacunes des normes harmonisées | Spécifications internes pour l'orchestration, l'état entre sessions et la découverte d'outils [S] | — |
+| Dérive de comportement | Enveloppe de comportement documentée et détection continue [S] | Haut risque avec apprentissage continu : s'abstenir tant que la méthode d'évaluation manque |
+| Supervision humaine | Approbation aux actions à fort enjeu ou irréversibles; refus par défaut si l'approbation est indisponible [N] | Action réversible et à faible enjeu : vérification après coup |
+| Certification ISO/IEC 42001 | À rechercher si les clients ou le marché la demandent [S] | Ne pas la présenter comme preuve de conformité à l'AI Act |
+| NIST AI RMF | Vocabulaire commun avec des partenaires américains [S] | Attendre la révision avant d'y aligner un outillage coûteux |
+| Activité en Corée, au Japon, au Royaume-Uni ou en Chine | Vérifier le texte local, à partir du relevé de la section 35.7 [S] | — |
 
 ---
 

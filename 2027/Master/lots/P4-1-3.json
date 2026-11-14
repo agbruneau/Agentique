@@ -1,0 +1,607 @@
+{
+ "id": "P4-1-3",
+ "origine": "plan 2027, lot P4-1-3",
+ "categorie": "enrichissement",
+ "remplacements": [
+  {
+   "fichier": "chapitre-21-fiabilite-coordination.md",
+   "avant": "| Un agent ou plusieurs | Un agent tant qu'il suffit; comparaison à budget égal | Tâche décomposable et large (chapitre 16) |",
+   "apres": "| Un agent ou plusieurs | Un agent tant qu'il suffit; comparaison à budget égal [M] | Tâche décomposable et large (chapitre 16) |",
+   "motif": "Ligne « Un agent ou plusieurs » : [M], section 21.6 et intro, sources [1][5][6] (études mesurées : gain multi-agents souvent minime [1], surcoût de 58 à 515 % [5], jetons ≈ 80 % de la variance [6])."
+  },
+  {
+   "fichier": "chapitre-21-fiabilite-coordination.md",
+   "avant": "| Contenu d'une délégation | Objectif, format de sortie, limites, condition d'arrêt | Aucun cas |",
+   "apres": "| Contenu d'une délégation | Objectif, format de sortie, limites, condition d'arrêt [É] | Aucun cas |",
+   "motif": "Ligne « Contenu d'une délégation » : [É], section 21.2, sources [6] (billet d'Anthropic, « sans mesure publiée »; MAST ne teste pas ce contenu)."
+  },
+  {
+   "fichier": "chapitre-21-fiabilite-coordination.md",
+   "avant": "| Arrêt et plafond d'étapes | Imposés par l'orchestrateur ou le moteur de processus | Exploration sans effet de bord |",
+   "apres": "| Arrêt et plafond d'étapes | Imposés par l'orchestrateur ou le moteur de processus [S] | Exploration sans effet de bord |",
+   "motif": "Ligne « Arrêt et plafond d'étapes » : [S], section 21.2, sources [1] (« MAST ne teste pas cette répartition »; la répartition orchestrateur/moteur est du chapitre)."
+  },
+  {
+   "fichier": "chapitre-21-fiabilite-coordination.md",
+   "avant": "| Ambiguïté | L'agent demande une précision | Tâche réversible à faible enjeu |",
+   "apres": "| Ambiguïté | L'agent demande une précision [S] | Tâche réversible à faible enjeu |",
+   "motif": "Ligne « Ambiguïté » : [S], section 21.3, sources [1] (MAST chiffre l'échec (clarification non demandée, 6,8 %) mais ne teste pas le remède)."
+  },
+  {
+   "fichier": "chapitre-21-fiabilite-coordination.md",
+   "avant": "| Vérification | Rôle distinct, qui contrôle l'objectif | Résultat couvert par un test déterministe |",
+   "apres": "| Vérification | Rôle distinct, qui contrôle l'objectif [M] | Résultat couvert par un test déterministe |",
+   "motif": "Ligne « Vérification » : [M], section 21.4, sources [1][2] (étape de vérification de haut niveau : +15,6 points sur ChatDev (ProgramDev))."
+  },
+  {
+   "fichier": "chapitre-21-fiabilite-coordination.md",
+   "avant": "| Conflit entre agents | Hiérarchie d'arbitrage écrite, humain en dernier recours | Détection automatique seulement après mesure de sa précision |",
+   "apres": "| Conflit entre agents | Hiérarchie d'arbitrage écrite, humain en dernier recours [S] | Détection automatique seulement après mesure de sa précision |",
+   "motif": "Ligne « Conflit entre agents » : [S], section 21.5, sources [3] (seule source : prépublication d'un auteur, 600 exécutions simulées, apport non isolé; l'ordre d'arbitrage est une synthèse)."
+  },
+  {
+   "fichier": "chapitre-21-fiabilite-coordination.md",
+   "avant": "| Imputabilité | Relations commettant-responsable déclarées, devoirs mesurables | Petit système stable de deux ou trois agents |",
+   "apres": "| Imputabilité | Relations commettant-responsable déclarées, devoirs mesurables [S] | Petit système stable de deux ou trois agents |",
+   "motif": "Ligne « Imputabilité » : [S], section 21.5, sources [4] (preuve de concept à deux ou trois agents, « ne mesure aucun taux d'échec »)."
+  },
+  {
+   "fichier": "chapitre-21-fiabilite-coordination.md",
+   "avant": "| Mesure de la coordination | Échantillon de traces étiqueté selon MAST, surcoût, jalons | — |",
+   "apres": "| Mesure de la coordination | Échantillon de traces étiqueté selon MAST, surcoût, jalons [M] | — |",
+   "motif": "Ligne « Mesure de la coordination » : [M], section 21.6, sources [1][2][5][8] (annotateur MAST (kappa 0,77) [1][2], métriques de coordination [5], indicateur de jalons [8])."
+  },
+  {
+   "fichier": "chapitre-21-fiabilite-coordination.md",
+   "avant": "| Attribution d'un échec | Revue humaine appuyée sur les traces | Attribution automatique en aide au tri seulement |",
+   "apres": "| Attribution d'un échec | Revue humaine appuyée sur les traces [M] | Attribution automatique en aide au tri seulement |",
+   "motif": "Ligne « Attribution d'un échec » : [M], section 21.6, sources [7] (Who&When : 53,5 % d'agents corrects, 14,2 % d'étapes correctes pour la meilleure méthode)."
+  },
+  {
+   "fichier": "chapitre-21-fiabilite-coordination.md",
+   "avant": "| Essai de robustesse | Fautes de coordination injectées avant la mise en production (section 21.5; pour les pannes d'outils et de protocole, section 34.10) | Agent unique, ou tâche sans effet de bord |",
+   "apres": "| Essai de robustesse | Fautes de coordination injectées avant la mise en production (section 21.5; pour les pannes d'outils et de protocole, section 34.10) [S] | Agent unique, ou tâche sans effet de bord |",
+   "motif": "Ligne « Essai de robustesse » : [S], section 21.5, sources [10] (les Limites déclarent la ligne « synthèse de ce chapitre »; [10] (injection de fautes) est partiellement lue)."
+  },
+  {
+   "fichier": "chapitre-22-humain-dans-la-boucle.md",
+   "avant": "| Unité de gouvernance | La classe de décision, cotée en gravité, réversibilité et faisabilité de la supervision | Agent à action unique : un niveau par agent suffit |",
+   "apres": "| Unité de gouvernance | La classe de décision, cotée en gravité, réversibilité et faisabilité de la supervision [S] | Agent à action unique : un niveau par agent suffit |",
+   "motif": "Ligne « Unité de gouvernance » : [S], section 22.4, sources [2][12] (trois questions tirées d'un cas d'entreprise (Dayos) et tableau « propre à ce chapitre »; aucun texte n'impose cette cote)."
+  },
+  {
+   "fichier": "chapitre-22-humain-dans-la-boucle.md",
+   "avant": "| Lecture et analyse | Sans approbation, dans un périmètre appliqué techniquement | Renseignements personnels ou confidentiels |",
+   "apres": "| Lecture et analyse | Sans approbation, dans un périmètre appliqué techniquement [S] | Renseignements personnels ou confidentiels |",
+   "motif": "Ligne « Lecture et analyse » : [S], section 22.4, sources [2][12] (la ligne du tableau des classes est propre au chapitre; [12] n'exige la supervision pour la lecture que si elle touche des renseignements personnels ou confidentiels)."
+  },
+  {
+   "fichier": "chapitre-22-humain-dans-la-boucle.md",
+   "avant": "| Action réversible à faible enjeu | Sur la boucle, avec audit d'échantillon | Anomalie détectée : retour à l'approbation |",
+   "apres": "| Action réversible à faible enjeu | Sur la boucle, avec audit d'échantillon [N] | Anomalie détectée : retour à l'approbation |",
+   "motif": "Ligne « Action réversible à faible enjeu » : [N], section 22.1 et 22.4, sources [12][2] (guide québécois : revue après coup pour les actions internes, réversibles et de faible impact; cadre de Singapour)."
+  },
+  {
+   "fichier": "chapitre-22-humain-dans-la-boucle.md",
+   "avant": "| Action irréversible ou à fort enjeu | Approbation préalable, liée aux paramètres exacts | Montant sous un plafond fixé par classe |",
+   "apres": "| Action irréversible ou à fort enjeu | Approbation préalable, liée aux paramètres exacts [N] | Montant sous un plafond fixé par classe |",
+   "motif": "Ligne « Action irréversible ou à fort enjeu » : [N], section 22.4, sources [2][12] (cadre de Singapour (actions irréversibles, à fort enjeu) et guide québécois (validation avant exécution))."
+  },
+  {
+   "fichier": "chapitre-22-humain-dans-la-boucle.md",
+   "avant": "| Lieu d'application | Outil, passerelle ou couche d'autorisation | Jamais le prompt seul |",
+   "apres": "| Lieu d'application | Outil, passerelle ou couche d'autorisation [N] | Jamais le prompt seul |",
+   "motif": "Ligne « Lieu d'application » : [N], section 22.4, sources [2][12] (approbation imposée par des contrôles du système, non par le prompt [2]; l'agent ne doit pas élargir ses permissions [12])."
+  },
+  {
+   "fichier": "chapitre-22-humain-dans-la-boucle.md",
+   "avant": "| Promotion d'autonomie | Par classe, sur preuve consignée, signée par l'autorité du niveau visé | — |",
+   "apres": "| Promotion d'autonomie | Par classe, sur preuve consignée, signée par l'autorité du niveau visé [S] | — |",
+   "motif": "Ligne « Promotion d'autonomie » : [S], section 22.3, sources [4] (« règle asymétrique, proposée ici » (Limites : proposition du chapitre))."
+  },
+  {
+   "fichier": "chapitre-22-humain-dans-la-boucle.md",
+   "avant": "| Rétrogradation | Automatique, sur signal | — |",
+   "apres": "| Rétrogradation | Automatique, sur signal [S] | — |",
+   "motif": "Ligne « Rétrogradation » : [S], section 22.3, sources [4][2][12] (même règle asymétrique du chapitre; les sources n'en donnent que des pistes (« pourrait retomber » [4]))."
+  },
+  {
+   "fichier": "chapitre-22-humain-dans-la-boucle.md",
+   "avant": "| Approbateur injoignable | Refus par défaut | Action réversible, déjà autorisée sur la boucle |",
+   "apres": "| Approbateur injoignable | Refus par défaut [N] | Action réversible, déjà autorisée sur la boucle |",
+   "motif": "Ligne « Approbateur injoignable » : [N], section 22.3 et 22.5, sources [2] (cadre de Singapour : refus par défaut quand l'infrastructure d'approbation fait défaut)."
+  },
+  {
+   "fichier": "chapitre-22-humain-dans-la-boucle.md",
+   "avant": "| Preuve que la supervision reste effective | Taux de modification, temps de révision, tâches témoins | Classe laissée sans approbation humaine |",
+   "apres": "| Preuve que la supervision reste effective | Taux de modification, temps de révision, tâches témoins [N] | Classe laissée sans approbation humaine |",
+   "motif": "Ligne « Preuve que la supervision reste effective » : [N], section 22.5, sources [2][14] (cadre de Singapour : taux de rejet ou de modification, temps de réponse, profils écartés [2])."
+  },
+  {
+   "fichier": "chapitre-23-architecture-reference.md",
+   "avant": "| Où placer l'autorité | Plan de contrôle distinct des agents | Agent unique, sans effet de bord : garde-fous internes |",
+   "apres": "| Où placer l'autorité | Plan de contrôle distinct des agents [É] | Agent unique, sans effet de bord : garde-fous internes |",
+   "motif": "Ligne « Où placer l'autorité » : [É], section 23.2, sources [8][11][9] (documentation Microsoft (Agent 365), communiqué de Futurum, billet d'agentgateway; aucune validation indépendante)."
+  },
+  {
+   "fichier": "chapitre-23-architecture-reference.md",
+   "avant": "| Application des politiques | Passerelle sur le chemin de chaque appel d'outil, d'agent et de modèle | Outil local sans donnée sensible |",
+   "apres": "| Application des politiques | Passerelle sur le chemin de chaque appel d'outil, d'agent et de modèle [É] | Outil local sans donnée sensible |",
+   "motif": "Ligne « Application des politiques » : [É], section 23.2, sources [9][11][15] (agentgateway, Futurum (« sans elle, les contrôles sont consultatifs »), documentation Solo.io)."
+  },
+  {
+   "fichier": "chapitre-23-architecture-reference.md",
+   "avant": "| Registre | Unique, et condition du routage | Plusieurs plateformes imposées : registres fédérés (chapitre 27) |",
+   "apres": "| Registre | Unique, et condition du routage [S] | Plusieurs plateformes imposées : registres fédérés (chapitre 27) |",
+   "motif": "Ligne « Registre » : [S], section 23.4, sources [6][2][8] (proposition sans mise en œuvre [6], patron avec contrepartie [2], doc Microsoft [8]; « unique, condition du routage » est du chapitre)."
+  },
+  {
+   "fichier": "chapitre-23-architecture-reference.md",
+   "avant": "| Maillage | Assembler le registre, les protocoles et la passerelle déjà retenus | Produit de maillage si son socle (maillage de services, courtier d'événements) est déjà la norme de l'entreprise |",
+   "apres": "| Maillage | Assembler le registre, les protocoles et la passerelle déjà retenus [S] | Produit de maillage si son socle (maillage de services, courtier d'événements) est déjà la norme de l'entreprise |",
+   "motif": "Ligne « Maillage » : [S], section 23.3, sources [14][15][18] (« ce que le chapitre en retient » est une synthèse; sources = pages d'éditeurs, aucune mesure)."
+  },
+  {
+   "fichier": "chapitre-23-architecture-reference.md",
+   "avant": "| Inventaire et identité | Deux fonctions rapprochées régulièrement | — |",
+   "apres": "| Inventaire et identité | Deux fonctions rapprochées régulièrement [S] | — |",
+   "motif": "Ligne « Inventaire et identité » : [S], section 23.4, sources [8] ([8] montre l'écart inventaire/identité; le rapprochement régulier est une déduction du chapitre)."
+  },
+  {
+   "fichier": "chapitre-23-architecture-reference.md",
+   "avant": "| Description des agents | Déclarative, versionnée, validée avant exécution | Prototype |",
+   "apres": "| Description des agents | Déclarative, versionnée, validée avant exécution [S] | Prototype |",
+   "motif": "Ligne « Description des agents » : [S], section 23.5, sources [7][4] (SALLMA : évaluation sur deux workflows, « anecdotique »; l'idée « dépasse le prototype » est du chapitre)."
+  },
+  {
+   "fichier": "chapitre-23-architecture-reference.md",
+   "avant": "| Coordination | Centralisée ou fédérée | Distribuée si la résilience prime et que le coût de maintenance est accepté |",
+   "apres": "| Coordination | Centralisée ou fédérée [S] | Distribuée si la résilience prime et que le coût de maintenance est accepté |",
+   "motif": "Ligne « Coordination » : [S], section 23.7, sources [3] (matrice de Zhou : cotes qui « indiquent un sens probable, pas une ampleur », cases non validées)."
+  },
+  {
+   "fichier": "chapitre-23-architecture-reference.md",
+   "avant": "| Planification | Plan à chemin unique pour les processus audités | Plusieurs chemins en environnement changeant, avec tests renforcés |",
+   "apres": "| Planification | Plan à chemin unique pour les processus audités [S] | Plusieurs chemins en environnement changeant, avec tests renforcés |",
+   "motif": "Ligne « Planification » : [S], section 23.7, sources [3] (même matrice de [3], exemple d'un agent d'audit)."
+  },
+  {
+   "fichier": "chapitre-23-architecture-reference.md",
+   "avant": "| Mémoire | Langage naturel si l'explicabilité prime | Plongements si la performance prime |",
+   "apres": "| Mémoire | Langage naturel si l'explicabilité prime [S] | Plongements si la performance prime |",
+   "motif": "Ligne « Mémoire » : [S], section 23.7, sources [3] (même matrice de [3])."
+  },
+  {
+   "fichier": "chapitre-23-architecture-reference.md",
+   "avant": "| Qualité de service | Budgets de coût, de délai et de qualité par classe de tâche | — |",
+   "apres": "| Qualité de service | Budgets de coût, de délai et de qualité par classe de tâche [S] | — |",
+   "motif": "Ligne « Qualité de service » : [S], section 23.6, sources [4][6][9] (« règle que les articles n'énoncent pas »; budgets par classe de tâche = synthèse (Limites))."
+  },
+  {
+   "fichier": "chapitre-23-architecture-reference.md",
+   "avant": "| Garde-fous | Plusieurs barrières, sur plusieurs étapes et artefacts | — |",
+   "apres": "| Garde-fous | Plusieurs barrières, sur plusieurs étapes et artefacts [S] | — |",
+   "motif": "Ligne « Garde-fous » : [S], section 23.8, sources [4][5] (études de cas et proposition sans validation opérationnelle (« hors périmètre » [5]))."
+  },
+  {
+   "fichier": "chapitre-23-architecture-reference.md",
+   "avant": "| Évaluation d'architecture | Par scénarios, répétée à l'exécution | Système gelé à faible risque : revue initiale |",
+   "apres": "| Évaluation d'architecture | Par scénarios, répétée à l'exécution [S] | Système gelé à faible risque : revue initiale |",
+   "motif": "Ligne « Évaluation d'architecture » : [S], section 23.8, sources [4] (AgentArcEval : une étude de cas qualitative, mesures citées = cibles)."
+  },
+  {
+   "fichier": "chapitre-23-architecture-reference.md",
+   "avant": "| Modèle de référence | La vue à deux étages de ce chapitre, comme point de départ | Cadre imposé par un éditeur ou un régulateur |",
+   "apres": "| Modèle de référence | La vue à deux étages de ce chapitre, comme point de départ [S] | Cadre imposé par un éditeur ou un régulateur |",
+   "motif": "Ligne « Modèle de référence » : [S], section 23.1, sources — (« synthèse propre à ce chapitre »)."
+  },
+  {
+   "fichier": "chapitre-24-passerelles-integration.md",
+   "avant": "| Point d'application | Passerelle sur le chemin de tout appel à un serveur distant | Outil local sans donnée sensible, sous politique du poste |",
+   "apres": "| Point d'application | Passerelle sur le chemin de tout appel à un serveur distant [É] | Outil local sans donnée sensible, sous politique du poste |",
+   "motif": "Ligne « Point d'application » : [É], section 24.1 et 24.2, sources [4][1][6][7] (brouillon Microsoft, documentation Apigee, Azure APIM et agentgateway; la spécification MCP ne prescrit aucune passerelle)."
+  },
+  {
+   "fichier": "chapitre-24-passerelles-integration.md",
+   "avant": "| Famille de produit | Étendre la gestion d'API déjà en place | Trafic A2A et d'inférence à unifier : passerelle agentique dédiée |",
+   "apres": "| Famille de produit | Étendre la gestion d'API déjà en place [S] | Trafic A2A et d'inférence à unifier : passerelle agentique dédiée |",
+   "motif": "Ligne « Famille de produit » : [S], section 24.1, sources — (« elles diffèrent surtout par ce que l'entreprise possède déjà » : raisonnement du chapitre)."
+  },
+  {
+   "fichier": "chapitre-24-passerelles-integration.md",
+   "avant": "| Unité de politique | L'outil | Serveur interne homogène, en lecture seule |",
+   "apres": "| Unité de politique | L'outil [É] | Serveur interne homogène, en lecture seule |",
+   "motif": "Ligne « Unité de politique » : [É], section 24.2, sources [4][6][2][9][7] (brouillon Microsoft et documentation de produits (Apigee, agentgateway, Kong, Azure APIM))."
+  },
+  {
+   "fichier": "chapitre-24-passerelles-integration.md",
+   "avant": "| Jeton en aval | Échange de jeton ou justificatif propre à la passerelle; jamais de relais | — |",
+   "apres": "| Jeton en aval | Échange de jeton ou justificatif propre à la passerelle; jamais de relais [N] | — |",
+   "motif": "Ligne « Jeton en aval » : [N], section 24.2, sources [10] (spécification MCP (sécurité) : un serveur n'accepte aucun jeton qui ne lui est pas destiné; relais en aval interdit)."
+  },
+  {
+   "fichier": "chapitre-24-passerelles-integration.md",
+   "avant": "| Outils sensibles | Approbation à la passerelle; refus sans approbateur configuré | Délai long : extension Tasks (chapitres 5 et 22) |",
+   "apres": "| Outils sensibles | Approbation à la passerelle; refus sans approbateur configuré [É] | Délai long : extension Tasks (chapitres 5 et 22) |",
+   "motif": "Ligne « Outils sensibles » : [É], section 24.2, sources [4] (brouillon Microsoft : rappel d'approbation, absence de rappel vaut refus; la raison d'être est du chapitre)."
+  },
+  {
+   "fichier": "chapitre-24-passerelles-integration.md",
+   "avant": "| Clé de quota | Identité de l'agent | Adresse IP si l'identité est indisponible |",
+   "apres": "| Clé de quota | Identité de l'agent [S] | Adresse IP si l'identité est indisponible |",
+   "motif": "Ligne « Clé de quota » : [S], section 24.2, sources [4][6][7] (Limites : « la clé de quota » est un raisonnement; [4] tient un budget par agent, [7] limite par adresse IP)."
+  },
+  {
+   "fichier": "chapitre-24-passerelles-integration.md",
+   "avant": "| Réponses | Balayage avec blocage par défaut | Expurgation, après mesure des faux positifs |",
+   "apres": "| Réponses | Balayage avec blocage par défaut [É] | Expurgation, après mesure des faux positifs |",
+   "motif": "Ligne « Réponses » : [É], section 24.2, sources [4] (brouillon Microsoft : balayage des réponses, blocage par défaut)."
+  },
+  {
+   "fichier": "chapitre-24-passerelles-integration.md",
+   "avant": "| Définitions d'outils | Balayage à l'inscription, empreinte suivie ensuite | — |",
+   "apres": "| Définitions d'outils | Balayage à l'inscription, empreinte suivie ensuite [É] | — |",
+   "motif": "Ligne « Définitions d'outils » : [É], section 24.2, sources [4] (brouillon Microsoft : balayage, empreinte SHA-256 de la description; « aucune mesure d'efficacité »)."
+  },
+  {
+   "fichier": "chapitre-24-passerelles-integration.md",
+   "avant": "| Erreur de la passerelle | Refus | — |",
+   "apres": "| Erreur de la passerelle | Refus [É] | — |",
+   "motif": "Ligne « Erreur de la passerelle » : [É], section 24.2, sources [4] (« premier principe du brouillon » Microsoft : échec fermé)."
+  },
+  {
+   "fichier": "chapitre-24-passerelles-integration.md",
+   "avant": "| API existantes | Conversion suivie d'une curation, lectures d'abord | Prototype interne : conversion intégrale |",
+   "apres": "| API existantes | Conversion suivie d'une curation, lectures d'abord [S] | Prototype interne : conversion intégrale |",
+   "motif": "Ligne « API existantes » : [S], section 24.3, sources [6][7] (les pages d'éditeurs décrivent la conversion; la curation est un raisonnement (Limites))."
+  },
+  {
+   "fichier": "chapitre-24-passerelles-integration.md",
+   "avant": "| Réglages d'origine | Vérifier que les contrôles de contenu sont activés et que les refus sont journalisés | — |",
+   "apres": "| Réglages d'origine | Vérifier que les contrôles de contenu sont activés et que les refus sont journalisés [M] | — |",
+   "motif": "Ligne « Réglages d'origine » : [M], section 24.5 et 24.6, sources [14] (banc AIMultiple : trois produits sur six livrés sans contrôles de contenu actifs, deux sans journal des appels bloqués)."
+  },
+  {
+   "fichier": "chapitre-25-integration-patrimoine.md",
+   "avant": "| Sort du cœur patrimonial | Le figer et l'envelopper | Plateforme obsolète ou incapable de suivre les exigences : le remplacer |",
+   "apres": "| Sort du cœur patrimonial | Le figer et l'envelopper [S] | Plateforme obsolète ou incapable de suivre les exigences : le remplacer |",
+   "motif": "Ligne « Sort du cœur patrimonial » : [S], section 25.1, sources [1][4] (article de praticien, un seul cas, sans mesure : « patron raisonné, pas preuve »)."
+  },
+  {
+   "fichier": "chapitre-25-integration-patrimoine.md",
+   "avant": "| Place de l'agent | Hors de la frontière de décision : recueillir, valider, expliquer | Décision sans portée réglementaire ni financière (chapitre 17) |",
+   "apres": "| Place de l'agent | Hors de la frontière de décision : recueillir, valider, expliquer [S] | Décision sans portée réglementaire ni financière (chapitre 17) |",
+   "motif": "Ligne « Place de l'agent » : [S], section 25.1, sources [1] (règle 4 d'un article de praticien)."
+  },
+  {
+   "fichier": "chapitre-25-integration-patrimoine.md",
+   "avant": "| Premier palier | Lecture seule | Écriture réversible, par outil de niveau métier |",
+   "apres": "| Premier palier | Lecture seule [É] | Écriture réversible, par outil de niveau métier |",
+   "motif": "Ligne « Premier palier » : [É], section 25.3, sources [6] (documentation IBM : agents CICS en lecture seule)."
+  },
+  {
+   "fichier": "chapitre-25-integration-patrimoine.md",
+   "avant": "| Voie d'écriture | Interface d'affaires du système | Aucune : pas d'écriture directe dans les tables |",
+   "apres": "| Voie d'écriture | Interface d'affaires du système [S] | Aucune : pas d'écriture directe dans les tables |",
+   "motif": "Ligne « Voie d'écriture » : [S], section 25.2, sources [1] (« relèvent du raisonnement d'architecture; les sources les illustrent sans les démontrer »)."
+  },
+  {
+   "fichier": "chapitre-25-integration-patrimoine.md",
+   "avant": "| Autorisation | Décidée par le système d'enregistrement, sous une identité déléguée | — |",
+   "apres": "| Autorisation | Décidée par le système d'enregistrement, sous une identité déléguée [É] | — |",
+   "motif": "Ligne « Autorisation » : [É], section 25.2, sources [5][10][7] (IBM (CICS), SAP, IBM (z/OS Connect) : la couche agentique se soumet au régime d'accès existant)."
+  },
+  {
+   "fichier": "chapitre-25-integration-patrimoine.md",
+   "avant": "| Donnée citée par l'agent | Relue à la source avant toute décision engageante | Copie datée pour l'exploration et la synthèse |",
+   "apres": "| Donnée citée par l'agent | Relue à la source avant toute décision engageante [S] | Copie datée pour l'exploration et la synthèse |",
+   "motif": "Ligne « Donnée citée par l'agent » : [S], section 25.2, sources — (raisonnement d'architecture du chapitre)."
+  },
+  {
+   "fichier": "chapitre-25-integration-patrimoine.md",
+   "avant": "| Encapsulation | Couche anticorruption limitée à la traduction | Sémantiques voisines : façade d'API convertie en outils |",
+   "apres": "| Encapsulation | Couche anticorruption limitée à la traduction [É] | Sémantiques voisines : façade d'API convertie en outils |",
+   "motif": "Ligne « Encapsulation » : [É], section 25.4, sources [3] (documentation Microsoft Learn sur le patron de couche anticorruption)."
+  },
+  {
+   "fichier": "chapitre-25-integration-patrimoine.md",
+   "avant": "| Modernisation du code | Modèle mixte, validation humaine des artefacts intermédiaires | Autonomie pour la documentation d'un code déjà validé |",
+   "apres": "| Modernisation du code | Modèle mixte, validation humaine des artefacts intermédiaires [É] | Autonomie pour la documentation d'un code déjà validé |",
+   "motif": "Ligne « Modernisation du code » : [É], section 25.3, sources [8][2] (billet d'AWS [8]; Capco [2] (cabinet) : « leur convergence n'est pas une preuve indépendante »)."
+  },
+  {
+   "fichier": "chapitre-25-integration-patrimoine.md",
+   "avant": "| Granularité d'un outil d'écriture | Un appel, une transaction d'affaires complète | Plusieurs étapes : Saga (chapitre 18) |",
+   "apres": "| Granularité d'un outil d'écriture | Un appel, une transaction d'affaires complète [S] | Plusieurs étapes : Saga (chapitre 18) |",
+   "motif": "Ligne « Granularité d'un outil d'écriture » : [S], section 25.5, sources [9] (« la règle prudente, qui relève du raisonnement »)."
+  },
+  {
+   "fichier": "chapitre-25-integration-patrimoine.md",
+   "avant": "| Protection de la charge | Limite de débit par agent et par outil | Lectures massives : copie alimentée par les changements |",
+   "apres": "| Protection de la charge | Limite de débit par agent et par outil [N] | Lectures massives : copie alimentée par les changements |",
+   "motif": "Ligne « Protection de la charge » : [N], section 25.5, sources [9] (la spécification MCP impose au serveur de limiter le débit des invocations d'outils)."
+  },
+  {
+   "fichier": "chapitre-26-plateformes-entreprise.md",
+   "avant": "| Preuve exigée d'un éditeur | Page de documentation datée, avec statut et version | Jamais sur la foi d'un communiqué ou d'une liste de partenaires |",
+   "apres": "| Preuve exigée d'un éditeur | Page de documentation datée, avec statut et version [S] | Jamais sur la foi d'un communiqué ou d'une liste de partenaires |",
+   "motif": "Ligne « Preuve exigée d'un éditeur » : [S], section 26.1 et 26.4, sources [6] (exigence d'achat du chapitre; le communiqué ServiceNow illustre l'écart partenaires annoncés/livrés)."
+  },
+  {
+   "fichier": "chapitre-26-plateformes-entreprise.md",
+   "avant": "| Fonction admise en production | Disponibilité générale seulement | Préversion, si un plan d'adaptation est budgété |",
+   "apres": "| Fonction admise en production | Disponibilité générale seulement [S] | Préversion, si un plan d'adaptation est budgété |",
+   "motif": "Ligne « Fonction admise en production » : [S], section 26.1, sources — (raisonnement du chapitre (« seule la disponibilité générale engage l'éditeur »))."
+  },
+  {
+   "fichier": "chapitre-26-plateformes-entreprise.md",
+   "avant": "| Sens à valider | Entrant et sortant, pour chaque protocole | Plateforme utilisée comme seul système d'enregistrement : entrant d'abord |",
+   "apres": "| Sens à valider | Entrant et sortant, pour chaque protocole [S] | Plateforme utilisée comme seul système d'enregistrement : entrant d'abord |",
+   "motif": "Ligne « Sens à valider » : [S], section 26.1 et 26.9, sources — (raisonnement du chapitre)."
+  },
+  {
+   "fichier": "chapitre-26-plateformes-entreprise.md",
+   "avant": "| Conformité à A2A | Rapport de la trousse de compatibilité sur le point d'accès de l'éditeur | Éditeur qui ne sert pas A2A en entrée |",
+   "apres": "| Conformité à A2A | Rapport de la trousse de compatibilité sur le point d'accès de l'éditeur [É] | Éditeur qui ne sert pas A2A en entrée |",
+   "motif": "Ligne « Conformité à A2A » : [É], section 26.9, sources [22] (trousse de compatibilité du projet A2A (page d'accueil du dépôt seulement); jamais exécutée)."
+  },
+  {
+   "fichier": "chapitre-26-plateformes-entreprise.md",
+   "avant": "| Agents tiers | Viser le niveau « gouverné »; noter l'écart avec l'agent natif | Niveau « inventorié » acceptable pour un simple recensement |",
+   "apres": "| Agents tiers | Viser le niveau « gouverné »; noter l'écart avec l'agent natif [S] | Niveau « inventorié » acceptable pour un simple recensement |",
+   "motif": "Ligne « Agents tiers » : [S], section 26.1, sources — (échelle à quatre niveaux « proposée par ce chapitre et non normative »)."
+  },
+  {
+   "fichier": "chapitre-26-plateformes-entreprise.md",
+   "avant": "| Identité des agents | Fournisseur d'identité de l'entreprise, non celui de la plateforme | Plateforme unique et pérenne |",
+   "apres": "| Identité des agents | Fournisseur d'identité de l'entreprise, non celui de la plateforme [S] | Plateforme unique et pérenne |",
+   "motif": "Ligne « Identité des agents » : [S], section 26.1, sources — (raisonnement du chapitre (l'identité comme point d'ancrage du verrouillage))."
+  },
+  {
+   "fichier": "chapitre-26-plateformes-entreprise.md",
+   "avant": "| Choix du plan de contrôle | Celui qui gouverne le plus d'agents déjà en place | Parc homogène chez un seul éditeur |",
+   "apres": "| Choix du plan de contrôle | Celui qui gouverne le plus d'agents déjà en place [S] | Parc homogène chez un seul éditeur |",
+   "motif": "Ligne « Choix du plan de contrôle » : [S], section 26.8, sources [15] (conclusion d'un compte rendu de presse d'un rapport non lu)."
+  },
+  {
+   "fichier": "chapitre-26-plateformes-entreprise.md",
+   "avant": "| Évaluations d'analystes | Lire le rapport, réserves comprises | Reprise d'éditeur : indice, pas preuve |",
+   "apres": "| Évaluations d'analystes | Lire le rapport, réserves comprises [S] | Reprise d'éditeur : indice, pas preuve |",
+   "motif": "Ligne « Évaluations d'analystes » : [S], section 26.8, sources [11][15] (conseil de méthode du chapitre)."
+  },
+  {
+   "fichier": "chapitre-26-plateformes-entreprise.md",
+   "avant": "| Vérification | Essai interne sur trois scénarios avant engagement | — |",
+   "apres": "| Vérification | Essai interne sur trois scénarios avant engagement [S] | — |",
+   "motif": "Ligne « Vérification » : [S], section 26.9, sources — (Limites : l'essai en trois scénarios est une proposition « sans source externe »)."
+  },
+  {
+   "fichier": "chapitre-27-strategie-multi-plateformes.md",
+   "avant": "| Nombre de plateformes | Admettre la pluralité; plafonner par domaine | Petite organisation, parc chez un seul éditeur |",
+   "apres": "| Nombre de plateformes | Admettre la pluralité; plafonner par domaine [S] | Petite organisation, parc chez un seul éditeur |",
+   "motif": "Ligne « Nombre de plateformes » : [S], section 27.1, sources [11][9] (note d'analyste « sans sondage lisible » [11]; application de B-10 aux agents = « une déduction »)."
+  },
+  {
+   "fichier": "chapitre-27-strategie-multi-plateformes.md",
+   "avant": "| Registre de référence | Un seul, désigné, alimenté par les registres sources | Plateforme unique : son registre suffit |",
+   "apres": "| Registre de référence | Un seul, désigné, alimenté par les registres sources [S] | Plateforme unique : son registre suffit |",
+   "motif": "Ligne « Registre de référence » : [S], section 27.2, sources — (« proposition de ce chapitre » (Limites))."
+  },
+  {
+   "fichier": "chapitre-27-strategie-multi-plateformes.md",
+   "avant": "| Application des politiques | Au point de contrôle de chaque plateforme et aux passerelles | Aucun cas : l'inventaire fédéré ne l'assure pas |",
+   "apres": "| Application des politiques | Au point de contrôle de chaque plateforme et aux passerelles [S] | Aucun cas : l'inventaire fédéré ne l'assure pas |",
+   "motif": "Ligne « Application des politiques » : [S], section 27.2, sources [8] ([8] établit que les politiques n'atteignent pas les agents tiers; l'option est une proposition du chapitre)."
+  },
+  {
+   "fichier": "chapitre-27-strategie-multi-plateformes.md",
+   "avant": "| Identité des agents | Fournisseur d'identité de l'entreprise | Agent confiné à une plateforme |",
+   "apres": "| Identité des agents | Fournisseur d'identité de l'entreprise [S] | Agent confiné à une plateforme |",
+   "motif": "Ligne « Identité des agents » : [S], section 27.2, sources — (proposition du chapitre)."
+  },
+  {
+   "fichier": "chapitre-27-strategie-multi-plateformes.md",
+   "avant": "| Périmètre fédéré | Inventaire, identité, arrêt d'urgence, traces | Plus large seulement si chaque plateforme l'exprime |",
+   "apres": "| Périmètre fédéré | Inventaire, identité, arrêt d'urgence, traces [S] | Plus large seulement si chaque plateforme l'exprime |",
+   "motif": "Ligne « Périmètre fédéré » : [S], section 27.2, sources — (« socle minimal commun » : proposition du chapitre)."
+  },
+  {
+   "fichier": "chapitre-27-strategie-multi-plateformes.md",
+   "avant": "| Actifs | Dépôt de l'entreprise, formats ouverts, déploiement en copie | Prototype jetable |",
+   "apres": "| Actifs | Dépôt de l'entreprise, formats ouverts, déploiement en copie [S] | Prototype jetable |",
+   "motif": "Ligne « Actifs » : [S], section 27.3, sources [3][4] (les formats ouverts existent [3][4], mais la « règle de conduite » est du chapitre)."
+  },
+  {
+   "fichier": "chapitre-27-strategie-multi-plateformes.md",
+   "avant": "| Construire ou acheter | Acheter près des données, construire ce qui différencie | Équipe sans capacité d'exploitation : acheter |",
+   "apres": "| Construire ou acheter | Acheter près des données, construire ce qui différencie [S] | Équipe sans capacité d'exploitation : acheter |",
+   "motif": "Ligne « Construire ou acheter » : [S], section 27.4, sources — (critères de 27.4 : propositions sans source externe (Limites))."
+  },
+  {
+   "fichier": "chapitre-27-strategie-multi-plateformes.md",
+   "avant": "| Contrat | Liste d'actifs exportables, standards versionnés, essai de sortie | Service d'essai ou sans données propres |",
+   "apres": "| Contrat | Liste d'actifs exportables, standards versionnés, essai de sortie [N] | Service d'essai ou sans données propres |",
+   "motif": "Ligne « Contrat » : [N], section 27.5, sources [10][9] (règlement (UE) 2023/2854 (art. 25 : liste exhaustive des actifs exportables; art. 30; art. 31 : exemptions) et ligne directrice B-10 (plans de sortie))."
+  },
+  {
+   "fichier": "chapitre-28-agents-industriels-peripherie.md",
+   "avant": "| Rôle de l'agent en exploitation | Aide à la décision : lire, expliquer, proposer | Commande simple sur installation d'essai, confirmée par l'opérateur |",
+   "apres": "| Rôle de l'agent en exploitation | Aide à la décision : lire, expliquer, proposer [É] | Commande simple sur installation d'essai, confirmée par l'opérateur |",
+   "motif": "Ligne « Rôle de l'agent en exploitation » : [É], section 28.1 et 28.4, sources [4][6][10] (documentation du serveur MCP de l'OPC Foundation, démonstrateurs Fraunhofer, communiqué Beckhoff)."
+  },
+  {
+   "fichier": "chapitre-28-agents-industriels-peripherie.md",
+   "avant": "| Accès aux équipements | Adaptateur MCP au-dessus d'OPC UA, sans modifier les automates | Équipement sans OPC UA : adaptateur propre au protocole |",
+   "apres": "| Accès aux équipements | Adaptateur MCP au-dessus d'OPC UA, sans modifier les automates [É] | Équipement sans OPC UA : adaptateur propre au protocole |",
+   "motif": "Ligne « Accès aux équipements » : [É], section 28.3, sources [3][4][8] (serveur MCP de l'OPC Foundation, aas-mcp-server de SAP)."
+  },
+  {
+   "fichier": "chapitre-28-agents-industriels-peripherie.md",
+   "avant": "| Écritures | Désactivées par défaut; activées par outil et par appelant | — |",
+   "apres": "| Écritures | Désactivées par défaut; activées par outil et par appelant [É] | — |",
+   "motif": "Ligne « Écritures » : [É], section 28.4, sources [4][8] (écritures désactivées par défaut dans le serveur OPC Foundation et dans celui de SAP)."
+  },
+  {
+   "fichier": "chapitre-28-agents-industriels-peripherie.md",
+   "avant": "| Fonctions de sûreté | Hors de portée de tout agent | Aucun cas |",
+   "apres": "| Fonctions de sûreté | Hors de portée de tout agent [É] | Aucun cas |",
+   "motif": "Ligne « Fonctions de sûreté » : [É], section 28.4, sources [4][6] (documentation OPC Foundation (outils de robotique) et GridCompanion; normes de sûreté non lues)."
+  },
+  {
+   "fichier": "chapitre-28-agents-industriels-peripherie.md",
+   "avant": "| Validation humaine | Obligatoire avant toute écriture | Aucun cas en exploitation |",
+   "apres": "| Validation humaine | Obligatoire avant toute écriture [É] | Aucun cas en exploitation |",
+   "motif": "Ligne « Validation humaine » : [É], section 28.4, sources [4][6][10] (confirmation des outils de mutation [4], approbation de l'ingénieur [10], décision de l'opérateur [6])."
+  },
+  {
+   "fichier": "chapitre-28-agents-industriels-peripherie.md",
+   "avant": "| Échec ou délai sur une écriture | Pas de nouvel essai automatique; relire l'état | Écriture démontrée idempotente |",
+   "apres": "| Échec ou délai sur une écriture | Pas de nouvel essai automatique; relire l'état [É] | Écriture démontrée idempotente |",
+   "motif": "Ligne « Échec ou délai sur une écriture » : [É], section 28.1, sources [4] (documentation OPC Foundation : le serveur ne réessaie jamais implicitement; relire l'état)."
+  },
+  {
+   "fichier": "chapitre-28-agents-industriels-peripherie.md",
+   "avant": "| Couche sémantique | OPC UA pour le procédé; AAS pour la description des actifs | Parc sans modèle : modéliser d'abord |",
+   "apres": "| Couche sémantique | OPC UA pour le procédé; AAS pour la description des actifs [É] | Parc sans modèle : modéliser d'abord |",
+   "motif": "Ligne « Couche sémantique » : [É], section 28.2, sources [1][2][6][8] (article commandité, communiqué OPC Foundation, brochure Fraunhofer; normes IEC 62541 et IDTA non lues)."
+  },
+  {
+   "fichier": "chapitre-28-agents-industriels-peripherie.md",
+   "avant": "| Emplacement | Adaptateur en atelier; modèle au centre de données | Site isolé ou données sensibles : modèle local |",
+   "apres": "| Emplacement | Adaptateur en atelier; modèle au centre de données [É] | Site isolé ou données sensibles : modèle local |",
+   "motif": "Ligne « Emplacement » : [É], section 28.1, sources [6][10] (architecture Teuken4OPC, GridCompanion, assistant Beckhoff)."
+  },
+  {
+   "fichier": "chapitre-28-agents-industriels-peripherie.md",
+   "avant": "| Provenance de l'adaptateur | Organisme de normalisation ou éditeur, version épinglée | Adaptateur communautaire : banc d'essai seulement |",
+   "apres": "| Provenance de l'adaptateur | Organisme de normalisation ou éditeur, version épinglée [S] | Adaptateur communautaire : banc d'essai seulement |",
+   "motif": "Ligne « Provenance de l'adaptateur » : [S], section 28.3 et 28.4, sources [3][5] (critère de choix du chapitre; les sources décrivent des adaptateurs sans comparer leur provenance)."
+  },
+  {
+   "fichier": "chapitre-29-identite-agentique.md",
+   "avant": "| Identité d'un agent | Identité propre, une par agent, distincte de celles des utilisateurs et des applications | Jamais pour un agent en production |",
+   "apres": "| Identité d'un agent | Identité propre, une par agent, distincte de celles des utilisateurs et des applications [É] | Jamais pour un agent en production |",
+   "motif": "Ligne « Identité d'un agent » : [É], section 29.1 et 29.4, sources [2][3][12] (documentation Entra, brouillon AIMS (« chaque agent en reçoit exactement un »), note CSA)."
+  },
+  {
+   "fichier": "chapitre-29-identite-agentique.md",
+   "avant": "| Justificatifs | Courte durée, émis à l'exécution, renouvelés automatiquement | Système patrimonial : justificatif dérivé par échange, jamais de clé statique partagée |",
+   "apres": "| Justificatifs | Courte durée, émis à l'exécution, renouvelés automatiquement [É] | Système patrimonial : justificatif dérivé par échange, jamais de clé statique partagée |",
+   "motif": "Ligne « Justificatifs » : [É], section 29.4, sources [3][4] (brouillon AIMS (courte durée, expiration explicite) et spécification de projet SPIFFE)."
+  },
+  {
+   "fichier": "chapitre-29-identite-agentique.md",
+   "avant": "| Accès du modèle aux secrets | Aucun; les secrets restent dans l'enveloppe d'exécution | — |",
+   "apres": "| Accès du modèle aux secrets | Aucun; les secrets restent dans l'enveloppe d'exécution [É] | — |",
+   "motif": "Ligne « Accès du modèle aux secrets » : [É], section 29.4, sources [3] (brouillon AIMS seul; le raisonnement sur l'injection est du chapitre)."
+  },
+  {
+   "fichier": "chapitre-29-identite-agentique.md",
+   "avant": "| Responsable humain | Parrain obligatoire, propriétaire technique désigné, tous deux réattribués au départ | — |",
+   "apres": "| Responsable humain | Parrain obligatoire, propriétaire technique désigné, tous deux réattribués au départ [É] | — |",
+   "motif": "Ligne « Responsable humain » : [É], section 29.2, sources [13] (documentation Entra : parrain exigé à la création; propriétaire facultatif; réattribution = déduction du chapitre)."
+  },
+  {
+   "fichier": "chapitre-29-identite-agentique.md",
+   "avant": "| Sémantique d'échange de jetons | Délégation, avec `act` | Usurpation seulement si le système cible ne peut rien d'autre, avec journalisation compensatoire |",
+   "apres": "| Sémantique d'échange de jetons | Délégation, avec `act` [N] | Usurpation seulement si le système cible ne peut rien d'autre, avec journalisation compensatoire |",
+   "motif": "Ligne « Sémantique d'échange de jetons » : [N], section 29.5, sources [5] (RFC 8693 : délégation et usurpation, revendication `act`)."
+  },
+  {
+   "fichier": "chapitre-29-identite-agentique.md",
+   "avant": "| Compte utilisateur pour un agent | Non | Système qui exige un objet utilisateur; l'identité d'agent demeure |",
+   "apres": "| Compte utilisateur pour un agent | Non [É] | Système qui exige un objet utilisateur; l'identité d'agent demeure |",
+   "motif": "Ligne « Compte utilisateur pour un agent » : [É], section 29.1, sources [1] (documentation Entra : à n'utiliser que si un objet utilisateur est exigé)."
+  },
+  {
+   "fichier": "chapitre-29-identite-agentique.md",
+   "avant": "| Authentification derrière une passerelle | Couche applicative | Maillage de bout en bout sans terminaison TLS : TLS mutuel |",
+   "apres": "| Authentification derrière une passerelle | Couche applicative [S] | Maillage de bout en bout sans terminaison TLS : TLS mutuel |",
+   "motif": "Ligne « Authentification derrière une passerelle » : [S], section 29.4, sources [3] ([3] décrit la limite du transport; « la voie normale » est une inférence du chapitre)."
+  },
+  {
+   "fichier": "chapitre-29-identite-agentique.md",
+   "avant": "| Jetons d'accès | Liés au détenteur (TLS mutuel ou DPoP), audience restreinte | Liaison non prise en charge : durée très courte |",
+   "apres": "| Jetons d'accès | Liés au détenteur (TLS mutuel ou DPoP), audience restreinte [N] | Liaison non prise en charge : durée très courte |",
+   "motif": "Ligne « Jetons d'accès » : [N], section 29.5, sources [6] (RFC 9449 (DPoP) et liaison TLS mutuel)."
+  },
+  {
+   "fichier": "chapitre-29-identite-agentique.md",
+   "avant": "| Appels en aval d'un outil | Échange de jetons ou jeton de transaction | Aucun cas pour le relais du jeton reçu |",
+   "apres": "| Appels en aval d'un outil | Échange de jetons ou jeton de transaction [N] | Aucun cas pour le relais du jeton reçu |",
+   "motif": "Ligne « Appels en aval d'un outil » : [N], section 29.5, sources [5] (RFC 8693 (échange de jetons); le relais du jeton reçu est interdit par MCP (chapitre 5))."
+  },
+  {
+   "fichier": "chapitre-29-identite-agentique.md",
+   "avant": "| Annuaire | Celui du fournisseur d'identité, complété des attributs de 29.3 | Parc multi-plateformes : annuaire maître indépendant |",
+   "apres": "| Annuaire | Celui du fournisseur d'identité, complété des attributs de 29.3 [S] | Parc multi-plateformes : annuaire maître indépendant |",
+   "motif": "Ligne « Annuaire » : [S], section 29.3, sources — (« la liste d'attributs d'annuaire de 29.3 et la grille de décision sont des synthèses » (Limites))."
+  },
+  {
+   "fichier": "chapitre-29-identite-agentique.md",
+   "avant": "| Accès entre organisations | Chaînage d'identité sur entente bilatérale | Fournisseur d'identité commun : ID-JAG |",
+   "apres": "| Accès entre organisations | Chaînage d'identité sur entente bilatérale [S] | Fournisseur d'identité commun : ID-JAG |",
+   "motif": "Ligne « Accès entre organisations » : [S], section 29.8, sources [7][8] (choix du chapitre parmi trois mécanismes, dont deux brouillons d'IETF (le chaînage est approuvé, sans RFC))."
+  },
+  {
+   "fichier": "chapitre-29-identite-agentique.md",
+   "avant": "| Identité décentralisée | Veille | Consortium sectoriel qui impose une méthode |",
+   "apres": "| Identité décentralisée | Veille [S] | Consortium sectoriel qui impose une méthode |",
+   "motif": "Ligne « Identité décentralisée » : [S], section 29.6, sources [10] (« veille » : posture du chapitre, déduite de l'absence de profil adopté pour les agents)."
+  },
+  {
+   "fichier": "chapitre-30-autorisation-delegation.md",
+   "avant": "| Portées initiales | Ensemble minimal, lecture et découverte; élévation à la demande | Flux sans utilisateur : portées préapprouvées par politique; site déconnecté : droits répartis avant la coupure (chapitre 46) |",
+   "apres": "| Portées initiales | Ensemble minimal, lecture et découverte; élévation à la demande [N] | Flux sans utilisateur : portées préapprouvées par politique; site déconnecté : droits répartis avant la coupure (chapitre 46) |",
+   "motif": "Ligne « Portées initiales » : [N], section 30.1, sources [1][2] (spécification d'autorisation de MCP et guide de sécurité : ensemble initial minimal, puis élévation ciblée)."
+  },
+  {
+   "fichier": "chapitre-30-autorisation-delegation.md",
+   "avant": "| Conception des outils | Étroits, un effet par outil | Outil générique derrière une règle sur ses arguments |",
+   "apres": "| Conception des outils | Étroits, un effet par outil [S] | Outil générique derrière une règle sur ses arguments |",
+   "motif": "Ligne « Conception des outils » : [S], section 30.1, sources — (« le découpage des outils » est une analyse du chapitre (Limites))."
+  },
+  {
+   "fichier": "chapitre-30-autorisation-delegation.md",
+   "avant": "| Justificatif en aval | Obtenu par échange de jeton, lié à l'appelant | Système patrimonial sans OAuth : compte de service restreint et audit renforcé |",
+   "apres": "| Justificatif en aval | Obtenu par échange de jeton, lié à l'appelant [N] | Système patrimonial sans OAuth : compte de service restreint et audit renforcé |",
+   "motif": "Ligne « Justificatif en aval » : [N], section 30.1, sources [1][6] (MCP interdit d'accepter ou de relayer un jeton non émis pour le serveur [1]; RFC 8693 pour l'échange [6])."
+  },
+  {
+   "fichier": "chapitre-30-autorisation-delegation.md",
+   "avant": "| Délégation à un sous-agent | Jeton neuf, plus étroit, plus court, par échange en ligne; profondeur bornée | Aucun cas pour le relais du jeton parent |",
+   "apres": "| Délégation à un sous-agent | Jeton neuf, plus étroit, plus court, par échange en ligne; profondeur bornée [S] | Aucun cas pour le relais du jeton parent |",
+   "motif": "Ligne « Délégation à un sous-agent » : [S], section 30.2, sources [6] (« les quatre règles de la section 30.2 » sont des analyses du chapitre (Limites))."
+  },
+  {
+   "fichier": "chapitre-30-autorisation-delegation.md",
+   "avant": "| Opérations à fort enjeu | Décision dans le serveur de ressources, sur l'objet et le montant | Détails d'autorisation (RFC 9396) si le serveur d'autorisation les gère |",
+   "apres": "| Opérations à fort enjeu | Décision dans le serveur de ressources, sur l'objet et le montant [N] | Détails d'autorisation (RFC 9396) si le serveur d'autorisation les gère |",
+   "motif": "Ligne « Opérations à fort enjeu » : [N], section 30.3, sources [2][7] (guide de sécurité MCP : portées insuffisantes sans logique côté serveur [2]; RFC 9396 pour l'exception [7])."
+  },
+  {
+   "fichier": "chapitre-30-autorisation-delegation.md",
+   "avant": "| Preuve d'approbation humaine | Octroi émis par le serveur d'autorisation | Confirmation locale pour les actions réversibles et à faible enjeu |",
+   "apres": "| Preuve d'approbation humaine | Octroi émis par le serveur d'autorisation [É] | Confirmation locale pour les actions réversibles et à faible enjeu |",
+   "motif": "Ligne « Preuve d'approbation humaine » : [É], section 30.4, sources [4] (brouillon AIMS : confirmation liée à un octroi vérifiable; « aucun standard ne couvre ce besoin »)."
+  },
+  {
+   "fichier": "chapitre-30-autorisation-delegation.md",
+   "avant": "| Manifestes de sites tiers | Règles structurées appliquées par le cadriciel | Directives en langage naturel : jamais comme instructions |",
+   "apres": "| Manifestes de sites tiers | Règles structurées appliquées par le cadriciel [S] | Directives en langage naturel : jamais comme instructions |",
+   "motif": "Ligne « Manifestes de sites tiers » : [S], section 30.5, sources [12] (prépublication sans évaluation ni donnée d'adoption; les deux usages sont une déduction du chapitre)."
+  },
+  {
+   "fichier": "chapitre-30-autorisation-delegation.md",
+   "avant": "| Politique | Codifiée, versionnée, évaluée hors de l'agent | Très petit parc : listes à la passerelle |",
+   "apres": "| Politique | Codifiée, versionnée, évaluée hors de l'agent [N] | Très petit parc : listes à la passerelle |",
+   "motif": "Ligne « Politique » : [N], section 30.6, sources [11][4] (AuthZEN Authorization API 1.0 (spécification finale) : séparation point d'application / point de décision)."
+  },
+  {
+   "fichier": "chapitre-30-autorisation-delegation.md",
+   "avant": "| Piste d'audit | Sept champs d'AIMS, plus la chaîne et la version de politique | — |",
+   "apres": "| Piste d'audit | Sept champs d'AIMS, plus la chaîne et la version de politique [É] | — |",
+   "motif": "Ligne « Piste d'audit » : [É], section 30.6, sources [4] (brouillon AIMS : sept champs minimaux; chaîne et version de politique = déductions du chapitre)."
+  }
+ ]
+}

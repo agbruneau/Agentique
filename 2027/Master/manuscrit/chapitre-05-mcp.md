@@ -335,19 +335,19 @@ La feuille de route avertit qu'elle reflète une réflexion en cours et non des 
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Version cible du protocole | `2026-07-28` pour tout nouveau serveur distant | Clients imposés qui ne parlent qu'une version à poignée de main : prévoir la double compatibilité |
-| Transport | Streamable HTTP pour le distant, stdio pour le local | Aucun cas pour HTTP+SSE, déprécié |
-| Autorisation | Obligatoire sur tout serveur distant, avec vérification de l'audience | Serveur local sans données sensibles |
-| Modèle d'autorisation | Enterprise-Managed Authorization si le fournisseur d'identité et les clients la prennent en charge | Sinon, flux OAuth de base avec préenregistrement des clients |
-| Enregistrement des clients | Client ID Metadata Documents | Enregistrement dynamique seulement si le serveur d'autorisation n'offre rien d'autre |
-| Politique à la passerelle | Sur les en-têtes `Mcp-*` des requêtes `2026-07-28` | Version antérieure ou absente : refuser, ou analyser le corps |
-| État entre appels | Identifiants explicites, opaques, vérifiés à chaque appel | — |
-| Opérations longues | Extension Tasks, en acceptant son statut bêta | Opération courte : flux de réponse avec notifications de progression |
-| Effets de bord | Outils idempotents ou compensables | — |
-| Découverte | Registre interne à interface standard | Très petit parc : configuration statique |
-| SDK | Niveau 1 | Langage sans SDK de niveau 1 : niveau 2 avec plan de suivi |
-| Extensions | Stables seulement en production | Bêta si le bénéfice justifie un coût d'adaptation prévu |
-| Annotations d'outils | Ignorées pour toute décision de sécurité | Serveur interne dont le code est maîtrisé |
+| Version cible du protocole | `2026-07-28` pour tout nouveau serveur distant [N] | Clients imposés qui ne parlent qu'une version à poignée de main : prévoir la double compatibilité |
+| Transport | Streamable HTTP pour le distant, stdio pour le local [N] | Aucun cas pour HTTP+SSE, déprécié |
+| Autorisation | Obligatoire sur tout serveur distant, avec vérification de l'audience [N] | Serveur local sans données sensibles |
+| Modèle d'autorisation | Enterprise-Managed Authorization si le fournisseur d'identité et les clients la prennent en charge [É] | Sinon, flux OAuth de base avec préenregistrement des clients |
+| Enregistrement des clients | Client ID Metadata Documents [N] | Enregistrement dynamique seulement si le serveur d'autorisation n'offre rien d'autre |
+| Politique à la passerelle | Sur les en-têtes `Mcp-*` des requêtes `2026-07-28` [N] | Version antérieure ou absente : refuser, ou analyser le corps |
+| État entre appels | Identifiants explicites, opaques, vérifiés à chaque appel [N] | — |
+| Opérations longues | Extension Tasks, en acceptant son statut bêta [É] | Opération courte : flux de réponse avec notifications de progression |
+| Effets de bord | Outils idempotents ou compensables [S] | — |
+| Découverte | Registre interne à interface standard [É] | Très petit parc : configuration statique |
+| SDK | Niveau 1 [É] | Langage sans SDK de niveau 1 : niveau 2 avec plan de suivi |
+| Extensions | Stables seulement en production [É] | Bêta si le bénéfice justifie un coût d'adaptation prévu |
+| Annotations d'outils | Ignorées pour toute décision de sécurité [N] | Serveur interne dont le code est maîtrisé |
 
 ---
 

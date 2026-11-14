@@ -235,17 +235,17 @@ Enfin, la documentation recommande fortement de placer les serveurs A2A exposés
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Exposer une capacité comme outil ou comme agent | Outil (MCP) si le comportement est ponctuel, typé et maîtrisé par l'appelant | Agent (A2A) si la capacité raisonne, dialogue, dure ou appartient à une autre équipe |
-| Version cible | 1.0, avec son correctif 1.0.1, pour tout nouvel agent | Partenaires encore en 0.3 : exposer deux interfaces pendant la transition |
-| Liaison | HTTP+JSON ou JSON-RPC pour l'externe | gRPC pour les échanges internes à haut débit |
-| Carte publique | Description minimale, sans secret ni URL interne | Carte étendue, après authentification, pour le détail |
-| Signature des cartes | Signer ses cartes; vérifier celles des tiers | Aucun écart justifié en production entre organisations |
-| Découverte | Registre interne organisé | Emplacement bien connu pour un agent public; configuration directe pour un couplage fixe |
-| Suivi d'une tâche longue | Notifications poussées, avec validation de leur authenticité | Interrogation périodique si le client ne peut pas recevoir d'appels entrants |
-| Livraison des résultats | Artefacts | Message seul pour un échange purement conversationnel |
-| Autorisation en cours de tâche | Justificatifs obtenus hors protocole; portée et durée de validité définies par politique | — |
-| Exposition externe | Derrière une passerelle de gestion d'API | Agent strictement interne |
-| Vérification des livrables | Contrôle systématique de ce que rend un agent tiers | Agent interne dont le comportement est évalué en continu |
+| Exposer une capacité comme outil ou comme agent | Outil (MCP) si le comportement est ponctuel, typé et maîtrisé par l'appelant [S] | Agent (A2A) si la capacité raisonne, dialogue, dure ou appartient à une autre équipe |
+| Version cible | 1.0, avec son correctif 1.0.1, pour tout nouvel agent [N] | Partenaires encore en 0.3 : exposer deux interfaces pendant la transition |
+| Liaison | HTTP+JSON ou JSON-RPC pour l'externe [S] | gRPC pour les échanges internes à haut débit |
+| Carte publique | Description minimale, sans secret ni URL interne [S] | Carte étendue, après authentification, pour le détail |
+| Signature des cartes | Signer ses cartes; vérifier celles des tiers [N] | Aucun écart justifié en production entre organisations |
+| Découverte | Registre interne organisé [É] | Emplacement bien connu pour un agent public; configuration directe pour un couplage fixe |
+| Suivi d'une tâche longue | Notifications poussées, avec validation de leur authenticité [N] | Interrogation périodique si le client ne peut pas recevoir d'appels entrants |
+| Livraison des résultats | Artefacts [N] | Message seul pour un échange purement conversationnel |
+| Autorisation en cours de tâche | Justificatifs obtenus hors protocole; portée et durée de validité définies par politique [N] | — |
+| Exposition externe | Derrière une passerelle de gestion d'API [É] | Agent strictement interne |
+| Vérification des livrables | Contrôle systématique de ce que rend un agent tiers [S] | Agent interne dont le comportement est évalué en continu |
 
 ---
 

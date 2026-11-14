@@ -210,18 +210,18 @@ La colonne de droite est une lecture de ce chapitre. Ces études portent sur des
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Source de vérité interne | Un registre interne avec approbation | Registres séparés par environnement ou par unité, s'ils sont fédérés |
-| Serveurs MCP publics | Sélection approuvée, tirée d'un sous-registre | Jamais le registre officiel interrogé directement par les hôtes |
-| Interface du registre interne | Spécification OpenAPI du registre MCP | Catalogue de plateforme si le parc est homogène |
-| Alimentation | Déclaration et détection automatique | Petit parc : déclaration seule |
-| Approbation | Manuelle en production | Automatique en développement, avec contrôles compensatoires |
-| Référence à une entrée | Version épinglée, empreinte si elle est disponible; nouvelle approbation à tout changement de définition | — |
-| Agents exposés à l'extérieur | Agent Card à l'URI bien connue; carte étendue pour le sensible | Agents internes : registre seulement |
-| Signature des Agent Cards | Signer et vérifier entre organisations | Échanges internes déjà protégés par mTLS |
-| Catalogue de domaine | Attendre la stabilisation; sinon générer `ai-catalog.json` et `ard.json` d'une même source | Découvrabilité externe érigée en objectif d'affaires |
-| Découverte par les agents à l'exécution | Limitée aux entrées approuvées; métadonnées tenues pour non fiables | — |
-| Annuaire distribué | Veille | Écosystème entre organisations sans opérateur central acceptable |
-| Synchronisation depuis un registre public | Comparer les définitions et le point d'accès à la version approuvée; tout écart suspend l'entrée | — |
+| Source de vérité interne | Un registre interne avec approbation [S] | Registres séparés par environnement ou par unité, s'ils sont fédérés |
+| Serveurs MCP publics | Sélection approuvée, tirée d'un sous-registre [É] | Jamais le registre officiel interrogé directement par les hôtes |
+| Interface du registre interne | Spécification OpenAPI du registre MCP [É] | Catalogue de plateforme si le parc est homogène |
+| Alimentation | Déclaration et détection automatique [S] | Petit parc : déclaration seule |
+| Approbation | Manuelle en production [É] | Automatique en développement, avec contrôles compensatoires |
+| Référence à une entrée | Version épinglée, empreinte si elle est disponible; nouvelle approbation à tout changement de définition [É] | — |
+| Agents exposés à l'extérieur | Agent Card à l'URI bien connue; carte étendue pour le sensible [N] | Agents internes : registre seulement |
+| Signature des Agent Cards | Signer et vérifier entre organisations [N] | Échanges internes déjà protégés par mTLS |
+| Catalogue de domaine | Attendre la stabilisation; sinon générer `ai-catalog.json` et `ard.json` d'une même source [S] | Découvrabilité externe érigée en objectif d'affaires |
+| Découverte par les agents à l'exécution | Limitée aux entrées approuvées; métadonnées tenues pour non fiables [É] | — |
+| Annuaire distribué | Veille [S] | Écosystème entre organisations sans opérateur central acceptable |
+| Synchronisation depuis un registre public | Comparer les définitions et le point d'accès à la version approuvée; tout écart suspend l'entrée [S] | — |
 
 ---
 

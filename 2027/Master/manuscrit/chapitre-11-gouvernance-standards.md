@@ -298,17 +298,17 @@ Une entreprise qui dépend d'un éditeur de plateforme devrait inscrire dans ses
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Sur quels standards bâtir | Textes mis en œuvre et hébergés par une fondation : MCP, A2A, RFC de la famille OAuth | Secteur doté d'un protocole propre (chapitres 7, 10, 28) |
-| Seuil de maturité en production | RFC; extension stable; projet AAIF de niveau Growth ou Impact | Bénéfice élevé et coût d'adaptation budgété : document de groupe IETF, extension bêta |
-| Dépendance à un brouillon | Isolée derrière un adaptateur, révision visée consignée | Aucun cas pour une dépendance diffuse dans les agents |
-| Projet de niveau Sandbox | Essai seulement | Engagement d'un mainteneur et plan de sortie documenté |
-| Modèle d'identité des agents | Identité de charge de travail et OAuth, dans la continuité de l'existant | Exigence réglementaire locale; échanges ouverts entre organisations sans fédération possible |
-| Identifiants décentralisés et scores de confiance | Attendre | Consortium sectoriel qui impose un modèle |
-| Marché chinois | Veille sur la série GB/Z 185 et identité d'agent remplaçable | Conversion en norme obligatoire : conformité planifiée |
-| Annonces non confirmées (profil du NIST, par exemple) | Exclues de la planification | Publication sur la page officielle de l'organisme |
-| Participation aux standards | Veille avec responsable désigné | Lacune bloquante et expérience de mise en œuvre à faire valoir : contribution ciblée |
-| Gouvernance des décisions d'agents | Conçue en interne, au-dessus des protocoles | — |
-| Clauses contractuelles | Standards, versions et délais de mise à niveau nommés | — |
+| Sur quels standards bâtir | Textes mis en œuvre et hébergés par une fondation : MCP, A2A, RFC de la famille OAuth [S] | Secteur doté d'un protocole propre (chapitres 7, 10, 28) |
+| Seuil de maturité en production | RFC; extension stable; projet AAIF de niveau Growth ou Impact [S] | Bénéfice élevé et coût d'adaptation budgété : document de groupe IETF, extension bêta |
+| Dépendance à un brouillon | Isolée derrière un adaptateur, révision visée consignée [S] | Aucun cas pour une dépendance diffuse dans les agents |
+| Projet de niveau Sandbox | Essai seulement [S] | Engagement d'un mainteneur et plan de sortie documenté |
+| Modèle d'identité des agents | Identité de charge de travail et OAuth, dans la continuité de l'existant [S] | Exigence réglementaire locale; échanges ouverts entre organisations sans fédération possible |
+| Identifiants décentralisés et scores de confiance | Attendre [S] | Consortium sectoriel qui impose un modèle |
+| Marché chinois | Veille sur la série GB/Z 185 et identité d'agent remplaçable [S] | Conversion en norme obligatoire : conformité planifiée |
+| Annonces non confirmées (profil du NIST, par exemple) | Exclues de la planification [S] | Publication sur la page officielle de l'organisme |
+| Participation aux standards | Veille avec responsable désigné [S] | Lacune bloquante et expérience de mise en œuvre à faire valoir : contribution ciblée |
+| Gouvernance des décisions d'agents | Conçue en interne, au-dessus des protocoles [S] | — |
+| Clauses contractuelles | Standards, versions et délais de mise à niveau nommés [S] | — |
 
 ---
 

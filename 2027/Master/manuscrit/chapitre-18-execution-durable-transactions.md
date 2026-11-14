@@ -246,18 +246,18 @@ Reste le cas où le pivot a été franchi à tort. Il ne relève plus de la tran
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Persistance de l'état | Magasin durable dès le premier environnement partagé | Prototype jetable : magasin en mémoire |
-| Mécanisme de reprise | Journal rejoué pour les tâches à effets externes | Agent conversationnel sans effet : instantanés par fil |
-| Appel au modèle | Étape journalisée, relue au rejeu | — |
-| Granularité | Une étape par appel d'outil à effet | Lectures groupées dans une même étape |
-| Moment d'écriture | Synchrone avant toute étape à effet | Asynchrone pour les étapes sans effet, si le débit l'exige |
-| Garantie visée | Au moins une fois, avec outils idempotents | Au plus une fois pour une action irréversible sans clé possible |
-| Clé d'idempotence | Dérivée de l'étape durable, exigée par le schéma de l'outil | Outil idempotent par nature |
-| Compensation | Déclarée par le propriétaire de l'outil, idempotente | Jamais générée à la volée pour un système d'enregistrement |
-| Décision de reprise | Validateur distinct de l'agent de tâche | Tâche à faible enjeu : nouvel essai borné |
-| Action irréversible | Après le pivot, avec approbation liée aux paramètres | Montant sous un plafond fixé par classe de décision |
-| Changement de prompt, d'outils ou de modèle | Versionné; les exécutions en cours finissent sur l'ancienne version | Correctif de sécurité : arrêt et compensation |
-| Échec définitif | File de lettres mortes et escalade humaine | — |
+| Persistance de l'état | Magasin durable dès le premier environnement partagé [É] | Prototype jetable : magasin en mémoire |
+| Mécanisme de reprise | Journal rejoué pour les tâches à effets externes [S] | Agent conversationnel sans effet : instantanés par fil |
+| Appel au modèle | Étape journalisée, relue au rejeu [S] | — |
+| Granularité | Une étape par appel d'outil à effet [É] | Lectures groupées dans une même étape |
+| Moment d'écriture | Synchrone avant toute étape à effet [S] | Asynchrone pour les étapes sans effet, si le débit l'exige |
+| Garantie visée | Au moins une fois, avec outils idempotents [É] | Au plus une fois pour une action irréversible sans clé possible |
+| Clé d'idempotence | Dérivée de l'étape durable, exigée par le schéma de l'outil [É] | Outil idempotent par nature |
+| Compensation | Déclarée par le propriétaire de l'outil, idempotente [S] | Jamais générée à la volée pour un système d'enregistrement |
+| Décision de reprise | Validateur distinct de l'agent de tâche [S] | Tâche à faible enjeu : nouvel essai borné |
+| Action irréversible | Après le pivot, avec approbation liée aux paramètres [S] | Montant sous un plafond fixé par classe de décision |
+| Changement de prompt, d'outils ou de modèle | Versionné; les exécutions en cours finissent sur l'ancienne version [S] | Correctif de sécurité : arrêt et compensation |
+| Échec définitif | File de lettres mortes et escalade humaine [É] | — |
 
 ---
 

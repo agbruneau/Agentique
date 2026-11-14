@@ -161,14 +161,14 @@ Les protocoles produisent de la preuve et s'arrêtent là : AP2 exclut la résol
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Autorité de l'agent | Limites écrites par agent, alignées sur les portées techniques | Agent purement consultatif, sans capacité d'agir |
-| Engagements contractuels par agent | Approbation humaine au-delà d'un seuil de montant ou de risque | Achats répétitifs de faible valeur sous mandat étroit |
-| Accès aux systèmes de tiers | Vérifier l'autorisation du tiers, non seulement celle de l'utilisateur | Interface que le tiers ouvre expressément aux agents |
-| Preuve | Journaux et traces conservés, exploitables en litige | — |
-| Offre d'agents en Europe | Se traiter comme fabricant au sens de la directive de 2024 | Usage strictement interne |
-| Contrats fournisseurs | Clauses propres aux agents : autorité, journaux, arrêt, indemnités | Outil standard non négociable : réduire la portée de l'agent |
-| Assurance | Revue des exclusions IA à chaque renouvellement | — |
-| Agents de deux organisations | Contrat-cadre sur l'engagement, la preuve et l'erreur | Échanges sans effet juridique |
+| Autorité de l'agent | Limites écrites par agent, alignées sur les portées techniques [S] | Agent purement consultatif, sans capacité d'agir |
+| Engagements contractuels par agent | Approbation humaine au-delà d'un seuil de montant ou de risque [S] | Achats répétitifs de faible valeur sous mandat étroit |
+| Accès aux systèmes de tiers | Vérifier l'autorisation du tiers, non seulement celle de l'utilisateur [S] | Interface que le tiers ouvre expressément aux agents |
+| Preuve | Journaux et traces conservés, exploitables en litige [S] | — |
+| Offre d'agents en Europe | Se traiter comme fabricant au sens de la directive de 2024 [N] | Usage strictement interne |
+| Contrats fournisseurs | Clauses propres aux agents : autorité, journaux, arrêt, indemnités [S] | Outil standard non négociable : réduire la portée de l'agent |
+| Assurance | Revue des exclusions IA à chaque renouvellement [S] | — |
+| Agents de deux organisations | Contrat-cadre sur l'engagement, la preuve et l'erreur [S] | Échanges sans effet juridique |
 
 ---
 

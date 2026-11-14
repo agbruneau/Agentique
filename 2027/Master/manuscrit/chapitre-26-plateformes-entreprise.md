@@ -216,16 +216,16 @@ Un instrument commun existe pour une partie du premier scénario : la conformit�
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Preuve exigée d'un éditeur | Page de documentation datée, avec statut et version | Jamais sur la foi d'un communiqué ou d'une liste de partenaires |
-| Fonction admise en production | Disponibilité générale seulement | Préversion, si un plan d'adaptation est budgété |
-| Sens à valider | Entrant et sortant, pour chaque protocole | Plateforme utilisée comme seul système d'enregistrement : entrant d'abord |
-| Version d'A2A | Exiger la version mise en œuvre et un calendrier vers la 1.0 | — |
-| Conformité à A2A | Rapport de la trousse de compatibilité sur le point d'accès de l'éditeur | Éditeur qui ne sert pas A2A en entrée |
-| Agents tiers | Viser le niveau « gouverné »; noter l'écart avec l'agent natif | Niveau « inventorié » acceptable pour un simple recensement |
-| Identité des agents | Fournisseur d'identité de l'entreprise, non celui de la plateforme | Plateforme unique et pérenne |
-| Choix du plan de contrôle | Celui qui gouverne le plus d'agents déjà en place | Parc homogène chez un seul éditeur |
-| Évaluations d'analystes | Lire le rapport, réserves comprises | Reprise d'éditeur : indice, pas preuve |
-| Vérification | Essai interne sur trois scénarios avant engagement | — |
+| Preuve exigée d'un éditeur | Page de documentation datée, avec statut et version [S] | Jamais sur la foi d'un communiqué ou d'une liste de partenaires |
+| Fonction admise en production | Disponibilité générale seulement [S] | Préversion, si un plan d'adaptation est budgété |
+| Sens à valider | Entrant et sortant, pour chaque protocole [S] | Plateforme utilisée comme seul système d'enregistrement : entrant d'abord |
+| Version d'A2A | Exiger la version mise en œuvre et un calendrier vers la 1.0 [S] | — |
+| Conformité à A2A | Rapport de la trousse de compatibilité sur le point d'accès de l'éditeur [É] | Éditeur qui ne sert pas A2A en entrée |
+| Agents tiers | Viser le niveau « gouverné »; noter l'écart avec l'agent natif [S] | Niveau « inventorié » acceptable pour un simple recensement |
+| Identité des agents | Fournisseur d'identité de l'entreprise, non celui de la plateforme [S] | Plateforme unique et pérenne |
+| Choix du plan de contrôle | Celui qui gouverne le plus d'agents déjà en place [S] | Parc homogène chez un seul éditeur |
+| Évaluations d'analystes | Lire le rapport, réserves comprises [S] | Reprise d'éditeur : indice, pas preuve |
+| Vérification | Essai interne sur trois scénarios avant engagement [S] | — |
 
 ---
 

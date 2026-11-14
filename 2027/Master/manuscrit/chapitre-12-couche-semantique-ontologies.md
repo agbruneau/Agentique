@@ -302,16 +302,16 @@ Ce que le format ne porte pas reste à gouverner ailleurs. Le contrôle d'accès
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Accès des agents aux chiffres | Outils de couche sémantique : métriques et dimensions nommées | Exploration ponctuelle par un analyste : SQL libre en lecture seule |
-| Définition des métriques | Une couche sémantique unique par domaine, versionnée comme du code | Deux définitions légitimes : deux métriques nommées, jamais un terme nu |
-| Ontologie | Aucune au départ | Domaine borné à fort enjeu, ou ontologie sectorielle déjà disponible |
-| Format d'échange | Suivre Apache Ossie; exiger l'import et l'export avec numéro de version | Parc à un seul outil : le format natif suffit |
-| Version d'Ossie | Ne rien bâtir en production sur `0.3.0.dev0` | Prototype dont la réécriture est prévue |
-| Spécification d'ontologie d'Ossie | Veille | Projet pilote avec un fournisseur membre du groupe de travail |
-| Extensions de fournisseur | Minimales et inventoriées | Fonction sans équivalent portable, avec plan de sortie |
-| Synonymes et consignes pour l'IA | Soumis à la même revue que le code | — |
-| Contrôle d'intention | Intention écrite dans la délégation, clarification, vérification indépendante | Intergiciel de consensus : expérimentation seulement |
-| Traçabilité d'un chiffre | Requête compilée et version du modèle consignées | — |
+| Accès des agents aux chiffres | Outils de couche sémantique : métriques et dimensions nommées [É] | Exploration ponctuelle par un analyste : SQL libre en lecture seule |
+| Définition des métriques | Une couche sémantique unique par domaine, versionnée comme du code [S] | Deux définitions légitimes : deux métriques nommées, jamais un terme nu |
+| Ontologie | Aucune au départ [S] | Domaine borné à fort enjeu, ou ontologie sectorielle déjà disponible |
+| Format d'échange | Suivre Apache Ossie; exiger l'import et l'export avec numéro de version [S] | Parc à un seul outil : le format natif suffit |
+| Version d'Ossie | Ne rien bâtir en production sur `0.3.0.dev0` [É] | Prototype dont la réécriture est prévue |
+| Spécification d'ontologie d'Ossie | Veille [S] | Projet pilote avec un fournisseur membre du groupe de travail |
+| Extensions de fournisseur | Minimales et inventoriées [S] | Fonction sans équivalent portable, avec plan de sortie |
+| Synonymes et consignes pour l'IA | Soumis à la même revue que le code [S] | — |
+| Contrôle d'intention | Intention écrite dans la délégation, clarification, vérification indépendante [S] | Intergiciel de consensus : expérimentation seulement |
+| Traçabilité d'un chiffre | Requête compilée et version du modèle consignées [É] | — |
 
 ---
 

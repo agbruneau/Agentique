@@ -356,14 +356,14 @@ Aucun de ces travaux ne répond aux questions 1, 3 ou 9 de la section 48.10. La 
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Lire un score de banc d'essai | Le tenir pour une borne, sur une tâche et une version de modèle; demander la constance (pass^k) et le coût | Banc audité, refait sur ses propres tâches |
-| Citer une prépublication | La marquer comme telle; chercher la version publiée | Aucun cas |
-| Choisir une architecture multi-agents | Partir de l'agent unique; décomposer quand le contexte d'un seul agent sature ou que la tâche se sépare proprement | Vérification indépendante exigée : un second agent, d'un autre modèle |
-| Dimensionner un système multi-agents | Peu d'agents, différents; un orchestrateur capable | Tâche parallélisable sans dépendance entre lots |
-| Se défendre de l'injection d'invites | Isolation par construction pour les actions à effet; filtrage en complément | Agent en lecture seule sur des données fiables |
-| Justifier un gain de productivité | Ne pas transposer les essais sur assistants; mesurer sur place, contre une base non agentique (chapitre 40) | Tâche identique à celle d'un essai publié |
-| Retenir un cadre de gouvernance | S'appuyer sur les textes normatifs (chapitres 35 à 39); lire la recherche pour ses idées | Cadre validé par des données d'incidents |
-| Suivre la littérature | Refaire les dix requêtes chaque trimestre (chapitre 49) | Sujet à échéance réglementaire : veille mensuelle |
+| Lire un score de banc d'essai | Le tenir pour une borne, sur une tâche et une version de modèle; demander la constance (pass^k) et le coût [M] | Banc audité, refait sur ses propres tâches |
+| Citer une prépublication | La marquer comme telle; chercher la version publiée [S] | Aucun cas |
+| Choisir une architecture multi-agents | Partir de l'agent unique; décomposer quand le contexte d'un seul agent sature ou que la tâche se sépare proprement [M] | Vérification indépendante exigée : un second agent, d'un autre modèle |
+| Dimensionner un système multi-agents | Peu d'agents, différents; un orchestrateur capable [M] | Tâche parallélisable sans dépendance entre lots |
+| Se défendre de l'injection d'invites | Isolation par construction pour les actions à effet; filtrage en complément [M] | Agent en lecture seule sur des données fiables |
+| Justifier un gain de productivité | Ne pas transposer les essais sur assistants; mesurer sur place, contre une base non agentique (chapitre 40) [S] | Tâche identique à celle d'un essai publié |
+| Retenir un cadre de gouvernance | S'appuyer sur les textes normatifs (chapitres 35 à 39); lire la recherche pour ses idées [S] | Cadre validé par des données d'incidents |
+| Suivre la littérature | Refaire les dix requêtes chaque trimestre (chapitre 49) [S] | Sujet à échéance réglementaire : veille mensuelle |
 
 ---
 

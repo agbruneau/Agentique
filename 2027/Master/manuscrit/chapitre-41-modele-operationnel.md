@@ -238,15 +238,15 @@ Deux modes de défaillance encadrent le choix. Un centre qui examine tout devien
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Unité d'organisation | Petite équipe responsable d'un résultat de bout en bout, avec un propriétaire nommé par agent | Séparation des tâches imposée par la réglementation : conserver la frontière fonctionnelle |
-| Répartition du travail | Par avantage relatif, tâche par tâche, consignée dans une carte d'orchestration | Tâche sans mesure comparative : humain décideur, puis mesurer |
-| Qui décide de déléguer | La conception du travail, par classe de décision; l'escalade part de l'agent | Création ou exploration à faible enjeu : discrétion individuelle |
-| Point d'approbation | Justifié par l'imputabilité et l'irréversibilité | Jamais pour « améliorer » une décision où l'agent est meilleur |
-| Dimensionnement de la supervision | Selon la charge mesurée d'exceptions et d'approbations | Aucun ratio publié d'agents par personne n'est à reprendre |
-| Formation | Par rôle, en situation, avec rétroaction sur le jugement | Sensibilisation générale : comme socle seulement |
-| Relève | Pratique délibérée là où l'agent absorbe le travail d'entrée | Métiers dont le travail d'entrée n'est pas automatisé |
-| Structure de pilotage | Central pour les règles et la plateforme, fédéré pour la refonte et la propriété | Petite organisation ou démarrage : tout centraliser |
-| Mesure du changement | Flux refondus et résultats | Le taux d'utilisation ne renseigne que sur l'adoption |
+| Unité d'organisation | Petite équipe responsable d'un résultat de bout en bout, avec un propriétaire nommé par agent [S] | Séparation des tâches imposée par la réglementation : conserver la frontière fonctionnelle |
+| Répartition du travail | Par avantage relatif, tâche par tâche, consignée dans une carte d'orchestration [M] | Tâche sans mesure comparative : humain décideur, puis mesurer |
+| Qui décide de déléguer | La conception du travail, par classe de décision; l'escalade part de l'agent [M] | Création ou exploration à faible enjeu : discrétion individuelle |
+| Point d'approbation | Justifié par l'imputabilité et l'irréversibilité [S] | Jamais pour « améliorer » une décision où l'agent est meilleur |
+| Dimensionnement de la supervision | Selon la charge mesurée d'exceptions et d'approbations [S] | Aucun ratio publié d'agents par personne n'est à reprendre |
+| Formation | Par rôle, en situation, avec rétroaction sur le jugement [S] | Sensibilisation générale : comme socle seulement |
+| Relève | Pratique délibérée là où l'agent absorbe le travail d'entrée [S] | Métiers dont le travail d'entrée n'est pas automatisé |
+| Structure de pilotage | Central pour les règles et la plateforme, fédéré pour la refonte et la propriété [S] | Petite organisation ou démarrage : tout centraliser |
+| Mesure du changement | Flux refondus et résultats [S] | Le taux d'utilisation ne renseigne que sur l'adoption |
 
 ---
 

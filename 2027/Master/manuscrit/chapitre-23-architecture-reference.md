@@ -265,19 +265,19 @@ Un dernier antipatron tient au marché plutôt qu'à la conception : multiplier 
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Où placer l'autorité | Plan de contrôle distinct des agents | Agent unique, sans effet de bord : garde-fous internes |
-| Application des politiques | Passerelle sur le chemin de chaque appel d'outil, d'agent et de modèle | Outil local sans donnée sensible |
-| Registre | Unique, et condition du routage | Plusieurs plateformes imposées : registres fédérés (chapitre 27) |
-| Maillage | Assembler le registre, les protocoles et la passerelle déjà retenus | Produit de maillage si son socle (maillage de services, courtier d'événements) est déjà la norme de l'entreprise |
-| Inventaire et identité | Deux fonctions rapprochées régulièrement | — |
-| Description des agents | Déclarative, versionnée, validée avant exécution | Prototype |
-| Coordination | Centralisée ou fédérée | Distribuée si la résilience prime et que le coût de maintenance est accepté |
-| Planification | Plan à chemin unique pour les processus audités | Plusieurs chemins en environnement changeant, avec tests renforcés |
-| Mémoire | Langage naturel si l'explicabilité prime | Plongements si la performance prime |
-| Qualité de service | Budgets de coût, de délai et de qualité par classe de tâche | — |
-| Garde-fous | Plusieurs barrières, sur plusieurs étapes et artefacts | — |
-| Évaluation d'architecture | Par scénarios, répétée à l'exécution | Système gelé à faible risque : revue initiale |
-| Modèle de référence | La vue à deux étages de ce chapitre, comme point de départ | Cadre imposé par un éditeur ou un régulateur |
+| Où placer l'autorité | Plan de contrôle distinct des agents [É] | Agent unique, sans effet de bord : garde-fous internes |
+| Application des politiques | Passerelle sur le chemin de chaque appel d'outil, d'agent et de modèle [É] | Outil local sans donnée sensible |
+| Registre | Unique, et condition du routage [S] | Plusieurs plateformes imposées : registres fédérés (chapitre 27) |
+| Maillage | Assembler le registre, les protocoles et la passerelle déjà retenus [S] | Produit de maillage si son socle (maillage de services, courtier d'événements) est déjà la norme de l'entreprise |
+| Inventaire et identité | Deux fonctions rapprochées régulièrement [S] | — |
+| Description des agents | Déclarative, versionnée, validée avant exécution [S] | Prototype |
+| Coordination | Centralisée ou fédérée [S] | Distribuée si la résilience prime et que le coût de maintenance est accepté |
+| Planification | Plan à chemin unique pour les processus audités [S] | Plusieurs chemins en environnement changeant, avec tests renforcés |
+| Mémoire | Langage naturel si l'explicabilité prime [S] | Plongements si la performance prime |
+| Qualité de service | Budgets de coût, de délai et de qualité par classe de tâche [S] | — |
+| Garde-fous | Plusieurs barrières, sur plusieurs étapes et artefacts [S] | — |
+| Évaluation d'architecture | Par scénarios, répétée à l'exécution [S] | Système gelé à faible risque : revue initiale |
+| Modèle de référence | La vue à deux étages de ce chapitre, comme point de départ [S] | Cadre imposé par un éditeur ou un régulateur |
 
 ---
 

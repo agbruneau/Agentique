@@ -1,0 +1,517 @@
+{
+ "id": "P4-1-5",
+ "origine": "plan 2027, lot P4-1-5",
+ "categorie": "enrichissement",
+ "remplacements": [
+  {
+   "fichier": "chapitre-41-modele-operationnel.md",
+   "avant": "| Unité d'organisation | Petite équipe responsable d'un résultat de bout en bout, avec un propriétaire nommé par agent | Séparation des tâches imposée par la réglementation : conserver la frontière fonctionnelle |",
+   "apres": "| Unité d'organisation | Petite équipe responsable d'un résultat de bout en bout, avec un propriétaire nommé par agent [S] | Séparation des tâches imposée par la réglementation : conserver la frontière fonctionnelle |",
+   "motif": "Ligne « Unité d'organisation » : [S], section 41.1, sources [1][2] (équipes agentiques décrites par des articles de cabinet (anecdote, enquête déclarative sans méthode publiée); le propriétaire nommé par agent vient du chapitre 39)."
+  },
+  {
+   "fichier": "chapitre-41-modele-operationnel.md",
+   "avant": "| Répartition du travail | Par avantage relatif, tâche par tâche, consignée dans une carte d'orchestration | Tâche sans mesure comparative : humain décideur, puis mesurer |",
+   "apres": "| Répartition du travail | Par avantage relatif, tâche par tâche, consignée dans une carte d'orchestration [M] | Tâche sans mesure comparative : humain décideur, puis mesurer |",
+   "motif": "Ligne « Répartition du travail » : [M], section 41.2, source [6] (méta-analyse de 106 expériences (texte lu) : attribuer chaque sous-tâche au partenaire qui y excelle; carte d'orchestration tirée de [2])."
+  },
+  {
+   "fichier": "chapitre-41-modele-operationnel.md",
+   "avant": "| Qui décide de déléguer | La conception du travail, par classe de décision; l'escalade part de l'agent | Création ou exploration à faible enjeu : discrétion individuelle |",
+   "apres": "| Qui décide de déléguer | La conception du travail, par classe de décision; l'escalade part de l'agent [M] | Création ou exploration à faible enjeu : discrétion individuelle |",
+   "motif": "Ligne « Qui décide de déléguer » : [M], section 41.3, source [9] (expérience publiée (résumé seulement) : le gain n'apparaît que si l'IA délègue à l'humain; transposition aux agents donnée pour hypothèse)."
+  },
+  {
+   "fichier": "chapitre-41-modele-operationnel.md",
+   "avant": "| Point d'approbation | Justifié par l'imputabilité et l'irréversibilité | Jamais pour « améliorer » une décision où l'agent est meilleur |",
+   "apres": "| Point d'approbation | Justifié par l'imputabilité et l'irréversibilité [S] | Jamais pour « améliorer » une décision où l'agent est meilleur |",
+   "motif": "Ligne « Point d'approbation » : [S], section 41.2, source [6] (« l'imputabilité, non la performance » est le raisonnement du chapitre (point sans source); [6] n'appuie que le volet « jamais pour améliorer »)."
+  },
+  {
+   "fichier": "chapitre-41-modele-operationnel.md",
+   "avant": "| Dimensionnement de la supervision | Selon la charge mesurée d'exceptions et d'approbations | Aucun ratio publié d'agents par personne n'est à reprendre |",
+   "apres": "| Dimensionnement de la supervision | Selon la charge mesurée d'exceptions et d'approbations [S] | Aucun ratio publié d'agents par personne n'est à reprendre |",
+   "motif": "Ligne « Dimensionnement de la supervision » : [S], section 41.4, aucune source (« aucune source lue ne fournit de norme »; la charge mesurée est un principe du chapitre (chapitres 22 et 34))."
+  },
+  {
+   "fichier": "chapitre-41-modele-operationnel.md",
+   "avant": "| Formation | Par rôle, en situation, avec rétroaction sur le jugement | Sensibilisation générale : comme socle seulement |",
+   "apres": "| Formation | Par rôle, en situation, avec rétroaction sur le jugement [S] | Sensibilisation générale : comme socle seulement |",
+   "motif": "Ligne « Formation » : [S], section 41.5, sources [2][12] (cas d'une institution financière rapporté par un cabinet [2]; mesures d'un article de position [12] dont l'efficacité n'est pas mesurée)."
+  },
+  {
+   "fichier": "chapitre-41-modele-operationnel.md",
+   "avant": "| Relève | Pratique délibérée là où l'agent absorbe le travail d'entrée | Métiers dont le travail d'entrée n'est pas automatisé |",
+   "apres": "| Relève | Pratique délibérée là où l'agent absorbe le travail d'entrée [S] | Métiers dont le travail d'entrée n'est pas automatisé |",
+   "motif": "Ligne « Relève » : [S], section 41.5, sources [2][12] (trois réponses d'un cabinet [2]; les Limites la rattachent à la connaissance générale et à l'argument de [2], non à une mesure)."
+  },
+  {
+   "fichier": "chapitre-41-modele-operationnel.md",
+   "avant": "| Structure de pilotage | Central pour les règles et la plateforme, fédéré pour la refonte et la propriété | Petite organisation ou démarrage : tout centraliser |",
+   "apres": "| Structure de pilotage | Central pour les règles et la plateforme, fédéré pour la refonte et la propriété [S] | Petite organisation ou démarrage : tout centraliser |",
+   "motif": "Ligne « Structure de pilotage » : [S], section 41.7, sources [1][2][4] (tableau déclaré synthèse du chapitre; [4] ne décrit que la centralisation sélective de l'IA générative (mars 2025), pas les agents)."
+  },
+  {
+   "fichier": "chapitre-41-modele-operationnel.md",
+   "avant": "| Mesure du changement | Flux refondus et résultats | Le taux d'utilisation ne renseigne que sur l'adoption |",
+   "apres": "| Mesure du changement | Flux refondus et résultats [S] | Le taux d'utilisation ne renseigne que sur l'adoption |",
+   "motif": "Ligne « Mesure du changement » : [S], section 41.6, sources [2][4] ([4] (enquête déclarative, R² de 0,20) montre le poids de la refonte des flux; « le taux d'usage est un mauvais indicateur » est une déduction)."
+  },
+  {
+   "fichier": "chapitre-42-etudes-de-cas.md",
+   "avant": "| Preuve exigée avant d'imiter un cas | Niveau 1 ou 2 : mesure sur trafic réel ou étude indépendante | Cas de fournisseur recevable s'il nomme le client, la métrique, la base de comparaison et la période |",
+   "apres": "| Preuve exigée avant d'imiter un cas | Niveau 1 ou 2 : mesure sur trafic réel ou étude indépendante [S] | Cas de fournisseur recevable s'il nomme le client, la métrique, la base de comparaison et la période |",
+   "motif": "Ligne « Preuve exigée avant d'imiter un cas » : [S], section 42.1 (hiérarchie en six niveaux « proposition de ce chapitre, pas un résultat de recherche » (Limites))."
+  },
+  {
+   "fichier": "chapitre-42-etudes-de-cas.md",
+   "avant": "| Premier cas d'usage | Interne, réversible, surtout en lecture, mesurable | Service externe si le transfert à un humain, les API idempotentes et la piste d'audit existent déjà |",
+   "apres": "| Premier cas d'usage | Interne, réversible, surtout en lecture, mesurable [N] | Service externe si le transfert à un humain, les API idempotentes et la piste d'audit existent déjà |",
+   "motif": "Ligne « Premier cas d'usage » : [N], section 42.5, source [10] (guide du MCN (texte intégral) : premiers pilotes internes, réversibles, peu sensibles, journalisés, mesurables; MAP [2] concorde)."
+  },
+  {
+   "fichier": "chapitre-42-etudes-de-cas.md",
+   "avant": "| Architecture de départ | Un agent par cas d'usage, peu d'outils, parcours borné | Multi-agents si les sous-domaines sont indépendants et que le gain est mesuré sur ses propres données |",
+   "apres": "| Architecture de départ | Un agent par cas d'usage, peu d'outils, parcours borné [S] | Multi-agents si les sous-domaines sont indépendants et que le gain est mesuré sur ses propres données |",
+   "motif": "Ligne « Architecture de départ » : [S], sections 42.2 et 42.6, sources [1][2][4] (MAP mesure ce qui est répandu (16 cas sur 20 en workflow prédéfini), non ce qui vaut mieux; le banc [4] n'oppose pas agent unique et multi-agents)."
+  },
+  {
+   "fichier": "chapitre-42-etudes-de-cas.md",
+   "avant": "| Ordre de construction | Identité, API d'action, audit, puis prompts | Prototype jetable, sans accès à des systèmes réels |",
+   "apres": "| Ordre de construction | Identité, API d'action, audit, puis prompts [S] | Prototype jetable, sans accès à des systèmes réels |",
+   "motif": "Ligne « Ordre de construction » : [S], section 42.2, source [1] (recommandation des auteurs de Nubank, qui « repose sur leur expérience; l'article n'apporte pas de comparaison »)."
+  },
+  {
+   "fichier": "chapitre-42-etudes-de-cas.md",
+   "avant": "| Mesure du succès | Deux métriques opposées (satisfaction et libre-service), en test A/B, avec l'écart à la référence humaine | Usage interne à faible volume : revue humaine d'un échantillon |",
+   "apres": "| Mesure du succès | Deux métriques opposées (satisfaction et libre-service), en test A/B, avec l'écart à la référence humaine [M] | Usage interne à faible volume : revue humaine d'un échantillon |",
+   "motif": "Ligne « Mesure du succès » : [M], section 42.2, source [1] (article de KDD 2026, test A/B sur trafic réel : tNPS et SSR se négocient; gains relatifs, sans valeur absolue)."
+  },
+  {
+   "fichier": "chapitre-42-etudes-de-cas.md",
+   "avant": "| Extraction documentaire | Hiérarchie avec seuil de confiance et revue humaine des champs incertains | Boucle réflexive à faible volume quand l'erreur coûte cher; pipeline séquentiel à très fort volume |",
+   "apres": "| Extraction documentaire | Hiérarchie avec seuil de confiance et revue humaine des champs incertains [M] | Boucle réflexive à faible volume quand l'erreur coûte cher; pipeline séquentiel à très fort volume |",
+   "motif": "Ligne « Extraction documentaire » : [M], section 42.3, source [4] (banc de 10 000 dépôts SEC (prépublication) : hiérarchie à seuil de confiance 0,85, la boucle réflexive perdant son avantage à fort volume; incohérences relevées dans le texte)."
+  },
+  {
+   "fichier": "chapitre-42-etudes-de-cas.md",
+   "avant": "| Opérations TI | Diagnostic en lecture seule; action par un humain ou un workflow déterministe | Action automatique sur des procédures réversibles, éprouvées en bac à sable |",
+   "apres": "| Opérations TI | Diagnostic en lecture seule; action par un humain ou un workflow déterministe [M] | Action automatique sur des procédures réversibles, éprouvées en bac à sable |",
+   "motif": "Ligne « Opérations TI » : [M], section 42.4, sources [2][5][6] (MAP (six équipes en lecture seule) et deux bancs : ITBench 13,8 % de scénarios de fiabilité résolus, ORCA-bench 25,3 % au mieux (bancs lus par résumé))."
+  },
+  {
+   "fichier": "chapitre-42-etudes-de-cas.md",
+   "avant": "| Génération de workflows | Plan montré à l'utilisateur avant le détail; exécution par le moteur existant | — |",
+   "apres": "| Génération de workflows | Plan montré à l'utilisateur avant le détail; exécution par le moteur existant [É] | — |",
+   "motif": "Ligne « Génération de workflows » : [É], section 42.4, source [3] (étude de cas d'un éditeur (ServiceNow) sur son propre produit, autodéclarée, sans score, latence ni coût)."
+  },
+  {
+   "fichier": "chapitre-42-etudes-de-cas.md",
+   "avant": "| Changement de modèle | Revalidation des prompts et des juges sur le jeu d'étiquettes | — |",
+   "apres": "| Changement de modèle | Revalidation des prompts et des juges sur le jeu d'étiquettes [S] | — |",
+   "motif": "Ligne « Changement de modèle » : [S], section 42.2, source [1] ([1] rapporte la migration de GPT-4.1 à GPT-5; la revalidation systématique sur les étiquettes est la conclusion du chapitre (chapitre 34))."
+  },
+  {
+   "fichier": "chapitre-42-etudes-de-cas.md",
+   "avant": "| Secteur public québécois | Les quatre cas de référence du guide, avec plafond de consommation | Usage touchant des droits ou des décisions : encadrement renforcé et validation spécialisée |",
+   "apres": "| Secteur public québécois | Les quatre cas de référence du guide, avec plafond de consommation [N] | Usage touchant des droits ou des décisions : encadrement renforcé et validation spécialisée |",
+   "motif": "Ligne « Secteur public québécois » : [N], section 42.5, source [10] (guide du MCN (texte intégral) : quatre cas de référence en annexe B, pilotes plafonnés en budget, encadrement renforcé pour droits et décisions)."
+  },
+  {
+   "fichier": "chapitre-43-maturite-prospective.md",
+   "avant": "| Unité d'évaluation de la maturité | Le domaine d'affaires, noté par son critère le plus faible | Très petite organisation : une seule évaluation |",
+   "apres": "| Unité d'évaluation de la maturité | Le domaine d'affaires, noté par son critère le plus faible [S] | Très petite organisation : une seule évaluation |",
+   "motif": "Ligne « Unité d'évaluation de la maturité » : [S], section 43.1 (modèle en cinq stades « proposition de l'ouvrage, sans validation empirique »; MAP [3] ne documente que le stade 1)."
+  },
+  {
+   "fichier": "chapitre-43-maturite-prospective.md",
+   "avant": "| Stade à atteindre avant un second domaine | Stade 2 | Second domaine limité à des prototypes sans écriture |",
+   "apres": "| Stade à atteindre avant un second domaine | Stade 2 [S] | Second domaine limité à des prototypes sans écriture |",
+   "motif": "Ligne « Stade à atteindre avant un second domaine » : [S], section 43.2 (règle du jalon 2 de la feuille de route, proposition de synthèse; aucune source ne répartit les entreprises par stade)."
+  },
+  {
+   "fichier": "chapitre-43-maturite-prospective.md",
+   "avant": "| Ordre des investissements | Noyau de gouvernance avant la composition | Agent unique en lecture seule |",
+   "apres": "| Ordre des investissements | Noyau de gouvernance avant la composition [S] | Agent unique en lecture seule |",
+   "motif": "Ligne « Ordre des investissements » : [S], section 43.2 (« le contrôle précède l'autonomie » : règle d'ordre du chapitre, qui repose sur les chapitres cités)."
+  },
+  {
+   "fichier": "chapitre-43-maturite-prospective.md",
+   "avant": "| Standard instable (identité, télémétrie) | Couche interne d'isolation | Standard devenu stable et pris en charge des deux côtés |",
+   "apres": "| Standard instable (identité, télémétrie) | Couche interne d'isolation [S] | Standard devenu stable et pris en charge des deux côtés |",
+   "motif": "Ligne « Standard instable (identité, télémétrie) » : [S], section 43.2, sources [1][8][13] (les sources datent l'instabilité (groupe de travail MCP en formation, conventions OpenTelemetry sans version stable), non la couche d'isolation, qui est le choix du chapitre)."
+  },
+  {
+   "fichier": "chapitre-43-maturite-prospective.md",
+   "avant": "| Élargissement de l'autonomie | Par classe de décision, sur mesures, avec retrait automatique | Actions irréversibles ou réglementées : approbation maintenue |",
+   "apres": "| Élargissement de l'autonomie | Par classe de décision, sur mesures, avec retrait automatique [S] | Actions irréversibles ou réglementées : approbation maintenue |",
+   "motif": "Ligne « Élargissement de l'autonomie » : [S], section 43.2, chapitres 22 et 34 (jalon 4 : reprend des règles des chapitres 22 et 34; aucune source du chapitre n'appuie le retrait automatique)."
+  },
+  {
+   "fichier": "chapitre-43-maturite-prospective.md",
+   "avant": "| Hypothèse de planification | Scénario B, avec les investissements sans regret | Signaux convergents vers A ou C |",
+   "apres": "| Hypothèse de planification | Scénario B, avec les investissements sans regret [S] | Signaux convergents vers A ou C |",
+   "motif": "Ligne « Hypothèse de planification » : [S], section 43.3 (scénarios « propositions de synthèse, non validées », sans probabilité; B prolonge l'état de 2026)."
+  },
+  {
+   "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+   "avant": "| Premier levier | Cache de préfixe, chez le fournisseur ou sur ses serveurs | — |",
+   "apres": "| Premier levier | Cache de préfixe, chez le fournisseur ou sur ses serveurs [S] | — |",
+   "motif": "Ligne « Premier levier » : [S], section 44.4, sources [8][12] (le cache KV est décrit, mais le classer premier levier est un choix du chapitre; gains chiffrés de llm-d [8] et de Preble [12] (système des auteurs))."
+  },
+  {
+   "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+   "avant": "| Choix du modèle | Règle explicite par classe de tâche | Service de notation par appel externe, si les traces montrent une part élevée de requêtes faciles |",
+   "apres": "| Choix du modèle | Règle explicite par classe de tâche [S] | Service de notation par appel externe, si les traces montrent une part élevée de requêtes faciles |",
+   "motif": "Ligne « Choix du modèle » : [S], section 44.3, source [13] (RouterArena (texte lu) montre qu'aucun routeur ne domine, mais la règle explicite par classe est l'une des « trois règles qui en découlent », non testée)."
+  },
+  {
+   "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+   "avant": "| Classe inconnue ou routeur en panne | Palier supérieur; rejet ou modèle de repli qualifié d'avance (chapitre 46) | Tâche sans enjeu : palier inférieur |",
+   "apres": "| Classe inconnue ou routeur en panne | Palier supérieur; rejet ou modèle de repli qualifié d'avance (chapitre 46) [S] | Tâche sans enjeu : palier inférieur |",
+   "motif": "Ligne « Classe inconnue ou routeur en panne » : [S], sections 44.2 et 44.3, source [4] (agentgateway documente le rejet (failClosed, 503) et le repli; le palier supérieur pour une classe inconnue est une règle du chapitre)."
+  },
+  {
+   "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+   "avant": "| Calcul au moment de l'inférence | Réservé aux classes où le modèle réussit déjà en partie | Problème hors de portée : changer de modèle |",
+   "apres": "| Calcul au moment de l'inférence | Réservé aux classes où le modèle réussit déjà en partie [M] | Problème hors de portée : changer de modèle |",
+   "motif": "Ligne « Calcul au moment de l'inférence » : [M], section 44.3, source [11] (Snell et coll. (prépublication, résumé relu) : un petit modèle aidé dépasse un modèle 14 fois plus gros seulement là où il réussit déjà en partie; un modèle, un jeu de problèmes)."
+  },
+  {
+   "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+   "avant": "| Inférence autohébergée | `InferencePool` et EPP derrière une passerelle conforme | Charge mono-locataire : mode autonome |",
+   "apres": "| Inférence autohébergée | `InferencePool` et EPP derrière une passerelle conforme [É] | Charge mono-locataire : mode autonome |",
+   "motif": "Ligne « Inférence autohébergée » : [É], sections 44.2 et 44.5, sources [6][7][8] (documentation de la Gateway API Inference Extension et de llm-d (InferencePool, EPP); aucune évaluation indépendante trouvée)."
+  },
+  {
+   "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+   "avant": "| Ordonnancement | Conscient du cache et de la charge | Charges sans préfixe partagé : charge seule |",
+   "apres": "| Ordonnancement | Conscient du cache et de la charge [M] | Charges sans préfixe partagé : charge seule |",
+   "motif": "Ligne « Ordonnancement » : [M], sections 44.4 et 44.5, source [12] (Preble (prépublication) mesure l'ordonnancement conscient du cache sur charges réelles; système des auteurs, non llm-d, dont les chiffres [8] relèvent d'É)."
+  },
+  {
+   "fichier": "chapitre-45-reseaux-b2b-federes.md",
+   "avant": "| Droits d'usage | ODRL 2.2, validé par code avant toute offre | Partenaire unique sous contrat classique |",
+   "apres": "| Droits d'usage | ODRL 2.2, validé par code avant toute offre [N] | Partenaire unique sous contrat classique |",
+   "motif": "Ligne « Droits d'usage » : [N], section 45.2, source [1] (ODRL Information Model 2.2, recommandation du W3C lue : `conflict` vaut `invalid` par défaut, d'où la validation déterministe avant offre)."
+  },
+  {
+   "fichier": "chapitre-45-reseaux-b2b-federes.md",
+   "avant": "| Accès aux données | DSP par un connecteur; l'agent passe par un outil étroit | Aucun espace commun : entente bilatérale (chapitre 29) |",
+   "apres": "| Accès aux données | DSP par un connecteur; l'agent passe par un outil étroit [N] | Aucun espace commun : entente bilatérale (chapitre 29) |",
+   "motif": "Ligne « Accès aux données » : [N], section 45.2, sources [3][4][2] (Dataspace Protocol 2025-1, déclaré stable (statut et machine à états de la spécification); l'outil étroit vient de la documentation EDC [2])."
+  },
+  {
+   "fichier": "chapitre-45-reseaux-b2b-federes.md",
+   "avant": "| Identité et délégation | Justificatif d'entité vérifiable (vLEI si le réseau l'accepte); délégation distincte, bornée, révocable | Réseau fermé à adhésion contractuelle |",
+   "apres": "| Identité et délégation | Justificatif d'entité vérifiable (vLEI si le réseau l'accepte); délégation distincte, bornée, révocable [S] | Réseau fermé à adhésion contractuelle |",
+   "motif": "Ligne « Identité et délégation » : [S], section 45.3, sources [5][6] (le vLEI atteste l'entité et le rôle humain; la délégation à l'agent est « une déduction, non un profil publié »; billet de la GLEIF : orientation sans émission)."
+  },
+  {
+   "fichier": "chapitre-45-reseaux-b2b-federes.md",
+   "avant": "| Secrets de négociation | Hors du contexte du modèle exposé à la contrepartie | Paramètres publics |",
+   "apres": "| Secrets de négociation | Hors du contexte du modèle exposé à la contrepartie [S] | Paramètres publics |",
+   "motif": "Ligne « Secrets de négociation » : [S], section 45.4, source [7] (« Diplomate / Évaluateur interne » est une cible de conception sans source; CaMeL [7] fonde le principe, non l'option)."
+  },
+  {
+   "fichier": "chapitre-45-reseaux-b2b-federes.md",
+   "avant": "| Calcul sur données conjointes | TEE avec attestation, code revu, sortie agrégée | Données non sensibles : transfert sous accord |",
+   "apres": "| Calcul sur données conjointes | TEE avec attestation, code revu, sortie agrégée [É] | Données non sensibles : transfert sous accord |",
+   "motif": "Ligne « Calcul sur données conjointes » : [É], section 45.5, source [9] (documentation de Confidential Space (éditeur), seule source de la section, limites incluses; code revu et sortie agrégée relèvent du raisonnement du chapitre)."
+  },
+  {
+   "fichier": "chapitre-45-reseaux-b2b-federes.md",
+   "avant": "| Consignes de tarification | Versionnées et revues par le contentieux | — |",
+   "apres": "| Consignes de tarification | Versionnées et revues par le contentieux [S] | — |",
+   "motif": "Ligne « Consignes de tarification » : [S], section 45.6, source [11] ([11] mesure la sensibilité des prix à la formulation des consignes, non l'effet d'une revue; « objet de conformité » est la conclusion du chapitre)."
+  },
+  {
+   "fichier": "chapitre-45-reseaux-b2b-federes.md",
+   "avant": "| Règlement | Rapprochement à trois voies avant tout mandat ou signature | Micropaiement : plafond et rapprochement a posteriori |",
+   "apres": "| Règlement | Rapprochement à trois voies avant tout mandat ou signature [S] | Micropaiement : plafond et rapprochement a posteriori |",
+   "motif": "Ligne « Règlement » : [S], section 45.7, source [14] (le rapprochement à trois voies est documenté (Microsoft Learn), mais son exigence avant un mandat AP2 ou x402 est une cible de conception sans source)."
+  },
+  {
+   "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+   "avant": "| Inventaire des états | Un exploitant, une région et un détenteur de clé par état | Aucun cas |",
+   "apres": "| Inventaire des états | Un exploitant, une région et un détenteur de clé par état [S] | Aucun cas |",
+   "motif": "Ligne « Inventaire des états » : [S], section 46.1 (« Cette grille est une proposition, sans source »)."
+  },
+  {
+   "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+   "avant": "| Inférence sur données réglementées | Modèle autohébergé ou fournisseur sous contrôle local (chapitre 37) | TEE avec GPU attesté si l'accès physique de l'exploitant est un risque accepté |",
+   "apres": "| Inférence sur données réglementées | Modèle autohébergé ou fournisseur sous contrôle local (chapitre 37) [S] | TEE avec GPU attesté si l'accès physique de l'exploitant est un risque accepté |",
+   "motif": "Ligne « Inférence sur données réglementées » : [S], sections 46.1 et 46.2, chapitre 37 (défaut repris du chapitre 37; les sources (documentation de fournisseurs de TEE, attaque TEE.fail) décrivent les limites d'un TEE sans trancher ce choix)."
+  },
+  {
+   "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+   "avant": "| Libération des clés | Sous attestation, selon une politique écrite par l'entreprise | Charge sans donnée sensible |",
+   "apres": "| Libération des clés | Sous attestation, selon une politique écrite par l'entreprise [É] | Charge sans donnée sensible |",
+   "motif": "Ligne « Libération des clés » : [É], section 46.2, source [3] (documentation de NVIDIA : l'attestation est une preuve, non la politique qui gouverne la libération des secrets)."
+  },
+  {
+   "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+   "avant": "| Clés HYOK | Réservées aux classes de données qui l'exigent | Charges tolérantes à une perte de disponibilité |",
+   "apres": "| Clés HYOK | Réservées aux classes de données qui l'exigent [É] | Charges tolérantes à une perte de disponibilité |",
+   "motif": "Ligne « Clés HYOK » : [É], section 46.3, source [5] (documentation d'AWS KMS : pour la plupart des charges, le risque de disponibilité dépasse le bénéfice de sécurité)."
+  },
+  {
+   "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+   "avant": "| Modèle de secours | Qualifié d'avance, délai mesuré par exercice | Tâches différables : mise en file |",
+   "apres": "| Modèle de secours | Qualifié d'avance, délai mesuré par exercice [S] | Tâches différables : mise en file |",
+   "motif": "Ligne « Modèle de secours » : [S], section 46.4, sources [6][7] ([6] établit le risque (politique de retrait d'un fournisseur) et [7] définit le RTO; les mesures sont « proposées » et le seuil de 15 minutes n'a pas de source)."
+  },
+  {
+   "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+   "avant": "| Site déconnecté | Modèle, garde-fous et arrêt d'urgence locaux; durée de survie calculée | Site sans action physique ni transaction : arrêt acceptable |",
+   "apres": "| Site déconnecté | Modèle, garde-fous et arrêt d'urgence locaux; durée de survie calculée [S] | Site sans action physique ni transaction : arrêt acceptable |",
+   "motif": "Ligne « Site déconnecté » : [S], section 46.5 (mesures proposées; « le seuil de 72 heures n'a pas de source »; la durée de survie se calcule par site)."
+  },
+  {
+   "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+   "avant": "| Ressources bornées hors ligne | Droits préalloués | Ressource non critique : réconciliation après coup |",
+   "apres": "| Ressources bornées hors ligne | Droits préalloués [S] | Ressource non critique : réconciliation après coup |",
+   "motif": "Ligne « Ressources bornées hors ligne » : [S], section 46.5, source [8] (Bounded Counter (Balegas et coll.) conçu pour des bases de données; la transposition à l'agent déconnecté est « proposée », non éprouvée)."
+  },
+  {
+   "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+   "avant": "| Accès d'un agent à ROS 2 | Enclave propre, mode `Enforce`, objectifs seulement | Simulation |",
+   "apres": "| Accès d'un agent à ROS 2 | Enclave propre, mode `Enforce`, objectifs seulement [É] | Simulation |",
+   "motif": "Ligne « Accès d'un agent à ROS 2 » : [É], section 46.6, source [10] (article de conception ROS 2 (2019-2020) : enclave et ROS_SECURITY_STRATEGY=Enforce; « objectifs seulement » est une proposition du chapitre)."
+  },
+  {
+   "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+   "avant": "| Contrôleur appris | Enveloppe vérifiée, isolée, hors de portée de l'agent | Aucun cas en présence de personnes |",
+   "apres": "| Contrôleur appris | Enveloppe vérifiée, isolée, hors de portée de l'agent [S] | Aucun cas en présence de personnes |",
+   "motif": "Ligne « Contrôleur appris » : [S], section 46.7, source [11] (patron Simplex (Sha, 2008) sans mesure ni voie de certification; les trois étages sont une transposition du chapitre)."
+  },
+  {
+   "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+   "avant": "| Mises à jour | Métadonnées signées par rôles, clé racine hors ligne | Prototype isolé |",
+   "apres": "| Mises à jour | Métadonnées signées par rôles, clé racine hors ligne [N] | Prototype isolé |",
+   "motif": "Ligne « Mises à jour » : [N], section 46.8, source [14] (spécification TUF 1.0.37 : rôles root, targets, snapshot et timestamp, clé racine hors ligne; l'application aux artefacts d'agents revient au chapitre)."
+  },
+  {
+   "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+   "avant": "| Rôles de développement | Spécification et construction séparées par des droits, approbation humaine entre les deux | Prototype jetable |",
+   "apres": "| Rôles de développement | Spécification et construction séparées par des droits, approbation humaine entre les deux [S] | Prototype jetable |",
+   "motif": "Ligne « Rôles de développement » : [S], section 47.1, source [1] (Spec Kit sépare des étapes, non des identités; la séparation par droits est « une extrapolation de ce chapitre, à valider »)."
+  },
+  {
+   "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+   "avant": "| Lecture du code | Index de symboles exposé par outils bornés | Petit dépôt, ou langage sans indexeur |",
+   "apres": "| Lecture du code | Index de symboles exposé par outils bornés [S] | Petit dépôt, ou langage sans indexeur |",
+   "motif": "Ligne « Lecture du code » : [S], section 47.2, source [2] (SCIP décrit un format d'indexation; « l'usage par des agents est une inférence », aucun gain mesuré (Limites))."
+  },
+  {
+   "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+   "avant": "| Tests écrits par l'agent | Propriétés et mutants tirés de la spécification | Code sans invariant exprimable : exemples relus par un humain |",
+   "apres": "| Tests écrits par l'agent | Propriétés et mutants tirés de la spécification [S] | Code sans invariant exprimable : exemples relus par un humain |",
+   "motif": "Ligne « Tests écrits par l'agent » : [S], section 47.3, sources [3][4] ([3] et [4] mesurent des techniques (56 % de rapports valides, 73 % de tests acceptés), non l'origine « tirée de la spécification », qui est le choix du chapitre)."
+  },
+  {
+   "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+   "avant": "| Barrière de mutation | Seuil calibré par module, sur le code modifié | Jamais un seuil global unique |",
+   "apres": "| Barrière de mutation | Seuil calibré par module, sur le code modifié [S] | Jamais un seuil global unique |",
+   "motif": "Ligne « Barrière de mutation » : [S], section 47.3, source [4] (« le seuil de 85 % n'a pas de source »; le bilan de Meta suggère seulement qu'un score global est le mauvais objet)."
+  },
+  {
+   "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+   "avant": "| Parité d'un remplacement | Exécution en miroir, écart nul, un cycle d'affaires complet | Écritures : double écriture et comparaison à la lecture |",
+   "apres": "| Parité d'un remplacement | Exécution en miroir, écart nul, un cycle d'affaires complet [S] | Écritures : double écriture et comparaison à la lecture |",
+   "motif": "Ligne « Parité d'un remplacement » : [S], section 47.4, source [5] (le miroir est documenté (Scientist), mais « 30 jours à 0,00 $ d'écart » n'a pas de source et rien n'a été lu sur RPG)."
+  },
+  {
+   "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+   "avant": "| Écriture de données | Branche, audit déterministe tiré du contrat, publication distincte; catalogue transactionnel si plusieurs tables | Table d'exploration non partagée |",
+   "apres": "| Écriture de données | Branche, audit déterministe tiré du contrat, publication distincte; catalogue transactionnel si plusieurs tables [É] | Table d'exploration non partagée |",
+   "motif": "Ligne « Écriture de données » : [É], section 47.5, sources [6][7] (documentation d'Apache Iceberg (branches, Write-Audit-Publish) et de Project Nessie (plusieurs tables); les droits de l'agent sont une inférence)."
+  },
+  {
+   "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+   "avant": "| Remédiation | Journaux tenus pour non fiables; l'agent propose, l'action vient d'un catalogue | Boucle fermée selon l'échelle du chapitre 34 |",
+   "apres": "| Remédiation | Journaux tenus pour non fiables; l'agent propose, l'action vient d'un catalogue [S] | Boucle fermée selon l'échelle du chapitre 34 |",
+   "motif": "Ligne « Remédiation » : [S], section 47.6, sources [8][9] (LogJack et AIOpsShield (prépublications, résumés) établissent que l'attaque est possible, non l'efficacité du catalogue d'actions, parade du chapitre)."
+  },
+  {
+   "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+   "avant": "| Boucle de données | Masquage, canaris de mémorisation, filtrage des injections | — |",
+   "apres": "| Boucle de données | Masquage, canaris de mémorisation, filtrage des injections [S] | — |",
+   "motif": "Ligne « Boucle de données » : [S], section 47.7, source [10] (le résumé de Carlini ne décrit pas les canaris (connaissance générale, Limites); masquage et filtrage des injections sont des mesures du chapitre)."
+  },
+  {
+   "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+   "avant": "| Prompts | Optimiseur si métrique étalonnée et exemples filtrés | Sinon, prompts rédigés et versionnés |",
+   "apres": "| Prompts | Optimiseur si métrique étalonnée et exemples filtrés [S] | Sinon, prompts rédigés et versionnés |",
+   "motif": "Ligne « Prompts » : [S], section 47.7, source [11] (la documentation de DSPy décrit MIPROv2 et exige une métrique; « étalonnée » et « filtrés » sont des conséquences tirées par le chapitre)."
+  },
+  {
+   "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+   "avant": "| Petit modèle | Adaptateur par tâche, chargé au démarrage, avec repli | Tâche ouverte ou rare : grand modèle |",
+   "apres": "| Petit modèle | Adaptateur par tâche, chargé au démarrage, avec repli [S] | Tâche ouverte ou rare : grand modèle |",
+   "motif": "Ligne « Petit modèle » : [S], section 47.8, sources [12][13][14] (LoRA, DPO et le service multi-adaptateurs sont documentés séparément; leur assemblage est une « cible de conception », sans mesure sur un élève distillé)."
+  },
+  {
+   "fichier": "chapitre-48-revue-litterature.md",
+   "avant": "| Lire un score de banc d'essai | Le tenir pour une borne, sur une tâche et une version de modèle; demander la constance (pass^k) et le coût | Banc audité, refait sur ses propres tâches |",
+   "apres": "| Lire un score de banc d'essai | Le tenir pour une borne, sur une tâche et une version de modèle; demander la constance (pass^k) et le coût [M] | Banc audité, refait sur ses propres tâches |",
+   "motif": "Ligne « Lire un score de banc d'essai » : [M], section 48.5, sources [1][59][13][60][62][35] (mesures publiées (résumés) : défauts de bancs, scores gonflés, reformulations qui font passer de 96,9 % à 88,1 %; pass^k défini par τ-bench)."
+  },
+  {
+   "fichier": "chapitre-48-revue-litterature.md",
+   "avant": "| Citer une prépublication | La marquer comme telle; chercher la version publiée | Aucun cas |",
+   "apres": "| Citer une prépublication | La marquer comme telle; chercher la version publiée [S] | Aucun cas |",
+   "motif": "Ligne « Citer une prépublication » : [S], section 48.2, sources [2][1] (pratique du chapitre; MAST publié à NeurIPS mais cité par arXiv illustre le risque de classement)."
+  },
+  {
+   "fichier": "chapitre-48-revue-litterature.md",
+   "avant": "| Choisir une architecture multi-agents | Partir de l'agent unique; décomposer quand le contexte d'un seul agent sature ou que la tâche se sépare proprement | Vérification indépendante exigée : un second agent, d'un autre modèle |",
+   "apres": "| Choisir une architecture multi-agents | Partir de l'agent unique; décomposer quand le contexte d'un seul agent sature ou que la tâche se sépare proprement [M] | Vérification indépendante exigée : un second agent, d'un autre modèle |",
+   "motif": "Ligne « Choisir une architecture multi-agents » : [M], section 48.4, sources [52][53][85][57] (comparaisons à calcul égal (prépublications) : l'agent unique égale ou dépasse le multi-agents; la lecture de la controverse est déclarée interprétation)."
+  },
+  {
+   "fichier": "chapitre-48-revue-litterature.md",
+   "avant": "| Dimensionner un système multi-agents | Peu d'agents, différents; un orchestrateur capable | Tâche parallélisable sans dépendance entre lots |",
+   "apres": "| Dimensionner un système multi-agents | Peu d'agents, différents; un orchestrateur capable [M] | Tâche parallélisable sans dépendance entre lots |",
+   "motif": "Ligne « Dimensionner un système multi-agents » : [M], section 48.4, sources [54][55][56] (deux agents différents égalent seize agents identiques [54]; performance liée à l'orchestrateur [56]; prépublications lues par résumé)."
+  },
+  {
+   "fichier": "chapitre-48-revue-litterature.md",
+   "avant": "| Se défendre de l'injection d'invites | Isolation par construction pour les actions à effet; filtrage en complément | Agent en lecture seule sur des données fiables |",
+   "apres": "| Se défendre de l'injection d'invites | Isolation par construction pour les actions à effet; filtrage en complément [M] | Agent en lecture seule sur des données fiables |",
+   "motif": "Ligne « Se défendre de l'injection d'invites » : [M], section 48.6, sources [3][18] (CaMeL (IEEE SaTML 2026) : 77 % de tâches avec garanties contre 84 % sans défense; la réplication [18] tempère; un seul banc pour presque tout)."
+  },
+  {
+   "fichier": "chapitre-48-revue-litterature.md",
+   "avant": "| Justifier un gain de productivité | Ne pas transposer les essais sur assistants; mesurer sur place, contre une base non agentique (chapitre 40) | Tâche identique à celle d'un essai publié |",
+   "apres": "| Justifier un gain de productivité | Ne pas transposer les essais sur assistants; mesurer sur place, contre une base non agentique (chapitre 40) [S] | Tâche identique à celle d'un essai publié |",
+   "motif": "Ligne « Justifier un gain de productivité » : [S], section 48.8, sources [74][24][25][26] (les essais mesurent des assistants; « ne pas transposer » est l'inférence du chapitre, aucune mesure d'agents autonomes)."
+  },
+  {
+   "fichier": "chapitre-48-revue-litterature.md",
+   "avant": "| Retenir un cadre de gouvernance | S'appuyer sur les textes normatifs (chapitres 35 à 39); lire la recherche pour ses idées | Cadre validé par des données d'incidents |",
+   "apres": "| Retenir un cadre de gouvernance | S'appuyer sur les textes normatifs (chapitres 35 à 39); lire la recherche pour ses idées [S] | Cadre validé par des données d'incidents |",
+   "motif": "Ligne « Retenir un cadre de gouvernance » : [S], section 48.9 (jugement du chapitre : « les sources normatives des chapitres 35 à 39 restent plus sûres »; aucun cadre de la littérature n'est éprouvé)."
+  },
+  {
+   "fichier": "chapitre-48-revue-litterature.md",
+   "avant": "| Suivre la littérature | Refaire les dix requêtes chaque trimestre (chapitre 49) | Sujet à échéance réglementaire : veille mensuelle |",
+   "apres": "| Suivre la littérature | Refaire les dix requêtes chaque trimestre (chapitre 49) [S] | Sujet à échéance réglementaire : veille mensuelle |",
+   "motif": "Ligne « Suivre la littérature » : [S], sections 48.1 et 48.10 (méthode de veille du chapitre (dix requêtes, rythme trimestriel))."
+  },
+  {
+   "fichier": "chapitre-49-veille-technologique.md",
+   "avant": "| Organiser la veille | Un registre, un responsable par ligne, une source primaire par ligne | Petite équipe : une revue trimestrielle commune |",
+   "apres": "| Organiser la veille | Un registre, un responsable par ligne, une source primaire par ligne [S] | Petite équipe : une revue trimestrielle commune |",
+   "motif": "Ligne « Organiser la veille » : [S], section 49.1 (règle de la section 43.4, appliquée par le chapitre)."
+  },
+  {
+   "fichier": "chapitre-49-veille-technologique.md",
+   "avant": "| Traiter une reprise de presse | La tenir pour un signal; remonter à l'émetteur avant d'agir | Source primaire inaccessible : décision réversible seulement |",
+   "apres": "| Traiter une reprise de presse | La tenir pour un signal; remonter à l'émetteur avant d'agir [S] | Source primaire inaccessible : décision réversible seulement |",
+   "motif": "Ligne « Traiter une reprise de presse » : [S], section 49.1 (constat de la veille (agrégateurs contradictoires) et règle du chapitre 4)."
+  },
+  {
+   "fichier": "chapitre-49-veille-technologique.md",
+   "avant": "| Lire un score de frontière | Le tenir pour une présélection; décider sur son propre banc | Aucun cas |",
+   "apres": "| Lire un score de frontière | Le tenir pour une présélection; décider sur son propre banc [M] | Aucun cas |",
+   "motif": "Ligne « Lire un score de frontière » : [M], section 49.2, sources [47][48][4] (audits de bancs (prépublications, résumés) : scores presque parfaits sans résoudre de tâche, inflation de 0,45 à 1,00; METR dit sa mesure saturée)."
+  },
+  {
+   "fichier": "chapitre-49-veille-technologique.md",
+   "avant": "| Planifier sur un jalon de normalisation | Le tenir pour une intention; prévoir une solution transitoire documentée | Texte déjà remis à l'IESG ou publié |",
+   "apres": "| Planifier sur un jalon de normalisation | Le tenir pour une intention; prévoir une solution transitoire documentée [S] | Texte déjà remis à l'IESG ou publié |",
+   "motif": "Ligne « Planifier sur un jalon de normalisation » : [S], section 49.3, source [24] (jalons de charte de l'IETF (textes d'émetteur) dont ceux de WIMSE sont échus; « intentions, non engagements » est une lecture du chapitre)."
+  },
+  {
+   "fichier": "chapitre-49-veille-technologique.md",
+   "avant": "| Planifier sur une échéance réglementaire | Viser la date; produire les preuves en continu | Texte en cours de révision : suivre le réexamen |",
+   "apres": "| Planifier sur une échéance réglementaire | Viser la date; produire les preuves en continu [S] | Texte en cours de révision : suivre le réexamen |",
+   "motif": "Ligne « Planifier sur une échéance réglementaire » : [S], section 49.4, source [27] (dates des pages d'information de la Commission (non du Journal officiel); « preuves en continu » est un raisonnement du chapitre (chapitre 39))."
+  },
+  {
+   "fichier": "chapitre-49-veille-technologique.md",
+   "avant": "| Acheter un composant d'identité d'agent | Exiger l'agilité cryptographique et une preuve horodatée | Composant à durée de vie inférieure à trois ans |",
+   "apres": "| Acheter un composant d'identité d'agent | Exiger l'agilité cryptographique et une preuve horodatée [S] | Composant à durée de vie inférieure à trois ans |",
+   "motif": "Ligne « Acheter un composant d'identité d'agent » : [S], section 49.5, sources [36][39][40][41][43] (échéances du NIST et RFC post-quantiques donnent des dates; le critère d'achat est déduit par le chapitre et l'ancrage horodaté vient d'une soumission individuelle [43])."
+  },
+  {
+   "fichier": "chapitre-49-veille-technologique.md",
+   "avant": "| Adopter une technique issue de la recherche | Niveau 3 au moins, essayé sur ses propres tâches | Technique qui renforce un contrôle déterministe existant : essai dès le niveau 2 |",
+   "apres": "| Adopter une technique issue de la recherche | Niveau 3 au moins, essayé sur ses propres tâches [S] | Technique qui renforce un contrôle déterministe existant : essai dès le niveau 2 |",
+   "motif": "Ligne « Adopter une technique issue de la recherche » : [S], section 49.6 (échelle de maturité « propre à ce chapitre »)."
+  },
+  {
+   "fichier": "chapitre-49-veille-technologique.md",
+   "avant": "| Défendre un système multi-agents contre l'injection | Faire suivre la provenance à la donnée, d'un agent à l'autre | Agents d'un même domaine de confiance, sans donnée externe |",
+   "apres": "| Défendre un système multi-agents contre l'injection | Faire suivre la provenance à la donnée, d'un agent à l'autre [M] | Agents d'un même domaine de confiance, sans donnée externe |",
+   "motif": "Ligne « Défendre un système multi-agents contre l'injection » : [M], section 49.6, source [50] (prépublication d'octobre 2026 : 12,9 % de succès sans défense, 0,2 % par agent, 0,0 % avec la variante collective; non répliquée, banc non lu)."
+  },
+  {
+   "fichier": "chapitre-49-veille-technologique.md",
+   "avant": "| Exposer un serveur MCP | Authentification, liaison sur une interface interne, version épinglée | Aucun cas |",
+   "apres": "| Exposer un serveur MCP | Authentification, liaison sur une interface interne, version épinglée [S] | Aucun cas |",
+   "motif": "Ligne « Exposer un serveur MCP » : [S], section 49.7, source [44] (la NVD (102 fiches, comptage du chapitre) documente l'exposition sans authentification; la parade (authentification, interface interne, épinglage) est celle du chapitre 32)."
+  },
+  {
+   "fichier": "chapitre-49-veille-technologique.md",
+   "avant": "| Arrêter de suivre un signal | Le retirer quand sa source cesse, et noter ce qui le remplace | Aucun cas |",
+   "apres": "| Arrêter de suivre un signal | Le retirer quand sa source cesse, et noter ce qui le remplace [S] | Aucun cas |",
+   "motif": "Ligne « Arrêter de suivre un signal » : [S], sections 49.1 et 49.2 (règle de tenue du registre; cas de la série METR arrêtée)."
+  },
+  {
+   "fichier": "chapitre-50-projection-etude-marche.md",
+   "avant": "| Citer une taille de marché | Donner une fourchette, le périmètre et l'émetteur; jamais un chiffre seul | Chiffre tiré d'états financiers audités |",
+   "apres": "| Citer une taille de marché | Donner une fourchette, le périmètre et l'émetteur; jamais un chiffre seul [S] | Chiffre tiré d'états financiers audités |",
+   "motif": "Ligne « Citer une taille de marché » : [S], section 50.2, sources [3][50] (dispersion de seize séries de cabinets payants, méthode invisible; la règle de fourchette est un calcul et un jugement de l'ouvrage)."
+  },
+  {
+   "fichier": "chapitre-50-projection-etude-marche.md",
+   "avant": "| Comparer deux estimations | Vérifier d'abord qu'elles comptent la même chose | Même émetteur, même édition, même intitulé |",
+   "apres": "| Comparer deux estimations | Vérifier d'abord qu'elles comptent la même chose [S] | Même émetteur, même édition, même intitulé |",
+   "motif": "Ligne « Comparer deux estimations » : [S], sections 50.1 et 50.2 (écart de 1 à 59 selon le périmètre, constaté sur des pages de cabinets; règle du chapitre)."
+  },
+  {
+   "fichier": "chapitre-50-projection-etude-marche.md",
+   "avant": "| Lire un indicateur d'éditeur | Relever l'unité, le périmètre et la base de comparaison | Revenu ventilé dans un dépôt réglementaire |",
+   "apres": "| Lire un indicateur d'éditeur | Relever l'unité, le périmètre et la base de comparaison [S] | Revenu ventilé dans un dépôt réglementaire |",
+   "motif": "Ligne « Lire un indicateur d'éditeur » : [S], section 50.3, sources [22][23][62] (communiqués d'éditeurs aux unités et périmètres différents; règle de lecture du chapitre 4)."
+  },
+  {
+   "fichier": "chapitre-50-projection-etude-marche.md",
+   "avant": "| Lire un taux d'adoption | Chercher la définition de « déployé » et la taille des organisations sondées | Enquête d'un organisme statistique, sur toutes les tailles d'entreprise |",
+   "apres": "| Lire un taux d'adoption | Chercher la définition de « déployé » et la taille des organisations sondées [S] | Enquête d'un organisme statistique, sur toutes les tailles d'entreprise |",
+   "motif": "Ligne « Lire un taux d'adoption » : [S], section 50.4, sources [32][33][36][40] (enquêtes déclaratives (de moins de 10 % à plus de 95 %); la règle vient de la comparaison des définitions par le chapitre)."
+  },
+  {
+   "fichier": "chapitre-50-projection-etude-marche.md",
+   "avant": "| Justifier un budget d'agents | Partir du coût par résultat d'un processus, non d'une part de marché (chapitre 40) | Aucun cas |",
+   "apres": "| Justifier un budget d'agents | Partir du coût par résultat d'un processus, non d'une part de marché (chapitre 40) [S] | Aucun cas |",
+   "motif": "Ligne « Justifier un budget d'agents » : [S], section 50.7, chapitre 40 (méthode du chapitre 40; les ordres de grandeur de budget [32][35][37] viennent d'enquêtes de grandes entreprises)."
+  },
+  {
+   "fichier": "chapitre-50-projection-etude-marche.md",
+   "avant": "| Planifier 2027 | S'appuyer sur les échéances datées; tenir les jalons de normalisation pour glissants | Standard déjà publié et mis en œuvre par ses fournisseurs |",
+   "apres": "| Planifier 2027 | S'appuyer sur les échéances datées; tenir les jalons de normalisation pour glissants [S] | Standard déjà publié et mis en œuvre par ses fournisseurs |",
+   "motif": "Ligne « Planifier 2027 » : [S], section 50.6, chapitre 49 (trois degrés de certitude propres au chapitre; les dates viennent du chapitre 49, non relues ici)."
+  },
+  {
+   "fichier": "chapitre-50-projection-etude-marche.md",
+   "avant": "| Choisir entre suite et composants | Suite pour l'usage interne à un éditeur; noyau possédé pour ce qui traverse les plateformes (chapitre 27) | Parc d'un seul éditeur, sans échange externe |",
+   "apres": "| Choisir entre suite et composants | Suite pour l'usage interne à un éditeur; noyau possédé pour ce qui traverse les plateformes (chapitre 27) [S] | Parc d'un seul éditeur, sans échange externe |",
+   "motif": "Ligne « Choisir entre suite et composants » : [S], sections 50.3 et 50.6, sources [66][67] (acquisitions de 2026 et scénarios du chapitre 43 (« conjecturés »); jugement du chapitre 27)."
+  },
+  {
+   "fichier": "chapitre-50-projection-etude-marche.md",
+   "avant": "| Signer un contrat au-delà de 2027 | Clause de révision du modèle de prix et clause de sortie éprouvée | Engagement d'un an |",
+   "apres": "| Signer un contrat au-delà de 2027 | Clause de révision du modèle de prix et clause de sortie éprouvée [S] | Engagement d'un an |",
+   "motif": "Ligne « Signer un contrat au-delà de 2027 » : [S], section 50.7, sources [48][36] (prévisions d'IDC et de Forrester sur la tarification, qui ne valent pas mesure; clauses proposées par le chapitre (section 40.4))."
+  },
+  {
+   "fichier": "chapitre-50-projection-etude-marche.md",
+   "avant": "| Suivre le marché canadien | Statistique Canada et l'ISQ d'abord; enquêtes de cabinets pour les grandes entreprises seulement | Nouvelle série officielle sur les agents |",
+   "apres": "| Suivre le marché canadien | Statistique Canada et l'ISQ d'abord; enquêtes de cabinets pour les grandes entreprises seulement [S] | Nouvelle série officielle sur les agents |",
+   "motif": "Ligne « Suivre le marché canadien » : [S], section 50.4, sources [40][41] (l'enquête de Statistique Canada est une mesure officielle, mais la série est interrompue (3e trimestre 2026); l'ordre de priorité des sources est un jugement du chapitre)."
+  }
+ ]
+}

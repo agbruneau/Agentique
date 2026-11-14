@@ -1,0 +1,553 @@
+{
+ "id": "P4-1-1",
+ "origine": "plan 2027, lot P4-1-1",
+ "categorie": "enrichissement",
+ "remplacements": [
+  {
+   "fichier": "chapitre-01-entreprise-agentique.md",
+   "avant": "| Forme de la solution | La plus simple qui suffit : appel unique enrichi, puis workflow, puis agent | Chemin impossible à prévoir, et valeur qui justifie le coût et la latence |",
+   "apres": "| Forme de la solution | La plus simple qui suffit : appel unique enrichi, puis workflow, puis agent [É] | Chemin impossible à prévoir, et valeur qui justifie le coût et la latence |",
+   "motif": "Ligne « Forme de la solution » : [É], section 1.1-1.2, source [1], billet d'ingénierie d'Anthropic (solution la plus simple d'abord)."
+  },
+  {
+   "fichier": "chapitre-01-entreprise-agentique.md",
+   "avant": "| Un agent ou plusieurs | Un seul | Tâche décomposable en sous-tâches indépendantes, ou besoin de cloisonner outils et permissions (chapitre 16) |",
+   "apres": "| Un agent ou plusieurs | Un seul [S] | Tâche décomposable en sous-tâches indépendantes, ou besoin de cloisonner outils et permissions (chapitre 16) |",
+   "motif": "Ligne « Un agent ou plusieurs » : [S], section 1.2, aucune source citée ne pose « un seul » par défaut; [4] n'appuie que le cloisonnement, et les six bancs d'essai renvoient au chapitre 16."
+  },
+  {
+   "fichier": "chapitre-01-entreprise-agentique.md",
+   "avant": "| Espace d'action initial | Lecture seule, puis écriture dans les systèmes internes | Écriture externe : seulement avec identité propre et piste d'audit |",
+   "apres": "| Espace d'action initial | Lecture seule, puis écriture dans les systèmes internes [S] | Écriture externe : seulement avec identité propre et piste d'audit |",
+   "motif": "Ligne « Espace d'action initial » : [S], section 1.3, [4] distingue espace d'action et autonomie, mais la séquence lecture seule puis écriture interne est du chapitre."
+  },
+  {
+   "fichier": "chapitre-01-entreprise-agentique.md",
+   "avant": "| Niveau d'autonomie | Fixé par agent et par classe d'action; approbation pour l'irréversible et le fort enjeu | Actions réversibles et à faible enjeu, dans un périmètre appliqué techniquement |",
+   "apres": "| Niveau d'autonomie | Fixé par agent et par classe d'action; approbation pour l'irréversible et le fort enjeu [N] | Actions réversibles et à faible enjeu, dans un périmètre appliqué techniquement |",
+   "motif": "Ligne « Niveau d'autonomie » : [N], section 1.3, source [4] (cadre de gouvernance de Singapour, IMDA) : approbation réservée aux actions irréversibles ou à fort enjeu; [6] pour le niveau par agent et par classe d'action."
+  },
+  {
+   "fichier": "chapitre-01-entreprise-agentique.md",
+   "avant": "| Contrôles et journalisation | Exigés dès la conception, comme composants de l'agent | Prototype en bac à sable, sans accès à un système réel |",
+   "apres": "| Contrôles et journalisation | Exigés dès la conception, comme composants de l'agent [N] | Prototype en bac à sable, sans accès à un système réel |",
+   "motif": "Ligne « Contrôles et journalisation » : [N], section 1.1, source [4] (cadre de Singapour, version 1.5) : contrôles et journalisation sont désormais des composants de base de l'agent."
+  },
+  {
+   "fichier": "chapitre-01-entreprise-agentique.md",
+   "avant": "| Branchement des outils et des agents | Protocoles ouverts et registre | Parc très restreint dans une seule équipe |",
+   "apres": "| Branchement des outils et des agents | Protocoles ouverts et registre [S] | Parc très restreint dans une seule équipe |",
+   "motif": "Ligne « Branchement des outils et des agents » : [S], section 1.5, argument du produit des intégrations repris du chapitre 5 (connaissance générale); la thèse est donnée comme un argument, non démontrée."
+  },
+  {
+   "fichier": "chapitre-02-genealogie.md",
+   "avant": "| Accord sur le sens | Schéma et description en langage naturel | Domaine borné à fort enjeu : vocabulaire ou ontologie maintenus (chapitre 12) |",
+   "apres": "| Accord sur le sens | Schéma et description en langage naturel [S] | Domaine borné à fort enjeu : vocabulaire ou ontologie maintenus (chapitre 12) |",
+   "motif": "Ligne « Accord sur le sens » : [S], section 2.4, seule la prépublication [1], une revue narrative sans mesure, appuie le déplacement du sens vers le modèle."
+  },
+  {
+   "fichier": "chapitre-02-genealogie.md",
+   "avant": "| Coordination entre agents | Protocole d'interaction explicite : tâche, états, échéance | Échange exploratoire sans effet de bord |",
+   "apres": "| Coordination entre agents | Protocole d'interaction explicite : tâche, états, échéance [S] | Échange exploratoire sans effet de bord |",
+   "motif": "Ligne « Coordination entre agents » : [S], section 2.2, [8] (FIPA ACL) juge « extremely ambitious » un langage sans protocole d'interaction, mais le rapprochement avec tâche, états et échéance est propre au chapitre."
+  },
+  {
+   "fichier": "chapitre-02-genealogie.md",
+   "avant": "| Découverte | Registre centralisé dans le périmètre de l'entreprise | Entre organisations : fichiers `/.well-known`, fédération |",
+   "apres": "| Découverte | Registre centralisé dans le périmètre de l'entreprise [S] | Entre organisations : fichiers `/.well-known`, fédération |",
+   "motif": "Ligne « Découverte » : [S], section 2.5, prédiction de [1] sur le registre central, dont la portée limitée au périmètre d'entreprise est une lecture du chapitre."
+  },
+  {
+   "fichier": "chapitre-02-genealogie.md",
+   "avant": "| Déclarations d'un tiers (descriptions, annotations) | Traitées comme unilatérales | Tiers lié par un accord et soumis à un contrôle effectif |",
+   "apres": "| Déclarations d'un tiers (descriptions, annotations) | Traitées comme unilatérales [S] | Tiers lié par un accord et soumis à un contrôle effectif |",
+   "motif": "Ligne « Déclarations d'un tiers (descriptions, annotations) » : [S], section 2.5, [3] (OASIS) distingue politique et contrat, mais l'application aux descriptions d'outils est une lecture du chapitre."
+  },
+  {
+   "fichier": "chapitre-02-genealogie.md",
+   "avant": "| Garde-fous | Appliqués hors du modèle, à un intermédiaire | — |",
+   "apres": "| Garde-fous | Appliqués hors du modèle, à un intermédiaire [S] | — |",
+   "motif": "Ligne « Garde-fous » : [S], section 2.5, [3] dit qu'une contrainte non appliquée n'est pas une politique; l'application aux garde-fous est une lecture du chapitre (Limites)."
+  },
+  {
+   "fichier": "chapitre-02-genealogie.md",
+   "avant": "| Choix d'un standard | Celui qui épouse le substrat en place (HTTP, fournisseur d'identité, passerelle) | Besoin qu'aucun standard aligné ne couvre |",
+   "apres": "| Choix d'un standard | Celui qui épouse le substrat en place (HTTP, fournisseur d'identité, passerelle) [S] | Besoin qu'aucun standard aligné ne couvre |",
+   "motif": "Ligne « Choix d'un standard » : [S], section 2.4, leçon tirée de l'échec de FIPA par la prépublication [1], revue narrative sans mesure."
+  },
+  {
+   "fichier": "chapitre-03-dimensions-interoperabilite.md",
+   "avant": "| Cadre d'analyse | Cinq niveaux, évalués relation par relation | Parc d'un seul éditeur : les deux premiers niveaux sont acquis d'office |",
+   "apres": "| Cadre d'analyse | Cinq niveaux, évalués relation par relation [S] | Parc d'un seul éditeur : les deux premiers niveaux sont acquis d'office |",
+   "motif": "Ligne « Cadre d'analyse » : [S], section 3.1, 3.6, découpage en cinq niveaux et grille de maturité construits par le chapitre à partir de [1][2], sans épreuve sur un cas."
+  },
+  {
+   "fichier": "chapitre-03-dimensions-interoperabilite.md",
+   "avant": "| Transport et format | Protocoles ouverts : MCP vers les outils, A2A entre agents | Protocole sectoriel imposé (chapitre 7) |",
+   "apres": "| Transport et format | Protocoles ouverts : MCP vers les outils, A2A entre agents [É] | Protocole sectoriel imposé (chapitre 7) |",
+   "motif": "Ligne « Transport et format » : [É], section 3.2, sources [5][6] et [13] : documentation de MCP et d'A2A, hébergés par la même fondation; le choix de produit en découle."
+  },
+  {
+   "fichier": "chapitre-03-dimensions-interoperabilite.md",
+   "avant": "| Schémas | Entrée et sortie, validées des deux côtés | Outil exploratoire dont le résultat est lu par un humain |",
+   "apres": "| Schémas | Entrée et sortie, validées des deux côtés [N] | Outil exploratoire dont le résultat est lu par un humain |",
+   "motif": "Ligne « Schémas » : [N], section 3.2, source [5] (spécification MCP des outils) : le serveur doit se conformer au schéma de sortie, le client devrait valider."
+  },
+  {
+   "fichier": "chapitre-03-dimensions-interoperabilite.md",
+   "avant": "| Sens des termes | Descriptions rattachées au vocabulaire d'entreprise | Domaine étroit, un seul propriétaire de données |",
+   "apres": "| Sens des termes | Descriptions rattachées au vocabulaire d'entreprise [S] | Domaine étroit, un seul propriétaire de données |",
+   "motif": "Ligne « Sens des termes » : [S], section 3.3, 3.6, ancrage au vocabulaire d'entreprise tiré de la grille de maturité du chapitre; [8] ne chiffre que des échecs."
+  },
+  {
+   "fichier": "chapitre-03-dimensions-interoperabilite.md",
+   "avant": "| Interface en langage naturel | En repli; interface structurée pour toute action à effet | Découverte et exploration |",
+   "apres": "| Interface en langage naturel | En repli; interface structurée pour toute action à effet [S] | Découverte et exploration |",
+   "motif": "Ligne « Interface en langage naturel » : [S], section 3.3, [7] (ANP) recommande l'inverse; le repli et l'interface structurée pour les actions à effet sont du chapitre."
+  },
+  {
+   "fichier": "chapitre-03-dimensions-interoperabilite.md",
+   "avant": "| Rôles et escalade | Définis hors protocole, dans l'orchestrateur et la politique | — |",
+   "apres": "| Rôles et escalade | Définis hors protocole, dans l'orchestrateur et la politique [M] | — |",
+   "motif": "Ligne « Rôles et escalade » : [M], section 3.4, source [4] (étude qui cote six capacités de gouvernance de cinq protocoles) : escalade vers un humain absente partout."
+  },
+  {
+   "fichier": "chapitre-03-dimensions-interoperabilite.md",
+   "avant": "| Agents de tiers | Confinés à leur écosystème, ouverture au cas par cas | Relation sous contrat, identité par agent et journaux disponibles |",
+   "apres": "| Agents de tiers | Confinés à leur écosystème, ouverture au cas par cas [N] | Relation sous contrat, identité par agent et journaux disponibles |",
+   "motif": "Ligne « Agents de tiers » : [N], section 3.4, 3.5, source [9] (cadre de Singapour) : confinement à l'écosystème, puis contrat, transparence, authentification par agent et journalisation, sinon portée réduite."
+  },
+  {
+   "fichier": "chapitre-03-dimensions-interoperabilite.md",
+   "avant": "| Identité | Une identité par agent, rattachée à un responsable humain | — |",
+   "apres": "| Identité | Une identité par agent, rattachée à un responsable humain [N] | — |",
+   "motif": "Ligne « Identité » : [N], section 3.5, sources [9] (authentification propre à chaque agent, imputabilité humaine) et [10] (brouillon IETF : agent doté d'un identifiant unique)."
+  },
+  {
+   "fichier": "chapitre-03-dimensions-interoperabilite.md",
+   "avant": "| Cible de maturité | Fixée selon le risque; le score est le niveau le plus faible | — |",
+   "apres": "| Cible de maturité | Fixée selon le risque; le score est le niveau le plus faible [S] | — |",
+   "motif": "Ligne « Cible de maturité » : [S], section 3.6, règle du chapitre, qui reprend le principe cumulatif du LCIM [2]; grille non éprouvée."
+  },
+  {
+   "fichier": "chapitre-04-etat-des-lieux.md",
+   "avant": "| Lire un chiffre d'adoption | Le classer : enquête déclarative, prévision ou indicateur de fournisseur | Mesure indépendante, à méthode publiée |",
+   "apres": "| Lire un chiffre d'adoption | Le classer : enquête déclarative, prévision ou indicateur de fournisseur [S] | Mesure indépendante, à méthode publiée |",
+   "motif": "Ligne « Lire un chiffre d'adoption » : [S], section 4.1, règle de lecture posée par le chapitre."
+  },
+  {
+   "fichier": "chapitre-04-etat-des-lieux.md",
+   "avant": "| Portée d'un premier agent en production | Workflow prédéfini, peu d'étapes, supervision humaine | Tâche réversible, en bac à sable |",
+   "apres": "| Portée d'un premier agent en production | Workflow prédéfini, peu d'étapes, supervision humaine [M] | Tâche réversible, en bac à sable |",
+   "motif": "Ligne « Portée d'un premier agent en production » : [M], section 4.2, source [1] (étude MAP) : 68 % sous dix étapes avant intervention humaine, 16 cas sur 20 en workflow prédéfini."
+  },
+  {
+   "fichier": "chapitre-04-etat-des-lieux.md",
+   "avant": "| Preuve de valeur | Base de comparaison non agentique fixée avant le pilote | Tâche nouvelle, sans équivalent : indicateur de résultat convenu d'avance |",
+   "apres": "| Preuve de valeur | Base de comparaison non agentique fixée avant le pilote [S] | Tâche nouvelle, sans équivalent : indicateur de résultat convenu d'avance |",
+   "motif": "Ligne « Preuve de valeur » : [S], section 4.3, [1] ne chiffre que la pratique (39 % comparent, 26 % sans base valable); la base fixée avant le pilote est une inférence du chapitre."
+  },
+  {
+   "fichier": "chapitre-04-etat-des-lieux.md",
+   "avant": "| Passage du pilote à la production | Exiger évaluation, contrôle d'accès et imputabilité | Aucun cas |",
+   "apres": "| Passage du pilote à la production | Exiger évaluation, contrôle d'accès et imputabilité [S] | Aucun cas |",
+   "motif": "Ligne « Passage du pilote à la production » : [S], section 4.3, exigence que le chapitre déduit de [1][2] et des prévisions de [9]; il la donne pour une interprétation (Limites)."
+  },
+  {
+   "fichier": "chapitre-04-etat-des-lieux.md",
+   "avant": "| Plan de contrôle | Retenir celui d'un éditeur déjà en place, avec clause de sortie | Parc de plusieurs éditeurs : prévoir la fédération (chapitre 27) |",
+   "apres": "| Plan de contrôle | Retenir celui d'un éditeur déjà en place, avec clause de sortie [S] | Parc de plusieurs éditeurs : prévoir la fédération (chapitre 27) |",
+   "motif": "Ligne « Plan de contrôle » : [S], section 4.4, [7] n'est qu'un billet de fournisseur sur une catégorie d'analyste; le choix et la clause de sortie sont du chapitre."
+  },
+  {
+   "fichier": "chapitre-04-etat-des-lieux.md",
+   "avant": "| Dépendance aux standards | Bâtir sur MCP et A2A; tenir le reste pour remplaçable | Besoin immédiat d'identité ou de registre : solution transitoire documentée |",
+   "apres": "| Dépendance aux standards | Bâtir sur MCP et A2A; tenir le reste pour remplaçable [É] | Besoin immédiat d'identité ou de registre : solution transitoire documentée |",
+   "motif": "Ligne « Dépendance aux standards » : [É], section 4.4, sources [3] (bilan de la Linux Foundation sur A2A 1.0) et [6] (page de l'AAIF) : annonces de projet."
+  },
+  {
+   "fichier": "chapitre-04-etat-des-lieux.md",
+   "avant": "| Calendrier réglementaire | Planifier sur les échéances européennes de décembre 2027 et d'août 2028 | Aucune activité visée par l'AI Act; institution financière fédérale canadienne : E-23, 1er mai 2027 (chapitre 38) |",
+   "apres": "| Calendrier réglementaire | Planifier sur les échéances européennes de décembre 2027 et d'août 2028 [N] | Aucune activité visée par l'AI Act; institution financière fédérale canadienne : E-23, 1er mai 2027 (chapitre 38) |",
+   "motif": "Ligne « Calendrier réglementaire » : [N], section 4.4, source [10], règlement (UE) 2026/1744 lu sur une reproduction non officielle, dates confirmées au chapitre 35 par les considérants d'EUR-Lex."
+  },
+  {
+   "fichier": "chapitre-05-mcp.md",
+   "avant": "| Version cible du protocole | `2026-07-28` pour tout nouveau serveur distant | Clients imposés qui ne parlent qu'une version à poignée de main : prévoir la double compatibilité |",
+   "apres": "| Version cible du protocole | `2026-07-28` pour tout nouveau serveur distant [N] | Clients imposés qui ne parlent qu'une version à poignée de main : prévoir la double compatibilité |",
+   "motif": "Ligne « Version cible du protocole » : [N], section 5.2, sources [1][2] : spécification `2026-07-28` et journal des changements."
+  },
+  {
+   "fichier": "chapitre-05-mcp.md",
+   "avant": "| Transport | Streamable HTTP pour le distant, stdio pour le local | Aucun cas pour HTTP+SSE, déprécié |",
+   "apres": "| Transport | Streamable HTTP pour le distant, stdio pour le local [N] | Aucun cas pour HTTP+SSE, déprécié |",
+   "motif": "Ligne « Transport » : [N], section 5.3, sources [2][3] : spécification du transport Streamable HTTP et de stdio, HTTP+SSE déprécié."
+  },
+  {
+   "fichier": "chapitre-05-mcp.md",
+   "avant": "| Autorisation | Obligatoire sur tout serveur distant, avec vérification de l'audience | Serveur local sans données sensibles |",
+   "apres": "| Autorisation | Obligatoire sur tout serveur distant, avec vérification de l'audience [N] | Serveur local sans données sensibles |",
+   "motif": "Ligne « Autorisation » : [N], section 5.5, 5.8, sources [3][5] : le transport recommande d'authentifier toute connexion et la vérification d'audience est exigée; rendre l'autorisation obligatoire est la politique d'entreprise, la spécification la disant facultative."
+  },
+  {
+   "fichier": "chapitre-05-mcp.md",
+   "avant": "| Modèle d'autorisation | Enterprise-Managed Authorization si le fournisseur d'identité et les clients la prennent en charge | Sinon, flux OAuth de base avec préenregistrement des clients |",
+   "apres": "| Modèle d'autorisation | Enterprise-Managed Authorization si le fournisseur d'identité et les clients la prennent en charge [É] | Sinon, flux OAuth de base avec préenregistrement des clients |",
+   "motif": "Ligne « Modèle d'autorisation » : [É], section 5.5, sources [6][8] : documentation de l'extension Enterprise-Managed Authorization (ID-JAG défini par un brouillon de l'IETF)."
+  },
+  {
+   "fichier": "chapitre-05-mcp.md",
+   "avant": "| Enregistrement des clients | Client ID Metadata Documents | Enregistrement dynamique seulement si le serveur d'autorisation n'offre rien d'autre |",
+   "apres": "| Enregistrement des clients | Client ID Metadata Documents [N] | Enregistrement dynamique seulement si le serveur d'autorisation n'offre rien d'autre |",
+   "motif": "Ligne « Enregistrement des clients » : [N], section 5.5, sources [2][5] : la révision de juillet 2026 recommande les Client ID Metadata Documents et déprécie l'enregistrement dynamique."
+  },
+  {
+   "fichier": "chapitre-05-mcp.md",
+   "avant": "| Politique à la passerelle | Sur les en-têtes `Mcp-*` des requêtes `2026-07-28` | Version antérieure ou absente : refuser, ou analyser le corps |",
+   "apres": "| Politique à la passerelle | Sur les en-têtes `Mcp-*` des requêtes `2026-07-28` [N] | Version antérieure ou absente : refuser, ou analyser le corps |",
+   "motif": "Ligne « Politique à la passerelle » : [N], section 5.2, source [3] : la spécification demande de refuser une requête dont la version annoncée précède la validation des en-têtes, ou n'en annonce aucune."
+  },
+  {
+   "fichier": "chapitre-05-mcp.md",
+   "avant": "| État entre appels | Identifiants explicites, opaques, vérifiés à chaque appel | — |",
+   "apres": "| État entre appels | Identifiants explicites, opaques, vérifiés à chaque appel [N] | — |",
+   "motif": "Ligne « État entre appels » : [N], section 5.2, sources [4][2] : patron recommandé par la spécification (identifiant renvoyé puis passé en argument, autorisation vérifiée à chaque appel)."
+  },
+  {
+   "fichier": "chapitre-05-mcp.md",
+   "avant": "| Opérations longues | Extension Tasks, en acceptant son statut bêta | Opération courte : flux de réponse avec notifications de progression |",
+   "apres": "| Opérations longues | Extension Tasks, en acceptant son statut bêta [É] | Opération courte : flux de réponse avec notifications de progression |",
+   "motif": "Ligne « Opérations longues » : [É], section 5.4, sources [7][8] : pages de l'extension Tasks, au stade bêta."
+  },
+  {
+   "fichier": "chapitre-05-mcp.md",
+   "avant": "| Effets de bord | Outils idempotents ou compensables | — |",
+   "apres": "| Effets de bord | Outils idempotents ou compensables [S] | — |",
+   "motif": "Ligne « Effets de bord » : [S], section 5.2, [2] fixe la réémission d'une requête rompue; l'idempotence ou la compensation en est l'inférence du chapitre (chapitre 18)."
+  },
+  {
+   "fichier": "chapitre-05-mcp.md",
+   "avant": "| Découverte | Registre interne à interface standard | Très petit parc : configuration statique |",
+   "apres": "| Découverte | Registre interne à interface standard [É] | Très petit parc : configuration statique |",
+   "motif": "Ligne « Découverte » : [É], section 5.7, source [11] : page du registre MCP, qui recommande d'héberger son propre registre privé."
+  },
+  {
+   "fichier": "chapitre-05-mcp.md",
+   "avant": "| SDK | Niveau 1 | Langage sans SDK de niveau 1 : niveau 2 avec plan de suivi |",
+   "apres": "| SDK | Niveau 1 [É] | Langage sans SDK de niveau 1 : niveau 2 avec plan de suivi |",
+   "motif": "Ligne « SDK » : [É], section 5.6, source [10] : page des niveaux de SDK du projet."
+  },
+  {
+   "fichier": "chapitre-05-mcp.md",
+   "avant": "| Extensions | Stables seulement en production | Bêta si le bénéfice justifie un coût d'adaptation prévu |",
+   "apres": "| Extensions | Stables seulement en production [É] | Bêta si le bénéfice justifie un coût d'adaptation prévu |",
+   "motif": "Ligne « Extensions » : [É], section 5.6, sources [8][2] : stades d'une extension décrits par la vue d'ensemble du projet."
+  },
+  {
+   "fichier": "chapitre-05-mcp.md",
+   "avant": "| Annotations d'outils | Ignorées pour toute décision de sécurité | Serveur interne dont le code est maîtrisé |",
+   "apres": "| Annotations d'outils | Ignorées pour toute décision de sécurité [N] | Serveur interne dont le code est maîtrisé |",
+   "motif": "Ligne « Annotations d'outils » : [N], section 5.8, source [4] : la spécification exige de tenir les annotations pour non fiables, sauf serveur de confiance."
+  },
+  {
+   "fichier": "chapitre-06-a2a.md",
+   "avant": "| Exposer une capacité comme outil ou comme agent | Outil (MCP) si le comportement est ponctuel, typé et maîtrisé par l'appelant | Agent (A2A) si la capacité raisonne, dialogue, dure ou appartient à une autre équipe |",
+   "apres": "| Exposer une capacité comme outil ou comme agent | Outil (MCP) si le comportement est ponctuel, typé et maîtrisé par l'appelant [S] | Agent (A2A) si la capacité raisonne, dialogue, dure ou appartient à une autre équipe |",
+   "motif": "Ligne « Exposer une capacité comme outil ou comme agent » : [S], section 6.6, [5] admet qu'un agent s'expose comme outil, mais le critère du contrôle de l'appelant est une analyse propre au chapitre (Limites)."
+  },
+  {
+   "fichier": "chapitre-06-a2a.md",
+   "avant": "| Version cible | 1.0, avec son correctif 1.0.1, pour tout nouvel agent | Partenaires encore en 0.3 : exposer deux interfaces pendant la transition |",
+   "apres": "| Version cible | 1.0, avec son correctif 1.0.1, pour tout nouvel agent [N] | Partenaires encore en 0.3 : exposer deux interfaces pendant la transition |",
+   "motif": "Ligne « Version cible » : [N], section 6.4, sources [1][12] : spécification A2A 1.0 et correctif 1.0.1."
+  },
+  {
+   "fichier": "chapitre-06-a2a.md",
+   "avant": "| Liaison | HTTP+JSON ou JSON-RPC pour l'externe | gRPC pour les échanges internes à haut débit |",
+   "apres": "| Liaison | HTTP+JSON ou JSON-RPC pour l'externe [S] | gRPC pour les échanges internes à haut débit |",
+   "motif": "Ligne « Liaison » : [S], section 6.4, [1] pose les trois liaisons comme équivalentes, sans préférence; la répartition externe et interne est l'exemple du chapitre."
+  },
+  {
+   "fichier": "chapitre-06-a2a.md",
+   "avant": "| Carte publique | Description minimale, sans secret ni URL interne | Carte étendue, après authentification, pour le détail |",
+   "apres": "| Carte publique | Description minimale, sans secret ni URL interne [S] | Carte étendue, après authentification, pour le détail |",
+   "motif": "Ligne « Carte publique » : [S], section 6.2, [1] décrit la carte étendue, mais « minimale, sans secret ni URL interne » est la prudence du chapitre."
+  },
+  {
+   "fichier": "chapitre-06-a2a.md",
+   "avant": "| Signature des cartes | Signer ses cartes; vérifier celles des tiers | Aucun écart justifié en production entre organisations |",
+   "apres": "| Signature des cartes | Signer ses cartes; vérifier celles des tiers [N] | Aucun écart justifié en production entre organisations |",
+   "motif": "Ligne « Signature des cartes » : [N], section 6.2, source [1] : un client devrait vérifier au moins une signature avant de se fier à une carte; la signature elle-même est facultative."
+  },
+  {
+   "fichier": "chapitre-06-a2a.md",
+   "avant": "| Découverte | Registre interne organisé | Emplacement bien connu pour un agent public; configuration directe pour un couplage fixe |",
+   "apres": "| Découverte | Registre interne organisé [É] | Emplacement bien connu pour un agent public; configuration directe pour un couplage fixe |",
+   "motif": "Ligne « Découverte » : [É], section 6.7, source [4] : documentation d'A2A, qui décrit trois stratégies (emplacement bien connu, registres, configuration directe)."
+  },
+  {
+   "fichier": "chapitre-06-a2a.md",
+   "avant": "| Suivi d'une tâche longue | Notifications poussées, avec validation de leur authenticité | Interrogation périodique si le client ne peut pas recevoir d'appels entrants |",
+   "apres": "| Suivi d'une tâche longue | Notifications poussées, avec validation de leur authenticité [N] | Interrogation périodique si le client ne peut pas recevoir d'appels entrants |",
+   "motif": "Ligne « Suivi d'une tâche longue » : [N], section 6.3, source [1] : notifications poussées pour les tâches longues, validation de l'adresse de rappel et de la source."
+  },
+  {
+   "fichier": "chapitre-06-a2a.md",
+   "avant": "| Livraison des résultats | Artefacts | Message seul pour un échange purement conversationnel |",
+   "apres": "| Livraison des résultats | Artefacts [N] | Message seul pour un échange purement conversationnel |",
+   "motif": "Ligne « Livraison des résultats » : [N], section 6.2, source [1] : les messages ne sont pas un mécanisme de livraison fiable, les artefacts sont à privilégier."
+  },
+  {
+   "fichier": "chapitre-06-a2a.md",
+   "avant": "| Autorisation en cours de tâche | Justificatifs obtenus hors protocole; portée et durée de validité définies par politique | — |",
+   "apres": "| Autorisation en cours de tâche | Justificatifs obtenus hors protocole; portée et durée de validité définies par politique [N] | — |",
+   "motif": "Ligne « Autorisation en cours de tâche » : [N], section 6.6, source [1] : trois règles sur les justificatifs hors protocole, la portée de l'état `AUTH_REQUIRED` et leur non-reconduction."
+  },
+  {
+   "fichier": "chapitre-06-a2a.md",
+   "avant": "| Exposition externe | Derrière une passerelle de gestion d'API | Agent strictement interne |",
+   "apres": "| Exposition externe | Derrière une passerelle de gestion d'API [É] | Agent strictement interne |",
+   "motif": "Ligne « Exposition externe » : [É], section 6.7, source [6] : page « Fonctions d'entreprise », recommandation d'exploitation et non exigence du protocole."
+  },
+  {
+   "fichier": "chapitre-06-a2a.md",
+   "avant": "| Vérification des livrables | Contrôle systématique de ce que rend un agent tiers | Agent interne dont le comportement est évalué en continu |",
+   "apres": "| Vérification des livrables | Contrôle systématique de ce que rend un agent tiers [S] | Agent interne dont le comportement est évalué en continu |",
+   "motif": "Ligne « Vérification des livrables » : [S], section 6.7, la spécification ne dit rien de l'exactitude du résultat; raisonnement du chapitre sur le prix de l'opacité."
+  },
+  {
+   "fichier": "chapitre-07-protocoles-peripheriques.md",
+   "avant": "| Flux entre agent et interface | AG-UI derrière une couche d'authentification interne; approbations sensibles adossées à un octroi du serveur d'autorisation (chapitre 30) | Interface fournie par la plateforme d'agents : garder son canal natif |",
+   "apres": "| Flux entre agent et interface | AG-UI derrière une couche d'authentification interne; approbations sensibles adossées à un octroi du serveur d'autorisation (chapitre 30) [É] | Interface fournie par la plateforme d'agents : garder son canal natif |",
+   "motif": "Ligne « Flux entre agent et interface » : [É], section 7.1, sources [1]-[4] : documentation et dépôt d'AG-UI; la couche d'authentification est un ajout du chapitre, la page d'architecture n'en parlant pas."
+  },
+  {
+   "fichier": "chapitre-07-protocoles-peripheriques.md",
+   "avant": "| Interface générée par l'agent | Format déclaratif à catalogue fermé (A2UI) ou MCP Apps | Jamais de code produit par l'agent sans bac à sable |",
+   "apres": "| Interface générée par l'agent | Format déclaratif à catalogue fermé (A2UI) ou MCP Apps [É] | Jamais de code produit par l'agent sans bac à sable |",
+   "motif": "Ligne « Interface générée par l'agent » : [É], section 7.1, sources [1][5] : A2UI connu par la page d'accueil de son site seulement, et MCP Apps."
+  },
+  {
+   "fichier": "chapitre-07-protocoles-peripheriques.md",
+   "avant": "| Version d'AG-UI | Épingler le SDK; isoler les types d'événements dans un module | — |",
+   "apres": "| Version d'AG-UI | Épingler le SDK; isoler les types d'événements dans un module [S] | — |",
+   "motif": "Ligne « Version d'AG-UI » : [S], section 7.1, [3][4] montrent l'instabilité; épingler le SDK et isoler les types d'événements est une consigne du chapitre."
+  },
+  {
+   "fichier": "chapitre-07-protocoles-peripheriques.md",
+   "avant": "| Identité entre organisations | Fournisseur d'identité et fédération existants (chapitre 29) | Contreparties sans tiers commun : comparer vLEI (chapitre 45) et `did:wba`, à l'essai |",
+   "apres": "| Identité entre organisations | Fournisseur d'identité et fédération existants (chapitre 29) [S] | Contreparties sans tiers commun : comparer vLEI (chapitre 45) et `did:wba`, à l'essai |",
+   "motif": "Ligne « Identité entre organisations » : [S], section 7.2, lecture du chapitre; [6][7] décrivent `did:wba` sans établir qu'une entreprise doive l'écarter à l'interne."
+  },
+  {
+   "fichier": "chapitre-07-protocoles-peripheriques.md",
+   "avant": "| Méta-protocole d'ANP | Ne pas l'adopter en production | Recherche et prototypes |",
+   "apres": "| Méta-protocole d'ANP | Ne pas l'adopter en production [S] | Recherche et prototypes |",
+   "motif": "Ligne « Méta-protocole d'ANP » : [S], section 7.2, « réserve propre à ce chapitre » (gestion du changement, piste d'audit); [7] n'en dit que le statut de brouillon."
+  },
+  {
+   "fichier": "chapitre-07-protocoles-peripheriques.md",
+   "avant": "| Découverte entre registres | Registre interne à interface standard (chapitre 8) | Fédération de plusieurs entités : évaluer Agent Directory et OASF |",
+   "apres": "| Découverte entre registres | Registre interne à interface standard (chapitre 8) [S] | Fédération de plusieurs entités : évaluer Agent Directory et OASF |",
+   "motif": "Ligne « Découverte entre registres » : [S], section 7.3, synthèse du chapitre, renvoyée au chapitre 8; [11][12] ne décrivent que les options d'AGNTCY."
+  },
+  {
+   "fichier": "chapitre-07-protocoles-peripheriques.md",
+   "avant": "| Messagerie entre agents | A2A sur HTTP | Groupes chiffrés de bout en bout entre domaines de confiance : SLIM, à l'essai |",
+   "apres": "| Messagerie entre agents | A2A sur HTTP [S] | Groupes chiffrés de bout en bout entre domaines de confiance : SLIM, à l'essai |",
+   "motif": "Ligne « Messagerie entre agents » : [S], section 7.3, A2A par défaut est un choix du chapitre (chapitre 6); [14] n'est qu'un brouillon IETF individuel et informatif."
+  },
+  {
+   "fichier": "chapitre-07-protocoles-peripheriques.md",
+   "avant": "| Ressource physique ou irréversible | Réservation, approbation liée aux paramètres, résultat typé, mis en œuvre comme outils MCP | — |",
+   "apres": "| Ressource physique ou irréversible | Réservation, approbation liée aux paramètres, résultat typé, mis en œuvre comme outils MCP [S] | — |",
+   "motif": "Ligne « Ressource physique ou irréversible » : [S], section 7.4, [17] est une spécification de conception v0.1, sans mise en œuvre ni évaluation; la transposition aux outils MCP est du chapitre."
+  },
+  {
+   "fichier": "chapitre-07-protocoles-peripheriques.md",
+   "avant": "| Nouveau protocole proposé | Refus tant que les sept questions n'ont pas de réponse | Besoin sectoriel sans substitut : adoption confinée et réversible |",
+   "apres": "| Nouveau protocole proposé | Refus tant que les sept questions n'ont pas de réponse [S] | Besoin sectoriel sans substitut : adoption confinée et réversible |",
+   "motif": "Ligne « Nouveau protocole proposé » : [S], section 7.5, les sept questions sont une synthèse du chapitre (Limites)."
+  },
+  {
+   "fichier": "chapitre-08-decouverte-registres.md",
+   "avant": "| Source de vérité interne | Un registre interne avec approbation | Registres séparés par environnement ou par unité, s'ils sont fédérés |",
+   "apres": "| Source de vérité interne | Un registre interne avec approbation [S] | Registres séparés par environnement ou par unité, s'ils sont fédérés |",
+   "motif": "Ligne « Source de vérité interne » : [S], section 8.7, thèse du chapitre; les études [23]-[27] portent sur des registres publics, aucune donnée sur des registres internes."
+  },
+  {
+   "fichier": "chapitre-08-decouverte-registres.md",
+   "avant": "| Serveurs MCP publics | Sélection approuvée, tirée d'un sous-registre | Jamais le registre officiel interrogé directement par les hôtes |",
+   "apres": "| Serveurs MCP publics | Sélection approuvée, tirée d'un sous-registre [É] | Jamais le registre officiel interrogé directement par les hôtes |",
+   "motif": "Ligne « Serveurs MCP publics » : [É], section 8.3, sources [1][3][4] : pages du registre MCP (non conçu pour être interrogé par les hôtes, sous-registres, modération minimale)."
+  },
+  {
+   "fichier": "chapitre-08-decouverte-registres.md",
+   "avant": "| Interface du registre interne | Spécification OpenAPI du registre MCP | Catalogue de plateforme si le parc est homogène |",
+   "apres": "| Interface du registre interne | Spécification OpenAPI du registre MCP [É] | Catalogue de plateforme si le parc est homogène |",
+   "motif": "Ligne « Interface du registre interne » : [É], section 8.3, source [3] : page des agrégateurs et sous-registres, API `v0.1` en préversion."
+  },
+  {
+   "fichier": "chapitre-08-decouverte-registres.md",
+   "avant": "| Alimentation | Déclaration et détection automatique | Petit parc : déclaration seule |",
+   "apres": "| Alimentation | Déclaration et détection automatique [S] | Petit parc : déclaration seule |",
+   "motif": "Ligne « Alimentation » : [S], section 8.6, [15][20] décrivent la déclaration et la détection; « un inventaire fiable exige les deux » est la conclusion du chapitre."
+  },
+  {
+   "fichier": "chapitre-08-decouverte-registres.md",
+   "avant": "| Approbation | Manuelle en production | Automatique en développement, avec contrôles compensatoires |",
+   "apres": "| Approbation | Manuelle en production [É] | Automatique en développement, avec contrôles compensatoires |",
+   "motif": "Ligne « Approbation » : [É], section 8.6, sources [15][16] : documentation d'AWS Agent Registry (approbation manuelle ou automatique, contrôles compensatoires)."
+  },
+  {
+   "fichier": "chapitre-08-decouverte-registres.md",
+   "avant": "| Référence à une entrée | Version épinglée, empreinte si elle est disponible; nouvelle approbation à tout changement de définition | — |",
+   "apres": "| Référence à une entrée | Version épinglée, empreinte si elle est disponible; nouvelle approbation à tout changement de définition [É] | — |",
+   "motif": "Ligne « Référence à une entrée » : [É], section 8.6-8.7, sources [17][13] : documentation d'AWS (listes d'autorisation, épinglage de versions) et billet d'AGNTCY (empreinte de contenu)."
+  },
+  {
+   "fichier": "chapitre-08-decouverte-registres.md",
+   "avant": "| Agents exposés à l'extérieur | Agent Card à l'URI bien connue; carte étendue pour le sensible | Agents internes : registre seulement |",
+   "apres": "| Agents exposés à l'extérieur | Agent Card à l'URI bien connue; carte étendue pour le sensible [N] | Agents internes : registre seulement |",
+   "motif": "Ligne « Agents exposés à l'extérieur » : [N], section 8.4, source [8] : la spécification A2A 1.0 enregistre `/.well-known/agent-card.json`; carte étendue décrite par [7]."
+  },
+  {
+   "fichier": "chapitre-08-decouverte-registres.md",
+   "avant": "| Signature des Agent Cards | Signer et vérifier entre organisations | Échanges internes déjà protégés par mTLS |",
+   "apres": "| Signature des Agent Cards | Signer et vérifier entre organisations [N] | Échanges internes déjà protégés par mTLS |",
+   "motif": "Ligne « Signature des Agent Cards » : [N], section 8.4, source [8] : un client devrait vérifier au moins une signature; la signature reste facultative."
+  },
+  {
+   "fichier": "chapitre-08-decouverte-registres.md",
+   "avant": "| Catalogue de domaine | Attendre la stabilisation; sinon générer `ai-catalog.json` et `ard.json` d'une même source | Découvrabilité externe érigée en objectif d'affaires |",
+   "apres": "| Catalogue de domaine | Attendre la stabilisation; sinon générer `ai-catalog.json` et `ard.json` d'une même source [S] | Découvrabilité externe érigée en objectif d'affaires |",
+   "motif": "Ligne « Catalogue de domaine » : [S], section 8.4, conseil du chapitre (« coder en dur l'un ou l'autre chemin est prématuré »); [9]-[12] sont des travaux non finalisés."
+  },
+  {
+   "fichier": "chapitre-08-decouverte-registres.md",
+   "avant": "| Découverte par les agents à l'exécution | Limitée aux entrées approuvées; métadonnées tenues pour non fiables | — |",
+   "apres": "| Découverte par les agents à l'exécution | Limitée aux entrées approuvées; métadonnées tenues pour non fiables [É] | — |",
+   "motif": "Ligne « Découverte par les agents à l'exécution » : [É], section 8.1, 8.7, sources [17][15][11] : documentation d'AWS et proposition ARD (un score de pertinence n'est pas un jugement de confiance)."
+  },
+  {
+   "fichier": "chapitre-08-decouverte-registres.md",
+   "avant": "| Annuaire distribué | Veille | Écosystème entre organisations sans opérateur central acceptable |",
+   "apres": "| Annuaire distribué | Veille [S] | Écosystème entre organisations sans opérateur central acceptable |",
+   "motif": "Ligne « Annuaire distribué » : [S], section 8.5, jugement du chapitre (déduction sur le retrait, coût d'exploitation); [13] ne documente que le fonctionnement de l'annuaire."
+  },
+  {
+   "fichier": "chapitre-08-decouverte-registres.md",
+   "avant": "| Synchronisation depuis un registre public | Comparer les définitions et le point d'accès à la version approuvée; tout écart suspend l'entrée | — |",
+   "apres": "| Synchronisation depuis un registre public | Comparer les définitions et le point d'accès à la version approuvée; tout écart suspend l'entrée [S] | — |",
+   "motif": "Ligne « Synchronisation depuis un registre public » : [S], section 8.8, le constat de [23] (dérive silencieuse) est mesuré, mais la colonne « conséquence » est une lecture du chapitre."
+  },
+  {
+   "fichier": "chapitre-09-web-agentique.md",
+   "avant": "| Canal principal pour les agents | API ou serveur MCP adossé à la logique d'affaires | Parcours qui n'existe que dans l'interface web : envisager WebMCP |",
+   "apres": "| Canal principal pour les agents | API ou serveur MCP adossé à la logique d'affaires [S] | Parcours qui n'existe que dans l'interface web : envisager WebMCP |",
+   "motif": "Ligne « Canal principal pour les agents » : [S], section 9.6, jugement du chapitre (Limites)."
+  },
+  {
+   "fichier": "chapitre-09-web-agentique.md",
+   "avant": "| WebMCP | Expérimenter dans l'essai d'origine, sur un parcours à faible risque | Aucune tâche à accomplir sur le site : s'abstenir |",
+   "apres": "| WebMCP | Expérimenter dans l'essai d'origine, sur un parcours à faible risque [S] | Aucune tâche à accomplir sur le site : s'abstenir |",
+   "motif": "Ligne « WebMCP » : [S], section 9.2, [1][2][3] documentent un essai d'origine d'un seul moteur; l'expérimentation sur un parcours à faible risque est un jugement du chapitre."
+  },
+  {
+   "fichier": "chapitre-09-web-agentique.md",
+   "avant": "| Actions à effet (achat, réservation) par WebMCP | Soumission par l'utilisateur, annotation `consequentialHint`, contrôles côté serveur | — |",
+   "apres": "| Actions à effet (achat, réservation) par WebMCP | Soumission par l'utilisateur, annotation `consequentialHint`, contrôles côté serveur [É] | — |",
+   "motif": "Ligne « Actions à effet (achat, réservation) par WebMCP » : [É], section 9.2, sources [1][4] : brouillon de groupe communautaire et documentation de Chrome (soumission par l'utilisateur, `consequentialHint`, validations côté serveur)."
+  },
+  {
+   "fichier": "chapitre-09-web-agentique.md",
+   "avant": "| Annotations d'outils | Les renseigner, sans en faire une mesure de sécurité | — |",
+   "apres": "| Annotations d'outils | Les renseigner, sans en faire une mesure de sécurité [É] | — |",
+   "motif": "Ligne « Annotations d'outils » : [É], section 9.2, source [1] : brouillon de groupe communautaire, qui reconnaît qu'un agent ne peut fonder sa sécurité sur les déclarations du site."
+  },
+  {
+   "fichier": "chapitre-09-web-agentique.md",
+   "avant": "| NLWeb | Attendre; exposer la recherche par un outil MCP existant | Contenu riche en Schema.org et volonté d'expérimenter |",
+   "apres": "| NLWeb | Attendre; exposer la recherche par un outil MCP existant [É] | Contenu riche en Schema.org et volonté d'expérimenter |",
+   "motif": "Ligne « NLWeb » : [É], section 9.3, sources [7][8] : le dépôt se qualifie lui-même de démonstration de faisabilité."
+  },
+  {
+   "fichier": "chapitre-09-web-agentique.md",
+   "avant": "| Robots et agents entrants | Vérifier les signatures Web Bot Auth par le mandataire ou le réseau de diffusion; trois résultats distincts | Trafic d'agents négligeable : conserver les règles actuelles |",
+   "apres": "| Robots et agents entrants | Vérifier les signatures Web Bot Auth par le mandataire ou le réseau de diffusion; trois résultats distincts [É] | Trafic d'agents négligeable : conserver les règles actuelles |",
+   "motif": "Ligne « Robots et agents entrants » : [É], section 9.4, 9.6, sources [12]-[14] : Internet-Draft de groupe de travail (trois résultats, vérification déléguée) et documentation de Cloudflare."
+  },
+  {
+   "fichier": "chapitre-09-web-agentique.md",
+   "avant": "| Requête signée | L'identifier, puis appliquer la politique de sa catégorie | Ne jamais y voir une autorisation |",
+   "apres": "| Requête signée | L'identifier, puis appliquer la politique de sa catégorie [É] | Ne jamais y voir une autorisation |",
+   "motif": "Ligne « Requête signée » : [É], section 9.4, source [12] : Internet-Draft, une signature valide ne prouve ni l'exploitant ni l'autorisation."
+  },
+  {
+   "fichier": "chapitre-09-web-agentique.md",
+   "avant": "| Agents sortants | Signer, avec clés distinctes et expiration courte | Agent qui doit rester non corrélable : le protocole ne convient pas |",
+   "apres": "| Agents sortants | Signer, avec clés distinctes et expiration courte [É] | Agent qui doit rester non corrélable : le protocole ne convient pas |",
+   "motif": "Ligne « Agents sortants » : [É], section 9.4, 9.6, source [12] : Internet-Draft, absence de révocation d'où signatures de courte durée; corrélation des requêtes."
+  },
+  {
+   "fichier": "chapitre-09-web-agentique.md",
+   "avant": "| llms.txt | Le générer pour la documentation technique | Site sans documentation : facultatif; retirer un fichier produit par défaut et non entretenu |",
+   "apres": "| llms.txt | Le générer pour la documentation technique [M] | Site sans documentation : facultatif; retirer un fichier produit par défaut et non entretenu |",
+   "motif": "Ligne « llms.txt » : [M], section 9.5, source [16] : étude d'Ahrefs sur 137 210 domaines (étude d'un fournisseur d'outils, lue en entier)."
+  },
+  {
+   "fichier": "chapitre-10-commerce-agentique.md",
+   "avant": "| Autoriser un agent à acheter | Présence humaine : approbation du panier fermé sur une surface non agentique | Achats répétitifs de faible valeur : mandat ouvert, contraintes étroites, expiration courte |",
+   "apres": "| Autoriser un agent à acheter | Présence humaine : approbation du panier fermé sur une surface non agentique [N] | Achats répétitifs de faible valeur : mandat ouvert, contraintes étroites, expiration courte |",
+   "motif": "Ligne « Autoriser un agent à acheter » : [N], section 10.2, source [1] : spécification AP2 v0.2 (surface de confiance non agentique, parcours avec ou sans présence humaine, expiration la plus courte)."
+  },
+  {
+   "fichier": "chapitre-10-commerce-agentique.md",
+   "avant": "| Preuve d'autorisation | Mandats signés, vérifiés en code déterministe | — |",
+   "apres": "| Preuve d'autorisation | Mandats signés, vérifiés en code déterministe [N] | — |",
+   "motif": "Ligne « Preuve d'autorisation » : [N], section 10.2, source [1] : la spécification AP2 exige que la validation des mandats s'exécute en code déterministe."
+  },
+  {
+   "fichier": "chapitre-10-commerce-agentique.md",
+   "avant": "| Protocole de caisse, côté marchand | Modèle interne et adaptateurs, selon les plateformes d'agents visées | Canal unique imposé par un partenaire |",
+   "apres": "| Protocole de caisse, côté marchand | Modèle interne et adaptateurs, selon les plateformes d'agents visées [S] | Canal unique imposé par un partenaire |",
+   "motif": "Ligne « Protocole de caisse, côté marchand » : [S], section 10.6, architecture à adaptateurs conclue par le chapitre à partir de la fragmentation; [12] n'est qu'un billet secondaire."
+  },
+  {
+   "fichier": "chapitre-10-commerce-agentique.md",
+   "avant": "| Reconnaissance des agents à la périphérie | Vérification des signatures de requêtes HTTP (chapitre 9) | Site sans transaction |",
+   "apres": "| Reconnaissance des agents à la périphérie | Vérification des signatures de requêtes HTTP (chapitre 9) [É] | Site sans transaction |",
+   "motif": "Ligne « Reconnaissance des agents à la périphérie » : [É], section 10.4, sources [8][12] : page de Visa (Trusted Agent Protocol, fondé sur la RFC 9421) et billet de l'AAIF (Web Bot Auth comme socle)."
+  },
+  {
+   "fichier": "chapitre-10-commerce-agentique.md",
+   "avant": "| Plafond de dépense | Imposé hors de l'agent : justificatif, portefeuille ou passerelle | — |",
+   "apres": "| Plafond de dépense | Imposé hors de l'agent : justificatif, portefeuille ou passerelle [S] | — |",
+   "motif": "Ligne « Plafond de dépense » : [S], section 10.5, constat tiré du silence des pages lues de x402 et MPP; la pose du plafond en amont est du chapitre."
+  },
+  {
+   "fichier": "chapitre-10-commerce-agentique.md",
+   "avant": "| Règlement natif (x402, MPP) | Micropaiements de services, portefeuille dédié et plafonné | Contrepartie connue et volume élevé : contrat et facturation classiques |",
+   "apres": "| Règlement natif (x402, MPP) | Micropaiements de services, portefeuille dédié et plafonné [S] | Contrepartie connue et volume élevé : contrat et facturation classiques |",
+   "motif": "Ligne « Règlement natif (x402, MPP) » : [S], section 10.5, [9][10][11] décrivent le mécanisme; la restriction aux micropaiements et le portefeuille plafonné sont du chapitre."
+  },
+  {
+   "fichier": "chapitre-10-commerce-agentique.md",
+   "avant": "| Mandats à l'exécution | Usage unique, liaison au contexte, versement à la piste d'audit | — |",
+   "apres": "| Mandats à l'exécution | Usage unique, liaison au contexte, versement à la piste d'audit [S] | — |",
+   "motif": "Ligne « Mandats à l'exécution » : [S], section 10.7, [16] propose l'usage unique et la liaison au contexte, validés par simulation seulement (prépublication, résumé relu); la piste d'audit est du chapitre."
+  },
+  {
+   "fichier": "chapitre-10-commerce-agentique.md",
+   "avant": "| Achat interentreprises | Approbation dans l'orchestration, prix dans le système d'enregistrement, mandat après rapprochement à trois voies (chapitre 45) | Achats hors contrat sous un seuil : traitement de type détail |",
+   "apres": "| Achat interentreprises | Approbation dans l'orchestration, prix dans le système d'enregistrement, mandat après rapprochement à trois voies (chapitre 45) [S] | Achats hors contrat sous un seuil : traitement de type détail |",
+   "motif": "Ligne « Achat interentreprises » : [S], section 10.8, section dite la moins étayée; ses orientations sont un raisonnement (Limites), appuyé sur un billet de fournisseur [17]."
+  },
+  {
+   "fichier": "chapitre-10-commerce-agentique.md",
+   "avant": "| Dépendance à un protocole | Aucun engagement exclusif; versions épinglées | Protocole stabilisé et passé sous gouvernance neutre |",
+   "apres": "| Dépendance à un protocole | Aucun engagement exclusif; versions épinglées [S] | Protocole stabilisé et passé sous gouvernance neutre |",
+   "motif": "Ligne « Dépendance à un protocole » : [S], section 10.6, consigne du chapitre; [3][6] ne fournissent que des statuts (bêta, aucune politique de dépréciation)."
+  }
+ ]
+}

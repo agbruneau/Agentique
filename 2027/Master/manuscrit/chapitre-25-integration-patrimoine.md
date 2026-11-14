@@ -153,16 +153,16 @@ S'y ajoutent des mesures traitées ailleurs : cache des lectures (chapitre 5), c
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Sort du cœur patrimonial | Le figer et l'envelopper | Plateforme obsolète ou incapable de suivre les exigences : le remplacer |
-| Place de l'agent | Hors de la frontière de décision : recueillir, valider, expliquer | Décision sans portée réglementaire ni financière (chapitre 17) |
-| Premier palier | Lecture seule | Écriture réversible, par outil de niveau métier |
-| Voie d'écriture | Interface d'affaires du système | Aucune : pas d'écriture directe dans les tables |
-| Autorisation | Décidée par le système d'enregistrement, sous une identité déléguée | — |
-| Donnée citée par l'agent | Relue à la source avant toute décision engageante | Copie datée pour l'exploration et la synthèse |
-| Encapsulation | Couche anticorruption limitée à la traduction | Sémantiques voisines : façade d'API convertie en outils |
-| Modernisation du code | Modèle mixte, validation humaine des artefacts intermédiaires | Autonomie pour la documentation d'un code déjà validé |
-| Granularité d'un outil d'écriture | Un appel, une transaction d'affaires complète | Plusieurs étapes : Saga (chapitre 18) |
-| Protection de la charge | Limite de débit par agent et par outil | Lectures massives : copie alimentée par les changements |
+| Sort du cœur patrimonial | Le figer et l'envelopper [S] | Plateforme obsolète ou incapable de suivre les exigences : le remplacer |
+| Place de l'agent | Hors de la frontière de décision : recueillir, valider, expliquer [S] | Décision sans portée réglementaire ni financière (chapitre 17) |
+| Premier palier | Lecture seule [É] | Écriture réversible, par outil de niveau métier |
+| Voie d'écriture | Interface d'affaires du système [S] | Aucune : pas d'écriture directe dans les tables |
+| Autorisation | Décidée par le système d'enregistrement, sous une identité déléguée [É] | — |
+| Donnée citée par l'agent | Relue à la source avant toute décision engageante [S] | Copie datée pour l'exploration et la synthèse |
+| Encapsulation | Couche anticorruption limitée à la traduction [É] | Sémantiques voisines : façade d'API convertie en outils |
+| Modernisation du code | Modèle mixte, validation humaine des artefacts intermédiaires [É] | Autonomie pour la documentation d'un code déjà validé |
+| Granularité d'un outil d'écriture | Un appel, une transaction d'affaires complète [S] | Plusieurs étapes : Saga (chapitre 18) |
+| Protection de la charge | Limite de débit par agent et par outil [N] | Lectures massives : copie alimentée par les changements |
 
 ---
 

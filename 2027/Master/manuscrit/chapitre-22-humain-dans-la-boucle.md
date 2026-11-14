@@ -204,15 +204,15 @@ Les deux sources ont leurs limites : MAP ne prétend pas couvrir l'ensemble des 
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Unité de gouvernance | La classe de décision, cotée en gravité, réversibilité et faisabilité de la supervision | Agent à action unique : un niveau par agent suffit |
-| Lecture et analyse | Sans approbation, dans un périmètre appliqué techniquement | Renseignements personnels ou confidentiels |
-| Action réversible à faible enjeu | Sur la boucle, avec audit d'échantillon | Anomalie détectée : retour à l'approbation |
-| Action irréversible ou à fort enjeu | Approbation préalable, liée aux paramètres exacts | Montant sous un plafond fixé par classe |
-| Lieu d'application | Outil, passerelle ou couche d'autorisation | Jamais le prompt seul |
-| Promotion d'autonomie | Par classe, sur preuve consignée, signée par l'autorité du niveau visé | — |
-| Rétrogradation | Automatique, sur signal | — |
-| Approbateur injoignable | Refus par défaut | Action réversible, déjà autorisée sur la boucle |
-| Preuve que la supervision reste effective | Taux de modification, temps de révision, tâches témoins | Classe laissée sans approbation humaine |
+| Unité de gouvernance | La classe de décision, cotée en gravité, réversibilité et faisabilité de la supervision [S] | Agent à action unique : un niveau par agent suffit |
+| Lecture et analyse | Sans approbation, dans un périmètre appliqué techniquement [S] | Renseignements personnels ou confidentiels |
+| Action réversible à faible enjeu | Sur la boucle, avec audit d'échantillon [N] | Anomalie détectée : retour à l'approbation |
+| Action irréversible ou à fort enjeu | Approbation préalable, liée aux paramètres exacts [N] | Montant sous un plafond fixé par classe |
+| Lieu d'application | Outil, passerelle ou couche d'autorisation [N] | Jamais le prompt seul |
+| Promotion d'autonomie | Par classe, sur preuve consignée, signée par l'autorité du niveau visé [S] | — |
+| Rétrogradation | Automatique, sur signal [S] | — |
+| Approbateur injoignable | Refus par défaut [N] | Action réversible, déjà autorisée sur la boucle |
+| Preuve que la supervision reste effective | Taux de modification, temps de révision, tâches témoins [N] | Classe laissée sans approbation humaine |
 
 ---
 

@@ -250,17 +250,17 @@ Un tel banc est un actif de l'entreprise. C'est lui qui dit si un agent survit �
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Format de télémétrie | OpenTelemetry, conventions GenAI | Plateforme fermée : exiger au moins un export |
-| Schéma consommé par les tableaux de bord | Schéma interne, alimenté par normalisation au collecteur | Parc d'un seul cadriciel, à version épinglée |
-| Version des conventions | Commit épinglé, span exporté vérifié à chaque mise à jour | — |
-| Capture du contenu | Désactivée en production | Préproduction, ou stockage conforme et volume maîtrisé |
-| Contenu nécessaire à l'évaluation | Stockage distinct, référence dans la trace, accès par rôle | — |
-| Corrélation de bout en bout | Identifiant d'affaires sur chaque span racine et chaque événement | Flux entièrement synchrone : le contexte de trace suffit |
-| Piste d'audit | Distincte de la trace, jamais échantillonnée | — |
-| Évaluateur | Règles, puis juge étalonné (réétalonné à chaque changement de modèle juge), puis expert sur les cas incertains | Faible volume ou risque élevé : revue humaine intégrale |
-| Critère de réussite | État final vérifiable, sur plusieurs essais | Tâche sans état observable : grille de critères jugée |
-| Banc d'essai | Interne, tiré des traces de production | Présélection d'un modèle : banc public |
-| Mise en service d'une variante | Filtre hors ligne, puis fraction du trafic | — |
+| Format de télémétrie | OpenTelemetry, conventions GenAI [É] | Plateforme fermée : exiger au moins un export |
+| Schéma consommé par les tableaux de bord | Schéma interne, alimenté par normalisation au collecteur [S] | Parc d'un seul cadriciel, à version épinglée |
+| Version des conventions | Commit épinglé, span exporté vérifié à chaque mise à jour [S] | — |
+| Capture du contenu | Désactivée en production [É] | Préproduction, ou stockage conforme et volume maîtrisé |
+| Contenu nécessaire à l'évaluation | Stockage distinct, référence dans la trace, accès par rôle [É] | — |
+| Corrélation de bout en bout | Identifiant d'affaires sur chaque span racine et chaque événement [S] | Flux entièrement synchrone : le contexte de trace suffit |
+| Piste d'audit | Distincte de la trace, jamais échantillonnée [S] | — |
+| Évaluateur | Règles, puis juge étalonné (réétalonné à chaque changement de modèle juge), puis expert sur les cas incertains [S] | Faible volume ou risque élevé : revue humaine intégrale |
+| Critère de réussite | État final vérifiable, sur plusieurs essais [M] | Tâche sans état observable : grille de critères jugée |
+| Banc d'essai | Interne, tiré des traces de production [M] | Présélection d'un modèle : banc public |
+| Mise en service d'une variante | Filtre hors ligne, puis fraction du trafic [M] | — |
 
 ---
 

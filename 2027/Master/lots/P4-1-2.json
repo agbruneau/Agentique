@@ -1,0 +1,649 @@
+{
+ "id": "P4-1-2",
+ "origine": "plan 2027, lot P4-1-2",
+ "categorie": "enrichissement",
+ "remplacements": [
+  {
+   "fichier": "chapitre-11-gouvernance-standards.md",
+   "avant": "| Sur quels standards bâtir | Textes mis en œuvre et hébergés par une fondation : MCP, A2A, RFC de la famille OAuth | Secteur doté d'un protocole propre (chapitres 7, 10, 28) |",
+   "apres": "| Sur quels standards bâtir | Textes mis en œuvre et hébergés par une fondation : MCP, A2A, RFC de la famille OAuth [S] | Secteur doté d'un protocole propre (chapitres 7, 10, 28) |",
+   "motif": "Ligne « Sur quels standards bâtir » : [S], section 11.10, les sources [1][7] établissent l'hébergement par une fondation, non l'option; recommandation du chapitre."
+  },
+  {
+   "fichier": "chapitre-11-gouvernance-standards.md",
+   "avant": "| Seuil de maturité en production | RFC; extension stable; projet AAIF de niveau Growth ou Impact | Bénéfice élevé et coût d'adaptation budgété : document de groupe IETF, extension bêta |",
+   "apres": "| Seuil de maturité en production | RFC; extension stable; projet AAIF de niveau Growth ou Impact [S] | Bénéfice élevé et coût d'adaptation budgété : document de groupe IETF, extension bêta |",
+   "motif": "Ligne « Seuil de maturité en production » : [S], section 11.10, seuils de maturité posés par le chapitre (Limites), sans source qui les fixe."
+  },
+  {
+   "fichier": "chapitre-11-gouvernance-standards.md",
+   "avant": "| Dépendance à un brouillon | Isolée derrière un adaptateur, révision visée consignée | Aucun cas pour une dépendance diffuse dans les agents |",
+   "apres": "| Dépendance à un brouillon | Isolée derrière un adaptateur, révision visée consignée [S] | Aucun cas pour une dépendance diffuse dans les agents |",
+   "motif": "Ligne « Dépendance à un brouillon » : [S], section 11.10, raisonnement du chapitre à partir de la dépendance d'ID-JAG [13], sans source qui l'appuie."
+  },
+  {
+   "fichier": "chapitre-11-gouvernance-standards.md",
+   "avant": "| Projet de niveau Sandbox | Essai seulement | Engagement d'un mainteneur et plan de sortie documenté |",
+   "apres": "| Projet de niveau Sandbox | Essai seulement [S] | Engagement d'un mainteneur et plan de sortie documenté |",
+   "motif": "Ligne « Projet de niveau Sandbox » : [S], section 11.2, la source [5] décrit les critères Sandbox et l'archivage possible; « essai seulement » est la conclusion du chapitre."
+  },
+  {
+   "fichier": "chapitre-11-gouvernance-standards.md",
+   "avant": "| Modèle d'identité des agents | Identité de charge de travail et OAuth, dans la continuité de l'existant | Exigence réglementaire locale; échanges ouverts entre organisations sans fédération possible |",
+   "apres": "| Modèle d'identité des agents | Identité de charge de travail et OAuth, dans la continuité de l'existant [S] | Exigence réglementaire locale; échanges ouverts entre organisations sans fédération possible |",
+   "motif": "Ligne « Modèle d'identité des agents » : [S], section 11.4, le brouillon WIMSE [16] n'est connu que par sa fiche (Limites) et reste un document de groupe informatif, sans RFC."
+  },
+  {
+   "fichier": "chapitre-11-gouvernance-standards.md",
+   "avant": "| Identifiants décentralisés et scores de confiance | Attendre | Consortium sectoriel qui impose un modèle |",
+   "apres": "| Identifiants décentralisés et scores de confiance | Attendre [S] | Consortium sectoriel qui impose un modèle |",
+   "motif": "Ligne « Identifiants décentralisés et scores de confiance » : [S], section 11.3, [10][11] : groupes communautaires sans publication, d'où « attendre »; posture du chapitre."
+  },
+  {
+   "fichier": "chapitre-11-gouvernance-standards.md",
+   "avant": "| Marché chinois | Veille sur la série GB/Z 185 et identité d'agent remplaçable | Conversion en norme obligatoire : conformité planifiée |",
+   "apres": "| Marché chinois | Veille sur la série GB/Z 185 et identité d'agent remplaçable [S] | Conversion en norme obligatoire : conformité planifiée |",
+   "motif": "Ligne « Marché chinois » : [S], section 11.7, sources secondaires [28] à [31]; le texte officiel de la série GB/Z 185 n'a pas été lu."
+  },
+  {
+   "fichier": "chapitre-11-gouvernance-standards.md",
+   "avant": "| Annonces non confirmées (profil du NIST, par exemple) | Exclues de la planification | Publication sur la page officielle de l'organisme |",
+   "apres": "| Annonces non confirmées (profil du NIST, par exemple) | Exclues de la planification [S] | Publication sur la page officielle de l'organisme |",
+   "motif": "Ligne « Annonces non confirmées (profil du NIST, par exemp… » : [S], section 11.5, la page [20] ne mentionne pas le profil annoncé; la règle de planification est du chapitre."
+  },
+  {
+   "fichier": "chapitre-11-gouvernance-standards.md",
+   "avant": "| Participation aux standards | Veille avec responsable désigné | Lacune bloquante et expérience de mise en œuvre à faire valoir : contribution ciblée |",
+   "apres": "| Participation aux standards | Veille avec responsable désigné [S] | Lacune bloquante et expérience de mise en œuvre à faire valoir : contribution ciblée |",
+   "motif": "Ligne « Participation aux standards » : [S], section 11.10, [34][2] établissent des faits d'ouverture; la posture « veille » est du chapitre."
+  },
+  {
+   "fichier": "chapitre-11-gouvernance-standards.md",
+   "avant": "| Gouvernance des décisions d'agents | Conçue en interne, au-dessus des protocoles | — |",
+   "apres": "| Gouvernance des décisions d'agents | Conçue en interne, au-dessus des protocoles [S] | — |",
+   "motif": "Ligne « Gouvernance des décisions d'agents » : [S], section 11.9, la prépublication [26] (non évaluée, classement non refait) constate une lacune; « bâtir en interne » est la conclusion du chapitre."
+  },
+  {
+   "fichier": "chapitre-11-gouvernance-standards.md",
+   "avant": "| Clauses contractuelles | Standards, versions et délais de mise à niveau nommés | — |",
+   "apres": "| Clauses contractuelles | Standards, versions et délais de mise à niveau nommés [S] | — |",
+   "motif": "Ligne « Clauses contractuelles » : [S], section 11.10, recommandation du chapitre, sans source."
+  },
+  {
+   "fichier": "chapitre-12-couche-semantique-ontologies.md",
+   "avant": "| Accès des agents aux chiffres | Outils de couche sémantique : métriques et dimensions nommées | Exploration ponctuelle par un analyste : SQL libre en lecture seule |",
+   "apres": "| Accès des agents aux chiffres | Outils de couche sémantique : métriques et dimensions nommées [É] | Exploration ponctuelle par un analyste : SQL libre en lecture seule |",
+   "motif": "Ligne « Accès des agents aux chiffres » : [É], section 12.5, sources [8][9] (documentation dbt : séquence list_metrics, get_dimensions, query_metrics)."
+  },
+  {
+   "fichier": "chapitre-12-couche-semantique-ontologies.md",
+   "avant": "| Définition des métriques | Une couche sémantique unique par domaine, versionnée comme du code | Deux définitions légitimes : deux métriques nommées, jamais un terme nu |",
+   "apres": "| Définition des métriques | Une couche sémantique unique par domaine, versionnée comme du code [S] | Deux définitions légitimes : deux métriques nommées, jamais un terme nu |",
+   "motif": "Ligne « Définition des métriques » : [S], sections 12.2 et 12.7, propositions du chapitre; [1] n'établit que l'outillage de versionnage."
+  },
+  {
+   "fichier": "chapitre-12-couche-semantique-ontologies.md",
+   "avant": "| Ontologie | Aucune au départ | Domaine borné à fort enjeu, ou ontologie sectorielle déjà disponible |",
+   "apres": "| Ontologie | Aucune au départ [S] | Domaine borné à fort enjeu, ou ontologie sectorielle déjà disponible |",
+   "motif": "Ligne « Ontologie » : [S], sections 12.3 et 12.7, raisonnement du chapitre sur le coût; [11] mesure plutôt un gain du graphe, à l'inverse du défaut « aucune »."
+  },
+  {
+   "fichier": "chapitre-12-couche-semantique-ontologies.md",
+   "avant": "| Format d'échange | Suivre Apache Ossie; exiger l'import et l'export avec numéro de version | Parc à un seul outil : le format natif suffit |",
+   "apres": "| Format d'échange | Suivre Apache Ossie; exiger l'import et l'export avec numéro de version [S] | Parc à un seul outil : le format natif suffit |",
+   "motif": "Ligne « Format d'échange » : [S], section 12.4, [1][3][4] établissent l'état du projet (aucune version 1.0); « suivre » et « exiger » sont des recommandations du chapitre."
+  },
+  {
+   "fichier": "chapitre-12-couche-semantique-ontologies.md",
+   "avant": "| Version d'Ossie | Ne rien bâtir en production sur `0.3.0.dev0` | Prototype dont la réécriture est prévue |",
+   "apres": "| Version d'Ossie | Ne rien bâtir en production sur `0.3.0.dev0` [É] | Prototype dont la réécriture est prévue |",
+   "motif": "Ligne « Version d'Ossie » : [É], section 12.4, source [3] (avertissement du projet sur sa propre version : ne pas en dépendre en production)."
+  },
+  {
+   "fichier": "chapitre-12-couche-semantique-ontologies.md",
+   "avant": "| Spécification d'ontologie d'Ossie | Veille | Projet pilote avec un fournisseur membre du groupe de travail |",
+   "apres": "| Spécification d'ontologie d'Ossie | Veille [S] | Projet pilote avec un fournisseur membre du groupe de travail |",
+   "motif": "Ligne « Spécification d'ontologie d'Ossie » : [S], section 12.4, [5] établit l'état de la spécification; « veille » est une posture du chapitre."
+  },
+  {
+   "fichier": "chapitre-12-couche-semantique-ontologies.md",
+   "avant": "| Extensions de fournisseur | Minimales et inventoriées | Fonction sans équivalent portable, avec plan de sortie |",
+   "apres": "| Extensions de fournisseur | Minimales et inventoriées [S] | Fonction sans équivalent portable, avec plan de sortie |",
+   "motif": "Ligne « Extensions de fournisseur » : [S], sections 12.4 et 12.7, [3] définit nonportable_extensions; « minimales et inventoriées » est une proposition du chapitre."
+  },
+  {
+   "fichier": "chapitre-12-couche-semantique-ontologies.md",
+   "avant": "| Synonymes et consignes pour l'IA | Soumis à la même revue que le code | — |",
+   "apres": "| Synonymes et consignes pour l'IA | Soumis à la même revue que le code [S] | — |",
+   "motif": "Ligne « Synonymes et consignes pour l'IA » : [S], section 12.5 (règle 5), proposition du chapitre appuyée sur le chapitre 31, non sur une source de celui-ci."
+  },
+  {
+   "fichier": "chapitre-12-couche-semantique-ontologies.md",
+   "avant": "| Contrôle d'intention | Intention écrite dans la délégation, clarification, vérification indépendante | Intergiciel de consensus : expérimentation seulement |",
+   "apres": "| Contrôle d'intention | Intention écrite dans la délégation, clarification, vérification indépendante [S] | Intergiciel de consensus : expérimentation seulement |",
+   "motif": "Ligne « Contrôle d'intention » : [S], section 12.6, les trois pratiques sont du chapitre; l'intergiciel [10] est une prépublication évaluée en simulation."
+  },
+  {
+   "fichier": "chapitre-12-couche-semantique-ontologies.md",
+   "avant": "| Traçabilité d'un chiffre | Requête compilée et version du modèle consignées | — |",
+   "apres": "| Traçabilité d'un chiffre | Requête compilée et version du modèle consignées [É] | — |",
+   "motif": "Ligne « Traçabilité d'un chiffre » : [É], section 12.5 (règle 2), sources [8][9] (documentation dbt : outil get_metrics_compiled_sql)."
+  },
+  {
+   "fichier": "chapitre-13-ingenierie-contexte.md",
+   "avant": "| Contexte permanent (prompt système, fichier de consignes) | Court; seulement ce que l'agent ne peut pas déduire : conventions inhabituelles, interdits, commandes | Tâche étroite et stable, où un test avec et sans montre un gain |",
+   "apres": "| Contexte permanent (prompt système, fichier de consignes) | Court; seulement ce que l'agent ne peut pas déduire : conventions inhabituelles, interdits, commandes [M] | Tâche étroite et stable, où un test avec et sans montre un gain |",
+   "motif": "Ligne « Contexte permanent (prompt système, fichier de con… » : [M], section 13.4, sources [15][16] (deux études sur les fichiers de contexte) et [3][4] (dégradation avec la longueur de l'entrée)."
+  },
+  {
+   "fichier": "chapitre-13-ingenierie-contexte.md",
+   "avant": "| Vue d'ensemble d'un dépôt ou d'un domaine | Ne pas en fournir | Documentation absente ou inaccessible à l'agent |",
+   "apres": "| Vue d'ensemble d'un dépôt ou d'un domaine | Ne pas en fournir [M] | Documentation absente ou inaccessible à l'agent |",
+   "motif": "Ligne « Vue d'ensemble d'un dépôt ou d'un domaine » : [M], section 13.4, source [15] (les vues d'ensemble du dépôt ne réduisent pas le nombre d'étapes)."
+  },
+  {
+   "fichier": "chapitre-13-ingenierie-contexte.md",
+   "avant": "| Fichier de consignes généré automatiquement | Ne pas l'adopter sans test | Gain mesuré sur les tâches propres à l'organisation |",
+   "apres": "| Fichier de consignes généré automatiquement | Ne pas l'adopter sans test [M] | Gain mesuré sur les tâches propres à l'organisation |",
+   "motif": "Ligne « Fichier de consignes généré automatiquement » : [M], section 13.4, source [15] (fichiers générés : -0,5 et -2 points, coût d'inférence en hausse de plus de 20 %)."
+  },
+  {
+   "fichier": "chapitre-13-ingenierie-contexte.md",
+   "avant": "| Savoir-faire procédural | Skill au format Agent Skills, compacte, rédigée et vérifiée par un humain | Procédure qui tient en quelques lignes : l'inscrire dans le contexte permanent |",
+   "apres": "| Savoir-faire procédural | Skill au format Agent Skills, compacte, rédigée et vérifiée par un humain [M] | Procédure qui tient en quelques lignes : l'inscrire dans le contexte permanent |",
+   "motif": "Ligne « Savoir-faire procédural » : [M], section 13.3, source [11] (SkillsBench : 33,9 % à 50,5 % avec des skills humaines; skills auto-générées moins bonnes que rien)."
+  },
+  {
+   "fichier": "chapitre-13-ingenierie-contexte.md",
+   "avant": "| Taille d'une skill | Ciblée, au plus trois modules | — |",
+   "apres": "| Taille d'une skill | Ciblée, au plus trois modules [M] | — |",
+   "motif": "Ligne « Taille d'une skill » : [M], section 13.3, source [11] (skills ciblées de trois modules au plus meilleures que les ensembles plus vastes)."
+  },
+  {
+   "fichier": "chapitre-13-ingenierie-contexte.md",
+   "avant": "| Skills de tiers | Revue de sécurité et registre interne avant usage; scripts traités comme du code tiers | Skill sans script, d'un éditeur approuvé |",
+   "apres": "| Skills de tiers | Revue de sécurité et registre interne avant usage; scripts traités comme du code tiers [M] | Skill sans script, d'un éditeur approuvé |",
+   "motif": "Ligne « Skills de tiers » : [M], section 13.3, source [12] (31 132 skills : 26,1 % avec au moins un motif de vulnérabilité; deux fois plus avec des scripts)."
+  },
+  {
+   "fichier": "chapitre-13-ingenierie-contexte.md",
+   "avant": "| Distribution des skills | Dépôt versionné interne | Skills over MCP si hôtes et serveurs la prennent en charge, en acceptant son statut bêta |",
+   "apres": "| Distribution des skills | Dépôt versionné interne [S] | Skills over MCP si hôtes et serveurs la prennent en charge, en acceptant son statut bêta |",
+   "motif": "Ligne « Distribution des skills » : [S], section 13.6, « gérer comme du code » s'appuie sur [14] (étude sur AGENTS.md, non sur des skills); [10] décrit seulement l'extension bêta."
+  },
+  {
+   "fichier": "chapitre-13-ingenierie-contexte.md",
+   "avant": "| Grand catalogue d'outils | Découverte à la demande à l'hôte ou à la passerelle | Petit parc d'outils : chargement complet, préfixe stable |",
+   "apres": "| Grand catalogue d'outils | Découverte à la demande à l'hôte ou à la passerelle [É] | Petit parc d'outils : chargement complet, préfixe stable |",
+   "motif": "Ligne « Grand catalogue d'outils » : [É], section 13.5, sources [18][19] (billet d'Anthropic, mesures internes sans reproduction indépendante; feuille de route MCP)."
+  },
+  {
+   "fichier": "chapitre-13-ingenierie-contexte.md",
+   "avant": "| Résultats d'outils volumineux | Filtrage hors de la fenêtre (code exécuté, sous-agent) | Pas d'environnement d'exécution isolé : résumé par l'outil lui-même |",
+   "apres": "| Résultats d'outils volumineux | Filtrage hors de la fenêtre (code exécuté, sous-agent) [É] | Pas d'environnement d'exécution isolé : résumé par l'outil lui-même |",
+   "motif": "Ligne « Résultats d'outils volumineux » : [É], section 13.5, source [17] (billet d'Anthropic sur l'exécution de code : cas de 150 000 à 2 000 jetons)."
+  },
+  {
+   "fichier": "chapitre-13-ingenierie-contexte.md",
+   "avant": "| Ordre du contexte | Stable en tête, variable à la fin, pour préserver le cache | — |",
+   "apres": "| Ordre du contexte | Stable en tête, variable à la fin, pour préserver le cache [É] | — |",
+   "motif": "Ligne « Ordre du contexte » : [É], section 13.5, source [20] (documentation du cache de prompts de Claude : ordre outils, système, messages)."
+  },
+  {
+   "fichier": "chapitre-13-ingenierie-contexte.md",
+   "avant": "| Travail multi-agents | Fenêtres séparées; seul un résumé remonte | Tâche courte : un seul agent (chapitre 16) |",
+   "apres": "| Travail multi-agents | Fenêtres séparées; seul un résumé remonte [É] | Tâche courte : un seul agent (chapitre 16) |",
+   "motif": "Ligne « Travail multi-agents » : [É], section 13.1, source [2] (billet d'Anthropic : sous-agents à fenêtre propre, résumé condensé)."
+  },
+  {
+   "fichier": "chapitre-13-ingenierie-contexte.md",
+   "avant": "| Adoption d'un artefact de contexte | Évaluation avec et sans, puis versionnage et propriétaire nommé | — |",
+   "apres": "| Adoption d'un artefact de contexte | Évaluation avec et sans, puis versionnage et propriétaire nommé [S] | — |",
+   "motif": "Ligne « Adoption d'un artefact de contexte » : [S], section 13.6, méthode du chapitre; [11][15][16] comparent avec et sans, mais ne mesurent ni le versionnage ni le propriétaire nommé."
+  },
+  {
+   "fichier": "chapitre-14-memoire.md",
+   "avant": "| Faut-il une mémoire à long terme ? | Non, tant qu'un besoin entre sessions n'est pas établi | Tâches multi-sessions, personnalisation, apprentissage d'erreurs |",
+   "apres": "| Faut-il une mémoire à long terme ? | Non, tant qu'un besoin entre sessions n'est pas établi [S] | Tâches multi-sessions, personnalisation, apprentissage d'erreurs |",
+   "motif": "Ligne « Faut-il une mémoire à long terme ? » : [S], section 14.2, aucune source n'établit le besoin; [30] (secondaire) ne parle que de la base vectorielle; prudence du chapitre."
+  },
+  {
+   "fichier": "chapitre-14-memoire.md",
+   "avant": "| Architecture | Fichiers, par agent ou par projet | Vecteurs pour de grands volumes; graphe si la temporalité et le lignage sont exigés |",
+   "apres": "| Architecture | Fichiers, par agent ou par projet [S] | Vecteurs pour de grands volumes; graphe si la temporalité et le lignage sont exigés |",
+   "motif": "Ligne « Architecture » : [S], section 14.2, [4][5][6] décrivent des mécanismes; les chiffres de [11][12] viennent des éditeurs, et le chapitre exige une évaluation interne."
+  },
+  {
+   "fichier": "chapitre-14-memoire.md",
+   "avant": "| Moment de l'écriture | En tâche de fond, avec validation | Chemin chaud si le souvenir doit servir dans la même session |",
+   "apres": "| Moment de l'écriture | En tâche de fond, avec validation [S] | Chemin chaud si le souvenir doit servir dans la même session |",
+   "motif": "Ligne « Moment de l'écriture » : [S], section 14.2, [8] décrit les deux options; le choix par défaut avec validation est du chapitre."
+  },
+  {
+   "fichier": "chapitre-14-memoire.md",
+   "avant": "| Partage entre agents | Fonds de référence en lecture seule, plus un fonds propre par agent ou par session | Fonds commun en écriture seulement avec un écrivain désigné |",
+   "apres": "| Partage entre agents | Fonds de référence en lecture seule, plus un fonds propre par agent ou par session [É] | Fonds commun en écriture seulement avec un écrivain désigné |",
+   "motif": "Ligne « Partage entre agents » : [É], section 14.3, source [5] (documentation de Claude Managed Agents : séparer un fonds de référence en lecture seule du fonds de session)."
+  },
+  {
+   "fichier": "chapitre-14-memoire.md",
+   "avant": "| Concurrence | Écrivain unique, ou précondition sur le contenu lu | Ajouts seuls : écritures concurrentes acceptables |",
+   "apres": "| Concurrence | Écrivain unique, ou précondition sur le contenu lu [É] | Ajouts seuls : écritures concurrentes acceptables |",
+   "motif": "Ligne « Concurrence » : [É], section 14.3, sources [7][5] (Letta : un seul agent réécrit; memory stores : précondition sur l'empreinte du contenu)."
+  },
+  {
+   "fichier": "chapitre-14-memoire.md",
+   "avant": "| Portée | Espace de noms par locataire, utilisateur et agent, vérifié à chaque lecture | — |",
+   "apres": "| Portée | Espace de noms par locataire, utilisateur et agent, vérifié à chaque lecture [M] | — |",
+   "motif": "Ligne « Portée » : [M], section 14.3, source [15] (défaut trouvé en production : portée contournée par une lecture directe par identifiant) et [10] (espaces de noms)."
+  },
+  {
+   "fichier": "chapitre-14-memoire.md",
+   "avant": "| Mémoire procédurale | Écrite par des humains, versionnée, relue | Écriture par l'agent seulement avec revue avant activation |",
+   "apres": "| Mémoire procédurale | Écrite par des humains, versionnée, relue [S] | Écriture par l'agent seulement avec revue avant activation |",
+   "motif": "Ligne « Mémoire procédurale » : [S], section 14.1, [1] (CoALA) est un cadre conceptuel qui qualifie le risque, sans mesure."
+  },
+  {
+   "fichier": "chapitre-14-memoire.md",
+   "avant": "| Sources d'écriture | Aucune écriture à partir de contenu non fiable sans confirmation | Fonds jetable, limité à la session |",
+   "apres": "| Sources d'écriture | Aucune écriture à partir de contenu non fiable sans confirmation [S] | Fonds jetable, limité à la session |",
+   "motif": "Ligne « Sources d'écriture » : [S], section 14.5, [23] est une démonstration d'un chercheur; [21][22][24] mesurent la menace, non l'efficacité du contrôle."
+  },
+  {
+   "fichier": "chapitre-14-memoire.md",
+   "avant": "| Provenance | Auteur, source et date sur chaque entrée | — |",
+   "apres": "| Provenance | Auteur, source et date sur chaque entrée [S] | — |",
+   "motif": "Ligne « Provenance » : [S], sections 14.3 et 14.5, [15][16] proposent des primitives de provenance sans mesurer leur effet."
+  },
+  {
+   "fichier": "chapitre-14-memoire.md",
+   "avant": "| Rétention | Durée par classe, expiration automatique, effacement testé | Obligation légale de conservation |",
+   "apres": "| Rétention | Durée par classe, expiration automatique, effacement testé [N] | Obligation légale de conservation |",
+   "motif": "Ligne « Rétention » : [N], section 14.6, source [29] (RGPD, article 17 : effacement sans retard injustifié, exceptions dont l'obligation légale de conservation)."
+  },
+  {
+   "fichier": "chapitre-14-memoire.md",
+   "avant": "| Portabilité | Sources conservées en texte; index reconstruits | Mémoire jetable sans valeur de migration |",
+   "apres": "| Portabilité | Sources conservées en texte; index reconstruits [S] | Mémoire jetable sans valeur de migration |",
+   "motif": "Ligne « Portabilité » : [S], section 14.4, « déduction, non un résultat de recherche » (le chapitre le dit); aucun standard n'existe."
+  },
+  {
+   "fichier": "chapitre-14-memoire.md",
+   "avant": "| Choix d'un produit | Évaluation interne sur données réelles | — |",
+   "apres": "| Choix d'un produit | Évaluation interne sur données réelles [S] | — |",
+   "motif": "Ligne « Choix d'un produit » : [S], section 14.2, les comparaisons publiées [11][12] viennent des éditeurs; l'exigence d'une évaluation interne est du chapitre."
+  },
+  {
+   "fichier": "chapitre-15-donnees-pretes-agents.md",
+   "avant": "| Identité d'exécution des requêtes | Celle de l'utilisateur, avec jeton restreint aux portées de la tâche | Accès identique pour tous, ou utilisateurs sans compte dans la plateforme : identité de service et politiques en mode fermé |",
+   "apres": "| Identité d'exécution des requêtes | Celle de l'utilisateur, avec jeton restreint aux portées de la tâche [É] | Accès identique pour tous, ou utilisateurs sans compte dans la plateforme : identité de service et politiques en mode fermé |",
+   "motif": "Ligne « Identité d'exécution des requêtes » : [É], section 15.3, sources [11][14] (documentation de Snowflake et de Databricks : identité de l'utilisateur, jeton restreint aux portées déclarées)."
+  },
+  {
+   "fichier": "chapitre-15-donnees-pretes-agents.md",
+   "avant": "| Comportement en l'absence d'identité | Échec explicite | — |",
+   "apres": "| Comportement en l'absence d'identité | Échec explicite [S] | — |",
+   "motif": "Ligne « Comportement en l'absence d'identité » : [S], section 15.3, [14] documente le repli silencieux comme un risque; « échec explicite » est le renversement du chapitre."
+  },
+  {
+   "fichier": "chapitre-15-donnees-pretes-agents.md",
+   "avant": "| Exposition d'un entrepôt | Outils paramétrés ou vues sémantiques | SQL libre en lecture seule pour l'exploration, sur un serveur distinct |",
+   "apres": "| Exposition d'un entrepôt | Outils paramétrés ou vues sémantiques [M] | SQL libre en lecture seule pour l'exploration, sur un serveur distinct |",
+   "motif": "Ligne « Exposition d'un entrepôt » : [M], section 15.4, source [6] (Spider 2.0 : 21,3 % de réussite en SQL libre sur 632 problèmes d'entreprise)."
+  },
+  {
+   "fichier": "chapitre-15-donnees-pretes-agents.md",
+   "avant": "| Découpage des serveurs | Par frontière d'accès et par public | Très petit parc à droits uniformes |",
+   "apres": "| Découpage des serveurs | Par frontière d'accès et par public [É] | Très petit parc à droits uniformes |",
+   "motif": "Ligne « Découpage des serveurs » : [É], section 15.3, sources [11][12] (documentation de Snowflake : découper selon les frontières d'accès et les publics)."
+  },
+  {
+   "fichier": "chapitre-15-donnees-pretes-agents.md",
+   "avant": "| Point d'accès MCP d'une plateforme | Objet gouverné par le catalogue (octrois, politiques) | Point d'accès hors catalogue : exploration seulement |",
+   "apres": "| Point d'accès MCP d'une plateforme | Objet gouverné par le catalogue (octrois, politiques) [É] | Point d'accès hors catalogue : exploration seulement |",
+   "motif": "Ligne « Point d'accès MCP d'une plateforme » : [É], section 15.2, sources [13][12] (documentation de Databricks et de Snowflake : serveurs MCP comme objets sécurisables avec octrois)."
+  },
+  {
+   "fichier": "chapitre-15-donnees-pretes-agents.md",
+   "avant": "| Fraîcheur | Latence promise par contrat de données, âge de la donnée restitué par l'agent | Données de référence stables |",
+   "apres": "| Fraîcheur | Latence promise par contrat de données, âge de la donnée restitué par l'agent [S] | Données de référence stables |",
+   "motif": "Ligne « Fraîcheur » : [S], section 15.1, ODCS [9] et la spécification MCP [1][2] ne contiennent pas l'obligation proposée; « la proposition est celle de ce chapitre »."
+  },
+  {
+   "fichier": "chapitre-15-donnees-pretes-agents.md",
+   "avant": "| Données en mouvement | État matérialisé interrogeable | Besoin de réagir à l'événement : chapitre 19 |",
+   "apres": "| Données en mouvement | État matérialisé interrogeable [É] | Besoin de réagir à l'événement : chapitre 19 |",
+   "motif": "Ligne « Données en mouvement » : [É], section 15.4, sources [18][19] (documentation et billet de Confluent : Real-Time Context Engine)."
+  },
+  {
+   "fichier": "chapitre-15-donnees-pretes-agents.md",
+   "avant": "| Documents à permissions fines | Interrogation à la source | Index copié si la pertinence l'exige, avec resynchronisation des permissions planifiée et vérifiée |",
+   "apres": "| Documents à permissions fines | Interrogation à la source [S] | Index copié si la pertinence l'exige, avec resynchronisation des permissions planifiée et vérifiée |",
+   "motif": "Ligne « Documents à permissions fines » : [S], section 15.5, [15][16] documentent le décalage de synchronisation et l'interrogation à la source; le choix entre les deux relève de la connaissance générale (Limites)."
+  },
+  {
+   "fichier": "chapitre-15-donnees-pretes-agents.md",
+   "avant": "| Recherche sur populations distinctes | Un service ou un filtre par population | Contenu réellement public à l'interne |",
+   "apres": "| Recherche sur populations distinctes | Un service ou un filtre par population [É] | Contenu réellement public à l'interne |",
+   "motif": "Ligne « Recherche sur populations distinctes » : [É], sections 15.3 et 15.5, sources [11][15] (droits du propriétaire de Cortex Search; filtre de sécurité d'Azure AI Search)."
+  },
+  {
+   "fichier": "chapitre-15-donnees-pretes-agents.md",
+   "avant": "| Champs de texte libre | Extraction en amont vers des colonnes typées | Volume faible : outil d'extraction dédié |",
+   "apres": "| Champs de texte libre | Extraction en amont vers des colonnes typées [S] | Volume faible : outil d'extraction dédié |",
+   "motif": "Ligne « Champs de texte libre » : [S], section 15.5, [5] (DAB) observe l'échec des expressions régulières des agents; « extraire en amont reste plus sûr » est du chapitre."
+  },
+  {
+   "fichier": "chapitre-15-donnees-pretes-agents.md",
+   "avant": "| Confidentialité | Contrôle dans la couche de données | Consigne de prompt en complément seulement |",
+   "apres": "| Confidentialité | Contrôle dans la couche de données [M] | Consigne de prompt en complément seulement |",
+   "motif": "Ligne « Confidentialité » : [M], section 15.6, sources [7][8][3] (CRMArena-Pro : peu de conscience de la confidentialité; VAKRA : 2,4 % et 3,7 %; EnterpriseBench : filtrage en amont)."
+  },
+  {
+   "fichier": "chapitre-15-donnees-pretes-agents.md",
+   "avant": "| Mise en service | Revue du partage excessif avant l'ouverture aux agents | — |",
+   "apres": "| Mise en service | Revue du partage excessif avant l'ouverture aux agents [É] | — |",
+   "motif": "Ligne « Mise en service » : [É], section 15.5, source [17] (documentation de Microsoft Copilot : le partage excessif remonte; quatre contrôles proposés)."
+  },
+  {
+   "fichier": "chapitre-15-donnees-pretes-agents.md",
+   "avant": "| Métadonnées de qualité et de lignage | Émises sous forme normalisée et visibles au catalogue | — |",
+   "apres": "| Métadonnées de qualité et de lignage | Émises sous forme normalisée et visibles au catalogue [S] | — |",
+   "motif": "Ligne « Métadonnées de qualité et de lignage » : [S], section 15.2, [10] (OpenLineage) ne mentionne pas les agents; « le lien est une inférence » (Limites)."
+  },
+  {
+   "fichier": "chapitre-16-topologies-patrons.md",
+   "avant": "| Nombre d'agents | Un agent outillé | Tâche parallélisable, contexte saturé, trop d'outils, frontière de sécurité ou d'équipe |",
+   "apres": "| Nombre d'agents | Un agent outillé [M] | Tâche parallélisable, contexte saturé, trop d'outils, frontière de sécurité ou d'équipe |",
+   "motif": "Ligne « Nombre d'agents » : [M], section 16.7, source [2] (260 configurations : écart moyen de -0,3 %; au-delà d'environ 45 % de réussite de l'agent unique, la coordination rapporte peu)."
+  },
+  {
+   "fichier": "chapitre-16-topologies-patrons.md",
+   "avant": "| Structure | Statique, fixée par le code | Sous-tâches imprévisibles : superviseur dynamique |",
+   "apres": "| Structure | Statique, fixée par le code [É] | Sous-tâches imprévisibles : superviseur dynamique |",
+   "motif": "Ligne « Structure » : [É], section 16.1, sources [7][5][4] (documentation d'OpenAI, de Microsoft et d'Anthropic : orchestration par le code plus prévisible)."
+  },
+  {
+   "fichier": "chapitre-16-topologies-patrons.md",
+   "avant": "| Topologie dans un domaine | Centralisée | Expertise qui émerge en conversation : transfert |",
+   "apres": "| Topologie dans un domaine | Centralisée [S] | Expertise qui émerge en conversation : transfert |",
+   "motif": "Ligne « Topologie dans un domaine » : [S], section 16.5, la règle relève « du raisonnement plus que de la mesure » (Limites); [2] ne départage pas les topologies."
+  },
+  {
+   "fichier": "chapitre-16-topologies-patrons.md",
+   "avant": "| Topologie entre domaines | Pair-à-pair par protocole | Plateforme unique sous une seule autorité |",
+   "apres": "| Topologie entre domaines | Pair-à-pair par protocole [S] | Plateforme unique sous une seule autorité |",
+   "motif": "Ligne « Topologie entre domaines » : [S], section 16.5, règle « pair-à-pair entre domaines, centralisé à l'intérieur » : connaissance générale et raisonnement (Limites)."
+  },
+  {
+   "fichier": "chapitre-16-topologies-patrons.md",
+   "avant": "| Fusion d'un fan-out | Étape de validation ou de vote | Résultats indépendants, sans agrégation requise |",
+   "apres": "| Fusion d'un fan-out | Étape de validation ou de vote [É] | Résultats indépendants, sans agrégation requise |",
+   "motif": "Ligne « Fusion d'un fan-out » : [É], section 16.3, sources [5][4] (Microsoft : stratégies de fusion; Anthropic : vote)."
+  },
+  {
+   "fichier": "chapitre-16-topologies-patrons.md",
+   "avant": "| Vérification | Rôle distinct de la production, critères écrits | Tâche à faible enjeu |",
+   "apres": "| Vérification | Rôle distinct de la production, critères écrits [M] | Tâche à faible enjeu |",
+   "motif": "Ligne « Vérification » : [M], section 16.4, source [1] (banc d'essai financier : l'architecture réflexive, avec vérification distincte, a la meilleure précision, au coût le plus élevé)."
+  },
+  {
+   "fichier": "chapitre-16-topologies-patrons.md",
+   "avant": "| Boucles | Plafond d'itérations et repli défini | — |",
+   "apres": "| Boucles | Plafond d'itérations et repli défini [É] | — |",
+   "motif": "Ligne « Boucles » : [É], section 16.4, source [5] (Microsoft : critères d'acceptation, plafond d'itérations, repli)."
+  },
+  {
+   "fichier": "chapitre-16-topologies-patrons.md",
+   "avant": "| Débat | Trois agents au plus, en lecture seule | Animation par un humain |",
+   "apres": "| Débat | Trois agents au plus, en lecture seule [É] | Animation par un humain |",
+   "motif": "Ligne « Débat » : [É], section 16.4, source [5] (Microsoft : conversation de groupe, agents en lecture seule, trois agents ou moins)."
+  },
+  {
+   "fichier": "chapitre-16-topologies-patrons.md",
+   "avant": "| Modèle par agent | Proportionné à la tâche de l'agent | Faible volume : un seul modèle |",
+   "apres": "| Modèle par agent | Proportionné à la tâche de l'agent [M] | Faible volume : un seul modèle |",
+   "motif": "Ligne « Modèle par agent » : [M], section 16.6, source [1] (ablations : routage à deux niveaux de modèles, de 0,261 $ à 0,127 $ par document pour un F1 de 0,912) et [5]."
+  },
+  {
+   "fichier": "chapitre-16-topologies-patrons.md",
+   "avant": "| Validation du patron | Mesure contre l'agent unique, puis sous charge | — |",
+   "apres": "| Validation du patron | Mesure contre l'agent unique, puis sous charge [M] | — |",
+   "motif": "Ligne « Validation du patron » : [M], sections 16.6 et 16.7, sources [1][2] (le classement des architectures change sous la charge; comparaison à l'agent unique)."
+  },
+  {
+   "fichier": "chapitre-17-deterministe-ou-agentique.md",
+   "avant": "| Point de départ | Workflow; agent seulement si un problème du processus l'exige | Travail d'enquête ou de tri sans chemin stable |",
+   "apres": "| Point de départ | Workflow; agent seulement si un problème du processus l'exige [É] | Travail d'enquête ou de tri sans chemin stable |",
+   "motif": "Ligne « Point de départ » : [É], section 17.6, sources [1][2] (Anthropic : solution la plus simple; Camunda : partir du problème du processus)."
+  },
+  {
+   "fichier": "chapitre-17-deterministe-ou-agentique.md",
+   "avant": "| Forme de la région agentique | Agent borné : liste fermée d'outils, plafond d'appels | Agent externe déjà en place : l'appeler comme tâche, avec contrat de sortie |",
+   "apres": "| Forme de la région agentique | Agent borné : liste fermée d'outils, plafond d'appels [É] | Agent externe déjà en place : l'appeler comme tâche, avec contrat de sortie |",
+   "motif": "Ligne « Forme de la région agentique » : [É], section 17.2, sources [3][4][5] (documentation de Camunda : sous-processus ad hoc, liste d'outils, plafond de dix appels) et [8] (UiPath)."
+  },
+  {
+   "fichier": "chapitre-17-deterministe-ou-agentique.md",
+   "avant": "| Processus à exceptions | Gestion de cas, règles d'abord, agent en repli, humain en dernier recours | Exceptions rares : BPMN avec quelques branchements |",
+   "apres": "| Processus à exceptions | Gestion de cas, règles d'abord, agent en repli, humain en dernier recours [É] | Exceptions rares : BPMN avec quelques branchements |",
+   "motif": "Ligne « Processus à exceptions » : [É], section 17.3, source [10] (documentation d'UiPath Maestro : règles, agent gestionnaire de cas, escalade)."
+  },
+  {
+   "fichier": "chapitre-17-deterministe-ou-agentique.md",
+   "avant": "| Sortie d'un agent | Issues nommées, routables | Niveau de confiance seulement comme information d'appoint |",
+   "apres": "| Sortie d'un agent | Issues nommées, routables [É] | Niveau de confiance seulement comme information d'appoint |",
+   "motif": "Ligne « Sortie d'un agent » : [É], section 17.2, source [2] (page de conception de Camunda : sorties déterministes, non seulement des niveaux de confiance)."
+  },
+  {
+   "fichier": "chapitre-17-deterministe-ou-agentique.md",
+   "avant": "| Procédures nombreuses et changeantes | Plan structuré rédigé par le métier, validé en aval | Séquence réglementaire : moteur de processus |",
+   "apres": "| Procédures nombreuses et changeantes | Plan structuré rédigé par le métier, validé en aval [M] | Séquence réglementaire : moteur de processus |",
+   "motif": "Ligne « Procédures nombreuses et changeantes » : [M], section 17.4, source [11] (Routine : précision des appels d'outils de 41,1 % à 96,3 % sur un scénario de ressources humaines)."
+  },
+  {
+   "fichier": "chapitre-17-deterministe-ou-agentique.md",
+   "avant": "| Accès d'un agent ouvert aux systèmes d'enregistrement | Processus exposé comme outil | Lecture seule : outil direct |",
+   "apres": "| Accès d'un agent ouvert aux systèmes d'enregistrement | Processus exposé comme outil [É] | Lecture seule : outil direct |",
+   "motif": "Ligne « Accès d'un agent ouvert aux systèmes d'enregistrem… » : [É], section 17.5, sources [6][2] (billet et documentation de Camunda : processus exposé comme outil, MCP start event)."
+  },
+  {
+   "fichier": "chapitre-17-deterministe-ou-agentique.md",
+   "avant": "| Appel d'un processus par un agent | Activité d'appel dans le même cluster | Autre cluster : MCP, avec corrélation explicite pour l'audit |",
+   "apres": "| Appel d'un processus par un agent | Activité d'appel dans le même cluster [É] | Autre cluster : MCP, avec corrélation explicite pour l'audit |",
+   "motif": "Ligne « Appel d'un processus par un agent » : [É], section 17.5, source [2] (documentation de Camunda : comparaison de l'activité d'appel et du client MCP)."
+  },
+  {
+   "fichier": "chapitre-17-deterministe-ou-agentique.md",
+   "avant": "| Effets irréversibles | Étape déterministe, approbation selon la classe d'action | — |",
+   "apres": "| Effets irréversibles | Étape déterministe, approbation selon la classe d'action [S] | — |",
+   "motif": "Ligne « Effets irréversibles » : [S], section 17.6, typologie interpréter-choisir-engager et critères de réversibilité : analyses du chapitre (Limites)."
+  },
+  {
+   "fichier": "chapitre-17-deterministe-ou-agentique.md",
+   "avant": "| Agents distants par A2A depuis Camunda | Hors production tant que l'authentification manque côté connecteur | Pilote sans données sensibles |",
+   "apres": "| Agents distants par A2A depuis Camunda | Hors production tant que l'authentification manque côté connecteur [É] | Pilote sans données sensibles |",
+   "motif": "Ligne « Agents distants par A2A depuis Camunda » : [É], section 17.5, source [7] (documentation de Camunda : connecteurs A2A en alpha, sans authentification)."
+  },
+  {
+   "fichier": "chapitre-18-execution-durable-transactions.md",
+   "avant": "| Persistance de l'état | Magasin durable dès le premier environnement partagé | Prototype jetable : magasin en mémoire |",
+   "apres": "| Persistance de l'état | Magasin durable dès le premier environnement partagé [É] | Prototype jetable : magasin en mémoire |",
+   "motif": "Ligne « Persistance de l'état » : [É], section 18.2, source [5] (documentation de LangGraph : magasins en mémoire perdus au redémarrage, base de données en production)."
+  },
+  {
+   "fichier": "chapitre-18-execution-durable-transactions.md",
+   "avant": "| Mécanisme de reprise | Journal rejoué pour les tâches à effets externes | Agent conversationnel sans effet : instantanés par fil |",
+   "apres": "| Mécanisme de reprise | Journal rejoué pour les tâches à effets externes [S] | Agent conversationnel sans effet : instantanés par fil |",
+   "motif": "Ligne « Mécanisme de reprise » : [S], section 18.2, [2][8][9][11] décrivent le journal rejoué et les instantanés; l'attribution par type de tâche est du chapitre."
+  },
+  {
+   "fichier": "chapitre-18-execution-durable-transactions.md",
+   "avant": "| Appel au modèle | Étape journalisée, relue au rejeu | — |",
+   "apres": "| Appel au modèle | Étape journalisée, relue au rejeu [S] | — |",
+   "motif": "Ligne « Appel au modèle » : [S], section 18.2, règle « déduite ici du fonctionnement décrit » (Limites : déduction, non fait lu)."
+  },
+  {
+   "fichier": "chapitre-18-execution-durable-transactions.md",
+   "avant": "| Granularité | Une étape par appel d'outil à effet | Lectures groupées dans une même étape |",
+   "apres": "| Granularité | Une étape par appel d'outil à effet [É] | Lectures groupées dans une même étape |",
+   "motif": "Ligne « Granularité » : [É], section 18.2, source [4] (Temporal : séparer les opérations d'une activité pour qu'un nouvel essai ne les refasse pas toutes)."
+  },
+  {
+   "fichier": "chapitre-18-execution-durable-transactions.md",
+   "avant": "| Moment d'écriture | Synchrone avant toute étape à effet | Asynchrone pour les étapes sans effet, si le débit l'exige |",
+   "apres": "| Moment d'écriture | Synchrone avant toute étape à effet [S] | Asynchrone pour les étapes sans effet, si le débit l'exige |",
+   "motif": "Ligne « Moment d'écriture » : [S], section 18.2, [6] définit les modes sync, async et exit; l'attribution aux étapes avec ou sans effet est du chapitre."
+  },
+  {
+   "fichier": "chapitre-18-execution-durable-transactions.md",
+   "avant": "| Garantie visée | Au moins une fois, avec outils idempotents | Au plus une fois pour une action irréversible sans clé possible |",
+   "apres": "| Garantie visée | Au moins une fois, avec outils idempotents [É] | Au plus une fois pour une action irréversible sans clé possible |",
+   "motif": "Ligne « Garantie visée » : [É], section 18.3, sources [4][11][12] (Temporal, Microsoft, Confluent : au moins une fois, outil idempotent)."
+  },
+  {
+   "fichier": "chapitre-18-execution-durable-transactions.md",
+   "avant": "| Clé d'idempotence | Dérivée de l'étape durable, exigée par le schéma de l'outil | Outil idempotent par nature |",
+   "apres": "| Clé d'idempotence | Dérivée de l'étape durable, exigée par le schéma de l'outil [É] | Outil idempotent par nature |",
+   "motif": "Ligne « Clé d'idempotence » : [É], section 18.3, source [4] (Temporal : clé combinant identifiants d'exécution et d'activité, idempotence assurée par le service appelé)."
+  },
+  {
+   "fichier": "chapitre-18-execution-durable-transactions.md",
+   "avant": "| Compensation | Déclarée par le propriétaire de l'outil, idempotente | Jamais générée à la volée pour un système d'enregistrement |",
+   "apres": "| Compensation | Déclarée par le propriétaire de l'outil, idempotente [S] | Jamais générée à la volée pour un système d'enregistrement |",
+   "motif": "Ligne « Compensation » : [S], section 18.4, [1] (SagaLLM) est un argument de conception, non une mesure; la règle prudente est du chapitre."
+  },
+  {
+   "fichier": "chapitre-18-execution-durable-transactions.md",
+   "avant": "| Décision de reprise | Validateur distinct de l'agent de tâche | Tâche à faible enjeu : nouvel essai borné |",
+   "apres": "| Décision de reprise | Validateur distinct de l'agent de tâche [S] | Tâche à faible enjeu : nouvel essai borné |",
+   "motif": "Ligne « Décision de reprise » : [S], section 18.5, [1] est qualitatif (« l'appui universitaire de ce principe reste qualitatif »)."
+  },
+  {
+   "fichier": "chapitre-18-execution-durable-transactions.md",
+   "avant": "| Action irréversible | Après le pivot, avec approbation liée aux paramètres | Montant sous un plafond fixé par classe de décision |",
+   "apres": "| Action irréversible | Après le pivot, avec approbation liée aux paramètres [S] | Montant sous un plafond fixé par classe de décision |",
+   "motif": "Ligne « Action irréversible » : [S], section 18.7, classement en pivot de connaissance générale et liaison approbation-empreinte déduite (Limites); [13] n'est lu qu'en résumé."
+  },
+  {
+   "fichier": "chapitre-18-execution-durable-transactions.md",
+   "avant": "| Changement de prompt, d'outils ou de modèle | Versionné; les exécutions en cours finissent sur l'ancienne version | Correctif de sécurité : arrêt et compensation |",
+   "apres": "| Changement de prompt, d'outils ou de modèle | Versionné; les exécutions en cours finissent sur l'ancienne version [S] | Correctif de sécurité : arrêt et compensation |",
+   "motif": "Ligne « Changement de prompt, d'outils ou de modèle » : [S], section 18.2, [10][11] visent le code des exécutions en cours; l'extension au prompt, aux outils et au modèle est une déduction (Limites)."
+  },
+  {
+   "fichier": "chapitre-18-execution-durable-transactions.md",
+   "avant": "| Échec définitif | File de lettres mortes et escalade humaine | — |",
+   "apres": "| Échec définitif | File de lettres mortes et escalade humaine [É] | — |",
+   "motif": "Ligne « Échec définitif » : [É], section 18.5, source [10] (AWS : file de lettres mortes pour conserver l'événement d'origine)."
+  },
+  {
+   "fichier": "chapitre-19-orchestration-evenementielle.md",
+   "avant": "| Mode de déclenchement | Appel direct | Fait sans demandeur, travail plus long qu'une connexion, plusieurs consommateurs |",
+   "apres": "| Mode de déclenchement | Appel direct [S] | Fait sans demandeur, travail plus long qu'une connexion, plusieurs consommateurs |",
+   "motif": "Ligne « Mode de déclenchement » : [S], section 19.1, [3][15] sont des arguments de projet et de fournisseur; la grille est une recommandation du chapitre (Limites)."
+  },
+  {
+   "fichier": "chapitre-19-orchestration-evenementielle.md",
+   "avant": "| Dorsale d'événements | Aucune tant qu'un déclencheur direct suffit | Relecture, pointes de charge ou consommateurs multiples |",
+   "apres": "| Dorsale d'événements | Aucune tant qu'un déclencheur direct suffit [S] | Relecture, pointes de charge ou consommateurs multiples |",
+   "motif": "Ligne « Dorsale d'événements » : [S], section 19.5, [10] décrit un moteur embarqué sans dorsale; le seuil « tant qu'un déclencheur direct suffit » est du chapitre."
+  },
+  {
+   "fichier": "chapitre-19-orchestration-evenementielle.md",
+   "avant": "| Moteur d'agents sur flux | Flink Agents à l'essai seulement, vu son statut de préversion | Production si Flink est déjà exploité et qu'une adaptation des API est prévue |",
+   "apres": "| Moteur d'agents sur flux | Flink Agents à l'essai seulement, vu son statut de préversion [É] | Production si Flink est déjà exploité et qu'une adaptation des API est prévue |",
+   "motif": "Ligne « Moteur d'agents sur flux » : [É], section 19.2, source [4] (documentation de Flink Agents : versions 0.x en préversion, API expérimentales)."
+  },
+  {
+   "fichier": "chapitre-19-orchestration-evenementielle.md",
+   "avant": "| Contenu du journal | Entrées, décisions du modèle et résultats d'outils | Entrées seules si le seul besoin est le test par réexécution |",
+   "apres": "| Contenu du journal | Entrées, décisions du modèle et résultats d'outils [S] | Entrées seules si le seul besoin est le test par réexécution |",
+   "motif": "Ligne « Contenu du journal » : [S], section 19.4, [5][3] décrivent l'Action State Store et la réexécution; ce que le journal doit contenir est une inférence du chapitre."
+  },
+  {
+   "fichier": "chapitre-19-orchestration-evenementielle.md",
+   "avant": "| Effets externes | Outils idempotents ou réconciliation | — |",
+   "apres": "| Effets externes | Outils idempotents ou réconciliation [É] | — |",
+   "motif": "Ligne « Effets externes » : [É], section 19.2, source [5] (documentation de Flink Agents : service idempotent ou réconciliation)."
+  },
+  {
+   "fichier": "chapitre-19-orchestration-evenementielle.md",
+   "avant": "| Coordination | Orchestrateur explicite sur transport événementiel | Chorégraphie pour des réactions indépendantes, sans ordre ni compensation |",
+   "apres": "| Coordination | Orchestrateur explicite sur transport événementiel [S] | Chorégraphie pour des réactions indépendantes, sans ordre ni compensation |",
+   "motif": "Ligne « Coordination » : [S], section 19.7, trois systèmes [14][15][12] (billets de fournisseurs, prépublication d'un auteur), « échantillon mince »; conditions d'emploi de la chorégraphie recommandées par le chapitre."
+  },
+  {
+   "fichier": "chapitre-19-orchestration-evenementielle.md",
+   "avant": "| Suivi d'une tâche MCP ou A2A | Notification comme signal, puis relecture de l'état | Interrogation périodique si le client ne peut recevoir d'appel entrant |",
+   "apres": "| Suivi d'une tâche MCP ou A2A | Notification comme signal, puis relecture de l'état [N] | Interrogation périodique si le client ne peut recevoir d'appel entrant |",
+   "motif": "Ligne « Suivi d'une tâche MCP ou A2A » : [N], section 19.6, sources [7][13][9] (spécifications MCP 2026-07-28 et A2A 1.0 : notification porteuse de l'URI seulement, aucun rattrapage, livraison non fiable, traitement idempotent)."
+  },
+  {
+   "fichier": "chapitre-19-orchestration-evenementielle.md",
+   "avant": "| Contexte de l'agent | État interrogeable par un outil | Consommation directe du flux pour un agent qui réagit à chaque événement |",
+   "apres": "| Contexte de l'agent | État interrogeable par un outil [É] | Consommation directe du flux pour un agent qui réagit à chaque événement |",
+   "motif": "Ligne « Contexte de l'agent » : [É], section 19.5, sources [11][16] (documentation et billet de Confluent : état courant servi par MCP)."
+  },
+  {
+   "fichier": "chapitre-19-orchestration-evenementielle.md",
+   "avant": "| Action déclenchée par un événement | Proposition, puis procédure d'un catalogue borné | — |",
+   "apres": "| Action déclenchée par un événement | Proposition, puis procédure d'un catalogue borné [S] | — |",
+   "motif": "Ligne « Action déclenchée par un événement » : [S], section 19.7, garde-fous recommandés par le chapitre (Limites); [12] est une prépublication à auteur unique, « une illustration, pas une preuve »."
+  },
+  {
+   "fichier": "chapitre-20-cadriciels-orchestration.md",
+   "avant": "| Faut-il un cadriciel ? | Non, tant qu'une fonction ou un appel de modèle avec outils suffit | Boucle, état ou coordination à maintenir |",
+   "apres": "| Faut-il un cadriciel ? | Non, tant qu'une fonction ou un appel de modèle avec outils suffit [É] | Boucle, état ou coordination à maintenir |",
+   "motif": "Ligne « Faut-il un cadriciel ? » : [É], section 20.3, source [6] (documentation de Microsoft : si une fonction suffit, écrire la fonction)."
+  },
+  {
+   "fichier": "chapitre-20-cadriciels-orchestration.md",
+   "avant": "| Processus aux étapes connues | Workflow à graphe, non-déterminisme confiné aux nœuds | Processus déjà modélisé en BPMN : moteur de processus (chapitre 17) |",
+   "apres": "| Processus aux étapes connues | Workflow à graphe, non-déterminisme confiné aux nœuds [É] | Processus déjà modélisé en BPMN : moteur de processus (chapitre 17) |",
+   "motif": "Ligne « Processus aux étapes connues » : [É], sections 20.2 et 20.3, sources [1][4][6] (LangGraph; CrewAI : commencer par un Flow; Microsoft : workflow si les étapes sont définies)."
+  },
+  {
+   "fichier": "chapitre-20-cadriciels-orchestration.md",
+   "avant": "| Tâche longue et ouverte | Harnais, avec permissions et hooks | Besoin de maîtriser chaque appel : bibliothèque de primitives |",
+   "apres": "| Tâche longue et ouverte | Harnais, avec permissions et hooks [É] | Besoin de maîtriser chaque appel : bibliothèque de primitives |",
+   "motif": "Ligne « Tâche longue et ouverte » : [É], section 20.4, sources [6][12] (Microsoft : harnais préconfiguré pour les tâches longues; Claude Agent SDK)."
+  },
+  {
+   "fichier": "chapitre-20-cadriciels-orchestration.md",
+   "avant": "| Persistance | Points de contrôle en base de données dès le pilote | Durée de plusieurs heures ou effets irréversibles : exécution durable (chapitre 18) |",
+   "apres": "| Persistance | Points de contrôle en base de données dès le pilote [É] | Durée de plusieurs heures ou effets irréversibles : exécution durable (chapitre 18) |",
+   "motif": "Ligne « Persistance » : [É], section 20.2, source [3] (documentation de LangGraph : magasins en mémoire perdus au redémarrage, SQLite ou Postgres)."
+  },
+  {
+   "fichier": "chapitre-20-cadriciels-orchestration.md",
+   "avant": "| Outils | Exposés par MCP, jamais comme fonctions propres au cadriciel | Fonction purement interne à un agent |",
+   "apres": "| Outils | Exposés par MCP, jamais comme fonctions propres au cadriciel [S] | Fonction purement interne à un agent |",
+   "motif": "Ligne « Outils » : [S], section 20.6, [6][9][10][12][16][18] établissent la prise en charge de MCP; « jamais comme fonctions propres » est la thèse de portabilité du chapitre (synthèse)."
+  },
+  {
+   "fichier": "chapitre-20-cadriciels-orchestration.md",
+   "avant": "| Frontière entre équipes | A2A, version de protocole fixée et testée | Même équipe, même processus : sous-agents locaux |",
+   "apres": "| Frontière entre équipes | A2A, version de protocole fixée et testée [É] | Même équipe, même processus : sous-agents locaux |",
+   "motif": "Ligne « Frontière entre équipes » : [É], section 20.6, source [11] (documentation d'ADK : sous-agents locaux ou agent distant par A2A) et [5][8][17] (écarts de versions)."
+  },
+  {
+   "fichier": "chapitre-20-cadriciels-orchestration.md",
+   "avant": "| Modèle | Cadriciel multi-modèles, condition du routage (chapitre 44) et d'un modèle de secours (chapitre 46) | Harnais lié à un modèle, si le gain est mesuré et la sortie prévue |",
+   "apres": "| Modèle | Cadriciel multi-modèles, condition du routage (chapitre 44) et d'un modèle de secours (chapitre 46) [S] | Harnais lié à un modèle, si le gain est mesuré et la sortie prévue |",
+   "motif": "Ligne « Modèle » : [S], sections 20.1 et 20.4, [6][10] établissent la prise en charge multi-modèles; l'attache au modèle est une déduction du chapitre."
+  },
+  {
+   "fichier": "chapitre-20-cadriciels-orchestration.md",
+   "avant": "| Prompts | Rédigés et versionnés | Jeu d'exemples et métrique disponibles : signatures optimisées |",
+   "apres": "| Prompts | Rédigés et versionnés [S] | Jeu d'exemples et métrique disponibles : signatures optimisées |",
+   "motif": "Ligne « Prompts » : [S], section 20.5, l'option par défaut n'a pas de source; [13] (DSPy) n'appuie que l'exception, avec exemples et métrique."
+  },
+  {
+   "fichier": "chapitre-20-cadriciels-orchestration.md",
+   "avant": "| Environnement d'exécution | Exploité par l'organisation | Runtime géré, si l'état reste exportable |",
+   "apres": "| Environnement d'exécution | Exploité par l'organisation [S] | Runtime géré, si l'état reste exportable |",
+   "motif": "Ligne « Environnement d'exécution » : [S], section 20.6, déplacement du verrouillage : synthèse du chapitre (Limites)."
+  }
+ ]
+}

@@ -201,17 +201,17 @@ Les obligations étrangères s'ajoutent à ce cadre sans le remplacer (chapitre 
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Référentiel de contrôles, faute de loi sur l'IA | Socle commun des guides fédéral et québécois | Secteur doté d'un cadre plus strict, comme E-23 |
-| Décision visant une personne | Validation humaine réelle avant la décision | Automatisation complète assumée : appliquer l'article 12.1 en entier |
-| Logique de décision | Composant déterministe; l'agent réunit les faits | Aucune décision individuelle en jeu |
-| Première mise en œuvre | Pilote interne, réversible, plafonné | Encadrement renforcé et validation spécialisée |
-| Inférence et outils hors Québec | EFVP préalable et entente écrite | Aucun renseignement personnel dans le flux |
-| Marché public québécois | Hébergement au Québec, fournisseur québécois ou canadien | Justification documentée par l'organisme |
-| Institution financière fédérale | Agents inscrits à l'inventaire E-23 dès maintenant | — |
-| Institution financière à charte québécoise | Répertoire des systèmes d'IA et cote de risque par système pour le 1er mai 2027, à rapprocher de l'inventaire E-23 | Texte de l'AMF non lu : le vérifier avant d'arrêter le périmètre |
-| Gestion de portefeuille discrétionnaire | Décision finale prise par une personne physique inscrite | — |
-| Ajout d'un outil à un agent | Réévaluation du risque et de l'EFVP | Outil sans accès à des données ni à des actions sensibles |
-| Mémoire et traces d'un agent | Durée fixée par finalité, puis destruction ou anonymisation | Délai de conservation imposé par une loi |
+| Référentiel de contrôles, faute de loi sur l'IA | Socle commun des guides fédéral et québécois [N] | Secteur doté d'un cadre plus strict, comme E-23 |
+| Décision visant une personne | Validation humaine réelle avant la décision [S] | Automatisation complète assumée : appliquer l'article 12.1 en entier |
+| Logique de décision | Composant déterministe; l'agent réunit les faits [S] | Aucune décision individuelle en jeu |
+| Première mise en œuvre | Pilote interne, réversible, plafonné [N] | Encadrement renforcé et validation spécialisée |
+| Inférence et outils hors Québec | EFVP préalable et entente écrite [N] | Aucun renseignement personnel dans le flux |
+| Marché public québécois | Hébergement au Québec, fournisseur québécois ou canadien [N] | Justification documentée par l'organisme |
+| Institution financière fédérale | Agents inscrits à l'inventaire E-23 dès maintenant [N] | — |
+| Institution financière à charte québécoise | Répertoire des systèmes d'IA et cote de risque par système pour le 1er mai 2027, à rapprocher de l'inventaire E-23 [S] | Texte de l'AMF non lu : le vérifier avant d'arrêter le périmètre |
+| Gestion de portefeuille discrétionnaire | Décision finale prise par une personne physique inscrite [N] | — |
+| Ajout d'un outil à un agent | Réévaluation du risque et de l'EFVP [S] | Outil sans accès à des données ni à des actions sensibles |
+| Mémoire et traces d'un agent | Durée fixée par finalité, puis destruction ou anonymisation [N] | Délai de conservation imposé par une loi |
 
 ---
 

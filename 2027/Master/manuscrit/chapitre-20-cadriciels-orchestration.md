@@ -219,15 +219,15 @@ Trois précautions en découlent, déduites ici : essayer la combinaison exacte 
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Faut-il un cadriciel ? | Non, tant qu'une fonction ou un appel de modèle avec outils suffit | Boucle, état ou coordination à maintenir |
-| Processus aux étapes connues | Workflow à graphe, non-déterminisme confiné aux nœuds | Processus déjà modélisé en BPMN : moteur de processus (chapitre 17) |
-| Tâche longue et ouverte | Harnais, avec permissions et hooks | Besoin de maîtriser chaque appel : bibliothèque de primitives |
-| Persistance | Points de contrôle en base de données dès le pilote | Durée de plusieurs heures ou effets irréversibles : exécution durable (chapitre 18) |
-| Outils | Exposés par MCP, jamais comme fonctions propres au cadriciel | Fonction purement interne à un agent |
-| Frontière entre équipes | A2A, version de protocole fixée et testée | Même équipe, même processus : sous-agents locaux |
-| Modèle | Cadriciel multi-modèles, condition du routage (chapitre 44) et d'un modèle de secours (chapitre 46) | Harnais lié à un modèle, si le gain est mesuré et la sortie prévue |
-| Prompts | Rédigés et versionnés | Jeu d'exemples et métrique disponibles : signatures optimisées |
-| Environnement d'exécution | Exploité par l'organisation | Runtime géré, si l'état reste exportable |
+| Faut-il un cadriciel ? | Non, tant qu'une fonction ou un appel de modèle avec outils suffit [É] | Boucle, état ou coordination à maintenir |
+| Processus aux étapes connues | Workflow à graphe, non-déterminisme confiné aux nœuds [É] | Processus déjà modélisé en BPMN : moteur de processus (chapitre 17) |
+| Tâche longue et ouverte | Harnais, avec permissions et hooks [É] | Besoin de maîtriser chaque appel : bibliothèque de primitives |
+| Persistance | Points de contrôle en base de données dès le pilote [É] | Durée de plusieurs heures ou effets irréversibles : exécution durable (chapitre 18) |
+| Outils | Exposés par MCP, jamais comme fonctions propres au cadriciel [S] | Fonction purement interne à un agent |
+| Frontière entre équipes | A2A, version de protocole fixée et testée [É] | Même équipe, même processus : sous-agents locaux |
+| Modèle | Cadriciel multi-modèles, condition du routage (chapitre 44) et d'un modèle de secours (chapitre 46) [S] | Harnais lié à un modèle, si le gain est mesuré et la sortie prévue |
+| Prompts | Rédigés et versionnés [S] | Jeu d'exemples et métrique disponibles : signatures optimisées |
+| Environnement d'exécution | Exploité par l'organisation [S] | Runtime géré, si l'état reste exportable |
 
 ---
 

@@ -188,12 +188,12 @@ Elle ne dit pas que plus d'agents, ou plus d'autonomie, vaut mieux. Les sources 
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Forme de la solution | La plus simple qui suffit : appel unique enrichi, puis workflow, puis agent | Chemin impossible à prévoir, et valeur qui justifie le coût et la latence |
-| Un agent ou plusieurs | Un seul | Tâche décomposable en sous-tâches indépendantes, ou besoin de cloisonner outils et permissions (chapitre 16) |
-| Espace d'action initial | Lecture seule, puis écriture dans les systèmes internes | Écriture externe : seulement avec identité propre et piste d'audit |
-| Niveau d'autonomie | Fixé par agent et par classe d'action; approbation pour l'irréversible et le fort enjeu | Actions réversibles et à faible enjeu, dans un périmètre appliqué techniquement |
-| Contrôles et journalisation | Exigés dès la conception, comme composants de l'agent | Prototype en bac à sable, sans accès à un système réel |
-| Branchement des outils et des agents | Protocoles ouverts et registre | Parc très restreint dans une seule équipe |
+| Forme de la solution | La plus simple qui suffit : appel unique enrichi, puis workflow, puis agent [É] | Chemin impossible à prévoir, et valeur qui justifie le coût et la latence |
+| Un agent ou plusieurs | Un seul [S] | Tâche décomposable en sous-tâches indépendantes, ou besoin de cloisonner outils et permissions (chapitre 16) |
+| Espace d'action initial | Lecture seule, puis écriture dans les systèmes internes [S] | Écriture externe : seulement avec identité propre et piste d'audit |
+| Niveau d'autonomie | Fixé par agent et par classe d'action; approbation pour l'irréversible et le fort enjeu [N] | Actions réversibles et à faible enjeu, dans un périmètre appliqué techniquement |
+| Contrôles et journalisation | Exigés dès la conception, comme composants de l'agent [N] | Prototype en bac à sable, sans accès à un système réel |
+| Branchement des outils et des agents | Protocoles ouverts et registre [S] | Parc très restreint dans une seule équipe |
 
 ---
 

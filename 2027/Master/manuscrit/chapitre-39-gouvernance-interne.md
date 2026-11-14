@@ -183,14 +183,14 @@ Du côté de l'audit, une enquête de l'Internal Audit Foundation et d'AuditBoar
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Inventaire | Un inventaire de gouvernance unique, alimenté par les registres des plateformes | Une seule plateforme : son registre, complété des champs manquants |
-| Agents non déclarés | Découverte par les journaux d'identité et de passerelle, puis inscription ou blocage | — |
-| Responsable | Un propriétaire d'affaires et un responsable technique nommés | Agent personnel à faible risque : le créateur tient les deux rôles |
-| Départ du responsable | Suspension jusqu'à réattribution | Parrainage par un groupe, si une personne répondante y est désignée |
-| Autorisation | Portes de qualification, de pilote et de production | Usage interne et réversible : approbation déléguée, documentation légère |
-| Instance | Multidisciplinaire, saisie selon la cote de risque | Petite organisation : un responsable désigné et des avis ponctuels |
-| Changement | Revue déclenchée par tout changement de modèle, d'outil ou de source de données | Routage entre modèles : revue de la politique et des modèles qualifiés |
-| Assurance | Audit interne, sur l'inventaire, les portes et la supervision effective | Petite organisation : revue par une personne étrangère à l'exploitation des agents |
+| Inventaire | Un inventaire de gouvernance unique, alimenté par les registres des plateformes [N] | Une seule plateforme : son registre, complété des champs manquants |
+| Agents non déclarés | Découverte par les journaux d'identité et de passerelle, puis inscription ou blocage [S] | — |
+| Responsable | Un propriétaire d'affaires et un responsable technique nommés [N] | Agent personnel à faible risque : le créateur tient les deux rôles |
+| Départ du responsable | Suspension jusqu'à réattribution [N] | Parrainage par un groupe, si une personne répondante y est désignée |
+| Autorisation | Portes de qualification, de pilote et de production [N] | Usage interne et réversible : approbation déléguée, documentation légère |
+| Instance | Multidisciplinaire, saisie selon la cote de risque [N] | Petite organisation : un responsable désigné et des avis ponctuels |
+| Changement | Revue déclenchée par tout changement de modèle, d'outil ou de source de données [N] | Routage entre modèles : revue de la politique et des modèles qualifiés |
+| Assurance | Audit interne, sur l'inventaire, les portes et la supervision effective [S] | Petite organisation : revue par une personne étrangère à l'exploitation des agents |
 
 ---
 

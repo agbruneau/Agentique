@@ -214,16 +214,16 @@ TUF vérifie ce qui est distribué; l'attestation vérifie ce qui s'exécute (46
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Inventaire des états | Un exploitant, une région et un détenteur de clé par état | Aucun cas |
-| Inférence sur données réglementées | Modèle autohébergé ou fournisseur sous contrôle local (chapitre 37) | TEE avec GPU attesté si l'accès physique de l'exploitant est un risque accepté |
-| Libération des clés | Sous attestation, selon une politique écrite par l'entreprise | Charge sans donnée sensible |
-| Clés HYOK | Réservées aux classes de données qui l'exigent | Charges tolérantes à une perte de disponibilité |
-| Modèle de secours | Qualifié d'avance, délai mesuré par exercice | Tâches différables : mise en file |
-| Site déconnecté | Modèle, garde-fous et arrêt d'urgence locaux; durée de survie calculée | Site sans action physique ni transaction : arrêt acceptable |
-| Ressources bornées hors ligne | Droits préalloués | Ressource non critique : réconciliation après coup |
-| Accès d'un agent à ROS 2 | Enclave propre, mode `Enforce`, objectifs seulement | Simulation |
-| Contrôleur appris | Enveloppe vérifiée, isolée, hors de portée de l'agent | Aucun cas en présence de personnes |
-| Mises à jour | Métadonnées signées par rôles, clé racine hors ligne | Prototype isolé |
+| Inventaire des états | Un exploitant, une région et un détenteur de clé par état [S] | Aucun cas |
+| Inférence sur données réglementées | Modèle autohébergé ou fournisseur sous contrôle local (chapitre 37) [S] | TEE avec GPU attesté si l'accès physique de l'exploitant est un risque accepté |
+| Libération des clés | Sous attestation, selon une politique écrite par l'entreprise [É] | Charge sans donnée sensible |
+| Clés HYOK | Réservées aux classes de données qui l'exigent [É] | Charges tolérantes à une perte de disponibilité |
+| Modèle de secours | Qualifié d'avance, délai mesuré par exercice [S] | Tâches différables : mise en file |
+| Site déconnecté | Modèle, garde-fous et arrêt d'urgence locaux; durée de survie calculée [S] | Site sans action physique ni transaction : arrêt acceptable |
+| Ressources bornées hors ligne | Droits préalloués [S] | Ressource non critique : réconciliation après coup |
+| Accès d'un agent à ROS 2 | Enclave propre, mode `Enforce`, objectifs seulement [É] | Simulation |
+| Contrôleur appris | Enveloppe vérifiée, isolée, hors de portée de l'agent [S] | Aucun cas en présence de personnes |
+| Mises à jour | Métadonnées signées par rôles, clé racine hors ligne [N] | Prototype isolé |
 
 ---
 

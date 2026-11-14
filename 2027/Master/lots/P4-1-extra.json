@@ -1,0 +1,19 @@
+{
+ "id": "P4-1-extra",
+ "origine": "plan 2027, lot P4-1-extra",
+ "categorie": "enrichissement",
+ "remplacements": [
+  {
+   "fichier": "chapitre-26-plateformes-entreprise.md",
+   "avant": "un calendrier vers la 1.0 | — |",
+   "apres": "un calendrier vers la 1.0 [S] | — |",
+   "motif": "Ligne « Version d'A2A » : [S], lettre décidée au lot P4-1-3; ancre resserrée, la ligne entière débordant de l'entrée n° 424 du registre."
+  },
+  {
+   "fichier": "chapitre-37-souverainete.md",
+   "avant": "connecteur, passerelle, règles déterministes | — |\n| Preuve de souveraineté",
+   "apres": "connecteur, passerelle, règles déterministes [M] | — |\n| Preuve de souveraineté",
+   "motif": "Ligne « Application des politiques d'usage » : [M], lettre décidée au lot P4-1-4; ancre resserrée, la ligne entière débordant de l'entrée n° 445 du registre."
+  }
+ ]
+}

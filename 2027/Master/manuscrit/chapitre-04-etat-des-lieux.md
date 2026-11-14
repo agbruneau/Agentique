@@ -171,13 +171,13 @@ Ces hypothèses ne sont pas des prévisions chiffrées. Elles fixent le point de
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Lire un chiffre d'adoption | Le classer : enquête déclarative, prévision ou indicateur de fournisseur | Mesure indépendante, à méthode publiée |
-| Portée d'un premier agent en production | Workflow prédéfini, peu d'étapes, supervision humaine | Tâche réversible, en bac à sable |
-| Preuve de valeur | Base de comparaison non agentique fixée avant le pilote | Tâche nouvelle, sans équivalent : indicateur de résultat convenu d'avance |
-| Passage du pilote à la production | Exiger évaluation, contrôle d'accès et imputabilité | Aucun cas |
-| Plan de contrôle | Retenir celui d'un éditeur déjà en place, avec clause de sortie | Parc de plusieurs éditeurs : prévoir la fédération (chapitre 27) |
-| Dépendance aux standards | Bâtir sur MCP et A2A; tenir le reste pour remplaçable | Besoin immédiat d'identité ou de registre : solution transitoire documentée |
-| Calendrier réglementaire | Planifier sur les échéances européennes de décembre 2027 et d'août 2028 | Aucune activité visée par l'AI Act; institution financière fédérale canadienne : E-23, 1er mai 2027 (chapitre 38) |
+| Lire un chiffre d'adoption | Le classer : enquête déclarative, prévision ou indicateur de fournisseur [S] | Mesure indépendante, à méthode publiée |
+| Portée d'un premier agent en production | Workflow prédéfini, peu d'étapes, supervision humaine [M] | Tâche réversible, en bac à sable |
+| Preuve de valeur | Base de comparaison non agentique fixée avant le pilote [S] | Tâche nouvelle, sans équivalent : indicateur de résultat convenu d'avance |
+| Passage du pilote à la production | Exiger évaluation, contrôle d'accès et imputabilité [S] | Aucun cas |
+| Plan de contrôle | Retenir celui d'un éditeur déjà en place, avec clause de sortie [S] | Parc de plusieurs éditeurs : prévoir la fédération (chapitre 27) |
+| Dépendance aux standards | Bâtir sur MCP et A2A; tenir le reste pour remplaçable [É] | Besoin immédiat d'identité ou de registre : solution transitoire documentée |
+| Calendrier réglementaire | Planifier sur les échéances européennes de décembre 2027 et d'août 2028 [N] | Aucune activité visée par l'AI Act; institution financière fédérale canadienne : E-23, 1er mai 2027 (chapitre 38) |
 
 ---
 

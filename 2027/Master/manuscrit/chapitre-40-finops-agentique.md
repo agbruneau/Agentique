@@ -223,15 +223,15 @@ Ces chiffres viennent d'une prépublication, sur un seul domaine, aux tarifs de 
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Unité de compte | Coût par résultat réussi | Pilote sans barre de qualité : coût par exécution |
-| Clé d'imputation | Identité d'agent, exécution, centre de coûts | Agent unique : clé d'API dédiée |
-| Point de mesure | Passerelle et traces, rapprochées de la facture | Très petit parc : rapports du fournisseur |
-| Refacturation | Affichage des coûts seulement | Clé d'imputation éprouvée |
-| Plafonds | Par exécution et par période, sur l'identité de l'agent | — |
-| Épuisement du budget | Vérification avant l'étape chère, puis recours à un humain | Faible enjeu : bascule vers un modèle moins cher |
-| Achat d'un agent | Consommation plafonnée | Résultat, si le client peut le vérifier; siège, si l'usage est massif et régulier |
-| Ordre des leviers | Cache de prompts, lots, routage, topologie | Tâche interactive : pas de lots |
-| Système multi-agents | Seulement si la valeur de la tâche paie le surcoût | — |
+| Unité de compte | Coût par résultat réussi [É] | Pilote sans barre de qualité : coût par exécution |
+| Clé d'imputation | Identité d'agent, exécution, centre de coûts [S] | Agent unique : clé d'API dédiée |
+| Point de mesure | Passerelle et traces, rapprochées de la facture [S] | Très petit parc : rapports du fournisseur |
+| Refacturation | Affichage des coûts seulement [S] | Clé d'imputation éprouvée |
+| Plafonds | Par exécution et par période, sur l'identité de l'agent [S] | — |
+| Épuisement du budget | Vérification avant l'étape chère, puis recours à un humain [S] | Faible enjeu : bascule vers un modèle moins cher |
+| Achat d'un agent | Consommation plafonnée [S] | Résultat, si le client peut le vérifier; siège, si l'usage est massif et régulier |
+| Ordre des leviers | Cache de prompts, lots, routage, topologie [S] | Tâche interactive : pas de lots |
+| Système multi-agents | Seulement si la valeur de la tâche paie le surcoût [M] | — |
 
 ---
 

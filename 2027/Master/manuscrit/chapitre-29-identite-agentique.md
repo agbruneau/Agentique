@@ -248,18 +248,18 @@ Depuis le 1er juillet 2026, Cloudflare distingue l'accès direct, où un seul op
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Identité d'un agent | Identité propre, une par agent, distincte de celles des utilisateurs et des applications | Jamais pour un agent en production |
-| Justificatifs | Courte durée, émis à l'exécution, renouvelés automatiquement | Système patrimonial : justificatif dérivé par échange, jamais de clé statique partagée |
-| Accès du modèle aux secrets | Aucun; les secrets restent dans l'enveloppe d'exécution | — |
-| Responsable humain | Parrain obligatoire, propriétaire technique désigné, tous deux réattribués au départ | — |
-| Sémantique d'échange de jetons | Délégation, avec `act` | Usurpation seulement si le système cible ne peut rien d'autre, avec journalisation compensatoire |
-| Compte utilisateur pour un agent | Non | Système qui exige un objet utilisateur; l'identité d'agent demeure |
-| Authentification derrière une passerelle | Couche applicative | Maillage de bout en bout sans terminaison TLS : TLS mutuel |
-| Jetons d'accès | Liés au détenteur (TLS mutuel ou DPoP), audience restreinte | Liaison non prise en charge : durée très courte |
-| Appels en aval d'un outil | Échange de jetons ou jeton de transaction | Aucun cas pour le relais du jeton reçu |
-| Annuaire | Celui du fournisseur d'identité, complété des attributs de 29.3 | Parc multi-plateformes : annuaire maître indépendant |
-| Accès entre organisations | Chaînage d'identité sur entente bilatérale | Fournisseur d'identité commun : ID-JAG |
-| Identité décentralisée | Veille | Consortium sectoriel qui impose une méthode |
+| Identité d'un agent | Identité propre, une par agent, distincte de celles des utilisateurs et des applications [É] | Jamais pour un agent en production |
+| Justificatifs | Courte durée, émis à l'exécution, renouvelés automatiquement [É] | Système patrimonial : justificatif dérivé par échange, jamais de clé statique partagée |
+| Accès du modèle aux secrets | Aucun; les secrets restent dans l'enveloppe d'exécution [É] | — |
+| Responsable humain | Parrain obligatoire, propriétaire technique désigné, tous deux réattribués au départ [É] | — |
+| Sémantique d'échange de jetons | Délégation, avec `act` [N] | Usurpation seulement si le système cible ne peut rien d'autre, avec journalisation compensatoire |
+| Compte utilisateur pour un agent | Non [É] | Système qui exige un objet utilisateur; l'identité d'agent demeure |
+| Authentification derrière une passerelle | Couche applicative [S] | Maillage de bout en bout sans terminaison TLS : TLS mutuel |
+| Jetons d'accès | Liés au détenteur (TLS mutuel ou DPoP), audience restreinte [N] | Liaison non prise en charge : durée très courte |
+| Appels en aval d'un outil | Échange de jetons ou jeton de transaction [N] | Aucun cas pour le relais du jeton reçu |
+| Annuaire | Celui du fournisseur d'identité, complété des attributs de 29.3 [S] | Parc multi-plateformes : annuaire maître indépendant |
+| Accès entre organisations | Chaînage d'identité sur entente bilatérale [S] | Fournisseur d'identité commun : ID-JAG |
+| Identité décentralisée | Veille [S] | Consortium sectoriel qui impose une méthode |
 
 ---
 

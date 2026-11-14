@@ -185,15 +185,15 @@ Le manque d'audit et de télémétrie est le huitième risque du classement OWAS
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Portées initiales | Ensemble minimal, lecture et découverte; élévation à la demande | Flux sans utilisateur : portées préapprouvées par politique; site déconnecté : droits répartis avant la coupure (chapitre 46) |
-| Conception des outils | Étroits, un effet par outil | Outil générique derrière une règle sur ses arguments |
-| Justificatif en aval | Obtenu par échange de jeton, lié à l'appelant | Système patrimonial sans OAuth : compte de service restreint et audit renforcé |
-| Délégation à un sous-agent | Jeton neuf, plus étroit, plus court, par échange en ligne; profondeur bornée | Aucun cas pour le relais du jeton parent |
-| Opérations à fort enjeu | Décision dans le serveur de ressources, sur l'objet et le montant | Détails d'autorisation (RFC 9396) si le serveur d'autorisation les gère |
-| Preuve d'approbation humaine | Octroi émis par le serveur d'autorisation | Confirmation locale pour les actions réversibles et à faible enjeu |
-| Manifestes de sites tiers | Règles structurées appliquées par le cadriciel | Directives en langage naturel : jamais comme instructions |
-| Politique | Codifiée, versionnée, évaluée hors de l'agent | Très petit parc : listes à la passerelle |
-| Piste d'audit | Sept champs d'AIMS, plus la chaîne et la version de politique | — |
+| Portées initiales | Ensemble minimal, lecture et découverte; élévation à la demande [N] | Flux sans utilisateur : portées préapprouvées par politique; site déconnecté : droits répartis avant la coupure (chapitre 46) |
+| Conception des outils | Étroits, un effet par outil [S] | Outil générique derrière une règle sur ses arguments |
+| Justificatif en aval | Obtenu par échange de jeton, lié à l'appelant [N] | Système patrimonial sans OAuth : compte de service restreint et audit renforcé |
+| Délégation à un sous-agent | Jeton neuf, plus étroit, plus court, par échange en ligne; profondeur bornée [S] | Aucun cas pour le relais du jeton parent |
+| Opérations à fort enjeu | Décision dans le serveur de ressources, sur l'objet et le montant [N] | Détails d'autorisation (RFC 9396) si le serveur d'autorisation les gère |
+| Preuve d'approbation humaine | Octroi émis par le serveur d'autorisation [É] | Confirmation locale pour les actions réversibles et à faible enjeu |
+| Manifestes de sites tiers | Règles structurées appliquées par le cadriciel [S] | Directives en langage naturel : jamais comme instructions |
+| Politique | Codifiée, versionnée, évaluée hors de l'agent [N] | Très petit parc : listes à la passerelle |
+| Piste d'audit | Sept champs d'AIMS, plus la chaîne et la version de politique [É] | — |
 
 ---
 

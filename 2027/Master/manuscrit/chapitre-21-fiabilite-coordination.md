@@ -276,16 +276,16 @@ Entre entreprises, la difficulté s'accroît : nul ne conçoit l'organisation de
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Un agent ou plusieurs | Un agent tant qu'il suffit; comparaison à budget égal | Tâche décomposable et large (chapitre 16) |
-| Contenu d'une délégation | Objectif, format de sortie, limites, condition d'arrêt | Aucun cas |
-| Arrêt et plafond d'étapes | Imposés par l'orchestrateur ou le moteur de processus | Exploration sans effet de bord |
-| Ambiguïté | L'agent demande une précision | Tâche réversible à faible enjeu |
-| Vérification | Rôle distinct, qui contrôle l'objectif | Résultat couvert par un test déterministe |
-| Conflit entre agents | Hiérarchie d'arbitrage écrite, humain en dernier recours | Détection automatique seulement après mesure de sa précision |
-| Imputabilité | Relations commettant-responsable déclarées, devoirs mesurables | Petit système stable de deux ou trois agents |
-| Mesure de la coordination | Échantillon de traces étiqueté selon MAST, surcoût, jalons | — |
-| Attribution d'un échec | Revue humaine appuyée sur les traces | Attribution automatique en aide au tri seulement |
-| Essai de robustesse | Fautes de coordination injectées avant la mise en production (section 21.5; pour les pannes d'outils et de protocole, section 34.10) | Agent unique, ou tâche sans effet de bord |
+| Un agent ou plusieurs | Un agent tant qu'il suffit; comparaison à budget égal [M] | Tâche décomposable et large (chapitre 16) |
+| Contenu d'une délégation | Objectif, format de sortie, limites, condition d'arrêt [É] | Aucun cas |
+| Arrêt et plafond d'étapes | Imposés par l'orchestrateur ou le moteur de processus [S] | Exploration sans effet de bord |
+| Ambiguïté | L'agent demande une précision [S] | Tâche réversible à faible enjeu |
+| Vérification | Rôle distinct, qui contrôle l'objectif [M] | Résultat couvert par un test déterministe |
+| Conflit entre agents | Hiérarchie d'arbitrage écrite, humain en dernier recours [S] | Détection automatique seulement après mesure de sa précision |
+| Imputabilité | Relations commettant-responsable déclarées, devoirs mesurables [S] | Petit système stable de deux ou trois agents |
+| Mesure de la coordination | Échantillon de traces étiqueté selon MAST, surcoût, jalons [M] | — |
+| Attribution d'un échec | Revue humaine appuyée sur les traces [M] | Attribution automatique en aide au tri seulement |
+| Essai de robustesse | Fautes de coordination injectées avant la mise en production (section 21.5; pour les pannes d'outils et de protocole, section 34.10) [S] | Agent unique, ou tâche sans effet de bord |
 
 ---
 

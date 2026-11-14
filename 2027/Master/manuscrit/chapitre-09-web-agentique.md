@@ -148,15 +148,15 @@ La proposition laisse un vide : rien n'y exprime ce qu'un agent a le droit de fa
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Canal principal pour les agents | API ou serveur MCP adossé à la logique d'affaires | Parcours qui n'existe que dans l'interface web : envisager WebMCP |
-| WebMCP | Expérimenter dans l'essai d'origine, sur un parcours à faible risque | Aucune tâche à accomplir sur le site : s'abstenir |
-| Actions à effet (achat, réservation) par WebMCP | Soumission par l'utilisateur, annotation `consequentialHint`, contrôles côté serveur | — |
-| Annotations d'outils | Les renseigner, sans en faire une mesure de sécurité | — |
-| NLWeb | Attendre; exposer la recherche par un outil MCP existant | Contenu riche en Schema.org et volonté d'expérimenter |
-| Robots et agents entrants | Vérifier les signatures Web Bot Auth par le mandataire ou le réseau de diffusion; trois résultats distincts | Trafic d'agents négligeable : conserver les règles actuelles |
-| Requête signée | L'identifier, puis appliquer la politique de sa catégorie | Ne jamais y voir une autorisation |
-| Agents sortants | Signer, avec clés distinctes et expiration courte | Agent qui doit rester non corrélable : le protocole ne convient pas |
-| llms.txt | Le générer pour la documentation technique | Site sans documentation : facultatif; retirer un fichier produit par défaut et non entretenu |
+| Canal principal pour les agents | API ou serveur MCP adossé à la logique d'affaires [S] | Parcours qui n'existe que dans l'interface web : envisager WebMCP |
+| WebMCP | Expérimenter dans l'essai d'origine, sur un parcours à faible risque [S] | Aucune tâche à accomplir sur le site : s'abstenir |
+| Actions à effet (achat, réservation) par WebMCP | Soumission par l'utilisateur, annotation `consequentialHint`, contrôles côté serveur [É] | — |
+| Annotations d'outils | Les renseigner, sans en faire une mesure de sécurité [É] | — |
+| NLWeb | Attendre; exposer la recherche par un outil MCP existant [É] | Contenu riche en Schema.org et volonté d'expérimenter |
+| Robots et agents entrants | Vérifier les signatures Web Bot Auth par le mandataire ou le réseau de diffusion; trois résultats distincts [É] | Trafic d'agents négligeable : conserver les règles actuelles |
+| Requête signée | L'identifier, puis appliquer la politique de sa catégorie [É] | Ne jamais y voir une autorisation |
+| Agents sortants | Signer, avec clés distinctes et expiration courte [É] | Agent qui doit rester non corrélable : le protocole ne convient pas |
+| llms.txt | Le générer pour la documentation technique [M] | Site sans documentation : facultatif; retirer un fichier produit par défaut et non entretenu |
 
 ---
 

@@ -195,19 +195,19 @@ EnterpriseBench repose sur des données synthétiques [3]; DAB ne couvre que qua
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Identité d'exécution des requêtes | Celle de l'utilisateur, avec jeton restreint aux portées de la tâche | Accès identique pour tous, ou utilisateurs sans compte dans la plateforme : identité de service et politiques en mode fermé |
-| Comportement en l'absence d'identité | Échec explicite | — |
-| Exposition d'un entrepôt | Outils paramétrés ou vues sémantiques | SQL libre en lecture seule pour l'exploration, sur un serveur distinct |
-| Découpage des serveurs | Par frontière d'accès et par public | Très petit parc à droits uniformes |
-| Point d'accès MCP d'une plateforme | Objet gouverné par le catalogue (octrois, politiques) | Point d'accès hors catalogue : exploration seulement |
-| Fraîcheur | Latence promise par contrat de données, âge de la donnée restitué par l'agent | Données de référence stables |
-| Données en mouvement | État matérialisé interrogeable | Besoin de réagir à l'événement : chapitre 19 |
-| Documents à permissions fines | Interrogation à la source | Index copié si la pertinence l'exige, avec resynchronisation des permissions planifiée et vérifiée |
-| Recherche sur populations distinctes | Un service ou un filtre par population | Contenu réellement public à l'interne |
-| Champs de texte libre | Extraction en amont vers des colonnes typées | Volume faible : outil d'extraction dédié |
-| Confidentialité | Contrôle dans la couche de données | Consigne de prompt en complément seulement |
-| Mise en service | Revue du partage excessif avant l'ouverture aux agents | — |
-| Métadonnées de qualité et de lignage | Émises sous forme normalisée et visibles au catalogue | — |
+| Identité d'exécution des requêtes | Celle de l'utilisateur, avec jeton restreint aux portées de la tâche [É] | Accès identique pour tous, ou utilisateurs sans compte dans la plateforme : identité de service et politiques en mode fermé |
+| Comportement en l'absence d'identité | Échec explicite [S] | — |
+| Exposition d'un entrepôt | Outils paramétrés ou vues sémantiques [M] | SQL libre en lecture seule pour l'exploration, sur un serveur distinct |
+| Découpage des serveurs | Par frontière d'accès et par public [É] | Très petit parc à droits uniformes |
+| Point d'accès MCP d'une plateforme | Objet gouverné par le catalogue (octrois, politiques) [É] | Point d'accès hors catalogue : exploration seulement |
+| Fraîcheur | Latence promise par contrat de données, âge de la donnée restitué par l'agent [S] | Données de référence stables |
+| Données en mouvement | État matérialisé interrogeable [É] | Besoin de réagir à l'événement : chapitre 19 |
+| Documents à permissions fines | Interrogation à la source [S] | Index copié si la pertinence l'exige, avec resynchronisation des permissions planifiée et vérifiée |
+| Recherche sur populations distinctes | Un service ou un filtre par population [É] | Contenu réellement public à l'interne |
+| Champs de texte libre | Extraction en amont vers des colonnes typées [S] | Volume faible : outil d'extraction dédié |
+| Confidentialité | Contrôle dans la couche de données [M] | Consigne de prompt en complément seulement |
+| Mise en service | Revue du partage excessif avant l'ouverture aux agents [É] | — |
+| Métadonnées de qualité et de lignage | Émises sous forme normalisée et visibles au catalogue [S] | — |
 
 ---
 

@@ -1,0 +1,535 @@
+{
+ "id": "P4-1-4",
+ "origine": "plan 2027, lot P4-1-4",
+ "categorie": "enrichissement",
+ "remplacements": [
+  {
+   "fichier": "chapitre-31-menaces.md",
+   "avant": "| Hypothèse sur le contenu lu par l'agent | Non fiable, y compris les résultats d'outils et les messages d'autres agents | Contenu produit par un système interne maîtrisé, sans entrée d'un tiers |",
+   "apres": "| Hypothèse sur le contenu lu par l'agent | Non fiable, y compris les résultats d'outils et les messages d'autres agents [M] | Contenu produit par un système interne maîtrisé, sans entrée d'un tiers |",
+   "motif": "Ligne « Hypothèse sur le contenu lu par l'agent » : [M], sections 31.1 et 31.7, sources [6][9] (études publiées : injection indirecte démontrée sur des applications réelles, propagation d'agent à agent en simulation)."
+  },
+  {
+   "fichier": "chapitre-31-menaces.md",
+   "avant": "| Combinaison de capacités | Jamais données privées, contenu non fiable et canal sortant dans un même agent | Canal sortant restreint à une liste de destinations fixes |",
+   "apres": "| Combinaison de capacités | Jamais données privées, contenu non fiable et canal sortant dans un même agent [É] | Canal sortant restreint à une liste de destinations fixes |",
+   "motif": "Ligne « Combinaison de capacités » : [É], section 31.1, source [12] (billet d'un praticien, seul appui direct; ni mesure ni texte normatif)."
+  },
+  {
+   "fichier": "chapitre-31-menaces.md",
+   "avant": "| Défense contre l'injection | Limitation des capacités et approbation hors agent; filtres en complément | Filtres seuls : aucun cas |",
+   "apres": "| Défense contre l'injection | Limitation des capacités et approbation hors agent; filtres en complément [S] | Filtres seuls : aucun cas |",
+   "motif": "Ligne « Défense contre l'injection » : [S], section 31.4, sources [7][8][12] sans taux publié; l'ordre des mesures est une synthèse du chapitre selon les Limites."
+  },
+  {
+   "fichier": "chapitre-31-menaces.md",
+   "avant": "| Admission d'un serveur MCP | Examen des descriptions, épinglage, registre interne; nouvelle approbation à tout changement de définition | Serveur interne dont le code est maîtrisé : examen allégé |",
+   "apres": "| Admission d'un serveur MCP | Examen des descriptions, épinglage, registre interne; nouvelle approbation à tout changement de définition [É] | Serveur interne dont le code est maîtrisé : examen allégé |",
+   "motif": "Ligne « Admission d'un serveur MCP » : [É], section 31.5, sources [11][3] (billet de fournisseur et fiche du projet OWASP; la spécification [4] ne traite pas l'empoisonnement d'outil)."
+  },
+  {
+   "fichier": "chapitre-31-menaces.md",
+   "avant": "| Serveur local sur un poste | Liste d'autorisation et bac à sable | Poste de développement isolé, sans secrets |",
+   "apres": "| Serveur local sur un poste | Liste d'autorisation et bac à sable [N] | Poste de développement isolé, sans secrets |",
+   "motif": "Ligne « Serveur local sur un poste » : [N], section 31.5, source [4] (spécification MCP, page Security Best Practices : commande affichée, bac à sable)."
+  },
+  {
+   "fichier": "chapitre-31-menaces.md",
+   "avant": "| Mémoire durable | Écriture restreinte, provenance conservée, purge possible | Mémoire de session, détruite à la fin |",
+   "apres": "| Mémoire durable | Écriture restreinte, provenance conservée, purge possible [S] | Mémoire de session, détruite à la fin |",
+   "motif": "Ligne « Mémoire durable » : [S], section 31.6, source [2] (ASI06 nomme le risque, non la mesure; les quatre questions sont une synthèse)."
+  },
+  {
+   "fichier": "chapitre-31-menaces.md",
+   "avant": "| Messages entre agents | Authentifiés et traités comme non fiables | — |",
+   "apres": "| Messages entre agents | Authentifiés et traités comme non fiables [S] | — |",
+   "motif": "Ligne « Messages entre agents » : [S], section 31.7, sources [9][10] (laboratoire seulement; les contrôles de 31.7 sont des transpositions du chapitre selon les Limites)."
+  },
+  {
+   "fichier": "chapitre-31-menaces.md",
+   "avant": "| Référentiel de menaces | OWASP Agentic Top 10 comme vocabulaire; MCP Top 10 en complément, cité comme bêta | Référentiel sectoriel imposé |",
+   "apres": "| Référentiel de menaces | OWASP Agentic Top 10 comme vocabulaire; MCP Top 10 en complément, cité comme bêta [É] | Référentiel sectoriel imposé |",
+   "motif": "Ligne « Référentiel de menaces » : [É], sections 31.2 et 31.3, sources [1][2][3] (pages du projet OWASP, MCP Top 10 en bêta; vocabulaire de consensus, non une norme)."
+  },
+  {
+   "fichier": "chapitre-31-menaces.md",
+   "avant": "| Méthode de modélisation | Par couches, reprise à chaque changement du catalogue d'outils | Agent unique sans outil à effet : test de la trifecta |",
+   "apres": "| Méthode de modélisation | Par couches, reprise à chaque changement du catalogue d'outils [É] | Agent unique sans outil à effet : test de la trifecta |",
+   "motif": "Ligne « Méthode de modélisation » : [É], section 31.8, source [5] (billet d'auteur sur le site de la CSA; la reprise à chaque changement du catalogue est du chapitre)."
+  },
+  {
+   "fichier": "chapitre-32-assurance.md",
+   "avant": "| Unité de contrôle | L'action et la trajectoire | Agent en lecture seule, sans effet cumulatif : l'action suffit |",
+   "apres": "| Unité de contrôle | L'action et la trajectoire [S] | Agent en lecture seule, sans effet cumulatif : l'action suffit |",
+   "motif": "Ligne « Unité de contrôle » : [S], sections 32.1 et 32.2, source [1] (article de vision sans expérience; les gestes faisables sont une déduction du chapitre)."
+  },
+  {
+   "fichier": "chapitre-32-assurance.md",
+   "avant": "| Lieu de vérification des invariants | Composant à état hors de l'agent | — |",
+   "apres": "| Lieu de vérification des invariants | Composant à état hors de l'agent [S] | — |",
+   "motif": "Ligne « Lieu de vérification des invariants » : [S], section 32.2, aucune source directe (déduction du chapitre; [11] mesure un cas voisin sans l'établir)."
+  },
+  {
+   "fichier": "chapitre-32-assurance.md",
+   "avant": "| Point d'application des politiques | Entre l'agent et la ressource | Contrôle dans l'hôte en complément seulement |",
+   "apres": "| Point d'application des politiques | Entre l'agent et la ressource [N] | Contrôle dans l'hôte en complément seulement |",
+   "motif": "Ligne « Point d'application des politiques » : [N], section 32.3, source [2] (NIST SP 800-207, lu directement : point d'application entre le sujet et la ressource)."
+  },
+  {
+   "fichier": "chapitre-32-assurance.md",
+   "avant": "| Niveau d'autonomie | Accordé par paliers, sur preuve consignée | Tâche réversible à faible enjeu |",
+   "apres": "| Niveau d'autonomie | Accordé par paliers, sur preuve consignée [É] | Tâche réversible à faible enjeu |",
+   "motif": "Ligne « Niveau d'autonomie » : [É], section 32.3, source [3] (billet de la CSA signé par l'auteur de l'ATF; seuils chiffrés = choix d'auteur)."
+  },
+  {
+   "fichier": "chapitre-32-assurance.md",
+   "avant": "| Certificat d'un fournisseur | Critère de présélection, complété par des tests internes | Jamais comme preuve unique |",
+   "apres": "| Certificat d'un fournisseur | Critère de présélection, complété par des tests internes [É] | Jamais comme preuve unique |",
+   "motif": "Ligne « Certificat d'un fournisseur » : [É], section 32.4, sources [4][13] (pages d'AIUC et billet de fournisseur; liste des contrôles non lue)."
+  },
+  {
+   "fichier": "chapitre-32-assurance.md",
+   "avant": "| Évaluation d'une défense | Attaquant adaptatif; sécurité et utilité mesurées ensemble | Banc statique comme test de non-régression |",
+   "apres": "| Évaluation d'une défense | Attaquant adaptatif; sécurité et utilité mesurées ensemble [M] | Banc statique comme test de non-régression |",
+   "motif": "Ligne « Évaluation d'une défense » : [M], section 32.5, sources [9][10] (prépublications mesurées : défenses à plus de 90 % de succès d'attaque devant un attaquant adaptatif, bancs statiques surestimés)."
+  },
+  {
+   "fichier": "chapitre-32-assurance.md",
+   "avant": "| Fréquence des tests | À chaque changement de modèle, de prompt ou d'outil | — |",
+   "apres": "| Fréquence des tests | À chaque changement de modèle, de prompt ou d'outil [S] | — |",
+   "motif": "Ligne « Fréquence des tests » : [S], section 32.5, aucune source directe (règle 4 : déduction du chapitre; guide de la CSA [12] non lu)."
+  },
+  {
+   "fichier": "chapitre-33-observabilite-evaluation.md",
+   "avant": "| Format de télémétrie | OpenTelemetry, conventions GenAI | Plateforme fermée : exiger au moins un export |",
+   "apres": "| Format de télémétrie | OpenTelemetry, conventions GenAI [É] | Plateforme fermée : exiger au moins un export |",
+   "motif": "Ligne « Format de télémétrie » : [É], section 33.2, sources [1][3] (documentation du projet OpenTelemetry, statut Development)."
+  },
+  {
+   "fichier": "chapitre-33-observabilite-evaluation.md",
+   "avant": "| Schéma consommé par les tableaux de bord | Schéma interne, alimenté par normalisation au collecteur | Parc d'un seul cadriciel, à version épinglée |",
+   "apres": "| Schéma consommé par les tableaux de bord | Schéma interne, alimenté par normalisation au collecteur [S] | Parc d'un seul cadriciel, à version épinglée |",
+   "motif": "Ligne « Schéma consommé par les tableaux de bord » : [S], section 33.2, source [15] (conclusion tirée de l'instabilité constatée; seule opinion citée : billet d'un particulier)."
+  },
+  {
+   "fichier": "chapitre-33-observabilite-evaluation.md",
+   "avant": "| Version des conventions | Commit épinglé, span exporté vérifié à chaque mise à jour | — |",
+   "apres": "| Version des conventions | Commit épinglé, span exporté vérifié à chaque mise à jour [S] | — |",
+   "motif": "Ligne « Version des conventions » : [S], section 33.2, sources [2][10] (déduction : aucune version publiée, donc un commit épinglé)."
+  },
+  {
+   "fichier": "chapitre-33-observabilite-evaluation.md",
+   "avant": "| Capture du contenu | Désactivée en production | Préproduction, ou stockage conforme et volume maîtrisé |",
+   "apres": "| Capture du contenu | Désactivée en production [É] | Préproduction, ou stockage conforme et volume maîtrisé |",
+   "motif": "Ligne « Capture du contenu » : [É], section 33.4, source [5] (convention OpenTelemetry : NO_CONTENT par défaut, usage prévu en production)."
+  },
+  {
+   "fichier": "chapitre-33-observabilite-evaluation.md",
+   "avant": "| Contenu nécessaire à l'évaluation | Stockage distinct, référence dans la trace, accès par rôle | — |",
+   "apres": "| Contenu nécessaire à l'évaluation | Stockage distinct, référence dans la trace, accès par rôle [É] | — |",
+   "motif": "Ligne « Contenu nécessaire à l'évaluation » : [É], section 33.4, sources [5][12] (convention OpenTelemetry, attributs _ref; accès par rôle chez Nubank; patron à deux zones = synthèse)."
+  },
+  {
+   "fichier": "chapitre-33-observabilite-evaluation.md",
+   "avant": "| Corrélation de bout en bout | Identifiant d'affaires sur chaque span racine et chaque événement | Flux entièrement synchrone : le contexte de trace suffit |",
+   "apres": "| Corrélation de bout en bout | Identifiant d'affaires sur chaque span racine et chaque événement [S] | Flux entièrement synchrone : le contexte de trace suffit |",
+   "motif": "Ligne « Corrélation de bout en bout » : [S], section 33.3, aucune source directe (conséquence d'architecture du chapitre; [3][7][8] décrivent les limites du contexte de trace)."
+  },
+  {
+   "fichier": "chapitre-33-observabilite-evaluation.md",
+   "avant": "| Piste d'audit | Distincte de la trace, jamais échantillonnée | — |",
+   "apres": "| Piste d'audit | Distincte de la trace, jamais échantillonnée [S] | — |",
+   "motif": "Ligne « Piste d'audit » : [S], section 33.1, source [12] (séparation trace et piste d'audit = synthèse selon les Limites; Nubank décrit seulement un journal d'appels)."
+  },
+  {
+   "fichier": "chapitre-33-observabilite-evaluation.md",
+   "avant": "| Évaluateur | Règles, puis juge étalonné (réétalonné à chaque changement de modèle juge), puis expert sur les cas incertains | Faible volume ou risque élevé : revue humaine intégrale |",
+   "apres": "| Évaluateur | Règles, puis juge étalonné (réétalonné à chaque changement de modèle juge), puis expert sur les cas incertains [S] | Faible volume ou risque élevé : revue humaine intégrale |",
+   "motif": "Ligne « Évaluateur » : [S], sections 33.5 et 33.6, sources [11][12] (l'ordre des évaluateurs est une synthèse selon les Limites; éléments mesurés séparément)."
+  },
+  {
+   "fichier": "chapitre-33-observabilite-evaluation.md",
+   "avant": "| Critère de réussite | État final vérifiable, sur plusieurs essais | Tâche sans état observable : grille de critères jugée |",
+   "apres": "| Critère de réussite | État final vérifiable, sur plusieurs essais [M] | Tâche sans état observable : grille de critères jugée |",
+   "motif": "Ligne « Critère de réussite » : [M], section 33.5, source [13] (τ-bench : succès jugé sur l'état final, pass^k; étude relue au-delà du résumé)."
+  },
+  {
+   "fichier": "chapitre-33-observabilite-evaluation.md",
+   "avant": "| Banc d'essai | Interne, tiré des traces de production | Présélection d'un modèle : banc public |",
+   "apres": "| Banc d'essai | Interne, tiré des traces de production [M] | Présélection d'un modèle : banc public |",
+   "motif": "Ligne « Banc d'essai » : [M], section 33.7, sources [11][14] (étude MAP : vingt cas et sondage, raisons d'écarter les bancs publics; EnterpriseBench)."
+  },
+  {
+   "fichier": "chapitre-33-observabilite-evaluation.md",
+   "avant": "| Mise en service d'une variante | Filtre hors ligne, puis fraction du trafic | — |",
+   "apres": "| Mise en service d'une variante | Filtre hors ligne, puis fraction du trafic [M] | — |",
+   "motif": "Ligne « Mise en service d'une variante » : [M], section 33.6, source [12] (Nubank : filtre hors ligne puis 1 % du trafic; un seul déploiement, corrélation sans coefficient)."
+  },
+  {
+   "fichier": "chapitre-34-exploitation.md",
+   "avant": "| Indicateur principal | Succès vérifié par contrôle déterministe du système cible | Pas d'état final vérifiable : échantillon humain et juges étalonnés |",
+   "apres": "| Indicateur principal | Succès vérifié par contrôle déterministe du système cible [M] | Pas d'état final vérifiable : échantillon humain et juges étalonnés |",
+   "motif": "Ligne « Indicateur principal » : [M], section 34.3, source [4] (simulation de 2 100 incidents et étude citée sur les faux succès; auteur unique, hypothèses synthétiques)."
+  },
+  {
+   "fichier": "chapitre-34-exploitation.md",
+   "avant": "| Unité de version | Manifeste unique : modèle, prompts, schémas d'outils, politiques | — |",
+   "apres": "| Unité de version | Manifeste unique : modèle, prompts, schémas d'outils, politiques [S] | — |",
+   "motif": "Ligne « Unité de version » : [S], section 34.2, aucune source directe (manifeste de version proposé par le chapitre, selon les Limites)."
+  },
+  {
+   "fichier": "chapitre-34-exploitation.md",
+   "avant": "| Mise en production | Suite rejouée avec seuil sur pass^k, puis canari | Lecture seule à faible enjeu : essai simple |",
+   "apres": "| Mise en production | Suite rejouée avec seuil sur pass^k, puis canari [S] | Lecture seule à faible enjeu : essai simple |",
+   "motif": "Ligne « Mise en production » : [S], section 34.2, sources [4][5] (barrière de rejeu et canari proposés, seuil illustratif; la barrière n'est pas mesurée)."
+  },
+  {
+   "fichier": "chapitre-34-exploitation.md",
+   "avant": "| Après un changement | Probation supervisée, seuil d'alerte abaissé | Changements très fréquents : les regrouper |",
+   "apres": "| Après un changement | Probation supervisée, seuil d'alerte abaissé [M] | Changements très fréquents : les regrouper |",
+   "motif": "Ligne « Après un changement » : [M], section 34.4, source [4] (simulation : détection médiane de 3,6-6,0 h ramenée à 44-63 min, 1,14 fausse alerte par 30 jours)."
+  },
+  {
+   "fichier": "chapitre-34-exploitation.md",
+   "avant": "| Autonomie | Réglée par le budget; descente automatique, remontée après rejeu et période calme | Preuve insuffisante pour le palier : rester au palier inférieur |",
+   "apres": "| Autonomie | Réglée par le budget; descente automatique, remontée après rejeu et période calme [S] | Preuve insuffisante pour le palier : rester au palier inférieur |",
+   "motif": "Ligne « Autonomie » : [S], section 34.4, sources [4][5][6] (politique d'un seul auteur; rapprochement avec le contrat d'assurance = proposition du chapitre)."
+  },
+  {
+   "fichier": "chapitre-34-exploitation.md",
+   "avant": "| Écriture dans un système | Séparation proposer-exécuter, barrière hors du modèle | Aucun cas |",
+   "apres": "| Écriture dans un système | Séparation proposer-exécuter, barrière hors du modèle [S] | Aucun cas |",
+   "motif": "Ligne « Écriture dans un système » : [S], section 34.6, sources [4][5] (relevé et politique; aucune boucle fermée validée de façon indépendante)."
+  },
+  {
+   "fichier": "chapitre-34-exploitation.md",
+   "avant": "| Arrêt d'urgence | Passerelle ou révocation des jetons | Site déconnecté : arrêt local |",
+   "apres": "| Arrêt d'urgence | Passerelle ou révocation des jetons [S] | Site déconnecté : arrêt local |",
+   "motif": "Ligne « Arrêt d'urgence » : [S], section 34.6, source [8] (l'article 14 exige un arrêt, non le mécanisme; arrêt à la passerelle = proposition du chapitre)."
+  },
+  {
+   "fichier": "chapitre-34-exploitation.md",
+   "avant": "| Analyse rétrospective | Incident qui consomme plus de 20 % du budget | Toute violation de garde-fou |",
+   "apres": "| Analyse rétrospective | Incident qui consomme plus de 20 % du budget [S] | Toute violation de garde-fou |",
+   "motif": "Ligne « Analyse rétrospective » : [S], section 34.5, source [6] (seuil de 20 % de la politique de Google, transposé aux agents par le chapitre selon les Limites)."
+  },
+  {
+   "fichier": "chapitre-34-exploitation.md",
+   "avant": "| Retour arrière de version | Retour au manifeste antérieur; là où la plateforme offre des versions immuables et des points d'accès nommés [10], repointer le point d'accès | Jamais le point d'accès par défaut en production |",
+   "apres": "| Retour arrière de version | Retour au manifeste antérieur; là où la plateforme offre des versions immuables et des points d'accès nommés [10], repointer le point d'accès [S] | Jamais le point d'accès par défaut en production |",
+   "motif": "Ligne « Retour arrière de version » : [S], sections 34.2 et 34.6, source [10] (manifeste = proposition; repointage du point d'accès déduit d'une page AWS qui ne parle pas de retour arrière)."
+  },
+  {
+   "fichier": "chapitre-35-cadres-internationaux.md",
+   "avant": "| Cadre interne | Un seul dispositif, calé sur l'exigence applicable la plus stricte, avec Singapour comme guide de mise en œuvre | Activité sans lien avec l'UE : le cadre local prime (chapitre 38) |",
+   "apres": "| Cadre interne | Un seul dispositif, calé sur l'exigence applicable la plus stricte, avec Singapour comme guide de mise en œuvre [S] | Activité sans lien avec l'UE : le cadre local prime (chapitre 38) |",
+   "motif": "Ligne « Cadre interne » : [S], section 35.6, source [4] (dispositif unique et table de correspondance = lecture du chapitre; cadre de Singapour non contraignant)."
+  },
+  {
+   "fichier": "chapitre-35-cadres-internationaux.md",
+   "avant": "| Classement d'un agent | Par cas d'usage, raisonnement documenté | Agent généraliste : borner la destination, sinon évaluer le pire usage prévisible |",
+   "apres": "| Classement d'un agent | Par cas d'usage, raisonnement documenté [S] | Agent généraliste : borner la destination, sinon évaluer le pire usage prévisible |",
+   "motif": "Ligne « Classement d'un agent » : [S], section 35.1, source [1] (articles 6 et 9 rapportés d'après la prépublication; texte de l'AI Act non lu)."
+  },
+  {
+   "fichier": "chapitre-35-cadres-internationaux.md",
+   "avant": "| Calendrier européen | Viser décembre 2027 et août 2028, en commençant maintenant | Transparence de l'article 50 : déjà applicable |",
+   "apres": "| Calendrier européen | Viser décembre 2027 et août 2028, en commençant maintenant [N] | Transparence de l'article 50 : déjà applicable |",
+   "motif": "Ligne « Calendrier européen » : [N], section 35.2, sources [2][3] (règlement (UE) 2026/1744, dates de l'article 113 modifié, relues dans [3])."
+  },
+  {
+   "fichier": "chapitre-35-cadres-internationaux.md",
+   "avant": "| Lacunes des normes harmonisées | Spécifications internes pour l'orchestration, l'état entre sessions et la découverte d'outils | — |",
+   "apres": "| Lacunes des normes harmonisées | Spécifications internes pour l'orchestration, l'état entre sessions et la découverte d'outils [S] | — |",
+   "motif": "Ligne « Lacunes des normes harmonisées » : [S], section 35.1, source [1] (état des prEN de janvier 2026 et recommandation rapportés d'après la prépublication; projets non consultés)."
+  },
+  {
+   "fichier": "chapitre-35-cadres-internationaux.md",
+   "avant": "| Dérive de comportement | Enveloppe de comportement documentée et détection continue | Haut risque avec apprentissage continu : s'abstenir tant que la méthode d'évaluation manque |",
+   "apres": "| Dérive de comportement | Enveloppe de comportement documentée et détection continue [S] | Haut risque avec apprentissage continu : s'abstenir tant que la méthode d'évaluation manque |",
+   "motif": "Ligne « Dérive de comportement » : [S], section 35.1, source [1] (articles 3(23) et 43(4) rapportés d'après la prépublication)."
+  },
+  {
+   "fichier": "chapitre-35-cadres-internationaux.md",
+   "avant": "| Supervision humaine | Approbation aux actions à fort enjeu ou irréversibles; refus par défaut si l'approbation est indisponible | Action réversible et à faible enjeu : vérification après coup |",
+   "apres": "| Supervision humaine | Approbation aux actions à fort enjeu ou irréversibles; refus par défaut si l'approbation est indisponible [N] | Action réversible et à faible enjeu : vérification après coup |",
+   "motif": "Ligne « Supervision humaine » : [N], section 35.3, source [4] (cadre de l'IMDA : approbation aux points à fort enjeu, refus par défaut; ligne directrice non contraignante)."
+  },
+  {
+   "fichier": "chapitre-35-cadres-internationaux.md",
+   "avant": "| Certification ISO/IEC 42001 | À rechercher si les clients ou le marché la demandent | Ne pas la présenter comme preuve de conformité à l'AI Act |",
+   "apres": "| Certification ISO/IEC 42001 | À rechercher si les clients ou le marché la demandent [S] | Ne pas la présenter comme preuve de conformité à l'AI Act |",
+   "motif": "Ligne « Certification ISO/IEC 42001 » : [S], section 35.4, sources [1][10] (norme non lue; lien avec l'AI Act d'après la prépublication; conseil commercial)."
+  },
+  {
+   "fichier": "chapitre-35-cadres-internationaux.md",
+   "avant": "| NIST AI RMF | Vocabulaire commun avec des partenaires américains | Attendre la révision avant d'y aligner un outillage coûteux |",
+   "apres": "| NIST AI RMF | Vocabulaire commun avec des partenaires américains [S] | Attendre la révision avant d'y aligner un outillage coûteux |",
+   "motif": "Ligne « NIST AI RMF » : [S], section 35.5, source [5] (vocabulaire commun = lecture du chapitre; page de présentation seulement)."
+  },
+  {
+   "fichier": "chapitre-35-cadres-internationaux.md",
+   "avant": "| Activité en Corée, au Japon, au Royaume-Uni ou en Chine | Vérifier le texte local, à partir du relevé de la section 35.7 | — |",
+   "apres": "| Activité en Corée, au Japon, au Royaume-Uni ou en Chine | Vérifier le texte local, à partir du relevé de la section 35.7 [S] | — |",
+   "motif": "Ligne « Activité en Corée, au Japon, au Royaume-Uni ou en Chine » : [S], section 35.7, sources [11] à [15] (une source par juridiction, surtout secondaires; renvoi aux textes locaux)."
+  },
+  {
+   "fichier": "chapitre-36-responsabilite.md",
+   "avant": "| Autorité de l'agent | Limites écrites par agent, alignées sur les portées techniques | Agent purement consultatif, sans capacité d'agir |",
+   "apres": "| Autorité de l'agent | Limites écrites par agent, alignées sur les portées techniques [S] | Agent purement consultatif, sans capacité d'agir |",
+   "motif": "Ligne « Autorité de l'agent » : [S], section 36.2, source [7] (recommandation d'un cabinet; traduction en architecture = déduction du chapitre)."
+  },
+  {
+   "fichier": "chapitre-36-responsabilite.md",
+   "avant": "| Engagements contractuels par agent | Approbation humaine au-delà d'un seuil de montant ou de risque | Achats répétitifs de faible valeur sous mandat étroit |",
+   "apres": "| Engagements contractuels par agent | Approbation humaine au-delà d'un seuil de montant ou de risque [S] | Achats répétitifs de faible valeur sous mandat étroit |",
+   "motif": "Ligne « Engagements contractuels par agent » : [S], section 36.3, aucune source directe (déduction du chapitre)."
+  },
+  {
+   "fichier": "chapitre-36-responsabilite.md",
+   "avant": "| Accès aux systèmes de tiers | Vérifier l'autorisation du tiers, non seulement celle de l'utilisateur | Interface que le tiers ouvre expressément aux agents |",
+   "apres": "| Accès aux systèmes de tiers | Vérifier l'autorisation du tiers, non seulement celle de l'utilisateur [S] | Interface que le tiers ouvre expressément aux agents |",
+   "motif": "Ligne « Accès aux systèmes de tiers » : [S], section 36.2, source [7] (injonction rapportée d'après un cabinet; décision non lue, suspendue en appel)."
+  },
+  {
+   "fichier": "chapitre-36-responsabilite.md",
+   "avant": "| Preuve | Journaux et traces conservés, exploitables en litige | — |",
+   "apres": "| Preuve | Journaux et traces conservés, exploitables en litige [S] | — |",
+   "motif": "Ligne « Preuve » : [S], sections 36.4 et 36.6, sources [2][6][9] (directive, art. 9-10 : divulgation de preuves lue, mais la conservation de journaux en est une inférence)."
+  },
+  {
+   "fichier": "chapitre-36-responsabilite.md",
+   "avant": "| Offre d'agents en Europe | Se traiter comme fabricant au sens de la directive de 2024 | Usage strictement interne |",
+   "apres": "| Offre d'agents en Europe | Se traiter comme fabricant au sens de la directive de 2024 [N] | Usage strictement interne |",
+   "motif": "Ligne « Offre d'agents en Europe » : [N], section 36.4, source [2] (directive (UE) 2024/2853, art. 4 : le logiciel est un produit, régime du fabricant; texte lu sur EUR-Lex)."
+  },
+  {
+   "fichier": "chapitre-36-responsabilite.md",
+   "avant": "| Contrats fournisseurs | Clauses propres aux agents : autorité, journaux, arrêt, indemnités | Outil standard non négociable : réduire la portée de l'agent |",
+   "apres": "| Contrats fournisseurs | Clauses propres aux agents : autorité, journaux, arrêt, indemnités [S] | Outil standard non négociable : réduire la portée de l'agent |",
+   "motif": "Ligne « Contrats fournisseurs » : [S], section 36.6, sources [6][9] (analyses de la CSA et d'un cabinet; ni texte normatif ni décision)."
+  },
+  {
+   "fichier": "chapitre-36-responsabilite.md",
+   "avant": "| Assurance | Revue des exclusions IA à chaque renouvellement | — |",
+   "apres": "| Assurance | Revue des exclusions IA à chaque renouvellement [S] | — |",
+   "motif": "Ligne « Assurance » : [S], section 36.5, sources [6][10] (avenants de Verisk connus par la presse; précautions par déduction)."
+  },
+  {
+   "fichier": "chapitre-36-responsabilite.md",
+   "avant": "| Agents de deux organisations | Contrat-cadre sur l'engagement, la preuve et l'erreur | Échanges sans effet juridique |",
+   "apres": "| Agents de deux organisations | Contrat-cadre sur l'engagement, la preuve et l'erreur [S] | Échanges sans effet juridique |",
+   "motif": "Ligne « Agents de deux organisations » : [S], sections 36.3 et 36.6, source [5] (contrat-cadre = déduction « non une pratique documentée »; loi type non applicable, page de présentation)."
+  },
+  {
+   "fichier": "chapitre-37-souverainete.md",
+   "avant": "| Critère de souveraineté | Contrôle juridictionnel, en plus de la résidence | Données non sensibles : la résidence suffit |",
+   "apres": "| Critère de souveraineté | Contrôle juridictionnel, en plus de la résidence [N] | Données non sensibles : la résidence suffit |",
+   "motif": "Ligne « Critère de souveraineté » : [N], section 37.1, sources [1][2] (18 U.S.C. § 2713 et Data Act, art. 32, lus; cadre de la Commission [3])."
+  },
+  {
+   "fichier": "chapitre-37-souverainete.md",
+   "avant": "| Périmètre de l'analyse | Inférence, orchestration, mémoire, outils et traces | — |",
+   "apres": "| Périmètre de l'analyse | Inférence, orchestration, mémoire, outils et traces [S] | — |",
+   "motif": "Ligne « Périmètre de l'analyse » : [S], section 37.5, aucune source (grille de composants proposée par le chapitre, selon les Limites)."
+  },
+  {
+   "fichier": "chapitre-37-souverainete.md",
+   "avant": "| Hébergement du modèle | Selon la classe de données, avec routage à la passerelle | Une seule classe de données |",
+   "apres": "| Hébergement du modèle | Selon la classe de données, avec routage à la passerelle [S] | Une seule classe de données |",
+   "motif": "Ligne « Hébergement du modèle » : [S], section 37.5, aucune source directe (routage selon la classe de données = raisonnement du chapitre)."
+  },
+  {
+   "fichier": "chapitre-37-souverainete.md",
+   "avant": "| Données réglementées ou stratégiques | Fournisseur sous contrôle local ou modèle autohébergé | Clés du client, si la donnée n'atteint pas l'inférence |",
+   "apres": "| Données réglementées ou stratégiques | Fournisseur sous contrôle local ou modèle autohébergé [S] | Clés du client, si la donnée n'atteint pas l'inférence |",
+   "motif": "Ligne « Données réglementées ou stratégiques » : [S], section 37.5, sources [5][9] (choix entre options du chapitre; critères du label 3 attestés par déclaration, article de position)."
+  },
+  {
+   "fichier": "chapitre-37-souverainete.md",
+   "avant": "| Évaluation d'un fournisseur | Grille par objectifs, de type Cloud Sovereignty Framework | Hors UE : adapter les seuils |",
+   "apres": "| Évaluation d'un fournisseur | Grille par objectifs, de type Cloud Sovereignty Framework [N] | Hors UE : adapter les seuils |",
+   "motif": "Ligne « Évaluation d'un fournisseur » : [N], section 37.1, source [3] (Cloud Sovereignty Framework 1.2.1 de la Commission, lu en texte intégral; instrument d'achat public)."
+  },
+  {
+   "fichier": "chapitre-37-souverainete.md",
+   "avant": "| Partage entre organisations | Espace de données, agent derrière un connecteur et sous identité déléguée | Échange bilatéral ponctuel |",
+   "apres": "| Partage entre organisations | Espace de données, agent derrière un connecteur et sous identité déléguée [M] | Échange bilatéral ponctuel |",
+   "motif": "Ligne « Partage entre organisations » : [M], section 37.3, source [11] (prépublication : 600 exécutions, 88,7 % de réussite, aucune violation; banc étroit), avec [7][10] (IDSA)."
+  },
+  {
+   "fichier": "chapitre-37-souverainete.md",
+   "avant": "| Preuve de souveraineté d'un fournisseur européen | Qualification nationale existante, comme SecNumCloud | Niveau d'assurance de l'Union, si le règlement proposé est adopté |",
+   "apres": "| Preuve de souveraineté d'un fournisseur européen | Qualification nationale existante, comme SecNumCloud [S] | Niveau d'assurance de l'Union, si le règlement proposé est adopté |",
+   "motif": "Ligne « Preuve de souveraineté d'un fournisseur européen » : [S], sections 37.1 et 37.5, sources [12][13][14][15] (SecNumCloud connu par deux commentaires de cabinet, référentiel non chargé; proposition non adoptée)."
+  },
+  {
+   "fichier": "chapitre-38-canada-quebec.md",
+   "avant": "| Référentiel de contrôles, faute de loi sur l'IA | Socle commun des guides fédéral et québécois | Secteur doté d'un cadre plus strict, comme E-23 |",
+   "apres": "| Référentiel de contrôles, faute de loi sur l'IA | Socle commun des guides fédéral et québécois [N] | Secteur doté d'un cadre plus strict, comme E-23 |",
+   "motif": "Ligne « Référentiel de contrôles, faute de loi sur l'IA » : [N], section 38.5, sources [5][13] (guides fédéral et québécois, lus; non contraignants pour le privé, socle commun = lecture du chapitre)."
+  },
+  {
+   "fichier": "chapitre-38-canada-quebec.md",
+   "avant": "| Décision visant une personne | Validation humaine réelle avant la décision | Automatisation complète assumée : appliquer l'article 12.1 en entier |",
+   "apres": "| Décision visant une personne | Validation humaine réelle avant la décision [S] | Automatisation complète assumée : appliquer l'article 12.1 en entier |",
+   "motif": "Ligne « Décision visant une personne » : [S], section 38.4, sources [9][10] (l'art. 12.1 vise la décision exclusivement automatisée; la lecture de « exclusivement » vient d'une page sur l'art. 65.2, transposée par analogie)."
+  },
+  {
+   "fichier": "chapitre-38-canada-quebec.md",
+   "avant": "| Logique de décision | Composant déterministe; l'agent réunit les faits | Aucune décision individuelle en jeu |",
+   "apres": "| Logique de décision | Composant déterministe; l'agent réunit les faits [S] | Aucune décision individuelle en jeu |",
+   "motif": "Ligne « Logique de décision » : [S], section 38.4, aucune source directe (inférence du chapitre)."
+  },
+  {
+   "fichier": "chapitre-38-canada-quebec.md",
+   "avant": "| Première mise en œuvre | Pilote interne, réversible, plafonné | Encadrement renforcé et validation spécialisée |",
+   "apres": "| Première mise en œuvre | Pilote interne, réversible, plafonné [N] | Encadrement renforcé et validation spécialisée |",
+   "motif": "Ligne « Première mise en œuvre » : [N], section 38.5, source [13] (guide du MCN : parcours en trois étapes, pilotes internes réversibles et plafonnés)."
+  },
+  {
+   "fichier": "chapitre-38-canada-quebec.md",
+   "avant": "| Inférence et outils hors Québec | EFVP préalable et entente écrite | Aucun renseignement personnel dans le flux |",
+   "apres": "| Inférence et outils hors Québec | EFVP préalable et entente écrite [N] | Aucun renseignement personnel dans le flux |",
+   "motif": "Ligne « Inférence et outils hors Québec » : [N], section 38.6, source [9] (Loi 25, art. 17 : EFVP et entente écrite; cité d'après le texte sanctionné de 2021)."
+  },
+  {
+   "fichier": "chapitre-38-canada-quebec.md",
+   "avant": "| Marché public québécois | Hébergement au Québec, fournisseur québécois ou canadien | Justification documentée par l'organisme |",
+   "apres": "| Marché public québécois | Hébergement au Québec, fournisseur québécois ou canadien [N] | Justification documentée par l'organisme |",
+   "motif": "Ligne « Marché public québécois » : [N], section 38.6, source [12] (Énoncé de principes 2025, annexe de l'arrêté 2025-02, douzième principe; lu en texte intégral)."
+  },
+  {
+   "fichier": "chapitre-38-canada-quebec.md",
+   "avant": "| Institution financière fédérale | Agents inscrits à l'inventaire E-23 dès maintenant | — |",
+   "apres": "| Institution financière fédérale | Agents inscrits à l'inventaire E-23 dès maintenant [N] | — |",
+   "motif": "Ligne « Institution financière fédérale » : [N], section 38.3, sources [7][8] (ligne directrice E-23 du BSIF : inventaire; application aux agents = lecture du chapitre)."
+  },
+  {
+   "fichier": "chapitre-38-canada-quebec.md",
+   "avant": "| Institution financière à charte québécoise | Répertoire des systèmes d'IA et cote de risque par système pour le 1er mai 2027, à rapprocher de l'inventaire E-23 | Texte de l'AMF non lu : le vérifier avant d'arrêter le périmètre |",
+   "apres": "| Institution financière à charte québécoise | Répertoire des systèmes d'IA et cote de risque par système pour le 1er mai 2027, à rapprocher de l'inventaire E-23 [S] | Texte de l'AMF non lu : le vérifier avant d'arrêter le périmètre |",
+   "motif": "Ligne « Institution financière à charte québécoise » : [S], section 38.3, sources [20][21] (ligne directrice de l'AMF non lue; deux analyses de cabinets)."
+  },
+  {
+   "fichier": "chapitre-38-canada-quebec.md",
+   "avant": "| Gestion de portefeuille discrétionnaire | Décision finale prise par une personne physique inscrite | — |",
+   "apres": "| Gestion de portefeuille discrétionnaire | Décision finale prise par une personne physique inscrite [N] | — |",
+   "motif": "Ligne « Gestion de portefeuille discrétionnaire » : [N], section 38.3, source [19] (avis 11-348 du personnel des ACVM, copie officielle lue par passages; indication du personnel, non une règle)."
+  },
+  {
+   "fichier": "chapitre-38-canada-quebec.md",
+   "avant": "| Ajout d'un outil à un agent | Réévaluation du risque et de l'EFVP | Outil sans accès à des données ni à des actions sensibles |",
+   "apres": "| Ajout d'un outil à un agent | Réévaluation du risque et de l'EFVP [S] | Outil sans accès à des données ni à des actions sensibles |",
+   "motif": "Ligne « Ajout d'un outil à un agent » : [S], sections 38.2 et 38.6, aucune source directe (« changement de portée » et nouveau trajet : lectures du chapitre selon les Limites)."
+  },
+  {
+   "fichier": "chapitre-38-canada-quebec.md",
+   "avant": "| Mémoire et traces d'un agent | Durée fixée par finalité, puis destruction ou anonymisation | Délai de conservation imposé par une loi |",
+   "apres": "| Mémoire et traces d'un agent | Durée fixée par finalité, puis destruction ou anonymisation [N] | Délai de conservation imposé par une loi |",
+   "motif": "Ligne « Mémoire et traces d'un agent » : [N], section 38.4, source [9] (Loi 25, art. 23 : destruction ou anonymisation; application à la mémoire = lecture; texte de 2021)."
+  },
+  {
+   "fichier": "chapitre-39-gouvernance-interne.md",
+   "avant": "| Inventaire | Un inventaire de gouvernance unique, alimenté par les registres des plateformes | Une seule plateforme : son registre, complété des champs manquants |",
+   "apres": "| Inventaire | Un inventaire de gouvernance unique, alimenté par les registres des plateformes [N] | Une seule plateforme : son registre, complété des champs manquants |",
+   "motif": "Ligne « Inventaire » : [N], section 39.1, sources [3][5][6] (guide du MCN, NIST AI RMF, E-23; l'inventaire de gouvernance agrégé est une construction du chapitre)."
+  },
+  {
+   "fichier": "chapitre-39-gouvernance-interne.md",
+   "avant": "| Agents non déclarés | Découverte par les journaux d'identité et de passerelle, puis inscription ou blocage | — |",
+   "apres": "| Agents non déclarés | Découverte par les journaux d'identité et de passerelle, puis inscription ou blocage [S] | — |",
+   "motif": "Ligne « Agents non déclarés » : [S], section 39.1, aucune source directe (« aucun cadre lu ne la décrit »; raisonnement du chapitre)."
+  },
+  {
+   "fichier": "chapitre-39-gouvernance-interne.md",
+   "avant": "| Responsable | Un propriétaire d'affaires et un responsable technique nommés | Agent personnel à faible risque : le créateur tient les deux rôles |",
+   "apres": "| Responsable | Un propriétaire d'affaires et un responsable technique nommés [N] | Agent personnel à faible risque : le créateur tient les deux rôles |",
+   "motif": "Ligne « Responsable » : [N], section 39.3, sources [3][4] (guide du MCN : propriétaire et responsable technologique; guide fédéral)."
+  },
+  {
+   "fichier": "chapitre-39-gouvernance-interne.md",
+   "avant": "| Départ du responsable | Suspension jusqu'à réattribution | Parrainage par un groupe, si une personne répondante y est désignée |",
+   "apres": "| Départ du responsable | Suspension jusqu'à réattribution [N] | Parrainage par un groupe, si une personne répondante y est désignée |",
+   "motif": "Ligne « Départ du responsable » : [N], section 39.3, source [4] (guide fédéral : remplaçant, suspension, réaffectation ou désactivation)."
+  },
+  {
+   "fichier": "chapitre-39-gouvernance-interne.md",
+   "avant": "| Autorisation | Portes de qualification, de pilote et de production | Usage interne et réversible : approbation déléguée, documentation légère |",
+   "apres": "| Autorisation | Portes de qualification, de pilote et de production [N] | Usage interne et réversible : approbation déléguée, documentation légère |",
+   "motif": "Ligne « Autorisation » : [N], section 39.2, source [3] (guide du MCN : parcours d'autorisation en trois étapes)."
+  },
+  {
+   "fichier": "chapitre-39-gouvernance-interne.md",
+   "avant": "| Instance | Multidisciplinaire, saisie selon la cote de risque | Petite organisation : un responsable désigné et des avis ponctuels |",
+   "apres": "| Instance | Multidisciplinaire, saisie selon la cote de risque [N] | Petite organisation : un responsable désigné et des avis ponctuels |",
+   "motif": "Ligne « Instance » : [N], section 39.4, sources [3][6] (MCN : gouvernance multidisciplinaire; E-23 : la cote de risque fixe le niveau d'approbation; structure à trois niveaux = déduction)."
+  },
+  {
+   "fichier": "chapitre-39-gouvernance-interne.md",
+   "avant": "| Changement | Revue déclenchée par tout changement de modèle, d'outil ou de source de données | Routage entre modèles : revue de la politique et des modèles qualifiés |",
+   "apres": "| Changement | Revue déclenchée par tout changement de modèle, d'outil ou de source de données [N] | Routage entre modèles : revue de la politique et des modèles qualifiés |",
+   "motif": "Ligne « Changement » : [N], section 39.2, sources [2][3] (MCN : versionner et réévaluer; Singapour : déclencheurs de revue; exception du routage = déduction)."
+  },
+  {
+   "fichier": "chapitre-39-gouvernance-interne.md",
+   "avant": "| Assurance | Audit interne, sur l'inventaire, les portes et la supervision effective | Petite organisation : revue par une personne étrangère à l'exploitation des agents |",
+   "apres": "| Assurance | Audit interne, sur l'inventaire, les portes et la supervision effective [S] | Petite organisation : revue par une personne étrangère à l'exploitation des agents |",
+   "motif": "Ligne « Assurance » : [S], section 39.6, source [12] (les trois vérifications de l'audit interne sont des propositions du chapitre; modèle de l'IIA transposé)."
+  },
+  {
+   "fichier": "chapitre-40-finops-agentique.md",
+   "avant": "| Unité de compte | Coût par résultat réussi | Pilote sans barre de qualité : coût par exécution |",
+   "apres": "| Unité de compte | Coût par résultat réussi [É] | Pilote sans barre de qualité : coût par exécution |",
+   "motif": "Ligne « Unité de compte » : [É], section 40.5, source [5] (page de la FinOps Foundation; l'illustration chiffrée est un calcul du chapitre)."
+  },
+  {
+   "fichier": "chapitre-40-finops-agentique.md",
+   "avant": "| Clé d'imputation | Identité d'agent, exécution, centre de coûts | Agent unique : clé d'API dédiée |",
+   "apres": "| Clé d'imputation | Identité d'agent, exécution, centre de coûts [S] | Agent unique : clé d'API dédiée |",
+   "motif": "Ligne « Clé d'imputation » : [S], section 40.2, aucune source directe (assemblage = synthèse, « pas une norme »)."
+  },
+  {
+   "fichier": "chapitre-40-finops-agentique.md",
+   "avant": "| Point de mesure | Passerelle et traces, rapprochées de la facture | Très petit parc : rapports du fournisseur |",
+   "apres": "| Point de mesure | Passerelle et traces, rapprochées de la facture [S] | Très petit parc : rapports du fournisseur |",
+   "motif": "Ligne « Point de mesure » : [S], section 40.2, source [12] (la doc Azure montre la capacité d'une passerelle, non le choix; synthèse du chapitre)."
+  },
+  {
+   "fichier": "chapitre-40-finops-agentique.md",
+   "avant": "| Refacturation | Affichage des coûts seulement | Clé d'imputation éprouvée |",
+   "apres": "| Refacturation | Affichage des coûts seulement [S] | Clé d'imputation éprouvée |",
+   "motif": "Ligne « Refacturation » : [S], section 40.2, aucune source directe (règle prudente du chapitre)."
+  },
+  {
+   "fichier": "chapitre-40-finops-agentique.md",
+   "avant": "| Plafonds | Par exécution et par période, sur l'identité de l'agent | — |",
+   "apres": "| Plafonds | Par exécution et par période, sur l'identité de l'agent [S] | — |",
+   "motif": "Ligne « Plafonds » : [S], section 40.3, sources [5][12] (choix de conception du chapitre selon les Limites)."
+  },
+  {
+   "fichier": "chapitre-40-finops-agentique.md",
+   "avant": "| Épuisement du budget | Vérification avant l'étape chère, puis recours à un humain | Faible enjeu : bascule vers un modèle moins cher |",
+   "apres": "| Épuisement du budget | Vérification avant l'étape chère, puis recours à un humain [S] | Faible enjeu : bascule vers un modèle moins cher |",
+   "motif": "Ligne « Épuisement du budget » : [S], section 40.3, aucune source directe (choix de conception du chapitre)."
+  },
+  {
+   "fichier": "chapitre-40-finops-agentique.md",
+   "avant": "| Achat d'un agent | Consommation plafonnée | Résultat, si le client peut le vérifier; siège, si l'usage est massif et régulier |",
+   "apres": "| Achat d'un agent | Consommation plafonnée [S] | Résultat, si le client peut le vérifier; siège, si l'usage est massif et régulier |",
+   "motif": "Ligne « Achat d'un agent » : [S], section 40.4, sources [2][4][8][9] (prix de liste et billets d'éditeurs; conséquences contractuelles = synthèse selon les Limites)."
+  },
+  {
+   "fichier": "chapitre-40-finops-agentique.md",
+   "avant": "| Ordre des leviers | Cache de prompts, lots, routage, topologie | Tâche interactive : pas de lots |",
+   "apres": "| Ordre des leviers | Cache de prompts, lots, routage, topologie [S] | Tâche interactive : pas de lots |",
+   "motif": "Ligne « Ordre des leviers » : [S], section 40.6, sources [3][7] (ordre = synthèse selon les Limites; effets mesurés séparément)."
+  },
+  {
+   "fichier": "chapitre-40-finops-agentique.md",
+   "avant": "| Système multi-agents | Seulement si la valeur de la tâche paie le surcoût | — |",
+   "apres": "| Système multi-agents | Seulement si la valeur de la tâche paie le surcoût [M] | — |",
+   "motif": "Ligne « Système multi-agents » : [M], sections 40.1 et 40.5, sources [3][6] (banc d'essai sur le coût par topologie; mesure interne d'Anthropic : ×15 en jetons, 80 % de la variance)."
+  }
+ ]
+}

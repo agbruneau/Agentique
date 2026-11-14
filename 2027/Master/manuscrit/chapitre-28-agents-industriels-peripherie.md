@@ -132,15 +132,15 @@ La réponse à la question directrice est donc nuancée. Les mêmes protocoles v
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Rôle de l'agent en exploitation | Aide à la décision : lire, expliquer, proposer | Commande simple sur installation d'essai, confirmée par l'opérateur |
-| Accès aux équipements | Adaptateur MCP au-dessus d'OPC UA, sans modifier les automates | Équipement sans OPC UA : adaptateur propre au protocole |
-| Écritures | Désactivées par défaut; activées par outil et par appelant | — |
-| Fonctions de sûreté | Hors de portée de tout agent | Aucun cas |
-| Validation humaine | Obligatoire avant toute écriture | Aucun cas en exploitation |
-| Échec ou délai sur une écriture | Pas de nouvel essai automatique; relire l'état | Écriture démontrée idempotente |
-| Couche sémantique | OPC UA pour le procédé; AAS pour la description des actifs | Parc sans modèle : modéliser d'abord |
-| Emplacement | Adaptateur en atelier; modèle au centre de données | Site isolé ou données sensibles : modèle local |
-| Provenance de l'adaptateur | Organisme de normalisation ou éditeur, version épinglée | Adaptateur communautaire : banc d'essai seulement |
+| Rôle de l'agent en exploitation | Aide à la décision : lire, expliquer, proposer [É] | Commande simple sur installation d'essai, confirmée par l'opérateur |
+| Accès aux équipements | Adaptateur MCP au-dessus d'OPC UA, sans modifier les automates [É] | Équipement sans OPC UA : adaptateur propre au protocole |
+| Écritures | Désactivées par défaut; activées par outil et par appelant [É] | — |
+| Fonctions de sûreté | Hors de portée de tout agent [É] | Aucun cas |
+| Validation humaine | Obligatoire avant toute écriture [É] | Aucun cas en exploitation |
+| Échec ou délai sur une écriture | Pas de nouvel essai automatique; relire l'état [É] | Écriture démontrée idempotente |
+| Couche sémantique | OPC UA pour le procédé; AAS pour la description des actifs [É] | Parc sans modèle : modéliser d'abord |
+| Emplacement | Adaptateur en atelier; modèle au centre de données [É] | Site isolé ou données sensibles : modèle local |
+| Provenance de l'adaptateur | Organisme de normalisation ou éditeur, version épinglée [S] | Adaptateur communautaire : banc d'essai seulement |
 
 ---
 

@@ -1,0 +1,13 @@
+{
+ "id": "P4-1-legende",
+ "origine": "plan 2027, lot P4-1-legende",
+ "categorie": "enrichissement",
+ "remplacements": [
+  {
+   "fichier": "ouverture.md",
+   "avant": "une conjecture.<!-- fin ajout -->\n\n---",
+   "apres": "une conjecture.<!-- fin ajout -->\n- <!-- ajout partie X -->Dans les grilles de décision, une lettre entre crochets suit l’option par défaut et dit sur quoi elle repose : [N] texte normatif ou officiel lu pour le chapitre, [M] mesure ou étude publiée, [É] documentation, annonce ou brouillon d’un éditeur ou d’un projet, [S] synthèse du chapitre, qu’aucune source n’appuie directement.<!-- fin ajout -->\n\n---",
+   "motif": "Lot P4-1 : légende des lettres de niveau de preuve ajoutées aux grilles de décision des cinquante chapitres."
+  }
+ ]
+}

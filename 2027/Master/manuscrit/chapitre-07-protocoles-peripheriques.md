@@ -144,15 +144,15 @@ Appliquée aux cas du chapitre, la grille tranche : AG-UI réussit sur le besoin
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Flux entre agent et interface | AG-UI derrière une couche d'authentification interne; approbations sensibles adossées à un octroi du serveur d'autorisation (chapitre 30) | Interface fournie par la plateforme d'agents : garder son canal natif |
-| Interface générée par l'agent | Format déclaratif à catalogue fermé (A2UI) ou MCP Apps | Jamais de code produit par l'agent sans bac à sable |
-| Version d'AG-UI | Épingler le SDK; isoler les types d'événements dans un module | — |
-| Identité entre organisations | Fournisseur d'identité et fédération existants (chapitre 29) | Contreparties sans tiers commun : comparer vLEI (chapitre 45) et `did:wba`, à l'essai |
-| Méta-protocole d'ANP | Ne pas l'adopter en production | Recherche et prototypes |
-| Découverte entre registres | Registre interne à interface standard (chapitre 8) | Fédération de plusieurs entités : évaluer Agent Directory et OASF |
-| Messagerie entre agents | A2A sur HTTP | Groupes chiffrés de bout en bout entre domaines de confiance : SLIM, à l'essai |
-| Ressource physique ou irréversible | Réservation, approbation liée aux paramètres, résultat typé, mis en œuvre comme outils MCP | — |
-| Nouveau protocole proposé | Refus tant que les sept questions n'ont pas de réponse | Besoin sectoriel sans substitut : adoption confinée et réversible |
+| Flux entre agent et interface | AG-UI derrière une couche d'authentification interne; approbations sensibles adossées à un octroi du serveur d'autorisation (chapitre 30) [É] | Interface fournie par la plateforme d'agents : garder son canal natif |
+| Interface générée par l'agent | Format déclaratif à catalogue fermé (A2UI) ou MCP Apps [É] | Jamais de code produit par l'agent sans bac à sable |
+| Version d'AG-UI | Épingler le SDK; isoler les types d'événements dans un module [S] | — |
+| Identité entre organisations | Fournisseur d'identité et fédération existants (chapitre 29) [S] | Contreparties sans tiers commun : comparer vLEI (chapitre 45) et `did:wba`, à l'essai |
+| Méta-protocole d'ANP | Ne pas l'adopter en production [S] | Recherche et prototypes |
+| Découverte entre registres | Registre interne à interface standard (chapitre 8) [S] | Fédération de plusieurs entités : évaluer Agent Directory et OASF |
+| Messagerie entre agents | A2A sur HTTP [S] | Groupes chiffrés de bout en bout entre domaines de confiance : SLIM, à l'essai |
+| Ressource physique ou irréversible | Réservation, approbation liée aux paramètres, résultat typé, mis en œuvre comme outils MCP [S] | — |
+| Nouveau protocole proposé | Refus tant que les sept questions n'ont pas de réponse [S] | Besoin sectoriel sans substitut : adoption confinée et réversible |
 
 ---
 

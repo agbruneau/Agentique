@@ -293,16 +293,16 @@ Le registre vaut par son entretien. Une ligne dont la source n'a pas été relue
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Organiser la veille | Un registre, un responsable par ligne, une source primaire par ligne | Petite équipe : une revue trimestrielle commune |
-| Traiter une reprise de presse | La tenir pour un signal; remonter à l'émetteur avant d'agir | Source primaire inaccessible : décision réversible seulement |
-| Lire un score de frontière | Le tenir pour une présélection; décider sur son propre banc | Aucun cas |
-| Planifier sur un jalon de normalisation | Le tenir pour une intention; prévoir une solution transitoire documentée | Texte déjà remis à l'IESG ou publié |
-| Planifier sur une échéance réglementaire | Viser la date; produire les preuves en continu | Texte en cours de révision : suivre le réexamen |
-| Acheter un composant d'identité d'agent | Exiger l'agilité cryptographique et une preuve horodatée | Composant à durée de vie inférieure à trois ans |
-| Adopter une technique issue de la recherche | Niveau 3 au moins, essayé sur ses propres tâches | Technique qui renforce un contrôle déterministe existant : essai dès le niveau 2 |
-| Défendre un système multi-agents contre l'injection | Faire suivre la provenance à la donnée, d'un agent à l'autre | Agents d'un même domaine de confiance, sans donnée externe |
-| Exposer un serveur MCP | Authentification, liaison sur une interface interne, version épinglée | Aucun cas |
-| Arrêter de suivre un signal | Le retirer quand sa source cesse, et noter ce qui le remplace | Aucun cas |
+| Organiser la veille | Un registre, un responsable par ligne, une source primaire par ligne [S] | Petite équipe : une revue trimestrielle commune |
+| Traiter une reprise de presse | La tenir pour un signal; remonter à l'émetteur avant d'agir [S] | Source primaire inaccessible : décision réversible seulement |
+| Lire un score de frontière | Le tenir pour une présélection; décider sur son propre banc [M] | Aucun cas |
+| Planifier sur un jalon de normalisation | Le tenir pour une intention; prévoir une solution transitoire documentée [S] | Texte déjà remis à l'IESG ou publié |
+| Planifier sur une échéance réglementaire | Viser la date; produire les preuves en continu [S] | Texte en cours de révision : suivre le réexamen |
+| Acheter un composant d'identité d'agent | Exiger l'agilité cryptographique et une preuve horodatée [S] | Composant à durée de vie inférieure à trois ans |
+| Adopter une technique issue de la recherche | Niveau 3 au moins, essayé sur ses propres tâches [S] | Technique qui renforce un contrôle déterministe existant : essai dès le niveau 2 |
+| Défendre un système multi-agents contre l'injection | Faire suivre la provenance à la donnée, d'un agent à l'autre [M] | Agents d'un même domaine de confiance, sans donnée externe |
+| Exposer un serveur MCP | Authentification, liaison sur une interface interne, version épinglée [S] | Aucun cas |
+| Arrêter de suivre un signal | Le retirer quand sa source cesse, et noter ce qui le remplace [S] | Aucun cas |
 
 ---
 

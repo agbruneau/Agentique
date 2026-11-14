@@ -332,15 +332,15 @@ La règle de la section 43.4 s'applique : chaque signal a une source primaire d�
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Citer une taille de marché | Donner une fourchette, le périmètre et l'émetteur; jamais un chiffre seul | Chiffre tiré d'états financiers audités |
-| Comparer deux estimations | Vérifier d'abord qu'elles comptent la même chose | Même émetteur, même édition, même intitulé |
-| Lire un indicateur d'éditeur | Relever l'unité, le périmètre et la base de comparaison | Revenu ventilé dans un dépôt réglementaire |
-| Lire un taux d'adoption | Chercher la définition de « déployé » et la taille des organisations sondées | Enquête d'un organisme statistique, sur toutes les tailles d'entreprise |
-| Justifier un budget d'agents | Partir du coût par résultat d'un processus, non d'une part de marché (chapitre 40) | Aucun cas |
-| Planifier 2027 | S'appuyer sur les échéances datées; tenir les jalons de normalisation pour glissants | Standard déjà publié et mis en œuvre par ses fournisseurs |
-| Choisir entre suite et composants | Suite pour l'usage interne à un éditeur; noyau possédé pour ce qui traverse les plateformes (chapitre 27) | Parc d'un seul éditeur, sans échange externe |
-| Signer un contrat au-delà de 2027 | Clause de révision du modèle de prix et clause de sortie éprouvée | Engagement d'un an |
-| Suivre le marché canadien | Statistique Canada et l'ISQ d'abord; enquêtes de cabinets pour les grandes entreprises seulement | Nouvelle série officielle sur les agents |
+| Citer une taille de marché | Donner une fourchette, le périmètre et l'émetteur; jamais un chiffre seul [S] | Chiffre tiré d'états financiers audités |
+| Comparer deux estimations | Vérifier d'abord qu'elles comptent la même chose [S] | Même émetteur, même édition, même intitulé |
+| Lire un indicateur d'éditeur | Relever l'unité, le périmètre et la base de comparaison [S] | Revenu ventilé dans un dépôt réglementaire |
+| Lire un taux d'adoption | Chercher la définition de « déployé » et la taille des organisations sondées [S] | Enquête d'un organisme statistique, sur toutes les tailles d'entreprise |
+| Justifier un budget d'agents | Partir du coût par résultat d'un processus, non d'une part de marché (chapitre 40) [S] | Aucun cas |
+| Planifier 2027 | S'appuyer sur les échéances datées; tenir les jalons de normalisation pour glissants [S] | Standard déjà publié et mis en œuvre par ses fournisseurs |
+| Choisir entre suite et composants | Suite pour l'usage interne à un éditeur; noyau possédé pour ce qui traverse les plateformes (chapitre 27) [S] | Parc d'un seul éditeur, sans échange externe |
+| Signer un contrat au-delà de 2027 | Clause de révision du modèle de prix et clause de sortie éprouvée [S] | Engagement d'un an |
+| Suivre le marché canadien | Statistique Canada et l'ISQ d'abord; enquêtes de cabinets pour les grandes entreprises seulement [S] | Nouvelle série officielle sur les agents |
 
 ---
 

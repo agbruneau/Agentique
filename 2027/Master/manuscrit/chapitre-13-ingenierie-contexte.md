@@ -201,18 +201,18 @@ Si le contexte détermine le comportement, celui qui le rédige programme l'agen
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Contexte permanent (prompt système, fichier de consignes) | Court; seulement ce que l'agent ne peut pas déduire : conventions inhabituelles, interdits, commandes | Tâche étroite et stable, où un test avec et sans montre un gain |
-| Vue d'ensemble d'un dépôt ou d'un domaine | Ne pas en fournir | Documentation absente ou inaccessible à l'agent |
-| Fichier de consignes généré automatiquement | Ne pas l'adopter sans test | Gain mesuré sur les tâches propres à l'organisation |
-| Savoir-faire procédural | Skill au format Agent Skills, compacte, rédigée et vérifiée par un humain | Procédure qui tient en quelques lignes : l'inscrire dans le contexte permanent |
-| Taille d'une skill | Ciblée, au plus trois modules | — |
-| Skills de tiers | Revue de sécurité et registre interne avant usage; scripts traités comme du code tiers | Skill sans script, d'un éditeur approuvé |
-| Distribution des skills | Dépôt versionné interne | Skills over MCP si hôtes et serveurs la prennent en charge, en acceptant son statut bêta |
-| Grand catalogue d'outils | Découverte à la demande à l'hôte ou à la passerelle | Petit parc d'outils : chargement complet, préfixe stable |
-| Résultats d'outils volumineux | Filtrage hors de la fenêtre (code exécuté, sous-agent) | Pas d'environnement d'exécution isolé : résumé par l'outil lui-même |
-| Ordre du contexte | Stable en tête, variable à la fin, pour préserver le cache | — |
-| Travail multi-agents | Fenêtres séparées; seul un résumé remonte | Tâche courte : un seul agent (chapitre 16) |
-| Adoption d'un artefact de contexte | Évaluation avec et sans, puis versionnage et propriétaire nommé | — |
+| Contexte permanent (prompt système, fichier de consignes) | Court; seulement ce que l'agent ne peut pas déduire : conventions inhabituelles, interdits, commandes [M] | Tâche étroite et stable, où un test avec et sans montre un gain |
+| Vue d'ensemble d'un dépôt ou d'un domaine | Ne pas en fournir [M] | Documentation absente ou inaccessible à l'agent |
+| Fichier de consignes généré automatiquement | Ne pas l'adopter sans test [M] | Gain mesuré sur les tâches propres à l'organisation |
+| Savoir-faire procédural | Skill au format Agent Skills, compacte, rédigée et vérifiée par un humain [M] | Procédure qui tient en quelques lignes : l'inscrire dans le contexte permanent |
+| Taille d'une skill | Ciblée, au plus trois modules [M] | — |
+| Skills de tiers | Revue de sécurité et registre interne avant usage; scripts traités comme du code tiers [M] | Skill sans script, d'un éditeur approuvé |
+| Distribution des skills | Dépôt versionné interne [S] | Skills over MCP si hôtes et serveurs la prennent en charge, en acceptant son statut bêta |
+| Grand catalogue d'outils | Découverte à la demande à l'hôte ou à la passerelle [É] | Petit parc d'outils : chargement complet, préfixe stable |
+| Résultats d'outils volumineux | Filtrage hors de la fenêtre (code exécuté, sous-agent) [É] | Pas d'environnement d'exécution isolé : résumé par l'outil lui-même |
+| Ordre du contexte | Stable en tête, variable à la fin, pour préserver le cache [É] | — |
+| Travail multi-agents | Fenêtres séparées; seul un résumé remonte [É] | Tâche courte : un seul agent (chapitre 16) |
+| Adoption d'un artefact de contexte | Évaluation avec et sans, puis versionnage et propriétaire nommé [S] | — |
 
 ---
 

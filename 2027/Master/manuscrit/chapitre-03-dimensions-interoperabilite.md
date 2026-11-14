@@ -178,15 +178,15 @@ La grille fait ressortir le déséquilibre typique de 2026. Les protocoles amèn
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Cadre d'analyse | Cinq niveaux, évalués relation par relation | Parc d'un seul éditeur : les deux premiers niveaux sont acquis d'office |
-| Transport et format | Protocoles ouverts : MCP vers les outils, A2A entre agents | Protocole sectoriel imposé (chapitre 7) |
-| Schémas | Entrée et sortie, validées des deux côtés | Outil exploratoire dont le résultat est lu par un humain |
-| Sens des termes | Descriptions rattachées au vocabulaire d'entreprise | Domaine étroit, un seul propriétaire de données |
-| Interface en langage naturel | En repli; interface structurée pour toute action à effet | Découverte et exploration |
-| Rôles et escalade | Définis hors protocole, dans l'orchestrateur et la politique | — |
-| Agents de tiers | Confinés à leur écosystème, ouverture au cas par cas | Relation sous contrat, identité par agent et journaux disponibles |
-| Identité | Une identité par agent, rattachée à un responsable humain | — |
-| Cible de maturité | Fixée selon le risque; le score est le niveau le plus faible | — |
+| Cadre d'analyse | Cinq niveaux, évalués relation par relation [S] | Parc d'un seul éditeur : les deux premiers niveaux sont acquis d'office |
+| Transport et format | Protocoles ouverts : MCP vers les outils, A2A entre agents [É] | Protocole sectoriel imposé (chapitre 7) |
+| Schémas | Entrée et sortie, validées des deux côtés [N] | Outil exploratoire dont le résultat est lu par un humain |
+| Sens des termes | Descriptions rattachées au vocabulaire d'entreprise [S] | Domaine étroit, un seul propriétaire de données |
+| Interface en langage naturel | En repli; interface structurée pour toute action à effet [S] | Découverte et exploration |
+| Rôles et escalade | Définis hors protocole, dans l'orchestrateur et la politique [M] | — |
+| Agents de tiers | Confinés à leur écosystème, ouverture au cas par cas [N] | Relation sous contrat, identité par agent et journaux disponibles |
+| Identité | Une identité par agent, rattachée à un responsable humain [N] | — |
+| Cible de maturité | Fixée selon le risque; le score est le niveau le plus faible [S] | — |
 
 ---
 

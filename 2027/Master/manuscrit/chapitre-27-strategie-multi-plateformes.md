@@ -148,14 +148,14 @@ Une clause ne crée pas une capacité technique. Elle ne vaut que si l'essai de 
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Nombre de plateformes | Admettre la pluralité; plafonner par domaine | Petite organisation, parc chez un seul éditeur |
-| Registre de référence | Un seul, désigné, alimenté par les registres sources | Plateforme unique : son registre suffit |
-| Application des politiques | Au point de contrôle de chaque plateforme et aux passerelles | Aucun cas : l'inventaire fédéré ne l'assure pas |
-| Identité des agents | Fournisseur d'identité de l'entreprise | Agent confiné à une plateforme |
-| Périmètre fédéré | Inventaire, identité, arrêt d'urgence, traces | Plus large seulement si chaque plateforme l'exprime |
-| Actifs | Dépôt de l'entreprise, formats ouverts, déploiement en copie | Prototype jetable |
-| Construire ou acheter | Acheter près des données, construire ce qui différencie | Équipe sans capacité d'exploitation : acheter |
-| Contrat | Liste d'actifs exportables, standards versionnés, essai de sortie | Service d'essai ou sans données propres |
+| Nombre de plateformes | Admettre la pluralité; plafonner par domaine [S] | Petite organisation, parc chez un seul éditeur |
+| Registre de référence | Un seul, désigné, alimenté par les registres sources [S] | Plateforme unique : son registre suffit |
+| Application des politiques | Au point de contrôle de chaque plateforme et aux passerelles [S] | Aucun cas : l'inventaire fédéré ne l'assure pas |
+| Identité des agents | Fournisseur d'identité de l'entreprise [S] | Agent confiné à une plateforme |
+| Périmètre fédéré | Inventaire, identité, arrêt d'urgence, traces [S] | Plus large seulement si chaque plateforme l'exprime |
+| Actifs | Dépôt de l'entreprise, formats ouverts, déploiement en copie [S] | Prototype jetable |
+| Construire ou acheter | Acheter près des données, construire ce qui différencie [S] | Équipe sans capacité d'exploitation : acheter |
+| Contrat | Liste d'actifs exportables, standards versionnés, essai de sortie [N] | Service d'essai ou sans données propres |
 
 ---
 

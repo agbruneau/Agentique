@@ -245,15 +245,15 @@ Deux réserves demeurent. MAESTRO est un cadre publié sous forme de billet par 
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Hypothèse sur le contenu lu par l'agent | Non fiable, y compris les résultats d'outils et les messages d'autres agents | Contenu produit par un système interne maîtrisé, sans entrée d'un tiers |
-| Combinaison de capacités | Jamais données privées, contenu non fiable et canal sortant dans un même agent | Canal sortant restreint à une liste de destinations fixes |
-| Défense contre l'injection | Limitation des capacités et approbation hors agent; filtres en complément | Filtres seuls : aucun cas |
-| Admission d'un serveur MCP | Examen des descriptions, épinglage, registre interne; nouvelle approbation à tout changement de définition | Serveur interne dont le code est maîtrisé : examen allégé |
-| Serveur local sur un poste | Liste d'autorisation et bac à sable | Poste de développement isolé, sans secrets |
-| Mémoire durable | Écriture restreinte, provenance conservée, purge possible | Mémoire de session, détruite à la fin |
-| Messages entre agents | Authentifiés et traités comme non fiables | — |
-| Référentiel de menaces | OWASP Agentic Top 10 comme vocabulaire; MCP Top 10 en complément, cité comme bêta | Référentiel sectoriel imposé |
-| Méthode de modélisation | Par couches, reprise à chaque changement du catalogue d'outils | Agent unique sans outil à effet : test de la trifecta |
+| Hypothèse sur le contenu lu par l'agent | Non fiable, y compris les résultats d'outils et les messages d'autres agents [M] | Contenu produit par un système interne maîtrisé, sans entrée d'un tiers |
+| Combinaison de capacités | Jamais données privées, contenu non fiable et canal sortant dans un même agent [É] | Canal sortant restreint à une liste de destinations fixes |
+| Défense contre l'injection | Limitation des capacités et approbation hors agent; filtres en complément [S] | Filtres seuls : aucun cas |
+| Admission d'un serveur MCP | Examen des descriptions, épinglage, registre interne; nouvelle approbation à tout changement de définition [É] | Serveur interne dont le code est maîtrisé : examen allégé |
+| Serveur local sur un poste | Liste d'autorisation et bac à sable [N] | Poste de développement isolé, sans secrets |
+| Mémoire durable | Écriture restreinte, provenance conservée, purge possible [S] | Mémoire de session, détruite à la fin |
+| Messages entre agents | Authentifiés et traités comme non fiables [S] | — |
+| Référentiel de menaces | OWASP Agentic Top 10 comme vocabulaire; MCP Top 10 en complément, cité comme bêta [É] | Référentiel sectoriel imposé |
+| Méthode de modélisation | Par couches, reprise à chaque changement du catalogue d'outils [É] | Agent unique sans outil à effet : test de la trifecta |
 
 ---
 

@@ -175,12 +175,12 @@ La prépublication nomme sept défis persistants [1] : l'identité d'agents éph
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Accord sur le sens | Schéma et description en langage naturel | Domaine borné à fort enjeu : vocabulaire ou ontologie maintenus (chapitre 12) |
-| Coordination entre agents | Protocole d'interaction explicite : tâche, états, échéance | Échange exploratoire sans effet de bord |
-| Découverte | Registre centralisé dans le périmètre de l'entreprise | Entre organisations : fichiers `/.well-known`, fédération |
-| Déclarations d'un tiers (descriptions, annotations) | Traitées comme unilatérales | Tiers lié par un accord et soumis à un contrôle effectif |
-| Garde-fous | Appliqués hors du modèle, à un intermédiaire | — |
-| Choix d'un standard | Celui qui épouse le substrat en place (HTTP, fournisseur d'identité, passerelle) | Besoin qu'aucun standard aligné ne couvre |
+| Accord sur le sens | Schéma et description en langage naturel [S] | Domaine borné à fort enjeu : vocabulaire ou ontologie maintenus (chapitre 12) |
+| Coordination entre agents | Protocole d'interaction explicite : tâche, états, échéance [S] | Échange exploratoire sans effet de bord |
+| Découverte | Registre centralisé dans le périmètre de l'entreprise [S] | Entre organisations : fichiers `/.well-known`, fédération |
+| Déclarations d'un tiers (descriptions, annotations) | Traitées comme unilatérales [S] | Tiers lié par un accord et soumis à un contrôle effectif |
+| Garde-fous | Appliqués hors du modèle, à un intermédiaire [S] | — |
+| Choix d'un standard | Celui qui épouse le substrat en place (HTTP, fournisseur d'identité, passerelle) [S] | Besoin qu'aucun standard aligné ne couvre |
 
 ---
 

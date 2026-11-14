@@ -219,17 +219,17 @@ Ce dernier essai fixe la limite du dispositif. Une passerelle réseau ne voit ni
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Point d'application | Passerelle sur le chemin de tout appel à un serveur distant | Outil local sans donnée sensible, sous politique du poste |
-| Famille de produit | Étendre la gestion d'API déjà en place | Trafic A2A et d'inférence à unifier : passerelle agentique dédiée |
-| Unité de politique | L'outil | Serveur interne homogène, en lecture seule |
-| Jeton en aval | Échange de jeton ou justificatif propre à la passerelle; jamais de relais | — |
-| Outils sensibles | Approbation à la passerelle; refus sans approbateur configuré | Délai long : extension Tasks (chapitres 5 et 22) |
-| Clé de quota | Identité de l'agent | Adresse IP si l'identité est indisponible |
-| Réponses | Balayage avec blocage par défaut | Expurgation, après mesure des faux positifs |
-| Définitions d'outils | Balayage à l'inscription, empreinte suivie ensuite | — |
-| Erreur de la passerelle | Refus | — |
-| API existantes | Conversion suivie d'une curation, lectures d'abord | Prototype interne : conversion intégrale |
-| Réglages d'origine | Vérifier que les contrôles de contenu sont activés et que les refus sont journalisés | — |
+| Point d'application | Passerelle sur le chemin de tout appel à un serveur distant [É] | Outil local sans donnée sensible, sous politique du poste |
+| Famille de produit | Étendre la gestion d'API déjà en place [S] | Trafic A2A et d'inférence à unifier : passerelle agentique dédiée |
+| Unité de politique | L'outil [É] | Serveur interne homogène, en lecture seule |
+| Jeton en aval | Échange de jeton ou justificatif propre à la passerelle; jamais de relais [N] | — |
+| Outils sensibles | Approbation à la passerelle; refus sans approbateur configuré [É] | Délai long : extension Tasks (chapitres 5 et 22) |
+| Clé de quota | Identité de l'agent [S] | Adresse IP si l'identité est indisponible |
+| Réponses | Balayage avec blocage par défaut [É] | Expurgation, après mesure des faux positifs |
+| Définitions d'outils | Balayage à l'inscription, empreinte suivie ensuite [É] | — |
+| Erreur de la passerelle | Refus [É] | — |
+| API existantes | Conversion suivie d'une curation, lectures d'abord [S] | Prototype interne : conversion intégrale |
+| Réglages d'origine | Vérifier que les contrôles de contenu sont activés et que les refus sont journalisés [M] | — |
 
 ---
 

@@ -130,14 +130,14 @@ Le plan de contrôle et les journaux font partie du périmètre : une inférence
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Critère de souveraineté | Contrôle juridictionnel, en plus de la résidence | Données non sensibles : la résidence suffit |
-| Périmètre de l'analyse | Inférence, orchestration, mémoire, outils et traces | — |
-| Hébergement du modèle | Selon la classe de données, avec routage à la passerelle | Une seule classe de données |
-| Données réglementées ou stratégiques | Fournisseur sous contrôle local ou modèle autohébergé | Clés du client, si la donnée n'atteint pas l'inférence |
-| Évaluation d'un fournisseur | Grille par objectifs, de type Cloud Sovereignty Framework | Hors UE : adapter les seuils |
-| Partage entre organisations | Espace de données, agent derrière un connecteur et sous identité déléguée | Échange bilatéral ponctuel |
-| Application des politiques d'usage | Hors du modèle : connecteur, passerelle, règles déterministes | — |
-| Preuve de souveraineté d'un fournisseur européen | Qualification nationale existante, comme SecNumCloud | Niveau d'assurance de l'Union, si le règlement proposé est adopté |
+| Critère de souveraineté | Contrôle juridictionnel, en plus de la résidence [N] | Données non sensibles : la résidence suffit |
+| Périmètre de l'analyse | Inférence, orchestration, mémoire, outils et traces [S] | — |
+| Hébergement du modèle | Selon la classe de données, avec routage à la passerelle [S] | Une seule classe de données |
+| Données réglementées ou stratégiques | Fournisseur sous contrôle local ou modèle autohébergé [S] | Clés du client, si la donnée n'atteint pas l'inférence |
+| Évaluation d'un fournisseur | Grille par objectifs, de type Cloud Sovereignty Framework [N] | Hors UE : adapter les seuils |
+| Partage entre organisations | Espace de données, agent derrière un connecteur et sous identité déléguée [M] | Échange bilatéral ponctuel |
+| Application des politiques d'usage | Hors du modèle : connecteur, passerelle, règles déterministes [M] | — |
+| Preuve de souveraineté d'un fournisseur européen | Qualification nationale existante, comme SecNumCloud [S] | Niveau d'assurance de l'Union, si le règlement proposé est adopté |
 
 ---
 

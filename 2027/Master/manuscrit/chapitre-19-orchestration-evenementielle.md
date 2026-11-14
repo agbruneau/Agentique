@@ -184,15 +184,15 @@ Trois garde-fous valent dans tous les cas. Chaque événement porte l'identifian
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Mode de déclenchement | Appel direct | Fait sans demandeur, travail plus long qu'une connexion, plusieurs consommateurs |
-| Dorsale d'événements | Aucune tant qu'un déclencheur direct suffit | Relecture, pointes de charge ou consommateurs multiples |
-| Moteur d'agents sur flux | Flink Agents à l'essai seulement, vu son statut de préversion | Production si Flink est déjà exploité et qu'une adaptation des API est prévue |
-| Contenu du journal | Entrées, décisions du modèle et résultats d'outils | Entrées seules si le seul besoin est le test par réexécution |
-| Effets externes | Outils idempotents ou réconciliation | — |
-| Coordination | Orchestrateur explicite sur transport événementiel | Chorégraphie pour des réactions indépendantes, sans ordre ni compensation |
-| Suivi d'une tâche MCP ou A2A | Notification comme signal, puis relecture de l'état | Interrogation périodique si le client ne peut recevoir d'appel entrant |
-| Contexte de l'agent | État interrogeable par un outil | Consommation directe du flux pour un agent qui réagit à chaque événement |
-| Action déclenchée par un événement | Proposition, puis procédure d'un catalogue borné | — |
+| Mode de déclenchement | Appel direct [S] | Fait sans demandeur, travail plus long qu'une connexion, plusieurs consommateurs |
+| Dorsale d'événements | Aucune tant qu'un déclencheur direct suffit [S] | Relecture, pointes de charge ou consommateurs multiples |
+| Moteur d'agents sur flux | Flink Agents à l'essai seulement, vu son statut de préversion [É] | Production si Flink est déjà exploité et qu'une adaptation des API est prévue |
+| Contenu du journal | Entrées, décisions du modèle et résultats d'outils [S] | Entrées seules si le seul besoin est le test par réexécution |
+| Effets externes | Outils idempotents ou réconciliation [É] | — |
+| Coordination | Orchestrateur explicite sur transport événementiel [S] | Chorégraphie pour des réactions indépendantes, sans ordre ni compensation |
+| Suivi d'une tâche MCP ou A2A | Notification comme signal, puis relecture de l'état [N] | Interrogation périodique si le client ne peut recevoir d'appel entrant |
+| Contexte de l'agent | État interrogeable par un outil [É] | Consommation directe du flux pour un agent qui réagit à chaque événement |
+| Action déclenchée par un événement | Proposition, puis procédure d'un catalogue borné [S] | — |
 
 ---
 

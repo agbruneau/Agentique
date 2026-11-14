@@ -154,12 +154,12 @@ Pour la latence, le TTFT, le débit et le taux de succès du cache se mesurent p
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Premier levier | Cache de préfixe, chez le fournisseur ou sur ses serveurs | — |
-| Choix du modèle | Règle explicite par classe de tâche | Service de notation par appel externe, si les traces montrent une part élevée de requêtes faciles |
-| Classe inconnue ou routeur en panne | Palier supérieur; rejet ou modèle de repli qualifié d'avance (chapitre 46) | Tâche sans enjeu : palier inférieur |
-| Calcul au moment de l'inférence | Réservé aux classes où le modèle réussit déjà en partie | Problème hors de portée : changer de modèle |
-| Inférence autohébergée | `InferencePool` et EPP derrière une passerelle conforme | Charge mono-locataire : mode autonome |
-| Ordonnancement | Conscient du cache et de la charge | Charges sans préfixe partagé : charge seule |
+| Premier levier | Cache de préfixe, chez le fournisseur ou sur ses serveurs [S] | — |
+| Choix du modèle | Règle explicite par classe de tâche [S] | Service de notation par appel externe, si les traces montrent une part élevée de requêtes faciles |
+| Classe inconnue ou routeur en panne | Palier supérieur; rejet ou modèle de repli qualifié d'avance (chapitre 46) [S] | Tâche sans enjeu : palier inférieur |
+| Calcul au moment de l'inférence | Réservé aux classes où le modèle réussit déjà en partie [M] | Problème hors de portée : changer de modèle |
+| Inférence autohébergée | `InferencePool` et EPP derrière une passerelle conforme [É] | Charge mono-locataire : mode autonome |
+| Ordonnancement | Conscient du cache et de la charge [M] | Charges sans préfixe partagé : charge seule |
 
 ---
 

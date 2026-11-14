@@ -239,16 +239,16 @@ Le domaine le mieux documenté est aussi le plus borné : des questions de clien
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Preuve exigée avant d'imiter un cas | Niveau 1 ou 2 : mesure sur trafic réel ou étude indépendante | Cas de fournisseur recevable s'il nomme le client, la métrique, la base de comparaison et la période |
-| Premier cas d'usage | Interne, réversible, surtout en lecture, mesurable | Service externe si le transfert à un humain, les API idempotentes et la piste d'audit existent déjà |
-| Architecture de départ | Un agent par cas d'usage, peu d'outils, parcours borné | Multi-agents si les sous-domaines sont indépendants et que le gain est mesuré sur ses propres données |
-| Ordre de construction | Identité, API d'action, audit, puis prompts | Prototype jetable, sans accès à des systèmes réels |
-| Mesure du succès | Deux métriques opposées (satisfaction et libre-service), en test A/B, avec l'écart à la référence humaine | Usage interne à faible volume : revue humaine d'un échantillon |
-| Extraction documentaire | Hiérarchie avec seuil de confiance et revue humaine des champs incertains | Boucle réflexive à faible volume quand l'erreur coûte cher; pipeline séquentiel à très fort volume |
-| Opérations TI | Diagnostic en lecture seule; action par un humain ou un workflow déterministe | Action automatique sur des procédures réversibles, éprouvées en bac à sable |
-| Génération de workflows | Plan montré à l'utilisateur avant le détail; exécution par le moteur existant | — |
-| Changement de modèle | Revalidation des prompts et des juges sur le jeu d'étiquettes | — |
-| Secteur public québécois | Les quatre cas de référence du guide, avec plafond de consommation | Usage touchant des droits ou des décisions : encadrement renforcé et validation spécialisée |
+| Preuve exigée avant d'imiter un cas | Niveau 1 ou 2 : mesure sur trafic réel ou étude indépendante [S] | Cas de fournisseur recevable s'il nomme le client, la métrique, la base de comparaison et la période |
+| Premier cas d'usage | Interne, réversible, surtout en lecture, mesurable [N] | Service externe si le transfert à un humain, les API idempotentes et la piste d'audit existent déjà |
+| Architecture de départ | Un agent par cas d'usage, peu d'outils, parcours borné [S] | Multi-agents si les sous-domaines sont indépendants et que le gain est mesuré sur ses propres données |
+| Ordre de construction | Identité, API d'action, audit, puis prompts [S] | Prototype jetable, sans accès à des systèmes réels |
+| Mesure du succès | Deux métriques opposées (satisfaction et libre-service), en test A/B, avec l'écart à la référence humaine [M] | Usage interne à faible volume : revue humaine d'un échantillon |
+| Extraction documentaire | Hiérarchie avec seuil de confiance et revue humaine des champs incertains [M] | Boucle réflexive à faible volume quand l'erreur coûte cher; pipeline séquentiel à très fort volume |
+| Opérations TI | Diagnostic en lecture seule; action par un humain ou un workflow déterministe [M] | Action automatique sur des procédures réversibles, éprouvées en bac à sable |
+| Génération de workflows | Plan montré à l'utilisateur avant le détail; exécution par le moteur existant [É] | — |
+| Changement de modèle | Revalidation des prompts et des juges sur le jeu d'étiquettes [S] | — |
+| Secteur public québécois | Les quatre cas de référence du guide, avec plafond de consommation [N] | Usage touchant des droits ou des décisions : encadrement renforcé et validation spécialisée |
 
 ---
 

@@ -304,16 +304,16 @@ Le choix du cadriciel vient ensuite; la plupart mettent en œuvre plusieurs de c
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Nombre d'agents | Un agent outillé | Tâche parallélisable, contexte saturé, trop d'outils, frontière de sécurité ou d'équipe |
-| Structure | Statique, fixée par le code | Sous-tâches imprévisibles : superviseur dynamique |
-| Topologie dans un domaine | Centralisée | Expertise qui émerge en conversation : transfert |
-| Topologie entre domaines | Pair-à-pair par protocole | Plateforme unique sous une seule autorité |
-| Fusion d'un fan-out | Étape de validation ou de vote | Résultats indépendants, sans agrégation requise |
-| Vérification | Rôle distinct de la production, critères écrits | Tâche à faible enjeu |
-| Boucles | Plafond d'itérations et repli défini | — |
-| Débat | Trois agents au plus, en lecture seule | Animation par un humain |
-| Modèle par agent | Proportionné à la tâche de l'agent | Faible volume : un seul modèle |
-| Validation du patron | Mesure contre l'agent unique, puis sous charge | — |
+| Nombre d'agents | Un agent outillé [M] | Tâche parallélisable, contexte saturé, trop d'outils, frontière de sécurité ou d'équipe |
+| Structure | Statique, fixée par le code [É] | Sous-tâches imprévisibles : superviseur dynamique |
+| Topologie dans un domaine | Centralisée [S] | Expertise qui émerge en conversation : transfert |
+| Topologie entre domaines | Pair-à-pair par protocole [S] | Plateforme unique sous une seule autorité |
+| Fusion d'un fan-out | Étape de validation ou de vote [É] | Résultats indépendants, sans agrégation requise |
+| Vérification | Rôle distinct de la production, critères écrits [M] | Tâche à faible enjeu |
+| Boucles | Plafond d'itérations et repli défini [É] | — |
+| Débat | Trois agents au plus, en lecture seule [É] | Animation par un humain |
+| Modèle par agent | Proportionné à la tâche de l'agent [M] | Faible volume : un seul modèle |
+| Validation du patron | Mesure contre l'agent unique, puis sous charge [M] | — |
 
 ---
 

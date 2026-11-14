@@ -163,8 +163,16 @@ l'état de chaque point.
 Ces contrôles lisent les sources par un outil qui en rend des extraits : aucun n'a été
 recoupé sur le texte brut. Restent ouverts : les trois textes réglementaires jamais lus
 (lots P1-B2 à B4), le contrôle des adresses des sources (lot P3-L1, refusé par le
-contrôle de permissions), les quatre textes facultatifs du lot P3-L2 et le niveau de
-preuve dans les grilles de décision (lot P4-1).
+contrôle de permissions) et les quatre textes facultatifs du lot P3-L2.
+
+- **Niveau de preuve dans les grilles (lot P4-1).** Les 473 lignes des cinquante grilles
+  de décision portent une lettre : 64 reposent sur un texte normatif ou officiel, 45 sur
+  une mesure publiée, 109 sur la documentation d'un éditeur ou d'un projet, 255 sur la
+  seule synthèse du chapitre. Un seul lecteur par ligne, sans contre-vérification.
+
+Le registre compte 1 311 entrées : les 356 corrections de l'audit et 955 inscriptions
+postérieures, dont 473 lettres de niveau de preuve. Le PDF compte 1 097 pages et passe
+tous les contrôles.
 
 ## Ce qui reste à décider avant impression
 

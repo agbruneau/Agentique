@@ -211,16 +211,16 @@ Aucune source lue ne décrit « Multi-LoRA (SFT + DPO) » comme une méthode nom
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Rôles de développement | Spécification et construction séparées par des droits, approbation humaine entre les deux | Prototype jetable |
-| Lecture du code | Index de symboles exposé par outils bornés | Petit dépôt, ou langage sans indexeur |
-| Tests écrits par l'agent | Propriétés et mutants tirés de la spécification | Code sans invariant exprimable : exemples relus par un humain |
-| Barrière de mutation | Seuil calibré par module, sur le code modifié | Jamais un seuil global unique |
-| Parité d'un remplacement | Exécution en miroir, écart nul, un cycle d'affaires complet | Écritures : double écriture et comparaison à la lecture |
-| Écriture de données | Branche, audit déterministe tiré du contrat, publication distincte; catalogue transactionnel si plusieurs tables | Table d'exploration non partagée |
-| Remédiation | Journaux tenus pour non fiables; l'agent propose, l'action vient d'un catalogue | Boucle fermée selon l'échelle du chapitre 34 |
-| Boucle de données | Masquage, canaris de mémorisation, filtrage des injections | — |
-| Prompts | Optimiseur si métrique étalonnée et exemples filtrés | Sinon, prompts rédigés et versionnés |
-| Petit modèle | Adaptateur par tâche, chargé au démarrage, avec repli | Tâche ouverte ou rare : grand modèle |
+| Rôles de développement | Spécification et construction séparées par des droits, approbation humaine entre les deux [S] | Prototype jetable |
+| Lecture du code | Index de symboles exposé par outils bornés [S] | Petit dépôt, ou langage sans indexeur |
+| Tests écrits par l'agent | Propriétés et mutants tirés de la spécification [S] | Code sans invariant exprimable : exemples relus par un humain |
+| Barrière de mutation | Seuil calibré par module, sur le code modifié [S] | Jamais un seuil global unique |
+| Parité d'un remplacement | Exécution en miroir, écart nul, un cycle d'affaires complet [S] | Écritures : double écriture et comparaison à la lecture |
+| Écriture de données | Branche, audit déterministe tiré du contrat, publication distincte; catalogue transactionnel si plusieurs tables [É] | Table d'exploration non partagée |
+| Remédiation | Journaux tenus pour non fiables; l'agent propose, l'action vient d'un catalogue [S] | Boucle fermée selon l'échelle du chapitre 34 |
+| Boucle de données | Masquage, canaris de mémorisation, filtrage des injections [S] | — |
+| Prompts | Optimiseur si métrique étalonnée et exemples filtrés [S] | Sinon, prompts rédigés et versionnés |
+| Petit modèle | Adaptateur par tâche, chargé au démarrage, avec repli [S] | Tâche ouverte ou rare : grand modèle |
 
 ---
 

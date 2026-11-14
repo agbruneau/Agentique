@@ -187,13 +187,13 @@ Cinq règles s'en dégagent.
 
 | Décision | Option par défaut | Quand s'en écarter |
 |---|---|---|
-| Unité de contrôle | L'action et la trajectoire | Agent en lecture seule, sans effet cumulatif : l'action suffit |
-| Lieu de vérification des invariants | Composant à état hors de l'agent | — |
-| Point d'application des politiques | Entre l'agent et la ressource | Contrôle dans l'hôte en complément seulement |
-| Niveau d'autonomie | Accordé par paliers, sur preuve consignée | Tâche réversible à faible enjeu |
-| Certificat d'un fournisseur | Critère de présélection, complété par des tests internes | Jamais comme preuve unique |
-| Évaluation d'une défense | Attaquant adaptatif; sécurité et utilité mesurées ensemble | Banc statique comme test de non-régression |
-| Fréquence des tests | À chaque changement de modèle, de prompt ou d'outil | — |
+| Unité de contrôle | L'action et la trajectoire [S] | Agent en lecture seule, sans effet cumulatif : l'action suffit |
+| Lieu de vérification des invariants | Composant à état hors de l'agent [S] | — |
+| Point d'application des politiques | Entre l'agent et la ressource [N] | Contrôle dans l'hôte en complément seulement |
+| Niveau d'autonomie | Accordé par paliers, sur preuve consignée [É] | Tâche réversible à faible enjeu |
+| Certificat d'un fournisseur | Critère de présélection, complété par des tests internes [É] | Jamais comme preuve unique |
+| Évaluation d'une défense | Attaquant adaptatif; sécurité et utilité mesurées ensemble [M] | Banc statique comme test de non-régression |
+| Fréquence des tests | À chaque changement de modèle, de prompt ou d'outil [S] | — |
 
 ---
 
