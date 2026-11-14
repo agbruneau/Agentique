@@ -4,7 +4,7 @@
 
 ## E.1 Niveaux de preuve
 
-Chaque chapitre se termine par ses sources numérotées et par une section « Limites de ce chapitre ». Les chapitres 1 à 47 en listent 774 au total (la partie X est décomptée à la section E.4); une source citée par plusieurs chapitres compte pour chacun.
+Chaque chapitre se termine par ses sources numérotées et par une section « Limites de ce chapitre ». Les chapitres 1 à 47 en listent 775 au total (la partie X est décomptée à la section E.4); une source citée par plusieurs chapitres compte pour chacun.
 
 Trois marques qualifient une affirmation.
 
@@ -69,7 +69,8 @@ Ces affirmations des chapitres 1 à 47 portent beaucoup et reposent sur une preu
 | Point | État de la preuve | Chapitres |
 |---|---|---|
 | Texte de l'AI Act modifié par le règlement 2026/1744 | EUR-Lex illisible; lu par une prépublication ou une reproduction non officielle | 34, 35, 43 |
-| Directive fédérale sur la prise de décisions automatisée | Page jamais lue (requête rejetée) | 22, 38 |
+| Directive fédérale sur la prise de décisions automatisée | Page jamais lue (requête rejetée); champ d'application décrit d'après un guide | 22, 38 |
+| Ligne directrice de l'AMF sur l'utilisation de l'IA | Texte jamais lu (erreur 403); deux analyses de cabinets | 38, 39, 49 |
 | Sanctions du projet de loi C-36 | Document d'information; texte relu en partie | 38 |
 | Chiffres des enquêtes McKinsey | Comptes rendus; pages de McKinsey non relues à la source | 1, 4, 39, 41 |
 | Placement de ServiceNow au Magic Quadrant; ses offres en 2026 | Rapport non lu, reprises contradictoires; presse issue d'un breffage | 4, 26 |
@@ -79,11 +80,11 @@ Le dernier point pèse sur la thèse de l'ouvrage : l'interopérabilité par pro
 
 ## E.4 Sources de la partie X
 
-La partie X a été écrite le 13 novembre 2026, après la clôture des chapitres 1 à 47. Ses trois chapitres listent 244 sources, qui s'ajoutent aux 774 de la section E.1 sans y être comptées.
+La partie X a été écrite le 13 novembre 2026, après la clôture des chapitres 1 à 47. Ses trois chapitres listent 244 sources, qui s'ajoutent aux 775 de la section E.1 sans y être comptées.
 
 | Chapitre | Sources | Nature | Lecture |
 |---|---|---|---|
-| 48 — Revue de littérature | 101 | 31 publications en revue ou en conférence, 52 prépublications ou documents de travail, 3 sources reprises de l'ouvrage, 15 travaux relevés hors protocole le 14 novembre 2026 | Résumés seulement; titre, auteurs et lieu de publication confirmés auprès d'arXiv ou de Crossref pour 82 notices sur 83 |
+| 48 — Revue de littérature | 101 | 31 publications en revue ou en conférence, 52 prépublications ou documents de travail, 3 sources reprises de l'ouvrage, 15 travaux relevés hors protocole le 14 novembre 2026 | Résumés seulement pour les 83 notices du protocole, dont titre, auteurs et lieu de publication sont confirmés auprès d'arXiv ou de Crossref pour 82; des quinze travaux hors protocole, six ne sont connus que par leur résumé |
 | 49 — Veille technologique | 68 | 46 pages d'émetteur, 21 notices d'arXiv, 1 page tierce | Extraction par outil; sept sources relues à l'audit |
 | 50 — Projection 2027-2030 et étude de marché | 75 | 51 pages d'émetteur, 24 pages tierces qui rapportent un émetteur non chargé | Extraction par outil; cinq sources relues à l'audit |
 

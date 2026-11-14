@@ -2,7 +2,7 @@
 
 *Question directrice : comment une organisation garde-t-elle la maîtrise de ses agents ?*
 
-> **État de référence :** cadre de Singapour pour l'IA agentique, version 1.5 du 20 mai 2026, mise à jour le 5 juin; enquête McKinsey sur la confiance envers l'IA, publiée le 25 mars 2026; guides québécois (2026) et fédéral (page datée du 15 septembre 2026) sur l'IA agentique; documentation des éditeurs dans son état d'octobre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre, toutes des pages primaires lues pour ce chapitre sauf [11] et [14]; [12] à [15] ont été ajoutées le 14 novembre 2026.
+> **État de référence :** cadre de Singapour pour l'IA agentique, version 1.5 du 20 mai 2026, mise à jour le 5 juin; enquête McKinsey sur la confiance envers l'IA, publiée le 25 mars 2026; guides québécois (2026) et fédéral (page datée du 15 septembre 2026) sur l'IA agentique; documentation des éditeurs dans son état d'octobre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre, toutes des pages primaires lues pour ce chapitre sauf [11] et [14]; [12] à [15] ont été ajoutées le 14 novembre 2026, [13] et [15] n'étant que la page de présentation et le communiqué de rapports non lus.
 
 Protocoles, passerelles, identités et journaux sont des mécanismes. Aucun ne dit qui, dans l'organisation, décide qu'un agent existe, en répond et le retire.
 
@@ -163,7 +163,7 @@ Le tableau suivant, propre à ce chapitre, transpose ces rôles à un parc d'age
 |---|---|---|
 | Première | Le propriétaire de l'agent et son responsable technique | Finalité, limites, exploitation, incidents (39.3) |
 | Deuxième | Risque, conformité, sécurité, protection des renseignements personnels | Politiques (39.5), cote de risque, revue aux portes (39.2) |
-| Troisième | Audit interne | Exhaustivité de l'inventaire, respect des portes, effectivité de la supervision humaine et de l'arrêt |
+| Troisième | Audit interne | Exhaustivité de l'inventaire, respect des portes, effectivité de la supervision humaine |
 
 L'instance d'autorisation de la section 39.4 relève de la deuxième ligne. Trois vérifications reviennent à la troisième, parce qu'aucun responsable d'agent n'a intérêt à les faire : rapprocher l'inventaire des journaux d'identité et de passerelle, pour y chercher les agents non déclarés (39.1); contrôler sur échantillon que les changements ont bien rouvert la revue (39.2); vérifier que l'approbation humaine est exercée, et non machinale (chapitre 22).
 
@@ -203,7 +203,7 @@ Du côté de l'audit, une enquête de l'Internal Audit Foundation et d'AuditBoar
 - L'autonomie ne déplace pas la responsabilité. Chaque agent a un responsable d'affaires et un responsable technique, sous-agents et agents d'un employé qui part compris.
 - Aucun des cadres lus ne prescrit de comité. Ils exigent une direction qui assume le risque et une autorité imputable qui autorise.
 - Les politiques sont peu nombreuses, proportionnées, et n'ont d'effet qu'appliquées à un point de contrôle technique.
-- Dire qui décide et qui répond ne suffit pas : une troisième ligne vérifie l'inventaire, les portes et la supervision. Les cadres propres aux agents ne la nomment pas, et E-23 n'exige d'indépendance que pour la revue des modèles.
+- Dire qui décide et qui répond ne suffit pas : une troisième ligne vérifie l'inventaire, les portes et la supervision. Les cadres propres aux agents ne la nomment pas, et E-23 n'attend d'indépendance, dans le texte lu, que pour la revue des modèles et leur approbation.
 
 ---
 

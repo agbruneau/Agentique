@@ -86,6 +86,7 @@
 | 2 décembre 2026 | AI Act : nouvelles interdictions de l'article 5; marquage des contenus pour les systèmes génératifs antérieurs au 2 août 2026 | 35 |
 | 9 décembre 2026 | La directive (UE) 2024/2853 s'applique aux produits mis sur le marché après cette date; le logiciel y est un produit | 36 |
 | 12 janvier 2027 | Le règlement européen sur les données interdit les frais de changement de fournisseur | 27 |
+| Janvier 2027, au plus tôt | Corée du Sud : fin du délai de grâce avant les amendes de la loi-cadre sur l'IA (S) | 35 |
 | Février à août 2027 | Horizon de la feuille de route de MCP : prochaine révision à prévoir (D) | 43 |
 | 1er mai 2027 | La ligne directrice E-23 prend effet pour les institutions financières fédérales canadiennes; celle de l'AMF sur l'IA, pour les institutions à charte québécoise (S) | 38 |
 | Été 2027, au plus tôt | Fin de la fenêtre minimale de dépréciation ouverte par MCP en juillet 2026 | 5 |
@@ -100,6 +101,6 @@ Trois mouvements se dégagent.
 
 **Les protocoles se stabilisent avant la gouvernance.** A2A atteint sa version 1.0 en mars 2026, et MCP adopte en juillet une politique de dépréciation. À la date de référence, les textes sur l'identité des agents sont encore des brouillons, et aucun RFC propre aux agents n'existe.
 
-**Le droit avance par échéances, sans nommer les agents.** Les dates fermes de 2027 visent le risque de modélisation, les systèmes à haut risque et les services de traitement de données. Le cadre de Singapour, les guides canadien et québécois, le plan japonais et des avis chinois prennent l'agent pour objet; aucun n'est une loi.
+**Le droit avance par échéances, sans nommer les agents.** Les dates fermes de 2027 visent le risque de modélisation, les systèmes à haut risque et les services de traitement de données. Le cadre de Singapour, les guides canadien et québécois, et des avis chinois prennent l'agent pour objet, et le plan japonais fait de l'IA agentique son premier thème; aucun n'est une loi.
 
 Une chronologie de ce domaine vieillit vite. Avant de s'y fier, il faut revérifier trois états : la révision courante de MCP, la version d'A2A et le stade des brouillons de l'IETF sur l'identité.

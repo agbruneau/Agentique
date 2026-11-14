@@ -1,0 +1,157 @@
+{
+ "id": "P2-F1-b",
+ "origine": "plan 2027, lot P2-F1-b",
+ "categorie": "coherence",
+ "remplacements": [
+  {
+   "fichier": "chapitre-35-cadres-internationaux.md",
+   "avant": "Parmi les cadres examinés ici, seul Singapour en a publié un dont l'agent est l'objet, et ce cadre n'oblige à rien.",
+   "apres": "Parmi les quatre cadres analysés aux sections 35.1 à 35.5, seul Singapour en a publié un dont l'agent est l'objet, et ce cadre n'oblige à rien; le relevé de la section 35.7 y ajoute des avis chinois, connus par une seule fiche.",
+   "motif": "Second audit (lot P2-F1, entrée n° 450, majeur) : L'introduction contredit la section 35.7 ajoutée le 14 novembre : le chapitre examine désormais aussi la Chine, dont les avis du 8 mai 2026 « tracent un cadre de gouvernance propre aux agents » et dont « les agents sont l'objet ». L'annexe D (n° 509) a été corrigée en ce sens, pas l'introduction du chapitre."
+  },
+  {
+   "fichier": "chapitre-35-cadres-internationaux.md",
+   "avant": "et retient deux axes : adopter l'IA agentique, y compris dans l'administration, et bâtir une « souveraineté de l'IA » [12]",
+   "apres": "et retient quatre piliers, dont les deux premiers sont d'adopter l'IA agentique, y compris dans l'administration, et de bâtir une « souveraineté de l'IA » [12]",
+   "motif": "Second audit (lot P2-F1, entrée n° 450, majeur) : Le résumé officiel [12] annonce quatre piliers stratégiques, non deux : déploiement (« Adopt AI »), capacités de développement (« Create AI »), gouvernance (« Enhance AI trustworthiness ») et société (« Collaborate with AI »). Le texte ne cite que les deux premiers et les présente comme l'ensemble; la phrase suivante (révision des lois, institut de sécurité) relève en fait du troisième pilier."
+  },
+  {
+   "fichier": "chapitre-35-cadres-internationaux.md",
+   "avant": "que reprennent des régulateurs financiers canadiens (chapitre 38)",
+   "apres": "dont la ligne directrice de l'AMF reprend l'essentiel, selon une analyse de cabinet (section 38.3)",
+   "motif": "Second audit (lot P2-F1, entrée n° 450, mineur) : Le renvoi dit plus que le chapitre visé. La section 38.3 ne rapporte qu'un régulateur, l'AMF, dont la définition est dite « proche de celle de l'OCDE », d'après des analyses de cabinets; elle ne dit rien de la définition employée par le BSIF ni par les ACVM."
+  },
+  {
+   "fichier": "chapitre-35-cadres-internationaux.md",
+   "avant": "Cinq autres comptent pour une entreprise présente à l'international.",
+   "apres": "Quatre autres juridictions et un organisme international comptent pour une entreprise présente à l'international.",
+   "motif": "Second audit (lot P2-F1, entrée n° 450, mineur) : La section s'intitule « Autres juridictions » et sa colonne « Juridiction » range l'OCDE, qui n'en est pas une : c'est un rapport d'experts sans effet juridique. La grille de décision, elle, ne retient que quatre pays."
+  },
+  {
+   "fichier": "chapitre-35-cadres-internationaux.md",
+   "avant": "qui tracent un cadre de gouvernance propre aux agents [14]. La fiche lue n'en donne ni le contenu ni la date d'effet.",
+   "apres": "qui, selon la première ligne de la fiche lue, délimitent un cadre de gouvernance des agents [14]. La fiche, tronquée sans compte d'utilisateur, n'en donne ni le contenu ni la date d'effet.",
+   "motif": "Second audit (lot P2-F1, entrée n° 450, mineur) : Les deux phrases se contredisent à moitié : la première affirme ce que font les avis, la seconde dit que la fiche n'en donne pas le contenu. La fiche [14] ne livre qu'une phrase tronquée; la description complète est derrière une ouverture de compte. L'affirmation doit être donnée pour ce qu'elle est : la première ligne d'une fiche."
+  },
+  {
+   "fichier": "chapitre-38-canada-quebec.md",
+   "avant": "| Institution financière à charte québécoise | Même inventaire et même cote de risque que pour E-23, pour le 1er mai 2027 | — |",
+   "apres": "| Institution financière à charte québécoise | Répertoire des systèmes d'IA et cote de risque par système pour le 1er mai 2027, à rapprocher de l'inventaire E-23 | Texte de l'AMF non lu : le vérifier avant d'arrêter le périmètre |",
+   "motif": "Second audit (lot P2-F1, entrée n° 388, majeur) : La grille pose comme option par défaut une équivalence que le chapitre n'établit pas. E-23 inventorie des modèles; la ligne directrice de l'AMF, d'après les deux analyses, demande un répertoire des systèmes d'IA et une cote par système, « qu'elle touche ou non le dossier d'un client ». Le périmètre n'est pas le même, et le texte de l'AMF n'a pas été lu [22]. La ligne ne porte ni réserve ni renvoi, alors que le poi…"
+  },
+  {
+   "fichier": "chapitre-38-canada-quebec.md",
+   "avant": "## 38.3 Institutions financières : la ligne directrice E-23",
+   "apres": "## 38.3 Secteur financier : E-23, ligne directrice de l'AMF, avis des ACVM",
+   "motif": "Second audit (lot P2-F1, entrée n° 388, mineur) : Le titre de la section ne couvre plus son contenu : elle traite maintenant aussi la ligne directrice de l'AMF et l'avis 11-348 des ACVM, qui vise des personnes inscrites et des émetteurs, non des institutions financières au sens de E-23. L'ouverture y renvoie d'ailleurs sous l'intitulé « AMF et valeurs mobilières »."
+  },
+  {
+   "fichier": "chapitre-38-canada-quebec.md",
+   "avant": "une ligne directrice sectorielle pour les institutions financières fédérales et, pour les administrations",
+   "apres": "des lignes directrices sectorielles pour les institutions financières, fédérales et à charte québécoise, des indications en valeurs mobilières et, pour les administrations",
+   "motif": "Second audit (lot P2-F1, entrée n° 388, mineur) : L'introduction du chapitre n'a pas suivi le complément : l'empilement compte désormais deux lignes directrices financières (BSIF et AMF), prenant effet le même jour, et des indications en valeurs mobilières."
+  },
+  {
+   "fichier": "chapitre-38-canada-quebec.md",
+   "avant": "ligne directrice E-23 du BSIF (en vigueur le 1er mai 2027), Énoncé de principes québécois",
+   "apres": "ligne directrice E-23 du BSIF et ligne directrice de l'AMF sur l'IA (toutes deux en vigueur le 1er mai 2027; la seconde non lue), avis 11-348 des ACVM (5 décembre 2024), Énoncé de principes québécois",
+   "motif": "Second audit (lot P2-F1, entrée n° 386, mineur) : Le bandeau « État de référence » énumère les textes de référence sans la ligne directrice de l'AMF sur l'IA (publiée le 7 avril 2026, effet au 1er mai 2027) ni l'avis 11-348, pourtant entrés dans le tableau de 38.7, la grille et les points à retenir. Le complément n'a mis à jour que la phrase sur les sources."
+  },
+  {
+   "fichier": "chapitre-38-canada-quebec.md",
+   "avant": "Les attentes quant à l'intervention humaine varient selon l'étendue des services fournis et le degré d'autonomie du système, et cette intervention suppose un niveau d'explicabilité approprié.",
+   "apres": "Pour les conseillers et les courtiers, le personnel juge possible d'adapter l'approche des systèmes algorithmiques, pourvu que le système d'IA présente un niveau d'explicabilité approprié; les attentes quant à l'intervention humaine varieraient alors selon l'étendue des services fournis et le degré d'autonomie du système.",
+   "motif": "Second audit (lot P2-F1, entrée n° 388, mineur) : La phrase généralise et durcit un passage conditionnel de l'avis. Le personnel y dit qu'il « serait possible » d'adapter aux systèmes d'IA l'approche des systèmes algorithmiques, « pourvu qu'ils présentent un niveau d'explicabilité approprié », et que les attentes « varieraient alors ». C'est l'approche, non l'intervention humaine, qui est subordonnée à l'explicabilité, et le passage porte sur les conseillers et c…"
+  },
+  {
+   "fichier": "chapitre-38-canada-quebec.md",
+   "avant": "Elle s'applique donc aussi quand un agent public rend la décision finale : recommander des options à un décideur est dans le champ, comme l'est un agent conversationnel dont les agents publics se servent pour arrêter une conduite.",
+   "apres": "Elle s'applique donc aussi quand un fonctionnaire rend la décision finale : recommander des options à un décideur est dans le champ, comme l'est un robot conversationnel dont les fonctionnaires se servent pour arrêter une conduite.",
+   "motif": "Second audit (lot P2-F1, entrée n° 387, mineur) : Dans un ouvrage où « agent » désigne partout le système d'IA, « agent public » pour le fonctionnaire prête à contresens, d'autant que la même phrase emploie « agent conversationnel » pour le logiciel. La source dit « officer »."
+  },
+  {
+   "fichier": "chapitre-38-canada-quebec.md",
+   "avant": "ses exigences par niveau et sa date ne sont pas décrites",
+   "apres": "ses exigences par niveau et la date de sa version en vigueur ne sont pas décrites",
+   "motif": "Second audit (lot P2-F1, entrée n° 393, mineur) : La limite dit que la date de la Directive n'est pas décrite, alors que le paragraphe ajouté en 38.2 donne une date d'application (systèmes conçus ou acquis après le 1er avril 2020). La page lue dit « after April 2020 », sans quantième : le « 1er » est une précision que la source [18] ne porte pas, d'après la lecture faite ici par un outil qui résume."
+  },
+  {
+   "fichier": "chapitre-39-gouvernance-interne.md",
+   "avant": "toutes des pages primaires lues pour ce chapitre sauf [11] et [14]; [12] à [15] ont été ajoutées le 14 novembre 2026.",
+   "apres": "toutes des pages primaires lues pour ce chapitre sauf [11] et [14]; [12] à [15] ont été ajoutées le 14 novembre 2026, [13] et [15] n'étant que la page de présentation et le communiqué de rapports non lus.",
+   "motif": "Second audit (lot P2-F1, entrée n° 395, mineur) : Le bandeau classe [13] et [15] parmi les pages primaires lues. Or [13] est la page de présentation d'un rapport commandé par un éditeur, rapport non lu, et [15] un communiqué sur une enquête dont le rapport n'a pas été lu. Selon l'annexe E, une source primaire est la page de l'émetteur « lue pour le chapitre » : ici, le document qui porte les chiffres ne l'a pas été."
+  },
+  {
+   "fichier": "chapitre-39-gouvernance-interne.md",
+   "avant": "| Troisième | Audit interne | Exhaustivité de l'inventaire, respect des portes, effectivité de la supervision humaine et de l'arrêt |",
+   "apres": "| Troisième | Audit interne | Exhaustivité de l'inventaire, respect des portes, effectivité de la supervision humaine |",
+   "motif": "Second audit (lot P2-F1, entrée n° 396, mineur) : Le tableau confie quatre objets à la troisième ligne, dont l'arrêt; le paragraphe qui suit annonce « trois vérifications » et n'en décrit que trois, sans l'arrêt; la grille et les points à retenir n'en retiennent que trois (inventaire, portes, supervision)."
+  },
+  {
+   "fichier": "chapitre-39-gouvernance-interne.md",
+   "avant": "et E-23 n'exige d'indépendance que pour la revue des modèles.",
+   "apres": "et E-23 n'attend d'indépendance, dans le texte lu, que pour la revue des modèles et leur approbation.",
+   "motif": "Second audit (lot P2-F1, entrée n° 398, mineur) : Formulation plus tranchée que la source. E-23 dit que la revue « should be independent » du développement et demande aussi, pour l'approbation, que « appropriate independence and objectivity are maintained ». L'exclusive « ne… que » n'est pas appuyée, et la ligne directrice du BSIF sur la gouvernance d'entreprise, à laquelle E-23 renvoie, n'a pas été lue (limites du chapitre)."
+  },
+  {
+   "fichier": "chapitre-37-souverainete.md",
+   "avant": "- La certification de la souveraineté reste nationale : SecNumCloud en France, le schéma européen EUCS n'étant pas adopté.",
+   "apres": "- Le seul dispositif de qualification relevé qui porte sur la souveraineté est national : SecNumCloud en France, le schéma européen EUCS n'étant pas adopté.",
+   "motif": "Second audit (lot P2-F1, entrée n° 444, mineur) : Généralisation à partir d'un seul pays : le chapitre ne décrit aucun autre dispositif national, et il présente par ailleurs des grilles européennes (Cloud Sovereignty Framework, label Gaia-X de niveau 3) qui évaluent le contrôle juridictionnel. Le point devrait dire ce qui est établi : le seul dispositif de qualification relevé est français."
+  },
+  {
+   "fichier": "chapitre-37-souverainete.md",
+   "avant": "IDSA Rulebook 2026-1 et document de position de l'IDSA (9 juillet 2026).",
+   "apres": "IDSA Rulebook 2026-1, document de position de l'IDSA (9 juillet 2026) et proposition de Cloud and AI Development Act (COM(2026) 502, 3 juin 2026, non adoptée).",
+   "motif": "Second audit (lot P2-F1, entrée n° 443, mineur) : Le bandeau « État de référence » n'énumère pas les trois textes ajoutés à la section 37.1 (SecNumCloud 3.2, proposition COM(2026) 502 du 3 juin 2026, état d'EUCS), alors que la grille et les points à retenir s'y appuient. Par ailleurs « toutes lues » reste affirmé alors que [12] n'a été lu que par recherche de passages et que le référentiel SecNumCloud n'a pas pu être chargé."
+  },
+  {
+   "fichier": "annexe-D-chronologie.md",
+   "avant": "le plan japonais et des avis chinois prennent l'agent pour objet; aucun n'est une loi.",
+   "apres": "et des avis chinois prennent l'agent pour objet, et le plan japonais fait de l'IA agentique son premier thème; aucun n'est une loi.",
+   "motif": "Second audit (lot P2-F1, entrée n° 509, mineur) : Dit plus que le chapitre 35 pour le Japon : le plan de base porte sur l'IA en général, l'IA agentique en étant le premier thème, et « le résumé lu n'énonce aucune obligation propre aux agents ». La ligne du 14 juillet 2026 (n° 505) le dit « centré sur l'IA agentique », ce qui force aussi la source, dont trois piliers sur quatre ne portent pas sur les agents."
+  },
+  {
+   "fichier": "annexe-D-chronologie.md",
+   "avant": "| 12 janvier 2027 | Le règlement européen sur les données interdit les frais de changement de fournisseur | 27 |\n| Février à août 2027 | Horizon de la feuille de route de MCP : prochaine révision à prévoir (D) | 43 |",
+   "apres": "| 12 janvier 2027 | Le règlement européen sur les données interdit les frais de changement de fournisseur | 27 |\n| Janvier 2027, au plus tôt | Corée du Sud : fin du délai de grâce avant les amendes de la loi-cadre sur l'IA (S) | 35 |\n| Février à août 2027 | Horizon de la feuille de route de MCP : prochaine révision à prévoir (D) | 43 |",
+   "motif": "Second audit (lot P2-F1, entrée n° 508, mineur) : La section D.4 n'a pas reçu l'échéance coréenne que le même train de compléments a ajoutée au tableau des échéances du chapitre 49 (« Janvier 2027, au plus tôt : fin du délai de grâce avant les amendes de la loi-cadre sur l'IA »). Les deux calendriers divergent."
+  },
+  {
+   "fichier": "annexe-E-bibliographie.md",
+   "avant": "Les chapitres 1 à 47 en listent 774 au total",
+   "apres": "Les chapitres 1 à 47 en listent 775 au total",
+   "motif": "Second audit (lot P2-F1, entrée n° 510, mineur) : Le décompte était juste le 14 novembre (709 + 65), mais il ne l'est plus : les chapitres 1 à 47 listent aujourd'hui 775 sources numérotées. Déduit : la 775e est la source [20] du chapitre 10 (FIDO Alliance), ajoutée par le lot P2-M2-M3 après les compléments. La même valeur revient à la section E.4 (n° 512 : « qui s'ajoutent aux 774 de la section E.1 »)."
+  },
+  {
+   "fichier": "annexe-E-bibliographie.md",
+   "avant": "Résumés seulement; titre, auteurs et lieu de publication confirmés auprès d'arXiv ou de Crossref pour 82 notices sur 83",
+   "apres": "Résumés seulement pour les 83 notices du protocole, dont titre, auteurs et lieu de publication sont confirmés auprès d'arXiv ou de Crossref pour 82; des quinze travaux hors protocole, six ne sont connus que par leur résumé",
+   "motif": "Second audit (lot P2-F1, entrée n° 538, mineur) : La colonne « Lecture » de la ligne du chapitre 48 n'a pas suivi l'ajout des quinze travaux hors protocole : selon les limites du chapitre 48, six seulement ne sont connus que par leur résumé, les neuf autres ayant été lus au-delà pour leur chapitre d'origine. « Résumés seulement » ne vaut donc plus pour les 101 sources."
+  },
+  {
+   "fichier": "annexe-E-bibliographie.md",
+   "avant": "| Directive fédérale sur la prise de décisions automatisée | Page jamais lue (requête rejetée) | 22, 38 |",
+   "apres": "| Directive fédérale sur la prise de décisions automatisée | Page jamais lue (requête rejetée); champ d'application décrit d'après un guide | 22, 38 |\n| Ligne directrice de l'AMF sur l'utilisation de l'IA | Texte jamais lu (erreur 403); deux analyses de cabinets | 38, 39, 49 |",
+   "motif": "Second audit (lot P2-F1, entrée n° 512, majeur) : La section E.3 liste les affirmations « qui portent beaucoup et reposent sur une preuve mince ». Les compléments y ont ajouté une affirmation de ce type sans l'inscrire : la ligne directrice de l'AMF sur l'IA, non lue, fonde désormais une ligne de la grille du chapitre 38, une échéance de l'ouverture, de l'annexe D et du chapitre 49, et un passage de 39.6. Le rapport d'audit et le plan (lot P1-B2) la tiennent pour…"
+  },
+  {
+   "fichier": "chapitre-38-canada-quebec.md",
+   "avant": "après le 1er avril 2020",
+   "apres": "après avril 2020",
+   "motif": "Second audit (lot P2-F1, entrée n° 393) : la page lue [18] dit « after April 2020 », sans quantième; le « 1er » n'est pas dans la source."
+  },
+  {
+   "fichier": "annexe-E-bibliographie.md",
+   "avant": "aux 774 de la section E.1",
+   "apres": "aux 775 de la section E.1",
+   "motif": "Second audit (lot P2-F1, entrée n° 510) : même décompte, périmé depuis l'ajout de la source [20] du chapitre 10."
+  },
+  {
+   "fichier": "chapitre-37-souverainete.md",
+   "avant": "en fin de chapitre, toutes lues; [12] à [15]",
+   "apres": "en fin de chapitre, lues dans la mesure que disent les limites; [12] à [15]",
+   "motif": "Second audit (lot P2-F1, entrée n° 443) : le bandeau affirmait « toutes lues », alors que [12] n'a été lu que par recherche de passages et que le référentiel SecNumCloud n'a pas pu être chargé."
+  }
+ ]
+}

@@ -2,7 +2,7 @@
 
 *Question directrice : où tournent les agents, et sous quelle juridiction ?*
 
-> **État de référence :** Cloud Sovereignty Framework 1.2.1 (octobre 2025), Gaia-X Compliance Document 25.10, IDSA Rulebook 2026-1 et document de position de l'IDSA (9 juillet 2026). Les numéros entre crochets renvoient aux sources en fin de chapitre, toutes lues; [12] à [15] ont été ajoutées le 14 novembre 2026, dont [14] et [15] sont secondaires.
+> **État de référence :** Cloud Sovereignty Framework 1.2.1 (octobre 2025), Gaia-X Compliance Document 25.10, IDSA Rulebook 2026-1, document de position de l'IDSA (9 juillet 2026) et proposition de Cloud and AI Development Act (COM(2026) 502, 3 juin 2026, non adoptée). Les numéros entre crochets renvoient aux sources en fin de chapitre, lues dans la mesure que disent les limites; [12] à [15] ont été ajoutées le 14 novembre 2026, dont [14] et [15] sont secondaires.
 
 Une application classique a une adresse. Un agent en a plusieurs : le modèle de langage tourne chez un fournisseur d'inférence, la boucle d'orchestration ailleurs, la mémoire dans une base, les outils derrière des serveurs MCP, les traces dans une plateforme d'observabilité. Chaque appel fait circuler des données d'entreprise entre ces lieux, et chacun relève d'un exploitant, donc d'un droit.
 
@@ -150,7 +150,7 @@ Le plan de contrôle et les journaux font partie du périmètre : une inférence
 - L'IDSA propose un justificatif d'agent délégué, vérifié par le connecteur; la délégation en cascade reste à normaliser, la responsabilité et les limites de décision à trancher.
 - Le modèle et son fournisseur sont des parties prenantes; les modèles réellement souverains restent un objectif de recherche.
 - Les politiques d'usage s'appliquent hors du modèle, au connecteur. L'IDSA le pose, et le seul résultat expérimental cité, sur un banc étroit, va dans ce sens.
-- La certification de la souveraineté reste nationale : SecNumCloud en France, le schéma européen EUCS n'étant pas adopté. La Commission propose depuis juin 2026 quatre niveaux d'assurance de l'Union, dans un texte qui nomme l'orchestration d'agents.
+- Le seul dispositif de qualification relevé qui porte sur la souveraineté est national : SecNumCloud en France, le schéma européen EUCS n'étant pas adopté. La Commission propose depuis juin 2026 quatre niveaux d'assurance de l'Union, dans un texte qui nomme l'orchestration d'agents.
 
 ---
 
