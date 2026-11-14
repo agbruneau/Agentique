@@ -36,7 +36,7 @@ Le mot « sens » recouvre trois objets différents, qui n'appellent pas le mêm
 
 Laisser un modèle écrire du SQL sur un schéma brut revient à lui faire deviner la couche sémantique. Un banc d'essai de 2023 a mesuré le prix de cette devinette. Sur un schéma d'assurance et 43 questions d'entreprise allant du rapport à la métrique, GPT-4 interrogeant directement la base SQL, sans exemples, obtenait 16 % de bonnes réponses; les mêmes questions posées sur une représentation en graphe de connaissances, bâtie d'une ontologie et de correspondances, en obtenaient 54 % (mesure des auteurs de data.world, dont la plateforme interrogeait le graphe; GPT-4 seul testé) [11].
 
-Deux précautions s'imposent. Ces chiffres viennent du résumé de l'article, datent de novembre 2023 et portent sur un modèle dépassé. Et 54 % n'est pas un résultat de production. La leçon durable est le sens de l'écart : un modèle répond mieux quand le vocabulaire d'affaires lui est donné que lorsqu'il doit le reconstruire à partir de noms de colonnes. Le chapitre 15 arrive au même constat avec Spider 2.0, banc d'essai de la fin de 2024 sur des schémas d'entreprise réels.
+Deux précautions s'imposent. Ces chiffres viennent de l'article [11] (résumé et extraits relus), datent de novembre 2023 et portent sur un modèle dépassé. Et 54 % n'est pas un résultat de production. La leçon durable est le sens de l'écart : un modèle répond mieux quand le vocabulaire d'affaires lui est donné que lorsqu'il doit le reconstruire à partir de noms de colonnes. Le chapitre 15 arrive au même constat avec Spider 2.0, banc d'essai de la fin de 2024 sur des schémas d'entreprise réels.
 
 ---
 
@@ -247,9 +247,9 @@ Dans sa version 2, la taxonomie MAST range 36,94 % des échecs multi-agents obse
 
 ### Le cadre de consensus sémantique
 
-Cette prépublication propose un intergiciel à six composants, qui couvrent le contexte partagé, la représentation de l'intention, la détection des conflits, leur résolution, le suivi de la dérive et la gouvernance [10]. D'après le résumé, l'idée est de représenter explicitement l'intention de chaque agent et de la confronter au contexte du processus d'affaires.
+Cette prépublication propose un intergiciel à six composants, qui couvrent le contexte partagé, la représentation de l'intention, la détection des conflits, leur résolution, le suivi de la dérive et la gouvernance [10]. D'après cet article, l'idée est de représenter explicitement l'intention de chaque agent et de la confronter au contexte du processus d'affaires.
 
-Le résumé rapporte une évaluation de 600 exécutions sur trois cadriciels et quatre scénarios d'entreprise. Le cadre y atteint 100 % de complétion des workflows, contre 25,1 % pour la meilleure solution de comparaison. Il détecte 65,2 % des conflits sémantiques, avec une précision de 27,9 %. L'auteur le présente comme indépendant du protocole et compatible avec MCP et A2A.
+L'article rapporte une évaluation de 600 exécutions sur trois cadriciels et quatre scénarios d'entreprise. Le cadre y atteint 100 % de complétion des workflows, contre 25,1 % pour la meilleure solution de comparaison. Il détecte 65,2 % des conflits sémantiques, avec une précision de 27,9 %. L'auteur le présente comme indépendant du protocole et compatible avec MCP et A2A.
 
 Ces résultats appellent une lecture prudente. La prépublication a un seul auteur et n'a pas été évaluée par les pairs. Selon le chapitre 21, qui en a lu le texte, les 600 exécutions sont simulées, sans vrais appels de modèle, et l'agent juge de comparaison atteint 93,2 % de précision. Une précision de 27,9 % signifie que près de trois alertes sur quatre sont fausses; à ce taux, un point de contrôle humain branché sur le détecteur serait vite ignoré (chapitre 22).
 
@@ -342,8 +342,8 @@ Pages primaires lues le 11 novembre 2026 :
 7. [Snowflake — billet du 27 janvier 2026 sur la première version d'OSI](https://www.snowflake.com/en/blog/open-semantic-interchanges-specs-finalized/)
 8. [dbt — à propos du serveur MCP](https://docs.getdbt.com/docs/dbt-ai/about-mcp)
 9. [dbt — outils du serveur MCP](https://docs.getdbt.com/docs/dbt-ai/mcp-available-tools)
-10. [Semantic Consensus: Process-Aware Conflict Detection and Resolution for Enterprise Multi-Agent LLM Systems (arXiv 2604.16339)](https://arxiv.org/abs/2604.16339) — résumé seulement; le texte est lu au chapitre 21.
-11. [A Benchmark to Understand the Role of Knowledge Graphs on LLM's Accuracy for Question Answering on Enterprise SQL Databases (arXiv 2311.07509)](https://arxiv.org/abs/2311.07509) — résumé seulement.
+10. [Semantic Consensus: Process-Aware Conflict Detection and Resolution for Enterprise Multi-Agent LLM Systems (arXiv 2604.16339)](https://arxiv.org/abs/2604.16339) — texte lu au chapitre 21 et relu par extraits le 14 novembre 2026.
+11. [A Benchmark to Understand the Role of Knowledge Graphs on LLM's Accuracy for Question Answering on Enterprise SQL Databases (arXiv 2311.07509)](https://arxiv.org/abs/2311.07509) — résumé, puis extraits relus le 14 novembre 2026.
 
 Billets de fournisseurs lus, traités comme sources secondaires :
 
@@ -363,7 +363,7 @@ Source reprise du plan initial, non relue pour ce chapitre :
 - La date de lancement d'OSI et la liste de ses fondateurs viennent d'Atlan [13]. Le point communautaire daté du 28 avril cite l'ancien dépôt, mais ses liens mènent au nouveau et il se dit en incubation, signe d'une mise à jour postérieure; la date du transfert n'a pas été établie.
 - Les définitions de RDF, d'OWL, de SPARQL et du graphe de connaissances, ainsi que le rappel des ontologies dans les systèmes multi-agents classiques, viennent de la connaissance générale et du chapitre 2, non d'une page du W3C lue pour ce chapitre. SHACL n'a pas été examiné.
 - Aucun produit d'ontologie d'entreprise n'a été étudié à la source. Les ontologies proposées par les plateformes de données et les vues sémantiques de Snowflake ne sont connues que par Atlan ou par le chapitre 15.
-- Les deux articles [10] et [11] ne sont connus ici que par leur résumé; le caractère simulé de l'évaluation de [10] est repris du chapitre 21. La part de 36,94 % (MAST, version 2 [14], non relue) concorde avec les chapitres 3, 4 et 21; celle d'environ 32 % est une somme calculée au chapitre 21. Le banc d'essai [11] date de 2023; aucune mesure récente et indépendante du gain apporté par une couche sémantique ou une ontologie n'a été lue.
+- Les deux articles [10] et [11], d'abord lus par leur seul résumé, ont été relus par extraits le 14 novembre 2026; le caractère simulé de l'évaluation de [10] concorde avec le chapitre 21. La part de 36,94 % (MAST, version 2 [14], non relue) concorde avec les chapitres 3, 4 et 21; celle d'environ 32 % est une somme calculée au chapitre 21. Le banc d'essai [11] date de 2023; aucune mesure récente et indépendante du gain apporté par une couche sémantique ou une ontologie n'a été lue.
 - Les chiffres d'Atlan (délais de mise en œuvre, gains de précision, prévisions d'analystes) ont été écartés, faute de source primaire lue.
 - Les règles de conception de la section 12.5, les rôles et l'ordre de travail de la section 12.7 sont des propositions de ce chapitre, non des résultats tirés d'une source.
 

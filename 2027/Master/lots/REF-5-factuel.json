@@ -1,0 +1,181 @@
+{
+  "id": "REF-5-factuel",
+  "origine": "plan 2027, lot REF-5-factuel",
+  "categorie": "factuel",
+  "remplacements": [
+    {
+      "fichier": "chapitre-48-revue-litterature.md",
+      "avant": "Un article que sa notice plaçait sur arXiv figure, d'après Crossref, dans les actes de la conférence NeurIPS; il est compté parmi les publications évaluées [1]. Une seule notice n'a pas été retrouvée [32].",
+      "apres": "Un article que sa notice plaçait sur arXiv figure, d'après Crossref, dans les actes de la conférence NeurIPS; il est compté parmi les publications évaluées [1]. Une seule notice n'avait pas été retrouvée par la requête automatique du 13 novembre [32]; son identifiant arXiv a été vérifié et ajouté à la liste lors de l'audit du 14 novembre.",
+      "motif": "Cohérence avec l'ajout du lien arXiv vérifié (2603.07670) pour la source [32], tout en conservant le constat historique du 13 novembre (82/83) aligné sur la figure 48-e1 et l'annexe E."
+    },
+    {
+      "fichier": "chapitre-48-revue-litterature.md",
+      "avant": "27. [Agentic AI in Enterprise Business Processes: A Systematic Review and Practitioner Survey on Adoption Readiness (International Conference on Artificial Intelligence Management and Trends, 2026)](https://doi.org/10.63962/nxpa6137) — la notice ne nomme pas les auteurs.",
+      "apres": "27. [Emelyanov — Agentic AI in Enterprise Business Processes: A Systematic Review and Practitioner Survey on Adoption Readiness (International Conference on Artificial Intelligence Management and Trends, 2026)](https://doi.org/10.63962/nxpa6137) — auteur (Sergey Emelyanov) absent de la notice Crossref, confirmé sur la page du DOI.",
+      "motif": "Complément d'auteur vérifié sur la page officielle du DOI (https://icaimt.com/2026/agentic-ai.html)."
+    },
+    {
+      "fichier": "chapitre-48-revue-litterature.md",
+      "avant": "32. [Du — Memory for Autonomous LLM Agents: Mechanisms, Evaluation, and Emerging Frontiers (arXiv, 2026)](https://consensus.app/papers/details/w:d2c9bfd2-6e57-4342-87e2-eca95d208b83/) — identifiant non confirmé, lien vers la notice de Consensus.",
+      "apres": "32. [Du — Memory for Autonomous LLM Agents: Mechanisms, Evaluation, and Emerging Frontiers (arXiv, 2026)](https://arxiv.org/abs/2603.07670) — notice absente de la requête automatique du 13 novembre (deux-points sans espace sur arXiv); identifiant arXiv 2603.07670 vérifié le 14 novembre 2026.",
+      "motif": "Remplacement du lien Consensus redirigeant vers une page d'inscription par l'adresse arXiv réelle confirmée via l'API arXiv."
+    },
+    {
+      "fichier": "chapitre-48-revue-litterature.md",
+      "avant": "87. [Kraishan — Same Name, Different Server: A Security Census of Silent Drift in the Model Context Protocol Ecosystem (arXiv 2609.14119)](https://arxiv.org/abs/2609.14119) — résumé; chapitre 8.",
+      "apres": "87. [Kraishan — Same Name, Different Server: A Security Census of Silent Drift in the Model Context Protocol Ecosystem (arXiv 2609.14119, 12 septembre 2026)](https://arxiv.org/abs/2609.14119) — résumé; chapitre 8.",
+      "motif": "Ajout de la date de publication vérifiée via l'API arXiv."
+    },
+    {
+      "fichier": "chapitre-48-revue-litterature.md",
+      "avant": "88. [Li et Gao — Toward Understanding Security Issues in the Model Context Protocol Ecosystem (arXiv 2510.16558)](https://arxiv.org/html/2510.16558v1) — chapitre 8.",
+      "apres": "88. [Li et Gao — Toward Understanding Security Issues in the Model Context Protocol Ecosystem (arXiv 2510.16558, version 1 du 18 octobre 2025; titre révisé en v2 du 27 avril 2026 : A First Look at the Security Issues in the Model Context Protocol Ecosystem)](https://arxiv.org/html/2510.16558v1) — chapitre 8.",
+      "motif": "Ajout de la version/date v1 vérifiée et mention du titre révisé en v2 sur /abs/."
+    },
+    {
+      "fichier": "chapitre-48-revue-litterature.md",
+      "avant": "89. [Guo et coll. — A Measurement Study of Model Context Protocol (arXiv 2509.25292)](https://arxiv.org/html/2509.25292v1) — chapitre 8.",
+      "apres": "89. [Guo et coll. — A Measurement Study of Model Context Protocol (arXiv 2509.25292, version 1 du 29 septembre 2025)](https://arxiv.org/html/2509.25292v1) — chapitre 8.",
+      "motif": "Ajout de la version et de la date vérifiées correspondant au titre de la v1 citée."
+    },
+    {
+      "fichier": "chapitre-48-revue-litterature.md",
+      "avant": "90. [Chen et coll. — Rethinking MCP Security: A Large-Scale Study of Runtime MCP Servers and Security Scanner Reliability (arXiv 2607.11086)](https://arxiv.org/abs/2607.11086) — résumé; chapitres 8 et 24.",
+      "apres": "90. [Chen et coll. — Rethinking MCP Security: A Large-Scale Study of Runtime MCP Servers and Security Scanner Reliability (arXiv 2607.11086, 13 juillet 2026)](https://arxiv.org/abs/2607.11086) — résumé; chapitres 8 et 24.",
+      "motif": "Ajout de la date de publication vérifiée via l'API arXiv."
+    },
+    {
+      "fichier": "chapitre-48-revue-litterature.md",
+      "avant": "91. [MCP-Guard: A Multi-Stage Defense-in-Depth Framework for Securing Model Context Protocol in Agentic AI (arXiv 2508.10991)](https://arxiv.org/html/2508.10991v4) — chapitre 24.",
+      "apres": "91. [Xing et coll. — MCP-Guard: A Multi-Stage Defense-in-Depth Framework for Securing Model Context Protocol in Agentic AI (arXiv 2508.10991, version 4 du 8 janvier 2026)](https://arxiv.org/html/2508.10991v4) — chapitre 24.",
+      "motif": "Ajout du premier auteur (Wenpeng Xing et coll.) et de la date de la version 4 vérifiés via arXiv."
+    },
+    {
+      "fichier": "chapitre-48-revue-litterature.md",
+      "avant": "92. [Shah et coll. — Characterizing Faults in Agentic AI: A Taxonomy of Types, Symptoms, and Root Causes (arXiv 2603.06847)](https://arxiv.org/html/2603.06847v2) — chapitre 21.",
+      "apres": "92. [Shah et coll. — Characterizing Faults in Agentic AI: A Taxonomy of Types, Symptoms, and Root Causes (arXiv 2603.06847, version 2 du 7 mai 2026)](https://arxiv.org/html/2603.06847v2) — chapitre 21.",
+      "motif": "Ajout de la version et de la date vérifiées dans l'historique arXiv."
+    },
+    {
+      "fichier": "chapitre-48-revue-litterature.md",
+      "avant": "93. [Zhang, Zhang et Tan — Dissecting Bug Triggers and Failure Modes in Modern Agentic Frameworks (arXiv 2604.08906)](https://arxiv.org/html/2604.08906v1) — chapitre 20.",
+      "apres": "93. [Zhang, Zhang et Tan — Dissecting Bug Triggers and Failure Modes in Modern Agentic Frameworks: An Empirical Study (arXiv 2604.08906, version 1 du 10 avril 2026; titre révisé en v4 : Understanding Bugs in Modern Agentic Frameworks: A Study of Symptoms, Root Causes, and Triggering Conditions)](https://arxiv.org/html/2604.08906v1) — chapitre 20.",
+      "motif": "Restitution du sous-titre de la v1, de sa date et mention du titre révisé en v4 sur arXiv."
+    },
+    {
+      "fichier": "chapitre-48-revue-litterature.md",
+      "avant": "94. [Zhu et coll. — Where Agent Frameworks Fall Short (arXiv 2602.21806)](https://arxiv.org/abs/2602.21806) — résumé; chapitre 20.",
+      "apres": "94. [Zhu et coll. — Where Agent Frameworks Fall Short: Examining Functional Challenges and Usability Concerns (arXiv 2602.21806, 25 février 2026)](https://arxiv.org/abs/2602.21806) — résumé; chapitre 20.",
+      "motif": "Restitution du sous-titre complet et de la date de publication vérifiés via l'API arXiv."
+    },
+    {
+      "fichier": "chapitre-48-revue-litterature.md",
+      "avant": "95. [She et coll. — Efficient Benchmarking in Production: A Study of an Evolving LLM Agent (arXiv 2609.21267)](https://arxiv.org/abs/2609.21267) — résumé; chapitre 33.",
+      "apres": "95. [She et Lin — Efficient Benchmarking in Production: A Study of an Evolving LLM Agent (arXiv 2609.21267, 18 septembre 2026)](https://arxiv.org/abs/2609.21267) — résumé; chapitre 33.",
+      "motif": "Précision des deux auteurs (Yining She et Lei Lin) et de la date de publication vérifiés via l'API arXiv."
+    },
+    {
+      "fichier": "chapitre-48-revue-litterature.md",
+      "avant": "96. [Kujanpää et coll. — Tool-Making and Self-Evolving LLM Agents in Low-Latency Systems (arXiv 2607.08010)](https://arxiv.org/abs/2607.08010) — résumé; chapitre 42.",
+      "apres": "96. [Kujanpää et coll. — Tool-Making and Self-Evolving LLM Agents in Low-Latency Systems (arXiv 2607.08010, 9 juillet 2026; à paraître au volet industriel d'EMNLP 2026)](https://arxiv.org/abs/2607.08010) — résumé; chapitre 42.",
+      "motif": "Ajout de la date et de l'acceptation à EMNLP 2026 Industry Track vérifiées sur arXiv."
+    },
+    {
+      "fichier": "chapitre-48-revue-litterature.md",
+      "avant": "98. [Goddard et coll. — Automation bias: a systematic review of frequency, effect mediators, and mitigators (Journal of the American Medical Informatics Association)](https://pmc.ncbi.nlm.nih.gov/articles/PMC3240751/) — chapitre 22.",
+      "apres": "98. [Goddard, Roudsari et Wyatt — Automation bias: a systematic review of frequency, effect mediators, and mitigators (Journal of the American Medical Informatics Association, vol. 19, no 1, 2012, p. 121-127; prépublication en ligne en 2011)](https://pmc.ncbi.nlm.nih.gov/articles/PMC3240751/) — chapitre 22.",
+      "motif": "Ajout des trois auteurs (Kate Goddard, Abdul Roudsari, Jeremy C. Wyatt), de l'année 2012 et des références bibliographiques vérifiés via Crossref (DOI 10.1136/amiajnl-2011-000089)."
+    },
+    {
+      "fichier": "chapitre-48-revue-litterature.md",
+      "avant": "99. [Dhanorkar, Passi et Vorvoreanu — Human oversight of agentic systems in practice (arXiv 2606.05391)](https://arxiv.org/html/2606.05391) — chapitre 22.",
+      "apres": "99. [Dhanorkar, Passi et Vorvoreanu — Human oversight of agentic systems in practice: Examining the oversight work, challenges, and heuristics of developers using software agents (arXiv 2606.05391, 3 juin 2026)](https://arxiv.org/html/2606.05391) — chapitre 22.",
+      "motif": "Restitution du sous-titre complet et de la date vérifiés via l'API arXiv."
+    },
+    {
+      "fichier": "chapitre-48-revue-litterature.md",
+      "avant": "100. [Green — The Flaws of Policies Requiring Human Oversight of Government Algorithms (arXiv 2109.05067)](https://arxiv.org/abs/2109.05067) — résumé; chapitre 22.",
+      "apres": "100. [Green — The Flaws of Policies Requiring Human Oversight of Government Algorithms (Computer Law & Security Review 45, 2022; arXiv 2109.05067, 10 septembre 2021)](https://arxiv.org/abs/2109.05067) — résumé; chapitre 22.",
+      "motif": "Ajout de la revue de publication (2022) et de la date de dépôt arXiv (2021), cohérent avec le chapitre 22."
+    },
+    {
+      "fichier": "chapitre-48-revue-litterature.md",
+      "avant": "101. [Mitchell, Ghosh et Passi — AI Agents Push Humans Out of the Loop (arXiv 2608.23642)](https://arxiv.org/html/2608.23642) — chapitre 22.",
+      "apres": "101. [Mitchell, Ghosh et Passi — AI Agents Push Humans Out of the Loop (arXiv 2608.23642, 24 août 2026)](https://arxiv.org/html/2608.23642) — chapitre 22.",
+      "motif": "Ajout de la date de publication vérifiée via l'API arXiv."
+    },
+    {
+      "fichier": "chapitre-49-veille-technologique.md",
+      "avant": "2. [NIST — SP 800-53 Control Overlays, page du projet, mise à jour du 20 octobre 2026](https://csrc.nist.gov/projects/cosais)",
+      "apres": "2. [NIST — SP 800-53 Control Overlays for Super Intelligence Systems, page du projet, mise à jour du 20 octobre 2026](https://csrc.nist.gov/projects/cosis)",
+      "motif": "Mise à jour vers l'URL canonique du projet renommé COSIS et précision du titre complet."
+    },
+    {
+      "fichier": "chapitre-49-veille-technologique.md",
+      "avant": "20. [NIST — AI Agent Standards Initiative, mise à jour du 9 novembre 2026](https://www.nist.gov/caisi/ai-agent-standards-initiative) — aussi citée aux chapitres 4, 11 et 43.",
+      "apres": "20. [NIST — SI Agent Standards Initiative, mise à jour du 9 novembre 2026](https://www.nist.gov/super-intelligence/si-agent-standards-initiative) — aussi citée aux chapitres 4, 11 et 43 (anciennement CAISI).",
+      "motif": "Mise à jour vers l'URL canonique et le titre renommé du NIST vérifiés."
+    },
+    {
+      "fichier": "chapitre-49-veille-technologique.md",
+      "avant": "26. [SAP — annonces de TechEd, 27 octobre 2026](https://news.sap.com/?p=248010)",
+      "apres": "26. [SAP — annonces de TechEd, 27 octobre 2026](https://news.sap.com/2026/10/sap-teched-ai-developers-build-what-matters-autonomous-execution/)",
+      "motif": "Remplacement du permalien court WordPress (?p=248010) par l'URL canonique vérifiée."
+    },
+    {
+      "fichier": "chapitre-49-veille-technologique.md",
+      "avant": "39. [IETF — RFC 10024, accord de clés hybride post-quantique pour TLS 1.3, août 2026](https://datatracker.ietf.org/doc/draft-ietf-tls-ecdhe-mlkem/)",
+      "apres": "39. [IETF — RFC 10024, accord de clés hybride post-quantique pour TLS 1.3, août 2026](https://datatracker.ietf.org/doc/rfc10024/)",
+      "motif": "Remplacement de l'URL du brouillon par l'URL canonique de la RFC 10024 publiée."
+    },
+    {
+      "fichier": "chapitre-49-veille-technologique.md",
+      "avant": "40. [IETF — RFC 9964, ML-DSA pour JOSE et COSE, mai 2026](https://datatracker.ietf.org/doc/draft-ietf-cose-dilithium/)",
+      "apres": "40. [IETF — RFC 9964, ML-DSA pour JOSE et COSE, mai 2026](https://datatracker.ietf.org/doc/rfc9964/)",
+      "motif": "Remplacement de l'URL du brouillon par l'URL canonique de la RFC 9964 publiée."
+    },
+    {
+      "fichier": "chapitre-49-veille-technologique.md",
+      "avant": "41. [IETF — RFC 10073, signatures composites ML-DSA pour X.509, novembre 2026](https://datatracker.ietf.org/doc/draft-ietf-lamps-pq-composite-sigs/)",
+      "apres": "41. [IETF — RFC 10073, signatures composites ML-DSA pour X.509, novembre 2026](https://datatracker.ietf.org/doc/rfc10073/)",
+      "motif": "Remplacement de l'URL du brouillon par l'URL canonique de la RFC 10073 publiée."
+    },
+    {
+      "fichier": "chapitre-50-projection-etude-marche.md",
+      "avant": "29. [Epoch AI — LLM inference prices have fallen rapidly but unequally across tasks, 12 mars 2025](https://epoch.ai/data-insights/ai-inference-price-trends) — première partie de la page.",
+      "apres": "29. [Epoch AI — LLM inference prices have fallen rapidly but unequally across tasks, 12 mars 2025](https://epoch.ai/data-insights/llm-inference-price-trends) — première partie de la page.",
+      "motif": "Mise à jour vers l'URL canonique vérifiée (redirection permanente depuis ai-inference-price-trends)."
+    },
+    {
+      "fichier": "chapitre-50-projection-etude-marche.md",
+      "avant": "32. [IDC — FutureScape 2027, communiqué du 27 octobre 2026](https://www.idc.com/?p=122385) — relue à l'audit.",
+      "apres": "32. [IDC — FutureScape 2027, communiqué du 27 octobre 2026](https://www.idc.com/resource-center/press-releases/idc-futurescape-2027-predicts-60-of-enterprises-will-run-a-majority-of-their-business-processes-ai-first-by-2029-up-from-13-in-2026/) — relue à l'audit.",
+      "motif": "Remplacement du permalien court (?p=122385) par l'URL canonique vérifiée."
+    },
+    {
+      "fichier": "chapitre-50-projection-etude-marche.md",
+      "avant": "66. [TechTarget — Dynatrace acquires Arize for AI agent development, 13 août 2026](https://www.techtarget.com/it-strategy/news/366648773/Dynatrace-acquires-Arize-for-AI-agent-development)",
+      "apres": "66. [TechTarget — Dynatrace acquires Arize for AI agent development, 13 août 2026](https://www.techtarget.com/news/Dynatrace-acquires-Arize-for-AI-agent-development/846446/)",
+      "motif": "Mise à jour vers l'URL canonique vérifiée après redirection TechTarget."
+    },
+    {
+      "fichier": "chapitre-50-projection-etude-marche.md",
+      "avant": "72. [IT-Online — reprise du communiqué de Gartner du 11 juin 2025 sur les agents gardiens](https://it-online.co.za/?p=298626)",
+      "apres": "72. [IT-Online — reprise du communiqué de Gartner du 11 juin 2025 sur les agents gardiens](https://it-online.co.za/2025/06/13/guardian-agents-will-bolster-trust/)",
+      "motif": "Remplacement du permalien court WordPress (?p=298626) par l'URL canonique vérifiée."
+    },
+    {
+      "fichier": "chapitre-48-revue-litterature.md",
+      "avant": "- Le profil du corpus de l'ouvrage classe les 709 sources d'après le nom de domaine de leur adresse. Il confond les genres au sein d'un même site et compte comme prépublication un article publié mais cité par arXiv.",
+      "apres": "- Le profil du corpus de l'ouvrage (789 sources en 48.2) classe par nom de domaine les 709 sources du 13 novembre et y ajoute 80 compléments classés à la main; le classement par adresse confond les genres au sein d'un même site et compte comme prépublication un article publié mais cité par arXiv.",
+      "motif": "Alignement des limites sur le tableau recalculé en section 48.2 (l. 72 et l. 94 : 709 sources classées par adresse + 80 classées à la main = 789)."
+    },
+    {
+      "fichier": "chapitre-48-revue-litterature.md",
+      "avant": "Six ne sont connus que par leur résumé, et leur rattachement aux cases de la synthèse est une lecture de ce chapitre. Le profil du corpus de la section 48.2 n'a pas été recalculé sur les 774 sources.",
+      "apres": "Six ne sont connus que par leur résumé, et leur rattachement aux cases de la synthèse est une lecture de ce chapitre. Le profil du corpus de la section 48.2 a depuis été recalculé sur les 789 sources du 14 novembre en mêlant classement par adresse (709) et classement manuel (80).",
+      "motif": "Suppression de la contradiction avec le tableau recalculé (l. 72 : 789; l. 94 : 709 + 80), en restant strictement dans l'ancre de l'entrée #525 du registre."
+    }
+  ]
+}

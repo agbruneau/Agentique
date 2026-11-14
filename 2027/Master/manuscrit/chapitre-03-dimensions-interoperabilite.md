@@ -2,7 +2,7 @@
 
 *Question directrice : à quels niveaux deux agents doivent-ils s'entendre pour coopérer ?*
 
-> **État de référence :** cadre européen d'interopérabilité de 2017, spécification MCP `2026-07-28`, spécification A2A 1.0, brouillon IETF `draft-ietf-wimse-aims-01` du 2 novembre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre : [1] à [13] sont des pages primaires lues pour ce chapitre, [14] à [16] des prépublications dont seul le résumé a été lu.
+> **État de référence :** cadre européen d'interopérabilité de 2017, spécification MCP `2026-07-28`, spécification A2A 1.0, brouillon IETF `draft-ietf-wimse-aims-01` du 2 novembre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre : [1] à [13] sont des pages primaires lues pour ce chapitre, [14] à [16] des prépublications d'abord lues en résumé puis vérifiées par extraits le 14 novembre 2026.
 
 Deux agents qui échangent un message JSON valide n'ont pas pour autant coopéré. L'un peut entendre par « client actif » un client facturé ce trimestre, l'autre un client non résilié. Ils peuvent s'accorder sur le sens et diverger sur celui des deux qui devait valider la commande. Ils peuvent s'accorder sur tout cela sans qu'aucun ait eu le droit d'agir. Le message est passé; la coopération a échoué.
 
@@ -85,7 +85,7 @@ ANP pousse cette logique le plus loin : sa spécification recommande que tout ag
 
 **Un sens, deux contextes.** Un agent peut comprendre chaque terme et ignorer ce que l'autre sait déjà. C'est le niveau pragmatique du LCIM [2]. A2A pose en principe que des agents coopèrent sans accéder à l'état interne, à la mémoire ni aux outils de l'autre [6]. Cette opacité protège; elle oblige aussi à transmettre explicitement tout le contexte utile (chapitre 13).
 
-**Une tâche, deux intentions.** Dans sa version 2, tirée de sept cadriciels sur plus de 200 tâches, la taxonomie MAST range 36,94 % des échecs observés dans le désalignement entre agents; l'absence de demande de clarification en représente à elle seule 11,65 % [8]. La version 3 déplace ces parts (chapitre 21). Une prépublication nomme ce phénomène « divergence d'intention sémantique » et propose un intergiciel pour le détecter. Son résumé rapporte une précision de détection de 27,9 %, obtenue sur des exécutions simulées selon le chapitre 21, ce qui situe la maturité de ce type de remède [15].
+**Une tâche, deux intentions.** Dans sa version 2, tirée de sept cadriciels sur plus de 200 tâches, la taxonomie MAST range 36,94 % des échecs observés dans le désalignement entre agents; l'absence de demande de clarification en représente à elle seule 11,65 % [8]. La version 3 déplace ces parts (chapitre 21). Une prépublication nomme ce phénomène « divergence d'intention sémantique » et propose un intergiciel pour le détecter. L'étude rapporte une précision de détection de 27,9 %, obtenue sur des exécutions simulées selon le chapitre 21, ce qui situe la maturité de ce type de remède [15].
 
 ### Une interopérabilité obtenue, non garantie
 
@@ -142,7 +142,7 @@ Les protocoles fournissent ici des briques. Dans A2A, un agent déclare dans sa 
 
 Aucun des protocoles d'agents lus ne permet d'exprimer une obligation : limite de responsabilité, finalité permise d'une donnée, juridiction, durée de conservation. Ces termes vivent dans des contrats et des politiques que l'agent ne lit pas. Le cadre de Singapour en tire une conséquence pratique : préciser par contrat la répartition des obligations avec les tiers, exiger d'eux de la transparence, une authentification propre à chaque agent et la journalisation des appels d'outils, et, à défaut, réduire la portée du cas d'usage [9]. Hors de ces protocoles, ODRL exprime une politique d'usage et le Dataspace Protocol en fait un accord entre organisations, sans en garantir l'application une fois les données copiées (chapitre 45).
 
-Un document de travail d'avril 2026 sur le droit européen applicable aux agents fait de l'inventaire complet des actions externes de l'agent, de ses flux de données et des systèmes connectés la première tâche de conformité d'un fournisseur, selon son résumé [16]. Un registre et des traces devraient le fournir (chapitres 8 et 33); les cadres sont traités aux chapitres 35 à 38.
+Un document de travail d'avril 2026 sur le droit européen applicable aux agents fait de l'inventaire complet des actions externes de l'agent, de ses flux de données et des systèmes connectés la première tâche de conformité d'un fournisseur [16]. Un registre et des traces devraient le fournir (chapitres 8 et 33); les cadres sont traités aux chapitres 35 à 38.
 
 ### Une normalisation inachevée
 
@@ -207,7 +207,7 @@ La grille fait ressortir le déséquilibre typique de 2026. Les protocoles amèn
 
 Pages primaires lues le 11 novembre 2026 :
 
-1. [Cadre européen d'interopérabilité — COM(2017) 134, annexe 2](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52017DC0134)
+1. [Cadre européen d'interopérabilité — COM(2017) 134, annexe 2](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52017DC0134) — accès automatisé redirigé vers `TodayOJ` le 14 novembre 2026; contenu confirmé par recherche web.
 2. [The Levels of Conceptual Interoperability Model: Applying Systems Engineering Principles to M&S (arXiv 0908.0191)](https://arxiv.org/abs/0908.0191)
 3. [A survey of agent interoperability protocols (arXiv 2505.02279v2)](https://arxiv.org/html/2505.02279v2)
 4. [Governance Gaps in Agent Interoperability Protocols (arXiv 2606.31498)](https://arxiv.org/html/2606.31498)
@@ -217,11 +217,11 @@ Pages primaires lues le 11 novembre 2026 :
 8. [Why Do Multi-Agent LLM Systems Fail? — MAST (arXiv 2503.13657v2)](https://arxiv.org/html/2503.13657v2)
 9. [IMDA — Model AI Governance Framework for Agentic AI, version 1.5 (20 mai 2026, mise à jour le 5 juin 2026)](https://www.imda.gov.sg/-/media/imda/files/about/emerging-tech-and-research/artificial-intelligence/mgf-for-agentic-ai.pdf)
 10. [IETF — draft-ietf-wimse-aims-01, AI Identity Management System](https://datatracker.ietf.org/doc/draft-ietf-wimse-aims/)
-11. [NIST — AI Agent Standards Initiative](https://www.nist.gov/caisi/ai-agent-standards-initiative)
-12. [W3C — AI Agent Protocol Community Group](https://www.w3.org/community/agentprotocol/)
+11. [NIST — SI Agent Standards Initiative (anciennement CAISI)](https://www.nist.gov/super-intelligence/si-agent-standards-initiative)
+12. [W3C — AI Agent Protocol Community Group](https://www.w3.org/community/agentprotocol/) — accès automatisé refusé (HTTP 403) le 14 novembre 2026; fiche vérifiée par recherche web.
 13. [Agentic AI Foundation — projets](https://aaif.io/projects)
 
-Prépublications dont seul le résumé a été lu :
+Prépublications (résumé initial, puis extraits relus le 14 novembre 2026) :
 
 14. [From Multi-Agent Systems and the Semantic Web to Agentic AI: A Unified Narrative of the Web of Agents (arXiv 2507.10644)](https://arxiv.org/abs/2507.10644)
 15. [Semantic Consensus: Process-Aware Conflict Detection and Resolution for Enterprise Multi-Agent LLM Systems (arXiv 2604.16339)](https://arxiv.org/abs/2604.16339)
@@ -235,7 +235,7 @@ Sources secondaires : le plan initial du compendium et le chapitre 6, pour l'abs
 - Le découpage en cinq niveaux, le rattachement de la confiance au droit et la grille de maturité sont des constructions de ce chapitre; la grille n'a été éprouvée sur aucun cas.
 - La plupart des pages ont été lues par un outil d'extraction qui les résume; les formulations normatives d'A2A et de l'EIF sont rapportées, non citées.
 - Lectures partielles : environ les quatre cinquièmes de la spécification A2A [6], la première moitié de l'article MAST [8]. L'audit du 12 novembre 2026 a relu [4], [5], [9] (passages cités), [12] et le résumé de [8]; il n'a pas relu les règles d'extension et de signature d'A2A.
-- Les sources [14] à [16] ne sont connues que par leur résumé.
+- Pour [14] à [16], la rédaction s'est d'abord appuyée sur les résumés avant la relecture par extraits du 14 novembre 2026.
 - La réserve sur la cote d'audit de MCP dans [4] est une déduction de ce chapitre.
 - La colonne ANP du tableau de la section 3.2 repose en partie sur le relevé [3], antérieur à l'état actuel du protocole. ISO/IEC 19941 n'a pas été consulté.
 - L'exemple du « client actif » est illustratif; aucune donnée d'adoption n'est citée.

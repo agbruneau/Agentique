@@ -1,0 +1,25 @@
+{
+  "id": "REF-cloture-3",
+  "origine": "plan 2027, lot REF-cloture-3",
+  "categorie": "harmonisation",
+  "remplacements": [
+    {
+      "fichier": "chapitre-50-projection-etude-marche.md",
+      "avant": "23. [ServiceNow — résultats du troisième trimestre de 2026, dépôt à la SEC du 28 octobre 2026](https://www.sec.gov/Archives/edgar/data/0001373715/000137371526000092/erq3fy26.htm)",
+      "apres": "23. [ServiceNow — résultats du troisième trimestre de 2026, dépôt à la SEC du 28 octobre 2026](https://www.sec.gov/Archives/edgar/data/1373715/000137371526000092/erq3fy26.htm)",
+      "motif": "Aligner l'URL SEC EDGAR vers son chemin canonique sans zéros initiaux après redirection 301"
+    },
+    {
+      "fichier": "chapitre-50-projection-etude-marche.md",
+      "avant": "25. [SAP — rapport du troisième trimestre de 2026, dépôt à la SEC du 21 octobre 2026](https://www.sec.gov/Archives/edgar/data/0001000184/000110465926118617/tm2628113d1_ex99-1.htm)",
+      "apres": "25. [SAP — rapport du troisième trimestre de 2026, dépôt à la SEC du 21 octobre 2026](https://www.sec.gov/Archives/edgar/data/1000184/000110465926118617/tm2628113d1_ex99-1.htm)",
+      "motif": "Aligner l'URL SEC EDGAR vers son chemin canonique sans zéros initiaux après redirection 301"
+    },
+    {
+      "fichier": "annexe-E-bibliographie.md",
+      "avant": "263 remplacements appliqués au registre (lots REF-1 à REF-5, REF-cloture et REF-cloture-2)",
+      "apres": "266 remplacements appliqués au registre (lots REF-1 à REF-5, REF-cloture, REF-cloture-2 et REF-cloture-3)",
+      "motif": "Mettre à jour le décompte total des remplacements après REF-cloture-3"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "id": "REF-cloture",
+  "origine": "plan 2027, lot REF-cloture",
+  "categorie": "harmonisation",
+  "remplacements": [
+    {
+      "fichier": "annexe-E-bibliographie.md",
+      "avant": "- [NIST — AI Agent Standards Initiative](https://www.nist.gov/caisi/ai-agent-standards-initiative) (1, 3, 4, 11, 35, 43)",
+      "apres": "- [NIST — SI Agent Standards Initiative](https://www.nist.gov/super-intelligence/si-agent-standards-initiative) (1, 3, 4, 11, 35, 43)",
+      "motif": "Synchroniser l'URL et l'intitulé NIST SI Agent Standards Initiative avec les chapitres 1, 3, 4, 11, 35, 43 et 49"
+    },
+    {
+      "fichier": "annexe-E-bibliographie.md",
+      "avant": "- [Anthropic — Building effective agents](https://www.anthropic.com/engineering/building-effective-agents) (1, 16, 17)",
+      "apres": "- [Anthropic — Building effective agents](https://www.anthropic.com/research/building-effective-agents) (1, 16, 17)",
+      "motif": "Synchroniser l'URL canonique Anthropic /research/building-effective-agents avec le chapitre 1"
+    },
+    {
+      "fichier": "chapitre-16-topologies-patrons.md",
+      "avant": "4. [Anthropic — Building effective agents, 19 décembre 2024](https://www.anthropic.com/engineering/building-effective-agents) — billet de fournisseur.",
+      "apres": "4. [Anthropic — Building effective agents, 19 décembre 2024](https://www.anthropic.com/research/building-effective-agents) — billet de fournisseur.",
+      "motif": "Aligner l'URL canonique Anthropic /research/building-effective-agents sur le chapitre 1 et l'annexe E"
+    },
+    {
+      "fichier": "chapitre-17-deterministe-ou-agentique.md",
+      "avant": "1. [Anthropic — Building effective agents (19 décembre 2024)](https://www.anthropic.com/engineering/building-effective-agents)",
+      "apres": "1. [Anthropic — Building effective agents (19 décembre 2024)](https://www.anthropic.com/research/building-effective-agents)",
+      "motif": "Aligner l'URL canonique Anthropic /research/building-effective-agents sur le chapitre 1 et l'annexe E"
+    },
+    {
+      "fichier": "annexe-E-bibliographie.md",
+      "avant": "Résumés seulement pour les 83 notices du protocole, dont titre, auteurs et lieu de publication sont confirmés auprès d'arXiv ou de Crossref pour 82; des quinze travaux hors protocole, six ne sont connus que par leur résumé",
+      "apres": "Résumés seulement pour les 83 notices du protocole, dont titre, auteurs et lieu de publication sont confirmés auprès d'arXiv ou de Crossref pour 82 le 13 novembre (la 83e, [32], est confirmée sur arXiv et l'auteur de [27] sur la page du DOI le 14 novembre); des quinze travaux hors protocole, six ne sont connus que par leur résumé",
+      "motif": "Consigner la confirmation de [32] sur arXiv et de l'auteur de [27] sur la page du DOI au 14 novembre 2026 tout en gardant le fait du 13 novembre (82)"
+    },
+    {
+      "fichier": "annexe-E-bibliographie.md",
+      "avant": "Trois contrôles ont suivi l'audit, faits par des lecteurs qui n'avaient pas écrit les passages contrôlés. Tous lisent les sources par un outil qui en rend des extraits, non le texte brut.\n\n| Contrôle | Périmètre | Résultat |\n|---|---|---|\n| Recollationnement des chiffres | 200 phrases d'exposé tirées au hasard parmi les 295 qui portent une quantité et un appel de source | 182 vérifiables : 178 confirmées, 4 en erreur, soit 2,2 %; 18 non vérifiables, la source étant inaccessible ou le chiffre introuvable |\n| Lecture au-delà du résumé | 134 sources des chapitres 1 à 47 connues par leur seul résumé et citées dans le texte | 124 relues : 64 confirmées, 54 exactes mais à nuancer, 6 en erreur; 10 non relues |\n| Second audit des compléments | Les 193 entrées ajoutées au registre le 14 novembre | 95 constats : aucun bloquant, 19 majeurs, 76 mineurs; 86 corrigés |",
+      "apres": "Quatre contrôles ont suivi l'audit, faits par des lecteurs qui n'avaient pas écrit les passages contrôlés. Les trois premiers lisent les sources par un outil qui en rend des extraits, non le texte brut; le quatrième contrôle les adresses, identifiants et renvois directement sur les sources et les interfaces d'arXiv, Crossref et IETF Datatracker.\n\n| Contrôle | Périmètre | Résultat |\n|---|---|---|\n| Recollationnement des chiffres | 200 phrases d'exposé tirées au hasard parmi les 295 qui portent une quantité et un appel de source | 182 vérifiables : 178 confirmées, 4 en erreur, soit 2,2 %; 18 non vérifiables, la source étant inaccessible ou le chiffre introuvable |\n| Lecture au-delà du résumé | 134 sources des chapitres 1 à 47 connues par leur seul résumé et citées dans le texte | 124 relues : 64 confirmées, 54 exactes mais à nuancer, 6 en erreur; 10 non relues |\n| Second audit des compléments | Les 193 entrées ajoutées au registre le 14 novembre | 95 constats : aucun bloquant, 19 majeurs, 76 mineurs; 86 corrigés |\n| Contrôle intégral des références et liens | 59 fichiers du manuscrit : 1 033 sources (789 ch. 1–47, 244 partie X), 1 101 occurrences d'URL publiques (879 distinctes, dont 13 occurrences / 12 URI en blocs de code), appels [n] et renvois internes (5 604 entrées consignées pour les tranches 1 à 5) | 0 source sans URL, 0 appel ou renvoi interne cassé; 256 remplacements appliqués au registre (lots REF-1 à REF-5 et REF-cloture); accès restreints (403, 429, défis anti-robot, délais) vérifiés par API ou recherche et datés dans les sources et limites |",
+      "motif": "Ajouter le bilan factuel du contrôle intégral des références, URL, identifiants et renvois des 59 fichiers au 14 novembre 2026"
+    },
+    {
+      "fichier": "chapitre-24-passerelles-integration.md",
+      "avant": "10. [MCP — bonnes pratiques de sécurité, spécification 2026-07-28](https://modelcontextprotocol.io/specification/2026-07-28/basic/security_best_practices.md)",
+      "apres": "10. [MCP — bonnes pratiques de sécurité, spécification 2026-07-28](https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/security_best_practices.md)",
+      "motif": "Aligner l'URL MCP security_best_practices.md sur les chapitres 30 et 31"
+    },
+    {
+      "fichier": "chapitre-24-passerelles-integration.md",
+      "avant": "15. [MCP-Guard: A Multi-Stage Defense-in-Depth Framework for Securing Model Context Protocol in Agentic AI (arXiv 2508.10991, version 4 du 8 janvier 2026)](https://arxiv.org/html/2508.10991v4)",
+      "apres": "15. [Xing et coll. — MCP-Guard: A Multi-Stage Defense-in-Depth Framework for Securing Model Context Protocol in Agentic AI (arXiv 2508.10991, version 4 du 8 janvier 2026)](https://arxiv.org/html/2508.10991v4)",
+      "motif": "Ajouter Xing et coll. confirmé sur export.arxiv.org (arXiv 2508.10991v4), aligné sur le chapitre 48 [91]"
+    },
+    {
+      "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+      "avant": "ces éléments proviennent du texte complet de l'article, recoupé par extraits le 14 novembre 2026 (le volet pratique ci-après conserve la formulation antérieure relative au résumé seul).",
+      "apres": "ces éléments proviennent du texte complet de l'article, recoupé par extraits le 14 novembre 2026.",
+      "motif": "Retirer la réserve devenue caduque après synchronisation du volet pratique L1107"
+    },
+    {
+      "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+      "avant": "le résumé lu de l’article de Carlini ne décrit ni les canaris ni la métrique d’exposition, et le nombre de canaris et de témoins, le seuil et le décodage ne sont décrits dans aucune source lue.",
+      "apres": "le résumé seul de l’article de Carlini ne décrit ni les canaris ni la métrique d’exposition; ces éléments proviennent du texte complet de l’article, recoupé par extraits le 14 novembre 2026, et le nombre de canaris et de témoins, le seuil et le décodage ne sont décrits dans aucune source lue.",
+      "motif": "Synchroniser le volet pratique L1107 (et chapitre-47-volet-c.md L183) avec la section Limites L266 en gardant exclusivement des mots présents dans l'exposé et aud.ajouts"
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "id": "REF-1-factuel",
+  "origine": "plan 2027, lot REF-1-factuel",
+  "categorie": "factuel",
+  "remplacements": [
+    {
+      "fichier": "chapitre-01-entreprise-agentique.md",
+      "avant": "1. [Anthropic — Building effective agents (19 décembre 2024)](https://www.anthropic.com/engineering/building-effective-agents)",
+      "apres": "1. [Anthropic — Building effective agents (19 décembre 2024)](https://www.anthropic.com/research/building-effective-agents)",
+      "motif": "Mettre à jour l'URL canonique de [1], redirigée de /engineering/ vers /research/building-effective-agents (HTTP 200)."
+    },
+    {
+      "fichier": "chapitre-01-entreprise-agentique.md",
+      "avant": "9. [NIST — AI Agent Standards Initiative](https://www.nist.gov/caisi/ai-agent-standards-initiative)",
+      "apres": "9. [NIST — SI Agent Standards Initiative (anciennement CAISI)](https://www.nist.gov/super-intelligence/si-agent-standards-initiative)",
+      "motif": "Mettre à jour l'URL de [9], redirigée de /caisi/ai-agent-standards-initiative vers /super-intelligence/si-agent-standards-initiative (titre 'SI Agent Standards Initiative | NIST', mis à jour le 9 novembre 2026)."
+    },
+    {
+      "fichier": "chapitre-01-entreprise-agentique.md",
+      "avant": "11. [Zhu et coll. — LLM-Based Multi-Agent Orchestration: A Survey](https://www.preprints.org/manuscript/202604.2147) — article non lu (accès refusé); taxonomie",
+      "apres": "11. [Zhu et coll. — LLM-Based Multi-Agent Orchestration: A Survey](https://www.preprints.org/manuscript/202604.2147) (paru dans *Future Internet*, vol. 18, n° 6, art. 326, 15 juin 2026, [DOI 10.3390/fi18060326](https://doi.org/10.3390/fi18060326)) — prépublication et article de revue non lus (accès automatisé refusé HTTP 403 au 14 novembre 2026); taxonomie",
+      "motif": "Consigner la parution vérifiée de Zhu et coll. [11] dans Future Internet via l'API Crossref (DOI 10.3390/fi18060326) et dater le refus HTTP 403 sans toucher la borne 'reprise du plan initial.'."
+    },
+    {
+      "fichier": "chapitre-01-entreprise-agentique.md",
+      "avant": "- La fiche Zenodo annonce [11] à paraître dans *Future Internet*; le 12 novembre 2026, aucune parution n'a été trouvée (chapitre 16). Le rattachement de [3] à ICDEW 2025 ne figure pas sur la page lue; le chapitre 23 cite une version antérieure de la même architecture (arXiv 2406.00584).",
+      "apres": "- La parution de [11] dans *Future Internet* (vol. 18, n° 6, art. 326, 15 juin 2026, DOI 10.3390/fi18060326) est confirmée par Crossref le 14 novembre 2026, mais Preprints.org et la page MDPI retournent HTTP 403 aux requêtes automatisées (chapitre 16). Le rattachement de [3] à ICDEW 2025 ne figure pas dans la version HTML lue (`html/2504.08148`), mais est confirmé sur la fiche `abs/2504.08148` (*First Workshop on Data-AI Systems (DAIS), ICDE 2025*); le chapitre 23 cite une version antérieure de la même architecture (arXiv 2406.00584).",
+      "motif": "Corriger deux limites obsolètes : la publication confirmée de Zhu et coll. [11] dans Future Internet (Crossref) et la référence ICDEW 2025 présente sur arXiv abs/2504.08148 pour [3]."
+    },
+    {
+      "fichier": "chapitre-03-dimensions-interoperabilite.md",
+      "avant": "11. [NIST — AI Agent Standards Initiative](https://www.nist.gov/caisi/ai-agent-standards-initiative)",
+      "apres": "11. [NIST — SI Agent Standards Initiative (anciennement CAISI)](https://www.nist.gov/super-intelligence/si-agent-standards-initiative)",
+      "motif": "Mettre à jour l'URL de [11], redirigée vers /super-intelligence/si-agent-standards-initiative."
+    },
+    {
+      "fichier": "chapitre-04-etat-des-lieux.md",
+      "avant": "5. [NIST — AI Agent Standards Initiative](https://www.nist.gov/caisi/ai-agent-standards-initiative)",
+      "apres": "5. [NIST — SI Agent Standards Initiative (anciennement CAISI)](https://www.nist.gov/super-intelligence/si-agent-standards-initiative)",
+      "motif": "Mettre à jour l'URL de [5], redirigée vers /super-intelligence/si-agent-standards-initiative."
+    },
+    {
+      "fichier": "chapitre-06-a2a.md",
+      "avant": "10. [LF AI & Data — ACP Joins Forces with A2A, 29 août 2025](https://lfaidata.foundation/?p=7689)",
+      "apres": "10. [LF AI & Data — ACP Joins Forces with A2A, 29 août 2025](https://lfaidata.foundation/communityblog/2025/08/29/acp-joins-forces-with-a2a-under-the-linux-foundations-lf-ai-data/)",
+      "motif": "Remplacer le raccourci ?p=7689 par le permalien canonique vérifié par redirection HTTP 200."
+    },
+    {
+      "fichier": "chapitre-07-protocoles-peripheriques.md",
+      "avant": "toutes sont des pages primaires lues pour ce chapitre, sauf [22].",
+      "apres": "toutes sont des pages primaires consultées pour ce chapitre.",
+      "motif": "Harmoniser le bandeau de référence après remplacement de la source secondaire [22] par sa source primaire IETF Datatracker."
+    },
+    {
+      "fichier": "chapitre-07-protocoles-peripheriques.md",
+      "avant": "Un brouillon de groupe communautaire n'engage pas le W3C (chapitre 11), et aucun travail de normalisation formelle sur ANP n'a été repéré [22].",
+      "apres": "Un brouillon de groupe communautaire n'engage pas le W3C (chapitre 11). À l'IETF, aucun groupe de travail n'a adopté ANP : seules des soumissions individuelles aujourd'hui expirées (dont `draft-zyyhl-agent-networks-framework-01`, expiré le 23 avril 2026 et s'appuyant sur ANP) ont été déposées, sans portée normative [22].",
+      "motif": "Sourcer et préciser l'état de normalisation d'ANP à l'IETF d'après IETF Datatracker (draft-zyyhl-agent-networks-framework-01 et draft-song-anp-*)."
+    },
+    {
+      "fichier": "chapitre-07-protocoles-peripheriques.md",
+      "avant": "Source secondaire :\n\n22.",
+      "apres": "22.",
+      "motif": "Retirer l'en-tête 'Source secondaire :' avant [22] maintenant sourcé à l'IETF Datatracker (avant la borne #321)."
+    },
+    {
+      "fichier": "chapitre-07-protocoles-peripheriques.md",
+      "avant": "Plan initial du compendium",
+      "apres": "[IETF Datatracker — draft-zyyhl-agent-networks-framework-01](https://datatracker.ietf.org/doc/draft-zyyhl-agent-networks-framework/)",
+      "motif": "Remplacer 'Plan initial du compendium' (à l'intérieur de la borne #321) par le lien primaire IETF Datatracker."
+    },
+    {
+      "fichier": "chapitre-07-protocoles-peripheriques.md",
+      "avant": ", version 3 (11 novembre 2026), section « Reste à confirmer »",
+      "apres": " (*Framework for AI Agent Networks*, soumission individuelle expirée le 23 avril 2026) — aucune adoption par un groupe de travail (quatre autres soumissions individuelles `draft-song-anp-*-00` également expirées le 26 septembre 2026).",
+      "motif": "Préciser la portée de la source primaire [22] sur IETF Datatracker après la borne #321."
+    },
+    {
+      "fichier": "chapitre-08-decouverte-registres.md",
+      "avant": "D'après son résumé, 51,1 % des serveurs à plusieurs versions ont changé ce qu'ils annoncent d'une version à l'autre, 40,6 % l'ont fait sans le signaler, et 4,2 % ont redirigé leur point d'accès distant vers un autre hôte en gardant la même identité au registre.",
+      "apres": "Sur les 8 900 serveurs à plusieurs versions recensés (section 4.2), 51,09 % ont changé ce qu'ils annoncent d'une version à l'autre, 40,58 % ont connu au moins une dérive sémantique silencieuse, et 4,16 % ont redirigé leur point d'accès distant vers un autre hôte en gardant la même identité au registre.",
+      "motif": "Préciser le dénominateur (n = 8 900 serveurs multi-versions) et les taux exacts vérifiés dans la section 4.2 de arXiv 2609.14119v1 (à l'intérieur de la borne bonification 24-08)."
+    },
+    {
+      "fichier": "chapitre-08-decouverte-registres.md",
+      "avant": "19. [Microsoft — registre d'agents du centre d'administration](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry)",
+      "apres": "19. [Microsoft — registre d'agents du centre d'administration](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-registry-overview)",
+      "motif": "Mettre à jour l'URL canonique de Microsoft Learn déplacée vers /microsoft-agent-365/admin/agent-registry-overview."
+    },
+    {
+      "fichier": "chapitre-08-decouverte-registres.md",
+      "avant": "[23], [26] et [27] n'y sont connus que par leur résumé; [24] et [25] ont été lus par l'outil d'extraction. Le résumé de [23] ne dit pas si les 40,6 % se rapportent à tous les serveurs à plusieurs versions ou à ceux qui ont changé. [25] donne des décomptes différents dans son résumé et dans ses tableaux; ceux du tableau des serveurs sont retenus. La parution de [26] dans une revue, signalée par un index d'articles, ne figure pas sur la page lue.",
+      "apres": "[23] et [26], initialement résumés, ont été vérifiés au-delà du résumé dans leur version HTML le 14 novembre 2026, et [27] par extraits; [24] et [25] ont été lus par l'outil d'extraction. Dans [23] (section 4.2), la part de 40,58 % (arrondie à 40,6 % dans le résumé) s'applique à l'ensemble des 8 900 serveurs à plusieurs versions. [25] donne des décomptes différents dans son résumé et dans ses tableaux; ceux du tableau des serveurs sont retenus. La fiche `abs/2506.13538` de [26] n'indique pas la revue, mais la version HTML `html/2506.13538v5` affiche `Journal: TOSEM`.",
+      "motif": "Lever les deux réserves obsolètes sur [23] (dénominateur n = 8 900 vérifié en section 4.2) et [26] (mention littérale 'Journal: TOSEM' dans html/2506.13538v5) tout en maintenant la cohérence avec [27] par extraits, à l'intérieur de la borne bonification 24-08."
+    },
+    {
+      "fichier": "chapitre-09-web-agentique.md",
+      "avant": "14. [Cloudflare — agents signés et robots vérifiés](https://developers.cloudflare.com/bots/concepts/bot/signed-agents/)",
+      "apres": "14. [Cloudflare — Verified bots (intégrant les anciens agents signés depuis le 1er juillet 2026)](https://developers.cloudflare.com/bots/concepts/bot/verified-bots/)",
+      "motif": "Mettre à jour l'URL redirigée de /signed-agents/ vers /verified-bots/ et refléter le titre courant ('Verified bots', 'Signed agents are now Verified')."
+    },
+    {
+      "fichier": "chapitre-10-commerce-agentique.md",
+      "avant": "Une deuxième prépublication, signée d'un seul auteur, recense 33 vulnérabilités structurelles sur trois plateformes de commerce agentique, que son résumé ne nomme pas [15].",
+      "apres": "Une deuxième prépublication, signée d'un seul auteur, recense 33 vulnérabilités structurelles sur trois cibles de commerce agentique — CoralOS (11), Fetch.ai uAgents (8) et AP2 v0.2.0 (14) — que le résumé seul ne nommait pas [15].",
+      "motif": "Nommer les trois cibles vérifiées dans la table des matières de arXiv 2607.21824v1 (CoralOS, Fetch.ai uAgents, AP2 v0.2.0)."
+    },
+    {
+      "fichier": "chapitre-10-commerce-agentique.md",
+      "avant": "8. [Visa — Trusted Agent Protocol, aperçu](https://developer.visa.com/capabilities/trusted-agent-protocol/overview)",
+      "apres": "8. [Visa — Trusted Agent Protocol, aperçu](https://developer.visa.com/docs/trusted-agent-protocol)",
+      "motif": "Mettre à jour l'URL canonique de Visa Developer redirigée vers /docs/trusted-agent-protocol."
+    },
+    {
+      "fichier": "chapitre-10-commerce-agentique.md",
+      "avant": "17. [Inriver — « Why B2B agentic commerce can't run on retail protocols », septembre 2026](https://www.inriver.com/resources/b2b-agentic-commerce-retail-protocols/)",
+      "apres": "17. [Inriver — « Why B2B agentic commerce can't run on retail protocols », septembre 2026](https://www.inriver.com/resources/blog/b2b-agentic-commerce-retail-protocols/)",
+      "motif": "Mettre à jour l'URL canonique d'Inriver redirigée vers /resources/blog/..."
+    },
+    {
+      "fichier": "chapitre-11-gouvernance-standards.md",
+      "avant": "20. [NIST — AI Agent Standards Initiative](https://www.nist.gov/caisi/ai-agent-standards-initiative)",
+      "apres": "20. [NIST — SI Agent Standards Initiative (anciennement CAISI)](https://www.nist.gov/super-intelligence/si-agent-standards-initiative)",
+      "motif": "Mettre à jour l'URL de [20], redirigée vers /super-intelligence/si-agent-standards-initiative."
+    }
+  ]
+}

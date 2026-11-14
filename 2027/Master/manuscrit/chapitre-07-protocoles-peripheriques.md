@@ -2,7 +2,7 @@
 
 *Question directrice : quels besoins MCP et A2A ne couvrent-ils pas ?*
 
-> **État de référence :** documentation d'AG-UI, d'ANP (jeu de spécifications 1.2) et d'AGNTCY telle que publiée à cette date; brouillon IETF `draft-mpsb-agntcy-slim-03` du 2 novembre 2026; prépublications arXiv dans leur dernière version. Les numéros entre crochets renvoient aux sources en fin de chapitre; toutes sont des pages primaires lues pour ce chapitre, sauf [22].
+> **État de référence :** documentation d'AG-UI, d'ANP (jeu de spécifications 1.2) et d'AGNTCY telle que publiée à cette date; brouillon IETF `draft-mpsb-agntcy-slim-03` du 2 novembre 2026; prépublications arXiv dans leur dernière version. Les numéros entre crochets renvoient aux sources en fin de chapitre; toutes sont des pages primaires consultées pour ce chapitre.
 
 MCP relie un agent à ses outils (chapitre 5). A2A relie un agent à un autre agent (chapitre 6). Quatre besoins au moins restent à découvert : tenir une interface à jour pendant qu'un agent travaille, identifier et trouver un agent sans autorité centrale, faire circuler des messages chiffrés entre plus de deux parties, piloter une ressource physique. Chacun a suscité son protocole.
 
@@ -64,7 +64,7 @@ L'index du dépôt donne l'état de chaque spécification du jeu 1.2 [7] : l'aut
 
 L'autorisation, pièce maîtresse pour une entreprise, manque donc au socle publié. Le dépôt précise que la publication d'une spécification n'établit pas sa prise en charge par un SDK ou un produit; les mises en œuvre citées sont celles de la communauté, AgentConnect et AWiki [7].
 
-Le projet est porté par une « communauté ANP » sous licence Apache 2.0, sans fondation [7]. Le groupe communautaire AI Agent Protocol du W3C, coprésidé par le titulaire du droit d'auteur du livre blanc, liste ce livre blanc parmi ses brouillons (23 mai 2025), suivi de deux documents d'août 2025 [6][8]. Un brouillon de groupe communautaire n'engage pas le W3C (chapitre 11), et aucun travail de normalisation formelle sur ANP n'a été repéré [22].
+Le projet est porté par une « communauté ANP » sous licence Apache 2.0, sans fondation [7]. Le groupe communautaire AI Agent Protocol du W3C, coprésidé par le titulaire du droit d'auteur du livre blanc, liste ce livre blanc parmi ses brouillons (23 mai 2025), suivi de deux documents d'août 2025 [6][8]. Un brouillon de groupe communautaire n'engage pas le W3C (chapitre 11). À l'IETF, aucun groupe de travail n'a adopté ANP : seules des soumissions individuelles aujourd'hui expirées (dont `draft-zyyhl-agent-networks-framework-01`, expiré le 23 avril 2026 et s'appuyant sur ANP) ont été déposées, sans portée normative [22].
 
 ### Lecture pour l'entreprise
 
@@ -180,7 +180,7 @@ Pages primaires lues le 11 novembre 2026; [3], [4], [7], [8], [14] et [16] à [1
 5. [A2UI — site du projet](https://a2ui.org/)
 6. [ANP — livre blanc, version 1.2](https://agent-network-protocol.com/specs/white-paper.html)
 7. [ANP — dépôt GitHub et index des spécifications](https://github.com/agent-network-protocol/AgentNetworkProtocol)
-8. [W3C — AI Agent Protocol Community Group](https://www.w3.org/community/agentprotocol/)
+8. [W3C — AI Agent Protocol Community Group](https://www.w3.org/community/agentprotocol/) — accès automatisé refusé (HTTP 403) le 14 novembre 2026; fiche vérifiée par recherche web.
 9. [AGNTCY — documentation](https://docs.agntcy.org/)
 10. [Linux Foundation — accueil du projet AGNTCY, 29 juillet 2025](https://www.linuxfoundation.org/press/linux-foundation-welcomes-the-agntcy-project-to-standardize-open-multi-agent-system-infrastructure-and-break-down-ai-agent-silos)
 11. [AGNTCY — Open Agentic Schema Framework](https://docs.agntcy.org/oasf/open-agentic-schema-framework/)
@@ -191,19 +191,17 @@ Pages primaires lues le 11 novembre 2026; [3], [4], [7], [8], [14] et [16] à [1
 16. [Agentic AI Foundation — projets](https://aaif.io/projects)
 17. [LAP: An Agent-to-Instrument Protocol for Autonomous Science (arXiv 2606.03755v1)](https://arxiv.org/html/2606.03755) — texte intégral lu en partie; résumé relu
 18. [AgentOrchestra et le protocole TEA (arXiv 2506.12508)](https://arxiv.org/abs/2506.12508) — résumé de la v6 et texte de la v5, lu en partie
-19. [Governance Gaps in Agent Interoperability Protocols (arXiv 2606.31498)](https://arxiv.org/abs/2606.31498) — résumé
-20. [A survey of agent interoperability protocols (arXiv 2505.02279)](https://arxiv.org/abs/2505.02279) — résumé
-21. [A Survey of AI Agent Protocols (arXiv 2504.16736)](https://arxiv.org/abs/2504.16736) — résumé
+19. [Governance Gaps in Agent Interoperability Protocols (arXiv 2606.31498)](https://arxiv.org/abs/2606.31498) — résumé initial, puis extraits relus le 14 novembre 2026
+20. [A survey of agent interoperability protocols (arXiv 2505.02279)](https://arxiv.org/abs/2505.02279) — résumé initial, puis extraits relus le 14 novembre 2026
+21. [A Survey of AI Agent Protocols (arXiv 2504.16736)](https://arxiv.org/abs/2504.16736) — résumé initial, puis extraits relus le 14 novembre 2026
 
-Source secondaire :
-
-22. Plan initial du compendium, version 3 (11 novembre 2026), section « Reste à confirmer »
+22. [IETF Datatracker — draft-zyyhl-agent-networks-framework-01](https://datatracker.ietf.org/doc/draft-zyyhl-agent-networks-framework/) (*Framework for AI Agent Networks*, soumission individuelle expirée le 23 avril 2026) — aucune adoption par un groupe de travail (quatre autres soumissions individuelles `draft-song-anp-*-00` également expirées le 26 septembre 2026).
 
 ## Limites de ce chapitre
 
 - Les sources [17], [18], [19], [20] et [21], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - Les pages ont été lues par un outil d'extraction qui les condense; les citations sont des traductions.
-- LAP et TEA n'ont été lus qu'en partie, [19] à [21] par leur résumé seulement. La version 0.1 de LAP et l'absence de mise en œuvre viennent du texte intégral, non du résumé relu. Les cinq protocoles de [19] sont repris des chapitres 3 et 11.
+- LAP et TEA n'ont été lus qu'en partie; [19] à [21], d'abord connues par leur résumé, ont été vérifiées par extraits le 14 novembre 2026. La version 0.1 de LAP et l'absence de mise en œuvre viennent du texte intégral, non du résumé relu. Les cinq protocoles de [19] sont repris des chapitres 3 et 11.
 - A2UI n'est connu que par la page d'accueil de son site [5].
 - AG-UI : spécification et pages de sécurité non lues. La version 1.0 non atteinte reste une déduction; le silence sur l'authentification ne vaut que pour la page d'architecture et le dépôt.
 - ANP : spécifications non lues; leur contenu vient du livre blanc et de l'index du dépôt. La coprésidence du groupe W3C par le titulaire du droit d'auteur du livre blanc n'a pas été revérifiée.

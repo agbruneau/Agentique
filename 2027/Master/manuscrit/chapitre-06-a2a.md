@@ -279,7 +279,7 @@ Pages primaires lues le 11 novembre 2026, [1], [2] et [8] relues à l'audit :
 
 Pages primaires lues lors de l'audit, le 12 novembre 2026 :
 
-10. [LF AI & Data — ACP Joins Forces with A2A, 29 août 2025](https://lfaidata.foundation/?p=7689)
+10. [LF AI & Data — ACP Joins Forces with A2A, 29 août 2025](https://lfaidata.foundation/communityblog/2025/08/29/acp-joins-forces-with-a2a-under-the-linux-foundations-lf-ai-data/)
 11. [Linux Foundation — lancement du projet Agent2Agent, 23 juin 2025](https://www.linuxfoundation.org/press/linux-foundation-launches-the-agent2agent-protocol-project-to-enable-secure-intelligent-communication-between-ai-agents)
 12. [Dépôt a2aproject/A2A — versions publiées](https://github.com/a2aproject/A2A/releases)
 

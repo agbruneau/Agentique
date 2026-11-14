@@ -1,0 +1,67 @@
+{
+  "id": "REF-4-renvoi",
+  "origine": "plan 2027, lot REF-4-renvoi",
+  "categorie": "renvoi",
+  "remplacements": [
+    {
+      "fichier": "chapitre-38-canada-quebec.md",
+      "avant": "22. [AMF — Ligne directrice sur l'utilisation de l'intelligence artificielle, Bulletin de l'AMF, vol. 23, no 13](https://lautorite.qc.ca/files/pdf/bulletin/2026/vol23no13/vol23no13_5.pdf)",
+      "apres": "22. [AMF — Ligne directrice sur l'utilisation de l'intelligence artificielle, Bulletin de l'AMF, vol. 23, no 13, 2 avril 2026 (décision n° 2026-PDG-0016)](https://lautorite.qc.ca/fileadmin/lautorite/bulletin/2026/vol23no13/vol23no13_5-2.pdf)",
+      "motif": "Corriger l'URL erronée du Bulletin de l'AMF (/files/pdf/.../vol23no13_5.pdf) vers l'adresse PDF officielle de la section 5.2.2 du Bulletin du 2 avril 2026 (/fileadmin/lautorite/.../vol23no13_5-2.pdf, décision n° 2026-PDG-0016) confirmée par recherche web (le serveur demeure protégé en HTTP 403 Cloudflare), sans toucher à la borne de #737."
+    },
+    {
+      "fichier": "chapitre-39-gouvernance-interne.md",
+      "avant": "7. [Microsoft — Agent Registry in Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry)",
+      "apres": "7. [Microsoft — Agent Registry in Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-registry-overview)",
+      "motif": "Mettre à jour l'URL Microsoft Learn vers sa destination canonique après redirection permanente HTTP 301."
+    },
+    {
+      "fichier": "chapitre-39-gouvernance-interne.md",
+      "avant": "9. [Microsoft Entra Agent ID — owners, sponsors, and managers](https://learn.microsoft.com/en-us/entra/agent-id/identity-platform/agent-owners-sponsors-managers)",
+      "apres": "9. [Microsoft Entra Agent ID — owners, sponsors, and managers](https://learn.microsoft.com/en-us/entra/agent-id/agent-owners-sponsors-managers)",
+      "motif": "Mettre à jour l'URL Microsoft Entra Agent ID vers sa destination canonique après redirection permanente HTTP 301."
+    },
+    {
+      "fichier": "chapitre-40-finops-agentique.md",
+      "avant": "6. [Anthropic — How we built our multi-agent research system, 13 juin 2025](https://www.anthropic.com/engineering/multi-agent-research-system) — billet du fournisseur.",
+      "apres": "6. [Anthropic — How we built our multi-agent research system, 13 juin 2025](https://www.anthropic.com/research/multi-agent-research-system) — billet du fournisseur.",
+      "motif": "Mettre à jour l'URL Anthropic vers sa destination canonique après redirection permanente HTTP 308."
+    },
+    {
+      "fichier": "chapitre-40-finops-agentique.md",
+      "avant": "11. [Linux Foundation — lancement de la Tokenomics Foundation, communiqué du 4 août 2026](https://linuxfoundation.org/press/linux-foundation-launches-the-tokenomics-foundation-to-define-the-economics-and-roi-of-ai-value)",
+      "apres": "11. [Linux Foundation — lancement de la Tokenomics Foundation, communiqué du 4 août 2026](https://www.linuxfoundation.org/press/linux-foundation-launches-the-tokenomics-foundation-to-define-the-economics-and-roi-of-ai-value)",
+      "motif": "Mettre à jour l'URL Linux Foundation vers l'hôte canonique www après redirection permanente HTTP 301."
+    },
+    {
+      "fichier": "chapitre-43-maturite-prospective.md",
+      "avant": "2. [NIST — AI Agent Standards Initiative](https://www.nist.gov/caisi/ai-agent-standards-initiative)",
+      "apres": "2. [NIST — SI Agent Standards Initiative (anciennement AI Agent Standards Initiative)](https://www.nist.gov/super-intelligence/si-agent-standards-initiative)",
+      "motif": "Mettre à jour l'URL et l'intitulé de l'initiative du NIST après redirection permanente HTTP 301 vers /super-intelligence/si-agent-standards-initiative (page mise à jour le 9 novembre 2026), en harmonie avec le chapitre 35."
+    },
+    {
+      "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+      "avant": "3. [agentgateway — documentation LLM](https://agentgateway.dev/docs/standalone/latest/llm/)",
+      "apres": "3. [agentgateway — documentation LLM](https://agentgateway.dev/docs/standalone/latest/documentation/llm/)",
+      "motif": "Mettre à jour l'URL agentgateway vers sa cible canonique après redirection permanente HTTP 301, par cohérence avec [4] et [5]."
+    },
+    {
+      "fichier": "chapitre-45-reseaux-b2b-federes.md",
+      "avant": "15. [draft-hood-agtp-lei-00](https://datatracker.ietf.org/doc/draft-hood-agtp-lei/); [GLEIF, Agentic AI in Payments](https://www.gleif.org/organizational-identity/research-publications/2026-08-13_agentic_ai_in_payments_v1.0-1.pdf).",
+      "apres": "15. [draft-hood-agtp-lei-01 (30 octobre 2026, succédant à la version 00)](https://datatracker.ietf.org/doc/draft-hood-agtp-lei/); [GLEIF, Agentic AI in Payments (document de travail de septembre 2026)](https://www.gleif.org/organizational-identity/research-publications/2026-08-13_agentic_ai_in_payments_v1.0-1.pdf).",
+      "motif": "Aligner l'intitulé du brouillon IETF sur la version active -01 (30 octobre 2026) servie par l'URL Datatracker, et préciser la date interne (septembre 2026) du document GLEIF."
+    },
+    {
+      "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+      "avant": "15. L. Sha, « Using Simplicity to Control Complexity », *IEEE Software*, juillet-août 2001 — citée d'après [11], sans lien vérifié.",
+      "apres": "15. [L. Sha — « Using Simplicity to Control Complexity », *IEEE Software*, vol. 18, n° 4, juillet-août 2001, p. 20-28 (DOI 10.1109/ms.2001.936213)](https://doi.org/10.1109/ms.2001.936213) — citée d'après [11]; référence et DOI vérifiés via Crossref le 14 novembre 2026 (l'identifiant 10.1109/52.936214 retournant HTTP 404).",
+      "motif": "Ajouter le lien DOI canonique vérifié via l'API Crossref (10.1109/ms.2001.936213, HTTP 200) et les coordonnées bibliographiques exactes pour la source [15]."
+    },
+    {
+      "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+      "avant": "2. [Sourcegraph — SCIP Code Intelligence Protocol](https://github.com/sourcegraph/scip)",
+      "apres": "2. [scip-code (anciennement Sourcegraph) — SCIP Code Intelligence Protocol](https://github.com/scip-code/scip)",
+      "motif": "Mettre à jour le dépôt SCIP vers sa nouvelle organisation GitHub scip-code après redirection permanente HTTP 301."
+    }
+  ]
+}

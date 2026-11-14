@@ -264,7 +264,7 @@ Pages primaires lues le 11 novembre 2026 :
 Sources secondaires, non lues ou lues lors de l'audit :
 
 15. [CX Today — premier Magic Quadrant sur la gestion d'agents d'IA](https://cxtoday.com/gartner-unveils-inaugural-magic-quadrant-for-ai-agent-management) — compte rendu de presse, lu.
-16. [The Register — annonces de ServiceNow, 5 mai 2026](https://theregister.com/2026/05/05/servicenow_clears_agents_for_landing/) — article de presse, lu.
+16. [The Register — annonces de ServiceNow, 5 mai 2026](https://www.theregister.com/software/2026/05/05/servicenow-adds-agent-kill-switches-to-ai-control-tower/5228579) — article de presse, lu.
 17. [Google Cloud — notes de version de Gemini Enterprise Agent Platform](https://docs.cloud.google.com/gemini-enterprise-agent-platform/release-notes) — page d'éditeur, lue lors de l'audit.
 18. [Gartner — résumé du Magic Quadrant](https://www.gartner.com/doc/8557473) — accès refusé.
 19. [Salesforce — choisir un patron d'intégration pour Agentforce, 1er avril 2026](https://www.salesforce.com/blog/how-to-choose-integration-pattern-for-agentforce/) — billet d'éditeur, lu lors de l'audit.

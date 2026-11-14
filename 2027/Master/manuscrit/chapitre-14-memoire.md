@@ -2,7 +2,7 @@
 
 *Question directrice : comment des agents partagent-ils ce qu'ils ont appris sans se corrompre ?*
 
-> **État de référence :** documentation des éditeurs et prépublications consultées le 11 novembre 2026; liste OWASP Top 10 for Agentic Applications du 9 décembre 2025 et bilan OWASP du troisième trimestre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre. Les articles d'arXiv ont été lus au niveau du résumé, sauf mention contraire; [30] à [32] sont des sources secondaires; [33] à [35], pages d'éditeurs, ont été lues le 14 novembre 2026.
+> **État de référence :** documentation des éditeurs et prépublications consultées le 11 novembre 2026; liste OWASP Top 10 for Agentic Applications du 9 décembre 2025 et bilan OWASP du troisième trimestre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre. Les articles d'arXiv ont d'abord été lus au niveau du résumé, puis relus par extraits le 14 novembre 2026; [30] à [32] sont des sources secondaires; [33] à [35], pages d'éditeurs, ont été lues le 14 novembre 2026.
 
 Un agent sans mémoire recommence chaque tâche à zéro. Un agent doté d'une mémoire conserve des préférences, des faits, des leçons tirées d'échecs, et s'en sert plus tard, souvent dans une autre session et parfois pour un autre utilisateur. Dès que plusieurs agents lisent et écrivent le même fonds, la mémoire devient un état partagé et mutable, alimenté par un modèle de langage à partir de contenus qu'il ne maîtrise pas.
 
@@ -111,7 +111,7 @@ Au niveau des assistants, la portabilité se résume à du texte copié : la pag
 
 ### Deux propositions, aucune adoptée
 
-Une prépublication de mai 2026, « Portable Agent Memory », propose un protocole de transfert entre agents de fournisseurs différents : des entrées adressées par leur contenu, un graphe de provenance qui rend les altérations détectables et un contrôle d'accès par capacités. Son résumé ne donne aucun résultat chiffré sur la fidélité du transfert [26].
+Une prépublication de mai 2026, « Portable Agent Memory », propose un protocole de transfert entre agents de fournisseurs différents : des entrées adressées par leur contenu, un graphe de provenance qui rend les altérations détectables et un contrôle d'accès par capacités. Dans des essais pilotes sur 30 questions sondes (paire Claude vers GPT-4), l'article rapporte une fidélité de réhydratation moyenne (RHF) décroissant de 0,91 à plein budget (8 192 jetons) à 0,71 à 25 % du budget (2 048 jetons), et un gain moyen de 2,4 fois entre modèles par rapport à une base sans mémoire à 0,35, sans validation externe en production [26].
 
 Une proposition de juillet 2026, publiée par trois auteurs sur le site de recherche de MacPaw, part d'un autre angle : la mémoire appartient à l'utilisateur, qui ne peut aujourd'hui ni la déplacer ni vérifier qu'elle a été supprimée. Elle définit un paquet autonome et des « pierres tombales » de suppression. Ses auteurs écrivent qu'elle n'a encore ni implémentation indépendante, ni gouvernance neutre, ni large adoption [27].
 
@@ -127,7 +127,7 @@ Le chapitre 27 replace cette question dans la stratégie multi-plateformes et da
 
 ### La mémoire gérée d'une plateforme
 
-Les fournisseurs infonuagiques offrent aussi la mémoire comme service. Chez Google, Memory Bank conserve et restitue des informations tirées des sessions, comme les préférences durables d'un utilisateur; les souvenirs y sont produits par des modèles génératifs, dans la région du point d'accès du modèle employé [33]. La page de présentation renvoie à des guides sur la génération, l'ingestion d'événements, la consultation des révisions d'un souvenir et le contrôle d'accès par conditions IAM, et annonce le chiffrement par des clés gérées par le client ainsi que la résidence des données au repos. Elle ne décrit ni l'extraction, ni la portée d'un souvenir, ni son expiration, et ne mentionne aucun risque d'empoisonnement.
+Les fournisseurs infonuagiques offrent aussi la mémoire comme service. Chez Google, Memory Bank conserve et restitue des informations tirées des sessions, comme les préférences durables d'un utilisateur; les souvenirs y sont produits par des modèles génératifs, dans la région du point d'accès du modèle employé [33]. La page de présentation renvoie à des guides sur la génération, l'ingestion d'événements, la consultation des révisions d'un souvenir et le contrôle d'accès par conditions IAM, et annonce le chiffrement par des clés gérées par le client ainsi que la résidence des données au repos. La page déplacée décrit en outre l'extraction et la consolidation par modèle de langage, l'isolement par portée (`scope`), l'expiration automatique par durée de vie (`TTL`) et signale les risques d'injection de prompt et d'empoisonnement de la mémoire.
 
 Chez Microsoft, la mémoire de Foundry Agent Service, en préversion, est un service géré de mémoire à long terme [34]. Un modèle de langage extrait des conversations trois types de souvenirs (profil de l'utilisateur, résumé de conversation, mémoire procédurale), activés par défaut, puis les consolide en fusionnant les doublons et en résolvant les contradictions. Le paramètre `scope` cloisonne les souvenirs, par exemple par client; l'outil de recherche de mémoire peut le déduire de l'identité de l'utilisateur, les API de bas niveau exigent de le fournir à chaque requête [35]. Chaque magasin fixe une durée de vie par défaut en secondes, 0 signifiant aucune expiration. On supprime un souvenir, une portée, opération destinée aux demandes de suppression, ou un magasin entier, de façon irréversible [35]. La page de présentation range l'injection de prompt et la corruption de la mémoire parmi les risques [34].
 
@@ -236,7 +236,7 @@ Une politique de rétention de la mémoire répond à quatre questions, par clas
 
 ## Sources
 
-Pages primaires lues le 11 novembre 2026 (articles d'arXiv : page de résumé, sauf [1] et [14], lus dans le texte); [5], [15], [17], [19], [20], [25], [26] et [27] relues le 12 novembre 2026 :
+Pages primaires lues le 11 novembre 2026 (articles d'arXiv : initialement page de résumé, sauf [1] et [14], lus dans le texte); [5], [15], [17], [19], [20], [25], [26] et [27] relues le 12 novembre 2026; sources [1] à [28] relues par extraits le 14 novembre 2026 :
 
 1. [Cognitive Architectures for Language Agents — CoALA (arXiv 2309.02427)](https://arxiv.org/html/2309.02427v3)
 2. [Memory in the Age of AI Agents (arXiv 2512.13564)](https://arxiv.org/abs/2512.13564)
@@ -276,7 +276,7 @@ Sources secondaires :
 
 Pages lues le 14 novembre 2026 :
 
-33. [Google Cloud — Memory Bank, vue d'ensemble](https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/overview)
+33. [Google Cloud — Memory Bank, vue d'ensemble](https://docs.cloud.google.com/gemini-enterprise-agent-platform/scale/memory-bank)
 34. [Microsoft Learn — What is Memory? (Foundry Agent Service, préversion; page datée du 2 juin 2026)](https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/what-is-memory) — page entière.
 35. [Microsoft Learn — Create and use memory in Foundry Agent Service (page datée du 6 octobre 2026)](https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/memory-usage) — lu par passages (portée, rétention, suppression).
 
@@ -284,7 +284,7 @@ Pages lues le 14 novembre 2026 :
 
 - Les sources [1], [2], [3], [4], [5], [6], [7], [8], [9], [10], [11], [12], [13], [14], [15], [16], [17], [18], [19], [20], [21], [22], [23], [24], [25], [26], [27] et [28], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - Le texte officiel de l'entrée ASI06 [32] n'a pas été lu; sa description repose sur trois billets du projet OWASP [18][19][20].
-- La plupart des articles d'arXiv ont été lus au niveau du résumé. Les chiffres cités pour Mem0, Zep, AgentPoison et LongMemEval sont ceux des résumés, et leurs conditions de mesure n'ont pas été vérifiées.
+- Les articles d'arXiv, d'abord lus au niveau du résumé, ont été recoupés par extraits le 14 novembre 2026; les conditions complètes de mesure des bancs Mem0, Zep, AgentPoison et LongMemEval ne sont toutefois pas toutes vérifiées.
 - Le régime d'effacement de la LPRPDE n'est examiné ni ici ni au chapitre 38.
 - Le fonctionnement interne de Mem0 et de Graphiti, ainsi que la règle de suppression de Zep, viennent de textes de leurs éditeurs ou d'un compte rendu secondaire [31].
 - La page de Letta sur les dépôts partagés ne décrit pas la résolution des conflits.

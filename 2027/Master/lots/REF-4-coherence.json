@@ -1,0 +1,241 @@
+{
+  "id": "REF-4-coherence",
+  "origine": "plan 2027, lot REF-4-coherence",
+  "categorie": "coherence",
+  "remplacements": [
+    {
+      "fichier": "chapitre-38-canada-quebec.md",
+      "avant": "- Le guide québécois ne porte pas de date plus précise que 2026, et celle du guide fédéral est la date sans libellé affichée sur sa page. Les lectures proposées en 38.2, 38.3, 38.4 et 38.6 sont des inférences, non des positions des autorités.",
+      "apres": "- Le guide québécois ne porte pas de date plus précise que 2026, et celle du guide fédéral correspond à la date sans libellé affichée sur sa page. Les lectures proposées en 38.2, 38.3, 38.4 et 38.6 sont des inférences, non des positions des autorités.\n- Lors de l'audit du 14 novembre 2026, les quatre pages hébergées sur `www.canada.ca` ([2], [5], [6] et [18]) ont expiré en délai d'attente aux requêtes automatisées; la fiche du Guide sur l'IA agentive [5] est confirmée en HTTP 200 au catalogue des Publications du gouvernement du Canada (`BT22-298/2026F-PDF`) et le contenu des quatre documents est confirmé par la relecture du 11-12 novembre et par recherche web.",
+      "motif": "Consigner dans les limites du chapitre 38 les quatre URL www.canada.ca en délai d'attente lors de l'audit du 14 novembre 2026."
+    },
+    {
+      "fichier": "chapitre-39-gouvernance-interne.md",
+      "avant": "Rechargée sans succès à l'audit, la page n'a été recoupée que par un résumé de recherche (score moyen, échantillon, période).",
+      "apres": "Rechargée sans succès à l'audit du 12 novembre ni le 14 novembre 2026 (délai d'attente dépassé sur `mckinsey.com`), la page n'a été recoupée que par un résumé de recherche (score moyen, échantillon, période).",
+      "motif": "Dater au 14 novembre 2026 l'inaccessibilité persistante de la source McKinsey [1] en délai d'attente."
+    },
+    {
+      "fichier": "chapitre-39-gouvernance-interne.md",
+      "avant": "- Les pages [3], [4], [6], [7] et [10] ont été relues à l'audit et confirment le texte;",
+      "apres": "- Les pages [3], [4], [6], [7] et [10] ont été relues à l'audit du 12 novembre et confirment le texte (le 14 novembre 2026, l'URL `www.canada.ca` de [4] expire en délai d'attente aux requêtes automatisées, mais sa fiche `BT22-298/2026F-PDF` répond HTTP 200 au catalogue des Publications du gouvernement du Canada);",
+      "motif": "Consigner au 14 novembre 2026 le délai d'attente sur www.canada.ca pour [4] tout en restant avant la borne de #215."
+    },
+    {
+      "fichier": "chapitre-40-finops-agentique.md",
+      "avant": "[13] à [15] ont été ajoutées le 14 novembre 2026, [14] par son seul résumé et [15] par sa synthèse.",
+      "apres": "[13] à [15] ont été ajoutées le 14 novembre 2026, [14] par résumé puis extraits relus le même jour et [15] par sa synthèse.",
+      "motif": "Aligner l'État de référence sur #826 (relecture au-delà du résumé de [14] le 14 novembre 2026)."
+    },
+    {
+      "fichier": "chapitre-40-finops-agentique.md",
+      "avant": "10. [Ong et coll. — RouteLLM: Learning to Route LLMs with Preference Data (arXiv 2406.18665)](https://arxiv.org/abs/2406.18665) — prépublication; résumé seulement.",
+      "apres": "10. [Ong et coll. — RouteLLM: Learning to Route LLMs with Preference Data (arXiv 2406.18665)](https://arxiv.org/abs/2406.18665) — prépublication; résumé puis extraits relus le 14 novembre 2026.",
+      "motif": "Supprimer la mention obsolète « résumé seulement » sur [10], alignée sur #826."
+    },
+    {
+      "fichier": "chapitre-40-finops-agentique.md",
+      "avant": "14. [Elsworth et coll. — Measuring the environmental impact of delivering AI at Google Scale (arXiv 2508.15734, 21 août 2025)](https://arxiv.org/abs/2508.15734) — prépublication d'un fournisseur; résumé seulement.",
+      "apres": "14. [Elsworth et coll. — Measuring the environmental impact of delivering AI at Google Scale (arXiv 2508.15734, 21 août 2025)](https://arxiv.org/abs/2508.15734) — prépublication d'un fournisseur; résumé puis extraits relus le 14 novembre 2026.",
+      "motif": "Supprimer la mention obsolète « résumé seulement » sur [14], alignée sur #826."
+    },
+    {
+      "fichier": "chapitre-40-finops-agentique.md",
+      "avant": "[14] n'est connu que par son résumé et mesure le service de son éditeur; [15] l'est par sa synthèse.",
+      "apres": "[14], relu par extraits le 14 novembre 2026, mesure le service de son éditeur; [15] est connu par sa synthèse.",
+      "motif": "Lever la contradiction entre #826 (relecture au-delà du résumé de [14]) et cette phrase de #481."
+    },
+    {
+      "fichier": "chapitre-41-modele-operationnel.md",
+      "avant": "les articles savants par leur résumé sauf [6];",
+      "apres": "les articles savants par leur résumé sauf [6] (ainsi que [5] et [7] relus par extraits le 14 novembre 2026);",
+      "motif": "Aligner l'État de référence du chapitre 41 sur #827 (relecture au-delà du résumé de [5] et [7])."
+    },
+    {
+      "fichier": "chapitre-41-modele-operationnel.md",
+      "avant": "5. [Gonzalez et coll. — Toward a science of human–AI teaming for decision making, PNAS Nexus 5(3), 2026](https://par.nsf.gov/biblio/10696564-toward-science-humanai-teaming-decision-making-complementarity-framework) — notice et résumé.",
+      "apres": "5. [Gonzalez et coll. — Toward a science of human–AI teaming for decision making, PNAS Nexus 5(3), 2026](https://par.nsf.gov/biblio/10696564-toward-science-humanai-teaming-decision-making-complementarity-framework) — notice, résumé et extraits relus le 14 novembre 2026.",
+      "motif": "Aligner la notice [5] sur la relecture au-delà du résumé consignée dans #827."
+    },
+    {
+      "fichier": "chapitre-41-modele-operationnel.md",
+      "avant": "7. [Dell'Acqua et coll. — The Cybernetic Teammate (NBER, document de travail 33641, avril 2025)](https://www.nber.org/papers/w33641) — résumé.",
+      "apres": "7. [Dell'Acqua et coll. — The Cybernetic Teammate (NBER, document de travail 33641, avril 2025)](https://www.nber.org/papers/w33641) — résumé, puis extraits relus le 14 novembre 2026.",
+      "motif": "Aligner la notice [7] sur la relecture au-delà du résumé consignée dans #827."
+    },
+    {
+      "fichier": "chapitre-41-modele-operationnel.md",
+      "avant": "À l'audit, les pages de McKinsey n'ont pas répondu;",
+      "apres": "À l'audit du 12 novembre comme le 14 novembre 2026, les pages de McKinsey ([1] à [4]) n'ont pas répondu (délai d'attente dépassé);",
+      "motif": "Dater au 14 novembre 2026 l'inaccessibilité persistante des quatre URL McKinsey en délai d'attente."
+    },
+    {
+      "fichier": "chapitre-41-modele-operationnel.md",
+      "avant": "- Les travaux [5], [7], [8], [9] et [10] ne sont connus que par leur résumé.",
+      "apres": "- Les travaux [8], [9] et [10] ne sont connus que par leur résumé; [5] et [7], initialement résumés, ont été relus par extraits le 14 novembre 2026.",
+      "motif": "Lever la contradiction entre #827 ([5] et [7] relus au-delà du résumé) et cette puce de ## Limites."
+    },
+    {
+      "fichier": "chapitre-42-etudes-de-cas.md",
+      "avant": "[13] à [15], relevées le 14 novembre 2026, ne sont connues que par leur résumé.",
+      "apres": "[13] à [15], relevées le 14 novembre 2026, ont d'abord été lues par leur résumé puis recoupées par extraits à cette date.",
+      "motif": "Aligner l'État de référence (#459) avec la relecture au-delà du résumé consignée dans #828."
+    },
+    {
+      "fichier": "chapitre-42-etudes-de-cas.md",
+      "avant": "lues par leur résumé.",
+      "apres": "d'abord connues par leur résumé, puis relues par extraits le 14 novembre 2026.",
+      "motif": "Aligner la phrase exacte de #224 sur la relecture de [5] et [6] au-delà du résumé (#828)."
+    },
+    {
+      "fichier": "chapitre-42-etudes-de-cas.md",
+      "avant": "Une recherche complémentaire a trouvé trois textes parus en 2026, connus ici par leur seul résumé.",
+      "apres": "Une recherche complémentaire du 14 novembre 2026 a trouvé trois textes parus en 2026, recoupés par extraits le même jour.",
+      "motif": "Aligner la présentation de 42.4 sur #828 (relecture par extraits de [13] à [15])."
+    },
+    {
+      "fichier": "chapitre-42-etudes-de-cas.md",
+      "avant": "D'après leurs résumés, ces trois textes vont dans le sens du portrait de MAP :",
+      "apres": "D'après leurs résumés et les extraits relus, ces trois textes vont dans le sens du portrait de MAP :",
+      "motif": "Aligner le bilan de 42.4 (#670) sur #828."
+    },
+    {
+      "fichier": "chapitre-42-etudes-de-cas.md",
+      "avant": "un cas mesuré en production, connu par son seul résumé [13]",
+      "apres": "un cas mesuré en production, connu par résumé et extraits [13]",
+      "motif": "Aligner la ligne Opérations TI du tableau (#667) sur la relecture par extraits de [13] dans #828."
+    },
+    {
+      "fichier": "chapitre-42-etudes-de-cas.md",
+      "avant": "Trois autres textes de 2026, connus par leur résumé, décrivent le même type d'agents étroits et bornés.",
+      "apres": "Trois autres textes de 2026, initialement connus par leur résumé puis recoupés par extraits le 14 novembre 2026, décrivent le même type d'agents étroits et bornés.",
+      "motif": "Aligner le point à retenir (#462) sur #828."
+    },
+    {
+      "fichier": "chapitre-42-etudes-de-cas.md",
+      "avant": "5. [Jha et coll. — ITBench (arXiv 2502.05352)](https://arxiv.org/abs/2502.05352) — prépublication; résumé seulement.\n6. [Gong et coll. — ORCA-bench: How Ready Are Language Model Agents for Oncall? (arXiv 2607.28545)](https://arxiv.org/abs/2607.28545) — prépublication; résumé seulement.\n7. [Roy et coll. — Exploring LLM-based Agents for Root Cause Analysis (arXiv 2403.04123)](https://arxiv.org/abs/2403.04123) — résumé seulement.",
+      "apres": "5. [Jha et coll. — ITBench (arXiv 2502.05352)](https://arxiv.org/abs/2502.05352) — prépublication; résumé puis extraits relus le 14 novembre 2026.\n6. [Gong et coll. — ORCA-bench: How Ready Are Language Model Agents for Oncall? (arXiv 2607.28545)](https://arxiv.org/abs/2607.28545) — prépublication; résumé puis extraits relus le 14 novembre 2026.\n7. [Roy et coll. — Exploring LLM-based Agents for Root Cause Analysis (arXiv 2403.04123)](https://arxiv.org/abs/2403.04123) — résumé puis extraits relus le 14 novembre 2026.",
+      "motif": "Aligner les notices [5], [6] et [7] sur #828."
+    },
+    {
+      "fichier": "chapitre-42-etudes-de-cas.md",
+      "avant": "Résumés seulement, relevés le 14 novembre 2026 :",
+      "apres": "Relevés et recoupés par extraits le 14 novembre 2026 :",
+      "motif": "Aligner l'intertitre de #463 sur #828 pour [13] à [15]."
+    },
+    {
+      "fichier": "chapitre-42-etudes-de-cas.md",
+      "avant": "et la section 42.4 repose en partie sur des bancs d'essai lus par leur seul résumé [5] [6] [7].",
+      "apres": "et la section 42.4 repose en partie sur des bancs d'essai initialement lus par leur résumé puis recoupés par extraits le 14 novembre 2026 [5] [6] [7].",
+      "motif": "Lever la contradiction de cette limite avec #828 (en restant après #348)."
+    },
+    {
+      "fichier": "chapitre-42-etudes-de-cas.md",
+      "avant": "dont les trois de la section 42.4, connus par leur seul résumé.",
+      "apres": "dont les trois de la section 42.4, initialement connus par leur seul résumé puis relus par extraits.",
+      "motif": "Aligner la phrase exacte de #464 sur #828."
+    },
+    {
+      "fichier": "chapitre-42-etudes-de-cas.md",
+      "avant": "- Le fichier de données du portrait [9] n'a été lu qu'à moitié,",
+      "apres": "- Le 14 novembre 2026, le portail Données Québec [9] oppose un défi navigateur HTTP 202 aux requêtes automatisées et la fiche ServiceNow [12] expire en délai d'attente (parution CAIN 2025 confirmée par recherche web). Le fichier de données du portrait [9] n'a été lu qu'à moitié lors de la rédaction,",
+      "motif": "Consigner l'accès restreint daté du 14 novembre 2026 pour Données Québec [9] (HTTP 202) et ServiceNow [12] (délai d'attente)."
+    },
+    {
+      "fichier": "chapitre-43-maturite-prospective.md",
+      "avant": "3. [Measuring Agents in Production (arXiv 2512.04123, version 4)](https://arxiv.org/abs/2512.04123) — résumé; première moitié du texte relue le 12 novembre 2026.\n4. [Why Do Multi-Agent LLM Systems Fail? (arXiv 2503.13657, version 3)](https://arxiv.org/abs/2503.13657) — résumé.",
+      "apres": "3. [Measuring Agents in Production (arXiv 2512.04123, version 4)](https://arxiv.org/abs/2512.04123) — résumé; première moitié du texte relue le 12 novembre 2026, extraits relus le 14 novembre 2026.\n4. [Why Do Multi-Agent LLM Systems Fail? (arXiv 2503.13657, version 3)](https://arxiv.org/abs/2503.13657) — résumé puis extraits relus le 14 novembre 2026.",
+      "motif": "Aligner [3] et [4] sur la relecture au-delà du résumé consignée dans #829."
+    },
+    {
+      "fichier": "chapitre-43-maturite-prospective.md",
+      "avant": "7. [Governance Gaps in Agent Interoperability Protocols (arXiv 2606.31498)](https://arxiv.org/abs/2606.31498) — résumé; prépublication.",
+      "apres": "7. [Governance Gaps in Agent Interoperability Protocols (arXiv 2606.31498)](https://arxiv.org/abs/2606.31498) — prépublication; résumé puis extraits relus le 14 novembre 2026.",
+      "motif": "Aligner [7] sur la relecture au-delà du résumé consignée dans #829."
+    },
+    {
+      "fichier": "chapitre-43-maturite-prospective.md",
+      "avant": "- Les articles [4], [6] et [7] ont été lus par leur résumé seulement; [3], par son résumé et la première moitié de son texte.",
+      "apres": "- L'article [6] n'a été lu que par son résumé; [3], [4] et [7], d'abord lus par leur résumé (et première moitié de [3]), ont été relus par extraits le 14 novembre 2026.",
+      "motif": "Lever la contradiction entre #829 et la limite sur [3], [4] et [7]."
+    },
+    {
+      "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+      "avant": "[9] à [13] des prépublications, dont quatre lues par leur seul résumé.",
+      "apres": "[9] à [13] des prépublications, dont [9] à [12] d'abord lues par leur résumé puis relues par extraits le 14 novembre 2026.",
+      "motif": "Aligner l'État de référence du chapitre 44 sur #830."
+    },
+    {
+      "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+      "avant": "9. [Ong et coll. — RouteLLM (arXiv 2406.18665)](https://arxiv.org/abs/2406.18665) — prépublication; résumé seulement.\n10. [Chen, Zaharia et Zou — FrugalGPT (arXiv 2305.05176)](https://arxiv.org/abs/2305.05176) — prépublication; résumé seulement.\n11. [Snell et coll. — Scaling LLM Test-Time Compute Optimally (arXiv 2408.03314)](https://arxiv.org/abs/2408.03314) — prépublication; résumé seulement.\n12. [Srivatsa et coll. — Preble (arXiv 2407.00023)](https://arxiv.org/abs/2407.00023) — prépublication; résumé seulement.",
+      "apres": "9. [Ong et coll. — RouteLLM (arXiv 2406.18665)](https://arxiv.org/abs/2406.18665) — prépublication; résumé puis extraits relus le 14 novembre 2026.\n10. [Chen, Zaharia et Zou — FrugalGPT (arXiv 2305.05176)](https://arxiv.org/abs/2305.05176) — prépublication; résumé puis extraits relus le 14 novembre 2026.\n11. [Snell et coll. — Scaling LLM Test-Time Compute Optimally (arXiv 2408.03314)](https://arxiv.org/abs/2408.03314) — prépublication; résumé puis extraits relus le 14 novembre 2026.\n12. [Srivatsa et coll. — Preble (arXiv 2407.00023)](https://arxiv.org/abs/2407.00023) — prépublication; résumé puis extraits relus le 14 novembre 2026.",
+      "motif": "Supprimer les mentions obsolètes « résumé seulement » sur [9] à [12], alignées sur #830."
+    },
+    {
+      "fichier": "chapitre-45-reseaux-b2b-federes.md",
+      "avant": "7. [Defeating Prompt Injections by Design (arXiv 2503.18813)](https://arxiv.org/abs/2503.18813) — résumé.\n8. [Behavioral Privacy Leakage in Agentic Negotiation (arXiv 2607.06815)](https://arxiv.org/abs/2607.06815) — résumé.",
+      "apres": "7. [Defeating Prompt Injections by Design (arXiv 2503.18813)](https://arxiv.org/abs/2503.18813) — résumé puis extraits relus le 14 novembre 2026.\n8. [Behavioral Privacy Leakage in Agentic Negotiation (arXiv 2607.06815)](https://arxiv.org/abs/2607.06815) — résumé puis extraits relus le 14 novembre 2026.",
+      "motif": "Aligner [7] et [8] sur la relecture au-delà du résumé consignée dans #831."
+    },
+    {
+      "fichier": "chapitre-45-reseaux-b2b-federes.md",
+      "avant": "11. [Algorithmic Collusion by Large Language Models (arXiv 2404.00806)](https://arxiv.org/abs/2404.00806) — résumé.\n12. [Secret Collusion among AI Agents (arXiv 2402.07510)](https://arxiv.org/abs/2402.07510) — résumé.",
+      "apres": "11. [Algorithmic Collusion by Large Language Models (arXiv 2404.00806)](https://arxiv.org/abs/2404.00806) — résumé puis extraits relus le 14 novembre 2026.\n12. [Secret Collusion among AI Agents (arXiv 2402.07510)](https://arxiv.org/abs/2402.07510) — résumé puis extraits relus le 14 novembre 2026.",
+      "motif": "Aligner [11] et [12] sur la relecture au-delà du résumé consignée dans #831."
+    },
+    {
+      "fichier": "chapitre-45-reseaux-b2b-federes.md",
+      "avant": "- **Articles.** [7], [8] et [10] à [12] sont connus par leur résumé.",
+      "apres": "- **Articles.** [10] reste connu par son résumé; [7], [8], [11] et [12], d'abord lus par leur résumé, ont été recoupés par extraits le 14 novembre 2026.",
+      "motif": "Lever la contradiction entre #831 et cette puce de ## Limites."
+    },
+    {
+      "fichier": "chapitre-45-reseaux-b2b-federes.md",
+      "avant": "- **Concurrence.** Seul le communiqué du Bureau a été lu; aucune autre autorité n'a été vérifiée.",
+      "apres": "- **Concurrence et accès restreints (14 novembre 2026).** Seul le communiqué du Bureau [13] a été lu; aucune autre autorité n'a été vérifiée. Lors de la vérification du 14 novembre 2026, le W3C ([1], `w3.org/TR/odrl-model/` et `odrl.jsonld`) retourne HTTP 403 (protection Cloudflare) et le communiqué sur `www.canada.ca` [13] expire en délai d'attente aux requêtes automatisées; leur contenu est confirmé par recherche web et par les extraits antérieurs.",
+      "motif": "Consigner l'accès restreint daté du 14 novembre 2026 pour W3C ODRL [1] et Bureau de la concurrence [13]."
+    },
+    {
+      "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+      "avant": "[12] a refusé l'accès; édition et date sont confirmées par des résultats de recherche.",
+      "apres": "[1] (`intel.com`, protection Akamai) et [12] (`iso.org`, protection Cloudflare) ont retourné HTTP 403 le 14 novembre 2026; titres, éditions et dates sont confirmés par recherche web.",
+      "motif": "Consigner la date du 14 novembre 2026 pour les sources en accès restreint HTTP 403 du chapitre 46 ([1] Intel TDX et [12] ISO 10218-1:2025)."
+    },
+    {
+      "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+      "avant": "et sept articles lus par leur résumé.",
+      "apres": "et sept articles d'abord lus par leur résumé puis recoupés par extraits le 14 novembre 2026.",
+      "motif": "Aligner l'État de référence du chapitre 47 sur #832."
+    },
+    {
+      "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+      "avant": "3. [Maaz et coll. — Agentic Property-Based Testing, arXiv:2510.09907](https://arxiv.org/abs/2510.09907) — résumé\n4. [Foster et coll. — Mutation-Guided LLM-based Test Generation at Meta, arXiv:2501.12862](https://arxiv.org/abs/2501.12862) — résumé",
+      "apres": "3. [Maaz et coll. — Agentic Property-Based Testing, arXiv:2510.09907](https://arxiv.org/abs/2510.09907) — résumé puis extraits relus le 14 novembre 2026.\n4. [Foster et coll. — Mutation-Guided LLM-based Test Generation at Meta, arXiv:2501.12862](https://arxiv.org/abs/2501.12862) — résumé puis extraits relus le 14 novembre 2026.",
+      "motif": "Aligner [3] et [4] sur la relecture au-delà du résumé consignée dans #832."
+    },
+    {
+      "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+      "avant": "8. [Shah — LogJack, arXiv:2604.15368](https://arxiv.org/abs/2604.15368) — résumé\n9. [Pasquini et coll. — When AIOps Become « AI Oops », arXiv:2508.06394](https://arxiv.org/abs/2508.06394) — résumé\n10. [Carlini et coll. — The Secret Sharer, arXiv:1802.08232](https://arxiv.org/abs/1802.08232) — résumé",
+      "apres": "8. [Shah — LogJack, arXiv:2604.15368](https://arxiv.org/abs/2604.15368) — résumé puis extraits relus le 14 novembre 2026.\n9. [Pasquini et coll. — When AIOps Become « AI Oops », arXiv:2508.06394](https://arxiv.org/abs/2508.06394) — résumé puis extraits relus le 14 novembre 2026.\n10. [Carlini et coll. — The Secret Sharer, arXiv:1802.08232](https://arxiv.org/abs/1802.08232) — résumé puis extraits relus le 14 novembre 2026.",
+      "motif": "Aligner [8], [9] et [10] sur la relecture au-delà du résumé consignée dans #832."
+    },
+    {
+      "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+      "avant": "12. [Hu et coll. — LoRA, arXiv:2106.09685](https://arxiv.org/abs/2106.09685) — résumé\n13. [Rafailov et coll. — Direct Preference Optimization, arXiv:2305.18290](https://arxiv.org/abs/2305.18290) — résumé",
+      "apres": "12. [Hu et coll. — LoRA, arXiv:2106.09685](https://arxiv.org/abs/2106.09685) — résumé puis extraits relus le 14 novembre 2026.\n13. [Rafailov et coll. — Direct Preference Optimization, arXiv:2305.18290](https://arxiv.org/abs/2305.18290) — résumé puis extraits relus le 14 novembre 2026.",
+      "motif": "Aligner [12] et [13] sur la relecture au-delà du résumé consignée dans #832."
+    },
+    {
+      "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+      "avant": "- **Canaris.** Le résumé lu de l'article de Carlini ne décrit ni les canaris ni la métrique d'exposition; leur description vient de la connaissance générale du texte complet.",
+      "apres": "- **Canaris.** Le résumé seul de l'article de Carlini [10] ne décrit ni les canaris ni la métrique d'exposition; ces éléments proviennent du texte complet de l'article, recoupé par extraits le 14 novembre 2026 (le volet pratique ci-après conserve la formulation antérieure relative au résumé seul).",
+      "motif": "Harmoniser cette puce avec #832 (relecture par extraits de [10]) et signaler sans le modifier le maintien de la mention antérieure dans le volet (miroir fus.controle de chapitre-47-volet-c.md L183)."
+    },
+    {
+      "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+      "avant": "- **Articles.** Les sept articles n'ont été lus que par leur résumé. [3], [8] et [9] sont des prépublications.",
+      "apres": "- **Articles.** Les sept articles, d'abord lus par leur résumé, ont été recoupés par extraits le 14 novembre 2026. [3], [8] et [9] sont des prépublications.",
+      "motif": "Lever la contradiction directe entre cette puce et #832."
+    }
+  ]
+}

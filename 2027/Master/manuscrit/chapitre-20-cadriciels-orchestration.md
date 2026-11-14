@@ -2,7 +2,7 @@
 
 *Question directrice : sur quoi bâtir, et comment éviter le verrouillage ?*
 
-> **État de référence :** documentation des éditeurs telle que publiée à cette date (pages Microsoft datées des 22 et 23 octobre 2026, ADK 2.0, DSPy 3.5.0). Les numéros entre crochets renvoient aux sources en fin de chapitre; toutes sont des pages primaires lues pour ce chapitre, sauf [14], lue en résumé, et [15], secondaire et non lue; [16] à [25] ont été ajoutées le 14 novembre 2026, [21] par son seul résumé.
+> **État de référence :** documentation des éditeurs telle que publiée à cette date (pages Microsoft datées des 22 et 23 octobre 2026, ADK 2.0, DSPy 3.5.0). Les numéros entre crochets renvoient aux sources en fin de chapitre; toutes sont des pages primaires lues pour ce chapitre, sauf [14] (d'abord lue en résumé, puis relue par extraits le 14 novembre 2026), et [15], secondaire et non lue; [16] à [25] ont été ajoutées le 14 novembre 2026 ([21] d'abord en résumé, puis relue par extraits).
 
 Un modèle de langage produit une réponse à partir d'un contexte. Tout le reste est du code à écrire autour : la boucle qui enchaîne les appels d'outils, l'état qui survit d'une étape à l'autre, la répartition du travail entre agents, la pause qui attend une approbation. Un cadriciel d'orchestration fournit ce code, et son choix passe pour structurant.
 
@@ -146,7 +146,7 @@ Les cadriciels précédents décrivent comment le travail circule. Deux projets 
 
 L'intérêt pour ce chapitre est la portabilité. Un prompt rédigé à la main est réglé pour un modèle; une signature ne l'est pas, et l'optimiseur peut refaire le réglage pour un autre. La page cite un cas de migration de prompts d'un grand modèle vers un plus petit [13]. La condition est sévère : il faut des exemples et une métrique, donc une évaluation outillée (chapitre 33); le chapitre 47 décrit MIPROv2 et la boucle de données qui l'alimente. DSPy n'est pas un orchestrateur; il se loge à l'intérieur des nœuds d'un graphe.
 
-**MetaGPT** déclare autre chose : la procédure. Ses auteurs partent d'un constat, les incohérences logiques dues aux hallucinations en cascade quand on enchaîne naïvement des modèles, et y répondent en encodant des procédures opérationnelles normalisées dans des séquences de prompts [14]. Les agents reçoivent des rôles selon un paradigme de chaîne de montage et vérifient les résultats intermédiaires. Le résumé annonce des solutions plus cohérentes que les systèmes multi-agents antérieurs en génie logiciel, sans chiffre.
+**MetaGPT** déclare autre chose : la procédure. Ses auteurs partent d'un constat, les incohérences logiques dues aux hallucinations en cascade quand on enchaîne naïvement des modèles, et y répondent en encodant des procédures opérationnelles normalisées dans des séquences de prompts [14]. Les agents reçoivent des rôles selon un paradigme de chaîne de montage et vérifient les résultats intermédiaires. Dans ses bancs d'essai de génération de code, l'article rapporte des taux Pass@1 de 85,9 % sur HumanEval et de 87,7 % sur MBPP.
 
 L'idée centrale dépasse le projet : une procédure écrite, avec des livrables intermédiaires vérifiables, discipline mieux une équipe d'agents qu'une conversation libre. Le chapitre 21 en montre le prix : face à ChatDev, MetaGPT réduit de 60 % à 68 % les défauts de spécification et de coordination, mais compte 1,56 fois plus d'échecs de vérification. La procédure ne dispense pas d'un vérificateur.
 
@@ -209,7 +209,7 @@ Quatre questions, dans cet ordre, suffisent à réduire la liste.
 
 Deux études empiriques éclairent la fragilité de cette couche. La première analyse 409 bogues corrigés dans cinq cadriciels : LangChain, LangGraph, CrewAI, AutoGen et SmolAgents [20]. Plus de la moitié (52 %) sont des fautes de programmation ordinaires, 22 % des fautes propres aux agents, surtout liées au modèle, et 12 % des fautes de documentation, le plus souvent un exemple de code erroné. La couche qui intègre le modèle est la plus touchée (24,7 % des bogues), et moins de la moitié de ses correctifs sont accompagnés d'un test. Les conditions de déclenchement tiennent à la configuration dans 92 % des cas analysés, d'abord aux réglages du modèle. Enfin, 16 des 35 bogues rejoués se transposent à un autre cadriciel. Les auteurs ne classent pas les produits : leurs décomptes portent sur des bogues corrigés, non sur des taux de défaut.
 
-La seconde, connue par son résumé, porte sur 5 669 rapports de bogue et 809 demandes de fonction dans cinq cadriciels. Selon sa propre classification de 5 669 rapports de bogues publics tirés de cinq cadriciels, 76 % des bogues signalés se manifestent par un comportement fonctionnel incorrect, et leurs causes relèvent davantage des API, de la configuration, de l'analyse et de la sérialisation que dans les cadriciels d'apprentissage profond; ces rapports ne mesurent pas l'incidence réelle [21].
+La seconde, d'abord connue par son résumé puis relue par extraits, porte sur 5 669 rapports de bogue et 809 demandes de fonction dans cinq cadriciels. Selon sa propre classification de 5 669 rapports de bogues publics tirés de cinq cadriciels, 76 % des bogues signalés se manifestent par un comportement fonctionnel incorrect, et leurs causes relèvent davantage des API, de la configuration, de l'analyse et de la sérialisation que dans les cadriciels d'apprentissage profond; ces rapports ne mesurent pas l'incidence réelle [21].
 
 Trois précautions en découlent, déduites ici : essayer la combinaison exacte de fournisseur et de modèle employée, plutôt que de se fier à la prise en charge annoncée; vérifier qu'un réglage est bien appliqué; ne pas tenir un exemple de documentation pour valide dans la version installée. La parenté des défauts d'un cadriciel à l'autre va dans le sens de la thèse du chapitre : le choix du produit pèse moins que la discipline d'essai (chapitre 34).
 
@@ -263,11 +263,11 @@ Pages primaires lues le 11 novembre 2026; [2], [5], [6], [8], [9], [10], [12] et
 11. [Agent Development Kit — introduction à A2A](https://adk.dev/a2a/intro/)
 12. [Claude Agent SDK — vue d'ensemble](https://code.claude.com/docs/en/agent-sdk/overview)
 13. [DSPy — accueil](https://dspy.ai/)
-14. [MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework (arXiv 2308.00352)](https://arxiv.org/abs/2308.00352) — résumé seulement
+14. [MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework (arXiv 2308.00352)](https://arxiv.org/abs/2308.00352) — résumé, puis extraits relus le 14 novembre 2026
 
 Source secondaire :
 
-15. [Zhu et coll. — LLM-Based Multi-Agent Orchestration: A Survey of Frameworks, Communication Protocols, and Emerging Patterns](https://www.preprints.org/manuscript/202604.2147) — prépublication non lue (accès refusé), citée comme appui par le plan initial.
+15. [Zhu et coll. — LLM-Based Multi-Agent Orchestration: A Survey of Frameworks, Communication Protocols, and Emerging Patterns](https://www.preprints.org/manuscript/202604.2147) (paru dans *Future Internet*, vol. 18, n° 6, art. 326, 15 juin 2026, [DOI 10.3390/fi18060326](https://doi.org/10.3390/fi18060326)) — prépublication et page éditeur non lues (accès refusé HTTP 403), citée comme appui par le plan initial.
 
 Sources ajoutées le 14 novembre 2026 :
 
@@ -275,8 +275,8 @@ Sources ajoutées le 14 novembre 2026 :
 17. [LangSmith — point d'accès A2A d'Agent Server](https://docs.langchain.com/langsmith/server-a2a)
 18. [CrewAI — MCP, vue d'ensemble](https://docs.crewai.com/en/mcp/overview)
 19. Dépôts de [LangGraph](https://github.com/langchain-ai/langgraph), de [CrewAI](https://github.com/crewAIInc/crewAI) et de [Microsoft Agent Framework](https://github.com/microsoft/agent-framework) — licence indiquée sur la page d'accueil.
-20. [Zhang, Zhang et Tan — Dissecting Bug Triggers and Failure Modes in Modern Agentic Frameworks: An Empirical Study (arXiv 2604.08906, 10 avril 2026)](https://arxiv.org/html/2604.08906v1) — prépublication, lue le 14 novembre 2026; étendue de lecture non consignée.
-21. [Zhu et coll. — Where Agent Frameworks Fall Short: Examining Functional Challenges and Usability Concerns (arXiv 2602.21806, version 4 du 6 août 2026)](https://arxiv.org/abs/2602.21806) — prépublication; résumé seulement.
+20. [Zhang, Zhang et Tan — Dissecting Bug Triggers and Failure Modes in Modern Agentic Frameworks: An Empirical Study (arXiv 2604.08906v1, 10 avril 2026; v4 du 4 octobre 2026 renommée *Understanding Bugs in Modern Agentic Frameworks*)](https://arxiv.org/html/2604.08906v1) — prépublication, lue le 14 novembre 2026; étendue de lecture non consignée.
+21. [Zhu et coll. — Where Agent Frameworks Fall Short: Examining Functional Challenges and Usability Concerns (arXiv 2602.21806, version 4 du 6 août 2026)](https://arxiv.org/abs/2602.21806) — prépublication; résumé, puis extraits relus le 14 novembre 2026.
 
 Pages lues le 14 novembre 2026 :
 
@@ -288,12 +288,12 @@ Pages lues le 14 novembre 2026 :
 ## Limites de ce chapitre
 
 - Les sources [14] et [21], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
-- Le relevé [15], appui prévu par le plan initial, n'a pas été lu, et sa parution dans *Future Internet* n'a pas été confirmée. Sa comparaison des cadriciels n'est donc pas reprise, et rien n'établit que les quatre critères de la section 20.1 en proviennent.
+- Le relevé [15], appui prévu par le plan initial, n'a pas été lu : sa parution dans *Future Internet* (vol. 18, n° 6, art. 326, 15 juin 2026, DOI 10.3390/fi18060326) est confirmée via Crossref, mais la prépublication et la page MDPI retournent HTTP 403. Sa comparaison des cadriciels n'est donc pas reprise, et rien n'établit que les quatre critères de la section 20.1 en proviennent.
 - La plupart des pages ont été lues par un outil d'extraction qui en restitue le contenu en condensé; les pages de Microsoft et d'Anthropic l'ont été en texte intégral. La version A2A par défaut de CrewAI et la limite de récursion de LangGraph, à revérifier, ont été confirmées à la relecture.
 - La page d'accueil d'ADK n'annonce la version 2.0 en disponibilité générale que pour TypeScript; le statut des autres langages n'a pas été lu.
 - Une à quatre pages par produit ont été lues; restent non décrits les modèles acceptés par le Claude Agent SDK. La reprise sur échec dans ADK et dans l'OpenAI Agents SDK a été lue par passages le 14 novembre 2026, de [22] à [25]; le service de sessions qu'exige la reprise dans ADK, sa prise en charge dans les autres langages et le fonctionnement des intégrations d'exécution durable d'OpenAI ne l'ont pas été. La prise en charge de MCP par LangChain et par CrewAI, celle d'A2A par Agent Server et les licences de LangGraph, de CrewAI et de Microsoft Agent Framework ont été lues le 14 novembre 2026, de [16] à [19]; les licences viennent de la page d'accueil des dépôts, non du texte des licences.
 - Aucun chiffre de coût en jetons ni d'adoption n'est cité, faute de source lue; le raisonnement de la section 20.1 sur le coût des abstractions est une analyse. Les seuls chiffres de performance, sur MetaGPT et ChatDev, sont repris du chapitre 21 sans relecture de MAST.
 - La convergence des cadriciels, le déplacement du verrouillage et la distinction entre bibliothèque et harnais sont des synthèses de ce chapitre, non des thèses lues dans une source.
-- MetaGPT n'est connu que par le résumé de son article; son rangement parmi les approches « déclaratives » suit le plan initial et convient mieux à DSPy.
-- La sous-section sur les études de défauts (20.7) date du 14 novembre 2026. [21] n'est connue que par son résumé, et ses versions antérieures portaient un autre titre et un échantillon plus petit. Les trois précautions sont des déductions de ce chapitre; [20] ne classe pas les cadriciels.
+- MetaGPT, d'abord connu par son résumé, a été relu par extraits le 14 novembre 2026; son rangement parmi les approches « déclaratives » suit le plan initial et convient mieux à DSPy.
+- La sous-section sur les études de défauts (20.7) date du 14 novembre 2026. [21], d'abord connue par son résumé, a été relue par extraits, et ses versions antérieures portaient un autre titre et un échantillon plus petit. Les trois précautions sont des déductions de ce chapitre; [20] ne classe pas les cadriciels.
 - Un critère (« attaches ») a été ajouté aux quatre du plan initial.

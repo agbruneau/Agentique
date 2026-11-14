@@ -1,0 +1,187 @@
+{
+  "id": "REF-3-coherence",
+  "origine": "plan 2027, lot REF-3-coherence",
+  "categorie": "coherence",
+  "remplacements": [
+    {
+      "fichier": "chapitre-25-integration-patrimoine.md",
+      "avant": "5. [IBM Documentation — CICS TS 6.x, fonctionnement du serveur MCP de CICS](https://www.ibm.com/docs/en/cics-ts/6.x?topic=ai-how-it-works-cics-mcp-server)\n6. [IBM Documentation — CICS TS 6.x, fonctionnement des agents CICS](https://www.ibm.com/docs/en/cics-ts/6.x?topic=ai-how-it-works-cics-agents)",
+      "apres": "5. [IBM Documentation — CICS TS 6.x, fonctionnement du serveur MCP de CICS](https://www.ibm.com/docs/en/cics-ts/6.x?topic=ai-how-it-works-cics-mcp-server) — accès restreint le 14 novembre 2026 (HTTP 403 IBM; contenu relu le 12 novembre et confirmé par recherche web).\n6. [IBM Documentation — CICS TS 6.x, fonctionnement des agents CICS](https://www.ibm.com/docs/en/cics-ts/6.x?topic=ai-how-it-works-cics-agents) — accès restreint le 14 novembre 2026 (HTTP 403 IBM; contenu relu le 12 novembre et confirmé par recherche web).",
+      "motif": "Consigner le blocage anti-robot HTTP 403 d'IBM relevé le 14 novembre 2026 et le recours à la recherche web de confirmation."
+    },
+    {
+      "fichier": "chapitre-25-integration-patrimoine.md",
+      "avant": "[2] n'a pu être relu (page en maintenance, PDF hors délai); sa date est confirmée par un extrait de recherche seulement.",
+      "apres": "[2] (PDF de 4 pages, © 2025) est accessible le 14 novembre 2026 (HTTP 200) et confirme le modèle mixte et les quatre questions; à cette date, [5] et [6] renvoient HTTP 403 au script automatique (blocage IBM), leur contenu demeurant confirmé par la relecture du 12 novembre et par recherche web.",
+      "motif": "Mettre à jour les limites du chapitre 25 : le PDF Capco [2] est bien accessible et vérifié le 14 novembre 2026, tandis que [5] et [6] sont en accès restreint HTTP 403."
+    },
+    {
+      "fichier": "chapitre-29-identite-agentique.md",
+      "avant": "- Aucun chiffre d'adoption n'est cité : la seule estimation rencontrée est non chiffrée et de source secondaire.\n- La liste d'attributs d'annuaire de 29.3 et la grille de décision sont des synthèses propres à ce chapitre.",
+      "apres": "- Aucun chiffre d'adoption n'est cité : la seule estimation rencontrée est non chiffrée et de source secondaire.\n- Lors de l'audit du 14 novembre 2026, [10] (W3C DID v1.0), [12] (CSA) et [15] (W3C DID v1.1) ont renvoyé un accès restreint (HTTP 403 anti-robot au script automatique); leurs titres, dates et statuts (recommandation DID v1.0 du 19 juillet 2022; recommandation candidate DID v1.1 du 5 mars 2026) sont confirmés par recherche web.\n- La liste d'attributs d'annuaire de 29.3 et la grille de décision sont des synthèses propres à ce chapitre.",
+      "motif": "Consigner dans les limites du chapitre 29 les trois sources en accès restreint (HTTP 403) lors de l'audit du 14 novembre 2026."
+    },
+    {
+      "fichier": "chapitre-30-autorisation-delegation.md",
+      "avant": "toutes sont des pages primaires lues pour ce chapitre ([13] en résumé seulement), sauf [16] et [17], marquées secondaires.",
+      "apres": "toutes sont des pages primaires lues pour ce chapitre ([13] ayant été relue au-delà du résumé le 14 novembre 2026), sauf [16] et [17], marquées secondaires.",
+      "motif": "Aligner l'État de référence du chapitre 30 sur la relecture au-delà du résumé de [13] enregistrée au lot P2-F3."
+    },
+    {
+      "fichier": "chapitre-30-autorisation-delegation.md",
+      "avant": "13. [Authenticated Delegation and Authorized AI Agents (arXiv 2501.09674)](https://arxiv.org/abs/2501.09674) — résumé seulement",
+      "apres": "13. [Authenticated Delegation and Authorized AI Agents (arXiv 2501.09674)](https://arxiv.org/abs/2501.09674) — prépublication, résumé puis extraits du texte relus le 14 novembre 2026.",
+      "motif": "Supprimer la mention obsolète « résumé seulement » sur la source [13], relue au-delà du résumé dans P2-F3."
+    },
+    {
+      "fichier": "chapitre-31-menaces.md",
+      "avant": "Toutes ont été lues pour ce chapitre, les articles par leur résumé seulement; [11] à [13] sont des billets.",
+      "apres": "Toutes ont été lues pour ce chapitre (les articles [6] à [10] et le bilan [13], d'abord lus par leur résumé, ont été relus au-delà du résumé le 14 novembre 2026); [11] à [13] sont des billets.",
+      "motif": "Aligner l'État de référence du chapitre 31 sur la relecture au-delà du résumé consignée dans P2-F3."
+    },
+    {
+      "fichier": "chapitre-31-menaces.md",
+      "avant": "Leur résumé assimile le traitement d'un tel contenu à une exécution de code arbitraire",
+      "apres": "Greshake et ses coauteurs assimilent le traitement d'un tel contenu à une exécution de code arbitraire",
+      "motif": "Lever la mention résiduelle « Leur résumé » après la relecture de [6] au-delà du résumé."
+    },
+    {
+      "fichier": "chapitre-31-menaces.md",
+      "avant": "même sans attaque [7]. Le résumé ne publie pas de taux. Il rappelle en revanche que sécurité et utilité se mesurent ensemble",
+      "apres": "même sans attaque [7]. Sans reprendre ici les taux chiffrés de l'article par modèle et par défense, celui-ci rappelle que sécurité et utilité se mesurent ensemble",
+      "motif": "Corriger l'affirmation résiduelle « Le résumé ne publie pas de taux » : AgentDojo [7], relu au-delà du résumé, publie bien des tableaux de taux d'utilité et de succès d'attaque."
+    },
+    {
+      "fichier": "chapitre-31-menaces.md",
+      "avant": " Le résumé ne donne aucun chiffre.\n\nUn article collectif",
+      "apres": "\n\nUn article collectif",
+      "motif": "Supprimer la phrase résiduelle « Le résumé ne donne aucun chiffre. » devenue contradictoire avec la relecture de [9] au-delà du résumé."
+    },
+    {
+      "fichier": "chapitre-31-menaces.md",
+      "avant": "Selon le résumé, ces menaces dépassent les cadres habituels",
+      "apres": "Selon les auteurs, ces menaces dépassent les cadres habituels",
+      "motif": "Lever la mention résiduelle « Selon le résumé » après la relecture de [10] au-delà du résumé."
+    },
+    {
+      "fichier": "chapitre-31-menaces.md",
+      "avant": "6. [Greshake et coll. — Not what you've signed up for (arXiv 2302.12173)](https://arxiv.org/abs/2302.12173) — résumé.\n7. [Debenedetti et coll. — AgentDojo (arXiv 2406.13352)](https://arxiv.org/abs/2406.13352) — résumé.\n8. [Beurer-Kellner et coll. — Design Patterns for Securing LLM Agents against Prompt Injections (arXiv 2506.08837)](https://arxiv.org/abs/2506.08837) — résumé.\n9. [Lee et Tiwari — Prompt Infection (arXiv 2410.07283)](https://arxiv.org/abs/2410.07283) — résumé.\n10. [Schroeder de Witt et coll. — Open Challenges in Multi-Agent Security (arXiv 2505.02077)](https://arxiv.org/abs/2505.02077) — résumé.",
+      "apres": "6. [Greshake et coll. — Not what you've signed up for (arXiv 2302.12173)](https://arxiv.org/abs/2302.12173) — prépublication, résumé puis extraits relus le 14 novembre 2026.\n7. [Debenedetti et coll. — AgentDojo (arXiv 2406.13352)](https://arxiv.org/abs/2406.13352) — prépublication, résumé puis extraits relus le 14 novembre 2026.\n8. [Beurer-Kellner et coll. — Design Patterns for Securing LLM Agents against Prompt Injections (arXiv 2506.08837)](https://arxiv.org/abs/2506.08837) — prépublication, résumé puis extraits relus le 14 novembre 2026.\n9. [Lee et Tiwari — Prompt Infection (arXiv 2410.07283)](https://arxiv.org/abs/2410.07283) — prépublication, résumé puis extraits relus le 14 novembre 2026.\n10. [Schroeder de Witt et coll. — Open Challenges in Multi-Agent Security (arXiv 2505.02077)](https://arxiv.org/abs/2505.02077) — prépublication, résumé puis extraits relus le 14 novembre 2026.",
+      "motif": "Mettre à jour les notices de sources [6] à [10] conformément à leur relecture au-delà du résumé dans P2-F3."
+    },
+    {
+      "fichier": "chapitre-31-menaces.md",
+      "avant": "13. [OWASP GenAI Security Project — GenAI and Agentic AI Exploit Roundup Q3 2026, 8 octobre 2026](https://genai.owasp.org/2026/10/08/genai-and-agentic-ai-exploit-roundup-q3-2026/) — bilan d'incidents, lu le 12 novembre 2026 par résumé.",
+      "apres": "13. [OWASP GenAI Security Project — GenAI and Agentic AI Exploit Roundup Q3 2026, 8 octobre 2026](https://genai.owasp.org/2026/10/08/genai-and-agentic-ai-exploit-roundup-q3-2026/) — bilan d'incidents, relu au-delà du résumé le 14 novembre 2026 (accès HTTP 403 intermittent au script automatique, confirmé par recherche web).",
+      "motif": "Aligner la notice de [13] sur P2-F3 et consigner le blocage WAF intermittent constaté le 14 novembre 2026."
+    },
+    {
+      "fichier": "chapitre-31-menaces.md",
+      "avant": "- Les cinq articles sont cités d'après leur résumé. Les patrons de [8], la méthode de [9] et la taxonomie de [10] ne sont pas décrits faute de lecture du texte.",
+      "apres": "- La liste détaillée des patrons de [8], la méthode complète de [9] et l'ensemble de la taxonomie de [10] ne sont pas exposés dans ce chapitre.",
+      "motif": "Supprimer la contradiction interne entre la ligne 297 (P2-F3) et la ligne 300 (« cités d'après leur résumé ... faute de lecture du texte »)."
+    },
+    {
+      "fichier": "chapitre-31-menaces.md",
+      "avant": "- Aucun chiffre de prévalence ni de taux de succès d'attaque n'est cité, faute de source lue qui en donne. Les appuis de 31.7 restent minces.",
+      "apres": "- Aucun chiffre de prévalence en production (absent des sources lues, dont [2] et [13]) ni de taux de succès d'attaque issu des études expérimentales (bien que [7] et [9] en publient) n'est repris dans ce chapitre. Les appuis de 31.7 restent minces.",
+      "motif": "Corriger l'incise contradictoire « faute de source lue qui en donne » à la ligne 304 (AgentDojo [7] et Prompt Infection [9], relus au-delà du résumé dans P2-F3, publient bien des taux de succès d'attaque) tout en conservant le constat que la prévalence en production manque et que les appuis de 31.7 restent minces."
+    },
+    {
+      "fichier": "chapitre-32-assurance.md",
+      "avant": "9. [The Attacker Moves Second (arXiv 2510.09023)](https://arxiv.org/abs/2510.09023) — résumé.\n10. [AutoDojo (arXiv 2606.15057)](https://arxiv.org/abs/2606.15057) — résumé.\n11. [Adaptive Evaluation of Out-of-Band Defenses (arXiv 2606.26479)](https://arxiv.org/abs/2606.26479) — résumé.",
+      "apres": "9. [The Attacker Moves Second (arXiv 2510.09023)](https://arxiv.org/abs/2510.09023) — prépublication, résumé puis extraits relus le 14 novembre 2026.\n10. [AutoDojo (arXiv 2606.15057)](https://arxiv.org/abs/2606.15057) — prépublication, résumé puis extraits relus le 14 novembre 2026.\n11. [Adaptive Evaluation of Out-of-Band Defenses (arXiv 2606.26479)](https://arxiv.org/abs/2606.26479) — prépublication, résumé puis extraits relus le 14 novembre 2026.",
+      "motif": "Mettre à jour les notices de sources [9] à [11] conformément à leur relecture au-delà du résumé dans P2-F3."
+    },
+    {
+      "fichier": "chapitre-32-assurance.md",
+      "avant": "- Pour [9], [10] et [11], seuls les résumés ont été lus. Ce sont des prépublications; leur évaluation par les pairs n'a pas été vérifiée.",
+      "apres": "- Pour [9], [10] et [11], ce sont des prépublications; leur évaluation par les pairs n'a pas été vérifiée.",
+      "motif": "Supprimer la contradiction directe avec la limite P2-F3 sur la relecture de [9], [10] et [11] au-delà du résumé."
+    },
+    {
+      "fichier": "chapitre-32-assurance.md",
+      "avant": "- L'audit du 12 novembre 2026 a relu [1] (notice et texte), [3], [4], [5], [7], [10] et [11].\n- Les lectures « pour un agent » de SP 800-207, les trois familles de règles, les quatre gestes de la section 32.2 et les cinq règles de la section 32.5 sont des déductions de ce chapitre.",
+      "apres": "- L'audit du 12 novembre 2026 a relu [1] (notice et texte), [3], [4], [5], [7], [10] et [11].\n- Lors de l'audit du 14 novembre 2026, [7] (W3C Agent Conformance and Benchmarking Community Group) a retourné HTTP 403 (protection Cloudflare); sa charte et ses livrables sont confirmés par recherche web.\n- Les lectures « pour un agent » de SP 800-207, les trois familles de règles, les quatre gestes de la section 32.2 et les cinq règles de la section 32.5 sont des déductions de ce chapitre.",
+      "motif": "Consigner l'accès restreint HTTP 403 du groupe W3C [7] lors de l'audit du 14 novembre 2026."
+    },
+    {
+      "fichier": "chapitre-33-observabilite-evaluation.md",
+      "avant": "et [16], connue par son résumé et relevée le 14 novembre 2026.",
+      "apres": "et [16], relevée le 14 novembre 2026 et relue au-delà du résumé avec [13] et [14].",
+      "motif": "Aligner l'État de référence du chapitre 33 sur P2-F3 (#824)."
+    },
+    {
+      "fichier": "chapitre-33-observabilite-evaluation.md",
+      "avant": "Le résumé de l'article rapporte qu'un agent fondé sur gpt-4o",
+      "apres": "L'article rapporte qu'un agent fondé sur gpt-4o",
+      "motif": "Aligner la formulation sur la relecture de [13] au-delà du résumé."
+    },
+    {
+      "fichier": "chapitre-33-observabilite-evaluation.md",
+      "avant": "Une prépublication, connue par son résumé, mesure un coût voisin",
+      "apres": "Une prépublication mesure un coût voisin",
+      "motif": "Supprimer la mention résiduelle « connue par son résumé » pour [16], relue au-delà du résumé dans P2-F3."
+    },
+    {
+      "fichier": "chapitre-33-observabilite-evaluation.md",
+      "avant": "Le texte n'est connu ici que par son résumé, et il mesure une part du banc rejoué, non un coût en dollars.",
+      "apres": "L'étude mesure une part du banc rejoué, non un coût en dollars.",
+      "motif": "Supprimer la mention résiduelle « connu ici que par son résumé » pour [16]."
+    },
+    {
+      "fichier": "chapitre-33-observabilite-evaluation.md",
+      "avant": "Une seule étude, connue par son résumé, mesure qu'un sous-ensemble",
+      "apres": "Une seule étude mesure qu'un sous-ensemble",
+      "motif": "Aligner l'essentiel à retenir du chapitre 33 sur P2-F3."
+    },
+    {
+      "fichier": "chapitre-33-observabilite-evaluation.md",
+      "avant": "13. [τ-bench (arXiv 2406.12045)](https://arxiv.org/abs/2406.12045) — résumé seulement.\n14. [EnterpriseBench (arXiv 2510.27287, EMNLP 2025)](https://arxiv.org/abs/2510.27287) — résumé seulement.",
+      "apres": "13. [τ-bench (arXiv 2406.12045)](https://arxiv.org/abs/2406.12045) — prépublication, résumé puis extraits relus le 14 novembre 2026.\n14. [EnterpriseBench (arXiv 2510.27287, EMNLP 2025)](https://arxiv.org/abs/2510.27287) — article, résumé puis extraits relus le 14 novembre 2026.",
+      "motif": "Mettre à jour les notices de [13] et [14] conformément à P2-F3."
+    },
+    {
+      "fichier": "chapitre-33-observabilite-evaluation.md",
+      "avant": "Résumé seulement, relevé le 14 novembre 2026 :",
+      "apres": "Prépublication relevée et relue au-delà du résumé le 14 novembre 2026 :",
+      "motif": "Aligner l'intertitre de la source [16] sur P2-F3."
+    },
+    {
+      "fichier": "chapitre-33-observabilite-evaluation.md",
+      "avant": "14 novembre 2026 [16]. Elle n'est connue que par son résumé, porte sur un seul agent",
+      "apres": "14 novembre 2026 [16]. Elle porte sur un seul agent",
+      "motif": "Supprimer la mention contradictoire dans les limites de [16] après P2-F3."
+    },
+    {
+      "fichier": "chapitre-34-exploitation.md",
+      "avant": "dont [3] et [7] par leur seul résumé;",
+      "apres": "dont [7] par son seul résumé ([3] ayant été relue au-delà du résumé le 14 novembre 2026);",
+      "motif": "Aligner l'État de référence du chapitre 34 sur P2-F3 (#825)."
+    },
+    {
+      "fichier": "chapitre-34-exploitation.md",
+      "avant": "3. [Moshkovich et Zeltyn — Taming Uncertainty via Automation (arXiv 2507.11277)](https://arxiv.org/abs/2507.11277) — résumé seulement.",
+      "apres": "3. [Moshkovich et Zeltyn — Taming Uncertainty via Automation (arXiv 2507.11277)](https://arxiv.org/abs/2507.11277) — prépublication, résumé puis extraits relus le 14 novembre 2026.",
+      "motif": "Mettre à jour la notice de [3] conformément à P2-F3."
+    },
+    {
+      "fichier": "chapitre-34-exploitation.md",
+      "avant": "et une nouvelle recherche, le 14 novembre 2026, ne l'a pas retrouvé;",
+      "apres": "(l'URL SSRN renvoie HTTP 403 anti-robot le 14 novembre 2026; notice bibliographique confirmée sur Crossref via le DOI 10.1016/j.infsof.2026.108307, *Information and Software Technology*, vol. 200);",
+      "motif": "Préciser le statut exact du catalogue [9] le 14 novembre 2026 (blocage HTTP 403 sur SSRN, notice Crossref vérifiée sans texte intégral libre)."
+    },
+    {
+      "fichier": "chapitre-36-responsabilite.md",
+      "avant": "- Le rôle des formulaires ISO, l'adoption d'UETA hors de la Californie et le sens du mot « agent » en common law relèvent de la connaissance générale. La loi type de la CNUDCI est décrite d'après sa page de présentation.\n- Le mandat du Code civil du Québec et les lois provinciales sur le commerce électronique n'ont pas été lus; le cadre canadien est au chapitre 38.",
+      "apres": "- Le rôle des formulaires ISO, l'adoption d'UETA hors de la Californie et le sens du mot « agent » en common law relèvent de la connaissance générale. La loi type de la CNUDCI est décrite d'après sa page de présentation.\n- Lors de l'audit du 14 novembre 2026, [6] (CSA, HTTP 403 anti-robot) et [14] (CanLII, HTTP 403) restent inaccessibles au script automatique; la note [6] (« AI Liability Inflection: Enterprise Accountability in the Agentic Era », été 2026) et l'arrêt [14] sont confirmés par recherche web et sources secondaires.\n- Le mandat du Code civil du Québec et les lois provinciales sur le commerce électronique n'ont pas été lus; le cadre canadien est au chapitre 38.",
+      "motif": "Consigner l'accès restreint HTTP 403 des sources [6] et [14] lors de l'audit du 14 novembre 2026."
+    },
+    {
+      "fichier": "chapitre-37-souverainete.md",
+      "avant": "- Aucune donnée d'adoption n'est citée (Gaia-X Magazine de juin 2026 non chargé).\n- Viennent de la connaissance générale : le rattachement de l'article 2713 au CLOUD Act et les réserves sur l'offre de modèles des fournisseurs locaux.",
+      "apres": "- Aucune donnée d'adoption n'est citée (Gaia-X Magazine de juin 2026 non chargé).\n- Lors de l'audit du 14 novembre 2026, l'URL EUR-Lex de [2] redirige automatiquement vers la page générique « TodayOJ » (filtrage automatisé EUR-Lex).\n- Viennent de la connaissance générale : le rattachement de l'article 2713 au CLOUD Act et les réserves sur l'offre de modèles des fournisseurs locaux.",
+      "motif": "Consigner le comportement de redirection automatisée d'EUR-Lex sur [2] lors de l'audit du 14 novembre 2026."
+    }
+  ]
+}

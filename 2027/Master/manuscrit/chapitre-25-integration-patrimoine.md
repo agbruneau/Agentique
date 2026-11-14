@@ -187,8 +187,8 @@ Pages primaires lues le 11 novembre 2026 :
 2. [Capco — « AI agents in mainframe modernization », 19 novembre 2025 (PDF)](https://www.capco.com/-/media/CapcoMedia/CAPCO/Intelligence-2025/UK/PDFs/Capco_2025_GenAI_Suite_3_Legacy-Modernization_AI-Agents-in-Mainframe-Modernization.ashx) — point de vue de cabinet-conseil.
 3. [Microsoft Learn — patron Anti-Corruption Layer](https://learn.microsoft.com/en-us/azure/architecture/patterns/anti-corruption-layer)
 4. [Martin Fowler — Strangler Fig, 22 août 2024](https://martinfowler.com/bliki/StranglerFigApplication.html)
-5. [IBM Documentation — CICS TS 6.x, fonctionnement du serveur MCP de CICS](https://www.ibm.com/docs/en/cics-ts/6.x?topic=ai-how-it-works-cics-mcp-server)
-6. [IBM Documentation — CICS TS 6.x, fonctionnement des agents CICS](https://www.ibm.com/docs/en/cics-ts/6.x?topic=ai-how-it-works-cics-agents)
+5. [IBM Documentation — CICS TS 6.x, fonctionnement du serveur MCP de CICS](https://www.ibm.com/docs/en/cics-ts/6.x?topic=ai-how-it-works-cics-mcp-server) — accès restreint le 14 novembre 2026 (HTTP 403 IBM; contenu relu le 12 novembre et confirmé par recherche web).
+6. [IBM Documentation — CICS TS 6.x, fonctionnement des agents CICS](https://www.ibm.com/docs/en/cics-ts/6.x?topic=ai-how-it-works-cics-agents) — accès restreint le 14 novembre 2026 (HTTP 403 IBM; contenu relu le 12 novembre et confirmé par recherche web).
 7. [IBM — page produit de z/OS Connect](https://www.ibm.com/products/zos-connect) — page commerciale d'éditeur.
 8. [AWS — « Reimagining mainframe applications with AWS Transform and Claude Code », 8 mai 2026](https://aws.amazon.com/blogs/migration-and-modernization/reimagining-mainframe-applications-with-aws-transform-and-claude-code/) — billet de fournisseur, lu partiellement.
 9. [MCP — Outils, spécification 2026-07-28](https://modelcontextprotocol.io/specification/2026-07-28/server/tools.md)
@@ -204,7 +204,7 @@ Aucune source secondaire n'est citée. Les faits sur MCP qui ne figurent pas dan
 - Les pages de référence des outils du serveur MCP de CICS n'ont pas été lues : la lecture seule n'est établie que pour les agents préconstruits.
 - La documentation technique de z/OS Connect n'a été lue qu'à l'état de table des matières; le chapitre s'appuie sur la page produit.
 - Le billet d'AWS [8] n'a été lu que jusqu'à la génération de code, même à la relecture.
-- L'audit du 12 novembre 2026 a relu [1], [5], [6], [8], [9] et [10] : faits confirmés, conditions de remplacement corrigées d'après [1]. [2] n'a pu être relu (page en maintenance, PDF hors délai); sa date est confirmée par un extrait de recherche seulement.
+- L'audit du 12 novembre 2026 a relu [1], [5], [6], [8], [9] et [10] : faits confirmés, conditions de remplacement corrigées d'après [1]. [2] (PDF de 4 pages, © 2025) est accessible le 14 novembre 2026 (HTTP 200) et confirme le modèle mixte et les quatre questions; à cette date, [5] et [6] renvoient HTTP 403 au script automatique (blocage IBM), leur contenu demeurant confirmé par la relecture du 12 novembre et par recherche web.
 - Le pilotage de l'interface utilisateur par un agent, dernier recours quand aucune interface programmable n'existe, n'est couvert par aucune source lue et n'est pas traité.
 
 ## Mise en œuvre — Intégration du patrimoine sans API : Computer-Use Agents (CUA), RPA/APA et mainframes {.volet}

@@ -1,0 +1,223 @@
+{
+  "id": "REF-2-coherence",
+  "origine": "plan 2027, lot REF-2-coherence",
+  "categorie": "coherence",
+  "remplacements": [
+    {
+      "fichier": "chapitre-12-couche-semantique-ontologies.md",
+      "avant": "Ces chiffres viennent du résumé de l'article, datent de novembre 2023",
+      "apres": "Ces chiffres viennent de l'article [11] (résumé et extraits relus), datent de novembre 2023",
+      "motif": "Aligner L39 avec le lot P2-F3 (#757 et #808) qui a relu [11] au-delà du résumé."
+    },
+    {
+      "fichier": "chapitre-12-couche-semantique-ontologies.md",
+      "avant": "10. [Semantic Consensus: Process-Aware Conflict Detection and Resolution for Enterprise Multi-Agent LLM Systems (arXiv 2604.16339)](https://arxiv.org/abs/2604.16339) — résumé seulement; le texte est lu au chapitre 21.\n11. [A Benchmark to Understand the Role of Knowledge Graphs on LLM's Accuracy for Question Answering on Enterprise SQL Databases (arXiv 2311.07509)](https://arxiv.org/abs/2311.07509) — résumé seulement.",
+      "apres": "10. [Semantic Consensus: Process-Aware Conflict Detection and Resolution for Enterprise Multi-Agent LLM Systems (arXiv 2604.16339)](https://arxiv.org/abs/2604.16339) — texte lu au chapitre 21 et relu par extraits le 14 novembre 2026.\n11. [A Benchmark to Understand the Role of Knowledge Graphs on LLM's Accuracy for Question Answering on Enterprise SQL Databases (arXiv 2311.07509)](https://arxiv.org/abs/2311.07509) — résumé, puis extraits relus le 14 novembre 2026.",
+      "motif": "Lever la contradiction entre « résumé seulement » dans ## Sources et la première puce de ## Limites (#808)."
+    },
+    {
+      "fichier": "chapitre-12-couche-semantique-ontologies.md",
+      "avant": "- Les deux articles [10] et [11] ne sont connus ici que par leur résumé; le caractère simulé de l'évaluation de [10] est repris du chapitre 21.",
+      "apres": "- Les deux articles [10] et [11], d'abord lus par leur seul résumé, ont été relus par extraits le 14 novembre 2026; le caractère simulé de l'évaluation de [10] concorde avec le chapitre 21.",
+      "motif": "Lever la contradiction interne dans ## Limites entre la puce #808 et la puce ultérieure de fin de section."
+    },
+    {
+      "fichier": "chapitre-13-ingenierie-contexte.md",
+      "avant": "3. [Liu et coll. — Lost in the Middle: How Language Models Use Long Contexts (TACL, arXiv 2307.03172)](https://arxiv.org/abs/2307.03172) — résumé lu.",
+      "apres": "3. [Liu et coll. — Lost in the Middle: How Language Models Use Long Contexts (TACL, arXiv 2307.03172)](https://arxiv.org/abs/2307.03172) — résumé, puis extraits relus le 14 novembre 2026.",
+      "motif": "Aligner [3] dans ## Sources avec la relecture par extraits consignée en ## Limites (#809)."
+    },
+    {
+      "fichier": "chapitre-13-ingenierie-contexte.md",
+      "avant": "12. [Liu et coll. — Agent Skills in the Wild (arXiv 2601.10338)](https://arxiv.org/abs/2601.10338) — prépublication; résumé lu.",
+      "apres": "12. [Liu et coll. — Agent Skills in the Wild (arXiv 2601.10338)](https://arxiv.org/abs/2601.10338) — prépublication; résumé, puis extraits relus le 14 novembre 2026.",
+      "motif": "Aligner [12] dans ## Sources avec la relecture par extraits consignée en ## Limites (#809)."
+    },
+    {
+      "fichier": "chapitre-13-ingenierie-contexte.md",
+      "avant": "14. [Chatlatanagulchai et coll. — Agent READMEs (arXiv 2511.12884, v2)](https://arxiv.org/abs/2511.12884) — prépublication; résumé lu.",
+      "apres": "14. [Chatlatanagulchai et coll. — Agent READMEs (arXiv 2511.12884, v2)](https://arxiv.org/abs/2511.12884) — prépublication; résumé, puis extraits relus le 14 novembre 2026.",
+      "motif": "Aligner [14] dans ## Sources avec la relecture par extraits consignée en ## Limites (#809)."
+    },
+    {
+      "fichier": "chapitre-14-memoire.md",
+      "avant": "Les articles d'arXiv ont été lus au niveau du résumé, sauf mention contraire;",
+      "apres": "Les articles d'arXiv ont d'abord été lus au niveau du résumé, puis relus par extraits le 14 novembre 2026;",
+      "motif": "Aligner l'État de référence avec la puce #810 de ## Limites ([1] à [28] relues au-delà du résumé)."
+    },
+    {
+      "fichier": "chapitre-14-memoire.md",
+      "avant": "(articles d'arXiv : page de résumé, sauf [1] et [14], lus dans le texte); [5], [15], [17], [19], [20], [25], [26] et [27] relues le 12 novembre 2026 :",
+      "apres": "(articles d'arXiv : initialement page de résumé, sauf [1] et [14], lus dans le texte); [5], [15], [17], [19], [20], [25], [26] et [27] relues le 12 novembre 2026; sources [1] à [28] relues par extraits le 14 novembre 2026 :",
+      "motif": "Aligner l'en-tête de ## Sources avec la relecture par extraits consignée en ## Limites (#810), en plaçant la mention des sources [1] à [28] hors de la parenthèse consacrée aux seuls articles d'arXiv."
+    },
+    {
+      "fichier": "chapitre-14-memoire.md",
+      "avant": "- La plupart des articles d'arXiv ont été lus au niveau du résumé. Les chiffres cités pour Mem0, Zep, AgentPoison et LongMemEval sont ceux des résumés, et leurs conditions de mesure n'ont pas été vérifiées.",
+      "apres": "- Les articles d'arXiv, d'abord lus au niveau du résumé, ont été recoupés par extraits le 14 novembre 2026; les conditions complètes de mesure des bancs Mem0, Zep, AgentPoison et LongMemEval ne sont toutefois pas toutes vérifiées.",
+      "motif": "Lever la contradiction entre cette puce et les ajouts de #766, #767, #768, #771 et #810."
+    },
+    {
+      "fichier": "chapitre-15-donnees-pretes-agents.md",
+      "avant": "Articles lus au niveau du résumé seulement :",
+      "apres": "Articles d'abord lus au niveau du résumé, puis relus par extraits le 14 novembre 2026 :",
+      "motif": "Aligner l'intertitre de ## Sources ([6], [7], [8]) avec la puce #811 de ## Limites."
+    },
+    {
+      "fichier": "chapitre-16-topologies-patrons.md",
+      "avant": "[1] à [11] sont des pages primaires lues pour ce chapitre, dont trois par leur seul résumé;",
+      "apres": "[1] à [11] sont des pages primaires lues pour ce chapitre (dont [2], [8], [9] et [10] relues par extraits le 14 novembre 2026);",
+      "motif": "Aligner l'État de référence avec la puce #812 de ## Limites."
+    },
+    {
+      "fichier": "chapitre-16-topologies-patrons.md",
+      "avant": "L'article fondateur de Du et coll. rapporte, selon son résumé,",
+      "apres": "L'article fondateur de Du et coll. rapporte",
+      "motif": "Éviter la contradiction interne dans un paragraphe déjà complété par #774 au-delà du résumé."
+    },
+    {
+      "fichier": "chapitre-16-topologies-patrons.md",
+      "avant": "Selon son résumé, les systèmes de débat,",
+      "apres": "Les systèmes de débat,",
+      "motif": "Éviter la contradiction interne dans un paragraphe déjà complété par #775 au-delà du résumé."
+    },
+    {
+      "fichier": "chapitre-16-topologies-patrons.md",
+      "avant": "8. [Du et coll. — Improving Factuality and Reasoning in Language Models through Multiagent Debate (arXiv 2305.14325)](https://arxiv.org/abs/2305.14325) — résumé seulement.\n9. [Smit et coll. — Should we be going MAD? (arXiv 2311.17371)](https://arxiv.org/abs/2311.17371) — résumé seulement.\n10. [Cemri et coll. — Why Do Multi-Agent LLM Systems Fail? (arXiv 2503.13657v3)](https://arxiv.org/abs/2503.13657) — résumé seulement.",
+      "apres": "8. [Du et coll. — Improving Factuality and Reasoning in Language Models through Multiagent Debate (arXiv 2305.14325)](https://arxiv.org/abs/2305.14325) — résumé, puis extraits relus le 14 novembre 2026.\n9. [Smit et coll. — Should we be going MAD? (arXiv 2311.17371)](https://arxiv.org/abs/2311.17371) — résumé, puis extraits relus le 14 novembre 2026.\n10. [Cemri et coll. — Why Do Multi-Agent LLM Systems Fail? (arXiv 2503.13657v3)](https://arxiv.org/abs/2503.13657) — résumé, puis extraits relus le 14 novembre 2026.",
+      "motif": "Aligner [8], [9] et [10] dans ## Sources avec la relecture par extraits consignée en ## Limites (#812)."
+    },
+    {
+      "fichier": "chapitre-18-execution-durable-transactions.md",
+      "avant": "13. [GoEX: Perspectives and Designs Towards a Runtime for Autonomous LLM Applications — arXiv 2404.06921](https://arxiv.org/abs/2404.06921) (résumé)",
+      "apres": "13. [GoEX: Perspectives and Designs Towards a Runtime for Autonomous LLM Applications — arXiv 2404.06921](https://arxiv.org/abs/2404.06921) (résumé, puis extraits relus le 14 novembre 2026)",
+      "motif": "Aligner [13] dans ## Sources avec la relecture par extraits consignée en ## Limites (#813)."
+    },
+    {
+      "fichier": "chapitre-19-orchestration-evenementielle.md",
+      "avant": "12. [ESAA: Event Sourcing for Autonomous Agents (arXiv 2602.23193)](https://arxiv.org/abs/2602.23193) (résumé)",
+      "apres": "12. [ESAA: Event Sourcing for Autonomous Agents (arXiv 2602.23193)](https://arxiv.org/abs/2602.23193) (résumé, puis extraits relus le 14 novembre 2026)",
+      "motif": "Aligner [12] dans ## Sources avec la relecture par extraits consignée en ## Limites (#814)."
+    },
+    {
+      "fichier": "chapitre-19-orchestration-evenementielle.md",
+      "avant": "- **ESAA** n'est connu que par son résumé;",
+      "apres": "- **ESAA**, d'abord connu par son résumé, a été relu par extraits le 14 novembre 2026;",
+      "motif": "Lever la contradiction interne dans ## Limites entre #814 et la mention ultérieure d'ESAA."
+    },
+    {
+      "fichier": "chapitre-20-cadriciels-orchestration.md",
+      "avant": "sauf [14], lue en résumé,",
+      "apres": "sauf [14] (d'abord lue en résumé, puis relue par extraits le 14 novembre 2026),",
+      "motif": "Aligner [14] dans l'État de référence avec #815 (à l'intérieur de #429, avant #724)."
+    },
+    {
+      "fichier": "chapitre-20-cadriciels-orchestration.md",
+      "avant": "[16] à [25] ont été ajoutées le 14 novembre 2026, [21] par son seul résumé.",
+      "apres": "[16] à [25] ont été ajoutées le 14 novembre 2026 ([21] d'abord en résumé, puis relue par extraits).",
+      "motif": "Aligner [21] dans l'État de référence avec #815 et #776 (à l'intérieur de #724)."
+    },
+    {
+      "fichier": "chapitre-20-cadriciels-orchestration.md",
+      "avant": "La seconde, connue par son résumé, porte sur 5 669 rapports de bogue et 809 demandes de fonction dans cinq cadriciels.",
+      "apres": "La seconde, d'abord connue par son résumé puis relue par extraits, porte sur 5 669 rapports de bogue et 809 demandes de fonction dans cinq cadriciels.",
+      "motif": "Aligner L212 avec #776 et #815 (à l'intérieur de #438 sans toucher #776)."
+    },
+    {
+      "fichier": "chapitre-20-cadriciels-orchestration.md",
+      "avant": "14. [MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework (arXiv 2308.00352)](https://arxiv.org/abs/2308.00352) — résumé seulement",
+      "apres": "14. [MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework (arXiv 2308.00352)](https://arxiv.org/abs/2308.00352) — résumé, puis extraits relus le 14 novembre 2026",
+      "motif": "Aligner [14] dans ## Sources avec #815."
+    },
+    {
+      "fichier": "chapitre-20-cadriciels-orchestration.md",
+      "avant": "— prépublication; résumé seulement.\n\nPages lues le 14 novembre 2026 :",
+      "apres": "— prépublication; résumé, puis extraits relus le 14 novembre 2026.\n\nPages lues le 14 novembre 2026 :",
+      "motif": "Aligner [21] dans ## Sources avec #815 et #776 (à l'intérieur de #725)."
+    },
+    {
+      "fichier": "chapitre-20-cadriciels-orchestration.md",
+      "avant": "MetaGPT n'est connu que par le résumé de son article;",
+      "apres": "MetaGPT, d'abord connu par son résumé, a été relu par extraits le 14 novembre 2026;",
+      "motif": "Lever la contradiction entre cette puce de ## Limites et #815."
+    },
+    {
+      "fichier": "chapitre-20-cadriciels-orchestration.md",
+      "avant": "[21] n'est connue que par son résumé, et ses versions antérieures portaient un autre titre et un échantillon plus petit.",
+      "apres": "[21], d'abord connue par son résumé, a été relue par extraits, et ses versions antérieures portaient un autre titre et un échantillon plus petit.",
+      "motif": "Lever la contradiction entre cette puce de ## Limites (#442) et #815."
+    },
+    {
+      "fichier": "chapitre-22-humain-dans-la-boucle.md",
+      "avant": "Selon son résumé, les données disponibles suggèrent",
+      "apres": "D'après cet article, les données disponibles suggèrent",
+      "motif": "Éviter l'indication de lecture au seul résumé alors que #817 consigne la relecture de [17] par extraits."
+    },
+    {
+      "fichier": "chapitre-22-humain-dans-la-boucle.md",
+      "avant": "17. [Green — The Flaws of Policies Requiring Human Oversight of Government Algorithms (Computer Law & Security Review 45, 2022; arXiv 2109.05067)](https://arxiv.org/abs/2109.05067) — résumé seulement.",
+      "apres": "17. [Green — The Flaws of Policies Requiring Human Oversight of Government Algorithms (Computer Law & Security Review 45, 2022; arXiv 2109.05067)](https://arxiv.org/abs/2109.05067) — résumé, puis extraits relus le 14 novembre 2026.",
+      "motif": "Aligner [17] dans ## Sources avec #817 (à l'intérieur de #383)."
+    },
+    {
+      "fichier": "chapitre-22-humain-dans-la-boucle.md",
+      "avant": "et [17] n'est connu que par son résumé.",
+      "apres": "et [17], d'abord connu par son résumé, a été relu par extraits le 14 novembre 2026.",
+      "motif": "Lever la contradiction interne dans ## Limites entre #385 et #817."
+    },
+    {
+      "fichier": "chapitre-23-architecture-reference.md",
+      "avant": "20. [Chan et coll. — Infrastructure for AI Agents (arXiv 2501.10114, v3 du 19 juin 2025; accepté à TMLR)](https://arxiv.org/abs/2501.10114) — résumé seulement.",
+      "apres": "20. [Chan et coll. — Infrastructure for AI Agents (arXiv 2501.10114, v3 du 19 juin 2025; accepté à TMLR)](https://arxiv.org/abs/2501.10114) — résumé, puis extraits relus le 14 novembre 2026.",
+      "motif": "Aligner [20] dans ## Sources avec #818 (à l'intérieur de #365)."
+    },
+    {
+      "fichier": "chapitre-23-architecture-reference.md",
+      "avant": "d'opinion, lus par le même outil d'extraction; [20] n'est connu que par son résumé,",
+      "apres": "d'opinion, lus par le même outil d'extraction; [20], d'abord connu par son résumé, a été relu par extraits,",
+      "motif": "Lever la contradiction interne dans ## Limites entre #366 et #818 (disjoint de la modification [21])."
+    },
+    {
+      "fichier": "chapitre-24-passerelles-integration.md",
+      "avant": "[13] à [19] ont été ajoutées le 14 novembre 2026, [16] par son seul résumé.",
+      "apres": "[13] à [19] ont été ajoutées le 14 novembre 2026 ([16] d'abord par son résumé, puis relue par extraits).",
+      "motif": "Aligner l'État de référence avec #819 et #834 (à l'intérieur de #728)."
+    },
+    {
+      "fichier": "chapitre-24-passerelles-integration.md",
+      "avant": "— prépublication; résumé seulement.\n17. [agentgateway",
+      "apres": "— prépublication; résumé, puis extraits relus le 14 novembre 2026.\n17. [agentgateway",
+      "motif": "Aligner [16] dans ## Sources avec #819 et #834 (à l'intérieur de #729)."
+    },
+    {
+      "fichier": "chapitre-24-passerelles-integration.md",
+      "avant": "[15] est évalué par ses auteurs, hors ligne. [16] n'est connu que par son résumé.",
+      "apres": "[15] est évalué par ses auteurs, hors ligne. [16], d'abord connu par son résumé, a été relu par extraits.",
+      "motif": "Lever la contradiction interne dans ## Limites entre #410 et #819/#834."
+    },
+    {
+      "fichier": "chapitre-12-couche-semantique-ontologies.md",
+      "avant": "D'après le résumé, l'idée est de représenter explicitement l'intention de chaque agent et de la confronter au contexte du processus d'affaires.",
+      "apres": "D'après cet article, l'idée est de représenter explicitement l'intention de chaque agent et de la confronter au contexte du processus d'affaires.",
+      "motif": "Supprimer l'attribut « D'après le résumé » pour [10] en L250, cohérent avec la relecture par extraits (#808) tout en préservant l'indication en L254 sur les 600 exécutions simulées lue au chapitre 21."
+    },
+    {
+      "fichier": "chapitre-12-couche-semantique-ontologies.md",
+      "avant": "Le résumé rapporte une évaluation de 600 exécutions sur trois cadriciels et quatre scénarios d'entreprise.",
+      "apres": "L'article rapporte une évaluation de 600 exécutions sur trois cadriciels et quatre scénarios d'entreprise.",
+      "motif": "Supprimer l'attribut « Le résumé rapporte » pour [10] en L252, cohérent avec la relecture par extraits (#808) tout en préservant l'indication en L254."
+    },
+    {
+      "fichier": "chapitre-18-execution-durable-transactions.md",
+      "avant": "Sources non lues :\n\n14.",
+      "apres": "Sources non lues ou non exploitées dans la rédaction :\n\n14.",
+      "motif": "Aligner l'intertitre de ## Sources (L296) avec le fait que [14] reste non lue tandis que [15] a été retrouvée à l'audit sans être exploitée dans le corps du chapitre (avant la borne #485)."
+    },
+    {
+      "fichier": "chapitre-23-architecture-reference.md",
+      "avant": "Le résumé de l'article n'emploie pas le mot « maillage »,",
+      "apres": "L'article n'emploie pas le mot « maillage » au sens d'une architecture d'agents,",
+      "motif": "Aligner L107 avec la lecture du texte complet d'arXiv 2501.10114 [20] (#818) : les trois occurrences de « mesh » dans l'article correspondent uniquement au prénom « Dharmesh » (à l'intérieur de #360)."
+    }
+  ]
+}

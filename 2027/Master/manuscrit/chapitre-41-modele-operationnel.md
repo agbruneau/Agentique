@@ -2,7 +2,7 @@
 
 *Question directrice : comment s'organise une entreprise où des agents travaillent ?*
 
-> **État de référence :** articles de McKinsey du 26 septembre 2025 et du 5 octobre 2026, enquête State of AI du 25 août 2026, six travaux de recherche parus de 2022 à 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre : [1] à [10] ont été lues, les articles savants par leur résumé sauf [6]; [11] est secondaire; [12] a été ajoutée le 14 novembre 2026.
+> **État de référence :** articles de McKinsey du 26 septembre 2025 et du 5 octobre 2026, enquête State of AI du 25 août 2026, six travaux de recherche parus de 2022 à 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre : [1] à [10] ont été lues, les articles savants par leur résumé sauf [6] (ainsi que [5] et [7] relus par extraits le 14 novembre 2026); [11] est secondaire; [12] a été ajoutée le 14 novembre 2026.
 
 Les chapitres précédents traitent l'agent comme un objet technique. Or un agent en production a un propriétaire, des approbateurs et des collègues qui reçoivent ses sorties, relations qu'aucun protocole ne décrit.
 
@@ -273,9 +273,9 @@ Pages primaires lues le 11 novembre 2026 :
 2. [McKinsey — AI is changing work; now it has to change the organization (5 octobre 2026)](https://www.mckinsey.com/capabilities/people-and-organization/our-insights/ai-is-changing-work-now-it-has-to-change-the-organization)
 3. [McKinsey — The state of AI in 2026: On the road to ROI (25 août 2026)](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) — lecture partielle.
 4. [McKinsey — The State of AI: How organizations are rewiring to capture value (12 mars 2025)](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-how-organizations-are-rewiring-to-capture-value) — lecture partielle.
-5. [Gonzalez et coll. — Toward a science of human–AI teaming for decision making, PNAS Nexus 5(3), 2026](https://par.nsf.gov/biblio/10696564-toward-science-humanai-teaming-decision-making-complementarity-framework) — notice et résumé.
+5. [Gonzalez et coll. — Toward a science of human–AI teaming for decision making, PNAS Nexus 5(3), 2026](https://par.nsf.gov/biblio/10696564-toward-science-humanai-teaming-decision-making-complementarity-framework) — notice, résumé et extraits relus le 14 novembre 2026.
 6. [Vaccaro, Almaatouq et Malone — When combinations of humans and AI are useful (arXiv 2405.06087; Nature Human Behaviour, 2024)](https://arxiv.org/abs/2405.06087) — texte de la prépublication.
-7. [Dell'Acqua et coll. — The Cybernetic Teammate (NBER, document de travail 33641, avril 2025)](https://www.nber.org/papers/w33641) — résumé.
+7. [Dell'Acqua et coll. — The Cybernetic Teammate (NBER, document de travail 33641, avril 2025)](https://www.nber.org/papers/w33641) — résumé, puis extraits relus le 14 novembre 2026.
 8. [Bankins et coll. — A multilevel review of artificial intelligence in organizations, Journal of Organizational Behavior 45(2), 2024](https://merit.url.edu/en/publications/a-multilevel-review-of-artificial-intelligence-in-organizations-i/) — notice et résumé.
 9. [Fügener et coll. — Cognitive Challenges in Human–Artificial Intelligence Collaboration, Information Systems Research 33(2), 2022](https://ideas.repec.org/a/inm/orisre/v33y2022i2p678-696.html) — notice et résumé.
 10. [Dennis, Lakhiwal et Sachdeva — AI Agents as Team Members, Journal of Management Information Systems 40(2), 2023](https://jmis-web.org/articles/1614) — notice et résumé.
@@ -292,9 +292,9 @@ Source ajoutée le 14 novembre 2026 :
 
 - Les sources [5] et [7], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - Le rapport State of Organizations 2026 de McKinsey, cité par le plan initial, n'a pas été lu. L'article [2] le remplace; la méthode des enquêtes qu'il cite n'y est pas publiée.
-- Les enquêtes [3] et [4] ont été lues partiellement, sans leurs figures. À l'audit, les pages de McKinsey n'ont pas répondu; des résumés de recherche web confirment le titre et la date de [3], ses parts de 40 %, 37 %, 14 %, 32 % et 39 % et l'écart de refonte des flux. L'engagement des dirigeants « deux fois plus souvent » n'y figure que dans un résumé secondaire.
+- Les enquêtes [3] et [4] ont été lues partiellement, sans leurs figures. À l'audit du 12 novembre comme le 14 novembre 2026, les pages de McKinsey ([1] à [4]) n'ont pas répondu (délai d'attente dépassé); des résumés de recherche web confirment le titre et la date de [3], ses parts de 40 %, 37 %, 14 %, 32 % et 39 % et l'écart de refonte des flux. L'engagement des dirigeants « deux fois plus souvent » n'y figure que dans un résumé secondaire.
 - Les chiffres de [2] n'ont pas pu être relus à l'audit; un résumé attribue les 11 % à une autre page de McKinsey.
-- Les travaux [5], [7], [8], [9] et [10] ne sont connus que par leur résumé. L'article [7] aurait depuis paru dans Organization Science avec un échantillon légèrement différent (résumé de recherche non vérifié).
+- Les travaux [8], [9] et [10] ne sont connus que par leur résumé; [5] et [7], initialement résumés, ont été relus par extraits le 14 novembre 2026. L'article [7] aurait depuis paru dans Organization Science avec un échantillon légèrement différent (résumé de recherche non vérifié).
 - La recherche citée en 41.2 et 41.3 précède les agents à base de modèle de langage ou porte sur des assistants. Sa transposition aux agents autonomes est une hypothèse de ce chapitre.
 - Aucune étude évaluée par les pairs n'a été trouvée sur le nombre d'agents qu'une personne peut superviser, ni sur l'efficacité comparée d'un centre d'excellence et d'un modèle fédéré.
 - Le lien entre travail d'entrée et formation de l'expertise (41.5) relève de la connaissance générale et de l'argument de [2], non d'une mesure.

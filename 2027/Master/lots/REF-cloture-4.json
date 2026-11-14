@@ -1,0 +1,19 @@
+{
+  "id": "REF-cloture-4",
+  "origine": "plan 2027, lot REF-cloture-4",
+  "categorie": "harmonisation",
+  "remplacements": [
+    {
+      "fichier": "annexe-E-bibliographie.md",
+      "avant": "1 101 occurrences d'URL publiques (879 distinctes, dont 13 occurrences / 12 URI en blocs de code)",
+      "apres": "1 101 occurrences d'URL publiques (878 distinctes, dont 13 occurrences / 12 URI en blocs de code)",
+      "motif": "Aligner le nombre d'URL publiques distinctes après convergence de chapitre-21 [6] vers /research/multi-agent-research-system"
+    },
+    {
+      "fichier": "annexe-E-bibliographie.md",
+      "avant": "266 remplacements appliqués au registre (lots REF-1 à REF-5, REF-cloture, REF-cloture-2 et REF-cloture-3)",
+      "apres": "268 remplacements appliqués au registre (lots REF-1 à REF-5 et REF-cloture à REF-cloture-4)",
+      "motif": "Mettre à jour le total des remplacements après REF-cloture-4"
+    }
+  ]
+}

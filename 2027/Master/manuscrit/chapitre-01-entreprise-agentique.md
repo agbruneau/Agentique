@@ -2,7 +2,7 @@
 
 *Question directrice : qu'est-ce qui distingue une entreprise agentique d'une entreprise qui utilise des assistants ?*
 
-> **État de référence :** cadre de gouvernance de Singapour pour l'IA agentique, version 1.5 (20 mai 2026, mise à jour le 5 juin 2026); page de l'initiative du NIST sur les standards d'agents, mise à jour le 9 novembre 2026; étude MAP, version 4 (4 juin 2026). Les numéros entre crochets renvoient aux sources en fin de chapitre : [1] à [10] sont primaires, dont [8] lue par son résumé seulement; [11] et [12] sont secondaires.
+> **État de référence :** cadre de gouvernance de Singapour pour l'IA agentique, version 1.5 (20 mai 2026, mise à jour le 5 juin 2026); page de l'initiative du NIST sur les standards d'agents, mise à jour le 9 novembre 2026; étude MAP, version 4 (4 juin 2026). Les numéros entre crochets renvoient aux sources en fin de chapitre : [1] à [10] sont primaires ([7] et [8] vérifiées au-delà du résumé à l'audit du 14 novembre 2026); [11] et [12] sont secondaires.
 
 Une organisation peut installer un assistant sur chaque poste sans rien changer à son fonctionnement. L'assistant rédige, résume, répond; la personne lit, décide et agit. Les systèmes d'enregistrement ne voient passer que des humains.
 
@@ -213,28 +213,28 @@ Elle ne dit pas que plus d'agents, ou plus d'autonomie, vaut mieux. Les sources 
 
 Pages primaires lues le 11 novembre 2026; [4], [6] à [10] relues le 12 novembre 2026 :
 
-1. [Anthropic — Building effective agents (19 décembre 2024)](https://www.anthropic.com/engineering/building-effective-agents)
+1. [Anthropic — Building effective agents (19 décembre 2024)](https://www.anthropic.com/research/building-effective-agents)
 2. [BAIR — The Shift from Models to Compound AI Systems (18 février 2024)](https://bair.berkeley.edu/blog/2024/02/18/compound-ai-systems/)
 3. [Kandogan et coll. — Orchestrating Agents and Data for Enterprise: A Blueprint Architecture for Compound AI (arXiv 2504.08148)](https://arxiv.org/html/2504.08148)
 4. [IMDA — Model AI Governance Framework for Agentic AI, version 1.5](https://www.imda.gov.sg/-/media/imda/files/about/emerging-tech-and-research/artificial-intelligence/mgf-for-agentic-ai.pdf) — pages 1 à 12.
 5. [Feng, McDonald et Zhang — Levels of Autonomy for AI Agents (arXiv 2506.12469)](https://arxiv.org/html/2506.12469)
 6. [Cloud Security Alliance — Leveling Up Autonomy in Agentic AI (28 janvier 2026)](https://cloudsecurityalliance.org/blog/2026/01/28/levels-of-autonomy)
-7. [Pan et coll. — Measuring Agents in Production (arXiv 2512.04123, version 4)](https://arxiv.org/abs/2512.04123) — résumé, puis première moitié du texte à l'audit.
-8. [Cemri et coll. — Why Do Multi-Agent LLM Systems Fail? (arXiv 2503.13657, version 3)](https://arxiv.org/abs/2503.13657) — résumé seulement.
-9. [NIST — AI Agent Standards Initiative](https://www.nist.gov/caisi/ai-agent-standards-initiative)
+7. [Pan et coll. — Measuring Agents in Production (arXiv 2512.04123, version 4)](https://arxiv.org/abs/2512.04123) — première moitié du texte et extraits vérifiés au-delà du résumé le 14 novembre 2026.
+8. [Cemri et coll. — Why Do Multi-Agent LLM Systems Fail? (arXiv 2503.13657, version 3)](https://arxiv.org/abs/2503.13657) — résumé initial et extraits vérifiés au-delà du résumé le 14 novembre 2026 (parts détaillées au chapitre 21).
+9. [NIST — SI Agent Standards Initiative (anciennement CAISI)](https://www.nist.gov/super-intelligence/si-agent-standards-initiative)
 10. [Agentic AI Foundation — projets](https://aaif.io/projects)
 
 Sources secondaires :
 
-11. [Zhu et coll. — LLM-Based Multi-Agent Orchestration: A Survey](https://www.preprints.org/manuscript/202604.2147) — article non lu (accès refusé); taxonomie reprise du plan initial. [Fiche Zenodo des annexes](https://zenodo.org/records/19774440), lue.
-12. [McKinsey — The agentic organization](https://www.mckinsey.com/capabilities/people-and-organization/our-insights/the-agentic-organization-contours-of-the-next-paradigm-for-the-ai-era) — page non lue (délai dépassé); contenu repris du plan initial.
+11. [Zhu et coll. — LLM-Based Multi-Agent Orchestration: A Survey](https://www.preprints.org/manuscript/202604.2147) (paru dans *Future Internet*, vol. 18, n° 6, art. 326, 15 juin 2026, [DOI 10.3390/fi18060326](https://doi.org/10.3390/fi18060326)) — prépublication et article de revue non lus (accès automatisé refusé HTTP 403 au 14 novembre 2026); taxonomie reprise du plan initial. [Fiche Zenodo des annexes](https://zenodo.org/records/19774440), lue.
+12. [McKinsey — The agentic organization](https://www.mckinsey.com/capabilities/people-and-organization/our-insights/the-agentic-organization-contours-of-the-next-paradigm-for-the-ai-era) — page non lue (délai dépassé confirmé le 14 novembre 2026); contenu repris du plan initial.
 
 ## Limites de ce chapitre
 
 - Les sources [7] et [8], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - Les pages [1] à [3] et [5] à [10] ont été lues au moyen d'un outil qui extrait et condense le contenu. Seul [4] a été lu en texte intégral, sur ses douze premières pages, puis interrogé en entier à l'audit.
-- MAP a été relue à l'audit sur la première moitié de son texte : son résumé dit « au plus dix étapes », son corps « moins de dix ». Les sous-échantillons comptent de 22 à 69 réponses selon le chapitre 4 (31 pour l'évaluation). Les parts des échecs selon MAST ne sont pas reprises, seul le résumé ayant été lu (chapitre 21).
-- La fiche Zenodo annonce [11] à paraître dans *Future Internet*; le 12 novembre 2026, aucune parution n'a été trouvée (chapitre 16). Le rattachement de [3] à ICDEW 2025 ne figure pas sur la page lue; le chapitre 23 cite une version antérieure de la même architecture (arXiv 2406.00584).
+- MAP a été relue à l'audit sur la première moitié de son texte : son résumé dit « au plus dix étapes », son corps « moins de dix ». Les sous-échantillons comptent de 22 à 69 réponses selon le chapitre 4 (31 pour l'évaluation). Les parts détaillées des échecs selon MAST sont renvoyées au chapitre 21 (seules les trois catégories de [8] sont reprises ici après vérification du 14 novembre 2026).
+- La parution de [11] dans *Future Internet* (vol. 18, n° 6, art. 326, 15 juin 2026, DOI 10.3390/fi18060326) est confirmée par Crossref le 14 novembre 2026, mais Preprints.org et la page MDPI retournent HTTP 403 aux requêtes automatisées (chapitre 16). Le rattachement de [3] à ICDEW 2025 ne figure pas dans la version HTML lue (`html/2504.08148`), mais est confirmé sur la fiche `abs/2504.08148` (*First Workshop on Data-AI Systems (DAIS), ICDE 2025*); le chapitre 23 cite une version antérieure de la même architecture (arXiv 2406.00584).
 - La section « Ce que la preuve permet de dire » et les renvois reprennent les points à retenir des chapitres cités, vérifiés à l'audit, sans relecture de leurs sources.
 - La définition de l'entreprise agentique, ses sept critères, le tableau de la section 1.4 et l'alignement des trois échelles d'autonomie sont des propositions de ce chapitre, non des résultats tirés d'une source.
 - L'argument du produit des intégrations est repris du chapitre 5, qui le rattache à la connaissance générale. La référence à SAE J3016 vient du billet de la CSA; la norme n'a pas été consultée.

@@ -191,11 +191,11 @@ Pages primaires lues le 11 novembre 2026 :
 11. [IETF — documents du groupe de travail Web Bot Auth](https://datatracker.ietf.org/wg/webbotauth/documents/)
 12. [IETF — draft-ietf-webbotauth-httpsig-protocol-01](https://datatracker.ietf.org/doc/draft-ietf-webbotauth-httpsig-protocol/)
 13. [Cloudflare — Web Bot Auth](https://developers.cloudflare.com/bots/reference/bot-verification/web-bot-auth/)
-14. [Cloudflare — agents signés et robots vérifiés](https://developers.cloudflare.com/bots/concepts/bot/signed-agents/)
+14. [Cloudflare — Verified bots (intégrant les anciens agents signés depuis le 1er juillet 2026)](https://developers.cloudflare.com/bots/concepts/bot/verified-bots/)
 15. [llms.txt — page de la proposition](https://llmstxt.org/)
 16. [Ahrefs — étude de 137 000 sites sur llms.txt (15 juin 2026)](https://ahrefs.com/blog/llmstxt-study/) — étude d'un fournisseur, lue en entier.
-17. [W3C — AI Agent Protocol Community Group](https://www.w3.org/community/agentprotocol/) et sa [fiche de groupe](https://www.w3.org/groups/cg/agentprotocol)
-18. [Permission Manifests for Web Agents (arXiv 2601.02371)](https://arxiv.org/abs/2601.02371) — prépublication, résumé seulement.
+17. [W3C — AI Agent Protocol Community Group](https://www.w3.org/community/agentprotocol/) et sa [fiche de groupe](https://www.w3.org/groups/cg/agentprotocol) — accès automatisé refusé (HTTP 403) le 14 novembre 2026; fiche vérifiée par recherche web.
+18. [Permission Manifests for Web Agents (arXiv 2601.02371)](https://arxiv.org/abs/2601.02371) — prépublication; résumé initial, puis extraits relus le 14 novembre 2026.
 
 Source secondaire :
 

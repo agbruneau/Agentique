@@ -1,0 +1,49 @@
+{
+  "id": "REF-cloture-2",
+  "origine": "plan 2027, lot REF-cloture-2",
+  "categorie": "harmonisation",
+  "remplacements": [
+    {
+      "fichier": "annexe-E-bibliographie.md",
+      "avant": "(5 604 entrées consignées pour les tranches 1 à 5) | 0 source sans URL, 0 appel ou renvoi interne cassé; 256 remplacements appliqués au registre (lots REF-1 à REF-5 et REF-cloture)",
+      "apres": "(5 607 entrées consignées pour les tranches 1 à 5, dont 3 ajouts de DOI) | 0 source sans URL, 0 appel ou renvoi interne cassé; 263 remplacements appliqués au registre (lots REF-1 à REF-5, REF-cloture et REF-cloture-2)",
+      "motif": "Aligner annexe-E E.3 sur le décompte réel de audit-references.json (5 607 entrées) et du registre après REF-cloture-2"
+    },
+    {
+      "fichier": "chapitre-21-fiabilite-coordination.md",
+      "avant": "6. [Anthropic — How we built our multi-agent research system, 13 juin 2025](https://www.anthropic.com/engineering/multi-agent-research-system) — billet de fournisseur.",
+      "apres": "6. [Anthropic — How we built our multi-agent research system, 13 juin 2025](https://www.anthropic.com/research/multi-agent-research-system) — billet de fournisseur.",
+      "motif": "Aligner l'URL canonique Anthropic /research/multi-agent-research-system sur le chapitre 40"
+    },
+    {
+      "fichier": "chapitre-22-humain-dans-la-boucle.md",
+      "avant": "13. [Gouvernement du Canada — guide sur la portée de la Directive sur la prise de décisions automatisée](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/guide-scope-directive-automated-decision-making.html)",
+      "apres": "13. [Gouvernement du Canada — guide sur la portée de la Directive sur la prise de décisions automatisée](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/automated-decision-making/guide-scope-directive-automated-decision-making.html)",
+      "motif": "Actualiser l'URL canonique canada.ca après redirection permanente 301 vers automated-decision-making/"
+    },
+    {
+      "fichier": "chapitre-38-canada-quebec.md",
+      "avant": "5. [Canada — Guide sur l'utilisation de l'IA agentive](https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/utilisation-responsable-ai/guide-utilisation-intelligence-artificielle-agentive.html)",
+      "apres": "5. [Canada — Guide sur l'utilisation de l'IA agentive](https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/utilisation-responsable-ai/ia-generative/guide-utilisation-intelligence-artificielle-agentive.html)",
+      "motif": "Actualiser l'URL canonique canada.ca après redirection permanente 301 vers ia-generative/"
+    },
+    {
+      "fichier": "chapitre-38-canada-quebec.md",
+      "avant": "6. [Canada — Évaluation de l'incidence algorithmique](https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/utilisation-responsable-ai/evaluation-incidence-algorithmique.html)",
+      "apres": "6. [Canada — Évaluation de l'incidence algorithmique](https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/utilisation-responsable-ai/prise-decisions-automatisee/evaluation-incidence-algorithmique.html)",
+      "motif": "Actualiser l'URL canonique canada.ca après redirection permanente 301 vers prise-decisions-automatisee/"
+    },
+    {
+      "fichier": "chapitre-38-canada-quebec.md",
+      "avant": "18. [Canada — guide sur la portée de la Directive sur la prise de décisions automatisée (page datée du 15 septembre 2026)](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/guide-scope-directive-automated-decision-making.html)",
+      "apres": "18. [Canada — guide sur la portée de la Directive sur la prise de décisions automatisée (page datée du 15 septembre 2026)](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/automated-decision-making/guide-scope-directive-automated-decision-making.html)",
+      "motif": "Actualiser l'URL canonique canada.ca après redirection permanente 301 vers automated-decision-making/"
+    },
+    {
+      "fichier": "chapitre-39-gouvernance-interne.md",
+      "avant": "4. [Gouvernement du Canada — Guide sur l'utilisation de l'intelligence artificielle agentive (page datée du 15 septembre 2026)](https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/utilisation-responsable-ai/guide-utilisation-intelligence-artificielle-agentive.html)",
+      "apres": "4. [Gouvernement du Canada — Guide sur l'utilisation de l'intelligence artificielle agentive (page datée du 15 septembre 2026)](https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/utilisation-responsable-ai/ia-generative/guide-utilisation-intelligence-artificielle-agentive.html)",
+      "motif": "Actualiser l'URL canonique canada.ca après redirection permanente 301 vers ia-generative/"
+    }
+  ]
+}

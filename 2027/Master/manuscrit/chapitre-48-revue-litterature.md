@@ -46,7 +46,7 @@ Chaque notice retenue est qualifiée par deux marques. La première reprend l'é
 
 ### La confirmation des références
 
-Un moteur de recherche peut se tromper sur un titre, un auteur ou une revue. Chaque notice retenue a donc été recherchée par son titre exact dans deux registres indépendants : l'interface de programmation d'arXiv et celle de Crossref, qui recense les identifiants DOI. Quatre-vingt-deux des 83 notices y ont été retrouvées, sous le même titre et le même premier auteur : 52 sur arXiv, 30 par un DOI d'éditeur. Les liens de la liste des sources mènent à ces adresses. Un article que sa notice plaçait sur arXiv figure, d'après Crossref, dans les actes de la conférence NeurIPS; il est compté parmi les publications évaluées [1]. Une seule notice n'a pas été retrouvée [32].
+Un moteur de recherche peut se tromper sur un titre, un auteur ou une revue. Chaque notice retenue a donc été recherchée par son titre exact dans deux registres indépendants : l'interface de programmation d'arXiv et celle de Crossref, qui recense les identifiants DOI. Quatre-vingt-deux des 83 notices y ont été retrouvées, sous le même titre et le même premier auteur : 52 sur arXiv, 30 par un DOI d'éditeur. Les liens de la liste des sources mènent à ces adresses. Un article que sa notice plaçait sur arXiv figure, d'après Crossref, dans les actes de la conférence NeurIPS; il est compté parmi les publications évaluées [1]. Une seule notice n'avait pas été retrouvée par la requête automatique du 13 novembre [32]; son identifiant arXiv a été vérifié et ajouté à la liste lors de l'audit du 14 novembre.
 
 Cette confirmation porte sur l'existence et l'identité des travaux, non sur leur contenu.
 
@@ -389,13 +389,13 @@ Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé 
 1. [Zhu et coll. — Establishing Best Practices for Building Rigorous Agentic Benchmarks (NeurIPS, 2025)](https://doi.org/10.52202/085713-5547) — la notice l'indique sur arXiv; Crossref la situe dans les actes de NeurIPS.
 2. [Cemri et coll. — Why Do Multi-Agent LLM Systems Fail? (NeurIPS, 2025)](https://doi.org/10.52202/085713-4082) — version publiée de la taxonomie MAST, que l'ouvrage cite par arXiv.
 3. [Debenedetti et coll. — Defeating Prompt Injections by Design (IEEE SaTML, 2026)](https://doi.org/10.1109/satml68715.2026.00040) — CaMeL.
-4. [Chang et coll. — SagaLLM: Context Management, Validation, and Transaction Guarantees for Multi-Agent LLM Planning (Proceedings of the VLDB Endowment, 2025)](https://doi.org/10.14778/3750601.3750611)
+4. [Chang et Geng — SagaLLM: Context Management, Validation, and Transaction Guarantees for Multi-Agent LLM Planning (Proceedings of the VLDB Endowment, 2025)](https://doi.org/10.14778/3750601.3750611)
 5. [Ferrag et coll. — From LLM Reasoning to Autonomous AI Agents: A Comprehensive Review (IEEE Access, 2026)](https://doi.org/10.1109/access.2026.3698694)
 6. [Xing et coll. — The Natural Language Interaction Protocol and Standard for AI Agents (Proceedings of the ACM AI Leadership Summit, 2026)](https://doi.org/10.1145/3806096.3844848)
 7. [Dobrovolskyi — Empirical Comparison of Agent Communication Protocols for Task Orchestration (Radio Electronics, Computer Science, Control, 2026)](https://doi.org/10.15588/1607-3274-2026-3-9)
 8. [Hou et coll. — Model Context Protocol (MCP): Landscape, Security Threats, and Future Research Directions (ACM Transactions on Software Engineering and Methodology, 2026)](https://doi.org/10.1145/3796519)
 9. [Anbiaee et coll. — Security threat modeling for emerging AI-agent protocols: MCP, A2A, Agora, and ANP (Journal of Information Security and Applications, 2026)](https://doi.org/10.1016/j.jisa.2026.104645)
-10. [Ahmad et coll. — Model Context Protocol Servers: A Systematic Review of Designs, Use Cases and Future Directions (International Journal of Advanced Networking and Applications, 2026)](https://doi.org/10.35444/ijana.2026.17605)
+10. [Ahmad et Hassan — Model Context Protocol Servers: A Systematic Review of Designs, Use Cases and Future Directions (International Journal of Advanced Networking and Applications, 2026)](https://doi.org/10.35444/ijana.2026.17605)
 11. [Păduraru et coll. — A Trace-Based Assurance Framework for Agentic AI Orchestration: Contracts, Testing, and Governance (ENASE, 2026)](https://doi.org/10.5220/0014840300004015)
 12. [Xu et coll. — TheAgentCompany: Benchmarking LLM Agents on Consequential Real World Tasks (NeurIPS, 2025)](https://doi.org/10.52202/085713-0315)
 13. [Nageshwaran et coll. — Large Language Model Agent Evaluation and Benchmarking: A Systematic Survey, Meta-Taxonomy, and Critical Research Roadmap (Artificial Intelligence Review, 2026)](https://doi.org/10.1007/s10462-026-11678-4)
@@ -408,19 +408,19 @@ Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé 
 20. [Zhang et coll. — A Survey on the Memory Mechanism of Large Language Model-based Agents (ACM Transactions on Information Systems, 2025)](https://doi.org/10.1145/3748302)
 21. [Luo et coll. — From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms (Findings of ACL, 2026)](https://doi.org/10.18653/v1/2026.findings-acl.2069)
 22. [Chhikara et coll. — Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory (Frontiers in Artificial Intelligence and Applications, 2025)](https://doi.org/10.3233/faia251160) — les auteurs éditent le produit évalué.
-23. [Oyewale et coll. — LLM-Driven Ontology Construction for Enterprise Knowledge Graphs (IEEE ICSC, 2026)](https://doi.org/10.1109/icsc67292.2026.00044)
+23. [Oyewale et Soru — LLM-Driven Ontology Construction for Enterprise Knowledge Graphs (IEEE ICSC, 2026)](https://doi.org/10.1109/icsc67292.2026.00044)
 24. [Noy et Zhang — Experimental evidence on the productivity effects of generative artificial intelligence (Science, 2023)](https://doi.org/10.1126/science.adh2586)
 25. [Cui et coll. — The Effects of Generative AI on High-Skilled Work: Evidence from Three Field Experiments with Software Developers (Management Science, 2026)](https://doi.org/10.1287/mnsc.2025.00535)
 26. [Dell'Acqua et coll. — Navigating the Jagged Technological Frontier (Organization Science, 2026)](https://doi.org/10.1287/orsc.2025.21838)
-27. [Agentic AI in Enterprise Business Processes: A Systematic Review and Practitioner Survey on Adoption Readiness (International Conference on Artificial Intelligence Management and Trends, 2026)](https://doi.org/10.63962/nxpa6137) — la notice ne nomme pas les auteurs.
-28. [Tanudjaja et coll. — The Agentic AI Adoption Paradox: Barriers to Enterprise Deployment in the Software Industry (Data: Journal of Information Systems and Management, 2026)](https://doi.org/10.61978/data.v4i3.1643)
+27. [Emelyanov — Agentic AI in Enterprise Business Processes: A Systematic Review and Practitioner Survey on Adoption Readiness (International Conference on Artificial Intelligence Management and Trends, 2026)](https://doi.org/10.63962/nxpa6137) — auteur (Sergey Emelyanov) absent de la notice Crossref, confirmé sur la page du DOI.
+28. [Tanudjaja et Hutajulu — The Agentic AI Adoption Paradox: Barriers to Enterprise Deployment in the Software Industry (Data: Journal of Information Systems and Management, 2026)](https://doi.org/10.61978/data.v4i3.1643)
 29. [Bahidika — Agentic Accountability: “The Buck Stops Where?” (International Journal of Advanced Computer Science and Applications, 2026)](https://doi.org/10.14569/ijacsa.2026.0170502)
 30. [Gabison et Xian — Inherent and emergent liability issues in LLM-based agentic systems: a principal-agent perspective (atelier REALM, 2025)](https://arxiv.org/abs/2504.03255)
 31. [Alibašić — Governing Agentic AI in the Administrative State (Future Internet, 2026)](https://doi.org/10.3390/fi18100528)
 
 Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :
 
-32. [Du — Memory for Autonomous LLM Agents: Mechanisms, Evaluation, and Emerging Frontiers (arXiv, 2026)](https://consensus.app/papers/details/w:d2c9bfd2-6e57-4342-87e2-eca95d208b83/) — identifiant non confirmé, lien vers la notice de Consensus.
+32. [Du — Memory for Autonomous LLM Agents: Mechanisms, Evaluation, and Emerging Frontiers (arXiv, 2026)](https://arxiv.org/abs/2603.07670) — notice absente de la requête automatique du 13 novembre (deux-points sans espace sur arXiv); identifiant arXiv 2603.07670 vérifié le 14 novembre 2026.
 33. [Ehtesham et coll. — A survey of agent interoperability protocols: MCP, ACP, A2A, and ANP (arXiv, 2025)](https://arxiv.org/abs/2505.02279)
 34. [Yang et coll. — A Survey of AI Agent Protocols (arXiv, 2025)](https://arxiv.org/abs/2504.16736)
 35. [Yao et coll. — τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains (arXiv, 2024)](https://arxiv.org/abs/2406.12045)
@@ -440,10 +440,10 @@ Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé 
 49. [Reid et coll. — Risk Analysis Techniques for Governed LLM-based Multi-Agent Systems (arXiv, 2025)](https://arxiv.org/abs/2508.05687) — rapport.
 50. [Li et coll. — More Agents Is All You Need (arXiv, 2024)](https://arxiv.org/abs/2402.05120)
 51. [Qian et coll. — Scaling Large Language Model-based Multi-Agent Collaboration (arXiv, 2024)](https://arxiv.org/abs/2406.07155)
-52. [Tran et coll. — Single-Agent LLMs Outperform Multi-Agent Systems on Multi-Hop Reasoning Under Equal Thinking Token Budgets (arXiv, 2026)](https://arxiv.org/abs/2604.02460)
+52. [Tran et Kiela — Single-Agent LLMs Outperform Multi-Agent Systems on Multi-Hop Reasoning Under Equal Thinking Token Budgets (arXiv, 2026)](https://arxiv.org/abs/2604.02460)
 53. [Gao et coll. — Single-agent or Multi-agent Systems? Why Not Both? (arXiv, 2025)](https://arxiv.org/abs/2505.18286)
 54. [Yang et coll. — Understanding Agent Scaling in LLM-Based Multi-Agent Systems via Diversity (arXiv, 2026)](https://arxiv.org/abs/2602.03794)
-55. [Bertalanič et coll. — The Ringelmann Effect in Multi-Agent LLM Systems: A Scaling Law for Effective Team Size (arXiv, 2026)](https://arxiv.org/abs/2606.02646)
+55. [Bertalanič et Fortuna — The Ringelmann Effect in Multi-Agent LLM Systems: A Scaling Law for Effective Team Size (arXiv, 2026)](https://arxiv.org/abs/2606.02646)
 56. [Żywot et coll. — Can Small Agents Collaborate to Beat a Single Large Language Model? (arXiv, 2026)](https://arxiv.org/abs/2601.11327)
 57. [Yu et coll. — When Do Multi-Agent Systems Help? An Information Bottleneck Perspective (arXiv, 2026)](https://arxiv.org/abs/2607.16133)
 58. [Sander et coll. — Scaling LLM-Driven Multi-Agent Systems: Design Principles and Architectural Scalability Analysis (arXiv, 2026)](https://arxiv.org/abs/2607.27942)
@@ -458,8 +458,8 @@ Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé 
 67. [Hu et coll. — Memory in the Age of AI Agents (arXiv, 2025)](https://arxiv.org/abs/2512.13564)
 68. [Huang et coll. — A Survey of Agent Memory in the Second Half: Towards Self-Evolving and Long-Horizon Agents (arXiv, 2026)](https://arxiv.org/abs/2602.06052)
 69. [Wu et coll. — Memory in the LLM Era: Modular Architectures and Strategies in a Unified Framework (arXiv, 2026)](https://arxiv.org/abs/2604.01707)
-70. [Mandarapu et coll. — Knowledge Graphs as the Missing Data Layer for LLM-Based Industrial Asset Operations (arXiv, 2026)](https://arxiv.org/abs/2605.26874)
-71. [Tuan et coll. — Ontology-Constrained Neural Reasoning in Enterprise Agentic Systems (arXiv, 2026)](https://arxiv.org/abs/2604.00555) — les auteurs éditent la plateforme évaluée.
+70. [Mandarapu et Kunkunuru — Knowledge Graphs as the Missing Data Layer for LLM-Based Industrial Asset Operations (arXiv, 2026)](https://arxiv.org/abs/2605.26874)
+71. [Tuan et Sanyal — Ontology-Constrained Neural Reasoning in Enterprise Agentic Systems (arXiv, 2026)](https://arxiv.org/abs/2604.00555) — les auteurs éditent la plateforme évaluée.
 72. [Chethan — Semantic Graph Unification for Industrial Digital Threads (arXiv, 2026)](https://arxiv.org/abs/2608.24918)
 73. [Chong et coll. — EvoOntology: A Self-Evolving Ontology Layer for Data Agents (arXiv, 2026)](https://arxiv.org/abs/2609.15779)
 74. [Brynjolfsson et coll. — Generative AI at Work (National Bureau of Economic Research, 2023)](https://arxiv.org/abs/2304.11771) — document de travail; version en ligne relue le 14 novembre 2026.
@@ -470,32 +470,32 @@ Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé 
 79. [Edwards et coll. — Agentic AI in Engineering and Manufacturing: Industry Perspectives on Utility, Adoption, Challenges, and Opportunities (arXiv, 2026)](https://arxiv.org/abs/2604.09633)
 80. [Kaul et coll. — Behavioral Governance for Autonomous AI Agents: The AgentBound Framework (arXiv, 2026)](https://arxiv.org/abs/2606.30970)
 81. [South et coll. — Authenticated Delegation and Authorized AI Agents (arXiv, 2025)](https://arxiv.org/abs/2501.09674)
-82. [Hacker et coll. — A pragmatic approach to regulating AI agents (arXiv, 2026)](https://arxiv.org/abs/2604.22819)
+82. [Hacker et Holweg — A pragmatic approach to regulating AI agents (arXiv, 2026)](https://arxiv.org/abs/2604.22819)
 83. [Mukherjee et Chang — Agentic AI: Autonomy, Accountability, and the Algorithmic Society (SSRN, 2025)](https://arxiv.org/abs/2502.00289)
 
 Sources déjà citées par l'ouvrage, reprises sans relecture :
 
-84. [Kang et Diponegoro — Governance Gaps in Agent Interoperability Protocols (arXiv 2606.31498)](https://arxiv.org/abs/2606.31498) — chapitres 11 et 43.
-85. [Kim et coll. — Towards a Science of Scaling Agent Systems (arXiv 2512.08296)](https://arxiv.org/html/2512.08296v3) — chapitres 16 et 21.
-86. [Pan et coll. — Measuring Agents in Production (arXiv 2512.04123)](https://arxiv.org/abs/2512.04123) — chapitre 4.
+84. [Kang et Diponegoro — Governance Gaps in Agent Interoperability Protocols (arXiv 2606.31498, 2026)](https://arxiv.org/abs/2606.31498) — chapitres 11 et 43.
+85. [Kim et coll. — Towards a Science of Scaling Agent Systems (arXiv 2512.08296, 2025)](https://arxiv.org/html/2512.08296v3) — chapitres 16 et 21.
+86. [Pan et coll. — Measuring Agents in Production (arXiv 2512.04123, 2025)](https://arxiv.org/abs/2512.04123) — chapitre 4.
 
 Travaux relevés hors protocole le 14 novembre 2026 (section 48.11) :
 
-87. [Kraishan — Same Name, Different Server: A Security Census of Silent Drift in the Model Context Protocol Ecosystem (arXiv 2609.14119)](https://arxiv.org/abs/2609.14119) — résumé; chapitre 8.
-88. [Li et Gao — Toward Understanding Security Issues in the Model Context Protocol Ecosystem (arXiv 2510.16558)](https://arxiv.org/html/2510.16558v1) — chapitre 8.
-89. [Guo et coll. — A Measurement Study of Model Context Protocol (arXiv 2509.25292)](https://arxiv.org/html/2509.25292v1) — chapitre 8.
-90. [Chen et coll. — Rethinking MCP Security: A Large-Scale Study of Runtime MCP Servers and Security Scanner Reliability (arXiv 2607.11086)](https://arxiv.org/abs/2607.11086) — résumé; chapitres 8 et 24.
-91. [MCP-Guard: A Multi-Stage Defense-in-Depth Framework for Securing Model Context Protocol in Agentic AI (arXiv 2508.10991)](https://arxiv.org/html/2508.10991v4) — chapitre 24.
-92. [Shah et coll. — Characterizing Faults in Agentic AI: A Taxonomy of Types, Symptoms, and Root Causes (arXiv 2603.06847)](https://arxiv.org/html/2603.06847v2) — chapitre 21.
-93. [Zhang, Zhang et Tan — Dissecting Bug Triggers and Failure Modes in Modern Agentic Frameworks (arXiv 2604.08906)](https://arxiv.org/html/2604.08906v1) — chapitre 20.
-94. [Zhu et coll. — Where Agent Frameworks Fall Short (arXiv 2602.21806)](https://arxiv.org/abs/2602.21806) — résumé; chapitre 20.
-95. [She et coll. — Efficient Benchmarking in Production: A Study of an Evolving LLM Agent (arXiv 2609.21267)](https://arxiv.org/abs/2609.21267) — résumé; chapitre 33.
-96. [Kujanpää et coll. — Tool-Making and Self-Evolving LLM Agents in Low-Latency Systems (arXiv 2607.08010)](https://arxiv.org/abs/2607.08010) — résumé; chapitre 42.
+87. [Kraishan — Same Name, Different Server: A Security Census of Silent Drift in the Model Context Protocol Ecosystem (arXiv 2609.14119, 12 septembre 2026)](https://arxiv.org/abs/2609.14119) — résumé; chapitre 8.
+88. [Li et Gao — Toward Understanding Security Issues in the Model Context Protocol Ecosystem (arXiv 2510.16558, version 1 du 18 octobre 2025; titre révisé en v2 du 27 avril 2026 : A First Look at the Security Issues in the Model Context Protocol Ecosystem)](https://arxiv.org/html/2510.16558v1) — chapitre 8.
+89. [Guo et coll. — A Measurement Study of Model Context Protocol (arXiv 2509.25292, version 1 du 29 septembre 2025)](https://arxiv.org/html/2509.25292v1) — chapitre 8.
+90. [Chen et coll. — Rethinking MCP Security: A Large-Scale Study of Runtime MCP Servers and Security Scanner Reliability (arXiv 2607.11086, 13 juillet 2026)](https://arxiv.org/abs/2607.11086) — résumé; chapitres 8 et 24.
+91. [Xing et coll. — MCP-Guard: A Multi-Stage Defense-in-Depth Framework for Securing Model Context Protocol in Agentic AI (arXiv 2508.10991, version 4 du 8 janvier 2026)](https://arxiv.org/html/2508.10991v4) — chapitre 24.
+92. [Shah et coll. — Characterizing Faults in Agentic AI: A Taxonomy of Types, Symptoms, and Root Causes (arXiv 2603.06847, version 2 du 7 mai 2026)](https://arxiv.org/html/2603.06847v2) — chapitre 21.
+93. [Zhang, Zhang et Tan — Dissecting Bug Triggers and Failure Modes in Modern Agentic Frameworks: An Empirical Study (arXiv 2604.08906, version 1 du 10 avril 2026; titre révisé en v4 : Understanding Bugs in Modern Agentic Frameworks: A Study of Symptoms, Root Causes, and Triggering Conditions)](https://arxiv.org/html/2604.08906v1) — chapitre 20.
+94. [Zhu et coll. — Where Agent Frameworks Fall Short: Examining Functional Challenges and Usability Concerns (arXiv 2602.21806, 25 février 2026)](https://arxiv.org/abs/2602.21806) — résumé; chapitre 20.
+95. [She et Lin — Efficient Benchmarking in Production: A Study of an Evolving LLM Agent (arXiv 2609.21267, 18 septembre 2026)](https://arxiv.org/abs/2609.21267) — résumé; chapitre 33.
+96. [Kujanpää et coll. — Tool-Making and Self-Evolving LLM Agents in Low-Latency Systems (arXiv 2607.08010, 9 juillet 2026; à paraître au volet industriel d'EMNLP 2026)](https://arxiv.org/abs/2607.08010) — résumé; chapitre 42.
 97. [Statistique Canada — Li et Liu, Artificial intelligence adoption and productivity in Canadian firms (22 avril 2026)](https://www150.statcan.gc.ca/n1/pub/36-28-0001/2026004/article/00002-eng.htm) — chapitre 40.
-98. [Goddard et coll. — Automation bias: a systematic review of frequency, effect mediators, and mitigators (Journal of the American Medical Informatics Association)](https://pmc.ncbi.nlm.nih.gov/articles/PMC3240751/) — chapitre 22.
-99. [Dhanorkar, Passi et Vorvoreanu — Human oversight of agentic systems in practice (arXiv 2606.05391)](https://arxiv.org/html/2606.05391) — chapitre 22.
-100. [Green — The Flaws of Policies Requiring Human Oversight of Government Algorithms (arXiv 2109.05067)](https://arxiv.org/abs/2109.05067) — résumé; chapitre 22.
-101. [Mitchell, Ghosh et Passi — AI Agents Push Humans Out of the Loop (arXiv 2608.23642)](https://arxiv.org/html/2608.23642) — chapitre 22.
+98. [Goddard, Roudsari et Wyatt — Automation bias: a systematic review of frequency, effect mediators, and mitigators (Journal of the American Medical Informatics Association, vol. 19, no 1, 2012, p. 121-127; prépublication en ligne en 2011)](https://pmc.ncbi.nlm.nih.gov/articles/PMC3240751/) — chapitre 22.
+99. [Dhanorkar, Passi et Vorvoreanu — Human oversight of agentic systems in practice: Examining the oversight work, challenges, and heuristics of developers using software agents (arXiv 2606.05391, 3 juin 2026)](https://arxiv.org/html/2606.05391) — chapitre 22.
+100. [Green — The Flaws of Policies Requiring Human Oversight of Government Algorithms (Computer Law & Security Review 45, 2022; arXiv 2109.05067, 10 septembre 2021)](https://arxiv.org/abs/2109.05067) — résumé; chapitre 22.
+101. [Mitchell, Ghosh et Passi — AI Agents Push Humans Out of the Loop (arXiv 2608.23642, 24 août 2026)](https://arxiv.org/html/2608.23642) — chapitre 22.
 
 ## Limites de ce chapitre
 
@@ -503,8 +503,8 @@ Travaux relevés hors protocole le 14 novembre 2026 (section 48.11) :
 - Toutes les notices ont été lues par leur résumé, tel que Consensus le rend. Aucun texte intégral n'a été ouvert : les chiffres cités sont ceux que les auteurs mettent en avant, et les méthodes n'ont pas été vérifiées.
 - La confirmation auprès d'arXiv et de Crossref établit qu'un travail existe sous ce titre et ce premier auteur; elle ne dit rien de la qualité du lieu de publication. Un article marqué arXiv a pu paraître depuis en revue ou en conférence sans que Crossref l'ait rattaché au même titre. L'atelier indiqué pour la source [30] n'est connu que par la notice.
 - Le nombre de citations affiché par le moteur a servi au repérage, non au jugement; il n'est pas rapporté.
-- Le profil du corpus de l'ouvrage classe les 709 sources d'après le nom de domaine de leur adresse. Il confond les genres au sein d'un même site et compte comme prépublication un article publié mais cité par arXiv.
+- Le profil du corpus de l'ouvrage (789 sources en 48.2) classe par nom de domaine les 709 sources du 13 novembre et y ajoute 80 compléments classés à la main; le classement par adresse confond les genres au sein d'un même site et compte comme prépublication un article publié mais cité par arXiv.
 - Les sources [86], [85] et [84] sont reprises des chapitres 4, 16, 11 et 43, sans relecture.
 - Les rapprochements avec les hypothèses du chapitre 4, la lecture de la controverse sur le multi-agents en 48.4 et les dix questions de 48.10 sont des interprétations, non des résultats.
-- La section 48.11 est hors protocole : ses quinze travaux viennent des recherches ciblées des chapitres, non des dix requêtes. Six ne sont connus que par leur résumé, et leur rattachement aux cases de la synthèse est une lecture de ce chapitre. Le profil du corpus de la section 48.2 n'a pas été recalculé sur les 774 sources.
+- La section 48.11 est hors protocole : ses quinze travaux viennent des recherches ciblées des chapitres, non des dix requêtes. Six ne sont connus que par leur résumé, et leur rattachement aux cases de la synthèse est une lecture de ce chapitre. Le profil du corpus de la section 48.2 a depuis été recalculé sur les 789 sources du 14 novembre en mêlant classement par adresse (709) et classement manuel (80).
 - La recherche sur l'orchestration événementielle, l'exécution durable, l'identité des charges de travail et l'IA en périphérie n'a pas fait l'objet de requêtes; ces thèmes relèvent surtout de la documentation d'éditeur (chapitres 18, 19, 28 et 29).

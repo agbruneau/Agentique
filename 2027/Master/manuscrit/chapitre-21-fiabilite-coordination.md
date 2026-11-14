@@ -314,7 +314,7 @@ Pages primaires lues le 11 novembre 2026 :
 3. [Acharya — Semantic Consensus: Process-Aware Conflict Detection and Resolution for Enterprise Multi-Agent LLM Systems (arXiv 2604.16339)](https://arxiv.org/html/2604.16339) — prépublication, un seul auteur, v1 du 13 mars 2026; résumé et texte.
 4. [Becattini, Verdecchia et Vicario — An Accountability-Based Architectural Tactic for Agent Cooperation in LLM-Based Multi-Agent Systems, IEEE BigData 2025](https://robertoverdecchia.github.io/papers/BigData_2026.pdf) — lu en entier.
 5. [Kim et coll. — Towards a Science of Scaling Agent Systems (arXiv 2512.08296v3)](https://arxiv.org/html/2512.08296v3) — prépublication; résumé et première moitié du texte.
-6. [Anthropic — How we built our multi-agent research system, 13 juin 2025](https://www.anthropic.com/engineering/multi-agent-research-system) — billet de fournisseur.
+6. [Anthropic — How we built our multi-agent research system, 13 juin 2025](https://www.anthropic.com/research/multi-agent-research-system) — billet de fournisseur.
 
 Pages lues le 14 novembre 2026 :
 

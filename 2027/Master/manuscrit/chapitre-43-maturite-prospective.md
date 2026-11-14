@@ -181,12 +181,12 @@ Le chapitre 1 pose que l'interopérabilité et l'orchestration conditionnent la 
 Pages primaires lues le 11 novembre 2026 :
 
 1. [MCP — feuille de route, mise à jour du 22 août 2026](https://modelcontextprotocol.io/development/roadmap.md)
-2. [NIST — AI Agent Standards Initiative](https://www.nist.gov/caisi/ai-agent-standards-initiative)
-3. [Measuring Agents in Production (arXiv 2512.04123, version 4)](https://arxiv.org/abs/2512.04123) — résumé; première moitié du texte relue le 12 novembre 2026.
-4. [Why Do Multi-Agent LLM Systems Fail? (arXiv 2503.13657, version 3)](https://arxiv.org/abs/2503.13657) — résumé.
+2. [NIST — SI Agent Standards Initiative (anciennement AI Agent Standards Initiative)](https://www.nist.gov/super-intelligence/si-agent-standards-initiative)
+3. [Measuring Agents in Production (arXiv 2512.04123, version 4)](https://arxiv.org/abs/2512.04123) — résumé; première moitié du texte relue le 12 novembre 2026, extraits relus le 14 novembre 2026.
+4. [Why Do Multi-Agent LLM Systems Fail? (arXiv 2503.13657, version 3)](https://arxiv.org/abs/2503.13657) — résumé puis extraits relus le 14 novembre 2026.
 5. [Cloud Security Alliance — Leveling Up Autonomy in Agentic AI, 28 janvier 2026](https://cloudsecurityalliance.org/blog/2026/01/28/levels-of-autonomy)
 6. [Context Engineering: From Prompts to Corporate Multi-Agent Architecture (arXiv 2603.09619, version 2)](https://arxiv.org/abs/2603.09619) — résumé; prépublication.
-7. [Governance Gaps in Agent Interoperability Protocols (arXiv 2606.31498)](https://arxiv.org/abs/2606.31498) — résumé; prépublication.
+7. [Governance Gaps in Agent Interoperability Protocols (arXiv 2606.31498)](https://arxiv.org/abs/2606.31498) — prépublication; résumé puis extraits relus le 14 novembre 2026.
 8. [OpenTelemetry — conventions sémantiques GenAI (page déplacée)](https://opentelemetry.io/docs/specs/semconv/gen-ai/)
 9. [AI Act Explorer — Digital Omnibus on AI, règlement (UE) 2026/1744](https://artificialintelligenceact.eu/ai-act-explorer/digital-omnibus/) — reproduction non officielle, première moitié.
 10. [BSIF — ligne directrice E-23, lettre d'accompagnement](https://www.osfi-bsif.gc.ca/en/guidance/guidance-library/guideline-e-23-model-risk-management-2027-letter)
@@ -200,7 +200,7 @@ Sources secondaires : aucune.
 
 - Les sources [3], [4] et [7], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - Le modèle de maturité, les jalons, les scénarios et les recommandations sont des propositions de synthèse, non validées; aucune source lue ne répartit les entreprises par stade.
-- Les articles [4], [6] et [7] ont été lus par leur résumé seulement; [3], par son résumé et la première moitié de son texte. Les pages [2], [5], [8] à [11] et [13] ont été lues par un outil qui en extrait le contenu; seules [1] et [12] l'ont été en texte intégral. Relues à l'audit : [1] à [4], [8] et [11]. Le règlement [9] a été lu sur un site non officiel, pour sa première moitié. Le texte de E-23, lu pour le chapitre 38, confirme l'inventaire et la cote de risque.
+- L'article [6] n'a été lu que par son résumé; [3], [4] et [7], d'abord lus par leur résumé (et première moitié de [3]), ont été relus par extraits le 14 novembre 2026. Les pages [2], [5], [8] à [11] et [13] ont été lues par un outil qui en extrait le contenu; seules [1] et [12] l'ont été en texte intégral. Relues à l'audit : [1] à [4], [8] et [11]. Le règlement [9] a été lu sur un site non officiel, pour sa première moitié. Le texte de E-23, lu pour le chapitre 38, confirme l'inventaire et la cote de risque.
 - MAP écrit « au plus dix étapes » dans son résumé, « moins de dix » dans son corps, sans expliquer l'écart; son 74 % porte sur 31 réponses.
 - Les renvois « (chapitre N) » reprennent ces chapitres sans relecture de leurs sources; ils ont été vérifiés sur leurs points à retenir et, pour les chapitres 3, 4, 11, 13 et 39, sur la section visée.
 - L'intervalle « février à août 2027 » est déduit de l'horizon de six à douze mois annoncé le 22 août 2026; la feuille de route ne date pas la prochaine révision.

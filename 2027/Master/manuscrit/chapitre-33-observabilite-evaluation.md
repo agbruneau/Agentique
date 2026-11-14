@@ -2,7 +2,7 @@
 
 *Question directrice : comment savoir ce qu'un système d'agents a fait, et s'il l'a bien fait ?*
 
-> **État de référence :** conventions sémantiques GenAI d'OpenTelemetry telles qu'elles figurent sur la branche `main` du dépôt `open-telemetry/semantic-conventions-genai` le 11 novembre 2026 (aucune version publiée), et cinq articles parus entre juin 2024 et septembre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre; toutes sont des pages primaires lues pour ce chapitre, sauf [15], marquée secondaire, et [16], connue par son résumé et relevée le 14 novembre 2026.
+> **État de référence :** conventions sémantiques GenAI d'OpenTelemetry telles qu'elles figurent sur la branche `main` du dépôt `open-telemetry/semantic-conventions-genai` le 11 novembre 2026 (aucune version publiée), et cinq articles parus entre juin 2024 et septembre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre; toutes sont des pages primaires lues pour ce chapitre, sauf [15], marquée secondaire, et [16], relevée le 14 novembre 2026 et relue au-delà du résumé avec [13] et [14].
 
 Un service classique se surveille par trois signaux : disponibilité, latence, taux d'erreur. Un agent peut les satisfaire tous les trois et accomplir la mauvaise tâche : répondre vite, sans erreur technique, à côté de la demande. La question directrice se dédouble donc. Savoir ce que le système a fait relève de l'observabilité; savoir s'il l'a bien fait relève de l'évaluation.
 
@@ -178,7 +178,7 @@ Un juge non étalonné mesure le modèle qui juge autant que l'agent jugé; chan
 
 Le banc d'essai τ-bench en fixe le modèle [13]. Un modèle de langage joue l'utilisateur; l'agent dispose d'outils et d'une politique à respecter. Le succès se juge en comparant l'état final de la base de données à un état cible annoté, et non le texte produit. Une métrique, pass^k, mesure la fiabilité sur plusieurs essais d'une même tâche.
 
-Le résumé de l'article rapporte qu'un agent fondé sur gpt-4o réussissait moins de la moitié des tâches, et que pass^8 tombait sous 25 % dans le commerce de détail. Ces chiffres datent de 2024. Deux principes demeurent : juger l'état du système plutôt que le discours de l'agent, et répéter l'essai, parce qu'un succès isolé surestime la fiabilité.
+L'article rapporte qu'un agent fondé sur gpt-4o réussissait moins de la moitié des tâches, et que pass^8 tombait sous 25 % dans le commerce de détail. Ces chiffres datent de 2024. Deux principes demeurent : juger l'état du système plutôt que le discours de l'agent, et répéter l'essai, parce qu'un succès isolé surestime la fiabilité.
 
 Nubank rapporte que ses métriques de simulation hors ligne vont de pair avec les résultats en ligne : les variantes dont le taux d'échec hors ligne baisse le plus sont celles dont la satisfaction mesurée monte le plus [12]. L'article parle d'une forte corrélation sans en donner le coefficient, et le texte lu ne décrit pas la construction des utilisateurs simulés. L'assurance fondée sur la trajectoire entière relève du chapitre 32.
 
@@ -194,7 +194,7 @@ La boucle sert aussi de filet lors d'un changement de modèle. Le passage de GPT
 
 ### Les leviers de coût
 
-Juger une trajectoire par un modèle ajoute des appels d'inférence à ceux de l'agent. Aucun des textes lus en entier ne chiffre ce coût; ils décrivent en revanche des leviers. Une prépublication, connue par son résumé, mesure un coût voisin, la part du banc qu'il faut rejouer (fin de la section).
+Juger une trajectoire par un modèle ajoute des appels d'inférence à ceux de l'agent. Aucun des textes lus en entier ne chiffre ce coût; ils décrivent en revanche des leviers. Une prépublication mesure un coût voisin, la part du banc qu'il faut rejouer (fin de la section).
 
 | Levier | Principe | Source |
 |---|---|---|
@@ -217,7 +217,7 @@ Rattaché à la trace, le verdict se lit dans le même entrepôt que la latence 
 
 ### Une mesure du coût
 
-Une prépublication de 2026 chiffre le problème sur un agent d'analyse en production, qui sert des dizaines de milliers d'utilisateurs actifs par mois [16]. Ses auteurs comparent, sur 574 exécutions historiques du banc interne, quatre façons d'éviter de tout rejouer : l'échantillonnage aléatoire, la reprise de résultats antérieurs, des sous-ensembles fixes représentatifs et un test adaptatif. Le test adaptatif est le plus fidèle : 200 questions, soit 38,5 % d'une exécution complète, suffisent pour une erreur moyenne de 1,03 point. L'équipe a pourtant déployé des sous-ensembles fixes, stratifiés par difficulté, plus simples à exploiter; ils se transposent sans recalibrage à cinq autres familles d'agents. Le texte n'est connu ici que par son résumé, et il mesure une part du banc rejoué, non un coût en dollars.
+Une prépublication de 2026 chiffre le problème sur un agent d'analyse en production, qui sert des dizaines de milliers d'utilisateurs actifs par mois [16]. Ses auteurs comparent, sur 574 exécutions historiques du banc interne, quatre façons d'éviter de tout rejouer : l'échantillonnage aléatoire, la reprise de résultats antérieurs, des sous-ensembles fixes représentatifs et un test adaptatif. Le test adaptatif est le plus fidèle : 200 questions, soit 38,5 % d'une exécution complète, suffisent pour une erreur moyenne de 1,03 point. L'équipe a pourtant déployé des sous-ensembles fixes, stratifiés par difficulté, plus simples à exploiter; ils se transposent sans recalibrage à cinq autres familles d'agents. L'étude mesure une part du banc rejoué, non un coût en dollars.
 
 ---
 
@@ -273,7 +273,7 @@ Un tel banc est un actif de l'entreprise. C'est lui qui dit si un agent survit �
 - Le contenu des échanges est exclu de la télémétrie par défaut. Le stockage par référence concilie exploitation et évaluation.
 - Dans l'étude MAP, l'évaluation repose surtout sur des humains, et tout juge automatique observé est doublé d'une revue humaine.
 - Un juge automatique s'étalonne contre des étiquettes humaines; changer de modèle juge, c'est changer d'instrument.
-- Le coût de l'évaluation continue se maîtrise par un petit juge, l'aiguillage par confiance et l'échantillonnage. Une seule étude, connue par son résumé, mesure qu'un sous-ensemble du banc suffit à suivre un agent en production.
+- Le coût de l'évaluation continue se maîtrise par un petit juge, l'aiguillage par confiance et l'échantillonnage. Une seule étude mesure qu'un sous-ensemble du banc suffit à suivre un agent en production.
 - Le banc d'essai utile est interne, tiré des traces, fondé sur des états vérifiables et répété.
 
 ---
@@ -294,14 +294,14 @@ Pages primaires lues le 11 novembre 2026; [2], [5], [7], [11], [12] et [14] relu
 10. [Journal des changements du dépôt](https://raw.githubusercontent.com/open-telemetry/semantic-conventions-genai/main/CHANGELOG.md)
 11. [Measuring Agents in Production (arXiv 2512.04123, v4)](https://arxiv.org/html/2512.04123v4)
 12. [Building Customer Support AI Agents at 100M-User Scale — Nubank, KDD 2026 (arXiv 2606.08867)](https://arxiv.org/html/2606.08867v1)
-13. [τ-bench (arXiv 2406.12045)](https://arxiv.org/abs/2406.12045) — résumé seulement.
-14. [EnterpriseBench (arXiv 2510.27287, EMNLP 2025)](https://arxiv.org/abs/2510.27287) — résumé seulement.
+13. [τ-bench (arXiv 2406.12045)](https://arxiv.org/abs/2406.12045) — prépublication, résumé puis extraits relus le 14 novembre 2026.
+14. [EnterpriseBench (arXiv 2510.27287, EMNLP 2025)](https://arxiv.org/abs/2510.27287) — article, résumé puis extraits relus le 14 novembre 2026.
 
 Source secondaire :
 
 15. [John Hodge — état des conventions GenAI d'OpenTelemetry, mis à jour le 3 novembre 2026](https://john-hodge.com/blog/opentelemetry-genai-semantic-conventions/) — billet d'un particulier, lu et relu le 12 novembre 2026.
 
-Résumé seulement, relevé le 14 novembre 2026 :
+Prépublication relevée et relue au-delà du résumé le 14 novembre 2026 :
 
 16. [She et coll. — Efficient Benchmarking in Production: A Study of an Evolving LLM Agent (arXiv 2609.21267)](https://arxiv.org/abs/2609.21267)
 
@@ -315,7 +315,7 @@ Résumé seulement, relevé le 14 novembre 2026 :
 - Les documents sur l'exécution d'outil, la récupération, les métriques et les fournisseurs n'ont pas été lus; le tableau de la section 33.1 les décrit d'après l'index et les pages voisines.
 - Les sections 33.5 à 33.7 reposent en bonne partie sur un seul déploiement, celui de Nubank, décrit par ses auteurs et non vérifié de façon indépendante.
 - La séparation de la trace et de la piste d'audit, le patron à deux zones, l'ordre des évaluateurs dans la grille et les six propriétés d'un banc interne sont des synthèses de ce chapitre, non des prescriptions d'une source.
-- Une seule étude du coût de l'évaluation continue a été trouvée, le 14 novembre 2026 [16]. Elle n'est connue que par son résumé, porte sur un seul agent et ne donne pas de coût en dollars.
+- Une seule étude du coût de l'évaluation continue a été trouvée, le 14 novembre 2026 [16]. Elle porte sur un seul agent et ne donne pas de coût en dollars.
 - Aucun produit d'observabilité commercial n'est comparé.
 
 ## Mise en œuvre — Observabilité distribuée de bout en bout avec OpenTelemetry GenAI {.volet}

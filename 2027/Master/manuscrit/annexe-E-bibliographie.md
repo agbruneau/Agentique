@@ -36,13 +36,13 @@ Entre parenthèses : ceux des chapitres 1 à 47 qui citent cette adresse; d'autr
 - [AG-UI — introduction](https://docs.ag-ui.com/introduction) et [AGNTCY — documentation](https://docs.agntcy.org/) (7)
 - [AP2 — spécification v0.2](https://ap2-protocol.org/ap2/specification/) et [x402 — introduction](https://docs.x402.org/introduction) (10)
 - [Agent Skills — spécification](https://agentskills.io/specification) (13, 27)
-- [NIST — AI Agent Standards Initiative](https://www.nist.gov/caisi/ai-agent-standards-initiative) (1, 3, 4, 11, 35, 43)
+- [NIST — SI Agent Standards Initiative](https://www.nist.gov/super-intelligence/si-agent-standards-initiative) (1, 3, 4, 11, 35, 43)
 
 **Identité et sécurité**
 
 - [RFC 8693 — OAuth 2.0 Token Exchange](https://www.rfc-editor.org/rfc/rfc8693.html) (29, 30) et [RFC 9449 — DPoP](https://www.rfc-editor.org/rfc/rfc9449.html) (29)
 - [IETF — draft-ietf-wimse-aims](https://datatracker.ietf.org/doc/draft-ietf-wimse-aims/) (3, 11, 29) et [draft-ietf-oauth-identity-assertion-authz-grant](https://datatracker.ietf.org/doc/draft-ietf-oauth-identity-assertion-authz-grant/) (11, 29)
-- [OWASP — annonce du Top 10 for Agentic Applications](https://genai.owasp.org/2025/12/09/owasp-top-10-for-agentic-applications-the-benchmark-for-agentic-security-in-the-age-of-autonomous-ai/) (14, 31) et [OWASP MCP Top 10](https://owasp.org/www-project-mcp-top-10/) (31)
+- [OWASP — annonce du Top 10 for Agentic Applications](https://genai.owasp.org/2025/12/09/owasp-top-10-for-agentic-applications-the-benchmark-for-agentic-security-in-the-age-of-autonomous-ai/) (14, 31) et [OWASP MCP Top 10](https://owasp.org/www-project-mcp-top-10/) (30, 31)
 - [OpenTelemetry — conventions sémantiques GenAI](https://opentelemetry.io/docs/specs/semconv/gen-ai/), page déplacée vers le [dépôt `semantic-conventions-genai`](https://github.com/open-telemetry/semantic-conventions-genai) (33, 43)
 
 **Recherche**
@@ -52,12 +52,12 @@ Entre parenthèses : ceux des chapitres 1 à 47 qui citent cette adresse; d'autr
 - [Kim et coll. — Towards a Science of Scaling Agent Systems](https://arxiv.org/html/2512.08296v3) (16, 21)
 - [Kang et Diponegoro — Governance Gaps in Agent Interoperability Protocols](https://arxiv.org/abs/2606.31498) (2, 7, 11, 43)
 - [Nubank — Building Customer Support AI Agents at 100M-User Scale](https://arxiv.org/html/2606.08867v1) (33, 42)
-- [Anthropic — Building effective agents](https://www.anthropic.com/engineering/building-effective-agents) (1, 16, 17)
+- [Anthropic — Building effective agents](https://www.anthropic.com/research/building-effective-agents) (1, 16, 17)
 
 **Cadres et droit**
 
 - [Règlement (UE) 2026/1744, Digital Omnibus sur l'IA](https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng) (35)
-- [IMDA — Model AI Governance Framework for Agentic AI, version 1.5](https://www.imda.gov.sg/-/media/imda/files/about/emerging-tech-and-research/artificial-intelligence/mgf-for-agentic-ai.pdf) (1, 3, 22, 39)
+- [IMDA — Model AI Governance Framework for Agentic AI, version 1.5](https://www.imda.gov.sg/-/media/imda/files/about/emerging-tech-and-research/artificial-intelligence/mgf-for-agentic-ai.pdf) (1, 3, 22, 35, 39)
 - [BSIF — ligne directrice E-23](https://www.osfi-bsif.gc.ca/en/guidance/guidance-library/guideline-e-23-model-risk-management-2027) (38, 39) et sa [lettre d'accompagnement](https://www.osfi-bsif.gc.ca/en/guidance/guidance-library/guideline-e-23-model-risk-management-2027-letter) (38, 43)
 - [Canada — lancement de la stratégie « AI for All »](https://www.pm.gc.ca/en/news/news-releases/2026/06/04/prime-minister-carney-launches-ai-all-canadas-new-national-artificial) (38)
 - [Québec, MCN — Guide sur l'utilisation responsable de l'IA agentique](https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/cybersecurite_numerique/Intelligence_artificielle/GU_IA_Agentique.pdf) (22, 38, 39, 42)
@@ -80,13 +80,14 @@ Le dernier point pèse sur la thèse de l'ouvrage : l'interopérabilité par pro
 
 ### Contrôles faits le 14 novembre 2026
 
-Trois contrôles ont suivi l'audit, faits par des lecteurs qui n'avaient pas écrit les passages contrôlés. Tous lisent les sources par un outil qui en rend des extraits, non le texte brut.
+Quatre contrôles ont suivi l'audit, faits par des lecteurs qui n'avaient pas écrit les passages contrôlés. Les trois premiers lisent les sources par un outil qui en rend des extraits, non le texte brut; le quatrième contrôle les adresses, identifiants et renvois directement sur les sources et les interfaces d'arXiv, Crossref et IETF Datatracker.
 
 | Contrôle | Périmètre | Résultat |
 |---|---|---|
 | Recollationnement des chiffres | 200 phrases d'exposé tirées au hasard parmi les 295 qui portent une quantité et un appel de source | 182 vérifiables : 178 confirmées, 4 en erreur, soit 2,2 %; 18 non vérifiables, la source étant inaccessible ou le chiffre introuvable |
 | Lecture au-delà du résumé | 134 sources des chapitres 1 à 47 connues par leur seul résumé et citées dans le texte | 124 relues : 64 confirmées, 54 exactes mais à nuancer, 6 en erreur; 10 non relues |
 | Second audit des compléments | Les 193 entrées ajoutées au registre le 14 novembre | 95 constats : aucun bloquant, 19 majeurs, 76 mineurs; 86 corrigés |
+| Contrôle intégral des références et liens | 59 fichiers du manuscrit : 1 033 sources (789 ch. 1–47, 244 partie X), 1 101 occurrences d'URL publiques (878 distinctes, dont 13 occurrences / 12 URI en blocs de code), appels [n] et renvois internes (5 607 entrées consignées pour les tranches 1 à 5, dont 3 ajouts de DOI) | 0 source sans URL, 0 appel ou renvoi interne cassé; 268 remplacements appliqués au registre (lots REF-1 à REF-5 et REF-cloture à REF-cloture-4); accès restreints (403, 429, défis anti-robot, délais) vérifiés par API ou recherche et datés dans les sources et limites |
 
 Les quatre erreurs de relevé tiennent à la portée du chiffre plus qu'au chiffre : un exemple donné pour une règle, une population plus étroite que celle annoncée, une attribution à la mauvaise page, une source révisée depuis la lecture. Le deuxième contrôle pèse davantage : près d'une fois sur deux, le texte complet ajoute au résumé une réserve qui change la portée du résultat, le plus souvent la taille réelle de l'échantillon, le périmètre de l'essai ou le lien des auteurs avec le produit mesuré. Les corrections sont inscrites au registre, et les limites des chapitres disent quelles sources ont été relues. Les sources de la partie X, lues par leur résumé selon la méthode déclarée au chapitre 48, n'ont pas été relues ainsi.
 
@@ -96,7 +97,7 @@ La partie X a été écrite le 13 novembre 2026, après la clôture des chapitre
 
 | Chapitre | Sources | Nature | Lecture |
 |---|---|---|---|
-| 48 — Revue de littérature | 101 | 31 publications en revue ou en conférence, 52 prépublications ou documents de travail, 3 sources reprises de l'ouvrage, 15 travaux relevés hors protocole le 14 novembre 2026 | Résumés seulement pour les 83 notices du protocole, dont titre, auteurs et lieu de publication sont confirmés auprès d'arXiv ou de Crossref pour 82; des quinze travaux hors protocole, six ne sont connus que par leur résumé |
+| 48 — Revue de littérature | 101 | 31 publications en revue ou en conférence, 52 prépublications ou documents de travail, 3 sources reprises de l'ouvrage, 15 travaux relevés hors protocole le 14 novembre 2026 | Résumés seulement pour les 83 notices du protocole, dont titre, auteurs et lieu de publication sont confirmés auprès d'arXiv ou de Crossref pour 82 le 13 novembre (la 83e, [32], est confirmée sur arXiv et l'auteur de [27] sur la page du DOI le 14 novembre); des quinze travaux hors protocole, six ne sont connus que par leur résumé |
 | 49 — Veille technologique | 68 | 46 pages d'émetteur, 21 notices d'arXiv, 1 page tierce | Extraction par outil; sept sources relues à l'audit |
 | 50 — Projection 2027-2030 et étude de marché | 75 | 51 pages d'émetteur, 24 pages tierces qui rapportent un émetteur non chargé | Extraction par outil; cinq sources relues à l'audit |
 

@@ -11797,5 +11797,2417 @@
   "categorie": "enrichissement",
   "motif": "Lot P4-1 : légende des lettres de niveau de preuve ajoutées aux grilles de décision des cinquante chapitres.",
   "origine": "plan 2027, lot P4-1-legende"
+ },
+ {
+  "n": 1312,
+  "fichier": "chapitre-01-entreprise-agentique.md",
+  "avant": "1. [Anthropic — Building effective agents (19 décembre 2024)](https://www.anthropic.com/engineering/building-effective-agents)",
+  "apres": "1. [Anthropic — Building effective agents (19 décembre 2024)](https://www.anthropic.com/research/building-effective-agents)",
+  "categorie": "factuel",
+  "motif": "Mettre à jour l'URL canonique de [1], redirigée de /engineering/ vers /research/building-effective-agents (HTTP 200).",
+  "origine": "plan 2027, lot REF-1-factuel"
+ },
+ {
+  "n": 1313,
+  "fichier": "chapitre-01-entreprise-agentique.md",
+  "avant": "9. [NIST — AI Agent Standards Initiative](https://www.nist.gov/caisi/ai-agent-standards-initiative)",
+  "apres": "9. [NIST — SI Agent Standards Initiative (anciennement CAISI)](https://www.nist.gov/super-intelligence/si-agent-standards-initiative)",
+  "categorie": "factuel",
+  "motif": "Mettre à jour l'URL de [9], redirigée de /caisi/ai-agent-standards-initiative vers /super-intelligence/si-agent-standards-initiative (titre 'SI Agent Standards Initiative | NIST', mis à jour le 9 novembre 2026).",
+  "origine": "plan 2027, lot REF-1-factuel"
+ },
+ {
+  "n": 1314,
+  "fichier": "chapitre-01-entreprise-agentique.md",
+  "avant": "11. [Zhu et coll. — LLM-Based Multi-Agent Orchestration: A Survey](https://www.preprints.org/manuscript/202604.2147) — article non lu (accès refusé); taxonomie",
+  "apres": "11. [Zhu et coll. — LLM-Based Multi-Agent Orchestration: A Survey](https://www.preprints.org/manuscript/202604.2147) (paru dans *Future Internet*, vol. 18, n° 6, art. 326, 15 juin 2026, [DOI 10.3390/fi18060326](https://doi.org/10.3390/fi18060326)) — prépublication et article de revue non lus (accès automatisé refusé HTTP 403 au 14 novembre 2026); taxonomie",
+  "categorie": "factuel",
+  "motif": "Consigner la parution vérifiée de Zhu et coll. [11] dans Future Internet via l'API Crossref (DOI 10.3390/fi18060326) et dater le refus HTTP 403 sans toucher la borne 'reprise du plan initial.'.",
+  "origine": "plan 2027, lot REF-1-factuel"
+ },
+ {
+  "n": 1315,
+  "fichier": "chapitre-01-entreprise-agentique.md",
+  "avant": "- La fiche Zenodo annonce [11] à paraître dans *Future Internet*; le 12 novembre 2026, aucune parution n'a été trouvée (chapitre 16). Le rattachement de [3] à ICDEW 2025 ne figure pas sur la page lue; le chapitre 23 cite une version antérieure de la même architecture (arXiv 2406.00584).",
+  "apres": "- La parution de [11] dans *Future Internet* (vol. 18, n° 6, art. 326, 15 juin 2026, DOI 10.3390/fi18060326) est confirmée par Crossref le 14 novembre 2026, mais Preprints.org et la page MDPI retournent HTTP 403 aux requêtes automatisées (chapitre 16). Le rattachement de [3] à ICDEW 2025 ne figure pas dans la version HTML lue (`html/2504.08148`), mais est confirmé sur la fiche `abs/2504.08148` (*First Workshop on Data-AI Systems (DAIS), ICDE 2025*); le chapitre 23 cite une version antérieure de la même architecture (arXiv 2406.00584).",
+  "categorie": "factuel",
+  "motif": "Corriger deux limites obsolètes : la publication confirmée de Zhu et coll. [11] dans Future Internet (Crossref) et la référence ICDEW 2025 présente sur arXiv abs/2504.08148 pour [3].",
+  "origine": "plan 2027, lot REF-1-factuel"
+ },
+ {
+  "n": 1316,
+  "fichier": "chapitre-03-dimensions-interoperabilite.md",
+  "avant": "11. [NIST — AI Agent Standards Initiative](https://www.nist.gov/caisi/ai-agent-standards-initiative)",
+  "apres": "11. [NIST — SI Agent Standards Initiative (anciennement CAISI)](https://www.nist.gov/super-intelligence/si-agent-standards-initiative)",
+  "categorie": "factuel",
+  "motif": "Mettre à jour l'URL de [11], redirigée vers /super-intelligence/si-agent-standards-initiative.",
+  "origine": "plan 2027, lot REF-1-factuel"
+ },
+ {
+  "n": 1317,
+  "fichier": "chapitre-04-etat-des-lieux.md",
+  "avant": "5. [NIST — AI Agent Standards Initiative](https://www.nist.gov/caisi/ai-agent-standards-initiative)",
+  "apres": "5. [NIST — SI Agent Standards Initiative (anciennement CAISI)](https://www.nist.gov/super-intelligence/si-agent-standards-initiative)",
+  "categorie": "factuel",
+  "motif": "Mettre à jour l'URL de [5], redirigée vers /super-intelligence/si-agent-standards-initiative.",
+  "origine": "plan 2027, lot REF-1-factuel"
+ },
+ {
+  "n": 1318,
+  "fichier": "chapitre-06-a2a.md",
+  "avant": "10. [LF AI & Data — ACP Joins Forces with A2A, 29 août 2025](https://lfaidata.foundation/?p=7689)",
+  "apres": "10. [LF AI & Data — ACP Joins Forces with A2A, 29 août 2025](https://lfaidata.foundation/communityblog/2025/08/29/acp-joins-forces-with-a2a-under-the-linux-foundations-lf-ai-data/)",
+  "categorie": "factuel",
+  "motif": "Remplacer le raccourci ?p=7689 par le permalien canonique vérifié par redirection HTTP 200.",
+  "origine": "plan 2027, lot REF-1-factuel"
+ },
+ {
+  "n": 1319,
+  "fichier": "chapitre-07-protocoles-peripheriques.md",
+  "avant": "toutes sont des pages primaires lues pour ce chapitre, sauf [22].",
+  "apres": "toutes sont des pages primaires consultées pour ce chapitre.",
+  "categorie": "factuel",
+  "motif": "Harmoniser le bandeau de référence après remplacement de la source secondaire [22] par sa source primaire IETF Datatracker.",
+  "origine": "plan 2027, lot REF-1-factuel"
+ },
+ {
+  "n": 1320,
+  "fichier": "chapitre-07-protocoles-peripheriques.md",
+  "avant": "Un brouillon de groupe communautaire n'engage pas le W3C (chapitre 11), et aucun travail de normalisation formelle sur ANP n'a été repéré [22].",
+  "apres": "Un brouillon de groupe communautaire n'engage pas le W3C (chapitre 11). À l'IETF, aucun groupe de travail n'a adopté ANP : seules des soumissions individuelles aujourd'hui expirées (dont `draft-zyyhl-agent-networks-framework-01`, expiré le 23 avril 2026 et s'appuyant sur ANP) ont été déposées, sans portée normative [22].",
+  "categorie": "factuel",
+  "motif": "Sourcer et préciser l'état de normalisation d'ANP à l'IETF d'après IETF Datatracker (draft-zyyhl-agent-networks-framework-01 et draft-song-anp-*).",
+  "origine": "plan 2027, lot REF-1-factuel"
+ },
+ {
+  "n": 1321,
+  "fichier": "chapitre-07-protocoles-peripheriques.md",
+  "avant": "Source secondaire :\n\n22.",
+  "apres": "22.",
+  "categorie": "factuel",
+  "motif": "Retirer l'en-tête 'Source secondaire :' avant [22] maintenant sourcé à l'IETF Datatracker (avant la borne #321).",
+  "origine": "plan 2027, lot REF-1-factuel"
+ },
+ {
+  "n": 1322,
+  "fichier": "chapitre-07-protocoles-peripheriques.md",
+  "avant": "Plan initial du compendium",
+  "apres": "[IETF Datatracker — draft-zyyhl-agent-networks-framework-01](https://datatracker.ietf.org/doc/draft-zyyhl-agent-networks-framework/)",
+  "categorie": "factuel",
+  "motif": "Remplacer 'Plan initial du compendium' (à l'intérieur de la borne #321) par le lien primaire IETF Datatracker.",
+  "origine": "plan 2027, lot REF-1-factuel"
+ },
+ {
+  "n": 1323,
+  "fichier": "chapitre-07-protocoles-peripheriques.md",
+  "avant": ", version 3 (11 novembre 2026), section « Reste à confirmer »",
+  "apres": " (*Framework for AI Agent Networks*, soumission individuelle expirée le 23 avril 2026) — aucune adoption par un groupe de travail (quatre autres soumissions individuelles `draft-song-anp-*-00` également expirées le 26 septembre 2026).",
+  "categorie": "factuel",
+  "motif": "Préciser la portée de la source primaire [22] sur IETF Datatracker après la borne #321.",
+  "origine": "plan 2027, lot REF-1-factuel"
+ },
+ {
+  "n": 1324,
+  "fichier": "chapitre-08-decouverte-registres.md",
+  "avant": "D'après son résumé, 51,1 % des serveurs à plusieurs versions ont changé ce qu'ils annoncent d'une version à l'autre, 40,6 % l'ont fait sans le signaler, et 4,2 % ont redirigé leur point d'accès distant vers un autre hôte en gardant la même identité au registre.",
+  "apres": "Sur les 8 900 serveurs à plusieurs versions recensés (section 4.2), 51,09 % ont changé ce qu'ils annoncent d'une version à l'autre, 40,58 % ont connu au moins une dérive sémantique silencieuse, et 4,16 % ont redirigé leur point d'accès distant vers un autre hôte en gardant la même identité au registre.",
+  "categorie": "factuel",
+  "motif": "Préciser le dénominateur (n = 8 900 serveurs multi-versions) et les taux exacts vérifiés dans la section 4.2 de arXiv 2609.14119v1 (à l'intérieur de la borne bonification 24-08).",
+  "origine": "plan 2027, lot REF-1-factuel"
+ },
+ {
+  "n": 1325,
+  "fichier": "chapitre-08-decouverte-registres.md",
+  "avant": "19. [Microsoft — registre d'agents du centre d'administration](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry)",
+  "apres": "19. [Microsoft — registre d'agents du centre d'administration](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-registry-overview)",
+  "categorie": "factuel",
+  "motif": "Mettre à jour l'URL canonique de Microsoft Learn déplacée vers /microsoft-agent-365/admin/agent-registry-overview.",
+  "origine": "plan 2027, lot REF-1-factuel"
+ },
+ {
+  "n": 1326,
+  "fichier": "chapitre-08-decouverte-registres.md",
+  "avant": "[23], [26] et [27] n'y sont connus que par leur résumé; [24] et [25] ont été lus par l'outil d'extraction. Le résumé de [23] ne dit pas si les 40,6 % se rapportent à tous les serveurs à plusieurs versions ou à ceux qui ont changé. [25] donne des décomptes différents dans son résumé et dans ses tableaux; ceux du tableau des serveurs sont retenus. La parution de [26] dans une revue, signalée par un index d'articles, ne figure pas sur la page lue.",
+  "apres": "[23] et [26], initialement résumés, ont été vérifiés au-delà du résumé dans leur version HTML le 14 novembre 2026, et [27] par extraits; [24] et [25] ont été lus par l'outil d'extraction. Dans [23] (section 4.2), la part de 40,58 % (arrondie à 40,6 % dans le résumé) s'applique à l'ensemble des 8 900 serveurs à plusieurs versions. [25] donne des décomptes différents dans son résumé et dans ses tableaux; ceux du tableau des serveurs sont retenus. La fiche `abs/2506.13538` de [26] n'indique pas la revue, mais la version HTML `html/2506.13538v5` affiche `Journal: TOSEM`.",
+  "categorie": "factuel",
+  "motif": "Lever les deux réserves obsolètes sur [23] (dénominateur n = 8 900 vérifié en section 4.2) et [26] (mention littérale 'Journal: TOSEM' dans html/2506.13538v5) tout en maintenant la cohérence avec [27] par extraits, à l'intérieur de la borne bonification 24-08.",
+  "origine": "plan 2027, lot REF-1-factuel"
+ },
+ {
+  "n": 1327,
+  "fichier": "chapitre-09-web-agentique.md",
+  "avant": "14. [Cloudflare — agents signés et robots vérifiés](https://developers.cloudflare.com/bots/concepts/bot/signed-agents/)",
+  "apres": "14. [Cloudflare — Verified bots (intégrant les anciens agents signés depuis le 1er juillet 2026)](https://developers.cloudflare.com/bots/concepts/bot/verified-bots/)",
+  "categorie": "factuel",
+  "motif": "Mettre à jour l'URL redirigée de /signed-agents/ vers /verified-bots/ et refléter le titre courant ('Verified bots', 'Signed agents are now Verified').",
+  "origine": "plan 2027, lot REF-1-factuel"
+ },
+ {
+  "n": 1328,
+  "fichier": "chapitre-10-commerce-agentique.md",
+  "avant": "Une deuxième prépublication, signée d'un seul auteur, recense 33 vulnérabilités structurelles sur trois plateformes de commerce agentique, que son résumé ne nomme pas [15].",
+  "apres": "Une deuxième prépublication, signée d'un seul auteur, recense 33 vulnérabilités structurelles sur trois cibles de commerce agentique — CoralOS (11), Fetch.ai uAgents (8) et AP2 v0.2.0 (14) — que le résumé seul ne nommait pas [15].",
+  "categorie": "factuel",
+  "motif": "Nommer les trois cibles vérifiées dans la table des matières de arXiv 2607.21824v1 (CoralOS, Fetch.ai uAgents, AP2 v0.2.0).",
+  "origine": "plan 2027, lot REF-1-factuel"
+ },
+ {
+  "n": 1329,
+  "fichier": "chapitre-10-commerce-agentique.md",
+  "avant": "8. [Visa — Trusted Agent Protocol, aperçu](https://developer.visa.com/capabilities/trusted-agent-protocol/overview)",
+  "apres": "8. [Visa — Trusted Agent Protocol, aperçu](https://developer.visa.com/docs/trusted-agent-protocol)",
+  "categorie": "factuel",
+  "motif": "Mettre à jour l'URL canonique de Visa Developer redirigée vers /docs/trusted-agent-protocol.",
+  "origine": "plan 2027, lot REF-1-factuel"
+ },
+ {
+  "n": 1330,
+  "fichier": "chapitre-10-commerce-agentique.md",
+  "avant": "17. [Inriver — « Why B2B agentic commerce can't run on retail protocols », septembre 2026](https://www.inriver.com/resources/b2b-agentic-commerce-retail-protocols/)",
+  "apres": "17. [Inriver — « Why B2B agentic commerce can't run on retail protocols », septembre 2026](https://www.inriver.com/resources/blog/b2b-agentic-commerce-retail-protocols/)",
+  "categorie": "factuel",
+  "motif": "Mettre à jour l'URL canonique d'Inriver redirigée vers /resources/blog/...",
+  "origine": "plan 2027, lot REF-1-factuel"
+ },
+ {
+  "n": 1331,
+  "fichier": "chapitre-11-gouvernance-standards.md",
+  "avant": "20. [NIST — AI Agent Standards Initiative](https://www.nist.gov/caisi/ai-agent-standards-initiative)",
+  "apres": "20. [NIST — SI Agent Standards Initiative (anciennement CAISI)](https://www.nist.gov/super-intelligence/si-agent-standards-initiative)",
+  "categorie": "factuel",
+  "motif": "Mettre à jour l'URL de [20], redirigée vers /super-intelligence/si-agent-standards-initiative.",
+  "origine": "plan 2027, lot REF-1-factuel"
+ },
+ {
+  "n": 1332,
+  "fichier": "chapitre-01-entreprise-agentique.md",
+  "avant": "[1] à [10] sont primaires, dont [8] lue par son résumé seulement; [11] et [12] sont secondaires.",
+  "apres": "[1] à [10] sont primaires ([7] et [8] vérifiées au-delà du résumé à l'audit du 14 novembre 2026); [11] et [12] sont secondaires.",
+  "categorie": "harmonisation",
+  "motif": "Harmoniser le bandeau de référence avec le premier point de ## Limites issu de P2-F3.",
+  "origine": "plan 2027, lot REF-1-harmonisation"
+ },
+ {
+  "n": 1333,
+  "fichier": "chapitre-01-entreprise-agentique.md",
+  "avant": "7. [Pan et coll. — Measuring Agents in Production (arXiv 2512.04123, version 4)](https://arxiv.org/abs/2512.04123) — résumé, puis première moitié du texte à l'audit.\n8. [Cemri et coll. — Why Do Multi-Agent LLM Systems Fail? (arXiv 2503.13657, version 3)](https://arxiv.org/abs/2503.13657) — résumé seulement.",
+  "apres": "7. [Pan et coll. — Measuring Agents in Production (arXiv 2512.04123, version 4)](https://arxiv.org/abs/2512.04123) — première moitié du texte et extraits vérifiés au-delà du résumé le 14 novembre 2026.\n8. [Cemri et coll. — Why Do Multi-Agent LLM Systems Fail? (arXiv 2503.13657, version 3)](https://arxiv.org/abs/2503.13657) — résumé initial et extraits vérifiés au-delà du résumé le 14 novembre 2026 (parts détaillées au chapitre 21).",
+  "categorie": "harmonisation",
+  "motif": "Harmoniser les notes de [7] et [8] dans ## Sources avec la relecture au-delà du résumé du 14 novembre 2026 (P2-F3).",
+  "origine": "plan 2027, lot REF-1-harmonisation"
+ },
+ {
+  "n": 1334,
+  "fichier": "chapitre-01-entreprise-agentique.md",
+  "avant": "— page non lue (délai dépassé); contenu repris",
+  "apres": "— page non lue (délai dépassé confirmé le 14 novembre 2026); contenu repris",
+  "categorie": "harmonisation",
+  "motif": "Dater la vérification d'accès restreint de McKinsey [12] au 14 novembre 2026 sans toucher la borne 'du plan initial'.",
+  "origine": "plan 2027, lot REF-1-harmonisation"
+ },
+ {
+  "n": 1335,
+  "fichier": "chapitre-01-entreprise-agentique.md",
+  "avant": "Les parts des échecs selon MAST ne sont pas reprises, seul le résumé ayant été lu (chapitre 21).",
+  "apres": "Les parts détaillées des échecs selon MAST sont renvoyées au chapitre 21 (seules les trois catégories de [8] sont reprises ici après vérification du 14 novembre 2026).",
+  "categorie": "harmonisation",
+  "motif": "Supprimer la contradiction interne de ## Limites entre le premier point P2-F3 et 'seul le résumé ayant été lu'.",
+  "origine": "plan 2027, lot REF-1-harmonisation"
+ },
+ {
+  "n": 1336,
+  "fichier": "chapitre-02-genealogie.md",
+  "avant": "confronte cinq protocoles (MCP, A2A, ACP, ANP et ERC-8004) à six dimensions de gouvernance; d'après son résumé, le vote et la conservation de la dissidence sont absents des cinq,",
+  "apres": "confronte cinq protocoles (MCP, A2A, ACP, ANP et ERC-8004) à six dimensions de gouvernance; le vote et la conservation de la dissidence sont absents des cinq,",
+  "categorie": "harmonisation",
+  "motif": "Supprimer 'd'après son résumé,' sur [11] (arXiv 2606.31498) à la ligne 168 pour harmoniser avec L214, L222 (P2-F3) et le texte complet.",
+  "origine": "plan 2027, lot REF-1-harmonisation"
+ },
+ {
+  "n": 1337,
+  "fichier": "chapitre-02-genealogie.md",
+  "avant": "9. [W3C — RDF 1.1 Primer (24 juin 2014)](https://www.w3.org/TR/rdf11-primer/)\n10.",
+  "apres": "9. [W3C — RDF 1.1 Primer (24 juin 2014)](https://www.w3.org/TR/rdf11-primer/) — accès automatisé refusé (HTTP 403) le 14 novembre 2026; référence confirmée par recherche web.\n10.",
+  "categorie": "harmonisation",
+  "motif": "Documenter l'accès HTTP 403 du W3C sur [9] le 14 novembre 2026.",
+  "origine": "plan 2027, lot REF-1-harmonisation"
+ },
+ {
+  "n": 1338,
+  "fichier": "chapitre-02-genealogie.md",
+  "avant": "11. [Kang et Diponegoro — Governance Gaps in Agent Interoperability Protocols (arXiv 2606.31498, 30 juin 2026)](https://arxiv.org/abs/2606.31498) — résumé seulement.",
+  "apres": "11. [Kang et Diponegoro — Governance Gaps in Agent Interoperability Protocols (arXiv 2606.31498, 30 juin 2026)](https://arxiv.org/abs/2606.31498) — résumé initial, puis extraits relus le 14 novembre 2026.",
+  "categorie": "harmonisation",
+  "motif": "Harmoniser la note de [11] dans ## Sources avec la relecture par extraits du 14 novembre 2026 (P2-F3).",
+  "origine": "plan 2027, lot REF-1-harmonisation"
+ },
+ {
+  "n": 1339,
+  "fichier": "chapitre-03-dimensions-interoperabilite.md",
+  "avant": "[14] à [16] des prépublications dont seul le résumé a été lu.",
+  "apres": "[14] à [16] des prépublications d'abord lues en résumé puis vérifiées par extraits le 14 novembre 2026.",
+  "categorie": "harmonisation",
+  "motif": "Harmoniser le bandeau de référence avec le premier point de ## Limites issu de P2-F3.",
+  "origine": "plan 2027, lot REF-1-harmonisation"
+ },
+ {
+  "n": 1340,
+  "fichier": "chapitre-03-dimensions-interoperabilite.md",
+  "avant": "Son résumé rapporte une précision de détection de 27,9 %, obtenue sur des exécutions simulées selon le chapitre 21,",
+  "apres": "L'étude rapporte une précision de détection de 27,9 %, obtenue sur des exécutions simulées selon le chapitre 21,",
+  "categorie": "harmonisation",
+  "motif": "Remplacer 'Son résumé' par 'L'étude' sur [15] (arXiv 2604.16339) à la ligne 88 pour harmoniser avec L5, L224, L234, L238 (P2-F3) et le PDF complet.",
+  "origine": "plan 2027, lot REF-1-harmonisation"
+ },
+ {
+  "n": 1341,
+  "fichier": "chapitre-03-dimensions-interoperabilite.md",
+  "avant": "la première tâche de conformité d'un fournisseur, selon son résumé [16].",
+  "apres": "la première tâche de conformité d'un fournisseur [16].",
+  "categorie": "harmonisation",
+  "motif": "Supprimer ', selon son résumé' sur [16] (arXiv 2604.04604) à la ligne 145 pour harmoniser avec L5, L224, L234, L238 (P2-F3) et le PDF complet.",
+  "origine": "plan 2027, lot REF-1-harmonisation"
+ },
+ {
+  "n": 1342,
+  "fichier": "chapitre-03-dimensions-interoperabilite.md",
+  "avant": "1. [Cadre européen d'interopérabilité — COM(2017) 134, annexe 2](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52017DC0134)\n2.",
+  "apres": "1. [Cadre européen d'interopérabilité — COM(2017) 134, annexe 2](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52017DC0134) — accès automatisé redirigé vers `TodayOJ` le 14 novembre 2026; contenu confirmé par recherche web.\n2.",
+  "categorie": "harmonisation",
+  "motif": "Documenter la redirection anti-robot EUR-Lex vers TodayOJ constatée le 14 novembre 2026.",
+  "origine": "plan 2027, lot REF-1-harmonisation"
+ },
+ {
+  "n": 1343,
+  "fichier": "chapitre-03-dimensions-interoperabilite.md",
+  "avant": "12. [W3C — AI Agent Protocol Community Group](https://www.w3.org/community/agentprotocol/)\n13.",
+  "apres": "12. [W3C — AI Agent Protocol Community Group](https://www.w3.org/community/agentprotocol/) — accès automatisé refusé (HTTP 403) le 14 novembre 2026; fiche vérifiée par recherche web.\n13.",
+  "categorie": "harmonisation",
+  "motif": "Documenter l'accès HTTP 403 du W3C sur [12] le 14 novembre 2026.",
+  "origine": "plan 2027, lot REF-1-harmonisation"
+ },
+ {
+  "n": 1344,
+  "fichier": "chapitre-03-dimensions-interoperabilite.md",
+  "avant": "Prépublications dont seul le résumé a été lu :",
+  "apres": "Prépublications (résumé initial, puis extraits relus le 14 novembre 2026) :",
+  "categorie": "harmonisation",
+  "motif": "Harmoniser le sous-titre de ## Sources pour [14] à [16] avec P2-F3.",
+  "origine": "plan 2027, lot REF-1-harmonisation"
+ },
+ {
+  "n": 1345,
+  "fichier": "chapitre-03-dimensions-interoperabilite.md",
+  "avant": "- Les sources [14] à [16] ne sont connues que par leur résumé.",
+  "apres": "- Pour [14] à [16], la rédaction s'est d'abord appuyée sur les résumés avant la relecture par extraits du 14 novembre 2026.",
+  "categorie": "harmonisation",
+  "motif": "Lever la contradiction interne de ## Limites avec le premier point P2-F3.",
+  "origine": "plan 2027, lot REF-1-harmonisation"
+ },
+ {
+  "n": 1346,
+  "fichier": "chapitre-04-etat-des-lieux.md",
+  "avant": "1. [Measuring Agents in Production (arXiv 2512.04123, version 4)](https://arxiv.org/abs/2512.04123) — résumé et première moitié du texte.\n2. [Why Do Multi-Agent LLM Systems Fail? (arXiv 2503.13657)](https://arxiv.org/html/2503.13657v2) — résumé de la version 3 et première partie de la version 2.",
+  "apres": "1. [Measuring Agents in Production (arXiv 2512.04123, version 4)](https://arxiv.org/abs/2512.04123) — première moitié du texte et extraits relus le 14 novembre 2026.\n2. [Why Do Multi-Agent LLM Systems Fail? (arXiv 2503.13657)](https://arxiv.org/html/2503.13657v2) — résumé de la version 3, première partie de la version 2 et extraits relus le 14 novembre 2026.",
+  "categorie": "harmonisation",
+  "motif": "Harmoniser les notes de [1] et [2] dans ## Sources avec P2-F3.",
+  "origine": "plan 2027, lot REF-1-harmonisation"
+ },
+ {
+  "n": 1347,
+  "fichier": "chapitre-04-etat-des-lieux.md",
+  "avant": "11. [McKinsey — The State of AI in 2026](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) — délai dépassé.",
+  "apres": "11. [McKinsey — The State of AI in 2026](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) — délai dépassé (confirmé le 14 novembre 2026).",
+  "categorie": "harmonisation",
+  "motif": "Dater la vérification du délai dépassé de McKinsey [11] sans toucher '— accès refusé.' à la ligne suivante (borne bonification 04-42).",
+  "origine": "plan 2027, lot REF-1-harmonisation"
+ },
+ {
+  "n": 1348,
+  "fichier": "chapitre-04-etat-des-lieux.md",
+  "avant": "être chargé ni à la rédaction ni à l'audit. Ses chiffres viennent d'un compte rendu de presse, relu le 12 novembre 2026; l'échantillon et les dates de collecte et de publication restent inconnus.\n- Le communiqué de Gartner a encore refusé l'accès à l'audit.",
+  "apres": "être chargé ni à la rédaction ni à l'audit du 14 novembre 2026 (délai dépassé). Ses chiffres viennent d'un compte rendu de presse, relu le 12 novembre 2026; l'échantillon et les dates de collecte et de publication restent inconnus.\n- Le communiqué de Gartner [12] a encore retourné HTTP 403 à l'audit du 14 novembre 2026.",
+  "categorie": "harmonisation",
+  "motif": "Dater les constats d'accès restreint de McKinsey [11] et Gartner [12] au 14 novembre 2026 dans ## Limites (après la borne #802).",
+  "origine": "plan 2027, lot REF-1-harmonisation"
+ },
+ {
+  "n": 1349,
+  "fichier": "chapitre-07-protocoles-peripheriques.md",
+  "avant": "8. [W3C — AI Agent Protocol Community Group](https://www.w3.org/community/agentprotocol/)\n9.",
+  "apres": "8. [W3C — AI Agent Protocol Community Group](https://www.w3.org/community/agentprotocol/) — accès automatisé refusé (HTTP 403) le 14 novembre 2026; fiche vérifiée par recherche web.\n9.",
+  "categorie": "harmonisation",
+  "motif": "Documenter l'accès HTTP 403 du W3C sur [8] le 14 novembre 2026.",
+  "origine": "plan 2027, lot REF-1-harmonisation"
+ },
+ {
+  "n": 1350,
+  "fichier": "chapitre-07-protocoles-peripheriques.md",
+  "avant": "19. [Governance Gaps in Agent Interoperability Protocols (arXiv 2606.31498)](https://arxiv.org/abs/2606.31498) — résumé\n20. [A survey of agent interoperability protocols (arXiv 2505.02279)](https://arxiv.org/abs/2505.02279) — résumé\n21. [A Survey of AI Agent Protocols (arXiv 2504.16736)](https://arxiv.org/abs/2504.16736) — résumé",
+  "apres": "19. [Governance Gaps in Agent Interoperability Protocols (arXiv 2606.31498)](https://arxiv.org/abs/2606.31498) — résumé initial, puis extraits relus le 14 novembre 2026\n20. [A survey of agent interoperability protocols (arXiv 2505.02279)](https://arxiv.org/abs/2505.02279) — résumé initial, puis extraits relus le 14 novembre 2026\n21. [A Survey of AI Agent Protocols (arXiv 2504.16736)](https://arxiv.org/abs/2504.16736) — résumé initial, puis extraits relus le 14 novembre 2026",
+  "categorie": "harmonisation",
+  "motif": "Harmoniser les notes de [19] à [21] dans ## Sources avec P2-F3.",
+  "origine": "plan 2027, lot REF-1-harmonisation"
+ },
+ {
+  "n": 1351,
+  "fichier": "chapitre-07-protocoles-peripheriques.md",
+  "avant": "LAP et TEA n'ont été lus qu'en partie, [19] à [21] par leur résumé seulement.",
+  "apres": "LAP et TEA n'ont été lus qu'en partie; [19] à [21], d'abord connues par leur résumé, ont été vérifiées par extraits le 14 novembre 2026.",
+  "categorie": "harmonisation",
+  "motif": "Lever la contradiction interne de ## Limites avec le premier point P2-F3.",
+  "origine": "plan 2027, lot REF-1-harmonisation"
+ },
+ {
+  "n": 1352,
+  "fichier": "chapitre-08-decouverte-registres.md",
+  "avant": "dont [23], [26] et [27] par leur seul résumé.",
+  "apres": "dont [23], [26] et [27] initialement en résumé puis vérifiées au-delà du résumé.",
+  "categorie": "harmonisation",
+  "motif": "Harmoniser le bandeau de référence avec P2-F3 et la vérification HTML à l'intérieur de la borne bonification 24-08.",
+  "origine": "plan 2027, lot REF-1-harmonisation"
+ },
+ {
+  "n": 1353,
+  "fichier": "chapitre-08-decouverte-registres.md",
+  "avant": "la plupart sont des prépublications, et trois ne sont connues ici que par leur résumé.",
+  "apres": "la plupart sont des prépublications, dont trois ([23], [26] et [27]) d'abord lues en résumé puis vérifiées au-delà du résumé.",
+  "categorie": "harmonisation",
+  "motif": "Harmoniser la conclusion de la section 8.8 avec la vérification HTML et P2-F3 (à l'intérieur de la borne bonification 24-08).",
+  "origine": "plan 2027, lot REF-1-harmonisation"
+ },
+ {
+  "n": 1354,
+  "fichier": "chapitre-08-decouverte-registres.md",
+  "avant": "23. [Kraishan — Same Name, Different Server: A Security Census of Silent Drift in the Model Context Protocol Ecosystem (arXiv 2609.14119, 12 septembre 2026)](https://arxiv.org/abs/2609.14119) — prépublication, un seul auteur; résumé seulement.\n24. [Li et Gao — Toward Understanding Security Issues in the Model Context Protocol Ecosystem (arXiv 2510.16558, version 1 du 18 octobre 2025)](https://arxiv.org/html/2510.16558v1) — prépublication.\n25. [Guo et coll. — A Measurement Study of Model Context Protocol (arXiv 2509.25292, version 1 du 29 septembre 2025)](https://arxiv.org/html/2509.25292v1) — prépublication.\n26. [Hasan et coll. — Model Context Protocol (MCP) at First Glance: Studying the Security and Maintainability of MCP Servers (arXiv 2506.13538, version 5 du 13 avril 2026)](https://arxiv.org/abs/2506.13538) — résumé seulement.\n27. [Chen et coll. — Rethinking MCP Security: A Large-Scale Study of Runtime MCP Servers and Security Scanner Reliability (arXiv 2607.11086, 13 juillet 2026)](https://arxiv.org/abs/2607.11086) — prépublication; résumé seulement.",
+  "apres": "23. [Kraishan — Same Name, Different Server: A Security Census of Silent Drift in the Model Context Protocol Ecosystem (arXiv 2609.14119, 12 septembre 2026)](https://arxiv.org/abs/2609.14119) — prépublication, un seul auteur; résumé initial, puis texte HTML vérifié le 14 novembre 2026.\n24. [Li et Gao — Toward Understanding Security Issues in the Model Context Protocol Ecosystem (arXiv 2510.16558, version 1 du 18 octobre 2025)](https://arxiv.org/html/2510.16558v1) — prépublication.\n25. [Guo et coll. — A Measurement Study of Model Context Protocol (arXiv 2509.25292, version 1 du 29 septembre 2025)](https://arxiv.org/html/2509.25292v1) — prépublication.\n26. [Hasan et coll. — Model Context Protocol (MCP) at First Glance: Studying the Security and Maintainability of MCP Servers (arXiv 2506.13538, version 5 du 13 avril 2026)](https://arxiv.org/abs/2506.13538) — résumé initial, puis texte HTML vérifié le 14 novembre 2026.\n27. [Chen et coll. — Rethinking MCP Security: A Large-Scale Study of Runtime MCP Servers and Security Scanner Reliability (arXiv 2607.11086, 13 juillet 2026)](https://arxiv.org/abs/2607.11086) — prépublication; résumé initial, puis extraits relus le 14 novembre 2026.",
+  "categorie": "harmonisation",
+  "motif": "Harmoniser les notes de [23], [26] et [27] dans ## Sources à l'intérieur de la borne bonification 24-08.",
+  "origine": "plan 2027, lot REF-1-harmonisation"
+ },
+ {
+  "n": 1355,
+  "fichier": "chapitre-09-web-agentique.md",
+  "avant": "17. [W3C — AI Agent Protocol Community Group](https://www.w3.org/community/agentprotocol/) et sa [fiche de groupe](https://www.w3.org/groups/cg/agentprotocol)\n18. [Permission Manifests for Web Agents (arXiv 2601.02371)](https://arxiv.org/abs/2601.02371) — prépublication, résumé seulement.",
+  "apres": "17. [W3C — AI Agent Protocol Community Group](https://www.w3.org/community/agentprotocol/) et sa [fiche de groupe](https://www.w3.org/groups/cg/agentprotocol) — accès automatisé refusé (HTTP 403) le 14 novembre 2026; fiche vérifiée par recherche web.\n18. [Permission Manifests for Web Agents (arXiv 2601.02371)](https://arxiv.org/abs/2601.02371) — prépublication; résumé initial, puis extraits relus le 14 novembre 2026.",
+  "categorie": "harmonisation",
+  "motif": "Documenter l'accès HTTP 403 du W3C sur [17] le 14 novembre 2026 et harmoniser [18] avec P2-F3.",
+  "origine": "plan 2027, lot REF-1-harmonisation"
+ },
+ {
+  "n": 1356,
+  "fichier": "chapitre-10-commerce-agentique.md",
+  "avant": "[13] à [16] sont des prépublications dont seul le résumé a été lu;",
+  "apres": "[13] à [16] sont des prépublications d'abord lues en résumé puis vérifiées par extraits le 14 novembre 2026;",
+  "categorie": "harmonisation",
+  "motif": "Harmoniser le bandeau de référence avec P2-F3 avant la borne P2-M2-M3 ('[17] à [19]...').",
+  "origine": "plan 2027, lot REF-1-harmonisation"
+ },
+ {
+  "n": 1357,
+  "fichier": "chapitre-10-commerce-agentique.md",
+  "avant": "Les quatre prépublications retenues n'ont été lues qu'en résumé; leurs chiffres sont ceux des auteurs.",
+  "apres": "Les quatre prépublications retenues ont d'abord été lues en résumé puis vérifiées par extraits le 14 novembre 2026; leurs chiffres sont ceux des auteurs.",
+  "categorie": "harmonisation",
+  "motif": "Harmoniser l'introduction de la section sécurité (10.7) avec P2-F3.",
+  "origine": "plan 2027, lot REF-1-harmonisation"
+ },
+ {
+  "n": 1358,
+  "fichier": "chapitre-10-commerce-agentique.md",
+  "avant": "Prépublications, résumé lu seulement :",
+  "apres": "Prépublications (résumé initial, puis extraits relus le 14 novembre 2026) :",
+  "categorie": "harmonisation",
+  "motif": "Harmoniser le sous-titre de ## Sources pour [13] à [16] avec P2-F3.",
+  "origine": "plan 2027, lot REF-1-harmonisation"
+ },
+ {
+  "n": 1359,
+  "fichier": "chapitre-10-commerce-agentique.md",
+  "avant": "— pages non lues (accès refusé), connues par un résumé de moteur de recherche.",
+  "apres": "— pages non lues (accès automatisé refusé HTTP 403 confirmé le 14 novembre 2026), connues par un résumé de moteur de recherche.",
+  "categorie": "harmonisation",
+  "motif": "Dater le constat d'accès HTTP 403 de Mastercard [18] au 14 novembre 2026.",
+  "origine": "plan 2027, lot REF-1-harmonisation"
+ },
+ {
+  "n": 1360,
+  "fichier": "chapitre-10-commerce-agentique.md",
+  "avant": ", lus en résumé, ne sont pas évalués par les pairs d'après leur page arXiv.",
+  "apres": ", dont l'audit du 14 novembre 2026 a relu des extraits au-delà du résumé, ne sont pas évalués par les pairs d'après leur page arXiv.",
+  "categorie": "harmonisation",
+  "motif": "Harmoniser la deuxième puce de ## Limites avec P2-F3 en restant après la borne P2-F3 ('- Les quatre articles de sécurit').",
+  "origine": "plan 2027, lot REF-1-harmonisation"
+ },
+ {
+  "n": 1361,
+  "fichier": "chapitre-11-gouvernance-standards.md",
+  "avant": "9. [W3C — AI Agent Protocol Community Group](https://www.w3.org/community/agentprotocol/)\n10. [W3C — Agent Trust Protocol Community Group](https://www.w3.org/community/atp/)\n11. [W3C — Agent Identity Registry Protocol Community Group](https://www.w3.org/groups/cg/agent-identity/)\n12. [W3C — Agent Conformance and Benchmarking Community Group](https://www.w3.org/community/agent-conformance/)",
+  "apres": "9. [W3C — AI Agent Protocol Community Group](https://www.w3.org/community/agentprotocol/) — accès automatisé refusé (HTTP 403) le 14 novembre 2026; fiche vérifiée par recherche web\n10. [W3C — Agent Trust Protocol Community Group](https://www.w3.org/community/atp/) — accès automatisé refusé (HTTP 403) le 14 novembre 2026; fiche vérifiée par recherche web\n11. [W3C — Agent Identity Registry Protocol Community Group](https://www.w3.org/groups/cg/agent-identity/) — accès automatisé refusé (HTTP 403) le 14 novembre 2026; fiche vérifiée par recherche web\n12. [W3C — Agent Conformance and Benchmarking Community Group](https://www.w3.org/community/agent-conformance/) — accès automatisé refusé (HTTP 403) le 14 novembre 2026; fiche vérifiée par recherche web",
+  "categorie": "harmonisation",
+  "motif": "Documenter l'accès HTTP 403 du W3C sur [9] à [12] le 14 novembre 2026.",
+  "origine": "plan 2027, lot REF-1-harmonisation"
+ },
+ {
+  "n": 1362,
+  "fichier": "chapitre-11-gouvernance-standards.md",
+  "avant": "27. [A survey of agent interoperability protocols (arXiv 2505.02279), résumé](https://arxiv.org/abs/2505.02279)",
+  "apres": "27. [A survey of agent interoperability protocols (arXiv 2505.02279)](https://arxiv.org/abs/2505.02279) — résumé initial, puis extraits relus le 14 novembre 2026",
+  "categorie": "harmonisation",
+  "motif": "Harmoniser la note de [27] dans ## Sources avec la relecture par extraits du 14 novembre 2026 (P2-F3).",
+  "origine": "plan 2027, lot REF-1-harmonisation"
+ },
+ {
+  "n": 1363,
+  "fichier": "chapitre-14-memoire.md",
+  "avant": "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/overview",
+  "apres": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/scale/memory-bank",
+  "categorie": "factuel",
+  "motif": "L'ancienne URL de Google Cloud Memory Bank [33] redirige vers la page générique /scale; la fiche officielle Memory Bank se trouve désormais à /gemini-enterprise-agent-platform/scale/memory-bank (HTTP 200, mise à jour du 12 novembre 2026).",
+  "origine": "plan 2027, lot REF-2-factuel"
+ },
+ {
+  "n": 1364,
+  "fichier": "chapitre-14-memoire.md",
+  "avant": "Elle ne décrit ni l'extraction, ni la portée d'un souvenir, ni son expiration, et ",
+  "apres": "La page déplacée décrit en outre l'extraction et la consolidation par modèle de langage, l'isolement par portée (`scope`), l'expiration automatique par durée de vie (`TTL`) et ",
+  "categorie": "factuel",
+  "motif": "Corriger la description de Google Cloud Memory Bank [33] d'après la page officielle actuelle (/scale/memory-bank), qui documente l'extraction, le cloisonnement par scope et l'expiration automatique par TTL.",
+  "origine": "plan 2027, lot REF-2-factuel"
+ },
+ {
+  "n": 1365,
+  "fichier": "chapitre-14-memoire.md",
+  "avant": "ne mentionne aucun risque d'empoisonnement.",
+  "apres": "signale les risques d'injection de prompt et d'empoisonnement de la mémoire.",
+  "categorie": "factuel",
+  "motif": "Corriger la fin de phrase sur Google Cloud Memory Bank [33] (à l'intérieur de #731 sans débordement) : la page actuelle comporte une section « Security risks of prompt injection » mentionnant le memory poisoning.",
+  "origine": "plan 2027, lot REF-2-factuel"
+ },
+ {
+  "n": 1366,
+  "fichier": "chapitre-16-topologies-patrons.md",
+  "avant": "12. [Zhu et coll. — LLM-Based Multi-Agent Orchestration: A Survey of Frameworks, Communication Protocols, and Emerging Patterns](https://www.preprints.org/manuscript/202604.2147) — prépublication non lue (accès refusé); taxonomie reprise du plan initial et de résumés de recherche.",
+  "apres": "12. [Zhu et coll. — LLM-Based Multi-Agent Orchestration: A Survey of Frameworks, Communication Protocols, and Emerging Patterns](https://www.preprints.org/manuscript/202604.2147) (paru dans *Future Internet*, vol. 18, n° 6, art. 326, 15 juin 2026, [DOI 10.3390/fi18060326](https://doi.org/10.3390/fi18060326)) — prépublication et page éditeur non lues (accès refusé HTTP 403); taxonomie reprise du plan initial et de résumés de recherche.",
+  "categorie": "factuel",
+  "motif": "Documenter la publication confirmée dans Future Internet (Crossref DOI 10.3390/fi18060326, 15 juin 2026) tout en maintenant le constat d'accès HTTP 403 aux requêtes automatisées.",
+  "origine": "plan 2027, lot REF-2-factuel"
+ },
+ {
+  "n": 1367,
+  "fichier": "chapitre-16-topologies-patrons.md",
+  "avant": "l prévu par le plan initial, n'a pas été lu : le 12 novembre 2026, sa page refuse toujours l'accès, et une recherche ne trouve aucune parution dans *Future Internet*. La liste d'auteurs diffère entre la prépublication et la fiche Zenodo.",
+  "apres": "l prévu par le plan initial, n'a pas été lu : la prépublication Preprints.org comme la page éditeur de *Future Internet* (vol. 18, n° 6, art. 326, 15 juin 2026, DOI 10.3390/fi18060326) retournent HTTP 403 aux requêtes automatisées. La liste d'auteurs de l'article (Zhu, Liu, Yu et Zhang) diffère partiellement de celle du dépôt Zenodo (Zhu et Toffoletto).",
+  "categorie": "factuel",
+  "motif": "Corriger l'affirmation selon laquelle aucune parution dans Future Internet n'avait été trouvée, après vérification via l'API Crossref (en restant après la borne #812).",
+  "origine": "plan 2027, lot REF-2-factuel"
+ },
+ {
+  "n": 1368,
+  "fichier": "chapitre-18-execution-durable-transactions.md",
+  "avant": "[14] et [15] n'ont pas pu être lues;",
+  "apres": "[14] n'a pas pu être lue; [15], retrouvée via Crossref à l'audit, n'a pas été exploitée dans la rédaction;",
+  "categorie": "factuel",
+  "motif": "Refléter la découverte du PDF et du DOI de la source [15] (Nutakki, Nexus) tout en indiquant que le corps du chapitre n'en dépend pas (à l'intérieur de #483).",
+  "origine": "plan 2027, lot REF-2-factuel"
+ },
+ {
+  "n": 1369,
+  "fichier": "chapitre-18-execution-durable-transactions.md",
+  "avant": "15. [Agentic AI Pipelines for Enterprise Decision-Making (Nexus)](https://consensus.app/papers/details/22a0c58efa5153b194fcbf5d89fbe04c/) ",
+  "apres": "15. [Nutakki — Design and Implementation of Agentic AI Pipelines for Enterprise Decision-Making Architecture Patterns for Production Systems (Nexus, *IJIRMPS*, vol. 14, n° 2, 27 avril 2026, DOI 10.37082/ijirmps.v14.i2.233041)](https://www.ijirmps.org/papers/2026/2/233041.pdf) ",
+  "categorie": "factuel",
+  "motif": "Remplacer le lien Consensus redirigeant vers /sign-up/ par la référence complète et l'URL PDF en accès libre vérifiées via Crossref (avant la borne #485).",
+  "origine": "plan 2027, lot REF-2-factuel"
+ },
+ {
+  "n": 1370,
+  "fichier": "chapitre-18-execution-durable-transactions.md",
+  "avant": "— fiche inaccessible (erreur 403), original introuvable.",
+  "apres": "— l'adresse Consensus d'origine redirige (HTTP 302) vers `/sign-up/` et non vers une erreur 403; article et PDF retrouvés à l'audit du 14 novembre 2026, non exploités dans le corps du chapitre.",
+  "categorie": "factuel",
+  "motif": "Corriger la mention « erreur 403, original introuvable » de [15] à l'intérieur de la borne #485 sans débordement.",
+  "origine": "plan 2027, lot REF-2-factuel"
+ },
+ {
+  "n": 1371,
+  "fichier": "chapitre-18-execution-durable-transactions.md",
+  "avant": "n'a pas été lue** [15]. Deux recherches par titre n'ont retrouvé ni l'article ni son éditeur",
+  "apres": "n'a pas été exploitée dans la rédaction** [15]. La fiche Consensus mène à `/sign-up/`, mais l'article original a été retrouvé via Crossref le 14 novembre 2026 (Sandeep Nutakki, *IJIRMPS*, vol. 14, n° 2, avril 2026, DOI 10.37082/ijirmps.v14.i2.233041, PDF en accès libre présentant Nexus)",
+  "categorie": "factuel",
+  "motif": "Corriger la limite de [15] (Nexus) après découverte de l'article de Nutakki via Crossref (après la borne #813).",
+  "origine": "plan 2027, lot REF-2-factuel"
+ },
+ {
+  "n": 1372,
+  "fichier": "chapitre-20-cadriciels-orchestration.md",
+  "avant": "15. [Zhu et coll. — LLM-Based Multi-Agent Orchestration: A Survey of Frameworks, Communication Protocols, and Emerging Patterns](https://www.preprints.org/manuscript/202604.2147) — prépublication non lue (accès refusé),",
+  "apres": "15. [Zhu et coll. — LLM-Based Multi-Agent Orchestration: A Survey of Frameworks, Communication Protocols, and Emerging Patterns](https://www.preprints.org/manuscript/202604.2147) (paru dans *Future Internet*, vol. 18, n° 6, art. 326, 15 juin 2026, [DOI 10.3390/fi18060326](https://doi.org/10.3390/fi18060326)) — prépublication et page éditeur non lues (accès refusé HTTP 403),",
+  "categorie": "factuel",
+  "motif": "Consigner la parution vérifiée de Zhu et coll. [15] dans Future Internet (DOI 10.3390/fi18060326) avant la borne #440.",
+  "origine": "plan 2027, lot REF-2-factuel"
+ },
+ {
+  "n": 1373,
+  "fichier": "chapitre-20-cadriciels-orchestration.md",
+  "avant": "r le plan initial, n'a pas été lu, et sa parution dans *Future Internet* n'a pas été confirmée.",
+  "apres": "r le plan initial, n'a pas été lu : sa parution dans *Future Internet* (vol. 18, n° 6, art. 326, 15 juin 2026, DOI 10.3390/fi18060326) est confirmée via Crossref, mais la prépublication et la page MDPI retournent HTTP 403.",
+  "categorie": "factuel",
+  "motif": "Corriger la limite sur la parution de [15] dans Future Internet après vérification Crossref (après la borne #815).",
+  "origine": "plan 2027, lot REF-2-factuel"
+ },
+ {
+  "n": 1374,
+  "fichier": "chapitre-20-cadriciels-orchestration.md",
+  "avant": "[Zhang, Zhang et Tan — Dissecting Bug Triggers and Failure Modes in Modern Agentic Frameworks: An Empirical Study (arXiv 2604.08906, 10 avril 2026)]",
+  "apres": "[Zhang, Zhang et Tan — Dissecting Bug Triggers and Failure Modes in Modern Agentic Frameworks: An Empirical Study (arXiv 2604.08906v1, 10 avril 2026; v4 du 4 octobre 2026 renommée *Understanding Bugs in Modern Agentic Frameworks*)]",
+  "categorie": "factuel",
+  "motif": "Signaler le changement de titre de la version v4 d'arXiv 2604.08906 tout en conservant le titre exact de la version v1 citée par lien direct (avant la borne #651).",
+  "origine": "plan 2027, lot REF-2-factuel"
+ },
+ {
+  "n": 1375,
+  "fichier": "chapitre-22-humain-dans-la-boucle.md",
+  "avant": "[Goddard et coll. — Automation bias: a systematic review of frequency, effect mediators, and mitigators (Journal of the American Medical Informatics Association)](https://pmc.ncbi.nlm.nih.gov/articles/PMC3240751/) — revue systématique; l'année 2011 vient d'un index d'articles.",
+  "apres": "[Goddard, Roudsari et Wyatt — Automation bias: a systematic review of frequency, effect mediators, and mitigators (*JAMIA*, vol. 19, n° 1, janv.-févr. 2012, pp. 121-127, publ. en ligne 16 juin 2011, DOI 10.1136/amiajnl-2011-000089)](https://pmc.ncbi.nlm.nih.gov/articles/PMC3240751/) — revue systématique.",
+  "categorie": "factuel",
+  "motif": "Préciser la référence bibliographique vérifiée de Goddard et coll. [16] via Crossref et NCBI PMC (epub 2011, numéro de 2012) à l'intérieur de #383.",
+  "origine": "plan 2027, lot REF-2-factuel"
+ },
+ {
+  "n": 1376,
+  "fichier": "chapitre-22-humain-dans-la-boucle.md",
+  "avant": "[16] une revue de 2011 sur les aides à la décision,",
+  "apres": "[16] une revue systématique publiée en ligne en 2011 (numéro de 2012) sur les aides à la décision,",
+  "categorie": "factuel",
+  "motif": "Harmoniser la date bibliographique de [16] dans les limites (à l'intérieur de #385).",
+  "origine": "plan 2027, lot REF-2-factuel"
+ },
+ {
+  "n": 1377,
+  "fichier": "chapitre-23-architecture-reference.md",
+  "avant": "[12], [13] et [21] sont secondaires.",
+  "apres": "[12] et [13] sont secondaires.",
+  "categorie": "factuel",
+  "motif": "Retirer [21] (Debnath) de la liste des sources secondaires maintenant que l'article original en accès libre et son DOI ont été vérifiés (à l'intérieur de #357).",
+  "origine": "plan 2027, lot REF-2-factuel"
+ },
+ {
+  "n": 1378,
+  "fichier": "chapitre-23-architecture-reference.md",
+  "avant": ", connue ici par son seul résumé : un plan de contrôle sémantique",
+  "apres": " sans mesure de déploiement (texte complet retrouvé à l'audit du 14 novembre 2026) : un plan de contrôle sémantique",
+  "categorie": "factuel",
+  "motif": "Mettre à jour la mention de [21] (Debnath) après lecture du PDF complet (après la borne #644 et à l'intérieur de #362).",
+  "origine": "plan 2027, lot REF-2-factuel"
+ },
+ {
+  "n": 1379,
+  "fichier": "chapitre-23-architecture-reference.md",
+  "avant": "Source secondaire, pour la même section :\n\n21. Debnath — The Enterprise Agentic Mesh: Architectural Convergence of Semantic Control Planes and Autonomous Multi-Agent Governance, International Journal of Scientific and Research Publications, 2025 — page de la revue non retrouvée; résumé repris d'un index d'articles.",
+  "apres": "Article en accès libre retrouvé lors de l'audit du 14 novembre 2026, pour la même section :\n\n21. [Nabin Debnath — The Enterprise Agentic Mesh: Architectural Convergence of Semantic Control Planes and Autonomous Multi-Agent Governance (*IJSRP*, vol. 15, n° 12, déc. 2025, pp. 4-11, DOI 10.29322/IJSRP.15.12.2025.p16803)](https://www.ijsrp.org/research-paper-1225/ijsrp-p16803.pdf) — article conceptuel (6 pages).",
+  "categorie": "factuel",
+  "motif": "Remplacer la source [21] sans URL par le lien PDF direct et le DOI exact vérifiés via Crossref et lecture du PDF (à l'intérieur de #365).",
+  "origine": "plan 2027, lot REF-2-factuel"
+ },
+ {
+  "n": 1380,
+  "fichier": "chapitre-23-architecture-reference.md",
+  "avant": "et [21] par le résumé qu'en donne un index d'articles, sans que la qualité de la revue ait été évaluée.",
+  "apres": "et [21] (DOI 10.29322/IJSRP.15.12.2025.p16803, PDF en accès libre vérifié à l'audit) provient d'une revue dont l'évaluation par les pairs n'a pas été vérifiée.",
+  "categorie": "factuel",
+  "motif": "Actualiser la limite concernant [21] (Debnath) tout en conservant la réserve sur l'évaluation par les pairs de la revue (à l'intérieur de #366).",
+  "origine": "plan 2027, lot REF-2-factuel"
+ },
+ {
+  "n": 1381,
+  "fichier": "chapitre-14-memoire.md",
+  "avant": "Son résumé ne donne aucun résultat chiffré sur la fidélité du transfert [26].",
+  "apres": "Dans des essais pilotes sur 30 questions sondes (paire Claude vers GPT-4), l'article rapporte une fidélité de réhydratation moyenne (RHF) décroissant de 0,91 à plein budget (8 192 jetons) à 0,71 à 25 % du budget (2 048 jetons), et un gain moyen de 2,4 fois entre modèles par rapport à une base sans mémoire à 0,35, sans validation externe en production [26].",
+  "categorie": "factuel",
+  "motif": "Remplacer l'affirmation erronée « sans résultat chiffré » sur arXiv 2605.11032 [26] par les mesures RHF exactes vérifiées à la section 5.2 du PDF.",
+  "origine": "plan 2027, lot REF-2-factuel"
+ },
+ {
+  "n": 1382,
+  "fichier": "chapitre-20-cadriciels-orchestration.md",
+  "avant": "Le résumé annonce des solutions plus cohérentes que les systèmes multi-agents antérieurs en génie logiciel, sans chiffre.",
+  "apres": "Dans ses bancs d'essai de génération de code, l'article rapporte des taux Pass@1 de 85,9 % sur HumanEval et de 87,7 % sur MBPP.",
+  "categorie": "factuel",
+  "motif": "Remplacer l'affirmation « sans chiffre » sur MetaGPT (arXiv 2308.00352 [14]) par les taux Pass@1 vérifiés dans le texte intégral.",
+  "origine": "plan 2027, lot REF-2-factuel"
+ },
+ {
+  "n": 1383,
+  "fichier": "chapitre-22-humain-dans-la-boucle.md",
+  "avant": "La revue date de 2011 et porte sur des aides à la décision, non sur des agents.",
+  "apres": "L'article a été publié en ligne en 2011 (numéro de 2012) et porte sur des aides à la décision, non sur des agents.",
+  "categorie": "factuel",
+  "motif": "Aligner la formulation avec la date de publication en ligne (2011) et le numéro de revue (2012) du DOI 10.1136/amiajnl-2011-000089 [16] (à l'intérieur de #379).",
+  "origine": "plan 2027, lot REF-2-factuel"
+ },
+ {
+  "n": 1384,
+  "fichier": "chapitre-12-couche-semantique-ontologies.md",
+  "avant": "Ces chiffres viennent du résumé de l'article, datent de novembre 2023",
+  "apres": "Ces chiffres viennent de l'article [11] (résumé et extraits relus), datent de novembre 2023",
+  "categorie": "coherence",
+  "motif": "Aligner L39 avec le lot P2-F3 (#757 et #808) qui a relu [11] au-delà du résumé.",
+  "origine": "plan 2027, lot REF-2-coherence"
+ },
+ {
+  "n": 1385,
+  "fichier": "chapitre-12-couche-semantique-ontologies.md",
+  "avant": "10. [Semantic Consensus: Process-Aware Conflict Detection and Resolution for Enterprise Multi-Agent LLM Systems (arXiv 2604.16339)](https://arxiv.org/abs/2604.16339) — résumé seulement; le texte est lu au chapitre 21.\n11. [A Benchmark to Understand the Role of Knowledge Graphs on LLM's Accuracy for Question Answering on Enterprise SQL Databases (arXiv 2311.07509)](https://arxiv.org/abs/2311.07509) — résumé seulement.",
+  "apres": "10. [Semantic Consensus: Process-Aware Conflict Detection and Resolution for Enterprise Multi-Agent LLM Systems (arXiv 2604.16339)](https://arxiv.org/abs/2604.16339) — texte lu au chapitre 21 et relu par extraits le 14 novembre 2026.\n11. [A Benchmark to Understand the Role of Knowledge Graphs on LLM's Accuracy for Question Answering on Enterprise SQL Databases (arXiv 2311.07509)](https://arxiv.org/abs/2311.07509) — résumé, puis extraits relus le 14 novembre 2026.",
+  "categorie": "coherence",
+  "motif": "Lever la contradiction entre « résumé seulement » dans ## Sources et la première puce de ## Limites (#808).",
+  "origine": "plan 2027, lot REF-2-coherence"
+ },
+ {
+  "n": 1386,
+  "fichier": "chapitre-12-couche-semantique-ontologies.md",
+  "avant": "- Les deux articles [10] et [11] ne sont connus ici que par leur résumé; le caractère simulé de l'évaluation de [10] est repris du chapitre 21.",
+  "apres": "- Les deux articles [10] et [11], d'abord lus par leur seul résumé, ont été relus par extraits le 14 novembre 2026; le caractère simulé de l'évaluation de [10] concorde avec le chapitre 21.",
+  "categorie": "coherence",
+  "motif": "Lever la contradiction interne dans ## Limites entre la puce #808 et la puce ultérieure de fin de section.",
+  "origine": "plan 2027, lot REF-2-coherence"
+ },
+ {
+  "n": 1387,
+  "fichier": "chapitre-13-ingenierie-contexte.md",
+  "avant": "3. [Liu et coll. — Lost in the Middle: How Language Models Use Long Contexts (TACL, arXiv 2307.03172)](https://arxiv.org/abs/2307.03172) — résumé lu.",
+  "apres": "3. [Liu et coll. — Lost in the Middle: How Language Models Use Long Contexts (TACL, arXiv 2307.03172)](https://arxiv.org/abs/2307.03172) — résumé, puis extraits relus le 14 novembre 2026.",
+  "categorie": "coherence",
+  "motif": "Aligner [3] dans ## Sources avec la relecture par extraits consignée en ## Limites (#809).",
+  "origine": "plan 2027, lot REF-2-coherence"
+ },
+ {
+  "n": 1388,
+  "fichier": "chapitre-13-ingenierie-contexte.md",
+  "avant": "12. [Liu et coll. — Agent Skills in the Wild (arXiv 2601.10338)](https://arxiv.org/abs/2601.10338) — prépublication; résumé lu.",
+  "apres": "12. [Liu et coll. — Agent Skills in the Wild (arXiv 2601.10338)](https://arxiv.org/abs/2601.10338) — prépublication; résumé, puis extraits relus le 14 novembre 2026.",
+  "categorie": "coherence",
+  "motif": "Aligner [12] dans ## Sources avec la relecture par extraits consignée en ## Limites (#809).",
+  "origine": "plan 2027, lot REF-2-coherence"
+ },
+ {
+  "n": 1389,
+  "fichier": "chapitre-13-ingenierie-contexte.md",
+  "avant": "14. [Chatlatanagulchai et coll. — Agent READMEs (arXiv 2511.12884, v2)](https://arxiv.org/abs/2511.12884) — prépublication; résumé lu.",
+  "apres": "14. [Chatlatanagulchai et coll. — Agent READMEs (arXiv 2511.12884, v2)](https://arxiv.org/abs/2511.12884) — prépublication; résumé, puis extraits relus le 14 novembre 2026.",
+  "categorie": "coherence",
+  "motif": "Aligner [14] dans ## Sources avec la relecture par extraits consignée en ## Limites (#809).",
+  "origine": "plan 2027, lot REF-2-coherence"
+ },
+ {
+  "n": 1390,
+  "fichier": "chapitre-14-memoire.md",
+  "avant": "Les articles d'arXiv ont été lus au niveau du résumé, sauf mention contraire;",
+  "apres": "Les articles d'arXiv ont d'abord été lus au niveau du résumé, puis relus par extraits le 14 novembre 2026;",
+  "categorie": "coherence",
+  "motif": "Aligner l'État de référence avec la puce #810 de ## Limites ([1] à [28] relues au-delà du résumé).",
+  "origine": "plan 2027, lot REF-2-coherence"
+ },
+ {
+  "n": 1391,
+  "fichier": "chapitre-14-memoire.md",
+  "avant": "(articles d'arXiv : page de résumé, sauf [1] et [14], lus dans le texte); [5], [15], [17], [19], [20], [25], [26] et [27] relues le 12 novembre 2026 :",
+  "apres": "(articles d'arXiv : initialement page de résumé, sauf [1] et [14], lus dans le texte); [5], [15], [17], [19], [20], [25], [26] et [27] relues le 12 novembre 2026; sources [1] à [28] relues par extraits le 14 novembre 2026 :",
+  "categorie": "coherence",
+  "motif": "Aligner l'en-tête de ## Sources avec la relecture par extraits consignée en ## Limites (#810), en plaçant la mention des sources [1] à [28] hors de la parenthèse consacrée aux seuls articles d'arXiv.",
+  "origine": "plan 2027, lot REF-2-coherence"
+ },
+ {
+  "n": 1392,
+  "fichier": "chapitre-14-memoire.md",
+  "avant": "- La plupart des articles d'arXiv ont été lus au niveau du résumé. Les chiffres cités pour Mem0, Zep, AgentPoison et LongMemEval sont ceux des résumés, et leurs conditions de mesure n'ont pas été vérifiées.",
+  "apres": "- Les articles d'arXiv, d'abord lus au niveau du résumé, ont été recoupés par extraits le 14 novembre 2026; les conditions complètes de mesure des bancs Mem0, Zep, AgentPoison et LongMemEval ne sont toutefois pas toutes vérifiées.",
+  "categorie": "coherence",
+  "motif": "Lever la contradiction entre cette puce et les ajouts de #766, #767, #768, #771 et #810.",
+  "origine": "plan 2027, lot REF-2-coherence"
+ },
+ {
+  "n": 1393,
+  "fichier": "chapitre-15-donnees-pretes-agents.md",
+  "avant": "Articles lus au niveau du résumé seulement :",
+  "apres": "Articles d'abord lus au niveau du résumé, puis relus par extraits le 14 novembre 2026 :",
+  "categorie": "coherence",
+  "motif": "Aligner l'intertitre de ## Sources ([6], [7], [8]) avec la puce #811 de ## Limites.",
+  "origine": "plan 2027, lot REF-2-coherence"
+ },
+ {
+  "n": 1394,
+  "fichier": "chapitre-16-topologies-patrons.md",
+  "avant": "[1] à [11] sont des pages primaires lues pour ce chapitre, dont trois par leur seul résumé;",
+  "apres": "[1] à [11] sont des pages primaires lues pour ce chapitre (dont [2], [8], [9] et [10] relues par extraits le 14 novembre 2026);",
+  "categorie": "coherence",
+  "motif": "Aligner l'État de référence avec la puce #812 de ## Limites.",
+  "origine": "plan 2027, lot REF-2-coherence"
+ },
+ {
+  "n": 1395,
+  "fichier": "chapitre-16-topologies-patrons.md",
+  "avant": "L'article fondateur de Du et coll. rapporte, selon son résumé,",
+  "apres": "L'article fondateur de Du et coll. rapporte",
+  "categorie": "coherence",
+  "motif": "Éviter la contradiction interne dans un paragraphe déjà complété par #774 au-delà du résumé.",
+  "origine": "plan 2027, lot REF-2-coherence"
+ },
+ {
+  "n": 1396,
+  "fichier": "chapitre-16-topologies-patrons.md",
+  "avant": "Selon son résumé, les systèmes de débat,",
+  "apres": "Les systèmes de débat,",
+  "categorie": "coherence",
+  "motif": "Éviter la contradiction interne dans un paragraphe déjà complété par #775 au-delà du résumé.",
+  "origine": "plan 2027, lot REF-2-coherence"
+ },
+ {
+  "n": 1397,
+  "fichier": "chapitre-16-topologies-patrons.md",
+  "avant": "8. [Du et coll. — Improving Factuality and Reasoning in Language Models through Multiagent Debate (arXiv 2305.14325)](https://arxiv.org/abs/2305.14325) — résumé seulement.\n9. [Smit et coll. — Should we be going MAD? (arXiv 2311.17371)](https://arxiv.org/abs/2311.17371) — résumé seulement.\n10. [Cemri et coll. — Why Do Multi-Agent LLM Systems Fail? (arXiv 2503.13657v3)](https://arxiv.org/abs/2503.13657) — résumé seulement.",
+  "apres": "8. [Du et coll. — Improving Factuality and Reasoning in Language Models through Multiagent Debate (arXiv 2305.14325)](https://arxiv.org/abs/2305.14325) — résumé, puis extraits relus le 14 novembre 2026.\n9. [Smit et coll. — Should we be going MAD? (arXiv 2311.17371)](https://arxiv.org/abs/2311.17371) — résumé, puis extraits relus le 14 novembre 2026.\n10. [Cemri et coll. — Why Do Multi-Agent LLM Systems Fail? (arXiv 2503.13657v3)](https://arxiv.org/abs/2503.13657) — résumé, puis extraits relus le 14 novembre 2026.",
+  "categorie": "coherence",
+  "motif": "Aligner [8], [9] et [10] dans ## Sources avec la relecture par extraits consignée en ## Limites (#812).",
+  "origine": "plan 2027, lot REF-2-coherence"
+ },
+ {
+  "n": 1398,
+  "fichier": "chapitre-18-execution-durable-transactions.md",
+  "avant": "13. [GoEX: Perspectives and Designs Towards a Runtime for Autonomous LLM Applications — arXiv 2404.06921](https://arxiv.org/abs/2404.06921) (résumé)",
+  "apres": "13. [GoEX: Perspectives and Designs Towards a Runtime for Autonomous LLM Applications — arXiv 2404.06921](https://arxiv.org/abs/2404.06921) (résumé, puis extraits relus le 14 novembre 2026)",
+  "categorie": "coherence",
+  "motif": "Aligner [13] dans ## Sources avec la relecture par extraits consignée en ## Limites (#813).",
+  "origine": "plan 2027, lot REF-2-coherence"
+ },
+ {
+  "n": 1399,
+  "fichier": "chapitre-19-orchestration-evenementielle.md",
+  "avant": "12. [ESAA: Event Sourcing for Autonomous Agents (arXiv 2602.23193)](https://arxiv.org/abs/2602.23193) (résumé)",
+  "apres": "12. [ESAA: Event Sourcing for Autonomous Agents (arXiv 2602.23193)](https://arxiv.org/abs/2602.23193) (résumé, puis extraits relus le 14 novembre 2026)",
+  "categorie": "coherence",
+  "motif": "Aligner [12] dans ## Sources avec la relecture par extraits consignée en ## Limites (#814).",
+  "origine": "plan 2027, lot REF-2-coherence"
+ },
+ {
+  "n": 1400,
+  "fichier": "chapitre-19-orchestration-evenementielle.md",
+  "avant": "- **ESAA** n'est connu que par son résumé;",
+  "apres": "- **ESAA**, d'abord connu par son résumé, a été relu par extraits le 14 novembre 2026;",
+  "categorie": "coherence",
+  "motif": "Lever la contradiction interne dans ## Limites entre #814 et la mention ultérieure d'ESAA.",
+  "origine": "plan 2027, lot REF-2-coherence"
+ },
+ {
+  "n": 1401,
+  "fichier": "chapitre-20-cadriciels-orchestration.md",
+  "avant": "sauf [14], lue en résumé,",
+  "apres": "sauf [14] (d'abord lue en résumé, puis relue par extraits le 14 novembre 2026),",
+  "categorie": "coherence",
+  "motif": "Aligner [14] dans l'État de référence avec #815 (à l'intérieur de #429, avant #724).",
+  "origine": "plan 2027, lot REF-2-coherence"
+ },
+ {
+  "n": 1402,
+  "fichier": "chapitre-20-cadriciels-orchestration.md",
+  "avant": "[16] à [25] ont été ajoutées le 14 novembre 2026, [21] par son seul résumé.",
+  "apres": "[16] à [25] ont été ajoutées le 14 novembre 2026 ([21] d'abord en résumé, puis relue par extraits).",
+  "categorie": "coherence",
+  "motif": "Aligner [21] dans l'État de référence avec #815 et #776 (à l'intérieur de #724).",
+  "origine": "plan 2027, lot REF-2-coherence"
+ },
+ {
+  "n": 1403,
+  "fichier": "chapitre-20-cadriciels-orchestration.md",
+  "avant": "La seconde, connue par son résumé, porte sur 5 669 rapports de bogue et 809 demandes de fonction dans cinq cadriciels.",
+  "apres": "La seconde, d'abord connue par son résumé puis relue par extraits, porte sur 5 669 rapports de bogue et 809 demandes de fonction dans cinq cadriciels.",
+  "categorie": "coherence",
+  "motif": "Aligner L212 avec #776 et #815 (à l'intérieur de #438 sans toucher #776).",
+  "origine": "plan 2027, lot REF-2-coherence"
+ },
+ {
+  "n": 1404,
+  "fichier": "chapitre-20-cadriciels-orchestration.md",
+  "avant": "14. [MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework (arXiv 2308.00352)](https://arxiv.org/abs/2308.00352) — résumé seulement",
+  "apres": "14. [MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework (arXiv 2308.00352)](https://arxiv.org/abs/2308.00352) — résumé, puis extraits relus le 14 novembre 2026",
+  "categorie": "coherence",
+  "motif": "Aligner [14] dans ## Sources avec #815.",
+  "origine": "plan 2027, lot REF-2-coherence"
+ },
+ {
+  "n": 1405,
+  "fichier": "chapitre-20-cadriciels-orchestration.md",
+  "avant": "— prépublication; résumé seulement.\n\nPages lues le 14 novembre 2026 :",
+  "apres": "— prépublication; résumé, puis extraits relus le 14 novembre 2026.\n\nPages lues le 14 novembre 2026 :",
+  "categorie": "coherence",
+  "motif": "Aligner [21] dans ## Sources avec #815 et #776 (à l'intérieur de #725).",
+  "origine": "plan 2027, lot REF-2-coherence"
+ },
+ {
+  "n": 1406,
+  "fichier": "chapitre-20-cadriciels-orchestration.md",
+  "avant": "MetaGPT n'est connu que par le résumé de son article;",
+  "apres": "MetaGPT, d'abord connu par son résumé, a été relu par extraits le 14 novembre 2026;",
+  "categorie": "coherence",
+  "motif": "Lever la contradiction entre cette puce de ## Limites et #815.",
+  "origine": "plan 2027, lot REF-2-coherence"
+ },
+ {
+  "n": 1407,
+  "fichier": "chapitre-20-cadriciels-orchestration.md",
+  "avant": "[21] n'est connue que par son résumé, et ses versions antérieures portaient un autre titre et un échantillon plus petit.",
+  "apres": "[21], d'abord connue par son résumé, a été relue par extraits, et ses versions antérieures portaient un autre titre et un échantillon plus petit.",
+  "categorie": "coherence",
+  "motif": "Lever la contradiction entre cette puce de ## Limites (#442) et #815.",
+  "origine": "plan 2027, lot REF-2-coherence"
+ },
+ {
+  "n": 1408,
+  "fichier": "chapitre-22-humain-dans-la-boucle.md",
+  "avant": "Selon son résumé, les données disponibles suggèrent",
+  "apres": "D'après cet article, les données disponibles suggèrent",
+  "categorie": "coherence",
+  "motif": "Éviter l'indication de lecture au seul résumé alors que #817 consigne la relecture de [17] par extraits.",
+  "origine": "plan 2027, lot REF-2-coherence"
+ },
+ {
+  "n": 1409,
+  "fichier": "chapitre-22-humain-dans-la-boucle.md",
+  "avant": "17. [Green — The Flaws of Policies Requiring Human Oversight of Government Algorithms (Computer Law & Security Review 45, 2022; arXiv 2109.05067)](https://arxiv.org/abs/2109.05067) — résumé seulement.",
+  "apres": "17. [Green — The Flaws of Policies Requiring Human Oversight of Government Algorithms (Computer Law & Security Review 45, 2022; arXiv 2109.05067)](https://arxiv.org/abs/2109.05067) — résumé, puis extraits relus le 14 novembre 2026.",
+  "categorie": "coherence",
+  "motif": "Aligner [17] dans ## Sources avec #817 (à l'intérieur de #383).",
+  "origine": "plan 2027, lot REF-2-coherence"
+ },
+ {
+  "n": 1410,
+  "fichier": "chapitre-22-humain-dans-la-boucle.md",
+  "avant": "et [17] n'est connu que par son résumé.",
+  "apres": "et [17], d'abord connu par son résumé, a été relu par extraits le 14 novembre 2026.",
+  "categorie": "coherence",
+  "motif": "Lever la contradiction interne dans ## Limites entre #385 et #817.",
+  "origine": "plan 2027, lot REF-2-coherence"
+ },
+ {
+  "n": 1411,
+  "fichier": "chapitre-23-architecture-reference.md",
+  "avant": "20. [Chan et coll. — Infrastructure for AI Agents (arXiv 2501.10114, v3 du 19 juin 2025; accepté à TMLR)](https://arxiv.org/abs/2501.10114) — résumé seulement.",
+  "apres": "20. [Chan et coll. — Infrastructure for AI Agents (arXiv 2501.10114, v3 du 19 juin 2025; accepté à TMLR)](https://arxiv.org/abs/2501.10114) — résumé, puis extraits relus le 14 novembre 2026.",
+  "categorie": "coherence",
+  "motif": "Aligner [20] dans ## Sources avec #818 (à l'intérieur de #365).",
+  "origine": "plan 2027, lot REF-2-coherence"
+ },
+ {
+  "n": 1412,
+  "fichier": "chapitre-23-architecture-reference.md",
+  "avant": "d'opinion, lus par le même outil d'extraction; [20] n'est connu que par son résumé,",
+  "apres": "d'opinion, lus par le même outil d'extraction; [20], d'abord connu par son résumé, a été relu par extraits,",
+  "categorie": "coherence",
+  "motif": "Lever la contradiction interne dans ## Limites entre #366 et #818 (disjoint de la modification [21]).",
+  "origine": "plan 2027, lot REF-2-coherence"
+ },
+ {
+  "n": 1413,
+  "fichier": "chapitre-24-passerelles-integration.md",
+  "avant": "[13] à [19] ont été ajoutées le 14 novembre 2026, [16] par son seul résumé.",
+  "apres": "[13] à [19] ont été ajoutées le 14 novembre 2026 ([16] d'abord par son résumé, puis relue par extraits).",
+  "categorie": "coherence",
+  "motif": "Aligner l'État de référence avec #819 et #834 (à l'intérieur de #728).",
+  "origine": "plan 2027, lot REF-2-coherence"
+ },
+ {
+  "n": 1414,
+  "fichier": "chapitre-24-passerelles-integration.md",
+  "avant": "— prépublication; résumé seulement.\n17. [agentgateway",
+  "apres": "— prépublication; résumé, puis extraits relus le 14 novembre 2026.\n17. [agentgateway",
+  "categorie": "coherence",
+  "motif": "Aligner [16] dans ## Sources avec #819 et #834 (à l'intérieur de #729).",
+  "origine": "plan 2027, lot REF-2-coherence"
+ },
+ {
+  "n": 1415,
+  "fichier": "chapitre-24-passerelles-integration.md",
+  "avant": "[15] est évalué par ses auteurs, hors ligne. [16] n'est connu que par son résumé.",
+  "apres": "[15] est évalué par ses auteurs, hors ligne. [16], d'abord connu par son résumé, a été relu par extraits.",
+  "categorie": "coherence",
+  "motif": "Lever la contradiction interne dans ## Limites entre #410 et #819/#834.",
+  "origine": "plan 2027, lot REF-2-coherence"
+ },
+ {
+  "n": 1416,
+  "fichier": "chapitre-12-couche-semantique-ontologies.md",
+  "avant": "D'après le résumé, l'idée est de représenter explicitement l'intention de chaque agent et de la confronter au contexte du processus d'affaires.",
+  "apres": "D'après cet article, l'idée est de représenter explicitement l'intention de chaque agent et de la confronter au contexte du processus d'affaires.",
+  "categorie": "coherence",
+  "motif": "Supprimer l'attribut « D'après le résumé » pour [10] en L250, cohérent avec la relecture par extraits (#808) tout en préservant l'indication en L254 sur les 600 exécutions simulées lue au chapitre 21.",
+  "origine": "plan 2027, lot REF-2-coherence"
+ },
+ {
+  "n": 1417,
+  "fichier": "chapitre-12-couche-semantique-ontologies.md",
+  "avant": "Le résumé rapporte une évaluation de 600 exécutions sur trois cadriciels et quatre scénarios d'entreprise.",
+  "apres": "L'article rapporte une évaluation de 600 exécutions sur trois cadriciels et quatre scénarios d'entreprise.",
+  "categorie": "coherence",
+  "motif": "Supprimer l'attribut « Le résumé rapporte » pour [10] en L252, cohérent avec la relecture par extraits (#808) tout en préservant l'indication en L254.",
+  "origine": "plan 2027, lot REF-2-coherence"
+ },
+ {
+  "n": 1418,
+  "fichier": "chapitre-18-execution-durable-transactions.md",
+  "avant": "Sources non lues :\n\n14.",
+  "apres": "Sources non lues ou non exploitées dans la rédaction :\n\n14.",
+  "categorie": "coherence",
+  "motif": "Aligner l'intertitre de ## Sources (L296) avec le fait que [14] reste non lue tandis que [15] a été retrouvée à l'audit sans être exploitée dans le corps du chapitre (avant la borne #485).",
+  "origine": "plan 2027, lot REF-2-coherence"
+ },
+ {
+  "n": 1419,
+  "fichier": "chapitre-23-architecture-reference.md",
+  "avant": "Le résumé de l'article n'emploie pas le mot « maillage »,",
+  "apres": "L'article n'emploie pas le mot « maillage » au sens d'une architecture d'agents,",
+  "categorie": "coherence",
+  "motif": "Aligner L107 avec la lecture du texte complet d'arXiv 2501.10114 [20] (#818) : les trois occurrences de « mesh » dans l'article correspondent uniquement au prénom « Dharmesh » (à l'intérieur de #360).",
+  "origine": "plan 2027, lot REF-2-coherence"
+ },
+ {
+  "n": 1420,
+  "fichier": "chapitre-26-plateformes-entreprise.md",
+  "avant": "16. [The Register — annonces de ServiceNow, 5 mai 2026](https://theregister.com/2026/05/05/servicenow_clears_agents_for_landing/) — article de presse, lu.",
+  "apres": "16. [The Register — annonces de ServiceNow, 5 mai 2026](https://www.theregister.com/software/2026/05/05/servicenow-adds-agent-kill-switches-to-ai-control-tower/5228579) — article de presse, lu.",
+  "categorie": "renvoi",
+  "motif": "Mettre à jour l'URL de The Register vers sa cible canonique directe après redirection permanente (HTTP 200).",
+  "origine": "plan 2027, lot REF-3-renvoi"
+ },
+ {
+  "n": 1421,
+  "fichier": "chapitre-29-identite-agentique.md",
+  "avant": "14. [Cloudflare — agents signés et robots vérifiés](https://developers.cloudflare.com/bots/concepts/bot/signed-agents/)",
+  "apres": "14. [Cloudflare — agents signés et robots vérifiés](https://developers.cloudflare.com/bots/concepts/bot/verified-bots/)",
+  "categorie": "renvoi",
+  "motif": "Mettre à jour l'URL Cloudflare vers la page canonique Verified bots (redirection depuis signed-agents/ depuis le 1er juillet 2026, HTTP 200).",
+  "origine": "plan 2027, lot REF-3-renvoi"
+ },
+ {
+  "n": 1422,
+  "fichier": "chapitre-31-menaces.md",
+  "avant": "4. [Security Best Practices — spécification MCP 2026-07-28](https://modelcontextprotocol.io/specification/2026-07-28/basic/security_best_practices.md)",
+  "apres": "4. [Security Best Practices — spécification MCP 2026-07-28](https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/security_best_practices.md)",
+  "categorie": "renvoi",
+  "motif": "Aligner l'URL Security Best Practices de MCP sur sa destination canonique après redirection (identique à la source [2] du chapitre 30).",
+  "origine": "plan 2027, lot REF-3-renvoi"
+ },
+ {
+  "n": 1423,
+  "fichier": "chapitre-35-cadres-internationaux.md",
+  "avant": "6. [NIST — AI Agent Standards Initiative](https://www.nist.gov/caisi/ai-agent-standards-initiative)",
+  "apres": "6. [NIST — SI Agent Standards Initiative (anciennement AI Agent Standards Initiative)](https://www.nist.gov/super-intelligence/si-agent-standards-initiative)",
+  "categorie": "renvoi",
+  "motif": "Mettre à jour l'URL et l'intitulé de l'initiative du NIST vers sa page canonique actuelle après redirection (HTTP 200, mise à jour du 9 novembre 2026).",
+  "origine": "plan 2027, lot REF-3-renvoi"
+ },
+ {
+  "n": 1424,
+  "fichier": "chapitre-25-integration-patrimoine.md",
+  "avant": "5. [IBM Documentation — CICS TS 6.x, fonctionnement du serveur MCP de CICS](https://www.ibm.com/docs/en/cics-ts/6.x?topic=ai-how-it-works-cics-mcp-server)\n6. [IBM Documentation — CICS TS 6.x, fonctionnement des agents CICS](https://www.ibm.com/docs/en/cics-ts/6.x?topic=ai-how-it-works-cics-agents)",
+  "apres": "5. [IBM Documentation — CICS TS 6.x, fonctionnement du serveur MCP de CICS](https://www.ibm.com/docs/en/cics-ts/6.x?topic=ai-how-it-works-cics-mcp-server) — accès restreint le 14 novembre 2026 (HTTP 403 IBM; contenu relu le 12 novembre et confirmé par recherche web).\n6. [IBM Documentation — CICS TS 6.x, fonctionnement des agents CICS](https://www.ibm.com/docs/en/cics-ts/6.x?topic=ai-how-it-works-cics-agents) — accès restreint le 14 novembre 2026 (HTTP 403 IBM; contenu relu le 12 novembre et confirmé par recherche web).",
+  "categorie": "coherence",
+  "motif": "Consigner le blocage anti-robot HTTP 403 d'IBM relevé le 14 novembre 2026 et le recours à la recherche web de confirmation.",
+  "origine": "plan 2027, lot REF-3-coherence"
+ },
+ {
+  "n": 1425,
+  "fichier": "chapitre-25-integration-patrimoine.md",
+  "avant": "[2] n'a pu être relu (page en maintenance, PDF hors délai); sa date est confirmée par un extrait de recherche seulement.",
+  "apres": "[2] (PDF de 4 pages, © 2025) est accessible le 14 novembre 2026 (HTTP 200) et confirme le modèle mixte et les quatre questions; à cette date, [5] et [6] renvoient HTTP 403 au script automatique (blocage IBM), leur contenu demeurant confirmé par la relecture du 12 novembre et par recherche web.",
+  "categorie": "coherence",
+  "motif": "Mettre à jour les limites du chapitre 25 : le PDF Capco [2] est bien accessible et vérifié le 14 novembre 2026, tandis que [5] et [6] sont en accès restreint HTTP 403.",
+  "origine": "plan 2027, lot REF-3-coherence"
+ },
+ {
+  "n": 1426,
+  "fichier": "chapitre-29-identite-agentique.md",
+  "avant": "- Aucun chiffre d'adoption n'est cité : la seule estimation rencontrée est non chiffrée et de source secondaire.\n- La liste d'attributs d'annuaire de 29.3 et la grille de décision sont des synthèses propres à ce chapitre.",
+  "apres": "- Aucun chiffre d'adoption n'est cité : la seule estimation rencontrée est non chiffrée et de source secondaire.\n- Lors de l'audit du 14 novembre 2026, [10] (W3C DID v1.0), [12] (CSA) et [15] (W3C DID v1.1) ont renvoyé un accès restreint (HTTP 403 anti-robot au script automatique); leurs titres, dates et statuts (recommandation DID v1.0 du 19 juillet 2022; recommandation candidate DID v1.1 du 5 mars 2026) sont confirmés par recherche web.\n- La liste d'attributs d'annuaire de 29.3 et la grille de décision sont des synthèses propres à ce chapitre.",
+  "categorie": "coherence",
+  "motif": "Consigner dans les limites du chapitre 29 les trois sources en accès restreint (HTTP 403) lors de l'audit du 14 novembre 2026.",
+  "origine": "plan 2027, lot REF-3-coherence"
+ },
+ {
+  "n": 1427,
+  "fichier": "chapitre-30-autorisation-delegation.md",
+  "avant": "toutes sont des pages primaires lues pour ce chapitre ([13] en résumé seulement), sauf [16] et [17], marquées secondaires.",
+  "apres": "toutes sont des pages primaires lues pour ce chapitre ([13] ayant été relue au-delà du résumé le 14 novembre 2026), sauf [16] et [17], marquées secondaires.",
+  "categorie": "coherence",
+  "motif": "Aligner l'État de référence du chapitre 30 sur la relecture au-delà du résumé de [13] enregistrée au lot P2-F3.",
+  "origine": "plan 2027, lot REF-3-coherence"
+ },
+ {
+  "n": 1428,
+  "fichier": "chapitre-30-autorisation-delegation.md",
+  "avant": "13. [Authenticated Delegation and Authorized AI Agents (arXiv 2501.09674)](https://arxiv.org/abs/2501.09674) — résumé seulement",
+  "apres": "13. [Authenticated Delegation and Authorized AI Agents (arXiv 2501.09674)](https://arxiv.org/abs/2501.09674) — prépublication, résumé puis extraits du texte relus le 14 novembre 2026.",
+  "categorie": "coherence",
+  "motif": "Supprimer la mention obsolète « résumé seulement » sur la source [13], relue au-delà du résumé dans P2-F3.",
+  "origine": "plan 2027, lot REF-3-coherence"
+ },
+ {
+  "n": 1429,
+  "fichier": "chapitre-31-menaces.md",
+  "avant": "Toutes ont été lues pour ce chapitre, les articles par leur résumé seulement; [11] à [13] sont des billets.",
+  "apres": "Toutes ont été lues pour ce chapitre (les articles [6] à [10] et le bilan [13], d'abord lus par leur résumé, ont été relus au-delà du résumé le 14 novembre 2026); [11] à [13] sont des billets.",
+  "categorie": "coherence",
+  "motif": "Aligner l'État de référence du chapitre 31 sur la relecture au-delà du résumé consignée dans P2-F3.",
+  "origine": "plan 2027, lot REF-3-coherence"
+ },
+ {
+  "n": 1430,
+  "fichier": "chapitre-31-menaces.md",
+  "avant": "Leur résumé assimile le traitement d'un tel contenu à une exécution de code arbitraire",
+  "apres": "Greshake et ses coauteurs assimilent le traitement d'un tel contenu à une exécution de code arbitraire",
+  "categorie": "coherence",
+  "motif": "Lever la mention résiduelle « Leur résumé » après la relecture de [6] au-delà du résumé.",
+  "origine": "plan 2027, lot REF-3-coherence"
+ },
+ {
+  "n": 1431,
+  "fichier": "chapitre-31-menaces.md",
+  "avant": "même sans attaque [7]. Le résumé ne publie pas de taux. Il rappelle en revanche que sécurité et utilité se mesurent ensemble",
+  "apres": "même sans attaque [7]. Sans reprendre ici les taux chiffrés de l'article par modèle et par défense, celui-ci rappelle que sécurité et utilité se mesurent ensemble",
+  "categorie": "coherence",
+  "motif": "Corriger l'affirmation résiduelle « Le résumé ne publie pas de taux » : AgentDojo [7], relu au-delà du résumé, publie bien des tableaux de taux d'utilité et de succès d'attaque.",
+  "origine": "plan 2027, lot REF-3-coherence"
+ },
+ {
+  "n": 1432,
+  "fichier": "chapitre-31-menaces.md",
+  "avant": " Le résumé ne donne aucun chiffre.\n\nUn article collectif",
+  "apres": "\n\nUn article collectif",
+  "categorie": "coherence",
+  "motif": "Supprimer la phrase résiduelle « Le résumé ne donne aucun chiffre. » devenue contradictoire avec la relecture de [9] au-delà du résumé.",
+  "origine": "plan 2027, lot REF-3-coherence"
+ },
+ {
+  "n": 1433,
+  "fichier": "chapitre-31-menaces.md",
+  "avant": "Selon le résumé, ces menaces dépassent les cadres habituels",
+  "apres": "Selon les auteurs, ces menaces dépassent les cadres habituels",
+  "categorie": "coherence",
+  "motif": "Lever la mention résiduelle « Selon le résumé » après la relecture de [10] au-delà du résumé.",
+  "origine": "plan 2027, lot REF-3-coherence"
+ },
+ {
+  "n": 1434,
+  "fichier": "chapitre-31-menaces.md",
+  "avant": "6. [Greshake et coll. — Not what you've signed up for (arXiv 2302.12173)](https://arxiv.org/abs/2302.12173) — résumé.\n7. [Debenedetti et coll. — AgentDojo (arXiv 2406.13352)](https://arxiv.org/abs/2406.13352) — résumé.\n8. [Beurer-Kellner et coll. — Design Patterns for Securing LLM Agents against Prompt Injections (arXiv 2506.08837)](https://arxiv.org/abs/2506.08837) — résumé.\n9. [Lee et Tiwari — Prompt Infection (arXiv 2410.07283)](https://arxiv.org/abs/2410.07283) — résumé.\n10. [Schroeder de Witt et coll. — Open Challenges in Multi-Agent Security (arXiv 2505.02077)](https://arxiv.org/abs/2505.02077) — résumé.",
+  "apres": "6. [Greshake et coll. — Not what you've signed up for (arXiv 2302.12173)](https://arxiv.org/abs/2302.12173) — prépublication, résumé puis extraits relus le 14 novembre 2026.\n7. [Debenedetti et coll. — AgentDojo (arXiv 2406.13352)](https://arxiv.org/abs/2406.13352) — prépublication, résumé puis extraits relus le 14 novembre 2026.\n8. [Beurer-Kellner et coll. — Design Patterns for Securing LLM Agents against Prompt Injections (arXiv 2506.08837)](https://arxiv.org/abs/2506.08837) — prépublication, résumé puis extraits relus le 14 novembre 2026.\n9. [Lee et Tiwari — Prompt Infection (arXiv 2410.07283)](https://arxiv.org/abs/2410.07283) — prépublication, résumé puis extraits relus le 14 novembre 2026.\n10. [Schroeder de Witt et coll. — Open Challenges in Multi-Agent Security (arXiv 2505.02077)](https://arxiv.org/abs/2505.02077) — prépublication, résumé puis extraits relus le 14 novembre 2026.",
+  "categorie": "coherence",
+  "motif": "Mettre à jour les notices de sources [6] à [10] conformément à leur relecture au-delà du résumé dans P2-F3.",
+  "origine": "plan 2027, lot REF-3-coherence"
+ },
+ {
+  "n": 1435,
+  "fichier": "chapitre-31-menaces.md",
+  "avant": "13. [OWASP GenAI Security Project — GenAI and Agentic AI Exploit Roundup Q3 2026, 8 octobre 2026](https://genai.owasp.org/2026/10/08/genai-and-agentic-ai-exploit-roundup-q3-2026/) — bilan d'incidents, lu le 12 novembre 2026 par résumé.",
+  "apres": "13. [OWASP GenAI Security Project — GenAI and Agentic AI Exploit Roundup Q3 2026, 8 octobre 2026](https://genai.owasp.org/2026/10/08/genai-and-agentic-ai-exploit-roundup-q3-2026/) — bilan d'incidents, relu au-delà du résumé le 14 novembre 2026 (accès HTTP 403 intermittent au script automatique, confirmé par recherche web).",
+  "categorie": "coherence",
+  "motif": "Aligner la notice de [13] sur P2-F3 et consigner le blocage WAF intermittent constaté le 14 novembre 2026.",
+  "origine": "plan 2027, lot REF-3-coherence"
+ },
+ {
+  "n": 1436,
+  "fichier": "chapitre-31-menaces.md",
+  "avant": "- Les cinq articles sont cités d'après leur résumé. Les patrons de [8], la méthode de [9] et la taxonomie de [10] ne sont pas décrits faute de lecture du texte.",
+  "apres": "- La liste détaillée des patrons de [8], la méthode complète de [9] et l'ensemble de la taxonomie de [10] ne sont pas exposés dans ce chapitre.",
+  "categorie": "coherence",
+  "motif": "Supprimer la contradiction interne entre la ligne 297 (P2-F3) et la ligne 300 (« cités d'après leur résumé ... faute de lecture du texte »).",
+  "origine": "plan 2027, lot REF-3-coherence"
+ },
+ {
+  "n": 1437,
+  "fichier": "chapitre-31-menaces.md",
+  "avant": "- Aucun chiffre de prévalence ni de taux de succès d'attaque n'est cité, faute de source lue qui en donne. Les appuis de 31.7 restent minces.",
+  "apres": "- Aucun chiffre de prévalence en production (absent des sources lues, dont [2] et [13]) ni de taux de succès d'attaque issu des études expérimentales (bien que [7] et [9] en publient) n'est repris dans ce chapitre. Les appuis de 31.7 restent minces.",
+  "categorie": "coherence",
+  "motif": "Corriger l'incise contradictoire « faute de source lue qui en donne » à la ligne 304 (AgentDojo [7] et Prompt Infection [9], relus au-delà du résumé dans P2-F3, publient bien des taux de succès d'attaque) tout en conservant le constat que la prévalence en production manque et que les appuis de 31.7 restent minces.",
+  "origine": "plan 2027, lot REF-3-coherence"
+ },
+ {
+  "n": 1438,
+  "fichier": "chapitre-32-assurance.md",
+  "avant": "9. [The Attacker Moves Second (arXiv 2510.09023)](https://arxiv.org/abs/2510.09023) — résumé.\n10. [AutoDojo (arXiv 2606.15057)](https://arxiv.org/abs/2606.15057) — résumé.\n11. [Adaptive Evaluation of Out-of-Band Defenses (arXiv 2606.26479)](https://arxiv.org/abs/2606.26479) — résumé.",
+  "apres": "9. [The Attacker Moves Second (arXiv 2510.09023)](https://arxiv.org/abs/2510.09023) — prépublication, résumé puis extraits relus le 14 novembre 2026.\n10. [AutoDojo (arXiv 2606.15057)](https://arxiv.org/abs/2606.15057) — prépublication, résumé puis extraits relus le 14 novembre 2026.\n11. [Adaptive Evaluation of Out-of-Band Defenses (arXiv 2606.26479)](https://arxiv.org/abs/2606.26479) — prépublication, résumé puis extraits relus le 14 novembre 2026.",
+  "categorie": "coherence",
+  "motif": "Mettre à jour les notices de sources [9] à [11] conformément à leur relecture au-delà du résumé dans P2-F3.",
+  "origine": "plan 2027, lot REF-3-coherence"
+ },
+ {
+  "n": 1439,
+  "fichier": "chapitre-32-assurance.md",
+  "avant": "- Pour [9], [10] et [11], seuls les résumés ont été lus. Ce sont des prépublications; leur évaluation par les pairs n'a pas été vérifiée.",
+  "apres": "- Pour [9], [10] et [11], ce sont des prépublications; leur évaluation par les pairs n'a pas été vérifiée.",
+  "categorie": "coherence",
+  "motif": "Supprimer la contradiction directe avec la limite P2-F3 sur la relecture de [9], [10] et [11] au-delà du résumé.",
+  "origine": "plan 2027, lot REF-3-coherence"
+ },
+ {
+  "n": 1440,
+  "fichier": "chapitre-32-assurance.md",
+  "avant": "- L'audit du 12 novembre 2026 a relu [1] (notice et texte), [3], [4], [5], [7], [10] et [11].\n- Les lectures « pour un agent » de SP 800-207, les trois familles de règles, les quatre gestes de la section 32.2 et les cinq règles de la section 32.5 sont des déductions de ce chapitre.",
+  "apres": "- L'audit du 12 novembre 2026 a relu [1] (notice et texte), [3], [4], [5], [7], [10] et [11].\n- Lors de l'audit du 14 novembre 2026, [7] (W3C Agent Conformance and Benchmarking Community Group) a retourné HTTP 403 (protection Cloudflare); sa charte et ses livrables sont confirmés par recherche web.\n- Les lectures « pour un agent » de SP 800-207, les trois familles de règles, les quatre gestes de la section 32.2 et les cinq règles de la section 32.5 sont des déductions de ce chapitre.",
+  "categorie": "coherence",
+  "motif": "Consigner l'accès restreint HTTP 403 du groupe W3C [7] lors de l'audit du 14 novembre 2026.",
+  "origine": "plan 2027, lot REF-3-coherence"
+ },
+ {
+  "n": 1441,
+  "fichier": "chapitre-33-observabilite-evaluation.md",
+  "avant": "et [16], connue par son résumé et relevée le 14 novembre 2026.",
+  "apres": "et [16], relevée le 14 novembre 2026 et relue au-delà du résumé avec [13] et [14].",
+  "categorie": "coherence",
+  "motif": "Aligner l'État de référence du chapitre 33 sur P2-F3 (#824).",
+  "origine": "plan 2027, lot REF-3-coherence"
+ },
+ {
+  "n": 1442,
+  "fichier": "chapitre-33-observabilite-evaluation.md",
+  "avant": "Le résumé de l'article rapporte qu'un agent fondé sur gpt-4o",
+  "apres": "L'article rapporte qu'un agent fondé sur gpt-4o",
+  "categorie": "coherence",
+  "motif": "Aligner la formulation sur la relecture de [13] au-delà du résumé.",
+  "origine": "plan 2027, lot REF-3-coherence"
+ },
+ {
+  "n": 1443,
+  "fichier": "chapitre-33-observabilite-evaluation.md",
+  "avant": "Une prépublication, connue par son résumé, mesure un coût voisin",
+  "apres": "Une prépublication mesure un coût voisin",
+  "categorie": "coherence",
+  "motif": "Supprimer la mention résiduelle « connue par son résumé » pour [16], relue au-delà du résumé dans P2-F3.",
+  "origine": "plan 2027, lot REF-3-coherence"
+ },
+ {
+  "n": 1444,
+  "fichier": "chapitre-33-observabilite-evaluation.md",
+  "avant": "Le texte n'est connu ici que par son résumé, et il mesure une part du banc rejoué, non un coût en dollars.",
+  "apres": "L'étude mesure une part du banc rejoué, non un coût en dollars.",
+  "categorie": "coherence",
+  "motif": "Supprimer la mention résiduelle « connu ici que par son résumé » pour [16].",
+  "origine": "plan 2027, lot REF-3-coherence"
+ },
+ {
+  "n": 1445,
+  "fichier": "chapitre-33-observabilite-evaluation.md",
+  "avant": "Une seule étude, connue par son résumé, mesure qu'un sous-ensemble",
+  "apres": "Une seule étude mesure qu'un sous-ensemble",
+  "categorie": "coherence",
+  "motif": "Aligner l'essentiel à retenir du chapitre 33 sur P2-F3.",
+  "origine": "plan 2027, lot REF-3-coherence"
+ },
+ {
+  "n": 1446,
+  "fichier": "chapitre-33-observabilite-evaluation.md",
+  "avant": "13. [τ-bench (arXiv 2406.12045)](https://arxiv.org/abs/2406.12045) — résumé seulement.\n14. [EnterpriseBench (arXiv 2510.27287, EMNLP 2025)](https://arxiv.org/abs/2510.27287) — résumé seulement.",
+  "apres": "13. [τ-bench (arXiv 2406.12045)](https://arxiv.org/abs/2406.12045) — prépublication, résumé puis extraits relus le 14 novembre 2026.\n14. [EnterpriseBench (arXiv 2510.27287, EMNLP 2025)](https://arxiv.org/abs/2510.27287) — article, résumé puis extraits relus le 14 novembre 2026.",
+  "categorie": "coherence",
+  "motif": "Mettre à jour les notices de [13] et [14] conformément à P2-F3.",
+  "origine": "plan 2027, lot REF-3-coherence"
+ },
+ {
+  "n": 1447,
+  "fichier": "chapitre-33-observabilite-evaluation.md",
+  "avant": "Résumé seulement, relevé le 14 novembre 2026 :",
+  "apres": "Prépublication relevée et relue au-delà du résumé le 14 novembre 2026 :",
+  "categorie": "coherence",
+  "motif": "Aligner l'intertitre de la source [16] sur P2-F3.",
+  "origine": "plan 2027, lot REF-3-coherence"
+ },
+ {
+  "n": 1448,
+  "fichier": "chapitre-33-observabilite-evaluation.md",
+  "avant": "14 novembre 2026 [16]. Elle n'est connue que par son résumé, porte sur un seul agent",
+  "apres": "14 novembre 2026 [16]. Elle porte sur un seul agent",
+  "categorie": "coherence",
+  "motif": "Supprimer la mention contradictoire dans les limites de [16] après P2-F3.",
+  "origine": "plan 2027, lot REF-3-coherence"
+ },
+ {
+  "n": 1449,
+  "fichier": "chapitre-34-exploitation.md",
+  "avant": "dont [3] et [7] par leur seul résumé;",
+  "apres": "dont [7] par son seul résumé ([3] ayant été relue au-delà du résumé le 14 novembre 2026);",
+  "categorie": "coherence",
+  "motif": "Aligner l'État de référence du chapitre 34 sur P2-F3 (#825).",
+  "origine": "plan 2027, lot REF-3-coherence"
+ },
+ {
+  "n": 1450,
+  "fichier": "chapitre-34-exploitation.md",
+  "avant": "3. [Moshkovich et Zeltyn — Taming Uncertainty via Automation (arXiv 2507.11277)](https://arxiv.org/abs/2507.11277) — résumé seulement.",
+  "apres": "3. [Moshkovich et Zeltyn — Taming Uncertainty via Automation (arXiv 2507.11277)](https://arxiv.org/abs/2507.11277) — prépublication, résumé puis extraits relus le 14 novembre 2026.",
+  "categorie": "coherence",
+  "motif": "Mettre à jour la notice de [3] conformément à P2-F3.",
+  "origine": "plan 2027, lot REF-3-coherence"
+ },
+ {
+  "n": 1451,
+  "fichier": "chapitre-34-exploitation.md",
+  "avant": "et une nouvelle recherche, le 14 novembre 2026, ne l'a pas retrouvé;",
+  "apres": "(l'URL SSRN renvoie HTTP 403 anti-robot le 14 novembre 2026; notice bibliographique confirmée sur Crossref via le DOI 10.1016/j.infsof.2026.108307, *Information and Software Technology*, vol. 200);",
+  "categorie": "coherence",
+  "motif": "Préciser le statut exact du catalogue [9] le 14 novembre 2026 (blocage HTTP 403 sur SSRN, notice Crossref vérifiée sans texte intégral libre).",
+  "origine": "plan 2027, lot REF-3-coherence"
+ },
+ {
+  "n": 1452,
+  "fichier": "chapitre-36-responsabilite.md",
+  "avant": "- Le rôle des formulaires ISO, l'adoption d'UETA hors de la Californie et le sens du mot « agent » en common law relèvent de la connaissance générale. La loi type de la CNUDCI est décrite d'après sa page de présentation.\n- Le mandat du Code civil du Québec et les lois provinciales sur le commerce électronique n'ont pas été lus; le cadre canadien est au chapitre 38.",
+  "apres": "- Le rôle des formulaires ISO, l'adoption d'UETA hors de la Californie et le sens du mot « agent » en common law relèvent de la connaissance générale. La loi type de la CNUDCI est décrite d'après sa page de présentation.\n- Lors de l'audit du 14 novembre 2026, [6] (CSA, HTTP 403 anti-robot) et [14] (CanLII, HTTP 403) restent inaccessibles au script automatique; la note [6] (« AI Liability Inflection: Enterprise Accountability in the Agentic Era », été 2026) et l'arrêt [14] sont confirmés par recherche web et sources secondaires.\n- Le mandat du Code civil du Québec et les lois provinciales sur le commerce électronique n'ont pas été lus; le cadre canadien est au chapitre 38.",
+  "categorie": "coherence",
+  "motif": "Consigner l'accès restreint HTTP 403 des sources [6] et [14] lors de l'audit du 14 novembre 2026.",
+  "origine": "plan 2027, lot REF-3-coherence"
+ },
+ {
+  "n": 1453,
+  "fichier": "chapitre-37-souverainete.md",
+  "avant": "- Aucune donnée d'adoption n'est citée (Gaia-X Magazine de juin 2026 non chargé).\n- Viennent de la connaissance générale : le rattachement de l'article 2713 au CLOUD Act et les réserves sur l'offre de modèles des fournisseurs locaux.",
+  "apres": "- Aucune donnée d'adoption n'est citée (Gaia-X Magazine de juin 2026 non chargé).\n- Lors de l'audit du 14 novembre 2026, l'URL EUR-Lex de [2] redirige automatiquement vers la page générique « TodayOJ » (filtrage automatisé EUR-Lex).\n- Viennent de la connaissance générale : le rattachement de l'article 2713 au CLOUD Act et les réserves sur l'offre de modèles des fournisseurs locaux.",
+  "categorie": "coherence",
+  "motif": "Consigner le comportement de redirection automatisée d'EUR-Lex sur [2] lors de l'audit du 14 novembre 2026.",
+  "origine": "plan 2027, lot REF-3-coherence"
+ },
+ {
+  "n": 1454,
+  "fichier": "chapitre-38-canada-quebec.md",
+  "avant": "22. [AMF — Ligne directrice sur l'utilisation de l'intelligence artificielle, Bulletin de l'AMF, vol. 23, no 13](https://lautorite.qc.ca/files/pdf/bulletin/2026/vol23no13/vol23no13_5.pdf)",
+  "apres": "22. [AMF — Ligne directrice sur l'utilisation de l'intelligence artificielle, Bulletin de l'AMF, vol. 23, no 13, 2 avril 2026 (décision n° 2026-PDG-0016)](https://lautorite.qc.ca/fileadmin/lautorite/bulletin/2026/vol23no13/vol23no13_5-2.pdf)",
+  "categorie": "renvoi",
+  "motif": "Corriger l'URL erronée du Bulletin de l'AMF (/files/pdf/.../vol23no13_5.pdf) vers l'adresse PDF officielle de la section 5.2.2 du Bulletin du 2 avril 2026 (/fileadmin/lautorite/.../vol23no13_5-2.pdf, décision n° 2026-PDG-0016) confirmée par recherche web (le serveur demeure protégé en HTTP 403 Cloudflare), sans toucher à la borne de #737.",
+  "origine": "plan 2027, lot REF-4-renvoi"
+ },
+ {
+  "n": 1455,
+  "fichier": "chapitre-39-gouvernance-interne.md",
+  "avant": "7. [Microsoft — Agent Registry in Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry)",
+  "apres": "7. [Microsoft — Agent Registry in Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-registry-overview)",
+  "categorie": "renvoi",
+  "motif": "Mettre à jour l'URL Microsoft Learn vers sa destination canonique après redirection permanente HTTP 301.",
+  "origine": "plan 2027, lot REF-4-renvoi"
+ },
+ {
+  "n": 1456,
+  "fichier": "chapitre-39-gouvernance-interne.md",
+  "avant": "9. [Microsoft Entra Agent ID — owners, sponsors, and managers](https://learn.microsoft.com/en-us/entra/agent-id/identity-platform/agent-owners-sponsors-managers)",
+  "apres": "9. [Microsoft Entra Agent ID — owners, sponsors, and managers](https://learn.microsoft.com/en-us/entra/agent-id/agent-owners-sponsors-managers)",
+  "categorie": "renvoi",
+  "motif": "Mettre à jour l'URL Microsoft Entra Agent ID vers sa destination canonique après redirection permanente HTTP 301.",
+  "origine": "plan 2027, lot REF-4-renvoi"
+ },
+ {
+  "n": 1457,
+  "fichier": "chapitre-40-finops-agentique.md",
+  "avant": "6. [Anthropic — How we built our multi-agent research system, 13 juin 2025](https://www.anthropic.com/engineering/multi-agent-research-system) — billet du fournisseur.",
+  "apres": "6. [Anthropic — How we built our multi-agent research system, 13 juin 2025](https://www.anthropic.com/research/multi-agent-research-system) — billet du fournisseur.",
+  "categorie": "renvoi",
+  "motif": "Mettre à jour l'URL Anthropic vers sa destination canonique après redirection permanente HTTP 308.",
+  "origine": "plan 2027, lot REF-4-renvoi"
+ },
+ {
+  "n": 1458,
+  "fichier": "chapitre-40-finops-agentique.md",
+  "avant": "11. [Linux Foundation — lancement de la Tokenomics Foundation, communiqué du 4 août 2026](https://linuxfoundation.org/press/linux-foundation-launches-the-tokenomics-foundation-to-define-the-economics-and-roi-of-ai-value)",
+  "apres": "11. [Linux Foundation — lancement de la Tokenomics Foundation, communiqué du 4 août 2026](https://www.linuxfoundation.org/press/linux-foundation-launches-the-tokenomics-foundation-to-define-the-economics-and-roi-of-ai-value)",
+  "categorie": "renvoi",
+  "motif": "Mettre à jour l'URL Linux Foundation vers l'hôte canonique www après redirection permanente HTTP 301.",
+  "origine": "plan 2027, lot REF-4-renvoi"
+ },
+ {
+  "n": 1459,
+  "fichier": "chapitre-43-maturite-prospective.md",
+  "avant": "2. [NIST — AI Agent Standards Initiative](https://www.nist.gov/caisi/ai-agent-standards-initiative)",
+  "apres": "2. [NIST — SI Agent Standards Initiative (anciennement AI Agent Standards Initiative)](https://www.nist.gov/super-intelligence/si-agent-standards-initiative)",
+  "categorie": "renvoi",
+  "motif": "Mettre à jour l'URL et l'intitulé de l'initiative du NIST après redirection permanente HTTP 301 vers /super-intelligence/si-agent-standards-initiative (page mise à jour le 9 novembre 2026), en harmonie avec le chapitre 35.",
+  "origine": "plan 2027, lot REF-4-renvoi"
+ },
+ {
+  "n": 1460,
+  "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+  "avant": "3. [agentgateway — documentation LLM](https://agentgateway.dev/docs/standalone/latest/llm/)",
+  "apres": "3. [agentgateway — documentation LLM](https://agentgateway.dev/docs/standalone/latest/documentation/llm/)",
+  "categorie": "renvoi",
+  "motif": "Mettre à jour l'URL agentgateway vers sa cible canonique après redirection permanente HTTP 301, par cohérence avec [4] et [5].",
+  "origine": "plan 2027, lot REF-4-renvoi"
+ },
+ {
+  "n": 1461,
+  "fichier": "chapitre-45-reseaux-b2b-federes.md",
+  "avant": "15. [draft-hood-agtp-lei-00](https://datatracker.ietf.org/doc/draft-hood-agtp-lei/); [GLEIF, Agentic AI in Payments](https://www.gleif.org/organizational-identity/research-publications/2026-08-13_agentic_ai_in_payments_v1.0-1.pdf).",
+  "apres": "15. [draft-hood-agtp-lei-01 (30 octobre 2026, succédant à la version 00)](https://datatracker.ietf.org/doc/draft-hood-agtp-lei/); [GLEIF, Agentic AI in Payments (document de travail de septembre 2026)](https://www.gleif.org/organizational-identity/research-publications/2026-08-13_agentic_ai_in_payments_v1.0-1.pdf).",
+  "categorie": "renvoi",
+  "motif": "Aligner l'intitulé du brouillon IETF sur la version active -01 (30 octobre 2026) servie par l'URL Datatracker, et préciser la date interne (septembre 2026) du document GLEIF.",
+  "origine": "plan 2027, lot REF-4-renvoi"
+ },
+ {
+  "n": 1462,
+  "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+  "avant": "15. L. Sha, « Using Simplicity to Control Complexity », *IEEE Software*, juillet-août 2001 — citée d'après [11], sans lien vérifié.",
+  "apres": "15. [L. Sha — « Using Simplicity to Control Complexity », *IEEE Software*, vol. 18, n° 4, juillet-août 2001, p. 20-28 (DOI 10.1109/ms.2001.936213)](https://doi.org/10.1109/ms.2001.936213) — citée d'après [11]; référence et DOI vérifiés via Crossref le 14 novembre 2026 (l'identifiant 10.1109/52.936214 retournant HTTP 404).",
+  "categorie": "renvoi",
+  "motif": "Ajouter le lien DOI canonique vérifié via l'API Crossref (10.1109/ms.2001.936213, HTTP 200) et les coordonnées bibliographiques exactes pour la source [15].",
+  "origine": "plan 2027, lot REF-4-renvoi"
+ },
+ {
+  "n": 1463,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "2. [Sourcegraph — SCIP Code Intelligence Protocol](https://github.com/sourcegraph/scip)",
+  "apres": "2. [scip-code (anciennement Sourcegraph) — SCIP Code Intelligence Protocol](https://github.com/scip-code/scip)",
+  "categorie": "renvoi",
+  "motif": "Mettre à jour le dépôt SCIP vers sa nouvelle organisation GitHub scip-code après redirection permanente HTTP 301.",
+  "origine": "plan 2027, lot REF-4-renvoi"
+ },
+ {
+  "n": 1464,
+  "fichier": "chapitre-38-canada-quebec.md",
+  "avant": "[16] et [17] n'ont pas pu l'être;",
+  "apres": "[16] a été vérifiée en texte complet le 14 novembre 2026 et [17], bloquée par le WAF sur requête automatique simple, a été chargée avec des en-têtes navigateur à cette date;",
+  "categorie": "factuel",
+  "motif": "Corriger l'État de référence du chapitre 38 : [16] (Blakes) répond HTTP 200 et [17] (Directive fédérale) se charge avec en-têtes navigateur (Modification : 2025-06-24).",
+  "origine": "plan 2027, lot REF-4-factuel"
+ },
+ {
+  "n": 1465,
+  "fichier": "chapitre-38-canada-quebec.md",
+  "avant": "Selon le résumé d'une analyse de cabinet non lue en entier, son volet sur l'IA est plus étroit que celui du projet C-27, jamais adopté [16].",
+  "apres": "Selon l'analyse du cabinet Blakes, son volet sur l'IA est plus étroit que celui du projet C-27, jamais adopté [16].",
+  "categorie": "factuel",
+  "motif": "Retirer la mention « résumé d'une analyse de cabinet non lue en entier » : la page Blakes [16] (17 juillet 2026) a été chargée et vérifiée en texte intégral (HTTP 200).",
+  "origine": "plan 2027, lot REF-4-factuel"
+ },
+ {
+  "n": 1466,
+  "fichier": "chapitre-38-canada-quebec.md",
+  "avant": "Sources non lues :\n\n16. [Blakes — réforme fédérale](https://www.blakes.com/fr-ca/perspectives/nouvelle-tentative-du-canada-pour-reformer-le-cadre-federal-de-protection-des-renseignements-personn/) — résumé de recherche seulement.\n17. [Directive sur la prise de décisions automatisée](https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32592)",
+  "apres": "Sources initialement non lues, vérifiées le 14 novembre 2026 :\n\n16. [Blakes — Nouvelle tentative du Canada pour réformer le cadre fédéral de protection des renseignements personnels (17 juillet 2026)](https://www.blakes.com/fr-ca/perspectives/nouvelle-tentative-du-canada-pour-reformer-le-cadre-federal-de-protection-des-renseignements-personn/) — texte intégral lu le 14 novembre 2026 (HTTP 200).\n17. [Directive sur la prise de décisions automatisée (modification du 24 juin 2025)](https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32592) — chargée le 14 novembre 2026 avec en-têtes navigateur (HTTP 200); les requêtes automatiques simples essuient un blocage WAF",
+  "categorie": "factuel",
+  "motif": "Mettre à jour les notices [16] et [17] en fin de chapitre après vérification du 14 novembre 2026, tout en conservant la borne exacte avant '— requête rejetée par le serveur.' (#391).",
+  "origine": "plan 2027, lot REF-4-factuel"
+ },
+ {
+  "n": 1467,
+  "fichier": "chapitre-38-canada-quebec.md",
+  "avant": "- La Directive fédérale [17] n'a pas pu être lue, ni à l'audit ni le 14 novembre 2026. Son champ d'application est décrit d'après le guide sur sa portée [18];",
+  "apres": "- La Directive fédérale [17] rejette les requêtes automatiques simples par son WAF (« Request Rejected ») mais a été chargée le 14 novembre 2026 avec des en-têtes navigateur (HTTP 200, version modifiée le 24 juin 2025, échéance de mise à jour des évaluations aux paragraphes 1.2.1-1.2.2 au 24 juin 2026). Son champ d'application est décrit ici d'après le guide sur sa portée [18];",
+  "categorie": "factuel",
+  "motif": "Corriger la limite sur la Directive fédérale [17] (avant la borne #622 à l'intérieur de #392) après chargement HTTP 200 avec en-têtes navigateur le 14 novembre 2026.",
+  "origine": "plan 2027, lot REF-4-factuel"
+ },
+ {
+  "n": 1468,
+  "fichier": "chapitre-38-canada-quebec.md",
+  "avant": "ses exigences par niveau et la date de sa version en vigueur ne sont pas décrites",
+  "apres": "le détail de ses exigences par niveau (niveaux I à IV aux annexes B et C de la Directive) n'est pas exposé ici",
+  "categorie": "factuel",
+  "motif": "Mettre à jour la clause exacte de #622 : la date de la version en vigueur (24 juin 2025) est vérifiée dans [17], seul le détail des annexes B et C n'est pas repris en 38.2.",
+  "origine": "plan 2027, lot REF-4-factuel"
+ },
+ {
+  "n": 1469,
+  "fichier": "chapitre-38-canada-quebec.md",
+  "avant": "Le sort du projet C-27 vient de la connaissance générale et d'un résumé de recherche [16]",
+  "apres": "Le sort du projet C-27 est confirmé par l'analyse complète de Blakes [16] (17 juillet 2026, HTTP 200)",
+  "categorie": "factuel",
+  "motif": "Corriger la limite sur [16] après lecture en texte intégral le 14 novembre 2026.",
+  "origine": "plan 2027, lot REF-4-factuel"
+ },
+ {
+  "n": 1470,
+  "fichier": "chapitre-38-canada-quebec.md",
+  "avant": "- L'article 12.1 est cité d'après le texte sanctionné de 2021, la version codifiée étant inaccessible; les modifications ultérieures n'ont pas été vérifiées.",
+  "apres": "- L'article 12.1 est cité d'après le texte sanctionné de 2021 [9]; la consultation le 14 novembre 2026 du recueil officiel LégisQuébec (P-39.1, à jour au 15 octobre 2026; HTTP 403 sur requête automatique simple, HTTP 200 avec en-têtes navigateur) confirme que cet article n'a reçu aucune modification depuis 2021.",
+  "categorie": "factuel",
+  "motif": "Corriger l'affirmation selon laquelle la version codifiée de P-39.1 était inaccessible, en restant avant la borne #738.",
+  "origine": "plan 2027, lot REF-4-factuel"
+ },
+ {
+  "n": 1471,
+  "fichier": "chapitre-38-canada-quebec.md",
+  "avant": ", et l'adresse donnée en [22] vient d'un résultat de recherche non vérifié.",
+  "apres": ", et l'adresse officielle du PDF du Bulletin du 2 avril 2026 citée en [22] (vol. 23, n° 13, section 5.2.2, décision n° 2026-PDG-0016) a été corrigée le 14 novembre 2026 d'après recherche web, le serveur maintenant une erreur 403 Cloudflare.",
+  "categorie": "factuel",
+  "motif": "Mettre à jour la limite sur l'URL de [22] (à l'intérieur de #393) après correction vers vol23no13_5-2.pdf.",
+  "origine": "plan 2027, lot REF-4-factuel"
+ },
+ {
+  "n": 1472,
+  "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+  "avant": "[15] n'est connue que par [11].",
+  "apres": "[15] est citée d'après [11], avec notice et DOI vérifiés via Crossref.",
+  "categorie": "factuel",
+  "motif": "Refléter la vérification Crossref (DOI 10.1109/ms.2001.936213) de la source [15] dans l'État de référence.",
+  "origine": "plan 2027, lot REF-4-factuel"
+ },
+ {
+  "n": 1473,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "documentation d'Apache Iceberg (1.12.0), de Project Nessie,",
+  "apres": "documentation d'Apache Iceberg (1.12.0), de Project Nessie (0.110.0),",
+  "categorie": "factuel",
+  "motif": "Préciser la version 0.110.0 affichée dans la navigation de Project Nessie, par cohérence avec Iceberg et DSPy.",
+  "origine": "plan 2027, lot REF-4-factuel"
+ },
+ {
+  "n": 1474,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "et le rôle de `max_loras`, absent de la page de vLLM, ne viennent pas d'une page lue.",
+  "apres": "et la précision du bornage par lot pour `max_loras` (paramètre bien nommé sur la page de vLLM pour la concurrence entre adaptateurs, sans indication explicite d'un plafond par lot) ne viennent pas d'une page lue.",
+  "categorie": "factuel",
+  "motif": "Corriger l'erreur factuelle selon laquelle max_loras serait absent de la page LoRA de vLLM (le paramètre y figure à deux reprises dans la configuration et l'exemple).",
+  "origine": "plan 2027, lot REF-4-factuel"
+ },
+ {
+  "n": 1475,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "Iceberg 1.12.0 et DSPy 3.5 sont tirés de la navigation des sites (DSPy 3.5.0 selon le chapitre 20); Nessie, vLLM et Spec Kit n'affichent aucune version courante,",
+  "apres": "Iceberg 1.12.0, Nessie 0.110.0 et DSPy 3.5 sont tirés de la navigation des sites (DSPy 3.5.0 selon le chapitre 20); vLLM et Spec Kit n'affichent aucune version courante sur les pages lues,",
+  "categorie": "factuel",
+  "motif": "Corriger l'affirmation erronée sur Project Nessie : le menu de navigation du site affiche bien la version courante Nessie 0.110.0.",
+  "origine": "plan 2027, lot REF-4-factuel"
+ },
+ {
+  "n": 1476,
+  "fichier": "chapitre-38-canada-quebec.md",
+  "avant": "- Le guide québécois ne porte pas de date plus précise que 2026, et celle du guide fédéral est la date sans libellé affichée sur sa page. Les lectures proposées en 38.2, 38.3, 38.4 et 38.6 sont des inférences, non des positions des autorités.",
+  "apres": "- Le guide québécois ne porte pas de date plus précise que 2026, et celle du guide fédéral correspond à la date sans libellé affichée sur sa page. Les lectures proposées en 38.2, 38.3, 38.4 et 38.6 sont des inférences, non des positions des autorités.\n- Lors de l'audit du 14 novembre 2026, les quatre pages hébergées sur `www.canada.ca` ([2], [5], [6] et [18]) ont expiré en délai d'attente aux requêtes automatisées; la fiche du Guide sur l'IA agentive [5] est confirmée en HTTP 200 au catalogue des Publications du gouvernement du Canada (`BT22-298/2026F-PDF`) et le contenu des quatre documents est confirmé par la relecture du 11-12 novembre et par recherche web.",
+  "categorie": "coherence",
+  "motif": "Consigner dans les limites du chapitre 38 les quatre URL www.canada.ca en délai d'attente lors de l'audit du 14 novembre 2026.",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1477,
+  "fichier": "chapitre-39-gouvernance-interne.md",
+  "avant": "Rechargée sans succès à l'audit, la page n'a été recoupée que par un résumé de recherche (score moyen, échantillon, période).",
+  "apres": "Rechargée sans succès à l'audit du 12 novembre ni le 14 novembre 2026 (délai d'attente dépassé sur `mckinsey.com`), la page n'a été recoupée que par un résumé de recherche (score moyen, échantillon, période).",
+  "categorie": "coherence",
+  "motif": "Dater au 14 novembre 2026 l'inaccessibilité persistante de la source McKinsey [1] en délai d'attente.",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1478,
+  "fichier": "chapitre-39-gouvernance-interne.md",
+  "avant": "- Les pages [3], [4], [6], [7] et [10] ont été relues à l'audit et confirment le texte;",
+  "apres": "- Les pages [3], [4], [6], [7] et [10] ont été relues à l'audit du 12 novembre et confirment le texte (le 14 novembre 2026, l'URL `www.canada.ca` de [4] expire en délai d'attente aux requêtes automatisées, mais sa fiche `BT22-298/2026F-PDF` répond HTTP 200 au catalogue des Publications du gouvernement du Canada);",
+  "categorie": "coherence",
+  "motif": "Consigner au 14 novembre 2026 le délai d'attente sur www.canada.ca pour [4] tout en restant avant la borne de #215.",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1479,
+  "fichier": "chapitre-40-finops-agentique.md",
+  "avant": "[13] à [15] ont été ajoutées le 14 novembre 2026, [14] par son seul résumé et [15] par sa synthèse.",
+  "apres": "[13] à [15] ont été ajoutées le 14 novembre 2026, [14] par résumé puis extraits relus le même jour et [15] par sa synthèse.",
+  "categorie": "coherence",
+  "motif": "Aligner l'État de référence sur #826 (relecture au-delà du résumé de [14] le 14 novembre 2026).",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1480,
+  "fichier": "chapitre-40-finops-agentique.md",
+  "avant": "10. [Ong et coll. — RouteLLM: Learning to Route LLMs with Preference Data (arXiv 2406.18665)](https://arxiv.org/abs/2406.18665) — prépublication; résumé seulement.",
+  "apres": "10. [Ong et coll. — RouteLLM: Learning to Route LLMs with Preference Data (arXiv 2406.18665)](https://arxiv.org/abs/2406.18665) — prépublication; résumé puis extraits relus le 14 novembre 2026.",
+  "categorie": "coherence",
+  "motif": "Supprimer la mention obsolète « résumé seulement » sur [10], alignée sur #826.",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1481,
+  "fichier": "chapitre-40-finops-agentique.md",
+  "avant": "14. [Elsworth et coll. — Measuring the environmental impact of delivering AI at Google Scale (arXiv 2508.15734, 21 août 2025)](https://arxiv.org/abs/2508.15734) — prépublication d'un fournisseur; résumé seulement.",
+  "apres": "14. [Elsworth et coll. — Measuring the environmental impact of delivering AI at Google Scale (arXiv 2508.15734, 21 août 2025)](https://arxiv.org/abs/2508.15734) — prépublication d'un fournisseur; résumé puis extraits relus le 14 novembre 2026.",
+  "categorie": "coherence",
+  "motif": "Supprimer la mention obsolète « résumé seulement » sur [14], alignée sur #826.",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1482,
+  "fichier": "chapitre-40-finops-agentique.md",
+  "avant": "[14] n'est connu que par son résumé et mesure le service de son éditeur; [15] l'est par sa synthèse.",
+  "apres": "[14], relu par extraits le 14 novembre 2026, mesure le service de son éditeur; [15] est connu par sa synthèse.",
+  "categorie": "coherence",
+  "motif": "Lever la contradiction entre #826 (relecture au-delà du résumé de [14]) et cette phrase de #481.",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1483,
+  "fichier": "chapitre-41-modele-operationnel.md",
+  "avant": "les articles savants par leur résumé sauf [6];",
+  "apres": "les articles savants par leur résumé sauf [6] (ainsi que [5] et [7] relus par extraits le 14 novembre 2026);",
+  "categorie": "coherence",
+  "motif": "Aligner l'État de référence du chapitre 41 sur #827 (relecture au-delà du résumé de [5] et [7]).",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1484,
+  "fichier": "chapitre-41-modele-operationnel.md",
+  "avant": "5. [Gonzalez et coll. — Toward a science of human–AI teaming for decision making, PNAS Nexus 5(3), 2026](https://par.nsf.gov/biblio/10696564-toward-science-humanai-teaming-decision-making-complementarity-framework) — notice et résumé.",
+  "apres": "5. [Gonzalez et coll. — Toward a science of human–AI teaming for decision making, PNAS Nexus 5(3), 2026](https://par.nsf.gov/biblio/10696564-toward-science-humanai-teaming-decision-making-complementarity-framework) — notice, résumé et extraits relus le 14 novembre 2026.",
+  "categorie": "coherence",
+  "motif": "Aligner la notice [5] sur la relecture au-delà du résumé consignée dans #827.",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1485,
+  "fichier": "chapitre-41-modele-operationnel.md",
+  "avant": "7. [Dell'Acqua et coll. — The Cybernetic Teammate (NBER, document de travail 33641, avril 2025)](https://www.nber.org/papers/w33641) — résumé.",
+  "apres": "7. [Dell'Acqua et coll. — The Cybernetic Teammate (NBER, document de travail 33641, avril 2025)](https://www.nber.org/papers/w33641) — résumé, puis extraits relus le 14 novembre 2026.",
+  "categorie": "coherence",
+  "motif": "Aligner la notice [7] sur la relecture au-delà du résumé consignée dans #827.",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1486,
+  "fichier": "chapitre-41-modele-operationnel.md",
+  "avant": "À l'audit, les pages de McKinsey n'ont pas répondu;",
+  "apres": "À l'audit du 12 novembre comme le 14 novembre 2026, les pages de McKinsey ([1] à [4]) n'ont pas répondu (délai d'attente dépassé);",
+  "categorie": "coherence",
+  "motif": "Dater au 14 novembre 2026 l'inaccessibilité persistante des quatre URL McKinsey en délai d'attente.",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1487,
+  "fichier": "chapitre-41-modele-operationnel.md",
+  "avant": "- Les travaux [5], [7], [8], [9] et [10] ne sont connus que par leur résumé.",
+  "apres": "- Les travaux [8], [9] et [10] ne sont connus que par leur résumé; [5] et [7], initialement résumés, ont été relus par extraits le 14 novembre 2026.",
+  "categorie": "coherence",
+  "motif": "Lever la contradiction entre #827 ([5] et [7] relus au-delà du résumé) et cette puce de ## Limites.",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1488,
+  "fichier": "chapitre-42-etudes-de-cas.md",
+  "avant": "[13] à [15], relevées le 14 novembre 2026, ne sont connues que par leur résumé.",
+  "apres": "[13] à [15], relevées le 14 novembre 2026, ont d'abord été lues par leur résumé puis recoupées par extraits à cette date.",
+  "categorie": "coherence",
+  "motif": "Aligner l'État de référence (#459) avec la relecture au-delà du résumé consignée dans #828.",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1489,
+  "fichier": "chapitre-42-etudes-de-cas.md",
+  "avant": "lues par leur résumé.",
+  "apres": "d'abord connues par leur résumé, puis relues par extraits le 14 novembre 2026.",
+  "categorie": "coherence",
+  "motif": "Aligner la phrase exacte de #224 sur la relecture de [5] et [6] au-delà du résumé (#828).",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1490,
+  "fichier": "chapitre-42-etudes-de-cas.md",
+  "avant": "Une recherche complémentaire a trouvé trois textes parus en 2026, connus ici par leur seul résumé.",
+  "apres": "Une recherche complémentaire du 14 novembre 2026 a trouvé trois textes parus en 2026, recoupés par extraits le même jour.",
+  "categorie": "coherence",
+  "motif": "Aligner la présentation de 42.4 sur #828 (relecture par extraits de [13] à [15]).",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1491,
+  "fichier": "chapitre-42-etudes-de-cas.md",
+  "avant": "D'après leurs résumés, ces trois textes vont dans le sens du portrait de MAP :",
+  "apres": "D'après leurs résumés et les extraits relus, ces trois textes vont dans le sens du portrait de MAP :",
+  "categorie": "coherence",
+  "motif": "Aligner le bilan de 42.4 (#670) sur #828.",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1492,
+  "fichier": "chapitre-42-etudes-de-cas.md",
+  "avant": "un cas mesuré en production, connu par son seul résumé [13]",
+  "apres": "un cas mesuré en production, connu par résumé et extraits [13]",
+  "categorie": "coherence",
+  "motif": "Aligner la ligne Opérations TI du tableau (#667) sur la relecture par extraits de [13] dans #828.",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1493,
+  "fichier": "chapitre-42-etudes-de-cas.md",
+  "avant": "Trois autres textes de 2026, connus par leur résumé, décrivent le même type d'agents étroits et bornés.",
+  "apres": "Trois autres textes de 2026, initialement connus par leur résumé puis recoupés par extraits le 14 novembre 2026, décrivent le même type d'agents étroits et bornés.",
+  "categorie": "coherence",
+  "motif": "Aligner le point à retenir (#462) sur #828.",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1494,
+  "fichier": "chapitre-42-etudes-de-cas.md",
+  "avant": "5. [Jha et coll. — ITBench (arXiv 2502.05352)](https://arxiv.org/abs/2502.05352) — prépublication; résumé seulement.\n6. [Gong et coll. — ORCA-bench: How Ready Are Language Model Agents for Oncall? (arXiv 2607.28545)](https://arxiv.org/abs/2607.28545) — prépublication; résumé seulement.\n7. [Roy et coll. — Exploring LLM-based Agents for Root Cause Analysis (arXiv 2403.04123)](https://arxiv.org/abs/2403.04123) — résumé seulement.",
+  "apres": "5. [Jha et coll. — ITBench (arXiv 2502.05352)](https://arxiv.org/abs/2502.05352) — prépublication; résumé puis extraits relus le 14 novembre 2026.\n6. [Gong et coll. — ORCA-bench: How Ready Are Language Model Agents for Oncall? (arXiv 2607.28545)](https://arxiv.org/abs/2607.28545) — prépublication; résumé puis extraits relus le 14 novembre 2026.\n7. [Roy et coll. — Exploring LLM-based Agents for Root Cause Analysis (arXiv 2403.04123)](https://arxiv.org/abs/2403.04123) — résumé puis extraits relus le 14 novembre 2026.",
+  "categorie": "coherence",
+  "motif": "Aligner les notices [5], [6] et [7] sur #828.",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1495,
+  "fichier": "chapitre-42-etudes-de-cas.md",
+  "avant": "Résumés seulement, relevés le 14 novembre 2026 :",
+  "apres": "Relevés et recoupés par extraits le 14 novembre 2026 :",
+  "categorie": "coherence",
+  "motif": "Aligner l'intertitre de #463 sur #828 pour [13] à [15].",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1496,
+  "fichier": "chapitre-42-etudes-de-cas.md",
+  "avant": "et la section 42.4 repose en partie sur des bancs d'essai lus par leur seul résumé [5] [6] [7].",
+  "apres": "et la section 42.4 repose en partie sur des bancs d'essai initialement lus par leur résumé puis recoupés par extraits le 14 novembre 2026 [5] [6] [7].",
+  "categorie": "coherence",
+  "motif": "Lever la contradiction de cette limite avec #828 (en restant après #348).",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1497,
+  "fichier": "chapitre-42-etudes-de-cas.md",
+  "avant": "dont les trois de la section 42.4, connus par leur seul résumé.",
+  "apres": "dont les trois de la section 42.4, initialement connus par leur seul résumé puis relus par extraits.",
+  "categorie": "coherence",
+  "motif": "Aligner la phrase exacte de #464 sur #828.",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1498,
+  "fichier": "chapitre-42-etudes-de-cas.md",
+  "avant": "- Le fichier de données du portrait [9] n'a été lu qu'à moitié,",
+  "apres": "- Le 14 novembre 2026, le portail Données Québec [9] oppose un défi navigateur HTTP 202 aux requêtes automatisées et la fiche ServiceNow [12] expire en délai d'attente (parution CAIN 2025 confirmée par recherche web). Le fichier de données du portrait [9] n'a été lu qu'à moitié lors de la rédaction,",
+  "categorie": "coherence",
+  "motif": "Consigner l'accès restreint daté du 14 novembre 2026 pour Données Québec [9] (HTTP 202) et ServiceNow [12] (délai d'attente).",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1499,
+  "fichier": "chapitre-43-maturite-prospective.md",
+  "avant": "3. [Measuring Agents in Production (arXiv 2512.04123, version 4)](https://arxiv.org/abs/2512.04123) — résumé; première moitié du texte relue le 12 novembre 2026.\n4. [Why Do Multi-Agent LLM Systems Fail? (arXiv 2503.13657, version 3)](https://arxiv.org/abs/2503.13657) — résumé.",
+  "apres": "3. [Measuring Agents in Production (arXiv 2512.04123, version 4)](https://arxiv.org/abs/2512.04123) — résumé; première moitié du texte relue le 12 novembre 2026, extraits relus le 14 novembre 2026.\n4. [Why Do Multi-Agent LLM Systems Fail? (arXiv 2503.13657, version 3)](https://arxiv.org/abs/2503.13657) — résumé puis extraits relus le 14 novembre 2026.",
+  "categorie": "coherence",
+  "motif": "Aligner [3] et [4] sur la relecture au-delà du résumé consignée dans #829.",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1500,
+  "fichier": "chapitre-43-maturite-prospective.md",
+  "avant": "7. [Governance Gaps in Agent Interoperability Protocols (arXiv 2606.31498)](https://arxiv.org/abs/2606.31498) — résumé; prépublication.",
+  "apres": "7. [Governance Gaps in Agent Interoperability Protocols (arXiv 2606.31498)](https://arxiv.org/abs/2606.31498) — prépublication; résumé puis extraits relus le 14 novembre 2026.",
+  "categorie": "coherence",
+  "motif": "Aligner [7] sur la relecture au-delà du résumé consignée dans #829.",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1501,
+  "fichier": "chapitre-43-maturite-prospective.md",
+  "avant": "- Les articles [4], [6] et [7] ont été lus par leur résumé seulement; [3], par son résumé et la première moitié de son texte.",
+  "apres": "- L'article [6] n'a été lu que par son résumé; [3], [4] et [7], d'abord lus par leur résumé (et première moitié de [3]), ont été relus par extraits le 14 novembre 2026.",
+  "categorie": "coherence",
+  "motif": "Lever la contradiction entre #829 et la limite sur [3], [4] et [7].",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1502,
+  "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+  "avant": "[9] à [13] des prépublications, dont quatre lues par leur seul résumé.",
+  "apres": "[9] à [13] des prépublications, dont [9] à [12] d'abord lues par leur résumé puis relues par extraits le 14 novembre 2026.",
+  "categorie": "coherence",
+  "motif": "Aligner l'État de référence du chapitre 44 sur #830.",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1503,
+  "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+  "avant": "9. [Ong et coll. — RouteLLM (arXiv 2406.18665)](https://arxiv.org/abs/2406.18665) — prépublication; résumé seulement.\n10. [Chen, Zaharia et Zou — FrugalGPT (arXiv 2305.05176)](https://arxiv.org/abs/2305.05176) — prépublication; résumé seulement.\n11. [Snell et coll. — Scaling LLM Test-Time Compute Optimally (arXiv 2408.03314)](https://arxiv.org/abs/2408.03314) — prépublication; résumé seulement.\n12. [Srivatsa et coll. — Preble (arXiv 2407.00023)](https://arxiv.org/abs/2407.00023) — prépublication; résumé seulement.",
+  "apres": "9. [Ong et coll. — RouteLLM (arXiv 2406.18665)](https://arxiv.org/abs/2406.18665) — prépublication; résumé puis extraits relus le 14 novembre 2026.\n10. [Chen, Zaharia et Zou — FrugalGPT (arXiv 2305.05176)](https://arxiv.org/abs/2305.05176) — prépublication; résumé puis extraits relus le 14 novembre 2026.\n11. [Snell et coll. — Scaling LLM Test-Time Compute Optimally (arXiv 2408.03314)](https://arxiv.org/abs/2408.03314) — prépublication; résumé puis extraits relus le 14 novembre 2026.\n12. [Srivatsa et coll. — Preble (arXiv 2407.00023)](https://arxiv.org/abs/2407.00023) — prépublication; résumé puis extraits relus le 14 novembre 2026.",
+  "categorie": "coherence",
+  "motif": "Supprimer les mentions obsolètes « résumé seulement » sur [9] à [12], alignées sur #830.",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1504,
+  "fichier": "chapitre-45-reseaux-b2b-federes.md",
+  "avant": "7. [Defeating Prompt Injections by Design (arXiv 2503.18813)](https://arxiv.org/abs/2503.18813) — résumé.\n8. [Behavioral Privacy Leakage in Agentic Negotiation (arXiv 2607.06815)](https://arxiv.org/abs/2607.06815) — résumé.",
+  "apres": "7. [Defeating Prompt Injections by Design (arXiv 2503.18813)](https://arxiv.org/abs/2503.18813) — résumé puis extraits relus le 14 novembre 2026.\n8. [Behavioral Privacy Leakage in Agentic Negotiation (arXiv 2607.06815)](https://arxiv.org/abs/2607.06815) — résumé puis extraits relus le 14 novembre 2026.",
+  "categorie": "coherence",
+  "motif": "Aligner [7] et [8] sur la relecture au-delà du résumé consignée dans #831.",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1505,
+  "fichier": "chapitre-45-reseaux-b2b-federes.md",
+  "avant": "11. [Algorithmic Collusion by Large Language Models (arXiv 2404.00806)](https://arxiv.org/abs/2404.00806) — résumé.\n12. [Secret Collusion among AI Agents (arXiv 2402.07510)](https://arxiv.org/abs/2402.07510) — résumé.",
+  "apres": "11. [Algorithmic Collusion by Large Language Models (arXiv 2404.00806)](https://arxiv.org/abs/2404.00806) — résumé puis extraits relus le 14 novembre 2026.\n12. [Secret Collusion among AI Agents (arXiv 2402.07510)](https://arxiv.org/abs/2402.07510) — résumé puis extraits relus le 14 novembre 2026.",
+  "categorie": "coherence",
+  "motif": "Aligner [11] et [12] sur la relecture au-delà du résumé consignée dans #831.",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1506,
+  "fichier": "chapitre-45-reseaux-b2b-federes.md",
+  "avant": "- **Articles.** [7], [8] et [10] à [12] sont connus par leur résumé.",
+  "apres": "- **Articles.** [10] reste connu par son résumé; [7], [8], [11] et [12], d'abord lus par leur résumé, ont été recoupés par extraits le 14 novembre 2026.",
+  "categorie": "coherence",
+  "motif": "Lever la contradiction entre #831 et cette puce de ## Limites.",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1507,
+  "fichier": "chapitre-45-reseaux-b2b-federes.md",
+  "avant": "- **Concurrence.** Seul le communiqué du Bureau a été lu; aucune autre autorité n'a été vérifiée.",
+  "apres": "- **Concurrence et accès restreints (14 novembre 2026).** Seul le communiqué du Bureau [13] a été lu; aucune autre autorité n'a été vérifiée. Lors de la vérification du 14 novembre 2026, le W3C ([1], `w3.org/TR/odrl-model/` et `odrl.jsonld`) retourne HTTP 403 (protection Cloudflare) et le communiqué sur `www.canada.ca` [13] expire en délai d'attente aux requêtes automatisées; leur contenu est confirmé par recherche web et par les extraits antérieurs.",
+  "categorie": "coherence",
+  "motif": "Consigner l'accès restreint daté du 14 novembre 2026 pour W3C ODRL [1] et Bureau de la concurrence [13].",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1508,
+  "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+  "avant": "[12] a refusé l'accès; édition et date sont confirmées par des résultats de recherche.",
+  "apres": "[1] (`intel.com`, protection Akamai) et [12] (`iso.org`, protection Cloudflare) ont retourné HTTP 403 le 14 novembre 2026; titres, éditions et dates sont confirmés par recherche web.",
+  "categorie": "coherence",
+  "motif": "Consigner la date du 14 novembre 2026 pour les sources en accès restreint HTTP 403 du chapitre 46 ([1] Intel TDX et [12] ISO 10218-1:2025).",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1509,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "et sept articles lus par leur résumé.",
+  "apres": "et sept articles d'abord lus par leur résumé puis recoupés par extraits le 14 novembre 2026.",
+  "categorie": "coherence",
+  "motif": "Aligner l'État de référence du chapitre 47 sur #832.",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1510,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "3. [Maaz et coll. — Agentic Property-Based Testing, arXiv:2510.09907](https://arxiv.org/abs/2510.09907) — résumé\n4. [Foster et coll. — Mutation-Guided LLM-based Test Generation at Meta, arXiv:2501.12862](https://arxiv.org/abs/2501.12862) — résumé",
+  "apres": "3. [Maaz et coll. — Agentic Property-Based Testing, arXiv:2510.09907](https://arxiv.org/abs/2510.09907) — résumé puis extraits relus le 14 novembre 2026.\n4. [Foster et coll. — Mutation-Guided LLM-based Test Generation at Meta, arXiv:2501.12862](https://arxiv.org/abs/2501.12862) — résumé puis extraits relus le 14 novembre 2026.",
+  "categorie": "coherence",
+  "motif": "Aligner [3] et [4] sur la relecture au-delà du résumé consignée dans #832.",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1511,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "8. [Shah — LogJack, arXiv:2604.15368](https://arxiv.org/abs/2604.15368) — résumé\n9. [Pasquini et coll. — When AIOps Become « AI Oops », arXiv:2508.06394](https://arxiv.org/abs/2508.06394) — résumé\n10. [Carlini et coll. — The Secret Sharer, arXiv:1802.08232](https://arxiv.org/abs/1802.08232) — résumé",
+  "apres": "8. [Shah — LogJack, arXiv:2604.15368](https://arxiv.org/abs/2604.15368) — résumé puis extraits relus le 14 novembre 2026.\n9. [Pasquini et coll. — When AIOps Become « AI Oops », arXiv:2508.06394](https://arxiv.org/abs/2508.06394) — résumé puis extraits relus le 14 novembre 2026.\n10. [Carlini et coll. — The Secret Sharer, arXiv:1802.08232](https://arxiv.org/abs/1802.08232) — résumé puis extraits relus le 14 novembre 2026.",
+  "categorie": "coherence",
+  "motif": "Aligner [8], [9] et [10] sur la relecture au-delà du résumé consignée dans #832.",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1512,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "12. [Hu et coll. — LoRA, arXiv:2106.09685](https://arxiv.org/abs/2106.09685) — résumé\n13. [Rafailov et coll. — Direct Preference Optimization, arXiv:2305.18290](https://arxiv.org/abs/2305.18290) — résumé",
+  "apres": "12. [Hu et coll. — LoRA, arXiv:2106.09685](https://arxiv.org/abs/2106.09685) — résumé puis extraits relus le 14 novembre 2026.\n13. [Rafailov et coll. — Direct Preference Optimization, arXiv:2305.18290](https://arxiv.org/abs/2305.18290) — résumé puis extraits relus le 14 novembre 2026.",
+  "categorie": "coherence",
+  "motif": "Aligner [12] et [13] sur la relecture au-delà du résumé consignée dans #832.",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1513,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "- **Canaris.** Le résumé lu de l'article de Carlini ne décrit ni les canaris ni la métrique d'exposition; leur description vient de la connaissance générale du texte complet.",
+  "apres": "- **Canaris.** Le résumé seul de l'article de Carlini [10] ne décrit ni les canaris ni la métrique d'exposition; ces éléments proviennent du texte complet de l'article, recoupé par extraits le 14 novembre 2026 (le volet pratique ci-après conserve la formulation antérieure relative au résumé seul).",
+  "categorie": "coherence",
+  "motif": "Harmoniser cette puce avec #832 (relecture par extraits de [10]) et signaler sans le modifier le maintien de la mention antérieure dans le volet (miroir fus.controle de chapitre-47-volet-c.md L183).",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1514,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "- **Articles.** Les sept articles n'ont été lus que par leur résumé. [3], [8] et [9] sont des prépublications.",
+  "apres": "- **Articles.** Les sept articles, d'abord lus par leur résumé, ont été recoupés par extraits le 14 novembre 2026. [3], [8] et [9] sont des prépublications.",
+  "categorie": "coherence",
+  "motif": "Lever la contradiction directe entre cette puce et #832.",
+  "origine": "plan 2027, lot REF-4-coherence"
+ },
+ {
+  "n": 1515,
+  "fichier": "annexe-E-bibliographie.md",
+  "avant": "et [OWASP MCP Top 10](https://owasp.org/www-project-mcp-top-10/) (31)",
+  "apres": "et [OWASP MCP Top 10](https://owasp.org/www-project-mcp-top-10/) (30, 31)",
+  "categorie": "renvoi",
+  "motif": "Ajout du chapitre 30 manquant au renvoi de E.2 (chapitre-30-autorisation-delegation.md l. 230 cite cette URL en source [14]).",
+  "origine": "plan 2027, lot REF-5-renvoi"
+ },
+ {
+  "n": 1516,
+  "fichier": "annexe-E-bibliographie.md",
+  "avant": "- [IMDA — Model AI Governance Framework for Agentic AI, version 1.5](https://www.imda.gov.sg/-/media/imda/files/about/emerging-tech-and-research/artificial-intelligence/mgf-for-agentic-ai.pdf) (1, 3, 22, 39)",
+  "apres": "- [IMDA — Model AI Governance Framework for Agentic AI, version 1.5](https://www.imda.gov.sg/-/media/imda/files/about/emerging-tech-and-research/artificial-intelligence/mgf-for-agentic-ai.pdf) (1, 3, 22, 35, 39)",
+  "categorie": "renvoi",
+  "motif": "Ajout du chapitre 35 manquant au renvoi de E.2 (chapitre-35-cadres-internationaux.md l. 267 cite cette URL en source [4]).",
+  "origine": "plan 2027, lot REF-5-renvoi"
+ },
+ {
+  "n": 1517,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "Un article que sa notice plaçait sur arXiv figure, d'après Crossref, dans les actes de la conférence NeurIPS; il est compté parmi les publications évaluées [1]. Une seule notice n'a pas été retrouvée [32].",
+  "apres": "Un article que sa notice plaçait sur arXiv figure, d'après Crossref, dans les actes de la conférence NeurIPS; il est compté parmi les publications évaluées [1]. Une seule notice n'avait pas été retrouvée par la requête automatique du 13 novembre [32]; son identifiant arXiv a été vérifié et ajouté à la liste lors de l'audit du 14 novembre.",
+  "categorie": "factuel",
+  "motif": "Cohérence avec l'ajout du lien arXiv vérifié (2603.07670) pour la source [32], tout en conservant le constat historique du 13 novembre (82/83) aligné sur la figure 48-e1 et l'annexe E.",
+  "origine": "plan 2027, lot REF-5-factuel"
+ },
+ {
+  "n": 1518,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "27. [Agentic AI in Enterprise Business Processes: A Systematic Review and Practitioner Survey on Adoption Readiness (International Conference on Artificial Intelligence Management and Trends, 2026)](https://doi.org/10.63962/nxpa6137) — la notice ne nomme pas les auteurs.",
+  "apres": "27. [Emelyanov — Agentic AI in Enterprise Business Processes: A Systematic Review and Practitioner Survey on Adoption Readiness (International Conference on Artificial Intelligence Management and Trends, 2026)](https://doi.org/10.63962/nxpa6137) — auteur (Sergey Emelyanov) absent de la notice Crossref, confirmé sur la page du DOI.",
+  "categorie": "factuel",
+  "motif": "Complément d'auteur vérifié sur la page officielle du DOI (https://icaimt.com/2026/agentic-ai.html).",
+  "origine": "plan 2027, lot REF-5-factuel"
+ },
+ {
+  "n": 1519,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "32. [Du — Memory for Autonomous LLM Agents: Mechanisms, Evaluation, and Emerging Frontiers (arXiv, 2026)](https://consensus.app/papers/details/w:d2c9bfd2-6e57-4342-87e2-eca95d208b83/) — identifiant non confirmé, lien vers la notice de Consensus.",
+  "apres": "32. [Du — Memory for Autonomous LLM Agents: Mechanisms, Evaluation, and Emerging Frontiers (arXiv, 2026)](https://arxiv.org/abs/2603.07670) — notice absente de la requête automatique du 13 novembre (deux-points sans espace sur arXiv); identifiant arXiv 2603.07670 vérifié le 14 novembre 2026.",
+  "categorie": "factuel",
+  "motif": "Remplacement du lien Consensus redirigeant vers une page d'inscription par l'adresse arXiv réelle confirmée via l'API arXiv.",
+  "origine": "plan 2027, lot REF-5-factuel"
+ },
+ {
+  "n": 1520,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "87. [Kraishan — Same Name, Different Server: A Security Census of Silent Drift in the Model Context Protocol Ecosystem (arXiv 2609.14119)](https://arxiv.org/abs/2609.14119) — résumé; chapitre 8.",
+  "apres": "87. [Kraishan — Same Name, Different Server: A Security Census of Silent Drift in the Model Context Protocol Ecosystem (arXiv 2609.14119, 12 septembre 2026)](https://arxiv.org/abs/2609.14119) — résumé; chapitre 8.",
+  "categorie": "factuel",
+  "motif": "Ajout de la date de publication vérifiée via l'API arXiv.",
+  "origine": "plan 2027, lot REF-5-factuel"
+ },
+ {
+  "n": 1521,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "88. [Li et Gao — Toward Understanding Security Issues in the Model Context Protocol Ecosystem (arXiv 2510.16558)](https://arxiv.org/html/2510.16558v1) — chapitre 8.",
+  "apres": "88. [Li et Gao — Toward Understanding Security Issues in the Model Context Protocol Ecosystem (arXiv 2510.16558, version 1 du 18 octobre 2025; titre révisé en v2 du 27 avril 2026 : A First Look at the Security Issues in the Model Context Protocol Ecosystem)](https://arxiv.org/html/2510.16558v1) — chapitre 8.",
+  "categorie": "factuel",
+  "motif": "Ajout de la version/date v1 vérifiée et mention du titre révisé en v2 sur /abs/.",
+  "origine": "plan 2027, lot REF-5-factuel"
+ },
+ {
+  "n": 1522,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "89. [Guo et coll. — A Measurement Study of Model Context Protocol (arXiv 2509.25292)](https://arxiv.org/html/2509.25292v1) — chapitre 8.",
+  "apres": "89. [Guo et coll. — A Measurement Study of Model Context Protocol (arXiv 2509.25292, version 1 du 29 septembre 2025)](https://arxiv.org/html/2509.25292v1) — chapitre 8.",
+  "categorie": "factuel",
+  "motif": "Ajout de la version et de la date vérifiées correspondant au titre de la v1 citée.",
+  "origine": "plan 2027, lot REF-5-factuel"
+ },
+ {
+  "n": 1523,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "90. [Chen et coll. — Rethinking MCP Security: A Large-Scale Study of Runtime MCP Servers and Security Scanner Reliability (arXiv 2607.11086)](https://arxiv.org/abs/2607.11086) — résumé; chapitres 8 et 24.",
+  "apres": "90. [Chen et coll. — Rethinking MCP Security: A Large-Scale Study of Runtime MCP Servers and Security Scanner Reliability (arXiv 2607.11086, 13 juillet 2026)](https://arxiv.org/abs/2607.11086) — résumé; chapitres 8 et 24.",
+  "categorie": "factuel",
+  "motif": "Ajout de la date de publication vérifiée via l'API arXiv.",
+  "origine": "plan 2027, lot REF-5-factuel"
+ },
+ {
+  "n": 1524,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "91. [MCP-Guard: A Multi-Stage Defense-in-Depth Framework for Securing Model Context Protocol in Agentic AI (arXiv 2508.10991)](https://arxiv.org/html/2508.10991v4) — chapitre 24.",
+  "apres": "91. [Xing et coll. — MCP-Guard: A Multi-Stage Defense-in-Depth Framework for Securing Model Context Protocol in Agentic AI (arXiv 2508.10991, version 4 du 8 janvier 2026)](https://arxiv.org/html/2508.10991v4) — chapitre 24.",
+  "categorie": "factuel",
+  "motif": "Ajout du premier auteur (Wenpeng Xing et coll.) et de la date de la version 4 vérifiés via arXiv.",
+  "origine": "plan 2027, lot REF-5-factuel"
+ },
+ {
+  "n": 1525,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "92. [Shah et coll. — Characterizing Faults in Agentic AI: A Taxonomy of Types, Symptoms, and Root Causes (arXiv 2603.06847)](https://arxiv.org/html/2603.06847v2) — chapitre 21.",
+  "apres": "92. [Shah et coll. — Characterizing Faults in Agentic AI: A Taxonomy of Types, Symptoms, and Root Causes (arXiv 2603.06847, version 2 du 7 mai 2026)](https://arxiv.org/html/2603.06847v2) — chapitre 21.",
+  "categorie": "factuel",
+  "motif": "Ajout de la version et de la date vérifiées dans l'historique arXiv.",
+  "origine": "plan 2027, lot REF-5-factuel"
+ },
+ {
+  "n": 1526,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "93. [Zhang, Zhang et Tan — Dissecting Bug Triggers and Failure Modes in Modern Agentic Frameworks (arXiv 2604.08906)](https://arxiv.org/html/2604.08906v1) — chapitre 20.",
+  "apres": "93. [Zhang, Zhang et Tan — Dissecting Bug Triggers and Failure Modes in Modern Agentic Frameworks: An Empirical Study (arXiv 2604.08906, version 1 du 10 avril 2026; titre révisé en v4 : Understanding Bugs in Modern Agentic Frameworks: A Study of Symptoms, Root Causes, and Triggering Conditions)](https://arxiv.org/html/2604.08906v1) — chapitre 20.",
+  "categorie": "factuel",
+  "motif": "Restitution du sous-titre de la v1, de sa date et mention du titre révisé en v4 sur arXiv.",
+  "origine": "plan 2027, lot REF-5-factuel"
+ },
+ {
+  "n": 1527,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "94. [Zhu et coll. — Where Agent Frameworks Fall Short (arXiv 2602.21806)](https://arxiv.org/abs/2602.21806) — résumé; chapitre 20.",
+  "apres": "94. [Zhu et coll. — Where Agent Frameworks Fall Short: Examining Functional Challenges and Usability Concerns (arXiv 2602.21806, 25 février 2026)](https://arxiv.org/abs/2602.21806) — résumé; chapitre 20.",
+  "categorie": "factuel",
+  "motif": "Restitution du sous-titre complet et de la date de publication vérifiés via l'API arXiv.",
+  "origine": "plan 2027, lot REF-5-factuel"
+ },
+ {
+  "n": 1528,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "95. [She et coll. — Efficient Benchmarking in Production: A Study of an Evolving LLM Agent (arXiv 2609.21267)](https://arxiv.org/abs/2609.21267) — résumé; chapitre 33.",
+  "apres": "95. [She et Lin — Efficient Benchmarking in Production: A Study of an Evolving LLM Agent (arXiv 2609.21267, 18 septembre 2026)](https://arxiv.org/abs/2609.21267) — résumé; chapitre 33.",
+  "categorie": "factuel",
+  "motif": "Précision des deux auteurs (Yining She et Lei Lin) et de la date de publication vérifiés via l'API arXiv.",
+  "origine": "plan 2027, lot REF-5-factuel"
+ },
+ {
+  "n": 1529,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "96. [Kujanpää et coll. — Tool-Making and Self-Evolving LLM Agents in Low-Latency Systems (arXiv 2607.08010)](https://arxiv.org/abs/2607.08010) — résumé; chapitre 42.",
+  "apres": "96. [Kujanpää et coll. — Tool-Making and Self-Evolving LLM Agents in Low-Latency Systems (arXiv 2607.08010, 9 juillet 2026; à paraître au volet industriel d'EMNLP 2026)](https://arxiv.org/abs/2607.08010) — résumé; chapitre 42.",
+  "categorie": "factuel",
+  "motif": "Ajout de la date et de l'acceptation à EMNLP 2026 Industry Track vérifiées sur arXiv.",
+  "origine": "plan 2027, lot REF-5-factuel"
+ },
+ {
+  "n": 1530,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "98. [Goddard et coll. — Automation bias: a systematic review of frequency, effect mediators, and mitigators (Journal of the American Medical Informatics Association)](https://pmc.ncbi.nlm.nih.gov/articles/PMC3240751/) — chapitre 22.",
+  "apres": "98. [Goddard, Roudsari et Wyatt — Automation bias: a systematic review of frequency, effect mediators, and mitigators (Journal of the American Medical Informatics Association, vol. 19, no 1, 2012, p. 121-127; prépublication en ligne en 2011)](https://pmc.ncbi.nlm.nih.gov/articles/PMC3240751/) — chapitre 22.",
+  "categorie": "factuel",
+  "motif": "Ajout des trois auteurs (Kate Goddard, Abdul Roudsari, Jeremy C. Wyatt), de l'année 2012 et des références bibliographiques vérifiés via Crossref (DOI 10.1136/amiajnl-2011-000089).",
+  "origine": "plan 2027, lot REF-5-factuel"
+ },
+ {
+  "n": 1531,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "99. [Dhanorkar, Passi et Vorvoreanu — Human oversight of agentic systems in practice (arXiv 2606.05391)](https://arxiv.org/html/2606.05391) — chapitre 22.",
+  "apres": "99. [Dhanorkar, Passi et Vorvoreanu — Human oversight of agentic systems in practice: Examining the oversight work, challenges, and heuristics of developers using software agents (arXiv 2606.05391, 3 juin 2026)](https://arxiv.org/html/2606.05391) — chapitre 22.",
+  "categorie": "factuel",
+  "motif": "Restitution du sous-titre complet et de la date vérifiés via l'API arXiv.",
+  "origine": "plan 2027, lot REF-5-factuel"
+ },
+ {
+  "n": 1532,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "100. [Green — The Flaws of Policies Requiring Human Oversight of Government Algorithms (arXiv 2109.05067)](https://arxiv.org/abs/2109.05067) — résumé; chapitre 22.",
+  "apres": "100. [Green — The Flaws of Policies Requiring Human Oversight of Government Algorithms (Computer Law & Security Review 45, 2022; arXiv 2109.05067, 10 septembre 2021)](https://arxiv.org/abs/2109.05067) — résumé; chapitre 22.",
+  "categorie": "factuel",
+  "motif": "Ajout de la revue de publication (2022) et de la date de dépôt arXiv (2021), cohérent avec le chapitre 22.",
+  "origine": "plan 2027, lot REF-5-factuel"
+ },
+ {
+  "n": 1533,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "101. [Mitchell, Ghosh et Passi — AI Agents Push Humans Out of the Loop (arXiv 2608.23642)](https://arxiv.org/html/2608.23642) — chapitre 22.",
+  "apres": "101. [Mitchell, Ghosh et Passi — AI Agents Push Humans Out of the Loop (arXiv 2608.23642, 24 août 2026)](https://arxiv.org/html/2608.23642) — chapitre 22.",
+  "categorie": "factuel",
+  "motif": "Ajout de la date de publication vérifiée via l'API arXiv.",
+  "origine": "plan 2027, lot REF-5-factuel"
+ },
+ {
+  "n": 1534,
+  "fichier": "chapitre-49-veille-technologique.md",
+  "avant": "2. [NIST — SP 800-53 Control Overlays, page du projet, mise à jour du 20 octobre 2026](https://csrc.nist.gov/projects/cosais)",
+  "apres": "2. [NIST — SP 800-53 Control Overlays for Super Intelligence Systems, page du projet, mise à jour du 20 octobre 2026](https://csrc.nist.gov/projects/cosis)",
+  "categorie": "factuel",
+  "motif": "Mise à jour vers l'URL canonique du projet renommé COSIS et précision du titre complet.",
+  "origine": "plan 2027, lot REF-5-factuel"
+ },
+ {
+  "n": 1535,
+  "fichier": "chapitre-49-veille-technologique.md",
+  "avant": "20. [NIST — AI Agent Standards Initiative, mise à jour du 9 novembre 2026](https://www.nist.gov/caisi/ai-agent-standards-initiative) — aussi citée aux chapitres 4, 11 et 43.",
+  "apres": "20. [NIST — SI Agent Standards Initiative, mise à jour du 9 novembre 2026](https://www.nist.gov/super-intelligence/si-agent-standards-initiative) — aussi citée aux chapitres 4, 11 et 43 (anciennement CAISI).",
+  "categorie": "factuel",
+  "motif": "Mise à jour vers l'URL canonique et le titre renommé du NIST vérifiés.",
+  "origine": "plan 2027, lot REF-5-factuel"
+ },
+ {
+  "n": 1536,
+  "fichier": "chapitre-49-veille-technologique.md",
+  "avant": "26. [SAP — annonces de TechEd, 27 octobre 2026](https://news.sap.com/?p=248010)",
+  "apres": "26. [SAP — annonces de TechEd, 27 octobre 2026](https://news.sap.com/2026/10/sap-teched-ai-developers-build-what-matters-autonomous-execution/)",
+  "categorie": "factuel",
+  "motif": "Remplacement du permalien court WordPress (?p=248010) par l'URL canonique vérifiée.",
+  "origine": "plan 2027, lot REF-5-factuel"
+ },
+ {
+  "n": 1537,
+  "fichier": "chapitre-49-veille-technologique.md",
+  "avant": "39. [IETF — RFC 10024, accord de clés hybride post-quantique pour TLS 1.3, août 2026](https://datatracker.ietf.org/doc/draft-ietf-tls-ecdhe-mlkem/)",
+  "apres": "39. [IETF — RFC 10024, accord de clés hybride post-quantique pour TLS 1.3, août 2026](https://datatracker.ietf.org/doc/rfc10024/)",
+  "categorie": "factuel",
+  "motif": "Remplacement de l'URL du brouillon par l'URL canonique de la RFC 10024 publiée.",
+  "origine": "plan 2027, lot REF-5-factuel"
+ },
+ {
+  "n": 1538,
+  "fichier": "chapitre-49-veille-technologique.md",
+  "avant": "40. [IETF — RFC 9964, ML-DSA pour JOSE et COSE, mai 2026](https://datatracker.ietf.org/doc/draft-ietf-cose-dilithium/)",
+  "apres": "40. [IETF — RFC 9964, ML-DSA pour JOSE et COSE, mai 2026](https://datatracker.ietf.org/doc/rfc9964/)",
+  "categorie": "factuel",
+  "motif": "Remplacement de l'URL du brouillon par l'URL canonique de la RFC 9964 publiée.",
+  "origine": "plan 2027, lot REF-5-factuel"
+ },
+ {
+  "n": 1539,
+  "fichier": "chapitre-49-veille-technologique.md",
+  "avant": "41. [IETF — RFC 10073, signatures composites ML-DSA pour X.509, novembre 2026](https://datatracker.ietf.org/doc/draft-ietf-lamps-pq-composite-sigs/)",
+  "apres": "41. [IETF — RFC 10073, signatures composites ML-DSA pour X.509, novembre 2026](https://datatracker.ietf.org/doc/rfc10073/)",
+  "categorie": "factuel",
+  "motif": "Remplacement de l'URL du brouillon par l'URL canonique de la RFC 10073 publiée.",
+  "origine": "plan 2027, lot REF-5-factuel"
+ },
+ {
+  "n": 1540,
+  "fichier": "chapitre-50-projection-etude-marche.md",
+  "avant": "29. [Epoch AI — LLM inference prices have fallen rapidly but unequally across tasks, 12 mars 2025](https://epoch.ai/data-insights/ai-inference-price-trends) — première partie de la page.",
+  "apres": "29. [Epoch AI — LLM inference prices have fallen rapidly but unequally across tasks, 12 mars 2025](https://epoch.ai/data-insights/llm-inference-price-trends) — première partie de la page.",
+  "categorie": "factuel",
+  "motif": "Mise à jour vers l'URL canonique vérifiée (redirection permanente depuis ai-inference-price-trends).",
+  "origine": "plan 2027, lot REF-5-factuel"
+ },
+ {
+  "n": 1541,
+  "fichier": "chapitre-50-projection-etude-marche.md",
+  "avant": "32. [IDC — FutureScape 2027, communiqué du 27 octobre 2026](https://www.idc.com/?p=122385) — relue à l'audit.",
+  "apres": "32. [IDC — FutureScape 2027, communiqué du 27 octobre 2026](https://www.idc.com/resource-center/press-releases/idc-futurescape-2027-predicts-60-of-enterprises-will-run-a-majority-of-their-business-processes-ai-first-by-2029-up-from-13-in-2026/) — relue à l'audit.",
+  "categorie": "factuel",
+  "motif": "Remplacement du permalien court (?p=122385) par l'URL canonique vérifiée.",
+  "origine": "plan 2027, lot REF-5-factuel"
+ },
+ {
+  "n": 1542,
+  "fichier": "chapitre-50-projection-etude-marche.md",
+  "avant": "66. [TechTarget — Dynatrace acquires Arize for AI agent development, 13 août 2026](https://www.techtarget.com/it-strategy/news/366648773/Dynatrace-acquires-Arize-for-AI-agent-development)",
+  "apres": "66. [TechTarget — Dynatrace acquires Arize for AI agent development, 13 août 2026](https://www.techtarget.com/news/Dynatrace-acquires-Arize-for-AI-agent-development/846446/)",
+  "categorie": "factuel",
+  "motif": "Mise à jour vers l'URL canonique vérifiée après redirection TechTarget.",
+  "origine": "plan 2027, lot REF-5-factuel"
+ },
+ {
+  "n": 1543,
+  "fichier": "chapitre-50-projection-etude-marche.md",
+  "avant": "72. [IT-Online — reprise du communiqué de Gartner du 11 juin 2025 sur les agents gardiens](https://it-online.co.za/?p=298626)",
+  "apres": "72. [IT-Online — reprise du communiqué de Gartner du 11 juin 2025 sur les agents gardiens](https://it-online.co.za/2025/06/13/guardian-agents-will-bolster-trust/)",
+  "categorie": "factuel",
+  "motif": "Remplacement du permalien court WordPress (?p=298626) par l'URL canonique vérifiée.",
+  "origine": "plan 2027, lot REF-5-factuel"
+ },
+ {
+  "n": 1544,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "- Le profil du corpus de l'ouvrage classe les 709 sources d'après le nom de domaine de leur adresse. Il confond les genres au sein d'un même site et compte comme prépublication un article publié mais cité par arXiv.",
+  "apres": "- Le profil du corpus de l'ouvrage (789 sources en 48.2) classe par nom de domaine les 709 sources du 13 novembre et y ajoute 80 compléments classés à la main; le classement par adresse confond les genres au sein d'un même site et compte comme prépublication un article publié mais cité par arXiv.",
+  "categorie": "factuel",
+  "motif": "Alignement des limites sur le tableau recalculé en section 48.2 (l. 72 et l. 94 : 709 sources classées par adresse + 80 classées à la main = 789).",
+  "origine": "plan 2027, lot REF-5-factuel"
+ },
+ {
+  "n": 1545,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "Six ne sont connus que par leur résumé, et leur rattachement aux cases de la synthèse est une lecture de ce chapitre. Le profil du corpus de la section 48.2 n'a pas été recalculé sur les 774 sources.",
+  "apres": "Six ne sont connus que par leur résumé, et leur rattachement aux cases de la synthèse est une lecture de ce chapitre. Le profil du corpus de la section 48.2 a depuis été recalculé sur les 789 sources du 14 novembre en mêlant classement par adresse (709) et classement manuel (80).",
+  "categorie": "factuel",
+  "motif": "Suppression de la contradiction avec le tableau recalculé (l. 72 : 789; l. 94 : 709 + 80), en restant strictement dans l'ancre de l'entrée #525 du registre.",
+  "origine": "plan 2027, lot REF-5-factuel"
+ },
+ {
+  "n": 1546,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "4. [Chang et coll. — SagaLLM",
+  "apres": "4. [Chang et Geng — SagaLLM",
+  "categorie": "harmonisation",
+  "motif": "Harmonisation des notices à deux auteurs (Edward Y. Chang et Longling Geng, Crossref) selon l'usage X et Y du chapitre.",
+  "origine": "plan 2027, lot REF-5-harmonisation"
+ },
+ {
+  "n": 1547,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "10. [Ahmad et coll. — Model Context Protocol Servers",
+  "apres": "10. [Ahmad et Hassan — Model Context Protocol Servers",
+  "categorie": "harmonisation",
+  "motif": "Harmonisation des notices à deux auteurs (Muhammad Ahmad et Muhammad Hassan, Crossref) selon l'usage X et Y du chapitre.",
+  "origine": "plan 2027, lot REF-5-harmonisation"
+ },
+ {
+  "n": 1548,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "23. [Oyewale et coll. — LLM-Driven Ontology Construction",
+  "apres": "23. [Oyewale et Soru — LLM-Driven Ontology Construction",
+  "categorie": "harmonisation",
+  "motif": "Harmonisation des notices à deux auteurs (Abdulsobur Oyewale et Tommaso Soru, Crossref) selon l'usage X et Y du chapitre.",
+  "origine": "plan 2027, lot REF-5-harmonisation"
+ },
+ {
+  "n": 1549,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "28. [Tanudjaja et coll. — The Agentic AI Adoption Paradox",
+  "apres": "28. [Tanudjaja et Hutajulu — The Agentic AI Adoption Paradox",
+  "categorie": "harmonisation",
+  "motif": "Harmonisation des notices à deux auteurs (Ricky Tanudjaja et Sahat Hutajulu, Crossref) selon l'usage X et Y du chapitre.",
+  "origine": "plan 2027, lot REF-5-harmonisation"
+ },
+ {
+  "n": 1550,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "52. [Tran et coll. — Single-Agent LLMs Outperform",
+  "apres": "52. [Tran et Kiela — Single-Agent LLMs Outperform",
+  "categorie": "harmonisation",
+  "motif": "Harmonisation des notices à deux auteurs (Dat Tran et Douwe Kiela, arXiv) selon l'usage X et Y du chapitre.",
+  "origine": "plan 2027, lot REF-5-harmonisation"
+ },
+ {
+  "n": 1551,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "55. [Bertalanič et coll. — The Ringelmann Effect",
+  "apres": "55. [Bertalanič et Fortuna — The Ringelmann Effect",
+  "categorie": "harmonisation",
+  "motif": "Harmonisation des notices à deux auteurs (Blaž Bertalanič et Carolina Fortuna, arXiv) selon l'usage X et Y du chapitre.",
+  "origine": "plan 2027, lot REF-5-harmonisation"
+ },
+ {
+  "n": 1552,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "70. [Mandarapu et coll. — Knowledge Graphs as the Missing Data Layer",
+  "apres": "70. [Mandarapu et Kunkunuru — Knowledge Graphs as the Missing Data Layer",
+  "categorie": "harmonisation",
+  "motif": "Harmonisation des notices à deux auteurs (Madhulatha Mandarapu et Sandeep Kunkunuru, arXiv) selon l'usage X et Y du chapitre.",
+  "origine": "plan 2027, lot REF-5-harmonisation"
+ },
+ {
+  "n": 1553,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "71. [Tuan et coll. — Ontology-Constrained Neural Reasoning",
+  "apres": "71. [Tuan et Sanyal — Ontology-Constrained Neural Reasoning",
+  "categorie": "harmonisation",
+  "motif": "Harmonisation des notices à deux auteurs (Thanh Luong Tuan et Abhijit Sanyal, arXiv) selon l'usage X et Y du chapitre.",
+  "origine": "plan 2027, lot REF-5-harmonisation"
+ },
+ {
+  "n": 1554,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "82. [Hacker et coll. — A pragmatic approach",
+  "apres": "82. [Hacker et Holweg — A pragmatic approach",
+  "categorie": "harmonisation",
+  "motif": "Harmonisation des notices à deux auteurs (Philipp Hacker et Matthias Holweg, arXiv) selon l'usage X et Y du chapitre.",
+  "origine": "plan 2027, lot REF-5-harmonisation"
+ },
+ {
+  "n": 1555,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "84. [Kang et Diponegoro — Governance Gaps in Agent Interoperability Protocols (arXiv 2606.31498)](https://arxiv.org/abs/2606.31498)",
+  "apres": "84. [Kang et Diponegoro — Governance Gaps in Agent Interoperability Protocols (arXiv 2606.31498, 2026)](https://arxiv.org/abs/2606.31498)",
+  "categorie": "harmonisation",
+  "motif": "Ajout de l'année de publication (2026, arXiv) par cohérence avec les autres sources du chapitre 48.",
+  "origine": "plan 2027, lot REF-5-harmonisation"
+ },
+ {
+  "n": 1556,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "85. [Kim et coll. — Towards a Science of Scaling Agent Systems (arXiv 2512.08296)](https://arxiv.org/html/2512.08296v3)",
+  "apres": "85. [Kim et coll. — Towards a Science of Scaling Agent Systems (arXiv 2512.08296, 2025)](https://arxiv.org/html/2512.08296v3)",
+  "categorie": "harmonisation",
+  "motif": "Ajout de l'année de publication (2025, arXiv) par cohérence avec les autres sources du chapitre 48.",
+  "origine": "plan 2027, lot REF-5-harmonisation"
+ },
+ {
+  "n": 1557,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "86. [Pan et coll. — Measuring Agents in Production (arXiv 2512.04123)](https://arxiv.org/abs/2512.04123)",
+  "apres": "86. [Pan et coll. — Measuring Agents in Production (arXiv 2512.04123, 2025)](https://arxiv.org/abs/2512.04123)",
+  "categorie": "harmonisation",
+  "motif": "Ajout de l'année de publication (2025, arXiv) par cohérence avec les autres sources du chapitre 48.",
+  "origine": "plan 2027, lot REF-5-harmonisation"
+ },
+ {
+  "n": 1558,
+  "fichier": "annexe-E-bibliographie.md",
+  "avant": "- [NIST — AI Agent Standards Initiative](https://www.nist.gov/caisi/ai-agent-standards-initiative) (1, 3, 4, 11, 35, 43)",
+  "apres": "- [NIST — SI Agent Standards Initiative](https://www.nist.gov/super-intelligence/si-agent-standards-initiative) (1, 3, 4, 11, 35, 43)",
+  "categorie": "harmonisation",
+  "motif": "Synchroniser l'URL et l'intitulé NIST SI Agent Standards Initiative avec les chapitres 1, 3, 4, 11, 35, 43 et 49",
+  "origine": "plan 2027, lot REF-cloture"
+ },
+ {
+  "n": 1559,
+  "fichier": "annexe-E-bibliographie.md",
+  "avant": "- [Anthropic — Building effective agents](https://www.anthropic.com/engineering/building-effective-agents) (1, 16, 17)",
+  "apres": "- [Anthropic — Building effective agents](https://www.anthropic.com/research/building-effective-agents) (1, 16, 17)",
+  "categorie": "harmonisation",
+  "motif": "Synchroniser l'URL canonique Anthropic /research/building-effective-agents avec le chapitre 1",
+  "origine": "plan 2027, lot REF-cloture"
+ },
+ {
+  "n": 1560,
+  "fichier": "chapitre-16-topologies-patrons.md",
+  "avant": "4. [Anthropic — Building effective agents, 19 décembre 2024](https://www.anthropic.com/engineering/building-effective-agents) — billet de fournisseur.",
+  "apres": "4. [Anthropic — Building effective agents, 19 décembre 2024](https://www.anthropic.com/research/building-effective-agents) — billet de fournisseur.",
+  "categorie": "harmonisation",
+  "motif": "Aligner l'URL canonique Anthropic /research/building-effective-agents sur le chapitre 1 et l'annexe E",
+  "origine": "plan 2027, lot REF-cloture"
+ },
+ {
+  "n": 1561,
+  "fichier": "chapitre-17-deterministe-ou-agentique.md",
+  "avant": "1. [Anthropic — Building effective agents (19 décembre 2024)](https://www.anthropic.com/engineering/building-effective-agents)",
+  "apres": "1. [Anthropic — Building effective agents (19 décembre 2024)](https://www.anthropic.com/research/building-effective-agents)",
+  "categorie": "harmonisation",
+  "motif": "Aligner l'URL canonique Anthropic /research/building-effective-agents sur le chapitre 1 et l'annexe E",
+  "origine": "plan 2027, lot REF-cloture"
+ },
+ {
+  "n": 1562,
+  "fichier": "annexe-E-bibliographie.md",
+  "avant": "Résumés seulement pour les 83 notices du protocole, dont titre, auteurs et lieu de publication sont confirmés auprès d'arXiv ou de Crossref pour 82; des quinze travaux hors protocole, six ne sont connus que par leur résumé",
+  "apres": "Résumés seulement pour les 83 notices du protocole, dont titre, auteurs et lieu de publication sont confirmés auprès d'arXiv ou de Crossref pour 82 le 13 novembre (la 83e, [32], est confirmée sur arXiv et l'auteur de [27] sur la page du DOI le 14 novembre); des quinze travaux hors protocole, six ne sont connus que par leur résumé",
+  "categorie": "harmonisation",
+  "motif": "Consigner la confirmation de [32] sur arXiv et de l'auteur de [27] sur la page du DOI au 14 novembre 2026 tout en gardant le fait du 13 novembre (82)",
+  "origine": "plan 2027, lot REF-cloture"
+ },
+ {
+  "n": 1563,
+  "fichier": "annexe-E-bibliographie.md",
+  "avant": "Trois contrôles ont suivi l'audit, faits par des lecteurs qui n'avaient pas écrit les passages contrôlés. Tous lisent les sources par un outil qui en rend des extraits, non le texte brut.\n\n| Contrôle | Périmètre | Résultat |\n|---|---|---|\n| Recollationnement des chiffres | 200 phrases d'exposé tirées au hasard parmi les 295 qui portent une quantité et un appel de source | 182 vérifiables : 178 confirmées, 4 en erreur, soit 2,2 %; 18 non vérifiables, la source étant inaccessible ou le chiffre introuvable |\n| Lecture au-delà du résumé | 134 sources des chapitres 1 à 47 connues par leur seul résumé et citées dans le texte | 124 relues : 64 confirmées, 54 exactes mais à nuancer, 6 en erreur; 10 non relues |\n| Second audit des compléments | Les 193 entrées ajoutées au registre le 14 novembre | 95 constats : aucun bloquant, 19 majeurs, 76 mineurs; 86 corrigés |",
+  "apres": "Quatre contrôles ont suivi l'audit, faits par des lecteurs qui n'avaient pas écrit les passages contrôlés. Les trois premiers lisent les sources par un outil qui en rend des extraits, non le texte brut; le quatrième contrôle les adresses, identifiants et renvois directement sur les sources et les interfaces d'arXiv, Crossref et IETF Datatracker.\n\n| Contrôle | Périmètre | Résultat |\n|---|---|---|\n| Recollationnement des chiffres | 200 phrases d'exposé tirées au hasard parmi les 295 qui portent une quantité et un appel de source | 182 vérifiables : 178 confirmées, 4 en erreur, soit 2,2 %; 18 non vérifiables, la source étant inaccessible ou le chiffre introuvable |\n| Lecture au-delà du résumé | 134 sources des chapitres 1 à 47 connues par leur seul résumé et citées dans le texte | 124 relues : 64 confirmées, 54 exactes mais à nuancer, 6 en erreur; 10 non relues |\n| Second audit des compléments | Les 193 entrées ajoutées au registre le 14 novembre | 95 constats : aucun bloquant, 19 majeurs, 76 mineurs; 86 corrigés |\n| Contrôle intégral des références et liens | 59 fichiers du manuscrit : 1 033 sources (789 ch. 1–47, 244 partie X), 1 101 occurrences d'URL publiques (879 distinctes, dont 13 occurrences / 12 URI en blocs de code), appels [n] et renvois internes (5 604 entrées consignées pour les tranches 1 à 5) | 0 source sans URL, 0 appel ou renvoi interne cassé; 256 remplacements appliqués au registre (lots REF-1 à REF-5 et REF-cloture); accès restreints (403, 429, défis anti-robot, délais) vérifiés par API ou recherche et datés dans les sources et limites |",
+  "categorie": "harmonisation",
+  "motif": "Ajouter le bilan factuel du contrôle intégral des références, URL, identifiants et renvois des 59 fichiers au 14 novembre 2026",
+  "origine": "plan 2027, lot REF-cloture"
+ },
+ {
+  "n": 1564,
+  "fichier": "chapitre-24-passerelles-integration.md",
+  "avant": "10. [MCP — bonnes pratiques de sécurité, spécification 2026-07-28](https://modelcontextprotocol.io/specification/2026-07-28/basic/security_best_practices.md)",
+  "apres": "10. [MCP — bonnes pratiques de sécurité, spécification 2026-07-28](https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/security_best_practices.md)",
+  "categorie": "harmonisation",
+  "motif": "Aligner l'URL MCP security_best_practices.md sur les chapitres 30 et 31",
+  "origine": "plan 2027, lot REF-cloture"
+ },
+ {
+  "n": 1565,
+  "fichier": "chapitre-24-passerelles-integration.md",
+  "avant": "15. [MCP-Guard: A Multi-Stage Defense-in-Depth Framework for Securing Model Context Protocol in Agentic AI (arXiv 2508.10991, version 4 du 8 janvier 2026)](https://arxiv.org/html/2508.10991v4)",
+  "apres": "15. [Xing et coll. — MCP-Guard: A Multi-Stage Defense-in-Depth Framework for Securing Model Context Protocol in Agentic AI (arXiv 2508.10991, version 4 du 8 janvier 2026)](https://arxiv.org/html/2508.10991v4)",
+  "categorie": "harmonisation",
+  "motif": "Ajouter Xing et coll. confirmé sur export.arxiv.org (arXiv 2508.10991v4), aligné sur le chapitre 48 [91]",
+  "origine": "plan 2027, lot REF-cloture"
+ },
+ {
+  "n": 1566,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "ces éléments proviennent du texte complet de l'article, recoupé par extraits le 14 novembre 2026 (le volet pratique ci-après conserve la formulation antérieure relative au résumé seul).",
+  "apres": "ces éléments proviennent du texte complet de l'article, recoupé par extraits le 14 novembre 2026.",
+  "categorie": "harmonisation",
+  "motif": "Retirer la réserve devenue caduque après synchronisation du volet pratique L1107",
+  "origine": "plan 2027, lot REF-cloture"
+ },
+ {
+  "n": 1567,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "le résumé lu de l’article de Carlini ne décrit ni les canaris ni la métrique d’exposition, et le nombre de canaris et de témoins, le seuil et le décodage ne sont décrits dans aucune source lue.",
+  "apres": "le résumé seul de l’article de Carlini ne décrit ni les canaris ni la métrique d’exposition; ces éléments proviennent du texte complet de l’article, recoupé par extraits le 14 novembre 2026, et le nombre de canaris et de témoins, le seuil et le décodage ne sont décrits dans aucune source lue.",
+  "categorie": "harmonisation",
+  "motif": "Synchroniser le volet pratique L1107 (et chapitre-47-volet-c.md L183) avec la section Limites L266 en gardant exclusivement des mots présents dans l'exposé et aud.ajouts",
+  "origine": "plan 2027, lot REF-cloture"
+ },
+ {
+  "n": 1568,
+  "fichier": "annexe-E-bibliographie.md",
+  "avant": "(5 604 entrées consignées pour les tranches 1 à 5) | 0 source sans URL, 0 appel ou renvoi interne cassé; 256 remplacements appliqués au registre (lots REF-1 à REF-5 et REF-cloture)",
+  "apres": "(5 607 entrées consignées pour les tranches 1 à 5, dont 3 ajouts de DOI) | 0 source sans URL, 0 appel ou renvoi interne cassé; 263 remplacements appliqués au registre (lots REF-1 à REF-5, REF-cloture et REF-cloture-2)",
+  "categorie": "harmonisation",
+  "motif": "Aligner annexe-E E.3 sur le décompte réel de audit-references.json (5 607 entrées) et du registre après REF-cloture-2",
+  "origine": "plan 2027, lot REF-cloture-2"
+ },
+ {
+  "n": 1569,
+  "fichier": "chapitre-21-fiabilite-coordination.md",
+  "avant": "6. [Anthropic — How we built our multi-agent research system, 13 juin 2025](https://www.anthropic.com/engineering/multi-agent-research-system) — billet de fournisseur.",
+  "apres": "6. [Anthropic — How we built our multi-agent research system, 13 juin 2025](https://www.anthropic.com/research/multi-agent-research-system) — billet de fournisseur.",
+  "categorie": "harmonisation",
+  "motif": "Aligner l'URL canonique Anthropic /research/multi-agent-research-system sur le chapitre 40",
+  "origine": "plan 2027, lot REF-cloture-2"
+ },
+ {
+  "n": 1570,
+  "fichier": "chapitre-22-humain-dans-la-boucle.md",
+  "avant": "13. [Gouvernement du Canada — guide sur la portée de la Directive sur la prise de décisions automatisée](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/guide-scope-directive-automated-decision-making.html)",
+  "apres": "13. [Gouvernement du Canada — guide sur la portée de la Directive sur la prise de décisions automatisée](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/automated-decision-making/guide-scope-directive-automated-decision-making.html)",
+  "categorie": "harmonisation",
+  "motif": "Actualiser l'URL canonique canada.ca après redirection permanente 301 vers automated-decision-making/",
+  "origine": "plan 2027, lot REF-cloture-2"
+ },
+ {
+  "n": 1571,
+  "fichier": "chapitre-38-canada-quebec.md",
+  "avant": "5. [Canada — Guide sur l'utilisation de l'IA agentive](https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/utilisation-responsable-ai/guide-utilisation-intelligence-artificielle-agentive.html)",
+  "apres": "5. [Canada — Guide sur l'utilisation de l'IA agentive](https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/utilisation-responsable-ai/ia-generative/guide-utilisation-intelligence-artificielle-agentive.html)",
+  "categorie": "harmonisation",
+  "motif": "Actualiser l'URL canonique canada.ca après redirection permanente 301 vers ia-generative/",
+  "origine": "plan 2027, lot REF-cloture-2"
+ },
+ {
+  "n": 1572,
+  "fichier": "chapitre-38-canada-quebec.md",
+  "avant": "6. [Canada — Évaluation de l'incidence algorithmique](https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/utilisation-responsable-ai/evaluation-incidence-algorithmique.html)",
+  "apres": "6. [Canada — Évaluation de l'incidence algorithmique](https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/utilisation-responsable-ai/prise-decisions-automatisee/evaluation-incidence-algorithmique.html)",
+  "categorie": "harmonisation",
+  "motif": "Actualiser l'URL canonique canada.ca après redirection permanente 301 vers prise-decisions-automatisee/",
+  "origine": "plan 2027, lot REF-cloture-2"
+ },
+ {
+  "n": 1573,
+  "fichier": "chapitre-38-canada-quebec.md",
+  "avant": "18. [Canada — guide sur la portée de la Directive sur la prise de décisions automatisée (page datée du 15 septembre 2026)](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/guide-scope-directive-automated-decision-making.html)",
+  "apres": "18. [Canada — guide sur la portée de la Directive sur la prise de décisions automatisée (page datée du 15 septembre 2026)](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/automated-decision-making/guide-scope-directive-automated-decision-making.html)",
+  "categorie": "harmonisation",
+  "motif": "Actualiser l'URL canonique canada.ca après redirection permanente 301 vers automated-decision-making/",
+  "origine": "plan 2027, lot REF-cloture-2"
+ },
+ {
+  "n": 1574,
+  "fichier": "chapitre-39-gouvernance-interne.md",
+  "avant": "4. [Gouvernement du Canada — Guide sur l'utilisation de l'intelligence artificielle agentive (page datée du 15 septembre 2026)](https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/utilisation-responsable-ai/guide-utilisation-intelligence-artificielle-agentive.html)",
+  "apres": "4. [Gouvernement du Canada — Guide sur l'utilisation de l'intelligence artificielle agentive (page datée du 15 septembre 2026)](https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/utilisation-responsable-ai/ia-generative/guide-utilisation-intelligence-artificielle-agentive.html)",
+  "categorie": "harmonisation",
+  "motif": "Actualiser l'URL canonique canada.ca après redirection permanente 301 vers ia-generative/",
+  "origine": "plan 2027, lot REF-cloture-2"
+ },
+ {
+  "n": 1575,
+  "fichier": "chapitre-50-projection-etude-marche.md",
+  "avant": "23. [ServiceNow — résultats du troisième trimestre de 2026, dépôt à la SEC du 28 octobre 2026](https://www.sec.gov/Archives/edgar/data/0001373715/000137371526000092/erq3fy26.htm)",
+  "apres": "23. [ServiceNow — résultats du troisième trimestre de 2026, dépôt à la SEC du 28 octobre 2026](https://www.sec.gov/Archives/edgar/data/1373715/000137371526000092/erq3fy26.htm)",
+  "categorie": "harmonisation",
+  "motif": "Aligner l'URL SEC EDGAR vers son chemin canonique sans zéros initiaux après redirection 301",
+  "origine": "plan 2027, lot REF-cloture-3"
+ },
+ {
+  "n": 1576,
+  "fichier": "chapitre-50-projection-etude-marche.md",
+  "avant": "25. [SAP — rapport du troisième trimestre de 2026, dépôt à la SEC du 21 octobre 2026](https://www.sec.gov/Archives/edgar/data/0001000184/000110465926118617/tm2628113d1_ex99-1.htm)",
+  "apres": "25. [SAP — rapport du troisième trimestre de 2026, dépôt à la SEC du 21 octobre 2026](https://www.sec.gov/Archives/edgar/data/1000184/000110465926118617/tm2628113d1_ex99-1.htm)",
+  "categorie": "harmonisation",
+  "motif": "Aligner l'URL SEC EDGAR vers son chemin canonique sans zéros initiaux après redirection 301",
+  "origine": "plan 2027, lot REF-cloture-3"
+ },
+ {
+  "n": 1577,
+  "fichier": "annexe-E-bibliographie.md",
+  "avant": "263 remplacements appliqués au registre (lots REF-1 à REF-5, REF-cloture et REF-cloture-2)",
+  "apres": "266 remplacements appliqués au registre (lots REF-1 à REF-5, REF-cloture, REF-cloture-2 et REF-cloture-3)",
+  "categorie": "harmonisation",
+  "motif": "Mettre à jour le décompte total des remplacements après REF-cloture-3",
+  "origine": "plan 2027, lot REF-cloture-3"
+ },
+ {
+  "n": 1578,
+  "fichier": "annexe-E-bibliographie.md",
+  "avant": "1 101 occurrences d'URL publiques (879 distinctes, dont 13 occurrences / 12 URI en blocs de code)",
+  "apres": "1 101 occurrences d'URL publiques (878 distinctes, dont 13 occurrences / 12 URI en blocs de code)",
+  "categorie": "harmonisation",
+  "motif": "Aligner le nombre d'URL publiques distinctes après convergence de chapitre-21 [6] vers /research/multi-agent-research-system",
+  "origine": "plan 2027, lot REF-cloture-4"
+ },
+ {
+  "n": 1579,
+  "fichier": "annexe-E-bibliographie.md",
+  "avant": "266 remplacements appliqués au registre (lots REF-1 à REF-5, REF-cloture, REF-cloture-2 et REF-cloture-3)",
+  "apres": "268 remplacements appliqués au registre (lots REF-1 à REF-5 et REF-cloture à REF-cloture-4)",
+  "categorie": "harmonisation",
+  "motif": "Mettre à jour le total des remplacements après REF-cloture-4",
+  "origine": "plan 2027, lot REF-cloture-4"
  }
 ]

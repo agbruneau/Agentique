@@ -2,7 +2,7 @@
 
 *Question directrice : que se passe-t-il quand un agent tombe en panne au milieu d'une tâche ?*
 
-> **État de référence :** prépublication SagaLLM (arXiv 2503.11951, version 3 du 9 juillet 2025), brouillon IETF `draft-ietf-httpapi-idempotency-key-header-08` du 22 octobre 2026, documentation des éditeurs consultée le 11 novembre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre; [1] à [13] sont des pages primaires lues pour ce chapitre, [14] et [15] n'ont pas pu être lues; [16] et [17] ont été lues le 14 novembre 2026.
+> **État de référence :** prépublication SagaLLM (arXiv 2503.11951, version 3 du 9 juillet 2025), brouillon IETF `draft-ietf-httpapi-idempotency-key-header-08` du 22 octobre 2026, documentation des éditeurs consultée le 11 novembre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre; [1] à [13] sont des pages primaires lues pour ce chapitre, [14] n'a pas pu être lue; [15], retrouvée via Crossref à l'audit, n'a pas été exploitée dans la rédaction; [16] et [17] ont été lues le 14 novembre 2026.
 
 Un agent chargé d'un remboursement a annulé la commande, crédité la carte, puis son processus est tué avant le courriel de confirmation. Au redémarrage, trois questions se posent : qu'est-ce qui a été fait, que peut-on refaire sans dommage, et que faut-il défaire ? Un agent qui ne sait pas y répondre recommence tout, et le client est remboursé deux fois, ou ne recommence rien, et la tâche reste à moitié faite.
 
@@ -291,12 +291,12 @@ Pages primaires lues le 11 novembre 2026 :
 10. [AWS — Best practices for Lambda durable functions](https://docs.aws.amazon.com/lambda/latest/dg/durable-best-practices.html)
 11. [Microsoft Agent Framework — Durable Extension](https://learn.microsoft.com/en-us/agent-framework/hosting/durable-extension) (page datée du 31 août 2026, mise à jour le 6 novembre 2026)
 12. [Confluent — Kafka, sémantiques de livraison](https://docs.confluent.io/kafka/design/delivery-semantics.html)
-13. [GoEX: Perspectives and Designs Towards a Runtime for Autonomous LLM Applications — arXiv 2404.06921](https://arxiv.org/abs/2404.06921) (résumé)
+13. [GoEX: Perspectives and Designs Towards a Runtime for Autonomous LLM Applications — arXiv 2404.06921](https://arxiv.org/abs/2404.06921) (résumé, puis extraits relus le 14 novembre 2026)
 
-Sources non lues :
+Sources non lues ou non exploitées dans la rédaction :
 
 14. [Garcia-Molina et Salem, « Sagas », SIGMOD 1987](https://www.cs.cornell.edu/andru/cs711/2002fa/reading/sagas.pdf) — PDF numérisé, illisible par l'outil; citée d'après [1].
-15. [Agentic AI Pipelines for Enterprise Decision-Making (Nexus)](https://consensus.app/papers/details/22a0c58efa5153b194fcbf5d89fbe04c/) — fiche inaccessible (erreur 403), original introuvable.
+15. [Nutakki — Design and Implementation of Agentic AI Pipelines for Enterprise Decision-Making Architecture Patterns for Production Systems (Nexus, *IJIRMPS*, vol. 14, n° 2, 27 avril 2026, DOI 10.37082/ijirmps.v14.i2.233041)](https://www.ijirmps.org/papers/2026/2/233041.pdf) — l'adresse Consensus d'origine redirige (HTTP 302) vers `/sign-up/` et non vers une erreur 403; article et PDF retrouvés à l'audit du 14 novembre 2026, non exploités dans le corps du chapitre.
 
 Pages d'éditeurs lues le 14 novembre 2026 :
 
@@ -306,7 +306,7 @@ Pages d'éditeurs lues le 14 novembre 2026 :
 ## Limites de ce chapitre
 
 - Les sources [1] et [13], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
-- **L'architecture Nexus, second appui prévu par le plan initial, n'a pas été lue** [15]. Deux recherches par titre n'ont retrouvé ni l'article ni son éditeur, et ce plan n'en donne que le titre. Le chapitre ne lui emprunte rien.
+- **L'architecture Nexus, second appui prévu par le plan initial, n'a pas été exploitée dans la rédaction** [15]. La fiche Consensus mène à `/sign-up/`, mais l'article original a été retrouvé via Crossref le 14 novembre 2026 (Sandeep Nutakki, *IJIRMPS*, vol. 14, n° 2, avril 2026, DOI 10.37082/ijirmps.v14.i2.233041, PDF en accès libre présentant Nexus), et ce plan n'en donne que le titre. Le chapitre ne lui emprunte rien.
 - L'article d'origine sur les Sagas [14] n'a pas été lu; sa définition est reprise de SagaLLM. Ce que cet article dit des actions non compensables n'a donc pas pu être cité.
 - Viennent de la connaissance générale, non d'une page lue : le classement des étapes en compensables, pivot et réessayables; les patrons d'autorisation puis capture et de zone d'attente; l'absence de coordinateur de transactions commun aux systèmes d'entreprise.
 - Sont des déductions, non des faits lus : le traitement de l'appel au modèle comme étape journalisée, l'assimilation d'un changement de prompt, d'outils ou de modèle à un changement de version, la lecture restrictive de la promesse de Restate, les deux erreurs de conception de la section 18.3 (la première appuyée en partie par la consigne de Microsoft), et la liaison entre approbation et empreinte.

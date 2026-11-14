@@ -221,4 +221,5 @@ Source non lue :
 - EUR-Lex n'a pas pu être relu à l'audit; le rattachement à un considérant de l'assimilation du fournisseur d'IA au fabricant relève de la connaissance générale.
 - Les avenants de Verisk sont connus par une paraphrase rapportée par la presse, l'offre d'AIUC par sa seule page d'accueil. Aucune police propre à l'IA n'a été examinée, et aucun chiffre de marché n'est repris.
 - Le rôle des formulaires ISO, l'adoption d'UETA hors de la Californie et le sens du mot « agent » en common law relèvent de la connaissance générale. La loi type de la CNUDCI est décrite d'après sa page de présentation.
+- Lors de l'audit du 14 novembre 2026, [6] (CSA, HTTP 403 anti-robot) et [14] (CanLII, HTTP 403) restent inaccessibles au script automatique; la note [6] (« AI Liability Inflection: Enterprise Accountability in the Agentic Era », été 2026) et l'arrêt [14] sont confirmés par recherche web et sources secondaires.
 - Le mandat du Code civil du Québec et les lois provinciales sur le commerce électronique n'ont pas été lus; le cadre canadien est au chapitre 38.

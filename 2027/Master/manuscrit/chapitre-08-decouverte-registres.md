@@ -2,7 +2,7 @@
 
 *Question directrice : comment un agent trouve-t-il un outil ou un pair, et pourquoi lui faire confiance ?*
 
-> **État de référence :** registre MCP en préversion (API `v0.1`), spécification A2A 1.0, proposition ARD v0.91 du 26 août 2026, AGNTCY Agent Directory v1.0 du 19 février 2026, documentation d'AWS, de Microsoft, de MuleSoft et d'Apigee consultée le 11 novembre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre; toutes sont des pages lues pour ce chapitre, [22] étant un communiqué d'éditeur; [23] à [27] ont été ajoutées le 14 novembre 2026, dont [23], [26] et [27] par leur seul résumé.
+> **État de référence :** registre MCP en préversion (API `v0.1`), spécification A2A 1.0, proposition ARD v0.91 du 26 août 2026, AGNTCY Agent Directory v1.0 du 19 février 2026, documentation d'AWS, de Microsoft, de MuleSoft et d'Apigee consultée le 11 novembre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre; toutes sont des pages lues pour ce chapitre, [22] étant un communiqué d'éditeur; [23] à [27] ont été ajoutées le 14 novembre 2026, dont [23], [26] et [27] initialement en résumé puis vérifiées au-delà du résumé.
 
 Un protocole dit comment parler à un outil ou à un agent. Il ne dit pas lequel existe, où il se trouve, ni s'il mérite d'être appelé. Tant que le parc tient en dix serveurs, une liste dans un fichier de configuration suffit. Au-delà, il faut un mécanisme de découverte, et les candidats se multiplient : registre central, fichiers publiés sous `/.well-known`, annuaire pair-à-pair, catalogues de plateformes.
 
@@ -184,7 +184,7 @@ Une étude de 67 057 serveurs dans six registres montre que le lien entre une en
 
 ### Des entrées qui changent sous le même nom
 
-Le recensement le plus proche du sujet de ce chapitre porte sur le registre public de MCP lui-même : 21 643 serveurs et 72 606 enregistrements de version, relevés en août 2026 [23]. D'après son résumé, 51,1 % des serveurs à plusieurs versions ont changé ce qu'ils annoncent d'une version à l'autre, 40,6 % l'ont fait sans le signaler, et 4,2 % ont redirigé leur point d'accès distant vers un autre hôte en gardant la même identité au registre. Le protocole ne signale pas ce dernier changement aux clients déjà installés. Cette dérive silencieuse va de pair avec des chances presque trois fois plus élevées de constat de gravité élevée (rapport de cotes de 2,96). La popularité protège peu : le nombre d'étoiles d'un dépôt est un mauvais indicateur de sûreté.
+Le recensement le plus proche du sujet de ce chapitre porte sur le registre public de MCP lui-même : 21 643 serveurs et 72 606 enregistrements de version, relevés en août 2026 [23]. Sur les 8 900 serveurs à plusieurs versions recensés (section 4.2), 51,09 % ont changé ce qu'ils annoncent d'une version à l'autre, 40,58 % ont connu au moins une dérive sémantique silencieuse, et 4,16 % ont redirigé leur point d'accès distant vers un autre hôte en gardant la même identité au registre. Le protocole ne signale pas ce dernier changement aux clients déjà installés. Cette dérive silencieuse va de pair avec des chances presque trois fois plus élevées de constat de gravité élevée (rapport de cotes de 2,96). La popularité protège peu : le nombre d'étoiles d'un dépôt est un mauvais indicateur de sûreté.
 
 ### Des défauts fréquents, des scanners peu fiables
 
@@ -202,7 +202,7 @@ Elles donnent un contenu aux critères d'approbation de la section 8.7.
 | La popularité protège peu [23] | Ne pas approuver sur le nombre d'étoiles ou de téléchargements |
 | Les scanners se contredisent et surestiment [27] | Tenir un résultat de balayage pour un signal de tri, non pour une décision |
 
-La colonne de droite est une lecture de ce chapitre. Ces études portent sur des registres publics et sur du code ouvert; la plupart sont des prépublications, et trois ne sont connues ici que par leur résumé.
+La colonne de droite est une lecture de ce chapitre. Ces études portent sur des registres publics et sur du code ouvert; la plupart sont des prépublications, dont trois ([23], [26] et [27]) d'abord lues en résumé puis vérifiées au-delà du résumé.
 
 ---
 
@@ -261,7 +261,7 @@ Pages lues le 11 novembre 2026 :
 16. [AWS Agent Registry — capacités](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/registry-key-capabilities.html)
 17. [AWS Agent Registry — protection des données](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/registry-data-protection.html)
 18. [Microsoft — convergence du registre d'agents vers Agent 365](https://learn.microsoft.com/en-us/entra/agent-id/agent-registry-convergence)
-19. [Microsoft — registre d'agents du centre d'administration](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry)
+19. [Microsoft — registre d'agents du centre d'administration](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-registry-overview)
 20. [MuleSoft Agent Fabric — notes de version](https://docs.mulesoft.com/general/agent-fabric-release-notes)
 21. [Apigee API hub — notes de version](https://docs.cloud.google.com/apigee/docs/apihub/release-notes)
 
@@ -271,11 +271,11 @@ Communiqué d'éditeur :
 
 Études de mesure, lues le 14 novembre 2026 pour la section 8.8 :
 
-23. [Kraishan — Same Name, Different Server: A Security Census of Silent Drift in the Model Context Protocol Ecosystem (arXiv 2609.14119, 12 septembre 2026)](https://arxiv.org/abs/2609.14119) — prépublication, un seul auteur; résumé seulement.
+23. [Kraishan — Same Name, Different Server: A Security Census of Silent Drift in the Model Context Protocol Ecosystem (arXiv 2609.14119, 12 septembre 2026)](https://arxiv.org/abs/2609.14119) — prépublication, un seul auteur; résumé initial, puis texte HTML vérifié le 14 novembre 2026.
 24. [Li et Gao — Toward Understanding Security Issues in the Model Context Protocol Ecosystem (arXiv 2510.16558, version 1 du 18 octobre 2025)](https://arxiv.org/html/2510.16558v1) — prépublication.
 25. [Guo et coll. — A Measurement Study of Model Context Protocol (arXiv 2509.25292, version 1 du 29 septembre 2025)](https://arxiv.org/html/2509.25292v1) — prépublication.
-26. [Hasan et coll. — Model Context Protocol (MCP) at First Glance: Studying the Security and Maintainability of MCP Servers (arXiv 2506.13538, version 5 du 13 avril 2026)](https://arxiv.org/abs/2506.13538) — résumé seulement.
-27. [Chen et coll. — Rethinking MCP Security: A Large-Scale Study of Runtime MCP Servers and Security Scanner Reliability (arXiv 2607.11086, 13 juillet 2026)](https://arxiv.org/abs/2607.11086) — prépublication; résumé seulement.
+26. [Hasan et coll. — Model Context Protocol (MCP) at First Glance: Studying the Security and Maintainability of MCP Servers (arXiv 2506.13538, version 5 du 13 avril 2026)](https://arxiv.org/abs/2506.13538) — résumé initial, puis texte HTML vérifié le 14 novembre 2026.
+27. [Chen et coll. — Rethinking MCP Security: A Large-Scale Study of Runtime MCP Servers and Security Scanner Reliability (arXiv 2607.11086, 13 juillet 2026)](https://arxiv.org/abs/2607.11086) — prépublication; résumé initial, puis extraits relus le 14 novembre 2026.
 
 ## Limites de ce chapitre
 
@@ -286,5 +286,5 @@ Communiqué d'éditeur :
 - NANDA n'est connu que par le relevé [14], cosigné par ses concepteurs. Entra Agent ID n'est abordé que par la page de convergence, et le schéma détaillé des Server Cards n'a pas été lu.
 - La documentation d'AWS n'emploie pas le terme « disponibilité générale » dans les pages lues. Chez MuleSoft, la normalisation au format de carte A2A ne repose que sur le communiqué [22].
 - Les remarques sur la compromission d'un domaine (8.4) et sur le retrait dans un réseau distribué (8.5), ainsi que les critères d'approbation (8.7), sont des raisonnements de ce chapitre.
-- Les seules données chiffrées sur l'écosystème sont celles de la section 8.8, ajoutée le 14 novembre 2026. [23], [26] et [27] n'y sont connus que par leur résumé; [24] et [25] ont été lus par l'outil d'extraction. Le résumé de [23] ne dit pas si les 40,6 % se rapportent à tous les serveurs à plusieurs versions ou à ceux qui ont changé. [25] donne des décomptes différents dans son résumé et dans ses tableaux; ceux du tableau des serveurs sont retenus. La parution de [26] dans une revue, signalée par un index d'articles, ne figure pas sur la page lue.
+- Les seules données chiffrées sur l'écosystème sont celles de la section 8.8, ajoutée le 14 novembre 2026. [23] et [26], initialement résumés, ont été vérifiés au-delà du résumé dans leur version HTML le 14 novembre 2026, et [27] par extraits; [24] et [25] ont été lus par l'outil d'extraction. Dans [23] (section 4.2), la part de 40,58 % (arrondie à 40,6 % dans le résumé) s'applique à l'ensemble des 8 900 serveurs à plusieurs versions. [25] donne des décomptes différents dans son résumé et dans ses tableaux; ceux du tableau des serveurs sont retenus. La fiche `abs/2506.13538` de [26] n'indique pas la revue, mais la version HTML `html/2506.13538v5` affiche `Journal: TOSEM`.
 - Ces études portent sur des registres et des places de marché publics. Aucune donnée sur des registres internes d'entreprise ni sur leur adoption n'a été trouvée, et la colonne « Conséquence pour le registre interne » est une lecture de ce chapitre.

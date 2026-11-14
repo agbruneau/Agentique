@@ -2,7 +2,7 @@
 
 *Question directrice : comment un agent prouve-t-il qu'il a le droit d'acheter ?*
 
-> **État de référence :** AP2 v0.2, UCP (versions datées; les exemples de la spécification portent `2026-08-25`), Agentic Commerce Protocol `2026-04-17` (bêta), Verifiable Intent (brouillon v0.1), x402 (dépôt de la x402 Foundation) et Machine Payments Protocol. Les numéros entre crochets renvoient aux sources : [1] à [12] sont des pages primaires lues pour ce chapitre; [13] à [16] sont des prépublications dont seul le résumé a été lu; [17] à [19] sont secondaires ou non lues; [20], primaire, a été lue le 14 novembre 2026.
+> **État de référence :** AP2 v0.2, UCP (versions datées; les exemples de la spécification portent `2026-08-25`), Agentic Commerce Protocol `2026-04-17` (bêta), Verifiable Intent (brouillon v0.1), x402 (dépôt de la x402 Foundation) et Machine Payments Protocol. Les numéros entre crochets renvoient aux sources : [1] à [12] sont des pages primaires lues pour ce chapitre; [13] à [16] sont des prépublications d'abord lues en résumé puis vérifiées par extraits le 14 novembre 2026; [17] à [19] sont secondaires ou non lues; [20], primaire, a été lue le 14 novembre 2026.
 
 Un paiement par carte repose sur une hypothèse rarement énoncée : la personne qui clique sur « payer » détient le moyen de paiement, ou agit sous les yeux de son titulaire. Un agent qui achète rompt cette hypothèse. Le marchand reçoit une commande d'un logiciel; l'émetteur voit passer une transaction que son client n'a pas saisie; le client découvre le résultat après coup.
 
@@ -199,7 +199,7 @@ Pour l'entreprise, la conséquence est une architecture à adaptateurs : un mod�
 
 ## 10.7 Sécurité
 
-Les quatre prépublications retenues n'ont été lues qu'en résumé; leurs chiffres sont ceux des auteurs.
+Les quatre prépublications retenues ont d'abord été lues en résumé puis vérifiées par extraits le 14 novembre 2026; leurs chiffres sont ceux des auteurs.
 
 ### Des garanties implicites
 
@@ -209,7 +209,7 @@ Leur diagnostic : intention, délégation, usage du justificatif, règlement et 
 
 ### Des failles indépendantes du modèle
 
-Une deuxième prépublication, signée d'un seul auteur, recense 33 vulnérabilités structurelles sur trois plateformes de commerce agentique, que son résumé ne nomme pas [15]. Chacune réussit de façon déterministe quel que soit le modèle déployé, avec un taux de succès de 100 % là où la mesure a été faite en conditions réelles; trois d'entre elles s'enchaînent en un détournement de paiement de bout en bout. La défense proposée ramène le taux de succès à zéro pour quatre des cinq classes structurelles.
+Une deuxième prépublication, signée d'un seul auteur, recense 33 vulnérabilités structurelles sur trois cibles de commerce agentique — CoralOS (11), Fetch.ai uAgents (8) et AP2 v0.2.0 (14) — que le résumé seul ne nommait pas [15]. Chacune réussit de façon déterministe quel que soit le modèle déployé, avec un taux de succès de 100 % là où la mesure a été faite en conditions réelles; trois d'entre elles s'enchaînent en un détournement de paiement de bout en bout. La défense proposée ramène le taux de succès à zéro pour quatre des cinq classes structurelles.
 
 L'article sépare les attaques structurelles, logées dans le protocole, des attaques sémantiques comme l'injection de prompt (chapitre 31). Améliorer le modèle ne corrige pas les premières.
 
@@ -303,13 +303,13 @@ Pages primaires lues le 11 novembre 2026; [1], [3], [6], [7], [10] et [12] relue
 5. [Agentic Commerce Protocol — site](https://www.agenticcommerce.dev/)
 6. [Agentic Commerce Protocol — dépôt](https://github.com/agentic-commerce-protocol/agentic-commerce-protocol)
 7. [Verifiable Intent](https://verifiableintent.dev/)
-8. [Visa — Trusted Agent Protocol, aperçu](https://developer.visa.com/capabilities/trusted-agent-protocol/overview)
+8. [Visa — Trusted Agent Protocol, aperçu](https://developer.visa.com/docs/trusted-agent-protocol)
 9. [x402 — introduction](https://docs.x402.org/introduction)
 10. [x402 — README du dépôt d'origine](https://github.com/coinbase/x402), copie de développement de `x402-foundation/x402`.
 11. [Machine Payments Protocol — aperçu](https://mpp.dev/overview)
 12. [AAIF — « How does agentic commerce work », 20 août 2026](https://aaif.io/blog/how-does-agentic-commerce-work) — primaire pour le groupe de travail de l'AAIF, secondaire pour les protocoles décrits.
 
-Prépublications, résumé lu seulement :
+Prépublications (résumé initial, puis extraits relus le 14 novembre 2026) :
 
 13. [A Formal Analysis of Agent Payment Protocols (arXiv 2609.00060)](https://arxiv.org/abs/2609.00060)
 14. [SoK: Security of Autonomous LLM Agents in Agentic Commerce (arXiv 2604.15367)](https://arxiv.org/abs/2604.15367)
@@ -318,8 +318,8 @@ Prépublications, résumé lu seulement :
 
 Sources secondaires :
 
-17. [Inriver — « Why B2B agentic commerce can't run on retail protocols », septembre 2026](https://www.inriver.com/resources/b2b-agentic-commerce-retail-protocols/) — billet de fournisseur, lu.
-18. [Mastercard Agent Pay](https://www.mastercard.com/us/en/business/artificial-intelligence/mastercard-agent-pay.html) et [Mastercard — Verifiable Intent](https://www.mastercard.com/us/en/news-and-trends/stories/2026/verifiable-intent.html) — pages non lues (accès refusé), connues par un résumé de moteur de recherche.
+17. [Inriver — « Why B2B agentic commerce can't run on retail protocols », septembre 2026](https://www.inriver.com/resources/blog/b2b-agentic-commerce-retail-protocols/) — billet de fournisseur, lu.
+18. [Mastercard Agent Pay](https://www.mastercard.com/us/en/business/artificial-intelligence/mastercard-agent-pay.html) et [Mastercard — Verifiable Intent](https://www.mastercard.com/us/en/news-and-trends/stories/2026/verifiable-intent.html) — pages non lues (accès automatisé refusé HTTP 403 confirmé le 14 novembre 2026), connues par un résumé de moteur de recherche.
 19. Prépublications repérées par recherche, non lues : [arXiv 2608.23858](https://arxiv.org/abs/2608.23858) (AP2), [arXiv 2605.11781](https://arxiv.org/abs/2605.11781) (x402), [arXiv 2609.11757](https://arxiv.org/abs/2609.11757) (AP2).
 
 Page primaire lue le 14 novembre 2026 :
@@ -329,7 +329,7 @@ Page primaire lue le 14 novembre 2026 :
 ## Limites de ce chapitre
 
 - Les sources [13], [14], [15] et [16], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
-- Les quatre articles de sécurité, lus en résumé, ne sont pas évalués par les pairs d'après leur page arXiv.
+- Les quatre articles de sécurité, dont l'audit du 14 novembre 2026 a relu des extraits au-delà du résumé, ne sont pas évalués par les pairs d'après leur page arXiv.
 - Pages de Mastercard inaccessibles : le nom d'Agent Pay vient du plan initial, son lien avec Verifiable Intent d'un résumé de recherche.
 - L'attribution d'AP2 à Google repose sur l'avis de droit d'auteur de la page, sur le billet de l'AAIF et sur le communiqué de la FIDO Alliance [20]. Ce communiqué ne dit pas ce que devient la gouvernance des deux spécifications et ne donne aucune échéance. Il a été lu par l'outil de lecture, qui en a rendu les phrases citées; le texte brut de la page n'a pas pu être recoupé.
 - La vue d'ensemble d'UCP, relue à l'audit hormis sa toute fin, lève la réserve sur l'architecture de paiement; l'organe de gouvernance qu'elle cite n'est pas nommé. Pour Visa, seule la page d'aperçu a été lue.

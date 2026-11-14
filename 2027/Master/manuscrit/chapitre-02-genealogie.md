@@ -165,7 +165,7 @@ La distinction d'OASIS entre politique et contrat reste le bon instrument d'anal
 
 ### Gouvernance
 
-Le modèle de 2006 renvoyait la confiance, l'autorité et la délégation à des cadres extérieurs [3]. Les protocoles de 2026 font de même. Une analyse du 30 juin 2026 confronte cinq protocoles (MCP, A2A, ACP, ANP et ERC-8004) à six dimensions de gouvernance; d'après son résumé, le vote et la conservation de la dissidence sont absents des cinq, et la gouvernance d'une communauté d'agents y apparaît comme une couche manquante au-dessus des standards, non comme une fonction à leur ajouter [11] (chapitre 11).
+Le modèle de 2006 renvoyait la confiance, l'autorité et la délégation à des cadres extérieurs [3]. Les protocoles de 2026 font de même. Une analyse du 30 juin 2026 confronte cinq protocoles (MCP, A2A, ACP, ANP et ERC-8004) à six dimensions de gouvernance; le vote et la conservation de la dissidence sont absents des cinq, et la gouvernance d'une communauté d'agents y apparaît comme une couche manquante au-dessus des standards, non comme une fonction à leur ajouter [11] (chapitre 11).
 
 La prépublication nomme sept défis persistants [1] : l'identité d'agents éphémères, la découverte à l'échelle, l'absence de substrat économique, la réputation qu'on remet à zéro en créant une nouvelle instance, la sémantique invérifiable des outils, le consentement qui se propage par délégation vers des organisations que le mandant n'a jamais approuvées, et l'attribution de la responsabilité. Aucun n'est un problème de format de message. Sa conclusion : la suite dépend moins de la conception des protocoles que de l'infrastructure sociotechnique qui les entoure, dont la gouvernance neutre des standards, la réglementation et les réseaux de paiement.
 
@@ -209,9 +209,9 @@ Pages primaires lues le 11 novembre 2026 :
 6. [CloudEvents — spécification, branche principale (1.0.3 en cours)](https://github.com/cloudevents/spec/blob/main/cloudevents/spec.md)
 7. [Specification of the KQML Agent-Communication Language (projet)](https://research.cs.umbc.edu/kqml/kqmlspec/spec.html)
 8. [FIPA ACL Message Structure Specification, SC00061G (3 décembre 2002), copie miroir](https://www.ppgia.pucpr.br/~fabricio/ftp/Aulas/Mestrado/AS/Aula3/SC00061G_FIPA_ACL.pdf)
-9. [W3C — RDF 1.1 Primer (24 juin 2014)](https://www.w3.org/TR/rdf11-primer/)
+9. [W3C — RDF 1.1 Primer (24 juin 2014)](https://www.w3.org/TR/rdf11-primer/) — accès automatisé refusé (HTTP 403) le 14 novembre 2026; référence confirmée par recherche web.
 10. [Ehtesham et coll. — A survey of agent interoperability protocols (arXiv 2505.02279)](https://arxiv.org/html/2505.02279)
-11. [Kang et Diponegoro — Governance Gaps in Agent Interoperability Protocols (arXiv 2606.31498, 30 juin 2026)](https://arxiv.org/abs/2606.31498) — résumé seulement.
+11. [Kang et Diponegoro — Governance Gaps in Agent Interoperability Protocols (arXiv 2606.31498, 30 juin 2026)](https://arxiv.org/abs/2606.31498) — résumé initial, puis extraits relus le 14 novembre 2026.
 
 Source secondaire :
 

@@ -2,7 +2,7 @@
 
 *Question directrice : quelles couches faut-il, et laquelle gouverne ?*
 
-> **État de référence :** sept articles d'architecture logicielle parus de 2023 à 2026 (dont la taxonomie révisée le 9 septembre 2026), la documentation Microsoft sur le registre d'Agent 365 (mise à jour le 17 juin 2026) et le document de la Cloud Security Alliance du 22 juin 2026, dont seule la page de présentation a été lue; pour la section 23.3, huit sources sur le maillage ajoutées le 14 novembre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre; [12], [13] et [21] sont secondaires.
+> **État de référence :** sept articles d'architecture logicielle parus de 2023 à 2026 (dont la taxonomie révisée le 9 septembre 2026), la documentation Microsoft sur le registre d'Agent 365 (mise à jour le 17 juin 2026) et le document de la Cloud Security Alliance du 22 juin 2026, dont seule la page de présentation a été lue; pour la section 23.3, huit sources sur le maillage ajoutées le 14 novembre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre; [12] et [13] sont secondaires.
 
 Les chapitres précédents ont décrit des pièces. Une architecture de référence dit comment ces pièces s'assemblent et, surtout, où se prennent les décisions qui engagent l'entreprise.
 
@@ -104,7 +104,7 @@ Une quatrième acception, celle du rapport de McKinsey, ne désigne aucun mécan
 
 Ramené à ses éléments, le maillage désigne trois choses déjà décrites : un registre pour se trouver, des protocoles standards pour se parler (MCP et A2A, chapitres 5 et 6) et un plan de données commun par lequel passe le trafic. C'est une propriété d'infrastructure, calquée sur le maillage de services des architectures de microservices.
 
-Les pages lues y ajoutent une idée commune : l'identité et la politique sont fournies à l'agent de l'extérieur, au lieu d'être déclarées par lui [15][18]. C'est la notion d'« infrastructure d'agents » de Chan et de ses collègues, seul appui évalué par les pairs trouvé pour cette section : des systèmes et des protocoles partagés, extérieurs aux agents, qui servent à attribuer leurs actions, à encadrer leurs interactions, puis à détecter et à corriger les actions nuisibles [20]. Le résumé de l'article n'emploie pas le mot « maillage », et il annonce un catalogue de pistes de recherche, non une évaluation.
+Les pages lues y ajoutent une idée commune : l'identité et la politique sont fournies à l'agent de l'extérieur, au lieu d'être déclarées par lui [15][18]. C'est la notion d'« infrastructure d'agents » de Chan et de ses collègues, seul appui évalué par les pairs trouvé pour cette section : des systèmes et des protocoles partagés, extérieurs aux agents, qui servent à attribuer leurs actions, à encadrer leurs interactions, puis à détecter et à corriger les actions nuisibles [20]. L'article n'emploie pas le mot « maillage » au sens d'une architecture d'agents, et il annonce un catalogue de pistes de recherche, non une évaluation.
 
 ### Ce que le maillage de services ne donne pas
 
@@ -126,7 +126,7 @@ Le même billet en tire une conclusion d'éditeur : garder le maillage de servic
 
 ### Niveau de preuve
 
-Aucune des pages lues ne rapporte de mesure sur un déploiement. Ce sont des documentations et des billets d'éditeurs, de [14] à [18], et un texte d'opinion [19]. Le seul article paru dans une revue qui nomme un « maillage agentique d'entreprise », revue dont l'évaluation par les pairs n'a pas été vérifiée, est une proposition, connue ici par son seul résumé : un plan de contrôle sémantique qui route selon l'intention, un mandataire de gouvernance accolé à chaque agent (*sidecar*) et un registre distribué pour l'observabilité [21]. Le terme reste un vocabulaire d'éditeurs et de cabinets. Ce chapitre le retient pour la propriété qu'il nomme, non comme un modèle validé.
+Aucune des pages lues ne rapporte de mesure sur un déploiement. Ce sont des documentations et des billets d'éditeurs, de [14] à [18], et un texte d'opinion [19]. Le seul article paru dans une revue qui nomme un « maillage agentique d'entreprise », revue dont l'évaluation par les pairs n'a pas été vérifiée, est une proposition sans mesure de déploiement (texte complet retrouvé à l'audit du 14 novembre 2026) : un plan de contrôle sémantique qui route selon l'intention, un mandataire de gouvernance accolé à chaque agent (*sidecar*) et un registre distribué pour l'observabilité [21]. Le terme reste un vocabulaire d'éditeurs et de cabinets. Ce chapitre le retient pour la propriété qu'il nomme, non comme un modèle validé.
 
 ---
 
@@ -324,11 +324,11 @@ Pages lues le 14 novembre 2026, pour la section 23.3 :
 17. [Vennam — From service mesh to agentic mesh, Solo.io (13 mai 2026)](https://www.solo.io/blog/from-service-mesh-to-agentic-mesh) — billet de l'éditeur.
 18. [Microsoft, Agent Governance Toolkit — AgentMesh](https://microsoft.github.io/agent-governance-toolkit/packages/agent-mesh/) — page du paquet; prise en charge des protocoles cotée « alpha ».
 19. [Talukdar — AI Agentic Mesh – A Foundational Architecture for Enterprise Autonomy, IEEE Computer Society, Tech News (3 novembre 2025)](https://www.computer.org/publications/tech-news/trends/ai-agentic-mesh) — billet d'opinion, non évalué par les pairs.
-20. [Chan et coll. — Infrastructure for AI Agents (arXiv 2501.10114, v3 du 19 juin 2025; accepté à TMLR)](https://arxiv.org/abs/2501.10114) — résumé seulement.
+20. [Chan et coll. — Infrastructure for AI Agents (arXiv 2501.10114, v3 du 19 juin 2025; accepté à TMLR)](https://arxiv.org/abs/2501.10114) — résumé, puis extraits relus le 14 novembre 2026.
 
-Source secondaire, pour la même section :
+Article en accès libre retrouvé lors de l'audit du 14 novembre 2026, pour la même section :
 
-21. Debnath — The Enterprise Agentic Mesh: Architectural Convergence of Semantic Control Planes and Autonomous Multi-Agent Governance, International Journal of Scientific and Research Publications, 2025 — page de la revue non retrouvée; résumé repris d'un index d'articles.
+21. [Nabin Debnath — The Enterprise Agentic Mesh: Architectural Convergence of Semantic Control Planes and Autonomous Multi-Agent Governance (*IJSRP*, vol. 15, n° 12, déc. 2025, pp. 4-11, DOI 10.29322/IJSRP.15.12.2025.p16803)](https://www.ijsrp.org/research-paper-1225/ijsrp-p16803.pdf) — article conceptuel (6 pages).
 
 ## Limites de ce chapitre
 
@@ -339,7 +339,7 @@ Source secondaire, pour la même section :
 - Les lieux de publication donnés par le plan initial (ICSA-C pour [1], Journal of Systems and Software pour [3], ICSA 2025 pour [5]) ne figurent pas sur les pages lues. L'affiliation de [6] à Megagon Labs n'y figure pas non plus; elle est reprise des chapitres 1 et 15, qui citent une version de 2025 de la même architecture (arXiv 2504.08148), non lue ici.
 - Du catalogue de patrons [2], la section sur le modèle de décision n'a pas été lue; de la taxonomie [3], la matrice complète en annexe non plus. Les cotes rapportées sont celles que le texte commente, parfois pour une configuration d'ensemble plutôt que pour une option isolée.
 - Le document complet de la CSA [10] et le rapport de Futurum [11] n'ont pas été lus : les couches sont nommées d'après une page de présentation et un communiqué, relus à l'audit. Le cadre de Futurum émane d'un cabinet qui vend ses services aux éditeurs et n'a pas été validé sur des déploiements.
-- Le rapport de McKinsey sur le maillage agentique [12] n'a toujours pas été lu : sa page n'a pas pu être chargée le 14 novembre 2026, date à laquelle la section 23.3 a été étendue à partir de [14] à [21]. Ce sont des pages d'éditeurs et un billet d'opinion, lus par le même outil d'extraction; [20] n'est connu que par son résumé, et [21] par le résumé qu'en donne un index d'articles, sans que la qualité de la revue ait été évaluée. La recherche de littérature évaluée par les pairs s'est limitée à une requête dans cet index et à deux recherches web : elle n'a rien trouvé qui valide le maillage à l'échelle de l'entreprise.
+- Le rapport de McKinsey sur le maillage agentique [12] n'a toujours pas été lu : sa page n'a pas pu être chargée le 14 novembre 2026, date à laquelle la section 23.3 a été étendue à partir de [14] à [21]. Ce sont des pages d'éditeurs et un billet d'opinion, lus par le même outil d'extraction; [20], d'abord connu par son résumé, a été relu par extraits, et [21] (DOI 10.29322/IJSRP.15.12.2025.p16803, PDF en accès libre vérifié à l'audit) provient d'une revue dont l'évaluation par les pairs n'a pas été vérifiée. La recherche de littérature évaluée par les pairs s'est limitée à une requête dans cet index et à deux recherches web : elle n'a rien trouvé qui valide le maillage à l'échelle de l'entreprise.
 - Le relevé des acceptions n'est pas exhaustif. Trois éditeurs ont été lus; d'autres emploient le terme, et ni la documentation d'Istio ni celle de kagent n'ont été lues. Les pages de Solace ne décrivent pas la découverte entre agents. La continuité entre l'Agent Gateway du communiqué [16] et l'agentgateway de [9] et de [15] est déduite du nom, non lue.
 - La définition du plan de contrôle et du plan de données, de même que l'analogie avec le maillage de services, relèvent de la connaissance générale en réseautique. [13] n'est cité qu'à titre d'indice.
 - La vue en couches d'entreprise (23.1), les trois conditions (23.2), le classement des acceptions du maillage et la liste de ses écarts avec le maillage de services (23.3), la règle des budgets (23.6) et les antipatrons (23.9) sont des synthèses de ce chapitre, non des résultats de recherche.

@@ -224,7 +224,7 @@ Pages primaires lues le 11 novembre 2026; [2], [5] à [9] et [13] lues ou relues
 9. [Spécification A2A 1.0](https://a2a-protocol.org/latest/specification/) (sections 3, 4.3 et 13.2)
 10. [Debezium 3.7 — Debezium Engine](https://debezium.io/documentation/reference/stable/development/engine.html)
 11. [Confluent — Real-Time Context Engine, vue d'ensemble](https://docs.confluent.io/cloud/current/ai/real-time-context-engine/overview.html) (début de page)
-12. [ESAA: Event Sourcing for Autonomous Agents (arXiv 2602.23193)](https://arxiv.org/abs/2602.23193) (résumé)
+12. [ESAA: Event Sourcing for Autonomous Agents (arXiv 2602.23193)](https://arxiv.org/abs/2602.23193) (résumé, puis extraits relus le 14 novembre 2026)
 13. [MCP — extension Tasks](https://modelcontextprotocol.io/extensions/tasks/overview.md)
 
 Billets de fournisseurs, lus; [15] relu le 12 novembre :
@@ -239,7 +239,7 @@ Billets de fournisseurs, lus; [15] relu le 12 novembre :
 - **EDAgent (ICDCS 2026)**, nommé parmi les appuis du plan initial, n'a pas été retrouvé et n'est pas utilisé.
 - **RocketMQ-A2A** est décrit d'après le billet de ses auteurs, non d'après l'article. Le statut de production reste une affirmation de l'éditeur; les chiffres du billet ont été écartés.
 - **L'orchestrateur Flink/Kafka** repose sur un billet de février 2025, antérieur à Flink Agents. Aucun retour de production indépendant n'a été trouvé pour ce patron ni pour Flink Agents, dont la version 0.4 n'est pas datée sur la page lue.
-- **ESAA** n'est connu que par son résumé; **Confluent**, par le début d'une page et un billet [16].
+- **ESAA**, d'abord connu par son résumé, a été relu par extraits le 14 novembre 2026; **Confluent**, par le début d'une page et un billet [16].
 - **A2A** : la section 13.2, lue pendant l'audit, lève la réserve sur la sécurité des notifications poussées; elle recommande (SHOULD) les nouvelles tentatives que la section 4.3.3 se borne à permettre (MAY). **MCP** : la page de l'extension Tasks [13] lève l'écart avec le chapitre 5, ses notifications passant par `subscriptions/listen`. Aucune page lue ne précise l'ordre de ces notifications; la relecture à la reconnexion est une recommandation de ce chapitre.
 - **CloudEvents** est repris du chapitre 2, sans lecture de sa spécification.
 - Les définitions de l'orchestration, de la chorégraphie et de l'event sourcing, l'exemple du superviseur en attente et la capture des changements appliquée au patrimoine relèvent de la connaissance générale. Les conditions d'emploi de la chorégraphie, les garde-fous de la section 19.7 et la grille de décision sont des recommandations de ce chapitre, non des résultats tirés d'une source.

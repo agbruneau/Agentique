@@ -2,7 +2,7 @@
 
 *Question directrice : comment protéger les actifs cognitifs, survivre à la perte d'un fournisseur de modèles ou d'une liaison, et piloter des machines mobiles en sécurité ?*
 
-> **État de référence :** faits arrêtés au 11 novembre 2026; documentation d'Intel, de Google Cloud, de NVIDIA et d'AWS, spécification TUF 1.0.37 (8 octobre 2026), ISO 10218-1:2025 et IEC 61508-1:2010 par leur seule page de présentation. Les numéros entre crochets renvoient aux sources en fin de chapitre; [1] à [14] sont des pages primaires lues pour ce chapitre, [15] n'est connue que par [11]. Les seuils restés sans source sont présentés comme des cibles de conception à valider.
+> **État de référence :** faits arrêtés au 11 novembre 2026; documentation d'Intel, de Google Cloud, de NVIDIA et d'AWS, spécification TUF 1.0.37 (8 octobre 2026), ISO 10218-1:2025 et IEC 61508-1:2010 par leur seule page de présentation. Les numéros entre crochets renvoient aux sources en fin de chapitre; [1] à [14] sont des pages primaires lues pour ce chapitre, [15] est citée d'après [11], avec notice et DOI vérifiés via Crossref. Les seuils restés sans source sont présentés comme des cibles de conception à valider.
 
 Trois dépendances échappent à l'entreprise agentique : l'exploitant infonuagique qui exécute le modèle, le fournisseur qui le publie, la liaison qui relie un site au reste. Une quatrième s'ajoute quand l'agent pilote une machine : un contrôleur appris, dont personne ne sait prouver le comportement.
 
@@ -262,7 +262,7 @@ Pages primaires lues le 12 novembre 2026 :
 
 Source secondaire, non lue :
 
-15. L. Sha, « Using Simplicity to Control Complexity », *IEEE Software*, juillet-août 2001 — citée d'après [11], sans lien vérifié.
+15. [L. Sha — « Using Simplicity to Control Complexity », *IEEE Software*, vol. 18, n° 4, juillet-août 2001, p. 20-28 (DOI 10.1109/ms.2001.936213)](https://doi.org/10.1109/ms.2001.936213) — citée d'après [11]; référence et DOI vérifiés via Crossref le 14 novembre 2026 (l'identifiant 10.1109/52.936214 retournant HTTP 404).
 
 ## Limites de ce chapitre
 
@@ -270,7 +270,7 @@ Source secondaire, non lue :
 - **CLOUD Act.** Le texte n'a pas été relu; le chapitre s'en remet au chapitre 37. Aucune source lue ne dit ce qu'un tribunal peut exiger d'un exploitant de TEE.
 - **AMD et HYOK.** La documentation d'AMD n'a pas pu être chargée : SEV-SNP est décrit d'après Google Cloud [2] et TEE.fail [4]. Les équivalents HYOK d'Azure et de Google n'ont pas été lus.
 - **NVIDIA et TEE.fail.** Seule la vue d'ensemble de NVIDIA a été lue : ni matrice de compatibilité, ni mécanique du lien entre processeur et GPU, ni mesure de surcoût. TEE.fail est décrite d'après la page de ses auteurs; l'article et les avis d'Intel et d'AMD n'ont pas été lus.
-- **Relecture d'audit.** L'audit a relu [2] à [6] et [14], par un outil qui en restitue le contenu : chiffres, versions et citations confirmés. [12] a refusé l'accès; édition et date sont confirmées par des résultats de recherche.
+- **Relecture d'audit.** L'audit a relu [2] à [6] et [14], par un outil qui en restitue le contenu : chiffres, versions et citations confirmés. [1] (`intel.com`, protection Akamai) et [12] (`iso.org`, protection Cloudflare) ont retourné HTTP 403 le 14 novembre 2026; titres, éditions et dates sont confirmés par recherche web.
 - **ROS 2.** La documentation courante était inaccessible. [9] et [10] sont des articles de conception de 2014 et de 2019; l'état des distributions actuelles n'est pas vérifié.
 - **Normes.** ISO 10218 et IEC 61508, payantes, ne sont connues que par leur page de présentation. Niveaux d'intégrité, exigences logicielles et apprentissage automatique ne sont pas abordés.
 - **Connaissance générale** : la définition des CRDT, l'inclusion du système invité dans la base de confiance, l'écart de comportement entre deux modèles.

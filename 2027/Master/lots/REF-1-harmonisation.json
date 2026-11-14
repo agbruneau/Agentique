@@ -1,0 +1,193 @@
+{
+  "id": "REF-1-harmonisation",
+  "origine": "plan 2027, lot REF-1-harmonisation",
+  "categorie": "harmonisation",
+  "remplacements": [
+    {
+      "fichier": "chapitre-01-entreprise-agentique.md",
+      "avant": "[1] à [10] sont primaires, dont [8] lue par son résumé seulement; [11] et [12] sont secondaires.",
+      "apres": "[1] à [10] sont primaires ([7] et [8] vérifiées au-delà du résumé à l'audit du 14 novembre 2026); [11] et [12] sont secondaires.",
+      "motif": "Harmoniser le bandeau de référence avec le premier point de ## Limites issu de P2-F3."
+    },
+    {
+      "fichier": "chapitre-01-entreprise-agentique.md",
+      "avant": "7. [Pan et coll. — Measuring Agents in Production (arXiv 2512.04123, version 4)](https://arxiv.org/abs/2512.04123) — résumé, puis première moitié du texte à l'audit.\n8. [Cemri et coll. — Why Do Multi-Agent LLM Systems Fail? (arXiv 2503.13657, version 3)](https://arxiv.org/abs/2503.13657) — résumé seulement.",
+      "apres": "7. [Pan et coll. — Measuring Agents in Production (arXiv 2512.04123, version 4)](https://arxiv.org/abs/2512.04123) — première moitié du texte et extraits vérifiés au-delà du résumé le 14 novembre 2026.\n8. [Cemri et coll. — Why Do Multi-Agent LLM Systems Fail? (arXiv 2503.13657, version 3)](https://arxiv.org/abs/2503.13657) — résumé initial et extraits vérifiés au-delà du résumé le 14 novembre 2026 (parts détaillées au chapitre 21).",
+      "motif": "Harmoniser les notes de [7] et [8] dans ## Sources avec la relecture au-delà du résumé du 14 novembre 2026 (P2-F3)."
+    },
+    {
+      "fichier": "chapitre-01-entreprise-agentique.md",
+      "avant": "— page non lue (délai dépassé); contenu repris",
+      "apres": "— page non lue (délai dépassé confirmé le 14 novembre 2026); contenu repris",
+      "motif": "Dater la vérification d'accès restreint de McKinsey [12] au 14 novembre 2026 sans toucher la borne 'du plan initial'."
+    },
+    {
+      "fichier": "chapitre-01-entreprise-agentique.md",
+      "avant": "Les parts des échecs selon MAST ne sont pas reprises, seul le résumé ayant été lu (chapitre 21).",
+      "apres": "Les parts détaillées des échecs selon MAST sont renvoyées au chapitre 21 (seules les trois catégories de [8] sont reprises ici après vérification du 14 novembre 2026).",
+      "motif": "Supprimer la contradiction interne de ## Limites entre le premier point P2-F3 et 'seul le résumé ayant été lu'."
+    },
+    {
+      "fichier": "chapitre-02-genealogie.md",
+      "avant": "confronte cinq protocoles (MCP, A2A, ACP, ANP et ERC-8004) à six dimensions de gouvernance; d'après son résumé, le vote et la conservation de la dissidence sont absents des cinq,",
+      "apres": "confronte cinq protocoles (MCP, A2A, ACP, ANP et ERC-8004) à six dimensions de gouvernance; le vote et la conservation de la dissidence sont absents des cinq,",
+      "motif": "Supprimer 'd'après son résumé,' sur [11] (arXiv 2606.31498) à la ligne 168 pour harmoniser avec L214, L222 (P2-F3) et le texte complet."
+    },
+    {
+      "fichier": "chapitre-02-genealogie.md",
+      "avant": "9. [W3C — RDF 1.1 Primer (24 juin 2014)](https://www.w3.org/TR/rdf11-primer/)\n10.",
+      "apres": "9. [W3C — RDF 1.1 Primer (24 juin 2014)](https://www.w3.org/TR/rdf11-primer/) — accès automatisé refusé (HTTP 403) le 14 novembre 2026; référence confirmée par recherche web.\n10.",
+      "motif": "Documenter l'accès HTTP 403 du W3C sur [9] le 14 novembre 2026."
+    },
+    {
+      "fichier": "chapitre-02-genealogie.md",
+      "avant": "11. [Kang et Diponegoro — Governance Gaps in Agent Interoperability Protocols (arXiv 2606.31498, 30 juin 2026)](https://arxiv.org/abs/2606.31498) — résumé seulement.",
+      "apres": "11. [Kang et Diponegoro — Governance Gaps in Agent Interoperability Protocols (arXiv 2606.31498, 30 juin 2026)](https://arxiv.org/abs/2606.31498) — résumé initial, puis extraits relus le 14 novembre 2026.",
+      "motif": "Harmoniser la note de [11] dans ## Sources avec la relecture par extraits du 14 novembre 2026 (P2-F3)."
+    },
+    {
+      "fichier": "chapitre-03-dimensions-interoperabilite.md",
+      "avant": "[14] à [16] des prépublications dont seul le résumé a été lu.",
+      "apres": "[14] à [16] des prépublications d'abord lues en résumé puis vérifiées par extraits le 14 novembre 2026.",
+      "motif": "Harmoniser le bandeau de référence avec le premier point de ## Limites issu de P2-F3."
+    },
+    {
+      "fichier": "chapitre-03-dimensions-interoperabilite.md",
+      "avant": "Son résumé rapporte une précision de détection de 27,9 %, obtenue sur des exécutions simulées selon le chapitre 21,",
+      "apres": "L'étude rapporte une précision de détection de 27,9 %, obtenue sur des exécutions simulées selon le chapitre 21,",
+      "motif": "Remplacer 'Son résumé' par 'L'étude' sur [15] (arXiv 2604.16339) à la ligne 88 pour harmoniser avec L5, L224, L234, L238 (P2-F3) et le PDF complet."
+    },
+    {
+      "fichier": "chapitre-03-dimensions-interoperabilite.md",
+      "avant": "la première tâche de conformité d'un fournisseur, selon son résumé [16].",
+      "apres": "la première tâche de conformité d'un fournisseur [16].",
+      "motif": "Supprimer ', selon son résumé' sur [16] (arXiv 2604.04604) à la ligne 145 pour harmoniser avec L5, L224, L234, L238 (P2-F3) et le PDF complet."
+    },
+    {
+      "fichier": "chapitre-03-dimensions-interoperabilite.md",
+      "avant": "1. [Cadre européen d'interopérabilité — COM(2017) 134, annexe 2](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52017DC0134)\n2.",
+      "apres": "1. [Cadre européen d'interopérabilité — COM(2017) 134, annexe 2](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52017DC0134) — accès automatisé redirigé vers `TodayOJ` le 14 novembre 2026; contenu confirmé par recherche web.\n2.",
+      "motif": "Documenter la redirection anti-robot EUR-Lex vers TodayOJ constatée le 14 novembre 2026."
+    },
+    {
+      "fichier": "chapitre-03-dimensions-interoperabilite.md",
+      "avant": "12. [W3C — AI Agent Protocol Community Group](https://www.w3.org/community/agentprotocol/)\n13.",
+      "apres": "12. [W3C — AI Agent Protocol Community Group](https://www.w3.org/community/agentprotocol/) — accès automatisé refusé (HTTP 403) le 14 novembre 2026; fiche vérifiée par recherche web.\n13.",
+      "motif": "Documenter l'accès HTTP 403 du W3C sur [12] le 14 novembre 2026."
+    },
+    {
+      "fichier": "chapitre-03-dimensions-interoperabilite.md",
+      "avant": "Prépublications dont seul le résumé a été lu :",
+      "apres": "Prépublications (résumé initial, puis extraits relus le 14 novembre 2026) :",
+      "motif": "Harmoniser le sous-titre de ## Sources pour [14] à [16] avec P2-F3."
+    },
+    {
+      "fichier": "chapitre-03-dimensions-interoperabilite.md",
+      "avant": "- Les sources [14] à [16] ne sont connues que par leur résumé.",
+      "apres": "- Pour [14] à [16], la rédaction s'est d'abord appuyée sur les résumés avant la relecture par extraits du 14 novembre 2026.",
+      "motif": "Lever la contradiction interne de ## Limites avec le premier point P2-F3."
+    },
+    {
+      "fichier": "chapitre-04-etat-des-lieux.md",
+      "avant": "1. [Measuring Agents in Production (arXiv 2512.04123, version 4)](https://arxiv.org/abs/2512.04123) — résumé et première moitié du texte.\n2. [Why Do Multi-Agent LLM Systems Fail? (arXiv 2503.13657)](https://arxiv.org/html/2503.13657v2) — résumé de la version 3 et première partie de la version 2.",
+      "apres": "1. [Measuring Agents in Production (arXiv 2512.04123, version 4)](https://arxiv.org/abs/2512.04123) — première moitié du texte et extraits relus le 14 novembre 2026.\n2. [Why Do Multi-Agent LLM Systems Fail? (arXiv 2503.13657)](https://arxiv.org/html/2503.13657v2) — résumé de la version 3, première partie de la version 2 et extraits relus le 14 novembre 2026.",
+      "motif": "Harmoniser les notes de [1] et [2] dans ## Sources avec P2-F3."
+    },
+    {
+      "fichier": "chapitre-04-etat-des-lieux.md",
+      "avant": "11. [McKinsey — The State of AI in 2026](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) — délai dépassé.",
+      "apres": "11. [McKinsey — The State of AI in 2026](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) — délai dépassé (confirmé le 14 novembre 2026).",
+      "motif": "Dater la vérification du délai dépassé de McKinsey [11] sans toucher '— accès refusé.' à la ligne suivante (borne bonification 04-42)."
+    },
+    {
+      "fichier": "chapitre-04-etat-des-lieux.md",
+      "avant": "être chargé ni à la rédaction ni à l'audit. Ses chiffres viennent d'un compte rendu de presse, relu le 12 novembre 2026; l'échantillon et les dates de collecte et de publication restent inconnus.\n- Le communiqué de Gartner a encore refusé l'accès à l'audit.",
+      "apres": "être chargé ni à la rédaction ni à l'audit du 14 novembre 2026 (délai dépassé). Ses chiffres viennent d'un compte rendu de presse, relu le 12 novembre 2026; l'échantillon et les dates de collecte et de publication restent inconnus.\n- Le communiqué de Gartner [12] a encore retourné HTTP 403 à l'audit du 14 novembre 2026.",
+      "motif": "Dater les constats d'accès restreint de McKinsey [11] et Gartner [12] au 14 novembre 2026 dans ## Limites (après la borne #802)."
+    },
+    {
+      "fichier": "chapitre-07-protocoles-peripheriques.md",
+      "avant": "8. [W3C — AI Agent Protocol Community Group](https://www.w3.org/community/agentprotocol/)\n9.",
+      "apres": "8. [W3C — AI Agent Protocol Community Group](https://www.w3.org/community/agentprotocol/) — accès automatisé refusé (HTTP 403) le 14 novembre 2026; fiche vérifiée par recherche web.\n9.",
+      "motif": "Documenter l'accès HTTP 403 du W3C sur [8] le 14 novembre 2026."
+    },
+    {
+      "fichier": "chapitre-07-protocoles-peripheriques.md",
+      "avant": "19. [Governance Gaps in Agent Interoperability Protocols (arXiv 2606.31498)](https://arxiv.org/abs/2606.31498) — résumé\n20. [A survey of agent interoperability protocols (arXiv 2505.02279)](https://arxiv.org/abs/2505.02279) — résumé\n21. [A Survey of AI Agent Protocols (arXiv 2504.16736)](https://arxiv.org/abs/2504.16736) — résumé",
+      "apres": "19. [Governance Gaps in Agent Interoperability Protocols (arXiv 2606.31498)](https://arxiv.org/abs/2606.31498) — résumé initial, puis extraits relus le 14 novembre 2026\n20. [A survey of agent interoperability protocols (arXiv 2505.02279)](https://arxiv.org/abs/2505.02279) — résumé initial, puis extraits relus le 14 novembre 2026\n21. [A Survey of AI Agent Protocols (arXiv 2504.16736)](https://arxiv.org/abs/2504.16736) — résumé initial, puis extraits relus le 14 novembre 2026",
+      "motif": "Harmoniser les notes de [19] à [21] dans ## Sources avec P2-F3."
+    },
+    {
+      "fichier": "chapitre-07-protocoles-peripheriques.md",
+      "avant": "LAP et TEA n'ont été lus qu'en partie, [19] à [21] par leur résumé seulement.",
+      "apres": "LAP et TEA n'ont été lus qu'en partie; [19] à [21], d'abord connues par leur résumé, ont été vérifiées par extraits le 14 novembre 2026.",
+      "motif": "Lever la contradiction interne de ## Limites avec le premier point P2-F3."
+    },
+    {
+      "fichier": "chapitre-08-decouverte-registres.md",
+      "avant": "dont [23], [26] et [27] par leur seul résumé.",
+      "apres": "dont [23], [26] et [27] initialement en résumé puis vérifiées au-delà du résumé.",
+      "motif": "Harmoniser le bandeau de référence avec P2-F3 et la vérification HTML à l'intérieur de la borne bonification 24-08."
+    },
+    {
+      "fichier": "chapitre-08-decouverte-registres.md",
+      "avant": "la plupart sont des prépublications, et trois ne sont connues ici que par leur résumé.",
+      "apres": "la plupart sont des prépublications, dont trois ([23], [26] et [27]) d'abord lues en résumé puis vérifiées au-delà du résumé.",
+      "motif": "Harmoniser la conclusion de la section 8.8 avec la vérification HTML et P2-F3 (à l'intérieur de la borne bonification 24-08)."
+    },
+    {
+      "fichier": "chapitre-08-decouverte-registres.md",
+      "avant": "23. [Kraishan — Same Name, Different Server: A Security Census of Silent Drift in the Model Context Protocol Ecosystem (arXiv 2609.14119, 12 septembre 2026)](https://arxiv.org/abs/2609.14119) — prépublication, un seul auteur; résumé seulement.\n24. [Li et Gao — Toward Understanding Security Issues in the Model Context Protocol Ecosystem (arXiv 2510.16558, version 1 du 18 octobre 2025)](https://arxiv.org/html/2510.16558v1) — prépublication.\n25. [Guo et coll. — A Measurement Study of Model Context Protocol (arXiv 2509.25292, version 1 du 29 septembre 2025)](https://arxiv.org/html/2509.25292v1) — prépublication.\n26. [Hasan et coll. — Model Context Protocol (MCP) at First Glance: Studying the Security and Maintainability of MCP Servers (arXiv 2506.13538, version 5 du 13 avril 2026)](https://arxiv.org/abs/2506.13538) — résumé seulement.\n27. [Chen et coll. — Rethinking MCP Security: A Large-Scale Study of Runtime MCP Servers and Security Scanner Reliability (arXiv 2607.11086, 13 juillet 2026)](https://arxiv.org/abs/2607.11086) — prépublication; résumé seulement.",
+      "apres": "23. [Kraishan — Same Name, Different Server: A Security Census of Silent Drift in the Model Context Protocol Ecosystem (arXiv 2609.14119, 12 septembre 2026)](https://arxiv.org/abs/2609.14119) — prépublication, un seul auteur; résumé initial, puis texte HTML vérifié le 14 novembre 2026.\n24. [Li et Gao — Toward Understanding Security Issues in the Model Context Protocol Ecosystem (arXiv 2510.16558, version 1 du 18 octobre 2025)](https://arxiv.org/html/2510.16558v1) — prépublication.\n25. [Guo et coll. — A Measurement Study of Model Context Protocol (arXiv 2509.25292, version 1 du 29 septembre 2025)](https://arxiv.org/html/2509.25292v1) — prépublication.\n26. [Hasan et coll. — Model Context Protocol (MCP) at First Glance: Studying the Security and Maintainability of MCP Servers (arXiv 2506.13538, version 5 du 13 avril 2026)](https://arxiv.org/abs/2506.13538) — résumé initial, puis texte HTML vérifié le 14 novembre 2026.\n27. [Chen et coll. — Rethinking MCP Security: A Large-Scale Study of Runtime MCP Servers and Security Scanner Reliability (arXiv 2607.11086, 13 juillet 2026)](https://arxiv.org/abs/2607.11086) — prépublication; résumé initial, puis extraits relus le 14 novembre 2026.",
+      "motif": "Harmoniser les notes de [23], [26] et [27] dans ## Sources à l'intérieur de la borne bonification 24-08."
+    },
+    {
+      "fichier": "chapitre-09-web-agentique.md",
+      "avant": "17. [W3C — AI Agent Protocol Community Group](https://www.w3.org/community/agentprotocol/) et sa [fiche de groupe](https://www.w3.org/groups/cg/agentprotocol)\n18. [Permission Manifests for Web Agents (arXiv 2601.02371)](https://arxiv.org/abs/2601.02371) — prépublication, résumé seulement.",
+      "apres": "17. [W3C — AI Agent Protocol Community Group](https://www.w3.org/community/agentprotocol/) et sa [fiche de groupe](https://www.w3.org/groups/cg/agentprotocol) — accès automatisé refusé (HTTP 403) le 14 novembre 2026; fiche vérifiée par recherche web.\n18. [Permission Manifests for Web Agents (arXiv 2601.02371)](https://arxiv.org/abs/2601.02371) — prépublication; résumé initial, puis extraits relus le 14 novembre 2026.",
+      "motif": "Documenter l'accès HTTP 403 du W3C sur [17] le 14 novembre 2026 et harmoniser [18] avec P2-F3."
+    },
+    {
+      "fichier": "chapitre-10-commerce-agentique.md",
+      "avant": "[13] à [16] sont des prépublications dont seul le résumé a été lu;",
+      "apres": "[13] à [16] sont des prépublications d'abord lues en résumé puis vérifiées par extraits le 14 novembre 2026;",
+      "motif": "Harmoniser le bandeau de référence avec P2-F3 avant la borne P2-M2-M3 ('[17] à [19]...')."
+    },
+    {
+      "fichier": "chapitre-10-commerce-agentique.md",
+      "avant": "Les quatre prépublications retenues n'ont été lues qu'en résumé; leurs chiffres sont ceux des auteurs.",
+      "apres": "Les quatre prépublications retenues ont d'abord été lues en résumé puis vérifiées par extraits le 14 novembre 2026; leurs chiffres sont ceux des auteurs.",
+      "motif": "Harmoniser l'introduction de la section sécurité (10.7) avec P2-F3."
+    },
+    {
+      "fichier": "chapitre-10-commerce-agentique.md",
+      "avant": "Prépublications, résumé lu seulement :",
+      "apres": "Prépublications (résumé initial, puis extraits relus le 14 novembre 2026) :",
+      "motif": "Harmoniser le sous-titre de ## Sources pour [13] à [16] avec P2-F3."
+    },
+    {
+      "fichier": "chapitre-10-commerce-agentique.md",
+      "avant": "— pages non lues (accès refusé), connues par un résumé de moteur de recherche.",
+      "apres": "— pages non lues (accès automatisé refusé HTTP 403 confirmé le 14 novembre 2026), connues par un résumé de moteur de recherche.",
+      "motif": "Dater le constat d'accès HTTP 403 de Mastercard [18] au 14 novembre 2026."
+    },
+    {
+      "fichier": "chapitre-10-commerce-agentique.md",
+      "avant": ", lus en résumé, ne sont pas évalués par les pairs d'après leur page arXiv.",
+      "apres": ", dont l'audit du 14 novembre 2026 a relu des extraits au-delà du résumé, ne sont pas évalués par les pairs d'après leur page arXiv.",
+      "motif": "Harmoniser la deuxième puce de ## Limites avec P2-F3 en restant après la borne P2-F3 ('- Les quatre articles de sécurit')."
+    },
+    {
+      "fichier": "chapitre-11-gouvernance-standards.md",
+      "avant": "9. [W3C — AI Agent Protocol Community Group](https://www.w3.org/community/agentprotocol/)\n10. [W3C — Agent Trust Protocol Community Group](https://www.w3.org/community/atp/)\n11. [W3C — Agent Identity Registry Protocol Community Group](https://www.w3.org/groups/cg/agent-identity/)\n12. [W3C — Agent Conformance and Benchmarking Community Group](https://www.w3.org/community/agent-conformance/)",
+      "apres": "9. [W3C — AI Agent Protocol Community Group](https://www.w3.org/community/agentprotocol/) — accès automatisé refusé (HTTP 403) le 14 novembre 2026; fiche vérifiée par recherche web\n10. [W3C — Agent Trust Protocol Community Group](https://www.w3.org/community/atp/) — accès automatisé refusé (HTTP 403) le 14 novembre 2026; fiche vérifiée par recherche web\n11. [W3C — Agent Identity Registry Protocol Community Group](https://www.w3.org/groups/cg/agent-identity/) — accès automatisé refusé (HTTP 403) le 14 novembre 2026; fiche vérifiée par recherche web\n12. [W3C — Agent Conformance and Benchmarking Community Group](https://www.w3.org/community/agent-conformance/) — accès automatisé refusé (HTTP 403) le 14 novembre 2026; fiche vérifiée par recherche web",
+      "motif": "Documenter l'accès HTTP 403 du W3C sur [9] à [12] le 14 novembre 2026."
+    },
+    {
+      "fichier": "chapitre-11-gouvernance-standards.md",
+      "avant": "27. [A survey of agent interoperability protocols (arXiv 2505.02279), résumé](https://arxiv.org/abs/2505.02279)",
+      "apres": "27. [A survey of agent interoperability protocols (arXiv 2505.02279)](https://arxiv.org/abs/2505.02279) — résumé initial, puis extraits relus le 14 novembre 2026",
+      "motif": "Harmoniser la note de [27] dans ## Sources avec la relecture par extraits du 14 novembre 2026 (P2-F3)."
+    }
+  ]
+}

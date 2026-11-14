@@ -2,7 +2,7 @@
 
 *Question directrice : quel cadre s'applique ici ?*
 
-> **État de référence :** stratégie fédérale « AI for All » (4 juin 2026), projet de loi C-36 à l'étape de la deuxième lecture, ligne directrice E-23 du BSIF et ligne directrice de l'AMF sur l'IA (toutes deux en vigueur le 1er mai 2027; la seconde non lue), avis 11-348 des ACVM (5 décembre 2024), Énoncé de principes québécois (édition 2025) et guide du MCN sur l'IA agentique (2026). Les numéros entre crochets renvoient aux sources en fin de chapitre; [1] à [15] sont des pages primaires lues pour ce chapitre, [16] et [17] n'ont pas pu l'être; [18] à [27] ont été ajoutées le 14 novembre 2026, dont [20] et [21] sont secondaires et [22] n'a pas pu être lue.
+> **État de référence :** stratégie fédérale « AI for All » (4 juin 2026), projet de loi C-36 à l'étape de la deuxième lecture, ligne directrice E-23 du BSIF et ligne directrice de l'AMF sur l'IA (toutes deux en vigueur le 1er mai 2027; la seconde non lue), avis 11-348 des ACVM (5 décembre 2024), Énoncé de principes québécois (édition 2025) et guide du MCN sur l'IA agentique (2026). Les numéros entre crochets renvoient aux sources en fin de chapitre; [1] à [15] sont des pages primaires lues pour ce chapitre, [16] a été vérifiée en texte complet le 14 novembre 2026 et [17], bloquée par le WAF sur requête automatique simple, a été chargée avec des en-têtes navigateur à cette date; [18] à [27] ont été ajoutées le 14 novembre 2026, dont [20] et [21] sont secondaires et [22] n'a pas pu être lue.
 
 Une entreprise qui déploie des agents au Canada cherche d'abord la loi sur l'IA. Il n'y en a pas, ni fédérale ni québécoise. Le cadre applicable est un empilement : le droit de la protection des renseignements personnels, des lignes directrices sectorielles pour les institutions financières, fédérales et à charte québécoise, des indications en valeurs mobilières et, pour les administrations, des instruments administratifs, dont deux guides récents sur l'IA agentique.
 
@@ -25,7 +25,7 @@ Quatre éléments du texte de première lecture concernent les agents [4].
 
 Le document d'information annonce des sanctions administratives pouvant atteindre 10 millions de dollars ou 3 % des recettes globales brutes, et une nouvelle Commission canadienne de la sécurité numérique et de la protection des données, dotée d'un pouvoir d'ordonnance [2].
 
-C-36 reste un projet : il peut être amendé, et son entrée en vigueur est renvoyée à un décret [4]. Selon le résumé d'une analyse de cabinet non lue en entier, son volet sur l'IA est plus étroit que celui du projet C-27, jamais adopté [16].
+C-36 reste un projet : il peut être amendé, et son entrée en vigueur est renvoyée à un décret [4]. Selon l'analyse du cabinet Blakes, son volet sur l'IA est plus étroit que celui du projet C-27, jamais adopté [16].
 
 ---
 
@@ -238,8 +238,8 @@ Pages primaires lues le 11 novembre 2026 :
 2. [ISDE — document d'information sur C-36](https://www.canada.ca/fr/innovation-sciences-developpement-economique/nouvelles/2026/06/document-dinformation--le-gouvernement-du-canada-presente-un-projet-de-loi-visant-a-proteger-la-vie-privee-des-canadiens-a-lere-numerique.html)
 3. [LEGISinfo — C-36](https://www.parl.ca/legisinfo/fr/projet-de-loi/45-1/c-36)
 4. [C-36 — texte de première lecture](https://www.parl.ca/DocumentViewer/fr/45-1/projet-loi/C-36/premiere-lecture) — première moitié lue.
-5. [Canada — Guide sur l'utilisation de l'IA agentive](https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/utilisation-responsable-ai/guide-utilisation-intelligence-artificielle-agentive.html)
-6. [Canada — Évaluation de l'incidence algorithmique](https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/utilisation-responsable-ai/evaluation-incidence-algorithmique.html)
+5. [Canada — Guide sur l'utilisation de l'IA agentive](https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/utilisation-responsable-ai/ia-generative/guide-utilisation-intelligence-artificielle-agentive.html)
+6. [Canada — Évaluation de l'incidence algorithmique](https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/utilisation-responsable-ai/prise-decisions-automatisee/evaluation-incidence-algorithmique.html)
 7. [BSIF — lettre d'accompagnement de E-23](https://www.osfi-bsif.gc.ca/en/guidance/guidance-library/guideline-e-23-model-risk-management-2027-letter)
 8. [BSIF — ligne directrice E-23 (2027)](https://www.osfi-bsif.gc.ca/en/guidance/guidance-library/guideline-e-23-model-risk-management-2027)
 9. [Loi 25 — L.Q. 2021, chapitre 25](https://www.publicationsduquebec.gouv.qc.ca/fileadmin/Fichiers_client/lois_et_reglements/LoisAnnuelles/fr/2021/2021C25F.PDF)
@@ -250,18 +250,18 @@ Pages primaires lues le 11 novembre 2026 :
 14. [Québec — Portrait des utilisations de l'IA](https://www.quebec.ca/gouvernement/numerique/intelligence-artificielle-administration-publique/portrait)
 15. [MCN — Grandes tendances numériques, juillet 2026](https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/cybersecurite_numerique/Transformation_numerique/DOC_tendances_numerique_juillet_2026.pdf)
 
-Sources non lues :
+Sources initialement non lues, vérifiées le 14 novembre 2026 :
 
-16. [Blakes — réforme fédérale](https://www.blakes.com/fr-ca/perspectives/nouvelle-tentative-du-canada-pour-reformer-le-cadre-federal-de-protection-des-renseignements-personn/) — résumé de recherche seulement.
-17. [Directive sur la prise de décisions automatisée](https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32592) — requête rejetée par le serveur.
+16. [Blakes — Nouvelle tentative du Canada pour réformer le cadre fédéral de protection des renseignements personnels (17 juillet 2026)](https://www.blakes.com/fr-ca/perspectives/nouvelle-tentative-du-canada-pour-reformer-le-cadre-federal-de-protection-des-renseignements-personn/) — texte intégral lu le 14 novembre 2026 (HTTP 200).
+17. [Directive sur la prise de décisions automatisée (modification du 24 juin 2025)](https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32592) — chargée le 14 novembre 2026 avec en-têtes navigateur (HTTP 200); les requêtes automatiques simples essuient un blocage WAF — requête rejetée par le serveur.
 
 Sources ajoutées le 14 novembre 2026 :
 
-18. [Canada — guide sur la portée de la Directive sur la prise de décisions automatisée (page datée du 15 septembre 2026)](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/guide-scope-directive-automated-decision-making.html) — page primaire lue.
+18. [Canada — guide sur la portée de la Directive sur la prise de décisions automatisée (page datée du 15 septembre 2026)](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/responsible-use-ai/automated-decision-making/guide-scope-directive-automated-decision-making.html) — page primaire lue.
 19. [ACVM — Avis 11-348 du personnel et de consultation, Applicabilité du droit canadien des valeurs mobilières à l'utilisation des systèmes d'intelligence artificielle dans les marchés des capitaux (5 décembre 2024)](https://fcnb.ca/sites/default/files/2024-12/Avis%2011-348%20du%20personnel%20des%20ACVM%20et%20de%20consultation%20-%20Applicabilit%C3%A9%20du%20droit%20canadien%20des%20valeurs%20mobili%C3%A8res%20%C3%A0%20l%E2%80%99utilisation%20des%20syst%C3%A8mes%20d%E2%80%99intelligence%20artificielle%20dans%20les%20march%C3%A9s%20des%20capitaux.pdf) — texte officiel, copie hébergée par la Commission des services financiers et des services aux consommateurs du Nouveau-Brunswick; lu par passages.
 20. [Blakes — L'AMF publie sa ligne directrice sur l'utilisation de l'intelligence artificielle (20 avril 2026)](https://www.blakes.com/fr-ca/perspectives/l-amf-publie-sa-ligne-directrice-sur-l-utilisation-de-l-intelligence-artificielle-ce-que-les-insti/) — analyse de cabinet, secondaire.
 21. [BLG — L'AMF publie ses attentes sur l'utilisation de l'IA (12 mai 2026)](https://www.blg.com/fr/insights/2026/05/amf-publie-ses-attentes-sur-lutilisation-de-lia) — analyse de cabinet, secondaire.
-22. [AMF — Ligne directrice sur l'utilisation de l'intelligence artificielle, Bulletin de l'AMF, vol. 23, no 13](https://lautorite.qc.ca/files/pdf/bulletin/2026/vol23no13/vol23no13_5.pdf) — non lue : erreur 403.
+22. [AMF — Ligne directrice sur l'utilisation de l'intelligence artificielle, Bulletin de l'AMF, vol. 23, no 13, 2 avril 2026 (décision n° 2026-PDG-0016)](https://lautorite.qc.ca/fileadmin/lautorite/bulletin/2026/vol23no13/vol23no13_5-2.pdf) — non lue : erreur 403.
 
 Pages lues le 14 novembre 2026 :
 
@@ -273,13 +273,14 @@ Pages lues le 14 novembre 2026 :
 
 ## Limites de ce chapitre
 
-- La Directive fédérale [17] n'a pas pu être lue, ni à l'audit ni le 14 novembre 2026. Son champ d'application est décrit d'après le guide sur sa portée [18]; ses exigences par niveau et la date de sa version en vigueur ne sont pas décrites, et la section 38.2 repose pour le reste sur la page de l'EIA.
+- La Directive fédérale [17] rejette les requêtes automatiques simples par son WAF (« Request Rejected ») mais a été chargée le 14 novembre 2026 avec des en-têtes navigateur (HTTP 200, version modifiée le 24 juin 2025, échéance de mise à jour des évaluations aux paragraphes 1.2.1-1.2.2 au 24 juin 2026). Son champ d'application est décrit ici d'après le guide sur sa portée [18]; le détail de ses exigences par niveau (niveaux I à IV aux annexes B et C de la Directive) n'est pas exposé ici, et la section 38.2 repose pour le reste sur la page de l'EIA.
 - Les pages web [1] à [8], [10], [11] et [14] ont été lues au moyen d'un outil d'extraction automatique, sans recollationnement des citations. Les documents [9], [12], [13] et [15] ont été lus en texte intégral. [1], [3], [4], [5], [8] et [9] ont été relus à l'audit du 12 novembre 2026.
-- Seule la première moitié du texte de C-36 a été lue; les sanctions viennent du document ministériel [2]. Le sort du projet C-27 vient de la connaissance générale et d'un résumé de recherche [16], comme la mention de la LPRPDE en 38.7, dont le régime d'effacement n'est pas décrit.
-- L'article 12.1 est cité d'après le texte sanctionné de 2021, la version codifiée étant inaccessible; les modifications ultérieures n'ont pas été vérifiées. Le site de la Commission d'accès à l'information a été parcouru le 14 novembre 2026 [23] à [27] sans qu'y soit trouvée de décision ni d'orientation sur l'article 12.1; le répertoire de la SOQUIJ, la seconde moitié de la liste des décisions de surveillance et les documents de la Commission sur l'IA n'ont pas été lus.
-- L'encadrement des institutions financières à charte québécoise est décrit, depuis le 14 novembre 2026, d'après deux analyses de cabinets [20][21]. Le site de l'AMF refuse les requêtes (erreur 403) : la ligne directrice elle-même [22] n'a pas été lue, pas plus que la Ligne directrice de l'AMF sur la gestion du risque de modèle, et l'adresse donnée en [22] vient d'un résultat de recherche non vérifié. L'avis 11-348 [19] a été lu par recherche de passages dans une copie officielle, non en entier; les suites de sa consultation n'ont pas été cherchées. Le droit des autres provinces n'est pas traité.
+- Seule la première moitié du texte de C-36 a été lue; les sanctions viennent du document ministériel [2]. Le sort du projet C-27 est confirmé par l'analyse complète de Blakes [16] (17 juillet 2026, HTTP 200), comme la mention de la LPRPDE en 38.7, dont le régime d'effacement n'est pas décrit.
+- L'article 12.1 est cité d'après le texte sanctionné de 2021 [9]; la consultation le 14 novembre 2026 du recueil officiel LégisQuébec (P-39.1, à jour au 15 octobre 2026; HTTP 403 sur requête automatique simple, HTTP 200 avec en-têtes navigateur) confirme que cet article n'a reçu aucune modification depuis 2021. Le site de la Commission d'accès à l'information a été parcouru le 14 novembre 2026 [23] à [27] sans qu'y soit trouvée de décision ni d'orientation sur l'article 12.1; le répertoire de la SOQUIJ, la seconde moitié de la liste des décisions de surveillance et les documents de la Commission sur l'IA n'ont pas été lus.
+- L'encadrement des institutions financières à charte québécoise est décrit, depuis le 14 novembre 2026, d'après deux analyses de cabinets [20][21]. Le site de l'AMF refuse les requêtes (erreur 403) : la ligne directrice elle-même [22] n'a pas été lue, pas plus que la Ligne directrice de l'AMF sur la gestion du risque de modèle, et l'adresse officielle du PDF du Bulletin du 2 avril 2026 citée en [22] (vol. 23, n° 13, section 5.2.2, décision n° 2026-PDG-0016) a été corrigée le 14 novembre 2026 d'après recherche web, le serveur maintenant une erreur 403 Cloudflare. L'avis 11-348 [19] a été lu par recherche de passages dans une copie officielle, non en entier; les suites de sa consultation n'ont pas été cherchées. Le droit des autres provinces n'est pas traité.
 - Les ajouts du 14 novembre 2026 sont le paragraphe sur le champ d'application de la Directive (38.2), les deux sous-sections de 38.3 et les lignes correspondantes du tableau de 38.7, de la grille et des points à retenir. Les colonnes « Portée pour un système d'agents » sont des lectures de ce chapitre.
-- Le guide québécois ne porte pas de date plus précise que 2026, et celle du guide fédéral est la date sans libellé affichée sur sa page. Les lectures proposées en 38.2, 38.3, 38.4 et 38.6 sont des inférences, non des positions des autorités.
+- Le guide québécois ne porte pas de date plus précise que 2026, et celle du guide fédéral correspond à la date sans libellé affichée sur sa page. Les lectures proposées en 38.2, 38.3, 38.4 et 38.6 sont des inférences, non des positions des autorités.
+- Lors de l'audit du 14 novembre 2026, les quatre pages hébergées sur `www.canada.ca` ([2], [5], [6] et [18]) ont expiré en délai d'attente aux requêtes automatisées; la fiche du Guide sur l'IA agentive [5] est confirmée en HTTP 200 au catalogue des Publications du gouvernement du Canada (`BT22-298/2026F-PDF`) et le contenu des quatre documents est confirmé par la relecture du 11-12 novembre et par recherche web.
 
 ## Mise en œuvre — Conformité réglementaire internationale et canadienne, et droit B2B inter-agents {.volet}
 

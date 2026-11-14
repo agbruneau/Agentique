@@ -2,7 +2,7 @@
 
 *Question directrice : comment limiter ce qu'un agent peut faire, et le prouver ?*
 
-> **État de référence :** spécification MCP `2026-07-28` et feuille de route du 22 août 2026; brouillon `draft-ietf-wimse-aims-01` du 2 novembre 2026, qui remplace `draft-klrc-aiagent-auth` [5]; RFC 8693 et RFC 9396; Authorization API 1.0 d'AuthZEN. Les numéros entre crochets renvoient aux sources en fin de chapitre; toutes sont des pages primaires lues pour ce chapitre ([13] en résumé seulement), sauf [16] et [17], marquées secondaires.
+> **État de référence :** spécification MCP `2026-07-28` et feuille de route du 22 août 2026; brouillon `draft-ietf-wimse-aims-01` du 2 novembre 2026, qui remplace `draft-klrc-aiagent-auth` [5]; RFC 8693 et RFC 9396; Authorization API 1.0 d'AuthZEN. Les numéros entre crochets renvoient aux sources en fin de chapitre; toutes sont des pages primaires lues pour ce chapitre ([13] ayant été relue au-delà du résumé le 14 novembre 2026), sauf [16] et [17], marquées secondaires.
 
 L'identité dit qui est l'agent et pour qui il agit (chapitre 29). L'autorisation dit ce qu'il peut faire, sur quoi, et pendant combien de temps. Pour un logiciel classique, la réponse s'écrit une fois, parce que le chemin d'exécution est connu. Un agent choisit ses outils en cours de route, à partir d'un contexte qu'un tiers peut avoir influencé, et il confie parfois une partie du travail à d'autres agents. Le droit accordé au départ voyage donc plus loin que ne le voit la personne qui l'a accordé.
 
@@ -226,7 +226,7 @@ Pages primaires lues le 11 novembre 2026 :
 10. [IETF — charte du groupe de travail OAuth](https://datatracker.ietf.org/wg/oauth/about/)
 11. [OpenID AuthZEN — Authorization API 1.0](https://openid.net/specs/authorization-api-1_0.html)
 12. [Permission Manifests for Web Agents (arXiv 2601.02371)](https://arxiv.org/abs/2601.02371)
-13. [Authenticated Delegation and Authorized AI Agents (arXiv 2501.09674)](https://arxiv.org/abs/2501.09674) — résumé seulement
+13. [Authenticated Delegation and Authorized AI Agents (arXiv 2501.09674)](https://arxiv.org/abs/2501.09674) — prépublication, résumé puis extraits du texte relus le 14 novembre 2026.
 14. [OWASP MCP Top 10 — page du projet](https://owasp.org/www-project-mcp-top-10/)
 15. [Microsoft — MCP Security Gateway 1.0, brouillon](https://microsoft.github.io/agent-governance-toolkit/specs/MCP-SECURITY-GATEWAY-1.0/)
 

@@ -236,7 +236,7 @@ Pages primaires lues le 11 novembre 2026 :
 
 1. [V. V. Vishnyakova — Context Engineering: From Prompts to Corporate Multi-Agent Architecture (arXiv 2603.09619, v2)](https://arxiv.org/pdf/2603.09619) — prépublication.
 2. [Anthropic — Effective context engineering for AI agents (29 septembre 2025)](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) — billet de fournisseur.
-3. [Liu et coll. — Lost in the Middle: How Language Models Use Long Contexts (TACL, arXiv 2307.03172)](https://arxiv.org/abs/2307.03172) — résumé lu.
+3. [Liu et coll. — Lost in the Middle: How Language Models Use Long Contexts (TACL, arXiv 2307.03172)](https://arxiv.org/abs/2307.03172) — résumé, puis extraits relus le 14 novembre 2026.
 4. [Chroma — Context Rot: How Increasing Input Tokens Impacts LLM Performance (14 juillet 2025)](https://www.trychroma.com/research/context-rot) — rapport technique d'éditeur.
 5. [Agent Skills — vue d'ensemble](https://agentskills.io/home)
 6. [Agent Skills — spécification](https://agentskills.io/specification)
@@ -245,9 +245,9 @@ Pages primaires lues le 11 novembre 2026 :
 9. [MCP — vue d'ensemble des extensions](https://modelcontextprotocol.io/extensions/overview.md)
 10. [MCP — extension Skills](https://modelcontextprotocol.io/extensions/skills/overview.md)
 11. [Li et coll. — SkillsBench (arXiv 2602.12670, v4)](https://arxiv.org/abs/2602.12670) — prépublication; résumé et première partie du texte lus.
-12. [Liu et coll. — Agent Skills in the Wild (arXiv 2601.10338)](https://arxiv.org/abs/2601.10338) — prépublication; résumé lu.
+12. [Liu et coll. — Agent Skills in the Wild (arXiv 2601.10338)](https://arxiv.org/abs/2601.10338) — prépublication; résumé, puis extraits relus le 14 novembre 2026.
 13. [AGENTS.md — site du format](https://agents.md/)
-14. [Chatlatanagulchai et coll. — Agent READMEs (arXiv 2511.12884, v2)](https://arxiv.org/abs/2511.12884) — prépublication; résumé lu.
+14. [Chatlatanagulchai et coll. — Agent READMEs (arXiv 2511.12884, v2)](https://arxiv.org/abs/2511.12884) — prépublication; résumé, puis extraits relus le 14 novembre 2026.
 15. [Gloaguen et coll. — Evaluating AGENTS.md (arXiv 2602.11988, v3)](https://arxiv.org/abs/2602.11988) — prépublication; résumé et texte lus.
 16. [Lulla et coll. — On the Impact of AGENTS.md Files on the Efficiency of AI Coding Agents (arXiv 2601.20404, v2)](https://arxiv.org/abs/2601.20404) — prépublication; résumé et texte lus.
 17. [Anthropic — Code execution with MCP (4 novembre 2025)](https://www.anthropic.com/engineering/code-execution-with-mcp) — billet de fournisseur.

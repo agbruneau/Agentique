@@ -2,7 +2,7 @@
 
 *Question directrice : que montrent les déploiements documentés ?*
 
-> **État de référence :** article de Nubank publié à KDD 2026 (août 2026), étude *Measuring Agents in Production* dans sa version 4, portrait québécois des utilisations de l'IA au 15 juin 2026 et guide du MCN sur l'IA agentique (2026). Les numéros entre crochets renvoient aux sources en fin de chapitre; [1] à [11] sont des pages primaires lues pour ce chapitre, [12] est secondaire; [13] à [15], relevées le 14 novembre 2026, ne sont connues que par leur résumé.
+> **État de référence :** article de Nubank publié à KDD 2026 (août 2026), étude *Measuring Agents in Production* dans sa version 4, portrait québécois des utilisations de l'IA au 15 juin 2026 et guide du MCN sur l'IA agentique (2026). Les numéros entre crochets renvoient aux sources en fin de chapitre; [1] à [11] sont des pages primaires lues pour ce chapitre, [12] est secondaire; [13] à [15], relevées le 14 novembre 2026, ont d'abord été lues par leur résumé puis recoupées par extraits à cette date.
 
 Les récits de déploiement d'agents abondent. Presque tous viennent de ceux qui vendent les agents : communiqués, résultats trimestriels, témoignages de clients. Ils donnent des chiffres sans dire qui a mesuré, par rapport à quoi, ni sur quelle période. Les textes où un déploiement est décrit avec sa méthode de mesure se comptent sur les doigts d'une main.
 
@@ -143,7 +143,7 @@ Une observation touche l'autorisation. Une équipe reproduit les permissions de 
 | ITBench (IBM et Université de l'Illinois, février 2025) [5] | 94 scénarios d'automatisation TI (42 en fiabilité, 50 en conformité et sécurité, 2 en FinOps) | 13,8 % des scénarios de fiabilité résolus; 25,2 % en conformité et sécurité; 0 % en FinOps (deux scénarios seulement) |
 | ORCA-bench (version 3, septembre 2026) [6] | 1 079 tâches d'analyse de cause première | Meilleure exactitude : 25,3 % au niveau moyen, 10,0 % au niveau difficile |
 
-Les deux textes sont des prépublications, lues par leur résumé. ORCA-bench évalue cinq agents de pointe sur six jours de télémétrie d'un système de microservices instrumenté. Le modèle le plus faible avance une cause invraisemblable dans 40 % de ses rapports, et retirer l'accès au code source dégrade tous les modèles. Les auteurs concluent que les agents ne sont pas prêts pour une garde autonome, et rappellent que les systèmes réels sont bien plus vastes que leur banc. Une étude de 2024, menée sur des incidents de production de Microsoft, explorait déjà l'idée de donner à un agent les outils de diagnostic qu'une équipe emploie à la main; son résumé ne rapporte aucun résultat de déploiement [7].
+Les deux textes sont des prépublications, d'abord connues par leur résumé, puis relues par extraits le 14 novembre 2026. ORCA-bench évalue cinq agents de pointe sur six jours de télémétrie d'un système de microservices instrumenté. Le modèle le plus faible avance une cause invraisemblable dans 40 % de ses rapports, et retirer l'accès au code source dégrade tous les modèles. Les auteurs concluent que les agents ne sont pas prêts pour une garde autonome, et rappellent que les systèmes réels sont bien plus vastes que leur banc. Une étude de 2024, menée sur des incidents de production de Microsoft, explorait déjà l'idée de donner à un agent les outils de diagnostic qu'une équipe emploie à la main; son résumé ne rapporte aucun résultat de déploiement [7].
 
 ### Lecture
 
@@ -151,7 +151,7 @@ Les trois types de preuves convergent. Ce qui est documenté en production, c'es
 
 ### Trois publications de 2026
 
-Une recherche complémentaire a trouvé trois textes parus en 2026, connus ici par leur seul résumé.
+Une recherche complémentaire du 14 novembre 2026 a trouvé trois textes parus en 2026, recoupés par extraits le même jour.
 
 **Tri d'alarmes dans un centre de distribution.** Des auteurs d'Amazon décrivent un agent qui diagnostique des alarmes en suivant une procédure de 44 étapes sur plusieurs systèmes de mesure. Au lieu de générer du code à chaque requête, une chaîne préalable compile les étapes répétées en outils validés et versionnés, que l'agent appelle ensuite directement. En production, sur une seule application, le temps de réponse médian baisse de 42 % (modèle Qwen3 32B, par rapport à l'agent qui génère du code à chaque requête); sur 1 500 alarmes historiques, le taux d'erreur de bout en bout baisse jusqu'à 53 % selon le modèle (36 % pour Qwen3 32B), et les auteurs ne revendiquent pas de généralisation à d'autres domaines [13]. Le gain vient de ce qu'on retire au modèle : la variance d'une exécution à l'autre sur les étapes répétées.
 
@@ -159,7 +159,7 @@ Une recherche complémentaire a trouvé trois textes parus en 2026, connus ici p
 
 **Entretiens dans douze entreprises.** Seize praticiens du génie logiciel situent les usages en production aux niveaux 1 à 3 d'une échelle de maturité qui en compte six; quatre entreprises disposent de capacités expérimentales au-delà. Quatre obstacles reviennent : la gestion du contexte, la performance sur des contenus propres à l'entreprise, le non-déterminisme et la qualification, la confidentialité des données [15].
 
-D'après leurs résumés, ces trois textes vont dans le sens du portrait de MAP : des agents étroits, bornés par une chaîne fixée d'avance, dans des usages de production encore limités. Lu en entier, le premier relèverait sans doute du niveau 1 de la hiérarchie de la section 42.1; les deux autres, des niveaux 3 et 2.
+D'après leurs résumés et les extraits relus, ces trois textes vont dans le sens du portrait de MAP : des agents étroits, bornés par une chaîne fixée d'avance, dans des usages de production encore limités. Lu en entier, le premier relèverait sans doute du niveau 1 de la hiérarchie de la section 42.1; les deux autres, des niveaux 3 et 2.
 
 ---
 
@@ -210,7 +210,7 @@ Le secteur public québécois en est à l'inventaire et au cadrage. Ses cas de r
 |---|---|---|---|
 | Service à la clientèle | Nubank [1] | 1 | Valeurs absolues, coûts, volumes |
 | Documents financiers | Banc d'essai [4] | 4 | Tout déploiement documenté |
-| Opérations TI | ServiceNow [3], MAP [2], bancs d'essai [5] [6]; un cas mesuré en production, connu par son seul résumé [13] | 2 à 4; 1 à confirmer pour [13] | Résultats mesurés en production et lus en entier |
+| Opérations TI | ServiceNow [3], MAP [2], bancs d'essai [5] [6]; un cas mesuré en production, connu par résumé et extraits [13] | 2 à 4; 1 à confirmer pour [13] | Résultats mesurés en production et lus en entier |
 | Secteur public | Portrait [8] [9], guide [10] | 5 | Toute évaluation |
 
 Le domaine le mieux documenté est aussi le plus borné : des questions de clients sur un produit connu, avec un transfert possible à un humain. Plus la tâche engage des systèmes en marche ou des décisions, moins il existe de textes vérifiables.
@@ -254,7 +254,7 @@ Le domaine le mieux documenté est aussi le plus borné : des questions de clien
 
 ## Points à retenir
 
-- Un seul déploiement d'agents à grande échelle a été lu en entier dans un article évalué par les pairs avec mesure sur trafic réel : celui de Nubank, en service à la clientèle. Trois autres textes de 2026, connus par leur résumé, décrivent le même type d'agents étroits et bornés.
+- Un seul déploiement d'agents à grande échelle a été lu en entier dans un article évalué par les pairs avec mesure sur trafic réel : celui de Nubank, en service à la clientèle. Trois autres textes de 2026, initialement connus par leur résumé puis recoupés par extraits le 14 novembre 2026, décrivent le même type d'agents étroits et bornés.
 - Ses gains sont relatifs à une base mal définie, et ses agents restent sous les experts humains dans les cinq domaines mesurés.
 - Pour les documents financiers, la preuve est un banc d'essai : au mieux, trois documents sur quatre sont entièrement corrects, et l'architecture la plus précise perd son avantage à fort volume.
 - En opérations TI, les agents documentés préparent, diagnostiquent ou génèrent un workflow. Les bancs d'essai situent l'analyse autonome d'incidents entre 10 % et 25 % de réussite.
@@ -273,9 +273,9 @@ Pages primaires lues le 11 novembre 2026; [1], [2], [3], [4], [6], [8], [10] et 
 2. [Pan et coll. — Measuring Agents in Production (arXiv 2512.04123v4)](https://arxiv.org/html/2512.04123v4) — texte, sauf la fin des annexes.
 3. [Marquez Ayala et Béchard — Generating a Low-code Complete Workflow via Task Decomposition and RAG (arXiv 2412.00239)](https://arxiv.org/html/2412.00239)
 4. [Kulkarni et Kulkarni — Benchmarking Multi-Agent LLM Architectures for Financial Document Processing (arXiv 2603.22651v1)](https://arxiv.org/html/2603.22651v1) — prépublication.
-5. [Jha et coll. — ITBench (arXiv 2502.05352)](https://arxiv.org/abs/2502.05352) — prépublication; résumé seulement.
-6. [Gong et coll. — ORCA-bench: How Ready Are Language Model Agents for Oncall? (arXiv 2607.28545)](https://arxiv.org/abs/2607.28545) — prépublication; résumé seulement.
-7. [Roy et coll. — Exploring LLM-based Agents for Root Cause Analysis (arXiv 2403.04123)](https://arxiv.org/abs/2403.04123) — résumé seulement.
+5. [Jha et coll. — ITBench (arXiv 2502.05352)](https://arxiv.org/abs/2502.05352) — prépublication; résumé puis extraits relus le 14 novembre 2026.
+6. [Gong et coll. — ORCA-bench: How Ready Are Language Model Agents for Oncall? (arXiv 2607.28545)](https://arxiv.org/abs/2607.28545) — prépublication; résumé puis extraits relus le 14 novembre 2026.
+7. [Roy et coll. — Exploring LLM-based Agents for Root Cause Analysis (arXiv 2403.04123)](https://arxiv.org/abs/2403.04123) — résumé puis extraits relus le 14 novembre 2026.
 8. [Québec — Portrait des utilisations de l'IA dans l'administration publique](https://www.quebec.ca/gouvernement/numerique/intelligence-artificielle-administration-publique/portrait)
 9. [Données Québec — Portrait public des utilisations de l'IA, jeu de données](https://www.donneesquebec.ca/recherche/dataset/portrait-public-des-utilisations-de-l-ia-dans-l-administration-publique-quebecoise) — métadonnées et première moitié du fichier de 2026.
 10. [MCN — Guide sur l'utilisation responsable de l'intelligence artificielle agentique (PDF)](https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/cybersecurite_numerique/Intelligence_artificielle/GU_IA_Agentique.pdf) — texte intégral.
@@ -285,7 +285,7 @@ Source secondaire :
 
 12. [ServiceNow AI Research — fiche de publication de l'article de Marquez Ayala et Béchard](https://www.servicenow.com/research/publication/orlando-marquez-gene-cain2025.html) — résultat de recherche seulement, page non lue.
 
-Résumés seulement, relevés le 14 novembre 2026 :
+Relevés et recoupés par extraits le 14 novembre 2026 :
 
 13. [Kujanpää et coll. — Tool-Making and Self-Evolving LLM Agents in Low-Latency Systems (arXiv 2607.08010, 9 juillet 2026; à paraître au volet industriel d'EMNLP 2026 selon la page arXiv)](https://arxiv.org/abs/2607.08010)
 14. [Ao, Fang et Xu — RecSys Factory: Bounding LLM Agent Autonomy to Decision Points in the Industrial Recommender Lifecycle (arXiv 2608.11241, 31 juillet 2026)](https://arxiv.org/abs/2608.11241) — prépublication.
@@ -298,7 +298,7 @@ Résumés seulement, relevés le 14 novembre 2026 :
 - MAP compte deux établissements industriels parmi les cinq de ses auteurs : son indépendance envers les organisations étudiées, que suppose le niveau 2, n'est pas établie. Sa part de 75 % d'équipes sans banc d'essai est un pourcentage, donné sans compte.
 - La hiérarchie en six niveaux est une proposition de ce chapitre, pas un résultat de recherche.
 - L'« étude sur la génération de workflows » que le plan initial nomme parmi les appuis n'y est pas identifiée. L'article de ServiceNow [3] a été retenu parce qu'il correspond à cette description, sans certitude que ce soit l'étude visée. Sa parution à CAIN 2025 ne repose que sur [12] : la page arXiv relue ne la mentionne pas.
-- Les intitulés du plan initial sont conservés, mais la section 42.3 présente un banc d'essai et non un déploiement, et la section 42.4 repose en partie sur des bancs d'essai lus par leur seul résumé [5] [6] [7]. Les résultats d'ITBench datent de février 2025; ni son résumé ni une mise à jour n'ont été relus à l'audit. Le banc d'essai financier [4] ne dit pas comment la charge de ses essais de mise à l'échelle a été produite.
-- La recherche de cas n'est pas exhaustive : une douzaine de pages ont été lues en entier. Une recherche complémentaire du 14 novembre 2026, dans un index d'articles, a trouvé d'autres textes industriels, dont les trois de la section 42.4, connus par leur seul résumé. Un quatrième, sur un agent d'achat en ligne d'Amazon, n'est pas repris : son résumé ne donne aucun chiffre. Le rattachement de ces textes aux niveaux de la section 42.1 est provisoire, faute de lecture complète.
-- Le fichier de données du portrait [9] n'a été lu qu'à moitié, et la répartition des initiatives par statut, publiée sous forme d'image, n'a pas été lue. Aucun cas du secteur public hors Québec n'a été examiné; les guides du Canada et de la Nouvelle-Galles du Sud que cite le guide du MCN n'ont pas été relus ici.
+- Les intitulés du plan initial sont conservés, mais la section 42.3 présente un banc d'essai et non un déploiement, et la section 42.4 repose en partie sur des bancs d'essai initialement lus par leur résumé puis recoupés par extraits le 14 novembre 2026 [5] [6] [7]. Les résultats d'ITBench datent de février 2025; ni son résumé ni une mise à jour n'ont été relus à l'audit. Le banc d'essai financier [4] ne dit pas comment la charge de ses essais de mise à l'échelle a été produite.
+- La recherche de cas n'est pas exhaustive : une douzaine de pages ont été lues en entier. Une recherche complémentaire du 14 novembre 2026, dans un index d'articles, a trouvé d'autres textes industriels, dont les trois de la section 42.4, initialement connus par leur seul résumé puis relus par extraits. Un quatrième, sur un agent d'achat en ligne d'Amazon, n'est pas repris : son résumé ne donne aucun chiffre. Le rattachement de ces textes aux niveaux de la section 42.1 est provisoire, faute de lecture complète.
+- Le 14 novembre 2026, le portail Données Québec [9] oppose un défi navigateur HTTP 202 aux requêtes automatisées et la fiche ServiceNow [12] expire en délai d'attente (parution CAIN 2025 confirmée par recherche web). Le fichier de données du portrait [9] n'a été lu qu'à moitié lors de la rédaction, et la répartition des initiatives par statut, publiée sous forme d'image, n'a pas été lue. Aucun cas du secteur public hors Québec n'a été examiné; les guides du Canada et de la Nouvelle-Galles du Sud que cite le guide du MCN n'ont pas été relus ici.
 - La description de Nubank comme banque numérique et l'année de sortie des modèles du banc d'essai financier viennent de la connaissance générale.

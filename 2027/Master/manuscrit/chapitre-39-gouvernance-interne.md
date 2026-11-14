@@ -214,12 +214,12 @@ Pages primaires lues le 11 novembre 2026 :
 1. [McKinsey — State of AI trust in 2026: Shifting to the agentic era (25 mars 2026)](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/tech-forward/state-of-ai-trust-in-2026-shifting-to-the-agentic-era)
 2. [IMDA — Model AI Governance Framework for Agentic AI, version 1.5 (20 mai 2026, mise à jour le 5 juin 2026)](https://www.imda.gov.sg/-/media/imda/files/about/emerging-tech-and-research/artificial-intelligence/mgf-for-agentic-ai.pdf)
 3. [MCN — Guide sur l'utilisation responsable de l'intelligence artificielle agentique (2026)](https://cdn-contenu.quebec.ca/cdn-contenu/adm/min/cybersecurite_numerique/Intelligence_artificielle/GU_IA_Agentique.pdf)
-4. [Gouvernement du Canada — Guide sur l'utilisation de l'intelligence artificielle agentive (page datée du 15 septembre 2026)](https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/utilisation-responsable-ai/guide-utilisation-intelligence-artificielle-agentive.html)
+4. [Gouvernement du Canada — Guide sur l'utilisation de l'intelligence artificielle agentive (page datée du 15 septembre 2026)](https://www.canada.ca/fr/gouvernement/systeme/gouvernement-numerique/innovations-gouvernementales-numeriques/utilisation-responsable-ai/ia-generative/guide-utilisation-intelligence-artificielle-agentive.html)
 5. [NIST — AI RMF 1.0, fonctions du cadre](https://airc.nist.gov/airmf-resources/airmf/5-sec-core/)
 6. [BSIF — ligne directrice E-23, Gestion du risque de modélisation (2027)](https://www.osfi-bsif.gc.ca/en/guidance/guidance-library/guideline-e-23-model-risk-management-2027)
-7. [Microsoft — Agent Registry in Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-365/admin/manage/agent-registry)
+7. [Microsoft — Agent Registry in Microsoft 365 admin center](https://learn.microsoft.com/en-us/microsoft-agent-365/admin/agent-registry-overview)
 8. [Microsoft — Agent Registry convergence with Microsoft Agent 365](https://learn.microsoft.com/en-us/entra/agent-id/agent-registry-convergence)
-9. [Microsoft Entra Agent ID — owners, sponsors, and managers](https://learn.microsoft.com/en-us/entra/agent-id/identity-platform/agent-owners-sponsors-managers)
+9. [Microsoft Entra Agent ID — owners, sponsors, and managers](https://learn.microsoft.com/en-us/entra/agent-id/agent-owners-sponsors-managers)
 10. [Workday — Agent System of Record, considérations de configuration](https://doc.workday.com/admin-guide/en-us/workday-ai/agents/setup-considerations--agent-system-of-record.html)
 
 Source secondaire :
@@ -235,9 +235,9 @@ Sources ajoutées le 14 novembre 2026, pour la section 39.6 :
 
 ## Limites de ce chapitre
 
-- Du rapport McKinsey, seul le texte a été lu; les graphiques, donc les scores par dimension, n'étaient pas lisibles. Rechargée sans succès à l'audit, la page n'a été recoupée que par un résumé de recherche (score moyen, échantillon, période). L'enquête est déclarative et non évaluée par les pairs.
+- Du rapport McKinsey, seul le texte a été lu; les graphiques, donc les scores par dimension, n'étaient pas lisibles. Rechargée sans succès à l'audit du 12 novembre ni le 14 novembre 2026 (délai d'attente dépassé sur `mckinsey.com`), la page n'a été recoupée que par un résumé de recherche (score moyen, échantillon, période). L'enquête est déclarative et non évaluée par les pairs.
 - Du cadre de Singapour, la synthèse et les passages sur l'identité, l'imputabilité, la supervision et le changement ont été lus, puis relus à l'audit; le reste a été survolé.
-- Les pages [3], [4], [6], [7] et [10] ont été relues à l'audit et confirment le texte; [5] n'a été lue que par extraction automatique. Le guide du MCN ne porte que l'année 2026; la date du guide fédéral est celle, sans libellé, de sa page.
+- Les pages [3], [4], [6], [7] et [10] ont été relues à l'audit du 12 novembre et confirment le texte (le 14 novembre 2026, l'URL `www.canada.ca` de [4] expire en délai d'attente aux requêtes automatisées, mais sa fiche `BT22-298/2026F-PDF` répond HTTP 200 au catalogue des Publications du gouvernement du Canada); [5] n'a été lue que par extraction automatique. Le guide du MCN ne porte que l'année 2026; la date du guide fédéral est celle, sans libellé, de sa page.
 - La documentation des éditeurs décrit des fonctions, non leur efficacité. ServiceNow, Salesforce, AWS et Google n'ont pas été examinés (chapitre 26).
 - ISO/IEC 42001 n'a pas été lue (chapitre 35).
 - La structure à trois niveaux, la découverte par les journaux, la revue des politiques de routage et le principe d'application technique des politiques sont des raisonnements de ce chapitre.

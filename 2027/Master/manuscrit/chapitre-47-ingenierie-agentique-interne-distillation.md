@@ -2,7 +2,7 @@
 
 *Question directrice : comment sécuriser le code et les données que produisent des agents, automatiser l'exploitation sans s'exposer, et transférer l'intelligence vers de petits modèles ?*
 
-> **État de référence :** faits arrêtés au 11 novembre 2026; documentation d'Apache Iceberg (1.12.0), de Project Nessie, de DSPy (3.5) et de vLLM, dépôts Spec Kit, SCIP et Scientist, et sept articles lus par leur résumé. Les numéros entre crochets renvoient aux sources en fin de chapitre, toutes primaires. Plusieurs éléments n'ont pas de source : ils sont présentés comme des cibles de conception proposées et recensés dans les limites.
+> **État de référence :** faits arrêtés au 11 novembre 2026; documentation d'Apache Iceberg (1.12.0), de Project Nessie (0.110.0), de DSPy (3.5) et de vLLM, dépôts Spec Kit, SCIP et Scientist, et sept articles d'abord lus par leur résumé puis recoupés par extraits le 14 novembre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre, toutes primaires. Plusieurs éléments n'ont pas de source : ils sont présentés comme des cibles de conception proposées et recensés dans les limites.
 
 Les chapitres précédents traitent l'agent comme un consommateur des systèmes de l'entreprise. Celui-ci le traite comme un producteur : il écrit du code, des tables, des commandes d'exploitation et les données qui entraîneront son successeur. Chaque production pose la même question : qui vérifie ce qu'un agent a écrit ?
 
@@ -242,18 +242,18 @@ Aucune source lue ne décrit « Multi-LoRA (SFT + DPO) » comme une méthode nom
 Pages primaires lues le 12 novembre 2026 :
 
 1. [GitHub — Spec Kit](https://github.com/github/spec-kit)
-2. [Sourcegraph — SCIP Code Intelligence Protocol](https://github.com/sourcegraph/scip)
-3. [Maaz et coll. — Agentic Property-Based Testing, arXiv:2510.09907](https://arxiv.org/abs/2510.09907) — résumé
-4. [Foster et coll. — Mutation-Guided LLM-based Test Generation at Meta, arXiv:2501.12862](https://arxiv.org/abs/2501.12862) — résumé
+2. [scip-code (anciennement Sourcegraph) — SCIP Code Intelligence Protocol](https://github.com/scip-code/scip)
+3. [Maaz et coll. — Agentic Property-Based Testing, arXiv:2510.09907](https://arxiv.org/abs/2510.09907) — résumé puis extraits relus le 14 novembre 2026.
+4. [Foster et coll. — Mutation-Guided LLM-based Test Generation at Meta, arXiv:2501.12862](https://arxiv.org/abs/2501.12862) — résumé puis extraits relus le 14 novembre 2026.
 5. [GitHub — Scientist](https://github.com/github/scientist)
 6. [Apache Iceberg — Branching and Tagging](https://iceberg.apache.org/docs/latest/branching/)
 7. [Project Nessie — accueil](https://projectnessie.org/)
-8. [Shah — LogJack, arXiv:2604.15368](https://arxiv.org/abs/2604.15368) — résumé
-9. [Pasquini et coll. — When AIOps Become « AI Oops », arXiv:2508.06394](https://arxiv.org/abs/2508.06394) — résumé
-10. [Carlini et coll. — The Secret Sharer, arXiv:1802.08232](https://arxiv.org/abs/1802.08232) — résumé
+8. [Shah — LogJack, arXiv:2604.15368](https://arxiv.org/abs/2604.15368) — résumé puis extraits relus le 14 novembre 2026.
+9. [Pasquini et coll. — When AIOps Become « AI Oops », arXiv:2508.06394](https://arxiv.org/abs/2508.06394) — résumé puis extraits relus le 14 novembre 2026.
+10. [Carlini et coll. — The Secret Sharer, arXiv:1802.08232](https://arxiv.org/abs/1802.08232) — résumé puis extraits relus le 14 novembre 2026.
 11. [DSPy — MIPROv2](https://dspy.ai/current/api/optimizers/MIPROv2/)
-12. [Hu et coll. — LoRA, arXiv:2106.09685](https://arxiv.org/abs/2106.09685) — résumé
-13. [Rafailov et coll. — Direct Preference Optimization, arXiv:2305.18290](https://arxiv.org/abs/2305.18290) — résumé
+12. [Hu et coll. — LoRA, arXiv:2106.09685](https://arxiv.org/abs/2106.09685) — résumé puis extraits relus le 14 novembre 2026.
+13. [Rafailov et coll. — Direct Preference Optimization, arXiv:2305.18290](https://arxiv.org/abs/2305.18290) — résumé puis extraits relus le 14 novembre 2026.
 14. [vLLM — LoRA Adapters](https://docs.vllm.ai/en/latest/features/lora.html)
 
 Aucune source secondaire n'est citée. Les faits repris d'autres chapitres reposent sur leurs sources, non relues ici.
@@ -263,10 +263,10 @@ Aucune source secondaire n'est citée. Les faits repris d'autres chapitres repos
 - Les sources [3], [4], [8], [9], [10], [12] et [13], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - **Éléments sans source.** « Spécificateur / Bâtisseur », « Shadow Mirroring » et « Multi-LoRA (SFT + DPO) » n'ont pas été retrouvés comme termes ou méthodes publiés; ils sont rattachés à des pratiques voisines et présentés comme cibles de conception. Les seuils « ≥ 85 % » et « 30 jours à 0,00 $ d'écart » n'ont aucune source. Rien n'a été lu sur RPG. « Data Flywheel » n'a pas de définition sourcée.
 - **Audit du 12 novembre 2026.** [1], [2], [4], [6], [8], [9], [11] et [14] relus : faits confirmés, l'attaque de [9] et le comptage de [8] précisés. Renvois vérifiés, dont ceux vers le chapitre 44.
-- **Canaris.** Le résumé lu de l'article de Carlini ne décrit ni les canaris ni la métrique d'exposition; leur description vient de la connaissance générale du texte complet.
-- **Connaissance générale.** Les définitions de l'AST, du test par propriétés, du test de mutation et de la distillation, l'exécution parallèle sur traitement par lots et le rôle de `max_loras`, absent de la page de vLLM, ne viennent pas d'une page lue.
-- **Articles.** Les sept articles n'ont été lus que par leur résumé. [3], [8] et [9] sont des prépublications.
-- **Versions.** Iceberg 1.12.0 et DSPy 3.5 sont tirés de la navigation des sites (DSPy 3.5.0 selon le chapitre 20); Nessie, vLLM et Spec Kit n'affichent aucune version courante, et Spec Kit ne décrit pas les artefacts de chaque étape.
+- **Canaris.** Le résumé seul de l'article de Carlini [10] ne décrit ni les canaris ni la métrique d'exposition; ces éléments proviennent du texte complet de l'article, recoupé par extraits le 14 novembre 2026.
+- **Connaissance générale.** Les définitions de l'AST, du test par propriétés, du test de mutation et de la distillation, l'exécution parallèle sur traitement par lots et la précision du bornage par lot pour `max_loras` (paramètre bien nommé sur la page de vLLM pour la concurrence entre adaptateurs, sans indication explicite d'un plafond par lot) ne viennent pas d'une page lue.
+- **Articles.** Les sept articles, d'abord lus par leur résumé, ont été recoupés par extraits le 14 novembre 2026. [3], [8] et [9] sont des prépublications.
+- **Versions.** Iceberg 1.12.0, Nessie 0.110.0 et DSPy 3.5 sont tirés de la navigation des sites (DSPy 3.5.0 selon le chapitre 20); vLLM et Spec Kit n'affichent aucune version courante sur les pages lues, et Spec Kit ne décrit pas les artefacts de chaque étape.
 - **Aucune mesure** n'a été lue sur le gain d'un index de symboles pour un agent, ni sur un élève distillé par la recette décrite.
 
 ## Mise en œuvre — Usine logicielle agentique (Agentic SDLC) et modernisation assistée du patrimoine {.volet}
@@ -1104,7 +1104,7 @@ Un SLM spécialisé reste efficace tant que le monde métier ressemble à sa dis
 
 Pour prouver au responsable de la protection des renseignements personnels (Loi 25) qu’un adaptateur distillé n’a mémorisé aucune séquence nominative susceptible d’être restituée à un autre utilisateur, le pipeline applique la méthode d’exposition différentielle de Carlini (47.7). À la constitution du jeu d’entraînement assaini, le sas insère $K = 200$ chaînes secrètes synthétiques uniques, au format exact d’un identifiant sensible (par exemple POLICE-CANARI-9481-7720).
 
-Une fois l’affinage SFT + DPO achevé, le vérificateur compare la log-vraisemblance (perplexité) que l’élève assigne à ces 200 canaris vus à l’entraînement à celle de 10 000 canaris témoins jamais présentés. Si le rang de vraisemblance d’un seul canari d’entraînement se distingue statistiquement des témoins (exposition $> \tau_{\text{mem}}$), ou si un décodage glouton préfixé complète un seul chiffre exact, la régularisation (dropout LoRA, écrêtage de la norme du gradient de type SGD à confidentialité différentielle, ou déduplication accrue) est jugée insuffisante. L’artefact de poids est alors détruit automatiquement, avant toute copie hors du bac d’entraînement. Ce protocole va au-delà de ce que retient la section 47.7 : un canari y est une séquence artificielle unique glissée dans le jeu d’entraînement, dont on mesure l’exposition dans le modèle, et la publication est bloquée s’il ressort; le résumé lu de l’article de Carlini ne décrit ni les canaris ni la métrique d’exposition, et le nombre de canaris et de témoins, le seuil et le décodage ne sont décrits dans aucune source lue.
+Une fois l’affinage SFT + DPO achevé, le vérificateur compare la log-vraisemblance (perplexité) que l’élève assigne à ces 200 canaris vus à l’entraînement à celle de 10 000 canaris témoins jamais présentés. Si le rang de vraisemblance d’un seul canari d’entraînement se distingue statistiquement des témoins (exposition $> \tau_{\text{mem}}$), ou si un décodage glouton préfixé complète un seul chiffre exact, la régularisation (dropout LoRA, écrêtage de la norme du gradient de type SGD à confidentialité différentielle, ou déduplication accrue) est jugée insuffisante. L’artefact de poids est alors détruit automatiquement, avant toute copie hors du bac d’entraînement. Ce protocole va au-delà de ce que retient la section 47.7 : un canari y est une séquence artificielle unique glissée dans le jeu d’entraînement, dont on mesure l’exposition dans le modèle, et la publication est bloquée s’il ressort; le résumé seul de l’article de Carlini ne décrit ni les canaris ni la métrique d’exposition; ces éléments proviennent du texte complet de l’article, recoupé par extraits le 14 novembre 2026, et le nombre de canaris et de témoins, le seuil et le décodage ne sont décrits dans aucune source lue.
 
 ### Service multi-adaptateurs à haute densité et dimensionnement VRAM
 

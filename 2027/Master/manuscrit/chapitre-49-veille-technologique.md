@@ -325,7 +325,7 @@ Le registre vaut par son entretien. Une ligne dont la source n'a pas été relue
 Pages de l'émetteur lues le 13 novembre 2026 :
 
 1. [Maison-Blanche — décret Inaugurating the Era of Super Intelligence, 29 septembre 2026](https://www.whitehouse.gov/presidential-actions/2026/09/inaugurating-the-era-of-super-intelligence/)
-2. [NIST — SP 800-53 Control Overlays, page du projet, mise à jour du 20 octobre 2026](https://csrc.nist.gov/projects/cosais)
+2. [NIST — SP 800-53 Control Overlays for Super Intelligence Systems, page du projet, mise à jour du 20 octobre 2026](https://csrc.nist.gov/projects/cosis)
 3. [Microsoft — guide d'Ignite 2026 pour Agent 365, 10 novembre 2026](https://techcommunity.microsoft.com/blog/agent-365-blog/microsoft-ignite-2026-your-guide-to-agent-365/4571750) — événement postérieur à la date de référence.
 4. [METR — Task-Completion Time Horizons of Frontier AI Models, mise à jour du 8 septembre 2026](https://metr.org/time-horizons/) — relue à l'audit.
 5. [METR — fichier de données de la série Time Horizon 1.1](https://metr.org/assets/benchmark_results_1_1.yaml) — fichier téléchargé et relu à l'audit.
@@ -343,13 +343,13 @@ Pages de l'émetteur lues le 13 novembre 2026 :
 17. [CEN-CENELEC JTC 21 — EN 18286 becomes the first harmonised standard under the EU AI Act, 14 octobre 2026](https://jtc21.eu/en-18286-becomes-the-first-harmonised-standard-under-the-eu-ai-act/) — décision d'exécution non ouverte sur EUR-Lex.
 18. [UIT-T — programme de travail, recommandation F.748.93](https://www.itu.int/ITU-T/workprog/wp_item.aspx?isn=23620) — texte réservé aux membres, non lu.
 19. [UIT-T — programme de travail, rapport YSTR.NAC-roadmap](https://www.itu.int/itu-t/workprog/wp_item.aspx?isn=23691)
-20. [NIST — AI Agent Standards Initiative, mise à jour du 9 novembre 2026](https://www.nist.gov/caisi/ai-agent-standards-initiative) — aussi citée aux chapitres 4, 11 et 43.
+20. [NIST — SI Agent Standards Initiative, mise à jour du 9 novembre 2026](https://www.nist.gov/super-intelligence/si-agent-standards-initiative) — aussi citée aux chapitres 4, 11 et 43 (anciennement CAISI).
 21. [FIDO Alliance — normes pour les interactions d'agents, communiqué du 28 avril 2026](https://fidoalliance.org/fido-alliance-to-develop-standards-for-trusted-ai-agent-interactions/)
 22. [OpenID Foundation — nouveaux projets du groupe AuthZEN pour l'autorisation des agents](https://openid.net/openid-foundation-advances-authorization-for-the-agent-era-with-new-authzen-working-group-drafts/)
 23. [MCP — feuille de route, mise à jour du 22 août 2026](https://modelcontextprotocol.io/development/roadmap) — aussi citée au chapitre 43.
 24. [IETF — groupe de travail WIMSE, charte et jalons](https://datatracker.ietf.org/wg/wimse/about/)
 25. [Salesforce — annonces de Dreamforce 2026](https://www.salesforce.com/blog/dreamforce-2026-announcements/)
-26. [SAP — annonces de TechEd, 27 octobre 2026](https://news.sap.com/?p=248010)
+26. [SAP — annonces de TechEd, 27 octobre 2026](https://news.sap.com/2026/10/sap-teched-ai-developers-build-what-matters-autonomous-execution/)
 27. [Commission européenne — AI Act Service Desk, calendrier de mise en œuvre](https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act) — page d'information; le Journal officiel fait foi.
 28. [Commission européenne — responsabilité du fait des produits défectueux](https://single-market-economy.ec.europa.eu/single-market/goods/free-movement-sectors/liability-defective-products_en)
 29. [Commission européenne — règlement sur l'identité numérique européenne, mise à jour du 6 novembre 2026](https://digital-strategy.ec.europa.eu/en/policies/eudi-regulation)
@@ -362,9 +362,9 @@ Pages de l'émetteur lues le 13 novembre 2026 :
 36. [NIST — IR 8547, Transition to Post-Quantum Cryptography Standards, version finale du 27 octobre 2026](https://csrc.nist.gov/pubs/ir/8547/final) — page relue à l'audit; calendrier lu dans le PDF.
 37. [Centre canadien pour la cybersécurité — ITSM.40.001, feuille de route de migration vers la cryptographie post-quantique, 23 juin 2025](https://www.cyber.gc.ca/en/guidance/roadmap-migration-post-quantum-cryptography-government-canada-itsm40001) — version anglaise.
 38. [Commission européenne — feuille de route coordonnée de transition vers la cryptographie post-quantique](https://digital-strategy.ec.europa.eu/en/library/coordinated-implementation-roadmap-transition-post-quantum-cryptography)
-39. [IETF — RFC 10024, accord de clés hybride post-quantique pour TLS 1.3, août 2026](https://datatracker.ietf.org/doc/draft-ietf-tls-ecdhe-mlkem/)
-40. [IETF — RFC 9964, ML-DSA pour JOSE et COSE, mai 2026](https://datatracker.ietf.org/doc/draft-ietf-cose-dilithium/)
-41. [IETF — RFC 10073, signatures composites ML-DSA pour X.509, novembre 2026](https://datatracker.ietf.org/doc/draft-ietf-lamps-pq-composite-sigs/)
+39. [IETF — RFC 10024, accord de clés hybride post-quantique pour TLS 1.3, août 2026](https://datatracker.ietf.org/doc/rfc10024/)
+40. [IETF — RFC 9964, ML-DSA pour JOSE et COSE, mai 2026](https://datatracker.ietf.org/doc/rfc9964/)
+41. [IETF — RFC 10073, signatures composites ML-DSA pour X.509, novembre 2026](https://datatracker.ietf.org/doc/rfc10073/)
 42. [SPIFFE — The SPIFFE Standard Roadmap, 18 août 2026](https://spiffe.io/blog/2026-08-18-spiffe-standard-roadmap/)
 43. [IETF — draft-uppalapati-wimse-pq-agent-identity-01, 27 octobre 2026](https://datatracker.ietf.org/doc/draft-uppalapati-wimse-pq-agent-identity/) — soumission individuelle, non adoptée.
 44. [NIST — National Vulnerability Database, interrogation de l'API du 13 novembre 2026](https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=Model%20Context%20Protocol&pubStartDate=2026-07-01T00:00:00.000Z&pubEndDate=2026-10-28T00:00:00.000Z) — comptage et tri faits sur la réponse.

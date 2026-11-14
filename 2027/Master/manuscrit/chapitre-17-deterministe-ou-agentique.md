@@ -291,7 +291,7 @@ Plus la région agentique est petite, plus la part inexpliquée du dossier l'est
 
 Pages primaires lues le 11 novembre 2026 :
 
-1. [Anthropic — Building effective agents (19 décembre 2024)](https://www.anthropic.com/engineering/building-effective-agents)
+1. [Anthropic — Building effective agents (19 décembre 2024)](https://www.anthropic.com/research/building-effective-agents)
 2. [Camunda — Agentic orchestration : design and architecture (8.11, « next »)](https://docs.camunda.io/docs/next/components/agentic-orchestration/ao-design/)
 3. [Camunda — AI agents](https://docs.camunda.io/docs/next/components/agentic-orchestration/ai-agents/)
 4. [Camunda — Ad-hoc sub-processes](https://docs.camunda.io/docs/next/components/modeler/bpmn/ad-hoc-subprocesses/)

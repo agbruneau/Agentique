@@ -2,7 +2,7 @@
 
 *Question directrice : comment répartir le travail entre plusieurs agents ?*
 
-> **État de référence :** deux études comparatives en prépublication (documents financiers, mars 2026; mise à l'échelle des systèmes d'agents, avril 2026) et la documentation d'orchestration de Microsoft, d'Anthropic, d'OpenAI et de LangChain, consultée à cette date. Les numéros entre crochets renvoient aux sources en fin de chapitre; [1] à [11] sont des pages primaires lues pour ce chapitre, dont trois par leur seul résumé; [12], marquée secondaire, n'a pas pu être lue.
+> **État de référence :** deux études comparatives en prépublication (documents financiers, mars 2026; mise à l'échelle des systèmes d'agents, avril 2026) et la documentation d'orchestration de Microsoft, d'Anthropic, d'OpenAI et de LangChain, consultée à cette date. Les numéros entre crochets renvoient aux sources en fin de chapitre; [1] à [11] sont des pages primaires lues pour ce chapitre (dont [2], [8], [9] et [10] relues par extraits le 14 novembre 2026); [12], marquée secondaire, n'a pas pu être lue.
 
 Dès qu'une tâche dépasse ce qu'un agent accomplit seul, la tentation est d'en ajouter d'autres : un planificateur, des spécialistes, un vérificateur. L'analogie avec une équipe humaine rend le geste naturel. Elle masque trois coûts. Chaque agent consomme des jetons pour ses consignes, son contexte et son raisonnement. Chaque passage de relais ajoute de la latence. Chaque frontière entre agents est un endroit où une information se perd et où une erreur se propage.
 
@@ -132,9 +132,9 @@ Ces patrons partagent une idée : confronter une sortie à un autre regard avant
 
 ### Le débat
 
-Dans le débat multi-agents, plusieurs instances de modèle proposent chacune une réponse et un raisonnement, puis les confrontent pendant plusieurs tours jusqu'à une réponse commune. L'article fondateur de Du et coll. rapporte, selon son résumé, une amélioration du raisonnement mathématique et stratégique et de la validité factuelle, sur des modèles en boîte noire; les essais portent sur des sous-ensembles d'une centaine de problèmes, au prix d'un calcul plus coûteux, et les auteurs notent que les modèles peuvent affirmer avec assurance des réponses fausses [8].
+Dans le débat multi-agents, plusieurs instances de modèle proposent chacune une réponse et un raisonnement, puis les confrontent pendant plusieurs tours jusqu'à une réponse commune. L'article fondateur de Du et coll. rapporte une amélioration du raisonnement mathématique et stratégique et de la validité factuelle, sur des modèles en boîte noire; les essais portent sur des sous-ensembles d'une centaine de problèmes, au prix d'un calcul plus coûteux, et les auteurs notent que les modèles peuvent affirmer avec assurance des réponses fausses [8].
 
-L'évaluation de Smit et coll. tempère ce résultat. Selon son résumé, les systèmes de débat, dans leur forme d'alors, ne surpassent pas de façon fiable d'autres stratégies plus simples, dont l'autocohérence et les ensembles de chaînes de raisonnement; ils sont plus sensibles aux hyperparamètres et difficiles à optimiser, même si un réglage du niveau d'accord entre agents peut les améliorer nettement. Les essais reposent surtout sur GPT-3.5 (GPT-4 et Mixtral seulement sur MedQA) [9]. Ces deux articles datent de 2023 et de 2024; leurs conclusions n'ont pas été revérifiées sur les modèles de 2026.
+L'évaluation de Smit et coll. tempère ce résultat. Les systèmes de débat, dans leur forme d'alors, ne surpassent pas de façon fiable d'autres stratégies plus simples, dont l'autocohérence et les ensembles de chaînes de raisonnement; ils sont plus sensibles aux hyperparamètres et difficiles à optimiser, même si un réglage du niveau d'accord entre agents peut les améliorer nettement. Les essais reposent surtout sur GPT-3.5 (GPT-4 et Mixtral seulement sur MedQA) [9]. Ces deux articles datent de 2023 et de 2024; leurs conclusions n'ont pas été revérifiées sur les modèles de 2026.
 
 Les mesures de Kim et coll. situent le coût : l'architecture décentralisée, à débat et consensus, consomme 26,1 tours par essai en moyenne, et son amplification d'erreurs mesurée sur les traces est de 7,8 fois, entre l'orchestrateur et les agents indépendants [2].
 
@@ -337,23 +337,23 @@ Pages primaires lues le 11 novembre 2026 ([1] à [3] et [5] à [7] relues le 12 
 1. [Kulkarni et Kulkarni — Benchmarking Multi-Agent LLM Architectures for Financial Document Processing (arXiv 2603.22651v1)](https://arxiv.org/html/2603.22651v1) — prépublication.
 2. [Kim et coll. — Towards a Science of Scaling Agent Systems (arXiv 2512.08296v3)](https://arxiv.org/html/2512.08296v3) — prépublication; résumé et première moitié du texte.
 3. [Anthropic — How we built our multi-agent research system, 13 juin 2025](https://www.anthropic.com/engineering/built-multi-agent-research-system) — billet de fournisseur.
-4. [Anthropic — Building effective agents, 19 décembre 2024](https://www.anthropic.com/engineering/building-effective-agents) — billet de fournisseur.
+4. [Anthropic — Building effective agents, 19 décembre 2024](https://www.anthropic.com/research/building-effective-agents) — billet de fournisseur.
 5. [Microsoft, Azure Architecture Center — AI agent orchestration patterns, page datée du 12 février 2026](https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/ai-agent-design-patterns)
 6. [LangChain — Multi-agent](https://docs.langchain.com/oss/python/langchain/multi-agent)
 7. [OpenAI Agents SDK — Agent orchestration](https://openai.github.io/openai-agents-python/multi_agent/)
-8. [Du et coll. — Improving Factuality and Reasoning in Language Models through Multiagent Debate (arXiv 2305.14325)](https://arxiv.org/abs/2305.14325) — résumé seulement.
-9. [Smit et coll. — Should we be going MAD? (arXiv 2311.17371)](https://arxiv.org/abs/2311.17371) — résumé seulement.
-10. [Cemri et coll. — Why Do Multi-Agent LLM Systems Fail? (arXiv 2503.13657v3)](https://arxiv.org/abs/2503.13657) — résumé seulement.
+8. [Du et coll. — Improving Factuality and Reasoning in Language Models through Multiagent Debate (arXiv 2305.14325)](https://arxiv.org/abs/2305.14325) — résumé, puis extraits relus le 14 novembre 2026.
+9. [Smit et coll. — Should we be going MAD? (arXiv 2311.17371)](https://arxiv.org/abs/2311.17371) — résumé, puis extraits relus le 14 novembre 2026.
+10. [Cemri et coll. — Why Do Multi-Agent LLM Systems Fail? (arXiv 2503.13657v3)](https://arxiv.org/abs/2503.13657) — résumé, puis extraits relus le 14 novembre 2026.
 11. [Zenodo — annexes du relevé de Zhu et coll.](https://zenodo.org/records/19774440) — fiche du dépôt; l'archive n'a pas été ouverte.
 
 Source secondaire :
 
-12. [Zhu et coll. — LLM-Based Multi-Agent Orchestration: A Survey of Frameworks, Communication Protocols, and Emerging Patterns](https://www.preprints.org/manuscript/202604.2147) — prépublication non lue (accès refusé); taxonomie reprise du plan initial et de résumés de recherche.
+12. [Zhu et coll. — LLM-Based Multi-Agent Orchestration: A Survey of Frameworks, Communication Protocols, and Emerging Patterns](https://www.preprints.org/manuscript/202604.2147) (paru dans *Future Internet*, vol. 18, n° 6, art. 326, 15 juin 2026, [DOI 10.3390/fi18060326](https://doi.org/10.3390/fi18060326)) — prépublication et page éditeur non lues (accès refusé HTTP 403); taxonomie reprise du plan initial et de résumés de recherche.
 
 ## Limites de ce chapitre
 
 - Les sources [2], [8], [9] et [10], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
-- Le relevé [12], appui principal prévu par le plan initial, n'a pas été lu : le 12 novembre 2026, sa page refuse toujours l'accès, et une recherche ne trouve aucune parution dans *Future Internet*. La liste d'auteurs diffère entre la prépublication et la fiche Zenodo. Les définitions des topologies viennent de l'usage courant et de [2], non du relevé.
+- Le relevé [12], appui principal prévu par le plan initial, n'a pas été lu : la prépublication Preprints.org comme la page éditeur de *Future Internet* (vol. 18, n° 6, art. 326, 15 juin 2026, DOI 10.3390/fi18060326) retournent HTTP 403 aux requêtes automatisées. La liste d'auteurs de l'article (Zhu, Liu, Yu et Zhang) diffère partiellement de celle du dépôt Zenodo (Zhu et Toffoletto). Les définitions des topologies viennent de l'usage courant et de [2], non du relevé.
 - Les pages ont été lues, puis relues pour six d'entre elles, au moyen d'un outil qui en condense le contenu. Les chiffres cités concordent d'une lecture à l'autre, mais n'ont pas été recoupés avec les tableaux d'origine.
 - [1] se contredit par endroits, notamment sur les gains d'optimisation qu'il annonce; ce sont les valeurs de ses tableaux qui sont citées.
 - [2] n'a été lu que sur sa première moitié; le tableau de la section 16.7 ne garantit pas qu'aucune architecture ne fasse pire que l'écart relevé.

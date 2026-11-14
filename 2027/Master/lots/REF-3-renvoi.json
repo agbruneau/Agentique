@@ -1,0 +1,31 @@
+{
+  "id": "REF-3-renvoi",
+  "origine": "plan 2027, lot REF-3-renvoi",
+  "categorie": "renvoi",
+  "remplacements": [
+    {
+      "fichier": "chapitre-26-plateformes-entreprise.md",
+      "avant": "16. [The Register — annonces de ServiceNow, 5 mai 2026](https://theregister.com/2026/05/05/servicenow_clears_agents_for_landing/) — article de presse, lu.",
+      "apres": "16. [The Register — annonces de ServiceNow, 5 mai 2026](https://www.theregister.com/software/2026/05/05/servicenow-adds-agent-kill-switches-to-ai-control-tower/5228579) — article de presse, lu.",
+      "motif": "Mettre à jour l'URL de The Register vers sa cible canonique directe après redirection permanente (HTTP 200)."
+    },
+    {
+      "fichier": "chapitre-29-identite-agentique.md",
+      "avant": "14. [Cloudflare — agents signés et robots vérifiés](https://developers.cloudflare.com/bots/concepts/bot/signed-agents/)",
+      "apres": "14. [Cloudflare — agents signés et robots vérifiés](https://developers.cloudflare.com/bots/concepts/bot/verified-bots/)",
+      "motif": "Mettre à jour l'URL Cloudflare vers la page canonique Verified bots (redirection depuis signed-agents/ depuis le 1er juillet 2026, HTTP 200)."
+    },
+    {
+      "fichier": "chapitre-31-menaces.md",
+      "avant": "4. [Security Best Practices — spécification MCP 2026-07-28](https://modelcontextprotocol.io/specification/2026-07-28/basic/security_best_practices.md)",
+      "apres": "4. [Security Best Practices — spécification MCP 2026-07-28](https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/security_best_practices.md)",
+      "motif": "Aligner l'URL Security Best Practices de MCP sur sa destination canonique après redirection (identique à la source [2] du chapitre 30)."
+    },
+    {
+      "fichier": "chapitre-35-cadres-internationaux.md",
+      "avant": "6. [NIST — AI Agent Standards Initiative](https://www.nist.gov/caisi/ai-agent-standards-initiative)",
+      "apres": "6. [NIST — SI Agent Standards Initiative (anciennement AI Agent Standards Initiative)](https://www.nist.gov/super-intelligence/si-agent-standards-initiative)",
+      "motif": "Mettre à jour l'URL et l'intitulé de l'initiative du NIST vers sa page canonique actuelle après redirection (HTTP 200, mise à jour du 9 novembre 2026)."
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 
 *Question directrice : où appliquer les contrôles entre agents, outils et API ?*
 
-> **État de référence :** spécification MCP `2026-07-28`, brouillon « MCP Security Gateway 1.0 » de Microsoft, documentation d'agentgateway, d'Agent Router, d'Apigee, d'Azure API Management, de Kong et de MuleSoft Agent Fabric consultée les 11 et 12 novembre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre, toutes lues pour ce chapitre; [13] à [19] ont été ajoutées le 14 novembre 2026, [16] par son seul résumé. [1] et [6] sont des billets d'annonce : ils établissent ce qu'un projet ou un éditeur déclare, pas ce qu'un tiers a constaté.
+> **État de référence :** spécification MCP `2026-07-28`, brouillon « MCP Security Gateway 1.0 » de Microsoft, documentation d'agentgateway, d'Agent Router, d'Apigee, d'Azure API Management, de Kong et de MuleSoft Agent Fabric consultée les 11 et 12 novembre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre, toutes lues pour ce chapitre; [13] à [19] ont été ajoutées le 14 novembre 2026 ([16] d'abord par son résumé, puis relue par extraits). [1] et [6] sont des billets d'annonce : ils établissent ce qu'un projet ou un éditeur déclare, pas ce qu'un tiers a constaté.
 
 MCP et A2A décrivent des messages. Ils ne disent pas qui, dans une organisation donnée, a le droit de les envoyer, combien de fois, ni ce qu'il faut en conserver. La spécification MCP rend l'autorisation facultative, recommande la validation humaine sans l'imposer et ne définit pas le comportement d'une passerelle (chapitre 5). Chaque hôte, chaque serveur et chaque équipe peut donc appliquer sa propre règle, ou aucune.
 
@@ -260,7 +260,7 @@ Pages primaires lues le 11 novembre 2026, sauf [12], lue le 12 :
 7. [Microsoft Learn — exposer une API REST comme serveur MCP dans Azure API Management](https://learn.microsoft.com/en-us/azure/api-management/export-rest-mcp-server)
 8. [MuleSoft Agent Fabric — notes de version](https://docs.mulesoft.com/general/agent-fabric-release-notes)
 9. [Kong — MCP dans Kong AI Gateway](https://developer.konghq.com/mcp/)
-10. [MCP — bonnes pratiques de sécurité, spécification 2026-07-28](https://modelcontextprotocol.io/specification/2026-07-28/basic/security_best_practices.md)
+10. [MCP — bonnes pratiques de sécurité, spécification 2026-07-28](https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/security_best_practices.md)
 11. [Agentic AI Foundation — projets](https://aaif.io/projects)
 12. [Agent Router — README du dépôt](https://github.com/theagentrouter/agent-router)
 
@@ -268,8 +268,8 @@ Pages lues le 14 novembre 2026 :
 
 13. [AWS — Amazon Bedrock AgentCore Gateway, guide du développeur](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway.html) — page de présentation.
 14. [AIMultiple — banc d'essai de passerelles MCP (page mise à jour le 9 novembre 2026)](https://aimultiple.com/de/mcp-gateway) — banc d'un cabinet d'analyse; version allemande lue.
-15. [MCP-Guard: A Multi-Stage Defense-in-Depth Framework for Securing Model Context Protocol in Agentic AI (arXiv 2508.10991, version 4 du 8 janvier 2026)](https://arxiv.org/html/2508.10991v4) — prépublication.
-16. [Chen et coll. — Rethinking MCP Security: A Large-Scale Study of Runtime MCP Servers and Security Scanner Reliability (arXiv 2607.11086, 13 juillet 2026)](https://arxiv.org/abs/2607.11086) — prépublication; résumé seulement.
+15. [Xing et coll. — MCP-Guard: A Multi-Stage Defense-in-Depth Framework for Securing Model Context Protocol in Agentic AI (arXiv 2508.10991, version 4 du 8 janvier 2026)](https://arxiv.org/html/2508.10991v4) — prépublication.
+16. [Chen et coll. — Rethinking MCP Security: A Large-Scale Study of Runtime MCP Servers and Security Scanner Reliability (arXiv 2607.11086, 13 juillet 2026)](https://arxiv.org/abs/2607.11086) — prépublication; résumé, puis extraits relus le 14 novembre 2026.
 17. [agentgateway — MCP authorization](https://agentgateway.dev/docs/standalone/latest/documentation/mcp/mcp-authz/) — page entière (page d'orientation).
 18. [agentgateway — MCP authorization, référence de politique](https://agentgateway.dev/docs/standalone/latest/documentation/configuration/security/mcp-authz/) — lu par passages.
 19. [agentgateway — HTTP authorization](https://agentgateway.dev/docs/standalone/latest/documentation/configuration/security/http-authz/) — lu par passages.
@@ -285,5 +285,5 @@ Sources secondaires : aucune n'est citée.
 - Les fonctions d'une passerelle d'API classique viennent de la connaissance générale. Les remarques sur les descriptions d'API, la taille du catalogue, la clé de quota et l'approbation asynchrone sont des raisonnements.
 - [1], [2] et [9], seule page lue sur Kong, n'ont pas été relus. Les pages d'agentgateway sur l'autorisation ont été lues par passages le 14 novembre 2026 [17][18][19]; celles sur l'authentification et les garde-fous ne l'ont pas été, et aucune page sur l'autorisation du trafic A2A n'a été trouvée (deux adresses essayées, erreur 404). La règle « sans règle `allow`, la requête passe » est lue sur la page HTTP; son application à la politique MCP n'est pas écrite.
 - D'AWS AgentCore Gateway, seule la page de présentation [13] a été lue. Les autres iPaaS et les passerelles centrées sur l'inférence n'ont pas été lus.
-- Les seules données de performance citées viennent des sources [14] à [16], ajoutées le 14 novembre 2026. [14] est le banc d'un cabinet d'analyse dont un des éditeurs testés est client; aucun des produits décrits dans ce chapitre n'y figure. [15] est évalué par ses auteurs, hors ligne. [16] n'est connu que par son résumé. Aucune donnée d'adoption n'est citée, hormis les contributeurs déclarés par agentgateway.
+- Les seules données de performance citées viennent des sources [14] à [16], ajoutées le 14 novembre 2026. [14] est le banc d'un cabinet d'analyse dont un des éditeurs testés est client; aucun des produits décrits dans ce chapitre n'y figure. [15] est évalué par ses auteurs, hors ligne. [16], d'abord connu par son résumé, a été relu par extraits. Aucune donnée d'adoption n'est citée, hormis les contributeurs déclarés par agentgateway.
 - Le paragraphe sur la passerelle gérée (24.1), la sous-section « Premières mesures » (24.5) et les lignes « Réglages d'origine » du tableau de 24.6 et de la grille datent du 14 novembre 2026.

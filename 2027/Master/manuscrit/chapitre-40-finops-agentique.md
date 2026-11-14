@@ -2,7 +2,7 @@
 
 *Question directrice : combien coûte un agent, et que rapporte-t-il ?*
 
-> **État de référence :** communiqué State of FinOps 2026 (19 février 2026), page « FinOps for AI » de la FinOps Foundation (mise à jour du 28 octobre 2026), annonce de la Tokenomics Foundation (4 août 2026) et pages de prix des éditeurs affichées le 11 novembre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre, toutes lues pour ce chapitre; [3], [10] et [14] sont des prépublications, [4] et [6] des billets de fournisseurs; [13] à [15] ont été ajoutées le 14 novembre 2026, [14] par son seul résumé et [15] par sa synthèse. Les montants sont en dollars américains.
+> **État de référence :** communiqué State of FinOps 2026 (19 février 2026), page « FinOps for AI » de la FinOps Foundation (mise à jour du 28 octobre 2026), annonce de la Tokenomics Foundation (4 août 2026) et pages de prix des éditeurs affichées le 11 novembre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre, toutes lues pour ce chapitre; [3], [10] et [14] sont des prépublications, [4] et [6] des billets de fournisseurs; [13] à [15] ont été ajoutées le 14 novembre 2026, [14] par résumé puis extraits relus le même jour et [15] par sa synthèse. Les montants sont en dollars américains.
 
 Une licence logicielle a un prix. Un agent a une distribution de coûts : la même demande peut se régler en trois appels au modèle ou en trente, selon le chemin que prend le raisonnement. La facture dépend d'une trajectoire que personne n'a écrite d'avance, et elle arrive après les faits.
 
@@ -259,18 +259,18 @@ Pages primaires lues le 11 novembre 2026 :
 3. [Kulkarni et Kulkarni — Benchmarking Multi-Agent LLM Architectures for Financial Document Processing (arXiv 2603.22651v1)](https://arxiv.org/html/2603.22651v1) — prépublication.
 4. [Zendesk — Outcome-based pricing, mise à jour du 29 octobre 2026](https://www.zendesk.com/blog/ai/agentic-ai/outcome-based-pricing/) — billet de l'éditeur.
 5. [FinOps Foundation — FinOps for AI Overview, mise à jour du 28 octobre 2026](https://www.finops.org/wg/finops-for-ai-overview/)
-6. [Anthropic — How we built our multi-agent research system, 13 juin 2025](https://www.anthropic.com/engineering/multi-agent-research-system) — billet du fournisseur.
+6. [Anthropic — How we built our multi-agent research system, 13 juin 2025](https://www.anthropic.com/research/multi-agent-research-system) — billet du fournisseur.
 7. [Anthropic — Pricing, documentation de la plateforme](https://platform.claude.com/docs/en/about-claude/pricing)
 8. [Salesforce — Agentforce Pricing](https://www.salesforce.com/agentforce/pricing/)
 9. [Intercom — Pricing](https://www.intercom.com/pricing)
-10. [Ong et coll. — RouteLLM: Learning to Route LLMs with Preference Data (arXiv 2406.18665)](https://arxiv.org/abs/2406.18665) — prépublication; résumé seulement.
-11. [Linux Foundation — lancement de la Tokenomics Foundation, communiqué du 4 août 2026](https://linuxfoundation.org/press/linux-foundation-launches-the-tokenomics-foundation-to-define-the-economics-and-roi-of-ai-value)
+10. [Ong et coll. — RouteLLM: Learning to Route LLMs with Preference Data (arXiv 2406.18665)](https://arxiv.org/abs/2406.18665) — prépublication; résumé puis extraits relus le 14 novembre 2026.
+11. [Linux Foundation — lancement de la Tokenomics Foundation, communiqué du 4 août 2026](https://www.linuxfoundation.org/press/linux-foundation-launches-the-tokenomics-foundation-to-define-the-economics-and-roi-of-ai-value)
 12. [Microsoft Learn — politique `llm-token-limit` d'Azure API Management](https://learn.microsoft.com/en-us/azure/api-management/llm-token-limit-policy)
 
 Sources lues le 14 novembre 2026 ([13] : article lu par un outil qui en condense le contenu) :
 
 13. [Statistique Canada — Li et Liu, Artificial intelligence adoption and productivity in Canadian firms (22 avril 2026)](https://www150.statcan.gc.ca/n1/pub/36-28-0001/2026004/article/00002-eng.htm)
-14. [Elsworth et coll. — Measuring the environmental impact of delivering AI at Google Scale (arXiv 2508.15734, 21 août 2025)](https://arxiv.org/abs/2508.15734) — prépublication d'un fournisseur; résumé seulement.
+14. [Elsworth et coll. — Measuring the environmental impact of delivering AI at Google Scale (arXiv 2508.15734, 21 août 2025)](https://arxiv.org/abs/2508.15734) — prépublication d'un fournisseur; résumé puis extraits relus le 14 novembre 2026.
 15. [Agence internationale de l'énergie — Energy and AI, synthèse (2025)](https://www.iea.org/reports/energy-and-ai/executive-summary)
 
 Sources secondaires : aucune. Le constat de l'étude MAP vient du chapitre 4; les plafonds d'agentgateway et de MuleSoft, du chapitre 24.
@@ -283,7 +283,7 @@ Sources secondaires : aucune. Le constat de l'étude MAP vient du chapitre 4; le
 - L'« étude sur la génération de workflows » citée par le plan initial n'a pas été retrouvée ni utilisée.
 - Le résumé et les tableaux du banc d'essai [3] se contredisent par endroits : le résumé donne la configuration optimisée à 1,15 fois le coût du pipeline, les tableaux à 0,79 fois, et l'article dit ailleurs le fan-out économe en jetons. Ses coûts en dollars n'ont pas pu être rapprochés de ses décomptes de jetons; les prix de liste du modèle utilisé relèvent ici de la connaissance générale. Le coût par document entièrement correct et la part des jetons d'entrée sont des calculs faits pour ce chapitre.
 - Les multiples de consommation [6] sont des mesures internes d'un fournisseur, datées de 2025; aucune mesure indépendante n'a été trouvée.
-- La sous-section sur l'énergie (40.1) et le paragraphe sur la productivité (40.5) datent du 14 novembre 2026. [14] n'est connu que par son résumé et mesure le service de son éditeur; [15] l'est par sa synthèse. Aucune source ne mesure l'énergie consommée par un agent : le lien avec les multiples de jetons est une déduction de ce chapitre. L'étude [13] porte sur l'IA en général.
+- La sous-section sur l'énergie (40.1) et le paragraphe sur la productivité (40.5) datent du 14 novembre 2026. [14], relu par extraits le 14 novembre 2026, mesure le service de son éditeur; [15] est connu par sa synthèse. Aucune source ne mesure l'énergie consommée par un agent : le lien avec les multiples de jetons est une déduction de ce chapitre. L'étude [13] porte sur l'IA en général.
 - Un seul fournisseur de modèles (Anthropic) et une seule passerelle (Azure API Management) ont été lus. Les règles de cache, de lots et de quotas diffèrent ailleurs.
 - La proposition d'imputation (40.2), les choix de conception (40.3), les conséquences contractuelles (40.4) et l'ordre des leviers (40.6) sont des synthèses de l'auteur, non des pratiques documentées.
 

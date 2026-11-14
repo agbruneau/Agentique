@@ -1,0 +1,19 @@
+{
+  "id": "REF-5-renvoi",
+  "origine": "plan 2027, lot REF-5-renvoi",
+  "categorie": "renvoi",
+  "remplacements": [
+    {
+      "fichier": "annexe-E-bibliographie.md",
+      "avant": "et [OWASP MCP Top 10](https://owasp.org/www-project-mcp-top-10/) (31)",
+      "apres": "et [OWASP MCP Top 10](https://owasp.org/www-project-mcp-top-10/) (30, 31)",
+      "motif": "Ajout du chapitre 30 manquant au renvoi de E.2 (chapitre-30-autorisation-delegation.md l. 230 cite cette URL en source [14])."
+    },
+    {
+      "fichier": "annexe-E-bibliographie.md",
+      "avant": "- [IMDA — Model AI Governance Framework for Agentic AI, version 1.5](https://www.imda.gov.sg/-/media/imda/files/about/emerging-tech-and-research/artificial-intelligence/mgf-for-agentic-ai.pdf) (1, 3, 22, 39)",
+      "apres": "- [IMDA — Model AI Governance Framework for Agentic AI, version 1.5](https://www.imda.gov.sg/-/media/imda/files/about/emerging-tech-and-research/artificial-intelligence/mgf-for-agentic-ai.pdf) (1, 3, 22, 35, 39)",
+      "motif": "Ajout du chapitre 35 manquant au renvoi de E.2 (chapitre-35-cadres-internationaux.md l. 267 cite cette URL en source [4])."
+    }
+  ]
+}

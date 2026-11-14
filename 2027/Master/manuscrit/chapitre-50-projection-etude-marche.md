@@ -384,16 +384,16 @@ Pages de l'émetteur lues le 13 novembre 2026 :
 20. [Capgemini Research Institute — Rise of agentic AI, communiqué du 16 juillet 2025](https://www.capgemini.com/news/press-releases/trust-and-human-ai-collaboration-set-to-define-the-next-era-of-agentic-ai-unlocking-450-billion-opportunity-by-2028/)
 21. [Bain & Company — 2030 Forecast: How Agentic AI Will Reshape US Retail, 17 décembre 2025](https://www.bain.com/insights/2030-forecast-how-agentic-ai-will-reshape-us-retail-snap-chart/)
 22. [Salesforce — résultats du deuxième trimestre de l'exercice 2027, 26 août 2026](https://www.salesforce.com/news/press-releases/2026/08/26/fy27-q2-earnings/) — aussi citée au chapitre 4.
-23. [ServiceNow — résultats du troisième trimestre de 2026, dépôt à la SEC du 28 octobre 2026](https://www.sec.gov/Archives/edgar/data/0001373715/000137371526000092/erq3fy26.htm)
+23. [ServiceNow — résultats du troisième trimestre de 2026, dépôt à la SEC du 28 octobre 2026](https://www.sec.gov/Archives/edgar/data/1373715/000137371526000092/erq3fy26.htm)
 24. [Alphabet — transcription de l'appel du troisième trimestre de 2026, 28 octobre 2026](https://s206.q4cdn.com/479360582/files/doc_events/2026/Oct/28/2026_Q3_Earnings_Transcript.pdf)
-25. [SAP — rapport du troisième trimestre de 2026, dépôt à la SEC du 21 octobre 2026](https://www.sec.gov/Archives/edgar/data/0001000184/000110465926118617/tm2628113d1_ex99-1.htm)
+25. [SAP — rapport du troisième trimestre de 2026, dépôt à la SEC du 21 octobre 2026](https://www.sec.gov/Archives/edgar/data/1000184/000110465926118617/tm2628113d1_ex99-1.htm)
 26. [Microsoft — résultats du premier trimestre de l'exercice 2027, 28 octobre 2026](https://www.microsoft.com/en-us/investor/earnings/fy-2027-q1/press-release-webcast)
 27. [Meta — résultats du troisième trimestre de 2026, 21 octobre 2026](https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Third-Quarter-2026-Results/default.aspx)
 28. [Stanford HAI — AI Index Report 2026, chapitre 4, Economy](https://hai.stanford.edu/assets/files/ai_index_report_2026_chapter_4_economy.pdf) — PDF converti en texte.
-29. [Epoch AI — LLM inference prices have fallen rapidly but unequally across tasks, 12 mars 2025](https://epoch.ai/data-insights/ai-inference-price-trends) — première partie de la page.
+29. [Epoch AI — LLM inference prices have fallen rapidly but unequally across tasks, 12 mars 2025](https://epoch.ai/data-insights/llm-inference-price-trends) — première partie de la page.
 30. [Andreessen Horowitz — LLMflation, 12 novembre 2024](https://a16z.com/llmflation-llm-inference-cost/) — billet d'un investisseur.
 31. [Artificial Analysis — Intelligence Index v4.1, 15 juin 2026](https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v4-1)
-32. [IDC — FutureScape 2027, communiqué du 27 octobre 2026](https://www.idc.com/?p=122385) — relue à l'audit.
+32. [IDC — FutureScape 2027, communiqué du 27 octobre 2026](https://www.idc.com/resource-center/press-releases/idc-futurescape-2027-predicts-60-of-enterprises-will-run-a-majority-of-their-business-processes-ai-first-by-2029-up-from-13-in-2026/) — relue à l'audit.
 33. [Deloitte — State of AI in the Enterprise 2026, communiqué du 21 janvier 2026](https://www.deloitte.com/us/en/about/press-room/state-of-ai-report-2026.html)
 34. [KPMG (États-Unis) — AI Quarterly Pulse, troisième trimestre de 2026, 24 septembre 2026](https://kpmg.com/us/en/media/news/q3-ai-pulse-2026.html)
 35. [KPMG International — Global AI Pulse, 24 septembre 2026](https://kpmg.com/xx/en/media/press-releases/2026/09/new-kpmg-ai-pulse-survey-as-ai-maturity-converges-leading-organizations-show-what-ai-at-scale-requires.html)
@@ -430,13 +430,13 @@ Pages tierces lues le 13 novembre 2026, qui rapportent un émetteur dont la page
 63. [Finviz — reprise du communiqué d'Amazon sur le troisième trimestre de 2026, 29 octobre 2026](https://finviz.com/news/412054/amazoncom-announces-third-quarter-results) — site d'Amazon non ouvert.
 64. [MarketBeat — résumé de l'appel d'Oracle du 10 septembre 2026](https://www.marketbeat.com/instant-alerts/transcript-oracle-q1-earnings-call-highlights-2026-09-10/) — résumé tiers; communiqué d'Oracle refusé.
 65. [MarketBeat — résumé de l'appel d'UiPath du 3 septembre 2026](https://www.marketbeat.com/instant-alerts/transcript-uipath-q2-earnings-call-highlights-2026-09-03/) — résumé tiers.
-66. [TechTarget — Dynatrace acquires Arize for AI agent development, 13 août 2026](https://www.techtarget.com/it-strategy/news/366648773/Dynatrace-acquires-Arize-for-AI-agent-development)
+66. [TechTarget — Dynatrace acquires Arize for AI agent development, 13 août 2026](https://www.techtarget.com/news/Dynatrace-acquires-Arize-for-AI-agent-development/846446/)
 67. [New Market Pitch — Agentic AI M&A, mise à jour du 21 octobre 2026](https://newmarketpitch.com/blogs/news/agentic-ai-ma-tracker) — agrégateur; communiqués d'origine non ouverts.
 68. [CDO Magazine — compte rendu du communiqué de Gartner du 9 novembre 2026 sur l'enquête auprès des DSI](https://www.cdomagazine.tech/aiml/gartner-agentic-ai-adoption-is-outpacing-enterprise-governance) — communiqué de Gartner non ouvert.
 69. [BizTechReports — reprise du communiqué de Gartner du 25 juin 2025 sur l'annulation de projets d'IA agentique](https://www.biztechreports.com/news-archive/2025/7/14/gartner-predicts-over-40-of-agentic-ai-projects-will-be-canceled-by-end-of-2027-gartner-june-25-2025) — communiqué de Gartner refusé.
 70. [CXOToday — reprise du communiqué de Gartner du 20 octobre 2026, Top Strategic Technology Trends for 2027](https://cxotoday.com/others/gartner-identifies-the-top-strategic-technology-trends-for-2027/)
 71. [Digital Terminal — reprise du communiqué de Gartner du 11 mars 2026 sur les données et l'analytique](https://digitalterminal.in/trending/gartner-reveals-top-data-and-analytics-predictions-for-2026)
-72. [IT-Online — reprise du communiqué de Gartner du 11 juin 2025 sur les agents gardiens](https://it-online.co.za/?p=298626)
+72. [IT-Online — reprise du communiqué de Gartner du 11 juin 2025 sur les agents gardiens](https://it-online.co.za/2025/06/13/guardian-agents-will-bolster-trust/)
 73. [Kaohoon International — reprise du communiqué de Gartner du 15 septembre 2026, Top Strategic Predictions for 2027 and Beyond](https://www.kaohooninternational.com/technology/591985)
 
 Pages d'offices statistiques lues le 14 novembre 2026 :

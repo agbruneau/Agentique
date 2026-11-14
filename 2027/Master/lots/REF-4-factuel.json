@@ -1,0 +1,79 @@
+{
+  "id": "REF-4-factuel",
+  "origine": "plan 2027, lot REF-4-factuel",
+  "categorie": "factuel",
+  "remplacements": [
+    {
+      "fichier": "chapitre-38-canada-quebec.md",
+      "avant": "[16] et [17] n'ont pas pu l'être;",
+      "apres": "[16] a été vérifiée en texte complet le 14 novembre 2026 et [17], bloquée par le WAF sur requête automatique simple, a été chargée avec des en-têtes navigateur à cette date;",
+      "motif": "Corriger l'État de référence du chapitre 38 : [16] (Blakes) répond HTTP 200 et [17] (Directive fédérale) se charge avec en-têtes navigateur (Modification : 2025-06-24)."
+    },
+    {
+      "fichier": "chapitre-38-canada-quebec.md",
+      "avant": "Selon le résumé d'une analyse de cabinet non lue en entier, son volet sur l'IA est plus étroit que celui du projet C-27, jamais adopté [16].",
+      "apres": "Selon l'analyse du cabinet Blakes, son volet sur l'IA est plus étroit que celui du projet C-27, jamais adopté [16].",
+      "motif": "Retirer la mention « résumé d'une analyse de cabinet non lue en entier » : la page Blakes [16] (17 juillet 2026) a été chargée et vérifiée en texte intégral (HTTP 200)."
+    },
+    {
+      "fichier": "chapitre-38-canada-quebec.md",
+      "avant": "Sources non lues :\n\n16. [Blakes — réforme fédérale](https://www.blakes.com/fr-ca/perspectives/nouvelle-tentative-du-canada-pour-reformer-le-cadre-federal-de-protection-des-renseignements-personn/) — résumé de recherche seulement.\n17. [Directive sur la prise de décisions automatisée](https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32592)",
+      "apres": "Sources initialement non lues, vérifiées le 14 novembre 2026 :\n\n16. [Blakes — Nouvelle tentative du Canada pour réformer le cadre fédéral de protection des renseignements personnels (17 juillet 2026)](https://www.blakes.com/fr-ca/perspectives/nouvelle-tentative-du-canada-pour-reformer-le-cadre-federal-de-protection-des-renseignements-personn/) — texte intégral lu le 14 novembre 2026 (HTTP 200).\n17. [Directive sur la prise de décisions automatisée (modification du 24 juin 2025)](https://www.tbs-sct.canada.ca/pol/doc-fra.aspx?id=32592) — chargée le 14 novembre 2026 avec en-têtes navigateur (HTTP 200); les requêtes automatiques simples essuient un blocage WAF",
+      "motif": "Mettre à jour les notices [16] et [17] en fin de chapitre après vérification du 14 novembre 2026, tout en conservant la borne exacte avant '— requête rejetée par le serveur.' (#391)."
+    },
+    {
+      "fichier": "chapitre-38-canada-quebec.md",
+      "avant": "- La Directive fédérale [17] n'a pas pu être lue, ni à l'audit ni le 14 novembre 2026. Son champ d'application est décrit d'après le guide sur sa portée [18];",
+      "apres": "- La Directive fédérale [17] rejette les requêtes automatiques simples par son WAF (« Request Rejected ») mais a été chargée le 14 novembre 2026 avec des en-têtes navigateur (HTTP 200, version modifiée le 24 juin 2025, échéance de mise à jour des évaluations aux paragraphes 1.2.1-1.2.2 au 24 juin 2026). Son champ d'application est décrit ici d'après le guide sur sa portée [18];",
+      "motif": "Corriger la limite sur la Directive fédérale [17] (avant la borne #622 à l'intérieur de #392) après chargement HTTP 200 avec en-têtes navigateur le 14 novembre 2026."
+    },
+    {
+      "fichier": "chapitre-38-canada-quebec.md",
+      "avant": "ses exigences par niveau et la date de sa version en vigueur ne sont pas décrites",
+      "apres": "le détail de ses exigences par niveau (niveaux I à IV aux annexes B et C de la Directive) n'est pas exposé ici",
+      "motif": "Mettre à jour la clause exacte de #622 : la date de la version en vigueur (24 juin 2025) est vérifiée dans [17], seul le détail des annexes B et C n'est pas repris en 38.2."
+    },
+    {
+      "fichier": "chapitre-38-canada-quebec.md",
+      "avant": "Le sort du projet C-27 vient de la connaissance générale et d'un résumé de recherche [16]",
+      "apres": "Le sort du projet C-27 est confirmé par l'analyse complète de Blakes [16] (17 juillet 2026, HTTP 200)",
+      "motif": "Corriger la limite sur [16] après lecture en texte intégral le 14 novembre 2026."
+    },
+    {
+      "fichier": "chapitre-38-canada-quebec.md",
+      "avant": "- L'article 12.1 est cité d'après le texte sanctionné de 2021, la version codifiée étant inaccessible; les modifications ultérieures n'ont pas été vérifiées.",
+      "apres": "- L'article 12.1 est cité d'après le texte sanctionné de 2021 [9]; la consultation le 14 novembre 2026 du recueil officiel LégisQuébec (P-39.1, à jour au 15 octobre 2026; HTTP 403 sur requête automatique simple, HTTP 200 avec en-têtes navigateur) confirme que cet article n'a reçu aucune modification depuis 2021.",
+      "motif": "Corriger l'affirmation selon laquelle la version codifiée de P-39.1 était inaccessible, en restant avant la borne #738."
+    },
+    {
+      "fichier": "chapitre-38-canada-quebec.md",
+      "avant": ", et l'adresse donnée en [22] vient d'un résultat de recherche non vérifié.",
+      "apres": ", et l'adresse officielle du PDF du Bulletin du 2 avril 2026 citée en [22] (vol. 23, n° 13, section 5.2.2, décision n° 2026-PDG-0016) a été corrigée le 14 novembre 2026 d'après recherche web, le serveur maintenant une erreur 403 Cloudflare.",
+      "motif": "Mettre à jour la limite sur l'URL de [22] (à l'intérieur de #393) après correction vers vol23no13_5-2.pdf."
+    },
+    {
+      "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+      "avant": "[15] n'est connue que par [11].",
+      "apres": "[15] est citée d'après [11], avec notice et DOI vérifiés via Crossref.",
+      "motif": "Refléter la vérification Crossref (DOI 10.1109/ms.2001.936213) de la source [15] dans l'État de référence."
+    },
+    {
+      "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+      "avant": "documentation d'Apache Iceberg (1.12.0), de Project Nessie,",
+      "apres": "documentation d'Apache Iceberg (1.12.0), de Project Nessie (0.110.0),",
+      "motif": "Préciser la version 0.110.0 affichée dans la navigation de Project Nessie, par cohérence avec Iceberg et DSPy."
+    },
+    {
+      "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+      "avant": "et le rôle de `max_loras`, absent de la page de vLLM, ne viennent pas d'une page lue.",
+      "apres": "et la précision du bornage par lot pour `max_loras` (paramètre bien nommé sur la page de vLLM pour la concurrence entre adaptateurs, sans indication explicite d'un plafond par lot) ne viennent pas d'une page lue.",
+      "motif": "Corriger l'erreur factuelle selon laquelle max_loras serait absent de la page LoRA de vLLM (le paramètre y figure à deux reprises dans la configuration et l'exemple)."
+    },
+    {
+      "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+      "avant": "Iceberg 1.12.0 et DSPy 3.5 sont tirés de la navigation des sites (DSPy 3.5.0 selon le chapitre 20); Nessie, vLLM et Spec Kit n'affichent aucune version courante,",
+      "apres": "Iceberg 1.12.0, Nessie 0.110.0 et DSPy 3.5 sont tirés de la navigation des sites (DSPy 3.5.0 selon le chapitre 20); vLLM et Spec Kit n'affichent aucune version courante sur les pages lues,",
+      "motif": "Corriger l'affirmation erronée sur Project Nessie : le menu de navigation du site affiche bien la version courante Nessie 0.110.0."
+    }
+  ]
+}

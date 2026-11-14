@@ -2,7 +2,7 @@
 
 *Question directrice : comment réduire la latence et le coût d'inférence à grande échelle sans perdre en précision sur les tâches complexes ?*
 
-> **État de référence :** faits arrêtés au 11 novembre 2026; documentation d'agentgateway (« latest »), dépôt d'Agent Router, site de la Gateway API Inference Extension, llm-d 1.0. Les numéros entre crochets renvoient aux sources en fin de chapitre : [1] à [8] et [15] sont des pages de projets, [9] à [13] des prépublications, dont quatre lues par leur seul résumé.
+> **État de référence :** faits arrêtés au 11 novembre 2026; documentation d'agentgateway (« latest »), dépôt d'Agent Router, site de la Gateway API Inference Extension, llm-d 1.0. Les numéros entre crochets renvoient aux sources en fin de chapitre : [1] à [8] et [15] sont des pages de projets, [9] à [13] des prépublications, dont [9] à [12] d'abord lues par leur résumé puis relues par extraits le 14 novembre 2026.
 
 Un agent appelle un modèle à chaque tour et relit chaque fois presque tout ce qui précède : dans le banc d'essai du chapitre 40, plus de 97 % des jetons sont relus, non produits. À grande échelle, la facture et le délai d'un système agentique se décident donc dans la couche qui achemine ces appels. Le chapitre 24 traitait la passerelle du trafic d'outils; celui-ci traite le trafic vers les modèles.
 
@@ -182,16 +182,16 @@ Pages primaires lues le 12 novembre 2026 :
 
 1. [Agentic AI Foundation — projets](https://aaif.io/projects)
 2. [Agent Router — README du dépôt](https://github.com/theagentrouter/agent-router)
-3. [agentgateway — documentation LLM](https://agentgateway.dev/docs/standalone/latest/llm/)
+3. [agentgateway — documentation LLM](https://agentgateway.dev/docs/standalone/latest/documentation/llm/)
 4. [agentgateway — modèles virtuels](https://agentgateway.dev/docs/standalone/latest/documentation/llm/virtual-models/)
 5. [agentgateway — routage d'inférence](https://agentgateway.dev/docs/standalone/latest/documentation/llm/inference/)
 6. [Gateway API Inference Extension — page d'accueil](https://gateway-api-inference-extension.sigs.k8s.io/)
 7. [llm-d — architecture](https://llm-d.ai/docs/architecture)
 8. [llm-d — README du dépôt](https://github.com/llm-d/llm-d)
-9. [Ong et coll. — RouteLLM (arXiv 2406.18665)](https://arxiv.org/abs/2406.18665) — prépublication; résumé seulement.
-10. [Chen, Zaharia et Zou — FrugalGPT (arXiv 2305.05176)](https://arxiv.org/abs/2305.05176) — prépublication; résumé seulement.
-11. [Snell et coll. — Scaling LLM Test-Time Compute Optimally (arXiv 2408.03314)](https://arxiv.org/abs/2408.03314) — prépublication; résumé seulement.
-12. [Srivatsa et coll. — Preble (arXiv 2407.00023)](https://arxiv.org/abs/2407.00023) — prépublication; résumé seulement.
+9. [Ong et coll. — RouteLLM (arXiv 2406.18665)](https://arxiv.org/abs/2406.18665) — prépublication; résumé puis extraits relus le 14 novembre 2026.
+10. [Chen, Zaharia et Zou — FrugalGPT (arXiv 2305.05176)](https://arxiv.org/abs/2305.05176) — prépublication; résumé puis extraits relus le 14 novembre 2026.
+11. [Snell et coll. — Scaling LLM Test-Time Compute Optimally (arXiv 2408.03314)](https://arxiv.org/abs/2408.03314) — prépublication; résumé puis extraits relus le 14 novembre 2026.
+12. [Srivatsa et coll. — Preble (arXiv 2407.00023)](https://arxiv.org/abs/2407.00023) — prépublication; résumé puis extraits relus le 14 novembre 2026.
 13. [Lu et coll. — RouterArena (arXiv 2510.00202, version 3)](https://arxiv.org/html/2510.00202v3) — prépublication; texte lu.
 14. [OpenTelemetry — métriques d'IA générative](https://opentelemetry.io/docs/specs/semconv/gen-ai/gen-ai-metrics/) — page déplacée, sans contenu.
 15. [llm-d — billets de version](https://llm-d.ai/blog/tags/releases) — extrait du billet de la version 1.0.

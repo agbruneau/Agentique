@@ -338,10 +338,10 @@ Pages primaires lues le 11 novembre 2026 :
 6. [AAIF — dépôt des propositions de projets](https://github.com/aaif/project-proposals)
 7. [A2A — entrée à l'AAIF, 27 août 2026](https://a2a-protocol.org/latest/blog/2026/08/27/a-new-chapter-for-a2a-joining-the-agentic-ai-foundation/)
 8. [MCP — gouvernance](https://modelcontextprotocol.io/community/governance.md)
-9. [W3C — AI Agent Protocol Community Group](https://www.w3.org/community/agentprotocol/)
-10. [W3C — Agent Trust Protocol Community Group](https://www.w3.org/community/atp/)
-11. [W3C — Agent Identity Registry Protocol Community Group](https://www.w3.org/groups/cg/agent-identity/)
-12. [W3C — Agent Conformance and Benchmarking Community Group](https://www.w3.org/community/agent-conformance/)
+9. [W3C — AI Agent Protocol Community Group](https://www.w3.org/community/agentprotocol/) — accès automatisé refusé (HTTP 403) le 14 novembre 2026; fiche vérifiée par recherche web
+10. [W3C — Agent Trust Protocol Community Group](https://www.w3.org/community/atp/) — accès automatisé refusé (HTTP 403) le 14 novembre 2026; fiche vérifiée par recherche web
+11. [W3C — Agent Identity Registry Protocol Community Group](https://www.w3.org/groups/cg/agent-identity/) — accès automatisé refusé (HTTP 403) le 14 novembre 2026; fiche vérifiée par recherche web
+12. [W3C — Agent Conformance and Benchmarking Community Group](https://www.w3.org/community/agent-conformance/) — accès automatisé refusé (HTTP 403) le 14 novembre 2026; fiche vérifiée par recherche web
 13. [IETF — draft-ietf-oauth-identity-assertion-authz-grant-06](https://datatracker.ietf.org/doc/draft-ietf-oauth-identity-assertion-authz-grant/)
 14. [IETF — charte du groupe WIMSE](https://datatracker.ietf.org/wg/wimse/about/)
 15. [IETF — documents du groupe WIMSE](https://datatracker.ietf.org/wg/wimse/documents/)
@@ -349,14 +349,14 @@ Pages primaires lues le 11 novembre 2026 :
 17. [IETF — draft-klrc-aiagent-auth-03 (remplacé)](https://datatracker.ietf.org/doc/draft-klrc-aiagent-auth/)
 18. [IETF — charte du groupe Web Bot Auth](https://datatracker.ietf.org/wg/webbotauth/about/)
 19. [IETF — draft-ietf-webbotauth-httpsig-protocol-01](https://datatracker.ietf.org/doc/draft-ietf-webbotauth-httpsig-protocol/)
-20. [NIST — AI Agent Standards Initiative](https://www.nist.gov/caisi/ai-agent-standards-initiative)
+20. [NIST — SI Agent Standards Initiative (anciennement CAISI)](https://www.nist.gov/super-intelligence/si-agent-standards-initiative)
 21. [NIST — annonce de l'initiative, 17 février 2026](https://www.nist.gov/news-events/news/2026/02/announcing-ai-agent-standards-initiative-interoperable-and-secure)
 22. [NIST — document de réflexion du NCCoE, 5 février 2026](https://www.nist.gov/news-events/news/2026/02/new-concept-paper-identity-and-authority-software-agents)
 23. [UIT-T — sujet d'étude X.aiidm](https://www.itu.int/ITU-T/workprog/wp_item.aspx?isn=24045)
 24. [IEEE — projet P3931](https://standards.ieee.org/ieee/3931/12499/)
 25. [IEEE — projet P3945.1](https://standards.ieee.org/ieee/3945.1/12437)
 26. [Governance Gaps in Agent Interoperability Protocols (arXiv 2606.31498), prépublication](https://arxiv.org/abs/2606.31498)
-27. [A survey of agent interoperability protocols (arXiv 2505.02279), résumé](https://arxiv.org/abs/2505.02279)
+27. [A survey of agent interoperability protocols (arXiv 2505.02279)](https://arxiv.org/abs/2505.02279) — résumé initial, puis extraits relus le 14 novembre 2026
 
 Sources secondaires, lues le même jour :
 

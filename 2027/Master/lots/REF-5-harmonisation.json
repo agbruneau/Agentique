@@ -1,0 +1,79 @@
+{
+  "id": "REF-5-harmonisation",
+  "origine": "plan 2027, lot REF-5-harmonisation",
+  "categorie": "harmonisation",
+  "remplacements": [
+    {
+      "fichier": "chapitre-48-revue-litterature.md",
+      "avant": "4. [Chang et coll. — SagaLLM",
+      "apres": "4. [Chang et Geng — SagaLLM",
+      "motif": "Harmonisation des notices à deux auteurs (Edward Y. Chang et Longling Geng, Crossref) selon l'usage X et Y du chapitre."
+    },
+    {
+      "fichier": "chapitre-48-revue-litterature.md",
+      "avant": "10. [Ahmad et coll. — Model Context Protocol Servers",
+      "apres": "10. [Ahmad et Hassan — Model Context Protocol Servers",
+      "motif": "Harmonisation des notices à deux auteurs (Muhammad Ahmad et Muhammad Hassan, Crossref) selon l'usage X et Y du chapitre."
+    },
+    {
+      "fichier": "chapitre-48-revue-litterature.md",
+      "avant": "23. [Oyewale et coll. — LLM-Driven Ontology Construction",
+      "apres": "23. [Oyewale et Soru — LLM-Driven Ontology Construction",
+      "motif": "Harmonisation des notices à deux auteurs (Abdulsobur Oyewale et Tommaso Soru, Crossref) selon l'usage X et Y du chapitre."
+    },
+    {
+      "fichier": "chapitre-48-revue-litterature.md",
+      "avant": "28. [Tanudjaja et coll. — The Agentic AI Adoption Paradox",
+      "apres": "28. [Tanudjaja et Hutajulu — The Agentic AI Adoption Paradox",
+      "motif": "Harmonisation des notices à deux auteurs (Ricky Tanudjaja et Sahat Hutajulu, Crossref) selon l'usage X et Y du chapitre."
+    },
+    {
+      "fichier": "chapitre-48-revue-litterature.md",
+      "avant": "52. [Tran et coll. — Single-Agent LLMs Outperform",
+      "apres": "52. [Tran et Kiela — Single-Agent LLMs Outperform",
+      "motif": "Harmonisation des notices à deux auteurs (Dat Tran et Douwe Kiela, arXiv) selon l'usage X et Y du chapitre."
+    },
+    {
+      "fichier": "chapitre-48-revue-litterature.md",
+      "avant": "55. [Bertalanič et coll. — The Ringelmann Effect",
+      "apres": "55. [Bertalanič et Fortuna — The Ringelmann Effect",
+      "motif": "Harmonisation des notices à deux auteurs (Blaž Bertalanič et Carolina Fortuna, arXiv) selon l'usage X et Y du chapitre."
+    },
+    {
+      "fichier": "chapitre-48-revue-litterature.md",
+      "avant": "70. [Mandarapu et coll. — Knowledge Graphs as the Missing Data Layer",
+      "apres": "70. [Mandarapu et Kunkunuru — Knowledge Graphs as the Missing Data Layer",
+      "motif": "Harmonisation des notices à deux auteurs (Madhulatha Mandarapu et Sandeep Kunkunuru, arXiv) selon l'usage X et Y du chapitre."
+    },
+    {
+      "fichier": "chapitre-48-revue-litterature.md",
+      "avant": "71. [Tuan et coll. — Ontology-Constrained Neural Reasoning",
+      "apres": "71. [Tuan et Sanyal — Ontology-Constrained Neural Reasoning",
+      "motif": "Harmonisation des notices à deux auteurs (Thanh Luong Tuan et Abhijit Sanyal, arXiv) selon l'usage X et Y du chapitre."
+    },
+    {
+      "fichier": "chapitre-48-revue-litterature.md",
+      "avant": "82. [Hacker et coll. — A pragmatic approach",
+      "apres": "82. [Hacker et Holweg — A pragmatic approach",
+      "motif": "Harmonisation des notices à deux auteurs (Philipp Hacker et Matthias Holweg, arXiv) selon l'usage X et Y du chapitre."
+    },
+    {
+      "fichier": "chapitre-48-revue-litterature.md",
+      "avant": "84. [Kang et Diponegoro — Governance Gaps in Agent Interoperability Protocols (arXiv 2606.31498)](https://arxiv.org/abs/2606.31498)",
+      "apres": "84. [Kang et Diponegoro — Governance Gaps in Agent Interoperability Protocols (arXiv 2606.31498, 2026)](https://arxiv.org/abs/2606.31498)",
+      "motif": "Ajout de l'année de publication (2026, arXiv) par cohérence avec les autres sources du chapitre 48."
+    },
+    {
+      "fichier": "chapitre-48-revue-litterature.md",
+      "avant": "85. [Kim et coll. — Towards a Science of Scaling Agent Systems (arXiv 2512.08296)](https://arxiv.org/html/2512.08296v3)",
+      "apres": "85. [Kim et coll. — Towards a Science of Scaling Agent Systems (arXiv 2512.08296, 2025)](https://arxiv.org/html/2512.08296v3)",
+      "motif": "Ajout de l'année de publication (2025, arXiv) par cohérence avec les autres sources du chapitre 48."
+    },
+    {
+      "fichier": "chapitre-48-revue-litterature.md",
+      "avant": "86. [Pan et coll. — Measuring Agents in Production (arXiv 2512.04123)](https://arxiv.org/abs/2512.04123)",
+      "apres": "86. [Pan et coll. — Measuring Agents in Production (arXiv 2512.04123, 2025)](https://arxiv.org/abs/2512.04123)",
+      "motif": "Ajout de l'année de publication (2025, arXiv) par cohérence avec les autres sources du chapitre 48."
+    }
+  ]
+}

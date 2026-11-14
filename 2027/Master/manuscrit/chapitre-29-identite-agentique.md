@@ -300,7 +300,7 @@ Source secondaire, lue :
 Pages primaires lues le 12 novembre 2026, lors de l'audit :
 
 13. [Microsoft Learn — Owners, sponsors, and managers in Microsoft Entra Agent ID](https://learn.microsoft.com/en-us/entra/agent-id/agent-owners-sponsors-managers)
-14. [Cloudflare — agents signés et robots vérifiés](https://developers.cloudflare.com/bots/concepts/bot/signed-agents/)
+14. [Cloudflare — agents signés et robots vérifiés](https://developers.cloudflare.com/bots/concepts/bot/verified-bots/)
 15. [W3C — Decentralized Identifiers (DIDs) v1.1](https://www.w3.org/TR/did-1.1/)
 
 ## Limites de ce chapitre
@@ -311,4 +311,5 @@ Pages primaires lues le 12 novembre 2026, lors de l'audit :
 - Les justificatifs vérifiables du W3C, la fédération SPIFFE, CIBA, les signaux d'événements et les jetons de transaction ne sont connus ici que par les mentions qu'en font les sources lues. Les changements de la v1.1 des DID par rapport à la v1.0 n'ont pas été lus.
 - La fiche du chaînage n'explique pas l'état « bloqué »; une dépendance en attente est une supposition.
 - Aucun chiffre d'adoption n'est cité : la seule estimation rencontrée est non chiffrée et de source secondaire.
+- Lors de l'audit du 14 novembre 2026, [10] (W3C DID v1.0), [12] (CSA) et [15] (W3C DID v1.1) ont renvoyé un accès restreint (HTTP 403 anti-robot au script automatique); leurs titres, dates et statuts (recommandation DID v1.0 du 19 juillet 2022; recommandation candidate DID v1.1 du 5 mars 2026) sont confirmés par recherche web.
 - La liste d'attributs d'annuaire de 29.3 et la grille de décision sont des synthèses propres à ce chapitre.

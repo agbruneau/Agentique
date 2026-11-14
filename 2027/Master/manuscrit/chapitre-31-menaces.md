@@ -2,7 +2,7 @@
 
 *Question directrice : qu'est-ce qui change dans le modèle de menace ?*
 
-> **État de référence :** OWASP Top 10 for Agentic Applications (9 décembre 2025), OWASP MCP Top 10 (bêta), page Security Best Practices de la spécification MCP `2026-07-28`, cadre MAESTRO de la Cloud Security Alliance (6 février 2025). Les numéros entre crochets renvoient aux sources en fin de chapitre. Toutes ont été lues pour ce chapitre, les articles par leur résumé seulement; [11] à [13] sont des billets.
+> **État de référence :** OWASP Top 10 for Agentic Applications (9 décembre 2025), OWASP MCP Top 10 (bêta), page Security Best Practices de la spécification MCP `2026-07-28`, cadre MAESTRO de la Cloud Security Alliance (6 février 2025). Les numéros entre crochets renvoient aux sources en fin de chapitre. Toutes ont été lues pour ce chapitre (les articles [6] à [10] et le bilan [13], d'abord lus par leur résumé, ont été relus au-delà du résumé le 14 novembre 2026); [11] à [13] sont des billets.
 
 Une application classique sépare ce qu'elle exécute de ce qu'elle traite. Le code vient du développeur, les données viennent du monde, et des décennies de pratique (requêtes paramétrées, échappement, validation) servent à empêcher les secondes de devenir le premier. Un agent abolit cette séparation par construction : son programme est un texte, et tout texte qu'il lit peut s'y ajouter.
 
@@ -27,7 +27,7 @@ Un serveur MCP reste un service web, et un agent, une charge de travail. La page
 | Les dépendances sont fixées à la construction | Outils et serveurs se découvrent à l'exécution, par leur description | Chaîne d'approvisionnement textuelle et mouvante (31.5) |
 | Une requête se termine | La mémoire et les messages entre agents prolongent l'effet | Persistance (31.6) et propagation (31.7) |
 
-Le premier déplacement a été formulé dès février 2023. Greshake et ses coauteurs montrent alors qu'une application intégrant un modèle de langage brouille la ligne entre données et instructions : un attaquant qui n'a aucun accès à l'application y dépose des consignes en les plaçant dans un contenu qu'elle ira chercher [6]. Leur résumé assimile le traitement d'un tel contenu à une exécution de code arbitraire et constate l'absence de parade efficace.
+Le premier déplacement a été formulé dès février 2023. Greshake et ses coauteurs montrent alors qu'une application intégrant un modèle de langage brouille la ligne entre données et instructions : un attaquant qui n'a aucun accès à l'application y dépose des consignes en les plaçant dans un contenu qu'elle ira chercher [6]. Greshake et ses coauteurs assimilent le traitement d'un tel contenu à une exécution de code arbitraire et constate l'absence de parade efficace.
 
 Le deuxième déplacement explique pourquoi les contrôles d'accès ne suffisent pas. Un agent détourné ne franchit aucune barrière : il utilise ses propres droits, avec des jetons valides. Pour le système appelé, rien ne distingue l'appel voulu par l'utilisateur de l'appel dicté par un courriel piégé.
 
@@ -117,7 +117,7 @@ Le détournement d'objectif (ASI01) est le résultat recherché. L'agent poursui
 
 ### L'état des défenses
 
-Le banc d'essai AgentDojo réunit 97 tâches réalistes (messagerie, banque en ligne, réservation de voyages) et 629 cas de test de sécurité. Selon ses auteurs, les attaques existantes violent certaines propriétés de sécurité, mais pas toutes, et les modèles de pointe de l'époque échouent à de nombreuses tâches même sans attaque [7]. Le résumé ne publie pas de taux. Il rappelle en revanche que sécurité et utilité se mesurent ensemble : une défense qui empêche l'agent de travailler n'en est pas une.
+Le banc d'essai AgentDojo réunit 97 tâches réalistes (messagerie, banque en ligne, réservation de voyages) et 629 cas de test de sécurité. Selon ses auteurs, les attaques existantes violent certaines propriétés de sécurité, mais pas toutes, et les modèles de pointe de l'époque échouent à de nombreuses tâches même sans attaque [7]. Sans reprendre ici les taux chiffrés de l'article par modèle et par défense, celui-ci rappelle que sécurité et utilité se mesurent ensemble : une défense qui empêche l'agent de travailler n'en est pas une.
 
 Willison se dit profondément méfiant envers les produits de garde-fous qui annoncent détecter les attaques, et juge qu'un taux de détection de l'ordre de 95 % serait un échec selon les critères de la sécurité applicative [12]. C'est une opinion de praticien, non une mesure, mais l'argument est structurel : un filtre probabiliste face à un adversaire qui s'adapte ne constitue pas une frontière.
 
@@ -191,9 +191,9 @@ Les appuis de cette section sont minces : des entrées de liste, une démonstrat
 
 L'OWASP réserve trois entrées à la pluralité des agents : ASI07, ASI08 et ASI10 [2].
 
-La prépublication Prompt Infection (octobre 2024) démontre une injection qui se réplique d'un agent à l'autre, à la manière d'un virus informatique. Les auteurs rapportent que les systèmes multi-agents y sont très vulnérables, même lorsque les agents ne partagent pas toutes leurs communications. Ils proposent un marquage des messages produits par un modèle (*LLM Tagging*), qui réduit la propagation lorsqu'il est combiné à d'autres protections, dans des simulations limitées aux modèles GPT-4o et GPT-3.5 Turbo [9]. Le résumé ne donne aucun chiffre.
+La prépublication Prompt Infection (octobre 2024) démontre une injection qui se réplique d'un agent à l'autre, à la manière d'un virus informatique. Les auteurs rapportent que les systèmes multi-agents y sont très vulnérables, même lorsque les agents ne partagent pas toutes leurs communications. Ils proposent un marquage des messages produits par un modèle (*LLM Tagging*), qui réduit la propagation lorsqu'il est combiné à d'autres protections, dans des simulations limitées aux modèles GPT-4o et GPT-3.5 Turbo [9].
 
-Un article collectif de vingt-quatre auteurs, révisé en avril 2026, plaide pour un champ distinct, la sécurité multi-agents [10]. Il nomme des menaces qui n'existent pas à l'échelle d'un agent : la collusion secrète, les attaques coordonnées en essaim, la diffusion rapide par effet de réseau des atteintes à la vie privée, de la désinformation, des contournements et de l'empoisonnement de données, et la dispersion d'une attaque entre plusieurs agents pour échapper à la surveillance. Selon le résumé, ces menaces dépassent les cadres habituels de la cybersécurité et de la sûreté de l'IA.
+Un article collectif de vingt-quatre auteurs, révisé en avril 2026, plaide pour un champ distinct, la sécurité multi-agents [10]. Il nomme des menaces qui n'existent pas à l'échelle d'un agent : la collusion secrète, les attaques coordonnées en essaim, la diffusion rapide par effet de réseau des atteintes à la vie privée, de la désinformation, des contournements et de l'empoisonnement de données, et la dispersion d'une attaque entre plusieurs agents pour échapper à la surveillance. Selon les auteurs, ces menaces dépassent les cadres habituels de la cybersécurité et de la sûreté de l'IA.
 
 ### Ce qui est structurellement nouveau
 
@@ -278,30 +278,30 @@ Pages primaires lues le 11 novembre 2026 :
 1. [OWASP Top 10 for Agentic Applications for 2026 — page de la ressource](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/)
 2. [OWASP GenAI Security Project — annonce du 9 décembre 2025](https://genai.owasp.org/2025/12/09/owasp-top-10-for-agentic-applications-the-benchmark-for-agentic-security-in-the-age-of-autonomous-ai/)
 3. [OWASP MCP Top 10 — page du projet](https://owasp.org/www-project-mcp-top-10/)
-4. [Security Best Practices — spécification MCP 2026-07-28](https://modelcontextprotocol.io/specification/2026-07-28/basic/security_best_practices.md)
+4. [Security Best Practices — spécification MCP 2026-07-28](https://modelcontextprotocol.io/docs/2026-07-28/tutorials/security/security_best_practices.md)
 5. [Cloud Security Alliance — Agentic AI Threat Modeling Framework: MAESTRO](https://cloudsecurityalliance.org/blog/2025/02/06/agentic-ai-threat-modeling-framework-maestro)
-6. [Greshake et coll. — Not what you've signed up for (arXiv 2302.12173)](https://arxiv.org/abs/2302.12173) — résumé.
-7. [Debenedetti et coll. — AgentDojo (arXiv 2406.13352)](https://arxiv.org/abs/2406.13352) — résumé.
-8. [Beurer-Kellner et coll. — Design Patterns for Securing LLM Agents against Prompt Injections (arXiv 2506.08837)](https://arxiv.org/abs/2506.08837) — résumé.
-9. [Lee et Tiwari — Prompt Infection (arXiv 2410.07283)](https://arxiv.org/abs/2410.07283) — résumé.
-10. [Schroeder de Witt et coll. — Open Challenges in Multi-Agent Security (arXiv 2505.02077)](https://arxiv.org/abs/2505.02077) — résumé.
+6. [Greshake et coll. — Not what you've signed up for (arXiv 2302.12173)](https://arxiv.org/abs/2302.12173) — prépublication, résumé puis extraits relus le 14 novembre 2026.
+7. [Debenedetti et coll. — AgentDojo (arXiv 2406.13352)](https://arxiv.org/abs/2406.13352) — prépublication, résumé puis extraits relus le 14 novembre 2026.
+8. [Beurer-Kellner et coll. — Design Patterns for Securing LLM Agents against Prompt Injections (arXiv 2506.08837)](https://arxiv.org/abs/2506.08837) — prépublication, résumé puis extraits relus le 14 novembre 2026.
+9. [Lee et Tiwari — Prompt Infection (arXiv 2410.07283)](https://arxiv.org/abs/2410.07283) — prépublication, résumé puis extraits relus le 14 novembre 2026.
+10. [Schroeder de Witt et coll. — Open Challenges in Multi-Agent Security (arXiv 2505.02077)](https://arxiv.org/abs/2505.02077) — prépublication, résumé puis extraits relus le 14 novembre 2026.
 
 Sources secondaires (billets lus en entier) :
 
 11. [Invariant Labs — MCP Security Notification: Tool Poisoning Attacks, 1er avril 2025](https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks) — billet de fournisseur.
 12. [Simon Willison — The lethal trifecta for AI agents, 16 juin 2025](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) — billet de praticien.
-13. [OWASP GenAI Security Project — GenAI and Agentic AI Exploit Roundup Q3 2026, 8 octobre 2026](https://genai.owasp.org/2026/10/08/genai-and-agentic-ai-exploit-roundup-q3-2026/) — bilan d'incidents, lu le 12 novembre 2026 par résumé.
+13. [OWASP GenAI Security Project — GenAI and Agentic AI Exploit Roundup Q3 2026, 8 octobre 2026](https://genai.owasp.org/2026/10/08/genai-and-agentic-ai-exploit-roundup-q3-2026/) — bilan d'incidents, relu au-delà du résumé le 14 novembre 2026 (accès HTTP 403 intermittent au script automatique, confirmé par recherche web).
 
 ## Limites de ce chapitre
 
 - Les sources [6], [7], [8], [9], [10] et [13], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - Le document complet de l'OWASP Top 10 for Agentic Applications n'a pas été lu. Les intitulés ASI01 à ASI10 et leur description viennent de l'annonce [2]; les mesures d'atténuation que propose le document ne sont pas rapportées.
 - Les pages détaillées de chaque entrée de l'OWASP MCP Top 10 n'ont pas été lues; le tableau de 31.3 résume la page du projet.
-- Les cinq articles sont cités d'après leur résumé. Les patrons de [8], la méthode de [9] et la taxonomie de [10] ne sont pas décrits faute de lecture du texte.
+- La liste détaillée des patrons de [8], la méthode complète de [9] et l'ensemble de la taxonomie de [10] ne sont pas exposés dans ce chapitre.
 - Aucun incident n'a été vérifié à sa source. La campagne d'août 2026 (31.5) est rapportée d'après [13], qui s'appuie sur un billet de Pillar Security non lu. Les chiffres de CaMeL (31.4) sont repris du chapitre 45.
 - La page [1] affiche, sans description, une ressource « Securing Agentic Applications V2 » datée du 10 novembre 2026. Elle n'a pas été lue.
 - Les positions d'attaquant de 31.1, la lecture en trajet d'attaque de 31.2, la colonne « Nature » de 31.3, l'ordre des mesures de 31.4, les traits et les contrôles de 31.7 et les tableaux de contrôles sont des synthèses de ce chapitre. Les analogies avec les requêtes paramétrées et l'informatique fantôme viennent de la connaissance générale.
-- Aucun chiffre de prévalence ni de taux de succès d'attaque n'est cité, faute de source lue qui en donne. Les appuis de 31.7 restent minces.
+- Aucun chiffre de prévalence en production (absent des sources lues, dont [2] et [13]) ni de taux de succès d'attaque issu des études expérimentales (bien que [7] et [9] en publient) n'est repris dans ce chapitre. Les appuis de 31.7 restent minces.
 - Audit du 12 novembre 2026 : [1] à [4], [8], [10] et [12] relus à la source. Ils confirment le texte.
 
 ## Mise en œuvre — Modélisation des menaces multi-agents (OWASP ASI01–ASI10) et sécurité MCP {.volet}

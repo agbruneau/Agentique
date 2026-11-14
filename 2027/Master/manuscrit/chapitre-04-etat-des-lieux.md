@@ -199,11 +199,11 @@ Ces hypothèses ne sont pas des prévisions chiffrées. Elles fixent le point de
 
 Pages primaires lues le 11 novembre 2026 :
 
-1. [Measuring Agents in Production (arXiv 2512.04123, version 4)](https://arxiv.org/abs/2512.04123) — résumé et première moitié du texte.
-2. [Why Do Multi-Agent LLM Systems Fail? (arXiv 2503.13657)](https://arxiv.org/html/2503.13657v2) — résumé de la version 3 et première partie de la version 2.
+1. [Measuring Agents in Production (arXiv 2512.04123, version 4)](https://arxiv.org/abs/2512.04123) — première moitié du texte et extraits relus le 14 novembre 2026.
+2. [Why Do Multi-Agent LLM Systems Fail? (arXiv 2503.13657)](https://arxiv.org/html/2503.13657v2) — résumé de la version 3, première partie de la version 2 et extraits relus le 14 novembre 2026.
 3. [Linux Foundation — bilan de la première année d'A2A, 9 avril 2026](https://www.linuxfoundation.org/press/a2a-protocol-surpasses-150-organizations-lands-in-major-cloud-platforms-and-sees-enterprise-production-use-in-first-year)
 4. [Salesforce — résultats du deuxième trimestre de l'exercice 2027](https://www.salesforce.com/news/press-releases/2026/08/26/fy27-q2-earnings/)
-5. [NIST — AI Agent Standards Initiative](https://www.nist.gov/caisi/ai-agent-standards-initiative)
+5. [NIST — SI Agent Standards Initiative (anciennement CAISI)](https://www.nist.gov/super-intelligence/si-agent-standards-initiative)
 6. [Agentic AI Foundation — projets](https://aaif.io/projects)
 7. [IBM — annonce sur le Magic Quadrant 2026 des plateformes de gestion d'agents](https://www.ibm.com/new/announcements/ibm-named-a-leader-in-the-2026-gartner-magic-quadrant-for-ai-agent-management-platforms) — billet de fournisseur.
 
@@ -215,7 +215,7 @@ Sources secondaires lues :
 
 Pages non chargées :
 
-11. [McKinsey — The State of AI in 2026](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) — délai dépassé.
+11. [McKinsey — The State of AI in 2026](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) — délai dépassé (confirmé le 14 novembre 2026).
 12. [Gartner — communiqué du 25 juin 2025](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027) — accès refusé.
 
 Statistiques officielles, pages lues le 14 novembre 2026 :
@@ -227,8 +227,8 @@ Statistiques officielles, pages lues le 14 novembre 2026 :
 ## Limites de ce chapitre
 
 - Les sources [1] et [2], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
-- Le rapport de McKinsey n'a pu être chargé ni à la rédaction ni à l'audit. Ses chiffres viennent d'un compte rendu de presse, relu le 12 novembre 2026; l'échantillon et les dates de collecte et de publication restent inconnus.
-- Le communiqué de Gartner a encore refusé l'accès à l'audit. La troisième cause d'annulation repose sur des reprises; la dépêche relue ne la mentionne pas. Le Magic Quadrant n'est connu que par le billet d'IBM.
+- Le rapport de McKinsey n'a pu être chargé ni à la rédaction ni à l'audit du 14 novembre 2026 (délai dépassé). Ses chiffres viennent d'un compte rendu de presse, relu le 12 novembre 2026; l'échantillon et les dates de collecte et de publication restent inconnus.
+- Le communiqué de Gartner [12] a encore retourné HTTP 403 à l'audit du 14 novembre 2026. La troisième cause d'annulation repose sur des reprises; la dépêche relue ne la mentionne pas. Le Magic Quadrant n'est connu que par le billet d'IBM.
 - L'étude MAP a été relue à l'audit sur sa première moitié, par un outil qui condense les pages. Son résumé dit « au plus dix étapes » pour 68 % des agents, son corps « moins de dix ». Les parts MAST de la version 3 sont des sommes calculées au chapitre 21.
 - Le Digital Omnibus a été lu sur un site non officiel; le chapitre 35 confirme le report des dates par les considérants publiés sur EUR-Lex.
 - L'état du registre MCP, de l'identité des agents et des conventions d'observabilité est repris des chapitres 5, 29 et 33, sans relecture de leurs sources.

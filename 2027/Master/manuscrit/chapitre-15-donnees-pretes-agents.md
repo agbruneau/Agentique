@@ -235,7 +235,7 @@ Spécifications et articles, pages primaires lues le 11 novembre 2026 :
 4. [Orchestrating Agents and Data for Enterprise: A Blueprint Architecture for Compound AI (arXiv 2504.08148)](https://arxiv.org/html/2504.08148)
 5. [Can AI Agents Answer Your Data Questions? A Benchmark for Data Agents — DAB (arXiv 2603.20576, version 3)](https://arxiv.org/html/2603.20576v3)
 
-Articles lus au niveau du résumé seulement :
+Articles d'abord lus au niveau du résumé, puis relus par extraits le 14 novembre 2026 :
 
 6. [Spider 2.0: Evaluating Language Models on Real-World Enterprise Text-to-SQL Workflows (arXiv 2411.07763, ICLR 2025)](https://arxiv.org/abs/2411.07763)
 7. [CRMArena-Pro (arXiv 2505.18878)](https://arxiv.org/abs/2505.18878)

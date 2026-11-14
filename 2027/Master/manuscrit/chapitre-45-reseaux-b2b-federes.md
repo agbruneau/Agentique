@@ -232,18 +232,18 @@ Pages primaires lues le 12 novembre 2026 :
 4. [Dataspace Protocol — Contract Negotiation Protocol](https://raw.githubusercontent.com/eclipse-dataspace-protocol-base/DataspaceProtocol/main/specifications/negotiation/contract.negotiation.protocol.md) — source du dépôt.
 5. [GLEIF — vLEI Ecosystem Governance Framework](https://www.gleif.org/en/vlei/introducing-the-verifiable-lei-vlei)
 6. [GLEIF — When AI agents transact, who stands behind them?](https://www.gleif.org/en/newsroom/blog/when-ai-agents-transact-who-stands-behind-them-why-verifiable-organizational-identity-is-critical-to-agentic-payments) — billet d'organisme.
-7. [Defeating Prompt Injections by Design (arXiv 2503.18813)](https://arxiv.org/abs/2503.18813) — résumé.
-8. [Behavioral Privacy Leakage in Agentic Negotiation (arXiv 2607.06815)](https://arxiv.org/abs/2607.06815) — résumé.
+7. [Defeating Prompt Injections by Design (arXiv 2503.18813)](https://arxiv.org/abs/2503.18813) — résumé puis extraits relus le 14 novembre 2026.
+8. [Behavioral Privacy Leakage in Agentic Negotiation (arXiv 2607.06815)](https://arxiv.org/abs/2607.06815) — résumé puis extraits relus le 14 novembre 2026.
 9. [Google Cloud — Confidential Space](https://docs.cloud.google.com/confidential-computing/confidential-space/docs/confidential-space-overview) — documentation d'éditeur.
 10. [Calvano et coll., AER 110(10), 2020](https://www.aeaweb.org/articles?id=10.1257/aer.20190623) — résumé.
-11. [Algorithmic Collusion by Large Language Models (arXiv 2404.00806)](https://arxiv.org/abs/2404.00806) — résumé.
-12. [Secret Collusion among AI Agents (arXiv 2402.07510)](https://arxiv.org/abs/2402.07510) — résumé.
+11. [Algorithmic Collusion by Large Language Models (arXiv 2404.00806)](https://arxiv.org/abs/2404.00806) — résumé puis extraits relus le 14 novembre 2026.
+12. [Secret Collusion among AI Agents (arXiv 2402.07510)](https://arxiv.org/abs/2402.07510) — résumé puis extraits relus le 14 novembre 2026.
 13. [Bureau de la concurrence — communiqué du 22 janvier 2026](https://www.canada.ca/en/competition-bureau/news/2026/01/competition-bureau-report-highlights-public-feedback-on-algorithmic-pricing-and-competition.html)
 14. [Microsoft Learn — Accounts payable invoice matching](https://learn.microsoft.com/en-us/dynamics365/finance/accounts-payable/accounts-payable-invoice-matching) — documentation d'éditeur.
 
 Repérés, non lus :
 
-15. [draft-hood-agtp-lei-00](https://datatracker.ietf.org/doc/draft-hood-agtp-lei/); [GLEIF, Agentic AI in Payments](https://www.gleif.org/organizational-identity/research-publications/2026-08-13_agentic_ai_in_payments_v1.0-1.pdf).
+15. [draft-hood-agtp-lei-01 (30 octobre 2026, succédant à la version 00)](https://datatracker.ietf.org/doc/draft-hood-agtp-lei/); [GLEIF, Agentic AI in Payments (document de travail de septembre 2026)](https://www.gleif.org/organizational-identity/research-publications/2026-08-13_agentic_ai_in_payments_v1.0-1.pdf).
 
 ## Limites de ce chapitre
 
@@ -251,9 +251,9 @@ Repérés, non lus :
 - **Éléments sans source.** « Diplomate / Évaluateur interne » et le rapprochement à trois voies avant un règlement AP2 ou x402 figurent comme cibles de conception. « Clean Rooms sur TEE » repose sur une seule documentation d'éditeur, qui n'emploie pas le terme; la définition d'une salle blanche et la description de l'intégration bilatérale viennent de la connaissance générale.
 - **vLEI.** La page du cadre n'explique ni la vérification des rôles ni le lien avec ISO 5009. La répartition entité / OOR / délégation est une déduction. Le Delegated Agent Participant ID est repris du chapitre 37, sans relecture de sa source.
 - **DSP, EDC, ODRL.** La machine à états a été lue dans la branche principale du dépôt; la page 2025-1, relue à l'audit, n'en affiche pas le texte. DCP, le moteur de politiques d'EDC, la fin de la recommandation ODRL et son vocabulaire n'ont pas été lus.
-- **Articles.** [7], [8] et [10] à [12] sont connus par leur résumé.
+- **Articles.** [10] reste connu par son résumé; [7], [8], [11] et [12], d'abord lus par leur résumé, ont été recoupés par extraits le 14 novembre 2026.
 - **Mesures proposées.** L'effet des messages structurés sur les canaux cachés et les mesures de la section 45.4 n'ont aucune mise en œuvre lue.
-- **Concurrence.** Seul le communiqué du Bureau a été lu; aucune autre autorité n'a été vérifiée.
+- **Concurrence et accès restreints (14 novembre 2026).** Seul le communiqué du Bureau [13] a été lu; aucune autre autorité n'a été vérifiée. Lors de la vérification du 14 novembre 2026, le W3C ([1], `w3.org/TR/odrl-model/` et `odrl.jsonld`) retourne HTTP 403 (protection Cloudflare) et le communiqué sur `www.canada.ca` [13] expire en délai d'attente aux requêtes automatisées; leur contenu est confirmé par recherche web et par les extraits antérieurs.
 - **AP2 et x402.** Leur description reprend le chapitre 10. Les renvois aux autres chapitres ont été vérifiés à l'audit, sans relecture de leurs sources.
 
 ## Mise en œuvre — Maillages B2B inter-entreprises, espaces de données et négociation multi-parties {.volet}

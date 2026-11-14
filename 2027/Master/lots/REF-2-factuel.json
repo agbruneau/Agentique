@@ -1,0 +1,133 @@
+{
+  "id": "REF-2-factuel",
+  "origine": "plan 2027, lot REF-2-factuel",
+  "categorie": "factuel",
+  "remplacements": [
+    {
+      "fichier": "chapitre-14-memoire.md",
+      "avant": "https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/overview",
+      "apres": "https://docs.cloud.google.com/gemini-enterprise-agent-platform/scale/memory-bank",
+      "motif": "L'ancienne URL de Google Cloud Memory Bank [33] redirige vers la page générique /scale; la fiche officielle Memory Bank se trouve désormais à /gemini-enterprise-agent-platform/scale/memory-bank (HTTP 200, mise à jour du 12 novembre 2026)."
+    },
+    {
+      "fichier": "chapitre-14-memoire.md",
+      "avant": "Elle ne décrit ni l'extraction, ni la portée d'un souvenir, ni son expiration, et ",
+      "apres": "La page déplacée décrit en outre l'extraction et la consolidation par modèle de langage, l'isolement par portée (`scope`), l'expiration automatique par durée de vie (`TTL`) et ",
+      "motif": "Corriger la description de Google Cloud Memory Bank [33] d'après la page officielle actuelle (/scale/memory-bank), qui documente l'extraction, le cloisonnement par scope et l'expiration automatique par TTL."
+    },
+    {
+      "fichier": "chapitre-14-memoire.md",
+      "avant": "ne mentionne aucun risque d'empoisonnement.",
+      "apres": "signale les risques d'injection de prompt et d'empoisonnement de la mémoire.",
+      "motif": "Corriger la fin de phrase sur Google Cloud Memory Bank [33] (à l'intérieur de #731 sans débordement) : la page actuelle comporte une section « Security risks of prompt injection » mentionnant le memory poisoning."
+    },
+    {
+      "fichier": "chapitre-16-topologies-patrons.md",
+      "avant": "12. [Zhu et coll. — LLM-Based Multi-Agent Orchestration: A Survey of Frameworks, Communication Protocols, and Emerging Patterns](https://www.preprints.org/manuscript/202604.2147) — prépublication non lue (accès refusé); taxonomie reprise du plan initial et de résumés de recherche.",
+      "apres": "12. [Zhu et coll. — LLM-Based Multi-Agent Orchestration: A Survey of Frameworks, Communication Protocols, and Emerging Patterns](https://www.preprints.org/manuscript/202604.2147) (paru dans *Future Internet*, vol. 18, n° 6, art. 326, 15 juin 2026, [DOI 10.3390/fi18060326](https://doi.org/10.3390/fi18060326)) — prépublication et page éditeur non lues (accès refusé HTTP 403); taxonomie reprise du plan initial et de résumés de recherche.",
+      "motif": "Documenter la publication confirmée dans Future Internet (Crossref DOI 10.3390/fi18060326, 15 juin 2026) tout en maintenant le constat d'accès HTTP 403 aux requêtes automatisées."
+    },
+    {
+      "fichier": "chapitre-16-topologies-patrons.md",
+      "avant": "l prévu par le plan initial, n'a pas été lu : le 12 novembre 2026, sa page refuse toujours l'accès, et une recherche ne trouve aucune parution dans *Future Internet*. La liste d'auteurs diffère entre la prépublication et la fiche Zenodo.",
+      "apres": "l prévu par le plan initial, n'a pas été lu : la prépublication Preprints.org comme la page éditeur de *Future Internet* (vol. 18, n° 6, art. 326, 15 juin 2026, DOI 10.3390/fi18060326) retournent HTTP 403 aux requêtes automatisées. La liste d'auteurs de l'article (Zhu, Liu, Yu et Zhang) diffère partiellement de celle du dépôt Zenodo (Zhu et Toffoletto).",
+      "motif": "Corriger l'affirmation selon laquelle aucune parution dans Future Internet n'avait été trouvée, après vérification via l'API Crossref (en restant après la borne #812)."
+    },
+    {
+      "fichier": "chapitre-18-execution-durable-transactions.md",
+      "avant": "[14] et [15] n'ont pas pu être lues;",
+      "apres": "[14] n'a pas pu être lue; [15], retrouvée via Crossref à l'audit, n'a pas été exploitée dans la rédaction;",
+      "motif": "Refléter la découverte du PDF et du DOI de la source [15] (Nutakki, Nexus) tout en indiquant que le corps du chapitre n'en dépend pas (à l'intérieur de #483)."
+    },
+    {
+      "fichier": "chapitre-18-execution-durable-transactions.md",
+      "avant": "15. [Agentic AI Pipelines for Enterprise Decision-Making (Nexus)](https://consensus.app/papers/details/22a0c58efa5153b194fcbf5d89fbe04c/) ",
+      "apres": "15. [Nutakki — Design and Implementation of Agentic AI Pipelines for Enterprise Decision-Making Architecture Patterns for Production Systems (Nexus, *IJIRMPS*, vol. 14, n° 2, 27 avril 2026, DOI 10.37082/ijirmps.v14.i2.233041)](https://www.ijirmps.org/papers/2026/2/233041.pdf) ",
+      "motif": "Remplacer le lien Consensus redirigeant vers /sign-up/ par la référence complète et l'URL PDF en accès libre vérifiées via Crossref (avant la borne #485)."
+    },
+    {
+      "fichier": "chapitre-18-execution-durable-transactions.md",
+      "avant": "— fiche inaccessible (erreur 403), original introuvable.",
+      "apres": "— l'adresse Consensus d'origine redirige (HTTP 302) vers `/sign-up/` et non vers une erreur 403; article et PDF retrouvés à l'audit du 14 novembre 2026, non exploités dans le corps du chapitre.",
+      "motif": "Corriger la mention « erreur 403, original introuvable » de [15] à l'intérieur de la borne #485 sans débordement."
+    },
+    {
+      "fichier": "chapitre-18-execution-durable-transactions.md",
+      "avant": "n'a pas été lue** [15]. Deux recherches par titre n'ont retrouvé ni l'article ni son éditeur",
+      "apres": "n'a pas été exploitée dans la rédaction** [15]. La fiche Consensus mène à `/sign-up/`, mais l'article original a été retrouvé via Crossref le 14 novembre 2026 (Sandeep Nutakki, *IJIRMPS*, vol. 14, n° 2, avril 2026, DOI 10.37082/ijirmps.v14.i2.233041, PDF en accès libre présentant Nexus)",
+      "motif": "Corriger la limite de [15] (Nexus) après découverte de l'article de Nutakki via Crossref (après la borne #813)."
+    },
+    {
+      "fichier": "chapitre-20-cadriciels-orchestration.md",
+      "avant": "15. [Zhu et coll. — LLM-Based Multi-Agent Orchestration: A Survey of Frameworks, Communication Protocols, and Emerging Patterns](https://www.preprints.org/manuscript/202604.2147) — prépublication non lue (accès refusé),",
+      "apres": "15. [Zhu et coll. — LLM-Based Multi-Agent Orchestration: A Survey of Frameworks, Communication Protocols, and Emerging Patterns](https://www.preprints.org/manuscript/202604.2147) (paru dans *Future Internet*, vol. 18, n° 6, art. 326, 15 juin 2026, [DOI 10.3390/fi18060326](https://doi.org/10.3390/fi18060326)) — prépublication et page éditeur non lues (accès refusé HTTP 403),",
+      "motif": "Consigner la parution vérifiée de Zhu et coll. [15] dans Future Internet (DOI 10.3390/fi18060326) avant la borne #440."
+    },
+    {
+      "fichier": "chapitre-20-cadriciels-orchestration.md",
+      "avant": "r le plan initial, n'a pas été lu, et sa parution dans *Future Internet* n'a pas été confirmée.",
+      "apres": "r le plan initial, n'a pas été lu : sa parution dans *Future Internet* (vol. 18, n° 6, art. 326, 15 juin 2026, DOI 10.3390/fi18060326) est confirmée via Crossref, mais la prépublication et la page MDPI retournent HTTP 403.",
+      "motif": "Corriger la limite sur la parution de [15] dans Future Internet après vérification Crossref (après la borne #815)."
+    },
+    {
+      "fichier": "chapitre-20-cadriciels-orchestration.md",
+      "avant": "[Zhang, Zhang et Tan — Dissecting Bug Triggers and Failure Modes in Modern Agentic Frameworks: An Empirical Study (arXiv 2604.08906, 10 avril 2026)]",
+      "apres": "[Zhang, Zhang et Tan — Dissecting Bug Triggers and Failure Modes in Modern Agentic Frameworks: An Empirical Study (arXiv 2604.08906v1, 10 avril 2026; v4 du 4 octobre 2026 renommée *Understanding Bugs in Modern Agentic Frameworks*)]",
+      "motif": "Signaler le changement de titre de la version v4 d'arXiv 2604.08906 tout en conservant le titre exact de la version v1 citée par lien direct (avant la borne #651)."
+    },
+    {
+      "fichier": "chapitre-22-humain-dans-la-boucle.md",
+      "avant": "[Goddard et coll. — Automation bias: a systematic review of frequency, effect mediators, and mitigators (Journal of the American Medical Informatics Association)](https://pmc.ncbi.nlm.nih.gov/articles/PMC3240751/) — revue systématique; l'année 2011 vient d'un index d'articles.",
+      "apres": "[Goddard, Roudsari et Wyatt — Automation bias: a systematic review of frequency, effect mediators, and mitigators (*JAMIA*, vol. 19, n° 1, janv.-févr. 2012, pp. 121-127, publ. en ligne 16 juin 2011, DOI 10.1136/amiajnl-2011-000089)](https://pmc.ncbi.nlm.nih.gov/articles/PMC3240751/) — revue systématique.",
+      "motif": "Préciser la référence bibliographique vérifiée de Goddard et coll. [16] via Crossref et NCBI PMC (epub 2011, numéro de 2012) à l'intérieur de #383."
+    },
+    {
+      "fichier": "chapitre-22-humain-dans-la-boucle.md",
+      "avant": "[16] une revue de 2011 sur les aides à la décision,",
+      "apres": "[16] une revue systématique publiée en ligne en 2011 (numéro de 2012) sur les aides à la décision,",
+      "motif": "Harmoniser la date bibliographique de [16] dans les limites (à l'intérieur de #385)."
+    },
+    {
+      "fichier": "chapitre-23-architecture-reference.md",
+      "avant": "[12], [13] et [21] sont secondaires.",
+      "apres": "[12] et [13] sont secondaires.",
+      "motif": "Retirer [21] (Debnath) de la liste des sources secondaires maintenant que l'article original en accès libre et son DOI ont été vérifiés (à l'intérieur de #357)."
+    },
+    {
+      "fichier": "chapitre-23-architecture-reference.md",
+      "avant": ", connue ici par son seul résumé : un plan de contrôle sémantique",
+      "apres": " sans mesure de déploiement (texte complet retrouvé à l'audit du 14 novembre 2026) : un plan de contrôle sémantique",
+      "motif": "Mettre à jour la mention de [21] (Debnath) après lecture du PDF complet (après la borne #644 et à l'intérieur de #362)."
+    },
+    {
+      "fichier": "chapitre-23-architecture-reference.md",
+      "avant": "Source secondaire, pour la même section :\n\n21. Debnath — The Enterprise Agentic Mesh: Architectural Convergence of Semantic Control Planes and Autonomous Multi-Agent Governance, International Journal of Scientific and Research Publications, 2025 — page de la revue non retrouvée; résumé repris d'un index d'articles.",
+      "apres": "Article en accès libre retrouvé lors de l'audit du 14 novembre 2026, pour la même section :\n\n21. [Nabin Debnath — The Enterprise Agentic Mesh: Architectural Convergence of Semantic Control Planes and Autonomous Multi-Agent Governance (*IJSRP*, vol. 15, n° 12, déc. 2025, pp. 4-11, DOI 10.29322/IJSRP.15.12.2025.p16803)](https://www.ijsrp.org/research-paper-1225/ijsrp-p16803.pdf) — article conceptuel (6 pages).",
+      "motif": "Remplacer la source [21] sans URL par le lien PDF direct et le DOI exact vérifiés via Crossref et lecture du PDF (à l'intérieur de #365)."
+    },
+    {
+      "fichier": "chapitre-23-architecture-reference.md",
+      "avant": "et [21] par le résumé qu'en donne un index d'articles, sans que la qualité de la revue ait été évaluée.",
+      "apres": "et [21] (DOI 10.29322/IJSRP.15.12.2025.p16803, PDF en accès libre vérifié à l'audit) provient d'une revue dont l'évaluation par les pairs n'a pas été vérifiée.",
+      "motif": "Actualiser la limite concernant [21] (Debnath) tout en conservant la réserve sur l'évaluation par les pairs de la revue (à l'intérieur de #366)."
+    },
+    {
+      "fichier": "chapitre-14-memoire.md",
+      "avant": "Son résumé ne donne aucun résultat chiffré sur la fidélité du transfert [26].",
+      "apres": "Dans des essais pilotes sur 30 questions sondes (paire Claude vers GPT-4), l'article rapporte une fidélité de réhydratation moyenne (RHF) décroissant de 0,91 à plein budget (8 192 jetons) à 0,71 à 25 % du budget (2 048 jetons), et un gain moyen de 2,4 fois entre modèles par rapport à une base sans mémoire à 0,35, sans validation externe en production [26].",
+      "motif": "Remplacer l'affirmation erronée « sans résultat chiffré » sur arXiv 2605.11032 [26] par les mesures RHF exactes vérifiées à la section 5.2 du PDF."
+    },
+    {
+      "fichier": "chapitre-20-cadriciels-orchestration.md",
+      "avant": "Le résumé annonce des solutions plus cohérentes que les systèmes multi-agents antérieurs en génie logiciel, sans chiffre.",
+      "apres": "Dans ses bancs d'essai de génération de code, l'article rapporte des taux Pass@1 de 85,9 % sur HumanEval et de 87,7 % sur MBPP.",
+      "motif": "Remplacer l'affirmation « sans chiffre » sur MetaGPT (arXiv 2308.00352 [14]) par les taux Pass@1 vérifiés dans le texte intégral."
+    },
+    {
+      "fichier": "chapitre-22-humain-dans-la-boucle.md",
+      "avant": "La revue date de 2011 et porte sur des aides à la décision, non sur des agents.",
+      "apres": "L'article a été publié en ligne en 2011 (numéro de 2012) et porte sur des aides à la décision, non sur des agents.",
+      "motif": "Aligner la formulation avec la date de publication en ligne (2011) et le numéro de revue (2012) du DOI 10.1136/amiajnl-2011-000089 [16] (à l'intérieur de #379)."
+    }
+  ]
+}

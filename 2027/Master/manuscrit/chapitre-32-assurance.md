@@ -222,9 +222,9 @@ Pages primaires lues le 11 novembre 2026 :
 6. [AIUC-1 — présentation de la norme](https://standard.aiuc-1.com/)
 7. [W3C Agent Conformance and Benchmarking Community Group](https://www.w3.org/community/agent-conformance/)
 8. [CSA — MAESTRO](https://cloudsecurityalliance.org/blog/2025/02/06/agentic-ai-threat-modeling-framework-maestro)
-9. [The Attacker Moves Second (arXiv 2510.09023)](https://arxiv.org/abs/2510.09023) — résumé.
-10. [AutoDojo (arXiv 2606.15057)](https://arxiv.org/abs/2606.15057) — résumé.
-11. [Adaptive Evaluation of Out-of-Band Defenses (arXiv 2606.26479)](https://arxiv.org/abs/2606.26479) — résumé.
+9. [The Attacker Moves Second (arXiv 2510.09023)](https://arxiv.org/abs/2510.09023) — prépublication, résumé puis extraits relus le 14 novembre 2026.
+10. [AutoDojo (arXiv 2606.15057)](https://arxiv.org/abs/2606.15057) — prépublication, résumé puis extraits relus le 14 novembre 2026.
+11. [Adaptive Evaluation of Out-of-Band Defenses (arXiv 2606.26479)](https://arxiv.org/abs/2606.26479) — prépublication, résumé puis extraits relus le 14 novembre 2026.
 12. [CSA — Agentic AI Red Teaming Guide](https://cloudsecurityalliance.org/artifacts/agentic-ai-red-teaming-guide) — page de présentation.
 
 Sources secondaires :
@@ -236,11 +236,12 @@ Sources secondaires :
 
 - Les sources [9], [10] et [11], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - Les pages ont été lues au moyen d'un outil qui en restitue une synthèse; une nuance a pu se perdre. Seul le texte de SP 800-207 a été lu directement.
-- Pour [9], [10] et [11], seuls les résumés ont été lus. Ce sont des prépublications; leur évaluation par les pairs n'a pas été vérifiée.
+- Pour [9], [10] et [11], ce sont des prépublications; leur évaluation par les pairs n'a pas été vérifiée.
 - La liste des contrôles d'AIUC-1 et le texte de ses livraisons trimestrielles n'ont pas été lus. Les nombres de scénarios de test sont ceux qu'annonce l'éditeur. L'activité d'assurance d'AIUC relève de la section 36.5.
 - Le caractère certifiable d'ISO/IEC 42001 et le statut de la liste OWASP reposent sur un billet de fournisseur [13], concordant avec les chapitres 31 et 35; les documents d'origine n'ont pas été lus.
 - La spécification ATF sur GitHub, le guide de tests adverses de la CSA et la page [14] n'ont pas été lus.
 - L'audit du 12 novembre 2026 a relu [1] (notice et texte), [3], [4], [5], [7], [10] et [11].
+- Lors de l'audit du 14 novembre 2026, [7] (W3C Agent Conformance and Benchmarking Community Group) a retourné HTTP 403 (protection Cloudflare); sa charte et ses livrables sont confirmés par recherche web.
 - Les lectures « pour un agent » de SP 800-207, les trois familles de règles, les quatre gestes de la section 32.2 et les cinq règles de la section 32.5 sont des déductions de ce chapitre.
 
 ## Mise en œuvre — Défense en profondeur : bacs à sable, garde-fous neuro-symboliques et coupe-circuits {.volet}
