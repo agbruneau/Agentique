@@ -18,6 +18,9 @@ Le détail (livrables, dates de gel, ordre de lecture, statut, limites) est dans
 
 ## Édition 2027
 
+- `Presentation.html` : page Web de présentation et de vulgarisation du Compendium 2027 (thème Black Dark Orange Brûlé, 8 thématiques d'intérêt, simulateurs interactifs, explorateur des 50 chapitres et 31 ADR); `index.html` y redirige.
+- `outils/verifier-presentation.mjs` : vérification automatisée sans tête (mise en page multi-écrans, contraste WCAG 2.1, intégrité des données et interactions).
+
 `CompendiumMaster.pdf` fusionne deux éditions d'origine du Compendium 2027, conservées telles quelles :
 
 - `Claude/` : édition C, 47 chapitres et 5 annexes (A à E) en Markdown. Ses chapitres gardent leur numéro et leur texte.

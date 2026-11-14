@@ -1,0 +1,2080 @@
+<!doctype html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="dark" />
+<meta name="author" content="André-Guy Bruneau M.Sc. IT" />
+<meta name="description" content="Page Web de présentation et de vulgarisation du Compendium 2027 — Interopérabilité et orchestration en entreprise agentique (1 097 pages, 10 parties, 50 chapitres, 31 ADR et 8 annexes)." />
+<title>Compendium 2027 — Comprendre l’entreprise agentique</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" />
+<style>
+  /* ================= SYSTÈME « BLACK DARK ORANGE BRÛLÉ » (WCAG AA/AAA) ================= */
+  :root {
+    /* Fonds : noir obsidienne et charbons chauds */
+    --bg-canvas: #050506;
+    --bg-surface-1: #0E0D0C;
+    --bg-surface-2: #161412;
+    --bg-surface-3: #211D1A;
+    --bg-glass: rgb(14 13 12 / 0.88);
+    --bg-tint: #23160F;
+
+    /* Bordures et reflets */
+    --border-subtle: rgb(255 236 220 / 0.10);
+    --border-strong: rgb(255 236 220 / 0.19);
+    --border-burnt: rgb(244 131 73 / 0.42);
+    --specular: inset 0 1px 0 0 rgb(255 236 220 / 0.08);
+
+    /* Encre : contrastes mesurés sur #211D1A -> #F7F3EE ~14,9:1, #CEC4BA ~9,7:1, #A4988D ~5,9:1 */
+    --text-primary: #F7F3EE;
+    --text-secondary: #CEC4BA;
+    --text-muted: #A4988D;
+
+    /* Palette Orange Brûlé : plein sombre (#A83A09, ratio >= 6,1:1 avec #FFF9F5) + accent lumineux (#F48349, >= 6,4:1 sur #211D1A) */
+    --burnt-solid: #A83A09;
+    --burnt-solid-hover: #8E3007;
+    --on-burnt: #FFF9F5;
+    --burnt-accent: #F48349;
+    --burnt-amber: #EEB469;
+    --burnt-deep: #5C2208;
+
+    /* États sémantiques à contraste validé */
+    --ok-text: #7BE0A4;
+    --ok-bg: #112218;
+    --warn-text: #EEB469;
+    --warn-bg: #241A0F;
+    --risk-text: #FC8884;
+    --risk-bg: #291313;
+
+    /* Typographie */
+    --sans: "Inter", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
+    --serif: "Instrument Serif", "Iowan Old Style", Georgia, "Times New Roman", serif;
+    --mono: "JetBrains Mono", "Cascadia Mono", Consolas, "SFMono-Regular", Menlo, monospace;
+
+    /* Rayons, rythmes et conteneurs */
+    --max-w: 1220px;
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html {
+    scroll-behavior: smooth;
+    background: var(--bg-canvas);
+    color: var(--text-secondary);
+    font-family: var(--sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+      radial-gradient(ellipse 80% 38% at 50% -6%, rgb(168 58 9 / 0.20), transparent 68%),
+      radial-gradient(ellipse 46% 30% at 92% 14%, rgb(244 131 73 / 0.08), transparent 70%),
+      var(--bg-canvas);
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.65;
+    overflow-x: clip;
+  }
+
+  ::selection { background: rgb(244 131 73 / 0.32); color: var(--text-primary); }
+  :focus-visible { outline: 2px solid var(--burnt-accent); outline-offset: 3px; border-radius: 6px; }
+
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+  }
+
+  .skip-link {
+    position: fixed; left: 1rem; top: -100px; z-index: 200;
+    background: var(--burnt-solid); color: var(--on-burnt);
+    padding: 0.65rem 1.1rem; border-radius: var(--radius-sm);
+    font-weight: 600; text-decoration: none;
+    transition: top 160ms var(--ease);
+  }
+  .skip-link:focus { top: 0.75rem; }
+
+  /* ================= BARRE DE PROGRESSION & NAVIGATION ================= */
+  .scroll-progress {
+    position: fixed; top: 0; left: 0; right: 0; height: 3px;
+    background: rgb(255 255 255 / 0.04); z-index: 120; pointer-events: none;
+  }
+  .scroll-progress > i {
+    display: block; height: 100%; width: 0%;
+    background: linear-gradient(90deg, var(--burnt-solid), var(--burnt-accent), var(--burnt-amber));
+    box-shadow: 0 0 12px rgb(244 131 73 / 0.65);
+  }
+
+  .topbar {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--bg-glass);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .topbar-inner {
+    max-width: var(--max-w); margin: 0 auto;
+    padding: 0.75rem 1.25rem;
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  }
+  .brand {
+    display: inline-flex; align-items: center; gap: 0.65rem;
+    color: var(--text-primary); text-decoration: none; font-weight: 700;
+    letter-spacing: -0.02em; font-size: 0.98rem; white-space: nowrap;
+  }
+  .brand-mark {
+    width: 28px; height: 28px; border-radius: 8px;
+    display: grid; place-items: center;
+    background: var(--burnt-solid); color: var(--on-burnt);
+    font-family: var(--mono); font-size: 0.76rem; font-weight: 700;
+    box-shadow: 0 0 18px rgb(168 58 9 / 0.45);
+  }
+  .nav-links {
+    display: flex; align-items: center; gap: 0.25rem; flex-wrap: wrap;
+  }
+  .nav-links a {
+    color: var(--text-secondary); text-decoration: none;
+    font-size: 0.86rem; font-weight: 500;
+    padding: 0.42rem 0.66rem; border-radius: var(--radius-sm);
+    transition: background 180ms var(--ease), color 180ms var(--ease);
+    white-space: nowrap;
+  }
+  .nav-links a:hover { background: var(--bg-surface-2); color: var(--text-primary); }
+  .nav-actions { display: flex; align-items: center; gap: 0.6rem; }
+  .menu-toggle {
+    display: none;
+    background: var(--bg-surface-2); color: var(--text-primary);
+    border: 1px solid var(--border-strong); border-radius: var(--radius-sm);
+    padding: 0.45rem 0.75rem; font: inherit; font-size: 0.88rem; font-weight: 600;
+    cursor: pointer;
+  }
+
+  @media (max-width: 1020px) {
+    .menu-toggle { display: inline-flex; align-items: center; gap: 0.4rem; }
+    .nav-links {
+      display: none; position: absolute; top: 100%; left: 0; right: 0;
+      background: var(--bg-surface-1); border-bottom: 1px solid var(--border-strong);
+      padding: 0.85rem 1.25rem 1.1rem; flex-direction: column; align-items: stretch;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links a { padding: 0.6rem 0.75rem; font-size: 0.95rem; }
+  }
+  @media (max-width: 560px) {
+    .topbar-inner { padding: 0.65rem 0.9rem; gap: 0.5rem; }
+    .brand { gap: 0.45rem; font-size: 0.9rem; }
+    .brand-mark { width: 24px; height: 24px; font-size: 0.7rem; }
+    .menu-toggle { padding: 0.38rem 0.62rem; font-size: 0.82rem; }
+    .nav-actions .btn-sm { padding: 0.38rem 0.62rem; font-size: 0.8rem; }
+    .hide-xs { display: none; }
+    .wrap { padding: 0 0.9rem; }
+  }
+
+  /* ================= BOUTONS & BADGES ================= */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+    padding: 0.65rem 1.15rem; border-radius: var(--radius-sm);
+    font-family: var(--sans); font-size: 0.9rem; font-weight: 600;
+    text-decoration: none; cursor: pointer; border: 1px solid transparent;
+    transition: background 180ms var(--ease), border-color 180ms var(--ease), transform 180ms var(--ease);
+    text-align: center; max-width: 100%;
+  }
+  .btn-primary {
+    background: var(--burnt-solid); color: var(--on-burnt);
+    box-shadow: 0 8px 24px rgb(168 58 9 / 0.34);
+  }
+  .btn-primary:hover { background: var(--burnt-solid-hover); transform: translateY(-1px); }
+  .btn-secondary {
+    background: var(--bg-surface-2); color: var(--text-primary);
+    border-color: var(--border-strong);
+  }
+  .btn-secondary:hover { background: var(--bg-surface-3); border-color: var(--border-burnt); }
+  .btn-sm { padding: 0.44rem 0.82rem; font-size: 0.83rem; }
+
+  .pill {
+    display: inline-flex; align-items: center; gap: 0.35rem;
+    padding: 0.22rem 0.62rem; border-radius: 999px;
+    font-size: 0.76rem; font-weight: 600; letter-spacing: 0.01em;
+    background: var(--bg-surface-3); color: var(--text-secondary);
+    border: 1px solid var(--border-subtle);
+  }
+  .pill-burnt {
+    background: var(--bg-tint); color: var(--burnt-accent);
+    border-color: var(--border-burnt);
+  }
+  .pill-solid {
+    background: var(--burnt-solid); color: var(--on-burnt); border-color: transparent;
+  }
+  .pill-ok { background: var(--ok-bg); color: var(--ok-text); border-color: rgb(123 224 164 / 0.28); }
+  .pill-warn { background: var(--warn-bg); color: var(--warn-text); border-color: rgb(238 180 105 / 0.32); }
+  .pill-risk { background: var(--risk-bg); color: var(--risk-text); border-color: rgb(252 136 132 / 0.3); }
+
+  code, .mono {
+    font-family: var(--mono); font-size: 0.88em;
+    background: var(--bg-surface-3); color: var(--burnt-amber);
+    padding: 0.1em 0.36em; border-radius: 5px;
+  }
+
+  /* ================= CONTENEURS & SECTIONS ================= */
+  .wrap { max-width: var(--max-w); margin: 0 auto; padding: 0 1.25rem; }
+  section { padding: 4.5rem 0; border-top: 1px solid var(--border-subtle); }
+  section.hero-section { border-top: 0; padding: 4.2rem 0 4.5rem; }
+
+  .kicker {
+    display: inline-flex; align-items: center; gap: 0.7rem;
+    margin: 0 0 0.85rem;
+    font-size: 0.8rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase;
+    color: var(--burnt-accent);
+  }
+  .kicker::before {
+    content: ""; width: 28px; height: 2px; border-radius: 2px;
+    background: linear-gradient(90deg, var(--burnt-accent), rgb(244 131 73 / 0.25));
+  }
+
+  h1, h2, h3, h4 {
+    margin: 0; color: var(--text-primary);
+    letter-spacing: -0.025em; line-height: 1.14;
+  }
+  h1 {
+    font-size: clamp(2.25rem, 5vw, 4rem); font-weight: 700;
+    letter-spacing: -0.035em; line-height: 1.05; max-width: 18ch;
+  }
+  h2 { font-size: clamp(1.65rem, 3.2vw, 2.55rem); font-weight: 680; max-width: 26ch; }
+  h3 { font-size: 1.22rem; font-weight: 650; }
+  h1 em, h2 em {
+    font-family: var(--serif); font-style: italic; font-weight: 400;
+    font-size: 1.12em; color: var(--burnt-amber); letter-spacing: -0.01em;
+  }
+  .lead {
+    margin: 1rem 0 0; max-width: 66ch;
+    font-size: clamp(1rem, 1.5vw, 1.16rem); line-height: 1.6;
+    color: var(--text-secondary);
+  }
+  .section-head { margin-bottom: 2.2rem; }
+
+  .card {
+    background: var(--bg-surface-1);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 1.4rem;
+    box-shadow: var(--specular);
+  }
+  .card-elev {
+    background: var(--bg-surface-2);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 1.35rem;
+    box-shadow: var(--specular);
+  }
+
+  /* ================= HÉROS ================= */
+  .hero-grid {
+    display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.9fr);
+    gap: 2.2rem; align-items: center;
+  }
+  .hero-cta { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.75rem; }
+  .hero-note {
+    margin-top: 1.1rem; font-size: 0.88rem; color: var(--text-muted);
+    max-width: 60ch;
+  }
+  .hero-thesis {
+    background: linear-gradient(160deg, var(--bg-surface-2), var(--bg-surface-1));
+    border: 1px solid var(--border-burnt);
+    border-radius: var(--radius-lg);
+    padding: 1.6rem;
+    box-shadow: var(--specular), 0 22px 48px rgb(0 0 0 / 0.55);
+  }
+  .hero-thesis-title {
+    font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--burnt-accent); font-weight: 700; margin-bottom: 0.65rem;
+  }
+  .hero-thesis p { margin: 0 0 1rem; color: var(--text-primary); font-size: 1.02rem; }
+  .hero-thesis ul { margin: 0; padding-left: 1.15rem; color: var(--text-secondary); font-size: 0.92rem; }
+  .hero-thesis li + li { margin-top: 0.45rem; }
+
+  .kpi-strip {
+    margin-top: 2.5rem;
+    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem;
+  }
+  .kpi-card {
+    background: var(--bg-surface-1);
+    border: 1px solid var(--border-subtle);
+    border-top: 2px solid var(--burnt-solid);
+    border-radius: var(--radius-md); padding: 1.15rem 1.25rem;
+  }
+  .kpi-val {
+    font-size: clamp(1.5rem, 2.6vw, 2.05rem); font-weight: 700;
+    color: var(--text-primary); letter-spacing: -0.025em;
+  }
+  .kpi-val span { color: var(--burnt-accent); }
+  .kpi-label { font-size: 0.9rem; font-weight: 600; color: var(--text-primary); margin-top: 0.25rem; }
+  .kpi-sub { font-size: 0.8rem; color: var(--text-muted); margin-top: 0.2rem; }
+
+  @media (max-width: 920px) {
+    .hero-grid { grid-template-columns: minmax(0, 1fr); }
+    .kpi-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 520px) {
+    .kpi-strip { grid-template-columns: minmax(0, 1fr); }
+  }
+
+  /* ================= COMPRENDRE EN 90 SECONDES ================= */
+  .vs-grid {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem;
+    margin-bottom: 1.75rem;
+  }
+  .vs-card { position: relative; }
+  .vs-card.target { border-color: var(--border-burnt); background: linear-gradient(180deg, var(--bg-surface-2), var(--bg-surface-1)); }
+  .vs-card ul { margin: 0.85rem 0 0; padding-left: 1.15rem; }
+  .vs-card li + li { margin-top: 0.45rem; }
+
+  .walls-grid {
+    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.15rem;
+    margin-bottom: 1.75rem;
+  }
+  .wall-num {
+    font-family: var(--mono); font-size: 0.8rem; font-weight: 700;
+    color: var(--burnt-accent); margin-bottom: 0.45rem;
+  }
+
+  .reality-panel {
+    background: var(--bg-surface-1); border: 1px solid var(--border-strong);
+    border-radius: var(--radius-md); padding: 1.5rem;
+  }
+  .reality-grid {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem 2rem;
+    margin-top: 1.15rem;
+  }
+  .bar-row { display: grid; gap: 0.35rem; }
+  .bar-head { display: flex; justify-content: space-between; gap: 0.75rem; font-size: 0.9rem; }
+  .bar-head strong { color: var(--text-primary); }
+  .bar-track {
+    height: 10px; border-radius: 999px; background: var(--bg-surface-3); overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%; border-radius: 999px;
+    background: linear-gradient(90deg, var(--burnt-solid), var(--burnt-accent));
+  }
+  .bar-note { font-size: 0.8rem; color: var(--text-muted); }
+
+  @media (max-width: 860px) {
+    .vs-grid, .walls-grid, .reality-grid { grid-template-columns: minmax(0, 1fr); }
+  }
+
+  /* ================= 8 THÉMATIQUES D'INTÉRÊT ================= */
+  .themes-layout {
+    display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.35fr); gap: 1.35rem;
+    align-items: start;
+  }
+  .themes-nav {
+    display: grid; gap: 0.55rem;
+  }
+  .theme-tab {
+    text-align: left; width: 100%;
+    background: var(--bg-surface-1); color: var(--text-secondary);
+    border: 1px solid var(--border-subtle); border-radius: var(--radius-md);
+    padding: 0.85rem 1rem; cursor: pointer; font-family: var(--sans);
+    display: grid; gap: 0.22rem;
+    transition: border-color 180ms var(--ease), background 180ms var(--ease);
+  }
+  .theme-tab:hover { background: var(--bg-surface-2); border-color: var(--border-strong); }
+  .theme-tab[aria-selected="true"] {
+    background: var(--bg-surface-2);
+    border-color: var(--burnt-accent);
+    box-shadow: inset 3px 0 0 var(--burnt-accent);
+  }
+  .theme-tab-top {
+    display: flex; align-items: center; justify-content: space-between; gap: 0.5rem;
+    font-size: 0.78rem; font-family: var(--mono); color: var(--burnt-accent); font-weight: 600;
+  }
+  .theme-tab-title { font-size: 0.96rem; font-weight: 650; color: var(--text-primary); }
+  .theme-tab-sub { font-size: 0.82rem; color: var(--text-muted); }
+
+  .theme-detail {
+    background: var(--bg-surface-2);
+    border: 1px solid var(--border-burnt);
+    border-radius: var(--radius-lg);
+    padding: 1.75rem;
+    box-shadow: var(--specular);
+  }
+  .theme-detail-head {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.65rem;
+    margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-subtle);
+  }
+  .theme-blocks { display: grid; gap: 1.1rem; margin-top: 1.15rem; }
+  .theme-block {
+    background: var(--bg-surface-1); border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md); padding: 1.05rem 1.15rem;
+  }
+  .theme-block-label {
+    font-size: 0.76rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em;
+    color: var(--burnt-accent); margin-bottom: 0.4rem;
+  }
+  .theme-block p { margin: 0; font-size: 0.94rem; }
+  .theme-detail-foot {
+    margin-top: 1.35rem; display: flex; flex-wrap: wrap; align-items: center;
+    justify-content: space-between; gap: 0.85rem;
+  }
+
+  @media (max-width: 960px) {
+    .themes-layout { grid-template-columns: minmax(0, 1fr); }
+  }
+
+  /* ================= SIMULATEURS INTERACTIFS ================= */
+  .labs-grid {
+    display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.35rem;
+    align-items: start;
+  }
+  .slider-group { display: grid; gap: 0.35rem; margin-top: 1rem; }
+  .slider-label { display: flex; justify-content: space-between; font-size: 0.9rem; font-weight: 600; color: var(--text-primary); }
+  input[type="range"] {
+    width: 100%; accent-color: var(--burnt-accent); cursor: pointer;
+    height: 6px; background: var(--bg-surface-3); border-radius: 999px;
+  }
+  .lusser-result {
+    margin-top: 1.15rem; padding: 1.1rem; border-radius: var(--radius-md);
+    background: var(--bg-surface-2); border: 1px solid var(--border-strong);
+  }
+  .lusser-big {
+    display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  }
+  .lusser-pct { font-size: 2.2rem; font-weight: 750; color: var(--burnt-accent); letter-spacing: -0.03em; }
+  .metr-box {
+    margin-top: 1.1rem; padding-top: 1rem; border-top: 1px solid var(--border-subtle);
+    font-size: 0.88rem;
+  }
+
+  .levels-tabs {
+    display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0.45rem;
+    margin-top: 1rem;
+  }
+  .lvl-btn {
+    padding: 0.55rem 0.4rem; border-radius: var(--radius-sm);
+    background: var(--bg-surface-2); color: var(--text-secondary);
+    border: 1px solid var(--border-subtle); font-family: var(--mono);
+    font-size: 0.86rem; font-weight: 700; cursor: pointer;
+    transition: all 160ms var(--ease);
+  }
+  .lvl-btn:hover { border-color: var(--border-burnt); color: var(--text-primary); }
+  .lvl-btn[aria-selected="true"] {
+    background: var(--burnt-solid); color: var(--on-burnt); border-color: transparent;
+  }
+  .lvl-panel {
+    margin-top: 1rem; padding: 1.15rem; border-radius: var(--radius-md);
+    background: var(--bg-surface-2); border: 1px solid var(--border-burnt);
+    display: grid; gap: 0.7rem;
+  }
+  .lvl-row { display: grid; grid-template-columns: 145px minmax(0, 1fr); gap: 0.65rem; font-size: 0.89rem; }
+  .lvl-row dt { color: var(--text-muted); font-weight: 600; }
+  .lvl-row dd { margin: 0; color: var(--text-primary); }
+  .hwm-note {
+    margin-top: 0.9rem; padding: 0.85rem 1rem; border-radius: var(--radius-sm);
+    background: var(--bg-tint); border-left: 3px solid var(--burnt-accent);
+    font-size: 0.86rem; color: var(--text-secondary);
+  }
+
+  @media (max-width: 960px) {
+    .labs-grid { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (max-width: 520px) {
+    .lvl-row { grid-template-columns: minmax(0, 1fr); gap: 0.15rem; }
+  }
+
+  /* ================= ARCHITECTURE 6 COUCHES + 2 PILIERS ================= */
+  .arch-wrap {
+    display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.9fr); gap: 1.35rem;
+    align-items: start;
+  }
+  .arch-diagram {
+    display: grid; grid-template-columns: 126px minmax(0, 1fr) 126px; gap: 0.65rem;
+    background: var(--bg-surface-1); border: 1px solid var(--border-strong);
+    border-radius: var(--radius-lg); padding: 1rem;
+  }
+  .arch-pillar {
+    writing-mode: horizontal-tb;
+    background: var(--bg-surface-2); border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md); padding: 0.85rem 0.65rem;
+    display: flex; flex-direction: column; justify-content: space-between; gap: 0.65rem;
+    text-align: left; cursor: pointer; font-family: var(--sans); color: var(--text-secondary);
+    transition: border-color 160ms var(--ease), background 160ms var(--ease);
+  }
+  .arch-pillar:hover, .arch-layer:hover {
+    border-color: var(--burnt-accent); background: var(--bg-surface-3);
+  }
+  .arch-pillar[aria-pressed="true"], .arch-layer[aria-pressed="true"] {
+    border-color: var(--burnt-accent);
+    background: linear-gradient(135deg, var(--bg-tint), var(--bg-surface-2));
+    box-shadow: 0 0 0 1px var(--burnt-accent);
+  }
+  .arch-layers { display: grid; gap: 0.55rem; }
+  .arch-layer {
+    text-align: left; width: 100%; cursor: pointer; font-family: var(--sans);
+    background: var(--bg-surface-2); border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-sm); padding: 0.72rem 0.9rem;
+    color: var(--text-secondary);
+    transition: border-color 160ms var(--ease), background 160ms var(--ease);
+  }
+  .arch-tag {
+    font-family: var(--mono); font-size: 0.72rem; font-weight: 700;
+    color: var(--burnt-accent); text-transform: uppercase; letter-spacing: 0.05em;
+  }
+  .arch-title { font-size: 0.92rem; font-weight: 680; color: var(--text-primary); margin-top: 0.15rem; }
+  .arch-sub { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.2rem; }
+  .arch-pillar-list {
+    margin: 0; padding: 0; list-style: none; display: grid; gap: 0.35rem;
+    font-size: 0.76rem; color: var(--text-muted);
+  }
+  .arch-inspector {
+    background: var(--bg-surface-2); border: 1px solid var(--border-burnt);
+    border-radius: var(--radius-lg); padding: 1.5rem;
+    box-shadow: var(--specular);
+  }
+  .arch-inspector dl { margin: 1rem 0 0; display: grid; gap: 0.8rem; }
+  .arch-inspector dt {
+    font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.06em; color: var(--burnt-accent); margin-bottom: 0.2rem;
+  }
+  .arch-inspector dd { margin: 0; font-size: 0.92rem; color: var(--text-secondary); }
+
+  @media (max-width: 1040px) {
+    .arch-wrap { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (max-width: 680px) {
+    .arch-diagram { grid-template-columns: minmax(0, 1fr); }
+    .arch-pillar-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+
+  .table-scroll {
+    margin-top: 1.75rem; overflow-x: auto;
+    border: 1px solid var(--border-subtle); border-radius: var(--radius-md);
+    background: var(--bg-surface-1);
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 0.9rem; min-width: 660px; }
+  th, td { padding: 0.8rem 1rem; text-align: left; border-bottom: 1px solid var(--border-subtle); vertical-align: top; }
+  th { background: var(--bg-surface-3); color: var(--text-primary); font-weight: 650; font-size: 0.84rem; }
+  tr:last-child td { border-bottom: 0; }
+  td strong { color: var(--text-primary); }
+
+  /* ================= FIL ROUGE GROUPE BORÉAL ================= */
+  .boreal-banner {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.85rem;
+    padding: 0.95rem 1.2rem; border-radius: var(--radius-md);
+    background: var(--warn-bg); border: 1px solid rgb(238 180 105 / 0.35);
+    margin-bottom: 1.5rem; font-size: 0.9rem;
+  }
+  .boreal-grid {
+    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.15rem;
+    margin-bottom: 1.35rem;
+  }
+  .boreal-incidents {
+    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.15rem;
+    margin-bottom: 1.35rem;
+  }
+  .target-strip {
+    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem;
+    background: linear-gradient(135deg, var(--bg-tint), var(--bg-surface-1));
+    border: 1px solid var(--border-burnt); border-radius: var(--radius-md); padding: 1.25rem;
+  }
+  .target-item strong { display: block; font-size: 1.35rem; color: var(--burnt-accent); }
+  @media (max-width: 860px) {
+    .boreal-grid, .boreal-incidents, .target-strip { grid-template-columns: minmax(0, 1fr); }
+  }
+
+  /* ================= CHRONOLOGIE 2024-2028 ================= */
+  .filter-bar { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.35rem; }
+  .chip-btn {
+    padding: 0.45rem 0.85rem; border-radius: 999px; cursor: pointer;
+    font-family: var(--sans); font-size: 0.85rem; font-weight: 600;
+    background: var(--bg-surface-2); color: var(--text-secondary);
+    border: 1px solid var(--border-subtle);
+    transition: all 160ms var(--ease);
+  }
+  .chip-btn:hover { border-color: var(--border-burnt); color: var(--text-primary); }
+  .chip-btn[aria-pressed="true"] {
+    background: var(--burnt-solid); color: var(--on-burnt); border-color: transparent;
+  }
+  .timeline-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 275px), 1fr)); gap: 1rem;
+  }
+  .tl-card {
+    background: var(--bg-surface-1); border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md); padding: 1.1rem; display: grid; gap: 0.45rem;
+    align-content: start;
+  }
+  .tl-card.deadline { border-color: var(--border-burnt); background: var(--bg-surface-2); }
+  .tl-date { font-family: var(--mono); font-size: 0.82rem; font-weight: 700; color: var(--burnt-accent); }
+  .tl-title { font-size: 0.96rem; font-weight: 650; color: var(--text-primary); }
+  .tl-desc { font-size: 0.85rem; color: var(--text-secondary); margin: 0; }
+
+  /* ================= PARCOURS PAR RÔLE & EXPLORATEUR ================= */
+  .roles-grid {
+    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  .role-btn {
+    text-align: left; padding: 0.95rem 1.05rem; border-radius: var(--radius-md);
+    background: var(--bg-surface-1); border: 1px solid var(--border-subtle);
+    color: var(--text-secondary); cursor: pointer; font-family: var(--sans);
+    transition: all 160ms var(--ease);
+  }
+  .role-btn:hover { background: var(--bg-surface-2); border-color: var(--border-strong); }
+  .role-btn[aria-selected="true"] {
+    background: var(--bg-surface-2); border-color: var(--burnt-accent);
+    box-shadow: inset 0 2px 0 var(--burnt-accent);
+  }
+  .role-btn strong { display: block; color: var(--text-primary); font-size: 0.96rem; margin-bottom: 0.2rem; }
+  .role-btn span { font-size: 0.82rem; color: var(--text-muted); }
+
+  .role-detail {
+    background: var(--bg-surface-2); border: 1px solid var(--border-burnt);
+    border-radius: var(--radius-md); padding: 1.35rem; margin-bottom: 2.5rem;
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;
+  }
+  .role-detail-copy { max-width: 72ch; }
+  .role-detail-copy p { margin: 0.45rem 0 0; font-size: 0.93rem; }
+
+  @media (max-width: 860px) { .roles-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 540px) { .roles-grid { grid-template-columns: minmax(0, 1fr); } }
+
+  .explorer-controls {
+    background: var(--bg-surface-1); border: 1px solid var(--border-strong);
+    border-radius: var(--radius-md); padding: 1.15rem; margin-bottom: 1.25rem;
+    display: grid; gap: 0.85rem;
+  }
+  .controls-row {
+    display: grid; grid-template-columns: minmax(0, 1.4fr) repeat(2, minmax(0, 0.8fr)) auto; gap: 0.75rem;
+    align-items: end;
+  }
+  .field { display: grid; gap: 0.3rem; }
+  .field label { font-size: 0.78rem; font-weight: 600; color: var(--text-muted); }
+  .field input, .field select {
+    width: 100%; padding: 0.56rem 0.75rem; border-radius: var(--radius-sm);
+    background: var(--bg-surface-2); color: var(--text-primary);
+    border: 1px solid var(--border-strong); font-family: var(--sans); font-size: 0.9rem;
+  }
+  .controls-meta {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.75rem;
+    padding-top: 0.45rem; border-top: 1px solid var(--border-subtle);
+  }
+  .check-wrap {
+    display: inline-flex; align-items: center; gap: 0.5rem; cursor: pointer;
+    font-size: 0.88rem; color: var(--text-primary);
+  }
+  .check-wrap input { width: 16px; height: 16px; accent-color: var(--burnt-accent); cursor: pointer; }
+
+  @media (max-width: 860px) {
+    .controls-row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  }
+  @media (max-width: 540px) {
+    .controls-row { grid-template-columns: minmax(0, 1fr); }
+  }
+
+  .chapters-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 1rem;
+  }
+  .ch-card {
+    background: var(--bg-surface-1); border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md); padding: 1.15rem;
+    display: flex; flex-direction: column; gap: 0.55rem;
+    transition: border-color 160ms var(--ease);
+  }
+  .ch-card:hover { border-color: var(--border-burnt); }
+  .ch-top { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 0.4rem; }
+  .ch-num { font-family: var(--mono); font-size: 0.8rem; font-weight: 700; color: var(--burnt-accent); }
+  .ch-title { font-size: 1.02rem; font-weight: 680; color: var(--text-primary); margin: 0; }
+  .ch-q { font-size: 0.86rem; font-style: italic; color: var(--burnt-amber); margin: 0; }
+  .ch-sum { font-size: 0.86rem; color: var(--text-secondary); margin: 0; line-height: 1.52; }
+  .ch-foot {
+    margin-top: auto; padding-top: 0.65rem; border-top: 1px solid var(--border-subtle);
+    display: grid; gap: 0.4rem;
+  }
+  .ch-volet { font-size: 0.8rem; color: var(--text-muted); }
+  .ch-adr-box {
+    background: var(--bg-surface-2); border-left: 2px solid var(--burnt-solid);
+    padding: 0.45rem 0.65rem; border-radius: 0 6px 6px 0; font-size: 0.8rem;
+  }
+  .ch-adr-box strong { font-family: var(--mono); color: var(--burnt-accent); }
+
+  .annexes-grid {
+    margin-top: 1.5rem;
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 0.95rem;
+  }
+  .proof-grid {
+    margin-top: 2rem;
+    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.9rem;
+  }
+  @media (max-width: 860px) { .proof-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 480px) { .proof-grid { grid-template-columns: minmax(0, 1fr); } }
+
+  /* ================= PIED DE PAGE ================= */
+  footer {
+    border-top: 1px solid var(--border-strong);
+    background: var(--bg-surface-1);
+    padding: 2.5rem 0;
+    font-size: 0.88rem; color: var(--text-muted);
+  }
+  .foot-inner {
+    max-width: var(--max-w); margin: 0 auto; padding: 0 1.25rem;
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;
+  }
+  .foot-links { display: flex; flex-wrap: wrap; gap: 1rem; }
+  .foot-links a { color: var(--burnt-accent); text-decoration: none; font-weight: 600; }
+  .foot-links a:hover { text-decoration: underline; }
+
+  @media print {
+    .topbar, .scroll-progress, .menu-toggle, .explorer-controls { display: none !important; }
+    body { background: #000 !important; color: #F7F3EE !important; }
+    section { padding: 1.5rem 0; break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#contenu">Aller au contenu principal</a>
+<div class="scroll-progress" aria-hidden="true"><i id="scrollBar"></i></div>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#accueil">
+      <span class="brand-mark" aria-hidden="true">27</span>
+      <span>Compendium 2027</span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mainNav">
+      Menu
+    </button>
+
+    <nav class="nav-links" id="mainNav" aria-label="Navigation principale">
+      <a href="#comprendre">En 90 secondes</a>
+      <a href="#thematiques">8 Thématiques</a>
+      <a href="#simulateurs">Simulateurs</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#boreal">Cas Boréal</a>
+      <a href="#chronologie">Échéances</a>
+      <a href="#parcours">Parcours</a>
+      <a href="#explorateur">50 Chapitres</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a class="btn btn-primary btn-sm" href="CompendiumMaster.pdf" target="_blank" rel="noopener">
+        PDF <span class="hide-xs">(1 097 p.)</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="contenu">
+  <!-- ================= 1. HÉROS ÉDITORIAL ================= -->
+  <section class="hero-section" id="accueil">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <p class="kicker">Compendium 2027 · Synthèse et vulgarisation</p>
+          <h1>Comprendre l’entreprise <em>agentique</em> de 2027</h1>
+          <p class="lead">
+            En 2027, la performance d’une organisation équipée d’agents d’intelligence artificielle ne vient pas d’un modèle plus brillant isolé dans son coin, mais de la solidité du <strong>tissu conjonctif</strong> qui relie ses agents, ses progiciels patrimoniaux, ses partenaires B2B, ses équipements industriels et ses superviseurs humains.
+          </p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="CompendiumMaster.pdf" target="_blank" rel="noopener">
+              Ouvrir le Compendium PDF (1 097 p.)
+            </a>
+            <a class="btn btn-secondary" href="#thematiques">Explorer les 8 thématiques</a>
+            <a class="btn btn-secondary" href="#explorateur">Parcourir les 50 chapitres</a>
+          </div>
+          <p class="hero-note">
+            Édition consolidée de novembre 2026 — André-Guy Bruneau, M.Sc. IT. Synthèse accessible d’un ouvrage de référence technique, juridique et scientifique.
+          </p>
+        </div>
+
+        <aside class="hero-thesis" aria-label="Thèse centrale de l'ouvrage">
+          <div class="hero-thesis-title">La thèse en trois idées simples</div>
+          <p>
+            Traiter les modèles de langage comme des moteurs remplaçables à obsolescence rapide, et investir dans une infrastructure durable autour d’eux.
+          </p>
+          <ul>
+            <li><strong>Enveloppe déterministe :</strong> sortir du <em>prompt</em> les règles critiques, l’état et les transactions pour les confier à du code durable et auditable.</li>
+            <li><strong>Standards ouverts stratifiés :</strong> éviter les silos d’éditeurs grâce à MCP (agent-outil), A2A v1.0 (agent-agent) et Apache Ossie (sens métier).</li>
+            <li><strong>Lucidité sur les preuves :</strong> distinguer ce qui est spécifié ou annoncé de ce qui est réellement mesuré en production.</li>
+          </ul>
+        </aside>
+      </div>
+
+      <div class="kpi-strip" aria-label="Repères vérifiés du Compendium 2027">
+        <div class="kpi-card">
+          <div class="kpi-val">1 097 <span>pages</span></div>
+          <div class="kpi-label">10 parties · 50 chapitres</div>
+          <div class="kpi-sub">31 volets « Mise en œuvre » et 8 annexes (A à H)</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-val">31 <span>ADR</span></div>
+          <div class="kpi-label">Décisions d’architecture</div>
+          <div class="kpi-sub">Invariants techniques ADR-001 à ADR-031 et grille de 75 points</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-val">1 033 <span>sources</span></div>
+          <div class="kpi-label">789 (ch. 1–47) + 244 (partie X)</div>
+          <div class="kpi-sub">Spécifications, lois, arXiv, conférences et documentation</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-val">2,2 <span>%</span></div>
+          <div class="kpi-label">Erreur au recollationnement</div>
+          <div class="kpi-sub">Audit de 182 chiffres vérifiables tirés au hasard (14 nov. 2026)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 2. COMPRENDRE EN 90 SECONDES ================= -->
+  <section id="comprendre">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Mise en perspective</p>
+        <h2>Pourquoi passer du clavardoir à l’agent change <em>tout</em></h2>
+        <p class="lead">
+          Entre 2023 et 2025, un copilote se contentait de suggérer du texte qu’un humain lisait et recopiait. Dès qu’un agent appuie lui-même sur les boutons du système d’information, les règles d’ingénierie basculent.
+        </p>
+      </div>
+
+      <div class="vs-grid">
+        <article class="card vs-card">
+          <span class="pill">Hier · 2023–2025 (Niveau L1)</span>
+          <h3 style="margin-top:0.75rem;">L’assistant conversationnel synchrone</h3>
+          <p style="margin:0.45rem 0 0;">
+            L’humain reste le seul point d’intégration : il joue le rôle de « presse-papiers vivant » entre la fenêtre de dialogue et l’ERP, le CRM ou la billetterie.
+          </p>
+          <ul>
+            <li>Exécution synchrone déclenchée à la main.</li>
+            <li>Lecture seule ou brouillon textuel relu par une personne.</li>
+            <li>Une hallucination reste bloquée par l’opérateur humain avant d’écrire.</li>
+          </ul>
+        </article>
+
+        <article class="card vs-card target">
+          <span class="pill pill-solid">Cible · 2027 (Niveaux L2 à L4)</span>
+          <h3 style="margin-top:0.75rem;">L’agent d’exécution asynchrone</h3>
+          <p style="margin:0.45rem 0 0;">
+            L’agent planifie plusieurs étapes, invoque des outils, délègue à d’autres agents spécialisés, garde un état et écrit directement dans les systèmes d’enregistrement.
+          </p>
+          <ul>
+            <li>Exécution sur plusieurs heures ou jours, pilotée par événements.</li>
+            <li>Supervision humaine par exception (HOTL) ou approbation préalable (HITL).</li>
+            <li>Sans garde-fous, une erreur plausible se propage silencieusement en chaîne.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="walls-grid">
+        <article class="card-elev">
+          <div class="wall-num">RUPTURE 01 · SILOS</div>
+          <h3>Des îlots d’agents incompatibles</h3>
+          <p style="margin:0.45rem 0 0; font-size:0.92rem;">
+            Salesforce, ServiceNow, SAP, Microsoft et Workday livrent chacun leurs propres agents. Sans langage commun, on remplace des silos d’applications par des silos d’agents incapables de coopérer.
+          </p>
+        </article>
+        <article class="card-elev">
+          <div class="wall-num">RUPTURE 02 · FIABILITÉ</div>
+          <h3>Des pannes silencieuses et cumulatives</h3>
+          <p style="margin:0.45rem 0 0; font-size:0.92rem;">
+            Un logiciel classique plante franchement (erreur HTTP 500). Un agent défaillant rédige une justification convaincante qui trompe l’agent suivant (OWASP ASI08 — défaillances en cascade).
+          </p>
+        </article>
+        <article class="card-elev">
+          <div class="wall-num">RUPTURE 03 · ÉCHÉANCES</div>
+          <h3>Le droit verrouille l’agenda 2027</h3>
+          <p style="margin:0.45rem 0 0; font-size:0.92rem;">
+            Loi 25 déjà active au Québec, BSIF E-23 et ligne directrice AMF au 1<sup>er</sup> mai 2027 au Canada, et EU AI Act annexe III le 2 décembre 2027 : l’imputabilité et la traçabilité ne se bricolent pas après coup.
+          </p>
+        </article>
+      </div>
+
+      <div class="reality-panel" aria-label="Faits mesurés contre discours marketing">
+        <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:0.5rem;">
+          <h3>Ce que montrent les mesures réelles face au battage (chap. 4, 42, 48 et 50)</h3>
+          <span class="pill pill-burnt">Lucidité empirique</span>
+        </div>
+        <div class="reality-grid">
+          <div class="bar-row">
+            <div class="bar-head"><span>Usage de l’IA, toutes formes confondues (Canada · StatCan T2 2026)</span><strong>19,2 %</strong></div>
+            <div class="bar-track"><div class="bar-fill" style="width:19.2%;"></div></div>
+            <div class="bar-note">Concordant avec l’UE (20,0 %, Eurostat) et les É.-U. (19,8 %, Census Bureau) : environ 1 entreprise sur 5.</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-head"><span>Grandes firmes (≥ 1 G$ US) mettant des agents à l’échelle dans ≥ 1 fonction</span><strong>40 % vs 22 %</strong></div>
+            <div class="bar-track"><div class="bar-fill" style="width:40%;"></div></div>
+            <div class="bar-note">Enquête déclarative McKinsey 2026 (22 % chez les plus petites); part voyant un effet EBIT stable à 37 %.</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-head"><span>Agents en production à moins de 10 étapes avant intervention humaine</span><strong>68 %</strong></div>
+            <div class="bar-track"><div class="bar-fill" style="width:68%;"></div></div>
+            <div class="bar-note">Étude MAP (données 2025) : 16 cas sur 20 suivent un workflow prédéfini; 47 % font moins de 5 étapes.</div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-head"><span>Déploiements documentés de MCP / A2A en production par les pairs</span><strong>0 cas</strong></div>
+            <div class="bar-track"><div class="bar-fill" style="width:2%;"></div></div>
+            <div class="bar-note">Chap. 42 &amp; 48 : un seul grand déploiement lu avec mesure sur trafic réel (Nubank, agents étroits), aucun de MCP/A2A.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 3. LES 8 THÉMATIQUES D'INTÉRÊT ================= -->
+  <section id="thematiques">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Cartographie thématique</p>
+        <h2>Les huit <em>thématiques</em> d’intérêt du Compendium 2027</h2>
+        <p class="lead">
+          Les 50 chapitres et 8 annexes du volume se condensent en huit axes structurants. Sélectionnez une thématique pour en lire l’explication vulgarisée, les mécanismes prescrits et les limites constatées.
+        </p>
+      </div>
+
+      <div class="themes-layout">
+        <div class="themes-nav" id="themesNav" role="tablist" aria-label="Sélection des huit thématiques d'intérêt"></div>
+        <article class="theme-detail" id="themeDetail" role="tabpanel" aria-live="polite"></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 4. SIMULATEURS INTERACTIFS ================= -->
+  <section id="simulateurs">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Vulgarisation interactive</p>
+        <h2>Deux <em>simulateurs</em> pour saisir les lois du domaine</h2>
+        <p class="lead">
+          Testez vous-même pourquoi l’enchaînement probabiliste s’effondre vite sans enveloppe déterministe, et comment l’échelle normative L0–L4 arbitre l’autonomie d’un agent.
+        </p>
+      </div>
+
+      <div class="labs-grid">
+        <!-- Labo A : Loi de Lusser -->
+        <article class="card">
+          <span class="pill pill-burnt">Simulateur A · Loi de Lusser (R = pⁿ)</span>
+          <h3 style="margin-top:0.75rem;">Pourquoi les longues chaînes autonomes déraillent</h3>
+          <p style="margin:0.45rem 0 0; font-size:0.91rem;">
+            Même à 94 % de précision par étape, une suite non encadrée de dix délégations multiplie les risques d’erreur en cascade jusqu’à échouer près d’une fois sur deux.
+          </p>
+
+          <div class="slider-group">
+            <div class="slider-label">
+              <label for="lusserP">Fiabilité par étape (p)</label>
+              <span class="mono" id="lusserPVal">94,0 %</span>
+            </div>
+            <input id="lusserP" type="range" min="80" max="99.5" step="0.5" value="94" />
+          </div>
+
+          <div class="slider-group">
+            <div class="slider-label">
+              <label for="lusserN">Nombre d’étapes autonomes enchaînées (n)</label>
+              <span class="mono" id="lusserNVal">10 étapes</span>
+            </div>
+            <input id="lusserN" type="range" min="1" max="25" step="1" value="10" />
+          </div>
+
+          <div class="lusser-result" aria-live="polite">
+            <div class="lusser-big">
+              <div>
+                <div style="font-size:0.82rem; color:var(--text-muted); font-weight:600;">Succès sans erreur sur la chaîne</div>
+                <div class="lusser-pct" id="lusserOut">53,9 %</div>
+              </div>
+              <span class="pill pill-warn" id="lusserBadge">Risque élevé en production</span>
+            </div>
+            <div class="bar-track" style="margin-top:0.75rem;">
+              <div class="bar-fill" id="lusserBar" style="width:53.9%;"></div>
+            </div>
+            <p id="lusserExplain" style="margin:0.75rem 0 0; font-size:0.87rem;">
+              À 94 % par étape sur 10 sauts, plus de 46 % des exécutions dévient. La solution du chapitre 17 : confier le séquencement à un moteur déterministe et vérifier chaque sortie avant l’étape suivante.
+            </p>
+            <div class="metr-box">
+              <strong>Repère METR (chap. 49) :</strong> le dernier modèle mesuré tient environ <strong>17,4 h</strong> à 50 % de réussite, mais tombe à <strong>3,1 h</strong> à 80 % (5 à 6 fois plus court). Ce qui borne un agent en production est le prix de la fiabilité.
+            </div>
+          </div>
+        </article>
+
+        <!-- Labo B : Échelle L0 - L4 -->
+        <article class="card">
+          <span class="pill pill-burnt">Simulateur B · Échelle d’autonomie L0–L4</span>
+          <h3 style="margin-top:0.75rem;">Qui décide et à quelles conditions ?</h3>
+          <p style="margin:0.45rem 0 0; font-size:0.91rem;">
+            Dans le Compendium 2027, L4 n’est pas « supérieur » à L2 : le niveau se choisit selon la gravité et la <strong>réversibilité</strong> de l’action (section 0.4).
+          </p>
+
+          <div class="levels-tabs" id="levelsTabs" role="tablist" aria-label="Niveaux d'autonomie L0 à L4"></div>
+          <div class="lvl-panel" id="levelDetail" role="tabpanel" aria-live="polite"></div>
+
+          <div class="hwm-note">
+            <strong>Règle du maillon le plus élevé (High-Water Mark Rule) :</strong> si un assistant en lecture seule (L1) transmet un résumé non filtré à un agent qui écrit dans l’ERP (L3), l’ensemble hérite immédiatement des exigences de sécurité et de conformité du niveau <strong>L3</strong>.
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 5. ARCHITECTURE DE RÉFÉRENCE 6 COUCHES ================= -->
+  <section id="architecture">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Modèle de référence (fig. 0.1)</p>
+        <h2>Six <em>couches</em> composables et deux piliers transversaux</h2>
+        <p class="lead">
+          Cliquez sur n’importe quelle couche horizontale ou l’un des deux piliers latéraux pour comprendre son rôle concret, les standards associés et ce qui casse si on l’oublie.
+        </p>
+      </div>
+
+      <div class="arch-wrap">
+        <div class="arch-diagram" role="region" aria-label="Schéma interactif d'architecture en 6 couches et 2 piliers">
+          <button class="arch-pillar" id="arch-left" type="button" data-arch="left" aria-pressed="false">
+            <div>
+              <div class="arch-tag">Pilier gauche</div>
+              <div class="arch-title">Confiance zéro &amp; NHI</div>
+            </div>
+            <ul class="arch-pillar-list">
+              <li>SPIFFE / SPIRE</li>
+              <li>W3C DIDs / VCs</li>
+              <li>OAuth 2.1 OBO</li>
+              <li>RFC 8693 (act/sub)</li>
+              <li>CIBA asynchrone</li>
+              <li>OWASP ASI01–10</li>
+              <li>Cedar / OPA PDP</li>
+              <li>OpenSandbox</li>
+              <li>Pinning MCP</li>
+              <li>Kill switch SOC</li>
+            </ul>
+          </button>
+
+          <div class="arch-layers">
+            <button class="arch-layer" type="button" data-arch="c6" aria-pressed="false">
+              <div class="arch-tag">Couche 6 · Gouvernance &amp; Commerce B2B</div>
+              <div class="arch-title">Conformité, mandats financiers &amp; contrats</div>
+              <div class="arch-sub">ISO/IEC 42001 · BSIF E-23 · Loi 25 · EU AI Act · AP2 · x402 · EDC/vLEI</div>
+            </button>
+            <button class="arch-layer" type="button" data-arch="c5" aria-pressed="false">
+              <div class="arch-tag">Couche 5 · Interaction Humain-Agent</div>
+              <div class="arch-title">Supervision HITL / HOTL &amp; interfaces déclaratives</div>
+              <div class="arch-sub">AG-UI · A2UI / MCP-UI · WebRTC / SIP · anti-biais ASI09</div>
+            </button>
+            <button class="arch-layer" type="button" data-arch="c4" aria-pressed="true">
+              <div class="arch-tag">Couche 4 · Orchestration Hybride &amp; Durabilité</div>
+              <div class="arch-title">Contrôle de flux, reprise sur panne &amp; Saga</div>
+              <div class="arch-sub">Temporal · Restate · Kafka · Solace · BPMN · Compensations</div>
+            </button>
+            <button class="arch-layer" type="button" data-arch="c3" aria-pressed="false">
+              <div class="arch-tag">Couche 3 · Coordination Horizontale</div>
+              <div class="arch-title">Délégation inter-agents &amp; fédération SaaS</div>
+              <div class="arch-sub">A2A v1.0 (Agent Cards) · AGNTCY (OASF, SLIM/MLS) · Fédération</div>
+            </button>
+            <button class="arch-layer" type="button" data-arch="c2" aria-pressed="false">
+              <div class="arch-tag">Couche 2 · Sémantique &amp; Mémoire</div>
+              <div class="arch-title">Sens métier partagé, ontologies &amp; graphes bi-temporels</div>
+              <div class="arch-sub">Apache Ossie · Ontologies causales · Graphiti · Letta</div>
+            </button>
+            <button class="arch-layer" type="button" data-arch="c1" aria-pressed="false">
+              <div class="arch-tag">Couche 1 · Connectivité &amp; Plan de données</div>
+              <div class="arch-title">Outils, passerelles AI-natives, patrimoine &amp; IT/OT</div>
+              <div class="arch-sub">MCP · Agent Skills · WebMCP · agentgateway · KV-cache · CUA · OPC UA</div>
+            </button>
+          </div>
+
+          <button class="arch-pillar" id="arch-right" type="button" data-arch="right" aria-pressed="false">
+            <div>
+              <div class="arch-tag">Pilier droit</div>
+              <div class="arch-title">AgentOps &amp; FinOps</div>
+            </div>
+            <ul class="arch-pillar-list">
+              <li>OpenTelemetry</li>
+              <li>Traces gen_ai.*</li>
+              <li>Agent Registry</li>
+              <li>OpenEnv / τ-bench</li>
+              <li>Shadow &amp; Canary</li>
+              <li>Chaos agentique</li>
+              <li>Budgets jetons</li>
+              <li>Cost-per-Outcome</li>
+              <li>Routage SLM/LLM</li>
+              <li>Distillation</li>
+            </ul>
+          </button>
+        </div>
+
+        <aside class="arch-inspector" id="archInspector" aria-live="polite"></aside>
+      </div>
+
+      <div class="table-scroll" aria-label="Les sept ruptures architecturales">
+        <table>
+          <thead>
+            <tr>
+              <th>Axe d’architecture</th>
+              <th>Prototype hérité (2024–2025)</th>
+              <th>Cible de production (2027)</th>
+              <th>Parties</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Interaction</strong></td>
+              <td>Clavardage synchrone validé à la main</td>
+              <td>Asynchrone par événements, supervision HOTL</td>
+              <td>I &amp; IV</td>
+            </tr>
+            <tr>
+              <td><strong>Outils &amp; pairs</strong></td>
+              <td>Connecteurs REST ad hoc, prompts collés</td>
+              <td>MCP + Agent Skills (vertical) &amp; A2A v1.0 + AGNTCY (horizontal)</td>
+              <td>II</td>
+            </tr>
+            <tr>
+              <td><strong>Contexte &amp; mémoire</strong></td>
+              <td>RAG vectoriel plat, historique tronqué</td>
+              <td>Apache Ossie, ontologies et graphes bi-temporels (Graphiti)</td>
+              <td>III</td>
+            </tr>
+            <tr>
+              <td><strong>Contrôle &amp; état</strong></td>
+              <td>Le LLM décide seul du flux en RAM volatile</td>
+              <td>Moteurs durables (Temporal, Restate), Kafka/Solace et Saga</td>
+              <td>IV</td>
+            </tr>
+            <tr>
+              <td><strong>SaaS, legacy &amp; OT</strong></td>
+              <td>Agents captifs, mainframes et usines ignorés</td>
+              <td>Gravité des données, CUA confinés, sas OPC UA / jumeau numérique</td>
+              <td>V &amp; IX</td>
+            </tr>
+            <tr>
+              <td><strong>Identité &amp; sécurité</strong></td>
+              <td>Clés d’API statiques ou jeton humain brut</td>
+              <td>SPIFFE/DID, OAuth 2.1 OBO (RFC 8693), OpenSandbox, Cedar/OPA</td>
+              <td>VI &amp; IX</td>
+            </tr>
+            <tr>
+              <td><strong>Opérations &amp; coûts</strong></td>
+              <td>Journaux texte locaux, 10 tests manuels</td>
+              <td>Traces OTel <code>gen_ai.*</code>, τ-bench (passᵏ), coût par résultat, E-23 / ISO 42001</td>
+              <td>VI à IX</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 6. CAS FIL ROUGE GROUPE BORÉAL ================= -->
+  <section id="boreal">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Étude fil rouge</p>
+        <h2>Concrétiser la transformation : <em>Groupe Boréal Inc.</em></h2>
+        <p class="lead">
+          Les 31 volets « Mise en œuvre » suivent la modernisation complète d’un conglomérat basé à Montréal (14 500 employés, 6,8 G$ CAD de chiffre d’affaires) confronté aux réalités des systèmes patrimoniaux et réglementés.
+        </p>
+      </div>
+
+      <div class="boreal-banner" role="note">
+        <div>
+          <span class="pill pill-warn" style="margin-right:0.5rem;">Cas fictif · Section 0.5</span>
+          <strong>Avertissement de méthode :</strong> Groupe Boréal Inc., ses trois divisions et tous ses chiffres (y compris ceux dits « homologués » dans les volets) sont une fiction pédagogique illustrant des ordres de grandeur réalistes.
+        </div>
+      </div>
+
+      <div class="boreal-grid">
+        <article class="card">
+          <span class="pill">BEL · 3,6 G$ CAD</span>
+          <h3 style="margin-top:0.65rem;">Équipements &amp; Logistique</h3>
+          <p style="margin:0.45rem 0 0; font-size:0.9rem;">
+            4 usines (Québec, Ontario, Allemagne) et 9 centres logistiques. Socle : SAP S/4HANA (Joule), automates en OPC UA / MQTT, courtiers Kafka &amp; Solace, EDI X12.
+          </p>
+        </article>
+        <article class="card">
+          <span class="pill pill-burnt">BCA · 1,9 G$ CAD</span>
+          <h3 style="margin-top:0.65rem;">Capital &amp; Assurances</h3>
+          <p style="margin:0.45rem 0 0; font-size:0.9rem;">
+            Financement et bris de machine sous surveillance BSIF E-23 et Loi 25. Socle : cœur IBM i (AS/400) sans API REST modernes, Guidewire, Workday, Snowflake, Entra ID.
+          </p>
+        </article>
+        <article class="card">
+          <span class="pill">BSN · 1,3 G$ CAD</span>
+          <h3 style="margin-top:0.65rem;">Services Numériques</h3>
+          <p style="margin:0.45rem 0 0; font-size:0.9rem;">
+            Télématique sur 180 000 machines chez 22 000 clients (Amérique du Nord et Europe, sous EU AI Act). Socle : Salesforce Agentforce, ServiceNow, Copilot Studio, Kubernetes.
+          </p>
+        </article>
+      </div>
+
+      <div class="boreal-incidents">
+        <article class="card-elev">
+          <span class="pill pill-risk">Incident financier</span>
+          <h3 style="margin-top:0.65rem;">41 000 $ CAD brûlés un dimanche</h3>
+          <p style="margin:0.4rem 0 0; font-size:0.89rem;">
+            Un prototype d’achat BEL, piégé dans une boucle de réessai sur erreur <code>HTTP 429</code>, a consommé des jetons frontière pendant 11 heures avant détection le lundi matin.
+          </p>
+        </article>
+        <article class="card-elev">
+          <span class="pill pill-risk">Incident de conformité</span>
+          <h3 style="margin-top:0.65rem;">Jeton partagé hors audit</h3>
+          <p style="margin:0.4rem 0 0; font-size:0.89rem;">
+            Sur 47 initiatives recensées, 19 étaient des agents fantômes (<em>Shadow AI</em>). Un assistant BCA lisait des dossiers RH et sinistres via un compte de service sans identité du demandeur.
+          </p>
+        </article>
+        <article class="card-elev">
+          <span class="pill pill-warn">Cloisonnement opérationnel</span>
+          <h3 style="margin-top:0.65rem;">46 heures de ressaisie entre 4 silos</h3>
+          <p style="margin:0.4rem 0 0; font-size:0.89rem;">
+            Lors d’une alerte vibratoire sur un compresseur, 4 agents locaux existaient (BSN, ServiceNow, BCA, SAP) mais ne se parlaient pas : 3 humains recopiaient les numéros de série à la main.
+          </p>
+        </article>
+      </div>
+
+      <div class="target-strip" aria-label="Objectifs de la Fabrique Agentique Boréal">
+        <div class="target-item">
+          <strong>&lt; 25 min</strong>
+          <span>Délai d’intervention prédictive de bout en bout sous autonomie supervisée L3 (contre 46 h).</span>
+        </div>
+        <div class="target-item">
+          <strong>−55 %</strong>
+          <span>Réduction cible du coût d’inférence par dossier via routage SLM/LLM et affinité KV-cache.</span>
+        </div>
+        <div class="target-item">
+          <strong>Triple homologation</strong>
+          <span>Conformité croisée BSIF E-23 / Loi 25 / ISO/IEC 42001 avec passeport 75 points (annexe G).</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 7. LIGNE DU TEMPS 2024-2028 ================= -->
+  <section id="chronologie">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Calendrier réglementaire et normatif</p>
+        <h2>Trois horloges désynchronisées : <em>2024–2028</em></h2>
+        <p class="lead">
+          Les plateformes livrent au trimestre, les standards se stabilisent à l’année et les régulateurs fixent des échéances fermes. Filtrer les jalons tirés de l’annexe D :
+        </p>
+      </div>
+
+      <div class="filter-bar" id="timelineFilters" role="group" aria-label="Filtres de la ligne du temps">
+        <button class="chip-btn" type="button" data-tl="all" aria-pressed="true">Tout afficher</button>
+        <button class="chip-btn" type="button" data-tl="standards" aria-pressed="false">Standards &amp; protocoles</button>
+        <button class="chip-btn" type="button" data-tl="canada" aria-pressed="false">Canada &amp; Québec</button>
+        <button class="chip-btn" type="button" data-tl="monde" aria-pressed="false">UE &amp; International</button>
+      </div>
+
+      <div class="timeline-grid" id="timelineGrid"></div>
+    </div>
+  </section>
+
+  <!-- ================= 8. PARCOURS PAR RÔLE ================= -->
+  <section id="parcours">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Lecture ciblée</p>
+        <h2>Six <em>parcours</em> selon votre mandat</h2>
+        <p class="lead">
+          Un ouvrage de 1 097 pages ne se lit pas forcément de la première à la dernière page. Choisissez votre rôle pour obtenir votre question directrice, l’ordre prioritaire et filtrer l’explorateur.
+        </p>
+      </div>
+
+      <div class="roles-grid" id="rolesGrid" role="tablist" aria-label="Sélection d'un parcours de lecture par rôle"></div>
+      <div class="role-detail" id="roleDetail" role="tabpanel" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- ================= 9. EXPLORATEUR DES 50 CHAPITRES & 8 ANNEXES ================= -->
+  <section id="explorateur">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Index interactif et vulgarisé</p>
+        <h2>Explorer les <em>50 chapitres</em>, 31 ADR et 8 annexes</h2>
+        <p class="lead">
+          Chaque chapitre associe un exposé sourcé (question directrice, grille de décision, limites) et, pour 28 d’entre eux, un ou plusieurs volets « Mise en œuvre » avec extraits techniques et fiche ADR.
+        </p>
+      </div>
+
+      <div class="explorer-controls">
+        <div class="controls-row">
+          <div class="field">
+            <label for="searchInput">Rechercher (titre, question, protocole, ADR, mot-clé)</label>
+            <input id="searchInput" type="search" placeholder="Ex. MCP, Loi 25, Saga, ADR-012, Temporal, Ossie..." />
+          </div>
+          <div class="field">
+            <label for="partSelect">Partie (I à X)</label>
+            <select id="partSelect">
+              <option value="all">Toutes les parties (I–X)</option>
+              <option value="I">Partie I — Fondements (1–4)</option>
+              <option value="II">Partie II — Protocoles (5–11)</option>
+              <option value="III">Partie III — Sémantique &amp; contexte (12–15)</option>
+              <option value="IV">Partie IV — Orchestration (16–22)</option>
+              <option value="V">Partie V — Architecture &amp; plateformes (23–28)</option>
+              <option value="VI">Partie VI — Confiance &amp; sécurité (29–34)</option>
+              <option value="VII">Partie VII — Gouvernance &amp; droit (35–39)</option>
+              <option value="VIII">Partie VIII — Économie &amp; modèle op. (40–43)</option>
+              <option value="IX">Partie IX — Approfondissements (44–47)</option>
+              <option value="X">Partie X — Recherche scientifique (48–50)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="themeSelect">Thématique d’intérêt</label>
+            <select id="themeSelect">
+              <option value="all">Toutes les thématiques (T1–T8)</option>
+              <option value="T1">T1 — Copilote à agent &amp; paradoxe</option>
+              <option value="T2">T2 — Découplage déterministe</option>
+              <option value="T3">T3 — Tissu conjonctif &amp; silos</option>
+              <option value="T4">T4 — Sémantique, contexte &amp; mémoire</option>
+              <option value="T5">T5 — Confiance zéro, NHI &amp; défense</option>
+              <option value="T6">T6 — Droit 2027 &amp; souveraineté</option>
+              <option value="T7">T7 — FinOps, HOTL &amp; distillation</option>
+              <option value="T8">T8 — Science, veille &amp; marché</option>
+            </select>
+          </div>
+          <button class="btn btn-secondary" id="resetFilters" type="button">Réinitialiser</button>
+        </div>
+
+        <div class="controls-meta">
+          <div style="display:flex; flex-wrap:wrap; align-items:center; gap:0.85rem;">
+            <label class="check-wrap">
+              <input id="onlyVolets" type="checkbox" />
+              <span>Seulement les chapitres avec volet « Mise en œuvre » / ADR (28)</span>
+            </label>
+            <span class="pill pill-burnt" id="activeRoleBadge" hidden></span>
+          </div>
+          <div class="mono" id="chapterCount" aria-live="polite" style="font-size:0.85rem; color:var(--burnt-accent);">
+            50 / 50 chapitres affichés
+          </div>
+        </div>
+      </div>
+
+      <div class="chapters-grid" id="chaptersGrid"></div>
+
+      <div style="margin-top:3.5rem;">
+        <h3>Les huit annexes pratiques (A à H)</h3>
+        <p style="margin:0.4rem 0 0; color:var(--text-muted); font-size:0.93rem;">
+          Glossaire bilingue, fiches techniques des protocoles, registre des 31 ADR, liste d’homologation en 75 points avant mise en production et méthodologie bibliographique.
+        </p>
+        <div class="annexes-grid" id="annexesGrid"></div>
+      </div>
+
+      <div style="margin-top:3rem;">
+        <h3>Rigueur et limites déclarées : les quatre niveaux de preuve (annexe E)</h3>
+        <p style="margin:0.4rem 0 0; color:var(--text-muted); font-size:0.93rem;">
+          Dans les 50 grilles de décision de l’ouvrage, chaque recommandation porte un marqueur indiquant sur quoi elle repose réellement — ainsi que des réserves explicites (sources non accessibles comme Gartner ou textes réglementaires à déposer localement).
+        </p>
+        <div class="proof-grid">
+          <div class="card">
+            <span class="pill pill-ok">[N] Normatif ou officiel</span>
+            <p style="margin:0.55rem 0 0; font-size:0.87rem;">Texte légal, règlement adopté ou spécification officielle lue directement pour le chapitre.</p>
+          </div>
+          <div class="card">
+            <span class="pill pill-burnt">[M] Mesure publiée</span>
+            <p style="margin:0.55rem 0 0; font-size:0.87rem;">Étude empirique, enquête statistique publique ou banc d’essai publié et vérifié.</p>
+          </div>
+          <div class="card">
+            <span class="pill pill-warn">[É] Documentation d’éditeur</span>
+            <p style="margin:0.55rem 0 0; font-size:0.87rem;">Annonce, documentation produit ou brouillon technique : décrit une intention ou une capacité déclarée.</p>
+          </div>
+          <div class="card">
+            <span class="pill">[S] Synthèse du chapitre</span>
+            <p style="margin:0.55rem 0 0; font-size:0.87rem;">Arbitrage d’ingénierie déduit par l’ouvrage sans source primaire unique qui l’impose directement.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <div>
+      <strong style="color:var(--text-primary);">Compendium 2027 — Interopérabilité et Orchestration en Entreprise Agentique</strong><br />
+      <span>André-Guy Bruneau, M.Sc. IT · Faits arrêtés au 11–14 novembre 2026 · Thème Black Dark Orange Brûlé</span>
+    </div>
+    <div class="foot-links">
+      <a href="CompendiumMaster.pdf" target="_blank" rel="noopener">CompendiumMaster.pdf</a>
+      <a href="../2026/Presentation.html">Édition 2026</a>
+      <a href="#accueil">Haut de page</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const CHAPTERS = [{"n": 1, "t": "L'entreprise agentique", "p": "I", "pt": "Fondements et cadrage", "th": "T1", "q": "qu'est-ce qui distingue une entreprise agentique d'une entreprise qui utilise des assistants ?", "s": "Un assistant produit une réponse et laisse l'humain agir. Un agent agit : il utilise des outils en boucle et choisit ses étapes. Quatre propriétés règlent le passage : autonomie, outils, mémoire, délégation.", "v": ["De l'assistance conversationnelle à la main-d'œuvre d'exécution asynchrone"], "adrs": [{"code": "ADR-001", "intitule": "Superposition d’un System of Action découplé et séparation stricte MCP / A2A", "invariant": "Aucune écriture SQL directe contournant les systèmes d’enregistrement; ActionEnvelope obligatoire"}]}, {"n": 2, "t": "Généalogie", "p": "I", "pt": "Fondements et cadrage", "th": "T1", "q": "qu'avons-nous déjà appris de l'intégration d'entreprise et des systèmes multi-agents ?", "s": "Décrire une capacité, la trouver, répondre de son usage au-delà d'une frontière de propriété : ces questions sont celles de l'intégration d'entreprise depuis plus de vingt ans. FIPA avait normalisé dès 2002 l'enveloppe de message, l'identifiant de conversation et les échéances, et décrit des protocoles de négociation. L'échec est venu du désaccord avec le substrat du web et du coût de l'accord préalable.", "v": [], "adrs": []}, {"n": 3, "t": "Les dimensions de l'interopérabilité", "p": "I", "pt": "Fondements et cadrage", "th": "T1", "q": "à quels niveaux deux agents doivent-ils s'entendre pour coopérer ?", "s": "Deux agents doivent s'entendre à cinq niveaux : technique, syntaxique, sémantique, organisationnel, juridique et de confiance. Le découpage adapte le cadre européen d'interopérabilité et le LCIM. Les protocoles de 2026 règlent les deux premiers niveaux. Ils relèvent désormais du choix de produit.", "v": [], "adrs": []}, {"n": 4, "t": "État des lieux 2026-2027", "p": "I", "pt": "Fondements et cadrage", "th": "T1", "q": "où en sont réellement les entreprises ?", "s": "Dans l'enquête McKinsey de 2026, la part des grandes organisations qui mettent des agents à l'échelle dans au moins une fonction passe de 27 % à 40 %. Elle reste à 22 % chez les plus petites. L'effet sur les résultats ne suit pas : la part des répondants qui attribuent à l'IA une partie de leur résultat d'exploitation est stable, à 37 %.", "v": [], "adrs": []}, {"n": 5, "t": "MCP : le protocole agent-outil", "p": "II", "pt": "Protocoles et standards d'interopérabilité", "th": "T3", "q": "que standardise MCP, et que laisse-t-il à l'entreprise ?", "s": "MCP standardise la manière dont une application d'IA découvre et appelle des outils. Il laisse l'orchestration à l'hôte et la délégation entre agents à A2A (chapitre 6). Depuis la révision 2026-07-28, le protocole est sans état. Un serveur distant est une charge HTTP ordinaire, que les passerelles peuvent router par en-têtes, à condition que le serveur valide la concordance des en-têtes et du corps.", "v": ["Connectivité verticale : outils, ressources, compétences et web"], "adrs": [{"code": "ADR-005", "intitule": "Standardisation de l’exposition d’outils métiers sur MCP Streamable HTTP orienté domaine, Agent Skills et WebMCP", "invariant": "Au plus 15 outils par serveur, orientés intention métier; refus du mappage CRUD 1:1"}]}, {"n": 6, "t": "A2A : le protocole agent-agent", "p": "II", "pt": "Protocoles et standards d'interopérabilité", "th": "T3", "q": "comment déléguer une tâche à un agent qu'on ne contrôle pas ?", "s": "A2A standardise la délégation d'un objectif à un agent opaque : on ne voit ni ses outils, ni sa mémoire, ni son raisonnement. Trois objets portent le protocole : l'Agent Card, qui décrit l'agent de l'extérieur; la tâche, qui suit le travail; l'artefact, qui livre le résultat.", "v": ["Coordination horizontale, découverte et réseau inter-agents"], "adrs": [{"code": "ADR-006", "intitule": "Utilisation d’A2A v1.0 et d’Agent Cards signées pour toute délégation inter-domaines", "invariant": "Découverte dynamique OASF et transport chiffré SLIM/MLS entre domaines distincts"}]}, {"n": 7, "t": "Protocoles périphériques", "p": "II", "pt": "Protocoles et standards d'interopérabilité", "th": "T3", "q": "quels besoins MCP et A2A ne couvrent-ils pas ?", "s": "MCP et A2A laissent quatre besoins à découvert : flux vers l'interface, identité sans autorité centrale, messagerie de groupe chiffrée, pilotage de ressources physiques. AG-UI est largement pris en charge par les cadriciels; sa gouvernance reste hors fondation, et sa documentation d'architecture est muette sur l'authentification.", "v": [], "adrs": []}, {"n": 8, "t": "Découverte et registres", "p": "II", "pt": "Protocoles et standards d'interopérabilité", "th": "T3", "q": "comment un agent trouve-t-il un outil ou un pair, et pourquoi lui faire confiance ?", "s": "Découvrir comporte trois opérations — trouver, décrire, authentifier — et en laisse une quatrième à l'entreprise : approuver. Le registre MCP prouve qui contrôle un espace de noms. Sa politique déclare une modération minimale et ne retire pas les serveurs vulnérables; la curation est confiée aux sous-registres.", "v": [], "adrs": []}, {"n": 9, "t": "Le web agentique", "p": "II", "pt": "Protocoles et standards d'interopérabilité", "th": "T3", "q": "comment exposer un site ou un service à des visiteurs qui sont des agents ?", "s": "Quatre propositions répondent à quatre questions : ce que le site contient (llms.txt), ce qu'on peut lui demander (NLWeb), ce qu'on peut y faire (WebMCP) et qui fait la requête (Web Bot Auth). Aucune n'est une norme adoptée au 11 novembre 2026.", "v": [], "adrs": []}, {"n": 10, "t": "Commerce agentique", "p": "II", "pt": "Protocoles et standards d'interopérabilité", "th": "T3", "q": "comment un agent prouve-t-il qu'il a le droit d'acheter ?", "s": "Un agent prouve son droit d'acheter par un mandat signé qui lie un utilisateur, un panier et un paiement, non par son identité. AP2 et Verifiable Intent convergent sur la forme : des SD-JWT, des contraintes signées par l'utilisateur, une action signée par l'agent, une vérification en code déterministe. Tous deux ont été apportés à la FIDO Alliance en avril 2026.", "v": ["Interfaces humain-agent, multimodalité temps réel et protocoles transactionnels"], "adrs": [{"code": "ADR-007", "intitule": "Découplage déclaratif des interfaces génératives via AG-UI et A2UI", "invariant": "Aucun code HTML/JS arbitraire généré par un LLM n’est exécuté sans catalogue déclaratif borné"}]}, {"n": 11, "t": "Géopolitique et gouvernance des standards", "p": "II", "pt": "Protocoles et standards d'interopérabilité", "th": "T3", "q": "qui écrit les règles, et que faire en attendant qu'elles se stabilisent ?", "s": "Les protocoles d'agents se décident dans des consortiums et des projets à code ouvert. Les organismes formels en sont au stade du projet autorisé ou du sujet à l'étude. L'AAIF héberge dix projets de nature et de maturité inégales. Son conseil et son comité technique sont réglés par la cotisation; la gouvernance technique varie selon le projet et, chez MCP, repose sur des personnes.", "v": ["Gouvernance des standards et anatomie de la pile interopérable"], "adrs": [{"code": "ADR-004", "intitule": "Alignement normatif sur la pile Linux Foundation AAIF et gouvernance anti-verrouillage", "invariant": "Priorité aux standards neutres (MCP, A2A v1.0, Agent Skills, Open Responses)"}]}, {"n": 12, "t": "Couche sémantique et ontologies", "p": "III", "pt": "Interopérabilité sémantique, données et contexte", "th": "T4", "q": "comment garantir que deux agents donnent le même sens au même terme ?", "s": "Les protocoles transportent des mots; ils n'en fixent pas le sens. Une erreur sémantique ne produit pas de rejet, mais un résultat plausible et faux. Trois objets sont à accorder : la mesure, le concept et l'intention. Chacun a son instrument et son degré de maturité.", "v": ["Couches sémantiques normalisées et ontologies d'entreprise"], "adrs": [{"code": "ADR-009", "intitule": "Adoption d’Apache Ossie pour la sémantique analytique et d’une ontologie causale versionnée pour les actions", "invariant": "Toute métrique ou règle d’éligibilité passe par la couche sémantique normalisée"}]}, {"n": 13, "t": "Ingénierie du contexte", "p": "III", "pt": "Interopérabilité sémantique, données et contexte", "th": "T4", "q": "que doit savoir un agent, et à quel moment ?", "s": "Le contexte est une ressource finie à rendement décroissant. La performance d'un modèle baisse quand l'entrée s'allonge, et la position de l'information compte. Cinq critères servent de grille : pertinence, suffisance, isolation, économie, provenance. Ils viennent d'une prépublication de synthèse et restent une taxonomie de travail.", "v": ["Le mur du contexte d'entreprise : ingénierie du contexte à grande échelle"], "adrs": [{"code": "ADR-008", "intitule": "Compilation déterministe du contexte, filtrage ACL pré-récupération et transfert par référence", "invariant": "Filtrage obligatoire selon les ACL et interdiction de relayer l’historique brut intégral"}]}, {"n": 14, "t": "Mémoire", "p": "III", "pt": "Interopérabilité sémantique, données et contexte", "th": "T4", "q": "comment des agents partagent-ils ce qu'ils ont appris sans se corrompre ?", "s": "La mémoire d'un agent est ce qu'il écrit lui-même pour plus tard, à partir de contenus qu'il ne maîtrise pas. C'est ce qui la rend singulière et attaquable. Quatre types structurent le domaine : de travail, épisodique, sémantique, procédurale. Écrire dans la mémoire procédurale est le geste le plus risqué.", "v": ["Architectures de mémoire agentique distribuée et bi-temporelle"], "adrs": [{"code": "ADR-010", "intitule": "Architecture de mémoire hybride (Letta + Graphiti bi-temporel), garde anti-ASI06 et effacement crypto-sélectif", "invariant": "Double horodatage valid_from/valid_to et capacité de purge vérifiable (Loi 25)"}]}, {"n": 15, "t": "Données prêtes pour les agents", "p": "III", "pt": "Interopérabilité sémantique, données et contexte", "th": "T4", "q": "les données de l'entreprise sont-elles utilisables par un agent ?", "s": "Une donnée est prête pour un agent quand elle est trouvable, d'un état connu, lue sous l'identité du demandeur et exposée par une interface bornée. Aucune de ces conditions ne se délègue au modèle. Les bancs d'essai convergent : les agents trouvent la source plus souvent qu'ils ne savent la combiner à une autre. La fragmentation se traite par des clés et des définitions communes, pas par davantage de connecteurs.", "v": [], "adrs": []}, {"n": 16, "t": "Topologies et patrons", "p": "IV", "pt": "Orchestration", "th": "T2", "q": "comment répartir le travail entre plusieurs agents ?", "s": "Une topologie répond à deux questions : qui décide de l'étape suivante, et qui voit quoi. Répartir le travail, c'est d'abord cloisonner le contexte. Trois topologies (centralisée, décentralisée, hiérarchique) et un axe adaptatif suffisent à situer les patrons, malgré un vocabulaire qui varie d'un éditeur à l'autre.", "v": ["Topologies d'orchestration et de chorégraphie multi-agents"], "adrs": [{"code": "ADR-011", "intitule": "Standardisation des topologies multi-agents et interdiction des graphes cycliques non bornés", "invariant": "Interdiction des essaims conversationnels libres sur des flux soumis à audit"}]}, {"n": 17, "t": "Déterministe ou agentique", "p": "IV", "pt": "Orchestration", "th": "T2", "q": "où placer le non-déterminisme dans un processus d'affaires ?", "s": "La question n'est pas « workflow ou agent », mais quelle région d'un processus confier au modèle, et sous quelle enveloppe. Quatre positions se distinguent : workflow, étapes agentiques, agent borné, agent ouvert. Le sous-processus ad hoc de BPMN donne sa forme à l'agent borné : le modèle propose un outil dans une liste fermée, le moteur l'exécute et en garde la trace.", "v": ["Le grand découplage : contrôle déterministe et autonomie probabiliste"], "adrs": [{"code": "ADR-002", "intitule": "Interdiction du routage global de processus critiques par inférence LLM non bornée", "invariant": "Le séquencement maître réside dans du code ou une machine à états déterministe"}]}, {"n": 18, "t": "Exécution durable et transactions", "p": "IV", "pt": "Orchestration", "th": "T2", "q": "que se passe-t-il quand un agent tombe en panne au milieu d'une tâche ?", "s": "L'exécution durable garantit qu'un programme reprend, pas que ses effets sur le monde n'ont lieu qu'une fois. Microsoft l'écrit explicitement dans sa documentation. « Exactement une fois » ne vaut qu'à l'intérieur d'un système fermé. Vers un système externe, l'effet unique s'obtient par une livraison au moins une fois et un outil idempotent.", "v": ["Moteurs d'exécution durable et gestion des cycles de vie de longue durée"], "adrs": [{"code": "ADR-012", "intitule": "Architecture bi-vitesse d’exécution durable (Temporal + Restate) et revalidation obligatoire post-hibernation", "invariant": "Journalisation déterministe, clés d’idempotence et revalidation au réveil (awakeable)"}]}, {"n": 19, "t": "Orchestration événementielle", "p": "IV", "pt": "Orchestration", "th": "T2", "q": "quand des agents doivent-ils réagir à des événements au lieu d'être appelés ?", "s": "L'événement s'impose dans trois cas : fait sans demandeur, travail plus long qu'une connexion, plusieurs consommateurs. Ailleurs, l'appel direct reste plus simple. La relecture du journal est la propriété qui compte : elle sert à la reprise, aux tests et à l'audit.", "v": ["Maillage événementiel asynchrone et patron Saga à compensation"], "adrs": [{"code": "ADR-013", "intitule": "Maillage événementiel hybride Kafka/Solace et patron Saga à compensation sans 2PC", "invariant": "Toute mutation possède son inverse compensatoire ou un tampon à fenêtre de grâce"}]}, {"n": 20, "t": "Cadriciels d'orchestration", "p": "IV", "pt": "Orchestration", "th": "T2", "q": "sur quoi bâtir, et comment éviter le verrouillage ?", "s": "Les cadriciels convergent vers deux étages : une boucle d'agent et un workflow explicite. CrewAI recommande de commencer par un Flow; ADK 2.0 ajoute des graphes; Microsoft réunit agents, harnais et workflows. Le cadriciel est la couche la plus périssable. AutoGen, Semantic Kernel, Swarm et le Claude Code SDK ont tous un successeur; il faut budgéter une migration.", "v": [], "adrs": []}, {"n": 21, "t": "Fiabilité de la coordination", "p": "IV", "pt": "Orchestration", "th": "T2", "q": "pourquoi les systèmes multi-agents échouent-ils ?", "s": "MAST classe les échecs multi-agents en quatorze modes et trois catégories : spécification, désalignement entre agents, vérification. Dans la version 2, leurs parts sont de 41,77 %, 36,94 % et 21,30 %. Dans la version 3, les modes dominants sont la répétition d'étapes, l'écart entre raisonnement et action, la consigne non respectée et la condition d'arrêt ignorée. L'obstruction entre agents est rare.", "v": [], "adrs": []}, {"n": 22, "t": "L'humain dans la boucle", "p": "IV", "pt": "Orchestration", "th": "T2", "q": "quelles décisions un agent peut-il prendre seul ?", "s": "« Dans », « sur » et « hors de la boucle » qualifient une action, pas un agent. La position « aux commandes », soit décider d'utiliser l'agent et pouvoir l'arrêter, ne se délègue pas. Les échelles d'autonomie fournissent un vocabulaire et une échelle d'autorisation. Aucune n'est une norme, et leur sommet n'est pas une cible.", "v": [], "adrs": []}, {"n": 23, "t": "Architecture de référence", "p": "V", "pt": "Architecture d'entreprise et plateformes", "th": "T3", "q": "quelles couches faut-il, et laquelle gouverne ?", "s": "Les architectures de référence évaluées par les pairs décrivent un agent ou un système. À l'échelle de l'entreprise, les modèles viennent d'éditeurs et d'analystes et ne sont pas validés. Le nombre de couches varie selon les sources. La séparation entre l'intelligence et la gouvernance est la seule constante.", "v": [], "adrs": []}, {"n": 24, "t": "Passerelles et intégration", "p": "V", "pt": "Architecture d'entreprise et plateformes", "th": "T3", "q": "où appliquer les contrôles entre agents, outils et API ?", "s": "Les protocoles laissent ouvert le comportement d'une passerelle. C'est là que l'entreprise rend obligatoire ce que MCP recommande. Une passerelle MCP diffère d'une passerelle d'API sur quatre points : l'opération est dans le corps, la réponse est un flux lu par un modèle, le catalogue est une surface d'attaque et la découverte dépend de l'appelant.", "v": [], "adrs": []}, {"n": 25, "t": "Intégration au patrimoine", "p": "V", "pt": "Architecture d'entreprise et plateformes", "th": "T3", "q": "comment brancher des agents sur des systèmes qui doivent rester exacts ?", "s": "L'agent ne remplace pas le calcul qui fait foi. Il prépare les entrées et explique les résultats; le cœur déterministe reste figé et vérifié par des tests de parité. Envelopper n'est pas une règle universelle : un cœur dont la plateforme est obsolète ou ne suit plus les exigences réglementaires ou d'affaires se remplace.", "v": ["Intégration du patrimoine sans API : Computer-Use Agents (CUA), RPA/APA et mainframes"], "adrs": [{"code": "ADR-016", "intitule": "Doctrine d’usage restreint des Computer-Use Agents en dernier recours sous double validation", "invariant": "Vérification visuelle avant et après l’action; migration programmée vers un connecteur MCP"}]}, {"n": 26, "t": "Plateformes d'entreprise", "p": "V", "pt": "Architecture d'entreprise et plateformes", "th": "T3", "q": "que valent les promesses d'ouverture des éditeurs ?", "s": "La plupart des éditeurs examinés documentent MCP, A2A ou les deux. Cette mention ne dit rien du sens, du statut, de la version ni du traitement des agents tiers. L'ouverture s'arrête au plan de contrôle : la gouvernance passe par des mécanismes propres à chaque éditeur, non par les protocoles.", "v": [], "adrs": []}, {"n": 27, "t": "Stratégie multi-plateformes", "p": "V", "pt": "Architecture d'entreprise et plateformes", "th": "T3", "q": "comment vivre avec plusieurs orchestrateurs ?", "s": "Plusieurs orchestrateurs coexistent durablement; aucun protocole ne désigne qui gouverne entre eux. Ce qui se fédère aujourd'hui est l'inventaire. Chez MuleSoft, les politiques atteignent au mieux les API des passerelles tierces, pas leurs agents ni leurs serveurs MCP.", "v": ["Fédération des jardins clos SaaS et problème de l'« orchestrateur d'orchestrateurs »"], "adrs": [{"code": "ADR-015", "intitule": "Ancrage des agents spécialistes selon la gravité des données et fédération par plan de contrôle neutre", "invariant": "Les agents SaaS opèrent sur leurs objets natifs et coopèrent par un en-tête anti-boucle"}]}, {"n": 28, "t": "Agents industriels et périphérie", "p": "V", "pt": "Architecture d'entreprise et plateformes", "th": "T3", "q": "les mêmes protocoles valent-ils en usine ?", "s": "MCP ne remplace aucun protocole industriel. Il enveloppe OPC UA, Modbus ou MQTT dans un adaptateur, sans toucher aux systèmes de commande. La couche sémantique existe déjà : le modèle d'information OPC UA pour l'équipement en marche, l'AAS pour la description de l'actif.", "v": ["Orchestration cyber-physique : convergence IT/OT, OPC UA et jumeaux numériques"], "adrs": [{"code": "ADR-017", "intitule": "Architecture en sas par Jumeau numérique et validation déterministe pour toute consigne IT→OT", "invariant": "Aucune écriture directe d’un modèle probabiliste vers un automate PLC/SCADA"}]}, {"n": 29, "t": "Identité agentique", "p": "VI", "pt": "Confiance : identité, sécurité, observabilité", "th": "T5", "q": "qui est cet agent, et au nom de qui agit-il ?", "s": "Un agent s'authentifie comme une charge de travail. Il s'en distingue par un parrain humain, un contexte de délégation à préserver et un cycle de vie rapide. La question « qui, et au nom de qui » se lit dans deux champs d'un jeton : client_id pour l'agent, sub pour celui qui délègue. Un jeton d'usurpation efface le premier.", "v": [], "adrs": []}, {"n": 30, "t": "Autorisation et délégation", "p": "VI", "pt": "Confiance : identité, sécurité, observabilité", "th": "T5", "q": "comment limiter ce qu'un agent peut faire, et le prouver ?", "s": "Le moindre privilège se joue à trois étages : le jeton, l'outil et le justificatif que le serveur emploie en aval. Le troisième peut dépasser les droits de chaque appelant. MCP inscrit l'élévation progressive dans son flux, mais le résultat dépend du serveur, qui doit déclarer peu et réclamer avec précision.", "v": ["Identités non humaines (NHI) de première classe et délégation cryptographique"], "adrs": [{"code": "ADR-018", "intitule": "Identité NHI unique par classe d’agent et échange de jetons RFC 8693 à portée atténuée à chaque saut", "invariant": "Atténuation stricte de portée (sub/act) et approbation CIBA sur seuil critique"}]}, {"n": 31, "t": "Menaces", "p": "VI", "pt": "Confiance : identité, sécurité, observabilité", "th": "T5", "q": "qu'est-ce qui change dans le modèle de menace ?", "s": "Le changement central est le déplacement de la frontière de confiance : tout texte lu par un agent peut agir comme une instruction, et l'agent agit avec une autorité déléguée. Les vulnérabilités classiques demeurent. Six des dix entrées de l'OWASP MCP Top 10 et presque toute la page de sécurité de la spécification MCP en relèvent.", "v": ["Modélisation des menaces multi-agents (OWASP ASI01–ASI10) et sécurité MCP"], "adrs": [{"code": "ADR-019", "intitule": "Modélisation de menaces ASI01–ASI10 obligatoire et épinglage cryptographique des schémas MCP", "invariant": "Signature SHA-256/Sigstore des schémas d’outils contre les attaques Rug-Pull"}]}, {"n": 32, "t": "Assurance", "p": "VI", "pt": "Confiance : identité, sécurité, observabilité", "th": "T5", "q": "comment démontrer qu'un système d'agents se comporte comme prévu ?", "s": "Des actions permises une à une peuvent violer ensemble une règle du système, sans adversaire. Les règles de cumul, d'ordre et de durée échappent au contrôle par action. L'assurance de trajectoire est un programme de recherche. Écrire les invariants et les vérifier hors de l'agent est faisable maintenant, sans garantie de complétude.", "v": ["Défense en profondeur : bacs à sable, garde-fous neuro-symboliques et coupe-circuits"], "adrs": [{"code": "ADR-020", "intitule": "Découplage systématique des garde-fous déterministes (Cedar/OPA) et exécution en microVM isolée", "invariant": "Exécution de code sans sortie réseau implicite et coupe-circuit SOC testé"}]}, {"n": 33, "t": "Observabilité et évaluation", "p": "VI", "pt": "Confiance : identité, sécurité, observabilité", "th": "T5", "q": "comment savoir ce qu'un système d'agents a fait, et s'il l'a bien fait ?", "s": "Les signaux classiques ne détectent pas un agent qui accomplit la mauvaise tâche. Il faut tracer la trajectoire et juger son résultat. Les conventions GenAI d'OpenTelemetry couvrent l'inférence, les outils, les agents, MCP et A2A. Toutes sont au statut « Development », et leur dépôt dédié n'a publié aucune version.", "v": ["Observabilité distribuée de bout en bout avec OpenTelemetry GenAI"], "adrs": [{"code": "ADR-021", "intitule": "Standardisation sur OpenTelemetry GenAI et collecte souveraine à double couloir PII", "invariant": "Traces distribuées obligatoires avec caviardage PII en amont de l’export"}]}, {"n": 34, "t": "Exploitation", "p": "VI", "pt": "Confiance : identité, sécurité, observabilité", "th": "T5", "q": "comment opérer des agents au quotidien ?", "s": "La surveillance classique ne voit pas un agent qui accomplit la mauvaise tâche. L'indicateur d'ancrage est le succès vérifié, mesuré indépendamment du compte rendu de l'agent. Prompt, modèle, outils et mémoire sont des unités de changement, soumises à une barrière de rejeu et à une probation.", "v": ["Cycle de vie ADLC, CI/CD probabiliste, simulation (τ-bench) et ingénierie du chaos"], "adrs": [{"code": "ADR-022", "intitule": "Cycle ADLC gouverné par SemVer+Intent, portes de constance pass⁵ et déploiement Canary", "invariant": "Homologation sur bancs d’essai de type τ-bench et injection de pannes avant trafic réel"}]}, {"n": 35, "t": "Cadres internationaux", "p": "VII", "pt": "Gouvernance, conformité et droit", "th": "T6", "q": "quelles obligations s'appliquent à un système d'agents ?", "s": "Aucun cadre contraignant ne définit l'agent. Dans l'AI Act, un agent est un système d'IA, distinct du modèle sur lequel il repose. Le classement à haut risque dépend de l'usage, non de l'architecture.", "v": [], "adrs": []}, {"n": 36, "t": "Responsabilité", "p": "VII", "pt": "Gouvernance, conformité et droit", "th": "T6", "q": "qui répond des actes d'un agent ?", "s": "L'agent n'est pas un sujet de droit. La responsabilité remonte aux personnes qui le développent, le modifient, le fournissent ou l'utilisent. L'argument de l'autonomie ne protège pas. La Californie l'a écarté par un texte; les analyses lues vont dans le même sens ailleurs.", "v": [], "adrs": []}, {"n": 37, "t": "Souveraineté", "p": "VII", "pt": "Gouvernance, conformité et droit", "th": "T6", "q": "où tournent les agents, et sous quelle juridiction ?", "s": "Résidence et contrôle juridictionnel sont deux questions. Une région locale chez un fournisseur étranger ne répond qu'à la première, et les droits américain et européen lui imposent des obligations contraires. Un agent se répartit sur plusieurs exploitants. L'analyse de souveraineté se fait par composant, traces comprises.", "v": [], "adrs": []}, {"n": 38, "t": "Canada et Québec", "p": "VII", "pt": "Gouvernance, conformité et droit", "th": "T6", "q": "quel cadre s'applique ici ?", "s": "Le Canada n'a pas de loi sur l'IA. « AI for All » annonce des lois sur la vie privée et la sécurité en ligne, pas un régime propre aux agents. Le projet de loi C-36, non adopté, réforme la protection des renseignements personnels; sa définition du système décisionnel automatisé couvre aussi les systèmes qui appuient une décision.", "v": ["Conformité réglementaire internationale et canadienne, et droit B2B inter-agents"], "adrs": [{"code": "ADR-024", "intitule": "Qualification réglementaire dynamique par empreinte de déploiement et mandats B2B bornés", "invariant": "Alignement croisé ISO/IEC 42001, BSIF E-23 (mai 2027), Loi 25 et EU AI Act"}]}, {"n": 39, "t": "Gouvernance interne", "p": "VII", "pt": "Gouvernance, conformité et droit", "th": "T6", "q": "comment une organisation garde-t-elle la maîtrise de ses agents ?", "s": "La gouvernance est le point faible mesuré : environ un tiers des organisations interrogées par McKinsey atteignent le niveau 3 ou plus en gouvernance de l'IA agentique. Un agent se gère comme un actif : inscrit, versionné, surveillé, retiré.", "v": [], "adrs": []}, {"n": 40, "t": "FinOps agentique", "p": "VIII", "pt": "Économie, organisation et mise en œuvre", "th": "T7", "q": "combien coûte un agent, et que rapporte-t-il ?", "s": "Le coût d'un agent est une distribution, pas un prix. Il dépend du nombre de tours, de la topologie et des outils chargés. L'entrée domine : dans le banc d'essai lu, plus de 97 % des jetons sont relus, non produits.", "v": ["FinOps agentique : gouvernance économique et Cost-per-Outcome"], "adrs": [{"code": "ADR-023", "intitule": "Pilotage FinOps par le Cost-per-Outcome, disjoncteurs par saga et refacturation interne", "invariant": "Disjoncteur financier en temps réel et mise hors service des agents à ROI négatif"}]}, {"n": 41, "t": "Modèle opérationnel", "p": "VIII", "pt": "Économie, organisation et mise en œuvre", "th": "T7", "q": "comment s'organise une entreprise où des agents travaillent ?", "s": "L'organisation agentique de McKinsey, faite de petites équipes orientées résultats qui supervisent des flux d'agents, s'appuie sur des cas de clients et des enquêtes déclaratives. C'est une direction, pas un état constaté. En moyenne, une combinaison humain-IA fait mieux que l'humain seul, mais moins bien que le meilleur des deux. Le gain apparaît quand l'humain est le plus fort sur la tâche.", "v": ["Modèle opérationnel cible, facteur humain (HOTL) et prospective 2028–2030"], "adrs": [{"code": "ADR-025", "intitule": "Modèle Hub-and-Spoke, propriétaire métier nominatif et vigilance HOTL instrumentée", "invariant": "Responsabilité humaine explicite et contrôle anti-complaisance cognitive HOTL"}]}, {"n": 42, "t": "Études de cas", "p": "VIII", "pt": "Économie, organisation et mise en œuvre", "th": "T1", "q": "que montrent les déploiements documentés ?", "s": "Un seul déploiement d'agents à grande échelle a été lu en entier dans un article évalué par les pairs avec mesure sur trafic réel : celui de Nubank, en service à la clientèle. Trois autres textes de 2026, connus par leur résumé, décrivent le même type d'agents étroits et bornés. Ses gains sont relatifs à une base mal définie, et ses agents restent sous les experts humains dans les cinq domaines mesurés.", "v": [], "adrs": []}, {"n": 43, "t": "Maturité et prospective", "p": "VIII", "pt": "Économie, organisation et mise en œuvre", "th": "T1", "q": "par où commencer, et vers quoi aller ?", "s": "La maturité se mesure par domaine d'affaires et par preuve, non par le nombre d'agents déployés. Le stade est celui du critère le plus faible. Les échelles d'autonomie et les modèles de pratique existants sont des propositions non validées. Le modèle en cinq stades de ce chapitre l'est aussi.", "v": ["Modèle de maturité de l'entreprise agentique (niveaux 1 à 5) et antipatterns"], "adrs": [{"code": "ADR-003", "intitule": "Adoption d’un portail d’homologation gradué par niveau de maturité et d’exposition", "invariant": "Recensement obligatoire et blocage réseau des Shadow Agents non enregistrés"}]}, {"n": 44, "t": "Plan de données d'inférence et routage cognitif", "p": "IX", "pt": "Approfondissements", "th": "T7", "q": "comment réduire la latence et le coût d'inférence à grande échelle sans perdre en précision sur les tâches complexes ?", "s": "Le plan de données d'inférence prend deux décisions : le modèle, puis la réplique. Seule la première engage la qualité. agentgateway et Agent Router, tous deux à l'AAIF, délèguent le choix de la réplique à un sélecteur externe. Agent Router est l'ancien Envoy AI Gateway.", "v": ["Plan de données AI-natif, passerelles et routage cognitif hybride"], "adrs": [{"code": "ADR-014", "intitule": "Imposition d’agentgateway comme plan de données unique, routage hybride à 3 paliers et affinité de KV-cache", "invariant": "SLM là où une règle explicite l’établit, palier supérieur pour toute classe inconnue; affinité de préfixe du KV-cache activée"}]}, {"n": 45, "t": "Réseaux B2B fédérés et négociation entre agents", "p": "IX", "pt": "Approfondissements", "th": "T6", "q": "comment des agents de plusieurs entreprises négocient-ils et partagent-ils des données sans fuite de secrets, sans collusion et sans fraude au règlement ?", "s": "Le modèle de langage propose; les protections tiennent à des composants déterministes, attestés ou contractuels. ODRL exprime une politique et DSP en fait un accord par une machine à sept états. Ni l'un ni l'autre n'applique l'accord une fois les données copiées.", "v": ["Maillages B2B inter-entreprises, espaces de données et négociation multi-parties"], "adrs": [{"code": "ADR-026", "intitule": "Maillage B2B fédéré sous connecteurs Dataspace (EDC/ODRL), isolation du diplomate et règlement tripartite déterministe", "invariant": "Identité vLEI, séparation Diplomate/Évaluateur et rapprochement à trois voies hors LLM"}]}, {"n": 46, "t": "Inférence confidentielle, résilience et IA physique", "p": "IX", "pt": "Approfondissements", "th": "T6", "q": "comment protéger les actifs cognitifs, survivre à la perte d'un fournisseur de modèles ou d'une liaison, et piloter des machines mobiles en sécurité ?", "s": "Un agent garde plusieurs états chez plusieurs exploitants. Le géorepérage règle la résidence, pas le contrôle. Un TEE retire de la base de confiance les logiciels et les administrateurs de l'exploitant. Il n'en retire ni le fabricant de la puce ni celui qui tient physiquement le serveur.", "v": ["Souveraineté cognitive, portabilité multi-cloud et reprise après sinistre cognitif", "Orchestration en périphérie, opérations déconnectées et passerelles vers l'IA physique"], "adrs": [{"code": "ADR-027", "intitule": "Géorepérage de l’état complet, inférence confidentielle HYOK/TEE et reprise après sinistre cognitif bimodèle", "invariant": "Résidence juridictionnelle des 6 substrats d’état et bascule en < 15 min vers des modèles à poids ouverts"}, {"code": "ADR-028", "intitule": "Architecture Edge Local-First à synchronisation CRDT et pont robotique ROS 2 sous enveloppe matérielle Simplex", "invariant": "Autonomie hors ligne de 72 h, quotas d’escrow CRDT et moniteur matériel IEC 61508"}]}, {"n": 47, "t": "Ingénierie agentique interne et distillation", "p": "IX", "pt": "Approfondissements", "th": "T7", "q": "comment sécuriser le code et les données que produisent des agents, automatiser l'exploitation sans s'exposer, et transférer l'intelligence vers de petits modèles ?", "s": "Une même règle traverse le chapitre : l'agent qui produit ne définit pas le critère et ne publie pas. Le contrôle se place sur un artefact intermédiaire lisible. Le développement piloté par la spécification est une pratique outillée. La séparation en deux rôles à droits distincts en est une extrapolation, à valider.", "v": ["Usine logicielle agentique (Agentic SDLC) et modernisation assistée du patrimoine", "Agentic DataOps, contrats de données auto-réparateurs et SRE autonome", "Volants d'inertie cognitifs, compilation de consignes et distillation LLM → SLM"], "adrs": [{"code": "ADR-029", "intitule": "Pipeline Agentic SDLC à séparation des devoirs et modernisation patrimoniale par oracle Golden Master et Shadow Mirroring", "invariant": "Aucune auto-approbation, score de mutation ≥ 85 % et parité de 30 jours sans écart"}, {"code": "ADR-030", "intitule": "Contrats de données Write-Audit-Publish (ODCS) et SRE autonome à séparation stricte diagnostic lecture seule / runbooks Cedar", "invariant": "Quarantaine WAP avant exposition aval et aucun shell libre en production"}, {"code": "ADR-031", "intitule": "Compilation déclarative des consignes et volant de distillation continue LLM → SLM sous sas anti-PII et porte pass⁵", "invariant": "Désidentification irréversible Loi 25, parité $\\text{pass}^5 \\ge 99\\,\\%$ et sentinelle 2 %"}]}, {"n": 48, "t": "Revue de littérature", "p": "X", "pt": "Recherche scientifique", "th": "T8", "q": "que sait la recherche, et avec quel degré de preuve, sur l'interopérabilité et l'orchestration d'agents ?", "s": "Revue de cadrage de 83 notices scientifiques (dont 77 parues en 2025–2026) et profil des 789 sources du corpus : les modes d’échec de coordination (MAST) et les failles de sécurité MCP/A2A sont établis, le gain du multi-agents à calcul égal reste débattu et aucun déploiement en production de MCP ou d’A2A n’est encore mesuré par les pairs.", "v": [], "adrs": []}, {"n": 49, "t": "Veille technologique", "p": "X", "pt": "Recherche scientifique", "th": "T8", "q": "comment suivre un domaine qui change au trimestre, et que faut-il surveiller d'ici 2030 ?", "s": "La mesure publique de la portée des agents sature. Le dernier modèle de la série de METR atteint environ 17 heures à 50 % de réussite et 3 heures à 80 %; la série n'est plus mise à jour depuis septembre 2026. À 80 % de réussite, l'horizon est cinq à six fois plus court qu'à 50 %. Ce qui borne un agent en production est le prix de la fiabilité plus que la capacité.", "v": [], "adrs": []}, {"n": 50, "t": "Projection 2027-2030 et étude de marché", "p": "X", "pt": "Recherche scientifique", "th": "T8", "q": "que vaut ce marché, où va-t-il d'ici 2030, et que peut-on en dire sans prêter aux chiffres une précision qu'ils n'ont pas ?", "s": "Le marché de l'IA agentique n'a pas une taille mais plusieurs : pour 2025, de 1,5 à 88 G$ US selon que l'on compte le logiciel d'entreprise ou les capacités intégrées aux progiciels. Aucune estimation lue n'isole la couche d'interopérabilité et d'orchestration. Sa valeur se mesure chez l'acheteur, en coût d'intégration évité.", "v": [], "adrs": []}];
+const ANNEXES = [{"l": "A", "t": "Glossaire français-anglais", "d": "Les termes sont ceux qu'emploient les chapitres; le numéro entre parenthèses renvoie au chapitre qui traite la notion. Les équivalents anglais viennent des spécifications et de la documentation citées. Les noms propres de protocoles et d'objets normalisés (Age"}, {"l": "B", "t": "Fiches protocoles", "d": "*État de référence :* 11 novembre 2026. Chaque fiche condense le chapitre indiqué, complété par les chapitres 8 (registres) et 11 (gouvernance), et n'ajoute aucune source; les réserves de ces chapitres s'appliquent. « Non réglé » désigne ce que le protocole"}, {"l": "C", "t": "Grilles d'évaluation", "d": "Les trois grilles reprennent des critères posés dans les chapitres. Propositions sans validation empirique, elles ordonnent des questions sans produire de score comparable d'une entreprise à l'autre."}, {"l": "D", "t": "Chronologie 2024-2028", "d": "Les dates sont celles que citent les chapitres, indiqués en dernière colonne; leurs réserves s'appliquent. « (S) » signale une date tirée d'une source secondaire, « (D) » une date déduite. Après le 11 novembre 2026, date de référence de l'ouvrage (13 novembre"}, {"l": "E", "t": "Bibliographie et niveaux de preuve", "d": "Cette annexe complète les listes de sources des chapitres : elle dit comment les lire et rappelle les sources d'ancrage."}, {"l": "F", "t": "Décisions d'architecture (ADR) et arbres de choix", "d": "Cette annexe réunit les outils des arbitrages courants des comités d’architecture d’entreprise et des ingénieurs principaux : le registre des trente et une décisions d’architecture (ADR-001 à ADR-031) établies dans les volets « Mise en œuvre »; deux arbres de"}, {"l": "G", "t": "Listes de contrôle d'homologation avant production (75 points)", "d": "Aucun système multi-agents de niveau L2, L3 ou L4 n’est autorisé à traiter des données réelles ni à invoquer des outils mutatifs avant d’avoir réussi une revue d’homologation opérationnelle (Production Readiness Review, PRR). L’annexe fournit pour cette revu"}, {"l": "H", "t": "Index des standards", "d": "Cette annexe donne l’index des fondations, protocoles et textes réglementaires de référence cités dans l’ouvrage. Le glossaire se trouve à l’annexe A."}];
+
+const THEMES = [
+  {
+    id: "T1",
+    code: "T1 · Fondations & réalité",
+    title: "Du copilote à l’agent qui agit : le paradoxe du passage à l’échelle",
+    short: "Pourquoi la technologie fascine en démo mais bloque encore devant la production réelle.",
+    chapters: [1, 2, 3, 4, 42, 43],
+    adrs: ["ADR-001", "ADR-003"],
+    plain:
+      "Pendant deux ans, l’IA en entreprise est restée un copilote passif : elle rédigeait un brouillon et l’employé faisait le travail final dans les logiciels. Un agent franchit un seuil : il choisit des étapes, appelle des outils et modifie des données. Pourtant, sur le terrain, l’écart reste immense : à peine une entreprise sur cinq utilise l’IA sous une forme ou une autre (19,2 % au Canada, 20,0 % en Europe), et 68 % des agents déployés exécutent moins de dix étapes sous étroite surveillance humaine.",
+    mechanisms:
+      "Séparer clairement l’espace de lecture et l’espace d’action (System of Action découplé via ActionEnvelope, ADR-001). Évaluer la maturité par domaine d’affaires sur preuves plutôt qu’au nombre de pilotes, et bloquer les agents fantômes non enregistrés via un portail gradué (ADR-003).",
+    proof:
+      "Aucun déploiement de MCP, d’A2A ou d’un système multi-agents en production à grande échelle n’est encore documenté par la recherche évaluée par les pairs (chap. 42 & 48). Les « 40 % de projets annulés d’ici fin 2027 » viennent d’une prévision de Gartner, non d’une mesure observée."
+  },
+  {
+    id: "T2",
+    code: "T2 · Contrôle & résilience",
+    title: "Le grand découplage : enveloppe déterministe autour du modèle probabiliste",
+    short: "Retirer au modèle le volant du processus tout en profitant de sa capacité d’analyse.",
+    chapters: [16, 17, 18, 19, 20, 21, 22],
+    adrs: ["ADR-002", "ADR-011", "ADR-012", "ADR-013"],
+    plain:
+      "Un grand modèle de langage fonctionne par probabilité : s’il réussit une étape 94 % du temps, enchaîner dix étapes libres ramène la réussite globale à 53,9 % (loi de Lusser). Pire : au lieu de planter proprement, le modèle invente une explication plausible qui trompe la suite du flux. La règle d’or du Compendium consiste à enfermer l’IA dans des cellules bornées à l’intérieur d’un orchestrateur classique fiable.",
+    mechanisms:
+      "Interdire le routage de processus critiques par inférence libre (ADR-002) et les essaims cycliques sans fin (ADR-011). Adopter des moteurs d’exécution durable (Temporal, Restate) journalisant chaque appel avec clés d’idempotence (ADR-012), des courtiers Kafka/Solace et des compensations Saga réversibles sans verrouillage distribué 2PC (ADR-013).",
+    proof:
+      "La taxonomie académique MAST montre que les échecs multi-agents proviennent d’abord de défauts de spécification (41,8 % à 44 %) et de désalignement (32 % à 36,9 %), plus que d’un manque d’intelligence brute. Aucun essai indépendant n’a toutefois comparé les moteurs durables commerciaux entre eux."
+  },
+  {
+    id: "T3",
+    code: "T3 · Protocoles & patrimoine",
+    title: "Le tissu conjonctif ouvert : briser les silos d’agents, du SaaS à l’usine",
+    short: "Faire coopérer des logiciels concurrents, de vieux mainframes et des automates d’atelier.",
+    chapters: [5, 6, 7, 8, 9, 10, 11, 23, 24, 25, 26, 27, 28],
+    adrs: ["ADR-004", "ADR-005", "ADR-006", "ADR-007", "ADR-015", "ADR-016", "ADR-017"],
+    plain:
+      "Plutôt que d’écrire cent connecteurs fragiles, l’industrie a regroupé ses protocoles ouverts fin 2025–2026 sous l’Agentic AI Foundation (Linux Foundation). MCP joue le rôle de « prise USB-C universelle » entre un agent et ses outils; A2A v1.0 permet à deux agents opaques de se confier des tâches; AP2 signe cryptographiquement un droit d’achat. Sur les vieux ordinateurs centraux ou les machines d’usine, on n’expose jamais directement les commandes critiques.",
+    mechanisms:
+      "Alignement sur la pile AAIF (ADR-004), serveurs MCP Streamable HTTP limités à ≤ 15 outils orientés métier (ADR-005), délégation A2A v1.0 avec Agent Cards signées et canal SLIM/MLS (ADR-006), interfaces déclaratives AG-UI/A2UI sans code généré libre (ADR-007), fédération des suites SaaS selon la gravité des données (ADR-015), confinement des Computer-Use Agents (ADR-016) et sas par jumeau numérique devant l’OPC UA industriel (ADR-017).",
+    proof:
+      "La convergence concerne surtout le transport (MCP et A2A). Les registres officiels restent en préversion, la portabilité des configurations entre éditeurs demeure inexistante, et aucun cas documenté en production de MCP ou A2A n’est encore établi dans la littérature."
+  },
+  {
+    id: "T4",
+    code: "T4 · Sens & mémoire",
+    title: "Sémantique métier, contexte et mémoire : parler la même langue sans s’empoisonner",
+    short: "Éviter que deux agents calculent deux réalités différentes ou corrompent leurs souvenirs.",
+    chapters: [12, 13, 14, 15],
+    adrs: ["ADR-008", "ADR-009", "ADR-010"],
+    plain:
+      "S’envoyer des messages bien formatés ne sert à rien si un agent commercial et un agent financier n’ont pas la même définition du « taux d’attrition » ou d’un « client actif ». De même, bourrer la fenêtre de contexte d’un modèle dégrade ses réponses, et laisser un agent écrire librement dans sa mémoire crée une faille : un faux document lu aujourd’hui devient une fausse règle suivie demain.",
+    mechanisms:
+      "Couche sémantique normalisée Apache Ossie et ontologie causale versionnée pour que les métriques soient compilées de façon déterministe (ADR-009). Compilation du contexte avec filtrage de droits (ACL) avant toute recherche et transfert par référence (ADR-008). Mémoire hybride Letta + graphes bi-temporels Graphiti (valid_from / valid_to) avec garde anti-ASI06 et effacement sélectif Loi 25 (ADR-010).",
+    proof:
+      "Apache Ossie (version 0.3.0.dev0 lors de la rédaction) reste jeune et doit être borné avant la production. Aucun banc d’essai consulté ne mesure encore rigoureusement la cohérence d’une mémoire partagée entre plusieurs agents concurrents."
+  },
+  {
+    id: "T5",
+    code: "T5 · Cybersécurité & Zero Trust",
+    title: "Confiance zéro, identité non humaine (NHI) et défense active",
+    short: "Limiter ce qu’un agent piraté par un texte malveillant peut réellement déclencher.",
+    chapters: [29, 30, 31, 32, 33, 34],
+    adrs: ["ADR-018", "ADR-019", "ADR-020", "ADR-021", "ADR-022"],
+    plain:
+      "Pour un agent IA, la frontière entre données et instructions disparaît : un simple courriel piégé ou une description d’outil MCP modifiée à l’insu de l’équipe (attaque rug-pull) peut détourner son comportement. Comme aucune technique ne rend un modèle immunisé à 100 % à l’injection d’instructions, la sécurité doit vivre autour de lui : identités cryptographiques, jetons à droits réduits, bacs à sable isolés et coupe-circuit d’urgence.",
+    mechanisms:
+      "Identité NHI par classe d’agent (SPIFFE/SPIRE) et échange de jetons OAuth 2.1 OBO (RFC 8693) traçant l’humain et l’agent (sub / act) avec approbation CIBA sur seuil critique (ADR-018). Épinglage cryptographique SHA-256 des outils MCP et modélisation OWASP ASI01–ASI10 (ADR-019). Décision externe par politiques Cedar/OPA + OpenSandbox microVM (ADR-020), traces OpenTelemetry gen_ai.* à double couloir PII (ADR-021) et portes d’essai pass⁵ (ADR-022).",
+    proof:
+      "L’IETF n’a encore adopté aucun RFC propre à l’identité des agents, et les conventions OpenTelemetry GenAI demeurent au statut « Development ». De plus, une prépublication récente avertit que les garanties d’isolation d’un agent ne se composent pas automatiquement lorsqu’on enchaîne plusieurs agents."
+  },
+  {
+    id: "T6",
+    code: "T6 · Droit & souveraineté",
+    title: "Droit, conformité 2027 et souveraineté cognitive (Québec, Canada, UE)",
+    short: "Maîtriser les obligations légales imminentes et savoir où résident données et modèles.",
+    chapters: [35, 36, 37, 38, 39, 45, 46],
+    adrs: ["ADR-024", "ADR-026", "ADR-027", "ADR-028"],
+    plain:
+      "Même sans « loi sur les agents IA », le droit encadre déjà leurs actes. L’argument « c’est l’IA qui a décidé toute seule » ne protège jamais l’entreprise. Au Québec, la Loi 25 impose déjà transparence et révision humaine sur les décisions automatisées (et une validation purement symbolique ne suffit pas). En mai 2027, les institutions financières canadiennes passent sous la ligne directrice BSIF E-23 et celle de l’AMF. Côté technique, louer un nuage « au Canada » ne protège pas contre les lois extraterritoriales sans chiffrement matériel et plan de repli.",
+    mechanisms:
+      "Qualification réglementaire croisée ISO 42001 / BSIF E-23 / Loi 25 / EU AI Act (ADR-024). Échanges B2B inter-entreprises encadrés par connecteurs Dataspace (EDC/ODRL), identité légale vLEI et séparation entre agent diplomate et évaluateur interne (ADR-026). Souveraineté des 6 substrats d’état via enclaves GPU TEE, clés HYOK, bascule bimodèle en < 15 min (ADR-027) et autonomie edge CRDT + verrou matériel Simplex (ADR-028).",
+    proof:
+      "Trois textes réglementaires majeurs (ligne directrice AMF, directive fédérale sur la prise de décisions automatisée et Loi 25 consolidée) n’ont pu être chargés en texte intégral lors de la compilation et reposent sur des analyses ou dépôts en attente (signalés dans plan.md et annexe E)."
+  },
+  {
+    id: "T7",
+    code: "T7 · Économie, humain & usine interne",
+    title: "FinOps du coût par résultat, facteur humain (HOTL) et usine de distillation",
+    short: "Éviter l’explosion des factures d’inférence, l’usure des valideurs et industrialiser l’IA interne.",
+    chapters: [40, 41, 44, 47],
+    adrs: ["ADR-014", "ADR-023", "ADR-025", "ADR-029", "ADR-030", "ADR-031"],
+    plain:
+      "Un agent coûte rarement un prix fixe : dans un banc lu, plus de 97 % des jetons sont relus en boucle, si bien qu’un incident peut brûler des milliers de dollars en une nuit. Il faut donc piloter par coût par résultat réussi (Cost-per-Outcome) avec disjoncteurs temps réel, diriger les cas simples vers de petits modèles spécialisés (SLM) et veiller à ce que les superviseurs humains ne valident pas mécaniquement par fatigue. Enfin, pour coder ou réparer en interne, l’agent qui écrit ne doit jamais être celui qui approuve ni qui déploie.",
+    mechanisms:
+      "Passerelle unique agentgateway à routage hybride à 3 paliers et affinité KV-cache (ADR-014). Disjoncteurs financiers par saga et mise hors service des agents à ROI négatif (ADR-023). Gouvernance Hub-and-Spoke avec propriétaire métier nominatif et suivi de vigilance HOTL (ADR-025). Séparation des devoirs en SDLC (score de mutation ≥ 85 %, ADR-029), contrats de données Write-Audit-Publish (ADR-030) et distillation continue LLM → SLM sans PII sous porte pass⁵ ≥ 99 % (ADR-031).",
+    proof:
+      "Le seuil de mutation ≥ 85 % est une exigence normative interne de l’architecture Boréal sans source publiée unique, et aucun cadre FinOps multi-agents standardisé pour répartir les coûts partagés entre départements n’est encore adopté sur le marché."
+  },
+  {
+    id: "T8",
+    code: "T8 · Science, veille & marché",
+    title: "Regard scientifique critique, veille technologique et marché 2027–2030",
+    short: "Démêler le solide du spéculatif sur les performances, la normalisation et les milliards annoncés.",
+    chapters: [48, 49, 50],
+    adrs: [],
+    plain:
+      "La Partie X prend du recul. Que prouve la science aujourd’hui ? Que les bancs d’essai publics saturent ou sont contournés par les modèles, qu’un modèle capable de travailler 17 heures avec 50 % de chances de succès tombe à 3 heures dès qu’on exige 80 % de fiabilité, et qu’aucune preuve scientifique n’atteste encore un avantage systématique du multi-agents à budget égal. Côté marché, les estimations de 2025 varient d’un facteur 1 à 59 selon ce qu’on compte : mieux vaut mesurer le coût d’intégration évité chez soi.",
+    mechanisms:
+      "Mettre en place un banc d’essai interne tiré des processus réels de l’entreprise plutôt que de se fier aux palmarès publics (chap. 49). Outiller une veille trimestrielle sur 4 cadences (NVD mensuelle, protocoles/IETF au trimestre) et exiger des clauses contractuelles de révision de prix au-delà de 2027, vu la bascule annoncée hors de la tarification par siège (chap. 50).",
+    proof:
+      "La revue du chapitre 48 est une revue de cadrage rapide sur 83 résumés (complétée par 15 travaux hors protocole). Les fourchettes de marché (8–17 G$ US en 2027; 25–55 G$ US en 2030) proviennent de 13 séries non indépendantes, face à 720–740 G$ US d’investissements d’infrastructure annoncés par quatre géants pour 2026."
+  }
+];
+
+const LEVELS = [
+  {
+    code: "L0",
+    name: "Exécution déterministe pure",
+    metaphor: "Le rail de chemin de fer : rapide, exact, zéro improvisation.",
+    rights: "Lecture et écriture strictement codées d’avance, sans aucune inférence LLM.",
+    human: "Aucune en exécution nominale (audit logiciel classique).",
+    controls: "Compte de charge de travail, journalisation standard, règles DMN / API / RPA fixe.",
+    reversibility: "Comportement 100 % reproductible; idéal pour la paie, la comptabilité finale et les calculs réglementaires."
+  },
+  {
+    code: "L1",
+    name: "Assistance consultative",
+    metaphor: "L’analyste stagiaire qui prépare un mémo sur votre bureau.",
+    rights: "Lecture seule (filtrée selon les droits ACL de l’employé demandeur).",
+    human: "Humain exécuteur : la personne lit, juge et saisit elle-même toute action.",
+    controls: "Jeton délégué en lecture seule, masquage des PII, télémétrie de base.",
+    reversibility: "Sans effet direct sur les systèmes d’enregistrement (attention toutefois à la règle du maillon le plus élevé si un agent L3 lit sa synthèse)."
+  },
+  {
+    code: "L2",
+    name: "Automatisation sous approbation préalable (HITL)",
+    metaphor: "L’assistant prépare le chèque ou la commande et attend votre signature.",
+    rights: "Préparation d’écriture : brouillon de transaction placé en file d’attente ou tampon.",
+    human: "Approbation synchrone ou asynchrone explicite (CIBA) avant toute validation.",
+    controls: "État durable (awakeable), identité NHI + OBO, protection contre le biais d’automatisation (ASI09).",
+    reversibility: "Obligatoire pour tout acte externe irréversible (décaissement définitif, avis réglementaire opposable)."
+  },
+  {
+    code: "L3",
+    name: "Autonomie bornée par exception (HOTL)",
+    metaphor: "Le pilote automatique en vol de croisière : le commandant surveille les alertes.",
+    rights: "Écriture directe dans une enveloppe bornée (seuils financiers, périmètre, quotas).",
+    human: "Supervision sur la boucle : escalade déclenchée sur seuil de risque et audit continu.",
+    controls: "Moteur durable (Temporal/Restate), patron Saga compensable, PDP Cedar/OPA en ligne, coupe-circuit SOC.",
+    reversibility: "Condition d’entrée stricte : l’action doit pouvoir être annulée par compensation Saga ou fenêtre de grâce."
+  },
+  {
+    code: "L4",
+    name: "Orchestration inter-agents et B2B fédérée",
+    metaphor: "La chambre de compensation : des entreprises négocient sous mandats signés.",
+    rights: "Négociation et exécution multi-domaines ou entre entreprises juridiquement distinctes.",
+    human: "Gouvernance par politiques formelles et mandats cryptographiques plafonnés.",
+    controls: "A2A v1.0 signé, mandats vérifiables AP2, connecteur EDC/ODRL, identité SPIFFE/vLEI, traces non répudiables.",
+    reversibility: "Frontière émergente en 2027 : exige rapprochement tripartite déterministe hors LLM et séquestre contractuel."
+  }
+];
+
+const ARCH_BLOCKS = {
+  c6: {
+    badge: "Couche 6 · Stratégique",
+    title: "Gouvernance, Conformité Légale et Commerce Agentique B2B",
+    plain: "C’est la couche qui relie l’automatisation aux règles du monde réel : lois sur l’IA et la vie privée, preuve d’identité juridique entre entreprises et mandats signés prouvant qu’un agent a bien le droit de dépenser.",
+    tools: "ISO/IEC 42001, NIST AI RMF, BSIF E-23, Loi 25, EU AI Act, AP2 (FIDO Alliance), x402 (HTTP 402), Dataspace EDC / ODRL, vLEI.",
+    risk: "Exposition à des sanctions réglementaires majeures (jusqu’à 25 M$ CAD ou 4 % du CA sous la Loi 25), achats non autorisés ou litiges de responsabilité B2B.",
+    chapters: "Chapitres 10, 35, 36, 37, 38, 39 et 45."
+  },
+  c5: {
+    badge: "Couche 5 · Interface",
+    title: "Interaction Humain-Agent (HITL / HOTL) et Multimodalité",
+    plain: "Comment un agent montre sa progression à l’humain, demande un feu vert lisible et génère des formulaires sans jamais injecter de code arbitraire dangereux dans le navigateur.",
+    tools: "AG-UI (flux bidirectionnel d’états), A2UI & MCP-UI / MCP Apps (composants JSON issus d’un catalogue fermé), WebRTC / SIP pour la voix temps réel.",
+    risk: "Fatigue d’approbation qui pousse les employés à cliquer « Oui » sans lire (ASI09), ou exécution de scripts malveillants dans l’interface.",
+    chapters: "Chapitres 7, 10, 22 et 41."
+  },
+  c4: {
+    badge: "Couche 4 · Colonne vertébrale",
+    title: "Orchestration Hybride, Exécution Durable et Transactions",
+    plain: "Le chef d’orchestre déterministe. S’il y a une panne réseau au milieu d’un travail qui dure 48 heures, cette couche reprend exactement là où l’agent s’est arrêté sans envoyer deux fois la même facture.",
+    tools: "Temporal, Restate (awakeable), Confluent Kafka, Solace Agent Mesh, BPMN, patron Saga à compensation inverse et clés d’idempotence.",
+    risk: "Boucles infinies non bornées, actions exécutées en double après redémarrage, perte d’état et impossibilité d’annuler une chaîne partiellement ratée.",
+    chapters: "Chapitres 16, 17, 18, 19, 20, 21 et 23."
+  },
+  c3: {
+    badge: "Couche 3 · Pair à pair",
+    title: "Coordination Horizontale Inter-Agents et Fédération SaaS",
+    plain: "Le langage diplomatique qui permet à un agent Salesforce, un agent SAP et un agent interne de se déléguer une mission sans dévoiler leurs rouages internes.",
+    tools: "A2A v1.0 (Agent Cards signées, fusion d’ACP), AGNTCY (OASF, Directory, messagerie chiffrée SLIM/MLS), MuleSoft Agent Fabric.",
+    risk: "Prolifération de jardins clos incompatibles, boucles de renvoi infinies entre plateformes et incapacité d’enquêter sur un travail délégué.",
+    chapters: "Chapitres 6, 7, 8, 26 et 27."
+  },
+  c2: {
+    badge: "Couche 2 · Sens & Mémoire",
+    title: "Sémantique Métier, Ontologies et Mémoire Partagée",
+    plain: "Le dictionnaire d’entreprise et la mémoire vive structurée. Elle assure que tous les agents calculent les mêmes indicateurs et peuvent oublier sur demande légale sans corrompre le reste.",
+    tools: "Apache Ossie (OSI), ontologies causales versionnées, Graphiti (graphe bi-temporel valid_from/valid_to), Letta, ingénierie du contexte et filtrage ACL préalable.",
+    risk: "Décisions mathématiquement fausses mais poliment rédigées, fuites de données confidentielles dans le contexte partagé et empoisonnement durable de la mémoire (ASI06).",
+    chapters: "Chapitres 12, 13, 14 et 15."
+  },
+  c1: {
+    badge: "Couche 1 · Branchement & Routage",
+    title: "Connectivité Outils, Passerelles AI-Natives, Patrimoine et IT/OT",
+    plain: "La prise électrique et le poste d’aiguillage. Elle relie les modèles aux bases de données, aux vieux systèmes sans API, aux machines d’usine, tout en orientant les requêtes simples vers de petits modèles économiques.",
+    tools: "MCP (2026-07-28 sans état), Agent Skills, AGENTS.md, WebMCP, agentgateway, Agent Router, llm-d (KV-cache), CUA confinés, OPC UA / MQTT / jumeaux numériques.",
+    risk: "Explosion de la facture d’inférence, exposition brute des systèmes centraux (IBM i, SAP) ou commandes industrielles directes non sécurisées.",
+    chapters: "Chapitres 5, 9, 24, 25, 28 et 44."
+  },
+  left: {
+    badge: "Pilier transversal gauche · Sécurité",
+    title: "Confiance Zéro et Identités Non Humaines (NHI)",
+    plain: "Répond en tout temps à deux questions vitales : qui est cet agent, et au nom de quel humain agit-il ? Bloque les actions dès qu’une politique ou une anomalie est détectée.",
+    tools: "SPIFFE / SPIRE, W3C DIDs / VCs, OAuth 2.1 OBO (RFC 8693 act/sub), CIBA, politiques Cedar / OPA, OpenSandbox (microVM), signature SHA-256 des outils MCP, coupe-circuit SOC.",
+    risk: "Usurpation de droits par un jeton de service sur-privilégié, attaque rug-pull sur outil MCP ou exfiltration silencieuse via la « trifecta létale ».",
+    chapters: "Chapitres 29, 30, 31, 32 et 46."
+  },
+  right: {
+    badge: "Pilier transversal droit · Opérations & Coûts",
+    title: "Observabilité OpenTelemetry, AgentOps et FinOps",
+    plain: "Le tableau de bord de vol et le compteur financier. Il retrace chaque étape d’un agent (sans fuite de données personnelles), teste chaque mise à jour par simulation et coupe un agent dont le coût dépasse la valeur.",
+    tools: "OpenTelemetry (gen_ai.*), stockage de traces à double couloir PII, simulation τ-bench, seuils pass⁵, chaos agentique, Cost-per-Outcome, distillation LLM → SLM.",
+    risk: "Impossibilité d’expliquer une erreur à un auditeur, régressions silencieuses lors d’un changement de prompt ou de modèle, et dérive incontrôlée des coûts.",
+    chapters: "Chapitres 33, 34, 40, 44 et 47."
+  }
+};
+
+const TIMELINE = [
+  { date: "Fin 2024", cat: "standards", deadline: false, title: "Lancement de MCP & distinction workflows / agents", desc: "Anthropic publie MCP et pose la frontière entre workflow structuré et agent autonome (ch. 5, 16, 17)." },
+  { date: "Mars–Avril 2025", cat: "standards", deadline: false, title: "ACP (IBM), AGNTCY (Cisco) et A2A (Google)", desc: "Prolifération des protocoles inter-agents; démonstration de l’empoisonnement d’outils MCP (ch. 6, 7, 31)." },
+  { date: "Sept.–Déc. 2025", cat: "canada", deadline: false, title: "BSIF publie E-23 · Énoncé québécois sur l’IA", desc: "Publication de la ligne directrice E-23 sur la gestion du risque de modèle et actualisation au Québec (ch. 38)." },
+  { date: "9 déc. 2025", cat: "standards", deadline: false, title: "Création de l’AAIF & OWASP Agentic Top 10", desc: "La Linux Foundation réunit MCP, goose et AGENTS.md; parution du Top 10 OWASP ASI01–ASI10 (ch. 11, 31)." },
+  { date: "12 mars 2026", cat: "standards", deadline: false, title: "A2A v1.0 : première spécification stable", desc: "Intègre la fusion d’ACP, les Agent Cards signées et le versionnement explicite (ch. 6)." },
+  { date: "7 avril 2026", cat: "canada", deadline: false, title: "Ligne directrice de l’AMF sur l’IA (S)", desc: "Encadrement attendu des institutions à charte québécoise; texte à confirmer en source primaire (ch. 38)." },
+  { date: "Juin–Juil. 2026", cat: "canada", deadline: false, title: "Canada « AI for All », projet de loi C-36 & StatCan 19,2 %", desc: "Lancement de la stratégie fédérale (4 juin), dépôt de C-36 (15 juin) et mesure StatCan (ch. 4, 38)." },
+  { date: "8–28 juil. 2026", cat: "standards", deadline: false, title: "MCP 2026-07-28 sans état & Digital Omnibus UE", desc: "MCP devient HTTP sans état; le règlement (UE) 2026/1744 reporte le haut risque de l’AI Act (ch. 5, 35)." },
+  { date: "2 août 2026", cat: "monde", deadline: true, title: "EU AI Act : transparence (art. 50) active", desc: "Obligations de transparence en vigueur en Europe; seul le marquage des anciens contenus a un court délai (ch. 35)." },
+  { date: "Oct. 2026", cat: "standards", deadline: false, title: "IETF agentproto & dawn · Agent Skills à l’AAIF", desc: "Deux groupes IETF datés pour 2027–2028; l’identité reste hors des mandats datés (ch. 11, 13, 49)." },
+  { date: "12 janv. 2027", cat: "monde", deadline: true, title: "EU Data Act : fin des frais de sortie cloud", desc: "Suppression des frais de changement de fournisseur infonuagique en Europe (ch. 27)." },
+  { date: "1er mai 2027", cat: "canada", deadline: true, title: "BUTOIR : BSIF E-23 et ligne directrice AMF", desc: "Entrée en vigueur pour les institutions financières canadiennes et québécoises : inventaire, matérialité et validation (ch. 38)." },
+  { date: "2 déc. 2027", cat: "monde", deadline: true, title: "BUTOIR : EU AI Act — haut risque Annexe III", desc: "Application complète aux systèmes d’IA à haut risque de l’annexe III (emploi, crédit, services essentiels) (ch. 35)." },
+  { date: "2 août 2028", cat: "monde", deadline: true, title: "EU AI Act — haut risque Annexe I", desc: "Application aux composants de sécurité intégrés aux produits réglementés (machinerie, dispositifs) (ch. 35)." }
+];
+
+const ROLES = [
+  {
+    id: "cto",
+    label: "CTO / CIO",
+    sub: "Stratégie & plateforme",
+    question: "Comment éviter la fragmentation en dix plateformes d’agents concurrentes tout en maîtrisant la souveraineté, le TCO et la rapidité de livraison ?",
+    sequence: "Chapitres 1, 17, 43 → 11 (AAIF) → 44 (passerelles & routage) → 27 (fédération SaaS) → 40, 41 (FinOps & modèle op.) → 46, 47 → 50 (marché).",
+    adrs: "ADR-001, ADR-004, ADR-015, ADR-023, ADR-027, ADR-031",
+    chapters: [1, 11, 17, 27, 40, 41, 43, 44, 46, 47, 50]
+  },
+  {
+    id: "arch",
+    label: "Architecte d’entreprise",
+    sub: "Solutions principales",
+    question: "Quels patrons de communication, de gestion d’état et d’intégrité transactionnelle garantissent la résilience de flux multi-agents ?",
+    sequence: "Parties I, II, IV, V et IX complètes + chap. 12 (Apache Ossie) + Annexe F (31 ADR & arbres de choix) + chap. 48 (état de la preuve).",
+    adrs: "ADR-002, ADR-006, ADR-011, ADR-012, ADR-013, ADR-016, ADR-017",
+    chapters: [1,2,3,4,5,6,7,8,9,10,11,12,16,17,18,19,20,21,22,23,24,25,26,27,28,44,45,46,47,48]
+  },
+  {
+    id: "ciso",
+    label: "CISO & Architecte IAM",
+    sub: "Cybersécurité & NHI",
+    question: "Comment gouverner des milliers d’identités non humaines, prévenir l’empoisonnement MCP et garder un coupe-circuit instantané ?",
+    sequence: "Chap. 17 → 5, 6 (MCP/A2A) → lecture approfondie 29 à 32 → 45, 46 (TEE, HYOK, vLEI) → 49 (veille vulnérabilités) → Annexe G (G.1, G.5).",
+    adrs: "ADR-018, ADR-019, ADR-020, ADR-027",
+    chapters: [5, 6, 8, 17, 24, 29, 30, 31, 32, 45, 46, 49]
+  },
+  {
+    id: "sre",
+    label: "SRE Agentique & AgentOps",
+    sub: "Plateforme & fiabilité",
+    question: "Comment instrumenter, simuler avant déploiement, réparer sous chaos et distiller en continu des systèmes non déterministes ?",
+    sequence: "Chap. 18, 44 (durabilité & KV-cache) → 21, 32 → 33, 34, 40 (OTel, τ-bench, FinOps) → 46, 47 (SRE autonome & distillation) → 48, 49.",
+    adrs: "ADR-012, ADR-014, ADR-021, ADR-022, ADR-029, ADR-030, ADR-031",
+    chapters: [18, 21, 32, 33, 34, 40, 44, 46, 47, 48, 49]
+  },
+  {
+    id: "cdo",
+    label: "CDO & Sémantique",
+    sub: "Données & contexte",
+    question: "Comment transformer entrepôts, graphes et couches BI en un modèle du monde cohérent, filtré par droits d’accès et non contradictoire ?",
+    sequence: "Chap. 1 (systèmes d’enregistrement) → 12, 13, 14, 15 (Ossie, contexte, mémoire, données prêtes) → 45, 46 → 47 (Write-Audit-Publish) → 48.",
+    adrs: "ADR-008, ADR-009, ADR-010, ADR-030, ADR-031",
+    chapters: [1, 12, 13, 14, 15, 45, 46, 47, 48]
+  },
+  {
+    id: "juridique",
+    label: "Juridique, Conformité & Audit",
+    sub: "Risques & régulation",
+    question: "Comment démontrer la conformité devant le BSIF, la CAI du Québec ou l’UE et encadrer juridiquement les actes posés par des agents ?",
+    sequence: "Ouverture (§ 0.4) → chap. 43 (IA fantôme) → 10 (AP2) → 30 (traçabilité) → 35, 36, 37, 38, 39 → 41, 45, 46 → 49 → Annexe G (G.4).",
+    adrs: "ADR-003, ADR-018, ADR-024, ADR-025, ADR-026",
+    chapters: [10, 30, 35, 36, 37, 38, 39, 41, 43, 45, 46, 49]
+  }
+];
+
+/* ================= INITIALISATION & INTERACTIONS ================= */
+const esc = (s) => String(s)
+  .replace(/&/g, "&amp;")
+  .replace(/</g, "&lt;")
+  .replace(/>/g, "&gt;")
+  .replace(/"/g, "&quot;");
+
+// Menu mobile & progression
+const menuToggle = document.getElementById("menuToggle");
+const mainNav = document.getElementById("mainNav");
+menuToggle.addEventListener("click", () => {
+  const open = mainNav.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", String(open));
+});
+mainNav.querySelectorAll("a").forEach((a) =>
+  a.addEventListener("click", () => {
+    mainNav.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+  })
+);
+window.addEventListener("scroll", () => {
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = max > 0 ? Math.min(100, Math.max(0, (window.scrollY / max) * 100)) : 0;
+  document.getElementById("scrollBar").style.width = pct.toFixed(1) + "%";
+}, { passive: true });
+
+// 1. Thématiques d'intérêt
+let activeThemeId = "T1";
+const themesNav = document.getElementById("themesNav");
+const themeDetail = document.getElementById("themeDetail");
+
+function renderThemes() {
+  themesNav.innerHTML = THEMES.map((t) => {
+    const sel = t.id === activeThemeId;
+    return `
+      <button class="theme-tab" type="button" role="tab" id="tab-${t.id}"
+              aria-selected="${sel}" aria-controls="themeDetail" data-theme="${t.id}">
+        <span class="theme-tab-top">
+          <span>${esc(t.code)}</span>
+          <span>Ch. ${t.chapters.join(", ")}</span>
+        </span>
+        <span class="theme-tab-title">${esc(t.title)}</span>
+        <span class="theme-tab-sub">${esc(t.short)}</span>
+      </button>`;
+  }).join("");
+
+  const t = THEMES.find((x) => x.id === activeThemeId);
+  themeDetail.setAttribute("aria-labelledby", `tab-${t.id}`);
+  themeDetail.innerHTML = `
+    <div class="theme-detail-head">
+      <div>
+        <span class="pill pill-solid">${esc(t.code)}</span>
+        <h3 style="margin-top:0.65rem; font-size:1.35rem;">${esc(t.title)}</h3>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; gap:0.35rem;">
+        ${t.adrs.length ? t.adrs.map((a) => `<span class="pill pill-burnt">${esc(a)}</span>`).join("") : `<span class="pill">Analyse &amp; cadrage</span>`}
+      </div>
+    </div>
+    <div class="theme-blocks">
+      <div class="theme-block">
+        <div class="theme-block-label">En clair (vulgarisation)</div>
+        <p>${esc(t.plain)}</p>
+      </div>
+      <div class="theme-block">
+        <div class="theme-block-label">Mécanismes, standards et invariants prescrits</div>
+        <p>${esc(t.mechanisms)}</p>
+      </div>
+      <div class="theme-block">
+        <div class="theme-block-label">État de la preuve &amp; vigilance</div>
+        <p>${esc(t.proof)}</p>
+      </div>
+    </div>
+    <div class="theme-detail-foot">
+      <span style="font-size:0.86rem; color:var(--text-muted);">
+        Chapitres couverts : <strong style="color:var(--text-primary);">${t.chapters.join(", ")}</strong>
+      </span>
+      <button class="btn btn-primary btn-sm" type="button" id="jumpThemeChapters" data-theme="${t.id}">
+        Filtrer ces ${t.chapters.length} chapitres dans l’explorateur
+      </button>
+    </div>`;
+
+  themesNav.querySelectorAll(".theme-tab").forEach((btn) =>
+    btn.addEventListener("click", () => {
+      activeThemeId = btn.dataset.theme;
+      renderThemes();
+    })
+  );
+  document.getElementById("jumpThemeChapters").addEventListener("click", () => {
+    resetExplorerState();
+    document.getElementById("themeSelect").value = t.id;
+    applyExplorerFilters();
+    document.getElementById("explorateur").scrollIntoView({ behavior: "smooth" });
+  });
+}
+
+// 2. Simulateur A : Loi de Lusser
+const lusserP = document.getElementById("lusserP");
+const lusserN = document.getElementById("lusserN");
+function updateLusser() {
+  const p = parseFloat(lusserP.value) / 100;
+  const n = parseInt(lusserN.value, 10);
+  const r = Math.pow(p, n) * 100;
+  document.getElementById("lusserPVal").textContent = (p * 100).toFixed(1).replace(".", ",") + " %";
+  document.getElementById("lusserNVal").textContent = n + (n > 1 ? " étapes" : " étape");
+  document.getElementById("lusserOut").textContent = r.toFixed(1).replace(".", ",") + " %";
+  document.getElementById("lusserBar").style.width = Math.max(2, r).toFixed(1) + "%";
+  const badge = document.getElementById("lusserBadge");
+  const exp = document.getElementById("lusserExplain");
+  if (r >= 85) {
+    badge.className = "pill pill-ok";
+    badge.textContent = "Zone maîtrisable sous supervision";
+    exp.textContent = "En gardant la chaîne courte ou très fiable, l’enveloppe déterministe peut absorber les reprises sans saturer les valideurs humains.";
+  } else if (r >= 60) {
+    badge.className = "pill pill-warn";
+    badge.textContent = "Fragile sans vérifications";
+    exp.textContent = "Près d’une tâche sur trois échoue ou dérive silencieusement. Il faut découper en sous-processus bornés avec points de contrôle.";
+  } else {
+    badge.className = "pill pill-risk";
+    badge.textContent = "Effondrement en cascade";
+    exp.textContent = "La composition probabiliste détruit la fiabilité d’ensemble : le routage critique doit impérativement sortir du prompt et passer dans du code durable.";
+  }
+}
+lusserP.addEventListener("input", updateLusser);
+lusserN.addEventListener("input", updateLusser);
+
+// 3. Simulateur B : Échelle L0 - L4
+let activeLevel = "L2";
+const levelsTabs = document.getElementById("levelsTabs");
+const levelDetail = document.getElementById("levelDetail");
+function renderLevels() {
+  levelsTabs.innerHTML = LEVELS.map((lv) => `
+    <button class="lvl-btn" type="button" role="tab" aria-selected="${lv.code === activeLevel}" data-lv="${lv.code}">
+      ${lv.code}
+    </button>
+  `).join("");
+  const lv = LEVELS.find((x) => x.code === activeLevel);
+  levelDetail.innerHTML = `
+    <div style="display:flex; align-items:center; justify-content:space-between; gap:0.5rem; flex-wrap:wrap;">
+      <strong style="color:var(--text-primary); font-size:1.05rem;">${lv.code} — ${esc(lv.name)}</strong>
+      <span class="pill pill-burnt">${esc(lv.metaphor)}</span>
+    </div>
+    <dl style="margin:0.35rem 0 0; display:grid; gap:0.45rem;">
+      <div class="lvl-row"><dt>Droits SI</dt><dd>${esc(lv.rights)}</dd></div>
+      <div class="lvl-row"><dt>Rôle humain</dt><dd>${esc(lv.human)}</dd></div>
+      <div class="lvl-row"><dt>Contrôles requis</dt><dd>${esc(lv.controls)}</dd></div>
+      <div class="lvl-row"><dt>Réversibilité</dt><dd>${esc(lv.reversibility)}</dd></div>
+    </dl>`;
+  levelsTabs.querySelectorAll(".lvl-btn").forEach((b) =>
+    b.addEventListener("click", () => {
+      activeLevel = b.dataset.lv;
+      renderLevels();
+    })
+  );
+}
+
+// 4. Architecture 6 couches + 2 piliers
+let activeArch = "c4";
+const archInspector = document.getElementById("archInspector");
+function renderArch() {
+  document.querySelectorAll("[data-arch]").forEach((el) => {
+    el.setAttribute("aria-pressed", String(el.dataset.arch === activeArch));
+  });
+  const b = ARCH_BLOCKS[activeArch];
+  archInspector.innerHTML = `
+    <span class="pill pill-solid">${esc(b.badge)}</span>
+    <h3 style="margin-top:0.75rem; font-size:1.28rem;">${esc(b.title)}</h3>
+    <dl>
+      <div><dt>À quoi ça sert en termes simples</dt><dd>${esc(b.plain)}</dd></div>
+      <div><dt>Standards et outils de référence</dt><dd>${esc(b.tools)}</dd></div>
+      <div><dt>Ce qui arrive si cette brique manque</dt><dd>${esc(b.risk)}</dd></div>
+      <div><dt>Où approfondir dans le volume</dt><dd><strong>${esc(b.chapters)}</strong></dd></div>
+    </dl>`;
+}
+document.querySelectorAll("[data-arch]").forEach((el) =>
+  el.addEventListener("click", () => {
+    activeArch = el.dataset.arch;
+    renderArch();
+  })
+);
+
+// 5. Chronologie 2024-2028
+let activeTl = "all";
+const timelineGrid = document.getElementById("timelineGrid");
+function renderTimeline() {
+  document.querySelectorAll("#timelineFilters .chip-btn").forEach((b) =>
+    b.setAttribute("aria-pressed", String(b.dataset.tl === activeTl))
+  );
+  const items = activeTl === "all" ? TIMELINE : TIMELINE.filter((x) => x.cat === activeTl);
+  timelineGrid.innerHTML = items.map((x) => `
+    <article class="tl-card ${x.deadline ? "deadline" : ""}">
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:0.5rem;">
+        <span class="tl-date">${esc(x.date)}</span>
+        ${x.deadline ? `<span class="pill pill-solid">Échéance légale</span>` : `<span class="pill">${esc(x.cat)}</span>`}
+      </div>
+      <div class="tl-title">${esc(x.title)}</div>
+      <p class="tl-desc">${esc(x.desc)}</p>
+    </article>`).join("");
+}
+document.querySelectorAll("#timelineFilters .chip-btn").forEach((b) =>
+  b.addEventListener("click", () => {
+    activeTl = b.dataset.tl;
+    renderTimeline();
+  })
+);
+
+// 6. Parcours par rôle
+let activeRoleId = "cto";
+let filterByRole = null;
+const rolesGrid = document.getElementById("rolesGrid");
+const roleDetail = document.getElementById("roleDetail");
+
+function renderRoles() {
+  rolesGrid.innerHTML = ROLES.map((r) => `
+    <button class="role-btn" type="button" role="tab" aria-selected="${r.id === activeRoleId}" data-role="${r.id}">
+      <strong>${esc(r.label)}</strong>
+      <span>${esc(r.sub)} · ${r.chapters.length} chapitres clés</span>
+    </button>`).join("");
+
+  const r = ROLES.find((x) => x.id === activeRoleId);
+  roleDetail.innerHTML = `
+    <div class="role-detail-copy">
+      <span class="pill pill-burnt">Parcours recommandé · ${esc(r.label)}</span>
+      <h3 style="margin-top:0.6rem;">${esc(r.question)}</h3>
+      <p><strong style="color:var(--text-primary);">Séquence :</strong> ${esc(r.sequence)}</p>
+      <p><strong style="color:var(--text-primary);">ADR prioritaires :</strong> <span class="mono">${esc(r.adrs)}</span></p>
+    </div>
+    <div>
+      <button class="btn btn-primary" type="button" id="applyRoleFilter">
+        Filtrer les ${r.chapters.length} chapitres de ce rôle
+      </button>
+    </div>`;
+
+  rolesGrid.querySelectorAll(".role-btn").forEach((b) =>
+    b.addEventListener("click", () => {
+      activeRoleId = b.dataset.role;
+      renderRoles();
+    })
+  );
+  document.getElementById("applyRoleFilter").addEventListener("click", () => {
+    resetExplorerState();
+    filterByRole = r;
+    applyExplorerFilters();
+    document.getElementById("explorateur").scrollIntoView({ behavior: "smooth" });
+  });
+}
+
+// 7. Explorateur des 50 chapitres & 8 annexes
+const searchInput = document.getElementById("searchInput");
+const partSelect = document.getElementById("partSelect");
+const themeSelect = document.getElementById("themeSelect");
+const onlyVolets = document.getElementById("onlyVolets");
+const activeRoleBadge = document.getElementById("activeRoleBadge");
+const chapterCount = document.getElementById("chapterCount");
+const chaptersGrid = document.getElementById("chaptersGrid");
+
+function resetExplorerState() {
+  searchInput.value = "";
+  partSelect.value = "all";
+  themeSelect.value = "all";
+  onlyVolets.checked = false;
+  filterByRole = null;
+}
+
+function applyExplorerFilters() {
+  const q = searchInput.value.trim().toLowerCase();
+  const part = partSelect.value;
+  const th = themeSelect.value;
+  const onlyV = onlyVolets.checked;
+
+  if (filterByRole) {
+    activeRoleBadge.hidden = false;
+    activeRoleBadge.textContent = `Rôle : ${filterByRole.label} (×)`;
+    activeRoleBadge.style.cursor = "pointer";
+  } else {
+    activeRoleBadge.hidden = true;
+  }
+
+  const list = CHAPTERS.filter((c) => {
+    if (part !== "all" && c.p !== part) return false;
+    if (th !== "all" && c.th !== th) return false;
+    if (onlyV && c.v.length === 0 && c.adrs.length === 0) return false;
+    if (filterByRole && !filterByRole.chapters.includes(c.n)) return false;
+    if (q) {
+      const hay = [
+        String(c.n), c.t, c.pt, c.q, c.s,
+        ...c.v,
+        ...c.adrs.map((a) => `${a.code} ${a.intitule} ${a.invariant}`)
+      ].join(" ").toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  });
+
+  chapterCount.textContent = `${list.length} / ${CHAPTERS.length} chapitres affichés`;
+  if (!list.length) {
+    chaptersGrid.innerHTML = `
+      <div class="card" style="grid-column:1/-1; text-align:center; padding:2rem;">
+        <p style="margin:0 0 0.85rem; color:var(--text-primary); font-weight:600;">
+          Aucun chapitre ne correspond à ces filtres combinés.
+        </p>
+        <button class="btn btn-secondary btn-sm" type="button" id="clearEmptyFilters">
+          Afficher les 50 chapitres
+        </button>
+      </div>`;
+    document.getElementById("clearEmptyFilters").addEventListener("click", () => {
+      resetExplorerState();
+      applyExplorerFilters();
+    });
+    return;
+  }
+
+  chaptersGrid.innerHTML = list.map((c) => {
+    const adrsHtml = c.adrs.map((a) => `
+      <div class="ch-adr-box">
+        <strong>${esc(a.code)}</strong> — ${esc(a.invariant)}
+      </div>`).join("");
+    const voletsHtml = c.v.length
+      ? `<div class="ch-volet"><strong style="color:var(--text-primary);">Mise en œuvre :</strong> ${esc(c.v.join(" · "))}</div>`
+      : "";
+    return `
+      <article class="ch-card" data-chap="${c.n}">
+        <div class="ch-top">
+          <span class="ch-num">Chapitre ${String(c.n).padStart(2, "0")} · Partie ${esc(c.p)}</span>
+          <span class="pill pill-burnt">${esc(c.th)}</span>
+        </div>
+        <h4 class="ch-title">${esc(c.t)}</h4>
+        ${c.q ? `<p class="ch-q">« ${esc(c.q)} »</p>` : ""}
+        <p class="ch-sum">${esc(c.s)}</p>
+        ${(voletsHtml || adrsHtml) ? `<div class="ch-foot">${voletsHtml}${adrsHtml}</div>` : ""}
+      </article>`;
+  }).join("");
+}
+
+searchInput.addEventListener("input", applyExplorerFilters);
+partSelect.addEventListener("change", applyExplorerFilters);
+themeSelect.addEventListener("change", applyExplorerFilters);
+onlyVolets.addEventListener("change", applyExplorerFilters);
+activeRoleBadge.addEventListener("click", () => {
+  filterByRole = null;
+  applyExplorerFilters();
+});
+document.getElementById("resetFilters").addEventListener("click", () => {
+  resetExplorerState();
+  applyExplorerFilters();
+});
+
+// 8. Annexes A à H
+function renderAnnexes() {
+  document.getElementById("annexesGrid").innerHTML = ANNEXES.map((a) => `
+    <article class="card">
+      <span class="pill pill-burnt">Annexe ${esc(a.l)}</span>
+      <h4 style="margin-top:0.65rem; font-size:1.02rem;">${esc(a.t)}</h4>
+      <p style="margin:0.45rem 0 0; font-size:0.86rem; color:var(--text-secondary);">${esc(a.d)}</p>
+    </article>`).join("");
+}
+
+// Rendu initial
+renderThemes();
+updateLusser();
+renderLevels();
+renderArch();
+renderTimeline();
+renderRoles();
+applyExplorerFilters();
+renderAnnexes();
+</script>
+</body>
+</html>
