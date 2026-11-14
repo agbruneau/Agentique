@@ -1,0 +1,31 @@
+{
+ "id": "P3-m5",
+ "origine": "plan 2027, lot P3-m5",
+ "categorie": "coherence",
+ "remplacements": [
+  {
+   "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+   "avant": "apiVersion: gateway.aaif.linuxfoundation.org/v1",
+   "apres": "apiVersion: agentgateway.aaif.io/v1alpha2",
+   "motif": "Point mineur 08-44 : l'Extrait 46.1 configurait l'agentgateway du Groupe Boréal sous un autre groupe d'API que l'Extrait 44.1. Il prend celui du chapitre 44. Les noms de régions, qui diffèrent aussi, sont laissés : ils peuvent désigner autre chose que les codes de juridiction du chapitre 44."
+  },
+  {
+   "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+   "avant": "Les journaux Temporal/Restate, graphes mémoire, index vectoriels, KV-caches, courtiers d’événements et traces OTel résident-ils tous",
+   "apres": "Les journaux Temporal/Restate, la mémoire (graphes et index vectoriels), les KV-caches, les courtiers d’événements, les traces OTel et les journaux d’abus et de télémétrie du fournisseur de modèle résident-ils tous",
+   "motif": "Point mineur 08-47 : la liste de contrôle renvoyait aux six substrats de la section 46.9, mais scindait la mémoire en deux et omettait la sixième couche, les journaux du fournisseur de modèle."
+  },
+  {
+   "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+   "avant": "Le pont entre MCP / A2A et ROS 2 découple trois couches :",
+   "apres": "Le pont entre MCP / A2A et ROS 2 découple trois couches, que le tableau plus bas porte à quatre en séparant la planification locale de l’arbitre Simplex :",
+   "motif": "Point mineur 08-49 : trois couches annoncées, quatre dans le tableau qui suit. Le lien entre les deux décomptes est dit."
+  },
+  {
+   "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+   "avant": "allowedActionTypes: [\"NavigateToWaypoint\", \"DockCharger\"]",
+   "apres": "allowedActionTypes: [\"NavigateToNamedWaypoint\", \"DockAtStation\"]",
+   "motif": "Point mineur 08-52 : les types d'action du manifeste de l'Extrait 46.6 ne portaient pas les noms des primitives que la passerelle expose selon le texte."
+  }
+ ]
+}

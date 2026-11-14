@@ -1,0 +1,25 @@
+{
+ "id": "P3-m4",
+ "origine": "plan 2027, lot P3-m4",
+ "categorie": "coherence",
+ "remplacements": [
+  {
+   "fichier": "chapitre-38-canada-quebec.md",
+   "avant": "à 0,97 dès que le flux relève du palier matériel BSIF E-23.",
+   "apres": "à 0,97 dès que le flux relève du palier matériel BSIF E-23; l’Extrait 34.1, qui garde 0,95 pour le même agent, précède ce relèvement.",
+   "motif": "Point mineur 07-13 : le manifeste de l'Extrait 34.1 classe le même agent au palier matériel avec un seuil de 0,95, quand la fiche 38.1 exige 0,97. L'écart est dit, sans retoucher l'un ou l'autre extrait."
+  },
+  {
+   "fichier": "chapitre-43-maturite-prospective.md",
+   "avant": "(amnistie déclarative de trois semaines, inspection DNS/TLS sortante)",
+   "apres": "(amnistie déclarative ramenée de 30 jours à trois semaines, inspection DNS/TLS sortante)",
+   "motif": "Point mineur 08-8 : la méthode fixe une amnistie de 30 jours à la porte G1, le fil rouge en appliquait une de trois semaines sans le dire."
+  },
+  {
+   "fichier": "chapitre-45-reseaux-b2b-federes.md",
+   "avant": "Une activité déterministe évalue la règle Cedar de rapprochement à trois voies, au centime et au kilogramme près.",
+   "apres": "Une activité déterministe évalue la règle de rapprochement à trois voies dans les tolérances du contrat; l’arbitre de l’Extrait 45.3 en donne la logique : 0,02 \\$ sur le montant, ratio convenu sur la quantité.",
+   "motif": "Point mineur 08-33 : le texte annonçait une règle exacte « au centime et au kilogramme près », alors que l'Extrait 45.3 tolère 0,02 $ et un ratio sur la quantité. Le texte s'aligne sur l'extrait."
+  }
+ ]
+}

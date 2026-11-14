@@ -120,7 +120,7 @@ Dans un système monolithique où un seul « super-agent » interagit avec le cl
 
 ## 1.8 Le *System of Action* au-dessus des systèmes d’enregistrement
 
-Pendant deux décennies, l’urbanisation des systèmes d’information a suivi la stratification popularisée par Gartner : à la base, les systèmes d’enregistrement (ERP, grand livre comptable, SIRH, référentiels maîtres), garants de l’intégrité transactionnelle ACID; au milieu, les systèmes de différenciation, qui hébergent les processus propres à l’entreprise; au sommet, les systèmes d’engagement (portails web, applications mobiles, outils collaboratifs), optimisés pour l’interaction humaine.
+Pendant deux décennies, l’urbanisation des systèmes d’information a suivi une stratification en trois étages : à la base, les systèmes d’enregistrement (ERP, grand livre comptable, SIRH, référentiels maîtres), garants de l’intégrité transactionnelle ACID; au milieu, les systèmes de différenciation, qui hébergent les processus propres à l’entreprise; au sommet, les systèmes d’engagement (portails web, applications mobiles, outils collaboratifs), optimisés pour l’interaction humaine.
 
 Dans cette architecture centrée sur l’interface, chaque système d’enregistrement suppose qu’un humain authentifié clique sur une suite d’écrans pour accomplir une transaction. Même les API REST ajoutées par la suite reflètent souvent la structure granulaire des écrans : vingt appels GET et PATCH successifs sur des tables normalisées pour modifier une commande complexe.
 

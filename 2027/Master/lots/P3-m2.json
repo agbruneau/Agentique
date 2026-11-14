@@ -1,0 +1,49 @@
+{
+ "id": "P3-m2",
+ "origine": "plan 2027, lot P3-m2",
+ "categorie": "coherence",
+ "remplacements": [
+  {
+   "fichier": "chapitre-10-commerce-agentique.md",
+   "avant": "de la spécification déclarative des vues (A2UI et MCP-UI).",
+   "apres": "de la spécification déclarative des vues (A2UI et MCP-UI); MCP-UI désigne ici le projet communautaire dont l’extension officielle MCP Apps (chapitre 5) est la forme normalisée.",
+   "motif": "Point mineur 02-54 : le volet écrit « MCP-UI » là où les chapitres 5 et 7 et l'annexe B parlent de l'extension officielle MCP Apps. Le lien entre les deux noms est dit une fois, sans retoucher les huit occurrences."
+  },
+  {
+   "fichier": "chapitre-16-topologies-patrons.md",
+   "avant": "targetRef=\"Task_PostGateDMN\" />\n  <bpmn:sequenceFlow id=\"Flow_TimeoutFallback\"",
+   "apres": "targetRef=\"Task_PostGateDMN\" />\n  <bpmn:sequenceFlow id=\"Flow_PostGate\" sourceRef=\"Task_PostGateDMN\" targetRef=\"Gw_RouteAuthorization\" />\n  <bpmn:sequenceFlow id=\"Flow_TimeoutFallback\"",
+   "motif": "Point mineur 03-22 : le fragment BPMN de l'Extrait 16.3 avait un graphe rompu : aucun flux n'entrait dans la passerelle `Gw_RouteAuthorization`. Un flux de `Task_PostGateDMN` vers la passerelle est ajouté."
+  },
+  {
+   "fichier": "chapitre-16-topologies-patrons.md",
+   "avant": "de valider la conformité BSIF E-23 trois mois avant l’échéance du 1er mai 2027",
+   "apres": "de valider la conformité BSIF E-23 avant l’échéance du 1er mai 2027",
+   "motif": "Point mineur 03-28 : un problème posé au début du T1 2027 ne peut pas donner une conformité validée trois mois avant le 1er mai 2027, suivie d'un bilan à 90 jours. L'avance de trois mois est retirée."
+  },
+  {
+   "fichier": "chapitre-18-execution-durable-transactions.md",
+   "avant": "| Latence de journalisation par pas | Aucune latence chiffrée (section 18.6); persistance SQL / Cassandra multi-AZ | Aucune latence chiffrée (section 18.6); journal Rust Bifrost intégré | Aucune latence chiffrée (section 18.6); selon le backend de stockage (Scheduler / Azure Storage) | Faible intra-session; dépend de Step Functions en T4 |",
+   "apres": "| Persistance du journal (aucune latence chiffrée, section 18.6) | SQL / Cassandra multi-AZ | Journal Rust Bifrost intégré | Selon le backend de stockage (Scheduler / Azure Storage) | Propre à la session; Step Functions en T4 |",
+   "motif": "Point mineur 04-9 : la ligne « Latence de journalisation par pas » répondait trois fois sur quatre qu'aucune latence n'est chiffrée. Elle compare maintenant ce qui est connu, la persistance du journal."
+  },
+  {
+   "fichier": "chapitre-18-execution-durable-transactions.md",
+   "avant": "\\text{WfId} \\;\\|\\; \\text{Epoch} \\;\\|\\; \\text{SeqId}",
+   "apres": "\\text{WfId} \\;\\|\\; \\text{SeqId}",
+   "motif": "Point mineur 04-13 : la formule de la clé d'idempotence portait un terme « Epoch » que ni le texte ni l'Extrait 18.2 n'expliquent ou n'emploient. Il est retiré."
+  },
+  {
+   "fichier": "chapitre-18-execution-durable-transactions.md",
+   "avant": "le numéro de séquence `SeqId` de l'étape restent invariants",
+   "apres": "le numéro de séquence `SeqId` de l’étape (`activityId` dans l’Extrait 18.2, `stepSequenceId` dans l’ADR-012) restent invariants",
+   "motif": "Point mineur 04-13 : la clé d'idempotence était décrite sous trois jeux de noms. La correspondance est dite une fois."
+  },
+  {
+   "fichier": "chapitre-19-orchestration-evenementielle.md",
+   "avant": "taux de dérive en file `SagaDeadLetter` ($< 0,05\\,\\%$)",
+   "apres": "taux de dérive en file `SagaDeadLetter` ($< 0,1\\,\\%$)",
+   "motif": "Point mineur 04-32 : l'indicateur exigeait moins de 0,05 % de dérive, alors que le bilan du même volet (99,94 % de convergence, soit 0,06 % de dérive) est donné pour conforme. Le seuil s'aligne sur l'autre indicateur du même encadré (convergence d'au moins 99,9 %)."
+  }
+ ]
+}

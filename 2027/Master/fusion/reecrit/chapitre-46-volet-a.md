@@ -69,7 +69,7 @@ L’amorçage, selon un modèle zéro confiance, suit trois étapes :
 Cette configuration d’agentgateway applique le géorepérage juridictionnel, la pseudonymisation HYOK et la vérification d’attestation TEE avant le routage :
 
 ``` yaml
-apiVersion: gateway.aaif.linuxfoundation.org/v1
+apiVersion: agentgateway.aaif.io/v1alpha2
 kind: SovereignRoutingPolicy
 metadata:
   name: boreal-jurisdictional-cognitive-fence
@@ -297,7 +297,7 @@ La décision ADR-027 fixe l’indépendance juridictionnelle et l’indépendanc
 
 ### Liste de contrôle de mise en production
 
-1.  **Cartographie des 6 substrats d’état proposés (section 46.9)** : Les journaux Temporal/Restate, graphes mémoire, index vectoriels, KV-caches, courtiers d’événements et traces OTel résident-ils tous physiquement dans la juridiction légale requise ?
+1.  **Cartographie des 6 substrats d’état proposés (section 46.9)** : Les journaux Temporal/Restate, la mémoire (graphes et index vectoriels), les KV-caches, les courtiers d’événements, les traces OTel et les journaux d’abus et de télémétrie du fournisseur de modèle résident-ils tous physiquement dans la juridiction légale requise ?
 2.  **Chiffrement HYOK et Payload Codec** : Les charges utiles d’orchestration et les index vectoriels sont-ils chiffrés avec des clés détenues dans un HSM sous contrôle exclusif de l’entreprise ?
 3.  **Pseudonymisation déterministe amont** : Les requêtes de classe C2 routées vers une API externe subissent-elles une tokenisation réversible locale et bénéficient-elles d’un engagement contractuel Zero-Data-Retention ?
 4.  **Attestation matérielle GPU TEE** : Pour les charges critiques C3 en infonuagique, le HSM vérifie-t-il automatiquement le rapport d’attestation silicium CPU+GPU avant de libérer les clés de session ?

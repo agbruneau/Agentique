@@ -1,0 +1,362 @@
+[
+ {
+  "fichier": "chapitre-01-entreprise-agentique.md",
+  "ligne": 117,
+  "phrase": "**La pratique est prudente.** L'étude MAP repose sur vingt études de cas et sur une enquête de 306 répondants, dont 86 décrivent des systèmes déployés, dans 26 domaines [7].",
+  "sources": {
+   "7": "Pages primaires lues le 11 novembre 2026; [4], [6] à [10] relues le 12 novembre 2026 : [Pan et coll. — Measuring Agents in Production (arXiv 2512.04123, version 4)](https://arxiv.org/abs/2512.04123) — résumé, puis première moitié du texte à l'audit."
+  },
+  "id": "F2-001"
+ },
+ {
+  "fichier": "chapitre-03-dimensions-interoperabilite.md",
+  "ligne": 88,
+  "phrase": "Son résumé rapporte une précision de détection de 27,9 %, obtenue sur des exécutions simulées selon le chapitre 21, ce qui situe la maturité de ce type de remède [15].",
+  "sources": {
+   "15": "Prépublications dont seul le résumé a été lu : [Semantic Consensus: Process-Aware Conflict Detection and Resolution for Enterprise Multi-Agent LLM Systems (arXiv 2604.16339)](https://arxiv.org/abs/2604.16339)"
+  },
+  "id": "F2-002"
+ },
+ {
+  "fichier": "chapitre-03-dimensions-interoperabilite.md",
+  "ligne": 88,
+  "phrase": "**Une tâche, deux intentions.** Dans sa version 2, tirée de sept cadriciels sur plus de 200 tâches, la taxonomie MAST range 36,94 % des échecs observés dans le désalignement entre agents; l'absence de demande de clarification en représente à elle seule 11,65 % [8].",
+  "sources": {
+   "8": "Pages primaires lues le 11 novembre 2026 : [Why Do Multi-Agent LLM Systems Fail? — MAST (arXiv 2503.13657v2)](https://arxiv.org/html/2503.13657v2)"
+  },
+  "id": "F2-003"
+ },
+ {
+  "fichier": "chapitre-04-etat-des-lieux.md",
+  "ligne": 31,
+  "phrase": "Environ 20 % déclarent que les coûts d'exploitation de l'IA limitent leur usage, et 60 % prévoient tout de même d'augmenter leurs investissements dans l'année [8].",
+  "sources": {
+   "8": "Sources secondaires lues : [FM — Companies' financial value from AI holds firm in 2026, 1er septembre 2026](https://www.fm-magazine.com/news/2026/sep/companies-financial-value-from-ai-holds-firm-in-2026/) — compte rendu de l'enquête McKinsey."
+  },
+  "id": "F2-004"
+ },
+ {
+  "fichier": "chapitre-04-etat-des-lieux.md",
+  "ligne": 41,
+  "phrase": "La Linux Foundation, dans son bilan de la première année d'A2A, compte plus de 150 organisations qui appuient le protocole, contre plus de 50 un an plus tôt, et cite son intégration à Azure AI Foundry, à Copilot Studio et à Amazon Bedrock AgentCore Runtime [3].",
+  "sources": {
+   "3": "Pages primaires lues le 11 novembre 2026 : [Linux Foundation — bilan de la première année d'A2A, 9 avril 2026](https://www.linuxfoundation.org/press/a2a-protocol-surpasses-150-organizations-lands-in-major-cloud-platforms-and-sees-enterprise-production-use-in-first-year)"
+  },
+  "id": "F2-005"
+ },
+ {
+  "fichier": "chapitre-04-etat-des-lieux.md",
+  "ligne": 53,
+  "phrase": "| États-Unis | Entreprises utilisant l'IA dans une fonction d'affaires, période close le 3 mai 2026 [15] | 19,8 % | Question modifiée en novembre 2025 |",
+  "sources": {
+   "15": "Statistiques officielles, pages lues le 14 novembre 2026 : [U.S. Census Bureau — Large Firms With at Least 20 Employees Biggest AI Users (26 mai 2026)](https://census.gov/library/stories/2026/05/ai-use-businesses.html)"
+  },
+  "id": "F2-006"
+ },
+ {
+  "fichier": "chapitre-04-etat-des-lieux.md",
+  "ligne": 55,
+  "phrase": "Dans l'Union, elle va de 5,2 % en Roumanie à 42,0 % au Danemark [14].",
+  "sources": {
+   "14": "Statistiques officielles, pages lues le 14 novembre 2026 : [Eurostat — 20% of EU enterprises use AI technologies (11 décembre 2025)](https://ec.europa.eu/eurostat/web/products-eurostat-news/w/ddn-20251211-2)"
+  },
+  "id": "F2-007"
+ },
+ {
+  "fichier": "chapitre-04-etat-des-lieux.md",
+  "ligne": 55,
+  "phrase": "Au Canada, la finance et les assurances arrivent au deuxième rang des secteurs, à 40,4 %, et 40,0 % des entreprises jugent l'IA sans pertinence pour elles [13].",
+  "sources": {
+   "13": "Statistiques officielles, pages lues le 14 novembre 2026 : [Statistique Canada — Analysis on artificial intelligence use by businesses in Canada, second quarter of 2026 (11 juin 2026)](https://www150.statcan.gc.ca/n1/pub/11-621-m/11-621-m2026010-eng.htm)"
+  },
+  "id": "F2-008"
+ },
+ {
+  "fichier": "chapitre-04-etat-des-lieux.md",
+  "ligne": 79,
+  "phrase": "Les figures relues portent sur 22 à 69 de ces 86 réponses, selon la question [1].",
+  "sources": {
+   "1": "Pages primaires lues le 11 novembre 2026 : [Measuring Agents in Production (arXiv 2512.04123, version 4)](https://arxiv.org/abs/2512.04123) — résumé et première moitié du texte."
+  },
+  "id": "F2-009"
+ },
+ {
+  "fichier": "chapitre-04-etat-des-lieux.md",
+  "ligne": 87,
+  "phrase": "**L'interopérabilité entre agents est encore un besoin plus qu'une pratique.** Dans le sondage, 8 % seulement des systèmes servent autre chose que des personnes, et la plupart des cas étudiés sont construits sur mesure, même si 61 % des répondants disent utiliser un cadriciel [1].",
+  "sources": {
+   "1": "Pages primaires lues le 11 novembre 2026 : [Measuring Agents in Production (arXiv 2512.04123, version 4)](https://arxiv.org/abs/2512.04123) — résumé et première moitié du texte."
+  },
+  "id": "F2-010"
+ },
+ {
+  "fichier": "chapitre-04-etat-des-lieux.md",
+  "ligne": 109,
+  "phrase": "Parmi ses répondants, 39 % comparent leur agent à une solution non agentique, et 26 % disent qu'aucune base de comparaison valable n'existe [1].",
+  "sources": {
+   "1": "Pages primaires lues le 11 novembre 2026 : [Measuring Agents in Production (arXiv 2512.04123, version 4)](https://arxiv.org/abs/2512.04123) — résumé et première moitié du texte."
+  },
+  "id": "F2-011"
+ },
+ {
+  "fichier": "chapitre-04-etat-des-lieux.md",
+  "ligne": 115,
+  "phrase": "Un autre chiffre de MAP donne la mesure de l'enjeu : 69 % des agents étudiés lisent des données confidentielles [1].",
+  "sources": {
+   "1": "Pages primaires lues le 11 novembre 2026 : [Measuring Agents in Production (arXiv 2512.04123, version 4)](https://arxiv.org/abs/2512.04123) — résumé et première moitié du texte."
+  },
+  "id": "F2-012"
+ },
+ {
+  "fichier": "chapitre-04-etat-des-lieux.md",
+  "ligne": 157,
+  "phrase": "La mise à l'échelle reste concentrée dans les grandes organisations | Écart de 40 % à 22 % [8] | Progression nette des plus petites dans la prochaine enquête |",
+  "sources": {
+   "8": "Sources secondaires lues : [FM — Companies' financial value from AI holds firm in 2026, 1er septembre 2026](https://www.fm-magazine.com/news/2026/sep/companies-financial-value-from-ai-holds-firm-in-2026/) — compte rendu de l'enquête McKinsey."
+  },
+  "id": "F2-013"
+ },
+ {
+  "fichier": "chapitre-06-a2a.md",
+  "ligne": 206,
+  "phrase": "Le bilan publié par la Linux Foundation en avril 2026 donne quelques repères [8] : plus de 150 organisations soutiennent le protocole, contre une cinquantaine un an plus tôt; le dépôt principal a dépassé 22 000 étoiles; des SDK existent en cinq langages; Microsoft a intégré A2A à Azure AI Foundry et à Copilot Studio, et AWS à Amazon Bedrock AgentCore Runtime.",
+  "sources": {
+   "8": "Pages primaires lues le 11 novembre 2026, [1], [2] et [8] relues à l'audit : [Linux Foundation — bilan de la première année d'A2A, 9 avril 2026](https://www.linuxfoundation.org/press/a2a-protocol-surpasses-150-organizations-lands-in-major-cloud-platforms-and-sees-enterprise-production-use-in-first-year)"
+  },
+  "id": "F2-014"
+ },
+ {
+  "fichier": "chapitre-08-decouverte-registres.md",
+  "ligne": 187,
+  "phrase": "Le recensement le plus proche du sujet de ce chapitre porte sur le registre public de MCP lui-même : 21 643 serveurs et 72 606 enregistrements de version, relevés en août 2026 [23].",
+  "sources": {
+   "23": "Études de mesure, lues le 14 novembre 2026 pour la section 8.8 : [Kraishan — Same Name, Different Server: A Security Census of Silent Drift in the Model Context Protocol Ecosystem (arXiv 2609.14119, 12 septembre 2026)](https://arxiv.org/abs/2609.14119) — prépublication, un seul auteur; résumé seulement."
+  },
+  "id": "F2-015"
+ },
+ {
+  "fichier": "chapitre-08-decouverte-registres.md",
+  "ligne": 191,
+  "phrase": "Le recensement du registre public observe, après correction par la précision de son scanner, environ 7,6 % de constats de gravité élevée [23].",
+  "sources": {
+   "23": "Études de mesure, lues le 14 novembre 2026 pour la section 8.8 : [Kraishan — Same Name, Different Server: A Security Census of Silent Drift in the Model Context Protocol Ecosystem (arXiv 2609.14119, 12 septembre 2026)](https://arxiv.org/abs/2609.14119) — prépublication, un seul auteur; résumé seulement."
+  },
+  "id": "F2-016"
+ },
+ {
+  "fichier": "chapitre-08-decouverte-registres.md",
+  "ligne": 191,
+  "phrase": "L'instrument lui-même est toutefois en cause : sur une collection de 64 611 serveurs, les scanners existants signalent 96,89 % des serveurs comme risqués, et moins de la moitié des alertes vérifiées à la main sont fondées [27].",
+  "sources": {
+   "27": "Études de mesure, lues le 14 novembre 2026 pour la section 8.8 : [Chen et coll. — Rethinking MCP Security: A Large-Scale Study of Runtime MCP Servers and Security Scanner Reliability (arXiv 2607.11086, 13 juillet 2026)](https://arxiv.org/abs/2607.11086) — prépublication; résumé seulement."
+  },
+  "id": "F2-017"
+ },
+ {
+  "fichier": "chapitre-08-decouverte-registres.md",
+  "ligne": 191,
+  "phrase": "Sur 1 899 serveurs à code ouvert, 7,2 % contiennent des vulnérabilités générales et 5,5 % un empoisonnement d'outil propre à MCP, d'après le résumé de l'étude, dont les auteurs demandent un balayage de sécurité automatisé dans les registres [26].",
+  "sources": {
+   "26": "Études de mesure, lues le 14 novembre 2026 pour la section 8.8 : [Hasan et coll. — Model Context Protocol (MCP) at First Glance: Studying the Security and Maintainability of MCP Servers (arXiv 2506.13538, version 5 du 13 avril 2026)](https://arxiv.org/abs/2506.13538) — résumé seulement."
+  },
+  "id": "F2-018"
+ },
+ {
+  "fichier": "chapitre-10-commerce-agentique.md",
+  "ligne": 172,
+  "phrase": "Le Machine Payments Protocol (MPP), corédigé par Tempo et Stripe, emploie le même code 402 avec une autre grammaire : le serveur émet un défi (Challenge) qui liste les options de paiement, le client répond par un justificatif (Credential) qui prouve le paiement, le serveur renvoie un reçu (Receipt) [11].",
+  "sources": {
+   "11": "Pages primaires lues le 11 novembre 2026; [1], [3], [6], [7], [10] et [12] relues le 12 novembre : [Machine Payments Protocol — aperçu](https://mpp.dev/overview)"
+  },
+  "id": "F2-019"
+ },
+ {
+  "fichier": "chapitre-10-commerce-agentique.md",
+  "ligne": 212,
+  "phrase": "Une deuxième prépublication, signée d'un seul auteur, recense 33 vulnérabilités structurelles sur trois plateformes de commerce agentique, que son résumé ne nomme pas [15].",
+  "sources": {
+   "15": "Prépublications, résumé lu seulement : [Protocol-Level Attacks on Agentic Commerce Platforms (arXiv 2607.21824)](https://arxiv.org/abs/2607.21824)"
+  },
+  "id": "F2-020"
+ },
+ {
+  "fichier": "chapitre-11-gouvernance-standards.md",
+  "ligne": 144,
+  "phrase": "Une synthèse d'octobre 2026 sur l'état de la famille ISO/IEC 42000 ne recense aucune norme ni aucun projet du sous-comité SC 42 consacré aux agents, aux systèmes multi-agents ou à leur interopérabilité [32].",
+  "sources": {
+   "32": "Sources secondaires, lues le même jour : [GAICC — état de la famille ISO/IEC 42000, octobre 2026](https://gaicc.org/blog/iso-42000-standards-family/)"
+  },
+  "id": "F2-021"
+ },
+ {
+  "fichier": "chapitre-12-couche-semantique-ontologies.md",
+  "ligne": 246,
+  "phrase": "Dans sa version 2, la taxonomie MAST range 36,94 % des échecs multi-agents observés dans le désalignement entre agents [14]; la version 3 ramène cette part à environ 32 % (chapitre 21).",
+  "sources": {
+   "14": "Source reprise du plan initial, non relue pour ce chapitre : [Why Do Multi-Agent LLM Systems Fail? — MAST (arXiv 2503.13657)](https://arxiv.org/html/2503.13657v2)"
+  },
+  "id": "F2-022"
+ },
+ {
+  "fichier": "chapitre-13-ingenierie-contexte.md",
+  "ligne": 23,
+  "phrase": "Un rapport technique de Chroma, en juillet 2025, étend le constat à 18 modèles : la performance devient moins fiable à mesure que l'entrée s'allonge, même sur des tâches simples, et un seul distracteur suffit à la dégrader [4].",
+  "sources": {
+   "4": "Pages primaires lues le 11 novembre 2026 : [Chroma — Context Rot: How Increasing Input Tokens Impacts LLM Performance (14 juillet 2025)](https://www.trychroma.com/research/context-rot) — rapport technique d'éditeur."
+  },
+  "id": "F2-023"
+ },
+ {
+  "fichier": "chapitre-13-ingenierie-contexte.md",
+  "ligne": 111,
+  "phrase": "Une prépublication, SkillsBench, évalue 87 tâches dans huit domaines, avec et sans skills, sur 18 configurations de modèle et de harnais [11].",
+  "sources": {
+   "11": "Pages primaires lues le 11 novembre 2026 : [Li et coll. — SkillsBench (arXiv 2602.12670, v4)](https://arxiv.org/abs/2602.12670) — prépublication; résumé et première partie du texte lus."
+  },
+  "id": "F2-024"
+ },
+ {
+  "fichier": "chapitre-13-ingenierie-contexte.md",
+  "ligne": 119,
+  "phrase": "Côté risque, une autre prépublication a analysé 31 132 skills tirées de deux places de marché : 26,1 % présentent au moins un motif de vulnérabilité, et celles qui embarquent des scripts sont environ deux fois plus exposées que les autres [12].",
+  "sources": {
+   "12": "Pages primaires lues le 11 novembre 2026 : [Liu et coll. — Agent Skills in the Wild (arXiv 2601.10338)](https://arxiv.org/abs/2601.10338) — prépublication; résumé lu."
+  },
+  "id": "F2-025"
+ },
+ {
+  "fichier": "chapitre-13-ingenierie-contexte.md",
+  "ligne": 131,
+  "phrase": "Une étude empirique de 2 303 fichiers de ce type, dans 1 925 dépôts, montre qu'ils évoluent comme du code de configuration, par petits ajouts fréquents, et deviennent difficiles à lire [14].",
+  "sources": {
+   "14": "Pages primaires lues le 11 novembre 2026 : [Chatlatanagulchai et coll. — Agent READMEs (arXiv 2511.12884, v2)](https://arxiv.org/abs/2511.12884) — prépublication; résumé lu."
+  },
+  "id": "F2-026"
+ },
+ {
+  "fichier": "chapitre-13-ingenierie-contexte.md",
+  "ligne": 146,
+  "phrase": "La première étude constate que les agents suivent bien les instructions : un outil mentionné dans le fichier est utilisé en moyenne 1,6 fois par tâche, contre moins de 0,01 fois sinon [15].",
+  "sources": {
+   "15": "Pages primaires lues le 11 novembre 2026 : [Gloaguen et coll. — Evaluating AGENTS.md (arXiv 2602.11988, v3)](https://arxiv.org/abs/2602.11988) — prépublication; résumé et texte lus."
+  },
+  "id": "F2-027"
+ },
+ {
+  "fichier": "chapitre-14-memoire.md",
+  "ligne": 54,
+  "phrase": "Ses auteurs rapportent, sur le banc d'essai LOCOMO, une amélioration relative de 26 % sur la mémoire d'OpenAI et un coût en jetons réduit de plus de 90 % par rapport à l'injection de l'historique complet [12].",
+  "sources": {
+   "12": "Pages primaires lues le 11 novembre 2026 (articles d'arXiv : page de résumé, sauf [1] et [14], lus dans le texte); [5], [15], [17], [19], [20], [25], [26] et [27] relues le 12 novembre 2026 : [Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory (arXiv 2504.19413)](https://arxiv.org/abs/2504.19413)"
+  },
+  "id": "F2-028"
+ },
+ {
+  "fichier": "chapitre-14-memoire.md",
+  "ligne": 58,
+  "phrase": "Ses auteurs rapportent 94,8 % sur le banc DMR, contre 93,4 % pour MemGPT [11].",
+  "sources": {
+   "11": "Pages primaires lues le 11 novembre 2026 (articles d'arXiv : page de résumé, sauf [1] et [14], lus dans le texte); [5], [15], [17], [19], [20], [25], [26] et [27] relues le 12 novembre 2026 : [Zep: A Temporal Knowledge Graph Architecture for Agent Memory (arXiv 2501.13956)](https://arxiv.org/abs/2501.13956)"
+  },
+  "id": "F2-029"
+ },
+ {
+  "fichier": "chapitre-14-memoire.md",
+  "ligne": 68,
+  "phrase": "LongMemEval, publié à ICLR 2025, évalue cinq capacités de mémoire sur 500 questions et rapporte une chute d'exactitude de 30 % chez les assistants commerciaux et les modèles à long contexte au fil d'interactions soutenues [13].",
+  "sources": {
+   "13": "Pages primaires lues le 11 novembre 2026 (articles d'arXiv : page de résumé, sauf [1] et [14], lus dans le texte); [5], [15], [17], [19], [20], [25], [26] et [27] relues le 12 novembre 2026 : [LongMemEval (ICLR 2025, arXiv 2410.10813)](https://arxiv.org/abs/2410.10813)"
+  },
+  "id": "F2-030"
+ },
+ {
+  "fichier": "chapitre-14-memoire.md",
+  "ligne": 140,
+  "phrase": "La liste OWASP Top 10 for Agentic Applications, publiée le 9 décembre 2025, consacre une entrée à la mémoire : ASI06, Memory & Context Poisoning [18].",
+  "sources": {
+   "18": "Pages primaires lues le 11 novembre 2026 (articles d'arXiv : page de résumé, sauf [1] et [14], lus dans le texte); [5], [15], [17], [19], [20], [25], [26] et [27] relues le 12 novembre 2026 : [OWASP — annonce du Top 10 for Agentic Applications, 9 décembre 2025](https://genai.owasp.org/2025/12/09/owasp-top-10-for-agentic-applications-the-benchmark-for-agentic-security-in-the-age-of-autonomous-ai/)"
+  },
+  "id": "F2-031"
+ },
+ {
+  "fichier": "chapitre-14-memoire.md",
+  "ligne": 144,
+  "phrase": "Ses auteurs rapportent un taux de succès moyen supérieur à 80 % sur trois agents, avec moins de 0,1 % d'entrées empoisonnées et moins de 1 % de dégradation en usage normal [21].",
+  "sources": {
+   "21": "Pages primaires lues le 11 novembre 2026 (articles d'arXiv : page de résumé, sauf [1] et [14], lus dans le texte); [5], [15], [17], [19], [20], [25], [26] et [27] relues le 12 novembre 2026 : [AgentPoison (arXiv 2407.12784)](https://arxiv.org/abs/2407.12784)"
+  },
+  "id": "F2-032"
+ },
+ {
+  "fichier": "chapitre-14-memoire.md",
+  "ligne": 152,
+  "phrase": "En soixante jours, l'équipe a relevé 50 prompts distincts venant de 31 entreprises [24].",
+  "sources": {
+   "24": "Pages primaires lues le 11 novembre 2026 (articles d'arXiv : page de résumé, sauf [1] et [14], lus dans le texte); [5], [15], [17], [19], [20], [25], [26] et [27] relues le 12 novembre 2026 : [Microsoft Security — AI Recommendation Poisoning, 10 février 2026](https://www.microsoft.com/en-us/security/blog/2026/02/10/ai-recommendation-poisoning/)"
+  },
+  "id": "F2-033"
+ },
+ {
+  "fichier": "chapitre-15-donnees-pretes-agents.md",
+  "ligne": 166,
+  "phrase": "| Spider 2.0 (ICLR 2025) [6] | 632 problèmes de SQL sur des bases réelles, souvent plus de mille colonnes | 21,3 % de réussite |",
+  "sources": {
+   "6": "Articles lus au niveau du résumé seulement : [Spider 2.0: Evaluating Language Models on Real-World Enterprise Text-to-SQL Workflows (arXiv 2411.07763, ICLR 2025)](https://arxiv.org/abs/2411.07763)"
+  },
+  "id": "F2-034"
+ },
+ {
+  "fichier": "chapitre-15-donnees-pretes-agents.md",
+  "ligne": 167,
+  "phrase": "| EnterpriseBench (EMNLP 2025) [3] | 500 tâches dans quatre domaines (génie logiciel, RH, finance, administration); sources fragmentées; hiérarchies de contrôle d'accès | 41,8 % d'achèvement pour le meilleur modèle, selon le résumé |",
+  "sources": {
+   "3": "Spécifications et articles, pages primaires lues le 11 novembre 2026 : [Can LLMs Help You at Work? A Sandbox for Evaluating LLM Agents in Enterprise Environments — EnterpriseBench (arXiv 2510.27287, EMNLP 2025)](https://arxiv.org/html/2510.27287v1)"
+  },
+  "id": "F2-035"
+ },
+ {
+  "fichier": "chapitre-15-donnees-pretes-agents.md",
+  "ligne": 168,
+  "phrase": "| CRMArena-Pro (prépublication, mai 2025) [7] | 19 tâches de vente, de service et de soumission, validées par des experts | Environ 58 % en un tour, 35 % en plusieurs tours |",
+  "sources": {
+   "7": "Articles lus au niveau du résumé seulement : [CRMArena-Pro (arXiv 2505.18878)](https://arxiv.org/abs/2505.18878)"
+  },
+  "id": "F2-036"
+ },
+ {
+  "fichier": "chapitre-15-donnees-pretes-agents.md",
+  "ligne": 184,
+  "phrase": "VAKRA observe des échecs graves sur les questions soumises à des politiques d'usage, avec un score qui tombe jusqu'à 2,4 % pour les requêtes auxquelles il ne faut pas répondre [8].",
+  "sources": {
+   "8": "Articles lus au niveau du résumé seulement : [VAKRA: Evaluating Multi-Hop Reasoning Across APIs and Retrieval Under Tool-Use Policies (arXiv 2608.12282)](https://arxiv.org/abs/2608.12282)"
+  },
+  "id": "F2-037"
+ },
+ {
+  "fichier": "chapitre-16-topologies-patrons.md",
+  "ligne": 139,
+  "phrase": "Les mesures de Kim et coll. situent le coût : l'architecture décentralisée, à débat et consensus, consomme 26,1 tours par essai en moyenne, et son amplification d'erreurs mesurée sur les traces est de 7,8 fois, entre l'orchestrateur et les agents indépendants [2].",
+  "sources": {
+   "2": "Pages primaires lues le 11 novembre 2026 ([1] à [3] et [5] à [7] relues le 12 novembre 2026) : [Kim et coll. — Towards a Science of Scaling Agent Systems (arXiv 2512.08296v3)](https://arxiv.org/html/2512.08296v3) — prépublication; résumé et première moitié du texte."
+  },
+  "id": "F2-038"
+ },
+ {
+  "fichier": "chapitre-16-topologies-patrons.md",
+  "ligne": 185,
+  "phrase": "L'étude de Kulkarni et Kulkarni compare quatre architectures sur 10 000 dépôts réglementaires américains (formulaires 10-K, 10-Q et 8-K), avec 25 types de champs à extraire et cinq modèles [1].",
+  "sources": {
+   "1": "Pages primaires lues le 11 novembre 2026 ([1] à [3] et [5] à [7] relues le 12 novembre 2026) : [Kulkarni et Kulkarni — Benchmarking Multi-Agent LLM Architectures for Financial Document Processing (arXiv 2603.22651v1)](https://arxiv.org/html/2603.22651v1) — prépublication."
+  },
+  "id": "F2-039"
+ },
+ {
+  "fichier": "chapitre-16-topologies-patrons.md",
+  "ligne": 222,
+  "phrase": "Sur une évaluation interne de recherche, son système multi-agents dépasse de 90,2 % l'agent unique; sur le banc d'essai BrowseComp, la quantité de jetons utilisée explique à elle seule 80 % de la variance de performance [3].",
+  "sources": {
+   "3": "Pages primaires lues le 11 novembre 2026 ([1] à [3] et [5] à [7] relues le 12 novembre 2026) : [Anthropic — How we built our multi-agent research system, 13 juin 2025](https://www.anthropic.com/engineering/built-multi-agent-research-system) — billet de fournisseur."
+  },
+  "id": "F2-040"
+ }
+]

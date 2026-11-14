@@ -390,7 +390,7 @@ def test_trans_agent_kill_chain_is_contained(
 - L’équipe d’architecture déploie alors les quatre barrières de rupture (B1 à B4) :
   1. **Isolation à deux modèles à l’ingestion (B1)** : Le PDF n’est plus lu par un agent doté d’outils. Un travailleur d’extraction SLM, dépourvu de tout connecteur MCP, le traite. Un décodage contraint l’oblige à produire un seul objet JSON strict, `{poNumber: string, items: Array<{sku: string, qty: number}>}`, validé par expressions régulières. Tout texte libre ou méta-instruction disparaît à cette frontière.
   2. **Épinglage `mcp-lockfile` et séparation des rôles (B2)** : Le serveur MCP de rapprochement de réception ne contient aucun outil de modification des données maîtresses bancaires des fournisseurs. Ce domaine est réservé à un processus distinct, soumis à une double validation CIBA.
-  3. **Quarantaine de la mémoire et vue différentielle A2UI (B3 et B4)** : Les anomalies de livraison ne sont pas présentées au gestionnaire sous la forme d’un résumé rédigé par un LLM, mais d’un tableau déterministe qui compare, colonne par colonne, les chiffres extraits du bon de commande SAP et ceux du bon de réception.
+  3. **Quarantaine de la mémoire et vue différentielle A2UI (B3 et B4)** : Toute écriture en mémoire épisodique tirée d’un document tiers reste en quarantaine tant qu’un contrôle déterministe ne l’a pas admise. Les anomalies de livraison ne sont pas présentées au gestionnaire sous la forme d’un résumé rédigé par un LLM, mais d’un tableau déterministe qui compare, colonne par colonne, les chiffres extraits du bon de commande SAP et ceux du bon de réception.
 
 **Bilan de ré-homologation sur 2 500 variantes d’attaques automatisées** :
 

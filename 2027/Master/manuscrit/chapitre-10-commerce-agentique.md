@@ -356,7 +356,7 @@ Page primaire lue le 14 novembre 2026 :
 
 Le flux continu de texte Markdown s’est imposé par défaut comme interface des premiers copilotes. En production d’entreprise en 2027 (souscription d’assurance, tour de contrôle logistique, supervision HOTL), il épuise l’opérateur, qui doit parcourir quarante lignes générées pour repérer une anomalie tarifaire, encourage l’approbation réflexe (OWASP ASI09) et empêche la co-édition structurée d’un dossier métier.
 
-L’architecture sépare le transport bidirectionnel d’événements et d’état (AG-UI) de la spécification déclarative des vues (A2UI et MCP-UI).
+L’architecture sépare le transport bidirectionnel d’événements et d’état (AG-UI) de la spécification déclarative des vues (A2UI et MCP-UI); MCP-UI désigne ici le projet communautaire dont l’extension officielle MCP Apps (chapitre 5) est la forme normalisée.
 
 ### AG-UI (*Agent-User Interaction Protocol*) : synchronisation d’état par JSON Patch
 

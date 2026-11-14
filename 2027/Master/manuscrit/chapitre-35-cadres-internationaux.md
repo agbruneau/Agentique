@@ -264,7 +264,7 @@ Pages primaires lues le 11 novembre 2026 :
 1. [Nannini et coll., « AI Agents Under EU Law », arXiv 2604.04604](https://arxiv.org/abs/2604.04604) — prépublication du 6 avril 2026; résumé et corps du texte, lu en partie.
 2. [Règlement (UE) 2026/1744 — EUR-Lex](https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng) — titre et considérants.
 3. [Digital Omnibus on AI — AI Act Explorer](https://artificialintelligenceact.eu/ai-act-explorer/digital-omnibus/) — texte du règlement reproduit par un site tiers.
-4. [IMDA — Model AI Governance Framework for Agentic AI, version 1.5](https://www.imda.gov.sg/assets/d1e45a56-d898-4b9f-972e-8ae94be1a5a5.pdf)
+4. [IMDA — Model AI Governance Framework for Agentic AI, version 1.5](https://www.imda.gov.sg/-/media/imda/files/about/emerging-tech-and-research/artificial-intelligence/mgf-for-agentic-ai.pdf)
 5. [NIST — AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework)
 6. [NIST — AI Agent Standards Initiative](https://www.nist.gov/caisi/ai-agent-standards-initiative)
 7. [Institut de normalisation de Serbie — fiche du projet ISO/IEC 42105](https://iss.rs/en/project/show/iso:proj:86902)

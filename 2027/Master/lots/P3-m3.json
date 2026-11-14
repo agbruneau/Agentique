@@ -1,0 +1,31 @@
+{
+ "id": "P3-m3",
+ "origine": "plan 2027, lot P3-m3",
+ "categorie": "coherence",
+ "remplacements": [
+  {
+   "fichier": "chapitre-31-menaces.md",
+   "avant": "(B3 et B4)** : Les anomalies de livraison",
+   "apres": "(B3 et B4)** : Toute écriture en mémoire épisodique tirée d’un document tiers reste en quarantaine tant qu’un contrôle déterministe ne l’a pas admise. Les anomalies de livraison",
+   "motif": "Point mineur 06-22 : le point annonçait la quarantaine de la mémoire (barrière B3) et ne décrivait que la vue différentielle (B4), alors que l'attaque visait une écriture en mémoire épisodique."
+  },
+  {
+   "fichier": "chapitre-32-assurance.md",
+   "avant": "ce qui garantit un temps d’évaluation prévisible, en microsecondes.",
+   "apres": "ce qui garantit un temps d’évaluation prévisible, en microsecondes pour le moteur seul; les autres chiffres de ce volet, de 0,4 à 2 millisecondes, visent l’appel complet au PDP.",
+   "motif": "Point mineur 06-30 : le volet donnait pour l'évaluation des ordres de grandeur différents (microsecondes ici; 0,4 à 1,5 ms, moins de 2 ms et 0,62 ms ailleurs) sans dire ce que chacun mesure. La distinction entre moteur et appel complet est une lecture de l'audit, non un fait sourcé."
+  },
+  {
+   "fichier": "chapitre-34-exploitation.md",
+   "avant": "le code d’orchestration, le point de contrôle exact du modèle (LLM ou SLM), le prompt système et les directives de dépôt (`AGENTS.md`), les compétences modulaires embarquées (Agent Skills), les schémas JSON des serveurs MCP distants invoqués, et les politiques déterministes Cedar ou OPA qui bornent son enveloppe d’action.",
+   "apres": "le contrat A2A externe, le point de contrôle exact du modèle (LLM ou SLM), les compétences modulaires (Agent Skills) avec les schémas JSON des serveurs MCP invoqués, le prompt système avec les directives de dépôt (`AGENTS.md`), les politiques déterministes Cedar ou OPA qui bornent son enveloppe d’action, et le code d’infrastructure.",
+   "motif": "Point mineur 07-2 : les six couches de la phrase n'étaient pas les six lignes du tableau qui suit. La phrase reprend les lignes du tableau."
+  },
+  {
+   "fichier": "chapitre-35-cadres-internationaux.md",
+   "avant": "(https://www.imda.gov.sg/assets/d1e45a56-d898-4b9f-972e-8ae94be1a5a5.pdf)",
+   "apres": "(https://www.imda.gov.sg/-/media/imda/files/about/emerging-tech-and-research/artificial-intelligence/mgf-for-agentic-ai.pdf)",
+   "motif": "Point mineur 07-19 : le cadre de Singapour était cité sous une adresse propre au chapitre 35. Il prend l'adresse des chapitres 1, 3, 22 et 39, dont le PDF a été chargé le 14 novembre 2026 : « Version 1.5 | Published 20 May 2026 (Updated 5 June 2026) »."
+  }
+ ]
+}

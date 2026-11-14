@@ -349,7 +349,7 @@ L’amorçage, selon un modèle zéro confiance, suit trois étapes :
 Cette configuration d’agentgateway applique le géorepérage juridictionnel, la pseudonymisation HYOK et la vérification d’attestation TEE avant le routage :
 
 ``` yaml
-apiVersion: gateway.aaif.linuxfoundation.org/v1
+apiVersion: agentgateway.aaif.io/v1alpha2
 kind: SovereignRoutingPolicy
 metadata:
   name: boreal-jurisdictional-cognitive-fence
@@ -577,7 +577,7 @@ La décision ADR-027 fixe l’indépendance juridictionnelle et l’indépendanc
 
 ### Liste de contrôle de mise en production
 
-1.  **Cartographie des 6 substrats d’état proposés (section 46.9)** : Les journaux Temporal/Restate, graphes mémoire, index vectoriels, KV-caches, courtiers d’événements et traces OTel résident-ils tous physiquement dans la juridiction légale requise ?
+1.  **Cartographie des 6 substrats d’état proposés (section 46.9)** : Les journaux Temporal/Restate, la mémoire (graphes et index vectoriels), les KV-caches, les courtiers d’événements, les traces OTel et les journaux d’abus et de télémétrie du fournisseur de modèle résident-ils tous physiquement dans la juridiction légale requise ?
 2.  **Chiffrement HYOK et Payload Codec** : Les charges utiles d’orchestration et les index vectoriels sont-ils chiffrés avec des clés détenues dans un HSM sous contrôle exclusif de l’entreprise ?
 3.  **Pseudonymisation déterministe amont** : Les requêtes de classe C2 routées vers une API externe subissent-elles une tokenisation réversible locale et bénéficient-elles d’un engagement contractuel Zero-Data-Retention ?
 4.  **Attestation matérielle GPU TEE** : Pour les charges critiques C3 en infonuagique, le HSM vérifie-t-il automatiquement le rapport d’attestation silicium CPU+GPU avant de libérer les clés de session ?
@@ -716,7 +716,7 @@ L’orchestration d’entreprise parle A2A v1.0 et MCP, en JSON-RPC sur HTTP. La
 
 ### Missions sémantiques et boucles d’asservissement
 
-Un modèle de langage ne doit pas émettre de consignes continues de bas niveau (vitesses linéaires `cmd_vel`, angles articulaires, couples moteurs) sur un topique DDS. Même embarqué, il présente une gigue de plusieurs dizaines de millisecondes et reste sujet à des hallucinations spatiales, incompatibles avec l’inertie d’un chariot de deux tonnes qui croise un cariste humain. L’agent reste hors de la boucle de commande (section 46.6). Le pont entre MCP / A2A et ROS 2 découple trois couches :
+Un modèle de langage ne doit pas émettre de consignes continues de bas niveau (vitesses linéaires `cmd_vel`, angles articulaires, couples moteurs) sur un topique DDS. Même embarqué, il présente une gigue de plusieurs dizaines de millisecondes et reste sujet à des hallucinations spatiales, incompatibles avec l’inertie d’un chariot de deux tonnes qui croise un cariste humain. L’agent reste hors de la boucle de commande (section 46.6). Le pont entre MCP / A2A et ROS 2 découple trois couches, que le tableau plus bas porte à quatre en séparant la planification locale de l’arbitre Simplex :
 
 1.  **Couche entreprise (A2A v1.0 vers le gestionnaire de flotte Open-RMF)** : La saga délègue un objectif métier de haut niveau (*« Transférer la palette PAL-8841 de la travée B-14 vers le quai d’expédition Q-03 avant 14 h 20, priorité haute, colis fragile »*).
 2.  **Passerelle sémantique MCP–ROS 2 (validation géométrique et traduction en ROS 2 Actions)** : Elle n’expose que des primitives discrètes de haut niveau (`NavigateToNamedWaypoint`, `InspectGaugeAtPose`, `DockAtStation`). Avant d’instancier un objectif typé ROS 2 Action (Goal → Feedback périodique → Result) avec un profil de qualité de service DDS déterministe (RELIABLE, `DEADLINE = 50 ms`), elle vérifie l’existence du point de passage dans le graphe topologique homologué du bâtiment, l’absence de consignation de sécurité (*Lockout/Tagout*, LOTO) dans le registre Cedar et l’état de la batterie du robot.
@@ -808,7 +808,7 @@ spec:
        "sha256:ca7ae6bf98cc8ce389b6017566459a3573abedc6dcc799bb1003090b1174faf1"
   ros2BridgeConstraints:
     ddsDomainId: 42
-    allowedActionTypes: ["NavigateToWaypoint", "DockCharger"]
+    allowedActionTypes: ["NavigateToNamedWaypoint", "DockAtStation"]
     waypointsMapSha256:
       "92329976c7ae4edf085237d1fc34a6ecdec98cebda198a59b3ad77837d0a598b"
     forbidRawVelocityTopics: true

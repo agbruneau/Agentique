@@ -1,0 +1,31 @@
+{
+ "id": "P3-m6",
+ "origine": "plan 2027, lot P3-m6",
+ "categorie": "coherence",
+ "remplacements": [
+  {
+   "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+   "avant": "- \"tests/golden_master/**\"\n      - \".github/workflows/**\"",
+   "apres": "- \"tests/golden_master/**\"\n      - \"tests/acceptance/**\"\n      - \".github/workflows/**\"",
+   "motif": "Point mineur 09-14 : l'Extrait 47.2 n'interdisait pas au bâtisseur le répertoire `tests/acceptance/`, que le texte désigne comme l'oracle verrouillé."
+  },
+  {
+   "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+   "avant": "sur des contrats bissextiles signés au Nouveau-Brunswick",
+   "apres": "sur des contrats du Nouveau-Brunswick qui couvrent un 29 février",
+   "motif": "Point mineur 09-17 : « contrats bissextiles » n'a pas de sens établi; seule une année est bissextile."
+  },
+  {
+   "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+   "avant": "Maximum 2 pods isolés par déploiement / 15 min",
+   "apres": "Maximum 1 pod isolé par déploiement / 30 min",
+   "motif": "Point mineur 09-13 : le tableau autorisait deux isolations R1 par 15 minutes, alors que la politique Cedar de l'Extrait 47.6, le fil rouge et l'ADR-030 limitent l'agent à une mutation par 30 minutes."
+  },
+  {
+   "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+   "avant": "les réveils passent de 19 à 5 par mois",
+   "apres": "les réveils passent de 19 à 7 par mois",
+   "motif": "Point mineur 09-12 : 64 % d'incidents résolus sans intervention laissent environ 7 réveils sur 19, non 5. Le pourcentage est conservé, le nombre de réveils corrigé."
+  }
+ ]
+}

@@ -160,6 +160,7 @@ spec:
     forbidBuilderWritePaths:
       - "specs/**"
       - "tests/golden_master/**"
+      - "tests/acceptance/**"
       - ".github/workflows/**"
   deterministicGates:
     forbidBinaryFloatsInDomain: true
@@ -273,7 +274,7 @@ Chez BCA, l’usine résorbe la dette patrimoniale AS/400 sans interrompre une s
 **Déploiement de l’usine chez Boréal** :
 
 1.  **Cartographie symbolique complète en trois semaines** : Un parseur RPG/CL/DB2 a indexé les 2 140 programmes et isolé 14 domaines fonctionnels faiblement couplés, en commençant par les trois modules qui concentraient 78 % des appels d’agents (*Éligibilité Garantie*, *Calcul Rachat Anticipé*, *Avenant Franchise*).
-2.  **Capture de l’oracle *Golden Master* et boucle à séparation des devoirs** : Sur chaque module, 60 000 transactions historiques anonymisées de 2024–2026 ont formé l’oracle scellé. Au premier cycle d’exécution en miroir du module de rachat anticipé, le comparateur (Extrait 47.3) a intercepté 17 divergences de 0,01 \$ à 0,04 \$ CAD sur des contrats bissextiles signés au Nouveau-Brunswick. Elles venaient d’une règle d’arrondi implicite de 2007 qu’aucun analyste humain ne connaissait plus, intégrée et prouvée avant la bascule.
+2.  **Capture de l’oracle *Golden Master* et boucle à séparation des devoirs** : Sur chaque module, 60 000 transactions historiques anonymisées de 2024–2026 ont formé l’oracle scellé. Au premier cycle d’exécution en miroir du module de rachat anticipé, le comparateur (Extrait 47.3) a intercepté 17 divergences de 0,01 \$ à 0,04 \$ CAD sur des contrats du Nouveau-Brunswick qui couvrent un 29 février. Elles venaient d’une règle d’arrondi implicite de 2007 qu’aucun analyste humain ne connaissait plus, intégrée et prouvée avant la bascule.
 
 **Bilan audité après neuf mois** :
 

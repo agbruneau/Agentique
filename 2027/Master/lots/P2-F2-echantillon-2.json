@@ -1,0 +1,363 @@
+[
+ {
+  "fichier": "chapitre-17-deterministe-ou-agentique.md",
+  "ligne": 40,
+  "phrase": "L'étude Measuring Agents in Production, fondée sur vingt études de cas et un sondage de 306 réponses, dont 86 sur des systèmes déployés, rapporte que 68 % de ces systèmes exécutent moins de dix étapes avant une intervention humaine (au plus dix selon son résumé), et que la fiabilité, premier défi cité, se traite surtout par la conception du système [12].",
+  "sources": {
+   "12": "Pages primaires lues le 11 novembre 2026 : [Measuring Agents in Production (arXiv 2512.04123)](https://arxiv.org/abs/2512.04123) — version 4"
+  },
+  "id": "F2-041"
+ },
+ {
+  "fichier": "chapitre-17-deterministe-ou-agentique.md",
+  "ligne": 151,
+  "phrase": "Affiné sur des exemples distillés du scénario, ce dernier atteint 95,5 % [11]; la distillation vers de petits modèles relève du chapitre 47.",
+  "sources": {
+   "11": "Pages primaires lues le 11 novembre 2026 : [Routine: A Structural Planning Framework for LLM Agent System in Enterprise (arXiv 2507.14447v2)](https://arxiv.org/html/2507.14447v2) — prépublication"
+  },
+  "id": "F2-042"
+ },
+ {
+  "fichier": "chapitre-20-cadriciels-orchestration.md",
+  "ligne": 49,
+  "phrase": "Une limite de récursion, fixée par défaut à 10 007 super-étapes depuis la version 1.1.4, interrompt un graphe qui boucle [2].",
+  "sources": {
+   "2": "Pages primaires lues le 11 novembre 2026; [2], [5], [6], [8], [9], [10], [12] et [13] relues le 12 novembre 2026 : [LangGraph — Graph API](https://docs.langchain.com/oss/python/langgraph/graph-api)"
+  },
+  "id": "F2-043"
+ },
+ {
+  "fichier": "chapitre-20-cadriciels-orchestration.md",
+  "ligne": 206,
+  "phrase": "La première analyse 409 bogues corrigés dans cinq cadriciels : LangChain, LangGraph, CrewAI, AutoGen et SmolAgents [20].",
+  "sources": {
+   "20": "Sources ajoutées le 14 novembre 2026 : [Zhang, Zhang et Tan — Dissecting Bug Triggers and Failure Modes in Modern Agentic Frameworks: An Empirical Study (arXiv 2604.08906, 10 avril 2026)](https://arxiv.org/html/2604.08906v1) — prépublication."
+  },
+  "id": "F2-044"
+ },
+ {
+  "fichier": "chapitre-20-cadriciels-orchestration.md",
+  "ligne": 208,
+  "phrase": "Selon sa propre classification, 76 % des bogues se manifestent par un comportement fonctionnel incorrect, et leurs causes relèvent davantage des API, de la configuration, de l'analyse et de la sérialisation que dans les cadriciels d'apprentissage profond [21].",
+  "sources": {
+   "21": "Sources ajoutées le 14 novembre 2026 : [Zhu et coll. — Where Agent Frameworks Fall Short: Examining Functional Challenges and Usability Concerns (arXiv 2602.21806, version 4 du 6 août 2026)](https://arxiv.org/abs/2602.21806) — prépublication; résumé seulement."
+  },
+  "id": "F2-045"
+ },
+ {
+  "fichier": "chapitre-21-fiabilite-coordination.md",
+  "ligne": 19,
+  "phrase": "La version 2 reposait sur environ 200 traces, issues elles aussi de sept cadriciels [2].",
+  "sources": {
+   "2": "Pages primaires lues le 11 novembre 2026 : [Cemri et coll. — même article, version 2 (arXiv 2503.13657v2)](https://arxiv.org/html/2503.13657v2) — premiers trois cinquièmes du texte."
+  },
+  "id": "F2-046"
+ },
+ {
+  "fichier": "chapitre-21-fiabilite-coordination.md",
+  "ligne": 42,
+  "phrase": "Par catégorie, dans la version 2, les défauts de spécification pèsent 41,77 % des échecs observés, le désalignement entre agents 36,94 % et la vérification de la tâche 21,30 % [2].",
+  "sources": {
+   "2": "Pages primaires lues le 11 novembre 2026 : [Cemri et coll. — même article, version 2 (arXiv 2503.13657v2)](https://arxiv.org/html/2503.13657v2) — premiers trois cinquièmes du texte."
+  },
+  "id": "F2-047"
+ },
+ {
+  "fichier": "chapitre-21-fiabilite-coordination.md",
+  "ligne": 42,
+  "phrase": "La version 3 renomme la première catégorie « défauts de conception du système »; la somme des parts par mode donne 44,2 %, 32,4 % et 23,5 % [1].",
+  "sources": {
+   "1": "Pages primaires lues le 11 novembre 2026 : [Cemri et coll. — Why Do Multi-Agent LLM Systems Fail?, version 3 (arXiv 2503.13657v3)](https://arxiv.org/html/2503.13657v3) — prépublication; résumé et premiers trois cinquièmes du texte."
+  },
+  "id": "F2-048"
+ },
+ {
+  "fichier": "chapitre-21-fiabilite-coordination.md",
+  "ligne": 52,
+  "phrase": "La version 3 rapporte des taux d'échec de 41 % à 86,7 % sur sept systèmes multi-agents à code ouvert [1].",
+  "sources": {
+   "1": "Pages primaires lues le 11 novembre 2026 : [Cemri et coll. — Why Do Multi-Agent LLM Systems Fail?, version 3 (arXiv 2503.13657v3)](https://arxiv.org/html/2503.13657v3) — prépublication; résumé et premiers trois cinquièmes du texte."
+  },
+  "id": "F2-049"
+ },
+ {
+  "fichier": "chapitre-21-fiabilite-coordination.md",
+  "ligne": 58,
+  "phrase": "Une étude de 2026 lit ce que les développeurs signalent : 13 602 billets et demandes de tirage tirés de 40 dépôts de systèmes agentiques à code ouvert, dont 385 fautes analysées à la main [9].",
+  "sources": {
+   "9": "Pages lues le 14 novembre 2026 : [Shah et coll. — Characterizing Faults in Agentic AI: A Taxonomy of Types, Symptoms, and Root Causes (arXiv 2603.06847, version 2 du 7 mai 2026)](https://arxiv.org/html/2603.06847v2) — prépublication; premiers deux tiers du texte."
+  },
+  "id": "F2-050"
+ },
+ {
+  "fichier": "chapitre-21-fiabilite-coordination.md",
+  "ligne": 72,
+  "phrase": "La répétition d'étapes et la condition d'arrêt ignorée totalisent environ 28 % des échecs de la version 3 [1].",
+  "sources": {
+   "1": "Pages primaires lues le 11 novembre 2026 : [Cemri et coll. — Why Do Multi-Agent LLM Systems Fail?, version 3 (arXiv 2503.13657v3)](https://arxiv.org/html/2503.13657v3) — prépublication; résumé et premiers trois cinquièmes du texte."
+  },
+  "id": "F2-051"
+ },
+ {
+  "fichier": "chapitre-21-fiabilite-coordination.md",
+  "ligne": 86,
+  "phrase": "MetaGPT, qui encadre ses agents par des procédures opératoires, présente de 60 % à 68 % moins d'échecs des deux premières catégories que ChatDev, mais 1,56 fois plus d'échecs de vérification [1].",
+  "sources": {
+   "1": "Pages primaires lues le 11 novembre 2026 : [Cemri et coll. — Why Do Multi-Agent LLM Systems Fail?, version 3 (arXiv 2503.13657v3)](https://arxiv.org/html/2503.13657v3) — prépublication; résumé et premiers trois cinquièmes du texte."
+  },
+  "id": "F2-052"
+ },
+ {
+  "fichier": "chapitre-21-fiabilite-coordination.md",
+  "ligne": 156,
+  "phrase": "| Meilleures consignes et rôles | Spécification | +9,4 % sur ChatDev [1] |",
+  "sources": {
+   "1": "Pages primaires lues le 11 novembre 2026 : [Cemri et coll. — Why Do Multi-Agent LLM Systems Fail?, version 3 (arXiv 2503.13657v3)](https://arxiv.org/html/2503.13657v3) — prépublication; résumé et premiers trois cinquièmes du texte."
+  },
+  "id": "F2-053"
+ },
+ {
+  "fichier": "chapitre-21-fiabilite-coordination.md",
+  "ligne": 157,
+  "phrase": "| Vérification structurelle | Vérification | +15,6 points sur ChatDev [1] |",
+  "sources": {
+   "1": "Pages primaires lues le 11 novembre 2026 : [Cemri et coll. — Why Do Multi-Agent LLM Systems Fail?, version 3 (arXiv 2503.13657v3)](https://arxiv.org/html/2503.13657v3) — prépublication; résumé et premiers trois cinquièmes du texte."
+  },
+  "id": "F2-054"
+ },
+ {
+  "fichier": "chapitre-21-fiabilite-coordination.md",
+  "ligne": 169,
+  "phrase": "Les 600 exécutions sont **simulées** : l'auteur précise que son banc reproduit des patrons de coordination et ne fait pas tourner AutoGen, CrewAI et LangGraph avec de vrais appels de modèle [3].",
+  "sources": {
+   "3": "Pages primaires lues le 11 novembre 2026 : [Acharya — Semantic Consensus: Process-Aware Conflict Detection and Resolution for Enterprise Multi-Agent LLM Systems (arXiv 2604.16339)](https://arxiv.org/html/2604.16339) — prépublication, un seul auteur, v1 du 13 mars 2026; résumé et texte."
+  },
+  "id": "F2-055"
+ },
+ {
+  "fichier": "chapitre-21-fiabilite-coordination.md",
+  "ligne": 190,
+  "phrase": "La tactique y évite toute modification du code d'orchestration, contre trois modules touchés dans la version de référence, au prix de 36 lignes de configuration [4].",
+  "sources": {
+   "4": "Pages primaires lues le 11 novembre 2026 : [Becattini, Verdecchia et Vicario — An Accountability-Based Architectural Tactic for Agent Cooperation in LLM-Based Multi-Agent Systems, IEEE BigData 2025](https://robertoverdecchia.github.io/papers/BigData_2026.pdf) — lu en entier."
+  },
+  "id": "F2-056"
+ },
+ {
+  "fichier": "chapitre-21-fiabilite-coordination.md",
+  "ligne": 205,
+  "phrase": "- **La confiance aveugle est la faute la plus destructrice.** Sous la faute que les auteurs nomment ainsi (*blind trust*), le score de robustesse de MetaGPT tombe à 0 % [10].",
+  "sources": {
+   "10": "Pages lues le 14 novembre 2026 : [Jia et coll. — MAS-FIRE: Fault Injection and Reliability Evaluation for LLM-Based Multi-Agent Systems (arXiv 2602.19843, 23 février 2026)](https://arxiv.org/html/2602.19843) — prépublication; premiers trois quarts du texte."
+  },
+  "id": "F2-057"
+ },
+ {
+  "fichier": "chapitre-21-fiabilite-coordination.md",
+  "ligne": 235,
+  "phrase": "Anthropic rapporte que, sur le banc d'essai BrowseComp, la quantité de jetons consommée explique à elle seule environ 80 % de la variance de performance [6].",
+  "sources": {
+   "6": "Pages primaires lues le 11 novembre 2026 : [Anthropic — How we built our multi-agent research system, 13 juin 2025](https://www.anthropic.com/engineering/multi-agent-research-system) — billet de fournisseur."
+  },
+  "id": "F2-058"
+ },
+ {
+  "fichier": "chapitre-21-fiabilite-coordination.md",
+  "ligne": 245,
+  "phrase": "Sur le jeu de données Who&When, qui réunit les journaux d'échec de 127 systèmes multi-agents, la meilleure méthode désigne le bon agent dans 53,5 % des cas et la bonne étape dans 14,2 % [7].",
+  "sources": {
+   "7": "Pages lues le 14 novembre 2026 : [Zhang et coll. — Which Agent Causes Task Failures and When? (arXiv 2505.00212, version 3 du 2 juin 2025)](https://arxiv.org/html/2505.00212) — connu d'abord par son résumé; texte lu."
+  },
+  "id": "F2-059"
+ },
+ {
+  "fichier": "chapitre-21-fiabilite-coordination.md",
+  "ligne": 247,
+  "phrase": "L'annotation humaine elle-même est coûteuse et incertaine : trois experts y ont consacré environ 84 heures pour 184 cas, et ont signalé de 15 % à 30 % d'annotations incertaines [7].",
+  "sources": {
+   "7": "Pages lues le 14 novembre 2026 : [Zhang et coll. — Which Agent Causes Task Failures and When? (arXiv 2505.00212, version 3 du 2 juin 2025)](https://arxiv.org/html/2505.00212) — connu d'abord par son résumé; texte lu."
+  },
+  "id": "F2-060"
+ },
+ {
+  "fichier": "chapitre-22-humain-dans-la-boucle.md",
+  "ligne": 71,
+  "phrase": "Dans le même temps, la part des tours où l'utilisateur interrompt l'agent passe d'environ 5 % à environ 9 % [5].",
+  "sources": {
+   "5": "Pages primaires lues le 11 novembre 2026 : [Anthropic — Measuring AI agent autonomy in practice (18 février 2026)](https://www.anthropic.com/research/measuring-agent-autonomy)"
+  },
+  "id": "F2-061"
+ },
+ {
+  "fichier": "chapitre-22-humain-dans-la-boucle.md",
+  "ligne": 97,
+  "phrase": "Le troisième (10 % : déploiements en production, changements de sécurité et de permissions) reste interdit à l'agent [2].",
+  "sources": {
+   "2": "Pages primaires lues le 11 novembre 2026 : [IMDA — Model AI Governance Framework for Agentic AI, version 1.5 (20 mai 2026)](https://www.imda.gov.sg/-/media/imda/files/about/emerging-tech-and-research/artificial-intelligence/mgf-for-agentic-ai.pdf) — autonomie, risques, section 2.2.2, déploiement graduel; cas Dayos et Tencent."
+  },
+  "id": "F2-062"
+ },
+ {
+  "fichier": "chapitre-22-humain-dans-la-boucle.md",
+  "ligne": 130,
+  "phrase": "Anthropic rapporte que les utilisateurs de son agent de programmation acceptent 93 % des demandes de permission, et nomme l'effet : une fatigue d'approbation, où l'on cesse de prêter attention à ce qu'on approuve [6].",
+  "sources": {
+   "6": "Pages primaires lues le 11 novembre 2026 : [Anthropic — How we built Claude Code auto mode (25 mars 2026)](https://www.anthropic.com/engineering/claude-code-auto-mode)"
+  },
+  "id": "F2-063"
+ },
+ {
+  "fichier": "chapitre-22-humain-dans-la-boucle.md",
+  "ligne": 132,
+  "phrase": "Dans l'étude Measuring Agents in Production (MAP), 66 % des agents déployés tolèrent des temps de réponse de l'ordre de la minute ou plus [7], et une exécution suspendue peut attendre sans coût (chapitre 18).",
+  "sources": {
+   "7": "Pages primaires lues le 11 novembre 2026 : [Pan et coll. — Measuring Agents in Production (arXiv 2512.04123, version 4)](https://arxiv.org/html/2512.04123v4) — première moitié du texte."
+  },
+  "id": "F2-064"
+ },
+ {
+  "fichier": "chapitre-22-humain-dans-la-boucle.md",
+  "ligne": 138,
+  "phrase": "Quand le conseil est faux, le risque de décision incorrecte augmente de 26 % (rapport de risques de 1,26, calculé à titre indicatif sur quatre études), et de 6 % à 11 % des réponses d'abord justes deviennent fausses après consultation du système [16].",
+  "sources": {
+   "16": "Pages lues le 14 novembre 2026, pour la section 22.5 : [Goddard et coll. — Automation bias: a systematic review of frequency, effect mediators, and mitigators (Journal of the American Medical Informatics Association)](https://pmc.ncbi.nlm.nih.gov/articles/PMC3240751/) — revue systématique; l'année 2011 vient d'un index d'articles."
+  },
+  "id": "F2-065"
+ },
+ {
+  "fichier": "chapitre-22-humain-dans-la-boucle.md",
+  "ligne": 140,
+  "phrase": "**Les développeurs supervisent par raccourcis.** Trois chercheurs de Microsoft ont interrogé 17 développeurs expérimentés, en juillet et en août 2025, sur leur façon de superviser des agents de programmation [15].",
+  "sources": {
+   "15": "Pages lues le 14 novembre 2026, pour la section 22.5 : [Dhanorkar, Passi et Vorvoreanu — Human oversight of agentic systems in practice: Examining the oversight work, challenges, and heuristics of developers using software agents (arXiv 2606.05391, 3 juin 2026)](https://arxiv.org/html/2606.05391) — prépublication; premiers deux tiers du texte."
+  },
+  "id": "F2-066"
+ },
+ {
+  "fichier": "chapitre-22-humain-dans-la-boucle.md",
+  "ligne": 193,
+  "phrase": "L'étude MAP repose sur 20 études de cas et 306 réponses valides à un sondage, dans 26 domaines, entre avril et novembre 2025; 86 de ces réponses décrivent des agents déployés ou en pilote [7].",
+  "sources": {
+   "7": "Pages primaires lues le 11 novembre 2026 : [Pan et coll. — Measuring Agents in Production (arXiv 2512.04123, version 4)](https://arxiv.org/html/2512.04123v4) — première moitié du texte."
+  },
+  "id": "F2-067"
+ },
+ {
+  "fichier": "chapitre-23-architecture-reference.md",
+  "ligne": 30,
+  "phrase": "Elle découle d'une revue systématique (57 études, d'après la restitution lue) et a été vérifiée en y projetant deux systèmes existants, MetaGPT et HuggingGPT [1].",
+  "sources": {
+   "1": "Pages primaires lues le 11 novembre 2026 : [Lu et coll. — Towards Responsible Generative AI: A Reference Architecture for Designing Foundation Model based Agents (arXiv 2311.13148)](https://arxiv.org/html/2311.13148v3)"
+  },
+  "id": "F2-068"
+ },
+ {
+  "fichier": "chapitre-23-architecture-reference.md",
+  "ligne": 213,
+  "phrase": "La taxonomie de Zhou et de ses collègues repose sur 66 études, dont 14 prépublications, et recense 74 options d'architecture [3].",
+  "sources": {
+   "3": "Pages primaires lues le 11 novembre 2026 : [Zhou et coll. — A Taxonomy of Architecture Options for Foundation Model-based Agents: Analysis and Decision Model (arXiv 2408.02920, v2 du 9 septembre 2026)](https://arxiv.org/html/2408.02920v2) — v2 annotée « Accepted », sans lieu de parution; relue à l'audit, sauf l'annexe."
+  },
+  "id": "F2-069"
+ },
+ {
+  "fichier": "chapitre-26-plateformes-entreprise.md",
+  "ligne": 39,
+  "phrase": "Microsoft présente Agent 365 comme son plan de contrôle pour les agents, autour de trois fonctions : observer, gouverner, sécuriser [2].",
+  "sources": {
+   "2": "Pages primaires lues le 11 novembre 2026 : [Microsoft Learn — vue d'ensemble d'Agent 365](https://learn.microsoft.com/en-us/microsoft-agent-365/overview)"
+  },
+  "id": "F2-070"
+ },
+ {
+  "fichier": "chapitre-27-strategie-multi-plateformes.md",
+  "ligne": 52,
+  "phrase": "Chez Microsoft, Agent 365 devient le registre et le plan de contrôle unifiés, tandis qu'Entra garde l'identité; l'inventaire complet, agents sans identité Entra compris, ne se consulte que dans Agent 365 [7].",
+  "sources": {
+   "7": "Pages primaires lues le 11 novembre 2026 : [Microsoft — convergence du registre d'agents vers Agent 365](https://learn.microsoft.com/en-us/entra/agent-id/agent-registry-convergence)"
+  },
+  "id": "F2-071"
+ },
+ {
+  "fichier": "chapitre-28-agents-industriels-peripherie.md",
+  "ligne": 124,
+  "phrase": "**L'organisme de normalisation avance sans calendrier.** Son serveur MCP a atteint la version 2.0.0 le 7 octobre 2026 et totalisait environ 1 100 téléchargements le 12 novembre [3]; la conversion des Companion Specifications reste une intention [2].",
+  "sources": {
+   "2": "Pages primaires lues le 11 novembre 2026 : [OPC Foundation — communiqué du 20 avril 2026](https://opcfoundation.org/news/press-releases/opc-foundation-advances-opc-ua-for-the-ai-era-with-companion-specifications-optimized-for-agentic-ai/)",
+   "3": "Pages primaires lues le 11 novembre 2026 : [NuGet — OPCFoundation.NetStandard.Opc.Ua.Mcp](https://www.nuget.org/packages/OPCFoundation.NetStandard.Opc.Ua.Mcp)"
+  },
+  "id": "F2-072"
+ },
+ {
+  "fichier": "chapitre-29-identite-agentique.md",
+  "ligne": 63,
+  "phrase": "La documentation demande de maintenir le parrainage pour assurer la succession, sans décrire de mécanisme automatique [13], et le registre d'Agent 365 expose un compteur d'agents sans propriétaire, dont le créateur a quitté l'organisation (chapitre 8).",
+  "sources": {
+   "13": "Pages primaires lues le 12 novembre 2026, lors de l'audit : [Microsoft Learn — Owners, sponsors, and managers in Microsoft Entra Agent ID](https://learn.microsoft.com/en-us/entra/agent-id/agent-owners-sponsors-managers)"
+  },
+  "id": "F2-073"
+ },
+ {
+  "fichier": "chapitre-31-menaces.md",
+  "ligne": 50,
+  "phrase": "L'annonce nomme un comité de relecture (NIST, Alan Turing Institute, AI Red Team de Microsoft, entre autres) et rattache la liste au Top 10 des applications LLM et à la taxonomie Agentic AI Threats & Mitigations [2].",
+  "sources": {
+   "2": "Pages primaires lues le 11 novembre 2026 : [OWASP GenAI Security Project — annonce du 9 décembre 2025](https://genai.owasp.org/2025/12/09/owasp-top-10-for-agentic-applications-the-benchmark-for-agentic-security-in-the-age-of-autonomous-ai/)"
+  },
+  "id": "F2-074"
+ },
+ {
+  "fichier": "chapitre-31-menaces.md",
+  "ligne": 77,
+  "phrase": "La page du projet le situe en phase 3 sur 5, « Beta Release and Pilot Testing »; la version finale correspond à la phase 4 et aucune date n'est donnée [3].",
+  "sources": {
+   "3": "Pages primaires lues le 11 novembre 2026 : [OWASP MCP Top 10 — page du projet](https://owasp.org/www-project-mcp-top-10/)"
+  },
+  "id": "F2-075"
+ },
+ {
+  "fichier": "chapitre-31-menaces.md",
+  "ligne": 122,
+  "phrase": "Willison se dit profondément méfiant envers les produits de garde-fous qui annoncent détecter les attaques, et juge qu'un taux de détection de l'ordre de 95 % serait un échec selon les critères de la sécurité applicative [12].",
+  "sources": {
+   "12": "Sources secondaires (billets lus en entier) : [Simon Willison — The lethal trifecta for AI agents, 16 juin 2025](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) — billet de praticien."
+  },
+  "id": "F2-076"
+ },
+ {
+  "fichier": "chapitre-33-observabilite-evaluation.md",
+  "ligne": 157,
+  "phrase": "L'étude *Measuring Agents in Production* (MAP) repose sur vingt études de cas et un sondage de 306 réponses valides, dont 86 portent sur des systèmes déployés [11].",
+  "sources": {
+   "11": "Pages primaires lues le 11 novembre 2026; [2], [5], [7], [11], [12] et [14] relues le 12 novembre 2026 : [Measuring Agents in Production (arXiv 2512.04123, v4)](https://arxiv.org/html/2512.04123v4)"
+  },
+  "id": "F2-077"
+ },
+ {
+  "fichier": "chapitre-33-observabilite-evaluation.md",
+  "ligne": 191,
+  "phrase": "Pour la livraison de cartes, l'essai comparatif rapporte un gain de 37 points de tNPS et de 29 points de libre-service par rapport à la variante initiale, sans valeur absolue; l'agent reste environ 10 points de tNPS sous les experts humains [12] (chapitre 42).",
+  "sources": {
+   "12": "Pages primaires lues le 11 novembre 2026; [2], [5], [7], [11], [12] et [14] relues le 12 novembre 2026 : [Building Customer Support AI Agents at 100M-User Scale — Nubank, KDD 2026 (arXiv 2606.08867)](https://arxiv.org/html/2606.08867v1)"
+  },
+  "id": "F2-078"
+ },
+ {
+  "fichier": "chapitre-33-observabilite-evaluation.md",
+  "ligne": 191,
+  "phrase": "Chez Nubank, l'évaluation forme une boucle : évaluation hors ligne, simulation, déploiement progressif à partir de 1 % du trafic, mesures en ligne, puis retour vers les jeux d'évaluation [12].",
+  "sources": {
+   "12": "Pages primaires lues le 11 novembre 2026; [2], [5], [7], [11], [12] et [14] relues le 12 novembre 2026 : [Building Customer Support AI Agents at 100M-User Scale — Nubank, KDD 2026 (arXiv 2606.08867)](https://arxiv.org/html/2606.08867v1)"
+  },
+  "id": "F2-079"
+ },
+ {
+  "fichier": "chapitre-33-observabilite-evaluation.md",
+  "ligne": 214,
+  "phrase": "L'étiquette a une raison d'être : un même score peut signifier des choses opposées d'un système d'évaluation à l'autre, la valeur 1 désignant ici « pertinent » et là « non pertinent » [6].",
+  "sources": {
+   "6": "Pages primaires lues le 11 novembre 2026; [2], [5], [7], [11], [12] et [14] relues le 12 novembre 2026 : [Événements GenAI — résultat d'évaluation](https://raw.githubusercontent.com/open-telemetry/semantic-conventions-genai/main/docs/gen-ai/gen-ai-events.md)"
+  },
+  "id": "F2-080"
+ }
+]

@@ -362,9 +362,9 @@ Quand une activité d'inférence LLM s'achève au pas $i$, le moteur persiste at
 
 Pendant l'exécution initiale d'une activité, une coupure réseau entre le serveur MCP aval et l'exécutant reste une livraison au moins une fois, pilotée par la politique de nouvel essai de l'activité. Pour obtenir un effet unique de bout en bout sur une écriture financière ou logistique, il suffit de combiner la numérotation déterministe du journal avec l'idempotence du serveur MCP décrite à la section 18.3 :
 
-$$K_{\text{idemp}} = \text{HMAC-SHA256}\!\left(K_{\text{dom}}, \; \text{WfId} \;\|\; \text{Epoch} \;\|\; \text{SeqId}\right)$$
+$$K_{\text{idemp}} = \text{HMAC-SHA256}\!\left(K_{\text{dom}}, \; \text{WfId} \;\|\; \text{SeqId}\right)$$
 
-L'identifiant `WfId` (`WorkflowId`) et le numéro de séquence `SeqId` de l'étape restent invariants à travers tous les nouveaux essais d'une même activité, et diffèrent d'une étape légitime suivante dans une boucle. Le système d'enregistrement cible (SAP S/4HANA, Guidewire, Stripe) déduplique donc tout doublon réseau transitoire.
+L'identifiant `WfId` (`WorkflowId`) et le numéro de séquence `SeqId` de l’étape (`activityId` dans l’Extrait 18.2, `stepSequenceId` dans l’ADR-012) restent invariants à travers tous les nouveaux essais d'une même activité, et diffèrent d'une étape légitime suivante dans une boucle. Le système d'enregistrement cible (SAP S/4HANA, Guidewire, Stripe) déduplique donc tout doublon réseau transitoire.
 
 ---
 
@@ -404,7 +404,7 @@ Amazon Bedrock AgentCore s'adresse aux organisations ancrées sur AWS qui veulen
 | Dimension d’ingénierie | Temporal (+ Nexus) | Restate | Microsoft Agent Framework (Durable Task) | Amazon Bedrock AgentCore |
 |:---------------|:--------------------|:-------------------|:----------------------|:----------------------|
 | Modèle de transport vers l'agent | *Pull* gRPC sortant par les exécutants, sur files de tâches | *Push* HTTP/2 / gRPC (compatible FaaS sans serveur) | *Trigger* Azure Functions ou *Sidecar* Dapr | Runtime géré AWS, par session microVM isolée |
-| Latence de journalisation par pas | Aucune latence chiffrée (section 18.6); persistance SQL / Cassandra multi-AZ | Aucune latence chiffrée (section 18.6); journal Rust Bifrost intégré | Aucune latence chiffrée (section 18.6); selon le backend de stockage (Scheduler / Azure Storage) | Faible intra-session; dépend de Step Functions en T4 |
+| Persistance du journal (aucune latence chiffrée, section 18.6) | SQL / Cassandra multi-AZ | Journal Rust Bifrost intégré | Selon le backend de stockage (Scheduler / Azure Storage) | Propre à la session; Step Functions en T4 |
 | Horizon maximal de cycle de vie | Aucune limite de durée à une exécution (section 18.1); Continue-As-New natif | Minutes à semaines (Workflows + Awakeables) | Heures à semaines (Durable Orchestrations) | Sessions actives multi-heures; multi-semaines via Step Functions |
 | État par entité (acteur virtuel) | Simulé par Workflow-par-Entité | *Virtual Objects* verrouillés par clé; l'exposé décrit des services sans état et un état porté par la requête (section 18.6) | Natif (*Durable Entities* / *Agent Threads*) | Session isolée + service AgentCore Memory |
 | Fédération inter-équipes sécurisée | Excellente (Temporal Nexus inter-namespaces) | Bonne via contrats de services HTTP/IDL | Bonne via passerelles Azure API / A2A | Contrôlée par politiques AWS IAM inter-comptes |

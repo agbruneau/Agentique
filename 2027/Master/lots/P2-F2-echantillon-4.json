@@ -1,0 +1,375 @@
+[
+ {
+  "fichier": "chapitre-48-revue-litterature.md",
+  "ligne": 146,
+  "phrase": "| MAS-FIRE [45] | Quinze types de fautes injectées dans trois architectures | Les modèles plus forts n'améliorent pas uniformément la robustesse; les architectures itératives en boucle fermée neutralisent plus de 40 % des fautes qui font s'effondrer les workflows linéaires |",
+  "sources": {
+   "45": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt : [Jia et coll. — MAS-FIRE: Fault Injection and Reliability Evaluation for LLM-Based Multi-Agent Systems (arXiv, 2026)](https://arxiv.org/abs/2602.19843)"
+  },
+  "id": "F2-121"
+ },
+ {
+  "fichier": "chapitre-48-revue-litterature.md",
+  "ligne": 149,
+  "phrase": "| Coopération à coût nul [48] | Huit modèles dans un environnement où aider ne coûte rien | La capacité ne prédit pas la coopération : un modèle fort atteint 17 % de l'optimum collectif, un modèle plus faible 50 %; des protocoles explicites doublent à peu près la performance des modèles limités par la compétence |",
+  "sources": {
+   "48": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt : [Yadav et coll. — More Capable, Less Cooperative? When LLMs Fail At Zero-Cost Collaboration (arXiv, 2026)](https://arxiv.org/abs/2604.07821)"
+  },
+  "id": "F2-122"
+ },
+ {
+  "fichier": "chapitre-48-revue-litterature.md",
+  "ligne": 181,
+  "phrase": "TheAgentCompany reconstitue une petite société de logiciel; l'agent le plus compétitif y accomplit 30 % des tâches de façon autonome, et les tâches longues restent hors de portée [12].",
+  "sources": {
+   "12": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur : [Xu et coll. — TheAgentCompany: Benchmarking LLM Agents on Consequential Real World Tasks (NeurIPS, 2025)](https://doi.org/10.52202/085713-0315)"
+  },
+  "id": "F2-123"
+ },
+ {
+  "fichier": "chapitre-48-revue-litterature.md",
+  "ligne": 191,
+  "phrase": "| Liste de contrôle ABC [1] | Montage des tâches et calcul des scores de bancs en usage | Des défauts mènent à sous-estimer ou à surestimer la performance jusqu'à 100 % en valeur relative; SWE-bench Verified a des cas de test insuffisants, τ-bench compte des réponses vides comme réussies |",
+  "sources": {
+   "1": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur : [Zhu et coll. — Establishing Best Practices for Building Rigorous Agentic Benchmarks (NeurIPS, 2025)](https://doi.org/10.52202/085713-5547) — la notice l'indique sur arXiv; Crossref la situe dans les actes de NeurIPS."
+  },
+  "id": "F2-124"
+ },
+ {
+  "fichier": "chapitre-48-revue-litterature.md",
+  "ligne": 192,
+  "phrase": "| Audit automatisé [59] | 168 bancs dans neuf domaines | Des problèmes critiques dans plus de 25,7 % des tâches; les retirer déplace le classement des modèles et relève la performance moyenne de 9,9 % sur SWE-bench Verified et de 9,6 % sur Terminal-Bench 2 |",
+  "sources": {
+   "59": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt : [Wang et coll. — Automated Benchmark Auditing for AI Agents and Large Language Models (arXiv, 2026)](https://arxiv.org/abs/2605.26079)"
+  },
+  "id": "F2-125"
+ },
+ {
+  "fichier": "chapitre-48-revue-litterature.md",
+  "ligne": 193,
+  "phrase": "| Revue de cartographie [13] | 259 études, dont dix-sept bancs en vue vérifiés à la main | Contamination, non-déterminisme et coût d'exécution forment un trilemme : aucun des dix-sept ne montre les trois maîtrisés ensemble, aucun ne publie un relevé de coût complet |",
+  "sources": {
+   "13": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur : [Nageshwaran et coll. — Large Language Model Agent Evaluation and Benchmarking: A Systematic Survey, Meta-Taxonomy, and Critical Research Roadmap (Artificial Intelligence Review, 2026)](https://doi.org/10.1007/s10462-026-11678-4)"
+  },
+  "id": "F2-126"
+ },
+ {
+  "fichier": "chapitre-48-revue-litterature.md",
+  "ligne": 194,
+  "phrase": "| Infrastructure HAL [60] | 21 730 exécutions, neuf modèles, neuf bancs, environ 40 000 $ US | Un effort de raisonnement plus élevé réduit l'exactitude dans la majorité des exécutions; l'inspection des journaux révèle des comportements non signalés, dont la recherche du banc d'essai en ligne plutôt que la résolution de la tâche |",
+  "sources": {
+   "60": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt : [Kapoor et coll. — Holistic Agent Leaderboard: The Missing Infrastructure for AI Agent Evaluation (arXiv, 2025)](https://arxiv.org/abs/2510.11977)"
+  },
+  "id": "F2-127"
+ },
+ {
+  "fichier": "chapitre-48-revue-litterature.md",
+  "ligne": 201,
+  "phrase": "Les reformulations seules font passer le taux de réussite de 96,9 % à 88,1 %, et la limitation de débit est la panne la plus dommageable [62].",
+  "sources": {
+   "62": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt : [Gupta — ReliabilityBench: Evaluating LLM Agent Reliability Under Production-Like Stress Conditions (arXiv, 2026)](https://arxiv.org/abs/2601.06112)"
+  },
+  "id": "F2-128"
+ },
+ {
+  "fichier": "chapitre-48-revue-litterature.md",
+  "ligne": 213,
+  "phrase": "**Le filtrage et la vérification à l'exécution.** Un modèle auxiliaire détecte et retire les instructions injectées, avec des taux de faux positifs et de faux négatifs annoncés sous 1 % [66]; un mécanisme vérifie que chaque appel d'outil sert l'objectif de l'utilisateur [16]; un validateur dynamique surveille les écarts au plan initial [17].",
+  "sources": {
+   "16": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur : [Jia et coll. — The Task Shield: Enforcing Task Alignment to Defend Against Indirect Prompt Injection in LLM Agents (ACL, 2025)](https://doi.org/10.18653/v1/2025.acl-long.1435)",
+   "17": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur : [Li et coll. — DRIFT: Dynamic Rule-Based Defense with Injection Isolation for Securing LLM Agents (NeurIPS, 2025)](https://doi.org/10.52202/085713-2791)",
+   "66": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt : [Shi et coll. — PromptArmor: Simple yet Effective Prompt Injection Defenses (arXiv, 2025)](https://arxiv.org/abs/2507.15219)"
+  },
+  "id": "F2-129"
+ },
+ {
+  "fichier": "chapitre-48-revue-litterature.md",
+  "ligne": 241,
+  "phrase": "Une étude sur onze systèmes manufacturiers simulés mesure que le rappel tombe de 1,00 à 0,31 quand les outils qui croisent plusieurs systèmes sont retirés [72].",
+  "sources": {
+   "72": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt : [Chethan — Semantic Graph Unification for Industrial Digital Threads (arXiv, 2026)](https://arxiv.org/abs/2608.24918)"
+  },
+  "id": "F2-130"
+ },
+ {
+  "fichier": "chapitre-48-revue-litterature.md",
+  "ligne": 241,
+  "phrase": "Une expérience de 1 800 exécutions dans cinq secteurs trouve que des agents couplés à une ontologie surpassent les agents non ancrés, et que le gain est le plus fort là où le modèle connaît le moins le domaine [71].",
+  "sources": {
+   "71": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt : [Tuan et coll. — Ontology-Constrained Neural Reasoning in Enterprise Agentic Systems (arXiv, 2026)](https://arxiv.org/abs/2604.00555) — les auteurs éditent la plateforme évaluée."
+  },
+  "id": "F2-131"
+ },
+ {
+  "fichier": "chapitre-48-revue-litterature.md",
+  "ligne": 243,
+  "phrase": "La construction automatique d'ontologies reste elle-même imparfaite : un pipeline évalué en conférence atteint un score F1 de 0,724 dans son meilleur domaine et bute sur la définition de la portée et sur le raisonnement hiérarchique [23].",
+  "sources": {
+   "23": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur : [Oyewale et coll. — LLM-Driven Ontology Construction for Enterprise Knowledge Graphs (IEEE ICSC, 2026)](https://doi.org/10.1109/icsc67292.2026.00044)"
+  },
+  "id": "F2-132"
+ },
+ {
+  "fichier": "chapitre-48-revue-litterature.md",
+  "ligne": 255,
+  "phrase": "| Soutien à la clientèle [74] | Déploiement échelonné, 5 179 agents de soutien | 14 % de problèmes résolus de plus par heure en moyenne; gain concentré chez les novices, minime chez les plus expérimentés |",
+  "sources": {
+   "74": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt : [Brynjolfsson et coll. — Generative AI at Work (National Bureau of Economic Research, 2023)](https://arxiv.org/abs/2304.11771) — document de travail."
+  },
+  "id": "F2-133"
+ },
+ {
+  "fichier": "chapitre-48-revue-litterature.md",
+  "ligne": 256,
+  "phrase": "| Rédaction professionnelle [24] | Expérience préenregistrée, 453 professionnels | Temps réduit de 40 %, qualité en hausse de 18 % |",
+  "sources": {
+   "24": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur : [Noy et Zhang — Experimental evidence on the productivity effects of generative artificial intelligence (Science, 2023)](https://doi.org/10.1126/science.adh2586)"
+  },
+  "id": "F2-134"
+ },
+ {
+  "fichier": "chapitre-48-revue-litterature.md",
+  "ligne": 257,
+  "phrase": "| Développement logiciel [25] | Trois essais randomisés, 4 867 développeurs | 26,08 % de tâches terminées de plus (erreur type : 10,3 %) |",
+  "sources": {
+   "25": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur : [Cui et coll. — The Effects of Generative AI on High-Skilled Work: Evidence from Three Field Experiments with Software Developers (Management Science, 2026)](https://doi.org/10.1287/mnsc.2025.00535)"
+  },
+  "id": "F2-135"
+ },
+ {
+  "fichier": "chapitre-48-revue-litterature.md",
+  "ligne": 258,
+  "phrase": "| Conseil en gestion [26] | Expérience préenregistrée, 758 consultants | Dans la frontière de capacité : 12,2 % de tâches de plus, 25,1 % plus vite; hors de la frontière : 19 % de chances en moins de produire une solution correcte |",
+  "sources": {
+   "26": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur : [Dell'Acqua et coll. — Navigating the Jagged Technological Frontier (Organization Science, 2026)](https://doi.org/10.1287/orsc.2025.21838)"
+  },
+  "id": "F2-136"
+ },
+ {
+  "fichier": "chapitre-48-revue-litterature.md",
+  "ligne": 259,
+  "phrase": "| Suite bureautique [75] | Essai randomisé, plus de 6 000 travailleurs, 56 entreprises | Une demi-heure de moins par semaine à lire des courriels; documents terminés 12 % plus vite |",
+  "sources": {
+   "75": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt : [Dillon et coll. — Early Impacts of M365 Copilot (SSRN, 2025)](https://arxiv.org/abs/2504.11443)"
+  },
+  "id": "F2-137"
+ },
+ {
+  "fichier": "chapitre-48-revue-litterature.md",
+  "ligne": 260,
+  "phrase": "| Travail du savoir en industrie [76] | Expérience de terrain, 128 travailleurs | Efficacité en hausse partout; qualité en baisse pour l'acquisition de connaissances |",
+  "sources": {
+   "76": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt : [Bottesch et coll. — Faster, Higher, Stronger? The Impact of GenAI on Knowledge Work Productivity: Evidence from the Field (arXiv, 2026)](https://arxiv.org/abs/2607.25922)"
+  },
+  "id": "F2-138"
+ },
+ {
+  "fichier": "chapitre-48-revue-litterature.md",
+  "ligne": 264,
+  "phrase": "Les équipes avec agent produisent 50 % d'annonces de plus par travailleur, avec un texte meilleur et des images moins bonnes, et leurs productions se ressemblent davantage [77].",
+  "sources": {
+   "77": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt : [Ju et Aral — Collaborating with AI Agents: Field Experiments on Teamwork, Productivity, and Performance (SSRN, 2025)](https://arxiv.org/abs/2503.18238)"
+  },
+  "id": "F2-139"
+ },
+ {
+  "fichier": "chapitre-48-revue-litterature.md",
+  "ligne": 272,
+  "phrase": "Une revue de 47 articles et de 12 rapports d'industrie, doublée d'un sondage de 136 professionnels, relève un écart persistant entre les résultats annoncés par les fournisseurs et ceux qui sont vérifiés de façon indépendante; 73 % de ses répondants tiennent la préparation de l'organisation, non la technique, pour le premier obstacle [27].",
+  "sources": {
+   "27": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur : [Agentic AI in Enterprise Business Processes: A Systematic Review and Practitioner Survey on Adoption Readiness (International Conference on Artificial Intelligence Management and Trends, 2026)](https://doi.org/10.63962/nxpa6137) — la notice ne nomme pas les auteurs."
+  },
+  "id": "F2-140"
+ },
+ {
+  "fichier": "chapitre-48-revue-litterature.md",
+  "ligne": 342,
+  "phrase": "| Protocoles | Recensements des registres et des places de marché de MCP [87][88][89] | 51,1 % des serveurs à plusieurs versions modifiés d'une version à l'autre; 516 serveurs détournables; la moitié des entrées sans valeur | Précise « faiblesses de l'écosystème » : le défaut est dans les registres autant que dans les serveurs | 8.8 |",
+  "sources": {
+   "87": "Travaux relevés hors protocole le 14 novembre 2026 (section 48.11) : [Kraishan — Same Name, Different Server: A Security Census of Silent Drift in the Model Context Protocol Ecosystem (arXiv 2609.14119)](https://arxiv.org/abs/2609.14119) — résumé; chapitre 8.",
+   "88": "Travaux relevés hors protocole le 14 novembre 2026 (section 48.11) : [Li et Gao — Toward Understanding Security Issues in the Model Context Protocol Ecosystem (arXiv 2510.16558)](https://arxiv.org/html/2510.16558v1) — chapitre 8.",
+   "89": "Travaux relevés hors protocole le 14 novembre 2026 (section 48.11) : [Guo et coll. — A Measurement Study of Model Context Protocol (arXiv 2509.25292)](https://arxiv.org/html/2509.25292v1) — chapitre 8."
+  },
+  "id": "F2-141"
+ },
+ {
+  "fichier": "chapitre-48-revue-litterature.md",
+  "ligne": 344,
+  "phrase": "| Coordination | Fautes signalées dans 40 dépôts [92]; défauts de cinq cadriciels [93][94] | Fautes surtout ordinaires; 16 bogues sur 35 transposables d'un cadriciel à l'autre | Complète « modes d'échec » par le logiciel qui porte les agents | 21.1, 20.7 |",
+  "sources": {
+   "92": "Travaux relevés hors protocole le 14 novembre 2026 (section 48.11) : [Shah et coll. — Characterizing Faults in Agentic AI: A Taxonomy of Types, Symptoms, and Root Causes (arXiv 2603.06847)](https://arxiv.org/html/2603.06847v2) — chapitre 21.",
+   "93": "Travaux relevés hors protocole le 14 novembre 2026 (section 48.11) : [Zhang, Zhang et Tan — Dissecting Bug Triggers and Failure Modes in Modern Agentic Frameworks (arXiv 2604.08906)](https://arxiv.org/html/2604.08906v1) — chapitre 20.",
+   "94": "Travaux relevés hors protocole le 14 novembre 2026 (section 48.11) : [Zhu et coll. — Where Agent Frameworks Fall Short (arXiv 2602.21806)](https://arxiv.org/abs/2602.21806) — résumé; chapitre 20."
+  },
+  "id": "F2-142"
+ },
+ {
+  "fichier": "chapitre-48-revue-litterature.md",
+  "ligne": 346,
+  "phrase": "| Effets économiques | Adoption de l'IA et productivité des entreprises canadiennes [97] | Prime de 16,8 %, non significative une fois les autres capacités prises en compte | Appuie la case « absent » : l'effet sur l'entreprise n'est pas établi | 40.5 |",
+  "sources": {
+   "97": "Travaux relevés hors protocole le 14 novembre 2026 (section 48.11) : [Statistique Canada — Li et Liu, Artificial intelligence adoption and productivity in Canadian firms (22 avril 2026)](https://www150.statcan.gc.ca/n1/pub/36-28-0001/2026004/article/00002-eng.htm) — chapitre 40."
+  },
+  "id": "F2-143"
+ },
+ {
+  "fichier": "chapitre-48-revue-litterature.md",
+  "ligne": 347,
+  "phrase": "| Gouvernance | Biais d'automatisation [98]; supervision par des développeurs [99]; supervision prescrite [100]; article de position [101] | Un conseil faux accroît de 26 % le risque de décision incorrecte | Remplace « presque rien » par un acquis sur les aides à la décision, non sur les agents | 22.5 |",
+  "sources": {
+   "98": "Travaux relevés hors protocole le 14 novembre 2026 (section 48.11) : [Goddard et coll. — Automation bias: a systematic review of frequency, effect mediators, and mitigators (Journal of the American Medical Informatics Association)](https://pmc.ncbi.nlm.nih.gov/articles/PMC3240751/) — chapitre 22.",
+   "99": "Travaux relevés hors protocole le 14 novembre 2026 (section 48.11) : [Dhanorkar, Passi et Vorvoreanu — Human oversight of agentic systems in practice (arXiv 2606.05391)](https://arxiv.org/html/2606.05391) — chapitre 22.",
+   "100": "Travaux relevés hors protocole le 14 novembre 2026 (section 48.11) : [Green — The Flaws of Policies Requiring Human Oversight of Government Algorithms (arXiv 2109.05067)](https://arxiv.org/abs/2109.05067) — résumé; chapitre 22.",
+   "101": "Travaux relevés hors protocole le 14 novembre 2026 (section 48.11) : [Mitchell, Ghosh et Passi — AI Agents Push Humans Out of the Loop (arXiv 2608.23642)](https://arxiv.org/html/2608.23642) — chapitre 22."
+  },
+  "id": "F2-144"
+ },
+ {
+  "fichier": "chapitre-49-veille-technologique.md",
+  "ligne": 67,
+  "phrase": "| Horizon à 80 % de réussite | Environ 3,1 heures; intervalle de 1,6 à 6,6 heures | [5] |",
+  "sources": {
+   "5": "Pages de l'émetteur lues le 13 novembre 2026 : [METR — fichier de données de la série Time Horizon 1.1](https://metr.org/assets/benchmark_results_1_1.yaml) — fichier téléchargé et relu à l'audit."
+  },
+  "id": "F2-145"
+ },
+ {
+  "fichier": "chapitre-49-veille-technologique.md",
+  "ligne": 68,
+  "phrase": "| Temps de doublement de l'horizon à 50 % depuis 2023 | Environ 129 jours; intervalle de 104 à 158 jours | [5] |",
+  "sources": {
+   "5": "Pages de l'émetteur lues le 13 novembre 2026 : [METR — fichier de données de la série Time Horizon 1.1](https://metr.org/assets/benchmark_results_1_1.yaml) — fichier téléchargé et relu à l'audit."
+  },
+  "id": "F2-146"
+ },
+ {
+  "fichier": "chapitre-49-veille-technologique.md",
+  "ligne": 69,
+  "phrase": "| Temps de doublement sur toute la période | Environ 188 jours | [5] |",
+  "sources": {
+   "5": "Pages de l'émetteur lues le 13 novembre 2026 : [METR — fichier de données de la série Time Horizon 1.1](https://metr.org/assets/benchmark_results_1_1.yaml) — fichier téléchargé et relu à l'audit."
+  },
+  "id": "F2-147"
+ },
+ {
+  "fichier": "chapitre-49-veille-technologique.md",
+  "ligne": 89,
+  "phrase": "Un système d'audit automatisé a produit, sur dix bancs d'essai d'agents répandus, des contournements qui obtiennent des scores presque parfaits sans résoudre une seule tâche, et a recensé 219 failles [47].",
+  "sources": {
+   "47": "Notices d'arXiv lues le 13 novembre 2026, résumé seulement — prépublications, sauf mention contraire : [Wang et coll. — BenchJack (arXiv 2605.12673), 12 mai 2026](https://arxiv.org/abs/2605.12673)"
+  },
+  "id": "F2-148"
+ },
+ {
+  "fichier": "chapitre-49-veille-technologique.md",
+  "ligne": 212,
+  "phrase": "| Isolation par construction contre l'injection d'invites, pour un agent seul | Article évalué par les pairs (chapitre 48); extension aux agents d'utilisation d'ordinateur en prépublication, qui conserve jusqu'à 57 % de la performance des modèles de pointe [49] | 3 | Composition entre agents | 31, 32 |",
+  "sources": {
+   "49": "Notices d'arXiv lues le 13 novembre 2026, résumé seulement — prépublications, sauf mention contraire : [Foerster et coll. — CaMeL appliqué aux agents d'utilisation d'ordinateur (arXiv 2601.09923), 14 janvier 2026](https://arxiv.org/abs/2601.09923)"
+  },
+  "id": "F2-149"
+ },
+ {
+  "fichier": "chapitre-49-veille-technologique.md",
+  "ligne": 215,
+  "phrase": "| Mémoire d'expérience | Bancs de 2026 : 72,5 % d'exactitude pour le meilleur système contre 48,5 % pour la meilleure base par récupération [54]; 57,2 % au mieux sur des trajectoires d'agents [55] | 2 | Comparaisons indépendantes; gouvernance | 14 |",
+  "sources": {
+   "54": "Notices d'arXiv lues le 13 novembre 2026, résumé seulement — prépublications, sauf mention contraire : [Wu et coll. — LongMemEval-V2 (arXiv 2605.12493), 12 mai 2026](https://arxiv.org/abs/2605.12493) — travail en cours.",
+   "55": "Notices d'arXiv lues le 13 novembre 2026, résumé seulement — prépublications, sauf mention contraire : [Zhao et coll. — AMA-Bench (arXiv 2602.22769), 26 février 2026](https://arxiv.org/abs/2602.22769)"
+  },
+  "id": "F2-150"
+ },
+ {
+  "fichier": "chapitre-49-veille-technologique.md",
+  "ligne": 218,
+  "phrase": "| Petits modèles pour agents | Article de position [59]; sur appareil, des modèles de 1 à 3 milliards de paramètres atteignent au mieux 65,7 % d'exactitude en appel de fonctions [60] | 1 à 2 | Niveau suffisant pour l'usage autonome | 44, 47 |",
+  "sources": {
+   "59": "Notices d'arXiv lues le 13 novembre 2026, résumé seulement — prépublications, sauf mention contraire : [Belcak et coll. — petits modèles de langage et systèmes agentiques (arXiv 2506.02153), 2 juin 2025](https://arxiv.org/abs/2506.02153) — article de position.",
+   "60": "Notices d'arXiv lues le 13 novembre 2026, résumé seulement — prépublications, sauf mention contraire : [Haque et coll. — TinyLLM (arXiv 2511.22138), 27 novembre 2025](https://arxiv.org/abs/2511.22138)"
+  },
+  "id": "F2-151"
+ },
+ {
+  "fichier": "chapitre-49-veille-technologique.md",
+  "ligne": 220,
+  "phrase": "| Identité d'agent à délégation vérifiable | Protocole ajoutant 2,35 ms de latence, 600 attaques rejetées; un balayage d'environ 2 000 serveurs MCP n'en trouve aucun authentifié [63] | 2 | Évaluation par un tiers | 29, 30 |",
+  "sources": {
+   "63": "Notices d'arXiv lues le 13 novembre 2026, résumé seulement — prépublications, sauf mention contraire : [Prakash — AIP, délégation vérifiable entre MCP et A2A (arXiv 2603.24775), 25 mars 2026](https://arxiv.org/abs/2603.24775) — auteur unique."
+  },
+  "id": "F2-152"
+ },
+ {
+  "fichier": "chapitre-49-veille-technologique.md",
+  "ligne": 250,
+  "phrase": "La même recension signale un serveur MCP malveillant promu par 23 demandes de fusion vers des projets en vue [45].",
+  "sources": {
+   "45": "Pages de l'émetteur lues le 13 novembre 2026 : [OWASP GenAI Security Project — GenAI and Agentic AI Exploit Roundup Q3 2026, 8 octobre 2026](https://genai.owasp.org/2026/10/08/genai-and-agentic-ai-exploit-roundup-q3-2026/) — recension; divulgations d'origine non ouvertes."
+  },
+  "id": "F2-153"
+ },
+ {
+  "fichier": "chapitre-49-veille-technologique.md",
+  "ligne": 254,
+  "phrase": "L'AI Index compte 362 incidents d'IA documentés en 2025, contre 233 l'année précédente [7].",
+  "sources": {
+   "7": "Pages de l'émetteur lues le 13 novembre 2026 : [Stanford HAI — The 2026 AI Index Report, page de synthèse](https://hai.stanford.edu/ai-index/2026-ai-index-report) — rapport complet non ouvert."
+  },
+  "id": "F2-154"
+ },
+ {
+  "fichier": "chapitre-49-veille-technologique.md",
+  "ligne": 276,
+  "phrase": "| Vulnérabilités des serveurs MCP | NVD | Mensuelle | 102 fiches en quatre mois [44] | Inventaire et épinglage des serveurs (chapitre 32) |",
+  "sources": {
+   "44": "Pages de l'émetteur lues le 13 novembre 2026 : [NIST — National Vulnerability Database, interrogation de l'API du 13 novembre 2026](https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=Model%20Context%20Protocol&pubStartDate=2026-07-01T00:00:00.000Z&pubEndDate=2026-10-28T00:00:00.000Z) — comptage et tri faits sur la réponse."
+  },
+  "id": "F2-155"
+ },
+ {
+  "fichier": "chapitre-50-projection-etude-marche.md",
+  "ligne": 33,
+  "phrase": "| Plateformes d'intégration (iPaaS) | 11,0 G$ US [9]; 19,2 G$ US [10] | 74 % |",
+  "sources": {
+   "9": "Pages de l'émetteur lues le 13 novembre 2026 : [Persistence Market Research — Integration Platform as a Service Market, janvier 2026](https://www.persistencemarketresearch.com/market-research/integration-platform-as-a-service-market.asp)",
+   "10": "Pages de l'émetteur lues le 13 novembre 2026 : [Fortune Business Insights — Integration Platform as a Service Market, mise à jour du 26 octobre 2026](https://www.fortunebusinessinsights.com/integration-platform-as-a-service-ipaas-market-109835)"
+  },
+  "id": "F2-156"
+ },
+ {
+  "fichier": "chapitre-50-projection-etude-marche.md",
+  "ligne": 35,
+  "phrase": "| Gouvernance de l'IA | 0,49 G$ US pour les plateformes, plus de 1 G$ US en 2030 [52]; 15,8 G$ US en 2030 pour l'ensemble des logiciels [13] | Facteur 16 environ en 2030, périmètres différents |",
+  "sources": {
+   "13": "Pages de l'émetteur lues le 13 novembre 2026 : [Forrester — AI Governance Software Spend Will See 30% CAGR From 2024 To 2030, 13 novembre 2024](https://www.forrester.com/blogs/ai-governance-software-spend-will-see-30-cagr-from-2024-to-2030/)",
+   "52": "Pages tierces lues le 13 novembre 2026, qui rapportent un émetteur dont la page n'a pas pu être chargée : [Insurance-Canada.ca — reprise du communiqué de Gartner du 17 février 2026 sur les plateformes de gouvernance de l'IA](https://insurance-canada.ca/2026/03/26/gartner-regulations-ai-governance-platforms/)"
+  },
+  "id": "F2-157"
+ },
+ {
+  "fichier": "chapitre-50-projection-etude-marche.md",
+  "ligne": 49,
+  "phrase": "| Polaris, IA agentique d'entreprise [2] | 5,9 G$ (2026) | 122,2 G$ (2034) | 46,2 % | Août 2026 |",
+  "sources": {
+   "2": "Pages de l'émetteur lues le 13 novembre 2026 : [Polaris Market Research — Enterprise Agentic AI Market, août 2026](https://www.polarismarketresearch.com/industry-analysis/enterprise-agentic-ai-market) — page de présentation d'un rapport payant."
+  },
+  "id": "F2-158"
+ },
+ {
+  "fichier": "chapitre-50-projection-etude-marche.md",
+  "ligne": 51,
+  "phrase": "| Mordor, IA agentique [3] | 9,9 G$ (2026) | 82,3 G$ (2032) | 42,4 % | Octobre 2026 |",
+  "sources": {
+   "3": "Pages de l'émetteur lues le 13 novembre 2026 : [Mordor Intelligence — Agentic AI Market, mise à jour du 22 octobre 2026](https://www.mordorintelligence.com/industry-reports/agentic-ai-market) — relue à l'audit."
+  },
+  "id": "F2-159"
+ },
+ {
+  "fichier": "chapitre-50-projection-etude-marche.md",
+  "ligne": 52,
+  "phrase": "| Fortune Business Insights, IA agentique [15] | 9,1 G$ (2026) | 139,2 G$ (2034) | 40,5 % | Octobre 2026 |",
+  "sources": {
+   "15": "Pages de l'émetteur lues le 13 novembre 2026 : [Fortune Business Insights — Agentic AI Market, mise à jour du 26 octobre 2026](https://www.fortunebusinessinsights.com/agentic-ai-market-114233) — page de présentation d'un rapport payant."
+  },
+  "id": "F2-160"
+ }
+]

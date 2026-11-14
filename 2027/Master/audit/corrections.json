@@ -5236,5 +5236,257 @@
   "categorie": "temporel",
   "motif": "Point majeur 08-30 : même tournure, « En 2027 … permettent », pour une capacité visée.",
   "origine": "plan 2027, lot P2-M10"
+ },
+ {
+  "n": 583,
+  "fichier": "ouverture.md",
+  "avant": "L’AAIF fédérerait plus de 300 organisations membres fin 2026 : le chapitre 11 ne confirme pas ce chiffre, car il compte huit membres platine et, selon un décompte approximatif de logos, une cinquantaine de membres or et environ deux cents membres argent (section 11.2).",
+  "apres": "L’AAIF compte huit membres platine et, selon un décompte approximatif de logos, une cinquantaine de membres or et environ deux cents membres argent, soit quelque 260 organisations (section 11.2).",
+  "categorie": "coherence",
+  "motif": "Point mineur 01-1 : l'ouverture avançait « plus de 300 organisations membres », chiffre que son propre chapitre 11 ne confirme pas. Le chiffre non sourcé est retiré; reste le décompte de la section 11.2.",
+  "origine": "plan 2027, lot P3-m1"
+ },
+ {
+  "n": 584,
+  "fichier": "ouverture.md",
+  "avant": "lecture approfondie des chapitres 30 à 32",
+  "apres": "lecture approfondie des chapitres 29 à 32",
+  "categorie": "coherence",
+  "motif": "Point mineur 01-3 : le parcours CISO et architecte IAM, dont la question porte sur les identités non humaines, sautait le chapitre 29 (identité agentique).",
+  "origine": "plan 2027, lot P3-m1"
+ },
+ {
+  "n": 585,
+  "fichier": "ouverture.md",
+  "avant": "recense 47 initiatives agentiques disparates dans les trois divisions, dont 19",
+  "apres": "recense 47 initiatives agentiques disparates dans les trois divisions et les fonctions centrales, dont 19",
+  "categorie": "coherence",
+  "motif": "Point mineur 08-7 : le chapitre 43 répartit les 47 initiatives entre les trois divisions (43) et les fonctions centrales (4); l'ouverture les situait toutes dans les trois divisions.",
+  "origine": "plan 2027, lot P3-m1"
+ },
+ {
+  "n": 586,
+  "fichier": "chapitre-01-entreprise-agentique.md",
+  "avant": "a suivi la stratification popularisée par Gartner :",
+  "apres": "a suivi une stratification en trois étages :",
+  "categorie": "coherence",
+  "motif": "Point mineur 01-21 : la stratification de Gartner (Pace-Layered) ne comprend pas de « systèmes d'engagement », qui viennent d'une autre typologie. L'attribution est retirée, le terme conservé.",
+  "origine": "plan 2027, lot P3-m1"
+ },
+ {
+  "n": 587,
+  "fichier": "chapitre-04-etat-des-lieux.md",
+  "avant": "| Destinataire | 93 % servent des humains : 52 % des employés, 40 % des clients externes; 8 % des systèmes non humains | Sondage |",
+  "apres": "| Destinataire | 92,5 % servent des humains, arrondis à 93 % : 52 % des employés et 40 % des clients externes; 8 % servent des systèmes non humains | Sondage |",
+  "categorie": "coherence",
+  "motif": "Point mineur 01-32 : les parts ne se recoupaient pas (52 + 40 = 92; 93 + 8 = 101). Vérifié dans l'étude MAP (arXiv 2512.04123, version 4, section 4.3), lue le 14 novembre 2026 : 92,5 % visent des humains, et l'étude arrondit elle-même à 93 %.",
+  "origine": "plan 2027, lot P3-m1"
+ },
+ {
+  "n": 588,
+  "fichier": "chapitre-04-etat-des-lieux.md",
+  "avant": "### Ce que les données disent de chaque cause\n\n**La valeur floue.**",
+  "apres": "### Ce que les données disent de chaque cause\n\nLa hausse des coûts, première cause citée, est traitée à la section 4.1. La gouvernance, examinée plus bas, est une cause que cet ouvrage ajoute à celles de Gartner.\n\n**La valeur floue.**",
+  "categorie": "coherence",
+  "motif": "Point mineur 01-33 : la section cite trois causes de Gartner, puis en examine trois autres sans dire que la hausse des coûts est traitée ailleurs et que la gouvernance est un ajout de l'ouvrage.",
+  "origine": "plan 2027, lot P3-m1"
+ },
+ {
+  "n": 589,
+  "fichier": "chapitre-10-commerce-agentique.md",
+  "avant": "de la spécification déclarative des vues (A2UI et MCP-UI).",
+  "apres": "de la spécification déclarative des vues (A2UI et MCP-UI); MCP-UI désigne ici le projet communautaire dont l’extension officielle MCP Apps (chapitre 5) est la forme normalisée.",
+  "categorie": "coherence",
+  "motif": "Point mineur 02-54 : le volet écrit « MCP-UI » là où les chapitres 5 et 7 et l'annexe B parlent de l'extension officielle MCP Apps. Le lien entre les deux noms est dit une fois, sans retoucher les huit occurrences.",
+  "origine": "plan 2027, lot P3-m2"
+ },
+ {
+  "n": 590,
+  "fichier": "chapitre-16-topologies-patrons.md",
+  "avant": "targetRef=\"Task_PostGateDMN\" />\n  <bpmn:sequenceFlow id=\"Flow_TimeoutFallback\"",
+  "apres": "targetRef=\"Task_PostGateDMN\" />\n  <bpmn:sequenceFlow id=\"Flow_PostGate\" sourceRef=\"Task_PostGateDMN\" targetRef=\"Gw_RouteAuthorization\" />\n  <bpmn:sequenceFlow id=\"Flow_TimeoutFallback\"",
+  "categorie": "coherence",
+  "motif": "Point mineur 03-22 : le fragment BPMN de l'Extrait 16.3 avait un graphe rompu : aucun flux n'entrait dans la passerelle `Gw_RouteAuthorization`. Un flux de `Task_PostGateDMN` vers la passerelle est ajouté.",
+  "origine": "plan 2027, lot P3-m2"
+ },
+ {
+  "n": 591,
+  "fichier": "chapitre-16-topologies-patrons.md",
+  "avant": "de valider la conformité BSIF E-23 trois mois avant l’échéance du 1er mai 2027",
+  "apres": "de valider la conformité BSIF E-23 avant l’échéance du 1er mai 2027",
+  "categorie": "coherence",
+  "motif": "Point mineur 03-28 : un problème posé au début du T1 2027 ne peut pas donner une conformité validée trois mois avant le 1er mai 2027, suivie d'un bilan à 90 jours. L'avance de trois mois est retirée.",
+  "origine": "plan 2027, lot P3-m2"
+ },
+ {
+  "n": 592,
+  "fichier": "chapitre-18-execution-durable-transactions.md",
+  "avant": "| Latence de journalisation par pas | Aucune latence chiffrée (section 18.6); persistance SQL / Cassandra multi-AZ | Aucune latence chiffrée (section 18.6); journal Rust Bifrost intégré | Aucune latence chiffrée (section 18.6); selon le backend de stockage (Scheduler / Azure Storage) | Faible intra-session; dépend de Step Functions en T4 |",
+  "apres": "| Persistance du journal (aucune latence chiffrée, section 18.6) | SQL / Cassandra multi-AZ | Journal Rust Bifrost intégré | Selon le backend de stockage (Scheduler / Azure Storage) | Propre à la session; Step Functions en T4 |",
+  "categorie": "coherence",
+  "motif": "Point mineur 04-9 : la ligne « Latence de journalisation par pas » répondait trois fois sur quatre qu'aucune latence n'est chiffrée. Elle compare maintenant ce qui est connu, la persistance du journal.",
+  "origine": "plan 2027, lot P3-m2"
+ },
+ {
+  "n": 593,
+  "fichier": "chapitre-18-execution-durable-transactions.md",
+  "avant": "\\text{WfId} \\;\\|\\; \\text{Epoch} \\;\\|\\; \\text{SeqId}",
+  "apres": "\\text{WfId} \\;\\|\\; \\text{SeqId}",
+  "categorie": "coherence",
+  "motif": "Point mineur 04-13 : la formule de la clé d'idempotence portait un terme « Epoch » que ni le texte ni l'Extrait 18.2 n'expliquent ou n'emploient. Il est retiré.",
+  "origine": "plan 2027, lot P3-m2"
+ },
+ {
+  "n": 594,
+  "fichier": "chapitre-18-execution-durable-transactions.md",
+  "avant": "le numéro de séquence `SeqId` de l'étape restent invariants",
+  "apres": "le numéro de séquence `SeqId` de l’étape (`activityId` dans l’Extrait 18.2, `stepSequenceId` dans l’ADR-012) restent invariants",
+  "categorie": "coherence",
+  "motif": "Point mineur 04-13 : la clé d'idempotence était décrite sous trois jeux de noms. La correspondance est dite une fois.",
+  "origine": "plan 2027, lot P3-m2"
+ },
+ {
+  "n": 595,
+  "fichier": "chapitre-19-orchestration-evenementielle.md",
+  "avant": "taux de dérive en file `SagaDeadLetter` ($< 0,05\\,\\%$)",
+  "apres": "taux de dérive en file `SagaDeadLetter` ($< 0,1\\,\\%$)",
+  "categorie": "coherence",
+  "motif": "Point mineur 04-32 : l'indicateur exigeait moins de 0,05 % de dérive, alors que le bilan du même volet (99,94 % de convergence, soit 0,06 % de dérive) est donné pour conforme. Le seuil s'aligne sur l'autre indicateur du même encadré (convergence d'au moins 99,9 %).",
+  "origine": "plan 2027, lot P3-m2"
+ },
+ {
+  "n": 596,
+  "fichier": "chapitre-31-menaces.md",
+  "avant": "(B3 et B4)** : Les anomalies de livraison",
+  "apres": "(B3 et B4)** : Toute écriture en mémoire épisodique tirée d’un document tiers reste en quarantaine tant qu’un contrôle déterministe ne l’a pas admise. Les anomalies de livraison",
+  "categorie": "coherence",
+  "motif": "Point mineur 06-22 : le point annonçait la quarantaine de la mémoire (barrière B3) et ne décrivait que la vue différentielle (B4), alors que l'attaque visait une écriture en mémoire épisodique.",
+  "origine": "plan 2027, lot P3-m3"
+ },
+ {
+  "n": 597,
+  "fichier": "chapitre-32-assurance.md",
+  "avant": "ce qui garantit un temps d’évaluation prévisible, en microsecondes.",
+  "apres": "ce qui garantit un temps d’évaluation prévisible, en microsecondes pour le moteur seul; les autres chiffres de ce volet, de 0,4 à 2 millisecondes, visent l’appel complet au PDP.",
+  "categorie": "coherence",
+  "motif": "Point mineur 06-30 : le volet donnait pour l'évaluation des ordres de grandeur différents (microsecondes ici; 0,4 à 1,5 ms, moins de 2 ms et 0,62 ms ailleurs) sans dire ce que chacun mesure. La distinction entre moteur et appel complet est une lecture de l'audit, non un fait sourcé.",
+  "origine": "plan 2027, lot P3-m3"
+ },
+ {
+  "n": 598,
+  "fichier": "chapitre-34-exploitation.md",
+  "avant": "le code d’orchestration, le point de contrôle exact du modèle (LLM ou SLM), le prompt système et les directives de dépôt (`AGENTS.md`), les compétences modulaires embarquées (Agent Skills), les schémas JSON des serveurs MCP distants invoqués, et les politiques déterministes Cedar ou OPA qui bornent son enveloppe d’action.",
+  "apres": "le contrat A2A externe, le point de contrôle exact du modèle (LLM ou SLM), les compétences modulaires (Agent Skills) avec les schémas JSON des serveurs MCP invoqués, le prompt système avec les directives de dépôt (`AGENTS.md`), les politiques déterministes Cedar ou OPA qui bornent son enveloppe d’action, et le code d’infrastructure.",
+  "categorie": "coherence",
+  "motif": "Point mineur 07-2 : les six couches de la phrase n'étaient pas les six lignes du tableau qui suit. La phrase reprend les lignes du tableau.",
+  "origine": "plan 2027, lot P3-m3"
+ },
+ {
+  "n": 599,
+  "fichier": "chapitre-35-cadres-internationaux.md",
+  "avant": "(https://www.imda.gov.sg/assets/d1e45a56-d898-4b9f-972e-8ae94be1a5a5.pdf)",
+  "apres": "(https://www.imda.gov.sg/-/media/imda/files/about/emerging-tech-and-research/artificial-intelligence/mgf-for-agentic-ai.pdf)",
+  "categorie": "coherence",
+  "motif": "Point mineur 07-19 : le cadre de Singapour était cité sous une adresse propre au chapitre 35. Il prend l'adresse des chapitres 1, 3, 22 et 39, dont le PDF a été chargé le 14 novembre 2026 : « Version 1.5 | Published 20 May 2026 (Updated 5 June 2026) ».",
+  "origine": "plan 2027, lot P3-m3"
+ },
+ {
+  "n": 600,
+  "fichier": "chapitre-38-canada-quebec.md",
+  "avant": "à 0,97 dès que le flux relève du palier matériel BSIF E-23.",
+  "apres": "à 0,97 dès que le flux relève du palier matériel BSIF E-23; l’Extrait 34.1, qui garde 0,95 pour le même agent, précède ce relèvement.",
+  "categorie": "coherence",
+  "motif": "Point mineur 07-13 : le manifeste de l'Extrait 34.1 classe le même agent au palier matériel avec un seuil de 0,95, quand la fiche 38.1 exige 0,97. L'écart est dit, sans retoucher l'un ou l'autre extrait.",
+  "origine": "plan 2027, lot P3-m4"
+ },
+ {
+  "n": 601,
+  "fichier": "chapitre-43-maturite-prospective.md",
+  "avant": "(amnistie déclarative de trois semaines, inspection DNS/TLS sortante)",
+  "apres": "(amnistie déclarative ramenée de 30 jours à trois semaines, inspection DNS/TLS sortante)",
+  "categorie": "coherence",
+  "motif": "Point mineur 08-8 : la méthode fixe une amnistie de 30 jours à la porte G1, le fil rouge en appliquait une de trois semaines sans le dire.",
+  "origine": "plan 2027, lot P3-m4"
+ },
+ {
+  "n": 602,
+  "fichier": "chapitre-45-reseaux-b2b-federes.md",
+  "avant": "Une activité déterministe évalue la règle Cedar de rapprochement à trois voies, au centime et au kilogramme près.",
+  "apres": "Une activité déterministe évalue la règle de rapprochement à trois voies dans les tolérances du contrat; l’arbitre de l’Extrait 45.3 en donne la logique : 0,02 \\$ sur le montant, ratio convenu sur la quantité.",
+  "categorie": "coherence",
+  "motif": "Point mineur 08-33 : le texte annonçait une règle exacte « au centime et au kilogramme près », alors que l'Extrait 45.3 tolère 0,02 $ et un ratio sur la quantité. Le texte s'aligne sur l'extrait.",
+  "origine": "plan 2027, lot P3-m4"
+ },
+ {
+  "n": 603,
+  "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+  "avant": "apiVersion: gateway.aaif.linuxfoundation.org/v1",
+  "apres": "apiVersion: agentgateway.aaif.io/v1alpha2",
+  "categorie": "coherence",
+  "motif": "Point mineur 08-44 : l'Extrait 46.1 configurait l'agentgateway du Groupe Boréal sous un autre groupe d'API que l'Extrait 44.1. Il prend celui du chapitre 44. Les noms de régions, qui diffèrent aussi, sont laissés : ils peuvent désigner autre chose que les codes de juridiction du chapitre 44.",
+  "origine": "plan 2027, lot P3-m5"
+ },
+ {
+  "n": 604,
+  "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+  "avant": "Les journaux Temporal/Restate, graphes mémoire, index vectoriels, KV-caches, courtiers d’événements et traces OTel résident-ils tous",
+  "apres": "Les journaux Temporal/Restate, la mémoire (graphes et index vectoriels), les KV-caches, les courtiers d’événements, les traces OTel et les journaux d’abus et de télémétrie du fournisseur de modèle résident-ils tous",
+  "categorie": "coherence",
+  "motif": "Point mineur 08-47 : la liste de contrôle renvoyait aux six substrats de la section 46.9, mais scindait la mémoire en deux et omettait la sixième couche, les journaux du fournisseur de modèle.",
+  "origine": "plan 2027, lot P3-m5"
+ },
+ {
+  "n": 605,
+  "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+  "avant": "Le pont entre MCP / A2A et ROS 2 découple trois couches :",
+  "apres": "Le pont entre MCP / A2A et ROS 2 découple trois couches, que le tableau plus bas porte à quatre en séparant la planification locale de l’arbitre Simplex :",
+  "categorie": "coherence",
+  "motif": "Point mineur 08-49 : trois couches annoncées, quatre dans le tableau qui suit. Le lien entre les deux décomptes est dit.",
+  "origine": "plan 2027, lot P3-m5"
+ },
+ {
+  "n": 606,
+  "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+  "avant": "allowedActionTypes: [\"NavigateToWaypoint\", \"DockCharger\"]",
+  "apres": "allowedActionTypes: [\"NavigateToNamedWaypoint\", \"DockAtStation\"]",
+  "categorie": "coherence",
+  "motif": "Point mineur 08-52 : les types d'action du manifeste de l'Extrait 46.6 ne portaient pas les noms des primitives que la passerelle expose selon le texte.",
+  "origine": "plan 2027, lot P3-m5"
+ },
+ {
+  "n": 607,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "- \"tests/golden_master/**\"\n      - \".github/workflows/**\"",
+  "apres": "- \"tests/golden_master/**\"\n      - \"tests/acceptance/**\"\n      - \".github/workflows/**\"",
+  "categorie": "coherence",
+  "motif": "Point mineur 09-14 : l'Extrait 47.2 n'interdisait pas au bâtisseur le répertoire `tests/acceptance/`, que le texte désigne comme l'oracle verrouillé.",
+  "origine": "plan 2027, lot P3-m6"
+ },
+ {
+  "n": 608,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "sur des contrats bissextiles signés au Nouveau-Brunswick",
+  "apres": "sur des contrats du Nouveau-Brunswick qui couvrent un 29 février",
+  "categorie": "coherence",
+  "motif": "Point mineur 09-17 : « contrats bissextiles » n'a pas de sens établi; seule une année est bissextile.",
+  "origine": "plan 2027, lot P3-m6"
+ },
+ {
+  "n": 609,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "Maximum 2 pods isolés par déploiement / 15 min",
+  "apres": "Maximum 1 pod isolé par déploiement / 30 min",
+  "categorie": "coherence",
+  "motif": "Point mineur 09-13 : le tableau autorisait deux isolations R1 par 15 minutes, alors que la politique Cedar de l'Extrait 47.6, le fil rouge et l'ADR-030 limitent l'agent à une mutation par 30 minutes.",
+  "origine": "plan 2027, lot P3-m6"
+ },
+ {
+  "n": 610,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "les réveils passent de 19 à 5 par mois",
+  "apres": "les réveils passent de 19 à 7 par mois",
+  "categorie": "coherence",
+  "motif": "Point mineur 09-12 : 64 % d'incidents résolus sans intervention laissent environ 7 réveils sur 19, non 5. Le pourcentage est conservé, le nombre de réveils corrigé.",
+  "origine": "plan 2027, lot P3-m6"
  }
 ]

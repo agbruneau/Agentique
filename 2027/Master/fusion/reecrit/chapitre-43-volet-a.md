@@ -245,7 +245,7 @@ Lors d’acquisitions industrielles successives, harmoniser SAP S/4HANA à la ma
 **Fil rouge — Groupe Boréal : cartographie et rationalisation des 47 pilotes dispersés vers une feuille de route N1 à N4**
 :::
 
-**Diagnostic initial (décembre 2026).** La porte G1 est activée (amnistie déclarative de trois semaines, inspection DNS/TLS sortante) sur le périmètre des 14 500 employés et des 6,8 G\$ CAD d’activité du Groupe Boréal Inc. L’équipe d’architecture recense 47 initiatives dites agentiques, réparties entre Boréal Équipements & Logistique (BEL, 14), Boréal Capital & Assurances (BCA, 11), Boréal Services Numériques (BSN, 18) et les fonctions centrales (4), dont 19 *Shadow Agents* non déclarés. La maturité effective du groupe plafonne à N1,4.
+**Diagnostic initial (décembre 2026).** La porte G1 est activée (amnistie déclarative ramenée de 30 jours à trois semaines, inspection DNS/TLS sortante) sur le périmètre des 14 500 employés et des 6,8 G\$ CAD d’activité du Groupe Boréal Inc. L’équipe d’architecture recense 47 initiatives dites agentiques, réparties entre Boréal Équipements & Logistique (BEL, 14), Boréal Capital & Assurances (BCA, 11), Boréal Services Numériques (BSN, 18) et les fonctions centrales (4), dont 19 *Shadow Agents* non déclarés. La maturité effective du groupe plafonne à N1,4.
 
 **Verdict du triage architectural (janvier 2027).** Le diagnostic patrimonial (Extrait 43.1) et l’algorithme de triage (Extrait 43.2) produisent quatre décisions entérinées par la direction générale :
 

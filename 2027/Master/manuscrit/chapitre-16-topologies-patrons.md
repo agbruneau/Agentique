@@ -778,6 +778,7 @@ Ce fragment BPMN 2.0 exécutable (Camunda 8 / Zeebe) insère une délégation A2
 
   <bpmn:sequenceFlow id="Flow_1" sourceRef="Task_PreCheckDMN" targetRef="Task_AgenticTechnicalReview" />
   <bpmn:sequenceFlow id="Flow_2" sourceRef="Task_AgenticTechnicalReview" targetRef="Task_PostGateDMN" />
+  <bpmn:sequenceFlow id="Flow_PostGate" sourceRef="Task_PostGateDMN" targetRef="Gw_RouteAuthorization" />
   <bpmn:sequenceFlow id="Flow_TimeoutFallback" sourceRef="Timer_AgentSlaBreach" targetRef="Task_HumanUnderwriterReview" />
   <bpmn:sequenceFlow id="Flow_AutoCommit" sourceRef="Gw_RouteAuthorization" targetRef="Task_CommitGuidewire">
     <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">
@@ -844,7 +845,7 @@ L’erreur la plus fréquente d’un centre d’excellence nouvellement créé e
     - Chaque agent de dépôt calcule sa soumission à partir du stock libre dans SAP S/4HANA, de la charge instantanée des quais d’expédition et de l’empreinte carbone et du coût du transport. L’adjudicateur (Extrait 16.2) attribue la réservation au dépôt optimal, souvent Québec ou Mississauga plutôt que Montréal-Est saturé. Les coûts de fret d’urgence baissent de 23 % et le respect du SLA passe à 98,7 %.
 3. **Boréal Capital & Assurances (BCA) : flux directeur hybride BPMN 2.0 / DMN qui encapsule une cellule planificateur–exécuteur–critique.**
     - Pour toute instruction de garantie ou de sinistre bris de machine, BCA impose un flux directeur déterministe sur Camunda 8 / Zeebe (Extrait 16.3). Les vérifications de police en vigueur sur l’IBM i (AS/400) et le calcul des plafonds de franchise sont exécutés à 100 % par des tables DMN, sans aucun appel à un modèle.
-    - Seule l’analyse croisée du rapport technique de panne et des clauses particulières d’exclusion est confiée à une cellule planificateur–exécuteur–critique limitée à $N_{\max} = 3$ tours : exécuteur sur Claude, critique indépendant sur Gemini, hébergés en région canadienne conformément à la Loi 25. Cette isolation a permis aux auditeurs internes de valider la conformité BSIF E-23 trois mois avant l’échéance du 1er mai 2027.
+    - Seule l’analyse croisée du rapport technique de panne et des clauses particulières d’exclusion est confiée à une cellule planificateur–exécuteur–critique limitée à $N_{\max} = 3$ tours : exécuteur sur Claude, critique indépendant sur Gemini, hébergés en région canadienne conformément à la Loi 25. Cette isolation a permis aux auditeurs internes de valider la conformité BSIF E-23 avant l’échéance du 1er mai 2027.
 
 **Bilan à 90 jours.** Les boucles infinies entre agents ont disparu : 0 incident, contre 3 par mois en phase prototype. Le facteur d’amplification de jetons baisse de 68 % chez BSN, de 84 000 à 26 500 jetons sur les cas complexes. La traçabilité OpenTelemetry est unifiée, de l’alerte du capteur à la comptabilisation financière.
 ::::

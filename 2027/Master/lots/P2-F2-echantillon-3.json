@@ -1,0 +1,363 @@
+[
+ {
+  "fichier": "chapitre-33-observabilite-evaluation.md",
+  "ligne": 242,
+  "phrase": "**Il garde un jeu réservé.** Nubank répartit ses données d'étalonnage en 40 % pour l'entraînement, 30 % pour la validation et 30 % pour le test [12].",
+  "sources": {
+   "12": "Pages primaires lues le 11 novembre 2026; [2], [5], [7], [11], [12] et [14] relues le 12 novembre 2026 : [Building Customer Support AI Agents at 100M-User Scale — Nubank, KDD 2026 (arXiv 2606.08867)](https://arxiv.org/html/2606.08867v1)"
+  },
+  "id": "F2-081"
+ },
+ {
+  "fichier": "chapitre-34-exploitation.md",
+  "ligne": 96,
+  "phrase": "L'article évalue l'approche par une simulation de Monte Carlo : sept classes de défaillance (section 34.5), 300 incidents injectés par classe, soit 2 100, laissés sans correction pendant 24 heures [4].",
+  "sources": {
+   "4": "Pages primaires lues le 11 novembre 2026 : [Solanke — From AIOps to AgentOps, WJAETS 21(01), 2026](https://wjaets.com/sites/default/files/fulltext_pdf/WJAETS-2026-0466.pdf) — texte intégral."
+  },
+  "id": "F2-082"
+ },
+ {
+  "fichier": "chapitre-34-exploitation.md",
+  "ligne": 127,
+  "phrase": "En simulation, cette règle ramène la détection médiane des régressions induites par un changement de 3,6 à 6,0 heures vers 44 à 63 minutes, au prix de 1,14 fausse alerte par 30 jours avec un changement quotidien [4].",
+  "sources": {
+   "4": "Pages primaires lues le 11 novembre 2026 : [Solanke — From AIOps to AgentOps, WJAETS 21(01), 2026](https://wjaets.com/sites/default/files/fulltext_pdf/WJAETS-2026-0466.pdf) — texte intégral."
+  },
+  "id": "F2-083"
+ },
+ {
+  "fichier": "chapitre-34-exploitation.md",
+  "ligne": 176,
+  "phrase": "Pour l'analyse rétrospective, la politique type de Google offre un seuil transposable : tout incident qui consomme plus de 20 % du budget de quatre semaines en exige une [6].",
+  "sources": {
+   "6": "Pages primaires lues le 11 novembre 2026 : [Google — The Site Reliability Workbook, politique type de budget d'erreur](https://sre.google/workbook/error-budget-policy/)"
+  },
+  "id": "F2-084"
+ },
+ {
+  "fichier": "chapitre-35-cadres-internationaux.md",
+  "ligne": 216,
+  "phrase": "Les amendes, plafonnées à 30 millions de wons, ne seraient appliquées qu'après un délai de grâce d'un an [11].",
+  "sources": {
+   "11": "Sources ajoutées le 14 novembre 2026, pour la section 35.7 : [Cooley — South Korea's AI Basic Act: Overview and Key Takeaways (27 janvier 2026)](https://www.cooley.com/news/insight/2026/2026-01-27-south-koreas-ai-basic-act-overview-and-key-takeaways) — commentaire de cabinet, secondaire."
+  },
+  "id": "F2-085"
+ },
+ {
+  "fichier": "chapitre-38-canada-quebec.md",
+  "ligne": 26,
+  "phrase": "Le document d'information annonce des sanctions administratives pouvant atteindre 10 millions de dollars ou 3 % des recettes globales brutes, et une nouvelle Commission canadienne de la sécurité numérique et de la protection des données, dotée d'un pouvoir d'ordonnance [2].",
+  "sources": {
+   "2": "Pages primaires lues le 11 novembre 2026 : [ISDE — document d'information sur C-36](https://www.canada.ca/fr/innovation-sciences-developpement-economique/nouvelles/2026/06/document-dinformation--le-gouvernement-du-canada-presente-un-projet-de-loi-visant-a-proteger-la-vie-privee-des-canadiens-a-lere-numerique.html)"
+  },
+  "id": "F2-086"
+ },
+ {
+  "fichier": "chapitre-38-canada-quebec.md",
+  "ligne": 121,
+  "phrase": "La Loi 25 impose par ailleurs une évaluation des facteurs relatifs à la vie privée (EFVP) pour tout projet d'acquisition, de développement ou de refonte d'un système d'information qui traite des renseignements personnels [9].",
+  "sources": {
+   "9": "Pages primaires lues le 11 novembre 2026 : [Loi 25 — L.Q. 2021, chapitre 25](https://www.publicationsduquebec.gouv.qc.ca/fileadmin/Fichiers_client/lois_et_reglements/LoisAnnuelles/fr/2021/2021C25F.PDF)"
+  },
+  "id": "F2-087"
+ },
+ {
+  "fichier": "chapitre-39-gouvernance-interne.md",
+  "ligne": 124,
+  "phrase": "L'instance doit donc comprendre la technologie; or près de 60 % des répondants de McKinsey citent les lacunes de connaissances et de formation comme premier obstacle à l'IA responsable, contre environ 50 % un an plus tôt [1].",
+  "sources": {
+   "1": "Pages primaires lues le 11 novembre 2026 : [McKinsey — State of AI trust in 2026: Shifting to the agentic era (25 mars 2026)](https://www.mckinsey.com/capabilities/tech-and-ai/our-insights/tech-forward/state-of-ai-trust-in-2026-shifting-to-the-agentic-era)"
+  },
+  "id": "F2-088"
+ },
+ {
+  "fichier": "chapitre-39-gouvernance-interne.md",
+  "ligne": 178,
+  "phrase": "Moins de 40 % jugent leur fonction prête à la détecter, 55 % citent le manque de personnel compétent, et 51 % conseillent déjà la direction sur la gouvernance de l'IA [15].",
+  "sources": {
+   "15": "Sources ajoutées le 14 novembre 2026, pour la section 39.6 : [Institute of Internal Auditors — communiqué sur l'enquête de l'Internal Audit Foundation et d'AuditBoard (17 février 2026)](https://www.theiia.org/en/content/communications/press-releases/2026/new-survey-from-the-iia-and-auditboard-report-reveals-growing-awareness-of-ai-enabled-fraud-varying-perception-of-audit-preparedness/) — communiqué; rapport non lu."
+  },
+  "id": "F2-089"
+ },
+ {
+  "fichier": "chapitre-40-finops-agentique.md",
+  "ligne": 31,
+  "phrase": "S'y ajoute une instruction système propre à l'usage d'outils, de 286 à 804 jetons selon le modèle et le réglage `tool_choice` sur la page d'Anthropic [7].",
+  "sources": {
+   "7": "Pages primaires lues le 11 novembre 2026 : [Anthropic — Pricing, documentation de la plateforme](https://platform.claude.com/docs/en/about-claude/pricing)"
+  },
+  "id": "F2-090"
+ },
+ {
+  "fichier": "chapitre-40-finops-agentique.md",
+  "ligne": 37,
+  "phrase": "| Durée d'exécution | Facturation au temps de session : 0,08 $ l'heure active pour les agents gérés d'Anthropic, en sus des jetons [7] |",
+  "sources": {
+   "7": "Pages primaires lues le 11 novembre 2026 : [Anthropic — Pricing, documentation de la plateforme](https://platform.claude.com/docs/en/about-claude/pricing)"
+  },
+  "id": "F2-091"
+ },
+ {
+  "fichier": "chapitre-40-finops-agentique.md",
+  "ligne": 57,
+  "phrase": "L'enquête State of FinOps 2026, menée auprès de 1 192 répondants dont les organisations totalisent plus de 83 milliards de dollars de dépenses infonuagiques annuelles, établit que 98 % des pratiques gèrent des dépenses d'IA, contre 31 % deux ans plus tôt [1].",
+  "sources": {
+   "1": "Pages primaires lues le 11 novembre 2026 : [Linux Foundation — State of FinOps 2026, communiqué du 19 février 2026](https://www.linuxfoundation.org/press/state-of-finops-survey-ai-value-and-skills-top-priorities-as-finops-matures-across-technology-value-98-manage-ai-90-saas-64-licensing-48-data-center-1)"
+  },
+  "id": "F2-092"
+ },
+ {
+  "fichier": "chapitre-40-finops-agentique.md",
+  "ligne": 132,
+  "phrase": "| Salesforce Agentforce [8] | Siège | 125 $ par utilisateur par mois | Usage illimité par les employés |",
+  "sources": {
+   "8": "Pages primaires lues le 11 novembre 2026 : [Salesforce — Agentforce Pricing](https://www.salesforce.com/agentforce/pricing/)"
+  },
+  "id": "F2-093"
+ },
+ {
+  "fichier": "chapitre-40-finops-agentique.md",
+  "ligne": 133,
+  "phrase": "| Intercom Fin [9] | Résultat (*outcome*) | À partir de 0,99 $ | Voir ci-dessous |",
+  "sources": {
+   "9": "Pages primaires lues le 11 novembre 2026 : [Intercom — Pricing](https://www.intercom.com/pricing)"
+  },
+  "id": "F2-094"
+ },
+ {
+  "fichier": "chapitre-40-finops-agentique.md",
+  "ligne": 187,
+  "phrase": "Elle tombe à 10,2 % quand on tient compte de leur productivité de départ, puis à 5,1 %, non significative, quand on ajoute leurs autres capacités numériques et d'innovation [13].",
+  "sources": {
+   "13": "Sources ajoutées le 14 novembre 2026 : [Statistique Canada — Li et Liu, Artificial intelligence adoption and productivity in Canadian firms (22 avril 2026)](https://www150.statcan.gc.ca/n1/pub/36-28-0001/2026004/article/00002-eng.htm)"
+  },
+  "id": "F2-095"
+ },
+ {
+  "fichier": "chapitre-40-finops-agentique.md",
+  "ligne": 197,
+  "phrase": "| Cache de prompts | Lecture à 0,1 fois le prix d'entrée sur la plupart des modèles, 0,05 ou 0,025 fois sur certains récents; écriture à 1,25 fois (cinq minutes) ou 2 fois (une heure) [7] | Un changement en tête du préfixe annule le gain (chapitre 13) |",
+  "sources": {
+   "7": "Pages primaires lues le 11 novembre 2026 : [Anthropic — Pricing, documentation de la plateforme](https://platform.claude.com/docs/en/about-claude/pricing)"
+  },
+  "id": "F2-096"
+ },
+ {
+  "fichier": "chapitre-40-finops-agentique.md",
+  "ligne": 199,
+  "phrase": "| Cache sémantique | 0,171 $ (−34,5 %), F1 0,924 [3] | Réponse périmée ou mal appariée |",
+  "sources": {
+   "3": "Pages primaires lues le 11 novembre 2026 : [Kulkarni et Kulkarni — Benchmarking Multi-Agent LLM Architectures for Financial Document Processing (arXiv 2603.22651v1)](https://arxiv.org/html/2603.22651v1) — prépublication."
+  },
+  "id": "F2-097"
+ },
+ {
+  "fichier": "chapitre-40-finops-agentique.md",
+  "ligne": 200,
+  "phrase": "| Routage à deux niveaux | 0,127 $ (−51,3 %), F1 0,912 [3] | Perte de précision |",
+  "sources": {
+   "3": "Pages primaires lues le 11 novembre 2026 : [Kulkarni et Kulkarni — Benchmarking Multi-Agent LLM Architectures for Financial Document Processing (arXiv 2603.22651v1)](https://arxiv.org/html/2603.22651v1) — prépublication."
+  },
+  "id": "F2-098"
+ },
+ {
+  "fichier": "chapitre-40-finops-agentique.md",
+  "ligne": 201,
+  "phrase": "| Relance adaptative | 0,247 $ (−5,4 %), F1 inchangé [3] | Gain modeste |",
+  "sources": {
+   "3": "Pages primaires lues le 11 novembre 2026 : [Kulkarni et Kulkarni — Benchmarking Multi-Agent LLM Architectures for Financial Document Processing (arXiv 2603.22651v1)](https://arxiv.org/html/2603.22651v1) — prépublication."
+  },
+  "id": "F2-099"
+ },
+ {
+  "fichier": "chapitre-40-finops-agentique.md",
+  "ligne": 210,
+  "phrase": "Le banc d'essai en montre le gain et le prix : le coût baisse de moitié, le F1 perd 1,7 point [3].",
+  "sources": {
+   "3": "Pages primaires lues le 11 novembre 2026 : [Kulkarni et Kulkarni — Benchmarking Multi-Agent LLM Architectures for Financial Document Processing (arXiv 2603.22651v1)](https://arxiv.org/html/2603.22651v1) — prépublication."
+  },
+  "id": "F2-100"
+ },
+ {
+  "fichier": "chapitre-40-finops-agentique.md",
+  "ligne": 216,
+  "phrase": "La décomposition n'est pas gratuite : dans le banc d'essai, le fan-out consomme 18 % de jetons de plus que le pipeline, ses branches relisant des contextes qui se chevauchent [3], et chaque frontière entre agents ajoute un risque de coordination (chapitre 21).",
+  "sources": {
+   "3": "Pages primaires lues le 11 novembre 2026 : [Kulkarni et Kulkarni — Benchmarking Multi-Agent LLM Architectures for Financial Document Processing (arXiv 2603.22651v1)](https://arxiv.org/html/2603.22651v1) — prépublication."
+  },
+  "id": "F2-101"
+ },
+ {
+  "fichier": "chapitre-41-modele-operationnel.md",
+  "ligne": 43,
+  "phrase": "Mais 37 % seulement font état d'un effet positif sur le résultat d'exploitation [3], et 11 % des organisations auraient atteint le stade où le travail lui-même est repensé [2].",
+  "sources": {
+   "2": "Pages primaires lues le 11 novembre 2026 : [McKinsey — AI is changing work; now it has to change the organization (5 octobre 2026)](https://www.mckinsey.com/capabilities/people-and-organization/our-insights/ai-is-changing-work-now-it-has-to-change-the-organization)",
+   "3": "Pages primaires lues le 11 novembre 2026 : [McKinsey — The state of AI in 2026: On the road to ROI (25 août 2026)](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) — lecture partielle."
+  },
+  "id": "F2-102"
+ },
+ {
+  "fichier": "chapitre-41-modele-operationnel.md",
+  "ligne": 43,
+  "phrase": "Selon l'enquête de 2026, 40 % des répondants d'organisations d'au moins un milliard de dollars de revenus disent mettre des agents à l'échelle dans au moins une fonction, et huit répondants sur dix déclarent un gain de productivité personnelle [3].",
+  "sources": {
+   "3": "Pages primaires lues le 11 novembre 2026 : [McKinsey — The state of AI in 2026: On the road to ROI (25 août 2026)](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) — lecture partielle."
+  },
+  "id": "F2-103"
+ },
+ {
+  "fichier": "chapitre-41-modele-operationnel.md",
+  "ligne": 43,
+  "phrase": "L'étude MAP montre des agents à courte portée : 68 % exécutent moins de dix étapes avant une intervention humaine [11] (chapitre 4).",
+  "sources": {
+   "11": "Source secondaire : [Measuring Agents in Production (étude MAP, arXiv 2512.04123)](https://arxiv.org/abs/2512.04123) — repris du chapitre 4, non relu ici."
+  },
+  "id": "F2-104"
+ },
+ {
+  "fichier": "chapitre-41-modele-operationnel.md",
+  "ligne": 148,
+  "phrase": "En mars 2025, avant la vague des agents, 27 % des répondants disaient que des employés révisaient tout le contenu produit par l'IA générative avant usage; une part comparable disait qu'au plus 20 % de ce contenu était vérifié [4].",
+  "sources": {
+   "4": "Pages primaires lues le 11 novembre 2026 : [McKinsey — The State of AI: How organizations are rewiring to capture value (12 mars 2025)](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-how-organizations-are-rewiring-to-capture-value) — lecture partielle."
+  },
+  "id": "F2-105"
+ },
+ {
+  "fichier": "chapitre-41-modele-operationnel.md",
+  "ligne": 188,
+  "phrase": "En 2025 déjà, la refonte des flux était, parmi 25 attributs testés, celui qui pesait le plus sur l'effet déclaré de l'IA générative sur le résultat d'exploitation; 21 % des organisations utilisatrices disaient avoir refondu au moins certains flux [4].",
+  "sources": {
+   "4": "Pages primaires lues le 11 novembre 2026 : [McKinsey — The State of AI: How organizations are rewiring to capture value (12 mars 2025)](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai-how-organizations-are-rewiring-to-capture-value) — lecture partielle."
+  },
+  "id": "F2-106"
+ },
+ {
+  "fichier": "chapitre-42-etudes-de-cas.md",
+  "ligne": 143,
+  "phrase": "| ITBench (IBM et Université de l'Illinois, février 2025) [5] | 94 scénarios d'automatisation TI | 13,8 % des scénarios de fiabilité résolus; 25,2 % en conformité et sécurité; 0 % en FinOps |",
+  "sources": {
+   "5": "Pages primaires lues le 11 novembre 2026; [1], [2], [3], [4], [6], [8], [10] et [11] relues à l'audit du 12 novembre 2026 : [Jha et coll. — ITBench (arXiv 2502.05352)](https://arxiv.org/abs/2502.05352) — prépublication; résumé seulement."
+  },
+  "id": "F2-107"
+ },
+ {
+  "fichier": "chapitre-42-etudes-de-cas.md",
+  "ligne": 144,
+  "phrase": "| ORCA-bench (version 3, septembre 2026) [6] | 1 079 tâches d'analyse de cause première | Meilleure exactitude : 25,3 % au niveau moyen, 10,0 % au niveau difficile |",
+  "sources": {
+   "6": "Pages primaires lues le 11 novembre 2026; [1], [2], [3], [4], [6], [8], [10] et [11] relues à l'audit du 12 novembre 2026 : [Gong et coll. — ORCA-bench: How Ready Are Language Model Agents for Oncall? (arXiv 2607.28545)](https://arxiv.org/abs/2607.28545) — prépublication; résumé seulement."
+  },
+  "id": "F2-108"
+ },
+ {
+  "fichier": "chapitre-42-etudes-de-cas.md",
+  "ligne": 156,
+  "phrase": "En production, le temps de réponse médian baisse de 42 %; sur 1 500 alarmes historiques, le taux d'erreur de bout en bout baisse jusqu'à 53 % [13].",
+  "sources": {
+   "13": "Résumés seulement, relevés le 14 novembre 2026 : [Kujanpää et coll. — Tool-Making and Self-Evolving LLM Agents in Low-Latency Systems (arXiv 2607.08010, 9 juillet 2026)](https://arxiv.org/abs/2607.08010)"
+  },
+  "id": "F2-109"
+ },
+ {
+  "fichier": "chapitre-43-maturite-prospective.md",
+  "ligne": 123,
+  "phrase": "| Portée des agents en production | Moins de dix étapes pour 68 % des agents étudiés [3] | Étude comparable montrant des parcours longs : hypothèse H2 à revoir |",
+  "sources": {
+   "3": "Pages primaires lues le 11 novembre 2026 : [Measuring Agents in Production (arXiv 2512.04123, version 4)](https://arxiv.org/abs/2512.04123) — résumé; première moitié du texte relue le 12 novembre 2026."
+  },
+  "id": "F2-110"
+ },
+ {
+  "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+  "ligne": 61,
+  "phrase": "Son résumé annonce jusqu'à 98 % de réduction de coût à performance égale au meilleur modèle de l'époque [10].",
+  "sources": {
+   "10": "Pages primaires lues le 12 novembre 2026 : [Chen, Zaharia et Zou — FrugalGPT (arXiv 2305.05176)](https://arxiv.org/abs/2305.05176) — prépublication; résumé seulement."
+  },
+  "id": "F2-111"
+ },
+ {
+  "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+  "ligne": 77,
+  "phrase": "RouterArena, plateforme de l'Université Rice, compare douze routeurs, trois commerciaux et neuf ouverts ou universitaires, sur 8 400 requêtes réparties en neuf domaines et trois niveaux de difficulté [13].",
+  "sources": {
+   "13": "Pages primaires lues le 12 novembre 2026 : [Lu et coll. — RouterArena (arXiv 2510.00202, version 3)](https://arxiv.org/html/2510.00202v3) — prépublication; texte lu."
+  },
+  "id": "F2-112"
+ },
+ {
+  "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+  "ligne": 126,
+  "phrase": "Preble annonce une latence moyenne de 1,5 à 14,5 fois meilleure et une latence au 99e centile de 2 à 10 fois meilleure que celle de systèmes de l'état de l'art, sur des charges réelles et deux modèles ouverts [12].",
+  "sources": {
+   "12": "Pages primaires lues le 12 novembre 2026 : [Srivatsa et coll. — Preble (arXiv 2407.00023)](https://arxiv.org/abs/2407.00023) — prépublication; résumé seulement."
+  },
+  "id": "F2-113"
+ },
+ {
+  "fichier": "chapitre-45-reseaux-b2b-federes.md",
+  "ligne": 171,
+  "phrase": "Dans l'exemple de la documentation, une facture à 1,10 pour un article commandé à 1,00, sous une tolérance de 5 %, est retenue jusqu'à résolution de l'écart [14].",
+  "sources": {
+   "14": "Pages primaires lues le 12 novembre 2026 : [Microsoft Learn — Accounts payable invoice matching](https://learn.microsoft.com/en-us/dynamics365/finance/accounts-payable/accounts-payable-invoice-matching) — documentation d'éditeur."
+  },
+  "id": "F2-114"
+ },
+ {
+  "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+  "ligne": 75,
+  "phrase": "L'éditeur conseille, si possible, un aller-retour réseau de 35 millisecondes ou moins entre sa région et le gestionnaire externe [5].",
+  "sources": {
+   "5": "Pages primaires lues le 12 novembre 2026 : [AWS KMS — External key stores](https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html)"
+  },
+  "id": "F2-115"
+ },
+ {
+  "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+  "ligne": 91,
+  "phrase": "| Retrait planifié d'un modèle | Annoncé | Anthropic s'engage à un préavis d'au moins 60 jours pour un modèle publié; passé la date, les requêtes échouent [6] |",
+  "sources": {
+   "6": "Pages primaires lues le 12 novembre 2026 : [Anthropic — Model deprecations](https://platform.claude.com/docs/en/about-claude/model-deprecations)"
+  },
+  "id": "F2-116"
+ },
+ {
+  "fichier": "chapitre-46-inference-confidentielle-resilience-ia-physique.md",
+  "ligne": 141,
+  "phrase": "ROS 2 retient DDS et son protocole RTPS comme standards de communication [9].",
+  "sources": {
+   "9": "Pages primaires lues le 12 novembre 2026 : [ROS 2 Design — ROS on DDS (W. Woodall, 2014, modifié en 2019)](https://design.ros2.org/articles/ros_on_dds.html)"
+  },
+  "id": "F2-117"
+ },
+ {
+  "fichier": "chapitre-48-revue-litterature.md",
+  "ligne": 126,
+  "phrase": "Une revue fondée sur 1 899 serveurs MCP relève des schémas incohérents, des risques d'empoisonnement d'outils et des problèmes de maintenabilité [10].",
+  "sources": {
+   "10": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur : [Ahmad et coll. — Model Context Protocol Servers: A Systematic Review of Designs, Use Cases and Future Directions (International Journal of Advanced Networking and Applications, 2026)](https://doi.org/10.35444/ijana.2026.17605)"
+  },
+  "id": "F2-118"
+ },
+ {
+  "fichier": "chapitre-48-revue-litterature.md",
+  "ligne": 140,
+  "phrase": "Sa notice décrit plus de 1 600 traces annotées sur sept cadriciels, une taxonomie de quatorze modes tirée de 150 traces avec un accord entre annotateurs de 0,88, et trois catégories : conception du système, désalignement entre agents, vérification de la tâche [2].",
+  "sources": {
+   "2": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur : [Cemri et coll. — Why Do Multi-Agent LLM Systems Fail? (NeurIPS, 2025)](https://doi.org/10.52202/085713-4082) — version publiée de la taxonomie MAST, que l'ouvrage cite par arXiv."
+  },
+  "id": "F2-119"
+ },
+ {
+  "fichier": "chapitre-48-revue-litterature.md",
+  "ligne": 140,
+  "phrase": "Une synthèse de 27 articles et de 19 bancs d'essai élargit le constat aux agents en général : les échecs se composent de façon non linéaire avec la longueur de la tâche, une bonne performance sur les sous-tâches ne garantit pas la réussite de bout en bout, et un échafaudage supplémentaire n'améliore pas la fiabilité de façon constante [44].",
+  "sources": {
+   "44": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt : [Albayaydh et coll. — Beyond the Leaderboard: A Synthesis of Tool-Use, Planning, and Reasoning Failures in Large Language Model Agents (arXiv, 2026)](https://arxiv.org/abs/2607.05775)"
+  },
+  "id": "F2-120"
+ }
+]

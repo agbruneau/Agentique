@@ -71,7 +71,7 @@ Le portrait qui en sort est celui d'agents volontairement simples.
 | Autonomie | 68 % exécutent moins de dix étapes avant une intervention humaine (résumé : « au plus dix »); 47 % moins de cinq | Sondage |
 | Parcours | 16 cas sur 20 suivent un workflow structuré et prédéfini; un seul explore librement, en bac à sable | Études de cas |
 | Modèle | 17 cas sur 20 utilisent un modèle propriétaire; 14 sur 20 n'ajustent aucun poids | Études de cas |
-| Destinataire | 93 % servent des humains : 52 % des employés, 40 % des clients externes; 8 % des systèmes non humains | Sondage |
+| Destinataire | 92,5 % servent des humains, arrondis à 93 % : 52 % des employés et 40 % des clients externes; 8 % servent des systèmes non humains | Sondage |
 | Latence | 66 % tolèrent une réponse en minutes ou plus | Sondage |
 | Évaluation | 74 % reposent sur l'évaluation humaine; 52 % utilisent un modèle comme juge | Sondage |
 | Outillage | 17 cas sur 20 sont construits sur mesure, sans cadriciel tiers | Études de cas |
@@ -105,6 +105,8 @@ C'est une prévision, émise plus de seize mois avant ce chapitre, et aucun taux
 Selon l'analyste citée, la plupart des projets sont des expérimentations précoces, portées par l'engouement et souvent mal appliquées. Gartner dénonce aussi l'« agent washing », qui rebaptise agents des assistants et des robots conversationnels existants, et estime qu'environ 130 fournisseurs seulement, sur des milliers, offrent de véritables capacités agentiques [9].
 
 ### Ce que les données disent de chaque cause
+
+La hausse des coûts, première cause citée, est traitée à la section 4.1. La gouvernance, examinée plus bas, est une cause que cet ouvrage ajoute à celles de Gartner.
 
 **La valeur floue.** L'enquête McKinsey montre le mécanisme : des gains individuels déclarés, qui ne se rendent pas au résultat d'exploitation [8]. L'étude MAP en montre un autre. Parmi ses répondants, 39 % comparent leur agent à une solution non agentique, et 26 % disent qu'aucune base de comparaison valable n'existe [1]. Sans point de comparaison, la valeur ne se démontre pas, et un projet qui ne peut pas prouver son apport est le premier à perdre son budget (mesure de la valeur : chapitre 40).
 

@@ -256,7 +256,7 @@ Billets de fournisseurs, lus; [15] relu le 12 novembre :
   1.  *Irréversible à moyen terme* : Proscrire tout verrouillage transactionnel distribué (validation à deux phases, 2PC / XA) entre agents cognitifs; adopter un socle à deux composantes : routage dynamique à basse latence (Solace PubSub+) et journal immuable relisible (Apache Kafka / Confluent).
   2.  *Structurante dès le jour 1* : Classer chaque outil MCP mutatif et chaque délégation A2A v1.0 en quatre catégories (*compensable*, *pivot*, *réessayable*, *irréversible externe*), imposer le patron Transactional Outbox et confiner toute émission externe derrière un tampon à fenêtre de grâce.
   3.  *Réversible par conception* : Le choix des adaptateurs de capture des changements ou des courtiers périphériques (NATS JetStream) en bordure d’usine, tant que l’enveloppe canonique CloudEvents 1.0 est respectée.
-- **Indicateurs de gouvernance associés** : Taux de convergence propre des sagas ($\ge 99,9\,\%$), délai de compensation au 95e centile, taux de dérive en file `SagaDeadLetter` ($< 0,05\,\%$) et zéro émission irréversible externe avant validation du point pivot.
+- **Indicateurs de gouvernance associés** : Taux de convergence propre des sagas ($\ge 99,9\,\%$), délai de compensation au 95e centile, taux de dérive en file `SagaDeadLetter` ($< 0,1\,\%$) et zéro émission irréversible externe avant validation du point pivot.
 ::::
 
 ## 19.8 De la requête-réponse bloquante à l’architecture événementielle agentique (EDAA)

@@ -430,6 +430,7 @@ spec:
     forbidBuilderWritePaths:
       - "specs/**"
       - "tests/golden_master/**"
+      - "tests/acceptance/**"
       - ".github/workflows/**"
   deterministicGates:
     forbidBinaryFloatsInDomain: true
@@ -543,7 +544,7 @@ Chez BCA, l’usine résorbe la dette patrimoniale AS/400 sans interrompre une s
 **Déploiement de l’usine chez Boréal** :
 
 1.  **Cartographie symbolique complète en trois semaines** : Un parseur RPG/CL/DB2 a indexé les 2 140 programmes et isolé 14 domaines fonctionnels faiblement couplés, en commençant par les trois modules qui concentraient 78 % des appels d’agents (*Éligibilité Garantie*, *Calcul Rachat Anticipé*, *Avenant Franchise*).
-2.  **Capture de l’oracle *Golden Master* et boucle à séparation des devoirs** : Sur chaque module, 60 000 transactions historiques anonymisées de 2024–2026 ont formé l’oracle scellé. Au premier cycle d’exécution en miroir du module de rachat anticipé, le comparateur (Extrait 47.3) a intercepté 17 divergences de 0,01 \$ à 0,04 \$ CAD sur des contrats bissextiles signés au Nouveau-Brunswick. Elles venaient d’une règle d’arrondi implicite de 2007 qu’aucun analyste humain ne connaissait plus, intégrée et prouvée avant la bascule.
+2.  **Capture de l’oracle *Golden Master* et boucle à séparation des devoirs** : Sur chaque module, 60 000 transactions historiques anonymisées de 2024–2026 ont formé l’oracle scellé. Au premier cycle d’exécution en miroir du module de rachat anticipé, le comparateur (Extrait 47.3) a intercepté 17 divergences de 0,01 \$ à 0,04 \$ CAD sur des contrats du Nouveau-Brunswick qui couvrent un 29 février. Elles venaient d’une règle d’arrondi implicite de 2007 qu’aucun analyste humain ne connaissait plus, intégrée et prouvée avant la bascule.
 
 **Bilan audité après neuf mois** :
 
@@ -725,7 +726,7 @@ Le catalogue de procédures paramétrées de la section 47.6 reçoit ici sa matr
 | Palier de rayon d’impact | Exemples d’opérations typées | Autorisation & Régime | Verrou anti-emballement (Cedar) |
 |:---------------------|:---------------------------------|:-------------------|:--------------------------|
 | R0 — Observation pure | Requêtes PromQL, traces OTel, `git log`, profilage CPU court | Autonome L1 | Quotas de requêtes sur les systèmes d’observabilité |
-| R1 — Réversible local (1 pod / 1 branche) | Isoler un pod dégradé pour `heap dump`, quarantaine WAP, purger un cache clé local | Autonome L3 | Maximum 2 pods isolés par déploiement / 15 min |
+| R1 — Réversible local (1 pod / 1 branche) | Isoler un pod dégradé pour `heap dump`, quarantaine WAP, purger un cache clé local | Autonome L3 | Maximum 1 pod isolé par déploiement / 30 min |
 | R2 — Service régional sans perte de données | Retour arrière d’un déploiement canari de moins de 2 h, bascule de poids agentgateway, autoscaling +30 % | Autonome L3 borné | Max 1 action R2 par 30 min; interdit si incident multi-régions |
 | R3 — Mutation d’état persistant ou sécurité | Bascule de la base primaire, rejeu de masse Kafka, modification IAM ou pare-feu, suppression de données | Interdit en L3 → L2 CIBA obligatoire | Double signature humaine (SRE de garde et responsable) |
 
@@ -884,7 +885,7 @@ Sur sa plateforme industrielle 24/7, Boréal Services Numériques (BSN) a combin
 **Résultats mesurés sur huit mois** :
 
 - MTTR global sur les incidents de sévérité 1 et 2 abaissé de 47 minutes à 12 minutes (-74 %).
-- 64 % des incidents nocturnes de paliers R1/R2 résolus de bout en bout sans intervention humaine de nuit : les réveils passent de 19 à 5 par mois, toujours avec un diagnostic causal précis en moins de 90 secondes.
+- 64 % des incidents nocturnes de paliers R1/R2 résolus de bout en bout sans intervention humaine de nuit : les réveils passent de 19 à 7 par mois, toujours avec un diagnostic causal précis en moins de 90 secondes.
 - Zéro incident aggravé par une action autonome, grâce au verrou Cedar qui limite l’agent à une seule tentative bornée par fenêtre de 30 minutes.
 ::::
 
