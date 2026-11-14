@@ -1,0 +1,666 @@
+[
+ {
+  "fichier": "chapitre-30-autorisation-delegation.md",
+  "points_a_retenir": "## Points à retenir\n\n- Le moindre privilège se joue à trois étages : le jeton, l'outil et le justificatif que le serveur emploie en aval. Le troisième peut dépasser les droits de chaque appelant.\n- MCP inscrit l'élévation progressive dans son flux, mais le résultat dépend du serveur, qui doit déclarer peu et réclamer avec précision.\n- Dans une chaîne de délégation, les acteurs antérieurs sont informatifs selon la RFC 8693, et aucune norme adoptée ne garantit l'atténuation de saut en saut. En attendant, chaque saut repasse par le serveur d'autorisation, et l'orchestrateur consigne la chaîne.\n- L'autorisation par opération existe dans OAuth (RFC 9396) sans profil pour les agents; elle se décide aujourd'hui dans le serveur de ressources et à la passerelle.\n- Une confirmation dans l'interface de l'agent n'est pas une preuve; seul un octroi émis par le serveur d'autorisation en est une. L'attestation de présence humaine n'a pas de standard.\n- Un manifeste de permissions est un signal volontaire, et son texte libre est une entrée non fiable.\n- AuthZEN normalise l'interface entre point d'application et point de décision; le langage de politique reste un choix d'entreprise.\n- Prouver, c'est tenir un journal de chaque décision où toute altération se détecte, et appliquer les révocations aux décisions mises en cache.\n\n---",
+  "grille_de_decision": "## Grille de décision\n\n| Décision | Option par défaut | Quand s'en écarter |\n|---|---|---|\n| Portées initiales | Ensemble minimal, lecture et découverte; élévation à la demande | Flux sans utilisateur : portées préapprouvées par politique; site déconnecté : droits répartis avant la coupure (chapitre 46) |\n| Conception des outils | Étroits, un effet par outil | Outil générique derrière une règle sur ses arguments |\n| Justificatif en aval | Obtenu par échange de jeton, lié à l'appelant | Système patrimonial sans OAuth : compte de service restreint et audit renforcé |\n| Délégation à un sous-agent | Jeton neuf, plus étroit, plus court, par échange en ligne; profondeur bornée | Aucun cas pour le relais du jeton parent |\n| Opérations à fort enjeu | Décision dans le serveur de ressources, sur l'objet et le montant | Détails d'autorisation (RFC 9396) si le serveur d'autorisation les gère |\n| Preuve d'approbation humaine | Octroi émis par le serveur d'autorisation | Confirmation locale pour les actions réversibles et à faible enjeu |\n| Manifestes de sites tiers | Règles structurées appliquées par le cadriciel | Directives en langage naturel : jamais comme instructions |\n| Politique | Codifiée, versionnée, évaluée hors de l'agent | Très petit parc : listes à la passerelle |\n| Piste d'audit | Sept champs d'AIMS, plus la chaîne et la version de politique | — |\n\n---",
+  "sources_resume": [
+   {
+    "n": 13,
+    "groupe": "Pages primaires lues le 11 novembre 2026 :",
+    "source": "[Authenticated Delegation and Authorized AI Agents (arXiv 2501.09674)](https://arxiv.org/abs/2501.09674) — résumé seulement",
+    "phrases": [
+     {
+      "ligne": 149,
+      "phrase": "Une autre prépublication, lue en résumé, suit la voie inverse : traduire en contrôles d'accès vérifiables, par extension d'OAuth 2.0 et d'OpenID Connect, des permissions que l'utilisateur exprime en langage naturel [13]."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "fichier": "chapitre-31-menaces.md",
+  "points_a_retenir": "## Points à retenir\n\n- Le changement central est le déplacement de la frontière de confiance : tout texte lu par un agent peut agir comme une instruction, et l'agent agit avec une autorité déléguée.\n- Les vulnérabilités classiques demeurent. Six des dix entrées de l'OWASP MCP Top 10 et presque toute la page de sécurité de la spécification MCP en relèvent.\n- Aucune source lue n'établit de parade fiable à l'injection au niveau du modèle. La défense qui tient est architecturale : limiter ce qu'un agent détourné peut faire.\n- La trifecta létale (données privées, contenu non fiable, canal sortant) est le test le plus rapide à appliquer à un agent.\n- La description d'un outil est une surface d'attaque. Elle peut changer après approbation, ce qu'une campagne d'août 2026 a fait hors laboratoire, et influencer l'usage des outils d'un autre serveur.\n- La spécification MCP sécurise le canal et l'autorisation, pas le contenu. L'empoisonnement d'outil et l'injection restent à la charge de l'hôte et de l'entreprise.\n- La mémoire transforme une injection en compromission durable. Un fonds qu'on ne peut ni attribuer ni purger ne permet pas de clore un incident.\n- Les menaces multi-agents (propagation, collusion, cascades) sont nommées et démontrées en laboratoire, mais ni mesurées en production ni dotées de défenses éprouvées.\n- L'OWASP Top 10 for Agentic Applications est un vocabulaire de consensus, l'OWASP MCP Top 10 une bêta, MAESTRO un cadre d'auteur. Aucun n'est une norme.\n\n---",
+  "grille_de_decision": "## Grille de décision\n\n| Décision | Option par défaut | Quand s'en écarter |\n|---|---|---|\n| Hypothèse sur le contenu lu par l'agent | Non fiable, y compris les résultats d'outils et les messages d'autres agents | Contenu produit par un système interne maîtrisé, sans entrée d'un tiers |\n| Combinaison de capacités | Jamais données privées, contenu non fiable et canal sortant dans un même agent | Canal sortant restreint à une liste de destinations fixes |\n| Défense contre l'injection | Limitation des capacités et approbation hors agent; filtres en complément | Filtres seuls : aucun cas |\n| Admission d'un serveur MCP | Examen des descriptions, épinglage, registre interne; nouvelle approbation à tout changement de définition | Serveur interne dont le code est maîtrisé : examen allégé |\n| Serveur local sur un poste | Liste d'autorisation et bac à sable | Poste de développement isolé, sans secrets |\n| Mémoire durable | Écriture restreinte, provenance conservée, purge possible | Mémoire de session, détruite à la fin |\n| Messages entre agents | Authentifiés et traités comme non fiables | — |\n| Référentiel de menaces | OWASP Agentic Top 10 comme vocabulaire; MCP Top 10 en complément, cité comme bêta | Référentiel sectoriel imposé |\n| Méthode de modélisation | Par couches, reprise à chaque changement du catalogue d'outils | Agent unique sans outil à effet : test de la trifecta |\n\n---",
+  "sources_resume": [
+   {
+    "n": 6,
+    "groupe": "Pages primaires lues le 11 novembre 2026 :",
+    "source": "[Greshake et coll. — Not what you've signed up for (arXiv 2302.12173)](https://arxiv.org/abs/2302.12173) — résumé.",
+    "phrases": [
+     {
+      "ligne": 30,
+      "phrase": "Greshake et ses coauteurs montrent alors qu'une application intégrant un modèle de langage brouille la ligne entre données et instructions : un attaquant qui n'a aucun accès à l'application y dépose des consignes en les plaçant dans un contenu qu'elle ira chercher [6]."
+     },
+     {
+      "ligne": 44,
+      "phrase": "Cinq positions d'attaquant ressortent des sources lues : l'auteur d'un contenu que l'agent lira, ne serait-ce qu'une ligne de journal (chapitre 47) [6]; l'éditeur d'un outil ou d'un serveur, malveillant dès l'origine ou devenu tel après approbation [11]; l'utilisateur d'un agent partagé, qui écrit dans une mémoire que d'autres liront (chapitre 14); un autre agent, compromis, usurpé ou adverse, comme la contrepartie d'une négociation (chapitre 45) [2][9]; enfin l'agent lui-même, lorsqu'il s'écarte de son mandat sans attaquant extérieur [2]."
+     },
+     {
+      "ligne": 112,
+      "phrase": "L'injection indirecte vient d'un tiers : la consigne est déposée dans un contenu que l'agent ira lire pour accomplir une tâche légitime [6]."
+     }
+    ]
+   },
+   {
+    "n": 7,
+    "groupe": "Pages primaires lues le 11 novembre 2026 :",
+    "source": "[Debenedetti et coll. — AgentDojo (arXiv 2406.13352)](https://arxiv.org/abs/2406.13352) — résumé.",
+    "phrases": [
+     {
+      "ligne": 120,
+      "phrase": "Selon ses auteurs, les attaques existantes violent certaines propriétés de sécurité, mais pas toutes, et les modèles de pointe de l'époque échouent à de nombreuses tâches même sans attaque [7]."
+     }
+    ]
+   },
+   {
+    "n": 8,
+    "groupe": "Pages primaires lues le 11 novembre 2026 :",
+    "source": "[Beurer-Kellner et coll. — Design Patterns for Securing LLM Agents against Prompt Injections (arXiv 2506.08837)](https://arxiv.org/abs/2506.08837) — résumé.",
+    "phrases": [
+     {
+      "ligne": 124,
+      "phrase": "Une prépublication de juin 2025, signée par quatorze auteurs, propose pour cette raison de déplacer la défense du modèle vers la conception : des patrons qui donnent à l'agent une résistance démontrable à l'injection, au prix d'un compromis explicite entre utilité et sécurité que les auteurs analysent sur des études de cas [8]."
+     },
+     {
+      "ligne": 299,
+      "phrase": "Les patrons de [8], la méthode de [9] et la taxonomie de [10] ne sont pas décrits faute de lecture du texte."
+     },
+     {
+      "ligne": 304,
+      "phrase": "- Audit du 12 novembre 2026 : [1] à [4], [8], [10] et [12] relus à la source."
+     }
+    ]
+   },
+   {
+    "n": 9,
+    "groupe": "Pages primaires lues le 11 novembre 2026 :",
+    "source": "[Lee et Tiwari — Prompt Infection (arXiv 2410.07283)](https://arxiv.org/abs/2410.07283) — résumé.",
+    "phrases": [
+     {
+      "ligne": 44,
+      "phrase": "Cinq positions d'attaquant ressortent des sources lues : l'auteur d'un contenu que l'agent lira, ne serait-ce qu'une ligne de journal (chapitre 47) [6]; l'éditeur d'un outil ou d'un serveur, malveillant dès l'origine ou devenu tel après approbation [11]; l'utilisateur d'un agent partagé, qui écrit dans une mémoire que d'autres liront (chapitre 14); un autre agent, compromis, usurpé ou adverse, comme la contrepartie d'une négociation (chapitre 45) [2][9]; enfin l'agent lui-même, lorsqu'il s'écarte de son mandat sans attaquant extérieur [2]."
+     },
+     {
+      "ligne": 194,
+      "phrase": "Ils proposent un marquage des messages produits par un modèle (*LLM Tagging*), qui réduit la propagation lorsqu'il est combiné à d'autres protections [9]."
+     },
+     {
+      "ligne": 299,
+      "phrase": "Les patrons de [8], la méthode de [9] et la taxonomie de [10] ne sont pas décrits faute de lecture du texte."
+     }
+    ]
+   },
+   {
+    "n": 10,
+    "groupe": "Pages primaires lues le 11 novembre 2026 :",
+    "source": "[Schroeder de Witt et coll. — Open Challenges in Multi-Agent Security (arXiv 2505.02077)](https://arxiv.org/abs/2505.02077) — résumé.",
+    "phrases": [
+     {
+      "ligne": 196,
+      "phrase": "Un article collectif de vingt-quatre auteurs, révisé en avril 2026, plaide pour un champ distinct, la sécurité multi-agents [10]."
+     },
+     {
+      "ligne": 299,
+      "phrase": "Les patrons de [8], la méthode de [9] et la taxonomie de [10] ne sont pas décrits faute de lecture du texte."
+     },
+     {
+      "ligne": 304,
+      "phrase": "- Audit du 12 novembre 2026 : [1] à [4], [8], [10] et [12] relus à la source."
+     }
+    ]
+   },
+   {
+    "n": 13,
+    "groupe": "Sources secondaires (billets lus en entier) :",
+    "source": "[OWASP GenAI Security Project — GenAI and Agentic AI Exploit Roundup Q3 2026, 8 octobre 2026](https://genai.owasp.org/2026/10/08/genai-and-agentic-ai-exploit-roundup-q3-2026/) — bilan d'incidents, lu le 12 novembre 2026 par résumé.",
+    "phrases": [
+     {
+      "ligne": 71,
+      "phrase": "Le bilan d'incidents publié par le projet en octobre 2026 n'y supplée pas : ses rattachements aux codes ASI sont des appréciations d'analystes, et il ne se dit ni exhaustif ni officiel [13]."
+     },
+     {
+      "ligne": 144,
+      "phrase": "La variante est sortie du laboratoire : selon le bilan de l'OWASP, un serveur MCP proposé en août 2026 par 23 demandes de tirage modifiait ses métadonnées après trois appels pour orienter l'agent vers des clés SSH et des justificatifs infonuagiques; aucune demande n'a été fusionnée [13]."
+     },
+     {
+      "ligne": 300,
+      "phrase": "La campagne d'août 2026 (31.5) est rapportée d'après [13], qui s'appuie sur un billet de Pillar Security non lu."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "fichier": "chapitre-32-assurance.md",
+  "points_a_retenir": "## Points à retenir\n\n- Des actions permises une à une peuvent violer ensemble une règle du système, sans adversaire. Les règles de cumul, d'ordre et de durée échappent au contrôle par action.\n- L'assurance de trajectoire est un programme de recherche. Écrire les invariants et les vérifier hors de l'agent est faisable maintenant, sans garantie de complétude.\n- Pour un agent, la zone de confiance implicite est la fenêtre de contexte. Le point d'application se place entre l'agent et la ressource.\n- L'Agentic Trust Framework lie la preuve accumulée à l'autonomie accordée. Son adoption n'est pas mesurée.\n- AIUC-1 est la seule certification propre aux agents repérée. Elle atteste l'agent d'un fournisseur pour un an, non son déploiement chez l'acheteur. Le groupe W3C sur la conformité, lancé en août 2026, n'a rien publié.\n- Une défense évaluée sur un banc statique est souvent surestimée; seul un attaquant adaptatif donne une mesure crédible.\n- L'application déterministe hors du modèle est une piste prometteuse, sur la foi d'un seul résultat à petite échelle.\n- Démontrer, en 2026, c'est assembler un dossier de preuves partielles et en nommer les limites.\n\n---",
+  "grille_de_decision": "## Grille de décision\n\n| Décision | Option par défaut | Quand s'en écarter |\n|---|---|---|\n| Unité de contrôle | L'action et la trajectoire | Agent en lecture seule, sans effet cumulatif : l'action suffit |\n| Lieu de vérification des invariants | Composant à état hors de l'agent | — |\n| Point d'application des politiques | Entre l'agent et la ressource | Contrôle dans l'hôte en complément seulement |\n| Niveau d'autonomie | Accordé par paliers, sur preuve consignée | Tâche réversible à faible enjeu |\n| Certificat d'un fournisseur | Critère de présélection, complété par des tests internes | Jamais comme preuve unique |\n| Évaluation d'une défense | Attaquant adaptatif; sécurité et utilité mesurées ensemble | Banc statique comme test de non-régression |\n| Fréquence des tests | À chaque changement de modèle, de prompt ou d'outil | — |\n\n---",
+  "sources_resume": [
+   {
+    "n": 9,
+    "groupe": "Pages primaires lues le 11 novembre 2026 :",
+    "source": "[The Attacker Moves Second (arXiv 2510.09023)](https://arxiv.org/abs/2510.09023) — résumé.",
+    "phrases": [
+     {
+      "ligne": 160,
+      "phrase": "Une prépublication d'octobre 2025 l'a montré : douze défenses récentes contre le débridage et l'injection de prompt, qui rapportaient pour la plupart un taux de succès d'attaque proche de zéro, cèdent le plus souvent à plus de 90 % devant un attaquant adaptatif, c'est-à-dire qui connaît la défense et optimise contre elle [9]."
+     },
+     {
+      "ligne": 238,
+      "phrase": "- Pour [9], [10] et [11], seuls les résumés ont été lus."
+     }
+    ]
+   },
+   {
+    "n": 10,
+    "groupe": "Pages primaires lues le 11 novembre 2026 :",
+    "source": "[AutoDojo (arXiv 2606.15057)](https://arxiv.org/abs/2606.15057) — résumé.",
+    "phrases": [
+     {
+      "ligne": 164,
+      "phrase": "AutoDojo, prépublication de juin 2026 révisée en septembre, transpose l'argument aux agents [10]."
+     },
+     {
+      "ligne": 238,
+      "phrase": "- Pour [9], [10] et [11], seuls les résumés ont été lus."
+     },
+     {
+      "ligne": 242,
+      "phrase": "- L'audit du 12 novembre 2026 a relu [1] (notice et texte), [3], [4], [5], [7], [10] et [11]."
+     }
+    ]
+   },
+   {
+    "n": 11,
+    "groupe": "Pages primaires lues le 11 novembre 2026 :",
+    "source": "[Adaptive Evaluation of Out-of-Band Defenses (arXiv 2606.26479)](https://arxiv.org/abs/2606.26479) — résumé.",
+    "phrases": [
+     {
+      "ligne": 168,
+      "phrase": "Une troisième prépublication examine les défenses qui appliquent une politique déterministe hors du modèle, plutôt que d'entraîner celui-ci à refuser [11]."
+     },
+     {
+      "ligne": 238,
+      "phrase": "- Pour [9], [10] et [11], seuls les résumés ont été lus."
+     },
+     {
+      "ligne": 242,
+      "phrase": "- L'audit du 12 novembre 2026 a relu [1] (notice et texte), [3], [4], [5], [7], [10] et [11]."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "fichier": "chapitre-33-observabilite-evaluation.md",
+  "points_a_retenir": "## Points à retenir\n\n- Les signaux classiques ne détectent pas un agent qui accomplit la mauvaise tâche. Il faut tracer la trajectoire et juger son résultat.\n- Les conventions GenAI d'OpenTelemetry couvrent l'inférence, les outils, les agents, MCP et A2A. Toutes sont au statut « Development », et leur dépôt dédié n'a publié aucune version.\n- La convention MCP lue décrit encore des sessions que la révision `2026-07-28` a supprimées. Un schéma interne et une normalisation au collecteur protègent de ces décalages.\n- Le contexte de trace ne survit pas à l'exécution durable. Un identifiant d'affaires est nécessaire.\n- Le contenu des échanges est exclu de la télémétrie par défaut. Le stockage par référence concilie exploitation et évaluation.\n- Dans l'étude MAP, l'évaluation repose surtout sur des humains, et tout juge automatique observé est doublé d'une revue humaine.\n- Un juge automatique s'étalonne contre des étiquettes humaines; changer de modèle juge, c'est changer d'instrument.\n- Le coût de l'évaluation continue se maîtrise par un petit juge, l'aiguillage par confiance et l'échantillonnage.\n- Le banc d'essai utile est interne, tiré des traces, fondé sur des états vérifiables et répété.\n\n---",
+  "grille_de_decision": "## Grille de décision\n\n| Décision | Option par défaut | Quand s'en écarter |\n|---|---|---|\n| Format de télémétrie | OpenTelemetry, conventions GenAI | Plateforme fermée : exiger au moins un export |\n| Schéma consommé par les tableaux de bord | Schéma interne, alimenté par normalisation au collecteur | Parc d'un seul cadriciel, à version épinglée |\n| Version des conventions | Commit épinglé, span exporté vérifié à chaque mise à jour | — |\n| Capture du contenu | Désactivée en production | Préproduction, ou stockage conforme et volume maîtrisé |\n| Contenu nécessaire à l'évaluation | Stockage distinct, référence dans la trace, accès par rôle | — |\n| Corrélation de bout en bout | Identifiant d'affaires sur chaque span racine et chaque événement | Flux entièrement synchrone : le contexte de trace suffit |\n| Piste d'audit | Distincte de la trace, jamais échantillonnée | — |\n| Évaluateur | Règles, puis juge étalonné (réétalonné à chaque changement de modèle juge), puis expert sur les cas incertains | Faible volume ou risque élevé : revue humaine intégrale |\n| Critère de réussite | État final vérifiable, sur plusieurs essais | Tâche sans état observable : grille de critères jugée |\n| Banc d'essai | Interne, tiré des traces de production | Présélection d'un modèle : banc public |\n| Mise en service d'une variante | Filtre hors ligne, puis fraction du trafic | — |\n\n---",
+  "sources_resume": [
+   {
+    "n": 13,
+    "groupe": "Pages primaires lues le 11 novembre 2026; [2], [5], [7], [11], [12] et [14] relues le 12 novembre 2026 :",
+    "source": "[τ-bench (arXiv 2406.12045)](https://arxiv.org/abs/2406.12045) — résumé seulement.",
+    "phrases": [
+     {
+      "ligne": 179,
+      "phrase": "Le banc d'essai τ-bench en fixe le modèle [13]."
+     },
+     {
+      "ligne": 239,
+      "phrase": "**Il juge un état.** Le critère de réussite est un état vérifiable du système, non une ressemblance de texte [13]."
+     },
+     {
+      "ligne": 240,
+      "phrase": "**Il répète.** Chaque tâche s'exécute plusieurs fois, et la constance se rapporte à part [13]."
+     }
+    ]
+   },
+   {
+    "n": 14,
+    "groupe": "Pages primaires lues le 11 novembre 2026; [2], [5], [7], [11], [12] et [14] relues le 12 novembre 2026 :",
+    "source": "[EnterpriseBench (arXiv 2510.27287, EMNLP 2025)](https://arxiv.org/abs/2510.27287) — résumé seulement.",
+    "phrases": [
+     {
+      "ligne": 230,
+      "phrase": "EnterpriseBench réunit ainsi 500 tâches dans quatre domaines, avec des sources fragmentées et des hiérarchies de contrôle d'accès; son résumé rapporte 41,8 % d'achèvement pour le meilleur agent testé [14]."
+     },
+     {
+      "ligne": 283,
+      "phrase": "Pages primaires lues le 11 novembre 2026; [2], [5], [7], [11], [12] et [14] relues le 12 novembre 2026 :"
+     }
+    ]
+   },
+   {
+    "n": 16,
+    "groupe": "Résumé seulement, relevé le 14 novembre 2026 :",
+    "source": "[She et coll. — Efficient Benchmarking in Production: A Study of an Evolving LLM Agent (arXiv 2609.21267)](https://arxiv.org/abs/2609.21267)",
+    "phrases": [
+     {
+      "ligne": 220,
+      "phrase": "Une prépublication de 2026 chiffre le problème sur un agent d'analyse en production, qui sert des dizaines de milliers d'utilisateurs actifs par mois [16]."
+     },
+     {
+      "ligne": 317,
+      "phrase": "- Une seule étude du coût de l'évaluation continue a été trouvée, le 14 novembre 2026 [16]."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "fichier": "chapitre-34-exploitation.md",
+  "points_a_retenir": "## Points à retenir\n\n- La surveillance classique ne voit pas un agent qui accomplit la mauvaise tâche. L'indicateur d'ancrage est le succès vérifié, mesuré indépendamment du compte rendu de l'agent.\n- Prompt, modèle, outils et mémoire sont des unités de changement, soumises à une barrière de rejeu et à une probation.\n- Le budget d'erreur règle deux leviers : le rythme du changement et l'autonomie accordée. La descente est automatique, la remontée se mérite.\n- Les garde-fous ont un budget nul, et l'arrêt d'urgence s'applique hors du modèle.\n- La preuve exigée croît avec l'autorité : le modèle propose, une barrière indépendante autorise.\n- Retour arrière de version, retour arrière d'état et arrêt d'urgence sont trois mécanismes distincts. Aucun n'efface les effets externes déjà produits, qui relèvent de la compensation.\n- La dérive graduelle est le cas le moins bien détecté.\n- L'ensemble repose sur des taxonomies, des relevés et une simulation. La validation sur des incidents réels reste à faire.\n\n---",
+  "grille_de_decision": "## Grille de décision\n\n| Décision | Option par défaut | Quand s'en écarter |\n|---|---|---|\n| Indicateur principal | Succès vérifié par contrôle déterministe du système cible | Pas d'état final vérifiable : échantillon humain et juges étalonnés |\n| Unité de version | Manifeste unique : modèle, prompts, schémas d'outils, politiques | — |\n| Mise en production | Suite rejouée avec seuil sur pass^k, puis canari | Lecture seule à faible enjeu : essai simple |\n| Après un changement | Probation supervisée, seuil d'alerte abaissé | Changements très fréquents : les regrouper |\n| Autonomie | Réglée par le budget; descente automatique, remontée après rejeu et période calme | Preuve insuffisante pour le palier : rester au palier inférieur |\n| Écriture dans un système | Séparation proposer-exécuter, barrière hors du modèle | Aucun cas |\n| Arrêt d'urgence | Passerelle ou révocation des jetons | Site déconnecté : arrêt local |\n| Analyse rétrospective | Incident qui consomme plus de 20 % du budget | Toute violation de garde-fou |\n| Retour arrière de version | Point d'accès nommé, repointé vers une version immuable antérieure | Jamais le point d'accès par défaut en production |\n\n---",
+  "sources_resume": [
+   {
+    "n": 3,
+    "groupe": "Pages primaires lues le 11 novembre 2026 :",
+    "source": "[Moshkovich et Zeltyn — Taming Uncertainty via Automation (arXiv 2507.11277)](https://arxiv.org/abs/2507.11277) — résumé seulement.",
+    "phrases": [
+     {
+      "ligne": 19,
+      "phrase": "Moshkovich et Zeltyn proposent une chaîne en six étapes, de l'observation du comportement à l'automatisation en cours d'exécution, et nomment quatre publics : développeurs, testeurs, ingénieurs de fiabilité et utilisateurs d'affaires [3]."
+     }
+    ]
+   },
+   {
+    "n": 7,
+    "groupe": "Pages primaires lues le 11 novembre 2026 :",
+    "source": "[Bodapati Venkata — Evidence-Gated Search, JCSTS 8(5), 2026](https://al-kindipublisher.com/index.php/jcsts/article/view/12302) — résumé seulement.",
+    "phrases": [
+     {
+      "ligne": 200,
+      "phrase": "Une méthode de réponse aux incidents bloque de même toute action qui modifie l'état tant que la preuve requise manque, et la recueille par des vérifications bornées en lecture seule [7]."
+     },
+     {
+      "ligne": 283,
+      "phrase": "La section 34.6 s'appuie sur [5] et, par son seul résumé, sur [7], dont les résultats chiffrés ne sont pas repris."
+     }
+    ]
+   },
+   {
+    "n": 9,
+    "groupe": "Source secondaire :",
+    "source": "[Xia et coll. — AgentOps Pattern Catalogue (SSRN 5534588; Information and Software Technology, 2026)](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5534588) — page inaccessible; repris du plan initial et d'un résumé de recherche.",
+    "phrases": [
+     {
+      "ligne": 19,
+      "phrase": "Un catalogue de dix patrons d'architecture AgentOps est aussi paru en 2026 [9]; il n'a pas été lu ici."
+     },
+     {
+      "ligne": 284,
+      "phrase": "- Le catalogue [9] n'a pas été lu, et une nouvelle recherche, le 14 novembre 2026, ne l'a pas retrouvé; ses dix patrons ne sont ni nommés ni discutés."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "fichier": "chapitre-35-cadres-internationaux.md",
+  "points_a_retenir": "## Points à retenir\n\n- Aucun cadre contraignant ne définit l'agent. Dans l'AI Act, un agent est un système d'IA, distinct du modèle sur lequel il repose.\n- Le classement à haut risque dépend de l'usage, non de l'architecture.\n- Le Digital Omnibus fixe l'application du haut risque au 2 décembre 2027 (annexe III) et au 2 août 2028 (annexe I). Les obligations de transparence et celles des modèles GPAI n'ont pas été reportées, hormis un délai de quatre mois pour le marquage des contenus.\n- La dérive de comportement est le point non résolu : selon la prépublication de référence, un système à haut risque dont la dérive n'est pas traçable ne peut pas aujourd'hui satisfaire aux exigences essentielles.\n- Les normes harmonisées en préparation ne couvrent ni l'orchestration multi-agents, ni l'état accumulé entre sessions, ni la découverte dynamique d'outils. L'entreprise doit écrire ces spécifications.\n- Le cadre de Singapour (version 1.5) est le seul des quatre à prendre l'agent pour objet. Il n'oblige à rien, mais fournit le mode d'emploi qui manque aux autres.\n- ISO/IEC 42001 certifie un système de management, pas un agent; ISO/IEC 42105, sur la supervision humaine, est en cours de publication. Le NIST AI RMF est volontaire, en révision, et sans profil pour les agents.\n- Le premier geste de conformité : inventorier ce que l'agent peut faire, à quoi il est branché et qui il touche.\n- Hors d'Europe, le même écart se retrouve : la loi coréenne classe par usage sans nommer l'agent; le Japon, la Chine et l'OCDE le nomment dans des plans, des avis ou des rapports.\n\n---",
+  "grille_de_decision": "## Grille de décision\n\n| Décision | Option par défaut | Quand s'en écarter |\n|---|---|---|\n| Cadre interne | Un seul dispositif, calé sur l'exigence applicable la plus stricte, avec Singapour comme guide de mise en œuvre | Activité sans lien avec l'UE : le cadre local prime (chapitre 38) |\n| Classement d'un agent | Par cas d'usage, raisonnement documenté | Agent généraliste : borner la destination, sinon évaluer le pire usage prévisible |\n| Calendrier européen | Viser décembre 2027 et août 2028, en commençant maintenant | Transparence de l'article 50 : déjà applicable |\n| Lacunes des normes harmonisées | Spécifications internes pour l'orchestration, l'état entre sessions et la découverte d'outils | — |\n| Dérive de comportement | Enveloppe de comportement documentée et détection continue | Haut risque avec apprentissage continu : s'abstenir tant que la méthode d'évaluation manque |\n| Supervision humaine | Approbation aux actions à fort enjeu ou irréversibles; refus par défaut si l'approbation est indisponible | Action réversible et à faible enjeu : vérification après coup |\n| Certification ISO/IEC 42001 | À rechercher si les clients ou le marché la demandent | Ne pas la présenter comme preuve de conformité à l'AI Act |\n| NIST AI RMF | Vocabulaire commun avec des partenaires américains | Attendre la révision avant d'y aligner un outillage coûteux |\n| Activité en Corée, au Japon, au Royaume-Uni ou en Chine | Vérifier le texte local, à partir du relevé de la section 35.7 | — |\n\n---",
+  "sources_resume": [
+   {
+    "n": 1,
+    "groupe": "Pages primaires lues le 11 novembre 2026 :",
+    "source": "[Nannini et coll., « AI Agents Under EU Law », arXiv 2604.04604](https://arxiv.org/abs/2604.04604) — prépublication du 6 avril 2026; résumé et corps du texte, lu en partie.",
+    "phrases": [
+     {
+      "ligne": 17,
+      "phrase": "La référence est une prépublication d'avril 2026, « AI Agents Under EU Law », qui se présente comme la première cartographie réglementaire systématique pour les fournisseurs d'agents [1]."
+     },
+     {
+      "ligne": 21,
+      "phrase": "Les auteurs le rattachent à la définition du système d'IA de l'article 3(1), qui admet déjà des « niveaux d'autonomie variables » et une capacité d'adaptation après le déploiement [1]."
+     },
+     {
+      "ligne": 23,
+      "phrase": "Une organisation qui assemble un agent sur un modèle tiers hérite d'une chaîne documentaire : celle que le fournisseur du modèle doit lui remettre au titre de l'article 53 [1]."
+     },
+     {
+      "ligne": 27,
+      "phrase": "Le classement à haut risque dépend du domaine d'application et non de l'architecture [1]."
+     },
+     {
+      "ligne": 32,
+      "phrase": "Les interdictions de l'article 5 sur la manipulation et l'exploitation des vulnérabilités s'appliquent à tout agent, quel que soit son classement; les auteurs rapportent que l'AI Office les juge particulièrement pertinentes pour les systèmes agentiques [1]."
+     },
+     {
+      "ligne": 34,
+      "phrase": "Le fournisseur reste tenu de définir la destination du système et d'évaluer le mauvais usage raisonnablement prévisible (article 9(2)(b)) [1]."
+     },
+     {
+      "ligne": 38,
+      "phrase": "Pour un agent à haut risque, la prépublication relève quatre points de friction [1]."
+     },
+     {
+      "ligne": 47,
+      "phrase": "D'où la formule des auteurs : un système agentique à haut risque dont la dérive n'est pas traçable ne peut pas, aujourd'hui, satisfaire aux exigences essentielles du règlement [1]."
+     },
+     {
+      "ligne": 49,
+      "phrase": "Selon l'article 25, un déployeur ou un tiers devient fournisseur s'il appose son nom sur un système à haut risque, le modifie substantiellement ou en change la destination [1]."
+     },
+     {
+      "ligne": 53,
+      "phrase": "La prépublication en donne l'état de janvier 2026 [1] : prEN 18286 (système de management de la qualité), prEN 18228 (gestion des risques), prEN 18229-1 (journalisation, transparence, supervision), prEN 18229-2 (exactitude, robustesse), prEN 18282 (cybersécurité), prEN 18284 et prEN 18283 (qualité des données, biais)."
+     },
+     {
+      "ligne": 55,
+      "phrase": "Les auteurs recommandent de les traiter par des spécifications techniques internes [1]."
+     },
+     {
+      "ligne": 59,
+      "phrase": "Un fournisseur d'agents relève aussi, selon le cas, du RGPD, du Cyber Resilience Act, du Digital Services Act, du Data Act, de la directive NIS2, de la directive révisée sur la responsabilité du fait des produits et du droit sectoriel [1]."
+     },
+     {
+      "ligne": 61,
+      "phrase": "La tâche fondatrice, selon les auteurs, est un inventaire exhaustif : actions externes de l'agent, flux de données, systèmes connectés, personnes touchées [1]."
+     },
+     {
+      "ligne": 71,
+      "phrase": "La proposition initiale de la Commission, en novembre 2025, liait l'application des obligations à haut risque à la disponibilité des normes harmonisées [1]."
+     },
+     {
+      "ligne": 101,
+      "phrase": "L'argument vaut doublement pour les agents, dont les risques propres échappent aux normes harmonisées [1]."
+     },
+     {
+      "ligne": 101,
+      "phrase": "Il ne règle pas non plus le fond : la prépublication relevait que l'AI Office n'avait publié aucune orientation sur les agents ni sur la modification substantielle [1], et rien, dans les parties lues de l'Omnibus, ne traite de la dérive."
+     },
+     {
+      "ligne": 164,
+      "phrase": "La prépublication européenne range ISO/IEC 42001 hors du lot des normes harmonisées; le système de management de la qualité attendu au titre de l'AI Act fait l'objet d'un projet distinct, prEN 18286 [1]."
+     },
+     {
+      "ligne": 188,
+      "phrase": "| Thème | AI Act [1][3] | Singapour v1.5 [4] | ISO/IEC [7][10] | NIST AI RMF [5][6] |"
+     },
+     {
+      "ligne": 288,
+      "phrase": "Le contenu des articles 3, 6, 9, 12, 14, 15, 25, 43 et 50 est rapporté d'après la prépublication [1], dont environ un quart du texte (fin et conclusions) n'a pas été chargé."
+     },
+     {
+      "ligne": 292,
+      "phrase": "- Le résumé de [1] et les passages cités de [4] ont été relus à l'audit; du cadre de Singapour, les sections 2.3 et 2.4 et les études de cas restent survolées, et son caractère non contraignant est déduit de sa formulation."
+     }
+    ]
+   },
+   {
+    "n": 12,
+    "groupe": "Sources ajoutées le 14 novembre 2026, pour la section 35.7 :",
+    "source": "[Cabinet du Japon — Summary of the Japan's Second AI Basic Plan (décision du 14 juillet 2026)](https://www8.cao.go.jp/cstp/ai/ai_plan/aiplan_g_eng_20260714.pdf) — résumé officiel, six pages.",
+    "phrases": [
+     {
+      "ligne": 211,
+      "phrase": "| Japon | Loi de promotion de l'IA; deuxième plan de base du 14 juillet 2026 [12] | Loi de principes et plan gouvernemental | Oui : l'IA agentique est le premier thème du plan |"
+     },
+     {
+      "ligne": 218,
+      "phrase": "Le deuxième plan, arrêté le 14 juillet 2026, s'ouvre sur l'adaptation à l'essor de l'IA agentique et retient deux axes : adopter l'IA agentique, y compris dans l'administration, et bâtir une « souveraineté de l'IA » [12]."
+     },
+     {
+      "ligne": 294,
+      "phrase": "Le Japon l'est d'après le résumé officiel de son plan [12], sans lecture de ses lignes directrices pour les entreprises."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "fichier": "chapitre-40-finops-agentique.md",
+  "points_a_retenir": "## Points à retenir\n\n- Le coût d'un agent est une distribution, pas un prix. Il dépend du nombre de tours, de la topologie et des outils chargés.\n- L'entrée domine : dans le banc d'essai lu, plus de 97 % des jetons sont relus, non produits.\n- Presque toutes les pratiques FinOps gèrent des dépenses d'IA, mais aucun cadre FinOps propre aux agents n'existe, et l'imputation multi-agents n'a pas de méthode admise.\n- L'imputation exige une identité d'agent, un point de mesure et un format commun. Les deux derniers reposent sur des standards instables ou seulement annoncés.\n- Un quota de jetons à la passerelle est un frein, pas un mur : il se constate après coup et cède sous la concurrence. Il faut aussi un plafond par exécution.\n- La tarification au résultat déplace le risque vers la définition du résultat, que le fournisseur mesure lui-même.\n- La valeur se mesure au coût par résultat réussi, comparé à une base de référence et au coût de l'erreur.\n- Le cache de prompts vient en premier, car il ne touche pas à la qualité. Le routage réduit davantage le coût, au prix d'une perte de précision à mesurer.\n- L'énergie suit les jetons : les leviers de coût sont aussi des leviers d'empreinte. Aucune source lue ne mesure la consommation d'un agent.\n- À l'échelle de l'entreprise, la prime de productivité associée à l'IA disparaît statistiquement une fois les autres capacités prises en compte.\n\n---",
+  "grille_de_decision": "## Grille de décision\n\n| Décision | Option par défaut | Quand s'en écarter |\n|---|---|---|\n| Unité de compte | Coût par résultat réussi | Pilote sans barre de qualité : coût par exécution |\n| Clé d'imputation | Identité d'agent, exécution, centre de coûts | Agent unique : clé d'API dédiée |\n| Point de mesure | Passerelle et traces, rapprochées de la facture | Très petit parc : rapports du fournisseur |\n| Refacturation | Affichage des coûts seulement | Clé d'imputation éprouvée |\n| Plafonds | Par exécution et par période, sur l'identité de l'agent | — |\n| Épuisement du budget | Vérification avant l'étape chère, puis recours à un humain | Faible enjeu : bascule vers un modèle moins cher |\n| Achat d'un agent | Consommation plafonnée | Résultat, si le client peut le vérifier; siège, si l'usage est massif et régulier |\n| Ordre des leviers | Cache de prompts, lots, routage, topologie | Tâche interactive : pas de lots |\n| Système multi-agents | Seulement si la valeur de la tâche paie le surcoût | — |\n\n---",
+  "sources_resume": [
+   {
+    "n": 10,
+    "groupe": "Pages primaires lues le 11 novembre 2026 :",
+    "source": "[Ong et coll. — RouteLLM: Learning to Route LLMs with Preference Data (arXiv 2406.18665)](https://arxiv.org/abs/2406.18665) — prépublication; résumé seulement.",
+    "phrases": [
+     {
+      "ligne": 210,
+      "phrase": "Une prépublication plus ancienne, RouteLLM, annonce des coûts réduits de plus de moitié dans certains cas, sans perte de qualité sur ses bancs d'essai [10]."
+     },
+     {
+      "ligne": 280,
+      "phrase": "L'audit a relu [1], [3], [4], [5], [7], [9], [11] et [12], pas [2], [6], [8] ni [10]."
+     }
+    ]
+   },
+   {
+    "n": 14,
+    "groupe": "Sources ajoutées le 14 novembre 2026 :",
+    "source": "[Elsworth et coll. — Measuring the environmental impact of delivering AI at Google Scale (arXiv 2508.15734, 21 août 2025)](https://arxiv.org/abs/2508.15734) — prépublication d'un fournisseur; résumé seulement.",
+    "phrases": [
+     {
+      "ligne": 47,
+      "phrase": "Google mesure 0,24 Wh et 0,26 mL d'eau pour une requête textuelle médiane de Gemini, dans un périmètre qui inclut les accélérateurs, les serveurs hôtes, la capacité inactive et les frais généraux du centre de données; l'entreprise rapporte une énergie par requête divisée par 33 en un an [14]."
+     },
+     {
+      "ligne": 285,
+      "phrase": "- La sous-section sur l'énergie (40.1) et le paragraphe sur la productivité (40.5) datent du 14 novembre 2026. [14] n'est connu que par son résumé et mesure le service de son éditeur; [15] l'est par sa synthèse."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "fichier": "chapitre-41-modele-operationnel.md",
+  "points_a_retenir": "## Points à retenir\n\n- L'organisation agentique de McKinsey, faite de petites équipes orientées résultats qui supervisent des flux d'agents, s'appuie sur des cas de clients et des enquêtes déclaratives. C'est une direction, pas un état constaté.\n- En moyenne, une combinaison humain-IA fait mieux que l'humain seul, mais moins bien que le meilleur des deux. Le gain apparaît quand l'humain est le plus fort sur la tâche.\n- La supervision humaine se justifie par l'imputabilité, non par une meilleure décision moyenne.\n- Les humains délèguent mal, faute de savoir évaluer ce qu'ils savent. La délégation se fixe par conception, et l'escalade part de l'agent.\n- L'obstacle n'est pas le rejet des agents, mais une confiance mal calibrée et une satisfaction moindre à l'égard du processus de travail.\n- La capacité de supervision borne la mise à l'échelle. Aucun ratio d'agents par superviseur n'est établi.\n- Si les agents absorbent le travail d'entrée, la relève des superviseurs doit être organisée délibérément.\n- Le changement se mesure à la refonte des flux, des rôles et des incitatifs, pas au taux d'utilisation.\n- Centre d'excellence ou fédération : le choix se fait fonction par fonction, règles et plateforme au centre, refonte et propriété des agents dans les domaines.\n- La supervision s'use si le superviseur ne pratique plus le métier. L'alternance entre travail assisté et travail non assisté est proposée, sans mesure d'efficacité.\n\n---",
+  "grille_de_decision": "## Grille de décision\n\n| Décision | Option par défaut | Quand s'en écarter |\n|---|---|---|\n| Unité d'organisation | Petite équipe responsable d'un résultat de bout en bout, avec un propriétaire nommé par agent | Séparation des tâches imposée par la réglementation : conserver la frontière fonctionnelle |\n| Répartition du travail | Par avantage relatif, tâche par tâche, consignée dans une carte d'orchestration | Tâche sans mesure comparative : humain décideur, puis mesurer |\n| Qui décide de déléguer | La conception du travail, par classe de décision; l'escalade part de l'agent | Création ou exploration à faible enjeu : discrétion individuelle |\n| Point d'approbation | Justifié par l'imputabilité et l'irréversibilité | Jamais pour « améliorer » une décision où l'agent est meilleur |\n| Dimensionnement de la supervision | Selon la charge mesurée d'exceptions et d'approbations | Aucun ratio publié d'agents par personne n'est à reprendre |\n| Formation | Par rôle, en situation, avec rétroaction sur le jugement | Sensibilisation générale : comme socle seulement |\n| Relève | Pratique délibérée là où l'agent absorbe le travail d'entrée | Métiers dont le travail d'entrée n'est pas automatisé |\n| Structure de pilotage | Central pour les règles et la plateforme, fédéré pour la refonte et la propriété | Petite organisation ou démarrage : tout centraliser |\n| Mesure du changement | Flux refondus et résultats | Le taux d'utilisation ne renseigne que sur l'adoption |\n\n---",
+  "sources_resume": [
+   {
+    "n": 5,
+    "groupe": "Pages primaires lues le 11 novembre 2026 :",
+    "source": "[Gonzalez et coll. — Toward a science of human–AI teaming for decision making, PNAS Nexus 5(3), 2026](https://par.nsf.gov/biblio/10696564-toward-science-humanai-teaming-decision-making-complementarity-framework) — notice et résumé.",
+    "phrases": [
+     {
+      "ligne": 53,
+      "phrase": "Un cadre publié en 2026 dans PNAS Nexus la fonde sur l'intelligence collective et sur trois processus cognitifs : raisonnement, mémoire, attention [5]."
+     },
+     {
+      "ligne": 53,
+      "phrase": "Il recense cinq facteurs sociotechniques, dont le calibrage de la confiance et la structure de la tâche, et cinq principes de conception : définir les buts et les contraintes, répartir les rôles, orchestrer l'attention et l'interrogation, bâtir des infrastructures de connaissance, former et évaluer en continu [5]."
+     },
+     {
+      "ligne": 296,
+      "phrase": "- Les travaux [5], [7], [8], [9] et [10] ne sont connus que par leur résumé."
+     }
+    ]
+   },
+   {
+    "n": 7,
+    "groupe": "Pages primaires lues le 11 novembre 2026 :",
+    "source": "[Dell'Acqua et coll. — The Cybernetic Teammate (NBER, document de travail 33641, avril 2025)](https://www.nber.org/papers/w33641) — résumé.",
+    "phrases": [
+     {
+      "ligne": 74,
+      "phrase": "Une expérience préenregistrée chez Procter & Gamble a réparti au hasard 776 professionnels sur de vrais problèmes d'innovation : seuls ou à deux, avec ou sans IA générative [7]."
+     },
+     {
+      "ligne": 74,
+      "phrase": "Avec l'IA, les propositions devenaient équilibrées entre technique et commercial, quelle que soit la spécialité de leur auteur [7]."
+     },
+     {
+      "ligne": 296,
+      "phrase": "- Les travaux [5], [7], [8], [9] et [10] ne sont connus que par leur résumé."
+     },
+     {
+      "ligne": 296,
+      "phrase": "L'article [7] aurait depuis paru dans Organization Science avec un échantillon légèrement différent (résumé de recherche non vérifié)."
+     }
+    ]
+   },
+   {
+    "n": 8,
+    "groupe": "Pages primaires lues le 11 novembre 2026 :",
+    "source": "[Bankins et coll. — A multilevel review of artificial intelligence in organizations, Journal of Organizational Behavior 45(2), 2024](https://merit.url.edu/en/publications/a-multilevel-review-of-artificial-intelligence-in-organizations-i/) — notice et résumé.",
+    "phrases": [
+     {
+      "ligne": 78,
+      "phrase": "Une revue systématique du Journal of Organizational Behavior situe les facteurs qui façonnent la relation entre humains et IA à trois niveaux : individu, groupe, organisation [8]."
+     },
+     {
+      "ligne": 296,
+      "phrase": "- Les travaux [5], [7], [8], [9] et [10] ne sont connus que par leur résumé."
+     }
+    ]
+   },
+   {
+    "n": 9,
+    "groupe": "Pages primaires lues le 11 novembre 2026 :",
+    "source": "[Fügener et coll. — Cognitive Challenges in Human–Artificial Intelligence Collaboration, Information Systems Research 33(2), 2022](https://ideas.repec.org/a/inm/orisre/v33y2022i2p678-696.html) — notice et résumé.",
+    "phrases": [
+     {
+      "ligne": 92,
+      "phrase": "Une expérience publiée dans Information Systems Research compare deux sens de délégation sur une tâche de classification [9]."
+     },
+     {
+      "ligne": 94,
+      "phrase": "Les auteurs la décrivent comme un trait inconscient [9], donc peu sensible à une simple consigne."
+     },
+     {
+      "ligne": 101,
+      "phrase": "- **L'escalade part de l'agent.** Le sens de délégation qui fonctionne est celui où le système renvoie des cas à l'humain [9], sur des critères définis d'avance."
+     },
+     {
+      "ligne": 164,
+      "phrase": "La recherche suggère une quatrième compétence, la métaconnaissance [9] : savoir ce qu'on sait conditionne la délégation."
+     },
+     {
+      "ligne": 296,
+      "phrase": "- Les travaux [5], [7], [8], [9] et [10] ne sont connus que par leur résumé."
+     }
+    ]
+   },
+   {
+    "n": 10,
+    "groupe": "Pages primaires lues le 11 novembre 2026 :",
+    "source": "[Dennis, Lakhiwal et Sachdeva — AI Agents as Team Members, Journal of Management Information Systems 40(2), 2023](https://jmis-web.org/articles/1614) — notice et résumé.",
+    "phrases": [
+     {
+      "ligne": 107,
+      "phrase": "Une expérience en laboratoire du Journal of Management Information Systems a fait varier la nature d'un coéquipier (humain ou IA) et sa performance [10]."
+     },
+     {
+      "ligne": 107,
+      "phrase": "La satisfaction à l'égard du processus de travail, elle, est plus faible avec un coéquipier IA [10]."
+     },
+     {
+      "ligne": 296,
+      "phrase": "- Les travaux [5], [7], [8], [9] et [10] ne sont connus que par leur résumé."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "fichier": "chapitre-42-etudes-de-cas.md",
+  "points_a_retenir": "## Points à retenir\n\n- Un seul déploiement d'agents à grande échelle a été lu en entier dans un article évalué par les pairs avec mesure sur trafic réel : celui de Nubank, en service à la clientèle. Trois autres textes de 2026, connus par leur résumé, décrivent le même type d'agents étroits et bornés.\n- Ses gains sont relatifs à une base mal définie, et ses agents restent sous les experts humains dans les cinq domaines mesurés.\n- Pour les documents financiers, la preuve est un banc d'essai : au mieux, trois documents sur quatre sont entièrement corrects, et l'architecture la plus précise perd son avantage à fort volume.\n- En opérations TI, les agents documentés préparent, diagnostiquent ou génèrent un workflow. Les bancs d'essai situent l'analyse autonome d'incidents entre 10 % et 25 % de réussite.\n- Le portrait québécois recense 432 initiatives d'IA, sans catégorie pour les agents et sans résultat mesuré. Le guide du MCN réserve les premiers pilotes à des usages internes et réversibles.\n- Les cas documentés ont quatre traits communs : agents étroits, infrastructure avant prompt, évaluation comme facteur limitant, humain comme référence et recours.\n- Aucun cas documenté ne montre MCP, A2A ou un système multi-agents en production. Ce silence tient en partie au délai de publication, mais il laisse la thèse de l'interopérabilité sans appui empirique.\n- Coûts, volumes et échecs manquent partout. Un cas se juge d'abord à ce qu'il tait.\n\n---",
+  "grille_de_decision": "## Grille de décision\n\n| Décision | Option par défaut | Quand s'en écarter |\n|---|---|---|\n| Preuve exigée avant d'imiter un cas | Niveau 1 ou 2 : mesure sur trafic réel ou étude indépendante | Cas de fournisseur recevable s'il nomme le client, la métrique, la base de comparaison et la période |\n| Premier cas d'usage | Interne, réversible, surtout en lecture, mesurable | Service externe si le transfert à un humain, les API idempotentes et la piste d'audit existent déjà |\n| Architecture de départ | Un agent par cas d'usage, peu d'outils, parcours borné | Multi-agents si les sous-domaines sont indépendants et que le gain est mesuré sur ses propres données |\n| Ordre de construction | Identité, API d'action, audit, puis prompts | Prototype jetable, sans accès à des systèmes réels |\n| Mesure du succès | Deux métriques opposées (satisfaction et libre-service), en test A/B, avec l'écart à la référence humaine | Usage interne à faible volume : revue humaine d'un échantillon |\n| Extraction documentaire | Hiérarchie avec seuil de confiance et revue humaine des champs incertains | Boucle réflexive à faible volume quand l'erreur coûte cher; pipeline séquentiel à très fort volume |\n| Opérations TI | Diagnostic en lecture seule; action par un humain ou un workflow déterministe | Action automatique sur des procédures réversibles, éprouvées en bac à sable |\n| Génération de workflows | Plan montré à l'utilisateur avant le détail; exécution par le moteur existant | — |\n| Changement de modèle | Revalidation des prompts et des juges sur le jeu d'étiquettes | — |\n| Secteur public québécois | Les quatre cas de référence du guide, avec plafond de consommation | Usage touchant des droits ou des décisions : encadrement renforcé et validation spécialisée |\n\n---",
+  "sources_resume": [
+   {
+    "n": 5,
+    "groupe": "Pages primaires lues le 11 novembre 2026; [1], [2], [3], [4], [6], [8], [10] et [11] relues à l'audit du 12 novembre 2026 :",
+    "source": "[Jha et coll. — ITBench (arXiv 2502.05352)](https://arxiv.org/abs/2502.05352) — prépublication; résumé seulement.",
+    "phrases": [
+     {
+      "ligne": 24,
+      "phrase": "| 4 | Banc d'essai ou expérience contrôlée | [4] [5] [6] [7] | Des ordres de grandeur et des modes d'échec, hors production |"
+     },
+     {
+      "ligne": 143,
+      "phrase": "| ITBench (IBM et Université de l'Illinois, février 2025) [5] | 94 scénarios d'automatisation TI | 13,8 % des scénarios de fiabilité résolus; 25,2 % en conformité et sécurité; 0 % en FinOps |"
+     },
+     {
+      "ligne": 213,
+      "phrase": "| Opérations TI | ServiceNow [3], MAP [2], bancs d'essai [5] [6] | 2 à 4 | Résultats mesurés en production |"
+     },
+     {
+      "ligne": 300,
+      "phrase": "- Les intitulés du plan initial sont conservés, mais la section 42.3 présente un banc d'essai et non un déploiement, et la section 42.4 repose en partie sur des bancs d'essai lus par leur seul résumé [5] [6] [7]."
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "groupe": "Pages primaires lues le 11 novembre 2026; [1], [2], [3], [4], [6], [8], [10] et [11] relues à l'audit du 12 novembre 2026 :",
+    "source": "[Gong et coll. — ORCA-bench: How Ready Are Language Model Agents for Oncall? (arXiv 2607.28545)](https://arxiv.org/abs/2607.28545) — prépublication; résumé seulement.",
+    "phrases": [
+     {
+      "ligne": 24,
+      "phrase": "| 4 | Banc d'essai ou expérience contrôlée | [4] [5] [6] [7] | Des ordres de grandeur et des modes d'échec, hors production |"
+     },
+     {
+      "ligne": 144,
+      "phrase": "| ORCA-bench (version 3, septembre 2026) [6] | 1 079 tâches d'analyse de cause première | Meilleure exactitude : 25,3 % au niveau moyen, 10,0 % au niveau difficile |"
+     },
+     {
+      "ligne": 213,
+      "phrase": "| Opérations TI | ServiceNow [3], MAP [2], bancs d'essai [5] [6] | 2 à 4 | Résultats mesurés en production |"
+     },
+     {
+      "ligne": 270,
+      "phrase": "Pages primaires lues le 11 novembre 2026; [1], [2], [3], [4], [6], [8], [10] et [11] relues à l'audit du 12 novembre 2026 :"
+     },
+     {
+      "ligne": 300,
+      "phrase": "- Les intitulés du plan initial sont conservés, mais la section 42.3 présente un banc d'essai et non un déploiement, et la section 42.4 repose en partie sur des bancs d'essai lus par leur seul résumé [5] [6] [7]."
+     }
+    ]
+   },
+   {
+    "n": 7,
+    "groupe": "Pages primaires lues le 11 novembre 2026; [1], [2], [3], [4], [6], [8], [10] et [11] relues à l'audit du 12 novembre 2026 :",
+    "source": "[Roy et coll. — Exploring LLM-based Agents for Root Cause Analysis (arXiv 2403.04123)](https://arxiv.org/abs/2403.04123) — résumé seulement.",
+    "phrases": [
+     {
+      "ligne": 24,
+      "phrase": "| 4 | Banc d'essai ou expérience contrôlée | [4] [5] [6] [7] | Des ordres de grandeur et des modes d'échec, hors production |"
+     },
+     {
+      "ligne": 146,
+      "phrase": "Une étude de 2024, menée sur des incidents de production de Microsoft, explorait déjà l'idée de donner à un agent les outils de diagnostic qu'une équipe emploie à la main; son résumé ne rapporte aucun résultat de déploiement [7]."
+     },
+     {
+      "ligne": 300,
+      "phrase": "- Les intitulés du plan initial sont conservés, mais la section 42.3 présente un banc d'essai et non un déploiement, et la section 42.4 repose en partie sur des bancs d'essai lus par leur seul résumé [5] [6] [7]."
+     }
+    ]
+   },
+   {
+    "n": 13,
+    "groupe": "Résumés seulement, relevés le 14 novembre 2026 :",
+    "source": "[Kujanpää et coll. — Tool-Making and Self-Evolving LLM Agents in Low-Latency Systems (arXiv 2607.08010, 9 juillet 2026)](https://arxiv.org/abs/2607.08010)",
+    "phrases": [
+     {
+      "ligne": 156,
+      "phrase": "En production, le temps de réponse médian baisse de 42 %; sur 1 500 alarmes historiques, le taux d'erreur de bout en bout baisse jusqu'à 53 % [13]."
+     }
+    ]
+   },
+   {
+    "n": 14,
+    "groupe": "Résumés seulement, relevés le 14 novembre 2026 :",
+    "source": "RecSys Factory: Bounding LLM Agent Autonomy to Decision Points in the Industrial Recommender Lifecycle (prépublication, 2026) — résumé repris d'un index d'articles; page non retrouvée.",
+    "phrases": [
+     {
+      "ligne": 158,
+      "phrase": "Les auteurs précisent qu'aucune comparaison contrôlée avec la situation antérieure n'a été faite [14]."
+     }
+    ]
+   },
+   {
+    "n": 15,
+    "groupe": "Résumés seulement, relevés le 14 novembre 2026 :",
+    "source": "[Apostolou, Bosch et Olsson — Agentic AI in Industry: Adoption Level and Deployment Barriers (arXiv 2605.14675, 14 mai 2026)](https://arxiv.org/abs/2605.14675)",
+    "phrases": [
+     {
+      "ligne": 160,
+      "phrase": "Quatre obstacles reviennent : la gestion du contexte, la performance sur des contenus propres à l'entreprise, le non-déterminisme et la qualification, la confidentialité des données [15]."
+     }
+    ]
+   }
+  ]
+ }
+]

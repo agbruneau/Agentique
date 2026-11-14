@@ -1,0 +1,608 @@
+[
+ {
+  "fichier": "chapitre-16-topologies-patrons.md",
+  "points_a_retenir": "## Points à retenir\n\n- Une topologie répond à deux questions : qui décide de l'étape suivante, et qui voit quoi. Répartir le travail, c'est d'abord cloisonner le contexte.\n- Trois topologies (centralisée, décentralisée, hiérarchique) et un axe adaptatif suffisent à situer les patrons, malgré un vocabulaire qui varie d'un éditeur à l'autre.\n- Aucune topologie ne domine. Sur six bancs d'essai, l'écart moyen entre multi-agents et agent unique est à peu près nul, et va de +80,8 % à −70,0 % : la coordination aide les tâches décomposables et nuit aux tâches séquentielles couplées.\n- L'agent unique outillé est le point de départ; les éditeurs eux-mêmes le recommandent.\n- Le superviseur vaut par son contrôle central, mais ajoute des appels et un goulot. Une délégation sans objectif, format ni limites produit doublons et lacunes.\n- La boucle réflexive donne la meilleure précision au coût et à la latence les plus élevés, et se dégrade le plus vite sous charge; la hiérarchie offre le meilleur compromis mesuré en traitement de documents financiers.\n- Routage de modèles, cache et relances adaptatives déplacent le coût autant que le choix de topologie.\n- Entre organisations, le pair-à-pair s'impose : la topologie suit les frontières d'autorité.\n\n---",
+  "grille_de_decision": "## Grille de décision\n\n| Décision | Option par défaut | Quand s'en écarter |\n|---|---|---|\n| Nombre d'agents | Un agent outillé | Tâche parallélisable, contexte saturé, trop d'outils, frontière de sécurité ou d'équipe |\n| Structure | Statique, fixée par le code | Sous-tâches imprévisibles : superviseur dynamique |\n| Topologie dans un domaine | Centralisée | Expertise qui émerge en conversation : transfert |\n| Topologie entre domaines | Pair-à-pair par protocole | Plateforme unique sous une seule autorité |\n| Fusion d'un fan-out | Étape de validation ou de vote | Résultats indépendants, sans agrégation requise |\n| Vérification | Rôle distinct de la production, critères écrits | Tâche à faible enjeu |\n| Boucles | Plafond d'itérations et repli défini | — |\n| Débat | Trois agents au plus, en lecture seule | Animation par un humain |\n| Modèle par agent | Proportionné à la tâche de l'agent | Faible volume : un seul modèle |\n| Validation du patron | Mesure contre l'agent unique, puis sous charge | — |\n\n---",
+  "sources_resume": [
+   {
+    "n": 2,
+    "groupe": "Pages primaires lues le 11 novembre 2026 ([1] à [3] et [5] à [7] relues le 12 novembre 2026) :",
+    "source": "[Kim et coll. — Towards a Science of Scaling Agent Systems (arXiv 2512.08296v3)](https://arxiv.org/html/2512.08296v3) — prépublication; résumé et première moitié du texte.",
+    "phrases": [
+     {
+      "ligne": 19,
+      "phrase": "Son texte n'a pas pu être lu : la taxonomie est reprise du plan initial et d'un résumé de moteur de recherche, et les définitions qui suivent sont celles de l'usage courant, recoupées avec une étude expérimentale [2]."
+     },
+     {
+      "ligne": 27,
+      "phrase": "L'étude de Kim et coll. ajoute deux variantes [2]."
+     },
+     {
+      "ligne": 73,
+      "phrase": "Mesurée sur les traces, l'amplification des erreurs par rapport à l'agent unique atteint 17,2 fois pour des agents indépendants, contre 4,4 fois avec un orchestrateur [2]."
+     },
+     {
+      "ligne": 95,
+      "phrase": "Dans l'étude de Kim et coll., l'architecture centralisée consomme en moyenne 27,7 tours par essai, contre 7,2 pour l'agent unique [2]."
+     },
+     {
+      "ligne": 117,
+      "phrase": "Une fusion sans validation est l'architecture « indépendante » de Kim et coll., celle dont l'amplification d'erreurs est la plus forte [2]."
+     },
+     {
+      "ligne": 139,
+      "phrase": "Les mesures de Kim et coll. situent le coût : l'architecture décentralisée, à débat et consensus, consomme 26,1 tours par essai en moyenne, et son amplification d'erreurs mesurée sur les traces est de 7,8 fois, entre l'orchestrateur et les agents indépendants [2]."
+     },
+     {
+      "ligne": 171,
+      "phrase": "L'architecture hybride de Kim et coll., qui ajoute des échanges latéraux à un orchestrateur, est la plus coûteuse de l'étude : 44,3 tours par essai en moyenne, six fois plus que l'agent unique [2]."
+     },
+     {
+      "ligne": 238,
+      "phrase": "L'étude de Kim et coll. donne à cette prudence une base expérimentale : 260 configurations, six bancs d'essai, cinq architectures et trois familles de modèles, avec outils, prompts et budget de calcul alignés pour isoler l'effet de l'architecture [2]."
+     },
+     {
+      "ligne": 281,
+      "phrase": "S'il réussit déjà bien, la coordination a peu de chances d'ajouter quelque chose [2]."
+     },
+     {
+      "ligne": 283,
+      "phrase": "Sinon, pipeline ou agent unique [2][5]."
+     },
+     {
+      "ligne": 355,
+      "phrase": "Les définitions des topologies viennent de l'usage courant et de [2], non du relevé."
+     },
+     {
+      "ligne": 358,
+      "phrase": "- [2] n'a été lu que sur sa première moitié; le tableau de la section 16.7 ne garantit pas qu'aucune architecture ne fasse pire que l'écart relevé."
+     },
+     {
+      "ligne": 359,
+      "phrase": "- [1] et [2] sont des prépublications; [3] à [7] sont des documents d'éditeurs qui décrivent leurs propres produits."
+     }
+    ]
+   },
+   {
+    "n": 8,
+    "groupe": "Pages primaires lues le 11 novembre 2026 ([1] à [3] et [5] à [7] relues le 12 novembre 2026) :",
+    "source": "[Du et coll. — Improving Factuality and Reasoning in Language Models through Multiagent Debate (arXiv 2305.14325)](https://arxiv.org/abs/2305.14325) — résumé seulement.",
+    "phrases": [
+     {
+      "ligne": 49,
+      "phrase": "| Débat | Décentralisée | Les pairs, par tours | group chat, roundtable, council, multiagent debate [5][8] |"
+     },
+     {
+      "ligne": 135,
+      "phrase": "L'article fondateur de Du et coll. rapporte, selon son résumé, une amélioration du raisonnement mathématique et stratégique et de la validité factuelle, avec une réduction des hallucinations, sur des modèles en boîte noire [8]."
+     }
+    ]
+   },
+   {
+    "n": 9,
+    "groupe": "Pages primaires lues le 11 novembre 2026 ([1] à [3] et [5] à [7] relues le 12 novembre 2026) :",
+    "source": "[Smit et coll. — Should we be going MAD? (arXiv 2311.17371)](https://arxiv.org/abs/2311.17371) — résumé seulement.",
+    "phrases": [
+     {
+      "ligne": 137,
+      "phrase": "Selon son résumé, les systèmes de débat, dans leur forme d'alors, ne surpassent pas de façon fiable d'autres stratégies plus simples, dont l'autocohérence et les ensembles de chaînes de raisonnement; ils sont plus sensibles aux hyperparamètres et difficiles à optimiser, même si un réglage du niveau d'accord entre agents peut les améliorer nettement [9]."
+     }
+    ]
+   },
+   {
+    "n": 10,
+    "groupe": "Pages primaires lues le 11 novembre 2026 ([1] à [3] et [5] à [7] relues le 12 novembre 2026) :",
+    "source": "[Cemri et coll. — Why Do Multi-Agent LLM Systems Fail? (arXiv 2503.13657v3)](https://arxiv.org/abs/2503.13657) — résumé seulement.",
+    "phrases": [
+     {
+      "ligne": 153,
+      "phrase": "Elle ne suffit pas à elle seule : la taxonomie MAST fait de la vérification de la tâche l'une de ses trois catégories d'échec [10] (chapitre 21)."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "fichier": "chapitre-18-execution-durable-transactions.md",
+  "points_a_retenir": "## Points à retenir\n\n- L'exécution durable garantit qu'un programme reprend, pas que ses effets sur le monde n'ont lieu qu'une fois. Microsoft l'écrit explicitement dans sa documentation.\n- « Exactement une fois » ne vaut qu'à l'intérieur d'un système fermé. Vers un système externe, l'effet unique s'obtient par une livraison au moins une fois et un outil idempotent.\n- La clé d'idempotence dérive de l'étape durable et voyage comme argument de l'outil. Ni le modèle ni l'identifiant de requête du protocole ne peuvent en tenir lieu.\n- Un appel au modèle est un effet de bord : sa sortie se journalise et se relit au rejeu.\n- Changer le prompt, les outils ou le modèle d'un agent, c'est changer le code d'exécutions en cours.\n- Une Saga relâche l'isolation : les états intermédiaires sont visibles des autres agents.\n- La compensation appartient au propriétaire de l'outil. Rien ne garantit la justesse d'une compensation générée par le modèle.\n- La reprise se décide hors de l'agent qui a échoué. L'appui universitaire de ce principe reste qualitatif.\n- Les actions irréversibles se placent après un pivot explicite, avec une approbation journalisée et liée aux paramètres exacts.\n\n---",
+  "grille_de_decision": "## Grille de décision\n\n| Décision | Option par défaut | Quand s'en écarter |\n|---|---|---|\n| Persistance de l'état | Magasin durable dès le premier environnement partagé | Prototype jetable : magasin en mémoire |\n| Mécanisme de reprise | Journal rejoué pour les tâches à effets externes | Agent conversationnel sans effet : instantanés par fil |\n| Appel au modèle | Étape journalisée, relue au rejeu | — |\n| Granularité | Une étape par appel d'outil à effet | Lectures groupées dans une même étape |\n| Moment d'écriture | Synchrone avant toute étape à effet | Asynchrone pour les étapes sans effet, si le débit l'exige |\n| Garantie visée | Au moins une fois, avec outils idempotents | Au plus une fois pour une action irréversible sans clé possible |\n| Clé d'idempotence | Dérivée de l'étape durable, exigée par le schéma de l'outil | Outil idempotent par nature |\n| Compensation | Déclarée par le propriétaire de l'outil, idempotente | Jamais générée à la volée pour un système d'enregistrement |\n| Décision de reprise | Validateur distinct de l'agent de tâche | Tâche à faible enjeu : nouvel essai borné |\n| Action irréversible | Après le pivot, avec approbation liée aux paramètres | Montant sous un plafond fixé par classe de décision |\n| Changement de prompt, d'outils ou de modèle | Versionné; les exécutions en cours finissent sur l'ancienne version | Correctif de sécurité : arrêt et compensation |\n| Échec définitif | File de lettres mortes et escalade humaine | — |\n\n---",
+  "sources_resume": [
+   {
+    "n": 1,
+    "groupe": "Pages primaires lues le 11 novembre 2026 :",
+    "source": "[SagaLLM: Context Management, Validation, and Transaction Guarantees for Multi-Agent LLM Planning — arXiv 2503.11951v3](https://arxiv.org/html/2503.11951v3) (résumé et texte)",
+    "phrases": [
+     {
+      "ligne": 33,
+      "phrase": "SagaLLM range cette perte parmi les quatre faiblesses de la planification par LLM, avec l'autovalidation peu fiable, l'absence de garde-fous transactionnels et la coordination insuffisante entre agents [1]."
+     },
+     {
+      "ligne": 41,
+      "phrase": "SagaLLM distingue trois états [1]."
+     },
+     {
+      "ligne": 115,
+      "phrase": "SagaLLM en reprend la définition d'origine, attribuée à Garcia-Molina et Salem (1987) [1][14] : une transaction de longue durée est découpée en sous-transactions T1 à Tn, chacune atomique localement et associée à une compensation; si une étape échoue, les compensations des étapes déjà validées s'exécutent en ordre inverse, de Cn à C1."
+     },
+     {
+      "ligne": 121,
+      "phrase": "Les auteurs disent relâcher les garanties ACID strictes sans dresser le bilan propriété par propriété [1]."
+     },
+     {
+      "ligne": 127,
+      "phrase": "L'exemple de SagaLLM le montre : compenser une réservation de vol, c'est annuler le billet, libérer le siège, rembourser et rétablir le budget [1]."
+     },
+     {
+      "ligne": 129,
+      "phrase": "La reprise suit cinq étapes dans SagaLLM [1] : détecter l'échec, analyser le graphe de dépendances, exécuter les compensations en ordre inverse, vérifier l'état obtenu, puis replanifier la partie touchée à partir du contexte conservé."
+     },
+     {
+      "ligne": 133,
+      "phrase": "SagaLLM range la vérification formelle du code de compensation généré par un LLM parmi ses travaux futurs [1]."
+     },
+     {
+      "ligne": 145,
+      "phrase": "SagaLLM soutient que les LLM manquent d'autovalidation robuste et cite des travaux selon lesquels l'autocorrection ne répare pas de façon fiable les erreurs logiques profondes [1]."
+     },
+     {
+      "ligne": 147,
+      "phrase": "Trois réponses sont prévues : le rejet, qui déclenche la compensation; l'augmentation, qui ajoute des précisions; la rétroaction, consignée pour adaptation [1]."
+     },
+     {
+      "ligne": 156,
+      "phrase": "C'est le scénario de replanification réactive que SagaLLM met à l'épreuve [1]."
+     },
+     {
+      "ligne": 172,
+      "phrase": "L'évaluation porte sur quatre problèmes du banc d'essai REALM, deux de planification séquentielle et deux de planification réactive, et compare le cadriciel à Claude 3.7, DeepSeek R1, GPT-4o et GPT-o1 employés seuls; les résultats sont décrits cas par cas, sans taux de réussite [1]."
+     },
+     {
+      "ligne": 314,
+      "phrase": "- Relues à la source pendant l'audit du 12 novembre : [1] (historique des versions, évaluation, conclusion), [4], [7], [8], [9], [10] et [11]."
+     }
+    ]
+   },
+   {
+    "n": 13,
+    "groupe": "Pages primaires lues le 11 novembre 2026 :",
+    "source": "[GoEX: Perspectives and Designs Towards a Runtime for Autonomous LLM Applications — arXiv 2404.06921](https://arxiv.org/abs/2404.06921) (résumé)",
+    "phrases": [
+     {
+      "ligne": 230,
+      "phrase": "- **Rendre l'annulation possible.** GoEX défend la validation après coup : juger une action sur son résultat est souvent plus facile que de la juger d'avance, à condition de pouvoir l'annuler [13]."
+     },
+     {
+      "ligne": 231,
+      "phrase": "- **Confiner les dégâts.** Quand l'annulation est impossible, la même proposition borne la portée de ce que l'action peut toucher [13]."
+     },
+     {
+      "ligne": 314,
+      "phrase": "Les pages [2], [3], [5], [6], [12] et [13] n'ont pas été relues."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "fichier": "chapitre-19-orchestration-evenementielle.md",
+  "points_a_retenir": "## Points à retenir\n\n- L'événement s'impose dans trois cas : fait sans demandeur, travail plus long qu'une connexion, plusieurs consommateurs. Ailleurs, l'appel direct reste plus simple.\n- La relecture du journal est la propriété qui compte : elle sert à la reprise, aux tests et à l'audit.\n- Flink Agents existe, en version 0.4, mais en préversion. Son « exactement une fois » couvre l'état et les sorties du job, pas les effets externes des outils.\n- Rejouer n'est pas réexécuter. Pour reprendre et auditer, le journal doit contenir les décisions du modèle et les résultats des outils, pas seulement les entrées.\n- Les systèmes documentés gardent un coordinateur et transportent par événements. La chorégraphie convient aux réactions indépendantes, sans ordre ni compensation.\n- MCP et A2A notifient sans rattrapage garanti : l'état de la tâche fait foi et se relit à chaque reconnexion. Les événements poussés et les webhooks de MCP sont encore à l'étude.\n- Un événement est une entrée non fiable : l'agent qu'il déclenche propose, et son action se choisit dans un catalogue borné.\n- Un agent a le plus souvent besoin de l'état que décrit le flux, pas du flux. À petit volume, une capture directe des changements et un traitement idempotent remplacent la dorsale.\n\n---",
+  "grille_de_decision": "## Grille de décision\n\n| Décision | Option par défaut | Quand s'en écarter |\n|---|---|---|\n| Mode de déclenchement | Appel direct | Fait sans demandeur, travail plus long qu'une connexion, plusieurs consommateurs |\n| Dorsale d'événements | Aucune tant qu'un déclencheur direct suffit | Relecture, pointes de charge ou consommateurs multiples |\n| Moteur d'agents sur flux | Flink Agents à l'essai seulement, vu son statut de préversion | Production si Flink est déjà exploité et qu'une adaptation des API est prévue |\n| Contenu du journal | Entrées, décisions du modèle et résultats d'outils | Entrées seules si le seul besoin est le test par réexécution |\n| Effets externes | Outils idempotents ou réconciliation | — |\n| Coordination | Orchestrateur explicite sur transport événementiel | Chorégraphie pour des réactions indépendantes, sans ordre ni compensation |\n| Suivi d'une tâche MCP ou A2A | Notification comme signal, puis relecture de l'état | Interrogation périodique si le client ne peut recevoir d'appel entrant |\n| Contexte de l'agent | État interrogeable par un outil | Consommation directe du flux pour un agent qui réagit à chaque événement |\n| Action déclenchée par un événement | Proposition, puis procédure d'un catalogue borné | — |\n\n---",
+  "sources_resume": [
+   {
+    "n": 12,
+    "groupe": "Pages primaires lues le 11 novembre 2026; [2], [5] à [9] et [13] lues ou relues le 12 novembre :",
+    "source": "[ESAA: Event Sourcing for Autonomous Agents (arXiv 2602.23193)](https://arxiv.org/abs/2602.23193) (résumé)",
+    "phrases": [
+     {
+      "ligne": 102,
+      "phrase": "ESAA pousse la même logique à l'échelle d'un projet logiciel [12]."
+     },
+     {
+      "ligne": 175,
+      "phrase": "Les trois systèmes lus pour ce chapitre font le même choix : un orchestrateur Flink central [14], un superviseur avec des exécutants sans état [15], un orchestrateur déterministe qui valide les intentions [12]."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "fichier": "chapitre-20-cadriciels-orchestration.md",
+  "points_a_retenir": "## Points à retenir\n\n- Les cadriciels convergent vers deux étages : une boucle d'agent et un workflow explicite. CrewAI recommande de commencer par un Flow; ADK 2.0 ajoute des graphes; Microsoft réunit agents, harnais et workflows.\n- Le cadriciel est la couche la plus périssable. AutoGen, Semantic Kernel, Swarm et le Claude Code SDK ont tous un successeur; il faut budgéter une migration.\n- La règle de Microsoft vaut partout : si une fonction peut faire le travail, il ne faut pas d'agent.\n- « SDK » recouvre deux objets : une bibliothèque de primitives ou un harnais déjà réglé. Le second accélère et lie davantage.\n- La portabilité se gagne aux frontières : MCP pour les outils, A2A entre équipes. L'intérieur du cadriciel (graphe, état, points de contrôle) n'est pas portable.\n- « Compatible A2A » ne suffit pas : CrewAI sert la version 0.3.0 par défaut, Microsoft la 1.0, et l'authentification, le magasin de tâches et la mise à l'échelle restent à construire.\n- Une procédure écrite réduit les défauts de spécification et de coordination, mais laisse paraître plus d'échecs de vérification.\n- Le verrouillage se déplace de la bibliothèque vers le runtime géré, l'observabilité et la plateforme.\n- Aucun chiffre comparatif de coût en jetons n'a été lu; le critère vérifiable est la maîtrise du contexte envoyé au modèle.\n- Les études de défauts montrent des bogues surtout ordinaires, concentrés dans l'intégration du modèle et souvent transposables d'un cadriciel à l'autre : la discipline d'essai compte plus que le produit.\n\n---",
+  "grille_de_decision": "## Grille de décision\n\n| Décision | Option par défaut | Quand s'en écarter |\n|---|---|---|\n| Faut-il un cadriciel ? | Non, tant qu'une fonction ou un appel de modèle avec outils suffit | Boucle, état ou coordination à maintenir |\n| Processus aux étapes connues | Workflow à graphe, non-déterminisme confiné aux nœuds | Processus déjà modélisé en BPMN : moteur de processus (chapitre 17) |\n| Tâche longue et ouverte | Harnais, avec permissions et hooks | Besoin de maîtriser chaque appel : bibliothèque de primitives |\n| Persistance | Points de contrôle en base de données dès le pilote | Durée de plusieurs heures ou effets irréversibles : exécution durable (chapitre 18) |\n| Outils | Exposés par MCP, jamais comme fonctions propres au cadriciel | Fonction purement interne à un agent |\n| Frontière entre équipes | A2A, version de protocole fixée et testée | Même équipe, même processus : sous-agents locaux |\n| Modèle | Cadriciel multi-modèles, condition du routage (chapitre 44) et d'un modèle de secours (chapitre 46) | Harnais lié à un modèle, si le gain est mesuré et la sortie prévue |\n| Prompts | Rédigés et versionnés | Jeu d'exemples et métrique disponibles : signatures optimisées |\n| Environnement d'exécution | Exploité par l'organisation | Runtime géré, si l'état reste exportable |\n\n---",
+  "sources_resume": [
+   {
+    "n": 14,
+    "groupe": "Pages primaires lues le 11 novembre 2026; [2], [5], [6], [8], [9], [10], [12] et [13] relues le 12 novembre 2026 :",
+    "source": "[MetaGPT: Meta Programming for A Multi-Agent Collaborative Framework (arXiv 2308.00352)](https://arxiv.org/abs/2308.00352) — résumé seulement",
+    "phrases": [
+     {
+      "ligne": 145,
+      "phrase": "Ses auteurs partent d'un constat, les incohérences logiques dues aux hallucinations en cascade quand on enchaîne naïvement des modèles, et y répondent en encodant des procédures opérationnelles normalisées dans des séquences de prompts [14]."
+     }
+    ]
+   },
+   {
+    "n": 21,
+    "groupe": "Sources ajoutées le 14 novembre 2026 :",
+    "source": "[Zhu et coll. — Where Agent Frameworks Fall Short: Examining Functional Challenges and Usability Concerns (arXiv 2602.21806, version 4 du 6 août 2026)](https://arxiv.org/abs/2602.21806) — prépublication; résumé seulement.",
+    "phrases": [
+     {
+      "ligne": 208,
+      "phrase": "Selon sa propre classification, 76 % des bogues se manifestent par un comportement fonctionnel incorrect, et leurs causes relèvent davantage des API, de la configuration, de l'analyse et de la sérialisation que dans les cadriciels d'apprentissage profond [21]."
+     },
+     {
+      "ligne": 286,
+      "phrase": "- La sous-section sur les études de défauts (20.7) date du 14 novembre 2026. [21] n'est connue que par son résumé, et ses versions antérieures portaient un autre titre et un échantillon plus petit."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "fichier": "chapitre-21-fiabilite-coordination.md",
+  "points_a_retenir": "## Points à retenir\n\n- MAST classe les échecs multi-agents en quatorze modes et trois catégories : spécification, désalignement entre agents, vérification. Dans la version 2, leurs parts sont de 41,77 %, 36,94 % et 21,30 %.\n- Dans la version 3, les modes dominants sont la répétition d'étapes, l'écart entre raisonnement et action, la consigne non respectée et la condition d'arrêt ignorée. L'obstruction entre agents est rare.\n- Les taux d'échec de 41 % à 86,7 % valent pour des cadriciels à code ouvert sur bancs d'essai, non pour des déploiements d'entreprise.\n- Corriger une catégorie en révèle une autre : des procédures strictes réduisent les défauts de spécification et de coordination, et laissent plus d'échecs de vérification.\n- Un vérificateur ne suffit pas. Il doit contrôler l'objectif et non le seul format, et s'appuyer sur des tests déterministes là où ils existent.\n- Le consensus sémantique repose sur une évaluation simulée et un détecteur peu précis. Ses idées utiles, l'intention déclarée avant l'action et la hiérarchie d'arbitrage, se mettent en œuvre sans lui.\n- L'imputabilité architecturale transforme rôles, relations et devoirs en données validées. Elle est démontrée à très petite échelle, sans mesure de fiabilité.\n- L'attribution automatique d'un échec à un agent reste peu exacte. Elle se prépare à la conception, par les relations déclarées et les traces.\n- Hors des bancs d'essai, les fautes signalées dans les dépôts sont surtout celles d'un logiciel ordinaire. Les échecs de coordination y sont mal comptés, parce qu'ils ne lèvent pas d'exception.\n- Sous faute injectée, ce qui protège est une boucle de vérification ou une règle déterministe. Un modèle plus fort peut suivre plus fidèlement une directive corrompue.\n- Fiabiliser un système multi-agents est un travail de conception d'organisation : division du travail, autorité, information, contrôle, imputabilité.\n\n---",
+  "grille_de_decision": "## Grille de décision\n\n| Décision | Option par défaut | Quand s'en écarter |\n|---|---|---|\n| Un agent ou plusieurs | Un agent tant qu'il suffit; comparaison à budget égal | Tâche décomposable et large (chapitre 16) |\n| Contenu d'une délégation | Objectif, format de sortie, limites, condition d'arrêt | Aucun cas |\n| Arrêt et plafond d'étapes | Imposés par l'orchestrateur ou le moteur de processus | Exploration sans effet de bord |\n| Ambiguïté | L'agent demande une précision | Tâche réversible à faible enjeu |\n| Vérification | Rôle distinct, qui contrôle l'objectif | Résultat couvert par un test déterministe |\n| Conflit entre agents | Hiérarchie d'arbitrage écrite, humain en dernier recours | Détection automatique seulement après mesure de sa précision |\n| Imputabilité | Relations commettant-responsable déclarées, devoirs mesurables | Petit système stable de deux ou trois agents |\n| Mesure de la coordination | Échantillon de traces étiqueté selon MAST, surcoût, jalons | — |\n| Attribution d'un échec | Revue humaine appuyée sur les traces | Attribution automatique en aide au tri seulement |\n| Essai de robustesse | Fautes de coordination injectées avant la mise en production (chapitre 34) | Agent unique, ou tâche sans effet de bord |\n\n---",
+  "sources_resume": [
+   {
+    "n": 1,
+    "groupe": "Pages primaires lues le 11 novembre 2026 :",
+    "source": "[Cemri et coll. — Why Do Multi-Agent LLM Systems Fail?, version 3 (arXiv 2503.13657v3)](https://arxiv.org/html/2503.13657v3) — prépublication; résumé et premiers trois cinquièmes du texte.",
+    "phrases": [
+     {
+      "ligne": 7,
+      "phrase": "Les auteurs de MAST partent de ce constat : sur les bancs d'essai courants, le gain des systèmes multi-agents sur un agent unique reste souvent minime [1]."
+     },
+     {
+      "ligne": 17,
+      "phrase": "MAST (Multi-Agent System Failure Taxonomy) vient d'une équipe de l'Université de Californie à Berkeley [1]."
+     },
+     {
+      "ligne": 17,
+      "phrase": "Un annotateur automatique, fondé sur le modèle o1 d'OpenAI et sur quelques exemples, a ensuite étiqueté le reste des traces; son accord avec les experts est de 0,77 [1]."
+     },
+     {
+      "ligne": 19,
+      "phrase": "La version 3 publie le jeu de données complet, MAST-Data : 1 642 traces annotées, issues de sept cadriciels (MetaGPT, ChatDev, HyperAgent, AppWorld, AG2, Magentic-One, OpenManus), sur des tâches de programmation, de mathématiques et d'agent généraliste [1]."
+     },
+     {
+      "ligne": 42,
+      "phrase": "La version 3 renomme la première catégorie « défauts de conception du système »; la somme des parts par mode donne 44,2 %, 32,4 % et 23,5 % [1]."
+     },
+     {
+      "ligne": 52,
+      "phrase": "La version 3 rapporte des taux d'échec de 41 % à 86,7 % sur sept systèmes multi-agents à code ouvert [1]."
+     },
+     {
+      "ligne": 54,
+      "phrase": "Ils notent que des échecs d'apparence semblable peuvent avoir des causes différentes, et relèvent des corrélations modérées entre certains modes, jusqu'à 0,63 [1]."
+     },
+     {
+      "ligne": 72,
+      "phrase": "La répétition d'étapes et la condition d'arrêt ignorée totalisent environ 28 % des échecs de la version 3 [1]."
+     },
+     {
+      "ligne": 84,
+      "phrase": "Sur ChatDev, en précisant les rôles, notamment pour que l'agent dirigeant ait le dernier mot, les auteurs de MAST obtiennent une hausse de 9,4 % du taux de réussite, à requête et à modèle inchangés [1][2]."
+     },
+     {
+      "ligne": 86,
+      "phrase": "MetaGPT, qui encadre ses agents par des procédures opératoires, présente de 60 % à 68 % moins d'échecs des deux premières catégories que ChatDev, mais 1,56 fois plus d'échecs de vérification [1]."
+     },
+     {
+      "ligne": 88,
+      "phrase": "Dans MetaGPT, GPT-4o commet 39 % moins d'échecs de la première catégorie que Claude 3.7 Sonnet, mais les deux échouent souvent en vérification [1]."
+     },
+     {
+      "ligne": 100,
+      "phrase": "Viennent ensuite la dérive hors de la tâche et la clarification non demandée, où l'agent poursuit sur une hypothèse au lieu de poser la question [1]."
+     },
+     {
+      "ligne": 130,
+      "phrase": "La troisième catégorie réunit trois modes : l'arrêt prématuré, la vérification absente ou incomplète, et la vérification incorrecte, qui a lieu mais laisse passer l'erreur [1]."
+     },
+     {
+      "ligne": 134,
+      "phrase": "Beaucoup de vérificateurs ne font que des contrôles superficiels, alors que leur consigne demande un examen complet : ils vérifient que le code compile ou qu'il ne reste pas de commentaire d'attente, non que le programme fait ce qui était demandé [1]."
+     },
+     {
+      "ligne": 136,
+      "phrase": "L'intervention correspondante, une étape de vérification de haut niveau ajoutée à ChatDev, améliore la réussite de 15,6 points sur le banc d'essai ProgramDev [1][2]."
+     },
+     {
+      "ligne": 156,
+      "phrase": "| Meilleures consignes et rôles | Spécification | +9,4 % sur ChatDev [1] |"
+     },
+     {
+      "ligne": 157,
+      "phrase": "| Vérification structurelle | Vérification | +15,6 points sur ChatDev [1] |"
+     },
+     {
+      "ligne": 219,
+      "phrase": "Son annotateur automatique atteint 94 % d'exactitude et un kappa de 0,77 face aux experts avec quelques exemples; sans exemple, le kappa tombe à 0,58 [1][2]."
+     },
+     {
+      "ligne": 257,
+      "phrase": "Ils invoquent Perrow, pour qui des organisations composées d'individus compétents peuvent échouer de façon catastrophique, et la recherche sur les organisations à haute fiabilité, selon laquelle des principes de conception bien définis préviennent de tels échecs [1]."
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "groupe": "Pages primaires lues le 11 novembre 2026 :",
+    "source": "[Acharya — Semantic Consensus: Process-Aware Conflict Detection and Resolution for Enterprise Multi-Agent LLM Systems (arXiv 2604.16339)](https://arxiv.org/html/2604.16339) — prépublication, un seul auteur, v1 du 13 mars 2026; résumé et texte.",
+    "phrases": [
+     {
+      "ligne": 52,
+      "phrase": "Ils ne décrivent pas des déploiements d'entreprise, bien qu'une prépublication les présente ainsi dans son résumé [3]."
+     },
+     {
+      "ligne": 110,
+      "phrase": "Une prépublication de mars 2026 nomme une forme particulière de désalignement : la divergence d'intention sémantique [3]."
+     },
+     {
+      "ligne": 158,
+      "phrase": "| Intergiciel de consensus sémantique | Désalignement | Simulation, un auteur, prépublication [3] |"
+     },
+     {
+      "ligne": 165,
+      "phrase": "Le Semantic Consensus Framework est un intergiciel à six composants [3] : une couche de contexte qui ingère les modèles de workflow de l'entreprise, un graphe d'intentions qui enregistre ce que chaque agent compte faire **avant** d'agir, un moteur qui y détecte les trois types de conflit, un protocole qui les arbitre, un moniteur de dérive et un lien vers les politiques et la piste d'audit."
+     },
+     {
+      "ligne": 169,
+      "phrase": "Les 600 exécutions sont **simulées** : l'auteur précise que son banc reproduit des patrons de coordination et ne fait pas tourner AutoGen, CrewAI et LangGraph avec de vrais appels de modèle [3]."
+     },
+     {
+      "ligne": 330,
+      "phrase": "L'audit a relu par cet outil les parts par mode et les chiffres cités de MAST, les résumés de [3] et [7], les métriques de [5] et les passages cités de [6]."
+     },
+     {
+      "ligne": 334,
+      "phrase": "- La page arXiv date [3] du 13 mars 2026, malgré un identifiant (2604) qui évoque avril."
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "groupe": "Pages primaires lues le 11 novembre 2026 :",
+    "source": "[Kim et coll. — Towards a Science of Scaling Agent Systems (arXiv 2512.08296v3)](https://arxiv.org/html/2512.08296v3) — prépublication; résumé et première moitié du texte.",
+    "phrases": [
+     {
+      "ligne": 122,
+      "phrase": "L'étude de Kim et coll. observe une amplification des erreurs plus forte sans point central de vérification, tendance que son modèle final ne juge pas significative (chapitre 16) [5]."
+     },
+     {
+      "ligne": 223,
+      "phrase": "L'étude de Kim et coll. définit des métriques propres à la coordination, calculées par rapport à un agent unique, à outils et à consignes normalisés [5]."
+     },
+     {
+      "ligne": 233,
+      "phrase": "Le surcoût mesuré va de 58 % pour des agents indépendants à 515 % pour une architecture hybride, et le nombre moyen de tours passe de 7,2 pour l'agent unique à 44,3 pour l'architecture hybride [5]."
+     },
+     {
+      "ligne": 330,
+      "phrase": "L'audit a relu par cet outil les parts par mode et les chiffres cités de MAST, les résumés de [3] et [7], les métriques de [5] et les passages cités de [6]."
+     }
+    ]
+   },
+   {
+    "n": 7,
+    "groupe": "Pages lues le 14 novembre 2026 :",
+    "source": "[Zhang et coll. — Which Agent Causes Task Failures and When? (arXiv 2505.00212, version 3 du 2 juin 2025)](https://arxiv.org/html/2505.00212) — connu d'abord par son résumé; texte lu.",
+    "phrases": [
+     {
+      "ligne": 245,
+      "phrase": "Sur le jeu de données Who&When, qui réunit les journaux d'échec de 127 systèmes multi-agents, la meilleure méthode désigne le bon agent dans 53,5 % des cas et la bonne étape dans 14,2 % [7]."
+     },
+     {
+      "ligne": 247,
+      "phrase": "Le texte de l'article précise l'ampleur du problème [7]."
+     },
+     {
+      "ligne": 247,
+      "phrase": "L'annotation humaine elle-même est coûteuse et incertaine : trois experts y ont consacré environ 84 heures pour 184 cas, et ont signalé de 15 % à 30 % d'annotations incertaines [7]."
+     },
+     {
+      "ligne": 330,
+      "phrase": "L'audit a relu par cet outil les parts par mode et les chiffres cités de MAST, les résumés de [3] et [7], les métriques de [5] et les passages cités de [6]."
+     },
+     {
+      "ligne": 337,
+      "phrase": "- Les sources [7] à [10] ont été lues le 14 novembre 2026 par l'outil d'extraction, qui ne restitue que le début des textes longs : la fin de [8], de [9] (dont les menaces à la validité) et de [10] n'a pas été lue."
+     }
+    ]
+   },
+   {
+    "n": 8,
+    "groupe": "Pages lues le 14 novembre 2026 :",
+    "source": "[Zhu et coll. — MultiAgentBench (arXiv 2503.01935, version 1)](https://arxiv.org/html/2503.01935) — connu d'abord par son résumé; première moitié du texte.",
+    "phrases": [
+     {
+      "ligne": 239,
+      "phrase": "MultiAgentBench évalue l'achèvement de la tâche et aussi la qualité de la collaboration, au moyen d'indicateurs fondés sur des jalons [8]."
+     },
+     {
+      "ligne": 241,
+      "phrase": "Son indicateur de jalons est la part des jalons auxquels chaque agent a contribué; sa note de coordination vient d'un modèle qui cote la communication et la planification sur cinq points [8]."
+     },
+     {
+      "ligne": 241,
+      "phrase": "Ils observent aussi que l'indicateur de jalons baisse quand le nombre d'agents passe de un à sept, et que la discussion de groupe est la pire des stratégies de planification essayées [8]."
+     },
+     {
+      "ligne": 337,
+      "phrase": "- Les sources [7] à [10] ont été lues le 14 novembre 2026 par l'outil d'extraction, qui ne restitue que le début des textes longs : la fin de [8], de [9] (dont les menaces à la validité) et de [10] n'a pas été lue."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "fichier": "chapitre-22-humain-dans-la-boucle.md",
+  "points_a_retenir": "## Points à retenir\n\n- « Dans », « sur » et « hors de la boucle » qualifient une action, pas un agent. La position « aux commandes », soit décider d'utiliser l'agent et pouvoir l'arrêter, ne se délègue pas.\n- Les échelles d'autonomie fournissent un vocabulaire et une échelle d'autorisation. Aucune n'est une norme, et leur sommet n'est pas une cible.\n- Le niveau d'autonomie est un choix de conception, rattaché à une configuration. Un meilleur modèle ne le relève pas de lui-même.\n- La décision se gouverne par classe, selon la gravité, la réversibilité et la faisabilité de la supervision.\n- Une limite écrite seulement dans un prompt ou une politique n'est pas une limite.\n- L'approbation s'use : il faut en demander moins, la rendre lisible et la mesurer. La recherche indépendante confirme la direction; l'ampleur, chez des approbateurs d'agents en entreprise, n'a pas été mesurée.\n- L'autonomie s'élargit sur preuve et se retire sur signal. La confiance déplace l'humain vers la surveillance; elle ne le retire pas.\n- Les textes réglementaires lus demandent une capacité effective de comprendre, de refuser et d'arrêter, non un clic par action.\n- En production, la courte portée est délibérée et les actions irréversibles sont rares.\n\n---",
+  "grille_de_decision": "## Grille de décision\n\n| Décision | Option par défaut | Quand s'en écarter |\n|---|---|---|\n| Unité de gouvernance | La classe de décision, cotée en gravité, réversibilité et faisabilité de la supervision | Agent à action unique : un niveau par agent suffit |\n| Lecture et analyse | Sans approbation, dans un périmètre appliqué techniquement | Renseignements personnels ou confidentiels |\n| Action réversible à faible enjeu | Sur la boucle, avec audit d'échantillon | Anomalie détectée : retour à l'approbation |\n| Action irréversible ou à fort enjeu | Approbation préalable, liée aux paramètres exacts | Montant sous un plafond fixé par classe |\n| Lieu d'application | Outil, passerelle ou couche d'autorisation | Jamais le prompt seul |\n| Promotion d'autonomie | Par classe, sur preuve consignée, signée par l'autorité du niveau visé | — |\n| Rétrogradation | Automatique, sur signal | — |\n| Approbateur injoignable | Refus par défaut | Action réversible, déjà autorisée sur la boucle |\n| Preuve que la supervision reste effective | Taux de modification, temps de révision, tâches témoins | Classe laissée sans approbation humaine |\n\n---",
+  "sources_resume": [
+   {
+    "n": 17,
+    "groupe": "Pages lues le 14 novembre 2026, pour la section 22.5 :",
+    "source": "[Green — The Flaws of Policies Requiring Human Oversight of Government Algorithms (Computer Law & Security Review 45, 2022; arXiv 2109.05067)](https://arxiv.org/abs/2109.05067) — résumé seulement.",
+    "phrases": [
+     {
+      "ligne": 144,
+      "phrase": "Il propose d'exiger de l'organisme qu'il justifie, preuves empiriques à l'appui, la forme de supervision qu'il retient [17]."
+     },
+     {
+      "ligne": 264,
+      "phrase": "Les sources [14] à [17], ajoutées le 14 novembre 2026, en sont indépendantes mais ne comblent pas ce manque : [14] est un article de position, [15] une étude par entretiens dont douze des dix-sept participants travaillent chez l'employeur des auteurs, [16] une revue de 2011 sur les aides à la décision, et [17] n'est connu que par son résumé."
+     },
+     {
+      "ligne": 264,
+      "phrase": "Les sources [14] à [17], ajoutées le 14 novembre 2026, en sont indépendantes mais ne comblent pas ce manque : [14] est un article de position, [15] une étude par entretiens dont douze des dix-sept participants travaillent chez l'employeur des auteurs, [16] une revue de 2011 sur les aides à la décision, et [17] n'est connu que par son résumé."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "fichier": "chapitre-23-architecture-reference.md",
+  "points_a_retenir": "## Points à retenir\n\n- Les architectures de référence évaluées par les pairs décrivent un agent ou un système. À l'échelle de l'entreprise, les modèles viennent d'éditeurs et d'analystes et ne sont pas validés.\n- Le nombre de couches varie selon les sources. La séparation entre l'intelligence et la gouvernance est la seule constante.\n- La couche qui gouverne est le plan de contrôle : registre, identité, politique, observabilité, budgets.\n- Ce plan ne gouverne qu'à trois conditions : un chemin obligé dans le plan de données, un registre qui fait autorité et une preuve de chaque décision.\n- Le maillage agentique est une propriété d'infrastructure, pas une topologie. Rendre les agents joignables ne dispense pas de concevoir leur coordination. Chez les éditeurs, le mot recouvre trois objets distincts (réseau, dorsale événementielle, couche de confiance), et aucune source lue ne rapporte de mesure.\n- Un registre d'agents borne ce qu'un planificateur peut envisager; un registre de données lui évite de chercher à l'aveugle.\n- Décrire les agents par des données plutôt que par du code ou des prompts les rend validables et auditables.\n- Coût, précision et latence s'échangent à chaque décision d'architecture. Les sources les nomment sans les formaliser : c'est à l'entreprise d'en faire des budgets.\n- Une architecture d'agents s'évalue par scénarios et se réévalue à l'exécution, puisque le système change après son déploiement.\n\n---",
+  "grille_de_decision": "## Grille de décision\n\n| Décision | Option par défaut | Quand s'en écarter |\n|---|---|---|\n| Où placer l'autorité | Plan de contrôle distinct des agents | Agent unique, sans effet de bord : garde-fous internes |\n| Application des politiques | Passerelle sur le chemin de chaque appel d'outil, d'agent et de modèle | Outil local sans donnée sensible |\n| Registre | Unique, et condition du routage | Plusieurs plateformes imposées : registres fédérés (chapitre 27) |\n| Maillage | Assembler le registre, les protocoles et la passerelle déjà retenus | Produit de maillage si son socle (maillage de services, courtier d'événements) est déjà la norme de l'entreprise |\n| Inventaire et identité | Deux fonctions rapprochées régulièrement | — |\n| Description des agents | Déclarative, versionnée, validée avant exécution | Prototype |\n| Coordination | Centralisée ou fédérée | Distribuée si la résilience prime et que le coût de maintenance est accepté |\n| Planification | Plan à chemin unique pour les processus audités | Plusieurs chemins en environnement changeant, avec tests renforcés |\n| Mémoire | Langage naturel si l'explicabilité prime | Plongements si la performance prime |\n| Qualité de service | Budgets de coût, de délai et de qualité par classe de tâche | — |\n| Garde-fous | Plusieurs barrières, sur plusieurs étapes et artefacts | — |\n| Évaluation d'architecture | Par scénarios, répétée à l'exécution | Système gelé à faible risque : revue initiale |\n| Modèle de référence | La vue à deux étages de ce chapitre, comme point de départ | Cadre imposé par un éditeur ou un régulateur |\n\n---",
+  "sources_resume": [
+   {
+    "n": 12,
+    "groupe": "Sources secondaires :",
+    "source": "[McKinsey — Seizing the agentic AI advantage (juin 2025)](https://www.mckinsey.com/capabilities/quantumblack/our-insights/seizing-the-agentic-ai-advantage) — page non chargée; principes repris de résumés de recherche.",
+    "phrases": [
+     {
+      "ligne": 85,
+      "phrase": "D'après les commentaires qui le résument, il repose sur cinq principes : composabilité, intelligence distribuée, découplage en couches, neutralité envers les fournisseurs et autonomie gouvernée [12]."
+     },
+     {
+      "ligne": 341,
+      "phrase": "- Le rapport de McKinsey sur le maillage agentique [12] n'a toujours pas été lu : sa page n'a pas pu être chargée le 14 novembre 2026, date à laquelle la section 23.3 a été étendue à partir de [14] à [21]."
+     }
+    ]
+   },
+   {
+    "n": 13,
+    "groupe": "Sources secondaires :",
+    "source": "[Gravitee — Blueprinting an AI Agent Control Plane](https://gravitee.io/corpus/gen-1223/electric-on-the-eel/blueprinting-an-ai-agent-control-plane-reference-architecture-data-flows-and-trust-boundaries.html) — page introuvable au 13 novembre 2026 (erreur 404), connue par un résumé de recherche seulement; billet de fournisseur qui reprend le partage « décider / appliquer ».",
+    "phrases": [
+     {
+      "ligne": 55,
+      "phrase": "Des guides de fournisseurs reprennent ce partage pour les agents [13]."
+     },
+     {
+      "ligne": 343,
+      "phrase": "- La définition du plan de contrôle et du plan de données, de même que l'analogie avec le maillage de services, relèvent de la connaissance générale en réseautique. [13] n'est cité qu'à titre d'indice."
+     }
+    ]
+   },
+   {
+    "n": 20,
+    "groupe": "Pages lues le 14 novembre 2026, pour la section 23.3 :",
+    "source": "[Chan et coll. — Infrastructure for AI Agents (arXiv 2501.10114, v3 du 19 juin 2025; accepté à TMLR)](https://arxiv.org/abs/2501.10114) — résumé seulement.",
+    "phrases": [
+     {
+      "ligne": 107,
+      "phrase": "C'est la notion d'« infrastructure d'agents » de Chan et de ses collègues, seul appui évalué par les pairs trouvé pour cette section : des systèmes et des protocoles partagés, extérieurs aux agents, qui servent à attribuer leurs actions, à encadrer leurs interactions, puis à détecter et à corriger les actions nuisibles [20]."
+     },
+     {
+      "ligne": 341,
+      "phrase": "Ce sont des pages d'éditeurs et un billet d'opinion, lus par le même outil d'extraction; [20] n'est connu que par son résumé, et [21] par le résumé qu'en donne un index d'articles, sans que la qualité de la revue ait été évaluée."
+     }
+    ]
+   },
+   {
+    "n": 21,
+    "groupe": "Source secondaire, pour la même section :",
+    "source": "Debnath — The Enterprise Agentic Mesh: Architectural Convergence of Semantic Control Planes and Autonomous Multi-Agent Governance, International Journal of Scientific and Research Publications, 2025 — page de la revue non retrouvée; résumé repris d'un index d'articles.",
+    "phrases": [
+     {
+      "ligne": 129,
+      "phrase": "Le seul article de revue repéré qui nomme un « maillage agentique d'entreprise » est une proposition, connue ici par son seul résumé : un plan de contrôle sémantique qui route selon l'intention, un mandataire de gouvernance accolé à chaque agent (*sidecar*) et un registre distribué pour l'observabilité [21]."
+     },
+     {
+      "ligne": 341,
+      "phrase": "- Le rapport de McKinsey sur le maillage agentique [12] n'a toujours pas été lu : sa page n'a pas pu être chargée le 14 novembre 2026, date à laquelle la section 23.3 a été étendue à partir de [14] à [21]."
+     },
+     {
+      "ligne": 341,
+      "phrase": "Ce sont des pages d'éditeurs et un billet d'opinion, lus par le même outil d'extraction; [20] n'est connu que par son résumé, et [21] par le résumé qu'en donne un index d'articles, sans que la qualité de la revue ait été évaluée."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "fichier": "chapitre-24-passerelles-integration.md",
+  "points_a_retenir": "## Points à retenir\n\n- Les protocoles laissent ouvert le comportement d'une passerelle. C'est là que l'entreprise rend obligatoire ce que MCP recommande.\n- Une passerelle MCP diffère d'une passerelle d'API sur quatre points : l'opération est dans le corps, la réponse est un flux lu par un modèle, le catalogue est une surface d'attaque et la découverte dépend de l'appelant.\n- Cinq contrôles s'appliquent à chaque appel : identité, autorisation par outil, approbation, quota, inspection des contenus. L'audit et l'échec fermé valent pour les cinq.\n- La passerelle ne relaie jamais le jeton reçu. Elle se présente en aval avec un justificatif distinct.\n- Convertir une API en outils est mécanique; la rendre utilisable par un modèle demande une curation des opérations et des descriptions.\n- L'iPaaS agentique vise le plan de contrôle : MuleSoft applique des politiques aux API d'autres passerelles, pas encore aux agents ni aux serveurs MCP.\n- La fédération de serveurs transfère à la passerelle l'isolation que l'hôte assurait.\n- Les premières mesures sont minces : un banc de cabinet d'analyse sur six passerelles, dont aucune n'est décrite ici, un filtre évalué par ses auteurs, et des scanners qui se contredisent. Le brouillon de Microsoft et le cadre universitaire cité restent des propositions.\n- Une passerelle contournable ne gouverne rien : serveurs locaux et justificatifs directs lui échappent.\n\n---",
+  "grille_de_decision": "## Grille de décision\n\n| Décision | Option par défaut | Quand s'en écarter |\n|---|---|---|\n| Point d'application | Passerelle sur le chemin de tout appel à un serveur distant | Outil local sans donnée sensible, sous politique du poste |\n| Famille de produit | Étendre la gestion d'API déjà en place | Trafic A2A et d'inférence à unifier : passerelle agentique dédiée |\n| Unité de politique | L'outil | Serveur interne homogène, en lecture seule |\n| Jeton en aval | Échange de jeton ou justificatif propre à la passerelle; jamais de relais | — |\n| Outils sensibles | Approbation à la passerelle; refus sans approbateur configuré | Délai long : extension Tasks (chapitres 5 et 22) |\n| Clé de quota | Identité de l'agent | Adresse IP si l'identité est indisponible |\n| Réponses | Balayage avec blocage par défaut | Expurgation, après mesure des faux positifs |\n| Définitions d'outils | Balayage à l'inscription, empreinte suivie ensuite | — |\n| Erreur de la passerelle | Refus | — |\n| API existantes | Conversion suivie d'une curation, lectures d'abord | Prototype interne : conversion intégrale |\n| Réglages d'origine | Vérifier que les contrôles de contenu sont activés et que les refus sont journalisés | — |\n\n---",
+  "sources_resume": [
+   {
+    "n": 16,
+    "groupe": "Sources ajoutées le 14 novembre 2026 :",
+    "source": "[Chen et coll. — Rethinking MCP Security: A Large-Scale Study of Runtime MCP Servers and Security Scanner Reliability (arXiv 2607.11086, 13 juillet 2026)](https://arxiv.org/abs/2607.11086) — prépublication; résumé seulement.",
+    "phrases": [
+     {
+      "ligne": 184,
+      "phrase": "**Des scanners qui se contredisent.** Sur une collection de 64 611 serveurs, les scanners existants signalent 96,89 % des serveurs comme risqués, et moins de la moitié des alertes vérifiées à la main sont fondées [16]."
+     },
+     {
+      "ligne": 282,
+      "phrase": "- Les seules données de performance citées viennent des sources [14] à [16], ajoutées le 14 novembre 2026. [14] est le banc d'un cabinet d'analyse dont un des éditeurs testés est client; aucun des produits décrits dans ce chapitre n'y figure. [15] est évalué par ses auteurs, hors ligne. [16] n'est connu que par son résumé."
+     },
+     {
+      "ligne": 282,
+      "phrase": "- Les seules données de performance citées viennent des sources [14] à [16], ajoutées le 14 novembre 2026. [14] est le banc d'un cabinet d'analyse dont un des éditeurs testés est client; aucun des produits décrits dans ce chapitre n'y figure. [15] est évalué par ses auteurs, hors ligne. [16] n'est connu que par son résumé."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "fichier": "chapitre-28-agents-industriels-peripherie.md",
+  "points_a_retenir": "## Points à retenir\n\n- MCP ne remplace aucun protocole industriel. Il enveloppe OPC UA, Modbus ou MQTT dans un adaptateur, sans toucher aux systèmes de commande.\n- La couche sémantique existe déjà : le modèle d'information OPC UA pour l'équipement en marche, l'AAS pour la description de l'actif.\n- Une commande acceptée n'est pas une action exécutée. La réémission automatique que tolère une lecture est à proscrire pour une écriture.\n- Les adaptateurs sérieux désactivent les écritures par défaut et séparent le choix d'un catalogue d'outils de l'autorisation de s'en servir.\n- La sécurité se joue sur deux sauts indépendants : du client vers l'adaptateur, de l'adaptateur vers l'équipement.\n- En exploitation, le modèle de référence est l'aide à la décision : l'agent orchestre des outils déterministes, l'opérateur décide, la sûreté reste hors de portée.\n- La preuve est mince : aucune évaluation lue ne place un modèle de langage devant un équipement réel, et l'offre des fabricants d'automates porte sur l'ingénierie.\n\n---",
+  "grille_de_decision": "## Grille de décision\n\n| Décision | Option par défaut | Quand s'en écarter |\n|---|---|---|\n| Rôle de l'agent en exploitation | Aide à la décision : lire, expliquer, proposer | Commande simple sur installation d'essai, confirmée par l'opérateur |\n| Accès aux équipements | Adaptateur MCP au-dessus d'OPC UA, sans modifier les automates | Équipement sans OPC UA : adaptateur propre au protocole |\n| Écritures | Désactivées par défaut; activées par outil et par appelant | — |\n| Fonctions de sûreté | Hors de portée de tout agent | Aucun cas |\n| Validation humaine | Obligatoire avant toute écriture | Aucun cas en exploitation |\n| Échec ou délai sur une écriture | Pas de nouvel essai automatique; relire l'état | Écriture démontrée idempotente |\n| Couche sémantique | OPC UA pour le procédé; AAS pour la description des actifs | Parc sans modèle : modéliser d'abord |\n| Emplacement | Adaptateur en atelier; modèle au centre de données | Site isolé ou données sensibles : modèle local |\n| Provenance de l'adaptateur | Organisme de normalisation ou éditeur, version épinglée | Adaptateur communautaire : banc d'essai seulement |\n\n---",
+  "sources_resume": [
+   {
+    "n": 5,
+    "groupe": "Pages primaires lues le 11 novembre 2026 :",
+    "source": "[IndustriConnect (arXiv 2603.24703)](https://arxiv.org/abs/2603.24703) — prépublication, résumé et texte lus.",
+    "phrases": [
+     {
+      "ligne": 21,
+      "phrase": "**Le parc est hétérogène.** Les équipements parlent Modbus, MQTT avec Sparkplug B ou OPC UA [5], et chaque fabricant d'automates a son dialecte du langage Structured Text de la norme IEC 61131-3 [6]."
+     },
+     {
+      "ligne": 23,
+      "phrase": "**Le temps de réponse n'est pas celui du modèle.** Sur simulateur local, le surcoût médian d'un adaptateur MCP va de 1,4 ms (Modbus) à 7,3 ms (OPC UA), réseau et inférence exclus [5]."
+     },
+     {
+      "ligne": 62,
+      "phrase": "Les mises en œuvre lues suivent le même patron : un serveur MCP par protocole industriel, qui traduit des appels d'outils en opérations natives sans modifier les systèmes de commande [5][6]."
+     },
+     {
+      "ligne": 66,
+      "phrase": "| IndustriConnect, prépublication [5] | Modbus (17 outils), MQTT/Sparkplug B (15), OPC UA (7) | Régies par des drapeaux de configuration | Évalué sur simulateurs |"
+     },
+     {
+      "ligne": 75,
+      "phrase": "IndustriConnect est la seule évaluation chiffrée trouvée [5]."
+     },
+     {
+      "ligne": 101,
+      "phrase": "À l'inverse, le prototype IndustriConnect n'a ni authentification, ni contrôle d'accès par rôle, ni journal d'audit; ses auteurs les rangent parmi les préalables à la production, avec une approbation humaine des écritures critiques pour la sûreté [5]."
+     },
+     {
+      "ligne": 121,
+      "phrase": "Ils nomment la suite : matériel réel, contrôle d'accès, plusieurs modèles, opérateur dans la boucle [5]."
+     },
+     {
+      "ligne": 185,
+      "phrase": "L'audit a relu ainsi [2] à [5], [8] et [10], qui confirment profils, versions, téléchargements et chiffres du banc d'essai; [1], [6], [7] et [9] n'ont pas été relus."
+     }
+    ]
+   }
+  ]
+ }
+]

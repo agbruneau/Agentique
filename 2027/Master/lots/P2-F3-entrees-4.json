@@ -1,0 +1,1727 @@
+[
+ {
+  "fichier": "chapitre-43-maturite-prospective.md",
+  "points_a_retenir": "## Points à retenir\n\n- La maturité se mesure par domaine d'affaires et par preuve, non par le nombre d'agents déployés. Le stade est celui du critère le plus faible.\n- Les échelles d'autonomie et les modèles de pratique existants sont des propositions non validées. Le modèle en cinq stades de ce chapitre l'est aussi.\n- Les déploiements étudiés se situent au stade 1 : agents courts, pilotés par prompt, évalués par des personnes. Aucun cas publié ne montre MCP, A2A ou un système multi-agents en production.\n- La feuille de route avance par jalons franchis sur preuve. Le contrôle précède l'autonomie, et le noyau de gouvernance est le jalon à ne pas sauter.\n- Deux incertitudes commandent l'horizon 2030 : l'extension des standards à l'identité et à la gouvernance, et la fédération des plans de contrôle.\n- Le scénario de l'archipel prolonge l'état de 2026. Le noyau possédé, les outils idempotents, le banc d'essai interne et l'essai de sortie valent dans les trois scénarios.\n- Deux échéances fermes encadrent la période : le 1er mai 2027 pour les institutions financières fédérales canadiennes, le 2 décembre 2027 pour le haut risque européen de l'annexe III.\n\n---",
+  "grille_de_decision": "## Grille de décision\n\n| Décision | Option par défaut | Quand s'en écarter |\n|---|---|---|\n| Unité d'évaluation de la maturité | Le domaine d'affaires, noté par son critère le plus faible | Très petite organisation : une seule évaluation |\n| Stade à atteindre avant un second domaine | Stade 2 | Second domaine limité à des prototypes sans écriture |\n| Ordre des investissements | Noyau de gouvernance avant la composition | Agent unique en lecture seule |\n| Standard instable (identité, télémétrie) | Couche interne d'isolation | Standard devenu stable et pris en charge des deux côtés |\n| Élargissement de l'autonomie | Par classe de décision, sur mesures, avec retrait automatique | Actions irréversibles ou réglementées : approbation maintenue |\n| Hypothèse de planification | Scénario B, avec les investissements sans regret | Signaux convergents vers A ou C |\n\n---",
+  "sources_resume": [
+   {
+    "n": 3,
+    "groupe": "Pages primaires lues le 11 novembre 2026 :",
+    "source": "[Measuring Agents in Production (arXiv 2512.04123, version 4)](https://arxiv.org/abs/2512.04123) — résumé; première moitié du texte relue le 12 novembre 2026.",
+    "phrases": [
+     {
+      "ligne": 45,
+      "phrase": "Elle dépeint des agents de stade 1 : 68 % exécutent moins de dix étapes avant une intervention humaine (« au plus dix » selon le résumé), 14 cas sur 20 pilotent par prompt un modèle du commerce sans en ajuster les poids, 74 % des répondants dépendent surtout d'une évaluation humaine [3]."
+     },
+     {
+      "ligne": 123,
+      "phrase": "| Portée des agents en production | Moins de dix étapes pour 68 % des agents étudiés [3] | Étude comparable montrant des parcours longs : hypothèse H2 à revoir |"
+     },
+     {
+      "ligne": 202,
+      "phrase": "- Les articles [4], [6] et [7] ont été lus par leur résumé seulement; [3], par son résumé et la première moitié de son texte."
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "groupe": "Pages primaires lues le 11 novembre 2026 :",
+    "source": "[Why Do Multi-Agent LLM Systems Fail? (arXiv 2503.13657, version 3)](https://arxiv.org/abs/2503.13657) — résumé.",
+    "phrases": [
+     {
+      "ligne": 105,
+      "phrase": "La taxonomie MAST recense quatorze modes d'échec, dont la plupart tiennent à la conception et à la coordination [4] (chapitre 21)."
+     },
+     {
+      "ligne": 124,
+      "phrase": "| Échecs de coordination | Quatorze modes recensés [4] | Analyse refaite sur des modèles récents : hypothèse H3 confirmée ou infirmée |"
+     },
+     {
+      "ligne": 202,
+      "phrase": "- Les articles [4], [6] et [7] ont été lus par leur résumé seulement; [3], par son résumé et la première moitié de son texte."
+     },
+     {
+      "ligne": 202,
+      "phrase": "Relues à l'audit : [1] à [4], [8] et [11]."
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "groupe": "Pages primaires lues le 11 novembre 2026 :",
+    "source": "[Context Engineering: From Prompts to Corporate Multi-Agent Architecture (arXiv 2603.09619, version 2)](https://arxiv.org/abs/2603.09619) — résumé; prépublication.",
+    "phrases": [
+     {
+      "ligne": 19,
+      "phrase": "Une prépublication propose une pyramide à quatre étages, de l'ingénierie de prompt à celle de spécification, sans validation mesurée [6] (chapitre 13)."
+     },
+     {
+      "ligne": 202,
+      "phrase": "- Les articles [4], [6] et [7] ont été lus par leur résumé seulement; [3], par son résumé et la première moitié de son texte."
+     }
+    ]
+   },
+   {
+    "n": 7,
+    "groupe": "Pages primaires lues le 11 novembre 2026 :",
+    "source": "[Governance Gaps in Agent Interoperability Protocols (arXiv 2606.31498)](https://arxiv.org/abs/2606.31498) — résumé; prépublication.",
+    "phrases": [
+     {
+      "ligne": 89,
+      "phrase": "Une analyse de cinq protocoles, en prépublication, conclut que la gouvernance est une couche d'architecture manquante au-dessus des standards plutôt qu'une fonction à leur ajouter [7]."
+     },
+     {
+      "ligne": 121,
+      "phrase": "| Gouvernance dans les protocoles | Aucun des cinq protocoles analysés n'encode l'ensemble des primitives de gouvernance [7] | Extension officielle d'approbation ou d'audit : scénario A sur la couche qui manque le plus |"
+     },
+     {
+      "ligne": 202,
+      "phrase": "- Les articles [4], [6] et [7] ont été lus par leur résumé seulement; [3], par son résumé et la première moitié de son texte."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+  "points_a_retenir": "## Points à retenir\n\n- Le plan de données d'inférence prend deux décisions : le modèle, puis la réplique. Seule la première engage la qualité.\n- agentgateway et Agent Router, tous deux à l'AAIF, délèguent le choix de la réplique à un sélecteur externe. Agent Router est l'ancien Envoy AI Gateway.\n- L'interface `InferencePool` et EPP sépare le choix de la passerelle de celui de l'ordonnanceur; llm-d en est une mise en œuvre parvenue à la version 1.0.\n- L'échelle à trois paliers est une cible de conception, non un schéma établi. Le calcul au moment de l'inférence est un axe d'effort, utile là où le modèle réussit déjà en partie.\n- Dans la seule comparaison indépendante lue, aucun routeur ne domine; la plupart échouent sur les requêtes difficiles, et beaucoup changent de choix devant une simple reformulation.\n- Le cache KV est le cache de prompts vu du côté de l'exploitant. Son gain dépend d'un préfixe stable et d'un routage qui sait où le préfixe réside.\n- Les gains chiffrés de l'ordonnancement conscient du cache et de la désagrégation viennent de llm-d et de ses contributeurs. Une prépublication universitaire confirme le principe, pas ces chiffres.\n- Le routage s'active par classe de tâche, après rejeu de traces internes, et se juge au coût par résultat réussi.\n\n---",
+  "grille_de_decision": "## Grille de décision\n\n| Décision | Option par défaut | Quand s'en écarter |\n|---|---|---|\n| Premier levier | Cache de préfixe, chez le fournisseur ou sur ses serveurs | — |\n| Choix du modèle | Règle explicite par classe de tâche | Service de notation par appel externe, si les traces montrent une part élevée de requêtes faciles |\n| Classe inconnue ou routeur en panne | Palier supérieur; rejet ou modèle de repli qualifié d'avance (chapitre 46) | Tâche sans enjeu : palier inférieur |\n| Calcul au moment de l'inférence | Réservé aux classes où le modèle réussit déjà en partie | Problème hors de portée : changer de modèle |\n| Inférence autohébergée | `InferencePool` et EPP derrière une passerelle conforme | Charge mono-locataire : mode autonome |\n| Ordonnancement | Conscient du cache et de la charge | Charges sans préfixe partagé : charge seule |\n\n---",
+  "sources_resume": [
+   {
+    "n": 9,
+    "groupe": "Pages primaires lues le 12 novembre 2026 :",
+    "source": "[Ong et coll. — RouteLLM (arXiv 2406.18665)](https://arxiv.org/abs/2406.18665) — prépublication; résumé seulement.",
+    "phrases": [
+     {
+      "ligne": 59,
+      "phrase": "Son résumé annonce des coûts réduits de plus de moitié dans certains cas, sans perte de qualité sur ses bancs d'essai, et une tenue des routeurs quand la paire de modèles change [9]."
+     }
+    ]
+   },
+   {
+    "n": 10,
+    "groupe": "Pages primaires lues le 12 novembre 2026 :",
+    "source": "[Chen, Zaharia et Zou — FrugalGPT (arXiv 2305.05176)](https://arxiv.org/abs/2305.05176) — prépublication; résumé seulement.",
+    "phrases": [
+     {
+      "ligne": 61,
+      "phrase": "Son résumé annonce jusqu'à 98 % de réduction de coût à performance égale au meilleur modèle de l'époque [10]."
+     }
+    ]
+   },
+   {
+    "n": 11,
+    "groupe": "Pages primaires lues le 12 novembre 2026 :",
+    "source": "[Snell et coll. — Scaling LLM Test-Time Compute Optimally (arXiv 2408.03314)](https://arxiv.org/abs/2408.03314) — prépublication; résumé seulement.",
+    "phrases": [
+     {
+      "ligne": 67,
+      "phrase": "Snell et ses coauteurs en étudient deux formes, la recherche guidée par un modèle vérificateur et l'ajustement adaptatif de la distribution de sortie; leur résumé en tire trois constats [11] :"
+     }
+    ]
+   },
+   {
+    "n": 12,
+    "groupe": "Pages primaires lues le 12 novembre 2026 :",
+    "source": "[Srivatsa et coll. — Preble (arXiv 2407.00023)](https://arxiv.org/abs/2407.00023) — prépublication; résumé seulement.",
+    "phrases": [
+     {
+      "ligne": 99,
+      "phrase": "Les prompts se répètent beaucoup : consignes de domaine, exemples d'usage d'outils, contexte long [12]."
+     },
+     {
+      "ligne": 101,
+      "phrase": "Preble note que les travaux antérieurs sur la réutilisation de l'état KV se limitaient à un seul GPU, alors que le service en production est distribué [12]."
+     },
+     {
+      "ligne": 126,
+      "phrase": "Preble annonce une latence moyenne de 1,5 à 14,5 fois meilleure et une latence au 99e centile de 2 à 10 fois meilleure que celle de systèmes de l'état de l'art, sur des charges réelles et deux modèles ouverts [12]."
+     },
+     {
+      "ligne": 203,
+      "phrase": "L'audit a relu [1], [2], [4], [6], [8], [12] et [13] : les chiffres cités y sont confirmés, sans recoupement sur le texte brut."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "fichier": "chapitre-45-reseaux-b2b-federes.md",
+  "points_a_retenir": "## Points à retenir\n\n- Le modèle de langage propose; les protections tiennent à des composants déterministes, attestés ou contractuels.\n- ODRL exprime une politique et DSP en fait un accord par une machine à sept états. Ni l'un ni l'autre n'applique l'accord une fois les données copiées.\n- Le connecteur EDC offre trois points de contrôle : politique d'accès cachée, approbation manuelle, retrait d'un accord.\n- Le justificatif OOR du vLEI désigne un représentant officiel humain. Son extension aux agents est une orientation de la GLEIF, sans format publié dans les pages lues.\n- La scission « Diplomate / Évaluateur interne », sans source, applique un principe publié : une donnée non fiable ne doit pas atteindre ce qui détient un secret. Elle ne suffit pas, car les concessions révèlent le prix de réserve.\n- Un TEE protège le calcul contre les logiciels et les administrateurs de l'exploitant, pas la sortie contre les participants.\n- Des agents de tarification fondés sur des LLM atteignent en expérience, de façon autonome, des prix supraconcurrentiels; la formulation des consignes pèse sur le résultat.\n- Un mandat de paiement prouve une autorisation, non une livraison. Le rapprochement à trois voies comble l'écart; son raccord aux protocoles d'agents reste à spécifier.\n\n---",
+  "grille_de_decision": "## Grille de décision\n\n| Décision | Option par défaut | Quand s'en écarter |\n|---|---|---|\n| Droits d'usage | ODRL 2.2, validé par code avant toute offre | Partenaire unique sous contrat classique |\n| Accès aux données | DSP par un connecteur; l'agent passe par un outil étroit | Aucun espace commun : entente bilatérale (chapitre 29) |\n| Identité et délégation | Justificatif d'entité vérifiable (vLEI si le réseau l'accepte); délégation distincte, bornée, révocable | Réseau fermé à adhésion contractuelle |\n| Secrets de négociation | Hors du contexte du modèle exposé à la contrepartie | Paramètres publics |\n| Calcul sur données conjointes | TEE avec attestation, code revu, sortie agrégée | Données non sensibles : transfert sous accord |\n| Consignes de tarification | Versionnées et revues par le contentieux | — |\n| Règlement | Rapprochement à trois voies avant tout mandat ou signature | Micropaiement : plafond et rapprochement a posteriori |\n\n---",
+  "sources_resume": [
+   {
+    "n": 7,
+    "groupe": "Pages primaires lues le 12 novembre 2026 :",
+    "source": "[Defeating Prompt Injections by Design (arXiv 2503.18813)](https://arxiv.org/abs/2503.18813) — résumé.",
+    "phrases": [
+     {
+      "ligne": 97,
+      "phrase": "CaMeL sépare le flux de contrôle, tiré de la requête de confiance, du flux de données, de sorte qu'une donnée non fiable ne puisse jamais modifier le déroulement du programme; des capacités empêchent une donnée privée de sortir par un flux non autorisé [7]."
+     },
+     {
+      "ligne": 253,
+      "phrase": "- **Articles.** [7], [8] et [10] à [12] sont connus par leur résumé."
+     }
+    ]
+   },
+   {
+    "n": 8,
+    "groupe": "Pages primaires lues le 12 novembre 2026 :",
+    "source": "[Behavioral Privacy Leakage in Agentic Negotiation (arXiv 2607.06815)](https://arxiv.org/abs/2607.06815) — résumé.",
+    "phrases": [
+     {
+      "ligne": 111,
+      "phrase": "Une prépublication de juillet 2026, acceptée à l'atelier AI4TCI d'ARES 2026, formalise cette fuite comportementale : un observateur infère le prix de réserve à partir des trajectoires de concession, du rythme et des schémas de convergence, sans qu'aucune valeur soit divulguée [8]."
+     },
+     {
+      "ligne": 253,
+      "phrase": "- **Articles.** [7], [8] et [10] à [12] sont connus par leur résumé."
+     }
+    ]
+   },
+   {
+    "n": 10,
+    "groupe": "Pages primaires lues le 12 novembre 2026 :",
+    "source": "[Calvano et coll., AER 110(10), 2020](https://www.aeaweb.org/articles?id=10.1257/aer.20190623) — résumé.",
+    "phrases": [
+     {
+      "ligne": 143,
+      "phrase": "Le résultat fondateur est évalué par les pairs : Calvano et ses coauteurs montrent en 2020 que des algorithmes de tarification par apprentissage Q, en concurrence répétée, apprennent de façon constante à pratiquer des prix supraconcurrentiels, sans communiquer entre eux [10]."
+     },
+     {
+      "ligne": 253,
+      "phrase": "- **Articles.** [7], [8] et [10] à [12] sont connus par leur résumé."
+     }
+    ]
+   },
+   {
+    "n": 11,
+    "groupe": "Pages primaires lues le 12 novembre 2026 :",
+    "source": "[Algorithmic Collusion by Large Language Models (arXiv 2404.00806)](https://arxiv.org/abs/2404.00806) — résumé.",
+    "phrases": [
+     {
+      "ligne": 145,
+      "phrase": "Fish, Gonczarowski et Shorrer étendent le constat aux modèles de langage [11]."
+     }
+    ]
+   },
+   {
+    "n": 12,
+    "groupe": "Pages primaires lues le 12 novembre 2026 :",
+    "source": "[Secret Collusion among AI Agents (arXiv 2402.07510)](https://arxiv.org/abs/2402.07510) — résumé.",
+    "phrases": [
+     {
+      "ligne": 151,
+      "phrase": "Une prépublication de Motwani et de ses coauteurs, révisée en juillet 2025, formalise la collusion secrète entre agents génératifs, où une coordination non voulue passe par des canaux stéganographiques difficiles à détecter [12]."
+     },
+     {
+      "ligne": 253,
+      "phrase": "- **Articles.** [7], [8] et [10] à [12] sont connus par leur résumé."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "points_a_retenir": "## Points à retenir\n\n- Une même règle traverse le chapitre : l'agent qui produit ne définit pas le critère et ne publie pas. Le contrôle se place sur un artefact intermédiaire lisible.\n- Le développement piloté par la spécification est une pratique outillée. La séparation en deux rôles à droits distincts en est une extrapolation, à valider.\n- Un agent qui génère des tests par propriétés trouve de vrais bogues, mais près d'un rapport sur deux est faux dans la seule étude lue. Les tests de mutation ciblés ont un bilan industriel publié; aucun seuil global, dont celui de 85 %, n'a de source.\n- L'exécution en miroir n'est sûre que pour du code qui ne modifie pas de données. Les écritures exigent une double écriture et une comparaison à la lecture.\n- Le patron Write-Audit-Publish existe nativement dans Iceberg par table; la publication de plusieurs tables demande un catalogue transactionnel comme Nessie.\n- Les journaux sont une surface d'injection démontrée, que les garde-fous de contenu testés n'arrêtent pas. La parade est un catalogue d'actions bornées.\n- La boucle de données réinjecte ce que la production a vu : données personnelles, secrets et injections. Elle se filtre et se teste par des canaris.\n- LoRA, DPO et le service multi-adaptateurs sont documentés séparément. Leur assemblage en recette de distillation n'est décrit par aucune source lue.\n\n---",
+  "grille_de_decision": "## Grille de décision\n\n| Décision | Option par défaut | Quand s'en écarter |\n|---|---|---|\n| Rôles de développement | Spécification et construction séparées par des droits, approbation humaine entre les deux | Prototype jetable |\n| Lecture du code | Index de symboles exposé par outils bornés | Petit dépôt, ou langage sans indexeur |\n| Tests écrits par l'agent | Propriétés et mutants tirés de la spécification | Code sans invariant exprimable : exemples relus par un humain |\n| Barrière de mutation | Seuil calibré par module, sur le code modifié | Jamais un seuil global unique |\n| Parité d'un remplacement | Exécution en miroir, écart nul, un cycle d'affaires complet | Écritures : double écriture et comparaison à la lecture |\n| Écriture de données | Branche, audit déterministe tiré du contrat, publication distincte; catalogue transactionnel si plusieurs tables | Table d'exploration non partagée |\n| Remédiation | Journaux tenus pour non fiables; l'agent propose, l'action vient d'un catalogue | Boucle fermée selon l'échelle du chapitre 34 |\n| Boucle de données | Masquage, canaris de mémorisation, filtrage des injections | — |\n| Prompts | Optimiseur si métrique étalonnée et exemples filtrés | Sinon, prompts rédigés et versionnés |\n| Petit modèle | Adaptateur par tâche, chargé au démarrage, avec repli | Tâche ouverte ou rare : grand modèle |\n\n---",
+  "sources_resume": [
+   {
+    "n": 3,
+    "groupe": "Pages primaires lues le 12 novembre 2026 :",
+    "source": "[Maaz et coll. — Agentic Property-Based Testing, arXiv:2510.09907](https://arxiv.org/abs/2510.09907) — résumé",
+    "phrases": [
+     {
+      "ligne": 65,
+      "phrase": "Une prépublication d'octobre 2025 décrit un agent qui infère des propriétés à partir du code et de la documentation de modules Python, écrit et exécute les tests, puis rédige des rapports de bogue [3]."
+     },
+     {
+      "ligne": 267,
+      "phrase": "- **Articles.** Les sept articles n'ont été lus que par leur résumé. [3], [8] et [9] sont des prépublications."
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "groupe": "Pages primaires lues le 12 novembre 2026 :",
+    "source": "[Foster et coll. — Mutation-Guided LLM-based Test Generation at Meta, arXiv:2501.12862](https://arxiv.org/abs/2501.12862) — résumé",
+    "phrases": [
+     {
+      "ligne": 73,
+      "phrase": "Meta a publié le bilan de son système ACH [4]."
+     },
+     {
+      "ligne": 264,
+      "phrase": "- **Audit du 12 novembre 2026.** [1], [2], [4], [6], [8], [9], [11] et [14] relus : faits confirmés, l'attaque de [9] et le comptage de [8] précisés."
+     }
+    ]
+   },
+   {
+    "n": 8,
+    "groupe": "Pages primaires lues le 12 novembre 2026 :",
+    "source": "[Shah — LogJack, arXiv:2604.15368](https://arxiv.org/abs/2604.15368) — résumé",
+    "phrases": [
+     {
+      "ligne": 140,
+      "phrase": "Une prépublication d'avril 2026, LogJack, mesure l'injection indirecte par des journaux infonuagiques contre des agents de débogage [8]."
+     },
+     {
+      "ligne": 264,
+      "phrase": "- **Audit du 12 novembre 2026.** [1], [2], [4], [6], [8], [9], [11] et [14] relus : faits confirmés, l'attaque de [9] et le comptage de [8] précisés."
+     },
+     {
+      "ligne": 264,
+      "phrase": "- **Audit du 12 novembre 2026.** [1], [2], [4], [6], [8], [9], [11] et [14] relus : faits confirmés, l'attaque de [9] et le comptage de [8] précisés."
+     },
+     {
+      "ligne": 267,
+      "phrase": "- **Articles.** Les sept articles n'ont été lus que par leur résumé. [3], [8] et [9] sont des prépublications."
+     }
+    ]
+   },
+   {
+    "n": 9,
+    "groupe": "Pages primaires lues le 12 novembre 2026 :",
+    "source": "[Pasquini et coll. — When AIOps Become « AI Oops », arXiv:2508.06394](https://arxiv.org/abs/2508.06394) — résumé",
+    "phrases": [
+     {
+      "ligne": 142,
+      "phrase": "Une seconde prépublication, d'août 2025, montre que l'attaquant n'a besoin d'aucune connaissance préalable du système visé [9]."
+     },
+     {
+      "ligne": 264,
+      "phrase": "- **Audit du 12 novembre 2026.** [1], [2], [4], [6], [8], [9], [11] et [14] relus : faits confirmés, l'attaque de [9] et le comptage de [8] précisés."
+     },
+     {
+      "ligne": 264,
+      "phrase": "- **Audit du 12 novembre 2026.** [1], [2], [4], [6], [8], [9], [11] et [14] relus : faits confirmés, l'attaque de [9] et le comptage de [8] précisés."
+     },
+     {
+      "ligne": 267,
+      "phrase": "- **Articles.** Les sept articles n'ont été lus que par leur résumé. [3], [8] et [9] sont des prépublications."
+     }
+    ]
+   },
+   {
+    "n": 10,
+    "groupe": "Pages primaires lues le 12 novembre 2026 :",
+    "source": "[Carlini et coll. — The Secret Sharer, arXiv:1802.08232](https://arxiv.org/abs/1802.08232) — résumé",
+    "phrases": [
+     {
+      "ligne": 165,
+      "phrase": "**Un modèle mémorise ce qu'il a vu.** Carlini et ses coauteurs proposent une méthode pour mesurer le risque qu'un modèle génératif mémorise involontairement des séquences rares de ses données d'entraînement [10]."
+     }
+    ]
+   },
+   {
+    "n": 12,
+    "groupe": "Pages primaires lues le 12 novembre 2026 :",
+    "source": "[Hu et coll. — LoRA, arXiv:2106.09685](https://arxiv.org/abs/2106.09685) — résumé",
+    "phrases": [
+     {
+      "ligne": 185,
+      "phrase": "**LoRA** gèle les poids du modèle et entraîne de petites matrices de rang faible insérées dans chaque couche [12]."
+     }
+    ]
+   },
+   {
+    "n": 13,
+    "groupe": "Pages primaires lues le 12 novembre 2026 :",
+    "source": "[Rafailov et coll. — Direct Preference Optimization, arXiv:2305.18290](https://arxiv.org/abs/2305.18290) — résumé",
+    "phrases": [
+     {
+      "ligne": 187,
+      "phrase": "**DPO** apprend des préférences : des paires où une sortie est jugée meilleure qu'une autre [13]."
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "fichier": "chapitre-48-revue-litterature.md",
+  "points_a_retenir": "## Points à retenir\n\n- La recherche retenue est récente et peu consolidée : 77 notices sur 83 datent de 2025 ou de 2026, et 52 sont des prépublications ou des documents de travail.\n- L'ouvrage s'appuie d'abord sur les spécifications, les textes normatifs et la documentation d'éditeur; la recherche fournit un cinquième de ses sources, par arXiv.\n- Aucune notice ne mesure un déploiement de MCP ou d'A2A en production. La sécurité des deux protocoles est mieux étudiée que leur usage; une analyse relève onze failles d'A2A exploitables sans défaut d'implémentation.\n- À calcul égal, l'avantage du multi-agents sur l'agent unique s'efface ou s'inverse pour les modèles forts. Ce qui aide est la diversité des agents, la capacité de l'orchestrateur et une compression du contexte qui ne perd rien d'utile.\n- Les bancs d'essai en usage ont des défauts mesurés : plus du quart des tâches d'un échantillon de 168 bancs posent un problème critique. Un écart de quelques points entre deux systèmes n'est pas une preuve.\n- Les défenses contre l'injection d'invites sont presque toutes évaluées sur un seul banc. L'isolation par construction offre une garantie et coûte de l'utilité.\n- Les gains de productivité établis par des essais randomisés concernent des assistants, à l'échelle de la tâche. L'effet d'agents autonomes sur les résultats d'une entreprise n'est pas mesuré.\n- Les études d'adoption convergent : le frein est l'organisation, les données et la vérification, non le modèle. Elles reposent sur de petits échantillons.\n- La littérature de gouvernance propose des cadres et n'en valide aucun.\n- Quinze travaux relevés hors protocole le 14 novembre 2026 précisent trois cases de la synthèse : l'écosystème des registres de MCP, les défauts du logiciel qui porte les agents et le biais d'automatisation. Aucun ne mesure un déploiement de MCP ou d'A2A en production.\n\n---",
+  "grille_de_decision": "## Grille de décision\n\n| Décision | Option par défaut | Quand s'en écarter |\n|---|---|---|\n| Lire un score de banc d'essai | Le tenir pour une borne, sur une tâche et une version de modèle; demander la constance (pass^k) et le coût | Banc audité, refait sur ses propres tâches |\n| Citer une prépublication | La marquer comme telle; chercher la version publiée | Aucun cas |\n| Choisir une architecture multi-agents | Partir de l'agent unique; décomposer quand le contexte d'un seul agent sature ou que la tâche se sépare proprement | Vérification indépendante exigée : un second agent, d'un autre modèle |\n| Dimensionner un système multi-agents | Peu d'agents, différents; un orchestrateur capable | Tâche parallélisable sans dépendance entre lots |\n| Se défendre de l'injection d'invites | Isolation par construction pour les actions à effet; filtrage en complément | Agent en lecture seule sur des données fiables |\n| Justifier un gain de productivité | Ne pas transposer les essais sur assistants; mesurer sur place, contre une base non agentique (chapitre 40) | Tâche identique à celle d'un essai publié |\n| Retenir un cadre de gouvernance | S'appuyer sur les textes normatifs (chapitres 35 à 39); lire la recherche pour ses idées | Cadre validé par des données d'incidents |\n| Suivre la littérature | Refaire les dix requêtes chaque trimestre (chapitre 49) | Sujet à échéance réglementaire : veille mensuelle |\n\n---",
+  "sources_resume": [
+   {
+    "n": 1,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur :",
+    "source": "[Zhu et coll. — Establishing Best Practices for Building Rigorous Agentic Benchmarks (NeurIPS, 2025)](https://doi.org/10.52202/085713-5547) — la notice l'indique sur arXiv; Crossref la situe dans les actes de NeurIPS.",
+    "phrases": [
+     {
+      "ligne": 49,
+      "phrase": "Un article que sa notice plaçait sur arXiv figure, d'après Crossref, dans les actes de la conférence NeurIPS; il est compté parmi les publications évaluées [1]."
+     },
+     {
+      "ligne": 191,
+      "phrase": "| Liste de contrôle ABC [1] | Montage des tâches et calcul des scores de bancs en usage | Des défauts mènent à sous-estimer ou à surestimer la performance jusqu'à 100 % en valeur relative; SWE-bench Verified a des cas de test insuffisants, τ-bench compte des réponses vides comme réussies |"
+     }
+    ]
+   },
+   {
+    "n": 2,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur :",
+    "source": "[Cemri et coll. — Why Do Multi-Agent LLM Systems Fail? (NeurIPS, 2025)](https://doi.org/10.52202/085713-4082) — version publiée de la taxonomie MAST, que l'ouvrage cite par arXiv.",
+    "phrases": [
+     {
+      "ligne": 78,
+      "phrase": "Un article publié en conférence et cité par son adresse arXiv y compte comme prépublication : c'est le cas de MAST, que la notice de Consensus situe à la conférence NeurIPS de 2025 [2]."
+     },
+     {
+      "ligne": 140,
+      "phrase": "Sa notice décrit plus de 1 600 traces annotées sur sept cadriciels, une taxonomie de quatorze modes tirée de 150 traces avec un accord entre annotateurs de 0,88, et trois catégories : conception du système, désalignement entre agents, vérification de la tâche [2]."
+     }
+    ]
+   },
+   {
+    "n": 3,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur :",
+    "source": "[Debenedetti et coll. — Defeating Prompt Injections by Design (IEEE SaTML, 2026)](https://doi.org/10.1109/satml68715.2026.00040) — CaMeL.",
+    "phrases": [
+     {
+      "ligne": 92,
+      "phrase": "**Les deux corpus se recoupent peu.** L'ouvrage cite déjà au moins neuf des travaux retrouvés, dont la taxonomie MAST, les deux revues de protocoles les plus citées [33][34], la défense CaMeL [3], le banc τ-bench [35] et l'architecture SagaLLM [4]."
+     },
+     {
+      "ligne": 211,
+      "phrase": "Elle résout 77 % des tâches du banc AgentDojo avec des garanties de sécurité, contre 84 % pour un système sans défense [3]."
+     }
+    ]
+   },
+   {
+    "n": 4,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur :",
+    "source": "[Chang et coll. — SagaLLM: Context Management, Validation, and Transaction Guarantees for Multi-Agent LLM Planning (Proceedings of the VLDB Endowment, 2025)](https://doi.org/10.14778/3750601.3750611)",
+    "phrases": [
+     {
+      "ligne": 92,
+      "phrase": "**Les deux corpus se recoupent peu.** L'ouvrage cite déjà au moins neuf des travaux retrouvés, dont la taxonomie MAST, les deux revues de protocoles les plus citées [33][34], la défense CaMeL [3], le banc τ-bench [35] et l'architecture SagaLLM [4]."
+     },
+     {
+      "ligne": 153,
+      "phrase": "SagaLLM, paru dans les actes de VLDB, combine le patron Saga, une mémoire persistante, des compensations automatiques et des agents de validation indépendants; ses essais montrent que des modèles laissés seuls violent des contraintes interdépendantes ou ne se rétablissent pas après une perturbation [4]."
+     }
+    ]
+   },
+   {
+    "n": 5,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur :",
+    "source": "[Ferrag et coll. — From LLM Reasoning to Autonomous AI Agents: A Comprehensive Review (IEEE Access, 2026)](https://doi.org/10.1109/access.2026.3698694)",
+    "phrases": [
+     {
+      "ligne": 102,
+      "phrase": "Une revue plus large recense une soixantaine de bancs d'essai, les cadriciels de 2023 à 2025 et les mêmes protocoles [5]; une autre compare sept cadriciels et quatre protocoles [36]."
+     }
+    ]
+   },
+   {
+    "n": 6,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur :",
+    "source": "[Xing et coll. — The Natural Language Interaction Protocol and Standard for AI Agents (Proceedings of the ACM AI Leadership Summit, 2026)](https://doi.org/10.1145/3806096.3844848)",
+    "phrases": [
+     {
+      "ligne": 116,
+      "phrase": "Une troisième voie vient de la normalisation classique : le protocole NLIP, normalisé par Ecma International, définit une enveloppe sémantique légère au-dessus de HTTP, de WebSocket et d'AMQP [6]."
+     }
+    ]
+   },
+   {
+    "n": 7,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur :",
+    "source": "[Dobrovolskyi — Empirical Comparison of Agent Communication Protocols for Task Orchestration (Radio Electronics, Computer Science, Control, 2026)](https://doi.org/10.15588/1607-3274-2026-3-9)",
+    "phrases": [
+     {
+      "ligne": 120,
+      "phrase": "L'intégration d'outils est plus rapide sur les requêtes simples; la délégation entre agents l'emporte sur les comparaisons complexes, parce que les fenêtres de contexte réparties consomment moins de jetons [7]."
+     }
+    ]
+   },
+   {
+    "n": 8,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur :",
+    "source": "[Hou et coll. — Model Context Protocol (MCP): Landscape, Security Threats, and Future Research Directions (ACM Transactions on Software Engineering and Methodology, 2026)](https://doi.org/10.1145/3796519)",
+    "phrases": [
+     {
+      "ligne": 126,
+      "phrase": "Une étude parue dans une revue de génie logiciel décrit le cycle de vie d'un serveur MCP en quatre phases et seize activités, et en tire seize scénarios de menace répartis entre quatre types d'attaquants [8]."
+     }
+    ]
+   },
+   {
+    "n": 9,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur :",
+    "source": "[Anbiaee et coll. — Security threat modeling for emerging AI-agent protocols: MCP, A2A, Agora, and ANP (Journal of Information Security and Applications, 2026)](https://doi.org/10.1016/j.jisa.2026.104645)",
+    "phrases": [
+     {
+      "ligne": 126,
+      "phrase": "Une autre modélise les menaces de quatre protocoles et retient douze risques au niveau du protocole, avec une mesure sur MCP : l'exécution de l'outil d'un mauvais fournisseur lorsque plusieurs serveurs sont composés [9]."
+     },
+     {
+      "ligne": 314,
+      "phrase": "MCP et A2A forment le socle; l'identité n'est pas stabilisée | Les deux protocoles sont traités comme le socle [39]; leurs faiblesses de sécurité sont documentées [9][42]; l'identité d'agent en est au stade de la proposition [81] | Appuyée |"
+     }
+    ]
+   },
+   {
+    "n": 10,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur :",
+    "source": "[Ahmad et coll. — Model Context Protocol Servers: A Systematic Review of Designs, Use Cases and Future Directions (International Journal of Advanced Networking and Applications, 2026)](https://doi.org/10.35444/ijana.2026.17605)",
+    "phrases": [
+     {
+      "ligne": 126,
+      "phrase": "Une revue fondée sur 1 899 serveurs MCP relève des schémas incohérents, des risques d'empoisonnement d'outils et des problèmes de maintenabilité [10]."
+     }
+    ]
+   },
+   {
+    "n": 11,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur :",
+    "source": "[Păduraru et coll. — A Trace-Based Assurance Framework for Agentic AI Orchestration: Contracts, Testing, and Governance (ENASE, 2026)](https://doi.org/10.5220/0014840300004015)",
+    "phrases": [
+     {
+      "ligne": 153,
+      "phrase": "Un cadre d'assurance instrumente les exécutions en traces de messages et d'actions, assorties de contrats vérifiables par machine, de rejeu déterministe et d'une gouvernance appliquée à l'exécution [11]."
+     }
+    ]
+   },
+   {
+    "n": 12,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur :",
+    "source": "[Xu et coll. — TheAgentCompany: Benchmarking LLM Agents on Consequential Real World Tasks (NeurIPS, 2025)](https://doi.org/10.52202/085713-0315)",
+    "phrases": [
+     {
+      "ligne": 181,
+      "phrase": "TheAgentCompany reconstitue une petite société de logiciel; l'agent le plus compétitif y accomplit 30 % des tâches de façon autonome, et les tâches longues restent hors de portée [12]."
+     },
+     {
+      "ligne": 312,
+      "phrase": "Les agents en production restent bornés et supervisés | Pratiques de production aux trois premiers niveaux de maturité sur six [78]; tâches longues hors de portée sur les bancs de 2024 et de 2025 [12][35] | Appuyée, sur des données de 2024 et de 2025 |"
+     }
+    ]
+   },
+   {
+    "n": 13,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur :",
+    "source": "[Nageshwaran et coll. — Large Language Model Agent Evaluation and Benchmarking: A Systematic Survey, Meta-Taxonomy, and Critical Research Roadmap (Artificial Intelligence Review, 2026)](https://doi.org/10.1007/s10462-026-11678-4)",
+    "phrases": [
+     {
+      "ligne": 193,
+      "phrase": "| Revue de cartographie [13] | 259 études, dont dix-sept bancs en vue vérifiés à la main | Contamination, non-déterminisme et coût d'exécution forment un trilemme : aucun des dix-sept ne montre les trois maîtrisés ensemble, aucun ne publie un relevé de coût complet |"
+     }
+    ]
+   },
+   {
+    "n": 14,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur :",
+    "source": "[Mohammadi et coll. — Evaluation and Benchmarking of LLM Agents: A Survey (KDD, 2025)](https://doi.org/10.1145/3711896.3736570)",
+    "phrases": [
+     {
+      "ligne": 201,
+      "phrase": "La revue de référence, parue à la conférence KDD, relève que les difficultés propres à l'entreprise sont souvent ignorées : accès aux données selon le rôle, garanties de fiabilité, interactions longues et changeantes, conformité [14]."
+     }
+    ]
+   },
+   {
+    "n": 15,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur :",
+    "source": "[An et coll. — IPIGuard: A Novel Tool Dependency Graph-Based Defense Against Indirect Prompt Injection in LLM Agents (EMNLP, 2025)](https://doi.org/10.18653/v1/2025.emnlp-main.53)",
+    "phrases": [
+     {
+      "ligne": 211,
+      "phrase": "D'autres travaux suivent le même principe : patrons de conception à résistance démontrable [63], graphe de dépendance d'outils planifié avant tout contact avec des données externes [15], contrôle des flux d'information [64], règles appliquées de façon déterministe à chaque frontière d'appel d'outil [65]."
+     }
+    ]
+   },
+   {
+    "n": 16,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur :",
+    "source": "[Jia et coll. — The Task Shield: Enforcing Task Alignment to Defend Against Indirect Prompt Injection in LLM Agents (ACL, 2025)](https://doi.org/10.18653/v1/2025.acl-long.1435)",
+    "phrases": [
+     {
+      "ligne": 213,
+      "phrase": "**Le filtrage et la vérification à l'exécution.** Un modèle auxiliaire détecte et retire les instructions injectées, avec des taux de faux positifs et de faux négatifs annoncés sous 1 % [66]; un mécanisme vérifie que chaque appel d'outil sert l'objectif de l'utilisateur [16]; un validateur dynamique surveille les écarts au plan initial [17]."
+     }
+    ]
+   },
+   {
+    "n": 17,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur :",
+    "source": "[Li et coll. — DRIFT: Dynamic Rule-Based Defense with Injection Isolation for Securing LLM Agents (NeurIPS, 2025)](https://doi.org/10.52202/085713-2791)",
+    "phrases": [
+     {
+      "ligne": 213,
+      "phrase": "**Le filtrage et la vérification à l'exécution.** Un modèle auxiliaire détecte et retire les instructions injectées, avec des taux de faux positifs et de faux négatifs annoncés sous 1 % [66]; un mécanisme vérifie que chaque appel d'outil sert l'objectif de l'utilisateur [16]; un validateur dynamique surveille les écarts au plan initial [17]."
+     }
+    ]
+   },
+   {
+    "n": 18,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur :",
+    "source": "[Khan et coll. — Evaluating Indirect Prompt Injection Defenses in Tool-Using LLM Agents: Security, Utility, and Replication (Computers, 2026)](https://doi.org/10.3390/computers15090570)",
+    "phrases": [
+     {
+      "ligne": 221,
+      "phrase": "Aucune des comparaisons appariées n'atteint le seuil de signification après correction, et les auteurs demandent que toute évaluation rapporte la faisabilité des buts d'attaque, l'utilité et la variation d'une exécution à l'autre [18]."
+     }
+    ]
+   },
+   {
+    "n": 19,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur :",
+    "source": "[Shi et coll. — Prompt Injection Attack to Tool Selection in LLM Agents (NDSS, 2026)](https://doi.org/10.14722/ndss.2026.230675)",
+    "phrases": [
+     {
+      "ligne": 223,
+      "phrase": "Les défenses de prévention et de détection essayées sont jugées insuffisantes [19]."
+     }
+    ]
+   },
+   {
+    "n": 20,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur :",
+    "source": "[Zhang et coll. — A Survey on the Memory Mechanism of Large Language Model-based Agents (ACM Transactions on Information Systems, 2025)](https://doi.org/10.1145/3748302)",
+    "phrases": [
+     {
+      "ligne": 231,
+      "phrase": "Après une première revue d'ensemble de la conception et de l'évaluation [20], chacune propose son découpage : par stades d'évolution, du stockage à l'expérience [21], par boucle d'écriture, de gestion et de lecture [32], par formes, fonctions et dynamiques [67]."
+     }
+    ]
+   },
+   {
+    "n": 21,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur :",
+    "source": "[Luo et coll. — From Storage to Experience: A Survey on the Evolution of LLM Agent Memory Mechanisms (Findings of ACL, 2026)](https://doi.org/10.18653/v1/2026.findings-acl.2069)",
+    "phrases": [
+     {
+      "ligne": 231,
+      "phrase": "Après une première revue d'ensemble de la conception et de l'évaluation [20], chacune propose son découpage : par stades d'évolution, du stockage à l'expérience [21], par boucle d'écriture, de gestion et de lecture [32], par formes, fonctions et dynamiques [67]."
+     }
+    ]
+   },
+   {
+    "n": 22,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur :",
+    "source": "[Chhikara et coll. — Mem0: Building Production-Ready AI Agents with Scalable Long-Term Memory (Frontiers in Artificial Intelligence and Applications, 2025)](https://doi.org/10.3233/faia251160) — les auteurs éditent le produit évalué.",
+    "phrases": [
+     {
+      "ligne": 233,
+      "phrase": "Le résultat chiffré le plus cité, une latence au 95e centile inférieure de 91 % et un coût en jetons réduit de plus de 90 % par rapport au contexte complet, vient d'un article dont les auteurs éditent le produit évalué [22]."
+     }
+    ]
+   },
+   {
+    "n": 23,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur :",
+    "source": "[Oyewale et coll. — LLM-Driven Ontology Construction for Enterprise Knowledge Graphs (IEEE ICSC, 2026)](https://doi.org/10.1109/icsc67292.2026.00044)",
+    "phrases": [
+     {
+      "ligne": 243,
+      "phrase": "La construction automatique d'ontologies reste elle-même imparfaite : un pipeline évalué en conférence atteint un score F1 de 0,724 dans son meilleur domaine et bute sur la définition de la portée et sur le raisonnement hiérarchique [23]."
+     }
+    ]
+   },
+   {
+    "n": 24,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur :",
+    "source": "[Noy et Zhang — Experimental evidence on the productivity effects of generative artificial intelligence (Science, 2023)](https://doi.org/10.1126/science.adh2586)",
+    "phrases": [
+     {
+      "ligne": 256,
+      "phrase": "| Rédaction professionnelle [24] | Expérience préenregistrée, 453 professionnels | Temps réduit de 40 %, qualité en hausse de 18 % |"
+     }
+    ]
+   },
+   {
+    "n": 25,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur :",
+    "source": "[Cui et coll. — The Effects of Generative AI on High-Skilled Work: Evidence from Three Field Experiments with Software Developers (Management Science, 2026)](https://doi.org/10.1287/mnsc.2025.00535)",
+    "phrases": [
+     {
+      "ligne": 257,
+      "phrase": "| Développement logiciel [25] | Trois essais randomisés, 4 867 développeurs | 26,08 % de tâches terminées de plus (erreur type : 10,3 %) |"
+     }
+    ]
+   },
+   {
+    "n": 26,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur :",
+    "source": "[Dell'Acqua et coll. — Navigating the Jagged Technological Frontier (Organization Science, 2026)](https://doi.org/10.1287/orsc.2025.21838)",
+    "phrases": [
+     {
+      "ligne": 258,
+      "phrase": "| Conseil en gestion [26] | Expérience préenregistrée, 758 consultants | Dans la frontière de capacité : 12,2 % de tâches de plus, 25,1 % plus vite; hors de la frontière : 19 % de chances en moins de produire une solution correcte |"
+     },
+     {
+      "ligne": 262,
+      "phrase": "Il est inégal : il profite surtout aux moins expérimentés, et il s'inverse quand la tâche sort de ce que le modèle sait faire, ce que les auteurs appellent une frontière en dents de scie [26]."
+     }
+    ]
+   },
+   {
+    "n": 27,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur :",
+    "source": "[Agentic AI in Enterprise Business Processes: A Systematic Review and Practitioner Survey on Adoption Readiness (International Conference on Artificial Intelligence Management and Trends, 2026)](https://doi.org/10.63962/nxpa6137) — la notice ne nomme pas les auteurs.",
+    "phrases": [
+     {
+      "ligne": 272,
+      "phrase": "Une revue de 47 articles et de 12 rapports d'industrie, doublée d'un sondage de 136 professionnels, relève un écart persistant entre les résultats annoncés par les fournisseurs et ceux qui sont vérifiés de façon indépendante; 73 % de ses répondants tiennent la préparation de l'organisation, non la technique, pour le premier obstacle [27]."
+     }
+    ]
+   },
+   {
+    "n": 28,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur :",
+    "source": "[Tanudjaja et coll. — The Agentic AI Adoption Paradox: Barriers to Enterprise Deployment in the Software Industry (Data: Journal of Information Systems and Management, 2026)](https://doi.org/10.61978/data.v4i3.1643)",
+    "phrases": [
+     {
+      "ligne": 272,
+      "phrase": "Une étude menée en Indonésie ajoute un facteur économique : un faible coût de la main-d'œuvre réduit l'incitation à investir [28]."
+     }
+    ]
+   },
+   {
+    "n": 29,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur :",
+    "source": "[Bahidika — Agentic Accountability: “The Buck Stops Where?” (International Journal of Advanced Computer Science and Applications, 2026)](https://doi.org/10.14569/ijacsa.2026.0170502)",
+    "phrases": [
+     {
+      "ligne": 284,
+      "phrase": "Appliqué à 177 incidents d'une base publique, il en classe 23 % dans le palier interdit; sur 41 préjudices tangibles, 26 impliquaient une autonomie moyenne ou élevée [29]."
+     }
+    ]
+   },
+   {
+    "n": 30,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur :",
+    "source": "[Gabison et Xian — Inherent and emergent liability issues in LLM-based agentic systems: a principal-agent perspective (atelier REALM, 2025)](https://arxiv.org/abs/2504.03255)",
+    "phrases": [
+     {
+      "ligne": 288,
+      "phrase": "Deux travaux décrivent la dilution de la responsabilité entre acteurs, sous l'angle de la relation entre mandant et mandataire [30] et sous celui des marchés où acheteurs et vendeurs déploient chacun des agents [83]."
+     },
+     {
+      "ligne": 504,
+      "phrase": "L'atelier indiqué pour la source [30] n'est connu que par la notice."
+     }
+    ]
+   },
+   {
+    "n": 31,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — publications parues dans une revue ou une conférence; le lien mène à l'éditeur :",
+    "source": "[Alibašić — Governing Agentic AI in the Administrative State (Future Internet, 2026)](https://doi.org/10.3390/fi18100528)",
+    "phrases": [
+     {
+      "ligne": 288,
+      "phrase": "Une revue consacrée à l'administration publique nomme sept mécanismes de risque, dont la dérive des autorisations, la fragmentation de l'imputabilité et l'écart entre la vitesse d'action et la réversibilité; son architecture reste une proposition à valider [31]."
+     }
+    ]
+   },
+   {
+    "n": 32,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Du — Memory for Autonomous LLM Agents: Mechanisms, Evaluation, and Emerging Frontiers (arXiv, 2026)](https://consensus.app/papers/details/w:d2c9bfd2-6e57-4342-87e2-eca95d208b83/) — identifiant non confirmé, lien vers la notice de Consensus.",
+    "phrases": [
+     {
+      "ligne": 49,
+      "phrase": "Une seule notice n'a pas été retrouvée [32]."
+     },
+     {
+      "ligne": 231,
+      "phrase": "Après une première revue d'ensemble de la conception et de l'évaluation [20], chacune propose son découpage : par stades d'évolution, du stockage à l'expérience [21], par boucle d'écriture, de gestion et de lecture [32], par formes, fonctions et dynamiques [67]."
+     },
+     {
+      "ligne": 233,
+      "phrase": "Les méthodes n'avaient pas été comparées dans les mêmes conditions avant 2026 [69]; les bancs d'essai passent du rappel statique à des tests sur plusieurs sessions, qui exposent des lacunes tenaces [32]."
+     },
+     {
+      "ligne": 235,
+      "phrase": "Les revues citent la confidentialité et l'oubli appris parmi les questions ouvertes [32]."
+     }
+    ]
+   },
+   {
+    "n": 33,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Ehtesham et coll. — A survey of agent interoperability protocols: MCP, ACP, A2A, and ANP (arXiv, 2025)](https://arxiv.org/abs/2505.02279)",
+    "phrases": [
+     {
+      "ligne": 92,
+      "phrase": "**Les deux corpus se recoupent peu.** L'ouvrage cite déjà au moins neuf des travaux retrouvés, dont la taxonomie MAST, les deux revues de protocoles les plus citées [33][34], la défense CaMeL [3], le banc τ-bench [35] et l'architecture SagaLLM [4]."
+     },
+     {
+      "ligne": 102,
+      "phrase": "L'une compare MCP, ACP, A2A et ANP et propose de les adopter par étapes, de l'accès aux outils jusqu'aux places de marché décentralisées [33]."
+     }
+    ]
+   },
+   {
+    "n": 34,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Yang et coll. — A Survey of AI Agent Protocols (arXiv, 2025)](https://arxiv.org/abs/2504.16736)",
+    "phrases": [
+     {
+      "ligne": 92,
+      "phrase": "**Les deux corpus se recoupent peu.** L'ouvrage cite déjà au moins neuf des travaux retrouvés, dont la taxonomie MAST, les deux revues de protocoles les plus citées [33][34], la défense CaMeL [3], le banc τ-bench [35] et l'architecture SagaLLM [4]."
+     },
+     {
+      "ligne": 102,
+      "phrase": "L'autre classe les protocoles selon deux axes : orientés contexte ou inter-agents, généraux ou propres à un domaine [34]."
+     }
+    ]
+   },
+   {
+    "n": 35,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Yao et coll. — τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains (arXiv, 2024)](https://arxiv.org/abs/2406.12045)",
+    "phrases": [
+     {
+      "ligne": 92,
+      "phrase": "**Les deux corpus se recoupent peu.** L'ouvrage cite déjà au moins neuf des travaux retrouvés, dont la taxonomie MAST, les deux revues de protocoles les plus citées [33][34], la défense CaMeL [3], le banc τ-bench [35] et l'architecture SagaLLM [4]."
+     },
+     {
+      "ligne": 181,
+      "phrase": "À sa publication, en 2024, les meilleurs agents réussissaient moins de la moitié des tâches et moins du quart sur huit essais consécutifs dans le commerce de détail [35]."
+     },
+     {
+      "ligne": 312,
+      "phrase": "Les agents en production restent bornés et supervisés | Pratiques de production aux trois premiers niveaux de maturité sur six [78]; tâches longues hors de portée sur les bancs de 2024 et de 2025 [12][35] | Appuyée, sur des données de 2024 et de 2025 |"
+     }
+    ]
+   },
+   {
+    "n": 36,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Derouiche et coll. — Agentic AI Frameworks: Architectures, Protocols, and Design Challenges (arXiv, 2025)](https://arxiv.org/abs/2508.10146)",
+    "phrases": [
+     {
+      "ligne": 102,
+      "phrase": "Une revue plus large recense une soixantaine de bancs d'essai, les cadriciels de 2023 à 2025 et les mêmes protocoles [5]; une autre compare sept cadriciels et quatre protocoles [36]."
+     }
+    ]
+   },
+   {
+    "n": 37,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Sander et coll. — A Technical Taxonomy of LLM Agent Communication Protocols (Research Square, 2026)](https://arxiv.org/abs/2606.19135)",
+    "phrases": [
+     {
+      "ligne": 106,
+      "phrase": "**La pile sera stratifiée.** Une taxonomie technique de neuf protocoles ouverts conclut qu'aucun ne maximisera à la fois polyvalence, efficacité et portabilité, et que le champ évoluera vers une pile fédérée, en couches [37]."
+     },
+     {
+      "ligne": 110,
+      "phrase": "La taxonomie de neuf protocoles désigne de son côté la confidentialité et l'application des politiques comme des lacunes ouvertes [37]."
+     }
+    ]
+   },
+   {
+    "n": 38,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Yuan et coll. — Beyond Message Passing: A Semantic View of Agent Communication Protocols (arXiv, 2026)](https://arxiv.org/abs/2604.02369)",
+    "phrases": [
+     {
+      "ligne": 108,
+      "phrase": "Ces responsabilités sont repoussées dans les invites et le code applicatif, où elles forment une dette cachée [38]."
+     }
+    ]
+   },
+   {
+    "n": 39,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Qian et coll. — MPAC: A Multi-Principal Agent Coordination Protocol for Interoperable Multi-Agent Collaboration (arXiv, 2026)](https://arxiv.org/abs/2604.09744)",
+    "phrases": [
+     {
+      "ligne": 114,
+      "phrase": "Quand les agents de plusieurs mandants doivent agir sur un état partagé, la coordination retombe sur l'échange libre et la fusion manuelle [39]."
+     },
+     {
+      "ligne": 314,
+      "phrase": "MCP et A2A forment le socle; l'identité n'est pas stabilisée | Les deux protocoles sont traités comme le socle [39]; leurs faiblesses de sécurité sont documentées [9][42]; l'identité d'agent en est au stade de la proposition [81] | Appuyée |"
+     }
+    ]
+   },
+   {
+    "n": 40,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Prakash — LDP: An Identity-Aware Protocol for Multi-Agent LLM Systems (arXiv, 2026)](https://arxiv.org/abs/2603.08852)",
+    "phrases": [
+     {
+      "ligne": 114,
+      "phrase": "Son évaluation livre un résultat contre-intuitif : une métadonnée de provenance bruitée dégrade la synthèse en deçà de l'absence de provenance [40]."
+     }
+    ]
+   },
+   {
+    "n": 41,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Predoaia et coll. — A Comparative Study of MCP and A2A for Inter-Agent Coordination in LLM-Based Systems (arXiv, 2026)](https://arxiv.org/abs/2607.23884)",
+    "phrases": [
+     {
+      "ligne": 120,
+      "phrase": "Les auteurs présentent leur travail comme un compte rendu d'expérience, non comme un jugement général [41]."
+     }
+    ]
+   },
+   {
+    "n": 42,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Lotfi et coll. — A2ABreak: Systematic Security Analysis of the A2A Protocol (arXiv, 2026)](https://arxiv.org/abs/2609.10871)",
+    "phrases": [
+     {
+      "ligne": 130,
+      "phrase": "Elle en trouve onze qu'un adversaire peut exploiter en respectant la spécification, sans défaut d'implémentation : injection de contexte entre clients, perte d'identité dans les chaînes de délégation à plusieurs sauts, exfiltration par des agents qui annoncent des capacités non attestées [42]."
+     },
+     {
+      "ligne": 314,
+      "phrase": "MCP et A2A forment le socle; l'identité n'est pas stabilisée | Les deux protocoles sont traités comme le socle [39]; leurs faiblesses de sécurité sont documentées [9][42]; l'identité d'agent en est au stade de la proposition [81] | Appuyée |"
+     }
+    ]
+   },
+   {
+    "n": 43,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Zhang et coll. — MCP Security Bench (MSB): Benchmarking Attacks Against Model Context Protocol in LLM Agents (arXiv, 2025)](https://arxiv.org/abs/2510.15994)",
+    "phrases": [
+     {
+      "ligne": 132,
+      "phrase": "**Un modèle plus capable n'est pas plus sûr.** Un banc de 2 000 instances d'attaque, sur 405 outils et dix domaines, conclut que les modèles les plus performants sont aussi les plus vulnérables aux attaques propres à MCP, parce qu'ils suivent mieux les instructions et appellent mieux les outils [43]."
+     }
+    ]
+   },
+   {
+    "n": 44,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Albayaydh et coll. — Beyond the Leaderboard: A Synthesis of Tool-Use, Planning, and Reasoning Failures in Large Language Model Agents (arXiv, 2026)](https://arxiv.org/abs/2607.05775)",
+    "phrases": [
+     {
+      "ligne": 140,
+      "phrase": "Une synthèse de 27 articles et de 19 bancs d'essai élargit le constat aux agents en général : les échecs se composent de façon non linéaire avec la longueur de la tâche, une bonne performance sur les sous-tâches ne garantit pas la réussite de bout en bout, et un échafaudage supplémentaire n'améliore pas la fiabilité de façon constante [44]."
+     }
+    ]
+   },
+   {
+    "n": 45,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Jia et coll. — MAS-FIRE: Fault Injection and Reliability Evaluation for LLM-Based Multi-Agent Systems (arXiv, 2026)](https://arxiv.org/abs/2602.19843)",
+    "phrases": [
+     {
+      "ligne": 146,
+      "phrase": "| MAS-FIRE [45] | Quinze types de fautes injectées dans trois architectures | Les modèles plus forts n'améliorent pas uniformément la robustesse; les architectures itératives en boucle fermée neutralisent plus de 40 % des fautes qui font s'effondrer les workflows linéaires |"
+     },
+     {
+      "ligne": 313,
+      "phrase": "Le verrou est la conception du système, non le modèle | Robustesse non garantie par un modèle plus fort [45]; capacité sans coopération [48]; adoption freinée par les données et la vérification [79] | Appuyée, avec une réserve : le bénéfice du multi-agents recule quand les modèles progressent [53] |"
+     }
+    ]
+   },
+   {
+    "n": 46,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Xie et coll. — From Spark to Fire: Modeling and Mitigating Error Cascades in LLM-Based Multi-Agent Collaboration (arXiv, 2026)](https://arxiv.org/abs/2603.04474)",
+    "phrases": [
+     {
+      "ligne": 147,
+      "phrase": "| Cascades d'erreurs [46] | Modèle de propagation sur six cadriciels | Une seule erreur injectée peut mener à un échec étendu; une couche de gouvernance au niveau des messages empêche l'infection finale dans au moins 89 % des exécutions |"
+     }
+    ]
+   },
+   {
+    "n": 47,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Huang et coll. — On the Resilience of LLM-Based Multi-Agent Collaboration with Faulty Agents (arXiv, 2024)](https://arxiv.org/abs/2408.00989)",
+    "phrases": [
+     {
+      "ligne": 148,
+      "phrase": "| Agents fautifs [47] | Erreurs introduites dans six systèmes, quatre tâches | La structure hiérarchique perd 5,5 % de performance, contre 10,5 % et 23,7 % pour les deux autres; deux mécanismes de contestation et d'inspection récupèrent jusqu'à 96,4 % des erreurs |"
+     }
+    ]
+   },
+   {
+    "n": 48,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Yadav et coll. — More Capable, Less Cooperative? When LLMs Fail At Zero-Cost Collaboration (arXiv, 2026)](https://arxiv.org/abs/2604.07821)",
+    "phrases": [
+     {
+      "ligne": 149,
+      "phrase": "| Coopération à coût nul [48] | Huit modèles dans un environnement où aider ne coûte rien | La capacité ne prédit pas la coopération : un modèle fort atteint 17 % de l'optimum collectif, un modèle plus faible 50 %; des protocoles explicites doublent à peu près la performance des modèles limités par la compétence |"
+     },
+     {
+      "ligne": 313,
+      "phrase": "Le verrou est la conception du système, non le modèle | Robustesse non garantie par un modèle plus fort [45]; capacité sans coopération [48]; adoption freinée par les données et la vérification [79] | Appuyée, avec une réserve : le bénéfice du multi-agents recule quand les modèles progressent [53] |"
+     }
+    ]
+   },
+   {
+    "n": 49,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Reid et coll. — Risk Analysis Techniques for Governed LLM-based Multi-Agent Systems (arXiv, 2025)](https://arxiv.org/abs/2508.05687) — rapport.",
+    "phrases": [
+     {
+      "ligne": 155,
+      "phrase": "Il nomme six modes d'échec propres au collectif, dont les défaillances en cascade, l'effondrement par monoculture et le biais de conformité [49]."
+     }
+    ]
+   },
+   {
+    "n": 50,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Li et coll. — More Agents Is All You Need (arXiv, 2024)](https://arxiv.org/abs/2402.05120)",
+    "phrases": [
+     {
+      "ligne": 161,
+      "phrase": "En 2024, deux travaux très cités soutenaient que la performance croît avec le nombre d'agents : par simple échantillonnage et vote pour l'un [50], selon une courbe logistique observée jusqu'à plus de mille agents pour l'autre [51]."
+     }
+    ]
+   },
+   {
+    "n": 51,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Qian et coll. — Scaling Large Language Model-based Multi-Agent Collaboration (arXiv, 2024)](https://arxiv.org/abs/2406.07155)",
+    "phrases": [
+     {
+      "ligne": 161,
+      "phrase": "En 2024, deux travaux très cités soutenaient que la performance croît avec le nombre d'agents : par simple échantillonnage et vote pour l'un [50], selon une courbe logistique observée jusqu'à plus de mille agents pour l'autre [51]."
+     }
+    ]
+   },
+   {
+    "n": 52,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Tran et coll. — Single-Agent LLMs Outperform Multi-Agent Systems on Multi-Hop Reasoning Under Equal Thinking Token Budgets (arXiv, 2026)](https://arxiv.org/abs/2604.02460)",
+    "phrases": [
+     {
+      "ligne": 165,
+      "phrase": "- **À budget égal, l'avantage s'efface.** Sur des tâches de raisonnement à plusieurs sauts, un agent unique égale ou dépasse les systèmes multi-agents quand le nombre de jetons de raisonnement est tenu constant; plusieurs avantages rapportés s'expliquent par du calcul non comptabilisé [52]."
+     }
+    ]
+   },
+   {
+    "n": 53,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Gao et coll. — Single-agent or Multi-agent Systems? Why Not Both? (arXiv, 2025)](https://arxiv.org/abs/2505.18286)",
+    "phrases": [
+     {
+      "ligne": 166,
+      "phrase": "- **L'avantage diminue quand les modèles progressent.** Une comparaison sur plusieurs applications conclut que le bénéfice du multi-agents sur l'agent unique s'amenuise à mesure que les capacités des modèles augmentent, et propose de router les requêtes entre les deux [53]."
+     },
+     {
+      "ligne": 313,
+      "phrase": "Le verrou est la conception du système, non le modèle | Robustesse non garantie par un modèle plus fort [45]; capacité sans coopération [48]; adoption freinée par les données et la vérification [79] | Appuyée, avec une réserve : le bénéfice du multi-agents recule quand les modèles progressent [53] |"
+     }
+    ]
+   },
+   {
+    "n": 54,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Yang et coll. — Understanding Agent Scaling in LLM-Based Multi-Agent Systems via Diversity (arXiv, 2026)](https://arxiv.org/abs/2602.03794)",
+    "phrases": [
+     {
+      "ligne": 167,
+      "phrase": "- **Le nombre plafonne, la diversité non.** La performance est bornée par l'incertitude propre à la tâche, non par le nombre d'agents : deux agents différents égalent ou dépassent seize agents identiques [54]."
+     }
+    ]
+   },
+   {
+    "n": 55,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Bertalanič et coll. — The Ringelmann Effect in Multi-Agent LLM Systems: A Scaling Law for Effective Team Size (arXiv, 2026)](https://arxiv.org/abs/2606.02646)",
+    "phrases": [
+     {
+      "ligne": 167,
+      "phrase": "Une loi d'échelle ajustée sur 44 configurations conclut que trente agents en débat dense ne produisent pas plus de diversité de réponses qu'un seul, et que le gain attribué au débat vient d'une réévaluation, non du contenu apporté par les pairs [55]."
+     }
+    ]
+   },
+   {
+    "n": 56,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Żywot et coll. — Can Small Agents Collaborate to Beat a Single Large Language Model? (arXiv, 2026)](https://arxiv.org/abs/2601.11327)",
+    "phrases": [
+     {
+      "ligne": 168,
+      "phrase": "- **Ce qui compte est l'orchestrateur.** De petits systèmes multi-agents peuvent battre un modèle bien plus gros, et leur performance dépend de la capacité de l'orchestrateur plus que de celle des sous-agents [56]."
+     }
+    ]
+   },
+   {
+    "n": 57,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Yu et coll. — When Do Multi-Agent Systems Help? An Information Bottleneck Perspective (arXiv, 2026)](https://arxiv.org/abs/2607.16133)",
+    "phrases": [
+     {
+      "ligne": 169,
+      "phrase": "Il aide quand ces relais transmettent presque tout ce qui compte, surtout avec des modèles faibles; il nuit quand ils perdent de l'information, surtout avec des modèles forts [57]."
+     }
+    ]
+   },
+   {
+    "n": 58,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Sander et coll. — Scaling LLM-Driven Multi-Agent Systems: Design Principles and Architectural Scalability Analysis (arXiv, 2026)](https://arxiv.org/abs/2607.27942)",
+    "phrases": [
+     {
+      "ligne": 171,
+      "phrase": "Une étude d'échelle ajoute une condition : les gains n'apparaissent qu'au-dessus d'un seuil de capacité du modèle, et la performance culmine à une complexité intermédiaire [58]."
+     }
+    ]
+   },
+   {
+    "n": 59,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Wang et coll. — Automated Benchmark Auditing for AI Agents and Large Language Models (arXiv, 2026)](https://arxiv.org/abs/2605.26079)",
+    "phrases": [
+     {
+      "ligne": 192,
+      "phrase": "| Audit automatisé [59] | 168 bancs dans neuf domaines | Des problèmes critiques dans plus de 25,7 % des tâches; les retirer déplace le classement des modèles et relève la performance moyenne de 9,9 % sur SWE-bench Verified et de 9,6 % sur Terminal-Bench 2 |"
+     }
+    ]
+   },
+   {
+    "n": 60,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Kapoor et coll. — Holistic Agent Leaderboard: The Missing Infrastructure for AI Agent Evaluation (arXiv, 2025)](https://arxiv.org/abs/2510.11977)",
+    "phrases": [
+     {
+      "ligne": 194,
+      "phrase": "| Infrastructure HAL [60] | 21 730 exécutions, neuf modèles, neuf bancs, environ 40 000 $ US | Un effort de raisonnement plus élevé réduit l'exactitude dans la majorité des exécutions; l'inspection des journaux révèle des comportements non signalés, dont la recherche du banc d'essai en ligne plutôt que la résolution de la tâche |"
+     }
+    ]
+   },
+   {
+    "n": 61,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Zhang et coll. — The Double Measurement Confound in Agent Benchmarks (arXiv, 2026)](https://arxiv.org/abs/2609.09218)",
+    "phrases": [
+     {
+      "ligne": 195,
+      "phrase": "| Double confusion [61] | Rôle de l'échafaudage et du correcteur | Des décisions critiques sont prises par l'échafaudage à la place du modèle, et le correcteur juge sur des critères qui ne reflètent pas la justesse |"
+     }
+    ]
+   },
+   {
+    "n": 62,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Gupta — ReliabilityBench: Evaluating LLM Agent Reliability Under Production-Like Stress Conditions (arXiv, 2026)](https://arxiv.org/abs/2601.06112)",
+    "phrases": [
+     {
+      "ligne": 201,
+      "phrase": "Les reformulations seules font passer le taux de réussite de 96,9 % à 88,1 %, et la limitation de débit est la panne la plus dommageable [62]."
+     }
+    ]
+   },
+   {
+    "n": 63,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Beurer-Kellner et coll. — Design Patterns for Securing LLM Agents against Prompt Injections (arXiv, 2025)](https://arxiv.org/abs/2506.08837)",
+    "phrases": [
+     {
+      "ligne": 211,
+      "phrase": "D'autres travaux suivent le même principe : patrons de conception à résistance démontrable [63], graphe de dépendance d'outils planifié avant tout contact avec des données externes [15], contrôle des flux d'information [64], règles appliquées de façon déterministe à chaque frontière d'appel d'outil [65]."
+     }
+    ]
+   },
+   {
+    "n": 64,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Zhong et coll. — RTBAS: Defending LLM Agents Against Prompt Injection and Privacy Leakage (arXiv, 2025)](https://arxiv.org/abs/2502.08966)",
+    "phrases": [
+     {
+      "ligne": 211,
+      "phrase": "D'autres travaux suivent le même principe : patrons de conception à résistance démontrable [63], graphe de dépendance d'outils planifié avant tout contact avec des données externes [15], contrôle des flux d'information [64], règles appliquées de façon déterministe à chaque frontière d'appel d'outil [65]."
+     }
+    ]
+   },
+   {
+    "n": 65,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Zhao et coll. — ClawGuard: A Runtime Security Framework for Tool-Augmented LLM Agents Against Indirect Prompt Injection (arXiv, 2026)](https://arxiv.org/abs/2604.11790)",
+    "phrases": [
+     {
+      "ligne": 211,
+      "phrase": "D'autres travaux suivent le même principe : patrons de conception à résistance démontrable [63], graphe de dépendance d'outils planifié avant tout contact avec des données externes [15], contrôle des flux d'information [64], règles appliquées de façon déterministe à chaque frontière d'appel d'outil [65]."
+     }
+    ]
+   },
+   {
+    "n": 66,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Shi et coll. — PromptArmor: Simple yet Effective Prompt Injection Defenses (arXiv, 2025)](https://arxiv.org/abs/2507.15219)",
+    "phrases": [
+     {
+      "ligne": 213,
+      "phrase": "**Le filtrage et la vérification à l'exécution.** Un modèle auxiliaire détecte et retire les instructions injectées, avec des taux de faux positifs et de faux négatifs annoncés sous 1 % [66]; un mécanisme vérifie que chaque appel d'outil sert l'objectif de l'utilisateur [16]; un validateur dynamique surveille les écarts au plan initial [17]."
+     }
+    ]
+   },
+   {
+    "n": 67,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Hu et coll. — Memory in the Age of AI Agents (arXiv, 2025)](https://arxiv.org/abs/2512.13564)",
+    "phrases": [
+     {
+      "ligne": 231,
+      "phrase": "Après une première revue d'ensemble de la conception et de l'évaluation [20], chacune propose son découpage : par stades d'évolution, du stockage à l'expérience [21], par boucle d'écriture, de gestion et de lecture [32], par formes, fonctions et dynamiques [67]."
+     },
+     {
+      "ligne": 231,
+      "phrase": "Les auteurs le reconnaissent : le champ est fragmenté, sa terminologie est floue, et des centaines d'articles ont paru sur le sujet dans la seule année 2025 [67][68]."
+     }
+    ]
+   },
+   {
+    "n": 68,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Huang et coll. — A Survey of Agent Memory in the Second Half: Towards Self-Evolving and Long-Horizon Agents (arXiv, 2026)](https://arxiv.org/abs/2602.06052)",
+    "phrases": [
+     {
+      "ligne": 231,
+      "phrase": "Les auteurs le reconnaissent : le champ est fragmenté, sa terminologie est floue, et des centaines d'articles ont paru sur le sujet dans la seule année 2025 [67][68]."
+     }
+    ]
+   },
+   {
+    "n": 69,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Wu et coll. — Memory in the LLM Era: Modular Architectures and Strategies in a Unified Framework (arXiv, 2026)](https://arxiv.org/abs/2604.01707)",
+    "phrases": [
+     {
+      "ligne": 233,
+      "phrase": "Les méthodes n'avaient pas été comparées dans les mêmes conditions avant 2026 [69]; les bancs d'essai passent du rappel statique à des tests sur plusieurs sessions, qui exposent des lacunes tenaces [32]."
+     }
+    ]
+   },
+   {
+    "n": 70,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Mandarapu et coll. — Knowledge Graphs as the Missing Data Layer for LLM-Based Industrial Asset Operations (arXiv, 2026)](https://arxiv.org/abs/2605.26874)",
+    "phrases": [
+     {
+      "ligne": 241,
+      "phrase": "Les auteurs en concluent que, dans un domaine opérationnel structuré, la couche de données est le premier levier, avant l'orchestration [70]."
+     }
+    ]
+   },
+   {
+    "n": 71,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Tuan et coll. — Ontology-Constrained Neural Reasoning in Enterprise Agentic Systems (arXiv, 2026)](https://arxiv.org/abs/2604.00555) — les auteurs éditent la plateforme évaluée.",
+    "phrases": [
+     {
+      "ligne": 241,
+      "phrase": "Une expérience de 1 800 exécutions dans cinq secteurs trouve que des agents couplés à une ontologie surpassent les agents non ancrés, et que le gain est le plus fort là où le modèle connaît le moins le domaine [71]."
+     }
+    ]
+   },
+   {
+    "n": 72,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Chethan — Semantic Graph Unification for Industrial Digital Threads (arXiv, 2026)](https://arxiv.org/abs/2608.24918)",
+    "phrases": [
+     {
+      "ligne": 241,
+      "phrase": "Une étude sur onze systèmes manufacturiers simulés mesure que le rappel tombe de 1,00 à 0,31 quand les outils qui croisent plusieurs systèmes sont retirés [72]."
+     }
+    ]
+   },
+   {
+    "n": 73,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Chong et coll. — EvoOntology: A Self-Evolving Ontology Layer for Data Agents (arXiv, 2026)](https://arxiv.org/abs/2609.15779)",
+    "phrases": [
+     {
+      "ligne": 243,
+      "phrase": "Une proposition expose l'ontologie aux agents sous forme de serveur MCP qui s'affine à l'usage [73], ce qui rejoint la section 12.5."
+     }
+    ]
+   },
+   {
+    "n": 74,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Brynjolfsson et coll. — Generative AI at Work (National Bureau of Economic Research, 2023)](https://arxiv.org/abs/2304.11771) — document de travail.",
+    "phrases": [
+     {
+      "ligne": 255,
+      "phrase": "| Soutien à la clientèle [74] | Déploiement échelonné, 5 179 agents de soutien | 14 % de problèmes résolus de plus par heure en moyenne; gain concentré chez les novices, minime chez les plus expérimentés |"
+     }
+    ]
+   },
+   {
+    "n": 75,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Dillon et coll. — Early Impacts of M365 Copilot (SSRN, 2025)](https://arxiv.org/abs/2504.11443)",
+    "phrases": [
+     {
+      "ligne": 259,
+      "phrase": "| Suite bureautique [75] | Essai randomisé, plus de 6 000 travailleurs, 56 entreprises | Une demi-heure de moins par semaine à lire des courriels; documents terminés 12 % plus vite |"
+     }
+    ]
+   },
+   {
+    "n": 76,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Bottesch et coll. — Faster, Higher, Stronger? The Impact of GenAI on Knowledge Work Productivity: Evidence from the Field (arXiv, 2026)](https://arxiv.org/abs/2607.25922)",
+    "phrases": [
+     {
+      "ligne": 260,
+      "phrase": "| Travail du savoir en industrie [76] | Expérience de terrain, 128 travailleurs | Efficacité en hausse partout; qualité en baisse pour l'acquisition de connaissances |"
+     }
+    ]
+   },
+   {
+    "n": 77,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Ju et Aral — Collaborating with AI Agents: Field Experiments on Teamwork, Productivity, and Performance (SSRN, 2025)](https://arxiv.org/abs/2503.18238)",
+    "phrases": [
+     {
+      "ligne": 264,
+      "phrase": "Les équipes avec agent produisent 50 % d'annonces de plus par travailleur, avec un texte meilleur et des images moins bonnes, et leurs productions se ressemblent davantage [77]."
+     }
+    ]
+   },
+   {
+    "n": 78,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Alvanakis Apostolou et coll. — Agentic AI in Industry: Adoption Level and Deployment Barriers (arXiv, 2026)](https://arxiv.org/abs/2605.14675)",
+    "phrases": [
+     {
+      "ligne": 272,
+      "phrase": "Quatre obstacles reviennent : la gestion du contexte, la performance sur du contenu propriétaire, le non-déterminisme et la qualification, la confidentialité des données [78]."
+     },
+     {
+      "ligne": 312,
+      "phrase": "Les agents en production restent bornés et supervisés | Pratiques de production aux trois premiers niveaux de maturité sur six [78]; tâches longues hors de portée sur les bancs de 2024 et de 2025 [12][35] | Appuyée, sur des données de 2024 et de 2025 |"
+     }
+    ]
+   },
+   {
+    "n": 79,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Edwards et coll. — Agentic AI in Engineering and Manufacturing: Industry Perspectives on Utility, Adoption, Challenges, and Opportunities (arXiv, 2026)](https://arxiv.org/abs/2604.09633)",
+    "phrases": [
+     {
+      "ligne": 272,
+      "phrase": "Plus de trente entrevues en ingénierie et en fabrication aboutissent à une conclusion voisine : l'adoption est freinée moins par la capacité des modèles que par des données fragmentées, des exigences de sécurité et de réglementation, et des chaînes d'outils patrimoniales peu accessibles par API [79]."
+     },
+     {
+      "ligne": 313,
+      "phrase": "Le verrou est la conception du système, non le modèle | Robustesse non garantie par un modèle plus fort [45]; capacité sans coopération [48]; adoption freinée par les données et la vérification [79] | Appuyée, avec une réserve : le bénéfice du multi-agents recule quand les modèles progressent [53] |"
+     }
+    ]
+   },
+   {
+    "n": 80,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Kaul et coll. — Behavioral Governance for Autonomous AI Agents: The AgentBound Framework (arXiv, 2026)](https://arxiv.org/abs/2606.30970)",
+    "phrases": [
+     {
+      "ligne": 286,
+      "phrase": "Une proposition compose trois autorités avant l'exécution et produit des reçus vérifiables par cryptographie [80]; une autre étend OAuth 2.0 et OpenID Connect par des justificatifs propres aux agents [81], travail que cite déjà le chapitre 30."
+     }
+    ]
+   },
+   {
+    "n": 81,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[South et coll. — Authenticated Delegation and Authorized AI Agents (arXiv, 2025)](https://arxiv.org/abs/2501.09674)",
+    "phrases": [
+     {
+      "ligne": 286,
+      "phrase": "Une proposition compose trois autorités avant l'exécution et produit des reçus vérifiables par cryptographie [80]; une autre étend OAuth 2.0 et OpenID Connect par des justificatifs propres aux agents [81], travail que cite déjà le chapitre 30."
+     },
+     {
+      "ligne": 314,
+      "phrase": "MCP et A2A forment le socle; l'identité n'est pas stabilisée | Les deux protocoles sont traités comme le socle [39]; leurs faiblesses de sécurité sont documentées [9][42]; l'identité d'agent en est au stade de la proposition [81] | Appuyée |"
+     }
+    ]
+   },
+   {
+    "n": 82,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Hacker et coll. — A pragmatic approach to regulating AI agents (arXiv, 2026)](https://arxiv.org/abs/2604.22819)",
+    "phrases": [
+     {
+      "ligne": 288,
+      "phrase": "**Le droit regarde vers l'orchestration.** Une analyse de l'AI Act et du droit européen des contrats soutient que la supervision doit se déplacer vers la couche d'orchestration, que les agents doivent être régulés comme des systèmes d'IA, et propose une autorisation échelonnée des tâches ainsi qu'une liste légale d'actes qui ne peuvent pas être délégués [82]."
+     }
+    ]
+   },
+   {
+    "n": 83,
+    "groupe": "Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé — prépublications et documents de travail; le lien mène à arXiv ou au dépôt :",
+    "source": "[Mukherjee et Chang — Agentic AI: Autonomy, Accountability, and the Algorithmic Society (SSRN, 2025)](https://arxiv.org/abs/2502.00289)",
+    "phrases": [
+     {
+      "ligne": 288,
+      "phrase": "Deux travaux décrivent la dilution de la responsabilité entre acteurs, sous l'angle de la relation entre mandant et mandataire [30] et sous celui des marchés où acheteurs et vendeurs déploient chacun des agents [83]."
+     }
+    ]
+   },
+   {
+    "n": 87,
+    "groupe": "Travaux relevés hors protocole le 14 novembre 2026 (section 48.11) :",
+    "source": "[Kraishan — Same Name, Different Server: A Security Census of Silent Drift in the Model Context Protocol Ecosystem (arXiv 2609.14119)](https://arxiv.org/abs/2609.14119) — résumé; chapitre 8.",
+    "phrases": [
+     {
+      "ligne": 342,
+      "phrase": "| Protocoles | Recensements des registres et des places de marché de MCP [87][88][89] | 51,1 % des serveurs à plusieurs versions modifiés d'une version à l'autre; 516 serveurs détournables; la moitié des entrées sans valeur | Précise « faiblesses de l'écosystème » : le défaut est dans les registres autant que dans les serveurs | 8.8 |"
+     }
+    ]
+   },
+   {
+    "n": 90,
+    "groupe": "Travaux relevés hors protocole le 14 novembre 2026 (section 48.11) :",
+    "source": "[Chen et coll. — Rethinking MCP Security: A Large-Scale Study of Runtime MCP Servers and Security Scanner Reliability (arXiv 2607.11086)](https://arxiv.org/abs/2607.11086) — résumé; chapitres 8 et 24.",
+    "phrases": [
+     {
+      "ligne": 343,
+      "phrase": "| Protocoles | Fiabilité des scanners de sécurité [90]; filtre évalué par ses auteurs [91] | Moins de la moitié des alertes vérifiées sont fondées | Affaiblit l'outillage de vérification, non la spécification | 8.8, 24.5 |"
+     }
+    ]
+   },
+   {
+    "n": 94,
+    "groupe": "Travaux relevés hors protocole le 14 novembre 2026 (section 48.11) :",
+    "source": "[Zhu et coll. — Where Agent Frameworks Fall Short (arXiv 2602.21806)](https://arxiv.org/abs/2602.21806) — résumé; chapitre 20.",
+    "phrases": [
+     {
+      "ligne": 344,
+      "phrase": "| Coordination | Fautes signalées dans 40 dépôts [92]; défauts de cinq cadriciels [93][94] | Fautes surtout ordinaires; 16 bogues sur 35 transposables d'un cadriciel à l'autre | Complète « modes d'échec » par le logiciel qui porte les agents | 21.1, 20.7 |"
+     }
+    ]
+   },
+   {
+    "n": 95,
+    "groupe": "Travaux relevés hors protocole le 14 novembre 2026 (section 48.11) :",
+    "source": "[She et coll. — Efficient Benchmarking in Production: A Study of an Evolving LLM Agent (arXiv 2609.21267)](https://arxiv.org/abs/2609.21267) — résumé; chapitre 33.",
+    "phrases": [
+     {
+      "ligne": 345,
+      "phrase": "| Évaluation | Coût de l'évaluation récurrente d'un agent en production [95]; agent de tri d'alarmes en production [96] | 38,5 % du banc suffit pour 1,03 point d'erreur; temps de réponse médian réduit de 42 % | Première mesure sous « coûts publiés », sans chiffre en dollars | 33.6, 42.4 |"
+     }
+    ]
+   },
+   {
+    "n": 96,
+    "groupe": "Travaux relevés hors protocole le 14 novembre 2026 (section 48.11) :",
+    "source": "[Kujanpää et coll. — Tool-Making and Self-Evolving LLM Agents in Low-Latency Systems (arXiv 2607.08010)](https://arxiv.org/abs/2607.08010) — résumé; chapitre 42.",
+    "phrases": [
+     {
+      "ligne": 345,
+      "phrase": "| Évaluation | Coût de l'évaluation récurrente d'un agent en production [95]; agent de tri d'alarmes en production [96] | 38,5 % du banc suffit pour 1,03 point d'erreur; temps de réponse médian réduit de 42 % | Première mesure sous « coûts publiés », sans chiffre en dollars | 33.6, 42.4 |"
+     },
+     {
+      "ligne": 349,
+      "phrase": "H2, des agents bornés et supervisés, est confirmée par le cas de production relevé [96] (section 42.4)."
+     }
+    ]
+   },
+   {
+    "n": 100,
+    "groupe": "Travaux relevés hors protocole le 14 novembre 2026 (section 48.11) :",
+    "source": "[Green — The Flaws of Policies Requiring Human Oversight of Government Algorithms (arXiv 2109.05067)](https://arxiv.org/abs/2109.05067) — résumé; chapitre 22.",
+    "phrases": [
+     {
+      "ligne": 347,
+      "phrase": "| Gouvernance | Biais d'automatisation [98]; supervision par des développeurs [99]; supervision prescrite [100]; article de position [101] | Un conseil faux accroît de 26 % le risque de décision incorrecte | Remplace « presque rien » par un acquis sur les aides à la décision, non sur les agents | 22.5 |"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "fichier": "chapitre-49-veille-technologique.md",
+  "points_a_retenir": "## Points à retenir\n\n- La mesure publique de la portée des agents sature. Le dernier modèle de la série de METR atteint environ 17 heures à 50 % de réussite et 3 heures à 80 %; la série n'est plus mise à jour depuis septembre 2026.\n- À 80 % de réussite, l'horizon est cinq à six fois plus court qu'à 50 %. Ce qui borne un agent en production est le prix de la fiabilité plus que la capacité.\n- Deux prépublications de 2026 montrent des bancs d'essai d'agents contournables : des scores presque parfaits sans résoudre une tâche. Le seul instrument stable est le banc interne.\n- L'IETF a créé en octobre 2026 deux groupes de travail sur le dialogue et la découverte d'agents, avec des remises prévues de décembre 2027 à mars 2028. L'identité et la gouvernance restent hors des mandats datés.\n- La première norme harmonisée de l'AI Act, EN 18286:2026, porte sur le système de gestion de la qualité.\n- L'année 2027 concentre les échéances : E-23 en mai, haut risque européen et cyberrésilience en décembre. Le texte européen sera réexaminé en 2028 et en 2029.\n- La cryptographie à clé publique actuelle est dépréciée par le NIST après 2030. Les signatures post-quantiques sont normalisées pour les jetons et les certificats, mais pas encore livrées dans les couches d'identité d'agent.\n- Une défense contre l'injection appliquée agent par agent ne protège pas le collectif : une donnée non fiable redevient de confiance en passant d'un agent à l'autre.\n- La base NVD compte 102 vulnérabilités de serveurs MCP en quatre mois, dont treize critiques. Le risque est dans les serveurs de tiers, non dans la spécification.\n\n---",
+  "grille_de_decision": "## Grille de décision\n\n| Décision | Option par défaut | Quand s'en écarter |\n|---|---|---|\n| Organiser la veille | Un registre, un responsable par ligne, une source primaire par ligne | Petite équipe : une revue trimestrielle commune |\n| Traiter une reprise de presse | La tenir pour un signal; remonter à l'émetteur avant d'agir | Source primaire inaccessible : décision réversible seulement |\n| Lire un score de frontière | Le tenir pour une présélection; décider sur son propre banc | Aucun cas |\n| Planifier sur un jalon de normalisation | Le tenir pour une intention; prévoir une solution transitoire documentée | Texte déjà remis à l'IESG ou publié |\n| Planifier sur une échéance réglementaire | Viser la date; produire les preuves en continu | Texte en cours de révision : suivre le réexamen |\n| Acheter un composant d'identité d'agent | Exiger l'agilité cryptographique et une preuve horodatée | Composant à durée de vie inférieure à trois ans |\n| Adopter une technique issue de la recherche | Niveau 3 au moins, essayé sur ses propres tâches | Technique qui renforce un contrôle déterministe existant : essai dès le niveau 2 |\n| Défendre un système multi-agents contre l'injection | Faire suivre la provenance à la donnée, d'un agent à l'autre | Agents d'un même domaine de confiance, sans donnée externe |\n| Exposer un serveur MCP | Authentification, liaison sur une interface interne, version épinglée | Aucun cas |\n| Arrêter de suivre un signal | Le retirer quand sa source cesse, et noter ce qui le remplace | Aucun cas |\n\n---",
+  "sources_resume": [
+   {
+    "n": 47,
+    "groupe": "Notices d'arXiv lues le 13 novembre 2026, résumé seulement — prépublications, sauf mention contraire :",
+    "source": "[Wang et coll. — BenchJack (arXiv 2605.12673), 12 mai 2026](https://arxiv.org/abs/2605.12673)",
+    "phrases": [
+     {
+      "ligne": 89,
+      "phrase": "Un système d'audit automatisé a produit, sur dix bancs d'essai d'agents répandus, des contournements qui obtiennent des scores presque parfaits sans résoudre une seule tâche, et a recensé 219 failles [47]."
+     },
+     {
+      "ligne": 265,
+      "phrase": "| Validité des bancs d'essai | arXiv | Trimestrielle | Contournements documentés [47] | Poids des scores publics dans un choix de modèle (chapitre 33) |"
+     }
+    ]
+   },
+   {
+    "n": 48,
+    "groupe": "Notices d'arXiv lues le 13 novembre 2026, résumé seulement — prépublications, sauf mention contraire :",
+    "source": "[Shao et coll. — audit de la validité de protocole de quinze bancs d'essai d'agents (arXiv 2607.22368), 24 juillet 2026](https://arxiv.org/abs/2607.22368)",
+    "phrases": [
+     {
+      "ligne": 89,
+      "phrase": "Un audit de 2 385 traces sur quinze bancs trouve des fuites ou du piratage de récompense dans les deux tiers des traces de deux d'entre eux, et mesure une inflation des scores de 0,45 à 1,00 [48]."
+     }
+    ]
+   },
+   {
+    "n": 49,
+    "groupe": "Notices d'arXiv lues le 13 novembre 2026, résumé seulement — prépublications, sauf mention contraire :",
+    "source": "[Foerster et coll. — CaMeL appliqué aux agents d'utilisation d'ordinateur (arXiv 2601.09923), 14 janvier 2026](https://arxiv.org/abs/2601.09923)",
+    "phrases": [
+     {
+      "ligne": 212,
+      "phrase": "| Isolation par construction contre l'injection d'invites, pour un agent seul | Article évalué par les pairs (chapitre 48); extension aux agents d'utilisation d'ordinateur en prépublication, qui conserve jusqu'à 57 % de la performance des modèles de pointe [49] | 3 | Composition entre agents | 31, 32 |"
+     }
+    ]
+   },
+   {
+    "n": 50,
+    "groupe": "Notices d'arXiv lues le 13 novembre 2026, résumé seulement — prépublications, sauf mention contraire :",
+    "source": "[Peters-Gill et coll. — Can CaMeLs Talk? Securing Multi-Agent Systems Against Indirect Prompt Injection Attacks (arXiv 2610.05640), 5 octobre 2026](https://arxiv.org/abs/2610.05640) — relue à l'audit.",
+    "phrases": [
+     {
+      "ligne": 213,
+      "phrase": "| Isolation entre agents | Prépublication d'octobre 2026 : les garanties ne se composent pas; une variante propre au multi-agents ramène le taux de succès des attaques à 0,0 % [50] | 2 | Réplication; coût en utilité | 32, 45 |"
+     },
+     {
+      "ligne": 226,
+      "phrase": "Le mécanisme est simple : une donnée non fiable est réinterprétée comme une entrée de confiance par l'agent situé en aval [50]."
+     },
+     {
+      "ligne": 278,
+      "phrase": "| Composition des défenses entre agents | arXiv | Trimestrielle | Une prépublication [50] | Frontières de confiance entre agents (chapitre 31) |"
+     },
+     {
+      "ligne": 404,
+      "phrase": "Relues à l'audit : [4], [5], [9], [10], [36], [50] et [44], dont le comptage a été refait."
+     }
+    ]
+   },
+   {
+    "n": 51,
+    "groupe": "Notices d'arXiv lues le 13 novembre 2026, résumé seulement — prépublications, sauf mention contraire :",
+    "source": "[Winston et coll. — vérification par solveur de la conformité aux politiques d'outils (arXiv 2603.20449), 20 mars 2026](https://arxiv.org/abs/2603.20449)",
+    "phrases": [
+     {
+      "ligne": 214,
+      "phrase": "| Vérification formelle des politiques | Contraintes vérifiées par solveur avant chaque appel d'outil [51]; logique temporelle sur les traces [52]; contrôle de modèles sur le plan, accepté en conférence [53] | 2 à 3 | Résultats chiffrés; traduction fiable des politiques écrites | 17, 32 |"
+     }
+    ]
+   },
+   {
+    "n": 52,
+    "groupe": "Notices d'arXiv lues le 13 novembre 2026, résumé seulement — prépublications, sauf mention contraire :",
+    "source": "[Elkoussy et Perez — AgentLTL (arXiv 2607.02599), 1er juillet 2026](https://arxiv.org/abs/2607.02599)",
+    "phrases": [
+     {
+      "ligne": 214,
+      "phrase": "| Vérification formelle des politiques | Contraintes vérifiées par solveur avant chaque appel d'outil [51]; logique temporelle sur les traces [52]; contrôle de modèles sur le plan, accepté en conférence [53] | 2 à 3 | Résultats chiffrés; traduction fiable des politiques écrites | 17, 32 |"
+     }
+    ]
+   },
+   {
+    "n": 53,
+    "groupe": "Notices d'arXiv lues le 13 novembre 2026, résumé seulement — prépublications, sauf mention contraire :",
+    "source": "[Nikolaou et coll. — CaMeLoT (arXiv 2609.18674), 16 septembre 2026](https://arxiv.org/abs/2609.18674) — accepté à la conférence CAMLIS 2026 selon la notice.",
+    "phrases": [
+     {
+      "ligne": 214,
+      "phrase": "| Vérification formelle des politiques | Contraintes vérifiées par solveur avant chaque appel d'outil [51]; logique temporelle sur les traces [52]; contrôle de modèles sur le plan, accepté en conférence [53] | 2 à 3 | Résultats chiffrés; traduction fiable des politiques écrites | 17, 32 |"
+     },
+     {
+      "ligne": 405,
+      "phrase": "Sauf pour [53], [57] et [61], dont la notice indique une conférence ou un atelier, ce sont des prépublications; les bancs d'essai et les échantillons n'ont pas été examinés."
+     }
+    ]
+   },
+   {
+    "n": 54,
+    "groupe": "Notices d'arXiv lues le 13 novembre 2026, résumé seulement — prépublications, sauf mention contraire :",
+    "source": "[Wu et coll. — LongMemEval-V2 (arXiv 2605.12493), 12 mai 2026](https://arxiv.org/abs/2605.12493) — travail en cours.",
+    "phrases": [
+     {
+      "ligne": 215,
+      "phrase": "| Mémoire d'expérience | Bancs de 2026 : 72,5 % d'exactitude pour le meilleur système contre 48,5 % pour la meilleure base par récupération [54]; 57,2 % au mieux sur des trajectoires d'agents [55] | 2 | Comparaisons indépendantes; gouvernance | 14 |"
+     }
+    ]
+   },
+   {
+    "n": 55,
+    "groupe": "Notices d'arXiv lues le 13 novembre 2026, résumé seulement — prépublications, sauf mention contraire :",
+    "source": "[Zhao et coll. — AMA-Bench (arXiv 2602.22769), 26 février 2026](https://arxiv.org/abs/2602.22769)",
+    "phrases": [
+     {
+      "ligne": 215,
+      "phrase": "| Mémoire d'expérience | Bancs de 2026 : 72,5 % d'exactitude pour le meilleur système contre 48,5 % pour la meilleure base par récupération [54]; 57,2 % au mieux sur des trajectoires d'agents [55] | 2 | Comparaisons indépendantes; gouvernance | 14 |"
+     }
+    ]
+   },
+   {
+    "n": 56,
+    "groupe": "Notices d'arXiv lues le 13 novembre 2026, résumé seulement — prépublications, sauf mention contraire :",
+    "source": "[Zhang et coll. — Ratchet (arXiv 2605.22148), 21 mai 2026](https://arxiv.org/abs/2605.22148)",
+    "phrases": [
+     {
+      "ligne": 216,
+      "phrase": "| Apprentissage continu par bibliothèques de compétences | Une bibliothèque non entretenue dérive jusqu'à faire pire que l'absence de compétence [56]; une méthode acceptée en conférence [57] | 2 à 3 | Mesure en production sur la durée | 13, 47 |"
+     }
+    ]
+   },
+   {
+    "n": 57,
+    "groupe": "Notices d'arXiv lues le 13 novembre 2026, résumé seulement — prépublications, sauf mention contraire :",
+    "source": "[Xu et coll. — EvoLib (arXiv 2605.14477), 14 mai 2026](https://arxiv.org/abs/2605.14477) — accepté à NeurIPS 2026 selon la notice.",
+    "phrases": [
+     {
+      "ligne": 216,
+      "phrase": "| Apprentissage continu par bibliothèques de compétences | Une bibliothèque non entretenue dérive jusqu'à faire pire que l'absence de compétence [56]; une méthode acceptée en conférence [57] | 2 à 3 | Mesure en production sur la durée | 13, 47 |"
+     },
+     {
+      "ligne": 405,
+      "phrase": "Sauf pour [53], [57] et [61], dont la notice indique une conférence ou un atelier, ce sont des prépublications; les bancs d'essai et les échantillons n'ont pas été examinés."
+     }
+    ]
+   },
+   {
+    "n": 58,
+    "groupe": "Notices d'arXiv lues le 13 novembre 2026, résumé seulement — prépublications, sauf mention contraire :",
+    "source": "[Gonzalez-Pumariega et coll. — fiabilité des agents d'utilisation d'ordinateur à la répétition (arXiv 2604.17849), 20 avril 2026](https://arxiv.org/abs/2604.17849)",
+    "phrases": [
+     {
+      "ligne": 217,
+      "phrase": "| Agents d'utilisation d'ordinateur | Un agent qui réussit une tâche une fois peut échouer à la répétition [58] | 4 | Fiabilité à l'exécution répétée | 25 |"
+     }
+    ]
+   },
+   {
+    "n": 59,
+    "groupe": "Notices d'arXiv lues le 13 novembre 2026, résumé seulement — prépublications, sauf mention contraire :",
+    "source": "[Belcak et coll. — petits modèles de langage et systèmes agentiques (arXiv 2506.02153), 2 juin 2025](https://arxiv.org/abs/2506.02153) — article de position.",
+    "phrases": [
+     {
+      "ligne": 218,
+      "phrase": "| Petits modèles pour agents | Article de position [59]; sur appareil, des modèles de 1 à 3 milliards de paramètres atteignent au mieux 65,7 % d'exactitude en appel de fonctions [60] | 1 à 2 | Niveau suffisant pour l'usage autonome | 44, 47 |"
+     }
+    ]
+   },
+   {
+    "n": 60,
+    "groupe": "Notices d'arXiv lues le 13 novembre 2026, résumé seulement — prépublications, sauf mention contraire :",
+    "source": "[Haque et coll. — TinyLLM (arXiv 2511.22138), 27 novembre 2025](https://arxiv.org/abs/2511.22138)",
+    "phrases": [
+     {
+      "ligne": 218,
+      "phrase": "| Petits modèles pour agents | Article de position [59]; sur appareil, des modèles de 1 à 3 milliards de paramètres atteignent au mieux 65,7 % d'exactitude en appel de fonctions [60] | 1 à 2 | Niveau suffisant pour l'usage autonome | 44, 47 |"
+     }
+    ]
+   },
+   {
+    "n": 61,
+    "groupe": "Notices d'arXiv lues le 13 novembre 2026, résumé seulement — prépublications, sauf mention contraire :",
+    "source": "[Jin et coll. — Proof-of-Guardrail (arXiv 2603.05786), 6 mars 2026](https://arxiv.org/abs/2603.05786) — atelier de la conférence ICML 2026 selon la notice.",
+    "phrases": [
+     {
+      "ligne": 219,
+      "phrase": "| Attestation et traces vérifiables | Attestation matérielle de l'exécution d'un garde-fou, présentée en atelier [61]; preuves de transcription TLS, à un surcoût inférieur à trois fois l'appel direct [62] | 2 | Confiance dans le fabricant; étude au-delà d'un cas | 46 |"
+     },
+     {
+      "ligne": 405,
+      "phrase": "Sauf pour [53], [57] et [61], dont la notice indique une conférence ou un atelier, ce sont des prépublications; les bancs d'essai et les échantillons n'ont pas été examinés."
+     }
+    ]
+   },
+   {
+    "n": 62,
+    "groupe": "Notices d'arXiv lues le 13 novembre 2026, résumé seulement — prépublications, sauf mention contraire :",
+    "source": "[Grigor et coll. — VET, traces d'exécution vérifiables (arXiv 2512.15892), 17 décembre 2025](https://arxiv.org/abs/2512.15892)",
+    "phrases": [
+     {
+      "ligne": 219,
+      "phrase": "| Attestation et traces vérifiables | Attestation matérielle de l'exécution d'un garde-fou, présentée en atelier [61]; preuves de transcription TLS, à un surcoût inférieur à trois fois l'appel direct [62] | 2 | Confiance dans le fabricant; étude au-delà d'un cas | 46 |"
+     }
+    ]
+   },
+   {
+    "n": 63,
+    "groupe": "Notices d'arXiv lues le 13 novembre 2026, résumé seulement — prépublications, sauf mention contraire :",
+    "source": "[Prakash — AIP, délégation vérifiable entre MCP et A2A (arXiv 2603.24775), 25 mars 2026](https://arxiv.org/abs/2603.24775) — auteur unique.",
+    "phrases": [
+     {
+      "ligne": 220,
+      "phrase": "| Identité d'agent à délégation vérifiable | Protocole ajoutant 2,35 ms de latence, 600 attaques rejetées; un balayage d'environ 2 000 serveurs MCP n'en trouve aucun authentifié [63] | 2 | Évaluation par un tiers | 29, 30 |"
+     }
+    ]
+   },
+   {
+    "n": 64,
+    "groupe": "Notices d'arXiv lues le 13 novembre 2026, résumé seulement — prépublications, sauf mention contraire :",
+    "source": "[Bansal et coll. — Magentic Marketplace (arXiv 2510.25779), 27 octobre 2025](https://arxiv.org/abs/2510.25779)",
+    "phrases": [
+     {
+      "ligne": 221,
+      "phrase": "| Marchés d'agents | Simulations : biais marqué pour la première proposition [64]; collusion affaiblie par l'hétérogénéité, stabilisée par les écarts de taille de modèle [65]; agents plus malhonnêtes quand on les optimise pour le gain [66] | 2 | Étude en argent réel | 10, 45 |"
+     }
+    ]
+   },
+   {
+    "n": 65,
+    "groupe": "Notices d'arXiv lues le 13 novembre 2026, résumé seulement — prépublications, sauf mention contraire :",
+    "source": "[Keppo et coll. — fragilité de la collusion entre agents (arXiv 2603.20281), 18 mars 2026](https://arxiv.org/abs/2603.20281)",
+    "phrases": [
+     {
+      "ligne": 221,
+      "phrase": "| Marchés d'agents | Simulations : biais marqué pour la première proposition [64]; collusion affaiblie par l'hétérogénéité, stabilisée par les écarts de taille de modèle [65]; agents plus malhonnêtes quand on les optimise pour le gain [66] | 2 | Étude en argent réel | 10, 45 |"
+     }
+    ]
+   },
+   {
+    "n": 66,
+    "groupe": "Notices d'arXiv lues le 13 novembre 2026, résumé seulement — prépublications, sauf mention contraire :",
+    "source": "[Miceli-Barone et coll. — honnêteté des agents négociateurs (arXiv 2605.31445), 29 mai 2026](https://arxiv.org/abs/2605.31445)",
+    "phrases": [
+     {
+      "ligne": 221,
+      "phrase": "| Marchés d'agents | Simulations : biais marqué pour la première proposition [64]; collusion affaiblie par l'hétérogénéité, stabilisée par les écarts de taille de modèle [65]; agents plus malhonnêtes quand on les optimise pour le gain [66] | 2 | Étude en argent réel | 10, 45 |"
+     }
+    ]
+   },
+   {
+    "n": 67,
+    "groupe": "Notices d'arXiv lues le 13 novembre 2026, résumé seulement — prépublications, sauf mention contraire :",
+    "source": "[Assran et coll. — V-JEPA 2 (arXiv 2506.09985), 11 juin 2025](https://arxiv.org/abs/2506.09985)",
+    "phrases": [
+     {
+      "ligne": 222,
+      "phrase": "| Modèles du monde et IA physique | Démonstrations de laboratoire sur robots réels [67] | 2 | Protocole d'évaluation commun | 28, 46 |"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "fichier": "chapitre-50-projection-etude-marche.md",
+  "points_a_retenir": "## Points à retenir\n\n- Le marché de l'IA agentique n'a pas une taille mais plusieurs : pour 2025, de 1,5 à 88 G$ US selon que l'on compte le logiciel d'entreprise ou les capacités intégrées aux progiciels.\n- Aucune estimation lue n'isole la couche d'interopérabilité et d'orchestration. Sa valeur se mesure chez l'acheteur, en coût d'intégration évité.\n- Treize séries de cabinets d'études, ramenées aux mêmes années, donnent de 8 à 17 G$ US en 2027 et de 25 à 55 G$ US en 2030. Elles ne sont pas indépendantes : l'une des prévisions les plus citées est une moyenne de sept rapports tiers.\n- Les éditeurs publient des revenus récurrents, des valeurs contractuelles, des agents inscrits et des jetons. Ces unités ne s'additionnent pas, et les périmètres changent d'un trimestre à l'autre.\n- Quatre fournisseurs annoncent de 720 à 740 G$ US d'investissement pour 2026. La ligne des agents et assistants pèse 1,1 % des dépenses mondiales en IA selon Gartner.\n- L'adoption déclarée va de moins de 10 % à plus de 95 % selon la définition. Deux enquêtes indépendantes donnent 21 % d'organisations dotées d'une gouvernance des agents.\n- Au Canada, 19,2 % des entreprises utilisaient l'IA au deuxième trimestre de 2026, contre 12,2 % un an plus tôt. La série de Statistique Canada a pris fin, et la dernière mesure québécoise date de 2025.\n- Les prévisions d'analystes se lisent comme des hypothèses datées. Celle des 40 % de projets annulés pourra être vérifiée au début de 2028.\n- La projection sépare le daté, l'annoncé et le conjecturé. Les échéances réglementaires de 2027 créent une demande de conformité certaine; les premiers textes de l'IETF sur le dialogue entre agents n'arrivent qu'en 2028 au plus tôt.\n\n---",
+  "grille_de_decision": "## Grille de décision\n\n| Décision | Option par défaut | Quand s'en écarter |\n|---|---|---|\n| Citer une taille de marché | Donner une fourchette, le périmètre et l'émetteur; jamais un chiffre seul | Chiffre tiré d'états financiers audités |\n| Comparer deux estimations | Vérifier d'abord qu'elles comptent la même chose | Même émetteur, même édition, même intitulé |\n| Lire un indicateur d'éditeur | Relever l'unité, le périmètre et la base de comparaison | Revenu ventilé dans un dépôt réglementaire |\n| Lire un taux d'adoption | Chercher la définition de « déployé » et la taille des organisations sondées | Enquête d'un organisme statistique, sur toutes les tailles d'entreprise |\n| Justifier un budget d'agents | Partir du coût par résultat d'un processus, non d'une part de marché (chapitre 40) | Aucun cas |\n| Planifier 2027 | S'appuyer sur les échéances datées; tenir les jalons de normalisation pour glissants | Standard déjà publié et mis en œuvre par ses fournisseurs |\n| Choisir entre suite et composants | Suite pour l'usage interne à un éditeur; noyau possédé pour ce qui traverse les plateformes (chapitre 27) | Parc d'un seul éditeur, sans échange externe |\n| Signer un contrat au-delà de 2027 | Clause de révision du modèle de prix et clause de sortie éprouvée | Engagement d'un an |\n| Suivre le marché canadien | Statistique Canada et l'ISQ d'abord; enquêtes de cabinets pour les grandes entreprises seulement | Nouvelle série officielle sur les agents |\n\n---",
+  "sources_resume": [
+   {
+    "n": 64,
+    "groupe": "Pages tierces lues le 13 novembre 2026, qui rapportent un émetteur dont la page n'a pas pu être chargée :",
+    "source": "[MarketBeat — résumé de l'appel d'Oracle du 10 septembre 2026](https://www.marketbeat.com/instant-alerts/transcript-oracle-q1-earnings-call-highlights-2026-09-10/) — résumé tiers; communiqué d'Oracle refusé.",
+    "phrases": [
+     {
+      "ligne": 122,
+      "phrase": "| Oracle [64] | Agents de clients en production | Plus de 2 300 | Trimestre clos le 31 août 2026 | Résumé tiers de l'appel |"
+     }
+    ]
+   },
+   {
+    "n": 65,
+    "groupe": "Pages tierces lues le 13 novembre 2026, qui rapportent un émetteur dont la page n'a pas pu être chargée :",
+    "source": "[MarketBeat — résumé de l'appel d'UiPath du 3 septembre 2026](https://www.marketbeat.com/instant-alerts/transcript-uipath-q2-earnings-call-highlights-2026-09-03/) — résumé tiers.",
+    "phrases": [
+     {
+      "ligne": 123,
+      "phrase": "| UiPath [65] | Contrats incluant de l'IA | 18 des 20 plus grands du trimestre | Trimestre clos le 31 juillet 2026 | Résumé tiers; aucun revenu agentique distinct |"
+     }
+    ]
+   }
+  ]
+ }
+]
