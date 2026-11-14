@@ -110,7 +110,7 @@ $endif$
 // --------------------------------------------------------------- encadrés
 #let genres = (
   executive: ("Synthèse exécutive", marine),
-  filrouge: ("Fil rouge — Groupe Boréal", rgb("#2c6b58")),
+  filrouge: ("Fil rouge — Groupe Boréal · cas fictif", rgb("#2c6b58")),
   adr: ("Décision d’architecture", rgb("#5a3e8f")),
   sectoriel: ("Éclairage sectoriel", rgb("#8a5a12")),
   important: ("Important", rgb("#9c2f2f")),
@@ -223,7 +223,7 @@ $endif$
 
   - *Renvois.* «~Chapitre 14~» et «~section 14.2~» désignent toujours la numérotation de ce volume.
   - *Sources.* Les numéros entre crochets renvoient aux sources de l'exposé de référence du chapitre. Les volets «~Mise en œuvre~» ne citent pas de sources.
-  - *Fil rouge.* Le cas du Groupe Boréal, fiction située en 2027 et en 2028 et racontée au passé, se lit dans les volets; écrit dans un autre ordre que celui des chapitres, il évoque parfois une étape traitée plus loin.
+  - *Fil rouge.* Le cas du Groupe Boréal, fiction située en 2027 et en 2028, chiffres compris, et racontée au passé, se lit dans les volets; écrit dans un autre ordre que celui des chapitres, il évoque parfois une étape traitée plus loin.
   - *Dates de référence.* Faits arrêtés au 11 novembre 2026 (chapitres 1 à 47) et au 13 novembre 2026 (partie X); compléments du 14 novembre dans vingt chapitres et dans la partie X.
   - *Plan initial.* Les sections «~Limites~» appellent ainsi le plan de commande de l'ouvrage et son relevé de sources.
   - *Encadrés.* Synthèse exécutive, fil rouge, décision d'architecture, éclairage sectoriel~: chaque genre garde la même présentation dans tout l'ouvrage.

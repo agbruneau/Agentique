@@ -139,7 +139,7 @@ Un compendium de référence pour 2027 doit distinguer ce qui est établi de ce 
 
 ## 0.5 Dossier initial du fil rouge : Groupe Boréal Inc.
 
-Les concepts d’interopérabilité et d’orchestration montrent leur difficulté réelle au contact d’un système d’information patrimonial, formé par des décennies d’acquisitions, de dettes techniques et d’obligations légales hétérogènes. Plutôt que des exemples limités à trois fonctions Python idéalisées, les volets « Mise en œuvre » suivent la transformation d’une entreprise de référence fictive mais réaliste : Groupe Boréal Inc. (« Groupe Boréal »).
+Les concepts d’interopérabilité et d’orchestration montrent leur difficulté réelle au contact d’un système d’information patrimonial, formé par des décennies d’acquisitions, de dettes techniques et d’obligations légales hétérogènes. Plutôt que des exemples limités à trois fonctions Python idéalisées, les volets « Mise en œuvre » suivent la transformation d’une entreprise de référence fictive mais réaliste : Groupe Boréal Inc. (« Groupe Boréal »).<!-- ajout partie X --> Tous ses chiffres sont fictifs, y compris les résultats dits vérifiés ou homologués : ils donnent un ordre de grandeur plausible, non une mesure. Les extraits de code des volets sont illustratifs; ceux en YAML, JSON, Python, XML et TypeScript ont passé un contrôle de syntaxe, non ceux en Cedar, Rego, SQL et HTTP.<!-- fin ajout -->
 
 :::: {.encadre .filrouge}
 ::: {.encadre-titre}

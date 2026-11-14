@@ -1,0 +1,13 @@
+{
+ "id": "P4-3-4",
+ "origine": "plan 2027, lot P4-3-4",
+ "categorie": "enrichissement",
+ "remplacements": [
+  {
+   "fichier": "ouverture.md",
+   "avant": "Groupe Boréal Inc. (« Groupe Boréal »).\n\n::::",
+   "apres": "Groupe Boréal Inc. (« Groupe Boréal »).<!-- ajout partie X --> Tous ses chiffres sont fictifs, y compris les résultats dits vérifiés ou homologués : ils donnent un ordre de grandeur plausible, non une mesure. Les extraits de code des volets sont illustratifs; ceux en YAML, JSON, Python, XML et TypeScript ont passé un contrôle de syntaxe, non ceux en Cedar, Rego, SQL et HTTP.<!-- fin ajout -->\n\n::::",
+   "motif": "Lots P4-3 et P4-4 : convention unique sur les chiffres du cas fictif, et statut des extraits de code après le contrôle de syntaxe du 14 novembre 2026 (93 blocs sur 108 validés, aucune faute)."
+  }
+ ]
+}
