@@ -110,6 +110,33 @@ Deux points s'ajoutent à ceux que l'auteur doit trancher.
   directrice de l'AMF sur l'IA, référentiel SecNumCloud, rapport Gartner sur la gestion
   d'agents, documentation de ServiceNow, rapport McKinsey sur le maillage agentique.
 
+## Après l'audit : plan de travail, priorités 0 et 1 (14 novembre 2026)
+
+Le plan de travail `plan.md` reprend les points ouverts par ordre de gravité. Ses lots et
+leurs comptes rendus sont dans `Master/lots/`; chaque lot passe par
+`compendium-master-lot.py`, qui l'inscrit au registre.
+
+- **Priorité 0.** Les 41 points laissés à l'auteur sont relocalisés dans
+  `Master/audit/points-ouverts.json` : chaque point y est situé par son texte, avec sa
+  ligne actuelle, son lot et son état. Ce fichier fait foi pour l'état des points; le
+  tableau ci-dessous reste celui du 13 novembre. Un point était déjà clos : le glossaire
+  donne « délégué confus » depuis l'entrée n° 257 (ch. 31, ligne 19).
+- **Priorité 1, lot P1-B1.** Le point bloquant est clos (ch. 47, ligne 541) : le fil
+  rouge du chapitre 47 reprend les chiffres du chapitre 25. Quatre entrées de catégorie
+  `coherence`, n° 550 à 553. Le bilan du chapitre 47 dit maintenant que le sous-module
+  de 2008 a été refait par l'usine d'après son oracle de transactions : ce raccord n'est
+  pas dans le chapitre 25, et l'auteur doit le confirmer.
+- **Priorité 1, lots P1-B2 à P1-B4 : ouverts.** La ligne directrice de l'AMF sur l'IA,
+  la Directive fédérale sur la prise de décisions automatisée et la loi québécoise
+  codifiée n'ont toujours pas été lues : aucun texte n'a été déposé dans
+  `Master/recherche/sources-locales/`, et une recherche de copies archivées n'a rien
+  donné. Les sections 38.2 à 38.4, 39.6 et 22.6 gardent leurs réserves.
+
+Restent ouverts 39 points : 10 majeurs et 29 mineurs. Le registre compte 553 entrées :
+les 356 corrections de l'audit et 197 inscriptions postérieures, que la page « À propos
+de cette édition » décompte à part. Le PDF compte 1 091 pages et passe tous les
+contrôles. Ces quatre corrections n'ont pas été relues par un second lecteur.
+
 ## Ce qui reste à décider avant impression
 
 - **Auteur, mention légale, licence, ISBN** : la page de titre et les métadonnées du PDF

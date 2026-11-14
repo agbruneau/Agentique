@@ -42,6 +42,7 @@ Un agent lecteur produit seulement `Master/lots/<id>-constats.json` : une liste 
 ### 1.3 Règles d'un remplacement
 
 - `avant` est copié du fichier, mot pour mot, et n'y figure qu'une fois. Pour insérer, on prend comme ancre la fin du passage précédent **et** le début du suivant, de sorte que `avant` ne soit pas contenu dans `apres`.
+- `origine` commence toujours par « plan 2027 » : c'est ce qui range l'entrée parmi les inscriptions postérieures à l'audit sur la page « À propos de cette édition ».
 - Catégories : `factuel`, `coherence`, `renvoi`, `terminologie`, `langue`, `temporel`, `structure`, `residu` pour une correction; `enrichissement` pour un ajout de contenu; `harmonisation` pour un ajustement qui en découle.
 - Dans un **exposé** : toute affirmation nouvelle porte un appel `[n]`; la source s'ajoute en fin de liste, numérotée à la suite, avec sa date de lecture et son étendue (« résumé seulement », « lu par passages »); le bandeau « État de référence » et les « Limites » sont mis à jour dans le même lot.
 - Dans un **volet** : aucune source, aucun appel `[n]`. Le texte réécrit ne doit pas dépasser 110 % de son original : on remplace, on n'allonge pas. Un renvoi vers l'exposé vaut mieux qu'une phrase de plus.

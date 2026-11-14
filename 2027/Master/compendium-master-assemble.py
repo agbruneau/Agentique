@@ -140,13 +140,18 @@ COMPLEMENTS = ("enrichissement", "harmonisation")
 
 
 def corrections():
-    """Décompte du registre : (corrections de l'audit de publication, compléments postérieurs)."""
+    """Décompte du registre : (corrections de l'audit de publication, inscriptions postérieures).
+
+    Sont postérieures à l'audit les catégories de COMPLEMENTS et, quelle que soit leur
+    catégorie, les entrées des lots du plan de travail (origine « plan 2027… »).
+    """
     registre = os.path.join(ICI, "audit", "corrections.json")
     if not os.path.isfile(registre):
         return 0, 0
     with open(registre, encoding="utf-8") as f:
         entrees = json.load(f)
-    apres = sum(1 for c in entrees if c.get("categorie") in COMPLEMENTS)
+    apres = sum(1 for c in entrees if c.get("categorie") in COMPLEMENTS
+                or (c.get("origine") or "").startswith("plan 2027"))
     return len(entrees) - apres, apres
 
 

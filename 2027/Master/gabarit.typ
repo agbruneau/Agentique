@@ -230,7 +230,7 @@ $endif$
 
   #titre2[Rapprochement des deux éditions]
 
-  Les volets «~Mise en œuvre~», l'ouverture et les annexes F à H ont été réécrits dans le ton des exposés; ce que l'exposé d'un chapitre établit déjà y est remplacé par un renvoi. Là où un volet contredisait l'exposé, qui est sourcé, il a été corrigé d'après lui. Quand un volet prescrit plus que l'exposé ne retient, ou qu'un extrait de code suit une version antérieure d'un protocole, une phrase le signale. Un audit de publication a ensuite relu tout l'ouvrage et y a porté $nbcorrections$ corrections, consignées dans un registre. Après l'audit, $nbcomplements$ compléments et harmonisations, non audités, ont été inscrits au même registre. Rapprochement, audit et compléments ont été faits par des agents sous contrôle automatique, sans relecture humaine intégrale~: des écarts peuvent subsister.
+  Les volets «~Mise en œuvre~», l'ouverture et les annexes F à H ont été réécrits dans le ton des exposés; ce que l'exposé d'un chapitre établit déjà y est remplacé par un renvoi. Là où un volet contredisait l'exposé, qui est sourcé, il a été corrigé d'après lui. Quand un volet prescrit plus que l'exposé ne retient, ou qu'un extrait de code suit une version antérieure d'un protocole, une phrase le signale. Un audit de publication a ensuite relu tout l'ouvrage et y a porté $nbcorrections$ corrections, consignées dans un registre. Après l'audit, $nbcomplements$ compléments, harmonisations et corrections, non audités, ont été inscrits au même registre. Rapprochement, audit et compléments ont été faits par des agents sous contrôle automatique, sans relecture humaine intégrale~: des écarts peuvent subsister.
 ]
 
 // Table des matières : parties, chapitres et volets.
