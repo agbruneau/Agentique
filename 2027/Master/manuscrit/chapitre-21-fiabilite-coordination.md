@@ -55,7 +55,7 @@ Trois réserves encadrent l'usage de la taxonomie. Ses auteurs ne la disent pas 
 
 ### Hors des bancs d'essai
 
-MAST lit des traces d'exécution. Une étude de 2026 lit ce que les développeurs signalent : 13 602 billets et demandes de tirage tirés de 40 dépôts de systèmes agentiques à code ouvert, dont 385 fautes analysées à la main [9]. Le portrait qui en sort est celui d'un logiciel ordinaire. Les causes les plus fréquentes sont les schémas de données discordants (28,0 %), la dérive des dépendances (21,9 %) et la complexité de la gestion d'état (14,1 %). Les catégories les plus proches de la coordination, soit le cycle de vie et l'état des agents (délégation, transitions, terminaison) et la coordination du système, pèsent 9,9 % et 1,6 % des fautes.
+MAST lit des traces d'exécution. Une étude de 2026 lit ce que les développeurs signalent : 13 602 billets et demandes de tirage tirés de 40 dépôts de systèmes agentiques à code ouvert, dont 385 fautes analysées à la main [9]. Le portrait qui en sort est celui d'un logiciel ordinaire. Les causes les plus fréquentes sont les schémas de données discordants (28,0 %), la dérive des dépendances (21,9 %) et la complexité de la gestion d'état (14,1 %). Les catégories les plus proches de la coordination, soit le cycle de vie et l'état des agents (délégation, transitions, terminaison) et la coordination du système, comptent 38 et 6 des 385 fautes, soit 9,9 % et 1,6 %, parts calculées ici [9].
 
 Les 145 praticiens consultés pour valider la taxonomie la jugent représentative : 83,8 % y reconnaissent leur expérience. Ils lui reprochent toutefois de sous-représenter la coordination multi-agents. L'un d'eux écrit que, dans ces systèmes, les plus gros problèmes viennent de la coordination entre agents plutôt que des pannes d'outils. Sont cités les messages mal interprétés entre agents, l'injection de prompt en cascade et les dépendances circulaires entre tâches [9].
 
@@ -206,7 +206,7 @@ Trois résultats intéressent ce chapitre.
 - **Un meilleur modèle ne protège pas toujours.** Sous cette même faute, Table-Critic garde 70,61 % de robustesse avec DeepSeek-V3 et 6,32 % avec GPT-5 : selon les auteurs, le modèle le plus fort suit plus fidèlement une directive corrompue. Il fait mieux, en revanche, contre l'hallucination et les plans inexécutables [10].
 - **La structure compte autant que le modèle.** D'après le résumé, les architectures itératives en boucle fermée neutralisent plus de 40 % des fautes qui font s'effondrer une chaîne linéaire. Les fautes de communication (tempête, cycle ou amplification de messages) sont les moins destructrices dans MetaGPT, dont la robustesse reste au-dessus de 93 % [10].
 
-L'étude recoupe la section 21.2 : les deux étages qui ne dépendent pas du modèle, le mécanisme et la règle, sont ceux que la conception maîtrise. Elle fournit aussi une méthode d'essai, que le chapitre 34 reprend sous le nom d'ingénierie du chaos. Sa portée reste étroite : trois systèmes, deux modèles, un seul essai par cas, des comportements étiquetés par un modèle juge, et des fautes de communication éprouvées sur un seul des trois systèmes [10].
+L'étude recoupe la section 21.2 : les deux étages qui ne dépendent pas du modèle, le mécanisme et la règle, sont ceux que la conception maîtrise. Elle fournit aussi une méthode d'essai, voisine de l'ingénierie du chaos de la section 34.10, qui injecte des pannes d'outils et de protocole plutôt que des fautes entre agents. Sa portée reste étroite : trois systèmes, deux modèles, un seul essai par cas, des comportements étiquetés par un modèle juge, et des fautes de communication éprouvées sur un seul des trois systèmes [10].
 
 ---
 
@@ -244,7 +244,7 @@ Le banc invite aussi à la prudence sur les notes de coordination. Son indicateu
 
 Savoir quel agent a causé l'échec, et à quelle étape, est le préalable de toute correction. Sur le jeu de données Who&When, qui réunit les journaux d'échec de 127 systèmes multi-agents, la meilleure méthode désigne le bon agent dans 53,5 % des cas et la bonne étape dans 14,2 % [7]. Certaines méthodes font pire que le hasard, et même les modèles de raisonnement de pointe, comme o1 et DeepSeek R1, n'y atteignent pas un niveau utilisable.
 
-Le texte de l'article précise l'ampleur du problème [7]. Les méthodes essayées ont chacune leur défaut. Donner tout le journal au modèle juge désigne l'agent fautif environ une fois sur deux, mais trouve l'étape moins souvent que le hasard en moyenne; avancer pas à pas trouve mieux l'étape, sans dépasser 25,5 %. L'exactitude baisse à mesure que le journal s'allonge et, pour les plus longs (93 à 130 étapes), l'étape fautive n'est presque jamais trouvée. Combiner les deux méthodes porte l'attribution à l'agent à 57,02 %, pour près de neuf fois plus de jetons. L'annotation humaine elle-même est coûteuse et incertaine : trois experts y ont consacré environ 84 heures pour 184 cas, et ont signalé de 15 % à 30 % d'annotations incertaines [7].
+Le texte de l'article précise l'ampleur du problème [7]. Les méthodes essayées ont chacune leur défaut. Donner tout le journal au modèle juge désigne l'agent fautif environ une fois sur deux, mais trouve l'étape moins souvent que le hasard en moyenne; avancer pas à pas trouve mieux l'étape, sans dépasser 25,5 %, valeur atteinte sur un seul sous-ensemble (systèmes générés par algorithme, vérité terrain fournie), ce qui explique qu'elle dépasse les 14,2 % du résumé. L'exactitude baisse à mesure que le journal s'allonge et, pour les plus longs (93 à 130 étapes), l'étape fautive n'est presque jamais trouvée. Combiner les deux méthodes porte l'attribution à l'agent à 57,02 %, pour près de neuf fois plus de jetons. L'annotation humaine elle-même est coûteuse et incertaine : trois experts y ont consacré environ 84 heures pour 184 cas, et ont signalé de 15 % à 30 % d'annotations incertaines [7].
 
 La conséquence est directe. L'analyse de cause après coup ne peut pas reposer sur un juge automatique. L'attribution se prépare à la conception : relations d'imputabilité déclarées (section 21.5), traces qui relient chaque délégation à son auteur (chapitre 33).
 
@@ -285,7 +285,7 @@ Entre entreprises, la difficulté s'accroît : nul ne conçoit l'organisation de
 | Imputabilité | Relations commettant-responsable déclarées, devoirs mesurables | Petit système stable de deux ou trois agents |
 | Mesure de la coordination | Échantillon de traces étiqueté selon MAST, surcoût, jalons | — |
 | Attribution d'un échec | Revue humaine appuyée sur les traces | Attribution automatique en aide au tri seulement |
-| Essai de robustesse | Fautes de coordination injectées avant la mise en production (chapitre 34) | Agent unique, ou tâche sans effet de bord |
+| Essai de robustesse | Fautes de coordination injectées avant la mise en production (section 21.5; pour les pannes d'outils et de protocole, section 34.10) | Agent unique, ou tâche sans effet de bord |
 
 ---
 
@@ -300,7 +300,7 @@ Entre entreprises, la difficulté s'accroît : nul ne conçoit l'organisation de
 - L'imputabilité architecturale transforme rôles, relations et devoirs en données validées. Elle est démontrée à très petite échelle, sans mesure de fiabilité.
 - L'attribution automatique d'un échec à un agent reste peu exacte. Elle se prépare à la conception, par les relations déclarées et les traces.
 - Hors des bancs d'essai, les fautes signalées dans les dépôts sont surtout celles d'un logiciel ordinaire. Les échecs de coordination y sont mal comptés, parce qu'ils ne lèvent pas d'exception.
-- Sous faute injectée, ce qui protège est une boucle de vérification ou une règle déterministe. Un modèle plus fort peut suivre plus fidèlement une directive corrompue.
+- Sous faute injectée, une boucle de vérification ou une règle déterministe absorbe une partie des fautes, pas toutes : la confiance aveugle traverse aussi un système à boucle de critique. Un modèle plus fort peut suivre plus fidèlement une directive corrompue.
 - Fiabiliser un système multi-agents est un travail de conception d'organisation : division du travail, autorité, information, contrôle, imputabilité.
 
 ---

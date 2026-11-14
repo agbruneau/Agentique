@@ -168,7 +168,7 @@ La documentation d'ADK donne la règle la plus utile [11]. Des sous-agents locau
 
 ### Les réserves
 
-**Les versions divergent.** La documentation de CrewAI donne 0.3.0 comme version de protocole par défaut de son serveur A2A [5]. Les exemples de Microsoft publient des cartes d'agent en version 1.0 et exigent la version 1 du SDK A2A [8]. Or la version 1.0 rompt avec la 0.3 (chapitre 6). Deux cadriciels qui « parlent A2A » ne s'entendent donc pas forcément sans réglage. Certains produits font le pont : Agent Server sert la version 1.0 tout en acceptant les noms de méthode de la 0.3 [17].
+**Les versions divergent.** La documentation de CrewAI donne 0.3.0 comme version de protocole par défaut de son serveur A2A [5]. Les exemples de Microsoft publient des cartes d'agent en version 1.0 et exigent la version 1 du SDK A2A [8]. Or la version 1.0 rompt avec la 0.3 (chapitre 6). Deux cadriciels qui « parlent A2A » ne s'entendent donc pas forcément sans réglage. Certains produits font un pont partiel : Agent Server accepte les noms de méthode de la 1.0 et de la 0.3 sur JSON-RPC, mais ses réponses gardent la forme de la 0.3 [17].
 
 **Le contrat reste lâche.** CrewAI permet de demander un format de réponse à un agent distant, puis précise qu'A2A ne l'impose pas : l'agent appelé n'est pas tenu de l'honorer [5]. La validation des sorties reste à la charge de l'appelant.
 
@@ -186,7 +186,7 @@ Le verrouillage se déplace donc plus qu'il ne disparaît. Il quitte la biblioth
 
 | Cadriciel | Unité de composition | État et reprise | Attaches relevées |
 |---|---|---|---|
-| LangGraph [1][2][3] | Graphe : état typé, nœuds, arêtes | Points de contrôle par fil; magasin à choisir | Bibliothèque autonome sous licence MIT; déploiement géré et A2A dans un produit distinct |
+| LangGraph [1][2][3][17][19] | Graphe : état typé, nœuds, arêtes | Points de contrôle par fil; magasin à choisir | Bibliothèque autonome sous licence MIT; déploiement géré et A2A dans un produit distinct |
 | CrewAI [4][5] | Flow qui enveloppe des Crews | État de Flow persistant | Licence MIT; production A2A renvoyée à la plateforme commerciale AMP |
 | Microsoft Agent Framework [6][7][8] | Agent, harnais, workflow à graphe | Sessions; points de contrôle par super-étape; extension durable | Multi-modèles; licence MIT; paquets en préversion selon le langage |
 | OpenAI Agents SDK [9] | Agent, transfert, garde-fou | Sessions; bac à sable reprenable | Pente vers l'API et le traçage de l'éditeur |
@@ -238,7 +238,7 @@ Trois précautions en découlent, déduites ici : essayer la combinaison exacte 
 - Une procédure écrite réduit les défauts de spécification et de coordination, mais laisse paraître plus d'échecs de vérification.
 - Le verrouillage se déplace de la bibliothèque vers le runtime géré, l'observabilité et la plateforme.
 - Aucun chiffre comparatif de coût en jetons n'a été lu; le critère vérifiable est la maîtrise du contexte envoyé au modèle.
-- Les études de défauts montrent des bogues surtout ordinaires, concentrés dans l'intégration du modèle et souvent transposables d'un cadriciel à l'autre : la discipline d'essai compte plus que le produit.
+- Les études de défauts montrent des bogues surtout ordinaires, dont la couche d'intégration du modèle porte la plus grande part (un quart) et dont près de la moitié de ceux qui ont été rejoués se transposent à un autre cadriciel. Ce chapitre en déduit que la discipline d'essai compte au moins autant que le choix du produit.
 
 ---
 
@@ -271,7 +271,7 @@ Sources ajoutées le 14 novembre 2026 :
 17. [LangSmith — point d'accès A2A d'Agent Server](https://docs.langchain.com/langsmith/server-a2a)
 18. [CrewAI — MCP, vue d'ensemble](https://docs.crewai.com/en/mcp/overview)
 19. Dépôts de [LangGraph](https://github.com/langchain-ai/langgraph), de [CrewAI](https://github.com/crewAIInc/crewAI) et de [Microsoft Agent Framework](https://github.com/microsoft/agent-framework) — licence indiquée sur la page d'accueil.
-20. [Zhang, Zhang et Tan — Dissecting Bug Triggers and Failure Modes in Modern Agentic Frameworks: An Empirical Study (arXiv 2604.08906, 10 avril 2026)](https://arxiv.org/html/2604.08906v1) — prépublication.
+20. [Zhang, Zhang et Tan — Dissecting Bug Triggers and Failure Modes in Modern Agentic Frameworks: An Empirical Study (arXiv 2604.08906, 10 avril 2026)](https://arxiv.org/html/2604.08906v1) — prépublication, lue le 14 novembre 2026; étendue de lecture non consignée.
 21. [Zhu et coll. — Where Agent Frameworks Fall Short: Examining Functional Challenges and Usability Concerns (arXiv 2602.21806, version 4 du 6 août 2026)](https://arxiv.org/abs/2602.21806) — prépublication; résumé seulement.
 
 ## Limites de ce chapitre

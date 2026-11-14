@@ -1,0 +1,19 @@
+{
+ "id": "P2-F2-a",
+ "origine": "plan 2027, lot P2-F2-a",
+ "categorie": "factuel",
+ "remplacements": [
+  {
+   "fichier": "chapitre-13-ingenierie-contexte.md",
+   "avant": "un outil mentionné dans le fichier est utilisé en moyenne 1,6 fois par tâche, contre moins de 0,01 fois sinon [15]",
+   "apres": "l'outil `uv`, pris en exemple, est utilisé en moyenne 1,6 fois par tâche quand le fichier le mentionne, contre moins de 0,01 fois sinon; pour les outils propres au dépôt, 2,5 fois contre moins de 0,05 [15]",
+   "motif": "Recollationnement (lot P2-F2, phrase F2-027) : les deux chiffres valent pour un seul outil, uv, que la source donne en exemple (section 4.3 du texte complet, lu le 14 novembre 2026), non pour tout outil mentionné. La source donne aussi 2,5 contre moins de 0,05 pour les outils propres au dépôt."
+  },
+  {
+   "fichier": "chapitre-26-plateformes-entreprise.md",
+   "avant": "Microsoft présente Agent 365 comme son plan de contrôle pour les agents, autour de trois fonctions : observer, gouverner, sécuriser [2].",
+   "apres": "Microsoft présente Agent 365 comme une plateforme d'observabilité bâtie sur quatre piliers : gestion, gouvernance, sécurité et valeur d'affaires [2]. Une autre page de sa documentation, citée au chapitre 27, le dit plan de contrôle, autour de trois fonctions : observer, gouverner, sécuriser.",
+   "motif": "Recollationnement (lot P2-F2, phrase F2-070) : la page [2], relue le 14 novembre 2026, donne quatre piliers (« management, governance, security, and business value ») et se dit « the observability platform for AI ». La formule du plan de contrôle à trois fonctions figure sur une autre page de Microsoft Learn, source du chapitre 27. La page [2] a été mise à jour le 12 novembre, après la première lecture : une version antérieure a pu différer."
+  }
+ ]
+}

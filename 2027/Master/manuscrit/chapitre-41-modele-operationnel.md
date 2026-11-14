@@ -175,7 +175,7 @@ L'article de 2026 décrit une institution financière passée d'une formation g�
 
 ### Emploi et perte de pratique
 
-Deux effets sur les personnes débordent la question des compétences à acquérir. Le premier est l'emploi : les mesures disponibles portent sur l'IA générative plutôt que sur les agents, et la section 48.8 en fait le relevé. Le second est la perte de pratique. Un superviseur qui ne fait plus la tâche perd peu à peu la capacité de juger le travail de l'agent, et la révision de routine tourne à l'approbation machinale (section 22.5).
+Deux effets sur les personnes débordent la question des compétences à acquérir. Le premier est l'emploi : la section 41.6 rapporte ce que les répondants d'une enquête déclarent des effectifs [3]; les essais relevés à la section 48.8 mesurent la productivité d'assistants, non l'emploi ni les agents. Le second est la perte de pratique. Selon un article de position, un superviseur qui ne fait plus la tâche perd peu à peu la capacité de juger le travail de l'agent, et la révision de routine tourne à l'approbation machinale [12] (section 22.5); l'effet n'est pas mesuré chez des superviseurs d'agents.
 
 Un article de position propose contre cet effet des mesures qui relèvent du modèle opérationnel : des exercices du métier sans IA, une alternance entre travail assisté et travail non assisté, du temps de révision prévu à l'horaire, et l'abandon des objectifs de productivité qui découragent l'examen [12]. Leur efficacité n'a pas été mesurée.
 
@@ -261,7 +261,7 @@ Deux modes de défaillance encadrent le choix. Un centre qui examine tout devien
 - Si les agents absorbent le travail d'entrée, la relève des superviseurs doit être organisée délibérément.
 - Le changement se mesure à la refonte des flux, des rôles et des incitatifs, pas au taux d'utilisation.
 - Centre d'excellence ou fédération : le choix se fait fonction par fonction, règles et plateforme au centre, refonte et propriété des agents dans les domaines.
-- La supervision s'use si le superviseur ne pratique plus le métier. L'alternance entre travail assisté et travail non assisté est proposée, sans mesure d'efficacité.
+- Un article de position soutient que la supervision s'use si le superviseur ne pratique plus le métier; l'effet n'est pas mesuré. L'alternance entre travail assisté et travail non assisté est proposée, sans mesure d'efficacité.
 
 ---
 
@@ -286,7 +286,7 @@ Source secondaire :
 
 Source ajoutée le 14 novembre 2026 :
 
-12. [Mitchell, Ghosh et Passi — AI Agents Push Humans Out of the Loop (arXiv 2608.23642, version 3 du 6 septembre 2026)](https://arxiv.org/html/2608.23642) — article de position, lu pour le chapitre 22.
+12. [Mitchell, Ghosh et Passi — AI Agents Push Humans Out of the Loop (arXiv 2608.23642, version 3 du 6 septembre 2026)](https://arxiv.org/html/2608.23642) — article de position, lu le 14 novembre 2026 pour le chapitre 22; premiers cinq sixièmes du texte.
 
 ## Limites de ce chapitre
 
@@ -297,7 +297,7 @@ Source ajoutée le 14 novembre 2026 :
 - La recherche citée en 41.2 et 41.3 précède les agents à base de modèle de langage ou porte sur des assistants. Sa transposition aux agents autonomes est une hypothèse de ce chapitre.
 - Aucune étude évaluée par les pairs n'a été trouvée sur le nombre d'agents qu'une personne peut superviser, ni sur l'efficacité comparée d'un centre d'excellence et d'un modèle fédéré.
 - Le lien entre travail d'entrée et formation de l'expertise (41.5) relève de la connaissance générale et de l'argument de [2], non d'une mesure.
-- La sous-section « Emploi et perte de pratique » (41.5) date du 14 novembre 2026. Elle n'apporte aucune mesure sur l'emploi : elle renvoie à la section 48.8 et repose, pour la perte de pratique, sur un article de position [12].
+- La sous-section « Emploi et perte de pratique » (41.5) date du 14 novembre 2026. Elle n'apporte aucune mesure nouvelle sur l'emploi : elle renvoie à la section 41.6 pour les effectifs déclarés et à la section 48.8 pour la productivité des assistants, et repose, pour la perte de pratique, sur un article de position [12].
 - Les tableaux de 41.4 et de 41.7 sont des synthèses de ce chapitre.
 
 ## Mise en œuvre — Modèle opérationnel cible, facteur humain (HOTL) et prospective 2028–2030 {.volet}

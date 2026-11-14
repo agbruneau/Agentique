@@ -159,7 +159,7 @@ Une recherche complémentaire a trouvé trois textes parus en 2026, connus ici p
 
 **Entretiens dans douze entreprises.** Seize praticiens du génie logiciel situent les usages en production aux niveaux 1 à 3 d'une échelle de maturité qui en compte six; quatre entreprises disposent de capacités expérimentales au-delà. Quatre obstacles reviennent : la gestion du contexte, la performance sur des contenus propres à l'entreprise, le non-déterminisme et la qualification, la confidentialité des données [15].
 
-Ces trois textes confirment le portrait de MAP : des agents étroits, enfermés dans une chaîne déterministe et qualifiés lentement. Lu en entier, le premier relèverait sans doute du niveau 1 de la hiérarchie de la section 42.1; les deux autres, des niveaux 3 et 2.
+D'après leurs résumés, ces trois textes vont dans le sens du portrait de MAP : des agents étroits, bornés par une chaîne fixée d'avance, dans des usages de production encore limités. Lu en entier, le premier relèverait sans doute du niveau 1 de la hiérarchie de la section 42.1; les deux autres, des niveaux 3 et 2.
 
 ---
 
@@ -210,7 +210,7 @@ Le secteur public québécois en est à l'inventaire et au cadrage. Ses cas de r
 |---|---|---|---|
 | Service à la clientèle | Nubank [1] | 1 | Valeurs absolues, coûts, volumes |
 | Documents financiers | Banc d'essai [4] | 4 | Tout déploiement documenté |
-| Opérations TI | ServiceNow [3], MAP [2], bancs d'essai [5] [6] | 2 à 4 | Résultats mesurés en production |
+| Opérations TI | ServiceNow [3], MAP [2], bancs d'essai [5] [6]; un cas mesuré en production, connu par son seul résumé [13] | 2 à 4; 1 à confirmer pour [13] | Résultats mesurés en production et lus en entier |
 | Secteur public | Portrait [8] [9], guide [10] | 5 | Toute évaluation |
 
 Le domaine le mieux documenté est aussi le plus borné : des questions de clients sur un produit connu, avec un transfert possible à un humain. Plus la tâche engage des systèmes en marche ou des décisions, moins il existe de textes vérifiables.
@@ -287,8 +287,8 @@ Source secondaire :
 
 Résumés seulement, relevés le 14 novembre 2026 :
 
-13. [Kujanpää et coll. — Tool-Making and Self-Evolving LLM Agents in Low-Latency Systems (arXiv 2607.08010, 9 juillet 2026)](https://arxiv.org/abs/2607.08010)
-14. RecSys Factory: Bounding LLM Agent Autonomy to Decision Points in the Industrial Recommender Lifecycle (prépublication, 2026) — résumé repris d'un index d'articles; page non retrouvée.
+13. [Kujanpää et coll. — Tool-Making and Self-Evolving LLM Agents in Low-Latency Systems (arXiv 2607.08010, 9 juillet 2026; à paraître au volet industriel d'EMNLP 2026 selon la page arXiv)](https://arxiv.org/abs/2607.08010)
+14. [Ao, Fang et Xu — RecSys Factory: Bounding LLM Agent Autonomy to Decision Points in the Industrial Recommender Lifecycle (arXiv 2608.11241, 31 juillet 2026)](https://arxiv.org/abs/2608.11241) — prépublication.
 15. [Apostolou, Bosch et Olsson — Agentic AI in Industry: Adoption Level and Deployment Barriers (arXiv 2605.14675, 14 mai 2026)](https://arxiv.org/abs/2605.14675)
 
 ## Limites de ce chapitre

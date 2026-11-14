@@ -2,7 +2,7 @@
 
 *Question directrice : combien coûte un agent, et que rapporte-t-il ?*
 
-> **État de référence :** communiqué State of FinOps 2026 (19 février 2026), page « FinOps for AI » de la FinOps Foundation (mise à jour du 28 octobre 2026), annonce de la Tokenomics Foundation (4 août 2026) et pages de prix des éditeurs affichées le 11 novembre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre, toutes lues pour ce chapitre; [3] et [10] sont des prépublications, [4] et [6] des billets de fournisseurs; [13] à [15] ont été ajoutées le 14 novembre 2026. Les montants sont en dollars américains.
+> **État de référence :** communiqué State of FinOps 2026 (19 février 2026), page « FinOps for AI » de la FinOps Foundation (mise à jour du 28 octobre 2026), annonce de la Tokenomics Foundation (4 août 2026) et pages de prix des éditeurs affichées le 11 novembre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre, toutes lues pour ce chapitre; [3], [10] et [14] sont des prépublications, [4] et [6] des billets de fournisseurs; [13] à [15] ont été ajoutées le 14 novembre 2026, [14] par son seul résumé et [15] par sa synthèse. Les montants sont en dollars américains.
 
 Une licence logicielle a un prix. Un agent a une distribution de coûts : la même demande peut se régler en trois appels au modèle ou en trente, selon le chemin que prend le raisonnement. La facture dépend d'une trajectoire que personne n'a écrite d'avance, et elle arrive après les faits.
 
@@ -178,13 +178,13 @@ La dernière colonne est un calcul fait pour ce chapitre, non un résultat de l'
 
 Anthropic tire de ses mesures une règle simple : un système multi-agents ne se justifie que pour des tâches dont la valeur paie le surcroît de performance [6]. Dans l'une de ses évaluations, la consommation de jetons expliquait à elle seule 80 % de la variance de performance. Dépenser plus de jetons achète de la performance; reste à savoir ce que vaut le point supplémentaire.
 
-### Deux précautions
+### Trois précautions
 
 **Un rendement ne vaut que ses intrants**, prévient la FinOps Foundation [5]. Un gain de productivité déclaré n'est pas une économie constatée.
 
 **La part de travail accomplie sans intervention humaine**, mesure que la Tokenomics Foundation annonce vouloir normaliser [11], dit ce que l'agent fait seul, pas s'il le fait bien. Elle se lit avec le succès vérifié (chapitre 34).
 
-**Le gain de productivité à l'échelle de l'entreprise n'est pas établi.** Une étude de Statistique Canada observe, chez les entreprises canadiennes qui ont adopté l'IA, une prime de productivité du travail de 16,8 %. Elle tombe à 10,2 % quand on tient compte de leur productivité de départ, puis à 5,1 %, non significative, quand on ajoute leurs autres capacités numériques et d'innovation [13]. Les auteurs concluent que la prime reflète surtout quelles entreprises adoptent l'IA, et que les gains peuvent demander du temps et un changement d'organisation. L'étude porte sur l'IA en général; rien n'y concerne les agents.
+**Le gain de productivité à l'échelle de l'entreprise n'est pas établi.** Une étude de Statistique Canada observe, chez les entreprises canadiennes qui ont adopté l'IA, une prime de productivité du travail de 16,8 %. Elle tombe à 10,2 % quand on tient compte de leur productivité de départ, puis à 5,1 %, non significative, quand on ajoute leurs autres capacités numériques et d'innovation [13]. Les auteurs concluent que la prime reflète surtout quelles entreprises adoptent l'IA, et que les gains peuvent demander du temps et un changement d'organisation. L'étude porte sur l'IA en général et sur des données d'enquête de 2019 et de 2021, antérieures à l'IA générative; rien n'y concerne les agents.
 
 ---
 
@@ -245,8 +245,8 @@ Ces chiffres viennent d'une prépublication, sur un seul domaine, aux tarifs de 
 - La tarification au résultat déplace le risque vers la définition du résultat, que le fournisseur mesure lui-même.
 - La valeur se mesure au coût par résultat réussi, comparé à une base de référence et au coût de l'erreur.
 - Le cache de prompts vient en premier, car il ne touche pas à la qualité. Le routage réduit davantage le coût, au prix d'une perte de précision à mesurer.
-- L'énergie suit les jetons : les leviers de coût sont aussi des leviers d'empreinte. Aucune source lue ne mesure la consommation d'un agent.
-- À l'échelle de l'entreprise, la prime de productivité associée à l'IA disparaît statistiquement une fois les autres capacités prises en compte.
+- Par déduction, l'énergie suit les jetons : le cache, le routage et la décomposition réduisent aussi l'empreinte. Aucune source lue ne mesure la consommation d'un agent.
+- Dans une étude de Statistique Canada sur des données de 2019 et de 2021, la prime de productivité associée à l'IA n'est plus significative une fois les autres capacités de l'entreprise prises en compte; rien n'y porte sur les agents.
 
 ---
 
@@ -267,7 +267,7 @@ Pages primaires lues le 11 novembre 2026 :
 11. [Linux Foundation — lancement de la Tokenomics Foundation, communiqué du 4 août 2026](https://linuxfoundation.org/press/linux-foundation-launches-the-tokenomics-foundation-to-define-the-economics-and-roi-of-ai-value)
 12. [Microsoft Learn — politique `llm-token-limit` d'Azure API Management](https://learn.microsoft.com/en-us/azure/api-management/llm-token-limit-policy)
 
-Sources ajoutées le 14 novembre 2026 :
+Sources lues le 14 novembre 2026 ([13] : article lu par un outil qui en condense le contenu) :
 
 13. [Statistique Canada — Li et Liu, Artificial intelligence adoption and productivity in Canadian firms (22 avril 2026)](https://www150.statcan.gc.ca/n1/pub/36-28-0001/2026004/article/00002-eng.htm)
 14. [Elsworth et coll. — Measuring the environmental impact of delivering AI at Google Scale (arXiv 2508.15734, 21 août 2025)](https://arxiv.org/abs/2508.15734) — prépublication d'un fournisseur; résumé seulement.

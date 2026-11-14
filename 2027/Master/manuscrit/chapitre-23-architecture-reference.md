@@ -100,7 +100,7 @@ Depuis, des éditeurs ont repris le mot, sous les formes *agent mesh* et *agenti
 
 Une quatrième acception, celle du rapport de McKinsey, ne désigne aucun mécanisme : c'est un modèle d'ensemble. Un billet publié par l'IEEE Computer Society en donne une variante en six couches : environnement d'exécution, identité et gouvernance, tissu de communication, abstraction des modèles, observabilité et sûreté, intégration aux systèmes de l'entreprise [19]. C'est un texte d'opinion, sans résultat empirique, dont l'auteur travaille chez un fournisseur infonuagique.
 
-### Ce que ces acceptions partagent
+### Ce que le chapitre en retient
 
 Ramené à ses éléments, le maillage désigne trois choses déjà décrites : un registre pour se trouver, des protocoles standards pour se parler (MCP et A2A, chapitres 5 et 6) et un plan de données commun par lequel passe le trafic. C'est une propriété d'infrastructure, calquée sur le maillage de services des architectures de microservices.
 
@@ -120,13 +120,13 @@ Le même billet en tire une conclusion d'éditeur : garder le maillage de servic
 
 **Le maillage n'est pas une topologie de coordination.** Il dit qui *peut* joindre qui; l'orchestration dit qui *appelle* qui, et dans quel ordre (chapitre 16). La taxonomie de Zhou et de ses collègues indique ce qu'il en coûte de confondre les deux. Dans une configuration à forte autonomie, une coordination entièrement distribuée améliore la fiabilité, puisqu'elle supprime le point de défaillance unique, mais dégrade la performance et la maintenabilité, et complique l'IA responsable [3]. Le maillage rend les agents joignables; la conception décide lesquels se parlent, et les modes d'échec du chapitre 21 rappellent pourquoi.
 
-**Le maillage n'est pas un produit interchangeable.** Les trois acceptions ne se substituent pas l'une à l'autre. La première suppose un maillage de services déjà en place. La deuxième fait du courtier d'événements le transport de tous les échanges, ce qui est une décision d'architecture (chapitre 19). La troisième est une bibliothèque dont le plan de contrôle reste à écrire [18]. Avant de retenir « un maillage », il faut nommer la fonction recherchée : appliquer une politique sur le chemin, transporter les échanges ou établir la confiance entre agents.
+**Le maillage n'est pas un produit interchangeable.** Les trois acceptions ne se substituent pas l'une à l'autre. La première suppose un maillage de services déjà en place. La deuxième fait du courtier d'événements le transport de tous les échanges, ce qui est une décision d'architecture (chapitre 19). La troisième est une bibliothèque, que sa page présente aussi comme un mandataire de gouvernance, et dont le plan de contrôle reste à écrire [18]. Avant de retenir « un maillage », il faut nommer la fonction recherchée : appliquer une politique sur le chemin, transporter les échanges ou établir la confiance entre agents.
 
 **Le maillage s'arrête à la frontière de l'entreprise.** Entre organisations, aucun plan de contrôle n'est commun : dans un espace de données, chaque partie garde le sien, qui négocie avec celui de l'autre, et le transfert passe par un plan de données distinct (chapitre 45). La topologie suit alors les frontières d'autorité (chapitre 16).
 
 ### Niveau de preuve
 
-Aucune des pages lues ne rapporte de mesure sur un déploiement. Ce sont des documentations et des billets d'éditeurs, de [14] à [18], et un texte d'opinion [19]. Le seul article de revue repéré qui nomme un « maillage agentique d'entreprise » est une proposition, connue ici par son seul résumé : un plan de contrôle sémantique qui route selon l'intention, un mandataire de gouvernance accolé à chaque agent (*sidecar*) et un registre distribué pour l'observabilité [21]. Le terme reste un vocabulaire d'éditeurs et de cabinets. Ce chapitre le retient pour la propriété qu'il nomme, non comme un modèle validé.
+Aucune des pages lues ne rapporte de mesure sur un déploiement. Ce sont des documentations et des billets d'éditeurs, de [14] à [18], et un texte d'opinion [19]. Le seul article paru dans une revue qui nomme un « maillage agentique d'entreprise », revue dont l'évaluation par les pairs n'a pas été vérifiée, est une proposition, connue ici par son seul résumé : un plan de contrôle sémantique qui route selon l'intention, un mandataire de gouvernance accolé à chaque agent (*sidecar*) et un registre distribué pour l'observabilité [21]. Le terme reste un vocabulaire d'éditeurs et de cabinets. Ce chapitre le retient pour la propriété qu'il nomme, non comme un modèle validé.
 
 ---
 

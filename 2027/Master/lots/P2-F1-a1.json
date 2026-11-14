@@ -1,0 +1,97 @@
+{
+ "id": "P2-F1-a1",
+ "origine": "plan 2027, lot P2-F1-a1",
+ "categorie": "coherence",
+ "remplacements": [
+  {
+   "fichier": "chapitre-21-fiabilite-coordination.md",
+   "avant": "avancer pas à pas trouve mieux l'étape, sans dépasser 25,5 %. L'exactitude baisse à mesure que le journal s'allonge et, pour les plus longs (93 à 130 étapes), l'étape fautive n'est presque jamais trouvée. Combiner les deux méthodes porte l'attribution à l'agent à 57,02 %, pour près de neuf fois plus de jetons. L'annotation humaine elle-même est coûteuse et incertaine : trois experts y ont consacré environ 84 heures pour 184 cas, et ont signalé de 15 % à 30 % d'annotations incertaines [7].",
+   "apres": "avancer pas à pas trouve mieux l'étape, sans dépasser 25,5 %, valeur atteinte sur un seul sous-ensemble (systèmes générés par algorithme, vérité terrain fournie), ce qui explique qu'elle dépasse les 14,2 % du résumé. L'exactitude baisse à mesure que le journal s'allonge et, pour les plus longs (93 à 130 étapes), l'étape fautive n'est presque jamais trouvée. Combiner les deux méthodes porte l'attribution à l'agent à 57,02 %, pour près de neuf fois plus de jetons. L'annotation humaine elle-même est coûteuse et incertaine : trois experts y ont consacré environ 84 heures pour 184 cas, et ont signalé de 15 % à 30 % d'annotations incertaines [7].",
+   "motif": "Second audit (lot P2-F1, entrée n° 373, majeur) : Contradiction apparente avec le paragraphe précédent, resté tel quel : « la meilleure méthode désigne le bon agent dans 53,5 % des cas et la bonne étape dans 14,2 % ». Le complément donne ensuite 25,5 % pour l'étape et 57,02 % pour l'agent, deux valeurs supérieures à celles de « la meilleure méthode », sans dire que les chiffres ne portent pas sur le même périmètre."
+  },
+  {
+   "fichier": "chapitre-21-fiabilite-coordination.md",
+   "avant": "Sous faute injectée, ce qui protège est une boucle de vérification ou une règle déterministe.",
+   "apres": "Sous faute injectée, une boucle de vérification ou une règle déterministe absorbe une partie des fautes, pas toutes : la confiance aveugle traverse aussi un système à boucle de critique.",
+   "motif": "Second audit (lot P2-F1, entrée n° 375, majeur) : Formulation plus tranchée que la source et que la section 21.5 elle-même. [10] décrit quatre étages de défense, et son résumé borne l'effet des boucles fermées à « plus de 40 % » des fautes qui font s'effondrer une chaîne linéaire. La section 21.5 rapporte que Table-Critic, système à boucle de critique, tombe à 6,32 % de robustesse sous confiance aveugle avec GPT-5 : la boucle n'y protège pas."
+  },
+  {
+   "fichier": "chapitre-21-fiabilite-coordination.md",
+   "avant": "pèsent 9,9 % et 1,6 % des fautes",
+   "apres": "comptent 38 et 6 des 385 fautes, soit 9,9 % et 1,6 %, parts calculées ici [9]",
+   "motif": "Second audit (lot P2-F1, entrée n° 370, majeur) : Ces deux parts ne semblent pas publiées par [9] : la source donne des décomptes (38 et 6 fautes), et 9,9 % et 1,6 % correspondent à 38/385 et 6/385. Ce seraient donc des parts calculées dans le chapitre, alors que les limites disent les pourcentages « cités tels quels ». Elles sont en outre calculées sur 385, alors que les parts de causes de la phrase précédente (28,0 %, 21,9 %, 14,1 %) le sont sur 361 : deux déno…"
+  },
+  {
+   "fichier": "chapitre-21-fiabilite-coordination.md",
+   "avant": "que le chapitre 34 reprend sous le nom d'ingénierie du chaos",
+   "apres": "voisine de l'ingénierie du chaos de la section 34.10, qui injecte des pannes d'outils et de protocole plutôt que des fautes entre agents",
+   "motif": "Second audit (lot P2-F1, entrée n° 371, mineur) : Renvoi inexact. Le chapitre 34 ne reprend pas la méthode de MAS-FIRE et ne cite pas cette étude. Sa section 34.10, qui est dans le volet non sourcé, injecte cinq classes de perturbations de l'environnement (débit et transport, latence, JSON partiel, préconditions périmées, injection adversariale) sur les flux MCP et A2A, et aucune faute entre agents (confiance aveugle, tempête ou cycle de messages)."
+  },
+  {
+   "fichier": "chapitre-21-fiabilite-coordination.md",
+   "avant": "Fautes de coordination injectées avant la mise en production (chapitre 34)",
+   "apres": "Fautes de coordination injectées avant la mise en production (section 21.5; pour les pannes d'outils et de protocole, section 34.10)",
+   "motif": "Second audit (lot P2-F1, entrée n° 374, mineur) : La grille renvoie au chapitre 34 pour l'injection de fautes de coordination, que ce chapitre ne décrit pas : sa section 34.10 n'injecte que des pannes d'outils, de transport et de données, et une injection adversariale. Le lecteur qui suit le renvoi n'y trouve pas la pratique recommandée."
+  },
+  {
+   "fichier": "chapitre-22-humain-dans-la-boucle.md",
+   "avant": "Les mesures qui précèdent viennent d'éditeurs. Quatre sources extérieures vont dans le même sens, chacune avec sa limite.",
+   "apres": "La seule mesure de la fatigue d'approbation qui précède vient d'un éditeur, sur son propre produit [6]. Quatre sources qui ne portent pas sur le produit de leur auteur vont dans le même sens, chacune avec sa limite; deux d'entre elles, [14] et [15], comptent néanmoins des auteurs employés par des éditeurs d'outils agentiques.",
+   "motif": "Second audit (lot P2-F1, entrée n° 379, majeur) : Double inexactitude. D'une part, les mesures qui précèdent ne viennent pas toutes d'éditeurs : la mesure de 66 % est celle de l'étude MAP [7], universitaire, et le constat de fatigue d'alerte est celui du cadre de Singapour [2]; seule la mesure de 93 % vient d'un éditeur, un seul. D'autre part, deux des quatre sources dites extérieures et « indépendantes » (titre de la sous-section, point à retenir, limites) vienn…"
+  },
+  {
+   "fichier": "chapitre-23-architecture-reference.md",
+   "avant": "### Ce que ces acceptions partagent",
+   "apres": "### Ce que le chapitre en retient",
+   "motif": "Second audit (lot P2-F1, entrée n° 359, majeur) : L'intertitre ajouté attribue aux trois acceptions d'éditeurs la phrase qui le suit, écrite avant le complément pour le maillage en général : registre, protocoles standards et plan de données commun. Les pages lues ne l'appuient pas. Les limites disent que les pages de Solace ne décrivent pas la découverte entre agents; l'AgentMesh de Microsoft est donné pour une bibliothèque dont le plan de contrôle n'est pas mis …"
+  },
+  {
+   "fichier": "chapitre-23-architecture-reference.md",
+   "avant": "Le seul article de revue repéré qui nomme un « maillage agentique d'entreprise » est une proposition",
+   "apres": "Le seul article paru dans une revue qui nomme un « maillage agentique d'entreprise », revue dont l'évaluation par les pairs n'a pas été vérifiée, est une proposition",
+   "motif": "Second audit (lot P2-F1, entrée n° 362, mineur) : Tension avec la sous-section précédente, qui donne [20] pour le « seul appui évalué par les pairs trouvé pour cette section ». Si [21] est un article de revue, il y a deux appuis de ce rang; s'il ne l'est pas (les limites disent que la qualité de la revue n'a pas été évaluée), le texte doit le dire ici, là où l'article est cité."
+  },
+  {
+   "fichier": "chapitre-23-architecture-reference.md",
+   "avant": "La troisième est une bibliothèque dont le plan de contrôle reste à écrire [18].",
+   "apres": "La troisième est une bibliothèque, que sa page présente aussi comme un mandataire de gouvernance, et dont le plan de contrôle reste à écrire [18].",
+   "motif": "Second audit (lot P2-F1, entrée n° 361, mineur) : Description réductrice par rapport à la page citée, qui présente AgentMesh à la fois comme une bibliothèque importée par le code et comme un mandataire de gouvernance. La même page donne aussi deux échelles pour le score de confiance (« 800-1000 scale » et « from 0 to 1000 »); le chapitre retient 0 à 1 000 sans signaler l'écart."
+  },
+  {
+   "fichier": "chapitre-24-passerelles-integration.md",
+   "avant": "Le dispositif n'a pas été placé devant de vrais serveurs, et les auteurs jugent sa latence trop élevée pour certains usages.",
+   "apres": "Rien, dans le texte lu, n'indique que le dispositif ait été placé devant de vrais serveurs, et les auteurs jugent sa latence encore trop élevée pour les usages à très faible latence [15].",
+   "motif": "Second audit (lot P2-F1, entrée n° 403, mineur) : La première moitié de la phrase, et « L'évaluation est faite hors ligne » qui la précède, n'ont pas été retrouvées dans [15] à la lecture de contrôle : ce sont vraisemblablement des déductions du chapitre, tirées de la nature du jeu d'essai, et elles sont données sur le ton du fait rapporté, sans appel [15]. Seule la réserve sur la latence est attestée. Constat déduit d'une lecture par l'outil qui condense : à tra…"
+  },
+  {
+   "fichier": "chapitre-24-passerelles-integration.md",
+   "avant": "Sources ajoutées le 14 novembre 2026 :",
+   "apres": "Pages lues le 14 novembre 2026 :",
+   "motif": "Second audit (lot P2-F1, entrée n° 408, mineur) : L'intertitre donne la date d'ajout, non la date de lecture, alors que les autres chapitres du lot écrivent « Pages lues le 14 novembre 2026 ». Les entrées [14] et [15] ne disent pas leur étendue de lecture (texte entier ou début seulement), que le plan exige pour toute source ajoutée."
+  },
+  {
+   "fichier": "chapitre-20-cadriciels-orchestration.md",
+   "avant": "Les études de défauts montrent des bogues surtout ordinaires, concentrés dans l'intégration du modèle et souvent transposables d'un cadriciel à l'autre : la discipline d'essai compte plus que le produit.",
+   "apres": "Les études de défauts montrent des bogues surtout ordinaires, dont la couche d'intégration du modèle porte la plus grande part (un quart) et dont près de la moitié de ceux qui ont été rejoués se transposent à un autre cadriciel. Ce chapitre en déduit que la discipline d'essai compte au moins autant que le choix du produit.",
+   "motif": "Second audit (lot P2-F1, entrée n° 439, mineur) : Le point à retenir va plus loin que la section 20.7. « Concentrés » : la couche d'intégration du modèle est la plus touchée avec 24,7 % des bogues, soit moins du quart. « La discipline d'essai compte plus que le produit » est donné comme ce que les études montrent, alors que la section dit que [20] ne classe pas les produits et ne mesure pas de taux de défaut : c'est une déduction du chapitre, que les limites ne d…"
+  },
+  {
+   "fichier": "chapitre-20-cadriciels-orchestration.md",
+   "avant": "Certains produits font le pont : Agent Server sert la version 1.0 tout en acceptant les noms de méthode de la 0.3 [17].",
+   "apres": "Certains produits font un pont partiel : Agent Server accepte les noms de méthode de la 1.0 et de la 0.3 sur JSON-RPC, mais ses réponses gardent la forme de la 0.3 [17].",
+   "motif": "Second audit (lot P2-F1, entrée n° 434, mineur) : Formulation plus favorable que celle de la section 20.2, d'après la même source : Agent Server n'y met en œuvre que la liaison JSON-RPC, sans gRPC ni HTTP+JSON, et « la forme des réponses reste celle de la 0.3 ». Placée sous « Les versions divergent », la phrase laisse croire à une compatibilité complète dans les deux sens. Constat tiré du chapitre lui-même; la page [17] n'a pas été relue."
+  },
+  {
+   "fichier": "chapitre-20-cadriciels-orchestration.md",
+   "avant": "| LangGraph [1][2][3] | Graphe : état typé, nœuds, arêtes |",
+   "apres": "| LangGraph [1][2][3][17][19] | Graphe : état typé, nœuds, arêtes |",
+   "motif": "Second audit (lot P2-F1, entrée n° 435, mineur) : Les trois lignes complétées du tableau de 20.7 (LangGraph, CrewAI, Microsoft Agent Framework) portent maintenant des faits tirés de [17] et de [19] (licence MIT, A2A dans un produit distinct), mais les appels de la première colonne n'ont pas été mis à jour : ces faits n'ont pas d'appel dans le tableau."
+  },
+  {
+   "fichier": "chapitre-20-cadriciels-orchestration.md",
+   "avant": "(https://arxiv.org/html/2604.08906v1) — prépublication.",
+   "apres": "(https://arxiv.org/html/2604.08906v1) — prépublication, lue le 14 novembre 2026; étendue de lecture non consignée.",
+   "motif": "Second audit (lot P2-F1, entrée n° 440, mineur) : La source [20], dont viennent tous les chiffres de la sous-section sur les défauts, ne dit pas son étendue de lecture, et les limites ne la donnent pas non plus. L'intertitre « Sources ajoutées le 14 novembre 2026 » donne une date d'ajout; la date de lecture n'est dite, dans les limites, que pour [16] à [19]."
+  }
+ ]
+}

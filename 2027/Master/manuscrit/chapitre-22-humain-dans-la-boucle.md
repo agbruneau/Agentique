@@ -133,7 +133,7 @@ Le goulot n'est pas le délai. Dans l'étude Measuring Agents in Production (MAP
 
 ### Ce que dit la recherche indépendante
 
-Les mesures qui précèdent viennent d'éditeurs. Quatre sources extérieures vont dans le même sens, chacune avec sa limite.
+La seule mesure de la fatigue d'approbation qui précède vient d'un éditeur, sur son propre produit [6]. Quatre sources qui ne portent pas sur le produit de leur auteur vont dans le même sens, chacune avec sa limite; deux d'entre elles, [14] et [15], comptent néanmoins des auteurs employés par des éditeurs d'outils agentiques.
 
 **Le biais d'automatisation est mesuré depuis longtemps.** Une revue systématique de 74 études, surtout sur l'aide à la décision clinique, établit que l'utilisateur d'un système d'aide suit aussi ses erreurs. Quand le conseil est faux, le risque de décision incorrecte augmente de 26 % (rapport de risques de 1,26, calculé à titre indicatif sur quatre études), et de 6 % à 11 % des réponses d'abord justes deviennent fausses après consultation du système [16]. La charge de travail, la complexité de la tâche et la pression du temps aggravent le biais. L'expérience le réduit sans l'éliminer, et l'effet de la formation est incertain. Ce qui aide tient à la conception : rendre l'utilisateur comptable de sa décision, afficher un niveau de confiance tenu à jour, fournir une information plutôt qu'une recommandation, et moins mettre le conseil en évidence [16]. La revue date de 2011 et porte sur des aides à la décision, non sur des agents.
 

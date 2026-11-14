@@ -179,7 +179,7 @@ Trois sources chiffrent quelque chose. Aucune ne suffit à départager les produ
 
 Le banc ne teste ni le contournement de la passerelle ni le comportement d'un modèle, n'emploie que deux formes d'injection, et ses auteurs précisent qu'il n'établit pas de classement. L'un des éditeurs testés est client du cabinet pour ses services de mesure, ce que la page déclare [14].
 
-**Un filtre évalué par ses auteurs.** MCP-Guard, mandataire à trois étages (motifs, détecteur neuronal, arbitrage par un modèle), rapporte un score F1 moyen de 89,1 % et une latence moyenne de 455,9 ms sur huit modèles d'arbitrage, soit environ la moitié de celle d'un modèle employé seul [15]. L'évaluation est faite hors ligne, sur un jeu de 70 448 échantillons composé à 97 % d'instructions de débridage. Le dispositif n'a pas été placé devant de vrais serveurs, et les auteurs jugent sa latence trop élevée pour certains usages.
+**Un filtre évalué par ses auteurs.** MCP-Guard, mandataire à trois étages (motifs, détecteur neuronal, arbitrage par un modèle), rapporte un score F1 moyen de 89,1 % et une latence moyenne de 455,9 ms sur huit modèles d'arbitrage, soit environ la moitié de celle d'un modèle employé seul [15]. L'évaluation est faite hors ligne, sur un jeu de 70 448 échantillons composé à 97 % d'instructions de débridage. Rien, dans le texte lu, n'indique que le dispositif ait été placé devant de vrais serveurs, et les auteurs jugent sa latence encore trop élevée pour les usages à très faible latence [15].
 
 **Des scanners qui se contredisent.** Sur une collection de 64 611 serveurs, les scanners existants signalent 96,89 % des serveurs comme risqués, et moins de la moitié des alertes vérifiées à la main sont fondées [16]. Le balayage des définitions d'outils (section 24.2) hérite de cette limite (chapitre 8).
 
@@ -262,7 +262,7 @@ Pages primaires lues le 11 novembre 2026, sauf [12], lue le 12 :
 11. [Agentic AI Foundation — projets](https://aaif.io/projects)
 12. [Agent Router — README du dépôt](https://github.com/theagentrouter/agent-router)
 
-Sources ajoutées le 14 novembre 2026 :
+Pages lues le 14 novembre 2026 :
 
 13. [AWS — Amazon Bedrock AgentCore Gateway, guide du développeur](https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway.html) — page de présentation.
 14. [AIMultiple — banc d'essai de passerelles MCP (page mise à jour le 9 novembre 2026)](https://aimultiple.com/de/mcp-gateway) — banc d'un cabinet d'analyse; version allemande lue.

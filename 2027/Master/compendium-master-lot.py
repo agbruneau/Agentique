@@ -18,6 +18,8 @@ Règles vérifiées avant toute écriture; une seule infraction annule le lot en
     réapplication doublerait le texte);
   - « avant » présent une fois exactement dans le fichier, compte tenu des remplacements
     précédents du même lot;
+  - « avant » ne déborde pas d'une entrée antérieure du registre : s'il en entame le texte,
+    il doit y tenir tout entier;
   - dans un volet « Mise en œuvre », l'ouverture ou les annexes F à H, le passage doit se
     trouver aussi, une fois, dans la copie réécrite (Master/fusion/reecrit/), qui est
     modifiée du même geste.
@@ -111,6 +113,16 @@ def main():
         if n == 0 and apres in texte:
             deja += 1
         elif n == 1:
+            # Une entrée antérieure dont le texte disparaît doit contenir l'ancre : c'est ce
+            # que le contrôle du registre exige pour la tenir encore pour appliquée.
+            apres_coup = texte.replace(avant, apres)
+            debords = [c["n"] for c in registre if c["fichier"] == fichier and c["apres"]
+                       and c["apres"] in texte and c["apres"] not in apres_coup and avant not in c["apres"]]
+            if debords:
+                erreurs.append("%s : l'ancre « %s » déborde de l'entrée n° %s du registre (la resserrer "
+                               "pour qu'elle tienne dans le texte de cette entrée)"
+                               % (ou, avant[:50], ", ".join(map(str, debords))))
+                continue
             if suivi(fichier, texte, avant):
                 cibles = [c for c, (t, _) in autres[fichier].items() if t.count(avant) == 1]
                 if len(cibles) != 1:

@@ -36,7 +36,7 @@ Presque toutes les plateformes examinées atteignent le niveau 1 pour les agents
 
 ## 26.2 Microsoft
 
-Microsoft présente Agent 365 comme son plan de contrôle pour les agents, autour de trois fonctions : observer, gouverner, sécuriser [2]. Le produit est en disponibilité générale depuis le 1er mai 2026 pour le segment commercial, sous licence par utilisateur. La documentation indique Microsoft E5 comme prérequis conseillé [2].
+Microsoft présente Agent 365 comme une plateforme d'observabilité bâtie sur quatre piliers : gestion, gouvernance, sécurité et valeur d'affaires [2]. Une autre page de sa documentation, citée au chapitre 27, le dit plan de contrôle, autour de trois fonctions : observer, gouverner, sécuriser. Le produit est en disponibilité générale depuis le 1er mai 2026 pour le segment commercial, sous licence par utilisateur. La documentation indique Microsoft E5 comme prérequis conseillé [2].
 
 Le registre d'agents converge vers Agent 365, tandis qu'Entra conserve l'identité des agents et les politiques d'accès [1] (chapitres 8 et 23). L'inventaire complet, qui comprend des agents d'autres éditeurs et des agents sans identité Entra, se consulte sans licence particulière, avec un simple rôle de lecture. L'application de contrôles, comme l'accès conditionnel ou la gouvernance des identités, exige en revanche la licence d'Entra Agent ID [1]. Voir demande un rôle; gouverner, une licence.
 
@@ -44,9 +44,9 @@ La page des agents partenaires montre comment un tiers y entre [3]. Elle recense
 
 La même page signale que les agents déjà construits sur Google Vertex AI ou Amazon Bedrock peuvent être rendus visibles dans le centre d'administration sans développement [3]. Elle ne dit pas qu'ils deviennent observables ou gouvernés : c'est le niveau 1 de l'échelle, déduit de ce que la page tait.
 
-Aucune des trois pages lues ne mentionne MCP ou A2A. L'entrée d'un agent tiers dans le plan de contrôle passe par le SDK d'Agent 365 et par une identité Entra. A2A est intégré ailleurs dans l'offre, à Azure AI Foundry et à Copilot Studio, selon le bilan de la Linux Foundation (chapitres 4 et 6), mais la gouvernance repose sur un mécanisme propre à l'éditeur.
+Aucune des trois pages lues sur Agent 365 et Entra [1][2][3] ne mentionne MCP ou A2A. L'entrée d'un agent tiers dans le plan de contrôle passe par le SDK d'Agent 365 et par une identité Entra. A2A est intégré ailleurs dans l'offre, à Azure AI Foundry et à Copilot Studio, selon le bilan de la Linux Foundation (chapitres 4 et 6), mais la gouvernance repose sur un mécanisme propre à l'éditeur.
 
-La documentation de Copilot Studio confirme le sens sortant [21]. Un agent Copilot Studio se connecte à un agent externe qui parle A2A, par son point d'accès et non par sa carte, avec trois modes d'authentification : aucun, clé d'API ou OAuth 2.0. La connexion emprunte l'infrastructure des connecteurs personnalisés, ce qui permet de joindre un agent sur site ou dans un réseau virtuel. La page renvoie à MCP pour les outils. Datée du 26 août 2026, elle ne donne ni statut de disponibilité ni version du protocole; elle cherche encore la carte à l'ancien chemin `/.well-known/agent.json`, et son exemple emploie le nom de méthode `message/send`, antérieur à la version 1.0 (chapitre 20).
+La documentation de Copilot Studio en précise le sens, sortant [21]. Un agent Copilot Studio se connecte à un agent externe qui parle A2A, par son point d'accès et non par sa carte, avec trois modes d'authentification : aucun, clé d'API ou OAuth 2.0. La connexion emprunte l'infrastructure des connecteurs personnalisés, ce qui permet de joindre un agent sur site ou dans un réseau virtuel. La page renvoie à MCP pour les outils. Datée du 26 août 2026, elle ne donne ni statut de disponibilité ni version du protocole; elle cherche encore la carte à l'ancien chemin `/.well-known/agent.json`, et son exemple emploie le nom de méthode `message/send`, antérieur à la version 1.0 (chapitre 6).
 
 Une note y laisse au client le soin de vérifier, pour l'agent connecté, les flux de données, les permissions, l'observabilité et la supervision humaine [21]. La plateforme relie; elle ne gouverne pas l'agent d'autrui.
 
@@ -194,7 +194,7 @@ Dans le tableau, « documenté » signifie écrit dans la documentation de l'éd
 | Workday | Inscription d'agents externes par API [8] | Rapports réservés aux agents natifs; condition contractuelle |
 | AWS | MCP et A2A; registre multi-nuage [9] | Aucun statut par service dans la page lue |
 | Google | MCP et A2A 1.0; composants distants [10][17] | Inscription manuelle hors de Google Cloud |
-| IBM | A2A 0.3.0 et 1.0.0 sortant, connecteurs, découverte sur trois nuages [11][20] | Agent externe limité au rôle de collaborateur; gouvernance non documentée |
+| IBM | A2A 0.3.0 et 1.0.0 sortant, connecteurs, découverte sur trois nuages [20] | Agent externe limité au rôle de collaborateur; gouvernance non documentée |
 | UiPath | Connecteurs; A2A entrant et sortant [12][13] | A2A en préversion |
 | Camunda | MCP dans trois sens [14] | A2A partiel (alpha) |
 
@@ -208,7 +208,7 @@ Dans le tableau, « documenté » signifie écrit dans la documentation de l'éd
 
 Aucun essai d'interopérabilité indépendant entre ces plateformes n'a été trouvé : l'interopérabilité « constatée » se réduit ici à ce que la documentation admet. Une entreprise ne comble ce manque que par ses propres essais, sur trois scénarios au moins : un agent externe appelle la plateforme, la plateforme appelle un agent externe, puis un agent tiers est inscrit, restreint et révoqué depuis le plan de contrôle.
 
-Un instrument commun existe pour le faire. Le projet A2A publie une trousse de compatibilité (TCK), suite d'essais qui valide une mise en œuvre sur trois transports : gRPC, JSON-RPC et HTTP+JSON [22]. Elle lit la carte de l'agent testé, crée un client pour chaque interface déclarée et classe ses essais selon le niveau d'exigence de la spécification : un « MUST » non respecté est un échec, un « SHOULD » ne bloque pas la compatibilité, un « MAY » n'est essayé que si la capacité est déclarée. Le dépôt prévient qu'un résultat automatisé de 100 % n'établit pas la conformité tant que des obligations à vérifier à la main restent en suspens. Il ne publie aucune liste de mises en œuvre qui l'ont passée, et la page lue ne dit pas quelles versions du protocole il couvre. Demander à un éditeur le rapport de la trousse sur son point d'accès A2A est une exigence vérifiable.
+Un instrument commun existe pour une partie du premier scénario : la conformité au protocole du point d'accès que la plateforme sert. Le projet A2A publie une trousse de compatibilité (TCK), suite d'essais qui valide une mise en œuvre sur trois transports : gRPC, JSON-RPC et HTTP+JSON [22]. Elle lit la carte de l'agent testé, crée un client pour chaque interface déclarée et classe ses essais selon le niveau d'exigence de la spécification : un « MUST » non respecté est un échec, un « SHOULD » ne bloque pas la compatibilité, un « MAY » n'est essayé que si la capacité est déclarée. Le dépôt prévient qu'un résultat automatisé de 100 % n'établit pas la conformité tant que des obligations à vérifier à la main restent en suspens. Il ne publie aucune liste de mises en œuvre qui l'ont passée, et la page lue ne dit pas quelles versions du protocole il couvre. Demander à un éditeur le rapport de la trousse sur son point d'accès A2A est une exigence vérifiable.
 
 ---
 
@@ -269,7 +269,7 @@ Sources secondaires, non lues ou lues lors de l'audit :
 18. [Gartner — résumé du Magic Quadrant](https://www.gartner.com/doc/8557473) — accès refusé.
 19. [Salesforce — choisir un patron d'intégration pour Agentforce, 1er avril 2026](https://www.salesforce.com/blog/how-to-choose-integration-pattern-for-agentforce/) — billet d'éditeur, lu lors de l'audit.
 
-Pages primaires ajoutées le 14 novembre 2026 :
+Pages primaires lues le 14 novembre 2026, une page par source :
 
 20. [IBM watsonx Orchestrate — agents externes, documentation du kit de développement](https://developer.watson-orchestrate.ibm.com/agents/connect_agent.md)
 21. [Microsoft Learn — Copilot Studio, connexion à un agent par le protocole A2A (page datée du 26 août 2026)](https://learn.microsoft.com/en-us/microsoft-copilot-studio/add-agent-agent-to-agent)

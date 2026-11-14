@@ -1,0 +1,346 @@
+[
+ {
+  "id": "F2-131",
+  "verdict": "confirme",
+  "chiffres": [
+   "1 800 exécutions",
+   "cinq secteurs"
+  ],
+  "url_lue": "https://arxiv.org/abs/2604.00555",
+  "citation_source": "A controlled experiment (1,800 runs across five industries and three LLMs; « Improvements are greatest where LLM parametric knowledge is weakest »",
+  "note": "Commentaires arXiv : 600 exécutions par modèle, 5 secteurs réglementés (3 anglophones, 2 vietnamiens)."
+ },
+ {
+  "id": "F2-132",
+  "verdict": "inaccessible",
+  "chiffres": [
+   "F1 de 0,724"
+  ],
+  "url_lue": "https://ieeexplore.ieee.org/document/11486381/",
+  "citation_source": "",
+  "note": "doi.org redirige vers IEEE Xplore (302); la page IEEE est rendue vide par WebFetch à deux requêtes différentes (aucun texte, résumé inclus). Chiffre non vérifié."
+ },
+ {
+  "id": "F2-133",
+  "verdict": "erreur",
+  "chiffres": [
+   "5 179 agents",
+   "14 % de problèmes résolus de plus par heure"
+  ],
+  "url_lue": "https://arxiv.org/abs/2304.11771",
+  "citation_source": "using data from 5,172 customer support agents; Access to AI assistance increases worker productivity, as measured by issues resolved per hour, by 15% on average",
+  "note": "La page arXiv (version courante) donne 5 172 agents et 15 %, non 5 179 et 14 %. Le sens qualitatif (gain concentré chez les moins expérimentés, petits gains en vitesse et petite baisse de qualité chez les plus expérimentés) est confirmé. Supposition non vérifiée : 5 179 et 14 % seraient les chiffres d'une version antérieure (document de travail NBER d'avril 2023). Deux requêtes concordantes sur le même résumé."
+ },
+ {
+  "id": "F2-134",
+  "verdict": "inaccessible",
+  "chiffres": [
+   "453 professionnels",
+   "temps réduit de 40 %",
+   "qualité en hausse de 18 %"
+  ],
+  "url_lue": "https://www.science.org/doi/10.1126/science.adh2586",
+  "citation_source": "",
+  "note": "doi.org redirige vers science.org; HTTP 403. Aucun autre essai."
+ },
+ {
+  "id": "F2-135",
+  "verdict": "inaccessible",
+  "chiffres": [
+   "trois essais randomisés",
+   "4 867 développeurs",
+   "26,08 %",
+   "erreur type 10,3 %"
+  ],
+  "url_lue": "https://pubsonline.informs.org/doi/10.1287/mnsc.2025.00535",
+  "citation_source": "",
+  "note": "doi.org redirige vers pubsonline.informs.org; HTTP 403. Aucun autre essai."
+ },
+ {
+  "id": "F2-136",
+  "verdict": "inaccessible",
+  "chiffres": [
+   "758 consultants",
+   "12,2 % de tâches de plus",
+   "25,1 % plus vite",
+   "19 % de chances en moins"
+  ],
+  "url_lue": "https://pubsonline.informs.org/doi/10.1287/orsc.2025.21838",
+  "citation_source": "",
+  "note": "doi.org redirige vers pubsonline.informs.org; HTTP 403. Aucun autre essai."
+ },
+ {
+  "id": "F2-137",
+  "verdict": "confirme",
+  "chiffres": [
+   "plus de 6 000 travailleurs",
+   "56 entreprises",
+   "une demi-heure de moins par semaine à lire des courriels",
+   "documents terminés 12 % plus vite"
+  ],
+  "url_lue": "https://arxiv.org/abs/2504.11443",
+  "citation_source": "We analyze a large, real-world randomized experiment of over 6,000 workers at 56 firms; spent half an hour less reading email each week; completed documents 12% faster",
+  "note": ""
+ },
+ {
+  "id": "F2-138",
+  "verdict": "confirme",
+  "chiffres": [
+   "128 travailleurs",
+   "efficacité en hausse partout",
+   "qualité en baisse pour l'acquisition de connaissances"
+  ],
+  "url_lue": "https://arxiv.org/abs/2607.25922",
+  "citation_source": "with 128 knowledge workers from a multinational industrial organization; Results show that GenAI consistently increases efficiency across tasks.; quality increases for knowledge packaging and creation but declines for knowledge acquisition",
+  "note": "La source ajoute que la qualité monte pour l'empaquetage et la création de connaissances."
+ },
+ {
+  "id": "F2-139",
+  "verdict": "confirme",
+  "chiffres": [
+   "50 % d'annonces de plus par travailleur"
+  ],
+  "url_lue": "https://arxiv.org/abs/2503.18238",
+  "citation_source": "We found human-AI teams produced 50% more ads per worker and higher text quality, while human-human teams produced higher image quality",
+  "note": "Productions plus homogènes (« diversity collapse ») : confirmé aussi. « Images moins bonnes » est relatif aux équipes humain-humain. 2 234 participants, 11 024 annonces."
+ },
+ {
+  "id": "F2-140",
+  "verdict": "confirme",
+  "chiffres": [
+   "47 articles",
+   "12 rapports d'industrie",
+   "136 professionnels",
+   "73 %"
+  ],
+  "url_lue": "https://icaimt.com/2026/agentic-ai.html",
+  "citation_source": "73% of respondents consider organizational readiness—not technical capability—the primary barrier",
+  "note": "Autres citations : « a systematic review of 47 academic papers and 12 industry reports (2023–2025) »; « an original cross-sectional survey of 136 IT professionals across 14 industries »; « a persistent gap between vendor-reported and independently verified outcomes ». doi.org redirige vers icaimt.com (302)."
+ },
+ {
+  "id": "F2-141",
+  "verdict": "introuvable",
+  "chiffres": [
+   "51,1 % des serveurs à plusieurs versions modifiés",
+   "516 serveurs détournables",
+   "la moitié des entrées sans valeur"
+  ],
+  "url_lue": "https://arxiv.org/html/2510.16558v1",
+  "citation_source": "we find 304 in total GitHub redirected accounts that attackers could reclaim to hijack the corresponding MCP servers.",
+  "note": "51,1 % confirmé dans [87] (arxiv.org/abs/2609.14119) : « 51.1% of multi-version servers changed what they advertise between versions ». « La moitié sans valeur » confirmé dans [89] (arxiv.org/html/2509.25292v1) : « more than half of listed projects are invalid or low-value » (52,4 % écartés sur 16 950). Mais 516 n'apparaît pas dans [88] tel que rendu (une requête ciblée; le rendu peut être tronqué) : la source donne 304 serveurs exposés au détournement par redirection et 212 cas (15,37 %) de comptes GitHub réenregistrables; 304 + 212 = 516, somme déduite par moi, non lue dans la source. Trois requêtes épuisées (une par source)."
+ },
+ {
+  "id": "F2-142",
+  "verdict": "confirme",
+  "chiffres": [
+   "40 dépôts",
+   "cinq cadriciels",
+   "16 bogues sur 35 transposables"
+  ],
+  "url_lue": "https://arxiv.org/html/2604.08906v1",
+  "citation_source": "We found 16 of 35 source bugs (46%) are transferable, yielding 29 issues",
+  "note": "[92] : « We collected 13,602 issues and pull requests from 40 repositories ». [93] : « 409 fixed bugs from five representative agentic frameworks ». [94] : cinq cadriciels (AutoGen, CrewAI, LangChain, LangGraph, MetaGPT). « Fautes surtout ordinaires » : qualificatif non lu dans le résumé de [92], non vérifié (pas un chiffre). Texte de [93] tronqué après 100 000 caractères par l'outil."
+ },
+ {
+  "id": "F2-143",
+  "verdict": "confirme",
+  "chiffres": [
+   "prime de 16,8 %",
+   "non significative"
+  ],
+  "url_lue": "https://www150.statcan.gc.ca/n1/pub/36-28-0001/2026004/article/00002-eng.htm",
+  "citation_source": "AI adopters exhibit an 16.8% higher productivity level, compared with non-adopters",
+  "note": "Après contrôle des capacités complémentaires : « the association between AI adoption and productivity falls to 5.1% and becomes statistically insignificant. »"
+ },
+ {
+  "id": "F2-144",
+  "verdict": "inaccessible",
+  "chiffres": [
+   "26 % de risque de décision incorrecte en plus"
+  ],
+  "url_lue": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3240751/",
+  "citation_source": "",
+  "note": "La page rend uniquement une vérification de navigateur (reCAPTCHA) : aucun texte d'article. Aucun contournement tenté."
+ },
+ {
+  "id": "F2-145",
+  "verdict": "confirme",
+  "chiffres": [
+   "environ 3,1 heures",
+   "intervalle de 1,6 à 6,6 heures"
+  ],
+  "url_lue": "https://metr.org/assets/benchmark_results_1_1.yaml",
+  "citation_source": "claude_mythos_preview_early_inspect: p80_horizon_length: ci_high: 398.514614 / ci_low: 97.30292 / estimate: 185.911829",
+  "note": "Modèle le plus récent du fichier (is_sota: true). Unité non écrite dans le fichier : 185,9 / 97,3 / 398,5 valent 3,10 / 1,62 / 6,64 heures si l'unité est la minute (déduction : le commentaire du fichier exclut les p50 > 16 h et le p50 du même modèle est 1044,8). Texte lu dans la copie locale enregistrée par WebFetch, sans nouvel accès web."
+ },
+ {
+  "id": "F2-146",
+  "verdict": "confirme",
+  "chiffres": [
+   "environ 129 jours",
+   "intervalle de 104 à 158 jours"
+  ],
+  "url_lue": "https://metr.org/assets/benchmark_results_1_1.yaml",
+  "citation_source": "doubling_time_in_days: from_2023_on: ci_high: 158.012 / ci_low: 104.428 / point_estimate: 128.744",
+  "note": "Le fichier ne dit pas explicitement que cet horizon est celui à 50 % : il porte la mention « excludes points with central estimate p50 > 16 hrs » (série p50)."
+ },
+ {
+  "id": "F2-147",
+  "verdict": "confirme",
+  "chiffres": [
+   "environ 188 jours"
+  ],
+  "url_lue": "https://metr.org/assets/benchmark_results_1_1.yaml",
+  "citation_source": "doubling_time_in_days: all_time_stitched: point_estimate: 187.778",
+  "note": ""
+ },
+ {
+  "id": "F2-148",
+  "verdict": "confirme",
+  "chiffres": [
+   "dix bancs d'essai",
+   "219 failles",
+   "scores presque parfaits sans résoudre une seule tâche"
+  ],
+  "url_lue": "https://arxiv.org/abs/2605.12673",
+  "citation_source": "We apply BenchJack to 10 popular agent benchmarks spanning software engineering; surfacing 219 distinct flaws across the eight classes; achieve near-perfect scores on most of the benchmarks without solving a single task",
+  "note": "La source dit « most of the benchmarks », non les dix : nuance par rapport à la phrase de l'ouvrage."
+ },
+ {
+  "id": "F2-149",
+  "verdict": "confirme",
+  "chiffres": [
+   "jusqu'à 57 % de la performance des modèles de pointe"
+  ],
+  "url_lue": "https://arxiv.org/abs/2601.09923",
+  "citation_source": "We evaluate our design on OSWorld, and retain up to 57% of the performance of frontier models",
+  "note": "Le résumé ajoute : amélioration jusqu'à 19 % pour de petits modèles ouverts."
+ },
+ {
+  "id": "F2-150",
+  "verdict": "confirme",
+  "chiffres": [
+   "72,5 % d'exactitude",
+   "48,5 % meilleure base par récupération",
+   "57,2 % au mieux sur des trajectoires d'agents"
+  ],
+  "url_lue": "https://arxiv.org/abs/2605.12493",
+  "citation_source": "Experiments show that AgentRunbook-C achieves the best performance with 72.5% average accuracy; outperforming the strongest RAG baseline (48.5%)",
+  "note": "[55] (arxiv.org/abs/2602.22769) : « AMA-Agent achieves 57.22% accuracy on AMA-Bench, outperforming the strongest baseline by 11.16%. » (57,22 arrondi à 57,2)."
+ },
+ {
+  "id": "F2-151",
+  "verdict": "confirme",
+  "chiffres": [
+   "modèles de 1 à 3 milliards de paramètres",
+   "65,7 % d'exactitude"
+  ],
+  "url_lue": "https://arxiv.org/abs/2511.22138",
+  "citation_source": "This paper investigates the effectiveness of small language models (SLMs) for agentic tasks (function/tool/API calling); achieving up to 65.74% overall accuracy, and 55.62% multi-turn accuracy with hybrid optimization.",
+  "note": "Le résumé dit aussi que les modèles de 1 à 3 G de paramètres surpassent nettement ceux de moins de 1 G. Le résumé ne nomme pas le modèle qui atteint 65,74 %. L'article de position [59] n'a pas été ouvert (aucun chiffre à vérifier)."
+ },
+ {
+  "id": "F2-152",
+  "verdict": "confirme",
+  "chiffres": [
+   "2,35 ms de latence",
+   "600 attaques rejetées",
+   "environ 2 000 serveurs MCP, aucun authentifié"
+  ],
+  "url_lue": "https://arxiv.org/abs/2603.24775",
+  "citation_source": "In a real multi-agent deployment with Gemini 2.5 Flash, AIP adds 2.35ms of overhead; Adversarial evaluation across 600 attack attempts shows 100% rejection rate; A scan of approximately 2,000 MCP servers found all lacked authentication.",
+  "note": ""
+ },
+ {
+  "id": "F2-153",
+  "verdict": "confirme",
+  "chiffres": [
+   "23 demandes de fusion"
+  ],
+  "url_lue": "https://genai.owasp.org/2026/10/08/genai-and-agentic-ai-exploit-roundup-q3-2026/",
+  "citation_source": "A malicious MCP server was promoted through 23 GitHub pull requests to prominent AI projects.",
+  "note": "La source précise : 23 demandes soumises en 74 minutes; aucune fusionnée, donc pas de compromission aval confirmée."
+ },
+ {
+  "id": "F2-154",
+  "verdict": "confirme",
+  "chiffres": [
+   "362 incidents en 2025",
+   "233 l'année précédente"
+  ],
+  "url_lue": "https://hai.stanford.edu/ai-index/2026-ai-index-report",
+  "citation_source": "Documented AI incidents rose to 362, up from 233 in 2024.",
+  "note": ""
+ },
+ {
+  "id": "F2-155",
+  "verdict": "confirme",
+  "chiffres": [
+   "102 fiches"
+  ],
+  "url_lue": "https://services.nvd.nist.gov/rest/json/cves/2.0?keywordSearch=Model%20Context%20Protocol&pubStartDate=2026-07-01T00:00:00.000Z&pubEndDate=2026-10-28T00:00:00.000Z",
+  "citation_source": "\"resultsPerPage\":102,\"startIndex\":0,\"totalResults\":102",
+  "note": "totalResults = 102 pour la requête à mot-clé « Model Context Protocol » du 1er juillet au 28 octobre 2026. Le tableau « vulnerabilities » n'a pas pu être compté (réponse tronquée par l'outil, 28 entrées vues); le tri éventuel fait par l'ouvrage n'est pas vérifié."
+ },
+ {
+  "id": "F2-156",
+  "verdict": "confirme",
+  "chiffres": [
+   "11,0 G$ US",
+   "19,2 G$ US",
+   "74 %"
+  ],
+  "url_lue": "https://www.fortunebusinessinsights.com/integration-platform-as-a-service-ipaas-market-109835",
+  "citation_source": "is projected to grow from USD 19.15 billion in 2026 to USD 108.76 billion by 2034",
+  "note": "[9] Persistence : « Integration Platform as a Service (iPaaS) Market Size (2026E) | US$ 11.0 Bn ». [10] Fortune donne 19,15 G$ (2026), arrondi à 19,2 par l'ouvrage. 74 % : écart calculé (19,15 / 11,0 = 1,74), pas une valeur lue dans les sources."
+ },
+ {
+  "id": "F2-157",
+  "verdict": "confirme",
+  "chiffres": [
+   "0,49 G$ US",
+   "plus de 1 G$ US en 2030",
+   "15,8 G$ US en 2030",
+   "facteur 16"
+  ],
+  "url_lue": "https://www.forrester.com/blogs/ai-governance-software-spend-will-see-30-cagr-from-2024-to-2030/",
+  "citation_source": "spending on off-the-shelf AI governance software will more than quadruple, reaching $15.8 billion",
+  "note": "[52] Insurance-Canada : « With spending on AI governance expected to reach $492 million in 2026 and surpass $1 billion by 2030 » (492 M$ = 0,49 G$; le mot « platforms » n'est pas dans l'extrait rendu). Facteur 16 : rapport calculé 15,8 / 1, pas une valeur des sources. Forrester ajoute : 7 % des dépenses globales en logiciels d'IA."
+ },
+ {
+  "id": "F2-158",
+  "verdict": "confirme",
+  "chiffres": [
+   "5,9 G$ (2026)",
+   "122,2 G$ (2034)",
+   "46,2 %"
+  ],
+  "url_lue": "https://www.polarismarketresearch.com/industry-analysis/enterprise-agentic-ai-market",
+  "citation_source": "projected to grow to USD 122.21 Billion by 2034 at a CAGR of 46.2% from 2026 till 2034.",
+  "note": "Source : « 2026 Market Estimate USD 5.86 Billion » (arrondi à 5,9). Le mois de publication (août 2026) n'a pas été vérifié."
+ },
+ {
+  "id": "F2-159",
+  "verdict": "confirme",
+  "chiffres": [
+   "9,9 G$ (2026)",
+   "82,3 G$ (2032)",
+   "42,4 %"
+  ],
+  "url_lue": "https://www.mordorintelligence.com/industry-reports/agentic-ai-market",
+  "citation_source": "The Agentic AI market size is expected to grow from USD 9.89 billion in 2026 to USD 14.06 billion in 2027 and is forecast to reach USD 82.27 billion by 2032 at 42.38% CAGR over 2027-2032.",
+  "note": "Arrondis corrects (9,89 / 82,27 / 42,38). Précision de période : le TCAC de la source porte sur 2027-2032, non 2026-2032."
+ },
+ {
+  "id": "F2-160",
+  "verdict": "confirme",
+  "chiffres": [
+   "9,1 G$ (2026)",
+   "139,2 G$ (2034)",
+   "40,5 %"
+  ],
+  "url_lue": "https://www.fortunebusinessinsights.com/agentic-ai-market-114233",
+  "citation_source": "projected to grow from USD 9.14 billion in 2026 to USD 139.19 billion by 2034; exhibiting a CAGR of 40.50% during the forecast period",
+  "note": "Arrondis corrects (9,14 / 139,19 / 40,50)."
+ }
+]

@@ -1,0 +1,139 @@
+{
+ "id": "P2-F1-b2a",
+ "origine": "plan 2027, lot P2-F1-b2a",
+ "categorie": "coherence",
+ "remplacements": [
+  {
+   "fichier": "chapitre-26-plateformes-entreprise.md",
+   "avant": "antérieur à la version 1.0 (chapitre 20)",
+   "apres": "antérieur à la version 1.0 (chapitre 6)",
+   "motif": "Second audit (lot P2-F1, entrée n° 419, mineur) : Renvoi mal dirigé. Le chapitre 20 ne nomme pas la méthode `message/send` : il dit seulement qu'Agent Server accepte « les noms de méthode de la 0.3 ». C'est le chapitre 6 qui donne `message/send` pour un nom de la version 0.3 et `SendMessage` pour celui de la 1.0."
+  },
+  {
+   "fichier": "chapitre-26-plateformes-entreprise.md",
+   "avant": "Un instrument commun existe pour le faire.",
+   "apres": "Un instrument commun existe pour une partie du premier scénario : la conformité au protocole du point d'accès que la plateforme sert.",
+   "motif": "Second audit (lot P2-F1, entrée n° 423, mineur) : Formulation plus large que la source. « Le faire » renvoie aux trois scénarios d'essai du paragraphe précédent (appel entrant, appel sortant, inscription-restriction-révocation d'un agent tiers). La trousse, telle que le paragraphe la décrit d'après [22], valide la conformité d'un agent servi en A2A à la spécification : elle ne couvre ni l'appel sortant de la plateforme ni la gouvernance d'un agent tiers. La grill…"
+  },
+  {
+   "fichier": "chapitre-26-plateformes-entreprise.md",
+   "avant": "découverte sur trois nuages [11][20]",
+   "apres": "découverte sur trois nuages [20]",
+   "motif": "Second audit (lot P2-F1, entrée n° 422, mineur) : Appel vers une source qui ne peut pas porter l'affirmation. La section 26.7 dit elle-même que [11], billet d'annonce, « ne mentionne ni MCP ni A2A et ne décrit aucun mécanisme »; les versions d'A2A, les connecteurs et la découverte viennent tous de [20]."
+  },
+  {
+   "fichier": "chapitre-26-plateformes-entreprise.md",
+   "avant": "Pages primaires ajoutées le 14 novembre 2026 :",
+   "apres": "Pages primaires lues le 14 novembre 2026, une page par source :",
+   "motif": "Second audit (lot P2-F1, entrée n° 426, mineur) : L'intertitre donne la date d'ajout, non la date de lecture, alors que les deux autres intertitres de la liste disent « lues le ». Les limites datent la lecture de [20] et de [21], pas celle de [22]."
+  },
+  {
+   "fichier": "chapitre-26-plateformes-entreprise.md",
+   "avant": "Aucune des trois pages lues ne mentionne MCP ou A2A.",
+   "apres": "Aucune des trois pages lues sur Agent 365 et Entra [1][2][3] ne mentionne MCP ou A2A.",
+   "motif": "Second audit (lot P2-F1, entrée n° 419, mineur) : Phrase rendue inexacte par le complément : quatre pages de Microsoft sont maintenant lues, et la quatrième [21], présentée au paragraphe suivant, traite d'A2A et renvoie à MCP."
+  },
+  {
+   "fichier": "chapitre-26-plateformes-entreprise.md",
+   "avant": "La documentation de Copilot Studio confirme le sens sortant [21].",
+   "apres": "La documentation de Copilot Studio en précise le sens, sortant [21].",
+   "motif": "Second audit (lot P2-F1, entrée n° 419, mineur) : « Confirme » un sens que le chapitre n'a pas encore énoncé : la phrase qui précède dit seulement qu'A2A est « intégré » à Copilot Studio selon la Linux Foundation, sans direction."
+  },
+  {
+   "fichier": "chapitre-40-finops-agentique.md",
+   "avant": "L'étude porte sur l'IA en général; rien n'y concerne les agents.",
+   "apres": "L'étude porte sur l'IA en général et sur des données d'enquête de 2019 et de 2021, antérieures à l'IA générative; rien n'y concerne les agents.",
+   "motif": "Second audit (lot P2-F1, entrée n° 479, majeur) : Réserve incomplète sur un fait engageant. L'étude [13] repose sur les vagues de 2019 et de 2021 de l'enquête sur la technologie numérique et l'utilisation d'Internet : ses données précèdent l'IA générative et, à plus forte raison, les agents. Le paragraphe, coiffé de « Le gain de productivité à l'échelle de l'entreprise n'est pas établi », le tait, et le lecteur de 2027 peut y lire un constat sur l'IA d'aujourd'hu…"
+  },
+  {
+   "fichier": "chapitre-40-finops-agentique.md",
+   "avant": "- À l'échelle de l'entreprise, la prime de productivité associée à l'IA disparaît statistiquement une fois les autres capacités prises en compte.",
+   "apres": "- Dans une étude de Statistique Canada sur des données de 2019 et de 2021, la prime de productivité associée à l'IA n'est plus significative une fois les autres capacités de l'entreprise prises en compte; rien n'y porte sur les agents.",
+   "motif": "Second audit (lot P2-F1, entrée n° 480, majeur) : Le point à retenir généralise au présent le résultat d'une seule étude, canadienne, sur des données de 2019 et de 2021, sans nommer ni l'étude ni sa période; l'exposé (40.5) dit pourtant que les auteurs réservent des gains qui « peuvent demander du temps »."
+  },
+  {
+   "fichier": "chapitre-40-finops-agentique.md",
+   "avant": "### Deux précautions",
+   "apres": "### Trois précautions",
+   "motif": "Second audit (lot P2-F1, entrée n° 479, mineur) : Le sous-titre annonce deux précautions; le complément en a ajouté une troisième, sous la même forme (paragraphe à amorce en gras)."
+  },
+  {
+   "fichier": "chapitre-40-finops-agentique.md",
+   "avant": "- L'énergie suit les jetons : les leviers de coût sont aussi des leviers d'empreinte.",
+   "apres": "- Par déduction, l'énergie suit les jetons : le cache, le routage et la décomposition réduisent aussi l'empreinte.",
+   "motif": "Second audit (lot P2-F1, entrée n° 480, mineur) : Le point à retenir affirme ce que l'exposé donne pour une déduction (« Le raisonnement qui suit reste donc une déduction ») et l'étend à tous les leviers de coût. Or l'exposé ne nomme que le cache, le routage et la décomposition; le traitement par lots, levier de coût du tableau de 40.6, est un rabais de prix dont rien ne dit qu'il réduit l'énergie."
+  },
+  {
+   "fichier": "chapitre-40-finops-agentique.md",
+   "avant": "Sources ajoutées le 14 novembre 2026 :",
+   "apres": "Sources lues le 14 novembre 2026 ([13] : article lu par un outil qui en condense le contenu) :",
+   "motif": "Second audit (lot P2-F1, entrée n° 481, mineur) : L'intertitre date l'ajout, non la lecture, et [13] ne porte aucune étendue de lecture, ni dans la liste ni dans les limites (qui disent seulement que l'étude « porte sur l'IA en général »)."
+  },
+  {
+   "fichier": "chapitre-41-modele-operationnel.md",
+   "avant": "Le premier est l'emploi : les mesures disponibles portent sur l'IA générative plutôt que sur les agents, et la section 48.8 en fait le relevé.",
+   "apres": "Le premier est l'emploi : la section 41.6 rapporte ce que les répondants d'une enquête déclarent des effectifs [3]; les essais relevés à la section 48.8 mesurent la productivité d'assistants, non l'emploi ni les agents.",
+   "motif": "Second audit (lot P2-F1, entrée n° 473, majeur) : Renvoi qui ne porte pas l'affirmation. La section 48.8 relève des essais sur la productivité d'assistants (problèmes résolus par heure, temps de rédaction, tâches terminées); elle ne contient aucune mesure de l'emploi (effectifs, embauches, postes). Les seules mesures d'emploi à portée sont dans le chapitre 41 lui-même, section 41.6 (baisse des effectifs déclarée, [3]), que le complément ignore."
+  },
+  {
+   "fichier": "chapitre-41-modele-operationnel.md",
+   "avant": "Elle n'apporte aucune mesure sur l'emploi : elle renvoie à la section 48.8 et repose",
+   "apres": "Elle n'apporte aucune mesure nouvelle sur l'emploi : elle renvoie à la section 41.6 pour les effectifs déclarés et à la section 48.8 pour la productivité des assistants, et repose",
+   "motif": "Second audit (lot P2-F1, entrée n° 476, mineur) : Même défaut dans les limites : la section 48.8 ne contient pas de mesure de l'emploi, et la section 41.6 du même chapitre en donne (déclaratives, [3])."
+  },
+  {
+   "fichier": "chapitre-41-modele-operationnel.md",
+   "avant": "Un superviseur qui ne fait plus la tâche perd peu à peu la capacité de juger le travail de l'agent, et la révision de routine tourne à l'approbation machinale (section 22.5).",
+   "apres": "Selon un article de position, un superviseur qui ne fait plus la tâche perd peu à peu la capacité de juger le travail de l'agent, et la révision de routine tourne à l'approbation machinale [12] (section 22.5); l'effet n'est pas mesuré chez des superviseurs d'agents.",
+   "motif": "Second audit (lot P2-F1, entrée n° 473, mineur) : Affirmation de fait sans appel [n], plus tranchée que la section à laquelle elle renvoie. La section 22.5 donne la perte de pratique pour un ressort décrit par un article de position qui « ne rapporte aucune mesure propre », et conclut qu'aucune source « ne mesure l'usure de l'approbation chez des approbateurs d'agents en entreprise »."
+  },
+  {
+   "fichier": "chapitre-41-modele-operationnel.md",
+   "avant": "- La supervision s'use si le superviseur ne pratique plus le métier.",
+   "apres": "- Un article de position soutient que la supervision s'use si le superviseur ne pratique plus le métier; l'effet n'est pas mesuré.",
+   "motif": "Second audit (lot P2-F1, entrée n° 474, mineur) : Le point à retenir pose comme acquis ce qui repose sur un seul article de position, sans mesure (limites du chapitre et section 22.5)."
+  },
+  {
+   "fichier": "chapitre-41-modele-operationnel.md",
+   "avant": "— article de position, lu pour le chapitre 22.",
+   "apres": "— article de position, lu le 14 novembre 2026 pour le chapitre 22; premiers cinq sixièmes du texte.",
+   "motif": "Second audit (lot P2-F1, entrée n° 475, mineur) : La source ajoutée n'a ni date de lecture ni étendue de lecture; l'intertitre date l'ajout. Le chapitre 22 donne les deux pour le même texte."
+  },
+  {
+   "fichier": "chapitre-42-etudes-de-cas.md",
+   "avant": "| Opérations TI | ServiceNow [3], MAP [2], bancs d'essai [5] [6] | 2 à 4 | Résultats mesurés en production |",
+   "apres": "| Opérations TI | ServiceNow [3], MAP [2], bancs d'essai [5] [6]; un cas mesuré en production, connu par son seul résumé [13] | 2 à 4; 1 à confirmer pour [13] | Résultats mesurés en production et lus en entier |",
+   "motif": "Second audit (lot P2-F1, entrée n° 462, majeur) : Le tableau de synthèse de 42.6 n'a pas suivi le complément et le contredit. La section 42.4 rapporte maintenant un cas avec mesure en production (temps de réponse médian réduit de 42 % [13]), qu'elle rattache « sans doute » au niveau 1, et un second cas de production [14]. Le tableau dit encore que la meilleure preuve en opérations TI est de niveau 2 à 4 et qu'il y manque des « résultats mesurés en production »."
+  },
+  {
+   "fichier": "chapitre-42-etudes-de-cas.md",
+   "avant": "14. RecSys Factory: Bounding LLM Agent Autonomy to Decision Points in the Industrial Recommender Lifecycle (prépublication, 2026) — résumé repris d'un index d'articles; page non retrouvée.",
+   "apres": "14. [Ao, Fang et Xu — RecSys Factory: Bounding LLM Agent Autonomy to Decision Points in the Industrial Recommender Lifecycle (arXiv 2608.11241, 31 juillet 2026)](https://arxiv.org/abs/2608.11241) — prépublication.",
+   "motif": "Second audit (lot P2-F1, entrée n° 464, mineur) : Source sans adresse ni auteurs, donnée pour « non retrouvée », alors qu'elle porte trois chiffres de l'exposé; les limites ne signalent pas cette réserve. La prépublication existe sur arXiv, et son résumé concorde avec le texte (78 jours, 1 624 lancements, 78,6 %, absence de comparaison contrôlée)."
+  },
+  {
+   "fichier": "chapitre-42-etudes-de-cas.md",
+   "avant": "13. [Kujanpää et coll. — Tool-Making and Self-Evolving LLM Agents in Low-Latency Systems (arXiv 2607.08010, 9 juillet 2026)](https://arxiv.org/abs/2607.08010)",
+   "apres": "13. [Kujanpää et coll. — Tool-Making and Self-Evolving LLM Agents in Low-Latency Systems (arXiv 2607.08010, 9 juillet 2026; à paraître au volet industriel d'EMNLP 2026 selon la page arXiv)](https://arxiv.org/abs/2607.08010)",
+   "motif": "Second audit (lot P2-F1, entrée n° 464, mineur) : Le rattachement « sans doute » au niveau 1 (article évalué par les pairs, mesure sur trafic réel) n'a pas d'appui dans le chapitre : la source est donnée comme une simple page arXiv. La page indique une acceptation en conférence, à inscrire pour fonder le niveau. Non vérifiés ici : la « procédure de 44 étapes » et le « centre de distribution », que la lecture condensée du résumé n'a pas restitués."
+  },
+  {
+   "fichier": "chapitre-42-etudes-de-cas.md",
+   "avant": "Ces trois textes confirment le portrait de MAP : des agents étroits, enfermés dans une chaîne déterministe et qualifiés lentement.",
+   "apres": "D'après leurs résumés, ces trois textes vont dans le sens du portrait de MAP : des agents étroits, bornés par une chaîne fixée d'avance, dans des usages de production encore limités.",
+   "motif": "Second audit (lot P2-F1, entrée n° 462, mineur) : Formulation plus tranchée que ce que portent trois résumés. « Qualifiés lentement » ne figure ni dans les résumés tels que le chapitre les rapporte ni dans le portrait de MAP donné en 42.1; le troisième texte est une étude par entretiens, qui ne décrit pas un agent « enfermé dans une chaîne déterministe »."
+  },
+  {
+   "fichier": "chapitre-40-finops-agentique.md",
+   "avant": "[3] et [10] sont des prépublications,",
+   "apres": "[3], [10] et [14] sont des prépublications,",
+   "motif": "Second audit (lot P2-F1, entrée n° 477, mineur) : le bandeau ne comptait que [3] et [10] parmi les prépublications; [14] en est une, connue par son seul résumé."
+  },
+  {
+   "fichier": "chapitre-40-finops-agentique.md",
+   "avant": "[13] à [15] ont été ajoutées le 14 novembre 2026.",
+   "apres": "[13] à [15] ont été ajoutées le 14 novembre 2026, [14] par son seul résumé et [15] par sa synthèse.",
+   "motif": "Second audit (lot P2-F1, entrée n° 477, mineur) : le bandeau disait les sources « toutes lues pour ce chapitre », alors que [14] n'est connue que par son résumé et [15] par sa synthèse."
+  }
+ ]
+}
