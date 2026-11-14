@@ -1,0 +1,19 @@
+{
+ "id": "P2-M4",
+ "origine": "plan 2027, lot P2-M4",
+ "categorie": "coherence",
+ "remplacements": [
+  {
+   "fichier": "chapitre-12-couche-semantique-ontologies.md",
+   "avant": "la grille de décision du chapitre recommande de ne rien bâtir en production sur cette version, de suivre",
+   "apres": "la grille de décision du chapitre recommande de ne rien bâtir en production sur cette version : l’ADR porte donc sur la seule version parue, la `0.1.1`. La grille recommande aussi de suivre",
+   "motif": "Point majeur 03-8 : le paragraphe de raccord constatait l'écart entre l'ADR-009 et la grille de décision sans conclure."
+  },
+  {
+   "fichier": "chapitre-12-couche-semantique-ontologies.md",
+   "avant": "alignement annuel sur les versions publiées d’Apache Ossie (ASF) et de la Linux Foundation AAIF.",
+   "apres": "l’adoption porte sur la version parue `0.1.1`, épinglée dans chaque manifeste, non sur la branche `0.3.0.dev0`; révision à chaque version publiée d’Apache Ossie (ASF), et alignement annuel sur la Linux Foundation AAIF.",
+   "motif": "Point majeur 03-8 : l'ADR-009 imposait Apache Ossie en production sans dire sur quelle version, alors que la grille de décision exclut `0.3.0.dev0`. La condition de révision borne l'adoption à la version parue."
+  }
+ ]
+}

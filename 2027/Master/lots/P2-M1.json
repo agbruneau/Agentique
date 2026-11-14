@@ -1,0 +1,55 @@
+{
+ "id": "P2-M1",
+ "origine": "plan 2027, lot P2-M1",
+ "categorie": "coherence",
+ "remplacements": [
+  {
+   "fichier": "chapitre-05-mcp.md",
+   "avant": "Extrait 5.1 — Cycle de vie protocolaire MCP sur Streamable HTTP",
+   "apres": "Extrait 5.1 — Appel d’outil MCP sans état sur Streamable HTTP",
+   "motif": "Point majeur 01-38 : l'extrait ne montre plus la poignée de main supprimée; son titre le dit."
+  },
+  {
+   "fichier": "chapitre-05-mcp.md",
+   "avant": "Un travailleur Boréal s’initialise auprès d’un serveur MCP d’inventaire, à travers agentgateway, selon le protocole d’avant la révision `2026-07-28`. Depuis cette révision, la poignée de main `initialize` est supprimée : la version et les capacités voyagent dans chaque requête, et la découverte passe par `server/discover` (sections 5.1 et 5.2) :",
+   "apres": "Un travailleur Boréal appelle un outil d’un serveur MCP d’inventaire, à travers agentgateway, selon la révision `2026-07-28`. Il n’y a plus de poignée de main `initialize` : la version, les capacités et l’identité du client voyagent dans le champ `_meta` de chaque requête, les en-têtes `Mcp-Method` et `Mcp-Name` reprennent le corps pour les intermédiaires, et la découverte passe par `server/discover` (sections 5.1 et 5.2) :",
+   "motif": "Point majeur 01-38 : la phrase d'introduction présentait un échange « d'avant la révision 2026-07-28 », que la grille de décision du chapitre interdit à tout nouveau serveur distant."
+  },
+  {
+   "fichier": "chapitre-05-mcp.md",
+   "avant": "MCP-Protocol-Version: 2025-11-25",
+   "apres": "MCP-Protocol-Version: 2026-07-28\nMcp-Method: tools/call\nMcp-Name: bel_find_compatible_spare_stock",
+   "motif": "Point majeur 01-38 : en-têtes de la révision 2026-07-28, vérifiés dans la spécification le 14 novembre 2026 (`Mcp-Method` obligatoire, `Mcp-Name` pour un appel d'outil)."
+  },
+  {
+   "fichier": "chapitre-05-mcp.md",
+   "avant": "\"id\": \"init-01\",\n  \"method\": \"initialize\",",
+   "apres": "\"id\": \"call-408\",\n  \"method\": \"tools/call\",",
+   "motif": "Point majeur 01-38 : la requête `initialize`, supprimée par la révision 2026-07-28, devient l'appel d'outil dont l'extrait montre déjà la réponse."
+  },
+  {
+   "fichier": "chapitre-05-mcp.md",
+   "avant": "\"protocolVersion\": \"2025-11-25\",",
+   "apres": "\"name\": \"bel_find_compatible_spare_stock\",\n    \"arguments\": {\n      \"materialCode\": \"ROTOR-KIT-HX9\",\n      \"plantCode\": \"CA-QC-MTL-02\"\n    },\n    \"_meta\": {\n      \"io.modelcontextprotocol/protocolVersion\": \"2026-07-28\",",
+   "motif": "Point majeur 01-38 : la version voyage dans le champ `_meta` de chaque requête (clé obligatoire `io.modelcontextprotocol/protocolVersion`)."
+  },
+  {
+   "fichier": "chapitre-05-mcp.md",
+   "avant": "    \"capabilities\": {\n      \"roots\": { \"listChanged\": false },\n      \"sampling\": {},\n      \"elicitation\": { \"form\": {}, \"url\": {} }\n    },\n    \"clientInfo\": {\n      \"name\": \"boreal-temporal-maint-worker\",\n      \"version\": \"3.2.0\"\n    }\n  }\n}",
+   "apres": "      \"io.modelcontextprotocol/clientCapabilities\": {\n        \"elicitation\": { \"form\": {}, \"url\": {} }\n      },\n      \"io.modelcontextprotocol/clientInfo\": {\n        \"name\": \"boreal-temporal-maint-worker\",\n        \"version\": \"3.2.0\"\n      }\n    }\n  }\n}",
+   "motif": "Point majeur 01-38 : capacités (clé obligatoire) et identité du client passent dans `_meta`. Les racines et l'échantillonnage, dépréciés depuis la révision, sortent des capacités déclarées."
+  },
+  {
+   "fichier": "chapitre-05-mcp.md",
+   "avant": "Dans cet échange, le serveur répond par `InitializeResult`, où il déclare `capabilities.tools`, et le client émet `notifications/initialized`. Il invoque ensuite un outil dont le résultat porte un résumé lisible et un objet JSON validé (`structuredContent`) :",
+   "apres": "Le résultat porte le champ `resultType`, obligatoire depuis cette révision, un résumé lisible et un objet JSON validé (`structuredContent`) :",
+   "motif": "Point majeur 01-38 : la phrase décrivait `InitializeResult` et `notifications/initialized`, supprimés avec la poignée de main."
+  },
+  {
+   "fichier": "chapitre-05-mcp.md",
+   "avant": "\"id\": \"call-408\",\n  \"result\": {\n    \"content\": [",
+   "apres": "\"id\": \"call-408\",\n  \"result\": {\n    \"resultType\": \"complete\",\n    \"content\": [",
+   "motif": "Depuis la révision 2026-07-28, tout résultat porte le champ obligatoire `resultType` (section 5.2)."
+  }
+ ]
+}

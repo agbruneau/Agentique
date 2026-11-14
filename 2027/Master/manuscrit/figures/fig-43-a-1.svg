@@ -102,11 +102,11 @@
 
   <rect x="278" y="340" width="151" height="36" rx="4" fill="#fffbeb" stroke="#d97706" stroke-width="1.2"/>
   <text x="353.5" y="355" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="9" font-weight="bold" fill="#92400e">Porte G2 • Homologation</text>
-  <text x="353.5" y="369" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="8.4" fill="#78350f">NHI, OBO &amp; Idempotence</text>
+  <text x="353.5" y="369" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="8.4" fill="#78350f">NHI, idempotence &amp; pass^5</text>
 
   <rect x="451" y="340" width="151" height="36" rx="4" fill="#eff6ff" stroke="#1d4ed8" stroke-width="1.2"/>
   <text x="526.5" y="355" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="9" font-weight="bold" fill="#1e3a8a">Porte G3 • Industrialisation</text>
-  <text x="526.5" y="369" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="8.4" fill="#1d4ed8">Agent Cards A2A &amp; pass^5</text>
+  <text x="526.5" y="369" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="8.4" fill="#1d4ed8">Agent Cards A2A &amp; HOTL</text>
 
   <rect x="624" y="340" width="151" height="36" rx="4" fill="#eef2ff" stroke="#4338ca" stroke-width="1.2"/>
   <text x="699.5" y="355" text-anchor="middle" font-family="Segoe UI, Calibri, sans-serif" font-size="9" font-weight="bold" fill="#312e81">Porte G4 • Fédération</text>

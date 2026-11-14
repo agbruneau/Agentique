@@ -312,11 +312,11 @@ Sur un canal d’assistance vocale WebRTC, un TTFT supérieur à 250 ou 300 ms r
 **Fil rouge — Groupe Boréal : unification du plan de données AI-natif et réduction de 63 % du coût par résultat réussi**
 :::
 
-**Constat initial (fin T1 2027 — 42 000 exécutions/jour)** : Les sagas Temporal reliant Boréal Services Numériques (BSN), Boréal Équipements & Logistique (BEL) et Boréal Capital & Assurances (BCA) fonctionnent, mais trois goulets menacent la mise à l’échelle. D’abord, 94 % des appels visent des modèles frontières coûteux, même pour décoder des trames SAP/OPC UA. Ensuite, sur la grappe montréalaise de 16 GPU NVIDIA H200 opérée par BSN, le routage Kubernetes en tourniquet plafonne le taux de succès du cache KV à 19 % (GPU saturés à 89 %, TTFT p95 à 2,90 s). Enfin, onze équipes conservent des clés d’API statiques en clair pour d’anciens prototypes hérités des 19 *Shadow Agents* recensés à l’audit initial.
+**Constat initial (fin T1 2027 — 42 000 exécutions/jour)** : Les sagas Temporal reliant Boréal Services Numériques (BSN), Boréal Équipements & Logistique (BEL) et Boréal Capital & Assurances (BCA) fonctionnent, mais trois goulets menacent la mise à l’échelle. D’abord, 94 % des appels visent des modèles frontières coûteux, même pour décoder des trames SAP/OPC UA. Ensuite, sur la grappe montréalaise de 16 GPU NVIDIA H200 opérée par BSN, le routage Kubernetes en tourniquet plafonne le taux de succès du cache KV à 19 % (GPU saturés à 89 %, TTFT p95 à 2,90 s). Enfin, le routage obligatoire vers la passerelle d’observation, acquis à la porte G1 (chapitre 43), ne repose que sur l’inspection DNS/TLS : aucun verrou réseau n’interdit encore une sortie directe vers une API d’IA publique.
 
 **Architecture déployée en six semaines (T2 2027)** :
 
-1.  **Mise en coupure agentgateway et verrouillage Cilium** : Déploiement actif-actif (Montréal / Toronto) de la configuration de l’Extrait 44.1 et blocage réseau de toute sortie directe vers les API d’IA publiques, ce qui supprime techniquement les *Shadow Agents*.
+1.  **Mise en coupure agentgateway et verrouillage Cilium** : Déploiement actif-actif (Montréal / Toronto) de la configuration de l’Extrait 44.1 et blocage réseau de toute sortie directe vers les API d’IA publiques, ce qui ferme techniquement la voie aux *Shadow Agents*.
 2.  **Routage cognitif à 3 paliers** : Deux SLM 14B affinés absorbent 73 % des appels, 22 % transitent vers le palier 2 via Open Responses et 5 % sollicitent le palier 3 (calcul au moment de l’inférence).
 3.  **Affinité de préfixe du cache KV** : Activation de l’`EndpointPickerConfig` (Extrait 44.3) et retrait par linter CI/CD de tout horodatage dynamique en tête de consigne système.
 

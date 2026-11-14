@@ -432,7 +432,7 @@ Dans les réseaux hospitaliers, l’assurance santé et la pharmacovigilance, l�
 
 ## 12.13 Décision d’architecture et points de contrôle
 
-L’ADR-009 ci-dessous adopte Apache Ossie pour la production. Selon la section 12.4, aucune version 1.0 n’existe et la branche `0.3.0.dev0` se déclare impropre à la production; la grille de décision du chapitre recommande de ne rien bâtir en production sur cette version, de suivre Apache Ossie comme format d’échange et d’exiger l’import et l’export avec numéro de version.
+L’ADR-009 ci-dessous adopte Apache Ossie pour la production. Selon la section 12.4, aucune version 1.0 n’existe et la branche `0.3.0.dev0` se déclare impropre à la production; la grille de décision du chapitre recommande de ne rien bâtir en production sur cette version : l’ADR porte donc sur la seule version parue, la `0.1.1`. La grille recommande aussi de suivre Apache Ossie comme format d’échange et d’exiger l’import et l’export avec numéro de version.
 
 :::: {.encadre .adr}
 ::: {.encadre-titre}
@@ -449,7 +449,7 @@ L’ADR-009 ci-dessous adopte Apache Ossie pour la production. Selon la section 
 - **Conséquences** :
   - *Positives* : identité mathématique entre les rapports d’intelligence d’affaires et les agents, indépendance vis-à-vis des moteurs analytiques, quasi-disparition des rejets aval et auditabilité formelle (BSIF E-23).
   - *Négatives et coûts assumés* : gouvernance inter-divisions (intendance sémantique), maintien des clés maîtres MDM et modélisation explicite des automates d’états.
-- **Condition de révision** : alignement annuel sur les versions publiées d’Apache Ossie (ASF) et de la Linux Foundation AAIF.
+- **Condition de révision** : l’adoption porte sur la version parue `0.1.1`, épinglée dans chaque manifeste, non sur la branche `0.3.0.dev0`; révision à chaque version publiée d’Apache Ossie (ASF), et alignement annuel sur la Linux Foundation AAIF.
 ::::
 
 ### Liste de contrôle de mise en production

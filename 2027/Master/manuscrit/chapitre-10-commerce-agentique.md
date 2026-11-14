@@ -2,7 +2,7 @@
 
 *Question directrice : comment un agent prouve-t-il qu'il a le droit d'acheter ?*
 
-> **État de référence :** AP2 v0.2, UCP (versions datées; les exemples de la spécification portent `2026-08-25`), Agentic Commerce Protocol `2026-04-17` (bêta), Verifiable Intent (brouillon v0.1), x402 (dépôt de la x402 Foundation) et Machine Payments Protocol. Les numéros entre crochets renvoient aux sources : [1] à [12] sont des pages primaires lues pour ce chapitre; [13] à [16] sont des prépublications dont seul le résumé a été lu; [17] à [19] sont secondaires ou non lues.
+> **État de référence :** AP2 v0.2, UCP (versions datées; les exemples de la spécification portent `2026-08-25`), Agentic Commerce Protocol `2026-04-17` (bêta), Verifiable Intent (brouillon v0.1), x402 (dépôt de la x402 Foundation) et Machine Payments Protocol. Les numéros entre crochets renvoient aux sources : [1] à [12] sont des pages primaires lues pour ce chapitre; [13] à [16] sont des prépublications dont seul le résumé a été lu; [17] à [19] sont secondaires ou non lues; [20], primaire, a été lue le 14 novembre 2026.
 
 Un paiement par carte repose sur une hypothèse rarement énoncée : la personne qui clique sur « payer » détient le moyen de paiement, ou agit sous les yeux de son titulaire. Un agent qui achète rompt cette hypothèse. Le marchand reçoit une commande d'un logiciel; l'émetteur voit passer une transaction que son client n'a pas saisie; le client découvre le résultat après coup.
 
@@ -38,6 +38,8 @@ Ils s'appuient sur les protocoles déjà décrits : UCP et ACP se transportent s
 ### Le mandat, unité de preuve
 
 AP2 (Agent Payments Protocol), publié par Google, ne décrit ni catalogue ni panier. La spécification se définit comme une fonction de sécurité logée dans un protocole de commerce, et se dit conçue pour être compatible avec UCP [1]. Son objet est le mandat : un justificatif signé qui atteste ce qu'un utilisateur a approuvé.
+
+Le 28 avril 2026, Google a apporté AP2 à la FIDO Alliance. Celle-ci rédige des spécifications pour le commerce initié par des agents au sein de son groupe de travail technique sur les paiements, présidé par des membres de Mastercard et de Visa; le communiqué ne donne aucune échéance [20].
 
 La version lue, v0.2, non datée, définit deux mandats [1].
 
@@ -75,7 +77,7 @@ Elle affirme que mandats et reçus, pris ensemble, donnent de la transaction une
 
 ### Verifiable Intent
 
-Verifiable Intent se présente comme une spécification ouverte d'autorisation cryptographique des agents dans le commerce, au stade de brouillon v0.1 et sous licence Apache 2.0 [7]. Le billet de l'AAIF l'attribue à Mastercard, avec Google, et la décrit comme un complément d'AP2 [12]; la page du projet ne nomme pas ses auteurs.
+Verifiable Intent se présente comme une spécification ouverte d'autorisation cryptographique des agents dans le commerce, au stade de brouillon v0.1 et sous licence Apache 2.0 [7]. Le billet de l'AAIF l'attribue à Mastercard, avec Google, et la décrit comme un complément d'AP2 [12]; la page du projet ne nomme pas ses auteurs. Le communiqué de la FIDO Alliance le confirme : Mastercard y a apporté Verifiable Intent, qu'il dit codéveloppé avec Google et conçu pour fonctionner avec AP2 [20].
 
 Sa structure tient en trois couches, chacune contraignant la suivante.
 
@@ -139,7 +141,7 @@ Un marchand qui bloque les robots à sa périphérie bloque aussi les agents ach
 
 ### Mastercard Agent Pay
 
-Les pages de Mastercard sont restées inaccessibles [18]. Mastercard est à l'origine de Verifiable Intent, selon le billet de l'AAIF [12], et figure parmi les appuis d'UCP [2]. Le même billet range Mastercard, avec Visa, American Express et Stripe, parmi les acteurs dotés chacun d'un schéma propriétaire de justificatifs limités, faute de standard ouvert commun aux réseaux. D'après un résumé de moteur de recherche, Mastercard y annonce l'intégration de Verifiable Intent aux API d'intention d'Agent Pay, dont le fonctionnement reste à établir.
+Les pages de Mastercard sont restées inaccessibles [18] : le produit Agent Pay n'est pas décrit ici. Trois faits sont établis. Mastercard est à l'origine de Verifiable Intent, qu'il a apporté à la FIDO Alliance le 28 avril 2026 (section 10.2) [12][20]. Des membres de Mastercard et de Visa président le groupe de travail de cette alliance sur les paiements [20]. Mastercard figure enfin parmi les appuis d'UCP [2]. Le billet de l'AAIF le range, avec Visa, American Express et Stripe, parmi les acteurs dotés chacun d'un schéma propriétaire de justificatifs limités, faute de standard ouvert commun aux réseaux [12]. L'intégration de Verifiable Intent aux API d'intention d'Agent Pay n'est connue que par un résumé de moteur de recherche [18] : elle reste à établir.
 
 ---
 
@@ -180,7 +182,7 @@ Le règlement natif convient à un cas précis : des appels nombreux et de faibl
 | Besoin | Propositions concurrentes | Pont entre elles |
 |---|---|---|
 | Passage en caisse | ACP, UCP | Aucun dans les pages lues; MCP comme transport commun |
-| Preuve d'intention | AP2, Verifiable Intent | Correspondances de Verifiable Intent avec AP2, ACP et UCP [7] |
+| Preuve d'intention | AP2, Verifiable Intent | Correspondances de Verifiable Intent avec AP2, ACP et UCP [7]; tous deux apportés à la FIDO Alliance en avril 2026 [20] |
 | Reconnaissance de l'agent | Trusted Agent Protocol; dispositifs des autres réseaux | Web Bot Auth comme socle [12] |
 | Justificatif limité | Schémas de Stripe, Visa, Mastercard, American Express | Aucun; schémas propriétaires [12] |
 | Paiement sur HTTP 402 | x402, MPP | Aucun dans les pages lues |
@@ -189,7 +191,7 @@ Le règlement natif convient à un cas précis : des appels nombreux et de faibl
 
 **Les mêmes acteurs sont des deux côtés.** Stripe corédige ACP et MPP, et figure parmi les concepteurs d'UCP [2][5][11]. La fragmentation traduit des paris parallèles plutôt que des camps.
 
-L'AAIF a constitué un groupe de travail sur le commerce agentique, présidé par un représentant de Shopify et coprésidé par un représentant d'OpenAI, soit un acteur de chacun des deux protocoles de caisse [12]. Le billet pose trois principes : aucune couche ne devrait exiger la pile entière d'un fournisseur; un agent devrait pouvoir utiliser plusieurs réseaux de paiement; l'autorisation devrait rester lisible quand la tâche change d'agent, cas qu'AP2 exclut. Aucun livrable n'y est cité; la gouvernance de l'AAIF est décrite au chapitre 11.
+L'AAIF a constitué un groupe de travail sur le commerce agentique, présidé par un représentant de Shopify et coprésidé par un représentant d'OpenAI, soit un acteur de chacun des deux protocoles de caisse [12]. Le billet pose trois principes : aucune couche ne devrait exiger la pile entière d'un fournisseur; un agent devrait pouvoir utiliser plusieurs réseaux de paiement; l'autorisation devrait rester lisible quand la tâche change d'agent, cas qu'AP2 exclut. Aucun livrable n'y est cité; la gouvernance de l'AAIF est décrite au chapitre 11. La FIDO Alliance mène un travail voisin sur les paiements (section 10.2) [20] : deux enceintes traitent donc du commerce agentique, sans articulation décrite dans les pages lues.
 
 Pour l'entreprise, la conséquence est une architecture à adaptateurs : un modèle interne du panier, du mandat et du paiement, et un adaptateur par protocole externe, pour qu'un changement de version ou l'abandon d'un rail ne touche pas le cœur.
 
@@ -280,7 +282,7 @@ Quatre orientations se dégagent, à titre d'hypothèses de travail.
 ## Points à retenir
 
 - Un agent prouve son droit d'acheter par un mandat signé qui lie un utilisateur, un panier et un paiement, non par son identité.
-- AP2 et Verifiable Intent convergent sur la forme : des SD-JWT, des contraintes signées par l'utilisateur, une action signée par l'agent, une vérification en code déterministe.
+- AP2 et Verifiable Intent convergent sur la forme : des SD-JWT, des contraintes signées par l'utilisateur, une action signée par l'agent, une vérification en code déterministe. Tous deux ont été apportés à la FIDO Alliance en avril 2026.
 - Aucun protocole ne couvre un achat de bout en bout. Les couches s'emboîtent; à l'intérieur de chacune, deux propositions ou plus se doublent.
 - ACP et UCP laissent au marchand la relation client et l'exécution. Ils diffèrent par le périmètre, la découverte et la gouvernance.
 - Les réseaux de cartes ajoutent la reconnaissance de l'agent et des justificatifs limités, par des schémas propriétaires sans standard commun.
@@ -320,11 +322,15 @@ Sources secondaires :
 18. [Mastercard Agent Pay](https://www.mastercard.com/us/en/business/artificial-intelligence/mastercard-agent-pay.html) et [Mastercard — Verifiable Intent](https://www.mastercard.com/us/en/news-and-trends/stories/2026/verifiable-intent.html) — pages non lues (accès refusé), connues par un résumé de moteur de recherche.
 19. Prépublications repérées par recherche, non lues : [arXiv 2608.23858](https://arxiv.org/abs/2608.23858) (AP2), [arXiv 2605.11781](https://arxiv.org/abs/2605.11781) (x402), [arXiv 2609.11757](https://arxiv.org/abs/2609.11757) (AP2).
 
+Page primaire lue le 14 novembre 2026 :
+
+20. [FIDO Alliance — communiqué du 28 avril 2026 sur les normes d'interactions d'agents](https://fidoalliance.org/fido-alliance-to-develop-standards-for-trusted-ai-agent-interactions/)
+
 ## Limites de ce chapitre
 
 - Les quatre articles de sécurité, lus en résumé, ne sont pas évalués par les pairs d'après leur page arXiv.
 - Pages de Mastercard inaccessibles : le nom d'Agent Pay vient du plan initial, son lien avec Verifiable Intent d'un résumé de recherche.
-- L'attribution d'AP2 à Google repose sur l'avis de droit d'auteur de la page et sur le billet de l'AAIF.
+- L'attribution d'AP2 à Google repose sur l'avis de droit d'auteur de la page, sur le billet de l'AAIF et sur le communiqué de la FIDO Alliance [20]. Ce communiqué ne dit pas ce que devient la gouvernance des deux spécifications et ne donne aucune échéance. Il a été lu par l'outil de lecture, qui en a rendu les phrases citées; le texte brut de la page n'a pas pu être recoupé.
 - La vue d'ensemble d'UCP, relue à l'audit hormis sa toute fin, lève la réserve sur l'architecture de paiement; l'organe de gouvernance qu'elle cite n'est pas nommé. Pour Visa, seule la page d'aperçu a été lue.
 - Pour x402, ni la version du protocole, ni la liste des réseaux, ni les statuts de la fondation n'ont été établis; le dépôt de la fondation n'a pas été lu. Pour MPP, le brouillon de l'IETF n'a pas été lu.
 - Le recentrage d'OpenAI en mars 2026 est rapporté par deux billets, non vérifié auprès d'OpenAI.

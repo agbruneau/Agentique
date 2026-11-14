@@ -1,0 +1,13 @@
+{
+ "id": "P2-M5",
+ "origine": "plan 2027, lot P2-M5",
+ "categorie": "coherence",
+ "remplacements": [
+  {
+   "fichier": "chapitre-18-execution-durable-transactions.md",
+   "avant": "un tel dossier s'étale en moyenne sur 14 jours calendaires",
+   "apres": "un tel dossier s’étalait sur 29 jours calendaires en médiane",
+   "motif": "Point majeur 04-10 : la situation antérieure donnait 14 jours, alors que le résultat part de 29 jours pour arriver à 13,5. Le chiffre de départ est celui que porte le résultat; 14 jours est la durée du dossier sous la nouvelle architecture (titre et récit de l'encadré)."
+  }
+ ]
+}

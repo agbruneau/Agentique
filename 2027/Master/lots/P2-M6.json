@@ -1,0 +1,13 @@
+{
+ "id": "P2-M6",
+ "origine": "plan 2027, lot P2-M6",
+ "categorie": "coherence",
+ "remplacements": [
+  {
+   "fichier": "chapitre-27-strategie-multi-plateformes.md",
+   "avant": "Ce message JSON-RPC A2A v1.0 montre comment une demande",
+   "apres": "Ce message JSON-RPC A2A v1.0 décrit une cible : SAP documente A2A 0.3.0, incompatible avec la 1.0, et la page de Workday ne mentionne ni MCP ni A2A (section 26.5). D’ici là, le plan neutre traduit entre versions. Le message montre comment une demande",
+   "motif": "Point majeur 05-31 : le volet fait converser SAP Joule en A2A 1.0, alors que le chapitre 26 établit que SAP vise A2A 0.3.0 et que la page de Workday ne mentionne aucun des deux protocoles. Le chapitre 26 fait foi : l'extrait est présenté comme une cible."
+  }
+ ]
+}

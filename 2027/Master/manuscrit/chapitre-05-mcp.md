@@ -440,45 +440,53 @@ Les transports sont décrits à la section 5.3. Trois règles s’appliquent en 
 **Streamable HTTP sans état sur Kubernetes** : Les serveurs MCP s’exploitent sans état de session gardé dans la mémoire d’un pod précis : depuis la révision `2026-07-28`, la session et l’en-tête Mcp-Session-Id sont supprimés, et l’état passe par des identifiants explicites (section 5.2). Ils valident MCP-Protocol-Version à chaque appel. Avec l’idempotence déportée dans Redis/Valkey et l’identité portée par le jeton OAuth 2.1 de chaque requête, le parc passe de 2 à 50 pods sans interruption.
 ::::
 
-#### Extrait 5.1 — Cycle de vie protocolaire MCP sur Streamable HTTP et sortie structurée (structuredContent)
+#### Extrait 5.1 — Appel d’outil MCP sans état sur Streamable HTTP et sortie structurée (structuredContent)
 
-Un travailleur Boréal s’initialise auprès d’un serveur MCP d’inventaire, à travers agentgateway, selon le protocole d’avant la révision `2026-07-28`. Depuis cette révision, la poignée de main `initialize` est supprimée : la version et les capacités voyagent dans chaque requête, et la découverte passe par `server/discover` (sections 5.1 et 5.2) :
+Un travailleur Boréal appelle un outil d’un serveur MCP d’inventaire, à travers agentgateway, selon la révision `2026-07-28`. Il n’y a plus de poignée de main `initialize` : la version, les capacités et l’identité du client voyagent dans le champ `_meta` de chaque requête, les en-têtes `Mcp-Method` et `Mcp-Name` reprennent le corps pour les intermédiaires, et la découverte passe par `server/discover` (sections 5.1 et 5.2) :
 
 ``` http
 POST /mcp/bel-inventory HTTP/1.1
 Host: agentgateway.internal.boreal.ca
 Authorization: DPoP eyJhbGciOiJFUzI1NiIsInR5cCI6ImF0K2p3dCJ9...
 DPoP: eyJ0eXAiOiJkcG9wK2p3dCIsImFsZyI6IkVTMjU2In0...
-MCP-Protocol-Version: 2025-11-25
+MCP-Protocol-Version: 2026-07-28
+Mcp-Method: tools/call
+Mcp-Name: bel_find_compatible_spare_stock
 Content-Type: application/json
 Accept: application/json, text/event-stream
 
 {
   "jsonrpc": "2.0",
-  "id": "init-01",
-  "method": "initialize",
+  "id": "call-408",
+  "method": "tools/call",
   "params": {
-    "protocolVersion": "2025-11-25",
-    "capabilities": {
-      "roots": { "listChanged": false },
-      "sampling": {},
-      "elicitation": { "form": {}, "url": {} }
+    "name": "bel_find_compatible_spare_stock",
+    "arguments": {
+      "materialCode": "ROTOR-KIT-HX9",
+      "plantCode": "CA-QC-MTL-02"
     },
-    "clientInfo": {
-      "name": "boreal-temporal-maint-worker",
-      "version": "3.2.0"
+    "_meta": {
+      "io.modelcontextprotocol/protocolVersion": "2026-07-28",
+      "io.modelcontextprotocol/clientCapabilities": {
+        "elicitation": { "form": {}, "url": {} }
+      },
+      "io.modelcontextprotocol/clientInfo": {
+        "name": "boreal-temporal-maint-worker",
+        "version": "3.2.0"
+      }
     }
   }
 }
 ```
 
-Dans cet échange, le serveur répond par `InitializeResult`, où il déclare `capabilities.tools`, et le client émet `notifications/initialized`. Il invoque ensuite un outil dont le résultat porte un résumé lisible et un objet JSON validé (`structuredContent`) :
+Le résultat porte le champ `resultType`, obligatoire depuis cette révision, un résumé lisible et un objet JSON validé (`structuredContent`) :
 
 ``` json
 {
   "jsonrpc": "2.0",
   "id": "call-408",
   "result": {
+    "resultType": "complete",
     "content": [
       {
         "type": "text",

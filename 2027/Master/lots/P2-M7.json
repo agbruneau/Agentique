@@ -1,0 +1,13 @@
+{
+ "id": "P2-M7",
+ "origine": "plan 2027, lot P2-M7",
+ "categorie": "coherence",
+ "remplacements": [
+  {
+   "fichier": "chapitre-30-autorisation-delegation.md",
+   "avant": "Aucune identité d’agent ne peut être créée ni maintenue active sans être rattachée nominativement, dans l’annuaire, à un responsable métier et à un propriétaire technique actifs dans le SIRH (Workday). Si le parrain quitte l’organisation ou change de division, un flux de gouvernance d’identité (IGA) transfère la responsabilité sous 72 heures ou suspend automatiquement le renouvellement des jetons de l’agent.",
+   "apres": "Entra exige un parrain, laisse le propriétaire technique facultatif et ne décrit aucun mécanisme de succession automatique (section 29.2). L’architecture prescrite va plus loin : aucune identité d’agent n’est créée ni maintenue active sans être rattachée nominativement, dans l’annuaire, à un responsable métier et à un propriétaire technique actifs dans le SIRH (Workday). Si le parrain quitte l’organisation ou change de division, un flux de gouvernance d’identité (IGA), à bâtir, transfère la responsabilité sous 72 heures ou suspend le renouvellement des jetons de l’agent.",
+   "motif": "Point majeur 06-15 : le volet présentait comme une propriété de l'annuaire un propriétaire technique obligatoire et une succession automatique sous 72 heures, que l'exposé du chapitre 29 dit facultatif pour l'un et non décrite pour l'autre. Ce sont des exigences de l'architecture prescrite."
+  }
+ ]
+}

@@ -8,8 +8,8 @@
   "mineur": 30
  },
  "etats": {
-  "clos": 2,
-  "ouvert": 39
+  "clos": 12,
+  "ouvert": 29
  },
  "rapprochement": "Les 41 points sont les constats de constats.json dont « decision_finale » vaut « laissé à l'auteur ». Les 66 constats dont la décision de premier examen était « laisser » se répartissent ainsi : traité globalement : 41; laissé à l'auteur : 23; corrigé : 2. Les 41 « traité globalement » ont été réglés par les harmonisations d'ensemble de l'audit et ne sont pas des points ouverts. Des 41 points ouverts, 23 viennent d'une décision « laisser », 2 d'une décision « corriger » ramenée à l'auteur, 16 de la vérification en ligne ou de l'arbitrage (sans décision de premier examen).",
  "points": [
@@ -31,131 +31,141 @@
    "id": "01-38",
    "lot": "P2-M1",
    "gravite": "majeur",
-   "etat": "ouvert",
+   "etat": "clos",
    "fichier": "chapitre-05-mcp.md",
    "zone": "volet",
    "ligne": 445,
    "ligne_audit": 446,
    "section": "Extrait 5.1 — Cycle de vie protocolaire MCP sur Streamable HTTP et sortie structurée (structuredContent)",
    "ancre": "Un travailleur Boréal s’initialise auprès d’un serveur MCP d’inventaire, à travers agentgateway, selon le protocole d’avant la révision `2026-07-28`.",
-   "constat": "L'Extrait 5.1, intitulé « Cycle de vie protocolaire MCP », montre la poignée de main `initialize` d'avant la révision 2026-07-28, que la grille de décision impose pourtant à tout nouveau serveur distant. À l'auteur de refaire l'extrait (`server/discover`, version et capacités dans chaque requête) ou d'en changer le titre pour le dire historique."
+   "constat": "L'Extrait 5.1, intitulé « Cycle de vie protocolaire MCP », montre la poignée de main `initialize` d'avant la révision 2026-07-28, que la grille de décision impose pourtant à tout nouveau serveur distant. À l'auteur de refaire l'extrait (`server/discover`, version et capacités dans chaque requête) ou d'en changer le titre pour le dire historique.",
+   "note": "Clos par le lot P2-M1 (entrées n° 554 à 561 du registre, 14 novembre 2026); compte rendu dans Master/lots/."
   },
   {
    "id": "02-49",
    "lot": "P2-M2",
    "gravite": "majeur",
-   "etat": "ouvert",
+   "etat": "clos",
    "fichier": "chapitre-10-commerce-agentique.md",
    "zone": "exposé",
    "ligne": 40,
    "ligne_audit": 40,
    "section": "Le mandat, unité de preuve",
    "ancre": "AP2 (Agent Payments Protocol), publié par Google, ne décrit ni catalogue ni panier.",
-   "constat": "Nouveau constat issu de la vérification en ligne. L'exposé ne dit pas que Google a apporté AP2, et Mastercard Verifiable Intent, à la FIDO Alliance le 28 avril 2026 (groupe de travail technique sur les paiements). Or l'ouverture (l. 191), l'annexe H (l. 15), le chapitre 49 (l. 112, 341) et le volet du chapitre 11 (l. 432) rattachent AP2 à la FIDO Alliance; les sections 10.2 et 10.6 et la cartographie de 11.1 l'ignorent. À l'auteur d'ajouter une phrase sourcée en 10.2 (et de revoir la ligne « Gouvernance » de 10.6)."
+   "constat": "Nouveau constat issu de la vérification en ligne. L'exposé ne dit pas que Google a apporté AP2, et Mastercard Verifiable Intent, à la FIDO Alliance le 28 avril 2026 (groupe de travail technique sur les paiements). Or l'ouverture (l. 191), l'annexe H (l. 15), le chapitre 49 (l. 112, 341) et le volet du chapitre 11 (l. 432) rattachent AP2 à la FIDO Alliance; les sections 10.2 et 10.6 et la cartographie de 11.1 l'ignorent. À l'auteur d'ajouter une phrase sourcée en 10.2 (et de revoir la ligne « Gouvernance » de 10.6).",
+   "note": "Clos par le lot P2-M2-M3 (entrées n° 562 à 570 du registre, 14 novembre 2026); compte rendu dans Master/lots/."
   },
   {
    "id": "02-50",
    "lot": "P2-M3",
    "gravite": "majeur",
-   "etat": "ouvert",
+   "etat": "clos",
    "fichier": "chapitre-10-commerce-agentique.md",
    "zone": "exposé",
    "ligne": 142,
    "ligne_audit": 142,
    "section": "Mastercard Agent Pay",
    "ancre": "Les pages de Mastercard sont restées inaccessibles [18].",
-   "constat": "La sous-section « Mastercard Agent Pay » ne décrit pas le produit (pages non lues, appui sur « un résumé de moteur de recherche », « Mastercard y annonce » sans antécédent clair). À l'auteur : la documenter sur une source lue (par exemple le communiqué de la FIDO Alliance du 28 avril 2026, qui présente Verifiable Intent), ou la fondre dans la section 10.2."
+   "constat": "La sous-section « Mastercard Agent Pay » ne décrit pas le produit (pages non lues, appui sur « un résumé de moteur de recherche », « Mastercard y annonce » sans antécédent clair). À l'auteur : la documenter sur une source lue (par exemple le communiqué de la FIDO Alliance du 28 avril 2026, qui présente Verifiable Intent), ou la fondre dans la section 10.2.",
+   "note": "Clos par le lot P2-M2-M3 (entrées n° 562 à 570 du registre, 14 novembre 2026); compte rendu dans Master/lots/."
   },
   {
    "id": "03-8",
    "lot": "P2-M4",
    "gravite": "majeur",
-   "etat": "ouvert",
+   "etat": "clos",
    "fichier": "chapitre-12-couche-semantique-ontologies.md",
    "zone": "volet",
    "ligne": 803,
    "ligne_audit": 803,
    "section": "12.13 Décision d’architecture et points de contrôle",
    "ancre": "L’ADR-009 ci-dessous adopte Apache Ossie pour la production. Selon la section 12.4, aucune version 1.0 n’existe",
-   "constat": "L'ADR-009 « Acceptée » impose Apache Ossie en production alors que la grille de décision (ligne 309) dit de ne rien bâtir en production sur `0.3.0.dev0`; le paragraphe de raccord constate l'écart sans conclure. L'auteur devrait dire dans l'ADR (décision b ou condition de révision) que l'adoption porte sur la version parue `0.1.1`, avec numéro de version épinglé, et non sur la branche de développement. Même procédé de raccord, sans contradiction, aux lignes 444, 578, 662 et 825."
+   "constat": "L'ADR-009 « Acceptée » impose Apache Ossie en production alors que la grille de décision (ligne 309) dit de ne rien bâtir en production sur `0.3.0.dev0`; le paragraphe de raccord constate l'écart sans conclure. L'auteur devrait dire dans l'ADR (décision b ou condition de révision) que l'adoption porte sur la version parue `0.1.1`, avec numéro de version épinglé, et non sur la branche de développement. Même procédé de raccord, sans contradiction, aux lignes 444, 578, 662 et 825.",
+   "note": "Clos par le lot P2-M4 (entrées n° 571 à 572 du registre, 14 novembre 2026); compte rendu dans Master/lots/."
   },
   {
    "id": "04-10",
    "lot": "P2-M5",
    "gravite": "majeur",
-   "etat": "ouvert",
+   "etat": "clos",
    "fichier": "chapitre-18-execution-durable-transactions.md",
    "zone": "volet",
    "ligne": 885,
    "ligne_audit": 879,
    "section": "18.12 Application au fil rouge et éclairages sectoriels",
    "ancre": "un tel dossier s'étale en moyenne sur 14 jours calendaires",
-   "constat": "Contradiction dans l'encadré : la situation antérieure donnait 14 jours en moyenne, alors que le résultat (ligne 891) part de 29 jours pour arriver à 13,5. Seule l'occurrence de la situation antérieure est corrigée."
+   "constat": "Contradiction dans l'encadré : la situation antérieure donnait 14 jours en moyenne, alors que le résultat (ligne 891) part de 29 jours pour arriver à 13,5. Seule l'occurrence de la situation antérieure est corrigée.",
+   "note": "Clos par le lot P2-M5 (entrées n° 573 à 573 du registre, 14 novembre 2026); compte rendu dans Master/lots/."
   },
   {
    "id": "05-31",
    "lot": "P2-M6",
    "gravite": "majeur",
-   "etat": "ouvert",
+   "etat": "clos",
    "fichier": "chapitre-27-strategie-multi-plateformes.md",
    "zone": "volet",
    "ligne": 242,
    "ligne_audit": 242,
    "section": "Forces natives et angles morts des cinq suites",
    "ancre": "Compétences A2A sur BTP, serveurs MCP RAP/OData",
-   "constat": "La ligne ne donne pas de version et ne contredit donc pas l'exposé à la lettre. Reste un écart de fond : le volet fait converser SAP Joule en A2A v1.0 (extrait 27.1), alors que le chapitre 26 établit que SAP vise A2A 0.3.0, incompatible avec la 1.0 (lignes 96 et 199), et que la page de Workday ne mentionne ni MCP ni A2A (ligne 106). L'auteur devrait dire en une phrase, en 27.6 ou avant l'extrait 27.1, que le plan neutre doit traduire entre versions tant que SAP n'a pas adopté la 1.0."
+   "constat": "La ligne ne donne pas de version et ne contredit donc pas l'exposé à la lettre. Reste un écart de fond : le volet fait converser SAP Joule en A2A v1.0 (extrait 27.1), alors que le chapitre 26 établit que SAP vise A2A 0.3.0, incompatible avec la 1.0 (lignes 96 et 199), et que la page de Workday ne mentionne ni MCP ni A2A (ligne 106). L'auteur devrait dire en une phrase, en 27.6 ou avant l'extrait 27.1, que le plan neutre doit traduire entre versions tant que SAP n'a pas adopté la 1.0.",
+   "note": "Clos par le lot P2-M6 (entrées n° 574 à 574 du registre, 14 novembre 2026); compte rendu dans Master/lots/."
   },
   {
    "id": "06-15",
    "lot": "P2-M7",
    "gravite": "majeur",
-   "etat": "ouvert",
+   "etat": "clos",
    "fichier": "chapitre-30-autorisation-delegation.md",
    "zone": "volet",
    "ligne": 331,
    "ligne_audit": 331,
    "section": "Couche 2 : gouvernance d’annuaire, *Blueprints* et parrainage humain (Microsoft Entra Agent ID)",
    "ancre": "Aucune identité d’agent ne peut être créée ni maintenue active sans être rattachée nominativement",
-   "constat": "Le volet rend obligatoires un propriétaire technique et un transfert ou une suspension automatique sous 72 heures au départ du parrain, alors que l'exposé du chapitre 29 constate que le propriétaire est facultatif chez Entra (l. 61) et qu'aucun mécanisme automatique de succession n'est décrit (l. 63). L'auteur pourrait préciser d'un mot que c'est la règle retenue pour la cible, non une propriété native de l'annuaire."
+   "constat": "Le volet rend obligatoires un propriétaire technique et un transfert ou une suspension automatique sous 72 heures au départ du parrain, alors que l'exposé du chapitre 29 constate que le propriétaire est facultatif chez Entra (l. 61) et qu'aucun mécanisme automatique de succession n'est décrit (l. 63). L'auteur pourrait préciser d'un mot que c'est la règle retenue pour la cible, non une propriété native de l'annuaire.",
+   "note": "Clos par le lot P2-M7 (entrées n° 575 à 575 du registre, 14 novembre 2026); compte rendu dans Master/lots/."
   },
   {
    "id": "08-9",
    "lot": "P2-M8",
    "gravite": "majeur",
-   "etat": "ouvert",
+   "etat": "clos",
    "fichier": "chapitre-43-maturite-prospective.md",
    "zone": "volet",
    "ligne": 397,
    "ligne_audit": 397,
    "section": "43.9 Trajectoire de migration incrémentale et jalons de gouvernance",
    "ancre": "validation CI/CD $\\text{pass}^5 \\ge 0,95$, exécution fantôme comparée",
-   "constat": "Le seuil pass^5 ≥ 0,95 et l'exécution durable sont rattachés à deux portes différentes. Vague 3 / porte G3 ici, et alerte « GAP_G3:NEEDS_DURABLE_RUNTIME_AND_PASS5 » dans l'Extrait 43.2 (ligne 383); mais porte G2 dans la vague 2 (ligne 396 : exécution durable obligatoire), dans la politique Cedar « automatisant la Porte G2 » (ligne 422), dans l'ADR-003 (ligne 482, points c et d) et dans la liste de contrôle (ligne 500). La figure fig-43-a-1 range « pass^5 » sous la porte G3 et « NHI, OBO & Idempotence » sous la porte G2. Trancher quelle porte atteste pass^5 et l'exécution durable."
+   "constat": "Le seuil pass^5 ≥ 0,95 et l'exécution durable sont rattachés à deux portes différentes. Vague 3 / porte G3 ici, et alerte « GAP_G3:NEEDS_DURABLE_RUNTIME_AND_PASS5 » dans l'Extrait 43.2 (ligne 383); mais porte G2 dans la vague 2 (ligne 396 : exécution durable obligatoire), dans la politique Cedar « automatisant la Porte G2 » (ligne 422), dans l'ADR-003 (ligne 482, points c et d) et dans la liste de contrôle (ligne 500). La figure fig-43-a-1 range « pass^5 » sous la porte G3 et « NHI, OBO & Idempotence » sous la porte G2. Trancher quelle porte atteste pass^5 et l'exécution durable.",
+   "note": "Clos par le lot P2-M8 (entrées n° 576 à 578 du registre, 14 novembre 2026); compte rendu dans Master/lots/."
   },
   {
    "id": "08-24",
    "lot": "P2-M9",
    "gravite": "majeur",
-   "etat": "ouvert",
+   "etat": "clos",
    "fichier": "chapitre-44-plan-donnees-inference-routage.md",
    "zone": "volet",
    "ligne": 526,
    "ligne_audit": 526,
    "section": "44.10 Application au fil rouge : déploiement d’agentgateway chez Groupe Boréal",
    "ancre": "onze équipes conservent des clés d’API statiques en clair pour d’anciens prototypes hérités des 19 *Shadow Agents* recensés à l’audit initial",
-   "constat": "Contredit le fil rouge du chapitre 43 : à la même date (fin T1 2027), le chapitre 43 (ligne 464) annonce « 100 % des agents actifs munis d’identités SPIFFE nominatives », après révocation des clés personnelles à J+45 (ligne 395) et traitement des 19 Shadow Agents. De même, le chapitre 43 route tout le trafic LLM par la passerelle dès la porte G1 (décembre 2026), alors que le chapitre 44 ne bloque les sorties directes qu'au T2 2027 (ligne 530)."
+   "constat": "Contredit le fil rouge du chapitre 43 : à la même date (fin T1 2027), le chapitre 43 (ligne 464) annonce « 100 % des agents actifs munis d’identités SPIFFE nominatives », après révocation des clés personnelles à J+45 (ligne 395) et traitement des 19 Shadow Agents. De même, le chapitre 43 route tout le trafic LLM par la passerelle dès la porte G1 (décembre 2026), alors que le chapitre 44 ne bloque les sorties directes qu'au T2 2027 (ligne 530).",
+   "note": "Clos par le lot P2-M9 (entrées n° 579 à 580 du registre, 14 novembre 2026); compte rendu dans Master/lots/."
   },
   {
    "id": "08-30",
    "lot": "P2-M10",
    "gravite": "majeur",
-   "etat": "ouvert",
+   "etat": "clos",
    "fichier": "chapitre-45-reseaux-b2b-federes.md",
    "zone": "volet",
    "ligne": 287,
    "ligne_audit": 287,
    "section": "Les quatre strates du maillage",
    "ancre": "déployé dans les écosystèmes industriels européens et nord-américains en 2027",
-   "constat": "Un déploiement de 2027 est présenté comme accompli, alors que l'édition est arrêtée au 13 novembre 2026; la phrase affirme en outre un « état de l'art vérifié » que l'exposé dément (section 45.1 : négociation et collusion « relèvent encore de la recherche »; acceptation du vLEI non vérifiée). Même tournure ligne 424 (« En 2027, l'orchestration durable … permettent »)."
+   "constat": "Un déploiement de 2027 est présenté comme accompli, alors que l'édition est arrêtée au 13 novembre 2026; la phrase affirme en outre un « état de l'art vérifié » que l'exposé dément (section 45.1 : négociation et collusion « relèvent encore de la recherche »; acceptation du vLEI non vérifiée). Même tournure ligne 424 (« En 2027, l'orchestration durable … permettent »).",
+   "note": "Clos par le lot P2-M10 (entrées n° 581 à 582 du registre, 14 novembre 2026); compte rendu dans Master/lots/."
   },
   {
    "id": "01-1",

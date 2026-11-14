@@ -1,0 +1,25 @@
+{
+ "id": "P2-M8",
+ "origine": "plan 2027, lot P2-M8",
+ "categorie": "coherence",
+ "remplacements": [
+  {
+   "fichier": "chapitre-43-maturite-prospective.md",
+   "avant": "(*bulkhead*). Le passage sur exécution durable est obligatoire.",
+   "apres": "(*bulkhead*). Le passage sur exécution durable est obligatoire, comme l’attestation CI/CD $\\text{pass}^5 \\ge 0,95$ : la porte G2 atteste les deux.",
+   "motif": "Point majeur 08-9 : le seuil pass^5 et l'exécution durable étaient rattachés tantôt à la porte G2, tantôt à la porte G3. La porte G2 est retenue : c'est celle de la politique Cedar (Extrait 43.3), de l'ADR-003, de la liste de contrôle et de la définition du niveau N3."
+  },
+  {
+   "fichier": "chapitre-43-maturite-prospective.md",
+   "avant": "Publication des Agent Cards A2A v1.0, validation CI/CD $\\text{pass}^5 \\ge 0,95$, exécution fantôme",
+   "apres": "Publication des Agent Cards A2A v1.0, exécution fantôme",
+   "motif": "Point majeur 08-9 : la validation pass^5 passe de la vague 3 (porte G3) à la vague 2 (porte G2)."
+  },
+  {
+   "fichier": "chapitre-43-maturite-prospective.md",
+   "avant": "\"GAP_G3:NEEDS_DURABLE_RUNTIME_AND_PASS5\"",
+   "apres": "\"GAP_G2:NEEDS_DURABLE_RUNTIME_AND_PASS5\"",
+   "motif": "Point majeur 08-9 : l'alerte de l'Extrait 43.2 nommait la porte G3 pour une condition que la porte G2 atteste."
+  }
+ ]
+}

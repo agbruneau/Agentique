@@ -4975,5 +4975,266 @@
   "categorie": "coherence",
   "motif": "Le bilan retirait « 4 agents CUA » et partait de 14 secondes : il retire la cellule unique du chapitre 25 et part de ses 19 secondes par avenant. Le « coût marginal divisé par 180 », qui reposait sur le 0,62 $ supprimé, est retiré.",
   "origine": "plan 2027, lot P1-B1"
+ },
+ {
+  "n": 554,
+  "fichier": "chapitre-05-mcp.md",
+  "avant": "Extrait 5.1 — Cycle de vie protocolaire MCP sur Streamable HTTP",
+  "apres": "Extrait 5.1 — Appel d’outil MCP sans état sur Streamable HTTP",
+  "categorie": "coherence",
+  "motif": "Point majeur 01-38 : l'extrait ne montre plus la poignée de main supprimée; son titre le dit.",
+  "origine": "plan 2027, lot P2-M1"
+ },
+ {
+  "n": 555,
+  "fichier": "chapitre-05-mcp.md",
+  "avant": "Un travailleur Boréal s’initialise auprès d’un serveur MCP d’inventaire, à travers agentgateway, selon le protocole d’avant la révision `2026-07-28`. Depuis cette révision, la poignée de main `initialize` est supprimée : la version et les capacités voyagent dans chaque requête, et la découverte passe par `server/discover` (sections 5.1 et 5.2) :",
+  "apres": "Un travailleur Boréal appelle un outil d’un serveur MCP d’inventaire, à travers agentgateway, selon la révision `2026-07-28`. Il n’y a plus de poignée de main `initialize` : la version, les capacités et l’identité du client voyagent dans le champ `_meta` de chaque requête, les en-têtes `Mcp-Method` et `Mcp-Name` reprennent le corps pour les intermédiaires, et la découverte passe par `server/discover` (sections 5.1 et 5.2) :",
+  "categorie": "coherence",
+  "motif": "Point majeur 01-38 : la phrase d'introduction présentait un échange « d'avant la révision 2026-07-28 », que la grille de décision du chapitre interdit à tout nouveau serveur distant.",
+  "origine": "plan 2027, lot P2-M1"
+ },
+ {
+  "n": 556,
+  "fichier": "chapitre-05-mcp.md",
+  "avant": "MCP-Protocol-Version: 2025-11-25",
+  "apres": "MCP-Protocol-Version: 2026-07-28\nMcp-Method: tools/call\nMcp-Name: bel_find_compatible_spare_stock",
+  "categorie": "coherence",
+  "motif": "Point majeur 01-38 : en-têtes de la révision 2026-07-28, vérifiés dans la spécification le 14 novembre 2026 (`Mcp-Method` obligatoire, `Mcp-Name` pour un appel d'outil).",
+  "origine": "plan 2027, lot P2-M1"
+ },
+ {
+  "n": 557,
+  "fichier": "chapitre-05-mcp.md",
+  "avant": "\"id\": \"init-01\",\n  \"method\": \"initialize\",",
+  "apres": "\"id\": \"call-408\",\n  \"method\": \"tools/call\",",
+  "categorie": "coherence",
+  "motif": "Point majeur 01-38 : la requête `initialize`, supprimée par la révision 2026-07-28, devient l'appel d'outil dont l'extrait montre déjà la réponse.",
+  "origine": "plan 2027, lot P2-M1"
+ },
+ {
+  "n": 558,
+  "fichier": "chapitre-05-mcp.md",
+  "avant": "\"protocolVersion\": \"2025-11-25\",",
+  "apres": "\"name\": \"bel_find_compatible_spare_stock\",\n    \"arguments\": {\n      \"materialCode\": \"ROTOR-KIT-HX9\",\n      \"plantCode\": \"CA-QC-MTL-02\"\n    },\n    \"_meta\": {\n      \"io.modelcontextprotocol/protocolVersion\": \"2026-07-28\",",
+  "categorie": "coherence",
+  "motif": "Point majeur 01-38 : la version voyage dans le champ `_meta` de chaque requête (clé obligatoire `io.modelcontextprotocol/protocolVersion`).",
+  "origine": "plan 2027, lot P2-M1"
+ },
+ {
+  "n": 559,
+  "fichier": "chapitre-05-mcp.md",
+  "avant": "    \"capabilities\": {\n      \"roots\": { \"listChanged\": false },\n      \"sampling\": {},\n      \"elicitation\": { \"form\": {}, \"url\": {} }\n    },\n    \"clientInfo\": {\n      \"name\": \"boreal-temporal-maint-worker\",\n      \"version\": \"3.2.0\"\n    }\n  }\n}",
+  "apres": "      \"io.modelcontextprotocol/clientCapabilities\": {\n        \"elicitation\": { \"form\": {}, \"url\": {} }\n      },\n      \"io.modelcontextprotocol/clientInfo\": {\n        \"name\": \"boreal-temporal-maint-worker\",\n        \"version\": \"3.2.0\"\n      }\n    }\n  }\n}",
+  "categorie": "coherence",
+  "motif": "Point majeur 01-38 : capacités (clé obligatoire) et identité du client passent dans `_meta`. Les racines et l'échantillonnage, dépréciés depuis la révision, sortent des capacités déclarées.",
+  "origine": "plan 2027, lot P2-M1"
+ },
+ {
+  "n": 560,
+  "fichier": "chapitre-05-mcp.md",
+  "avant": "Dans cet échange, le serveur répond par `InitializeResult`, où il déclare `capabilities.tools`, et le client émet `notifications/initialized`. Il invoque ensuite un outil dont le résultat porte un résumé lisible et un objet JSON validé (`structuredContent`) :",
+  "apres": "Le résultat porte le champ `resultType`, obligatoire depuis cette révision, un résumé lisible et un objet JSON validé (`structuredContent`) :",
+  "categorie": "coherence",
+  "motif": "Point majeur 01-38 : la phrase décrivait `InitializeResult` et `notifications/initialized`, supprimés avec la poignée de main.",
+  "origine": "plan 2027, lot P2-M1"
+ },
+ {
+  "n": 561,
+  "fichier": "chapitre-05-mcp.md",
+  "avant": "\"id\": \"call-408\",\n  \"result\": {\n    \"content\": [",
+  "apres": "\"id\": \"call-408\",\n  \"result\": {\n    \"resultType\": \"complete\",\n    \"content\": [",
+  "categorie": "coherence",
+  "motif": "Depuis la révision 2026-07-28, tout résultat porte le champ obligatoire `resultType` (section 5.2).",
+  "origine": "plan 2027, lot P2-M1"
+ },
+ {
+  "n": 562,
+  "fichier": "chapitre-10-commerce-agentique.md",
+  "avant": "Son objet est le mandat : un justificatif signé qui atteste ce qu'un utilisateur a approuvé.\n\nLa version lue",
+  "apres": "Son objet est le mandat : un justificatif signé qui atteste ce qu'un utilisateur a approuvé.\n\nLe 28 avril 2026, Google a apporté AP2 à la FIDO Alliance. Celle-ci rédige des spécifications pour le commerce initié par des agents au sein de son groupe de travail technique sur les paiements, présidé par des membres de Mastercard et de Visa; le communiqué ne donne aucune échéance [20].\n\nLa version lue",
+  "categorie": "factuel",
+  "motif": "Point majeur 02-49 : l'exposé ignorait l'apport d'AP2 à la FIDO Alliance, que l'ouverture, l'annexe H, le chapitre 49 et le volet du chapitre 11 supposent. Fait vérifié au communiqué de la FIDO Alliance, lu le 14 novembre 2026.",
+  "origine": "plan 2027, lot P2-M2-M3"
+ },
+ {
+  "n": 563,
+  "fichier": "chapitre-10-commerce-agentique.md",
+  "avant": "la page du projet ne nomme pas ses auteurs.\n\nSa structure tient en trois couches",
+  "apres": "la page du projet ne nomme pas ses auteurs. Le communiqué de la FIDO Alliance le confirme : Mastercard y a apporté Verifiable Intent, qu'il dit codéveloppé avec Google et conçu pour fonctionner avec AP2 [20].\n\nSa structure tient en trois couches",
+  "categorie": "factuel",
+  "motif": "Point majeur 02-49 : l'attribution de Verifiable Intent à Mastercard reposait sur le seul billet de l'AAIF; le communiqué de la FIDO Alliance la confirme.",
+  "origine": "plan 2027, lot P2-M2-M3"
+ },
+ {
+  "n": 564,
+  "fichier": "chapitre-10-commerce-agentique.md",
+  "avant": "Les pages de Mastercard sont restées inaccessibles [18]. Mastercard est à l'origine de Verifiable Intent, selon le billet de l'AAIF [12], et figure parmi les appuis d'UCP [2]. Le même billet range Mastercard, avec Visa, American Express et Stripe, parmi les acteurs dotés chacun d'un schéma propriétaire de justificatifs limités, faute de standard ouvert commun aux réseaux. D'après un résumé de moteur de recherche, Mastercard y annonce l'intégration de Verifiable Intent aux API d'intention d'Agent Pay, dont le fonctionnement reste à établir.",
+  "apres": "Les pages de Mastercard sont restées inaccessibles [18] : le produit Agent Pay n'est pas décrit ici. Trois faits sont établis. Mastercard est à l'origine de Verifiable Intent, qu'il a apporté à la FIDO Alliance le 28 avril 2026 (section 10.2) [12][20]. Des membres de Mastercard et de Visa président le groupe de travail de cette alliance sur les paiements [20]. Mastercard figure enfin parmi les appuis d'UCP [2]. Le billet de l'AAIF le range, avec Visa, American Express et Stripe, parmi les acteurs dotés chacun d'un schéma propriétaire de justificatifs limités, faute de standard ouvert commun aux réseaux [12]. L'intégration de Verifiable Intent aux API d'intention d'Agent Pay n'est connue que par un résumé de moteur de recherche [18] : elle reste à établir.",
+  "categorie": "factuel",
+  "motif": "Point majeur 02-50 : la sous-section s'appuyait sur un résumé de moteur de recherche, avec un « Mastercard y annonce » sans antécédent. Elle sépare maintenant ce qui est établi par des sources lues ([2], [12], [20]) de ce qui ne l'est pas ([18]).",
+  "origine": "plan 2027, lot P2-M2-M3"
+ },
+ {
+  "n": 565,
+  "fichier": "chapitre-10-commerce-agentique.md",
+  "avant": "| Preuve d'intention | AP2, Verifiable Intent | Correspondances de Verifiable Intent avec AP2, ACP et UCP [7] |",
+  "apres": "| Preuve d'intention | AP2, Verifiable Intent | Correspondances de Verifiable Intent avec AP2, ACP et UCP [7]; tous deux apportés à la FIDO Alliance en avril 2026 [20] |",
+  "categorie": "factuel",
+  "motif": "Point majeur 02-49 : la section 10.6 ignorait le rapprochement des deux propositions sous la FIDO Alliance.",
+  "origine": "plan 2027, lot P2-M2-M3"
+ },
+ {
+  "n": 566,
+  "fichier": "chapitre-10-commerce-agentique.md",
+  "avant": "Aucun livrable n'y est cité; la gouvernance de l'AAIF est décrite au chapitre 11.\n",
+  "apres": "Aucun livrable n'y est cité; la gouvernance de l'AAIF est décrite au chapitre 11. La FIDO Alliance mène un travail voisin sur les paiements (section 10.2) [20] : deux enceintes traitent donc du commerce agentique, sans articulation décrite dans les pages lues.\n",
+  "categorie": "factuel",
+  "motif": "Point majeur 02-49 : la section 10.6 ne citait que le groupe de travail de l'AAIF.",
+  "origine": "plan 2027, lot P2-M2-M3"
+ },
+ {
+  "n": 567,
+  "fichier": "chapitre-10-commerce-agentique.md",
+  "avant": "une action signée par l'agent, une vérification en code déterministe.\n",
+  "apres": "une action signée par l'agent, une vérification en code déterministe. Tous deux ont été apportés à la FIDO Alliance en avril 2026.\n",
+  "categorie": "factuel",
+  "motif": "Point à retenir mis à jour avec l'apport à la FIDO Alliance.",
+  "origine": "plan 2027, lot P2-M2-M3"
+ },
+ {
+  "n": 568,
+  "fichier": "chapitre-10-commerce-agentique.md",
+  "avant": "(AP2).\n\n## Limites de ce chapitre",
+  "apres": "(AP2).\n\nPage primaire lue le 14 novembre 2026 :\n\n20. [FIDO Alliance — communiqué du 28 avril 2026 sur les normes d'interactions d'agents](https://fidoalliance.org/fido-alliance-to-develop-standards-for-trusted-ai-agent-interactions/)\n\n## Limites de ce chapitre",
+  "categorie": "factuel",
+  "motif": "Source [20] ajoutée à la suite : communiqué de la FIDO Alliance, lu le 14 novembre 2026.",
+  "origine": "plan 2027, lot P2-M2-M3"
+ },
+ {
+  "n": 569,
+  "fichier": "chapitre-10-commerce-agentique.md",
+  "avant": "[17] à [19] sont secondaires ou non lues.",
+  "apres": "[17] à [19] sont secondaires ou non lues; [20], primaire, a été lue le 14 novembre 2026.",
+  "categorie": "factuel",
+  "motif": "Bandeau « État de référence » mis à jour pour la source [20].",
+  "origine": "plan 2027, lot P2-M2-M3"
+ },
+ {
+  "n": 570,
+  "fichier": "chapitre-10-commerce-agentique.md",
+  "avant": "- L'attribution d'AP2 à Google repose sur l'avis de droit d'auteur de la page et sur le billet de l'AAIF.",
+  "apres": "- L'attribution d'AP2 à Google repose sur l'avis de droit d'auteur de la page, sur le billet de l'AAIF et sur le communiqué de la FIDO Alliance [20]. Ce communiqué ne dit pas ce que devient la gouvernance des deux spécifications et ne donne aucune échéance. Il a été lu par l'outil de lecture, qui en a rendu les phrases citées; le texte brut de la page n'a pas pu être recoupé.",
+  "categorie": "factuel",
+  "motif": "Limites mises à jour : portée et mode de lecture de la source [20].",
+  "origine": "plan 2027, lot P2-M2-M3"
+ },
+ {
+  "n": 571,
+  "fichier": "chapitre-12-couche-semantique-ontologies.md",
+  "avant": "la grille de décision du chapitre recommande de ne rien bâtir en production sur cette version, de suivre",
+  "apres": "la grille de décision du chapitre recommande de ne rien bâtir en production sur cette version : l’ADR porte donc sur la seule version parue, la `0.1.1`. La grille recommande aussi de suivre",
+  "categorie": "coherence",
+  "motif": "Point majeur 03-8 : le paragraphe de raccord constatait l'écart entre l'ADR-009 et la grille de décision sans conclure.",
+  "origine": "plan 2027, lot P2-M4"
+ },
+ {
+  "n": 572,
+  "fichier": "chapitre-12-couche-semantique-ontologies.md",
+  "avant": "alignement annuel sur les versions publiées d’Apache Ossie (ASF) et de la Linux Foundation AAIF.",
+  "apres": "l’adoption porte sur la version parue `0.1.1`, épinglée dans chaque manifeste, non sur la branche `0.3.0.dev0`; révision à chaque version publiée d’Apache Ossie (ASF), et alignement annuel sur la Linux Foundation AAIF.",
+  "categorie": "coherence",
+  "motif": "Point majeur 03-8 : l'ADR-009 imposait Apache Ossie en production sans dire sur quelle version, alors que la grille de décision exclut `0.3.0.dev0`. La condition de révision borne l'adoption à la version parue.",
+  "origine": "plan 2027, lot P2-M4"
+ },
+ {
+  "n": 573,
+  "fichier": "chapitre-18-execution-durable-transactions.md",
+  "avant": "un tel dossier s'étale en moyenne sur 14 jours calendaires",
+  "apres": "un tel dossier s’étalait sur 29 jours calendaires en médiane",
+  "categorie": "coherence",
+  "motif": "Point majeur 04-10 : la situation antérieure donnait 14 jours, alors que le résultat part de 29 jours pour arriver à 13,5. Le chiffre de départ est celui que porte le résultat; 14 jours est la durée du dossier sous la nouvelle architecture (titre et récit de l'encadré).",
+  "origine": "plan 2027, lot P2-M5"
+ },
+ {
+  "n": 574,
+  "fichier": "chapitre-27-strategie-multi-plateformes.md",
+  "avant": "Ce message JSON-RPC A2A v1.0 montre comment une demande",
+  "apres": "Ce message JSON-RPC A2A v1.0 décrit une cible : SAP documente A2A 0.3.0, incompatible avec la 1.0, et la page de Workday ne mentionne ni MCP ni A2A (section 26.5). D’ici là, le plan neutre traduit entre versions. Le message montre comment une demande",
+  "categorie": "coherence",
+  "motif": "Point majeur 05-31 : le volet fait converser SAP Joule en A2A 1.0, alors que le chapitre 26 établit que SAP vise A2A 0.3.0 et que la page de Workday ne mentionne aucun des deux protocoles. Le chapitre 26 fait foi : l'extrait est présenté comme une cible.",
+  "origine": "plan 2027, lot P2-M6"
+ },
+ {
+  "n": 575,
+  "fichier": "chapitre-30-autorisation-delegation.md",
+  "avant": "Aucune identité d’agent ne peut être créée ni maintenue active sans être rattachée nominativement, dans l’annuaire, à un responsable métier et à un propriétaire technique actifs dans le SIRH (Workday). Si le parrain quitte l’organisation ou change de division, un flux de gouvernance d’identité (IGA) transfère la responsabilité sous 72 heures ou suspend automatiquement le renouvellement des jetons de l’agent.",
+  "apres": "Entra exige un parrain, laisse le propriétaire technique facultatif et ne décrit aucun mécanisme de succession automatique (section 29.2). L’architecture prescrite va plus loin : aucune identité d’agent n’est créée ni maintenue active sans être rattachée nominativement, dans l’annuaire, à un responsable métier et à un propriétaire technique actifs dans le SIRH (Workday). Si le parrain quitte l’organisation ou change de division, un flux de gouvernance d’identité (IGA), à bâtir, transfère la responsabilité sous 72 heures ou suspend le renouvellement des jetons de l’agent.",
+  "categorie": "coherence",
+  "motif": "Point majeur 06-15 : le volet présentait comme une propriété de l'annuaire un propriétaire technique obligatoire et une succession automatique sous 72 heures, que l'exposé du chapitre 29 dit facultatif pour l'un et non décrite pour l'autre. Ce sont des exigences de l'architecture prescrite.",
+  "origine": "plan 2027, lot P2-M7"
+ },
+ {
+  "n": 576,
+  "fichier": "chapitre-43-maturite-prospective.md",
+  "avant": "(*bulkhead*). Le passage sur exécution durable est obligatoire.",
+  "apres": "(*bulkhead*). Le passage sur exécution durable est obligatoire, comme l’attestation CI/CD $\\text{pass}^5 \\ge 0,95$ : la porte G2 atteste les deux.",
+  "categorie": "coherence",
+  "motif": "Point majeur 08-9 : le seuil pass^5 et l'exécution durable étaient rattachés tantôt à la porte G2, tantôt à la porte G3. La porte G2 est retenue : c'est celle de la politique Cedar (Extrait 43.3), de l'ADR-003, de la liste de contrôle et de la définition du niveau N3.",
+  "origine": "plan 2027, lot P2-M8"
+ },
+ {
+  "n": 577,
+  "fichier": "chapitre-43-maturite-prospective.md",
+  "avant": "Publication des Agent Cards A2A v1.0, validation CI/CD $\\text{pass}^5 \\ge 0,95$, exécution fantôme",
+  "apres": "Publication des Agent Cards A2A v1.0, exécution fantôme",
+  "categorie": "coherence",
+  "motif": "Point majeur 08-9 : la validation pass^5 passe de la vague 3 (porte G3) à la vague 2 (porte G2).",
+  "origine": "plan 2027, lot P2-M8"
+ },
+ {
+  "n": 578,
+  "fichier": "chapitre-43-maturite-prospective.md",
+  "avant": "\"GAP_G3:NEEDS_DURABLE_RUNTIME_AND_PASS5\"",
+  "apres": "\"GAP_G2:NEEDS_DURABLE_RUNTIME_AND_PASS5\"",
+  "categorie": "coherence",
+  "motif": "Point majeur 08-9 : l'alerte de l'Extrait 43.2 nommait la porte G3 pour une condition que la porte G2 atteste.",
+  "origine": "plan 2027, lot P2-M8"
+ },
+ {
+  "n": 579,
+  "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+  "avant": "Enfin, onze équipes conservent des clés d’API statiques en clair pour d’anciens prototypes hérités des 19 *Shadow Agents* recensés à l’audit initial.",
+  "apres": "Enfin, le routage obligatoire vers la passerelle d’observation, acquis à la porte G1 (chapitre 43), ne repose que sur l’inspection DNS/TLS : aucun verrou réseau n’interdit encore une sortie directe vers une API d’IA publique.",
+  "categorie": "coherence",
+  "motif": "Point majeur 08-24 : à la même date (fin T1 2027), le chapitre 43 donne 100 % des agents munis d'identités SPIFFE, les clés personnelles révoquées et les 19 Shadow Agents traités. Le chapitre 43 fait foi : le troisième goulet n'est plus un reliquat de clés statiques, mais l'absence de verrou réseau.",
+  "origine": "plan 2027, lot P2-M9"
+ },
+ {
+  "n": 580,
+  "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+  "avant": "ce qui supprime techniquement les *Shadow Agents*.",
+  "apres": "ce qui ferme techniquement la voie aux *Shadow Agents*.",
+  "categorie": "coherence",
+  "motif": "Point majeur 08-24 : les Shadow Agents ont été traités au chapitre 43; le verrou réseau empêche leur retour.",
+  "origine": "plan 2027, lot P2-M9"
+ },
+ {
+  "n": 581,
+  "fichier": "chapitre-45-reseaux-b2b-federes.md",
+  "avant": "Selon l'état de l'art vérifié fin 2026, déployé dans les écosystèmes industriels européens et nord-américains en 2027 dans le sillage de Catena-X, de Manufacturing-X et de la fondation Eclipse, le maillage B2B de référence superpose quatre strates à chaque frontière d'entreprise.",
+  "apres": "Le maillage B2B de référence, pensé dans le sillage de Catena-X, de Manufacturing-X et de la fondation Eclipse, superpose quatre strates à chaque frontière d’entreprise. C’est une cible pour 2027, non un état de l’art vérifié : la négociation entre agents et la prévention de la collusion relèvent encore de la recherche (section 45.1).",
+  "categorie": "temporel",
+  "motif": "Point majeur 08-30 : un déploiement de 2027 était donné pour accompli dans une édition arrêtée en novembre 2026, sous l'étiquette d'un « état de l'art vérifié » que la section 45.1 dément.",
+  "origine": "plan 2027, lot P2-M10"
+ },
+ {
+  "n": 582,
+  "fichier": "chapitre-45-reseaux-b2b-federes.md",
+  "avant": "En 2027, l'orchestration durable (Temporal), les capteurs IoT d'entrepôt, le moteur de politique Cedar et les protocoles AP2 / x402 permettent de l'exécuter",
+  "apres": "L’orchestration durable (Temporal), les capteurs IoT d’entrepôt, le moteur de politique Cedar et les protocoles AP2 / x402 doivent permettre de l’exécuter",
+  "categorie": "temporel",
+  "motif": "Point majeur 08-30 : même tournure, « En 2027 … permettent », pour une capacité visée.",
+  "origine": "plan 2027, lot P2-M10"
  }
 ]

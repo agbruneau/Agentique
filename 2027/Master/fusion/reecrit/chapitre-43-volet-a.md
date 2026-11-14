@@ -173,7 +173,7 @@ def triage_initiative(item: Initiative) -> tuple[str, Action, list[str]]:
         return ("N1", "QUARANTINE_L1", alerts)
 
     if not item.durable_backbone or item.pass5 is None or item.pass5 < 0.95:
-        alerts.append("GAP_G3:NEEDS_DURABLE_RUNTIME_AND_PASS5")
+        alerts.append("GAP_G2:NEEDS_DURABLE_RUNTIME_AND_PASS5")
         return ("N2", "REMEDIATE", alerts)
 
     return ("N2", "REMEDIATE", alerts) if alerts else ("N3_READY", "PROMOTE", ["OK"])
@@ -186,8 +186,8 @@ def triage_initiative(item: Initiative) -> tuple[str, Action, list[str]]:
 Pour assainir l’existant sans pousser les métiers vers la clandestinité par un moratoire, la migration suit quatre vagues aux durées indicatives (la section 43.2 découpe la feuille de route en jalons franchis sur preuve, non en trimestres), articulées autour des portes G1 à G4, avec des briques mutualisées plus rapides à adopter que le développement sauvage :
 
 1. **Vague 1 (semaines 1–6) — porte G1, visibilité et confinement.** Amnistie déclarative de 30 jours et routage obligatoire du trafic LLM sortant vers la passerelle d’observation. À J+45, les clés personnelles sont révoquées et les initiatives mutatives non conformes sont mises en quarantaine en lecture seule (`QUARANTINE_L1`).
-2. **Vague 2 (mois 2–4) — porte G2, socle N3 et façades MCP.** L’équipe plateforme livre les premiers serveurs MCP d’entreprise (ERP, CRM, ITSM, façades patrimoniales), avec OAuth 2.1 OBO, registres d’idempotence et limiteurs de concurrence (*bulkhead*). Le passage sur exécution durable est obligatoire.
-3. **Vague 3 (mois 5–8) — porte G3, maillage N4 et bascule HOTL.** Publication des Agent Cards A2A v1.0, validation CI/CD $\text{pass}^5 \ge 0,95$, exécution fantôme comparée aux décisions humaines pendant quinze jours, puis ouverture du mode HOTL, piloté au coût par résultat réussi.
+2. **Vague 2 (mois 2–4) — porte G2, socle N3 et façades MCP.** L’équipe plateforme livre les premiers serveurs MCP d’entreprise (ERP, CRM, ITSM, façades patrimoniales), avec OAuth 2.1 OBO, registres d’idempotence et limiteurs de concurrence (*bulkhead*). Le passage sur exécution durable est obligatoire, comme l’attestation CI/CD $\text{pass}^5 \ge 0,95$ : la porte G2 atteste les deux.
+3. **Vague 3 (mois 5–8) — porte G3, maillage N4 et bascule HOTL.** Publication des Agent Cards A2A v1.0, exécution fantôme comparée aux décisions humaines pendant quinze jours, puis ouverture du mode HOTL, piloté au coût par résultat réussi.
 4. **Vague 4 (mois 9–12+) — porte G4, fédération B2B N5 ciblée.** Ouverture sélective en DMZ mTLS vers les partenaires stratégiques, sous mandats plafonnés et coupe-circuits bilatéraux.
 
 Les équipes n’adhèrent aux quatre portes que si le chemin pavé existe. Le portail interne développeur ne se contente pas d’édicter des interdits : il génère en quelques minutes un squelette de service pré-câblé (identité SPIFFE, client agentgateway, instrumentation OpenTelemetry `gen_ai.*`, enveloppe `ActionEnvelope`, harnais de test CI/CD $\text{pass}^5$). Quand la conformité N3 devient l’option de moindre effort, l’incitation au contournement clandestin disparaît d’elle-même. En exploitation, l’homologation reste révocable en temps réel : si la télémétrie continue relève un recul du taux d’acceptation des gardes ou une alerte OWASP ASI, la passerelle abaisse le plafond d’autonomie de L3 (HOTL) à L2 (HITL) ou à L1 sans redéploiement applicatif.

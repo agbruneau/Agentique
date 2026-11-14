@@ -1,0 +1,61 @@
+{
+ "id": "P2-M2-M3",
+ "origine": "plan 2027, lot P2-M2-M3",
+ "categorie": "factuel",
+ "remplacements": [
+  {
+   "fichier": "chapitre-10-commerce-agentique.md",
+   "avant": "Son objet est le mandat : un justificatif signé qui atteste ce qu'un utilisateur a approuvé.\n\nLa version lue",
+   "apres": "Son objet est le mandat : un justificatif signé qui atteste ce qu'un utilisateur a approuvé.\n\nLe 28 avril 2026, Google a apporté AP2 à la FIDO Alliance. Celle-ci rédige des spécifications pour le commerce initié par des agents au sein de son groupe de travail technique sur les paiements, présidé par des membres de Mastercard et de Visa; le communiqué ne donne aucune échéance [20].\n\nLa version lue",
+   "motif": "Point majeur 02-49 : l'exposé ignorait l'apport d'AP2 à la FIDO Alliance, que l'ouverture, l'annexe H, le chapitre 49 et le volet du chapitre 11 supposent. Fait vérifié au communiqué de la FIDO Alliance, lu le 14 novembre 2026."
+  },
+  {
+   "fichier": "chapitre-10-commerce-agentique.md",
+   "avant": "la page du projet ne nomme pas ses auteurs.\n\nSa structure tient en trois couches",
+   "apres": "la page du projet ne nomme pas ses auteurs. Le communiqué de la FIDO Alliance le confirme : Mastercard y a apporté Verifiable Intent, qu'il dit codéveloppé avec Google et conçu pour fonctionner avec AP2 [20].\n\nSa structure tient en trois couches",
+   "motif": "Point majeur 02-49 : l'attribution de Verifiable Intent à Mastercard reposait sur le seul billet de l'AAIF; le communiqué de la FIDO Alliance la confirme."
+  },
+  {
+   "fichier": "chapitre-10-commerce-agentique.md",
+   "avant": "Les pages de Mastercard sont restées inaccessibles [18]. Mastercard est à l'origine de Verifiable Intent, selon le billet de l'AAIF [12], et figure parmi les appuis d'UCP [2]. Le même billet range Mastercard, avec Visa, American Express et Stripe, parmi les acteurs dotés chacun d'un schéma propriétaire de justificatifs limités, faute de standard ouvert commun aux réseaux. D'après un résumé de moteur de recherche, Mastercard y annonce l'intégration de Verifiable Intent aux API d'intention d'Agent Pay, dont le fonctionnement reste à établir.",
+   "apres": "Les pages de Mastercard sont restées inaccessibles [18] : le produit Agent Pay n'est pas décrit ici. Trois faits sont établis. Mastercard est à l'origine de Verifiable Intent, qu'il a apporté à la FIDO Alliance le 28 avril 2026 (section 10.2) [12][20]. Des membres de Mastercard et de Visa président le groupe de travail de cette alliance sur les paiements [20]. Mastercard figure enfin parmi les appuis d'UCP [2]. Le billet de l'AAIF le range, avec Visa, American Express et Stripe, parmi les acteurs dotés chacun d'un schéma propriétaire de justificatifs limités, faute de standard ouvert commun aux réseaux [12]. L'intégration de Verifiable Intent aux API d'intention d'Agent Pay n'est connue que par un résumé de moteur de recherche [18] : elle reste à établir.",
+   "motif": "Point majeur 02-50 : la sous-section s'appuyait sur un résumé de moteur de recherche, avec un « Mastercard y annonce » sans antécédent. Elle sépare maintenant ce qui est établi par des sources lues ([2], [12], [20]) de ce qui ne l'est pas ([18])."
+  },
+  {
+   "fichier": "chapitre-10-commerce-agentique.md",
+   "avant": "| Preuve d'intention | AP2, Verifiable Intent | Correspondances de Verifiable Intent avec AP2, ACP et UCP [7] |",
+   "apres": "| Preuve d'intention | AP2, Verifiable Intent | Correspondances de Verifiable Intent avec AP2, ACP et UCP [7]; tous deux apportés à la FIDO Alliance en avril 2026 [20] |",
+   "motif": "Point majeur 02-49 : la section 10.6 ignorait le rapprochement des deux propositions sous la FIDO Alliance."
+  },
+  {
+   "fichier": "chapitre-10-commerce-agentique.md",
+   "avant": "Aucun livrable n'y est cité; la gouvernance de l'AAIF est décrite au chapitre 11.\n",
+   "apres": "Aucun livrable n'y est cité; la gouvernance de l'AAIF est décrite au chapitre 11. La FIDO Alliance mène un travail voisin sur les paiements (section 10.2) [20] : deux enceintes traitent donc du commerce agentique, sans articulation décrite dans les pages lues.\n",
+   "motif": "Point majeur 02-49 : la section 10.6 ne citait que le groupe de travail de l'AAIF."
+  },
+  {
+   "fichier": "chapitre-10-commerce-agentique.md",
+   "avant": "une action signée par l'agent, une vérification en code déterministe.\n",
+   "apres": "une action signée par l'agent, une vérification en code déterministe. Tous deux ont été apportés à la FIDO Alliance en avril 2026.\n",
+   "motif": "Point à retenir mis à jour avec l'apport à la FIDO Alliance."
+  },
+  {
+   "fichier": "chapitre-10-commerce-agentique.md",
+   "avant": "(AP2).\n\n## Limites de ce chapitre",
+   "apres": "(AP2).\n\nPage primaire lue le 14 novembre 2026 :\n\n20. [FIDO Alliance — communiqué du 28 avril 2026 sur les normes d'interactions d'agents](https://fidoalliance.org/fido-alliance-to-develop-standards-for-trusted-ai-agent-interactions/)\n\n## Limites de ce chapitre",
+   "motif": "Source [20] ajoutée à la suite : communiqué de la FIDO Alliance, lu le 14 novembre 2026."
+  },
+  {
+   "fichier": "chapitre-10-commerce-agentique.md",
+   "avant": "[17] à [19] sont secondaires ou non lues.",
+   "apres": "[17] à [19] sont secondaires ou non lues; [20], primaire, a été lue le 14 novembre 2026.",
+   "motif": "Bandeau « État de référence » mis à jour pour la source [20]."
+  },
+  {
+   "fichier": "chapitre-10-commerce-agentique.md",
+   "avant": "- L'attribution d'AP2 à Google repose sur l'avis de droit d'auteur de la page et sur le billet de l'AAIF.",
+   "apres": "- L'attribution d'AP2 à Google repose sur l'avis de droit d'auteur de la page, sur le billet de l'AAIF et sur le communiqué de la FIDO Alliance [20]. Ce communiqué ne dit pas ce que devient la gouvernance des deux spécifications et ne donne aucune échéance. Il a été lu par l'outil de lecture, qui en a rendu les phrases citées; le texte brut de la page n'a pas pu être recoupé.",
+   "motif": "Limites mises à jour : portée et mode de lecture de la source [20]."
+  }
+ ]
+}

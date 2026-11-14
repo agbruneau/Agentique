@@ -1,0 +1,19 @@
+{
+ "id": "P2-M9",
+ "origine": "plan 2027, lot P2-M9",
+ "categorie": "coherence",
+ "remplacements": [
+  {
+   "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+   "avant": "Enfin, onze équipes conservent des clés d’API statiques en clair pour d’anciens prototypes hérités des 19 *Shadow Agents* recensés à l’audit initial.",
+   "apres": "Enfin, le routage obligatoire vers la passerelle d’observation, acquis à la porte G1 (chapitre 43), ne repose que sur l’inspection DNS/TLS : aucun verrou réseau n’interdit encore une sortie directe vers une API d’IA publique.",
+   "motif": "Point majeur 08-24 : à la même date (fin T1 2027), le chapitre 43 donne 100 % des agents munis d'identités SPIFFE, les clés personnelles révoquées et les 19 Shadow Agents traités. Le chapitre 43 fait foi : le troisième goulet n'est plus un reliquat de clés statiques, mais l'absence de verrou réseau."
+  },
+  {
+   "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+   "avant": "ce qui supprime techniquement les *Shadow Agents*.",
+   "apres": "ce qui ferme techniquement la voie aux *Shadow Agents*.",
+   "motif": "Point majeur 08-24 : les Shadow Agents ont été traités au chapitre 43; le verrou réseau empêche leur retour."
+  }
+ ]
+}

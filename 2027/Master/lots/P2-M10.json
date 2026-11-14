@@ -1,0 +1,19 @@
+{
+ "id": "P2-M10",
+ "origine": "plan 2027, lot P2-M10",
+ "categorie": "temporel",
+ "remplacements": [
+  {
+   "fichier": "chapitre-45-reseaux-b2b-federes.md",
+   "avant": "Selon l'état de l'art vérifié fin 2026, déployé dans les écosystèmes industriels européens et nord-américains en 2027 dans le sillage de Catena-X, de Manufacturing-X et de la fondation Eclipse, le maillage B2B de référence superpose quatre strates à chaque frontière d'entreprise.",
+   "apres": "Le maillage B2B de référence, pensé dans le sillage de Catena-X, de Manufacturing-X et de la fondation Eclipse, superpose quatre strates à chaque frontière d’entreprise. C’est une cible pour 2027, non un état de l’art vérifié : la négociation entre agents et la prévention de la collusion relèvent encore de la recherche (section 45.1).",
+   "motif": "Point majeur 08-30 : un déploiement de 2027 était donné pour accompli dans une édition arrêtée en novembre 2026, sous l'étiquette d'un « état de l'art vérifié » que la section 45.1 dément."
+  },
+  {
+   "fichier": "chapitre-45-reseaux-b2b-federes.md",
+   "avant": "En 2027, l'orchestration durable (Temporal), les capteurs IoT d'entrepôt, le moteur de politique Cedar et les protocoles AP2 / x402 permettent de l'exécuter",
+   "apres": "L’orchestration durable (Temporal), les capteurs IoT d’entrepôt, le moteur de politique Cedar et les protocoles AP2 / x402 doivent permettre de l’exécuter",
+   "motif": "Point majeur 08-30 : même tournure, « En 2027 … permettent », pour une capacité visée."
+  }
+ ]
+}

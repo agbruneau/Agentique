@@ -280,7 +280,7 @@ L’architecture de référence (approche C) combine trois briques sans confondr
 
 #### Extrait 27.1 — Contrat A2A v1.0 inter-SaaS normalisé (ServiceNow → plan neutre → SAP Joule)
 
-Ce message JSON-RPC A2A v1.0 montre comment une demande d’allocation de pièce de rechange traverse le plan neutre sans exposer de champ propriétaire de l’éditeur source :
+Ce message JSON-RPC A2A v1.0 décrit une cible : SAP documente A2A 0.3.0, incompatible avec la 1.0, et la page de Workday ne mentionne ni MCP ni A2A (section 26.5). D’ici là, le plan neutre traduit entre versions. Le message montre comment une demande d’allocation de pièce de rechange traverse le plan neutre sans exposer de champ propriétaire de l’éditeur source :
 
 ``` json
 {
