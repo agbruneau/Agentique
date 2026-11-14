@@ -10,6 +10,33 @@
 
 ---
 
+## État d'exécution au 14 novembre 2026
+
+État d'arrivée : 1 097 pages, registre de 1 311 entrées, tous les contrôles au vert. Chaque lot a son compte rendu dans `Master/lots/`.
+
+| Priorité | Lot | État |
+|---|---|---|
+| 0 | P0-1 à P0-3 | Faits |
+| 1 | P1-B1 | Fait : point bloquant clos |
+| 1 | P1-B2 à P1-B4 | **Ouverts** : textes réglementaires à déposer dans `Master/recherche/sources-locales/` |
+| 2 | P2-M1 à P2-M10 | Faits : les dix points majeurs sont clos |
+| 2 | P2-F1 | Fait : 95 constats, 86 corrigés |
+| 2 | P2-F2 | Fait : 200 phrases, 2,2 % d'erreur sur les 182 vérifiables |
+| 2 | P2-F3 | Fait sur les chapitres 1 à 47 : 124 sources relues, 60 phrases corrigées ou nuancées. Partie X non relue |
+| 3 | P3-m1 à P3-m6 | Faits : les trente points mineurs sont clos |
+| 3 | P3-L1 | **Non fait** : contrôle des adresses refusé par le contrôle de permissions de la session |
+| 3 | P3-L2 | **Ouvert** : quatre textes facultatifs à déposer |
+| 3 | P3-L3 | Fait : profil du corpus recalculé sur 789 sources, par addition et non par reclassement complet |
+| 4 | P4-1 | Fait : 473 lignes de grille classées, sans contre-vérification |
+| 4 | P4-2 | Fait en version resserrée : quatre sections de volet sans appui le disent; pas de relecture prescription par prescription |
+| 4 | P4-3, P4-4 | Faits |
+| 4 | P4-5 | Fait : quatre lacunes comblées, dont une par un résultat négatif (CAI) |
+| 5 | Entretien 2027 | À faire aux échéances de la section 7 |
+
+Écarts par rapport au plan : les points de l'audit ont été traités par l'orchestrateur plutôt que par des agents; le lot F3 a été confié à Sonnet plutôt qu'à Opus et borné aux chapitres 1 à 47; aucune lecture n'a pu être recoupée sur le texte brut, le téléchargement étant refusé dans la session.
+
+---
+
 ## 1. Règles communes à tous les agents
 
 ### 1.1 Ce qu'un agent ne fait jamais
