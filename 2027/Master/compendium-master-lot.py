@@ -123,6 +123,13 @@ def main():
                                "pour qu'elle tienne dans le texte de cette entrée)"
                                % (ou, avant[:50], ", ".join(map(str, debords))))
                 continue
+            # Le texte nouveau ne doit pas ramener un passage qu'une entrée antérieure a remplacé.
+            retours = [c["n"] for c in registre if c["fichier"] == fichier and c["avant"] not in texte
+                       and c["avant"] in apres_coup and c["avant"] not in c["apres"]]
+            if retours:
+                erreurs.append("%s : le remplacement ramène le texte que l'entrée n° %s du registre a "
+                               "remplacé (reformuler)" % (ou, ", ".join(map(str, retours))))
+                continue
             if suivi(fichier, texte, avant):
                 cibles = [c for c, (t, _) in autres[fichier].items() if t.count(avant) == 1]
                 if len(cibles) != 1:

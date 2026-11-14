@@ -6154,5 +6154,320 @@
   "categorie": "harmonisation",
   "motif": "Lot P4-2 : section juridique du volet sans aucun appui dans l'exposé ni source lue. Son statut est dit en tête, puisque l'ouvrage sert à fonder des décisions de conformité.",
   "origine": "plan 2027, lot P4-2"
+ },
+ {
+  "n": 685,
+  "fichier": "chapitre-33-observabilite-evaluation.md",
+  "avant": "Aucun des textes lus ne chiffre ce coût; ils décrivent en revanche des leviers.",
+  "apres": "Aucun des textes lus en entier ne chiffre ce coût; ils décrivent en revanche des leviers. Une prépublication, connue par son résumé, mesure un coût voisin, la part du banc qu'il faut rejouer (fin de la section).",
+  "categorie": "coherence",
+  "motif": "Second audit (lot P2-F1, entrée n° 492, mineur) : Phrase que le complément laisse en porte-à-faux : la même section se clôt maintenant sur « Une mesure du coût », et les limites disent qu'une étude du coût a été trouvée. Le titre ajouté promet d'ailleurs plus que le texte, qui conclut que [16] « mesure une part du banc rejoué, non un coût en dollars »; et ce que [16] mesure (rejouer le banc) n'est pas le coût dont parle la phrase (les appels du juge).",
+  "origine": "plan 2027, lot P2-F1-b2b"
+ },
+ {
+  "n": 686,
+  "fichier": "chapitre-33-observabilite-evaluation.md",
+  "avant": "et quatre articles parus entre juin 2024 et juin 2026",
+  "apres": "et cinq articles parus entre juin 2024 et septembre 2026",
+  "categorie": "coherence",
+  "motif": "Second audit (lot P2-F1, entrée n° 491, mineur) : Le bandeau n'a pas suivi : avec [16], soumis à arXiv le 18 septembre 2026, le chapitre cite cinq articles, et la borne « juin 2026 » est dépassée.",
+  "origine": "plan 2027, lot P2-F1-b2b"
+ },
+ {
+  "n": 687,
+  "fichier": "chapitre-33-observabilite-evaluation.md",
+  "avant": "- Le coût de l'évaluation continue se maîtrise par un petit juge, l'aiguillage par confiance et l'échantillonnage.\n- Le banc d'essai utile est interne, tiré des traces, fondé sur des états vérifiables et répété.",
+  "apres": "- Le coût de l'évaluation continue se maîtrise par un petit juge, l'aiguillage par confiance et l'échantillonnage. Une seule étude, connue par son résumé, mesure qu'un sous-ensemble du banc suffit à suivre un agent en production.\n- Le banc d'essai utile est interne, tiré des traces, fondé sur des états vérifiables et répété.",
+  "categorie": "coherence",
+  "motif": "Second audit (lot P2-F1, entrée n° 492, mineur) : Point à retenir non mis à jour : il énumère les leviers décrits sans mesure et omet le seul que le complément chiffre, le sous-ensemble du banc. La grille de décision n'a pas reçu de ligne non plus.",
+  "origine": "plan 2027, lot P2-F1-b2b"
+ },
+ {
+  "n": 688,
+  "fichier": "chapitre-34-exploitation.md",
+  "avant": "Il ne couvre ni l'état que l'agent a déjà modifié ni les effets externes, qui relèvent des deux autres mécanismes de cette section.",
+  "apres": "Il ne couvre ni l'état que l'agent a déjà modifié, qui relève du retour arrière d'état, ni les effets externes, qui relèvent de la compensation (chapitre 18).",
+  "categorie": "coherence",
+  "motif": "Second audit (lot P2-F1, entrée n° 467, majeur) : Contradiction avec la même section et avec les points à retenir. Les « deux autres mécanismes » de 34.6 sont le retour arrière d'état et l'arrêt d'urgence; or la section dit que le retour arrière d'état « n'annule pas les effets déjà produits dans les systèmes externes, qui relèvent de la compensation (chapitre 18) », et l'arrêt d'urgence n'efface rien.",
+  "origine": "plan 2027, lot P2-F1-b2b"
+ },
+ {
+  "n": 689,
+  "fichier": "chapitre-34-exploitation.md",
+  "avant": "Revenir en arrière consiste à repointer le point d'accès de production vers une version antérieure, sans rien reconstruire.",
+  "apres": "La page ne parle pas de retour arrière; on en déduit que revenir en arrière consiste à repointer le point d'accès de production vers une version antérieure, sans rien reconstruire.",
+  "categorie": "coherence",
+  "motif": "Second audit (lot P2-F1, entrée n° 467, mineur) : Déduction présentée comme le contenu de la page. La page [10] ne parle pas de retour arrière : elle décrit des versions immuables et des points d'accès à mettre à jour explicitement, et son seul exemple fait avancer un point d'accès vers une version plus récente. Les limites ne déclarent déduit que le rapprochement avec le manifeste.",
+  "origine": "plan 2027, lot P2-F1-b2b"
+ },
+ {
+  "n": 690,
+  "fichier": "chapitre-34-exploitation.md",
+  "avant": "Ce mécanisme réalise le manifeste de version de la section 34.2 pour ce que la plateforme connaît : le conteneur, le protocole et les réglages de réseau.",
+  "apres": "Ce mécanisme ne réalise qu'une partie du manifeste de version de la section 34.2 : il fige ce que la plateforme connaît, soit le conteneur, le protocole et les réglages de réseau, non le modèle servi ailleurs, les outils de tiers ni la mémoire.",
+  "categorie": "coherence",
+  "motif": "Second audit (lot P2-F1, entrée n° 467, mineur) : « Réalise » dit trop. Le manifeste de 34.2 réunit le modèle épinglé, les prompts, les schémas d'outils et les politiques de garde-fous et de mémoire; la page [10] ne nomme aucun de ces éléments, seulement l'image du conteneur, les réglages de protocole et de réseau. Déduit : le modèle servi par un fournisseur, les outils de serveurs MCP tiers et la mémoire restent hors de la version.",
+  "origine": "plan 2027, lot P2-F1-b2b"
+ },
+ {
+  "n": 691,
+  "fichier": "chapitre-34-exploitation.md",
+  "avant": "| Retour arrière de version | Point d'accès nommé, repointé vers une version immuable antérieure | Jamais le point d'accès par défaut en production |",
+  "apres": "| Retour arrière de version | Retour au manifeste antérieur; là où la plateforme offre des versions immuables et des points d'accès nommés [10], repointer le point d'accès | Jamais le point d'accès par défaut en production |",
+  "categorie": "coherence",
+  "motif": "Second audit (lot P2-F1, entrée n° 468, mineur) : La grille érige en option par défaut le mécanisme d'un seul éditeur, lu sur une seule page, alors que les limites disent que les autres plateformes ne sont pas décrites; et elle omet que ce retour ne ramène qu'une partie du manifeste (ligne « Unité de version » de la même grille).",
+  "origine": "plan 2027, lot P2-F1-b2b"
+ },
+ {
+  "n": 692,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "H1, la concentration dans les grandes organisations, que la recherche laissait hors champ, reçoit l'appui des statistiques officielles : l'usage de l'IA croît avec la taille de l'entreprise, au Canada comme aux États-Unis (section 4.1).",
+  "apres": "H1, la concentration dans les grandes organisations, reste hors du champ de ces travaux. Les statistiques officielles que cite la section 4.1, hors de cette revue, montrent que l'usage de l'IA en général croît avec la taille de l'entreprise, au Canada comme aux États-Unis; aucune ne compte les agents.",
+  "categorie": "coherence",
+  "motif": "Second audit (lot P2-F1, entrée n° 545, majeur) : Fait sans appel [n] dans un chapitre de la partie X, et mal rattaché. La phrase est introduite par « Deux hypothèses […] en sont touchées », où « en » désigne les quinze travaux; or aucun des quinze ([87] à [101]) n'est une statistique d'usage selon la taille : ce sont les sources [13] et [15] du chapitre 4, absentes de la liste du chapitre 48. De plus, ces statistiques portent sur l'IA en général : le chapitre 4 …",
+  "origine": "plan 2027, lot P2-F1-b2b"
+ },
+ {
+  "n": 693,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "H2, des agents bornés et supervisés, est confirmée par le cas de production relevé [96] (section 42.4).",
+  "apres": "H2, des agents bornés et supervisés, reçoit l'appui d'un cas de production connu par son résumé [96] (section 42.4).",
+  "categorie": "coherence",
+  "motif": "Second audit (lot P2-F1, entrée n° 545, mineur) : « Confirmée » dit plus que la preuve : un seul cas, connu par son résumé, dont le chapitre 42 donne le rattachement pour « provisoire ». Le tableau de 48.10 dit H2 « appuyée ».",
+  "origine": "plan 2027, lot P2-F1-b2b"
+ },
+ {
+  "n": 694,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "| Prime de 16,8 %, non significative une fois les autres capacités prises en compte |",
+  "apres": "| Prime de 16,8 %, ramenée à 5,1 %, non significative, une fois la productivité de départ et les autres capacités prises en compte; données de 2019 et de 2021 |",
+  "categorie": "coherence",
+  "motif": "Second audit (lot P2-F1, entrée n° 545, mineur) : Raccourci inexact : la prime brute est de 16,8 %; c'est le reliquat de 5,1 % qui n'est pas significatif après prise en compte de la productivité de départ et des autres capacités (section 40.5). La cellule ne dit pas non plus que les données sont de 2019 et de 2021.",
+  "origine": "plan 2027, lot P2-F1-b2b"
+ },
+ {
+  "n": 695,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "précisent trois cases de la synthèse : l'écosystème des registres de MCP, les défauts du logiciel qui porte les agents et le biais d'automatisation.",
+  "apres": "précisent cinq thèmes de la synthèse, surtout trois cases : l'écosystème des registres de MCP, les défauts du logiciel qui porte les agents et le biais d'automatisation; ils apportent aussi une première mesure du coût d'évaluation et un appui à l'absence d'effet établi sur l'entreprise.",
+  "categorie": "coherence",
+  "motif": "Second audit (lot P2-F1, entrée n° 523, mineur) : Le point à retenir compte trois cases; le tableau de 48.11 annonce un effet sur cinq thèmes, dont deux que le point omet : l'évaluation (« Première mesure sous coûts publiés ») et les effets économiques (« Appuie la case absent »).",
+  "origine": "plan 2027, lot P2-F1-b2b"
+ },
+ {
+  "n": 696,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "| Gouvernance | Presque rien | Régime de responsabilité; palier de supervision | Validation empirique des cadres |",
+  "apres": "| Gouvernance | Presque rien dans les 83 notices; hors protocole, le biais d'automatisation des aides à la décision (48.11) | Régime de responsabilité; palier de supervision | Validation empirique des cadres |",
+  "categorie": "coherence",
+  "motif": "Second audit (lot P2-F1, entrée n° 545, mineur) : Le tableau de synthèse de 48.10 n'a pas suivi : 48.11 dit que ses travaux « déplacent des cases » et, pour la gouvernance, qu'ils « remplace[nt] presque rien par un acquis »; le tableau garde « Presque rien », sans renvoi. L'« acquis » est par ailleurs mince : un rapport de risques que le chapitre 22 dit « calculé à titre indicatif sur quatre études », tiré d'une revue de 2011 sur l'aide à la décision clinique.",
+  "origine": "plan 2027, lot P2-F1-b2b"
+ },
+ {
+  "n": 697,
+  "fichier": "chapitre-49-veille-technologique.md",
+  "avant": "le droit britannique, coréen et japonais n'ont été vus que dans des extraits de recherche et ne sont pas cités.",
+  "apres": "le droit britannique n'a été vu que dans des extraits de recherche et n'est pas cité; la loi coréenne et le plan japonais ne le sont que par renvoi à la section 35.7, d'après des sources secondaires ou un résumé.",
+  "categorie": "coherence",
+  "motif": "Second audit (lot P2-F1, entrée n° 529, mineur) : Limite rendue fausse par le complément : la section 49.4 cite maintenant la loi-cadre coréenne (tableau des échéances et « Trois lectures ») et le plan japonais du 14 juillet 2026, par renvoi à la section 35.7.",
+  "origine": "plan 2027, lot P2-F1-b2b"
+ },
+ {
+  "n": 698,
+  "fichier": "chapitre-49-veille-technologique.md",
+  "avant": "| Janvier 2027, au plus tôt | Corée du Sud : fin du délai de grâce avant les amendes de la loi-cadre sur l'IA | Section 35.7 |",
+  "apres": "| Janvier 2027, au plus tôt (déduit : un an après le 22 janvier 2026) | Corée du Sud : fin du délai de grâce avant les amendes de la loi-cadre sur l'IA, selon un commentaire de cabinet | Section 35.7 |",
+  "categorie": "coherence",
+  "motif": "Second audit (lot P2-F1, entrée n° 527, mineur) : Date déduite, non dite déduite, rangée parmi « les échéances datées » que la légende de la figure dit « fixées par des textes adoptés ». La section 35.7 ne donne pas de date : elle dit au conditionnel que les amendes « ne seraient appliquées qu'après un délai de grâce d'un an », d'après un commentaire de cabinet « antérieur à la publication de tous ses décrets ».",
+  "origine": "plan 2027, lot P2-F1-b2b"
+ },
+ {
+  "n": 699,
+  "fichier": "chapitre-49-veille-technologique.md",
+  "avant": "- L'année 2027 concentre les échéances : E-23 en mai, haut risque européen et cyberrésilience en décembre.",
+  "apres": "- L'année 2027 concentre les échéances : E-23 et la ligne directrice de l'AMF en mai, haut risque européen et cyberrésilience en décembre.",
+  "categorie": "coherence",
+  "motif": "Second audit (lot P2-F1, entrée n° 527, mineur) : Point à retenir non mis à jour : le tableau et la lecture de 49.4 comptent maintenant aussi, en mai 2027, la ligne directrice de l'AMF.",
+  "origine": "plan 2027, lot P2-F1-b2b"
+ },
+ {
+  "n": 700,
+  "fichier": "chapitre-49-veille-technologique.md",
+  "avant": "Dans l'Union, la proposition de Cloud and AI Development Act du 3 juin 2026 nomme l'orchestration d'agents dans un considérant (section 37.1).",
+  "apres": "Dans l'Union même, la proposition de Cloud and AI Development Act du 3 juin 2026, non adoptée, nomme l'orchestration d'agents dans un considérant (section 37.1).",
+  "categorie": "coherence",
+  "motif": "Second audit (lot P2-F1, entrée n° 529, mineur) : Phrase sur l'Union européenne logée dans le paragraphe « Hors d'Europe, peu de textes visent les agents ». Le fait est conforme à la section 37.1; elle omet que le texte n'est pas adopté.",
+  "origine": "plan 2027, lot P2-F1-b2b"
+ },
+ {
+  "n": 701,
+  "fichier": "chapitre-49-veille-technologique.md",
+  "avant": "Les faits de cet ouvrage sont arrêtés aux 11 et 12 novembre 2026.",
+  "apres": "Les faits de cet ouvrage sont arrêtés aux 11 et 12 novembre 2026, sauf les compléments du 14 novembre.",
+  "categorie": "coherence",
+  "motif": "Second audit (lot P2-F1, entrée n° 526, mineur) : Phrase d'introduction que les compléments rendent inexacte : vingt chapitres portent des faits lus le 14 novembre 2026, et le bandeau du même chapitre le dit pour ses propres ajouts.",
+  "origine": "plan 2027, lot P2-F1-b2b"
+ },
+ {
+  "n": 702,
+  "fichier": "chapitre-49-veille-technologique.md",
+  "avant": "| Adoption mesurée par les offices statistiques | Statistique Canada, Eurostat, Census Bureau | Semestrielle |",
+  "apres": "| Adoption mesurée par les offices statistiques | Eurostat, Census Bureau; la série de Statistique Canada a pris fin en 2026 (section 49.1) | Semestrielle |",
+  "categorie": "coherence",
+  "motif": "Second audit (lot P2-F1, entrée n° 530, majeur) : La ligne ajoutée au registre désigne comme source primaire à relire deux fois l'an une série que le même chapitre et le chapitre 50 disent terminée : l'enquête de Statistique Canada sur l'usage de l'IA a pris fin avec son cycle du troisième trimestre de 2026, sans remplacement identifié. La grille du chapitre demande de retirer un signal « quand sa source cesse ».",
+  "origine": "plan 2027, lot P2-F1-b2b"
+ },
+ {
+  "n": 703,
+  "fichier": "chapitre-50-projection-etude-marche.md",
+  "avant": "Statistique Canada n'observe par ailleurs aucune prime de productivité significative chez les entreprises qui ont adopté l'IA, une fois leurs autres capacités prises en compte (section 40.5).",
+  "apres": "Sur des données de 2019 et de 2021, antérieures à l'IA générative, une étude de Statistique Canada n'observe par ailleurs plus de prime de productivité significative chez les entreprises qui ont adopté l'IA, une fois leur productivité de départ et leurs autres capacités prises en compte (section 40.5).",
+  "categorie": "coherence",
+  "motif": "Second audit (lot P2-F1, entrée n° 534, majeur) : Fait sans appel [n] dans un chapitre de la partie X : l'étude est la source [13] du chapitre 40, absente de la liste du chapitre 50. La phrase suit des mesures d'adoption de 2025 et de 2026 et se lit comme leur contemporaine, alors que l'étude repose sur des données de 2019 et de 2021, antérieures à l'IA générative, et que ses auteurs réservent des gains différés.",
+  "origine": "plan 2027, lot P2-F1-b2b"
+ },
+ {
+  "n": 704,
+  "fichier": "chapitre-50-projection-etude-marche.md",
+  "avant": "Le Canada dispose d'une mesure que peu de pays ont : une enquête de l'organisme statistique national, sur un échantillon de 21 105 entreprises de toutes tailles.",
+  "apres": "Le Canada dispose, comme l'Union européenne et les États-Unis, d'une mesure qui ne dépend ni d'un cabinet ni d'un fournisseur : une enquête de l'organisme statistique national, sur un échantillon de 21 105 entreprises de toutes tailles.",
+  "categorie": "coherence",
+  "motif": "Second audit (lot P2-F1, entrée n° 534, mineur) : Phrase d'ouverture de la sous-section que le complément contredit quelques lignes plus bas : l'Union européenne (ses États membres) et les États-Unis disposent d'une mesure du même type, qui donne « le même ordre de grandeur » [74][75]. Les deux mesures étrangères sont en outre logées sous le titre « Le Canada et le Québec ».",
+  "origine": "plan 2027, lot P2-F1-b2b"
+ },
+ {
+  "n": 705,
+  "fichier": "ouverture.md",
+  "avant": "BSIF E-23 et ligne directrice de l’AMF sur l’IA au 1er mai 2027",
+  "apres": "BSIF E-23 le 1er mai 2027, ligne directrice de l’AMF sur l’IA à la même date d’après des analyses de cabinets, faute d’avoir lu le texte",
+  "categorie": "coherence",
+  "motif": "Second audit (lot P2-F1, entrée n° 541, majeur) : Sous « Faits vérifiés », la phrase dit que ces échéances « reposent sur les textes en vigueur ». Pour la ligne directrice de l'AMF, c'est plus que ce que l'ouvrage a établi : le texte n'a pas été lu (il est resté inaccessible) et sa date d'effet n'est connue que par des analyses de cabinets. L'ajout est en outre hors des repères « ajout partie X » qui déclarent les autres ajouts de l'ouverture.",
+  "origine": "plan 2027, lot P2-F1-b2b"
+ },
+ {
+  "n": 706,
+  "fichier": "ouverture.md",
+  "avant": "Les statistiques officielles situent l’usage de l’IA, toutes formes confondues, à une entreprise sur cinq environ (section 4.1).",
+  "apres": "Au Canada, dans l’Union européenne et aux États-Unis, les statistiques officielles situent l’usage de l’IA, toutes formes confondues, à une entreprise sur cinq environ (section 4.1).",
+  "categorie": "coherence",
+  "motif": "Second audit (lot P2-F1, entrée n° 549, mineur) : La phrase insérée sépare « Certains de ces socles restent en chantier » de son antécédent, les socles nommés deux phrases plus haut. Elle ne dit pas non plus de quels territoires il s'agit (Canada, Union européenne, États-Unis, sur des champs et des périodes qui diffèrent selon la section 4.1).",
+  "origine": "plan 2027, lot P2-F1-b2b"
+ },
+ {
+  "n": 707,
+  "fichier": "chapitre-27-strategie-multi-plateformes.md",
+  "avant": "pour A2A, la trousse de compatibilité du protocole fournit un essai commun (section 26.9).",
+  "apres": "pour A2A, la trousse de compatibilité du protocole éprouve la conformité d'un point d'accès, non la portabilité d'un agent (section 26.9).",
+  "categorie": "coherence",
+  "motif": "Second audit (lot P2-F1, entrée n° 515, mineur) : Le renvoi déborde ce que la section 26.9 établit. La phrase traite de la preuve de portabilité (redéployer un agent sur une seconde cible et mesurer ce qu'il a fallu réécrire); la trousse éprouve la conformité au protocole d'un point d'accès A2A, non la portabilité d'un agent, et 26.9 précise qu'elle n'a pas été exécutée, qu'aucune liste de résultats n'est publiée et que les versions couvertes ne sont pas dites.",
+  "origine": "plan 2027, lot P2-F1-b2b"
+ },
+ {
+  "n": 708,
+  "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+  "avant": "Aucune mesure indépendante de routage sur des trajectoires d'agents n'a été trouvée, y compris par une nouvelle recherche le 14 novembre 2026.",
+  "apres": "Hors le banc d'essai documentaire repris du chapitre 40, aucune mesure indépendante de routage sur des trajectoires d'agents n'a été trouvée, y compris par une nouvelle recherche le 14 novembre 2026.",
+  "categorie": "coherence",
+  "motif": "Second audit (lot P2-F1, entrée n° 495, mineur) : La limite est plus absolue que l'exposé : la section sur RouterArena cite elle-même, pour une boucle d'agent, « un ordre de grandeur sur une tâche documentaire » repris du chapitre 40, où un routage à deux niveaux est mesuré sur une architecture multi-agents par des auteurs universitaires (prépublication). Le bandeau, « faits arrêtés au 11 novembre 2026 », ne mentionne pas la recherche du 14.",
+  "origine": "plan 2027, lot P2-F1-b2b"
+ },
+ {
+  "n": 709,
+  "fichier": "annexe-A-glossaire.md",
+  "avant": "agentic AI mesh, agent mesh, agentic mesh |",
+  "apres": "agentic AI mesh; chez les éditeurs, agent mesh ou agentic mesh |",
+  "categorie": "coherence",
+  "motif": "Second audit (lot P2-F1, entrée n° 368, mineur) : le glossaire donnait les trois formes anglaises pour équivalentes, alors que la section 23.3 dit que les éditeurs emploient « agent mesh » et « agentic mesh » pour des objets différents.",
+  "origine": "plan 2027, lot P2-F1-b2b"
+ },
+ {
+  "n": 710,
+  "fichier": "annexe-A-glossaire.md",
+  "avant": "| Infrastructure qui rend les agents joignables et gouvernables (23) |",
+  "apres": "| Infrastructure qui rend les agents joignables et gouvernables; chez les éditeurs, le mot recouvre trois objets distincts (23) |",
+  "categorie": "coherence",
+  "motif": "Second audit (lot P2-F1, entrée n° 368, mineur) : même constat, définition complétée.",
+  "origine": "plan 2027, lot P2-F1-b2b"
+ },
+ {
+  "n": 711,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "| Déploiement échelonné, 5 179 agents de soutien | 14 % de problèmes résolus de plus par heure en moyenne;",
+  "apres": "| Déploiement échelonné, 5 172 agents de soutien | 15 % de problèmes résolus de plus par heure en moyenne;",
+  "categorie": "factuel",
+  "motif": "Recollationnement (lot P2-F2, phrase F2-133) : la page citée [74], relue le 14 novembre 2026, donne 5 172 agents et 15 %, non 5 179 et 14 %. Les anciens chiffres viennent peut-être d'une version antérieure du document de travail : non vérifié.",
+  "origine": "plan 2027, lot P2-F2-b"
+ },
+ {
+  "n": 712,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "(https://arxiv.org/abs/2304.11771) — document de travail.",
+  "apres": "(https://arxiv.org/abs/2304.11771) — document de travail; version en ligne relue le 14 novembre 2026.",
+  "categorie": "factuel",
+  "motif": "Recollationnement (lot P2-F2, phrase F2-133) : la source [74] dit maintenant quelle version porte les chiffres cités.",
+  "origine": "plan 2027, lot P2-F2-b"
+ },
+ {
+  "n": 713,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "516 serveurs détournables;",
+  "apres": "516 cas de détournement possible, somme de 304 serveurs et de 212 comptes (section 8.8);",
+  "categorie": "factuel",
+  "motif": "Recollationnement (lot P2-F2, phrase F2-141) : le chiffre de 516 n'est pas dans la source relue; c'est la somme de 304 et de 212, dite telle à la section 8.8.",
+  "origine": "plan 2027, lot P2-F2-b"
+ },
+ {
+  "n": 714,
+  "fichier": "chapitre-50-projection-etude-marche.md",
+  "avant": "21 % des organisations disposent d'un modèle mûr de gouvernance des agents chez Deloitte [33]",
+  "apres": "21 % des entreprises qui prévoient de déployer l'IA agentique d'ici deux ans disposent d'un modèle mûr de gouvernance des agents chez Deloitte [33]",
+  "categorie": "factuel",
+  "motif": "Recollationnement (lot P2-F2, phrase F2-184) : chez Deloitte, les 21 % portent sur les entreprises qui prévoient de déployer l'IA agentique d'ici deux ans (« only 21% of those companies »), non sur l'ensemble des organisations.",
+  "origine": "plan 2027, lot P2-F2-b"
+ },
+ {
+  "n": 715,
+  "fichier": "chapitre-50-projection-etude-marche.md",
+  "avant": "relevées en 50.2.\n- L'enveloppe de 50.2",
+  "apres": "relevées en 50.2.\n- La page de Global Market Insights [4], rechargée le 14 novembre 2026, présente une autre édition (9,47 G$ en 2025, 126,02 G$ en 2035, 27,0 % par an) : les chiffres de juillet 2025 repris en 50.2 n'y figurent plus et n'ont pas pu être revérifiés.\n- L'enveloppe de 50.2",
+  "categorie": "factuel",
+  "motif": "Recollationnement (lot P2-F2, phrases F2-162 et F2-169) : la page [4] a changé d'édition depuis la lecture; les chiffres cités en 50.2 ne sont plus vérifiables sur la page.",
+  "origine": "plan 2027, lot P2-F2-b"
+ },
+ {
+  "n": 716,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "| Prépublication (arXiv pour l'essentiel) | 144 | 20,3 % |\n| Projet ouvert : spécification, dépôt, fondation | 143 | 20,2 % |\n| Organisme de normalisation ou de référence | 84 | 11,8 % |\n| Texte officiel ou organisme public | 42 | 5,9 % |\n| Analyste ou presse | 14 | 2,0 % |\n| Éditeur scientifique (article évalué par les pairs) | 1 | 0,1 % |\n| Documentation d'éditeur, de fournisseur, et autres | 281 | 39,6 % |\n| **Total** | **709** | **100 %** |",
+  "apres": "| Prépublication (arXiv pour l'essentiel) | 165 | 21,3 % |\n| Projet ouvert : spécification, dépôt, fondation | 146 | 18,8 % |\n| Organisme de normalisation ou de référence | 89 | 11,5 % |\n| Texte officiel ou organisme public | 53 | 6,8 % |\n| Analyste ou presse | 24 | 3,1 % |\n| Éditeur scientifique (article évalué par les pairs) | 3 | 0,4 % |\n| Documentation d'éditeur, de fournisseur, et autres | 295 | 38,1 % |\n| **Total** | **775** | **100 %** |",
+  "categorie": "harmonisation",
+  "motif": "Lot P3-L3 : le tableau du corpus décrivait les 709 sources du 13 novembre. Il porte maintenant sur les 775 sources des chapitres 1 à 47 : les 709 classées par leur adresse, plus les 66 ajoutées depuis, classées à la main.",
+  "origine": "plan 2027, lot P3-L3"
+ },
+ {
+  "n": 717,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "La recherche pèse un cinquième, et elle arrive par arXiv : 140 citations",
+  "apres": "La recherche pèse un cinquième, et elle arrive par arXiv. Dans le corpus du 13 novembre, on comptait 140 citations",
+  "categorie": "harmonisation",
+  "motif": "Lot P3-L3 : les décomptes de prépublications de ce paragraphe datent du corpus du 13 novembre; le texte le dit.",
+  "origine": "plan 2027, lot P3-L3"
+ },
+ {
+  "n": 718,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "Les compléments du 14 novembre 2026 ont porté ce corpus à 774 sources. Les 65 ajoutées, classées à la main, comptent 21 prépublications, 2 articles de revue, 11 textes officiels ou d'organismes publics, 4 publications d'organismes de référence, 3 pages de projets ouverts, 14 documentations ou billets d'éditeurs et 10 analyses de cabinets, d'analystes ou de presse. Le tableau ci-dessus n'a pas été recalculé : il décrit le corpus du 13 novembre.",
+  "apres": "Le tableau porte sur les 775 sources des chapitres 1 à 47 au 14 novembre 2026. Les 709 du 13 novembre y sont classées par leur adresse. Les 66 ajoutées depuis, soit les 65 compléments et le communiqué de la FIDO Alliance cité au chapitre 10, sont classées à la main : 21 prépublications, 2 articles de revue, 11 textes officiels ou d'organismes publics, 5 publications d'organismes de référence, 3 pages de projets ouverts, 14 documentations ou billets d'éditeurs et 10 analyses de cabinets, d'analystes ou de presse. Le classement mêle donc deux méthodes.",
+  "categorie": "harmonisation",
+  "motif": "Lot P3-L3 : le paragraphe disait le tableau non recalculé; il décrit maintenant comment il l'a été.",
+  "origine": "plan 2027, lot P3-L3"
+ },
+ {
+  "n": 719,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "date à laquelle le corpus de l'ouvrage est passé à 774 sources",
+  "apres": "date à laquelle le corpus de l'ouvrage est passé à 775 sources",
+  "categorie": "harmonisation",
+  "motif": "Lot P3-L3 : décompte du bandeau mis à jour (source [20] du chapitre 10).",
+  "origine": "plan 2027, lot P3-L3"
  }
 ]

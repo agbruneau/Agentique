@@ -176,7 +176,7 @@ L'écart de un à dix ne décrit pas des réalités différentes, mais des quest
 
 Trois constats reviennent d'une enquête à l'autre, malgré des échantillons et des commanditaires différents.
 
-**La gouvernance est en retard sur le déploiement.** Deux enquêtes indépendantes donnent le même chiffre : 21 % des organisations disposent d'un modèle mûr de gouvernance des agents chez Deloitte [33], 21 % de capacités de gouvernance en place chez Gartner, alors que 71 % comptent déployer des agents dans les douze mois [68]. BCG trouve 5 % d'entreprises dotées de l'ensemble des contrôles, quand 42 % prévoient d'accorder une autonomie réelle aux agents d'ici 2030 [37]. Selon IBM, 11 % des dirigeants technologiques se disent tout à fait prêts, et 59 % citent la sécurité et la conformité comme premier obstacle [38].
+**La gouvernance est en retard sur le déploiement.** Deux enquêtes indépendantes donnent le même chiffre : 21 % des entreprises qui prévoient de déployer l'IA agentique d'ici deux ans disposent d'un modèle mûr de gouvernance des agents chez Deloitte [33], 21 % de capacités de gouvernance en place chez Gartner, alors que 71 % comptent déployer des agents dans les douze mois [68]. BCG trouve 5 % d'entreprises dotées de l'ensemble des contrôles, quand 42 % prévoient d'accorder une autonomie réelle aux agents d'ici 2030 [37]. Selon IBM, 11 % des dirigeants technologiques se disent tout à fait prêts, et 59 % citent la sécurité et la conformité comme premier obstacle [38].
 
 **La valeur est déclarée plus souvent qu'elle n'est mesurée.** Douze pour cent des organisations évaluent systématiquement la valeur de l'IA par rapport à son coût [35]. Au Canada, 3 % des dirigeants sondés disent avoir obtenu des retombées mesurables de leurs investissements en IA, alors que 70 % la jugent utile [39]. Le chapitre 4 relevait le même écart dans l'enquête de McKinsey.
 
@@ -186,7 +186,7 @@ Ces enquêtes restent déclaratives. Elles sondent surtout de grandes organisati
 
 ### Le Canada et le Québec
 
-Le Canada dispose d'une mesure que peu de pays ont : une enquête de l'organisme statistique national, sur un échantillon de 21 105 entreprises de toutes tailles.
+Le Canada dispose, comme l'Union européenne et les États-Unis, d'une mesure qui ne dépend ni d'un cabinet ni d'un fournisseur : une enquête de l'organisme statistique national, sur un échantillon de 21 105 entreprises de toutes tailles.
 
 | Indicateur | Valeur | Source |
 |---|---|---|
@@ -197,7 +197,7 @@ Le Canada dispose d'une mesure que peu de pays ont : une enquête de l'organisme
 | Québec, deuxième trimestre de 2025 | 12,7 %; Ontario 13,3 % | [42] |
 | Dirigeants canadiens de sociétés d'au moins 50 millions de dollars de revenus qui disent utiliser des agents | 77 % | [39] |
 
-L'écart entre 19 % et 77 % mesure la distance entre l'ensemble des entreprises et les grandes, et entre l'usage de l'IA et une définition très large de l'agent. Une enquête de la Banque du Canada confirme le premier chiffre : plus de la moitié des entreprises n'utilisent pas l'IA et ne prévoient pas l'adopter dans l'année, ou l'utilisent rarement [43]. Aucune de ces enquêtes ne pose de question sur les agents autonomes. Les offices statistiques de l'Union européenne et des États-Unis donnent le même ordre de grandeur, sur des champs différents : 20,0 % des entreprises de dix employés ou plus en 2025, et 19,8 % des entreprises au 3 mai 2026 [74][75]. Statistique Canada n'observe par ailleurs aucune prime de productivité significative chez les entreprises qui ont adopté l'IA, une fois leurs autres capacités prises en compte (section 40.5).
+L'écart entre 19 % et 77 % mesure la distance entre l'ensemble des entreprises et les grandes, et entre l'usage de l'IA et une définition très large de l'agent. Une enquête de la Banque du Canada confirme le premier chiffre : plus de la moitié des entreprises n'utilisent pas l'IA et ne prévoient pas l'adopter dans l'année, ou l'utilisent rarement [43]. Aucune de ces enquêtes ne pose de question sur les agents autonomes. Les offices statistiques de l'Union européenne et des États-Unis donnent le même ordre de grandeur, sur des champs différents : 20,0 % des entreprises de dix employés ou plus en 2025, et 19,8 % des entreprises au 3 mai 2026 [74][75]. Sur des données de 2019 et de 2021, antérieures à l'IA générative, une étude de Statistique Canada n'observe par ailleurs plus de prime de productivité significative chez les entreprises qui ont adopté l'IA, une fois leur productivité de départ et leurs autres capacités prises en compte (section 40.5).
 
 Trois réserves pèsent sur la suite. L'enquête de Statistique Canada a pris fin avec son cycle du troisième trimestre de 2026 [41] : la série s'arrête, et aucune source de remplacement n'est identifiée. La dernière mesure québécoise date de 2025; aucune mise à jour de 2026 n'a été trouvée. Et aucune estimation indépendante de la taille du marché canadien de l'IA agentique n'existe; seules des pages de vendeurs d'études en proposent.
 
@@ -449,6 +449,7 @@ Pages d'offices statistiques lues le 14 novembre 2026 :
 - Les pages ont été lues par un outil qui en restitue des extraits. Cinq ont été relues à l'audit, sans écart : [3], [14], [40], [36] et [32]. Les autres chiffres n'ont pas été revérifiés sur le texte intégral.
 - Les sites de Gartner, de MarketsandMarkets, de McKinsey, de Morgan Stanley, d'Oracle et de Business Wire ont refusé l'accès. Tous les chiffres de Gartner viennent de reprises tierces; ceux de ses documents payants, d'un seul blogue ([56], [51]), et sont à tenir pour non confirmés.
 - Les pages des cabinets d'études présentent des rapports payants : ni la méthode ni, le plus souvent, la définition du marché n'y figurent. Plusieurs comportent des incohérences internes, relevées en 50.2.
+- La page de Global Market Insights [4], rechargée le 14 novembre 2026, présente une autre édition (9,47 G$ en 2025, 126,02 G$ en 2035, 27,0 % par an) : les chiffres de juillet 2025 repris en 50.2 n'y figurent plus et n'ont pas pu être revérifiés.
 - L'enveloppe de 50.2 est une interpolation géométrique entre les deux bornes publiées de chaque série. Elle suppose une croissance régulière que les sources n'affirment pas, et réunit des périmètres qui ne coïncident pas.
 - La somme des dépenses d'investissement de quatre sociétés est un calcul de l'ouvrage, sur des définitions qui diffèrent; le chiffre de Microsoft vient d'une transcription tierce de son appel.
 - Les indicateurs des éditeurs ne sont pas audités. Ceux de Microsoft, d'Amazon, de Workday, d'Oracle et d'UiPath viennent de reprises ou de résumés tiers.

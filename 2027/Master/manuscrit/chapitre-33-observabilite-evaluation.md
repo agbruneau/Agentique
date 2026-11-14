@@ -2,7 +2,7 @@
 
 *Question directrice : comment savoir ce qu'un système d'agents a fait, et s'il l'a bien fait ?*
 
-> **État de référence :** conventions sémantiques GenAI d'OpenTelemetry telles qu'elles figurent sur la branche `main` du dépôt `open-telemetry/semantic-conventions-genai` le 11 novembre 2026 (aucune version publiée), et quatre articles parus entre juin 2024 et juin 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre; toutes sont des pages primaires lues pour ce chapitre, sauf [15], marquée secondaire, et [16], connue par son résumé et relevée le 14 novembre 2026.
+> **État de référence :** conventions sémantiques GenAI d'OpenTelemetry telles qu'elles figurent sur la branche `main` du dépôt `open-telemetry/semantic-conventions-genai` le 11 novembre 2026 (aucune version publiée), et cinq articles parus entre juin 2024 et septembre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre; toutes sont des pages primaires lues pour ce chapitre, sauf [15], marquée secondaire, et [16], connue par son résumé et relevée le 14 novembre 2026.
 
 Un service classique se surveille par trois signaux : disponibilité, latence, taux d'erreur. Un agent peut les satisfaire tous les trois et accomplir la mauvaise tâche : répondre vite, sans erreur technique, à côté de la demande. La question directrice se dédouble donc. Savoir ce que le système a fait relève de l'observabilité; savoir s'il l'a bien fait relève de l'évaluation.
 
@@ -194,7 +194,7 @@ La boucle sert aussi de filet lors d'un changement de modèle. Le passage de GPT
 
 ### Les leviers de coût
 
-Juger une trajectoire par un modèle ajoute des appels d'inférence à ceux de l'agent. Aucun des textes lus ne chiffre ce coût; ils décrivent en revanche des leviers.
+Juger une trajectoire par un modèle ajoute des appels d'inférence à ceux de l'agent. Aucun des textes lus en entier ne chiffre ce coût; ils décrivent en revanche des leviers. Une prépublication, connue par son résumé, mesure un coût voisin, la part du banc qu'il faut rejouer (fin de la section).
 
 | Levier | Principe | Source |
 |---|---|---|
@@ -273,7 +273,7 @@ Un tel banc est un actif de l'entreprise. C'est lui qui dit si un agent survit �
 - Le contenu des échanges est exclu de la télémétrie par défaut. Le stockage par référence concilie exploitation et évaluation.
 - Dans l'étude MAP, l'évaluation repose surtout sur des humains, et tout juge automatique observé est doublé d'une revue humaine.
 - Un juge automatique s'étalonne contre des étiquettes humaines; changer de modèle juge, c'est changer d'instrument.
-- Le coût de l'évaluation continue se maîtrise par un petit juge, l'aiguillage par confiance et l'échantillonnage.
+- Le coût de l'évaluation continue se maîtrise par un petit juge, l'aiguillage par confiance et l'échantillonnage. Une seule étude, connue par son résumé, mesure qu'un sous-ensemble du banc suffit à suivre un agent en production.
 - Le banc d'essai utile est interne, tiré des traces, fondé sur des états vérifiables et répété.
 
 ---

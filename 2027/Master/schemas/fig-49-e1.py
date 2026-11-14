@@ -43,7 +43,7 @@ jalon(2028.25, 108, ["31 mars 2028", "IETF : protocole de", "dialogue à l'IESG"
       ancre="start", dx=-8)
 
 # Réglementation
-jalon(2027.33, 222, ["1er mai 2027", "E-23 du BSIF"])
+jalon(2027.33, 222, ["1er mai 2027", "E-23 et AMF"])
 jalon(2027.93, 222, ["2 et 11 déc. 2027", "AI Act, annexe III;", "cyberrésilience"], haut=False)
 jalon(2028.58, 222, ["2 août 2028", "AI Act, annexe I"])
 jalon(2029.58, 222, ["2 août 2029", "Réexamen de l'AI Act"], haut=False)

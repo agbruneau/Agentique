@@ -1,0 +1,538 @@
+{
+ "constats": [
+  {
+   "n": 419,
+   "fichier": "chapitre-26-plateformes-entreprise.md",
+   "passage": "antérieur à la version 1.0 (chapitre 20)",
+   "constat": "Renvoi mal dirigé. Le chapitre 20 ne nomme pas la méthode `message/send` : il dit seulement qu'Agent Server accepte « les noms de méthode de la 0.3 ». C'est le chapitre 6 qui donne `message/send` pour un nom de la version 0.3 et `SendMessage` pour celui de la 1.0.",
+   "gravite": "mineur",
+   "preuve": "Chapitre 6, texte de présentation de l'Extrait 6.1 : « Les noms d'opérations et de configuration de l'extrait (`message/send`, `blocking`, `pushNotificationConfig`) sont aussi ceux de la version 0.3; la version 1.0 les nomme `SendMessage`… ». Recherche de `message/send` dans le chapitre 20 : aucune occurrence. Fait vérifié à la source [21] (lue le 14 novembre 2026) : l'exemple porte bien « \"method\": \"message/send\" » et le chemin « /.well-known/agent.json ».",
+   "correction_proposee": "antérieur à la version 1.0 (chapitre 6)"
+  },
+  {
+   "n": 423,
+   "fichier": "chapitre-26-plateformes-entreprise.md",
+   "passage": "Un instrument commun existe pour le faire.",
+   "constat": "Formulation plus large que la source. « Le faire » renvoie aux trois scénarios d'essai du paragraphe précédent (appel entrant, appel sortant, inscription-restriction-révocation d'un agent tiers). La trousse, telle que le paragraphe la décrit d'après [22], valide la conformité d'un agent servi en A2A à la spécification : elle ne couvre ni l'appel sortant de la plateforme ni la gouvernance d'un agent tiers. La grille du même chapitre le reconnaît (« Éditeur qui ne sert pas A2A en entrée »). Déduit de la description de [22], la trousse n'ayant pas été exécutée.",
+   "gravite": "mineur",
+   "preuve": "Même paragraphe : « Elle lit la carte de l'agent testé, crée un client pour chaque interface déclarée »; grille de décision, ligne « Conformité à A2A ». Dépôt https://github.com/a2aproject/a2a-tck lu le 14 novembre 2026 : trois transports « gRPC, JSON-RPC, and HTTP+JSON », aucune mention d'essais entre plateformes.",
+   "correction_proposee": "Un instrument commun existe pour une partie du premier scénario : la conformité au protocole du point d'accès que la plateforme sert."
+  },
+  {
+   "n": 422,
+   "fichier": "chapitre-26-plateformes-entreprise.md",
+   "passage": "découverte sur trois nuages [11][20]",
+   "constat": "Appel vers une source qui ne peut pas porter l'affirmation. La section 26.7 dit elle-même que [11], billet d'annonce, « ne mentionne ni MCP ni A2A et ne décrit aucun mécanisme »; les versions d'A2A, les connecteurs et la découverte viennent tous de [20].",
+   "gravite": "mineur",
+   "preuve": "Section 26.7, premier paragraphe d'IBM; page [20] lue le 14 novembre 2026 : « The supported versions are 0.3.0 and 1.0.0. », « Supported providers are bedrock_agent, azure_ai_foundry, and vertex_agent. »",
+   "correction_proposee": "découverte sur trois nuages [20]"
+  },
+  {
+   "n": 426,
+   "fichier": "chapitre-26-plateformes-entreprise.md",
+   "passage": "Pages primaires ajoutées le 14 novembre 2026 :",
+   "constat": "L'intertitre donne la date d'ajout, non la date de lecture, alors que les deux autres intertitres de la liste disent « lues le ». Les limites datent la lecture de [20] et de [21], pas celle de [22].",
+   "gravite": "mineur",
+   "preuve": "Liste « Sources » : « Pages primaires lues le 11 novembre 2026 : »; limites : « La trousse de compatibilité d'A2A [22] n'a pas été exécutée; seule la page d'accueil de son dépôt a été lue. », sans date. Règle 1.3 du plan : source ajoutée « avec sa date de lecture et son étendue ».",
+   "correction_proposee": "Pages primaires lues le 14 novembre 2026, une page par source :"
+  },
+  {
+   "n": 419,
+   "fichier": "chapitre-26-plateformes-entreprise.md",
+   "passage": "Aucune des trois pages lues ne mentionne MCP ou A2A.",
+   "constat": "Phrase rendue inexacte par le complément : quatre pages de Microsoft sont maintenant lues, et la quatrième [21], présentée au paragraphe suivant, traite d'A2A et renvoie à MCP.",
+   "gravite": "mineur",
+   "preuve": "Paragraphe ajouté en 26.2 : « La page renvoie à MCP pour les outils »; sources [1], [2], [3] et [21].",
+   "correction_proposee": "Aucune des trois pages lues sur Agent 365 et Entra [1][2][3] ne mentionne MCP ou A2A."
+  },
+  {
+   "n": 419,
+   "fichier": "chapitre-26-plateformes-entreprise.md",
+   "passage": "La documentation de Copilot Studio confirme le sens sortant [21].",
+   "constat": "« Confirme » un sens que le chapitre n'a pas encore énoncé : la phrase qui précède dit seulement qu'A2A est « intégré » à Copilot Studio selon la Linux Foundation, sans direction.",
+   "gravite": "mineur",
+   "preuve": "Section 26.2, paragraphe précédent : « A2A est intégré ailleurs dans l'offre, à Azure AI Foundry et à Copilot Studio, selon le bilan de la Linux Foundation ».",
+   "correction_proposee": "La documentation de Copilot Studio en précise le sens, sortant [21]."
+  },
+  {
+   "n": 479,
+   "fichier": "chapitre-40-finops-agentique.md",
+   "passage": "L'étude porte sur l'IA en général; rien n'y concerne les agents.",
+   "constat": "Réserve incomplète sur un fait engageant. L'étude [13] repose sur les vagues de 2019 et de 2021 de l'enquête sur la technologie numérique et l'utilisation d'Internet : ses données précèdent l'IA générative et, à plus forte raison, les agents. Le paragraphe, coiffé de « Le gain de productivité à l'échelle de l'entreprise n'est pas établi », le tait, et le lecteur de 2027 peut y lire un constat sur l'IA d'aujourd'hui. Les chiffres (16,8 %, 10,2 %, 5,1 % non significatif) sont, eux, conformes à la source.",
+   "gravite": "majeur",
+   "preuve": "Source [13] lue le 14 novembre 2026 (https://www150.statcan.gc.ca/n1/pub/36-28-0001/2026004/article/00002-eng.htm) : l'analyse emploie « the pooled 2019 and 2021 waves of the SDTIU »; « the association between AI adoption and productivity falls to 5.1% and becomes statistically insignificant ». Lecture par un outil qui condense : l'année des données est à recouper sur le texte brut.",
+   "correction_proposee": "L'étude porte sur l'IA en général et sur des données d'enquête de 2019 et de 2021, antérieures à l'IA générative; rien n'y concerne les agents."
+  },
+  {
+   "n": 480,
+   "fichier": "chapitre-40-finops-agentique.md",
+   "passage": "- À l'échelle de l'entreprise, la prime de productivité associée à l'IA disparaît statistiquement une fois les autres capacités prises en compte.",
+   "constat": "Le point à retenir généralise au présent le résultat d'une seule étude, canadienne, sur des données de 2019 et de 2021, sans nommer ni l'étude ni sa période; l'exposé (40.5) dit pourtant que les auteurs réservent des gains qui « peuvent demander du temps ».",
+   "gravite": "majeur",
+   "preuve": "Section 40.5, paragraphe ajouté; source [13], mêmes phrases que ci-dessus.",
+   "correction_proposee": "- Dans une étude de Statistique Canada sur des données de 2019 et de 2021, la prime de productivité associée à l'IA n'est plus significative une fois les autres capacités de l'entreprise prises en compte; rien n'y porte sur les agents."
+  },
+  {
+   "n": 479,
+   "fichier": "chapitre-40-finops-agentique.md",
+   "passage": "### Deux précautions",
+   "constat": "Le sous-titre annonce deux précautions; le complément en a ajouté une troisième, sous la même forme (paragraphe à amorce en gras).",
+   "gravite": "mineur",
+   "preuve": "Section 40.5 : trois paragraphes à amorce en gras suivent le sous-titre (« Un rendement ne vaut que ses intrants », « La part de travail accomplie sans intervention humaine », « Le gain de productivité à l'échelle de l'entreprise n'est pas établi. »).",
+   "correction_proposee": "### Trois précautions"
+  },
+  {
+   "n": 480,
+   "fichier": "chapitre-40-finops-agentique.md",
+   "passage": "- L'énergie suit les jetons : les leviers de coût sont aussi des leviers d'empreinte.",
+   "constat": "Le point à retenir affirme ce que l'exposé donne pour une déduction (« Le raisonnement qui suit reste donc une déduction ») et l'étend à tous les leviers de coût. Or l'exposé ne nomme que le cache, le routage et la décomposition; le traitement par lots, levier de coût du tableau de 40.6, est un rabais de prix dont rien ne dit qu'il réduit l'énergie.",
+   "gravite": "mineur",
+   "preuve": "Section 40.1, second paragraphe de la sous-section sur l'énergie; tableau de la section 40.6, ligne « Traitement par lots »; limites : « le lien avec les multiples de jetons est une déduction de ce chapitre ».",
+   "correction_proposee": "- Par déduction, l'énergie suit les jetons : le cache, le routage et la décomposition réduisent aussi l'empreinte."
+  },
+  {
+   "n": 477,
+   "fichier": "chapitre-40-finops-agentique.md",
+   "passage": "[3] et [10] sont des prépublications, [4] et [6] des billets de fournisseurs; [13] à [15] ont été ajoutées le 14 novembre 2026.",
+   "constat": "Le bandeau dit les sources « toutes lues pour ce chapitre » et ne compte que [3] et [10] parmi les prépublications. Or [14] est une prépublication d'un fournisseur connue par son seul résumé, et [15] n'est connu que par sa synthèse (liste des sources et limites).",
+   "gravite": "mineur",
+   "preuve": "Source [14] : « prépublication d'un fournisseur; résumé seulement »; limites : « [14] n'est connu que par son résumé et mesure le service de son éditeur; [15] l'est par sa synthèse ».",
+   "correction_proposee": "[3], [10] et [14] sont des prépublications, [4] et [6] des billets de fournisseurs; [13] à [15] ont été ajoutées le 14 novembre 2026, [14] par son seul résumé et [15] par sa synthèse."
+  },
+  {
+   "n": 481,
+   "fichier": "chapitre-40-finops-agentique.md",
+   "passage": "Sources ajoutées le 14 novembre 2026 :",
+   "constat": "L'intertitre date l'ajout, non la lecture, et [13] ne porte aucune étendue de lecture, ni dans la liste ni dans les limites (qui disent seulement que l'étude « porte sur l'IA en général »).",
+   "gravite": "mineur",
+   "preuve": "Liste « Sources », entrée 13; règle 1.3 du plan : la source s'ajoute « avec sa date de lecture et son étendue ».",
+   "correction_proposee": "Sources lues le 14 novembre 2026 ([13] : article lu par un outil qui en condense le contenu) :"
+  },
+  {
+   "n": 473,
+   "fichier": "chapitre-41-modele-operationnel.md",
+   "passage": "Le premier est l'emploi : les mesures disponibles portent sur l'IA générative plutôt que sur les agents, et la section 48.8 en fait le relevé.",
+   "constat": "Renvoi qui ne porte pas l'affirmation. La section 48.8 relève des essais sur la productivité d'assistants (problèmes résolus par heure, temps de rédaction, tâches terminées); elle ne contient aucune mesure de l'emploi (effectifs, embauches, postes). Les seules mesures d'emploi à portée sont dans le chapitre 41 lui-même, section 41.6 (baisse des effectifs déclarée, [3]), que le complément ignore.",
+   "gravite": "majeur",
+   "preuve": "Section 48.8, tableau « La preuve expérimentale porte sur les assistants » et paragraphe « Ce qui manque » : productivité et résultats de l'entreprise, rien sur l'emploi. Section 41.6, « Dire où va le gain » : 14 %, 32 % et 39 % [3].",
+   "correction_proposee": "Le premier est l'emploi : la section 41.6 rapporte ce que les répondants d'une enquête déclarent des effectifs [3]; les essais relevés à la section 48.8 mesurent la productivité d'assistants, non l'emploi ni les agents."
+  },
+  {
+   "n": 476,
+   "fichier": "chapitre-41-modele-operationnel.md",
+   "passage": "Elle n'apporte aucune mesure sur l'emploi : elle renvoie à la section 48.8 et repose",
+   "constat": "Même défaut dans les limites : la section 48.8 ne contient pas de mesure de l'emploi, et la section 41.6 du même chapitre en donne (déclaratives, [3]).",
+   "gravite": "mineur",
+   "preuve": "Voir le constat précédent.",
+   "correction_proposee": "Elle n'apporte aucune mesure nouvelle sur l'emploi : elle renvoie à la section 41.6 pour les effectifs déclarés et à la section 48.8 pour la productivité des assistants, et repose"
+  },
+  {
+   "n": 473,
+   "fichier": "chapitre-41-modele-operationnel.md",
+   "passage": "Un superviseur qui ne fait plus la tâche perd peu à peu la capacité de juger le travail de l'agent, et la révision de routine tourne à l'approbation machinale (section 22.5).",
+   "constat": "Affirmation de fait sans appel [n], plus tranchée que la section à laquelle elle renvoie. La section 22.5 donne la perte de pratique pour un ressort décrit par un article de position qui « ne rapporte aucune mesure propre », et conclut qu'aucune source « ne mesure l'usure de l'approbation chez des approbateurs d'agents en entreprise ».",
+   "gravite": "mineur",
+   "preuve": "Section 22.5, « La conception actuelle des agents use le superviseur » : « Déléguer fait perdre la pratique des tâches qu'il faudra ensuite juger. […] L'article ne rapporte aucune mesure propre. »",
+   "correction_proposee": "Selon un article de position, un superviseur qui ne fait plus la tâche perd peu à peu la capacité de juger le travail de l'agent, et la révision de routine tourne à l'approbation machinale [12] (section 22.5); l'effet n'est pas mesuré chez des superviseurs d'agents."
+  },
+  {
+   "n": 474,
+   "fichier": "chapitre-41-modele-operationnel.md",
+   "passage": "- La supervision s'use si le superviseur ne pratique plus le métier.",
+   "constat": "Le point à retenir pose comme acquis ce qui repose sur un seul article de position, sans mesure (limites du chapitre et section 22.5).",
+   "gravite": "mineur",
+   "preuve": "Limites : la sous-section « repose, pour la perte de pratique, sur un article de position [12] ».",
+   "correction_proposee": "- Un article de position soutient que la supervision s'use si le superviseur ne pratique plus le métier; l'effet n'est pas mesuré."
+  },
+  {
+   "n": 473,
+   "fichier": "chapitre-41-modele-operationnel.md",
+   "passage": "du temps de révision prévu à l'horaire",
+   "constat": "Mesure non retrouvée dans [12]. Les trois autres y sont (exercices sans IA, alternance, retrait des objectifs de productivité). Sous « Workload and scheduling », l'article propose des pauses imposées et des rotations, non du temps de révision réservé. Lecture par un outil qui condense la page : à recouper sur le texte brut (tableau 3 de l'article) avant de corriger.",
+   "gravite": "mineur",
+   "preuve": "https://arxiv.org/html/2608.23642 (v3 du 6 septembre 2026), lu le 14 novembre 2026 : « Domain skill maintenance exercises have users regularly perform the underlying task without AI assistance. »; « Rotations move users between tasks, and between AI-assisted and unassisted versions of the same task »; « Enforced breaks prevent extended sessions that wear down cognitive sharpness. »; « Aligning incentives to remove productivity targets and performance metrics that disincentivize appropriate scrutiny ».",
+   "correction_proposee": "des pauses imposées dans les séances de révision"
+  },
+  {
+   "n": 475,
+   "fichier": "chapitre-41-modele-operationnel.md",
+   "passage": "— article de position, lu pour le chapitre 22.",
+   "constat": "La source ajoutée n'a ni date de lecture ni étendue de lecture; l'intertitre date l'ajout. Le chapitre 22 donne les deux pour le même texte.",
+   "gravite": "mineur",
+   "preuve": "Chapitre 22, sources : « Pages lues le 14 novembre 2026, pour la section 22.5 : 14. […] — article de position; premiers cinq sixièmes du texte. »",
+   "correction_proposee": "— article de position, lu le 14 novembre 2026 pour le chapitre 22; premiers cinq sixièmes du texte."
+  },
+  {
+   "n": 462,
+   "fichier": "chapitre-42-etudes-de-cas.md",
+   "passage": "| Opérations TI | ServiceNow [3], MAP [2], bancs d'essai [5] [6] | 2 à 4 | Résultats mesurés en production |",
+   "constat": "Le tableau de synthèse de 42.6 n'a pas suivi le complément et le contredit. La section 42.4 rapporte maintenant un cas avec mesure en production (temps de réponse médian réduit de 42 % [13]), qu'elle rattache « sans doute » au niveau 1, et un second cas de production [14]. Le tableau dit encore que la meilleure preuve en opérations TI est de niveau 2 à 4 et qu'il y manque des « résultats mesurés en production ».",
+   "gravite": "majeur",
+   "preuve": "Section 42.4, « Trois publications de 2026 » : « En production, le temps de réponse médian baisse de 42 % […] Lu en entier, le premier relèverait sans doute du niveau 1 ». Page arXiv de [13] lue le 14 novembre 2026 : « To appear at EMNLP 2026 Industry Track »; le résumé rapporte en production une latence p50 réduite de 42 %.",
+   "correction_proposee": "| Opérations TI | ServiceNow [3], MAP [2], bancs d'essai [5] [6]; un cas mesuré en production, connu par son seul résumé [13] | 2 à 4; 1 à confirmer pour [13] | Résultats mesurés en production et lus en entier |"
+  },
+  {
+   "n": 464,
+   "fichier": "chapitre-42-etudes-de-cas.md",
+   "passage": "14. RecSys Factory: Bounding LLM Agent Autonomy to Decision Points in the Industrial Recommender Lifecycle (prépublication, 2026) — résumé repris d'un index d'articles; page non retrouvée.",
+   "constat": "Source sans adresse ni auteurs, donnée pour « non retrouvée », alors qu'elle porte trois chiffres de l'exposé; les limites ne signalent pas cette réserve. La prépublication existe sur arXiv, et son résumé concorde avec le texte (78 jours, 1 624 lancements, 78,6 %, absence de comparaison contrôlée).",
+   "gravite": "mineur",
+   "preuve": "Recherche par titre sur arXiv (https://arxiv.org/search/?query=%22RecSys+Factory%22&searchtype=title), le 14 novembre 2026 : arXiv:2608.11241, Ao, Fang et Xu, soumis le 31 juillet 2026; « Across the 78-day window the platform recorded 1,624 CLI-tool dispatches at a 78.6% aggregate success rate. »; « not measured against a controlled pre-platform baseline ».",
+   "correction_proposee": "14. [Ao, Fang et Xu — RecSys Factory: Bounding LLM Agent Autonomy to Decision Points in the Industrial Recommender Lifecycle (arXiv 2608.11241, 31 juillet 2026)](https://arxiv.org/abs/2608.11241) — prépublication."
+  },
+  {
+   "n": 464,
+   "fichier": "chapitre-42-etudes-de-cas.md",
+   "passage": "13. [Kujanpää et coll. — Tool-Making and Self-Evolving LLM Agents in Low-Latency Systems (arXiv 2607.08010, 9 juillet 2026)](https://arxiv.org/abs/2607.08010)",
+   "constat": "Le rattachement « sans doute » au niveau 1 (article évalué par les pairs, mesure sur trafic réel) n'a pas d'appui dans le chapitre : la source est donnée comme une simple page arXiv. La page indique une acceptation en conférence, à inscrire pour fonder le niveau. Non vérifiés ici : la « procédure de 44 étapes » et le « centre de distribution », que la lecture condensée du résumé n'a pas restitués.",
+   "gravite": "mineur",
+   "preuve": "https://arxiv.org/abs/2607.08010, lu le 14 novembre 2026 : « To appear at EMNLP 2026 Industry Track »; soumis le 9 juillet 2026, révisé le 24 août 2026 (v2).",
+   "correction_proposee": "13. [Kujanpää et coll. — Tool-Making and Self-Evolving LLM Agents in Low-Latency Systems (arXiv 2607.08010, 9 juillet 2026; à paraître au volet industriel d'EMNLP 2026 selon la page arXiv)](https://arxiv.org/abs/2607.08010)"
+  },
+  {
+   "n": 462,
+   "fichier": "chapitre-42-etudes-de-cas.md",
+   "passage": "Ces trois textes confirment le portrait de MAP : des agents étroits, enfermés dans une chaîne déterministe et qualifiés lentement.",
+   "constat": "Formulation plus tranchée que ce que portent trois résumés. « Qualifiés lentement » ne figure ni dans les résumés tels que le chapitre les rapporte ni dans le portrait de MAP donné en 42.1; le troisième texte est une étude par entretiens, qui ne décrit pas un agent « enfermé dans une chaîne déterministe ».",
+   "gravite": "mineur",
+   "preuve": "Section 42.4, trois paragraphes qui précèdent; section 42.1, « Le cadre : l'étude MAP »; limites : rattachement « provisoire, faute de lecture complète ».",
+   "correction_proposee": "D'après leurs résumés, ces trois textes vont dans le sens du portrait de MAP : des agents étroits, bornés par une chaîne fixée d'avance, dans des usages de production encore limités."
+  },
+  {
+   "n": 462,
+   "fichier": "chapitre-42-etudes-de-cas.md",
+   "passage": "### Trois publications de 2026",
+   "constat": "La sous-section est logée dans 42.4, « Automatisation des opérations TI », après le paragraphe « Lecture » qui concluait la section. Deux des trois textes sortent de ce périmètre : l'étude par entretiens porte sur l'adoption dans des sociétés de génie logiciel (la section 48.8 la range sous « adoption »), et le tri d'alarmes d'un centre de distribution n'est pas une opération TI au sens de la section.",
+   "gravite": "mineur",
+   "preuve": "Titre de la section 42.4; section 48.8, « L'adoption : des études qualitatives qui convergent », même étude [78].",
+   "correction_proposee": null
+  },
+  {
+   "n": 492,
+   "fichier": "chapitre-33-observabilite-evaluation.md",
+   "passage": "Aucun des textes lus ne chiffre ce coût; ils décrivent en revanche des leviers.",
+   "constat": "Phrase que le complément laisse en porte-à-faux : la même section se clôt maintenant sur « Une mesure du coût », et les limites disent qu'une étude du coût a été trouvée. Le titre ajouté promet d'ailleurs plus que le texte, qui conclut que [16] « mesure une part du banc rejoué, non un coût en dollars »; et ce que [16] mesure (rejouer le banc) n'est pas le coût dont parle la phrase (les appels du juge).",
+   "gravite": "mineur",
+   "preuve": "Section 33.6, sous-sections « Les leviers de coût » et « Une mesure du coût »; limites, avant-dernier point. Résumé de [16] lu le 14 novembre 2026 (https://arxiv.org/abs/2609.21267) : « executing 200 questions, 38.5% of a full run, yields 1.03 pp of MAE »; chiffres du complément conformes.",
+   "correction_proposee": "Aucun des textes lus en entier ne chiffre ce coût; ils décrivent en revanche des leviers. Une prépublication, connue par son résumé, mesure un coût voisin, la part du banc qu'il faut rejouer (fin de la section)."
+  },
+  {
+   "n": 491,
+   "fichier": "chapitre-33-observabilite-evaluation.md",
+   "passage": "et quatre articles parus entre juin 2024 et juin 2026",
+   "constat": "Le bandeau n'a pas suivi : avec [16], soumis à arXiv le 18 septembre 2026, le chapitre cite cinq articles, et la borne « juin 2026 » est dépassée.",
+   "gravite": "mineur",
+   "preuve": "Sources [11] à [14] et [16]; page arXiv de [16] : « Submitted 18 Sep 2026 ».",
+   "correction_proposee": "et cinq articles parus entre juin 2024 et septembre 2026"
+  },
+  {
+   "n": 492,
+   "fichier": "chapitre-33-observabilite-evaluation.md",
+   "passage": "- Le coût de l'évaluation continue se maîtrise par un petit juge, l'aiguillage par confiance et l'échantillonnage.",
+   "constat": "Point à retenir non mis à jour : il énumère les leviers décrits sans mesure et omet le seul que le complément chiffre, le sous-ensemble du banc. La grille de décision n'a pas reçu de ligne non plus.",
+   "gravite": "mineur",
+   "preuve": "Section 33.6, « Une mesure du coût »; grille de décision, lignes « Évaluateur » et « Banc d'essai ».",
+   "correction_proposee": "- Le coût de l'évaluation continue se maîtrise par un petit juge, l'aiguillage par confiance et l'échantillonnage. Une seule étude, connue par son résumé, mesure qu'un sous-ensemble du banc suffit à suivre un agent en production."
+  },
+  {
+   "n": 467,
+   "fichier": "chapitre-34-exploitation.md",
+   "passage": "Il ne couvre ni l'état que l'agent a déjà modifié ni les effets externes, qui relèvent des deux autres mécanismes de cette section.",
+   "constat": "Contradiction avec la même section et avec les points à retenir. Les « deux autres mécanismes » de 34.6 sont le retour arrière d'état et l'arrêt d'urgence; or la section dit que le retour arrière d'état « n'annule pas les effets déjà produits dans les systèmes externes, qui relèvent de la compensation (chapitre 18) », et l'arrêt d'urgence n'efface rien.",
+   "gravite": "majeur",
+   "preuve": "Section 34.6, « Trois mécanismes à ne pas confondre »; points à retenir : « Aucun n'efface les effets externes déjà produits, qui relèvent de la compensation. »",
+   "correction_proposee": "Il ne couvre ni l'état que l'agent a déjà modifié, qui relève du retour arrière d'état, ni les effets externes, qui relèvent de la compensation (chapitre 18)."
+  },
+  {
+   "n": 467,
+   "fichier": "chapitre-34-exploitation.md",
+   "passage": "Revenir en arrière consiste à repointer le point d'accès de production vers une version antérieure, sans rien reconstruire.",
+   "constat": "Déduction présentée comme le contenu de la page. La page [10] ne parle pas de retour arrière : elle décrit des versions immuables et des points d'accès à mettre à jour explicitement, et son seul exemple fait avancer un point d'accès vers une version plus récente. Les limites ne déclarent déduit que le rapprochement avec le manifeste.",
+   "gravite": "mineur",
+   "preuve": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/agent-runtime-versioning.html, lu le 14 novembre 2026 : « Versions are immutable once created »; « Endpoints must be explicitly updated to point to new versions »; aucune occurrence de « rollback ». Le reste du paragraphe est conforme à la page.",
+   "correction_proposee": "La page ne parle pas de retour arrière; on en déduit que revenir en arrière consiste à repointer le point d'accès de production vers une version antérieure, sans rien reconstruire."
+  },
+  {
+   "n": 467,
+   "fichier": "chapitre-34-exploitation.md",
+   "passage": "Ce mécanisme réalise le manifeste de version de la section 34.2 pour ce que la plateforme connaît : le conteneur, le protocole et les réglages de réseau.",
+   "constat": "« Réalise » dit trop. Le manifeste de 34.2 réunit le modèle épinglé, les prompts, les schémas d'outils et les politiques de garde-fous et de mémoire; la page [10] ne nomme aucun de ces éléments, seulement l'image du conteneur, les réglages de protocole et de réseau. Déduit : le modèle servi par un fournisseur, les outils de serveurs MCP tiers et la mémoire restent hors de la version.",
+   "gravite": "mineur",
+   "preuve": "Section 34.2, « un seul numéro pour l'ensemble formé du modèle épinglé, des prompts, des schémas d'outils et des politiques de garde-fous et de mémoire »; page [10], tableau « Versioning scenarios » : « Protocol Change », « Container Image Update », « Network Settings Modification ».",
+   "correction_proposee": "Ce mécanisme ne réalise qu'une partie du manifeste de version de la section 34.2 : il fige ce que la plateforme connaît, soit le conteneur, le protocole et les réglages de réseau, non le modèle servi ailleurs, les outils de tiers ni la mémoire."
+  },
+  {
+   "n": 468,
+   "fichier": "chapitre-34-exploitation.md",
+   "passage": "| Retour arrière de version | Point d'accès nommé, repointé vers une version immuable antérieure | Jamais le point d'accès par défaut en production |",
+   "constat": "La grille érige en option par défaut le mécanisme d'un seul éditeur, lu sur une seule page, alors que les limites disent que les autres plateformes ne sont pas décrites; et elle omet que ce retour ne ramène qu'une partie du manifeste (ligne « Unité de version » de la même grille).",
+   "gravite": "mineur",
+   "preuve": "Limites, dernier point : « Une seule documentation d'éditeur a été lue […] Les mécanismes de retour arrière des autres plateformes (chapitre 26) ne sont pas décrits ».",
+   "correction_proposee": "| Retour arrière de version | Retour au manifeste antérieur; là où la plateforme offre des versions immuables et des points d'accès nommés [10], repointer le point d'accès | Jamais le point d'accès par défaut en production |"
+  },
+  {
+   "n": 545,
+   "fichier": "chapitre-48-revue-litterature.md",
+   "passage": "H1, la concentration dans les grandes organisations, que la recherche laissait hors champ, reçoit l'appui des statistiques officielles : l'usage de l'IA croît avec la taille de l'entreprise, au Canada comme aux États-Unis (section 4.1).",
+   "constat": "Fait sans appel [n] dans un chapitre de la partie X, et mal rattaché. La phrase est introduite par « Deux hypothèses […] en sont touchées », où « en » désigne les quinze travaux; or aucun des quinze ([87] à [101]) n'est une statistique d'usage selon la taille : ce sont les sources [13] et [15] du chapitre 4, absentes de la liste du chapitre 48. De plus, ces statistiques portent sur l'IA en général : le chapitre 4 précise qu'aucun office « ne compte les agents », alors que H1 porte sur les agents.",
+   "gravite": "majeur",
+   "preuve": "Liste des sources du chapitre 48, [87] à [101]; section 4.1 : « Au Canada, 27,8 % des entreprises de cent employés ou plus utilisent l'IA […] aux États-Unis, la part atteint 37 % […] [13][15] »; points à retenir du chapitre 4 : « Aucun ne compte les agents. »",
+   "correction_proposee": "H1, la concentration dans les grandes organisations, reste hors du champ de ces travaux. Les statistiques officielles que cite la section 4.1, hors de cette revue, montrent que l'usage de l'IA en général croît avec la taille de l'entreprise, au Canada comme aux États-Unis; aucune ne compte les agents."
+  },
+  {
+   "n": 545,
+   "fichier": "chapitre-48-revue-litterature.md",
+   "passage": "H2, des agents bornés et supervisés, est confirmée par le cas de production relevé [96] (section 42.4).",
+   "constat": "« Confirmée » dit plus que la preuve : un seul cas, connu par son résumé, dont le chapitre 42 donne le rattachement pour « provisoire ». Le tableau de 48.10 dit H2 « appuyée ».",
+   "gravite": "mineur",
+   "preuve": "Section 48.10, tableau des hypothèses; limites du chapitre 42 : rattachement « provisoire, faute de lecture complète »; source [96] : « résumé ».",
+   "correction_proposee": "H2, des agents bornés et supervisés, reçoit l'appui d'un cas de production connu par son résumé [96] (section 42.4)."
+  },
+  {
+   "n": 545,
+   "fichier": "chapitre-48-revue-litterature.md",
+   "passage": "| Prime de 16,8 %, non significative une fois les autres capacités prises en compte |",
+   "constat": "Raccourci inexact : la prime brute est de 16,8 %; c'est le reliquat de 5,1 % qui n'est pas significatif après prise en compte de la productivité de départ et des autres capacités (section 40.5). La cellule ne dit pas non plus que les données sont de 2019 et de 2021.",
+   "gravite": "mineur",
+   "preuve": "Section 40.5; source [97] lue le 14 novembre 2026 : « the association between AI adoption and productivity falls to 5.1% and becomes statistically insignificant »; « the pooled 2019 and 2021 waves of the SDTIU ».",
+   "correction_proposee": "| Prime de 16,8 %, ramenée à 5,1 %, non significative, une fois la productivité de départ et les autres capacités prises en compte; données de 2019 et de 2021 |"
+  },
+  {
+   "n": 523,
+   "fichier": "chapitre-48-revue-litterature.md",
+   "passage": "précisent trois cases de la synthèse : l'écosystème des registres de MCP, les défauts du logiciel qui porte les agents et le biais d'automatisation.",
+   "constat": "Le point à retenir compte trois cases; le tableau de 48.11 annonce un effet sur cinq thèmes, dont deux que le point omet : l'évaluation (« Première mesure sous coûts publiés ») et les effets économiques (« Appuie la case absent »).",
+   "gravite": "mineur",
+   "preuve": "Section 48.11, colonne « Effet sur la synthèse », six lignes pour les thèmes Protocoles, Coordination, Évaluation, Effets économiques et Gouvernance.",
+   "correction_proposee": "précisent cinq thèmes de la synthèse, surtout trois cases : l'écosystème des registres de MCP, les défauts du logiciel qui porte les agents et le biais d'automatisation; ils apportent aussi une première mesure du coût d'évaluation et un appui à l'absence d'effet établi sur l'entreprise."
+  },
+  {
+   "n": 545,
+   "fichier": "chapitre-48-revue-litterature.md",
+   "passage": "| Gouvernance | Presque rien | Régime de responsabilité; palier de supervision | Validation empirique des cadres |",
+   "constat": "Le tableau de synthèse de 48.10 n'a pas suivi : 48.11 dit que ses travaux « déplacent des cases » et, pour la gouvernance, qu'ils « remplace[nt] presque rien par un acquis »; le tableau garde « Presque rien », sans renvoi. L'« acquis » est par ailleurs mince : un rapport de risques que le chapitre 22 dit « calculé à titre indicatif sur quatre études », tiré d'une revue de 2011 sur l'aide à la décision clinique.",
+   "gravite": "mineur",
+   "preuve": "Section 48.11, ligne Gouvernance; section 22.5 : « rapport de risques de 1,26, calculé à titre indicatif sur quatre études ».",
+   "correction_proposee": "| Gouvernance | Presque rien dans les 83 notices; hors protocole, le biais d'automatisation des aides à la décision (48.11) | Régime de responsabilité; palier de supervision | Validation empirique des cadres |"
+  },
+  {
+   "n": 545,
+   "fichier": "chapitre-48-revue-litterature.md",
+   "passage": "agent de tri d'alarmes en production [96] |",
+   "constat": "Le cas de production [96] est rangé sous le thème « Évaluation », et l'effet annoncé pour la ligne (« Première mesure sous coûts publiés ») ne vaut que pour [95] : un temps de réponse réduit de 42 % n'est pas un coût d'évaluation.",
+   "gravite": "mineur",
+   "preuve": "Section 48.11, ligne Évaluation; section 42.4 : [13] y est un cas de déploiement.",
+   "correction_proposee": null
+  },
+  {
+   "n": 524,
+   "fichier": "chapitre-48-revue-litterature.md",
+   "passage": "91. [MCP-Guard: A Multi-Stage Defense-in-Depth Framework for Securing Model Context Protocol in Agentic AI (arXiv 2508.10991)]",
+   "constat": "Source sans auteurs, sans que la liste le signale (la source [27] le fait : « la notice ne nomme pas les auteurs »). Les sources [87] à [101] ne portent pas non plus l'année, que donnent toutes les autres entrées de la liste.",
+   "gravite": "mineur",
+   "preuve": "Liste des sources, entrées 27 et 87 à 101.",
+   "correction_proposee": null
+  },
+  {
+   "n": 529,
+   "fichier": "chapitre-49-veille-technologique.md",
+   "passage": "le droit britannique, coréen et japonais n'ont été vus que dans des extraits de recherche et ne sont pas cités.",
+   "constat": "Limite rendue fausse par le complément : la section 49.4 cite maintenant la loi-cadre coréenne (tableau des échéances et « Trois lectures ») et le plan japonais du 14 juillet 2026, par renvoi à la section 35.7.",
+   "gravite": "mineur",
+   "preuve": "Section 49.4, ligne « Janvier 2027, au plus tôt » et dernier paragraphe de « Trois lectures ».",
+   "correction_proposee": "le droit britannique n'a été vu que dans des extraits de recherche et n'est pas cité; la loi coréenne et le plan japonais ne le sont que par renvoi à la section 35.7, d'après des sources secondaires ou un résumé."
+  },
+  {
+   "n": 527,
+   "fichier": "chapitre-49-veille-technologique.md",
+   "passage": "| Janvier 2027, au plus tôt | Corée du Sud : fin du délai de grâce avant les amendes de la loi-cadre sur l'IA | Section 35.7 |",
+   "constat": "Date déduite, non dite déduite, rangée parmi « les échéances datées » que la légende de la figure dit « fixées par des textes adoptés ». La section 35.7 ne donne pas de date : elle dit au conditionnel que les amendes « ne seraient appliquées qu'après un délai de grâce d'un an », d'après un commentaire de cabinet « antérieur à la publication de tous ses décrets ».",
+   "gravite": "mineur",
+   "preuve": "Section 35.7, paragraphe « Corée du Sud » et limites du chapitre 35.",
+   "correction_proposee": "| Janvier 2027, au plus tôt (déduit : un an après le 22 janvier 2026) | Corée du Sud : fin du délai de grâce avant les amendes de la loi-cadre sur l'IA, selon un commentaire de cabinet | Section 35.7 |"
+  },
+  {
+   "n": 527,
+   "fichier": "chapitre-49-veille-technologique.md",
+   "passage": "- L'année 2027 concentre les échéances : E-23 en mai, haut risque européen et cyberrésilience en décembre.",
+   "constat": "Point à retenir non mis à jour : le tableau et la lecture de 49.4 comptent maintenant aussi, en mai 2027, la ligne directrice de l'AMF.",
+   "gravite": "mineur",
+   "preuve": "Section 49.4 : « Mai pour les institutions financières canadiennes, fédérales et à charte québécoise ».",
+   "correction_proposee": "- L'année 2027 concentre les échéances : E-23 et la ligne directrice de l'AMF en mai, haut risque européen et cyberrésilience en décembre."
+  },
+  {
+   "n": 527,
+   "fichier": "chapitre-49-veille-technologique.md",
+   "passage": "![Échéances de 2027 à 2031 sur trois lignes",
+   "constat": "La figure 49 n'a pas suivi le tableau : son jalon du 1er mai 2027 ne porte que « E-23 du BSIF », sans la ligne directrice de l'AMF (vérifié dans le texte de `fig-49-e1.svg`). L'échéance coréenne n'y est pas non plus, ce qui se défend si elle reste présentée comme déduite.",
+   "gravite": "mineur",
+   "preuve": "`figures/fig-49-e1.svg` : libellés « 1er mai 2027 », « E-23 du BSIF »; aucune occurrence de « AMF ».",
+   "correction_proposee": null
+  },
+  {
+   "n": 529,
+   "fichier": "chapitre-49-veille-technologique.md",
+   "passage": "Dans l'Union, la proposition de Cloud and AI Development Act du 3 juin 2026 nomme l'orchestration d'agents dans un considérant (section 37.1).",
+   "constat": "Phrase sur l'Union européenne logée dans le paragraphe « Hors d'Europe, peu de textes visent les agents ». Le fait est conforme à la section 37.1; elle omet que le texte n'est pas adopté.",
+   "gravite": "mineur",
+   "preuve": "Section 37.1 : « Ce n'est qu'un considérant d'un texte non adopté ».",
+   "correction_proposee": "Dans l'Union même, la proposition de Cloud and AI Development Act du 3 juin 2026, non adoptée, nomme l'orchestration d'agents dans un considérant (section 37.1)."
+  },
+  {
+   "n": 530,
+   "fichier": "chapitre-49-veille-technologique.md",
+   "passage": "Les cinq lignes qui renvoient à une section, et non à une source, datent du 14 novembre 2026.",
+   "constat": "Cinq faits chiffrés ou datés entrent dans un chapitre de la partie X sans appel [n] (4,2 %, règlement du 3 juin 2026, 1er mai 2027, une entreprise sur cinq, absence de liste de résultats). C'est déclaré, mais le traitement diffère de celui du chapitre 50, où le même train de compléments a ajouté les sources d'Eurostat et du Census Bureau [74][75]. Pour la ligne sur la dérive, le résumé de l'étude ne précise pas la population des 4,2 %; le registre l'attribue aux « serveurs à plusieurs versions » (déduit de la construction de la phrase).",
+   "gravite": "mineur",
+   "preuve": "Règle 1.3 du plan (partie X : sources numérotées, appel [n] pour toute affirmation nouvelle); chapitre 50, sources 74 et 75. https://arxiv.org/abs/2609.14119, lu le 14 novembre 2026 : « 51.1% of multi-version servers changed what they advertise between versions, 40.6% did so silently, and 4.2% redirected their remote endpoint to a different host while keeping their registry identity ».",
+   "correction_proposee": null
+  },
+  {
+   "n": 526,
+   "fichier": "chapitre-49-veille-technologique.md",
+   "passage": "Les faits de cet ouvrage sont arrêtés aux 11 et 12 novembre 2026.",
+   "constat": "Phrase d'introduction que les compléments rendent inexacte : vingt chapitres portent des faits lus le 14 novembre 2026, et le bandeau du même chapitre le dit pour ses propres ajouts.",
+   "gravite": "mineur",
+   "preuve": "Bandeau du chapitre 49; rapport d'audit, « Après l'audit : compléments du 14 novembre 2026 ».",
+   "correction_proposee": "Les faits de cet ouvrage sont arrêtés aux 11 et 12 novembre 2026, sauf les compléments du 14 novembre."
+  },
+  {
+   "n": 530,
+   "fichier": "chapitre-49-veille-technologique.md",
+   "passage": "| Adoption mesurée par les offices statistiques | Statistique Canada, Eurostat, Census Bureau | Semestrielle |",
+   "constat": "La ligne ajoutée au registre désigne comme source primaire à relire deux fois l'an une série que le même chapitre et le chapitre 50 disent terminée : l'enquête de Statistique Canada sur l'usage de l'IA a pris fin avec son cycle du troisième trimestre de 2026, sans remplacement identifié. La grille du chapitre demande de retirer un signal « quand sa source cesse ».",
+   "gravite": "majeur",
+   "preuve": "Section 49.1, « La mesure qui s'arrête » : « Deux séries dont l'ouvrage dépend ont pris fin en 2026 : celle de METR […] et l'enquête de Statistique Canada sur l'usage de l'IA par les entreprises »; section 50.4 : « la série s'arrête, et aucune source de remplacement n'est identifiée »; grille de décision du chapitre 49, ligne « Arrêter de suivre un signal ».",
+   "correction_proposee": "| Adoption mesurée par les offices statistiques | Eurostat, Census Bureau; la série de Statistique Canada a pris fin en 2026 (section 49.1) | Semestrielle |"
+  },
+  {
+   "n": 534,
+   "fichier": "chapitre-50-projection-etude-marche.md",
+   "passage": "Statistique Canada n'observe par ailleurs aucune prime de productivité significative chez les entreprises qui ont adopté l'IA, une fois leurs autres capacités prises en compte (section 40.5).",
+   "constat": "Fait sans appel [n] dans un chapitre de la partie X : l'étude est la source [13] du chapitre 40, absente de la liste du chapitre 50. La phrase suit des mesures d'adoption de 2025 et de 2026 et se lit comme leur contemporaine, alors que l'étude repose sur des données de 2019 et de 2021, antérieures à l'IA générative, et que ses auteurs réservent des gains différés.",
+   "gravite": "majeur",
+   "preuve": "Liste des sources du chapitre 50 (75 entrées, sans cette étude); source lue le 14 novembre 2026 (https://www150.statcan.gc.ca/n1/pub/36-28-0001/2026004/article/00002-eng.htm) : « the pooled 2019 and 2021 waves of the SDTIU »; « falls to 5.1% and becomes statistically insignificant ». Lecture condensée : l'année des données est à recouper sur le texte brut.",
+   "correction_proposee": "Sur des données de 2019 et de 2021, antérieures à l'IA générative, une étude de Statistique Canada n'observe par ailleurs plus de prime de productivité significative chez les entreprises qui ont adopté l'IA, une fois leur productivité de départ et leurs autres capacités prises en compte (section 40.5)."
+  },
+  {
+   "n": 534,
+   "fichier": "chapitre-50-projection-etude-marche.md",
+   "passage": "Le Canada dispose d'une mesure que peu de pays ont : une enquête de l'organisme statistique national, sur un échantillon de 21 105 entreprises de toutes tailles.",
+   "constat": "Phrase d'ouverture de la sous-section que le complément contredit quelques lignes plus bas : l'Union européenne (ses États membres) et les États-Unis disposent d'une mesure du même type, qui donne « le même ordre de grandeur » [74][75]. Les deux mesures étrangères sont en outre logées sous le titre « Le Canada et le Québec ».",
+   "gravite": "mineur",
+   "preuve": "Section 50.4, même sous-section, paragraphe sous le tableau; section 4.1 : « Trois offices statistiques publient une mesure qui ne dépend ni d'un cabinet ni d'un fournisseur. »",
+   "correction_proposee": "Le Canada dispose, comme l'Union européenne et les États-Unis, d'une mesure qui ne dépend ni d'un cabinet ni d'un fournisseur : une enquête de l'organisme statistique national, sur un échantillon de 21 105 entreprises de toutes tailles."
+  },
+  {
+   "n": 541,
+   "fichier": "ouverture.md",
+   "passage": "BSIF E-23 et ligne directrice de l’AMF sur l’IA au 1er mai 2027",
+   "constat": "Sous « Faits vérifiés », la phrase dit que ces échéances « reposent sur les textes en vigueur ». Pour la ligne directrice de l'AMF, c'est plus que ce que l'ouvrage a établi : le texte n'a pas été lu (il est resté inaccessible) et sa date d'effet n'est connue que par des analyses de cabinets. L'ajout est en outre hors des repères « ajout partie X » qui déclarent les autres ajouts de l'ouverture.",
+   "gravite": "majeur",
+   "preuve": "Chapitre 38, bandeau : « ligne directrice de l'AMF sur l'IA ([…] la seconde non lue) »; points à retenir : « elle n'est connue ici que par des analyses de cabinets »; rapport d'audit, « Textes restés inaccessibles » : « ligne directrice de l'AMF sur l'IA ».",
+   "correction_proposee": "BSIF E-23 au 1er mai 2027, ligne directrice de l’AMF sur l’IA à la même date selon des analyses de cabinets, son texte n’ayant pas été lu (section 38.3)"
+  },
+  {
+   "n": 549,
+   "fichier": "ouverture.md",
+   "passage": "Les statistiques officielles situent l’usage de l’IA, toutes formes confondues, à une entreprise sur cinq environ (section 4.1).",
+   "constat": "La phrase insérée sépare « Certains de ces socles restent en chantier » de son antécédent, les socles nommés deux phrases plus haut. Elle ne dit pas non plus de quels territoires il s'agit (Canada, Union européenne, États-Unis, sur des champs et des périodes qui diffèrent selon la section 4.1).",
+   "gravite": "mineur",
+   "preuve": "Ouverture, section 0.4, « Faits vérifiés et projections 2027 », première puce; section 4.1 : « ne mesurent pas la même chose : le champ, la période et la question diffèrent ».",
+   "correction_proposee": "Au Canada, dans l’Union européenne et aux États-Unis, les statistiques officielles situent l’usage de l’IA, toutes formes confondues, à une entreprise sur cinq environ (section 4.1). [À déplacer en fin de puce, après la phrase sur les socles en chantier.]"
+  },
+  {
+   "n": 515,
+   "fichier": "chapitre-27-strategie-multi-plateformes.md",
+   "passage": "pour A2A, la trousse de compatibilité du protocole fournit un essai commun (section 26.9).",
+   "constat": "Le renvoi déborde ce que la section 26.9 établit. La phrase traite de la preuve de portabilité (redéployer un agent sur une seconde cible et mesurer ce qu'il a fallu réécrire); la trousse éprouve la conformité au protocole d'un point d'accès A2A, non la portabilité d'un agent, et 26.9 précise qu'elle n'a pas été exécutée, qu'aucune liste de résultats n'est publiée et que les versions couvertes ne sont pas dites.",
+   "gravite": "mineur",
+   "preuve": "Section 27.3, règle de conduite; section 26.9, dernier paragraphe, et limites du chapitre 26.",
+   "correction_proposee": "pour A2A, la trousse de compatibilité du protocole éprouve la conformité d'un point d'accès, non la portabilité d'un agent (section 26.9)."
+  },
+  {
+   "n": 495,
+   "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+   "passage": "Aucune mesure indépendante de routage sur des trajectoires d'agents n'a été trouvée, y compris par une nouvelle recherche le 14 novembre 2026.",
+   "constat": "La limite est plus absolue que l'exposé : la section sur RouterArena cite elle-même, pour une boucle d'agent, « un ordre de grandeur sur une tâche documentaire » repris du chapitre 40, où un routage à deux niveaux est mesuré sur une architecture multi-agents par des auteurs universitaires (prépublication). Le bandeau, « faits arrêtés au 11 novembre 2026 », ne mentionne pas la recherche du 14.",
+   "gravite": "mineur",
+   "preuve": "Chapitre 44, exposé : « Le chapitre 40 donne un ordre de grandeur sur une tâche documentaire : coût réduit de moitié, 1,7 point de F1 perdu. »; section 40.6, ligne « Routage à deux niveaux » [3].",
+   "correction_proposee": "Hors le banc d'essai documentaire repris du chapitre 40, aucune mesure indépendante de routage sur des trajectoires d'agents n'a été trouvée, y compris par une nouvelle recherche le 14 novembre 2026."
+  },
+  {
+   "n": 368,
+   "fichier": "annexe-A-glossaire.md",
+   "passage": "| maillage agentique | agentic AI mesh, agent mesh, agentic mesh | Infrastructure qui rend les agents joignables et gouvernables (23) |",
+   "constat": "Le glossaire donne les trois formes anglaises pour équivalentes sous une seule définition, alors que la section 23.3 dit que les éditeurs emploient « agent mesh » et « agentic mesh » pour « des objets différents » (réseau, dorsale événementielle, couche de confiance).",
+   "gravite": "mineur",
+   "preuve": "Section 23.3 : « des éditeurs ont repris le mot, sous les formes agent mesh et agentic mesh, pour désigner des objets différents »; points à retenir du chapitre 23 : « le mot recouvre trois objets distincts ».",
+   "correction_proposee": "| maillage agentique | agentic AI mesh; chez les éditeurs, agent mesh ou agentic mesh | Infrastructure qui rend les agents joignables et gouvernables; chez les éditeurs, le mot recouvre trois objets distincts (23) |"
+  }
+ ],
+ "bilan": {
+  "entrees_lues": 69,
+  "chapitres_relus": [
+   "26",
+   "40",
+   "41",
+   "42",
+   "33",
+   "34",
+   "48",
+   "49",
+   "50",
+   "ouverture",
+   "27",
+   "31",
+   "44",
+   "annexe A"
+  ],
+  "lectures_web": [
+   {
+    "url": "https://developer.watson-orchestrate.ibm.com/agents/connect_agent.md",
+    "resultat": "lu"
+   },
+   {
+    "url": "https://learn.microsoft.com/en-us/microsoft-copilot-studio/add-agent-agent-to-agent",
+    "resultat": "lu"
+   },
+   {
+    "url": "https://github.com/a2aproject/a2a-tck",
+    "resultat": "lu"
+   },
+   {
+    "url": "https://www150.statcan.gc.ca/n1/pub/36-28-0001/2026004/article/00002-eng.htm",
+    "resultat": "lu"
+   },
+   {
+    "url": "https://arxiv.org/html/2608.23642",
+    "resultat": "lu"
+   },
+   {
+    "url": "https://arxiv.org/abs/2607.08010",
+    "resultat": "lu"
+   },
+   {
+    "url": "https://arxiv.org/a/search?query=%22RecSys+Factory%22&searchtype=title",
+    "resultat": "non chargé (404 : adresse mal formée par le lecteur)"
+   },
+   {
+    "url": "https://arxiv.org/search/?query=%22RecSys+Factory%22&searchtype=title",
+    "resultat": "lu"
+   },
+   {
+    "url": "https://arxiv.org/abs/2609.21267",
+    "resultat": "lu"
+   },
+   {
+    "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/agent-runtime-versioning.html",
+    "resultat": "lu"
+   },
+   {
+    "url": "https://arxiv.org/abs/2609.14119",
+    "resultat": "lu"
+   }
+  ],
+  "non_fait": "Tout le lot est relu (69 entrées). Non fait ou non vérifié : chapitre 40, chiffres de Google [14] et de l'AIE [15] non relus à la source (jugés conformes de mémoire, donc non vérifiés); chapitre 42, résumé de [15] non relu, « 44 étapes » et « centre de distribution » de [13] non restitués par la lecture; chapitre 41, absence du « temps de révision prévu à l'horaire » dans [12] constatée par une lecture condensée, à recouper sur le texte brut; chapitre 48, seule la section 48.11 et ses appuis ont été confrontés, les 83 notices d'origine n'ont pas été relues; chapitre 50, pages d'Eurostat [74] et du Census Bureau [75] non relues, chiffres confrontés à la section 4.1 seulement; volets « Mise en œuvre » des chapitres 27, 31, 33, 34, 40, 41 et 44 seulement sondés par mots-clés, non lus en entier. Toutes les lectures web sont passées par un outil qui condense : chaque citation est à recouper sur le texte brut avant correction. Chapitre 31, entrée 513 : lue, sans constat. Douze lectures web sur quinze permises, dont une non chargée (adresse mal formée par le lecteur)."
+ }
+}

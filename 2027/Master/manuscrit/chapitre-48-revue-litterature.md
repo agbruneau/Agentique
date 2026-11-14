@@ -2,7 +2,7 @@
 
 *Question directrice : que sait la recherche, et avec quel degré de preuve, sur l'interopérabilité et l'orchestration d'agents ?*
 
-> **État de référence :** recherche menée le 13 novembre 2026 dans l'index Consensus (notices de Semantic Scholar, d'OpenAlex et de PubMed) : dix requêtes, 124 notices rendues, 123 distinctes, 83 retenues, toutes lues par leur résumé seulement; titre, auteurs et lieu de publication de 82 d'entre elles confirmés le même jour auprès d'arXiv ou de Crossref; profil des 709 sources des chapitres 1 à 47, établi le même jour par un script sur le manuscrit; quinze travaux relevés hors protocole le 14 novembre 2026 (section 48.11), date à laquelle le corpus de l'ouvrage est passé à 774 sources. Les numéros entre crochets renvoient aux sources en fin de chapitre, classées selon que la notice indique ou non une revue ou une conférence.
+> **État de référence :** recherche menée le 13 novembre 2026 dans l'index Consensus (notices de Semantic Scholar, d'OpenAlex et de PubMed) : dix requêtes, 124 notices rendues, 123 distinctes, 83 retenues, toutes lues par leur résumé seulement; titre, auteurs et lieu de publication de 82 d'entre elles confirmés le même jour auprès d'arXiv ou de Crossref; profil des 709 sources des chapitres 1 à 47, établi le même jour par un script sur le manuscrit; quinze travaux relevés hors protocole le 14 novembre 2026 (section 48.11), date à laquelle le corpus de l'ouvrage est passé à 775 sources. Les numéros entre crochets renvoient aux sources en fin de chapitre, classées selon que la notice indique ou non une revue ou une conférence.
 
 Les quarante-sept chapitres qui précèdent s'appuient d'abord sur la documentation des projets et des éditeurs : c'est elle qui dit ce qu'un protocole spécifie et ce qu'un produit annonce. La recherche y tient une place plus mince, et presque toujours sous forme de prépublication. Ce chapitre prend la question par l'autre bout. Il part d'une recherche indépendante dans la littérature scientifique, la confronte au corpus de l'ouvrage et classe ce qui en sort en trois piles : ce qui est mesuré, ce qui est débattu, ce qui manque.
 
@@ -62,18 +62,18 @@ Ce n'est pas une revue systématique. Une seule base a été interrogée, par di
 
 | Nature de la source, d'après son adresse | Sources | Part |
 |---|---|---|
-| Prépublication (arXiv pour l'essentiel) | 144 | 20,3 % |
-| Projet ouvert : spécification, dépôt, fondation | 143 | 20,2 % |
-| Organisme de normalisation ou de référence | 84 | 11,8 % |
-| Texte officiel ou organisme public | 42 | 5,9 % |
-| Analyste ou presse | 14 | 2,0 % |
-| Éditeur scientifique (article évalué par les pairs) | 1 | 0,1 % |
-| Documentation d'éditeur, de fournisseur, et autres | 281 | 39,6 % |
-| **Total** | **709** | **100 %** |
+| Prépublication (arXiv pour l'essentiel) | 165 | 21,3 % |
+| Projet ouvert : spécification, dépôt, fondation | 146 | 18,8 % |
+| Organisme de normalisation ou de référence | 89 | 11,5 % |
+| Texte officiel ou organisme public | 53 | 6,8 % |
+| Analyste ou presse | 24 | 3,1 % |
+| Éditeur scientifique (article évalué par les pairs) | 3 | 0,4 % |
+| Documentation d'éditeur, de fournisseur, et autres | 295 | 38,1 % |
+| **Total** | **775** | **100 %** |
 
 Près de quatre sources sur dix viennent d'un projet ouvert, d'un organisme de normalisation ou d'un texte officiel; quatre autres sur dix, de la documentation d'éditeurs et de fournisseurs, où le script range aussi ce qu'il n'a pas su classer. C'est cohérent avec l'objet de l'ouvrage : un protocole se lit dans sa spécification, non dans un article qui la commente.
 
-La recherche pèse un cinquième, et elle arrive par arXiv : 140 citations pour 105 prépublications distinctes, dont 34 de 2026, 36 de 2025, 20 de 2024 et 11 de 2023. Seize sont citées par plus d'un chapitre; les deux plus citées sont l'étude MAP, dans huit chapitres, et la taxonomie MAST, dans sept.
+La recherche pèse un cinquième, et elle arrive par arXiv. Dans le corpus du 13 novembre, on comptait 140 citations pour 105 prépublications distinctes, dont 34 de 2026, 36 de 2025, 20 de 2024 et 11 de 2023. Seize sont citées par plus d'un chapitre; les deux plus citées sont l'étude MAP, dans huit chapitres, et la taxonomie MAST, dans sept.
 
 Le tableau sous-estime la part des travaux évalués. Un article publié en conférence et cité par son adresse arXiv y compte comme prépublication : c'est le cas de MAST, que la notice de Consensus situe à la conférence NeurIPS de 2025 [2]. Le classement par nom de domaine ne distingue pas non plus un billet d'ingénierie d'une page de documentation.
 
@@ -91,7 +91,7 @@ Soixante-dix-sept des 83 notices retenues datent de 2025 ou de 2026. Trente et u
 
 **Les deux corpus se recoupent peu.** L'ouvrage cite déjà au moins neuf des travaux retrouvés, dont la taxonomie MAST, les deux revues de protocoles les plus citées [33][34], la défense CaMeL [3], le banc τ-bench [35] et l'architecture SagaLLM [4]. Il ne cite ni les essais randomisés sur la productivité, ni les audits de bancs d'essai, ni les analyses de sécurité des protocoles parues en 2026. Les sections qui suivent s'attachent d'abord à ces apports.
 
-Les compléments du 14 novembre 2026 ont porté ce corpus à 774 sources. Les 65 ajoutées, classées à la main, comptent 21 prépublications, 2 articles de revue, 11 textes officiels ou d'organismes publics, 4 publications d'organismes de référence, 3 pages de projets ouverts, 14 documentations ou billets d'éditeurs et 10 analyses de cabinets, d'analystes ou de presse. Le tableau ci-dessus n'a pas été recalculé : il décrit le corpus du 13 novembre.
+Le tableau porte sur les 775 sources des chapitres 1 à 47 au 14 novembre 2026. Les 709 du 13 novembre y sont classées par leur adresse. Les 66 ajoutées depuis, soit les 65 compléments et le communiqué de la FIDO Alliance cité au chapitre 10, sont classées à la main : 21 prépublications, 2 articles de revue, 11 textes officiels ou d'organismes publics, 5 publications d'organismes de référence, 3 pages de projets ouverts, 14 documentations ou billets d'éditeurs et 10 analyses de cabinets, d'analystes ou de presse. Le classement mêle donc deux méthodes.
 
 ---
 
@@ -252,7 +252,7 @@ Les résultats les plus solides du corpus sont ici, et ils ne portent pas sur de
 
 | Étude | Devis | Effet rapporté par le résumé |
 |---|---|---|
-| Soutien à la clientèle [74] | Déploiement échelonné, 5 179 agents de soutien | 14 % de problèmes résolus de plus par heure en moyenne; gain concentré chez les novices, minime chez les plus expérimentés |
+| Soutien à la clientèle [74] | Déploiement échelonné, 5 172 agents de soutien | 15 % de problèmes résolus de plus par heure en moyenne; gain concentré chez les novices, minime chez les plus expérimentés |
 | Rédaction professionnelle [24] | Expérience préenregistrée, 453 professionnels | Temps réduit de 40 %, qualité en hausse de 18 % |
 | Développement logiciel [25] | Trois essais randomisés, 4 867 développeurs | 26,08 % de tâches terminées de plus (erreur type : 10,3 %) |
 | Conseil en gestion [26] | Expérience préenregistrée, 758 consultants | Dans la frontière de capacité : 12,2 % de tâches de plus, 25,1 % plus vite; hors de la frontière : 19 % de chances en moins de produire une solution correcte |
@@ -303,7 +303,7 @@ La qualité de ce pan du corpus est inégale. Les lieux de publication sont disp
 | Sécurité | Efficacité de l'isolation par construction sur un banc | Tenue face à un attaquant adaptatif | Évaluation hors d'AgentDojo; attaques composées |
 | Mémoire et sémantique | Gain d'un ancrage structuré sur des bancs propres aux auteurs | Découpage même du champ | Réplication indépendante; mémoire partagée gouvernée |
 | Effets économiques | Gains de productivité des assistants, à l'échelle de la tâche | Transposition aux agents autonomes | Effet des agents sur les résultats de l'entreprise |
-| Gouvernance | Presque rien | Régime de responsabilité; palier de supervision | Validation empirique des cadres |
+| Gouvernance | Presque rien dans les 83 notices; hors protocole, le biais d'automatisation des aides à la décision (48.11) | Régime de responsabilité; palier de supervision | Validation empirique des cadres |
 
 ### Ce que la revue dit des hypothèses de l'ouvrage
 
@@ -339,14 +339,14 @@ Le 14 novembre 2026, des recherches ciblées menées pour compléter vingt chapi
 
 | Thème | Travaux | Ce qu'ils mesurent | Effet sur la synthèse | Section |
 |---|---|---|---|---|
-| Protocoles | Recensements des registres et des places de marché de MCP [87][88][89] | 51,1 % des serveurs à plusieurs versions modifiés d'une version à l'autre; 516 serveurs détournables; la moitié des entrées sans valeur | Précise « faiblesses de l'écosystème » : le défaut est dans les registres autant que dans les serveurs | 8.8 |
+| Protocoles | Recensements des registres et des places de marché de MCP [87][88][89] | 51,1 % des serveurs à plusieurs versions modifiés d'une version à l'autre; 516 cas de détournement possible, somme de 304 serveurs et de 212 comptes (section 8.8); la moitié des entrées sans valeur | Précise « faiblesses de l'écosystème » : le défaut est dans les registres autant que dans les serveurs | 8.8 |
 | Protocoles | Fiabilité des scanners de sécurité [90]; filtre évalué par ses auteurs [91] | Moins de la moitié des alertes vérifiées sont fondées | Affaiblit l'outillage de vérification, non la spécification | 8.8, 24.5 |
 | Coordination | Fautes signalées dans 40 dépôts [92]; défauts de cinq cadriciels [93][94] | Fautes surtout ordinaires; 16 bogues sur 35 transposables d'un cadriciel à l'autre | Complète « modes d'échec » par le logiciel qui porte les agents | 21.1, 20.7 |
 | Évaluation | Coût de l'évaluation récurrente d'un agent en production [95]; agent de tri d'alarmes en production [96] | 38,5 % du banc suffit pour 1,03 point d'erreur; temps de réponse médian réduit de 42 % | Première mesure sous « coûts publiés », sans chiffre en dollars | 33.6, 42.4 |
-| Effets économiques | Adoption de l'IA et productivité des entreprises canadiennes [97] | Prime de 16,8 %, non significative une fois les autres capacités prises en compte | Appuie la case « absent » : l'effet sur l'entreprise n'est pas établi | 40.5 |
+| Effets économiques | Adoption de l'IA et productivité des entreprises canadiennes [97] | Prime de 16,8 %, ramenée à 5,1 %, non significative, une fois la productivité de départ et les autres capacités prises en compte; données de 2019 et de 2021 | Appuie la case « absent » : l'effet sur l'entreprise n'est pas établi | 40.5 |
 | Gouvernance | Biais d'automatisation [98]; supervision par des développeurs [99]; supervision prescrite [100]; article de position [101] | Un conseil faux accroît de 26 % le risque de décision incorrecte | Remplace « presque rien » par un acquis sur les aides à la décision, non sur les agents | 22.5 |
 
-Deux hypothèses du chapitre 4 en sont touchées. H1, la concentration dans les grandes organisations, que la recherche laissait hors champ, reçoit l'appui des statistiques officielles : l'usage de l'IA croît avec la taille de l'entreprise, au Canada comme aux États-Unis (section 4.1). H2, des agents bornés et supervisés, est confirmée par le cas de production relevé [96] (section 42.4).
+Deux hypothèses du chapitre 4 en sont touchées. H1, la concentration dans les grandes organisations, reste hors du champ de ces travaux. Les statistiques officielles que cite la section 4.1, hors de cette revue, montrent que l'usage de l'IA en général croît avec la taille de l'entreprise, au Canada comme aux États-Unis; aucune ne compte les agents. H2, des agents bornés et supervisés, reçoit l'appui d'un cas de production connu par son résumé [96] (section 42.4).
 
 Aucun de ces travaux ne répond aux questions 1, 3 ou 9 de la section 48.10. La question 10 reste entière : la littérature sur la supervision mesure un biais, non l'effet d'un cadre de gouvernance.
 
@@ -378,7 +378,7 @@ Aucun de ces travaux ne répond aux questions 1, 3 ou 9 de la section 48.10. La 
 - Les gains de productivité établis par des essais randomisés concernent des assistants, à l'échelle de la tâche. L'effet d'agents autonomes sur les résultats d'une entreprise n'est pas mesuré.
 - Les études d'adoption convergent : le frein est l'organisation, les données et la vérification, non le modèle. Elles reposent sur de petits échantillons.
 - La littérature de gouvernance propose des cadres et n'en valide aucun.
-- Quinze travaux relevés hors protocole le 14 novembre 2026 précisent trois cases de la synthèse : l'écosystème des registres de MCP, les défauts du logiciel qui porte les agents et le biais d'automatisation. Aucun ne mesure un déploiement de MCP ou d'A2A en production.
+- Quinze travaux relevés hors protocole le 14 novembre 2026 précisent cinq thèmes de la synthèse, surtout trois cases : l'écosystème des registres de MCP, les défauts du logiciel qui porte les agents et le biais d'automatisation; ils apportent aussi une première mesure du coût d'évaluation et un appui à l'absence d'effet établi sur l'entreprise. Aucun ne mesure un déploiement de MCP ou d'A2A en production.
 
 ---
 
@@ -462,7 +462,7 @@ Notices repérées dans Consensus le 13 novembre 2026 et lues par leur résumé 
 71. [Tuan et coll. — Ontology-Constrained Neural Reasoning in Enterprise Agentic Systems (arXiv, 2026)](https://arxiv.org/abs/2604.00555) — les auteurs éditent la plateforme évaluée.
 72. [Chethan — Semantic Graph Unification for Industrial Digital Threads (arXiv, 2026)](https://arxiv.org/abs/2608.24918)
 73. [Chong et coll. — EvoOntology: A Self-Evolving Ontology Layer for Data Agents (arXiv, 2026)](https://arxiv.org/abs/2609.15779)
-74. [Brynjolfsson et coll. — Generative AI at Work (National Bureau of Economic Research, 2023)](https://arxiv.org/abs/2304.11771) — document de travail.
+74. [Brynjolfsson et coll. — Generative AI at Work (National Bureau of Economic Research, 2023)](https://arxiv.org/abs/2304.11771) — document de travail; version en ligne relue le 14 novembre 2026.
 75. [Dillon et coll. — Early Impacts of M365 Copilot (SSRN, 2025)](https://arxiv.org/abs/2504.11443)
 76. [Bottesch et coll. — Faster, Higher, Stronger? The Impact of GenAI on Knowledge Work Productivity: Evidence from the Field (arXiv, 2026)](https://arxiv.org/abs/2607.25922)
 77. [Ju et Aral — Collaborating with AI Agents: Field Experiments on Teamwork, Productivity, and Performance (SSRN, 2025)](https://arxiv.org/abs/2503.18238)

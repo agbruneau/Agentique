@@ -1,0 +1,31 @@
+{
+ "id": "P3-L3",
+ "origine": "plan 2027, lot P3-L3",
+ "categorie": "harmonisation",
+ "remplacements": [
+  {
+   "fichier": "chapitre-48-revue-litterature.md",
+   "avant": "| Prépublication (arXiv pour l'essentiel) | 144 | 20,3 % |\n| Projet ouvert : spécification, dépôt, fondation | 143 | 20,2 % |\n| Organisme de normalisation ou de référence | 84 | 11,8 % |\n| Texte officiel ou organisme public | 42 | 5,9 % |\n| Analyste ou presse | 14 | 2,0 % |\n| Éditeur scientifique (article évalué par les pairs) | 1 | 0,1 % |\n| Documentation d'éditeur, de fournisseur, et autres | 281 | 39,6 % |\n| **Total** | **709** | **100 %** |",
+   "apres": "| Prépublication (arXiv pour l'essentiel) | 165 | 21,3 % |\n| Projet ouvert : spécification, dépôt, fondation | 146 | 18,8 % |\n| Organisme de normalisation ou de référence | 89 | 11,5 % |\n| Texte officiel ou organisme public | 53 | 6,8 % |\n| Analyste ou presse | 24 | 3,1 % |\n| Éditeur scientifique (article évalué par les pairs) | 3 | 0,4 % |\n| Documentation d'éditeur, de fournisseur, et autres | 295 | 38,1 % |\n| **Total** | **775** | **100 %** |",
+   "motif": "Lot P3-L3 : le tableau du corpus décrivait les 709 sources du 13 novembre. Il porte maintenant sur les 775 sources des chapitres 1 à 47 : les 709 classées par leur adresse, plus les 66 ajoutées depuis, classées à la main."
+  },
+  {
+   "fichier": "chapitre-48-revue-litterature.md",
+   "avant": "La recherche pèse un cinquième, et elle arrive par arXiv : 140 citations",
+   "apres": "La recherche pèse un cinquième, et elle arrive par arXiv. Dans le corpus du 13 novembre, on comptait 140 citations",
+   "motif": "Lot P3-L3 : les décomptes de prépublications de ce paragraphe datent du corpus du 13 novembre; le texte le dit."
+  },
+  {
+   "fichier": "chapitre-48-revue-litterature.md",
+   "avant": "Les compléments du 14 novembre 2026 ont porté ce corpus à 774 sources. Les 65 ajoutées, classées à la main, comptent 21 prépublications, 2 articles de revue, 11 textes officiels ou d'organismes publics, 4 publications d'organismes de référence, 3 pages de projets ouverts, 14 documentations ou billets d'éditeurs et 10 analyses de cabinets, d'analystes ou de presse. Le tableau ci-dessus n'a pas été recalculé : il décrit le corpus du 13 novembre.",
+   "apres": "Le tableau porte sur les 775 sources des chapitres 1 à 47 au 14 novembre 2026. Les 709 du 13 novembre y sont classées par leur adresse. Les 66 ajoutées depuis, soit les 65 compléments et le communiqué de la FIDO Alliance cité au chapitre 10, sont classées à la main : 21 prépublications, 2 articles de revue, 11 textes officiels ou d'organismes publics, 5 publications d'organismes de référence, 3 pages de projets ouverts, 14 documentations ou billets d'éditeurs et 10 analyses de cabinets, d'analystes ou de presse. Le classement mêle donc deux méthodes.",
+   "motif": "Lot P3-L3 : le paragraphe disait le tableau non recalculé; il décrit maintenant comment il l'a été."
+  },
+  {
+   "fichier": "chapitre-48-revue-litterature.md",
+   "avant": "date à laquelle le corpus de l'ouvrage est passé à 774 sources",
+   "apres": "date à laquelle le corpus de l'ouvrage est passé à 775 sources",
+   "motif": "Lot P3-L3 : décompte du bandeau mis à jour (source [20] du chapitre 10)."
+  }
+ ]
+}

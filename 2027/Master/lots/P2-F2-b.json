@@ -1,0 +1,37 @@
+{
+ "id": "P2-F2-b",
+ "origine": "plan 2027, lot P2-F2-b",
+ "categorie": "factuel",
+ "remplacements": [
+  {
+   "fichier": "chapitre-48-revue-litterature.md",
+   "avant": "| Déploiement échelonné, 5 179 agents de soutien | 14 % de problèmes résolus de plus par heure en moyenne;",
+   "apres": "| Déploiement échelonné, 5 172 agents de soutien | 15 % de problèmes résolus de plus par heure en moyenne;",
+   "motif": "Recollationnement (lot P2-F2, phrase F2-133) : la page citée [74], relue le 14 novembre 2026, donne 5 172 agents et 15 %, non 5 179 et 14 %. Les anciens chiffres viennent peut-être d'une version antérieure du document de travail : non vérifié."
+  },
+  {
+   "fichier": "chapitre-48-revue-litterature.md",
+   "avant": "(https://arxiv.org/abs/2304.11771) — document de travail.",
+   "apres": "(https://arxiv.org/abs/2304.11771) — document de travail; version en ligne relue le 14 novembre 2026.",
+   "motif": "Recollationnement (lot P2-F2, phrase F2-133) : la source [74] dit maintenant quelle version porte les chiffres cités."
+  },
+  {
+   "fichier": "chapitre-48-revue-litterature.md",
+   "avant": "516 serveurs détournables;",
+   "apres": "516 cas de détournement possible, somme de 304 serveurs et de 212 comptes (section 8.8);",
+   "motif": "Recollationnement (lot P2-F2, phrase F2-141) : le chiffre de 516 n'est pas dans la source relue; c'est la somme de 304 et de 212, dite telle à la section 8.8."
+  },
+  {
+   "fichier": "chapitre-50-projection-etude-marche.md",
+   "avant": "21 % des organisations disposent d'un modèle mûr de gouvernance des agents chez Deloitte [33]",
+   "apres": "21 % des entreprises qui prévoient de déployer l'IA agentique d'ici deux ans disposent d'un modèle mûr de gouvernance des agents chez Deloitte [33]",
+   "motif": "Recollationnement (lot P2-F2, phrase F2-184) : chez Deloitte, les 21 % portent sur les entreprises qui prévoient de déployer l'IA agentique d'ici deux ans (« only 21% of those companies »), non sur l'ensemble des organisations."
+  },
+  {
+   "fichier": "chapitre-50-projection-etude-marche.md",
+   "avant": "relevées en 50.2.\n- L'enveloppe de 50.2",
+   "apres": "relevées en 50.2.\n- La page de Global Market Insights [4], rechargée le 14 novembre 2026, présente une autre édition (9,47 G$ en 2025, 126,02 G$ en 2035, 27,0 % par an) : les chiffres de juillet 2025 repris en 50.2 n'y figurent plus et n'ont pas pu être revérifiés.\n- L'enveloppe de 50.2",
+   "motif": "Recollationnement (lot P2-F2, phrases F2-162 et F2-169) : la page [4] a changé d'édition depuis la lecture; les chiffres cités en 50.2 ne sont plus vérifiables sur la page."
+  }
+ ]
+}

@@ -1,0 +1,62 @@
+[
+ {
+  "id": "F3-091",
+  "fichier": "chapitre-32-assurance.md",
+  "n": 9,
+  "verdict": "confirme",
+  "etendue_lue": "texte complet (HTML), environ les 100 000 premiers caractères sur 135 858 (résumé, introduction, leçons, section 5)",
+  "url_lue": "https://arxiv.org/html/2510.09023",
+  "citation_source": "we bypass 12 recent defenses (based on a diverse set of techniques) ... the majority of defenses originally reported near-zero attack success rates. ... with attack success rate above 90% for most",
+  "constat": "",
+  "phrase_visee": "Une prépublication d'octobre 2025 l'a montré : douze défenses récentes contre le débridage et l'in",
+  "correction_proposee": null
+ },
+ {
+  "id": "F3-092",
+  "fichier": "chapitre-32-assurance.md",
+  "n": 10,
+  "verdict": "confirme",
+  "etendue_lue": "texte complet (HTML), environ les 100 000 premiers caractères sur 143 614 (résumé, introduction, défenses testées, résultats)",
+  "url_lue": "https://arxiv.org/html/2606.15057",
+  "citation_source": "Moreover, we show that most existing defenses either sacrifice considerable utility or are insecure. ... with under-specified tasks particularly vulnerable ... standard static benchmarks often significantly overestimate defense efficacy",
+  "constat": "",
+  "phrase_visee": "AutoDojo, prépublication de juin 2026 révisée en septembre, transpose l'argument aux agents [10].",
+  "correction_proposee": null
+ },
+ {
+  "id": "F3-093",
+  "fichier": "chapitre-32-assurance.md",
+  "n": 11,
+  "verdict": "nuance",
+  "etendue_lue": "texte complet (HTML), de l'introduction à la conclusion et à la section 12",
+  "url_lue": "https://arxiv.org/html/2606.26479",
+  "citation_source": "This is one small-scale data point on a weak model with a single black-box attack template; ... Not peer-reviewed. Preliminary internal results.",
+  "constat": "Exact sur l'objet de l'article, mais les auteurs sont affiliés à LaunchSafe Research, qui développe ses propres outils de sécurité d'agents fondés sur cette approche (le texte le dit dans la conclusion); « reproduction indépendante » est leur propre étiquette, sur un sous-échantillon d'AgentDojo avec Qwen2.5-7B, v1 de juin 2026, non évalué par les pairs.",
+  "phrase_visee": "Dans une reproduction indépendante sur le banc AgentDojo, l'une d'elles, Progent, ramène le succès",
+  "correction_proposee": "Dans une reproduction que ses auteurs qualifient d'indépendante, sur un sous-échantillon du banc AgentDojo, l'une d'elles, Progent, ramène le succès moyen des attaques de 25,8 % à 4,2 %; les auteurs, affiliés à un éditeur d'outils de sécurité d'agents, n'ont pas fait évaluer le texte par les pairs; une attaque adaptative écrite à la main ne le fait pas remonter (2,6 %)."
+ },
+ {
+  "id": "F3-094",
+  "fichier": "chapitre-33-observabilite-evaluation.md",
+  "n": 13,
+  "verdict": "confirme",
+  "etendue_lue": "texte complet (HTML), environ les 100 000 premiers caractères sur 177 740, et page de résumé (arxiv.org/abs)",
+  "url_lue": "https://arxiv.org/html/2406.12045",
+  "citation_source": "Our evaluation scheme compares the database state at the end of each episode with the ground truth expected state. ... pass^k (pass hat k), defined as the chance that all k i.i.d. task trials are successful, averaged across tasks.",
+  "constat": "",
+  "phrase_visee": "**Il juge un état.** Le critère de réussite est un état vérifiable du système, non une ressemblance",
+  "correction_proposee": null
+ },
+ {
+  "id": "F3-095",
+  "fichier": "chapitre-33-observabilite-evaluation.md",
+  "n": 14,
+  "verdict": "nuance",
+  "etendue_lue": "texte complet (HTML), environ les 100 000 premiers caractères sur 136 106, puis les caractères 50 000 à 100 000 (résultats, évaluation humaine)",
+  "url_lue": "https://arxiv.org/html/2510.27287",
+  "citation_source": "even the most capable models achieve only 41.8% task completion. ... 500 enterprise tasks spanning five major domains ... The agent achieved an accuracy of 31%, with the remaining cases classified as failures.",
+  "constat": "Le résumé dit bien 41,8 % et quatre domaines (génie logiciel, RH, finance, administration), mais le corps du texte parle de cinq domaines et ne retrouve 41,8 % dans aucun tableau; l'évaluation humaine du meilleur agent (o1-mini, ReAct) donne 31 % d'exactitude sur 100 tâches. Les deux sources de ce chiffre divergent dans le texte même.",
+  "phrase_visee": "EnterpriseBench réunit ainsi 500 tâches dans quatre domaines, avec des sources fragmentées et des h",
+  "correction_proposee": "EnterpriseBench réunit ainsi 500 tâches dans quatre domaines selon son résumé (cinq selon le corps du texte), avec des sources fragmentées et des hiérarchies de contrôle d'accès; son résumé rapporte 41,8 % d'achèvement pour le meilleur agent testé, chiffre que les tableaux du texte ne retrouvent pas (31 % d'exactitude à l'évaluation humaine de l'agent o1-mini) [14]."
+ }
+]
