@@ -43,6 +43,7 @@ Dépendances : Python 3 avec PyMuPDF, pandoc et Typst sur le `PATH`. Les scripts
 | `fusion.py` | Extrait, contrôle et intègre les volets « Mise en œuvre » réécrits (`--prepare`, `--controle ID`, `--bilan`, `--integre`). |
 | `schemas.py` | Insère les schémas dans les exposés. |
 | `audit.py` | Applique le registre des corrections (`--applique`, `--bilan`). |
+| `lot.py` | Applique un lot de modifications au manuscrit et l'inscrit au registre (`--essai` pour vérifier sans écrire); voie d'écriture du plan de travail [`2027/plan.md`](2027/plan.md). |
 | `assemble.py` | Compose `CompendiumMaster.pdf` à partir du manuscrit, sans le modifier. |
 | `verifie.py` | Contrôle le manuscrit contre ses sources, puis le PDF; code de sortie 1 si un contrôle échoue. |
 

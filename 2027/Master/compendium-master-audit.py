@@ -87,14 +87,18 @@ def applique():
     erreurs = []
     for nom, corrections in sorted(par_fichier().items()):
         chemin = os.path.join(MANUSCRIT, nom)
-        texte = lit(chemin)
+        texte = depart = lit(chemin)
         reecrits = {c: lit(c) for c in copies(nom)}
+        departs = dict(reecrits)
         for c in corrections:
             n = texte.count(c["avant"])
+            # Une correction qu'une correction ultérieure a retouchée ne se retrouve plus telle
+            # quelle : elle compte comme déjà en place (même règle que controle()).
+            reprise = any(d["n"] > c["n"] and d["avant"] in c["apres"] for d in corrections)
             if n == 1:
                 texte = texte.replace(c["avant"], c["apres"])
                 faites += 1
-            elif n == 0 and (not c["apres"] or c["apres"] in texte):
+            elif n == 0 and (not c["apres"] or c["apres"] in texte or reprise):
                 deja += 1
             else:
                 erreurs.append("%s n° %s : « %s » trouvé %d fois" % (nom, c["n"], c["avant"][:60], n))
@@ -102,9 +106,12 @@ def applique():
             for copie in reecrits:
                 if reecrits[copie].count(c["avant"]) == 1:
                     reecrits[copie] = reecrits[copie].replace(c["avant"], c["apres"])
-        ecrit(chemin, texte)
+        # On n'écrit que ce qui a changé : une réapplication sans effet ne touche aucun fichier.
+        if texte != depart:
+            ecrit(chemin, texte)
         for copie, contenu in reecrits.items():
-            ecrit(copie, contenu)
+            if contenu != departs[copie]:
+                ecrit(copie, contenu)
     print("corrections appliquées : %d, déjà en place : %d, en erreur : %d" % (faites, deja, len(erreurs)))
     for e in erreurs:
         print("  " + e)
