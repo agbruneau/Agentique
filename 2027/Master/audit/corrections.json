@@ -4939,5 +4939,41 @@
   "categorie": "harmonisation",
   "motif": "Renvoi placé sous les repères des passages déclarés, hors du contrôle de longueur de l'ouverture.",
   "origine": "révision partie X et ouverture (14 novembre 2026)"
+ },
+ {
+  "n": 550,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "Extinction programmée des agents CUA d'écran 5250",
+  "apres": "Extinction programmée de la cellule CUA d'écran 5250",
+  "categorie": "coherence",
+  "motif": "Le chapitre 25 ne déploie qu'une cellule CUA confinée, sur le sous-module d'avenants de 2008 : le titre du fil rouge s'y aligne.",
+  "origine": "plan 2027, lot P1-B1"
+ },
+ {
+  "n": 551,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "Au chapitre 25, BCA avait dû déployer en urgence quatre agents CUA (*Computer-Use Agents*) qui pilotaient des sessions d’écran vert 5250 pour lire les garanties et simuler les rachats de contrats sur son cœur IBM i : 1,4 million de lignes RPG III et RPG ILE accumulées depuis 1998, maintenues par trois spécialistes seniors à dix-huit mois de la retraite. Ces CUA, bien que sécurisés, coûtaient 0,62 \\$ CAD par transaction et prenaient 14 secondes par écran, ce qui bloquait le passage à l’échelle à haute fréquence. Une précédente tentative de refonte manuelle par un intégrateur externe en 2023 avait été abandonnée après 4,2 M\\$ CAD dépensés sans mise en production.",
+  "apres": "Au chapitre 25, BCA avait ouvert son cœur IBM i par deux voies : un serveur MCP sur ses 14 programmes RPGLE maîtres (93,5 % du volume) et une seule cellule CUA (*Computer-Use Agent*) confinée, qui pilotait en écran vert 5250 le sous-module d’avenants acquis en 2008, sans sources modifiables (6,5 % du volume). Restait le patrimoine lui-même : 1,4 million de lignes RPG III et RPG ILE accumulées depuis 1998, maintenues par trois spécialistes seniors à dix-huit mois de la retraite. À 19 secondes par avenant, la cellule CUA, bien que sécurisée, bloquait le passage à l’échelle à haute fréquence. La refonte « Big Bang », estimée à 28 M\\$ CAD, restait gelée.",
+  "categorie": "coherence",
+  "motif": "Point bloquant 09-1 de l'audit : le rappel attribuait au chapitre 25 quatre agents CUA, 0,62 $ par transaction, 14 secondes par écran et une refonte de 2023 abandonnée après 4,2 M$. Le chapitre 25 fait foi : serveur MCP sur 14 programmes RPGLE (93,5 % du volume), une cellule CUA confinée (6,5 %, 19 secondes par avenant), refonte « Big Bang » de 28 M$ gelée.",
+  "origine": "plan 2027, lot P1-B1"
+ },
+ {
+  "n": 552,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "78 % des appels CUA (",
+  "apres": "78 % des appels d’agents (",
+  "categorie": "coherence",
+  "motif": "Au chapitre 25, la voie CUA ne porte que 6,5 % du volume, sur le seul sous-module de 2008 : les trois modules prioritaires ne peuvent pas concentrer « les appels CUA ».",
+  "origine": "plan 2027, lot P1-B1"
+ },
+ {
+  "n": 553,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "- **Retrait complet des 4 agents CUA d’écran 5250** : latence d’interrogation passée de 14 secondes à 11 millisecondes, coût marginal divisé par 180.",
+  "apres": "- **Retrait de la cellule CUA d’écran 5250** : le sous-module d’avenants de 2008, dont le chapitre 25 finançait la réécriture, a été refait par l’usine d’après son seul oracle de transactions, faute de sources; un avenant se traite en 11 millisecondes, contre 19 secondes.",
+  "categorie": "coherence",
+  "motif": "Le bilan retirait « 4 agents CUA » et partait de 14 secondes : il retire la cellule unique du chapitre 25 et part de ses 19 secondes par avenant. Le « coût marginal divisé par 180 », qui reposait sur le 0,62 $ supprimé, est retiré.",
+  "origine": "plan 2027, lot P1-B1"
  }
 ]

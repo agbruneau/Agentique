@@ -535,20 +535,20 @@ Chez BCA, l’usine résorbe la dette patrimoniale AS/400 sans interrompre une s
 
 :::: {.encadre .filrouge}
 ::: {.encadre-titre}
-**Fil rouge — Groupe Boréal : Extinction programmée des agents CUA d'écran 5250 par modernisation RPG → Rust/MCP chez BCA**
+**Fil rouge — Groupe Boréal : Extinction programmée de la cellule CUA d'écran 5250 par modernisation RPG → Rust/MCP chez BCA**
 :::
 
-**Situation initiale chez BCA** : Au chapitre 25, BCA avait dû déployer en urgence quatre agents CUA (*Computer-Use Agents*) qui pilotaient des sessions d’écran vert 5250 pour lire les garanties et simuler les rachats de contrats sur son cœur IBM i : 1,4 million de lignes RPG III et RPG ILE accumulées depuis 1998, maintenues par trois spécialistes seniors à dix-huit mois de la retraite. Ces CUA, bien que sécurisés, coûtaient 0,62 \$ CAD par transaction et prenaient 14 secondes par écran, ce qui bloquait le passage à l’échelle à haute fréquence. Une précédente tentative de refonte manuelle par un intégrateur externe en 2023 avait été abandonnée après 4,2 M\$ CAD dépensés sans mise en production.
+**Situation initiale chez BCA** : Au chapitre 25, BCA avait ouvert son cœur IBM i par deux voies : un serveur MCP sur ses 14 programmes RPGLE maîtres (93,5 % du volume) et une seule cellule CUA (*Computer-Use Agent*) confinée, qui pilotait en écran vert 5250 le sous-module d’avenants acquis en 2008, sans sources modifiables (6,5 % du volume). Restait le patrimoine lui-même : 1,4 million de lignes RPG III et RPG ILE accumulées depuis 1998, maintenues par trois spécialistes seniors à dix-huit mois de la retraite. À 19 secondes par avenant, la cellule CUA, bien que sécurisée, bloquait le passage à l’échelle à haute fréquence. La refonte « Big Bang », estimée à 28 M\$ CAD, restait gelée.
 
 **Déploiement de l’usine chez Boréal** :
 
-1.  **Cartographie symbolique complète en trois semaines** : Un parseur RPG/CL/DB2 a indexé les 2 140 programmes et isolé 14 domaines fonctionnels faiblement couplés, en commençant par les trois modules qui concentraient 78 % des appels CUA (*Éligibilité Garantie*, *Calcul Rachat Anticipé*, *Avenant Franchise*).
+1.  **Cartographie symbolique complète en trois semaines** : Un parseur RPG/CL/DB2 a indexé les 2 140 programmes et isolé 14 domaines fonctionnels faiblement couplés, en commençant par les trois modules qui concentraient 78 % des appels d’agents (*Éligibilité Garantie*, *Calcul Rachat Anticipé*, *Avenant Franchise*).
 2.  **Capture de l’oracle *Golden Master* et boucle à séparation des devoirs** : Sur chaque module, 60 000 transactions historiques anonymisées de 2024–2026 ont formé l’oracle scellé. Au premier cycle d’exécution en miroir du module de rachat anticipé, le comparateur (Extrait 47.3) a intercepté 17 divergences de 0,01 \$ à 0,04 \$ CAD sur des contrats bissextiles signés au Nouveau-Brunswick. Elles venaient d’une règle d’arrondi implicite de 2007 qu’aucun analyste humain ne connaissait plus, intégrée et prouvée avant la bascule.
 
 **Bilan audité après neuf mois** :
 
 - **5 des 14 domaines cœurs** (490 000 lignes RPG équivalentes) convertis et homologués en services Rust décimaux, exposés en MCP Streamable HTTP, sans écart comptable en production.
-- **Retrait complet des 4 agents CUA d’écran 5250** : latence d’interrogation passée de 14 secondes à 11 millisecondes, coût marginal divisé par 180.
+- **Retrait de la cellule CUA d’écran 5250** : le sous-module d’avenants de 2008, dont le chapitre 25 finançait la réécriture, a été refait par l’usine d’après son seul oracle de transactions, faute de sources; un avenant se traite en 11 millisecondes, contre 19 secondes.
 - Les trois experts RPG seniors, libérés de la maintenance corrective nocturne, agissent désormais comme architectes validateurs des invariants métier aux côtés de l’équipe plateforme.
 ::::
 

@@ -8,8 +8,8 @@
   "mineur": 30
  },
  "etats": {
-  "ouvert": 40,
-  "clos": 1
+  "clos": 2,
+  "ouvert": 39
  },
  "rapprochement": "Les 41 points sont les constats de constats.json dont « decision_finale » vaut « laissé à l'auteur ». Les 66 constats dont la décision de premier examen était « laisser » se répartissent ainsi : traité globalement : 41; laissé à l'auteur : 23; corrigé : 2. Les 41 « traité globalement » ont été réglés par les harmonisations d'ensemble de l'audit et ne sont pas des points ouverts. Des 41 points ouverts, 23 viennent d'une décision « laisser », 2 d'une décision « corriger » ramenée à l'auteur, 16 de la vérification en ligne ou de l'arbitrage (sans décision de premier examen).",
  "points": [
@@ -17,14 +17,15 @@
    "id": "09-1",
    "lot": "P1-B1",
    "gravite": "bloquant",
-   "etat": "ouvert",
+   "etat": "clos",
    "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
    "zone": "volet",
    "ligne": 541,
    "ligne_audit": 541,
    "section": "47.12 Application au fil rouge : modernisation progressive de 1,4 million de lignes RPG sur IBM i chez Boréal Capital & Assurances (BCA)",
    "ancre": "Au chapitre 25, BCA avait dû déployer en urgence quatre agents CUA",
-   "constat": "Le fil rouge du chapitre 25 (lignes 681-691) ne parle ni de quatre agents CUA, ni de 0,62 $ par transaction, ni de 14 secondes par écran : il décrit une seule cellule CUA confinée sur un sous-module de 2008 (6,5 % du volume, 19 secondes par avenant), 14 programmes RPGLE déjà encapsulés en MCP et une refonte « Big Bang » de 28 M$ CAD gelée (ici : refonte de 2023 abandonnée après 4,2 M$ CAD, trois modules concentrant 78 % des appels CUA). À trancher : aligner le rappel sur le chapitre 25 ou retirer le renvoi."
+   "constat": "Le fil rouge du chapitre 25 (lignes 681-691) ne parle ni de quatre agents CUA, ni de 0,62 $ par transaction, ni de 14 secondes par écran : il décrit une seule cellule CUA confinée sur un sous-module de 2008 (6,5 % du volume, 19 secondes par avenant), 14 programmes RPGLE déjà encapsulés en MCP et une refonte « Big Bang » de 28 M$ CAD gelée (ici : refonte de 2023 abandonnée après 4,2 M$ CAD, trois modules concentrant 78 % des appels CUA). À trancher : aligner le rappel sur le chapitre 25 ou retirer le renvoi.",
+   "note": "Clos par le lot P1-B1 (entrées n° 550 à 553 du registre, 14 novembre 2026) : le fil rouge du chapitre 47 reprend les chiffres du chapitre 25. L'ancre ne figure plus dans le manuscrit."
   },
   {
    "id": "01-38",
