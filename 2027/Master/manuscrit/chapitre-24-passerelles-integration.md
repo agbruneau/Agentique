@@ -2,7 +2,7 @@
 
 *Question directrice : où appliquer les contrôles entre agents, outils et API ?*
 
-> **État de référence :** spécification MCP `2026-07-28`, brouillon « MCP Security Gateway 1.0 » de Microsoft, documentation d'agentgateway, d'Agent Router, d'Apigee, d'Azure API Management, de Kong et de MuleSoft Agent Fabric consultée les 11 et 12 novembre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre, toutes lues pour ce chapitre; [13] à [16] ont été ajoutées le 14 novembre 2026, [16] par son seul résumé. [1] et [6] sont des billets d'annonce : ils établissent ce qu'un projet ou un éditeur déclare, pas ce qu'un tiers a constaté.
+> **État de référence :** spécification MCP `2026-07-28`, brouillon « MCP Security Gateway 1.0 » de Microsoft, documentation d'agentgateway, d'Agent Router, d'Apigee, d'Azure API Management, de Kong et de MuleSoft Agent Fabric consultée les 11 et 12 novembre 2026. Les numéros entre crochets renvoient aux sources en fin de chapitre, toutes lues pour ce chapitre; [13] à [19] ont été ajoutées le 14 novembre 2026, [16] par son seul résumé. [1] et [6] sont des billets d'annonce : ils établissent ce qu'un projet ou un éditeur déclare, pas ce qu'un tiers a constaté.
 
 MCP et A2A décrivent des messages. Ils ne disent pas qui, dans une organisation donnée, a le droit de les envoyer, combien de fois, ni ce qu'il faut en conserver. La spécification MCP rend l'autorisation facultative, recommande la validation humaine sans l'imposer et ne définit pas le comportement d'une passerelle (chapitre 5). Chaque hôte, chaque serveur et chaque équipe peut donc appliquer sa propre règle, ou aucune.
 
@@ -69,6 +69,8 @@ Une passerelle qui sert d'intermédiaire OAuth vers une API tierce avec un ident
 ### Autorisation par outil
 
 L'unité de décision est l'outil, pas le serveur. Dans le brouillon, la liste de refus prime la liste d'autorisation, et une liste d'autorisation non vide exclut tout ce qu'elle ne nomme pas; vide, elle laisse tout passer [4], piège relevé au chapitre 30. Apigee regroupe les opérations permises dans un produit d'API [6]; agentgateway exprime l'accès aux outils et aux ressources par des règles CEL [2]; Kong annonce des contrôles d'accès par outil [9]. C'est ici que le registre devient contraignant : la passerelle refuse tout appel vers un serveur que le registre n'a pas approuvé, et un retrait du registre doit la couper (chapitre 8).
+
+Dans agentgateway, les règles d'autorisation MCP, écrites en CEL, portent sur les appels de méthodes MCP plutôt que sur la requête HTTP [17]. La politique `mcpAuthorization` s'attache à une route ou à un serveur MCP; ses règles lisent le nom de l'outil (`mcp.tool.name`), sa cible, la méthode et, si l'authentification MCP est active, les revendications du JWT, mais pas les arguments de l'appel. Un élément non permis est retiré de la réponse de liste : le client non autorisé ne le voit pas [18]. Pour l'autorisation HTTP, dont la politique MCP reprend le principe, une règle `deny` qui s'applique l'emporte; sans règle `allow`, la requête passe, et dès qu'il en existe une, ce qu'aucune ne retient est refusé [19]. La page MCP ne dit ni comment ses règles se combinent, ni quelle réponse reçoit un appel refusé. Aucune page lue ne traite de l'autorisation du trafic A2A.
 
 ### Approbation
 
@@ -268,6 +270,9 @@ Pages lues le 14 novembre 2026 :
 14. [AIMultiple — banc d'essai de passerelles MCP (page mise à jour le 9 novembre 2026)](https://aimultiple.com/de/mcp-gateway) — banc d'un cabinet d'analyse; version allemande lue.
 15. [MCP-Guard: A Multi-Stage Defense-in-Depth Framework for Securing Model Context Protocol in Agentic AI (arXiv 2508.10991, version 4 du 8 janvier 2026)](https://arxiv.org/html/2508.10991v4) — prépublication.
 16. [Chen et coll. — Rethinking MCP Security: A Large-Scale Study of Runtime MCP Servers and Security Scanner Reliability (arXiv 2607.11086, 13 juillet 2026)](https://arxiv.org/abs/2607.11086) — prépublication; résumé seulement.
+17. [agentgateway — MCP authorization](https://agentgateway.dev/docs/standalone/latest/documentation/mcp/mcp-authz/) — page entière (page d'orientation).
+18. [agentgateway — MCP authorization, référence de politique](https://agentgateway.dev/docs/standalone/latest/documentation/configuration/security/mcp-authz/) — lu par passages.
+19. [agentgateway — HTTP authorization](https://agentgateway.dev/docs/standalone/latest/documentation/configuration/security/http-authz/) — lu par passages.
 
 Sources secondaires : aucune n'est citée.
 
@@ -277,7 +282,7 @@ Sources secondaires : aucune n'est citée.
 - Que les scanners de MuleSoft relèvent les politiques sans les écrire est une interprétation des notes, qui ne le disent pas explicitement.
 - Le découpage en cinq contrôles est une synthèse de ce chapitre; aucun texte lu ne l'énonce tel quel.
 - Les fonctions d'une passerelle d'API classique viennent de la connaissance générale. Les remarques sur les descriptions d'API, la taille du catalogue, la clé de quota et l'approbation asynchrone sont des raisonnements.
-- [1], [2] et [9], seule page lue sur Kong, n'ont pas été relus. Les pages d'agentgateway sur l'authentification, l'autorisation et les garde-fous n'ont pas été lues.
+- [1], [2] et [9], seule page lue sur Kong, n'ont pas été relus. Les pages d'agentgateway sur l'autorisation ont été lues par passages le 14 novembre 2026 [17][18][19]; celles sur l'authentification et les garde-fous ne l'ont pas été, et aucune page sur l'autorisation du trafic A2A n'a été trouvée (deux adresses essayées, erreur 404). La règle « sans règle `allow`, la requête passe » est lue sur la page HTTP; son application à la politique MCP n'est pas écrite.
 - D'AWS AgentCore Gateway, seule la page de présentation [13] a été lue. Les autres iPaaS et les passerelles centrées sur l'inférence n'ont pas été lus.
 - Les seules données de performance citées viennent des sources [14] à [16], ajoutées le 14 novembre 2026. [14] est le banc d'un cabinet d'analyse dont un des éditeurs testés est client; aucun des produits décrits dans ce chapitre n'y figure. [15] est évalué par ses auteurs, hors ligne. [16] n'est connu que par son résumé. Aucune donnée d'adoption n'est citée, hormis les contributeurs déclarés par agentgateway.
 - Le paragraphe sur la passerelle gérée (24.1), la sous-section « Premières mesures » (24.5) et les lignes « Réglages d'origine » du tableau de 24.6 et de la grille datent du 14 novembre 2026.

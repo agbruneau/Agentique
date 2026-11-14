@@ -4,7 +4,7 @@
 
 ## E.1 Niveaux de preuve
 
-Chaque chapitre se termine par ses sources numérotées et par une section « Limites de ce chapitre ». Les chapitres 1 à 47 en listent 775 au total (la partie X est décomptée à la section E.4); une source citée par plusieurs chapitres compte pour chacun.
+Chaque chapitre se termine par ses sources numérotées et par une section « Limites de ce chapitre ». Les chapitres 1 à 47 en listent 789 au total (la partie X est décomptée à la section E.4); une source citée par plusieurs chapitres compte pour chacun.
 
 Trois marques qualifient une affirmation.
 
@@ -80,7 +80,7 @@ Le dernier point pèse sur la thèse de l'ouvrage : l'interopérabilité par pro
 
 ## E.4 Sources de la partie X
 
-La partie X a été écrite le 13 novembre 2026, après la clôture des chapitres 1 à 47. Ses trois chapitres listent 244 sources, qui s'ajoutent aux 775 de la section E.1 sans y être comptées.
+La partie X a été écrite le 13 novembre 2026, après la clôture des chapitres 1 à 47. Ses trois chapitres listent 244 sources, qui s'ajoutent aux 789 de la section E.1 sans y être comptées.
 
 | Chapitre | Sources | Nature | Lecture |
 |---|---|---|---|

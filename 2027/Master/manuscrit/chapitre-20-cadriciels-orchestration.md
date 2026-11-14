@@ -2,7 +2,7 @@
 
 *Question directrice : sur quoi bâtir, et comment éviter le verrouillage ?*
 
-> **État de référence :** documentation des éditeurs telle que publiée à cette date (pages Microsoft datées des 22 et 23 octobre 2026, ADK 2.0, DSPy 3.5.0). Les numéros entre crochets renvoient aux sources en fin de chapitre; toutes sont des pages primaires lues pour ce chapitre, sauf [14], lue en résumé, et [15], secondaire et non lue; [16] à [21] ont été ajoutées le 14 novembre 2026, [21] par son seul résumé.
+> **État de référence :** documentation des éditeurs telle que publiée à cette date (pages Microsoft datées des 22 et 23 octobre 2026, ADK 2.0, DSPy 3.5.0). Les numéros entre crochets renvoient aux sources en fin de chapitre; toutes sont des pages primaires lues pour ce chapitre, sauf [14], lue en résumé, et [15], secondaire et non lue; [16] à [25] ont été ajoutées le 14 novembre 2026, [21] par son seul résumé.
 
 Un modèle de langage produit une réponse à partir d'un contexte. Tout le reste est du code à écrire autour : la boucle qui enchaîne les appels d'outils, l'état qui survit d'une étape à l'autre, la répartition du travail entre agents, la pause qui attend une approbation. Un cadriciel d'orchestration fournit ce code, et son choix passe pour structurant.
 
@@ -114,11 +114,15 @@ Le SDK d'OpenAI revendique la sobriété : assez de fonctions pour valoir la pei
 
 Le traçage est relié aux outils d'évaluation et d'ajustement d'OpenAI, et les modèles d'OpenAI passent par défaut par son API Responses [9]. Le SDK accepte d'autres fournisseurs, mais sa pente naturelle mène à la plateforme de l'éditeur.
 
+Un run mis en pause se convertit en `RunState`, se sérialise en JSON vers une base ou une file, puis se recharge, au besoin dans un autre processus [23]. Cet état non authentifié porte les approbations et les appels d'outils en attente, et une approbation ne garantit pas l'exécution unique [23]. Les réessais d'appel au modèle sont sur option (`ModelSettings(retry=...)`) [25]; pour survivre à un redémarrage, la documentation renvoie à l'exécution durable, dont Temporal et Restate [24].
+
 ### Google ADK
 
 ADK est le plus large des trois : cinq langages (Python, TypeScript, Go, Java, Kotlin), des adaptateurs pour d'autres modèles que Gemini, y compris locaux, et un déploiement par conteneur autohébergé ou sur Google Cloud (Agent Runtime, Cloud Run, GKE) [10]. Il couvre aussi l'évaluation et l'observabilité.
 
 La version 2.0, annoncée en disponibilité générale pour TypeScript, introduit les **workflows à graphe**, qui mêlent code déterministe et raisonnement adaptatif [10]. Un SDK de fournisseur rejoint ainsi le modèle de la section 20.2. ADK est aussi le seul des trois dont la page lue cite A2A, et il sait exposer un agent comme serveur MCP.
+
+En Python depuis la version 1.16, et en Kotlin, un workflow devient reprenable par `ResumabilityConfig` sur l'objet `App` et se relance avec l'identifiant de l'invocation interrompue [22]. Les étapes terminées sont journalisées, résultats d'outils compris, mais un outil peut s'exécuter de nouveau : la page demande qu'un outil à effet empêche la double exécution. La reprise n'est pas offerte depuis l'interface web ni la ligne de commande, ni, par défaut, aux agents personnalisés [22].
 
 ### Claude Agent SDK
 
@@ -189,8 +193,8 @@ Le verrouillage se déplace donc plus qu'il ne disparaît. Il quitte la biblioth
 | LangGraph [1][2][3][17][19] | Graphe : état typé, nœuds, arêtes | Points de contrôle par fil; magasin à choisir | Bibliothèque autonome sous licence MIT; déploiement géré et A2A dans un produit distinct |
 | CrewAI [4][5] | Flow qui enveloppe des Crews | État de Flow persistant | Licence MIT; production A2A renvoyée à la plateforme commerciale AMP |
 | Microsoft Agent Framework [6][7][8] | Agent, harnais, workflow à graphe | Sessions; points de contrôle par super-étape; extension durable | Multi-modèles; licence MIT; paquets en préversion selon le langage |
-| OpenAI Agents SDK [9] | Agent, transfert, garde-fou | Sessions; bac à sable reprenable | Pente vers l'API et le traçage de l'éditeur |
-| Google ADK [10][11] | Agents, workflows gabarits et à graphe | Sessions, état, mémoire; reprise non lue | Multi-modèles; déploiement libre ou Google Cloud |
+| OpenAI Agents SDK [9][23][24][25] | Agent, transfert, garde-fou | Sessions; bac à sable reprenable; état de run sérialisable; réessais sur option | Pente vers l'API et le traçage de l'éditeur |
+| Google ADK [10][11][22] | Agents, workflows gabarits et à graphe | Sessions, état, mémoire; workflow reprenable (Python, Kotlin) | Multi-modèles; déploiement libre ou Google Cloud |
 | Claude Agent SDK [12] | Harnais, sous-agents, hooks | Sessions à reprendre ou dupliquer | Binaire Claude Code; conditions commerciales |
 | DSPy [13] | Signature, module, optimiseur | Hors sujet : couche de prompt | Python; exige exemples et métrique |
 
@@ -274,12 +278,19 @@ Sources ajoutées le 14 novembre 2026 :
 20. [Zhang, Zhang et Tan — Dissecting Bug Triggers and Failure Modes in Modern Agentic Frameworks: An Empirical Study (arXiv 2604.08906, 10 avril 2026)](https://arxiv.org/html/2604.08906v1) — prépublication, lue le 14 novembre 2026; étendue de lecture non consignée.
 21. [Zhu et coll. — Where Agent Frameworks Fall Short: Examining Functional Challenges and Usability Concerns (arXiv 2602.21806, version 4 du 6 août 2026)](https://arxiv.org/abs/2602.21806) — prépublication; résumé seulement.
 
+Pages lues le 14 novembre 2026 :
+
+22. [Agent Development Kit — Resume Agents](https://adk.dev/runtime/resume/) — lu par passages.
+23. [OpenAI Agents SDK — Human-in-the-loop](https://openai.github.io/openai-agents-python/human_in_the_loop/) — lu par passages.
+24. [OpenAI Agents SDK — Running agents](https://openai.github.io/openai-agents-python/running_agents/) — lu par passages.
+25. [OpenAI Agents SDK — Models](https://openai.github.io/openai-agents-python/models/) — lu par passages.
+
 ## Limites de ce chapitre
 
 - Le relevé [15], appui prévu par le plan initial, n'a pas été lu, et sa parution dans *Future Internet* n'a pas été confirmée. Sa comparaison des cadriciels n'est donc pas reprise, et rien n'établit que les quatre critères de la section 20.1 en proviennent.
 - La plupart des pages ont été lues par un outil d'extraction qui en restitue le contenu en condensé; les pages de Microsoft et d'Anthropic l'ont été en texte intégral. La version A2A par défaut de CrewAI et la limite de récursion de LangGraph, à revérifier, ont été confirmées à la relecture.
 - La page d'accueil d'ADK n'annonce la version 2.0 en disponibilité générale que pour TypeScript; le statut des autres langages n'a pas été lu.
-- Une à quatre pages par produit ont été lues; restent non décrits la reprise sur échec dans ADK et dans l'OpenAI Agents SDK, et les modèles acceptés par le Claude Agent SDK. La prise en charge de MCP par LangChain et par CrewAI, celle d'A2A par Agent Server et les licences de LangGraph, de CrewAI et de Microsoft Agent Framework ont été lues le 14 novembre 2026, de [16] à [19]; les licences viennent de la page d'accueil des dépôts, non du texte des licences.
+- Une à quatre pages par produit ont été lues; restent non décrits les modèles acceptés par le Claude Agent SDK. La reprise sur échec dans ADK et dans l'OpenAI Agents SDK a été lue par passages le 14 novembre 2026, de [22] à [25]; le service de sessions qu'exige la reprise dans ADK, sa prise en charge dans les autres langages et le fonctionnement des intégrations d'exécution durable d'OpenAI ne l'ont pas été. La prise en charge de MCP par LangChain et par CrewAI, celle d'A2A par Agent Server et les licences de LangGraph, de CrewAI et de Microsoft Agent Framework ont été lues le 14 novembre 2026, de [16] à [19]; les licences viennent de la page d'accueil des dépôts, non du texte des licences.
 - Aucun chiffre de coût en jetons ni d'adoption n'est cité, faute de source lue; le raisonnement de la section 20.1 sur le coût des abstractions est une analyse. Les seuls chiffres de performance, sur MetaGPT et ChatDev, sont repris du chapitre 21 sans relecture de MAST.
 - La convergence des cadriciels, le déplacement du verrouillage et la distinction entre bibliothèque et harnais sont des synthèses de ce chapitre, non des thèses lues dans une source.
 - MetaGPT n'est connu que par le résumé de son article; son rangement parmi les approches « déclaratives » suit le plan initial et convient mieux à DSPy.

@@ -6469,5 +6469,239 @@
   "categorie": "harmonisation",
   "motif": "Lot P3-L3 : décompte du bandeau mis à jour (source [20] du chapitre 10).",
   "origine": "plan 2027, lot P3-L3"
+ },
+ {
+  "n": 720,
+  "fichier": "chapitre-20-cadriciels-orchestration.md",
+  "avant": "sa pente naturelle mène à la plateforme de l'éditeur.\n\n### Google ADK",
+  "apres": "sa pente naturelle mène à la plateforme de l'éditeur.\n\nUn run mis en pause se convertit en `RunState`, se sérialise en JSON vers une base ou une file, puis se recharge, au besoin dans un autre processus [23]. Cet état non authentifié porte les approbations et les appels d'outils en attente, et une approbation ne garantit pas l'exécution unique [23]. Les réessais d'appel au modèle sont sur option (`ModelSettings(retry=...)`) [25]; pour survivre à un redémarrage, la documentation renvoie à l'exécution durable, dont Temporal et Restate [24].\n\n### Google ADK",
+  "categorie": "enrichissement",
+  "motif": "Ajoute la reprise sur échec de l'OpenAI Agents SDK (RunState, réessais, exécution durable), lacune déclarée dans les Limites, d'après sa documentation lue le 14 novembre 2026.",
+  "origine": "plan 2027, lot P4-5"
+ },
+ {
+  "n": 721,
+  "fichier": "chapitre-20-cadriciels-orchestration.md",
+  "avant": "il sait exposer un agent comme serveur MCP.\n\n### Claude Agent SDK",
+  "apres": "il sait exposer un agent comme serveur MCP.\n\nEn Python depuis la version 1.16, et en Kotlin, un workflow devient reprenable par `ResumabilityConfig` sur l'objet `App` et se relance avec l'identifiant de l'invocation interrompue [22]. Les étapes terminées sont journalisées, résultats d'outils compris, mais un outil peut s'exécuter de nouveau : la page demande qu'un outil à effet empêche la double exécution. La reprise n'est pas offerte depuis l'interface web ni la ligne de commande, ni, par défaut, aux agents personnalisés [22].\n\n### Claude Agent SDK",
+  "categorie": "enrichissement",
+  "motif": "Ajoute la reprise d'un workflow interrompu dans Google ADK, lacune déclarée dans les Limites, d'après la page « Resume Agents » lue le 14 novembre 2026.",
+  "origine": "plan 2027, lot P4-5"
+ },
+ {
+  "n": 722,
+  "fichier": "chapitre-20-cadriciels-orchestration.md",
+  "avant": "| OpenAI Agents SDK [9] | Agent, transfert, garde-fou | Sessions; bac à sable reprenable |",
+  "apres": "| OpenAI Agents SDK [9][23][24][25] | Agent, transfert, garde-fou | Sessions; bac à sable reprenable; état de run sérialisable; réessais sur option |",
+  "categorie": "enrichissement",
+  "motif": "Aligne la grille de sélection sur le complément sur la reprise dans l'OpenAI Agents SDK.",
+  "origine": "plan 2027, lot P4-5"
+ },
+ {
+  "n": 723,
+  "fichier": "chapitre-20-cadriciels-orchestration.md",
+  "avant": "| Google ADK [10][11] | Agents, workflows gabarits et à graphe | Sessions, état, mémoire; reprise non lue |",
+  "apres": "| Google ADK [10][11][22] | Agents, workflows gabarits et à graphe | Sessions, état, mémoire; workflow reprenable (Python, Kotlin) |",
+  "categorie": "enrichissement",
+  "motif": "Remplace « reprise non lue » par ce que la page de reprise d'ADK, lue le 14 novembre 2026, établit.",
+  "origine": "plan 2027, lot P4-5"
+ },
+ {
+  "n": 724,
+  "fichier": "chapitre-20-cadriciels-orchestration.md",
+  "avant": "[16] à [21] ont été ajoutées le 14 novembre 2026, [21] par son seul résumé.",
+  "apres": "[16] à [25] ont été ajoutées le 14 novembre 2026, [21] par son seul résumé.",
+  "categorie": "enrichissement",
+  "motif": "Met le bandeau à jour après l'ajout des sources [22] à [25].",
+  "origine": "plan 2027, lot P4-5"
+ },
+ {
+  "n": 725,
+  "fichier": "chapitre-20-cadriciels-orchestration.md",
+  "avant": "— prépublication; résumé seulement.\n\n## Limites de ce chapitre",
+  "apres": "— prépublication; résumé seulement.\n\nPages lues le 14 novembre 2026 :\n\n22. [Agent Development Kit — Resume Agents](https://adk.dev/runtime/resume/) — lu par passages.\n23. [OpenAI Agents SDK — Human-in-the-loop](https://openai.github.io/openai-agents-python/human_in_the_loop/) — lu par passages.\n24. [OpenAI Agents SDK — Running agents](https://openai.github.io/openai-agents-python/running_agents/) — lu par passages.\n25. [OpenAI Agents SDK — Models](https://openai.github.io/openai-agents-python/models/) — lu par passages.\n\n## Limites de ce chapitre",
+  "categorie": "enrichissement",
+  "motif": "Ajoute les sources [22] à [25] du complément sur la reprise sur échec.",
+  "origine": "plan 2027, lot P4-5"
+ },
+ {
+  "n": 726,
+  "fichier": "chapitre-20-cadriciels-orchestration.md",
+  "avant": "restent non décrits la reprise sur échec dans ADK et dans l'OpenAI Agents SDK, et les modèles acceptés par le Claude Agent SDK.",
+  "apres": "restent non décrits les modèles acceptés par le Claude Agent SDK. La reprise sur échec dans ADK et dans l'OpenAI Agents SDK a été lue par passages le 14 novembre 2026, de [22] à [25]; le service de sessions qu'exige la reprise dans ADK, sa prise en charge dans les autres langages et le fonctionnement des intégrations d'exécution durable d'OpenAI ne l'ont pas été.",
+  "categorie": "enrichissement",
+  "motif": "Met à jour la limite qui déclarait la reprise sur échec non décrite.",
+  "origine": "plan 2027, lot P4-5"
+ },
+ {
+  "n": 727,
+  "fichier": "chapitre-24-passerelles-integration.md",
+  "avant": "un retrait du registre doit la couper (chapitre 8).\n\n### Approbation",
+  "apres": "un retrait du registre doit la couper (chapitre 8).\n\nDans agentgateway, les règles d'autorisation MCP, écrites en CEL, portent sur les appels de méthodes MCP plutôt que sur la requête HTTP [17]. La politique `mcpAuthorization` s'attache à une route ou à un serveur MCP; ses règles lisent le nom de l'outil (`mcp.tool.name`), sa cible, la méthode et, si l'authentification MCP est active, les revendications du JWT, mais pas les arguments de l'appel. Un élément non permis est retiré de la réponse de liste : le client non autorisé ne le voit pas [18]. Pour l'autorisation HTTP, dont la politique MCP reprend le principe, une règle `deny` qui s'applique l'emporte; sans règle `allow`, la requête passe, et dès qu'il en existe une, ce qu'aucune ne retient est refusé [19]. La page MCP ne dit ni comment ses règles se combinent, ni quelle réponse reçoit un appel refusé. Aucune page lue ne traite de l'autorisation du trafic A2A.\n\n### Approbation",
+  "categorie": "enrichissement",
+  "motif": "Ajoute ce que la documentation d'agentgateway dit de l'autorisation MCP (CEL, variables, filtrage des listes, sémantique allow/deny), lacune déclarée dans les Limites.",
+  "origine": "plan 2027, lot P4-5"
+ },
+ {
+  "n": 728,
+  "fichier": "chapitre-24-passerelles-integration.md",
+  "avant": "[13] à [16] ont été ajoutées le 14 novembre 2026, [16] par son seul résumé.",
+  "apres": "[13] à [19] ont été ajoutées le 14 novembre 2026, [16] par son seul résumé.",
+  "categorie": "enrichissement",
+  "motif": "Met le bandeau à jour après l'ajout des sources [17] à [19].",
+  "origine": "plan 2027, lot P4-5"
+ },
+ {
+  "n": 729,
+  "fichier": "chapitre-24-passerelles-integration.md",
+  "avant": "— prépublication; résumé seulement.\n\nSources secondaires : aucune n'est citée.",
+  "apres": "— prépublication; résumé seulement.\n17. [agentgateway — MCP authorization](https://agentgateway.dev/docs/standalone/latest/documentation/mcp/mcp-authz/) — page entière (page d'orientation).\n18. [agentgateway — MCP authorization, référence de politique](https://agentgateway.dev/docs/standalone/latest/documentation/configuration/security/mcp-authz/) — lu par passages.\n19. [agentgateway — HTTP authorization](https://agentgateway.dev/docs/standalone/latest/documentation/configuration/security/http-authz/) — lu par passages.\n\nSources secondaires : aucune n'est citée.",
+  "categorie": "enrichissement",
+  "motif": "Ajoute les sources [17] à [19] du complément sur l'autorisation dans agentgateway.",
+  "origine": "plan 2027, lot P4-5"
+ },
+ {
+  "n": 730,
+  "fichier": "chapitre-24-passerelles-integration.md",
+  "avant": "Les pages d'agentgateway sur l'authentification, l'autorisation et les garde-fous n'ont pas été lues.",
+  "apres": "Les pages d'agentgateway sur l'autorisation ont été lues par passages le 14 novembre 2026 [17][18][19]; celles sur l'authentification et les garde-fous ne l'ont pas été, et aucune page sur l'autorisation du trafic A2A n'a été trouvée (deux adresses essayées, erreur 404). La règle « sans règle `allow`, la requête passe » est lue sur la page HTTP; son application à la politique MCP n'est pas écrite.",
+  "categorie": "enrichissement",
+  "motif": "Met à jour la limite qui déclarait non lues les pages d'agentgateway sur l'autorisation.",
+  "origine": "plan 2027, lot P4-5"
+ },
+ {
+  "n": 731,
+  "fichier": "chapitre-14-memoire.md",
+  "avant": "ne mentionne aucun risque d'empoisonnement.\n\nPour la portabilité",
+  "apres": "ne mentionne aucun risque d'empoisonnement.\n\nChez Microsoft, la mémoire de Foundry Agent Service, en préversion, est un service géré de mémoire à long terme [34]. Un modèle de langage extrait des conversations trois types de souvenirs (profil de l'utilisateur, résumé de conversation, mémoire procédurale), activés par défaut, puis les consolide en fusionnant les doublons et en résolvant les contradictions. Le paramètre `scope` cloisonne les souvenirs, par exemple par client; l'outil de recherche de mémoire peut le déduire de l'identité de l'utilisateur, les API de bas niveau exigent de le fournir à chaque requête [35]. Chaque magasin fixe une durée de vie par défaut en secondes, 0 signifiant aucune expiration. On supprime un souvenir, une portée, opération destinée aux demandes de suppression, ou un magasin entier, de façon irréversible [35]. La page de présentation range l'injection de prompt et la corruption de la mémoire parmi les risques [34].\n\nPour la portabilité",
+  "categorie": "enrichissement",
+  "motif": "Ajoute la mémoire gérée de Microsoft Foundry Agent Service (types, portée, rétention, suppression), lacune déclarée dans les Limites, d'après Microsoft Learn.",
+  "origine": "plan 2027, lot P4-5"
+ },
+ {
+  "n": 732,
+  "fichier": "chapitre-14-memoire.md",
+  "avant": "[33], page d'éditeur, a été lue le 14 novembre 2026.",
+  "apres": "[33] à [35], pages d'éditeurs, ont été lues le 14 novembre 2026.",
+  "categorie": "enrichissement",
+  "motif": "Met le bandeau à jour après l'ajout des sources [34] et [35].",
+  "origine": "plan 2027, lot P4-5"
+ },
+ {
+  "n": 733,
+  "fichier": "chapitre-14-memoire.md",
+  "avant": "Page d'éditeur lue le 14 novembre 2026 :\n\n33. ",
+  "apres": "Pages lues le 14 novembre 2026 :\n\n33. ",
+  "categorie": "enrichissement",
+  "motif": "Renomme l'intertitre de la dernière liste de sources, qui comptera trois pages.",
+  "origine": "plan 2027, lot P4-5"
+ },
+ {
+  "n": 734,
+  "fichier": "chapitre-14-memoire.md",
+  "avant": "(https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/overview)\n\n## Limites de ce chapitre",
+  "apres": "(https://docs.cloud.google.com/agent-builder/agent-engine/memory-bank/overview)\n34. [Microsoft Learn — What is Memory? (Foundry Agent Service, préversion; page datée du 2 juin 2026)](https://learn.microsoft.com/en-us/azure/foundry/agents/concepts/what-is-memory) — page entière.\n35. [Microsoft Learn — Create and use memory in Foundry Agent Service (page datée du 6 octobre 2026)](https://learn.microsoft.com/en-us/azure/foundry/agents/how-to/memory-usage) — lu par passages (portée, rétention, suppression).\n\n## Limites de ce chapitre",
+  "categorie": "enrichissement",
+  "motif": "Ajoute les sources [34] et [35] du complément sur la mémoire gérée de Microsoft.",
+  "origine": "plan 2027, lot P4-5"
+ },
+ {
+  "n": 735,
+  "fichier": "chapitre-14-memoire.md",
+  "avant": "Celle de Microsoft et la mémoire paramétrique ou latente [2] ne sont pas traitées.",
+  "apres": "Celle de Microsoft l'a été le même jour, par sa page de présentation [34] et par passages de son guide d'utilisation [35]; ses quotas, ses régions et sa tarification, propres à une préversion, ne sont pas repris. La mémoire paramétrique ou latente [2] n'est pas traitée.",
+  "categorie": "enrichissement",
+  "motif": "Met à jour la limite qui déclarait la mémoire gérée de Microsoft non traitée.",
+  "origine": "plan 2027, lot P4-5"
+ },
+ {
+  "n": 736,
+  "fichier": "chapitre-38-canada-quebec.md",
+  "avant": "Transposer cette lecture à l'article 12.1 est une analogie, raisonnable vu l'identité des textes.\n\n| | Loi 25",
+  "apres": "Transposer cette lecture à l'article 12.1 est une analogie, raisonnable vu l'identité des textes.\n\nLe site de la Commission d'accès à l'information, parcouru le 14 novembre 2026, n'offre ni décision ni orientation sur l'article 12.1. Ses pages explicatives résument l'obligation [23][24]; celle sur les droits des personnes parle d'une décision « entièrement automatisée », sans dire quel degré d'intervention humaine écarte la règle [24]. Les décisions que la Commission rend comme tribunal administratif sont publiées par la SOQUIJ, qui n'a pas été consultée [25]. Dans la partie lue de la liste des décisions de sa section de surveillance, aucun titre ne porte sur la décision automatisée [26]. Ses rapports et mémoires comptent plusieurs documents sur l'IA, dont un mémoire de janvier 2025, « L'IA au travail : pour un meilleur encadrement », non lu [27]. La lecture du mot « exclusivement » reste donc celle de la page gouvernementale [10], transposée par analogie.\n\n| | Loi 25",
+  "categorie": "enrichissement",
+  "motif": "Ajoute le résultat de la recherche d'orientations de la Commission d'accès à l'information sur l'article 12.1, lacune déclarée dans les Limites.",
+  "origine": "plan 2027, lot P4-5"
+ },
+ {
+  "n": 737,
+  "fichier": "chapitre-38-canada-quebec.md",
+  "avant": "[18] à [22] ont été ajoutées le 14 novembre 2026,",
+  "apres": "[18] à [27] ont été ajoutées le 14 novembre 2026,",
+  "categorie": "enrichissement",
+  "motif": "Met le bandeau à jour après l'ajout des sources [23] à [27].",
+  "origine": "plan 2027, lot P4-5"
+ },
+ {
+  "n": 738,
+  "fichier": "chapitre-38-canada-quebec.md",
+  "avant": "— non lue : erreur 403.\n\n## Limites de ce chapitre",
+  "apres": "— non lue : erreur 403.\n\nPages lues le 14 novembre 2026 :\n\n23. [CAI — Principaux changements aux lois sur la protection des renseignements personnels](https://www.cai.gouv.qc.ca/protection-renseignements-personnels/sujets-et-domaines-dinteret/principaux-changements-loi-25) — lu par passages.\n24. [CAI — Vos droits](https://www.cai.gouv.qc.ca/protection-renseignements-personnels/citoyens-protection-renseignements-personnels/acces-et-protection-renseignements-personnels) — lu par passages (section sur la décision automatisée).\n25. [CAI — Décisions du tribunal administratif, protection des renseignements personnels](https://www.cai.gouv.qc.ca/protection-renseignements-personnels/decisions-tribunal-administratif-commission) — page entière.\n26. [CAI — Décisions de la section de surveillance](https://www.cai.gouv.qc.ca/commission-acces-information/acces-information-de-la-commission/decisions-de-commission-section-surveillance) — première moitié de la liste lue.\n27. [CAI — Rapports, études et documents officiels](https://www.cai.gouv.qc.ca/commission-acces-information/rapports-etudes-documents-officiels) — liste lue; documents non ouverts.\n\n## Limites de ce chapitre",
+  "categorie": "enrichissement",
+  "motif": "Ajoute les sources [23] à [27] du complément sur la Commission d'accès à l'information.",
+  "origine": "plan 2027, lot P4-5"
+ },
+ {
+  "n": 739,
+  "fichier": "chapitre-38-canada-quebec.md",
+  "avant": "Aucune décision ni ligne directrice de la Commission d'accès à l'information n'a été lue.",
+  "apres": "Le site de la Commission d'accès à l'information a été parcouru le 14 novembre 2026 [23] à [27] sans qu'y soit trouvée de décision ni d'orientation sur l'article 12.1; le répertoire de la SOQUIJ, la seconde moitié de la liste des décisions de surveillance et les documents de la Commission sur l'IA n'ont pas été lus.",
+  "categorie": "enrichissement",
+  "motif": "Met à jour la limite qui déclarait non lues les décisions et orientations de la Commission.",
+  "origine": "plan 2027, lot P4-5"
+ },
+ {
+  "n": 740,
+  "fichier": "annexe-E-bibliographie.md",
+  "avant": "en listent 775 au total",
+  "apres": "en listent 789 au total",
+  "categorie": "harmonisation",
+  "motif": "Décompte des sources après le lot P4-5 du plan de travail : quatorze sources ajoutées aux chapitres 14, 20, 24 et 38 portent le total des chapitres 1 à 47 à 789.",
+  "origine": "plan 2027, lot P4-5-harmonisation"
+ },
+ {
+  "n": 741,
+  "fichier": "annexe-E-bibliographie.md",
+  "avant": "aux 775 de la section E.1",
+  "apres": "aux 789 de la section E.1",
+  "categorie": "harmonisation",
+  "motif": "Décompte des sources après le lot P4-5 du plan de travail : quatorze sources ajoutées aux chapitres 14, 20, 24 et 38 portent le total des chapitres 1 à 47 à 789.",
+  "origine": "plan 2027, lot P4-5-harmonisation"
+ },
+ {
+  "n": 742,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "est passé à 775 sources",
+  "apres": "est passé à 789 sources",
+  "categorie": "harmonisation",
+  "motif": "Décompte des sources après le lot P4-5 du plan de travail : quatorze sources ajoutées aux chapitres 14, 20, 24 et 38 portent le total des chapitres 1 à 47 à 789.",
+  "origine": "plan 2027, lot P4-5-harmonisation"
+ },
+ {
+  "n": 743,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "| Prépublication (arXiv pour l'essentiel) | 165 | 21,3 % |\n| Projet ouvert : spécification, dépôt, fondation | 146 | 18,8 % |\n| Organisme de normalisation ou de référence | 89 | 11,5 % |\n| Texte officiel ou organisme public | 53 | 6,8 % |\n| Analyste ou presse | 24 | 3,1 % |\n| Éditeur scientifique (article évalué par les pairs) | 3 | 0,4 % |\n| Documentation d'éditeur, de fournisseur, et autres | 295 | 38,1 % |\n| **Total** | **775** | **100 %** |",
+  "apres": "| Prépublication (arXiv pour l'essentiel) | 165 | 20,9 % |\n| Projet ouvert : spécification, dépôt, fondation | 149 | 18,9 % |\n| Organisme de normalisation ou de référence | 89 | 11,3 % |\n| Texte officiel ou organisme public | 58 | 7,4 % |\n| Analyste ou presse | 24 | 3,0 % |\n| Éditeur scientifique (article évalué par les pairs) | 3 | 0,4 % |\n| Documentation d'éditeur, de fournisseur, et autres | 301 | 38,1 % |\n| **Total** | **789** | **100 %** |",
+  "categorie": "harmonisation",
+  "motif": "Décompte des sources après le lot P4-5 du plan de travail : quatorze sources ajoutées aux chapitres 14, 20, 24 et 38 portent le total des chapitres 1 à 47 à 789. Le tableau du corpus est recalculé : 4 documentations d'éditeurs (chapitre 20), 3 pages d'un projet ouvert (chapitre 24), 2 documentations d'éditeur (chapitre 14), 5 pages d'un organisme public (chapitre 38).",
+  "origine": "plan 2027, lot P4-5-harmonisation"
+ },
+ {
+  "n": 744,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "Le tableau porte sur les 775 sources des chapitres 1 à 47 au 14 novembre 2026.",
+  "apres": "Le tableau porte sur les 789 sources des chapitres 1 à 47 au 14 novembre 2026.",
+  "categorie": "harmonisation",
+  "motif": "Décompte des sources après le lot P4-5 du plan de travail : quatorze sources ajoutées aux chapitres 14, 20, 24 et 38 portent le total des chapitres 1 à 47 à 789.",
+  "origine": "plan 2027, lot P4-5-harmonisation"
+ },
+ {
+  "n": 745,
+  "fichier": "chapitre-48-revue-litterature.md",
+  "avant": "Les 66 ajoutées depuis, soit les 65 compléments et le communiqué de la FIDO Alliance cité au chapitre 10, sont classées à la main : 21 prépublications, 2 articles de revue, 11 textes officiels ou d'organismes publics, 5 publications d'organismes de référence, 3 pages de projets ouverts, 14 documentations ou billets d'éditeurs et 10 analyses",
+  "apres": "Les 80 ajoutées depuis, soit les 65 compléments, le communiqué de la FIDO Alliance cité au chapitre 10 et quatorze sources ajoutées ensuite aux chapitres 14, 20, 24 et 38, sont classées à la main : 21 prépublications, 2 articles de revue, 16 textes officiels ou d'organismes publics, 5 publications d'organismes de référence, 6 pages de projets ouverts, 20 documentations ou billets d'éditeurs et 10 analyses",
+  "categorie": "harmonisation",
+  "motif": "Décompte des sources après le lot P4-5 du plan de travail : quatorze sources ajoutées aux chapitres 14, 20, 24 et 38 portent le total des chapitres 1 à 47 à 789.",
+  "origine": "plan 2027, lot P4-5-harmonisation"
  }
 ]

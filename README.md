@@ -5,7 +5,7 @@ Corpus documentaire sur la conception, l'intégration, la gouvernance et la supe
 | Dossier | Contenu | Livrable principal |
 | ------- | ------- | ------------------ |
 | [`2026/`](2026/) | Six livrables en PDF (échelle de maturité, veille technologique, revue de littérature, cadre de référence, note AMF, compendium), une présentation en onze diapositives et la chaîne de recomposition des PDF. | [`2026/documents/`](2026/documents/) |
-| [`2027/`](2027/) | Compendium 2027 : édition consolidée en dix parties, cinquante chapitres et huit annexes (1 093 pages), avec son manuscrit et sa chaîne de composition. | [`2027/CompendiumMaster.pdf`](2027/CompendiumMaster.pdf) |
+| [`2027/`](2027/) | Compendium 2027 : édition consolidée en dix parties, cinquante chapitres et huit annexes (1 095 pages), avec son manuscrit et sa chaîne de composition. | [`2027/CompendiumMaster.pdf`](2027/CompendiumMaster.pdf) |
 
 ## Édition 2026
 

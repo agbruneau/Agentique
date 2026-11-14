@@ -2,7 +2,7 @@
 
 *Question directrice : que sait la recherche, et avec quel degré de preuve, sur l'interopérabilité et l'orchestration d'agents ?*
 
-> **État de référence :** recherche menée le 13 novembre 2026 dans l'index Consensus (notices de Semantic Scholar, d'OpenAlex et de PubMed) : dix requêtes, 124 notices rendues, 123 distinctes, 83 retenues, toutes lues par leur résumé seulement; titre, auteurs et lieu de publication de 82 d'entre elles confirmés le même jour auprès d'arXiv ou de Crossref; profil des 709 sources des chapitres 1 à 47, établi le même jour par un script sur le manuscrit; quinze travaux relevés hors protocole le 14 novembre 2026 (section 48.11), date à laquelle le corpus de l'ouvrage est passé à 775 sources. Les numéros entre crochets renvoient aux sources en fin de chapitre, classées selon que la notice indique ou non une revue ou une conférence.
+> **État de référence :** recherche menée le 13 novembre 2026 dans l'index Consensus (notices de Semantic Scholar, d'OpenAlex et de PubMed) : dix requêtes, 124 notices rendues, 123 distinctes, 83 retenues, toutes lues par leur résumé seulement; titre, auteurs et lieu de publication de 82 d'entre elles confirmés le même jour auprès d'arXiv ou de Crossref; profil des 709 sources des chapitres 1 à 47, établi le même jour par un script sur le manuscrit; quinze travaux relevés hors protocole le 14 novembre 2026 (section 48.11), date à laquelle le corpus de l'ouvrage est passé à 789 sources. Les numéros entre crochets renvoient aux sources en fin de chapitre, classées selon que la notice indique ou non une revue ou une conférence.
 
 Les quarante-sept chapitres qui précèdent s'appuient d'abord sur la documentation des projets et des éditeurs : c'est elle qui dit ce qu'un protocole spécifie et ce qu'un produit annonce. La recherche y tient une place plus mince, et presque toujours sous forme de prépublication. Ce chapitre prend la question par l'autre bout. Il part d'une recherche indépendante dans la littérature scientifique, la confronte au corpus de l'ouvrage et classe ce qui en sort en trois piles : ce qui est mesuré, ce qui est débattu, ce qui manque.
 
@@ -62,14 +62,14 @@ Ce n'est pas une revue systématique. Une seule base a été interrogée, par di
 
 | Nature de la source, d'après son adresse | Sources | Part |
 |---|---|---|
-| Prépublication (arXiv pour l'essentiel) | 165 | 21,3 % |
-| Projet ouvert : spécification, dépôt, fondation | 146 | 18,8 % |
-| Organisme de normalisation ou de référence | 89 | 11,5 % |
-| Texte officiel ou organisme public | 53 | 6,8 % |
-| Analyste ou presse | 24 | 3,1 % |
+| Prépublication (arXiv pour l'essentiel) | 165 | 20,9 % |
+| Projet ouvert : spécification, dépôt, fondation | 149 | 18,9 % |
+| Organisme de normalisation ou de référence | 89 | 11,3 % |
+| Texte officiel ou organisme public | 58 | 7,4 % |
+| Analyste ou presse | 24 | 3,0 % |
 | Éditeur scientifique (article évalué par les pairs) | 3 | 0,4 % |
-| Documentation d'éditeur, de fournisseur, et autres | 295 | 38,1 % |
-| **Total** | **775** | **100 %** |
+| Documentation d'éditeur, de fournisseur, et autres | 301 | 38,1 % |
+| **Total** | **789** | **100 %** |
 
 Près de quatre sources sur dix viennent d'un projet ouvert, d'un organisme de normalisation ou d'un texte officiel; quatre autres sur dix, de la documentation d'éditeurs et de fournisseurs, où le script range aussi ce qu'il n'a pas su classer. C'est cohérent avec l'objet de l'ouvrage : un protocole se lit dans sa spécification, non dans un article qui la commente.
 
@@ -91,7 +91,7 @@ Soixante-dix-sept des 83 notices retenues datent de 2025 ou de 2026. Trente et u
 
 **Les deux corpus se recoupent peu.** L'ouvrage cite déjà au moins neuf des travaux retrouvés, dont la taxonomie MAST, les deux revues de protocoles les plus citées [33][34], la défense CaMeL [3], le banc τ-bench [35] et l'architecture SagaLLM [4]. Il ne cite ni les essais randomisés sur la productivité, ni les audits de bancs d'essai, ni les analyses de sécurité des protocoles parues en 2026. Les sections qui suivent s'attachent d'abord à ces apports.
 
-Le tableau porte sur les 775 sources des chapitres 1 à 47 au 14 novembre 2026. Les 709 du 13 novembre y sont classées par leur adresse. Les 66 ajoutées depuis, soit les 65 compléments et le communiqué de la FIDO Alliance cité au chapitre 10, sont classées à la main : 21 prépublications, 2 articles de revue, 11 textes officiels ou d'organismes publics, 5 publications d'organismes de référence, 3 pages de projets ouverts, 14 documentations ou billets d'éditeurs et 10 analyses de cabinets, d'analystes ou de presse. Le classement mêle donc deux méthodes.
+Le tableau porte sur les 789 sources des chapitres 1 à 47 au 14 novembre 2026. Les 709 du 13 novembre y sont classées par leur adresse. Les 80 ajoutées depuis, soit les 65 compléments, le communiqué de la FIDO Alliance cité au chapitre 10 et quatorze sources ajoutées ensuite aux chapitres 14, 20, 24 et 38, sont classées à la main : 21 prépublications, 2 articles de revue, 16 textes officiels ou d'organismes publics, 5 publications d'organismes de référence, 6 pages de projets ouverts, 20 documentations ou billets d'éditeurs et 10 analyses de cabinets, d'analystes ou de presse. Le classement mêle donc deux méthodes.
 
 ---
 

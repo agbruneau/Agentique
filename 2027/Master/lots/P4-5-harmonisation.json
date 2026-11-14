@@ -1,0 +1,43 @@
+{
+ "id": "P4-5-harmonisation",
+ "origine": "plan 2027, lot P4-5-harmonisation",
+ "categorie": "harmonisation",
+ "remplacements": [
+  {
+   "fichier": "annexe-E-bibliographie.md",
+   "avant": "en listent 775 au total",
+   "apres": "en listent 789 au total",
+   "motif": "Décompte des sources après le lot P4-5 du plan de travail : quatorze sources ajoutées aux chapitres 14, 20, 24 et 38 portent le total des chapitres 1 à 47 à 789."
+  },
+  {
+   "fichier": "annexe-E-bibliographie.md",
+   "avant": "aux 775 de la section E.1",
+   "apres": "aux 789 de la section E.1",
+   "motif": "Décompte des sources après le lot P4-5 du plan de travail : quatorze sources ajoutées aux chapitres 14, 20, 24 et 38 portent le total des chapitres 1 à 47 à 789."
+  },
+  {
+   "fichier": "chapitre-48-revue-litterature.md",
+   "avant": "est passé à 775 sources",
+   "apres": "est passé à 789 sources",
+   "motif": "Décompte des sources après le lot P4-5 du plan de travail : quatorze sources ajoutées aux chapitres 14, 20, 24 et 38 portent le total des chapitres 1 à 47 à 789."
+  },
+  {
+   "fichier": "chapitre-48-revue-litterature.md",
+   "avant": "| Prépublication (arXiv pour l'essentiel) | 165 | 21,3 % |\n| Projet ouvert : spécification, dépôt, fondation | 146 | 18,8 % |\n| Organisme de normalisation ou de référence | 89 | 11,5 % |\n| Texte officiel ou organisme public | 53 | 6,8 % |\n| Analyste ou presse | 24 | 3,1 % |\n| Éditeur scientifique (article évalué par les pairs) | 3 | 0,4 % |\n| Documentation d'éditeur, de fournisseur, et autres | 295 | 38,1 % |\n| **Total** | **775** | **100 %** |",
+   "apres": "| Prépublication (arXiv pour l'essentiel) | 165 | 20,9 % |\n| Projet ouvert : spécification, dépôt, fondation | 149 | 18,9 % |\n| Organisme de normalisation ou de référence | 89 | 11,3 % |\n| Texte officiel ou organisme public | 58 | 7,4 % |\n| Analyste ou presse | 24 | 3,0 % |\n| Éditeur scientifique (article évalué par les pairs) | 3 | 0,4 % |\n| Documentation d'éditeur, de fournisseur, et autres | 301 | 38,1 % |\n| **Total** | **789** | **100 %** |",
+   "motif": "Décompte des sources après le lot P4-5 du plan de travail : quatorze sources ajoutées aux chapitres 14, 20, 24 et 38 portent le total des chapitres 1 à 47 à 789. Le tableau du corpus est recalculé : 4 documentations d'éditeurs (chapitre 20), 3 pages d'un projet ouvert (chapitre 24), 2 documentations d'éditeur (chapitre 14), 5 pages d'un organisme public (chapitre 38)."
+  },
+  {
+   "fichier": "chapitre-48-revue-litterature.md",
+   "avant": "Le tableau porte sur les 775 sources des chapitres 1 à 47 au 14 novembre 2026.",
+   "apres": "Le tableau porte sur les 789 sources des chapitres 1 à 47 au 14 novembre 2026.",
+   "motif": "Décompte des sources après le lot P4-5 du plan de travail : quatorze sources ajoutées aux chapitres 14, 20, 24 et 38 portent le total des chapitres 1 à 47 à 789."
+  },
+  {
+   "fichier": "chapitre-48-revue-litterature.md",
+   "avant": "Les 66 ajoutées depuis, soit les 65 compléments et le communiqué de la FIDO Alliance cité au chapitre 10, sont classées à la main : 21 prépublications, 2 articles de revue, 11 textes officiels ou d'organismes publics, 5 publications d'organismes de référence, 3 pages de projets ouverts, 14 documentations ou billets d'éditeurs et 10 analyses",
+   "apres": "Les 80 ajoutées depuis, soit les 65 compléments, le communiqué de la FIDO Alliance cité au chapitre 10 et quatorze sources ajoutées ensuite aux chapitres 14, 20, 24 et 38, sont classées à la main : 21 prépublications, 2 articles de revue, 16 textes officiels ou d'organismes publics, 5 publications d'organismes de référence, 6 pages de projets ouverts, 20 documentations ou billets d'éditeurs et 10 analyses",
+   "motif": "Décompte des sources après le lot P4-5 du plan de travail : quatorze sources ajoutées aux chapitres 14, 20, 24 et 38 portent le total des chapitres 1 à 47 à 789."
+  }
+ ]
+}
