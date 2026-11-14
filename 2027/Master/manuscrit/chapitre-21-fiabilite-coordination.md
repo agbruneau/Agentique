@@ -119,7 +119,7 @@ Le chapitre 12 traite le versant sémantique du phénomène, soit le vocabulaire
 
 ### La propagation
 
-Un désalignement non détecté se propage. L'étude de Kim et coll. observe une amplification des erreurs plus forte sans point central de vérification, tendance que son modèle final ne juge pas significative (chapitre 16) [5]. Anthropic note que les agents gardent un état sur de nombreux appels d'outils et que les erreurs s'y composent [6]. Le billet conclut que les domaines qui exigent un contexte partagé par tous les agents, ou de nombreuses dépendances entre eux, se prêtent mal au multi-agents aujourd'hui.
+Un désalignement non détecté se propage. L'étude de Kim et coll. observe une amplification des erreurs plus forte sans point central de vérification, mais son modèle final ne retient pas cette amplification comme prédicteur significatif de la performance : les écarts s'expliquent mieux par l'efficacité et le surcoût de coordination (chapitre 16) [5]. Anthropic note que les agents gardent un état sur de nombreux appels d'outils et que les erreurs s'y composent [6]. Le billet conclut que les domaines qui exigent un contexte partagé par tous les agents, ou de nombreuses dépendances entre eux, se prêtent mal au multi-agents aujourd'hui.
 
 ---
 
@@ -238,7 +238,7 @@ La comparaison à budget égal est le point de méthode essentiel. Anthropic rap
 
 MultiAgentBench évalue l'achèvement de la tâche et aussi la qualité de la collaboration, au moyen d'indicateurs fondés sur des jalons [8]. Anthropic conseille aussi d'évaluer, dans un workflow complexe, les points où un état précis doit changer [6]. Le principe se transpose : un processus d'affaires a des étapes intermédiaires vérifiables, et un système qui les franchit dans le désordre ou plusieurs fois se signale avant l'échec final.
 
-Le banc invite aussi à la prudence sur les notes de coordination. Son indicateur de jalons est la part des jalons auxquels chaque agent a contribué; sa note de coordination vient d'un modèle qui cote la communication et la planification sur cinq points [8]. Les deux peuvent diverger du résultat : dans le scénario Minecraft, un modèle obtient 75,00 en coordination et 0,21 en réussite de tâche, sur les échelles du tableau des auteurs. Ceux-ci en concluent que la capacité du modèle reste le premier facteur d'achèvement. Ils observent aussi que l'indicateur de jalons baisse quand le nombre d'agents passe de un à sept, et que la discussion de groupe est la pire des stratégies de planification essayées [8]. Une note de coordination élevée ne dit donc pas que le travail est fait.
+Le banc invite aussi à la prudence sur les notes de coordination. Son indicateur de jalons est la part des jalons auxquels chaque agent a contribué; sa note de coordination vient d'un modèle qui cote la communication et la planification sur cinq points [8]. Les deux peuvent diverger du résultat : dans le scénario Minecraft, un modèle obtient 75,00 en coordination et 0,21 en réussite de tâche, sur les échelles du tableau des auteurs. Ceux-ci en concluent que la capacité du modèle reste le premier facteur d'achèvement. Ils observent aussi, dans leur seul scénario de recherche, que l'indicateur de jalons baisse quand le nombre d'agents passe de un à sept (essais à un, trois, cinq et sept agents), et que la discussion de groupe est la pire des stratégies de planification essayées [8]. Une note de coordination élevée ne dit donc pas que le travail est fait.
 
 ### Attribuer l'échec
 
@@ -327,6 +327,7 @@ Aucune source secondaire n'appuie une affirmation du chapitre.
 
 ## Limites de ce chapitre
 
+- Les sources [1], [3], [5], [7] et [8], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - Les pages web ont été lues par un outil d'extraction qui condense le texte, sauf [4], lu directement. L'audit a relu par cet outil les parts par mode et les chiffres cités de MAST, les résumés de [3] et [7], les métriques de [5] et les passages cités de [6].
 - Les totaux par catégorie de la version 3 sont des sommes calculées. Les annexes de MAST, dont l'étude de cas sur AG2 et les taux d'échec par cadriciel, donnés en figures, n'ont pas été lues. MAST décrit le gain de 9,4 % tantôt comme un ajustement du workflow, tantôt comme une précision des rôles.
 - La section des limites de l'étude de Kim et coll. se trouve dans la partie non lue.

@@ -209,7 +209,7 @@ Quatre questions, dans cet ordre, suffisent à réduire la liste.
 
 Deux études empiriques éclairent la fragilité de cette couche. La première analyse 409 bogues corrigés dans cinq cadriciels : LangChain, LangGraph, CrewAI, AutoGen et SmolAgents [20]. Plus de la moitié (52 %) sont des fautes de programmation ordinaires, 22 % des fautes propres aux agents, surtout liées au modèle, et 12 % des fautes de documentation, le plus souvent un exemple de code erroné. La couche qui intègre le modèle est la plus touchée (24,7 % des bogues), et moins de la moitié de ses correctifs sont accompagnés d'un test. Les conditions de déclenchement tiennent à la configuration dans 92 % des cas analysés, d'abord aux réglages du modèle. Enfin, 16 des 35 bogues rejoués se transposent à un autre cadriciel. Les auteurs ne classent pas les produits : leurs décomptes portent sur des bogues corrigés, non sur des taux de défaut.
 
-La seconde, connue par son résumé, porte sur 5 669 rapports de bogue et 809 demandes de fonction dans cinq cadriciels. Selon sa propre classification, 76 % des bogues se manifestent par un comportement fonctionnel incorrect, et leurs causes relèvent davantage des API, de la configuration, de l'analyse et de la sérialisation que dans les cadriciels d'apprentissage profond [21].
+La seconde, connue par son résumé, porte sur 5 669 rapports de bogue et 809 demandes de fonction dans cinq cadriciels. Selon sa propre classification de 5 669 rapports de bogues publics tirés de cinq cadriciels, 76 % des bogues signalés se manifestent par un comportement fonctionnel incorrect, et leurs causes relèvent davantage des API, de la configuration, de l'analyse et de la sérialisation que dans les cadriciels d'apprentissage profond; ces rapports ne mesurent pas l'incidence réelle [21].
 
 Trois précautions en découlent, déduites ici : essayer la combinaison exacte de fournisseur et de modèle employée, plutôt que de se fier à la prise en charge annoncée; vérifier qu'un réglage est bien appliqué; ne pas tenir un exemple de documentation pour valide dans la version installée. La parenté des défauts d'un cadriciel à l'autre va dans le sens de la thèse du chapitre : le choix du produit pèse moins que la discipline d'essai (chapitre 34).
 
@@ -287,6 +287,7 @@ Pages lues le 14 novembre 2026 :
 
 ## Limites de ce chapitre
 
+- Les sources [14] et [21], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - Le relevé [15], appui prévu par le plan initial, n'a pas été lu, et sa parution dans *Future Internet* n'a pas été confirmée. Sa comparaison des cadriciels n'est donc pas reprise, et rien n'établit que les quatre critères de la section 20.1 en proviennent.
 - La plupart des pages ont été lues par un outil d'extraction qui en restitue le contenu en condensé; les pages de Microsoft et d'Anthropic l'ont été en texte intégral. La version A2A par défaut de CrewAI et la limite de récursion de LangGraph, à revérifier, ont été confirmées à la relecture.
 - La page d'accueil d'ADK n'annonce la version 2.0 en disponibilité générale que pour TypeScript; le statut des autres langages n'a pas été lu.

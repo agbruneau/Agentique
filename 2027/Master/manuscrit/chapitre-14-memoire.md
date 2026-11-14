@@ -45,17 +45,17 @@ MemGPT a posé en 2023 l'analogie qui structure encore le domaine : déplacer l'
 
 ### Des fichiers
 
-L'agent lit et écrit des fichiers texte avec les outils dont il dispose déjà. L'outil de mémoire de l'API de Claude en donne la forme la plus dépouillée : six commandes sur un répertoire `/memories`, exécutées côté client, sur un stockage que l'application contrôle et dont elle assure les protections [4]. Les *memory stores* de Claude Managed Agents, en bêta, appliquent le même principe côté serveur : chaque fonds est monté comme un répertoire dans le bac à sable de la session [5]. Letta projette la mémoire de l'agent dans des fichiers Markdown tenus dans un dépôt Git [6].
+L'agent lit et écrit des fichiers texte avec les outils dont il dispose déjà. L'outil de mémoire de l'API de Claude en donne la forme la plus dépouillée : six commandes sur un répertoire `/memories`, exécutées côté client, sur un stockage que l'application contrôle et dont elle assure les protections [4]. Les *memory stores* de Claude Managed Agents, en bêta, appliquent le même principe côté serveur : chaque fonds est monté comme un répertoire dans le bac à sable de la session [5]. Letta tient la mémoire partagée de plusieurs agents dans des dépôts Git que chaque agent lit et modifie avec des outils de fichiers ordinaires [6].
 
 Selon une synthèse de ZenML sur les déploiements en production, beaucoup d'équipes jugent une base vectorielle superflue quand le contexte est naturellement borné; un index vectoriel devient nécessaire pour une base de connaissances d'entreprise ou une mémoire durable entre sessions [30].
 
 ### Des vecteurs
 
-Un pipeline extrait les éléments saillants d'une conversation, les consolide et les indexe par plongements pour une récupération par similarité. Mem0 en est l'exemple type. Ses auteurs rapportent, sur le banc d'essai LOCOMO, une amélioration relative de 26 % sur la mémoire d'OpenAI et un coût en jetons réduit de plus de 90 % par rapport à l'injection de l'historique complet [12].
+Un pipeline extrait les éléments saillants d'une conversation, les consolide et les indexe par plongements pour une récupération par similarité. Mem0 en est l'exemple type. Ses auteurs rapportent, sur le banc d'essai LOCOMO et selon un modèle-juge, une amélioration relative de 26 % sur la mémoire d'OpenAI et un coût en jetons réduit de plus de 90 % par rapport à l'injection de l'historique complet [12].
 
 ### Des graphes
 
-Zep, avec son moteur Graphiti, range la mémoire dans un graphe de connaissances temporel qui conserve l'historique des relations. Ses auteurs rapportent 94,8 % sur le banc DMR, contre 93,4 % pour MemGPT [11]. D'après un compte rendu publié par ZenML, quand une donnée nouvelle contredit une ancienne, Graphiti n'efface pas la relation : il la marque comme invalide à partir d'une date. La construction du graphe coûte cher [31].
+Zep, avec son moteur Graphiti, range la mémoire dans un graphe de connaissances temporel qui conserve l'historique des relations. Ses auteurs, ceux du produit, rapportent 94,8 % sur le banc DMR, contre 93,4 % pour MemGPT (chiffre repris de l'article de MemGPT); ils jugent eux-mêmes ce banc peu représentatif des usages d'entreprise [11]. D'après un compte rendu publié par ZenML, quand une donnée nouvelle contredit une ancienne, Graphiti n'efface pas la relation : il la marque comme invalide à partir d'une date. La construction du graphe coûte cher [31].
 
 | Architecture | Force | Faiblesse | Convient quand |
 |---|---|---|---|
@@ -65,7 +65,7 @@ Zep, avec son moteur Graphiti, range la mémoire dans un graphe de connaissances
 
 ### Ce que valent les mesures
 
-LongMemEval, publié à ICLR 2025, évalue cinq capacités de mémoire sur 500 questions et rapporte une chute d'exactitude de 30 % chez les assistants commerciaux et les modèles à long contexte au fil d'interactions soutenues [13]. Deux réserves limitent la portée de ces bancs : ils portent sur des conversations entre un utilisateur et un assistant, non sur une mémoire partagée entre agents, et les comparaisons publiées, dont celles de Mem0 et de Zep, émanent des éditeurs. Une évaluation interne reste nécessaire avant de choisir.
+LongMemEval, publié à ICLR 2025, évalue cinq capacités de mémoire sur 500 questions et rapporte, dans son résumé, une chute d'exactitude de l'ordre de 30 % chez les assistants commerciaux (évalués sur 97 questions seulement) et les modèles à long contexte au fil d'interactions soutenues [13]. Deux réserves limitent la portée de ces bancs : ils portent sur des conversations entre un utilisateur et un assistant, non sur une mémoire partagée entre agents, et les comparaisons publiées, dont celles de Mem0 et de Zep, émanent des éditeurs. Une évaluation interne reste nécessaire avant de choisir.
 
 ### Écrire pendant ou après
 
@@ -93,7 +93,7 @@ Le même article de position constate que les permissions, la portée et la gran
 
 Collaborative Memory sépare un niveau privé et un niveau partagé; chaque fragment y porte des attributs de provenance immuables qui permettent une vérification rétrospective [16]. La prépublication sur la mémoire de flotte nomme quatre modes de défaillance (fuite non autorisée, propagation de données périmées, persistance de contradictions, effondrement de la provenance) et y oppose quatre primitives, dont la récupération bornée par portée et le suivi de provenance [15].
 
-Son résultat le plus instructif est un défaut trouvé en production. L'isolation entre locataires tenait, mais la portée inférieure au locataire était contournée par une lecture directe par identifiant, faite avec des justificatifs d'agent. Le défaut a été divulgué et corrigé pendant l'étude [15]. La leçon rejoint une règle du chapitre 5 (section 5.2) : un identifiant est un nom, pas un droit, et l'autorisation se vérifie sur chaque chemin de lecture.
+Son résultat le plus instructif est un défaut trouvé en production. L'étude, menée par les auteurs sur leur propre service depuis un seul locataire, n'a pas pu éprouver l'isolation entre locataires, attendue mais non vérifiée; elle a montré que la portée inférieure au locataire était contournée par une lecture directe par identifiant, faite avec des justificatifs d'agent. Le défaut a été divulgué et corrigé pendant l'étude [15]. La leçon rejoint une règle du chapitre 5 (section 5.2) : un identifiant est un nom, pas un droit, et l'autorisation se vérifie sur chaque chemin de lecture.
 
 Côté produits, deux mécanismes se retrouvent partout. Le premier est l'**espace de noms** : AgentCore Memory range chaque mémoire à long terme sous un chemin hiérarchique qui peut inclure l'acteur et la session [10]. Le second est le **mode d'accès** : un *memory store* s'attache à une session en lecture-écriture, le mode par défaut, ou en lecture seule. Contre l'injection, la documentation recommande de séparer un fonds de référence partagé, en lecture seule, du fonds propre à chaque session [5]. Ce réglage par défaut est l'inverse de celui que retient ce chapitre.
 
@@ -105,7 +105,7 @@ Aucun de ces mécanismes n'est normalisé, et leur rattachement aux droits de l'
 
 ### Pas de standard
 
-Aucune norme de mémoire d'agent n'a été trouvée à la date de rédaction. Chaque plateforme a son unité : un fichier [5], un document JSON [8], un fait extrait [10], une arête de graphe datée [11]. Passer de l'une à l'autre n'est pas une conversion de format : c'est une nouvelle extraction.
+Aucune norme de mémoire d'agent n'a été trouvée à la date de rédaction. Chaque plateforme a son unité : un fichier [5], un document JSON [8], un enregistrement extrait, fait, préférence ou résumé [10], une arête de graphe datée [11]. Passer de l'une à l'autre n'est pas une conversion de format : c'est une nouvelle extraction.
 
 Au niveau des assistants, la portabilité se résume à du texte copié : la page d'aide de Claude décrit l'importation comme le collage d'une liste de mémoires produite par l'autre service, et qualifie la fonction d'expérimentale [28].
 
@@ -143,7 +143,7 @@ La liste OWASP Top 10 for Agentic Applications, publiée le 9 décembre 2025, co
 
 ### Trois voies d'attaque documentées
 
-**Empoisonner le fonds.** AgentPoison glisse dans la mémoire ou la base de connaissances des exemples malveillants qu'un déclencheur optimisé fait remonter. Ses auteurs rapportent un taux de succès moyen supérieur à 80 % sur trois agents, avec moins de 0,1 % d'entrées empoisonnées et moins de 1 % de dégradation en usage normal [21].
+**Empoisonner le fonds.** AgentPoison glisse dans la mémoire ou la base de connaissances des exemples malveillants qu'un déclencheur optimisé fait remonter. Ses auteurs rapportent, sur trois agents, un taux moyen d'environ 81 % de récupération des exemples empoisonnés (59 % pour l'action cible visée), avec moins de 0,1 % d'entrées empoisonnées et moins de 1 % de dégradation en usage normal; l'attaque suppose un accès en boîte blanche à l'encodeur [21].
 
 **Empoisonner par simple conversation.** MINJA montre qu'un attaquant n'a pas besoin d'accéder au fonds : il y fait inscrire des enregistrements malveillants en interagissant avec l'agent comme n'importe quel utilisateur, et ces enregistrements se déclenchent ensuite sur la requête d'une victime [22]. Dans une mémoire partagée entre utilisateurs, tout utilisateur est donc un écrivain potentiel.
 
@@ -155,7 +155,7 @@ Microsoft a décrit en février 2026 un usage commercial du procédé : des bout
 
 Les agents de développement sont une autre cible. Un responsable de l'entrée ASI06, chercheur chez Cisco, rapporte une recherche de son employeur sur Claude Code : cloner un dépôt et approuver l'installation d'une dépendance suffisait pour qu'une charge malveillante atteigne la mémoire persistante et la configuration globale des *hooks*, avec un effet qui survivait aux sessions et aux redémarrages. La version 2.1.50 a retiré les mémoires d'utilisateur du prompt système [19].
 
-Le bilan du troisième trimestre 2026 du projet OWASP GenAI, non officiel, rattache à ASI06, par appréciation d'analystes, trois incidents : des instructions persistées dans la mémoire d'un assistant de programmation, une configuration d'agent déposée dans un dépôt et exécutée à son ouverture, des définitions d'outils MCP modifiées [20]. Lecture de ce chapitre, non du bilan : la persistance se loge dans ce à quoi l'agent fait déjà confiance.
+Le bilan du troisième trimestre 2026 du projet OWASP GenAI, non officiel, rattache à ASI06, par appréciation d'analystes, trois incidents : des instructions persistées dans la mémoire de Microsoft Copilot (offre personnelle), une configuration d'agent déposée dans un dépôt et exécutée à son ouverture, des définitions d'outils MCP modifiées [20]. Lecture de ce chapitre, non du bilan : la persistance se loge dans ce à quoi l'agent fait déjà confiance.
 
 ### Les fuites
 
@@ -165,7 +165,7 @@ L'autre risque est qu'un fait appris devant un public ressorte devant un autre. 
 
 | Contrôle | Ce qu'il empêche | Appui |
 |---|---|---|
-| Lecture seule par défaut; écriture accordée fonds par fonds | Qu'une injection réussie écrive dans une mémoire que d'autres sessions liront comme fiable | [5] |
+| Lecture seule pour tout fonds que l'agent n'a pas à modifier (le défaut du produit est la lecture-écriture); écriture accordée fonds par fonds | Qu'une injection réussie écrive dans une mémoire que d'autres sessions liront comme fiable | [5] |
 | Confirmation humaine avant d'enregistrer un souvenir | L'écriture différée par instruction dormante | [23] |
 | Provenance attachée à chaque écriture | L'impossibilité de remonter à l'origine d'un fait | [15][16] |
 | Versions immuables et retour arrière | La perte de l'état sain après une écriture malveillante | [5] |
@@ -282,6 +282,7 @@ Pages lues le 14 novembre 2026 :
 
 ## Limites de ce chapitre
 
+- Les sources [1], [2], [3], [4], [5], [6], [7], [8], [9], [10], [11], [12], [13], [14], [15], [16], [17], [18], [19], [20], [21], [22], [23], [24], [25], [26], [27] et [28], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - Le texte officiel de l'entrée ASI06 [32] n'a pas été lu; sa description repose sur trois billets du projet OWASP [18][19][20].
 - La plupart des articles d'arXiv ont été lus au niveau du résumé. Les chiffres cités pour Mem0, Zep, AgentPoison et LongMemEval sont ceux des résumés, et leurs conditions de mesure n'ont pas été vérifiées.
 - Le régime d'effacement de la LPRPDE n'est examiné ni ici ni au chapitre 38.

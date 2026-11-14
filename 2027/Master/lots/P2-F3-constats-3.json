@@ -8,7 +8,7 @@
   "url_lue": "https://arxiv.org/html/2510.09023",
   "citation_source": "we bypass 12 recent defenses (based on a diverse set of techniques) ... the majority of defenses originally reported near-zero attack success rates. ... with attack success rate above 90% for most",
   "constat": "",
-  "phrase_visee": "Une prépublication d'octobre 2025 l'a montré : douze défenses récentes contre le débridage et l'in",
+  "phrase_visee": "Une prépublication d'octobre 2025 l'a montré : douze défenses récentes contre le",
   "correction_proposee": null
  },
  {
@@ -20,7 +20,7 @@
   "url_lue": "https://arxiv.org/html/2606.15057",
   "citation_source": "Moreover, we show that most existing defenses either sacrifice considerable utility or are insecure. ... with under-specified tasks particularly vulnerable ... standard static benchmarks often significantly overestimate defense efficacy",
   "constat": "",
-  "phrase_visee": "AutoDojo, prépublication de juin 2026 révisée en septembre, transpose l'argument aux agents [10].",
+  "phrase_visee": "AutoDojo, prépublication de juin 2026 révisée en septembre, transpose l'argument",
   "correction_proposee": null
  },
  {
@@ -32,7 +32,7 @@
   "url_lue": "https://arxiv.org/html/2606.26479",
   "citation_source": "This is one small-scale data point on a weak model with a single black-box attack template; ... Not peer-reviewed. Preliminary internal results.",
   "constat": "Exact sur l'objet de l'article, mais les auteurs sont affiliés à LaunchSafe Research, qui développe ses propres outils de sécurité d'agents fondés sur cette approche (le texte le dit dans la conclusion); « reproduction indépendante » est leur propre étiquette, sur un sous-échantillon d'AgentDojo avec Qwen2.5-7B, v1 de juin 2026, non évalué par les pairs.",
-  "phrase_visee": "Dans une reproduction indépendante sur le banc AgentDojo, l'une d'elles, Progent, ramène le succès",
+  "phrase_visee": "Dans une reproduction indépendante sur le banc AgentDojo, l'une d'elles, Progent",
   "correction_proposee": "Dans une reproduction que ses auteurs qualifient d'indépendante, sur un sous-échantillon du banc AgentDojo, l'une d'elles, Progent, ramène le succès moyen des attaques de 25,8 % à 4,2 %; les auteurs, affiliés à un éditeur d'outils de sécurité d'agents, n'ont pas fait évaluer le texte par les pairs; une attaque adaptative écrite à la main ne le fait pas remonter (2,6 %)."
  },
  {
@@ -44,7 +44,7 @@
   "url_lue": "https://arxiv.org/html/2406.12045",
   "citation_source": "Our evaluation scheme compares the database state at the end of each episode with the ground truth expected state. ... pass^k (pass hat k), defined as the chance that all k i.i.d. task trials are successful, averaged across tasks.",
   "constat": "",
-  "phrase_visee": "**Il juge un état.** Le critère de réussite est un état vérifiable du système, non une ressemblance",
+  "phrase_visee": "**Il juge un état.** Le critère de réussite est un état vérifiable du système, n",
   "correction_proposee": null
  },
  {
@@ -56,7 +56,7 @@
   "url_lue": "https://arxiv.org/html/2510.27287",
   "citation_source": "even the most capable models achieve only 41.8% task completion. ... 500 enterprise tasks spanning five major domains ... The agent achieved an accuracy of 31%, with the remaining cases classified as failures.",
   "constat": "Le résumé dit bien 41,8 % et quatre domaines (génie logiciel, RH, finance, administration), mais le corps du texte parle de cinq domaines et ne retrouve 41,8 % dans aucun tableau; l'évaluation humaine du meilleur agent (o1-mini, ReAct) donne 31 % d'exactitude sur 100 tâches. Les deux sources de ce chiffre divergent dans le texte même.",
-  "phrase_visee": "EnterpriseBench réunit ainsi 500 tâches dans quatre domaines, avec des sources fragmentées et des h",
+  "phrase_visee": "EnterpriseBench réunit ainsi 500 tâches dans quatre domaines, avec des sources f",
   "correction_proposee": "EnterpriseBench réunit ainsi 500 tâches dans quatre domaines selon son résumé (cinq selon le corps du texte), avec des sources fragmentées et des hiérarchies de contrôle d'accès; son résumé rapporte 41,8 % d'achèvement pour le meilleur agent testé, chiffre que les tableaux du texte ne retrouvent pas (31 % d'exactitude à l'évaluation humaine de l'agent o1-mini) [14]."
  },
  {
@@ -68,7 +68,7 @@
   "url_lue": "https://arxiv.org/html/2609.21267",
   "citation_source": "a production analytics agent serving tens of thousands of monthly active users ... executing 200 questions, 38.5% of a full run, yields 1.03 pp of MAE ... deployed difficulty-stratified fixed subsets because of their operational simplicity",
   "constat": "",
-  "phrase_visee": "Une prépublication de 2026 chiffre le problème sur un agent d'analyse en production, qui sert des",
+  "phrase_visee": "Une prépublication de 2026 chiffre le problème sur un agent d'analyse en product",
   "correction_proposee": null
  },
  {
@@ -80,7 +80,7 @@
   "url_lue": "https://arxiv.org/html/2507.11277",
   "citation_source": "This paper presents our vision of AgentOps ... a six-stage process encompassing behavior observation, metric collection, issue detection ... four key roles—developers, testers, site reliability engineers (SREs), and business users",
   "constat": "",
-  "phrase_visee": "Moshkovich et Zeltyn proposent une chaîne en six étapes, de l'observation du comportement à l'auto",
+  "phrase_visee": "Moshkovich et Zeltyn proposent une chaîne en six étapes, de l'observation du com",
   "correction_proposee": null
  },
  {
@@ -92,7 +92,7 @@
   "url_lue": "https://al-kindipublisher.com/index.php/jcsts/article/view/12302",
   "citation_source": "blocks any state-changing action unless the required evidence is present in a normalized incident state ... Missing evidence forces bounded read-only evidence gathering",
   "constat": "Le résumé concorde avec la phrase de l'ouvrage. Il chiffre aussi 175 épisodes d'incident, 13,47 % d'actions de remédiation en moins et 98,86 % de reprises réussies; auteur unique (DevOps Engineer, Starkey Laboratories).",
-  "phrase_visee": "Une méthode de réponse aux incidents bloque de même toute action qui modifie l'état tant que la pr",
+  "phrase_visee": "Une méthode de réponse aux incidents bloque de même toute action qui modifie l'é",
   "correction_proposee": null
  },
  {
@@ -104,7 +104,7 @@
   "url_lue": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5534588",
   "citation_source": "",
   "constat": "La page SSRN refuse l'accès (403); la phrase de l'ouvrage ne peut être confrontée à aucun texte.",
-  "phrase_visee": "Un catalogue de dix patrons d'architecture AgentOps est aussi paru en 2026 [9]; il n'a pas été lu",
+  "phrase_visee": "Un catalogue de dix patrons d'architecture AgentOps est aussi paru en 2026 [9]; ",
   "correction_proposee": null
  },
  {
@@ -116,7 +116,7 @@
   "url_lue": "https://arxiv.org/html/2604.04604",
   "citation_source": "the AI Office has published no guidance specifically addressing AI agents ... no guidance on agents, tool use, or runtime behavior ... high-risk agentic systems with untraceable behavioral drift cannot currently satisfy the essential requirements of the AI Act",
   "constat": "La plupart des phrases visées concordent (art. 3(1), 53, 5, 9(2)(b), 25, quatre points de friction = sections 6.1 à 6.4, formule sur la dérive, spécifications internes, autres textes, inventaire, ISO 42001). Écart : le texte ne dit pas que l'AI Office n'a rien publié « sur la modification substantielle », mais « sur les agents, l'usage d'outils et le comportement à l'exécution ». Non vérifié mot pour mot : la répartition exacte des prEN 18229-1/-2 et la formulation de l'Omnibus (la paraphrase reçue parle d'outils de conformité « dont » les normes harmonisées, non des seules normes).",
-  "phrase_visee": "Il ne règle pas non plus le fond : la prépublication relevait que l'AI Office n'avait publié aucun",
+  "phrase_visee": "Il ne règle pas non plus le fond : la prépublication relevait que l'AI Office n'",
   "correction_proposee": "Il ne règle pas non plus le fond : la prépublication relevait que l'AI Office n'avait publié aucune orientation spécifique sur les agents, l'usage d'outils ni le comportement à l'exécution [1], et rien, dans les parties lues de l'Omnibus, ne traite de la dérive."
  },
  {
@@ -128,7 +128,7 @@
   "url_lue": "https://www8.cao.go.jp/cstp/ai/ai_plan/aiplan_g_eng_20260714.pdf",
   "citation_source": "Adapting to the rise of agentic AI and strengthen Japan's AI capabilities ... Four Strategic Pillars and Actions ... 1. Accelerate AI Deployment \"Adopt AI\" : Actively adopt agentic AI, government deployment ... 2. Strengthen AI Development Capabilities \"Create AI\" : Build and deploy AI to secure \"AI Sovereignty\"",
   "constat": "Le plan s'ouvre bien sur l'IA agentique (décision du 14 juillet 2026), mais il retient quatre piliers stratégiques, non deux : les deux premiers sont ceux que cite l'ouvrage; les deux autres portent sur la gouvernance (« Enhance AI trustworthiness ») et la société (« Collaborate with AI »).",
-  "phrase_visee": "Le deuxième plan, arrêté le 14 juillet 2026, s'ouvre sur l'adaptation à l'essor de l'IA agentique e",
+  "phrase_visee": "Le deuxième plan, arrêté le 14 juillet 2026, s'ouvre sur l'adaptation à l'essor ",
   "correction_proposee": "Le deuxième plan, arrêté le 14 juillet 2026, s'ouvre sur l'adaptation à l'essor de l'IA agentique et retient quatre piliers; les deux premiers sont adopter l'IA, agentique notamment et y compris dans l'administration, et créer l'IA pour bâtir une « souveraineté de l'IA », les deux autres portent sur la gouvernance et la société [12]."
  },
  {
@@ -140,7 +140,7 @@
   "url_lue": "https://arxiv.org/html/2406.18665",
   "citation_source": "Note that the MT Bench score at CPT(50%), 8.8, is 95% that of GPT-4's score (9.3). ... reduce costs by over 2 times without sacrificing response quality. ... real-world applications may have distributions that differ substantially from these benchmarks.",
   "constat": "Le résumé dit bien « over 2 times in certain cases » et « without compromising quality », mais le texte (tableau 6, lu via WebFetch) montre 3,66 fois sur MT Bench seulement (1,41 fois sur MMLU, 1,49 fois sur GSM8K), avec 95 %, 92 % et 87 % de la qualité de GPT-4; « sans perte de qualité » est donc la formule du résumé, non le résultat chiffré.",
-  "phrase_visee": "Une prépublication plus ancienne, RouteLLM, annonce des coûts réduits de plus de moitié dans certai",
+  "phrase_visee": "Une prépublication plus ancienne, RouteLLM, annonce des coûts réduits de plus de",
   "correction_proposee": "Une prépublication plus ancienne, RouteLLM, annonce dans son résumé des coûts réduits de plus de moitié dans certains cas, sans perte de qualité; dans le texte, la réduction dépasse la moitié sur un seul des trois bancs (MT Bench) et la qualité conservée va de 87 à 95 % de celle de GPT-4 [10]."
  },
  {
@@ -152,7 +152,7 @@
   "url_lue": "https://arxiv.org/html/2508.15734",
   "citation_source": "the median Gemini Apps text prompt consumes 0.24 Wh of energy ... the equivalent of five drops of water (0.26 mL) ... have driven a 33x reduction in energy consumption ... By tracking these metrics from May 2024 to May 2025",
   "constat": "",
-  "phrase_visee": "Google mesure 0,24 Wh et 0,26 mL d'eau pour une requête textuelle médiane de Gemini, dans un pér",
+  "phrase_visee": "Google mesure 0,24 Wh et 0,26 mL d'eau pour une requête textuelle médiane de Gem",
   "correction_proposee": null
  },
  {
@@ -162,9 +162,9 @@
   "verdict": "nuance",
   "etendue_lue": "texte complet (HTML, éditeur, accès libre) : 100 000 premiers caractères sur 171 743; la page PAR de l'intitulé ne donne que le résumé (texte sous embargo jusqu'au 27 février 2027)",
   "url_lue": "https://academic.oup.com/pnasnexus/article/doi/10.1093/pnasnexus/pgag030/8490283",
-  "citation_source": "much of the existing evidence for human-AI complementarity comes from laboratory studies ... small-scale deployments, or early-stage prototypes ... The generalizability of these results to high-stakes, long-term, or highly heterogeneous environments remains uncertain.",
+  "citation_source": "much of the existing evidence for human–AI complementarity comes from laboratory studies ... small-scale deployments, or early-stage prototypes ... The generalizability of these results to high-stakes, long-term, or highly heterogeneous environments remains uncertain.",
   "constat": "L'abstract énumère cinq éléments après « including » (liste non exhaustive), mais la section sur les facteurs compte quatre sous-sections (équipe; confiance et modèles mentaux; expertise et charge; tâche). Les auteurs bornent aussi leurs preuves : études en laboratoire, petits déploiements, prototypes, généralisation incertaine.",
-  "phrase_visee": "Il recense cinq facteurs sociotechniques, dont le calibrage de la confiance et la structure de la t",
+  "phrase_visee": "Il recense cinq facteurs sociotechniques, dont le calibrage de la confiance et l",
   "correction_proposee": "Il examine des facteurs sociotechniques, dont le calibrage de la confiance et la structure de la tâche, et propose cinq principes de conception : définir les buts et les contraintes, répartir les rôles, orchestrer l'attention et l'interrogation, bâtir des infrastructures de connaissance, former et évaluer en continu [5]; ses auteurs notent que les preuves viennent surtout d'études en laboratoire et de prototypes."
  },
  {
@@ -394,5 +394,137 @@
   "constat": "La conception est décrite exactement comme dans l'ouvrage, mais le texte borne la garantie : CaMeL ne vise pas les attaques qui n'affectent ni le flux de contrôle ni le flux de données, des canaux auxiliaires restent possibles, et la fatigue d'approbation des utilisateurs reste un risque; sur AgentDojo, 77 % des tâches sont résolues avec garanties prouvables, contre 84 % sans défense.",
   "phrase_visee": "CaMeL sépare le flux de contrôle, tiré de la requête de confiance, du flux de do",
   "correction_proposee": "CaMeL sépare le flux de contrôle, tiré de la requête de confiance, du flux de données, de sorte qu'une donnée non fiable ne puisse jamais modifier le déroulement du programme; des capacités empêchent une donnée privée de sortir par un flux non autorisé. La garantie ne couvre pas les attaques qui n'altèrent ni ce déroulement ni ces données, ni les canaux auxiliaires; sur AgentDojo, 77 % des tâches sont résolues avec garanties prouvables, contre 84 % sans défense [7]."
+ },
+ {
+  "id": "F3-124",
+  "fichier": "chapitre-45-reseaux-b2b-federes.md",
+  "n": 8,
+  "verdict": "confirme",
+  "etendue_lue": "texte complet (HTML) et page abs (v1, 7 juillet 2026; champ Comments); trois requêtes",
+  "url_lue": "https://arxiv.org/abs/2607.06815",
+  "citation_source": "where an adversary infers private constraints from observable negotiation dynamics ... such as concession trajectories, timing, and convergence patterns ... Accepted at the AI4TCI Workshop (AI for Secure and Trustworthy Critical Infrastructure Systems)",
+  "constat": "",
+  "phrase_visee": "Une prépublication de juillet 2026, acceptée à l'atelier AI4TCI d'ARES 2026, for",
+  "correction_proposee": null
+ },
+ {
+  "id": "F3-125",
+  "fichier": "chapitre-45-reseaux-b2b-federes.md",
+  "n": 10,
+  "verdict": "resume_seulement",
+  "etendue_lue": "résumé seulement (page AEA); le texte intégral n'est pas sur la page (lien de téléchargement non suivi)",
+  "url_lue": "https://www.aeaweb.org/articles?id=10.1257/aer.20190623",
+  "citation_source": "consistently learn to charge supracompetitive prices ... without communicating with one another",
+  "constat": "Le résumé concorde : algorithmes de Q-learning dans un modèle classique d'oligopole à concurrence de prix répétée, prix supraconcurrentiels sans communication, stratégies collusives avec phase de sanction. Il précise que l'étude est expérimentale (simulations en laboratoire), ce que l'ouvrage ne dit pas; référence AER 110(10), p. 3267-3297, confirmée.",
+  "phrase_visee": "Le résultat fondateur est évalué par les pairs : Calvano et ses coauteurs montre",
+  "correction_proposee": null
+ },
+ {
+  "id": "F3-126",
+  "fichier": "chapitre-45-reseaux-b2b-federes.md",
+  "n": 11,
+  "verdict": "nuance",
+  "etendue_lue": "texte complet (HTML), 100 000 premiers caractères sur 241 126 (résumé, introduction, sections 1 à 6, annexe A.6); deux requêtes",
+  "url_lue": "https://arxiv.org/html/2404.00806",
+  "citation_source": "In oligopoly settings, LLM-based pricing agents quickly and autonomously reach supracompetitive prices and profits. ... we use GPT-4 (0613 version) ... a repeated Bertrand oligopoly setting ... our economic environment is simple and does not capture many real-world complexities ... we focus on one fixed time horizon",
+  "constat": "Le constat (prix supraconcurrentiels atteints de façon autonome, sensibilité aux formulations, extension aux enchères, v6 du 31 août 2026) est exact, mais l'expérience principale porte sur un seul modèle (GPT-4, version 0613; GPT-5.2 en test de robustesse), dans un oligopole de Bertrand simple, à horizon fixe, ce que les auteurs reconnaissent. Le texte parle d'un résumé d'une page paru dans les actes de la 27e conférence ACM EC, non d'une acceptation du texte.",
+  "phrase_visee": "Fish, Gonczarowski et Shorrer étendent le constat aux modèles de langage [11].",
+  "correction_proposee": "Fish, Gonczarowski et Shorrer étendent le constat aux modèles de langage [11]; leur expérience principale porte sur un seul modèle (GPT-4, version 0613, avec GPT-5.2 en test de robustesse), dans un oligopole de Bertrand simple à horizon fixe."
+ },
+ {
+  "id": "F3-127",
+  "fichier": "chapitre-45-reseaux-b2b-federes.md",
+  "n": 12,
+  "verdict": "confirme",
+  "etendue_lue": "texte complet (HTML), 100 000 premiers caractères sur 253 992 (résumé, introduction, sections 3 à 7, conclusion) et page abs (v5, 25 juillet 2025); deux requêtes",
+  "url_lue": "https://arxiv.org/abs/2402.07510",
+  "citation_source": "two or more agents employ steganographic methods to conceal the true nature of their interactions ... unintended information sharing or undesirable coordination ... While the steganographic capabilities of current models remain limited, GPT-4 displays a capability jump, suggesting the need for continuous monitoring of steganographic frontier model capabilities",
+  "constat": "",
+  "phrase_visee": "Une prépublication de Motwani et de ses coauteurs, révisée en juillet 2025, form",
+  "correction_proposee": null
+ },
+ {
+  "id": "F3-128",
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "n": 3,
+  "verdict": "nuance",
+  "etendue_lue": "texte complet (HTML), 100 000 premiers caractères (résumé, évaluation, résultats, limites); une requête",
+  "url_lue": "https://arxiv.org/html/2510.09907",
+  "citation_source": "The agent generated 984 bug reports ... 56.0% (95% CI: 42.2%, 69.8%) of reports were determined to be valid bugs ... The primary limitation is that we did not manually review all 984 bug reports. ... Inter-rater agreement on the initial review was κ=0.31.",
+  "constat": "Les chiffres sont exacts (100 paquets, 933 modules, 56,0 %, 32,0 %, 21 meilleurs rapports à 86 %, 5 bogues signalés, 4 correctifs, 3 fusionnés), mais les 56 % et 32 % viennent de la revue manuelle d'un sous-ensemble seulement (les auteurs n'ont pas relu les 984 rapports), avec des intervalles de confiance larges (42 à 70 %) et un accord inter-évaluateurs initial faible (kappa 0,31); l'agent ne distingue pas non plus une violation voulue d'un bogue.",
+  "phrase_visee": "Sur 100 paquets répandus, 56 % des rapports étaient des bogues valides après rev",
+  "correction_proposee": "Sur 100 paquets répandus (984 rapports), 56 % des rapports, d'après la revue manuelle d'un sous-ensemble seulement (intervalle de confiance à 95 % de 42 à 70 %), étaient des bogues valides, et 32 % méritaient un signalement aux mainteneurs."
+ },
+ {
+  "id": "F3-129",
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "n": 4,
+  "verdict": "nuance",
+  "etendue_lue": "texte complet (HTML), 100 000 premiers caractères (résumé, déploiement, test-a-thons, détection des mutants équivalents, limites); deux requêtes",
+  "url_lue": "https://arxiv.org/html/2501.12862",
+  "citation_source": "ACH generates 9,095 mutants that build and pass from 10,795 classes under test. ... engineers accepted 73% of its tests ... only approximately 36% were deemed to be either possibly or definitely related to privacy ... The paper focuses on privacy hardening",
+  "constat": "Les chiffres (10 795 classes Kotlin, 7 plateformes, 9 095 mutants, 571 tests, précision 0,79 et rappel 0,47 portés à 0,95 et 0,96) sont exacts. Mais le 73 % vient des test-a-thons de Messenger et de WhatsApp (environ 191 tests évalués; 90 % lors d'un essai initial de 30 tests), et seulement 36 % environ des tests ont été jugés liés à la confidentialité; les auteurs attribuent les écarts d'acceptation à des cultures d'équipe différentes.",
+  "phrase_visee": "Les ingénieurs ont accepté 73 % des tests proposés. Le point délicat est le muta",
+  "correction_proposee": "Lors de deux test-a-thons (Messenger et WhatsApp), les ingénieurs ont accepté 73 % des tests évalués, dont 36 % environ seulement étaient jugés liés à la confidentialité."
+ },
+ {
+  "id": "F3-130",
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "n": 8,
+  "verdict": "nuance",
+  "etendue_lue": "texte complet (HTML), 100 000 premiers caractères (résumé, protocole, résultats, limites); deux requêtes",
+  "url_lue": "https://arxiv.org/html/2604.15368",
+  "citation_source": "42 payloads across 5 cloud log categories, 3 difficulty levels, and 5 attack goals including RCE ... 8 models from 7 providers ... The harness provides action tools accepting arbitrary commands; production agents may be more constrained. ... We do not test against production debugging agents or propose a defense.",
+  "constat": "Le comptage (42 charges, 5 catégories, 8 modèles, 0 % à 86,2 %, 30 %, 6 modèles sur 8, Azure Prompt Shield 1 charge sur 32, GCP Model Armor aucune) est exact, mais l'étude ne teste pas d'agents de débogage de production : elle place des modèles dans un banc d'essai muni d'outils à commandes arbitraires, avec des charges rédigées à la main, une classification des commandes par expressions régulières non validées, et sans défense proposée.",
+  "phrase_visee": "Une prépublication d'avril 2026, LogJack, mesure l'injection indirecte par des j",
+  "correction_proposee": "Une prépublication d'avril 2026, LogJack, mesure l'injection indirecte par des journaux infonuagiques contre des modèles placés dans un banc de débogage simulé, non contre des agents de production [8]."
+ },
+ {
+  "id": "F3-131",
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "n": 9,
+  "verdict": "confirme",
+  "etendue_lue": "texte complet (HTML), 100 000 premiers caractères sur 169 680 (résumé, introduction, modèle de menace, résultats, défense); une requête",
+  "url_lue": "https://arxiv.org/html/2508.06394",
+  "citation_source": "in which the attacker knows nothing about the target infrastructure and holds no privileged access ... Our attack methodology, AIOpsDoom, is fully automated ... reliably inject telemetry data using error-inducing requests ... AIOpsShield, a defense mechanism that sanitizes telemetry data",
+  "constat": "",
+  "phrase_visee": "Une seconde prépublication, d'août 2025, montre que l'attaquant n'a besoin d'auc",
+  "correction_proposee": null
+ },
+ {
+  "id": "F3-132",
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "n": 10,
+  "verdict": "confirme",
+  "etendue_lue": "page de résumé et texte complet (HTML), 100 000 premiers caractères sur 123 148 (méthode, jeux de données, limites); deux requêtes",
+  "url_lue": "https://arxiv.org/abs/1802.08232",
+  "citation_source": "a testing methodology for quantitatively assessing the risk that rare or unique training-data sequences ... are unintentionally memorized by generative sequence models ... we train with artificially-inserted canaries added to the training data ... we apply our exposure metric to test for memorization.",
+  "constat": "",
+  "phrase_visee": "**Un modèle mémorise ce qu'il a vu.** Carlini et ses coauteurs proposent une mét",
+  "correction_proposee": null
+ },
+ {
+  "id": "F3-133",
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "n": 12,
+  "verdict": "confirme",
+  "etendue_lue": "texte complet (HTML), 100 000 premiers caractères sur 113 482 (résumé, section 4.2); une requête",
+  "url_lue": "https://arxiv.org/html/2106.09685",
+  "citation_source": "LoRA freezes the pre-trained model weights and injects trainable rank decomposition matrices into each layer of the Transformer architecture",
+  "constat": "",
+  "phrase_visee": "**LoRA** gèle les poids du modèle et entraîne de petites matrices de rang faible",
+  "correction_proposee": null
+ },
+ {
+  "id": "F3-134",
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "n": 13,
+  "verdict": "confirme",
+  "etendue_lue": "texte complet (HTML), 100 000 premiers caractères sur 129 548 (résumé, méthode, discussion); une requête",
+  "url_lue": "https://arxiv.org/html/2305.18290",
+  "citation_source": "the DPO update increases the relative log probability of preferred to dispreferred responses ... a simple RL-free algorithm for training language models from preferences",
+  "constat": "",
+  "phrase_visee": "**DPO** apprend des préférences : des paires où une sortie est jugée meilleure q",
+  "correction_proposee": null
  }
 ]

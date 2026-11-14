@@ -332,6 +332,7 @@ Source secondaire, pour la même section :
 
 ## Limites de ce chapitre
 
+- La source [20], d'abord connue par son seul résumé, a été relue au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - Les pages web ont été lues au moyen d'un outil d'extraction qui en restitue le contenu en le résumant; seul le texte de SALLMA [7] a été lu intégralement.
 - Relus à l'audit du 12 novembre 2026 : [3] et [4] (chiffres, cas d'étude, affiliations, réserves des auteurs), [8], [10], [11] et les résumés de [1], [2] et [6]. L'audit a corrigé la structure d'AgentArcEval et deux cotes de la matrice de [3].
 - Restent non vérifiés : les 57 études de [1] et [2], absentes de leurs résumés; les 32 études de [5]; la mention de MetaGPT et HuggingGPT dans [1]; l'exclusion, par [2], des agents qui agissent au nom d'autrui; les registres de gouvernance de [1].

@@ -137,6 +137,35 @@ les 356 corrections de l'audit et 197 inscriptions postérieures, que la page «
 de cette édition » décompte à part. Le PDF compte 1 091 pages et passe tous les
 contrôles. Ces quatre corrections n'ont pas été relues par un second lecteur.
 
+## Après l'audit : plan de travail, priorités 2 à 4 (14 novembre 2026)
+
+Les comptes rendus sont dans `Master/lots/`; `Master/audit/points-ouverts.json` donne
+l'état de chaque point.
+
+- **Les 41 points laissés à l'auteur sont clos.** Les dix majeurs et les trente mineurs
+  ont été tranchés selon les règles de l'audit (lots P2-M et P3-m); trois mineurs sont
+  clos sans correction, après vérification à la source. Le tableau ci-dessous reste
+  celui du 13 novembre.
+- **Second audit des 193 compléments.** Deux lecteurs qui ne les avaient pas écrits ont
+  relevé 95 constats : aucun bloquant, 19 majeurs, 76 mineurs. Quatre-vingt-six sont
+  corrigés; neuf restent, listés dans `Master/lots/P2-fiabilite.md`.
+- **Recollationnement de 200 chiffres.** 182 phrases vérifiables, 4 erreurs, soit
+  2,2 %; 18 phrases non vérifiables.
+- **Lecture au-delà du résumé.** Des 134 sources des chapitres 1 à 47 connues par leur
+  seul résumé et citées, 124 ont été relues : 64 confirmées, 54 à nuancer, 6 en erreur.
+  Les phrases sont corrigées, et les limites des chapitres disent quelles sources ont
+  été relues. L'annexe E publie ces trois résultats.
+- **Compléments.** Quatre lacunes déclarées sont comblées (ch. 14, 20, 24, 38), avec
+  quatorze sources : les chapitres 1 à 47 en listent 789. Le cas fictif est signalé sur
+  chaque encadré du fil rouge. Quatre sections de volet sans appui dans leur exposé le
+  disent en tête, dont la section 38.10 sur le droit des contrats.
+
+Ces contrôles lisent les sources par un outil qui en rend des extraits : aucun n'a été
+recoupé sur le texte brut. Restent ouverts : les trois textes réglementaires jamais lus
+(lots P1-B2 à B4), le contrôle des adresses des sources (lot P3-L1, refusé par le
+contrôle de permissions), les quatre textes facultatifs du lot P3-L2 et le niveau de
+preuve dans les grilles de décision (lot P4-1).
+
 ## Ce qui reste à décider avant impression
 
 - **Auteur, mention légale, licence, ISBN** : la page de titre et les métadonnées du PDF

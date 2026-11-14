@@ -62,7 +62,7 @@ Un agent produit volontiers des tests qui passent, et la couverture de lignes me
 
 Un test par propriétés énonce un invariant plutôt qu'un exemple : sérialiser puis désérialiser rend l'objet d'origine. Un générateur cherche ensuite des entrées qui le violent.
 
-Une prépublication d'octobre 2025 décrit un agent qui infère des propriétés à partir du code et de la documentation de modules Python, écrit et exécute les tests, puis rédige des rapports de bogue [3]. Sur 100 paquets répandus, 56 % des rapports étaient des bogues valides après revue manuelle, et 32 % méritaient un signalement aux mainteneurs. Parmi les 21 rapports les mieux classés par une grille de priorité, 86 % étaient valides. Les auteurs ont signalé cinq bogues, dont quatre avec un correctif; trois correctifs ont été fusionnés.
+Une prépublication d'octobre 2025 décrit un agent qui infère des propriétés à partir du code et de la documentation de modules Python, écrit et exécute les tests, puis rédige des rapports de bogue [3]. Sur 100 paquets répandus (984 rapports), 56 % des rapports, d'après la revue manuelle d'un sous-ensemble seulement (intervalle de confiance à 95 % de 42 à 70 %), étaient des bogues valides, et 32 % méritaient un signalement aux mainteneurs. Parmi les 21 rapports les mieux classés par une grille de priorité, 86 % étaient valides. Les auteurs ont signalé cinq bogues, dont quatre avec un correctif; trois correctifs ont été fusionnés.
 
 La méthode trouve de vrais défauts, mais près d'un rapport sur deux est faux : sans classement ni revue humaine, elle produit du bruit.
 
@@ -70,7 +70,7 @@ La méthode trouve de vrais défauts, mais près d'un rapport sur deux est faux 
 
 Un test de mutation injecte une faute dans le code (un mutant) et vérifie qu'un test échoue. Un mutant qui survit révèle un test absent ou trop faible.
 
-Meta a publié le bilan de son système ACH [4]. ACH génère peu de mutants, ciblés sur une préoccupation précise (la confidentialité) et sur des fautes non détectées, puis les tests qui les tuent. Appliqué à 10 795 classes Kotlin de sept plateformes, il a produit 9 095 mutants et 571 tests. Les ingénieurs ont accepté 73 % des tests proposés. Le point délicat est le mutant équivalent, qui ne change pas le comportement et qu'aucun test ne peut tuer : l'agent de détection atteignait une précision de 0,79 et un rappel de 0,47, portés à 0,95 et 0,96 par un prétraitement simple.
+Meta a publié le bilan de son système ACH [4]. ACH génère peu de mutants, ciblés sur une préoccupation précise (la confidentialité) et sur des fautes non détectées, puis les tests qui les tuent. Appliqué à 10 795 classes Kotlin de sept plateformes, il a produit 9 095 mutants et 571 tests. Lors de deux test-a-thons (Messenger et WhatsApp), les ingénieurs ont accepté 73 % des tests évalués, dont 36 % environ seulement étaient jugés liés à la confidentialité. Le point délicat est le mutant équivalent, qui ne change pas le comportement et qu'aucun test ne peut tuer : l'agent de détection atteignait une précision de 0,79 et un rappel de 0,47, portés à 0,95 et 0,96 par un prétraitement simple.
 
 ### Le seuil de 85 %
 
@@ -137,7 +137,7 @@ Le chapitre 34 gradue l'autonomie d'un agent d'exploitation. Cette section déve
 
 ### Deux démonstrations
 
-Une prépublication d'avril 2026, LogJack, mesure l'injection indirecte par des journaux infonuagiques contre des agents de débogage [8]. Le banc d'essai compte 42 charges dans cinq catégories de journaux; huit modèles sont évalués. Quand l'agent est invité à corriger, le taux d'exécution littérale de la commande injectée va de 0 % à 86,2 % selon le modèle. Une consigne de ne rien exécuter ramène la plupart des modèles à 0 %, mais l'un d'eux exécute encore dans 30 % des essais. Une charge de téléchargement et d'exécution de code réussit sur six modèles sur huit. Les garde-fous des trois grands fournisseurs infonuagiques échouent pour l'essentiel : l'un n'intercepte qu'une des 32 charges évaluées, un autre aucune, alors que tous deux détectent ces charges présentées isolément. Certains modèles retirent la partie manifestement malveillante, puis exécutent le reste.
+Une prépublication d'avril 2026, LogJack, mesure l'injection indirecte par des journaux infonuagiques contre des modèles placés dans un banc de débogage simulé, non contre des agents de production [8]. Le banc d'essai compte 42 charges dans cinq catégories de journaux; huit modèles sont évalués. Quand l'agent est invité à corriger, le taux d'exécution littérale de la commande injectée va de 0 % à 86,2 % selon le modèle. Une consigne de ne rien exécuter ramène la plupart des modèles à 0 %, mais l'un d'eux exécute encore dans 30 % des essais. Une charge de téléchargement et d'exécution de code réussit sur six modèles sur huit. Les garde-fous des trois grands fournisseurs infonuagiques échouent pour l'essentiel : l'un n'intercepte qu'une des 32 charges évaluées, un autre aucune, alors que tous deux détectent ces charges présentées isolément. Certains modèles retirent la partie manifestement malveillante, puis exécutent le reste.
 
 Une seconde prépublication, d'août 2025, montre que l'attaquant n'a besoin d'aucune connaissance préalable du système visé [9]. Il envoie des requêtes qui provoquent des erreurs; celles-ci produisent une télémétrie plausible mais fausse, qui oriente l'agent vers une action nuisible qu'il croit optimale. La défense proposée, AIOpsShield, assainit la télémétrie en tirant parti de sa structure et de la faible place qu'y occupe le contenu fourni par l'utilisateur. Le résumé la dit fiable, sans chiffre.
 
@@ -260,6 +260,7 @@ Aucune source secondaire n'est citée. Les faits repris d'autres chapitres repos
 
 ## Limites de ce chapitre
 
+- Les sources [3], [4], [8], [9], [10], [12] et [13], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - **Éléments sans source.** « Spécificateur / Bâtisseur », « Shadow Mirroring » et « Multi-LoRA (SFT + DPO) » n'ont pas été retrouvés comme termes ou méthodes publiés; ils sont rattachés à des pratiques voisines et présentés comme cibles de conception. Les seuils « ≥ 85 % » et « 30 jours à 0,00 $ d'écart » n'ont aucune source. Rien n'a été lu sur RPG. « Data Flywheel » n'a pas de définition sourcée.
 - **Audit du 12 novembre 2026.** [1], [2], [4], [6], [8], [9], [11] et [14] relus : faits confirmés, l'attaque de [9] et le comptage de [8] précisés. Renvois vérifiés, dont ceux vers le chapitre 44.
 - **Canaris.** Le résumé lu de l'article de Carlini ne décrit ni les canaris ni la métrique d'exposition; leur description vient de la connaissance générale du texte complet.

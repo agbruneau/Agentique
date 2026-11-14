@@ -257,6 +257,7 @@ Pages lues le 14 novembre 2026, pour la section 22.5 :
 
 ## Limites de ce chapitre
 
+- La source [17], d'abord connue par son seul résumé, a été relue au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - Les sources [3], [8] et [13] ont été lues par un outil qui résume la page, sans recoupement. À l'audit du 12 novembre 2026, les passages cités de [2], de [4] à [7] et de [9] à [11] ont été relus à la source; ils concordent, aux précisions près de 22.4 et 22.7. Les sources [1] et [12] ont été lues dans leur texte, par sections pour [1].
 - L'usage de « hors de la boucle » vient de la connaissance générale. « Autonomie méritée » n'est définie par aucune source lue.
 - Le texte de la Directive fédérale et celui de l'article 12.1 n'ont pas pu être chargés, ni à la rédaction ni le 14 novembre 2026; la lecture de l'article 12.1 est reprise du chapitre 38, qui la transpose de la règle du secteur public par analogie. La norme ISO/IEC 42105 sur la supervision humaine, en cours de publication selon le chapitre 35, n'a pas été consultée.

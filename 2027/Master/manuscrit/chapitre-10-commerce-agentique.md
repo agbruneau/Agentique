@@ -203,7 +203,7 @@ Les quatre prépublications retenues n'ont été lues qu'en résumé; leurs chif
 
 ### Des garanties implicites
 
-Une analyse formelle modélise x402, MPP, ACP et AP2 dans le vérificateur Tamarin [13]. Sur 86 cas de vérification, elle reproduit 46 cas connus ou d'étalonnage et relève 40 constats de cohérence formelle non documentés jusque-là. Les contre-exemples font ressortir trois familles de lacunes : des liaisons manquantes, des contraintes d'état absentes, des correspondances non garanties d'une étape à l'autre. Les auteurs en tirent 18 principes de sécurité communs.
+Une analyse formelle modélise x402, MPP, ACP et AP2 dans le vérificateur Tamarin [13]. Sur 86 cas de vérification, elle reproduit 46 cas connus ou d'étalonnage et relève 40 constats de cohérence formelle non documentés jusque-là. Les contre-exemples se répartissent en 17 cas d'intégrité, 16 de paiement et 7 de service, et touchent surtout aux liaisons entre rôles, à l'ambiguïté d'autorisation, aux effets dupliqués et à l'état de règlement et de livraison. Les auteurs en tirent 18 principes de sécurité communs.
 
 Leur diagnostic : intention, délégation, usage du justificatif, règlement et exécution sont répartis entre acteurs et étapes, si bien qu'aucun message ni participant ne peut seul faire respecter la sécurité. Les garanties restent implicites dans des spécifications et des mises en œuvre de référence mouvantes; elles devraient y être écrites.
 
@@ -221,7 +221,7 @@ Un agent qui réémet une requête après une coupure fait ce que ferait un atta
 
 ### Une lecture transversale
 
-Une systématisation des connaissances couvre sept protocoles, dont AP2, x402, ACP et MPP, et ordonne les menaces selon cinq dimensions, de l'intégrité de l'agent à la conformité réglementaire [14]. Elle en dérive douze vecteurs d'attaque qui traversent les couches : une défaillance née dans le raisonnement ou l'outillage se propage jusqu'à la garde des fonds et au règlement.
+Une systématisation des connaissances couvre sept protocoles, dont AP2, x402, MPP et l'Agent Commerce Protocol de Virtuals (homonyme d'ACP, distinct de celui de Stripe et d'OpenAI), et ordonne les menaces selon cinq dimensions, de l'intégrité de l'agent à la conformité réglementaire [14]. Elle en dérive douze vecteurs d'attaque qui traversent les couches : une défaillance née dans le raisonnement ou l'outillage se propage jusqu'à la garde des fonds et au règlement.
 
 D'autres prépublications, repérées mais non lues, visent AP2 et x402 pris isolément [19].
 
@@ -328,6 +328,7 @@ Page primaire lue le 14 novembre 2026 :
 
 ## Limites de ce chapitre
 
+- Les sources [13], [14], [15] et [16], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - Les quatre articles de sécurité, lus en résumé, ne sont pas évalués par les pairs d'après leur page arXiv.
 - Pages de Mastercard inaccessibles : le nom d'Agent Pay vient du plan initial, son lien avec Verifiable Intent d'un résumé de recherche.
 - L'attribution d'AP2 à Google repose sur l'avis de droit d'auteur de la page, sur le billet de l'AAIF et sur le communiqué de la FIDO Alliance [20]. Ce communiqué ne dit pas ce que devient la gouvernance des deux spécifications et ne donne aucune échéance. Il a été lu par l'outil de lecture, qui en a rendu les phrases citées; le texte brut de la page n'a pas pu être recoupé.

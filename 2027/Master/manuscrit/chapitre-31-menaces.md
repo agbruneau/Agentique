@@ -121,7 +121,7 @@ Le banc d'essai AgentDojo réunit 97 tâches réalistes (messagerie, banque en l
 
 Willison se dit profondément méfiant envers les produits de garde-fous qui annoncent détecter les attaques, et juge qu'un taux de détection de l'ordre de 95 % serait un échec selon les critères de la sécurité applicative [12]. C'est une opinion de praticien, non une mesure, mais l'argument est structurel : un filtre probabiliste face à un adversaire qui s'adapte ne constitue pas une frontière.
 
-Une prépublication de juin 2025, signée par quatorze auteurs, propose pour cette raison de déplacer la défense du modèle vers la conception : des patrons qui donnent à l'agent une résistance démontrable à l'injection, au prix d'un compromis explicite entre utilité et sécurité que les auteurs analysent sur des études de cas [8]. Le résumé ne nomme pas les patrons, et le texte complet n'a pas été lu. Le chapitre 45 chiffre le coût d'un tel patron, CaMeL, qui sépare flux de contrôle et flux de données : 77 % des tâches d'AgentDojo résolues avec sécurité prouvable, contre 84 % sans défense.
+Une prépublication de juin 2025, signée par quatorze auteurs, propose pour cette raison de déplacer la défense du modèle vers la conception : des patrons qui visent une résistance démontrable à l'injection, sans toujours l'éliminer, au prix d'un compromis explicite entre utilité et sécurité que les auteurs analysent sur dix études de cas [8]. Le chapitre 45 chiffre le coût d'un tel patron, CaMeL, qui sépare flux de contrôle et flux de données : 77 % des tâches d'AgentDojo résolues avec sécurité prouvable, contre 84 % sans défense.
 
 ### Ce qu'on peut en tirer
 
@@ -191,7 +191,7 @@ Les appuis de cette section sont minces : des entrées de liste, une démonstrat
 
 L'OWASP réserve trois entrées à la pluralité des agents : ASI07, ASI08 et ASI10 [2].
 
-La prépublication Prompt Infection (octobre 2024) démontre une injection qui se réplique d'un agent à l'autre, à la manière d'un virus informatique. Les auteurs rapportent que les systèmes multi-agents y sont très vulnérables, même lorsque les agents ne partagent pas toutes leurs communications. Ils proposent un marquage des messages produits par un modèle (*LLM Tagging*), qui réduit la propagation lorsqu'il est combiné à d'autres protections [9]. Le résumé ne donne aucun chiffre.
+La prépublication Prompt Infection (octobre 2024) démontre une injection qui se réplique d'un agent à l'autre, à la manière d'un virus informatique. Les auteurs rapportent que les systèmes multi-agents y sont très vulnérables, même lorsque les agents ne partagent pas toutes leurs communications. Ils proposent un marquage des messages produits par un modèle (*LLM Tagging*), qui réduit la propagation lorsqu'il est combiné à d'autres protections, dans des simulations limitées aux modèles GPT-4o et GPT-3.5 Turbo [9]. Le résumé ne donne aucun chiffre.
 
 Un article collectif de vingt-quatre auteurs, révisé en avril 2026, plaide pour un champ distinct, la sécurité multi-agents [10]. Il nomme des menaces qui n'existent pas à l'échelle d'un agent : la collusion secrète, les attaques coordonnées en essaim, la diffusion rapide par effet de réseau des atteintes à la vie privée, de la désinformation, des contournements et de l'empoisonnement de données, et la dispersion d'une attaque entre plusieurs agents pour échapper à la surveillance. Selon le résumé, ces menaces dépassent les cadres habituels de la cybersécurité et de la sûreté de l'IA.
 
@@ -294,6 +294,7 @@ Sources secondaires (billets lus en entier) :
 
 ## Limites de ce chapitre
 
+- Les sources [6], [7], [8], [9], [10] et [13], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - Le document complet de l'OWASP Top 10 for Agentic Applications n'a pas été lu. Les intitulés ASI01 à ASI10 et leur description viennent de l'annonce [2]; les mesures d'atténuation que propose le document ne sont pas rapportées.
 - Les pages détaillées de chaque entrée de l'OWASP MCP Top 10 n'ont pas été lues; le tableau de 31.3 résume la page du projet.
 - Les cinq articles sont cités d'après leur résumé. Les patrons de [8], la méthode de [9] et la taxonomie de [10] ne sont pas décrits faute de lecture du texte.

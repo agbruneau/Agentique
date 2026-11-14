@@ -205,7 +205,7 @@ L'observatoire européen en tire une mise en garde, qui est une analyse et non u
 
 ### Ce qui converge, ce qui diverge
 
-La convergence s'observe à la couche des protocoles. ACP a été absorbé par A2A (chapitre 6), et MCP et A2A logent dans la même fondation, qui les présente comme complémentaires [7]. Un relevé de mai 2025 proposait encore d'adopter quatre protocoles en séquence, MCP, ACP, A2A puis ANP [27]; dix-huit mois plus tard, le deuxième n'existe plus comme protocole distinct et le quatrième reste un brouillon de groupe communautaire [9].
+La convergence s'observe à la couche des protocoles. ACP a été absorbé par A2A (chapitre 6), et MCP et A2A logent dans la même fondation, qui les présente comme complémentaires [7]. Un relevé de mai 2025 proposait encore, dans son résumé et sa conclusion, d'adopter quatre protocoles en séquence, MCP, ACP, A2A puis ANP [27]; dix-huit mois plus tard, le deuxième n'existe plus comme protocole distinct et le quatrième reste un brouillon de groupe communautaire [9].
 
 La divergence s'observe à la couche de l'identité, où coexistent le profil OAuth et WIMSE, les identifiants décentralisés et la racine nationale. Entre organisations, le chapitre 45 examine une autre racine encore, le vLEI de la GLEIF, qui rattache une signature à une personne morale enregistrée. La divergence touche aussi la couche de la découverte, où un projet de l'IEEE s'ajoute aux registres existants (chapitre 8).
 
@@ -373,6 +373,7 @@ Page primaire lue lors de l'audit, le 12 novembre 2026 :
 
 ## Limites de ce chapitre
 
+- La source [27], d'abord connue par son seul résumé, a été relue au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - **Chine.** Le texte officiel de la série GB/Z 185-2026 n'a pas été lu : dates, statut, contenu et intentions viennent de sources secondaires, dont une analyse écrite par l'auteur d'une proposition concurrente. L'écart entre sept et huit documents n'est pas résolu.
 - **ISO/IEC.** L'absence de projet propre aux agents repose sur une synthèse secondaire.
 - **AAIF.** Les pages [1], [2] et [4], relues le 12 novembre 2026, confirment les projets, les membres platine et le comité technique. Les effectifs or et argent restent un décompte approximatif de logos, qui varie d'une lecture à l'autre. Le niveau de neuf projets sur dix reste inconnu; la gouvernance de sept projets n'a pas été lue. Le billet [4] se contredit sur la présidence des groupes de travail; leur ouverture aux non-membres vient de la presse.

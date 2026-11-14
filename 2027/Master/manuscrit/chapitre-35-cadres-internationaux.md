@@ -98,7 +98,7 @@ Les nouvelles interdictions visent les systèmes qui génèrent des images intim
 
 ### Comment lire ce report
 
-Le report n'est pas un répit : le cabinet Gibson Dunn, commentant l'accord provisoire, conseillait d'employer le délai à bâtir le dispositif de conformité [8]. L'argument vaut doublement pour les agents, dont les risques propres échappent aux normes harmonisées [1]. Il ne règle pas non plus le fond : la prépublication relevait que l'AI Office n'avait publié aucune orientation sur les agents ni sur la modification substantielle [1], et rien, dans les parties lues de l'Omnibus, ne traite de la dérive.
+Le report n'est pas un répit : le cabinet Gibson Dunn, commentant l'accord provisoire, conseillait d'employer le délai à bâtir le dispositif de conformité [8]. L'argument vaut doublement pour les agents, dont les risques propres échappent aux normes harmonisées [1]. Il ne règle pas non plus le fond : la prépublication relevait que l'AI Office n'avait publié aucune orientation spécifique sur les agents, l'usage d'outils ni le comportement à l'exécution [1], et rien, dans les parties lues de l'Omnibus, ne traite de la dérive.
 
 ---
 
@@ -285,6 +285,7 @@ Sources ajoutées le 14 novembre 2026, pour la section 35.7 :
 
 ## Limites de ce chapitre
 
+- Les sources [1] et [12], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - Le texte de l'AI Act n'a pas été lu directement. Le contenu des articles 3, 6, 9, 12, 14, 15, 25, 43 et 50 est rapporté d'après la prépublication [1], dont environ un quart du texte (fin et conclusions) n'a pas été chargé.
 - EUR-Lex n'a pas pu être relu à l'audit. À l'audit, l'article 113 modifié et les dispositions citées en 35.2 ont été relus dans [3], par un outil qui résume la page; ils concordent. Le calendrier des modèles GPAI et les amendes adaptées aux PME reposent encore sur une note de cabinet antérieure à l'adoption [8]. Les projets de normes prEN n'ont pas été consultés; leur état date de janvier 2026.
 - Le catalogue de l'ISO a refusé l'accès. L'état de la famille repose sur [10], celui d'ISO/IEC 24970 sur le chapitre 11; le stade et l'objet d'ISO/IEC 42105 ont été relus à l'audit sur [7]. Le contenu de ces normes n'a pas été lu.

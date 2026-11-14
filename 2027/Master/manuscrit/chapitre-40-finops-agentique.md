@@ -207,7 +207,7 @@ Le cache de prompts est le seul levier sans effet sur la qualité : le modèle r
 
 ### Le routage ensuite
 
-Le routage attribue à chaque étape un modèle à sa mesure. Le banc d'essai en montre le gain et le prix : le coût baisse de moitié, le F1 perd 1,7 point [3]. Tout confier à un modèle léger ramène le coût à 0,044 $, mais le F1 tombe à 0,843. Une prépublication plus ancienne, RouteLLM, annonce des coûts réduits de plus de moitié dans certains cas, sans perte de qualité sur ses bancs d'essai [10].
+Le routage attribue à chaque étape un modèle à sa mesure. Le banc d'essai en montre le gain et le prix : le coût baisse de moitié, le F1 perd 1,7 point [3]. Tout confier à un modèle léger ramène le coût à 0,044 $, mais le F1 tombe à 0,843. Une prépublication plus ancienne, RouteLLM, annonce dans son résumé des coûts réduits de plus de moitié dans certains cas, sans perte de qualité; dans le texte, la réduction ne dépasse la moitié que sur un des trois bancs (MT Bench) [10].
 
 La FinOps Foundation propose l'indicateur correspondant, l'adéquation du modèle : la part des requêtes envoyées à un modèle plus capable et plus cher que nécessaire [5]. La passerelle est le lieu naturel de ce routage, activé par classe de tâche (chapitre 44); distiller un petit modèle pour une tâche étroite prolonge le levier (chapitre 47).
 
@@ -277,6 +277,7 @@ Sources secondaires : aucune. Le constat de l'étude MAP vient du chapitre 4; le
 
 ## Limites de ce chapitre
 
+- Les sources [10] et [14], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - Les pages ont été lues au moyen d'un outil d'extraction; une nuance de formulation peut avoir échappé. L'audit a relu [1], [3], [4], [5], [7], [9], [11] et [12], pas [2], [6], [8] ni [10]. Les prix des éditeurs sont des prix de liste relevés le 11 novembre 2026; la page de Salesforce ne porte pas de date.
 - Le rapport State of FinOps 2026 n'a été lu que par son communiqué. La spécification FOCUS, le rapport Forrester AI Value Matrix et les livrables de la Tokenomics Foundation n'ont pas été lus; ils sont présentés comme annoncés.
 - L'« étude sur la génération de workflows » citée par le plan initial n'a pas été retrouvée ni utilisée.

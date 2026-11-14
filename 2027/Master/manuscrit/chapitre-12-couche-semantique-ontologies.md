@@ -34,7 +34,7 @@ Le mot « sens » recouvre trois objets différents, qui n'appellent pas le mêm
 
 ### Ce que montrent les bancs d'essai
 
-Laisser un modèle écrire du SQL sur un schéma brut revient à lui faire deviner la couche sémantique. Un banc d'essai de 2023 a mesuré le prix de cette devinette. Sur un schéma d'assurance et des questions d'entreprise allant du rapport à la métrique, GPT-4 interrogeant directement la base SQL, sans exemples, obtenait 16 % de bonnes réponses; les mêmes questions posées sur une représentation en graphe de connaissances, bâtie d'une ontologie et de correspondances, en obtenaient 54 % [11].
+Laisser un modèle écrire du SQL sur un schéma brut revient à lui faire deviner la couche sémantique. Un banc d'essai de 2023 a mesuré le prix de cette devinette. Sur un schéma d'assurance et 43 questions d'entreprise allant du rapport à la métrique, GPT-4 interrogeant directement la base SQL, sans exemples, obtenait 16 % de bonnes réponses; les mêmes questions posées sur une représentation en graphe de connaissances, bâtie d'une ontologie et de correspondances, en obtenaient 54 % (mesure des auteurs de data.world, dont la plateforme interrogeait le graphe; GPT-4 seul testé) [11].
 
 Deux précautions s'imposent. Ces chiffres viennent du résumé de l'article, datent de novembre 2023 et portent sur un modèle dépassé. Et 54 % n'est pas un résultat de production. La leçon durable est le sens de l'écart : un modèle répond mieux quand le vocabulaire d'affaires lui est donné que lorsqu'il doit le reconstruire à partir de noms de colonnes. Le chapitre 15 arrive au même constat avec Spider 2.0, banc d'essai de la fin de 2024 sur des schémas d'entreprise réels.
 
@@ -356,6 +356,7 @@ Source reprise du plan initial, non relue pour ce chapitre :
 
 ## Limites de ce chapitre
 
+- Les sources [10] et [11], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - L'intitulé de la section 12.4 a été modifié. Le plan initial annonce « Open Semantic Interchange v1.0 et son extension ontologique »; le dépôt ne contient aucune version 1.0, et le projet a changé de nom. Aucun autre chapitre ne reprend l'étiquette « v1.0 ».
 - Les pages ont été lues par un outil d'extraction qui condense le texte, y compris à l'audit du 12 novembre 2026. Celui-ci a relu [2] à [7], [10] et [11], qui confirment dates, versions, avertissement de production, constructions de l'ontologie, feuille de route et chiffres des résumés. Noms de champs et fragments YAML restent à vérifier dans le dépôt; le fragment de la section 12.2 est une illustration, non un extrait.
 - Le README [1], source de la liste des convertisseurs, et la documentation de dbt [8][9] n'ont pas été relus à l'audit. Le point communautaire d'avril renvoie à un dépôt distinct, `apache/ossie-converters`.

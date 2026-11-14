@@ -59,7 +59,7 @@ Le chapitre 12 traite la couche sémantique d'entreprise. Le point propre à l'u
 
 ### Un patron commun
 
-Les mises en œuvre lues suivent le même patron : un serveur MCP par protocole industriel, qui traduit des appels d'outils en opérations natives sans modifier les systèmes de commande [5][6]. Dans Teuken4OPC, les outils sont fournis une fois, au lieu de relier chaque machine à un modèle [6]. C'est, à l'échelle de l'atelier, le passage du produit à la somme décrit au chapitre 5.
+Les mises en œuvre lues suivent le même patron : un serveur MCP par protocole industriel, qui traduit des appels d'outils en opérations natives [5][6]. Dans Teuken4OPC, les outils sont fournis une fois, au lieu de relier chaque machine à un modèle [6]. C'est, à l'échelle de l'atelier, le passage du produit à la somme décrit au chapitre 5.
 
 | Adaptateur | Ce qu'il expose | Écritures | État |
 |---|---|---|---|
@@ -182,6 +182,7 @@ Page primaire lue pendant l'audit, le 12 novembre 2026 :
 
 ## Limites de ce chapitre
 
+- La source [5], d'abord connue par son seul résumé, a été relue au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - Seule la brochure [6] a été lue en texte intégral. Les autres pages l'ont été par un outil qui en restitue un résumé. L'audit a relu ainsi [2] à [5], [8] et [10], qui confirment profils, versions, téléchargements et chiffres du banc d'essai; [1], [6], [7] et [9] n'ont pas été relus.
 - Les normes n'ont pas été lues : IEC 62541, spécifications de l'IDTA sur l'AAS, IEC 61131-3, IEC 62443, normes de sûreté fonctionnelle. Du guide du NIST, seule la page de présentation l'a été.
 - Le caractère physique et parfois irréversible d'une commande relève du raisonnement et de la connaissance générale; les sources lues l'illustrent sans le démontrer.

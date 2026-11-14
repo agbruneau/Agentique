@@ -132,9 +132,9 @@ Ces patrons partagent une idée : confronter une sortie à un autre regard avant
 
 ### Le débat
 
-Dans le débat multi-agents, plusieurs instances de modèle proposent chacune une réponse et un raisonnement, puis les confrontent pendant plusieurs tours jusqu'à une réponse commune. L'article fondateur de Du et coll. rapporte, selon son résumé, une amélioration du raisonnement mathématique et stratégique et de la validité factuelle, avec une réduction des hallucinations, sur des modèles en boîte noire [8].
+Dans le débat multi-agents, plusieurs instances de modèle proposent chacune une réponse et un raisonnement, puis les confrontent pendant plusieurs tours jusqu'à une réponse commune. L'article fondateur de Du et coll. rapporte, selon son résumé, une amélioration du raisonnement mathématique et stratégique et de la validité factuelle, sur des modèles en boîte noire; les essais portent sur des sous-ensembles d'une centaine de problèmes, au prix d'un calcul plus coûteux, et les auteurs notent que les modèles peuvent affirmer avec assurance des réponses fausses [8].
 
-L'évaluation de Smit et coll. tempère ce résultat. Selon son résumé, les systèmes de débat, dans leur forme d'alors, ne surpassent pas de façon fiable d'autres stratégies plus simples, dont l'autocohérence et les ensembles de chaînes de raisonnement; ils sont plus sensibles aux hyperparamètres et difficiles à optimiser, même si un réglage du niveau d'accord entre agents peut les améliorer nettement [9]. Ces deux articles datent de 2023 et de 2024; leurs conclusions n'ont pas été revérifiées sur les modèles de 2026.
+L'évaluation de Smit et coll. tempère ce résultat. Selon son résumé, les systèmes de débat, dans leur forme d'alors, ne surpassent pas de façon fiable d'autres stratégies plus simples, dont l'autocohérence et les ensembles de chaînes de raisonnement; ils sont plus sensibles aux hyperparamètres et difficiles à optimiser, même si un réglage du niveau d'accord entre agents peut les améliorer nettement. Les essais reposent surtout sur GPT-3.5 (GPT-4 et Mixtral seulement sur MedQA) [9]. Ces deux articles datent de 2023 et de 2024; leurs conclusions n'ont pas été revérifiées sur les modèles de 2026.
 
 Les mesures de Kim et coll. situent le coût : l'architecture décentralisée, à débat et consensus, consomme 26,1 tours par essai en moyenne, et son amplification d'erreurs mesurée sur les traces est de 7,8 fois, entre l'orchestrateur et les agents indépendants [2].
 
@@ -352,6 +352,7 @@ Source secondaire :
 
 ## Limites de ce chapitre
 
+- Les sources [2], [8], [9] et [10], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - Le relevé [12], appui principal prévu par le plan initial, n'a pas été lu : le 12 novembre 2026, sa page refuse toujours l'accès, et une recherche ne trouve aucune parution dans *Future Internet*. La liste d'auteurs diffère entre la prépublication et la fiche Zenodo. Les définitions des topologies viennent de l'usage courant et de [2], non du relevé.
 - Les pages ont été lues, puis relues pour six d'entre elles, au moyen d'un outil qui en condense le contenu. Les chiffres cités concordent d'une lecture à l'autre, mais n'ont pas été recoupés avec les tableaux d'origine.
 - [1] se contredit par endroits, notamment sur les gains d'optimisation qu'il annonce; ce sont les valeurs de ses tableaux qui sont citées.

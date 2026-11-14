@@ -227,7 +227,7 @@ Une prépublication de 2026 chiffre le problème sur un agent d'analyse en produ
 
 Les praticiens interrogés donnent trois raisons d'écarter les bancs d'essai publics [11]. Les domaines réglementés manquent de données publiques. La personnalisation par client rend un banc standard impraticable. Et un banc bâti pour un déploiement se réutilise mal ailleurs.
 
-Les bancs publics qui imitent l'entreprise gardent deux usages : présélectionner un modèle, et servir de gabarit de conception. EnterpriseBench réunit ainsi 500 tâches dans quatre domaines, avec des sources fragmentées et des hiérarchies de contrôle d'accès; son résumé rapporte 41,8 % d'achèvement pour le meilleur agent testé [14]. Le chapitre 15 compare cinq bancs de ce type. Aucun ne mesure un déploiement réel.
+Les bancs publics qui imitent l'entreprise gardent deux usages : présélectionner un modèle, et servir de gabarit de conception. EnterpriseBench réunit ainsi 500 tâches dans quatre domaines selon son résumé (cinq selon le corps du texte), avec des sources fragmentées et des hiérarchies de contrôle d'accès; son résumé rapporte 41,8 % d'achèvement pour le meilleur agent testé, chiffre que les tableaux du texte ne retrouvent pas (31 % d'exactitude à l'évaluation humaine de l'agent o1-mini) [14]. Le chapitre 15 compare cinq bancs de ce type. Aucun ne mesure un déploiement réel.
 
 ### Construire le sien
 
@@ -307,6 +307,7 @@ Résumé seulement, relevé le 14 novembre 2026 :
 
 ## Limites de ce chapitre
 
+- Les sources [13], [14] et [16], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - Les pages ont été lues au moyen d'un outil d'extraction qui résume le texte; les noms d'attributs et les valeurs sont repris tels que rapportés, sans relecture du texte brut. La fin de la page MCP [7] a été relue à l'audit; la seconde moitié de l'article [11] n'a pas été lue.
 - La date du déplacement des conventions, l'historique des renommages et le retrait de `gen_ai.client.token.usage` viennent de la seule source secondaire [15]; les notes de version du dépôt principal n'ont pas été lues.
 - MAP exprime en pourcentage (75 %) la part des équipes sans banc d'essai, que ce chapitre et le chapitre 42 rendent par « les trois quarts ».

@@ -94,7 +94,7 @@ Un agent négociateur réunit par construction les trois conditions de la trifec
 
 ### Une cible de conception, non un patron établi
 
-La scission « Diplomate / Évaluateur interne » n'a été retrouvée sous ce nom dans aucune source : c'est une cible de conception, adossée à un principe publié. CaMeL sépare le flux de contrôle, tiré de la requête de confiance, du flux de données, de sorte qu'une donnée non fiable ne puisse jamais modifier le déroulement du programme; des capacités empêchent une donnée privée de sortir par un flux non autorisé [7]. Les auteurs rapportent 77 % de tâches résolues avec sécurité prouvable sur AgentDojo, contre 84 % sans défense : la séparation a un coût.
+La scission « Diplomate / Évaluateur interne » n'a été retrouvée sous ce nom dans aucune source : c'est une cible de conception, adossée à un principe publié. CaMeL sépare le flux de contrôle, tiré de la requête de confiance, du flux de données, de sorte qu'une donnée non fiable ne puisse jamais modifier le déroulement du programme; des capacités empêchent une donnée privée de sortir par un flux non autorisé. La garantie ne couvre pas les attaques qui n'altèrent ni ce déroulement ni ces données, ni les canaux auxiliaires; sur AgentDojo, 77 % des tâches sont résolues avec garanties prouvables, contre 84 % sans défense [7]. Les auteurs rapportent 77 % de tâches résolues avec sécurité prouvable sur AgentDojo, contre 84 % sans défense : la séparation a un coût.
 
 Appliqué à la négociation, le principe donne deux composants.
 
@@ -142,7 +142,7 @@ Le mot recouvre deux risques : des agents de tarification concurrents qui s'alig
 
 Le résultat fondateur est évalué par les pairs : Calvano et ses coauteurs montrent en 2020 que des algorithmes de tarification par apprentissage Q, en concurrence répétée, apprennent de façon constante à pratiquer des prix supraconcurrentiels, sans communiquer entre eux [10].
 
-Fish, Gonczarowski et Shorrer étendent le constat aux modèles de langage [11]. Dans leurs expériences en oligopole, des agents de tarification fondés sur un LLM atteignent rapidement et de façon autonome des prix supraconcurrentiels. Des variations de formulation en apparence anodines dans les consignes modifient fortement l'écart, et les résultats s'étendent aux enchères. Le texte, révisé le 31 août 2026, indique une acceptation à la conférence EC 2026.
+Fish, Gonczarowski et Shorrer étendent le constat aux modèles de langage [11]; leur expérience principale porte sur un seul modèle (GPT-4, version 0613, avec GPT-5.2 en test de robustesse), dans un oligopole de Bertrand simple à horizon fixe. Dans leurs expériences en oligopole, des agents de tarification fondés sur un LLM atteignent rapidement et de façon autonome des prix supraconcurrentiels. Des variations de formulation en apparence anodines dans les consignes modifient fortement l'écart, et les résultats s'étendent aux enchères. Le texte, révisé le 31 août 2026, indique une acceptation à la conférence EC 2026.
 
 La consigne d'un agent de tarification est donc un objet de conformité : elle se versionne et se fait revoir par le contentieux, comme une politique de prix.
 
@@ -247,6 +247,7 @@ Repérés, non lus :
 
 ## Limites de ce chapitre
 
+- Les sources [7], [8], [11] et [12], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - **Éléments sans source.** « Diplomate / Évaluateur interne » et le rapprochement à trois voies avant un règlement AP2 ou x402 figurent comme cibles de conception. « Clean Rooms sur TEE » repose sur une seule documentation d'éditeur, qui n'emploie pas le terme; la définition d'une salle blanche et la description de l'intégration bilatérale viennent de la connaissance générale.
 - **vLEI.** La page du cadre n'explique ni la vérification des rôles ni le lien avec ISO 5009. La répartition entité / OOR / délégation est une déduction. Le Delegated Agent Participant ID est repris du chapitre 37, sans relecture de sa source.
 - **DSP, EDC, ODRL.** La machine à états a été lue dans la branche principale du dépôt; la page 2025-1, relue à l'audit, n'en affiche pas le texte. DCP, le moteur de politiques d'EDC, la fin de la recommandation ODRL et son vocabulaire n'ont pas été lus.

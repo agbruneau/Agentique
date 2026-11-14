@@ -1,0 +1,25 @@
+{
+ "id": "P2-F3-b",
+ "origine": "plan 2027, lot P2-F3-b",
+ "categorie": "factuel",
+ "remplacements": [
+  {
+   "fichier": "chapitre-24-passerelles-integration.md",
+   "avant": "Sur une collection de 64 611 serveurs, les scanners existants signalent 96,89 % des serveurs comme risqués, et moins de la moitié des alertes vérifiées à la main sont fondées [16].",
+   "apres": "Sur une collection de 64 611 serveurs, dont 37 288 pouvaient être interrogés, 96,89 % de ces derniers sont signalés comme risqués par au moins un des huit scanners existants, et moins de la moitié des alertes d'un échantillon de 100 serveurs, vérifiées à la main, sont fondées [16].",
+   "motif": "Lecture au-delà du résumé (lot P2-F3, F3-082, source [16], nuance) : les 96,89 % portent sur les 37 288 serveurs interrogeables, non sur les 64 611 de la collection; la vérification manuelle porte sur 100 serveurs."
+  },
+  {
+   "fichier": "chapitre-28-agents-industriels-peripherie.md",
+   "avant": "en opérations natives sans modifier les systèmes de commande [5][6].",
+   "apres": "en opérations natives [5][6].",
+   "motif": "Lecture au-delà du résumé (lot P2-F3, F3-083, source [5], nuance) : « sans modifier les systèmes de commande » ne figure pas dans le texte complet de la source [5]."
+  },
+  {
+   "fichier": "chapitre-31-menaces.md",
+   "avant": "des patrons qui donnent à l'agent une résistance démontrable à l'injection, au prix d'un compromis explicite entre utilité et sécurité que les auteurs analysent sur des études de cas [8]. Le résumé ne nomme pas les patrons, et le texte complet n'a pas été lu.",
+   "apres": "des patrons qui visent une résistance démontrable à l'injection, sans toujours l'éliminer, au prix d'un compromis explicite entre utilité et sécurité que les auteurs analysent sur dix études de cas [8].",
+   "motif": "Lecture au-delà du résumé (lot P2-F3, F3-087, source [8], nuance) : le corps de l'article nuance la « résistance démontrable » du résumé (le patron plan-then-execute « does not prevent all prompt injections »); le texte complet a maintenant été lu."
+  }
+ ]
+}

@@ -20,7 +20,7 @@ Une prépublication de mars 2026 propose de nommer ingénierie du contexte la di
 
 ### Une ressource à rendement décroissant
 
-L'argument central est empirique. Une étude de 2023, acceptée par la revue TACL, a montré que la précision d'un modèle varie selon la position de l'information utile dans une longue entrée : elle est meilleure au début et à la fin, plus faible au milieu, y compris pour des modèles conçus pour les longs contextes [3]. Un rapport technique de Chroma, en juillet 2025, étend le constat à 18 modèles : la performance devient moins fiable à mesure que l'entrée s'allonge, même sur des tâches simples, et un seul distracteur suffit à la dégrader [4]. Ce rapport émane d'un éditeur de bases vectorielles; il n'a pas été évalué par des pairs.
+L'argument central est empirique. Une étude de 2023, acceptée par la revue TACL, a montré, sur les modèles de l'époque et deux tâches (questions sur plusieurs documents, récupération clé-valeur), que la précision varie selon la position de l'information utile dans une longue entrée : meilleure au début et à la fin, plus faible au milieu, y compris pour des modèles conçus pour les longs contextes [3]. Un rapport technique de Chroma, en juillet 2025, étend le constat à 18 modèles : la performance devient moins fiable à mesure que l'entrée s'allonge, même sur des tâches simples, et un seul distracteur suffit à la dégrader [4]. Ce rapport émane d'un éditeur de bases vectorielles; il n'a pas été évalué par des pairs.
 
 Anthropic résume ces observations par l'image d'un budget d'attention : chaque jeton ajouté en consomme une part, et la dégradation est graduelle plutôt que brutale [2]. La conséquence pratique est contre-intuitive pour qui vient de la gestion documentaire : donner « tout ce qui pourrait servir » dégrade la décision.
 
@@ -116,7 +116,7 @@ Une prépublication, SkillsBench, évalue 87 tâches dans huit domaines, avec et
 
 Les auteurs reconnaissent qu'une part du gain peut venir du simple ajout de contexte. Les tâches sont exécutées en terminal, dans des conteneurs, et le résultat ne se transpose pas d'emblée à des processus d'affaires.
 
-Côté risque, une autre prépublication a analysé 31 132 skills tirées de deux places de marché : 26,1 % présentent au moins un motif de vulnérabilité, et celles qui embarquent des scripts sont environ deux fois plus exposées que les autres [12]. Une skill est à la fois une instruction et du code; elle entre dans la chaîne d'approvisionnement (section 31.5).
+Côté risque, une autre prépublication a analysé 31 132 skills tirées de deux places de marché : 26,1 % présentent au moins un motif de vulnérabilité, repéré par analyse statique et classification par modèle sans confirmation d'exploitation, et celles qui embarquent des scripts sont environ deux fois plus exposées que les autres [12]. Une skill est à la fois une instruction et du code; elle entre dans la chaîne d'approvisionnement (section 31.5).
 
 ---
 
@@ -135,10 +135,10 @@ Une étude empirique de 2 303 fichiers de ce type, dans 1 925 dépôts, montre q
 | | Gloaguen et coll. [15] | Lulla et coll. [16] |
 |---|---|---|
 | Question | Le fichier aide-t-il à résoudre la tâche ? | Le fichier rend-il l'agent plus rapide ? |
-| Protocole | 300 tâches SWE-bench Lite avec fichiers générés; 138 tâches de 12 dépôts avec fichiers rédigés par les développeurs | 124 demandes de tirage dans 10 dépôts, avec et sans le fichier |
+| Protocole | Fichiers générés : 300 tâches SWE-bench Lite et 138 tâches de 12 dépôts; fichiers rédigés par les développeurs : ces 138 tâches seulement | 124 demandes de tirage dans 10 dépôts, avec et sans le fichier |
 | Agents | Claude Code, Codex, Qwen Code | Codex seulement |
 | Réussite | Fichiers générés : −0,5 et −2 points, non significatifs. Fichiers de développeurs : +2,4 points, non significatif | Non mesurée (contrôle manuel de 50 exécutions) |
-| Coût et durée | Coût d'inférence en hausse de plus de 20 % en moyenne | Durée médiane en baisse de 28,64 %, jetons de sortie de 16,58 %; jetons totaux en légère hausse |
+| Coût et durée | Coût d'inférence en hausse de plus de 20 % en moyenne | Durée médiane en baisse de 28,64 %, jetons de sortie de 16,58 % (médiane); jetons totaux : médiane en légère hausse (+1,3 %), moyenne en baisse (-9,9 %) |
 | Portée | Python seulement | Petites modifications seulement |
 
 Les deux résultats ne se contredisent qu'en apparence : l'un mesure l'exactitude, l'autre la vitesse sans vérifier l'exactitude. Lus ensemble, ils disent qu'un fichier de contexte modifie nettement le comportement de l'agent, sans amélioration démontrée du résultat.
@@ -185,7 +185,7 @@ Le chargement à la demande a son propre coût : l'agent explore, donc il est pl
 
 Si le contexte détermine le comportement, celui qui le rédige programme l'agent. Les skills, les fichiers de consignes, les prompts système et les descriptions d'outils sont donc des artefacts de production, et non de la documentation.
 
-**Les gérer comme du code.** L'étude des fichiers de contexte montre qu'ils évoluent déjà ainsi, sans en avoir la discipline [14]. Il leur faut un dépôt, des versions, une revue, un propriétaire nommé. Une skill ou une consigne sans propriétaire dérive, et l'agent continue de lui obéir. Une consigne ne remplace pas un droit : la séparation des rôles entre agents repose sur des permissions (chapitre 47).
+**Les gérer comme du code.** L'étude des fichiers de contexte montre qu'ils évoluent déjà comme du code de configuration, et ses auteurs recommandent d'y appliquer la même rigueur [14]. Il leur faut un dépôt, des versions, une revue, un propriétaire nommé. Une skill ou une consigne sans propriétaire dérive, et l'agent continue de lui obéir. Une consigne ne remplace pas un droit : la séparation des rôles entre agents repose sur des permissions (chapitre 47).
 
 **Tester avant d'adopter.** Les trois évaluations lues convergent sur la méthode : comparer la même tâche avec et sans l'artefact [11][15][16]. C'est le seul moyen de distinguer un contexte utile d'un contexte coûteux. Cette comparaison s'intègre à l'évaluation continue (chapitre 33).
 
@@ -261,6 +261,7 @@ Sources secondaires : aucune page secondaire n'a été lue. Les travaux suivants
 
 ## Limites de ce chapitre
 
+- Les sources [3], [11], [12], [14], [15] et [16], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - **Mode de lecture.** La plupart des pages ont été lues par un outil d'extraction; seuls [1], [6], [9], [10], [19] et [21] l'ont été mot à mot. L'audit du 12 novembre 2026 a relu [3], [7] à [11], [15] et [20] : les chiffres principaux de [11] (v4) et la hausse de coût de [15] (v3) sont confirmés par leurs résumés; les autres chiffres de [11], [15] et [16] restent à recontrôler sur les tableaux des articles.
 - **Niveau de preuve.** Le cadre repose sur une prépublication d'une seule auteure [1]. Les cinq études empiriques ([11], [12], [14] à [16]) sont des prépublications, dont trois ne portent que sur des agents de programmation.
 - **Chiffres de fournisseurs.** Les gains de jetons de la section 13.5 viennent de billets d'Anthropic, sans reproduction indépendante; les chiffres d'adoption sont ceux des promoteurs des formats; le tarif du cache est celui d'un seul fournisseur.

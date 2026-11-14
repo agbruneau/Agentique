@@ -124,7 +124,7 @@ Le sigle ACP désigne trois choses dans ce compendium : l'Agent Communication Pr
 
 ### Sept questions
 
-Les relevés universitaires comparent les protocoles par leurs modes d'interaction, leur découverte et leur sécurité [20][21]. Ces axes décrivent un protocole sans dire s'il faut l'adopter; la grille suivante, synthèse de ce chapitre, vise cette décision.
+Les relevés universitaires comparent les protocoles : le premier par leurs modes d'interaction, leur découverte et leur sécurité [20], le second par sept critères, dont la sécurité, la fiabilité et l'interopérabilité [21]. Ces axes décrivent un protocole sans dire s'il faut l'adopter; la grille suivante, synthèse de ce chapitre, vise cette décision.
 
 | Question | Indice favorable | Signal d'alerte |
 |---|---|---|
@@ -201,6 +201,7 @@ Source secondaire :
 
 ## Limites de ce chapitre
 
+- Les sources [17], [18], [19], [20] et [21], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - Les pages ont été lues par un outil d'extraction qui les condense; les citations sont des traductions.
 - LAP et TEA n'ont été lus qu'en partie, [19] à [21] par leur résumé seulement. La version 0.1 de LAP et l'absence de mise en œuvre viennent du texte intégral, non du résumé relu. Les cinq protocoles de [19] sont repris des chapitres 3 et 11.
 - A2UI n'est connu que par la page d'accueil de son site [5].

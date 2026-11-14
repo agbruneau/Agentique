@@ -114,7 +114,7 @@ L'alignement des lignes est une lecture propre à ce chapitre : les trois échel
 
 **L'approbation humaine ne passe pas à l'échelle.** Le cadre de Singapour reconnaît qu'une supervision continue de tous les agents devient impraticable, et qu'elle nourrit le biais d'automatisation. Il recommande de réserver l'approbation à des points de contrôle significatifs, comme les actions irréversibles ou à fort enjeu [4].
 
-**La pratique est prudente.** L'étude MAP repose sur vingt études de cas et sur une enquête de 306 répondants, dont 86 décrivent des systèmes déployés, dans 26 domaines [7]. Parmi ces systèmes, 68 % exécutent moins de dix étapes avant une intervention humaine (« au plus dix » selon le résumé), et 74 % dépendent surtout d'une évaluation humaine. Chaque proportion repose sur quelques dizaines de réponses.
+**La pratique est prudente.** L'étude MAP repose sur vingt études de cas et sur une enquête de 306 répondants, dont 86 décrivent des systèmes en production ou en pilote; les 26 domaines sont relevés parmi 69 agents déployés [7]. Parmi ces systèmes, 68 % exécutent moins de dix étapes avant une intervention humaine (« au plus dix » selon le résumé), et 74 % dépendent surtout d'une évaluation humaine. Chaque proportion repose sur quelques dizaines de réponses.
 
 ---
 
@@ -231,6 +231,7 @@ Sources secondaires :
 
 ## Limites de ce chapitre
 
+- Les sources [7] et [8], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - Les pages [1] à [3] et [5] à [10] ont été lues au moyen d'un outil qui extrait et condense le contenu. Seul [4] a été lu en texte intégral, sur ses douze premières pages, puis interrogé en entier à l'audit.
 - MAP a été relue à l'audit sur la première moitié de son texte : son résumé dit « au plus dix étapes », son corps « moins de dix ». Les sous-échantillons comptent de 22 à 69 réponses selon le chapitre 4 (31 pour l'évaluation). Les parts des échecs selon MAST ne sont pas reprises, seul le résumé ayant été lu (chapitre 21).
 - La fiche Zenodo annonce [11] à paraître dans *Future Internet*; le 12 novembre 2026, aucune parution n'a été trouvée (chapitre 16). Le rattachement de [3] à ICDEW 2025 ne figure pas sur la page lue; le chapitre 23 cite une version antérieure de la même architecture (arXiv 2406.00584).

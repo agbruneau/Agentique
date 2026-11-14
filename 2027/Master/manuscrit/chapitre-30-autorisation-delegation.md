@@ -146,7 +146,7 @@ Ici, c'est la ressource qui annonce ce qu'elle accepte. Les déclarations de ce 
 
 Deux usages s'en dégagent. Pour les agents qui naviguent sur des sites tiers, le cadriciel devrait vérifier les règles structurées avant toute commande, de façon déterministe, et ne jamais injecter les directives en langage naturel comme des instructions de confiance. Pour les sites de l'entreprise, le manifeste indique aux agents bien conçus le canal voulu, sans remplacer l'autorisation.
 
-Une autre prépublication, lue en résumé, suit la voie inverse : traduire en contrôles d'accès vérifiables, par extension d'OAuth 2.0 et d'OpenID Connect, des permissions que l'utilisateur exprime en langage naturel [13].
+Une autre prépublication suit la voie inverse : un cadre, sans mise en œuvre ni évaluation, qui étend OAuth 2.0 et OpenID Connect pour traduire en contrôles d'accès vérifiables des permissions exprimées en langage naturel; la traduction elle-même est laissée à des travaux futurs [13].
 
 ---
 
@@ -237,6 +237,7 @@ Sources secondaires (résultat de recherche seulement, pages non lues) :
 
 ## Limites de ce chapitre
 
+- La source [13], d'abord connue par son seul résumé, a été relue au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - Les pages ont été lues par un outil qui en restitue un résumé. L'audit du 12 novembre a relu, avec citations, AIMS [4], la spécification [1] et la feuille de route [3] de MCP, [5], [9], [10], [11] et le résumé de [12]; les énoncés qui en dépendent sont confirmés ou corrigés. Les mots-clés attribués aux RFC 8693 et 9396 et au guide [2] n'ont pas été relus.
 - AIMS est un brouillon de groupe de travail, de statut visé informatif; [9], [16] et [17] sont des brouillons individuels. Aucun n'est une norme; tous peuvent changer ou expirer.
 - La charte OAuth lue (version 06) n'affiche pas de date d'approbation; une révision en juin 2026, relevée dans un résultat de recherche, n'a pas été confirmée et n'est pas reprise.

@@ -140,7 +140,7 @@ Une observation touche l'autorisation. Une équipe reproduit les permissions de 
 
 | Banc d'essai | Tâche | Résultat rapporté |
 |---|---|---|
-| ITBench (IBM et Université de l'Illinois, février 2025) [5] | 94 scénarios d'automatisation TI | 13,8 % des scénarios de fiabilité résolus; 25,2 % en conformité et sécurité; 0 % en FinOps |
+| ITBench (IBM et Université de l'Illinois, février 2025) [5] | 94 scénarios d'automatisation TI (42 en fiabilité, 50 en conformité et sécurité, 2 en FinOps) | 13,8 % des scénarios de fiabilité résolus; 25,2 % en conformité et sécurité; 0 % en FinOps (deux scénarios seulement) |
 | ORCA-bench (version 3, septembre 2026) [6] | 1 079 tâches d'analyse de cause première | Meilleure exactitude : 25,3 % au niveau moyen, 10,0 % au niveau difficile |
 
 Les deux textes sont des prépublications, lues par leur résumé. ORCA-bench évalue cinq agents de pointe sur six jours de télémétrie d'un système de microservices instrumenté. Le modèle le plus faible avance une cause invraisemblable dans 40 % de ses rapports, et retirer l'accès au code source dégrade tous les modèles. Les auteurs concluent que les agents ne sont pas prêts pour une garde autonome, et rappellent que les systèmes réels sont bien plus vastes que leur banc. Une étude de 2024, menée sur des incidents de production de Microsoft, explorait déjà l'idée de donner à un agent les outils de diagnostic qu'une équipe emploie à la main; son résumé ne rapporte aucun résultat de déploiement [7].
@@ -153,7 +153,7 @@ Les trois types de preuves convergent. Ce qui est documenté en production, c'es
 
 Une recherche complémentaire a trouvé trois textes parus en 2026, connus ici par leur seul résumé.
 
-**Tri d'alarmes dans un centre de distribution.** Des auteurs d'Amazon décrivent un agent qui diagnostique des alarmes en suivant une procédure de 44 étapes sur plusieurs systèmes de mesure. Au lieu de générer du code à chaque requête, une chaîne préalable compile les étapes répétées en outils validés et versionnés, que l'agent appelle ensuite directement. En production, le temps de réponse médian baisse de 42 %; sur 1 500 alarmes historiques, le taux d'erreur de bout en bout baisse jusqu'à 53 % [13]. Le gain vient de ce qu'on retire au modèle : la variance d'une exécution à l'autre sur les étapes répétées.
+**Tri d'alarmes dans un centre de distribution.** Des auteurs d'Amazon décrivent un agent qui diagnostique des alarmes en suivant une procédure de 44 étapes sur plusieurs systèmes de mesure. Au lieu de générer du code à chaque requête, une chaîne préalable compile les étapes répétées en outils validés et versionnés, que l'agent appelle ensuite directement. En production, sur une seule application, le temps de réponse médian baisse de 42 % (modèle Qwen3 32B, par rapport à l'agent qui génère du code à chaque requête); sur 1 500 alarmes historiques, le taux d'erreur de bout en bout baisse jusqu'à 53 % selon le modèle (36 % pour Qwen3 32B), et les auteurs ne revendiquent pas de généralisation à d'autres domaines [13]. Le gain vient de ce qu'on retire au modèle : la variance d'une exécution à l'autre sur les étapes répétées.
 
 **Exploitation de systèmes de recommandation.** Une prépublication rapporte 78 jours de service d'une plateforme d'agents dans trois lignes d'affaires de Tencent : 1 624 lancements d'outils, dont 78,6 % réussis. Son principe est de borner l'autonomie aux points de décision d'une chaîne fixée d'avance, l'humain gardant la frontière entre le diagnostic et l'exécution. Les auteurs précisent qu'aucune comparaison contrôlée avec la situation antérieure n'a été faite [14].
 
@@ -293,6 +293,7 @@ Résumés seulement, relevés le 14 novembre 2026 :
 
 ## Limites de ce chapitre
 
+- Les sources [5], [6], [7], [13], [14] et [15], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - Toutes les pages, sauf le guide [10] lu en texte intégral, ont été lues au moyen d'un outil d'extraction automatique qui résume la page. À l'audit, les tableaux tirés de [1] et de [4], les chiffres de [2], le portrait [8] et le communiqué [11] ont été relus par le même outil et concordent; ils n'ont pas été collationnés à l'œil sur les PDF.
 - MAP compte deux établissements industriels parmi les cinq de ses auteurs : son indépendance envers les organisations étudiées, que suppose le niveau 2, n'est pas établie. Sa part de 75 % d'équipes sans banc d'essai est un pourcentage, donné sans compte.
 - La hiérarchie en six niveaux est une proposition de ce chapitre, pas un résultat de recherche.

@@ -1,0 +1,13 @@
+{
+ "id": "P2-cloture",
+ "origine": "plan 2027, lot P2-cloture",
+ "categorie": "harmonisation",
+ "remplacements": [
+  {
+   "fichier": "annexe-E-bibliographie.md",
+   "avant": "sa pratique en production reste à documenter.\n\n## E.4 Sources de la partie X",
+   "apres": "sa pratique en production reste à documenter.\n\n### Contrôles faits le 14 novembre 2026\n\nTrois contrôles ont suivi l'audit, faits par des lecteurs qui n'avaient pas écrit les passages contrôlés. Tous lisent les sources par un outil qui en rend des extraits, non le texte brut.\n\n| Contrôle | Périmètre | Résultat |\n|---|---|---|\n| Recollationnement des chiffres | 200 phrases d'exposé tirées au hasard parmi les 295 qui portent une quantité et un appel de source | 182 vérifiables : 178 confirmées, 4 en erreur, soit 2,2 %; 18 non vérifiables, la source étant inaccessible ou le chiffre introuvable |\n| Lecture au-delà du résumé | 134 sources des chapitres 1 à 47 connues par leur seul résumé et citées dans le texte | 124 relues : 64 confirmées, 54 exactes mais à nuancer, 6 en erreur; 10 non relues |\n| Second audit des compléments | Les 193 entrées ajoutées au registre le 14 novembre | 95 constats : aucun bloquant, 19 majeurs, 76 mineurs; 86 corrigés |\n\nLes quatre erreurs de relevé tiennent à la portée du chiffre plus qu'au chiffre : un exemple donné pour une règle, une population plus étroite que celle annoncée, une attribution à la mauvaise page, une source révisée depuis la lecture. Le deuxième contrôle pèse davantage : près d'une fois sur deux, le texte complet ajoute au résumé une réserve qui change la portée du résultat, le plus souvent la taille réelle de l'échantillon, le périmètre de l'essai ou le lien des auteurs avec le produit mesuré. Les corrections sont inscrites au registre, et les limites des chapitres disent quelles sources ont été relues. Les sources de la partie X, lues par leur résumé selon la méthode déclarée au chapitre 48, n'ont pas été relues ainsi.\n\n## E.4 Sources de la partie X",
+   "motif": "Clôture de la priorité 2 du plan de travail : l'annexe E publie le résultat des trois contrôles de fiabilité du 14 novembre 2026 (recollationnement de 200 chiffres, lecture au-delà du résumé de 134 sources, second audit des 193 compléments)."
+  }
+ ]
+}

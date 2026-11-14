@@ -42,7 +42,7 @@ Le modèle qui suit est une proposition de l'ouvrage, sans validation empirique.
 
 ### Où en sont les déploiements observés
 
-L'étude Measuring Agents in Production combine 20 études de cas et un sondage dont 86 réponses, sur 306 valides, décrivent des systèmes en production ou en pilote. Elle dépeint des agents de stade 1 : 68 % exécutent moins de dix étapes avant une intervention humaine (« au plus dix » selon le résumé), 14 cas sur 20 pilotent par prompt un modèle du commerce sans en ajuster les poids, 74 % des répondants dépendent surtout d'une évaluation humaine [3]. L'étude ne mesure pas les stades 2 à 4. Le chapitre 42 va dans le même sens : un seul déploiement à grande échelle trouvé dans un article évalué par les pairs, aucun cas documenté de MCP, d'A2A ou d'un système multi-agents en production. Le stade 3 n'a donc pas d'exemple publié, et le modèle sert à ordonner des décisions, non à situer une entreprise par rapport à une moyenne de marché, qu'aucune source lue ne fournit.
+L'étude Measuring Agents in Production combine 20 études de cas et un sondage dont 86 réponses, sur 306 valides, décrivent des systèmes en production ou en pilote. Elle dépeint des agents de stade 1 : sur 60 systèmes déclarés, 68 % exécutent moins de dix étapes avant une intervention humaine (« au plus dix » selon le résumé), 14 cas sur 20 pilotent par prompt un modèle du commerce sans en ajuster les poids, 74 % des répondants (31 systèmes) dépendent surtout d'une évaluation humaine [3]; les auteurs signalent un biais de participation. L'étude ne mesure pas les stades 2 à 4. Le chapitre 42 va dans le même sens : un seul déploiement à grande échelle trouvé dans un article évalué par les pairs, aucun cas documenté de MCP, d'A2A ou d'un système multi-agents en production. Le stade 3 n'a donc pas d'exemple publié, et le modèle sert à ordonner des décisions, non à situer une entreprise par rapport à une moyenne de marché, qu'aucune source lue ne fournit.
 
 ---
 
@@ -102,7 +102,7 @@ Le scénario B prolonge l'état de 2026. Le scénario A suppose que les chantier
 
 ### Une variable transversale : la portée des agents
 
-L'ouvrage suppose que les agents en production restent bornés et que le verrou tient à la conception du système plus qu'au modèle (chapitre 4, hypothèses H2 et H3). La taxonomie MAST recense quatorze modes d'échec, dont la plupart tiennent à la conception et à la coordination [4] (chapitre 21). Si une génération de modèles faisait disparaître ces échecs, le jalon 4 s'atteindrait plus vite. Les jalons 1 à 3 resteraient nécessaires : un agent plus capable a toujours besoin d'une identité, d'un inventaire et d'une piste d'audit.
+L'ouvrage suppose que les agents en production restent bornés et que le verrou tient à la conception du système plus qu'au modèle (chapitre 4, hypothèses H2 et H3). La taxonomie MAST recense quatorze modes d'échec en trois catégories (conception du système, désalignement entre agents, vérification des tâches); ses auteurs jugent que bien des échecs tiennent à la conception organisationnelle et à la coordination, non au seul modèle [4] (chapitre 21). Si une génération de modèles faisait disparaître ces échecs, le jalon 4 s'atteindrait plus vite. Les jalons 1 à 3 resteraient nécessaires : un agent plus capable a toujours besoin d'une identité, d'un inventaire et d'une piste d'audit.
 
 ### Ce qui vaut dans tous les cas
 
@@ -198,6 +198,7 @@ Sources secondaires : aucune.
 
 ## Limites de ce chapitre
 
+- Les sources [3], [4] et [7], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - Le modèle de maturité, les jalons, les scénarios et les recommandations sont des propositions de synthèse, non validées; aucune source lue ne répartit les entreprises par stade.
 - Les articles [4], [6] et [7] ont été lus par leur résumé seulement; [3], par son résumé et la première moitié de son texte. Les pages [2], [5], [8] à [11] et [13] ont été lues par un outil qui en extrait le contenu; seules [1] et [12] l'ont été en texte intégral. Relues à l'audit : [1] à [4], [8] et [11]. Le règlement [9] a été lu sur un site non officiel, pour sa première moitié. Le texte de E-23, lu pour le chapitre 38, confirme l'inventaire et la cote de risque.
 - MAP écrit « au plus dix étapes » dans son résumé, « moins de dix » dans son corps, sans expliquer l'écart; son 74 % porte sur 31 réponses.

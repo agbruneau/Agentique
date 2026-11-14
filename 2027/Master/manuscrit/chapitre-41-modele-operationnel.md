@@ -50,7 +50,7 @@ Pour McKinsey, l'organisation existante devient la contrainte [2]. Le diagnostic
 
 ### Une définition exigeante
 
-La complémentarité désigne les conditions dans lesquelles une équipe humain-IA fait mieux que les humains seuls et mieux que l'IA seule. Un cadre publié en 2026 dans PNAS Nexus la fonde sur l'intelligence collective et sur trois processus cognitifs : raisonnement, mémoire, attention [5]. Il recense cinq facteurs sociotechniques, dont le calibrage de la confiance et la structure de la tâche, et cinq principes de conception : définir les buts et les contraintes, répartir les rôles, orchestrer l'attention et l'interrogation, bâtir des infrastructures de connaissance, former et évaluer en continu [5].
+La complémentarité désigne les conditions dans lesquelles une équipe humain-IA fait mieux que les humains seuls et mieux que l'IA seule. Un cadre publié en 2026 dans PNAS Nexus la fonde sur l'intelligence collective et sur trois processus cognitifs : raisonnement, mémoire, attention [5]. Il examine des facteurs sociotechniques, dont le calibrage de la confiance et la structure de la tâche, et propose cinq principes de conception : définir les buts et les contraintes, répartir les rôles, orchestrer l'attention et l'interrogation, bâtir des infrastructures de connaissance, former et évaluer en continu [5]; ses auteurs notent que les preuves viennent surtout d'études en laboratoire et de prototypes.
 
 Montrer qu'un employé assisté fait mieux que sans aide ne démontre pas la complémentarité : il faut aussi battre l'agent seul.
 
@@ -71,7 +71,7 @@ L'ajout d'explications ou d'un indice de confiance de l'IA ne modifie pas signif
 
 ### Ce que montre l'expérience de terrain
 
-Une expérience préenregistrée chez Procter & Gamble a réparti au hasard 776 professionnels sur de vrais problèmes d'innovation : seuls ou à deux, avec ou sans IA générative [7]. Les personnes seules munies de l'IA ont égalé les équipes qui n'en avaient pas. Avec l'IA, les propositions devenaient équilibrées entre technique et commercial, quelle que soit la spécialité de leur auteur [7]. Le résultat appuie l'idée d'équipes plus petites, mais pour des tâches de création et avec un assistant, non un agent autonome.
+Une expérience préenregistrée chez Procter & Gamble, menée lors d'un atelier virtuel d'une journée, a réparti au hasard 776 professionnels sur de vrais problèmes d'innovation : seuls ou à deux (un spécialiste technique et un commercial), avec ou sans IA générative [7]; elle a reçu un soutien financier lié à P&G, dont un auteur a été consultant. Les personnes seules munies de l'IA ont égalé les équipes qui n'en avaient pas. Avec l'IA, les propositions devenaient équilibrées entre technique et commercial, quelle que soit la spécialité de leur auteur [7]. Le résultat appuie l'idée d'équipes plus petites, mais pour des tâches de création et avec un assistant, non un agent autonome.
 
 ### Ce qu'il faut en tirer
 
@@ -290,6 +290,7 @@ Source ajoutée le 14 novembre 2026 :
 
 ## Limites de ce chapitre
 
+- Les sources [5] et [7], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - Le rapport State of Organizations 2026 de McKinsey, cité par le plan initial, n'a pas été lu. L'article [2] le remplace; la méthode des enquêtes qu'il cite n'y est pas publiée.
 - Les enquêtes [3] et [4] ont été lues partiellement, sans leurs figures. À l'audit, les pages de McKinsey n'ont pas répondu; des résumés de recherche web confirment le titre et la date de [3], ses parts de 40 %, 37 %, 14 %, 32 % et 39 % et l'écart de refonte des flux. L'engagement des dirigeants « deux fois plus souvent » n'y figure que dans un résumé secondaire.
 - Les chiffres de [2] n'ont pas pu être relus à l'audit; un résumé attribue les 11 % à une autre page de McKinsey.

@@ -165,7 +165,7 @@ AutoDojo, prépublication de juin 2026 révisée en septembre, transpose l'argum
 
 ### L'application hors bande : un signal, pas une preuve
 
-Une troisième prépublication examine les défenses qui appliquent une politique déterministe hors du modèle, plutôt que d'entraîner celui-ci à refuser [11]. Elle les rattache à trois notions classiques : protection d'intégrité, moniteur de référence, moindre privilège. Dans une reproduction indépendante sur le banc AgentDojo, l'une d'elles, Progent, ramène le succès moyen des attaques de 25,8 % à 4,2 %; une attaque adaptative écrite à la main ne le fait pas remonter (2,6 %).
+Une troisième prépublication examine les défenses qui appliquent une politique déterministe hors du modèle, plutôt que d'entraîner celui-ci à refuser [11]. Elle les rattache à trois notions classiques : protection d'intégrité, moniteur de référence, moindre privilège. Dans une reproduction que ses auteurs qualifient d'indépendante, sur un sous-échantillon du banc AgentDojo, l'une d'elles, Progent, ramène le succès moyen des attaques de 25,8 % à 4,2 %; les auteurs, affiliés à un éditeur d'outils de sécurité d'agents, n'ont pas fait évaluer le texte par les pairs; une attaque adaptative écrite à la main ne le fait pas remonter (2,6 %).
 
 Les auteurs bornent eux-mêmes ce résultat : un seul point de mesure, un petit modèle à poids ouverts, un seul gabarit d'attaque, aucune attaque optimisée en boîte blanche. Il est compatible avec l'hypothèse qu'une application hors bande résiste mieux qu'une détection dans le modèle, sans l'établir. Il va dans le sens de la section 32.3.
 
@@ -234,6 +234,7 @@ Sources secondaires :
 
 ## Limites de ce chapitre
 
+- Les sources [9], [10] et [11], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - Les pages ont été lues au moyen d'un outil qui en restitue une synthèse; une nuance a pu se perdre. Seul le texte de SP 800-207 a été lu directement.
 - Pour [9], [10] et [11], seuls les résumés ont été lus. Ce sont des prépublications; leur évaluation par les pairs n'a pas été vérifiée.
 - La liste des contrôles d'AIUC-1 et le texte de ses livraisons trimestrielles n'ont pas été lus. Les nombres de scénarios de test sont ceux qu'annonce l'éditeur. L'activité d'assurance d'AIUC relève de la section 36.5.

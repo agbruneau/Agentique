@@ -235,6 +235,7 @@ Billets de fournisseurs, lus; [15] relu le 12 novembre :
 
 ## Limites de ce chapitre
 
+- La source [12], d'abord connue par son seul résumé, a été relue au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - **EDAgent (ICDCS 2026)**, nommé parmi les appuis du plan initial, n'a pas été retrouvé et n'est pas utilisé.
 - **RocketMQ-A2A** est décrit d'après le billet de ses auteurs, non d'après l'article. Le statut de production reste une affirmation de l'éditeur; les chiffres du billet ont été écartés.
 - **L'orchestrateur Flink/Kafka** repose sur un billet de février 2025, antérieur à Flink Agents. Aucun retour de production indépendant n'a été trouvé pour ce patron ni pour Flink Agents, dont la version 0.4 n'est pas datée sur la page lue.

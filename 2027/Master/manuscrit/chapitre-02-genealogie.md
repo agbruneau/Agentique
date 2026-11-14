@@ -219,6 +219,7 @@ Source secondaire :
 
 ## Limites de ce chapitre
 
+- La source [11], d'abord connue par son seul résumé, a été relue au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - Les pages ont été lues par un outil d'extraction qui condense leur contenu; seule la spécification FIPA [8] a été lue en texte intégral. Le dernier dixième de [1] n'a pas été lu. De [5], seule l'introduction a été lue; de [7], l'en-tête et la table des matières.
 - L'audit du 12 novembre 2026 a relu à la source [1] (version 4), [5], [6], [10] et le résumé de [11]; les faits attribués y figurent. Le tableau de 2.4 suit [1] pour la communication; le tableau de [1] ne classe pas la découverte de MCP, dont le registre centralisé vient de son texte.
 - Le site de FIPA refusait les requêtes. Les spécifications du Contract Net, de la gestion d'agents et des actes de communication n'ont pas été lues : les protocoles d'interaction sont décrits d'après [12], l'annuaire d'après [1].

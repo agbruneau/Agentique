@@ -78,6 +78,18 @@ Ces affirmations des chapitres 1 à 47 portent beaucoup et reposent sur une preu
 
 Le dernier point pèse sur la thèse de l'ouvrage : l'interopérabilité par protocoles ouverts est bien spécifiée et largement annoncée, mais sa pratique en production reste à documenter.
 
+### Contrôles faits le 14 novembre 2026
+
+Trois contrôles ont suivi l'audit, faits par des lecteurs qui n'avaient pas écrit les passages contrôlés. Tous lisent les sources par un outil qui en rend des extraits, non le texte brut.
+
+| Contrôle | Périmètre | Résultat |
+|---|---|---|
+| Recollationnement des chiffres | 200 phrases d'exposé tirées au hasard parmi les 295 qui portent une quantité et un appel de source | 182 vérifiables : 178 confirmées, 4 en erreur, soit 2,2 %; 18 non vérifiables, la source étant inaccessible ou le chiffre introuvable |
+| Lecture au-delà du résumé | 134 sources des chapitres 1 à 47 connues par leur seul résumé et citées dans le texte | 124 relues : 64 confirmées, 54 exactes mais à nuancer, 6 en erreur; 10 non relues |
+| Second audit des compléments | Les 193 entrées ajoutées au registre le 14 novembre | 95 constats : aucun bloquant, 19 majeurs, 76 mineurs; 86 corrigés |
+
+Les quatre erreurs de relevé tiennent à la portée du chiffre plus qu'au chiffre : un exemple donné pour une règle, une population plus étroite que celle annoncée, une attribution à la mauvaise page, une source révisée depuis la lecture. Le deuxième contrôle pèse davantage : près d'une fois sur deux, le texte complet ajoute au résumé une réserve qui change la portée du résultat, le plus souvent la taille réelle de l'échantillon, le périmètre de l'essai ou le lien des auteurs avec le produit mesuré. Les corrections sont inscrites au registre, et les limites des chapitres disent quelles sources ont été relues. Les sources de la partie X, lues par leur résumé selon la méthode déclarée au chapitre 48, n'ont pas été relues ainsi.
+
 ## E.4 Sources de la partie X
 
 La partie X a été écrite le 13 novembre 2026, après la clôture des chapitres 1 à 47. Ses trois chapitres listent 244 sources, qui s'ajoutent aux 789 de la section E.1 sans y être comptées.

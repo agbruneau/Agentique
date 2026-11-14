@@ -112,7 +112,7 @@ La hausse des coûts, première cause citée, est traitée à la section 4.1. La
 
 **Les contrôles insuffisants.** Les praticiens de l'étude MAP désignent la fiabilité, soit un comportement correct et constant dans le temps, comme leur premier défi [1]. La taxonomie MAST précise où elle se perd dans les systèmes multi-agents : problèmes de spécification (41,77 % des échecs observés), désalignement entre agents (36,94 %) et vérification de la tâche (21,30 %) [2].
 
-Ces parts viennent de la version 2 de l'article (avril 2025), qui analyse un peu plus de 200 tâches menées sur sept cadriciels à code ouvert et recense déjà quatorze modes d'échec. La version 3 (octobre 2025) étend le corpus à 1 642 traces; la somme de ses parts par mode donne environ 44 %, 32 % et 24 % (chapitre 21). Il s'agit de systèmes de recherche, pas de déploiements d'entreprise. La conclusion des auteurs porte toutefois au-delà : les échecs tiennent largement à la conception du système et à l'organisation des agents, et l'amélioration des modèles ne suffira pas à les corriger tous [2].
+Ces parts viennent de la version 2 de l'article (avril 2025), qui analyse un peu plus de 200 tâches menées sur sept cadriciels à code ouvert et recense déjà quatorze modes d'échec. La version 3 (octobre 2025) étend le corpus à 1 642 traces; la somme de ses parts par mode donne environ 44 %, 32 % et 24 % (chapitre 21). Il s'agit de systèmes de recherche, pas de déploiements d'entreprise. Les auteurs vont toutefois au-delà : ils jugent que de nombreux échecs viennent de la conception du système et de l'organisation des agents, et conjecturent que l'amélioration des modèles ne suffira pas à les corriger tous [2].
 
 Un autre chiffre de MAP donne la mesure de l'enjeu : 69 % des systèmes décrits lisent des données confidentielles, sur une trentaine de réponses à cette question [1]. Le contrôle d'accès n'est pas un raffinement tardif (chapitres 15 et 30).
 
@@ -157,7 +157,7 @@ Chacune des six hypothèses de l'ouvrage repose sur ce qui précède et s'accomp
 | Hypothèse | Fondement | Signal contraire |
 |---|---|---|
 | H1. La mise à l'échelle reste concentrée dans les grandes organisations | Écart de 40 % à 22 % [8] | Progression nette des plus petites dans la prochaine enquête |
-| H2. Les agents en production restent bornés et supervisés; l'autonomie s'élargit par classe de décision | Étude MAP [1] | Étude comparable montrant des parcours longs sans intervention |
+| H2. Les agents en production restent bornés et supervisés; l'autonomie s'élargit par classe de décision | Étude MAP [1] pour l'état présent; l'élargissement est une projection de l'ouvrage | Étude comparable montrant des parcours longs sans intervention |
 | H3. Le verrou est la conception du système, non le modèle | MAP et MAST [1][2] | Disparition des échecs de coordination avec une nouvelle génération de modèles |
 | H4. MCP et A2A forment le socle; identité, registres et observabilité ne sont pas stabilisés | Chapitres 5, 6, 11 et 29 | Norme adoptée sur l'identité des agents |
 | H5. Les grandes organisations vivront avec plusieurs plans de contrôle | Catégorie d'analyste, offres concurrentes [7] | Consolidation autour d'un seul éditeur ou d'un registre fédéré standard |
@@ -226,6 +226,7 @@ Statistiques officielles, pages lues le 14 novembre 2026 :
 
 ## Limites de ce chapitre
 
+- Les sources [1] et [2], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - Le rapport de McKinsey n'a pu être chargé ni à la rédaction ni à l'audit. Ses chiffres viennent d'un compte rendu de presse, relu le 12 novembre 2026; l'échantillon et les dates de collecte et de publication restent inconnus.
 - Le communiqué de Gartner a encore refusé l'accès à l'audit. La troisième cause d'annulation repose sur des reprises; la dépêche relue ne la mentionne pas. Le Magic Quadrant n'est connu que par le billet d'IBM.
 - L'étude MAP a été relue à l'audit sur sa première moitié, par un outil qui condense les pages. Son résumé dit « au plus dix étapes » pour 68 % des agents, son corps « moins de dix ». Les parts MAST de la version 3 sont des sommes calculées au chapitre 21.

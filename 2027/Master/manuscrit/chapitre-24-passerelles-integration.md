@@ -183,7 +183,7 @@ Le banc ne teste ni le contournement de la passerelle ni le comportement d'un mo
 
 **Un filtre évalué par ses auteurs.** MCP-Guard, mandataire à trois étages (motifs, détecteur neuronal, arbitrage par un modèle), rapporte un score F1 moyen de 89,1 % et une latence moyenne de 455,9 ms sur huit modèles d'arbitrage, soit environ la moitié de celle d'un modèle employé seul [15]. L'évaluation est faite hors ligne, sur un jeu de 70 448 échantillons composé à 97 % d'instructions de débridage. Rien, dans le texte lu, n'indique que le dispositif ait été placé devant de vrais serveurs, et les auteurs jugent sa latence encore trop élevée pour les usages à très faible latence [15].
 
-**Des scanners qui se contredisent.** Sur une collection de 64 611 serveurs, les scanners existants signalent 96,89 % des serveurs comme risqués, et moins de la moitié des alertes vérifiées à la main sont fondées [16]. Le balayage des définitions d'outils (section 24.2) hérite de cette limite (chapitre 8).
+**Des scanners qui se contredisent.** Sur une collection de 64 611 serveurs, dont 37 288 pouvaient être interrogés, 96,89 % de ces derniers sont signalés comme risqués par au moins un des huit scanners existants, et moins de la moitié des alertes d'un échantillon de 100 serveurs, vérifiées à la main, sont fondées [16]. Le balayage des définitions d'outils (section 24.2) hérite de cette limite (chapitre 8).
 
 ### Ce qui manque
 
@@ -278,6 +278,7 @@ Sources secondaires : aucune n'est citée.
 
 ## Limites de ce chapitre
 
+- La source [16], d'abord connue par son seul résumé, a été relue au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - Les pages ont été lues par un outil qui en restitue un résumé. L'audit du 12 novembre a relu [3], [4] (ses 100 000 premiers caractères), [6], [7], [8], [10] et [11], et lu [12] : les faits cités y sont confirmés, sauf trois points sur MuleSoft (24.4). La date du brouillon, 28 juillet 2025, est celle que porte la page.
 - Que les scanners de MuleSoft relèvent les politiques sans les écrire est une interprétation des notes, qui ne le disent pas explicitement.
 - Le découpage en cinq contrôles est une synthèse de ce chapitre; aucun texte lu ne l'énonce tel quel.

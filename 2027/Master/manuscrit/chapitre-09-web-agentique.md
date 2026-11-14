@@ -203,6 +203,7 @@ Source secondaire :
 
 ## Limites de ce chapitre
 
+- La source [18], d'abord connue par son seul résumé, a été relue au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - Les pages ont été lues par un outil qui en produit un compte rendu; les formulations rapportées sont des paraphrases.
 - Relues pendant l'audit : [1] à [3], [6], [10] à [14]. Les autres, dont [7] à [9] et [16], reposent sur la lecture condensée du 11 novembre 2026.
 - Le texte de la RFC 9421 n'a pas été lu. La version stable de Chrome n'a pas été vérifiée : le chapitre ne dit pas si l'essai d'origine est terminé.

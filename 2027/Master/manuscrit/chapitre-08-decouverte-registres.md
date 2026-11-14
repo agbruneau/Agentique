@@ -188,7 +188,7 @@ Le recensement le plus proche du sujet de ce chapitre porte sur le registre publ
 
 ### Des défauts fréquents, des scanners peu fiables
 
-Sur 1 899 serveurs à code ouvert, 7,2 % contiennent des vulnérabilités générales et 5,5 % un empoisonnement d'outil propre à MCP, d'après le résumé de l'étude, dont les auteurs demandent un balayage de sécurité automatisé dans les registres [26]. Le recensement du registre public observe, après correction par la précision de son scanner, environ 7,6 % de constats de gravité élevée [23]. L'instrument lui-même est toutefois en cause : sur une collection de 64 611 serveurs, les scanners existants signalent 96,89 % des serveurs comme risqués, et moins de la moitié des alertes vérifiées à la main sont fondées [27].
+L'étude porte sur 1 899 serveurs à code ouvert; son résumé rapporte 7,2 % de vulnérabilités générales et 5,5 % d'empoisonnement d'outil propre à MCP, mais le texte les tire de sous-échantillons (583 dépôts pour l'analyse statique, 83 pour le balayage propre à MCP), et ses auteurs demandent un balayage de sécurité automatisé dans les registres [26]. Le recensement du registre public observe, sur les 14 353 serveurs dont le code a pu être balayé (66 % du registre) et après correction par la précision de son scanner (0,56), environ 7,6 % de constats de gravité élevée [23]. L'instrument lui-même est toutefois en cause : sur une collection de 64 611 serveurs, dont 37 288 ont pu être sondés, les scanners existants en signalent 96,89 % comme risqués, et moins de la moitié des alertes vérifiées à la main sont fondées [27].
 
 ### Ce que ces mesures changent
 
@@ -279,6 +279,7 @@ Communiqué d'éditeur :
 
 ## Limites de ce chapitre
 
+- Les sources [23], [26] et [27], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - Plusieurs pages longues ([8], [11], [13], [14], [20], [21]) ont été lues par un outil d'extraction qui les condense; les formulations normatives rapportées ne sont pas des citations.
 - L'audit du 12 novembre 2026 a relu [1], [3], [6], [11], [16], [18], [20], [21] et le résumé de [14].
 - La relation entre AI Catalog et ARD reste ambiguë : la spécification ARD parle d'un prédécesseur, sa page d'accueil d'une coexistence.

@@ -119,7 +119,7 @@ La documentation de Snowflake illustre l'écart entre un protocole et sa mise en
 
 Le choix entre SQL libre et outil borné est le plus structurant. MCP Toolbox for Databases, serveur MCP à code source ouvert, propose les deux : un outil sur mesure y est un énoncé SQL à paramètres, tandis que des outils génériques, dont `execute_sql`, servent à l'exploration [20].
 
-Le banc d'essai Spider 2.0 donne la mesure du risque du SQL libre. Sur 632 problèmes tirés de cas d'entreprise, avec des bases qui comptent souvent plus de mille colonnes, un agent fondé sur le modèle o1-preview n'en résout que 21,3 %, contre 91,2 % sur Spider 1.0 [6]. Ces chiffres datent de la fin de 2024, mais l'écart entre un schéma d'école et un schéma réel est la leçon durable. La couche sémantique (chapitre 12) et les outils paramétrés réduisent le problème.
+Le banc d'essai Spider 2.0 donne la mesure du risque du SQL libre. Sur 632 problèmes tirés de cas d'entreprise, avec des bases qui comptent souvent plus de mille colonnes, un agent fondé sur le modèle o1-preview n'en résout que 21,3 %; des méthodes fondées sur GPT-4 atteignaient 91,2 % de précision d'exécution sur Spider 1.0, une mesure différente [6]. Ces chiffres datent de la fin de 2024, mais l'écart entre un schéma d'école et un schéma réel est la leçon durable. La couche sémantique (chapitre 12) et les outils paramétrés réduisent le problème.
 
 ### Les API
 
@@ -181,7 +181,7 @@ La conséquence pratique est contre-intuitive. Multiplier les connecteurs ne ren
 
 ### Les droits d'accès
 
-Trois résultats convergent sur le second thème. CRMArena-Pro rapporte que les agents n'ont à peu près aucune conscience spontanée de la confidentialité; une consigne ciblée l'améliore, mais souvent au détriment de la réussite des tâches [7]. VAKRA observe des échecs graves sur les questions soumises à des politiques d'usage, avec un score qui tombe jusqu'à 2,4 % pour les requêtes auxquelles il ne faut pas répondre [8]. EnterpriseBench, lui, ne s'en remet pas au modèle : il filtre en amont.
+Trois résultats convergent sur le second thème. CRMArena-Pro rapporte que les agents n'ont à peu près aucune conscience spontanée de la confidentialité; une consigne ciblée l'améliore, mais souvent au détriment de la réussite des tâches [7]. VAKRA observe des échecs graves sur les questions soumises à des politiques d'usage : pour les requêtes auxquelles il ne faut pas répondre, le score le plus bas est de 2,4 % (Claude Opus 4.7, évalué sur un sous-ensemble), le suivant étant à 3,7 % [8]. Dans le tableau : « 70,4 % à un saut et 50 à 51 % en composition pour le meilleur modèle ». EnterpriseBench, lui, ne s'en remet pas au modèle : il filtre en amont.
 
 La leçon rejoint celle de la section 15.3. Une règle d'accès exprimée en langage naturel dans un prompt est une préférence que le modèle respecte parfois. Une règle appliquée par la couche de données est un contrôle.
 
@@ -260,6 +260,7 @@ Sources secondaires : aucune n'est citée. Les sources [11] à [20] sont de la d
 
 ## Limites de ce chapitre
 
+- Les sources [6], [7] et [8], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - Les pages ont été lues par un outil d'extraction; pour les plus longues, seule la première partie a été couverte ([5], [18]). 
 - L'audit du 12 novembre 2026 a relu [1], [2], [5] (environ 60 %), le résumé de [8], la section des niveaux de service de [9], [12], [13] et [19] : mécanismes MCP, chiffres de DAB et de VAKRA, propriétés d'ODCS et statuts de Snowflake, Databricks et Confluent sont confirmés. EnterpriseBench, Spider 2.0, CRMArena-Pro, OpenLineage et la documentation de Microsoft n'ont pas été relus.
 - Le taux de 41,8 % d'EnterpriseBench vient du résumé de l'article et n'a pas été retrouvé dans les tableaux lus.

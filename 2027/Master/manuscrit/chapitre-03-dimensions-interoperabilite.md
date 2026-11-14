@@ -146,7 +146,7 @@ Un document de travail d'avril 2026 sur le droit européen applicable aux agents
 
 ### Une normalisation inachevée
 
-L'initiative du NIST sur les standards d'agents n'annonce pas de profil d'interopérabilité à la date de sa mise à jour du 9 novembre 2026 [11], et le groupe communautaire du W3C sur les protocoles d'agents n'a publié que des brouillons, dont le livre blanc d'ANP, sans rapport final [12]. La synthèse historique déjà citée conclut que le progrès dépend désormais davantage de l'infrastructure sociotechnique que de la conception des protocoles [14]. Le chapitre 11 suit ces instances.
+L'initiative du NIST sur les standards d'agents n'annonce pas de profil d'interopérabilité à la date de sa mise à jour du 9 novembre 2026 [11], et le groupe communautaire du W3C sur les protocoles d'agents n'a publié que des brouillons, dont le livre blanc d'ANP, sans rapport final [12]. La synthèse historique déjà citée, une revue narrative sans mesure, soutient que le progrès dépend désormais davantage de l'infrastructure sociotechnique que de la conception des protocoles [14]. Le chapitre 11 suit ces instances.
 
 ---
 
@@ -231,6 +231,7 @@ Sources secondaires : le plan initial du compendium et le chapitre 6, pour l'abs
 
 ## Limites de ce chapitre
 
+- Les sources [14], [15] et [16], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - Le découpage en cinq niveaux, le rattachement de la confiance au droit et la grille de maturité sont des constructions de ce chapitre; la grille n'a été éprouvée sur aucun cas.
 - La plupart des pages ont été lues par un outil d'extraction qui les résume; les formulations normatives d'A2A et de l'EIF sont rapportées, non citées.
 - Lectures partielles : environ les quatre cinquièmes de la spécification A2A [6], la première moitié de l'article MAST [8]. L'audit du 12 novembre 2026 a relu [4], [5], [9] (passages cités), [12] et le résumé de [8]; il n'a pas relu les règles d'extension et de signature d'A2A.

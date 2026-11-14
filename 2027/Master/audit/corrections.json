@@ -6703,5 +6703,833 @@
   "categorie": "harmonisation",
   "motif": "Décompte des sources après le lot P4-5 du plan de travail : quatorze sources ajoutées aux chapitres 14, 20, 24 et 38 portent le total des chapitres 1 à 47 à 789.",
   "origine": "plan 2027, lot P4-5-harmonisation"
+ },
+ {
+  "n": 746,
+  "fichier": "chapitre-01-entreprise-agentique.md",
+  "avant": "**La pratique est prudente.** L'étude MAP repose sur vingt études de cas et sur une enquête de 306 répondants, dont 86 décrivent des systèmes déployés, dans 26 domaines [7].",
+  "apres": "**La pratique est prudente.** L'étude MAP repose sur vingt études de cas et sur une enquête de 306 répondants, dont 86 décrivent des systèmes en production ou en pilote; les 26 domaines sont relevés parmi 69 agents déployés [7].",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-001, source [7], nuance) : Les 86 réponses sont « en production ou en pilote », pas toutes déployées, et les 26 domaines sont comptés parmi 69 agents déployés, pas parmi les 86. L'article emploie lui-même 86 et 69 sans les réconcilier. Seconde phrase (ligne 167) confirmée : la fiabilité est le premier défi (« top development challenge ») et la réponse passe par « systems-level design ».",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 747,
+  "fichier": "chapitre-03-dimensions-interoperabilite.md",
+  "avant": "La synthèse historique déjà citée conclut que le progrès dépend désormais davantage de l'infrastructure sociotechnique que de la conception des protocoles [14].",
+  "apres": "La synthèse historique déjà citée, une revue narrative sans mesure, soutient que le progrès dépend désormais davantage de l'infrastructure sociotechnique que de la conception des protocoles [14].",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-004, source [14], nuance) : Exact, mais la source se dit « narrative survey » sans expérience, et son matériel de 2025-2026 repose surtout sur des communiqués et des annonces d'organismes de normalisation, dont l'adoption ne peut être vérifiée. Cette conclusion est un jugement d'auteurs, non un résultat mesuré.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 748,
+  "fichier": "chapitre-04-etat-des-lieux.md",
+  "avant": "| H2. Les agents en production restent bornés et supervisés; l'autonomie s'élargit par classe de décision | Étude MAP [1] | Étude comparable montrant des parcours longs sans intervention |",
+  "apres": "| H2. Les agents en production restent bornés et supervisés; l'autonomie s'élargit par classe de décision | Étude MAP [1] pour l'état présent; l'élargissement est une projection de l'ouvrage | Étude comparable montrant des parcours longs sans intervention |",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-007, source [1], nuance) : Neuf phrases sur onze sont confirmées au texte (25 auteurs; N de 22 à 69 selon les figures; 75 % sans jeu de bancs d'essai, cas étudiés; 8 % de non-humains et 61 % de cadriciels contre 17 cas sur 20 sur mesure; limites de la section 3.3, dont l'échantillonnage en boule de neige; 39 % et 26 %; fiabilité; 69 % avec N=27 à 29 d'après la figure 12a; 38 %, 17 % et 3 %). Les deux autres sont les lign…",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 749,
+  "fichier": "chapitre-04-etat-des-lieux.md",
+  "avant": "La conclusion des auteurs porte toutefois au-delà : les échecs tiennent largement à la conception du système et à l'organisation des agents, et l'amélioration des modèles ne suffira pas à les corriger tous [2].",
+  "apres": "Les auteurs vont toutefois au-delà : ils jugent que de nombreux échecs viennent de la conception du système et de l'organisation des agents, et conjecturent que l'amélioration des modèles ne suffira pas à les corriger tous [2].",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-008, source [2], nuance) : Les trois parts (41,77; 36,94; 21,30) figurent bien dans la v2 (section 4.2) et le texte situe déjà la v3 (somme par mode : 44,2; 32,35; 23,5, calcul fait ici, non chiffres des auteurs). Mais les auteurs formulent la limite des modèles comme une conjecture, non comme une conclusion; la v2 dit seulement que de nombreux échecs viennent de la conception « not just » des limites des modèles. Le « n…",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 750,
+  "fichier": "chapitre-07-protocoles-peripheriques.md",
+  "avant": "Les relevés universitaires comparent les protocoles par leurs modes d'interaction, leur découverte et leur sécurité [20][21].",
+  "apres": "Les relevés universitaires comparent les protocoles : le premier par leurs modes d'interaction, leur découverte et leur sécurité [20], le second par sept critères, dont la sécurité, la fiabilité et l'interopérabilité [21].",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-013, source [21], nuance) : La première phrase (généralistes contre propres à un domaine) est confirmée (« general-purpose versus domain-specific protocols »). Mais ce relevé ne compare pas les protocoles par modes d'interaction ni par découverte : il retient sept critères (interopérabilité, efficacité, fiabilité, extensibilité, sécurité...); la découverte n'y est qu'une exigence de conception, et les modes d'interaction …",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 751,
+  "fichier": "chapitre-08-decouverte-registres.md",
+  "avant": "Le recensement du registre public observe, après correction par la précision de son scanner, environ 7,6 % de constats de gravité élevée [23].",
+  "apres": "Le recensement du registre public observe, sur les 14 353 serveurs dont le code a pu être balayé (66 % du registre) et après correction par la précision de son scanner (0,56), environ 7,6 % de constats de gravité élevée [23].",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-014, source [23], nuance) : Les 21 643 serveurs et 72 606 versions sont confirmés. Mais les 7,6 % (11,14 % observés, corrigés) portent sur les 14 353 serveurs balayés (66,3 % du registre), 33,7 % étant exclus faute de code récupéré; la précision groupée du scanner est de 0,56, avec un seul évaluateur et un seul auteur. Point resté ouvert à la ligne 288 : les 40,6 % se rapportent aux 8 900 serveurs à plusieurs versions (51…",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 752,
+  "fichier": "chapitre-08-decouverte-registres.md",
+  "avant": "Sur 1 899 serveurs à code ouvert, 7,2 % contiennent des vulnérabilités générales et 5,5 % un empoisonnement d'outil propre à MCP, d'après le résumé de l'étude, dont les auteurs demandent un balayage de sécurité automatisé dans les registres [26].",
+  "apres": "L'étude porte sur 1 899 serveurs à code ouvert; son résumé rapporte 7,2 % de vulnérabilités générales et 5,5 % d'empoisonnement d'outil propre à MCP, mais le texte les tire de sous-échantillons (583 dépôts pour l'analyse statique, 83 pour le balayage propre à MCP), et ses auteurs demandent un balayage de sécurité automatisé dans les registres [26].",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-015, source [26], nuance) : Le résumé est cité exactement, mais ses taux ne portent pas sur les 1 899 serveurs : l'analyse statique (SonarQube) vise 583 dépôts d'au moins dix étoiles, et le balayage propre à MCP (mcp-scan) un échantillon de n=83 dont 73 balayés; le texte n'énonce pas la base à côté des chiffres (déduit des sections 5.1.3 et 5.2.2). Aucune précision ni taux de faux positifs n'est rapporté pour les outils. …",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 753,
+  "fichier": "chapitre-08-decouverte-registres.md",
+  "avant": "L'instrument lui-même est toutefois en cause : sur une collection de 64 611 serveurs, les scanners existants signalent 96,89 % des serveurs comme risqués, et moins de la moitié des alertes vérifiées à la main sont fondées [27].",
+  "apres": "L'instrument lui-même est toutefois en cause : sur une collection de 64 611 serveurs, dont 37 288 ont pu être sondés, les scanners existants en signalent 96,89 % comme risqués, et moins de la moitié des alertes vérifiées à la main sont fondées [27].",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-016, source [27], erreur) : Le taux de 96,89 % porte sur les 37 288 serveurs avec lesquels les auteurs ont pu interagir, non sur les 64 611 serveurs uniques de la collection (le résumé omet cette réserve). « Risqué » signifie signalé par au moins un scanner. Le second volet est exact : précision moyenne de 45,53 % sur un échantillon de 100 serveurs (« less than 50% of sampled alerts are true positives »).",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 754,
+  "fichier": "chapitre-10-commerce-agentique.md",
+  "avant": "Les contre-exemples font ressortir trois familles de lacunes : des liaisons manquantes, des contraintes d'état absentes, des correspondances non garanties d'une étape à l'autre.",
+  "apres": "Les contre-exemples se répartissent en 17 cas d'intégrité, 16 de paiement et 7 de service, et touchent surtout aux liaisons entre rôles, à l'ambiguïté d'autorisation, aux effets dupliqués et à l'état de règlement et de livraison.",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-018, source [13], nuance) : La phrase visée du lot (x402, MPP, ACP et AP2 dans Tamarin) est confirmée, ACP y étant bien celui d'OpenAI et de Stripe; 86 cas, 46 cas connus, 40 constats et 18 principes aussi. Mais la phrase suivante du même paragraphe (« trois familles de lacunes : liaisons manquantes, contraintes d'état absentes, correspondances non garanties ») n'est pas dans le texte lu : les auteurs classent les 40 cons…",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 755,
+  "fichier": "chapitre-10-commerce-agentique.md",
+  "avant": "Une systématisation des connaissances couvre sept protocoles, dont AP2, x402, ACP et MPP, et ordonne les menaces selon cinq dimensions, de l'intégrité de l'agent à la conformité réglementaire [14].",
+  "apres": "Une systématisation des connaissances couvre sept protocoles, dont AP2, x402, MPP et l'Agent Commerce Protocol de Virtuals (homonyme d'ACP, distinct de celui de Stripe et d'OpenAI), et ordonne les menaces selon cinq dimensions, de l'intégrité de l'agent à la conformité réglementaire [14].",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-019, source [14], erreur) : Les sept protocoles (ERC-8004, AP2, OKX APP, x402, ACP, ERC-8183, MPP), les cinq dimensions et les douze vecteurs sont confirmés. Mais l'« ACP » de la source est l'Agent Commerce Protocol de Virtuals Protocol, non l'Agentic Commerce Protocol de Stripe et d'OpenAI dont parle le chapitre; le texte ne mentionne pas ce dernier. Un homonyme de plus pour la note du chapitre 7 (ligne 123) sur le sigle…",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 756,
+  "fichier": "chapitre-11-gouvernance-standards.md",
+  "avant": "Un relevé de mai 2025 proposait encore d'adopter quatre protocoles en séquence, MCP, ACP, A2A puis ANP [27]; dix-huit mois plus tard, le deuxième n'existe plus comme protocole distinct et le quatrième reste un brouillon de groupe communautaire [9].",
+  "apres": "Un relevé de mai 2025 proposait encore, dans son résumé et sa conclusion, d'adopter quatre protocoles en séquence, MCP, ACP, A2A puis ANP [27]; dix-huit mois plus tard, le deuxième n'existe plus comme protocole distinct et le quatrième reste un brouillon de groupe communautaire [9].",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-022, source [27], nuance) : L'ordre MCP, ACP, A2A, ANP figure dans le résumé et la conclusion, mais l'introduction de la source énonce « MCP, A2A, ACP, and ANP ». L'ouvrage suit le résumé; la source se contredit, ce que le texte ne dit pas.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 757,
+  "fichier": "chapitre-12-couche-semantique-ontologies.md",
+  "avant": "Sur un schéma d'assurance et des questions d'entreprise allant du rapport à la métrique, GPT-4 interrogeant directement la base SQL, sans exemples, obtenait 16 % de bonnes réponses; les mêmes questions posées sur une représentation en graphe de connaissances, bâtie d'une ontologie et de correspondances, en obtenaient 54 % [11].",
+  "apres": "Sur un schéma d'assurance et 43 questions d'entreprise allant du rapport à la métrique, GPT-4 interrogeant directement la base SQL, sans exemples, obtenait 16 % de bonnes réponses; les mêmes questions posées sur une représentation en graphe de connaissances, bâtie d'une ontologie et de correspondances, en obtenaient 54 % (mesure des auteurs de data.world, dont la plateforme interrogeait le graphe; GPT-4 seul testé) [11].",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-024, source [11], nuance) : Chiffres, modèle, absence d'exemples, schéma d'assurance (modèle OMG P&C) et construction (ontologie OWL et règles R2RML) confirmés (16,7 % et 54,2 % dans le corps). Réserves que le texte ne dit pas : 43 questions seulement, un seul modèle (GPT-4), base de quelques lignes saisies à la main par table et 13 tables sur 199; les trois auteurs sont de data.world, dont la couche de virtualisation ser…",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 758,
+  "fichier": "chapitre-13-ingenierie-contexte.md",
+  "avant": "Une étude de 2023, acceptée par la revue TACL, a montré que la précision d'un modèle varie selon la position de l'information utile dans une longue entrée : elle est meilleure au début et à la fin, plus faible au milieu, y compris pour des modèles conçus pour les longs contextes [3].",
+  "apres": "Une étude de 2023, acceptée par la revue TACL, a montré, sur les modèles de l'époque et deux tâches (questions sur plusieurs documents, récupération clé-valeur), que la précision varie selon la position de l'information utile dans une longue entrée : meilleure au début et à la fin, plus faible au milieu, y compris pour des modèles conçus pour les longs contextes [3].",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-025, source [3], nuance) : Exact pour les modèles testés (2023 : MPT-30B, LongChat-13B, GPT-3.5-Turbo, Claude-1.3), sur deux tâches (questions sur plusieurs documents, récupération clé-valeur synthétique). L'effet dépend du modèle et de la tâche : Claude-1.3 est presque parfait sur la récupération clé-valeur à toutes les longueurs, et dans l'annexe Llama-2 la forme en U n'apparaît que chez les modèles de 13 et 70 milliar…",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 759,
+  "fichier": "chapitre-13-ingenierie-contexte.md",
+  "avant": "Côté risque, une autre prépublication a analysé 31 132 skills tirées de deux places de marché : 26,1 % présentent au moins un motif de vulnérabilité, et celles qui embarquent des scripts sont environ deux fois plus exposées que les autres [12].",
+  "apres": "Côté risque, une autre prépublication a analysé 31 132 skills tirées de deux places de marché : 26,1 % présentent au moins un motif de vulnérabilité, repéré par analyse statique et classification par modèle sans confirmation d'exploitation, et celles qui embarquent des scripts sont environ deux fois plus exposées que les autres [12].",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-027, source [12], nuance) : Chiffres confirmés (42 447 skills collectées, 31 132 analysées; skills.rest et skillsmp.com; rapport de cotes 2,12). Réserve : « vulnérabilité » est pris au sens large, pour trois phénomènes que la détection « cannot reliably distinguish » (elle ne détermine pas l'intention); la détection combine analyse statique et classification par modèle (précision 86,7 %, rappel 82,5 % sur 200 étiquettes) …",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 760,
+  "fichier": "chapitre-13-ingenierie-contexte.md",
+  "avant": "**Les gérer comme du code.** L'étude des fichiers de contexte montre qu'ils évoluent déjà ainsi, sans en avoir la discipline [14].",
+  "apres": "**Les gérer comme du code.** L'étude des fichiers de contexte montre qu'ils évoluent déjà comme du code de configuration, et ses auteurs recommandent d'y appliquer la même rigueur [14].",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-028, source [14], nuance) : Ligne 131 confirmée (2 303 fichiers, 1 925 dépôts, trois outils : Claude Code, Codex, Copilot; fichiers « difficult-to-read », Claude Code le moins lisible). Ligne 188 : l'étude conclut que les fichiers sont activement entretenus et recommande d'y appliquer la rigueur du code (versionnage sémantique); elle ne mesure pas l'absence de discipline, qui est une inférence de l'ouvrage. Les auteurs no…",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 761,
+  "fichier": "chapitre-13-ingenierie-contexte.md",
+  "avant": "| Protocole | 300 tâches SWE-bench Lite avec fichiers générés; 138 tâches de 12 dépôts avec fichiers rédigés par les développeurs | 124 demandes de tirage dans 10 dépôts, avec et sans le fichier |",
+  "apres": "| Protocole | Fichiers générés : 300 tâches SWE-bench Lite et 138 tâches de 12 dépôts; fichiers rédigés par les développeurs : ces 138 tâches seulement | 124 demandes de tirage dans 10 dépôts, avec et sans le fichier |",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-029, source [15], nuance) : Le texte actuel de la ligne 146 (qui diffère de la phrase du lot) est confirmé : uv 1,6 fois contre moins de 0,01, outils du dépôt 2,5 fois contre moins de 0,05; coût de plus de 20 %; écart introduction (7 %) et tableau (2,4 %). Imprécision mineure du tableau (ligne 138) : les fichiers générés ont été évalués sur les deux bancs (SWE-bench Lite : -0,5 point; CTXbench, 138 instances : -2 points),…",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 762,
+  "fichier": "chapitre-13-ingenierie-contexte.md",
+  "avant": "| Coût et durée | Coût d'inférence en hausse de plus de 20 % en moyenne | Durée médiane en baisse de 28,64 %, jetons de sortie de 16,58 %; jetons totaux en légère hausse |",
+  "apres": "| Coût et durée | Coût d'inférence en hausse de plus de 20 % en moyenne | Durée médiane en baisse de 28,64 %, jetons de sortie de 16,58 % (médiane); jetons totaux : médiane en légère hausse (+1,3 %), moyenne en baisse (-9,9 %) |",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-030, source [16], nuance) : Durée médiane (-28,64 %), jetons de sortie (-16,58 %), 124 demandes de tirage, 10 dépôts, Codex seul et contrôle manuel de 50 tâches confirmés au tableau 1. Mais « jetons totaux en légère hausse » ne vaut que pour la médiane (+1,3 %); la moyenne des jetons totaux baisse de 9,93 %. Les chiffres du tableau étaient signalés à recontrôler à la ligne 264 : ils concordent.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 763,
+  "fichier": "chapitre-14-memoire.md",
+  "avant": "| Lecture seule par défaut; écriture accordée fonds par fonds | Qu'une injection réussie écrive dans une mémoire que d'autres sessions liront comme fiable | [5] |",
+  "apres": "| Lecture seule pour tout fonds que l'agent n'a pas à modifier (le défaut du produit est la lecture-écriture); écriture accordée fonds par fonds | Qu'une injection réussie écrive dans une mémoire que d'autres sessions liront comme fiable | [5] |",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-035, source [5], nuance) : Bêta, montage en répertoire, précondition content_sha256, fonds de référence en lecture seule séparé du fonds de session, versions immuables, redact et rétention de 30 jours sont confirmés. Mais le défaut du produit est la lecture-écriture (« read_write by default »), non la lecture seule : « Lecture seule par défaut » est une consigne de la documentation, pas un réglage d'origine. Autres préci…",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 764,
+  "fichier": "chapitre-14-memoire.md",
+  "avant": "Letta projette la mémoire de l'agent dans des fichiers Markdown tenus dans un dépôt Git [6].",
+  "apres": "Letta tient la mémoire partagée de plusieurs agents dans des dépôts Git que chaque agent lit et modifie avec des outils de fichiers ordinaires [6].",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-036, source [6], nuance) : La seconde phrase visée (ligne 86 : valider, pousser, tirer) est confirmée. Mais la page ne dit pas que la mémoire de l'agent est projetée en fichiers Markdown dans un dépôt Git : le mot Markdown n'y figure pas, MemFS y est décrit comme l'identité, les skills et la mémoire à long terme de l'agent sans mention de Git, et seul le dépôt de mémoire partagée est un dépôt Git.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 765,
+  "fichier": "chapitre-14-memoire.md",
+  "avant": "Chaque plateforme a son unité : un fichier [5], un document JSON [8], un fait extrait [10], une arête de graphe datée [11].",
+  "apres": "Chaque plateforme a son unité : un fichier [5], un document JSON [8], un enregistrement extrait, fait, préférence ou résumé [10], une arête de graphe datée [11].",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-040, source [10], nuance) : L'espace de noms hiérarchique incluant l'acteur et la session (ligne 98) est confirmé; le chemin peut aussi porter l'identifiant de stratégie. Mais l'unité de mémoire n'est pas « un fait extrait » : la page de vue d'ensemble parle de « key insights » qui comprennent préférences d'utilisateur, faits importants et résumés de session, et l'exemple de la page elle-même emploie une stratégie de résu…",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 766,
+  "fichier": "chapitre-14-memoire.md",
+  "avant": "Ses auteurs rapportent 94,8 % sur le banc DMR, contre 93,4 % pour MemGPT [11].",
+  "apres": "Ses auteurs, ceux du produit, rapportent 94,8 % sur le banc DMR, contre 93,4 % pour MemGPT (chiffre repris de l'article de MemGPT); ils jugent eux-mêmes ce banc peu représentatif des usages d'entreprise [11].",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-041, source [11], nuance) : Les chiffres sont ceux du résumé (gpt-4-turbo). Mais le 93,4 % de MemGPT est repris de l'article de MemGPT, non rejoué (les auteurs n'ont pas pu reproduire ses résultats avec gpt-4o-mini), les auteurs jugent DMR peu représentatif (conversations de 60 messages qui tiennent dans une fenêtre de contexte), et les cinq auteurs sont tous de Zep AI, éditeur du produit évalué (la ligne 68 signale déjà …",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 767,
+  "fichier": "chapitre-14-memoire.md",
+  "avant": "Ses auteurs rapportent, sur le banc d'essai LOCOMO, une amélioration relative de 26 % sur la mémoire d'OpenAI et un coût en jetons réduit de plus de 90 % par rapport à l'injection de l'historique complet [12].",
+  "apres": "Ses auteurs rapportent, sur le banc d'essai LOCOMO et selon un modèle-juge, une amélioration relative de 26 % sur la mémoire d'OpenAI et un coût en jetons réduit de plus de 90 % par rapport à l'injection de l'historique complet [12].",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-042, source [12], nuance) : Chiffres du résumé confirmés (tableau 2 : 66,88 % contre 52,90 % au juge; environ 1 764 contre 26 031 jetons de mémoire, rapport calculé ici, non énoncé). Réserves : le 26 % est un score de modèle-juge, non une exactitude; LOCOMO compte 10 conversations, la catégorie adversariale étant exclue; les résultats sont les propres exécutions des auteurs (adresse de contact mem0.ai); Zep a le meilleur …",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 768,
+  "fichier": "chapitre-14-memoire.md",
+  "avant": "LongMemEval, publié à ICLR 2025, évalue cinq capacités de mémoire sur 500 questions et rapporte une chute d'exactitude de 30 % chez les assistants commerciaux et les modèles à long contexte au fil d'interactions soutenues [13].",
+  "apres": "LongMemEval, publié à ICLR 2025, évalue cinq capacités de mémoire sur 500 questions et rapporte, dans son résumé, une chute d'exactitude de l'ordre de 30 % chez les assistants commerciaux (évalués sur 97 questions seulement) et les modèles à long contexte au fil d'interactions soutenues [13].",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-043, source [13], nuance) : ICLR 2025 (ligne de commentaire de la page de résumé), 500 questions, cinq capacités et 30 % confirmés. Mais le 30 % du résumé synthétise des références différentes (LLM à long contexte : baisse de 30 à 60 % à la lecture de tout l'historique; assistants commerciaux : baisse par rapport à une lecture hors ligne), et l'étude des assistants commerciaux (ChatGPT, Coze) ne porte que sur 97 questions…",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 769,
+  "fichier": "chapitre-14-memoire.md",
+  "avant": "L'isolation entre locataires tenait, mais la portée inférieure au locataire était contournée par une lecture directe par identifiant, faite avec des justificatifs d'agent.",
+  "apres": "L'étude, menée par les auteurs sur leur propre service depuis un seul locataire, n'a pas pu éprouver l'isolation entre locataires, attendue mais non vérifiée; elle a montré que la portée inférieure au locataire était contournée par une lecture directe par identifiant, faite avec des justificatifs d'agent.",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-045, source [15], erreur) : Le défaut de portée inférieure au locataire (lecture directe par identifiant avec justificatifs d'agent, divulgué et corrigé le 31 mai 2026) et les quatre modes et quatre primitives sont confirmés. Mais « l'isolation entre locataires tenait » est contredit : elle est une attente de conception, non vérifiée (un seul locataire testé, travail futur). Le « service en production » est MemClaw, le se…",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 770,
+  "fichier": "chapitre-14-memoire.md",
+  "avant": "Le bilan du troisième trimestre 2026 du projet OWASP GenAI, non officiel, rattache à ASI06, par appréciation d'analystes, trois incidents : des instructions persistées dans la mémoire d'un assistant de programmation, une configuration d'agent déposée dans un dépôt et exécutée à son ouverture, des définitions d'outils MCP modifiées [20].",
+  "apres": "Le bilan du troisième trimestre 2026 du projet OWASP GenAI, non officiel, rattache à ASI06, par appréciation d'analystes, trois incidents : des instructions persistées dans la mémoire de Microsoft Copilot (offre personnelle), une configuration d'agent déposée dans un dépôt et exécutée à son ouverture, des définitions d'outils MCP modifiées [20].",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-050, source [20], erreur) : Le premier incident (entrée CoSnitch, CVE-2026-24301) vise Microsoft Copilot Personal, un assistant grand public, et non un assistant de programmation; la page ne le décrit jamais comme tel. Le reste est confirmé : bilan « not an exhaustive report or an official OWASP publication », rattachements « analyst assessments », dépôt à configuration piégée et définitions d'outils MCP modifiées rattach…",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 771,
+  "fichier": "chapitre-14-memoire.md",
+  "avant": "Ses auteurs rapportent un taux de succès moyen supérieur à 80 % sur trois agents, avec moins de 0,1 % d'entrées empoisonnées et moins de 1 % de dégradation en usage normal [21].",
+  "apres": "Ses auteurs rapportent, sur trois agents, un taux moyen d'environ 81 % de récupération des exemples empoisonnés (59 % pour l'action cible visée), avec moins de 0,1 % d'entrées empoisonnées et moins de 1 % de dégradation en usage normal; l'attaque suppose un accès en boîte blanche à l'encodeur [21].",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-051, source [21], nuance) : Les trois chiffres sont ceux du résumé, mais le texte complet les précise : le seuil de 80 % correspond, selon la seule lecture cohérente (81,2 % en moyenne; inférence du lecteur, les auteurs ne nomment pas la métrique dans le résumé), à la récupération d'exemples empoisonnés (ASR-r); l'action cible n'est produite que dans 59,4 % des cas et l'impact final atteint 62,6 %. L'attaque suppose un ac…",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 772,
+  "fichier": "chapitre-15-donnees-pretes-agents.md",
+  "avant": "Sur 632 problèmes tirés de cas d'entreprise, avec des bases qui comptent souvent plus de mille colonnes, un agent fondé sur le modèle o1-preview n'en résout que 21,3 %, contre 91,2 % sur Spider 1.0 [6].",
+  "apres": "Sur 632 problèmes tirés de cas d'entreprise, avec des bases qui comptent souvent plus de mille colonnes, un agent fondé sur le modèle o1-preview n'en résout que 21,3 %; des méthodes fondées sur GPT-4 atteignaient 91,2 % de précision d'exécution sur Spider 1.0, une mesure différente [6].",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-060, source [6], nuance) : Le résumé oppose bien 21,3 % (agent fondé sur o1-preview) à 91,2 % sur Spider 1.0, mais l'introduction attribue ces 91,2 % à des méthodes fondées sur GPT-4 (précision d'exécution, pas le taux de réussite de Spider 2.0) : la comparaison n'oppose pas le même agent ni la même métrique. Les 632 problèmes et « often containing over 1,000 columns » sont confirmés.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 773,
+  "fichier": "chapitre-15-donnees-pretes-agents.md",
+  "avant": "VAKRA observe des échecs graves sur les questions soumises à des politiques d'usage, avec un score qui tombe jusqu'à 2,4 % pour les requêtes auxquelles il ne faut pas répondre [8].",
+  "apres": "VAKRA observe des échecs graves sur les questions soumises à des politiques d'usage : pour les requêtes auxquelles il ne faut pas répondre, le score le plus bas est de 2,4 % (Claude Opus 4.7, évalué sur un sous-ensemble), le suivant étant à 3,7 % [8]. Dans le tableau : « 70,4 % à un saut et 50 à 51 % en composition pour le meilleur modèle ».",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-062, source [8], nuance) : Les chiffres sont exacts, mais ce sont ceux d'un seul modèle : 70,4 % et 50 à 51 % sont les scores du meilleur des onze modèles (GPT-5.5), ce que le tableau ne dit pas (la ligne EnterpriseBench, elle, dit « pour le meilleur modèle »); le 2,4 % est le score le plus bas, celui de Claude Opus 4.7, évalué sur un sous-ensemble faute de budget, le modèle suivant étant à 3,7 %. 8 000 API et 62 domaine…",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 774,
+  "fichier": "chapitre-16-topologies-patrons.md",
+  "avant": "L'article fondateur de Du et coll. rapporte, selon son résumé, une amélioration du raisonnement mathématique et stratégique et de la validité factuelle, avec une réduction des hallucinations, sur des modèles en boîte noire [8].",
+  "apres": "L'article fondateur de Du et coll. rapporte, selon son résumé, une amélioration du raisonnement mathématique et stratégique et de la validité factuelle, sur des modèles en boîte noire; les essais portent sur des sous-ensembles d'une centaine de problèmes, au prix d'un calcul plus coûteux, et les auteurs notent que les modèles peuvent affirmer avec assurance des réponses fausses [8].",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-064, source [8], nuance) : Le résumé est fidèlement rendu, mais le texte complet ajoute des réserves absentes de l'ouvrage : essais sur des sous-ensembles d'environ 100 problèmes (300 parties pour les échecs), avec trois agents et deux tours; coût de calcul plus élevé; consensus pas nécessairement juste (« these answers were not necessarily correct »), les modèles affirmant avec assurance des réponses fausses. La lecture…",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 775,
+  "fichier": "chapitre-16-topologies-patrons.md",
+  "avant": "Selon son résumé, les systèmes de débat, dans leur forme d'alors, ne surpassent pas de façon fiable d'autres stratégies plus simples, dont l'autocohérence et les ensembles de chaînes de raisonnement; ils sont plus sensibles aux hyperparamètres et difficiles à optimiser, même si un réglage du niveau d'accord entre agents peut les améliorer nettement [9].",
+  "apres": "Selon son résumé, les systèmes de débat, dans leur forme d'alors, ne surpassent pas de façon fiable d'autres stratégies plus simples, dont l'autocohérence et les ensembles de chaînes de raisonnement; ils sont plus sensibles aux hyperparamètres et difficiles à optimiser, même si un réglage du niveau d'accord entre agents peut les améliorer nettement. Les essais reposent surtout sur GPT-3.5 (GPT-4 et Mixtral seulement sur MedQA) [9].",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-065, source [9], nuance) : Exact, mais le périmètre expérimental est étroit : GPT-3.5 sert d'agent de base, GPT-4 et Mixtral 8x7B ne sont testés que sur MedQA; sept jeux de données (trois médicaux, plus des jeux de raisonnement); les auteurs signalent que le recours à des API publiques limite l'échelle et la reproductibilité. Ils attribuent surtout la contre-performance à la sensibilité aux hyperparamètres, non à une inf…",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 776,
+  "fichier": "chapitre-20-cadriciels-orchestration.md",
+  "avant": "Selon sa propre classification, 76 % des bogues se manifestent par un comportement fonctionnel incorrect, et leurs causes relèvent davantage des API, de la configuration, de l'analyse et de la sérialisation que dans les cadriciels d'apprentissage profond [21].",
+  "apres": "Selon sa propre classification de 5 669 rapports de bogues publics tirés de cinq cadriciels, 76 % des bogues signalés se manifestent par un comportement fonctionnel incorrect, et leurs causes relèvent davantage des API, de la configuration, de l'analyse et de la sérialisation que dans les cadriciels d'apprentissage profond; ces rapports ne mesurent pas l'incidence réelle [21].",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-071, source [21], nuance) : Exact, mais le texte complet précise la portée : il s'agit de rapports publics (5 669 rapports de bogues et 809 demandes de fonction, tirés de 15 822 issues GitHub de cinq cadriciels, jusqu'en mars 2026), étiquetés à la main par cinq experts, et les auteurs notent que ces rapports ne reflètent pas l'incidence réelle. La comparaison avec l'apprentissage profond repose sur 250 rapports par cadric…",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 777,
+  "fichier": "chapitre-21-fiabilite-coordination.md",
+  "avant": "L'étude de Kim et coll. observe une amplification des erreurs plus forte sans point central de vérification, tendance que son modèle final ne juge pas significative (chapitre 16) [5].",
+  "apres": "L'étude de Kim et coll. observe une amplification des erreurs plus forte sans point central de vérification, mais son modèle final ne retient pas cette amplification comme prédicteur significatif de la performance : les écarts s'expliquent mieux par l'efficacité et le surcoût de coordination (chapitre 16) [5].",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-074, source [5], nuance) : Ligne 122 : ce que le modèle final juge non significatif, c'est l'effet de l'amplification des erreurs sur la performance, non la tendance à une amplification plus forte sans vérification centrale (17,2 contre 4,4 sur les traces, maintenue dans le résumé); les auteurs attribuent les écarts à l'efficacité et au surcoût plutôt qu'à la propagation des erreurs. Lignes 223 et 233 confirmées : surcoû…",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 778,
+  "fichier": "chapitre-21-fiabilite-coordination.md",
+  "avant": "Ils observent aussi que l'indicateur de jalons baisse quand le nombre d'agents passe de un à sept, et que la discussion de groupe est la pire des stratégies de planification essayées [8].",
+  "apres": "Ils observent aussi, dans leur seul scénario de recherche, que l'indicateur de jalons baisse quand le nombre d'agents passe de un à sept (essais à un, trois, cinq et sept agents), et que la discussion de groupe est la pire des stratégies de planification essayées [8].",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-076, source [8], nuance) : Définitions confirmées (jalons : rapport entre les jalons auxquels l'agent a contribué et le total; note de coordination : moyenne de deux cotes sur cinq points, communication et planification). Mais les deux observations (baisse de l'indicateur de 1 à 7 agents, discussion de groupe la pire) viennent du seul scénario de recherche (1, 3, 5 et 7 agents), que l'ouvrage ne dit pas; les auteurs avan…",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 779,
+  "fichier": "chapitre-30-autorisation-delegation.md",
+  "avant": "Une autre prépublication, lue en résumé, suit la voie inverse : traduire en contrôles d'accès vérifiables, par extension d'OAuth 2.0 et d'OpenID Connect, des permissions que l'utilisateur exprime en langage naturel [13].",
+  "apres": "Une autre prépublication suit la voie inverse : un cadre, sans mise en œuvre ni évaluation, qui étend OAuth 2.0 et OpenID Connect pour traduire en contrôles d'accès vérifiables des permissions exprimées en langage naturel; la traduction elle-même est laissée à des travaux futurs [13].",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-084, source [13], nuance) : Exact, mais le texte complet montre une proposition conceptuelle : aucune mise en œuvre ni évaluation n'est rapportée dans la partie lue, les exemples sont illustratifs, et la traduction du langage naturel en politiques est renvoyée aux travaux futurs (« we leave these specifics to future work »). Les auteurs jugent aussi la voie OpenID Connect plus complexe que d'autres options, et estiment qu…",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 780,
+  "fichier": "chapitre-31-menaces.md",
+  "avant": "Ils proposent un marquage des messages produits par un modèle (*LLM Tagging*), qui réduit la propagation lorsqu'il est combiné à d'autres protections [9].",
+  "apres": "Ils proposent un marquage des messages produits par un modèle (*LLM Tagging*), qui réduit la propagation lorsqu'il est combiné à d'autres protections, dans des simulations limitées aux modèles GPT-4o et GPT-3.5 Turbo [9].",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-088, source [9], nuance) : Exact, mais la simulation n'emploie que GPT-4o et GPT-3.5 Turbo (120 instructions, trois types d'outils, populations de 10 à 50 agents); les auteurs reconnaissent que Claude, Llama et Gemini restent peu explorés et qu'ils n'ont examiné que des architectures multi-agents simples. L'attaque elle-même (invite qui se réplique d'agent en agent « like a computer virus ») est confirmée.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 781,
+  "fichier": "chapitre-32-assurance.md",
+  "avant": "Dans une reproduction indépendante sur le banc AgentDojo, l'une d'elles, Progent, ramène le succès moyen des attaques de 25,8 % à 4,2 %; une attaque adaptative écrite à la main ne le fait pas remonter (2,6 %).",
+  "apres": "Dans une reproduction que ses auteurs qualifient d'indépendante, sur un sous-échantillon du banc AgentDojo, l'une d'elles, Progent, ramène le succès moyen des attaques de 25,8 % à 4,2 %; les auteurs, affiliés à un éditeur d'outils de sécurité d'agents, n'ont pas fait évaluer le texte par les pairs; une attaque adaptative écrite à la main ne le fait pas remonter (2,6 %).",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-093, source [11], nuance) : Exact sur l'objet de l'article, mais les auteurs sont affiliés à LaunchSafe Research, qui développe ses propres outils de sécurité d'agents fondés sur cette approche (le texte le dit dans la conclusion); « reproduction indépendante » est leur propre étiquette, sur un sous-échantillon d'AgentDojo avec Qwen2.5-7B, v1 de juin 2026, non évalué par les pairs.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 782,
+  "fichier": "chapitre-33-observabilite-evaluation.md",
+  "avant": "EnterpriseBench réunit ainsi 500 tâches dans quatre domaines, avec des sources fragmentées et des hiérarchies de contrôle d'accès; son résumé rapporte 41,8 % d'achèvement pour le meilleur agent testé [14].",
+  "apres": "EnterpriseBench réunit ainsi 500 tâches dans quatre domaines selon son résumé (cinq selon le corps du texte), avec des sources fragmentées et des hiérarchies de contrôle d'accès; son résumé rapporte 41,8 % d'achèvement pour le meilleur agent testé, chiffre que les tableaux du texte ne retrouvent pas (31 % d'exactitude à l'évaluation humaine de l'agent o1-mini) [14].",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-095, source [14], nuance) : Le résumé dit bien 41,8 % et quatre domaines (génie logiciel, RH, finance, administration), mais le corps du texte parle de cinq domaines et ne retrouve 41,8 % dans aucun tableau; l'évaluation humaine du meilleur agent (o1-mini, ReAct) donne 31 % d'exactitude sur 100 tâches. Les deux sources de ce chiffre divergent dans le texte même.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 783,
+  "fichier": "chapitre-35-cadres-internationaux.md",
+  "avant": "Il ne règle pas non plus le fond : la prépublication relevait que l'AI Office n'avait publié aucune orientation sur les agents ni sur la modification substantielle [1], et rien, dans les parties lues de l'Omnibus, ne traite de la dérive.",
+  "apres": "Il ne règle pas non plus le fond : la prépublication relevait que l'AI Office n'avait publié aucune orientation spécifique sur les agents, l'usage d'outils ni le comportement à l'exécution [1], et rien, dans les parties lues de l'Omnibus, ne traite de la dérive.",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-100, source [1], nuance) : La plupart des phrases visées concordent (art. 3(1), 53, 5, 9(2)(b), 25, quatre points de friction = sections 6.1 à 6.4, formule sur la dérive, spécifications internes, autres textes, inventaire, ISO 42001). Écart : le texte ne dit pas que l'AI Office n'a rien publié « sur la modification substantielle », mais « sur les agents, l'usage d'outils et le comportement à l'exécution ». Non vérifié mo…",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 784,
+  "fichier": "chapitre-40-finops-agentique.md",
+  "avant": "Une prépublication plus ancienne, RouteLLM, annonce des coûts réduits de plus de moitié dans certains cas, sans perte de qualité sur ses bancs d'essai [10].",
+  "apres": "Une prépublication plus ancienne, RouteLLM, annonce dans son résumé des coûts réduits de plus de moitié dans certains cas, sans perte de qualité; dans le texte, la réduction ne dépasse la moitié que sur un des trois bancs (MT Bench) [10].",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-102, source [10], nuance) : Le résumé dit bien « over 2 times in certain cases » et « without compromising quality », mais le texte (tableau 6, lu via WebFetch) montre 3,66 fois sur MT Bench seulement (1,41 fois sur MMLU, 1,49 fois sur GSM8K), avec 95 %, 92 % et 87 % de la qualité de GPT-4; « sans perte de qualité » est donc la formule du résumé, non le résultat chiffré.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 785,
+  "fichier": "chapitre-41-modele-operationnel.md",
+  "avant": "Il recense cinq facteurs sociotechniques, dont le calibrage de la confiance et la structure de la tâche, et cinq principes de conception : définir les buts et les contraintes, répartir les rôles, orchestrer l'attention et l'interrogation, bâtir des infrastructures de connaissance, former et évaluer en continu [5].",
+  "apres": "Il examine des facteurs sociotechniques, dont le calibrage de la confiance et la structure de la tâche, et propose cinq principes de conception : définir les buts et les contraintes, répartir les rôles, orchestrer l'attention et l'interrogation, bâtir des infrastructures de connaissance, former et évaluer en continu [5]; ses auteurs notent que les preuves viennent surtout d'études en laboratoire et de prototypes.",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-104, source [5], nuance) : L'abstract énumère cinq éléments après « including » (liste non exhaustive), mais la section sur les facteurs compte quatre sous-sections (équipe; confiance et modèles mentaux; expertise et charge; tâche). Les auteurs bornent aussi leurs preuves : études en laboratoire, petits déploiements, prototypes, généralisation incertaine.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 786,
+  "fichier": "chapitre-41-modele-operationnel.md",
+  "avant": "Une expérience préenregistrée chez Procter & Gamble a réparti au hasard 776 professionnels sur de vrais problèmes d'innovation : seuls ou à deux, avec ou sans IA générative [7].",
+  "apres": "Une expérience préenregistrée chez Procter & Gamble, menée lors d'un atelier virtuel d'une journée, a réparti au hasard 776 professionnels sur de vrais problèmes d'innovation : seuls ou à deux (un spécialiste technique et un commercial), avec ou sans IA générative [7]; elle a reçu un soutien financier lié à P&G, dont un auteur a été consultant.",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-105, source [7], nuance) : Chiffres et conclusions exacts (776 sur 811 participants, quatre conditions, solutions équilibrées), mais l'expérience est un atelier virtuel d'une journée, avec des paires interfonctionnelles (R&D + commercial) seulement, et l'étude est financée en partie par des dons de P&G à l'institut D^3 de Harvard, dont un auteur a été consultant pour P&G en 2021-2022. Publication ultérieure dans Organiza…",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 787,
+  "fichier": "chapitre-42-etudes-de-cas.md",
+  "avant": "| ITBench (IBM et Université de l'Illinois, février 2025) [5] | 94 scénarios d'automatisation TI | 13,8 % des scénarios de fiabilité résolus; 25,2 % en conformité et sécurité; 0 % en FinOps |",
+  "apres": "| ITBench (IBM et Université de l'Illinois, février 2025) [5] | 94 scénarios d'automatisation TI (42 en fiabilité, 50 en conformité et sécurité, 2 en FinOps) | 13,8 % des scénarios de fiabilité résolus; 25,2 % en conformité et sécurité; 0 % en FinOps (deux scénarios seulement) |",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-109, source [5], nuance) : Chiffres exacts, mais le 0 % en FinOps porte sur deux scénarios seulement (42 en fiabilité, 50 en conformité et sécurité); les taux sont ceux des agents de référence des auteurs (IBM) et le banc ne couvre que des problèmes réactifs.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 788,
+  "fichier": "chapitre-42-etudes-de-cas.md",
+  "avant": "En production, le temps de réponse médian baisse de 42 %; sur 1 500 alarmes historiques, le taux d'erreur de bout en bout baisse jusqu'à 53 % [13].",
+  "apres": "En production, sur une seule application, le temps de réponse médian baisse de 42 % (modèle Qwen3 32B, par rapport à l'agent qui génère du code à chaque requête); sur 1 500 alarmes historiques, le taux d'erreur de bout en bout baisse jusqu'à 53 % selon le modèle (36 % pour Qwen3 32B), et les auteurs ne revendiquent pas de généralisation à d'autres domaines [13].",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-112, source [13], nuance) : Chiffres exacts, mais le -42 % de latence médiane vaut pour le modèle Qwen3 32B, par rapport au sous-agent qui génère du code à chaque requête, sur une seule application déployée; le -53 % est celui de GLM-4.5-Air (-36 % pour Qwen3 32B). Les auteurs écrivent que la généralisation à d'autres domaines n'est pas établie et qu'ils ne peuvent garantir que chaque défaillance serait attrapée sans revu…",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 789,
+  "fichier": "chapitre-43-maturite-prospective.md",
+  "avant": "Elle dépeint des agents de stade 1 : 68 % exécutent moins de dix étapes avant une intervention humaine (« au plus dix » selon le résumé), 14 cas sur 20 pilotent par prompt un modèle du commerce sans en ajuster les poids, 74 % des répondants dépendent surtout d'une évaluation humaine [3].",
+  "apres": "Elle dépeint des agents de stade 1 : sur 60 systèmes déclarés, 68 % exécutent moins de dix étapes avant une intervention humaine (« au plus dix » selon le résumé), 14 cas sur 20 pilotent par prompt un modèle du commerce sans en ajuster les poids, 74 % des répondants (31 systèmes) dépendent surtout d'une évaluation humaine [3]; les auteurs signalent un biais de participation.",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-115, source [3], nuance) : Les trois chiffres figurent dans le texte (le résumé dit « at most 10 steps », 70 % et 74 %), mais sur de petites bases : 68 % porte sur 60 systèmes, 74 % sur 31 systèmes, 14/20 sur les études de cas, dans une enquête dont 86 systèmes en production ou en pilote ont été retenus sur 306 réponses. Les auteurs signalent un biais de participation et une concentration des équipes en Amérique, et prés…",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 790,
+  "fichier": "chapitre-43-maturite-prospective.md",
+  "avant": "La taxonomie MAST recense quatorze modes d'échec, dont la plupart tiennent à la conception et à la coordination [4] (chapitre 21).",
+  "apres": "La taxonomie MAST recense quatorze modes d'échec en trois catégories (conception du système, désalignement entre agents, vérification des tâches); ses auteurs jugent que bien des échecs tiennent à la conception organisationnelle et à la coordination, non au seul modèle [4] (chapitre 21).",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-116, source [4], nuance) : Les quatorze modes (trois catégories, 1 642 traces, 7 cadriciels) sont exacts, mais le texte dit « many » (bon nombre) d'échecs tiennent à la conception organisationnelle et à la coordination, non « la plupart »; aucun total par catégorie n'a pu être relevé, une des trois catégories est la vérification des tâches, et les systèmes fermés sont exclus faute de traces.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 791,
+  "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+  "avant": "Son résumé annonce des coûts réduits de plus de moitié dans certains cas, sans perte de qualité sur ses bancs d'essai, et une tenue des routeurs quand la paire de modèles change [9].",
+  "apres": "Son résumé annonce des coûts réduits de plus de moitié dans certains cas, sans perte de qualité sur ses bancs d'essai, et une tenue des routeurs quand la paire de modèles change; dans le texte, la réduction ne dépasse la moitié que sur un des trois bancs (MT Bench) [9].",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-119, source [9], nuance) : Le résumé dit bien ce que l'ouvrage rapporte (plus de deux fois moins cher dans certains cas, qualité préservée, routeurs conservés quand la paire de modèles change, sans réentraînement, avec Claude 3 Opus/Sonnet et Llama 3.1 70B/8B). Mais le tableau 6 (lu via WebFetch) donne 3,66 fois sur MT Bench seulement (1,41 fois sur MMLU, 1,49 fois sur GSM8K) avec 95 %, 92 % et 87 % de la qualité de GPT-…",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 792,
+  "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+  "avant": "Son résumé annonce jusqu'à 98 % de réduction de coût à performance égale au meilleur modèle de l'époque [10].",
+  "apres": "Son résumé annonce jusqu'à 98 % de réduction de coût à performance égale au meilleur modèle de l'époque; le texte situe ce maximum sur un seul des trois jeux de données testés (98,3 % sur HEADLINES, 73,3 % sur OVERRULING, 59,2 % sur COQA), et la cascade exige des exemples étiquetés de même distribution que le test [10].",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-120, source [10], nuance) : Le « jusqu'à 98 % » est exact, mais il vaut pour un seul des trois jeux de données (HEADLINES, actualités financières; le tableau 3, lu via WebFetch, donne 98,3 %, contre 73,3 % pour OVERRULING et 59,2 % pour COQA). La cascade demande aussi des exemples étiquetés tirés d'une distribution voisine de celle du test, et un coût d'apprentissage initial.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 793,
+  "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+  "avant": "Snell et ses coauteurs en étudient deux formes, la recherche guidée par un modèle vérificateur et l'ajustement adaptatif de la distribution de sortie; leur résumé en tire trois constats [11] :",
+  "apres": "Snell et ses coauteurs en étudient deux formes, la recherche guidée par un modèle vérificateur et l'ajustement adaptatif de la distribution de sortie, sur un seul modèle (PaLM 2-S*) et un seul jeu de problèmes (MATH); leur résumé en tire trois constats [11] :",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-121, source [11], nuance) : Les deux mécanismes et les trois constats (difficulté du prompt, gain d'efficacité de plus de 4 fois, modèle 14 fois plus gros dépassé là où le petit modèle réussit déjà raisonnablement) sont exacts. Mais tout repose sur un seul modèle (PaLM 2-S*) et un seul jeu (MATH, mathématiques de niveau concours); estimer la difficulté coûte lui-même du calcul, et la recherche arborescente n'a pas été com…",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 794,
+  "fichier": "chapitre-45-reseaux-b2b-federes.md",
+  "avant": "CaMeL sépare le flux de contrôle, tiré de la requête de confiance, du flux de données, de sorte qu'une donnée non fiable ne puisse jamais modifier le déroulement du programme; des capacités empêchent une donnée privée de sortir par un flux non autorisé [7].",
+  "apres": "CaMeL sépare le flux de contrôle, tiré de la requête de confiance, du flux de données, de sorte qu'une donnée non fiable ne puisse jamais modifier le déroulement du programme; des capacités empêchent une donnée privée de sortir par un flux non autorisé. La garantie ne couvre pas les attaques qui n'altèrent ni ce déroulement ni ces données, ni les canaux auxiliaires; sur AgentDojo, 77 % des tâches sont résolues avec garanties prouvables, contre 84 % sans défense [7].",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-123, source [7], nuance) : La conception est décrite exactement comme dans l'ouvrage, mais le texte borne la garantie : CaMeL ne vise pas les attaques qui n'affectent ni le flux de contrôle ni le flux de données, des canaux auxiliaires restent possibles, et la fatigue d'approbation des utilisateurs reste un risque; sur AgentDojo, 77 % des tâches sont résolues avec garanties prouvables, contre 84 % sans défense.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 795,
+  "fichier": "chapitre-45-reseaux-b2b-federes.md",
+  "avant": "Fish, Gonczarowski et Shorrer étendent le constat aux modèles de langage [11].",
+  "apres": "Fish, Gonczarowski et Shorrer étendent le constat aux modèles de langage [11]; leur expérience principale porte sur un seul modèle (GPT-4, version 0613, avec GPT-5.2 en test de robustesse), dans un oligopole de Bertrand simple à horizon fixe.",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-126, source [11], nuance) : Le constat (prix supraconcurrentiels atteints de façon autonome, sensibilité aux formulations, extension aux enchères, v6 du 31 août 2026) est exact, mais l'expérience principale porte sur un seul modèle (GPT-4, version 0613; GPT-5.2 en test de robustesse), dans un oligopole de Bertrand simple, à horizon fixe, ce que les auteurs reconnaissent. Le texte parle d'un résumé d'une page paru dans les…",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 796,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "Sur 100 paquets répandus, 56 % des rapports étaient des bogues valides après revue manuelle, et 32 % méritaient un signalement aux mainteneurs.",
+  "apres": "Sur 100 paquets répandus (984 rapports), 56 % des rapports, d'après la revue manuelle d'un sous-ensemble seulement (intervalle de confiance à 95 % de 42 à 70 %), étaient des bogues valides, et 32 % méritaient un signalement aux mainteneurs.",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-128, source [3], nuance) : Les chiffres sont exacts (100 paquets, 933 modules, 56,0 %, 32,0 %, 21 meilleurs rapports à 86 %, 5 bogues signalés, 4 correctifs, 3 fusionnés), mais les 56 % et 32 % viennent de la revue manuelle d'un sous-ensemble seulement (les auteurs n'ont pas relu les 984 rapports), avec des intervalles de confiance larges (42 à 70 %) et un accord inter-évaluateurs initial faible (kappa 0,31); l'agent ne …",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 797,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "Les ingénieurs ont accepté 73 % des tests proposés.",
+  "apres": "Lors de deux test-a-thons (Messenger et WhatsApp), les ingénieurs ont accepté 73 % des tests évalués, dont 36 % environ seulement étaient jugés liés à la confidentialité.",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-129, source [4], nuance) : Les chiffres (10 795 classes Kotlin, 7 plateformes, 9 095 mutants, 571 tests, précision 0,79 et rappel 0,47 portés à 0,95 et 0,96) sont exacts. Mais le 73 % vient des test-a-thons de Messenger et de WhatsApp (environ 191 tests évalués; 90 % lors d'un essai initial de 30 tests), et seulement 36 % environ des tests ont été jugés liés à la confidentialité; les auteurs attribuent les écarts d'accep…",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 798,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "Une prépublication d'avril 2026, LogJack, mesure l'injection indirecte par des journaux infonuagiques contre des agents de débogage [8].",
+  "apres": "Une prépublication d'avril 2026, LogJack, mesure l'injection indirecte par des journaux infonuagiques contre des modèles placés dans un banc de débogage simulé, non contre des agents de production [8].",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-130, source [8], nuance) : Le comptage (42 charges, 5 catégories, 8 modèles, 0 % à 86,2 %, 30 %, 6 modèles sur 8, Azure Prompt Shield 1 charge sur 32, GCP Model Armor aucune) est exact, mais l'étude ne teste pas d'agents de débogage de production : elle place des modèles dans un banc d'essai muni d'outils à commandes arbitraires, avec des charges rédigées à la main, une classification des commandes par expressions réguli…",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 799,
+  "fichier": "chapitre-01-entreprise-agentique.md",
+  "avant": "## Limites de ce chapitre\n\n- Les pages [1] à [3] et [5] à [",
+  "apres": "## Limites de ce chapitre\n\n- Les sources [7] et [8], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.\n- Les pages [1] à [3] et [5] à [",
+  "categorie": "factuel",
+  "motif": "Lot P2-F3 : la limite dit quelles sources lues par leur résumé ont été relues au-delà, et comment.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 800,
+  "fichier": "chapitre-02-genealogie.md",
+  "avant": "## Limites de ce chapitre\n\n- Les pages ont été lues par un ",
+  "apres": "## Limites de ce chapitre\n\n- La source [11], d'abord connue par son seul résumé, a été relue au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.\n- Les pages ont été lues par un ",
+  "categorie": "factuel",
+  "motif": "Lot P2-F3 : la limite dit quelles sources lues par leur résumé ont été relues au-delà, et comment.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 801,
+  "fichier": "chapitre-03-dimensions-interoperabilite.md",
+  "avant": "## Limites de ce chapitre\n\n- Le découpage en cinq niveaux, ",
+  "apres": "## Limites de ce chapitre\n\n- Les sources [14], [15] et [16], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.\n- Le découpage en cinq niveaux, ",
+  "categorie": "factuel",
+  "motif": "Lot P2-F3 : la limite dit quelles sources lues par leur résumé ont été relues au-delà, et comment.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 802,
+  "fichier": "chapitre-04-etat-des-lieux.md",
+  "avant": "## Limites de ce chapitre\n\n- Le rapport de McKinsey n'a pu ",
+  "apres": "## Limites de ce chapitre\n\n- Les sources [1] et [2], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.\n- Le rapport de McKinsey n'a pu ",
+  "categorie": "factuel",
+  "motif": "Lot P2-F3 : la limite dit quelles sources lues par leur résumé ont été relues au-delà, et comment.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 803,
+  "fichier": "chapitre-07-protocoles-peripheriques.md",
+  "avant": "## Limites de ce chapitre\n\n- Les pages ont été lues par un ",
+  "apres": "## Limites de ce chapitre\n\n- Les sources [17], [18], [19], [20] et [21], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.\n- Les pages ont été lues par un ",
+  "categorie": "factuel",
+  "motif": "Lot P2-F3 : la limite dit quelles sources lues par leur résumé ont été relues au-delà, et comment.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 804,
+  "fichier": "chapitre-08-decouverte-registres.md",
+  "avant": "## Limites de ce chapitre\n\n- Plusieurs pages longues ([8], ",
+  "apres": "## Limites de ce chapitre\n\n- Les sources [23], [26] et [27], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.\n- Plusieurs pages longues ([8], ",
+  "categorie": "factuel",
+  "motif": "Lot P2-F3 : la limite dit quelles sources lues par leur résumé ont été relues au-delà, et comment.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 805,
+  "fichier": "chapitre-09-web-agentique.md",
+  "avant": "## Limites de ce chapitre\n\n- Les pages ont été lues par un ",
+  "apres": "## Limites de ce chapitre\n\n- La source [18], d'abord connue par son seul résumé, a été relue au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.\n- Les pages ont été lues par un ",
+  "categorie": "factuel",
+  "motif": "Lot P2-F3 : la limite dit quelles sources lues par leur résumé ont été relues au-delà, et comment.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 806,
+  "fichier": "chapitre-10-commerce-agentique.md",
+  "avant": "## Limites de ce chapitre\n\n- Les quatre articles de sécurit",
+  "apres": "## Limites de ce chapitre\n\n- Les sources [13], [14], [15] et [16], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.\n- Les quatre articles de sécurit",
+  "categorie": "factuel",
+  "motif": "Lot P2-F3 : la limite dit quelles sources lues par leur résumé ont été relues au-delà, et comment.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 807,
+  "fichier": "chapitre-11-gouvernance-standards.md",
+  "avant": "## Limites de ce chapitre\n\n- **Chine.** Le texte officiel d",
+  "apres": "## Limites de ce chapitre\n\n- La source [27], d'abord connue par son seul résumé, a été relue au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.\n- **Chine.** Le texte officiel d",
+  "categorie": "factuel",
+  "motif": "Lot P2-F3 : la limite dit quelles sources lues par leur résumé ont été relues au-delà, et comment.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 808,
+  "fichier": "chapitre-12-couche-semantique-ontologies.md",
+  "avant": "## Limites de ce chapitre\n\n- L'intitulé de la section 12.4 ",
+  "apres": "## Limites de ce chapitre\n\n- Les sources [10] et [11], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.\n- L'intitulé de la section 12.4 ",
+  "categorie": "factuel",
+  "motif": "Lot P2-F3 : la limite dit quelles sources lues par leur résumé ont été relues au-delà, et comment.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 809,
+  "fichier": "chapitre-13-ingenierie-contexte.md",
+  "avant": "## Limites de ce chapitre\n\n- **Mode de lecture.** La plupar",
+  "apres": "## Limites de ce chapitre\n\n- Les sources [3], [11], [12], [14], [15] et [16], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.\n- **Mode de lecture.** La plupar",
+  "categorie": "factuel",
+  "motif": "Lot P2-F3 : la limite dit quelles sources lues par leur résumé ont été relues au-delà, et comment.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 810,
+  "fichier": "chapitre-14-memoire.md",
+  "avant": "## Limites de ce chapitre\n\n- Le texte officiel de l'entrée ",
+  "apres": "## Limites de ce chapitre\n\n- Les sources [1], [2], [3], [4], [5], [6], [7], [8], [9], [10], [11], [12], [13], [14], [15], [16], [17], [18], [19], [20], [21], [22], [23], [24], [25], [26], [27] et [28], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.\n- Le texte officiel de l'entrée ",
+  "categorie": "factuel",
+  "motif": "Lot P2-F3 : la limite dit quelles sources lues par leur résumé ont été relues au-delà, et comment.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 811,
+  "fichier": "chapitre-15-donnees-pretes-agents.md",
+  "avant": "## Limites de ce chapitre\n\n- Les pages ont été lues par un ",
+  "apres": "## Limites de ce chapitre\n\n- Les sources [6], [7] et [8], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.\n- Les pages ont été lues par un ",
+  "categorie": "factuel",
+  "motif": "Lot P2-F3 : la limite dit quelles sources lues par leur résumé ont été relues au-delà, et comment.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 812,
+  "fichier": "chapitre-16-topologies-patrons.md",
+  "avant": "## Limites de ce chapitre\n\n- Le relevé [12], appui principa",
+  "apres": "## Limites de ce chapitre\n\n- Les sources [2], [8], [9] et [10], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.\n- Le relevé [12], appui principa",
+  "categorie": "factuel",
+  "motif": "Lot P2-F3 : la limite dit quelles sources lues par leur résumé ont été relues au-delà, et comment.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 813,
+  "fichier": "chapitre-18-execution-durable-transactions.md",
+  "avant": "## Limites de ce chapitre\n\n- **L'architecture Nexus, second",
+  "apres": "## Limites de ce chapitre\n\n- Les sources [1] et [13], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.\n- **L'architecture Nexus, second",
+  "categorie": "factuel",
+  "motif": "Lot P2-F3 : la limite dit quelles sources lues par leur résumé ont été relues au-delà, et comment.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 814,
+  "fichier": "chapitre-19-orchestration-evenementielle.md",
+  "avant": "## Limites de ce chapitre\n\n- **EDAgent (ICDCS 2026)**, nomm",
+  "apres": "## Limites de ce chapitre\n\n- La source [12], d'abord connue par son seul résumé, a été relue au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.\n- **EDAgent (ICDCS 2026)**, nomm",
+  "categorie": "factuel",
+  "motif": "Lot P2-F3 : la limite dit quelles sources lues par leur résumé ont été relues au-delà, et comment.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 815,
+  "fichier": "chapitre-20-cadriciels-orchestration.md",
+  "avant": "## Limites de ce chapitre\n\n- Le relevé [15], appui prévu pa",
+  "apres": "## Limites de ce chapitre\n\n- Les sources [14] et [21], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.\n- Le relevé [15], appui prévu pa",
+  "categorie": "factuel",
+  "motif": "Lot P2-F3 : la limite dit quelles sources lues par leur résumé ont été relues au-delà, et comment.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 816,
+  "fichier": "chapitre-21-fiabilite-coordination.md",
+  "avant": "## Limites de ce chapitre\n\n- Les pages web ont été lues par",
+  "apres": "## Limites de ce chapitre\n\n- Les sources [1], [3], [5], [7] et [8], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.\n- Les pages web ont été lues par",
+  "categorie": "factuel",
+  "motif": "Lot P2-F3 : la limite dit quelles sources lues par leur résumé ont été relues au-delà, et comment.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 817,
+  "fichier": "chapitre-22-humain-dans-la-boucle.md",
+  "avant": "## Limites de ce chapitre\n\n- Les sources [3], [8] et [13] o",
+  "apres": "## Limites de ce chapitre\n\n- La source [17], d'abord connue par son seul résumé, a été relue au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.\n- Les sources [3], [8] et [13] o",
+  "categorie": "factuel",
+  "motif": "Lot P2-F3 : la limite dit quelles sources lues par leur résumé ont été relues au-delà, et comment.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 818,
+  "fichier": "chapitre-23-architecture-reference.md",
+  "avant": "## Limites de ce chapitre\n\n- Les pages web ont été lues au ",
+  "apres": "## Limites de ce chapitre\n\n- La source [20], d'abord connue par son seul résumé, a été relue au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.\n- Les pages web ont été lues au ",
+  "categorie": "factuel",
+  "motif": "Lot P2-F3 : la limite dit quelles sources lues par leur résumé ont été relues au-delà, et comment.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 819,
+  "fichier": "chapitre-24-passerelles-integration.md",
+  "avant": "## Limites de ce chapitre\n\n- Les pages ont été lues par un ",
+  "apres": "## Limites de ce chapitre\n\n- La source [16], d'abord connue par son seul résumé, a été relue au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.\n- Les pages ont été lues par un ",
+  "categorie": "factuel",
+  "motif": "Lot P2-F3 : la limite dit quelles sources lues par leur résumé ont été relues au-delà, et comment.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 820,
+  "fichier": "chapitre-28-agents-industriels-peripherie.md",
+  "avant": "## Limites de ce chapitre\n\n- Seule la brochure [6] a été lu",
+  "apres": "## Limites de ce chapitre\n\n- La source [5], d'abord connue par son seul résumé, a été relue au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.\n- Seule la brochure [6] a été lu",
+  "categorie": "factuel",
+  "motif": "Lot P2-F3 : la limite dit quelles sources lues par leur résumé ont été relues au-delà, et comment.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 821,
+  "fichier": "chapitre-30-autorisation-delegation.md",
+  "avant": "## Limites de ce chapitre\n\n- Les pages ont été lues par un ",
+  "apres": "## Limites de ce chapitre\n\n- La source [13], d'abord connue par son seul résumé, a été relue au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.\n- Les pages ont été lues par un ",
+  "categorie": "factuel",
+  "motif": "Lot P2-F3 : la limite dit quelles sources lues par leur résumé ont été relues au-delà, et comment.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 822,
+  "fichier": "chapitre-31-menaces.md",
+  "avant": "## Limites de ce chapitre\n\n- Le document complet de l'OWASP",
+  "apres": "## Limites de ce chapitre\n\n- Les sources [6], [7], [8], [9], [10] et [13], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.\n- Le document complet de l'OWASP",
+  "categorie": "factuel",
+  "motif": "Lot P2-F3 : la limite dit quelles sources lues par leur résumé ont été relues au-delà, et comment.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 823,
+  "fichier": "chapitre-32-assurance.md",
+  "avant": "## Limites de ce chapitre\n\n- Les pages ont été lues au moye",
+  "apres": "## Limites de ce chapitre\n\n- Les sources [9], [10] et [11], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.\n- Les pages ont été lues au moye",
+  "categorie": "factuel",
+  "motif": "Lot P2-F3 : la limite dit quelles sources lues par leur résumé ont été relues au-delà, et comment.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 824,
+  "fichier": "chapitre-33-observabilite-evaluation.md",
+  "avant": "## Limites de ce chapitre\n\n- Les pages ont été lues au moye",
+  "apres": "## Limites de ce chapitre\n\n- Les sources [13], [14] et [16], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.\n- Les pages ont été lues au moye",
+  "categorie": "factuel",
+  "motif": "Lot P2-F3 : la limite dit quelles sources lues par leur résumé ont été relues au-delà, et comment.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 825,
+  "fichier": "chapitre-34-exploitation.md",
+  "avant": "## Limites de ce chapitre\n\n- **VeriOps-Agent**, appui prévu",
+  "apres": "## Limites de ce chapitre\n\n- La source [3], d'abord connue par son seul résumé, a été relue au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.\n- **VeriOps-Agent**, appui prévu",
+  "categorie": "factuel",
+  "motif": "Lot P2-F3 : la limite dit quelles sources lues par leur résumé ont été relues au-delà, et comment.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 826,
+  "fichier": "chapitre-35-cadres-internationaux.md",
+  "avant": "## Limites de ce chapitre\n\n- Le texte de l'AI Act n'a pas é",
+  "apres": "## Limites de ce chapitre\n\n- Les sources [1] et [12], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.\n- Le texte de l'AI Act n'a pas é",
+  "categorie": "factuel",
+  "motif": "Lot P2-F3 : la limite dit quelles sources lues par leur résumé ont été relues au-delà, et comment.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 827,
+  "fichier": "chapitre-40-finops-agentique.md",
+  "avant": "## Limites de ce chapitre\n\n- Les pages ont été lues au moye",
+  "apres": "## Limites de ce chapitre\n\n- Les sources [10] et [14], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.\n- Les pages ont été lues au moye",
+  "categorie": "factuel",
+  "motif": "Lot P2-F3 : la limite dit quelles sources lues par leur résumé ont été relues au-delà, et comment.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 828,
+  "fichier": "chapitre-41-modele-operationnel.md",
+  "avant": "## Limites de ce chapitre\n\n- Le rapport State of Organizati",
+  "apres": "## Limites de ce chapitre\n\n- Les sources [5] et [7], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.\n- Le rapport State of Organizati",
+  "categorie": "factuel",
+  "motif": "Lot P2-F3 : la limite dit quelles sources lues par leur résumé ont été relues au-delà, et comment.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 829,
+  "fichier": "chapitre-42-etudes-de-cas.md",
+  "avant": "## Limites de ce chapitre\n\n- Toutes les pages, sauf le guid",
+  "apres": "## Limites de ce chapitre\n\n- Les sources [5], [6], [7], [13], [14] et [15], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.\n- Toutes les pages, sauf le guid",
+  "categorie": "factuel",
+  "motif": "Lot P2-F3 : la limite dit quelles sources lues par leur résumé ont été relues au-delà, et comment.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 830,
+  "fichier": "chapitre-43-maturite-prospective.md",
+  "avant": "## Limites de ce chapitre\n\n- Le modèle de maturité, les jal",
+  "apres": "## Limites de ce chapitre\n\n- Les sources [3], [4] et [7], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.\n- Le modèle de maturité, les jal",
+  "categorie": "factuel",
+  "motif": "Lot P2-F3 : la limite dit quelles sources lues par leur résumé ont été relues au-delà, et comment.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 831,
+  "fichier": "chapitre-44-plan-donnees-inference-routage.md",
+  "avant": "## Limites de ce chapitre\n\n- Les pages ont été lues au moye",
+  "apres": "## Limites de ce chapitre\n\n- Les sources [9], [10], [11] et [12], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.\n- Les pages ont été lues au moye",
+  "categorie": "factuel",
+  "motif": "Lot P2-F3 : la limite dit quelles sources lues par leur résumé ont été relues au-delà, et comment.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 832,
+  "fichier": "chapitre-45-reseaux-b2b-federes.md",
+  "avant": "## Limites de ce chapitre\n\n- **Éléments sans source.** « Di",
+  "apres": "## Limites de ce chapitre\n\n- Les sources [7], [8], [11] et [12], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.\n- **Éléments sans source.** « Di",
+  "categorie": "factuel",
+  "motif": "Lot P2-F3 : la limite dit quelles sources lues par leur résumé ont été relues au-delà, et comment.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 833,
+  "fichier": "chapitre-47-ingenierie-agentique-interne-distillation.md",
+  "avant": "## Limites de ce chapitre\n\n- **Éléments sans source.** « Sp",
+  "apres": "## Limites de ce chapitre\n\n- Les sources [3], [4], [8], [9], [10], [12] et [13], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.\n- **Éléments sans source.** « Sp",
+  "categorie": "factuel",
+  "motif": "Lot P2-F3 : la limite dit quelles sources lues par leur résumé ont été relues au-delà, et comment.",
+  "origine": "plan 2027, lot P2-F3"
+ },
+ {
+  "n": 834,
+  "fichier": "chapitre-24-passerelles-integration.md",
+  "avant": "Sur une collection de 64 611 serveurs, les scanners existants signalent 96,89 % des serveurs comme risqués, et moins de la moitié des alertes vérifiées à la main sont fondées [16].",
+  "apres": "Sur une collection de 64 611 serveurs, dont 37 288 pouvaient être interrogés, 96,89 % de ces derniers sont signalés comme risqués par au moins un des huit scanners existants, et moins de la moitié des alertes d'un échantillon de 100 serveurs, vérifiées à la main, sont fondées [16].",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-082, source [16], nuance) : les 96,89 % portent sur les 37 288 serveurs interrogeables, non sur les 64 611 de la collection; la vérification manuelle porte sur 100 serveurs.",
+  "origine": "plan 2027, lot P2-F3-b"
+ },
+ {
+  "n": 835,
+  "fichier": "chapitre-28-agents-industriels-peripherie.md",
+  "avant": "en opérations natives sans modifier les systèmes de commande [5][6].",
+  "apres": "en opérations natives [5][6].",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-083, source [5], nuance) : « sans modifier les systèmes de commande » ne figure pas dans le texte complet de la source [5].",
+  "origine": "plan 2027, lot P2-F3-b"
+ },
+ {
+  "n": 836,
+  "fichier": "chapitre-31-menaces.md",
+  "avant": "des patrons qui donnent à l'agent une résistance démontrable à l'injection, au prix d'un compromis explicite entre utilité et sécurité que les auteurs analysent sur des études de cas [8]. Le résumé ne nomme pas les patrons, et le texte complet n'a pas été lu.",
+  "apres": "des patrons qui visent une résistance démontrable à l'injection, sans toujours l'éliminer, au prix d'un compromis explicite entre utilité et sécurité que les auteurs analysent sur dix études de cas [8].",
+  "categorie": "factuel",
+  "motif": "Lecture au-delà du résumé (lot P2-F3, F3-087, source [8], nuance) : le corps de l'article nuance la « résistance démontrable » du résumé (le patron plan-then-execute « does not prevent all prompt injections »); le texte complet a maintenant été lu.",
+  "origine": "plan 2027, lot P2-F3-b"
+ },
+ {
+  "n": 837,
+  "fichier": "annexe-E-bibliographie.md",
+  "avant": "sa pratique en production reste à documenter.\n\n## E.4 Sources de la partie X",
+  "apres": "sa pratique en production reste à documenter.\n\n### Contrôles faits le 14 novembre 2026\n\nTrois contrôles ont suivi l'audit, faits par des lecteurs qui n'avaient pas écrit les passages contrôlés. Tous lisent les sources par un outil qui en rend des extraits, non le texte brut.\n\n| Contrôle | Périmètre | Résultat |\n|---|---|---|\n| Recollationnement des chiffres | 200 phrases d'exposé tirées au hasard parmi les 295 qui portent une quantité et un appel de source | 182 vérifiables : 178 confirmées, 4 en erreur, soit 2,2 %; 18 non vérifiables, la source étant inaccessible ou le chiffre introuvable |\n| Lecture au-delà du résumé | 134 sources des chapitres 1 à 47 connues par leur seul résumé et citées dans le texte | 124 relues : 64 confirmées, 54 exactes mais à nuancer, 6 en erreur; 10 non relues |\n| Second audit des compléments | Les 193 entrées ajoutées au registre le 14 novembre | 95 constats : aucun bloquant, 19 majeurs, 76 mineurs; 86 corrigés |\n\nLes quatre erreurs de relevé tiennent à la portée du chiffre plus qu'au chiffre : un exemple donné pour une règle, une population plus étroite que celle annoncée, une attribution à la mauvaise page, une source révisée depuis la lecture. Le deuxième contrôle pèse davantage : près d'une fois sur deux, le texte complet ajoute au résumé une réserve qui change la portée du résultat, le plus souvent la taille réelle de l'échantillon, le périmètre de l'essai ou le lien des auteurs avec le produit mesuré. Les corrections sont inscrites au registre, et les limites des chapitres disent quelles sources ont été relues. Les sources de la partie X, lues par leur résumé selon la méthode déclarée au chapitre 48, n'ont pas été relues ainsi.\n\n## E.4 Sources de la partie X",
+  "categorie": "harmonisation",
+  "motif": "Clôture de la priorité 2 du plan de travail : l'annexe E publie le résultat des trois contrôles de fiabilité du 14 novembre 2026 (recollationnement de 200 chiffres, lecture au-delà du résumé de 134 sources, second audit des 193 compléments).",
+  "origine": "plan 2027, lot P2-cloture"
  }
 ]

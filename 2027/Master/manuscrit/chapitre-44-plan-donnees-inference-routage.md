@@ -56,15 +56,15 @@ Aucune source lue ne présente l'échelle à trois paliers comme un schéma uniq
 
 ### Du petit au grand modèle : routeur ou cascade
 
-Le **routeur** décide avant l'appel (chapitre 16). RouteLLM entraîne, sur des données de préférences humaines, des routeurs qui choisissent entre un modèle fort et un modèle faible. Son résumé annonce des coûts réduits de plus de moitié dans certains cas, sans perte de qualité sur ses bancs d'essai, et une tenue des routeurs quand la paire de modèles change [9].
+Le **routeur** décide avant l'appel (chapitre 16). RouteLLM entraîne, sur des données de préférences humaines, des routeurs qui choisissent entre un modèle fort et un modèle faible. Son résumé annonce des coûts réduits de plus de moitié dans certains cas, sans perte de qualité sur ses bancs d'essai, et une tenue des routeurs quand la paire de modèles change; dans le texte, la réduction ne dépasse la moitié que sur un des trois bancs (MT Bench) [9].
 
-La **cascade** décide après. FrugalGPT apprend quelles combinaisons de modèles employer selon la requête. Son résumé annonce jusqu'à 98 % de réduction de coût à performance égale au meilleur modèle de l'époque [10].
+La **cascade** décide après. FrugalGPT apprend quelles combinaisons de modèles employer selon la requête. Son résumé annonce jusqu'à 98 % de réduction de coût à performance égale au meilleur modèle de l'époque; le texte situe ce maximum sur un seul des trois jeux de données testés (98,3 % sur HEADLINES, 73,3 % sur OVERRULING, 59,2 % sur COQA), et la cascade exige des exemples étiquetés de même distribution que le test [10].
 
 Ces prépublications de 2023 et 2024 rapportent les chiffres de leurs auteurs, sur des modèles depuis remplacés. Par construction, le routeur ajoute peu de délai mais se trompe sans le savoir, tandis que la cascade paie un double appel pour chaque requête escaladée.
 
 ### Le troisième palier est un autre axe
 
-Le calcul au moment de l'inférence (*test-time compute*) consiste à dépenser plus de calcul sur une requête sans changer de modèle. Snell et ses coauteurs en étudient deux formes, la recherche guidée par un modèle vérificateur et l'ajustement adaptatif de la distribution de sortie; leur résumé en tire trois constats [11] :
+Le calcul au moment de l'inférence (*test-time compute*) consiste à dépenser plus de calcul sur une requête sans changer de modèle. Snell et ses coauteurs en étudient deux formes, la recherche guidée par un modèle vérificateur et l'ajustement adaptatif de la distribution de sortie, sur un seul modèle (PaLM 2-S*) et un seul jeu de problèmes (MATH); leur résumé en tire trois constats [11] :
 
 - l'efficacité de chaque approche varie fortement selon la difficulté du prompt;
 - une allocation adaptative, requête par requête, est plus de quatre fois plus efficace qu'une base de type « meilleur de N »;
@@ -200,6 +200,7 @@ Sources secondaires : aucune. Le banc d'essai financier et l'indicateur de la Fi
 
 ## Limites de ce chapitre
 
+- Les sources [9], [10], [11] et [12], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - Les pages ont été lues au moyen d'un outil qui en restitue un résumé. L'audit a relu [1], [2], [4], [6], [8], [12] et [13] : les chiffres cités y sont confirmés, sans recoupement sur le texte brut.
 - « Routage cognitif » et l'échelle à trois paliers n'ont pas de source identifiée. Aucun texte lu ne définit « petit modèle » (SLM).
 - Les définitions du TTFT, de l'ITL et du cache KV, leur rapprochement avec le cache de prompts et la comparaison entre routeur et cascade viennent de la connaissance générale.

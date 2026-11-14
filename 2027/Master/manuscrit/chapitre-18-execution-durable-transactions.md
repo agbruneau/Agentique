@@ -305,6 +305,7 @@ Pages d'éditeurs lues le 14 novembre 2026 :
 
 ## Limites de ce chapitre
 
+- Les sources [1] et [13], d'abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
 - **L'architecture Nexus, second appui prévu par le plan initial, n'a pas été lue** [15]. Deux recherches par titre n'ont retrouvé ni l'article ni son éditeur, et ce plan n'en donne que le titre. Le chapitre ne lui emprunte rien.
 - L'article d'origine sur les Sagas [14] n'a pas été lu; sa définition est reprise de SagaLLM. Ce que cet article dit des actions non compensables n'a donc pas pu être cité.
 - Viennent de la connaissance générale, non d'une page lue : le classement des étapes en compensables, pivot et réessayables; les patrons d'autorisation puis capture et de zone d'attente; l'absence de coordinateur de transactions commun aux systèmes d'entreprise.
