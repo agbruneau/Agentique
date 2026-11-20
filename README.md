@@ -1,103 +1,127 @@
 # Interopérabilité et Orchestration en Entreprise Agentique
 
-Collection de référence destinée aux dirigeants, comités de direction, responsables technologiques et responsables des risques qui préparent le passage d'assistants conversationnels isolés vers des agents autonomes fiables, gouvernés et vérifiables à l'échelle de l'entreprise.
+Collection de référence destinée aux dirigeants, membres de comités de direction, responsables technologiques et responsables de la gestion des risques qui encadrent le passage d'assistants conversationnels isolés vers des agents autonomes capables d'agir dans les systèmes de l'entreprise.
 
 Le dépôt réunit **six ouvrages** totalisant **2 917 pages** (état de référence : **novembre 2026**), avec un ancrage approfondi dans les services financiers réglementés au Canada fédéral et au Québec sur l'horizon **2024–2035**.
 
-> **Idée maîtresse** — La fiabilité et la valeur durable d'une entreprise agentique tiennent moins à la puissance d'un modèle d'intelligence artificielle qu'à la qualité des frontières, des contrôles déterministes, de la gouvernance et de la capacité de preuve. Les modèles sont des composants remplaçables ; le noyau de contrôle, les règles métier et les standards d'interopérabilité forment l'actif stratégique que l'organisation doit posséder.
+> **Idée maîtresse** — La fiabilité et la valeur durable d'une entreprise agentique tiennent moins à la puissance d'un modèle d'intelligence artificielle qu'à la solidité de ses frontières, de ses contrôles déterministes, de sa gouvernance et de sa capacité de preuve. Les modèles sont des composants remplaçables à obsolescence rapide; le noyau de contrôle, les règles métier et l'architecture d'interopérabilité constituent l'actif stratégique que l'institution doit posséder en propre.
+
+---
+
+## Pourquoi agir maintenant : trois pressions convergentes
+
+1. **Éviter de remplacer les silos applicatifs par des silos d'agents.** Chaque grand éditeur de progiciels intègre désormais ses propres agents à son écosystème fermé (relation client, finances, ressources humaines, opérations technologiques). Sans architecture ouverte et gouvernée, l'organisation fragmente ses processus, perd la maîtrise de son contexte d'affaires et multiplie les dépendances envers ses fournisseurs.
+2. **Maîtriser le risque opérationnel et la dérive des coûts.** Plus de 40 % des initiatives agentiques risquent l'abandon d'ici la fin de 2027 faute de contrôles adéquats, de valeur démontrée et de maîtrise budgétaire. Enchaîner dix étapes autonomes fiables chacune à 94 % fait chuter la réussite globale sans erreur à près de 54 %, tout en propageant des erreurs plausibles sans alerte visible; une boucle mal bornée peut aussi engendrer des coûts imprévus importants en quelques heures.
+3. **Répondre à des obligations fiduciaires et réglementaires fermes.** Du Québec à l'Europe en passant par la réglementation prudentielle fédérale canadienne, les échéances de 2026 à 2028 imposent un inventaire complet, une imputabilité humaine claire, une traçabilité vérifiable et le respect de plafonds légaux stricts, sous peine de sanctions financières et réputationnelles majeures.
 
 ---
 
 ## Vue d'ensemble des ouvrages
 
-| # | Fichier | Rôle dans le corpus | Horizon | Pages |
+| # | Fichier | Vocation pour la direction | Horizon | Pages |
 |---|---|---|---|---:|
-| 0 | [`0 - Livre Blanc.pdf`](0%20-%20Livre%20Blanc.pdf) | Ouvrage de référence généraliste sur l'architecture, les standards ouverts et la feuille de route d'adoption | 2026–2027 | 251 |
+| 0 | [`0 - Livre Blanc.pdf`](0%20-%20Livre%20Blanc.pdf) | Ouvrage de référence généraliste sur l'architecture cible, les standards ouverts et la feuille de route sur 360 jours | 2026–2027 | 251 |
 | 1 | [`1 - Compendium 2026.pdf`](1%20-%20Compendium%202026.pdf) | Somme encyclopédique sur l'interopérabilité, la confiance et l'encadrement en services financiers réglementés | 2024–2032 | 673 |
-| 2 | [`2 - Cadre de Référence.pdf`](2%20-%20Cadre%20de%20R%C3%A9f%C3%A9rence.pdf) | Cadre normatif d'entreprise regroupant 12 principes directeurs et 305 exigences vérifiables | 2026–2030 | 351 |
-| 3 | [`3 - Compendium 2027.pdf`](3%20-%20Compendium%202027.pdf) | État de l'art consolidé, guides de mise en œuvre concrets, veille technologique et étude de marché | 2026–2030 | 1 117 |
-| 4 | [`4 - Plan Directeur.pdf`](4%20-%20Plan%20Directeur.pdf) | Prospective, architecture cible neutre en 52 capacités et feuille de route adaptative par secteur financier | 2028–2035 | 400 |
-| 5 | [`5 - Memoire.pdf`](5%20-%20Memoire.pdf) | Synthèse unifiée consolidant les ouvrages 1 à 4 en une vision commune direction et architecture | 2026–2035 | 125 |
+| 2 | [`2 - Cadre de Référence.pdf`](2%20-%20Cadre%20de%20R%C3%A9f%C3%A9rence.pdf) | Politique normative d'entreprise réunissant 12 principes directeurs, 10 décisions et 305 exigences vérifiables | 2026–2030 | 351 |
+| 3 | [`3 - Compendium 2027.pdf`](3%20-%20Compendium%202027.pdf) | État de l'art consolidé, guides de mise en œuvre concrets, revue scientifique et étude de marché | 2026–2030 | 1 117 |
+| 4 | [`4 - Plan Directeur.pdf`](4%20-%20Plan%20Directeur.pdf) | Prospective sous incertitude, architecture cible en 52 capacités et feuille de route par métier financier | 2028–2035 | 400 |
+| 5 | [`5 - Memoire.pdf`](5%20-%20Memoire.pdf) | Synthèse exécutive et architecturale unifiant les 2 541 pages des ouvrages 1 à 4 | 2026–2035 | 125 |
 
 ---
 
-## Comment naviguer dans la collection
+## Par où commencer selon votre priorité
 
-La collection s'articule en deux ensembles complémentaires :
-- Un **livre blanc généraliste autonome** ([`0 - Livre Blanc.pdf`](0%20-%20Livre%20Blanc.pdf)) applicable à toute grande organisation souhaitant structurer ses premiers déploiements sur 90, 180 et 360 jours.
-- Une **collection financière consolidée** regroupant quatre ouvrages de fond ([`1`](1%20-%20Compendium%202026.pdf) à [`4`](4%20-%20Plan%20Directeur.pdf), 2 541 pages) et un **mémoire de synthèse** ([`5 - Memoire.pdf`](5%20-%20Memoire.pdf), 125 pages) qui en résume les décisions majeures et en aligne les modèles.
+La collection comprend un **volet généraliste autonome** ([`0 - Livre Blanc.pdf`](0%20-%20Livre%20Blanc.pdf), applicable à tout secteur d'activité) et une **série financière intégrée** dont [`5 - Memoire.pdf`](5%20-%20Memoire.pdf) constitue la porte d'entrée synthétique vers les ouvrages [`1`](1%20-%20Compendium%202026.pdf) à [`4`](4%20-%20Plan%20Directeur.pdf).
 
-### Par où commencer selon votre objectif
-
-| Priorité de direction | Ouvrage à ouvrir en premier | Pour approfondir |
+| Objectif de direction | Premier document à consulter | Pour approfondir |
 |---|---|---|
-| **Obtenir une vision d'ensemble rapide** | [`5 - Memoire.pdf`](5%20-%20Memoire.pdf) (Synthèse exécutive, pages 6 à 8) | [`0 - Livre Blanc.pdf`](0%20-%20Livre%20Blanc.pdf) (Résumés exécutifs, pages 5 à 8) |
-| **Fixer les règles de gouvernance, de risque et d'approvisionnement** | [`2 - Cadre de Référence.pdf`](2%20-%20Cadre%20de%20R%C3%A9f%C3%A9rence.pdf) (Sommaire exécutif et Parties I et IV) | [`5 - Memoire.pdf`](5%20-%20Memoire.pdf) (Partie IV — Gouverner et conformer) |
-| **Bâtir une feuille de route pluriannuelle sous incertitude** | [`4 - Plan Directeur.pdf`](4%20-%20Plan%20Directeur.pdf) (Synthèse exécutive et Parties III à VI) | [`2 - Cadre de Référence.pdf`](2%20-%20Cadre%20de%20R%C3%A9f%C3%A9rence.pdf) (Modèle de maturité et feuille de route) |
-| **Structurer la transformation technologique et éviter les pièges courants** | [`0 - Livre Blanc.pdf`](0%20-%20Livre%20Blanc.pdf) (Parties I, IV et V) | [`3 - Compendium 2027.pdf`](3%20-%20Compendium%202027.pdf) (Parties IV, V et VIII) |
-| **Évaluer les impacts par métier financier et les obligations réglementaires** | [`4 - Plan Directeur.pdf`](4%20-%20Plan%20Directeur.pdf) (Partie IV — Profils sectoriels) | [`1 - Compendium 2026.pdf`](1%20-%20Compendium%202026.pdf) (Livre III — Encadrer) |
-| **Suivre les tendances du marché et la recherche** | [`3 - Compendium 2027.pdf`](3%20-%20Compendium%202027.pdf) (Partie X — Recherche et projection 2027–2030) | [`4 - Plan Directeur.pdf`](4%20-%20Plan%20Directeur.pdf) (Partie II — Prospective 2028–2035) |
+| **Saisir l'essentiel en moins de trente minutes** | [`5 - Memoire.pdf`](5%20-%20Memoire.pdf) — Synthèse exécutive (pages 6 à 8) | [`0 - Livre Blanc.pdf`](0%20-%20Livre%20Blanc.pdf) — Résumés exécutifs (pages 5 à 8) |
+| **Adopter une politique de gouvernance, de risque et d'achat** | [`2 - Cadre de Référence.pdf`](2%20-%20Cadre%20de%20R%C3%A9f%C3%A9rence.pdf) — Sommaire exécutif (pages 8 à 10) et Gouvernance (dès la page 189) | [`5 - Memoire.pdf`](5%20-%20Memoire.pdf) — Gouverner et conformer (pages 73 à 91) |
+| **Planifier les investissements 2028–2035 sans parier sur un seul fournisseur** | [`4 - Plan Directeur.pdf`](4%20-%20Plan%20Directeur.pdf) — Sommaire pour décision (pages 9 à 13) et Feuille de route (pages 253 à 327) | [`2 - Cadre de Référence.pdf`](2%20-%20Cadre%20de%20R%C3%A9f%C3%A9rence.pdf) — Maturité et feuille de route (pages 243 à 257) |
+| **Cadrer une transformation technologique hors secteur financier** | [`0 - Livre Blanc.pdf`](0%20-%20Livre%20Blanc.pdf) — Fondations (pages 9 à 49) et Transformation (pages 183 à 224) | [`3 - Compendium 2027.pdf`](3%20-%20Compendium%202027.pdf) — Ouverture (pages 6 à 20) et Modèle opérationnel (pages 793 à 872) |
+| **Vérifier les limites légales par métier (banque, patrimoine, assurance)** | [`4 - Plan Directeur.pdf`](4%20-%20Plan%20Directeur.pdf) — Profils sectoriels (pages 187 à 252) | [`1 - Compendium 2026.pdf`](1%20-%20Compendium%202026.pdf) — Encadrement financier (pages 254 à 424) |
+| **Évaluer la maturité réelle du marché et de la recherche** | [`3 - Compendium 2027.pdf`](3%20-%20Compendium%202027.pdf) — Recherche et projection de marché (pages 996 à 1067) | [`4 - Plan Directeur.pdf`](4%20-%20Plan%20Directeur.pdf) — Prospective 2028–2035 (pages 41 à 113) |
 
 ---
 
-## Présentation des six ouvrages
+## Présentation détaillée des six ouvrages
 
 ### 0. [`0 - Livre Blanc.pdf`](0%20-%20Livre%20Blanc.pdf) — Référence généraliste d'architecture et d'adoption
-- **Pour quelles décisions** : cadrer la place des agents dans le système d'information, arbitrer entre achat de solutions infonuagiques, assemblage sur standards ouverts ou développement interne, et séquencer la première année de déploiement.
-- **Ce qu'on y trouve** : une approche hybride visant à maintenir environ 80 % des règles métier, identités et contrôles dans une logique déterministe tout en encadrant strictement les 20 % confiés aux modèles ; la connexion aux progiciels existants sans réécriture complète ; la sécurité par confiance zéro ; la maîtrise budgétaire par transaction réussie ; et la coexistence avec l'automatisation existante.
-- **Livrables utiles à la direction** : trois modèles d'architecture complets (environnement réglementé, collaboration inter-entreprises, exploitation souveraine à haute confidentialité), un catalogue de 12 pièges majeurs à éviter, un modèle de maturité en 5 paliers, une feuille de route sur 90, 180 et 360 jours, et une grille d'homologation en 40 critères.
+- **Décisions éclairées** : positionner les agents face aux systèmes transactionnels existants, arbitrer entre l'achat d'agents intégrés aux progiciels, l'assemblage sur standards ouverts (posture recommandée par défaut) ou le développement sur mesure, et rythmer la première année de transformation.
+- **Points clés** : partition hybride maintenant environ 80 % des règles, identités et contrôles en logique déterministe pour 20 % confiés aux modèles; encapsulation sécurisée du patrimoine applicatif sans réécriture; sécurité par confiance zéro; pilotage financier au coût par résultat réussi; transition progressive depuis l'automatisation classique.
+- **Outils pour la direction** : trois architectures types prêtes à adapter (environnement hautement réglementé, collaboration inter-entreprises, exploitation souveraine confidentielle), diagnostic de 12 pièges courants, échelle de maturité en 5 paliers, feuille de route sur 90, 180 et 360 jours et liste d'homologation en 40 critères.
 
 ### 1. [`1 - Compendium 2026.pdf`](1%20-%20Compendium%202026.pdf) — Somme encyclopédique en services financiers
-- **Pour quelles décisions** : comprendre en profondeur les défis structurels de l'interopérabilité, de l'identité des agents, de la délégation d'autorité et de la conformité dans les institutions financières canadiennes et québécoises.
-- **Ce qu'on y trouve** : cinq livres thématiques couvrant la coopération entre systèmes, la fabrique de confiance (identité vérifiable, chaîne de mandat, sécurité face aux attaques et transition post-quantique), l'encadrement réglementaire canadien et québécois (banque, assurance, gestion de patrimoine, paiements modernes), l'exploitation industrielle à grande échelle et la gestion durable des effets opérationnels.
-- **Livrables utiles à la direction** : une analyse croisée montrant que les protocoles techniques ouverts ne couvrent pas nativement les obligations réglementaires financières, des études de cas canadiennes, et une feuille de route ciblant l'échéance réglementaire du 1er mai 2027.
+- **Décisions éclairées** : saisir les conditions de confiance nécessaires avant de laisser un agent agir ou déléguer une tâche en milieu financier canadien et québécois.
+- **Points clés** : cinquante chapitres répartis en cinq livres — coopérer par contrats explicites, bâtir la confiance (identité vérifiable, chaîne de mandat, défense contre l'usurpation et préparation post-quantique), encadrer selon le droit financier canadien et québécois, exploiter un parc d'agents à grande échelle et garantir la réversibilité des opérations.
+- **Outils pour la direction** : démonstration qu'aucun standard technique d'échange ne satisfait à lui seul aux obligations prudentielles financières, études de cas canadiennes (2025–2026) et feuille de route vers l'échéance réglementaire du 1er mai 2027 (page 528).
 
 ### 2. [`2 - Cadre de Référence.pdf`](2%20-%20Cadre%20de%20R%C3%A9f%C3%A9rence.pdf) — Cadre normatif d'entreprise
-- **Pour quelles décisions** : adopter une politique d'entreprise opposable pour autoriser, sécuriser, auditer et acheter des solutions agentiques tout en préservant la réversibilité vis-à-vis des fournisseurs.
-- **Ce qu'on y trouve** : dix décisions structurantes, douze principes directeurs et 305 exigences vérifiables couvrant l'architecture, les standards ouverts, les niveaux d'autonomie, la supervision humaine signée, la sécurité par confiance zéro, la traçabilité, la gestion financière, la conformité multi-juridictionnelle et les clauses contractuelles d'approvisionnement.
-- **Livrables utiles à la direction** : une grille d'homologation avant mise en production, un gabarit de fiche d'identité d'agent, un modèle de gouvernance des responsabilités, un modèle de maturité en 5 niveaux, des indicateurs de pilotage et un plan d'action pour les 90 premiers jours.
+- **Décisions éclairées** : instaurer des règles communes opposables à toutes les équipes et à tous les fournisseurs afin de concilier innovation, sécurité, conformité et liberté contractuelle.
+- **Points clés** : dix décisions structurantes, douze principes directeurs et 305 exigences vérifiables couvrant le passage obligatoire par des passerelles de contrôle, l'échelle unique d'autonomie plafonnée par le risque, l'approbation humaine signée sur les actes sensibles, la protection contre la manipulation par données externes, la traçabilité complète et les clauses d'approvisionnement réversible.
+- **Outils pour la direction** : grille d'homologation obligatoire avant mise en production (page 259), fiche d'identité normalisée par agent, partage clair des responsabilités autour d'un responsable nommé pour chaque agent, modèle de maturité en 5 niveaux et plan d'action des 90 premiers jours (page 251).
 
 ### 3. [`3 - Compendium 2027.pdf`](3%20-%20Compendium%202027.pdf) — État de l'art consolidé et mise en œuvre
-- **Pour quelles décisions** : évaluer la maturité réelle des technologies agentiques, prévenir la création de nouveaux silos propriétaires entre grands progiciels d'entreprise et éclairer les investissements jusqu'en 2030.
-- **Ce qu'on y trouve** : cinquante chapitres en dix parties combinant synthèses sourcées et 31 volets d'application concrète, couvrant les standards ouverts d'interaction, la gouvernance des données et de la mémoire, la coordination fiable, l'intégration des systèmes patrimoniaux, la sécurité, le droit canadien et international, l'économie par résultat, l'usine logicielle interne ainsi qu'une revue de littérature, une veille technologique et une étude de marché 2027–2030.
-- **Livrables utiles à la direction** : un registre de 31 décisions d'architecture structurantes, des arbres de choix, des grilles d'évaluation de fournisseurs et de solutions, et une liste complète de vérification avant mise en production en 75 points.
+- **Décisions éclairées** : distinguer la maturité réelle du terrain des effets d'annonce commerciaux, fédérer les plateformes des grands éditeurs sans s'y enfermer et calibrer la feuille de route technologique jusqu'en 2030.
+- **Points clés** : cinquante chapitres en dix parties combinant exposés sourcés et 31 volets pratiques de mise en œuvre — standards ouverts d'outillage et de dialogue entre agents, gouvernance sémantique des données et de la mémoire, exécution durable et reprise sur incident, intégration des systèmes anciens, cybersécurité, cadre juridique canadien et international, gouvernance économique par résultat, modernisation logicielle interne, revue de littérature scientifique et projection de marché 2027–2030.
+- **Outils pour la direction** : registre de 31 décisions d'architecture structurantes, arbres de choix décisionnels, grilles d'évaluation de fournisseurs et liste de contrôle avant mise en production en 75 points.
 
 ### 4. [`4 - Plan Directeur.pdf`](4%20-%20Plan%20Directeur.pdf) — Prospective et architecture cible 2028–2035
-- **Pour quelles décisions** : orienter les investissements pluriannuels sans parier sur un seul avenir technologique, identifier les capacités « sans regret » à bâtir dès maintenant et adapter l'ambition d'autonomie aux limites légales de chaque secteur financier.
-- **Ce qu'on y trouve** : une prospective appuyée sur 98 textes officiels primaires et trois scénarios d'évolution du marché sans probabilité (socle ouvert étendu, archipel de plateformes propriétaires, fragmentation en blocs juridictionnels) ; une architecture cible neutre vis-à-vis des fournisseurs structurée en 52 capacités (dont 42 invariantes sans regret et 10 conditionnelles) ; et cinq profils détaillés (banque, gestion de patrimoine, assurance de personnes, assurance de dommages, groupe financier diversifié).
-- **Livrables utiles à la direction** : un calendrier réglementaire et technologique consolidé de 2027 à 2035, une trajectoire en trois paliers (2028–2029, 2030–2032, 2033–2035) franchis uniquement sur preuve, 15 portes de gouvernance et un registre de 27 signaux de veille permettant d'ajuster la trajectoire.
+- **Décisions éclairées** : répondre à quatre questions de gouvernance pluriannuelle — *quoi construire d'abord et quoi différer, quel degré d'autonomie viser par métier, quels investissements engager sans regret et sur quels signaux réviser la trajectoire*.
+- **Points clés** : prospective appuyée sur 98 textes officiels primaires et trois scénarios contrastés sans probabilité (socle ouvert étendu, archipel de plateformes propriétaires, fragmentation en blocs juridictionnels); architecture cible neutre envers les éditeurs en 52 capacités (42 capacités « sans regret » à bâtir dans tous les scénarios et 10 capacités conditionnelles activées uniquement sur signal); déclinaison détaillée pour cinq profils financiers.
+- **Outils pour la direction** : calendrier consolidé 2027–2035, trajectoire en trois paliers (2028–2029, 2030–2032, 2033–2035) franchis sur preuve, 15 portes de gouvernance, 27 signaux de veille et analyse des risques internes du plan (gouvernance de façade, lourdeur documentaire, érosion des compétences humaines).
 
 ### 5. [`5 - Memoire.pdf`](5%20-%20Memoire.pdf) — Synthèse unifiée de la collection
-- **Pour quelles décisions** : disposer d'un point d'entrée unique de 125 pages qui rassemble l'essentiel des 2 541 pages des quatre volumes précédents et aligne les décisions de gouvernance d'entreprise avec les choix d'exécution technologique.
-- **Ce qu'on y trouve** : dix thèses structurantes fondées sur les constats empiriques de fin 2026, six arbitrages conjoints entre direction d'entreprise et équipes de réalisation, une réconciliation complète des modèles de la collection et une trajectoire unifiée allant des 90 premiers jours jusqu'à 2035.
-- **Livrables utiles à la direction** : un catalogue de poche des décisions d'architecture, une grille unifiée d'homologation avant mise en production, un guide d'orientation vers les chapitres correspondants des ouvrages sources et un glossaire complet.
+- **Décisions éclairées** : aligner la haute direction, l'architecture d'entreprise, la sécurité, la conformité et les équipes de réalisation autour d'un référentiel commun de 125 pages condensant les quatre ouvrages financiers.
+- **Points clés** : dix thèses structurantes issues des mesures réelles de fin 2026, six arbitrages conjoints entre gouvernance d'entreprise et conception technique, harmonisation complète des modèles de la collection et trajectoire continue des 90 premiers jours jusqu'en 2035.
+- **Outils pour la direction** : catalogue de poche des décisions d'architecture, grille unifiée d'homologation avant mise en production, table d'orientation vers les chapitres précis des 2 541 pages sources et glossaire consolidé de 385 termes.
 
 ---
 
-## Cinq constats stratégiques transversaux
+## Repères stratégiques pour la haute direction
 
-1. **Le contrôle précède l'autonomie.** Les déploiements réels observés en production demeurent majoritairement courts et encadrés par des règles déterministes. La démarche recommandée privilégie la simplicité : automatisation déterministe d'abord, agent unique bien encadré ensuite, et systèmes multi-agents uniquement lorsque le gain est mesuré.
-2. **Posséder son noyau de contrôle pour éviter le verrouillage.** Alors que les grands éditeurs s'accordent sur certains standards d'échange, le risque de dépendance se déplace vers les plateformes de gouvernance et d'orchestration. L'organisation doit conserver la maîtrise de son registre d'agents, de ses identités, de ses passerelles de contrôle et de ses journaux d'audit.
-3. **Graduer l'autonomie selon le risque et préserver une supervision humaine réelle.** Aucune action critique ou irréversible ne devrait être confiée sans garde-fou à un agent isolé. Les ouvrages encadrent la séparation des pouvoirs, la validation humaine liée à l'action exacte, la prévention de l'approbation machinale et les mécanismes d'arrêt rapide.
-4. **Piloter la valeur par le coût complet d'un résultat conforme.** La rentabilité ne se mesure pas au nombre d'appels techniques, mais au coût total de bout en bout par transaction métier réussie, incluant gouvernance, supervision, évaluation continue et gestion des risques.
-5. **Ce qui est daté porte sur la preuve, jamais sur une obligation d'autonomisation.** L'analyse réglementaire montre qu'aucune loi n'oblige à déléguer des décisions à des agents ; en revanche, les échéances fermes imposent des exigences strictes de gouvernance, de traçabilité, de protection des renseignements personnels et de résilience cryptographique.
+### Cinq principes directeurs transversaux
+1. **La simplicité et le contrôle précèdent l'autonomie.** Privilégier par défaut un processus déterministe classique, puis un agent unique bien outillé, et n'autoriser la coordination de plusieurs agents que sur preuve chiffrée d'un gain réel.
+2. **Posséder son noyau de contrôle pour préserver sa souveraineté.** Conserver en propre le registre des agents, la gestion des identités, les passerelles de sécurité, les règles d'autorisation et les journaux d'audit afin de pouvoir remplacer un modèle ou un fournisseur sans refonte majeure.
+3. **Maintenir une imputabilité et une supervision humaines effectives.** Chaque agent en service relève d'une personne responsable nommée. Les décisions critiques ou irréversibles exigent une validation humaine éclairée liée à l'acte exact, assortie de mesures prévenant l'approbation machinale et le recul des compétences internes.
+4. **Piloter par le coût complet du résultat conforme.** Évaluer chaque initiative selon le coût total d'une transaction métier menée à terme sans reprise (incluant supervision, sécurité, conformité et infrastructure), sans présumer qu'une baisse du coût unitaire des modèles réduit la facture globale.
+5. **Bâtir sur la preuve plutôt que sur des paris technologiques.** Toutes les échéances réglementaires fermes d'ici 2035 portent sur la preuve, la gouvernance, la transparence et la cryptographie — jamais sur une obligation d'automatiser.
+
+### Frontières légales structurantes par métier financier
+- **Transversal (Québec)** : obligation d'informer la personne concernée et de lui garantir explication, observation et révision humaine effective pour toute décision fondée exclusivement sur un traitement automatisé (sanctions sous la Loi 25 pouvant atteindre 25 millions de dollars canadiens ou 4 % du chiffre d'affaires mondial).
+- **Banque et coopératives financières** : interdiction des accès par capture d'écran dans le cadre bancaire ouvert, encadrement strict des virements irrévocables et maintien des cloisons réglementaires entre activités bancaires et d'assurance.
+- **Gestion de patrimoine et valeurs mobilières** : caractère non délégable de la responsabilité des personnes inscrites et interdiction des recommandations ou systèmes automatisés d'ordres dans les comptes sans conseils.
+- **Assurance de personnes** : interdiction criminelle de recueillir ou d'utiliser des résultats de tests génétiques et encadrement rigoureux du consentement sur les renseignements de santé.
+- **Assurance de dommages** : approbation préalable des formulaires en assurance automobile, respect des obligations de comparaison hors groupe en courtage et interdiction des refus d'indemnisation automatisés sans examen humain.
 
 ---
 
-## Échéances réglementaires et technologiques clés
+## Les six priorités des 90 premiers jours
 
-- **Déjà en vigueur** : dispositions de la Loi 25 du Québec encadrant les décisions exclusivement automatisées et la protection des renseignements personnels ; attentes des Autorités canadiennes en valeurs mobilières sur l'usage de l'intelligence artificielle ; premières obligations européennes de transparence.
-- **Mars 2027 et mars 2029** : réduction progressive de la durée de validité des certificats de sécurité web à 100 jours, puis à 47 jours, imposant l'automatisation complète du cycle de vie des certificats.
-- **1er mai 2027** : entrée en vigueur de la ligne directrice révisée sur la gestion du risque de modèle du Bureau du surintendant des institutions financières (incluant les systèmes génératifs et agentiques) et prise d'effet de la ligne directrice sur l'utilisation de l'intelligence artificielle de l'Autorité des marchés financiers au Québec.
-- **2 décembre 2027** : entrée en application des exigences européennes visant les systèmes d'intelligence artificielle à haut risque pour les groupes ayant des activités en Europe.
-- **2028** : interdiction des rétrofacturations de commissions en gestion de patrimoine (octobre 2028) et divulgation des émissions financées et assurées de portée 3 sous l'encadrement prudentiel fédéral.
-- **2030 à 2035** : transition coordonnée du secteur financier du groupe des sept vers une cryptographie résistante aux ordinateurs quantiques, et échéance de renouvellement des lois financières fédérales canadiennes (30 juin 2033).
+Avant tout déploiement à grande échelle ou toute délégation entre agents, les ouvrages convergent vers un socle minimal de maîtrise :
+1. **Recenser l'existant** : dresser l'inventaire complet de tous les agents, assistants connectés et connecteurs d'outils déjà actifs ou en projet.
+2. **Désigner les responsables** : rattacher chaque agent à une personne imputable nommée et instituer l'instance conjointe d'architecture et de gestion des risques.
+3. **Éliminer les accès partagés** : supprimer les clés statiques et comptes génériques au profit d'identités distinctes à privilèges minimaux et de courte durée.
+4. **Imposer un point de passage contrôlé** : acheminer les appels aux modèles et aux outils d'entreprise par une passerelle centrale assurant journalisation, filtrage et plafonds budgétaires.
+5. **Qualifier les risques et la vie privée** : classer chaque cas d'usage selon son impact, réaliser les évaluations relatives à la vie privée requises et fixer son plafond d'autonomie.
+6. **Tester l'arrêt d'urgence et verrouiller la mise en production** : éprouver un mécanisme de désactivation rapide et conditionner toute mise en service au passage d'une grille formelle d'homologation.
+
+---
+
+## Calendrier des échéances clés (2026–2035)
+
+- **En vigueur dès 2026** : encadrement québécois des décisions exclusivement automatisées et de la vie privée (Loi 25); attentes des Autorités canadiennes en valeurs mobilières sur les systèmes d'intelligence artificielle; obligations européennes de transparence entrées en application en août 2026.
+- **15 mars 2027 (puis 15 mars 2029)** : abaissement de la durée maximale des certificats de sécurité web à 100 jours, puis à 47 jours, rendant indispensable l'automatisation complète de leur renouvellement.
+- **1er mai 2027** : entrée en vigueur de la ligne directrice révisée sur la gestion du risque de modèle du Bureau du surintendant des institutions financières (couvrant expressément les modèles génératifs et les agents) et prise d'effet de la ligne directrice sur l'intelligence artificielle de l'Autorité des marchés financiers au Québec.
+- **2 décembre 2027 (puis 2 août 2028)** : entrée en application progressive des exigences européennes sur les systèmes d'intelligence artificielle à haut risque pour les organisations actives en Europe.
+- **2028** : interdiction des rétrofacturations de commissions en gestion de patrimoine (1er octobre 2028) et nouvelles exigences prudentielles de divulgation climatique (émissions financées et assurées de portée 3).
+- **2030 à 2035** : fenêtre coordonnée du secteur financier du Groupe des Sept pour migrer vers une cryptographie résistante aux ordinateurs quantiques, avec échéance de révision des lois financières fédérales canadiennes au **30 juin 2033**.
 
 ---
 
 ## Portée et transparence éditoriale
 
-- **Usage consultatif** : cette collection constitue un outil d'aide à la décision et de réflexion stratégique et architecturale. Elle ne remplace ni un avis juridique, ni une validation indépendante des risques, ni une homologation réglementaire.
-- **Périmètre démontré** : les analyses réglementaires et probatoires des ouvrages 1 à 5 portent sur les services financiers réglementés (Canada fédéral, Québec et activités transfrontalières européennes) ainsi que sur le contrôle logiciel déterministe. Les exemples issus d'autres secteurs (santé, industrie, énergie, secteur public) sont présentés à titre illustratif.
-- **Transparence sur la production** : les ouvrages rédigés en novembre 2026 documentent explicitement leur production et leur vérification automatisées par agents d'intelligence artificielle (sous la direction d'André-Guy Bruneau pour les ouvrages de fond 2026), avec recoupements systématiques sur textes primaires mais sans relecture humaine intégrale.
-- **Diffusion** : les ouvrages 2 à 5 mentionnent une diffusion ouverte sous licence Creative Commons Attribution 4.0 pour les textes et figures ; les ouvrages 0 et 1 ne comportent pas de mention de licence explicite en page de titre.
+- **Outil consultatif d'aide à la décision** : cette collection éclaire la stratégie, la gouvernance et l'architecture d'entreprise. Elle ne constitue ni un avis juridique, ni une certification actuarielle ou d'audit, ni une homologation réglementaire.
+- **Périmètre démontré** : l'appareil réglementaire et probatoire des ouvrages 1 à 5 porte sur les services financiers réglementés au Canada fédéral et au Québec (ainsi que leurs obligations transfrontalières européennes) et sur l'ingénierie de contrôle déterministe. Les exemples touchant d'autres secteurs (santé, industrie, énergie, secteur public) sont fournis à titre illustratif.
+- **Mode de production déclaré** : les ouvrages 1 et 2 portent la signature d'André-Guy Bruneau; l'ensemble des volumes publiés en novembre 2026 documentent de manière transparente le recours à des pipelines automatisés d'agents d'intelligence artificielle pour la rédaction, le recoupement sur sources primaires et le contrôle de cohérence, sans relecture humaine intégrale de bout en bout.
+- **Conditions de diffusion** : les ouvrages 2 à 5 mentionnent une diffusion ouverte sous licence Creative Commons Attribution 4.0 pour les textes et figures (et licence libre pour les scripts et outils associés); les ouvrages 0 et 1 ne comportent pas de mention de licence en page de titre.
