@@ -1,0 +1,103 @@
+# Table des matières
+
+  - Ouverture — Architecture et gouvernance du tissu conjonctif agentique — 6
+- Partie I — Fondements et cadrage — 21
+  - Chapitre 1 — L’entreprise agentique — 22
+    - Mise en œuvre — De l’assistance conversationnelle à la main-d’œuvre d’exécution asynchrone — 32
+  - Chapitre 2 — Généalogie — 49
+  - Chapitre 3 — Les dimensions de l’interopérabilité — 59
+  - Chapitre 4 — État des lieux 2026-2027 — 69
+- Partie II — Protocoles et standards d’interopérabilité — 79
+  - Chapitre 5 — MCP : le protocole agent-outil — 80
+    - Mise en œuvre — Connectivité verticale : outils, ressources, compétences et web — 95
+  - Chapitre 6 — A2A : le protocole agent-agent — 112
+    - Mise en œuvre — Coordination horizontale, découverte et réseau inter-agents — 123
+  - Chapitre 7 — Protocoles périphériques — 140
+  - Chapitre 8 — Découverte et registres — 149
+  - Chapitre 9 — Le web agentique — 162
+  - Chapitre 10 — Commerce agentique — 171
+    - Mise en œuvre — Interfaces humain-agent, multimodalité temps réel et protocoles transactionnels — 183
+  - Chapitre 11 — Géopolitique et gouvernance des standards — 196
+    - Mise en œuvre — Gouvernance des standards et anatomie de la pile interopérable — 210
+- Partie III — Interopérabilité sémantique, données et contexte — 222
+  - Chapitre 12 — Couche sémantique et ontologies — 223
+    - Mise en œuvre — Couches sémantiques normalisées et ontologies d’entreprise — 236
+  - Chapitre 13 — Ingénierie du contexte — 252
+    - Mise en œuvre — Le mur du contexte d’entreprise : ingénierie du contexte à grande échelle — 262
+  - Chapitre 14 — Mémoire — 276
+    - Mise en œuvre — Architectures de mémoire agentique distribuée et bi-temporelle — 288
+  - Chapitre 15 — Données prêtes pour les agents — 301
+- Partie IV — Orchestration — 312
+  - Chapitre 16 — Topologies et patrons — 313
+    - Mise en œuvre — Topologies d’orchestration et de chorégraphie multi-agents — 326
+  - Chapitre 17 — Déterministe ou agentique — 347
+    - Mise en œuvre — Le grand découplage : contrôle déterministe et autonomie probabiliste — 358
+  - Chapitre 18 — Exécution durable et transactions — 371
+    - Mise en œuvre — Moteurs d’exécution durable et gestion des cycles de vie de longue durée — 383
+  - Chapitre 19 — Orchestration événementielle — 405
+    - Mise en œuvre — Maillage événementiel asynchrone et patron Saga à compensation — 414
+  - Chapitre 20 — Cadriciels d’orchestration — 429
+  - Chapitre 21 — Fiabilité de la coordination — 442
+  - Chapitre 22 — L’humain dans la boucle — 456
+- Partie V — Architecture d’entreprise et plateformes — 468
+  - Chapitre 23 — Architecture de référence — 469
+  - Chapitre 24 — Passerelles et intégration — 484
+  - Chapitre 25 — Intégration au patrimoine — 497
+    - Mise en œuvre — Intégration du patrimoine sans API : Computer-Use Agents (CUA), RPA/APA et mainframes — 505
+  - Chapitre 26 — Plateformes d’entreprise — 521
+  - Chapitre 27 — Stratégie multi-plateformes — 534
+    - Mise en œuvre — Fédération des jardins clos SaaS et problème de l’« orchestrateur d’orchestrateurs » — 541
+  - Chapitre 28 — Agents industriels et périphérie — 558
+    - Mise en œuvre — Orchestration cyber-physique : convergence IT/OT, OPC UA et jumeaux numériques — 565
+- Partie VI — Confiance : identité, sécurité, observabilité — 580
+  - Chapitre 29 — Identité agentique — 581
+  - Chapitre 30 — Autorisation et délégation — 594
+    - Mise en œuvre — Identités non humaines (NHI) de première classe et délégation cryptographique — 604
+  - Chapitre 31 — Menaces — 622
+    - Mise en œuvre — Modélisation des menaces multi-agents (OWASP ASI01–ASI10) et sécurité MCP — 635
+  - Chapitre 32 — Assurance — 652
+    - Mise en œuvre — Défense en profondeur : bacs à sable, garde-fous neuro-symboliques et coupe-circuits — 660
+  - Chapitre 33 — Observabilité et évaluation — 676
+    - Mise en œuvre — Observabilité distribuée de bout en bout avec OpenTelemetry GenAI — 687
+  - Chapitre 34 — Exploitation — 701
+    - Mise en œuvre — Cycle de vie ADLC, CI/CD probabiliste, simulation (τ-bench) et ingénierie du chaos — 711
+- Partie VII — Gouvernance, conformité et droit — 724
+  - Chapitre 35 — Cadres internationaux — 725
+  - Chapitre 36 — Responsabilité — 738
+  - Chapitre 37 — Souveraineté — 747
+  - Chapitre 38 — Canada et Québec — 755
+    - Mise en œuvre — Conformité réglementaire internationale et canadienne, et droit B2B inter-agents — 770
+  - Chapitre 39 — Gouvernance interne — 783
+- Partie VIII — Économie, organisation et mise en œuvre — 793
+  - Chapitre 40 — FinOps agentique — 794
+    - Mise en œuvre — FinOps agentique : gouvernance économique et Cost-per-Outcome — 805
+  - Chapitre 41 — Modèle opérationnel — 817
+    - Mise en œuvre — Modèle opérationnel cible, facteur humain (HOTL) et prospective 2028–2030 — 828
+  - Chapitre 42 — Études de cas — 840
+  - Chapitre 43 — Maturité et prospective — 854
+    - Mise en œuvre — Modèle de maturité de l’entreprise agentique (niveaux 1 à 5) et antipatterns — 862
+- Partie IX — Approfondissements — 873
+  - Chapitre 44 — Plan de données d’inférence et routage cognitif — 874
+    - Mise en œuvre — Plan de données AI-natif, passerelles et routage cognitif hybride — 882
+  - Chapitre 45 — Réseaux B2B fédérés et négociation entre agents — 894
+    - Mise en œuvre — Maillages B2B inter-entreprises, espaces de données et négociation multi-parties — 903
+  - Chapitre 46 — Inférence confidentielle, résilience et IA physique — 916
+    - Mise en œuvre — Souveraineté cognitive, portabilité multi-cloud et reprise après sinistre cognitif — 926
+    - Mise en œuvre — Orchestration en périphérie, opérations déconnectées et passerelles vers l’IA physique — 938
+  - Chapitre 47 — Ingénierie agentique interne et distillation — 950
+    - Mise en œuvre — Usine logicielle agentique (Agentic SDLC) et modernisation assistée du patrimoine — 960
+    - Mise en œuvre — Agentic DataOps, contrats de données auto-réparateurs et SRE autonome — 972
+    - Mise en œuvre — Volants d’inertie cognitifs, compilation de consignes et distillation LLM → SLM — 984
+- Partie X — Recherche scientifique — 996
+  - Chapitre 48 — Revue de littérature — 997
+  - Chapitre 49 — Veille technologique — 1028
+  - Chapitre 50 — Projection 2027-2030 et étude de marché — 1049
+- Annexes — 1068
+  - Annexe A — Glossaire français-anglais — 1069
+  - Annexe B — Fiches protocoles — 1084
+  - Annexe C — Grilles d’évaluation — 1089
+  - Annexe D — Chronologie 2024-2028 — 1093
+  - Annexe E — Bibliographie et niveaux de preuve — 1097
+  - Annexe F — Décisions d’architecture (ADR) et arbres de choix — 1103
+  - Annexe G — Listes de contrôle d’homologation avant production (75 points) — 1109
+  - Annexe H — Index des standards — 1115

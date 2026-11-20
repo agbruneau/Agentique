@@ -1,0 +1,45 @@
+# Table des matières
+
+  - Liminaire — À propos de cette édition — 2
+  - Synthèse exécutive — Sommaire pour décision — 9
+- Partie I — Cadrage et point de départ — 14
+  - Chapitre M-1 — Objet, lecteurs, méthode et degrés de certitude — 15
+  - Chapitre M-2 — Point de départ : état de référence 2027 et stades de départ par sous-secteur — 26
+- Partie II — Prospective 2028-2035 — 41
+  - Chapitre M-3 — Calendrier réglementaire et prudentiel — 42
+  - Chapitre M-4 — Calendrier de normalisation et standards de données sectoriels — 59
+  - Chapitre M-5 — Transition post-quantique de l’identité et de la délégation — 72
+  - Chapitre M-6 — Capacités des agents et techniques en transfert — 84
+  - Chapitre M-7 — Marché, coûts, énergie et compétences — 94
+  - Chapitre M-8 — Scénarios 2028-2035 — 104
+- Partie III — Architecture cible 2035 — 114
+  - Chapitre M-9 — Principes et modèle de référence — 115
+  - Chapitre M-10 — Carte des capacités cibles — 127
+  - Chapitre M-11 — Cible invariante et cible conditionnelle — 157
+  - Chapitre M-12 — Stades visés par domaine d’affaires et autonomie par classe de décision — 167
+  - Chapitre M-13 — Les 31 décisions d’architecture à l’horizon 2035 — 177
+- Partie IV — Profils sectoriels — 187
+  - Chapitre M-14 — Banque — 188
+  - Chapitre M-15 — Gestion de patrimoine — 200
+  - Chapitre M-16 — Assurance de personnes — 212
+  - Chapitre M-17 — Assurance de dommages — 225
+  - Chapitre M-18 — Groupe financier diversifié et synthèse comparative — 239
+- Partie V — Feuille de route — 253
+  - Chapitre M-19 — Analyse d’écarts — 254
+  - Chapitre M-20 — Palier 1, 2028-2029 — 262
+  - Chapitre M-21 — Palier 2, 2030-2032 — 272
+  - Chapitre M-22 — Palier 3, 2033-2035 — 281
+  - Chapitre M-23 — Portefeuille d’initiatives, dépendances externes et seuils de bascule — 291
+- Partie VI — Pilotage — 300
+  - Chapitre M-24 — Pilotage, indicateurs et portes — 301
+  - Chapitre M-25 — Signaux, registre de veille et révision — 310
+  - Chapitre M-26 — Risques du plan — 322
+- Annexes — 328
+  - Annexe A — Calendrier consolidé 2027-2035 — 329
+  - Annexe B — Registre des capacités — 340
+  - Annexe C — Registre des principes, décisions, portes, initiatives et propositions d’exigence — 347
+  - Annexe D — Matrice de traçabilité — 362
+  - Annexe E — Correspondances : modèles de référence, échelles de maturité, ADR — 367
+  - Annexe F — Registre de veille — 379
+  - Annexe G — Glossaire des termes nouveaux — 384
+  - Annexe H — Bibliographie — 390

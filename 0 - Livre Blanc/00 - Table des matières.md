@@ -1,0 +1,108 @@
+# Table des matières
+
+- Liminaire — Résumé exécutif à double entrée et conventions architecturales — 5
+  - 0.1 Colophon d’ingénierie 100 % IA et protocole de vérifiabilité Wyvern — 5
+  - 0.2 Résumé exécutif — Direction de l’architecture d’entreprise (EA) — 5
+  - 0.3 Résumé exécutif — Architecture de solutions et ingénierie de plateforme (SA) — 6
+  - 0.4 Parcours de lecture par rôle et conventions graphiques (ArchiMate, C4, séquences) — 7
+- Partie I — Fondations architecturales de l’entreprise agentique — 9
+- Chapitre 1 — Du système d’information déterministe à l’entreprise agentique : rupture et continuité architecturales — 10
+  - 1.1 Stratification du SI : Systems of Record, Systems of Engagement et Systems of Agency — 10
+  - 1.2 Rupture épistémique : non-déterminisme, latence variable et effets de bord irréversibles — 13
+  - 1.3 Spectre d’autonomie opérationnelle (`L0` à `L4`) et modalités Human-in/on-the-Loop — 17
+  - 1.4 Dette technique contre dette cognitive : dérive silencieuse et couplage aux modèles — 21
+  - Synthèse et transition — 24
+- Chapitre 2 — Cadre d’architecture d’entreprise : capacités métier, modélisation TOGAF/ArchiMate et topologie en plans — 25
+  - 2.1 Cartographie des capacités métier augmentées et refonte des chaînes de valeur — 25
+  - 2.2 Extension du métamodèle TOGAF ADM et stéréotypes ArchiMate pour acteurs cognitifs — 27
+  - 2.3 Architecture cible de référence en quatre plans découplés — 30
+  - 2.4 Gouvernance du portefeuille : arbitrage Acheter (agents SaaS) vs Assembler vs Construire — 33
+  - Synthèse et transition vers le chapitre 3 — 36
+- Chapitre 3 — Anatomie d’un agent d’entreprise et partition des charges de travail : la règle hybride 80/20 — 37
+  - 3.1 Anatomie d’un Agent Harness de production et environnements d’exécution durcis (SHADI) — 37
+  - 3.2 Typologie et spécialisation des modèles : frontier LLMs, SLMs spécialisés et cascade d’inférence — 41
+  - 3.3 Ingénierie de la partition 80/20 entre flux déterministes et nœuds cognitifs — 43
+  - 3.4 Contrats typés d’entrée/sortie (Structured Outputs et JSON Schema) — 45
+  - Synthèse architecturale du chapitre — 49
+- Partie II — Interopérabilité : protocoles, contrats et patrimoine applicatif — 50
+- Chapitre 4 — Interopérabilité verticale agent-outil : Model Context Protocol (MCP), passerelles et intégration du patrimoine — 51
+  - 4.1 Du couplage M × N au standard MCP : architecture sans état, primitives et négociation — 51
+  - 4.2 Ergonomie sémantique des outils (Agent-Computer Interface) contre l’anti-patron Swagger-to-MCP — 55
+  - 4.3 Architecture des MCP Gateways d’entreprise : médiation REST/gRPC/GraphQL, cache et découverte dynamique — 58
+  - 4.4 Encapsulation du SI patrimonial : couches anti-corruption devant ERP, CRM et mainframes — 61
+  - Synthèse architecturale du chapitre — 64
+- Chapitre 5 — Interopérabilité horizontale inter-agents et fédération : A2A, AGNTCY et maillage multi-fournisseurs — 65
+  - 5.1 Frontière décisionnelle entre outil passif (`MCP`) et pair autonome opaque (`A2A`) — 65
+  - 5.2 Protocole `A2A` : `Agent Cards` signées, cycle de vie asynchrone des `Tasks`, SSE et `Artifacts` — 68
+  - 5.3 Infrastructure fédérée `AGNTCY` : schémas `OASF`, `Agent Directory Service` et messagerie `SLIM` /`MLS` — 72
+  - 5.4 Ponts inter-cadriciels (`LangGraph`, `Semantic Kernel`, `AutoGen`) et fédération B2B avec agents SaaS tiers — 76
+  - Synthèse architecturale et transition — 78
+- Chapitre 6 — Ingénierie du contexte, mémoire distribuée et souveraineté sémantique des données — 80
+  - 6.1 Taxonomie des quatre mémoires d’entreprise : travail, épisodique, sémantique et procédurale — 80
+  - 6.2 De la recherche naïve à l’Agentic RAG fédéré : hybride lexical/vectoriel, Text-to-SQL gouverné et graphes — 84
+  - 6.3 Souveraineté sémantique : arrimage aux Data Contracts, couches BI, MDM et ontologies métier — 87
+  - 6.4 Gouvernance mémorielle : propagation des ACL, prévention de l’empoisonnement et isolation multi-locataires — 90
+  - Synthèse et transition vers la Partie III — 93
+- Partie III — Orchestration, chorégraphie et exécution durable — 95
+- Chapitre 7 — Patrons d’orchestration et topologies de composition multi-agents — 96
+  - 7.1 Quand éviter le multi-agents : critères quantitatifs face à un agent unique outillé — 96
+  - 7.2 Topologies dirigées : séquentiel typé, routeur sémantique, Supervisor et planification DAG — 99
+  - 7.3 Topologies collaboratives et vérificatrices : Handoff, Scatter-Gather et boucle Generator-Verifier — 101
+  - 7.4 Ingénierie des transferts d’état : passage par référence (Artifact URI) et prévention du Goal Drift — 106
+  - Synthèse architecturale et transition vers le chapitre 08 — 109
+- Chapitre 8 — Chorégraphie réactive et Event Mesh d’entreprise — 110
+  - 8.1 Agents ambiants déclenchés par événements : Kafka, Solace, NATS, CloudEvents et AsyncAPI — 110
+  - 8.2 Arbitrage architectural entre orchestration centralisée et chorégraphie décentralisée — 114
+  - 8.3 Pathologies réactives : tempêtes d’événements, boucles d’écho sémantiques, DLQ et backpressure LLM — 118
+  - 8.4 Patron hybride cible : orchestration macro-réglementaire et chorégraphie intra-domaine — 121
+  - Synthèse et transition vers le chapitre 9 — 123
+- Chapitre 9 — Exécution durable, gestion d’état transactionnel et résilience opérationnelle — 124
+  - 9.1 Modes de défaillance des boucles longues en mémoire volatile (`timeouts`, `429`, redéploiements) — 124
+  - 9.2 `Durable Execution` (`Temporal`, `Restate`, `Dapr`) : journalisation déterministe, `replay` et `checkpointing` — 127
+  - 9.3 Cohérence sans verrou distribué : idempotence de bout en bout, `Outbox` et Sagas compensatoires — 131
+  - 9.4 Cycles longs `Human-on-the-Loop`, escalades asynchrones sous `SLA` et bascule multi-fournisseurs — 135
+  - Synthèse et transition vers la Partie IV — 138
+- Partie IV — Confiance, sécurité Zero-Trust, observabilité et gouvernance — 139
+- Chapitre 10 — Architecture de sécurité Zero-Trust, identités non humaines (NHI) et maîtrise des risques — 140
+  - 10.1 Modèle de menaces OWASP Agentic Top 10 : Goal Hijacking, Confused Deputy et injections indirectes — 140
+  - 10.2 Identités non humaines (NHI) cryptographiques : attestation de workload SPIFFE/SPIRE et SVID éphémères — 143
+  - 10.3 Autorisation dynamique : OAuth 2.0 On-Behalf-Of (RFC 8693), downscoping et Intent Gates (OPA/Cedar) — 146
+  - 10.4 Confinement d’exécution (microVM, gVisor, WASM), protection PII et postures AISPM/AIDR — 150
+  - Synthèse et transition — 154
+- Chapitre 11 — Observabilité distribuée (OpenTelemetry), EvalOps continu et fiabilité (SRE agentique) — 155
+  - 11.1 Instrumentation unifiée `OpenTelemetry GenAI` : corrélation traces, identités `SPIFFE` /`OBO` et coûts — 155
+  - 11.2 Pipeline `EvalOps` industriel : `golden datasets` de trajectoires, `mock MCP servers` et juges calibrés — 159
+  - 11.3 `SRE` agentique : `SLI` /`SLO` comportementaux, détection de dérive sémantique et rejeu forensique — 162
+  - 11.4 Coupe-circuits cognitifs, plafonds de profondeur et repli automatique vers flux déterministe — 165
+  - Synthèse et transition vers le chapitre 12 — 168
+- Chapitre 12 — Gouvernance d’entreprise, conformité réglementaire et FinOps agentique — 169
+  - 12.1 Modèle opérationnel cible : registre central d’agents, homologation par risque et Agent Owner — 169
+  - 12.2 Conformité multi-juridictionnelle : Loi 25 (Québec), LPRPDE, EU AI Act, NIST AI RMF et ISO/IEC 42001 — 172
+  - 12.3 FinOps agentique : économie unitaire par transaction métier, facteur d’amplification, caching et cascade SLM/LLM — 176
+  - 12.4 Pilotage budgétaire, refacturation interne (showback/chargeback), TCO/ROI ajusté du risque et réversibilité — 179
+  - Synthèse architecturale et transition vers la Partie V — 182
+- Partie V — Ingénierie de plateforme, blueprints de référence et transformation — 183
+- Chapitre 13 — Ingénierie de plateforme agentique, AI Gateway hybride et cycle de vie industriel (GitOps) — 184
+  - 13.1 Architecture d’une Internal Agentic Platform (IAP) : Golden Paths et séparation plateforme/domaines — 184
+  - 13.2 Topologie de l’AI Gateway hybride : multi-nuages et inférence souveraine sur site (vLLM, NIM) — 187
+  - 13.3 GitOps cognitif : versionnement conjoint du code, des prompts, des schémas OASF/MCP et politiques OPA — 191
+  - 13.4 Déploiement progressif (shadow, canary, blue/green) et compatibilité des workflows durables en vol — 194
+  - Synthèse architecturale et transition vers le chapitre 14 — 197
+- Chapitre 14 — Architectures de référence de bout en bout : trois blueprints sectoriels et fédérés instanciables — 199
+  - 14.1 Blueprint 1 — Traitement transactionnel hautement réglementé (Temporal + MCP Gateway + OAuth OBO + Audit) — 199
+  - 14.2 Blueprint 2 — Maillage inter-départemental et partenaires B2B (A2A + AGNTCY/OASF + Event Mesh) — 202
+  - 14.3 Blueprint 3 — Exploitation souveraine à haute confidentialité (AI Gateway locale + RAG ACL + microVM) — 205
+  - 14.4 Synthèse comparative non fonctionnelle : latence p95, débit, RPO/RTO, enveloppe FinOps et équipes — 208
+  - Synthèse architecturale et transition vers le chapitre 15 — 211
+- Chapitre 15 — Coexistence patrimoniale (BPM/iPaaS/RPA), anti-patrons critiques et feuille de route d’adoption — 212
+  - 15.1 Rationalisation et coexistence avec l’automatisation existante (BPMN, iPaaS/API Management, RPA) — 212
+  - 15.2 Migration incrémentale (Strangler Fig agentique) : ombre, recommandation, action bornée, autonomie sous contrat — 215
+  - 15.3 Catalogue diagnostique des 12 anti-patrons majeurs : symptômes, causes racines et remédiations — 217
+  - 15.4 Modèle de maturité en 5 paliers et feuille de route séquencée (90 / 180 / 360 jours) — 221
+  - Synthèse et clôture de l’ouvrage — 223
+- Annexe A — Glossaire normatif bilingue (français canadien / anglais) — 225
+- Annexe B — Gabarit d’Architecture Decision Record (ADR) et liste de contrôle EA/SA (40 critères) — 228
+  - B.1 Gabarit d’Architecture Decision Record (ADR) agentique — 228
+  - B.2 Liste de contrôle d’homologation EA / SA (40 critères) — 229
+- Annexe C — Bibliographie maîtresse consolidée — 232
+- Annexe D — Synthèse du journal d’ancrage automatisé — 251

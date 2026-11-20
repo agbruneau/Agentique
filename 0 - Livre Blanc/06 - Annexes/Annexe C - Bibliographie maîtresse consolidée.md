@@ -1,0 +1,416 @@
+# Annexe C — Bibliographie maîtresse consolidée
+
+Les références ci-dessous regroupent, par ordre d’apparition globale, les spécifications techniques, normes réglementaires, documentations d’ingénierie et publications vérifiées qui ancrent les chapitres 01 à 15. Les clés locales `[CNN-MM]` sont converties automatiquement en numérotation séquentielle unifiée lors de l’assemblage final.
+
+- **[1]** (C01-01) IBM Think (Derek Robertson et Matthew Kosinski) — What is a System of Record? — https://www.ibm.com/think/topics/system-of-record
+- **[2]** (C01-02) Anthropic — Building Effective Agents — https://www.anthropic.com/engineering/building-effective-agents
+- **[3]** (C01-18) Ashu Garg et Jaya Gupta (Foundation Capital) — How Systems of Agents will collapse the enterprise stack — https://foundationcapital.com/ideas/how-systems-of-agents-will-collapse-the-enterprise-stack
+- **[4]** (C01-04) AWS Prescriptive Guidance — Agentic AI Patterns and Workflows on AWS — https://docs. aws.amazon.com/prescriptive-guidance/latest/agentic-ai-patterns/agentic-ai-patterns.html
+- **[5]** (C01-09) OWASP GenAI Security Project — LLM06:2025 Excessive Agency — https://genai.owasp. org/llmrisk/llm062025-excessive-agency/
+- **[6]** (C01-17) Margaret-Anne Storey — From Technical Debt to Cognitive and Intent Debt: Rethinking Software Health in the Age of AI — https://arxiv.org/abs/2603.22106
+- **[7]** (C01-10) OWASP GenAI Security Project — OWASP Top 10 for Agentic Applications (2026) — https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/
+- **[8]** (C01-03) Microsoft Azure Architecture Center — AI Agent Orchestration Patterns — https://learn. microsoft.com/en-us/azure/architecture/ai-ml/guide/ai-agent-design-patterns
+- **[9]** (C01-16) Lingjiao Chen, Matei Zaharia et James Zou — How Is ChatGPT’s Behavior Changing over Time? — https://arxiv.org/abs/2307.09009
+- **[10]** (C01-05) Thinking Machines Lab (Horace He et coll.) — Defeating Nondeterminism in LLM Inference — https://thinkingmachines.ai/blog/defeating-nondeterminism-in-llm-inference/
+- **[11]** (C01-06) Jeffrey Dean et Luiz André Barroso (Google Research) — The Tail at Scale (Communications of the ACM, Vol. 56, No. 2) — https://research.google/pubs/the-tail-at-scale/
+- **[12]** (C01-08) NIST — Artificial Intelligence Risk Management Framework: Generative Artificial Intelligence Profile (NIST AI 600-1) — https://doi.org/10.6028/NIST.AI.600-1
+- **[13]** (C01-07) Amey Agrawal et coll. — Taming Throughput-Latency Tradeoff in LLM Inference with Sarathi-Serve — https://arxiv.org/abs/2403.02310
+- **[14]** (C01-11) K. J. Kevin Feng, David W. McDonald et Amy X. Zhang — Levels of Autonomy for AI Agents — https://arxiv.org/abs/2506.12469
+- **[15]** (C01-12) Union européenne — Règlement (UE) 2024/1689 sur l’intelligence artificielle (EU AI Act), Article 14 — https://eur-lex.europa.eu/eli/reg/2024/1689/oj
+- **[16]** (C01-13) Raja Parasuraman et Dietrich H. Manzey — Complacency and Bias in Human Use of Automation: An Attentional Integration (Human Factors, Vol. 52, No. 3) — https://doi.org/10.1177/0018720810376055
+- **[17]** (C01-14) Lisanne Bainbridge — Ironies of Automation (Automatica, Vol. 19, No. 6) — https://doi. org/10.1016/0005-1098(83)90046-8
+
+- **[18]** (C01-15) D. Sculley et coll. — Hidden Technical Debt in Machine Learning Systems (NeurIPS 2015) — https://proceedings.neurips.cc/paper/2015/hash/86df7dcfd896fcaf2674f757a2463eba-Abstract.html
+- **[19]** (C02-08) Google Cloud Architecture Center — Multi-tenant Agentic AI System — https://cloud. google.com/architecture/multi-tenant-agentic-ai-system
+- **[20]** (C02-16) Microsoft Cloud Adoption Framework — Architecture and Governance for AI Agents — https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ai-agents/architecture-governance
+- **[21]** (C02-12) Cloud Security Alliance (CSA) — Agentic AI Threat Modeling Framework: MAESTRO — https://cloudsecurityalliance.org/blog/2025/02/06/agentic-ai-threat-modeling-framework-maestro
+- **[22]** (C02-01) The Open Group — ArchiMate 3.2 Specification — https://pubs.opengroup.org/architecture/archimate3-spec/
+- **[23]** (C02-02) The Open Group — TOGAF Standard, 10th Edition — https://www.opengroup.org/togaf
+- **[24]** (C02-04) Microsoft Cloud Adoption Framework — AI Agent Adoption Strategy — https://learn. microsoft.com/en-us/azure/cloud-adoption-framework/ai-agents/executive-strategy
+- **[25]** (C02-14) NIST — Artificial Intelligence Risk Management Framework (AI RMF 1.0, NIST AI 100-1) — https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf
+- **[26]** (C02-15) ISO/IEC 42001:2023 — Information technology — Artificial intelligence — Management system — https://www.iso.org/standard/81230.html
+- **[27]** (C02-05) Microsoft Azure Architecture Center — AI Agent Design Patterns — https://learn. microsoft.com/en-us/azure/architecture/ai-ml/guide/ai-agent-design-patterns
+- **[28]** (C02-06) AWS Prescriptive Guidance — Agentic AI Patterns and Workflows on AWS — https://docs.aws.amazon.com/prescriptive-guidance/latest/agentic-ai-patterns/welcome.html
+- **[29]** (C02-10) Cloud Native Computing Foundation (CNCF) — Cloud Native Artificial Intelligence Whitepaper — https://www.cncf.io/reports/cloud-native-artificial-intelligence-whitepaper/
+- **[30]** (C02-03) Business Architecture Guild — BIZBOK Guide (Business Architecture Body of Knowledge) — https://www.businessarchitectureguild.org/page/BIZBOKGuide
+- **[31]** (C02-09) Google Cloud Architecture Center — Choose a Design Pattern for Your Agentic AI System — https://cloud.google.com/architecture/choose-design-pattern-agentic-ai-system
+- **[32]** (C02-07) AWS Well-Architected Framework — Generative AI Lens — https://docs.aws.amazon. com/wellarchitected/latest/generative-ai-lens/welcome.html
+- **[33]** (C02-18) Martin Fowler — Emerging Patterns in Building GenAI Products — https://martinfowler. com/articles/gen-ai-patterns/
+- **[34]** (C02-13) OWASP GenAI Security Project — Agentic AI Threats and Mitigations — https://genai. owasp.org/resource/agentic-ai-threats-and-mitigations/
+- **[35]** (C02-11) Linux Foundation — Formation of the Agentic AI Foundation (AAIF) — https://www.lin uxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation
+- **[36]** (C02-17) Thoughtworks — Technology Radar — https://www.thoughtworks.com/en-us/radar
+- **[37]** (C03-01) Anthropic — Building Effective Agents — https://www.anthropic.com/engineering/building-effective-agents
+- **[38]** (C03-12) Zaharia et al. (BAIR / UC Berkeley) — The Shift from Models to Compound AI Systems — https://bair.berkeley.edu/blog/2024/02/18/compound-ai-systems/
+- **[39]** (C03-02) Anthropic — Effective Harnesses for Long-Running Agents — https://www.anthropic. com/engineering/effective-harnesses-for-long-running-agents
+
+- **[40]** (C03-03) AGNTCY — SHADI (Secure Host for Agentic AI Dynamic Instantiation) — https://github. com/agntcy/shadi
+- **[41]** (C03-08) Belcak et al. (NVIDIA / Georgia Tech) — Small Language Models are the Future of Agentic AI — https://arxiv.org/abs/2506.02153
+- **[42]** (C03-14) OpenAI — Introducing Structured Outputs in the API — https://openai.com/index/introducing-structured-outputs-in-the-api/
+- **[43]** (C03-07) OWASP GenAI Security Project — Agentic AI – Threats and Mitigations — https://genai. owasp.org/resource/agentic-ai-threats-and-mitigations/
+- **[44]** (C03-13) Google Cloud Architecture Center — Choose a design pattern for your agentic AI system — https://cloud.google.com/architecture/choose-design-pattern-agentic-ai-system
+- **[45]** (C03-04) Kubernetes SIG Apps — Agent Sandbox — https://github.com/kubernetes-sigs/agent-sandbox
+- **[46]** (C03-05) gVisor — Security Architecture Guide — https://gvisor.dev/docs/architecture_guide/security/
+- **[47]** (C03-06) Firecracker — Technical Specification — https://github.com/firecracker-microvm/firecracker/blob/main/SPECIFICATION.md
+- **[48]** (C03-11) Sentence-Transformers — Retrieve & Re-Rank Architecture (Bi-Encoders and Cross-Encoders) — https://www.sbert.net/examples/applications/retrieve_rerank/README.html
+- **[49]** (C03-09) Chen, Zaharia & Zou (Stanford) — FrugalGPT: How to Use Large Language Models While Reducing Cost and Improving Performance — https://arxiv.org/abs/2305.05176
+- **[50]** (C03-10) Ong et al. (UC Berkeley / LMSYS) — RouteLLM: Learning to Route LLMs with Preference Data — https://arxiv.org/abs/2406.18665
+- **[51]** (C03-15) Anthropic Claude Docs — Structured Outputs — https://platform.claude.com/docs/en/build-with-claude/structured-outputs
+- **[52]** (C03-16) Dong et al. (MLC / CMU) — XGrammar: Flexible and Efficient Structured Generation Engine for Large Language Models — https://arxiv.org/abs/2411.15100
+- **[53]** (C03-17) JSON Schema — Draft 2020-12 Core & Validation Specification — https://json-schema. org/draft/2020-12/json-schema-core.html
+- **[54]** (C03-18) Pydantic — JSON Schema Generation and Validation Documentation — https://docs. pydantic.dev/latest/concepts/json_schema/
+- **[55]** (C04-07) Anthropic Engineering — Code execution with MCP: Building more efficient agents — https://www.anthropic.com/research/code-execution-with-mcp
+- **[56]** (C04-21) MuleSoft (Salesforce) — Enterprise MCP Bridge and Agent Fabric — https://www. mulesoft.com/platform/ai/model-context-protocol
+- **[57]** (C04-04) Linux Foundation — Formation of the Agentic AI Foundation (AAIF) — https://www.lin uxfoundation.org/press/linux-foundation-announces-the-formation-of-the-agentic-ai-foundation
+- **[58]** (C04-01) Model Context Protocol — Specification (révision 2026-07-28) — https://modelcontextp rotocol.io/specification/2026-07-28
+- **[59]** (C04-03) JSON-RPC Working Group — JSON-RPC 2.0 Specification — https://www.jsonrpc.org/specification
+- **[60]** (C04-12) OWASP Cheat Sheet Series — MCP Security Cheat Sheet — https://cheatsheetseries. owasp.org/cheatsheets/MCP_Security_Cheat_Sheet.html
+- **[61]** (C04-05) Yang et al. (Princeton) — SWE-agent: Agent-Computer Interfaces Enable Automated Software Engineering (arXiv:2405.15793) — https://arxiv.org/abs/2405.15793
+
+- **[62]** (C04-06) Anthropic Engineering — Writing effective tools for agents — with agents — https://www. anthropic.com/research/writing-tools-for-agents
+- **[63]** (C04-09) Speakeasy — Reducing MCP token usage by 100x with Dynamic Toolsets — https://www. speakeasy.com/blog/how-we-reduced-token-usage-by-100x-dynamic-toolsets-v2
+- **[64]** (C04-08) Cloudflare Engineering — Code Mode: The better way to use MCP — https://blog. cloudflare.com/code-mode/
+- **[65]** (C04-16) Amazon Web Services — Amazon Bedrock AgentCore Gateway OpenAPI Schema Targets — https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway-schema-openapi.html
+- **[66]** (C04-10) Speakeasy — Code mode is overkill for your MCP server. It’s not for your gateway. — https://www.speakeasy.com/blog/code-mode-mcp-gateway
+- **[67]** (C04-11) OWASP — MCP Top 10 Project — https://owasp.org/projects/mcp-top-10
+- **[68]** (C04-13) Agentgateway (AAIF / Linux Foundation) — Unified Data Plane for MCP, OpenAPI and gRPC — https://github.com/agentgateway/agentgateway
+- **[69]** (C04-14) Agent Router (AAIF / Linux Foundation, anciennement Envoy AI Gateway) — Control Plane for AI and MCP Traffic — https://github.com/theagentrouter/agent-router
+- **[70]** (C04-15) Microsoft Azure API Management — Expose REST API as an MCP server — https://learn. microsoft.com/en-us/azure/api-management/export-rest-mcp-server
+- **[71]** (C04-17) Apollo GraphQL — Persisted Queries for Enterprise MCP Servers — https://www. apollographql.com/tutorials/enterprise-mcp-graphql/04-persisted-queries
+- **[72]** (C04-02) Model Context Protocol — Official MCP Registry — https://modelcontextprotocol.io/registry/about
+- **[73]** (C04-18) Microsoft Azure Architecture Center — Anti-Corruption Layer Pattern — https://learn. microsoft.com/en-us/azure/architecture/patterns/anti-corruption-layer
+- **[74]** (C04-20) IBM Community — IBM z/OS Connect 3.0.98 and Native MCP Support — https://community.ibm.com/community/user/blogs/shruthi-krishnan/2025/10/21/zos-connect-3098-now-available
+- **[75]** (C04-19) Martin Fowler — Patterns of Legacy Displacement — https://martinfowler.com/articles/patterns-legacy-displacement/
+- **[76]** (C04-22) Debezium — Reference Documentation for Log-Based Change Data Capture (CDC) — https://debezium.io/documentation/
+- **[77]** (C05-02) A2A and MCP : Complementary Protocols for Agentic Systems — https://a2a-protocol. org/latest/topics/a2a-and-mcp/
+- **[78]** (C05-05) Linux Foundation : A2A Protocol Surpasses 150 Organizations and Sees Enterprise Production Use — https://www.linuxfoundation.org/press/a2a-protocol-surpasses-150-organizations-lands-in-major-cloud-platforms-and-sees-enterprise-production-use-in-first-year
+- **[79]** (C05-06) Google Cloud Donates A2A to the Linux Foundation — https://developers.googleblog. com/en/google-cloud-donates-a2a-to-linux-foundation/
+- **[80]** (C05-07) Linux Foundation : Agentic AI Foundation (AAIF) Expansion — https://www.linuxfo undation.org/press/agentic-ai-foundation-announces-four-new-projects-agent-skills-open-responses-openenv-and-opensandbox
+- **[81]** (C05-19) Salesforce : When Agents Speak the Same Language (Agent Interoperability) — https://www.salesforce.com/blog/agent-interoperability/
+- **[82]** (C05-01) Agent2Agent (A2A) Protocol Specification v1.0.0 — https://a2a-protocol.org/latest/specification/
+
+- **[83]** (C05-12) IETF Internet-Draft : An Overview of Messaging Systems and Their Applicability to Agentic AI (draft-mpsb-agntcy-messaging-03) — https://datatracker.ietf.org/doc/html/draft-mpsb-agntcy-messaging-03
+- **[84]** (C05-20) OWASP GenAI Security Project : Top 10 for Agentic AI (ASI01–ASI10) — https://genai-security-project.github.io/crosswalk/agentic-ai-top10/
+- **[85]** (C05-04) A2A Enterprise Features — https://a2a-protocol.org/latest/topics/enterprise-ready/
+- **[86]** (C05-18) Salesforce Engineering : Choose the Right Agentforce Integration Pattern (API, MCP, or A2A) — https://www.salesforce.com/blog/how-to-choose-integration-pattern-for-agentforce/
+- **[87]** (C05-03) A2A Streaming and Asynchronous Operations — https://a2a-protocol.org/latest/topics/streaming-and-async/
+- **[88]** (C05-15) Microsoft Agent Framework Overview — https://learn.microsoft.com/en-us/agent-framework/overview/
+- **[89]** (C05-16) Microsoft Learn : Integrating Remote Agents with A2AAgent — https://learn.microsoft. com/en-us/agent-framework/integrations/by-component/agent-services/a2a
+- **[90]** (C05-14) LangChain Agent Server : A2A Endpoint Documentation — https://docs.langchain.com/langsmith/server-a2a
+- **[91]** (C05-09) The AGNTCY Agent Directory Service : Architecture and Implementation (arXiv:2509.18787) — https://arxiv.org/abs/2509.18787
+- **[92]** (C05-10) AGNTCY SLIM : Secure Low-Latency Interactive Messaging Overview — https://slim. agntcy.org/latest/slim/slim-overview/
+- **[93]** (C05-13) IETF RFC 9420 : The Messaging Layer Security (MLS) Protocol — https://www.rfc-editor. org/rfc/rfc9420.html
+- **[94]** (C05-08) AGNTCY Open Agentic Schema Framework (OASF) — https://docs.agntcy.org/oasf/open-agentic-schema-framework/
+- **[95]** (C05-11) IETF Internet-Draft : Secure Low-Latency Interactive Messaging (draft-mpsb-agntcy-slim-03) — https://datatracker.ietf.org/doc/html/draft-mpsb-agntcy-slim-03
+- **[96]** (C05-17) Amazon Bedrock AgentCore Runtime : Deploy A2A Servers — https://docs.aws.amazon. com/bedrock-agentcore/latest/devguide/runtime-a2a.html
+- **[97]** (C06-01) Sumers, Yao, Narasimhan & Griffiths (Princeton) — Cognitive Architectures for Language Agents (CoALA) — https://arxiv.org/abs/2309.02427
+- **[98]** (C06-02) Anthropic Engineering — Effective context engineering for AI agents — https://www. anthropic.com/research/effective-context-engineering-for-ai-agents
+- **[99]** (C06-05) Anthropic Engineering — Contextual Retrieval in AI Systems — https://www.anthropic. com/research/contextual-retrieval
+- **[100]** (C06-11) Sequeda, Allemang & Jacob (data.world) — A Benchmark to Understand the Role of Knowledge Graphs on Large Language Model’s Accuracy for Question Answering on Enterprise SQL Databases — https://arxiv.org/abs/2311.07509
+- **[101]** (C06-13) dbt Labs — dbt Semantic Layer & MetricFlow Documentation — https://docs.getdbt. com/docs/use-dbt-semantic-layer/dbt-sl
+- **[102]** (C06-21) Chen, Xiang, Xiao, Song & Li — AgentPoison: Red-teaming LLM Agents via Poisoning Memory or Knowledge Bases — https://arxiv.org/abs/2407.12784
+- **[103]** (C06-22) Dong et al. — MINJA: Memory Injection Attacks on LLM Agents via Query-Only Interaction — https://arxiv.org/abs/2503.03704
+
+- **[104]** (C06-08) Singh et al. — Agentic Retrieval-Augmented Generation: A Survey on Agentic RAG — https://arxiv.org/abs/2501.09136
+- **[105]** (C06-17) OpenFGA (CNCF) — RAG Authorization and Search With Permissions — https://openfga.dev/docs/modeling/agents/rag-authorization
+- **[106]** (C06-14) Bitol / Linux Foundation AI & Data — Open Data Contract Standard (ODCS v3.2) — https://github.com/bitol-io/open-data-contract-standard
+- **[107]** (C06-03) Packer et al. (UC Berkeley) — MemGPT: Towards LLMs as Operating Systems — https://arxiv.org/abs/2310.08560
+- **[108]** (C06-04) LangChain — LangMem Core Concepts: Memory Types and Storage — https://langchain-ai.github.io/langmem/concepts/conceptual_guide/
+- **[109]** (C06-10) Edge et al. (Microsoft Research) — From Local to Global: A Graph RAG Approach to Query-Focused Summarization — https://arxiv.org/abs/2404.16130
+- **[110]** (C06-09) Yan, Gu, Zhu & Ling — Corrective Retrieval Augmented Generation (CRAG) — https://arxiv.org/abs/2401.15884
+- **[111]** (C06-07) Microsoft Learn — Hybrid Search Scoring (RRF) — Foundry IQ (Azure AI Search) — https://learn.microsoft.com/en-us/azure/search/hybrid-search-ranking
+- **[112]** (C06-06) Cormack, Clarke & Büttcher (SIGIR 2009) — Reciprocal Rank Fusion outperforms Condorcet and individual Rank Learning Methods — https://cormack.uwaterloo.ca/cormacksigir09-rrf. pdf
+- **[113]** (C06-12) Snowflake Documentation — Cortex Analyst and Semantic Models — https://docs. snowflake.com/en/user-guide/snowflake-cortex/cortex-analyst
+- **[114]** (C06-19) OWASP Top 10 for LLM Applications — LLM08:2025 Vector and Embedding Weaknesses — https://github.com/OWASP/www-project-top-10-for-large-language-model-applications/blob/main/2_0_vulns/LLM08_VectorAndEmbeddingWeaknesses.md
+- **[115]** (C06-15) W3C Recommendation — Shapes Constraint Language (SHACL) — https://www.w3.org/TR/shacl/
+- **[116]** (C06-16) W3C Recommendation — OWL 2 Web Ontology Language Document Overview (Second Edition) — https://www.w3.org/TR/owl2-overview/
+- **[117]** (C06-18) Microsoft Learn — Security Filter Pattern — Foundry IQ (Azure AI Search) — https://learn.microsoft.com/en-us/azure/search/search-security-trimming-for-azure-search
+- **[118]** (C06-23) OWASP Foundation — OWASP Agent Memory Guard (ASI06 Reference Implementation) — https://github.com/OWASP/www-project-agent-memory-guard
+- **[119]** (C06-20) Zou, Geng, Wang & Jia — PoisonedRAG: Knowledge Corruption Attacks to Retrieval-Augmented Generation of Large Language Models — https://arxiv.org/abs/2402.07867
+- **[120]** (C06-24) AWS Well-Architected Framework — SaaS Lens: Silo, Pool, and Bridge Models — https://docs.aws.amazon.com/wellarchitected/latest/saas-lens/silo-pool-and-bridge-models.html
+- **[121]** (C06-25) Qdrant Documentation — Multitenancy: Payload Partitioning, Custom Sharding and Tiered Isolation — https://qdrant.tech/documentation/manage-data/multitenancy/
+- **[122]** (C06-26) PostgreSQL Documentation — Row Security Policies (Row-Level Security) — https://www.postgresql.org/docs/current/ddl-rowsecurity.html
+- **[123]** (C07-03) Cognition AI (Walden Yan) — Don’t Build Multi-Agents — https://cognition.com/blog/dont-build-multi-agents
+- **[124]** (C07-04) Kim et al. (Google Research, Google DeepMind et MIT) — Towards a Science of Scaling Agent Systems (arXiv:2512.08296) — https://arxiv.org/abs/2512.08296
+
+- **[125]** (C07-05) Cemri et al. (UC Berkeley) — Why Do Multi-Agent LLM Systems Fail? (MAST, arXiv:2503.13657) — https://arxiv.org/abs/2503.13657
+- **[126]** (C07-01) Anthropic — Building effective AI agents — https://www.anthropic.com/research/building-effective-agents
+- **[127]** (C07-02) Anthropic Engineering — How we built our multi-agent research system — https://www. anthropic.com/research/multi-agent-research-system
+- **[128]** (C07-06) Google Cloud Architecture Center — Choose a design pattern for your agentic AI system — https://docs.cloud.google.com/architecture/choose-design-pattern-agentic-ai-system
+- **[129]** (C07-09) LangChain Blog (Sydney Runkle) — Choosing the Right Multi-Agent Architecture — https://www.langchain.com/blog/choosing-the-right-multi-agent-architecture
+- **[130]** (C07-14) Xu et al. — ReWOO: Decoupling Reasoning from Observations for Efficient Augmented Language Models (arXiv:2305.18323) — https://arxiv.org/abs/2305.18323
+- **[131]** (C07-07) Microsoft Azure Architecture Center — AI Agent Orchestration Patterns — https://learn. microsoft.com/en-us/azure/architecture/ai-ml/guide/ai-agent-design-patterns
+- **[132]** (C07-08) Microsoft Learn (Agent Framework) — Workflow orchestrations in Agent Framework — https://learn.microsoft.com/en-us/agent-framework/workflows/orchestrations/
+- **[133]** (C07-10) LangChain Documentation — Workflows and agents (LangGraph) — https://docs. langchain.com/oss/python/langgraph/workflows-agents
+- **[134]** (C07-16) Google Agent Development Kit (ADK) — Workflows: multi-agent, multi-node applications — https://adk.dev/workflows/
+- **[135]** (C07-25) OWASP GenAI Security Project — OWASP Top 10 for Agentic Applications for 2026 — https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/
+- **[136]** (C07-11) LangChain Documentation — Subagents — https://docs.langchain.com/oss/python/langchain/multi-agent/subagents
+- **[137]** (C07-21) Anthropic Engineering — Effective context engineering for AI agents — https://www. anthropic.com/research/effective-context-engineering-for-ai-agents
+- **[138]** (C07-13) Kim et al. (UC Berkeley) — An LLM Compiler for Parallel Function Calling (arXiv:2312.04511) — https://arxiv.org/abs/2312.04511
+- **[139]** (C07-12) LangChain Documentation — Handoffs — https://docs.langchain.com/oss/python/langchain/multi-agent/handoffs
+- **[140]** (C07-15) OpenAI Agents SDK — Handoffs — https://openai.github.io/openai-agents-python/handoffs/
+- **[141]** (C07-17) Hohpe et Woolf (Enterprise Integration Patterns) — Scatter-Gather — https://www.ent erpriseintegrationpatterns.com/patterns/messaging/BroadcastAggregate.html
+- **[142]** (C07-18) Madaan et al. — Self-Refine: Iterative Refinement with Self-Feedback (arXiv:2303.17651) — https://arxiv.org/abs/2303.17651
+- **[143]** (C07-22) Arike et al. (MATS et Apollo Research) — Technical Report: Evaluating Goal Drift in Language Model Agents (arXiv:2505.02709) — https://arxiv.org/abs/2505.02709
+- **[144]** (C07-19) Microsoft Azure Architecture Center — Claim-Check pattern — https://learn.microsoft. com/en-us/azure/architecture/patterns/claim-check
+- **[145]** (C07-20) Google Agent Development Kit (ADK) — Artifacts — https://adk.dev/artifacts/
+- **[146]** (C07-23) Liu et al. — Lost in the Middle: How Language Models Use Long Contexts (arXiv:2307.03172) — https://arxiv.org/abs/2307.03172
+
+- **[147]** (C07-24) Wallace et al. (OpenAI) — The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions (arXiv:2404.13208) — https://arxiv.org/abs/2404.13208
+- **[148]** (C08-08) Solace : What is an Event Mesh? — https://solace.com/what-is-an-event-mesh/
+- **[149]** (C08-11) Confluent : Four Design Patterns for Event-Driven, Multi-Agent Systems — https://www. confluent.io/blog/event-driven-multi-agent-systems/
+- **[150]** (C08-12) Confluent : How to Build a Multi-Agent Orchestrator Using Apache Flink and Apache Kafka — https://www.confluent.io/blog/multi-agent-orchestrator-using-flink-and-kafka/
+- **[151]** (C08-24) Dhanyamraju et al. : Autonomous Event-Driven Multi-Agent Orchestration for Enterprise AI at Scale (`arXiv:2606.20058`) — https://arxiv.org/abs/2606.20058
+- **[152]** (C08-15) Microsoft Azure Architecture Center : Choreography Pattern — https://learn.microsoft. com/en-us/azure/architecture/patterns/choreography
+- **[153]** (C08-09) Solace Agent Mesh Documentation — https://docs.solace.com/Agent-Mesh/agent-mesh.htm
+- **[154]** (C08-16) AWS Prescriptive Guidance : Choosing Your Coordination Approach — https://docs.aws.amazon.com/prescriptive-guidance/latest/modernization-integrating-microservices/choosing-approach.html
+- **[155]** (C08-17) Camunda : Orchestration vs Choreography — https://camunda.com/blog/2023/02/orchestration-vs-choreography/
+- **[156]** (C08-23) OWASP GenAI Security Project : Top 10 for Agentic AI (`ASI08` et `ASI10`) — https://genai-security-project.github.io/crosswalk/agentic-ai-top10/
+- **[157]** (C08-07) Apache Kafka 4.1 Consumer Configuration Reference — https://kafka.apache.org/41/configuration/consumer-configs/
+- **[158]** (C08-10) NATS JetStream : Pull Consumers in Depth — https://docs.nats.io/learn/jetstream/pull-consumers
+- **[159]** (C08-18) Confluent : Error Handling Patterns in Apache Kafka — https://www.confluent.io/blog/error-handling-patterns-in-kafka/
+- **[160]** (C08-22) Agent Router (Envoy AI Gateway) : Usage-Based Token Rate Limiting — https://github. com/theagentrouter/agent-router/blob/main/examples/token_ratelimit/token_ratelimit.yaml
+- **[161]** (C08-26) Hashemi et al. : LLM Multi-Agent Systems Are Vulnerable to Herding and Runaway Cascades (`arXiv:2610.30769`) — https://arxiv.org/abs/2610.30769
+- **[162]** (C08-13) Martin Fowler : What Do You Mean by « Event-Driven »? — https://martinfowler.com/articles/201701-event-driven.html
+- **[163]** (C08-27) NATS JetStream : Retention Policies — https://docs.nats.io/learn/jetstream/retention-policies
+- **[164]** (C08-28) NATS JetStream : Delivery and Acknowledgment — https://docs.nats.io/learn/jetstream/delivery-and-acknowledgment
+- **[165]** (C08-01) CloudEvents Specification v1.0.2 (CNCF) — https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/spec.md
+- **[166]** (C08-03) AsyncAPI Specification v3.0.0 — https://www.asyncapi.com/docs/reference/specification/v3.0.0
+- **[167]** (C08-02) CloudEvents v1.0.2 Apache Kafka Protocol Binding (CNCF) — https://github.com/cloudevents/spec/blob/v1.0.2/cloudevents/bindings/kafka-protocol-binding.md
+- **[168]** (C08-04) AsyncAPI Kafka Protocol Bindings v0.5.0 — https://github.com/asyncapi/bindings/blob/master/kafka/README.md
+
+- **[169]** (C08-05) AsyncAPI Solace Protocol Bindings v0.4.0 — https://github.com/asyncapi/bindings/blob/master/solace/README.md
+- **[170]** (C08-06) AsyncAPI NATS Protocol Bindings v0.1.0 — https://github.com/asyncapi/bindings/blob/master/nats/README.md
+- **[171]** (C08-14) Gregor Hohpe : Process Manager (Enterprise Integration Patterns) — https://www.ente rpriseintegrationpatterns.com/patterns/messaging/ProcessManager.html
+- **[172]** (C08-25) Luo et al. : Auditing Cascading Risks in Multi-Agent Systems via Semantic-Geometric Co-evolution (`arXiv:2603.13325`) — https://arxiv.org/abs/2603.13325
+- **[173]** (C08-19) The Reactive Manifesto — https://www.reactivemanifesto.org/
+- **[174]** (C08-20) Reactive Streams Specification — https://www.reactive-streams.org/
+- **[175]** (C08-21) IETF Internet-Draft : RateLimit Header Fields for HTTP (`draft-ietf-httpapi-ratelimit-headers-11`) — https://datatracker.ietf.org/doc/draft-ietf-httpapi-ratelimit-headers/
+- **[176]** (C09-09) Temporal — Building AI agents that overcome the complexity cliff — https://temporal. io/blog/building-ai-agents-that-overcome-the-complexity-cliff
+- **[177]** (C09-10) Temporal Documentation — Timers and Start Delays — https://docs.temporal.io/workflow-execution/timers-delays
+- **[178]** (C09-01) AWS Builders’ Library (Marc Brooker) — Timeouts, retries, and backoff with jitter — https://aws.amazon.com/builders-library/timeouts-retries-and-backoff-with-jitter/
+- **[179]** (C09-02) Kubernetes Documentation — Pod Lifecycle — https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/
+- **[180]** (C09-17) Stripe Engineering (Brandur Leach) — Designing robust and predictable APIs with idempotency — https://stripe.com/blog/idempotency
+- **[181]** (C09-07) Temporal Documentation — Workflow Execution & Replay — https://docs.temporal.io/workflow-execution
+- **[182]** (C09-16) IETF HTTPAPI Working Group — The Idempotency-Key HTTP Header Field (Internet-Draft) — https://datatracker.ietf.org/doc/draft-ietf-httpapi-idempotency-key-header/
+- **[183]** (C09-21) Microsoft Azure Architecture Center — Saga Design Pattern — https://learn.microsoft. com/en-us/azure/architecture/patterns/saga
+- **[184]** (C09-23) Temporal Documentation — Approval Pattern (Human-in-the-Loop) — https://docs. temporal.io/design-patterns/approval
+- **[185]** (C09-04) Anthropic — Rate limits (Claude Platform Docs) — https://platform.claude.com/docs/en/api/rate-limits
+- **[186]** (C09-20) Hector Garcia-Molina & Kenneth Salem (ACM SIGMOD 1987) — Sagas — https://www. cs.cornell.edu/andru/cs711/2002fa/reading/sagas.pdf
+- **[187]** (C09-27) Microsoft Learn — AI gateway capabilities in Azure API Management — https://learn. microsoft.com/en-us/azure/api-management/genai-gateway-capabilities
+- **[188]** (C09-05) OpenAI API — Rate limits — https://platform.openai.com/docs/guides/rate-limits
+- **[189]** (C09-03) IETF RFC 6585 — Additional HTTP Status Codes — https://www.rfc-editor.org/rfc/rfc6585
+- **[190]** (C09-06) Temporal Documentation — Workflow Definition & Deterministic constraints — https://docs.temporal.io/workflow-definition
+- **[191]** (C09-11) Restate Documentation — Key Concepts & Architecture — https://docs.restate.dev/foundations/key-concepts
+
+- **[192]** (C09-12) Restate Documentation — Durable Steps (`ctx.run`) — https://docs.restate.dev/develop/ts/durable-steps
+- **[193]** (C09-15) LangChain Documentation — LangGraph Persistence (Checkpointers and Stores) — https://docs.langchain.com/oss/python/langgraph/persistence
+- **[194]** (C09-08) Temporal Documentation — Detecting Activity failures — https://docs.temporal.io/encyclopedia/detecting-activity-failures
+- **[195]** (C09-13) Restate — Restate vs Temporal Architectural Comparison — https://restate.dev/vs/temporal
+- **[196]** (C09-14) CNCF / Dapr Documentation — Workflow architecture — https://docs.dapr.io/developing-applications/building-blocks/workflow/workflow-architecture/
+- **[197]** (C09-18) Microservices.io (Chris Richardson) — Pattern: Transactional outbox — https://microservices.io/patterns/data/transactional-outbox.html
+- **[198]** (C09-19) Debezium Engineering (Gunnar Morling) — Reliable Microservices Data Exchange With the Outbox Pattern — https://debezium.io/blog/2019/02/19/reliable-microservices-data-exchange-with-the-outbox-pattern/
+- **[199]** (C09-22) Restate Documentation — Sagas Guide — https://docs.restate.dev/guides/sagas
+- **[200]** (C09-25) Restate Documentation — Signals and external events — https://docs.restate.dev/develop/ts/external-events
+- **[201]** (C09-24) Temporal Documentation — Workflow message passing (Signals, Queries, & Updates) — https://docs.temporal.io/encyclopedia/workflow-message-passing
+- **[202]** (C09-26) Microsoft Azure Architecture Center — Circuit Breaker Pattern — https://learn. microsoft.com/en-us/azure/architecture/patterns/circuit-breaker
+- **[203]** (C09-28) LiteLLM Documentation — Fallbacks (Provider Failover) — https://docs.litellm.ai/docs/proxy/reliability
+- **[204]** (C10-01) OWASP GenAI Security Project — OWASP Top 10 for Agentic Applications (ASI01–ASI10, 2026) — https://genai-security-project.github.io/crosswalk/agentic-ai-top10/
+- **[205]** (C10-05) Kai Greshake et al. — Not What You’ve Signed Up For: Compromising Real-World LLM-Integrated Applications with Indirect Prompt Injection — https://arxiv.org/abs/2302.12173
+- **[206]** (C10-04) OWASP Top 10 for LLM Applications — LLM01:2025 Prompt Injection — https://github.com/OWASP/www-project-top-10-for-large-language-model-applications/blob/main/2_0_vulns/LLM01_PromptInjection.md
+- **[207]** (C10-10) NIST Special Publication 800-207 — Zero Trust Architecture — https://csrc.nist.gov/pubs/sp/800/207/final
+- **[208]** (C10-02) OWASP GenAI Security Project — Agentic AI Threats and Mitigations — https://genai. owasp.org/resource/agentic-ai-threats-and-mitigations/
+- **[209]** (C10-08) Cloud Security Alliance (CSA) — Agentic AI Threat Modeling Framework: MAESTRO — https://cloudsecurityalliance.org/blog/2025/02/06/agentic-ai-threat-modeling-framework-maestro
+- **[210]** (C10-09) NIST AI 100-2 E2025 — Adversarial Machine Learning: A Taxonomy and Terminology of Attacks and Mitigations — https://csrc.nist.gov/pubs/ai/100/2/e2025/final
+- **[211]** (C10-07) Edoardo Debenedetti, Ilia Shumailov, Nicholas Carlini, Florian Tramèr et al. (Google, DeepMind, ETH Zurich) — Defeating Prompt Injections by Design (CaMeL) — https://arxiv.org/abs/2503.18813
+- **[212]** (C10-20) IETF OAuth Working Group — Transaction Tokens (draft-ietf-oauth-transaction-tokens) — https://datatracker.ietf.org/doc/draft-ietf-oauth-transaction-tokens/
+
+- **[213]** (C10-32) Zenity — AI Security Posture Management (AISPM) & AI Detection and Response (AIDR) — https://zenity.io/platform/ai-detection-and-response
+- **[214]** (C10-18) IETF RFC 9396 — OAuth 2.0 Rich Authorization Requests (RAR) — https://datatracker. ietf.org/doc/html/rfc9396
+- **[215]** (C10-23) Cedar Policy Language Reference Guide — Version 4.6 — https://docs.cedarpolicy.com/
+- **[216]** (C10-11) OWASP Foundation — OWASP Non-Human Identities Top 10 (2025) — https://owasp. org/projects/non-human-identities-top-10
+- **[217]** (C10-21) Model Context Protocol Specification — Authorization (Revision 2025-11-25) — https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization
+- **[218]** (C10-12) SPIFFE Documentation — SPIFFE Concepts (ID, Trust Domain, SVID, Workload API) — https://spiffe.io/docs/latest/spiffe-about/spiffe-concepts/
+- **[219]** (C10-16) IETF RFC 8693 — OAuth 2.0 Token Exchange — https://datatracker.ietf.org/doc/html/rfc8693
+- **[220]** (C10-19) IETF RFC 9449 — OAuth 2.0 Demonstrating Proof of Possession (DPoP) — https://datatracker.ietf.org/doc/html/rfc9449
+- **[221]** (C10-03) OWASP GenAI Security Project — Securing Agentic Applications Guide v1.0 — https://genai.owasp.org/resource/securing-agentic-applications-guide-1-0/
+- **[222]** (C10-25) Firecracker MicroVM — Design & Jailer Documentation — https://github.com/firecracker-microvm/firecracker/blob/main/docs/design.md
+- **[223]** (C10-26) gVisor Documentation — Security Model (Sentry & Gofer) — https://gvisor.dev/docs/architecture_guide/security/
+- **[224]** (C10-27) Bytecode Alliance — Wasmtime Security & WebAssembly Component Model — https://docs.wasmtime.dev/security.html
+- **[225]** (C10-13) SPIRE Documentation — SPIRE Concepts (Node Attestation, Workload Attestation, Federation) — https://spiffe.io/docs/latest/spire-about/spire-concepts/
+- **[226]** (C10-15) IETF WIMSE Working Group — Workload Identity in a Multi System Environment (WIMSE) Architecture — https://datatracker.ietf.org/doc/draft-ietf-wimse-arch/
+- **[227]** (C10-22) Open Policy Agent (OPA) Documentation — Policy Philosophy & Rego Architecture — https://www.openpolicyagent.org/docs/philosophy
+- **[228]** (C10-06) Eric Wallace et al. (OpenAI) — The Instruction Hierarchy: Training LLMs to Prioritize Privileged Instructions — https://arxiv.org/abs/2404.13208
+- **[229]** (C10-14) SPIFFE / SPIRE Integration Guide — Using Envoy with SPIRE — https://spiffe.io/docs/latest/microservices/envoy/
+- **[230]** (C10-17) IETF RFC 8707 — Resource Indicators for OAuth 2.0 — https://datatracker.ietf.org/doc/html/rfc8707
+- **[231]** (C10-24) Amazon Web Services — Policy in Amazon Bedrock AgentCore Documentation — https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/policy.html
+- **[232]** (C10-28) Kata Containers — Open Infrastructure Foundation Architecture — https://katacontainers.io/
+- **[233]** (C10-29) Data Privacy Stack (Microsoft) — Presidio PII Protection & Anonymization — https://data-privacy-stack.github.io/presidio/
+- **[234]** (C10-30) NVIDIA — NeMo Guardrails Library Overview — https://docs.nvidia.com/nemo/guardrails/about-nemo-guardrails-library/overview
+
+- **[235]** (C10-33) Palo Alto Networks — Prisma AIRS API Intercept (AI Runtime Security) — https://pan. dev/airs/
+- **[236]** (C10-31) OWASP Foundation — OWASP AI Exchange — https://owaspai.org/
+- **[237]** (C11-17) Shunyu Yao et al. (Sierra Research, `arXiv:2406.12045`) — tau-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains — https://arxiv.org/abs/2406.12045
+- **[238]** (C11-29) OWASP GenAI Security Project — Top 10 for Agentic AI (`ASI08` et `ASI10`) — https://genai-security-project.github.io/crosswalk/agentic-ai-top10/
+- **[239]** (C11-30) OWASP GenAI Security Project — LLM10:2025 Unbounded Consumption — https://genai.owasp.org/llmrisk/llm102025-unbounded-consumption/
+- **[240]** (C11-01) OpenTelemetry — Semantic Conventions for GenAI Agent and Framework Spans — https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/gen-ai-agent-spans.md
+- **[241]** (C11-14) Anthropic Engineering — Demystifying Evals for AI Agents — https://www.anthropic. com/research/demystifying-evals-for-ai-agents
+- **[242]** (C11-24) Google SRE Workbook — Alerting on SLOs (Multiwindow, Multi-Burn-Rate Alerts) — https://sre.google/workbook/alerting-on-slos/
+- **[243]** (C11-32) Resilience4j Documentation — CircuitBreaker Finite State Machine — https://resilience 4j.readme.io/docs/circuitbreaker
+- **[244]** (C11-10) IETF RFC 8693 — OAuth 2.0 Token Exchange — https://datatracker.ietf.org/doc/html/rfc8693
+- **[245]** (C11-11) CNCF SPIFFE — SPIFFE Overview — https://spiffe.io/docs/latest/spiffe-about/overview/
+- **[246]** (C11-12) OpenTelemetry Collector Contrib — Redaction Processor — https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/redactionprocessor
+- **[247]** (C11-26) NIST AI 100-1 — Artificial Intelligence Risk Management Framework (AI RMF 1.0) — https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf
+- **[248]** (C11-07) OpenTelemetry Blog (Guangya Liu & Sujay Solomon) — AI Agent Observability: Evolving Standards and Best Practices — https://opentelemetry.io/blog/2025/ai-agent-observability/
+- **[249]** (C11-02) OpenTelemetry — Semantic Conventions for GenAI Tool Execution (`execute_tool`) — https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/execute-tool.md
+- **[250]** (C11-35) OpenTelemetry — Semantic Conventions for Generative AI Model Spans (`gen-ai-spans.md`) — https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/gen-ai-spans.md
+- **[251]** (C11-08) W3C Recommendation — Trace Context — https://www.w3.org/TR/trace-context/
+- **[252]** (C11-03) OpenTelemetry — Semantic Conventions for Model Context Protocol (`MCP`) — https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/mcp.md
+- **[253]** (C11-04) OpenTelemetry — Semantic Conventions for Agent2Agent Protocol (`A2A`) — https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/a2a.md
+- **[254]** (C11-36) OpenTelemetry Collector Contrib — Transform Processor (`OTTL`) — https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/transformprocessor
+- **[255]** (C11-09) OpenTelemetry Documentation — Baggage — https://opentelemetry.io/docs/concepts/signals/baggage/
+
+- **[256]** (C11-05) OpenTelemetry — Semantic Conventions for GenAI Inference Token Metrics — https://github.com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/gen-ai-token-metrics.md
+- **[257]** (C11-06) OpenTelemetry — Semantic Conventions for Generative AI Metrics — https://github. com/open-telemetry/semantic-conventions-genai/blob/main/docs/gen-ai/gen-ai-metrics.md
+- **[258]** (C11-13) OpenTelemetry Collector Contrib — Tail Sampling Processor — https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/tailsamplingprocessor
+- **[259]** (C11-15) Google Agent Development Kit (`ADK`) — Evaluation Criteria — https://adk.dev/evaluate/criteria/
+- **[260]** (C11-23) Langfuse Documentation — Evaluation Overview — https://langfuse.com/docs/evaluation/overview
+- **[261]** (C11-16) Google Agent Development Kit (`ADK`) — Environment Simulation for Evaluations — https://adk.dev/evaluate/environment_simulation/
+- **[262]** (C11-19) UK AI Security Institute (`AISI`) — Inspect AI Sandboxing — https://inspect.aisi.org.uk/sandboxing.html
+- **[263]** (C11-18) Model Context Protocol — MCP Inspector — https://modelcontextprotocol.io/docs/2026-07-28/tools/inspector
+- **[264]** (C11-20) Lianmin Zheng et al. (NeurIPS 2023, `arXiv:2306.05685`) — Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena — https://arxiv.org/abs/2306.05685
+- **[265]** (C11-37) Yang Liu et al. (EMNLP 2023, `arXiv:2303.16634`) — G-Eval: NLG Evaluation using GPT-4 with Better Human Alignment — https://arxiv.org/abs/2303.16634
+- **[266]** (C11-22) Aman Singh Thakur et al. (`arXiv:2406.12624`) — Judging the Judges: Evaluating Alignment and Vulnerabilities in LLMs-as-Judges — https://arxiv.org/abs/2406.12624
+- **[267]** (C11-21) Shreya Shankar et al. (ACM UIST 2024, `arXiv:2404.12272`) — Who Validates the Validators? Aligning LLM-Assisted Evaluation of LLM Outputs with Human Preferences — https://arxiv.org/abs/2404.12272
+- **[268]** (C11-25) Evidently AI — 5 Methods to Detect Drift in ML Embeddings — https://www.evidentlyai. com/blog/embedding-drift-detection
+- **[269]** (C11-28) LangChain / LangGraph Documentation — Time Travel & Checkpoints — https://docs. langchain.com/oss/python/langgraph/use-time-travel
+- **[270]** (C11-27) Temporal Documentation — Testing Suite & Workflow Replay (`Replayer`) — https://docs.temporal.io/develop/python/best-practices/testing-suite
+- **[271]** (C11-33) OpenAI Agents SDK (`openai-agents-python`) — Running Agents, `max_turns` & Guardrails — https://openai.github.io/openai-agents-python/running_agents/
+- **[272]** (C11-34) LangChain / LangGraph Documentation — Graph API (`recursion_limit`) — https://docs.langchain.com/oss/python/langgraph/graph-api
+- **[273]** (C11-31) Martin Fowler — Circuit Breaker — https://martinfowler.com/bliki/CircuitBreaker.html
+- **[274]** (C12-17) FinOps Foundation — FinOps for AI Overview — https://www.finops.org/wg/finops-for-ai-overview/
+- **[275]** (C12-01) Microsoft Cloud Adoption Framework — Architecture and Governance for AI Agents — https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ai-agents/architecture-governance
+
+- **[276]** (C12-05) Cloud Security Alliance (CSA) — Agentic AI Governance & NIST AI Agent Standards Mapping — https://labs.cloudsecurityalliance.org/wp-content/uploads/2026/03/governance-nist-ai-agent-standards-agentic-governance-v1-csa-styled.pdf
+- **[277]** (C12-02) Microsoft Learn — Microsoft Entra Agent ID & Agent Registry Documentation — https://learn.microsoft.com/en-us/entra/agent-id/
+- **[278]** (C12-03) Bureau du surintendant des institutions financières (BSIF / OSFI) — Guideline E-23: Model Risk Management (2027) — https://www.osfi-bsif.gc.ca/en/guidance/guidance-library/guideline-e-23-model-risk-management-2027
+- **[279]** (C12-04) AWS Industries Blog — Mirroring Your Organization with Multi-Agent AI for FSI Risk Assessment — https://aws.amazon.com/blogs/industries/mirroring-your-organization-with-multi-agent-ai-for-fsi-risk-assessment/
+- **[280]** (C12-14) NIST — AI RMF: Generative Artificial Intelligence Profile (NIST AI 600-1) — https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf
+- **[281]** (C12-06) LégisQuébec — Loi sur la protection des renseignements personnels dans le secteur privé (RLRQ, c. P-39.1, modifiée par la Loi 25) — https://www.legisquebec.gouv.qc.ca/fr/document/lc/P-39.1
+- **[282]** (C12-10) Secrétariat du Conseil du Trésor du Canada (Portail du gouvernement ouvert) — Algorithmic Impact Assessment (Directive on Automated Decision-Making) — https://open.canada.ca/data/en/dataset/5423054a-093c-4239-85be-fa0b36ae0b2e
+- **[283]** (C12-08) Commissariat à la protection de la vie privée du Canada (CPVP / OPC) — Principles for Responsible, Trustworthy and Privacy-Protective Generative AI Technologies — https://www.priv. gc.ca/en/privacy-topics/technology/artificial-intelligence/gd_principles_ai/
+- **[284]** (C12-11) Commission européenne — Regulatory Framework for AI (Regulation (EU) 2024/1689) — https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai
+- **[285]** (C12-15) Microsoft Compliance — ISO/IEC 42001:2023 Artificial Intelligence Management System (AIMS) — https://learn.microsoft.com/en-us/compliance/regulatory/offering-iso-42001
+- **[286]** (C12-07) Gouvernement du Québec — Décision fondée exclusivement sur un traitement automatisé — https://www.quebec.ca/gouvernement/travailler-gouvernement/normes-gouvernance-pratiques-internes/protection-des-renseignements-personnels/technologie-et-droit-a-la-protection-des-renseignements-personnels/decision-traitement-automatise
+- **[287]** (C12-09) Parlement du Canada (LEGISinfo) — Projet de loi C-27 (44e législature, 1re session) : Loi de 2022 sur la mise en œuvre de la Charte du numérique — https://www.parl.ca/legisinfo/en/bill/44-1/c-27
+- **[288]** (C12-12) European Commission AI Act Service Desk — Timeline for the Implementation of the EU AI Act (including Digital Omnibus on AI) — https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act
+- **[289]** (C12-13) NIST — Artificial Intelligence Risk Management Framework (AI RMF 1.0, NIST AI 100-1) — https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf
+- **[290]** (C12-16) AWS Config Developer Guide — Conformance Pack for ISO/IEC 42001:2023 — https://docs.aws.amazon.com/config/latest/developerguide/managed-cpack-iso-42001-2023.html
+- **[291]** (C12-19) FinOps Foundation — Unit Economics Capability — https://www.finops.org/framework/capabilities/unit-economics/
+- **[292]** (C12-21) FinOps Foundation — Cost Estimation of AI Workloads — https://www.finops.org/wg/cost-estimation-of-ai-workloads/
+
+- **[293]** (C12-23) Anthropic Claude Platform Docs — Prompt Caching — https://platform.claude.com/docs/en/build-with-claude/prompt-caching
+- **[294]** (C12-24) OpenAI API Docs — Prompt Caching — https://developers.openai.com/api/docs/guides/prompt-caching
+- **[295]** (C12-27) AWS News Blog — Amazon Bedrock Intelligent Prompt Routing and Prompt Caching — https://aws.amazon.com/blogs/aws/reduce-costs-and-latency-with-amazon-bedrock-intelligent-prompt-routing-and-prompt-caching-preview/
+- **[296]** (C12-25) Google AI Studio Docs — Gemini Context Caching — https://aistudio.google.com/docs/caching
+- **[297]** (C12-26) Redis Blog — What is Semantic Caching? A Complete Guide — https://redis.io/blog/how-to-cache-semantic-search/
+- **[298]** (C12-28) Chen, L., Zaharia, M., & Zou, J. — FrugalGPT: How to Use Large Language Models While Reducing Cost and Improving Performance (`arXiv:2305.05176`) — https://arxiv.org/abs/2305.05176
+- **[299]** (C12-29) Ong, I. et al. (LMSYS Org) — RouteLLM: An Open-Source Framework for Cost-Effective LLM Routing — https://www.lmsys.org/blog/2024-07-01-routellm/
+- **[300]** (C12-18) FinOps Foundation — FinOps Open Cost & Usage Specification (FOCUS) — https://focus.finops.org/
+- **[301]** (C12-22) OpenTelemetry — Generative AI Semantic Conventions (`semantic-conventions-genai`) — https://github.com/open-telemetry/semantic-conventions-genai
+- **[302]** (C12-20) FinOps Foundation — Invoicing & Chargeback Capability — https://www.finops.org/framework/capabilities/invoicing-chargeback/
+- **[303]** (C12-30) Microsoft Learn — Provisioned Throughput Units (PTUs) in Azure OpenAI — https://learn.microsoft.com/en-us/azure/foundry/openai/concepts/provisioned-throughput
+- **[304]** (C12-31) Commission européenne — EU Data Act (Regulation (EU) 2023/2854) — https://digital-strategy.ec.europa.eu/en/policies/data-act
+- **[305]** (C13-03) DORA (Google Cloud) — Capabilities: Platform Engineering — https://dora.dev/capabilities/platform-engineering/
+- **[306]** (C13-01) CNCF TAG App Delivery — CNCF Platforms White Paper — https://tag-app-delivery. cncf.io/whitepapers/platforms/
+- **[307]** (C13-02) Team Topologies — Key Concepts and Organizational Design — https://teamtopologies. com/key-concepts
+- **[308]** (C13-04) Backstage (CNCF) — Software Templates (Scaffolder) — https://backstage.io/docs/features/software-templates/
+- **[309]** (C13-06) Syntasso Kratix — Platform APIs and Promises Framework — https://docs.kratix.io/
+- **[310]** (C13-05) Crossplane (CNCF) — Documentation v2.4 (Control Plane & Compositions) — https://docs.crossplane.io/latest/
+- **[311]** (C13-07) Agent Router (ex-Envoy AI Gateway) — Capabilities Documentation (v1.3) — https://theagentrouter.ai/docs/capabilities/
+- **[312]** (C13-09) LiteLLM — AI Gateway Proxy Documentation — https://docs.litellm.ai/docs/proxy/quick_start
+- **[313]** (C13-08) Kubernetes SIG-Network — Gateway API Inference Extension — https://gateway-api-inference-extension.sigs.k8s.io/
+- **[314]** (C13-10) vLLM — V1 Process Architecture Overview — https://docs.vllm.ai/en/latest/design/arch_overview/
+
+- **[315]** (C13-13) llm-d (v1.0) — Distributed Kubernetes Inference Architecture — https://llm-d.ai/docs/architecture
+- **[316]** (C13-11) vLLM — Automatic Prefix Caching (APC) — https://docs.vllm.ai/en/latest/features/automatic_prefix_caching/
+- **[317]** (C13-12) vLLM — Disaggregated Prefilling (Experimental) — https://docs.vllm.ai/en/latest/features/disagg_prefill/
+- **[318]** (C13-14) NVIDIA — NIM Operator Overview — https://docs.nvidia.com/nim-operator/latest/index.html
+- **[319]** (C13-15) NVIDIA — NIM Operator: Air-Gapped Environments — https://docs.nvidia.com/nim-operator/latest/air-gap.html
+- **[320]** (C13-16) OpenGitOps (CNCF) — GitOps Principles (v1.0.0) — https://opengitops.dev/
+- **[321]** (C13-17) Argo CD — Core Concepts & Declarative Reconciliation — https://argo-cd.readthedocs. io/en/stable/core_concepts/
+- **[322]** (C13-22) Langfuse — Prompt Management Overview — https://langfuse.com/docs/prompt-management/overview
+- **[323]** (C13-23) Promptfoo — Testing Prompts with GitHub Actions — https://www.promptfoo.dev/docs/integrations/github-action/
+- **[324]** (C13-24) AGNTCY — Open Agentic Schema Framework (OASF) Validation — https://docs.agntcy. org/oasf/validation/
+- **[325]** (C13-25) Model Context Protocol Registry — Canonical `server.schema.json` Specification — https://raw.githubusercontent.com/modelcontextprotocol/registry/main/docs/reference/server-json/draft/server.schema.json
+- **[326]** (C13-18) Open Policy Agent (OPA) — Policy-as-Code Documentation — https://www.openpolicy agent.org/docs
+- **[327]** (C13-19) Conftest — Structured Configuration Policy Testing — https://www.conftest.dev/
+- **[328]** (C13-20) SLSA (OpenSSF) — Provenance Specification v1.2 — https://slsa.dev/spec/v1.2/provenance
+- **[329]** (C13-21) Sigstore — Cosign Keyless Signing & Transparency Log Overview — https://docs.sigstore. dev/cosign/signing/overview/
+- **[330]** (C13-26) Argo Rollouts — Canary Deployment Strategy — https://argo-rollouts.readthedocs.io/en/stable/features/canary/
+- **[331]** (C13-30) Kubernetes SIG-Network — Gateway API HTTP Request Mirroring — https://gateway-api.sigs.k8s.io/guides/user-guides/http-request-mirroring/
+- **[332]** (C13-29) Argo Rollouts — Traffic Management & Traffic Mirroring — https://argo-rollouts. readthedocs.io/en/stable/features/traffic-management/
+- **[333]** (C13-28) Argo Rollouts — AnalysisTemplate & Automated Verification — https://argo-rollouts. readthedocs.io/en/stable/features/analysis/
+- **[334]** (C13-27) Argo Rollouts — BlueGreen Deployment Strategy — https://argo-rollouts.readthedocs. io/en/stable/features/bluegreen/
+- **[335]** (C13-31) Temporal — Worker Versioning (Worker Deployments, Build IDs & Workflow Pinning) — https://docs.temporal.io/production-deployment/worker-deployments/worker-versioning
+- **[336]** (C13-33) Restate — Immutable Deployments & Service Versioning — https://docs.restate.dev/services/versioning
+
+- **[337]** (C13-34) Dapr — Workflow Features, Replay & Determinism — https://docs.dapr.io/developing-applications/building-blocks/workflow/workflow-features-concepts/
+- **[338]** (C13-32) Temporal — Workflow Patching API — https://docs.temporal.io/patching
+- **[339]** (C14-01) Temporal Documentation — High Availability (Multi-region & Multi-cloud Replication) — https://docs.temporal.io/cloud/high-availability
+- **[340]** (C14-04) Temporal Documentation — Worker Versioning — https://docs.temporal.io/worker-versioning
+- **[341]** (C14-05) Model Context Protocol Specification (2025-11-25) — Authorization — https://modelco ntextprotocol.io/specification/2025-11-25/basic/authorization
+- **[342]** (C14-07) Agentic AI Foundation (AAIF) — agentgateway Architecture Overview — https://agentgateway.dev/
+- **[343]** (C14-06) Internet Engineering Task Force (IETF) — RFC 8693: OAuth 2.0 Token Exchange — https://datatracker.ietf.org/doc/html/rfc8693
+- **[344]** (C14-08) Amazon Web Services — Locking Objects with Amazon S3 Object Lock (WORM) — https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html
+- **[345]** (C14-26) OpenTelemetry — Generative AI Semantic Conventions (`semantic-conventions-genai`) — https://github.com/open-telemetry/semantic-conventions-genai
+- **[346]** (C14-02) Temporal Documentation — Outages and Recovery Objectives (RTO / RPO) — https://docs.temporal.io/cloud/rpo-rto
+- **[347]** (C14-03) Temporal Documentation — Availability, Latency, and SLOs — https://docs.temporal. io/cloud/slo
+- **[348]** (C14-09) Linux Foundation / A2A Project — Agent2Agent (A2A) Protocol Specification — https://a2a-protocol.org/latest/specification/
+- **[349]** (C14-10) Linux Foundation / AGNTCY — Open Infrastructure for the Internet of Agents (OASF, ADS, SLIM) — https://docs.agntcy.org/
+- **[350]** (C14-11) Solace Documentation — Data Center Replication for Disaster Recovery & Sync/Async Modes — https://docs.solace.com/Features/DR-Replication/Data-Center-Replication-Overview.md
+- **[351]** (C14-12) Solace — What is an Event Mesh? (Dynamic Message Routing & Hybrid Connectivity) — https://solace.com/what-is-an-event-mesh/
+- **[352]** (C14-13) Confluent Platform Documentation — Cluster Linking for Multi-Datacenter & Hybrid Replication — https://docs.confluent.io/platform/current/multi-dc-deployments/cluster-linking/index.html
+- **[353]** (C14-17) Kubernetes SIG Network — Gateway API Inference Extension (`EPP` & `InferencePool`) — https://gateway-api-inference-extension.sigs.k8s.io/
+- **[354]** (C14-18) CNCF `llm-d` — Distributed Kubernetes-Native LLM Inference Stack (`vLLM`) — https://llm-d.ai/
+- **[355]** (C14-16) NVIDIA Confidential Computing — Confidential Containers (`CoCo`) Reference Architecture — https://docs.nvidia.com/confidential-computing/containers.md
+- **[356]** (C14-21) OpenFGA (CNCF Incubating) — Fine-Grained Authorization Engine Inspired by Google Zanzibar — https://github.com/openfga/openfga
+- **[357]** (C14-19) Qdrant Documentation — Multitenancy & Tenant Isolation Strategies — https://qdrant. tech/documentation/manage-data/multitenancy/
+- **[358]** (C14-20) PostgreSQL Documentation — Row Security Policies (`RLS`) — https://www.postgresql. org/docs/current/ddl-rowsecurity.html
+
+- **[359]** (C14-14) Kubernetes SIG Apps — agent-sandbox Architecture & Lifecycle Management — https://github.com/kubernetes-sigs/agent-sandbox
+- **[360]** (C14-15) Firecracker MicroVM — Official Performance & Isolation Specification (`SPECIFICATION.md`) — https://github.com/firecracker-microvm/firecracker/blob/main/SPECIFICATION.md
+- **[361]** (C14-22) AWS Well-Architected Framework (Reliability Pillar) — Disaster Recovery (`DR`) Objectives — https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/disaster-recovery-dr-objectives.html
+- **[362]** (C14-23) Microsoft Azure Well-Architected Framework — Architecture Strategies for Disaster Recovery — https://learn.microsoft.com/en-us/azure/well-architected/reliability/disaster-recovery
+- **[363]** (C14-24) FinOps Foundation — FinOps for AI Overview — https://www.finops.org/wg/finops-for-ai-overview/
+- **[364]** (C14-25) Team Topologies — Key Concepts and Organizational Design — https://teamtopologies. com/key-concepts
+- **[365]** (C15-01) Camunda 8 Documentation — Ad-hoc sub-processes — https://docs.camunda.io/docs/components/modeler/bpmn/ad-hoc-subprocesses/
+- **[366]** (C15-05) UiPath — Business Orchestration and Automation Platform (Agentic Automation) — https://www.uipath.com/platform/agentic-automation
+- **[367]** (C15-06) Salesforce MuleSoft — Agent Fabric (Agent Registry, MCP Bridge & Multi-Agent Orchestration) — https://www.salesforce.com/mulesoft/agent-fabric/
+- **[368]** (C15-18) RAND Corporation (Ryseff, De Bruhl, Newberry) — The Root Causes of Failure for Artificial Intelligence Projects and How They Can Succeed (RRA2680-1) — https://www.rand.org/pubs/research_reports/RRA2680-1.html
+- **[369]** (C15-25) Vivek Acharya — Governing the Agentic Enterprise: A Governance Maturity Model for Managing AI Agent Sprawl in Business Operations (AAGMM, arXiv:2604.16338) — https://arxiv.org/abs/2604.16338
+- **[370]** (C15-15) Anthropic — Building effective agents — https://www.anthropic.com/research/building-effective-agents
+- **[371]** (C15-22) Google Cloud Architecture Center — Choose a design pattern for your agentic AI system — https://cloud.google.com/architecture/choose-design-pattern-agentic-ai-system
+- **[372]** (C15-26) Microsoft Cloud Adoption Framework — AI agent adoption strategy — https://learn. microsoft.com/en-us/azure/cloud-adoption-framework/ai-agents/
+- **[373]** (C15-02) Camunda 8 Documentation — AI Agent connector — https://docs.camunda.io/docs/components/connectors/out-of-the-box-connectors/agentic-ai-aiagent/
+- **[374]** (C15-04) Camunda 8 Documentation — Process instance migration — https://docs.camunda.io/docs/components/concepts/process-instance-migration/
+- **[375]** (C15-07) Kong Documentation — Kong AI Gateway — https://docs.konghq.com/gateway/latest/ai-gateway/
+- **[376]** (C15-03) Camunda 8 Documentation — Robotic process automation (RPA) — https://docs. camunda.io/docs/components/rpa/overview/
+- **[377]** (C15-08) Microsoft Learn — Power Automate Introduction to desktop flows (RPA) — https://learn. microsoft.com/en-us/power-automate/desktop-flows/introduction
+- **[378]** (C15-23) AWS Well-Architected Generative AI Lens — Design principles — https://docs.aws. amazon.com/wellarchitected/latest/generative-ai-lens/design-principles.html
+
+- **[379]** (C15-12) Microsoft Azure Architecture Center — Anti-Corruption Layer pattern — https://learn. microsoft.com/en-us/azure/architecture/patterns/anti-corruption-layer
+- **[380]** (C15-14) OpenAI — Practices for Governing Agentic AI Systems — https://cdn.openai.com/papers/practices-for-governing-agentic-ai-systems.pdf
+- **[381]** (C15-28) Microsoft Cloud Adoption Framework — Architecture and governance for AI agents — https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ai-agents/architecture-governance
+- **[382]** (C15-29) Microsoft Cloud Adoption Framework — Operational standards for AI agents — https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ai-agents/operational-standards
+- **[383]** (C15-09) Martin Fowler — Strangler Fig Application — https://martinfowler.com/bliki/Strangle rFigApplication.html
+- **[384]** (C15-10) AWS Prescriptive Guidance — Strangler fig pattern — https://docs.aws.amazon.com/prescriptive-guidance/latest/cloud-design-patterns/strangler-fig.html
+- **[385]** (C15-11) Microsoft Azure Architecture Center — Strangler Fig pattern — https://learn.microsoft. com/en-us/azure/architecture/patterns/strangler-fig
+- **[386]** (C15-21) Bharani Subramaniam & Martin Fowler — Emerging Patterns in Building GenAI Products — https://martinfowler.com/articles/gen-ai-patterns/
+- **[387]** (C15-13) Amazon SageMaker AI Developer Guide — Shadow tests — https://docs.aws.amazon. com/sagemaker/latest/dg/shadow-tests.html
+- **[388]** (C15-27) Microsoft Cloud Adoption Framework — Organizational readiness for AI agents — https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ai-agents/organizational-readiness
+- **[389]** (C15-17) Cemri et al. (UC Berkeley) — Why Do Multi-Agent LLM Systems Fail? (MAST, arXiv:2503.13657) — https://arxiv.org/abs/2503.13657
+- **[390]** (C15-19) Microsoft AI Red Team — New whitepaper outlines the taxonomy of failure modes in AI agents — https://www.microsoft.com/en-us/security/blog/2025/04/24/new-whitepaper-outlines-the-taxonomy-of-failure-modes-in-ai-agents/
+- **[391]** (C15-20) OWASP GenAI Security Project — OWASP Top 10 for Agentic AI (ASI01–ASI10) — https://genai-security-project.github.io/crosswalk/agentic-ai-top10/
+- **[392]** (C15-16) Cognition (Walden Yan) — Don’t Build Multi-Agents — https://cognition.ai/blog/dont-build-multi-agents
+- **[393]** (C15-24) AWS Prescriptive Guidance — Levels in the generative AI maturity model — https://docs. aws.amazon.com/prescriptive-guidance/latest/strategy-gen-ai-maturity-model/overview-levels.html
+- **[394]** (C15-30) NIST AI Resource Center — NIST AI RMF Playbook — https://airc.nist.gov/airmf-resources/playbook/
