@@ -1,0 +1,84 @@
+' Fig. 60. – Architecture de l'usine logicielle Agentic SDLC et modernisation patrimoniale Strangler Fig : extraction AST/SCIP, séparation bâtisseur/oracle/critique et bascule Shadow Mirroring.
+@startuml
+title Usine Logicielle Agentique (Agentic SDLC) & Modernisation Patrimoniale Strangler Fig (RPG / COBOL)
+
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+
+rectangle "Phase 1 — Extraction Neuro-Symbolique & Cartographie d'Impact Déterministe" as Phase1 #F8FAFC;line:1E293B {
+  rectangle P1A #FFFFFF;line:475569 [
+    **Socle Patrimonial (IBM i / Mainframe)**
+    Sources RPG ILE, COBOL, DB2/400, JCL
+    Journaux d'exécution historiques réels
+    Règles implicites non documentées
+  ]
+  rectangle P1B #FFFFFF;line:2563EB [
+    **Indexeur AST / SCIP & Graphe Appel**
+    Analyse statique exacte des dépendances
+    Découpage des sous-domaines isolables
+    Zéro oubli d'effet de bord table
+  ]
+  rectangle P1C #FFFFFF;line:7C3AED [
+    **Agent Spécificateur & Caractérisation**
+    Synthèse invariants Apache Ossie / DMN
+    Génération Golden Master (10k–100k cas)
+    Oracle de parité entrée/sortie figé
+  ]
+  P1A -[#1E293B]right-> P1B
+  P1B -[#1E293B]right-> P1C
+}
+
+rectangle "Phase 2 — Pipeline Agentic SDLC à Séparation des Devoirs (OpenSandbox Isolé)" as Phase2 #EFF6FF;line:2563EB {
+  rectangle P2A #FFFFFF;line:2563EB [
+    **Agent Bâtisseur (Worktree Dédié)**
+    Implémente service cible (Rust/Go/TS)
+    Expose contrat MCP typé idempotent
+    Aucun droit d'écriture sur les tests d'or
+    Interdiction d'auto-approbation
+  ]
+  rectangle P2B #FFFFFF;line:1E293B [
+    **Portes Déterministes Non-IA**
+    Compilateur strict + SAST + SBOM
+    Tests de mutation (>= 85 % tués)
+    Parité centime près sur Golden Master
+    Preuve objective reproductible
+  ]
+  rectangle P2C #FFFFFF;line:7C3AED [
+    **Critique Contradictoire & Architecte**
+    Modèle famille distincte (anti-biais)
+    Audit concurrence, fuites & sécurité
+    Signature finale par ingénieur humain
+    Traçabilité BSIF E-23 complète
+  ]
+  P2A -[#1E293B]right-> P2B
+  P2B -[#1E293B]right-> P2C
+}
+
+rectangle "Phase 3 — Bascule Progressive Strangler Fig par Double Exécution en Ombre (Shadow Mirroring)" as Phase3 #F0FDF4;line:166534 {
+  rectangle P3A #FFFFFF;line:475569 [
+    **1. Duplication Trafic (30 jours)**
+    IBM i reste maître ; nouveau service
+    calcule en parallèle sans muter
+    Comparateur temps réel des sorties
+  ]
+  rectangle P3B #FFFFFF;line:166534 [
+    **2. Bascule Canary & CDC**
+    0 divergence sur 100 000 dossiers
+    Routage 5 % → 50 % → 100 %
+    Réplication inverse CDC de sécurité
+  ]
+  rectangle P3C #FFFFFF;line:166534 [
+    **3. Extinction Module Legacy**
+    Retrait de l'agent CUA transitoire
+    Serveur MCP natif sous 18 ms
+    Réduction dette & coûts MIPS
+  ]
+  P3A -[#1E293B]right-> P3B
+  P3B -[#1E293B]right-> P3C
+}
+
+Phase1 -[#1E293B]down-> Phase2
+Phase2 -[#1E293B]down-> Phase3
+@enduml

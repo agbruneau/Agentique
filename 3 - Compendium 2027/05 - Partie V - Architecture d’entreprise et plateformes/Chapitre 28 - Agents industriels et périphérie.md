@@ -270,7 +270,7 @@ Deux standards industriels lèvent l’ambiguïté d’un registre brut tel que 
 
 **Mesure non exploitable.** Une sonde coupée peut renvoyer une valeur figée, avec `StatusCode = Bad_SensorFailure` ou un `SourceTimestamp` nul; un outil MCP qui transmettrait ce chiffre seul induirait l’agent en erreur. Le serveur MCP rejette par défaut : il masque toute mesure dont le code n’est pas Good, sans horodatage source ou périmée.
 
-#### Extrait 28.1 — `[Schéma conceptuel]` · Serveur MCP Python en lecture seule stricte mappant l’espace sémantique OPC UA (réplica IDMZ)
+### Extrait 28.1 — `[Schéma conceptuel]` · Serveur MCP Python en lecture seule stricte mappant l’espace sémantique OPC UA (réplica IDMZ)
 
 Le serveur est en lecture seule; chaque mesure revient avec son unité, sa plage et son âge.
 

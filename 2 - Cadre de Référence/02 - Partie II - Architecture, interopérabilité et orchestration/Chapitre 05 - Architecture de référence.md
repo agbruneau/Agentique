@@ -40,25 +40,25 @@ Cette section présente la structure générale et la règle qui la tient ensemb
 > - ERP, CRM, systèmes de dossiers, entrepôts de données, SaaS : exposés tels quels, sans réécriture
 > - PLANS TRANSVERSAUX
 > - A · Identité et sécurité
-> - • Identité propre par agent (SPIFFE, OIDC)
-> - • Jetons délégués courts (RFC 8693)
-> - • Moteur de politiques, paliers d’outils
-> - • Coffre de secrets, garde-fous, DLP
-> - • Approbation humaine signée
+> - Identité propre par agent (SPIFFE, OIDC)
+> - Jetons délégués courts (RFC 8693)
+> - Moteur de politiques, paliers d’outils
+> - Coffre de secrets, garde-fous, DLP
+> - Approbation humaine signée
 > - B · Observabilité, évaluation, FinOps
-> - • Traces OpenTelemetry (GenAI)
-> - • Contexte W3C de bout en bout
-> - • Budgets, coût par tâche réussie
+> - Traces OpenTelemetry (GenAI)
+> - Contexte W3C de bout en bout
+> - Budgets, coût par tâche réussie
 > - C · Gouvernance et registre
-> - • Registre des agents et serveurs MCP
-> - • Classes de risque, niveaux N0 à N4
-> - • Cycle de vie et homologation
-> - • Dérogations, indicateurs
-> - • Comité d’architecture et des
+> - Registre des agents et serveurs MCP
+> - Classes de risque, niveaux N0 à N4
+> - Cycle de vie et homologation
+> - Dérogations, indicateurs
+> - Comité d’architecture et des
 > - risques agentiques
 > - Demandes descendantes (mandant, trace, plafonds) Résultats et artefacts remontants
-> - • Journal d’audit chaîné et ancré
-> - • Évaluation continue (3 étages)
+> - Journal d’audit chaîné et ancré
+> - Évaluation continue (3 étages)
 > - Interdit : un agent n’atteint jamais un système ou un outil sans passer par la passerelle et le catalogue, hors fonction locale P0-P1 (EXIG-ARC-01)
 > - Mémoire de travail
 > - Ressources, mémoires épisodique et sémantique →

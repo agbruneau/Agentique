@@ -1,0 +1,38 @@
+' Figure 22 — Évaluation en trois paliers (2 - Cadre de Référence, ch. 10, p. 180)
+' Source : cadre CRE-IA-2026-01
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 11
+skinparam nodesep 35
+skinparam ranksep 18
+
+together {
+  rectangle "<color:#FFFFFF><b>Étage E3</b></color>\n<color:#FFFFFF>Production, en continu</color>\n<color:#FFFFFF>échantillon 5–10 %</color>" as E3 #0F2744;line:0F2744
+  rectangle "**Mesure en production**\n100 % des traces en erreur, relance ou refus\nd’approbation; juges automatisés hors du chemin\ncritique et revue humaine; détection de dérive" as M3 #F8FAFC;line:CBD5E1
+  E3 -[#94A3B8]right- M3
+}
+
+together {
+  rectangle "<color:#FFFFFF><b>Étage E2 — Trajectoires</b></color>\n<color:#FFFFFF>préproduction, jeu de référence</color>\n<color:#FFFFFF>50 scénarios au moins, cas adverses</color>" as E2 #0F7682;line:0F7682
+  rectangle "**Mesure de trajectoire**\nbons outils, bon ordre, bons arguments;\nancrage factuel dans les résultats d’outils;\nrespect des garde-fous et du budget" as M2 #F8FAFC;line:CBD5E1
+  E2 -[#94A3B8]right- M2
+}
+
+together {
+  rectangle "<color:#FFFFFF><b>Étage E1 — Contrats déterministes</b></color>\n<color:#FFFFFF>à chaque modification : schémas MCP, cartes</color>\n<color:#FFFFFF>d’agent, outils simulés, règles de passerelle</color>" as E1 #1B5E9E;line:1B5E9E
+  rectangle "**Mesure déterministe**\ntests de contrat et d’instantané du catalogue;\ntests d’injection de fautes des sagas;\ntests des politiques de la passerelle" as M1 #F8FAFC;line:CBD5E1
+  E1 -[#94A3B8]right- M1
+}
+
+E3 -[hidden]down-> E2
+E2 -[hidden]down-> E1
+M3 -[hidden]down-> M2
+M2 -[hidden]down-> M1
+
+legend bottom left
+  <color:#5A469B>Tout changement de modèle, d’invite, d’outil ou de version de protocole relance les étages E1 et E2.</color>
+endlegend
+@enduml

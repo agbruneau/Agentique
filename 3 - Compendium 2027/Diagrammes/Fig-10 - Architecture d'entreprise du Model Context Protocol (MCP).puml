@@ -6,8 +6,14 @@ left to right direction
 skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
+skinparam rectangle<<invis>> {
+  BackgroundColor transparent
+  BorderColor transparent
+  FontColor transparent
+  FontSize 1
+}
 
-rectangle LeftCol #FFFFFF;line:FFFFFF {
+rectangle " " as LeftCol <<invis>> {
   rectangle "Hôte Agentique (MCP Host)\nWorker Temporal, Goose ou Application Métier" as Host #EFF6FF;line:2563EB {
     rectangle Portabilite #FFFFFF;line:93C5FD [
       **Portabilité Cognitive (Standards AAIF)**
@@ -32,8 +38,8 @@ rectangle LeftCol #FFFFFF;line:FFFFFF {
       Approbation de l'hôte obligatoire avant exécution
     ]
 
-    Portabilite -[hidden]down-> Connecteurs
-    Connecteurs -[hidden]down-> Primitives
+    Portabilite -[hidden]left-> Connecteurs
+    Connecteurs -[hidden]left-> Primitives
   }
 
   rectangle WebMCP #FEF2F2;line:DC2626 [
@@ -44,7 +50,7 @@ rectangle LeftCol #FFFFFF;line:FFFFFF {
     Exécution locale dans l'onglet actif (zéro scraping)
   ]
 
-  Host -[hidden]down-> WebMCP
+  Host -[hidden]left-> WebMCP
 }
 
 rectangle "agentgateway\nPlan de Données MCP (AAIF)" as Gateway #FFFFFF;line:9A3412 {
@@ -76,12 +82,12 @@ rectangle "agentgateway\nPlan de Données MCP (AAIF)" as Gateway #FFFFFF;line:9A
     & Coupe-circuit d'erreurs
   ]
 
-  Transport -[hidden]down-> Identite
-  Identite -[hidden]down-> Autorisation
-  Autorisation -[hidden]down-> ObsFinOps
+  Transport -[hidden]left-> Identite
+  Identite -[hidden]left-> Autorisation
+  Autorisation -[hidden]left-> ObsFinOps
 }
 
-rectangle RightCol #FFFFFF;line:FFFFFF {
+rectangle " " as RightCol <<invis>> {
   rectangle SAP #ECFDF5;line:15803D [
     **Serveur MCP — SAP S/4HANA**
     • 8 Tools orientés intention métier
@@ -114,17 +120,19 @@ rectangle RightCol #FFFFFF;line:FFFFFF {
     Zéro accès réseau sortant non autorisé
   ]
 
-  SAP -[hidden]down-> Snowflake
-  Snowflake -[hidden]down-> ServiceNow
-  ServiceNow -[hidden]down-> OpenSandbox
+  SAP -[hidden]left-> Snowflake
+  Snowflake -[hidden]left-> ServiceNow
+  ServiceNow -[hidden]left-> OpenSandbox
 }
 
-Host -[#2563EB]-> Gateway : **Streamable HTTP**\nPOST /mcp (Tools,\nResources, Prompts)
-Gateway .[#C2410C].> Host : **Flux SSE Serveur**\nSampling, Elicitation\n& Notifications
-Host .[#475569].> OpenSandbox : Exécution confinée des scripts/ Agent Skills (stdio local isolé)
+Connecteurs -[#2563EB]-> Transport : **Streamable HTTP**\nPOST /mcp (Tools,\nResources, Prompts)
+Connecteurs <.[#C2410C]. Autorisation : **Flux SSE Serveur**\nSampling, Elicitation\n& Notifications
+Primitives .[#475569].> OpenSandbox : Exécution confinée des scripts/ Agent Skills (stdio local isolé)
 
-Gateway -[#15803D]-> SAP
-Gateway -[#15803D]-> Snowflake
-Gateway -[#15803D]-> ServiceNow
+Transport -[#15803D]-> SAP
+Identite -[#15803D]-> Snowflake
+Autorisation -[#15803D]-> ServiceNow
+WebMCP -[hidden]-> ObsFinOps
+ObsFinOps -[hidden]-> OpenSandbox
 
 @enduml

@@ -127,9 +127,7 @@ Le cadre réglementaire européen **eIDAS 2.0** ancre cette logique dans le droi
 
 La couche cryptographique sous-jacente entre simultanément dans une **transition de fond**. Anticipant la menace que ferait peser un calculateur quantique sur les algorithmes asymétriques actuels, le **NIST** a publié en août 2024 ses premiers standards post-quantiques : un mécanisme d’encapsulation de clés et deux mécanismes de signature.
 
-Deux précisions de statut. *(a)* Ces standards sont **publiés** — c’est un fait daté, non une annonce. *(b)* En revanche, les **jalons de migration** que le même organisme associe à cette transition sont **visés**, jamais *fixés*,
-
-et le document qui les porte a son propre statut, qu’il faut citer avec lui. Écrire qu’une date de dépréciation est « fixée » serait attribuer à une projection l’autorité d’une norme. Le ch. 21, qui prend l’horloge post-quantique pour objet, porte cette distinction comme règle de rédaction.
+Deux précisions de statut. *(a)* Ces standards sont **publiés** — c’est un fait daté, non une annonce. *(b)* En revanche, les **jalons de migration** que le même organisme associe à cette transition sont **visés**, jamais *fixés*, et le document qui les porte a son propre statut, qu’il faut citer avec lui. Écrire qu’une date de dépréciation est « fixée » serait attribuer à une projection l’autorité d’une norme. Le ch. 21, qui prend l’horloge post-quantique pour objet, porte cette distinction comme règle de rédaction.
 
 Qualification — la plus importante du chapitre. Ces algorithmes sont conçus pour résister à des attaques par calculateur quantique sur la base de problèmes mathématiques dont aucune attaque quantique efficace n’est connue. Ce n’est pas la même chose qu’une preuve de résistance, et la nuance n’est pas académique : la sélection a déjà éliminé des candidats après publication de leur analyse. La formulation défendable est « résistant en l’état des attaques connues », jamais « inviolable » ni « sûr contre le quantique ».
 
@@ -201,9 +199,7 @@ Lorsque l’interopérabilité doit être garantie à l’échelle d’un **éco
 
 Cette certification transforme une compatibilité **espérée** en compatibilité **attestée** — condition d’adoption dans les secteurs régulés, comme le Livre III le montrera. C’est aussi l’héritage direct de la discipline LISI que le ch. 1 § 1.2.2 relevait : l’évaluation par preuves plutôt que par déclaration d’intention.
 
-La gouvernance des normes elles-mêmes se répartit entre organismes aux périmètres complémentaires : l’IETF publie les documents des protocoles d’Internet, le W3C les recommandations du Web, OASIS et l’OMG
-
-des standards d’entreprise, l’ISO et la CEI les normes internationales. Cartographier cette répartition aide à situer la **maturité et l’autorité** d’une spécification donnée.
+La gouvernance des normes elles-mêmes se répartit entre organismes aux périmètres complémentaires : l’IETF publie les documents des protocoles d’Internet, le W3C les recommandations du Web, OASIS et l’OMG des standards d’entreprise, l’ISO et la CEI les normes internationales. Cartographier cette répartition aide à situer la **maturité et l’autorité** d’une spécification donnée.
 
 *Une recommandation finalisée, un document promu au rang de norme et un travail en cours ne portent pas le même poids contractuel.* C’est la distinction que le marqueur de ressource vivante matérialise dans tout ce dépôt, et elle est la seule protection contre une classe d’erreur très répandue : citer un brouillon comme s’il engageait ses auteurs. Le ch. 7, qui traite la généalogie et la gouvernance des standards agentiques, en fait son critère central.
 

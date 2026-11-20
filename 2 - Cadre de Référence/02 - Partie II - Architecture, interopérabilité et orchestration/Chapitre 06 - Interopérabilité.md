@@ -325,17 +325,17 @@ Dans l’entreprise, la passerelle d’agents s’insère entre les hôtes et le
 > - Streamable
 > - HTTP + TLS
 > - Passerelle d’agents
-> - • valide le jeton (audience)
-> - • compare en-têtes et corps
+> - valide le jeton (audience)
+> - compare en-têtes et corps
 > - Mcp-Method, Mcp-Name
-> - • filtre tools/list selon
+> - filtre tools/list selon
 > - les portées du jeton
-> - • applique paliers P0–P3
-> - • cache selon cacheScope
-> - • propage traceparent
-> - • bloque tout serveur
+> - applique paliers P0–P3
+> - cache selon cacheScope
+> - propage traceparent
+> - bloque tout serveur
 > - absent du catalogue
-> - • journalise chaque appel
+> - journalise chaque appel
 > - Serveur MCP de domaine
 > - Outils
 > - tools/call
@@ -358,7 +358,7 @@ Dans l’entreprise, la passerelle d’agents s’insère entre les hôtes et le
 > - POST /mcp · MCP-Protocol-Version: 2026-07-28 · Mcp-Method: tools/call · Mcp-Name: approvisionnement_creer_bon_commande
 > - Authorization: Bearer <jeton émis pour ce point d’accès de la passerelle>
 > - {"jsonrpc":"2.0","id":42,"method":"tools/call","params":{"name":"approvisionnement_creer_bon_commande","arguments":{…},
-> - • retire les clés _meta non admises
+> - retire les clés _meta non admises
 > - "_meta":{"io.modelcontextprotocol/protocolVersion":"2026-07-28","traceparent":"00-…"}}}
 > - EMA : statut Évaluer, pilotes seulement (section 6.3)
 > - →
@@ -410,7 +410,7 @@ La révision 2026-07-28 rend le protocole sans état. Pour l’exploitation, c�
 | **Requêtes à allers-retours multiples (MRTR, SEP-2322).** Les requêtes initiées par le serveur (`roots/list`, `sampling/createMessage`, `elicitation/create`) cèdent la place à un résultat `InputRequiredResult`; le client relance la requête d’origine avec les réponses et un `requestState` opaque. MRTR s’applique à `tools/call`, `resources/read` et `prompts/get`**[200]**. | Une précision ou une décision humaine s’obtient sans flux ouvert de longue durée; le `requestState` devient une entrée non fiable à protéger (EXIG-MCP-17). La relance garde la clé d’idempotence et compte pour une seule opération au budget et à l’audit; un passage soldé par `input_required` ne consomme pas le jeton d’approbation (section 8.5). |
 | **Indices de cache.** `ttlMs` et `cacheScope` obligatoires sur les résultats complets de `tools/list`, `prompts/list`, `resources/list`, `resources/templates/list`, `resources/read` (SEP-2549) et `server/discover`**[168, 201]**. | Cache de passerelle possible; un cache « private » n’est jamais partagé entre contextes d’autorisation (EXIG-MCP-03). |
 | **Abonnements.** `subscriptions/listen` remplace le point d’accès GET et `resources/subscribe`; la reprise de flux par `Last-Event-ID` est retirée**[168, 190]**. | Notifications limitées aux types demandés par le client; les méthodes GET et DELETE ne servent plus. |
-| **Extensions officielles.** Selon le journal des modifications de la révision 2026-07-28, les tâches longues quittent le cœur pour l’extension officielle `io.` `modelcontextprotocol/tasks` (SEP-2663); MCP Apps est une extension officielle; toute extension est désactivée par défaut et s’active explicitement des deux côtés**[168, 169, 191, 202]**. | Liste d’extensions autorisées au catalogue, quotas pour les tâches, revue des interfaces (EXIG-MCP-04). |
+| **Extensions officielles.** Selon le journal des modifications de la révision 2026-07-28, les tâches longues quittent le cœur pour l’extension officielle `io.modelcontextprotocol/tasks` (SEP-2663); MCP Apps est une extension officielle; toute extension est désactivée par défaut et s’active explicitement des deux côtés**[168, 169, 191, 202]**. | Liste d’extensions autorisées au catalogue, quotas pour les tâches, revue des interfaces (EXIG-MCP-04). |
 | **Schémas.** `inputSchema` et `outputSchema` acceptent tout mot-clé de JSON Schema 2020-12 (SEP-2106), dialecte par défaut; un autre dialecte peut être déclaré par `$schema`**[168, 197, 201]**. | Contrats plus expressifs; validateurs à durcir contre les références réseau (EXIG-MCP-19). |
 | **Cycle de vie.** États *Active*, *Deprecated* et *Removed* (SEP-2596) : une fonctionnalité dépréciée reste dans la spécification au moins douze mois, ou au moins 90 jours en cas de retrait accéléré pour un risque de sécurité actif (avis de sécurité publié ou exploitation documentée)**[34, 196]**. | Migrations planifiées au catalogue, avec échéances (EXIG-MCP-22). |
 | **Dépréciations et retraits.** Sont dépréciés Roots, Sampling, la journalisation protocolaire, l’enregistrement dynamique de clients (DCR), l’ancien transport HTTP+SSE et les valeurs `includeContext` « thisServer » et « allServers »; `ping`, `logging/setLevel` et `notifications/roots/list_changed` sont retirés directement, comme conséquences du passage sans état (SEP-2575) : la politique de cycle de vie, adoptée dans la même révision, ne vise pas ces retraits, et la journalisation protocolaire dépréciée n’a plus de réglage de niveau. Le retrait de Roots, de Sampling, de la journalisation et du DCR est possible à partir de la première révision publiée le 28 juillet 2027 ou après (celui d’`includeContext` suit Sampling; celui du transport HTTP+SSE, trois mois après que la SEP-2596 atteint l’état final, soit dès le début de septembre 2026, cette SEP étant finale depuis le 3 juin 2026 : annexe H)**[168, 196]**. | Paramètres d’outil ou URI de ressource au lieu de Roots; appels aux modèles par la passerelle de modèles au lieu de Sampling; sortie d’erreur standard ou OpenTelemetry au lieu de la journalisation protocolaire. |
@@ -440,7 +440,7 @@ Pourquoi : les extensions sont désactivées par défaut et s’identifient par 
 
 Chaque primitive répond à un besoin distinct. Une **ressource** convient quand on sait quelle entité charger : `crm://comptes/9482/sommaire` est déclarée sans effet par le serveur, classée au catalogue comme une lecture (palier P0 ou P1) et se met en cache selon `ttlMs`. Un **outil** convient aux recherches dynamiques, aux calculs et aux écritures, sous un contrat d’entrée strict. Une **invite** publie une procédure normalisée d’un domaine, par exemple la vérification d’un nouveau fournisseur, pour que chaque agent n’ait pas à la réécrire; elle se gère comme la mémoire procédurale, c’est-à-dire comme du code versionné et revu (section 5.5).
 
-La granularité compte autant que le choix de la primitive. Un serveur qui recopie une API de soixante opérations en soixante outils encombre le contexte du modèle et multiplie les occasions de choisir le mauvais outil ou le mauvais paramètre. Un outil `approvisionnement_creer_bon_commande` , qui valide en une seule opération le fournisseur, le centre de coûts et les lignes, se gouverne mieux et se teste plus facilement. Les équipes ne réécrivent pas leurs services REST : des adaptateurs de composition traduisent les opérations OpenAPI pertinentes en outils orientés tâche, qui valident les règles métier (section 5.2 et EXIG-MCP-06).
+La granularité compte autant que le choix de la primitive. Un serveur qui recopie une API de soixante opérations en soixante outils encombre le contexte du modèle et multiplie les occasions de choisir le mauvais outil ou le mauvais paramètre. Un outil `approvisionnement_creer_bon_commande`, qui valide en une seule opération le fournisseur, le centre de coûts et les lignes, se gouverne mieux et se teste plus facilement. Les équipes ne réécrivent pas leurs services REST : des adaptateurs de composition traduisent les opérations OpenAPI pertinentes en outils orientés tâche, qui valident les règles métier (section 5.2 et EXIG-MCP-06).
 
 Lorsque les outils deviennent nombreux, les bonnes pratiques de MCP recommandent à l’hôte, au-delà d’un seuil de l’ordre de 1 à 5 % de la fenêtre de contexte, d’offrir un méta-outil de recherche et de ne charger les définitions complètes qu’au besoin, en les ajoutant après le point de rupture du cache plutôt qu’en
 
@@ -494,7 +494,7 @@ La spécification prescrit des jetons porteurs; elle n’exige ni mTLS ni DPoP, 
 
 Tout serveur MCP, hormis un serveur local en stdio sur un poste de développement (EXIG-MCP-08), **DOIT** exiger une autorisation OAuth conforme à la spécification MCP de la révision de référence épinglée au catalogue (valeur initiale : 2026-07-28) : métadonnées de ressource protégée (RFC 9728),
 
-indicateur de ressource (RFC 8707) portant l’URI canonique, vérification de l’audience à chaque requête et jeton transmis uniquement par l’en-tête `Authorization`. Chaque serveur publié séparément a sa propre URI canonique; en mode agrégé, les portées sont préfixées par l’identifiant du serveur au catalogue, et la passerelle vérifie que chaque appel vise un serveur couvert par les portées du jeton. Les clients MCP de l’entreprise **DOIVENT** employer PKCE avec S256 (en vérifiant que les métadonnées du serveur d’autorisation annoncent `code_challenge_methods_supported` et en refusant de poursuivre sinon) et, avant d’échanger le code d’autorisation, valider `iss` (RFC 9207) s’il est présent, rejeter la réponse qui en est dépourvue alors que les métadonnées du serveur d’autorisation annoncent son support et, face à un serveur d’autorisation qui ne l’annonce pas, employer une `redirect_uri` distincte par serveur d’autorisation et vérifier l’émetteur attendu pour la transaction (RFC 9700). Les serveurs d’autorisation de l’entreprise **DOIVENT** publier ces annonces et toujours émettre `iss` (avec `authorization_response_` `iss_parameter_supported: true` ).
+indicateur de ressource (RFC 8707) portant l’URI canonique, vérification de l’audience à chaque requête et jeton transmis uniquement par l’en-tête `Authorization`. Chaque serveur publié séparément a sa propre URI canonique; en mode agrégé, les portées sont préfixées par l’identifiant du serveur au catalogue, et la passerelle vérifie que chaque appel vise un serveur couvert par les portées du jeton. Les clients MCP de l’entreprise **DOIVENT** employer PKCE avec S256 (en vérifiant que les métadonnées du serveur d’autorisation annoncent `code_challenge_methods_supported` et en refusant de poursuivre sinon) et, avant d’échanger le code d’autorisation, valider `iss` (RFC 9207) s’il est présent, rejeter la réponse qui en est dépourvue alors que les métadonnées du serveur d’autorisation annoncent son support et, face à un serveur d’autorisation qui ne l’annonce pas, employer une `redirect_uri` distincte par serveur d’autorisation et vérifier l’émetteur attendu pour la transaction (RFC 9700). Les serveurs d’autorisation de l’entreprise **DOIVENT** publier ces annonces et toujours émettre `iss` (avec `authorization_response_iss_parameter_supported: true`).
 
 Pourquoi : la spécification laisse l’autorisation facultative**[209]**; le cadre la rend obligatoire, car un outil sans contrôle d’accès ouvre directement les systèmes d’enregistrement, et l’émission de `iss` protège contre la confusion entre serveurs d’autorisation.
 
@@ -572,7 +572,7 @@ selon celle que déclare l’appelant. La passerelle fonde ses décisions d’au
 
 Pourquoi : la spécification impose ce rejet à tout serveur qui traite le corps et recommande à un intermédiaire dont la politique repose sur ces en-têtes de rejeter les requêtes d’une révision antérieure, qui n’imposait pas cette validation**[190]**.
 
-Dans MCP, le code HTTP 403 signale un en-tête `Origin` invalide (transport) ou des portées invalides ou des permissions insuffisantes (autorisation); une divergence d’en-têtes relève du code 400**[190, 209]**. Le champ `_meta`, lui, ne peut pas être purgé en bloc : les clés `io.modelcontextprotocol/protocolVersion` et `io.` `modelcontextprotocol/clientCapabilities` y sont obligatoires, sous peine de rejet par l’erreur −32602, et les clés `traceparent`, `tracestate` et `baggage` y transportent le contexte de trace selon W3C Trace Context et W3C Baggage (SEP-414)**[162, 168]**. Les conventions OpenTelemetry pour MCP, au niveau Development, nomment les *spans* d’après la méthode appelée (attribut `mcp.method.name`)**[386]**; leur emploi est réglé à la section 10.1. Un serveur ne se fie pas non plus à une capacité que le client n’a pas déclarée : il renvoie alors l’erreur −32021**[162]**.
+Dans MCP, le code HTTP 403 signale un en-tête `Origin` invalide (transport) ou des portées invalides ou des permissions insuffisantes (autorisation); une divergence d’en-têtes relève du code 400**[190, 209]**. Le champ `_meta`, lui, ne peut pas être purgé en bloc : les clés `io.modelcontextprotocol/protocolVersion` et `io.modelcontextprotocol/clientCapabilities` y sont obligatoires, sous peine de rejet par l’erreur −32602, et les clés `traceparent`, `tracestate` et `baggage` y transportent le contexte de trace selon W3C Trace Context et W3C Baggage (SEP-414)**[162, 168]**. Les conventions OpenTelemetry pour MCP, au niveau Development, nomment les *spans* d’après la méthode appelée (attribut `mcp.method.name`)**[386]**; leur emploi est réglé à la section 10.1. Un serveur ne se fie pas non plus à une capacité que le client n’a pas déclarée : il renvoie alors l’erreur −32021**[162]**.
 
 `EXIG-MCP-16` **· DOIT**
 
@@ -696,7 +696,7 @@ Pourquoi : un contrat d’échange unique évite une intégration ad hoc par pai
 
 ### Carte d’agent 1.0
 
-La carte d’agent *(Agent Card)* est le contrat public d’un agent : un document JSON qui dit qui il est, ce qu’il sait faire, où le joindre et comment s’authentifier. Un agent exposé la publie à `https://{domaine}/.` `well-known/agent-card.json` , URI unique par nom d’hôte : chaque agent exposé reçoit donc son propre nom d’hôte (p. ex. `risque-credit.agents.ent.ca`), à défaut de quoi le champ `tenant` distingue les agents d’un même point d’accès; l’ancien chemin `/.well-known/agent.json` appartient aux versions 0.1 et 0.2, désormais obsolètes**[30, 68]**. La définition normative des objets est le fichier `a2a.proto`, sérialisé en ProtoJSON; les énumérations s’écrivent en majuscules préfixées, par exemple `TASK_STATE_WORKING`**[68]**. Le tableau 19 résume les champs et les règles du cadre; un exemple complet figure à l’annexe C.
+La carte d’agent *(Agent Card)* est le contrat public d’un agent : un document JSON qui dit qui il est, ce qu’il sait faire, où le joindre et comment s’authentifier. Un agent exposé la publie à `https://{domaine}/.well-known/agent-card.json`, URI unique par nom d’hôte : chaque agent exposé reçoit donc son propre nom d’hôte (p. ex. `risque-credit.agents.ent.ca`), à défaut de quoi le champ `tenant` distingue les agents d’un même point d’accès; l’ancien chemin `/.well-known/agent.json` appartient aux versions 0.1 et 0.2, désormais obsolètes**[30, 68]**. La définition normative des objets est le fichier `a2a.proto`, sérialisé en ProtoJSON; les énumérations s’écrivent en majuscules préfixées, par exemple `TASK_STATE_WORKING`**[68]**. Le tableau 19 résume les champs et les règles du cadre; un exemple complet figure à l’annexe C.
 
 *Tableau 19 — Champs de la carte d’agent A2A 1.0 et règles du cadre*
 
@@ -964,7 +964,7 @@ Sur Kafka, la liaison CloudEvents offre un mode binaire (attributs, sauf `dataco
 
 **Enveloppe CloudEvents complète**
 
-Tout événement produit ou consommé par un agent **DOIT** respecter CloudEvents 1.0 et porter, en plus des quatre attributs requis, `time` et, dès que l’événement porte `data`, `datacontenttype` et `dataschema` (exigence du cadre; pour un événement par référence, `dataschema` décrit la ressource que vise `dataref`). Un événement d’un système existant que consomme un agent passe par un adaptateur de mise en conformité. Le `type` **DOIT** être un nom en domaine inversé qui inclut sa version (exigence du cadre; la norme recommande seulement le préfixe en domaine inversé), par exemple `ca.ent.logistique.alerte.` `rupture.v1` .
+Tout événement produit ou consommé par un agent **DOIT** respecter CloudEvents 1.0 et porter, en plus des quatre attributs requis, `time` et, dès que l’événement porte `data`, `datacontenttype` et `dataschema` (exigence du cadre; pour un événement par référence, `dataschema` décrit la ressource que vise `dataref`). Un événement d’un système existant que consomme un agent passe par un adaptateur de mise en conformité. Le `type` **DOIT** être un nom en domaine inversé qui inclut sa version (exigence du cadre; la norme recommande seulement le préfixe en domaine inversé), par exemple `ca.ent.logistique.alerte.rupture.v1`.
 
 Pourquoi : un consommateur doit savoir, sans ouvrir la charge utile, ce qu’il reçoit, quand le fait s’est produit (ou, si cet instant est inconnu, l’heure que la source retient de façon uniforme) et quel schéma le valide.
 

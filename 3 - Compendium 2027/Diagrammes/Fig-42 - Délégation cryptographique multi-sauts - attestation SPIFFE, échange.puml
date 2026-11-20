@@ -25,7 +25,7 @@ rectangle "Plan d'Autorité Zero Trust : Attestation de Charge de Travail & Serv
   SPIRE -[hidden]right-> EntraSTS
 }
 
-rectangle "Chaîne d'Exécution à Portée Monotone Décroissante (P2 ⊂ P1 ⊂ P0)" as ChaineExecution #EFF6FF;line:2563EB {
+rectangle "Chaîne d'Exécution à Portée Monotone Décroissante (P2 <font name=Arial>⊂</font> P1 <font name=Arial>⊂</font> P0)" as ChaineExecution #EFF6FF;line:2563EB {
   rectangle Sujet #FFFFFF;line:334155 [
     **1. Sujet Initiateur**
     Employé authentifié OIDC

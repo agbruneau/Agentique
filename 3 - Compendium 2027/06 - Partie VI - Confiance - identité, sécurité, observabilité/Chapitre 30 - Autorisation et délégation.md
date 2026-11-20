@@ -454,8 +454,8 @@ Le mandat d’un utilisateur humain, ou d’un événement métier authentifié,
 > - Journalise sub + act
 > - dans Guidewire / DB2
 > - Garanties Cryptographiques du Jeton T2 (Sender-Constrained JWT) :
-> - • Identité initiale préservée (sub = emp-8841) • Généalogie complète et non répudiable des agents traversés (act imbriqué)
-> - • Jeton inutilisable en cas d'exfiltration grâce à cnf (empreinte clé privée DPoP jkt ou certificat mTLS x5t#S256) • TTL ≤ 300 s
+> - Identité initiale préservée (sub = emp-8841) • Généalogie complète et non répudiable des agents traversés (act imbriqué)
+> - Jeton inutilisable en cas d'exfiltration grâce à cnf (empreinte clé privée DPoP jkt ou certificat mTLS x5t#S256) • TTL ≤ 300 s
 > - Escalade Hors Bande sur Exception de Politique (Montant > 5 000 $ CAD) — Protocole OpenID CIBA
 > - 1. Suspension Durable (Temporal)
 > - POST /bc-authorize + condensat tx_hash

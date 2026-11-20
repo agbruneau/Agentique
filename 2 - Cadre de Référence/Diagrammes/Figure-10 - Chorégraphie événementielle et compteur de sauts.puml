@@ -1,0 +1,43 @@
+' Figure 10 — Chorégraphie événementielle et compteur de sauts (2 - Cadre de Référence, ch. 6, p. 89)
+' Source : élaboration du cadre; enveloppe CloudEvents 1.0
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 11
+skinparam nodesep 35
+skinparam ranksep 32
+
+together {
+  rectangle "**Détecteur de rupture**\npublie l’alerte" as Det #EDE8F5;line:5A469B
+  rectangle "**Approvisionnement**\nconsomme, republie" as App #EDE8F5;line:5A469B
+  rectangle "**Règle de chaque consommateur**\nsi xagenthopcount ≥ xagentmaxhops\n→ lettres mortes + alerte\nsinon traiter, publier hop + 1" as Regle #FFFFFF;line:CBD5E1
+  Det -[hidden]right-> App
+  App -[hidden]right-> Regle
+}
+
+rectangle "<color:#0F7682><b>Bus d’événements de l’entreprise · sujets régis par contrats AsyncAPI · enveloppe CloudEvents</b></color>" as Bus #E2F4F0;line:0F7682
+
+together {
+  rectangle "**Planification**\nconsomme, republie" as Plan #EDE8F5;line:5A469B
+  rectangle "**Agent N**\nreçoit 3/4, republie 4/4" as AgentN #EDE8F5;line:5A469B
+  rectangle "**File de lettres mortes**\nsaut 4/4 non traité\n+ alerte d’observabilité" as DLQ #FCE8EB;line:9C2F39
+  Plan -[hidden]right-> AgentN
+  AgentN -[hidden]right-> DLQ
+}
+
+Det -[#0F2744]down-> Bus : <color:#0F7682><b>saut 1/4</b></color>
+Bus -[#0F2744]down-> Plan : <color:#0F7682><b>saut 2/4</b></color>
+App <-[#0F2744]down- Bus : <color:#B45309><b>saut 3/4</b></color>
+Regle -[hidden]down-> Bus
+Bus -[#0F2744]down-> AgentN
+Bus -[hidden]down-> DLQ
+AgentN -[#9C2F39]right-> DLQ : <color:#9C2F39>saut 4/4 non traité</color>
+Det -[hidden]right-> App
+Plan -[hidden]right-> AgentN
+
+legend bottom left
+  Chaque événement porte le contexte de la trace poursuivie (traceparent), l’agent d’origine, l’initiateur et le centre de coûts.
+endlegend
+@enduml

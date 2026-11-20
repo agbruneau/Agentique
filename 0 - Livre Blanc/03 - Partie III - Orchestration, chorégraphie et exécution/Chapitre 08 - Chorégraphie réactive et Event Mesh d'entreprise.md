@@ -137,7 +137,7 @@ En revanche, appliquée sans garde-fous à des chaînes métier longues ou multi
 > - Agent X (Triage)
 > - Agent Y (Enrichissement)
 > - Agent Z (Décision)
-> - 1 . Démarre instance
+> - 1. Démarre instance
 > - 2. Commande corrélée
 > - 3. Commande suivante
 > - 4. Commande finale

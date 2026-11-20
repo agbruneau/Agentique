@@ -2,161 +2,162 @@
 @startuml
 title Six Topologies Canoniques d'Orchestration et de Chorégraphie Multi-Agents (2027)\nDu contrôle hiérarchique centralisé à l'allocation par marché interne et à l'encapsulation réglementaire BPMN/DMN
 
-top to bottom direction
+left to right direction
 skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
-
-rectangle Row1 #FFFFFF;line:FFFFFF {
-  rectangle "1. Superviseur hiérarchique" as Card1 #F8FAFC;line:2563EB {
-    rectangle "**Superviseur (Router)**" as C1_Sup #1D4ED8;line:1D4ED8;text:FFFFFF
-    rectangle C1_Row #F8FAFC;line:F8FAFC {
-      rectangle "Agent CRM" as C1_CRM #FFFFFF;line:2563EB
-      rectangle "Agent ERP" as C1_ERP #FFFFFF;line:2563EB
-      rectangle "Agent Finance" as C1_Fin #FFFFFF;line:2563EB
-      C1_CRM -[hidden]right-> C1_ERP
-      C1_ERP -[hidden]right-> C1_Fin
-    }
-    C1_Sup -[#2563EB]-> C1_CRM
-    C1_Sup -[#2563EB]-> C1_ERP
-    C1_Sup -[#2563EB]-> C1_Fin
-
-    rectangle C1_Meta #FFFFFF;line:CBD5E1 [
-      • Complexité messages : O(k) délégations A2A
-      • Force : Gouvernance et traçabilité simples
-      • Limite : Goulot contextuel sans Claim-Check
-      **Cible : Triage client & routage multi-silos**
-    ]
-    C1_Row -[hidden]down-> C1_Meta
-  }
-
-  rectangle "2. Planificateur–Exécuteur–Critique" as Card2 #F8FAFC;line:15803D {
-    rectangle C2_Top #F8FAFC;line:F8FAFC {
-      rectangle "Planificateur" as C2_Plan #FFFFFF;line:15803D
-      rectangle "**Exécuteur**" as C2_Exec #14532D;line:14532D;text:FFFFFF
-      rectangle "**Critique**\n(Autre LLM)" as C2_Crit #FFF7ED;line:9A3412
-      C2_Plan -[#14532D]-> C2_Exec
-      C2_Exec -[#14532D]-> C2_Crit
-    }
-    rectangle "Sortie validée + Cedar" as C2_Out #ECFDF5;line:15803D
-    C2_Crit .[#9A3412].> C2_Exec : Rejet (N ≤ 3)
-    C2_Crit -[#15803D]-> C2_Out
-
-    rectangle C2_Meta #FFFFFF;line:CBD5E1 [
-      • Familles LLM distinctes (anti-biais corrélé)
-      • Force : Réduction drastique d'hallucinations
-      • Limite : Coût 2,2× à 3,8× ; borne N stricte
-      **Cible : Souscription, code & analyse juridique**
-    ]
-    C2_Out -[hidden]down-> C2_Meta
-  }
-
-  rectangle "3. DAG dynamique typé (Plan & Run)" as Card3 #F8FAFC;line:2563EB {
-    rectangle C3_Graph #F8FAFC;line:F8FAFC {
-      rectangle "**Compil.**" as C3_Comp #1D4ED8;line:1D4ED8;text:FFFFFF
-      rectangle C3_Mid #F8FAFC;line:F8FAFC {
-        rectangle "Nœud A" as C3_A #FFFFFF;line:2563EB
-        rectangle "Nœud B" as C3_B #FFFFFF;line:2563EB
-        rectangle "Nœud C" as C3_C #FFFFFF;line:2563EB
-        C3_A -[hidden]down-> C3_B
-        C3_B -[hidden]down-> C3_C
-      }
-      rectangle "**Agrégat**" as C3_Ag #0F172A;line:0F172A;text:FFFFFF
-      C3_Comp -[#2563EB]-> C3_A
-      C3_Comp -[#2563EB]-> C3_B
-      C3_Comp -[#2563EB]-> C3_C
-      C3_A -[#2563EB]-> C3_Ag
-      C3_B -[#2563EB]-> C3_Ag
-      C3_C -[#2563EB]-> C3_Ag
-    }
-
-    rectangle C3_Meta #FFFFFF;line:CBD5E1 [
-      • Tri topologique de Kahn (zéro cycle garanti)
-      • Force : Parallélisme maximal (latence P95 min)
-      • Limite : Replanification partielle si surprise
-      **Cible : Enrichissement 360° & audit multi-sources**
-    ]
-    C3_Graph -[hidden]down-> C3_Meta
-  }
-
-  Card1 -[hidden]right-> Card2
-  Card2 -[hidden]right-> Card3
+skinparam rectangle<<invis>> {
+  BackgroundColor transparent
+  BorderColor transparent
+  FontColor transparent
+  FontSize 1
 }
 
-rectangle Row2 #FFFFFF;line:FFFFFF {
-  rectangle "4. Tableau noir (Shared Blackboard)" as Card4 #F8FAFC;line:9A3412 {
-    rectangle C4_BB #FFF7ED;line:9A3412 [
-      **État Partagé Versionné (CAS / ETag)**
-      Hypothèses • Preuves • Prédicat d'arrêt
-    ]
-    rectangle C4_Agents #F8FAFC;line:F8FAFC {
-      rectangle "Agent Logs" as C4_L #FFFFFF;line:334155
-      rectangle "Agent Réseau" as C4_R #FFFFFF;line:334155
-      rectangle "Agent Métriques" as C4_M #FFFFFF;line:334155
-      C4_L -[hidden]right-> C4_R
-      C4_R -[hidden]right-> C4_M
-    }
-    C4_L -[#9A3412]-> C4_BB
-    C4_R -[#9A3412]-> C4_BB
-    C4_M -[#9A3412]-> C4_BB
-
-    rectangle C4_Meta #FFFFFF;line:CBD5E1 [
-      • Découplage total entre experts opportunistes
-      • Force : Convergence d'indices hétérogènes
-      • Limite : Conflits d'écriture sans verrou CAS
-      **Cible : Diagnostic RCA cyber, télécoms & OT**
-    ]
-    C4_Agents -[hidden]down-> C4_Meta
+rectangle "1. Superviseur hiérarchique" as Card1 #F8FAFC;line:2563EB {
+  rectangle "**Superviseur (Router)**" as C1_Sup #1D4ED8;line:1D4ED8;text:FFFFFF
+  rectangle " " as C1_Row <<invis>> {
+    rectangle "Agent CRM" as C1_CRM #FFFFFF;line:2563EB
+    rectangle "Agent ERP" as C1_ERP #FFFFFF;line:2563EB
+    rectangle "Agent Finance" as C1_Fin #FFFFFF;line:2563EB
+    C1_CRM -[hidden]-> C1_ERP
+    C1_ERP -[hidden]-> C1_Fin
   }
+  C1_Sup -[#2563EB]left-> C1_CRM
+  C1_Sup -[#2563EB]left-> C1_ERP
+  C1_Sup -[#2563EB]left-> C1_Fin
 
-  rectangle "5. Enchères Contract Net (CNP)" as Card5 #F8FAFC;line:15803D {
-    rectangle "**Adjudicateur (RFP)**" as C5_Adj #0F172A;line:0F172A;text:FFFFFF
-    rectangle C5_Bids #F8FAFC;line:F8FAFC {
-      rectangle "Soumission A\n0,42 $ | 9 s" as C5_A #FFFFFF;line:94A3B8
-      rectangle "**Soumission B**\n**0,19 $ | 4 s**" as C5_B #ECFDF5;line:15803D
-      rectangle "Soumission C\n0,31 $ | 14 s" as C5_C #FFFFFF;line:94A3B8
-      C5_A -[hidden]right-> C5_B
-      C5_B -[hidden]right-> C5_C
-    }
-    C5_Adj .[#475569].> C5_A
-    C5_Adj -[#15803D]-> C5_B : Award
-    C5_Adj .[#475569].> C5_C
-
-    rectangle C5_Meta #FFFFFF;line:CBD5E1 [
-      • Appel d'offres typé : Coût + SLA + Confiance
-      • Force : Arbitrage économique et charge temps réel
-      • Limite : Surcharge protocole (Annonce/Bid/Award)
-      **Cible : Logistique multi-dépôts & achats B2B**
-    ]
-    C5_Bids -[hidden]down-> C5_Meta
-  }
-
-  rectangle "6. Hybride BPMN/DMN + Cellule Agent" as Card6 #F8FAFC;line:1E293B {
-    rectangle C6_Flow #F8FAFC;line:F8FAFC {
-      rectangle "**DMN**\nAdmissibilité" as C6_DMN #F8FAFC;line:334155
-      rectangle "Cellule Bornée" as C6_Cel #EFF6FF;line:2563EB {
-        rectangle "Agent Instruction" as C6_Inst #FFFFFF;line:2563EB
-        rectangle "Vérif. Critique" as C6_Verif #FFFFFF;line:15803D
-        C6_Inst -[hidden]down-> C6_Verif
-      }
-      rectangle "**Commit**\nou HOTL" as C6_Com #F8FAFC;line:334155
-      C6_DMN -[#334155]-> C6_Cel
-      C6_Cel -[#334155]-> C6_Com
-    }
-
-    rectangle C6_Meta #FFFFFF;line:CBD5E1 [
-      • Épine dorsale ISO 19510 + cellule probabiliste
-      • Force : Auditabilité prudentielle 100 % prouvable
-      • Limite : Modélisation initiale plus exigeante
-      **Cible : Banque/Assurance (BSIF E-23) & GxP**
-    ]
-    C6_Flow -[hidden]down-> C6_Meta
-  }
-
-  Card4 -[hidden]right-> Card5
-  Card5 -[hidden]right-> Card6
+  rectangle C1_Meta #FFFFFF;line:CBD5E1 [
+    • Complexité messages : O(k) délégations A2A
+    • Force : Gouvernance et traçabilité simples
+    • Limite : Goulot contextuel sans Claim-Check
+    **Cible : Triage client & routage multi-silos**
+  ]
+  C1_Row -[hidden]left-> C1_Meta
 }
 
-Row1 -[hidden]down-> Row2
+rectangle "2. Planificateur–Exécuteur–Critique" as Card2 #F8FAFC;line:15803D {
+  rectangle " " as C2_Top <<invis>> {
+    rectangle "Planificateur" as C2_Plan #FFFFFF;line:15803D
+    rectangle "**Exécuteur**" as C2_Exec #14532D;line:14532D;text:FFFFFF
+    rectangle "**Critique**\n(Autre LLM)" as C2_Crit #FFF7ED;line:9A3412
+    C2_Plan -[#14532D]-> C2_Exec
+    C2_Exec -[#14532D]-> C2_Crit
+  }
+  rectangle "Sortie validée + Cedar" as C2_Out #ECFDF5;line:15803D
+  C2_Exec <-[#9A3412]. C2_Crit : Rejet (N ≤ 3)
+  C2_Crit -[#15803D]left-> C2_Out
+
+  rectangle C2_Meta #FFFFFF;line:CBD5E1 [
+    • Familles LLM distinctes (anti-biais corrélé)
+    • Force : Réduction drastique d'hallucinations
+    • Limite : Coût 2,2× à 3,8× ; borne N stricte
+    **Cible : Souscription, code & analyse juridique**
+  ]
+  C2_Out -[hidden]left-> C2_Meta
+}
+
+rectangle "3. DAG dynamique typé (Plan & Run)" as Card3 #F8FAFC;line:2563EB {
+  rectangle " " as C3_Graph <<invis>> {
+    rectangle "**Compil.**" as C3_Comp #1D4ED8;line:1D4ED8;text:FFFFFF
+    rectangle "Nœud A" as C3_A #FFFFFF;line:2563EB
+    rectangle "Nœud B" as C3_B #FFFFFF;line:2563EB
+    rectangle "Nœud C" as C3_C #FFFFFF;line:2563EB
+    rectangle "**Agrégat**" as C3_Ag #0F172A;line:0F172A;text:FFFFFF
+    C3_A -[hidden]left-> C3_B
+    C3_B -[hidden]left-> C3_C
+    C3_Comp -[#2563EB]-> C3_A
+    C3_Comp -[#2563EB]-> C3_B
+    C3_Comp -[#2563EB]-> C3_C
+    C3_A -[#2563EB]-> C3_Ag
+    C3_B -[#2563EB]-> C3_Ag
+    C3_C -[#2563EB]-> C3_Ag
+  }
+
+  rectangle C3_Meta #FFFFFF;line:CBD5E1 [
+    • Tri topologique de Kahn (zéro cycle garanti)
+    • Force : Parallélisme maximal (latence P95 min)
+    • Limite : Replanification partielle si surprise
+    **Cible : Enrichissement 360° & audit multi-sources**
+  ]
+  C3_Graph -[hidden]left-> C3_Meta
+}
+
+rectangle "4. Tableau noir (Shared Blackboard)" as Card4 #F8FAFC;line:9A3412 {
+  rectangle C4_BB #FFF7ED;line:9A3412 [
+    **État Partagé Versionné (CAS / ETag)**
+    Hypothèses • Preuves • Prédicat d'arrêt
+  ]
+  rectangle " " as C4_Agents <<invis>> {
+    rectangle "Agent Logs" as C4_L #FFFFFF;line:334155
+    rectangle "Agent Réseau" as C4_R #FFFFFF;line:334155
+    rectangle "Agent Métriques" as C4_M #FFFFFF;line:334155
+    C4_L -[hidden]-> C4_R
+    C4_R -[hidden]-> C4_M
+  }
+  C4_BB <-[#9A3412]left- C4_L
+  C4_BB <-[#9A3412]left- C4_R
+  C4_BB <-[#9A3412]left- C4_M
+
+  rectangle C4_Meta #FFFFFF;line:CBD5E1 [
+    • Découplage total entre experts opportunistes
+    • Force : Convergence d'indices hétérogènes
+    • Limite : Conflits d'écriture sans verrou CAS
+    **Cible : Diagnostic RCA cyber, télécoms & OT**
+  ]
+  C4_Agents -[hidden]left-> C4_Meta
+}
+
+rectangle "5. Enchères Contract Net (CNP)" as Card5 #F8FAFC;line:15803D {
+  rectangle "**Adjudicateur (RFP)**" as C5_Adj #0F172A;line:0F172A;text:FFFFFF
+  rectangle " " as C5_Bids <<invis>> {
+    rectangle "Soumission A\n0,42 $ | 9 s" as C5_A #FFFFFF;line:94A3B8
+    rectangle "**Soumission B**\n**0,19 $ | 4 s**" as C5_B #ECFDF5;line:15803D
+    rectangle "Soumission C\n0,31 $ | 14 s" as C5_C #FFFFFF;line:94A3B8
+    C5_A -[hidden]-> C5_B
+    C5_B -[hidden]-> C5_C
+  }
+  C5_Adj .[#475569]left.> C5_A
+  C5_Adj -[#15803D]left-> C5_B : Award
+  C5_Adj .[#475569]left.> C5_C
+
+  rectangle C5_Meta #FFFFFF;line:CBD5E1 [
+    • Appel d'offres typé : Coût + SLA + Confiance
+    • Force : Arbitrage économique et charge temps réel
+    • Limite : Surcharge protocole (Annonce/Bid/Award)
+    **Cible : Logistique multi-dépôts & achats B2B**
+  ]
+  C5_Bids -[hidden]left-> C5_Meta
+}
+
+rectangle "6. Hybride BPMN/DMN + Cellule Agent" as Card6 #F8FAFC;line:1E293B {
+  rectangle " " as C6_Flow <<invis>> {
+    rectangle "**DMN**\nAdmissibilité" as C6_DMN #F8FAFC;line:334155
+    rectangle C6_Cel #EFF6FF;line:2563EB [
+      **Cellule Bornée**
+      Agent Instruction
+      ----
+      Vérif. Critique
+    ]
+    rectangle "**Commit**\nou HOTL" as C6_Com #F8FAFC;line:334155
+    C6_DMN -[#334155]-> C6_Cel
+    C6_Cel -[#334155]-> C6_Com
+  }
+
+  rectangle C6_Meta #FFFFFF;line:CBD5E1 [
+    • Épine dorsale ISO 19510 + cellule probabiliste
+    • Force : Auditabilité prudentielle 100 % prouvable
+    • Limite : Modélisation initiale plus exigeante
+    **Cible : Banque/Assurance (BSIF E-23) & GxP**
+  ]
+  C6_Flow -[hidden]left-> C6_Meta
+}
+
+C1_Fin -[hidden]-> C2_Plan
+C2_Crit -[hidden]-> C3_Comp
+C4_M -[hidden]-> C5_A
+C5_C -[hidden]-> C6_DMN
+C4_BB -[hidden]left-> C1_Meta
+C5_Adj -[hidden]left-> C2_Meta
+C6_DMN -[hidden]left-> C3_Meta
 
 @enduml

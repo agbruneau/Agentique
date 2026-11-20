@@ -344,18 +344,18 @@ L’observabilité reconstruit ainsi l’arbre causal qui relie l’intention in
 > - Export OTLP/gRPC mTLS
 > - 2. Passerelle OpenTelemetry Collector : Assainissement PII (Loi 25 / RGPD) & Analyse en Flux
 > - Processeur de Caviardage & Pseudonymisation
-> - • Masquage NAS, IBAN, courriels, téléphones
-> - • Séparation attributs gen_ai.input.messages
-> - • Condensat SHA-256 poivré des clés clients
+> - Masquage NAS, IBAN, courriels, téléphones
+> - Séparation attributs gen_ai.input.messages
+> - Condensat SHA-256 poivré des clés clients
 > - Zéro PII en clair dans les index APM
 > - Plateforme d'Observabilité & Moteur FinOps
 > - Métriques SLI/SLO, coûts jetons, graphes causaux
 > - Voûte Forensique Chiffrée (Bris de Glace)
 > - Charges complètes sous clé KMS régionale (TTL 14–30 j)
 > - Sentinelle Anti-Livelock Temps Réel
-> - • Similarité cosinus d'intentions ≥ 0,94
-> - • Répétition A2A/MCP à état constant
-> - • Dérive ratio jetons raisonnement / sortie
+> - Similarité cosinus d'intentions ≥ 0,94
+> - Répétition A2A/MCP à état constant
+> - Dérive ratio jetons raisonnement / sortie
 > - Action : Arrêt Saga + Escalade HOTL
 
 *Fig. 46. – Trace distribuée OpenTelemetry (gen_ai.*) de bout en bout et pipeline d’assainissement PII via OpenTelemetry Collector.*
@@ -489,7 +489,7 @@ En entreprise réglementée, l’architecture de référence 2027 applique le pa
 
 Ce dispositif ne prévoit aucun accès au contenu pour l’évaluation. Ce cloisonnement va au-delà de ce que retient la section 33.4 : l’exposé y prévoit une zone de contenu distincte, sous accès restreint, où les évaluateurs, humains ou automatiques, travaillent et d’où ils ne font sortir que des résultats; la boucle d’exemples d’entraînement y puise aussi, après masquage.
 
-#### Extrait 33.2 — `[Exécuté en CI]` · Pipeline OpenTelemetry Collector avec masquage PII et routage souverain
+### Extrait 33.2 — `[Exécuté en CI]` · Pipeline OpenTelemetry Collector avec masquage PII et routage souverain
 
 Le collecteur reçoit les spans en OTLP et les duplique par un connecteur. La voie assainie pseudonymise les identifiants et masque les motifs personnels; la voie forensique ne retient que les spans L3, L4 ou en erreur, qu’elle envoie vers un seau chiffré.
 
@@ -573,7 +573,7 @@ La cible de continuité causale suppose, sur les sauts A2A, un passage du contex
 
 Attendre l’épuisement passif du plafond `maxRemainingHops` gaspille latence et budget. Une boucle sémantique ne répète jamais mot pour mot la même phrase : le modèle reformule légèrement la même intention d’appel. Pour l’intercepter dès le deuxième cycle stérile, un analyseur en flux projette l’intention normalisée de chaque étape en un vecteur léger 𝐞𝑡 et évalue, sur les 𝑚 derniers pas, le score de stagnation sémantique :
 
-𝒮︀loop(𝑡) = max1≤𝑗≤𝑚cos(𝐞𝑡, 𝐞𝑡−𝑗) ⋅𝕀(Δ État (𝑡) = 0)
+𝒮︀_{loop}(𝑡) = max_{1≤𝑗≤𝑚} cos(𝐞_𝑡, 𝐞_{𝑡−𝑗}) ⋅ 𝕀(Δ État(𝑡) = 0)
 
 La similarité cosinus sur une fenêtre 𝑚= 5 capte le bégaiement direct (𝑗= 1) comme l’oscillation ping-pong entre deux agents (𝑗= 2). Le terme 𝕀(Δ État(𝑡) = 0) épargne l’agent qui itère légitimement sur plusieurs lignes de commande distinctes, puisque l’empreinte d’état métier évolue alors à chaque pas.
 

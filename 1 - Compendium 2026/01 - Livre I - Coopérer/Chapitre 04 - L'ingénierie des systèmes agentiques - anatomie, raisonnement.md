@@ -44,9 +44,7 @@ L’invariant du Livre y trouve déjà ses prises : un agent est précisément u
 
 ### 4.1.1 Qu’est-ce qu’un agent ? Définition canonique et débat terminologique
 
-Le terme souffre d’une polysémie ancienne que l’irruption des modèles de langage n’a fait qu’aggraver. *Reconnaître cette absence de consensus formel n’est pas une faiblesse rhétorique : c’est une donnée d’ingénierie*,
-
-car la frontière entre « ce qui est un agent » et « ce qui n’en est pas un » conditionne les choix d’architecture, de coût et de sécurité. Que cette absence de consensus persiste relève d’un constat sur le corpus consulté — une **absence de documentation**, non un fait négatif vérifié.
+Le terme souffre d’une polysémie ancienne que l’irruption des modèles de langage n’a fait qu’aggraver. *Reconnaître cette absence de consensus formel n’est pas une faiblesse rhétorique : c’est une donnée d’ingénierie*, car la frontière entre « ce qui est un agent » et « ce qui n’en est pas un » conditionne les choix d’architecture, de coût et de sécurité. Que cette absence de consensus persiste relève d’un constat sur le corpus consulté — une **absence de documentation**, non un fait négatif vérifié.
 
 La définition canonique est celle de Russell et Norvig (2020/2021) : un agent est tout ce qui peut être vu comme **percevant** son environnement au moyen de capteurs et **agissant** sur cet environnement au moyen d’actionneurs (effecteurs). Volontairement minimale, elle fixe le vocabulaire réutilisé partout — *perception*, *action*, et au-dessus le *but* qui rend une action préférable à une autre — et institue surtout la **boucle perception-action** comme structure invariante.
 
@@ -82,9 +80,7 @@ Ce point vaut d’être retenu, parce qu’il nomme un défaut réel des agents 
 
 Les systèmes multi-agents classiques ont posé, bien avant les modèles de langage, la question de la coordination, et ils l’ont posée sous des noms qu’il faut restituer. Le protocole du réseau contractuel de **Smith (1980)** — *The Contract Net Protocol: High-Level Communication and Control in a Distributed Problem Solver*, *IEEE Transactions on Computers*, 29(12), 1104-1113 — alloue les tâches par appel d’offres et adjudication. Les actes de langage normalisés structurant la communication par performatifs typés ont pris deux formes successives : **KQML** (Finin, Fritzson, McKay et McEntire, 1994, actes de CIKM’94, 456-463), puis **FIPA-ACL**, dont la spécification de structure de message **SC00061G** (FIPA, 2002 ; reprise par l’IEEE Computer Society en 2005) fixe l’enveloppe et dont la bibliothèque **SC00037J** énumère les actes communicatifs. Ce socle est explicitement réinterprété par les systèmes multi-agents contemporains (ch. 6 § 6.1) — et le ch. 8 montrera qu’un protocole agentique de 2025 rejoue une partie de ces choix sans toujours le savoir.
 
-**La décision séquentielle** fournit le cadre formel de la boucle sous observabilité partielle : le processus décisionnel de Markov modélise la décision quand l’état est observable, son extension partiellement obser
-
-vable — dont Kaelbling, Littman et Cassandra (1998) ont donné l’exposé de référence, *Planning and acting in partially observable stochastic domains*, *Artificial Intelligence*, 101(1-2), 99-134 — le cas, plus réaliste, où l’état n’est qu’imparfaitement observé. Un agent opérant sur le web ou un poste de travail relève **structurellement** de ce second cas : il n’observe qu’une fenêtre partielle de son environnement.
+**La décision séquentielle** fournit le cadre formel de la boucle sous observabilité partielle : le processus décisionnel de Markov modélise la décision quand l’état est observable, son extension partiellement observable — dont Kaelbling, Littman et Cassandra (1998) ont donné l’exposé de référence, *Planning and acting in partially observable stochastic domains*, *Artificial Intelligence*, 101(1-2), 99-134 — le cas, plus réaliste, où l’état n’est qu’imparfaitement observé. Un agent opérant sur le web ou un poste de travail relève **structurellement** de ce second cas : il n’observe qu’une fenêtre partielle de son environnement.
 
 **Perspective recherche.** Le branchement entre ce formalisme et les agents contemporains reste **partiellement métaphorique** : un agent ne maximise pas une fonction de valeur explicite à l’inférence, il échantillonne des actions conditionnées par un contexte. La transposition rigoureuse — apprendre une politique par renforcement multi-tours sur des trajectoires d’outils — est précisément l’objet des travaux d’entraînement agentique (§ 4.3.5), qui matérialisent le pont entre la décision séquentielle classique et l’optimisation des modèles.
 
@@ -102,9 +98,7 @@ Le Vol. I porte **trois échelles distinctes** dont la confusion serait fautive,
 
 Le principe d’ingénierie qui se dégage de ce continuum est constant et sera repris par toute la somme : minimiser la surface agentique. Ne déléguer au modèle que ce qui requiert réellement sa flexibilité, et confier au code déterministe tout ce qui peut l’être. Cette préférence pour le découplage explicite entre tuyauterie déterministe et délibération prolonge directement l’invariant : un contrat clair entre la partie figée et la partie autonome du système.
 
-**Mise en œuvre.** La règle pratique est de remonter le moins d’autonomie possible vers le modèle. Si la tâche se décrit comme un graphe d’étapes connu à l’avance, un flux l’emporte sur un agent : moins de jetons,
-
-plus de prédictibilité, surface d’attaque réduite. L’agentivité ne se justifie que lorsque la séquence d’actions ne peut être anticipée. Cet arbitrage est le cœur de la grille de décision « quand agentifier » que le ch. 43 reprend.
+**Mise en œuvre.** La règle pratique est de remonter le moins d’autonomie possible vers le modèle. Si la tâche se décrit comme un graphe d’étapes connu à l’avance, un flux l’emporte sur un agent : moins de jetons, plus de prédictibilité, surface d’attaque réduite. L’agentivité ne se justifie que lorsque la séquence d’actions ne peut être anticipée. Cet arbitrage est le cœur de la grille de décision « quand agentifier » que le ch. 43 reprend.
 
 ### 4.1.5 La frontière des capacités 2024-2026 : cadrage qualitatif
 
@@ -166,9 +160,7 @@ L’action comme code exécutable — **CodeAct**, de Wang, Chen, Yuan et coll. 
 
 ### 4.2.4 Séparation contrôleur/exécuteur et critères de choix d’architecture
 
-Le principe d’ingénierie qui sous-tend ces patrons est la séparation entre un **contrôleur** qui décide quoi faire et un **exécuteur** qui réalise les actions — déclinée en architecture **orchestrateur-travailleurs**, l’un
-
-des patrons composables que nomme Anthropic dans *Building effective agents* (§ 4.1.1), lorsque l’exécution est répartie.
+Le principe d’ingénierie qui sous-tend ces patrons est la séparation entre un **contrôleur** qui décide quoi faire et un **exécuteur** qui réalise les actions — déclinée en architecture **orchestrateur-travailleurs**, l’un des patrons composables que nomme Anthropic dans *Building effective agents* (§ 4.1.1), lorsque l’exécution est répartie.
 
 Isoler la décision de l’exécution est l’application directe du découplage au domaine agentique : le contrôleur tient la logique de but et de planification, l’exécuteur tient l’interface contractuelle vers les outils, et chacun peut évoluer sans casser l’autre.
 
@@ -229,9 +221,7 @@ La distinction de génération importe : un modèle autorégressif standard est 
 
 Pour le praticien, cette limite est structurelle et non un défaut d’invite : aucune formulation ne confère à un modèle autorégressif les propriétés de complétude d’un planificateur symbolique. Que les progrès des modèles de raisonnement ne comblent pas cet écart relève, en revanche, d’une **absence de documentation** : le socle hérité constate des progrès mesurables sans établir de borne.
 
-La voie productive consiste à employer le modèle non comme planificateur mais comme traducteur et générateur d’heuristiques. Dans ce rôle, il convertit un énoncé en langage naturel vers une représentation formelle qu’un solveur classique résout **avec ses garanties**, le modèle intervenant à nouveau pour rétro-traduire : c’est le dispositif **LLM+P** de Liu, Jiang, Zhang et coll. (2023), arXiv:2304.11477, qui traduit vers PDDL. L’architecture hybride **LLM-Modulo** de Kambhampati, Valmeekam, Guan et coll. (2024) — *LLMs Can’t Plan, But Can Help Planning in LLM-Modulo Frameworks*, arXiv:2402.01817 — place un **vérificateur**
-
-**indépendant** entre génération et acceptation : le modèle propose, un validateur externe réfute ou accepte, et seuls les plans certifiés sont exécutés.
+La voie productive consiste à employer le modèle non comme planificateur mais comme traducteur et générateur d’heuristiques. Dans ce rôle, il convertit un énoncé en langage naturel vers une représentation formelle qu’un solveur classique résout **avec ses garanties**, le modèle intervenant à nouveau pour rétro-traduire : c’est le dispositif **LLM+P** de Liu, Jiang, Zhang et coll. (2023), arXiv:2304.11477, qui traduit vers PDDL. L’architecture hybride **LLM-Modulo** de Kambhampati, Valmeekam, Guan et coll. (2024) — *LLMs Can’t Plan, But Can Help Planning in LLM-Modulo Frameworks*, arXiv:2402.01817 — place un **vérificateur indépendant** entre génération et acceptation : le modèle propose, un validateur externe réfute ou accepte, et seuls les plans certifiés sont exécutés.
 
 L’enjeu se déplace alors vers la qualité de la formalisation — un schéma de domaine erroné produit un plan valide pour le mauvais problème. C’est un déplacement du risque, non sa suppression : exactement le geste que le ch. 1 identifiait déjà dans les architectures d’intégration.
 
@@ -273,9 +263,7 @@ L’**appel de fonctions** est le mécanisme par lequel un modèle expose son in
 
 Les **sorties structurées** garantissent que l’argument respecte le schéma — typage, énumérations, champs requis —, ce qui transforme un problème de génération ouverte en un problème de remplissage contraint, plus vérifiable et plus robuste à l’analyse syntaxique. Ce déplacement est le même que celui du contrat d’API au ch. 1 § 1.4.2, et il produit le même bénéfice.
 
-Sur le plan de l’apprentissage, trois jalons marquent le passage à l’échelle, et ils ont chacun leur article de référence. **Toolformer** — Schick, Dwivedi-Yu, Dessì et coll. (2023), *Toolformer: Language Models Can*
-
-*Teach Themselves to Use Tools*, arXiv:2302.04761 — montre qu’un modèle peut **s’auto-superviser** pour décider *quand* appeler une interface, en n’insérant un appel que s’il réduit la perte de prédiction. **Gorilla** — Patil, Zhang, Wang et coll. (2023), arXiv:2305.15334 — établit que la **récupération documentaire** de descriptions d’interfaces réduit l’hallucination de signatures inexistantes. **ToolLLM** — Qin, Liang, Ye et coll. (2023), *Facilitating Large Language Models to Master 16000+ Real-world APIs*, arXiv:2307.16789 — porte l’entraînement à grande échelle sur des milliers d’interfaces réelles et étend la capacité aux chaînes d’appels multiples.
+Sur le plan de l’apprentissage, trois jalons marquent le passage à l’échelle, et ils ont chacun leur article de référence. **Toolformer** — Schick, Dwivedi-Yu, Dessì et coll. (2023), *Toolformer: Language Models Can Teach Themselves to Use Tools*, arXiv:2302.04761 — montre qu’un modèle peut **s’auto-superviser** pour décider *quand* appeler une interface, en n’insérant un appel que s’il réduit la perte de prédiction. **Gorilla** — Patil, Zhang, Wang et coll. (2023), arXiv:2305.15334 — établit que la **récupération documentaire** de descriptions d’interfaces réduit l’hallucination de signatures inexistantes. **ToolLLM** — Qin, Liang, Ye et coll. (2023), *Facilitating Large Language Models to Master 16000+ Real-world APIs*, arXiv:2307.16789 — porte l’entraînement à grande échelle sur des milliers d’interfaces réelles et étend la capacité aux chaînes d’appels multiples.
 
 Le contrat de l’outil — son schéma — est le pivot du découplage : le modèle dépend de l’interface, non de l’implémentation.
 

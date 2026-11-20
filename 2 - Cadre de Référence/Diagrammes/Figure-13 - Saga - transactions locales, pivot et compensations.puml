@@ -7,6 +7,8 @@ skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
 skinparam defaultFontSize 11
 skinparam defaultTextAlignment center
+skinparam ranksep 34
+skinparam nodesep 20
 
 package "TRANSACTIONS LOCALES (VERS L’AVANT)" as Trans #FFFFFF;line:FFFFFF {
   rectangle "**<color:#0F7682>T1 (OK)</color>**\nRéserver le transport\ncompensable" as T1 #E2F4F0;line:0F7682
@@ -19,7 +21,7 @@ package "TRANSACTIONS LOCALES (VERS L’AVANT)" as Trans #FFFFFF;line:FFFFFF {
   T3 .right. T4
 }
 
-package "COMPENSATIONS (ORDRE INVERSE, IDEMPOTENTES)" as Comp #FFFFFF;line:FFFFFF {
+package "COMPENSATIONS\n(ORDRE INVERSE, IDEMPOTENTES)" as Comp #FFFFFF;line:FFFFFF {
   rectangle "**<color:#B45309>C1</color>**\nAnnuler la réservation" as C1 #FEF3DC;line:B45309
   rectangle "**<color:#B45309>C2</color>**\nLibérer le stock" as C2 #FEF3DC;line:B45309
   rectangle "**2 échecs d’une compensation**\n→ file humaine prioritaire" as Esc #FFFFFF;line:9C2F39;line.dashed

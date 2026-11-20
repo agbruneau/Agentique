@@ -21,7 +21,7 @@
 - **S-008** — Spécification CSA « Agent Registry ». `[A, statut BROUILLON]` — Vol. II `F-08` §7.2 + Vol. III `H-03` §7.2. Publication 27 mars 2026, statut BROUILLON. *(Siège : ch. 12, 14, 15, 16.)*
 - **S-009** — BSIF, ligne directrice E-23 « Gestion du risque de modélisation (2027) ». `[A/B mixte]` — Vol. II `F-09` §7.3 + Vol. III `H-04` §7.2. Publication finale 11 sept. 2025. *(Siège : ch. 12, 14, 15, 25.)*
 - **S-010** — Rapport conjoint BSIF-ACFC. `[A]` — Vol. II `F-10` §7.3. Publication 24 sept. 2024. *(Siège : ch. 15, 25.)*
-- **S-011** — Cadre des services bancaires axés sur le consommateur. `[A]` — Vol. II `F-11` §7.4. Budget 2025. *(Note : les entrées* `F-12` *à* `F-14` *du Vol. II, non retenues au socle consolidé, ne portent pas de cote* `S-nnn`*. Siège : ch. 15, 32.)*
+- **S-011** — Cadre des services bancaires axés sur le consommateur. `[A]` — Vol. II `F-11` §7.4. Budget 2025. *(Note : les entrées `F-12` à `F-14` du Vol. II, non retenues au socle consolidé, ne portent pas de cote `S-nnn`. Siège : ch. 15, 32.)*
 - **S-012** — Microsoft Agent Framework. `[A]` — Vol. II `F-15` §7.6. GA 1.0 le 3 avril 2026. *(Succède à* `F-11` *après l’écart des entrées* `F-12` *à* `F-14` *du Vol. II non reprises au socle consolidé. Siège : ch. 14, 23.)*
 - **S-013** — Complémentarité MCP/A2A. `[A]` — Vol. II `F-16` §7.6. Seule entrée du socle du Vol. II sans aucune sensibilité temporelle — doctrine non datée par le socle au-delà de la page https://a2a-protocol.org/latest/announcing-1.0. *(Siège : ch. 8, 12, 23.)*
 - **S-014** — TD / Layer 6. `[A]` — Vol. II `F-17` §7.5. Annonce 21 mai 2026. *(Siège : ch. 35.)*

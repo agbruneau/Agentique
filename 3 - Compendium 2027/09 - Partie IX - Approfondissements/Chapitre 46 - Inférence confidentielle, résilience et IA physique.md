@@ -308,27 +308,27 @@ La réponse d’ingénierie est une partition souveraine à trois zones, piloté
 > - Disjoncteur SLA, latence, retrait API
 > - Zone A — Souveraine CA / QC
 > - Périmètre : Loi 25 & BSIF E-23
-> - • État Temporal & graphe Graphiti locaux
-> - • KV-cache isolé chiffré en mémoire
-> - • Zéro transit sous CLOUD Act non chiffré
+> - État Temporal & graphe Graphiti locaux
+> - KV-cache isolé chiffré en mémoire
+> - Zéro transit sous CLOUD Act non chiffré
 > - Enclave GPU TEE (H100 / B200)
 > - Attestation matérielle distante
 > - Libération clé HSM uniquement si
 > - mesure PCR firmware conforme
 > - Zone B — Modèles Frontières (API)
 > - Raisonnement Complexe (System-2)
-> - • Entrées expurgées de PII directe
-> - • Contrat Zero-Data-Retention (ZDR)
-> - • Normalisation Open Responses
+> - Entrées expurgées de PII directe
+> - Contrat Zero-Data-Retention (ZDR)
+> - Normalisation Open Responses
 > - Aléas Externes Surveillés :
 > - Panne régionale hyperscaler, 429 massif,
 > - dépréciation modèle ou choc tarifaire,
 > - injonction juridique extraterritoriale
 > - Zone C — Secours Open-Weights (DR)
 > - Continuité Souveraine CA & UE
-> - • Grappe vLLM / SGLang pré-chauffée
-> - • Poids ouverts audités & figés en registre
-> - • Adaptateurs de consignes pré-calibrés
+> - Grappe vLLM / SGLang pré-chauffée
+> - Poids ouverts audités & figés en registre
+> - Adaptateurs de consignes pré-calibrés
 > - Garantie Cognitive DR :
 > - RTO cognitif < 15 min sans perte d'état
 > - Schémas MCP & pass^5 pré-homologués
@@ -479,7 +479,7 @@ La section 46.4 établit que rétablir un accès ne rétablit pas un comportemen
 
 1. **Contrats normalisés et purge des états opaques** : Aucun code applicatif n’appelle le SDK propriétaire d’un fournisseur de modèles. Toute requête d’inférence emprunte l’enveloppe normalisée Open Responses (gouvernée par l’AAIF), et toute invocation d’outil respecte les schémas JSON canoniques de MCP, validés par un décodage contraint (grammaires CFG sur la grappe de secours vLLM). À mi-parcours d’une saga multi-tours, l’adaptateur Open Responses écarte les blocs de délibération chiffrés propres au fournisseur défaillant et reconstruit le contexte du modèle de secours à partir du seul journal canonique des faits et des sorties d’outils validés. Même un modèle de secours plus sobre ne peut alors émettre un appel d’outil syntaxiquement invalide.
 2. **Double profil de consignes précompilé** : Chaque agent critique L3 est homologué en CI/CD (chapitre 34) sous deux profils jumeaux, versionnés ensemble : un profil
-  nominal, optimisé pour le modèle primaire, et un profil de secours, compilé pour un modèle à poids ouverts souverain, audité et figé dans le registre interne d’artefacts de l’entreprise (par exemple avec DSPy, chapitre 47). L’homologation exige pass5DR ≥ 0, 94 ⋅pass5 nominal sur la suite 𝜏-bench du domaine. Ce profil réalise la qualification d’avance de la section 46.4.
+  nominal, optimisé pour le modèle primaire, et un profil de secours, compilé pour un modèle à poids ouverts souverain, audité et figé dans le registre interne d’artefacts de l’entreprise (par exemple avec DSPy, chapitre 47). L’homologation exige pass5_{DR} ≥ 0,94 ⋅ pass5_{nominal} sur la suite 𝜏-bench du domaine. Ce profil réalise la qualification d’avance de la section 46.4.
 3. **Grappe de secours à montée en charge élastique** : Maintenir 100 % de la capacité GPU de pointe allumée à vide doublerait la facture FinOps. Un noyau minimal reste allumé et héberge déjà les SLM quotidiens, qui couvrent immédiatement les flux vitaux P0. Des réservations capacitaires prioritaires d’instances GPU souveraines chargent les poids, préchargés dans le cache NVMe local, en moins de 180 secondes.
 4. **Resserrement prudentiel automatique des seuils HOTL** : Tant que la fabrique opère sur le modèle de secours, le moteur de politique abaisse de 15 à 25 % les plafonds financiers d’engagement autonome L3. Les cas limites les plus subtils passent temporairement aux superviseurs humains HOTL, sans interrompre le flux courant (`RPO = 0` grâce à la mise en file durable Temporal). Cette mesure donne une forme chiffrée au mode dégradé de la section 46.4.
 
@@ -487,7 +487,7 @@ Le seuil de quinze minutes de la formule n’a pas de source : c’est une cible
 
 Le temps de reprise cognitif effectif RTOcog se modélise et se vérifie lors des exercices trimestriels selon :
 
-RTOcog = 𝑡détection + 𝑡quiescence + max(𝑡GPUwarmup, 𝑡gatewayswitch) + 𝑡santécanary ≤15 min
+RTOcog = 𝑡_{détection} + 𝑡_{quiescence} + max(𝑡_{warmup}^{GPU}, 𝑡_{switch}^{gateway}) + 𝑡_{canary}^{santé} ≤ 15 min
 
 #### Extrait 46.3 — `[Exécuté en CI]` · Orchestrateur de bascule Cognitive DR sans perte de transaction (cognitive_dr_switch.py)
 
@@ -630,23 +630,23 @@ Le nœud en périphérie est le système maître de sa réalité physique imméd
 > - Coupure WAN 0 à 72 h (Site isolé / Mode Air-Gapped)
 > - Nœud Edge Industriel Durci (Autonomie Locale Complète sans Dépendance Cloud)
 > - Cellule Cognitive Embarquée
-> - • SLM 3B–8B INT4 sur NPU / GPU local
-> - • Runtime Restate / SQLite WAL local
-> - • Agent Skills hors ligne pré-chargés
-> - • Latence déterministe < 80 ms
-> - • Attestation TPM 2.0 + SPIRE local
+> - SLM 3B–8B INT4 sur NPU / GPU local
+> - Runtime Restate / SQLite WAL local
+> - Agent Skills hors ligne pré-chargés
+> - Latence déterministe < 80 ms
+> - Attestation TPM 2.0 + SPIRE local
 > - Magasin d'État CRDT & Quotas
-> - • Compteurs PN-Counter (stocks réservés)
-> - • Ensembles OR-Set (tâches assignées)
-> - • Journal d'intention signé horodaté
-> - • Enveloppe d'escrow hors ligne bornée
-> - • Zéro blocage sur perte WAN
+> - Compteurs PN-Counter (stocks réservés)
+> - Ensembles OR-Set (tâches assignées)
+> - Journal d'intention signé horodaté
+> - Enveloppe d'escrow hors ligne bornée
+> - Zéro blocage sur perte WAN
 > - Passerelle MCP ↔ ROS 2 (DDS)
-> - • Traduction missions A2A en Action ROS 2
-> - • Abstraction topologique (waypoints)
-> - • Zéro commande couple moteur par LLM
-> - • Validation pré-exécution sur carte 3D
-> - • QoS DDS temps réel fiable
+> - Traduction missions A2A en Action ROS 2
+> - Abstraction topologique (waypoints)
+> - Zéro commande couple moteur par LLM
+> - Validation pré-exécution sur carte 3D
+> - QoS DDS temps réel fiable
 > - Enveloppe Cyber-Physique Simplex (Normes ISO 10218:2025 / ISO 3691-4 / IEC 61508 SIL 3)
 > - Contrôleur Adaptatif (VLA / Nav2)
 > - Planification trajectoire optimale
@@ -762,7 +762,7 @@ Un modèle de langage ne doit pas émettre de consignes continues de bas niveau 
 
 L’arbitre évalue en continu l’invariant de distance d’arrêt en fonction de la vitesse instantanée 𝑣(𝑡), de la vitesse maximale d’approche humaine 𝑣ℎ, du temps de réaction matériel 𝑡𝑟 et de la décélération minimale garantie 𝑎min(𝑚), abaissée selon la masse embarquée 𝑚 que mesurent les jauges d’essieu :
 
-𝑑sécurité(𝑡) = (𝑣(𝑡) + 𝑣ℎ)𝑡𝑟+ 𝑣(𝑡)22 𝑎min(𝑚) + 𝑑marge ≤𝑑LiDAR(𝑡)
+𝑑_{sécurité}(𝑡) = (𝑣(𝑡) + 𝑣_ℎ)𝑡_𝑟 + 𝑣(𝑡)^2 / (2 𝑎_{min}(𝑚)) + 𝑑_{marge} ≤ 𝑑_{LiDAR}(𝑡)
 
 Dès que 𝑑LiDAR(𝑡) s’approche de 𝑑sécurité(𝑡) ou qu’une commande viole les butées articulaires, l’arbitre coupe physiquement le multiplexeur du contrôleur IA et bascule en moins d’une milliseconde sur le contrôleur de repli vérifié (niveau visé : SIL 3 / PL e), jusqu’à l’arrêt sûr complet. Simplex est un patron d’architecture, non une voie de certification : rien n’établit qu’il confère la conformité à l’ISO 10218 ni à l’IEC 61508, dont les niveaux d’intégrité ne sont pas abordés par l’exposé (section 46.7 et « Limites de ce chapitre »).
 
@@ -816,7 +816,7 @@ La distribution vers la périphérie combine TUF (section 46.8) et les signature
 - **Transport indifférent** : La confiance repose sur la chaîne cryptographique TUF, vérifiée contre les clés racines scellées dans le TPM 2.0 de la passerelle, et non sur le canal de transport. Le même lot peut donc être téléchargé pendant une fenêtre satellite nocturne de vingt minutes ou importé par une diode optique sur un site isolé classifié.
 - **Activation A/B avec retour arrière automatique** : Le lot s’installe sur la partition passive B. Au redémarrage des travailleurs locaux, une sonde exécute dix scénarios synthétiques de santé en trente secondes. Au moindre échec d’inférence ou de connexion DDS, le chien de garde matériel rebascule sur la partition A saine précédente.
 
-#### Extrait 46.6 — `[Exécuté en CI]` · Manifeste de déploiement Edge signé TUF et garde-fou MCP-ROS2 (edge-fleet-bundle.yaml)
+### Extrait 46.6 — `[Exécuté en CI]` · Manifeste de déploiement Edge signé TUF et garde-fou MCP-ROS2 (edge-fleet-bundle.yaml)
 
 Ce descripteur scelle ensemble le SLM quantifié, l’espace des points de passage autorisés pour la passerelle ROS 2 et la politique de repli hors ligne. La valeur de 72 heures du repli en L1 est une cible de conception, non un seuil sourcé : la durée de survie se calcule par site (section 46.5) :
 

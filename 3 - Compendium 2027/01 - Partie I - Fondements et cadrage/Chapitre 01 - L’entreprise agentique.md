@@ -304,8 +304,8 @@ Les exigences de 2027 découlent des impasses techniques de trois générations 
 > - L'humain reste le seul intégrateur SI
 > - Génération 3 (2026–2027) — Main-d'Œuvre d'Exécution Asynchrone Gouvernée (Event-Driven & Durable)
 > - Déclencheurs
-> - • Événement Kafka/OT
-> - • Alerte Webhook / SLA • Intention Humaine
+> - Événement Kafka/OT
+> - Alerte Webhook / SLA • Intention Humaine
 > - Plan de Contrôle Durable
 > - Temporal / Restate / Maestro
 > - État persisté • Saga • Quotas
@@ -430,20 +430,20 @@ En 2027, l’entreprise agentique insère entre les systèmes d’engagement et 
 > - Portail Client AG-UI / A2UI • Microsoft Teams (Copilot Studio) • Console Opérateur Usine (WebRTC) • Alertes IoT MQTT
 > - System of Action — Fabrique Agentique Boréal (Tissu d'Interopérabilité et d'Orchestration)
 > - Orchestration & État Durable
-> - • Workflows Temporal (Sagas inter-divisions)
-> - • Bus événementiel Kafka & Solace
-> - • Approbations HOTL via CIBA
-> - • Découplage Contrôle / Raisonnement
+> - Workflows Temporal (Sagas inter-divisions)
+> - Bus événementiel Kafka & Solace
+> - Approbations HOTL via CIBA
+> - Découplage Contrôle / Raisonnement
 > - Maillage A2A v1.0 & Sémantique
-> - • Annuaire fédéré d'Agent Cards (OASF)
-> - • Ontologie unifiée (Apache Ossie)
-> - • Mémoire bi-temporelle (Graphiti)
-> - • Délégation horizontale inter-silos
+> - Annuaire fédéré d'Agent Cards (OASF)
+> - Ontologie unifiée (Apache Ossie)
+> - Mémoire bi-temporelle (Graphiti)
+> - Délégation horizontale inter-silos
 > - Passerelle AI-Native & Sécurité
-> - • agentgateway (Proxy MCP / A2A / LLM)
-> - • Identités NHI + OAuth 2.1 OBO
-> - • Politiques Cedar / OPA + Quotas FinOps
-> - • Traces OpenTelemetry (gen_ai.*)
+> - agentgateway (Proxy MCP / A2A / LLM)
+> - Identités NHI + OAuth 2.1 OBO
+> - Politiques Cedar / OPA + Quotas FinOps
+> - Traces OpenTelemetry (gen_ai.*)
 > - Boréal Services Numériques (BSN)
 > - Salesforce Agentforce • ServiceNow
 > - Connecteurs : A2A v1.0 + Serveurs MCP

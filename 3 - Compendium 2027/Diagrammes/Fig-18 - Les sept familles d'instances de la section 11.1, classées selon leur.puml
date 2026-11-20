@@ -1,92 +1,109 @@
-' Fig. 18. – Les sept familles d'instances de la section 11.1, classées selon leur nature et selon le degré d'avancement de leur texte le plus avancé pour les agents.
+' Fig. 18. – Les sept familles d'instances de la section 11.1, classées selon leur nature et selon le degré d'avancement de leur texte le plus avancé pour les agents : les seuls textes mis en œuvre viennent de l'AAIF, et les organismes formels n'ont encore rien publié.
 @startuml
 top to bottom direction
 skinparam shadowing false
 skinparam roundcorner 8
 skinparam defaultFontName "Segoe UI"
-
-rectangle Axe #FFFFFF;line:FFFFFF {
-  rectangle " " as A_Start #FFFFFF;line:FFFFFF
-  rectangle " " as A_End #FFFFFF;line:FFFFFF
-  A_Start -[#475569]-> A_End : degré d'avancement
+skinparam rectangle<<invis>> {
+  BackgroundColor transparent
+  BorderColor transparent
+  FontColor transparent
+  FontSize 1
 }
 
-rectangle Matrice #FFFFFF;line:FFFFFF {
-  rectangle "Catégorie" as Col0 #FFFFFF;line:FFFFFF {
-    rectangle "**Fondation et\ninstances ouvertes**" as Cat1 #FFFFFF;line:FFFFFF
-    rectangle "**Organismes formels**" as Cat2 #FFFFFF;line:FFFFFF
-    rectangle "**Puissances\npubliques**" as Cat3 #FFFFFF;line:FFFFFF
-    Cat1 -[hidden]down-> Cat2
-    Cat2 -[hidden]down-> Cat3
-  }
+rectangle " " as AxL <<invis>>
+rectangle " " as AxR <<invis>>
+AxL -[#475569]right-> AxR : degré d'avancement
 
-  rectangle "Rien de propre\naux agents" as Col1 #FFFFFF;line:FFFFFF {
-    rectangle " " as E11 #FFFFFF;line:FFFFFF
-    rectangle "**ISO/IEC SC 42**" as ISO #F8FAFC;line:64748B
-    rectangle " " as E13 #FFFFFF;line:FFFFFF
-    E11 -[hidden]down-> ISO
-    ISO -[hidden]down-> E13
-  }
+rectangle " " as H0 #FFFFFF;line:FFFFFF
+rectangle "**Rien de propre**\n**aux agents**" as H1 #FFFFFF;line:FFFFFF
+rectangle "**Aucun texte publié**" as H2 #FFFFFF;line:FFFFFF
+rectangle "**Brouillons**" as H3 #FFFFFF;line:FFFFFF
+rectangle "**Textes publiés**" as H4 #FFFFFF;line:FFFFFF
 
-  rectangle "Aucun texte publié" as Col2 #FFFFFF;line:FFFFFF {
-    rectangle " " as E21 #FFFFFF;line:FFFFFF
-    rectangle UIT #F8FAFC;line:64748B [
-      **UIT-T, IEEE**
-      Sujet à l'étude;
-      projets autorisés
-    ]
-    rectangle NIST #F8FAFC;line:64748B [
-      **NIST/CAISI**
-      Consultations; document de
-      réflexion sur l'identité
-    ]
-    E21 -[hidden]down-> UIT
-    UIT -[hidden]down-> NIST
-  }
+H0 -[hidden]right-> H1
+H1 -[hidden]right-> H2
+H2 -[hidden]right-> H3
+H3 -[hidden]right-> H4
 
-  rectangle "Brouillons" as Col3 #FFFFFF;line:FFFFFF {
-    rectangle BrouillonsFond #FFFFFF;line:FFFFFF {
-      rectangle W3C #F8FAFC;line:64748B [
-        **W3C, groupes communautaires**
-        Protocole, identité, confiance,
-        conformité
-      ]
-      rectangle IETF #F8FAFC;line:64748B [
-        **IETF**
-        Profils d'OAuth et de WIMSE
-        Web Bot Auth
-      ]
-      W3C -[hidden]down-> IETF
-    }
-    rectangle " " as E32 #FFFFFF;line:FFFFFF
-    rectangle " " as E33 #FFFFFF;line:FFFFFF
-    BrouillonsFond -[hidden]down-> E32
-    E32 -[hidden]down-> E33
-  }
+AxL -[hidden]down-> H1
+AxR -[hidden]down-> H4
 
-  rectangle "Textes publiés" as Col4 #FFFFFF;line:FFFFFF {
-    rectangle AAIF #EFF6FF;line:2563EB [
-      **AAIF**
-      Dix projets, dont MCP et
-      A2A : spécifications
-      publiées et mises en œuvre
-    ]
-    rectangle " " as E42 #FFFFFF;line:FFFFFF
-    rectangle SAC #F8FAFC;line:64748B [
-      **SAC (Chine)**
-      Série GB/Z 185-2026
-      en sept parties
-    ]
-    AAIF -[hidden]down-> E42
-    E42 -[hidden]down-> SAC
-  }
+rectangle "**Fondation et**\n**instances ouvertes**" as Row1Lbl #FFFFFF;line:FFFFFF
+rectangle " " as C11 <<invis>>
+rectangle " " as C12 <<invis>>
+rectangle C13 #F8FAFC;line:64748B [
+  **W3C, groupes communautaires**
+  Protocole, identité, confiance,
+  conformité
+  ----
+  **IETF**
+  Profils d'OAuth et de WIMSE
+  Web Bot Auth
+]
+rectangle AAIF #EFF6FF;line:2563EB [
+  **AAIF**
+  Dix projets, dont MCP et
+  A2A : spécifications
+  publiées et mises en œuvre
+]
 
-  Col0 -[hidden]right-> Col1
-  Col1 -[hidden]right-> Col2
-  Col2 -[hidden]right-> Col3
-  Col3 -[hidden]right-> Col4
-}
+Row1Lbl -[hidden]right-> C11
+C11 -[hidden]right-> C12
+C12 -[hidden]right-> C13
+C13 -[hidden]right-> AAIF
 
-Axe -[hidden]down-> Matrice
+rectangle "**Organismes formels**" as Row2Lbl #FFFFFF;line:FFFFFF
+rectangle "**ISO/IEC SC 42**" as ISO #F8FAFC;line:64748B
+rectangle UIT #F8FAFC;line:64748B [
+  **UIT-T, IEEE**
+  Sujet à l'étude;
+  projets autorisés
+]
+rectangle " " as C23 <<invis>>
+rectangle " " as C24 <<invis>>
 
+Row2Lbl -[hidden]right-> ISO
+ISO -[hidden]right-> UIT
+UIT -[hidden]right-> C23
+C23 -[hidden]right-> C24
+
+rectangle "**Puissances**\n**publiques**" as Row3Lbl #FFFFFF;line:FFFFFF
+rectangle " " as C31 <<invis>>
+rectangle NIST #F8FAFC;line:64748B [
+  **NIST/CAISI**
+  Consultations; document de
+  réflexion sur l'identité
+]
+rectangle " " as C33 <<invis>>
+rectangle SAC #F8FAFC;line:64748B [
+  **SAC (Chine)**
+  Série GB/Z 185-2026
+  en sept parties
+]
+
+Row3Lbl -[hidden]right-> C31
+C31 -[hidden]right-> NIST
+NIST -[hidden]right-> C33
+C33 -[hidden]right-> SAC
+
+H0 -[hidden]down-> Row1Lbl
+Row1Lbl -[hidden]down-> Row2Lbl
+Row2Lbl -[hidden]down-> Row3Lbl
+
+H1 -[hidden]down-> C11
+C11 -[hidden]down-> ISO
+ISO -[hidden]down-> C31
+
+H2 -[hidden]down-> C12
+C12 -[hidden]down-> UIT
+UIT -[hidden]down-> NIST
+
+H3 -[hidden]down-> C13
+C13 -[hidden]down-> C23
+C23 -[hidden]down-> C33
+
+H4 -[hidden]down-> AAIF
+AAIF -[hidden]down-> C24
+C24 -[hidden]down-> SAC
 @enduml

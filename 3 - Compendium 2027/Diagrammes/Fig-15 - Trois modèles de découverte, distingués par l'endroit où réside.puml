@@ -52,14 +52,18 @@ rectangle "**Distribué**" as Distribue #FFFFFF;line:94A3B8 {
 
   P2 -[hidden]right-> P3
   P4 -[hidden]right-> P5
-  P1 -[#94A3B8]down- P2
-  P1 -[#94A3B8]down- P3
+  P1 -[#94A3B8]- P2
+  P1 -[#94A3B8]- P3
+  P1 -[#94A3B8]- P4
+  P1 -[#94A3B8]- P5
   P2 -[#94A3B8]- P3
-  P2 -[#94A3B8]down- P4
-  P2 -[#94A3B8]down- P5
-  P3 -[#94A3B8]down- P4
-  P3 -[#94A3B8]down- P5
+  P2 -[#94A3B8]- P4
+  P2 -[#94A3B8]- P5
+  P3 -[#94A3B8]- P4
+  P3 -[#94A3B8]- P5
   P4 -[#94A3B8]- P5
+  P1 -[hidden]down-> P2
+  P2 -[hidden]down-> P4
 
   rectangle "**Où réside l'index**\nUn réseau pair-à-pair\nsans opérateur central" as DescD #FFFFFF;line:FFFFFF
   P4 -[hidden]down-> DescD

@@ -327,9 +327,9 @@ quatre cycles *ReAct* avec huit outils MCP et du raisonnement étendu, soit de q
 > - + Sagas échouées ou compensées
 > - 2a. Disjoncteur Temps Réel (agentgateway)
 > - Suivi atomique Redis/Lua sur ActionEnvelope.budget
-> - • < 70 % plafond : Routage nominal
-> - • 70 % – 95 % : Repli forcé vers SLM économique
-> - • ≥ 100 % : Arrêt propre Saga + Compensation
+> - < 70 % plafond : Routage nominal
+> - 70 % – 95 % : Repli forcé vers SLM économique
+> - ≥ 100 % : Arrêt propre Saga + Compensation
 > - Zéro récidive de boucle non bornée la fin de semaine
 > - 2b. Moteur de Rapprochement FinOps
 > - Jointure par saga.id & business.process.code
@@ -343,13 +343,13 @@ quatre cycles *ReAct* avec huit outils MCP et du raisonnement étendu, soit de q
 > - Σ Coûts Complets (Succès + Échecs)
 > - Résultats Métiers Validés Nets
 > - Refacturation Interne (Chargeback)
-> - • Imputation directe BEL / BCA / BSN
-> - • Clé de répartition socle partagé
+> - Imputation directe BEL / BCA / BSN
+> - Clé de répartition socle partagé
 > - Comparaison continue vs coût humain
 > - Arbitrage Trimestriel Portefeuille
-> - • Distillation LLM → SLM spécialisé
-> - • Rétrogradation L3 → Workflow L0
-> - • Mise hors service si ROI net < 1
+> - Distillation LLM → SLM spécialisé
+> - Rétrogradation L3 → Workflow L0
+> - Mise hors service si ROI net < 1
 > - 4. Quatre Leviers Architecturaux d'Optimisation Structurelle du Cost-per-Outcome
 > - Affinité de Préfixe KV-Cache
 > - Prompts statiques en tête (> 80 % hits)
@@ -391,7 +391,7 @@ auditable est le *Cost-per-Outcome* net (CPO), qui reprend le coût par résulta
 
 Un résultat métier validé n’est ni un message affiché, ni la fin technique d’un flux de travail sans exception : c’est l’accomplissement vérifié et durable de l’objectif d’affaires (garantie instruite non contestée sous 72 h, intervention préventive confirmée, facture rapprochée et comptabilisée). Pour que le coût des échecs ne soit pas masqué, le CPO net se calcule sur l’ensemble 𝒮︀ des sagas exécutées sur la période, réussies, échouées ou compensées :
 
-CPOnet = ∑𝑠∈𝒮︀(𝐶inf(𝑠) + 𝐶mcp(𝑠) + 𝐶mem(𝑠) + 𝐶hotl(𝑠)) 𝑁validés −𝑁annulés
+CPOnet = (∑_{𝑠∈𝒮︀} (𝐶_{inf}(𝑠) + 𝐶_{mcp}(𝑠) + 𝐶_{mem}(𝑠) + 𝐶_{hotl}(𝑠))) / (𝑁_{validés} − 𝑁_{annulés})
 
 Dans cette équation, 𝐶inf(𝑠) cumule le coût exact des *spans* d’inférence (tarif plein hors cache, tarif d’amorçage et de lecture du cache, tarif de sortie couvrant génération et raisonnement). 𝐶mcp(𝑠) additionne les crédits d’outils tiers et les bacs à sable OpenSandbox, 𝐶mem(𝑠) intègre les opérations de mémoire et d’exécution durable, et 𝐶hotl(𝑠) valorise le temps réel de révision humaine au taux horaire chargé de l’approbateur. Au dénominateur, toute décision annulée ou reprise manuellement sous 72 heures (𝑁annulés) est déduite.
 
@@ -399,7 +399,7 @@ Dans cette équation, 𝐶inf(𝑠) cumule le coût exact des *spans* d’infér
 
 Hausser la constance pass5 (chapitre 34) ou couper les boucles dès la deuxième répétition stérile (chapitre 33) réduit donc le CPO net.
 
-#### Extrait 40.1 — `[Exécuté en CI]` · Requête SQL analytique d’attribution du *Cost-per-Outcome* sur les *spans* OpenTelemetry
+### Extrait 40.1 — `[Exécuté en CI]` · Requête SQL analytique d’attribution du *Cost-per-Outcome* sur les *spans* OpenTelemetry
 
 Exécutée toutes les heures dans l’entrepôt analytique alimenté par le flux OTel assaini, la requête rapproche les coûts complets des événements métiers validés :
 
@@ -481,7 +481,7 @@ Chaque `ActionEnvelope` porte un plafond `maxTotalCostCad` proportionné à l’
 - **Zone d’économie forcée (**`70 % à 100 %`**)** : Plutôt que d’interrompre une saga presque achevée, la passerelle bascule l’appel vers le SLM de repli économique et limite `max_reasoning_tokens` afin de conclure proprement la synthèse.
 - **Zone de coupure franche (**`≥ 100 %`**)** : Rejet immédiat `FINOPS_BUDGET_EXHAUSTED`; Temporal déclenche les compensations requises et la mise en file d’examen humain.
 
-#### Extrait 40.2 — `[Exécuté en CI]` · Middleware TypeScript de disjoncteur budgétaire progressif sur agentgateway
+### Extrait 40.2 — `[Exécuté en CI]` · Middleware TypeScript de disjoncteur budgétaire progressif sur agentgateway
 
 Le middleware cumule le coût de la saga, puis renvoie sa décision : poursuite, repli vers le SLM ou arrêt.
 
@@ -565,7 +565,7 @@ Financer toute l’inférence sur le budget central des TI encourage la prolifé
 
 Quand une saga transversale franchit plusieurs divisions (par exemple une alerte télématique initiée chez BSN, qui sollicite un spécialiste garantie chez BCA puis une réservation chez BEL), la règle d’imputation propage le centre de coûts donneur d’ordre (`finops.origin_cost_center`) dans le W3C Baggage. L’intégralité du coût variable est refacturée au processus métier bénéficiaire du résultat final. Une division qui fournit des outils MCP ou A2A n’a ainsi pas à brider ses propres quotas pour se protéger des demandes internes.
 
-#### Extrait 40.3 — `[Exécuté en CI]` · Politique déclarative de refacturation interne (*Chargeback*) multi-divisions
+### Extrait 40.3 — `[Exécuté en CI]` · Politique déclarative de refacturation interne (*Chargeback*) multi-divisions
 
 La politique déclare l’imputation, le socle partagé et, pour chaque division, les seuils mensuels et le comportement au dépassement :
 

@@ -2,7 +2,7 @@
 ' Source : 1 - Compendium 2026, Chapitre 2 (page 34)
 
 @startuml
-top to bottom direction
+left to right direction
 hide stereotype
 skinparam packageStyle rectangle
 skinparam backgroundColor #FFFFFF
@@ -10,8 +10,8 @@ skinparam defaultFontName "Segoe UI"
 skinparam defaultFontSize 13
 skinparam shadowing false
 skinparam roundCorner 4
-skinparam nodesep 25
-skinparam ranksep 18
+skinparam nodesep 14
+skinparam ranksep 30
 
 skinparam package {
   BackgroundColor #FFFFFF
@@ -56,26 +56,28 @@ package "CE QUE CHAQUE ÉTAGE AJOUTE" as STACK {
     identifiant globalement résolvable.
   ]
 
-  L4 -[hidden]down- L3
-  L3 -[hidden]down- L2
-  L2 -[hidden]down- L1
+  L1 -[hidden]right- L2
+  L2 -[hidden]right- L3
+  L3 -[hidden]right- L4
 }
 
-rectangle SIDE1 <<side>> [
-  <b>SHACL et ShEx</b>
-  La validation vient par-dessus : un contrat sémantique se
-  pose sur le graphe, il n'en fait pas partie (§ 2.3.3).
-]
-rectangle SIDE2 <<side>> [
-  <b>La propriété rare</b>
-  Fusionner deux schémas relationnels exige un projet ;
-  fusionner deux graphes qui partagent des identifiants
-  n'exige rien.
-]
+together {
+  rectangle SIDE1 <<side>> [
+    <b>SHACL et ShEx</b>
+    La validation vient par-dessus : un contrat sémantique se
+    pose sur le graphe, il n'en fait pas partie (§ 2.3.3).
+  ]
+  rectangle SIDE2 <<side>> [
+    <b>La propriété rare</b>
+    Fusionner deux schémas relationnels exige un projet ;
+    fusionner deux graphes qui partagent des identifiants
+    n'exige rien.
+  ]
+  SIDE2 -[hidden]right- SIDE1
+}
 
-SIDE1 -[hidden]down- SIDE2
-L4 -[hidden]right- SIDE1
-L2 -[hidden]right- SIDE2
+L4 -[hidden]down- SIDE1
+L2 -[hidden]down- SIDE2
 
 legend
   Deux graphes fusionnent par simple union de leurs triplets — POURVU QU'ILS PARTAGENT DES IDENTIFIANTS.

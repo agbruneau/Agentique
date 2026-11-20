@@ -481,11 +481,11 @@ De nombreux flux de travail agentiques débouchent sur un engagement financier :
 > - Architecture du Dernier Kilomètre : Interfaces Multimodales (AG-UI, A2UI, WebRTC) et Commerce (AP2, x402)
 > - Volet A — Interaction Humain-Agent Réactive (AG-UI / A2UI) et Multimodalité Temps Réel (WebRTC)
 > - Poste Opérateur / Technicien
-> - • Catalogue local de composants
+> - Catalogue local de composants
 > - homologués (rendu A2UI natif)
-> - • État local synchronisé par patch
-> - • Casque antibruit mains libres
-> - • VAD & Barge-in < 200 ms
+> - État local synchronisé par patch
+> - Casque antibruit mains libres
+> - VAD & Barge-in < 200 ms
 > - Clé matérielle FIDO2 / WebAuthn
 > - Flux Événementiel AG-UI (SSE / WebSockets)
 > - STATE_SNAPSHOT & STATE_DELTA (RFC 6902)
@@ -494,23 +494,23 @@ De nombreux flux de travail agentiques débouchent sur un engagement financier :
 > - Audio Opus 24 kHz + Flux vidéo inspection 2 fps
 > - SCTP DataChannel : purge tampon & troncature tour
 > - Agent d'Interface & Médiation
-> - • Niveau L1 (zéro écriture directe SI)
-> - • Détection sémantique fin de tour
-> - • Synthèse des preuves HOTL
-> - • Délégation vers pairs A2A v1.0
+> - Niveau L1 (zéro écriture directe SI)
+> - Détection sémantique fin de tour
+> - Synthèse des preuves HOTL
+> - Délégation vers pairs A2A v1.0
 > - Marquage transparence EU AI Act
 > - Volet B — Chaîne Transactionnelle Vérifiable AP2 (W3C VC / FIDO) et Règlement Programmable HTTP x402
 > - 1. Mandats AP2 (W3C VC)
 > - Signature FIDO2 / HSM :
-> - • Intent Mandate : budget,
+> - Intent Mandate : budget,
 > - DID marchands, TTL
-> - • Cart Mandate : hash
+> - Cart Mandate : hash
 > - SHA-256 panier exact
 > - 2. Agent Acheteur & PDP
 > - Validation déterministe Cedar :
-> - • Prix ≤ plafond mandat
-> - • Bénéficiaire sur liste blanche
-> - • Solde journalier FinOps OK
+> - Prix ≤ plafond mandat
+> - Bénéficiaire sur liste blanche
+> - Solde journalier FinOps OK
 > - Clé d'idempotence paiement
 > - 3. Protocole HTTP x402
 > - ← HTTP 402 Payment Required

@@ -1,0 +1,46 @@
+' Fig. 63. – Du repérage au corpus retenu : 124 notices rendues par dix requêtes, 83 retenues après tri, 82 confirmées auprès d'arXiv ou de Crossref. À droite, les notices rendues et retenues pour chaque requête.
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+
+rectangle "DU REPÉRAGE AU CORPUS" as Entonnoir #F8FAFC;line:CBD5E1 {
+  rectangle N124 #EFF6FF;line:2563EB [
+    **124**
+    notices rendues par dix requêtes
+  ]
+  rectangle N123 #EFF6FF;line:2563EB [
+    **123**
+    notices distinctes
+  ]
+  rectangle N83 #EFF6FF;line:2563EB [
+    **83**
+    retenues, lues par leur résumé
+  ]
+  rectangle N82 #2563EB;line:1E3A8A;text:FFFFFF [
+    **82**
+    confirmées par arXiv ou par un DOI
+  ]
+  N124 -[#475569]down-> N123
+  N123 -[#475569]down-> N83
+  N83 -[#475569]down-> N82
+}
+
+rectangle "NOTICES PAR REQUÊTE — ○ rendues   ● retenues" as Requetes #F8FAFC;line:CBD5E1 {
+  rectangle RList #FFFFFF;line:CBD5E1 [
+    Protocoles : **16 sur 20**
+    Coordination : **9 sur 14**
+    Évaluation : **9 sur 15**
+    Sécurité : **10 sur 12**
+    Productivité : **7 sur 12**
+    Mémoire : **7 sur 10**
+    Gouvernance : **7 sur 12**
+    Mono-agent ou multi-agents : **9 sur 9**
+    Adoption : **4 sur 10**
+    Sémantique : **5 sur 10**
+  ]
+}
+
+RList -[hidden]left-> N124
+@enduml

@@ -350,22 +350,22 @@ Le contrôle A.10 vise la chaîne d’approvisionnement agentique. Lorsqu’un o
 > - Toute saga multi-agents hérite des exigences du maillon
 > - le plus critique (bloque le déploiement si dossier incomplet)
 > - BSIF / OSFI E-23 (1er mai 2027)
-> - • Périmètre élargi aux systèmes agentiques
-> - • Cote de matérialité & validation 2e ligne
-> - • Preuve de constance (pass⁵ ≥ 0,97) & suivi dérive
-> - • Séparation des tâches (NHI distincts)
+> - Périmètre élargi aux systèmes agentiques
+> - Cote de matérialité & validation 2e ligne
+> - Preuve de constance (pass⁵ ≥ 0,97) & suivi dérive
+> - Séparation des tâches (NHI distincts)
 > - Cible : Institutions financières fédérales
 > - Loi 25 — Québec (Art. 12.1 & ÉFVP)
-> - • Avis explicite de décision 100 % automatisée
-> - • Accès aux renseignements & facteurs clés
-> - • Droit d'observation & révision humaine HOTL
-> - • ÉFVP obligatoire avant transfert hors Québec
+> - Avis explicite de décision 100 % automatisée
+> - Accès aux renseignements & facteurs clés
+> - Droit d'observation & révision humaine HOTL
+> - ÉFVP obligatoire avant transfert hors Québec
 > - Cible : Tout traitement de PII de résidents QC
 > - EU AI Act (Août 2026 & Déc. 2027)
-> - • Art. 50 (août 2026) : transparence & marquage
-> - • Annexe III (déc. 2027) : emploi, crédit, infra.
-> - • Journaux automatiques Art. 12 & dossier Ann. IV
-> - • Contrôle humain effectif Art. 14 + bouton arrêt
+> - Art. 50 (août 2026) : transparence & marquage
+> - Annexe III (déc. 2027) : emploi, crédit, infra.
+> - Journaux automatiques Art. 12 & dossier Ann. IV
+> - Contrôle humain effectif Art. 14 + bouton arrêt
 > - Cible : Mise sur le marché ou impact dans l'UE
 > - Encadrement Juridique et Technique du Commerce B2B Inter-Agents (A2A v1.0 + Protocole AP2)
 > - Mandat Cryptographique AP2 Borné

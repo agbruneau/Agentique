@@ -1,16 +1,16 @@
 %% Ouvrage : 1 - Compendium 2026
 %% Chapitre : 31 · Le vertical financier : pourquoi l'agentique y est durcie (p. 359)
 %% Figure : Figure 31.3 — Hiérarchie d’empilement des trois couches du substrat sémantique financier : de la validation syntaxique (couche 1) et du bornage des capacités (couche 2) au garde-fou sémantique déterministe (couche 3).
+%%{init: {'flowchart': {'wrappingWidth': 1150}}}%%
 flowchart TB
     subgraph S["TROIS COUCHES, TROIS APPORTS"]
-        direction TB
         C3["<b>3 · Ontologie / sémantique</b><br/>Le sens partagé et les relations logiques. L'agent en tire un garde-fou déterministe pour désambiguïser un terme avant<br/>d'agir."]
         C2["<b>2 · Modèle / capacité / cycle de vie</b><br/>Ce que fait une institution et comment ses opérations s'enchaînent. L'agent en tire le découpage en capacités bornées qui<br/>délimite son périmètre d'action."]
         C1["<b>1 · Messagerie / syntaxe</b><br/>Le format d'échange sur le fil. L'agent en tire des champs structurés et des messages validables par schéma."]
         C3 ~~~ C2 ~~~ C1
     end
     NOTE["Repris du Vol. I en régime [C] : c'est une lecture d'un volume source, non un balayage conduit par la somme. La troisième<br/>couche est celle qui fait le garde-fou DÉTERMINISTE — les deux premières structurent, elles ne désambiguïsent pas."]
-    S ~~~ NOTE
+    C1 ~~~ NOTE
 
     style S fill:#fdfbf7,stroke:#d4cfc7,color:#9c3d14
     style C3 fill:#f7f4ee,stroke:#9c3d14,color:#1a1a1a

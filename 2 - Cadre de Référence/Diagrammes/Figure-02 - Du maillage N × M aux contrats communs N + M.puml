@@ -1,0 +1,81 @@
+' Figure 2 — Du maillage N × M aux contrats communs N + M (2 - Cadre de Référence, ch. 2, p. 21)
+' Source : élaboration du cadre CRE-IA-2026-01; exemple illustratif
+@startuml
+left to right direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 11
+skinparam linetype polyline
+skinparam nodesep 14
+skinparam ranksep 65
+
+rectangle "**Sans cadre commun**\n<size:10><color:#475569>Chaque agent a ses connecteurs : N × M intégrations</color></size>" as Sans #F8FAFC;line:CBD5E1 {
+  together {
+    rectangle "Agent RH" as SA1 #EDE8F5;line:6D28D9
+    rectangle "Agent ventes" as SA2 #EDE8F5;line:6D28D9
+    rectangle "Agent TI" as SA3 #EDE8F5;line:6D28D9
+    rectangle "Agent finance" as SA4 #EDE8F5;line:6D28D9
+  }
+  together {
+    rectangle "ERP" as SS1 #F1F5F9;line:475569
+    rectangle "CRM" as SS2 #F1F5F9;line:475569
+    rectangle "SGED" as SS3 #F1F5F9;line:475569
+    rectangle "Entrepôt" as SS4 #F1F5F9;line:475569
+    rectangle "SaaS" as SS5 #F1F5F9;line:475569
+  }
+  SA1 -[#9C2F39]- SS1
+  SA1 -[#9C2F39]- SS2
+  SA1 -[#9C2F39]- SS3
+  SA1 -[#9C2F39]- SS4
+  SA1 -[#9C2F39]- SS5
+  SA2 -[#9C2F39]- SS1
+  SA2 -[#9C2F39]- SS2
+  SA2 -[#9C2F39]- SS3
+  SA2 -[#9C2F39]- SS4
+  SA2 -[#9C2F39]- SS5
+  SA3 -[#9C2F39]- SS1
+  SA3 -[#9C2F39]- SS2
+  SA3 -[#9C2F39]- SS3
+  SA3 -[#9C2F39]- SS4
+  SA3 -[#9C2F39]- SS5
+  SA4 -[#9C2F39]- SS1
+  SA4 -[#9C2F39]- SS2
+  SA4 -[#9C2F39]- SS3
+  SA4 -[#9C2F39]- SS4
+  SA4 -[#9C2F39]- SS5
+}
+
+rectangle "**Avec le cadre**\n<size:10><color:#475569>Protocoles communs et catalogue : N + M contrats</color></size>" as Avec #F8FAFC;line:CBD5E1 {
+  together {
+    rectangle "Agent RH" as AA1 #EDE8F5;line:6D28D9
+    rectangle "Agent ventes" as AA2 #EDE8F5;line:6D28D9
+    rectangle "Agent TI" as AA3 #EDE8F5;line:6D28D9
+    rectangle "Agent finance" as AA4 #EDE8F5;line:6D28D9
+  }
+  rectangle "**Passerelle**\net catalogue\nMCP · A2A" as Passerelle #FEF3C7;line:B45309
+  together {
+    rectangle "MCP · ERP" as AS1 #F1F5F9;line:475569
+    rectangle "MCP · CRM" as AS2 #F1F5F9;line:475569
+    rectangle "MCP · SGED" as AS3 #F1F5F9;line:475569
+    rectangle "MCP · Entrepôt" as AS4 #F1F5F9;line:475569
+    rectangle "MCP · SaaS" as AS5 #F1F5F9;line:475569
+  }
+  AA1 -[#0F7682]- Passerelle
+  AA2 -[#0F7682]- Passerelle
+  AA3 -[#0F7682]- Passerelle
+  AA4 -[#0F7682]- Passerelle
+  Passerelle -[#1B5E9E]- AS1
+  Passerelle -[#1B5E9E]- AS2
+  Passerelle -[#1B5E9E]- AS3
+  Passerelle -[#1B5E9E]- AS4
+  Passerelle -[#1B5E9E]- AS5
+}
+
+SS3 -[hidden]-> AA2
+Sans -[#0F2744,thickness=3]-> Avec
+
+legend bottom
+  **Sans cadre commun :** 4 × 5 = 20 connecteurs propriétaires   |   **Avec le cadre :** 4 + 5 = 9 contrats réutilisables, un point d’application
+endlegend
+@enduml

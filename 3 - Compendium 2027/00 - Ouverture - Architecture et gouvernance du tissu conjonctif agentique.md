@@ -10,7 +10,7 @@
 
 L’appareil probatoire exécutable et réglementaire du présent volume et du corpus consolidé (`Borealis-Bench/` en CI, monographies `Monographies/A1`, `A3` et `A4`, cadre `CRE-IA-2026-01` v1.2 à `305` exigences, `Note AMF IA` à `41` attentes / `12 EXIG-AMF` et évaluations artificielles FEDS/EMA) porte exclusivement sur les **services financiers réglementés (Canada fédéral, Québec et obligations transfrontalières UE)** et sur le **génie logiciel de contrôle déterministe hors modèle**. Tous les encadrés sectoriels, volets industriels ou exemples hors finance (santé HL7 FHIR, pharmacie GxP, manufacturier et technologies opérationnelles IT/OT, énergie, mines, télécommunications, logistique, transport, commerce de détail, robotique ROS 2, défense ou secteur public non financier) sont explicitement balisés `[Extrapolation illustrative hors champ financier démontré]` : ils illustrent par analogie les patrons du plan de contrôle sans étude de transférabilité sectorielle ni validation terrain humaine. La proposition architecturale falsifiable unifiée et sa chaîne de preuves sont exposées dans `Memoire/demonstration-falsifiable-ae-as.md`.
 
-### 0.1 Pourquoi ce compendium en 2027
+## 0.1 Pourquoi ce compendium en 2027
 
 De 2023 à 2025, la première vague d’adoption de l’IA générative en entreprise a pris la forme de l’assistant conversationnel synchrone : clavardoir interne branché sur une base documentaire par génération augmentée par récupération (RAG), ou copilote intégré à une suite bureautique. L’humain y restait le seul point d’intégration du système d’information. Lorsqu’un copilote résumait un contrat, suggérait une requête SQL ou rédigeait un avis d’incident, une personne lisait la proposition, en jugeait la cohérence métier, puis saisissait elle-même la décision dans l’ERP, le CRM ou le système de gestion des services TI.
 
@@ -80,13 +80,13 @@ Le compendium pose un postulat d’ingénierie : les modèles fondationnels doiv
 
 La figure synthétise le modèle de référence de l’ouvrage. L’architecture décompose le système en six couches horizontales composables, traversées par deux piliers : à gauche, le contrôle d’identité non humaine (NHI) et la sécurité à confiance zéro; à droite, l’observabilité distribuée (OpenTelemetry `gen_ai.*`), le génie logiciel probabiliste (AgentOps) et la gouvernance économique (FinOps).
 
-### 0.2 Enjeux économiques et opérationnels de 2027
+## 0.2 Enjeux économiques et opérationnels de 2027
 
 Les analyses publiées par les grands cabinets d’évaluation technologique au seuil de 2027 relèvent un paradoxe : plus les agents individuels gagnent en spécialisation et en autonomie locale, plus le système d’ensemble devient vulnérable au désordre de coordination. Forrester le résume en qualifiant 2027 d’ère de *« la poursuite et du péril du contrôle »* (*The Pursuit and Peril of Control*), et Gartner met en garde contre la dérive des coûts variables.
 
 Trois risques structurels guettent tout programme qui aborde l’orchestration multi-agents avec les habitudes du développement web traditionnel ou des premiers prototypes LLM :
 
-- **La baisse de la fiabilité par composition probabiliste (loi de Lusser).** Si un agent autonome réussit une étape complexe avec une exactitude de 94 %, une chaîne séquentielle non encadrée de dix délégations indépendantes voit sa probabilité de succès sans erreur tomber à 𝑅= 0, 9410 ≈53, 9 %. Un microservice classique échoue de façon visible, par une exception HTTP 500; un maillon LLM défaillant produit souvent une rationalisation plausible qui se propage sans signal d’erreur aux agents en aval (OWASP ASI08 — *Cascading Failures*). Les erreurs se composent d’une étape à l’autre (section 1.1). La fiabilité d’entreprise demande donc de sortir de l’invite le routage critique, les invariants d’affaires et la gestion d’état, pour les confier à une épine dorsale déterministe et durable.
+- **La baisse de la fiabilité par composition probabiliste (loi de Lusser).** Si un agent autonome réussit une étape complexe avec une exactitude de 94 %, une chaîne séquentielle non encadrée de dix délégations indépendantes voit sa probabilité de succès sans erreur tomber à 𝑅 = 0,94^{10} ≈ 53,9 %. Un microservice classique échoue de façon visible, par une exception HTTP 500; un maillon LLM défaillant produit souvent une rationalisation plausible qui se propage sans signal d’erreur aux agents en aval (OWASP ASI08 — *Cascading Failures*). Les erreurs se composent d’une étape à l’autre (section 1.1). La fiabilité d’entreprise demande donc de sortir de l’invite le routage critique, les invariants d’affaires et la gestion d’état, pour les confier à une épine dorsale déterministe et durable.
 - **Les limites d’une interopérabilité purement syntaxique.** Normaliser le format d’échange par JSON-RPC (MCP) ou par descripteurs de tâches (A2A) règle la transmission des messages, non leur sens. Lorsqu’un agent commercial interroge un agent financier sur le « taux d’attrition trimestriel » ou sur l’« exposition nette d’un client », l’absence d’une couche sémantique partagée (Apache Ossie) et d’une ontologie causale d’entreprise produit des décisions incohérentes mais syntaxiquement valides. L’interopérabilité réelle ne se sépare pas de l’ingénierie du contexte ni de la gouvernance de la mémoire. Aucun protocole n’exprime non plus l’approbation, l’escalade ou l’audit d’une décision : cette couche revient à l’entreprise (section 11.9).
 - **L’asymétrie économique et sécuritaire des boucles autonomes.** Une requête humaine mal formulée coûte quelques centimes. Une boucle de réessai mutuelle entre deux agents mal orchestrés, qui consomme du calcul d’inférence réflexif pendant une fin de semaine, peut coûter des dizaines de milliers de dollars et saturer les quotas d’API d’un système ERP critique. De même, donner à un agent tous les privilèges de l’utilisateur qui l’invoque transforme toute injection indirecte d’instructions, dissimulée dans un courriel ou un document externe, en voie d’exfiltration de données.
 
@@ -102,46 +102,46 @@ Le tableau suivant récapitule les sept ruptures architecturales qui séparent l
 | **Identité et sécurité** | Clés d’API statiques partagées ou jeton brut de l’utilisateur humain | Identités NHI (SPIFFE/DID), OAuth 2.1 OBO (RFC 8693), OpenSandbox et politiques Cedar/OPA | Parties VI et IX |
 | **Opérations, coûts et conformité** | Journaux texte locaux, tests manuels sur 10 exemples, budget infonuagique global | Traces OpenTelemetry `gen_ai.*`, simulation 𝜏-bench (pass𝑘), coût par résultat, ISO 42001 / E-23 | Parties VI à IX |
 
-### 0.3 Parcours de lecture par rôle
+## 0.3 Parcours de lecture par rôle
 
 Un ouvrage qui couvre aussi bien l’échange de jetons (RFC 8693) que la modélisation ontologique, les espaces de données B2B ou la distillation de modèles ne se lit pas forcément du premier au dernier chapitre. L’ordre des neuf premières parties suit une progression logique, des fondations conceptuelles jusqu’à l’écosystème fédéré et l’auto-amélioration gouvernée. La dixième, « Recherche scientifique », se lit à part : elle dit ce que la recherche a mesuré, ce qu’il faut surveiller et ce que vaut le marché. Six parcours prioritaires répondent toutefois aux mandats immédiats des décideurs et des spécialistes.
 
-#### 1. Parcours CTO / CIO (direction technologique et stratégie de plateforme)
+### 1. Parcours CTO / CIO (direction technologique et stratégie de plateforme)
 
 - **Question directrice.** *Comment éviter la fragmentation de notre SI en dix plateformes d’agents concurrentes tout en maîtrisant la souveraineté, le TCO et la rapidité de livraison ?*
 - **Séquence prioritaire.** Chapitres 1, 17 et 43 (vision cible, découplage contrôle/autonomie, modèle de maturité N1–N5) → chapitre 11 (gouvernance AAIF et stratégie anti-verrouillage) → chapitre 44 (passerelles natives de l’IA et routage hybride SLM/LLM) → chapitre 27 (fédération des jardins clos SaaS) → chapitres 40 et 41 (FinOps du coût par résultat et modèle *Hub-and-Spoke*) → chapitres 46 et 47 (souveraineté / Cognitive DR, usine Agentic SDLC et distillation LLM → SLM). Pour l’horizon : chapitre 50 (étude de marché et projection de 2027 à 2030).
 - **Livrables directement réutilisables.** Grille d’audit de maturité, politique d’allocation budgétaire par résultat métier et fiches ADR-001, ADR-004, ADR-015, ADR-023, ADR-027 et ADR-031.
 
-#### 2. Parcours architecte d’entreprise et architecte de solutions principales
+### 2. Parcours architecte d’entreprise et architecte de solutions principales
 
 - **Question directrice.** *Quels patrons de communication, de gestion d’état et d’intégrité transactionnelle garantissent la résilience de flux multi-agents qui traversent des systèmes hétérogènes et des frontières B2B ?*
 - **Séquence prioritaire.** Lecture intégrale des parties I, II, IV, V et IX, complétée par les chapitres 12 et 47 (Apache Ossie, modernisation *Strangler Fig*) et l’annexe F (arbres de décision architecturale). Pour l’état de la preuve : chapitre 48 (ce que la recherche a mesuré, ce qu’elle débat, ce qui lui manque).
 - **Point d’attention particulier.** Les chapitres 18, 19, 45 et 46 sur l’articulation entre moteurs d’exécution durable (Temporal, Restate), sagas événementielles, maillages B2B EDC et cellules de périphérie déconnectées à synchronisation CRDT.
 
-#### 3. Parcours CISO, architecte IAM et responsable cybersécurité
+### 3. Parcours CISO, architecte IAM et responsable cybersécurité
 
 - **Question directrice.** *Comment gouverner des milliers d’identités non humaines dynamiques, prévenir l’empoisonnement d’outils MCP, protéger les secrets B2B et conserver un coupe-circuit instantané ?*
 - **Séquence prioritaire.** Chapitre 17 (bornes déterministes) → chapitres 5 et 6 (MCP, A2A et SLIM/MLS) → lecture approfondie des chapitres 29 à 32 → chapitres 45 et 46 (*Clean Rooms*, vLEI, enclaves GPU TEE et clés HYOK) → annexe G (grilles G.1 et G.5). Pour la veille : chapitre 49 (vulnérabilités des serveurs MCP, composition des défenses entre agents, échéance post-quantique). Pour la mesure : sections 8.8 (écosystème réel des serveurs MCP) et 24.5 (premières mesures de passerelles).
 - **Livrables directement réutilisables.** Architecture d’échange de jetons OAuth 2.1 OBO à portée atténuée, matrice de couverture OWASP ASI01–ASI10, politique d’épinglage cryptographique des serveurs MCP et patron d’isolation en microVM / enclave TEE.
 
-#### 4. Parcours responsable plateforme, SRE Agentique et ingénieur AgentOps
+### 4. Parcours responsable plateforme, SRE Agentique et ingénieur AgentOps
 
 - **Question directrice.** *Comment instrumenter, tester avant déploiement, simuler sous chaos, réparer et distiller en continu des systèmes dont le comportement n’est pas déterministe ?*
 
 - **Séquence prioritaire.** Chapitres 18 et 44 (moteurs d’exécution durable, agentgateway, ordonnancement KV-cache) → chapitre 32 (OpenSandbox, politiques en ligne) → chapitres 33, 34 et 40 → chapitres 46 et 47 (flottes de périphérie sous TUF, SRE autonome et distillation Multi-LoRA) → annexe G (grilles G.2 et G.3). Pour la veille : chapitres 48 et 49 (validité des bancs d’essai, registre de veille). Pour l’essai et le retour arrière : sections 21.5 (injection de fautes) et 34.6 (versions et points d’accès).
 - **Livrables directement réutilisables.** Schéma de télémétrie `gen_ai.*`, pipeline CI/CD ADLC intégrant OpenEnv et 𝜏-bench, matrice de rayon d’impact SRE sous Cedar et porte de promotion pass5 de distillation.
 
-#### 5. Parcours CDO, architecte de données et ingénieur contexte / sémantique
+### 5. Parcours CDO, architecte de données et ingénieur contexte / sémantique
 
 - **Question directrice.** *Comment transformer nos entrepôts, graphes documentaires et couches BI en un modèle du monde cohérent, auto-protégé et non contradictoire pour tous nos agents ?*
 - **Séquence prioritaire.** Chapitre 1 (systèmes d’enregistrement et systèmes d’action) → chapitres 12 à 14 → chapitres 45 et 46 (Dataspace ODRL et résidence juridictionnelle) → chapitre 47 (contrats de données Write-Audit-Publish et curation des jeux d’or exempts de PII). Pour l’état de la preuve : chapitre 48 (mémoire et ancrage sémantique).
 
-#### 6. Parcours direction juridique, conformité, risques et audit interne
+### 6. Parcours direction juridique, conformité, risques et audit interne
 
 - **Question directrice.** *Comment démontrer la conformité de nos agents devant le BSIF, la Commission d’accès à l’information du Québec ou les régulateurs européens, et encadrer juridiquement les actes posés par nos agents ?*
 - **Séquence prioritaire.** Ouverture (section 0.4) → chapitre 43 (gouvernance de l’IA fantôme) → chapitre 10 (mandats vérifiables AP2) → chapitre 30 (traçabilité nominative) → chapitres 38 et 41 → chapitres 45 et 46 (vLEI, droit de la concurrence B2B, conflits CLOUD Act / Loi 25 / E-23) → annexe G (grille G.4). Pour le calendrier : chapitre 49 (échéances réglementaires et normatives de 2027 à 2030). Pour l’assurance et les régulateurs : sections 39.6 (lignes de défense et audit interne), 38.3 (AMF et valeurs mobilières) et 35.7 (autres juridictions).
 
-### 0.4 Conventions, échelle d’autonomie et statut des affirmations
+## 0.4 Conventions, échelle d’autonomie et statut des affirmations
 
 Le même mot « agent » désigne tantôt un simple classifieur de texte, tantôt un système autonome habilité à passer des commandes fournisseurs, ce qui brouille la terminologie de bien des comités d’architecture. Tout le compendium applique donc une échelle normative unique à cinq niveaux d’autonomie opérationnelle (L0 à L4). Elle se définit par les droits de mutation sur le système d’information, le régime de supervision humaine et les contrôles d’infrastructure exigés. Cette échelle est propre à l’ouvrage : ses numéros ne se transposent pas aux trois échelles publiées de la section 1.3, où le L3 de Feng et coll. est « consultant » et le niveau 3 de la CSA « conditionnelle ».
 
@@ -157,7 +157,7 @@ Le même mot « agent » désigne tantôt un simple classifieur de texte, tantô
 
 L’attribution des **droits d’exécution** s’opère par agent et par classe d’action (section 1.3 : un même agent peut agir en L3 sur une lecture/triage et rester en L2 sous approbation CIBA pour une écriture irréversible). En revanche, le **périmètre de durcissement sécuritaire et de conformité** d’une chaîne multi-agents suit la règle du maillon le plus élevé (*High-Water Mark Rule*) : un agent L1 qui alimente sans sas d’assainissement un agent L3 entre dans le périmètre de contrôle L3 (OWASP ASI01, BSIF E-23, EU AI Act) sans recevoir pour autant les droits de mutation du maillon aval. Le passage de L2 à L3 exige en outre une réversibilité effective (compensation Saga), tout acte externe irréversible demeurant soumis à CIBA (L2) ou à un verrou déterministe.
 
-#### Critères d’évaluation technologique utilisés dans l’ouvrage
+### Critères d’évaluation technologique utilisés dans l’ouvrage
 
 Chaque fois que le compendium compare des protocoles, des moteurs d’orchestration ou des architectures de mémoire (parties II à IX), l’analyse s’appuie sur cinq critères explicites plutôt que sur la popularité d’un outil :
 
@@ -168,7 +168,7 @@ Chaque fois que le compendium compare des protocoles, des moteurs d’orchestrat
 4. **Coût marginal en latence et en jetons.** Quel est le multiplicateur d’appels LLM, la surcharge de sérialisation et l’effet sur la réutilisation du KV-cache lorsque le volume passe de dix requêtes par jour à dix mille par heure ?
 5. **Coût de sortie.** Quel effort d’ingénierie faut-il pour remplacer le modèle sous-jacent, changer de fournisseur infonuagique ou substituer un agent spécialiste sans réécrire le plan d’orchestration ?
 
-#### Faits vérifiés et projections 2027
+### Faits vérifiés et projections 2027
 
 Un compendium de référence pour 2027 doit distinguer ce qui est établi de ce qui émerge. Dans l’ensemble des chapitres :
 
@@ -176,9 +176,8 @@ Un compendium de référence pour 2027 doit distinguer ce qui est établi de ce 
 - Les échéances juridiques (BSIF E-23 le 1er mai 2027, ligne directrice de l’AMF sur l’IA à la même date PDF en statut F (403), raccordée à `CRE-IA-2026-01-QC` (`Note AMF IA.pdf`, 41 attentes, 12 `EXIG-AMF`) et analyses de cabinets, EU AI Act annexe III en décembre 2027, obligations actives de la Loi 25 et de l’article 50 européen) reposent sur les textes en vigueur. La date de décembre 2027 est connue par une reproduction non officielle du règlement (UE) 2026/1744 (section 4.4), dont le chapitre 35 confirme le report par les considérants publiés sur EUR-Lex. Le texte signale systématiquement les zones où des guides d’application sectoriels demeurent attendus.
 - Les pratiques d’avant-garde, soit la contractualisation B2B entièrement autonome d’entreprise à entreprise via AP2 et x402 et l’auto-assemblage dynamique d’essaims sans topologie pré-approuvée, sont balisées comme des frontières émergentes, avec les verrous juridiques et prudentiels qui en limitent encore le déploiement généralisé.
 - Les projections au-delà de 2027 sont réunies au chapitre 50, qui sépare ce qu’un texte date, ce qu’un émetteur annonce et ce qui reste une conjecture.
--
 
-### 0.5 Dossier initial du fil rouge : Groupe Boréal Inc.
+## 0.5 Dossier initial du fil rouge : Groupe Boréal Inc.
 
 Les concepts d’interopérabilité et d’orchestration montrent leur difficulté réelle au contact d’un système d’information patrimonial, formé par des décennies d’acquisitions, de dettes techniques et d’obligations légales hétérogènes. Plutôt que des exemples limités à trois fonctions Python idéalisées, les volets « Mise en œuvre » suivent la transformation d’une entreprise de référence fictive mais réaliste : Groupe Boréal Inc. (« Groupe Boréal »). Tous ses chiffres sont fictifs, y compris les résultats dits vérifiés ou homologués : ils donnent un ordre de grandeur plausible, non une mesure. Les 108 blocs de code du volume (97 extraits numérotés et 5 blocs autonomes) sont tous audités en intégration continue dans `Borealis-Bench/ci-audit-108-blocs/registre-108-blocs.json` (108/108 syntaxiquement valides, incluant Cedar, Rego, SQL, XML/BPMN, HTTP, HTML, Python, TypeScript, YAML et JSON) et portent un badge vérifié `DC-P11` : `[Exécuté en CI]` (90/108 blocs, soit 83,3 %, dont 9 modules Python à assertions comportementales et l’Extrait 47.7 prouvant l’anti-contournement 𝐻0) ou `[Schéma conceptuel]` (18/108 blocs : transcriptions filaires HTTP ou patrons dépendant de SDK externes non installés). Le banc expérimental exécutable sous licence MIT `Borealis-Bench/` (`gateway-go` + `crypto-rust`, synthèse dans `Borealis-Bench/results/SYNTHESE-BENCH.md`) complète les scénarios illustratifs fictifs du Groupe Boréal par quatre campagnes de mesures internes reproductibles (évaluation artificielle FEDS, reportées aux chapitres 24, 26, 31 et 49). Dans ce fil rouge fictif, seules la filiale financière et d’assurance (`BCA`) et la couche logicielle de contrôle déterministe relèvent du périmètre démontré ; les deux divisions industrielles et télématiques (`BEL` manufacturier/logistique/IT-OT et `BSN` équipements industriels/sites miniers) relèvent explicitement d’une `[Extrapolation illustrative hors champ financier démontré]`.
 
@@ -203,7 +202,7 @@ Les concepts d’interopérabilité et d’orchestration montrent leur difficult
 
 Chaque volet « Mise en œuvre » s’appuie sur une brique précise de ce chantier et montre, schémas et contrats de code à l’appui, comment passer d’un ensemble de prototypes fragiles à une architecture d’entreprise interopérable, résiliente et gouvernée.
 
-### 0.6 Carte des standards, protocoles et cadres de référence 2027
+## 0.6 Carte des standards, protocoles et cadres de référence 2027
 
 Les équipes d’architecture butent en 2026–2027 sur la densité d’acronymes d’un écosystème qui s’est structuré vite. Le tableau ci-dessous situe les dix-huit standards techniques, cadres de sécurité et régimes réglementaires qui traversent le compendium : organisme de tutelle, couche de la pile à six couches, fonction et chapitres où leur implémentation est détaillée.
 
@@ -230,7 +229,7 @@ Les équipes d’architecture butent en 2026–2027 sur la densité d’acronyme
 
 Le statut de ces textes est inégal. L’AAIF distingue trois niveaux (Sandbox, Growth, Impact), et seul celui d’A2A est établi, au niveau Growth (section 11.2). Pour l’identité des agents, aucun RFC propre aux agents n’existe, et l’identité décentralisée (DID) relève de la posture « attendre » (sections 11.4 et 11.10). Aucune norme ISO/IEC propre aux agents n’a été repérée, et l’initiative du NIST n’a produit aucun livrable normatif à ce jour (sections 11.5 et 11.6).
 
-#### Articulation des parties du compendium
+### Articulation des parties du compendium
 
 La progression des chapitres suit un principe d’ingénierie : on ne peut orchestrer durablement que ce qui est interopérable par ses protocoles et sa sémantique, ni mettre en production à grande échelle que ce qui est identifié par cryptographie, observable, souverain et borné sur le plan économique.
 

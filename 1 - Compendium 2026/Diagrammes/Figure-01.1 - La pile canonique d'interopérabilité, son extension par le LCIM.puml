@@ -2,7 +2,7 @@
 ' Source : 1 - Compendium 2026, Chapitre 1 (page 9)
 
 @startuml
-top to bottom direction
+left to right direction
 hide stereotype
 skinparam packageStyle rectangle
 skinparam backgroundColor #FFFFFF
@@ -10,8 +10,8 @@ skinparam defaultFontName "Segoe UI"
 skinparam defaultFontSize 13
 skinparam shadowing false
 skinparam roundCorner 4
-skinparam nodesep 25
-skinparam ranksep 20
+skinparam nodesep 12
+skinparam ranksep 28
 
 skinparam package {
   BackgroundColor #FFFFFF
@@ -49,19 +49,21 @@ skinparam legendBackgroundColor #F7F5F0
 skinparam legendBorderColor #C4BEB5
 skinparam legendFontColor #333333
 
-rectangle " " as AXIS_TOP <<axis>>
-rectangle " " as AXIS_BOT <<axis>>
-AXIS_BOT -up-> AXIS_TOP #9E3A14 : "chaque palier\nprésuppose\nles précédents"
+together {
+  rectangle " " as AXIS_TOP <<axis>>
+  rectangle " " as AXIS_BOT <<axis>>
+  AXIS_BOT -left-> AXIS_TOP #9E3A14 : "chaque palier\nprésuppose\nles précédents"
+}
 
 package "PILE CANONIQUE" as PILE {
-  rectangle "<color:#9E3A14><b>4</b></color>   <b>Organisationnel</b>   " as L4
-  rectangle "<color:#9E3A14><b>3</b></color>   <b>Sémantique</b>        " as L3
-  rectangle "<color:#9E3A14><b>2</b></color>   <b>Syntaxique</b>        " as L2
-  rectangle "<color:#9E3A14><b>1</b></color>   <b>Technique</b>         " as L1
+  rectangle "<color:#9E3A14><b>4</b></color>   <b>Organisationnel</b>" as L4
+  rectangle "<color:#9E3A14><b>3</b></color>   <b>Sémantique</b>" as L3
+  rectangle "<color:#9E3A14><b>2</b></color>   <b>Syntaxique</b>" as L2
+  rectangle "<color:#9E3A14><b>1</b></color>   <b>Technique</b>" as L1
 
-  L4 -[hidden]down- L3
-  L3 -[hidden]down- L2
-  L2 -[hidden]down- L1
+  L1 -[hidden]right- L2
+  L2 -[hidden]right- L3
+  L3 -[hidden]right- L4
 }
 
 package "EXTENSION LCIM" as EXT_PKG {
@@ -76,16 +78,16 @@ package "EXTENSION LCIM" as EXT_PKG {
     Syntaxique, et partiellement technique. Aucun
     mécanisme d'accord sémantique : ils le présupposent.
   ]
-  LCIM -[hidden]down- PROTO
+  PROTO -[hidden]right- LCIM
 }
 
-AXIS_TOP -[hidden]right- L4
-AXIS_BOT -[hidden]right- L1
+AXIS_TOP -[hidden]down- L4
+AXIS_BOT -[hidden]down- L1
 
-L4 -right- LCIM #B8B3AA
-L3 -right- LCIM #B8B3AA
-L2 -right- PROTO #9E3A14
-L1 -right- PROTO #9E3A14
+L4 -- LCIM #B8B3AA
+L3 -- LCIM #B8B3AA
+L2 -- PROTO #9E3A14
+L1 -- PROTO #9E3A14
 
 legend
   Un accord sémantique est sans effet si la syntaxe diffère ; un accord syntaxique reste vain si le transport échoue.

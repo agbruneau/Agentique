@@ -139,7 +139,7 @@ Ce glossaire recense par ordre alphabétique les **385 sigles, acronymes, notati
 | `FinOps` | *Financial Operations* (gouvernance économique infonuagique et IA) | Discipline pilotant le `CPO`, l’attribution `FOCUS 1.4` et les budgets d’erreur (`Ch. 8`) |
 | `FIPS` | *Federal Information Processing Standards* (`NIST`) | Normes cryptographiques fédérales américaines (`FIPS 140-3`, `203`, `204`, `205` ; `Ch. 7`) |
 | `FOCUS` | *FinOps Open Cost and Usage Specification* (`v1.4`) | Schéma ouvert de facturation et d’allocation des coûts d’inférence (`Ch. 8`, `CAP-049`) |
-| `G7` | Groupe des Sept (`G7 Cyber Expert Group`) | Source de la feuille de route coordonnée PQC du secteur financier (`2030–2032` A , `2035` A ; `Ch. 7`, `Ch. 12`) |
+| `G7` | Groupe des Sept (`G7 Cyber Expert Group`) | Source de la feuille de route coordonnée PQC du secteur financier (`2030–2032` A, `2035` A ; `Ch. 7`, `Ch. 12`) |
 | `GFM` | *GitHub Flavored Markdown* | Dialecte Markdown des manuscrits source compilés par Pandoc et Typst (`assemble.py`) |
 | `GLEIF` | *Global Legal Entity Identifier Foundation* | Fondation gérant l’écosystème `LEI` et `vLEI` pour les mandats B2B (`Ch. 9`, `Annexe F`) |
 | `GOV-17` | Dix interdictions sans dérogation (`EXIG-GOV-17`) | Noyau dur absolu ne tolérant aucune dérogation à l’homologation (`Ch. 12`, `Annexe C`) |

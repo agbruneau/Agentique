@@ -36,7 +36,7 @@ Un agent ne doit jamais exécuter une action irréversible sans garde-fou struct
 
 Les rails de paiement instantané irrévocables sont mentionnés ici comme illustration conceptuelle de cette irréversibilité ; *leurs plafonds, dates et états réels sont au* ***ch. 33*** *pour le versant canadien, et l’insertion agentique au* ***ch. 36**.*
 
-Lecture de l’auteur — le patron se matérialise par une séparation nette entre deux phases : la **préparation** — l’agent rassemble, enrichit, valide, produit une transaction prête à décision — et l’**engagement** — la libération proprement dite, soumise à une autorité humaine ou à un contrôle déterministe. *Cela suppose des identités d’agent à portée limitée, incapables d’émettre seules l’instruction finale ; une* ***confirmation explicite*** *avant tout franchissement de rail irrévocable ; et une piste d’audit reliant la proposition à l’autorisation.* Ce que le socle établit : rien de plus qu’un repérage. *L’unique entrée du socle consolidé qui couvre cette matière —* `S-157`*, tirée du Vol. I Monographie §5.0.2 et §5.1.1 — porte le patron et le déclare construction d’auteur du Vol.*
+Lecture de l’auteur — le patron se matérialise par une séparation nette entre deux phases : la **préparation** — l’agent rassemble, enrichit, valide, produit une transaction prête à décision — et l’**engagement** — la libération proprement dite, soumise à une autorité humaine ou à un contrôle déterministe. *Cela suppose des identités d’agent à portée limitée, incapables d’émettre seules l’instruction finale ; une* ***confirmation explicite*** *avant tout franchissement de rail irrévocable ; et une piste d’audit reliant la proposition à l’autorisation.* Ce que le socle établit : rien de plus qu’un repérage. *L’unique entrée du socle consolidé qui couvre cette matière — `S-157`, tirée du Vol. I Monographie §5.0.2 et §5.1.1 — porte le patron et le déclare construction d’auteur du Vol.*
 
 *I : « thèse à attribuer, jamais un fait »,* ***entrée non élevable**.* Ce qu’il n’établit pas : ni la propriété de finalité, en **[C]** comme tout ce que ce chapitre tire du Vol. I ; ni que ces trois moyens suffisent — *ils sont la mise en œuvre proposée, non une garantie.*
 
@@ -66,7 +66,7 @@ L’illustration la plus citée est *Moffatt v. Air Canada*, rendue par le *Civi
 
 Il en découle une distinction structurante pour tout le mouvement, et il faut la poser exactement (le Tableau 31.1) :
 
-***Tableau 31.1** — La distinction copilote / autonomie transactionnelle, reprise du Vol. I en **[C]**. Cette distinction n’est pas une échelle d’autonomie : *elle oppose deux régimes de responsabilité, non deux paliers de latitude* — les échelles d’autonomie de la somme sont nommées par leur cardinal et leur numérotation au ch. 14 § 14.4, et le mot « copilote » y est un palier d’une échelle et un niveau de deux autres.*
+**Tableau 31.1** — La distinction copilote / autonomie transactionnelle, reprise du Vol. I en **[C]**. Cette distinction n’est pas une échelle d’autonomie : *elle oppose deux régimes de responsabilité, non deux paliers de latitude* — les échelles d’autonomie de la somme sont nommées par leur cardinal et leur numérotation au ch. 14 § 14.4, et le mot « copilote » y est un palier d’une échelle et un niveau de deux autres.
 
 |  | **Copilote** | **Autonomie transactionnelle** |
 | --- | --- | --- |
@@ -147,9 +147,7 @@ Lecture de l’auteur — le motif d’intégration le plus robuste consiste à 
 
 Le **Common Domain Model** (**CDM**, porté par l’ISDA, l’ISLA et l’ICMA sous l’égide de la FINOS) modélise produits, transactions et événements de cycle de vie pour les dérivés de gré à gré, les titres au comptant, les opérations de financement sur titres et les matières premières ; son extension de déclaration réglementaire (*Digital Regulatory Reporting*, DRR) transforme les règles de déclaration en code adossé à ce modèle, *de sorte que la logique de reporting est* ***exécutée*** *plutôt que* ***réinterprétée*** *à chaque exécution.* Des travaux de recherche explorent cette trajectoire : Mridul, Sloyan, Gupta et Seneviratne (2025, cadre *CDMizer*, IJCAI 2025) montrent comment des modèles de langage et la récupération augmentée encodent des contrats dérivés directement dans le CDM.
 
-Le standard antérieur **FpML** (*Financial products Markup Language* de l’ISDA) demeure vivant et largement déployé — sa version 5.13 du 12 mai 2025 est un **standard vivant**, non un format déprécié — et il n’existe pas,
-
-à juin 2026, de correspondance officielle en source ouverte entre FpML et le CDM : *absence de documentation, degré 3* — ce qui laisse un travail de pont à la charge des intégrateurs.
+Le standard antérieur **FpML** (*Financial products Markup Language* de l’ISDA) demeure vivant et largement déployé — sa version 5.13 du 12 mai 2025 est un **standard vivant**, non un format déprécié — et il n’existe pas, à juin 2026, de correspondance officielle en source ouverte entre FpML et le CDM : *absence de documentation, degré 3* — ce qui laisse un travail de pont à la charge des intégrateurs.
 
 Du côté des marchés, le protocole **FIX** (*FIX Trading Community*) et son volet **lisible par machine** (*FIX Orchestra*) — qui décrit les règles d’engagement d’une session sous forme exploitable — fournissent une description que l’agent peut consommer comme *contrat* plutôt que comme convention implicite.
 
@@ -173,9 +171,7 @@ Les volumétries de connexions et les statuts réglementaires précités sont de
 
 *Renvois entrants dans la somme : le* ***ch. 34*** *y renvoie cinq fois —* ***§ 34.2.1**,* ***§ 34.2.2**,* ***§ 34.3.2**,* ***§ 34.4.6*** *et* ***§ 34.7.3*** *— et n’ajoute que l’illustration produit datée propre à son domaine ; aucun autre chapitre de la somme ne le consomme.*
 
-Le critère se pose en une phrase : le corpus ne documente, à juin 2026, aucun serveur d’outils « financier » sectoriel officiel ratifié. Le protocole agent-outil est **générique** (**ch. 8**), versé à une fondation sous égide neutre fin 2025 (**ch. 7**) ; le corpus ne documente ni profil financier normalisé ni serveur sectoriel ratifié
-
-par un organisme de standardisation — *absence de documentation dans le corpus, degré 3, à la date de gel de la source.*
+Le critère se pose en une phrase : le corpus ne documente, à juin 2026, aucun serveur d’outils « financier » sectoriel officiel ratifié. Le protocole agent-outil est **générique** (**ch. 8**), versé à une fondation sous égide neutre fin 2025 (**ch. 7**) ; le corpus ne documente ni profil financier normalisé ni serveur sectoriel ratifié par un organisme de standardisation — *absence de documentation dans le corpus, degré 3, à la date de gel de la source.*
 
 Trois réalités distinctes sont systématiquement confondues dans le discours commercial et doivent être tenues séparées (le Tableau 31.3) :
 
@@ -208,9 +204,7 @@ Cette transposition oblige à dissocier deux notions souvent confondues, et la c
 
 *Selon un constat d’éditeur de gouvernance non nommé dans la source (millésimé 2025 et déclaré à revérifier, voir fin de sous-section), la non-conformité la plus fréquemment relevée ne serait pas un défaut de validation sophistiquée mais une omission élémentaire* : *un agent ou un grand modèle de langage classé comme « outil », « assistant » ou « intégration logicielle », et de ce fait absent de l’inventaire des modèles.*
 
-Or dès lors que l’agent oriente une décision financière, son modèle sous-jacent et son dispositif d’orchestration tombent sous le coup du cadre de gestion du risque de modèle (au sens élargi d’E-23, ch. 25 § 25.1), dont le premier contrôle attendu est le recensement. C’est exactement ce que le ch. 25 § 25.5 a
-
-montré du côté prudentiel canadien : *un inventaire d’entreprise suppose que chaque entrée désigne un objet identifiable, et c’est la seule des cinq questions de la grille que le texte présuppose sans ambiguïté.*
+Or dès lors que l’agent oriente une décision financière, son modèle sous-jacent et son dispositif d’orchestration tombent sous le coup du cadre de gestion du risque de modèle (au sens élargi d’E-23, ch. 25 § 25.1), dont le premier contrôle attendu est le recensement. C’est exactement ce que le ch. 25 § 25.5 a montré du côté prudentiel canadien : *un inventaire d’entreprise suppose que chaque entrée désigne un objet identifiable, et c’est la seule des cinq questions de la grille que le texte présuppose sans ambiguïté.*
 
 Les trois piliers classiques du risque de modèle — inventaire exhaustif, validation indépendante, surveillance continue — se transposent moyennant des contrôles spécifiques. *Le premier vient d’être posé ; les deux autres suivent.*
 
@@ -361,9 +355,7 @@ Ce choix comporte un corollaire de gouvernance déjà posé au § 31.1.4 : *le m
 
 Le calcul confidentiel et les environnements d’exécution de confiance offrent une voie intermédiaire : *exécuter sur une infrastructure tierce tout en chiffrant la donnée en cours de traitement, de sorte que l’hébergeur lui-même ne puisse l’observer.* La confiance se reporte alors sur l’attestation matérielle — *sans pour autant annuler l’obligation d’inscrire le service au registre.* Un mécanisme se qualifie par ce que sa spécification démontre : *une attestation matérielle démontre qu’un code donné s’exécute dans un environnement donné ; elle ne démontre pas que ce code fasse ce qu’il prétend.*
 
-Lecture de l’auteur — le caractère réidentifiable des plongements interdit de les traiter comme des « données dérivées anonymes » : *la vectorisation conserve une fidélité suffisante pour reconstituer du renseignement personnel, ce qui fait basculer la couche de récupération sous le même régime de résidence que la donnée source.* Et la mémoire persistante de l’agent est une surface de fuite et d’empoisonnement à part entière — *déjà répertoriée parmi les risques agentiques des cadres ouverts du § 31.3.3, et dont le ch. 24 § 24.4.2 porte le versant de parc* : la résidence des traces n’est donc pas seulement une exigence de conformité, mais aussi une exigence
-
-de confinement de la mémoire. Ce que le repérage du Vol. I porte : les quatre plans et la réidentifiabilité. Ce qu’il n’établit pas : ce basculement de régime, qui est une lecture reprise du Vol. I. Et une absence se déclare : *aucune formalisation consensuelle de la propagation des étiquettes de sensibilité à travers les états mémoriels persistants d’un parc n’est documentée — degré 3.* (la Figure 31.4)
+Lecture de l’auteur — le caractère réidentifiable des plongements interdit de les traiter comme des « données dérivées anonymes » : *la vectorisation conserve une fidélité suffisante pour reconstituer du renseignement personnel, ce qui fait basculer la couche de récupération sous le même régime de résidence que la donnée source.* Et la mémoire persistante de l’agent est une surface de fuite et d’empoisonnement à part entière — *déjà répertoriée parmi les risques agentiques des cadres ouverts du § 31.3.3, et dont le ch. 24 § 24.4.2 porte le versant de parc* : la résidence des traces n’est donc pas seulement une exigence de conformité, mais aussi une exigence de confinement de la mémoire. Ce que le repérage du Vol. I porte : les quatre plans et la réidentifiabilité. Ce qu’il n’établit pas : ce basculement de régime, qui est une lecture reprise du Vol. I. Et une absence se déclare : *aucune formalisation consensuelle de la propagation des étiquettes de sensibilité à travers les états mémoriels persistants d’un parc n’est documentée — degré 3.* (la Figure 31.4)
 
 ***Figure 31.4** — Les quatre plans où circule la donnée régulée dans une boucle agentique.*
 

@@ -77,7 +77,7 @@ package "PASSAGES SOUS FONDATION" as P_RIGHT <<accent>> {
     déc. 2025 — la gouvernance du protocole agent-outil est
     transférée
   ]
-  rectangle "<b>quatre protocoles, deux fondations, dont l'une héberge\nl'autre</b>" as R_SUB <<sub>>
+  rectangle "<b>quatre protocoles, deux fondations, dont l'une héberge</b>\n<b>l'autre</b>" as R_SUB <<sub>>
   R_BOX -[hidden]down- R_SUB
 }
 

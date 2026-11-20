@@ -477,7 +477,7 @@ rence ou d’injection (OWASP ASI05) et une dérive silencieuse sur des états t
 
 Le comparateur ne s’en tient donc pas au corps JSON renvoyé à l’appelant. Il compare l’intention complète d’écriture transactionnelle (lignes comptables du grand livre, codes de taxes ventilés TPS/TVQ/TVH, événements émis) dans un mode d’essai à blanc isolé, et mesure l’écart de latence p99. La section 47.4 borne la technique : sûre seulement pour du code qui ne modifie pas de données, elle recommande pour les écritures d’écrire dans les deux systèmes puis de comparer à la lecture et, sur un traitement par lots, d’exécuter les deux systèmes sur le même fichier d’entrée en rapprochant les sorties enregistrement par enregistrement. Le mode d’essai à blanc décrit ici est une variante propre à ce volet, que cette section ne décrit pas.
 
-#### Extrait 47.3 — `[Exécuté en CI]` · Comparateur déterministe de parité *Shadow Mirroring* entre IBM i et service MCP moderne (shadow_parity_judge.py)
+### Extrait 47.3 — `[Exécuté en CI]` · Comparateur déterministe de parité *Shadow Mirroring* entre IBM i et service MCP moderne (shadow_parity_judge.py)
 
 Exécuté de façon asynchrone, hors du chemin critique de latence client, ce juge compare champ par champ les résultats décimaux et alimente la suite de non-régression en cas d’écart :
 
@@ -698,7 +698,7 @@ Une fluctuation saisonnière normale, comme la baisse de température ambiante d
 
 1. **Indice de stabilité de population (PSI) par tranche quantifiée** : On partitionne la distribution historique de référence 𝑃 en 𝐵 intervalles équiprobables et on mesure les fréquences observées 𝑞𝑏 du lot entrant 𝑄. Le score de divergence, symétrique, s’écrit :
 
-PSI(𝑃, 𝑄) = ∑𝐵 𝑏=1(𝑝𝑏−𝑞𝑏) ln(𝑝𝑏+ 𝜀𝑞𝑏+ 𝜀)
+PSI(𝑃, 𝑄) = ∑_{𝑏=1}^{𝐵} (𝑝_𝑏 − 𝑞_𝑏) ln((𝑝_𝑏 + 𝜀)/(𝑞_𝑏 + 𝜀))
 
 Pour éviter les faux positifs que le bruit multinomial produit sur les lots creux de la nuit, le portier impose un effectif minimal de référence (𝑛𝑏≥20 observations par compartiment) et stratifie la distribution de base 𝑃 par régime opératoire de la machine (IDLE, `RAMP_UP`, `FULL_LOAD`). Un PSI < 0, 10 autorise la publication automatique immédiate. Une zone grise, 0, 10 ≤PSI ≤0, 20, déclenche une inspection contextuelle par l’agent, qui vérifie si un événement métier connu, tel qu’un arrêt planifié d’usine, explique le décalage. Au-delà de PSI > 0, 20, la promotion est verrouillée quelle que soit l’opinion du modèle de langage.
 
@@ -835,7 +835,7 @@ le seuil `rootCauseConfidence >= 88` que la politique Cedar de l’Extrait 47.6 
 
 Le coordinateur applique donc un agrégateur de preuves pondéré et déterministe aux faits structurés que remonte chaque enquêteur. Une corrélation temporelle étroite (Δ𝑡< 4 min) avec un changement Git ou canari authentifié, une anomalie de métrique primaire hors de 4 𝜎 et l’absence de preuve réfutante sur les couches adjacentes sont converties en rapports de vraisemblance explicites :
 
-𝑃(𝐻𝑖∣𝐄) = 𝑃(𝐻𝑖) ∏𝑀𝑚=1 ℒ︀(𝑒𝑚∣𝐻𝑖) 𝑃(𝐻0) + ∑𝐾𝑗=1 𝑃(𝐻𝑗) ∏𝑀𝑚=1 ℒ︀(𝑒𝑚∣𝐻𝑗)
+𝑃(𝐻_𝑖 ∣ 𝐄) = (𝑃(𝐻_𝑖) ∏_{𝑚=1}^{𝑀} ℒ︀(𝑒_𝑚 ∣ 𝐻_𝑖)) / (𝑃(𝐻_0) + ∑_{𝑗=1}^{𝐾} 𝑃(𝐻_𝑗) ∏_{𝑚=1}^{𝑀} ℒ︀(𝑒_𝑚 ∣ 𝐻_𝑗))
 
 Si deux hypothèses concurrentes restent plausibles (𝑃(𝐻1 ∣𝐄) = 0, 54 et 𝑃(𝐻2 ∣𝐄) = 0, 41), le seuil de confiance de 0,88 n’est pas atteint. L’agent n’engage alors aucune mutation autonome et remet les deux pistes classées à l’ingénieur d’astreinte.
 
@@ -961,7 +961,7 @@ SYNTHÈSE EXÉCUTIVE
   1. *Irréversible en ingénierie cognitive* : Remplacer la rédaction manuelle des prompts par la compilation déclarative de programmes cognitifs (paradigme DSPy : optimiseurs bayésiens de signatures et de démonstrations), évaluée contre la suite 𝜏-bench du domaine.
   2. *Structurante pour l’économie d’échelle* : Opérer une boucle de données gouvernée (anonymisation irréversible Loi 25, filtrage anti-ASI06) qui distille périodiquement les trajectoires réussies de l’enseignant et les corrections contrastives des superviseurs HOTL vers des SLM d’entreprise (3B–8B, par SFT + DPO sur adaptateurs LoRA).
   3. *Gouvernance du cycle de vie* : Ne promouvoir un SLM distillé sur agentgateway que si sa constance pass5 sur le jeu de réserve scellé atteint au moins 99 % de celle de l’enseignant, avec une route d’escalade vers l’enseignant pour les entrées hors distribution.
-- **Indicateurs de gouvernance** : Baisse du coût par résultat sur 4 trimestres (cible −65 % à −85 %), ratio de parité pass5SLM/pass5Teacher (≥0, 99), zéro fuite de PII mémorisée aux tests d’extraction par canaris sur les poids affinés, et baisse de la latence p95 (-60 % à −75 %).
+- **Indicateurs de gouvernance** : Baisse du coût par résultat sur 4 trimestres (cible −65 % à −85 %), ratio de parité pass5_{SLM} / pass5_{Teacher} (≥0,99), zéro fuite de PII mémorisée aux tests d’extraction par canaris sur les poids affinés, et baisse de la latence p95 (-60 % à −75 %).
 
 ## 47.18 Des traces aux jeux d’entraînement : signal de sélection et sas d’assainissement
 
@@ -977,29 +977,29 @@ Les sorties brutes d’un modèle plus grand conduisent l’élève à l’effon
 > **[Figure]**
 > - Volant d'Inertie Cognitif (Data Flywheel) : Compilation Déclarative et Distillation Continue LLM → SLM
 > - 1. Trafic Production & Arbitrages Humains HOTL
-> - • Modèle enseignant frontière (Teacher LLM) sur les 20 % durs
-> - • Traces complètes OpenTelemetry GenAI + issue métier réelle
-> - • Corrections contrastives des superviseurs HOTL (paires DPO)
-> - • Signal d'ancrage : uniquement les sagas sans compensation
+> - Modèle enseignant frontière (Teacher LLM) sur les 20 % durs
+> - Traces complètes OpenTelemetry GenAI + issue métier réelle
+> - Corrections contrastives des superviseurs HOTL (paires DPO)
+> - Signal d'ancrage : uniquement les sagas sans compensation
 > - OTel
 > - 2. Sas d'Assainissement Loi 25 & Curation d'Or
-> - • Anonymisation irréversible PII & secrets d'affaires B2B
-> - • Filtrage anti-empoisonnement (rejet traces suspectes ASI06)
-> - • Dédoublonnage sémantique & équilibrage des cas rares
-> - • Partition stricte : Train (70 %) / Dev (15 %) / Holdout (15 %)
+> - Anonymisation irréversible PII & secrets d'affaires B2B
+> - Filtrage anti-empoisonnement (rejet traces suspectes ASI06)
+> - Dédoublonnage sémantique & équilibrage des cas rares
+> - Partition stricte : Train (70 %) / Dev (15 %) / Holdout (15 %)
 > - 3. Compilation de Graphes & Distillation SLM
-> - • Niveau A (Sans poids) : Compilateur déclaratif type DSPy
+> - Niveau A (Sans poids) : Compilateur déclaratif type DSPy
 > - (optimise consignes et exemples few-shot par métrique)
-> - • Niveau B (Poids légers) : Affinage SFT + DPO par LoRA
-> - • Modèle élève (Student SLM 4B–8B) sur schémas MCP internes
-> - • Coût d'inférence divisé par 8 à 14 et TTFT divisé par 4
+> - Niveau B (Poids légers) : Affinage SFT + DPO par LoRA
+> - Modèle élève (Student SLM 4B–8B) sur schémas MCP internes
+> - Coût d'inférence divisé par 8 à 14 et TTFT divisé par 4
 > - LoRA
 > - 4. Homologation τ-bench (pass^5) & Promotion
-> - • Banc de non-régression τ-bench sur jeu Holdout scellé
-> - • Exigence : pass^5(SLM) >= 99 % du pass^5(Teacher LLM)
-> - • Déploiement Shadow Mode → Canary 10 % sur agentgateway
-> - • Surveillance continue de dérive (PSI / entropie / escalade)
-> - • Retour automatique au Teacher LLM si cas hors distribution
+> - Banc de non-régression τ-bench sur jeu Holdout scellé
+> - Exigence : pass^5(SLM) >= 99 % du pass^5(Teacher LLM)
+> - Déploiement Shadow Mode → Canary 10 % sur agentgateway
+> - Surveillance continue de dérive (PSI / entropie / escalade)
+> - Retour automatique au Teacher LLM si cas hors distribution
 > - Trajectoire Économique d'un Flux Agentique Mature sur 4 Trimestres (Compression du Cost-per-Outcome)
 > - T1 — Amorçage (100 % LLM)
 > - Collecte traces initiales
@@ -1094,7 +1094,7 @@ La recette de 47.8 prend ici les volumes suivants : SFT sur 2 000 à 15 000 traj
 
 La distillation a un coût fixe d’entraînement et de validation 𝐶distill, amorti sur le volume mensuel d’exécutions 𝑉. Dans une cascade, l’élève examine d’abord chaque requête au coût 𝑐𝑆≪𝑐𝑇, résout directement la part 𝛼∈[0, 1] du flux et n’escalade que la fraction (1 −𝛼) vers l’enseignant, au coût 𝑐𝑇. Le coût unitaire moyen est 𝑐𝑆+ (1 −𝛼)𝑐𝑇. Le seuil mensuel de rentabilité nette 𝑉min vérifie :
 
-𝑉⋅(𝛼𝑐𝑇−𝑐𝑆) > 𝐶distill𝑀amort ⇔𝑉min = 𝐶distill 𝑀amort ⋅(𝛼𝑐𝑇−𝑐𝑆)
+𝑉 ⋅ (𝛼 𝑐_𝑇 − 𝑐_𝑆) > 𝐶_{distill} / 𝑀_{amort} ⇔ 𝑉_{min} = 𝐶_{distill} / (𝑀_{amort} ⋅ (𝛼 𝑐_𝑇 − 𝑐_𝑆))
 
 Avec des paramètres typiques en 2027 (𝐶distill = 900 $ CAD, GPU et CI inclus; durée de vie 𝑀amort = 3 mois avant rafraîchissement; 𝑐𝑇= 0, 042 $ CAD; 𝑐𝑆= 0, 003 $ CAD; 𝛼= 0, 82), le point mort est franchi dès 𝑉min ≈9 540 exécutions par mois, soit un peu plus de trois cents dossiers par jour. Au-delà, chaque million de transactions économise plus de 31 400 $ CAD et divise par quatre le TTFT.
 
@@ -1164,7 +1164,7 @@ mégaoctets chacun, sans coût de commutation. Vingt conteneurs GPU séparés po
 
 Grâce aux noyaux CUDA/Triton de multiplication matricielle groupée hétérogène (S-LoRA / Punica, intégrés nativement à vLLM et SGLang), un serveur à deux cartes de 80 Go garde un seul tronc gelé 𝑊0 en précision FP8 (~8,5 Go). Il applique à la volée, requête par requête dans le même lot continu, le couple d’adaptateurs de bas rang Δ𝑊𝑚= 𝐵𝑚𝐴𝑚 propre à la route métier 𝑚. L’empreinte mémoire totale pour héberger 𝑀 adaptateurs actifs simultanés de rang 𝑟 sur 𝐿 couches de dimension 𝑑 est :
 
-𝑀totalVRAM = 𝑀tronc(𝑊0) + 𝑀KV-cache + ∑𝑀 𝑚=1 2 𝐿𝑁proj 𝑑𝑟𝑏octets
+𝑀_{VRAM}^{total} = 𝑀_{tronc}(𝑊_0) + 𝑀_{KV-cache} + ∑_{𝑚=1}^{𝑀} 2 𝐿 𝑁_{proj} 𝑑 𝑟 𝑏_{octets}
 
 Pour un modèle 8B (𝐿= 32, 𝑁proj = 4, 𝑑= 4096, 𝑟= 32, FP16 à 𝑏= 2 octets), chaque adaptateur métier complet pèse 67 Mo. Héberger simultanément en VRAM chaude trente spécialistes n’occupe que 2,0 Go et laisse plus de 140 Go au KV-cache partagé. Le serveur absorbe des centaines de requêtes concurrentes avec un TTFT médian inférieur à 90 ms.
 

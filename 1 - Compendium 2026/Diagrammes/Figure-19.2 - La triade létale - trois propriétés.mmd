@@ -1,8 +1,7 @@
 %% Figure 19.2 — La triade létale : trois propriétés (accès aux données privées, exposition à du contenu non fiable, canal de sortie vers l’extérieur) dont la conjonction à l’intersection des trois ensembles suffit.
-%%{init: {'flowchart': {'wrappingWidth': 900}}}%%
+%%{init: {'flowchart': {'wrappingWidth': 1150}}}%%
 flowchart TB
     subgraph TRIADE["TROIS PROPRIÉTÉS, UNE CONJONCTION"]
-        direction TB
         P1(["<b>Données privées</b><br/>l'agent y a accès"])
         P2(["<b>Contenu non fiable</b><br/>courriel, page web, document,<br/>sortie d'outil"])
         P3(["<b>Canal de sortie</b><br/>vers l'extérieur"])
@@ -14,7 +13,7 @@ flowchart TB
 
     NOTE["C'est une CONJONCTION, non une somme de risques : retirer l'une des trois suffit à sortir de la zone, et les trois réunies<br/>suffisent à y entrer. Le ch. 11 § 11.1.2 n'en traite que l'amplification par la composabilité, et le ch. 20 s'y adosse — le<br/>siège est ici."]
 
-    TRIADE ~~~ NOTE
+    EXP ~~~ NOTE
 
     style TRIADE fill:#FFFDF9,stroke:#9A3412,stroke-width:1px,color:#9A3412
     style P1 fill:#FAF6F0,stroke:#B8B2A6,color:#1F2937

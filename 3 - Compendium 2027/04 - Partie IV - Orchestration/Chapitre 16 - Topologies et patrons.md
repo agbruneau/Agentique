@@ -379,11 +379,11 @@ Entre 2024 et 2025, plusieurs cadriciels multi-agents expérimentaux ont retenu 
 
 Soit un ensemble de 𝑛 agents qui coopèrent sur un dossier complexe. Dans un maillage conversationnel non contraint, où chaque agent peut interpeller n’importe quel pair et reçoit l’historique complet des échanges, le nombre de canaux potentiels croît selon :
 
-𝐶(𝑛) = 𝑛(𝑛−1)2 ∈𝑂(𝑛2)
+𝐶(𝑛) = 𝑛(𝑛−1)/2 ∈ 𝑂(𝑛^2)
 
 La consommation de jetons d’entrée croît aussi de façon quadratique. Si chaque tour 𝑡∈ {1, …, 𝑇} ajoute en moyenne 𝐿 jetons au tampon conversationnel partagé, le volume cumulé de jetons facturés et traités par l’attention au bout de 𝑇 tours atteint :
 
-𝑉jetons(𝑇) = ∑𝑇 𝑡=1(𝐿0 + 𝑡⋅𝐿) = 𝑇⋅𝐿0 + 𝑇(𝑇+ 1)2 𝐿
+𝑉_{jetons}(𝑇) = ∑_{𝑡=1}^{𝑇} (𝐿_0 + 𝑡⋅𝐿) = 𝑇⋅𝐿_0 + (𝑇(𝑇+1)/2)⋅𝐿
 
 où 𝐿0 désigne l’empreinte initiale des consignes système et des schémas d’outils. Au-delà de huit à dix échanges croisés, trois dégradations s’ajoutent :
 
@@ -421,18 +421,18 @@ adaptatif (section 16.1). Toute architecture candidate justifie laquelle elle in
 > - 1. Superviseur hiérarchique
 > - Superviseur (Router)
 > - Agent CRM Agent ERP Agent Finance
-> - • Complexité messages : O(k) délégations A2A
-> - • Force : Gouvernance et traçabilité simples
-> - • Limite : Goulot contextuel sans Claim-Check
+> - Complexité messages : O(k) délégations A2A
+> - Force : Gouvernance et traçabilité simples
+> - Limite : Goulot contextuel sans Claim-Check
 > - Cible : Triage client & routage multi-silos
 > - 2. Planificateur–Exécuteur–Critique
 > - Planificateur Exécuteur Critique
 > - (Autre LLM)
 > - Rejet (N ≤ 3)
 > - Sortie validée + Cedar
-> - • Familles LLM distinctes (anti-biais corrélé)
-> - • Force : Réduction drastique d'hallucinations
-> - • Limite : Coût 2,2× à 3,8× ; borne N stricte
+> - Familles LLM distinctes (anti-biais corrélé)
+> - Force : Réduction drastique d'hallucinations
+> - Limite : Coût 2,2× à 3,8× ; borne N stricte
 > - Cible : Souscription, code & analyse juridique
 > - 3. DAG dynamique typé (Plan & Run)
 > - Compil.
@@ -440,17 +440,17 @@ adaptatif (section 16.1). Toute architecture candidate justifie laquelle elle in
 > - Nœud B
 > - Nœud C
 > - Agrégat
-> - • Tri topologique de Kahn (zéro cycle garanti)
-> - • Force : Parallélisme maximal (latence P95 min)
-> - • Limite : Replanification partielle si surprise
+> - Tri topologique de Kahn (zéro cycle garanti)
+> - Force : Parallélisme maximal (latence P95 min)
+> - Limite : Replanification partielle si surprise
 > - Cible : Enrichissement 360° & audit multi-sources
 > - 4. Tableau noir (Shared Blackboard)
 > - État Partagé Versionné (CAS / ETag)
 > - Hypothèses • Preuves • Prédicat d'arrêt
 > - Agent Logs Agent Réseau Agent Métriques
-> - • Découplage total entre experts opportunistes
-> - • Force : Convergence d'indices hétérogènes
-> - • Limite : Conflits d'écriture sans verrou CAS
+> - Découplage total entre experts opportunistes
+> - Force : Convergence d'indices hétérogènes
+> - Limite : Conflits d'écriture sans verrou CAS
 > - Cible : Diagnostic RCA cyber, télécoms & OT
 > - 5. Enchères Contract Net (CNP)
 > - Adjudicateur (RFP)
@@ -459,9 +459,9 @@ adaptatif (section 16.1). Toute architecture candidate justifie laquelle elle in
 > - 0,42 $ | 9 s Soumission B
 > - 0,19 $ | 4 s Soumission C
 > - 0,31 $ | 14 s
-> - • Appel d'offres typé : Coût + SLA + Confiance
-> - • Force : Arbitrage économique et charge temps réel
-> - • Limite : Surcharge protocole (Annonce/Bid/Award)
+> - Appel d'offres typé : Coût + SLA + Confiance
+> - Force : Arbitrage économique et charge temps réel
+> - Limite : Surcharge protocole (Annonce/Bid/Award)
 > - Cible : Logistique multi-dépôts & achats B2B
 > - 6. Hybride BPMN/DMN + Cellule Agent
 > - DMN
@@ -471,9 +471,9 @@ adaptatif (section 16.1). Toute architecture candidate justifie laquelle elle in
 > - Vérif. Critique
 > - Commit
 > - ou HOTL
-> - • Épine dorsale ISO 19510 + cellule probabiliste
-> - • Force : Auditabilité prudentielle 100 % prouvable
-> - • Limite : Modélisation initiale plus exigeante
+> - Épine dorsale ISO 19510 + cellule probabiliste
+> - Force : Auditabilité prudentielle 100 % prouvable
+> - Limite : Modélisation initiale plus exigeante
 > - Cible : Banque/Assurance (BSIF E-23) & GxP
 
 *Fig. 26. – Comparaison architecturale des six topologies multi-agents de production en 2027.*
@@ -542,7 +542,7 @@ une cellule planificateur–exécuteur–critique. Quand la cellule retourne sa 
 
 Trois extraits codent les mécanismes où une erreur d’implémentation coûte le plus cher en production : le bornage de la boucle exécuteur–critique, l’adjudication d’une enchère Contract Net et l’insertion d’une cellule cognitive dans un flux BPMN 2.0 / DMN.
 
-#### Extrait 16.1 — `[Exécuté en CI]` · Cellule Planificateur–Exécuteur–Critique bornée à hétérogénéité de modèles obligatoire
+### Extrait 16.1 — `[Exécuté en CI]` · Cellule Planificateur–Exécuteur–Critique bornée à hétérogénéité de modèles obligatoire
 
 Cet orchestrateur TypeScript impose quatre garde-fous. Au démarrage, il vérifie que l’exécuteur et le critique relèvent de deux familles de fournisseurs distinctes. Il impute chaque coût au budget de l’`ActionEnvelope`, détecte la stagnation des critiques d’un tour à l’autre par une empreinte normalisée, et bascule en escalade HOTL plutôt que de livrer une sortie non homologuée.
 

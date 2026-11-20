@@ -330,8 +330,8 @@ Pour tout invariant d’affaires, réglementaire ou de sécurité (plafond d’e
 > - Cellule Agentique LLM
 > - Raisonnement probabiliste
 > - Propose une intention :
-> - • Appel d'outil MCP
-> - • Code Python / Script CUA
+> - Appel d'outil MCP
+> - Code Python / Script CUA
 > - Postulat Zero Trust :
 > - Aucun invariant métier,
 > - plafond financier ou secret
@@ -341,29 +341,29 @@ Pour tout invariant d’affaires, réglementaire ou de sécurité (plafond d’e
 > - 2. Garde-Fous Déterministes Hors du LLM
 > - (Architecture PEP / PDP Neuro-Symbolique)
 > - PEP : Passerelle agentgateway
-> - • Vérifie mTLS / DPoP & chaîne JWT RFC 8693
-> - • Valide le schéma MCP épinglé (SHA-256)
-> - • Extrait (principal, delegator, action, args)
-> - • Bloque tout contournement réseau direct
+> - Vérifie mTLS / DPoP & chaîne JWT RFC 8693
+> - Valide le schéma MCP épinglé (SHA-256)
+> - Extrait (principal, delegator, action, args)
+> - Bloque tout contournement réseau direct
 > - < 1,5 ms
 > - PDP : Moteur Cedar / OPA (Rego)
-> - • Règles formelles vérifiées par solveur SMT
-> - • Sémantique forbid prioritaire (plafonds, SoD)
-> - • Contrôle de teinte (interdit écriture si Taint)
-> - • Zéro probabilité d'injection de prompt
+> - Règles formelles vérifiées par solveur SMT
+> - Sémantique forbid prioritaire (plafonds, SoD)
+> - Contrôle de teinte (interdit écriture si Taint)
+> - Zéro probabilité d'injection de prompt
 > - Décision : ALLOW | DENY | STEP_UP_CIBA
 > - 3. Exécution Confinée (AAIF OpenSandbox)
 > - (Isolation Matérielle & Zéro Egress par Défaut)
 > - MicroVM Firecracker / Module WASI 0.2
-> - • Noyau invité dédié (KVM) ou bac à capacités WASI
-> - • Restauration snapshot < 15 ms • Rootfs lecture seule
-> - • Quotas stricts CPU / RAM / descripteurs / PIDs
-> - • Egress réseau = DENY ALL (aucun accès Internet
+> - Noyau invité dédié (KVM) ou bac à capacités WASI
+> - Restauration snapshot < 15 ms • Rootfs lecture seule
+> - Quotas stricts CPU / RAM / descripteurs / PIDs
+> - Egress réseau = DENY ALL (aucun accès Internet
 > - ni API métadonnées cloud 169.254.169.254)
 > - Mandataire de Secrets (Credential Vault Proxy)
-> - • Le code dans la microVM ne voit aucun jeton réel
-> - • Sortie unique via vsock vers liste blanche stricte
-> - • Injection TLS/OAuth à la frontière externe
+> - Le code dans la microVM ne voit aucun jeton réel
+> - Sortie unique via vsock vers liste blanche stricte
+> - Injection TLS/OAuth à la frontière externe
 > - Destruction cryptographique après chaque tâche
 > - 4. Coupe-Circuit Centralisé Multi-Nuages (SOC Kill Switch — Cible < 2 s • Plafond S-14 < 10 s)
 > - Détection Télémétrique Continue

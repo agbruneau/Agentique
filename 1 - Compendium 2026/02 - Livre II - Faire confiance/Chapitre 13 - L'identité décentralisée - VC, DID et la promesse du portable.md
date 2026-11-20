@@ -65,9 +65,7 @@ Un élément a été relevé et délibérément non converti en affirmation, et 
 
 ## 13.3 Les Community Groups agentiques du W3C
 
-Le Vol. I avait identifié le signal : il recensait **quatre** groupes communautaires (*Community Groups*) agentiques, dont trois datés, et posait la règle qui gouverne cette section — un *Community Group* n’est pas un *Working Group* : il ne produit pas de Recommandation et n’engage aucun calendrier normatif (Vol. III H-20, **[C]**). Le tri prospectif qu’il y attache est double : l’existence des groupes est PROGRAMMÉ, leur conversion
-
-en standards demeure **SPÉCULATIVE**. *Les trois statuts de ce tri ne sont pas définis ici* : leur siège est le **ch. 49 § 49.0**, et ce chapitre les emploie sans les re-poser.
+Le Vol. I avait identifié le signal : il recensait **quatre** groupes communautaires (*Community Groups*) agentiques, dont trois datés, et posait la règle qui gouverne cette section — un *Community Group* n’est pas un *Working Group* : il ne produit pas de Recommandation et n’engage aucun calendrier normatif (Vol. III H-20, **[C]**). Le tri prospectif qu’il y attache est double : l’existence des groupes est PROGRAMMÉ, leur conversion en standards demeure **SPÉCULATIVE**. *Les trois statuts de ce tri ne sont pas définis ici* : leur siège est le **ch. 49 § 49.0**, et ce chapitre les emploie sans les re-poser.
 
 L’instruction du Vol. III a ouvert **trois** groupes sur pièce le 21 juillet 2026 : deux que le Vol. I portait, et un qu’il ne portait pas.
 

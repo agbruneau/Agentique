@@ -362,8 +362,8 @@ Pour garder une latence constante au-delà de plusieurs dizaines de millions d�
 > - 1. Gestionnaire de Mémoire Type OS (Letta)
 > - État local par cellule agentique • Pagination explicite bornée
 > - Core Memory Blocks (RAM Contextuelle Épinglée)
-> - • Bloc Mandat & Politiques (Lecture seule, signé plateforme)
-> - • Bloc État Dossier & Préférences (Quota strict : ex. 2 048 car.)
+> - Bloc Mandat & Politiques (Lecture seule, signé plateforme)
+> - Bloc État Dossier & Préférences (Quota strict : ex. 2 048 car.)
 > - Outils : memory_replace / memory_rethink (filtrés anti-ASI06)
 > - Recall Memory (Journal Épisodique paginé)
 > - Traces d'interactions, décisions passées & appels d'outils

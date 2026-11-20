@@ -299,9 +299,9 @@ Un « oui, je confirme » écrit dans la conversation de l’agent ne prouve rie
 > - 7
 > - invalide l’approbation exécution, puis audit
 > - N’est jamais une approbation
-> - • un « oui » écrit dans la conversation de l’agent
-> - • un résumé rédigé par l’agent
-> - • une approbation donnée pour d’autres arguments
+> - un « oui » écrit dans la conversation de l’agent
+> - un résumé rédigé par l’agent
+> - une approbation donnée pour d’autres arguments
 > - prépare l’action
 > - appel soumis à approbation, sans jeton
 > - h = SHA-256(JCS({outil, version, definition_digest, agent_id, task_id, arguments}))

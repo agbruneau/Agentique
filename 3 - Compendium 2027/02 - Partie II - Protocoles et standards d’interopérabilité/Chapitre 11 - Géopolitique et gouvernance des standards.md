@@ -411,34 +411,34 @@ Dans un groupe qui exploite 𝑁= 12 environnements d’agents et 𝑀= 45 syst�
 > - Couche 6
 > - OSI L7 (UI & Tx)
 > - Interaction Humaine, Navigateur & Commerce
-> - • Flux réactifs AG-UI, interfaces A2UI / MCP-UI, voix temps réel WebRTC
-> - • Outils client WebMCP (W3C) • Mandats AP2 (FIDO) & règlement HTTP x402
+> - Flux réactifs AG-UI, interfaces A2UI / MCP-UI, voix temps réel WebRTC
+> - Outils client WebMCP (W3C) • Mandats AP2 (FIDO) & règlement HTTP x402
 > - Couche 5
 > - OSI L7 (Maillage)
 > - Coordination Horizontale & Découverte Inter-Agents
-> - • Délégation entre pairs autonomes : A2A v1.0 (convergence ACP, Agent Cards)
-> - • Annuaire fédéré AGNTCY (OASF, Agent Directory) & traversée B2B (ANP)
+> - Délégation entre pairs autonomes : A2A v1.0 (convergence ACP, Agent Cards)
+> - Annuaire fédéré AGNTCY (OASF, Agent Directory) & traversée B2B (ANP)
 > - Couche 4
 > - OSI L6 (Présentation)
 > - Sémantique Métier & Portabilité Cognitive
-> - • Ontologies canoniques d'entreprise : Apache Ossie (JSON Schema / RDF)
-> - • Savoir-faire portable : Agent Skills (SKILL.md), AGENTS.md, Open Responses
+> - Ontologies canoniques d'entreprise : Apache Ossie (JSON Schema / RDF)
+> - Savoir-faire portable : Agent Skills (SKILL.md), AGENTS.md, Open Responses
 > - Couche 3
 > - OSI L5–L6 (Session)
 > - Connectivité Verticale & Accès Outillé aux Systèmes
-> - • Model Context Protocol (MCP) sur JSON-RPC 2.0 & Streamable HTTP
-> - • Primitives : Tools, Resources, Prompts, Roots, Sampling, Elicitation
+> - Model Context Protocol (MCP) sur JSON-RPC 2.0 & Streamable HTTP
+> - Primitives : Tools, Resources, Prompts, Roots, Sampling, Elicitation
 > - Couche 2
 > - OSI L4–L5 (Transport)
 > - Plan de Données IA, Routage & Identité Cryptographique
-> - • Proxy agentgateway, Agent Router, transport SLIM chiffré MLS (RFC 9420)
-> - • Identités NHI (SPIFFE/WIMSE), délégation OAuth 2.1 OBO (RFC 8693) & Cedar
+> - Proxy agentgateway, Agent Router, transport SLIM chiffré MLS (RFC 9420)
+> - Identités NHI (SPIFFE/WIMSE), délégation OAuth 2.1 OBO (RFC 8693) & Cedar
 > - Couche 1
 > - OSI L1–L3 (Infra)
 > - Isolation d'Exécution, Évaluation & Moteurs Durables
-> - • Bacs à sable microVM / WASM : OpenSandbox • Bancs d'essai RL : OpenEnv
-> - • Hôte de référence Goose • Orchestration durable (Temporal / Restate)
-> - • Télémétrie transversale : OpenTelemetry (conventions sémantiques gen_ai.*)
+> - Bacs à sable microVM / WASM : OpenSandbox • Bancs d'essai RL : OpenEnv
+> - Hôte de référence Goose • Orchestration durable (Temporal / Restate)
+> - Télémétrie transversale : OpenTelemetry (conventions sémantiques gen_ai.*)
 > - Autorités de Gouvernance Ouverte
 > - Linux Foundation — AAIF (10 Projets)
 > - Agentic AI Foundation (Socle neutre inter-éditeurs)
@@ -533,7 +533,7 @@ Pour un éditeur SaaS B2B, refuser les standards ouverts par crainte d’être r
 
 MCP négocie ses révisions calendaires par l’en-tête MCP-Protocol-Version, tandis qu’A2A suit un versionnement sémantique (v1.0). Contre les extensions propriétaires qui rendent un composant captif, l’architecture combine une validation déclarative en passerelle et l’abstraction du plan d’inférence, conformément à l’isolement des dépendances instables derrière un adaptateur (section 11.10).
 
-#### Extrait 11.1 — `[Exécuté en CI]` · Matrice déclarative de conformité protocolaire (boreal-protocol-policy.yaml)
+### Extrait 11.1 — `[Exécuté en CI]` · Matrice déclarative de conformité protocolaire (boreal-protocol-policy.yaml)
 
 La politique fixe les versions de MCP et d’A2A admises, les transports, les contraintes de conception des outils, les règles d’identité et l’espace de noms des extensions d’éditeur; en production, tout composant non conforme est bloqué.
 

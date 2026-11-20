@@ -1,6 +1,6 @@
 # Table des matières
 
-  - Ouverture — Architecture et gouvernance du tissu conjonctif agentique — 6
+- Ouverture — Architecture et gouvernance du tissu conjonctif agentique — 6
 - Partie I — Fondements et cadrage — 21
   - Chapitre 1 — L’entreprise agentique — 22
     - Mise en œuvre — De l’assistance conversationnelle à la main-d’œuvre d’exécution asynchrone — 32

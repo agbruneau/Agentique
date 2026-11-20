@@ -216,54 +216,54 @@ mesurés par domaine d’affaires : les deux échelles ne se correspondent pas. 
 > - Modèle de Maturité de l'Entreprise Agentique (N1 à N5) et Portes de Gouvernance
 > - N1 • Ad hoc
 > - Exploratoire / Shadow AI
-> - • Copilotes UI synchrones
-> - • Clés API partagées
-> - • Presse-papiers humain
-> - • Zéro trace OpenTelemetry
-> - • État perdu à la fermeture
+> - Copilotes UI synchrones
+> - Clés API partagées
+> - Presse-papiers humain
+> - Zéro trace OpenTelemetry
+> - État perdu à la fermeture
 > - Risque : Fuite Loi 25 &
 > - Shadow Sprawl incontrôlé
 > - N2 • Départemental
 > - Outillé en Silos Locaux
-> - • Studios SaaS isolés
-> - • Premiers serveurs MCP
-> - • Boucles ReAct volatiles
-> - • Validation HITL à 100 %
-> - • Comptes service larges
-> - • Facture jetons globale
+> - Studios SaaS isolés
+> - Premiers serveurs MCP
+> - Boucles ReAct volatiles
+> - Validation HITL à 100 %
+> - Comptes service larges
+> - Facture jetons globale
 > - Limite : Goulot HITL &
 > - spaghetti d'adaptateurs
 > - N3 • Gouverné
 > - Socle Production Critique
-> - • Runtime durable Temporal
-> - • Identité NHI + OAuth OBO
-> - • Passerelle agentgateway
-> - • Politiques Cedar / OPA
-> - • Outils MCP idempotents
-> - • Supervision HOTL calibrée
-> - • Tests stabilité pass^k
+> - Runtime durable Temporal
+> - Identité NHI + OAuth OBO
+> - Passerelle agentgateway
+> - Politiques Cedar / OPA
+> - Outils MCP idempotents
+> - Supervision HOTL calibrée
+> - Tests stabilité pass^k
 > - Seuil minimal exigé pour
 > - BSIF E-23 & EU AI Act
 > - N4 • Orchestré
 > - Maillage Multi-Domaines
-> - • Délégation A2A v1.0 + MCP
-> - • Sagas compensées inter-SI
-> - • Convergence ERP / CRM / OT
-> - • Ontologie domaine partagée
-> - • Routage économique SLM/LLM
-> - • Méta-gouverneurs critiques
-> - • FinOps Cost-per-Outcome
+> - Délégation A2A v1.0 + MCP
+> - Sagas compensées inter-SI
+> - Convergence ERP / CRM / OT
+> - Ontologie domaine partagée
+> - Routage économique SLM/LLM
+> - Méta-gouverneurs critiques
+> - FinOps Cost-per-Outcome
 > - Cible optimale des grands
 > - flux internes transversaux
 > - N5 • Fédéré B2B
 > - Écosystème Inter-Entreprises
-> - • Annuaire AGNTCY / OASF
-> - • Fédération DID / mTLS DMZ
-> - • Négociation B2B sous mandat
-> - • Règlements AP2 / x402
-> - • Contrats SLA opposables
-> - • Coupe-circuits inter-firmes
-> - • Preuves cryptographiques
+> - Annuaire AGNTCY / OASF
+> - Fédération DID / mTLS DMZ
+> - Négociation B2B sous mandat
+> - Règlements AP2 / x402
+> - Contrats SLA opposables
+> - Coupe-circuits inter-firmes
+> - Preuves cryptographiques
 > - Réservé aux chaînes B2B
 > - fournisseurs & partenaires
 > - Porte G1 • Visibilité
@@ -349,7 +349,7 @@ Une clause éliminatoire sur la sécurité (𝜏min = 60) interdit de compenser 
 
 Si 𝑆ready < 50 (ou 𝑐sec < 60), le système reste en lecture seule (L1) jusqu’à l’interposition d’une façade MCP qui gère en externe un registre ACID d’idempotence, un limiteur de concurrence (*bulkhead*) et une piste d’audit nominative. Ce cloisonnement protège notamment les tables de verrous pessimistes (SAP ENQUEUE ou sous-systèmes interactifs QINTER sur IBM i) contre les rafales synchronisées de réessais, qui paralysent en quelques secondes un cœur transactionnel dimensionné pour le rythme de frappe humain. Entre 50 et 75, l’écriture bornée est permise sous quotas stricts et recul exponentiel temporisé (*full jitter*); à 75 et plus, le système est qualifié natif N3/N4.
 
-#### Extrait 43.1 — `[Exécuté en CI]` · Manifeste YAML d’évaluation patrimoniale (*Brownfield Readiness Manifest*)
+### Extrait 43.1 — `[Exécuté en CI]` · Manifeste YAML d’évaluation patrimoniale (*Brownfield Readiness Manifest*)
 
 Ce manifeste consigne le diagnostic des contrats IBM i de Boréal Capital & Assurances (BCA).
 
@@ -432,7 +432,7 @@ Pour assainir l’existant sans pousser les métiers vers la clandestinité par 
 
 Les équipes n’adhèrent aux quatre portes que si le chemin pavé existe. Le portail interne développeur ne se contente pas d’édicter des interdits : il génère en quelques minutes un squelette de service pré-câblé (identité SPIFFE, client agentgateway, instrumentation OpenTelemetry `gen_ai.*`, enveloppe `ActionEnvelope`, harnais de test CI/CD pass5). Quand la conformité N3 devient l’option de moindre effort, l’incitation au contournement clandestin disparaît d’elle-même. En exploitation, l’homologation reste révocable en temps réel : si la télémétrie continue relève un recul du taux d’acceptation des gardes ou une alerte OWASP ASI, la passerelle abaisse le plafond d’autonomie de L3 (HOTL) à L2 (HITL) ou à L1 sans redéploiement applicatif.
 
-#### Extrait 43.3 — `[Exécuté en CI]` · Politique déterministe Cedar automatisant la Porte G2 dans le pipeline CI/CD
+### Extrait 43.3 — `[Exécuté en CI]` · Politique déterministe Cedar automatisant la Porte G2 dans le pipeline CI/CD
 
 Cette politique Cedar automatise la porte G2 : elle autorise la promotion d’une version conforme et refuse toute clé d’API partagée ou donnée personnelle sans ÉFVP approuvée.
 

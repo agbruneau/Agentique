@@ -6,6 +6,12 @@ top to bottom direction
 skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
+skinparam rectangle<<invis>> {
+  BackgroundColor transparent
+  BorderColor transparent
+  FontColor transparent
+  FontSize 1
+}
 skinparam rectangle {
   BackgroundColor #FFFFFF
   BorderColor #334155
@@ -36,7 +42,7 @@ rectangle "1. Flux de Consommation (Spans OTel)" as FluxConso #F8FAFC;line:47556
   MemoireEtat -[hidden]down-> CoutHumain
 }
 
-rectangle " " as Col2 #FFFFFF;line:FFFFFF {
+rectangle " " as Col2 <<invis>> {
   rectangle "2a. Disjoncteur Temps Réel (agentgateway)\nSuivi atomique Redis/Lua sur ActionEnvelope.budget" as Disjoncteur #FEF2F2;line:DC2626 {
     rectangle Seuils #FFFFFF;line:DC2626 [
       • < 70 % plafond : Routage nominal
@@ -80,8 +86,11 @@ rectangle "3. Pilotage Cost-per-Outcome" as Pilotage #F0FDF4;line:166534 {
   Chargeback -[hidden]down-> Arbitrage
 }
 
-FluxConso -[#2563EB]right-> Col2
-Col2 -[#166534]right-> Pilotage
+InfModeles -[hidden]right-> Seuils
+OutilsMCP -[#2563EB]right-> Seuils
+MemoireEtat -[#2563EB]right-> Evenements
+Seuils -[#166534]right-> Equation
+Evenements -[#166534]right-> Chargeback
 
 rectangle "4. Quatre Leviers Architecturaux d'Optimisation Structurelle du Cost-per-Outcome" as Leviers #F8FAFC;line:334155 {
   rectangle Levier1 #EFF6FF;line:93C5FD [

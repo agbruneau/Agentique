@@ -7,6 +7,8 @@ skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
 skinparam defaultFontSize 11
 skinparam packageStyle rectangle
+skinparam nodesep 22
+skinparam ranksep 26
 
 package "Six couches de l'architecture" as Couches #FFFFFF {
   rectangle "**1  Canaux et déclencheurs**" as L1 #E6F0FA;line:93C5FD {
@@ -75,19 +77,13 @@ L5a -[hidden]right-> L5b
 L5b -[hidden]right-> L5c
 L5c -[hidden]right-> L5d
 
-L1 <-down-> L2 : Demandes descendantes\n(mandant, trace, plafonds)\nRésultats et artefacts remontants
-L2 <-down-> L3
-L3 <-down-> L4
-L4 <-down-> L5
-L5 <-down-> L6
+L1b <-down-> L2b : Demandes descendantes (mandant, trace, plafonds)\nRésultats et artefacts remontants
+L2b <-down-> L3b
+L3b <-down-> L4b
+L4b <-down-> L5b
+L5b <-down-> L6a
 
-L1b -[hidden]down-> L2b
-L2b -[hidden]down-> L3b
-L3b -[hidden]down-> L4b
-L4b -[hidden]down-> L5b
-L5b -[hidden]down-> L6a
-
-L3a -[#9C2F39,dashed,thickness=2]-> L6a : <b>Interdit</b> (EXIG-ARC-01)
+L3a -[#9C2F39,dashed,thickness=2]down-> L6a : <color:#9C2F39><b>Interdit</b></color>\n<color:#9C2F39>(EXIG-ARC-01)</color>
 
 PA -[hidden]down-> PB
 PB -[hidden]down-> PC

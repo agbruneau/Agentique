@@ -12,9 +12,7 @@ Ce chapitre est le socle **pré-agentique** du Livre I, et il est posé une seul
 
 ### 1.0.1 Coût de la non-interopérabilité et dette d’intégration : l’enjeu économique et le périmètre du chapitre
 
-L’absence d’interopérabilité n’est pas une gêne opérationnelle : c’est un coût continu, supporté par l’organisation, qu’elle le mesure ou non. Lorsque les systèmes d’information se constituent en silos, chaque besoin d’échange impose de tisser une liaison dédiée entre deux applications. Cette intégration point-à-point engendre une croissance combinatoire du nombre de connexions : raccorder *N* systèmes susceptibles de dialoguer deux à deux peut requérir jusqu’à *N*(*N*−1)/2 liaisons, chacune avec sa logique de transport, de
-
-format et de correspondance. S’accumule alors une **dette d’intégration** : couplages rigides, transformations dupliquées, connaissances enfouies dans des adaptateurs ponctuels que plus personne n’ose modifier.
+L’absence d’interopérabilité n’est pas une gêne opérationnelle : c’est un coût continu, supporté par l’organisation, qu’elle le mesure ou non. Lorsque les systèmes d’information se constituent en silos, chaque besoin d’échange impose de tisser une liaison dédiée entre deux applications. Cette intégration point-à-point engendre une croissance combinatoire du nombre de connexions : raccorder *N* systèmes susceptibles de dialoguer deux à deux peut requérir jusqu’à *N*(*N*−1)/2 liaisons, chacune avec sa logique de transport, de format et de correspondance. S’accumule alors une **dette d’intégration** : couplages rigides, transformations dupliquées, connaissances enfouies dans des adaptateurs ponctuels que plus personne n’ose modifier.
 
 Cette dette est précisément ce que le langage des patrons d’intégration cherche à résorber, notamment par l’introduction d’un intermédiaire et d’un format pivot qui ramènent la complexité de *N*×*N* à un ordre linéaire (voir § 1.6.1). Le constat est donc autant économique qu’architectural : toute décision d’intégration met en balance le coût total de possession sur le cycle de vie complet — développement, exploitation, maintenance, dépréciation — et non le seul coût d’acquisition. C’est dans ce cadre que se pose l’arbitrage *build-vs-buy*, et c’est là que se loge le piège le plus fréquent : un échange réalisé à bas coût immédiat mais fortement couplé **reporte sa facture** sur l’évolution future, lorsqu’un changement unilatéral d’un côté brisera l’autre.
 
@@ -48,9 +46,7 @@ Avant d’aborder les cadres de référence (voir § 1.2) et les architectures d
 
 L’interopérabilité se définit comme la capacité de deux systèmes ou plus à échanger de l’information et à utiliser mutuellement l’information échangée. Cette formulation distingue deux moments souvent confondus : l’échange (l’information transite) et l’usage (le destinataire interprète et exploite effectivement ce qu’il reçoit). Un transfert d’octets réussi ne garantit pas l’interopérabilité ; encore faut-il que la sémantique du message soit comprise et que l’action attendue s’ensuive. C’est cette distinction, et elle seule, qui rend intelligible l’écart que le ch. 9 (§ 9.4) nommera *accord de protocole contre compréhension* — deux agents peuvent négocier correctement un échange sans s’entendre sur ce qu’ils échangent.
 
-Il convient également de séparer la **capacité** de l’**acte** : l’interopérabilité comme propriété d’un système (son aptitude à coopérer) ne se confond pas avec l’acte d’interopérer (une interaction effective et réussie à un instant donné). La portée est pratique : un système peut être interopérable en principe sans qu’aucun
-
-échange concret ne soit en cours, et un échange ponctuel peut réussir par accident sans propriété stable sous-jacente.
+Il convient également de séparer la **capacité** de l’**acte** : l’interopérabilité comme propriété d’un système (son aptitude à coopérer) ne se confond pas avec l’acte d’interopérer (une interaction effective et réussie à un instant donné). La portée est pratique : un système peut être interopérable en principe sans qu’aucun échange concret ne soit en cours, et un échange ponctuel peut réussir par accident sans propriété stable sous-jacente.
 
 Quatre concepts voisins, fréquemment employés comme synonymes, recouvrent des relations distinctes. L’**intégration** désigne un assemblage fortement couplé où les composants sont réunis en un tout cohérent, souvent au prix d’une dépendance mutuelle élevée. L’**interopérabilité** vise au contraire une coopération faiblement couplée : les systèmes restent autonomes et coopèrent par contrats explicites, sans fusionner. La **compatibilité** renvoie à une coexistence — deux systèmes fonctionnent côte à côte sans se nuire, sans nécessairement coopérer (tandis qu’au sens normatif d’ISO/IEC 25010, la compatibilité est la caractéristique parente qui regroupe coexistence et interopérabilité). La **portabilité** concerne la migration : l’aptitude d’un artefact à être transféré d’un environnement vers un autre (le Tableau 1.1).
 
@@ -73,9 +69,7 @@ Le modèle de qualité produit SQuaRE (*Systems and software Quality Requirement
 
 L’interopérabilité s’analyse en niveaux superposés formant une hiérarchie **cumulative**, où chaque palier présuppose les précédents. Le niveau **technique** assure le transport des bits et l’établissement de la connexion. Le niveau **syntaxique** garantit que les structures de données échangées partagent une grammaire commune. Le niveau **sémantique** établit que les parties attribuent le même sens aux données. Le niveau **organisationnel** aligne processus métier, responsabilités et règles entre organisations. La cumulativité est essentielle : un accord sémantique est sans effet si la syntaxe diffère, et un accord syntaxique reste vain si le transport échoue.
 
-Cette pile fournit la grille de lecture de la somme entière. Chaque mécanisme étudié plus loin se situe sur l’un de ces paliers — les formats, les schémas, la sémantique et les ontologies au ch. 2, la coordination organisationnelle des processus ici même (§ 1.6), les protocoles agentiques au ch. 8. *Elle prépare aussi le constat le plus important du Livre I* : le *Model Context Protocol* (MCP) et le protocole *Agent2Agent* (A2A)
-
-opèrent au niveau syntaxique et, partiellement, technique ; ils ne fournissent aucun mécanisme d’accord sémantique, qu’ils **présupposent**. Ce constat est établi au ch. 8 et au ch. 9 ; il est ici seulement rendu formulable (la Figure 1.1).
+Cette pile fournit la grille de lecture de la somme entière. Chaque mécanisme étudié plus loin se situe sur l’un de ces paliers — les formats, les schémas, la sémantique et les ontologies au ch. 2, la coordination organisationnelle des processus ici même (§ 1.6), les protocoles agentiques au ch. 8. *Elle prépare aussi le constat le plus important du Livre I* : le *Model Context Protocol* (MCP) et le protocole *Agent2Agent* (A2A) opèrent au niveau syntaxique et, partiellement, technique ; ils ne fournissent aucun mécanisme d’accord sémantique, qu’ils **présupposent**. Ce constat est établi au ch. 8 et au ch. 9 ; il est ici seulement rendu formulable (la Figure 1.1).
 
 ***Figure 1.1** — La pile canonique d’interopérabilité, son extension par le LCIM et le palier où opèrent MCP et A2A (quatre paliers cumulatifs numérotés de 1 à 4).*
 
@@ -91,9 +85,7 @@ L’apport décisif du LCIM est de montrer qu’un échange syntaxiquement **et*
 
 Le couplage n’est pas une grandeur unique mais un **faisceau de dépendances**, chacune réductible séparément. La décomposition retenue est celle de Hohpe, qui distingue **notamment** — la liste n’est pas donnée pour close — le couplage de **technologie** (dépendance à une plateforme ou un langage communs), de **format** (dépendance à une représentation précise des données), de **localisation** (dépendance à l’adresse physique du correspondant), de **temporalité** (nécessité que les deux parties soient disponibles simultanément) et d’**interaction** (rigidité du protocole de conversation).
 
-Chaque facette appelle un mécanisme de découplage spécifique : l’**indirection** — un intermédiaire dissociant l’appelant de la localisation et de l’identité du destinataire — traite le couplage de localisation ; l’**asynchronisme** lève le couplage temporel ; les **schémas tolérants**, qui ignorent les champs inconnus
-
-et tolèrent les ajouts, atténuent le couplage de format. Le découplage est la condition même du passage à l’échelle : plus les dépendances entre systèmes sont nombreuses et rigides, plus chaque évolution propage des ruptures.
+Chaque facette appelle un mécanisme de découplage spécifique : l’**indirection** — un intermédiaire dissociant l’appelant de la localisation et de l’identité du destinataire — traite le couplage de localisation ; l’**asynchronisme** lève le couplage temporel ; les **schémas tolérants**, qui ignorent les champs inconnus et tolèrent les ajouts, atténuent le couplage de format. Le découplage est la condition même du passage à l’échelle : plus les dépendances entre systèmes sont nombreuses et rigides, plus chaque évolution propage des ruptures.
 
 Cette décomposition en facettes vaut d’être retenue pour une raison qui excède ce chapitre. Lecture de l’auteur — les protocoles agentiques ne réduisent pas le couplage de manière uniforme : ils traitent avec vigueur le couplage de format et d’interaction, laissent largement ouvert le couplage de localisation (d’où les registres du ch. 9) et **rétablissent** un couplage de confiance que la pile pré-agentique ne connaissait pas sous cette forme (d’où le Livre II). Ce que le socle établit ici, c’est la grille ; le classement des protocoles dans cette grille est instruit aux chapitres nommés, non ici.
 
@@ -115,9 +107,7 @@ Le caractère irréductible de ces trois propriétés explique pourquoi l’inte
 
 #### 1.1.4.1 Évolution et versionnement
 
-L’interopérabilité n’est pas un état acquis mais une propriété à maintenir tandis que les systèmes évoluent à des rythmes différents. La notion clé est la compatibilité : selon la terminologie de l’ingénierie des schémas reprise au § 2.1.5 (tableau 2.1), un changement est **descendant** (*backward compatible*, ou rétrocompatible au sens courant des API) lorsqu’un consommateur mis à jour continue de lire les données d’un producteur ancien — ou, côté service, lorsqu’un producteur mis à jour ne rompt pas les consommateurs existants —, et **ascendant** (*forward compatible*, ou procompatible) lorsqu’un consommateur resté sur l’ancien contrat lit les
-
-messages d’un producteur nouveau. Le versionnement sémantique fournit une convention de signalement distinguant les évolutions compatibles des ruptures.
+L’interopérabilité n’est pas un état acquis mais une propriété à maintenir tandis que les systèmes évoluent à des rythmes différents. La notion clé est la compatibilité : selon la terminologie de l’ingénierie des schémas reprise au § 2.1.5 (tableau 2.1), un changement est **descendant** (*backward compatible*, ou rétrocompatible au sens courant des API) lorsqu’un consommateur mis à jour continue de lire les données d’un producteur ancien — ou, côté service, lorsqu’un producteur mis à jour ne rompt pas les consommateurs existants —, et **ascendant** (*forward compatible*, ou procompatible) lorsqu’un consommateur resté sur l’ancien contrat lit les messages d’un producteur nouveau. Le versionnement sémantique fournit une convention de signalement distinguant les évolutions compatibles des ruptures.
 
 Le principe du *tolerant reader* est central : un consommateur robuste ignore ce qu’il ne connaît pas et ne dépend que des éléments dont il a réellement besoin, ce qui lui permet de survivre aux extensions du producteur. Ce principe est lui-même une déclinaison du découplage de format appliquée au temps.
 
@@ -137,9 +127,7 @@ Là où la section précédente a établi le vocabulaire, celle-ci fournit les g
 
 ### 1.2.1 Dimensions canoniques et ISO 11354
 
-Les cadres conceptuels dominants structurent l’interopérabilité en couches superposées. L’articulation du Cadre d’interopérabilité européen (EIF, § 1.2.1) retient quatre couches — ajoutant une couche juridique au sommet de la pile canonique technique-syntaxique-sémantique-organisationnelle du § 1.1.2 : **juridique** (alignement des bases légales et des régimes de responsabilité entre organisations qui échangent), **organisationnel** (coordination des processus métier, des rôles et des accords de service), **sémantique** (préservation
-
-du sens des données échangées) et **technique** (protocoles, interfaces et formats d’acheminement). Chaque couche supérieure suppose les couches inférieures résolues : un échange techniquement parfait reste inopérant si le sens diverge ou si le cadre juridique interdit le partage.
+Les cadres conceptuels dominants structurent l’interopérabilité en couches superposées. L’articulation du Cadre d’interopérabilité européen (EIF, § 1.2.1) retient quatre couches — ajoutant une couche juridique au sommet de la pile canonique technique-syntaxique-sémantique-organisationnelle du § 1.1.2 : **juridique** (alignement des bases légales et des régimes de responsabilité entre organisations qui échangent), **organisationnel** (coordination des processus métier, des rôles et des accords de service), **sémantique** (préservation du sens des données échangées) et **technique** (protocoles, interfaces et formats d’acheminement). Chaque couche supérieure suppose les couches inférieures résolues : un échange techniquement parfait reste inopérant si le sens diverge ou si le cadre juridique interdit le partage.
 
 L’apport décisif de ce cadre tient à son traitement de la **gouvernance** non comme une cinquième couche, mais comme une dimension **transversale** qui traverse les quatre niveaux : décisions de partage, propriété des données et règles d’évolution des interfaces relèvent d’un pilotage qui conditionne l’interopérabilité à chaque palier.
 
@@ -157,9 +145,7 @@ L’apport le plus structurant tient à la typologie des trois **approches** de 
 
 Les premiers modèles de maturité opérationnels sont nés du besoin militaire d’évaluer la capacité de systèmes hétérogènes à se coordonner. Le modèle *Levels of Information Systems Interoperability* (LISI) définit cinq niveaux croissants, d’isolé à universel, caractérisés selon quatre attributs regroupés sous l’acronyme PAID : procédures, applications, infrastructure et données. La force de LISI est d’avoir lié chaque niveau de maturité à des artefacts **concrets et vérifiables** — sans procédures partagées, sans infrastructure commune, sans données alignées, la prétention à interopérer reste théorique. Cette discipline de l’évaluation par preuves plutôt que par déclaration d’intention demeure l’héritage le plus durable de cette lignée, et la somme la reprend à son compte : c’est la même exigence qui, au Livre II, distinguera un mécanisme d’identité qui **démontre** de celui qui **promet**.
 
-Le modèle souffrait d’un angle mort : centré sur les systèmes techniques, il négligeait la dimension humaine et organisationnelle. L’*Organisational Interoperability Maturity Model* comble ce manque en ajoutant une
-
-couche organisationnelle distincte, évaluant l’aptitude des organisations elles-mêmes — préparation, compréhension partagée, commandement, éthique — à coopérer au-delà de la connexion de leurs systèmes. L’interopérabilité demeure, à son terme, une propriété **sociotechnique**.
+Le modèle souffrait d’un angle mort : centré sur les systèmes techniques, il négligeait la dimension humaine et organisationnelle. L’*Organisational Interoperability Maturity Model* comble ce manque en ajoutant une couche organisationnelle distincte, évaluant l’aptitude des organisations elles-mêmes — préparation, compréhension partagée, commandement, éthique — à coopérer au-delà de la connexion de leurs systèmes. L’interopérabilité demeure, à son terme, une propriété **sociotechnique**.
 
 #### 1.2.2.2 Le déplacement vers l’entreprise et les services publics
 
@@ -179,9 +165,7 @@ Une piste de dépassement consiste à substituer à l’échelle discrète une l
 
 ### 1.2.3 Le cadre européen : EIF, EIRA et l’*Interoperable Europe Act*
 
-Le cadre européen illustre le passage d’un référentiel de principes à une architecture concrètement outillée. Le *New European Interoperability Framework* en pose le socle doctrinal : douze principes directeurs, parmi lesquels le principe d’« ouverture » qui porte sur les données, les spécifications et les logiciels et appelle les
-
-administrations à exposer leurs fonctions par des interfaces ouvertes et documentées. Ce principe oriente la conception vers le contrat d’API comme support privilégié plutôt que comme option.
+Le cadre européen illustre le passage d’un référentiel de principes à une architecture concrètement outillée. Le *New European Interoperability Framework* en pose le socle doctrinal : douze principes directeurs, parmi lesquels le principe d’« ouverture » qui porte sur les données, les spécifications et les logiciels et appelle les administrations à exposer leurs fonctions par des interfaces ouvertes et documentées. Ce principe oriente la conception vers le contrat d’API comme support privilégié plutôt que comme option.
 
 Le passage du principe à l’exécutable s’opère avec la *European Interoperability Reference Architecture* (EIRA), dont la version 6.1.0 (notes de version du 31 mai 2024, publiée sur le portail Joinup le 3 juin 2024) décompose l’interopérabilité en blocs architecturaux répartis sur les quatre couches. Chaque bloc nomme une capacité d’interopérabilité réutilisable, indépendamment de toute technologie particulière, ce qui en fait un vocabulaire partagé pour décrire et comparer des solutions. Un outillage de conformité l’accompagne, qui permet de modéliser une solution concrète, de la confronter aux blocs de référence et d’identifier les écarts.
 
@@ -201,11 +185,11 @@ L’architecture orientée services (SOA) naît d’un constat économique avant
 
 #### 1.3.1.2 SOAP, WSDL et l’échec de la découverte par annuaire
 
-La concrétisation technique dominante de la SOA au tournant des années 2000 fut la pile des services web, articulée autour de trois piliers : l’enveloppe de messagerie **SOAP**, neutre vis-à-vis du transport ; le contrat machine-lisible **WSDL**, qui décrit opérations, messages et liaisons ; et l’annuaire **UDDI**, censé porter la découverte dynamique des services. Autour de ce noyau, la pile WS-* ajouta des qualités de service contractualisées : sécurité de message, messagerie fiable, adressage, politique.
+La concrétisation technique dominante de la SOA au tournant des années 2000 fut la pile des services web, articulée autour de trois piliers : l’enveloppe de messagerie **SOAP**, neutre vis-à-vis du transport ; le contrat machine-lisible **WSDL**, qui décrit opérations, messages et liaisons ; et l’annuaire **UDDI**, censé porter la découverte dynamique des services. Autour de ce noyau, la pile WS-\* ajouta des qualités de service contractualisées : sécurité de message, messagerie fiable, adressage, politique.
 
 *La découverte centralisée par registre fut un échec relatif — les annuaires UDDI publics furent retirés dès 2006 — et c’est le fait le plus instructif de cette sous-section.* La somme y revient au ch. 9, où la récurrence *registre UDDI → registre de services → registre d’agents* est analysée pour elle-même. Le point à retenir ici est de méthode : un registre ne réussit pas parce qu’il est techniquement correct, mais parce qu’un régime de gouvernance lui donne une raison d’être tenu à jour. Le caractère « relatif » de cet échec relève d’une **absence de documentation** : le socle hérité documente le retrait des annuaires publics, non l’absence d’usages privés persistants.
 
-**Mise en œuvre.** La richesse de WS-* eut un coût : la complexité d’interopérabilité entre piles fournisseurs. Le profilage et le recours quasi systématique à un style d’encodage unique furent nécessaires pour garantir l’interopérabilité réelle entre implémentations — un contrat syntaxique exhaustif ne suffit pas sans convention d’usage partagée. Le constat vaut tel quel pour les profils d’usage des protocoles agentiques.
+**Mise en œuvre.** La richesse de WS-\* eut un coût : la complexité d’interopérabilité entre piles fournisseurs. Le profilage et le recours quasi systématique à un style d’encodage unique furent nécessaires pour garantir l’interopérabilité réelle entre implémentations — un contrat syntaxique exhaustif ne suffit pas sans convention d’usage partagée. Le constat vaut tel quel pour les profils d’usage des protocoles agentiques.
 
 #### 1.3.1.3 Granularité et gouvernance
 
@@ -221,9 +205,7 @@ L’intégration **B2B**, enfin, constitue un sous-domaine d’une remarquable l
 
 ### 1.3.3 Microservices et communication inter-services
 
-Le style microservices se lit autant comme un héritage que comme une réaction à la SOA. La continuité tient au principe partagé du service à couplage faible derrière un contrat ; la rupture tient au déplacement de l’intelligence de la médiation vers les extrémités. Le mot d’ordre *smart endpoints, dumb pipes* inverse
-
-la logique de l’ESB : la transformation et le routage retournent dans les services, le réseau redevenant un simple transport. Deux corollaires en découlent : la décentralisation des données — chaque service possède sa base, proscrivant la base partagée comme couplage caché — et le déploiement indépendant, qui fait du découplage temporel de cycle de vie un objectif de premier rang. La délimitation des services s’ancre dans les contextes bornés (*bounded contexts*) de la conception pilotée par le domaine : la frontière d’un service épouse une frontière de modèle métier cohérent, faisant du contrat la traduction d’une **autonomie sémantique**.
+Le style microservices se lit autant comme un héritage que comme une réaction à la SOA. La continuité tient au principe partagé du service à couplage faible derrière un contrat ; la rupture tient au déplacement de l’intelligence de la médiation vers les extrémités. Le mot d’ordre *smart endpoints, dumb pipes* inverse la logique de l’ESB : la transformation et le routage retournent dans les services, le réseau redevenant un simple transport. Deux corollaires en découlent : la décentralisation des données — chaque service possède sa base, proscrivant la base partagée comme couplage caché — et le déploiement indépendant, qui fait du découplage temporel de cycle de vie un objectif de premier rang. La délimitation des services s’ancre dans les contextes bornés (*bounded contexts*) de la conception pilotée par le domaine : la frontière d’un service épouse une frontière de modèle métier cohérent, faisant du contrat la traduction d’une **autonomie sémantique**.
 
 La communication inter-services se laisse classer selon le couplage qu’elle induit dans le temps et l’espace. Le style **synchrone** (requête-réponse) crée un couplage temporel : l’appelant bloque sur la disponibilité de l’appelé, propageant pannes et latences le long de la chaîne d’appels. Le style **asynchrone** par messagerie découple temporellement producteur et consommateur via un intermédiaire persistant. Le style **événementiel** pousse plus loin le découplage spatial : l’émetteur ignore l’identité et le nombre de ses consommateurs.
 
@@ -239,9 +221,7 @@ Le maillage de services (*service mesh*) répond à un problème né de la proli
 
 Cette séparation est le concept que la somme réutilise le plus loin de son origine : c’est elle, et non le produit qui l’implémente, qui est transposée au ch. 37. Le modèle *sidecar* a par ailleurs un coût mesurable — chaque saut traverse deux mandataires, ajoutant latence et consommation proportionnelles au nombre d’instances —, ce qui a motivé l’émergence de plans de données alternatifs : modes ambiants dissociant une couche par nœud, qui porte le transport sécurisé, des fonctions applicatives activées à la demande, ou déport d’une partie de la fonction réseau dans le noyau du système d’exploitation. L’externalisation des préoccupations transversales est un acquis structurel ; seul son **point d’application** — instance, nœud ou noyau — reste en débat.
 
-Le **maillage d’événements** (*event mesh*) est le pendant événementiel : là où le maillage de services fédère des appels synchrones, il fédère des flux d’événements à travers courtiers, régions et organisations, par réplication entre grappes ou par dorsales assurant un routage dynamique vers les seuls courtiers ayant des
-
-abonnés intéressés. Le découplage spatial du producteur s’étend ainsi à l’échelle géographique et inter-organisationnelle (la Figure 1.3).
+Le **maillage d’événements** (*event mesh*) est le pendant événementiel : là où le maillage de services fédère des appels synchrones, il fédère des flux d’événements à travers courtiers, régions et organisations, par réplication entre grappes ou par dorsales assurant un routage dynamique vers les seuls courtiers ayant des abonnés intéressés. Le découplage spatial du producteur s’étend ainsi à l’échelle géographique et inter-organisationnelle (la Figure 1.3).
 
 ***Figure 1.3** — De la SOA au maillage : ce que chaque étage déplace, et le couplage qui se déplace sans disparaître.*
 
@@ -259,9 +239,7 @@ Là où REST expose des ressources, le style **RPC** expose des procédures : le
 
 Le découplage y est de nature différente : REST découple par l’uniformité de l’interface, gRPC par la stabilité d’un contrat compilé.
 
-**GraphQL** déplace le pouvoir de cadrage du serveur vers le client : plutôt que de multiplier les points d’extrémité, le serveur publie un schéma typé unique et le client formule exactement les champs dont
-
-il a besoin, ce qui résorbe les pathologies de sur-récupération et de sous-récupération. À l’échelle de l’entreprise, l’enjeu devient la **composition** : exposer un graphe unifié agrégeant des dizaines de services autonomes sans recentraliser leur propriété. Deux voies s’y opposent — une fédération outillée mais liée à un écosystème, et un travail de normalisation ouverte de la composition de schémas, en cours. La trajectoire rejoint le fil conducteur : la fédération n’a de valeur d’interopérabilité que si la règle de composition est elle-même un contrat ouvert, et non un produit captif. Le point vaut d’être retenu tel quel pour le ch. 7 : c’est le même critère qui y départage une spécification protocolaire gouvernée d’une spécification publiée.
+**GraphQL** déplace le pouvoir de cadrage du serveur vers le client : plutôt que de multiplier les points d’extrémité, le serveur publie un schéma typé unique et le client formule exactement les champs dont il a besoin, ce qui résorbe les pathologies de sur-récupération et de sous-récupération. À l’échelle de l’entreprise, l’enjeu devient la **composition** : exposer un graphe unifié agrégeant des dizaines de services autonomes sans recentraliser leur propriété. Deux voies s’y opposent — une fédération outillée mais liée à un écosystème, et un travail de normalisation ouverte de la composition de schémas, en cours. La trajectoire rejoint le fil conducteur : la fédération n’a de valeur d’interopérabilité que si la règle de composition est elle-même un contrat ouvert, et non un produit captif. Le point vaut d’être retenu tel quel pour le ch. 7 : c’est le même critère qui y départage une spécification protocolaire gouvernée d’une spécification publiée.
 
 Les **webhooks**, enfin, inversent l’initiative : le consommateur enregistre une URL de rappel et le producteur l’invoque par une requête HTTP sortante lorsqu’un événement survient. Ce mécanisme constitue en pratique la première forme d’interopérabilité événementielle **entre organisations**, car il ne suppose ni courtier partagé ni connexion persistante — seulement deux points d’extrémité HTTP. Sa faiblesse historique fut l’absence de contrat lisible par machine, comblée depuis par la formalisation des rappels et des webhooks dans les contrats d’API.
 
@@ -277,9 +255,7 @@ Maintenir l’interopérabilité sous changement suppose enfin une stratégie de
 
 ### 1.4.3 Gestion d’API : passerelle, portail, orchestration de parcours
 
-Une fois les contrats définis, encore faut-il exposer les API de façon contrôlée. La **passerelle d’API** constitue le point d’entrée qui externalise les préoccupations transversales hors des services : routage, authentification et autorisation, limitation de débit et de quota, mise en cache, journalisation et observabilité. Elle remplit un rôle de médiation comparable, mais non identique, à celui de l’ESB : là où l’ESB centralisait routage et
-
-transformation lourde au cœur du réseau, la passerelle se concentre sur la gestion du trafic **en bordure d’exposition**.
+Une fois les contrats définis, encore faut-il exposer les API de façon contrôlée. La **passerelle d’API** constitue le point d’entrée qui externalise les préoccupations transversales hors des services : routage, authentification et autorisation, limitation de débit et de quota, mise en cache, journalisation et observabilité. Elle remplit un rôle de médiation comparable, mais non identique, à celui de l’ESB : là où l’ESB centralisait routage et transformation lourde au cœur du réseau, la passerelle se concentre sur la gestion du trafic **en bordure d’exposition**.
 
 Ce déplacement n’est pas neutre : concentrer l’authentification, la limitation de débit et l’application des politiques à la passerelle découple ces préoccupations de la logique métier, mais introduit un point de contrôle dont la gouvernance doit elle-même être pensée. C’est structurellement le même geste que celui du ch. 37 — externaliser l’application de la politique dans une couche dédiée —, et il y portera les mêmes bénéfices et les mêmes risques. Le socle est ici ; la transposition agentique est là-bas.
 
@@ -297,9 +273,7 @@ L’appel synchrone couple le demandeur à la disponibilité, au rythme et à la
 
 Le modèle conceptuel repose sur trois primitives : le **message**, unité de données autoporteuse munie d’un en-tête et d’une charge utile ; le **canal**, conduit logique nommé sur lequel transitent les messages d’une même catégorie ; et le couple **producteur/consommateur**, qui n’a jamais à se connaître ni à coexister dans le temps. Le producteur dépose un message et poursuit son traitement ; le consommateur le retire quand il est prêt. L’anatomie d’un message sépare l’en-tête — métadonnées d’acheminement, d’identité et de corrélation que l’infrastructure exploite — de la charge utile métier, **opaque au courtier**.
 
-Trois sémantiques de canal se distinguent, qu’il importe de ne pas confondre. La **file** (point-à-point) répartit les messages entre consommateurs concurrents : chaque message est livré à exactement un consommateur du groupe, ce qui permet la mise à l’échelle horizontale du traitement. La **publication-abonnement** diffuse
-
-chaque message à tous les abonnés du canal : un même événement atteint *N* destinataires indépendants. Le **flux persistant** (journal) conserve les messages dans un registre ordonné et rejouable : les consommateurs y progressent par décalage et peuvent relire l’historique, propriété absente des files traditionnelles où la consommation est destructive.
+Trois sémantiques de canal se distinguent, qu’il importe de ne pas confondre. La **file** (point-à-point) répartit les messages entre consommateurs concurrents : chaque message est livré à exactement un consommateur du groupe, ce qui permet la mise à l’échelle horizontale du traitement. La **publication-abonnement** diffuse chaque message à tous les abonnés du canal : un même événement atteint *N* destinataires indépendants. Le **flux persistant** (journal) conserve les messages dans un registre ordonné et rejouable : les consommateurs y progressent par décalage et peuvent relire l’historique, propriété absente des files traditionnelles où la consommation est destructive.
 
 **Perspective recherche.** Le flux persistant comme abstraction d’intégration trouve sa source dans le journal d’ajout comme structure fondamentale des systèmes distribués : un journal partitionné, ordonné et durable suffit à reconstruire l’état des consommateurs en aval, ce qui rapproche la messagerie du journal de transactions d’une base de données. La frontière entre file et flux, longtemps nette, se brouille d’ailleurs : des mécanismes récents permettent une consommation concurrente de type file au-dessus d’un journal persistant. Le tableau des sémantiques se lit donc comme un **continuum de propriétés** — consommation destructive ou non, un ou *N* destinataires, rejouabilité — plutôt que comme une typologie cloisonnée de produits.
 
@@ -315,9 +289,7 @@ Trois sémantiques de livraison encadrent enfin toute messagerie fiable : au plu
 
 **Perspective recherche.** La voie praticable n’est pas la livraison mais le **traitement** exactement une fois, obtenu en combinant une livraison au-moins-une-fois avec un consommateur **idempotent** : rejouer le même message ne modifie pas l’état au-delà du premier traitement. L’idempotence se construit par déduplication sur un identifiant de message, par opérations naturellement idempotentes, ou par condition de version. L’effet observable devient indépendant du nombre de remises, ce qui rend les doublons inoffensifs sans prétendre les éliminer du canal.
 
-L’ordre, enfin, n’est garanti qu’à l’intérieur d’une partition ou d’un flux, jamais globalement sur un canal partitionné, car l’horloge physique ne fonde aucun ordre total dans un système distribué. La conception doit donc colocaliser dans une même partition les messages dont l’ordre relatif importe — typiquement par clé
-
-d’entité — et accepter l’entrelacement arbitraire entre partitions. Découplage, ordre et débit forment ici un compromis explicite : élargir le parallélisme par partitionnement affaiblit les garanties d’ordre transversal.
+L’ordre, enfin, n’est garanti qu’à l’intérieur d’une partition ou d’un flux, jamais globalement sur un canal partitionné, car l’horloge physique ne fonde aucun ordre total dans un système distribué. La conception doit donc colocaliser dans une même partition les messages dont l’ordre relatif importe — typiquement par clé d’entité — et accepter l’entrelacement arbitraire entre partitions. Découplage, ordre et débit forment ici un compromis explicite : élargir le parallélisme par partitionnement affaiblit les garanties d’ordre transversal.
 
 ### 1.5.3 Architecture événementielle et fiabilité
 
@@ -375,9 +347,7 @@ Ce périmètre est une décision d’auteur, prise le 27 juillet 2026 : assumé 
 
 #### 1.6.2.3 Modélisation des processus
 
-Pour rendre les processus exécutables intelligibles aux parties prenantes non techniques, l’*Object Management Group* (OMG) maintient un triptyque de notations couvrant trois facettes complémentaires de
-
-l’automatisation. **BPMN** décrit les processus séquencés par flux ; **DMN** externalise les règles de décision dans des tables lisibles, les séparant de la logique de flux ; **CMMN** traite les processus non structurés, pilotés par les données et le jugement humain plutôt que par une séquence figée.
+Pour rendre les processus exécutables intelligibles aux parties prenantes non techniques, l’*Object Management Group* (OMG) maintient un triptyque de notations couvrant trois facettes complémentaires de l’automatisation. **BPMN** décrit les processus séquencés par flux ; **DMN** externalise les règles de décision dans des tables lisibles, les séparant de la logique de flux ; **CMMN** traite les processus non structurés, pilotés par les données et le jugement humain plutôt que par une séquence figée.
 
 *Un point statutaire mérite d’être souligné, et il est de ceux que la lecture rapide efface* : parmi ces trois notations, seule BPMN a été reprise comme norme internationale (ISO/IEC 19510:2013), ce qui lui confère une assise de normalisation que DMN et CMMN n’ont pas. Les traiter comme trois normes de même rang serait une erreur de fait.
 
@@ -399,8 +369,6 @@ Vers le ch. 22 — l’orchestration déterministe. Le critère d’arbitrage or
 
 Vers le ch. 37 — le maillage. La séparation plan de contrôle / plan de données (§ 1.3.4) et le geste d’externaliser l’application de la politique dans une couche dédiée (§ 1.4.3) sont le socle **transposable** du maillage d’agents. Le ch. 37 en fait un point d’application de l’identité ; il ne redémontre pas le patron.
 
-Vers le Livre entier — l’invariant. Découplage, contrat, évolution : trois termes éprouvés ici sur une matière pré-agentique et déterministe, précisément pour qu’on puisse mesurer, aux chapitres suivants, ce que la
-
-couche agentique leur fait subir. Le quatrième terme — l’exploitation — n’a pas d’objet dans ce chapitre et se referme au Livre IV.
+Vers le Livre entier — l’invariant. Découplage, contrat, évolution : trois termes éprouvés ici sur une matière pré-agentique et déterministe, précisément pour qu’on puisse mesurer, aux chapitres suivants, ce que la couche agentique leur fait subir. Le quatrième terme — l’exploitation — n’a pas d’objet dans ce chapitre et se referme au Livre IV.
 
 Une remarque de méthode, enfin. Rien de ce chapitre n’est neuf : tout y est hérité d’un corpus rédigé et gelé, et condensé. Sa fonction dans la somme est celle d’un **socle non répété** — ce qui lui donne sa valeur n’est pas son originalité mais sa position : il est le seul endroit où ces notions sont posées, et chaque chapitre aval qui les reconstruirait annulerait l’économie qui justifie la refonte des trois volumes en un seul ouvrage.

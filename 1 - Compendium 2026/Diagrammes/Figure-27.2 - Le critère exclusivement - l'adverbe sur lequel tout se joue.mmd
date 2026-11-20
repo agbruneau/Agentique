@@ -1,9 +1,9 @@
 %% Ouvrage : 1 - Compendium 2026
 %% Chapitre : 27 · Québec : la ligne directrice IA de l'AMF et l'article 12.1 de la Loi 25 (p. 320)
 %% Figure : Figure 27.2 — Le critère « exclusivement » : l’adverbe sur lequel tout se joue.
+%%{init: {'flowchart': {'wrappingWidth': 1150}}}%%
 flowchart TB
     subgraph S["TOUT SE JOUE SUR UN ADVERBE"]
-        direction TB
         Q["Le traitement est-il exclusivement automatisé ?"]
         A["<b>L'article s'applique</b><br/>les obligations du § 27.2 se déclenchent et<br/>l'information accompagne la communication"]
         B["<b>L'article serait écarté</b><br/>selon l'analyse d'un cabinet · nuance déterminante<br/>pour les systèmes agentiques, et non tranchée"]
@@ -11,7 +11,8 @@ flowchart TB
         Q -->|"intervention humaine"| B
     end
     NOTE["LE TEXTE NE DÉFINIT PAS CE QUE L'EXCLUSIVITÉ EXCLUT. Que l'intervention humaine significative écarte l'article est l'analyse<br/>d'un cabinet, non une position du législateur — et le § 27.7 cartographie les lectures SANS RENDRE DE VERDICT."]
-    S ~~~ NOTE
+    A ~~~ NOTE
+    B ~~~ NOTE
 
     style S fill:#fdfbf7,stroke:#d4cfc7,color:#9c3d14
     style Q fill:#f5f0e8,stroke:#9c3d14,color:#1a1a1a

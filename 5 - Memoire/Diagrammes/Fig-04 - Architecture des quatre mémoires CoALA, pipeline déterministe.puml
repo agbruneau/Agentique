@@ -1,0 +1,53 @@
+' Fig. 4. – Architecture des quatre mémoires CoALA, pipeline déterministe de compilation du contexte (KV-cache, ACL amont) et couche anticorruption patrimoniale (EBCDIC/COMP-3 Decimal exact) et périphérique OT.
+' Source : 5 - Memoire (Chapitre 4, p. 35)
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName SansSerif
+skinparam linetype polyline
+skinparam nodesep 20
+skinparam ranksep 18
+
+title
+<b>Compilation du contexte, 4 mémoires CoALA et couche anticorruption</b>
+<size:11><color:#475569>Préfixe KV-cache, filtrage ACL (ARC-16), cloisonnement (ARC-25) et COMP-3</color></size>
+end title
+
+rectangle COMP #FFFFFF;line:0F172A [
+  <b>Compilateur déterministe de contexte (CAP-017, EXIG-ARC-22)</b>
+  |<#ECFDF5>  <color:#166534><b>1. Tête fixe KV-cache :</b></color>    Invites signées & schémas stables (EXIG-FIN-07)  |
+  |<#EFF6FF>  <color:#1D4ED8><b>2. Filtrage ACL amont :</b></color>    Droits mandant stricts, zéro compte service (ARC-16)  |
+  |<#F5F3FF>  <color:#6D28D9><b>3. Couche sémantique :</b></color>    Métriques versionnées (DEC-003), zéro SQL libre  |
+  |<#FFF7ED>  <color:#C2410C><b>4. État borné & réf. :</b></color>    Compaction au seuil · passage par réf. A2A (ORC-23)  |
+]
+
+rectangle "<color:#1D4ED8><b>4 mémoires CoALA isolées — zéro partage en écriture (EXIG-ARC-25)</b></color>" as COALA #FFFFFF;line:2563EB {
+  rectangle "<b>Travail (CAD26 C2)</b>\nÉtat hors processus chiffré\nEXIG-ARC-05, EXIG-ORC-11" as MT #F8FAFC;line:0F172A
+  rectangle "<color:#166534><b>Procédurale (CAD26 C3)</b></color>\nAgent Skills signés (code)\nZéro auto-modif. (PC4 [S])" as MP #ECFDF5;line:16A34A
+  rectangle "<color:#6D28D9><b>Épisodique (CAD26 C5)</b></color>\nRésumés typés + TTL\nBi-temp. & Loi 25 art. 23" as ME #F5F3FF;line:6D28D9
+  rectangle "<color:#1D4ED8><b>Sémantique (CAD26 C5)</b></color>\nIndex & graphes métier\nACL lecture · non fiable" as MS #EFF6FF;line:2563EB
+
+  MT -[hidden]right-> MP
+  ME -[hidden]right-> MS
+  MT -[hidden]down-> ME
+  MP -[hidden]down-> MS
+}
+
+rectangle "<color:#0F172A><b>Couche anticorruption patrimoniale, CUA borné et sas OT (DEC-008)</b></color>" as ACL #FFFFFF;line:0F172A {
+  rectangle "<color:#1D4ED8><b>Adaptateur MCP patrimonial (CAP-024)</b></color>\n• EBCDIC (CP037/1147) ↔ UTF-8\n• COMP-3 → Decimal exact\n• Zéro flottant IEEE 754\n• Trames COBOL / EDI & lissage" as ADAPT #EFF6FF;line:2563EB
+
+  rectangle "<color:#9A3412><b>CUA interne (CAP-025) & LSAC</b></color>\n• CUA ≤ 12 m (INI-015) + caviardage\n• <color:#991B1B>Grattage externe interdit (PEX-001)</color>" as CUA #FFF7ED;line:C2410C;line.dashed
+
+  rectangle "<color:#166534><b>Sas périphérique OT (CAP-028)</b></color>\n• Lecture historien / jumeau seul\n• Zéro écriture OPC UA directe" as SAS #ECFDF5;line:16A34A
+
+  ADAPT -[hidden]right-> CUA
+  CUA -[hidden]down-> SAS
+}
+
+COMP <-[#0F172A]down-> COALA
+COMP -[hidden]down-> MT
+COALA <-[#0F172A]down-> ACL
+ME -[hidden]down-> ADAPT
+MS -[hidden]down-> CUA
+@enduml

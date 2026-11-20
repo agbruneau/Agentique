@@ -62,10 +62,10 @@ rectangle BEL #F8FAFC;line:1E293B [
   Gravité : Stocks, Usines & Achats B2B
 ]
 
-SOE -[hidden]down-> SOA
-SOA --> BSN
-SOA --> BCA
-SOA --> BEL
+SOE -[hidden]down-> Mesh
+Orch -[#1E293B]-> BSN
+Mesh -[#1E293B]-> BCA
+Gate -[#1E293B]-> BEL
 BSN -[hidden]right-> BCA
 BCA -[hidden]right-> BEL
 

@@ -335,7 +335,7 @@ Sources secondaires :
 
 SYNTHÈSE EXÉCUTIVE
 
-- **Enjeu** : à 95 % de précision par décision, une chaîne non encadrée de quinze étapes plafonne à 0, 9515 ≈46, 3 % de succès au premier passage, avec des dérives de coût et un risque de non-conformité réglementaire.
+- **Enjeu** : à 95 % de précision par décision, une chaîne non encadrée de quinze étapes plafonne à 0,95^{15} ≈ 46,3 % de succès au premier passage, avec des dérives de coût et un risque de non-conformité réglementaire.
 - **Décisions d’architecture** :
   1. *Irréversible* : séparer le plan de contrôle déterministe (machine à états durable, règles DMN et Cedar, transactions et compensations Saga) des cellules bornées confiées au modèle (interprétation, diagnostic multi-signaux).
   2. *Structurante dès la conception* : placer chaque appel au modèle entre une garde d’entrée déterministe (schéma, masquage des données personnelles, budget de jetons et de latence) et une garde de sortie qui vérifie les invariants métiers avant toute écriture dans un système d’enregistrement.
@@ -350,12 +350,12 @@ Les erreurs d’un agent s’accumulent d’une étape à l’autre (section 17.
 
 Les classements académiques mesurent pass @𝑘, la probabilité qu’au moins un essai sur 𝑘 réussisse. Le critère convient quand un compilateur ou un développeur écarte sans frais les propositions erronées. Un processus transactionnel — instruire un sinistre, modifier un approvisionnement, reconfigurer un équipement — doit au contraire appliquer la politique d’affaires à chacune des 𝑘 exécutions d’un même dossier. C’est ce que mesure pass𝑘, métrique des bancs d’évaluation d’agents transactionnels (𝜏-bench). Pour 𝑛 décisions supposées indépendantes, de précision moyenne 𝑝, la borne de Lusser décroît de façon exponentielle :
 
-𝑅seq(𝑛) = ∏𝑛 𝑖=1 𝑝𝑖≈𝑝𝑛, pass𝑘(𝑛) = 𝑝𝑛𝑘
+𝑅_{seq}(𝑛) = ∏_{𝑖=1}^{𝑛} 𝑝_𝑖 ≈ 𝑝^𝑛, pass^𝑘(𝑛) = 𝑝^{𝑛𝑘}
 
 Deux ordres de grandeur :
 
-- avec 𝑝= 0, 95, un flux linéaire de 𝑛= 12 étapes libres réussit 0, 9512 ≈54, 0 % des passages (pass @1), et sa reproductibilité sur cinq contrôles successifs (pass5) tombe à 0, 9560 ≈4, 6 %;
-- avec 𝑝= 0, 99, au prix d’un modèle de pointe, un dossier complexe de 𝑛= 30 étapes atteint 0, 9930 ≈74, 0 % au premier essai et 0, 99150 ≈22, 1 % en pass5, loin des SLA de 99, 5 % exigés en production.
+- avec 𝑝= 0, 95, un flux linéaire de 𝑛 = 12 étapes libres réussit 0,95^{12} ≈ 54,0 % des passages (pass @1), et sa reproductibilité sur cinq contrôles successifs (pass5) tombe à 0,95^{60} ≈ 4,6 %;
+- avec 𝑝= 0, 99, au prix d’un modèle de pointe, un dossier complexe de 𝑛 = 30 étapes atteint 0,99^{30} ≈ 74,0 % au premier essai et 0,99^{150} ≈ 22,1 % en pass5, loin des SLA de 99, 5 % exigés en production.
 
 ### Erreurs corrélées et coût de l’auto-correction
 
@@ -432,28 +432,28 @@ La section 17.2 décrit l’enveloppe déterministe dans sa forme BPMN. En voici
 > - Entrée typée + Budget Proposition validée
 > - 2. Enceinte d'Isolation de la Cellule Cognitive Bornée (Zéro Écriture Irréversible Directe)
 > - Garde d'Entrée (Input Guard)
-> - • Validation JSON Schema strict
-> - • Masquage PII (Loi 25 / RGPD)
-> - • Sélection du moindre contexte
-> - • Bornes : K ≤ 6 tours | SLA 8,0 s
-> - • Filtrage injection OWASP ASI01
+> - Validation JSON Schema strict
+> - Masquage PII (Loi 25 / RGPD)
+> - Sélection du moindre contexte
+> - Bornes : K ≤ 6 tours | SLA 8,0 s
+> - Filtrage injection OWASP ASI01
 > - Noyau Probabiliste Borné (SLM / LLM)
-> - • Raisonnement sur signaux ambigus / non structurés
-> - • Compteur externe d'itérations k = 1..K_max
-> - • Outils MCP : Lecture & Simulation uniquement
-> - • Plafond dur jetons raisonnement & budget CAD
-> - • Décodage contraint par grammaire (CFG)
+> - Raisonnement sur signaux ambigus / non structurés
+> - Compteur externe d'itérations k = 1..K_max
+> - Outils MCP : Lecture & Simulation uniquement
+> - Plafond dur jetons raisonnement & budget CAD
+> - Décodage contraint par grammaire (CFG)
 > - Garde de Sortie & Invariants
-> - • Conformité schéma typé fermé
-> - • Politiques OPA / Cedar (plafonds)
-> - • Ancrage factuel (empreinte SHA-256)
-> - • Confiance calibrée ≥ seuil τ
-> - • Rejet immédiat si hallucination
+> - Conformité schéma typé fermé
+> - Politiques OPA / Cedar (plafonds)
+> - Ancrage factuel (empreinte SHA-256)
+> - Confiance calibrée ≥ seuil τ
+> - Rejet immédiat si hallucination
 > - Timeout / HTTP 429 / K > K_max Violation invariant / Confiance < τ
 > - 3. Disjoncteur et Circuit de Repli Déterministe (Deterministic Fallback & Circuit Breaker)
 > - Voie A — Repli Heuristique Statique : Règle métier sûre par défaut Voie B — Escalade Human-on-the-Loop (HOTL / CIBA) avec dossier d'écart
 
-*Fig. 28. – Architecture d’encapsulation hybride : épine dorsale déterministe gouvernant des cellules cogni tives bornées avec gardes d’entrée/sortie et repli.*
+*Fig. 28. – Architecture d’encapsulation hybride : épine dorsale déterministe gouvernant des cellules cognitives bornées avec gardes d’entrée/sortie et repli.*
 
 L’enveloppe se compose de quatre éléments.
 
@@ -467,7 +467,7 @@ Deux règles de cette enveloppe vont au-delà de ce que retient l’exposé. Les
 
 L’extrait suivant applique ce découpage au traitement d’une alerte d’équipement.
 
-#### Extrait 17.2 — `[Schéma conceptuel]` · Machine à états déterministe (Temporal TypeScript) encapsulant une cellule cognitive
+### Extrait 17.2 — `[Schéma conceptuel]` · Machine à états déterministe (Temporal TypeScript) encapsulant une cellule cognitive
 
 ```
 import { proxyActivities, ApplicationFailure } from "@temporalio/workflow";
@@ -621,7 +621,7 @@ Les bornes dépendent de la classe de cellule.
 
 Le schéma de sortie de la cellule de diagnostic réunit ces contraintes.
 
-#### Extrait 17.3 — `[Exécuté en CI]` · Schéma JSON normatif de sortie bornée avec ancrage factuel (Draft 2020-12)
+### Extrait 17.3 — `[Exécuté en CI]` · Schéma JSON normatif de sortie bornée avec ancrage factuel (Draft 2020-12)
 
 ```
 {

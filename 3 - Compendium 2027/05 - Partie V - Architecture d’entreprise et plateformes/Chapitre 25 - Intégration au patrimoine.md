@@ -509,7 +509,7 @@ Une part résiduelle des applications est fermée : progiciel ancien sans édite
 
 Le modèle vision n’accède jamais au pilote clavier ou souris. Il propose un geste atomique. Un contrôleur local le valide contre les zones interdites et les séquences de contrôle clavier (`\r`, `\n`, `\t`, qui peuvent provoquer un *Field Exit* ou une validation prématurée sur la grille 3270/5250), l’exécute, puis relit le résultat par un extracteur indépendant. Il n’autorise la touche finale COMMIT et ne scelle les trames avant et après en stockage WORM qu’ensuite.
 
-#### Extrait 25.3 — `[Exécuté en CI]` · Harnais TypeScript de confinement CUA avec zones interdites et double vérification post-action
+### Extrait 25.3 — `[Exécuté en CI]` · Harnais TypeScript de confinement CUA avec zones interdites et double vérification post-action
 
 Le harnais vérifie l’écran, filtre le geste, l’exécute, relit le champ saisi et la ligne de statut, puis scelle les trames caviardées.
 

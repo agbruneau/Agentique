@@ -1,13 +1,15 @@
 ' Figure 11 — Huit patrons d'orchestration autorisés (2 - Cadre de Référence, ch. 7, p. 100)
 ' Source : cadre CRE-IA-2026-01, d'après Anthropic (2024) et le Centre d'architecture Azure (2026)
 @startuml
+!pragma layout smetana
 top to bottom direction
 skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
 skinparam defaultFontSize 10
+skinparam nodesep 16
+skinparam ranksep 22
 
-together {
   rectangle "**1 · Flux déterministe**" as V1 #FFFFFF;line:CBD5E1 {
     rectangle "code" as v1_c1 #F1F5F9;line:64748B
     rectangle "agent" as v1_a #EDE8F5;line:5A469B
@@ -62,9 +64,7 @@ together {
     rectangle "Sectionnement (sous-tâches\nindépendantes) ou vote; règle de\nfusion explicite; coût × N." as v4_t #FFFFFF;line:FFFFFF
     v4_a3 -[hidden]down-> v4_t
   }
-}
 
-together {
   rectangle "**5 · Orchestrateur et exécutants**" as V5 #FFFFFF;line:CBD5E1 {
     rectangle "orchestrateur" as v5_o #0F2744;text:FFFFFF;line:0F2744
     rectangle "spéc. A" as v5_a #EDE8F5;line:5A469B
@@ -83,7 +83,7 @@ together {
     rectangle "producteur" as v6_p #EDE8F5;line:5A469B
     rectangle "évaluateur" as v6_e #F1F5F9;line:64748B
     v6_p -right-> v6_e
-    v6_e -left-> v6_p
+    v6_p <-right- v6_e
     rectangle "**≤ 3 itérations (production + évaluation)**\n\nVérificateur déterministe d’abord\n(compilateur, règles), puis modèle ou\ninvite distincts; escalade au plafond." as v6_t #FFFFFF;line:FFFFFF
     v6_p -[hidden]down-> v6_t
     v6_e -[hidden]down-> v6_t
@@ -122,19 +122,17 @@ together {
     v8_ag -[hidden]down-> v8_t
     v8_o3 -[hidden]down-> v8_t
   }
-}
 
-v1_c1 -[hidden]right-> v2_a
-v2_a -[hidden]right-> v3_r
-v3_r -[hidden]right-> v4_d
-v1_t -[hidden]right-> v2_t
-v2_t -[hidden]right-> v3_t
-v3_t -[hidden]right-> v4_t
-v5_t -[hidden]right-> v6_t
-v6_t -[hidden]right-> v7_t
-v7_t -[hidden]right-> v8_t
-v3_t -[hidden]down-> v5_o
-v3_t -[hidden]down-> v6_p
+v1_c2 -[hidden]right-> v2_a
+v2_c -[hidden]right-> v3_r
+v3_s1 -[hidden]right-> v4_d
+
+v5_o -[hidden]right-> v6_p
+v6_e -[hidden]right-> v7_a1
+v7_a3 -[hidden]right-> v8_ag
+
+v1_t -[hidden]down-> v5_o
+v2_t -[hidden]down-> v6_p
 v3_t -[hidden]down-> v7_a2
-v3_t -[hidden]down-> v8_ag
+v4_t -[hidden]down-> v8_ag
 @enduml

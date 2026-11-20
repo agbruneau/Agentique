@@ -3,12 +3,12 @@
 Index des 6 diagrammes extraits et reconstruits depuis `4 - Plan Directeur.pdf` (retour au [sommaire du document](../README.md)).
 
 - **Total des diagrammes** : 6
-- **PlantUML (`.puml`)** : 5
-- **Mermaid (`.mmd`)** : 1
+- **PlantUML (`.puml`)** : 6
+- **Mermaid (`.mmd`)** : 0
 
 | Figure | Page | Chapitre / Section | Format | Fichier source | Légende |
 | --- | ---: | --- | --- | --- | --- |
-| Fig. 1 | 43 | [Chapitre M-3 — Calendrier réglementaire et prudentiel](../02%20-%20Partie%20II%20-%20Prospective%202028-2035/Chapitre%20M-03%20-%20Calendrier%20r%C3%A9glementaire%20et%20prudentiel.md) | Mermaid | [Fig-01 - Frise 2027-2035 des ancres réglementaires, normatives.mmd](Fig-01%20-%20Frise%202027-2035%20des%20ancres%20r%C3%A9glementaires%2C%20normatives.mmd) | Fig. 1. – Frise 2027-2035 des ancres réglementaires, normatives et post-quantiques vérifiées sur textes primaires |
+| Fig. 1 | 43 | [Chapitre M-3 — Calendrier réglementaire et prudentiel](../02%20-%20Partie%20II%20-%20Prospective%202028-2035/Chapitre%20M-03%20-%20Calendrier%20r%C3%A9glementaire%20et%20prudentiel.md) | PlantUML | [Fig-01 - Frise 2027-2035 des ancres réglementaires, normatives.puml](Fig-01%20-%20Frise%202027-2035%20des%20ancres%20r%C3%A9glementaires%2C%20normatives.puml) | Fig. 1. – Frise 2027-2035 des ancres réglementaires, normatives et post-quantiques vérifiées sur textes primaires |
 | Fig. 2 | 120 | [Chapitre M-9 — Principes et modèle de référence](../03%20-%20Partie%20III%20-%20Architecture%20cible%202035/Chapitre%20M-09%20-%20Principes%20et%20mod%C3%A8le%20de%20r%C3%A9f%C3%A9rence.md) | PlantUML | [Fig-02 - Modèle de référence à cinq couches et plan de contrôle à trois volets.puml](Fig-02%20-%20Mod%C3%A8le%20de%20r%C3%A9f%C3%A9rence%20%C3%A0%20cinq%20couches%20et%20plan%20de%20contr%C3%B4le%20%C3%A0%20trois%20volets.puml) | Fig. 2. – Modèle de référence à cinq couches et plan de contrôle à trois volets |
 | Fig. 3 | 128 | [Chapitre M-10 — Carte des capacités cibles](../03%20-%20Partie%20III%20-%20Architecture%20cible%202035/Chapitre%20M-10%20-%20Carte%20des%20capacit%C3%A9s%20cibles.md) | PlantUML | [Fig-03 - Carte des capacités cibles par couche et par volet du plan de contrôle.puml](Fig-03%20-%20Carte%20des%20capacit%C3%A9s%20cibles%20par%20couche%20et%20par%20volet%20du%20plan%20de%20contr%C3%B4le.puml) | Fig. 3. – Carte des capacités cibles par couche et par volet du plan de contrôle |
 | Fig. 4 | 158 | [Chapitre M-11 — Cible invariante et cible conditionnelle](../03%20-%20Partie%20III%20-%20Architecture%20cible%202035/Chapitre%20M-11%20-%20Cible%20invariante%20et%20cible%20conditionnelle.md) | PlantUML | [Fig-04 - Matrice des capacités invariantes et conditionnelles selon.puml](Fig-04%20-%20Matrice%20des%20capacit%C3%A9s%20invariantes%20et%20conditionnelles%20selon.puml) | Fig. 4. – Matrice des capacités invariantes et conditionnelles selon les scénarios A, B et C. |

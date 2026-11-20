@@ -24,9 +24,7 @@ Ce que le chapitre ne traite pas. La question de savoir *qui* écrira le standar
 
 *Il faut commencer par une correction d’histoire, parce qu’elle décide de ce qu’un juriste d’institution doit lire.*
 
-Le Canada s’est doté d’une **première loi** sur les services bancaires axés sur les consommateurs en **2024**. Cette loi était *partielle* : *elle posait une architecture législative dont les pièces manquantes devaient venir plus tard.* Ce qui est venu plus tard n’est pas un amendement : le projet de loi **C-15**, déposé le **18 novembre 2025**
-
-et sanctionné le 26 mars 2026 — *quatre mois et huit jours plus tard* —, a ***abrogé et remplacé*** la loi partielle de 2024 (Vol. II **F-11**, entrée **S-011** du socle consolidé).
+Le Canada s’est doté d’une **première loi** sur les services bancaires axés sur les consommateurs en **2024**. Cette loi était *partielle* : *elle posait une architecture législative dont les pièces manquantes devaient venir plus tard.* Ce qui est venu plus tard n’est pas un amendement : le projet de loi **C-15**, déposé le **18 novembre 2025** et sanctionné le 26 mars 2026 — *quatre mois et huit jours plus tard* —, a ***abrogé et remplacé*** la loi partielle de 2024 (Vol. II **F-11**, entrée **S-011** du socle consolidé).
 
 La distinction n’est pas doctrinale : une analyse de conformité conduite sur l’instrument de 2024 porte sur un texte que le législateur a écarté.
 
@@ -38,7 +36,7 @@ Le second acquis de C-15 déborde largement les services bancaires, et c’est p
 
 Il faut peser cette formulation. *Le socle* ***ne dit pas*** *que le cadre bancaire* ***est*** *le droit à la mobilité ; il dit que le droit est* ***économie-large*** *et que le cadre bancaire en est la* ***première application**.*
 
-Le véhicule législatif retenu — une loi sur la protection des renseignements personnels — n’est pas anodin, *et il est* ***le même*** *que celui qu’emprunte le projet de loi que le* ***ch. 26 § 26.2*** *examine (Vol. II* ***F-24*** *→* `S-022`*,* ***[B]**,* ***en renvoi seulement*** *— le projet de loi lui-même n’est pas instruit ici)* : un instrument adopté et un projet de loi distinct visent le même véhicule législatif, sans qu’aucune interaction entre eux ne soit documentée au socle — *absence de documentation, degré 3.*
+Le véhicule législatif retenu — une loi sur la protection des renseignements personnels — n’est pas anodin, *et il est **le même** que celui qu’emprunte le projet de loi que le **ch. 26 § 26.2** examine (Vol. II **F-24** → `S-022`, **[B]**, **en renvoi seulement** — le projet de loi lui-même n’est pas instruit ici)* : un instrument adopté et un projet de loi distinct visent le même véhicule législatif, sans qu’aucune interaction entre eux ne soit documentée au socle — *absence de documentation, degré 3.*
 
 Lecture de l’auteur — pour une institution qui construit une plateforme d’accès aux données, la conséquence de planification est que l’effort consenti pour le cadre bancaire a une *valeur d’option* sur les itérations suivantes du droit à la mobilité. Ce que le socle établit : le caractère économie-large du droit et la primauté chronologique du cadre bancaire. Ce qu’il n’établit pas : ni le calendrier, ni le périmètre, ni le contenu technique des itérations ultérieures. *L’inférence porte sur la logique du véhicule, non sur un texte à venir* : *elle vaut comme hypothèse de planification, jamais comme fondement d’une position de conformité*.
 
@@ -50,9 +48,7 @@ Un document budgétaire de 2025 a réorienté le cadre : la supervision et la mi
 
 Le partage des rôles qui en résulte est explicite : *la banque centrale supervisera les entités participantes, les fournisseurs tiers accrédités, l’organisme de normalisation technique et l’organisme externe de traitement des plaintes, et tiendra un* ***registre public*** *; l’agence de protection du consommateur, elle,* ***conserve*** *son mandat général sous la loi sur les banques.* Elle n’a donc pas été écartée du paysage — elle a été écartée de ce cadre-ci.
 
-Lecture de l’auteur — le déplacement n’est pas neutre pour qui doit identifier son interlocuteur. Ce que le socle établit : le transfert, son véhicule — *un document budgétaire* — et son ancrage législatif. Ce qu’il n’établit pas : ni les motifs de la réorientation, ni ce qu’elle change aux exigences de fond — *absence de documentation, degré 3.* Mais ce qui est établi suffit à une conséquence pratique : *une institution fédérale*
-
-*traitera* ***du cadre bancaire*** *avec la banque centrale, du risque de modèle avec le régulateur prudentiel (**ch. 25**), et de la protection du consommateur avec l’agence.* *Trois autorités, trois dossiers, et aucune raison de supposer que leurs calendriers s’accordent.*
+Lecture de l’auteur — le déplacement n’est pas neutre pour qui doit identifier son interlocuteur. Ce que le socle établit : le transfert, son véhicule — *un document budgétaire* — et son ancrage législatif. Ce qu’il n’établit pas : ni les motifs de la réorientation, ni ce qu’elle change aux exigences de fond — *absence de documentation, degré 3.* Mais ce qui est établi suffit à une conséquence pratique : *une institution fédérale traitera* ***du cadre bancaire*** *avec la banque centrale, du risque de modèle avec le régulateur prudentiel (**ch. 25**), et de la protection du consommateur avec l’agence.* *Trois autorités, trois dossiers, et aucune raison de supposer que leurs calendriers s’accordent.*
 
 La porte d’entrée du régime est l’accréditation. *La participation au cadre y est conditionnelle, l’accréditation relève de la banque centrale, ses modalités restent à définir par règlement, et la tenue du registre des participants lui revient* (Vol. II **F-23**, entrée **S-020** du socle consolidé). Le socle nomme une institution : *sa participation au cadre est, comme celle de toute entité candidate, conditionnelle à l’accréditation* — et le ch. 35 § 35.5 l’examine pour elle-même.
 
@@ -94,9 +90,7 @@ Les critères de désignation de cet organisme sont énoncés : *être «* ***me
 
 Ces critères méritent qu’on s’y arrête, car ils bornent le champ des candidats sans en nommer aucun. *Deux d’entre eux — la gouvernance équitable, ouverte et accessible, et la décision indépendante — portent sur la manière dont l’organisme décide ; le troisième, «* ***meaningfully Canadian*** *», porte sur* ***ce qu’il est**.*
 
-Lecture de l’auteur — les deux critères de méthode répondent à une crainte classique en normalisation, celle d’un standard capturé par ses plus gros implémenteurs ; et les quatre objectifs assignés au standard *ne convergent pas spontanément* : *l’**interopérabilité mondiale*** *tire vers des spécifications déjà largement déployées ailleurs, là où l’ancrage canadien exigé de l’organisme tire dans une autre direction.* *C’est cette tension,*
-
-*et non une pénurie de candidats, qui rend la désignation malaisée à pronostiquer.* Ce que le socle établit : les critères et les objectifs. Ce qu’il n’établit pas : ni leur pondération, ni la manière dont le ministre les arbitrera.
+Lecture de l’auteur — les deux critères de méthode répondent à une crainte classique en normalisation, celle d’un standard capturé par ses plus gros implémenteurs ; et les quatre objectifs assignés au standard *ne convergent pas spontanément* : *l’**interopérabilité mondiale*** *tire vers des spécifications déjà largement déployées ailleurs, là où l’ancrage canadien exigé de l’organisme tire dans une autre direction.* *C’est cette tension, et non une pénurie de candidats, qui rend la désignation malaisée à pronostiquer.* Ce que le socle établit : les critères et les objectifs. Ce qu’il n’établit pas : ni leur pondération, ni la manière dont le ministre les arbitrera.
 
 Voici maintenant l’état des faits, dans la formulation que la somme s’impose :
 
@@ -116,9 +110,7 @@ L’anticipation de l’organisme candidat existe, elle est réelle, et elle est
 
 Lecture de l’auteur — une institution qui, aujourd’hui, câblerait sa plateforme d’accès aux données sur une spécification précise en anticipant la désignation prendrait un pari sur un arrêté ministériel non pris. Ce que le socle établit : qu’aucun standard n’est nommé. Ce qu’il n’établit pas : *rien sur la probabilité qu’un candidat soit retenu — et la somme ne la commente pas.* La discipline qui en découle — *traiter le standard d’accès comme une variable derrière une frontière d’abstraction plutôt que comme une hypothèse de conception* — est une inférence, *qui a au moins ceci pour elle qu’elle est la lecture la plus réversible : elle coûte une indirection ; l’hypothèse inverse coûte une réécriture.*
 
-Une lacune héritée est portée ici et n’est pas comblée : *le socle du Vol. II attribue au document budgétaire de 2025 un fait structurant du cadre sans le dater.* Cette lacune a été ouverte le 17 juillet 2026, à la construction
-
-de la frise chronologique. Elle est signalée ici, et elle va à deux destinations qu’il ne faut pas substituer l’une à l’autre : *son* ***état final*** *sera enregistré au* ***ch. 49**, qui reprend les onze lacunes héritées par leur identifiant, et le renvoi documentaire* va à *la chronologie des Vol. II et III.* Le renvoi documentaire n’attend donc plus rien : *il désigne.* Le renvoi au ch. 49, lui, ne bouge pas : *c’est le seul des deux qui vive dans la somme.* (la Figure 32.4)
+Une lacune héritée est portée ici et n’est pas comblée : *le socle du Vol. II attribue au document budgétaire de 2025 un fait structurant du cadre sans le dater.* Cette lacune a été ouverte le 17 juillet 2026, à la construction de la frise chronologique. Elle est signalée ici, et elle va à deux destinations qu’il ne faut pas substituer l’une à l’autre : *son* ***état final*** *sera enregistré au* ***ch. 49**, qui reprend les onze lacunes héritées par leur identifiant, et le renvoi documentaire* va à *la chronologie des Vol. II et III.* Le renvoi documentaire n’attend donc plus rien : *il désigne.* Le renvoi au ch. 49, lui, ne bouge pas : *c’est le seul des deux qui vive dans la somme.* (la Figure 32.4)
 
 ***Figure 32.4** — Le cadre des services bancaires axés sur les consommateurs : la chaîne, et le maillon qui manque.*
 

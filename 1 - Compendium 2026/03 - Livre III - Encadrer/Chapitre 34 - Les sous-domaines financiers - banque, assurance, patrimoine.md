@@ -50,9 +50,7 @@ Lecture de l’auteur — la leçon transférable est la segmentation par critic
 
 La conformité au crime financier constitue la tête de pont de l’agentique en banque *parce qu’elle conjugue un volume massif d’alertes,* ***un produit narratif*** *bien adapté à la génération de texte, et l’exclusion de la détection de fraude du régime de haut risque européen* (**ch. 30 § 30.2.3**).
 
-Les illustrations produit datées convergent vers le triage assisté plutôt que vers la décision autonome, et chacune porte son statut : *un éditeur intègre un triage anti-blanchiment à son orchestrateur ; un autre annonce*
-
-*un agent de criminalité financière opérant en temps réel —* ***annonce fournisseur*** *; un partenariat annoncé le* ***4 mai 2026*** *positionne un agent de crimes financiers comme premier cas d’usage, avec deux déploiements clients annoncés et une disponibilité générale annoncée pour le second semestre 2026, données confinées sur l’infrastructure de l’éditeur —* ***annonce à revérifier**.* Neutralité fournisseur : *trois offres nommées, aucune recommandée.*
+Les illustrations produit datées convergent vers le triage assisté plutôt que vers la décision autonome, et chacune porte son statut : *un éditeur intègre un triage anti-blanchiment à son orchestrateur ; un autre annonce un agent de criminalité financière opérant en temps réel —* ***annonce fournisseur*** *; un partenariat annoncé le* ***4 mai 2026*** *positionne un agent de crimes financiers comme premier cas d’usage, avec deux déploiements clients annoncés et une disponibilité générale annoncée pour le second semestre 2026, données confinées sur l’infrastructure de l’éditeur —* ***annonce à revérifier**.* Neutralité fournisseur : *trois offres nommées, aucune recommandée.*
 
 Du côté canadien, le rattachement est celui du ch. 30 § 30.2.7 : *le programme de conformité demeure non délégable à l’agent, et de nouvelles obligations encadrent la conservation et la documentation depuis le 1ᵉʳ octobre 2025.* *Le Boston Consulting Group (2025) qualifie la vérification client de domaine où l’agentique passe le plus tôt à l’échelle ; tout gain d’efficacité chiffré relève de l’auto-déclaration et doit être attribué nominativement.*
 
@@ -104,9 +102,7 @@ Les éditeurs se positionnent diversement, et chaque statut se dit : *l’édite
 
 La chaîne du sinistre — déclaration, instruction, règlement, subrogation — est le théâtre où l’agentique est la plus visible, *et le patron directeur y est celui du coordinateur de spécialistes, non du décideur unique.*
 
-*L’agent orchestre des sous-tâches — extraction de pièces, évaluation des dommages, détection de fraude, calcul d’indemnité — dont chacune comporte un risque de cascade : une erreur propagée le long de la chaîne aboutit*
-
-*à un règlement irréversible.* Ce mode d’échec relève de la taxonomie des défaillances multi-agents dont le ch. 6 est le siège, *et il impose la libération humaine sur l’action irréversible* (ch. 31 § 31.1.1).
+*L’agent orchestre des sous-tâches — extraction de pièces, évaluation des dommages, détection de fraude, calcul d’indemnité — dont chacune comporte un risque de cascade : une erreur propagée le long de la chaîne aboutit à un règlement irréversible.* Ce mode d’échec relève de la taxonomie des défaillances multi-agents dont le ch. 6 est le siège, *et il impose la libération humaine sur l’action irréversible* (ch. 31 § 31.1.1).
 
 Une distinction de lecture est nécessaire, et elle vaut pour tout le chapitre : *il faut séparer* ***les agents-produits*** *— vendus comme agents autonomes — des produits qui utilisent des agents en sous-composant, pour ne pas surclasser le degré réel d’autonomie.*
 
@@ -206,9 +202,7 @@ Le sous-domaine présente un trait qui le distingue du patrimoine : les rentes e
 
 *Cette sous-section n’instaure pas un nouveau régime : elle énonce le delta que la vie et la santé ajoutent au bloc transverse du ch. 30*, *et qui justifie d’en faire une branche distincte du § 34.2.6, où la tarification de dommage n’est précisément* ***pas*** *explicitement de haut risque.*
 
-Au Canada et au Québec : *E-23 couvre désormais tous les assujettis fédéraux, assureurs vie compris ; la ligne directrice québécoise ajoute un responsable senior unique, un répertoire centralisé et une explication « claire et simple » au client* — ce que le ch. 30 § 30.2.7 porte en [C], et que le ch. 27 § 27.1 déclare comme *lacune du socle du Vol. II, non comblée* ; *et l’article 12.1 s’applique à toute décision exclusivement automatisée, sans être une interdiction.* L’enjeu de fond, plus aigu ici qu’ailleurs, est l’équité et le biais : *sur des contrats de très longue durée, le risque est qu’un modèle exploite des variables corrélées à l’état de santé, au profil génétique ou*
-
-*à l’âge, et reproduise une discrimination prohibée.* La littérature fournit le cadre formel — bornes théoriques entre critères d’équité, application au prix d’assurance non discriminatoire — et aucun de ces cadres ne se résout par l’agentique : *l’agent doit au contraire en porter la preuve documentée*.
+Au Canada et au Québec : *E-23 couvre désormais tous les assujettis fédéraux, assureurs vie compris ; la ligne directrice québécoise ajoute un responsable senior unique, un répertoire centralisé et une explication « claire et simple » au client* — ce que le ch. 30 § 30.2.7 porte en [C], et que le ch. 27 § 27.1 déclare comme *lacune du socle du Vol. II, non comblée* ; *et l’article 12.1 s’applique à toute décision exclusivement automatisée, sans être une interdiction.* L’enjeu de fond, plus aigu ici qu’ailleurs, est l’équité et le biais : *sur des contrats de très longue durée, le risque est qu’un modèle exploite des variables corrélées à l’état de santé, au profil génétique ou à l’âge, et reproduise une discrimination prohibée.* La littérature fournit le cadre formel — bornes théoriques entre critères d’équité, application au prix d’assurance non discriminatoire — et aucun de ces cadres ne se résout par l’agentique : *l’agent doit au contraire en porter la preuve documentée*.
 
 Hors Canada, deux marqueurs complètent ce cadre. Le premier marqueur est le régime européen : *le point de l’annexe qui vise l’assurance range au haut risque l’évaluation du risque et la tarification en assurance vie et santé pour les personnes physiques* — *libellé exact, à ne pas étendre à l’assurance de dommage ni à confondre avec le point qui vise la notation de crédit.* *L’échéance* ***était*** *fixée au 2 août 2026 ; le report de seize mois au 2 décembre 2027 a été approuvé dans la fenêtre du socle, sous la seule réserve de la publication à suivre* (**ch. 30 § 30.2.3**) — *publication intervenue le 24 juillet 2026, règlement (UE) 2026/1744 (constat du 23 octobre 2026).* S’y articule, sans nouvelles exigences propres, l’avis de l’Autorité européenne des assurances et des pensions professionnelles (EIOPA) sur la gouvernance et la gestion du risque lié à l’IA, du **6 août 2025**. Aux États-Unis, le second marqueur passe par le bulletin type de la National Association of Insurance Commissioners (NAIC), adopté le 4 décembre 2023, repris par un nombre croissant d’États — décompte et statut à reconfirmer.
 
@@ -340,9 +334,7 @@ Deux régimes doivent être distingués. D’une part, des agents employés *pou
 
 Le critère de légitimité de la façade est strict : *elle n’est admissible qu’assortie d’une identité d’agent, de permissions héritées du consentement et d’un journal d’audit* — *ce que le* ***ch. 24 § 24.3*** *pose au grain du parc et le* ***ch. 18*** *au grain de l’imputabilité.*
 
-Lecture de l’auteur — l’invariant de la couche d’exposition est qu’il n’y a *jamais* d’accès direct en écriture au grand livre : *seulement des capacités bornées, idempotentes, respectant la double entrée et la ségrégation des tâches comme propriétés vérifiables du contrat.* La sémantique d’effet que le mot « idempotente » appelle est
-
-au ch. 48, siège unique. Ce que le socle établit : les annonces et le patron d’encapsulation. Ce qu’il n’établit pas : cet invariant, qui est une lecture reprise du Vol. I.
+Lecture de l’auteur — l’invariant de la couche d’exposition est qu’il n’y a *jamais* d’accès direct en écriture au grand livre : *seulement des capacités bornées, idempotentes, respectant la double entrée et la ségrégation des tâches comme propriétés vérifiables du contrat.* La sémantique d’effet que le mot « idempotente » appelle est au ch. 48, siège unique. Ce que le socle établit : les annonces et le patron d’encapsulation. Ce qu’il n’établit pas : cet invariant, qui est une lecture reprise du Vol. I.
 
 ### 34.5.3 Passerelle d’IA et plateformes d’intégration régulées
 
@@ -429,9 +421,7 @@ Un vide doit être signalé explicitement, par honnêteté éditoriale plutôt q
 
 ### 34.6.4 Bacs à sable réglementaires
 
-*Le patron de clôture est le test supervisé comme voie de mise en production graduée* : *le bac à sable réglementaire constitue un mécanisme de gouvernance externe, complémentaire du plan de contrôle interne.* *Là où le plan de contrôle interne borne l’action en continu, le bac à sable offre un cadre où le superviseur observe l’agent en*
-
-*conditions encadrées avant son passage à l’échelle* — *le franchissement devenant lui-même un jalon de maturité vérifiable.*
+*Le patron de clôture est le test supervisé comme voie de mise en production graduée* : *le bac à sable réglementaire constitue un mécanisme de gouvernance externe, complémentaire du plan de contrôle interne.* *Là où le plan de contrôle interne borne l’action en continu, le bac à sable offre un cadre où le superviseur observe l’agent en conditions encadrées avant son passage à l’échelle* — *le franchissement devenant lui-même un jalon de maturité vérifiable.*
 
 *Plusieurs dispositifs sont actifs à juin 2026, à présenter avec leur statut daté : au Royaume-Uni, un dispositif de test en conditions réelles accueille une deuxième cohorte annoncée le 21 avril 2026, huit firmes, dont des cas explicitement agentiques ; une collaboration internationale est annoncée pour 2026 — hors corpus bibliographique du chapitre source, à sourcer à la rédaction.* *Côté Canada et Québec, l’écosystème combine plusieurs dispositifs, sans cohorte agentique financière publiquement détaillée à juin 2026* — *absence de documentation, degré 3.*
 
@@ -463,9 +453,7 @@ Trois exigences transverses prolongent cette signature, et les trois sont des si
 
 Le troisième fil, posé au ch. 31 § 31.2, est que *l’interopérabilité sémantique de l’agent ne repose pas sur du texte libre mais sur le substrat normatif du secteur*, stratifié en trois couches que l’agent consomme différemment — **messagerie et syntaxe**, **modèle et capacité**, **ontologie**.
 
-Le bénéfice est double. *D’une part, ancrer l’agent sur le standard réduit l’affabulation et facilite l’auditabilité — ce qui prend appui sur la bascule du* ***ch. 33 § 33.1**, bascule qui a retiré les anciens formats MT de paiement*
-
-*interbancaire en novembre 2025 au profit d’ISO 20022. D’autre part, le standard peut devenir logique exécutable que l’agent orchestre plutôt qu’il ne devine (ch. 31 § 31.2.4).*
+Le bénéfice est double. *D’une part, ancrer l’agent sur le standard réduit l’affabulation et facilite l’auditabilité — ce qui prend appui sur la bascule du* ***ch. 33 § 33.1**, bascule qui a retiré les anciens formats MT de paiement interbancaire en novembre 2025 au profit d’ISO 20022. D’autre part, le standard peut devenir logique exécutable que l’agent orchestre plutôt qu’il ne devine (ch. 31 § 31.2.4).*
 
 Et le critère d’honnêteté éditoriale reste celui du ch. 31 § 31.2.6 : *aucun serveur d’outils financier sectoriel n’est ratifié à juin 2026*, *et rien n’est anticipé.*
 
@@ -473,7 +461,7 @@ Et le critère d’honnêteté éditoriale reste celui du ch. 31 § 31.2.6 : *au
 
 *Le passage au chapitre suivant se fait par le calendrier.* *La plupart des régimes décrits sont, à juin 2026, en phase d’application échelonnée, de révision ou d’adoption ; ils convergent vers une fenêtre* ***2026-2027*** *qui transforme les attentes en contraintes opposables.* (le Tableau 34.3)
 
-***Tableau 34.3** — L’horizon réglementaire 2026-2027, avec le statut de chaque jalon au gel de la somme. Tous sont à revérifier : *ils portent des dates récentes ou des textes vivants*, et le ch. 50 les enregistrera comme événements de péremption.*
+**Tableau 34.3** — L’horizon réglementaire 2026-2027, avec le statut de chaque jalon au gel de la somme. Tous sont à revérifier : *ils portent des dates récentes ou des textes vivants*, et le ch. 50 les enregistrera comme événements de péremption.
 
 | **Jalon** | **Échéance** | **Statut au gel de la somme** | **Chapitre** |
 | --- | --- | --- | --- |
@@ -496,6 +484,4 @@ Et le critère d’honnêteté éditoriale reste celui du ch. 31 § 31.2.6 : *au
 7. Le vide de bancs d’essai en assurance et en anti-blanchiment (§ 34.6.2), *déclaré au degré 3* : *toute métrique de ces domaines vient d’études fournisseur.*
 8. Les sept questions ouvertes (§ 34.6.3), *chacune traduite en exigence d’architecture.* Le ch. 49 en enregistrera l’état final.
 
-Ce que le chapitre ne lègue pas. Il ne lègue aucun fait au régime [B] : *toute sa matière vient du Vol. I et entre en* ***[C]**.* Il ne lègue aucune recommandation de produit — *une quarantaine d’offres nommées,* ***aucune recommandée***. Il ne lègue **aucune métrique auditée** : *toutes sont auto-déclarées ou des projections d’analystes.* Il
-
-ne lègue ni architecture de référence, ni modèle de maturité financier, ni grille de décision — *ces trois sont au* ***Livre IV***. Et il ne lègue rien des paiements agentiques : *c’est l’objet du* ***ch. 36**.*
+Ce que le chapitre ne lègue pas. Il ne lègue aucun fait au régime [B] : *toute sa matière vient du Vol. I et entre en* ***[C]**.* Il ne lègue aucune recommandation de produit — *une quarantaine d’offres nommées,* ***aucune recommandée***. Il ne lègue **aucune métrique auditée** : *toutes sont auto-déclarées ou des projections d’analystes.* Il ne lègue ni architecture de référence, ni modèle de maturité financier, ni grille de décision — *ces trois sont au* ***Livre IV***. Et il ne lègue rien des paiements agentiques : *c’est l’objet du* ***ch. 36**.*

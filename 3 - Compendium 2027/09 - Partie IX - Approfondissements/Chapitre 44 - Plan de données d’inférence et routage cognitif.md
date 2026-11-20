@@ -271,9 +271,9 @@ Le multiplexeur MCP intégré à agentgateway résout quatre problèmes d’expl
 > - Ordonnancement Kubernetes Conscient du Préfixe (Gateway API Inference Extension / llm-d) — Partage du KV-Cache
 > - Anatomie d'une Session Multi-Tours (Tours 1 à 8)
 > - Préfixe Invariant : Prompt + Schémas MCP (88 %) Delta Tour k
-> - • Round-Robin naïf : invalide le KV-cache à chaque tour d'outil
-> - • Recalcul coûteux du Prefill (9 000+ jetons répétés 8 fois)
-> - • Affinité de préfixe : ne calcule que le Delta (~300 jetons)
+> - Round-Robin naïf : invalide le KV-cache à chaque tour d'outil
+> - Recalcul coûteux du Prefill (9 000+ jetons répétés 8 fois)
+> - Affinité de préfixe : ne calcule que le Delta (~300 jetons)
 > - Endpoint Picker (EPP) : Score = α·Hit(Préfixe) − β·File(GPU) − γ·HBM
 > - Pod GPU #1
 > - Préfixe absent (0 %)
@@ -300,7 +300,7 @@ Le multiplexeur MCP intégré à agentgateway résout quatre problèmes d’expl
 | Affinité GPU | Tourniquet destructeur de cache | Hachage naïf par utilisateur | Ordonnancement conscient du préfixe du cache KV et de la mémoire HBM |
 | Observabilité | Codes HTTP et latence brute | Journaux propriétaires | Traces OpenTelemetry `gen_ai.*` + caviardage PII en vol |
 
-#### Extrait 44.1 — `[Exécuté en CI]` · Configuration déclarative agentgateway unifiant Open Responses, MCP et A2A
+### Extrait 44.1 — `[Exécuté en CI]` · Configuration déclarative agentgateway unifiant Open Responses, MCP et A2A
 
 La ressource unique déclare l’écoute en mTLS SPIFFE, la télémétrie, les plafonds par saga, quatre pools d’inférence, la fédération MCP et une route A2A.
 
@@ -404,7 +404,7 @@ Le tableau et l’Extrait 44.2 reprennent cette échelle. Le tableau exprime le 
 | Cas d’usage types | Extraction JSON, triage, EDI/OT, outil simple | Synthèse multi-sources, client, 6–12 outils MCP | Planification contradictoire, contre-audit E-23 |
 | Règle d’escalade | Complexité > 0,42 ou confiance logprob < 0,88 | Conflit inter-sources ou politique d’audit | Plafond haut — sinon escalade humaine HOTL |
 
-#### Extrait 44.2 — `[Exécuté en CI]` · Routeur cognitif multicritère avec épinglage de souveraineté et escalade calibrée
+### Extrait 44.2 — `[Exécuté en CI]` · Routeur cognitif multicritère avec épinglage de souveraineté et escalade calibrée
 
 Le routeur applique l’épinglage de souveraineté, l’arbitrage par complexité et par nombre d’outils, puis le garde-fou de budget; l’escalade sur faible confiance reste dans le pool souverain pour les données sensibles. Ce code arbitre sur un score de complexité et un nombre d’outils; l’exposé active plutôt le routage par classe de tâche, avec une règle explicite par défaut, et envoie une classe inconnue au palier supérieur (section 44.3).
 
@@ -486,7 +486,7 @@ Pour les déploiements à très haute densité, deux techniques de la section 44
 - **Désagrégation du traitement de l’entrée et de la génération** : Les requêtes au préfixe inédit vont vers un sous-pool de GPU optimisé pour le calcul matriciel intensif. Ce sous-pool transfère les blocs KV calculés en quelques millisecondes, par RDMA (RoCEv2 / InfiniBand), vers un sous-pool dédié à la génération auto-régressive. Un long document de 40 000 jetons ne fait plus augmenter la gigue du délai entre jetons (ITL) des sessions actives voisines.
 - **Délestage hiérarchisé du cache KV** : Quand une saga fait une pause de dix minutes, en attendant un serveur MCP lent ou un jumeau numérique, les blocs KV éjectés de la mémoire HBM3e sont déversés en mémoire DDR5 hôte ou sur un pool NVMe partagé. Au réveil de l’agent, les recharger par DMA évite de les recalculer; l’exposé ne rapporte aucun gain chiffré pour ce délestage (sections 44.4 et 44.5).
 
-#### Extrait 44.3 — `[Exécuté en CI]` · Manifeste Kubernetes Gateway API Inference Extension conscient du préfixe KV-Cache
+### Extrait 44.3 — `[Exécuté en CI]` · Manifeste Kubernetes Gateway API Inference Extension conscient du préfixe KV-Cache
 
 Le manifeste déclare l’`InferencePool` du SLM, le modèle servi, puis la configuration de l’EPP : blocs de 64 jetons, poids de notation, seuils de saturation. Il utilise la version `v1alpha2` de l’API de l’extension, alors que le site de l’extension publie une référence d’API `v1` à côté de `v1alpha1`, sans préciser le statut de `v1` (section 44.2). L’EPP configuré, `boreal-kv-aware-epp`, est propre au Groupe Boréal : le site de l’extension réserve son EPP léger aux tests de conformité et renvoie la production vers un EPP existant, tel celui de llm-d (section 44.2).
 

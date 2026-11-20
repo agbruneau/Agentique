@@ -221,20 +221,20 @@ Dans un groupe qui exploite cinq suites majeures, cette idée ne donne pas une a
 > - Pont vers SAP CIS (Principal Propagation SAML/X.509)
 > - Plan d'Orchestration Maître & Médiation Neutre (Découplé des Jardins Clos SaaS)
 > - Passerelle AI-Native (agentgateway)
-> - • Anti-boucle : vecteur signé x-a2a-hop-vector
-> - • Politiques Cedar / OPA & filtrage PII
-> - • Coupe-circuit FinOps (crédits SaaS + jetons)
-> - • Corrélation W3C traceparent unifiée
+> - Anti-boucle : vecteur signé x-a2a-hop-vector
+> - Politiques Cedar / OPA & filtrage PII
+> - Coupe-circuit FinOps (crédits SaaS + jetons)
+> - Corrélation W3C traceparent unifiée
 > - Arbitrage & État Durable (Temporal)
-> - • Gravité des données (G ≥ 0,85 : local)
-> - • Sagas inter-SaaS (≥ 2 domaines mutés)
-> - • Annuaire fédéré OASF d'Agent Cards A2A
-> - • Modèle canonique Apache Ossie
+> - Gravité des données (G ≥ 0,85 : local)
+> - Sagas inter-SaaS (≥ 2 domaines mutés)
+> - Annuaire fédéré OASF d'Agent Cards A2A
+> - Modèle canonique Apache Ossie
 > - Courtage iPaaS (MuleSoft Agent Fabric)
-> - • Connecteurs normalisés A2A v1.0 & MCP
-> - • Traduction d'objets CRM ↔ ITSM ↔ ERP
-> - • Lissage de débits (429) & anti-tempête CDC
-> - • Échange OBO → Salesforce / SAP CIS
+> - Connecteurs normalisés A2A v1.0 & MCP
+> - Traduction d'objets CRM ↔ ITSM ↔ ERP
+> - Lissage de débits (429) & anti-tempête CDC
+> - Échange OBO → Salesforce / SAP CIS
 > - A2A + OBO A2A + OBO A2A + SAP CIS MCP / A2A
 > - Salesforce Agentforce
 > - Spécialiste Domaine CRM
@@ -283,7 +283,7 @@ Dans un groupe qui exploite cinq suites majeures, cette idée ne donne pas une a
 
 ## 27.7 Gravité des données et plans de contrôle neutres (MuleSoft Agent Fabric, agentgateway, Temporal)
 
-Comment désigner qui orchestre quoi, sans guerre politique entre directions métiers et sans maillage quadratique de 𝑁(𝑁−1) 2 intégrations point à point ? La réponse repose sur la gravité des données, appliquée au raisonnement agentique.
+Comment désigner qui orchestre quoi, sans guerre politique entre directions métiers et sans maillage quadratique de 𝑁(𝑁−1)/2 intégrations point à point ? La réponse repose sur la gravité des données, appliquée au raisonnement agentique.
 
 Déplacer des données brutes hors de leur progiciel maître vers un orchestrateur externe détruit trois propriétés : la gravité ontologique (les règles implicites codées dans SAP ou Salesforce), la gravité sécuritaire (les permissions fines par ligne et par champ) et la gravité transactionnelle (la fraîcheur d’un stock). Pour une tâche 𝑡 qui sollicite les domaines 𝐷1, …, 𝐷𝑚, le score d’affinité gravitationnelle envers 𝐷𝑘 est :
 
@@ -641,7 +641,7 @@ Trois règles neutralisent cet empilement :
 - **Contexte** : l’exploitation simultanée de Microsoft 365, Salesforce, ServiceNow, SAP S/4HANA et Workday expose l’entreprise à des conflits de plans de contrôle, à des boucles réactives de webhooks, à une perte d’identité humaine et à une multiplication des coûts de crédits éditeurs.
 - **Options évaluées** :
   1. *Élection d’un studio SaaS unique comme orchestrateur universel* : rejetée. Verrouillage stratégique fort, perte des invariants métiers tiers et surtaxe systématique de tous les flux.
-  2. *Maillage pair à pair direct entre studios SaaS* : rejetée. Complexité 𝑂(𝑁2), cécité de sécurité et vulnérabilité critique aux boucles circulaires.
+  2. *Maillage pair à pair direct entre studios SaaS* : rejetée. Complexité 𝑂(𝑁^2), cécité de sécurité et vulnérabilité critique aux boucles circulaires.
   3. *Fédération selon la gravité des données sous plan de contrôle neutre* : retenue. Exécution locale intra-silo (𝐺≥0, 85), orchestration durable neutre (Temporal, agentgateway et médiation iPaaS) dès que deux silos sont mutés, et propagation OAuth 2.1 OBO obligatoire.
 - **Décision** : (a) tout appel inter-SaaS transite obligatoirement par agentgateway; (b) les sagas mutatives multi-domaines sont orchestrées par le moteur durable neutre; (c) les comptes techniques partagés sont interdits au profit de RFC 8693 (Entra ID → SAP CIS, Salesforce, ServiceNow); (d) les lectures et écritures structurées simples utilisent MCP sur API standard plutôt qu’une délégation conversationnelle taxée à l’acte.
 - **Conséquences** :

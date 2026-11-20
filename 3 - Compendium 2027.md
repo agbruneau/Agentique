@@ -4,7 +4,7 @@ COMPENDIUM 2027
 
 Protocoles, sémantique, orchestration, architecture, confiance et gouvernance
 
-PRODUCTION AU TONOME IA — USAGE CONSULTATIF AE / AS (DC-P01) Référentiel technique et architectural produit et vérifié exclusivement par agents d’IA à des fins de consultation par les architectes d’entreprise et de solutions; ne constitue ni un avis juridique ni une homologation humaine. Licence : CC BY 4.0 (textes, figures et registres) · MIT (code, scripts et outils) — voir `2027/LICENSE`.
+PRODUCTION AUTONOME IA — USAGE CONSULTATIF AE / AS (DC-P01) Référentiel technique et architectural produit et vérifié exclusivement par agents d’IA à des fins de consultation par les architectes d’entreprise et de solutions; ne constitue ni un avis juridique ni une homologation humaine. Licence : CC BY 4.0 (textes, figures et registres) · MIT (code, scripts et outils) — voir `2027/LICENSE`.
 
 Édition consolidée — novembre 2026
 
@@ -35,7 +35,7 @@ Les volets « Mise en œuvre », l’ouverture et les annexes F à H ont été r
 
 # Table des matières
 
-  - Ouverture — Architecture et gouvernance du tissu conjonctif agentique — 6
+- Ouverture — Architecture et gouvernance du tissu conjonctif agentique — 6
 - Partie I — Fondements et cadrage — 21
   - Chapitre 1 — L’entreprise agentique — 22
     - Mise en œuvre — De l’assistance conversationnelle à la main-d’œuvre d’exécution asynchrone — 32
@@ -225,7 +225,7 @@ Les analyses publiées par les grands cabinets d’évaluation technologique au 
 
 Trois risques structurels guettent tout programme qui aborde l’orchestration multi-agents avec les habitudes du développement web traditionnel ou des premiers prototypes LLM :
 
-- **La baisse de la fiabilité par composition probabiliste (loi de Lusser).** Si un agent autonome réussit une étape complexe avec une exactitude de 94 %, une chaîne séquentielle non encadrée de dix délégations indépendantes voit sa probabilité de succès sans erreur tomber à 𝑅= 0, 9410 ≈53, 9 %. Un microservice classique échoue de façon visible, par une exception HTTP 500; un maillon LLM défaillant produit souvent une rationalisation plausible qui se propage sans signal d’erreur aux agents en aval (OWASP ASI08 — *Cascading Failures*). Les erreurs se composent d’une étape à l’autre (section 1.1). La fiabilité d’entreprise demande donc de sortir de l’invite le routage critique, les invariants d’affaires et la gestion d’état, pour les confier à une épine dorsale déterministe et durable.
+- **La baisse de la fiabilité par composition probabiliste (loi de Lusser).** Si un agent autonome réussit une étape complexe avec une exactitude de 94 %, une chaîne séquentielle non encadrée de dix délégations indépendantes voit sa probabilité de succès sans erreur tomber à 𝑅 = 0,94^{10} ≈ 53,9 %. Un microservice classique échoue de façon visible, par une exception HTTP 500; un maillon LLM défaillant produit souvent une rationalisation plausible qui se propage sans signal d’erreur aux agents en aval (OWASP ASI08 — *Cascading Failures*). Les erreurs se composent d’une étape à l’autre (section 1.1). La fiabilité d’entreprise demande donc de sortir de l’invite le routage critique, les invariants d’affaires et la gestion d’état, pour les confier à une épine dorsale déterministe et durable.
 - **Les limites d’une interopérabilité purement syntaxique.** Normaliser le format d’échange par JSON-RPC (MCP) ou par descripteurs de tâches (A2A) règle la transmission des messages, non leur sens. Lorsqu’un agent commercial interroge un agent financier sur le « taux d’attrition trimestriel » ou sur l’« exposition nette d’un client », l’absence d’une couche sémantique partagée (Apache Ossie) et d’une ontologie causale d’entreprise produit des décisions incohérentes mais syntaxiquement valides. L’interopérabilité réelle ne se sépare pas de l’ingénierie du contexte ni de la gouvernance de la mémoire. Aucun protocole n’exprime non plus l’approbation, l’escalade ou l’audit d’une décision : cette couche revient à l’entreprise (section 11.9).
 - **L’asymétrie économique et sécuritaire des boucles autonomes.** Une requête humaine mal formulée coûte quelques centimes. Une boucle de réessai mutuelle entre deux agents mal orchestrés, qui consomme du calcul d’inférence réflexif pendant une fin de semaine, peut coûter des dizaines de milliers de dollars et saturer les quotas d’API d’un système ERP critique. De même, donner à un agent tous les privilèges de l’utilisateur qui l’invoque transforme toute injection indirecte d’instructions, dissimulée dans un courriel ou un document externe, en voie d’exfiltration de données.
 
@@ -315,7 +315,6 @@ Un compendium de référence pour 2027 doit distinguer ce qui est établi de ce 
 - Les échéances juridiques (BSIF E-23 le 1er mai 2027, ligne directrice de l’AMF sur l’IA à la même date PDF en statut F (403), raccordée à `CRE-IA-2026-01-QC` (`Note AMF IA.pdf`, 41 attentes, 12 `EXIG-AMF`) et analyses de cabinets, EU AI Act annexe III en décembre 2027, obligations actives de la Loi 25 et de l’article 50 européen) reposent sur les textes en vigueur. La date de décembre 2027 est connue par une reproduction non officielle du règlement (UE) 2026/1744 (section 4.4), dont le chapitre 35 confirme le report par les considérants publiés sur EUR-Lex. Le texte signale systématiquement les zones où des guides d’application sectoriels demeurent attendus.
 - Les pratiques d’avant-garde, soit la contractualisation B2B entièrement autonome d’entreprise à entreprise via AP2 et x402 et l’auto-assemblage dynamique d’essaims sans topologie pré-approuvée, sont balisées comme des frontières émergentes, avec les verrous juridiques et prudentiels qui en limitent encore le déploiement généralisé.
 - Les projections au-delà de 2027 sont réunies au chapitre 50, qui sépare ce qu’un texte date, ce qu’un émetteur annonce et ce qui reste une conjecture.
--
 
 ## 0.5 Dossier initial du fil rouge : Groupe Boréal Inc.
 
@@ -698,8 +697,8 @@ Les exigences de 2027 découlent des impasses techniques de trois générations 
 > - L'humain reste le seul intégrateur SI
 > - Génération 3 (2026–2027) — Main-d'Œuvre d'Exécution Asynchrone Gouvernée (Event-Driven & Durable)
 > - Déclencheurs
-> - • Événement Kafka/OT
-> - • Alerte Webhook / SLA • Intention Humaine
+> - Événement Kafka/OT
+> - Alerte Webhook / SLA • Intention Humaine
 > - Plan de Contrôle Durable
 > - Temporal / Restate / Maestro
 > - État persisté • Saga • Quotas
@@ -824,20 +823,20 @@ En 2027, l’entreprise agentique insère entre les systèmes d’engagement et 
 > - Portail Client AG-UI / A2UI • Microsoft Teams (Copilot Studio) • Console Opérateur Usine (WebRTC) • Alertes IoT MQTT
 > - System of Action — Fabrique Agentique Boréal (Tissu d'Interopérabilité et d'Orchestration)
 > - Orchestration & État Durable
-> - • Workflows Temporal (Sagas inter-divisions)
-> - • Bus événementiel Kafka & Solace
-> - • Approbations HOTL via CIBA
-> - • Découplage Contrôle / Raisonnement
+> - Workflows Temporal (Sagas inter-divisions)
+> - Bus événementiel Kafka & Solace
+> - Approbations HOTL via CIBA
+> - Découplage Contrôle / Raisonnement
 > - Maillage A2A v1.0 & Sémantique
-> - • Annuaire fédéré d'Agent Cards (OASF)
-> - • Ontologie unifiée (Apache Ossie)
-> - • Mémoire bi-temporelle (Graphiti)
-> - • Délégation horizontale inter-silos
+> - Annuaire fédéré d'Agent Cards (OASF)
+> - Ontologie unifiée (Apache Ossie)
+> - Mémoire bi-temporelle (Graphiti)
+> - Délégation horizontale inter-silos
 > - Passerelle AI-Native & Sécurité
-> - • agentgateway (Proxy MCP / A2A / LLM)
-> - • Identités NHI + OAuth 2.1 OBO
-> - • Politiques Cedar / OPA + Quotas FinOps
-> - • Traces OpenTelemetry (gen_ai.*)
+> - agentgateway (Proxy MCP / A2A / LLM)
+> - Identités NHI + OAuth 2.1 OBO
+> - Politiques Cedar / OPA + Quotas FinOps
+> - Traces OpenTelemetry (gen_ai.*)
 > - Boréal Services Numériques (BSN)
 > - Salesforce Agentforce • ServiceNow
 > - Connecteurs : A2A v1.0 + Serveurs MCP
@@ -2295,23 +2294,23 @@ Les rôles d’hôte, de client et de serveur sont décrits à la section 5.1. E
 > - Hôte Agentique (MCP Host)
 > - Worker Temporal, Goose ou Application Métier
 > - Portabilité Cognitive (Standards AAIF)
-> - • Open Responses : API d'inférence unifiée
-> - • Agent Skills : SKILL.md (divulgation progressive)
-> - • AGENTS.md : consignes et invariants locaux
+> - Open Responses : API d'inférence unifiée
+> - Agent Skills : SKILL.md (divulgation progressive)
+> - AGENTS.md : consignes et invariants locaux
 > - Connecteurs MCP Client (Isolation 1:1)
-> - • Négociation cycle de vie (initialize)
-> - • Exposition bornée des périmètres (Roots)
-> - • Validation stricte JSON Schema entrée/sortie
-> - • 1 instance Client dédiée par Serveur MCP
+> - Négociation cycle de vie (initialize)
+> - Exposition bornée des périmètres (Roots)
+> - Validation stricte JSON Schema entrée/sortie
+> - 1 instance Client dédiée par Serveur MCP
 > - Contrôle des Primitives Inversées
-> - • sampling/createMessage : quota & filtre prompt
-> - • elicitation/create (Formulaire JSON plat)
-> - • elicitation/create (Mode URL hors-bande OAuth)
+> - sampling/createMessage : quota & filtre prompt
+> - elicitation/create (Formulaire JSON plat)
+> - elicitation/create (Mode URL hors-bande OAuth)
 > - Approbation de l'hôte obligatoire avant exécution
 > - Surface Client Navigateur : WebMCP (W3C)
-> - • API : navigator.modelContext.registerTool()
-> - • Mode déclaratif : <form toolname="...">
-> - • Cycle de vie lié à l'UI via AbortSignal
+> - API : navigator.modelContext.registerTool()
+> - Mode déclaratif : `<form toolname="...">`
+> - Cycle de vie lié à l'UI via AbortSignal
 > - Exécution locale dans l'onglet actif (zéro scraping)
 > - Streamable HTTP
 > - POST /mcp (Tools,
@@ -2339,24 +2338,24 @@ Les rôles d’hôte, de client et de serveur sont décrits à la section 5.1. E
 > - Limitation de débit HTTP
 > - & Coupe-circuit d'erreurs
 > - Serveur MCP — SAP S/4HANA
-> - • 8 Tools orientés intention métier
-> - • Clés d'idempotence & baux TTL
-> - • Sorties typées structuredContent
+> - 8 Tools orientés intention métier
+> - Clés d'idempotence & baux TTL
+> - Sorties typées structuredContent
 > - Appels officiels BAPI / OData v4
 > - Serveur MCP — Snowflake & BCA
-> - • Resources URI (boreal://bca/...)
-> - • Références légères resource_link
-> - • Pagination sémantique par curseur
+> - Resources URI (boreal://bca/...)
+> - Références légères resource_link
+> - Pagination sémantique par curseur
 > - Masquage dynamique Loi 25 / E-23
 > - Serveur MCP — ServiceNow
-> - • Prompts d'incident standardisés
-> - • Erreurs cognitives auto-correctrices
-> - • Escalade Elicitation URL (HOTL)
+> - Prompts d'incident standardisés
+> - Erreurs cognitives auto-correctrices
+> - Escalade Elicitation URL (HOTL)
 > - Synchronisation ITSM & Terrain FSM
 > - Bac à Sable — OpenSandbox
-> - • Isolation microVM / gVisor / WASM
-> - • Exécution des scripts/ déterministes
-> - • Système de fichiers éphémère
+> - Isolation microVM / gVisor / WASM
+> - Exécution des scripts/ déterministes
+> - Système de fichiers éphémère
 > - Zéro accès réseau sortant non autorisé
 
 *Fig. 10. – Architecture d’entreprise du Model Context Protocol (MCP) sur Streamable HTTP, articulée avec Agent Skills, Open Responses et WebMCP.*
@@ -2493,9 +2492,9 @@ L’erreur la plus coûteuse des premiers déploiements MCP, en 2025–2026, est
 > - 6. Réessai aveugle de l'agent → Doublon d'en-tête orphelin dans SAP
 > - Fuite de la topologie relationnelle interne et couplage fort aux tables
 > - Impact opérationnel mesuré :
-> - • Latence médiane : 18,4 s (6 cycles d'inférence de bout en bout)
-> - • Coût d'inférence : 0,42 $ CAD / tentative (inflation quadratique)
-> - • Stabilité pass^5 : 38 % • Corruption d'état en cas d'échec partiel
+> - Latence médiane : 18,4 s (6 cycles d'inférence de bout en bout)
+> - Coût d'inférence : 0,42 $ CAD / tentative (inflation quadratique)
+> - Stabilité pass^5 : 38 % • Corruption d'état en cas d'échec partiel
 > - PATRON CIBLE — Serveur MCP Orienté Intention Métier
 > - Façade de domaine gouvernée : 7 outils cohésifs alignés sur les actes métiers
 > - Spécialiste Domaine (~1 350 jetons de schémas nets)
@@ -2509,9 +2508,9 @@ L’erreur la plus coûteuse des premiers déploiements MCP, en 2025–2026, est
 > - 6. Référence de compensation attachée (_meta.compensationTool)
 > - Isolation totale du modèle physique SAP : zéro dette de couplage
 > - Impact opérationnel mesuré :
-> - • Latence médiane : 1,7 s (1 seule inférence + appel RPC compilé)
-> - • Coût d'inférence : 0,019 $ CAD / action (-95 % de consommation jetons)
-> - • Stabilité pass^5 : 96,8 % • Intégrité transactionnelle garantie
+> - Latence médiane : 1,7 s (1 seule inférence + appel RPC compilé)
+> - Coût d'inférence : 0,019 $ CAD / action (-95 % de consommation jetons)
+> - Stabilité pass^5 : 96,8 % • Intégrité transactionnelle garantie
 
 *Fig. 11. – Comparaison architecturale : mappage naïf 1:1 CRUD REST vers MCP face à la conception orientée intention métier agrégée.*
 
@@ -2519,7 +2518,7 @@ Deux phénomènes expliquent l’échec d’un mappage CRUD 1:1. D’abord, chaq
 
 𝑇schémas(𝑁outils, 𝐾) = 𝐾⋅∑𝑁outils 𝑖=1 𝑡𝑖
 
-Avec 𝑁outils = 85 points d’accès moyens (𝑡𝑖≈290 jetons) et une transaction de 𝐾= 6 appels séquentiels pour reconstituer une jointure métier, l’agent consomme 147 900 jetons à relire le catalogue d’outils, avant de compter les données retournées. Ensuite, si la probabilité que le modèle choisisse le bon point d’accès et renseigne sans erreur ses clés étrangères internes vaut 𝑝= 0, 85 à chaque étape, la fiabilité d’une séquence de 𝐾= 6 appels tombe à 𝑝6 ≈0, 377 (37,7 %), en deçà du seuil d’exploitation industrielle.
+Avec 𝑁outils = 85 points d’accès moyens (𝑡𝑖≈290 jetons) et une transaction de 𝐾= 6 appels séquentiels pour reconstituer une jointure métier, l’agent consomme 147 900 jetons à relire le catalogue d’outils, avant de compter les données retournées. Ensuite, si la probabilité que le modèle choisisse le bon point d’accès et renseigne sans erreur ses clés étrangères internes vaut 𝑝= 0, 85 à chaque étape, la fiabilité d’une séquence de 𝐾 = 6 appels tombe à 𝑝^6 ≈ 0,377 (37,7 %), en deçà du seuil d’exploitation industrielle.
 
 | Dimension d’ingénierie | Antipatron : mappage CRUD REST 1:1 | Patron cible : outils MCP orientés intention métier |
 | --- | --- | --- |
@@ -3198,13 +3197,13 @@ Lors d’un appel `SendMessage` ou `SendStreamingMessage`, le `contextId` relie 
 > - Diagnostic normalisé JSON-RPC & déclenchement
 > - de la compensation Saga côté orchestrateur
 > - Canal A — Streaming SSE (Régime T2 : 2 s à 3 min)
-> - • Flux ouvert via message/stream ou tasks/resubscribe
-> - • Événements temps réel : TaskStatusUpdateEvent
-> - • Fragments d'artefacts : TaskArtifactUpdateEvent (lastChunk)
+> - Flux ouvert via message/stream ou tasks/resubscribe
+> - Événements temps réel : TaskStatusUpdateEvent
+> - Fragments d'artefacts : TaskArtifactUpdateEvent (lastChunk)
 > - Canal B — Push Webhooks Signés (Régimes T3–T4 : > 3 min)
-> - • Enregistré via pushNotificationConfig (zéro polling actif)
-> - • Rappel HTTPS sortant vers l'awakeable Temporal / Restate
-> - • Vérification cryptographique : JWS / HMAC + anti-rejeu
+> - Enregistré via pushNotificationConfig (zéro polling actif)
+> - Rappel HTTPS sortant vers l'awakeable Temporal / Restate
+> - Vérification cryptographique : JWS / HMAC + anti-rejeu
 
 *Fig. 13. – Cycle de vie complet d’une tâche asynchrone A2A v1.0 : découverte, négociation multi-tours, streaming SSE et notifications push signées.*
 
@@ -3445,22 +3444,22 @@ SLIM (*Secure Low-Latency Interactive Messaging*), implémenté en Rust pour une
 > - Filtrage politiques DMZ B2B
 > - Plan de Transport Temps Réel SLIM et Chiffrement de Groupe IETF MLS (Data Plane)
 > - Domaine A — Groupe Boréal
-> - • Agent Achats BEL & Agent Risque BCA
-> - • Identités locales SPIFFE / SVID
-> - • Routeur local SLIM (QUIC / HTTP/2)
+> - Agent Achats BEL & Agent Risque BCA
+> - Identités locales SPIFFE / SVID
+> - Routeur local SLIM (QUIC / HTTP/2)
 > - Feuilles TreeKEM #1 & #2
 > - Clés éphémères X25519MLKEM768
 > - Maillage de Relais SLIM (Zero-Trust)
 > - Routage sémantique par noms hiérarchiques :
 > - boreal/supply/rfq-session-884/*
-> - • Multiplexage QUIC sans blocage HOL
-> - • Topologies : Unicast, Streaming, Pub/Sub
+> - Multiplexage QUIC sans blocage HOL
+> - Topologies : Unicast, Streaming, Pub/Sub
 > - Aveugle aux charges utiles (Chiffrées E2E)
 > - Traversée NAT sortante uniquement (port 443)
 > - Domaine B — Partenaire Externe
-> - • Agent Cotation Transporteur Maritime
-> - • Identité vérifiée did:wba + mTLS
-> - • Passerelle DMZ SLIM / A2A v1.0
+> - Agent Cotation Transporteur Maritime
+> - Identité vérifiée did:wba + mTLS
+> - Passerelle DMZ SLIM / A2A v1.0
 > - Feuille TreeKEM #3
 > - Révocation atomique fin de tâche
 > - Tunnel Cryptographique de Bout en Bout IETF MLS (RFC 9420) — Suite Hybride Post-Quantique (FIPS 203 ML-KEM + X25519)
@@ -4837,11 +4836,11 @@ De nombreux flux de travail agentiques débouchent sur un engagement financier :
 > - Architecture du Dernier Kilomètre : Interfaces Multimodales (AG-UI, A2UI, WebRTC) et Commerce (AP2, x402)
 > - Volet A — Interaction Humain-Agent Réactive (AG-UI / A2UI) et Multimodalité Temps Réel (WebRTC)
 > - Poste Opérateur / Technicien
-> - • Catalogue local de composants
+> - Catalogue local de composants
 > - homologués (rendu A2UI natif)
-> - • État local synchronisé par patch
-> - • Casque antibruit mains libres
-> - • VAD & Barge-in < 200 ms
+> - État local synchronisé par patch
+> - Casque antibruit mains libres
+> - VAD & Barge-in < 200 ms
 > - Clé matérielle FIDO2 / WebAuthn
 > - Flux Événementiel AG-UI (SSE / WebSockets)
 > - STATE_SNAPSHOT & STATE_DELTA (RFC 6902)
@@ -4850,23 +4849,23 @@ De nombreux flux de travail agentiques débouchent sur un engagement financier :
 > - Audio Opus 24 kHz + Flux vidéo inspection 2 fps
 > - SCTP DataChannel : purge tampon & troncature tour
 > - Agent d'Interface & Médiation
-> - • Niveau L1 (zéro écriture directe SI)
-> - • Détection sémantique fin de tour
-> - • Synthèse des preuves HOTL
-> - • Délégation vers pairs A2A v1.0
+> - Niveau L1 (zéro écriture directe SI)
+> - Détection sémantique fin de tour
+> - Synthèse des preuves HOTL
+> - Délégation vers pairs A2A v1.0
 > - Marquage transparence EU AI Act
 > - Volet B — Chaîne Transactionnelle Vérifiable AP2 (W3C VC / FIDO) et Règlement Programmable HTTP x402
 > - 1. Mandats AP2 (W3C VC)
 > - Signature FIDO2 / HSM :
-> - • Intent Mandate : budget,
+> - Intent Mandate : budget,
 > - DID marchands, TTL
-> - • Cart Mandate : hash
+> - Cart Mandate : hash
 > - SHA-256 panier exact
 > - 2. Agent Acheteur & PDP
 > - Validation déterministe Cedar :
-> - • Prix ≤ plafond mandat
-> - • Bénéficiaire sur liste blanche
-> - • Solde journalier FinOps OK
+> - Prix ≤ plafond mandat
+> - Bénéficiaire sur liste blanche
+> - Solde journalier FinOps OK
 > - Clé d'idempotence paiement
 > - 3. Protocole HTTP x402
 > - ← HTTP 402 Payment Required
@@ -5455,34 +5454,34 @@ Dans un groupe qui exploite 𝑁= 12 environnements d’agents et 𝑀= 45 syst�
 > - Couche 6
 > - OSI L7 (UI & Tx)
 > - Interaction Humaine, Navigateur & Commerce
-> - • Flux réactifs AG-UI, interfaces A2UI / MCP-UI, voix temps réel WebRTC
-> - • Outils client WebMCP (W3C) • Mandats AP2 (FIDO) & règlement HTTP x402
+> - Flux réactifs AG-UI, interfaces A2UI / MCP-UI, voix temps réel WebRTC
+> - Outils client WebMCP (W3C) • Mandats AP2 (FIDO) & règlement HTTP x402
 > - Couche 5
 > - OSI L7 (Maillage)
 > - Coordination Horizontale & Découverte Inter-Agents
-> - • Délégation entre pairs autonomes : A2A v1.0 (convergence ACP, Agent Cards)
-> - • Annuaire fédéré AGNTCY (OASF, Agent Directory) & traversée B2B (ANP)
+> - Délégation entre pairs autonomes : A2A v1.0 (convergence ACP, Agent Cards)
+> - Annuaire fédéré AGNTCY (OASF, Agent Directory) & traversée B2B (ANP)
 > - Couche 4
 > - OSI L6 (Présentation)
 > - Sémantique Métier & Portabilité Cognitive
-> - • Ontologies canoniques d'entreprise : Apache Ossie (JSON Schema / RDF)
-> - • Savoir-faire portable : Agent Skills (SKILL.md), AGENTS.md, Open Responses
+> - Ontologies canoniques d'entreprise : Apache Ossie (JSON Schema / RDF)
+> - Savoir-faire portable : Agent Skills (SKILL.md), AGENTS.md, Open Responses
 > - Couche 3
 > - OSI L5–L6 (Session)
 > - Connectivité Verticale & Accès Outillé aux Systèmes
-> - • Model Context Protocol (MCP) sur JSON-RPC 2.0 & Streamable HTTP
-> - • Primitives : Tools, Resources, Prompts, Roots, Sampling, Elicitation
+> - Model Context Protocol (MCP) sur JSON-RPC 2.0 & Streamable HTTP
+> - Primitives : Tools, Resources, Prompts, Roots, Sampling, Elicitation
 > - Couche 2
 > - OSI L4–L5 (Transport)
 > - Plan de Données IA, Routage & Identité Cryptographique
-> - • Proxy agentgateway, Agent Router, transport SLIM chiffré MLS (RFC 9420)
-> - • Identités NHI (SPIFFE/WIMSE), délégation OAuth 2.1 OBO (RFC 8693) & Cedar
+> - Proxy agentgateway, Agent Router, transport SLIM chiffré MLS (RFC 9420)
+> - Identités NHI (SPIFFE/WIMSE), délégation OAuth 2.1 OBO (RFC 8693) & Cedar
 > - Couche 1
 > - OSI L1–L3 (Infra)
 > - Isolation d'Exécution, Évaluation & Moteurs Durables
-> - • Bacs à sable microVM / WASM : OpenSandbox • Bancs d'essai RL : OpenEnv
-> - • Hôte de référence Goose • Orchestration durable (Temporal / Restate)
-> - • Télémétrie transversale : OpenTelemetry (conventions sémantiques gen_ai.*)
+> - Bacs à sable microVM / WASM : OpenSandbox • Bancs d'essai RL : OpenEnv
+> - Hôte de référence Goose • Orchestration durable (Temporal / Restate)
+> - Télémétrie transversale : OpenTelemetry (conventions sémantiques gen_ai.*)
 > - Autorités de Gouvernance Ouverte
 > - Linux Foundation — AAIF (10 Projets)
 > - Agentic AI Foundation (Socle neutre inter-éditeurs)
@@ -6154,7 +6153,7 @@ La probabilité d’exactitude d’une décision qui croise 𝑘 concepts métie
 
 Les protocoles de la partie II (MCP, schémas JSON stricts, A2A v1.0) portent 𝑃(Syntaxe) au-delà de 0, 999. Sans référentiel sémantique partagé 𝒪︀, si chaque concept a une probabilité
 
-d’interprétation exacte de 0, 80, croiser quatre concepts (client, garantie, stock, priorité SLA) abaisse la fiabilité globale à 0, 804 ≈0, 41, soit près de trois décisions erronées sur cinq.
+d’interprétation exacte de 0, 80, croiser quatre concepts (client, garantie, stock, priorité SLA) abaisse la fiabilité globale à 0,80^4 ≈ 0,41, soit près de trois décisions erronées sur cinq.
 
 | Approche d’accès au sens métier | Exactitude analytique chiffrée | Maîtrise des actions mutatives | Portabilité (intelligence d’affaires et agents) | Risque majeur en exploitation |
 | --- | --- | --- | --- | --- |
@@ -6195,7 +6194,7 @@ Un pipeline de validation continue applique donc trois garde-fous automatisés �
 
 - **Intégrité référentielle et acyclicité.** Le validateur inspecte les expressions SQL, confirme que les colonnes existent dans le catalogue de l’entrepôt cible et rejette tout cycle ambigu de jointures dans le bloc `relationships`.
 - **Détection des ruptures de contrat.** Renommer une métrique, modifier le type de retour d’un champ ou changer la logique d’un prédicat sans mise à jour de version sémantique (SemVer) bloque le déploiement tant que les propriétaires des Agent Cards abonnées n’ont pas contresigné l’impact.
-- **Tests d’assertion de référence.** Des requêtes témoins s’exécutent sur un jeu de données figé. Chaque cible de compilation (Snowflake, dbt et Cube, serveur MCP) doit restituer les mêmes valeurs décimales à 10−6 près.
+- **Tests d’assertion de référence.** Des requêtes témoins s’exécutent sur un jeu de données figé. Chaque cible de compilation (Snowflake, dbt et Cube, serveur MCP) doit restituer les mêmes valeurs décimales à 10^{−6} près.
 
 L’Extrait 12.1 ci-dessous épingle la seule version parue d’Apache Ossie, `0.1.1` (aucune version 1.0 n’existe et la branche `0.3.0.dev0` se déclare impropre à la production; section 12.4). Il arrête aussi une définition unique du « client actif »; or, quand deux domaines
 
@@ -6364,7 +6363,7 @@ L’ontologie opérationnelle causale répond à ces questions. Elle est le seco
 > - Systèmes d'Enregistrement Hétérogènes Réconciliés via Clés Maîtres Canoniques (MDM)
 > - BSN : Salesforce CRM & ServiceNow FSM BCA : IBM i (AS/400), Guidewire & Snowflake BEL : SAP S/4HANA (MM/SD) & Siemens MES
 
-*Fig. 21. – Architecture duale couplant la couche sémantique analytique Apache Ossie et l’ontologie opéra tionnelle causale au sein d’un pipeline neuro-symbolique.*
+*Fig. 21. – Architecture duale couplant la couche sémantique analytique Apache Ossie et l’ontologie opérationnelle causale au sein d’un pipeline neuro-symbolique.*
 
 | Concept canonique | Ambiguïtés historiques des silos | Vérité analytique (Apache Ossie) | Règle causale et d’action (ontologie opérationnelle) |
 | --- | --- | --- | --- |
@@ -6939,10 +6938,10 @@ Le rejet du résumé glissant seul, dans ce tableau comme dans l’ADR-008 (sect
 > - Raisonnement haute densité
 > - TTFT minimal • Précision max
 > - Enveloppe de Handoff
-> - • Décisions & Faits typés
-> - • Hypothèses écartées
-> - • Pointeurs URI (Claim-Check)
-> - • Incertitudes résiduelles
+> - Décisions & Faits typés
+> - Hypothèses écartées
+> - Pointeurs URI (Claim-Check)
+> - Incertitudes résiduelles
 > - Zéro historique brut copié
 > - Élimine le Context Rot
 > - Plan Sous-Jacent : Stockage par Référence (Claim-Check) & Observabilité du Budget d'Attention
@@ -7619,8 +7618,8 @@ Pour garder une latence constante au-delà de plusieurs dizaines de millions d�
 > - 1. Gestionnaire de Mémoire Type OS (Letta)
 > - État local par cellule agentique • Pagination explicite bornée
 > - Core Memory Blocks (RAM Contextuelle Épinglée)
-> - • Bloc Mandat & Politiques (Lecture seule, signé plateforme)
-> - • Bloc État Dossier & Préférences (Quota strict : ex. 2 048 car.)
+> - Bloc Mandat & Politiques (Lecture seule, signé plateforme)
+> - Bloc État Dossier & Préférences (Quota strict : ex. 2 048 car.)
 > - Outils : memory_replace / memory_rethink (filtrés anti-ASI06)
 > - Recall Memory (Journal Épisodique paginé)
 > - Traces d'interactions, décisions passées & appels d'outils
@@ -8573,11 +8572,11 @@ Entre 2024 et 2025, plusieurs cadriciels multi-agents expérimentaux ont retenu 
 
 Soit un ensemble de 𝑛 agents qui coopèrent sur un dossier complexe. Dans un maillage conversationnel non contraint, où chaque agent peut interpeller n’importe quel pair et reçoit l’historique complet des échanges, le nombre de canaux potentiels croît selon :
 
-𝐶(𝑛) = 𝑛(𝑛−1)2 ∈𝑂(𝑛2)
+𝐶(𝑛) = 𝑛(𝑛−1)/2 ∈ 𝑂(𝑛^2)
 
 La consommation de jetons d’entrée croît aussi de façon quadratique. Si chaque tour 𝑡∈ {1, …, 𝑇} ajoute en moyenne 𝐿 jetons au tampon conversationnel partagé, le volume cumulé de jetons facturés et traités par l’attention au bout de 𝑇 tours atteint :
 
-𝑉jetons(𝑇) = ∑𝑇 𝑡=1(𝐿0 + 𝑡⋅𝐿) = 𝑇⋅𝐿0 + 𝑇(𝑇+ 1)2 𝐿
+𝑉_{jetons}(𝑇) = ∑_{𝑡=1}^{𝑇} (𝐿_0 + 𝑡⋅𝐿) = 𝑇⋅𝐿_0 + (𝑇(𝑇+1)/2)⋅𝐿
 
 où 𝐿0 désigne l’empreinte initiale des consignes système et des schémas d’outils. Au-delà de huit à dix échanges croisés, trois dégradations s’ajoutent :
 
@@ -8615,18 +8614,18 @@ adaptatif (section 16.1). Toute architecture candidate justifie laquelle elle in
 > - 1. Superviseur hiérarchique
 > - Superviseur (Router)
 > - Agent CRM Agent ERP Agent Finance
-> - • Complexité messages : O(k) délégations A2A
-> - • Force : Gouvernance et traçabilité simples
-> - • Limite : Goulot contextuel sans Claim-Check
+> - Complexité messages : O(k) délégations A2A
+> - Force : Gouvernance et traçabilité simples
+> - Limite : Goulot contextuel sans Claim-Check
 > - Cible : Triage client & routage multi-silos
 > - 2. Planificateur–Exécuteur–Critique
 > - Planificateur Exécuteur Critique
 > - (Autre LLM)
 > - Rejet (N ≤ 3)
 > - Sortie validée + Cedar
-> - • Familles LLM distinctes (anti-biais corrélé)
-> - • Force : Réduction drastique d'hallucinations
-> - • Limite : Coût 2,2× à 3,8× ; borne N stricte
+> - Familles LLM distinctes (anti-biais corrélé)
+> - Force : Réduction drastique d'hallucinations
+> - Limite : Coût 2,2× à 3,8× ; borne N stricte
 > - Cible : Souscription, code & analyse juridique
 > - 3. DAG dynamique typé (Plan & Run)
 > - Compil.
@@ -8634,17 +8633,17 @@ adaptatif (section 16.1). Toute architecture candidate justifie laquelle elle in
 > - Nœud B
 > - Nœud C
 > - Agrégat
-> - • Tri topologique de Kahn (zéro cycle garanti)
-> - • Force : Parallélisme maximal (latence P95 min)
-> - • Limite : Replanification partielle si surprise
+> - Tri topologique de Kahn (zéro cycle garanti)
+> - Force : Parallélisme maximal (latence P95 min)
+> - Limite : Replanification partielle si surprise
 > - Cible : Enrichissement 360° & audit multi-sources
 > - 4. Tableau noir (Shared Blackboard)
 > - État Partagé Versionné (CAS / ETag)
 > - Hypothèses • Preuves • Prédicat d'arrêt
 > - Agent Logs Agent Réseau Agent Métriques
-> - • Découplage total entre experts opportunistes
-> - • Force : Convergence d'indices hétérogènes
-> - • Limite : Conflits d'écriture sans verrou CAS
+> - Découplage total entre experts opportunistes
+> - Force : Convergence d'indices hétérogènes
+> - Limite : Conflits d'écriture sans verrou CAS
 > - Cible : Diagnostic RCA cyber, télécoms & OT
 > - 5. Enchères Contract Net (CNP)
 > - Adjudicateur (RFP)
@@ -8653,9 +8652,9 @@ adaptatif (section 16.1). Toute architecture candidate justifie laquelle elle in
 > - 0,42 $ | 9 s Soumission B
 > - 0,19 $ | 4 s Soumission C
 > - 0,31 $ | 14 s
-> - • Appel d'offres typé : Coût + SLA + Confiance
-> - • Force : Arbitrage économique et charge temps réel
-> - • Limite : Surcharge protocole (Annonce/Bid/Award)
+> - Appel d'offres typé : Coût + SLA + Confiance
+> - Force : Arbitrage économique et charge temps réel
+> - Limite : Surcharge protocole (Annonce/Bid/Award)
 > - Cible : Logistique multi-dépôts & achats B2B
 > - 6. Hybride BPMN/DMN + Cellule Agent
 > - DMN
@@ -8665,9 +8664,9 @@ adaptatif (section 16.1). Toute architecture candidate justifie laquelle elle in
 > - Vérif. Critique
 > - Commit
 > - ou HOTL
-> - • Épine dorsale ISO 19510 + cellule probabiliste
-> - • Force : Auditabilité prudentielle 100 % prouvable
-> - • Limite : Modélisation initiale plus exigeante
+> - Épine dorsale ISO 19510 + cellule probabiliste
+> - Force : Auditabilité prudentielle 100 % prouvable
+> - Limite : Modélisation initiale plus exigeante
 > - Cible : Banque/Assurance (BSIF E-23) & GxP
 
 *Fig. 26. – Comparaison architecturale des six topologies multi-agents de production en 2027.*
@@ -9472,7 +9471,7 @@ Sources secondaires :
 
 SYNTHÈSE EXÉCUTIVE
 
-- **Enjeu** : à 95 % de précision par décision, une chaîne non encadrée de quinze étapes plafonne à 0, 9515 ≈46, 3 % de succès au premier passage, avec des dérives de coût et un risque de non-conformité réglementaire.
+- **Enjeu** : à 95 % de précision par décision, une chaîne non encadrée de quinze étapes plafonne à 0,95^{15} ≈ 46,3 % de succès au premier passage, avec des dérives de coût et un risque de non-conformité réglementaire.
 - **Décisions d’architecture** :
   1. *Irréversible* : séparer le plan de contrôle déterministe (machine à états durable, règles DMN et Cedar, transactions et compensations Saga) des cellules bornées confiées au modèle (interprétation, diagnostic multi-signaux).
   2. *Structurante dès la conception* : placer chaque appel au modèle entre une garde d’entrée déterministe (schéma, masquage des données personnelles, budget de jetons et de latence) et une garde de sortie qui vérifie les invariants métiers avant toute écriture dans un système d’enregistrement.
@@ -9487,12 +9486,12 @@ Les erreurs d’un agent s’accumulent d’une étape à l’autre (section 17.
 
 Les classements académiques mesurent pass @𝑘, la probabilité qu’au moins un essai sur 𝑘 réussisse. Le critère convient quand un compilateur ou un développeur écarte sans frais les propositions erronées. Un processus transactionnel — instruire un sinistre, modifier un approvisionnement, reconfigurer un équipement — doit au contraire appliquer la politique d’affaires à chacune des 𝑘 exécutions d’un même dossier. C’est ce que mesure pass𝑘, métrique des bancs d’évaluation d’agents transactionnels (𝜏-bench). Pour 𝑛 décisions supposées indépendantes, de précision moyenne 𝑝, la borne de Lusser décroît de façon exponentielle :
 
-𝑅seq(𝑛) = ∏𝑛 𝑖=1 𝑝𝑖≈𝑝𝑛, pass𝑘(𝑛) = 𝑝𝑛𝑘
+𝑅_{seq}(𝑛) = ∏_{𝑖=1}^{𝑛} 𝑝_𝑖 ≈ 𝑝^𝑛, pass^𝑘(𝑛) = 𝑝^{𝑛𝑘}
 
 Deux ordres de grandeur :
 
-- avec 𝑝= 0, 95, un flux linéaire de 𝑛= 12 étapes libres réussit 0, 9512 ≈54, 0 % des passages (pass @1), et sa reproductibilité sur cinq contrôles successifs (pass5) tombe à 0, 9560 ≈4, 6 %;
-- avec 𝑝= 0, 99, au prix d’un modèle de pointe, un dossier complexe de 𝑛= 30 étapes atteint 0, 9930 ≈74, 0 % au premier essai et 0, 99150 ≈22, 1 % en pass5, loin des SLA de 99, 5 % exigés en production.
+- avec 𝑝= 0, 95, un flux linéaire de 𝑛 = 12 étapes libres réussit 0,95^{12} ≈ 54,0 % des passages (pass @1), et sa reproductibilité sur cinq contrôles successifs (pass5) tombe à 0,95^{60} ≈ 4,6 %;
+- avec 𝑝= 0, 99, au prix d’un modèle de pointe, un dossier complexe de 𝑛 = 30 étapes atteint 0,99^{30} ≈ 74,0 % au premier essai et 0,99^{150} ≈ 22,1 % en pass5, loin des SLA de 99, 5 % exigés en production.
 
 #### Erreurs corrélées et coût de l’auto-correction
 
@@ -9569,28 +9568,28 @@ La section 17.2 décrit l’enveloppe déterministe dans sa forme BPMN. En voici
 > - Entrée typée + Budget Proposition validée
 > - 2. Enceinte d'Isolation de la Cellule Cognitive Bornée (Zéro Écriture Irréversible Directe)
 > - Garde d'Entrée (Input Guard)
-> - • Validation JSON Schema strict
-> - • Masquage PII (Loi 25 / RGPD)
-> - • Sélection du moindre contexte
-> - • Bornes : K ≤ 6 tours | SLA 8,0 s
-> - • Filtrage injection OWASP ASI01
+> - Validation JSON Schema strict
+> - Masquage PII (Loi 25 / RGPD)
+> - Sélection du moindre contexte
+> - Bornes : K ≤ 6 tours | SLA 8,0 s
+> - Filtrage injection OWASP ASI01
 > - Noyau Probabiliste Borné (SLM / LLM)
-> - • Raisonnement sur signaux ambigus / non structurés
-> - • Compteur externe d'itérations k = 1..K_max
-> - • Outils MCP : Lecture & Simulation uniquement
-> - • Plafond dur jetons raisonnement & budget CAD
-> - • Décodage contraint par grammaire (CFG)
+> - Raisonnement sur signaux ambigus / non structurés
+> - Compteur externe d'itérations k = 1..K_max
+> - Outils MCP : Lecture & Simulation uniquement
+> - Plafond dur jetons raisonnement & budget CAD
+> - Décodage contraint par grammaire (CFG)
 > - Garde de Sortie & Invariants
-> - • Conformité schéma typé fermé
-> - • Politiques OPA / Cedar (plafonds)
-> - • Ancrage factuel (empreinte SHA-256)
-> - • Confiance calibrée ≥ seuil τ
-> - • Rejet immédiat si hallucination
+> - Conformité schéma typé fermé
+> - Politiques OPA / Cedar (plafonds)
+> - Ancrage factuel (empreinte SHA-256)
+> - Confiance calibrée ≥ seuil τ
+> - Rejet immédiat si hallucination
 > - Timeout / HTTP 429 / K > K_max Violation invariant / Confiance < τ
 > - 3. Disjoncteur et Circuit de Repli Déterministe (Deterministic Fallback & Circuit Breaker)
 > - Voie A — Repli Heuristique Statique : Règle métier sûre par défaut Voie B — Escalade Human-on-the-Loop (HOTL / CIBA) avec dossier d'écart
 
-*Fig. 28. – Architecture d’encapsulation hybride : épine dorsale déterministe gouvernant des cellules cogni tives bornées avec gardes d’entrée/sortie et repli.*
+*Fig. 28. – Architecture d’encapsulation hybride : épine dorsale déterministe gouvernant des cellules cognitives bornées avec gardes d’entrée/sortie et repli.*
 
 L’enveloppe se compose de quatre éléments.
 
@@ -10295,36 +10294,36 @@ Quatre plateformes structurent en 2027 l’exécution durable des systèmes agen
 > - INTÉGRATION NATIVE ÉCOSYSTÈME HYPERSCALER (CLÉ EN MAIN)
 > - HAUTE FRÉQUENCE & LATENCE MS (T2 / T3) SAGAS LONGUES & SESSIONS LOURDES (T3 / T4)
 > - Restate (Moteur Rust • Journal Bifrost intégré)
-> - • Primitives : Services RPC, Virtual Objects (clé K/V), Workflows
-> - • Modèle d'exécution : Push HTTP/2 vers conteneurs ou FaaS
-> - • Latence par étape journalisée (ctx.run) : ~1 à 5 ms
-> - • Force : Déploiement binaire unique, Awakeables ultra-légers
+> - Primitives : Services RPC, Virtual Objects (clé K/V), Workflows
+> - Modèle d'exécution : Push HTTP/2 vers conteneurs ou FaaS
+> - Latence par étape journalisée (ctx.run) : ~1 à 5 ms
+> - Force : Déploiement binaire unique, Awakeables ultra-légers
 > - Idéal : Micro-orchestration A2A/MCP, agents sans serveur, T2-T3
 > - SDK : TypeScript, Python, Go, Java/Kotlin, Rust
 > - Temporal + Temporal Nexus (Licence MIT)
-> - • Primitives : Workflows, Activities, Signals, Queries, Updates
-> - • Modèle d'exécution : Workers en Pull sur Task Queues isolées
-> - • Fédération inter-divisions : Contrats RPC durables via Nexus
-> - • Force : Résilience multi-régions, Versioning, Codec AES-GCM
+> - Primitives : Workflows, Activities, Signals, Queries, Updates
+> - Modèle d'exécution : Workers en Pull sur Task Queues isolées
+> - Fédération inter-divisions : Contrats RPC durables via Nexus
+> - Force : Résilience multi-régions, Versioning, Codec AES-GCM
 > - Idéal : Sagas critiques multi-semaines, banque/assurance (T3-T4)
 > - SDK : TypeScript, Python, Go, Java, .NET, PHP
 > - Microsoft Agent Framework (Durable Task)
-> - • Convergence officielle : AutoGen + Semantic Kernel unifiés
-> - • Moteur sous-jacent : Durable Task Framework / Azure / Dapr
-> - • État : Déshydratation native des Agent Threads & Workflows
-> - • Force : Identité Entra ID OBO native, pont Copilot Studio
+> - Convergence officielle : AutoGen + Semantic Kernel unifiés
+> - Moteur sous-jacent : Durable Task Framework / Azure / Dapr
+> - État : Déshydratation native des Agent Threads & Workflows
+> - Force : Identité Entra ID OBO native, pont Copilot Studio
 > - Idéal : Entreprises standardisées Azure / .NET & Python
 > - Portabilité : Haute sur Azure Functions, moyenne via Dapr K8s
 > - Amazon Bedrock AgentCore (Runtime AWS)
-> - • Architecture : Sessions microVM isolées à longue durée de vie
-> - • Composants intégrés : Runtime, Gateway MCP, Memory, Identity
-> - • Agnostique au cadriciel : Exécute LangGraph, CrewAI, Strands
-> - • Force : Isolation matérielle + couplage Step Functions T4
+> - Architecture : Sessions microVM isolées à longue durée de vie
+> - Composants intégrés : Runtime, Gateway MCP, Memory, Identity
+> - Agnostique au cadriciel : Exécute LangGraph, CrewAI, Strands
+> - Force : Isolation matérielle + couplage Step Functions T4
 > - Idéal : Charges AWS intensives avec bac à sable code intégré
 > - Portabilité : Faible hors AWS (adhérence plan de contrôle IAM)
 > - Patron d'urbanisation recommandé (Architecture Bi-Vitesse Groupe Boréal) :
-> - • Couche Macro-Sagas (T3/T4, 1 h à 90 j) : Temporal + Nexus pour la gouvernance inter-divisions, le versionnage long et la piste d'audit BSIF E-23.
-> - • Couche Micro-Agents (T2, secondes à minutes) : Restate ou Durable Task pour sérialiser l'état par entité (Virtual Object) avec surcharge minimale.
+> - Couche Macro-Sagas (T3/T4, 1 h à 90 j) : Temporal + Nexus pour la gouvernance inter-divisions, le versionnage long et la piste d'audit BSIF E-23.
+> - Couche Micro-Agents (T2, secondes à minutes) : Restate ou Durable Task pour sérialiser l'état par entité (Virtual Object) avec surcharge minimale.
 
 *Fig. 31. – Positionnement architectural comparé de Temporal, Restate, Microsoft Agent Framework (Durable Task) et Amazon Bedrock AgentCore.*
 
@@ -11176,9 +11175,9 @@ Deux formes de charge utile coexistent sur ce maillage, et le choix entre elles 
 > - Fenêtre de Grâce (120 s)
 > - Rétention avant effet externe Vérifie absence d'AbortSignal
 > - Émissions Externes Scellées :
-> - • Avis transporteur EDI X12
-> - • Courriel d'engagement client
-> - • Règlement signé AP2 / x402
+> - Avis transporteur EDI X12
+> - Courriel d'engagement client
+> - Règlement signé AP2 / x402
 > - Revérification Cedar JIT
 > - Aller : T1 validé Aller : T2 validé Arbitrage Pivot Tp
 > - Succès
@@ -13049,7 +13048,7 @@ Pour dépasser les déclarations d’éditeurs sans prétendre à une mesure en 
 - **Campagne 3 — Interopérabilité** `MCP` **/** `A2A` **sur 3 adaptateurs ouverts (**`Borealis-Bench/results/campagne3_mcp_a2a_interop.json`**) :** trois adaptateurs ouverts (`LangGraph-adapter`, `AutoGen-adapter`, `CrewAI-adapter`) exécutent trois scénarios (`SC1-MCP-Tool-Governance`, `SC2-A2A-Cross-Framework-Delegation`, `SC3-`
   `Trifecta-And-LogJack-Containment`) face au serveur réel `MCP JSON-RPC 2.0` + `A2A v1.0` de la passerelle Go.
 
-| Adaptateur ou vert | Scénario `MCP` / `A2A` | Constaté (`Borealis-Bench`) | `DPoP` / `8693` + Règle 2 & `POR-003` | Latence (ms) |
+| Adaptateur ouvert | Scénario `MCP` / `A2A` | Constaté (`Borealis-Bench`) | `DPoP` / `8693` + Règle 2 & `POR-003` | Latence (ms) |
 | --- | --- | --- | --- | --- |
 | `LangGraph-adapter` | `SC1` / `SC2` / `SC3` | `PASS` **(3/3)** | Oui | `88,33` / `45,11` / `58,74` |
 | `AutoGen-adapter` | `SC1` / `SC2` / `SC3` | `PASS` **(3/3)** | Oui | `90,55` / `50,00` / `18,92` |
@@ -14368,20 +14367,20 @@ Dans un groupe qui exploite cinq suites majeures, cette idée ne donne pas une a
 > - Pont vers SAP CIS (Principal Propagation SAML/X.509)
 > - Plan d'Orchestration Maître & Médiation Neutre (Découplé des Jardins Clos SaaS)
 > - Passerelle AI-Native (agentgateway)
-> - • Anti-boucle : vecteur signé x-a2a-hop-vector
-> - • Politiques Cedar / OPA & filtrage PII
-> - • Coupe-circuit FinOps (crédits SaaS + jetons)
-> - • Corrélation W3C traceparent unifiée
+> - Anti-boucle : vecteur signé x-a2a-hop-vector
+> - Politiques Cedar / OPA & filtrage PII
+> - Coupe-circuit FinOps (crédits SaaS + jetons)
+> - Corrélation W3C traceparent unifiée
 > - Arbitrage & État Durable (Temporal)
-> - • Gravité des données (G ≥ 0,85 : local)
-> - • Sagas inter-SaaS (≥ 2 domaines mutés)
-> - • Annuaire fédéré OASF d'Agent Cards A2A
-> - • Modèle canonique Apache Ossie
+> - Gravité des données (G ≥ 0,85 : local)
+> - Sagas inter-SaaS (≥ 2 domaines mutés)
+> - Annuaire fédéré OASF d'Agent Cards A2A
+> - Modèle canonique Apache Ossie
 > - Courtage iPaaS (MuleSoft Agent Fabric)
-> - • Connecteurs normalisés A2A v1.0 & MCP
-> - • Traduction d'objets CRM ↔ ITSM ↔ ERP
-> - • Lissage de débits (429) & anti-tempête CDC
-> - • Échange OBO → Salesforce / SAP CIS
+> - Connecteurs normalisés A2A v1.0 & MCP
+> - Traduction d'objets CRM ↔ ITSM ↔ ERP
+> - Lissage de débits (429) & anti-tempête CDC
+> - Échange OBO → Salesforce / SAP CIS
 > - A2A + OBO A2A + OBO A2A + SAP CIS MCP / A2A
 > - Salesforce Agentforce
 > - Spécialiste Domaine CRM
@@ -14430,7 +14429,7 @@ Dans un groupe qui exploite cinq suites majeures, cette idée ne donne pas une a
 
 ### 27.7 Gravité des données et plans de contrôle neutres (MuleSoft Agent Fabric, agentgateway, Temporal)
 
-Comment désigner qui orchestre quoi, sans guerre politique entre directions métiers et sans maillage quadratique de 𝑁(𝑁−1) 2 intégrations point à point ? La réponse repose sur la gravité des données, appliquée au raisonnement agentique.
+Comment désigner qui orchestre quoi, sans guerre politique entre directions métiers et sans maillage quadratique de 𝑁(𝑁−1)/2 intégrations point à point ? La réponse repose sur la gravité des données, appliquée au raisonnement agentique.
 
 Déplacer des données brutes hors de leur progiciel maître vers un orchestrateur externe détruit trois propriétés : la gravité ontologique (les règles implicites codées dans SAP ou Salesforce), la gravité sécuritaire (les permissions fines par ligne et par champ) et la gravité transactionnelle (la fraîcheur d’un stock). Pour une tâche 𝑡 qui sollicite les domaines 𝐷1, …, 𝐷𝑚, le score d’affinité gravitationnelle envers 𝐷𝑘 est :
 
@@ -14788,7 +14787,7 @@ Trois règles neutralisent cet empilement :
 - **Contexte** : l’exploitation simultanée de Microsoft 365, Salesforce, ServiceNow, SAP S/4HANA et Workday expose l’entreprise à des conflits de plans de contrôle, à des boucles réactives de webhooks, à une perte d’identité humaine et à une multiplication des coûts de crédits éditeurs.
 - **Options évaluées** :
   1. *Élection d’un studio SaaS unique comme orchestrateur universel* : rejetée. Verrouillage stratégique fort, perte des invariants métiers tiers et surtaxe systématique de tous les flux.
-  2. *Maillage pair à pair direct entre studios SaaS* : rejetée. Complexité 𝑂(𝑁2), cécité de sécurité et vulnérabilité critique aux boucles circulaires.
+  2. *Maillage pair à pair direct entre studios SaaS* : rejetée. Complexité 𝑂(𝑁^2), cécité de sécurité et vulnérabilité critique aux boucles circulaires.
   3. *Fédération selon la gravité des données sous plan de contrôle neutre* : retenue. Exécution locale intra-silo (𝐺≥0, 85), orchestration durable neutre (Temporal, agentgateway et médiation iPaaS) dès que deux silos sont mutés, et propagation OAuth 2.1 OBO obligatoire.
 - **Décision** : (a) tout appel inter-SaaS transite obligatoirement par agentgateway; (b) les sagas mutatives multi-domaines sont orchestrées par le moteur durable neutre; (c) les comptes techniques partagés sont interdits au profit de RFC 8693 (Entra ID → SAP CIS, Salesforce, ServiceNow); (d) les lectures et écritures structurées simples utilisent MCP sur API standard plutôt qu’une délégation conversationnelle taxée à l’acte.
 - **Conséquences** :
@@ -16199,8 +16198,8 @@ Le mandat d’un utilisateur humain, ou d’un événement métier authentifié,
 > - Journalise sub + act
 > - dans Guidewire / DB2
 > - Garanties Cryptographiques du Jeton T2 (Sender-Constrained JWT) :
-> - • Identité initiale préservée (sub = emp-8841) • Généalogie complète et non répudiable des agents traversés (act imbriqué)
-> - • Jeton inutilisable en cas d'exfiltration grâce à cnf (empreinte clé privée DPoP jkt ou certificat mTLS x5t#S256) • TTL ≤ 300 s
+> - Identité initiale préservée (sub = emp-8841) • Généalogie complète et non répudiable des agents traversés (act imbriqué)
+> - Jeton inutilisable en cas d'exfiltration grâce à cnf (empreinte clé privée DPoP jkt ou certificat mTLS x5t#S256) • TTL ≤ 300 s
 > - Escalade Hors Bande sur Exception de Politique (Montant > 5 000 $ CAD) — Protocole OpenID CIBA
 > - 1. Suspension Durable (Temporal)
 > - POST /bc-authorize + condensat tx_hash
@@ -16879,28 +16878,28 @@ Le scénario type met en jeu deux agents. L’agent amont 𝐴1, exposé aux don
 > - ASI08 + ASI09 + ASI10
 > - Barrières de Rupture Architecturales (Coupure de la Kill Chain à Chaque Frontière)
 > - Barrière B1 — Isolation Flot de Données
-> - • Travailleur SLM d'extraction sans aucun outil
-> - • Délimitation Spotlighting & JSON Schema fermé
-> - • Purge des points de code Unicode furtifs / Bidi
-> - • Marquage de teinte (Taint = UNTRUSTED_EXT)
+> - Travailleur SLM d'extraction sans aucun outil
+> - Délimitation Spotlighting & JSON Schema fermé
+> - Purge des points de code Unicode furtifs / Bidi
+> - Marquage de teinte (Taint = UNTRUSTED_EXT)
 > - Bloque ASI01 à la périphérie documentaire
 > - Barrière B2 — Verrouillage MCP
-> - • Épinglage SHA-256 + Sigstore
-> - • Rejet auto de list_changed non signé
-> - • Assainisseur de descriptions MCP
-> - • Préfixage strict d'espace de noms
+> - Épinglage SHA-256 + Sigstore
+> - Rejet auto de list_changed non signé
+> - Assainisseur de descriptions MCP
+> - Préfixage strict d'espace de noms
 > - Neutralise ASI02 & ASI04
 > - Barrière B3 — Mémoire
-> - • Provenance HMAC
-> - • Quarantaine données
+> - Provenance HMAC
+> - Quarantaine données
 > - externes non validées
-> - • TTL & cloisonnement
+> - TTL & cloisonnement
 > - Bloque ASI06
 > - Barrière B4 — Maillage
-> - • Signature JWS A2A
-> - • Plafond sauts & coût
-> - • Vue A2UI différentielle
-> - • Red Teaming CI/CD
+> - Signature JWS A2A
+> - Plafond sauts & coût
+> - Vue A2UI différentielle
+> - Red Teaming CI/CD
 > - Stoppe ASI07–ASI10
 
 *Fig. 44. – Anatomie d’une attaque trans-agent (OWASP ASI & MCP) et barrières de rupture déterministes.*
@@ -17642,8 +17641,8 @@ Pour tout invariant d’affaires, réglementaire ou de sécurité (plafond d’e
 > - Cellule Agentique LLM
 > - Raisonnement probabiliste
 > - Propose une intention :
-> - • Appel d'outil MCP
-> - • Code Python / Script CUA
+> - Appel d'outil MCP
+> - Code Python / Script CUA
 > - Postulat Zero Trust :
 > - Aucun invariant métier,
 > - plafond financier ou secret
@@ -17653,29 +17652,29 @@ Pour tout invariant d’affaires, réglementaire ou de sécurité (plafond d’e
 > - 2. Garde-Fous Déterministes Hors du LLM
 > - (Architecture PEP / PDP Neuro-Symbolique)
 > - PEP : Passerelle agentgateway
-> - • Vérifie mTLS / DPoP & chaîne JWT RFC 8693
-> - • Valide le schéma MCP épinglé (SHA-256)
-> - • Extrait (principal, delegator, action, args)
-> - • Bloque tout contournement réseau direct
+> - Vérifie mTLS / DPoP & chaîne JWT RFC 8693
+> - Valide le schéma MCP épinglé (SHA-256)
+> - Extrait (principal, delegator, action, args)
+> - Bloque tout contournement réseau direct
 > - < 1,5 ms
 > - PDP : Moteur Cedar / OPA (Rego)
-> - • Règles formelles vérifiées par solveur SMT
-> - • Sémantique forbid prioritaire (plafonds, SoD)
-> - • Contrôle de teinte (interdit écriture si Taint)
-> - • Zéro probabilité d'injection de prompt
+> - Règles formelles vérifiées par solveur SMT
+> - Sémantique forbid prioritaire (plafonds, SoD)
+> - Contrôle de teinte (interdit écriture si Taint)
+> - Zéro probabilité d'injection de prompt
 > - Décision : ALLOW | DENY | STEP_UP_CIBA
 > - 3. Exécution Confinée (AAIF OpenSandbox)
 > - (Isolation Matérielle & Zéro Egress par Défaut)
 > - MicroVM Firecracker / Module WASI 0.2
-> - • Noyau invité dédié (KVM) ou bac à capacités WASI
-> - • Restauration snapshot < 15 ms • Rootfs lecture seule
-> - • Quotas stricts CPU / RAM / descripteurs / PIDs
-> - • Egress réseau = DENY ALL (aucun accès Internet
+> - Noyau invité dédié (KVM) ou bac à capacités WASI
+> - Restauration snapshot < 15 ms • Rootfs lecture seule
+> - Quotas stricts CPU / RAM / descripteurs / PIDs
+> - Egress réseau = DENY ALL (aucun accès Internet
 > - ni API métadonnées cloud 169.254.169.254)
 > - Mandataire de Secrets (Credential Vault Proxy)
-> - • Le code dans la microVM ne voit aucun jeton réel
-> - • Sortie unique via vsock vers liste blanche stricte
-> - • Injection TLS/OAuth à la frontière externe
+> - Le code dans la microVM ne voit aucun jeton réel
+> - Sortie unique via vsock vers liste blanche stricte
+> - Injection TLS/OAuth à la frontière externe
 > - Destruction cryptographique après chaque tâche
 > - 4. Coupe-Circuit Centralisé Multi-Nuages (SOC Kill Switch — Cible < 2 s • Plafond S-14 < 10 s)
 > - Détection Télémétrique Continue
@@ -18345,18 +18344,18 @@ L’observabilité reconstruit ainsi l’arbre causal qui relie l’intention in
 > - Export OTLP/gRPC mTLS
 > - 2. Passerelle OpenTelemetry Collector : Assainissement PII (Loi 25 / RGPD) & Analyse en Flux
 > - Processeur de Caviardage & Pseudonymisation
-> - • Masquage NAS, IBAN, courriels, téléphones
-> - • Séparation attributs gen_ai.input.messages
-> - • Condensat SHA-256 poivré des clés clients
+> - Masquage NAS, IBAN, courriels, téléphones
+> - Séparation attributs gen_ai.input.messages
+> - Condensat SHA-256 poivré des clés clients
 > - Zéro PII en clair dans les index APM
 > - Plateforme d'Observabilité & Moteur FinOps
 > - Métriques SLI/SLO, coûts jetons, graphes causaux
 > - Voûte Forensique Chiffrée (Bris de Glace)
 > - Charges complètes sous clé KMS régionale (TTL 14–30 j)
 > - Sentinelle Anti-Livelock Temps Réel
-> - • Similarité cosinus d'intentions ≥ 0,94
-> - • Répétition A2A/MCP à état constant
-> - • Dérive ratio jetons raisonnement / sortie
+> - Similarité cosinus d'intentions ≥ 0,94
+> - Répétition A2A/MCP à état constant
+> - Dérive ratio jetons raisonnement / sortie
 > - Action : Arrêt Saga + Escalade HOTL
 
 *Fig. 46. – Trace distribuée OpenTelemetry (gen_ai.*) de bout en bout et pipeline d’assainissement PII via OpenTelemetry Collector.*
@@ -18574,7 +18573,7 @@ La cible de continuité causale suppose, sur les sauts A2A, un passage du contex
 
 Attendre l’épuisement passif du plafond `maxRemainingHops` gaspille latence et budget. Une boucle sémantique ne répète jamais mot pour mot la même phrase : le modèle reformule légèrement la même intention d’appel. Pour l’intercepter dès le deuxième cycle stérile, un analyseur en flux projette l’intention normalisée de chaque étape en un vecteur léger 𝐞𝑡 et évalue, sur les 𝑚 derniers pas, le score de stagnation sémantique :
 
-𝒮︀loop(𝑡) = max1≤𝑗≤𝑚cos(𝐞𝑡, 𝐞𝑡−𝑗) ⋅𝕀(Δ État (𝑡) = 0)
+𝒮︀_{loop}(𝑡) = max_{1≤𝑗≤𝑚} cos(𝐞_𝑡, 𝐞_{𝑡−𝑗}) ⋅ 𝕀(Δ État(𝑡) = 0)
 
 La similarité cosinus sur une fenêtre 𝑚= 5 capte le bégaiement direct (𝑗= 1) comme l’oscillation ping-pong entre deux agents (𝑗= 2). Le terme 𝕀(Δ État(𝑡) = 0) épargne l’agent qui itère légitimement sur plusieurs lignes de commande distinctes, puisque l’empreinte d’état métier évolue alors à chaque pas.
 
@@ -18971,54 +18970,54 @@ le prompt système avec les directives de dépôt (`AGENTS.md`), les politiques 
 > - Du Registre Composite SemVer+Intent au Déploiement Canary Gouverné par la Constance pass⁵ et le Chaos Protocolaire
 > - 1. Registre SemVer+Intent
 > - Artefact Immuable Signé
-> - • Code graphe & schémas
-> - • Empreinte modèle / SLM
-> - • Prompts & Agent Skills
-> - • Contrats outils MCP
-> - • Politiques Cedar / OPA
+> - Code graphe & schémas
+> - Empreinte modèle / SLM
+> - Prompts & Agent Skills
+> - Contrats outils MCP
+> - Politiques Cedar / OPA
 > - v2.4.0+intent.9f3a81c
 > - Analyse statique & contrats
 > - 2. Simulation τ-bench
 > - Arène Multi-Tours OpenEnv
-> - • Personas clients adverses
-> - • Bouchons SAP / IBM i
-> - • Vérification état final BD
-> - • Trajectoires stochastiques
+> - Personas clients adverses
+> - Bouchons SAP / IBM i
+> - Vérification état final BD
+> - Trajectoires stochastiques
 > - Porte Qualité Stricte :
 > - pass⁵ ≥ 0,95 (Critique) 0 violation politique Cedar
 > - 3. Chaos Agentique
 > - Résilience & Sécurité
-> - • Erreurs HTTP 429 / 503
-> - • Latence MCP > 14 s
-> - • Schéma JSON tronqué
-> - • Injection indirecte ASI01
+> - Erreurs HTTP 429 / 503
+> - Latence MCP > 14 s
+> - Schéma JSON tronqué
+> - Injection indirecte ASI01
 > - Invariants Vérifiés :
 > - Idempotence + Repli SLM Compensation Saga exacte
 > - 4. Shadow Mode
 > - Trafic Réel Sans Effet
-> - • Miroir du trafic réel
-> - • Outils mutatifs simulés
-> - • Comparaison trajectoire
-> - • Mesure latence & coût
+> - Miroir du trafic réel
+> - Outils mutatifs simulés
+> - Comparaison trajectoire
+> - Mesure latence & coût
 > - Concordance ≥ 98 %
 > - Fenêtre d'observation 24 h
 > - 5. Canary 5% → 100%
 > - Exposition Graduée
-> - • Palier 1 : 5 % (2 h)
-> - • Palier 2 : 25 % (6 h)
-> - • Palier 3 : 100 %
-> - • Affinité saga épinglée
+> - Palier 1 : 5 % (2 h)
+> - Palier 2 : 25 % (6 h)
+> - Palier 3 : 100 %
+> - Affinité saga épinglée
 > - Promotion Auto
 > - Sous SLO OTel continus
 > - Boucle Fermée de Sûreté en Production : Retour en Arrière Instantané & Enrichissement du Corpus τ-bench
 > - Déclencheurs de Rollback (< 30 s)
-> - • Escalade HOTL > +35 % vs référence
-> - • Coût p95 > 0,55 $ CAD ou livelock > 0,2 %
-> - • Rejet Cedar / erreur schéma MCP > +0,5 pt
+> - Escalade HOTL > +35 % vs référence
+> - Coût p95 > 0,55 $ CAD ou livelock > 0,2 %
+> - Rejet Cedar / erreur schéma MCP > +0,5 pt
 > - Conversion Trace → Test de Non-Régression
-> - • Extraction trace OTel anonymisée
-> - • Génération d'un scénario OpenEnv dédié
-> - • Ajout permanent à la suite d'or τ-bench
+> - Extraction trace OTel anonymisée
+> - Génération d'un scénario OpenEnv dédié
+> - Ajout permanent à la suite d'or τ-bench
 
 *Fig. 47. – Pipeline CI/CD probabiliste du cycle de vie ADLC : du registre SemVer+Intent au déploiement Canary sous contrôle pass⁵ et chaos.*
 
@@ -19102,11 +19101,11 @@ Deux standards complémentaires structurent l’évaluation avant déploiement e
 
 La section 34.2 définit pass𝑘. Il s’oppose à pass @𝑘, que la synthèse de code assistée utilise volontiers : la probabilité qu’au moins un essai parmi 𝑘 générations résolve le problème. Ce critère vaut quand un compilateur filtre gratuitement dix essais avant d’en retenir un. En opérations d’entreprise, la contrainte est inverse : l’agent n’a pas cinq essais devant un client ou un règlement financier, et il doit réussir chacun des 𝑘 dossiers analogues malgré la variabilité des dialogues. Sur 𝑛 exécutions indépendantes d’un scénario ayant produit 𝑐 succès, les deux mesures divergent :
 
-pass @𝑘= 1 −(𝑛−𝑐𝑘) (𝑛𝑘) , pass𝑘= ( 𝑐𝑘) (𝑛𝑘) ≈( 𝑐𝑛)𝑘
+pass @𝑘 = 1 − binom(𝑛−𝑐, 𝑘) / binom(𝑛, 𝑘), pass^𝑘 = binom(𝑐, 𝑘) / binom(𝑛, 𝑘) ≈ (𝑐/𝑛)^𝑘
 
-Un agent dont la précision unitaire est 𝑝= 0, 80 obtient un pass @5 = 1 −0, 205 = 99, 97 %, mais son pass5 = 0, 805 tombe à 32,77 % : au moins une faute métier dans deux tiers des séries de cinq dossiers. Exiger pass5 ≥0, 95 sur les parcours critiques impose une fiabilité unitaire minimale de 0, 951/5 ≈98, 98 %, qui ne peut être atteinte qu’en déportant calculs et garde-fous dans des outils MCP déterministes et des règles Cedar. Ce seuil, comme ceux du manifeste de l’extrait 34.1, va au-delà de ce que retient la section 34.2 : un seuil sur pass𝑘, dont l’exemple illustratif est 90 % sur quatre tentatives.
+Un agent dont la précision unitaire est 𝑝= 0, 80 obtient un pass @5 = 1 − 0,20^5 = 99,97 %, mais son pass5 = 0,80^5 tombe à 32,77 % : au moins une faute métier dans deux tiers des séries de cinq dossiers. Exiger pass5 ≥ 0,95 sur les parcours critiques impose une fiabilité unitaire minimale de 0,95^{1/5} ≈ 98,98 %, qui ne peut être atteinte qu’en déportant calculs et garde-fous dans des outils MCP déterministes et des règles Cedar. Ce seuil, comme ceux du manifeste de l’extrait 34.1, va au-delà de ce que retient la section 34.2 : un seuil sur pass𝑘, dont l’exemple illustratif est 90 % sur quatre tentatives.
 
-Avec exactement 𝑛= 𝑘= 5 trajectoires par scénario, l’estimateur combinatoire sans biais ( 𝑐5)/(5 5) est binaire ({0, 1}) pour un scénario isolé. La barrière de promotion évalue donc la moyenne pass5 sur un corpus minimal de 𝑀≥100 scénarios par domaine, vérifie la borne inférieure de l’intervalle de confiance de Wilson à 95 %, et impose zéro violation de politique sur chaque scénario critique.
+Avec exactement 𝑛= 𝑘= 5 trajectoires par scénario, l’estimateur combinatoire sans biais binom(𝑐, 5) / binom(5, 5) est binaire ({0, 1}) pour un scénario isolé. La barrière de promotion évalue donc la moyenne pass5 sur un corpus minimal de 𝑀≥100 scénarios par domaine, vérifie la borne inférieure de l’intervalle de confiance de Wilson à 95 %, et impose zéro violation de politique sur chaque scénario critique.
 
 #### Étalonnage des simulateurs
 
@@ -20419,22 +20418,22 @@ Le contrôle A.10 vise la chaîne d’approvisionnement agentique. Lorsqu’un o
 > - Toute saga multi-agents hérite des exigences du maillon
 > - le plus critique (bloque le déploiement si dossier incomplet)
 > - BSIF / OSFI E-23 (1er mai 2027)
-> - • Périmètre élargi aux systèmes agentiques
-> - • Cote de matérialité & validation 2e ligne
-> - • Preuve de constance (pass⁵ ≥ 0,97) & suivi dérive
-> - • Séparation des tâches (NHI distincts)
+> - Périmètre élargi aux systèmes agentiques
+> - Cote de matérialité & validation 2e ligne
+> - Preuve de constance (pass⁵ ≥ 0,97) & suivi dérive
+> - Séparation des tâches (NHI distincts)
 > - Cible : Institutions financières fédérales
 > - Loi 25 — Québec (Art. 12.1 & ÉFVP)
-> - • Avis explicite de décision 100 % automatisée
-> - • Accès aux renseignements & facteurs clés
-> - • Droit d'observation & révision humaine HOTL
-> - • ÉFVP obligatoire avant transfert hors Québec
+> - Avis explicite de décision 100 % automatisée
+> - Accès aux renseignements & facteurs clés
+> - Droit d'observation & révision humaine HOTL
+> - ÉFVP obligatoire avant transfert hors Québec
 > - Cible : Tout traitement de PII de résidents QC
 > - EU AI Act (Août 2026 & Déc. 2027)
-> - • Art. 50 (août 2026) : transparence & marquage
-> - • Annexe III (déc. 2027) : emploi, crédit, infra.
-> - • Journaux automatiques Art. 12 & dossier Ann. IV
-> - • Contrôle humain effectif Art. 14 + bouton arrêt
+> - Art. 50 (août 2026) : transparence & marquage
+> - Annexe III (déc. 2027) : emploi, crédit, infra.
+> - Journaux automatiques Art. 12 & dossier Ann. IV
+> - Contrôle humain effectif Art. 14 + bouton arrêt
 > - Cible : Mise sur le marché ou impact dans l'UE
 > - Encadrement Juridique et Technique du Commerce B2B Inter-Agents (A2A v1.0 + Protocole AP2)
 > - Mandat Cryptographique AP2 Borné
@@ -21326,9 +21325,9 @@ quatre cycles *ReAct* avec huit outils MCP et du raisonnement étendu, soit de q
 > - + Sagas échouées ou compensées
 > - 2a. Disjoncteur Temps Réel (agentgateway)
 > - Suivi atomique Redis/Lua sur ActionEnvelope.budget
-> - • < 70 % plafond : Routage nominal
-> - • 70 % – 95 % : Repli forcé vers SLM économique
-> - • ≥ 100 % : Arrêt propre Saga + Compensation
+> - < 70 % plafond : Routage nominal
+> - 70 % – 95 % : Repli forcé vers SLM économique
+> - ≥ 100 % : Arrêt propre Saga + Compensation
 > - Zéro récidive de boucle non bornée la fin de semaine
 > - 2b. Moteur de Rapprochement FinOps
 > - Jointure par saga.id & business.process.code
@@ -21342,13 +21341,13 @@ quatre cycles *ReAct* avec huit outils MCP et du raisonnement étendu, soit de q
 > - Σ Coûts Complets (Succès + Échecs)
 > - Résultats Métiers Validés Nets
 > - Refacturation Interne (Chargeback)
-> - • Imputation directe BEL / BCA / BSN
-> - • Clé de répartition socle partagé
+> - Imputation directe BEL / BCA / BSN
+> - Clé de répartition socle partagé
 > - Comparaison continue vs coût humain
 > - Arbitrage Trimestriel Portefeuille
-> - • Distillation LLM → SLM spécialisé
-> - • Rétrogradation L3 → Workflow L0
-> - • Mise hors service si ROI net < 1
+> - Distillation LLM → SLM spécialisé
+> - Rétrogradation L3 → Workflow L0
+> - Mise hors service si ROI net < 1
 > - 4. Quatre Leviers Architecturaux d'Optimisation Structurelle du Cost-per-Outcome
 > - Affinité de Préfixe KV-Cache
 > - Prompts statiques en tête (> 80 % hits)
@@ -21390,7 +21389,7 @@ auditable est le *Cost-per-Outcome* net (CPO), qui reprend le coût par résulta
 
 Un résultat métier validé n’est ni un message affiché, ni la fin technique d’un flux de travail sans exception : c’est l’accomplissement vérifié et durable de l’objectif d’affaires (garantie instruite non contestée sous 72 h, intervention préventive confirmée, facture rapprochée et comptabilisée). Pour que le coût des échecs ne soit pas masqué, le CPO net se calcule sur l’ensemble 𝒮︀ des sagas exécutées sur la période, réussies, échouées ou compensées :
 
-CPOnet = ∑𝑠∈𝒮︀(𝐶inf(𝑠) + 𝐶mcp(𝑠) + 𝐶mem(𝑠) + 𝐶hotl(𝑠)) 𝑁validés −𝑁annulés
+CPOnet = (∑_{𝑠∈𝒮︀} (𝐶_{inf}(𝑠) + 𝐶_{mcp}(𝑠) + 𝐶_{mem}(𝑠) + 𝐶_{hotl}(𝑠))) / (𝑁_{validés} − 𝑁_{annulés})
 
 Dans cette équation, 𝐶inf(𝑠) cumule le coût exact des *spans* d’inférence (tarif plein hors cache, tarif d’amorçage et de lecture du cache, tarif de sortie couvrant génération et raisonnement). 𝐶mcp(𝑠) additionne les crédits d’outils tiers et les bacs à sable OpenSandbox, 𝐶mem(𝑠) intègre les opérations de mémoire et d’exécution durable, et 𝐶hotl(𝑠) valorise le temps réel de révision humaine au taux horaire chargé de l’approbateur. Au dénominateur, toute décision annulée ou reprise manuellement sous 72 heures (𝑁annulés) est déduite.
 
@@ -21967,13 +21966,13 @@ Le modèle fédéré de la section 41.7 prend ici la forme Hub-and-Spoke : l’i
 > **[Figure]**
 > - Modèle Opérationnel Cible (Hub-and-Spoke) : CoE Agentique, Tandem RH–IT et Supervision HOTL
 > - Tandem RH – IT (Gouvernance de la Main-d'Œuvre Hybride)
-> - • Cycle de vie unifié : arrivée et départ NHI couplés au SIRH (72 h)
-> - • Refonte des fiches de poste & parcours de requalification certifiants
-> - • Dialogue social : transparence algorithmique & droit à la déconnexion
+> - Cycle de vie unifié : arrivée et départ NHI couplés au SIRH (72 h)
+> - Refonte des fiches de poste & parcours de requalification certifiants
+> - Dialogue social : transparence algorithmique & droit à la déconnexion
 > - Poste de Supervision Human-on-the-Loop (HOTL)
-> - • Console différentielle A2UI (preuves contradictoires, zéro prose flatteuse)
-> - • Budget cognitif borné (≤ 33 arbitrages complexes / quart) & CIBA
-> - • Injection de Tests Canaris (anti-complaisance OWASP ASI09)
+> - Console différentielle A2UI (preuves contradictoires, zéro prose flatteuse)
+> - Budget cognitif borné (≤ 33 arbitrages complexes / quart) & CIBA
+> - Injection de Tests Canaris (anti-complaisance OWASP ASI09)
 > - HUB CENTRAL — Centre d'Excellence Agentique (CoE Plateforme, Sécurité, Ontologies & FinOps)
 > - Socle & Runtime
 > - Temporal / Restate
@@ -21994,25 +21993,25 @@ Le modèle fédéré de la section 41.7 prend ici la forme Hub-and-Spoke : l’i
 > - Golden Paths, garde-fous mutuels & télémétrie OpenTelemetry
 > - SPOKE 1 — Boréal Équipements & Logistique (BEL)
 > - Named Business Owner : VP Chaîne d'Approvisionnement
-> - • Périmètre : SAP S/4HANA, MES, achats AP2
-> - • Équipe : Responsable Produit + Ing. MCP/OT
-> - • Budget : P&L résultat logistique & stocks
+> - Périmètre : SAP S/4HANA, MES, achats AP2
+> - Équipe : Responsable Produit + Ing. MCP/OT
+> - Budget : P&L résultat logistique & stocks
 > - Imputabilité directe du propriétaire :
 > - Plafonds d'achat B2B, recettes jumeau OT
 > - & validation trimestrielle des compensations
 > - SPOKE 2 — Boréal Capital & Assurances (BCA)
 > - Named Business Owner : VP Souscription
-> - • Périmètre : IBM i (AS/400), Guidewire
-> - • Équipe : Actuaire Risques + Ing. Agents
-> - • Budget : Coût par dossier instruit & sinistres
+> - Périmètre : IBM i (AS/400), Guidewire
+> - Équipe : Actuaire Risques + Ing. Agents
+> - Budget : Coût par dossier instruit & sinistres
 > - Imputabilité directe du propriétaire :
 > - Dossier BSIF E-23, explicabilité Loi 25
 > - & seuils d'escalade vers souscripteurs HOTL
 > - SPOKE 3 — Boréal Services Numériques (BSN)
 > - Named Business Owner : VP Succès Client
-> - • Périmètre : Télématique, ServiceNow, CRM
-> - • Équipe : Curateur Ontologie + SRE AgentOps
-> - • Budget : SLA disponibilité 99,5 % & rétention
+> - Périmètre : Télématique, ServiceNow, CRM
+> - Équipe : Curateur Ontologie + SRE AgentOps
+> - Budget : SLA disponibilité 99,5 % & rétention
 > - Imputabilité directe du propriétaire :
 > - Exactitude triage, transparence EU Art. 50
 > - & activation d'urgence du mode dégradé
@@ -22095,11 +22094,11 @@ La console A2UI et le routeur d’escalade appliquent quatre règles, pour que l
 
 - **Règle 1 — Vue différentielle contradictoire** : aucun paragraphe élogieux rédigé par l’agent demandeur. L’écran présente côte à côte les valeurs brutes des systèmes sources, la règle exacte qui a motivé l’escalade, une contre-hypothèse critique (avocat du diable) produite par un agent indépendant et l’impact irréversible chiffré.
 - **Règle 2 — Fonction de forçage cognitif** : sur les dossiers matériels, la saisie active d’un paramètre vérifié dans la pièce source (franchise retenue, code d’exclusion) remplace le bouton unique « Approuver » et précède le déblocage de l’authentification CIBA.
-- **Règle 3 — Plafond de charge cognitive** : l’attention soutenue se budgète, ce qui chiffre le réglage de la charge évoqué à la section 41.3. Le plafond 𝑁quartmax d’arbitrages complexes par quart de durée nette 𝑇effectif s’écrit :
+- **Règle 3 — Plafond de charge cognitive** : l’attention soutenue se budgète, ce qui chiffre le réglage de la charge évoqué à la section 41.3. Le plafond 𝑁_{max}^{quart} d’arbitrages complexes par quart de durée nette 𝑇_{effectif} s’écrit :
 
-𝑁quartmax = ⌊𝑇effectif ⋅𝜂vig𝑡minanalyse ⌋
+𝑁_{max}^{quart} = ⌊(𝑇_{effectif} ⋅ 𝜂_{vig}) / 𝑡_{min analyse}⌋
 
-Pour 𝑇effectif = 360 min, un coefficient de maintien de vigilance 𝜂vig = 0, 65 et un examen sérieux incompressible 𝑡minanalyse = 7 min, la charge maximale s’établit à 33 dossiers complexes par quart. Au-delà, le système met les sagas non urgentes en file durable plutôt que de presser l’examen. Ce plafond calculé va au-delà de ce que retient l’exposé : aucune norme publiée ne fixe la charge d’un superviseur, et la supervision se dimensionne selon la charge mesurée d’exceptions et d’approbations (section 41.4).
+Pour 𝑇effectif = 360 min, un coefficient de maintien de vigilance 𝜂vig = 0, 65 et un examen sérieux incompressible 𝑡_{min analyse} = 7 min, la charge maximale s’établit à 33 dossiers complexes par quart. Au-delà, le système met les sagas non urgentes en file durable plutôt que de presser l’examen. Ce plafond calculé va au-delà de ce que retient l’exposé : aucune norme publiée ne fixe la charge d’un superviseur, et la supervision se dimensionne selon la charge mesurée d’exceptions et d’approbations (section 41.4).
 
 - **Règle 4 — Tests canaris d’attention** : la plateforme insère au hasard (3 à 5 % du volume) des dossiers synthétiques plausibles qui contiennent une anomalie subtile connue d’avance (garantie échue la veille, numéro de série discordant), afin de mesurer l’étanchéité réelle du contrôle humain. Si l’interface A2UI les présente à l’identique d’un dossier réel (*aveugle* côté opérateur), leur enveloppe Temporal porte un scellé `dryRunCanary` bloqué sur agentgateway, de sorte qu’une approbation accidentelle ne déclenche jamais d’écriture ni de virement effectif dans un système d’enregistrement (*System of Record*).
 
@@ -22780,54 +22779,54 @@ mesurés par domaine d’affaires : les deux échelles ne se correspondent pas. 
 > - Modèle de Maturité de l'Entreprise Agentique (N1 à N5) et Portes de Gouvernance
 > - N1 • Ad hoc
 > - Exploratoire / Shadow AI
-> - • Copilotes UI synchrones
-> - • Clés API partagées
-> - • Presse-papiers humain
-> - • Zéro trace OpenTelemetry
-> - • État perdu à la fermeture
+> - Copilotes UI synchrones
+> - Clés API partagées
+> - Presse-papiers humain
+> - Zéro trace OpenTelemetry
+> - État perdu à la fermeture
 > - Risque : Fuite Loi 25 &
 > - Shadow Sprawl incontrôlé
 > - N2 • Départemental
 > - Outillé en Silos Locaux
-> - • Studios SaaS isolés
-> - • Premiers serveurs MCP
-> - • Boucles ReAct volatiles
-> - • Validation HITL à 100 %
-> - • Comptes service larges
-> - • Facture jetons globale
+> - Studios SaaS isolés
+> - Premiers serveurs MCP
+> - Boucles ReAct volatiles
+> - Validation HITL à 100 %
+> - Comptes service larges
+> - Facture jetons globale
 > - Limite : Goulot HITL &
 > - spaghetti d'adaptateurs
 > - N3 • Gouverné
 > - Socle Production Critique
-> - • Runtime durable Temporal
-> - • Identité NHI + OAuth OBO
-> - • Passerelle agentgateway
-> - • Politiques Cedar / OPA
-> - • Outils MCP idempotents
-> - • Supervision HOTL calibrée
-> - • Tests stabilité pass^k
+> - Runtime durable Temporal
+> - Identité NHI + OAuth OBO
+> - Passerelle agentgateway
+> - Politiques Cedar / OPA
+> - Outils MCP idempotents
+> - Supervision HOTL calibrée
+> - Tests stabilité pass^k
 > - Seuil minimal exigé pour
 > - BSIF E-23 & EU AI Act
 > - N4 • Orchestré
 > - Maillage Multi-Domaines
-> - • Délégation A2A v1.0 + MCP
-> - • Sagas compensées inter-SI
-> - • Convergence ERP / CRM / OT
-> - • Ontologie domaine partagée
-> - • Routage économique SLM/LLM
-> - • Méta-gouverneurs critiques
-> - • FinOps Cost-per-Outcome
+> - Délégation A2A v1.0 + MCP
+> - Sagas compensées inter-SI
+> - Convergence ERP / CRM / OT
+> - Ontologie domaine partagée
+> - Routage économique SLM/LLM
+> - Méta-gouverneurs critiques
+> - FinOps Cost-per-Outcome
 > - Cible optimale des grands
 > - flux internes transversaux
 > - N5 • Fédéré B2B
 > - Écosystème Inter-Entreprises
-> - • Annuaire AGNTCY / OASF
-> - • Fédération DID / mTLS DMZ
-> - • Négociation B2B sous mandat
-> - • Règlements AP2 / x402
-> - • Contrats SLA opposables
-> - • Coupe-circuits inter-firmes
-> - • Preuves cryptographiques
+> - Annuaire AGNTCY / OASF
+> - Fédération DID / mTLS DMZ
+> - Négociation B2B sous mandat
+> - Règlements AP2 / x402
+> - Contrats SLA opposables
+> - Coupe-circuits inter-firmes
+> - Preuves cryptographiques
 > - Réservé aux chaînes B2B
 > - fournisseurs & partenaires
 > - Porte G1 • Visibilité
@@ -23365,9 +23364,9 @@ Le multiplexeur MCP intégré à agentgateway résout quatre problèmes d’expl
 > - Ordonnancement Kubernetes Conscient du Préfixe (Gateway API Inference Extension / llm-d) — Partage du KV-Cache
 > - Anatomie d'une Session Multi-Tours (Tours 1 à 8)
 > - Préfixe Invariant : Prompt + Schémas MCP (88 %) Delta Tour k
-> - • Round-Robin naïf : invalide le KV-cache à chaque tour d'outil
-> - • Recalcul coûteux du Prefill (9 000+ jetons répétés 8 fois)
-> - • Affinité de préfixe : ne calcule que le Delta (~300 jetons)
+> - Round-Robin naïf : invalide le KV-cache à chaque tour d'outil
+> - Recalcul coûteux du Prefill (9 000+ jetons répétés 8 fois)
+> - Affinité de préfixe : ne calcule que le Delta (~300 jetons)
 > - Endpoint Picker (EPP) : Score = α·Hit(Préfixe) − β·File(GPU) − γ·HBM
 > - Pod GPU #1
 > - Préfixe absent (0 %)
@@ -24037,7 +24036,7 @@ La scission de la section 45.4 prend la forme de deux composants séparés par u
 1. **L’agent Diplomate externe (zone DMZ B2B).** Seul autorisé à communiquer sur le canal A2A / EDC, il ne connaît ni le prix de réserve, ni les marges internes, ni l’état des stocks. Il reçoit pour chaque tour une enveloppe de mandat tactique étroite, générée pour ce tour (par exemple : *« Demander une cotation ferme pour 40 tonnes grade M270 livrées à Drummondville avant le 18 mai, objectif cible 126 500 $ CAD, variante autorisée sur incoterm DAP »*). Un analyseur syntaxique strict convertit chaque réponse entrante du fournisseur en structure numérique avant qu’elle franchisse la DMZ : aucun champ de commentaire libre externe n’atteint le système interne.
 2. **L’Évaluateur interne (zone interne à haute sécurité).** Isolé du réseau externe, ce service hybride (optimiseur mathématique déterministe secondé par un SLM interne d’analyse contractuelle) évalue les offres structurées reçues selon une fonction de score multi-attributs pondérée :
 
-𝑈(𝐱) = 𝑤𝑝⋅ 𝑃max −𝑝 𝑃max −𝑃cible + 𝑤𝑑⋅exp(−𝜆max(0, 𝑑−𝑑req)) + 𝑤𝑞⋅𝑆qual(𝑞) −𝑤𝑐⋅ 𝐸CO2 𝐸plafond
+𝑈(𝐱) = 𝑤_𝑝 ⋅ (𝑃_{max} − 𝑝)/(𝑃_{max} − 𝑃_{cible}) + 𝑤_𝑑 ⋅ exp(−𝜆 max(0, 𝑑 − 𝑑_{req})) + 𝑤_𝑞 ⋅ 𝑆_{qual}(𝑞) − 𝑤_𝑐 ⋅ 𝐸_{CO2}/𝐸_{plafond}
 
 Tant que 𝑝≤𝑃max et que les contraintes dures de conformité sont satisfaites, le moteur calcule la contre-proposition optimale du tour 𝑡+ 1, avec un plafond dur de 𝑇max = 4 tours qui interdit le sondage statistique prolongé par un tiers, ou émet un jeton d’acceptation vers le sas de signature AP2.
 
@@ -24572,27 +24571,27 @@ La réponse d’ingénierie est une partition souveraine à trois zones, piloté
 > - Disjoncteur SLA, latence, retrait API
 > - Zone A — Souveraine CA / QC
 > - Périmètre : Loi 25 & BSIF E-23
-> - • État Temporal & graphe Graphiti locaux
-> - • KV-cache isolé chiffré en mémoire
-> - • Zéro transit sous CLOUD Act non chiffré
+> - État Temporal & graphe Graphiti locaux
+> - KV-cache isolé chiffré en mémoire
+> - Zéro transit sous CLOUD Act non chiffré
 > - Enclave GPU TEE (H100 / B200)
 > - Attestation matérielle distante
 > - Libération clé HSM uniquement si
 > - mesure PCR firmware conforme
 > - Zone B — Modèles Frontières (API)
 > - Raisonnement Complexe (System-2)
-> - • Entrées expurgées de PII directe
-> - • Contrat Zero-Data-Retention (ZDR)
-> - • Normalisation Open Responses
+> - Entrées expurgées de PII directe
+> - Contrat Zero-Data-Retention (ZDR)
+> - Normalisation Open Responses
 > - Aléas Externes Surveillés :
 > - Panne régionale hyperscaler, 429 massif,
 > - dépréciation modèle ou choc tarifaire,
 > - injonction juridique extraterritoriale
 > - Zone C — Secours Open-Weights (DR)
 > - Continuité Souveraine CA & UE
-> - • Grappe vLLM / SGLang pré-chauffée
-> - • Poids ouverts audités & figés en registre
-> - • Adaptateurs de consignes pré-calibrés
+> - Grappe vLLM / SGLang pré-chauffée
+> - Poids ouverts audités & figés en registre
+> - Adaptateurs de consignes pré-calibrés
 > - Garantie Cognitive DR :
 > - RTO cognitif < 15 min sans perte d'état
 > - Schémas MCP & pass^5 pré-homologués
@@ -24743,7 +24742,7 @@ La section 46.4 établit que rétablir un accès ne rétablit pas un comportemen
 
 1. **Contrats normalisés et purge des états opaques** : Aucun code applicatif n’appelle le SDK propriétaire d’un fournisseur de modèles. Toute requête d’inférence emprunte l’enveloppe normalisée Open Responses (gouvernée par l’AAIF), et toute invocation d’outil respecte les schémas JSON canoniques de MCP, validés par un décodage contraint (grammaires CFG sur la grappe de secours vLLM). À mi-parcours d’une saga multi-tours, l’adaptateur Open Responses écarte les blocs de délibération chiffrés propres au fournisseur défaillant et reconstruit le contexte du modèle de secours à partir du seul journal canonique des faits et des sorties d’outils validés. Même un modèle de secours plus sobre ne peut alors émettre un appel d’outil syntaxiquement invalide.
 2. **Double profil de consignes précompilé** : Chaque agent critique L3 est homologué en CI/CD (chapitre 34) sous deux profils jumeaux, versionnés ensemble : un profil
-  nominal, optimisé pour le modèle primaire, et un profil de secours, compilé pour un modèle à poids ouverts souverain, audité et figé dans le registre interne d’artefacts de l’entreprise (par exemple avec DSPy, chapitre 47). L’homologation exige pass5DR ≥ 0, 94 ⋅pass5 nominal sur la suite 𝜏-bench du domaine. Ce profil réalise la qualification d’avance de la section 46.4.
+  nominal, optimisé pour le modèle primaire, et un profil de secours, compilé pour un modèle à poids ouverts souverain, audité et figé dans le registre interne d’artefacts de l’entreprise (par exemple avec DSPy, chapitre 47). L’homologation exige pass5_{DR} ≥ 0,94 ⋅ pass5_{nominal} sur la suite 𝜏-bench du domaine. Ce profil réalise la qualification d’avance de la section 46.4.
 3. **Grappe de secours à montée en charge élastique** : Maintenir 100 % de la capacité GPU de pointe allumée à vide doublerait la facture FinOps. Un noyau minimal reste allumé et héberge déjà les SLM quotidiens, qui couvrent immédiatement les flux vitaux P0. Des réservations capacitaires prioritaires d’instances GPU souveraines chargent les poids, préchargés dans le cache NVMe local, en moins de 180 secondes.
 4. **Resserrement prudentiel automatique des seuils HOTL** : Tant que la fabrique opère sur le modèle de secours, le moteur de politique abaisse de 15 à 25 % les plafonds financiers d’engagement autonome L3. Les cas limites les plus subtils passent temporairement aux superviseurs humains HOTL, sans interrompre le flux courant (`RPO = 0` grâce à la mise en file durable Temporal). Cette mesure donne une forme chiffrée au mode dégradé de la section 46.4.
 
@@ -24751,7 +24750,7 @@ Le seuil de quinze minutes de la formule n’a pas de source : c’est une cible
 
 Le temps de reprise cognitif effectif RTOcog se modélise et se vérifie lors des exercices trimestriels selon :
 
-RTOcog = 𝑡détection + 𝑡quiescence + max(𝑡GPUwarmup, 𝑡gatewayswitch) + 𝑡santécanary ≤15 min
+RTOcog = 𝑡_{détection} + 𝑡_{quiescence} + max(𝑡_{warmup}^{GPU}, 𝑡_{switch}^{gateway}) + 𝑡_{canary}^{santé} ≤ 15 min
 
 ##### Extrait 46.3 — `[Exécuté en CI]` · Orchestrateur de bascule Cognitive DR sans perte de transaction (cognitive_dr_switch.py)
 
@@ -24894,23 +24893,23 @@ Le nœud en périphérie est le système maître de sa réalité physique imméd
 > - Coupure WAN 0 à 72 h (Site isolé / Mode Air-Gapped)
 > - Nœud Edge Industriel Durci (Autonomie Locale Complète sans Dépendance Cloud)
 > - Cellule Cognitive Embarquée
-> - • SLM 3B–8B INT4 sur NPU / GPU local
-> - • Runtime Restate / SQLite WAL local
-> - • Agent Skills hors ligne pré-chargés
-> - • Latence déterministe < 80 ms
-> - • Attestation TPM 2.0 + SPIRE local
+> - SLM 3B–8B INT4 sur NPU / GPU local
+> - Runtime Restate / SQLite WAL local
+> - Agent Skills hors ligne pré-chargés
+> - Latence déterministe < 80 ms
+> - Attestation TPM 2.0 + SPIRE local
 > - Magasin d'État CRDT & Quotas
-> - • Compteurs PN-Counter (stocks réservés)
-> - • Ensembles OR-Set (tâches assignées)
-> - • Journal d'intention signé horodaté
-> - • Enveloppe d'escrow hors ligne bornée
-> - • Zéro blocage sur perte WAN
+> - Compteurs PN-Counter (stocks réservés)
+> - Ensembles OR-Set (tâches assignées)
+> - Journal d'intention signé horodaté
+> - Enveloppe d'escrow hors ligne bornée
+> - Zéro blocage sur perte WAN
 > - Passerelle MCP ↔ ROS 2 (DDS)
-> - • Traduction missions A2A en Action ROS 2
-> - • Abstraction topologique (waypoints)
-> - • Zéro commande couple moteur par LLM
-> - • Validation pré-exécution sur carte 3D
-> - • QoS DDS temps réel fiable
+> - Traduction missions A2A en Action ROS 2
+> - Abstraction topologique (waypoints)
+> - Zéro commande couple moteur par LLM
+> - Validation pré-exécution sur carte 3D
+> - QoS DDS temps réel fiable
 > - Enveloppe Cyber-Physique Simplex (Normes ISO 10218:2025 / ISO 3691-4 / IEC 61508 SIL 3)
 > - Contrôleur Adaptatif (VLA / Nav2)
 > - Planification trajectoire optimale
@@ -25026,7 +25025,7 @@ Un modèle de langage ne doit pas émettre de consignes continues de bas niveau 
 
 L’arbitre évalue en continu l’invariant de distance d’arrêt en fonction de la vitesse instantanée 𝑣(𝑡), de la vitesse maximale d’approche humaine 𝑣ℎ, du temps de réaction matériel 𝑡𝑟 et de la décélération minimale garantie 𝑎min(𝑚), abaissée selon la masse embarquée 𝑚 que mesurent les jauges d’essieu :
 
-𝑑sécurité(𝑡) = (𝑣(𝑡) + 𝑣ℎ)𝑡𝑟+ 𝑣(𝑡)22 𝑎min(𝑚) + 𝑑marge ≤𝑑LiDAR(𝑡)
+𝑑_{sécurité}(𝑡) = (𝑣(𝑡) + 𝑣_ℎ)𝑡_𝑟 + 𝑣(𝑡)^2 / (2 𝑎_{min}(𝑚)) + 𝑑_{marge} ≤ 𝑑_{LiDAR}(𝑡)
 
 Dès que 𝑑LiDAR(𝑡) s’approche de 𝑑sécurité(𝑡) ou qu’une commande viole les butées articulaires, l’arbitre coupe physiquement le multiplexeur du contrôleur IA et bascule en moins d’une milliseconde sur le contrôleur de repli vérifié (niveau visé : SIL 3 / PL e), jusqu’à l’arrêt sûr complet. Simplex est un patron d’architecture, non une voie de certification : rien n’établit qu’il confère la conformité à l’ISO 10218 ni à l’IEC 61508, dont les niveaux d’intégrité ne sont pas abordés par l’exposé (section 46.7 et « Limites de ce chapitre »).
 
@@ -25870,7 +25869,7 @@ Une fluctuation saisonnière normale, comme la baisse de température ambiante d
 
 1. **Indice de stabilité de population (PSI) par tranche quantifiée** : On partitionne la distribution historique de référence 𝑃 en 𝐵 intervalles équiprobables et on mesure les fréquences observées 𝑞𝑏 du lot entrant 𝑄. Le score de divergence, symétrique, s’écrit :
 
-PSI(𝑃, 𝑄) = ∑𝐵 𝑏=1(𝑝𝑏−𝑞𝑏) ln(𝑝𝑏+ 𝜀𝑞𝑏+ 𝜀)
+PSI(𝑃, 𝑄) = ∑_{𝑏=1}^{𝐵} (𝑝_𝑏 − 𝑞_𝑏) ln((𝑝_𝑏 + 𝜀)/(𝑞_𝑏 + 𝜀))
 
 Pour éviter les faux positifs que le bruit multinomial produit sur les lots creux de la nuit, le portier impose un effectif minimal de référence (𝑛𝑏≥20 observations par compartiment) et stratifie la distribution de base 𝑃 par régime opératoire de la machine (IDLE, `RAMP_UP`, `FULL_LOAD`). Un PSI < 0, 10 autorise la publication automatique immédiate. Une zone grise, 0, 10 ≤PSI ≤0, 20, déclenche une inspection contextuelle par l’agent, qui vérifie si un événement métier connu, tel qu’un arrêt planifié d’usine, explique le décalage. Au-delà de PSI > 0, 20, la promotion est verrouillée quelle que soit l’opinion du modèle de langage.
 
@@ -26007,7 +26006,7 @@ le seuil `rootCauseConfidence >= 88` que la politique Cedar de l’Extrait 47.6 
 
 Le coordinateur applique donc un agrégateur de preuves pondéré et déterministe aux faits structurés que remonte chaque enquêteur. Une corrélation temporelle étroite (Δ𝑡< 4 min) avec un changement Git ou canari authentifié, une anomalie de métrique primaire hors de 4 𝜎 et l’absence de preuve réfutante sur les couches adjacentes sont converties en rapports de vraisemblance explicites :
 
-𝑃(𝐻𝑖∣𝐄) = 𝑃(𝐻𝑖) ∏𝑀𝑚=1 ℒ︀(𝑒𝑚∣𝐻𝑖) 𝑃(𝐻0) + ∑𝐾𝑗=1 𝑃(𝐻𝑗) ∏𝑀𝑚=1 ℒ︀(𝑒𝑚∣𝐻𝑗)
+𝑃(𝐻_𝑖 ∣ 𝐄) = (𝑃(𝐻_𝑖) ∏_{𝑚=1}^{𝑀} ℒ︀(𝑒_𝑚 ∣ 𝐻_𝑖)) / (𝑃(𝐻_0) + ∑_{𝑗=1}^{𝐾} 𝑃(𝐻_𝑗) ∏_{𝑚=1}^{𝑀} ℒ︀(𝑒_𝑚 ∣ 𝐻_𝑗))
 
 Si deux hypothèses concurrentes restent plausibles (𝑃(𝐻1 ∣𝐄) = 0, 54 et 𝑃(𝐻2 ∣𝐄) = 0, 41), le seuil de confiance de 0,88 n’est pas atteint. L’agent n’engage alors aucune mutation autonome et remet les deux pistes classées à l’ingénieur d’astreinte.
 
@@ -26133,7 +26132,7 @@ SYNTHÈSE EXÉCUTIVE
   1. *Irréversible en ingénierie cognitive* : Remplacer la rédaction manuelle des prompts par la compilation déclarative de programmes cognitifs (paradigme DSPy : optimiseurs bayésiens de signatures et de démonstrations), évaluée contre la suite 𝜏-bench du domaine.
   2. *Structurante pour l’économie d’échelle* : Opérer une boucle de données gouvernée (anonymisation irréversible Loi 25, filtrage anti-ASI06) qui distille périodiquement les trajectoires réussies de l’enseignant et les corrections contrastives des superviseurs HOTL vers des SLM d’entreprise (3B–8B, par SFT + DPO sur adaptateurs LoRA).
   3. *Gouvernance du cycle de vie* : Ne promouvoir un SLM distillé sur agentgateway que si sa constance pass5 sur le jeu de réserve scellé atteint au moins 99 % de celle de l’enseignant, avec une route d’escalade vers l’enseignant pour les entrées hors distribution.
-- **Indicateurs de gouvernance** : Baisse du coût par résultat sur 4 trimestres (cible −65 % à −85 %), ratio de parité pass5SLM/pass5Teacher (≥0, 99), zéro fuite de PII mémorisée aux tests d’extraction par canaris sur les poids affinés, et baisse de la latence p95 (-60 % à −75 %).
+- **Indicateurs de gouvernance** : Baisse du coût par résultat sur 4 trimestres (cible −65 % à −85 %), ratio de parité pass5_{SLM} / pass5_{Teacher} (≥0,99), zéro fuite de PII mémorisée aux tests d’extraction par canaris sur les poids affinés, et baisse de la latence p95 (-60 % à −75 %).
 
 ### 47.18 Des traces aux jeux d’entraînement : signal de sélection et sas d’assainissement
 
@@ -26149,29 +26148,29 @@ Les sorties brutes d’un modèle plus grand conduisent l’élève à l’effon
 > **[Figure]**
 > - Volant d'Inertie Cognitif (Data Flywheel) : Compilation Déclarative et Distillation Continue LLM → SLM
 > - 1. Trafic Production & Arbitrages Humains HOTL
-> - • Modèle enseignant frontière (Teacher LLM) sur les 20 % durs
-> - • Traces complètes OpenTelemetry GenAI + issue métier réelle
-> - • Corrections contrastives des superviseurs HOTL (paires DPO)
-> - • Signal d'ancrage : uniquement les sagas sans compensation
+> - Modèle enseignant frontière (Teacher LLM) sur les 20 % durs
+> - Traces complètes OpenTelemetry GenAI + issue métier réelle
+> - Corrections contrastives des superviseurs HOTL (paires DPO)
+> - Signal d'ancrage : uniquement les sagas sans compensation
 > - OTel
 > - 2. Sas d'Assainissement Loi 25 & Curation d'Or
-> - • Anonymisation irréversible PII & secrets d'affaires B2B
-> - • Filtrage anti-empoisonnement (rejet traces suspectes ASI06)
-> - • Dédoublonnage sémantique & équilibrage des cas rares
-> - • Partition stricte : Train (70 %) / Dev (15 %) / Holdout (15 %)
+> - Anonymisation irréversible PII & secrets d'affaires B2B
+> - Filtrage anti-empoisonnement (rejet traces suspectes ASI06)
+> - Dédoublonnage sémantique & équilibrage des cas rares
+> - Partition stricte : Train (70 %) / Dev (15 %) / Holdout (15 %)
 > - 3. Compilation de Graphes & Distillation SLM
-> - • Niveau A (Sans poids) : Compilateur déclaratif type DSPy
+> - Niveau A (Sans poids) : Compilateur déclaratif type DSPy
 > - (optimise consignes et exemples few-shot par métrique)
-> - • Niveau B (Poids légers) : Affinage SFT + DPO par LoRA
-> - • Modèle élève (Student SLM 4B–8B) sur schémas MCP internes
-> - • Coût d'inférence divisé par 8 à 14 et TTFT divisé par 4
+> - Niveau B (Poids légers) : Affinage SFT + DPO par LoRA
+> - Modèle élève (Student SLM 4B–8B) sur schémas MCP internes
+> - Coût d'inférence divisé par 8 à 14 et TTFT divisé par 4
 > - LoRA
 > - 4. Homologation τ-bench (pass^5) & Promotion
-> - • Banc de non-régression τ-bench sur jeu Holdout scellé
-> - • Exigence : pass^5(SLM) >= 99 % du pass^5(Teacher LLM)
-> - • Déploiement Shadow Mode → Canary 10 % sur agentgateway
-> - • Surveillance continue de dérive (PSI / entropie / escalade)
-> - • Retour automatique au Teacher LLM si cas hors distribution
+> - Banc de non-régression τ-bench sur jeu Holdout scellé
+> - Exigence : pass^5(SLM) >= 99 % du pass^5(Teacher LLM)
+> - Déploiement Shadow Mode → Canary 10 % sur agentgateway
+> - Surveillance continue de dérive (PSI / entropie / escalade)
+> - Retour automatique au Teacher LLM si cas hors distribution
 > - Trajectoire Économique d'un Flux Agentique Mature sur 4 Trimestres (Compression du Cost-per-Outcome)
 > - T1 — Amorçage (100 % LLM)
 > - Collecte traces initiales
@@ -26266,7 +26265,7 @@ La recette de 47.8 prend ici les volumes suivants : SFT sur 2 000 à 15 000 traj
 
 La distillation a un coût fixe d’entraînement et de validation 𝐶distill, amorti sur le volume mensuel d’exécutions 𝑉. Dans une cascade, l’élève examine d’abord chaque requête au coût 𝑐𝑆≪𝑐𝑇, résout directement la part 𝛼∈[0, 1] du flux et n’escalade que la fraction (1 −𝛼) vers l’enseignant, au coût 𝑐𝑇. Le coût unitaire moyen est 𝑐𝑆+ (1 −𝛼)𝑐𝑇. Le seuil mensuel de rentabilité nette 𝑉min vérifie :
 
-𝑉⋅(𝛼𝑐𝑇−𝑐𝑆) > 𝐶distill𝑀amort ⇔𝑉min = 𝐶distill 𝑀amort ⋅(𝛼𝑐𝑇−𝑐𝑆)
+𝑉 ⋅ (𝛼 𝑐_𝑇 − 𝑐_𝑆) > 𝐶_{distill} / 𝑀_{amort} ⇔ 𝑉_{min} = 𝐶_{distill} / (𝑀_{amort} ⋅ (𝛼 𝑐_𝑇 − 𝑐_𝑆))
 
 Avec des paramètres typiques en 2027 (𝐶distill = 900 $ CAD, GPU et CI inclus; durée de vie 𝑀amort = 3 mois avant rafraîchissement; 𝑐𝑇= 0, 042 $ CAD; 𝑐𝑆= 0, 003 $ CAD; 𝛼= 0, 82), le point mort est franchi dès 𝑉min ≈9 540 exécutions par mois, soit un peu plus de trois cents dossiers par jour. Au-delà, chaque million de transactions économise plus de 31 400 $ CAD et divise par quatre le TTFT.
 
@@ -26336,7 +26335,7 @@ mégaoctets chacun, sans coût de commutation. Vingt conteneurs GPU séparés po
 
 Grâce aux noyaux CUDA/Triton de multiplication matricielle groupée hétérogène (S-LoRA / Punica, intégrés nativement à vLLM et SGLang), un serveur à deux cartes de 80 Go garde un seul tronc gelé 𝑊0 en précision FP8 (~8,5 Go). Il applique à la volée, requête par requête dans le même lot continu, le couple d’adaptateurs de bas rang Δ𝑊𝑚= 𝐵𝑚𝐴𝑚 propre à la route métier 𝑚. L’empreinte mémoire totale pour héberger 𝑀 adaptateurs actifs simultanés de rang 𝑟 sur 𝐿 couches de dimension 𝑑 est :
 
-𝑀totalVRAM = 𝑀tronc(𝑊0) + 𝑀KV-cache + ∑𝑀 𝑚=1 2 𝐿𝑁proj 𝑑𝑟𝑏octets
+𝑀_{VRAM}^{total} = 𝑀_{tronc}(𝑊_0) + 𝑀_{KV-cache} + ∑_{𝑚=1}^{𝑀} 2 𝐿 𝑁_{proj} 𝑑 𝑟 𝑏_{octets}
 
 Pour un modèle 8B (𝐿= 32, 𝑁proj = 4, 𝑑= 4096, 𝑟= 32, FP16 à 𝑏= 2 octets), chaque adaptateur métier complet pèse 67 Mo. Héberger simultanément en VRAM chaude trente spécialistes n’occupe que 2,0 Go et laisse plus de 140 Go au KV-cache partagé. Le serveur absorbe des centaines de requêtes concurrentes avec un TTFT médian inférieur à 90 ms.
 

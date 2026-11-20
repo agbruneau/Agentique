@@ -398,7 +398,7 @@ La probabilité d’exactitude d’une décision qui croise 𝑘 concepts métie
 
 Les protocoles de la partie II (MCP, schémas JSON stricts, A2A v1.0) portent 𝑃(Syntaxe) au-delà de 0, 999. Sans référentiel sémantique partagé 𝒪︀, si chaque concept a une probabilité
 
-d’interprétation exacte de 0, 80, croiser quatre concepts (client, garantie, stock, priorité SLA) abaisse la fiabilité globale à 0, 804 ≈0, 41, soit près de trois décisions erronées sur cinq.
+d’interprétation exacte de 0, 80, croiser quatre concepts (client, garantie, stock, priorité SLA) abaisse la fiabilité globale à 0,80^4 ≈ 0,41, soit près de trois décisions erronées sur cinq.
 
 | Approche d’accès au sens métier | Exactitude analytique chiffrée | Maîtrise des actions mutatives | Portabilité (intelligence d’affaires et agents) | Risque majeur en exploitation |
 | --- | --- | --- | --- | --- |
@@ -439,7 +439,7 @@ Un pipeline de validation continue applique donc trois garde-fous automatisés �
 
 - **Intégrité référentielle et acyclicité.** Le validateur inspecte les expressions SQL, confirme que les colonnes existent dans le catalogue de l’entrepôt cible et rejette tout cycle ambigu de jointures dans le bloc `relationships`.
 - **Détection des ruptures de contrat.** Renommer une métrique, modifier le type de retour d’un champ ou changer la logique d’un prédicat sans mise à jour de version sémantique (SemVer) bloque le déploiement tant que les propriétaires des Agent Cards abonnées n’ont pas contresigné l’impact.
-- **Tests d’assertion de référence.** Des requêtes témoins s’exécutent sur un jeu de données figé. Chaque cible de compilation (Snowflake, dbt et Cube, serveur MCP) doit restituer les mêmes valeurs décimales à 10−6 près.
+- **Tests d’assertion de référence.** Des requêtes témoins s’exécutent sur un jeu de données figé. Chaque cible de compilation (Snowflake, dbt et Cube, serveur MCP) doit restituer les mêmes valeurs décimales à 10^{−6} près.
 
 L’Extrait 12.1 ci-dessous épingle la seule version parue d’Apache Ossie, `0.1.1` (aucune version 1.0 n’existe et la branche `0.3.0.dev0` se déclare impropre à la production; section 12.4). Il arrête aussi une définition unique du « client actif »; or, quand deux domaines
 
@@ -608,7 +608,7 @@ L’ontologie opérationnelle causale répond à ces questions. Elle est le seco
 > - Systèmes d'Enregistrement Hétérogènes Réconciliés via Clés Maîtres Canoniques (MDM)
 > - BSN : Salesforce CRM & ServiceNow FSM BCA : IBM i (AS/400), Guidewire & Snowflake BEL : SAP S/4HANA (MM/SD) & Siemens MES
 
-*Fig. 21. – Architecture duale couplant la couche sémantique analytique Apache Ossie et l’ontologie opéra tionnelle causale au sein d’un pipeline neuro-symbolique.*
+*Fig. 21. – Architecture duale couplant la couche sémantique analytique Apache Ossie et l’ontologie opérationnelle causale au sein d’un pipeline neuro-symbolique.*
 
 | Concept canonique | Ambiguïtés historiques des silos | Vérité analytique (Apache Ossie) | Règle causale et d’action (ontologie opérationnelle) |
 | --- | --- | --- | --- |
@@ -616,7 +616,7 @@ L’ontologie opérationnelle causale répond à ces questions. Elle est le seco
 | Garantie (`WarrantyCoverage`) | Police active aux dates calendaires, mais plafond d’heures moteur dépassé | Booléen `is_warranty_coverage_valid` croisant dates, loyers et heures IoT | Action `PreauthorizeClaim` : autorisée depuis `IN_FORCE`; escalade HOTL si coût > 5 000 $ CAD |
 | Stock (`SpareInventory`) | Colonne brute LABST mêlant stock libre et tampon d’urgence `SLA 99,5 %` | Métrique `net_allocatable_atp_qty` isolant le tampon contractuel | Action `AllocateWarrantyReplacementPart` : accès à `safety_floor_qty` réservé au rang `PLATINUM_995` |
 
-#### Extrait 12.2 — `[Exécuté en CI]` · Contrat d’action cinétique et vérificateur déterministe de préconditions (TypeScript)
+### Extrait 12.2 — `[Exécuté en CI]` · Contrat d’action cinétique et vérificateur déterministe de préconditions (TypeScript)
 
 Ces garde-fous s’exécutent dans un registre ontologique typé avant tout appel MCP, non dans une consigne en prose que le modèle peut oublier :
 
@@ -688,7 +688,7 @@ nomenclatures d’ingénierie (BOM) et les relations d’Apache Ossie dans un gr
 
 Comme Apache Ossie `0.1.1` ne définit aucune interface d’interrogation native (travail futur de sa feuille de route, section 12.4), le résolveur de l’Extrait 12.3 interroge la couche compilée par un adaptateur MCP d’éditeur (`SemanticMcpAdapter.query_compiled_metric`, section 12.5).
 
-#### Extrait 12.3 — `[Exécuté en CI]` · Résolveur neuro-symbolique pré-planification (NeuroSymbolicPlanningResolver en Python)
+### Extrait 12.3 — `[Exécuté en CI]` · Résolveur neuro-symbolique pré-planification (NeuroSymbolicPlanningResolver en Python)
 
 Le résolveur suivant prépare le dossier de planification :
 

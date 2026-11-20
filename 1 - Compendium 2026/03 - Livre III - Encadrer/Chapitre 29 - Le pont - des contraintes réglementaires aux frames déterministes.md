@@ -1,8 +1,6 @@
 # 29 · Le pont : des contraintes réglementaires aux frames déterministes
 
-*Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier. Deuxième mouvement — le cadre réglementaire canadien (ch. 25-30). Cinquième chapitre du mouvement, et* ***pivot du***
-
-***Livre*** *: les quatre précédents ont établi un état du droit ; celui-ci dit ce qu’il faut construire. La structure de sa source est reprise et complétée par le test de qualification du § 29.4.1 (ajouté le 30 juillet 2026).*
+*Livre III — Encadrer : orchestration en entreprise, cadre réglementaire canadien et terrain financier. Deuxième mouvement — le cadre réglementaire canadien (ch. 25-30). Cinquième chapitre du mouvement, et* ***pivot du Livre*** *: les quatre précédents ont établi un état du droit ; celui-ci dit ce qu’il faut construire. La structure de sa source est reprise et complétée par le test de qualification du § 29.4.1 (ajouté le 30 juillet 2026).*
 
 > **Thèse** — la plupart des exigences canadiennes lues se traduisent en frame d’architecture ; l’encadrement déterministe des processus réglementés est le principe sur lequel convergent trois sources **non indépendantes**, dont le socle n’établit l’application ni au Canada ni à la finance canadienne — c’est la portée de la convergence qui est dite, non une autorité accrue.
 
@@ -38,9 +36,7 @@ Le chapitre soutient **trois propositions**. *La première* : la plupart des exi
 
 Le compte a été refait sur la table elle-même, ligne à ligne, et non recopié — *c’est ce que la ligne « ces deux cardinaux sont ceux du Vol. II et ne se recopient pas » impose.* Il est inchangé : onze et neuf.
 
-Mais le domaine de la table, lui, a bougé depuis sa mesure — et le chapitre le signale plutôt que de l’absorber. *L’articulation de l’article 12.1 a été* ***corrigée*** *par une extraction postérieure du texte officiel* : elle compte une obligation inconditionnelle, trois informations dues sur demande — dont le *droit de faire rectifier*, que l’entrée héritée omettait — et un alinéa distinct (**ch. 27 § 27.2**). *Deux de ces éléments — le 1° et le 3° — n’ont* ***aucune***
-
-***ligne*** *dans la table ci-dessus.* La somme ne les y ajoute pas : *ce chapitre est conservé intact, et dériver deux contraintes neuves serait le redécouper.*
+Mais le domaine de la table, lui, a bougé depuis sa mesure — et le chapitre le signale plutôt que de l’absorber. *L’articulation de l’article 12.1 a été* ***corrigée*** *par une extraction postérieure du texte officiel* : elle compte une obligation inconditionnelle, trois informations dues sur demande — dont le *droit de faire rectifier*, que l’entrée héritée omettait — et un alinéa distinct (**ch. 27 § 27.2**). *Deux de ces éléments — le 1° et le 3° — n’ont* ***aucune ligne*** *dans la table ci-dessus.* La somme ne les y ajoute pas : *ce chapitre est conservé intact, et dériver deux contraintes neuves serait le redécouper.*
 
 Cette table a changé de forme le 17 juillet 2026 chez sa source, et il faut dire pourquoi plutôt que de livrer le résultat comme s’il avait toujours été là. *Dans son premier état, elle comptait six entrées dont deux ne produisaient rien, et l’article 12.1 fournissait trois des quatre contraintes restantes. E-23 n’y décidait que d’un périmètre — non par la volonté du régulateur, mais parce que le socle ne portait alors du texte que sa définition de « modèle ».* L’extraction du texte intégral y a versé les attentes opératoires en **[B]**, et la traduction a été conduite depuis.
 
@@ -54,9 +50,7 @@ Le pas est cependant plus long sur deux d’entre elles, et il se concède ligne
 
 Une limite est structurelle, et elle n’est comblée par personne. *L’objet d’E-23 est le* ***modèle*** *: c’est lui qu’on inventorie, lui qu’on cote, lui qu’on met hors service. Un système agentique compose plusieurs modèles, des outils et un enchaînement, et E-23 ne dit pas ce qu’est « le modèle » d’un tel assemblage — ni s’il faut coter les composants, la composition, ou les deux.* Le silence est entier : ni le texte, ni le socle, ni la somme ne le comblent — *absence de documentation, degré 3.* C’est la question que les institutions fédérales auront à trancher d’ici le 1ᵉʳ mai 2027, et ce chapitre ne peut que la désigner.
 
-Des quatre contraintes qui restent — les cinq d’E-23 une fois écartées —, trois proviennent de l’article 12.1 et une de l’avis 11-348, et la différence importe plus que leur nombre. *E-23 est fondée sur des principes et rédigée au conditionnel : elle* ***attend**. L’article 12.1 est une* ***disposition législative*** *rédigée à l’impératif : il* ***oblige**.* Les cinq contraintes tirées d’E-23 sont donc des conditions de possibilité d’un programme attendu ;
-
-les trois tirées de l’article 12.1 sont des conditions de possibilité d’une obligation. *L’inférence est de même nature — c’est toujours l’auteur qui la conduit — mais ce qu’elle sert à défendre ne l’est pas.*
+Des quatre contraintes qui restent — les cinq d’E-23 une fois écartées —, trois proviennent de l’article 12.1 et une de l’avis 11-348, et la différence importe plus que leur nombre. *E-23 est fondée sur des principes et rédigée au conditionnel : elle* ***attend**. L’article 12.1 est une* ***disposition législative*** *rédigée à l’impératif : il* ***oblige**.* Les cinq contraintes tirées d’E-23 sont donc des conditions de possibilité d’un programme attendu ; les trois tirées de l’article 12.1 sont des conditions de possibilité d’une obligation. *L’inférence est de même nature — c’est toujours l’auteur qui la conduit — mais ce qu’elle sert à défendre ne l’est pas.*
 
 La quatrième naît de la rencontre de deux textes que rien ne relie. La définition de l’avis capte les systèmes dont le comportement se modifie **après déploiement** ; le manifeste scinde l’auto-modification en **deux régimes** — l’adaptation, éphémère, et l’évolution, persistante (**ch. 22 § 22.8**).
 
@@ -94,9 +88,7 @@ Ce n’est pas pour autant un fait négatif vérifié. *Aucune recherche exhaust
 
 *Section qui* ***exploite*** *ce que le* ***ch. 22 § 22.10*** *a préparé sans le jouer.*
 
-Le manifeste inscrit parmi ses défis transversaux l’**écart de responsabilité** : l’indétermination de l’imputabilité juridique entre **quatre porteurs candidats** — le développeur, l’organisation qui impose le cadre, le fournisseur du modèle et **le comportement émergent** du système multi-agents. *Le quatrième n’est*
-
-*pas une personne : il est le nom de ce dont aucun des trois autres n’est l’auteur au sens ordinaire.* Confrontons-le aux textes canadiens sur le seul point que le socle autorise : la désignation du porteur.
+Le manifeste inscrit parmi ses défis transversaux l’**écart de responsabilité** : l’indétermination de l’imputabilité juridique entre **quatre porteurs candidats** — le développeur, l’organisation qui impose le cadre, le fournisseur du modèle et **le comportement émergent** du système multi-agents. *Le quatrième n’est pas une personne : il est le nom de ce dont aucun des trois autres n’est l’auteur au sens ordinaire.* Confrontons-le aux textes canadiens sur le seul point que le socle autorise : la désignation du porteur.
 
 Le socle porte ici trois choses de nature différente. *Pour l’article 12.1*, un **fait générateur** : l’obligation pèse sur toute personne qui exploite une entreprise et rend une « décision fondée exclusivement sur un traitement automatisé » — sans condition tenant à l’auteur du système, ni partage avec le fournisseur du modèle. *Pour E-23*, un **périmètre d’application** : les institutions financières fédérales. *Pour l’avis 11-348*, un périmètre également, et rien de plus : il ne crée aucune obligation — il énonce que les lois existantes s’appliquent, et à qui.
 

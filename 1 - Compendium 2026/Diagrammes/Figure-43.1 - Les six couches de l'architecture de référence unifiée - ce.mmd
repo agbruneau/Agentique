@@ -1,7 +1,7 @@
 %% Figure 43.1 — Les six couches de l'architecture de référence unifiée : ce que chacune tient et ce qu'elle ne porte pas
+%%{init: {'flowchart': {'wrappingWidth': 1150}}}%%
 flowchart TB
     subgraph COUCHES["SIX COUCHES, ET CE QUE CHACUNE TIENT"]
-        direction TB
         C6["<b>6 · Gouvernance</b><br/>Inventaire, cotation, cycle de vie, documentation, surveillance."]
         C5["<b>5 · Exploitation — AgentOps</b><br/>Seize métriques au grain de l'opération, aucune de parc ;<br/>la dimension d'agent est un nom, pas une identité."]
         C4["<b>4 · Maillage</b><br/>Appliquer la politique à l'arête — siège ch. 37. Ne porte pas l'émission."]
@@ -11,7 +11,7 @@ flowchart TB
         C6 ~~~ C5 ~~~ C4 ~~~ C3 ~~~ C2 ~~~ C1
     end
 
-    NOTE["LE DÉCOUPAGE EST UNE CONSTRUCTION DE LA SOMME ; sa vertu est d'obliger à dire<br/>au Tableau 43.1 ce que chaque couche tient et ce qu'elle ne porte pas.<br/>Quatre réserves commandent la lecture du tableau source (§ 43.1.2)."]
+    NOTE["LE DÉCOUPAGE EST UNE CONSTRUCTION DE LA SOMME ; sa vertu est d'obliger à dire au Tableau 43.1 ce que chaque couche tient<br/>et ce qu'elle ne porte pas. Quatre réserves commandent la lecture du tableau source (§ 43.1.2)."]
     C1 ~~~ NOTE
 
     classDef layer fill:#F5F1EB,stroke:#BBBBBB,color:#222222,text-align:left

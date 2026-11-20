@@ -5,6 +5,7 @@ skinparam shadowing false
 skinparam roundcorner 8
 skinparam defaultFontName "Segoe UI"
 skinparam defaultFontSize 11
+skinparam Padding 5
 skinparam sequenceMessageAlign center
 
 participant "**Alice**\n//utilisatrice (mandante)//" as Alice #E6F0FA
@@ -28,7 +29,7 @@ Gw -> MCP : **6** second jeton, au nom d’Alice
 note right of MCP #F8FAFC : filtrage par ligne
 
 legend bottom
-  |= <#0F2744> <color:#93C5FD>**Revendications du jeton délégué (étape 3, extrait)**</color> |= <#FFFFFF> **Droits effectifs = intersection des trois ensembles** |
-  | <#0F2744> <color:#E2E8F0>""{ "sub": "alice",""</color>\n<color:#E2E8F0>""  "act": { "sub": "spiffe://ent.ca/agent-orch" },""</color>\n<color:#E2E8F0>""  "aud": "https://passerelle-agents.ent.ca",""</color>\n<color:#E2E8F0>""  "scope": "finance:read",""</color>\n<color:#E2E8F0>""  "exp": 1793085600, "cnf": { … } }""</color>\n\n<color:#CBD5E1>sub = mandant humain · act = agent qui agit (imbriqué à chaque saut)</color>\n<color:#93C5FD>aud = un seul destinataire (rééchangé à l’étape 5 pour mcp-finance) · cnf = jeton lié à une clé (mTLS ou DPoP)</color> | <#FFFFFF> • Droits d’Alice\n• Portée de l’agent\n• Portée de la tâche\n\nChaque saut conserve ou réduit la portée;\njamais il ne l’élargit. |
+  |= <#0F2744>  <color:#93C5FD>**Revendications du jeton délégué (étape 3, extrait)**</color>  |=<#FFFFFF>  **Droits effectifs = intersection des trois ensembles**  |
+  |<#0F2744>  <color:#E2E8F0>""{ "sub": "alice",""</color>\n<color:#E2E8F0>""  "act": { "sub": "spiffe://ent.ca/agent-orch" },""</color>\n<color:#E2E8F0>""  "aud": "https://passerelle-agents.ent.ca",""</color>\n<color:#E2E8F0>""  "scope": "finance:read",""</color>\n<color:#E2E8F0>""  "exp": 1793085600, "cnf": { … } }""</color>\n\n<color:#CBD5E1>sub = mandant humain · act = agent qui agit (imbriqué à chaque saut)</color>\n<color:#93C5FD>aud = un seul destinataire (rééchangé à l’étape 5 pour mcp-finance) · cnf = jeton lié à une clé (mTLS ou DPoP)</color>  |<#FFFFFF>  • Droits d’Alice\n• Portée de l’agent\n• Portée de la tâche\n\nChaque saut conserve ou réduit la portée;\njamais il ne l’élargit.  |
 endlegend
 @enduml

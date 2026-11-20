@@ -447,23 +447,23 @@ Les rôles d’hôte, de client et de serveur sont décrits à la section 5.1. E
 > - Hôte Agentique (MCP Host)
 > - Worker Temporal, Goose ou Application Métier
 > - Portabilité Cognitive (Standards AAIF)
-> - • Open Responses : API d'inférence unifiée
-> - • Agent Skills : SKILL.md (divulgation progressive)
-> - • AGENTS.md : consignes et invariants locaux
+> - Open Responses : API d'inférence unifiée
+> - Agent Skills : SKILL.md (divulgation progressive)
+> - AGENTS.md : consignes et invariants locaux
 > - Connecteurs MCP Client (Isolation 1:1)
-> - • Négociation cycle de vie (initialize)
-> - • Exposition bornée des périmètres (Roots)
-> - • Validation stricte JSON Schema entrée/sortie
-> - • 1 instance Client dédiée par Serveur MCP
+> - Négociation cycle de vie (initialize)
+> - Exposition bornée des périmètres (Roots)
+> - Validation stricte JSON Schema entrée/sortie
+> - 1 instance Client dédiée par Serveur MCP
 > - Contrôle des Primitives Inversées
-> - • sampling/createMessage : quota & filtre prompt
-> - • elicitation/create (Formulaire JSON plat)
-> - • elicitation/create (Mode URL hors-bande OAuth)
+> - sampling/createMessage : quota & filtre prompt
+> - elicitation/create (Formulaire JSON plat)
+> - elicitation/create (Mode URL hors-bande OAuth)
 > - Approbation de l'hôte obligatoire avant exécution
 > - Surface Client Navigateur : WebMCP (W3C)
-> - • API : navigator.modelContext.registerTool()
-> - • Mode déclaratif : <form toolname="...">
-> - • Cycle de vie lié à l'UI via AbortSignal
+> - API : navigator.modelContext.registerTool()
+> - Mode déclaratif : `<form toolname="...">`
+> - Cycle de vie lié à l'UI via AbortSignal
 > - Exécution locale dans l'onglet actif (zéro scraping)
 > - Streamable HTTP
 > - POST /mcp (Tools,
@@ -491,24 +491,24 @@ Les rôles d’hôte, de client et de serveur sont décrits à la section 5.1. E
 > - Limitation de débit HTTP
 > - & Coupe-circuit d'erreurs
 > - Serveur MCP — SAP S/4HANA
-> - • 8 Tools orientés intention métier
-> - • Clés d'idempotence & baux TTL
-> - • Sorties typées structuredContent
+> - 8 Tools orientés intention métier
+> - Clés d'idempotence & baux TTL
+> - Sorties typées structuredContent
 > - Appels officiels BAPI / OData v4
 > - Serveur MCP — Snowflake & BCA
-> - • Resources URI (boreal://bca/...)
-> - • Références légères resource_link
-> - • Pagination sémantique par curseur
+> - Resources URI (boreal://bca/...)
+> - Références légères resource_link
+> - Pagination sémantique par curseur
 > - Masquage dynamique Loi 25 / E-23
 > - Serveur MCP — ServiceNow
-> - • Prompts d'incident standardisés
-> - • Erreurs cognitives auto-correctrices
-> - • Escalade Elicitation URL (HOTL)
+> - Prompts d'incident standardisés
+> - Erreurs cognitives auto-correctrices
+> - Escalade Elicitation URL (HOTL)
 > - Synchronisation ITSM & Terrain FSM
 > - Bac à Sable — OpenSandbox
-> - • Isolation microVM / gVisor / WASM
-> - • Exécution des scripts/ déterministes
-> - • Système de fichiers éphémère
+> - Isolation microVM / gVisor / WASM
+> - Exécution des scripts/ déterministes
+> - Système de fichiers éphémère
 > - Zéro accès réseau sortant non autorisé
 
 *Fig. 10. – Architecture d’entreprise du Model Context Protocol (MCP) sur Streamable HTTP, articulée avec Agent Skills, Open Responses et WebMCP.*
@@ -645,9 +645,9 @@ L’erreur la plus coûteuse des premiers déploiements MCP, en 2025–2026, est
 > - 6. Réessai aveugle de l'agent → Doublon d'en-tête orphelin dans SAP
 > - Fuite de la topologie relationnelle interne et couplage fort aux tables
 > - Impact opérationnel mesuré :
-> - • Latence médiane : 18,4 s (6 cycles d'inférence de bout en bout)
-> - • Coût d'inférence : 0,42 $ CAD / tentative (inflation quadratique)
-> - • Stabilité pass^5 : 38 % • Corruption d'état en cas d'échec partiel
+> - Latence médiane : 18,4 s (6 cycles d'inférence de bout en bout)
+> - Coût d'inférence : 0,42 $ CAD / tentative (inflation quadratique)
+> - Stabilité pass^5 : 38 % • Corruption d'état en cas d'échec partiel
 > - PATRON CIBLE — Serveur MCP Orienté Intention Métier
 > - Façade de domaine gouvernée : 7 outils cohésifs alignés sur les actes métiers
 > - Spécialiste Domaine (~1 350 jetons de schémas nets)
@@ -661,9 +661,9 @@ L’erreur la plus coûteuse des premiers déploiements MCP, en 2025–2026, est
 > - 6. Référence de compensation attachée (_meta.compensationTool)
 > - Isolation totale du modèle physique SAP : zéro dette de couplage
 > - Impact opérationnel mesuré :
-> - • Latence médiane : 1,7 s (1 seule inférence + appel RPC compilé)
-> - • Coût d'inférence : 0,019 $ CAD / action (-95 % de consommation jetons)
-> - • Stabilité pass^5 : 96,8 % • Intégrité transactionnelle garantie
+> - Latence médiane : 1,7 s (1 seule inférence + appel RPC compilé)
+> - Coût d'inférence : 0,019 $ CAD / action (-95 % de consommation jetons)
+> - Stabilité pass^5 : 96,8 % • Intégrité transactionnelle garantie
 
 *Fig. 11. – Comparaison architecturale : mappage naïf 1:1 CRUD REST vers MCP face à la conception orientée intention métier agrégée.*
 
@@ -671,7 +671,7 @@ Deux phénomènes expliquent l’échec d’un mappage CRUD 1:1. D’abord, chaq
 
 𝑇schémas(𝑁outils, 𝐾) = 𝐾⋅∑𝑁outils 𝑖=1 𝑡𝑖
 
-Avec 𝑁outils = 85 points d’accès moyens (𝑡𝑖≈290 jetons) et une transaction de 𝐾= 6 appels séquentiels pour reconstituer une jointure métier, l’agent consomme 147 900 jetons à relire le catalogue d’outils, avant de compter les données retournées. Ensuite, si la probabilité que le modèle choisisse le bon point d’accès et renseigne sans erreur ses clés étrangères internes vaut 𝑝= 0, 85 à chaque étape, la fiabilité d’une séquence de 𝐾= 6 appels tombe à 𝑝6 ≈0, 377 (37,7 %), en deçà du seuil d’exploitation industrielle.
+Avec 𝑁outils = 85 points d’accès moyens (𝑡𝑖≈290 jetons) et une transaction de 𝐾= 6 appels séquentiels pour reconstituer une jointure métier, l’agent consomme 147 900 jetons à relire le catalogue d’outils, avant de compter les données retournées. Ensuite, si la probabilité que le modèle choisisse le bon point d’accès et renseigne sans erreur ses clés étrangères internes vaut 𝑝= 0, 85 à chaque étape, la fiabilité d’une séquence de 𝐾 = 6 appels tombe à 𝑝^6 ≈ 0,377 (37,7 %), en deçà du seuil d’exploitation industrielle.
 
 | Dimension d’ingénierie | Antipatron : mappage CRUD REST 1:1 | Patron cible : outils MCP orientés intention métier |
 | --- | --- | --- |

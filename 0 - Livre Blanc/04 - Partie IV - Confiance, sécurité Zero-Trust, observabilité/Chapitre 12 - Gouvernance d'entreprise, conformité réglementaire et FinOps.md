@@ -183,7 +183,7 @@ Sur les 20 % cognitifs restants, l’architecture `FinOps` empile trois filtres 
 > - Filtres de déflation FinOps
 > - Optimisation d'inférence (20 %
 > - cognitif)
-> - 1 . Règle 80/20 Code déterministe (0 jeton)
+> - 1. Règle 80/20 Code déterministe (0 jeton)
 > - 2. Cache sémantique Index HNSW (0,70-0,95) (0 jeton sur hit)
 > - 3. Routeur / Cascade SLM vs Frontier (RouteLLM / FrugalGPT)
 > - 4. Préfixe & Budget KV Prompt Caching (-50 % à -95 %) + Compaction anti-O(T²)

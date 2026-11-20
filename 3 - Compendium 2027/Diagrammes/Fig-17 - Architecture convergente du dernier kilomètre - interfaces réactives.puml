@@ -18,19 +18,16 @@ rectangle "Volet A — Interaction Humain-Agent Réactive (AG-UI / A2UI) et Mult
     Clé matérielle FIDO2 / WebAuthn
   ]
 
-  rectangle MidA #EFF6FF;line:EFF6FF {
-    rectangle AGUI #FFFFFF;line:2563EB [
-      **Flux Événementiel AG-UI (SSE / WebSockets)**
-      STATE_SNAPSHOT & STATE_DELTA (RFC 6902)
-      Descripteurs déclaratifs A2UI / MCP-UI (Zéro JS libre)
-    ]
-    rectangle WebRTC #ECFDF5;line:15803D [
-      **Session WebRTC Full-Duplex (UDP / SRTP)**
-      Audio Opus 24 kHz + Flux vidéo inspection 2 fps
-      SCTP DataChannel : purge tampon & troncature tour
-    ]
-    AGUI -[hidden]down-> WebRTC
-  }
+  rectangle AGUI #FFFFFF;line:2563EB [
+    **Flux Événementiel AG-UI (SSE / WebSockets)**
+    STATE_SNAPSHOT & STATE_DELTA (RFC 6902)
+    Descripteurs déclaratifs A2UI / MCP-UI (Zéro JS libre)
+  ]
+  rectangle WebRTC #ECFDF5;line:15803D [
+    **Session WebRTC Full-Duplex (UDP / SRTP)**
+    Audio Opus 24 kHz + Flux vidéo inspection 2 fps
+    SCTP DataChannel : purge tampon & troncature tour
+  ]
 
   rectangle AgentMed #FFFFFF;line:1E293B [
     **Agent d'Interface & Médiation**
@@ -41,58 +38,63 @@ rectangle "Volet A — Interaction Humain-Agent Réactive (AG-UI / A2UI) et Mult
     Marquage transparence EU AI Act
   ]
 
-  Poste <-[#2563EB]-> AGUI
-  AGUI <-[#2563EB]-> AgentMed
-  Poste <-[#15803D]-> WebRTC
-  WebRTC <-[#15803D]-> AgentMed
+  AGUI -[hidden]down-> WebRTC
+  Poste -[#2563EB]right-> AGUI
+  AGUI -[#2563EB]right-> AgentMed
+  AGUI -[#2563EB]left-> Poste
+  AgentMed -[#2563EB]left-> AGUI
+  Poste -[#15803D]right-> WebRTC
+  WebRTC -[#15803D]right-> AgentMed
+  WebRTC -[#15803D]left-> Poste
+  AgentMed -[#15803D]left-> WebRTC
 }
 
 rectangle "Volet B — Chaîne Transactionnelle Vérifiable AP2 (W3C VC / FIDO) et Règlement Programmable HTTP x402" as VoletB #FFF7ED;line:9A3412 {
-  rectangle StepsB #FFF7ED;line:FFF7ED {
-    rectangle B1 #FFFFFF;line:9A3412 [
-      **1. Mandats AP2 (W3C VC)**
-      Signature FIDO2 / HSM :
-      • Intent Mandate : budget,
-        DID marchands, TTL
-      • Cart Mandate : hash
-        SHA-256 panier exact
-    ]
-    rectangle B2 #FFFFFF;line:9A3412 [
-      **2. Agent Acheteur & PDP**
-      Validation déterministe Cedar :
-      • Prix ≤ plafond mandat
-      • Bénéficiaire sur liste blanche
-      • Solde journalier FinOps OK
-      Clé d'idempotence paiement
-    ]
-    rectangle B3 #FFFFFF;line:2563EB [
-      **3. Protocole HTTP x402**
-      ← HTTP 402 Payment Required
-      (En-tête PAYMENT-REQUIRED)
-      → Requête + PAYMENT-SIGNATURE
-      (Preuve mandat AP2 + jeton)
-      Zéro compte pré-provisionné requis
-    ]
-    rectangle B4 #ECFDF5;line:15803D [
-      **4. Facilitateur & Reçu**
-      Vérification signature & KYT
-      Compensation rails bancaires
-      ou jeton de dépôt réglementé
-      ← 200 OK + PAYMENT-RESPONSE
-      Écriture comptable ERP liée
-    ]
-    B1 -[#9A3412]-> B2
-    B2 <-[#2563EB]-> B3
-    B3 <-[#15803D]-> B4
-  }
-
+  rectangle B1 #FFFFFF;line:9A3412 [
+    **1. Mandats AP2 (W3C VC)**
+    Signature FIDO2 / HSM :
+    • Intent Mandate : budget,
+      DID marchands, TTL
+    • Cart Mandate : hash
+      SHA-256 panier exact
+  ]
+  rectangle B2 #FFFFFF;line:9A3412 [
+    **2. Agent Acheteur & PDP**
+    Validation déterministe Cedar :
+    • Prix ≤ plafond mandat
+    • Bénéficiaire sur liste blanche
+    • Solde journalier FinOps OK
+    Clé d'idempotence paiement
+  ]
+  rectangle B3 #FFFFFF;line:2563EB [
+    **3. Protocole HTTP x402**
+    ← HTTP 402 Payment Required
+    (En-tête PAYMENT-REQUIRED)
+    → Requête + PAYMENT-SIGNATURE
+    (Preuve mandat AP2 + jeton)
+    Zéro compte pré-provisionné requis
+  ]
+  rectangle B4 #ECFDF5;line:15803D [
+    **4. Facilitateur & Reçu**
+    Vérification signature & KYT
+    Compensation rails bancaires
+    ou jeton de dépôt réglementé
+    ← 200 OK + PAYMENT-RESPONSE
+    Écriture comptable ERP liée
+  ]
   rectangle Audit #F8FAFC;line:CBD5E1 [
     **Invariant d'Audit : Preuve tripartite immuable reliant l'intention humaine (FIDO2/AP2), la négociation A2A et le règlement effectif (x402).**
   ]
 
-  StepsB -[hidden]down-> Audit
+  B1 -[#9A3412]right-> B2
+  B2 -[#2563EB]right-> B3
+  B3 -[#2563EB]left-> B2
+  B3 -[#15803D]right-> B4
+  B4 -[#15803D]left-> B3
+  B2 -[hidden]down-> Audit
+  B3 -[hidden]down-> Audit
 }
 
-VoletA -[hidden]down-> VoletB
-
+Poste -[hidden]down-> B1
+AgentMed -[hidden]down-> B4
 @enduml

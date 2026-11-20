@@ -2,7 +2,7 @@
 @startuml
 title Conception d'Outils MCP : Antipattern CRUD REST 1:1 vs Façade Orientée Intention Métier
 
-left to right direction
+top to bottom direction
 skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
@@ -28,7 +28,7 @@ rectangle "ANTIPATTERN — Mappage Naïf 1:1 CRUD REST → MCP\nConversion autom
     **Impact opérationnel mesuré :**
     • Latence médiane : 18,4 s (6 cycles d'inférence de bout en bout)
     • Coût d'inférence : 0,42 $ CAD / tentative (inflation quadratique)
-    • Stabilité pass~^5 : 38 % • Corruption d'état en cas d'échec partiel
+    • Stabilité pass<sup>5</sup> : 38 % • Corruption d'état en cas d'échec partiel
   ]
 
   AntiAgent -[#DC2626]-> AntiSteps
@@ -56,13 +56,15 @@ rectangle "PATRON CIBLE — Serveur MCP Orienté Intention Métier\nFaçade de d
     **Impact opérationnel mesuré :**
     • Latence médiane : 1,7 s (1 seule inférence + appel RPC compilé)
     • Coût d'inférence : 0,019 $ CAD / action (-95 % de consommation jetons)
-    • Stabilité pass~^5 : 96,8 % • Intégrité transactionnelle garantie
+    • Stabilité pass<sup>5</sup> : 96,8 % • Intégrité transactionnelle garantie
   ]
 
   PatronAgent -[#15803D]-> PatronSteps
   PatronSteps -[hidden]down-> PatronImpact
 }
 
-Anti -[hidden]right-> Patron
+AntiAgent -[hidden]right-> PatronAgent
+AntiSteps -[hidden]right-> PatronSteps
+AntiImpact -[hidden]right-> PatronImpact
 
 @enduml

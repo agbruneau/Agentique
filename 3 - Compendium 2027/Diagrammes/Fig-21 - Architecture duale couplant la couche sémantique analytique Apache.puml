@@ -6,6 +6,12 @@ top to bottom direction
 skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
+skinparam rectangle<<invis>> {
+  BackgroundColor transparent
+  BorderColor transparent
+  FontColor transparent
+  FontSize 1
+}
 
 rectangle "Médiateur Neuro-Symbolique Pré-Planification (GraphRAG Hybride + Vérificateur d'Invariants)" as Mediateur #EFF6FF;line:2563EB {
   rectangle M1 #FFFFFF;line:2563EB [
@@ -20,13 +26,13 @@ rectangle "Médiateur Neuro-Symbolique Pré-Planification (GraphRAG Hybride + V�
     **3. Validation Préconditions Action**
     Vérifie états légaux avant appel MCP
   ]
-  M1 -[#2563EB]-> M2
-  M2 -[#15803D]-> M3
+  M1 -[#2563EB]right-> M2
+  M2 -[#15803D]right-> M3
 }
 
-rectangle DualLayer #FFFFFF;line:FFFFFF {
+rectangle " " as DualLayer <<invis>> {
   rectangle "Couche Sémantique Analytique — Apache Ossie (YAML)\nOrientée Lecture, Vérité Chiffrée & Agrégations Sans Text-to-SQL Brut" as Ossie #EFF6FF;line:2563EB {
-    rectangle OssieTop #EFF6FF;line:EFF6FF {
+    rectangle " " as OssieTop <<invis>> {
       rectangle Datasets #FFFFFF;line:64748B [
         **datasets & relationships**
         Jointures certifiées, clés primaires
@@ -48,7 +54,7 @@ rectangle DualLayer #FFFFFF;line:FFFFFF {
   }
 
   rectangle "Ontologie Opérationnelle Causale (Graphe & Contrats)\nOrientée Action, États Légaux, Invariants SHACL & Mutations Sûres" as Ontologie #ECFDF5;line:15803D {
-    rectangle OntoTop #ECFDF5;line:ECFDF5 {
+    rectangle " " as OntoTop <<invis>> {
       rectangle Objets #FFFFFF;line:15803D [
         **Objets & États Légaux**
         Équipement, Contrat, Réservation
@@ -69,7 +75,8 @@ rectangle DualLayer #FFFFFF;line:FFFFFF {
     OntoTop -[hidden]down-> ActionTypes
   }
 
-  Ossie -[#1E293B]- Ontologie
+  Ontologie -[hidden]left-> Ossie
+  Fields -[#1E293B]right- Objets
 }
 
 rectangle "Systèmes d'Enregistrement Hétérogènes Réconciliés via Clés Maîtres Canoniques (MDM)" as MDM #F8FAFC;line:475569 {
@@ -80,9 +87,9 @@ rectangle "Systèmes d'Enregistrement Hétérogènes Réconciliés via Clés Ma�
   BCA -[hidden]right-> BEL
 }
 
-M2 -[#2563EB]-> Ossie
-M3 -[#15803D]-> Ontologie
-Ossie -[#1E293B]-> MDM
-Ontologie -[#1E293B]-> MDM
+M1 -[#2563EB]down-> Datasets
+M3 -[#15803D]down-> Contraintes
+AiContext -[#1E293B]down-> BSN
+ActionTypes -[#1E293B]down-> BEL
 
 @enduml

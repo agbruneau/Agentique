@@ -309,13 +309,13 @@ Le modèle fédéré de la section 41.7 prend ici la forme Hub-and-Spoke : l’i
 > **[Figure]**
 > - Modèle Opérationnel Cible (Hub-and-Spoke) : CoE Agentique, Tandem RH–IT et Supervision HOTL
 > - Tandem RH – IT (Gouvernance de la Main-d'Œuvre Hybride)
-> - • Cycle de vie unifié : arrivée et départ NHI couplés au SIRH (72 h)
-> - • Refonte des fiches de poste & parcours de requalification certifiants
-> - • Dialogue social : transparence algorithmique & droit à la déconnexion
+> - Cycle de vie unifié : arrivée et départ NHI couplés au SIRH (72 h)
+> - Refonte des fiches de poste & parcours de requalification certifiants
+> - Dialogue social : transparence algorithmique & droit à la déconnexion
 > - Poste de Supervision Human-on-the-Loop (HOTL)
-> - • Console différentielle A2UI (preuves contradictoires, zéro prose flatteuse)
-> - • Budget cognitif borné (≤ 33 arbitrages complexes / quart) & CIBA
-> - • Injection de Tests Canaris (anti-complaisance OWASP ASI09)
+> - Console différentielle A2UI (preuves contradictoires, zéro prose flatteuse)
+> - Budget cognitif borné (≤ 33 arbitrages complexes / quart) & CIBA
+> - Injection de Tests Canaris (anti-complaisance OWASP ASI09)
 > - HUB CENTRAL — Centre d'Excellence Agentique (CoE Plateforme, Sécurité, Ontologies & FinOps)
 > - Socle & Runtime
 > - Temporal / Restate
@@ -336,25 +336,25 @@ Le modèle fédéré de la section 41.7 prend ici la forme Hub-and-Spoke : l’i
 > - Golden Paths, garde-fous mutuels & télémétrie OpenTelemetry
 > - SPOKE 1 — Boréal Équipements & Logistique (BEL)
 > - Named Business Owner : VP Chaîne d'Approvisionnement
-> - • Périmètre : SAP S/4HANA, MES, achats AP2
-> - • Équipe : Responsable Produit + Ing. MCP/OT
-> - • Budget : P&L résultat logistique & stocks
+> - Périmètre : SAP S/4HANA, MES, achats AP2
+> - Équipe : Responsable Produit + Ing. MCP/OT
+> - Budget : P&L résultat logistique & stocks
 > - Imputabilité directe du propriétaire :
 > - Plafonds d'achat B2B, recettes jumeau OT
 > - & validation trimestrielle des compensations
 > - SPOKE 2 — Boréal Capital & Assurances (BCA)
 > - Named Business Owner : VP Souscription
-> - • Périmètre : IBM i (AS/400), Guidewire
-> - • Équipe : Actuaire Risques + Ing. Agents
-> - • Budget : Coût par dossier instruit & sinistres
+> - Périmètre : IBM i (AS/400), Guidewire
+> - Équipe : Actuaire Risques + Ing. Agents
+> - Budget : Coût par dossier instruit & sinistres
 > - Imputabilité directe du propriétaire :
 > - Dossier BSIF E-23, explicabilité Loi 25
 > - & seuils d'escalade vers souscripteurs HOTL
 > - SPOKE 3 — Boréal Services Numériques (BSN)
 > - Named Business Owner : VP Succès Client
-> - • Périmètre : Télématique, ServiceNow, CRM
-> - • Équipe : Curateur Ontologie + SRE AgentOps
-> - • Budget : SLA disponibilité 99,5 % & rétention
+> - Périmètre : Télématique, ServiceNow, CRM
+> - Équipe : Curateur Ontologie + SRE AgentOps
+> - Budget : SLA disponibilité 99,5 % & rétention
 > - Imputabilité directe du propriétaire :
 > - Exactitude triage, transparence EU Art. 50
 > - & activation d'urgence du mode dégradé
@@ -437,11 +437,11 @@ La console A2UI et le routeur d’escalade appliquent quatre règles, pour que l
 
 - **Règle 1 — Vue différentielle contradictoire** : aucun paragraphe élogieux rédigé par l’agent demandeur. L’écran présente côte à côte les valeurs brutes des systèmes sources, la règle exacte qui a motivé l’escalade, une contre-hypothèse critique (avocat du diable) produite par un agent indépendant et l’impact irréversible chiffré.
 - **Règle 2 — Fonction de forçage cognitif** : sur les dossiers matériels, la saisie active d’un paramètre vérifié dans la pièce source (franchise retenue, code d’exclusion) remplace le bouton unique « Approuver » et précède le déblocage de l’authentification CIBA.
-- **Règle 3 — Plafond de charge cognitive** : l’attention soutenue se budgète, ce qui chiffre le réglage de la charge évoqué à la section 41.3. Le plafond 𝑁quartmax d’arbitrages complexes par quart de durée nette 𝑇effectif s’écrit :
+- **Règle 3 — Plafond de charge cognitive** : l’attention soutenue se budgète, ce qui chiffre le réglage de la charge évoqué à la section 41.3. Le plafond 𝑁_{max}^{quart} d’arbitrages complexes par quart de durée nette 𝑇_{effectif} s’écrit :
 
-𝑁quartmax = ⌊𝑇effectif ⋅𝜂vig𝑡minanalyse ⌋
+𝑁_{max}^{quart} = ⌊(𝑇_{effectif} ⋅ 𝜂_{vig}) / 𝑡_{min analyse}⌋
 
-Pour 𝑇effectif = 360 min, un coefficient de maintien de vigilance 𝜂vig = 0, 65 et un examen sérieux incompressible 𝑡minanalyse = 7 min, la charge maximale s’établit à 33 dossiers complexes par quart. Au-delà, le système met les sagas non urgentes en file durable plutôt que de presser l’examen. Ce plafond calculé va au-delà de ce que retient l’exposé : aucune norme publiée ne fixe la charge d’un superviseur, et la supervision se dimensionne selon la charge mesurée d’exceptions et d’approbations (section 41.4).
+Pour 𝑇effectif = 360 min, un coefficient de maintien de vigilance 𝜂vig = 0, 65 et un examen sérieux incompressible 𝑡_{min analyse} = 7 min, la charge maximale s’établit à 33 dossiers complexes par quart. Au-delà, le système met les sagas non urgentes en file durable plutôt que de presser l’examen. Ce plafond calculé va au-delà de ce que retient l’exposé : aucune norme publiée ne fixe la charge d’un superviseur, et la supervision se dimensionne selon la charge mesurée d’exceptions et d’approbations (section 41.4).
 
 - **Règle 4 — Tests canaris d’attention** : la plateforme insère au hasard (3 à 5 % du volume) des dossiers synthétiques plausibles qui contiennent une anomalie subtile connue d’avance (garantie échue la veille, numéro de série discordant), afin de mesurer l’étanchéité réelle du contrôle humain. Si l’interface A2UI les présente à l’identique d’un dossier réel (*aveugle* côté opérateur), leur enveloppe Temporal porte un scellé `dryRunCanary` bloqué sur agentgateway, de sorte qu’une approbation accidentelle ne déclenche jamais d’écriture ni de virement effectif dans un système d’enregistrement (*System of Record*).
 

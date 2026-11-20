@@ -1,0 +1,77 @@
+' Fig. 3. – Les cinq termes retenus par ce chapitre, du plus simple au plus englobant, avec qui décide du chemin dans chacun; workflow agentique, agent et système multi-agents sont aussi des systèmes d'IA composés.
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+
+rectangle "**du plus simple**" as AxL #FFFFFF;line:FFFFFF
+rectangle "**au plus englobant**" as AxR #FFFFFF;line:FFFFFF
+AxL -[#64748B]right-> AxR
+
+rectangle T1 #F8FAFC;line:475569 [
+  **LLM augmenté**
+  un modèle doté de
+  récupération, d'outils
+  et de mémoire
+]
+rectangle T2 #F8FAFC;line:475569 [
+  **Workflow agentique**
+  des chemins de code
+  prédéfinis
+]
+rectangle T3 #F8FAFC;line:475569 [
+  **Agent**
+  le modèle dirige son
+  déroulement et son
+  usage des outils
+]
+rectangle T4 #F8FAFC;line:475569 [
+  **Système multi-agents**
+  plusieurs agents,
+  chacun avec sa
+  spécialité
+]
+rectangle T5 #F8FAFC;line:475569 [
+  **Système d'IA composé**
+  plusieurs composants
+  en interaction
+]
+
+T1 -[hidden]right-> T2
+T2 -[hidden]right-> T3
+T3 -[hidden]right-> T4
+T4 -[hidden]right-> T5
+
+AxL -[hidden]down-> T1
+AxR -[hidden]down-> T5
+
+rectangle D1 #EFF6FF;line:2563EB [
+  **Le modèle,**
+  **sur un appel**
+]
+rectangle "tous sont aussi des systèmes d'IA composés" as COMP #F8FAFC;line:94A3B8;line.dashed {
+  rectangle D2 #EFF6FF;line:2563EB [
+    **Le concepteur**
+  ]
+  rectangle D3 #EFF6FF;line:2563EB [
+    **Le modèle**
+  ]
+  rectangle D4 #EFF6FF;line:2563EB [
+    **Les modèles, dans**
+    **une topologie donnée**
+  ]
+  D2 -[hidden]right-> D3
+  D3 -[hidden]right-> D4
+}
+rectangle D5 #EFF6FF;line:2563EB [
+  **Variable**
+]
+
+T1 -[#64748B]down-> D1
+T2 -[#64748B]down-> D2
+T3 -[#64748B]down-> D3 : **QUI DÉCIDE DU CHEMIN**
+T4 -[#64748B]down-> D4
+T5 -[#64748B]down-> D5
+
+@enduml

@@ -8,14 +8,14 @@
 
 Une fois la porte de sortie `POR-004` franchie, l’institution financière aborde le **Palier 2 (**`2030-2032` **— Étendre)** C : tous ; SIG-004 avec un socle d’identité, de médiation d’outils et de revue indépendante opérationnel. L’enjeu change alors d’échelle : passer d’agents mono-domaine bornés à une **orchestration durable inter-systèmes et inter-métiers** sans diluer la chaîne d’imputabilité, tout en traversant la **fenêtre critique 2030-2032 de migration post-quantique** identifiée par le groupe d’experts cyber du G7 pour le secteur financier A [14] (parallèlement aux échéances de fin 2030 et fin 2031 fixées aux administrations publiques américaines et canadiennes pour leurs propres systèmes prioritaires D [22] [23]).
 
-Dans la progression du Compendium 2027 (C27, § 43.1, § 43.2), ce palier réalise le **Jalon 3** et prépare les préalables techniques du Jalon 4 afin d’amener, d’ici la fin de 2032 C : tous ; SIG-014 , les domaines d’affaires qualifiés vers le **Stade 3 (Orchestration en production)** :
+Dans la progression du Compendium 2027 (C27, § 43.1, § 43.2), ce palier réalise le **Jalon 3** et prépare les préalables techniques du Jalon 4 afin d’amener, d’ici la fin de 2032 C : tous ; SIG-014, les domaines d’affaires qualifiés vers le **Stade 3 (Orchestration en production)** :
 
-- Les domaines d’opérations de comptes, de conformité et de résilience technologique (`D4`, `D6`, `D8`), ainsi que l’accueil omnicanal (`D1`) et le triage documentaire des sinistres et réclamations courantes (`D5`), accèdent au **Stade 3** par sagas multi-systèmes supervisées sur exception en `Classe 2` et en `Classe 3` réversible C : tous ; SIG-014 .
+- Les domaines d’opérations de comptes, de conformité et de résilience technologique (`D4`, `D6`, `D8`), ainsi que l’accueil omnicanal (`D1`) et le triage documentaire des sinistres et réclamations courantes (`D5`), accèdent au **Stade 3** par sagas multi-systèmes supervisées sur exception en `Classe 2` et en `Classe 3` réversible C : tous ; SIG-014.
 - En revanche, conformément au principe selon lequel le sommet n’est pas une cible universelle (`PRI-006`), le conseil soumis à obligation personnelle de convenance (`D2` en patrimoine et en assurance), le refus d’assurabilité ou l’arrêt de prestations vitales (`D3` et `D5` en assurance de personnes, `PEX-023`), le refus d’indemnisation exigeant un expert en sinistre certifié (`D5` en assurance dommages, `PEX-031`) et l’émission finale de virements irrévocables de fort enjeu (`D4` en `Classe 4`, `PEX-004`) demeurent sous contrôle humain explicite [8] [9] [11] [12].
 
 ## 21.2 Architecture de transition à la sortie du palier
 
-À l’issue de 2032 C : tous ; SIG-004 , dix-huit capacités nouvelles (treize sans regret et cinq conditionnelles) rejoignent les vingt-neuf capacités pérennes du Palier 1 tandis que la dérogation transitoire d’écran (`CAP-025`) s’éteint, portant le périmètre qualifié à **quarante-sept des cinquante-deux capacités cibles** (`43` actives sous A, `47` sous B et `46` sous C) :
+À l’issue de 2032 C : tous ; SIG-004, dix-huit capacités nouvelles (treize sans regret et cinq conditionnelles) rejoignent les vingt-neuf capacités pérennes du Palier 1 tandis que la dérogation transitoire d’écran (`CAP-025`) s’éteint, portant le périmètre qualifié à **quarante-sept des cinquante-deux capacités cibles** (`43` actives sous A, `47` sous B et `46` sous C) :
 
 - **Couche 1 — Interaction (**`CAP-004` **conditionnelle).** Sous les scénarios A et B, l’accueil vocal et multimodal en temps réel avec reprise instantanée par un préposé et transcription caviardée (`CAP-004`) vient épauler les centres de contact et la déclaration de sinistres lors des pointes saisonnières ou climatiques [13].
 - **Couche 2 — Agents et orchestration (**`CAP-010`**,** `CAP-011`**,** `CAP-012`**, et** `CAP-013` **conditionnelle).** L’orchestration inter-domaines s’appuie sur le catalogue fermé de topologies bornées et la revue contradictoire par familles distinctes de modèles (`CAP-010`), sur la dorsale événementielle rejouable d’audit (`CAP-011`) et sur le protocole normalisé de délégation muni d’un compteur de sauts anti-boucle (`CAP-012`) [4] [16] [17]. Si les suites applicatives maintiennent des plans de contrôle fermés (scénarios B et C), la fédération par gravité des données (`CAP-013`) rapatrie toute saga multi-silos sur l’orchestrateur durable neutre.
@@ -84,7 +84,7 @@ Quatre familles de signaux externes pilotent les embranchements conditionnels en
 
 ## 21.6 Ce que le palier ne fait pas
 
-Même en 2030-2032 C : tous ; SIG-007 , quatre limites demeurent infranchissables :
+Même en 2030-2032 C : tous ; SIG-007, quatre limites demeurent infranchissables :
 
 1. **Aucune négociation commerciale autonome ni engagement contractuel direct entre agents d’entreprises distinctes.** Les capacités de stade `4` (`CAP-006`, `CAP-014`, `CAP-027`, `CAP-041`) peuvent faire l’objet de pilotes encadrés en pré-production en fin de palier, mais aucune délégation mutative inter-organisations n’est ouverte avant le Palier 3.
 2. **Aucune délégation autonome du conseil de convenance ni des refus vitaux ou réglementés.** Les plafonds légaux établis en Partie IV sur `D2` (`PEX-011`, `PEX-012`), sur l’assurance de personnes (`PEX-023`) et sur l’expertise en sinistre (`PEX-031`) restent intangibles [10] [11] [12].

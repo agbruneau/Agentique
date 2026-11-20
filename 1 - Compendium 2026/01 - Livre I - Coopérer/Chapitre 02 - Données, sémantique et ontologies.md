@@ -18,9 +18,7 @@ Un premier axe oppose les formats **textuels**, lisibles et tolérants à l’in
 
 Les critères de décision se déclinent alors concrètement : lisibilité et facilité de débogage, densité d’encodage et coût réseau, caractère **auto-descriptif** — le message porte-t-il son propre schéma ? —, latence de sérialisation, débit soutenu, et surtout **évolutivité**, la capacité du format à absorber l’ajout ou le retrait de champs sans rupture.
 
-Aucun format n’optimise simultanément tous ces axes, et c’est le point à retenir : l’architecte arbitre en fonction du **couplage visé**, non de la performance brute. Un format auto-descriptif réduit le couplage de
-
-format au prix de la densité ; un format binaire à schéma externe maximise la densité mais reporte le couplage sur la disponibilité du schéma — d’où l’importance des registres traités en § 2.1.6. Le couplage ne disparaît pas, il se déplace : c’est la leçon que le ch. 1 tirait des architectures d’intégration, et elle vaut telle quelle un niveau plus bas.
+Aucun format n’optimise simultanément tous ces axes, et c’est le point à retenir : l’architecte arbitre en fonction du **couplage visé**, non de la performance brute. Un format auto-descriptif réduit le couplage de format au prix de la densité ; un format binaire à schéma externe maximise la densité mais reporte le couplage sur la disponibilité du schéma — d’où l’importance des registres traités en § 2.1.6. Le couplage ne disparaît pas, il se déplace : c’est la leçon que le ch. 1 tirait des architectures d’intégration, et elle vaut telle quelle un niveau plus bas.
 
 ### 2.1.2 Formats textuels et binaires
 
@@ -125,9 +123,7 @@ Cette convergence vers un protocole de catalogue commun est l’extension la plu
 
 ## 2.3 Pile du Web sémantique, médiation ontologique et graphe de connaissances d’entreprise
 
-La couche du sens se superpose à la couche syntaxique traitée jusqu’ici. Deux systèmes peuvent échanger des messages bien formés, validés contre un schéma (§ 2.1.4), et néanmoins se méprendre sur ce que ces
-
-messages signifient. L’interopérabilité sémantique vise précisément ce hiatus — le troisième palier de la pile canonique (ch. 1 § 1.1.2) : faire en sorte que l’information reçue soit interprétée par le destinataire avec le sens que l’émetteur lui prêtait.
+La couche du sens se superpose à la couche syntaxique traitée jusqu’ici. Deux systèmes peuvent échanger des messages bien formés, validés contre un schéma (§ 2.1.4), et néanmoins se méprendre sur ce que ces messages signifient. L’interopérabilité sémantique vise précisément ce hiatus — le troisième palier de la pile canonique (ch. 1 § 1.1.2) : faire en sorte que l’information reçue soit interprétée par le destinataire avec le sens que l’émetteur lui prêtait.
 
 *Le verrou que ce hiatus nomme n’est pas reconstruit ici.* Le constat d’ensemble — la normalisation est abondante dans le bas de la pile et s’amenuise vers le haut, là où le sens se joue — et le programme de recherche qui en découle ont leur siège au ch. 49 § 49.6, lieu unique pour toute la somme. Le présent chapitre en instrumente le versant outillé : ce que la pile du Web sémantique sait établir, et à quel prix.
 
@@ -149,9 +145,7 @@ L’adoption de cet appareil a longtemps buté sur la lourdeur perçue de la sé
 
 Là où REST expose des ressources et GraphQL un graphe typé propriétaire (ch. 1 § 1.4.1), **SPARQL** interroge directement le graphe RDF par appariement de motifs de triplets. Le langage dépasse la simple lecture : il couvre la mise à jour des graphes, l’agrégation, les sous-requêtes et les chemins de propriété, ce qui en fait une **API sémantique standardisée** plutôt qu’un langage de consultation cantonné.
 
-Pour l’intégration, sa contribution décisive est la **fédération** : une clause dédiée délègue une portion de requête à un service distant et recompose les résultats localement, autorisant une interrogation transversale de sources autonomes sans entreposage préalable ni copie des données. Cette capacité instancie au niveau
-
-sémantique le découplage de localisation : le consommateur raisonne sur un graphe logique unifié tandis que les données demeurent réparties et sous le contrôle de leurs propriétaires.
+Pour l’intégration, sa contribution décisive est la **fédération** : une clause dédiée délègue une portion de requête à un service distant et recompose les résultats localement, autorisant une interrogation transversale de sources autonomes sans entreposage préalable ni copie des données. Cette capacité instancie au niveau sémantique le découplage de localisation : le consommateur raisonne sur un graphe logique unifié tandis que les données demeurent réparties et sous le contrôle de leurs propriétaires.
 
 *La fédération présuppose toutefois que les sources aient aligné leurs vocabulaires*, faute de quoi la jointure échoue **silencieusement** sur des identifiants divergents. Ce mode d’échec est le plus pernicieux de la section : une requête fédérée mal alignée ne lève pas d’erreur, elle retourne un résultat vide ou partiel qui a toutes les apparences d’un résultat. Le préalable renvoie aux mécanismes d’alignement du § 2.3.4.
 

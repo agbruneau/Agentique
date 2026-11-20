@@ -1,0 +1,26 @@
+' Fig. 1. – Frise 2027-2035 des ancres réglementaires, normatives et post-quantiques vérifiées sur textes primaires
+' Source : 4 - Plan Directeur (Chapitre M-3, p. 43)
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam defaultFontName SansSerif
+skinparam defaultFontSize 11
+skinparam Padding 5
+
+title
+<b>Frise 2027–2035 des ancres vérifiées (67 ancres au registre, dont 2 de marché)</b>
+<size:11><color:#475569>Séparation entre textes adoptés [D], jalons annoncés [A] et obligations visant les administrations (adm.)</color></size>
+end title
+
+rectangle Frise #FFFFFF;line:CBD5E1 [
+  |= <#0F172A> <color:white>**Domaine / Paliers**</color> |= <#0F172A> <color:white>**Pont 2027**</color>\n<color:#CBD5E1>2027</color> |= <#0F172A> <color:white>**P1 · Fonder (2028–29)**</color>\n<color:#CBD5E1>2028 · 2029</color> |= <#0F172A> <color:white>**P2 · Étendre (2030–32)**</color>\n<color:#CBD5E1>2030 · 2031 · 2032</color> |= <#0F172A> <color:white>**P3 · Élargir (2033–35)**</color>\n<color:#CBD5E1>2033 · 2034 · 2035</color> |
+  |<#ECFDF5> <color:#166534>**Réglementation**</color>\n(42 ancres) |<#FFFFFF>  • <color:#166534>[D] 2027-05 BSIF E-23</color>\n• <color:#166534>[D] 2027-12 AI Act Ann. III & CRA</color>\n• <color:#2563EB>[A] Fin 2027 Règl. bancaire ouvert</color>  |<#FFFFFF>  • <color:#166534>[D] 2028-08 AI Act Ann. I</color>\n• <color:#166534>[D] 2028-10 ACVM 31-103 / B-15</color>  |<#FFFFFF>  • <color:#166534>[D] 2030-08 AI Act (adm.)</color>\n• <color:#166534>[D] 2031-08 Réex. AI Act (adm.)</color>  |<#FFFFFF>  • <color:#166534>[D] 2033-06 Temporisation lois fin. CAN</color>  |
+  |<#EFF6FF> <color:#1D4ED8>**Normalisation**</color>\n(9 ancres) |<#FFFFFF>  • <color:#166534>[D] 2027-03 TLS 100 j (CA/B)</color>\n• <color:#2563EB>[A] 2027-06/12 IETF DAWN</color>\n• <color:#2563EB>[A] 2027-08 Feuille route MCP</color>  |<#FFFFFF>  • <color:#2563EB>[A] 2028-01/03 DAWN & AGENTPROTO</color>\n• <color:#166534>[D] 2029-03 Certificats TLS 47 j</color>  |<#FFFFFF> |<#FFFFFF> |
+  |<#F5F3FF> <color:#6D28D9>**Post-quantique**</color>\n(14 ancres) |<#FFFFFF>  • <color:#166534>[D] 2027-04 Plan SCT (adm.)</color>  |<#FFFFFF>  • <color:#166534>[D] 2028-04 Inv. SCT (adm.)</color>  |<#FFFFFF>  • <color:#166534>[D] 2030 OMB HVA (adm.)</color>\n• <color:#2563EB>[A] Fin 2030 UE haut risque</color>\n• <color:#166534>[D] Fin 2031 SCT & OMB sign. (adm.)</color>\n• <color:#2563EB>Fenêtre G7 2030–32 (secteur fin.) [A]</color>  |<#FFFFFF>  • <color:#166534>[D] 2035 Fin PQC SCT/OMB [D] & G7/UE [A]</color>  |
+]
+
+legend bottom center
+  <color:#166534><b>[D] Texte adopté (force obligatoire)</b></color>   ·   <color:#2563EB><b>[A] Jalon annoncé ou feuille de route</b></color>   ·   (adm.) Vise les administrations publiques (EF-06)
+endlegend
+@enduml

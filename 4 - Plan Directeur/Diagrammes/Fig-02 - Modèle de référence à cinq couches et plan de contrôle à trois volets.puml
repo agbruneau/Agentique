@@ -5,6 +5,7 @@ top to bottom direction
 skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName SansSerif
+skinparam Padding 5
 skinparam linetype ortho
 skinparam nodesep 40
 skinparam ranksep 14
@@ -18,22 +19,22 @@ rectangle "<b>Clients, conseillers, réviseurs humains et agents externes mandat
 
 together {
     rectangle Layers #FFFFFF;line:FFFFFF [
-    |<#EFF6FF> <b>Couche 1 — Interaction</b>  <color:#2563EB>interaction</color>\nInterfaces déclaratives bornées, supervision liée,\ntransparence Loi 25, agents externes |
+    |<#EFF6FF>  <b>Couche 1 — Interaction</b>  <color:#2563EB>interaction</color>\nInterfaces déclaratives bornées, supervision liée,\ntransparence Loi 25, agents externes  |
     |<#FFFFFF> |
-    |<#EFF6FF> <b>Couche 2 — Agents et orchestration</b>  <color:#2563EB>agents-orchestration</color>\nEnveloppe déterministe, exécution durable, sagas\nidempotentes, délégation anti-boucle |
+    |<#EFF6FF>  <b>Couche 2 — Agents et orchestration</b>  <color:#2563EB>agents-orchestration</color>\nEnveloppe déterministe, exécution durable, sagas\nidempotentes, délégation anti-boucle  |
     |<#FFFFFF> |
-    |<#EFF6FF> <b>Couche 3 — Contexte et connaissance</b>  <color:#2563EB>contexte-connaissance</color>\nCouche sémantique, médiation sectorielle, contexte\ncompilé ACL, mémoire bi-temporelle |
+    |<#EFF6FF>  <b>Couche 3 — Contexte et connaissance</b>  <color:#2563EB>contexte-connaissance</color>\nCouche sémantique, médiation sectorielle, contexte\ncompilé ACL, mémoire bi-temporelle  |
     |<#FFFFFF> |
-    |<#EFF6FF> <b>Couche 4 — Accès</b>  <color:#2563EB>acces</color>\nPasserelle à 5 contrôles, schémas d'outils signés,\npatrimoine, API bancaires ouvertes |
+    |<#EFF6FF>  <b>Couche 4 — Accès</b>  <color:#2563EB>acces</color>\nPasserelle à 5 contrôles, schémas d'outils signés,\npatrimoine, API bancaires ouvertes  |
     |<#FFFFFF> |
-    |<#EFF6FF> <b>Couche 5 — Modèles</b>  <color:#2563EB>modeles</color>\nRoutage d'inférence 3 paliers, bac à sable sans réseau,\ncontinuité bimodèle, résidence d'état |
+    |<#EFF6FF>  <b>Couche 5 — Modèles</b>  <color:#2563EB>modeles</color>\nRoutage d'inférence 3 paliers, bac à sable sans réseau,\ncontinuité bimodèle, résidence d'état  |
     ]
 
     rectangle ControlPlane #FFFFFF;line:0F172A [
-    |<#0F172A> <color:white><b>Plan de contrôle possédé</b></color> |
-    |<#ECFDF5> <color:#166534><b>Volet A — Identité et sécurité</b></color>\n<color:#475569>controle-identite-securite</color>\n• Identités NHI parrainées\n• Délégation atténuée par saut\n• PDP déterministe hors modèle\n• Coupe-circuit et agilité PQC |
-    |<#EFF6FF> <color:#1D4ED8><b>Volet B — Observabilité & FinOps</b></color>\n<color:#475569>controle-observabilite-finops</color>\n• Traces causales normalisées\n• Double couloir PII souverain\n• Homologation simulation/canari\n• Coût par résultat & Scope 3 |
-    |<#F5F3FF> <color:#6D28D9><b>Volet C — Gouvernance & registre</b></color>\n<color:#475569>controle-gouvernance-registre</color>\n• Registre central & cote E-23\n• Matrice D1–D8 × Classes 1–6\n• Validation 2e/3e lignes\n• Tiers B-10 et réversibilité |
+    |<#0F172A>  <color:white><b>Plan de contrôle possédé</b></color>  |
+    |<#ECFDF5>  <color:#166534><b>Volet A — Identité et sécurité</b></color>\n<color:#475569>controle-identite-securite</color>\n• Identités NHI parrainées\n• Délégation atténuée par saut\n• PDP déterministe hors modèle\n• Coupe-circuit et agilité PQC  |
+    |<#EFF6FF>  <color:#1D4ED8><b>Volet B — Observabilité & FinOps</b></color>\n<color:#475569>controle-observabilite-finops</color>\n• Traces causales normalisées\n• Double couloir PII souverain\n• Homologation simulation/canari\n• Coût par résultat & Scope 3  |
+    |<#F5F3FF>  <color:#6D28D9><b>Volet C — Gouvernance & registre</b></color>\n<color:#475569>controle-gouvernance-registre</color>\n• Registre central & cote E-23\n• Matrice D1–D8 × Classes 1–6\n• Validation 2e/3e lignes\n• Tiers B-10 et réversibilité  |
     ]
 }
 

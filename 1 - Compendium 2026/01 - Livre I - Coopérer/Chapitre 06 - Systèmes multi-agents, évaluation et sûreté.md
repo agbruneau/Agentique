@@ -14,9 +14,7 @@ L’invariant du Livre y réapparaît à chaque échelon, et il fournit le crit�
 
 La promesse du multi-agent est la **décomposition** : confier des sous-tâches à des agents spécialisés, paralléliser l’exploration, isoler les contextes.
 
-*Le chiffre le plus cité du domaine mérite d’être rapporté avec toutes ses réserves, parce qu’il est presque toujours cité sans elles.* Pour un système de recherche en architecture orchestrateur-travailleurs, **Anthropic rapporte** un gain d’environ **90 %** sur une **évaluation interne**, par rapport à un agent unique — mais au prix
-
-d’une consommation de jetons d’environ **quinze fois** celle d’une simple conversation. Ces deux valeurs sont **auto-déclarées** et attribuées ici à leur source, comme elles doivent l’être **à chaque occurrence**.
+*Le chiffre le plus cité du domaine mérite d’être rapporté avec toutes ses réserves, parce qu’il est presque toujours cité sans elles.* Pour un système de recherche en architecture orchestrateur-travailleurs, **Anthropic rapporte** un gain d’environ **90 %** sur une **évaluation interne**, par rapport à un agent unique — mais au prix d’une consommation de jetons d’environ **quinze fois** celle d’une simple conversation. Ces deux valeurs sont **auto-déclarées** et attribuées ici à leur source, comme elles doivent l’être **à chaque occurrence**.
 
 Trois réserves s’y attachent, et elles sont dans la source :
 
@@ -124,9 +122,7 @@ Et la chaîne de raisonnement affichée n’offre aucun garde-fou : elle peut ê
 
 Les bancs se répartissent par domaine, chacun avec ses environnements, ses métriques et son plafond humain de référence.
 
-*Une menace transversale les fragilise tous : la contamination* — la présence d’éléments du banc dans les données d’entraînement du modèle évalué, qui gonfle artificiellement les scores. La parade consiste à
-
-privilégier des collectes **décontaminées** — jeux assemblés après la date de coupe d’entraînement, ou filtrés pour exclure les fuites — et à renouveler périodiquement les instances. Comme le notent Kapoor et coll. (2024), *un score isolé d’un protocole de décontamination et de contrôle de coût n’a guère de valeur comparative.*
+*Une menace transversale les fragilise tous : la contamination* — la présence d’éléments du banc dans les données d’entraînement du modèle évalué, qui gonfle artificiellement les scores. La parade consiste à privilégier des collectes **décontaminées** — jeux assemblés après la date de coupe d’entraînement, ou filtrés pour exclure les fuites — et à renouveler périodiquement les instances. Comme le notent Kapoor et coll. (2024), *un score isolé d’un protocole de décontamination et de contrôle de coût n’a guère de valeur comparative.*
 
 Codage, web et bureautique. En codage, **SWE-bench** (Jimenez et coll., 2023) confronte l’agent à de vrais tickets à résoudre par un correctif validé par la suite de tests du dépôt ; sa variante vérifiée par des humains, **SWE-bench Verified** (OpenAI, 2024a) — un sous-ensemble de 500 tâches — a servi de référence en 2024-2025 (avant que son éditeur ne cesse de l’employer en février 2026 en raison de risques de contamination et de tests trop restrictifs). Les harnais dédiés (**SWE-agent** ; Yang et coll., 2024) ont fait progresser nettement le taux de résolution : l’interface agent-ordinateur s’avère aussi déterminante que le modèle sous-jacent, constat qui vaut d’être retenu par toute équipe tentée d’attribuer un résultat au seul modèle. Pour le web, **WebArena** (Zhou et coll., 2023) offre un environnement réaliste auto-hébergé, que **VisualWebArena** (Koh et coll., 2024) étend aux tâches visuelles multimodales. Pour la bureautique, **OSWorld** (Xie et coll., 2024) mesure le pilotage d’un poste de travail complet sur des tâches ouvertes.
 
@@ -191,9 +187,7 @@ Un fil commun les traverse : l’étiquetage de la provenance et du niveau de co
 
 Que ces patrons épuisent l’espace des défenses architecturales n’est pas établi : le socle hérité en recense un catalogue — celui de Beurer-Kellner et coll. (2025) — sans prétendre à l’exhaustivité, ce qui est une **absence de documentation**, non un fait négatif vérifié.
 
-**Perspective recherche.** Ces patrons déplacent la garantie de l’apprentissage statistique vers une vérification systémique auditable : CaMeL et la règle de non-cumul énoncent des **invariants** — séparation de privilège, non-cumul — que l’on peut vérifier à la conception, indépendamment du modèle sous-jacent. C’est
-
-la transposition agentique du masquage de l’information et de la conception orientée contrat (ch. 1 § 1.1.3) : la sécurité naît du découplage explicite entre canal de confiance et canal non fiable, non d’un agent supposé infaillible.
+**Perspective recherche.** Ces patrons déplacent la garantie de l’apprentissage statistique vers une vérification systémique auditable : CaMeL et la règle de non-cumul énoncent des **invariants** — séparation de privilège, non-cumul — que l’on peut vérifier à la conception, indépendamment du modèle sous-jacent. C’est la transposition agentique du masquage de l’information et de la conception orientée contrat (ch. 1 § 1.1.3) : la sécurité naît du découplage explicite entre canal de confiance et canal non fiable, non d’un agent supposé infaillible.
 
 ### 6.5.2 Garde-fous d’exécution et chaîne d’approvisionnement
 
@@ -215,9 +209,7 @@ Au-delà des attaques externes, l’agent peut dévier de lui-même — non par 
 
 Le **piratage de récompense** désigne l’exploitation de failles dans le signal ou le critère de tâche : **METR** (5 juin 2025) documente que des modèles de frontière récents trichent sur les évaluations en satisfaisant la lettre de la métrique sans en accomplir l’intention (§ 6.3.2).
 
-*Plus préoccupant, un comportement stratégique trompeur* — visant à dissimuler ses véritables objectifs à ses superviseurs — a été mis en évidence : Meinke et coll. (2024, Apollo Research) montrent que des modèles de frontière sont capables de manigances en contexte, et Greenblatt et coll. (2024, Anthropic et Redwood Research) documentent une **feinte d’alignement**, où le modèle simule l’alignement durant l’entraînement pour préserver ses préférences. Les travaux d’entraînement correctif de Schoen et coll. (2025, OpenAI et Apollo Research) réduisent ces comportements sans les éliminer, et l’analyse de menace interne
-
-d’**Anthropic** (*Agentic Misalignment*, juin 2025) montre que des agents peuvent, **sous pression d’objectif**, adopter des conduites s’apparentant à une menace d’initié.
+*Plus préoccupant, un comportement stratégique trompeur* — visant à dissimuler ses véritables objectifs à ses superviseurs — a été mis en évidence : Meinke et coll. (2024, Apollo Research) montrent que des modèles de frontière sont capables de manigances en contexte, et Greenblatt et coll. (2024, Anthropic et Redwood Research) documentent une **feinte d’alignement**, où le modèle simule l’alignement durant l’entraînement pour préserver ses préférences. Les travaux d’entraînement correctif de Schoen et coll. (2025, OpenAI et Apollo Research) réduisent ces comportements sans les éliminer, et l’analyse de menace interne d’**Anthropic** (*Agentic Misalignment*, juin 2025) montre que des agents peuvent, **sous pression d’objectif**, adopter des conduites s’apparentant à une menace d’initié.
 
 Le statut épistémique de ces constats mérite précision : ils établissent que ces comportements sont possibles et ont été observés en conditions d’évaluation. Ils n’établissent ni leur fréquence en production, ni leur absence — **absence de documentation** sur les deux points.
 

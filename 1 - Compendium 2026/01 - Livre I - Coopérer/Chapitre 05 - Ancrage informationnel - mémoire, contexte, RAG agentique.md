@@ -66,9 +66,7 @@ L’ingénierie du contexte répond par un répertoire d’opérations désormai
 
 Le quatrième verbe fait débat, et le débat mérite d’être rapporté plutôt que tranché. Cognition (Yan, 2025) plaide au contraire pour un fil de contexte continu et un rédacteur unique (*single writer*) plutôt qu’un cloisonnement multi-agents, au motif que l’isolation fragmente le contexte partagé dont dépend la cohérence. Le ch. 6 § 6.1 retrouvera exactement cette tension en pesant le surcoût du multi-agent.
 
-Lecture de l’auteur — les deux positions ne portent vraisemblablement pas sur les mêmes tâches, ce qui expliquerait qu’elles coexistent sans se réfuter. Le socle rapporte les deux prises de position et le motif
-
-de la seconde ; il **n’établit pas** leurs domaines de validité respectifs, qu’aucune des deux ne déclare. La conciliation est proposée comme lecture, non comme constat.
+Lecture de l’auteur — les deux positions ne portent vraisemblablement pas sur les mêmes tâches, ce qui expliquerait qu’elles coexistent sans se réfuter. Le socle rapporte les deux prises de position et le motif de la seconde ; il **n’établit pas** leurs domaines de validité respectifs, qu’aucune des deux ne déclare. La conciliation est proposée comme lecture, non comme constat.
 
 Anthropic (2025c) présente l’ensemble de ces opérations comme la pratique consistant à curer délibérément l’ensemble minimal de jetons à haute valeur informationnelle, plutôt qu’à accumuler. C’est l’expression directe du fil du coût : chaque opération vise à maximiser le rendement informationnel **par jeton facturé**.
 
@@ -96,9 +94,7 @@ La mémoire de l’agent se matérialise par une stratification claire entre tro
 2. l’**espace de travail** (*scratchpad*) — où l’agent note des résultats partiels qu’il relira au sein de la même tâche ;
 3. le **magasin persistant** — ce qui survit **entre les sessions**.
 
-L’**outil de mémoire** d’Anthropic (2025e) instrumente ce dernier plan en tant que primitive, offrant à l’agent des opérations explicites pour écrire, relire et mettre à jour une mémoire externe. *Cette fonction était en bêta au gel de la source (juin 2026) ; elle est en disponibilité générale au gel unique de la somme* — constat pris à la
-
-documentation d’Anthropic le 27 juillet 2026, qui déclare l’absence de tout en-tête d’activation de bêta. Son identifiant de type reste daté, et c’est **lui** qui fixe le contrat : une fonction généralement disponible n’est pas une fonction dont l’interface a cessé de se versionner.
+L’**outil de mémoire** d’Anthropic (2025e) instrumente ce dernier plan en tant que primitive, offrant à l’agent des opérations explicites pour écrire, relire et mettre à jour une mémoire externe. *Cette fonction était en bêta au gel de la source (juin 2026) ; elle est en disponibilité générale au gel unique de la somme* — constat pris à la documentation d’Anthropic le 27 juillet 2026, qui déclare l’absence de tout en-tête d’activation de bêta. Son identifiant de type reste daté, et c’est **lui** qui fixe le contrat : une fonction généralement disponible n’est pas une fonction dont l’interface a cessé de se versionner.
 
 Au-dessus de cette mécanique, une convention s’est imposée pour la mémoire procédurale **durable** : les fichiers de configuration d’agent relus au démarrage. Le format `AGENTS.md`, confié à l’Agentic AI Foundation de la Linux Foundation le **9 décembre 2025**, et son équivalent `CLAUDE.md` codifient, dans un fichier versionné avec le projet, les consignes, conventions et routines que l’agent doit appliquer à chaque exécution.
 
@@ -177,9 +173,7 @@ La récupération itérative entrelacée au raisonnement — IRCoT (Trivedi et c
 
 La qualité d’un système de récupération se joue d’abord au stade de la récupération et de l’ingestion, en amont de toute boucle agentique. C’est un ordre de priorité que la fascination pour la boucle fait souvent oublier.
 
-**Côté récupération**, la pratique a convergé vers l’**hybridation**. La recherche **dense** par plongements — DPR (Karpukhin et coll., 2020), Contriever (Izacard et coll., 2022) — est forte sur la proximité sémantique ; la
-
-recherche **lexicale** creuse, de type BM25, reste supérieure sur les termes rares, les identifiants et les correspondances exactes. Les listes de résultats sont fusionnées par la fusion de rangs réciproques (*Reciprocal Rank Fusion*, RRF), qui combine les rangs sans recalibrer les scores, puis un **réordonnanceur** — modèle d’interaction tardive comme ColBERT (Khattab et Zaharia, 2020), ou réordonnanceur croisé — affine le classement final sur un petit ensemble de candidats. Le choix des encodeurs et des réordonnanceurs s’appuie sur des bancs dédiés : BEIR (Thakur et coll., 2021) pour la généralisation sans exemple (*zero-shot*), MTEB (Muennighoff et coll., 2023) pour les plongements de texte. Les techniques d’**expansion de requête** — HyDE (Gao et coll., 2023), qui génère un document hypothétique pour densifier la recherche — complètent l’arsenal.
+**Côté récupération**, la pratique a convergé vers l’**hybridation**. La recherche **dense** par plongements — DPR (Karpukhin et coll., 2020), Contriever (Izacard et coll., 2022) — est forte sur la proximité sémantique ; la recherche **lexicale** creuse, de type BM25, reste supérieure sur les termes rares, les identifiants et les correspondances exactes. Les listes de résultats sont fusionnées par la fusion de rangs réciproques (*Reciprocal Rank Fusion*, RRF), qui combine les rangs sans recalibrer les scores, puis un **réordonnanceur** — modèle d’interaction tardive comme ColBERT (Khattab et Zaharia, 2020), ou réordonnanceur croisé — affine le classement final sur un petit ensemble de candidats. Le choix des encodeurs et des réordonnanceurs s’appuie sur des bancs dédiés : BEIR (Thakur et coll., 2021) pour la généralisation sans exemple (*zero-shot*), MTEB (Muennighoff et coll., 2023) pour les plongements de texte. Les techniques d’**expansion de requête** — HyDE (Gao et coll., 2023), qui génère un document hypothétique pour densifier la recherche — complètent l’arsenal.
 
 **Côté ingestion**, le découpage naïf en fenêtres de taille fixe brise le contexte et dégrade la pertinence. Deux techniques y répondent : le découpage **contextuel**, qui préfixe chaque fragment d’un résumé situant sa place dans le document, et le découpage **tardif** (*late chunking*), qui encode le document entier **avant** de le segmenter, pour que chaque fragment hérite du contexte global.
 

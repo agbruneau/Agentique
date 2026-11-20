@@ -6,6 +6,12 @@ top to bottom direction
 skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
+skinparam rectangle<<invis>> {
+  BackgroundColor transparent
+  BorderColor transparent
+  FontColor transparent
+  FontSize 1
+}
 skinparam rectangle {
   BackgroundColor #F8FAFC
   BorderColor #334155
@@ -34,7 +40,7 @@ rectangle ZeroTrust #FEF2F2;line:DC2626 [
   Kill Switches SOC
 ]
 
-rectangle Couches #FFFFFF;line:FFFFFF {
+rectangle " " as Couches <<invis>> {
   rectangle C6 #EFF6FF;line:1E3A8A [
     **Couche 6 — Gouvernance, Conformité Légale et Commerce Agentique B2B**
     Cadres : ISO/IEC 42001 • EU AI Act (2026–2027) • BSIF E-23 (mai 2027) • Loi 25 • NIST AI Agent Standards

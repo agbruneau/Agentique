@@ -27,18 +27,18 @@ Le **Palier 1 (**`2028-2029` **— Fonder)** répond à une exigence non négoci
 > - Initiatives structurantes
 > - Prérequis
 > - fin 2027
-> - • Registre E-23, NHI & TLS 47 j
-> - • Passerelle 5 contrôles & sas
-> - • Sagas & Loi 25 art. 12.1
-> - • Coût complet & clauses B-10
-> - • Sémantique & mémoire bi-temp.
-> - • PQC ML-DSA/SLH-DSA (CAP-040)
-> - • Lecture ouverte 99,5 % (CAP-026)
-> - • Fédération multi-plateformes
-> - • Mandats externes (CAP-014/041)
-> - • Espaces fédérés & enclave
-> - • Alignement lois fin. post-2033
-> - • Achèvement PQC de bout en bout
+> - Registre E-23, NHI & TLS 47 j
+> - Passerelle 5 contrôles & sas
+> - Sagas & Loi 25 art. 12.1
+> - Coût complet & clauses B-10
+> - Sémantique & mémoire bi-temp.
+> - PQC ML-DSA/SLH-DSA (CAP-040)
+> - Lecture ouverte 99,5 % (CAP-026)
+> - Fédération multi-plateformes
+> - Mandats externes (CAP-014/041)
+> - Espaces fédérés & enclave
+> - Alignement lois fin. post-2033
+> - Achèvement PQC de bout en bout
 > - Portes sur preuve (POR)
 > - POR-001..003 NHI, TLS 47 j, Loi 25, 10 s
 > - POR-004 (Sortie P1) CPO, tiers B-10, fin CUA
@@ -57,7 +57,7 @@ Le **Palier 1 (**`2028-2029` **— Fonder)** répond à une exigence non négoci
 
 *Fig. 6. – Frise 2028-2035 des trois paliers, de leurs portes et des échéances réglementaires*
 
-Rapporté aux jalons du Compendium 2027 (C27, § 43.1, § 43.2), ce premier palier accomplit les **Jalons 1 et 2** (recensement intégral, identité distincte, médiation d’outils et homologation répétée) afin d’amener l’ensemble des domaines d’affaires prioritaires (`D1` à `D8`) du stade `1` vers un **Stade 2 solide (Usage encadré)** à la sortie de 2029 C : tous ; SIG-101 . Durant ces vingt-quatre mois, l’autonomie en production est volontairement circonscrite : les tâches de lecture et de synthèse (`Classe 1`) se généralisent; les actions internes réversibles à faible matérialité (`Classe 2`) s’ouvrent sous compensation éprouvée sur `D4`, `D6` et `D8`; en revanche, toute décision matérielle (`Classe 3`), irréversible (`Classe 4`) ou visant une personne (`Classe 5`) sur `D2`, `D3` et `D5` demeure strictement subordonnée à une approbation humaine synchrone liée aux paramètres (`CAP-002`), la `Classe 6` restant techniquement interdite (`CAP-037`).
+Rapporté aux jalons du Compendium 2027 (C27, § 43.1, § 43.2), ce premier palier accomplit les **Jalons 1 et 2** (recensement intégral, identité distincte, médiation d’outils et homologation répétée) afin d’amener l’ensemble des domaines d’affaires prioritaires (`D1` à `D8`) du stade `1` vers un **Stade 2 solide (Usage encadré)** à la sortie de 2029 C : tous ; SIG-101. Durant ces vingt-quatre mois, l’autonomie en production est volontairement circonscrite : les tâches de lecture et de synthèse (`Classe 1`) se généralisent; les actions internes réversibles à faible matérialité (`Classe 2`) s’ouvrent sous compensation éprouvée sur `D4`, `D6` et `D8`; en revanche, toute décision matérielle (`Classe 3`), irréversible (`Classe 4`) ou visant une personne (`Classe 5`) sur `D2`, `D3` et `D5` demeure strictement subordonnée à une approbation humaine synchrone liée aux paramètres (`CAP-002`), la `Classe 6` restant techniquement interdite (`CAP-037`).
 
 ## 20.2 Architecture de transition à la sortie du palier
 

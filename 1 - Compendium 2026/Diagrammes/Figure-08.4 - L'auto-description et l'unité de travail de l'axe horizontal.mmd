@@ -1,10 +1,9 @@
 %% Figure 8.4 — L'auto-description et l'unité de travail de l'axe horizontal : la carte, la tâche, le message.
 %% Source : 1 - Compendium 2026, Chapitre 8 (page 98)
 
-%%{init: {'flowchart': {'wrappingWidth': 900}}}%%
+%%{init: {'flowchart': {'wrappingWidth': 1150}}}%%
 flowchart TB
     subgraph SG_STR["TROIS STRUCTURES DE LA VERSION 1.0"]
-        direction TB
         S3["<b>3 · Message · partie · artefact</b><br/>La hiérarchie autour de laquelle les échanges s'articulent."]
         S2["<b>2 · Tâche</b><br/>L'unité de travail : un objet à état — soumise, en cours, requérant une entrée, achevée, échouée, annulée, rejetée."]
         S1["<b>1 · Agent Card</b><br/>Document publié à un emplacement bien connu : identité, capacités, modalités d'interaction. Signée depuis la v1.0."]
@@ -13,7 +12,7 @@ flowchart TB
 
     NOTE["La signature lie l'authenticité de la carte à son DOMAINE D'ORIGINE — elle ne dit rien du comportement de l'agent qu'elle<br/>décrit. L'écart entre ce qu'une carte déclare et ce qu'un agent fait est l'objet du ch. 9 § 9.4.2, et aucun mécanisme de la<br/>v1.0 ne le ferme."]
 
-    SG_STR ~~~ NOTE
+    S1 ~~~ NOTE
 
     classDef card fill:#FAF7F2,stroke:#C4BEB5,stroke-width:1px,color:#222222,text-align:left;
     classDef noteBox fill:#F7F5F0,stroke:#C4BEB5,stroke-width:1px,color:#333333,text-align:left;

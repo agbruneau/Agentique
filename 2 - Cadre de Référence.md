@@ -1079,25 +1079,25 @@ Cette section présente la structure générale et la règle qui la tient ensemb
 > - ERP, CRM, systèmes de dossiers, entrepôts de données, SaaS : exposés tels quels, sans réécriture
 > - PLANS TRANSVERSAUX
 > - A · Identité et sécurité
-> - • Identité propre par agent (SPIFFE, OIDC)
-> - • Jetons délégués courts (RFC 8693)
-> - • Moteur de politiques, paliers d’outils
-> - • Coffre de secrets, garde-fous, DLP
-> - • Approbation humaine signée
+> - Identité propre par agent (SPIFFE, OIDC)
+> - Jetons délégués courts (RFC 8693)
+> - Moteur de politiques, paliers d’outils
+> - Coffre de secrets, garde-fous, DLP
+> - Approbation humaine signée
 > - B · Observabilité, évaluation, FinOps
-> - • Traces OpenTelemetry (GenAI)
-> - • Contexte W3C de bout en bout
-> - • Budgets, coût par tâche réussie
+> - Traces OpenTelemetry (GenAI)
+> - Contexte W3C de bout en bout
+> - Budgets, coût par tâche réussie
 > - C · Gouvernance et registre
-> - • Registre des agents et serveurs MCP
-> - • Classes de risque, niveaux N0 à N4
-> - • Cycle de vie et homologation
-> - • Dérogations, indicateurs
-> - • Comité d’architecture et des
+> - Registre des agents et serveurs MCP
+> - Classes de risque, niveaux N0 à N4
+> - Cycle de vie et homologation
+> - Dérogations, indicateurs
+> - Comité d’architecture et des
 > - risques agentiques
 > - Demandes descendantes (mandant, trace, plafonds) Résultats et artefacts remontants
-> - • Journal d’audit chaîné et ancré
-> - • Évaluation continue (3 étages)
+> - Journal d’audit chaîné et ancré
+> - Évaluation continue (3 étages)
 > - Interdit : un agent n’atteint jamais un système ou un outil sans passer par la passerelle et le catalogue, hors fonction locale P0-P1 (EXIG-ARC-01)
 > - Mémoire de travail
 > - Ressources, mémoires épisodique et sémantique →
@@ -1832,17 +1832,17 @@ Dans l’entreprise, la passerelle d’agents s’insère entre les hôtes et le
 > - Streamable
 > - HTTP + TLS
 > - Passerelle d’agents
-> - • valide le jeton (audience)
-> - • compare en-têtes et corps
+> - valide le jeton (audience)
+> - compare en-têtes et corps
 > - Mcp-Method, Mcp-Name
-> - • filtre tools/list selon
+> - filtre tools/list selon
 > - les portées du jeton
-> - • applique paliers P0–P3
-> - • cache selon cacheScope
-> - • propage traceparent
-> - • bloque tout serveur
+> - applique paliers P0–P3
+> - cache selon cacheScope
+> - propage traceparent
+> - bloque tout serveur
 > - absent du catalogue
-> - • journalise chaque appel
+> - journalise chaque appel
 > - Serveur MCP de domaine
 > - Outils
 > - tools/call
@@ -1865,7 +1865,7 @@ Dans l’entreprise, la passerelle d’agents s’insère entre les hôtes et le
 > - POST /mcp · MCP-Protocol-Version: 2026-07-28 · Mcp-Method: tools/call · Mcp-Name: approvisionnement_creer_bon_commande
 > - Authorization: Bearer <jeton émis pour ce point d’accès de la passerelle>
 > - {"jsonrpc":"2.0","id":42,"method":"tools/call","params":{"name":"approvisionnement_creer_bon_commande","arguments":{…},
-> - • retire les clés _meta non admises
+> - retire les clés _meta non admises
 > - "_meta":{"io.modelcontextprotocol/protocolVersion":"2026-07-28","traceparent":"00-…"}}}
 > - EMA : statut Évaluer, pilotes seulement (section 6.3)
 > - →
@@ -1917,7 +1917,7 @@ La révision 2026-07-28 rend le protocole sans état. Pour l’exploitation, c�
 | **Requêtes à allers-retours multiples (MRTR, SEP-2322).** Les requêtes initiées par le serveur (`roots/list`, `sampling/createMessage`, `elicitation/create`) cèdent la place à un résultat `InputRequiredResult`; le client relance la requête d’origine avec les réponses et un `requestState` opaque. MRTR s’applique à `tools/call`, `resources/read` et `prompts/get`**[200]**. | Une précision ou une décision humaine s’obtient sans flux ouvert de longue durée; le `requestState` devient une entrée non fiable à protéger (EXIG-MCP-17). La relance garde la clé d’idempotence et compte pour une seule opération au budget et à l’audit; un passage soldé par `input_required` ne consomme pas le jeton d’approbation (section 8.5). |
 | **Indices de cache.** `ttlMs` et `cacheScope` obligatoires sur les résultats complets de `tools/list`, `prompts/list`, `resources/list`, `resources/templates/list`, `resources/read` (SEP-2549) et `server/discover`**[168, 201]**. | Cache de passerelle possible; un cache « private » n’est jamais partagé entre contextes d’autorisation (EXIG-MCP-03). |
 | **Abonnements.** `subscriptions/listen` remplace le point d’accès GET et `resources/subscribe`; la reprise de flux par `Last-Event-ID` est retirée**[168, 190]**. | Notifications limitées aux types demandés par le client; les méthodes GET et DELETE ne servent plus. |
-| **Extensions officielles.** Selon le journal des modifications de la révision 2026-07-28, les tâches longues quittent le cœur pour l’extension officielle `io.` `modelcontextprotocol/tasks` (SEP-2663); MCP Apps est une extension officielle; toute extension est désactivée par défaut et s’active explicitement des deux côtés**[168, 169, 191, 202]**. | Liste d’extensions autorisées au catalogue, quotas pour les tâches, revue des interfaces (EXIG-MCP-04). |
+| **Extensions officielles.** Selon le journal des modifications de la révision 2026-07-28, les tâches longues quittent le cœur pour l’extension officielle `io.modelcontextprotocol/tasks` (SEP-2663); MCP Apps est une extension officielle; toute extension est désactivée par défaut et s’active explicitement des deux côtés**[168, 169, 191, 202]**. | Liste d’extensions autorisées au catalogue, quotas pour les tâches, revue des interfaces (EXIG-MCP-04). |
 | **Schémas.** `inputSchema` et `outputSchema` acceptent tout mot-clé de JSON Schema 2020-12 (SEP-2106), dialecte par défaut; un autre dialecte peut être déclaré par `$schema`**[168, 197, 201]**. | Contrats plus expressifs; validateurs à durcir contre les références réseau (EXIG-MCP-19). |
 | **Cycle de vie.** États *Active*, *Deprecated* et *Removed* (SEP-2596) : une fonctionnalité dépréciée reste dans la spécification au moins douze mois, ou au moins 90 jours en cas de retrait accéléré pour un risque de sécurité actif (avis de sécurité publié ou exploitation documentée)**[34, 196]**. | Migrations planifiées au catalogue, avec échéances (EXIG-MCP-22). |
 | **Dépréciations et retraits.** Sont dépréciés Roots, Sampling, la journalisation protocolaire, l’enregistrement dynamique de clients (DCR), l’ancien transport HTTP+SSE et les valeurs `includeContext` « thisServer » et « allServers »; `ping`, `logging/setLevel` et `notifications/roots/list_changed` sont retirés directement, comme conséquences du passage sans état (SEP-2575) : la politique de cycle de vie, adoptée dans la même révision, ne vise pas ces retraits, et la journalisation protocolaire dépréciée n’a plus de réglage de niveau. Le retrait de Roots, de Sampling, de la journalisation et du DCR est possible à partir de la première révision publiée le 28 juillet 2027 ou après (celui d’`includeContext` suit Sampling; celui du transport HTTP+SSE, trois mois après que la SEP-2596 atteint l’état final, soit dès le début de septembre 2026, cette SEP étant finale depuis le 3 juin 2026 : annexe H)**[168, 196]**. | Paramètres d’outil ou URI de ressource au lieu de Roots; appels aux modèles par la passerelle de modèles au lieu de Sampling; sortie d’erreur standard ou OpenTelemetry au lieu de la journalisation protocolaire. |
@@ -1947,7 +1947,7 @@ Pourquoi : les extensions sont désactivées par défaut et s’identifient par 
 
 Chaque primitive répond à un besoin distinct. Une **ressource** convient quand on sait quelle entité charger : `crm://comptes/9482/sommaire` est déclarée sans effet par le serveur, classée au catalogue comme une lecture (palier P0 ou P1) et se met en cache selon `ttlMs`. Un **outil** convient aux recherches dynamiques, aux calculs et aux écritures, sous un contrat d’entrée strict. Une **invite** publie une procédure normalisée d’un domaine, par exemple la vérification d’un nouveau fournisseur, pour que chaque agent n’ait pas à la réécrire; elle se gère comme la mémoire procédurale, c’est-à-dire comme du code versionné et revu (section 5.5).
 
-La granularité compte autant que le choix de la primitive. Un serveur qui recopie une API de soixante opérations en soixante outils encombre le contexte du modèle et multiplie les occasions de choisir le mauvais outil ou le mauvais paramètre. Un outil `approvisionnement_creer_bon_commande` , qui valide en une seule opération le fournisseur, le centre de coûts et les lignes, se gouverne mieux et se teste plus facilement. Les équipes ne réécrivent pas leurs services REST : des adaptateurs de composition traduisent les opérations OpenAPI pertinentes en outils orientés tâche, qui valident les règles métier (section 5.2 et EXIG-MCP-06).
+La granularité compte autant que le choix de la primitive. Un serveur qui recopie une API de soixante opérations en soixante outils encombre le contexte du modèle et multiplie les occasions de choisir le mauvais outil ou le mauvais paramètre. Un outil `approvisionnement_creer_bon_commande`, qui valide en une seule opération le fournisseur, le centre de coûts et les lignes, se gouverne mieux et se teste plus facilement. Les équipes ne réécrivent pas leurs services REST : des adaptateurs de composition traduisent les opérations OpenAPI pertinentes en outils orientés tâche, qui valident les règles métier (section 5.2 et EXIG-MCP-06).
 
 Lorsque les outils deviennent nombreux, les bonnes pratiques de MCP recommandent à l’hôte, au-delà d’un seuil de l’ordre de 1 à 5 % de la fenêtre de contexte, d’offrir un méta-outil de recherche et de ne charger les définitions complètes qu’au besoin, en les ajoutant après le point de rupture du cache plutôt qu’en
 
@@ -2001,7 +2001,7 @@ La spécification prescrit des jetons porteurs; elle n’exige ni mTLS ni DPoP, 
 
 Tout serveur MCP, hormis un serveur local en stdio sur un poste de développement (EXIG-MCP-08), **DOIT** exiger une autorisation OAuth conforme à la spécification MCP de la révision de référence épinglée au catalogue (valeur initiale : 2026-07-28) : métadonnées de ressource protégée (RFC 9728),
 
-indicateur de ressource (RFC 8707) portant l’URI canonique, vérification de l’audience à chaque requête et jeton transmis uniquement par l’en-tête `Authorization`. Chaque serveur publié séparément a sa propre URI canonique; en mode agrégé, les portées sont préfixées par l’identifiant du serveur au catalogue, et la passerelle vérifie que chaque appel vise un serveur couvert par les portées du jeton. Les clients MCP de l’entreprise **DOIVENT** employer PKCE avec S256 (en vérifiant que les métadonnées du serveur d’autorisation annoncent `code_challenge_methods_supported` et en refusant de poursuivre sinon) et, avant d’échanger le code d’autorisation, valider `iss` (RFC 9207) s’il est présent, rejeter la réponse qui en est dépourvue alors que les métadonnées du serveur d’autorisation annoncent son support et, face à un serveur d’autorisation qui ne l’annonce pas, employer une `redirect_uri` distincte par serveur d’autorisation et vérifier l’émetteur attendu pour la transaction (RFC 9700). Les serveurs d’autorisation de l’entreprise **DOIVENT** publier ces annonces et toujours émettre `iss` (avec `authorization_response_` `iss_parameter_supported: true` ).
+indicateur de ressource (RFC 8707) portant l’URI canonique, vérification de l’audience à chaque requête et jeton transmis uniquement par l’en-tête `Authorization`. Chaque serveur publié séparément a sa propre URI canonique; en mode agrégé, les portées sont préfixées par l’identifiant du serveur au catalogue, et la passerelle vérifie que chaque appel vise un serveur couvert par les portées du jeton. Les clients MCP de l’entreprise **DOIVENT** employer PKCE avec S256 (en vérifiant que les métadonnées du serveur d’autorisation annoncent `code_challenge_methods_supported` et en refusant de poursuivre sinon) et, avant d’échanger le code d’autorisation, valider `iss` (RFC 9207) s’il est présent, rejeter la réponse qui en est dépourvue alors que les métadonnées du serveur d’autorisation annoncent son support et, face à un serveur d’autorisation qui ne l’annonce pas, employer une `redirect_uri` distincte par serveur d’autorisation et vérifier l’émetteur attendu pour la transaction (RFC 9700). Les serveurs d’autorisation de l’entreprise **DOIVENT** publier ces annonces et toujours émettre `iss` (avec `authorization_response_iss_parameter_supported: true`).
 
 Pourquoi : la spécification laisse l’autorisation facultative**[209]**; le cadre la rend obligatoire, car un outil sans contrôle d’accès ouvre directement les systèmes d’enregistrement, et l’émission de `iss` protège contre la confusion entre serveurs d’autorisation.
 
@@ -2079,7 +2079,7 @@ selon celle que déclare l’appelant. La passerelle fonde ses décisions d’au
 
 Pourquoi : la spécification impose ce rejet à tout serveur qui traite le corps et recommande à un intermédiaire dont la politique repose sur ces en-têtes de rejeter les requêtes d’une révision antérieure, qui n’imposait pas cette validation**[190]**.
 
-Dans MCP, le code HTTP 403 signale un en-tête `Origin` invalide (transport) ou des portées invalides ou des permissions insuffisantes (autorisation); une divergence d’en-têtes relève du code 400**[190, 209]**. Le champ `_meta`, lui, ne peut pas être purgé en bloc : les clés `io.modelcontextprotocol/protocolVersion` et `io.` `modelcontextprotocol/clientCapabilities` y sont obligatoires, sous peine de rejet par l’erreur −32602, et les clés `traceparent`, `tracestate` et `baggage` y transportent le contexte de trace selon W3C Trace Context et W3C Baggage (SEP-414)**[162, 168]**. Les conventions OpenTelemetry pour MCP, au niveau Development, nomment les *spans* d’après la méthode appelée (attribut `mcp.method.name`)**[386]**; leur emploi est réglé à la section 10.1. Un serveur ne se fie pas non plus à une capacité que le client n’a pas déclarée : il renvoie alors l’erreur −32021**[162]**.
+Dans MCP, le code HTTP 403 signale un en-tête `Origin` invalide (transport) ou des portées invalides ou des permissions insuffisantes (autorisation); une divergence d’en-têtes relève du code 400**[190, 209]**. Le champ `_meta`, lui, ne peut pas être purgé en bloc : les clés `io.modelcontextprotocol/protocolVersion` et `io.modelcontextprotocol/clientCapabilities` y sont obligatoires, sous peine de rejet par l’erreur −32602, et les clés `traceparent`, `tracestate` et `baggage` y transportent le contexte de trace selon W3C Trace Context et W3C Baggage (SEP-414)**[162, 168]**. Les conventions OpenTelemetry pour MCP, au niveau Development, nomment les *spans* d’après la méthode appelée (attribut `mcp.method.name`)**[386]**; leur emploi est réglé à la section 10.1. Un serveur ne se fie pas non plus à une capacité que le client n’a pas déclarée : il renvoie alors l’erreur −32021**[162]**.
 
 `EXIG-MCP-16` **· DOIT**
 
@@ -2203,7 +2203,7 @@ Pourquoi : un contrat d’échange unique évite une intégration ad hoc par pai
 
 #### Carte d’agent 1.0
 
-La carte d’agent *(Agent Card)* est le contrat public d’un agent : un document JSON qui dit qui il est, ce qu’il sait faire, où le joindre et comment s’authentifier. Un agent exposé la publie à `https://{domaine}/.` `well-known/agent-card.json` , URI unique par nom d’hôte : chaque agent exposé reçoit donc son propre nom d’hôte (p. ex. `risque-credit.agents.ent.ca`), à défaut de quoi le champ `tenant` distingue les agents d’un même point d’accès; l’ancien chemin `/.well-known/agent.json` appartient aux versions 0.1 et 0.2, désormais obsolètes**[30, 68]**. La définition normative des objets est le fichier `a2a.proto`, sérialisé en ProtoJSON; les énumérations s’écrivent en majuscules préfixées, par exemple `TASK_STATE_WORKING`**[68]**. Le tableau 19 résume les champs et les règles du cadre; un exemple complet figure à l’annexe C.
+La carte d’agent *(Agent Card)* est le contrat public d’un agent : un document JSON qui dit qui il est, ce qu’il sait faire, où le joindre et comment s’authentifier. Un agent exposé la publie à `https://{domaine}/.well-known/agent-card.json`, URI unique par nom d’hôte : chaque agent exposé reçoit donc son propre nom d’hôte (p. ex. `risque-credit.agents.ent.ca`), à défaut de quoi le champ `tenant` distingue les agents d’un même point d’accès; l’ancien chemin `/.well-known/agent.json` appartient aux versions 0.1 et 0.2, désormais obsolètes**[30, 68]**. La définition normative des objets est le fichier `a2a.proto`, sérialisé en ProtoJSON; les énumérations s’écrivent en majuscules préfixées, par exemple `TASK_STATE_WORKING`**[68]**. Le tableau 19 résume les champs et les règles du cadre; un exemple complet figure à l’annexe C.
 
 *Tableau 19 — Champs de la carte d’agent A2A 1.0 et règles du cadre*
 
@@ -2471,7 +2471,7 @@ Sur Kafka, la liaison CloudEvents offre un mode binaire (attributs, sauf `dataco
 
 **Enveloppe CloudEvents complète**
 
-Tout événement produit ou consommé par un agent **DOIT** respecter CloudEvents 1.0 et porter, en plus des quatre attributs requis, `time` et, dès que l’événement porte `data`, `datacontenttype` et `dataschema` (exigence du cadre; pour un événement par référence, `dataschema` décrit la ressource que vise `dataref`). Un événement d’un système existant que consomme un agent passe par un adaptateur de mise en conformité. Le `type` **DOIT** être un nom en domaine inversé qui inclut sa version (exigence du cadre; la norme recommande seulement le préfixe en domaine inversé), par exemple `ca.ent.logistique.alerte.` `rupture.v1` .
+Tout événement produit ou consommé par un agent **DOIT** respecter CloudEvents 1.0 et porter, en plus des quatre attributs requis, `time` et, dès que l’événement porte `data`, `datacontenttype` et `dataschema` (exigence du cadre; pour un événement par référence, `dataschema` décrit la ressource que vise `dataref`). Un événement d’un système existant que consomme un agent passe par un adaptateur de mise en conformité. Le `type` **DOIT** être un nom en domaine inversé qui inclut sa version (exigence du cadre; la norme recommande seulement le préfixe en domaine inversé), par exemple `ca.ent.logistique.alerte.rupture.v1`.
 
 Pourquoi : un consommateur doit savoir, sans ouvrir la charge utile, ce qu’il reçoit, quand le fait s’est produit (ou, si cet instant est inconnu, l’heure que la source retient de façon uniforme) et quel schéma le valide.
 
@@ -3693,9 +3693,9 @@ Un « oui, je confirme » écrit dans la conversation de l’agent ne prouve rie
 > - 7
 > - invalide l’approbation exécution, puis audit
 > - N’est jamais une approbation
-> - • un « oui » écrit dans la conversation de l’agent
-> - • un résumé rédigé par l’agent
-> - • une approbation donnée pour d’autres arguments
+> - un « oui » écrit dans la conversation de l’agent
+> - un résumé rédigé par l’agent
+> - une approbation donnée pour d’autres arguments
 > - prépare l’action
 > - appel soumis à approbation, sans jeton
 > - h = SHA-256(JCS({outil, version, definition_digest, agent_id, task_id, arguments}))
@@ -3916,9 +3916,9 @@ Un agent n’est ni une personne, ni un compte de service partagé (section 3.4)
 
 #### Émettre l’identité
 
-SPIFFE et SPIRE sont des projets diplômés de la Cloud Native Computing Foundation (annonce du 20 septembre 2022; niveau « Graduated » atteint le 23 août 2022 pour SPIFFE et le 22 août 2022 pour SPIRE selon leurs pages de projet)**[116, 117, 321]**. Un SPIFFE ID prend la forme `spiffe://domaine-de-confiance/` `chemin` . Le justificatif correspondant, le SVID, existe en deux formats, X.509-SVID et JWT-SVID, tous deux délivrés par la Workload API sans secret préalable; l’X.509-SVID est renouvelé automatiquement, tandis que le JWT-SVID, de courte durée, est redemandé au besoin; SPIFFE recommande l’X.509-SVID lorsque c’est possible, car un JWT-SVID peut être rejoué**[322]**. La fédération d’identité OpenID Connect (OIDC) des fournisseurs infonuagiques (identités gérées) offre une solution équivalente pour les agents hébergés sur une seule plateforme.
+SPIFFE et SPIRE sont des projets diplômés de la Cloud Native Computing Foundation (annonce du 20 septembre 2022; niveau « Graduated » atteint le 23 août 2022 pour SPIFFE et le 22 août 2022 pour SPIRE selon leurs pages de projet)**[116, 117, 321]**. Un SPIFFE ID prend la forme `spiffe://domaine-de-confiance/chemin`. Le justificatif correspondant, le SVID, existe en deux formats, X.509-SVID et JWT-SVID, tous deux délivrés par la Workload API sans secret préalable; l’X.509-SVID est renouvelé automatiquement, tandis que le JWT-SVID, de courte durée, est redemandé au besoin; SPIFFE recommande l’X.509-SVID lorsque c’est possible, car un JWT-SVID peut être rejoué**[322]**. La fédération d’identité OpenID Connect (OIDC) des fournisseurs infonuagiques (identités gérées) offre une solution équivalente pour les agents hébergés sur une seule plateforme.
 
-Le brouillon WIMSE « Workload Identity Practices » ( `draft-ietf-wimse-workload-identity-practices-07` , version du 22 septembre 2026, soumis le 30 juin 2026 au groupe de pilotage de l’ingénierie Internet (IESG); la révision −08 du 30 octobre 2026 est en dernier appel IETF jusqu’au 13 novembre 2026) recommande des justificatifs émis par la plateforme, de courte durée et ne dépassant pas la vie de l’instance, une audience distincte par cible, la preuve de possession, l’abandon des variables d’environnement lorsque la plateforme offre mieux et l’invalidation à la fin de la charge de travail**[323]**. Ces deux brouillons WIMSE ne sont pas des RFC; le cadre s’en sert comme références de conception.
+Le brouillon WIMSE « Workload Identity Practices » (`draft-ietf-wimse-workload-identity-practices-07`, version du 22 septembre 2026, soumis le 30 juin 2026 au groupe de pilotage de l’ingénierie Internet (IESG); la révision −08 du 30 octobre 2026 est en dernier appel IETF jusqu’au 13 novembre 2026) recommande des justificatifs émis par la plateforme, de courte durée et ne dépassant pas la vie de l’instance, une audience distincte par cible, la preuve de possession, l’abandon des variables d’environnement lorsque la plateforme offre mieux et l’invalidation à la fin de la charge de travail**[323]**. Ces deux brouillons WIMSE ne sont pas des RFC; le cadre s’en sert comme références de conception.
 
 Microsoft Entra Agent ID illustre une mise en œuvre commerciale, parmi d’autres. Une identité d’agent n’y a pas de justificatifs propres : elle obtient ses jetons par un gabarit *(agent identity blueprint)* qui porte les justificatifs et les politiques d’accès conditionnel héritées par toutes ses identités; désactiver le gabarit bloque toutes ces identités, ce qui en fait un justificatif partagé que l’EXIG-IAM-04 encadre. Chaque agent a un parrain *(sponsor)*, responsable métier, et un propriétaire *(owner)*, responsable technique**[90]**; un gestionnaire *(manager)* s’y ajoute pour l’agent qui dispose d’un compte d’utilisateur. Depuis juillet 2026, Copilot Studio crée automatiquement une telle identité pour chaque nouvel agent**[48]**. Le service est offert à tous les clients Entra, mais l’extension aux agents des fonctions de sécurité (accès conditionnel, protection des identités) requiert une licence Microsoft Agent 365**[324]**.
 
@@ -3995,7 +3995,7 @@ Le risque visé porte un nom : l’adjoint confus *(confused deputy)*. Un agent 
 
 #### Échange de jetons et chaîne d’acteurs
 
-La norme de référence est l’échange de jetons OAuth 2.0 (RFC 8693, janvier 2020). Dans la requête, `grant_type` ( `urn:ietf:params:oauth:grant-type:token-exchange` ), `subject_token` (le jeton du mandant) et `subject_token_type` sont obligatoires; `actor_token` (le justificatif de l’agent) et `requested_token_type` sont facultatifs, `actor_token_type` devenant obligatoire en présence d’`actor_token`. La revendication
+La norme de référence est l’échange de jetons OAuth 2.0 (RFC 8693, janvier 2020). Dans la requête, `grant_type` (`urn:ietf:params:oauth:grant-type:token-exchange`), `subject_token` (le jeton du mandant) et `subject_token_type` sont obligatoires; `actor_token` (le justificatif de l’agent) et `requested_token_type` sont facultatifs, `actor_token_type` devenant obligatoire en présence d’`actor_token`. La revendication
 
 `may_act` exprime qu’une partie est autorisée à agir pour une autre; le serveur d’autorisation peut s’en servir pour accepter ou refuser une délégation**[69]**.
 
@@ -4041,7 +4041,7 @@ La RFC distingue la délégation, où l’acteur conserve une identité distinct
 
 ***Figure 17 — Délégation par échange de jetons et droits effectifs.** L’orchestrateur échange le jeton d’Alice contre un jeton délégué à audience unique visant la passerelle (étapes 2 et 3), que la passerelle vérifie et rééchange pour le serveur cible avant l’appel (étape 5); le serveur cible agit au nom d’Alice, l’agent restant identifié comme acteur courant (étape 6). Les droits effectifs ne dépassent jamais l’intersection des trois ensembles. Après vérification, la passerelle obtient pour le serveur un second jeton, qui la désigne comme client sans ajouter de niveau d’`act` (EXIG-IAM-14); le serveur MCP et le système cible, réunis dans une même boîte, sont deux audiences distinctes (EXIG-IAM-12). Source : cadre CRE-IA-2026-01, d’après la RFC 8693 et la RFC 9068.*
 
-La figure 17 illustre le premier échange. Lorsqu’un sous-agent appelé par A2A doit à son tour appeler un outil, il refait un échange : son `subject_token` est le jeton délégué reçu, son `actor_token` est son propre JWT-SVID (un X.509-SVID sert plutôt à l’authentification mTLS du client, la RFC 8693 ne définissant aucun type de jeton pour un certificat). Le jeton obtenu conserve le mandant et ajoute un niveau d’`act`. L’agent le présente à la passerelle (`aud` désignant `https://passerelle-agents.ent.ca` , `cnf` lié au justificatif de l’agent); la passerelle vérifie la signature, l’audience et la liaison à l’expéditeur, puis procède elle-même à un échange RFC 8693 auprès du serveur d’autorisation (`subject_token` égal au jeton reçu de l’agent, authentification cliente de la passerelle) pour obtenir un jeton final à audience unique visant le serveur cible ( `aud: "https://` `mcp-finance.ent.ca"` , `client_id: "passerelle-agents"` , `cnf` lié à la passerelle), en préservant tels quels `sub` et la chaîne `act` sans ajouter de niveau d’`act` (car la passerelle est un point d’application des politiques, et non un agent délégataire au sens de l’EXIG-ORC-04 et de l’EXIG-IAM-14). L’extrait suivant montre le jeton présenté par le sous-agent à la passerelle, avec la portée de la tâche dans `authorization_details` (EXIG-IAM-10); le jeton rééchangé remis à `mcp-finance` ne diffère que par `aud` (`https://mcp-finance.ent.ca`), `client_id` (`passerelle-agents`), `cnf` et `jti` (les deux jetons complets figurent à l’annexe C.5).
+La figure 17 illustre le premier échange. Lorsqu’un sous-agent appelé par A2A doit à son tour appeler un outil, il refait un échange : son `subject_token` est le jeton délégué reçu, son `actor_token` est son propre JWT-SVID (un X.509-SVID sert plutôt à l’authentification mTLS du client, la RFC 8693 ne définissant aucun type de jeton pour un certificat). Le jeton obtenu conserve le mandant et ajoute un niveau d’`act`. L’agent le présente à la passerelle (`aud` désignant `https://passerelle-agents.ent.ca`, `cnf` lié au justificatif de l’agent); la passerelle vérifie la signature, l’audience et la liaison à l’expéditeur, puis procède elle-même à un échange RFC 8693 auprès du serveur d’autorisation (`subject_token` égal au jeton reçu de l’agent, authentification cliente de la passerelle) pour obtenir un jeton final à audience unique visant le serveur cible (`aud: "https://mcp-finance.ent.ca"`, `client_id: "passerelle-agents"`, `cnf` lié à la passerelle), en préservant tels quels `sub` et la chaîne `act` sans ajouter de niveau d’`act` (car la passerelle est un point d’application des politiques, et non un agent délégataire au sens de l’EXIG-ORC-04 et de l’EXIG-IAM-14). L’extrait suivant montre le jeton présenté par le sous-agent à la passerelle, avec la portée de la tâche dans `authorization_details` (EXIG-IAM-10); le jeton rééchangé remis à `mcp-finance` ne diffère que par `aud` (`https://mcp-finance.ent.ca`), `client_id` (`passerelle-agents`), `cnf` et `jti` (les deux jetons complets figurent à l’annexe C.5).
 
 **Jeton délégué après deux sauts (extrait : jeton émis pour la passerelle, qui l’échange ensuite pour** `mcp-finance`**)**
 
@@ -4425,10 +4425,10 @@ Simon Willison a nommé « triade létale » la combinaison de trois propriété
 > - [A] traite des entrées non fiables
 > - [C] change un état ou communique
 > - Patrons de conception résistants
-> - • Plan puis exécution (plan figé avant toute lecture non fiable)
-> - • Double modèle : privilégié sans texte non fiable, quarantaine sans outils
-> - • Sélecteur d’actions, map-reduce, minimisation du contexte
-> - • Séparation des flux de contrôle et de données (CaMeL)
+> - Plan puis exécution (plan figé avant toute lecture non fiable)
+> - Double modèle : privilégié sans texte non fiable, quarantaine sans outils
+> - Sélecteur d’actions, map-reduce, minimisation du contexte
+> - Séparation des flux de contrôle et de données (CaMeL)
 > - 1 · Signaler
 > - enveloppe « non fiable », détection réduit la probabilité
 > - 2 · Retirer
@@ -4842,13 +4842,13 @@ Cette section fixe la manière dont chaque exécution d’agent produit une trac
 
 #### Un mécanisme stable, des conventions mouvantes
 
-OpenTelemetry fournit un mécanisme de collecte (API et protocole OTLP, de l’anglais *OpenTelemetry Protocol*) et des conventions sémantiques qui nomment les attributs. Le mécanisme est stable; les conventions de l’IA générative (`gen_ai.*`) sont toutes au niveau *Development*, qui admet ruptures et retraits**[188, 380]**. Depuis la v1.42.0 (12 juin 2026), elles vivent dans le dépôt dédié `semantic-conventions-genai`**[180, 381]**. Ce dépôt n’a publié aucune version étiquetée : la dernière version publiée qui les contient comme conventions en vigueur est la v1.41.1 de `semantic-conventions` (correctif du 11 mai 2026 de la v1.41.0 du 28 avril 2026), les versions suivantes les déclarant obsolètes; la branche principale du nouveau dépôt remplace déjà `gen_ai.usage.cache_creation.input_tokens` par `gen_ai.usage.cache_write.input_tokens` et restructure les métriques de jetons**[119, 181, 380, 381, 382, 383, 384]**. Le cadre impose donc le mécanisme, épingle une version de référence des conventions et y ramène, par une couche de correspondance au collecteur, ce que chaque composant émet. L’épinglage ne dicte toutefois pas ce que les bibliothèques d’instrumentation émettent : la convention demande que les instrumentations existantes ne changent pas par défaut la version GenAI qu’elles produisent (v1.36.0 ou antérieure) et qu’elles prévoient la variable d’environnement `OTEL_SEMCONV_` `STABILITY_OPT_IN` , dont la valeur `gen_ai_latest_experimental` fait émettre la dernière version expérimentale prise en charge par l’instrumentation, et non une version précise**[119]**. L’instrumentation Python d’OpenAI, par exemple, reste sans ce réglage aux conventions v1.30.0**[385]**. Le catalogue consigne donc, pour chaque composant, la version réellement émise et le réglage de cette variable.
+OpenTelemetry fournit un mécanisme de collecte (API et protocole OTLP, de l’anglais *OpenTelemetry Protocol*) et des conventions sémantiques qui nomment les attributs. Le mécanisme est stable; les conventions de l’IA générative (`gen_ai.*`) sont toutes au niveau *Development*, qui admet ruptures et retraits**[188, 380]**. Depuis la v1.42.0 (12 juin 2026), elles vivent dans le dépôt dédié `semantic-conventions-genai`**[180, 381]**. Ce dépôt n’a publié aucune version étiquetée : la dernière version publiée qui les contient comme conventions en vigueur est la v1.41.1 de `semantic-conventions` (correctif du 11 mai 2026 de la v1.41.0 du 28 avril 2026), les versions suivantes les déclarant obsolètes; la branche principale du nouveau dépôt remplace déjà `gen_ai.usage.cache_creation.input_tokens` par `gen_ai.usage.cache_write.input_tokens` et restructure les métriques de jetons**[119, 181, 380, 381, 382, 383, 384]**. Le cadre impose donc le mécanisme, épingle une version de référence des conventions et y ramène, par une couche de correspondance au collecteur, ce que chaque composant émet. L’épinglage ne dicte toutefois pas ce que les bibliothèques d’instrumentation émettent : la convention demande que les instrumentations existantes ne changent pas par défaut la version GenAI qu’elles produisent (v1.36.0 ou antérieure) et qu’elles prévoient la variable d’environnement `OTEL_SEMCONV_STABILITY_OPT_IN`, dont la valeur `gen_ai_latest_experimental` fait émettre la dernière version expérimentale prise en charge par l’instrumentation, et non une version précise**[119]**. L’instrumentation Python d’OpenAI, par exemple, reste sans ce réglage aux conventions v1.30.0**[385]**. Le catalogue consigne donc, pour chaque composant, la version réellement émise et le réglage de cette variable.
 
 `EXIG-OBS-01` **· DOIT**
 
 **OpenTelemetry obligatoire, conventions épinglées**
 
-Tout composant d’une exécution d’agent exploité par l’entreprise (canal, orchestrateur, passerelles, courtier d’événements, agent, serveur MCP, consommateur d’événements) **DOIT** émettre traces et métriques par OpenTelemetry, en OTLP, vers le collecteur de la plateforme, selon une version des conventions GenAI consignée au catalogue pour ce composant (version émise et réglage d’ `OTEL_SEMCONV_` `STABILITY_OPT_IN` ). Une couche de correspondance versionnée du collecteur la ramène à la version de référence épinglée au catalogue, la ligne v1.41 (v1.41.0; correctif v1.41.1 admis, qui ne modifie aucun fichier des conventions `gen_ai.*`**[383]**), jusqu’à l’homologation d’une version étiquetée du dépôt dédié. Tableaux de bord, alertes et calculs de coûts lisent les données après correspondance; un changement de version des conventions se gère comme un changement de contrat (section 6.8). Un composant de tiers qui n’émet pas vers le collecteur de l’entreprise est couvert par les spans CLIENT et les métriques de la passerelle, et par une clause contractuelle d’export de télémétrie (chapitre 13).
+Tout composant d’une exécution d’agent exploité par l’entreprise (canal, orchestrateur, passerelles, courtier d’événements, agent, serveur MCP, consommateur d’événements) **DOIT** émettre traces et métriques par OpenTelemetry, en OTLP, vers le collecteur de la plateforme, selon une version des conventions GenAI consignée au catalogue pour ce composant (version émise et réglage d’ `OTEL_SEMCONV_STABILITY_OPT_IN`). Une couche de correspondance versionnée du collecteur la ramène à la version de référence épinglée au catalogue, la ligne v1.41 (v1.41.0; correctif v1.41.1 admis, qui ne modifie aucun fichier des conventions `gen_ai.*`**[383]**), jusqu’à l’homologation d’une version étiquetée du dépôt dédié. Tableaux de bord, alertes et calculs de coûts lisent les données après correspondance; un changement de version des conventions se gère comme un changement de contrat (section 6.8). Un composant de tiers qui n’émet pas vers le collecteur de l’entreprise est couvert par les spans CLIENT et les métriques de la passerelle, et par une clause contractuelle d’export de télémétrie (chapitre 13).
 
 Pourquoi : au niveau Development, des ruptures sont admises et un signal peut être retiré, sans garantie de dépréciation préalable**[188]**; sans épinglage, un tableau de bord se vide en silence.
 
@@ -4886,7 +4886,7 @@ Pourquoi : une trace peut être redémarrée à une frontière, alors qu’une t
 
 #### Hiérarchie des spans
 
-Les conventions nomment chaque span (figure 21) : `invoke_workflow {gen_ai.workflow.name}` (INTERNAL) pour un flux multiagent; `invoke_agent {gen_ai.agent.name}` , de type CLIENT pour un agent distant et INTERNAL dans le même processus; `execute_tool {gen_ai.tool.name}` (INTERNAL) pour un outil; `{gen_ai.` `operation.name} {gen_ai.request.model}` pour une inférence**[119, 120]**. En v1.41.0, `gen_ai.operation.name` admet `chat`, `create_agent`, `embeddings`, `execute_tool`, `generate_content`, `invoke_agent`, `invoke_workflow`, `retrieval` et `text_completion` : aucune valeur « handoff » n’existe, et un transfert entre agents se trace par `invoke_agent`. Les appels MCP ont leur propre convention : spans `{mcp.method.name} {cible}`, attribut requis `mcp.method.name`, histogrammes `mcp.client.operation.duration` et `mcp.server.operation.duration` **[386]**. A2A n’en a pas en v1.41.0 (le dépôt dédié en définit une, non publiée, au niveau Development**[241]**) et se trace par `invoke_agent` (section 6.6).
+Les conventions nomment chaque span (figure 21) : `invoke_workflow {gen_ai.workflow.name}` (INTERNAL) pour un flux multiagent; `invoke_agent {gen_ai.agent.name}`, de type CLIENT pour un agent distant et INTERNAL dans le même processus; `execute_tool {gen_ai.tool.name}` (INTERNAL) pour un outil; `{gen_ai.operation.name} {gen_ai.request.model}` pour une inférence**[119, 120]**. En v1.41.0, `gen_ai.operation.name` admet `chat`, `create_agent`, `embeddings`, `execute_tool`, `generate_content`, `invoke_agent`, `invoke_workflow`, `retrieval` et `text_completion` : aucune valeur « handoff » n’existe, et un transfert entre agents se trace par `invoke_agent`. Les appels MCP ont leur propre convention : spans `{mcp.method.name} {cible}`, attribut requis `mcp.method.name`, histogrammes `mcp.client.operation.duration` et `mcp.server.operation.duration` **[386]**. A2A n’en a pas en v1.41.0 (le dépôt dédié en définit une, non publiée, au niveau Development**[241]**) et se trace par `invoke_agent` (section 6.6).
 
 > **[Figure]**
 > - SPANS (CONVENTIONS OPENTELEMETRY GENAI ET MCP)
@@ -4947,7 +4947,7 @@ Sur un span d’inférence, la convention ne requiert que `gen_ai.operation.name
 | Fournisseur | `gen_ai.provider.name` | Requis (inférence, plongements, création et invocation d’agent) | Obligatoire |
 | Modèle | `gen_ai.request.model`; `gen_ai.response.model` | Conditionnel; recommandé | Obligatoires : alias demandé et modèle servi |
 | Jetons | `gen_ai.usage.input_tokens` (cache compris); `gen_ai.usage.output_tokens` | Recommandés | Obligatoires |
-| Cache | `gen_ai.usage.cache_read.input_tokens`; `gen_ai.usage.cache_creation.` `input_tokens` | Recommandés; le second devient `cache_write` dans la branche non publiée | Obligatoires si le fournisseur les renvoie |
+| Cache | `gen_ai.usage.cache_read.input_tokens`; `gen_ai.usage.cache_creation.input_tokens` | Recommandés; le second devient `cache_write` dans la branche non publiée | Obligatoires si le fournisseur les renvoie |
 | Fin de génération | `gen_ai.response.finish_reasons` | Recommandé | Obligatoire |
 | Agent | `gen_ai.agent.id`, `.name`, `.version` | Conditionnels | Obligatoires; identifiant du registre |
 | Outil | `gen_ai.tool.name`; `gen_ai.tool.call.id` | Requis sur `execute_tool`; recommandé | Obligatoires |
@@ -4959,7 +4959,7 @@ Sur un span d’inférence, la convention ne requiert que `gen_ai.operation.name
 
 Sources : conventions OpenTelemetry GenAI et MCP v1.41.0**[119, 386]**; dernière colonne : choix du cadre.
 
-Pour les métriques, la v1.41.0 définit les histogrammes `gen_ai.client.operation.duration` (secondes, requis) et `gen_ai.client.token.usage` (jetons, recommandé)**[388]**; la branche non publiée remplace l’histogramme `gen_ai.client.token.usage` (v1.41.0) par des compteurs `gen_ai.client.inference.usage.*` et des histogrammes `gen_ai.client.inference.operation.*` , et scinde `gen_ai.client.operation.duration` pour l’inférence**[388, 389]**, migration qu’absorbera la couche de correspondance.
+Pour les métriques, la v1.41.0 définit les histogrammes `gen_ai.client.operation.duration` (secondes, requis) et `gen_ai.client.token.usage` (jetons, recommandé)**[388]**; la branche non publiée remplace l’histogramme `gen_ai.client.token.usage` (v1.41.0) par des compteurs `gen_ai.client.inference.usage.*` et des histogrammes `gen_ai.client.inference.operation.*`, et scinde `gen_ai.client.operation.duration` pour l’inférence**[388, 389]**, migration qu’absorbera la couche de correspondance.
 
 `EXIG-OBS-05` **· DOIT**
 
@@ -5122,7 +5122,7 @@ Cette section fixe la manière dont l’entreprise prouve qu’un agent fait ce 
 
 **Étage E3 : production.** On évalue un échantillon aléatoire d’au moins 5 % des exécutions (10 % recommandé, choix du cadre), plus toutes les traces qui ont subi une erreur, une relance, un plafond atteint ou un refus d’approbation, par des juges automatisés hors du chemin critique et par une revue humaine. Anthropic décrit un juge qui rend, en un seul appel, un score de 0,0 à 1,0 et un verdict de réussite ou d’échec**[17]**. Le résultat se consigne dans l’événement `gen_ai.evaluation.result` (Development) :
 
-`gen_ai.evaluation.name` (requis), `gen_ai.evaluation.score.value` , `gen_ai.evaluation.score.label` (p. ex. `pass`) et `gen_ai.evaluation.explanation` (texte libre, soumis à l’EXIG-OBS-07 : en production, il ne reproduit ni invite ni réponse), et devrait être rattaché au span évalué**[396]**. Les défaillances multiagents se classent selon la taxonomie MAST *(Multi-Agent System Failure Taxonomy*; section 7.9), et les entrées du bus peuvent être rejouées en isolement pour éprouver une nouvelle version (EXIG-EVT-10).
+`gen_ai.evaluation.name` (requis), `gen_ai.evaluation.score.value`, `gen_ai.evaluation.score.label` (p. ex. `pass`) et `gen_ai.evaluation.explanation` (texte libre, soumis à l’EXIG-OBS-07 : en production, il ne reproduit ni invite ni réponse), et devrait être rattaché au span évalué**[396]**. Les défaillances multiagents se classent selon la taxonomie MAST *(Multi-Agent System Failure Taxonomy*; section 7.9), et les entrées du bus peuvent être rejouées en isolement pour éprouver une nouvelle version (EXIG-EVT-10).
 
 *Tableau 42 — Familles d’objectifs de niveau de service d’un agent (cibles proposées par le cadre)*
 

@@ -1,0 +1,80 @@
+' Fig. 4. – Basculement architectural de la Génération 1 (copilote synchrone centré interface) vers la Génération 3 (maillage d'exécution asynchrone gouverné).
+@startuml
+title Basculement Architectural : Du Copilote Synchrone au Maillage d'Exécution Asynchrone
+
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam rectangle<<invis>> {
+  BackgroundColor transparent
+  BorderColor transparent
+  FontColor transparent
+  FontSize 1
+}
+
+rectangle "Génération 1 (2023–2024) — Assistance Conversationnelle Synchrone (UI-First, Sans État Durable)" as G1 #F8FAFC;line:94A3B8 {
+  rectangle U #FFFFFF;line:64748B [
+    **Utilisateur Humain**
+    Attend devant l'écran
+  ]
+  rectangle Cop #FFFFFF;line:64748B [
+    **Copilote / Chatbot**
+    Prompt monolithique + LLM
+  ]
+  rectangle RAG #FFFFFF;line:64748B [
+    **RAG Documentaire**
+    Lecture seule vectorielle
+  ]
+  rectangle Lim #FEF2F2;line:DC2626 [
+    **Limite structurelle :**
+    L'humain reste le
+    seul intégrateur SI
+  ]
+  U -[#475569]right-> Cop
+  Cop -[#475569]right-> RAG
+  RAG -[hidden]right-> Lim
+}
+
+rectangle "Génération 3 (2026–2027) — Main-d'Œuvre d'Exécution Asynchrone Gouvernée (Event-Driven & Durable)" as G3 #EFF6FF;line:2563EB {
+  rectangle " " as G3Row <<invis>> {
+    rectangle Dec #FFFFFF;line:475569 [
+      **Déclencheurs**
+      • Événement Kafka/OT
+      • Alerte Webhook / SLA
+      • Intention Humaine
+    ]
+    rectangle Plan #FFFFFF;line:2563EB [
+      **Plan de Contrôle Durable**
+      Temporal / Restate / Maestro
+      État persisté • Saga • Quotas
+      Politiques PDP (OPA/Cedar)
+    ]
+    rectangle Cel #FFFFFF;line:16A34A [
+      **Cellules Agentiques Bornées**
+      Délégation horizontale A2A v1.0
+      Identité NHI + OAuth 2.1 OBO
+      Routage hybride SLM / LLM
+    ]
+    rectangle Act #FFFFFF;line:475569 [
+      **Actions & Outils**
+      Serveurs MCP • API
+      CUA (Legacy) • OPC-UA
+      Clés d'idempotence
+    ]
+    Dec -[#1E293B]right-> Plan
+    Plan -[#1E293B]right-> Cel
+    Cel -[#1E293B]right-> Act
+  }
+
+  rectangle Sup #FFF7ED;line:C2410C [
+    **Supervision Human-on-the-Loop (HOTL via AG-UI / CIBA) & Télémétrie OpenTelemetry (gen_ai.*)**
+    Escalade uniquement sur seuil de risque ou anomalie • Audit immuable de bout en bout
+  ]
+
+  G3Row -[hidden]down-> Sup
+}
+
+Lim -[hidden]down-> Act
+U -[hidden]down-> Dec
+@enduml

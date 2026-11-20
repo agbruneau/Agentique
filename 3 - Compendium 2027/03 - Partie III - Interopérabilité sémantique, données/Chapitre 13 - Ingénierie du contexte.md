@@ -344,10 +344,10 @@ Le rejet du résumé glissant seul, dans ce tableau comme dans l’ADR-008 (sect
 > - Raisonnement haute densité
 > - TTFT minimal • Précision max
 > - Enveloppe de Handoff
-> - • Décisions & Faits typés
-> - • Hypothèses écartées
-> - • Pointeurs URI (Claim-Check)
-> - • Incertitudes résiduelles
+> - Décisions & Faits typés
+> - Hypothèses écartées
+> - Pointeurs URI (Claim-Check)
+> - Incertitudes résiduelles
 > - Zéro historique brut copié
 > - Élimine le Context Rot
 > - Plan Sous-Jacent : Stockage par Référence (Claim-Check) & Observabilité du Budget d'Attention
@@ -378,7 +378,7 @@ Le compilateur de plateforme fige le jeu d’outils à l’ouverture de chaque s
 | Strate 2 : preuves et projections | Fragments hybrides signés, vues JSON projetées | Par recherche ou appel d’outil | 6 000 à 8 500 jetons | Disposition en U, seuil plancher et CAS |
 | Strate 3 : front d’exécution | Horloge, trace compactée 1..𝑖−1, directive locale | À chaque tour 𝑖 | 1 500 à 2 500 jetons | Recalcul marginal en fin de séquence |
 
-#### Extrait 13.1 — `[Exécuté en CI]` · Compilateur déterministe de fenêtre de contexte (ContextWindowCompiler en TypeScript)
+### Extrait 13.1 — `[Exécuté en CI]` · Compilateur déterministe de fenêtre de contexte (ContextWindowCompiler en TypeScript)
 
 ```
 import { createHmac } from "node:crypto";
@@ -490,7 +490,7 @@ L’architecture de référence impose donc un récupérateur hybride à pré-fi
 - **Fusion hybride et reclassement croisé** : la recherche combine un index inversé lexical BM25 (exactitude sur les numéros de série et les articles de loi) et un index dense. Les résultats sont fusionnés par rang réciproque (RRF), puis départagés par un modèle de reclassement croisé (*Cross-Encoder*) rapide.
 - **Déchargement par référence (*Claim-Check*) en magasin CAS** : lorsqu’un outil MCP renvoie une charge volumineuse (p. ex. un spectre vibratoire de 90 Ko), l’adaptateur archive l’objet brut dans un magasin adressable par contenu (*Content-Addressable Storage*, `cas://sha256/...`) et ne livre au compilateur qu’une projection synthétique, accompagnée du pointeur vérifiable.
 
-#### Extrait 13.2 — `[Exécuté en CI]` · Récupérateur hybride ACL-aware avec scellement de lignée (Python)
+### Extrait 13.2 — `[Exécuté en CI]` · Récupérateur hybride ACL-aware avec scellement de lignée (Python)
 
 ```
 from dataclasses import dataclass
@@ -583,7 +583,7 @@ Dans un graphe multi-agents, le contexte se dégrade surtout aux frontières de 
 
 La norme d’orchestration en 2027 interdit donc la copie du fil brut sur A2A et impose une enveloppe de transfert compactée à la frontière, en quatre volets : faits établis sourcés (SHA-256), hypothèses testées et réfutées (une mémoire négative explicite, qui évite les boucles d’enquête), questions ouvertes ciblées et pointeurs URI CAS (*Claim-Check*), que le pair destinataire ne déréférence que si son mandat et son jeton OBO l’y autorisent.
 
-#### Extrait 13.3 — `[Exécuté en CI]` · Politique déclarative de compaction inter-handoff (A2A Boundary Policy en YAML)
+### Extrait 13.3 — `[Exécuté en CI]` · Politique déclarative de compaction inter-handoff (A2A Boundary Policy en YAML)
 
 ```
 apiVersion: fabric.boreal.ca/v1alpha2

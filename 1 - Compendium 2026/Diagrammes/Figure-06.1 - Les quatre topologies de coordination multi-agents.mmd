@@ -1,7 +1,7 @@
 %% Figure 6.1 — Les quatre topologies de coordination multi-agents (supervisée en étoile, séquentielle en chaîne, hiérarchique en arbre, pair-à-pair en graphe) et la propriété dominante de chacune.
 %% Source : 1 - Compendium 2026, Chapitre 6 (page 72)
 
-%%{init: {'flowchart': {'wrappingWidth': 900}}}%%
+%%{init: {'flowchart': {'wrappingWidth': 1150}}}%%
 flowchart TB
     subgraph SG_TOPO["QUATRE TOPOLOGIES, QUATRE ARBITRAGES"]
         direction LR
@@ -9,6 +9,7 @@ flowchart TB
         T2["<b>2 · Chaîne</b><br/><br/>La sortie d'un agent est l'entrée<br/>du suivant.<br/><br/><i>simple, mais l'erreur se<br/>propage sans recours</i>"]
         T3["<b>3 · Arbre</b><br/><br/>Délégation hiérarchique.<br/><br/><i>passage à l'échelle,<br/>diagnostic plus difficile</i>"]
         T4["<b>4 · Graphe</b><br/><br/>Interactions arbitraires.<br/><br/><i>expressivité maximale,<br/>état global inobservable</i>"]
+        T1 ~~~ T2 ~~~ T3 ~~~ T4
     end
 
     NOTE["Chaque topologie échange une propriété contre une autre : la visibilité contre la dépendance, la simplicité contre le recours,<br/>l'échelle contre le diagnostic, l'expressivité contre l'observabilité de l'état global."]

@@ -428,36 +428,36 @@ Quatre plateformes structurent en 2027 l’exécution durable des systèmes agen
 > - INTÉGRATION NATIVE ÉCOSYSTÈME HYPERSCALER (CLÉ EN MAIN)
 > - HAUTE FRÉQUENCE & LATENCE MS (T2 / T3) SAGAS LONGUES & SESSIONS LOURDES (T3 / T4)
 > - Restate (Moteur Rust • Journal Bifrost intégré)
-> - • Primitives : Services RPC, Virtual Objects (clé K/V), Workflows
-> - • Modèle d'exécution : Push HTTP/2 vers conteneurs ou FaaS
-> - • Latence par étape journalisée (ctx.run) : ~1 à 5 ms
-> - • Force : Déploiement binaire unique, Awakeables ultra-légers
+> - Primitives : Services RPC, Virtual Objects (clé K/V), Workflows
+> - Modèle d'exécution : Push HTTP/2 vers conteneurs ou FaaS
+> - Latence par étape journalisée (ctx.run) : ~1 à 5 ms
+> - Force : Déploiement binaire unique, Awakeables ultra-légers
 > - Idéal : Micro-orchestration A2A/MCP, agents sans serveur, T2-T3
 > - SDK : TypeScript, Python, Go, Java/Kotlin, Rust
 > - Temporal + Temporal Nexus (Licence MIT)
-> - • Primitives : Workflows, Activities, Signals, Queries, Updates
-> - • Modèle d'exécution : Workers en Pull sur Task Queues isolées
-> - • Fédération inter-divisions : Contrats RPC durables via Nexus
-> - • Force : Résilience multi-régions, Versioning, Codec AES-GCM
+> - Primitives : Workflows, Activities, Signals, Queries, Updates
+> - Modèle d'exécution : Workers en Pull sur Task Queues isolées
+> - Fédération inter-divisions : Contrats RPC durables via Nexus
+> - Force : Résilience multi-régions, Versioning, Codec AES-GCM
 > - Idéal : Sagas critiques multi-semaines, banque/assurance (T3-T4)
 > - SDK : TypeScript, Python, Go, Java, .NET, PHP
 > - Microsoft Agent Framework (Durable Task)
-> - • Convergence officielle : AutoGen + Semantic Kernel unifiés
-> - • Moteur sous-jacent : Durable Task Framework / Azure / Dapr
-> - • État : Déshydratation native des Agent Threads & Workflows
-> - • Force : Identité Entra ID OBO native, pont Copilot Studio
+> - Convergence officielle : AutoGen + Semantic Kernel unifiés
+> - Moteur sous-jacent : Durable Task Framework / Azure / Dapr
+> - État : Déshydratation native des Agent Threads & Workflows
+> - Force : Identité Entra ID OBO native, pont Copilot Studio
 > - Idéal : Entreprises standardisées Azure / .NET & Python
 > - Portabilité : Haute sur Azure Functions, moyenne via Dapr K8s
 > - Amazon Bedrock AgentCore (Runtime AWS)
-> - • Architecture : Sessions microVM isolées à longue durée de vie
-> - • Composants intégrés : Runtime, Gateway MCP, Memory, Identity
-> - • Agnostique au cadriciel : Exécute LangGraph, CrewAI, Strands
-> - • Force : Isolation matérielle + couplage Step Functions T4
+> - Architecture : Sessions microVM isolées à longue durée de vie
+> - Composants intégrés : Runtime, Gateway MCP, Memory, Identity
+> - Agnostique au cadriciel : Exécute LangGraph, CrewAI, Strands
+> - Force : Isolation matérielle + couplage Step Functions T4
 > - Idéal : Charges AWS intensives avec bac à sable code intégré
 > - Portabilité : Faible hors AWS (adhérence plan de contrôle IAM)
 > - Patron d'urbanisation recommandé (Architecture Bi-Vitesse Groupe Boréal) :
-> - • Couche Macro-Sagas (T3/T4, 1 h à 90 j) : Temporal + Nexus pour la gouvernance inter-divisions, le versionnage long et la piste d'audit BSIF E-23.
-> - • Couche Micro-Agents (T2, secondes à minutes) : Restate ou Durable Task pour sérialiser l'état par entité (Virtual Object) avec surcharge minimale.
+> - Couche Macro-Sagas (T3/T4, 1 h à 90 j) : Temporal + Nexus pour la gouvernance inter-divisions, le versionnage long et la piste d'audit BSIF E-23.
+> - Couche Micro-Agents (T2, secondes à minutes) : Restate ou Durable Task pour sérialiser l'état par entité (Virtual Object) avec surcharge minimale.
 
 *Fig. 31. – Positionnement architectural comparé de Temporal, Restate, Microsoft Agent Framework (Durable Task) et Amazon Bedrock AgentCore.*
 
@@ -509,7 +509,7 @@ section 18.6 présente côté AWS les Lambda durable functions (points de contr�
 
 ## 18.10 Patrons de code de production : workflows durables, awakeables et revalidation au réveil
 
-#### Extrait 18.1 — `[Schéma conceptuel]` · Workflow Temporal de production avec versionnage en vol et approbation CIBA multi-jours
+### Extrait 18.1 — `[Schéma conceptuel]` · Workflow Temporal de production avec versionnage en vol et approbation CIBA multi-jours
 
 Ce workflow n’importe ni module réseau ni SDK LLM : il orchestre des proxys d’activités typés. Il utilise `patched()` pour introduire sans coupure une règle mineure pendant que des milliers de sinistres dorment en base; une refonte majeure de topologie utilisera le *Worker Deployment Versioning* en mode PINNED, afin que les instances en vol s’achèvent sur leur révision d’origine. Il gère l’attente de quatorze jours, avec relance au troisième jour, et exécute sa compensation dans une portée `CancellationScope.nonCancellable`, pour qu’une annulation externe du dossier n’empêche pas la libération comptable. Le décaissement définitif est l’étape pivot de la section 18.7 : la provision compensable, l’approbation et la revalidation le précèdent.
 

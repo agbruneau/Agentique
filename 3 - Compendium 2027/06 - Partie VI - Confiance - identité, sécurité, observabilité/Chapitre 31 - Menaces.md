@@ -391,28 +391,28 @@ Le scénario type met en jeu deux agents. L’agent amont 𝐴1, exposé aux don
 > - ASI08 + ASI09 + ASI10
 > - Barrières de Rupture Architecturales (Coupure de la Kill Chain à Chaque Frontière)
 > - Barrière B1 — Isolation Flot de Données
-> - • Travailleur SLM d'extraction sans aucun outil
-> - • Délimitation Spotlighting & JSON Schema fermé
-> - • Purge des points de code Unicode furtifs / Bidi
-> - • Marquage de teinte (Taint = UNTRUSTED_EXT)
+> - Travailleur SLM d'extraction sans aucun outil
+> - Délimitation Spotlighting & JSON Schema fermé
+> - Purge des points de code Unicode furtifs / Bidi
+> - Marquage de teinte (Taint = UNTRUSTED_EXT)
 > - Bloque ASI01 à la périphérie documentaire
 > - Barrière B2 — Verrouillage MCP
-> - • Épinglage SHA-256 + Sigstore
-> - • Rejet auto de list_changed non signé
-> - • Assainisseur de descriptions MCP
-> - • Préfixage strict d'espace de noms
+> - Épinglage SHA-256 + Sigstore
+> - Rejet auto de list_changed non signé
+> - Assainisseur de descriptions MCP
+> - Préfixage strict d'espace de noms
 > - Neutralise ASI02 & ASI04
 > - Barrière B3 — Mémoire
-> - • Provenance HMAC
-> - • Quarantaine données
+> - Provenance HMAC
+> - Quarantaine données
 > - externes non validées
-> - • TTL & cloisonnement
+> - TTL & cloisonnement
 > - Bloque ASI06
 > - Barrière B4 — Maillage
-> - • Signature JWS A2A
-> - • Plafond sauts & coût
-> - • Vue A2UI différentielle
-> - • Red Teaming CI/CD
+> - Signature JWS A2A
+> - Plafond sauts & coût
+> - Vue A2UI différentielle
+> - Red Teaming CI/CD
 > - Stoppe ASI07–ASI10
 
 *Fig. 44. – Anatomie d’une attaque trans-agent (OWASP ASI & MCP) et barrières de rupture déterministes.*

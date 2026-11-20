@@ -4,7 +4,7 @@
 
 *Question directrice : Comment alimenter les agents en contexte fiable, gouverner leur mémoire dans la durée et raccorder les systèmes patrimoniaux exacts sans corruption sémantique ni fuite de confidentialité ?*
 
-**Thèse du chapitre :** La validité syntaxique d’un schéma `JSON` n’empêche jamais une erreur sémantique silencieuse. Le meilleur détecteur d’écart d’intention plafonne à `27,9 %` sur exécutions simulées sans vrai modèle en prépublication `[É]`, un seul distracteur dégrade le rappel sur dix-huit modèles et les ontologies en incubation restent immatures fin 2026 (`C27 ch. 12–13`). L’institution doit gouverner définitions et formules dans une couche sémantique déterministe neutre P : PRI-008 P : DEC-003 E : EXIG-INT-02 . Elle compile le contexte avec filtrage `ACL` amont sans compte de service P : CAP-017 E : EXIG-ARC-16 et cloisonne les quatre mémoires `CoALA` sous bi-temporalité et purge vérifiable P : CAP-019 P : DEC-004 E : EXIG-ARC-22 E : EXIG-ARC-23 E : EXIG-ARC-25 E : EXIG-CON-10 . Enfin, elle protège le patrimoine transactionnel (et, à la marge, les équipements périphériques) derrière une couche anticorruption en `Decimal` exact P : CAP-024 P : CAP-028 P : DEC-008 E : EXIG-ARC-14 E : EXIG-ARC-17 .
+**Thèse du chapitre :** La validité syntaxique d’un schéma `JSON` n’empêche jamais une erreur sémantique silencieuse. Le meilleur détecteur d’écart d’intention plafonne à `27,9 %` sur exécutions simulées sans vrai modèle en prépublication `[É]`, un seul distracteur dégrade le rappel sur dix-huit modèles et les ontologies en incubation restent immatures fin 2026 (`C27 ch. 12–13`). L’institution doit gouverner définitions et formules dans une couche sémantique déterministe neutre P : PRI-008 P : DEC-003 E : EXIG-INT-02. Elle compile le contexte avec filtrage `ACL` amont sans compte de service P : CAP-017 E : EXIG-ARC-16 et cloisonne les quatre mémoires `CoALA` sous bi-temporalité et purge vérifiable P : CAP-019 P : DEC-004 E : EXIG-ARC-22 E : EXIG-ARC-23 E : EXIG-ARC-25 E : EXIG-CON-10. Enfin, elle protège le patrimoine transactionnel (et, à la marge, les équipements périphériques) derrière une couche anticorruption en `Decimal` exact P : CAP-024 P : CAP-028 P : DEC-008 E : EXIG-ARC-14 E : EXIG-ARC-17.
 
 ## 4.1 Erreurs sémantiques silencieuses, tension `ADR-009` et données prêtes (`ACL` amont)
 
@@ -14,23 +14,23 @@ Une dissonance interne du corpus doit ici être tranchée ouvertement. En `C27 �
 
 Aussi `PD28 M-13` généralise-t-il `ADR-009` dans `DEC-003`. L’institution exige un référentiel sémantique déclaratif versionné comme du code, indépendant du moteur analytique, avec médiation
 
-canonique et `60 jours` de coexistence (`SIG-110`) P : PRI-008 P : CAP-015 P : CAP-016 P : DEC-003 E : EXIG-INT-02 E : EXIG-INT-13 E : EXIG-INT-14 .
+canonique et `60 jours` de coexistence (`SIG-110`) P : PRI-008 P : CAP-015 P : CAP-016 P : DEC-003 E : EXIG-INT-02 E : EXIG-INT-13 E : EXIG-INT-14.
 
-En amont, des « données prêtes pour les agents » (`C27 ch. 15`) exigent quatre garanties cumulatives. D’abord, chaque champ, unité et règle de calcul relève d’un propriétaire identifié E : EXIG-INT-12 E : EXIG-INT-19 . Ensuite, un sas *Write-Audit-Publish* valide fraîcheur et intégrité statistique avant exposition, au-delà d’un simple `ttlMs` (`C27 § 15.2`, `PRR F-13`) P : CAP-020 P : DEC-010 P : POR-005 . Troisièmement, le **filtrage** `ACL` **pré-récupération** s’exécute sous l’identité du mandant propagée dans chaque appel (`ADR-008` maintenue) E : EXIG-ARC-02 E : EXIG-ARC-16 . Ses droits forment un plafond strict **sans repli silencieux vers un compte de service**, vérifié par tests actifs sur chaque serveur `MCP` d’entrepôt (`C27 § 15.3–15.4`). Quatrièmement, chaque actif reçoit dès l’ingestion son étiquette immuable d’entité juridique, de finalité consentie et de prohibition inter-filiales P : PRI-010 P : CAP-021 P : PEX-041 E : EXIG-CON-06 .
+En amont, des « données prêtes pour les agents » (`C27 ch. 15`) exigent quatre garanties cumulatives. D’abord, chaque champ, unité et règle de calcul relève d’un propriétaire identifié E : EXIG-INT-12 E : EXIG-INT-19. Ensuite, un sas *Write-Audit-Publish* valide fraîcheur et intégrité statistique avant exposition, au-delà d’un simple `ttlMs` (`C27 § 15.2`, `PRR F-13`) P : CAP-020 P : DEC-010 P : POR-005. Troisièmement, le **filtrage** `ACL` **pré-récupération** s’exécute sous l’identité du mandant propagée dans chaque appel (`ADR-008` maintenue) E : EXIG-ARC-02 E : EXIG-ARC-16. Ses droits forment un plafond strict **sans repli silencieux vers un compte de service**, vérifié par tests actifs sur chaque serveur `MCP` d’entrepôt (`C27 § 15.3–15.4`). Quatrièmement, chaque actif reçoit dès l’ingestion son étiquette immuable d’entité juridique, de finalité consentie et de prohibition inter-filiales P : PRI-010 P : CAP-021 P : PEX-041 E : EXIG-CON-06.
 
 ## 4.2 Compilation déterministe du contexte et gouvernance des compétences
 
 Les fenêtres d’**un million de jetons** (mars 2026) n’abolissent ni le pourrissement du contexte (*context rot*), ni la perte au milieu (*lost in the middle*), ni le coût marginal. Un seul distracteur dégrade la performance sur dix-huit modèles (`CAD26 § 5.5`), et plus de `97 %` des jetons facturés d’un flux séquentiel proviennent d’entrées relues (`C27 ch. 40`). L’architecte emploie donc un **compilateur déterministe de contexte** (`ADR-008`) P : CAP-017 :
 
-1. **Stratification fixe pour le** `KV-cache` **:** préfixe invariant en tête (consignes, politiques, schémas épinglés) maximisant la réutilisation du cache, suivi des seules preuves filtrées `ACL` E : EXIG-FIN-07 .
-2. **Borne de jetons et compaction :** plafond inscrit à la fiche, résumé structuré au-delà et interdiction de l’historique brut comme mémoire longue E : EXIG-ARC-22 .
-3. **Passage par référence sur** `A2A` **:** jeton de référence vérifiable et sous-contexte minimal plutôt que copie de charges lourdes E : EXIG-ORC-23 .
+1. **Stratification fixe pour le** `KV-cache` **:** préfixe invariant en tête (consignes, politiques, schémas épinglés) maximisant la réutilisation du cache, suivi des seules preuves filtrées `ACL` E : EXIG-FIN-07.
+2. **Borne de jetons et compaction :** plafond inscrit à la fiche, résumé structuré au-delà et interdiction de l’historique brut comme mémoire longue E : EXIG-ARC-22.
+3. **Passage par référence sur** `A2A` **:** jeton de référence vérifiable et sous-contexte minimal plutôt que copie de charges lourdes E : EXIG-ORC-23.
 
-Selon des prépublications non évaluées par les pairs (`SkillsBench` sur `87` tâches et études `AGENTS.md`, `C27 § 13.3–13.4`), le format `Agent Skills` (transféré à l’`AAIF` le 22 oct. 2026) améliore la réussite lorsqu’il est **rédigé et revu par des humains**. À l’inverse, l’autogénération dégrade la qualité, tandis qu’`AGENTS.md` gonfle les jetons sans gain prouvé hors programmation. Toute compétence procédurale est donc versionnée, signée et qualifiée en `CI` P : CAP-018 E : EXIG-INT-15 E : EXIG-INT-16 .
+Selon des prépublications non évaluées par les pairs (`SkillsBench` sur `87` tâches et études `AGENTS.md`, `C27 § 13.3–13.4`), le format `Agent Skills` (transféré à l’`AAIF` le 22 oct. 2026) améliore la réussite lorsqu’il est **rédigé et revu par des humains**. À l’inverse, l’autogénération dégrade la qualité, tandis qu’`AGENTS.md` gonfle les jetons sans gain prouvé hors programmation. Toute compétence procédurale est donc versionnée, signée et qualifiée en `CI` P : CAP-018 E : EXIG-INT-15 E : EXIG-INT-16.
 
 ## 4.3 Séparation des quatre mémoires `CoALA`, bi-temporalité et oubli sélectif
 
-Selon `CAD26 § 5.5` (`Figure 4`, `Tableau 13`), la mémoire longue est gouvernée **comme une base de données soumise à la Loi 25, jamais comme un cache**. Elle reste **désactivée par défaut** sans besoin inter-sessions prouvé (`C27 ch. 14`) P : DEC-004 E : PRIN-11 . Lorsqu’elle est ouverte, les **quatre mémoires** `CoALA` demeurent isolées :
+Selon `CAD26 § 5.5` (`Figure 4`, `Tableau 13`), la mémoire longue est gouvernée **comme une base de données soumise à la Loi 25, jamais comme un cache**. Elle reste **désactivée par défaut** sans besoin inter-sessions prouvé (`C27 ch. 14`) P : DEC-004 E : PRIN-11. Lorsqu’elle est ouverte, les **quatre mémoires** `CoALA` demeurent isolées :
 
 > **[Figure]**
 > - Compilation du contexte, 4 mémoires CoALA et couche anticorruption Préfixe KV-cache, filtrage ACL (ARC-16), cloisonnement (ARC-25) et COMP-3
@@ -54,31 +54,31 @@ Selon `CAD26 § 5.5` (`Figure 4`, `Tableau 13`), la mémoire longue est gouvern�
 > - ACL lecture · non fiable
 > - Couche anticorruption patrimoniale, CUA borné et sas OT (DEC-008)
 > - Adaptateur MCP patrimonial (CAP-024)
-> - • EBCDIC (CP037/1147) ↔ UTF-8
-> - • COMP-3 → Decimal exact
-> - • Zéro flottant IEEE 754
-> - • Trames COBOL / EDI & lissage
+> - EBCDIC (CP037/1147) ↔ UTF-8
+> - COMP-3 → Decimal exact
+> - Zéro flottant IEEE 754
+> - Trames COBOL / EDI & lissage
 > - CUA interne (CAP-025) & LSAC
-> - • CUA ≤ 12 m (INI-015) + caviardage • Grattage externe interdit (PEX-001)
+> - CUA ≤ 12 m (INI-015) + caviardage • Grattage externe interdit (PEX-001)
 > - Sas périphérique OT (CAP-028)
-> - • Lecture historien / jumeau seul • Zéro écriture OPC UA directe
+> - Lecture historien / jumeau seul • Zéro écriture OPC UA directe
 
 *Fig. 4. – Architecture des quatre mémoires CoALA, pipeline déterministe de compilation du contexte (KV-cache, ACL amont) et couche anticorruption patrimoniale (EBCDIC/COMP-3 Decimal exact) et périphérique OT.*
 
-- **Mémoire de travail (**`CAD26` **C2) :** état et sous-objectifs persistés hors processus à chaque transition dans un magasin chiffré E : EXIG-ARC-05 E : EXIG-ARC-06 E : EXIG-ORC-11 .
-- **Mémoire épisodique (**`CAD26` **C5) :** résumés structurés horodatés (zéro transcription brute), isolés **par locataire, mandant et serveur** `MCP`, avec expiration par entrée E : EXIG-ARC-22 E : EXIG-ARC-23 .
-- **Mémoire sémantique (**`CAD26` **C5) :** index hybrides et graphes métiers filtrés `ACL` en lecture et expirant avec la source E : EXIG-ARC-16 E : EXIG-ARC-23 .
-- **Mémoire procédurale (**`CAD26` **C3) :** invites système et `Agent Skills` signés sans aucune modification autonome en production (`PC4` `[S]`) P : CAP-018 E : EXIG-ARC-24 .
+- **Mémoire de travail (**`CAD26` **C2) :** état et sous-objectifs persistés hors processus à chaque transition dans un magasin chiffré E : EXIG-ARC-05 E : EXIG-ARC-06 E : EXIG-ORC-11.
+- **Mémoire épisodique (**`CAD26` **C5) :** résumés structurés horodatés (zéro transcription brute), isolés **par locataire, mandant et serveur** `MCP`, avec expiration par entrée E : EXIG-ARC-22 E : EXIG-ARC-23.
+- **Mémoire sémantique (**`CAD26` **C5) :** index hybrides et graphes métiers filtrés `ACL` en lecture et expirant avec la source E : EXIG-ARC-16 E : EXIG-ARC-23.
+- **Mémoire procédurale (**`CAD26` **C3) :** invites système et `Agent Skills` signés sans aucune modification autonome en production (`PC4` `[S]`) P : CAP-018 E : EXIG-ARC-24.
 
-Contre l’empoisonnement mémoriel (`OWASP ASI06`, `C26 S-069` ; `C27 § 14.5`), **aucun magasin de mémoire longue n’est partagé en écriture** entre agents ou serveurs `MCP` E : EXIG-ARC-25 . Chaque écriture épisodique valide un schéma excluant le texte brut externe et propage l’étiquette « contenu non fiable ». Tout souvenir relu demeure incapable d’autoriser seul une action sensible E : EXIG-SEC-03 E : EXIG-SEC-04 . Enfin, un **graphe bi-temporel** dissocie validité métier (`valid_from` / `valid_to`) et ingestion système. Il reconstitue l’état exact connu lors d’une décision sous `BSIF E-23`, tout en assurant la **destruction ou l’anonymisation sélective vérifiable** exigée par l’**article 23 de la Loi 25** (`C27 § 14.6`) sans briser les index adjacents P : CAP-019 P : DEC-004 P : POR-005 E : EXIG-CON-10 .
+Contre l’empoisonnement mémoriel (`OWASP ASI06`, `C26 S-069` ; `C27 § 14.5`), **aucun magasin de mémoire longue n’est partagé en écriture** entre agents ou serveurs `MCP` E : EXIG-ARC-25. Chaque écriture épisodique valide un schéma excluant le texte brut externe et propage l’étiquette « contenu non fiable ». Tout souvenir relu demeure incapable d’autoriser seul une action sensible E : EXIG-SEC-03 E : EXIG-SEC-04. Enfin, un **graphe bi-temporel** dissocie validité métier (`valid_from` / `valid_to`) et ingestion système. Il reconstitue l’état exact connu lors d’une décision sous `BSIF E-23`, tout en assurant la **destruction ou l’anonymisation sélective vérifiable** exigée par l’**article 23 de la Loi 25** (`C27 § 14.6`) sans briser les index adjacents P : CAP-019 P : DEC-004 P : POR-005 E : EXIG-CON-10.
 
 ## 4.4 Couche anticorruption patrimoniale (`COMP-3`, `CUA`) et frontière périphérique (`OT`)
 
-L’accès aux grands livres bancaires et moteurs actuariels interdit `SQL` direct et virgule flottante approximative (`C27 ch. 25` ; `ADR-001, ADR-016`). Le cœur transactionnel reste protégé derrière des serveurs `MCP` **anticorruption** lissant les rafales pour préserver quotas `MIPS`, files et verrous centraux P : CAP-024 P : DEC-008 P : INI-011 E : EXIG-ARC-14 E : EXIG-ARC-17 . Hors modèle, ces adaptateurs exécutent trois conversions déterministes. Ils assurent le transcodage exact `EBCDIC` (`CP037` ou `CP1147`) ↔ `UTF-8`. Ils convertissent sans perte les décimaux condensés `Packed Decimal` **(**`COMP-3`**)** vers `Decimal` **exact** ou entiers d’unités mineures, **excluant** `IEEE 754` P : CAP-024 P : PEX-015 E : EXIG-AUT-08 . Ils alignent enfin les trames fixes (`COMMAREA`, *copybooks* `COBOL`/`RPG`) et `EDI X12`/`EDIFACT`, avec clé d’idempotence vérifiée en cible et référence de trace (`EXIG-ARC-18`, `DEVRAIT`) E : EXIG-ARC-18 .
+L’accès aux grands livres bancaires et moteurs actuariels interdit `SQL` direct et virgule flottante approximative (`C27 ch. 25` ; `ADR-001, ADR-016`). Le cœur transactionnel reste protégé derrière des serveurs `MCP` **anticorruption** lissant les rafales pour préserver quotas `MIPS`, files et verrous centraux P : CAP-024 P : DEC-008 P : INI-011 E : EXIG-ARC-14 E : EXIG-ARC-17. Hors modèle, ces adaptateurs exécutent trois conversions déterministes. Ils assurent le transcodage exact `EBCDIC` (`CP037` ou `CP1147`) ↔ `UTF-8`. Ils convertissent sans perte les décimaux condensés `Packed Decimal` **(**`COMP-3`**)** vers `Decimal` **exact** ou entiers d’unités mineures, **excluant** `IEEE 754` P : CAP-024 P : PEX-015 E : EXIG-AUT-08. Ils alignent enfin les trames fixes (`COMMAREA`, *copybooks* `COBOL`/`RPG`) et `EDI X12`/`EDIFACT`, avec clé d’idempotence vérifiée en cible et référence de trace (`EXIG-ARC-18`, `DEVRAIT`) E : EXIG-ARC-18.
 
-Les *Computer-Use Agents* (`CUA`, `C27 § 25.8` `[S]`, `PRR R-12`) sont voués à l’extinction. À l’externe, le grattage d’écran réutilisant l’authentifiant client tombe sous `LSAC art. 171` (`SIG-103`) P : PEX-001 . À l’interne (`3270`/`5250`), seule une **dérogation temporaire** est admise sous caviardage des `RP` avant capture, zones interdites, double assertion visuelle et **extinction sous 12 mois** vers `MCP` (zéro dérogation à `POR-008`) P : CAP-025 P : DEC-008 P : INI-015 P : POR-004 P : POR-008 E : EXIG-GOV-15 E : EXIG-GOV-16 .
+Les *Computer-Use Agents* (`CUA`, `C27 § 25.8` `[S]`, `PRR R-12`) sont voués à l’extinction. À l’externe, le grattage d’écran réutilisant l’authentifiant client tombe sous `LSAC art. 171` (`SIG-103`) P : PEX-001. À l’interne (`3270`/`5250`), seule une **dérogation temporaire** est admise sous caviardage des `RP` avant capture, zones interdites, double assertion visuelle et **extinction sous 12 mois** vers `MCP` (zéro dérogation à `POR-008`) P : CAP-025 P : DEC-008 P : INI-015 P : POR-004 P : POR-008 E : EXIG-GOV-15 E : EXIG-GOV-16.
 
-**Frontière périphérique** `OT` **(hors cœur financier).** Cette capacité reste marginale dans le secteur bancaire et assurantiel (`C27 ch. 28`, `ADR-017`, prototypes sans essai réel). Elle vise uniquement la télématique d’indemnisation, les succursales physiques ou les filiales d’actifs industriels. `CAP-028` cantonne tout pont `MCP` devant `OPC UA` (`IEC 62541`, serveur `v2.0.2`), `AAS` ou `MQTT Sparkplug` à trois verrous : lecture seule sur réplica isolé (`IEC 62443`), zéro écriture ni réessai vers un automate (`PLC`/`SCADA`), et validation sur jumeau déterministe plus approbation hors bande (`SIG-109`) P : CAP-028 P : INI-029 E : EXIG-AUT-09 E : EXIG-AUT-11 E : EXIG-ORC-27 .
+**Frontière périphérique** `OT` **(hors cœur financier).** Cette capacité reste marginale dans le secteur bancaire et assurantiel (`C27 ch. 28`, `ADR-017`, prototypes sans essai réel). Elle vise uniquement la télématique d’indemnisation, les succursales physiques ou les filiales d’actifs industriels. `CAP-028` cantonne tout pont `MCP` devant `OPC UA` (`IEC 62541`, serveur `v2.0.2`), `AAS` ou `MQTT Sparkplug` à trois verrous : lecture seule sur réplica isolé (`IEC 62443`), zéro écriture ni réessai vers un automate (`PLC`/`SCADA`), et validation sur jumeau déterministe plus approbation hors bande (`SIG-109`) P : CAP-028 P : INI-029 E : EXIG-AUT-09 E : EXIG-AUT-11 E : EXIG-ORC-27.
 
 Exemples non limitatifs `ABB → SBB` des Couches `C3` et `C4` (état au 28 oct.–14 nov. 2026) :
 
@@ -92,15 +92,15 @@ Contrat opérationnel croisé — Architecte d’entreprise (AE) | Architecte de
 
 Décisions AE
 
-1. Gouverner indicateurs et règles métiers comme du code dans une couche sémantique neutre sans couplage à une ontologie en incubation (`SIG-110`) P : PRI-008 P : CAP-015 P : DEC-003 E : EXIG-INT-02 .
-2. Désactiver par défaut la mémoire inter-sessions ; exiger bi-temporalité (`BSIF E-23`) et purge sélective vérifiable (`Loi 25 art. 23`) avant ouverture P : CAP-019 P : DEC-004 P : POR-005 E : EXIG-CON-10 .
-3. Proscrire le grattage externe et borner tout `CUA` interne par un budget d’extinction à **12 mois** P : CAP-025 P : DEC-008 P : PEX-001 P : INI-015 P : POR-004 E : EXIG-GOV-16 .
+1. Gouverner indicateurs et règles métiers comme du code dans une couche sémantique neutre sans couplage à une ontologie en incubation (`SIG-110`) P : PRI-008 P : CAP-015 P : DEC-003 E : EXIG-INT-02.
+2. Désactiver par défaut la mémoire inter-sessions ; exiger bi-temporalité (`BSIF E-23`) et purge sélective vérifiable (`Loi 25 art. 23`) avant ouverture P : CAP-019 P : DEC-004 P : POR-005 E : EXIG-CON-10.
+3. Proscrire le grattage externe et borner tout `CUA` interne par un budget d’extinction à **12 mois** P : CAP-025 P : DEC-008 P : PEX-001 P : INI-015 P : POR-004 E : EXIG-GOV-16.
 
 Spécifications AS
 
-1. Compiler le contexte en strates fixes (`KV-cache`), filtrer les `ACL` en amont sans compte de service, borner les jetons et passer par référence sur `A2A` P : CAP-017 E : EXIG-ARC-16 E : EXIG-ARC-22 E : EXIG-FIN-07 E : EXIG-ORC-23 .
-2. Cloisonner les quatre mémoires `CoALA` (zéro écriture partagée), valider les schémas anti-`ASI06` et signer les `Agent Skills` rédigés par humains P : CAP-018 E : EXIG-ARC-23 E : EXIG-ARC-24 E : EXIG-ARC-25 E : EXIG-SEC-04 .
-3. Exécuter hors modèle transcodage `EBCDIC`, décimaux `COMP-3` en `Decimal` exact et trames `COBOL`/`EDI`, et interposer réplica isolé plus jumeau numérique devant `OPC UA` P : CAP-024 P : CAP-028 E : EXIG-ARC-14 E : EXIG-ARC-17 E : EXIG-AUT-08 E : EXIG-AUT-11 .
+1. Compiler le contexte en strates fixes (`KV-cache`), filtrer les `ACL` en amont sans compte de service, borner les jetons et passer par référence sur `A2A` P : CAP-017 E : EXIG-ARC-16 E : EXIG-ARC-22 E : EXIG-FIN-07 E : EXIG-ORC-23.
+2. Cloisonner les quatre mémoires `CoALA` (zéro écriture partagée), valider les schémas anti-`ASI06` et signer les `Agent Skills` rédigés par humains P : CAP-018 E : EXIG-ARC-23 E : EXIG-ARC-24 E : EXIG-ARC-25 E : EXIG-SEC-04.
+3. Exécuter hors modèle transcodage `EBCDIC`, décimaux `COMP-3` en `Decimal` exact et trames `COBOL`/`EDI`, et interposer réplica isolé plus jumeau numérique devant `OPC UA` P : CAP-024 P : CAP-028 E : EXIG-ARC-14 E : EXIG-ARC-17 E : EXIG-AUT-08 E : EXIG-AUT-11.
 
 ## 4.5 Grille de décision
 

@@ -1,13 +1,14 @@
 %% Figure 10.3 — Les trois rôles que le commerce agentique dissocie, et ce que la dissociation fait disparaître.
 %% Source : 1 - Compendium 2026, Chapitre 10 (page 124)
 
-%%{init: {'flowchart': {'wrappingWidth': 900}}}%%
+%%{init: {'flowchart': {'wrappingWidth': 1150}}}%%
 flowchart TB
     subgraph SG_ROLES["TROIS RÔLES, ET CE QUE CHACUN PERD"]
         direction LR
         R1["<b>1 · Mandant humain</b><br/><br/>Détient l'intention et l'autorité<br/>de payer.<br/><br/><i>n'a plus la présence à l'écran au<br/>moment de l'achat</i>"]
         R2["<b>2 · Agent exécutant</b><br/><br/>Détient la délégation et<br/>l'opération de la transaction.<br/><br/><i>n'a aucun signal perceptuel prouvant<br/>qu'un humain agit</i>"]
         R3["<b>3 · Commerçant</b><br/><br/>Détient la livraison du bien ou du<br/>service.<br/><br/><i>n'a plus la capacité d'observer un<br/>parcours humain</i>"]
+        R1 ~~~ R2 ~~~ R3
     end
 
     NOTE["Ce que la dissociation fait disparaître est le SIGNAL, pas le droit : le commerçant perd la capacité d'observer un parcours<br/>humain, sans perdre l'obligation de savoir à qui il vend."]

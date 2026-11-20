@@ -2,7 +2,7 @@
 ' Source : 1 - Compendium 2026, Chapitre 9 (page 109)
 
 @startuml
-top to bottom direction
+left to right direction
 hide stereotype
 skinparam packageStyle rectangle
 skinparam backgroundColor #FFFFFF
@@ -10,8 +10,8 @@ skinparam defaultFontName "Segoe UI"
 skinparam defaultFontSize 13
 skinparam shadowing false
 skinparam roundCorner 4
-skinparam nodesep 25
-skinparam ranksep 18
+skinparam nodesep 14
+skinparam ranksep 30
 
 skinparam package {
   BackgroundColor #FFFFFF
@@ -51,8 +51,8 @@ package "TROIS STRATES EMPILÉES" as STACK {
     Trajectoire vers le découplage, liaisons multiples — ch. 8 § 8.1.3.
   ]
 
-  S3 -[hidden]down- S2
-  S2 -[hidden]down- S1
+  S1 -[hidden]right- S2
+  S2 -[hidden]right- S3
 }
 
 rectangle PILIER <<pillar>> [
@@ -61,9 +61,9 @@ rectangle PILIER <<pillar>> [
   trois autres. Traitée au ch. 3 et dans tout le Livre II.
 ]
 
-S3 ..right.. PILIER #9E3A14
-S2 ..right.. PILIER #9E3A14
-S1 ..right.. PILIER #9E3A14
+S3 .. PILIER #9E3A14
+S2 .. PILIER #9E3A14
+S1 .. PILIER #9E3A14
 
 legend
   L'analogie en couches a une limite, et elle est portée par la quatrième strate : l'identité et la confiance

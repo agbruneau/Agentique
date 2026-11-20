@@ -1,12 +1,12 @@
 %% Figure 42.3 — Les cinq zones de compensation architecturale : ce que l'architecture doit porter là où rien ne le porte
+%%{init: {'flowchart': {'wrappingWidth': 1150}}}%%
 flowchart TB
     subgraph ZONES["CINQ ZONES, CINQ COMPENSATIONS"]
-        direction TB
-        Z1["<b>Z1 · La production de la trace</b><br/>L'art. 12.1 exige les raisons, facteurs et paramètres ; une préimpression enseigne<br/>que la journalisation confiée aux agents « n'est généralement pas recommandée ».<br/><i>la trace doit être produite par le cadre, non par les agents</i>"]
-        Z2["<b>Z2 · Le point d'arrêt humain</b><br/>L'art. 12.1 exige l'occasion de présenter ses observations<br/>à un membre du personnel en mesure de réviser.<br/><i>le socle ne documente d'humain dans aucun des trois protocoles</i>"]
+        Z1["<b>Z1 · La production de la trace</b><br/>L'art. 12.1 exige les raisons, facteurs et paramètres ; une préimpression enseigne que la journalisation confiée aux agents « n'est généralement pas recommandée ».<br/><i>la trace doit être produite par le cadre, non par les agents</i>"]
+        Z2["<b>Z2 · Le point d'arrêt humain</b><br/>L'art. 12.1 exige l'occasion de présenter ses observations à un membre du personnel en mesure de réviser.<br/><i>le socle ne documente d'humain dans aucun des trois protocoles</i>"]
         Z3["<b>Z3 · La détectabilité de l'auto-modification</b><br/>L'avis 11-348 capte l'adaptativité après déploiement ; E-23 attend une surveillance continue.<br/><i>un manifeste scinde l'auto-modification en adaptation et évolution</i>"]
         Z4["<b>Z4 · L'interface d'accès du cadre bancaire</b><br/>Le standard technique n'est pas désigné — fait négatif vérifié.<br/><i>traiter le standard comme une variable derrière une frontière d'abstraction</i>"]
-        Z5["<b>Z5 · Le contenu et l'état</b><br/>Les réponses protocolaires établissent qui parle ; elles ne couvrent ni l'empoisonnement d'outils,<br/>ni l'injection d'invites, ni l'empoisonnement de mémoire.<br/><i>le confinement local — ch. 11 § 11.4.1</i>"]
+        Z5["<b>Z5 · Le contenu et l'état</b><br/>Les réponses protocolaires établissent qui parle ; elles ne couvrent ni l'empoisonnement d'outils, ni l'injection d'invites, ni l'empoisonnement de mémoire.<br/><i>le confinement local — ch. 11 § 11.4.1</i>"]
         Z1 ~~~ Z2 ~~~ Z3 ~~~ Z4 ~~~ Z5
     end
 

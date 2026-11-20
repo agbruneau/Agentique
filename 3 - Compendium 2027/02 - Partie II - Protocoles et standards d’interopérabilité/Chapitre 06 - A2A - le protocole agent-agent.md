@@ -367,13 +367,13 @@ Lors d’un appel `SendMessage` ou `SendStreamingMessage`, le `contextId` relie 
 > - Diagnostic normalisé JSON-RPC & déclenchement
 > - de la compensation Saga côté orchestrateur
 > - Canal A — Streaming SSE (Régime T2 : 2 s à 3 min)
-> - • Flux ouvert via message/stream ou tasks/resubscribe
-> - • Événements temps réel : TaskStatusUpdateEvent
-> - • Fragments d'artefacts : TaskArtifactUpdateEvent (lastChunk)
+> - Flux ouvert via message/stream ou tasks/resubscribe
+> - Événements temps réel : TaskStatusUpdateEvent
+> - Fragments d'artefacts : TaskArtifactUpdateEvent (lastChunk)
 > - Canal B — Push Webhooks Signés (Régimes T3–T4 : > 3 min)
-> - • Enregistré via pushNotificationConfig (zéro polling actif)
-> - • Rappel HTTPS sortant vers l'awakeable Temporal / Restate
-> - • Vérification cryptographique : JWS / HMAC + anti-rejeu
+> - Enregistré via pushNotificationConfig (zéro polling actif)
+> - Rappel HTTPS sortant vers l'awakeable Temporal / Restate
+> - Vérification cryptographique : JWS / HMAC + anti-rejeu
 
 *Fig. 13. – Cycle de vie complet d’une tâche asynchrone A2A v1.0 : découverte, négociation multi-tours, streaming SSE et notifications push signées.*
 
@@ -614,22 +614,22 @@ SLIM (*Secure Low-Latency Interactive Messaging*), implémenté en Rust pour une
 > - Filtrage politiques DMZ B2B
 > - Plan de Transport Temps Réel SLIM et Chiffrement de Groupe IETF MLS (Data Plane)
 > - Domaine A — Groupe Boréal
-> - • Agent Achats BEL & Agent Risque BCA
-> - • Identités locales SPIFFE / SVID
-> - • Routeur local SLIM (QUIC / HTTP/2)
+> - Agent Achats BEL & Agent Risque BCA
+> - Identités locales SPIFFE / SVID
+> - Routeur local SLIM (QUIC / HTTP/2)
 > - Feuilles TreeKEM #1 & #2
 > - Clés éphémères X25519MLKEM768
 > - Maillage de Relais SLIM (Zero-Trust)
 > - Routage sémantique par noms hiérarchiques :
 > - boreal/supply/rfq-session-884/*
-> - • Multiplexage QUIC sans blocage HOL
-> - • Topologies : Unicast, Streaming, Pub/Sub
+> - Multiplexage QUIC sans blocage HOL
+> - Topologies : Unicast, Streaming, Pub/Sub
 > - Aveugle aux charges utiles (Chiffrées E2E)
 > - Traversée NAT sortante uniquement (port 443)
 > - Domaine B — Partenaire Externe
-> - • Agent Cotation Transporteur Maritime
-> - • Identité vérifiée did:wba + mTLS
-> - • Passerelle DMZ SLIM / A2A v1.0
+> - Agent Cotation Transporteur Maritime
+> - Identité vérifiée did:wba + mTLS
+> - Passerelle DMZ SLIM / A2A v1.0
 > - Feuille TreeKEM #3
 > - Révocation atomique fin de tâche
 > - Tunnel Cryptographique de Bout en Bout IETF MLS (RFC 9420) — Suite Hybride Post-Quantique (FIPS 203 ML-KEM + X25519)

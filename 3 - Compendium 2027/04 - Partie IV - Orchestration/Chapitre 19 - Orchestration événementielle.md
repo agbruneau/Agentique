@@ -310,9 +310,9 @@ Deux formes de charge utile coexistent sur ce maillage, et le choix entre elles 
 > - Fenêtre de Grâce (120 s)
 > - Rétention avant effet externe Vérifie absence d'AbortSignal
 > - Émissions Externes Scellées :
-> - • Avis transporteur EDI X12
-> - • Courriel d'engagement client
-> - • Règlement signé AP2 / x402
+> - Avis transporteur EDI X12
+> - Courriel d'engagement client
+> - Règlement signé AP2 / x402
 > - Revérification Cedar JIT
 > - Aller : T1 validé Aller : T2 validé Arbitrage Pivot Tp
 > - Succès
@@ -559,7 +559,7 @@ Aucune API ne permet de « rappeler » un courriel client déjà lu, un avis d�
 
 Toute architecture L3/L4 interpose par conséquent, devant ses connecteurs de sortie externes, un tampon à fenêtre de grâce adossé à une table transactionnelle durable. L’intention scellée est retenue pendant une durée calibrée sur la criticité métier (typiquement 60 à 300 secondes, ou jusqu’à réception d’une contresignature cryptographique de l’*Agent Critique* indépendant). Durant cette fenêtre, le tampon écoute les événements d’annulation (`ca.boreal.saga.aborted`) et de révocation d’identité SPIFFE; à l’échéance, il réévalue la politique Cedar/OPA juste-à-temps avant de sceller l’émission externe. L’extrait 19.3 en donne l’implémentation.
 
-#### Extrait 19.3 — `[Exécuté en CI]` · Tampon Python asynchrone à fenêtre de grâce pour sorties irréversibles
+### Extrait 19.3 — `[Exécuté en CI]` · Tampon Python asynchrone à fenêtre de grâce pour sorties irréversibles
 
 ```
 from __future__ import annotations

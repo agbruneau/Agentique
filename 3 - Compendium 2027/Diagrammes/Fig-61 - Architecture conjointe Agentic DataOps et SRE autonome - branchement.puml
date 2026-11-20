@@ -55,7 +55,9 @@ rectangle "Couloir 2 — SRE Autonome Borné (Incident → Remédiation)" as Cou
   C2_2 -[#C2410C]down-> C2_3
 }
 
-C2_2 <-[#1E293B]-> C1_2
+C1_1 -[hidden]right-> C2_1
+C1_2 <-[#1E293B]right-> C2_2
+C1_3 -[hidden]right-> C2_3
 
 rectangle "Gouvernance par Rayon d'Impact (Blast Radius) & Boucle Post-Mortem Automatisée" as BlastRadius #F8FAFC;line:334155 {
   rectangle PalierR1 #FFFFFF;line:166534 [

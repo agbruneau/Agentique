@@ -2,12 +2,18 @@
 @startuml
 title Pipeline Industriel de Context Engineering : Du Flux Brut au Handoff Sans Context Rot
 
-top to bottom direction
+left to right direction
 skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
+skinparam rectangle<<invis>> {
+  BackgroundColor transparent
+  BorderColor transparent
+  FontColor transparent
+  FontSize 1
+}
 
-rectangle Pipeline #FFFFFF;line:FFFFFF {
+rectangle " " as Pipeline <<invis>> {
   rectangle "1. Sources Hétérogènes" as S1 #F8FAFC;line:475569 {
     rectangle S1a #FFFFFF;line:64748B [
       **Corpus Documentaire**
@@ -25,9 +31,9 @@ rectangle Pipeline #FFFFFF;line:FFFFFF {
       **Risque brut : 150k+ tok**
       Bruit, PII & ASI01
     ]
-    S1a -[hidden]down-> S1b
-    S1b -[hidden]down-> S1c
-    S1c -[hidden]down-> S1d
+    S1a -[hidden]left-> S1b
+    S1b -[hidden]left-> S1c
+    S1c -[hidden]left-> S1d
   }
 
   rectangle "2. Garde ACL & Hygiène" as S2 #FFF7ED;line:9A3412 {
@@ -47,8 +53,8 @@ rectangle Pipeline #FFFFFF;line:FFFFFF {
       Score Reranker & Fraîcheur
       Rejet si score < seuil
     ]
-    S2a -[hidden]down-> S2b
-    S2b -[hidden]down-> S2c
+    S2a -[hidden]left-> S2b
+    S2b -[hidden]left-> S2c
   }
 
   rectangle "3. Fenêtre Compilée (Budget Fixe)" as S3 #EFF6FF;line:2563EB {
@@ -69,9 +75,9 @@ rectangle Pipeline #FFFFFF;line:FFFFFF {
       **Strate 3 : Objectif Courant**
       Instruction locale + Schéma sortie
     ]
-    S3a -[hidden]down-> S3b
-    S3b -[hidden]down-> S3c
-    S3c -[hidden]down-> S3d
+    S3a -[hidden]left-> S3b
+    S3b -[hidden]left-> S3c
+    S3c -[hidden]left-> S3d
   }
 
   rectangle "4. Transfert A2A Propre" as S4 #ECFDF5;line:15803D {
@@ -89,12 +95,12 @@ rectangle Pipeline #FFFFFF;line:FFFFFF {
       Zéro historique brut copié
       Élimine le Context Rot
     ]
-    S4a -[#15803D]-> S4b
+    S4a -[#15803D]left-> S4b
   }
 
-  S1 -[#1E293B]-> S2
-  S2 -[#2563EB]-> S3
-  S3 -[#15803D]-> S4
+  S1a -[#1E293B]-> S2a
+  S2a -[#2563EB]-> S3a
+  S3a -[#15803D]-> S4a
 }
 
 rectangle "Plan Sous-Jacent : Stockage par Référence (Claim-Check) & Observabilité du Budget d'Attention" as SubPlan #F8FAFC;line:475569 {
@@ -110,10 +116,11 @@ rectangle "Plan Sous-Jacent : Stockage par Référence (Claim-Check) & Observabi
     **Métriques OpenTelemetry (gen_ai.context.*)**
     Ratio Signal/Bruit • Taux Cache Hit • Troncatures
   ]
-  CAS -[hidden]right-> Cache
-  Cache -[hidden]right-> OTel
+  CAS -[hidden]-> Cache
+  Cache -[hidden]-> OTel
 }
 
-Pipeline -[hidden]down-> SubPlan
-
+S1d -[hidden]left-> CAS
+S2c -[hidden]left-> Cache
+S4b -[hidden]left-> OTel
 @enduml

@@ -7,88 +7,22 @@ skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
 skinparam defaultFontSize 11
 skinparam defaultTextAlignment center
+skinparam Padding 5
 
-together {
-  rectangle "**Conteneur à noyau partagé**" as Col1 #FFFFFF;line:FFFFFF {
-    rectangle "Code généré par l’agent" as c1_1 #EDE8F5;line:5A469B
-    rectangle "Espaces de noms, cgroups" as c1_2 #FEF3DC;line:B45309
-    rectangle "<color:#9C2F39>- - - frontière d’isolation principale - - -</color>" as c1_sep #FFFFFF;line:FFFFFF
-    rectangle "Noyau de l’hôte\nPARTAGÉ" as c1_3 #E6EBF1;line:64748B
-    rectangle "Matériel" as c1_4 #CBD5E1;line:CBD5E1
-    rectangle "**<color:#9C2F39>Interdit pour le code non fiable</color>**" as c1_5 #FCE8EB;line:9C2F39
-    c1_1 -[hidden]down-> c1_2
-    c1_2 -[hidden]down-> c1_sep
-    c1_sep -[hidden]down-> c1_3
-    c1_3 -[hidden]down-> c1_4
-    c1_4 -[hidden]down-> c1_5
-  }
+rectangle TableIso #FFFFFF;line:FFFFFF [
+  |= <#FFFFFF> **Conteneur à noyau partagé** |= <#FFFFFF> **gVisor** |= <#FFFFFF> **MicroVM (Firecracker, Kata)** |= <#FFFFFF> **WebAssembly (WASI)** |
+  |<#EDE8F5> Code généré par l’agent |<#EDE8F5> Code généré par l’agent |<#EDE8F5> Code généré par l’agent |<#EDE8F5> Module compilé en Wasm |
+  |<#FEF3DC> Espaces de noms, cgroups |<#FEF3DC> Noyau applicatif en espace\nutilisateur (Sentry) |<#FEF3DC> Noyau invité dédié |<#FEF3DC> Environnement sans autorité\nambiante (capacités) |
+  |<#FFFFFF> <color:#9C2F39>- - - - - - - - - - - - - - - - - -</color> |<#FFFFFF> <color:#9C2F39>- - - - frontière d’isolation principale - - - -</color> |<#FFFFFF> <color:#9C2F39>- - - - - - - - - - - - - - - - - -</color> |<#FFFFFF> <color:#9C2F39>- - - - - - - - - - - - - - - - - -</color> |
+  |<#E6EBF1> Noyau de l’hôte\nPARTAGÉ |<#E6EBF1> Noyau de l’hôte\nappels système filtrés\n(seccomp) |<#FEF3DC> VMM minimal + jailer\n----\nNoyau hôte + KVM |<#E6EBF1> Processus hôte distinct\net noyau |
+  |<#CBD5E1> Matériel |<#CBD5E1> Matériel |<#CBD5E1> Matériel (virtualisation) |<#CBD5E1> Matériel |
+  |<#FCE8EB> <color:#9C2F39>**Interdit pour le code non fiable**</color> |<#FEF3DC> <color:#B45309>**Admis; option GPU avec réserves**</color> |<#E6F4EA> <color:#28774E>**Par défaut (Kata : Kubernetes)**</color> |<#E6F0FA> <color:#1B5E9E>**Admis : greffons et fonctions**</color> |
+]
 
-  rectangle "**gVisor**" as Col2 #FFFFFF;line:FFFFFF {
-    rectangle "Code généré par l’agent" as c2_1 #EDE8F5;line:5A469B
-    rectangle "Noyau applicatif en espace\nutilisateur (Sentry)" as c2_2 #FEF3DC;line:B45309
-    rectangle "<color:#9C2F39>- - - frontière d’isolation principale - - -</color>" as c2_sep #FFFFFF;line:FFFFFF
-    rectangle "Noyau de l’hôte\nappels système filtrés\n(seccomp)" as c2_3 #E6EBF1;line:64748B
-    rectangle "Matériel" as c2_4 #CBD5E1;line:CBD5E1
-    rectangle "**<color:#B45309>Admis; option GPU avec réserves</color>**" as c2_5 #FEF3DC;line:B45309
-    c2_1 -[hidden]down-> c2_2
-    c2_2 -[hidden]down-> c2_sep
-    c2_sep -[hidden]down-> c2_3
-    c2_3 -[hidden]down-> c2_4
-    c2_4 -[hidden]down-> c2_5
-  }
+rectangle Verrous #FFFFFF;line:FFFFFF [
+  <size:11><b>QUATRE VERROUS OBLIGATOIRES, QUELLE QUE SOIT LA TECHNOLOGIE</b></size>
+  |<#F8FAFC>  **Réseau fermé par défaut**\nliste d’autorisation explicite,\nDNS restreint, métadonnées\ninfonuagiques bloquées  |<#F8FAFC>  **Secrets hors du bac à sable**\ninjectés par le mandataire\nde sortie; jamais lisibles\npar le code de l’agent  |<#F8FAFC>  **Délais à trois niveaux**\npar appel d’outil, par boucle\nde tâche, par durée de vie\ndu bac à sable; éphémère  |<#F8FAFC>  **Journalisation immuable**\ncommandes, écritures de\nfichiers et requêtes réseau\nconsignées hors du bac à sable  |
+]
 
-  rectangle "**MicroVM (Firecracker, Kata)**" as Col3 #FFFFFF;line:FFFFFF {
-    rectangle "Code généré par l’agent" as c3_1 #EDE8F5;line:5A469B
-    rectangle "Noyau invité dédié" as c3_2 #FEF3DC;line:B45309
-    rectangle "<color:#9C2F39>- - - frontière d’isolation principale - - -</color>" as c3_sep #FFFFFF;line:FFFFFF
-    rectangle "VMM minimal + jailer" as c3_3a #FEF3DC;line:B45309
-    rectangle "Noyau hôte + KVM" as c3_3b #E6EBF1;line:64748B
-    rectangle "Matériel (virtualisation)" as c3_4 #CBD5E1;line:CBD5E1
-    rectangle "**<color:#28774E>Par défaut (Kata : Kubernetes)</color>**" as c3_5 #E6F4EA;line:28774E
-    c3_1 -[hidden]down-> c3_2
-    c3_2 -[hidden]down-> c3_sep
-    c3_sep -[hidden]down-> c3_3a
-    c3_3a -[hidden]down-> c3_3b
-    c3_3b -[hidden]down-> c3_4
-    c3_4 -[hidden]down-> c3_5
-  }
-
-  rectangle "**WebAssembly (WASI)**" as Col4 #FFFFFF;line:FFFFFF {
-    rectangle "Module compilé en Wasm" as c4_1 #EDE8F5;line:5A469B
-    rectangle "Environnement sans autorité\nambiante (capacités)" as c4_2 #FEF3DC;line:B45309
-    rectangle "<color:#9C2F39>- - - frontière d’isolation principale - - -</color>" as c4_sep #FFFFFF;line:FFFFFF
-    rectangle "Processus hôte distinct\net noyau" as c4_3 #E6EBF1;line:64748B
-    rectangle "Matériel" as c4_4 #CBD5E1;line:CBD5E1
-    rectangle "**<color:#1B5E9E>Admis : greffons et fonctions</color>**" as c4_5 #E6F0FA;line:1B5E9E
-    c4_1 -[hidden]down-> c4_2
-    c4_2 -[hidden]down-> c4_sep
-    c4_sep -[hidden]down-> c4_3
-    c4_3 -[hidden]down-> c4_4
-    c4_4 -[hidden]down-> c4_5
-  }
-}
-
-package "QUATRE VERROUS OBLIGATOIRES, QUELLE QUE SOIT LA TECHNOLOGIE" as Verrous #FFFFFF;line:FFFFFF {
-  rectangle "**Réseau fermé par défaut**\nliste d’autorisation explicite,\nDNS restreint, métadonnées\ninfonuagiques bloquées" as V1 #F8FAFC;line:CBD5E1
-  rectangle "**Secrets hors du bac à sable**\ninjectés par le mandataire\nde sortie; jamais lisibles\npar le code de l’agent" as V2 #F8FAFC;line:CBD5E1
-  rectangle "**Délais à trois niveaux**\npar appel d’outil, par boucle\nde tâche, par durée de vie\ndu bac à sable; éphémère" as V3 #F8FAFC;line:CBD5E1
-  rectangle "**Journalisation immuable**\ncommandes, écritures de\nfichiers et requêtes réseau\nconsignées hors du bac à sable" as V4 #F8FAFC;line:CBD5E1
-  V1 -[hidden]right-> V2
-  V2 -[hidden]right-> V3
-  V3 -[hidden]right-> V4
-}
-
-c1_1 -[hidden]right-> c2_1
-c2_1 -[hidden]right-> c3_1
-c3_1 -[hidden]right-> c4_1
-c1_3 -[hidden]right-> c2_3
-c2_3 -[hidden]right-> c3_3a
-c3_3a -[hidden]right-> c4_3
-c1_5 -[hidden]right-> c2_5
-c2_5 -[hidden]right-> c3_5
-c3_5 -[hidden]right-> c4_5
-c1_5 -[hidden]down-> V1
-c2_5 -[hidden]down-> V2
-c3_5 -[hidden]down-> V3
-c4_5 -[hidden]down-> V4
+TableIso -[hidden]down-> Verrous
 @enduml

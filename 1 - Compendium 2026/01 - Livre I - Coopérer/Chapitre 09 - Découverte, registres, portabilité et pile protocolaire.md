@@ -53,9 +53,7 @@ Le premier moment s’appuie sur des **artefacts d’auto-description** publiés
 
 Côté agent-agent, la **carte d’agent** est exposée à un emplacement **bien connu**, de sorte que tout client peut récupérer la description d’un agent à partir de son seul domaine (ch. 8 § 8.4.2). Côté schématisation des capacités, un cadre de schéma ouvert propose un format normalisé pour décrire ce qu’un agent sait faire. Côté agent-outil, un **registre** fournit un catalogue assorti d’une interface décrite formellement, selon un modèle fédéré plutôt que centralisé, un nommage en domaine inversé, et plusieurs voies de vérification de propriété.
 
-**Mise en œuvre.** *Distinguer un registre d’une place de marché est opérationnel, non rhétorique.* Le registre sert la **découverte technique** — résoudre un nom vers une description et une adresse **vérifiables** ; la
-
-place de marché sert la **distribution commerciale** — vitrine, monétisation, curation éditoriale (§ 9.1.5). Et *un catalogue est lui-même un contrat*, soumis à versionnement et dépréciation comme les protocoles qu’il indexe : l’invariant du Livre s’applique au registre autant qu’à l’outil qu’il décrit.
+**Mise en œuvre.** *Distinguer un registre d’une place de marché est opérationnel, non rhétorique.* Le registre sert la **découverte technique** — résoudre un nom vers une description et une adresse **vérifiables** ; la place de marché sert la **distribution commerciale** — vitrine, monétisation, curation éditoriale (§ 9.1.5). Et *un catalogue est lui-même un contrat*, soumis à versionnement et dépréciation comme les protocoles qu’il indexe : l’invariant du Livre s’applique au registre autant qu’à l’outil qu’il décrit.
 
 ### 9.1.4 Annuaires, services de noms et registres d’identité
 
@@ -141,9 +139,7 @@ Le flou entre les deux axes principaux rappelle toutefois que l’emboîtement n
 
 ### 9.2.5 Matrice de maturité et de décision
 
-**Mise en œuvre.** *Ce tableau est un instantané daté, et c’est sa valeur comme sa limite.* Repris du Vol. I *Monographie* § 3.7.5, à l’état de **juin 2026**, il croise, pour chacun des protocoles retenus, l’axe couvert, le statut de maturité, la gouvernance et la recommandation d’usage. Les statuts reprennent strictement les qualifications des sections amont : *ce qui est marqué candidat ou expérimental ne doit pas être déployé comme*
-
-*acquis.* Sept lignes ici pour les neuf de la source, et l’écart tient à DEUX REGROUPEMENTS, non à un retrait : la couche commerciale y tient une ligne pour deux spécifications — son développement est au ch. 10 —, et la couche agent-humain une ligne pour deux également, d’où sa gouvernance à deux termes ; cette dernière retient le statut le plus prudent des deux, l’une des spécifications réunies étant expérimentale et l’autre seulement émergente. *Aucune ligne de la source n’est omise ; deux paires sont réunies.*
+**Mise en œuvre.** *Ce tableau est un instantané daté, et c’est sa valeur comme sa limite.* Repris du Vol. I *Monographie* § 3.7.5, à l’état de **juin 2026**, il croise, pour chacun des protocoles retenus, l’axe couvert, le statut de maturité, la gouvernance et la recommandation d’usage. Les statuts reprennent strictement les qualifications des sections amont : *ce qui est marqué candidat ou expérimental ne doit pas être déployé comme acquis.* Sept lignes ici pour les neuf de la source, et l’écart tient à DEUX REGROUPEMENTS, non à un retrait : la couche commerciale y tient une ligne pour deux spécifications — son développement est au ch. 10 —, et la couche agent-humain une ligne pour deux également, d’où sa gouvernance à deux termes ; cette dernière retient le statut le plus prudent des deux, l’une des spécifications réunies étant expérimentale et l’autre seulement émergente. *Aucune ligne de la source n’est omise ; deux paires sont réunies.*
 
 ***Tableau 9.3** — Matrice de maturité et de décision, à juin 2026, gel du Vol. I (actualisation post-gel : révision MCP `2026-07-28` ratifiée le 28 juillet 2026 [ch. 8 § 8.2.1] ; A2A rattaché à l’AAIF le 17 août 2026 [ch. 7 § 7.4.1]).*
 
@@ -233,9 +229,7 @@ C’est ici que se referme la thèse du ch. 2, reprise **par copie** : « l’in
 
 La grille d’analyse à trois plans de Yuan et coll. (2026) — communication, syntaxique, sémantique —, appliquée à **dix-huit protocoles**, établit ce diagnostic : les protocoles dominants atteignent une bonne maturité aux plans de la communication et de la syntaxe, mais demeurent pauvres en mécanismes de clarification, d’alignement et de vérification du sens, lesquels sont repoussés vers la couche applicative.
 
-Ce diagnostic recoupe la filiation du ch. 7 § 7.2.1 : le problème n’est pas neuf, il ressurgit sous une forme déplacée. Le socle théorique de la compréhension partagée est **ancien et robuste** — principe coopératif
-
-et maximes conversationnelles, terrain commun construit par étapes successives, théorie de la pertinence posant que l’interprétation mobilise des inférences contextuelles au-delà du contenu littéral.
+Ce diagnostic recoupe la filiation du ch. 7 § 7.2.1 : le problème n’est pas neuf, il ressurgit sous une forme déplacée. Le socle théorique de la compréhension partagée est **ancien et robuste** — principe coopératif et maximes conversationnelles, terrain commun construit par étapes successives, théorie de la pertinence posant que l’interprétation mobilise des inférences contextuelles au-delà du contenu littéral.
 
 *Ces cadres rappellent que comprendre n’est jamais purement syntaxique : c’est inférer une intention en contexte, ce qu’aucune poignée de main protocolaire ne réalise à elle seule.*
 

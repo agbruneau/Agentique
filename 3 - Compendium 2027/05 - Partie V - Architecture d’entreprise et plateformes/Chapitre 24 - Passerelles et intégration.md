@@ -209,7 +209,7 @@ Pour dépasser les déclarations d’éditeurs sans prétendre à une mesure en 
 - **Campagne 3 — Interopérabilité** `MCP` **/** `A2A` **sur 3 adaptateurs ouverts (**`Borealis-Bench/results/campagne3_mcp_a2a_interop.json`**) :** trois adaptateurs ouverts (`LangGraph-adapter`, `AutoGen-adapter`, `CrewAI-adapter`) exécutent trois scénarios (`SC1-MCP-Tool-Governance`, `SC2-A2A-Cross-Framework-Delegation`, `SC3-`
   `Trifecta-And-LogJack-Containment`) face au serveur réel `MCP JSON-RPC 2.0` + `A2A v1.0` de la passerelle Go.
 
-| Adaptateur ou vert | Scénario `MCP` / `A2A` | Constaté (`Borealis-Bench`) | `DPoP` / `8693` + Règle 2 & `POR-003` | Latence (ms) |
+| Adaptateur ouvert | Scénario `MCP` / `A2A` | Constaté (`Borealis-Bench`) | `DPoP` / `8693` + Règle 2 & `POR-003` | Latence (ms) |
 | --- | --- | --- | --- | --- |
 | `LangGraph-adapter` | `SC1` / `SC2` / `SC3` | `PASS` **(3/3)** | Oui | `88,33` / `45,11` / `58,74` |
 | `AutoGen-adapter` | `SC1` / `SC2` / `SC3` | `PASS` **(3/3)** | Oui | `90,55` / `50,00` / `18,92` |

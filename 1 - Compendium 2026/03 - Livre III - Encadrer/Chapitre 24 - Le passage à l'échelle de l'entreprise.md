@@ -24,9 +24,7 @@ Le cadre qui rend ce paysage analysable est celui des **quatre dettes**, et il s
 
 ### 24.0.2 Prolifération d’agents et explosion des identités non humaines
 
-La **prolifération d’agents** (*agent sprawl*) désigne un phénomène propre à l’entreprise : la multiplication non maîtrisée d’agents et, surtout, des identités machine qui les portent. Là où un développeur instancie
-
-un agent isolé, une organisation en voit naître des centaines par essaimage d’équipes, chacun requérant justificatifs d’accès, jetons et droits.
+La **prolifération d’agents** (*agent sprawl*) désigne un phénomène propre à l’entreprise : la multiplication non maîtrisée d’agents et, surtout, des identités machine qui les portent. Là où un développeur instancie un agent isolé, une organisation en voit naître des centaines par essaimage d’équipes, chacun requérant justificatifs d’accès, jetons et droits.
 
 *Les chiffres qui circulent sur ce phénomène portent tous leur statut, et aucun n’est une mesure auditée* — *et chacun conserve son auteur et sa date*. Un ratio de 82 identités non humaines pour 1 identité humaine est rapporté par CyberArk (2025, enquête Vanson Bourne) et relayé par Rubrik Zero Labs (2025), qui indique par ailleurs que 89 % des organisations sondées ont intégré des agents à leur infrastructure d’identité : chiffre fournisseur issu d’une enquête commanditée — Wakefield Research, 1 625 décideurs —, à revérifier. Le Forum économique mondial (2025) documente par ailleurs la fréquence des organisations dépourvues de gouvernance claire de ces identités. Et sur le versant prospectif, une projection d’analyste — non une mesure — de **Gartner (2025)** anticipe que les agents dépasseront en nombre les vendeurs d’un facteur dix d’ici 2028, et thématise un **écart d’autorité** (*authority gap*) entre ce que les agents sont **techniquement capables** de faire et ce que l’organisation les a **explicitement habilités** à faire.
 
@@ -166,9 +164,7 @@ Les plateformes qui industrialisent ce cycle de vie portent des statuts inégaux
 
 *Le patron directeur est la délégation traçable sans réutilisation de jeton*, et sa règle d’or est explicite : ne jamais réacheminer le jeton de l’utilisateur tel quel à un service en aval, sous peine de dissoudre toute traçabilité et d’ouvrir la voie au mandataire confus (*confused deputy*).
 
-Le mécanisme normatif est l’**échange de jetons**, dont deux revendications nommées matérialisent une chaîne de délégation vérifiable. Le siège de cette mécanique est le ch. 17, qui l’a instruite à la source primaire
-
-— et *l’extraction y établit davantage que le repérage n’annonçait*. Ce chapitre ne la reconstruit pas ; il en tire la conséquence de parc.
+Le mécanisme normatif est l’**échange de jetons**, dont deux revendications nommées matérialisent une chaîne de délégation vérifiable. Le siège de cette mécanique est le ch. 17, qui l’a instruite à la source primaire — et *l’extraction y établit davantage que le repérage n’annonçait*. Ce chapitre ne la reconstruit pas ; il en tire la conséquence de parc.
 
 Un problème ouvert subsiste, et il faut l’écrire au bon degré : la délégation dès le deuxième saut n’est pas standardisée de bout en bout, et le corpus de la somme ne documente aucun contrat universel pour propager l’autorité sur une chaîne arbitraire d’agents — *absence de documentation, degré 3, et non fait négatif vérifié.* Le **ch. 17** en fait son objet sous le nom de problème des deux sauts, et le ch. 24 n’y ajoute rien sinon que le problème se multiplie par le cardinal du parc.
 
@@ -192,9 +188,7 @@ La normalisation reste en chantier, et son statut se dit : un groupe de travail 
 
 La grille est nommée et attribuée, et elle doit l’être : il s’agit de l’*OWASP Non-Human Identities Top 10* (2025) de l’Open Worldwide Application Security Project (OWASP). *La règle de neutralité qui conduit ailleurs à taire une dénomination commerciale volatile ne s’applique pas à l’auteur et à la date d’un référentiel public — une grille dont on ne peut vérifier la provenance perd sa valeur probante, et c’est ici le domicile même de cette matière.*
 
-La grille énumère **dix risques** qui forment une liste de contrôle d’architecture et d’appel d’offres directement actionnable : mise hors service défaillante ; fuite de secret ; identité non humaine tierce vulnérable ; authentification non sûre ; identité sur-privilégiée ; configuration infonuagique non sûre ; secrets à longue
-
-durée de vie ; isolation d’environnement ; réutilisation d’identité ; et usage humain d’une identité non humaine.
+La grille énumère **dix risques** qui forment une liste de contrôle d’architecture et d’appel d’offres directement actionnable : mise hors service défaillante ; fuite de secret ; identité non humaine tierce vulnérable ; authentification non sûre ; identité sur-privilégiée ; configuration infonuagique non sûre ; secrets à longue durée de vie ; isolation d’environnement ; réutilisation d’identité ; et usage humain d’une identité non humaine.
 
 Sa valeur opérationnelle tient à **deux usages**. D’une part, elle se cartographie vers les référentiels de contrôle reconnus, ce qui permet de raccrocher la sécurité des identités d’agents au corpus d’audit existant de l’entreprise plutôt que d’en inventer un parallèle — *et c’est exactement la deuxième moitié du membre de thèse « sans dupliquer l’IAM et l’observabilité en place ».* D’autre part, elle se lit comme une grille d’évaluation des fournisseurs : chaque item devient un critère scorable.
 
@@ -274,7 +268,7 @@ Une question reste ouverte et se déclare : la métrique d’utilité marginale 
 
 L’orchestration agentique se déploie sur trois échelles que distingue moins la technique que la structure de propriété et de confiance (le Tableau 24.1).
 
-***Tableau 24.1** — Les trois échelles d’orchestration, ordonnées par structure de propriété. Le « plan de contrôle » de la première rangée est celui du maillage de services pré-agentique (ch. 1 § 1.3.4), non le *control plane* agentique.*
+**Tableau 24.1** — Les trois échelles d’orchestration, ordonnées par structure de propriété. Le « plan de contrôle » de la première rangée est celui du maillage de services pré-agentique (ch. 1 § 1.3.4), non le *control plane* agentique.
 
 | **Échelle** | **Ce qui change** | **Ce que l’architecture doit produire** |
 | --- | --- | --- |
@@ -328,9 +322,7 @@ L’entreprise constitue le pire cas pour l’injection indirecte de consignes, 
 
 *L’étude de cas fondatrice est référencée au ch. 11*, qui en est le siège protocolaire : divulguée en juin 2025 et affectant un assistant bureautique majeur, elle constitue la première exfiltration sans clic démontrée en production — c’est-à-dire sans aucune action de la victime — et a introduit la notion de **violation de portée**, l’agent franchissant la frontière censée séparer données fiables et instructions exécutables. Les deux scores de gravité attribués à cette vulnérabilité diffèrent selon l’organisme qui les publie ; la somme les attribue là où elle les cite, et ne les moyenne pas.
 
-Les défenses se déclinent en couches : classification de la provenance et du niveau de confiance des données ingérées, **démarcation** du contenu non fiable, et séparation du plan de contrôle et du flux de données non
-
-fiable — faux ami à désambiguïser ici comme partout ailleurs dans le chapitre : ce « plan de contrôle » est celui du maillage de services pré-agentique (**ch. 1 § 1.3.4**), **non le** *control plane* agentique. Le principe directeur, propre à l’échelle d’un parc où l’on ne maîtrise pas l’origine de chaque document, est de traiter toute donnée comme potentiellement empoisonnée — *l’injection demeurant un risque non résoluble plutôt qu’un défaut corrigible*, et le **ch. 11** en porte la démonstration.
+Les défenses se déclinent en couches : classification de la provenance et du niveau de confiance des données ingérées, **démarcation** du contenu non fiable, et séparation du plan de contrôle et du flux de données non fiable — faux ami à désambiguïser ici comme partout ailleurs dans le chapitre : ce « plan de contrôle » est celui du maillage de services pré-agentique (**ch. 1 § 1.3.4**), **non le** *control plane* agentique. Le principe directeur, propre à l’échelle d’un parc où l’on ne maîtrise pas l’origine de chaque document, est de traiter toute donnée comme potentiellement empoisonnée — *l’injection demeurant un risque non résoluble plutôt qu’un défaut corrigible*, et le **ch. 11** en porte la démonstration.
 
 ### 24.6.3 Prévention de fuite, chaîne d’approvisionnement et confinement
 
@@ -354,9 +346,7 @@ La réponse aux incidents propre à la couche agentique définit enfin des class
 
 ## 24.7 Interopérabilité inter-entreprises (B2B), commerce agentique et écosystème
 
-Le B2B traditionnel suppose une **relation préétablie** : deux firmes qui s’accordent à l’avance sur un format, un canal sécurisé ou une API contractuelle, puis échangent des messages dont la sémantique est figée par convention bilatérale. La couche agentique brise cette hypothèse. Un agent agissant pour le compte d’une organisation peut désormais **découvrir** un partenaire qu’il ne connaissait pas, **négocier** des termes qui
-
-n’étaient pas pré-câblés et **conclure une transaction** — engager des fonds, signer un mandat — par-delà la frontière de la firme.
+Le B2B traditionnel suppose une **relation préétablie** : deux firmes qui s’accordent à l’avance sur un format, un canal sécurisé ou une API contractuelle, puis échangent des messages dont la sémantique est figée par convention bilatérale. La couche agentique brise cette hypothèse. Un agent agissant pour le compte d’une organisation peut désormais **découvrir** un partenaire qu’il ne connaissait pas, **négocier** des termes qui n’étaient pas pré-câblés et **conclure une transaction** — engager des fonds, signer un mandat — par-delà la frontière de la firme.
 
 *Ce déplacement déporte le verrou de l’interopérabilité du format de message vers la* ***confiance*** *: non plus « comment lire ce que l’autre envoie », mais « qui est cet agent, qui le contrôle, et qu’engage-t-il ».*
 
@@ -378,9 +368,7 @@ Ce que ce chapitre retient est le **critère d’étagement** : la pile se lit e
 
 La couche de règlement est celle où l’arbitrage est le plus délicat, car deux familles de rails coexistent durablement : des rails de règlement machine-à-machine natifs du web d’un côté, les réseaux de cartes de l’autre. *Ils ne se remplacent pas mais cohabitent ; un architecte B2B doit prévoir les deux selon la contrepartie, la juridiction et le profil de risque.* Le versant canadien de cette question est au ch. 36, qui est explicitement prospectif et déclare que le corpus ne documente pas l’articulation entre ces protocoles et les rails canadiens.
 
-Les estimations du gisement économique relèvent de la projection d’analyste et se lisent comme telles, attributeur nommé : McKinsey & Company (2025) avance des ordres de grandeur en milliers de milliards de dollars à l’horizon 2030 pour le commerce agentique, et **Gartner (2025)** — déjà cité au § 24.0.2 — attribue aux agents un dépassement en nombre des vendeurs d’ici 2028. Chiffres de projection, non audités. *Ces*
-
-*ordres de grandeur situent l’enjeu sans le mesurer ; la pile de protocoles en est la condition d’infrastructure, non la preuve de réalisation.*
+Les estimations du gisement économique relèvent de la projection d’analyste et se lisent comme telles, attributeur nommé : McKinsey & Company (2025) avance des ordres de grandeur en milliers de milliards de dollars à l’horizon 2030 pour le commerce agentique, et **Gartner (2025)** — déjà cité au § 24.0.2 — attribue aux agents un dépassement en nombre des vendeurs d’ici 2028. Chiffres de projection, non audités. *Ces ordres de grandeur situent l’enjeu sans le mesurer ; la pile de protocoles en est la condition d’infrastructure, non la preuve de réalisation.*
 
 ### 24.7.3 Espaces de données souverains, places de marché et web agentique
 
@@ -400,9 +388,7 @@ Quatre classes de risques en découlent. Un agent compromis peut **traverser** l
 
 Les contre-mesures composent une défense en profondeur recalibrée pour la frontière : les **mandats cryptographiquement signés** fournissent la non-répudiation, la vérification d’identité et d’autorité **avant tout engagement** refuse la confiance implicite au partenaire, et une attestation indépendante du comportement est opposable sans dépendre de la bonne foi de la contrepartie. *Les trois s’appuient sur des mécanismes déjà posés* : ch. 10 pour les mandats, ch. 18 pour la vérification d’identité, ch. 15 et ch. 16 pour les registres et l’attestation de comportement.
 
-Au-delà des contrôles techniques subsistent des questions sans réponse stabilisée, qui relèvent du droit autant que de l’architecture — et le corpus les transmet plutôt qu’il ne les résout. Quel **recours** en cas de
-
-préjudice causé par une transaction agent-à-agent inter-firmes, et selon quel régime ? Le vide est réel et daté, et les deux instruments sont nommés : la proposition de directive européenne sur la responsabilité en matière d’IA a été retirée le 6 octobre 2025, laissant le rabattement sur la **directive (UE) 2024/2853** — la directive révisée sur la responsabilité du fait des produits —, à transposer d’ici le 9 décembre 2026 (*application après le 8 décembre 2026, par rectificatif du 7 mai 2026*). Comment **assurer** un risque dont la causalité se distribue sur plusieurs agents autonomes de firmes différentes ? Comment trancher une **responsabilité transfrontalière** quand l’agent demandeur, l’agent répondeur et le rail de règlement relèvent de **trois juridictions** ?
+Au-delà des contrôles techniques subsistent des questions sans réponse stabilisée, qui relèvent du droit autant que de l’architecture — et le corpus les transmet plutôt qu’il ne les résout. Quel **recours** en cas de préjudice causé par une transaction agent-à-agent inter-firmes, et selon quel régime ? Le vide est réel et daté, et les deux instruments sont nommés : la proposition de directive européenne sur la responsabilité en matière d’IA a été retirée le 6 octobre 2025, laissant le rabattement sur la **directive (UE) 2024/2853** — la directive révisée sur la responsabilité du fait des produits —, à transposer d’ici le 9 décembre 2026 (*application après le 8 décembre 2026, par rectificatif du 7 mai 2026*). Comment **assurer** un risque dont la causalité se distribue sur plusieurs agents autonomes de firmes différentes ? Comment trancher une **responsabilité transfrontalière** quand l’agent demandeur, l’agent répondeur et le rail de règlement relèvent de **trois juridictions** ?
 
 Ces questions ne sont pas résolues par l’état de l’art ; elles sont transmises comme telles, et *la piste d’audit y sert de substitut imparfait à un régime de responsabilité dédié.* Le ch. 29 § 29.3 rencontre le même problème du côté canadien, sous le nom d’imputabilité du comportement émergent, et le ch. 49 en enregistrera l’état final.
 
@@ -418,9 +404,7 @@ Trois choses que la somme ne peut pas écrire ici, et qu’elle déclare plutôt
 
 La question de recherche ouverte se formule ainsi, en lieu et place d’une doctrine. *Quelle est la loi de service d’une capacité d’inférence partagée entre N agents concurrents, et comment un budget de latence de bout en bout se répartit-il sur une chaîne dont un maillon est un appel de modèle à durée non bornée ?* **Critère de clôture** : une source primaire, extraite et datée, établissant *(a)* une caractérisation de la variabilité de latence sous charge partagée, et *(b)* une méthode de dimensionnement transposée à un parc d’agents, où la ressource en contention est le jeton plutôt que le cœur de calcul.
 
-Une relève désigne une source primaire canonique pour la première moitié de cette question, et elle n’a pas été instruite. Une relève identifie Dean et Barroso, *The Tail at Scale*, *Communications of the ACM* 56(2), p. 74-80, 1ᵉʳ février 2013, DOI 10.1145/2408776.2408794, dont la thèse est que la variabilité de latence se tolère par construction logicielle, et qu’à l’échelle un incident de performance rare touche une fraction
-
-significative des requêtes. Elle porte exactement l’objet de cette section — et la somme ne l’écrit pas comme un fait : elle est marquée « à instruire à la source primaire ; n’entre pas au socle ». La transposition à un parc d’agents n’est en outre pas dans la source — *où un appel de modèle domine le budget et où la contention porte sur des jetons plutôt que sur des cœurs* : elle demeure une construction d’auteur, et c’est la marque de la présente section qui la porte.
+Une relève désigne une source primaire canonique pour la première moitié de cette question, et elle n’a pas été instruite. Une relève identifie Dean et Barroso, *The Tail at Scale*, *Communications of the ACM* 56(2), p. 74-80, 1ᵉʳ février 2013, DOI 10.1145/2408776.2408794, dont la thèse est que la variabilité de latence se tolère par construction logicielle, et qu’à l’échelle un incident de performance rare touche une fraction significative des requêtes. Elle porte exactement l’objet de cette section — et la somme ne l’écrit pas comme un fait : elle est marquée « à instruire à la source primaire ; n’entre pas au socle ». La transposition à un parc d’agents n’est en outre pas dans la source — *où un appel de modèle domine le budget et où la contention porte sur des jetons plutôt que sur des cœurs* : elle demeure une construction d’auteur, et c’est la marque de la présente section qui la porte.
 
 Lecture de l’auteur — le seul énoncé que cette section verse à la somme est négatif, et il est utile : *un parc d’agents est dimensionné par une ressource — la capacité d’inférence — dont ni la somme ni le socle ne fournit le modèle de service.* Ce que le socle établit : que le coût agrège six postes et que le multi-agent en majore un. Ce qu’il n’établit pas : tout le reste. Le ch. 33 rencontrera la conséquence de ce vide sur un cas concret — un rail de paiement dont le délai est contractuel —, et le **ch. 22 § 22.4** en a déjà posé la règle : *un délai qui doit être tenu ne se confie pas à un composant dont la durée d’exécution n’est pas bornée.* La règle est connue ; le dimensionnement qui la rendrait opposable ne l’est pas.
 
@@ -468,9 +452,7 @@ Le goulot du déploiement est socio-organisationnel avant d’être technique : 
 
 La conduite du changement engage d’abord une **recomposition des compétences**. Le *Future of Jobs Report 2025* du Forum économique mondial (2025), fondé sur plus de mille entreprises, projette un solde net de l’ordre de +78 millions d’emplois d’ici 2030 et estime qu’environ 39 % des compétences requises évolueront — *projection à statut prospectif, à revérifier.* Un effet de structure préoccupe particulièrement : l’érosion du vivier junior, l’automatisation des tâches d’entrée de gamme tarissant le réservoir dont sont issus les profils expérimentés de demain ; Brynjolfsson, Chandar et Chen (2025) documentent des effets d’emploi récents concentrés sur les jeunes travailleurs des métiers les plus exposés.
 
-La distinction entre augmentation et substitution structure l’analyse, et elle réfute une intuition courante : selon Shao, Zope, Jiang et coll. (2025), au sein du cadre *Future of Work with AI Agents* de Stanford, la frontière ne suit pas la hiérarchie attendue, nombre de tâches relevant d’une augmentation souhaitée par les travailleurs plutôt que d’une substitution. *Cette nuance invite à rapprocher ce constat de l’anti-patron du*
-
-*mimétisme d’organigramme (§ 24.5.1) et à calibrer le déploiement sur la nature réelle des tâches, non sur leur étiquette de poste.*
+La distinction entre augmentation et substitution structure l’analyse, et elle réfute une intuition courante : selon Shao, Zope, Jiang et coll. (2025), au sein du cadre *Future of Work with AI Agents* de Stanford, la frontière ne suit pas la hiérarchie attendue, nombre de tâches relevant d’une augmentation souhaitée par les travailleurs plutôt que d’une substitution. *Cette nuance invite à rapprocher ce constat de l’anti-patron du mimétisme d’organigramme (§ 24.5.1) et à calibrer le déploiement sur la nature réelle des tâches, non sur leur étiquette de poste.*
 
 En Europe, le droit social constitue un blocage de déploiement et non un simple paramètre de conformité : consultation des comités d’entreprise, codétermination et encadrement de la surveillance algorithmique des travailleurs peuvent suspendre la mise en production d’un agent dont l’action affecte l’organisation du travail. Le **Parlement européen (2025)** a adopté sur ce point une résolution — non contraignante — qui signale un encadrement à venir. S’y ajoutent les obligations d’accessibilité de la **directive (UE) 2019/882**, en application depuis le 28 juin 2025 avec transition jusqu’au 28 juin 2030, qui contraignent les interfaces agent-humain destinées au public.
 

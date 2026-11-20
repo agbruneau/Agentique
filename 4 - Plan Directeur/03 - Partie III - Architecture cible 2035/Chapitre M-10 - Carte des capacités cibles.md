@@ -52,7 +52,7 @@ Le modèle de référence du chapitre M-9 fixe l’ossature des responsabilités
 
 *Fig. 3. – Carte des capacités cibles par couche et par volet du plan de contrôle*
 
-Chaque capacité est définie une seule fois par une **fiche à dix champs** : identifiant et nom, emplacement, description, statut (**quarante-deux invariantes** sous A, B et C; **dix conditionnelles** détaillées en M-11), palier d’atteinte (`P1` en 2028-2029, `P2` en 2030-2032, `P3` en 2033-2035 C : tous ; SIG-003 ), motif sourcé, preuve d’atteinte vérifiable, dépendances, renvois exacts au Compendium 2027, aux ADR et au Cadre 2026, et signal de révision (`SIG-nnn`).
+Chaque capacité est définie une seule fois par une **fiche à dix champs** : identifiant et nom, emplacement, description, statut (**quarante-deux invariantes** sous A, B et C; **dix conditionnelles** détaillées en M-11), palier d’atteinte (`P1` en 2028-2029, `P2` en 2030-2032, `P3` en 2033-2035 C : tous ; SIG-003), motif sourcé, preuve d’atteinte vérifiable, dépendances, renvois exacts au Compendium 2027, aux ADR et au Cadre 2026, et signal de révision (`SIG-nnn`).
 
 | Emplacement (chapitre M-9) | Plage | Total | Invariantes | Conditionnelles | P1 | P2 | P3 |
 | --- | --- | --- | --- | --- | --- | --- | --- |

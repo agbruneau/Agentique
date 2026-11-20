@@ -351,7 +351,7 @@ La scission de la section 45.4 prend la forme de deux composants séparés par u
 1. **L’agent Diplomate externe (zone DMZ B2B).** Seul autorisé à communiquer sur le canal A2A / EDC, il ne connaît ni le prix de réserve, ni les marges internes, ni l’état des stocks. Il reçoit pour chaque tour une enveloppe de mandat tactique étroite, générée pour ce tour (par exemple : *« Demander une cotation ferme pour 40 tonnes grade M270 livrées à Drummondville avant le 18 mai, objectif cible 126 500 $ CAD, variante autorisée sur incoterm DAP »*). Un analyseur syntaxique strict convertit chaque réponse entrante du fournisseur en structure numérique avant qu’elle franchisse la DMZ : aucun champ de commentaire libre externe n’atteint le système interne.
 2. **L’Évaluateur interne (zone interne à haute sécurité).** Isolé du réseau externe, ce service hybride (optimiseur mathématique déterministe secondé par un SLM interne d’analyse contractuelle) évalue les offres structurées reçues selon une fonction de score multi-attributs pondérée :
 
-𝑈(𝐱) = 𝑤𝑝⋅ 𝑃max −𝑝 𝑃max −𝑃cible + 𝑤𝑑⋅exp(−𝜆max(0, 𝑑−𝑑req)) + 𝑤𝑞⋅𝑆qual(𝑞) −𝑤𝑐⋅ 𝐸CO2 𝐸plafond
+𝑈(𝐱) = 𝑤_𝑝 ⋅ (𝑃_{max} − 𝑝)/(𝑃_{max} − 𝑃_{cible}) + 𝑤_𝑑 ⋅ exp(−𝜆 max(0, 𝑑 − 𝑑_{req})) + 𝑤_𝑞 ⋅ 𝑆_{qual}(𝑞) − 𝑤_𝑐 ⋅ 𝐸_{CO2}/𝐸_{plafond}
 
 Tant que 𝑝≤𝑃max et que les contraintes dures de conformité sont satisfaites, le moteur calcule la contre-proposition optimale du tour 𝑡+ 1, avec un plafond dur de 𝑇max = 4 tours qui interdit le sondage statistique prolongé par un tiers, ou émet un jeton d’acceptation vers le sas de signature AP2.
 

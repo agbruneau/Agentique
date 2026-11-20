@@ -10,9 +10,7 @@ Le second mouvement du Livre s’ouvre ici. Les ch. 1 à 3 ont posé le socle **
 
 La proposition directrice tient en un déplacement, et il vaut d’être énoncé avec précision : ce qui transite entre systèmes d’IA n’est plus seulement de la **donnée structurée**, comme dans l’intégration d’entreprise classique (ch. 2), mais des **intentions**, des **tâches** et des **capacités** négociées à l’exécution.
 
-Ce déplacement se lit comme un glissement des noms vers les verbes. Une interface REST est orientée **ressources** : elle expose des entités — un client, une commande, un compte — que l’on crée, lit, modifie
-
-ou supprime. Un agent est orienté **actions** : il reçoit un but exprimé en langage naturel, sélectionne des opérations et les compose pour produire un résultat dont la forme n’était pas entièrement prédéterminée.
+Ce déplacement se lit comme un glissement des noms vers les verbes. Une interface REST est orientée **ressources** : elle expose des entités — un client, une commande, un compte — que l’on crée, lit, modifie ou supprime. Un agent est orienté **actions** : il reçoit un but exprimé en langage naturel, sélectionne des opérations et les compose pour produire un résultat dont la forme n’était pas entièrement prédéterminée.
 
 L’objet de l’échange se déplace ainsi de l’**état partagé** vers l’**action déléguée**. Ce glissement réactive la distinction posée au ch. 1 § 1.1.1 : l’interopérabilité n’est ni la connectivité, ni la compatibilité de formats, mais la capacité d’échanger de l’information et d’en faire un usage utile.
 
@@ -227,9 +225,7 @@ Cette lacune est portée ici, encadrée, et renvoyée au ch. 49 pour son état f
 
 Il reste à examiner les chiffres par lesquels ces protocoles annoncent leur réussite, et à le faire avec une sévérité que la littérature promotionnelle ne s’impose pas.
 
-Les données disponibles sont les suivantes, et chacune est attribuée à sa source, comme elle doit l’être à chaque occurrence. En **avril 2026**, la Linux Foundation — fondation faîtière des deux protocoles — annonce que plus de 150 organisations déclarent leur soutien au protocole agent-agent, contre plus de 50
-
-au lancement. Un communiqué de la Linux Foundation du 29 juillet 2025 fait état de plus de 65 entreprises déclarant leur soutien à la couche d’infrastructure.
+Les données disponibles sont les suivantes, et chacune est attribuée à sa source, comme elle doit l’être à chaque occurrence. En **avril 2026**, la Linux Foundation — fondation faîtière des deux protocoles — annonce que plus de 150 organisations déclarent leur soutien au protocole agent-agent, contre plus de 50 au lancement. Un communiqué de la Linux Foundation du 29 juillet 2025 fait état de plus de 65 entreprises déclarant leur soutien à la couche d’infrastructure.
 
 *Ces deux chiffres ne se rapprochent pas* : plus de huit mois les séparent, et le socle n’enregistre **aucune actualisation ultérieure** du second. Les comparer serait fautif.
 
