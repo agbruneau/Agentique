@@ -19,7 +19,7 @@
   - Chapitre 11 — Modèle opérationnel à trois lignes, usine logicielle interne et approvisionnement réversible — 80
   - Chapitre 12 — Homologation unifiée et trajectoire adaptative (90 jours → 18 mois → Paliers P1–P3) sous signaux — 85
 - Annexes — Instruments de travail de l’architecte — 92
-  - Annexe A — Tables de concordance 2026-2035 et pont CAP/PEX vers EXIG-* — 93
+  - Annexe A — Tables de concordance 2026-2035 et pont CAP/PEX vers EXIG-\* — 93
   - Annexe B — Catalogue de poche des décisions d’architecture AE / AS — 98
   - Annexe C — Grille unifiée d’homologation avant mise en production — 101
   - Annexe D — Guide d’orientation vers les 2 541 pages sources et bibliographie maîtresse — 105

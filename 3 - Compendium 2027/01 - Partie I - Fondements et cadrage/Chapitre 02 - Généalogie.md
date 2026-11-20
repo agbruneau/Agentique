@@ -55,9 +55,7 @@ Les dates montrent que ces générations se chevauchent : la thèse qui définit
 
 Le modèle sépare aussi deux notions que les débats sur les agents confondent souvent. Une *politique* exprime le point de vue d’un seul participant, qui la fait respecter. Un *contrat* est un accord entre plusieurs parties. Et une contrainte qu’on ne peut pas faire respecter n’est pas une politique.
 
-En pratique, cette génération s’est incarnée dans SOAP, WSDL, la famille WS-*, les annuaires UDDI et les bus de services. Un relevé de 2025 en dresse le bilan : producteurs et consomma
-
-teurs ont été découplés, au prix d’une forte complexité d’exploitation, d’adaptateurs fragiles et d’une configuration qui proliférait à mesure que les interfaces changeaient [10].
+En pratique, cette génération s’est incarnée dans SOAP, WSDL, la famille WS-\*, les annuaires UDDI et les bus de services. Un relevé de 2025 en dresse le bilan : producteurs et consommateurs ont été découplés, au prix d’une forte complexité d’exploitation, d’adaptateurs fragiles et d’une configuration qui proliférait à mesure que les interfaces changeaient [10].
 
 **API : l’architecture du web comme contrainte.** REST est un ensemble de contraintes, non un protocole [4]. Deux d’entre elles pèsent sur les protocoles d’agents. L’absence d’état veut que chaque requête porte tout ce qu’il faut pour être comprise. Elle améliore la visibilité, la fiabilité et la mise à l’échelle; elle coûte des données répétées et un moindre contrôle du serveur sur le comportement de l’application. Le système en couches permet d’insérer des intermédiaires (mandataires, passerelles, caches partagés) qui encapsulent les services patrimoniaux, répartissent la charge et appliquent la sécurité aux frontières de l’organisation, au prix d’une latence accrue.
 
@@ -106,9 +104,7 @@ La sémantique de ces messages s’appuyait sur la théorie des actes de langage
 
 ### Protocoles d’interaction et négociation
 
-Les concepteurs de FIPA savaient qu’une telle sémantique ne suffisait pas à conduire un échange. La spécification avertit qu’employer le langage sans le cadre d’un protocole
-
-d’interaction est une entreprise « extremely ambitious » [8]. D’où une bibliothèque de protocoles : requête, interrogation, abonnement, courtage, recrutement, enchères anglaise et hollandaise, et le Contract Net [12]. Dans ce dernier, un initiateur diffuse un appel de propositions; chaque participant propose ou refuse; l’initiateur accepte ou rejette; le participant retenu exécute la tâche, puis en rapporte le résultat ou l’échec [12]. Le Dataspace Protocol retrouve cette forme pour négocier un accord entre organisations, par une machine à sept états (chapitre 45).
+Les concepteurs de FIPA savaient qu’une telle sémantique ne suffisait pas à conduire un échange. La spécification avertit qu’employer le langage sans le cadre d’un protocole d’interaction est une entreprise « extremely ambitious » [8]. D’où une bibliothèque de protocoles : requête, interrogation, abonnement, courtage, recrutement, enchères anglaise et hollandaise, et le Contract Net [12]. Dans ce dernier, un initiateur diffuse un appel de propositions; chaque participant propose ou refuse; l’initiateur accepte ou rejette; le participant retenu exécute la tâche, puis en rapporte le résultat ou l’échec [12]. Le Dataspace Protocol retrouve cette forme pour négocier un accord entre organisations, par une machine à sept états (chapitre 45).
 
 ### Pourquoi cela n’a pas pris
 
@@ -157,9 +153,7 @@ Le second gain est d’alignement. MCP et A2A ont choisi la simplicité et les s
 
 Le prix est payé en vérifiabilité. Chaque migration de l’effort sémantique échange des garanties formelles contre de l’adaptabilité, et la prépublication situe la frontière de recherche dans des sous-ensembles vérifiables de la sémantique interprétée par le modèle [1]. Le patron Simplex en est une forme d’ingénierie : un composant simple et vérifié borne le composant appris (chapitre 46). Deux conséquences en découlent.
 
-**La lecture d’une description n’est pas prouvable.** Rien n’établit que l’interprétation qu’un modèle fait de la description d’un outil correspond à l’intention de son auteur [1]. Avec FIPA, deux agents pouvaient mal mettre en œuvre une sémantique définie; ici,
-
-la sémantique n’est écrite nulle part. La description devient du même coup une surface d’attaque (chapitre 31).
+**La lecture d’une description n’est pas prouvable.** Rien n’établit que l’interprétation qu’un modèle fait de la description d’un outil correspond à l’intention de son auteur [1]. Avec FIPA, deux agents pouvaient mal mettre en œuvre une sémantique définie; ici, la sémantique n’est écrite nulle part. La description devient du même coup une surface d’attaque (chapitre 31).
 
 **Le plan n’est plus spécifié.** La planification passe de formalismes explicites à des approches apprises, entrelacées avec l’action, moins vérifiables [1]. S’y ajoute le non-déterminisme : une même demande peut produire deux suites d’appels différentes. Un contrat d’interface décrit alors ce qu’un agent *peut* appeler, pas ce qu’il *va* faire. Trois réponses en découlent : des points de contrôle déterministes autour de la boucle de raisonnement (chapitre 17), des outils idempotents ou compensables (chapitre 18), et l’évaluation continue en complément du test de conformité (chapitre 33).
 

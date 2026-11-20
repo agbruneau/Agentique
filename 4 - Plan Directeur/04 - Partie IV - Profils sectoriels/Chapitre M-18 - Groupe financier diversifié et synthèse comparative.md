@@ -12,8 +12,7 @@ La règle cardinale (`PRI-010`, `PRI-015`) consiste donc à **mutualiser le plan
 
 Trois configurations juridiques de groupes financiers diversifiés opèrent au Canada et au Québec, chacune gouvernée par une loi faîtière qui détermine le superviseur chef de file et le régime des opérations internes.
 
-1. **Groupes à société mère bancaire fédérale.** Articulés autour d’une banque de l’annexe I régie par la *Loi sur les banques* (`L.C. 1991, ch. 46`) — dont les six banques d’importance systémique nationale (*D-SIBs*) [1] [20] —, ils contrôlent une société de fiducie et de prêt fédérale (`L.C. 1991, ch. 45`) [4], un courtier en placement et gestionnaire de portefeuille membre de l’OCRI et inscrit auprès des ACVM [8] [9], un gestionnaire de fonds d’investissement et des filiales d’assurance-vie et d’assurance de dommages [3] [16]. Le
-  canal bancaire y est soumis aux restrictions de l’article 416 et du règlement `DORS/92-330` envers l’assurance [1] [2].
+1. **Groupes à société mère bancaire fédérale.** Articulés autour d’une banque de l’annexe I régie par la *Loi sur les banques* (`L.C. 1991, ch. 46`) — dont les six banques d’importance systémique nationale (*D-SIBs*) [1] [20] —, ils contrôlent une société de fiducie et de prêt fédérale (`L.C. 1991, ch. 45`) [4], un courtier en placement et gestionnaire de portefeuille membre de l’OCRI et inscrit auprès des ACVM [8] [9], un gestionnaire de fonds d’investissement et des filiales d’assurance-vie et d’assurance de dommages [3] [16]. Le canal bancaire y est soumis aux restrictions de l’article 416 et du règlement `DORS/92-330` envers l’assurance [1] [2].
 2. **Groupes à société de portefeuille d’assurance et groupes actifs à l’échelle internationale (IAIG).** Structurés sous la *Loi sur les sociétés d’assurances* (`L.C. 1991, ch. 47`) — incluant quatre IAIG ayant leur siège au Canada [3] [20] — ou sous charte québécoise [16], ils réunissent assurances de personnes ou de dommages, fonds distincts, gestion d’actifs, courtage en placement et parfois banque ou société de fiducie affiliée [3] [4] [9].
 3. **Groupes financiers coopératifs québécois.** Organisés autour d’une fédération de caisses et de coopératives de services financiers réformée par la Partie II de `L.Q. 2018, c. 23` [16], ils intègrent institutions de dépôts, assureurs autorisés du Québec, courtiers en valeurs mobilières et fiducie sous la surveillance consolidée de l’Autorité des marchés financiers (AMF), avec faculté d’adhésion volontaire au cadre fédéral des services bancaires axés sur les consommateurs [5] [6].
 
@@ -65,9 +64,7 @@ Chaque loi constitutive exige la tenue séparée des livres au Canada (`Banques`
 
 ## 18.6 Interopérabilité entre organisations et standards de données
 
-Un groupe diversifié fait coexister messages temps réel ISO 20022 (`head.001`, `pacs.008`, `pacs.002`) et norme technique désignée sous l’article 125 de la *LSAC* en banque [5] [6] [7], flux
-
-quotidiens de frais de fonds (`NI 31-103` art. 14.1.2) en patrimoine [8] [9], dossiers cliniques en assurance de personnes [15] et échanges courtiers/PCAF en assurance de dommages [16] [20]. Plutôt qu’un schéma monolithique unique (`C27, § 12.5` [30]), l’architecture fédère des ontologies versionnées par domaine (`CAP-015`, `CAP-016`) et impose à tout appel inter-filiales de traverser la passerelle (`CAP-022`, `CAP-026`) munie d’un attribut immuable d’entité mandante (`CAP-036`).
+Un groupe diversifié fait coexister messages temps réel ISO 20022 (`head.001`, `pacs.008`, `pacs.002`) et norme technique désignée sous l’article 125 de la *LSAC* en banque [5] [6] [7], flux quotidiens de frais de fonds (`NI 31-103` art. 14.1.2) en patrimoine [8] [9], dossiers cliniques en assurance de personnes [15] et échanges courtiers/PCAF en assurance de dommages [16] [20]. Plutôt qu’un schéma monolithique unique (`C27, § 12.5` [30]), l’architecture fédère des ontologies versionnées par domaine (`CAP-015`, `CAP-016`) et impose à tout appel inter-filiales de traverser la passerelle (`CAP-022`, `CAP-026`) munie d’un attribut immuable d’entité mandante (`CAP-036`).
 
 ## 18.7 Écarts propres au groupe et ajustements de la feuille de route
 
@@ -79,18 +76,18 @@ Trois écarts dominent fin 2027 : des entrepôts historiques rapprochant les cli
 
 ## 18.8 Effet des scénarios A, B et C
 
-- **Scénario A (Socle étendu) C : A ; SIG-003 .** La convergence des standards d’identité, d’échange de jetons (`CAP-036`) et d’observabilité (`CAP-042`) maximise les économies d’échelle du noyau partagé sans affaiblir aucune cloison statutaire entre filiales (`C27, § 43.3` [30]).
-- **Scénario B (Archipel) C : B ; SIG-002 .** Chaque filiale subit l’attraction des assistants natifs de ses progiciels métiers. Le groupe active `CAP-013` : exécution locale près de la gravité des données de chaque filiale, mais médiation obligatoire par le plan de contrôle possédé pour la sécurité, le FinOps (`CAP-045`) et tout flux inter-domaines [22] [25].
-- **Scénario C (Blocs) C : C ; SIG-107 .** Les groupes ayant des filiales étrangères (D-SIBs et IAIG) affrontent des exigences contradictoires de localisation et de sécurité nationale (`LSAC` art. 55–64 [5]; Regard sur le risque d’octobre 2026 [26]; Loi 25 art. 17 [14]), imposant la partition régionale des six substrats d’état (`CAP-032`) et un profil souverain à poids ouverts par bloc (`CAP-031`) C : C ; SIG-016.
+- **Scénario A (Socle étendu) C : A ; SIG-003.** La convergence des standards d’identité, d’échange de jetons (`CAP-036`) et d’observabilité (`CAP-042`) maximise les économies d’échelle du noyau partagé sans affaiblir aucune cloison statutaire entre filiales (`C27, § 43.3` [30]).
+- **Scénario B (Archipel) C : B ; SIG-002.** Chaque filiale subit l’attraction des assistants natifs de ses progiciels métiers. Le groupe active `CAP-013` : exécution locale près de la gravité des données de chaque filiale, mais médiation obligatoire par le plan de contrôle possédé pour la sécurité, le FinOps (`CAP-045`) et tout flux inter-domaines [22] [25].
+- **Scénario C (Blocs) C : C ; SIG-107.** Les groupes ayant des filiales étrangères (D-SIBs et IAIG) affrontent des exigences contradictoires de localisation et de sécurité nationale (`LSAC` art. 55–64 [5]; Regard sur le risque d’octobre 2026 [26]; Loi 25 art. 17 [14]), imposant la partition régionale des six substrats d’état (`CAP-032`) et un profil souverain à poids ouverts par bloc (`CAP-031`) C : C ; SIG-016.
 
 ## 18.9 Partage du noyau possédé
 
 Un groupe financier diversifié peut et doit mutualiser les briques **dépourvues de renseignements personnels clients et de secrets commerciaux métiers** qui composent son plan de contrôle (`PRI-001`, `PRI-015`, `C27, § 23.2, § 27.2` [30]) :
 
-1. **Autorité d’identités non humaines et d’agilité cryptographique (**`CAP-035`**,** `CAP-040`**)**, émettant des attestations éphémères partitionnées par espace de noms d’entité juridique et automatisant le cycle des certificats courts et post-quantiques sous *B-13* (§ 3.2.2 et § 3.2.7) [23] [25].
-2. **Moteur déterministe de politiques, décontamination et coupe-circuit (**`CAP-037`**,** `CAP-038`**,** `CAP-039`**)**, raccordés au centre de sécurité du groupe pour prouver formellement les invariants et suspendre instantanément un agent défaillant [23] [24] [25].
-3. **Plan d’inférence sans état, bacs à sable et pilotage FinOps (**`CAP-029`**,** `CAP-030`**,** `CAP-043`**,** `CAP-045`**)**, mutualisant la puissance de calcul et les harnais d’essais tout en isolant cryptographiquement les caches par filiale (`CAP-032`) [21] [22].
-4. **Outillage logiciel du registre *E-23* et d’ingénierie sécurisée (**`CAP-047`**,** `CAP-050`**,** `CAP-052`**)**, chaque filiale conservant son pouvoir propre d’homologation et son plan de sortie (`PEX-043`) [16] [22].
+1. **Autorité d’identités non humaines et d’agilité cryptographique (`CAP-035`, `CAP-040`)**, émettant des attestations éphémères partitionnées par espace de noms d’entité juridique et automatisant le cycle des certificats courts et post-quantiques sous *B-13* (§ 3.2.2 et § 3.2.7) [23] [25].
+2. **Moteur déterministe de politiques, décontamination et coupe-circuit (`CAP-037`, `CAP-038`, `CAP-039`)**, raccordés au centre de sécurité du groupe pour prouver formellement les invariants et suspendre instantanément un agent défaillant [23] [24] [25].
+3. **Plan d’inférence sans état, bacs à sable et pilotage FinOps (`CAP-029`, `CAP-030`, `CAP-043`, `CAP-045`)**, mutualisant la puissance de calcul et les harnais d’essais tout en isolant cryptographiquement les caches par filiale (`CAP-032`) [21] [22].
+4. **Outillage logiciel du registre *E-23* et d’ingénierie sécurisée (`CAP-047`, `CAP-050`, `CAP-052`)**, chaque filiale conservant son pouvoir propre d’homologation et son plan de sortie (`PEX-043`) [16] [22].
 
 ## 18.10 Cloisonnement des données entre entités
 
@@ -100,9 +97,7 @@ Trois murailles légales interdisent toute base vectorielle, mémoire épisodiqu
 2. **Muraille des finalités par personne morale et des prohibitions sectorielles.** Sous la Loi 25 (art. 12–13) [14] et la *LPRPDE* [28], toute transmission entre deux filiales constitue une communication à un tiers, doublée de la purge pénale génétique en assurance (`PEX-021`) [12] [13] [15] et du secret des déclarations LBC/FAT [27].
 3. **Muraille des conflits d’intérêts et d’indépendance en patrimoine et courtage.** La filiale en valeurs mobilières doit éviter ou résoudre au mieux des intérêts du client tout conflit sur émetteurs liés (`NI 31-103` art. 13.4 et 13.6; OCRI `3402`) [8] [9], et le cabinet de courtage IARD affilié demeure tenu d’offrir au moins trois soumissions hors groupe au Québec (art. 38 LDPSF) [16].
 
-> **P : PEX-041** **Cloisonnement technique inter-entités et blocage du partage banque-assurance dans le socle de groupe.** Au sein d’un groupe financier diversifié mutualisant son infrastructure d’orchestration, chaque agent, index documentaire et appel d’outil porte un identifiant immuable d’entité juridique mandante et bloque par défaut toute lecture ou transmission de renseignements bancaires vers une société, un agent ou un courtier d’assurance
-
-> ainsi que toute promotion d’assurance non autorisée sur canal bancaire (`CAP-001`, `CAP-017`, `CAP-021`, `CAP-037`; appuis : *Loi sur les banques*, art. 416 [1]; `DORS/92-330`, art. 7.1, 8 et 9 [2]; BSIF *B-10*, § 2.3.2.1 [22]; `L.Q. 2021, c. 25`, art. 12–13 [14]; `C27, § 13.6, § 14.3, § 32.1, § 38.3` [30]; `ADR-008`, `ADR-020`).
+> **P : PEX-041** **Cloisonnement technique inter-entités et blocage du partage banque-assurance dans le socle de groupe.** Au sein d’un groupe financier diversifié mutualisant son infrastructure d’orchestration, chaque agent, index documentaire et appel d’outil porte un identifiant immuable d’entité juridique mandante et bloque par défaut toute lecture ou transmission de renseignements bancaires vers une société, un agent ou un courtier d’assurance ainsi que toute promotion d’assurance non autorisée sur canal bancaire (`CAP-001`, `CAP-017`, `CAP-021`, `CAP-037`; appuis : *Loi sur les banques*, art. 416 [1]; `DORS/92-330`, art. 7.1, 8 et 9 [2]; BSIF *B-10*, § 2.3.2.1 [22]; `L.Q. 2021, c. 25`, art. 12–13 [14]; `C27, § 13.6, § 14.3, § 32.1, § 38.3` [30]; `ADR-008`, `ADR-020`).
 
 ## 18.11 Consentement
 
@@ -258,9 +253,8 @@ L’épreuve croisée des quatre sous-secteurs et du groupe diversifié sur tren
 Conformément aux règles `EF-12`, `CA-17` et `CA-19`, la synthèse de groupe regroupe les réserves documentaires des chapitres M-14 à M-17 (`statut F`), sans qu’aucune obligation ni preuve de niveau normatif n’en dépende :
 
 1. **Textes québécois bloqués (**`statut F`**) [31] [32] et compléments ouverts décloisonnés (**`L+`**) [34] [35].** Les cinq lignes directrices transversales de l’AMF (`T-01`, `T-02`, `T-13`, `T-14`, `T-15`), la copie française AMF du *Règlement 31-103* (`T-25`) et l’avis télématique de 2015 (`N-03`) [31], de même que les codifications sur LégisQuébec (`T-04`, `T-28`, `T-29`, `N-02`, `RLRQ, c. C-67.3`) [32], demeurent honnêtement classés `F` (`HTTP 403` sans contournement); l’analyse québécoise est complétée en `L+` par les lois sanctionnées [14] [15] [16], les publications des ACVM et du CCRRA/OCRA [8] [9] [10] [11] [17], le profil québécois décloisonné `CRE-IA-2026-01-QC` (`2026/documents/Note AMF IA.pdf`, 41 attentes et 12 `EXIG-AMF`, quatre lois habilitantes québécoises, `ANC-112` et `ANC-113`) [34] et la page officielle de la CAI sur la Loi 25 (`ANC-115`) [35] (`SIG-102`, `SIG-106`).
-2. **Normes et rapports sous licence ou barrière (**`statut F`**) [33] et synchronisation** `DIV-02`**.** La spécification FDX v6.0 (`T-22`), la note KYC (`T-24`) et le rapport 2026 (`N-08`) de l’OCRI, le rapport *FR/02/2026* de l’OICV (`R-11`) ainsi que les schémas ACORD (`T-30`) et CSIO (`T-31`) demeurent non lus [33]; la traçabilité des propositions `PEX-041` à `PEX-044` envers `CRE-IA-2026-01` v1.2 est synchronisée dans l’Annexe D.
-3. **Jalons ouverts (**`EF-15`**).** Restent non tranchés à la date de référence : la désignation de l’organisme de normalisation technique unique sous l’article 125 de la *LSAC* [5] [6] (`SIG-103`), l’échéance `TBD` des émissions liées aux actifs sous gestion dans *B-15* [20]
-  (`SIG-109`) et l’issue de la révision fédérale précédant le **30 juin 2033** sur le cloisonnement banque-assurance [1] [2] [3] [4] (`SIG-108`).
+2. **Normes et rapports sous licence ou barrière (`statut F`) [33] et synchronisation `DIV-02`.** La spécification FDX v6.0 (`T-22`), la note KYC (`T-24`) et le rapport 2026 (`N-08`) de l’OCRI, le rapport *FR/02/2026* de l’OICV (`R-11`) ainsi que les schémas ACORD (`T-30`) et CSIO (`T-31`) demeurent non lus [33]; la traçabilité des propositions `PEX-041` à `PEX-044` envers `CRE-IA-2026-01` v1.2 est synchronisée dans l’Annexe D.
+3. **Jalons ouverts (**`EF-15`**).** Restent non tranchés à la date de référence : la désignation de l’organisme de normalisation technique unique sous l’article 125 de la *LSAC* [5] [6] (`SIG-103`), l’échéance `TBD` des émissions liées aux actifs sous gestion dans *B-15* [20] (`SIG-109`) et l’issue de la révision fédérale précédant le **30 juin 2033** sur le cloisonnement banque-assurance [1] [2] [3] [4] (`SIG-108`).
 
 ## Sources
 
@@ -295,8 +289,8 @@ Conformément aux règles `EF-12`, `CA-17` et `CA-19`, la synthèse de groupe re
 28. Parlement du Canada, *Loi sur la protection des renseignements personnels et les documents électroniques* (`L.C. 2000, ch. 5`), 2026-10-29, lu le 2026-11-16, lu par passages, statut L+, texte : T-11.txt.
 29. Secrétariat du Conseil du Trésor du Canada, *Guide sur la portée de la Directive sur la prise de décisions automatisée*, 2026-09-15, lu le 2026-11-16, lu en entier, statut L+, texte : CAN-09.txt.
 30. Compendium 2027, *Interopérabilité et orchestration en entreprise agentique* (ch. 12 à 14, 22, 23, 27, 29, 30, 32, 36, 38, 39, 43, 50), consulté le 2026-11-16, lu par passages, statut C.
-31. AMF, *Lignes directrices et textes non lus (*`T-01`*,* `T-02`*,* `T-13` *à* `T-15`*,* `T-25`*,* `N-03`*)*, repéré le 2026-11-16, non lu, statut F.
-32. LégisQuébec, *Codifications* `T-04`*,* `T-28`*,* `T-29`*,* `N-02` *et* `RLRQ, c. C-67.3`, repéré le 2026-11-16, non lu, statut F.
-33. FDX, OCRI, OICV, ACORD et CSIO, *Spécifications et rapports sous barrière ou licence (*`T-22`*,* `T-24`*,* `N-08`*,* `R-11`*,* `T-30`*,* `T-31`*)*, repéré le 2026-11-16, non lu, statut F.
+31. AMF, *Lignes directrices et textes non lus (`T-01`, `T-02`, `T-13` à `T-15`, `T-25`, `N-03`)*, repéré le 2026-11-16, non lu, statut F.
+32. LégisQuébec, *Codifications `T-04`, `T-28`, `T-29`, `N-02` et* `RLRQ, c. C-67.3`, repéré le 2026-11-16, non lu, statut F.
+33. FDX, OCRI, OICV, ACORD et CSIO, *Spécifications et rapports sous barrière ou licence (`T-22`, `T-24`, `N-08`, `R-11`, `T-30`, `T-31`)*, repéré le 2026-11-16, non lu, statut F.
 34. Corpus Agentique (`2026/documents/Note AMF IA.pdf`), *Profil d’application québécois* `CRE-IA-2026-01-QC` *— 41 attentes AMF et 12* `EXIG-AMF`, 2026-11-11, lu le 2026-11-19, lu en entier, statut L+, texte : QC-AMF-NOTE-2026.txt.
 35. CAI Québec, *Principaux changements aux lois sur la protection des renseignements personnels (Loi 25)*, 2026-01-01, lu le 2026-11-19, lu en entier, statut L+, texte : QC-CAI-LOI25.txt.

@@ -1,0 +1,32 @@
+' Figure 27 — Modèle de maturité en cinq niveaux (2 - Cadre de Référence, ch. 14, p. 242)
+' Source : cadre CRE-IA-2026-01
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 11
+skinparam nodesep 14
+skinparam ranksep 28
+
+together {
+  rectangle "Niveau global = dimension la plus faible\n(interopérabilité, orchestration, identité, observabilité, gouvernance)" as Rule #FFFFFF;line:FFFFFF;text:475569
+  rectangle "**<color:#B45309>Cible de la feuille de route : 18 mois environ</color>**" as Cible #FEF3DC;line:B45309
+}
+
+together {
+  rectangle "**1 · Initial**\nConnecteurs ad hoc, clés\npartagées, aucun inventaire" as N1 #8291A6;text:FFFFFF;line:8291A6
+  rectangle "**2 · Reproductible**\nPremiers serveurs MCP,\nidentité par agent, traces\npar projet, registre en partie manuel" as N2 #5C6B7F;text:FFFFFF;line:5C6B7F
+  rectangle "**3 · Défini**\nCatalogue d’entreprise,\npasserelle, jetons délégués,\ntraçage de bout en bout,\ncycle de vie à contrôles" as N3 #0F7682;text:FFFFFF;line:0F7682
+  rectangle "**4 · Géré**\nMultiagent en production,\nsagas, autorisation fine,\névaluation continue, coût\npar tâche, préparation ISO/IEC 42001" as N4 #1B5E9E;text:FFFFFF;line:1B5E9E
+  rectangle "**5 · Optimisé**\nConfiance vérifiable\nentre organisations,\nautonomie ajustée par les\nmesures, revue externe ou ISO/IEC 42001" as N5 #0F2744;text:FFFFFF;line:0F2744
+}
+
+Rule -[hidden]right-> Cible
+Rule -[hidden]down-> N1
+Cible .[#B45309,thickness=2]down.> N3
+N1 -[#64748B]right-> N2
+N2 -[#64748B]right-> N3
+N3 -[#64748B]right-> N4
+N4 -[#64748B]right-> N5
+@enduml

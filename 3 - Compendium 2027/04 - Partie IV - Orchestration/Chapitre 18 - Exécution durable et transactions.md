@@ -40,9 +40,7 @@ Cet état d’exécution n’est pas la mémoire de l’agent, qui sert un usage
 
 ### Deux mécanismes
 
-**L’instantané.** L’état est écrit à intervalles dans un magasin. LangGraph procède ainsi : un *checkpointer* enregistre l’état du graphe pour un fil d’exécution désigné par un `thread_id` [5]. Le moment de l’écriture se règle par un paramètre de durabilité à trois valeurs : `sync`
-
-écrit avant le début de l’étape suivante, `async` écrit pendant qu’elle s’exécute, `exit` n’écrit qu’à la sortie du graphe [6]. Le choix est un arbitrage entre débit et fenêtre de perte.
+**L’instantané.** L’état est écrit à intervalles dans un magasin. LangGraph procède ainsi : un *checkpointer* enregistre l’état du graphe pour un fil d’exécution désigné par un `thread_id` [5]. Le moment de l’écriture se règle par un paramètre de durabilité à trois valeurs : `sync` écrit avant le début de l’étape suivante, `async` écrit pendant qu’elle s’exécute, `exit` n’écrit qu’à la sortie du graphe [6]. Le choix est un arbitrage entre débit et fenêtre de perte.
 
 **Le journal rejoué.** Chaque opération est consignée avec son résultat. Après une panne, le code est réexécuté depuis le début, mais les opérations déjà terminées ne sont pas refaites : leur résultat est lu dans le journal. Temporal appelle ce journal l'*Event History*, et le rejeu vérifie que les commandes produites par le code correspondent à l’historique [2]. Restate décrit le même principe [8], AWS aussi : le code repart du début et saute les points de contrôle achevés [9].
 
@@ -88,7 +86,6 @@ Un brouillon de l’IETF normalise ce patron pour HTTP. L’en-tête `Idempotenc
 
 - la clé doit être unique et ne doit pas être réutilisée avec un contenu différent; le serveur peut y joindre une empreinte du contenu pour le vérifier;
 - un nouvel essai reçu pendant que la requête d’origine est en cours devrait recevoir une réponse 409; une clé réutilisée avec un autre contenu, une réponse 422; une clé manquante là où elle est exigée, une réponse 400;
-
 - la ressource doit publier sa spécification d’idempotence, y compris, s’il y a lieu, sa politique d’expiration des clés.
 
 Le texte en est à la révision 08, document actif du groupe de travail `httpapi`, et n’est pas une RFC.
@@ -205,9 +202,7 @@ Trois apports dépassent la reprise sur panne.
 
 **L’historique comme piste d’audit.** Le journal qui sert au rejeu documente aussi ce que l’agent a décidé et fait à chaque étape (chapitres 17 et 33).
 
-**Deux autres formes.** Deux produits que le tableau ne couvre pas montrent que la durabilité n’exige pas toujours un serveur d’orchestration. DBOS est une bibliothèque : elle enregistre dans Postgres les entrées du workflow et la sortie de chaque étape, puis, après un arrêt, relance le workflow interrompu en sautant les étapes déjà enregistrées. Aucune autre infra
-
-structure que Postgres n’est requise; en contrepartie, le workflow doit être déterministe, les étapes idempotentes, et le débit est borné par le serveur Postgres [16]. Cloudflare Workflows offre le même modèle par étapes sur la plateforme Workers : relances automatiques, état conservé pendant des heures ou davantage, mise en sommeil, et attente d’un événement externe, par exemple une approbation humaine, avec un délai facultatif [17]. Les deux pages décrivent des mécanismes, non des mesures.
+**Deux autres formes.** Deux produits que le tableau ne couvre pas montrent que la durabilité n’exige pas toujours un serveur d’orchestration. DBOS est une bibliothèque : elle enregistre dans Postgres les entrées du workflow et la sortie de chaque étape, puis, après un arrêt, relance le workflow interrompu en sautant les étapes déjà enregistrées. Aucune autre infrastructure que Postgres n’est requise; en contrepartie, le workflow doit être déterministe, les étapes idempotentes, et le débit est borné par le serveur Postgres [16]. Cloudflare Workflows offre le même modèle par étapes sur la plateforme Workers : relances automatiques, état conservé pendant des heures ou davantage, mise en sommeil, et attente d’un événement externe, par exemple une approbation humaine, avec un délai facultatif [17]. Les deux pages décrivent des mécanismes, non des mesures.
 
 ### La durabilité entre organisations
 
@@ -327,8 +322,7 @@ SYNTHÈSE EXÉCUTIVE
   1. *Irréversible à moyen terme* : confier la progression, les temporisateurs, les politiques de nouvel essai et l’attente d’approbation à un moteur d’exécution durable à journal d’événements immuable, hors des cadriciels de prompts.
   2. *Structurante dès le cadrage de la plateforme* : adopter une architecture bi-vitesse, avec Temporal pour les sagas longues de plusieurs semaines, très auditables, et Restate ou Durable Task pour la micro-orchestration à haute cadence et le sans-serveur. L’autre voie est d’assumer l’adhérence à un runtime infonuagique intégré (Bedrock AgentCore).
   3. *Impérative pour la sécurité et la conformité* : chiffrer côté client les charges utiles journalisées (effacement cryptographique, compatible avec la Loi 25 / RGPD) et revalider le monde et les droits après toute mise en veille prolongée.
-- **Indicateurs de gouvernance** : taux de survie sans intervention aux redémarrages d’infrastructure (cible : 100 %), taux de double exécution d’effets de bord (cible : 0 %), consommation CPU/RAM des instances en attente d’approbation humaine (mise à
-  l’échelle à zéro) et zéro erreur de non-déterminisme (`NonDeterminismError`) lors des mises en production continues.
+- **Indicateurs de gouvernance** : taux de survie sans intervention aux redémarrages d’infrastructure (cible : 100 %), taux de double exécution d’effets de bord (cible : 0 %), consommation CPU/RAM des instances en attente d’approbation humaine (mise à l’échelle à zéro) et zéro erreur de non-déterminisme (`NonDeterminismError`) lors des mises en production continues.
 
 ## 18.8 Défaillance volatile et fondements formels de l’exécution durable
 
@@ -396,24 +390,22 @@ L’exécution durable inverse la relation entre le code et la base de données.
 
 *Fig. 30. – Mécanisme d’exécution durable par journalisation immuable, barrière d’effets de bord et reprise sur crash sans double exécution.*
 
-Formellement, l’exécution d’un workflow est modélisée comme une machine à états déterministe pure 𝑓 opérant sur un journal d’événements immuable en ajout seul 𝐻𝑘= ⟨𝑒1, 𝑒2, …, 𝑒𝑘⟩ persisté avec consensus transactionnel :
+Formellement, l’exécution d’un workflow est modélisée comme une machine à états déterministe pure 𝑓 opérant sur un journal d’événements immuable en ajout seul 𝐻_𝑘 = ⟨𝑒_1, 𝑒_2, …, 𝑒_𝑘⟩ persisté avec consensus transactionnel :
 
-𝑆𝑘= 𝑓(𝐻𝑘) = 𝑓(⟨𝑒1, 𝑒2, …, 𝑒𝑘⟩)
+𝑆_𝑘 = 𝑓(𝐻_𝑘) = 𝑓(⟨𝑒_1, 𝑒_2, …, 𝑒_𝑘⟩)
 
 Cette équation impose une barrière d’effets de bord entre deux types de composants. L’appel au modèle reste du côté des effets, comme le veut la section 18.2.
 
 - **Le code d’orchestration** (workflow dans Temporal, gestionnaire déterministe dans Restate ou Durable Task) : il s’écrit en code impératif séquentiel ordinaire (`if/else`, boucles bornées, `Promise.all`, `try/catch`), mais ne fait aucune entrée-sortie réseau directe, ne lit pas l’horloge système (`Date.now()`) et ne génère aucun nombre aléatoire (`Math.random()`). Il n’agit sur le monde qu’en émettant des commandes vers le moteur durable.
 - **Les unités d’effets de bord** (activités dans Temporal, blocs `ctx.run` dans Restate) : le non-déterminisme et les mutations externes résident exclusivement de ce côté, avec les appels d’inférence LLM probabilistes (Open Responses), les invocations d’outils MCP, les délégations A2A v1.0 et les lectures de politiques dynamiques.
 
-Quand une activité d’inférence LLM s’achève au pas 𝑖, le moteur persiste atomiquement sa charge utile de retour 𝑟𝑖 dans l’événement 𝑒𝑖 du journal. Si l’exécutant meurt au pas 𝑘> 𝑖, ou s’il a été évincé de la mémoire pendant neuf jours d’attente humaine (mise à l’échelle à zéro), un nouvel exécutant reconstruit l’état exact 𝑆𝑘 en rejouant le code du workflow depuis la première ligne. Au pas 𝑖≤𝑘, l’intercepteur du SDK retrouve l’événement `ActivityTaskCompleted` dans le journal local 𝐻𝑘 et retourne en quelques microsecondes
-
-la valeur 𝑟𝑖 enregistrée, sans franchir le réseau ni rappeler le LLM. À la frontière 𝑘+ 1, non encore inscrite, l’exécution réelle reprend.
+Quand une activité d’inférence LLM s’achève au pas 𝑖, le moteur persiste atomiquement sa charge utile de retour 𝑟_𝑖 dans l’événement 𝑒_𝑖 du journal. Si l’exécutant meurt au pas 𝑘 > 𝑖, ou s’il a été évincé de la mémoire pendant neuf jours d’attente humaine (mise à l’échelle à zéro), un nouvel exécutant reconstruit l’état exact 𝑆_𝑘 en rejouant le code du workflow depuis la première ligne. Au pas 𝑖 ≤ 𝑘, l’intercepteur du SDK retrouve l’événement `ActivityTaskCompleted` dans le journal local 𝐻_𝑘 et retourne en quelques microsecondes la valeur 𝑟_𝑖 enregistrée, sans franchir le réseau ni rappeler le LLM. À la frontière 𝑘+ 1, non encore inscrite, l’exécution réelle reprend.
 
 ### Clé d’idempotence dérivée du journal
 
 Pendant l’exécution initiale d’une activité, une coupure réseau entre le serveur MCP aval et l’exécutant reste une livraison au moins une fois, pilotée par la politique de nouvel essai de l’activité. Pour obtenir un effet unique de bout en bout sur une écriture financière ou logistique, il suffit de combiner la numérotation déterministe du journal avec l’idempotence du serveur MCP décrite à la section 18.3 :
 
-𝐾idemp = HMAC-SHA256(𝐾dom, WfId ∥SeqId)
+𝐾_{idemp} = HMAC-SHA256(𝐾_{dom}, WfId ∥ SeqId)
 
 L’identifiant `WfId` (`WorkflowId`) et le numéro de séquence `SeqId` de l’étape (`activityId` dans l’Extrait 18.2, `stepSequenceId` dans l’ADR-012) restent invariants à travers tous les nouveaux essais d’une même activité, et diffèrent d’une étape légitime suivante dans une boucle. Le système d’enregistrement cible (SAP S/4HANA, Guidewire, Stripe) déduplique donc tout doublon réseau transitoire.
 
@@ -484,9 +476,7 @@ Le Microsoft Agent Framework résulte de la convergence opérée par Microsoft e
 
 ### Amazon Bedrock AgentCore : sessions microVM persistantes et pile gérée AWS
 
-Amazon Bedrock AgentCore s’adresse aux organisations ancrées sur AWS qui veulent exécuter des graphes d’agents arbitraires (LangGraph, Strands Agents, CrewAI, code Python/TypeScript sur mesure) sans gérer elles-mêmes l’infrastructure d’exécution ni les bacs à sable d’outils. Chaque session d’agent s’exécute dans une microVM dédiée, isolée matériellement, qui peut conserver sa mémoire, son système de fichiers local et ses processus d’arrière-plan pendant plusieurs heures d’activité continue. S’y ajoutent AgentCore Gateway (exposition MCP sécurisée), AgentCore Identity et AgentCore Memory. Pour les sagas réglementaires de plusieurs semaines (T4), l’architecture AWS recommandée associe AWS Step Functions, comme trame d’ensemble, à des sessions Bedrock AgentCore pour les phases de raisonnement intensif. Cette association va au-delà de ce que retient l’exposé : la
-
-section 18.6 présente côté AWS les Lambda durable functions (points de contrôle et rejeu, exécutions jusqu’à un an, attentes non facturées) et les situe par rapport à Step Functions, service distinct fondé sur un langage de graphe.
+Amazon Bedrock AgentCore s’adresse aux organisations ancrées sur AWS qui veulent exécuter des graphes d’agents arbitraires (LangGraph, Strands Agents, CrewAI, code Python/TypeScript sur mesure) sans gérer elles-mêmes l’infrastructure d’exécution ni les bacs à sable d’outils. Chaque session d’agent s’exécute dans une microVM dédiée, isolée matériellement, qui peut conserver sa mémoire, son système de fichiers local et ses processus d’arrière-plan pendant plusieurs heures d’activité continue. S’y ajoutent AgentCore Gateway (exposition MCP sécurisée), AgentCore Identity et AgentCore Memory. Pour les sagas réglementaires de plusieurs semaines (T4), l’architecture AWS recommandée associe AWS Step Functions, comme trame d’ensemble, à des sessions Bedrock AgentCore pour les phases de raisonnement intensif. Cette association va au-delà de ce que retient l’exposé : la section 18.6 présente côté AWS les Lambda durable functions (points de contrôle et rejeu, exécutions jusqu’à un an, attentes non facturées) et les situe par rapport à Step Functions, service distinct fondé sur un langage de graphe.
 
 ### Matrices d’évaluation et d’urbanisation
 
@@ -820,9 +810,7 @@ export const equipmentTriageObject = restate.object({
 
 #### Extrait 18.4 — `[Exécuté en CI]` · Garde obligatoire de revalidation d’état et de mandat après réveil longue durée
 
-Comme introduit au chapitre 1, après neuf jours d’attente d’un expert ou d’un souscripteur, le monde extérieur et les habilitations de sécurité ont pu changer. Les tenir pour figés est une vulnérabilité de type TOCTOU (*Time-of-Check to Time-of-Use*), dont la section 18.5 décrit la vérification. La fonction ci-dessous est la garde post-hibernation appelée dans l’Extrait 18.1.
-
-Elle vérifie cryptographiquement le jeton d’approbation CIBA et interroge en temps réel Microsoft Entra ID et le moteur Cedar pour confirmer que le souscripteur détient toujours son mandat au jour du décaissement. Elle contrôle aussi, sur le système maître, que la police n’a été ni suspendue ni frappée d’un gel antifraude pendant le sommeil du workflow.
+Comme introduit au chapitre 1, après neuf jours d’attente d’un expert ou d’un souscripteur, le monde extérieur et les habilitations de sécurité ont pu changer. Les tenir pour figés est une vulnérabilité de type TOCTOU (*Time-of-Check to Time-of-Use*), dont la section 18.5 décrit la vérification. La fonction ci-dessous est la garde post-hibernation appelée dans l’Extrait 18.1. Elle vérifie cryptographiquement le jeton d’approbation CIBA et interroge en temps réel Microsoft Entra ID et le moteur Cedar pour confirmer que le souscripteur détient toujours son mandat au jour du décaissement. Elle contrôle aussi, sur le système maître, que la police n’a été ni suspendue ni frappée d’un gel antifraude pendant le sommeil du workflow.
 
 ```
 export interface PostHibernationCheckInput {
@@ -901,9 +889,7 @@ Sur des dizaines de milliers de sagas simultanées, trois disciplines d’exploi
 
 ### Prévenir les erreurs de non-déterminisme
 
-Le rejeu applique le code actuel aux événements passés. Supprimer un appel d’activité ou inverser l’ordre de deux promesses rompt donc la correspondance entre le code et les journaux des instances en cours : le runtime lève une exception protectrice (`NonDeterminismError`)
-
-et gèle la progression du dossier jusqu’au déploiement d’un correctif. Deux règles évitent ce risque :
+Le rejeu applique le code actuel aux événements passés. Supprimer un appel d’activité ou inverser l’ordre de deux promesses rompt donc la correspondance entre le code et les journaux des instances en cours : le runtime lève une exception protectrice (`NonDeterminismError`) et gèle la progression du dossier jusqu’au déploiement d’un correctif. Deux règles évitent ce risque :
 
 - Toute modification structurelle d’un workflow actif passe soit par une barrière de version explicite (`patched("id-changement")` dans l’Extrait 18.1), soit par l’affectation d’exécution par version de build (*Worker Versioning / Build IDs*). Celle-ci route les anciens dossiers vers les exécutants de la version v2.3 jusqu’à leur extinction naturelle et aiguille les nouveaux dossiers vers la version v2.4.
 - Le pipeline CI/CD comprend un test de rejeu automatisé (`WorkflowReplayer`), qui met en œuvre la vérification de compatibilité de rejeu évoquée à la section 18.2. Il télécharge un échantillon d’historiques JSON réels (chiffrés ou synthétiques) des trente derniers jours et vérifie en quelques secondes que la nouvelle branche Git les rejoue sans divergence.
@@ -980,8 +966,8 @@ Ce domaine cumule deux contraintes : aucune tolérance à la perte d’échéanc
   4. Toute sortie de mise en veille de plus de 15 minutes exécute une activité dédiée de revalidation du mandat IAM et de l’état frais du système d’enregistrement avant toute mutation aval.
 
 - **Conséquences** :
-  - ‣ *Positives* : résilience aux pannes matérielles et aux déploiements continus, coût CPU nul pendant les attentes humaines de plusieurs semaines, fin des doubles facturations d’inférence et piste d’audit (BSIF E-23).
-  - ‣ *Négatives / coûts assumés* : apprentissage par les développeurs des règles de déterminisme du code de workflow, tests `WorkflowReplayer` obligatoires en CI/CD et exploitation du service de clés KMS pour le Payload Codec.
+  - *Positives* : résilience aux pannes matérielles et aux déploiements continus, coût CPU nul pendant les attentes humaines de plusieurs semaines, fin des doubles facturations d’inférence et piste d’audit (BSIF E-23).
+  - *Négatives / coûts assumés* : apprentissage par les développeurs des règles de déterminisme du code de workflow, tests `WorkflowReplayer` obligatoires en CI/CD et exploitation du service de clés KMS pour le Payload Codec.
 - **Condition de révision** : réévaluation annuelle selon la convergence d’interopérabilité des standards CloudEvents et des moteurs durables sans serveur.
 
 ### Liste de contrôle de mise en production

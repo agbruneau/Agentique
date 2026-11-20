@@ -30,7 +30,7 @@ skinparam note {
 package "TROIS DÉCLENCHEURS, ET ILS SE CUMULENT" {
     usecase "<b>Tiers TIC</b>\ndès qu'il s'exécute chez un tiers" as TIC
     usecase "<b>Modèle</b>\ndès qu'il décide ou oriente" as MOD
-    card "<b>les trois</b>\n(coexistence des régimes)" as ALL
+    card "<b>les trois</b>" as ALL
     usecase "<b>Décision automatisée</b>\ndès qu'elle est opposable au client" as DEC
 
     TIC -[hidden]right-> MOD

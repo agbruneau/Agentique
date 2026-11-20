@@ -39,9 +39,7 @@ Dans les deux cas, l’unité protégée est la machine virtuelle entière : l�
 
 ### Sur GPU
 
-NVIDIA Confidential Computing étend la frontière au GPU, en s’appuyant sur SEV ou TDX : les données des charges accélérées sont chiffrées en cours d’usage et isolées de l’hyperviseur
-
-[2]. NVIDIA décrit trois modalités, soit machine nue, machine virtuelle et conteneur, et précise que leurs garanties ne sont pas interchangeables [3].
+NVIDIA Confidential Computing étend la frontière au GPU, en s’appuyant sur SEV ou TDX : les données des charges accélérées sont chiffrées en cours d’usage et isolées de l’hyperviseur [2]. NVIDIA décrit trois modalités, soit machine nue, machine virtuelle et conteneur, et précise que leurs garanties ne sont pas interchangeables [3].
 
 ### Une preuve, pas une politique
 
@@ -92,9 +90,7 @@ La même page précise que les plateformes exploitées par des partenaires, Amaz
 
 Le NIST définit l’objectif de délai de reprise (RTO) comme la durée totale pendant laquelle les composants d’un système peuvent rester en phase de reprise avant que la mission de l’organisation en souffre [7]. « Reprise cognitive » n’est pas un terme normalisé : c’est l’application de ce délai à la fonction que remplit le modèle.
 
-Rétablir un point d’accès ne rétablit pas un comportement. Un modèle de remplacement répond autrement aux mêmes prompts et aux mêmes outils. Changer de modèle, c’est
-
-changer le code d’exécutions en cours (chapitre 18), et le modèle est une unité de changement soumise à une barrière de rejeu (chapitre 34). La reprise a donc deux horloges : le temps de rerouter, à la passerelle (chapitres 24 et 44), et le temps de requalifier, par une suite d’évaluation (chapitre 33). La seconde n’est courte que si le travail est fait d’avance.
+Rétablir un point d’accès ne rétablit pas un comportement. Un modèle de remplacement répond autrement aux mêmes prompts et aux mêmes outils. Changer de modèle, c’est changer le code d’exécutions en cours (chapitre 18), et le modèle est une unité de changement soumise à une barrière de rejeu (chapitre 34). La reprise a donc deux horloges : le temps de rerouter, à la passerelle (chapitres 24 et 44), et le temps de requalifier, par une suite d’évaluation (chapitre 33). La seconde n’est courte que si le travail est fait d’avance.
 
 ### Mesures proposées
 
@@ -120,9 +116,7 @@ Le seuil de « 72 heures » d’autonomie n’a pas de source. La durée de surv
 
 Pendant la coupure, le site et le centre modifient les mêmes données. Les types de données répliqués sans conflit (CRDT) font converger des modifications concurrentes sans coordination. Leur limite est connue : la cohérence à terme ne suffit pas à faire respecter un invariant numérique sur l’ensemble des répliques [8].
 
-Le Bounded Counter de Balegas et de ses coauteurs lève cette limite [8]. L’écart entre la valeur d’un compteur et sa borne est traité comme un ensemble de droits d’exécution, répartis entre les répliques. Une opération consomme les droits locaux. S’ils manquent, elle
-
-échoue, ou la réplique en obtient d’une autre. Pendant une partition, les droits s’utilisent des deux côtés; seul leur transfert est impossible. Les auteurs rapportent, sur Riak, une latence nettement inférieure à celle d’une cohérence forte.
+Le Bounded Counter de Balegas et de ses coauteurs lève cette limite [8]. L’écart entre la valeur d’un compteur et sa borne est traité comme un ensemble de droits d’exécution, répartis entre les répliques. Une opération consomme les droits locaux. S’ils manquent, elle échoue, ou la réplique en obtient d’une autre. Pendant une partition, les droits s’utilisent des deux côtés; seul leur transfert est impossible. Les auteurs rapportent, sur Riak, une latence nettement inférieure à celle d’une cohérence forte.
 
 ### Transposition proposée
 
@@ -230,7 +224,6 @@ TUF vérifie ce qui est distribué; l’attestation vérifie ce qui s’exécute
 Pages primaires lues le 12 novembre 2026 :
 
 1. Intel — Trust Domain Extensions (TDX), vue d’ensemble
-
 2. Google Cloud — Confidential VM overview
 3. NVIDIA — Confidential Computing Overview
 4. TEE.fail — page des auteurs de l’attaque
@@ -274,7 +267,7 @@ SYNTHÈSE EXÉCUTIVE
   2. *Structurante pour les charges sensibles* : Déployer l’inférence confidentielle sur des enclaves GPU attestées (NVIDIA H100/B200 TEE avec AMD SEV-SNP ou Intel TDX), de sorte que les logiciels et les administrateurs de l’exploitant infonuagique ne peuvent inspecter ni les consignes, ni les poids affinés, ni les tenseurs en cours de calcul. Un TEE élève le coût de l’accès sans le rendre impossible : le fabricant de la puce et la garde physique du serveur restent dans la base de confiance (section 46.2).
   3. *Cible de conception en résilience prudentielle (BSIF E-23)* : Instituer un plan de reprise après sinistre cognitif, testé chaque trimestre, qui vise une bascule en moins de quinze minutes (`RTO < 15 min`, `RPO = 0`) d’un modèle propriétaire défaillant vers une grappe souveraine à poids ouverts, calibrée d’avance sur les mêmes contrats Open Responses et MCP. Ce seuil de quinze minutes n’a pas de source : c’est une cible de conception, à fixer par classe de tâche et à valider par exercice (section 46.4).
 
-- **Indicateurs de gouvernance** : Couverture d’état résidant dans sa juridiction légale cible (100 %), RTO cognitif mesuré en exercice réel (< 15 min), maintien du score pass5 en mode de secours (≥94 % du nominal) et zéro clé maîtresse de déchiffrement exposée hors HSM d’entreprise.
+- **Indicateurs de gouvernance** : Couverture d’état résidant dans sa juridiction légale cible (100 %), RTO cognitif mesuré en exercice réel (< 15 min), maintien du score pass^5 en mode de secours (≥94 % du nominal) et zéro clé maîtresse de déchiffrement exposée hors HSM d’entreprise.
 
 ## 46.9 Résidence juridictionnelle de l’état complet et conflits de lois
 
@@ -478,16 +471,15 @@ La section 46.4 établit que rétablir un accès ne rétablit pas un comportemen
 ### Les quatre piliers d’une bascule sans rupture (`RTO < 15 min`, `RPO = 0`)
 
 1. **Contrats normalisés et purge des états opaques** : Aucun code applicatif n’appelle le SDK propriétaire d’un fournisseur de modèles. Toute requête d’inférence emprunte l’enveloppe normalisée Open Responses (gouvernée par l’AAIF), et toute invocation d’outil respecte les schémas JSON canoniques de MCP, validés par un décodage contraint (grammaires CFG sur la grappe de secours vLLM). À mi-parcours d’une saga multi-tours, l’adaptateur Open Responses écarte les blocs de délibération chiffrés propres au fournisseur défaillant et reconstruit le contexte du modèle de secours à partir du seul journal canonique des faits et des sorties d’outils validés. Même un modèle de secours plus sobre ne peut alors émettre un appel d’outil syntaxiquement invalide.
-2. **Double profil de consignes précompilé** : Chaque agent critique L3 est homologué en CI/CD (chapitre 34) sous deux profils jumeaux, versionnés ensemble : un profil
-  nominal, optimisé pour le modèle primaire, et un profil de secours, compilé pour un modèle à poids ouverts souverain, audité et figé dans le registre interne d’artefacts de l’entreprise (par exemple avec DSPy, chapitre 47). L’homologation exige pass5_{DR} ≥ 0,94 ⋅ pass5_{nominal} sur la suite 𝜏-bench du domaine. Ce profil réalise la qualification d’avance de la section 46.4.
+2. **Double profil de consignes précompilé** : Chaque agent critique L3 est homologué en CI/CD (chapitre 34) sous deux profils jumeaux, versionnés ensemble : un profil nominal, optimisé pour le modèle primaire, et un profil de secours, compilé pour un modèle à poids ouverts souverain, audité et figé dans le registre interne d’artefacts de l’entreprise (par exemple avec DSPy, chapitre 47). L’homologation exige pass^5_{DR} ≥ 0,94 ⋅ pass^5_{nominal} sur la suite 𝜏-bench du domaine. Ce profil réalise la qualification d’avance de la section 46.4.
 3. **Grappe de secours à montée en charge élastique** : Maintenir 100 % de la capacité GPU de pointe allumée à vide doublerait la facture FinOps. Un noyau minimal reste allumé et héberge déjà les SLM quotidiens, qui couvrent immédiatement les flux vitaux P0. Des réservations capacitaires prioritaires d’instances GPU souveraines chargent les poids, préchargés dans le cache NVMe local, en moins de 180 secondes.
 4. **Resserrement prudentiel automatique des seuils HOTL** : Tant que la fabrique opère sur le modèle de secours, le moteur de politique abaisse de 15 à 25 % les plafonds financiers d’engagement autonome L3. Les cas limites les plus subtils passent temporairement aux superviseurs humains HOTL, sans interrompre le flux courant (`RPO = 0` grâce à la mise en file durable Temporal). Cette mesure donne une forme chiffrée au mode dégradé de la section 46.4.
 
 Le seuil de quinze minutes de la formule n’a pas de source : c’est une cible de conception, à fixer par classe de tâche et à valider par exercice. Il n’est plausible que pour le reroutage vers un modèle déjà qualifié; la requalification forme une seconde horloge, courte seulement si le travail est fait d’avance (section 46.4).
 
-Le temps de reprise cognitif effectif RTOcog se modélise et se vérifie lors des exercices trimestriels selon :
+Le temps de reprise cognitif effectif RTO_{cog} se modélise et se vérifie lors des exercices trimestriels selon :
 
-RTOcog = 𝑡_{détection} + 𝑡_{quiescence} + max(𝑡_{warmup}^{GPU}, 𝑡_{switch}^{gateway}) + 𝑡_{canary}^{santé} ≤ 15 min
+RTO_{cog} = 𝑡_{détection} + 𝑡_{quiescence} + max(𝑡_{warmup}^{GPU}, 𝑡_{switch}^{gateway}) + 𝑡_{canary}^{santé} ≤ 15 min
 
 #### Extrait 46.3 — `[Exécuté en CI]` · Orchestrateur de bascule Cognitive DR sans perte de transaction (cognitive_dr_switch.py)
 
@@ -575,7 +567,7 @@ La décision ADR-027 fixe l’indépendance juridictionnelle et l’indépendanc
   1. *Dépendance mono-fournisseur avec clauses contractuelles standards* : Rejetée — insuffisante techniquement face aux pannes régionales et au risque de concentration BSIF E-23 / B-10.
   2. *Interdiction totale des modèles infonuagiques au profit exclusif de petits modèles sur site* : Rejetée — pénalise la qualité de raisonnement sur les cas complexes non sensibles ou correctement pseudonymisés.
   3. *Cloisonnement juridictionnel des 6 couches d’état inventoriées à la section 46.9, sous clé HYOK, enclaves GPU TEE pour la classe C3, et homologation CI/CD obligatoire d’un profil de secours souverain à poids ouverts (cible de conception* `RTO < 15 min`*, section 46.4)*. Retenue.
-- **Décision** : (a) Interdire tout transfert hors juridiction des journaux durables, mémoires vectorielles/graphes et KV-caches des classes C2/C3; (b) exiger HYOK (pseudonymisation HMAC-FPE ou enclave TEE attestée); (c) bloquer en CI/CD toute saga critique L3/L4 dépourvue d’un profil de secours à poids ouverts atteignant ≥94 % du pass5 nominal et testé trimestriellement.
+- **Décision** : (a) Interdire tout transfert hors juridiction des journaux durables, mémoires vectorielles/graphes et KV-caches des classes C2/C3; (b) exiger HYOK (pseudonymisation HMAC-FPE ou enclave TEE attestée); (c) bloquer en CI/CD toute saga critique L3/L4 dépourvue d’un profil de secours à poids ouverts atteignant ≥94 % du pass^5 nominal et testé trimestriellement.
 - **Conséquences** : Réduction de ce que l’exploitant peut remettre à une réquisition, sans valoir réponse juridique (section 46.1), et résilience aux pannes ou aux hausses tarifaires d’hyperscalers, au prix d’une capacité GPU souveraine maintenue en attente et d’une double validation CI/CD.
 
 ### Liste de contrôle de mise en production
@@ -586,7 +578,7 @@ La décision ADR-027 fixe l’indépendance juridictionnelle et l’indépendanc
 4. **Attestation matérielle GPU TEE** : Pour les charges critiques C3 en infonuagique, le HSM vérifie-t-il automatiquement le rapport d’attestation silicium CPU+GPU avant de libérer les clés de session ?
 
 5. **Abstraction Open Responses et décodage contraint** : Le code métier est-il exempt d’appels SDK propriétaires et la grappe de secours impose-t-elle le respect grammatical strict des schémas MCP ?
-6. **Double homologation CI/CD** : Chaque agent critique possède-t-il un profil de consignes secondaire validé sur un modèle souverain à poids ouverts avec un score pass5 supérieur au seuil minimal ?
+6. **Double homologation CI/CD** : Chaque agent critique possède-t-il un profil de consignes secondaire validé sur un modèle souverain à poids ouverts avec un score pass^5 supérieur au seuil minimal ?
 7. **Ajustement prudentiel en mode dégradé** : La bascule resserre-t-elle automatiquement les plafonds d’autonomie L3 au profit d’une supervision HOTL accrue ?
 8. **Exercice de bascule trimestriel** : La déconnexion réelle du fournisseur primaire a-t-elle été testée, avec mesure du délai réel face à la cible de `RTO < 15 min` et preuve d’un `RPO = 0` ?
 
@@ -668,10 +660,9 @@ Sur une passerelle industrielle durcie (typiquement biprocesseur redondant sans 
 - **Inférence et durabilité embarquées** : Deux modèles spécialisés quantifiés tournent localement, un SLM 4B d’extraction et de routage et un SLM 8B de diagnostic technique, en INT4 AWQ, avec une latence déterministe inférieure à 80 ms. Une instance locale légère d’un moteur d’exécution durable les pilote : Restate (binaire unique en Rust) ou un travailleur Temporal sur un magasin transactionnel SQLite WAL ou RocksDB, répliqué en paire haute disponibilité locale.
 - **Racine de confiance matérielle locale (TPM 2.0 et SPIRE imbriqué)** : Une autorité SPIRE intermédiaire locale, scellée dans la puce TPM 2.0 du châssis, détient un certificat intermédiaire valide 30 jours. Elle émet et renouvelle toutes les dix minutes les jetons courts des agents locaux, même en coupure totale de la liaison.
 - **État partagé sans conflit** : Les ressources partagées entre le nuage et les sites se modélisent par des CRDT associés à des baux de capacité préalloués, non par un solde entier qu’une écriture peut écraser :
-  - ‣ Un compteur PN-Counter additionne séparément les incréments et les décréments signés par chaque nœud 𝑖. La fusion, par maximum composante par composante, est commutative, associative et idempotente (𝑆𝐴⊔𝑆𝐵= 𝑆𝐵⊔𝑆𝐴).
-  - ‣ Chaque nœud détient un quota local préréservé 𝑄local𝑖 tel que ∑𝑁𝑖=1 𝑄local𝑖 ≤ 𝑄global −𝑀sécurité.
-  - ‣ Le bail d’un quota est indexé par un numéro d’époque monotone, ce qui évite la double dépense qu’une dérive d’horloge provoquerait pendant une partition asymé
-  - trique. Le nuage ne peut pas le reprendre unilatéralement sur simple délai mural (TTL) : il lui faut un message signé de restitution (`LeaseEpochSurrender`). En attendant le retour du nœud muet, les autres sites puisent uniquement dans la réserve centrale 𝑀sécurité.
+  - Un compteur PN-Counter additionne séparément les incréments et les décréments signés par chaque nœud 𝑖. La fusion, par maximum composante par composante, est commutative, associative et idempotente (𝑆_𝐴 ⊔ 𝑆_𝐵 = 𝑆_𝐵 ⊔ 𝑆_𝐴).
+  - Chaque nœud détient un quota local préréservé 𝑄_𝑖^{local} tel que ∑_{𝑖=1}^{𝑁} 𝑄_𝑖^{local} ≤ 𝑄_{global} − 𝑀_{sécurité}.
+  - Le bail d’un quota est indexé par un numéro d’époque monotone, ce qui évite la double dépense qu’une dérive d’horloge provoquerait pendant une partition asymétrique. Le nuage ne peut pas le reprendre unilatéralement sur simple délai mural (TTL) : il lui faut un message signé de restitution (`LeaseEpochSurrender`). En attendant le retour du nœud muet, les autres sites puisent uniquement dans la réserve centrale 𝑀_{sécurité}.
 - **Reprise du réseau par file de priorité** : À la reconnexion, un ordonnanceur écoule d’abord les alertes critiques et les deltas CRDT (quelques kilo-octets en Protobuf), puis les résumés de sagas clôturées, et enfin, aux heures creuses seulement, les lots compressés de télémétrie OpenTelemetry.
 
 #### Extrait 46.4 — `[Exécuté en CI]` · Magasin d’escrow hors ligne à convergence CRDT sans double dépense (edge_crdt_escrow.py)
@@ -730,11 +721,11 @@ class BoundedPnCounterEscrow:
 
 ### Réconciliation en deux phases après la coupure
 
-Quand la liaison revient après quarante-huit heures d’isolement, les nœuds ne rouvrent pas aussitôt les vannes aux commandes centrales. Une phase transitoire de synchronisation d’horizon (`ANTI_ENTROPY_SYNC`) fusionne d’abord les compteurs CRDT, recalcule dans l’ERP central les réapprovisionnements déclenchés par la consommation des quotas locaux, renouvelle les baux 𝑄local𝑖 pour le cycle suivant et vérifie la révocation éventuelle d’identités dans la liste centrale. Le site repasse ensuite en mode fédéré nominal.
+Quand la liaison revient après quarante-huit heures d’isolement, les nœuds ne rouvrent pas aussitôt les vannes aux commandes centrales. Une phase transitoire de synchronisation d’horizon (`ANTI_ENTROPY_SYNC`) fusionne d’abord les compteurs CRDT, recalcule dans l’ERP central les réapprovisionnements déclenchés par la consommation des quotas locaux, renouvelle les baux 𝑄_𝑖^{local} pour le cycle suivant et vérifie la révocation éventuelle d’identités dans la liste centrale. Le site repasse ensuite en mode fédéré nominal.
 
 ### Dimensionnement matériel et quantification
 
-Contrairement à une salle informatique climatisée, qui dispose de baies de 40 kW, une sous-station électrique, un quai minier ou un navire impose des contraintes sévères : refroidissement passif sans ventilateur, étanchéité IP65 contre les poussières métalliques conductrices, plage thermique de −25 ∘C à +60 ∘C, alimentation secourue par batteries 24 V DC et enveloppe électrique souvent plafonnée sous 75 à 180 watts. Deux choix d’ingénierie permettent de faire tenir une cellule multi-agents dans ce budget :
+Contrairement à une salle informatique climatisée, qui dispose de baies de 40 kW, une sous-station électrique, un quai minier ou un navire impose des contraintes sévères : refroidissement passif sans ventilateur, étanchéité IP65 contre les poussières métalliques conductrices, plage thermique de −25 °C à +60 °C, alimentation secourue par batteries 24 V DC et enveloppe électrique souvent plafonnée sous 75 à 180 watts. Deux choix d’ingénierie permettent de faire tenir une cellule multi-agents dans ce budget :
 
 1. **Quantification sensible à l’activation (AWQ / FP8), validée sur les appels d’outils** : Une quantification uniforme de tous les poids d’un SLM en INT4 dégrade souvent la précision syntaxique des arguments JSON de MCP et des identifiants alphanumériques de pièces. L’approche retenue garde en FP16/FP8 le 1 % de canaux saillants ainsi que les têtes de sortie grammaticale. Un modèle 8B complet et un contexte de 16 384 jetons tiennent alors dans moins de 6,8 Go de mémoire unifiée, sans perte mesurable sur la suite 𝜏-bench locale.
 2. **Exécution à l’événement, accélérateur en veille** : Un agent en périphérie ne doit pas scruter les capteurs en boucle continue par inférence neuronale. Un préfiltre déterministe léger (seuils spectraux FFT en Rust, moins de 2 W sur CPU) surveille en permanence les flux OPC UA et MQTT à 1 kHz. Il ne réveille l’accélérateur du SLM que lorsqu’une anomalie franchit l’enveloppe statistique nominale. Le facteur de marche énergétique moyen reste sous 8 % et le bridage thermique est évité.
@@ -760,11 +751,11 @@ Un modèle de langage ne doit pas émettre de consignes continues de bas niveau 
 
 3. **Arbitre Simplex matériel (ISO 10218-1:2025, ISO 3691-4 et IEC 61508)** : Dans le robot mobile (ISO 3691-4) ou la cellule articulée (ISO 10218-1:2025; l’intégration relève de l’ISO 10218-2, section 46.7), les contrôleurs adaptatifs, soit les planificateurs Nav2 et les politiques locales Vision-Langage-Action VLA de manipulation, saisissent ou déplacent des charges irrégulières. Leurs commandes passent par un arbitre déterministe, logé sur un microcontrôleur temps réel séparé (MCU Safety PLC, boucle à 1 ms). C’est la forme matérielle des trois étages décrits à la section 46.7.
 
-L’arbitre évalue en continu l’invariant de distance d’arrêt en fonction de la vitesse instantanée 𝑣(𝑡), de la vitesse maximale d’approche humaine 𝑣ℎ, du temps de réaction matériel 𝑡𝑟 et de la décélération minimale garantie 𝑎min(𝑚), abaissée selon la masse embarquée 𝑚 que mesurent les jauges d’essieu :
+L’arbitre évalue en continu l’invariant de distance d’arrêt en fonction de la vitesse instantanée 𝑣(𝑡), de la vitesse maximale d’approche humaine 𝑣_ℎ, du temps de réaction matériel 𝑡_𝑟 et de la décélération minimale garantie 𝑎_{min}(𝑚), abaissée selon la masse embarquée 𝑚 que mesurent les jauges d’essieu :
 
 𝑑_{sécurité}(𝑡) = (𝑣(𝑡) + 𝑣_ℎ)𝑡_𝑟 + 𝑣(𝑡)^2 / (2 𝑎_{min}(𝑚)) + 𝑑_{marge} ≤ 𝑑_{LiDAR}(𝑡)
 
-Dès que 𝑑LiDAR(𝑡) s’approche de 𝑑sécurité(𝑡) ou qu’une commande viole les butées articulaires, l’arbitre coupe physiquement le multiplexeur du contrôleur IA et bascule en moins d’une milliseconde sur le contrôleur de repli vérifié (niveau visé : SIL 3 / PL e), jusqu’à l’arrêt sûr complet. Simplex est un patron d’architecture, non une voie de certification : rien n’établit qu’il confère la conformité à l’ISO 10218 ni à l’IEC 61508, dont les niveaux d’intégrité ne sont pas abordés par l’exposé (section 46.7 et « Limites de ce chapitre »).
+Dès que 𝑑_{LiDAR}(𝑡) s’approche de 𝑑_{sécurité}(𝑡) ou qu’une commande viole les butées articulaires, l’arbitre coupe physiquement le multiplexeur du contrôleur IA et bascule en moins d’une milliseconde sur le contrôleur de repli vérifié (niveau visé : SIL 3 / PL e), jusqu’à l’arrêt sûr complet. Simplex est un patron d’architecture, non une voie de certification : rien n’établit qu’il confère la conformité à l’ISO 10218 ni à l’IEC 61508, dont les niveaux d’intégrité ne sont pas abordés par l’exposé (section 46.7 et « Limites de ce chapitre »).
 
 | Couche du pont cyber-physique | Protocole et cadence | Nature du composant | Niveau de sûreté et responsabilité |
 | --- | --- | --- | --- |
@@ -811,8 +802,7 @@ Une flotte de cinquante ou de cinq cents nœuds en périphérie, répartis dans 
 
 La distribution vers la périphérie combine TUF (section 46.8) et les signatures sans clé (à clés éphémères) de Sigstore / `cosign` :
 
-- **Lot atomique multi-artefacts** : Un nœud ne met jamais à jour un prompt isolément : il le reçoit avec le binaire d’outil MCP et le jeu de politiques Cedar avec lesquels il a été
-  homologué en CI/CD. L’ensemble forme une archive immuable adressée par contenu (OCI Artifact), signée hors ligne par au moins deux rôles distincts (ingénierie de plateforme et sécurité OT), avec une date d’expiration anti-rejeu (protection contre l’attaque par gel).
+- **Lot atomique multi-artefacts** : Un nœud ne met jamais à jour un prompt isolément : il le reçoit avec le binaire d’outil MCP et le jeu de politiques Cedar avec lesquels il a été homologué en CI/CD. L’ensemble forme une archive immuable adressée par contenu (OCI Artifact), signée hors ligne par au moins deux rôles distincts (ingénierie de plateforme et sécurité OT), avec une date d’expiration anti-rejeu (protection contre l’attaque par gel).
 - **Transport indifférent** : La confiance repose sur la chaîne cryptographique TUF, vérifiée contre les clés racines scellées dans le TPM 2.0 de la passerelle, et non sur le canal de transport. Le même lot peut donc être téléchargé pendant une fenêtre satellite nocturne de vingt minutes ou importé par une diode optique sur un site isolé classifié.
 - **Activation A/B avec retour arrière automatique** : Le lot s’installe sur la partition passive B. Au redémarrage des travailleurs locaux, une sonde exécute dix scénarios synthétiques de santé en trente secondes. Au moindre échec d’inférence ou de connexion DDS, le chien de garde matériel rebascule sur la partition A saine précédente.
 
@@ -871,8 +861,7 @@ Groupe Boréal Inc. déploie cette architecture chez BSN (sites miniers isolés)
 **Architecture déployée** :
 
 - **Boîtiers durcis sur les sites miniers** : BSN a déployé sur chaque site client nordique un serveur industriel biprocesseur redondant. Il exécute un SLM 8B INT4 distillé sur l’historique vibratoire Boréal, un magasin d’inventaire consigné en CRDT (extrait 46.4, plus haut) avec un quota local pour les pièces critiques en dépôt sur place, et un serveur SPIRE sur TPM 2.0.
-- **Passerelle MCP–ROS 2 et enveloppe Simplex à Montréal-Est** : Les sagas de préparation Temporal délèguent les missions de transport à Open-RMF par la passerelle
-  déterministe, qui interdit tout accès aux topiques moteurs bruts. Les scrutateurs LiDAR de sécurité coupent matériellement le canal de navigation hors du contrôleur SIL 3 dès qu’un opérateur franchit le rayon dynamique 𝑑sécurité(𝑡).
+- **Passerelle MCP–ROS 2 et enveloppe Simplex à Montréal-Est** : Les sagas de préparation Temporal délèguent les missions de transport à Open-RMF par la passerelle déterministe, qui interdit tout accès aux topiques moteurs bruts. Les scrutateurs LiDAR de sécurité coupent matériellement le canal de navigation hors du contrôleur SIL 3 dès qu’un opérateur franchit le rayon dynamique 𝑑_{sécurité}(𝑡).
 
 **Scénario illustratif cible** :
 
@@ -891,8 +880,7 @@ La décision ADR-028 encadre tout déploiement d’agents en périphérie indust
   1. *Inférence et orchestration centralisées dans le nuage avec simple cache local* : Rejetée — inopérante au-delà de quelques minutes de coupure réseau et incompatible avec les sites isolés physiquement.
   2. *Synchronisation de bases locales par écrasement (la dernière écriture l’emporte) et pilotage direct des topiques moteurs ROS 2 par un modèle embarqué* : Rejetée — perte de transactions financières ou de stocks et absence d’une enveloppe vérifiée, isolée du composant appris (section 46.7).
   3. *Cellule autonome (SLM local, SPIRE/TPM, état CRDT à quotas de droits), distribution signée TUF/Sigstore et passerelle discrète MCP–ROS 2 doublée d’un arbitre matériel Simplex*. Retenue.
-- **Décision** : (a) Exiger une survie autonome minimale de 72 heures sans liaison WAN pour tout site critique, avec repli automatique en L1 au-delà (cette exigence va au-delà de la section 46.5, qui ne retient aucun seuil sourcé : la durée de survie se calcule par site et se vérifie par essai); (b) modéliser tout état mutatif déconnecté par un CRDT borné par un quota de droits préalloué (escrow); (c) interdire tout accès d’un modèle probabiliste aux
-  commandes cinématiques continues, hors d’une passerelle de missions homologuées et d’un moniteur matériel Simplex vérifié.
+- **Décision** : (a) Exiger une survie autonome minimale de 72 heures sans liaison WAN pour tout site critique, avec repli automatique en L1 au-delà (cette exigence va au-delà de la section 46.5, qui ne retient aucun seuil sourcé : la durée de survie se calcule par site et se vérifie par essai); (b) modéliser tout état mutatif déconnecté par un CRDT borné par un quota de droits préalloué (escrow); (c) interdire tout accès d’un modèle probabiliste aux commandes cinématiques continues, hors d’une passerelle de missions homologuées et d’un moniteur matériel Simplex vérifié.
 - **Conséquences** : Continuité industrielle hors réseau et sûreté des personnes confiée, en atelier robotisé, à un contrôleur vérifié et isolé du contrôleur appris, sans que Simplex vaille certification (section 46.7), en contrepartie de la gestion matérielle d’un parc de nœuds en périphérie et de la quantification des modèles embarqués.
 
 ### Liste de contrôle de mise en production

@@ -1,68 +1,41 @@
-' Fig. 36. – Vue en couches à l’échelle de l’entreprise : cinq couches et un plan de contrôle transversal qui réunit registre, identité, politique, observabilité et budgets. Ce découpage est une synthèse propre au chapitre, calée sur celui du compendium.
+' Fig. 36. – Vue en couches à l'échelle de l'entreprise : cinq couches et un plan de contrôle transversal qui réunit registre, identité, politique, observabilité et budgets. Ce découpage est une synthèse propre au chapitre, calée sur celui du compendium.
 @startuml
-top to bottom direction
+left to right direction
 skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
+skinparam Padding 8
+skinparam nodesep 20
+skinparam ranksep 28
 skinparam rectangle {
-  BackgroundColor #F8FAFC
+  BackgroundColor #FFFFFF
   BorderColor #64748B
 }
 
-rectangle " " as Couches #FFFFFF;line:FFFFFF {
-  rectangle L1 [
-    **Interaction**
-    Canaux, interfaces, points d'approbation humaine
-  ]
-  rectangle L2 [
-    **Agents et orchestration**
-    Raisonnement, plans, coordination, exécution durable
-  ]
-  rectangle L3 [
-    **Contexte et connaissance**
-    Mémoire, couche sémantique, données
-  ]
-  rectangle L4 [
-    **Accès**
-    Outils, API, systèmes patrimoniaux, autres agents
-  ]
-  rectangle L5 [
-    **Modèles**
-    Modèles de langage, routage, choix du fournisseur et repli
-  ]
+rectangle Couches #FFFFFF;line:FFFFFF [
+  | <#F8FAFC> **Interaction**                        Canaux, interfaces, points d'approbation humaine |
 
-  L1 -[hidden]down-> L2
-  L2 -[hidden]down-> L3
-  L3 -[hidden]down-> L4
-  L4 -[hidden]down-> L5
-}
+  | <#F8FAFC> **Agents et orchestration**      Raisonnement, plans, coordination, exécution durable |
 
-rectangle "Plan de contrôle\n//transversal//\n(Décider, configurer, observer)" as PlanControle #EFF6FF;line:2563EB {
-  rectangle PC1 #FFFFFF;line:93C5FD [
-    Registre
-  ]
-  rectangle PC2 #FFFFFF;line:93C5FD [
-    Identité
-  ]
-  rectangle PC3 #FFFFFF;line:93C5FD [
-    Politique
-  ]
-  rectangle PC4 #FFFFFF;line:93C5FD [
-    Observabilité
-  ]
-  rectangle PC5 #FFFFFF;line:93C5FD [
-    Budgets
-  ]
+  | <#F8FAFC> **Contexte et connaissance**    Mémoire, couche sémantique, données |
 
-  PC1 -[hidden]down-> PC2
-  PC2 -[hidden]down-> PC3
-  PC3 -[hidden]down-> PC4
-  PC4 -[hidden]down-> PC5
-}
+  | <#F8FAFC> **Accès**                              Outils, API, systèmes patrimoniaux, autres agents |
 
-L1 .[#2563EB]right. PC1
-L2 .[#2563EB]right. PC2
-L3 .[#2563EB]right. PC3
-L4 .[#2563EB]right. PC4
-L5 .[#2563EB]right. PC5
+  | <#F8FAFC> **Modèles**                           Modèles de langage, routage, choix du fournisseur et repli |
+]
+
+rectangle PlanControle #EFF6FF;line:2563EB [
+  **Plan de contrôle**
+  <color:#2563EB>//transversal//</color>
+  ----
+  Registre
+  Identité
+  Politique
+  Observabilité
+  Budgets
+  ----
+  //Décider, configurer, observer//
+]
+
+Couches .[#2563EB]. PlanControle
 @enduml

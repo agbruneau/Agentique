@@ -70,10 +70,9 @@ Selon l’étape 5 de Haasnoot et al., une stratégie adaptative sépare les **a
 Inversement, quatre paris fragiles sont à proscrire :
 
 - **Déléguer le registre maître, l’identité d’agent ou la voûte d’audit à un éditeur unique :** coût de transfert prohibitif en `B` et rupture de conformité en `C` [1] [2] [20].
-- **Développer un protocole interne concurrent de** `MCP` **et d'**`A2A` **:** dépense d’ingénierie stérile balayée dès que `A` progresse [2] [5] [6].
+- **Développer un protocole interne concurrent de `MCP` et d'`A2A` :** dépense d’ingénierie stérile balayée dès que `A` progresse [2] [5] [6].
 - **Déployer un tissu mondial d’agents à mémoire et clés mutualisées sans cloisons juridictionnelles :** architecture intenable en `C` et exposée sous l’article 17 de la *Loi 25* [22] [25] [30] C : C ; SIG-001, SIG-002.
-- **Escompter une autonomie longue non prouvée ou un assouplissement législatif avant le 30 juin 2033 :** ni la portée future des modèles ni la révision des lois financières
-  fédérales (`ANC-109`, `ANC-110`) D [36] [42] ne justifient d’affaiblir les filières humaines de contrôle [8] [33] C : tous ; SIG-013, SIG-017, SIG-108.
+- **Escompter une autonomie longue non prouvée ou un assouplissement législatif avant le 30 juin 2033 :** ni la portée future des modèles ni la révision des lois financières fédérales (`ANC-109`, `ANC-110`) D [36] [42] ne justifient d’affaiblir les filières humaines de contrôle [8] [33] C : tous ; SIG-013, SIG-017, SIG-108.
 
 ## 8.5 Signes précurseurs et détection précoce des bifurcations
 
@@ -85,7 +84,7 @@ Un scénario ne guide l’action que s’il est couplé à des signaux observabl
 | Schémas financiers et mandats B2B | `SIG-007`, `SIG-103`, `SIG-104`, `SIG-110` | Norme ouverte sous `LSAC`, ouverture du `RTR` et profils `vLEI`/assurance → `A` [16] [17] [18] | Préparer l’homologation inter-organisations (stade 4) sur les domaines éligibles en P3 C : A, B ; SIG-007, SIG-110 |
 | Souveraineté et extraterritorialité | `SIG-001`, `SIG-002`, `SIG-101`, `SIG-102`, `SIG-106` à `SIG-108` | Rapports des administrations européennes (*AI Act*, *DORA*) ou règles nationales durcies → `C` [23] [24] [36] [41] [42] | Activer cellules d’état isolées, clés `HYOK` locales et repli souverain à poids ouverts C : A, C ; SIG-001, SIG-002, SIG-107 |
 | Post-quantique et validité PKI | `SIG-009` à `SIG-012` | Alignement prudentiel sur le G7 → `A`; injonctions nationales asymétriques → `C` [28] [32] | Devancer la migration hybride des jetons d’agents et bloquer tout certificat non automatisé avant mars 2029 C : tous ; SIG-009, SIG-012 |
-| Curseurs transversaux (portée, coût, énergie, relève) | `SIG-013` à `SIG-017` | Modulation transversale de l’autonomie, du routage et des effectifs dans `A`**,** `B` **et** `C` [7] [29] [39] | Ajuster les plafonds d’étapes, réserver le calcul souverain et geler le stade 3/4 si la relève s’érode C : tous ; SIG-013, SIG-016, SIG-017 |
+| Curseurs transversaux (portée, coût, énergie, relève) | `SIG-013` à `SIG-017` | Modulation transversale de l’autonomie, du routage et des effectifs dans **`A`, `B` et** `C` [7] [29] [39] | Ajuster les plafonds d’étapes, réserver le calcul souverain et geler le stade 3/4 si la relève s’érode C : tous ; SIG-013, SIG-016, SIG-017 |
 
 Cette synthèse referme la Partie II : munie des ancres datées (`M-3` à `M-5`), des bornes de fiabilité et de ressources (`M-6`, `M-7`) et de ces trois scénarios sans probabilité, la Partie III peut désormais définir le noyau invariant et les variantes conditionnelles de l’architecture cible 2035 [1] [2] C : tous ; SIG-003, SIG-013.
 

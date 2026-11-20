@@ -6,88 +6,70 @@ skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
 skinparam defaultFontSize 11
+skinparam Padding 6
+skinparam linetype polyline
+skinparam nodesep 16
+skinparam ranksep 24
 skinparam packageStyle rectangle
-skinparam nodesep 22
-skinparam ranksep 26
 
-package "Six couches de l'architecture" as Couches #FFFFFF {
-  rectangle "**1  Canaux et déclencheurs**" as L1 #E6F0FA;line:93C5FD {
-    rectangle "Portails, clavardage\net applications" as L1a #FFFFFF;line:CBD5E1
-    rectangle "Outils de collaboration\n(Teams, Slack)" as L1b #FFFFFF;line:CBD5E1
-    rectangle "Formulaires\nd’approbation humaine" as L1c #FFFFFF;line:CBD5E1
-    rectangle "Webhooks, tâches\nplanifiées, événements" as L1d #FFFFFF;line:CBD5E1
+together {
+  rectangle "**Six couches de l'architecture**" as Couches #FFFFFF;line:CBD5E1 {
+    card L1 #E6F0FA;line:93C5FD [
+      **1  Canaux et déclencheurs**
+      |<#FFFFFF> Portails, clavardage\net applications |<#FFFFFF> Outils de collaboration\n(Teams, Slack) |<#FFFFFF> Formulaires\nd’approbation humaine |<#FFFFFF> Webhooks, tâches\nplanifiées, événements |
+    ]
+
+    card L2 #E2F4EE;line:86EFAC [
+      **2  Orchestration et état**
+      |<#FFFFFF> Routeur sémantique\n(qualification) |<#FFFFFF> Moteur d’exécution\ndurable (flux, sagas) |<#FFFFFF> Coordination\nmultiagent (A2A) |<#FFFFFF> Points de contrôle,\nmémoire de travail |
+    ]
+
+    card L3 #EDE8F5;line:C4B5FD [
+      **3  Agents et exécution cognitive**
+      |<#FFFFFF> Agents spécialisés\n(internes, tiers) |<#FFFFFF> Passerelle de modèles\n(routage, cache, repli) |<#FFFFFF> Bac à sable de code\n(microVM, gVisor) |<#FFFFFF> Mémoire de travail\net procédurale |
+    ]
+
+    card L4 #FEF3DC;line:FCD34D [
+      **4  Médiation et connectivité**
+      |<#FFFFFF> **Passerelle d’agents**\nMCP · A2A · politiques |<#FFFFFF> Catalogue d’entreprise\n(outils, cartes d’agent) |<#FFFFFF> Bus d’événements\n(CloudEvents, AsyncAPI) |
+    ]
+
+    card L5 #F1F5F9;line:CBD5E1 [
+      **5  Outils et données**
+      |<#FFFFFF> Serveurs MCP\nde domaine |<#FFFFFF> Adaptateurs\nOpenAPI → outils |<#FFFFFF> Ressources, mémoires\népisodique et sémantique |<#FFFFFF> Outils de\ncompensation |
+    ]
+
+    card L6 #E2E8F0;line:94A3B8 [
+      **6  Systèmes d’enregistrement**
+      ERP, CRM, systèmes de dossiers, entrepôts de données, SaaS : exposés tels quels, sans réécriture
+    ]
+
+    L1 <-[#0F2744]down-> L2
+    L2 <-[#0F2744]down-> L3
+    L3 <-[#0F2744]down-> L4
+    L4 <-[#0F2744]down-> L5
+    L5 <-[#0F2744]down-> L6
+    L3 -[#9C2F39,dashed,thickness=2]down-> L6 : <color:#9C2F39><b>Interdit</b></color>\n<color:#9C2F39>(EXIG-ARC-01)</color>
   }
 
-  rectangle "**2  Orchestration et état**" as L2 #E2F4EE;line:86EFAC {
-    rectangle "Routeur sémantique\n(qualification)" as L2a #FFFFFF;line:CBD5E1
-    rectangle "Moteur d’exécution\ndurable (flux, sagas)" as L2b #FFFFFF;line:CBD5E1
-    rectangle "Coordination\nmultiagent (A2A)" as L2c #FFFFFF;line:CBD5E1
-    rectangle "Points de contrôle,\nmémoire de travail" as L2d #FFFFFF;line:CBD5E1
-  }
+  rectangle "**PLANS TRANSVERSAUX**" as Plans #FFFFFF;line:CBD5E1 {
+    rectangle "**A · Identité et sécurité**\n\n• Identité propre par agent (SPIFFE, OIDC)\n• Jetons délégués courts (RFC 8693)\n• Moteur de politiques, paliers d’outils\n• Coffre de secrets, garde-fous, DLP\n• Approbation humaine signée" as PA #FCE8EB;line:F4B4BC
 
-  rectangle "**3  Agents et exécution cognitive**" as L3 #EDE8F5;line:C4B5FD {
-    rectangle "Agents spécialisés\n(internes, tiers)" as L3a #FFFFFF;line:CBD5E1
-    rectangle "Passerelle de modèles\n(routage, cache, repli)" as L3b #FFFFFF;line:CBD5E1
-    rectangle "Bac à sable de code\n(microVM, gVisor)" as L3c #FFFFFF;line:CBD5E1
-    rectangle "Mémoire de travail\net procédurale" as L3d #FFFFFF;line:CBD5E1
-  }
+    rectangle "**B · Observabilité, évaluation, FinOps**\n\n• Traces OpenTelemetry (GenAI)\n• Contexte W3C de bout en bout\n• Journal d’audit chaîné et ancré\n• Évaluation continue (3 étages)\n• Budgets, coût par tâche réussie" as PB #E6F4EA;line:A7DFB5
 
-  rectangle "**4  Médiation et connectivité**" as L4 #FEF3DC;line:FCD34D {
-    rectangle "**Passerelle d’agents**\nMCP · A2A · politiques" as L4a #FFFFFF;line:B45309
-    rectangle "Catalogue d’entreprise\n(outils, cartes d’agent)" as L4b #FFFFFF;line:CBD5E1
-    rectangle "Bus d’événements\n(CloudEvents, AsyncAPI)" as L4c #FFFFFF;line:CBD5E1
-  }
+    rectangle "**C · Gouvernance et registre**\n\n• Registre des agents et serveurs MCP\n• Classes de risque, niveaux N0 à N4\n• Cycle de vie et homologation\n• Dérogations, indicateurs\n• Comité d’architecture et des\n  risques agentiques" as PC #EFE9F7;line:CBB6EA
 
-  rectangle "**5  Outils et données**" as L5 #F1F5F9;line:CBD5E1 {
-    rectangle "Serveurs MCP\nde domaine" as L5a #FFFFFF;line:CBD5E1
-    rectangle "Adaptateurs\nOpenAPI → outils" as L5b #FFFFFF;line:CBD5E1
-    rectangle "Ressources, mémoires\népisodique et sémantique" as L5c #FFFFFF;line:CBD5E1
-    rectangle "Outils de\ncompensation" as L5d #FFFFFF;line:CBD5E1
-  }
-
-  rectangle "**6  Systèmes d’enregistrement**" as L6 #E2E8F0;line:94A3B8 {
-    rectangle "ERP, CRM, systèmes de dossiers, entrepôts de données, SaaS : exposés tels quels, sans réécriture" as L6a #E2E8F0;line:E2E8F0
+    PA -[hidden]down-> PB
+    PB -[hidden]down-> PC
   }
 }
 
-package "PLANS TRANSVERSAUX" as Plans #FFFFFF {
-  rectangle "**A · Identité et sécurité**\n\n• Identité propre par agent (SPIFFE, OIDC)\n• Jetons délégués courts (RFC 8693)\n• Moteur de politiques, paliers d’outils\n• Coffre de secrets, garde-fous, DLP\n• Approbation humaine signée" as PA #FCE8EB;line:F4B4BC
-
-  rectangle "**B · Observabilité, évaluation, FinOps**\n\n• Traces OpenTelemetry (GenAI)\n• Contexte W3C de bout en bout\n• Journal d’audit chaîné et ancré\n• Évaluation continue (3 étages)\n• Budgets, coût par tâche réussie" as PB #E6F4EA;line:A7DFB5
-
-  rectangle "**C · Gouvernance et registre**\n\n• Registre des agents et serveurs MCP\n• Classes de risque, niveaux N0 à N4\n• Cycle de vie et homologation\n• Dérogations, indicateurs\n• Comité d’architecture et des\n  risques agentiques" as PC #EFE9F7;line:CBB6EA
-}
-
-L1a -[hidden]right-> L1b
-L1b -[hidden]right-> L1c
-L1c -[hidden]right-> L1d
-
-L2a -[hidden]right-> L2b
-L2b -[hidden]right-> L2c
-L2c -[hidden]right-> L2d
-
-L3a -[hidden]right-> L3b
-L3b -[hidden]right-> L3c
-L3c -[hidden]right-> L3d
-
-L4a -[hidden]right-> L4b
-L4b -[hidden]right-> L4c
-
-L5a -[hidden]right-> L5b
-L5b -[hidden]right-> L5c
-L5c -[hidden]right-> L5d
-
-L1b <-down-> L2b : Demandes descendantes (mandant, trace, plafonds)\nRésultats et artefacts remontants
-L2b <-down-> L3b
-L3b <-down-> L4b
-L4b <-down-> L5b
-L5b <-down-> L6a
-
-L3a -[#9C2F39,dashed,thickness=2]down-> L6a : <color:#9C2F39><b>Interdit</b></color>\n<color:#9C2F39>(EXIG-ARC-01)</color>
-
-PA -[hidden]down-> PB
-PB -[hidden]down-> PC
-Couches -[hidden]right-> Plans
+L1 -[hidden]right-> PA
+L2 -[hidden]right-> PA
+L3 -[hidden]right-> PB
+L4 -[hidden]right-> PB
+L5 -[hidden]right-> PC
+L6 -[hidden]right-> PC
 
 legend bottom left
   **Flux** : Demandes descendantes (mandant, trace, plafonds)  |  Résultats et artefacts remontants

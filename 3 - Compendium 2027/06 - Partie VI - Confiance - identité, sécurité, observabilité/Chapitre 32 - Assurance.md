@@ -52,9 +52,7 @@ L’article emploie deux notions sans les définir formellement [1]. Le **confin
 
 ### Trois surfaces, un même argument
 
-L’article étend le raisonnement au-delà de l’agent isolé [1]. À l’échelle d’un agent, il n’existe pas de séparation fiable entre données et instructions. Entre agents, les capacités annoncées dans une Agent Card A2A sont autodéclarées et l’identité ne se propage pas d’un saut de
-
-délégation au suivant (chapitres 6 et 30). Sous les deux, le routeur qui choisit un modèle par requête forme une troisième surface (chapitre 44).
+L’article étend le raisonnement au-delà de l’agent isolé [1]. À l’échelle d’un agent, il n’existe pas de séparation fiable entre données et instructions. Entre agents, les capacités annoncées dans une Agent Card A2A sont autodéclarées et l’identité ne se propage pas d’un saut de délégation au suivant (chapitres 6 et 30). Sous les deux, le routeur qui choisit un modèle par requête forme une troisième surface (chapitre 44).
 
 Les auteurs concluent que la sécurité devrait être une propriété vérifiable des architectures, des protocoles et des environnements d’exécution, et non une couche facultative de recommandations.
 
@@ -256,9 +254,8 @@ Un attaquant qui oriente la génération de code vers une vulnérabilité noyau 
 
 ### Les trois primitives d’isolation et le standard fédérateur OpenSandbox (AAIF)
 
-1. **Noyaux d’espace utilisateur (gVisor /** `runsc`**)** : gVisor intercepte les appels système de l’application invitée dans un noyau de sécurité écrit en Go, en espace utilisateur (*Sentry*), et ne laisse passer vers le noyau hôte qu’une fraction restreinte de primitives. C’est un compromis adapté au durcissement de serveurs MCP existants : pas de pénalité mémoire lourde, mais un surcoût sur les entrées/sorties disque intensives.
-2. **Micro-machines virtuelles matérielles (Firecracker / Cloud Hypervisor sur KVM)** : Conçu pour le calcul multi-locataire hostile, Firecracker établit une frontière de virtualisation matérielle complète (Intel VT-x / AMD-V / ARM Virtualization Extensions), avec un moniteur minimal écrit en Rust (~50 000 lignes de code, sans périphériques patrimoniaux superflus). Chaque session d’agent dispose de son propre noyau Linux invité. Grâce à la restauration différentielle d’instantanés mémoire (char
-  gement paresseux `uffd`), une microVM Python préchauffée, avec `pandas`, `polars` et `scipy` déjà en mémoire, démarre en 8 à 15 millisecondes, ce qui rend l’isolation matérielle compatible avec un usage interactif.
+1. **Noyaux d’espace utilisateur (gVisor / `runsc`)** : gVisor intercepte les appels système de l’application invitée dans un noyau de sécurité écrit en Go, en espace utilisateur (*Sentry*), et ne laisse passer vers le noyau hôte qu’une fraction restreinte de primitives. C’est un compromis adapté au durcissement de serveurs MCP existants : pas de pénalité mémoire lourde, mais un surcoût sur les entrées/sorties disque intensives.
+2. **Micro-machines virtuelles matérielles (Firecracker / Cloud Hypervisor sur KVM)** : Conçu pour le calcul multi-locataire hostile, Firecracker établit une frontière de virtualisation matérielle complète (Intel VT-x / AMD-V / ARM Virtualization Extensions), avec un moniteur minimal écrit en Rust (~50 000 lignes de code, sans périphériques patrimoniaux superflus). Chaque session d’agent dispose de son propre noyau Linux invité. Grâce à la restauration différentielle d’instantanés mémoire (chargement paresseux `uffd`), une microVM Python préchauffée, avec `pandas`, `polars` et `scipy` déjà en mémoire, démarre en 8 à 15 millisecondes, ce qui rend l’isolation matérielle compatible avec un usage interactif.
 3. **Bacs à sable à capacités WebAssembly (WASI 0.2+ Component Model)** : Pour un connecteur de transformation déterministe, un parseur documentaire ou un outil MCP léger qui n’exige pas un système d’exploitation POSIX complet, WebAssembly offre des garanties par construction : mémoire linéaire bornée, aucun appel système implicite et modèle de capacités explicites. Un module WASI ne voit ni l’horloge, ni le système de fichiers, ni une prise réseau tant que l’hôte ne lui remet pas la poignée correspondante. Le démarrage prend de 0,2 à 2 millisecondes, pour une empreinte de quelques mégaoctets.
 4. **La couche d’abstraction ouverte OpenSandbox (Linux Foundation AAIF)** : Versé à l’*Agentic AI Foundation* aux côtés de MCP et A2A, OpenSandbox lève le verrouillage fournisseur des environnements d’exécution d’agents en normalisant un *Sandbox Protocol* : une API de cycle de vie (`create`/`pause`/`snapshot`/`destroy`) et une API d’exécution de commandes et de fichiers. L’équipe code son agent une seule fois contre le SDK OpenSandbox : le flux tourne sur un conteneur local en développement et passe sans modification à un pool haute densité de microVMs Firecracker sur Kubernetes en production.
 
@@ -367,7 +364,7 @@ Pour tout invariant d’affaires, réglementaire ou de sécurité (plafond d’e
 > - Destruction cryptographique après chaque tâche
 > - 4. Coupe-Circuit Centralisé Multi-Nuages (SOC Kill Switch — Cible < 2 s • Plafond S-14 < 10 s)
 > - Détection Télémétrique Continue
-> - Flux OTel gen_ai.* • Dérive coût/sauts • Alerte SIEM
+> - Flux OTel gen_ai.\* • Dérive coût/sauts • Alerte SIEM
 > - Signalisation OpenID SSF / CAEP
 > - Révocation SVID SPIRE + Blocage cache PEP
 > - Gel Forensique & Purge Exécution
@@ -396,9 +393,7 @@ Les deux moteurs ouverts dominants en 2027 ont chacun leur domaine :
 
 La preuve porte sur la politique, relativement à l’invariant écrit. La complétude des invariants reste la limite relevée à la section 32.2.
 
-En pratique, OPA (Rego v1) gouverne l’admission d’infrastructure en CI/CD et sur Kubernetes, et Cedar statue en temps réel sur chaque transaction MCP. La politique OPA suivante
-
-refuse tout gabarit dont la classe d’exécution n’est ni Firecracker sous KVM ni WASI, dont la sortie réseau n’est pas refusée par défaut, ou dont une route injecte le secret dans la VM.
+En pratique, OPA (Rego v1) gouverne l’admission d’infrastructure en CI/CD et sur Kubernetes, et Cedar statue en temps réel sur chaque transaction MCP. La politique OPA suivante refuse tout gabarit dont la classe d’exécution n’est ni Firecracker sous KVM ni WASI, dont la sortie réseau n’est pas refusée par défaut, ou dont une route injecte le secret dans la VM.
 
 #### Extrait 32.2 — `[Exécuté en CI]` · Politique d’admission OPA (Rego v1) validant les gabarits OpenSandbox
 
@@ -669,8 +664,8 @@ L’architecture IT/OT impose une convention de bail court à battement de cœur
   3. *Architecture neuro-symbolique (PEP agentgateway + PDP Cedar vérifié par SMT), isolation OpenSandbox sur microVMs Firecracker ou WASI sans sortie réseau, et coupe-circuit SOC à quatre paliers via OpenID SSF/CAEP* : Retenue.
 - **Décision** : (a) Tout appel d’outil MCP mutatif ou toute délégation A2A est évalué hors du modèle par un PDP déterministe (Cedar en temps réel, OPA en admission CI/CD) dont les clauses `forbid` cardinales sont prouvées par raisonnement automatisé; (b) toute exécution de code généré, d’analyse de fichiers tiers ou de session CUA s’effectue exclusivement dans un bac à sable éphémère à virtualisation matérielle (Firecracker) ou à capacités WASI, via OpenSandbox, en politique `DENY_ALL` sortante et avec injection des secrets hors de la VM; (c) chaque classe d’agent est raccordée au coupe-circuit SOC, testé chaque trimestre lors d’un exercice chronométré (plafond d’homologation `< 10 s`, cible automatisée `MTTR-Stop < 2 s`).
 - **Conséquences** :
-  - ‣ *Positives* : Vérification hors du modèle du respect des limites financières et de la séparation des tâches, relativement aux invariants écrits (l’exposé y voit un signal, non une preuve, à la section 32.5; la complétude de ces invariants n’est pas démontrée, section 32.2), immunité du cluster hôte face au code malveillant généré, arrêt d’urgence quasi instantané sans corruption transactionnelle.
-  - ‣ *Négatives / coûts assumés* : Nœuds supportant la virtualisation imbriquée ou le métal nu (KVM `/dev/kvm`) pour Firecracker, et gouvernance conjointe des schémas Cedar entre architectes métiers et SecOps.
+  - *Positives* : Vérification hors du modèle du respect des limites financières et de la séparation des tâches, relativement aux invariants écrits (l’exposé y voit un signal, non une preuve, à la section 32.5; la complétude de ces invariants n’est pas démontrée, section 32.2), immunité du cluster hôte face au code malveillant généré, arrêt d’urgence quasi instantané sans corruption transactionnelle.
+  - *Négatives / coûts assumés* : Nœuds supportant la virtualisation imbriquée ou le métal nu (KVM `/dev/kvm`) pour Firecracker, et gouvernance conjointe des schémas Cedar entre architectes métiers et SecOps.
 - **Condition de révision** : Réévaluation semestrielle selon l’évolution des performances du modèle de composants WASI et des spécifications OpenSandbox au sein de la Linux Foundation AAIF.
 
 ### Liste de contrôle de mise en production

@@ -92,9 +92,7 @@ Ces deux questions, auxquelles s’ajoute la géopolitique des standards (chapit
 | B — Archipel | Les standards restent aux niveaux technique et syntaxique; chaque plateforme gouverne ses agents | Le noyau possédé; les clauses de sortie éprouvées | Le pari sur une plateforme unique |
 | C — Blocs | Les modèles de confiance divergent par juridiction, autour de racines d’identité et d’exigences de souveraineté distinctes | L’architecture régionalisée; la preuve portable d’un domaine à l’autre | Les agents conçus pour un seul espace de confiance |
 
-Le scénario B prolonge l’état de 2026. Le scénario A suppose que les chantiers ouverts aboutissent, dont l’identité d’agent que vise la feuille de route de MCP, en coordination avec les groupes OAuth et WIMSE de l’IETF [1]. Le scénario C n’exclut pas les deux autres : une multinationale peut vivre A ou B à l’intérieur d’un bloc, et C entre les blocs (chapitres 11
-
-et 37). Les lettres diffèrent du chapitre 11 : Blocs prolonge sa « bifurcation régionale » (B); l’Archipel est voisin de sa « prolifération » (C).
+Le scénario B prolonge l’état de 2026. Le scénario A suppose que les chantiers ouverts aboutissent, dont l’identité d’agent que vise la feuille de route de MCP, en coordination avec les groupes OAuth et WIMSE de l’IETF [1]. Le scénario C n’exclut pas les deux autres : une multinationale peut vivre A ou B à l’intérieur d’un bloc, et C entre les blocs (chapitres 11 et 37). Les lettres diffèrent du chapitre 11 : Blocs prolonge sa « bifurcation régionale » (B); l’Archipel est voisin de sa « prolifération » (C).
 
 ### Une variable transversale : la portée des agents
 
@@ -208,9 +206,7 @@ SYNTHÈSE EXÉCUTIVE
 
 Les référentiels de maturité analytique ou de *MLOps* ne voient pas le risque propre à l’entreprise agentique : un agent détient des identités déléguées, invoque des outils transactionnels et modifie l’état des systèmes d’enregistrement. Une organisation excellente en science des données prédictive reste au niveau N1 si ses prototypes partagent des clés API statiques, ignorent les fenêtres de traitement par lots de son ERP et s’exécutent sans persistance durable ni compensation transactionnelle.
 
-Cette grille ordonne la progression en cinq niveaux (N1 à N5), évalués sur six dimensions orthogonales. Elle se distingue des cinq stades de la section 43.1, numérotés de 0 à 4 et
-
-mesurés par domaine d’affaires : les deux échelles ne se correspondent pas. Comme les stades, elle est une proposition de l’ouvrage, sans validation empirique.
+Cette grille ordonne la progression en cinq niveaux (N1 à N5), évalués sur six dimensions orthogonales. Elle se distingue des cinq stades de la section 43.1, numérotés de 0 à 4 et mesurés par domaine d’affaires : les deux échelles ne se correspondent pas. Comme les stades, elle est une proposition de l’ouvrage, sans validation empirique.
 
 > **[Figure]**
 > - Modèle de Maturité de l'Entreprise Agentique (N1 à N5) et Portes de Gouvernance
@@ -283,7 +279,7 @@ mesurés par domaine d’affaires : les deux échelles ne se correspondent pas. 
 
 - **Niveau 1 — Ad hoc et exploratoire.** Assistants conversationnels synchrones et scripts isolés, sur des sessions personnelles ou des clés API partagées. L’employé sert de presse-papiers entre les applications. Ni inventaire central, ni télémétrie OpenTelemetry : le risque d’exfiltration de données (Loi 25) est maximal et l’effet sur les délais de traversée inter-systèmes est nul.
 - **Niveau 2 — Départemental outillé.** Agents déployés dans le studio fermé d’un éditeur SaaS unique, ou reliés à de premiers serveurs MCP locaux. L’état réside en mémoire volatile et les comptes de service restent sur-privilégiés. L’approbation humaine systématique (HITL à 100 %) déplace le goulot d’étranglement vers les gestionnaires.
-- **Niveau 3 — Gouverné, durable et auditable.** Passage obligé de toute production critique. Exécution durable (Temporal, Restate); identité non humaine (NHI SPIFFE) avec échange de jetons OAuth 2.1 On-Behalf-Of; chemin obligé par agentgateway, sous politiques Cedar/OPA; outils MCP idempotents; supervision humaine sur score de risque (HOTL); tests automatisés pass5.
+- **Niveau 3 — Gouverné, durable et auditable.** Passage obligé de toute production critique. Exécution durable (Temporal, Restate); identité non humaine (NHI SPIFFE) avec échange de jetons OAuth 2.1 On-Behalf-Of; chemin obligé par agentgateway, sous politiques Cedar/OPA; outils MCP idempotents; supervision humaine sur score de risque (HOTL); tests automatisés pass^5.
 - **Niveau 4 — Orchestré multi-domaines.** Maillage transversal qui relie ventes, finance, ateliers IT/OT, logistique et systèmes patrimoniaux par A2A v1.0 et une ontologie partagée. Sagas de plusieurs jours à compensation distribuée; routage économique dynamique entre SLM et LLM, piloté au coût par résultat réussi.
 - **Niveau 5 — Écosystème fédéré B2B.** Délégation directe entre les flottes d’agents d’entreprises partenaires (fournisseurs, transporteurs, assureurs), par les annuaires AGNTCY/OASF, une fédération mTLS/DID en DMZ, des protocoles transactionnels vérifiables (AP2, x402) et des coupe-circuits inter-organisations.
 
@@ -296,7 +292,7 @@ IMPORTANT
 | 1. Architecture et état | Clavardage synchrone sans état | Boucle ReAct locale en mémoire vive | Exécution durable (Temporal/Restate) + cellules bornées | Sagas compensées multi-SI (IT/OT, ERP, CRM) | Sagas inter-firmes sous SLA contractuels |
 | 2. Interopérabilité | Copier-coller manuel humain | Adaptateurs d’éditeur / MCP isolés | Catalogue interne de serveurs MCP idempotents | Bi-couche AAIF : MCP vertical + A2A v1.0 horizontal | Découverte AGNTCY/OASF + mandats AP2/x402 |
 | 3. Identité et sécurité | Session personnelle ou clé API en clair | Compte de service statique large | Identité NHI (SPIFFE) + OAuth 2.1 OBO + Cedar | Atténuation des portées à chaque saut A2A | Fédération mTLS/DID, DMZ et coupe-circuits croisés |
-| 4. Qualité et traces | Aucune trace structurée | Journaux applicatifs locaux épars | Traces OpenTelemetry `gen_ai.*` + banc CI/CD pass5 | Évaluation continue + méta-gouverneurs indépendants | Journaux d’audit signés opposables entre tiers |
+| 4. Qualité et traces | Aucune trace structurée | Journaux applicatifs locaux épars | Traces OpenTelemetry `gen_ai.*` + banc CI/CD pass^5 | Évaluation continue + méta-gouverneurs indépendants | Journaux d’audit signés opposables entre tiers |
 | 5. Supervision humaine | Exécuteur intégral (L0/L1) | Approbateur HITL à 100 % (L2) | Superviseur HOTL sur seuil via CIBA/A2UI (L3) | Gouvernance des politiques et arbitrage d’exceptions | Définition des mandats et plafonds B2B |
 | 6. Pilotage FinOps | Abonnements individuels dispersés | Facture brute mensuelle de jetons | Quotas durs par enveloppe et imputation analytique | Pilotage au coût par résultat réussi et routage SLM/LLM | Règlement automatisé à la transaction B2B |
 
@@ -304,8 +300,7 @@ IMPORTANT
 
 Ce volet distingue sept antipatterns structurels, identifiables par télémétrie. Cette liste est une proposition, non validée; aucune correspondance n’est établie avec la taxonomie MAST, qui recense quatorze modes d’échec, dont la plupart tiennent à la conception et à la coordination (section 43.3). Les voici :
 
-1. **Shadow Agent Sprawl (prolifération d’agents fantômes).** Automatisations assemblées dans des outils no-code avec les jetons OAuth personnels d’employés. Invisibles
-  du SOC, elles exposent des données régies par la Loi 25 à des API non homologuées et s’arrêtent sans alerte au départ du collaborateur.
+1. **Shadow Agent Sprawl (prolifération d’agents fantômes).** Automatisations assemblées dans des outils no-code avec les jetons OAuth personnels d’employés. Invisibles du SOC, elles exposent des données régies par la Loi 25 à des API non homologuées et s’arrêtent sans alerte au départ du collaborateur.
 2. **God Agent (agent omniscient monolithique).** Un agent unique qui cumule un prompt de dix mille mots et quarante outils disparates (finance, stock, support). Sa précision baisse, ses jetons de contexte augmentent et la séparation des tâches n’est plus respectée sous BSIF E-23.
 3. **Paving the Cow Path (pavage du chaos bureaucratique).** Un premier agent rédige un courriel ou un PDF récapitulatif qu’un second agent du service voisin réextrait par reconnaissance optique vers l’ERP. La chaîne numérise une friction obsolète qu’un appel structuré MCP ou un événement Kafka élimine avec une fiabilité de 100 %.
 4. **Agent-Washing et LLM-for-Everything (vernis agentique).** Rebaptiser « agent » une tâche planifiée ordinaire, ou remplacer une requête SQL exacte et un barème tarifaire par une inférence probabiliste coûteuse et faillible.
@@ -316,11 +311,11 @@ Ce volet distingue sept antipatterns structurels, identifiables par télémétri
 | Antipattern | Symptôme télémétrique | Risque (OWASP / légal) | Remédiation architecturale |
 | --- | --- | --- | --- |
 | Shadow Sprawl | Flux DNS/TLS vers API LLM hors passerelle; jetons personnels actifs la nuit | ASI03 (abus d’identité), infraction Loi 25 / RGPD | Proxy sortant obligatoire + amnistie G1 + identités NHI |
-| God Agent | > 12 outils exposés; prompt > 4 000 jetons; pass5 < 70 % | ASI02 (abus d’outils), échec de la séparation des tâches E-23 | Découpage en spécialistes de domaine (A2A) à périmètre MCP étroit |
+| God Agent | > 12 outils exposés; prompt > 4 000 jetons; pass^5 < 70 % | ASI02 (abus d’outils), échec de la séparation des tâches E-23 | Découpage en spécialistes de domaine (A2A) à périmètre MCP étroit |
 | Paving Cow Path | Un agent génère du texte ou un PDF aussitôt analysé par un autre agent interne | Gaspillage FinOps, perte d’intégrité sémantique | Contrat d’événement typé (AsyncAPI) ou invocation MCP directe |
 | LLM-for-Everything | Coût > 0, 05 $ CAD pour un calcul ou un routage déterministe | Erreurs arithmétiques, latence 100 × injustifiée | Remplacement immédiat par une table DMN ou un microservice API |
 | Chatty Mesh | Plus de 4 sauts inter-agents par tâche; échanges non typés | ASI08 (cascade), épuisement du budget de jetons | `ActionEnvelope` (`maxRemainingHops`) + schémas JSON A2A |
-| Adapter Spaghetti | Plus de 2 connecteurs distincts maintenus vers le même progiciel | Dette 𝑀× 𝑁, règles d’idempotence incohérentes | Serveur MCP unique par domaine derrière agentgateway |
+| Adapter Spaghetti | Plus de 2 connecteurs distincts maintenus vers le même progiciel | Dette 𝑀 × 𝑁, règles d’idempotence incohérentes | Serveur MCP unique par domaine derrière agentgateway |
 | HITL Theater | Temps médian de revue < 4 s; approbation > 99, 2 % | ASI09 (complaisance humaine), goulot d’étranglement | Bascule HOTL sur score de risque + gardes déterministes Cedar |
 
 ÉCLAIRAGE SECTORIEL
@@ -337,17 +332,17 @@ Dans les ministères, les réseaux de santé et les organismes publics, le *Shad
 
 Connecter une flotte d’agents asynchrones à un patrimoine applicatif vieux de vingt ans, sans diagnostic préalable, sature les pools de connexions historiques ou produit des écritures corrompues lors des réessais. Avant toute ouverture en écriture (L2+), le diagnostic patrimonial (*Brownfield Assessment*) note chaque système d’enregistrement de 0 à 100 selon cinq critères pondérés :
 
-1. **Transactionnalité et idempotence (𝑐1, poids 0, 25).** API métier atomique à clé d’idempotence native, ou CRUD bas niveau ou terminal 5250/3270.
-2. **Propagation d’identité granulaire (𝑐sec, poids 0, 25).** Jetons délégués nominatifs (OAuth 2.1 OBO), ou compte technique global aveugle.
-3. **Fraîcheur et sémantique d’état (𝑐3, poids 0, 20).** Flux événementiel en temps réel (CDC), ou lots nocturnes qui gèlent les soldes.
-4. **Primitives de compensation (𝑐4, poids 0, 15).** Existence d’opérations d’annulation ou d’avoir permettant de participer à une saga.
-5. **Fidélité du bac à sable (𝑐5, poids 0, 15).** Capacité d’exécuter les bancs pass5 hors production.
+1. **Transactionnalité et idempotence (𝑐_1, poids 0,25).** API métier atomique à clé d’idempotence native, ou CRUD bas niveau ou terminal 5250/3270.
+2. **Propagation d’identité granulaire (𝑐_{sec}, poids 0,25).** Jetons délégués nominatifs (OAuth 2.1 OBO), ou compte technique global aveugle.
+3. **Fraîcheur et sémantique d’état (𝑐_3, poids 0,20).** Flux événementiel en temps réel (CDC), ou lots nocturnes qui gèlent les soldes.
+4. **Primitives de compensation (𝑐_4, poids 0,15).** Existence d’opérations d’annulation ou d’avoir permettant de participer à une saga.
+5. **Fidélité du bac à sable (𝑐_5, poids 0,15).** Capacité d’exécuter les bancs pass^5 hors production.
 
-Une clause éliminatoire sur la sécurité (𝜏min = 60) interdit de compenser une faille d’auditabilité par la richesse fonctionnelle :
+Une clause éliminatoire sur la sécurité (𝜏_{min} = 60) interdit de compenser une faille d’auditabilité par la richesse fonctionnelle :
 
-𝑆ready = (∑5 𝑑=1 𝑤𝑑𝑐𝑑)𝕀(𝑐sec ≥𝜏min)
+𝑆_{ready} = (∑_{𝑑=1}^{5} 𝑤_𝑑 𝑐_𝑑) 𝕀(𝑐_{sec} ≥ 𝜏_{min})
 
-Si 𝑆ready < 50 (ou 𝑐sec < 60), le système reste en lecture seule (L1) jusqu’à l’interposition d’une façade MCP qui gère en externe un registre ACID d’idempotence, un limiteur de concurrence (*bulkhead*) et une piste d’audit nominative. Ce cloisonnement protège notamment les tables de verrous pessimistes (SAP ENQUEUE ou sous-systèmes interactifs QINTER sur IBM i) contre les rafales synchronisées de réessais, qui paralysent en quelques secondes un cœur transactionnel dimensionné pour le rythme de frappe humain. Entre 50 et 75, l’écriture bornée est permise sous quotas stricts et recul exponentiel temporisé (*full jitter*); à 75 et plus, le système est qualifié natif N3/N4.
+Si 𝑆_{ready} < 50 (ou 𝑐_{sec} < 60), le système reste en lecture seule (L1) jusqu’à l’interposition d’une façade MCP qui gère en externe un registre ACID d’idempotence, un limiteur de concurrence (*bulkhead*) et une piste d’audit nominative. Ce cloisonnement protège notamment les tables de verrous pessimistes (SAP ENQUEUE ou sous-systèmes interactifs QINTER sur IBM i) contre les rafales synchronisées de réessais, qui paralysent en quelques secondes un cœur transactionnel dimensionné pour le rythme de frappe humain. Entre 50 et 75, l’écriture bornée est permise sous quotas stricts et recul exponentiel temporisé (*full jitter*); à 75 et plus, le système est qualifié natif N3/N4.
 
 ### Extrait 43.1 — `[Exécuté en CI]` · Manifeste YAML d’évaluation patrimoniale (*Brownfield Readiness Manifest*)
 
@@ -426,11 +421,11 @@ def triage_initiative(item: Initiative) -> tuple[str, Action, list[str]]:
 Pour assainir l’existant sans pousser les métiers vers la clandestinité par un moratoire, la migration suit quatre vagues aux durées indicatives (la section 43.2 découpe la feuille de route en jalons franchis sur preuve, non en trimestres), articulées autour des portes G1 à G4, avec des briques mutualisées plus rapides à adopter que le développement sauvage :
 
 1. **Vague 1 (semaines 1–6) — porte G1, visibilité et confinement.** Amnistie déclarative de 30 jours et routage obligatoire du trafic LLM sortant vers la passerelle d’observation. À J+45, les clés personnelles sont révoquées et les initiatives mutatives non conformes sont mises en quarantaine en lecture seule (`QUARANTINE_L1`).
-2. **Vague 2 (mois 2–4) — porte G2, socle N3 et façades MCP.** L’équipe plateforme livre les premiers serveurs MCP d’entreprise (ERP, CRM, ITSM, façades patrimoniales), avec OAuth 2.1 OBO, registres d’idempotence et limiteurs de concurrence (*bulkhead*). Le passage sur exécution durable est obligatoire, comme l’attestation CI/CD pass5 ≥ 0, 95 : la porte G2 atteste les deux.
+2. **Vague 2 (mois 2–4) — porte G2, socle N3 et façades MCP.** L’équipe plateforme livre les premiers serveurs MCP d’entreprise (ERP, CRM, ITSM, façades patrimoniales), avec OAuth 2.1 OBO, registres d’idempotence et limiteurs de concurrence (*bulkhead*). Le passage sur exécution durable est obligatoire, comme l’attestation CI/CD pass^5 ≥ 0,95 : la porte G2 atteste les deux.
 3. **Vague 3 (mois 5–8) — porte G3, maillage N4 et bascule HOTL.** Publication des Agent Cards A2A v1.0, exécution fantôme comparée aux décisions humaines pendant quinze jours, puis ouverture du mode HOTL, piloté au coût par résultat réussi.
 4. **Vague 4 (mois 9–12+) — porte G4, fédération B2B N5 ciblée.** Ouverture sélective en DMZ mTLS vers les partenaires stratégiques, sous mandats plafonnés et coupe-circuits bilatéraux.
 
-Les équipes n’adhèrent aux quatre portes que si le chemin pavé existe. Le portail interne développeur ne se contente pas d’édicter des interdits : il génère en quelques minutes un squelette de service pré-câblé (identité SPIFFE, client agentgateway, instrumentation OpenTelemetry `gen_ai.*`, enveloppe `ActionEnvelope`, harnais de test CI/CD pass5). Quand la conformité N3 devient l’option de moindre effort, l’incitation au contournement clandestin disparaît d’elle-même. En exploitation, l’homologation reste révocable en temps réel : si la télémétrie continue relève un recul du taux d’acceptation des gardes ou une alerte OWASP ASI, la passerelle abaisse le plafond d’autonomie de L3 (HOTL) à L2 (HITL) ou à L1 sans redéploiement applicatif.
+Les équipes n’adhèrent aux quatre portes que si le chemin pavé existe. Le portail interne développeur ne se contente pas d’édicter des interdits : il génère en quelques minutes un squelette de service pré-câblé (identité SPIFFE, client agentgateway, instrumentation OpenTelemetry `gen_ai.*`, enveloppe `ActionEnvelope`, harnais de test CI/CD pass^5). Quand la conformité N3 devient l’option de moindre effort, l’incitation au contournement clandestin disparaît d’elle-même. En exploitation, l’homologation reste révocable en temps réel : si la télémétrie continue relève un recul du taux d’acceptation des gardes ou une alerte OWASP ASI, la passerelle abaisse le plafond d’autonomie de L3 (HOTL) à L2 (HITL) ou à L1 sans redéploiement applicatif.
 
 ### Extrait 43.3 — `[Exécuté en CI]` · Politique déterministe Cedar automatisant la Porte G2 dans le pipeline CI/CD
 
@@ -482,8 +477,8 @@ Lors d’acquisitions industrielles successives, harmoniser SAP S/4HANA à la ma
 **Verdict du triage architectural (janvier 2027).** Le diagnostic patrimonial (Extrait 43.1) et l’algorithme de triage (Extrait 43.2) produisent quatre décisions entérinées par la direction générale :
 
 1. **14 initiatives décommissionnées (DECOMMISSION — 30 %).** Neuf cas d’*Agent-Washing* (barèmes de remises et routages postaux recodés en tables DMN en trois jours, pour un coût d’exécution divisé par 4 000) et cinq assistants non conformes, dont l’assistant RH qui lisait des dossiers Loi 25 par un compte partagé.
-2. **11 initiatives confinées en lecture seule (QUARANTINE_L1 — 23 %).** Elles comprennent le prototype d’achat responsable, qui a consommé 41 000 $ CAD en onze heures de boucle HTTP 429, et trois agents qui écrivaient sans garde vers l’IBM i de BCA (𝑆ready = 38/100 avant façade).
-3. **15 initiatives consolidées (REMEDIATE — 32 %).** Dix-huit connecteurs redondants sont fusionnés en 9 serveurs MCP officiels derrière agentgateway; grâce au registre externe d’idempotence et au limiteur de concurrence (*bulkhead*) limité à 8 appels simultanés, l’IBM i de BCA passe à 𝑆ready = 57, 75. Deux *God Agents* de soutien (31 et 28 outils) sont scindés en spécialistes bornés (≤9 outils).
+2. **11 initiatives confinées en lecture seule (QUARANTINE_L1 — 23 %).** Elles comprennent le prototype d’achat responsable, qui a consommé 41 000 $ CAD en onze heures de boucle HTTP 429, et trois agents qui écrivaient sans garde vers l’IBM i de BCA (𝑆_{ready} = 38/100 avant façade).
+3. **15 initiatives consolidées (REMEDIATE — 32 %).** Dix-huit connecteurs redondants sont fusionnés en 9 serveurs MCP officiels derrière agentgateway; grâce au registre externe d’idempotence et au limiteur de concurrence (*bulkhead*) limité à 8 appels simultanés, l’IBM i de BCA passe à 𝑆_{ready} = 57,75. Deux *God Agents* de soutien (31 et 28 outils) sont scindés en spécialistes bornés (≤9 outils).
 4. **7 flux phares promus vers N3 → N4 (PROMOTE — 15 %).** 80 % des investissements 2027 se concentrent sur sept sagas à fort rendement prouvé, dont la maintenance prédictive inter-divisions (chapitre 1) et le diagnostic borné sous contrôle BSIF E-23 (chapitre 17).
 
 **Scénario illustratif cible (T+90 jours, fin T1 2027).** Économie récurrente de 620 000 $ CAD/an en licences redondantes et fuites de jetons; 100 % des agents actifs munis d’identités SPIFFE nominatives; pré-audit interne BSIF E-23 validé avant l’échéance du 1er mai 2027; indice du groupe passé de N1,4 à N3,1.
@@ -493,16 +488,15 @@ Lors d’acquisitions industrielles successives, harmoniser SAP S/4HANA à la ma
 **DÉCISION D’ARCHITECTURE — ADR-003 — Adoption d’un portail d’homologation gradué par niveau de maturité et d’exposition**
 
 - **Statut** : Acceptée | Périmètre : Groupe Boréal (toutes divisions et filiales) | Révision : semestrielle
-- **Contexte** : la dispersion de 47 initiatives non gouvernées exposait le groupe à des infractions Loi 25 et BSIF E-23, à une dette 𝑀× 𝑁 de connecteurs et à des dérives FinOps, tandis qu’un comité uniforme pour de simples essais L1 pousserait à la clandestinité.
+- **Contexte** : la dispersion de 47 initiatives non gouvernées exposait le groupe à des infractions Loi 25 et BSIF E-23, à une dette 𝑀 × 𝑁 de connecteurs et à des dérives FinOps, tandis qu’un comité uniforme pour de simples essais L1 pousserait à la clandestinité.
 - **Options évaluées** :
   1. *Autonomie départementale sans registre central* : rejetée — perpétue le *Shadow Sprawl* et interdit toute fédération A2A sûre.
   2. *Validation manuelle mensuelle identique de L0 à L4* : rejetée — goulot d’étranglement qui freine l’expérimentation saine.
   3. *Portail d’homologation gradué par portes automatisées (G1–G4)* : enregistrement léger automatisé en 24 h pour les bacs à sable en lecture seule (L1 hors données sensibles), et vérification bloquante en CI/CD (Cedar) dès qu’un agent requiert des mutations (L2+), l’accès à des données réglementées ou un maillage inter-domaines (N3/N4). Retenue.
-- **Décision** : tout actif agentique est inscrit au registre dès G1. Aucune promotion en production de niveau L2 ou supérieur n’est permise sans passage automatisé de la porte
-  G2, qui atteste : (a) une identité NHI dédiée, sans secret partagé; (b) un score patrimonial 𝑆ready ≥50 sur chaque système muté; (c) au plus douze outils MCP, tous idempotents; (d) une exécution durable et un score pass5 ≥0, 95.
+- **Décision** : tout actif agentique est inscrit au registre dès G1. Aucune promotion en production de niveau L2 ou supérieur n’est permise sans passage automatisé de la porte G2, qui atteste : (a) une identité NHI dédiée, sans secret partagé; (b) un score patrimonial 𝑆_{ready} ≥ 50 sur chaque système muté; (c) au plus douze outils MCP, tous idempotents; (d) une exécution durable et un score pass^5 ≥ 0,95.
 - **Conséquences** :
-  - ‣ *Positives* : disparition de l’IA fantôme mutative, mutualisation des serveurs MCP, conformité continue vérifiable par audit externe.
-  - ‣ *Négatives / coûts assumés* : maintien d’un registre actif, de gabarits MCP clés en main et d’un harnais d’évaluation CI/CD dédié.
+  - *Positives* : disparition de l’IA fantôme mutative, mutualisation des serveurs MCP, conformité continue vérifiable par audit externe.
+  - *Négatives / coûts assumés* : maintien d’un registre actif, de gabarits MCP clés en main et d’un harnais d’évaluation CI/CD dédié.
 - **Condition de révision** : réévaluation semestrielle des pondérations du diagnostic patrimonial à mesure de la modernisation du patrimoine applicatif.
 
 ### Liste de contrôle de mise en production
@@ -516,4 +510,4 @@ Confirmez ces huit points :
 5. **Score patrimonial homologué.** Chaque système d’enregistrement ciblé en écriture possède-t-il un manifeste d’aptitude qui documente son idempotence, ses fenêtres de gel nocturne et sa capacité maximale ?
 6. **Consolidation en façades MCP.** Les adaptateurs dupliqués ont-ils été remplacés par un serveur MCP officiel par domaine, muni d’un limiteur de concurrence (*bulkhead*) ?
 7. **Plafonnement de la cible.** Le niveau visé (N2, N3, N4 ou N5) est-il justifié par la valeur métier réelle, sans sur-ingénierie N5 inutile ?
-8. **Verrouillage Cedar/OPA en CI/CD.** La porte G2 bloque-t-elle techniquement toute mise en production dépourvue d’ÉFVP Loi 25 ou d’attestation pass5 ≥0, 95 ?
+8. **Verrouillage Cedar/OPA en CI/CD.** La porte G2 bloque-t-elle techniquement toute mise en production dépourvue d’ÉFVP Loi 25 ou d’attestation pass^5 ≥0, 95 ?

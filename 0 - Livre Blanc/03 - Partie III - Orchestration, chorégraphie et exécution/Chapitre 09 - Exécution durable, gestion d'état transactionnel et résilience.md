@@ -16,9 +16,7 @@ Deux effets cumulatifs expliquent cette rupture [176]. D’une part, la probabil
 
 Chaque appel distant doit être borné par des délais d’expiration (`timeouts`) de connexion et de lecture afin d’éviter l’immobilisation prolongée de fils d’exécution, de connexions réseau et de mémoire jusqu’à l’épuisement du service [178]. Toutefois, les répartiteurs de charge et mandataires inverses d’entreprise imposent des plafonds synchrones courts, incompatibles avec des trajectoires agentiques combinant plusieurs passes d’inférence ou des modèles à raisonnement étendu.
 
-En diffusion continue (*Server-Sent Events*, `SSE`), une réponse initiale `HTTP 200` masque parfois une erreur survenant au milieu du flux ou une coupure réseau avant l’achèvement complet [185] [180]. L’appelant
-
-se retrouve dans l’ambiguïté décrite par Stripe : il ignore si l’action distante a échoué avant exécution, réussi juste avant la coupure ou laissé un état partiel [180]. Faute de journal externe et de propagation de l’échéance globale (*deadline*), des tentatives de reprise non coordonnées entre couches empilées amplifient la charge sur un système déjà dégradé [178].
+En diffusion continue (*Server-Sent Events*, `SSE`), une réponse initiale `HTTP 200` masque parfois une erreur survenant au milieu du flux ou une coupure réseau avant l’achèvement complet [185] [180]. L’appelant se retrouve dans l’ambiguïté décrite par Stripe : il ignore si l’action distante a échoué avant exécution, réussi juste avant la coupure ou laissé un état partiel [180]. Faute de journal externe et de propagation de l’échéance globale (*deadline*), des tentatives de reprise non coordonnées entre couches empilées amplifient la charge sur un système déjà dégradé [178].
 
 ### 9.1.3 Saturation de débit (`429`, `503`), `Retry-After` et gigue aléatoire
 
@@ -75,9 +73,7 @@ Les infrastructures conteneurisées aggravent la vulnérabilité des boucles non
 
 Les moteurs d’exécution durable (`Durable Execution`) garantissent qu’un processus applicatif progresse jusqu’à complétion sans limite de durée imposée, malgré les pannes de travailleurs ou coupures réseau [181] [176] [191]. Leur mécanisme repose sur la journalisation immuable de chaque transition d’état avant le passage à l’étape suivante, couplée à un rejeu (*replay*) déterministe lors d’une reprise [181] [191].
 
-Pour que le rejeu reconstitue exactement les variables locales sans dupliquer les effets de bord, le code orchestrateur doit respecter des **contraintes de déterminisme** strictes [190] [192]. À entrées et historique identiques, il doit produire la même séquence de commandes [190]. Il est donc proscrit d’exécuter directement dans le code de workflow des appels réseau, requêtes `LLM`, accès SQL, lectures d’horloge
-
-système ou tirages aléatoires non amorcés [190] [192]. Toute opération non déterministe est isolée dans une primitive dédiée (`Activity` ou `ctx.run`) dont la sortie sérialisée est inscrite au journal ; au rejeu, le moteur restitue cette sortie enregistrée sans ré-exécuter l’opération [181] [191] [192].
+Pour que le rejeu reconstitue exactement les variables locales sans dupliquer les effets de bord, le code orchestrateur doit respecter des **contraintes de déterminisme** strictes [190] [192]. À entrées et historique identiques, il doit produire la même séquence de commandes [190]. Il est donc proscrit d’exécuter directement dans le code de workflow des appels réseau, requêtes `LLM`, accès SQL, lectures d’horloge système ou tirages aléatoires non amorcés [190] [192]. Toute opération non déterministe est isolée dans une primitive dédiée (`Activity` ou `ctx.run`) dont la sortie sérialisée est inscrite au journal ; au rejeu, le moteur restitue cette sortie enregistrée sans ré-exécuter l’opération [181] [191] [192].
 
 Ce journal transactionnel demeure distinct des mémoires cognitives du chapitre 06 : un résumé conversationnel ou épisodique ne doit jamais servir à reconstruire le curseur d’exécution d’un workflow [181] [193]. Quant aux techniques de compatibilité lors des mises à jour de code sur des instances dormantes (`Patching`, `Worker Versioning`), elles relèvent du cycle `GitOps` étudié au chapitre 13 [190].
 
@@ -98,9 +94,7 @@ Temporal fournit quatre temporisations complémentaires pour détecter finement 
 
 ### 9.2.4 `Dapr Workflow` et `Checkpointers` de graphe (`LangGraph`)
 
-Intégré à l’écosystème Cloud Native Computing Foundation (`CNCF`), `Dapr Workflow` embarque le moteur `durabletask-go` directement dans le *sidecar* Dapr de chaque pod applicatif, relié au SDK par un flux gRPC
-
-bidirectionnel [196]. Le moteur orchestre des acteurs virtuels internes (`Workflow actor` et `Activity actor`) garantissant une exécution mono-fil par instance et délègue la persistance des points de reprise à un magasin d’état enfichable (`PostgreSQL`, `Redis`, etc.) [196]. Ce choix favorise la standardisation Kubernetes et la portabilité des bases d’état, au prix d’une exécution couplée au cycle de vie du sidecar par pod et d’une sémantique dépendante du `State Store` configuré [196].
+Intégré à l’écosystème Cloud Native Computing Foundation (`CNCF`), `Dapr Workflow` embarque le moteur `durabletask-go` directement dans le *sidecar* Dapr de chaque pod applicatif, relié au SDK par un flux gRPC bidirectionnel [196]. Le moteur orchestre des acteurs virtuels internes (`Workflow actor` et `Activity actor`) garantissant une exécution mono-fil par instance et délègue la persistance des points de reprise à un magasin d’état enfichable (`PostgreSQL`, `Redis`, etc.) [196]. Ce choix favorise la standardisation Kubernetes et la portabilité des bases d’état, au prix d’une exécution couplée au cycle de vie du sidecar par pod et d’une sémantique dépendante du `State Store` configuré [196].
 
 Enfin, les `Checkpointers` intégrés aux cadriciels d’agents tels que `LangGraph` enregistrent l’état d’un graphe par fil d’exécution (`thread_id`) à chaque frontière de super-étape pour offrir tolérance aux pannes locales, reprise après interruption humaine et voyage temporel, en complément de `Stores` dédiés à la mémoire transversale inter-fils [193]. Toutefois, un checkpointer de graphe seul ne fournit ni files de tâches distribuées avec travailleurs indépendants, ni minuteurs serveur persistants multi-semaines, ni détection par battements de cœur [194] [177] [193]. En entreprise, les graphes cognitifs gagnent donc à être encapsulés dans un moteur d’exécution durable complet [176] [195] [193]. La figure 9.2 compare ces architectures.
 
@@ -169,9 +163,7 @@ Enfin, les `Checkpointers` intégrés aux cadriciels d’agents tels que `LangGr
 
 ### 9.3.1 Impossibilité du protocole `Two-Phase Commit` (`2PC`) en contexte agentique
 
-Garantir la reprise de l’orchestrateur ne protège pas à lui seul l’intégrité des systèmes cibles dès que le workflow sollicite des `Systems of Record`, des serveurs `MCP` et des API SaaS possédant chacun leur propre stockage [197] [183]. Le protocole de validation distribuée `Two-Phase Commit` (`2PC`) s’avère inopérant pour trois motifs structurels [197] [186] [183]. D’abord, la majorité des progiciels modernes, des API HTTP et des courtiers de messages ne supportent pas de coordinateur XA distribué [197]. Ensuite, comme l’ont
-
-démontré Garcia-Molina et Salem pour les transactions de longue durée (*Long-Lived Transactions*), maintenir des verrous de base de données pendant des appels lents effondre la concurrence et multiplie les interblocages [186] [183]. Enfin, les reprises automatiques et la livraison au-moins-une-fois (*at-least-once*) imposent de rendre chaque frontière tolérante aux réémissions [180] [198].
+Garantir la reprise de l’orchestrateur ne protège pas à lui seul l’intégrité des systèmes cibles dès que le workflow sollicite des `Systems of Record`, des serveurs `MCP` et des API SaaS possédant chacun leur propre stockage [197] [183]. Le protocole de validation distribuée `Two-Phase Commit` (`2PC`) s’avère inopérant pour trois motifs structurels [197] [186] [183]. D’abord, la majorité des progiciels modernes, des API HTTP et des courtiers de messages ne supportent pas de coordinateur XA distribué [197]. Ensuite, comme l’ont démontré Garcia-Molina et Salem pour les transactions de longue durée (*Long-Lived Transactions*), maintenir des verrous de base de données pendant des appels lents effondre la concurrence et multiplie les interblocages [186] [183]. Enfin, les reprises automatiques et la livraison au-moins-une-fois (*at-least-once*) imposent de rendre chaque frontière tolérante aux réémissions [180] [198].
 
 ### 9.3.2 Idempotence de bout en bout : contrat `Idempotency-Key` et phases atomiques
 
@@ -304,9 +296,9 @@ Toutefois, côté moteur durable, un impératif s’impose : **l’exécution du
 > - En cas de replay ultérieur, Wf lit LLM2/P3 depuis le journal sans ré-interroger LLM1 ni LLM2.
 > - 2. Attente asynchrone HOTL et escalade sous SLA
 > - 7 Émet demande d'approbation (Awakeable ID / Workflow ID)
-> - 8 Démarre Durable Timer (SLA N 1 = 4 heures)
+> - 8 Démarre Durable Timer (SLA N1 = 4 heures)
 > - Libère thread et RAM. Zéro consommation de worker.
-> - 9 Notifie Approbateur N 1
+> - 9 Notifie Approbateur N1
 > - Délai SLA N1 expiré sans réponse
 > - 10 Déclenche escalade vers N2 + nouveau Durable Timer (SLA N2)
 > - 1 1 Notifie Approbateur N2 (prioritaire)

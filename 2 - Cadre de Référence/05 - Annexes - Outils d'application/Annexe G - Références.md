@@ -40,7 +40,7 @@ Liste des sources citées, numérotées dans l’ordre croissant de [1] à [474]
 - `[34]` Model Context Protocol (2026). Versioning. https://modelcontextprotocol.io/specification/versioning
 - `[35]` Agentic AI Foundation (2026, 17 août). A2A joins AAIF’s open agentic stack. AAIF. https://aaif.io/blog/a2a-joins-aaif
 - `[36]` Agentic AI Foundation (2026, 9 septembre). Envoy AI Gateway becomes Agent Router and joins AAIF. Agentic AI Foundation (AAIF). https://aaif.io/blog/agent-router-joins-aaif
-- `[37]` Cisco (Parello, J.) (2026, 12 octobre). [Project Proposal] AGNTCY, issue no 57. GitHub, aaif/ project-proposals (Agentic AI Foundation). https://github.com/aaif/project-proposals/issues/57
+- `[37]` Cisco (Parello, J.) (2026, 12 octobre). [Project Proposal] AGNTCY, issue no 57. GitHub, aaif/project-proposals (Agentic AI Foundation). https://github.com/aaif/project-proposals/issues/57
 
 - `[38]` Linux Foundation (2026, 22 octobre). Agentic AI Foundation Announces Four New Projects: Agent Skills, Open Responses, OpenEnv, and OpenSandbox. Communiqué. https://www.linuxfoundation.org/press/agentic-ai-foundation-announces-four-new-projects-agent-skills-open-responses-openenv-and-opensandbox
 - `[39]` A2A Project (s. d.). A2A and MCP. https://a2a-protocol.org/latest/topics/a2a-and-mcp
@@ -56,8 +56,7 @@ Liste des sources citées, numérotées dans l’ordre croissant de [1] à [474]
 - `[49]` Salesforce (s. d.). Agentforce Interoperability Guide. Salesforce. https://www.salesforce.com/agentforce/resources/interoperability-guide
 - `[50]` ServiceNow (2026, 5 mai). ServiceNow turns enterprise AI chaos into control with the platform for governed, autonomous work. ServiceNow. https://newsroom.servicenow.com/press-releases/details/2026/ServiceNow-turns-enterprise-AI-chaos-into-control-with-the-platform-for-governed-autonomous-work/default.aspx
 - `[51]` ServiceNow (2025, 6 mai). ServiceNow Launches AI Control Tower, a Centralized Command Center to Govern, Manage, Secure, and Realize Value From Any AI Agent, Model, and Workflow. ServiceNow. https://newsroom.servicenow.com/press-releases/details/2025/ServiceNow-Launches-AI-Control-Tower-a-Centralized-Command-Center-to-Govern-Manage-Secure-and-Realize-Value-From-Any-AI-Agent-Model-and-Workflow/default.aspx
-- `[52]` Gartner (2026, 3 août). Implement 3 Layers of Oversight for Scaled Agentic AI Architectures (document 8214461; résumé public en accès libre, texte intégral réservé aux clients). Gartner. Titre
-  et date du résumé relevés le 4 novembre 2026 dans l’index d’un moteur de recherche, la page de Gartner refusant l’accès à l’outillage de vérification. (catégorie B — firme d’analystes, hors catégorie A; contexte prospectif uniquement). https://www.gartner.com/en/documents/8214461
+- `[52]` Gartner (2026, 3 août). Implement 3 Layers of Oversight for Scaled Agentic AI Architectures (document 8214461; résumé public en accès libre, texte intégral réservé aux clients). Gartner. Titre et date du résumé relevés le 4 novembre 2026 dans l’index d’un moteur de recherche, la page de Gartner refusant l’accès à l’outillage de vérification. (catégorie B — firme d’analystes, hors catégorie A; contexte prospectif uniquement). https://www.gartner.com/en/documents/8214461
 - `[53]` Microsoft (2026). Billing rates and management – Microsoft Copilot Studio. Microsoft Learn. https://learn.microsoft.com/en-us/microsoft-copilot-studio/requirements-messages-management
 - `[54]` Salesforce (2026, 26 août). Salesforce Delivers Record Second Quarter Fiscal 2027 Results [communiqué]. Salesforce. https://www.salesforce.com/news/press-releases/2026/08/26/fy27-q2-earnings
 - `[55]` Salesforce (2026). Agentforce Pricing. Salesforce. https://www.salesforce.com/agentforce/pricing

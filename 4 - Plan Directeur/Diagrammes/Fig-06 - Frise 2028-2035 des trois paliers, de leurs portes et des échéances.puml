@@ -5,6 +5,7 @@ top to bottom direction
 skinparam shadowing false
 skinparam roundcorner 8
 skinparam defaultFontName SansSerif
+skinparam Padding 6
 skinparam ranksep 10
 
 title

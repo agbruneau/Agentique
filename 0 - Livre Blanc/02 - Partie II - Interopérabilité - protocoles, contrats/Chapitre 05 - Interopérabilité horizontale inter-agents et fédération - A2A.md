@@ -257,9 +257,7 @@ Le document IETF `draft-mpsb-agntcy-messaging-03` met toutefois en garde le `SA`
 
 *Tableau 5.2 — Comparaison architecturale des substrats de transport et de session pour l’interopérabilité inter-agents.*
 
-> **Arbitrage EA / SA** — Déployer `AGNTCY` de manière incrémentale plutôt que dogmatique [94] [91] [83]. L’`EA` adopte dès le départ les schémas `OASF` dans son catalogue interne pour unifier la taxonomie des capacités et exige une provenance signée (`JWS` ou `Sigstore` via `ADS`) lors des échanges
-
-> inter-organisations [82] [91] ; le `SA` réserve `SLIM` /`MLS` aux topologies nécessitant traversée de pare-feu sans exposition entrante, chiffrement bout en bout face à des relais tiers ou sessions de groupe dynamiques, tout en plaçant les contrôles `PII` dans l’enclave d’extrémité avant chiffrement `MLS` [92] [83].
+> **Arbitrage EA / SA** — Déployer `AGNTCY` de manière incrémentale plutôt que dogmatique [94] [91] [83]. L’`EA` adopte dès le départ les schémas `OASF` dans son catalogue interne pour unifier la taxonomie des capacités et exige une provenance signée (`JWS` ou `Sigstore` via `ADS`) lors des échanges inter-organisations [82] [91] ; le `SA` réserve `SLIM` /`MLS` aux topologies nécessitant traversée de pare-feu sans exposition entrante, chiffrement bout en bout face à des relais tiers ou sessions de groupe dynamiques, tout en plaçant les contrôles `PII` dans l’enclave d’extrémité avant chiffrement `MLS` [92] [83].
 
 ## 5.4 Ponts inter-cadriciels (`LangGraph`, `Semantic Kernel`, `AutoGen`) et fédération B2B avec agents SaaS tiers
 
@@ -302,8 +300,6 @@ Enfin, sur le plan `FinOps`, déléguer une `Task` ouverte à un agent SaaS exte
 
 ## Synthèse architecturale et transition
 
-L’interopérabilité horizontale parachève le modèle d’outillage vertical : `MCP` apporte la profondeur locale sur les outils d’un domaine, tandis qu’`A2A` confère la portée inter-domaines entre pairs autonomes opaques [77]. Grâce au modèle `Protobuf` unique, aux `AgentCard` signées en `JWS` après canonisation `RFC 8785`, aux états asynchrones des `Tasks` (`SSE`, `INPUT_REQUIRED`, `AUTH_REQUIRED` et webhooks durcis anti-SSRF),
-
-`A2A v1.0` réunit `LangGraph`, le `Microsoft Agent Framework`, `Amazon Bedrock AgentCore` et les agents SaaS d’entreprise derrière un contrat stable [82] [78] [90] [89] [96]. Lorsque le maillage requiert une recherche sémantique fédérée et un chiffrement de bout en bout insensible aux relais réseau ou aux pare-feu, `AGNTCY` (`OASF`, `ADS` sur `OCI` /`Kademlia` /`Sigstore` et `SLIM` /`MLS`) complète la pile protocolaire [91] [92] [95] [93].
+L’interopérabilité horizontale parachève le modèle d’outillage vertical : `MCP` apporte la profondeur locale sur les outils d’un domaine, tandis qu’`A2A` confère la portée inter-domaines entre pairs autonomes opaques [77]. Grâce au modèle `Protobuf` unique, aux `AgentCard` signées en `JWS` après canonisation `RFC 8785`, aux états asynchrones des `Tasks` (`SSE`, `INPUT_REQUIRED`, `AUTH_REQUIRED` et webhooks durcis anti-SSRF), `A2A v1.0` réunit `LangGraph`, le `Microsoft Agent Framework`, `Amazon Bedrock AgentCore` et les agents SaaS d’entreprise derrière un contrat stable [82] [78] [90] [89] [96]. Lorsque le maillage requiert une recherche sémantique fédérée et un chiffrement de bout en bout insensible aux relais réseau ou aux pare-feu, `AGNTCY` (`OASF`, `ADS` sur `OCI` /`Kademlia` /`Sigstore` et `SLIM` /`MLS`) complète la pile protocolaire [91] [92] [95] [93].
 
 Standardiser la découverte et l’échange de tâches ne règle cependant ni la souveraineté des connaissances partagées ni les algorithmes qui coordonnent plusieurs pairs. Le chapitre 6 traite de l’ingénierie du contexte, de la mémoire distribuée et de la souveraineté sémantique des données, avant que le chapitre 7 ne formalise les patrons d’orchestration multi-agents qui exploitent ces contrats horizontaux.

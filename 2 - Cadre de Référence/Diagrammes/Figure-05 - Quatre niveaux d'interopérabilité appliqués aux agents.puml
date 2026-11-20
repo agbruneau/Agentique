@@ -6,38 +6,14 @@ skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
 skinparam defaultFontSize 11
+skinparam Padding 8
 
 package "Gouvernance intégrée : registre, catalogue, comité" as Gov #EDE8F5;line:5A469B {
-  together {
-    rectangle "**Juridique**\n\n//L’échange respecte-t-il//\n//les lois et les contrats?//" as N1 #5A469B;text:FFFFFF;line:5A469B
-    rectangle "**Exigences pour les agents**\n\nFinalité et fondement de chaque flux de renseignements personnels; EFVP lorsque la loi l’exige,\nnotamment hors Québec; entente écrite et clauses contractuelles avec chaque tiers" as R1 #FFFFFF;text:0F2744;line:D8CEF0
-  }
-
-  together {
-    rectangle "**Organisationnel**\n\n//Qui répond de quoi,//\n//de part et d’autre?//" as N2 #1B5E9E;text:FFFFFF;line:1B5E9E
-    rectangle "**Exigences pour les agents**\n\nPropriétaire métier nommé, équipe de garde, niveaux de service et voie d’escalade inscrits\nau contrat d’agent; processus métier alignés de part et d’autre de la délégation" as R2 #E6F0FA;text:0F2744;line:BFD7F2
-  }
-
-  together {
-    rectangle "**Sémantique**\n\n//Les parties comprennent-//\n//elles la même chose?//" as N3 #0F7682;text:FFFFFF;line:0F7682
-    rectangle "**Exigences pour les agents**\n\nVocabulaire métier commun, modèles de données canoniques, schémas JSON versionnés,\ndescriptions d’outils et de compétences rédigées pour être comprises par un modèle" as R3 #E2F4F0;text:0F2744;line:B8E4DC
-  }
-
-  together {
-    rectangle "**Technique**\n\n//Les systèmes peuvent-ils//\n//se joindre de façon sûre?//" as N4 #0F2744;text:FFFFFF;line:0F2744
-    rectangle "**Exigences pour les agents**\n\nProtocoles du catalogue (MCP, A2A, CloudEvents, OpenAPI), TLS 1.3 (1.2 en plancher), authentification\nnormalisée (OAuth 2.0, RFC 9700), contexte de trace W3C propagé à chaque appel" as R4 #E6EBF1;text:0F2744;line:CBD5E1
-  }
+  card Tableau #FFFFFF;line:FFFFFF [
+    |<#5A469B> <color:#FFFFFF>**Juridique**</color>\n\n<color:#FFFFFF>//L’échange respecte-t-il//</color>\n<color:#FFFFFF>//les lois et les contrats?//</color> |<#EFE9F7> <color:#0F2744>**Exigences pour les agents**</color>\n\nFinalité et fondement de chaque flux de renseignements personnels; EFVP lorsque la loi l’exige,\nnotamment hors Québec; entente écrite et clauses contractuelles avec chaque tiers |
+    |<#1B5E9E> <color:#FFFFFF>**Organisationnel**</color>\n\n<color:#FFFFFF>//Qui répond de quoi,//</color>\n<color:#FFFFFF>//de part et d’autre?//</color> |<#E6F0FA> <color:#0F2744>**Exigences pour les agents**</color>\n\nPropriétaire métier nommé, équipe de garde, niveaux de service et voie d’escalade inscrits\nau contrat d’agent; processus métier alignés de part et d’autre de la délégation |
+    |<#0F7682> <color:#FFFFFF>**Sémantique**</color>\n\n<color:#FFFFFF>//Les parties comprennent-//</color>\n<color:#FFFFFF>//elles la même chose?//</color> |<#E2F4F0> <color:#0F2744>**Exigences pour les agents**</color>\n\nVocabulaire métier commun, modèles de données canoniques, schémas JSON versionnés,\ndescriptions d’outils et de compétences rédigées pour être comprises par un modèle |
+    |<#0F2744> <color:#FFFFFF>**Technique**</color>\n\n<color:#FFFFFF>//Les systèmes peuvent-ils//</color>\n<color:#FFFFFF>//se joindre de façon sûre?//</color> |<#E6EBF1> <color:#0F2744>**Exigences pour les agents**</color>\n\nProtocoles du catalogue (MCP, A2A, CloudEvents, OpenAPI), TLS 1.3 (1.2 en plancher), authentification\nnormalisée (OAuth 2.0, RFC 9700), contexte de trace W3C propagé à chaque appel |
+  ]
 }
-
-N1 -[hidden]right-> R1
-N2 -[hidden]right-> R2
-N3 -[hidden]right-> R3
-N4 -[hidden]right-> R4
-
-N1 -[hidden]down-> N2
-N2 -[hidden]down-> N3
-N3 -[hidden]down-> N4
-R1 -[hidden]down-> R2
-R2 -[hidden]down-> R3
-R3 -[hidden]down-> R4
 @enduml

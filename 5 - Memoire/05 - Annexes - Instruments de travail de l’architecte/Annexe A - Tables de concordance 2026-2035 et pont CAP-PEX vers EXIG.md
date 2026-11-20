@@ -1,6 +1,6 @@
-# Annexe A — Tables de concordance 2026-2035 et pont CAP/PEX vers EXIG-*
+# Annexe A — Tables de concordance 2026-2035 et pont CAP/PEX vers EXIG-\*
 
-Générée automatiquement depuis `registre/concordances.json` (synthèse tabulaire `justification_tableau` ; analyses complètes `justification_detaillee` intégralement préservées dans le registre JSON et consultables dans `Memoire/Presentation.html`). Socle unifié CRE-IA-2026-01 v1.2 (exigences.json) : 305 EXIG-* (287 v1.1 + 12 EXIG-AMF issues de 2026/documents/Note AMF IA.pdf, CRE-IA-2026-01-QC, 41 attentes AMF-G/R/C/V/P + 6 PQC/ACVM/RTR/EN 18286 ; 255 DOIT, 34 NE DOIT PAS, 16 DEVRAIT).
+Générée automatiquement depuis `registre/concordances.json` (synthèse tabulaire `justification_tableau` ; analyses complètes `justification_detaillee` intégralement préservées dans le registre JSON et consultables dans `Memoire/Presentation.html`). Socle unifié CRE-IA-2026-01 v1.2 (exigences.json) : 305 EXIG-\* (287 v1.1 + 12 EXIG-AMF issues de 2026/documents/Note AMF IA.pdf, CRE-IA-2026-01-QC, 41 attentes AMF-G/R/C/V/P + 6 PQC/ACVM/RTR/EN 18286 ; 255 DOIT, 34 NE DOIT PAS, 16 DEVRAIT).
 
 ## A.1 Passage entre les quatre découpages architecturaux (DIV-02 résorbée)
 
@@ -15,7 +15,7 @@ Générée automatiquement depuis `registre/concordances.json` (synthèse tabula
 | Plan B. controle-observabilite-finops | Plan transversal B : Observabilité, évaluation et FinOps (ch. 10) | Aligné sur CAD26 § 5.3 | C5 Exploitation — AgentOps (ch. 38–40 ; Z1, Z3/PC4 [S]) | Pilier droit AgentOps, FinOps | CAP-042..046 ; EXIG-OBS-01..13, EXIG-EVA-01..06, EXIG-FIN-01..10 |
 | Plan C. controle-gouvernance-registre | Plan transversal C : Gouvernance et registre (ch. 11–13) | Aligné (volet dédié vs C27) | C6 Gouvernance (ch. 25–30), C2 registre, ch. 41 [S] | C6 gouvernance/B2B, deux piliers | CAP-047..052 ; EXIG-ARC-19..20, EXIG-AUT-01..07, 18, EXIG-INT-08..10, 17..23, GOV-01..20, CON-01..30, AMF-01..12, APP-01..17 |
 
-**Note méthodologique —** A.1 ventile les 305 EXIG-* v1.2 par ancrage CAD26 § 5.2–5.3 ; A.3 les rattache aux 52 CAP typées DC-P07 (couverture_directe, ancrage_extension, comble_lacune_2026), dont CAP-040 rattachée aux EXIG PQC (SEC-27/28), 4 extensions explicites (CAP-014, 027, 031, 034) et 5 lacunes 2026 (CAP-025, 028, 033, 046, 052).
+**Note méthodologique —** A.1 ventile les 305 EXIG-\* v1.2 par ancrage CAD26 § 5.2–5.3 ; A.3 les rattache aux 52 CAP typées DC-P07 (couverture_directe, ancrage_extension, comble_lacune_2026), dont CAP-040 rattachée aux EXIG PQC (SEC-27/28), 4 extensions explicites (CAP-014, 027, 031, 034) et 5 lacunes 2026 (CAP-025, 028, 033, 046, 052).
 
 ## A.2 Concordance des échelles de maturité et des grilles d’autonomie
 

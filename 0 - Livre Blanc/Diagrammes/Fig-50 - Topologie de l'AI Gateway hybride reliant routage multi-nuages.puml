@@ -25,7 +25,7 @@ Container_Boundary(enclave, "Enclave GPU souveraine sur site (R3-R4 / Air-gap)")
 }
 
 Rel_D(harness, quota, "Envoie requête")
-Rel_D(quota, router, "Valide budget et jetons")
+Rel_D(quota, router, "Valide budget\net jetons")
 Rel_D(router, frontier, "Flux autorisés / PTU")
 Rel_D(router, gaie, "Flux souverains R3-R4")
 Rel_D(gaie, vllm, "ext-proc")

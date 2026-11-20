@@ -39,7 +39,7 @@ Le passage du niveau 2 au niveau 3 tient d’abord à la portée des pratiques :
 
 **À RETENIR**
 
-Un niveau de maturité qualifie l’entreprise; un niveau d’autonomie (N0 à N4, section 8.1) qualifie un agent. L’autonomie n’est pas un objectif de maturité : Feng, McDonald et Zhang en font une décision de conception, et Morris et coll. rappellent que le niveau retenu au déploiement n’a pas à être le maximum que permettent les capacités du modèle**[83, 302]**. Une entreprise au niveau 5 peut garder la plupart de ses agents à N1 ou à N2.
+Un niveau de maturité qualifie l’entreprise; un niveau d’autonomie (N0 à N4, section 8.1) qualifie un agent. L’autonomie n’est pas un objectif de maturité : Feng, McDonald et Zhang en font une décision de conception, et Morris et coll. rappellent que le niveau retenu au déploiement n’a pas à être le maximum que permettent les capacités du modèle **[83, 302]**. Une entreprise au niveau 5 peut garder la plupart de ses agents à N1 ou à N2.
 
 ## 14.2 Évaluer sa maturité
 
@@ -82,9 +82,9 @@ Les règles de progression du chapitre 15 font de la maturité une condition de 
 
 Cette section situe le modèle par rapport aux deux référentiels présentés à la section 12.5. Le modèle est un instrument interne de pilotage, qui ne donne lieu à aucune certification.
 
-Le NIST AI RMF, d’application volontaire, propose des profils temporels : un profil actuel *(Current Profile)* décrit la gestion présente de l’IA, un profil cible *(Target Profile)* les résultats nécessaires pour atteindre les objectifs de gestion des risques. Leur comparaison révèle des écarts que des plans d’action comblent; le NIST ne prescrit aucun gabarit de profil**[74, 448]**. L’évaluation de maturité suit cette logique; pour en tirer un profil au sens du NIST, l’entreprise rattache ses critères aux sous-catégories pertinentes, dont celles du tableau 57.
+Le NIST AI RMF, d’application volontaire, propose des profils temporels : un profil actuel *(Current Profile)* décrit la gestion présente de l’IA, un profil cible *(Target Profile)* les résultats nécessaires pour atteindre les objectifs de gestion des risques. Leur comparaison révèle des écarts que des plans d’action comblent; le NIST ne prescrit aucun gabarit de profil **[74, 448]**. L’évaluation de maturité suit cette logique; pour en tirer un profil au sens du NIST, l’entreprise rattache ses critères aux sous-catégories pertinentes, dont celles du tableau 57.
 
-ISO/IEC 42001:2023 est au contraire une norme d’exigences certifiable par tierce partie, par des organismes conformes à ISO/IEC 17021-1 et à ISO/IEC 42006:2025**[451]**. Norme de système de management, elle encadre des processus, du contexte de l’organisation (article 4) jusqu’à l’amélioration (article 10)**[395]**. Le cadre situe donc la préparation à la certification au niveau 4, qui ajoute aux processus du niveau 3 une évaluation des performances fondée sur des mesures, et la certification au niveau 5. La déclaration d’applicabilité, qui rattache les exigences du cadre aux mesures de l’annexe A de la norme (section 12.5), accompagne le traitement des risques de l’article 6.1.3 : c’est un livrable du niveau 3 pour l’entreprise qui vise la certification, et le niveau 4 en vérifie la tenue.
+ISO/IEC 42001:2023 est au contraire une norme d’exigences certifiable par tierce partie, par des organismes conformes à ISO/IEC 17021-1 et à ISO/IEC 42006:2025 **[451]**. Norme de système de management, elle encadre des processus, du contexte de l’organisation (article 4) jusqu’à l’amélioration (article 10) **[395]**. Le cadre situe donc la préparation à la certification au niveau 4, qui ajoute aux processus du niveau 3 une évaluation des performances fondée sur des mesures, et la certification au niveau 5. La déclaration d’applicabilité, qui rattache les exigences du cadre aux mesures de l’annexe A de la norme (section 12.5), accompagne le traitement des risques de l’article 6.1.3 : c’est un livrable du niveau 3 pour l’entreprise qui vise la certification, et le niveau 4 en vérifie la tenue.
 
 *Tableau 57 — Correspondance indicative entre niveaux de maturité, ISO/IEC 42001 et NIST AI RMF*
 
@@ -95,6 +95,6 @@ ISO/IEC 42001:2023 est au contraire une norme d’exigences certifiable par tier
 | 4 — Géré | Évaluation des performances, audit interne et revue de direction (article 9); mesure A.6.2.6 (exploitation et surveillance) | MEASURE 2.4 (surveillance en production), 3.1 (risques émergents); MANAGE 4.1; profils actuel et cible comparés |
 | 5 — Optimisé | Amélioration (article 10); certification par tierce partie | Profils revus à chaque révision du cadre |
 
-Interprétation du cadre, établie à partir de NIST AI 100-1 et du catalogue d’ISO/IEC 42001**[74, 395]**.
+Interprétation du cadre, établie à partir de NIST AI 100-1 et du catalogue d’ISO/IEC 42001 **[74, 395]**.
 
 Le cadre admet une certification ISO/IEC 42001 comme revue externe de la dimension Gouvernance; elle n’atteste toutefois pas, à elle seule, les quatre autres : la norme encadre des processus, sans prescrire de protocole, de passerelle ni de format de trace. À l’inverse, un niveau élevé de maturité n’établit ni la certification ni la conformité à la Loi 25 ou au RIA, qui s’apprécient obligation par obligation (chapitre 12).

@@ -1,0 +1,104 @@
+' Fig. 25. – Les trois topologies de coordination; les cercles figurent les agents.
+@startuml
+top to bottom direction
+hide stereotype
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam nodesep 42
+skinparam ranksep 20
+skinparam rectangle<<invis>> {
+  BackgroundColor transparent
+  BorderColor transparent
+  FontColor transparent
+  FontSize 1
+}
+skinparam circle {
+  BackgroundColor #F8FAFC
+  BorderColor #475569
+}
+
+rectangle " " as Cent <<invis>> {
+  circle " " as CA1
+  circle " " as CA2
+  rectangle "**Orchestrateur**" as Orch #EFF6FF;line:2563EB
+  circle " " as CA3
+  circle " " as CA4
+
+  CA1 -[hidden]right-> CA2
+  CA3 -[hidden]right-> CA4
+  CA1 -[#64748B]down- Orch
+  CA2 -[#64748B]down- Orch
+  Orch -[#64748B]down- CA3
+  Orch -[#64748B]down- CA4
+
+  rectangle DescC #FFFFFF;line:FFFFFF [
+    **Centralisée**
+    Les agents ne communiquent qu'avec
+    l'orchestrateur
+  ]
+  CA3 -[hidden]down-> DescC
+  CA4 -[hidden]down-> DescC
+}
+
+rectangle " " as Decent <<invis>> {
+  circle " " as D1
+  circle " " as D2
+  circle " " as D3
+  circle " " as D4
+
+  D1 -[#64748B]right- D2
+  D3 -[#64748B]right- D4
+  D1 -[#64748B]down- D3
+  D2 -[#64748B]down- D4
+  D1 -[#64748B]down- D4
+  D2 -[#64748B]down- D3
+
+  rectangle DescD #FFFFFF;line:FFFFFF [
+    **Décentralisée**
+    Échanges directs entre pairs, sans
+    point de passage obligé
+  ]
+  D3 -[hidden]down-> DescD
+  D4 -[hidden]down-> DescD
+}
+
+rectangle " " as Hier <<invis>> {
+  rectangle "**Superviseur**" as Sup #EFF6FF;line:2563EB
+  rectangle "**Superviseur**\n**intermédiaire**" as S1 #EFF6FF;line:2563EB
+  rectangle "**Superviseur**\n**intermédiaire**" as S2 #EFF6FF;line:2563EB
+  circle " " as H1
+  circle " " as H2
+  circle " " as H3
+  circle " " as H4
+
+  S1 -[hidden]right-> S2
+  H1 -[hidden]right-> H2
+  H2 -[hidden]right-> H3
+  H3 -[hidden]right-> H4
+
+  Sup -[#64748B]down- S1
+  Sup -[#64748B]down- S2
+  S1 -[#64748B]down- H1
+  S1 -[#64748B]down- H2
+  S2 -[#64748B]down- H3
+  S2 -[#64748B]down- H4
+
+  rectangle DescH #FFFFFF;line:FFFFFF [
+    **Hiérarchique**
+    La centralisation répétée sur
+    plusieurs niveaux
+  ]
+  H2 -[hidden]down-> DescH
+  H3 -[hidden]down-> DescH
+}
+
+CA2 -[hidden]right-> Sup
+Orch -[hidden]right-> D1
+CA4 -[hidden]right-> D3
+D2 -[hidden]right-> S1
+D4 -[hidden]right-> H1
+DescC -[hidden]right-> DescD
+DescD -[hidden]right-> DescH
+
+@enduml

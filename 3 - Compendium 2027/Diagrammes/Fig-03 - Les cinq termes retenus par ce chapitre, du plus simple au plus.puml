@@ -4,10 +4,18 @@ top to bottom direction
 skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
+skinparam nodesep 12
+skinparam ranksep 14
+skinparam rectangle<<invis>> {
+  BackgroundColor transparent
+  BorderColor transparent
+  FontColor transparent
+  FontSize 1
+}
 
-rectangle "**du plus simple**" as AxL #FFFFFF;line:FFFFFF
-rectangle "**au plus englobant**" as AxR #FFFFFF;line:FFFFFF
-AxL -[#64748B]right-> AxR
+rectangle "//du plus simple//" as AxL #FFFFFF;line:FFFFFF
+rectangle "//au plus englobant//" as AxR #FFFFFF;line:FFFFFF
+AxL -[#475569]right-> AxR
 
 rectangle T1 #F8FAFC;line:475569 [
   **LLM augmenté**
@@ -46,32 +54,57 @@ T4 -[hidden]right-> T5
 AxL -[hidden]down-> T1
 AxR -[hidden]down-> T5
 
+rectangle " " as Sp1 <<invis>>
+rectangle " " as Sp2 <<invis>>
+rectangle "<color:#2563EB>**QUI DÉCIDE DU CHEMIN**</color>" as MidLbl #FFFFFF;line:FFFFFF
+rectangle " " as Sp4 <<invis>>
+rectangle " " as Sp5 <<invis>>
+
+Sp1 -[hidden]right-> Sp2
+Sp2 -[hidden]right-> MidLbl
+MidLbl -[hidden]right-> Sp4
+Sp4 -[hidden]right-> Sp5
+
+T1 -[hidden]down-> Sp1
+T2 -[hidden]down-> Sp2
+T3 -[hidden]down-> MidLbl
+T4 -[hidden]down-> Sp4
+T5 -[hidden]down-> Sp5
+
 rectangle D1 #EFF6FF;line:2563EB [
   **Le modèle,**
   **sur un appel**
 ]
-rectangle "tous sont aussi des systèmes d'IA composés" as COMP #F8FAFC;line:94A3B8;line.dashed {
-  rectangle D2 #EFF6FF;line:2563EB [
-    **Le concepteur**
-  ]
-  rectangle D3 #EFF6FF;line:2563EB [
-    **Le modèle**
-  ]
-  rectangle D4 #EFF6FF;line:2563EB [
-    **Les modèles, dans**
-    **une topologie donnée**
-  ]
-  D2 -[hidden]right-> D3
-  D3 -[hidden]right-> D4
-}
+rectangle D2 #EFF6FF;line:2563EB [
+  **Le concepteur**
+]
+rectangle D3 #EFF6FF;line:2563EB [
+  **Le modèle**
+]
+rectangle D4 #EFF6FF;line:2563EB [
+  **Les modèles, dans**
+  **une topologie donnée**
+]
 rectangle D5 #EFF6FF;line:2563EB [
   **Variable**
 ]
 
-T1 -[#64748B]down-> D1
-T2 -[#64748B]down-> D2
-T3 -[#64748B]down-> D3 : **QUI DÉCIDE DU CHEMIN**
-T4 -[#64748B]down-> D4
-T5 -[#64748B]down-> D5
+D1 -[hidden]right-> D2
+D2 -[hidden]right-> D3
+D3 -[hidden]right-> D4
+D4 -[hidden]right-> D5
+
+Sp1 -[hidden]down-> D1
+Sp2 -[hidden]down-> D2
+MidLbl -[hidden]down-> D3
+Sp4 -[hidden]down-> D4
+Sp5 -[hidden]down-> D5
+
+rectangle CompNote #FFFFFF;line:94A3B8;line.dashed [
+  //tous sont aussi des systèmes d'IA composés (Workflow agentique, Agent, Système multi-agents)//
+]
+D2 -[hidden]down-> CompNote
+D3 -[hidden]down-> CompNote
+D4 -[hidden]down-> CompNote
 
 @enduml

@@ -2,109 +2,75 @@
 @startuml
 title Architecture de Référence à 6 Couches — Entreprise Agentique 2027
 
-top to bottom direction
+left to right direction
 skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
-skinparam rectangle<<invis>> {
-  BackgroundColor transparent
-  BorderColor transparent
-  FontColor transparent
-  FontSize 1
-}
+skinparam Padding 8
+skinparam nodesep 14
+skinparam ranksep 14
 skinparam rectangle {
-  BackgroundColor #F8FAFC
+  BackgroundColor #FFFFFF
   BorderColor #334155
 }
 
 rectangle ZeroTrust #FEF2F2;line:DC2626 [
-  **TRANSVERSAL**
-  **Zero Trust & NHI**
+  <color:#991B1B>**TRANSVERSAL**</color>
+  <color:#991B1B>**Zero Trust & NHI**</color>
   ----
   SPIFFE / SPIRE
   W3C DIDs / VCs
 
-  **Délégation**
+  <color:#991B1B>**Délégation**</color>
   OAuth 2.1 OBO
   RFC 8693 (act/sub)
   CIBA Asynchrone
 
-  **Protection Runtime**
+  <color:#991B1B>**Protection Runtime**</color>
   OWASP ASI01–10
   OPA / Cedar PDP
   OpenSandbox
   MicroVMs / WASI
 
-  **Résilience**
+  <color:#991B1B>**Résilience**</color>
   Pinning MCP
   Kill Switches SOC
 ]
 
-rectangle " " as Couches <<invis>> {
-  rectangle C6 #EFF6FF;line:1E3A8A [
-    **Couche 6 — Gouvernance, Conformité Légale et Commerce Agentique B2B**
-    Cadres : ISO/IEC 42001 • EU AI Act (2026–2027) • BSIF E-23 (mai 2027) • Loi 25 • NIST AI Agent Standards
-    Transactions B2B : AP2 (FIDO / Mandats W3C VCs) • x402 (Règlement HTTP 402) • Contrats & SLA signés
-  ]
+rectangle CouchesCol #FFFFFF;line:FFFFFF [
+  | <#EFF6FF> **Couche 6 — Gouvernance, Conformité Légale et Commerce Agentique B2B**\nCadres : ISO/IEC 42001 • EU AI Act (2026–2027) • BSIF E-23 (mai 2027) • Loi 25 • NIST AI Agent Standards\n<color:#1D4ED8>Transactions B2B : AP2 (FIDO / Mandats W3C VCs) • x402 (Règlement HTTP 402) • Contrats & SLA signés</color> |
 
-  rectangle C5 #F8FAFC;line:334155 [
-    **Couche 5 — Interaction Humain-Agent (HITL / HOTL) et Multimodalité Temps Réel**
-    Interfaces : AG-UI (Flux d'événements et deltas d'état) • A2UI / MCP-UI (Composants déclaratifs JSON)
-    Canaux : Voix et vidéo temps réel WebRTC / SIP • Escalade graduée par le risque • Anti-biais (ASI09)
-  ]
+  | <#F8FAFC> **Couche 5 — Interaction Humain-Agent (HITL / HOTL) et Multimodalité Temps Réel**\nInterfaces : AG-UI (Flux d'événements et deltas d'état) • A2UI / MCP-UI (Composants déclaratifs JSON)\nCanaux : Voix et vidéo temps réel WebRTC / SIP • Escalade graduée par le risque • Anti-biais (ASI09) |
 
-  rectangle C4 #EFF6FF;line:2563EB [
-    **Couche 4 — Orchestration Hybride, Exécution Durable et Intégrité Transactionnelle**
-    Durabilité : Temporal • Restate • Microsoft Agent Framework • Bedrock AgentCore • UiPath Maestro (BPMN)
-    Événements & Cohérence : Confluent Kafka • Solace Agent Mesh • NATS • Patron Saga & Compensations
-  ]
+  | <#EFF6FF> **Couche 4 — Orchestration Hybride, Exécution Durable et Intégrité Transactionnelle**\nDurabilité : Temporal • Restate • Microsoft Agent Framework • Bedrock AgentCore • UiPath Maestro (BPMN)\n<color:#1D4ED8>Événements & Cohérence : Confluent Kafka • Solace Agent Mesh • NATS • Patron Saga & Compensations</color> |
 
-  rectangle C3 #F8FAFC;line:334155 [
-    **Couche 3 — Coordination Horizontale Inter-Agents et Fédération des Silos SaaS**
-    Protocoles : A2A v1.0 (Agent Cards, Tâches asynchrones, Artefacts ; fusion ACP) • AGNTCY (OASF, SLIM/MLS)
-    Fédération : MuleSoft Agent Fabric • Agentforce ↔ ServiceNow ↔ SAP Joule ↔ Copilot Studio
-  ]
+  | <#F8FAFC> **Couche 3 — Coordination Horizontale Inter-Agents et Fédération des Silos SaaS**\nProtocoles : A2A v1.0 (Agent Cards, Tâches asynchrones, Artefacts ; fusion ACP) • AGNTCY (OASF, SLIM/MLS)\nFédération : MuleSoft Agent Fabric • Agentforce ↔ ServiceNow ↔ SAP Joule ↔ Copilot Studio |
 
-  rectangle C2 #FFF7ED;line:C2410C [
-    **Couche 2 — Sémantique Métier, Ontologies d'Entreprise et Mémoire Partagée**
-    Modèle métier : Apache Ossie (Open Semantic Interchange) • Ontologies causales • Jumeaux numériques
-    Mémoire & Contexte : Graphes bi-temporels (Graphiti) • État hiérarchique (Letta) • Context Engineering
-  ]
+  | <#FFF7ED> <color:#9A3412>**Couche 2 — Sémantique Métier, Ontologies d'Entreprise et Mémoire Partagée**</color>\nModèle métier : Apache Ossie (Open Semantic Interchange) • Ontologies causales • Jumeaux numériques\nMémoire & Contexte : Graphes bi-temporels (Graphiti) • État hiérarchique (Letta) • Context Engineering |
 
-  rectangle C1 #F8FAFC;line:1E293B [
-    **Couche 1 — Connectivité Outils, Passerelles AI-Natives, Legacy et IT/OT**
-    Intégration : MCP • Agent Skills • AGENTS.md • Open Responses • WebMCP • CUA (Écrans) • OPC-UA (Usine)
-    Plan de données : agentgateway • Agent Router (Envoy) • Inférence hybride & partage de KV-cache
-  ]
-
-  C6 -[hidden]down-> C5
-  C5 -[hidden]down-> C4
-  C4 -[hidden]down-> C3
-  C3 -[hidden]down-> C2
-  C2 -[hidden]down-> C1
-}
+  | <#F8FAFC> **Couche 1 — Connectivité Outils, Passerelles AI-Natives, Legacy et IT/OT**\nIntégration : MCP • Agent Skills • AGENTS.md • Open Responses • WebMCP • CUA (Écrans) • OPC-UA (Usine)\nPlan de données : agentgateway • Agent Router (Envoy) • Inférence hybride & partage de KV-cache |
+]
 
 rectangle AgentOps #F0FDF4;line:16A34A [
-  **TRANSVERSAL**
-  **AgentOps & FinOps**
+  <color:#166534>**TRANSVERSAL**</color>
+  <color:#166534>**AgentOps & FinOps**</color>
   ----
-  **Observabilité**
+  <color:#166534>**Observabilité**</color>
   OpenTelemetry
   gen_ai.* Traces
 
-  **Qualité & ADLC**
+  <color:#166534>**Qualité & ADLC**</color>
   Agent Registry
   OpenEnv / τ-bench
   Shadow & Canary
   Chaos Agentique
 
-  **FinOps**
+  <color:#166534>**FinOps**</color>
   Budgets de jetons
   Cost-per-Outcome
   Routage SLM/LLM
 ]
 
-ZeroTrust -[hidden]right-> Couches
-Couches -[hidden]right-> AgentOps
-
+ZeroTrust -[hidden]-> CouchesCol
+CouchesCol -[hidden]-> AgentOps
 @enduml

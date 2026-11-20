@@ -3,77 +3,45 @@
 
 @startuml
 top to bottom direction
-hide stereotype
-skinparam packageStyle rectangle
-skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam roundcorner 6
 skinparam defaultFontName "Segoe UI"
 skinparam defaultFontSize 13
-skinparam shadowing false
-skinparam roundCorner 4
+skinparam backgroundColor #FFFFFF
 skinparam nodesep 30
 skinparam ranksep 18
-
-skinparam package {
-  BackgroundColor #FFFFFF
-  BorderColor #FFFFFF
-  FontColor #555555
-  FontStyle bold
-}
-
-skinparam package<<accent>> {
-  BackgroundColor #FFFFFF
-  BorderColor #FFFFFF
-  FontColor #9E3A14
-  FontStyle bold
-}
-
-skinparam rectangle {
-  BackgroundColor #FAF7F2
-  BorderColor #B8B3AA
-  FontColor #222222
-}
-
-skinparam rectangle<<accent>> {
-  BackgroundColor #FFFFFF
-  BorderColor #9E3A14
-  BorderThickness 2
-  FontColor #222222
-}
-
-skinparam rectangle<<sub>> {
-  BackgroundColor #FFFFFF
-  BorderColor #FFFFFF
-  FontColor #222222
-}
 
 skinparam legendBackgroundColor #F7F5F0
 skinparam legendBorderColor #C4BEB5
 skinparam legendFontColor #333333
 
-package "pass@k — LE POTENTIEL" as P_LEFT {
-  rectangle L_BOX [
-    <b>Au moins une parmi k tentatives réussit</b>
-    Ce qu'elle mesure : le potentiel
-    Ce qu'elle flatte : les systèmes capables de trouver
-    occasionnellement la bonne réponse
-  ]
-  rectangle "<b>monte avec k</b>" as L_SUB <<sub>>
-  L_BOX -[hidden]down- L_SUB
-}
+rectangle C1 #FAF6F0;line:B8B2A6 [
+  <color:#57534E>pass@k — LE POTENTIEL</color>
+  ----
+  <b>Au moins une parmi k tentatives réussit</b>
 
-package "pass^k — LA CONSISTANCE" as P_RIGHT <<accent>> {
-  rectangle R_BOX <<accent>> [
-    <b>Les k tentatives réussissent toutes</b>
-    Ce qu'elle mesure : la consistance
-    Ce qu'elle révèle : la chute brutale dès que la
-    fiabilité par étape s'éloigne de la perfection
-  ]
-  rectangle "<b>s'effondre avec k</b>" as R_SUB <<sub>>
-  R_BOX -[hidden]down- R_SUB
-}
+  Ce qu'elle mesure : le potentiel
 
-L_BOX -[hidden]right- R_BOX
-L_SUB -[hidden]right- R_SUB
+  Ce qu'elle flatte : les systèmes capables de trouver
+  occasionnellement la bonne réponse
+  ----
+  <b>monte avec k</b>
+]
+
+rectangle C2 #FFFFFF;line:9A3412 [
+  <color:#9A3412>pass^k — LA CONSISTANCE</color>
+  ----
+  <b>Les k tentatives réussissent toutes</b>
+
+  Ce qu'elle mesure : la consistance
+
+  Ce qu'elle révèle : la chute brutale dès que la
+  fiabilité par étape s'éloigne de la perfection
+  ----
+  <b>s'effondre avec k</b>
+]
+
+C1 -[hidden]right-> C2
 
 legend
   Une probabilité d'échec par pas même faible SE COMPOSE GÉOMÉTRIQUEMENT sur une longue trajectoire :

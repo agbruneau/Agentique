@@ -76,9 +76,7 @@ Cette preuve établit une chose : celui qui publie sous `com.example` contrôle 
 
 ### Ce que le registre ne promet pas
 
-La politique de modération est explicite : les consommateurs doivent présumer une modération minimale ou nulle [4]. Sont retirés les contenus illégaux, les maliciels, le pourriel et
-
-les serveurs qui ne fonctionnent pas. Ne sont **pas** retirés les serveurs de mauvaise qualité ni ceux qui présentent des vulnérabilités de sécurité. Un retrait prend la forme d’un statut `deleted`; la métadonnée reste accessible par l’API. La section 8.8 mesure ce que cette politique laisse passer.
+La politique de modération est explicite : les consommateurs doivent présumer une modération minimale ou nulle [4]. Sont retirés les contenus illégaux, les maliciels, le pourriel et les serveurs qui ne fonctionnent pas. Ne sont **pas** retirés les serveurs de mauvaise qualité ni ceux qui présentent des vulnérabilités de sécurité. Un retrait prend la forme d’un statut `deleted`; la métadonnée reste accessible par l’API. La section 8.8 mesure ce que cette politique laisse passer.
 
 Le registre ne garantit ni sa disponibilité ni la durabilité de ses données [3]. Les métadonnées d’une version sont immuables, à l’exception du champ `status`, qui peut passer à `deprecated` ou à `deleted`.
 
@@ -196,9 +194,7 @@ Le recensement le plus proche du sujet de ce chapitre porte sur le registre publ
 
 ### Des défauts fréquents, des scanners peu fiables
 
-L’étude porte sur 1 899 serveurs à code ouvert; son résumé rapporte 7,2 % de vulnérabilités générales et 5,5 % d’empoisonnement d’outil propre à MCP, mais le texte les tire de sous-échantillons (583 dépôts pour l’analyse statique, 83 pour le balayage propre à MCP), et ses
-
-auteurs demandent un balayage de sécurité automatisé dans les registres [26]. Le recensement du registre public observe, sur les 14 353 serveurs dont le code a pu être balayé (66 % du registre) et après correction par la précision de son scanner (0,56), environ 7,6 % de constats de gravité élevée [23]. L’instrument lui-même est toutefois en cause : sur une collection de 64 611 serveurs, dont 37 288 ont pu être sondés, les scanners existants en signalent 96,89 % comme risqués, et moins de la moitié des alertes vérifiées à la main sont fondées [27].
+L’étude porte sur 1 899 serveurs à code ouvert; son résumé rapporte 7,2 % de vulnérabilités générales et 5,5 % d’empoisonnement d’outil propre à MCP, mais le texte les tire de sous-échantillons (583 dépôts pour l’analyse statique, 83 pour le balayage propre à MCP), et ses auteurs demandent un balayage de sécurité automatisé dans les registres [26]. Le recensement du registre public observe, sur les 14 353 serveurs dont le code a pu être balayé (66 % du registre) et après correction par la précision de son scanner (0,56), environ 7,6 % de constats de gravité élevée [23]. L’instrument lui-même est toutefois en cause : sur une collection de 64 611 serveurs, dont 37 288 ont pu être sondés, les scanners existants en signalent 96,89 % comme risqués, et moins de la moitié des alertes vérifiées à la main sont fondées [27].
 
 ### Ce que ces mesures changent
 

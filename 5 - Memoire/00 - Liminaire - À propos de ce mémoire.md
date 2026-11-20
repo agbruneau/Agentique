@@ -6,7 +6,7 @@
 
 > **Périmètre démontré et dossier falsifiable :** L’appareil probatoire exécutable et réglementaire du dépôt (`Borealis-Bench/`, `Borealis-Bench/feds-ema/`, monographies `Monographies/A1`, `A3` et `A4`, `CRE-IA-2026-01` v1.2 à `305 EXIG`, `Note AMF IA` et `5` profils financiers) porte exclusivement sur les **services financiers réglementés (Canada fédéral, Québec et obligations transfrontalières UE)** et sur le **génie logiciel de contrôle déterministe hors modèle** ; toute mention hors finance (`2027/`, industrie/IT-OT, santé, énergie, mines, télécoms, logistique, secteur public non financier) est explicitement balisée comme extrapolation illustrative. La proposition architecturale falsifiable unifiée, ses critères de réfutation et sa limite épistémique assumée (évaluation exclusivement artificielle FEDS, aucune validation terrain humaine) sont exposés dans `Memoire/demonstration-falsifiable-ae-as.md`.
 
-### Statut, périmètre des quatre volumes et fermeture de `DIV-02`
+## Statut, périmètre des quatre volumes et fermeture de `DIV-02`
 
 Ce mémoire (édition **v2.0**, format aéré `115–125` **pages**, `DC-P09`, complété des **Annexes E et F**) opère la soudure vérifiée et la compression (~21:1 en pages) d’un corpus fermé de **quatre volumes totalisant 2 541 pages**, complétés par `2026/documents/Note AMF IA.pdf` (`49` p.), l’extension `CRE-IA-2027` **v2.0** (`2026/documents/CRE-IA-2027-v2.0.pdf`, `+12` évolutions 2027 : `MCP` 2026/2027, `OTel gen_ai.*`, `WIMSE`/`OAuth 2.1`, badges CI *Borealis-Bench*, `veille_signaux.py`) et `141` chapitres / `27` annexes (licence duale **CC BY 4.0** / **MIT**, `Memoire/LICENSE`) :
 
@@ -18,16 +18,16 @@ Ce mémoire (édition **v2.0**, format aéré `115–125` **pages**, `DC-P09`, c
 
 Lors de la rédaction de `PD28`, l’absence du dossier `2026/` avait créé la lacune `DIV-02` (`corpus_2026_absent`), laissant les propositions sectorielles sans lien `EXIG-*` et contraignant `PD28 Annexe E.1` à reconstituer par déduction les couches de `CAD26`. L’inspection sur pièce referme intégralement cet écart (`Memoire/Master/registre/concordances.json`, `Annexe A`) : le pivot à cinq couches et trois volets est raccordé aux **six vraies couches de** `CAD26 § 5.2` (modèles et bacs à sable en *Couche 3*, mémoires épisodique/sémantique et graphes en *Couche 5*, *Systèmes d’enregistrement* en *Couche 6*), les `52 CAP` sont reliées aux `305 EXIG-*` **v1.2** (intégrant les **12** `EXIG-AMF-01..12` issues des **41 attentes** de `2026/documents/Note AMF IA.pdf` et `6` ajouts PQC/ACVM/RTR/EN 18286), et les `24 PEX` des cinq profils financiers se ventilent en `13` **spécialisations** et `11` **comblements** de lacunes de 2026.
 
-### Textes `statut F`, hygiène probatoire et démarcation sectorielle
+## Textes `statut F`, hygiène probatoire et démarcation sectorielle
 
 Aucune obligation `[N]` ne repose sur un texte demeuré au `statut F` (téléchargements HTTPS `AMF` bloqués `HTTP 403` hors `2026/documents/Note AMF IA.pdf` et `C26 Annexe N.3`, codifications `LégisQuébec`, `T-03`, `T-24`/`N-08`, `R-11`, `FDX`, `ACORD`, `CSIO`, `ISO/IEC 42001`, `ISO/IEC 42105`, `TOGAF`, `UIT-T F.748.93`, ainsi que les lots de remédiation non déposés `P1-B2` à `P1-B4` et `P3-L2` de `C27`). Le cas fictif *Groupe Boréal Inc.* (`C27 § 0.5`) est exclu comme sans valeur probante, les seuils d’ingénierie sans source primaire (`< 10 s` `[S]`, `< 15 min` `[S]`, `2 min` `[S]`, `≤ 15` outils `[S]`, `72 h` `[S]`, `≥ 85 %` `[S]`, `Shadow Mirroring` `30 jours` `[S]`, `pass^5 ≥ 99 %` `[S]`) portent obligatoirement `[S]`, et chacune des **25 ancres visant les administrations publiques du secteur gouvernemental** (`AMOPS`, *Directive sur la prise de décisions automatisée* des ministères fédéraux, `EO 14412`, `OMB M-26-15`, documents `MCN` Québec et réexamens publics européens) est séparée dans son bloc des règles régissant les **institutions financières privées**.
 
-### Lexique des marques épistémiques et normatives
+## Lexique des marques épistémiques et normatives
 
 - **Marques d’énoncé :** `[D]` date officielle adoptée ; `[A]` jalon annoncé révocable ; `[C: scénarios; SIG-nnn]` conjecture sous scénarios `DAPP` sans probabilité (`A`, `B`, `C`) et signal `SIG-*` (obligatoire sur `2031–2035` hors `[D]`/`[A]`) ; `[E: EXIG-…]` / `[E: PRIN-…]` norme `CAD26` ; `[P: ID]` capacité, principe, décision, `PEX`, initiative ou porte `PD28`.
 - **Lettres des grilles :** `[N]` texte `L+` lu ou norme formelle ; `[M]` étude évaluée par les pairs ; `[É]` documentation technique ou prépublication non arbitrée ; `[S]` synthèse ou construction d’auteur co-appuyée.
 
-### Part produite par essaim d’agents et recollation (`CA-16`)
+## Part produite par essaim d’agents et recollation (`CA-16`)
 
 Sous le cahier des charges (`Memoire/prd.md`, dont les critères d’acceptation automatisés `CA-01` à `CA-16` sont vérifiés par `Memoire/Master/outils/verifie.py`) de l’auteur humain, ce mémoire, ses registres JSON, ses figures SVG et sa chaîne Pandoc `3.14` / Lua / Typst `0.15.1` ont été produits par un **essaim d’agents spécialisés à rôles séparés** : cadrage primaire (`lec-c26`, `lec-cad26`, `lec-c27`, `lec-pd28`, `auteur-prd`, `verif-prd`), outillage TDD (`outilleur`, `verif-socle`), registres `DIV-02` et extraction (`registraire-div02`, `extracteur-corpus`, `verif-registres`), rédaction et schémas (`redac-p1`, `redac-p2a`, `redac-p2b`, `redac-p3`, `redac-p4`, `illustrateur-svg`, `redac-synthese`), puis relecture de fond indépendante (`auditeur-fond`, critère `CA-15`) et recollation à l’aveugle (`recollateur-ca16`, critère `CA-16`) au Lot V, suivies d’un audit intégral de conformité sur pièces (`Memoire/audit.md`).
 

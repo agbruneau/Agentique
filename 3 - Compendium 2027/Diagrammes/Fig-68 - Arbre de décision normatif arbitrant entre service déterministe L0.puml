@@ -1,0 +1,67 @@
+' Fig. 68. – Arbre de décision normatif arbitrant entre service déterministe L0, workflow enrichi par SLM, automatisation HITL L2 et orchestration multi-agents L3/L4.
+@startuml
+title Arbre de Décision — Arbitrage entre Code Déterministe, Workflow et Agent LLM
+
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam nodesep 36
+skinparam ranksep 24
+skinparam rectangle {
+  BackgroundColor #FFFFFF
+  BorderColor #334155
+}
+
+rectangle Q1 #F8FAFC;line:334155 [
+  **1. Les entrées sont-elles structurées et la règle**
+  **de décision entièrement formalisable (SQL/DMN) ?**
+]
+
+rectangle Q2 #F8FAFC;line:334155 [
+  **2. La séquence des étapes est-elle connue d'avance**
+  **(seule une extraction ou classification est floue) ?**
+]
+
+rectangle Q3 #F8FAFC;line:334155 [
+  **3. L'impact d'une erreur est-il irréversible, létal**
+  **ou supérieur au seuil réglementaire sans appel ?**
+]
+
+rectangle L0 #F0FDF4;line:166534 [
+  <color:#166534>**Niveau L0 — Service Déterministe / Règle DMN**</color>
+  N'utilisez PAS de LLM : coût nul, latence < 10 ms, fiabilité 100 %
+]
+
+rectangle L1 #F0F9FF;line:0284C7 [
+  <color:#0369A1>**Workflow Déterministe + Travailleur SLM**</color>
+  Orchestration fixe (Temporal/BPMN) invoquant un SLM typé
+]
+
+rectangle L2 #FFF7ED;line:C2410C [
+  <color:#9A3412>**Niveau L2 (HITL) + Simulation / Jumeau Numérique**</color>
+  L'agent prépare et prouve le dossier ; approbation CIBA requise
+]
+
+rectangle L34 #F5F3FF;line:7C3AED [
+  <color:#6D28D9>**Niveau L3 / L4 — Orchestration Multi-Agents Bornée sous Supervision HOTL**</color>
+  Cellules spécialistes A2A/MCP • Runtime durable + Saga à compensation • Garde-fous Cedar/OPA en ligne • Escalade sur exception
+]
+
+Q1 -[hidden]right-> L0
+Q1 -[#1E293B]right-> L0 : <color:#166534>**OUI**</color>
+
+Q2 -[hidden]right-> L1
+Q2 -[#1E293B]right-> L1 : <color:#166534>**OUI**</color>
+
+Q3 -[hidden]right-> L2
+Q3 -[#1E293B]right-> L2 : <color:#C2410C>**OUI**</color>
+
+Q1 -[#1E293B]down-> Q2 : <color:#DC2626>**NON**</color>
+Q2 -[#1E293B]down-> Q3 : <color:#DC2626>**NON**</color>
+Q3 -[#1E293B]down-> L34 : <color:#2563EB>**NON (Compensable)**</color>
+
+L0 -[hidden]down-> L1
+L1 -[hidden]down-> L2
+L2 -[hidden]down-> L34
+@enduml

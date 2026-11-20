@@ -54,7 +54,7 @@ IMPORTANT
 | **O-02** | Caviardage ou masquage automatique des renseignements personnels (PII) avant export OTel | **[BLOQUANT]** [N] | Configuration du processeur de filtrage avant export |
 | **O-03** | Versionnage SemVer + Intent du code, des instructions, du modèle, des schémas et politiques | Élevée [S] | Manifeste de version immuable dans le dépôt Git et le registre |
 | **O-04** | Suite de simulation multi-tours représentative (dont cas adversariaux) | Conditionnel [S] | Dossier de scénarios versionné (taille calibrée par criticité) |
-| **O-05** | Seuil de constance pass𝑘 atteint (𝑘≥ 5) sur les invariants métiers critiques | Conditionnel [M] | Rapport CI/CD affichant pass5 au seuil fixé dans l’ADR |
+| **O-05** | Seuil de constance pass^𝑘 atteint (𝑘 ≥ 5) sur les invariants métiers critiques | Conditionnel [M] | Rapport CI/CD affichant pass^5 au seuil fixé dans l’ADR |
 | **O-06** | Détection automatique en temps réel des boucles sémantiques (verrouillages actifs répétitifs) | Élevée [S] | Règle d’alerte et d’interruption configurée sur la télémétrie |
 | **O-07** | Procédure de déploiement progressif (mode fantôme, puis canari à 1–5 %) | Élevée [S] | Routage pondéré et critères de retour arrière |
 | **O-08** | Retour arrière automatisé vers la version N-1 stable (cible `< 2 min`) | Élevée [S] | Journal d’un test de retour arrière déclenché sur anomalie |
@@ -104,4 +104,4 @@ IMPORTANT
 | **F-12** | Porte de mutation et parité en exécution miroir (cibles 85 % / 30 j calibrées par ADR) | Conditionnel [S] | Rapport de parité dans le seuil de tolérance fixé par l’ADR (si refonte) |
 | **F-13** | Contrats de données ODCS `v3.2.0` et Write-Audit-Publish (données) + contrôle pré-DDL (schéma) | Élevée [S] | Test de gel WAP sur dérive PSI et rejet pré-DDL sur rupture de schéma |
 | **F-14** | Confinement du SRE autonome (lecture seule assainie, aucun shell libre, budget Cedar R1/R2 + H0) | **[BLOQUANT]** [S] | Politique Cedar interdisant shell libre et arbitre avec hypothèse nulle H0 |
-| **F-15** | Sas anti-PII à canaris et porte pass5 ≥ 99 % (cible à valider) avant promotion SLM | Conditionnel [S] | Test d’exposition (type Carlini) et jeu de réserve (si distillation LoRA) |
+| **F-15** | Sas anti-PII à canaris et porte pass^5 ≥ 99 % (cible à valider) avant promotion SLM | Conditionnel [S] | Test d’exposition (type Carlini) et jeu de réserve (si distillation LoRA) |

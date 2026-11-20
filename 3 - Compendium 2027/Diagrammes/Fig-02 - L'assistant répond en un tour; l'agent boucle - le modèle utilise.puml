@@ -1,0 +1,56 @@
+' Fig. 2. – L'assistant répond en un tour; l'agent boucle : le modèle utilise un outil, se règle sur le résultat et choisit la suite.
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam nodesep 34
+skinparam ranksep 20
+skinparam rectangle {
+  BackgroundColor #FFFFFF
+  BorderColor #475569
+}
+
+rectangle "<color:#1D4ED8>**ASSISTANT : PAR TOURS**</color>" as Hdr1 #FFFFFF;line:FFFFFF
+rectangle "**Demande**" as Demande #FFFFFF;line:475569
+rectangle "**Assistant**" as Assistant #FFFFFF;line:475569
+rectangle "**Réponse**" as Reponse #FFFFFF;line:475569
+rectangle "//un tour, puis fin//" as Fin #FFFFFF;line:FFFFFF
+
+rectangle "<color:#1D4ED8>**AGENT : EN BOUCLE**</color>" as Hdr2 #FFFFFF;line:FFFFFF
+rectangle Ctrl #FFFFFF;line:475569 [
+  **Point de contrôle**
+  consulter un humain
+]
+rectangle Modele #EFF6FF;line:2563EB [
+  **Modèle**
+  évalue son avancement et
+  choisit la suite
+]
+rectangle Outil #FFFFFF;line:475569 [
+  **Outil**
+  agit sur un autre système
+]
+rectangle Arret #FFFFFF;line:475569 [
+  **Condition d'arrêt**
+  p. ex. nombre maximal
+  d'itérations
+]
+
+Hdr1 -[hidden]down-> Demande
+Demande -[#475569]down-> Assistant
+Assistant -[#475569]down-> Reponse
+Reponse -[hidden]down-> Fin
+
+Hdr2 -[hidden]down-> Ctrl
+Ctrl -[hidden]down-> Modele
+Ctrl <-[#475569,dashed,norank]-> Modele
+Modele -[#475569]down-> Arret
+Modele -[#475569]right-> Outil : utilise l'outil
+Outil -[#475569,norank]left-> Modele : résultat renvoyé\npar l'environnement
+
+Hdr1 -[hidden]right-> Hdr2
+Demande -[hidden]right-> Ctrl
+Assistant -[hidden]right-> Modele
+Reponse -[hidden]right-> Arret
+@enduml

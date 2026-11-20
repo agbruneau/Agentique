@@ -46,7 +46,7 @@ Générée automatiquement depuis `registre/decisions.json`.
 | ADR-018 | À réviser sur signal | — | AS | C27 § 29.4, 30.2 ; EXIG-IAM-08 | Réviser sur profils RFC WIMSE/PQC (SIG-003, SIG-011) |
 | ADR-019 | Généralisée | DEC-009 | AS | C27 § 31.4, 49.7 ; EXIG-MCP-20 | Épinglage SHA-256 neutre et règle de deux (SIG-101) |
 | ADR-020 | Généralisée | DEC-009 | AS | C27 § 30.6, 32.3 ; EXIG-SEC-08 | Politiques hors modèle neutres et microVM fermée (SIG-101) |
-| ADR-021 | À réviser sur signal | — | AS | C27 § 33.2, 33.4 ; EXIG-OBS-01 | Réviser au passage Stable de gen_ai.* (SIG-006) |
+| ADR-021 | À réviser sur signal | — | AS | C27 § 33.2, 33.4 ; EXIG-OBS-01 | Réviser au passage Stable de gen_ai.\* (SIG-006) |
 | ADR-022 | Généralisée | DEC-010 | AS | C27 § 34.2, 48.5 ; EXIG-EVA-03 | Qualification pass^k sur bancs internes audités (SIG-013) |
 | ADR-023 | Généralisée | DEC-011 | AE | C27 § 40.2, 40.5 ; EXIG-FIN-01 | Séquencée : affichage P1 puis refacturation P2 (SIG-015) |
 | ADR-024 | À réviser sur signal | — | AE | C27 § 35.1, 38.4 ; EXIG-CON-11 | Réviser sur RIA, AMF IA, fédéral (SIG-001, SIG-102) |

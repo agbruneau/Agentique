@@ -129,9 +129,7 @@ MCP et A2A sont des protocoles de requête-réponse dotés de moyens de dire « 
 
 La feuille de route d’août 2026 recense trois mécanismes : l’extension Tasks (chapitre 5), le flux `subscriptions/listen` et les notifications de progression. Elle reconnaît le risque d’avoir trois réponses à la même question, sans cycle de vie, modèle d’annulation ni surface d’erreur communs [6].
 
-`subscriptions/listen` ouvre un flux du serveur vers le client, filtré par types de notifications. La page de la spécification en énumère quatre : changement de la liste d’outils, de prompts ou de ressources, et mise à jour de ressources désignées par leur URI [7]. La notification de mise à jour ne porte que l’URI : c’est un signal, après lequel le client relit la ressource. L’extension Tasks ajoute, par ce même flux, `notifications/tasks`, qui porte l’état complet de la tâche; sa page en conclut qu’un client peut alors s’y fier au lieu
-
-d’interroger [13]. Après une rupture, le client peut rouvrir un flux; sur stdio, il le doit, car le serveur ne garde aucun état d’abonnement. La page ne prévoit aucun rattrapage des notifications manquées.
+`subscriptions/listen` ouvre un flux du serveur vers le client, filtré par types de notifications. La page de la spécification en énumère quatre : changement de la liste d’outils, de prompts ou de ressources, et mise à jour de ressources désignées par leur URI [7]. La notification de mise à jour ne porte que l’URI : c’est un signal, après lequel le client relit la ressource. L’extension Tasks ajoute, par ce même flux, `notifications/tasks`, qui porte l’état complet de la tâche; sa page en conclut qu’un client peut alors s’y fier au lieu d’interroger [13]. Après une rupture, le client peut rouvrir un flux; sur stdio, il le doit, car le serveur ne garde aucun état d’abonnement. La page ne prévoit aucun rattrapage des notifications manquées.
 
 Les événements poussés par le serveur, y compris par webhooks, sont un livrable de la période en cours [6]. Le groupe de travail qui en a la charge, créé le 24 mars 2026 sous le nom Triggers and Events et rebaptisé Tasks and Events le 16 octobre, a pour mission un mécanisme de rappel normalisé, assorti de garanties d’ordre valables sur tous les transports [8]. Sa charte exclut expressément une infrastructure générale de publication-abonnement, et sa proposition sur les événements y figure encore au stade d’idéation, avec une cible de fin avril dépassée. MCP ne normalise donc encore ni déclencheur ni webhook.
 
@@ -234,8 +232,7 @@ Billets de fournisseurs, lus; [15] relu le 12 novembre :
 - **RocketMQ-A2A** est décrit d’après le billet de ses auteurs, non d’après l’article. Le statut de production reste une affirmation de l’éditeur; les chiffres du billet ont été écartés.
 - **L’orchestrateur Flink/Kafka** repose sur un billet de février 2025, antérieur à Flink Agents. Aucun retour de production indépendant n’a été trouvé pour ce patron ni pour Flink Agents, dont la version 0.4 n’est pas datée sur la page lue.
 - **ESAA**, d’abord connu par son résumé, a été relu par extraits le 14 novembre 2026; **Confluent**, par le début d’une page et un billet [16].
-- **A2A** : la section 13.2, lue pendant l’audit, lève la réserve sur la sécurité des notifications poussées; elle recommande (SHOULD) les nouvelles tentatives que la section 4.3.3 se borne à permettre (MAY). **MCP** : la page de l’extension Tasks [13] lève l’écart avec le chapitre 5, ses notifications passant par `subscriptions/listen`. Aucune page lue ne
-  précise l’ordre de ces notifications; la relecture à la reconnexion est une recommandation de ce chapitre.
+- **A2A** : la section 13.2, lue pendant l’audit, lève la réserve sur la sécurité des notifications poussées; elle recommande (SHOULD) les nouvelles tentatives que la section 4.3.3 se borne à permettre (MAY). **MCP** : la page de l’extension Tasks [13] lève l’écart avec le chapitre 5, ses notifications passant par `subscriptions/listen`. Aucune page lue ne précise l’ordre de ces notifications; la relecture à la reconnexion est une recommandation de ce chapitre.
 - **CloudEvents** est repris du chapitre 2, sans lecture de sa spécification.
 - Les définitions de l’orchestration, de la chorégraphie et de l’event sourcing, l’exemple du superviseur en attente et la capture des changements appliquée au patrimoine relèvent de la connaissance générale. Les conditions d’emploi de la chorégraphie, les garde-fous de la section 19.7 et la grille de décision sont des recommandations de ce chapitre, non des résultats tirés d’une source.
 - Le « maillage d’événements » du plan initial et les autres courtiers ne sont pas traités dans cet exposé, faute de source lue; le volet de mise en œuvre présente celui de Solace (section 19.8), et la section 23.3 décrit, d’après la documentation de l’éditeur, la plateforme d’agents bâtie sur ce maillage. DDS, la publication-abonnement de ROS 2, est traitée au chapitre 46.
@@ -256,9 +253,9 @@ SYNTHÈSE EXÉCUTIVE
 
 Le chapitre 18 traite l’avancement d’un flux individuel : un moteur d’exécution durable (Temporal, Restate) le préserve malgré les pannes et les attentes humaines. Deux problèmes d’urbanisation restent à résoudre : propager en temps réel des milliers de faits opérationnels sans coupler chaque producteur à chaque consommateur, et rétablir l’intégrité métier quand une transaction inter-divisions est annulée à mi-parcours.
 
-Dans les premiers graphes multi-agents, l’invocation synchrone domine : l’agent A appelle l’agent B en HTTP, qui attend un serveur MCP C sollicitant un progiciel D. À mesure que le nombre de maillons 𝑚 croît, la disponibilité effective diminue selon le produit des disponibilités unitaires 𝑎𝑖 :
+Dans les premiers graphes multi-agents, l’invocation synchrone domine : l’agent A appelle l’agent B en HTTP, qui attend un serveur MCP C sollicitant un progiciel D. À mesure que le nombre de maillons 𝑚 croît, la disponibilité effective diminue selon le produit des disponibilités unitaires 𝑎_𝑖 :
 
-𝐴sync(𝑚) = ∏𝑚 𝑖=1 𝑎𝑖≪min𝑖 𝑎𝑖
+𝐴_{sync}(𝑚) = ∏_{𝑖=1}^{𝑚} 𝑎_𝑖 ≪ min_𝑖 𝑎_𝑖
 
 Quand chaque maillon dépend d’un moteur d’inférence à latence variable et d’un progiciel aux fenêtres de maintenance propres, cette topologie produit trois pathologies.
 
@@ -271,8 +268,7 @@ L’architecture événementielle agentique (EDAA) reprend le découplage de la 
 Deux formes de charge utile coexistent sur ce maillage, et le choix entre elles est délibéré.
 
 - **Événement de notification mince** : Il signale seulement qu’une transition d’état a eu lieu sur un identifiant métier. Les consommateurs habilités relisent l’état frais par un serveur MCP, avec le contrôle d’accès appliqué à la source (« notifier, puis relire », section 19.6). Cette forme est obligatoire dès que l’événement touche des renseignements personnels soumis à la Loi 25 ou des clauses tarifaires confidentielles.
-- **Transfert d’état porté par l’événement** (*Event-Carried State Transfer*, ECST) : Le message embarque la projection normalisée selon l’ontologie Apache Ossie dont les agents aval ont besoin. Il évite les tempêtes de lectures synchrones vers l’IBM i ou
-  SAP S/4HANA quand une dizaine de travailleurs analytiques réagissent au même fait industriel.
+- **Transfert d’état porté par l’événement** (*Event-Carried State Transfer*, ECST) : Le message embarque la projection normalisée selon l’ontologie Apache Ossie dont les agents aval ont besoin. Il évite les tempêtes de lectures synchrones vers l’IBM i ou SAP S/4HANA quand une dizaine de travailleurs analytiques réagissent au même fait industriel.
 
 > **[Figure]**
 > - Architecture Événementielle Agentique (EDAA) et Cycle d'une Saga à Compensation
@@ -431,38 +427,36 @@ En 2027, les transporteurs de pointe remplacent les verrous centraux sur le syst
 
 Dès qu’un processus modifie plusieurs systèmes d’enregistrement autonomes (SAP, ServiceNow, Guidewire), le protocole de validation à deux phases (2PC / XA) est impraticable : les plateformes SaaS refusent les verrous externes, et un verrou exclusif maintenu pendant dix secondes d’inférence, ou quatre heures d’attente HOTL, bloquerait l’exploitation.
 
-Le patron Saga (Garcia-Molina & Salem) remplace l’atomicité instantanée par une suite de transactions locales 𝑇1, …, 𝑇𝑛, validées immédiatement et associées à des compensations inverses 𝐶𝑖. Toute saga bien formée s’ordonne autour d’une unique transaction pivot 𝑇𝑝 :
+Le patron Saga (Garcia-Molina & Salem) remplace l’atomicité instantanée par une suite de transactions locales 𝑇_1, …, 𝑇_𝑛, validées immédiatement et associées à des compensations inverses 𝐶_𝑖. Toute saga bien formée s’ordonne autour d’une unique transaction pivot 𝑇_𝑝 :
 
-𝑆= ⟨𝑇1, …, 𝑇𝑝−1, 𝑇𝑝, 𝑇𝑝+1, …, 𝑇𝑛⟩
+𝑆 = ⟨𝑇_1, …, 𝑇_{𝑝−1}, 𝑇_𝑝, 𝑇_{𝑝+1}, …, 𝑇_𝑛⟩
 
-Si une étape 𝑇𝑘 (𝑘≤𝑝) échoue ou essuie un refus de politique, le coordinateur dépile les compensations en ordre inverse strict (LIFO) :
+Si une étape 𝑇_𝑘 (𝑘 ≤ 𝑝) échoue ou essuie un refus de politique, le coordinateur dépile les compensations en ordre inverse strict (LIFO) :
 
-Comp(𝑆, 𝑘) = ⟨𝐶𝑘−1, 𝐶𝑘−2, …, 𝐶1⟩
+Comp(𝑆, 𝑘) = ⟨𝐶_{𝑘−1}, 𝐶_{𝑘−2}, …, 𝐶_1⟩
 
 Le tableau fixe l’ordre des quatre classes d’effets de bord : étapes compensables, pivot unique (point de non-retour décisionnel), étapes réessayables dont la convergence est garantie, puis actions irréversibles externes sous tampon.
 
 | Classe d’effet de bord | Position obligatoire | Propriété formelle | Exemples en entreprise | Exigence sur le serveur MCP / pair A2A |
 | --- | --- | --- | --- | --- |
-| 1. Compensable | Avant le pivot (𝑇1…𝑇𝑝−1) | Annulable proprement par une opération inverse 𝐶𝑖 | Réservation temporaire SAP, blocage d’agenda technicien | Exposer l’outil inverse, un bail d’expiration (TTL) et l’idempotence |
-| 2. Pivot | Bascule unique (𝑇𝑝) | Son succès scelle l’engagement; son échec lance l’annulation | Adjudication de garantie BCA, validation CIBA, mandat AP2 | Atomicité stricte, contrôle complet des politiques Cedar/OPA |
-| 3. Réessayable | Après le pivot (𝑇𝑝+1…𝑇𝑛) | Aucun refus métier possible; converge par réessai | Imputation analytique interne, mise à jour mémoire ou CRM | Idempotence sur `stepIdempotencyKey` |
+| 1. Compensable | Avant le pivot (𝑇_1…𝑇_{𝑝−1}) | Annulable proprement par une opération inverse 𝐶_𝑖 | Réservation temporaire SAP, blocage d’agenda technicien | Exposer l’outil inverse, un bail d’expiration (TTL) et l’idempotence |
+| 2. Pivot | Bascule unique (𝑇_𝑝) | Son succès scelle l’engagement; son échec lance l’annulation | Adjudication de garantie BCA, validation CIBA, mandat AP2 | Atomicité stricte, contrôle complet des politiques Cedar/OPA |
+| 3. Réessayable | Après le pivot (𝑇_{𝑝+1}…𝑇_𝑛) | Aucun refus métier possible; converge par réessai | Imputation analytique interne, mise à jour mémoire ou CRM | Idempotence sur `stepIdempotencyKey` |
 | 4. Irréversible | Terminale sous tampon | Traverse la frontière physique ou juridique | Avis EDI externe, courriel client, consigne MES, virement | Passage obligatoire par un tampon à fenêtre de grâce |
 
 ### Contre-mesures au déficit d’isolation (ACD sans I) entre sagas concurrentes
 
 Une saga ne fournit pas les garanties d’une transaction relationnelle ACID, mais seulement les garanties ACD : ses mutations intermédiaires sont visibles des autres agents avant que le pivot soit atteint. Deux sagas concurrentes sur le même équipement ou le même plafond de crédit client s’exposent à trois anomalies classiques : mises à jour perdues, lectures sales d’un état qu’une annulation défera trois secondes plus tard, et lectures non reproductibles. Trois contre-mesures s’appliquent au niveau des serveurs MCP.
 
-1. **Verrous sémantiques** : Toute étape compensable 𝑇𝑖 pose sur l’entité métier un indicateur visible d’état transitoire (`status = RESERVED_PENDING_SAGA`, avec `lockedBySagaId` et `leaseExpiresAt`). Un second agent qui inspecte la même pièce critique voit qu’un arbitrage est en cours : il attend l’expiration du bail court ou choisit un dépôt alternatif, au lieu d’écraser l’enregistrement.
-2. **Opérations commutatives** : Préférer, chaque fois que possible, des mutations additives ou soustractives (`debit_quota(delta)`) aux écritures d’écrasement absolu (`set_balance(valeur)`). Leur compensation inverse reste valide quel que soit l’ordre dans lequel d’autres sagas s’intercalent entre 𝑇𝑖 et 𝐶𝑖.
+1. **Verrous sémantiques** : Toute étape compensable 𝑇_𝑖 pose sur l’entité métier un indicateur visible d’état transitoire (`status = RESERVED_PENDING_SAGA`, avec `lockedBySagaId` et `leaseExpiresAt`). Un second agent qui inspecte la même pièce critique voit qu’un arbitrage est en cours : il attend l’expiration du bail court ou choisit un dépôt alternatif, au lieu d’écraser l’enregistrement.
+2. **Opérations commutatives** : Préférer, chaque fois que possible, des mutations additives ou soustractives (`debit_quota(delta)`) aux écritures d’écrasement absolu (`set_balance(valeur)`). Leur compensation inverse reste valide quel que soit l’ordre dans lequel d’autres sagas s’intercalent entre 𝑇_𝑖 et 𝐶_𝑖.
 3. **Réordonnancement pessimiste des risques** : Placer juste avant le pivot les étapes les plus exposées à la contention ou au rejet réglementaire, pour réduire la durée d’exposition des ressources verrouillées sémantiquement en amont.
 
 ### Compensation déterministe, compensation sémantique et orchestration hybride
 
-La compensation déterministe invoque directement une API symétrique sans appel au modèle (`release_reservation`); elle est à privilégier. Dans les processus longs (T3/T4), l’état physique ou comptable peut toutefois changer entre 𝑇𝑖 et 𝐶𝑖 : une pièce réservée a déjà quitté son rayon d’entrepôt (prélèvement terminé), des frais contractuels de dédit s’appliquent, un taux de change a bougé. Quand l’API inverse signale cette dérive (`STATE_DRIFTED`), le coordinateur exécute un plan de remédiation sémantique pré-homologué (émission d’un bon de réintégration magasin ou d’un avoir sous plafond financier). Si l’écart dépasse la tolérance, il bascule en `SagaDeadLetter` vers un superviseur HOTL.
+La compensation déterministe invoque directement une API symétrique sans appel au modèle (`release_reservation`); elle est à privilégier. Dans les processus longs (T3/T4), l’état physique ou comptable peut toutefois changer entre 𝑇_𝑖 et 𝐶_𝑖 : une pièce réservée a déjà quitté son rayon d’entrepôt (prélèvement terminé), des frais contractuels de dédit s’appliquent, un taux de change a bougé. Quand l’API inverse signale cette dérive (`STATE_DRIFTED`), le coordinateur exécute un plan de remédiation sémantique pré-homologué (émission d’un bon de réintégration magasin ou d’un avoir sous plafond financier). Si l’écart dépasse la tolérance, il bascule en `SagaDeadLetter` vers un superviseur HOTL.
 
-Dès qu’une transaction d’affaires traverse plusieurs agents, la chorégraphie pure sans coordinateur est proscrite : il faut un coordinateur (section 19.7). Sous régime réglementé (BSIF E-23), elle l’est même pour des réactions indépendantes, ce qui va au-delà de ce que retient la section 19.7 : la chorégraphie y garde sa place quand les réactions sont indépendantes, sans annulation ni ordre requis. Le bus diffuse les faits découplés, comme à la section 19.7, et un coordinateur explicite (Temporal / Restate) pilote l’orchestration durable : il persiste chaque contrat inverse *avant* d’émettre l’action aller, par enregistrement préalable de la compensation. En contrepartie, toute API inverse 𝐶𝑖 traite comme un succès idempotent
-
-l’absence d’enregistrement (`ALREADY_ABSENT`), quand un délai d’attente réseau ambigu a interrompu 𝑇𝑖 avant son exécution réelle. Tout échec survenant *après* le pivot 𝑇𝑝 bascule en recouvrement avant, non en annulation, qui serait illégale à ce stade. L’extrait 19.2 implémente ce coordinateur : pile LIFO déterministe, enregistrement préalable, remédiation sémantique plafonnée, escalade en `SagaDeadLetter`.
+Dès qu’une transaction d’affaires traverse plusieurs agents, la chorégraphie pure sans coordinateur est proscrite : il faut un coordinateur (section 19.7). Sous régime réglementé (BSIF E-23), elle l’est même pour des réactions indépendantes, ce qui va au-delà de ce que retient la section 19.7 : la chorégraphie y garde sa place quand les réactions sont indépendantes, sans annulation ni ordre requis. Le bus diffuse les faits découplés, comme à la section 19.7, et un coordinateur explicite (Temporal / Restate) pilote l’orchestration durable : il persiste chaque contrat inverse *avant* d’émettre l’action aller, par enregistrement préalable de la compensation. En contrepartie, toute API inverse 𝐶_𝑖 traite comme un succès idempotent l’absence d’enregistrement (`ALREADY_ABSENT`), quand un délai d’attente réseau ambigu a interrompu 𝑇_𝑖 avant son exécution réelle. Tout échec survenant *après* le pivot 𝑇_𝑝 bascule en recouvrement avant, non en annulation, qui serait illégale à ce stade. L’extrait 19.2 implémente ce coordinateur : pile LIFO déterministe, enregistrement préalable, remédiation sémantique plafonnée, escalade en `SagaDeadLetter`.
 
 #### Extrait 19.2 — `[Exécuté en CI]` · Coordinateur TypeScript de Saga avec pile LIFO déterministe et sémantique
 
@@ -625,7 +619,7 @@ class IrreversibleOutboxBuffer:
 
 Dans une institution financière ou un assureur soumis aux normes IFRS 17 et à la ligne directrice BSIF E-23 (1er mai 2027), la compensation d’une étape comptable obéit à un interdit : aucune écriture inscrite au journal auxiliaire ou au grand livre ne peut être modifiée ni supprimée (DELETE).
 
-Quand une saga d’indemnisation inscrit en 𝑇1 une provision technique de 8 500 $ CAD dans Guidewire, puis s’interrompt au pivot 𝑇𝑝 à la suite de la détection d’un doublon contractuel, l’outil MCP de compensation 𝐶1 génère une écriture de contre-passation miroir horodatée. Elle porte la référence `reversesEntryId` ainsi que l’identifiant du modèle et de la règle déclenchante, ce qui préserve la piste d’audit devant le régulateur.
+Quand une saga d’indemnisation inscrit en 𝑇_1 une provision technique de 8 500 $ CAD dans Guidewire, puis s’interrompt au pivot 𝑇_𝑝 à la suite de la détection d’un doublon contractuel, l’outil MCP de compensation 𝐶_1 génère une écriture de contre-passation miroir horodatée. Elle porte la référence `reversesEntryId` ainsi que l’identifiant du modèle et de la règle déclenchante, ce qui préserve la piste d’audit devant le régulateur.
 
 ## 19.12 Application au fil rouge : annulation inter-divisions chez Groupe Boréal
 
@@ -635,10 +629,10 @@ Quand une saga d’indemnisation inscrit en 𝑇1 une provision technique de 8 5
 
 **Phase aller compensable (1,9 seconde)** :
 
-1. **Étape 𝑇1 — Stocks Boréal Équipements & Logistique (BEL, SAP S/4HANA)** : Après enregistrement préalable de 𝐶1, l’*Agent Stocks* réserve l’unique module d’injection INJ-MOD-V12 de l’Est canadien (14 800 $ CAD, bail 4 h). La table Transactional Outbox valide SAP-RES-4409812 et publie l’extrait 19.1.
-2. **Étape 𝑇2 — Terrain Boréal Services Numériques (BSN, ServiceNow FSM)** : Blocage du créneau de 17 h 00 d’un électromécanicien haute tension et d’un camion-atelier (FSM-HOLD-88210). Aucune confirmation client n’est émise avant le pivot.
+1. **Étape 𝑇_1 — Stocks Boréal Équipements & Logistique (BEL, SAP S/4HANA)** : Après enregistrement préalable de 𝐶_1, l’*Agent Stocks* réserve l’unique module d’injection INJ-MOD-V12 de l’Est canadien (14 800 $ CAD, bail 4 h). La table Transactional Outbox valide SAP-RES-4409812 et publie l’extrait 19.1.
+2. **Étape 𝑇_2 — Terrain Boréal Services Numériques (BSN, ServiceNow FSM)** : Blocage du créneau de 17 h 00 d’un électromécanicien haute tension et d’un camion-atelier (FSM-HOLD-88210). Aucune confirmation client n’est émise avant le pivot.
 
-**Refus au point pivot 𝑇𝑝 chez Boréal Capital & Assurances (BCA, 14 h 29)** :
+**Refus au point pivot 𝑇_𝑝 chez Boréal Capital & Assurances (BCA, 14 h 29)** :
 
 - L’*Agent Garantie* BCA relève sur l’IBM i (AS/400) deux verrous bloquants : le coût (14 800 $ CAD) dépasse le plafond L3 (5 000 $ CAD dans Cedar), et le client accuse un impayé litigieux de 94 jours qui suspend la couverture gratuite.
 - Sollicitée par escalade asynchrone CIBA / A2UI, la souscriptrice BCA refuse la prise en charge sous garantie et exige un bon de commande prépayé.
@@ -646,8 +640,8 @@ Quand une saga d’indemnisation inscrit en 𝑇1 une provision technique de 8 5
 **Annulation automatique en ordre LIFO (3,8 secondes)** :
 
 1. **Zéro fuite externe** : Le signal `ca.boreal.saga.aborted` interdit toute sortie du tampon; aucune promesse erronée de gratuité n’a été envoyée au client.
-2. **Compensation 𝐶2 (ServiceNow FSM)** : `fsm_cancel_slot_allocation("FSM-HOLD-88210")` libère en 640 ms le technicien et le camion-atelier, aussitôt réaffectés à une urgence à Laval.
-3. **Compensation 𝐶1 (SAP S/4HANA)** : `sap_release_spare_part_reservation("SAP-RES-4409812")` remet aussitôt le module INJ-MOD-V12 en stock disponible à la vente.
+2. **Compensation 𝐶_2 (ServiceNow FSM)** : `fsm_cancel_slot_allocation("FSM-HOLD-88210")` libère en 640 ms le technicien et le camion-atelier, aussitôt réaffectés à une urgence à Laval.
+3. **Compensation 𝐶_1 (SAP S/4HANA)** : `sap_release_spare_part_reservation("SAP-RES-4409812")` remet aussitôt le module INJ-MOD-V12 en stock disponible à la vente.
 4. **Rebond commercial** : L’événement de clôture déclenche dans Salesforce Agentforce la préparation d’une soumission d’intervention facturable, transmise au directeur de compte en deux minutes.
 
 **Scénario illustratif cible (T2 2027, 18 400 sagas)** : 99,94 % de convergence propre (validation ou annulation complète en 3,8 s médianes, 7,4 s au 99e centile); zéro stock fantôme dans SAP S/4HANA, contre une moyenne antérieure de 23 réservations bloquées par semaine; coût moyen d’orchestration d’une annulation inférieur à 0,002 $ CAD (aucun appel au modèle durant le dépilement déterministe); 11 dossiers seulement (0,06 %) escaladés en `SagaDeadLetter`, à cause de dérives physiques d’entrepôt résolues en moins de quinze minutes par les superviseurs logistiques.
@@ -665,21 +659,21 @@ Retenir le maillage hybride Solace/Kafka pour toute mutation touchant au moins d
   2. *Chorégraphie pure sans coordinateur* : Rejetée — état global opaque, risque de tempêtes d’événements (ASI08) et auditabilité insuffisante sous BSIF E-23.
   3. *Maillage hybride Solace/Kafka + Sagas orchestrées durablement* : Solace pour le filtrage temps réel IT/OT, Kafka (CloudEvents 1.0 et Outbox) comme journal immuable, coordinateur durable ordonné autour d’un point pivot, avec tampon pour les sorties irréversibles. Retenue.
 
-- **Décision** : Toute mutation touchant au moins deux systèmes d’enregistrement s’exécute sous forme de Saga qui interdit les étapes compensables après le pivot, persiste 𝐶𝑖 avant 𝑇𝑖, utilise Transactional Outbox et isole les sorties externes derrière un tampon à fenêtre de grâce.
+- **Décision** : Toute mutation touchant au moins deux systèmes d’enregistrement s’exécute sous forme de Saga qui interdit les étapes compensables après le pivot, persiste 𝐶_𝑖 avant 𝑇_𝑖, utilise Transactional Outbox et isole les sorties externes derrière un tampon à fenêtre de grâce.
 - **Conséquences** :
-  - ‣ *Positives* : Découplage temporel, résilience aux pannes partielles, relecture d’audit exacte, disparition des réservations fantômes.
-  - ‣ *Négatives / Coûts assumés* : Gestion explicite de la cohérence finale dans les interfaces AG-UI et développement systématique des outils inverses MCP.
+  - *Positives* : Découplage temporel, résilience aux pannes partielles, relecture d’audit exacte, disparition des réservations fantômes.
+  - *Négatives / Coûts assumés* : Gestion explicite de la cohérence finale dans les interfaces AG-UI et développement systématique des outils inverses MCP.
 - **Condition de révision** : Réexamen annuel selon l’évolution des standards d’événements de la Linux Foundation AAIF.
 
 ### Liste de contrôle de mise en production
 
 Avant d’homologuer un flux multi-agents asynchrone, vérifier les huit points suivants :
 
-1. **Ordre autour du pivot** : Toutes les étapes pouvant échouer pour cause métier précèdent-elles l’unique pivot 𝑇𝑝, ne laissant après lui que des opérations réessayables idempotentes ?
-2. **Enregistrement préalable** : Le descripteur `CompensationPlan` est-il persisté sur disque durable *avant* l’appel réseau de l’action aller 𝑇𝑖 ?
-3. **Compensation déterministe prioritaire** : Les annulations 𝐶𝑖 appellent-elles des API déterministes sans appel au modèle, les remédiations sémantiques bornées étant réservées aux dérives d’état avérées ?
+1. **Ordre autour du pivot** : Toutes les étapes pouvant échouer pour cause métier précèdent-elles l’unique pivot 𝑇_𝑝, ne laissant après lui que des opérations réessayables idempotentes ?
+2. **Enregistrement préalable** : Le descripteur `CompensationPlan` est-il persisté sur disque durable *avant* l’appel réseau de l’action aller 𝑇_𝑖 ?
+3. **Compensation déterministe prioritaire** : Les annulations 𝐶_𝑖 appellent-elles des API déterministes sans appel au modèle, les remédiations sémantiques bornées étant réservées aux dérives d’état avérées ?
 4. **Atomicité de la Transactional Outbox** : Les serveurs MCP passent-ils par une table d’envoi transactionnelle alimentée par capture des changements, sans double écriture non atomique ?
 5. **Enveloppe CloudEvents 1.0 et Claim-Check** : Les messages portent-ils `sagaId`, `idempotencyKey`, `hopRemaining` et `traceparent`, et les artefacts lourds transitent-ils par URI signée avec hachage SHA-256 ?
 6. **Baux d’expiration (TTL)** : Chaque réservation amont possède-t-elle un bail d’expiration autonome dans le système d’enregistrement, en cas de retard prolongé de l’annulation ?
 7. **Tampon sur sorties irréversibles** : Les connecteurs externes (EDI, courriel client, paiement, MES) vérifient-ils l’absence d’annulation et la politique Cedar juste avant l’émission ?
-8. **Tests de chaos sur l’annulation** : Tous les chemins 𝐶𝑘…𝐶1 et l’escalade `SagaDeadLetter` sont-ils testés par injection automatique de pannes en CI/CD ?
+8. **Tests de chaos sur l’annulation** : Tous les chemins 𝐶_𝑘…𝐶_1 et l’escalade `SagaDeadLetter` sont-ils testés par injection automatique de pannes en CI/CD ?

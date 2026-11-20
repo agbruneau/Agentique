@@ -2,10 +2,21 @@
 @startuml
 title Architecture du Dernier Kilomètre : Interfaces Multimodales (AG-UI, A2UI, WebRTC) et Commerce (AP2, x402)
 
-top to bottom direction
+left to right direction
 skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
+skinparam nodesep 22
+skinparam ranksep 36
+skinparam rectangle {
+  BackgroundColor #FFFFFF
+  BorderColor #1E293B
+}
+skinparam legend {
+  BackgroundColor #FFF7ED
+  BorderColor #9A3412
+  FontName "Segoe UI"
+}
 
 rectangle "Volet A — Interaction Humain-Agent Réactive (AG-UI / A2UI) et Multimodalité Temps Réel (WebRTC)" as VoletA #EFF6FF;line:2563EB {
   rectangle Poste #FFFFFF;line:1E293B [
@@ -23,6 +34,7 @@ rectangle "Volet A — Interaction Humain-Agent Réactive (AG-UI / A2UI) et Mult
     STATE_SNAPSHOT & STATE_DELTA (RFC 6902)
     Descripteurs déclaratifs A2UI / MCP-UI (Zéro JS libre)
   ]
+
   rectangle WebRTC #ECFDF5;line:15803D [
     **Session WebRTC Full-Duplex (UDP / SRTP)**
     Audio Opus 24 kHz + Flux vidéo inspection 2 fps
@@ -38,63 +50,22 @@ rectangle "Volet A — Interaction Humain-Agent Réactive (AG-UI / A2UI) et Mult
     Marquage transparence EU AI Act
   ]
 
-  AGUI -[hidden]down-> WebRTC
-  Poste -[#2563EB]right-> AGUI
-  AGUI -[#2563EB]right-> AgentMed
-  AGUI -[#2563EB]left-> Poste
-  AgentMed -[#2563EB]left-> AGUI
-  Poste -[#15803D]right-> WebRTC
-  WebRTC -[#15803D]right-> AgentMed
-  WebRTC -[#15803D]left-> Poste
-  AgentMed -[#15803D]left-> WebRTC
+  Poste -[hidden]-> AGUI
+  Poste -[hidden]-> WebRTC
+  WebRTC -[hidden]right-> AGUI
+  AGUI -[hidden]-> AgentMed
+  WebRTC -[hidden]-> AgentMed
+
+  Poste <-[#2563EB,norank]-> AGUI
+  AGUI <-[#2563EB,norank]-> AgentMed
+  Poste <-[#15803D,norank]-> WebRTC
+  WebRTC <-[#15803D,norank]-> AgentMed
 }
 
-rectangle "Volet B — Chaîne Transactionnelle Vérifiable AP2 (W3C VC / FIDO) et Règlement Programmable HTTP x402" as VoletB #FFF7ED;line:9A3412 {
-  rectangle B1 #FFFFFF;line:9A3412 [
-    **1. Mandats AP2 (W3C VC)**
-    Signature FIDO2 / HSM :
-    • Intent Mandate : budget,
-      DID marchands, TTL
-    • Cart Mandate : hash
-      SHA-256 panier exact
-  ]
-  rectangle B2 #FFFFFF;line:9A3412 [
-    **2. Agent Acheteur & PDP**
-    Validation déterministe Cedar :
-    • Prix ≤ plafond mandat
-    • Bénéficiaire sur liste blanche
-    • Solde journalier FinOps OK
-    Clé d'idempotence paiement
-  ]
-  rectangle B3 #FFFFFF;line:2563EB [
-    **3. Protocole HTTP x402**
-    ← HTTP 402 Payment Required
-    (En-tête PAYMENT-REQUIRED)
-    → Requête + PAYMENT-SIGNATURE
-    (Preuve mandat AP2 + jeton)
-    Zéro compte pré-provisionné requis
-  ]
-  rectangle B4 #ECFDF5;line:15803D [
-    **4. Facilitateur & Reçu**
-    Vérification signature & KYT
-    Compensation rails bancaires
-    ou jeton de dépôt réglementé
-    ← 200 OK + PAYMENT-RESPONSE
-    Écriture comptable ERP liée
-  ]
-  rectangle Audit #F8FAFC;line:CBD5E1 [
-    **Invariant d'Audit : Preuve tripartite immuable reliant l'intention humaine (FIDO2/AP2), la négociation A2A et le règlement effectif (x402).**
-  ]
+legend bottom
+  <color:#9A3412>**Volet B — Chaîne Transactionnelle Vérifiable AP2 (W3C VC / FIDO) et Règlement Programmable HTTP x402**</color>
+  | <#FFFFFF> <color:#9A3412>**1. Mandats AP2 (W3C VC)**</color>\nSignature FIDO2 / HSM :\n• Intent Mandate : budget,\n  DID marchands, TTL\n• Cart Mandate : hash\n  <color:#9A3412>SHA-256 panier exact</color> | <#FFF7ED> <color:#9A3412><b> → </b></color> | <#FFFFFF> <color:#9A3412>**2. Agent Acheteur & PDP**</color>\nValidation déterministe Cedar :\n• Prix ≤ plafond mandat\n• Bénéficiaire sur liste blanche\n• Solde journalier FinOps OK\n<color:#2563EB>Clé d'idempotence paiement</color> | <#FFF7ED> <color:#2563EB><b> ↔ </b></color> | <#FFFFFF> <color:#2563EB>**3. Protocole HTTP x402**</color>\n<color:#991B1B>← HTTP 402 Payment Required</color>\n(En-tête PAYMENT-REQUIRED)\n<color:#15803D>→ Requête + PAYMENT-SIGNATURE</color>\n(Preuve mandat AP2 + jeton)\nZéro compte pré-provisionné requis | <#FFF7ED> <color:#15803D><b> ↔ </b></color> | <#ECFDF5> <color:#15803D>**4. Facilitateur & Reçu**</color>\nVérification signature & KYT\nCompensation rails bancaires\nou jeton de dépôt réglementé\n<color:#15803D><b>← 200 OK + PAYMENT-RESPONSE </b></color>\nÉcriture comptable ERP liée |
 
-  B1 -[#9A3412]right-> B2
-  B2 -[#2563EB]right-> B3
-  B3 -[#2563EB]left-> B2
-  B3 -[#15803D]right-> B4
-  B4 -[#15803D]left-> B3
-  B2 -[hidden]down-> Audit
-  B3 -[hidden]down-> Audit
-}
-
-Poste -[hidden]down-> B1
-AgentMed -[hidden]down-> B4
+  | <#F8FAFC> **Invariant d'Audit : Preuve tripartite immuable reliant l'intention humaine (FIDO2/AP2), la négociation A2A et le règlement effectif (x402).** |
+endlegend
 @enduml

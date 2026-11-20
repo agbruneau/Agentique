@@ -110,9 +110,7 @@ L’enveloppe de 2030, de 25 à 55 G$ US, contient aussi la prévision de Deloit
 
 **Les pages se contredisent elles-mêmes.** La croissance annoncée par Global Market Insights, 39,5 %, ne correspond pas à ses propres bornes, qui donnent environ 34 % par an [4]. Precedence emploie deux périodes sur la même page [17]. Market.us donne la même valeur cible pour 2034 et pour 2035 [16]. Fortune Business Insights et Precedence publient chacune deux marchés voisins, « agentic AI » et « AI agents », sans dire comment ils se recouvrent [6][7][15][17].
 
-**Le périmètre décide de tout.** Pour 2025, Omdia compte 1,5 G$ US de logiciel d’entreprise [53]; Gartner, 16,5 G$ US d’agents et d’assistants [50]; et, selon le blogue déjà cité, 88,2 G$ US de capacités agentiques intégrées [56]. Le rapport est de 1 à 59. À l’horizon 2030, le même
-
-blogue prête à Gartner environ 220 G$ US pour les agents et assistants et 1 004 G$ US pour l’agentique intégrée [56], soit quatre à vingt fois l’enveloppe des cabinets d’études.
+**Le périmètre décide de tout.** Pour 2025, Omdia compte 1,5 G$ US de logiciel d’entreprise [53]; Gartner, 16,5 G$ US d’agents et d’assistants [50]; et, selon le blogue déjà cité, 88,2 G$ US de capacités agentiques intégrées [56]. Le rapport est de 1 à 59. À l’horizon 2030, le même blogue prête à Gartner environ 220 G$ US pour les agents et assistants et 1 004 G$ US pour l’agentique intégrée [56], soit quatre à vingt fois l’enveloppe des cabinets d’études.
 
 **Les prévisions sont révisées, toujours à la hausse.** Celle de Gartner pour les dépenses mondiales en IA de 2026 est passée de 2 520 G$ US en janvier 2026 [57] à 2 670 G$ US en septembre [50]. Une partie de la hausse tient à l’élargissement du périmètre, et la firme prévient elle-même, d’après le blogue qui la cite, que la comparaison avec les éditions antérieures n’a plus de sens [51].
 

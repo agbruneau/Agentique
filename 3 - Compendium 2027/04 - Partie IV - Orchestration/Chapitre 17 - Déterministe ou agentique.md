@@ -61,9 +61,7 @@ La frontière entre la deuxième et la troisième position est une frontière de
 
 ### Ce que montre la pratique
 
-L’étude Measuring Agents in Production, fondée sur vingt études de cas et un sondage de 306 réponses, dont 86 sur des systèmes déployés, rapporte que 68 % de ces systèmes exécutent moins de dix étapes avant une intervention humaine (au plus dix selon son résumé), et que la fiabilité, premier défi cité, se traite surtout par la conception du système [12]. Les chapitres 4 et 22 exploitent ces résultats; selon le chapitre 42, seize des vingt cas
-
-reposent sur des workflows prédéfinis : les déploiements réels occupent surtout les trois premières positions.
+L’étude Measuring Agents in Production, fondée sur vingt études de cas et un sondage de 306 réponses, dont 86 sur des systèmes déployés, rapporte que 68 % de ces systèmes exécutent moins de dix étapes avant une intervention humaine (au plus dix selon son résumé), et que la fiabilité, premier défi cité, se traite surtout par la conception du système [12]. Les chapitres 4 et 22 exploitent ces résultats; selon le chapitre 42, seize des vingt cas reposent sur des workflows prédéfinis : les déploiements réels occupent surtout les trois premières positions.
 
 ## 17.2 BPMN comme enveloppe : le sous-processus ad hoc
 
@@ -176,9 +174,7 @@ Trois réserves s’imposent. Ces résultats viennent d’une prépublication et
 
 Une Routine guide le modèle; elle ne le contraint pas. Rien, dans le cadre décrit, n’empêche le modèle de sauter une étape : il ne le fait pas, la plupart du temps. Un moteur de processus, lui, ne peut pas sauter une étape. Le reliquat d’erreur d’une planification structurée, même faible, doit donc être rattrapé par autre chose : une validation en aval, une approbation, ou un outil qui refuse d’agir si l’étape préalable manque.
 
-La planification structurée convient quand les procédures sont nombreuses et changeantes, que leur auteur est un expert du métier plutôt qu’un modélisateur, et qu’une erreur d’ordre
-
-se détecte et se corrige. Elle convient mal à une séquence que la réglementation impose. Le conditionnement de connaissances procédurales, dont les Agent Skills, relève du chapitre 13.
+La planification structurée convient quand les procédures sont nombreuses et changeantes, que leur auteur est un expert du métier plutôt qu’un modélisateur, et qu’une erreur d’ordre se détecte et se corrige. Elle convient mal à une séquence que la réglementation impose. Le conditionnement de connaissances procédurales, dont les Agent Skills, relève du chapitre 13.
 
 ## 17.5 Le processus exposé comme outil
 
@@ -340,34 +336,32 @@ SYNTHÈSE EXÉCUTIVE
   1. *Irréversible* : séparer le plan de contrôle déterministe (machine à états durable, règles DMN et Cedar, transactions et compensations Saga) des cellules bornées confiées au modèle (interprétation, diagnostic multi-signaux).
   2. *Structurante dès la conception* : placer chaque appel au modèle entre une garde d’entrée déterministe (schéma, masquage des données personnelles, budget de jetons et de latence) et une garde de sortie qui vérifie les invariants métiers avant toute écriture dans un système d’enregistrement.
   3. *Réversible* : le choix du modèle, petit modèle spécialisé (SLM) ou grand modèle de raisonnement (LLM), dans une cellule bornée, remplaçable sans toucher au graphe d’orchestration parent.
-- **Indicateurs de gouvernance** : constance pass5 sur banc d’homologation, taux de rejet par les gardes d’invariants, taux d’activation du repli, latence et coût au 99e centile (𝑃99).
+- **Indicateurs de gouvernance** : constance pass^5 sur banc d’homologation, taux de rejet par les gardes d’invariants, taux d’activation du repli, latence et coût au 99e centile (𝑃_{99}).
 
 ## 17.8 Fiabilité composée d’une chaîne de décisions
 
 Les erreurs d’un agent s’accumulent d’une étape à l’autre (section 17.1). La loi de Lusser, formulée en 1952 en ingénierie aérospatiale, en donne la mesure : la fiabilité d’une série de maillons est le produit de leurs fiabilités. Un prototype juste huit fois sur dix, placé sans garde déterministe devant dix mille événements quotidiens, produit deux mille incidents par jour, à reprendre à la main.
 
-### De l’exactitude ponctuelle (pass @1) à la constance (pass𝑘)
+### De l’exactitude ponctuelle (pass @1) à la constance (pass^𝑘)
 
-Les classements académiques mesurent pass @𝑘, la probabilité qu’au moins un essai sur 𝑘 réussisse. Le critère convient quand un compilateur ou un développeur écarte sans frais les propositions erronées. Un processus transactionnel — instruire un sinistre, modifier un approvisionnement, reconfigurer un équipement — doit au contraire appliquer la politique d’affaires à chacune des 𝑘 exécutions d’un même dossier. C’est ce que mesure pass𝑘, métrique des bancs d’évaluation d’agents transactionnels (𝜏-bench). Pour 𝑛 décisions supposées indépendantes, de précision moyenne 𝑝, la borne de Lusser décroît de façon exponentielle :
+Les classements académiques mesurent pass @𝑘, la probabilité qu’au moins un essai sur 𝑘 réussisse. Le critère convient quand un compilateur ou un développeur écarte sans frais les propositions erronées. Un processus transactionnel — instruire un sinistre, modifier un approvisionnement, reconfigurer un équipement — doit au contraire appliquer la politique d’affaires à chacune des 𝑘 exécutions d’un même dossier. C’est ce que mesure pass^𝑘, métrique des bancs d’évaluation d’agents transactionnels (𝜏-bench). Pour 𝑛 décisions supposées indépendantes, de précision moyenne 𝑝, la borne de Lusser décroît de façon exponentielle :
 
 𝑅_{seq}(𝑛) = ∏_{𝑖=1}^{𝑛} 𝑝_𝑖 ≈ 𝑝^𝑛, pass^𝑘(𝑛) = 𝑝^{𝑛𝑘}
 
 Deux ordres de grandeur :
 
-- avec 𝑝= 0, 95, un flux linéaire de 𝑛 = 12 étapes libres réussit 0,95^{12} ≈ 54,0 % des passages (pass @1), et sa reproductibilité sur cinq contrôles successifs (pass5) tombe à 0,95^{60} ≈ 4,6 %;
-- avec 𝑝= 0, 99, au prix d’un modèle de pointe, un dossier complexe de 𝑛 = 30 étapes atteint 0,99^{30} ≈ 74,0 % au premier essai et 0,99^{150} ≈ 22,1 % en pass5, loin des SLA de 99, 5 % exigés en production.
+- avec 𝑝= 0, 95, un flux linéaire de 𝑛 = 12 étapes libres réussit 0,95^{12} ≈ 54,0 % des passages (pass @1), et sa reproductibilité sur cinq contrôles successifs (pass^5) tombe à 0,95^{60} ≈ 4,6 %;
+- avec 𝑝= 0, 99, au prix d’un modèle de pointe, un dossier complexe de 𝑛 = 30 étapes atteint 0,99^{30} ≈ 74,0 % au premier essai et 0,99^{150} ≈ 22,1 % en pass^5, loin des SLA de 99, 5 % exigés en production.
 
 ### Erreurs corrélées et coût de l’auto-correction
 
-La dégradation réelle est plus rapide que la borne, car les erreurs successives ne sont pas indépendantes (𝑃(err𝑖+1 ∣err𝑖) ≫1 −𝑝) : dans une boucle ouverte, chaque sortie inter
-
-médiaire entre dans la fenêtre de contexte du tour suivant (OWASP ASI08 — Cascading Failures). Trois effets en découlent.
+La dégradation réelle est plus rapide que la borne, car les erreurs successives ne sont pas indépendantes (𝑃(err_{𝑖+1} ∣ err_𝑖) ≫ 1 − 𝑝) : dans une boucle ouverte, chaque sortie intermédiaire entre dans la fenêtre de contexte du tour suivant (OWASP ASI08 — Cascading Failures). Trois effets en découlent.
 
 1. **Ancrage sur une hallucination précoce** : une mauvaise interprétation contractuelle au tour 3 biaise toutes les requêtes suivantes; le modèle justifie son erreur initiale avec une assurance croissante.
 2. **Inflation quadratique des nouvelles tentatives** : un agent laissé libre de « réfléchir » après une erreur d’API empile les traces d’exception dans l’historique transmis à chaque tour, ce qui multiplie par vingt la consommation de jetons sans corriger la cause.
-3. **Queue lourde de latence (𝑃99)** : les temps de réponse d’une boucle ouverte sont erratiques, incompatibles avec les régimes opérationnels courts.
+3. **Queue lourde de latence (𝑃_{99})** : les temps de réponse d’une boucle ouverte sont erratiques, incompatibles avec les régimes opérationnels courts.
 
-L’extrait suivant chiffre le gain du découplage : une épine dorsale déterministe et 𝑚≪𝑛 cellules bornées, munies de gardes déterministes et d’un repli, portent la fiabilité au-delà de 99, 3 %.
+L’extrait suivant chiffre le gain du découplage : une épine dorsale déterministe et 𝑚≪𝑛 cellules bornées, munies de gardes déterministes et d’un repli, portent la fiabilité au-delà de 99,3 %.
 
 #### Extrait 17.1 — `[Exécuté en CI]` · Modèle quantitatif de fiabilité composée et de gain d’encapsulation hybride
 
@@ -405,7 +399,7 @@ if __name__ == "__main__":
     # {'cell_rel': 0.99789, 'e2e_pass_1': 0.9937, 'e2e_pass_k': 0.9688}
 ```
 
-Un système critique ne s’industrialise pas en visant 𝑝= 0, 9999, mais en réduisant l’exposant 𝑚 des transitions probabilistes et en filtrant leurs sorties par du code déterministe.
+Un système critique ne s’industrialise pas en visant 𝑝 = 0,9999, mais en réduisant l’exposant 𝑚 des transitions probabilistes et en filtrant leurs sorties par du code déterministe.
 
 ## 17.9 Séparation entre plan de contrôle déterministe et cellule bornée
 
@@ -427,7 +421,7 @@ La section 17.2 décrit l’enveloppe déterministe dans sa forme BPMN. En voici
 > - Outil MCP Idempotent
 > - Compensation Saga
 > - S5 • Clôture
-> - Traces OTel gen_ai.*
+> - Traces OTel gen_ai.\*
 > - Audit immuable
 > - Entrée typée + Budget Proposition validée
 > - 2. Enceinte d'Isolation de la Cellule Cognitive Bornée (Zéro Écriture Irréversible Directe)
@@ -457,10 +451,9 @@ La section 17.2 décrit l’enveloppe déterministe dans sa forme BPMN. En voici
 
 L’enveloppe se compose de quatre éléments.
 
-1. **L’épine dorsale d’état durable** : exécutée sur Temporal, Restate ou un moteur BPMN 2.0/DMN, elle seule détient l’ordre légal des étapes, le journal d’événements rejouable,
-  les clés d’idempotence, les compensations Saga et les budgets. Une injection de prompt ne peut pas sauter un contrôle compilé dans le graphe déterministe.
+1. **L’épine dorsale d’état durable** : exécutée sur Temporal, Restate ou un moteur BPMN 2.0/DMN, elle seule détient l’ordre légal des étapes, le journal d’événements rejouable, les clés d’idempotence, les compensations Saga et les budgets. Une injection de prompt ne peut pas sauter un contrôle compilé dans le graphe déterministe.
 2. **La garde d’entrée** : avant toute inférence, elle valide le schéma amont, masque les renseignements personnels superflus (Loi 25, RGPD), filtre les motifs d’injection indirecte (OWASP ASI01) et assemble le plus petit contexte suffisant.
-3. **La cellule bornée** : le modèle, SLM ou LLM, analyse les signaux ambigus ou non structurés. Ses outils MCP sont restreints à la lecture et à la simulation. Un compteur externe arrête la boucle à 𝐾max tours.
+3. **La cellule bornée** : le modèle, SLM ou LLM, analyse les signaux ambigus ou non structurés. Ses outils MCP sont restreints à la lecture et à la simulation. Un compteur externe arrête la boucle à 𝐾_{max} tours.
 4. **La garde de sortie et le disjoncteur** : la proposition passe par un décodage contraint (Structured Outputs), puis par une vérification déterministe des invariants (Cedar ou OPA, existence des références citées, seuil de confiance calibrée 𝜏). L’épine dorsale n’exécute l’écriture idempotente qu’après cette vérification. En cas de rejet, de dépassement de délai ou d’erreur HTTP 429, le disjoncteur route le dossier vers une règle statique sûre ou une file HOTL.
 
 Deux règles de cette enveloppe vont au-delà de ce que retient l’exposé. Les outils de la cellule sont limités à la lecture et à la simulation; l’exposé admet qu’un outil d’agent borné soit une tâche de service, un sous-processus entier ou l’appel d’un autre processus, que le moteur exécute (section 17.2), et il donne à un agent ouvert accès aux systèmes d’enregistrement par un processus exposé comme outil (section 17.5). Le seuil 𝜏 s’ajoute aux issues nommées; l’exposé demande des issues nommées et routables, et ne tient le niveau de confiance que pour une information d’appoint, car un seuil reporte le problème sur le branchement suivant (section 17.2).
@@ -567,9 +560,7 @@ export async function resolveEquipmentAlertWorkflow(
 
 **ÉCLAIRAGE SECTORIEL — Secteur bancaire et assurances — reproductibilité et explicabilité déterministe sous BSIF E-23**
 
-Pour les institutions financières fédérales soumises à la ligne directrice BSIF E-23 révisée (en vigueur le 1er mai 2027) et pour les assureurs assujettis à l’Annexe III de l’EU AI Act (décembre
-
-2027), le découplage trace une frontière d’imputation des décisions que les équipes de gestion du risque de modèle peuvent vérifier.
+Pour les institutions financières fédérales soumises à la ligne directrice BSIF E-23 révisée (en vigueur le 1er mai 2027) et pour les assureurs assujettis à l’Annexe III de l’EU AI Act (décembre 2027), le découplage trace une frontière d’imputation des décisions que les équipes de gestion du risque de modèle peuvent vérifier.
 
 1. **Extraction sourcée, par la cellule bornée** : le modèle structure les faits tirés de constats ou d’états financiers hétérogènes, et attache à chaque attribut la coordonnée exacte et l’empreinte du passage source.
 2. **Adjudication déterministe, par table DMN ou moteur actuariel** : les calculs de ratios prudentiels, de franchises, d’exclusions légales et d’octroi restent codés dans des tables déterministes versionnées. Deux dossiers aux faits extraits identiques reçoivent, avec une probabilité de 1, 000, la même décision tarifaire et le même motif réglementaire opposable.
@@ -582,9 +573,9 @@ Les critères de la section 17.6 désignent la région à confier au modèle; le
 | --- | --- | --- | --- | --- | --- |
 | Entrées types | JSON, Protobuf, EDI typé | Écrans patrimoniaux sans API | Attributs structurés, événements | Texte libre, PDF, journaux bruités | Signaux multi-sources ambigus |
 | Mécanisme | Algorithme compilé exact | Sélecteurs UI (RPA) / Vision (CUA) | Machine à états & tables booléennes | Extraction mono-tour contrainte | Investigation bornée (`K <= 6`) |
-| Latence 𝑃95 | 5 à 80 ms | 2–15 s (RPA); 8–45 s (CUA) | 10 à 150 ms | 120 à 600 ms | 1,5 à 9,0 s |
+| Latence 𝑃_{95} | 5 à 80 ms | 2–15 s (RPA); 8–45 s (CUA) | 10 à 150 ms | 120 à 600 ms | 1,5 à 9,0 s |
 | Coût unitaire | < 0, 0001 $ CAD | 0, 005 – 0, 08 $ CAD | < 0, 0005 $ CAD | 0, 0005 – 0, 005 $ CAD | 0, 02 – 0, 35 $ CAD |
-| Constance pass5 | 100 % | 92 – 98 % | 100 % | 94 – 99 % | 82 – 96 % brut (> 99 % gardé) |
+| Constance pass^5 | 100 % | 92 – 98 % | 100 % | 94 – 99 % | 82 – 96 % brut (> 99 % gardé) |
 | Auditabilité | Immédiate (tests unitaires) | Moyenne (captures vidéo/journaux) | Maximale (tables lisibles métier) | Modérée (jeu étalon doré) | Forte uniquement sous garde |
 | Rôle cible | Calculs, CRUD, mutations SI | Pont transitoire AS/400 / client lourd | Épine dorsale, barèmes et seuils | Triage massif, normalisation | Diagnostic complexe, exceptions |
 
@@ -608,11 +599,11 @@ Les issues nommées que demande la section 17.2 deviennent un contrat par quatre
 1. **Décodage contraint et énumérations fermées** : la sortie obéit à une grammaire stricte (JSON Schema Draft 2020-12, `additionalProperties: false`). Les codes d’action appartiennent à un ensemble `enum` fini, qui comprend une valeur d’abstention (UNKNOWN).
 2. **Preuves d’ancrage par empreinte (SHA-256)** : chaque affirmation factuelle cite l’identifiant du fragment injecté et le préfixe de son empreinte. La garde de sortie le vérifie en 𝒪︀(1) et écarte les citations hallucinées.
 3. **Plafond sur les jetons de raisonnement** : avec les modèles à calcul adaptatif au moment de l’inférence, borner les seuls jetons visibles laisse le modèle dépenser 20 000 jetons de réflexion cachée sur un cas ambigu. Le harnais plafonne donc séparément `max_output_tokens` et `max_reasoning_tokens`.
-4. **Échéance temporelle monotone et confiance calibrée hors prompt** : avant chaque tour 𝑘+ 1 ≤𝐾max, le harnais vérifie qu’il reste assez de millisecondes avant l’échéance SLA pour forcer une synthèse. L’attribut `calibratedConfidence` ne vient jamais d’une auto-évaluation rédigée par le modèle, systématiquement trop confiante lors d’une hallucination. Le harnais le calcule après coup, par étalonnage de température ou prédiction conforme sur les `logprobs` des jetons de l’énumération `rootCauseCode`, contre un jeu de validation hors échantillon.
+4. **Échéance temporelle monotone et confiance calibrée hors prompt** : avant chaque tour 𝑘 + 1 ≤ 𝐾_{max}, le harnais vérifie qu’il reste assez de millisecondes avant l’échéance SLA pour forcer une synthèse. L’attribut `calibratedConfidence` ne vient jamais d’une auto-évaluation rédigée par le modèle, systématiquement trop confiante lors d’une hallucination. Le harnais le calcule après coup, par étalonnage de température ou prédiction conforme sur les `logprobs` des jetons de l’énumération `rootCauseCode`, contre un jeu de validation hors échantillon.
 
 Les bornes dépendent de la classe de cellule.
 
-| Classe de cellule | Profil de modèle | Tours lecture (𝐾max) | Plafond jetons réflexion | Latence 𝑃99 max | Budget unitaire | Repli sur dépassement |
+| Classe de cellule | Profil de modèle | Tours lecture (𝐾_{max}) | Plafond jetons réflexion | Latence 𝑃_{99} max | Budget unitaire | Repli sur dépassement |
 | --- | --- | --- | --- | --- | --- | --- |
 | C1 — Extraction atomique | SLM 3B–14B | 0 (mono-passe) | 0 (désactivé) | 600 ms | 0, 003 $ CAD | Modèle secondaire ou file saisie |
 | C2 — Diagnostic opérationnel | SLM domaine / LLM rapide | 3 à 5 | ≤2 048 | 8, 0 s | 0, 08 $ CAD | Synthèse partielle + escalade HOTL |
@@ -685,44 +676,42 @@ Le schéma de sortie de la cellule de diagnostic réunit ces contraintes.
 
 **Situation initiale (T4 2026)** : en parallèle de l’incident déclencheur à 41 000 $ CAD, causé par un prototype d’achat qui avait bouclé pendant onze heures un dimanche sur une erreur HTTP 429 non gérée, Boréal Services Numériques (BSN) exploitait un agent d’investigation de pannes télématiques. C’était une boucle ReAct ouverte, qui exposait dix-neuf outils ServiceNow, Snowflake et Salesforce. Trois défauts bloquaient son passage à l’échelle.
 
-1. *Inconstance des décisions* : rejouée cinq fois sur une même dérive de pression, la boucle concluait trois fois à une usure mécanique, une fois à un bruit de capteur, et modifiait une fois sans droit la priorité SLA du billet (pass5 = 61 %).
-2. *Tempêtes de requêtes* : au moindre ralentissement de Snowflake, l’agent relançait jusqu’à quatorze requêtes SQL redondantes. La latence 𝑃99 montait à 142 s et le coût moyen à 1,85 $ CAD par alerte.
-3. *Veto réglementaire de BCA* : la direction des risques de Boréal Capital & Assurances (BCA) interdisait toute connexion aux polices bris de machine avant l’échéance BSIF E-23 du
-  1er mai 2027, faute de frontière prouvable entre le diagnostic probabiliste et le calcul contractuel de la franchise.
+1. *Inconstance des décisions* : rejouée cinq fois sur une même dérive de pression, la boucle concluait trois fois à une usure mécanique, une fois à un bruit de capteur, et modifiait une fois sans droit la priorité SLA du billet (pass^5 = 61 %).
+2. *Tempêtes de requêtes* : au moindre ralentissement de Snowflake, l’agent relançait jusqu’à quatorze requêtes SQL redondantes. La latence 𝑃_{99} montait à 142 s et le coût moyen à 1,85 $ CAD par alerte.
+3. *Veto réglementaire de BCA* : la direction des risques de Boréal Capital & Assurances (BCA) interdisait toute connexion aux polices bris de machine avant l’échéance BSIF E-23 du 1er mai 2027, faute de frontière prouvable entre le diagnostic probabiliste et le calcul contractuel de la franchise.
 
 **Architecture déployée (février 2027)** : l’équipe remplace la boucle ouverte par le workflow Temporal de l’extrait 17.2.
 
-- **Chez BSN** : l’épine dorsale assemble en amont les séries temporelles agrégées et retire des notes de terrain les identifiants d’employés (Loi 25). La cellule, de classe C2, n’accède plus qu’à 4 outils MCP en lecture seule, sous un plafond de 𝐾max = 5 tours, 2 048 jetons de raisonnement et 8,0 s. Sa sortie est conforme au schéma `BoundedDiagnosticCellOutput`.
+- **Chez BSN** : l’épine dorsale assemble en amont les séries temporelles agrégées et retire des notes de terrain les identifiants d’employés (Loi 25). La cellule, de classe C2, n’accède plus qu’à 4 outils MCP en lecture seule, sous un plafond de 𝐾_{max} = 5 tours, 2 048 jetons de raisonnement et 8,0 s. Sa sortie est conforme au schéma `BoundedDiagnosticCellOutput`.
 - **Chez BCA** : le code de panne validé est transmis à un moteur déterministe DMN et Cedar, qui calcule exactement la couverture, le plafond annuel et la franchise selon les règles Guidewire / IBM i.
 - **Repli** : pour les 3,1 % d’alertes hors distribution (`OUT_OF_DISTRIBUTION`) ou sous le seuil 𝜏= 0, 90, le disjoncteur ouvre un dossier AG-UI à l’ingénieur de niveau 2, sans écriture risquée dans l’ERP.
 
-**Scénario illustratif cible (18 400 alertes simulées sur 45 jours)** : la constance pass5 passe de 61,0 % à 99,2 % (homologation interne BSIF E-23 obtenue), la latence 𝑃99 de 142 s à 9,4 s, et le coût moyen d’inférence de 1,85 $ CAD à 0,06 $ CAD (-96,8 %).
+**Scénario illustratif cible (18 400 alertes simulées sur 45 jours)** : la constance pass^5 passe de 61,0 % à 99,2 % (homologation interne BSIF E-23 obtenue), la latence 𝑃_{99} de 142 s à 9,4 s, et le coût moyen d’inférence de 1,85 $ CAD à 0,06 $ CAD (-96,8 %).
 
 ## 17.13 Décision d’architecture et liste de contrôle
 
 **DÉCISION D’ARCHITECTURE — ADR-002 — Interdiction du routage global de processus critiques par inférence LLM non bornée**
 
 - **Statut** : acceptée | Périmètre : Fabrique Agentique d’Entreprise (L2 à L4) | Révision : semestrielle
-- **Contexte** : une boucle agentique qui pilote librement des séquences d’outils à effets subit une chute exponentielle de fiabilité composée (𝑝𝑛), des défaillances en cascade (OWASP ASI08) et des dérives de coût sur erreurs transitoires. Elle est incompatible avec l’auditabilité qu’exigent BSIF E-23, la Loi 25 et l’EU AI Act.
+- **Contexte** : une boucle agentique qui pilote librement des séquences d’outils à effets subit une chute exponentielle de fiabilité composée (𝑝^𝑛), des défaillances en cascade (OWASP ASI08) et des dérives de coût sur erreurs transitoires. Elle est incompatible avec l’auditabilité qu’exigent BSIF E-23, la Loi 25 et l’EU AI Act.
 - **Options évaluées** :
-  1. *Boucle LLM autonome de bout en bout, avec prompt durci* : rejetée. Une consigne textuelle ne garantit ni les invariants, ni la latence 𝑃99, ni les budgets.
+  1. *Boucle LLM autonome de bout en bout, avec prompt durci* : rejetée. Une consigne textuelle ne garantit ni les invariants, ni la latence 𝑃_{99}, ni les budgets.
   2. *Exclusion totale des modèles génératifs des flux métiers* : rejetée. Elle maintient des délais manuels de 48 heures sur les pièces et les signaux non structurés.
   3. *Épine dorsale déterministe durable encapsulant des cellules bornées* : retenue. Les transitions d’état, les calculs DMN et Cedar et les écritures MCP idempotentes s’exécutent hors du modèle; le LLM est restreint à des cellules en lecture seule, validées par des gardes d’entrée et de sortie, avec circuit de repli.
-- **Décision** : aucun flux critique ne confie son aiguillage global ni l’exécution directe d’écritures irréversibles à une boucle probabiliste ouverte. Toute cellule en production impose : (a) compteur externe 𝐾max, délai strict et plafond de jetons de raisonnement; (b) schéma JSON fermé, avec option d’abstention (UNKNOWN) et empreintes d’ancrage; (c)
-  garde déterministe d’invariants avant toute écriture par l’épine dorsale; (d) repli déterministe testé chaque trimestre.
+- **Décision** : aucun flux critique ne confie son aiguillage global ni l’exécution directe d’écritures irréversibles à une boucle probabiliste ouverte. Toute cellule en production impose : (a) compteur externe 𝐾_{max}, délai strict et plafond de jetons de raisonnement; (b) schéma JSON fermé, avec option d’abstention (UNKNOWN) et empreintes d’ancrage; (c) garde déterministe d’invariants avant toute écriture par l’épine dorsale; (d) repli déterministe testé chaque trimestre.
 - **Conséquences** :
-  - ‣ *Positives* : constance pass5 > 99 %, maîtrise des coûts et des SLA, auditabilité réglementaire, continuité d’activité en cas de panne d’inférence.
-  - ‣ *Négatives, coûts assumés* : modélisation explicite préalable des machines à états durables, des tables DMN et des contrats JSON.
-- **Condition de révision** : réétalonnage semestriel des plafonds 𝐾max et des seuils 𝜏, sur preuves statistiques tirées des bancs pass𝑘.
+  - *Positives* : constance pass^5 > 99 %, maîtrise des coûts et des SLA, auditabilité réglementaire, continuité d’activité en cas de panne d’inférence.
+  - *Négatives, coûts assumés* : modélisation explicite préalable des machines à états durables, des tables DMN et des contrats JSON.
+- **Condition de révision** : réétalonnage semestriel des plafonds 𝐾_{max} et des seuils 𝜏, sur preuves statistiques tirées des bancs pass^𝑘.
 
 ### Liste de contrôle de mise en production
 
 Huit exigences à valider avant de déployer un flux hybride.
 
-1. **Homologation en constance** : le flux complet a-t-il franchi un banc d’au moins cent cas réels et contradictoires, mesuré en pass5 et non en pass @1 ?
+1. **Homologation en constance** : le flux complet a-t-il franchi un banc d’au moins cent cas réels et contradictoires, mesuré en pass^5 et non en pass @1 ?
 2. **Écritures et calculs hors du modèle** : règles tarifaires, seuils financiers, clés d’idempotence et appels MCP à effets s’exécutent-ils tous dans l’épine dorsale ?
 3. **Lecture seule dans la cellule** : les outils exposés à la cellule sont-ils tous sans effet de bord irréversible ?
-4. **Quatre plafonds** : le harnais borne-t-il 𝐾max, les jetons d’entrée et de sortie, les jetons de raisonnement caché et l’échéance temporelle monotone ?
+4. **Quatre plafonds** : le harnais borne-t-il 𝐾_{max}, les jetons d’entrée et de sortie, les jetons de raisonnement caché et l’échéance temporelle monotone ?
 5. **Droit à l’abstention** : le schéma JSON fermé (`additionalProperties: false`) prévoit-il un statut UNKNOWN et des drapeaux d’incertitude, contre les réponses fabriquées ?
 6. **Contrôle des citations** : la garde de sortie vérifie-t-elle par calcul que chaque empreinte citée appartient au contexte injecté ?
 7. **Test de débranchement cognitif** : la bascule en moins de 500 ms vers le mode dégradé, règles statiques ou file HOTL, est-elle prouvée sous injection d’erreurs HTTP 429 et HTTP 504 ?

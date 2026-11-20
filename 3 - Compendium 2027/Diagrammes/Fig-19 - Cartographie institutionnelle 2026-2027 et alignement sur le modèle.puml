@@ -6,12 +6,10 @@ top to bottom direction
 skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
-skinparam rectangle<<invis>> {
-  BackgroundColor transparent
-  BorderColor transparent
-  FontColor transparent
-  FontSize 1
-}
+skinparam Padding 5
+skinparam nodesep 36
+skinparam ranksep 10
+skinparam linetype polyline
 
 rectangle "Pile Protocolaire d'Entreprise (Correspondance OSI)" as Pile #F8FAFC;line:64748B {
   rectangle C6 #FEF2F2;line:991B1B [
@@ -60,31 +58,15 @@ rectangle "Pile Protocolaire d'Entreprise (Correspondance OSI)" as Pile #F8FAFC;
 }
 
 rectangle "Autorités de Gouvernance Ouverte" as Gov #F8FAFC;line:64748B {
-  rectangle "Linux Foundation — AAIF (10 Projets)\nAgentic AI Foundation (Socle neutre inter-éditeurs)" as AAIF #FFFFFF;line:2563EB {
-    rectangle "**1. MCP (C3 Vertical)**" as A1 #F8FAFC;line:93C5FD
-    rectangle "**2. A2A v1.0 (C5 Pairs)**" as A2 #F8FAFC;line:93C5FD
-    rectangle "**3. AGENTS.md (C4 Dépôts)**" as A3 #F8FAFC;line:93C5FD
-    rectangle "**4. Goose (C1 Hôte Réf.)**" as A4 #F8FAFC;line:93C5FD
-    rectangle "**5. Agent Router (C2)**" as A5 #F8FAFC;line:93C5FD
-    rectangle "**6. agentgateway (C2)**" as A6 #F8FAFC;line:93C5FD
-    rectangle "**7. Agent Skills (C4)**" as A7 #F8FAFC;line:93C5FD
-    rectangle "**8. Open Responses (C4)**" as A8 #F8FAFC;line:93C5FD
-    rectangle "**9. OpenEnv (C1 Éval.)**" as A9 #F8FAFC;line:93C5FD
-    rectangle "**10. OpenSandbox (C1)**" as A10 #F8FAFC;line:93C5FD
-    A1 -[hidden]down-> A2
-    A2 -[hidden]down-> A3
-    A3 -[hidden]down-> A4
-    A4 -[hidden]down-> A5
-    A6 -[hidden]down-> A7
-    A7 -[hidden]down-> A8
-    A8 -[hidden]down-> A9
-    A9 -[hidden]down-> A10
-    A1 -[hidden]right-> A6
-    A2 -[hidden]right-> A7
-    A3 -[hidden]right-> A8
-    A4 -[hidden]right-> A9
-    A5 -[hidden]right-> A10
-  }
+  rectangle AAIF #FFFFFF;line:2563EB [
+    **Linux Foundation — AAIF (10 Projets)**
+    <color:#2563EB>Agentic AI Foundation (Socle neutre inter-éditeurs)</color>
+    | <#F8FAFC> **1. MCP (C3 Vertical)** | <#F8FAFC> **6. agentgateway (C2)** |
+    | <#F8FAFC> **2. A2A v1.0 (C5 Pairs)** | <#F8FAFC> **7. Agent Skills (C4)** |
+    | <#F8FAFC> **3. AGENTS.md (C4 Dépôts)** | <#F8FAFC> **8. Open Responses (C4)** |
+    | <#F8FAFC> **4. Goose (C1 Hôte Réf.)** | <#F8FAFC> **9. OpenEnv (C1 Éval.)** |
+    | <#F8FAFC> **5. Agent Router (C2)** | <#F8FAFC> **10. OpenSandbox (C1)** |
+  ]
 
   rectangle AGNTCY #ECFDF5;line:15803D [
     **Linux Foundation — AGNTCY**
@@ -103,20 +85,24 @@ rectangle "Autorités de Gouvernance Ouverte" as Gov #F8FAFC;line:64748B {
     WebMCP navigateur • DID & VC 2.0 • Mandats de paiement AP2
   ]
 
-  A5 -[hidden]down-> AGNTCY
+  AAIF -[hidden]down-> AGNTCY
   AGNTCY -[hidden]down-> ASF
   ASF -[hidden]down-> IETF
   IETF -[hidden]down-> W3C
 }
 
-C6 -[hidden]right-> A1
-C3 -[hidden]right-> AGNTCY
-C2 -[hidden]right-> ASF
-C1 -[hidden]right-> IETF
-C5 <.[#2563EB]. AAIF
-C5 <.[#475569]. AGNTCY
-C4 <.[#475569]. ASF
-C2 <.[#475569]. IETF
-C6 <.[#475569]. W3C
+Pile -[hidden]right-> Gov
+C6 -[hidden]right-> AAIF
+C5 -[hidden,norank]right-> AAIF
+C4 -[hidden,norank]right-> AGNTCY
+C3 -[hidden,norank]right-> ASF
+C2 -[hidden,norank]right-> IETF
+C1 -[hidden,norank]right-> W3C
+
+AAIF .[#2563EB,norank].> C5
+AGNTCY .[#475569,norank].> C5
+ASF .[#475569,norank].> C4
+IETF .[#475569,norank].> C2
+W3C .[#475569,norank].> C6
 
 @enduml

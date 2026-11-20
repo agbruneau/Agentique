@@ -4,7 +4,7 @@ flowchart TB
     subgraph SAGA["QUAND UNE ÉTAPE ÉCHOUE À MI-PARCOURS"]
         direction LR
         E1["<b>Étape 1</b><br/>engagée, et son effet est acquis"]
-        E2["<b>Étape 2</b><br/>échoue (×)"]
+        E2["<b>Étape 2</b><br/>échoue (x)"]
         C1["<b>Compensation 1</b><br/>une seconde opération, avec ses<br/>propres effets"]
         E1 --> E2 -.-> C1
     end

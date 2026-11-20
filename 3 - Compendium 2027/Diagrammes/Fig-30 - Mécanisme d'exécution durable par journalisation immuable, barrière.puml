@@ -2,73 +2,95 @@
 @startuml
 title Mécanisme d'Exécution Durable : Journal d'Événements, Barrière d'Effets de Bord et Rejeu sur Crash\nSéparation stricte entre logique déterministe rejouable et activités non déterministes (LLM, MCP, A2A, approbation CIBA)
 
-left to right direction
+top to bottom direction
 skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
+skinparam nodesep 18
+skinparam ranksep 12
 skinparam rectangle<<invis>> {
   BackgroundColor transparent
   BorderColor transparent
   FontColor transparent
   FontSize 1
 }
-
-rectangle " " as Columns <<invis>> {
-  rectangle "1. Workflow Déterministe\n(Zéro E/S directe • Horloge virtuelle)" as Col1 #EFF6FF;line:2563EB {
-    rectangle "**Étape A : Planification & Triage**\nawait executeActivity(extractClaim)" as W1 #FFFFFF;line:2563EB
-    rectangle "**Étape B : Mutation MCP Bornée**\nawait executeActivity(reserveHold)" as W2 #FFFFFF;line:2563EB
-    rectangle "**Étape C : Mise en veille Awakeable**\ncondition(cibaApproved, '14 days')\n**Mémoire libérée : 0 CPU / 0 RAM**" as W3 #FFF7ED;line:9A3412
-    rectangle "**Étape D : Revalidation au Réveil**\nVérification contrat, jeton OBO & quota" as W4 #ECFDF5;line:15803D
-    rectangle "**Étape E : Règlement & Audit**\nClôture transactionnelle immuable" as W5 #FFFFFF;line:1E293B
-    W1 -[hidden]left-> W2
-    W2 -[hidden]left-> W3
-    W3 -[hidden]left-> W4
-    W4 -[hidden]left-> W5
-  }
-
-  rectangle "2. Journal d'Événements Immuable\n(Append-Only Event History • Persistance Consensus)" as Col2 #F8FAFC;line:1E293B {
-    rectangle "**#1-#3 ActivityCompleted [extractClaim]**\nSortie LLM sérialisée & chiffrée AES-GCM" as J1 #FFFFFF;line:64748B
-    rectangle "**#4-#6 ActivityCompleted [reserveHold]**\nRéservation idempotente confirmée (clé #4)" as J2 #FFFFFF;line:64748B
-    rectangle "**#7 TimerStarted / AwakeableRegistered**\nAttente signal externe (Jour 1 → Jour 9)" as J3 #FFF7ED;line:9A3412
-    rectangle "**Jour 5 : Crash Nœud K8s + Déploiement v2.4**\nNouveau Worker rejoue #1 à #7 en 3,8 ms :\n**Zéro rappel LLM • Zéro double débit MCP**" as J4 #FEF2F2;line:DC2626
-    rectangle "**#8 WorkflowExecutionSignaled [CIBA_OK]**\nJeton signé du souscripteur reçu au Jour 9" as J5 #ECFDF5;line:15803D
-    rectangle "**#9-#12 Revalidation + Règlement Final**\nPiste d'audit intégrale conforme BSIF E-23" as J6 #FFFFFF;line:1E293B
-    J1 -[hidden]left-> J2
-    J2 -[hidden]left-> J3
-    J3 -[hidden]left-> J4
-    J4 -[hidden]left-> J5
-    J5 -[hidden]left-> J6
-  }
-
-  rectangle "**Barrière d'Effets de Bord**" as Barrier #FFFFFF;line:DC2626
-
-  rectangle "3. Activités Non Déterministes\n(Exécutées 1 seule fois ou idempotentes)" as Col3 #F8FAFC;line:475569 {
-    rectangle "**Inférence LLM / SLM (Open Responses)**\nSortie probabiliste capturée dans #3\nPolitique Retry sur HTTP 429 / 503" as A1 #FFFFFF;line:2563EB
-    rectangle "**Serveurs MCP & Pairs A2A v1.0**\nClé = hash(workflowId + activityId)\nDéduplication native côté SAP / Guidewire" as A2 #FFFFFF;line:15803D
-    rectangle "**Superviseur Humain HOTL (CIBA)**\nNotification asynchrone A2UI hors bande\nCallback webhook résolvant l'Awakeable" as A3 #FFFFFF;line:9A3412
-    rectangle "**Passerelle IAM & Politiques Cedar**\nRafraîchissement jeton OAuth 2.1 OBO\nVérification non-révocation post-réveil" as A4 #FFFFFF;line:475569
-    A1 -[hidden]left-> A2
-    A2 -[hidden]left-> A3
-    A3 -[hidden]left-> A4
-  }
-
-  W1 -[#2563EB]-> J1
-  W2 -[#2563EB]-> J2
-  W3 <-[#DC2626]- J4
-  J1 -[#1E293B]-> A1
-  J2 -[#15803D]-> A2
-  J5 <-[#15803D]- A3
-  J3 -[hidden]-> Barrier
-  Barrier -[hidden]-> A3
+skinparam rectangle {
+  BackgroundColor #FFFFFF
+  BorderColor #334155
+}
+skinparam legend {
+  BackgroundColor #F8FAFC
+  BorderColor #475569
+  FontName "Segoe UI"
 }
 
-rectangle Garanties #F8FAFC;line:475569 [
+rectangle "1. Workflow Déterministe\n(Zéro E/S directe • Horloge virtuelle)" as Col1 #EFF6FF;line:2563EB {
+  rectangle "**Étape A : Planification & Triage**\nawait executeActivity(extractClaim)" as W1 #FFFFFF;line:2563EB
+  rectangle "**Étape B : Mutation MCP Bornée**\nawait executeActivity(reserveHold)" as W2 #FFFFFF;line:2563EB
+  rectangle "**Étape C : Mise en veille Awakeable**\ncondition(cibaApproved, '14 days')\n**Mémoire libérée : 0 CPU / 0 RAM**" as W3 #FFF7ED;line:9A3412
+  rectangle "**Étape D : Revalidation au Réveil**\nVérification contrat, jeton OBO & quota" as W4 #ECFDF5;line:15803D
+  rectangle "**Étape E : Règlement & Audit**\nClôture transactionnelle immuable" as W5 #FFFFFF;line:1E293B
+  W1 -[hidden]down-> W2
+  W2 -[hidden]down-> W3
+  W3 -[hidden]down-> W4
+  W4 -[hidden]down-> W5
+}
+
+rectangle "2. Journal d'Événements Immuable\n(Append-Only Event History • Persistance Consensus)" as Col2 #F8FAFC;line:1E293B {
+  rectangle "**#1-#3 ActivityCompleted [extractClaim]**\nSortie LLM sérialisée & chiffrée AES-GCM" as J1 #FFFFFF;line:64748B
+  rectangle "**#4-#6 ActivityCompleted [reserveHold]**\nRéservation idempotente confirmée (clé #4)" as J2 #FFFFFF;line:64748B
+  rectangle "**#7 TimerStarted / AwakeableRegistered**\nAttente signal externe (Jour 1 → Jour 9)" as J3 #FFF7ED;line:9A3412
+  rectangle "**Jour 5 : Crash Nœud K8s + Déploiement v2.4**\nNouveau Worker rejoue #1 à #7 en 3,8 ms :\n**Zéro rappel LLM • Zéro double débit MCP**" as J4 #FEF2F2;line:DC2626
+  rectangle "**#8 WorkflowExecutionSignaled [CIBA_OK]**\nJeton signé du souscripteur reçu au Jour 9" as J5 #ECFDF5;line:15803D
+  rectangle "**#9-#12 Revalidation + Règlement Final**\nPiste d'audit intégrale conforme BSIF E-23" as J6 #FFFFFF;line:1E293B
+  J1 -[hidden]down-> J2
+  J2 -[hidden]down-> J3
+  J3 -[hidden]down-> J4
+  J4 -[hidden]down-> J5
+  J5 -[hidden]down-> J6
+}
+
+rectangle " " as BarrierCol <<invis>> {
+  rectangle " " as Bar1 <<invis>>
+  rectangle " " as Bar2 <<invis>>
+  rectangle " " as Bar3 <<invis>>
+  rectangle "<color:#991B1B>**Barrière**</color>\n<color:#991B1B>**d'Effets**</color>\n<color:#991B1B>**de Bord**</color>" as Barrier #FFFFFF;line:FFFFFF
+  Bar1 -[#DC2626,dashed]down- Bar2
+  Bar2 -[#DC2626,dashed]down- Bar3
+  Bar3 -[#DC2626,dashed]down- Barrier
+}
+
+rectangle "3. Activités Non Déterministes\n(Exécutées 1 seule fois ou idempotentes)" as Col3 #F8FAFC;line:475569 {
+  rectangle "**Inférence LLM / SLM (Open Responses)**\nSortie probabiliste capturée dans #3\nPolitique Retry sur HTTP 429 / 503" as A1 #FFFFFF;line:2563EB
+  rectangle "**Serveurs MCP & Pairs A2A v1.0**\nClé = hash(workflowId + activityId)\nDéduplication native côté SAP / Guidewire" as A2 #FFFFFF;line:15803D
+  rectangle "**Superviseur Humain HOTL (CIBA)**\nNotification asynchrone A2UI hors bande\nCallback webhook résolvant l'Awakeable" as A3 #FFFFFF;line:9A3412
+  rectangle "**Passerelle IAM & Politiques Cedar**\nRafraîchissement jeton OAuth 2.1 OBO\nVérification non-révocation post-réveil" as A4 #FFFFFF;line:475569
+  A1 -[hidden]down-> A2
+  A2 -[hidden]down-> A3
+  A3 -[hidden]down-> A4
+}
+
+W1 -[#2563EB]right-> J1
+W2 -[#2563EB]right-> J2
+W3 -[hidden]right-> J3
+W4 -[hidden]right-> J5
+W5 -[hidden]right-> J6
+
+J1 -[#1E293B]right- Bar1
+Bar1 -[#1E293B]right-> A1
+J2 -[#15803D]right- Bar2
+Bar2 -[#15803D]right-> A2
+J5 -[hidden]right-> Bar3
+Bar3 -[hidden]right-> A3
+J6 -[hidden]right-> Barrier
+Barrier -[hidden]right-> A4
+
+J4 -[#DC2626,norank]-> W3
+A3 -[#15803D,norank]-> J5
+
+legend bottom
   **Garanties architecturales d'exécution durable pour systèmes multi-agents (2027) :**
   1. Exactement-une-fois logique (Effectively-Once) : au rejeu, le moteur injecte la réponse mémorisée du journal sans réinvoquer le LLM ni l'outil MCP.
   2. Économie infonuagique (Scale-to-Zero) : un dossier suspendu 14 jours ne maintient aucun processus actif ni connexion TCP ouverte en attente.
-]
-
-W5 -[hidden]left-> Garanties
-J6 -[hidden]left-> Garanties
-A4 -[hidden]left-> Garanties
+endlegend
 @enduml

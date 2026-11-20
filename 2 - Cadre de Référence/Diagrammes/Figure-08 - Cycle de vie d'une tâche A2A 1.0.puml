@@ -1,0 +1,52 @@
+' Figure 8 — Cycle de vie d'une tâche A2A 1.0 (2 - Cadre de Référence, ch. 6, p. 80)
+' Source : A2A Project, a2a.proto, version de protocole 1.0
+@startuml
+left to right direction
+skinparam shadowing false
+skinparam roundcorner 12
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 11
+skinparam linetype polyline
+skinparam nodesep 24
+skinparam ranksep 48
+skinparam packageStyle rectangle
+
+package "ÉTATS ACTIFS" as Actifs #FFFFFF;line:CBD5E1 {
+  rectangle "**<color:#1B5E9E>TASK_STATE_SUBMITTED</color>**" as SUBMITTED #E6F0FA;line:1B5E9E
+  rectangle "**<color:#1B5E9E>TASK_STATE_WORKING</color>**" as WORKING #E6F0FA;line:1B5E9E
+  SUBMITTED -[#0F2744]-> WORKING
+}
+
+package "ÉTATS INTERROMPUS" as Interrompus #FFFFFF;line:CBD5E1 {
+  rectangle "**<color:#B45309>TASK_STATE_INPUT_REQUIRED</color>**\n<color:#475569>précision ou approbation</color>" as INPUT_REQUIRED #FEF3DC;line:B45309
+  rectangle "**<color:#B45309>TASK_STATE_AUTH_REQUIRED</color>**\n<color:#475569>justificatif supplémentaire</color>" as AUTH_REQUIRED #FEF3DC;line:B45309
+  INPUT_REQUIRED -[hidden]> AUTH_REQUIRED
+}
+
+package "ÉTATS TERMINAUX" as Terminaux #FFFFFF;line:CBD5E1 {
+  rectangle "**<color:#28774E>TASK_STATE_COMPLETED</color>**" as COMPLETED #E6F4EA;line:28774E
+  rectangle "**<color:#9C2F39>TASK_STATE_FAILED</color>**" as FAILED #FCE8EB;line:9C2F39
+  rectangle "**<color:#334155>TASK_STATE_CANCELED</color>**" as CANCELED #F1F5F9;line:64748B
+  rectangle "**<color:#334155>TASK_STATE_REJECTED</color>**" as REJECTED #F1F5F9;line:64748B
+  COMPLETED -[hidden]> FAILED
+  FAILED -[hidden]> CANCELED
+  CANCELED -[hidden]> REJECTED
+}
+
+WORKING -[hidden]-> INPUT_REQUIRED
+INPUT_REQUIRED -[hidden]-> COMPLETED
+
+WORKING -[#B45309]-> INPUT_REQUIRED : précision ou approbation
+WORKING <.[#0F2744,norank]. INPUT_REQUIRED : retour vers exécution
+WORKING -[#B45309]-> AUTH_REQUIRED : justificatif supplémentaire
+WORKING <.[#0F2744,norank]. AUTH_REQUIRED : retour vers exécution
+
+WORKING -[#0F2744]-> COMPLETED : fin de traitement
+WORKING -[#0F2744]-> FAILED : fin de traitement
+WORKING .[#0F2744].> CANCELED : annulation
+SUBMITTED .[#0F2744].> REJECTED : l’agent distant refuse la tâche
+
+legend bottom
+  Un message vers une tâche terminale renvoie ""UnsupportedOperationError""; annuler une tâche terminale renvoie ""TaskNotCancelableError"". Valeur zéro : ""TASK_STATE_UNSPECIFIED"".
+endlegend
+@enduml

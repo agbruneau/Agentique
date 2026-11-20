@@ -94,9 +94,7 @@ La documentation des éditeurs est franche sur les cas où le modèle ne tient p
 
 **Les composants à droits du propriétaire.** Chez Snowflake, les services de recherche Cortex Search interrogent avec les droits de leur propriétaire : tout rôle autorisé à interroger un service voit tout ce qu’il a indexé [11].
 
-**L’outil qui contourne l’agent.** Snowflake recommande de n’exposer qu’un agent Cortex sur un serveur destiné aux questions d’affaires gouvernées : l’outil d’exécution de SQL, placé
-
-à côté, permettrait de contourner les vues sémantiques et les requêtes vérifiées de l’agent. Le SQL direct va sur un serveur distinct, sous un rôle au moindre privilège, et les serveurs se découpent selon les frontières d’accès et les publics [11][12].
+**L’outil qui contourne l’agent.** Snowflake recommande de n’exposer qu’un agent Cortex sur un serveur destiné aux questions d’affaires gouvernées : l’outil d’exécution de SQL, placé à côté, permettrait de contourner les vues sémantiques et les requêtes vérifiées de l’agent. Le SQL direct va sur un serveur distinct, sous un rôle au moindre privilège, et les serveurs se découpent selon les frontières d’accès et les publics [11][12].
 
 **Le cache partagé.** Dans MCP, une réponse marquée `private` ne doit pas être partagée entre contextes d’autorisation, et le serveur ne doit pas compter sur ce marquage pour empêcher un accès [2].
 
@@ -166,9 +164,7 @@ EnterpriseBench, conçu chez Fujitsu Research, place une couche de contrôle d�
 
 Son analyse d’erreurs, menée sur cent tâches, est instructive : les échecs les plus fréquents sont la décomposition de la tâche (20 cas) et le choix du mauvais outil (18), alors que la récupération du contexte n’en explique que deux. Avec un plan de référence, les résultats s’améliorent d’environ 40 à 50 % [3].
 
-DAB arrive à un constat voisin avec des modèles de 2026. Parmi les réponses fausses, environ 57 % tiennent à une mise en œuvre incorrecte et 31 % à un plan incorrect; la sélection de
-
-mauvaises données n’en représente que 11 % [5]. Les agents trouvent la source et échouent à la joindre aux autres.
+DAB arrive à un constat voisin avec des modèles de 2026. Parmi les réponses fausses, environ 57 % tiennent à une mise en œuvre incorrecte et 31 % à un plan incorrect; la sélection de mauvaises données n’en représente que 11 % [5]. Les agents trouvent la source et échouent à la joindre aux autres.
 
 La conséquence pratique est contre-intuitive. Multiplier les connecteurs ne rend pas les données utilisables. Ce qui manque, ce sont les éléments qui permettent de combiner les sources : des clés communes, des définitions partagées, des parcours connus entre systèmes.
 

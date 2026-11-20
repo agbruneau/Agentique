@@ -65,9 +65,7 @@ Le guide n’est pas daté et ne donne aucun statut de disponibilité pour MCP n
 
 Salesforce dispose d’un second levier, MuleSoft Agent Fabric, dont le registre détecte les agents sur d’autres plateformes (chapitres 8 et 24). Selon un compte rendu du Magic Quadrant de Gartner, c’est cette capacité de plan de contrôle multi-plateformes qui est portée à son crédit, la réserve portant sur la prévisibilité des coûts, entre abonnements, crédits et facturation à l’usage [15].
 
-Les résultats du deuxième trimestre de l’exercice 2027, publiés le 26 août 2026, annoncent un revenu annuel récurrent d’Agentforce supérieur à 1,5 milliard de dollars, en hausse de plus
-
-de 240 % sur un an [5]. Le communiqué précise que la mesure englobe, depuis ce trimestre, d’autres offres d’IA, dont Slackbot et Headless 360 : la croissance n’est pas établie à périmètre constant. Surtout, il ne dit rien de l’interopérabilité.
+Les résultats du deuxième trimestre de l’exercice 2027, publiés le 26 août 2026, annoncent un revenu annuel récurrent d’Agentforce supérieur à 1,5 milliard de dollars, en hausse de plus de 240 % sur un an [5]. Le communiqué précise que la mesure englobe, depuis ce trimestre, d’autres offres d’IA, dont Slackbot et Headless 360 : la croissance n’est pas établie à périmètre constant. Surtout, il ne dit rien de l’interopérabilité.
 
 ## 26.4 ServiceNow
 
@@ -133,9 +131,7 @@ Les deux fournisseurs offrent des briques plutôt qu’une suite, mais leur plan
 
 ### IBM
 
-IBM affirme que watsonx Orchestrate gère, évalue et optimise les agents sur tout leur cycle de vie, y compris ceux développés hors de ses technologies, et parle d’un plan de contrôle agentique [11]. Ces affirmations viennent d’un billet d’annonce, qui ne mentionne ni MCP ni A2A et ne décrit aucun mécanisme. La documentation du kit de développement décrit, elle, le mécanisme [20]. Un agent externe s’inscrit sous l’un de plusieurs types : un point d’accès de complétion de conversation à la manière d’OpenAI, que la page dit le plus courant; A2A, en version 0.3.0 ou 1.0.0, les versions antérieures étant dépréciées; ou un connecteur propre à une plateforme, dont Salesforce Agentforce et Microsoft Copilot Studio. Une commande
-
-de découverte recense les agents d’Amazon Bedrock, d’Azure AI Foundry et de Vertex AI, dans l’offre en mode service seulement. L’identité de l’utilisateur peut être transmise à un agent A2A par échange de jeton (RFC 8693).
+IBM affirme que watsonx Orchestrate gère, évalue et optimise les agents sur tout leur cycle de vie, y compris ceux développés hors de ses technologies, et parle d’un plan de contrôle agentique [11]. Ces affirmations viennent d’un billet d’annonce, qui ne mentionne ni MCP ni A2A et ne décrit aucun mécanisme. La documentation du kit de développement décrit, elle, le mécanisme [20]. Un agent externe s’inscrit sous l’un de plusieurs types : un point d’accès de complétion de conversation à la manière d’OpenAI, que la page dit le plus courant; A2A, en version 0.3.0 ou 1.0.0, les versions antérieures étant dépréciées; ou un connecteur propre à une plateforme, dont Salesforce Agentforce et Microsoft Copilot Studio. Une commande de découverte recense les agents d’Amazon Bedrock, d’Azure AI Foundry et de Vertex AI, dans l’offre en mode service seulement. L’identité de l’utilisateur peut être transmise à un agent A2A par échange de jeton (RFC 8693).
 
 Les limites sont déclarées. Un agent externe ne peut servir que de collaborateur d’un agent natif. A2A n’est pris en charge que sur JSON-RPC, et les notifications poussées sont en aperçu technique, la plateforme procédant par interrogation périodique. La page ne décrit ni observation ni gouvernance appliquées à l’agent externe, hormis un réglage qui le réserve au plan de contrôle. Elle établit donc l’inventaire, premier niveau de l’échelle de la section 26.1, et rien au-delà. L’écart avec le billet d’annonce se réduit, sans disparaître.
 
@@ -155,9 +151,7 @@ Chez UiPath comme chez Camunda, l’agent est une étape d’un processus modél
 
 ## 26.8 Lire les évaluations d’analystes
 
-Gartner a publié à l’automne 2026 son premier Magic Quadrant sur les plateformes de gestion d’agents d’IA. Le rapport n’a pas été lu : la page de Gartner a refusé l’accès [18]. Ce
-
-qui suit vient de deux textes du 2 novembre 2026 : le billet d’IBM, dont le graphique est daté d’octobre 2026 [11], et un compte rendu de presse [15].
+Gartner a publié à l’automne 2026 son premier Magic Quadrant sur les plateformes de gestion d’agents d’IA. Le rapport n’a pas été lu : la page de Gartner a refusé l’accès [18]. Ce qui suit vient de deux textes du 2 novembre 2026 : le billet d’IBM, dont le graphique est daté d’octobre 2026 [11], et un compte rendu de presse [15].
 
 Treize éditeurs y figurent. Le compte rendu classe Microsoft, IBM et ServiceNow parmi les leaders, AWS et Salesforce parmi les quatre « challengers ». Il contient cependant une incohérence : son chapeau range ServiceNow parmi les challengers, son corps parmi les leaders. Le placement de ServiceNow reste donc à confirmer dans le rapport.
 

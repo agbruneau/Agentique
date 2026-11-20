@@ -95,9 +95,7 @@ L’instrumentation A2A ne rapporte que les requêtes du protocole, pas les opé
 
 Trois règles comptent pour la corrélation [8]. L’identifiant de contexte d’A2A se consigne dans `gen_ai.conversation.id`. La tâche se suit par `a2a.task.id` et `a2a.task.state`. Et l’interrogation périodique d’une tâche produit des spans frères sous le span parent de l’agent, non des enfants de l’envoi initial; menée dans un autre processus ou sans le contexte parent, elle produit des traces séparées, que seul l’identifiant de tâche relie.
 
-Deux lacunes sont à noter. La page lue ne décrit pas comment le contexte de trace passe du client au serveur A2A, et ne donne aucune consigne pour les notifications poussées [8]. La
-
-convention d’invocation d’agent distant ne dit pas comment le span client se rattache au span interne de l’agent appelé [9].
+Deux lacunes sont à noter. La page lue ne décrit pas comment le contexte de trace passe du client au serveur A2A, et ne donne aucune consigne pour les notifications poussées [8]. La convention d’invocation d’agent distant ne dit pas comment le span client se rattache au span interne de l’agent appelé [9].
 
 ### L’identifiant de conversation n’est pas un bouche-trou
 
@@ -147,9 +145,7 @@ Le patron qui s’en dégage sépare deux zones. La zone de télémétrie reçoi
 
 ### L’état de la pratique
 
-L’étude *Measuring Agents in Production* (MAP) repose sur vingt études de cas et un sondage de 306 réponses valides, dont 86 portent sur des systèmes déployés [11]. À la question des méthodes d’évaluation, que 31 répondants seulement ont traitée (figure 8), 74 % s’appuient
-
-surtout sur l’évaluation humaine, 52 % emploient un modèle de langage comme juge et 42 % des vérifications à base de règles. Les trois quarts des équipes étudiées évaluent sans jeu de bancs d’essai, et toutes celles qui emploient un juge automatique le doublent d’une revue humaine.
+L’étude *Measuring Agents in Production* (MAP) repose sur vingt études de cas et un sondage de 306 réponses valides, dont 86 portent sur des systèmes déployés [11]. À la question des méthodes d’évaluation, que 31 répondants seulement ont traitée (figure 8), 74 % s’appuient surtout sur l’évaluation humaine, 52 % emploient un modèle de langage comme juge et 42 % des vérifications à base de règles. Les trois quarts des équipes étudiées évaluent sans jeu de bancs d’essai, et toutes celles qui emploient un juge automatique le doublent d’une revue humaine.
 
 Ces chiffres se lisent avec les réserves des auteurs : participation volontaire, équipes concentrées dans les Amériques, entretiens plutôt qu’audits.
 
@@ -309,8 +305,7 @@ Prépublication relevée et relue au-delà du résumé le 14 novembre 2026 :
 
 SYNTHÈSE EXÉCUTIVE
 
-- **Enjeu stratégique** : Dans une architecture multi-agents asynchrone, la surveillance applicative classique (APM) devient aveugle : deux agents pris dans une boucle de refor
-  mulation stérile, ou qui propagent une hallucination initiale, ne renvoient que des codes HTTP 200 OK et des latences unitaires nominales, jusqu’à l’épuisement des budgets ou la corruption d’un dossier métier. Sans observabilité sémantique distribuée, l’entreprise perd la maîtrise de son délai de diagnostic (MTTR) et sa capacité de preuve réglementaire.
+- **Enjeu stratégique** : Dans une architecture multi-agents asynchrone, la surveillance applicative classique (APM) devient aveugle : deux agents pris dans une boucle de reformulation stérile, ou qui propagent une hallucination initiale, ne renvoient que des codes HTTP 200 OK et des latences unitaires nominales, jusqu’à l’épuisement des budgets ou la corruption d’un dossier métier. Sans observabilité sémantique distribuée, l’entreprise perd la maîtrise de son délai de diagnostic (MTTR) et sa capacité de preuve réglementaire.
 - **Décisions architecturales structurantes** :
   1. *Irréversible à moyen terme* : Imposer les conventions ouvertes OpenTelemetry `gen_ai.*` et la propagation W3C Trace Context sur chaque saut (Temporal, A2A v1.0, MCP, passerelles LLM, mémoire), sans SDK de traçage propriétaire captif d’un seul cadriciel. Ces conventions étant toutes au statut « Development » (section 33.2), cette imposition s’accompagne d’un schéma interne, d’une normalisation au collecteur et de l’épinglage d’une version.
   2. *Structurante dès le jour 1* : Déployer une collecte à double couloir via OpenTelemetry Collector, qui sépare physiquement la voie opérationnelle, caviardée de tout renseignement personnel (Loi 25, RGPD), d’une voûte forensique chiffrée par juridiction, lue sous procédure de bris de glace.
@@ -331,7 +326,7 @@ Pour restaurer une visibilité unifiée sans verrouillage fournisseur, OpenTelem
 L’observabilité reconstruit ainsi l’arbre causal qui relie l’intention initiale, la chaîne de délégation NHI, les cycles d’inférence, les appels MCP et les accès mémoire, et elle assainit les charges utiles sensibles avant toute écriture dans un index partagé.
 
 > **[Figure]**
-> - Trace Distribuée OpenTelemetry (gen_ai.*) & Pipeline de Caviardage PII de Bout en Bout
+> - Trace Distribuée OpenTelemetry (gen_ai.\*) & Pipeline de Caviardage PII de Bout en Bout
 > - Propagation W3C Trace Context (traceparent + baggage NHI/FinOps) à travers Sagas, A2A v1.0, Inférence LLM, MCP et Mémoire
 > - 1. Arbre Causal des Spans (trace_id: 4bf92f35...e4736 | saga.id: saga-inc-2027-088412)
 > - 0 ms 800 ms 1 800 ms 2 640 ms
@@ -358,7 +353,7 @@ L’observabilité reconstruit ainsi l’arbre causal qui relie l’intention in
 > - Dérive ratio jetons raisonnement / sortie
 > - Action : Arrêt Saga + Escalade HOTL
 
-*Fig. 46. – Trace distribuée OpenTelemetry (gen_ai.*) de bout en bout et pipeline d’assainissement PII via OpenTelemetry Collector.*
+*Fig. 46. – Trace distribuée OpenTelemetry (gen_ai.\*) de bout en bout et pipeline d’assainissement PII via OpenTelemetry Collector.*
 
 ## 33.9 Hiérarchie de spans et continuité W3C Trace Context
 
@@ -371,7 +366,7 @@ Pour instrumenter une fabrique multi-agents de façon homogène en 2027, chaque 
 - **Strate 2 — Saut de délégation horizontale (**`invoke_agent` **sur A2A v1.0)** : Chaque délégation vers un pair spécialiste génère un couple de spans CLIENT / SERVER, qui consignent `gen_ai.agent.id`, la version de l’Agent Card et la chaîne d’identité non humaine (`security.nhi.spiffe_id`, `security.obo.actor`) issue de l’échange RFC 8693. Les conventions lues ne décrivent ni le passage du contexte de trace du client au serveur A2A, ni le rattachement du span client au span interne de l’agent appelé (section 33.3) : pour relier ces traces, l’exposé retient l’identifiant de tâche (`a2a.task.id`) et l’identifiant d’affaires, recopié sur chaque span racine.
 - **Strate 3 — Cycle d’inférence (**`chat {gen_ai.request.model}`**)** : Ce span consigne le fournisseur (`gen_ai.provider.name`, qui remplace l’attribut déprécié `gen_ai.system`), le modèle demandé (`gen_ai.request.model`), le modèle effectivement servi après routage ou repli (`gen_ai.response.model`), les motifs d’arrêt (`gen_ai.response.finish_reasons`) et la ventilation des jetons : entrée au tarif plein, écriture et lecture dans le cache de préfixe, jetons de raisonnement et jetons de sortie.
 - **Strate 4 — Invocation verticale d’outil (**`execute_tool` **sur MCP)** : Le contexte de trace passe par `params._meta`, selon le mécanisme de la section 33.3. Le span enregistre `gen_ai.tool.name`, `gen_ai.tool.call.id`, la clé d’idempotence et le statut d’exécution.
-- **Strate 5 — Accès contextuel et mémoire (**`memory.retrieve` **/** `memory.commit`**)** : L’interrogation du graphe bi-temporel (Graphiti) ou de la couche sémantique (Apache Ossie) représente souvent le tiers de la latence d’un tour. Tracer le nombre d’entités extraites et l’horizon de validité temporelle permet de distinguer une hallucination du modèle d’un défaut de récupération contextuelle.
+- **Strate 5 — Accès contextuel et mémoire (`memory.retrieve` / `memory.commit`)** : L’interrogation du graphe bi-temporel (Graphiti) ou de la couche sémantique (Apache Ossie) représente souvent le tiers de la latence d’un tour. Tracer le nombre d’entités extraites et l’horizon de validité temporelle permet de distinguer une hallucination du modèle d’un défaut de récupération contextuelle.
 
 | Espace d’attributs | Clé normalisée (OpenTelemetry / extension) | Type | Obligatoire | Rôle opérationnel, sécuritaire et FinOps |
 | --- | --- | --- | --- | --- |
@@ -571,7 +566,7 @@ La cible de continuité causale suppose, sur les sauts A2A, un passage du contex
 
 ### Détection des boucles sémantiques
 
-Attendre l’épuisement passif du plafond `maxRemainingHops` gaspille latence et budget. Une boucle sémantique ne répète jamais mot pour mot la même phrase : le modèle reformule légèrement la même intention d’appel. Pour l’intercepter dès le deuxième cycle stérile, un analyseur en flux projette l’intention normalisée de chaque étape en un vecteur léger 𝐞𝑡 et évalue, sur les 𝑚 derniers pas, le score de stagnation sémantique :
+Attendre l’épuisement passif du plafond `maxRemainingHops` gaspille latence et budget. Une boucle sémantique ne répète jamais mot pour mot la même phrase : le modèle reformule légèrement la même intention d’appel. Pour l’intercepter dès le deuxième cycle stérile, un analyseur en flux projette l’intention normalisée de chaque étape en un vecteur léger 𝐞_𝑡 et évalue, sur les 𝑚 derniers pas, le score de stagnation sémantique :
 
 𝒮︀_{loop}(𝑡) = max_{1≤𝑗≤𝑚} cos(𝐞_𝑡, 𝐞_{𝑡−𝑗}) ⋅ 𝕀(Δ État(𝑡) = 0)
 
@@ -649,17 +644,16 @@ Dans deux environnements critiques, un simple index de recherche ne donne pas au
 
 **DÉCISION D’ARCHITECTURE — ADR-021 — Standardisation sur OpenTelemetry GenAI et collecte souveraine à double couloir PII**
 
-- **Statut** : Acceptée sous réserve (OTel gen_ai.* en statut Development) | Périmètre : Observabilité AgentOps (L1–L4) | Révision : Semestrielle
+- **Statut** : Acceptée sous réserve (OTel gen_ai.\* en statut Development) | Périmètre : Observabilité AgentOps (L1–L4) | Révision : Semestrielle
 - **Contexte** : L’exploitation de flux multi-agents inter-progiciels est aveugle aux pannes sémantiques et aux boucles actives, tandis que la journalisation brute des invites expose l’organisation à des infractions à la Loi 25 et au RGPD.
 - **Options évaluées** :
   1. *Traceurs propriétaires par cadriciel d’agents* : Incapables de relier ServiceNow, Agentforce, Temporal et IBM i; risque élevé de verrouillage. Rejetée.
   2. *Journalisation textuelle brute dans un SIEM central* : Coût prohibitif, absence de métriques natives sur les jetons et surexposition des PII. Rejetée.
   3. *Instrumentation OpenTelemetry* `gen_ai.*` *+ W3C Trace Context avec collecteurs régionaux à double couloir* : Format d’échange à retenir (section 33.2), dont les conventions restent toutefois au statut « Development »; séparation stricte entre télémétrie assainie et voûte forensique chiffrée par juridiction. Retenue.
-- **Décision** : Tout orchestrateur, agent, passerelle IA et serveur MCP doit propager `traceparent`/`baggage` et émettre ses spans en OTLP selon `gen_ai.*`. Aucun message brut non caviardé ne rejoint l’index général; l’accès aux charges forensiques exige une procédure de bris de glace journalisée, sous clé régionale. Imposer `gen_ai.*` à chaque composant va au-delà de ce que retient la section 33.2, où ces conventions, toutes au statut
-  « Development », se consomment par un schéma interne alimenté par normalisation au collecteur, avec une instrumentation épinglée à une version.
+- **Décision** : Tout orchestrateur, agent, passerelle IA et serveur MCP doit propager `traceparent`/`baggage` et émettre ses spans en OTLP selon `gen_ai.*`. Aucun message brut non caviardé ne rejoint l’index général; l’accès aux charges forensiques exige une procédure de bris de glace journalisée, sous clé régionale. Imposer `gen_ai.*` à chaque composant va au-delà de ce que retient la section 33.2, où ces conventions, toutes au statut « Development », se consomment par un schéma interne alimenté par normalisation au collecteur, avec une instrumentation épinglée à une version.
 - **Conséquences** :
-  - ‣ *Positives* : Vision causale unifiée, base exacte du coût par résultat, conformité Loi 25 / RGPD / BSIF E-23, portabilité du moteur analytique en aval.
-  - ‣ *Négatives / coûts assumés* : Exploitation des collecteurs et des seaux chiffrés régionaux, maintien des règles de masquage.
+  - *Positives* : Vision causale unifiée, base exacte du coût par résultat, conformité Loi 25 / RGPD / BSIF E-23, portabilité du moteur analytique en aval.
+  - *Négatives / coûts assumés* : Exploitation des collecteurs et des seaux chiffrés régionaux, maintien des règles de masquage.
 - **Condition de révision** : Révision semestrielle suivant l’évolution des conventions OpenTelemetry GenAI, dont le dépôt n’a publié aucune version (section 33.2).
 
 ### Liste de contrôle de mise en production

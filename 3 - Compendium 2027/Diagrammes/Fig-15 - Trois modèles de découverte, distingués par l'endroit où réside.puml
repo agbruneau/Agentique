@@ -1,9 +1,22 @@
 ' Fig. 15. – Trois modèles de découverte, distingués par l'endroit où réside l'index : centralisé, fédéré ou distribué.
 @startuml
 top to bottom direction
+hide stereotype
 skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
+skinparam nodesep 14
+skinparam ranksep 14
+skinparam rectangle<<invis>> {
+  BackgroundColor transparent
+  BorderColor transparent
+  FontColor transparent
+  FontSize 1
+}
+skinparam rectangle {
+  BackgroundColor #FFFFFF
+  BorderColor #94A3B8
+}
 
 rectangle "**Centralisé**" as Centralise #FFFFFF;line:94A3B8 {
   rectangle "éditeur" as E1 #F8FAFC;line:64748B
@@ -29,9 +42,11 @@ rectangle "**Fédéré**" as Federe #FFFFFF;line:94A3B8 {
   D2 -[hidden]right-> D3
 
   rectangle "**registre**" as R1 #EFF6FF;line:2563EB
+  rectangle " " as RGap <<invis>>
   rectangle "**registre**" as R2 #EFF6FF;line:2563EB
-  R1 -[hidden]right-> R2
-  R1 <-[#2563EB]right-> R2
+  R1 -[hidden]right-> RGap
+  RGap -[hidden]right-> R2
+  R2 <-[#2563EB,norank]-> R1
 
   D1 -[#94A3B8]down-> R1
   D2 -[#94A3B8]down-> R1
@@ -50,27 +65,26 @@ rectangle "**Distribué**" as Distribue #FFFFFF;line:94A3B8 {
   usecase "pair" as P4 #EFF6FF;line:2563EB
   usecase "pair" as P5 #EFF6FF;line:2563EB
 
-  P2 -[hidden]right-> P3
-  P4 -[hidden]right-> P5
-  P1 -[#94A3B8]- P2
-  P1 -[#94A3B8]- P3
-  P1 -[#94A3B8]- P4
-  P1 -[#94A3B8]- P5
-  P2 -[#94A3B8]- P3
-  P2 -[#94A3B8]- P4
-  P2 -[#94A3B8]- P5
-  P3 -[#94A3B8]- P4
-  P3 -[#94A3B8]- P5
-  P4 -[#94A3B8]- P5
-  P1 -[hidden]down-> P2
-  P2 -[hidden]down-> P4
+  P1 -[#94A3B8]down- P2
+  P1 -[#94A3B8]down- P3
+  P2 -[#94A3B8]right- P3
+  P2 -[#94A3B8]down- P4
+  P3 -[#94A3B8]down- P5
+  P4 -[#94A3B8]right- P5
+  P1 -[#94A3B8,norank]- P4
+  P1 -[#94A3B8,norank]- P5
+  P2 -[#94A3B8,norank]- P5
+  P3 -[#94A3B8,norank]- P4
 
   rectangle "**Où réside l'index**\nUn réseau pair-à-pair\nsans opérateur central" as DescD #FFFFFF;line:FFFFFF
   P4 -[hidden]down-> DescD
   P5 -[hidden]down-> DescD
 }
 
-Centralise -[hidden]right-> Federe
-Federe -[hidden]right-> Distribue
-
+E3 -[hidden]right-> D1
+D3 -[hidden]right-> P1
+Idx -[hidden]right-> R1
+R2 -[hidden]right-> P2
+DescC -[hidden]right-> DescF
+DescF -[hidden]right-> DescD
 @enduml

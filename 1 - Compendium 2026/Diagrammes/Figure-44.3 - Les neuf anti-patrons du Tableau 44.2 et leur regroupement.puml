@@ -11,14 +11,12 @@ skinparam legendBorderColor #BBBBBB
 
 title NEUF ANTI-PATRONS, ET UNE CORRECTION CHACUN
 
-rectangle "REGROUPEMENT DES NEUF ANTI-PATRONS" as AntiPatrons {
-  rectangle "**1-3  Sur la notation**\n\nConfondre un agent avec un\ncomposant, un outil avec un\nservice, une collaboration avec un\nflux.\n\n<i>corrections au Tableau 44.2</i>" as A1
-  rectangle "**4-6  Sur la gouvernance**\n\nModéliser l'autonomie sans son\npoint d'arrêt, l'identité sans son\nancrage, la trace sans son\nproducteur.\n\n<i>corrections au Tableau 44.2</i>" as A2
-  rectangle "**7-9  Sur la portée**\n\nÉtendre le formalisme au-delà de\nce qu'il sait dire — dont le\ndernier, que ce chapitre risque de\ncommettre.\n\n<i>§ 44.9</i>" as A3
+rectangle "**1-3  Sur la notation**\n\nConfondre un agent avec un\ncomposant, un outil avec un\nservice, une collaboration avec un\nflux.\n\n<i>corrections au Tableau 44.2</i>" as A1
+rectangle "**4-6  Sur la gouvernance**\n\nModéliser l'autonomie sans son\npoint d'arrêt, l'identité sans son\nancrage, la trace sans son\nproducteur.\n\n<i>corrections au Tableau 44.2</i>" as A2
+rectangle "**7-9  Sur la portée**\n\nÉtendre le formalisme au-delà de\nce qu'il sait dire — dont le\ndernier, que ce chapitre risque de\ncommettre.\n\n<i>§ 44.9</i>" as A3
 
-  A1 -[hidden]right- A2
-  A2 -[hidden]right- A3
-}
+A1 -[hidden]right- A2
+A2 -[hidden]right- A3
 
 legend bottom
   LE DERNIER EST CELUI QUE CE CHAPITRE RISQUE DE COMMETTRE — modéliser pour modéliser, et produire un blueprint

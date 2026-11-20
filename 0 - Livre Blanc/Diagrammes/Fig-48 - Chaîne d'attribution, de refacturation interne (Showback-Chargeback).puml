@@ -36,7 +36,7 @@ package "Pilotage & Réversibilité" as Pil {
 OTel --> TCO : Attribution agent
 FOCUS --> TCO : Coûts normalisés
 TCO --> Anom : Alertes dérive
-TCO --> Arb : Taux d'utilisation
-TCO --> Show : Imputation P&L
+TCO ---> Arb : Taux d'utilisation
+TCO ---> Show : Imputation P&L
 Show --> Rev : ROI ajusté du risque
 @enduml

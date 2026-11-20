@@ -16,9 +16,7 @@ La thèse de ce chapitre : en attendant les tribunaux, cette répartition se dé
 
 En droit anglais, un système d’IA n’a pas de personnalité juridique et ne peut pas être partie à un contrat; les actes d’un agent sont attribués à la personne qui le déploie [8]. La déclaration finale de la UK Jurisdiction Taskforce (UKJT) sur les dommages causés par l’IA, publiée en 2026 et non contraignante, part du même constat, d’après le résumé d’un cabinet : l’IA n’est pas responsable en tant que telle, et le droit de la négligence comme celui des contrats s’appliquent sans obstacle de principe [11].
 
-La Californie a inscrit la règle dans un texte. L’article 1714.46 de son Code civil, issu du projet de loi AB 316, vise toute action contre un défendeur qui a développé, modifié ou utilisé une IA à laquelle un dommage est imputé : ce défendeur ne peut pas soutenir que l’IA a causé le dommage de façon autonome [1]. Le texte préserve les autres moyens de défense, la preuve
-
-relative à la causalité et à la prévisibilité, ainsi que la faute comparée d’autres personnes. Il retire un argument sans créer de régime de responsabilité, et ses trois verbes (développer, modifier, utiliser) visent toute la chaîne, de l’éditeur à l’intégrateur et au déployeur.
+La Californie a inscrit la règle dans un texte. L’article 1714.46 de son Code civil, issu du projet de loi AB 316, vise toute action contre un défendeur qui a développé, modifié ou utilisé une IA à laquelle un dommage est imputé : ce défendeur ne peut pas soutenir que l’IA a causé le dommage de façon autonome [1]. Le texte préserve les autres moyens de défense, la preuve relative à la causalité et à la prévisibilité, ainsi que la faute comparée d’autres personnes. Il retire un argument sans créer de régime de responsabilité, et ses trois verbes (développer, modifier, utiliser) visent toute la chaîne, de l’éditeur à l’intégrateur et au déployeur.
 
 Au Canada, la décision *Moffatt c. Air Canada* (2024 BCCRT 149) sert d’illustration : le transporteur a répondu d’une information inexacte donnée par son robot conversationnel, le tribunal ayant écarté l’idée que celui-ci réponde de ses propres actes. Ce résumé repose sur des commentaires [14].
 
@@ -44,9 +42,7 @@ Browne Jacobson note que le cadre suppose une intention et un contrôle humains,
 
 ### Traduction en architecture
 
-Ce qui suit est une déduction. L’autorité réelle d’un agent logiciel est ce qui est configuré : portées, politiques, mandats signés (chapitres 10 et 30). Son autorité apparente est ce que le tiers perçoit : le canal, la marque, la carte d’agent, l’absence de limite annoncée. Le risque juridique loge dans l’écart. Un agent qui peut techniquement plus que le permis, et dont rien n’annonce les limites, fabrique de l’autorité apparente. D’où la recommandation de
-
-Baker McKenzie : définir et documenter les limites d’autorité de chaque agent, y compris les permissions et les identifiants qui lui sont remis [7].
+Ce qui suit est une déduction. L’autorité réelle d’un agent logiciel est ce qui est configuré : portées, politiques, mandats signés (chapitres 10 et 30). Son autorité apparente est ce que le tiers perçoit : le canal, la marque, la carte d’agent, l’absence de limite annoncée. Le risque juridique loge dans l’écart. Un agent qui peut techniquement plus que le permis, et dont rien n’annonce les limites, fabrique de l’autorité apparente. D’où la recommandation de Baker McKenzie : définir et documenter les limites d’autorité de chaque agent, y compris les permissions et les identifiants qui lui sont remis [7].
 
 > **[Figure]**
 > - Autorité apparente
@@ -127,9 +123,7 @@ Le marché se resserre. Verisk, éditeur des formulaires ISO (Insurance Services
 - **CG 40 48** limite l’exclusion aux préjudices personnels et publicitaires;
 - **CG 35 08** exclut les dommages corporels et matériels de la couverture des produits et des opérations terminées.
 
-La CSA situe en janvier 2026 l’introduction de l’exclusion d’ISO [6]. Des exclusions propres à certains assureurs s’y ajoutent : celle de Berkley, introduite en 2025 et qualifiée
-
-d’absolue, porte sur la responsabilité des administrateurs et dirigeants, professionnelle et fiduciaire [10]. La CSA nomme d’autres grands assureurs et conclut à la fin de la couverture « silencieuse », celle qui jouait sans exclusion expresse : une entreprise risque de s’assurer elle-même par défaut [6]. Une avocate citée par la même revue prévoit l’adoption rapide d’exclusions dans la plupart des branches, certains assureurs pouvant plutôt tarifer le risque par une surprime [10].
+La CSA situe en janvier 2026 l’introduction de l’exclusion d’ISO [6]. Des exclusions propres à certains assureurs s’y ajoutent : celle de Berkley, introduite en 2025 et qualifiée d’absolue, porte sur la responsabilité des administrateurs et dirigeants, professionnelle et fiduciaire [10]. La CSA nomme d’autres grands assureurs et conclut à la fin de la couverture « silencieuse », celle qui jouait sans exclusion expresse : une entreprise risque de s’assurer elle-même par défaut [6]. Une avocate citée par la même revue prévoit l’adoption rapide d’exclusions dans la plupart des branches, certains assureurs pouvant plutôt tarifer le risque par une surprime [10].
 
 Des produits de responsabilité propres à l’IA apparaissent, selon la CSA [6]. AIUC, qui maintient la certification AIUC-1 (chapitre 32), se dit entreprise de normes et d’assurance; sa page d’accueil ne précise ni les garanties ni l’assureur qui les porte [13].
 

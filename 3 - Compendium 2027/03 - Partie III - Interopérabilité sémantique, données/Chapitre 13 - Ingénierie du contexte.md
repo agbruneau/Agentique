@@ -14,9 +14,7 @@ La thèse de ce chapitre tient en trois propositions. Le contexte est une ressou
 
 L’ingénierie de prompt règle la formulation d’une demande dans un échange où l’humain relit chaque réponse et filtre lui-même ce qu’il renvoie au modèle. Dans un agent, ce filtre disparaît. L’orchestrateur assemble à chaque étape les instructions, les définitions d’outils, l’historique, les résultats d’appels, la mémoire et les documents récupérés. C’est cet assemblage, et non la demande initiale, qui détermine la décision.
 
-Une prépublication de mars 2026 propose de nommer ingénierie du contexte la discipline qui gère la composition, le moment, le format et la durée de vie de l’information dans le contexte d’un agent, et la compare à une logistique du savoir en juste-à-temps [1]. Anthropic
-
-en donnait dès septembre 2025 une définition voisine : l’ensemble des stratégies qui visent à sélectionner et à maintenir les meilleurs jetons pendant l’inférence, opération répétée à chaque appel et non faite une fois pour toutes [2].
+Une prépublication de mars 2026 propose de nommer ingénierie du contexte la discipline qui gère la composition, le moment, le format et la durée de vie de l’information dans le contexte d’un agent, et la compare à une logistique du savoir en juste-à-temps [1]. Anthropic en donnait dès septembre 2025 une définition voisine : l’ensemble des stratégies qui visent à sélectionner et à maintenir les meilleurs jetons pendant l’inférence, opération répétée à chaque appel et non faite une fois pour toutes [2].
 
 ### Une ressource à rendement décroissant
 
@@ -165,9 +163,7 @@ MCP ne fixe pas encore de mécanisme. La feuille de route d’août 2026 lance u
 
 L’économie de contexte ne se réduit pas à charger moins. Les fournisseurs de modèles facturent moins cher les préfixes déjà traités. Dans l’API de Claude, par exemple, le préfixe est mis en cache dans l’ordre outils, système, messages; une lecture au cache coûte un dixième du prix d’entrée de base sur la plupart des modèles, jusqu’à un quarantième sur certains, et modifier une définition d’outil invalide tout le cache [20].
 
-Il en résulte une tension de conception. Charger les outils à la demande réduit la fenêtre, mais tout changement au début du préfixe annule le bénéfice du cache. Un contexte bien construit place donc en tête ce qui est stable (politiques, outils de base, index des skills) et à la fin ce qui varie. La révision de juillet 2026 de MCP recommande pour cette raison aux
-
-serveurs de renvoyer leurs outils dans un ordre déterministe (chapitre 5); une passerelle qui filtre le catalogue selon l’appelant réduit cet effet (chapitre 24). Côté exploitant, le préfixe stable conditionne aussi le cache KV et le routage (chapitre 44). Le chiffrage de ces arbitrages relève du chapitre 40.
+Il en résulte une tension de conception. Charger les outils à la demande réduit la fenêtre, mais tout changement au début du préfixe annule le bénéfice du cache. Un contexte bien construit place donc en tête ce qui est stable (politiques, outils de base, index des skills) et à la fin ce qui varie. La révision de juillet 2026 de MCP recommande pour cette raison aux serveurs de renvoyer leurs outils dans un ordre déterministe (chapitre 5); une passerelle qui filtre le catalogue selon l’appelant réduit cet effet (chapitre 24). Côté exploitant, le préfixe stable conditionne aussi le cache KV et le routage (chapitre 44). Le chiffrage de ces arbitrages relève du chapitre 40.
 
 ### Préchargé ou juste-à-temps
 
@@ -261,8 +257,7 @@ Sources secondaires : aucune page secondaire n’a été lue. Les travaux suivan
 
 SYNTHÈSE EXÉCUTIVE
 
-- **Enjeu stratégique** : des fenêtres nominales d’un à deux millions de jetons laissent croire qu’il suffirait d’y verser bases documentaires, historiques de billets et journaux applicatifs bruts. En production, cette approche se heurte à trois limites : le coût cumulé dérive de
-  façon quadratique, la précision se dégrade par dilution de l’attention (*Context Rot*) et la surface d’injection indirecte s’élargit (OWASP ASI01).
+- **Enjeu stratégique** : des fenêtres nominales d’un à deux millions de jetons laissent croire qu’il suffirait d’y verser bases documentaires, historiques de billets et journaux applicatifs bruts. En production, cette approche se heurte à trois limites : le coût cumulé dérive de façon quadratique, la précision se dégrade par dilution de l’attention (*Context Rot*) et la surface d’injection indirecte s’élargit (OWASP ASI01).
 - **Décisions architecturales structurantes** :
   1. *Irréversible à moyen terme* : traiter la fenêtre de contexte comme une mémoire vive compilée par un pipeline déterministe de plateforme, et non comme une chaîne concaténée par chaque développeur. Ce pipeline filtre l’accès par ACL *avant* toute récupération documentaire.
   2. *Structurante dès le jour 1* : stratifier toute fenêtre d’inférence en quatre zones, du plus statique au plus volatil, pour maintenir un taux de succès du cache KV supérieur à 75 %; proscrire le transfert d’historiques conversationnels bruts entre agents pairs (A2A v1.0) au profit d’enveloppes structurées passées par référence (*Claim-Check*).
@@ -285,9 +280,9 @@ Au-delà de 32 000 à 64 000 jetons de contenus métier denses, la distribution 
 
 Une boucle agentique enchaîne 𝑁 tours d’inférence, souvent 6 à 15 par sous-tâche. Si chaque appel MCP ajoute sa réponse JSON brute au fil actif sans élagage, le volume pré-rempli croît à chaque tour et le coût cumulé devient quadratique en 𝑁. L’équation économique d’une saga fait apparaître le rôle du cache KV :
 
-𝐶tot = ∑𝑁 𝑖=1(𝑇fix𝑐kv + 𝑇𝑖𝑐in + 𝑂𝑖𝑐out)
+𝐶_{tot} = ∑_{𝑖=1}^{𝑁} (𝑇_{fix} 𝑐_{kv} + 𝑇_𝑖 𝑐_{in} + 𝑂_𝑖 𝑐_{out})
 
-Dans cette équation, 𝑇fix désigne le préfixe invariant, lu en cache au tarif réduit 𝑐kv (un dixième du tarif plein 𝑐in sur la plupart des modèles, jusqu’à un quarantième sur certains; tarif d’un seul fournisseur, l’API de Claude, section 13.5), 𝑇𝑖 les jetons dynamiques recalculés au tour 𝑖 et 𝑂𝑖 les jetons générés. Une erreur qui invalide le préfixe dès les premières lignes ramène 𝑇fix au tarif 𝑐in et quadruple à la fois la facture infonuagique et la latence TTFT.
+Dans cette équation, 𝑇_{fix} désigne le préfixe invariant, lu en cache au tarif réduit 𝑐_{kv} (un dixième du tarif plein 𝑐_{in} sur la plupart des modèles, jusqu’à un quarantième sur certains; tarif d’un seul fournisseur, l’API de Claude, section 13.5), 𝑇_𝑖 les jetons dynamiques recalculés au tour 𝑖 et 𝑂_𝑖 les jetons générés. Une erreur qui invalide le préfixe dès les premières lignes ramène 𝑇_{fix} au tarif 𝑐_{in} et quadruple à la fois la facture infonuagique et la latence TTFT.
 
 ### Résultats d’outils volumineux
 
@@ -355,7 +350,7 @@ Le rejet du résumé glissant seul, dans ce tableau comme dans l’ADR-008 (sect
 > - Stocke journaux complets & PDF hors prompt
 > - Affinité de Cache Préfixe (Tenant-Salted)
 > - 70 % à 88 % d'économie sur jetons d'entrée
-> - Métriques OpenTelemetry (gen_ai.context.*)
+> - Métriques OpenTelemetry (gen_ai.context.\*)
 > - Ratio Signal/Bruit • Taux Cache Hit • Troncatures
 
 *Fig. 22. – Pipeline industriel de Context Engineering : filtrage ACL pré-récupération, allocation du budget d’attention avec ancrage KV-cache et compilation d’enveloppe de transfert sans Context Rot.*
@@ -471,9 +466,7 @@ export class ContextWindowCompiler {
 }
 ```
 
-Ce compilateur apporte trois garanties. Toute inflation du catalogue d’outils fait échouer les tests dès l’intégration continue. La clé `tenantCacheRoutingKey`, salée par locataire et par niveau d’accréditation, route les requêtes d’une même saga vers
-
-le nœud GPU qui détient déjà le préfixe chaud, sans risque d’inférence entre locataires. L’assainissement des attributs et de `</evidence>` empêche une pièce de sortir de son conteneur documentaire. À chaque appel, la télémétrie OpenTelemetry émet quatre attributs (`gen_ai.context.layer0_tokens`, `gen_ai.context.cache_hit_ratio`, `gen_ai.context.evicted_chunks` et `gen_ai.context.citation_density`), et les équipes AgentOps y détectent en quelques minutes toute régression du taux de cache après une mise en production.
+Ce compilateur apporte trois garanties. Toute inflation du catalogue d’outils fait échouer les tests dès l’intégration continue. La clé `tenantCacheRoutingKey`, salée par locataire et par niveau d’accréditation, route les requêtes d’une même saga vers le nœud GPU qui détient déjà le préfixe chaud, sans risque d’inférence entre locataires. L’assainissement des attributs et de `</evidence>` empêche une pièce de sortir de son conteneur documentaire. À chaque appel, la télémétrie OpenTelemetry émet quatre attributs (`gen_ai.context.layer0_tokens`, `gen_ai.context.cache_hit_ratio`, `gen_ai.context.evicted_chunks` et `gen_ai.context.citation_density`), et les équipes AgentOps y détectent en quelques minutes toute régression du taux de cache après une mise en production.
 
 ## 13.9 Récupération hybride filtrée par ACL et preuves scellées
 
@@ -567,8 +560,7 @@ class AclAwareHybridRetriever:
 
 Dans l’instruction d’un sinistre industriel ou d’un litige en responsabilité civile, un dossier unique réunit couramment 1 500 à 4 000 pages : police maîtresse, sept avenants successifs, rapports d’expertise contradictoires et factures. Deux fautes d’ingénierie du contexte y sont inacceptables :
 
-1. **La compression abstractive précoce** : faire résumer une police d’assurance par un modèle intermédiaire gomme souvent les doubles négations contractuelles (*« sont exclus*
-  *les bris par défaut de lubrification, sauf si le capteur certifié a fait l’objet d’un étalonnage annuel attesté »*). Les clauses applicables doivent être injectées par extraction verbatim intégrale, avec leur hiérarchie de section, jamais par paraphrase.
+1. **La compression abstractive précoce** : faire résumer une police d’assurance par un modèle intermédiaire gomme souvent les doubles négations contractuelles (*« sont exclus les bris par défaut de lubrification, sauf si le capteur certifié a fait l’objet d’un étalonnage annuel attesté »*). Les clauses applicables doivent être injectées par extraction verbatim intégrale, avec leur hiérarchie de section, jamais par paraphrase.
 2. **L’absence d’ancrage opposable** : sous la ligne directrice BSIF E-23 comme devant un tribunal, une proposition d’indemnisation ou de refus sans renvoi exact (URI scellée, numéro d’avenant, page et bornes `char_start..char_end`) est inutilisable en *Human-on-the-Loop*. Un vérificateur post-génération doit bloquer toute conclusion dont l’extrait cité ne correspond pas exactement au segment couvert par le hash SHA-256 du dossier.
 
 ## 13.10 Transferts entre agents (A2A) : compaction typée et passage par référence
@@ -645,8 +637,8 @@ Mutualiser des grappes GPU entre des centaines de clients tout en activant le ca
   3. *Pipeline déterministe stratifié de contexte* : quotas rigides sur 4 strates, pré-filtrage ACL dans l’index hybride, déchargement par référence en magasin CAS (*Claim-Check*) et compaction typée aux frontières A2A. Retenue.
 - **Décision** : toute inférence d’agent L2–L4 passe obligatoirement par `ContextWindowCompiler`, avec : (a) tri canonique immuable de la Strate 0; (b) pré-filtrage OAuth 2.1 OBO dans l’index; (c) encapsulation signée SHA-256 des preuves; (d) interdiction de transférer les transcriptions brutes sur A2A v1.0.
 - **Conséquences** :
-  - ‣ *Positives* : économie de 70 à 90 % sur les jetons d’entrée, TTFT de l’ordre de la seconde, auditabilité probatoire et confinement des injections indirectes.
-  - ‣ *Négatives et coûts assumés* : synchronisation continue des ACL dans l’index hybride et exploitation d’un stockage immuable CAS.
+  - *Positives* : économie de 70 à 90 % sur les jetons d’entrée, TTFT de l’ordre de la seconde, auditabilité probatoire et confinement des injections indirectes.
+  - *Négatives et coûts assumés* : synchronisation continue des ACL dans l’index hybride et exploitation d’un stockage immuable CAS.
 - **Condition de révision** : réévaluation des quotas par strate sur preuves empiriques internes, à l’arrivée de nouvelles architectures d’attention hybride.
 
 ### Liste de contrôle de mise en production

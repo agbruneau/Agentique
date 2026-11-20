@@ -18,9 +18,7 @@ La référence est une prépublication d’avril 2026, « AI Agents Under EU Law
 
 Le règlement ne définit pas l’agent. Les auteurs le rattachent à la définition du système d’IA de l’article 3(1), qui admet déjà des « niveaux d’autonomie variables » et une capacité d’adaptation après le déploiement [1]. Un agent est donc un système d’IA, pas un modèle.
 
-Cette qualification crée deux objets réglementaires. Le modèle de langage sous-jacent, s’il est à usage général (GPAI), relève du chapitre V du règlement et de son propre fournisseur.
-
-L’agent construit dessus est un système, dont le fournisseur peut être une autre entreprise. Une organisation qui assemble un agent sur un modèle tiers hérite d’une chaîne documentaire : celle que le fournisseur du modèle doit lui remettre au titre de l’article 53 [1].
+Cette qualification crée deux objets réglementaires. Le modèle de langage sous-jacent, s’il est à usage général (GPAI), relève du chapitre V du règlement et de son propre fournisseur. L’agent construit dessus est un système, dont le fournisseur peut être une autre entreprise. Une organisation qui assemble un agent sur un modèle tiers hérite d’une chaîne documentaire : celle que le fournisseur du modèle doit lui remettre au titre de l’article 53 [1].
 
 ### Le risque suit l’usage
 
@@ -44,9 +42,7 @@ Pour un agent à haut risque, la prépublication relève quatre points de fricti
 | Transparence (art. 50) | Signaler l’interaction avec une IA; marquer les contenus synthétiques | L’obligation peut s’étendre aux tiers touchés par une action, comme le destinataire d’un courriel |
 | Modification substantielle (art. 3(23)) | Tout changement non prévu à l’évaluation de conformité initiale relance celle-ci | La dérive de comportement est continue et n’a pas de date |
 
-Un comportement adaptatif prévu et évalué, comme le choix d’un outil dans un catalogue documenté ou la récupération de documents, n’est pas une modification substantielle. L’apprentissage continu après le déploiement et la dérive émergente peuvent en être une. L’article 43(4) admet des changements prédéterminés, mais rien ne dit qu’une dérive gra
-
-duelle puisse l’être. D’où la formule des auteurs : un système agentique à haut risque dont la dérive n’est pas traçable ne peut pas, aujourd’hui, satisfaire aux exigences essentielles du règlement [1]. Par extension, selon la lecture de ce chapitre, le routage entre modèles (chapitre 44), la bascule de fournisseur (chapitre 46) ou un modèle distillé (chapitre 47) devraient figurer d’avance parmi les changements prévus.
+Un comportement adaptatif prévu et évalué, comme le choix d’un outil dans un catalogue documenté ou la récupération de documents, n’est pas une modification substantielle. L’apprentissage continu après le déploiement et la dérive émergente peuvent en être une. L’article 43(4) admet des changements prédéterminés, mais rien ne dit qu’une dérive graduelle puisse l’être. D’où la formule des auteurs : un système agentique à haut risque dont la dérive n’est pas traçable ne peut pas, aujourd’hui, satisfaire aux exigences essentielles du règlement [1]. Par extension, selon la lecture de ce chapitre, le routage entre modèles (chapitre 44), la bascule de fournisseur (chapitre 46) ou un modèle distillé (chapitre 47) devraient figurer d’avance parmi les changements prévus.
 
 La chaîne de valeur ajoute une incertitude. Selon l’article 25, un déployeur ou un tiers devient fournisseur s’il appose son nom sur un système à haut risque, le modifie substantiellement ou en change la destination [1]. Dans un système assemblé à partir de composants de plusieurs entreprises, plusieurs participants peuvent acquérir ce statut. Le moindre privilège est traité au chapitre 30.
 
@@ -68,9 +64,7 @@ La tâche fondatrice, selon les auteurs, est un inventaire exhaustif : actions e
 
 Le règlement (UE) 2026/1744 du 8 juillet 2026, dit Digital Omnibus on AI, modifie l’AI Act. Publié au Journal officiel le 24 juillet 2026, il est entré en vigueur le 27 juillet [2][3].
 
-La proposition initiale de la Commission, en novembre 2025, liait l’application des obligations à haut risque à la disponibilité des normes harmonisées [1]. Les colégislateurs ont
-
-remplacé ce mécanisme conditionnel par des dates fixes [8], que confirme le texte publié [2][3].
+La proposition initiale de la Commission, en novembre 2025, liait l’application des obligations à haut risque à la disponibilité des normes harmonisées [1]. Les colégislateurs ont remplacé ce mécanisme conditionnel par des dates fixes [8], que confirme le texte publié [2][3].
 
 > **[Figure]**
 > - INCHANGÉ
@@ -138,9 +132,7 @@ Le cadre décrit l’agent par ses composants : modèle, instructions, mémoire,
 
 Il sépare ensuite deux notions. L'**espace d’action** désigne ce que l’agent peut faire, selon ses outils et ses permissions. L'**autonomie** désigne sa latitude pour décider comment agir.
 
-Cinq types de risques sont retenus : actions erronées, actions non autorisées, actions biaisées, fuites de données et perturbation des systèmes connectés. La version 1.5 ajoute les risques systémiques et multi-agents : vitesse et volume qui débordent la supervision, effets
-
-en cascade, prolifération d’agents, défaillances de collaboration (mauvaise coordination, conflit, collusion; chapitre 45) et comportements émergents que l’essai de chaque agent isolé ne révèle pas [4].
+Cinq types de risques sont retenus : actions erronées, actions non autorisées, actions biaisées, fuites de données et perturbation des systèmes connectés. La version 1.5 ajoute les risques systémiques et multi-agents : vitesse et volume qui débordent la supervision, effets en cascade, prolifération d’agents, défaillances de collaboration (mauvaise coordination, conflit, collusion; chapitre 45) et comportements émergents que l’essai de chaque agent isolé ne révèle pas [4].
 
 ### Quatre dimensions
 

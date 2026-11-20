@@ -3,83 +3,49 @@
 
 @startuml
 top to bottom direction
-hide stereotype
-skinparam packageStyle rectangle
-skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam roundcorner 6
 skinparam defaultFontName "Segoe UI"
 skinparam defaultFontSize 13
-skinparam shadowing false
-skinparam roundCorner 4
-skinparam nodesep 35
+skinparam backgroundColor #FFFFFF
+skinparam nodesep 30
 skinparam ranksep 18
-skinparam padding 14
-
-skinparam package {
-  BackgroundColor #FAF7F2
-  BorderColor #B8B3AA
-  FontColor #555555
-  FontStyle bold
-}
-
-skinparam package<<accent>> {
-  BackgroundColor #FFFFFF
-  BorderColor #9E3A14
-  BorderThickness 2
-  FontColor #9E3A14
-  FontStyle bold
-}
-
-skinparam rectangle {
-  BackgroundColor #FFFFFF
-  BorderColor #B8B3AA
-  FontColor #222222
-}
-
-skinparam rectangle<<accent>> {
-  BackgroundColor #FFFFFF
-  BorderColor #9E3A14
-  FontColor #222222
-}
-
-skinparam rectangle<<sub>> {
-  BackgroundColor #FFFFFF
-  BorderColor #FFFFFF
-  FontColor #222222
-}
 
 skinparam legendBackgroundColor #F7F5F0
 skinparam legendBorderColor #C4BEB5
 skinparam legendFontColor #333333
 
-package "RAG NAÏF — Une passe, une fois pour toutes" as P_LEFT {
-  rectangle "Encoder la requête" as N1
-  rectangle "Récupérer les passages les plus proches" as N2
-  rectangle "Conditionner la génération" as N3
-  rectangle "<b>la linéarité fait la fragilité</b>" as L_SUB <<sub>>
+rectangle C1 #FAF6F0;line:B8B2A6 [
+  <color:#57534E>RAG NAÏF</color>
+  ----
+  <b>Une passe, une fois pour toutes</b>
 
-  N1 -down-> N2 #888888
-  N2 -down-> N3 #888888
-  N3 -[hidden]down- L_SUB
-}
+  Encoder la requête
 
-package "RAG AGENTIQUE — Une boucle de contrôle" as P_RIGHT <<accent>> {
-  rectangle "Planifier la stratégie de recherche" as A1 <<accent>>
-  rectangle "Déclencher une ou plusieurs récupérations" as A2 <<accent>>
-  rectangle "Critiquer ce qui remonte" as A3 <<accent>>
-  rectangle "Itérer, ou s'arrêter" as A4 <<accent>>
-  rectangle "<b>le pipeline figé devient une boucle</b>" as R_SUB <<sub>>
+  Récupérer les passages les plus proches
 
-  A1 -down-> A2 #9E3A14
-  A2 -down-> A3 #9E3A14
-  A3 -down-> A4 #9E3A14
-  A4 .up.> A1 #9E3A14 : Itérer
-  A4 -[hidden]down- R_SUB
-}
+  Conditionner la génération
+  ----
+  <b>la linéarité fait la fragilité</b>
+]
 
-N1 -[hidden]right- A1
-N2 -[hidden]right- A2
-N3 -[hidden]right- A3
-L_SUB -[hidden]right- R_SUB
+rectangle C2 #FFFFFF;line:9A3412 [
+  <color:#9A3412>RAG AGENTIQUE</color>
+  ----
+  <b>Une boucle de contrôle</b>
+
+  Planifier la stratégie de recherche
+
+  Déclencher une ou plusieurs récupérations
+
+  Critiquer ce qui remonte
+
+  Itérer, ou s'arrêter
+  ----
+  <b>le pipeline figé devient une boucle</b>
+]
+
+C1 -[hidden]right-> C2
 
 legend
   Sept points de défaillance récurrents sont recensés sur la chaîne de récupération (Barnett et coll., 2024).

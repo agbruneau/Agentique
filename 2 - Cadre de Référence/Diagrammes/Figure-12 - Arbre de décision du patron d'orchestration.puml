@@ -1,0 +1,45 @@
+' Figure 12 — Arbre de décision du patron d'orchestration (2 - Cadre de Référence, ch. 7, p. 105)
+' Source : cadre CRE-IA-2026-01, d'après le Centre d'architecture Azure et Anthropic
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 14
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 11
+skinparam linetype ortho
+skinparam nodesep 24
+skinparam ranksep 26
+
+usecase "**Une règle, un appel d’outil**\n**ou au modèle suffit-il?**" as Q1 #FFFFFF;line:0F2744
+rectangle "**Pas d’agent**\ncode, règle ou appel direct" as R1 #475569;text:FFFFFF;line:475569
+rectangle "**<color:#B45309>À combiner avec tout patron</color>**\nLa qualité se vérifie? → boucle évaluateur-optimiseur (≤ 3 itérations).\nSous-tâches indépendantes? → parallélisation (sectionnement ou vote)." as Comb #FEF3DC;line:B45309;line.dashed
+
+usecase "**Les étapes sont-elles**\n**connues d’avance?**" as Q2 #FFFFFF;line:0F2744
+rectangle "**Flux déterministe**\nou chaîne séquentielle" as R2 #1B5E9E;text:FFFFFF;line:1B5E9E
+
+usecase "**Des domaines faiblement couplés**\n**réagissent-ils au même fait?**" as Q3 #FFFFFF;line:0F2744
+rectangle "**Chorégraphie**\névénementielle" as R3 #0F7682;text:FFFFFF;line:0F7682
+
+usecase "**Un agent unique bien outillé,**\n**contexte non saturé, suffit-il?**" as Q4 #FFFFFF;line:0F2744
+rectangle "**Agent unique**\nrecherche d’outils si nécessaire" as R4 #5A469B;text:FFFFFF;line:5A469B
+
+usecase "**Un spécialiste unique suffit**\n**après qualification?**" as Q5 #FFFFFF;line:0F2744
+rectangle "**Routage et transfert**\nl’agent de tête se retire" as R5 #16477A;text:FFFFFF;line:16477A
+rectangle "**Orchestrateur et exécutants**\nou clavardage de groupe si débat requis" as R6 #0F2744;text:FFFFFF;line:0F2744
+
+Q1 -[#475569]right-> R1 : <color:#28774E><b>OUI</b></color>
+R1 -[hidden]right-> Comb
+Q1 -[#475569]down-> Q2 : <color:#9C2F39><b>NON</b></color>
+Q2 -[#475569]right-> R2 : <color:#28774E><b>OUI</b></color>
+Q2 -[#475569]down-> Q3 : <color:#9C2F39><b>NON</b></color>
+Q3 -[#475569]down-> R3 : <color:#28774E><b>OUI</b></color>
+Q3 -[#475569]right-> Q4 : <color:#9C2F39><b>NON</b></color>
+Q4 -[#475569]right-> R4 : <color:#28774E><b>OUI</b></color>
+Q4 -[#475569]down-> Q5 : <color:#9C2F39><b>NON</b></color>
+Q5 -[#475569]right-> R5 : <color:#28774E><b>OUI</b></color>
+Q5 -[#475569]down-> R6 : <color:#9C2F39><b>NON</b></color>
+
+legend bottom left
+  Par défaut, retenir l’option la plus simple qui répond au besoin; passer au multiagent seulement sur preuve mesurée de gain.
+endlegend
+@enduml

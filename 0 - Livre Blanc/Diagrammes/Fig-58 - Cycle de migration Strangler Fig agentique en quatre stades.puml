@@ -7,6 +7,8 @@ left to right direction
 skinparam backgroundColor #ffffff
 skinparam shadowing false
 skinparam roundcorner 6
+skinparam nodesep 50
+skinparam ranksep 65
 skinparam defaultFontName SansSerif
 skinparam ArrowColor #324e67
 skinparam ArrowFontColor #172025

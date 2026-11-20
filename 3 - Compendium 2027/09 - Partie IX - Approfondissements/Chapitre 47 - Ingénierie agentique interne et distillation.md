@@ -125,9 +125,7 @@ Le chapitre 34 gradue l’autonomie d’un agent d’exploitation. Cette section
 
 ### Deux démonstrations
 
-Une prépublication d’avril 2026, LogJack, mesure l’injection indirecte par des journaux infonuagiques contre des modèles placés dans un banc de débogage simulé, non contre des agents de production [8]. Le banc d’essai compte 42 charges dans cinq catégories de journaux; huit modèles sont évalués. Quand l’agent est invité à corriger, le taux d’exécution littérale de la commande injectée va de 0 % à 86,2 % selon le modèle. Une consigne de ne
-
-rien exécuter ramène la plupart des modèles à 0 %, mais l’un d’eux exécute encore dans 30 % des essais. Une charge de téléchargement et d’exécution de code réussit sur six modèles sur huit. Les garde-fous des trois grands fournisseurs infonuagiques échouent pour l’essentiel : l’un n’intercepte qu’une des 32 charges évaluées, un autre aucune, alors que tous deux détectent ces charges présentées isolément. Certains modèles retirent la partie manifestement malveillante, puis exécutent le reste.
+Une prépublication d’avril 2026, LogJack, mesure l’injection indirecte par des journaux infonuagiques contre des modèles placés dans un banc de débogage simulé, non contre des agents de production [8]. Le banc d’essai compte 42 charges dans cinq catégories de journaux; huit modèles sont évalués. Quand l’agent est invité à corriger, le taux d’exécution littérale de la commande injectée va de 0 % à 86,2 % selon le modèle. Une consigne de ne rien exécuter ramène la plupart des modèles à 0 %, mais l’un d’eux exécute encore dans 30 % des essais. Une charge de téléchargement et d’exécution de code réussit sur six modèles sur huit. Les garde-fous des trois grands fournisseurs infonuagiques échouent pour l’essentiel : l’un n’intercepte qu’une des 32 charges évaluées, un autre aucune, alors que tous deux détectent ces charges présentées isolément. Certains modèles retirent la partie manifestement malveillante, puis exécutent le reste.
 
 Une seconde prépublication, d’août 2025, montre que l’attaquant n’a besoin d’aucune connaissance préalable du système visé [9]. Il envoie des requêtes qui provoquent des erreurs; celles-ci produisent une télémétrie plausible mais fausse, qui oriente l’agent vers une action nuisible qu’il croit optimale. La défense proposée, AIOpsShield, assainit la télémétrie en tirant parti de sa structure et de la faible place qu’y occupe le contenu fourni par l’utilisateur. Le résumé la dit fiable, sans chiffre.
 
@@ -150,9 +148,7 @@ La boucle de données (*data flywheel*) est le circuit par lequel les traces de 
 
 **Les traces contiennent des données sensibles.** Le chapitre 33 rappelle que le contenu des échanges est exclu de la télémétrie par défaut. La boucle exige ce contenu : elle le lit par référence, sous contrôle d’accès, après masquage. Les exemples qui en sont tirés suivent les règles de conservation et d’effacement (chapitre 38).
 
-**Un modèle mémorise ce qu’il a vu.** Carlini et ses coauteurs proposent une méthode pour mesurer le risque qu’un modèle génératif mémorise involontairement des séquences rares
-
-de ses données d’entraînement [10]. Cette mémorisation, concluent-ils, est persistante et difficile à éviter; ils extraient des secrets, tels des numéros de carte de crédit, de modèles non protégés, et appliquent la méthode à Smart Compose, entraîné sur des courriels. Les « canaris » en sont l’instrument : des séquences artificielles uniques, glissées dans le jeu d’entraînement, dont on mesure ensuite l’exposition dans le modèle. Ce canari n’est pas le déploiement canari du chapitre 34. Il s’insère à chaque cycle d’affinage; s’il ressort, la publication est bloquée.
+**Un modèle mémorise ce qu’il a vu.** Carlini et ses coauteurs proposent une méthode pour mesurer le risque qu’un modèle génératif mémorise involontairement des séquences rares de ses données d’entraînement [10]. Cette mémorisation, concluent-ils, est persistante et difficile à éviter; ils extraient des secrets, tels des numéros de carte de crédit, de modèles non protégés, et appliquent la méthode à Smart Compose, entraîné sur des courriels. Les « canaris » en sont l’instrument : des séquences artificielles uniques, glissées dans le jeu d’entraînement, dont on mesure ensuite l’exposition dans le modèle. Ce canari n’est pas le déploiement canari du chapitre 34. Il s’insère à chaque cycle d’affinage; s’il ressort, la publication est bloquée.
 
 **La boucle recycle les injections.** Une trace contient le contenu que l’agent a lu, y compris hostile (47.6). Promue en exemple, elle devient une instruction permanente.
 
@@ -264,9 +260,7 @@ SYNTHÈSE EXÉCUTIVE
 
 ## 47.9 Topologie d’une usine logicielle agentique : séparation des devoirs, graphes AST/SCIP et revue contradictoire
 
-Accélérer la production de code sans accélérer la preuve de sa justesse engorge les ingénieurs seniors de revues. Quand un même modèle écrit une fonction métier et le test qui la
-
-valide, il reproduit la même erreur des deux côtés de l’assertion : la suite est 100 % verte et fausse (47.1).
+Accélérer la production de code sans accélérer la preuve de sa justesse engorge les ingénieurs seniors de revues. Quand un même modèle écrit une fonction métier et le test qui la valide, il reproduit la même erreur des deux côtés de l’assertion : la suite est 100 % verte et fausse (47.1).
 
 ### Ancrer l’exploration du dépôt dans un graphe symbolique exact (AST / SCIP / LSP)
 
@@ -410,9 +404,7 @@ def make_oracle_suite(calc_fn):
 
 ## 47.10 Modernisation du patrimoine (RPG, COBOL, PL/SQL) : extraction neuro-symbolique et figuier étrangleur
 
-Le chapitre 25 pose qu’un agent CUA qui pilote un écran vert 5250/3270 est un pont tactique transitoire, jamais une cible. Reste à moderniser le cœur : 1,5 million de lignes RPG ILE sur IBM i (AS/400), ou COBOL/CICS sur z/OS, qui calculent chaque nuit au centime près des amortissements de crédit-bail, des retenues fiscales interprovinciales et des réserves actuarielles. Le figuier étrangleur est décrit au chapitre 25, l’exécution en miroir (*Shadow Mirroring* dans les extraits et l’ADR) à la section 47.4. Pour COBOL et RPG, la liste
-
-d’indexeurs SCIP lue ne compte aucun indexeur : l’index vient de l’outillage de l’éditeur ou n’existe pas (section 47.2). Aucune source lue ne traite RPG : l’application à ce langage est une extrapolation (section 47.4).
+Le chapitre 25 pose qu’un agent CUA qui pilote un écran vert 5250/3270 est un pont tactique transitoire, jamais une cible. Reste à moderniser le cœur : 1,5 million de lignes RPG ILE sur IBM i (AS/400), ou COBOL/CICS sur z/OS, qui calculent chaque nuit au centime près des amortissements de crédit-bail, des retenues fiscales interprovinciales et des réserves actuarielles. Le figuier étrangleur est décrit au chapitre 25, l’exécution en miroir (*Shadow Mirroring* dans les extraits et l’ADR) à la section 47.4. Pour COBOL et RPG, la liste d’indexeurs SCIP lue ne compte aucun indexeur : l’index vient de l’outillage de l’éditeur ou n’existe pas (section 47.2). Aucune source lue ne traite RPG : l’application à ce langage est une extrapolation (section 47.4).
 
 ### Pourquoi la traduction directe par un LLM échoue sur les systèmes centraux
 
@@ -431,9 +423,9 @@ L’usine combine analyse statique formelle et synthèse bornée par un agent po
 3. **Synthèse du service moderne en arithmétique décimale exacte, exposé par MCP** : L’agent bâtisseur traduit les règles extraites vers une spécification lisible, alignée sur Apache Ossie, et vers un service à typage fort qui n’emploie que des types décimaux à précision fixe (`rust_decimal`, aucun flottant binaire). Le service est enveloppé dans un serveur MCP Streamable HTTP doté de clés d’idempotence.
 4. **Validation par exécution en miroir avant la bascule** : Déployé derrière un réplicateur de trafic en production pendant au moins un cycle d’affaires complet, clôture périodique comprise (section 47.4), le nouveau service exécute chaque requête réelle en parallèle du programme IBM i, qui reste maître, sans commettre ses écritures. Un comparateur enregistre le taux de concordance exacte :
 
-Δshadow = ∑𝑁 𝑘=1 𝕀(∥ 𝑦moderne𝑘 −𝑦legacy𝑘 ∥∞> 0 ) = 0 sur 𝑁≥100 000
+Δ_{shadow} = ∑_{𝑘=1}^{𝑁} 𝕀(∥ 𝑦_𝑘^{moderne} − 𝑦_𝑘^{legacy} ∥_∞ > 0) = 0 sur 𝑁 ≥ 100 000
 
-Toute divergence (Δshadow > 0) renvoie le cas discordant dans l’oracle de l’usine, pour affiner la règle avant qu’un client réel soit touché. Les trente jours et l’écart de 0,00 $ sont des cibles de conception sans source (section 47.4) : l’écart nul se défend, la durée se discute, car trente jours couvrent une fin de mois, pas une fin d’exercice. Chaque écart ignoré est une décision signée, pas un réglage de l’agent. Une fois le zéro écart tenu sur un cycle complet, le trafic bascule progressivement (`5 % → 50 % → 100 %`), avec une réplication inverse CDC de repli. Le robot CUA d’écran vert peut alors être désactivé définitivement.
+Toute divergence (Δ_{shadow} > 0) renvoie le cas discordant dans l’oracle de l’usine, pour affiner la règle avant qu’un client réel soit touché. Les trente jours et l’écart de 0,00 $ sont des cibles de conception sans source (section 47.4) : l’écart nul se défend, la durée se discute, car trente jours couvrent une fin de mois, pas une fin d’exercice. Chaque écart ignoré est une décision signée, pas un réglage de l’agent. Une fois le zéro écart tenu sur un cycle complet, le trafic bascule progressivement (`5 % → 50 % → 100 %`), avec une réplication inverse CDC de repli. Le robot CUA d’écran vert peut alors être désactivé définitivement.
 
 #### Extrait 47.2 — `[Exécuté en CI]` · Contrat de pipeline Agentic SDLC imposant séparation des devoirs et parité *Golden Master* (sdlc-modernization-gate.yaml)
 
@@ -471,9 +463,7 @@ spec:
 
 ## 47.11 Sécurité du code généré et comparateur de parité en miroir
 
-Le code que les agents produisent à grande vitesse présente, même sous tests fonctionnels, deux risques que les revues classiques sous-estiment : des vulnérabilités subtiles de concur
-
-rence ou d’injection (OWASP ASI05) et une dérive silencieuse sur des états transitoires de base de données que la seule réponse HTTP ne reflète pas.
+Le code que les agents produisent à grande vitesse présente, même sous tests fonctionnels, deux risques que les revues classiques sous-estiment : des vulnérabilités subtiles de concurrence ou d’injection (OWASP ASI05) et une dérive silencieuse sur des états transitoires de base de données que la seule réponse HTTP ne reflète pas.
 
 Le comparateur ne s’en tient donc pas au corps JSON renvoyé à l’appelant. Il compare l’intention complète d’écriture transactionnelle (lignes comptables du grand livre, codes de taxes ventilés TPS/TVQ/TVH, événements émis) dans un mode d’essai à blanc isolé, et mesure l’écart de latence p99. La section 47.4 borne la technique : sûre seulement pour du code qui ne modifie pas de données, elle recommande pour les écritures d’écrire dans les deux systèmes puis de comparer à la lecture et, sur un traitement par lots, d’exécuter les deux systèmes sur le même fichier d’entrée en rapprochant les sorties enregistrement par enregistrement. Le mode d’essai à blanc décrit ici est une variante propre à ce volet, que cette section ne décrit pas.
 
@@ -546,9 +536,7 @@ Chez BCA, l’usine résorbe la dette patrimoniale AS/400 sans interrompre une s
 
 **FIL ROUGE — GROUPE BORÉAL · CAS FICTIF — Groupe Boréal : Extinction programmée de la cellule CUA d’écran 5250 par modernisation RPG → Rust/MCP chez BCA**
 
-**Situation initiale chez BCA** : Au chapitre 25, BCA avait ouvert son cœur IBM i par deux voies : un serveur MCP sur ses 14 programmes RPGLE maîtres (93,5 % du volume) et une seule cellule CUA (*Computer-Use Agent*) confinée, qui pilotait en écran vert 5250 le sous-module d’avenants acquis en 2008, sans sources modifiables (6,5 % du volume). Restait le patrimoine
-
-lui-même : 1,4 million de lignes RPG III et RPG ILE accumulées depuis 1998, maintenues par trois spécialistes seniors à dix-huit mois de la retraite. À 19 secondes par avenant, la cellule CUA, bien que sécurisée, bloquait le passage à l’échelle à haute fréquence. La refonte « Big Bang », estimée à 28 M$ CAD, restait gelée.
+**Situation initiale chez BCA** : Au chapitre 25, BCA avait ouvert son cœur IBM i par deux voies : un serveur MCP sur ses 14 programmes RPGLE maîtres (93,5 % du volume) et une seule cellule CUA (*Computer-Use Agent*) confinée, qui pilotait en écran vert 5250 le sous-module d’avenants acquis en 2008, sans sources modifiables (6,5 % du volume). Restait le patrimoine lui-même : 1,4 million de lignes RPG III et RPG ILE accumulées depuis 1998, maintenues par trois spécialistes seniors à dix-huit mois de la retraite. À 19 secondes par avenant, la cellule CUA, bien que sécurisée, bloquait le passage à l’échelle à haute fréquence. La refonte « Big Bang », estimée à 28 M$ CAD, restait gelée.
 
 **Déploiement de l’usine chez Boréal** :
 
@@ -651,8 +639,7 @@ Le patron de la section 47.5 isole le stockage. L’agent gardien y ajoute un ar
 *Fig. 61. – Architecture conjointe Agentic DataOps et SRE autonome : branchement Write-Audit-Publish sous Data Contracts et investigation causale OTel avec remédiation bornée par Cedar.*
 
 1. **Contrat de données (ODCS v3)** : Chaque table maîtresse ou topique Kafka qui alimente un agent L2–L4 est liée à un contrat déclaratif versionné. Le contrat fixe les types physiques, mais aussi les bornes physiques et statistiques (plages d’unités, divergence maximale de Kullback-Leibler ou PSI sur la distribution quotidienne, fraîcheur maximale selon le SLA), et renvoie à l’entité canonique Apache Ossie.
-2. **Ingestion sur branche isolée** : Les écritures entrantes atterrissent sur une branche de préparation invisible des consommateurs (`branch: staging_ingest_run_882`). Aucun
-  serveur MCP, aucun indexeur Graphiti et aucun tableau de bord ne lit cette branche. Une fois l’audit validé, la publication avance `main` jusqu’à la tête de la branche (47.5) par une bascule atomique de pointeur de métadonnées, en quelques millisecondes et sans recopier les fichiers Parquet.
+2. **Ingestion sur branche isolée** : Les écritures entrantes atterrissent sur une branche de préparation invisible des consommateurs (`branch: staging_ingest_run_882`). Aucun serveur MCP, aucun indexeur Graphiti et aucun tableau de bord ne lit cette branche. Une fois l’audit validé, la publication avance `main` jusqu’à la tête de la branche (47.5) par une bascule atomique de pointeur de métadonnées, en quelques millisecondes et sans recopier les fichiers Parquet.
 3. **Diagnostic croisé par l’agent gardien (OpenLineage et Git)** : Quand les sondes déterministes détectent une violation du contrat, un événement réveille l’agent. Le graphe OpenLineage lui permet de remonter en quelques secondes à la demande de tirage du service producteur qui a modifié l’émission. L’agent classe l’anomalie selon trois régimes d’action distincts :
   - **Cas A — Évolution additive ou renommage documenté, sans altération sémantique.** L’agent génère dans un bac à sable une proposition de migration dbt/SQL, vérifie sur un échantillon test que les métriques Apache Ossie aval ne changent pas, puis ouvre une demande de tirage pré-validée pour approbation rapide (L2). Le dernier instantané sain reste servi aux agents métiers.
   - **Cas B — Lot partiellement corrompu (par exemple 0,4 % d’enregistrements capteurs hors bornes physiques).** La règle de quarantaine granulaire s’applique automatiquement : les 99,6 % d’enregistrements conformes sont promus atomiquement sur `main`, les lignes fautives sont isolées avec une trace d’audit pour inspection par le fabricant.
@@ -696,11 +683,11 @@ spec:
 
 Une fluctuation saisonnière normale, comme la baisse de température ambiante des compresseurs en janvier au Québec, ne doit pas être confondue avec une corruption sémantique réelle, comme une bascule d’unité ou un capteur défectueux. Avant tout réveil d’agent, le gardien déterministe combine deux familles de vérifications sur la branche d’audit.
 
-1. **Indice de stabilité de population (PSI) par tranche quantifiée** : On partitionne la distribution historique de référence 𝑃 en 𝐵 intervalles équiprobables et on mesure les fréquences observées 𝑞𝑏 du lot entrant 𝑄. Le score de divergence, symétrique, s’écrit :
+1. **Indice de stabilité de population (PSI) par tranche quantifiée** : On partitionne la distribution historique de référence 𝑃 en 𝐵 intervalles équiprobables et on mesure les fréquences observées 𝑞_𝑏 du lot entrant 𝑄. Le score de divergence, symétrique, s’écrit :
 
 PSI(𝑃, 𝑄) = ∑_{𝑏=1}^{𝐵} (𝑝_𝑏 − 𝑞_𝑏) ln((𝑝_𝑏 + 𝜀)/(𝑞_𝑏 + 𝜀))
 
-Pour éviter les faux positifs que le bruit multinomial produit sur les lots creux de la nuit, le portier impose un effectif minimal de référence (𝑛𝑏≥20 observations par compartiment) et stratifie la distribution de base 𝑃 par régime opératoire de la machine (IDLE, `RAMP_UP`, `FULL_LOAD`). Un PSI < 0, 10 autorise la publication automatique immédiate. Une zone grise, 0, 10 ≤PSI ≤0, 20, déclenche une inspection contextuelle par l’agent, qui vérifie si un événement métier connu, tel qu’un arrêt planifié d’usine, explique le décalage. Au-delà de PSI > 0, 20, la promotion est verrouillée quelle que soit l’opinion du modèle de langage.
+Pour éviter les faux positifs que le bruit multinomial produit sur les lots creux de la nuit, le portier impose un effectif minimal de référence (𝑛_𝑏 ≥ 20 observations par compartiment) et stratifie la distribution de base 𝑃 par régime opératoire de la machine (IDLE, `RAMP_UP`, `FULL_LOAD`). Un PSI < 0,10 autorise la publication automatique immédiate. Une zone grise, 0,10 ≤ PSI ≤ 0,20, déclenche une inspection contextuelle par l’agent, qui vérifie si un événement métier connu, tel qu’un arrêt planifié d’usine, explique le décalage. Au-delà de PSI > 0,20, la promotion est verrouillée quelle que soit l’opinion du modèle de langage.
 
 2. **Invariants physiques multi-colonnes** : Un changement subtil peut conserver une moyenne plausible tout en brisant la cohérence entre deux grandeurs liées, par exemple une puissance électrique absorbée élevée alors que le débit massique et la vitesse de rotation rapportés valent zéro. Vérifier ces équations d’état sur la branche isolée détecte les corruptions partielles de télémétrie qu’aucun test univarié ne décèle.
 
@@ -811,8 +798,7 @@ Le mécanisme est celui de la section 47.6 : une erreur HTTP 500 provoquée à d
 
 Trois verrous encadrent cette attaque (OWASP ASI01 appliquée à l’exploitation) :
 
-1. **Assainissement structurel des traces et des attributs OTel avant lecture par l’agent** : Le serveur MCP d’interrogation des journaux sépare les champs système
-  immuables (codes d’état, latences, pile d’appels interne compilée, métriques eBPF) des chaînes brutes et des attributs de spans que le client externe contrôle (`http.target`, en-têtes personnalisés). Ces derniers sont plafonnés en cardinalité, tronqués et encapsulés dans des balises explicites `<untrusted_external_input>`, qui signalent leur statut de contenu non fiable. Ce balisage relève de la consigne : une consigne de ne rien exécuter ramène la plupart des modèles à 0 % d’exécution, mais l’un d’eux exécute encore dans 30 % des essais, et il ne faut pas compter sur le filtre, les garde-fous de contenu étant contournés ou inadaptés. Les mesures qui tiennent sont architecturales (section 47.6).
+1. **Assainissement structurel des traces et des attributs OTel avant lecture par l’agent** : Le serveur MCP d’interrogation des journaux sépare les champs système immuables (codes d’état, latences, pile d’appels interne compilée, métriques eBPF) des chaînes brutes et des attributs de spans que le client externe contrôle (`http.target`, en-têtes personnalisés). Ces derniers sont plafonnés en cardinalité, tronqués et encapsulés dans des balises explicites `<untrusted_external_input>`, qui signalent leur statut de contenu non fiable. Ce balisage relève de la consigne : une consigne de ne rien exécuter ramène la plupart des modèles à 0 % d’exécution, mais l’un d’eux exécute encore dans 30 % des essais, et il ne faut pas compter sur le filtre, les garde-fous de contenu étant contournés ou inadaptés. Les mesures qui tiennent sont architecturales (section 47.6).
 2. **Corroboration par des sources indépendantes** : Le coordinateur n’accorde jamais un score de confiance ≥88 % sur la base d’un seul message de journal. Une action R1 ou R2 exige la concordance d’une métrique numérique du système (PromQL ou OTel Metrics, hors du contrôle de l’utilisateur externe) ou d’un événement de déploiement Git authentifié.
 3. **Impossibilité structurelle d’affaiblir la posture de sécurité** : Comme l’Extrait 47.6 le codifie, le catalogue accessible à l’agent ne contient aucune procédure qui désactive le WAF, ouvre le réseau ou modifie l’IAM.
 
@@ -829,15 +815,13 @@ Au-delà des pannes d’infrastructure classiques (saturation disque, nœud Kube
 
 ### Arbitrage bayésien des hypothèses avant le choix d’une procédure
 
-Le coordinateur doit fusionner les conclusions des trois sous-agents enquêteurs (déploiement et code, infrastructure et base de données, réseau et tiers externes) pour atteindre
-
-le seuil `rootCauseConfidence >= 88` que la politique Cedar de l’Extrait 47.6 exige. Un quatrième modèle de langage qui voterait à l’intuition verbale réintroduirait le biais de rhétorique écarté au chapitre 41.
+Le coordinateur doit fusionner les conclusions des trois sous-agents enquêteurs (déploiement et code, infrastructure et base de données, réseau et tiers externes) pour atteindre le seuil `rootCauseConfidence >= 88` que la politique Cedar de l’Extrait 47.6 exige. Un quatrième modèle de langage qui voterait à l’intuition verbale réintroduirait le biais de rhétorique écarté au chapitre 41.
 
 Le coordinateur applique donc un agrégateur de preuves pondéré et déterministe aux faits structurés que remonte chaque enquêteur. Une corrélation temporelle étroite (Δ𝑡< 4 min) avec un changement Git ou canari authentifié, une anomalie de métrique primaire hors de 4 𝜎 et l’absence de preuve réfutante sur les couches adjacentes sont converties en rapports de vraisemblance explicites :
 
 𝑃(𝐻_𝑖 ∣ 𝐄) = (𝑃(𝐻_𝑖) ∏_{𝑚=1}^{𝑀} ℒ︀(𝑒_𝑚 ∣ 𝐻_𝑖)) / (𝑃(𝐻_0) + ∑_{𝑗=1}^{𝐾} 𝑃(𝐻_𝑗) ∏_{𝑚=1}^{𝑀} ℒ︀(𝑒_𝑚 ∣ 𝐻_𝑗))
 
-Si deux hypothèses concurrentes restent plausibles (𝑃(𝐻1 ∣𝐄) = 0, 54 et 𝑃(𝐻2 ∣𝐄) = 0, 41), le seuil de confiance de 0,88 n’est pas atteint. L’agent n’engage alors aucune mutation autonome et remet les deux pistes classées à l’ingénieur d’astreinte.
+Si deux hypothèses concurrentes restent plausibles (𝑃(𝐻_1 ∣ 𝐄) = 0,54 et 𝑃(𝐻_2 ∣ 𝐄) = 0,41), le seuil de confiance de 0,88 n’est pas atteint. L’agent n’engage alors aucune mutation autonome et remet les deux pistes classées à l’ingénieur d’astreinte.
 
 #### Extrait 47.7 — `[Exécuté en CI]` · Agrégateur déterministe de confiance causale de l’essaim SRE (sre_hypothesis_arbiter.py)
 
@@ -931,7 +915,6 @@ La décision ADR-030 encadre l’automatisation agentique des pipelines de donn�
 **DÉCISION D’ARCHITECTURE — ADR-030 — Contrats de données Write-Audit-Publish (ODCS) et SRE autonome à séparation stricte diagnostic lecture seule / runbooks Cedar**
 
 - **Statut** : Acceptée | Périmètre : plateforme de données, lac de données et exploitation SRE | Révision : Semestrielle
-
 - **Contexte** : Les agents métiers aval amplifient aussitôt toute corruption silencieuse de données amont. Un agent d’exploitation doté de privilèges shell ou d’écriture libre fait courir un risque systémique de destruction d’infrastructure s’il hallucine sous un afflux d’alertes.
 - **Options évaluées** :
   1. *Contrôles de qualité a posteriori, une fois les données déjà publiées dans le lac de données* : Rejetée — elle laisse une fenêtre où les agents autonomes agissent sur des faits erronés.
@@ -960,8 +943,8 @@ SYNTHÈSE EXÉCUTIVE
 - **Décisions architecturales structurantes** :
   1. *Irréversible en ingénierie cognitive* : Remplacer la rédaction manuelle des prompts par la compilation déclarative de programmes cognitifs (paradigme DSPy : optimiseurs bayésiens de signatures et de démonstrations), évaluée contre la suite 𝜏-bench du domaine.
   2. *Structurante pour l’économie d’échelle* : Opérer une boucle de données gouvernée (anonymisation irréversible Loi 25, filtrage anti-ASI06) qui distille périodiquement les trajectoires réussies de l’enseignant et les corrections contrastives des superviseurs HOTL vers des SLM d’entreprise (3B–8B, par SFT + DPO sur adaptateurs LoRA).
-  3. *Gouvernance du cycle de vie* : Ne promouvoir un SLM distillé sur agentgateway que si sa constance pass5 sur le jeu de réserve scellé atteint au moins 99 % de celle de l’enseignant, avec une route d’escalade vers l’enseignant pour les entrées hors distribution.
-- **Indicateurs de gouvernance** : Baisse du coût par résultat sur 4 trimestres (cible −65 % à −85 %), ratio de parité pass5_{SLM} / pass5_{Teacher} (≥0,99), zéro fuite de PII mémorisée aux tests d’extraction par canaris sur les poids affinés, et baisse de la latence p95 (-60 % à −75 %).
+  3. *Gouvernance du cycle de vie* : Ne promouvoir un SLM distillé sur agentgateway que si sa constance pass^5 sur le jeu de réserve scellé atteint au moins 99 % de celle de l’enseignant, avec une route d’escalade vers l’enseignant pour les entrées hors distribution.
+- **Indicateurs de gouvernance** : Baisse du coût par résultat sur 4 trimestres (cible −65 % à −85 %), ratio de parité pass^5_{SLM} / pass^5_{Teacher} (≥0,99), zéro fuite de PII mémorisée aux tests d’extraction par canaris sur les poids affinés, et baisse de la latence p95 (-60 % à −75 %).
 
 ## 47.18 Des traces aux jeux d’entraînement : signal de sélection et sas d’assainissement
 
@@ -972,7 +955,7 @@ Croisées avec le dénouement des sagas métiers et les décisions des supervise
 Les sorties brutes d’un modèle plus grand conduisent l’élève à l’effondrement de modèle et amplifient ses biais. Seules les sorties vérifiées entrent dans le jeu d’entraînement (47.8) : la vérification vient de l’issue métier, non du jugement du modèle. Deux sources la fournissent :
 
 1. **Trajectoires positives certifiées par la saga.** Une trace multi-tours (OpenTelemetry `gen_ai.*`, chapitre 33) n’entre dans le candidat d’entraînement supervisé (SFT) que si la saga durable correspondante a atteint son état terminal d’affaires vérifié, sans action de compensation ultérieure, sans réouverture de billet client dans les quatorze jours et sans violation de garde-fou Cedar.
-2. **Paires préférentielles issues du poste HOTL.** Quand un superviseur humain HOTL (chapitre 41) rejette ou corrige la proposition 𝑦rejeté d’un agent au profit d’une décision amendée 𝑦choisi sur le même contexte 𝑥, le système capture sans coût supplémentaire un triplet (𝑥, 𝑦choisi, 𝑦rejeté), exploitable directement par la DPO.
+2. **Paires préférentielles issues du poste HOTL.** Quand un superviseur humain HOTL (chapitre 41) rejette ou corrige la proposition 𝑦_{rejeté} d’un agent au profit d’une décision amendée 𝑦_{choisi} sur le même contexte 𝑥, le système capture sans coût supplémentaire un triplet (𝑥, 𝑦_{choisi}, 𝑦_{rejeté}), exploitable directement par la DPO.
 
 > **[Figure]**
 > - Volant d'Inertie Cognitif (Data Flywheel) : Compilation Déclarative et Distillation Continue LLM → SLM
@@ -1037,7 +1020,7 @@ Selon le paradigme de DSPy et des compilateurs déclaratifs d’agents, le déve
 2. La topologie modulaire du sous-graphe : chaîne de raisonnement bornée, vérification d’assertions déterministes.
 3. La fonction objectif à maximiser sur le banc d’évaluation de développement, par exemple l’exactitude sémantique pondérée sous contrainte de budget de jetons.
 
-Un optimiseur automatique, tel que MIPROv2 (47.7) ou la recherche évolutionnaire contrainte, explore l’espace des instructions concises. Il retient dans le jeu d’exemples validés les 3 à 5 démonstrations qui maximisent le score pass5 pour le couple tâche et modèle cible. Changer de modèle ne demande plus trois semaines de réécriture à la main, mais une recompilation automatisée de deux heures en CI/CD.
+Un optimiseur automatique, tel que MIPROv2 (47.7) ou la recherche évolutionnaire contrainte, explore l’espace des instructions concises. Il retient dans le jeu d’exemples validés les 3 à 5 démonstrations qui maximisent le score pass^5 pour le couple tâche et modèle cible. Changer de modèle ne demande plus trois semaines de réécriture à la main, mais une recompilation automatisée de deux heures en CI/CD.
 
 #### Extrait 47.8 — `[Exécuté en CI]` · Signature cognitive déclarative et métrique de compilation composite (declarative_compile_spec.py)
 
@@ -1092,26 +1075,26 @@ La recette de 47.8 prend ici les volumes suivants : SFT sur 2 000 à 15 000 traj
 
 ### Rentabilité et routage selon l’incertitude
 
-La distillation a un coût fixe d’entraînement et de validation 𝐶distill, amorti sur le volume mensuel d’exécutions 𝑉. Dans une cascade, l’élève examine d’abord chaque requête au coût 𝑐𝑆≪𝑐𝑇, résout directement la part 𝛼∈[0, 1] du flux et n’escalade que la fraction (1 −𝛼) vers l’enseignant, au coût 𝑐𝑇. Le coût unitaire moyen est 𝑐𝑆+ (1 −𝛼)𝑐𝑇. Le seuil mensuel de rentabilité nette 𝑉min vérifie :
+La distillation a un coût fixe d’entraînement et de validation 𝐶_{distill}, amorti sur le volume mensuel d’exécutions 𝑉. Dans une cascade, l’élève examine d’abord chaque requête au coût 𝑐_𝑆 ≪ 𝑐_𝑇, résout directement la part 𝛼∈[0, 1] du flux et n’escalade que la fraction (1 −𝛼) vers l’enseignant, au coût 𝑐_𝑇. Le coût unitaire moyen est 𝑐_𝑆 + (1 − 𝛼) 𝑐_𝑇. Le seuil mensuel de rentabilité nette 𝑉_{min} vérifie :
 
 𝑉 ⋅ (𝛼 𝑐_𝑇 − 𝑐_𝑆) > 𝐶_{distill} / 𝑀_{amort} ⇔ 𝑉_{min} = 𝐶_{distill} / (𝑀_{amort} ⋅ (𝛼 𝑐_𝑇 − 𝑐_𝑆))
 
-Avec des paramètres typiques en 2027 (𝐶distill = 900 $ CAD, GPU et CI inclus; durée de vie 𝑀amort = 3 mois avant rafraîchissement; 𝑐𝑇= 0, 042 $ CAD; 𝑐𝑆= 0, 003 $ CAD; 𝛼= 0, 82), le point mort est franchi dès 𝑉min ≈9 540 exécutions par mois, soit un peu plus de trois cents dossiers par jour. Au-delà, chaque million de transactions économise plus de 31 400 $ CAD et divise par quatre le TTFT.
+Avec des paramètres typiques en 2027 (𝐶_{distill} = 900 $ CAD, GPU et CI inclus; durée de vie 𝑀_{amort} = 3 mois avant rafraîchissement; 𝑐_𝑇 = 0,042 $ CAD; 𝑐_𝑆 = 0,003 $ CAD; 𝛼 = 0,82), le point mort est franchi dès 𝑉_{min} ≈ 9 540 exécutions par mois, soit un peu plus de trois cents dossiers par jour. Au-delà, chaque million de transactions économise plus de 31 400 $ CAD et divise par quatre le TTFT.
 
-Pour ne pas sacrifier la qualité sur les cas inédits (nouveau produit, clause juridique atypique), agentgateway maintient une cascade à rejet d’incertitude. L’alignement DPO tend à resserrer la distribution des log-probabilités (resserrement de l’entropie). Après l’affinage, un facteur de température de Platt est donc réétalonné sur le jeu de développement (15 %), et le seuil d’entropie 𝜏𝐻 est fixé par prédiction conforme. Si l’entropie calibrée des jetons structurels dépasse 𝜏𝐻, ou si le validateur de préconditions signale un cas hors distribution, la requête est rejouée de façon transparente vers l’enseignant en moins de 300 ms. Sa résolution alimente le prochain cycle trimestriel de distillation.
+Pour ne pas sacrifier la qualité sur les cas inédits (nouveau produit, clause juridique atypique), agentgateway maintient une cascade à rejet d’incertitude. L’alignement DPO tend à resserrer la distribution des log-probabilités (resserrement de l’entropie). Après l’affinage, un facteur de température de Platt est donc réétalonné sur le jeu de développement (15 %), et le seuil d’entropie 𝜏_𝐻 est fixé par prédiction conforme. Si l’entropie calibrée des jetons structurels dépasse 𝜏_𝐻, ou si le validateur de préconditions signale un cas hors distribution, la requête est rejouée de façon transparente vers l’enseignant en moins de 300 ms. Sa résolution alimente le prochain cycle trimestriel de distillation.
 
 Les chiffres du tableau suivant illustrent une cible de conception : selon la section 47.8, la recette Multi-LoRA (SFT + DPO) compose des briques sourcées séparément et reste à valider, et aucune mesure n’a été lue sur un élève distillé par cette recette.
 
 | Critère opérationnel | 100 % modèle frontière (enseignant) | SLM générique nu (sans distillation) | Cascade SLM LoRA distillé (85 %) + enseignant (15 %) |
 | --- | --- | --- | --- |
-| Constance pass5 (𝜏-bench métier) | 97,4 % (référence) | 71,8 % *(insuffisant en L3)* | 97,2 % (parité préservée) |
+| Constance pass^5 (𝜏-bench métier) | 97,4 % (référence) | 71,8 % *(insuffisant en L3)* | 97,2 % (parité préservée) |
 | Latence p95 par tour d’outil | 2 450 ms | 340 ms | 490 ms (-80 %) |
 | Coût moyen pour 1 000 résultats | 42,00 $ CAD | 3,10 $ CAD *(mais échecs coûteux)* | 9,40 $ CAD (-77,6 % net) |
 | Souveraineté et exécution en périphérie | Dépend d’une API ou d’un gros cluster | Possible mais peu fiable | Exécutable localement sur 1 GPU ou en périphérie |
 
-#### Extrait 47.9 — `[Exécuté en CI]` · Pipeline déclaratif de curation, distillation LoRA et porte de promotion pass5 (flywheel_distill_gate.py)
+#### Extrait 47.9 — `[Exécuté en CI]` · Pipeline déclaratif de curation, distillation LoRA et porte de promotion pass^5 (flywheel_distill_gate.py)
 
-Ce portier valide, avant d’enregistrer un nouvel adaptateur LoRA en production, l’absence de mémorisation de PII, la parité pass5 sur le jeu de réserve scellé (*holdout*) et le gain économique :
+Ce portier valide, avant d’enregistrer un nouvel adaptateur LoRA en production, l’absence de mémorisation de PII, la parité pass^5 sur le jeu de réserve scellé (*holdout*) et le gain économique :
 
 ```
 from dataclasses import dataclass
@@ -1154,19 +1137,17 @@ Un SLM spécialisé reste efficace tant que le monde métier ressemble à sa dis
 
 Pour prouver au responsable de la protection des renseignements personnels (Loi 25) qu’un adaptateur distillé n’a mémorisé aucune séquence nominative susceptible d’être restituée à un autre utilisateur, le pipeline applique la méthode d’exposition différentielle de Carlini (47.7). À la constitution du jeu d’entraînement assaini, le sas insère 𝐾= 200 chaînes secrètes synthétiques uniques, au format exact d’un identifiant sensible (par exemple POLICE-CANARI-9481-7720).
 
-Une fois l’affinage SFT + DPO achevé, le vérificateur compare la log-vraisemblance (perplexité) que l’élève assigne à ces 200 canaris vus à l’entraînement à celle de 10 000 canaris témoins jamais présentés. Si le rang de vraisemblance d’un seul canari d’entraînement se distingue statistiquement des témoins (exposition > 𝜏mem), ou si un décodage glouton préfixé complète un seul chiffre exact, la régularisation (dropout LoRA, écrêtage de la norme du gradient de type SGD à confidentialité différentielle, ou déduplication accrue) est jugée insuffisante. L’artefact de poids est alors détruit automatiquement, avant toute copie hors du bac d’entraînement. Ce protocole va au-delà de ce que retient la section 47.7 : un canari y est une séquence artificielle unique glissée dans le jeu d’entraînement, dont on mesure l’exposition dans le modèle, et la publication est bloquée s’il ressort; le résumé seul de l’article de Carlini ne décrit ni les canaris ni la métrique d’exposition; ces éléments proviennent du texte complet de l’article, recoupé par extraits le 14 novembre 2026, et le nombre de canaris et de témoins, le seuil et le décodage ne sont décrits dans aucune source lue.
+Une fois l’affinage SFT + DPO achevé, le vérificateur compare la log-vraisemblance (perplexité) que l’élève assigne à ces 200 canaris vus à l’entraînement à celle de 10 000 canaris témoins jamais présentés. Si le rang de vraisemblance d’un seul canari d’entraînement se distingue statistiquement des témoins (exposition > 𝜏_{mem}), ou si un décodage glouton préfixé complète un seul chiffre exact, la régularisation (dropout LoRA, écrêtage de la norme du gradient de type SGD à confidentialité différentielle, ou déduplication accrue) est jugée insuffisante. L’artefact de poids est alors détruit automatiquement, avant toute copie hors du bac d’entraînement. Ce protocole va au-delà de ce que retient la section 47.7 : un canari y est une séquence artificielle unique glissée dans le jeu d’entraînement, dont on mesure l’exposition dans le modèle, et la publication est bloquée s’il ressort; le résumé seul de l’article de Carlini ne décrit ni les canaris ni la métrique d’exposition; ces éléments proviennent du texte complet de l’article, recoupé par extraits le 14 novembre 2026, et le nombre de canaris et de témoins, le seuil et le décodage ne sont décrits dans aucune source lue.
 
 ### Service multi-adaptateurs à haute densité et dimensionnement VRAM
 
-L’économie ne vient pas seulement de la petite taille de l’élève (8B contre 400B), mais aussi de la mutualisation des adaptateurs en mémoire graphique (VRAM). Un seul modèle de base 8B, chargé une fois, sert dans un même lot vingt adaptateurs métiers de quelques dizaines de
+L’économie ne vient pas seulement de la petite taille de l’élève (8B contre 400B), mais aussi de la mutualisation des adaptateurs en mémoire graphique (VRAM). Un seul modèle de base 8B, chargé une fois, sert dans un même lot vingt adaptateurs métiers de quelques dizaines de mégaoctets chacun, sans coût de commutation. Vingt conteneurs GPU séparés pour vingt agents spécialisés laisseraient 85 % des unités de calcul inactives aux heures creuses de chaque division.
 
-mégaoctets chacun, sans coût de commutation. Vingt conteneurs GPU séparés pour vingt agents spécialisés laisseraient 85 % des unités de calcul inactives aux heures creuses de chaque division.
-
-Grâce aux noyaux CUDA/Triton de multiplication matricielle groupée hétérogène (S-LoRA / Punica, intégrés nativement à vLLM et SGLang), un serveur à deux cartes de 80 Go garde un seul tronc gelé 𝑊0 en précision FP8 (~8,5 Go). Il applique à la volée, requête par requête dans le même lot continu, le couple d’adaptateurs de bas rang Δ𝑊𝑚= 𝐵𝑚𝐴𝑚 propre à la route métier 𝑚. L’empreinte mémoire totale pour héberger 𝑀 adaptateurs actifs simultanés de rang 𝑟 sur 𝐿 couches de dimension 𝑑 est :
+Grâce aux noyaux CUDA/Triton de multiplication matricielle groupée hétérogène (S-LoRA / Punica, intégrés nativement à vLLM et SGLang), un serveur à deux cartes de 80 Go garde un seul tronc gelé 𝑊_0 en précision FP8 (~8,5 Go). Il applique à la volée, requête par requête dans le même lot continu, le couple d’adaptateurs de bas rang Δ𝑊_𝑚 = 𝐵_𝑚 𝐴_𝑚 propre à la route métier 𝑚. L’empreinte mémoire totale pour héberger 𝑀 adaptateurs actifs simultanés de rang 𝑟 sur 𝐿 couches de dimension 𝑑 est :
 
 𝑀_{VRAM}^{total} = 𝑀_{tronc}(𝑊_0) + 𝑀_{KV-cache} + ∑_{𝑚=1}^{𝑀} 2 𝐿 𝑁_{proj} 𝑑 𝑟 𝑏_{octets}
 
-Pour un modèle 8B (𝐿= 32, 𝑁proj = 4, 𝑑= 4096, 𝑟= 32, FP16 à 𝑏= 2 octets), chaque adaptateur métier complet pèse 67 Mo. Héberger simultanément en VRAM chaude trente spécialistes n’occupe que 2,0 Go et laisse plus de 140 Go au KV-cache partagé. Le serveur absorbe des centaines de requêtes concurrentes avec un TTFT médian inférieur à 90 ms.
+Pour un modèle 8B (𝐿 = 32, 𝑁_{proj} = 4, 𝑑 = 4096, 𝑟 = 32, FP16 à 𝑏 = 2 octets), chaque adaptateur métier complet pèse 67 Mo. Héberger simultanément en VRAM chaude trente spécialistes n’occupe que 2,0 Go et laisse plus de 140 Go au KV-cache partagé. Le serveur absorbe des centaines de requêtes concurrentes avec un TTFT médian inférieur à 90 ms.
 
 Le cycle d’un adaptateur couvre un trimestre :
 
@@ -1174,7 +1155,7 @@ Le cycle d’un adaptateur couvre un trimestre :
 | --- | --- | --- | --- |
 | 1. Collecte et assainissement (J+1 à J+75) | ≥2 500 sagas réussies + paires HOTL | Filtrage ODRL, désidentification Loi 25 + injection de 200 canaris | Rejet de toute session ayant levé une alerte ASI01/ASI06 |
 | 2. Compilation et affinage (J+76 à J+80) | Jeu partitionné 70 / 15 / 15 | Optimisation MIPROv2, puis SFT + DPO au rang `r = 32` | Test d’exposition de Carlini (0 mémorisation tolérée) |
-| 3. Recette et déploiement canari (J+81 à J+90) | Suite 𝜏-bench de réserve scellée | Porte pass5 ≥99 % de l’enseignant, puis trafic `10 % → 100 %` | Adaptateur N-1 conservé en VRAM pour un retour arrière en moins de `5 s` |
+| 3. Recette et déploiement canari (J+81 à J+90) | Suite 𝜏-bench de réserve scellée | Porte pass^5 ≥99 % de l’enseignant, puis trafic `10 % → 100 %` | Adaptateur N-1 conservé en VRAM pour un retour arrière en moins de `5 s` |
 | 4. Exploitation et extinction (J+91 à J+180) | Trafic nominal en cascade | Sentinelle en ombre de 2 % vers l’enseignant; révocation à l’échéance du TTL | Repli transparent vers l’enseignant si l’entropie dépasse 0,42 |
 
 #### Extrait 47.10 — `[Exécuté en CI]` · Règle de routage en cascade à rejet d’entropie et sentinelle 2 % (cascade-flywheel-route.yaml)
@@ -1207,7 +1188,7 @@ spec:
 
 Secteur financier (BSIF E-23) et santé (volet santé : [Extrapolation illustrative hors champ financier démontré]) — gouvernance du risque de modèle pour des adaptateurs distillés fréquents
 
-Comment concilier un cycle trimestriel ou mensuel d’affinage LoRA avec la validation indépendante des modèles qu’exigent BSIF E-23 ou les référentiels cliniques ? L’erreur consiste à traiter chaque rafraîchissement d’adaptateur comme un système inédit soumis à six mois de comité manuel. Les institutions matures font homologuer chaque année, par la seconde ligne de défense, l’usine de distillation elle-même et ses bornes d’acceptation (*Predetermined Change Control Plan*, inspiré du cadre PCCP des autorités médicales). Tant que le tronc de base, la taxonomie d’outils MCP, le test de canaris nul et la parité pass5 ≥99 % sur le jeu de réserve gouverné par la fonction Risque sont respectés et consignés dans un registre de lignage immuable (`Dataset Hash -> LoRA SHA-256 -> Rapport τ-bench`), la promotion par déploiement canari se fait sans gel bureaucratique.
+Comment concilier un cycle trimestriel ou mensuel d’affinage LoRA avec la validation indépendante des modèles qu’exigent BSIF E-23 ou les référentiels cliniques ? L’erreur consiste à traiter chaque rafraîchissement d’adaptateur comme un système inédit soumis à six mois de comité manuel. Les institutions matures font homologuer chaque année, par la seconde ligne de défense, l’usine de distillation elle-même et ses bornes d’acceptation (*Predetermined Change Control Plan*, inspiré du cadre PCCP des autorités médicales). Tant que le tronc de base, la taxonomie d’outils MCP, le test de canaris nul et la parité pass^5 ≥99 % sur le jeu de réserve gouverné par la fonction Risque sont respectés et consignés dans un registre de lignage immuable (`Dataset Hash -> LoRA SHA-256 -> Rapport τ-bench`), la promotion par déploiement canari se fait sans gel bureaucratique.
 
 ## 47.21 Application au fil rouge : distillation des huit flux majeurs chez Boréal
 
@@ -1223,7 +1204,7 @@ Comment concilier un cycle trimestriel ou mensuel d’affinage LoRA avec la vali
 
 **Scénario illustratif cible (consolidation sur l’exercice)** :
 
-- **Parité de fiabilité intacte.** Le score moyen pass5 sur les 8 suites 𝜏-bench passe de 97,1 % (modèle frontière initial, prompt manuel) à 97,6 % avec une cascade de 86 % de SLM LoRA et 14 % d’enseignant.
+- **Parité de fiabilité intacte.** Le score moyen pass^5 sur les 8 suites 𝜏-bench passe de 97,1 % (modèle frontière initial, prompt manuel) à 97,6 % avec une cascade de 86 % de SLM LoRA et 14 % d’enseignant.
 - **Baisse de 68 % du coût par résultat moyen sur ces 8 flux** (de 0,91 $ CAD en début d’année à 0,29 $ CAD au quatrième trimestre, ce qui ramène la moyenne globale du groupe à 0,41 $ CAD). Elle dégage 1,45 M$ CAD de marge additionnelle, qui autofinance l’ensemble du Centre d’Excellence Agentique.
 
 ## 47.22 Décision d’architecture normative, conclusion générale et points de contrôle
@@ -1237,9 +1218,8 @@ La décision ADR-031, la trente et unième et dernière, clôt le registre archi
 - **Options évaluées** :
   1. *Statu quo sur modèles frontières externes avec optimisation manuelle ponctuelle des prompts* : Rejetée — non compétitive économiquement à grande échelle et dépendante d’un savoir-faire artisanal non reproductible.
   2. *Pré-entraînement maison d’un modèle fondationnel propriétaire à partir de zéro* : Rejetée — coût en capital GPU sans avantage mesurable face à la distillation ciblée de modèles à poids ouverts de pointe.
-  3. *Compilation programmatique des signatures cognitives (type DSPy) couplée à un cycle trimestriel de distillation SFT + DPO par adaptateurs LoRA sur traces assainies, protégé par une porte de parité pass5 ≥99 % et une cascade à rejet d’incertitude*. Retenue.
-- **Décision** : (a) Versionner les agents sous forme de signatures compilables plutôt que de prompts monolithiques figés; (b) interdire tout entraînement sur des traces brutes non
-  purgées de PII (Loi 25), de clauses ODRL restrictives ou d’alertes ASI06; (c) conditionner la promotion de tout SLM distillé à la parité pass5 sur le jeu de réserve scellé, assortie d’un échantillonnage sentinelle continu de 2 % vers l’enseignant et d’une date d’expiration de l’adaptateur.
+  3. *Compilation programmatique des signatures cognitives (type DSPy) couplée à un cycle trimestriel de distillation SFT + DPO par adaptateurs LoRA sur traces assainies, protégé par une porte de parité pass^5 ≥99 % et une cascade à rejet d’incertitude*. Retenue.
+- **Décision** : (a) Versionner les agents sous forme de signatures compilables plutôt que de prompts monolithiques figés; (b) interdire tout entraînement sur des traces brutes non purgées de PII (Loi 25), de clauses ODRL restrictives ou d’alertes ASI06; (c) conditionner la promotion de tout SLM distillé à la parité pass^5 sur le jeu de réserve scellé, assortie d’un échantillonnage sentinelle continu de 2 % vers l’enseignant et d’une date d’expiration de l’adaptateur.
 - **Conséquences** : Avantage économique et de latence cumulatif d’un trimestre à l’autre et souveraineté accrue sur les poids spécialisés, en contrepartie d’une gouvernance stricte des jeux d’entraînement et du pipeline MLOps/AgentOps d’affinage.
 
 ### Conclusion des parties I à IX
@@ -1258,7 +1238,7 @@ D’ici 2030, l’avantage ira aux organisations qui auront bâti cette architec
 | Orchestration durable | Exiger idempotence et sagas à compensation sur toute mutation | Temporal / Restate, agentgateway |
 | Intégration SI réel | Fédérer les jardins SaaS et valider l’OT sur jumeau numérique | OPC UA, CUA transitoire encadré |
 | Identité et sécurité | Imposer une NHI atténuée à chaque saut et des garde-fous hors LLM | SPIFFE, OAuth 2.1 OBO, Cedar, OpenSandbox |
-| AgentOps et FinOps | Piloter par constance pass𝑘 et coût par résultat vérifié | OTel `gen_ai.*`, 𝜏-bench, KV-cache |
+| AgentOps et FinOps | Piloter par constance pass^𝑘 et coût par résultat vérifié | OTel `gen_ai.*`, 𝜏-bench, KV-cache |
 | Droit et modèle HOTL | Préserver le discernement humain actif et l’opposabilité légale | BSIF E-23, Loi 25, EU AI Act, Hub & Spoke |
 | B2B, souveraineté et périphérie | Collaborer sans livrer ses secrets et survivre aux coupures réseau | EDC/ODRL, vLEI, TEE, CRDT, Simplex |
 | Ingénierie et distillation | Prouver le code par l’oracle et distiller les traces vers des SLM | Agentic SDLC, ODCS, DSPy, Multi-LoRA |
@@ -1270,6 +1250,6 @@ D’ici 2030, l’avantage ira aux organisations qui auront bâti cette architec
 3. **Filtrage anti-empoisonnement (ASI06)** : Toute trace soupçonnée d’injection indirecte, ou rejetée par une politique Cedar, est-elle écartée du corpus de distillation ?
 4. **Étanchéité du jeu de réserve scellé** : Les 15 % de scénarios d’homologation finale sont-ils disjoints des données d’affinage LoRA et de la sélection d’exemples DSPy ?
 5. **Signatures cognitives compilables** : Les prompts des agents critiques sont-ils générés et optimisés par programme contre une métrique explicite, plutôt que figés à la main ?
-6. **Porte de parité pass5 ≥99 %** : Le pipeline bloque-t-il automatiquement tout élève qui dégrade de plus de 1 % la constance multi-essais de l’enseignant ?
+6. **Porte de parité pass^5 ≥99 %** : Le pipeline bloque-t-il automatiquement tout élève qui dégrade de plus de 1 % la constance multi-essais de l’enseignant ?
 7. **Cascade à rejet d’entropie sur agentgateway** : Les requêtes ambiguës ou hors distribution sont-elles rejouées vers l’enseignant, sans échec visible pour l’utilisateur ?
 8. **Sentinelle 2 % et péremption d’adaptateur** : Un échantillonnage continu en ombre surveille-t-il la dérive réelle du SLM, avec expiration obligatoire de l’adaptateur à six mois ?

@@ -6,11 +6,11 @@ top to bottom direction
 skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
-skinparam rectangle<<invis>> {
-  BackgroundColor transparent
-  BorderColor transparent
-  FontColor transparent
-  FontSize 1
+skinparam nodesep 14
+skinparam ranksep 12
+skinparam rectangle {
+  BackgroundColor #FFFFFF
+  BorderColor #334155
 }
 
 rectangle "Maillage Événementiel Hybride — Enveloppes CloudEvents 1.0 • Identités SPIFFE • Traceparent OpenTelemetry" as Mesh #ECFDF5;line:15803D {
@@ -24,121 +24,121 @@ rectangle "Maillage Événementiel Hybride — Enveloppes CloudEvents 1.0 • Id
     Partitions ordonnées • Schema Registry (Apache Ossie) • Claim-Check
     Rejeu déterministe d'audit (BSIF E-23) & DLQ sémantique
   ]
-  Solace <-[#15803D]right-> Kafka : **Pont**\nfiltré
+  Solace -[hidden]right-> Kafka
+  Kafka <-[#15803D,norank]-> Solace : **Pont**\nfiltré
 }
 
-rectangle " " as SagaCols <<invis>> {
-  rectangle "1. Étape Compensable (T1)" as T1Box #EFF6FF;line:2563EB {
-    rectangle T1Agent #EFF6FF;line:EFF6FF [
-      **Agent Stocks BEL (SAP)**
-      Réservation pièce critique
-      Bail TTL = 240 min via MCP
-    ]
-    rectangle T1Outbox #FFF7ED;line:9A3412 [
-      **Transactional Outbox + CDC**
-      Commit BD + événement atomique
-    ]
-    rectangle T1Comp #FEF2F2;line:DC2626 [
-      **Action Inverse C1 :**
-      sap_release_reservation()
-    ]
-    T1Agent -[hidden]down-> T1Outbox
-    T1Outbox -[hidden]down-> T1Comp
-  }
-
-  rectangle "2. Étape Compensable (T2)" as T2Box #EFF6FF;line:2563EB {
-    rectangle T2Agent #EFF6FF;line:EFF6FF [
-      **Agent Terrain BSN (FSM)**
-      Pré-affectation technicien
-      Blocage créneau & camion-grue
-    ]
-    rectangle T2Outbox #FFF7ED;line:9A3412 [
-      **Outbox + Idempotency Key**
-      Zéro doublon en cas de réessai
-    ]
-    rectangle T2Comp #FEF2F2;line:DC2626 [
-      **Action Inverse C2 :**
-      fsm_cancel_slot_allocation()
-    ]
-    T2Agent -[hidden]down-> T2Outbox
-    T2Outbox -[hidden]down-> T2Comp
-  }
-
-  rectangle "3. Transaction Pivot (Tp)" as TpBox #FEF9C3;line:9A3412 {
-    rectangle TpAgent #FEF9C3;line:FEF9C3 [
-      **Agent Garantie BCA (IBM i)**
-      Point de bascule décisionnel
-      Règles Cedar • BSIF E-23 • CIBA
-    ]
-    rectangle TpSucc #ECFDF5;line:15803D [
-      **SUCCÈS → Non-retour**
-      Autorise les étapes réessayables
-    ]
-    rectangle TpRefus #FEF2F2;line:DC2626 [
-      **REFUS → Rollback Inverse**
-      Dépile LIFO : C2 puis C1
-    ]
-    TpAgent -[hidden]down-> TpSucc
-    TpSucc -[hidden]down-> TpRefus
-  }
-
-  rectangle "4. Tampon Irréversible (T4)" as T4Box #F8FAFC;line:1E293B {
-    rectangle T4Grace #F8FAFC;line:F8FAFC [
-      **Fenêtre de Grâce (120 s)**
-      Rétention avant effet externe
-      Vérifie absence d'AbortSignal
-    ]
-    rectangle T4Emit #EFF6FF;line:2563EB [
-      **Émissions Externes Scellées :**
-      • Avis transporteur EDI X12
-      • Courriel d'engagement client
-      • Règlement signé AP2 / x402
-      Revérification Cedar JIT
-    ]
-    T4Grace -[hidden]down-> T4Emit
-  }
-
-  T4Box -[hidden]left-> TpBox
-  TpBox -[hidden]left-> T2Box
-  T2Box -[hidden]left-> T1Box
+rectangle "1. Étape Compensable (T1)" as T1Box #EFF6FF;line:2563EB {
+  rectangle T1Agent #EFF6FF;line:EFF6FF [
+    **Agent Stocks BEL (SAP)**
+    Réservation pièce critique
+    Bail TTL = 240 min via MCP
+  ]
+  rectangle T1Outbox #FFF7ED;line:9A3412 [
+    **Transactional Outbox + CDC**
+    Commit BD + événement atomique
+  ]
+  rectangle T1Comp #FEF2F2;line:DC2626 [
+    **Action Inverse C1 :**
+    sap_release_reservation()
+  ]
+  T1Agent -[hidden]down-> T1Outbox
+  T1Outbox -[hidden]down-> T1Comp
 }
 
-Solace <-[#1E293B]down-> T1Agent
-Solace <-[#1E293B]down-> T2Agent
-Kafka <-[#1E293B]down-> TpAgent
-Kafka <-[#1E293B]down-> T4Grace
-
-rectangle " " as Flows <<invis>> {
-  rectangle " " as FwdRow <<invis>> {
-    rectangle "Aller : T1 validé" as F1 #DBEAFE;line:2563EB
-    rectangle "Aller : T2 validé" as F2 #DBEAFE;line:2563EB
-    rectangle "Arbitrage Pivot Tp" as F3 #FEF3C7;line:9A3412
-    rectangle "Commit post-grâce" as F4 #ECFDF5;line:15803D
-    F1 -[#2563EB]right-> F2
-    F2 -[#2563EB]right-> F3
-    F3 -[#15803D]right-> F4 : Succès
-  }
-
-  rectangle " " as RevRow <<invis>> {
-    rectangle "2. Exécute C1" as R1 #FEF2F2;line:DC2626
-    rectangle "1. Exécute C2" as R2 #FEF2F2;line:DC2626
-    rectangle "Refus Conformité" as R3 #FEF2F2;line:DC2626
-    rectangle "Purge du tampon" as R4 #F8FAFC;line:475569
-    R3 .[#DC2626]left.> R2
-    R2 .[#DC2626]left.> R1
-    R3 .[#DC2626]right.> R4
-  }
-
-  F1 -[hidden]down-> R1
-  F2 -[hidden]down-> R2
-  F3 -[hidden]down-> R3
-  F4 -[hidden]down-> R4
+rectangle "2. Étape Compensable (T2)" as T2Box #EFF6FF;line:2563EB {
+  rectangle T2Agent #EFF6FF;line:EFF6FF [
+    **Agent Terrain BSN (FSM)**
+    Pré-affectation technicien
+    Blocage créneau & camion-grue
+  ]
+  rectangle T2Outbox #FFF7ED;line:9A3412 [
+    **Outbox + Idempotency Key**
+    Zéro doublon en cas de réessai
+  ]
+  rectangle T2Comp #FEF2F2;line:DC2626 [
+    **Action Inverse C2 :**
+    fsm_cancel_slot_allocation()
+  ]
+  T2Agent -[hidden]down-> T2Outbox
+  T2Outbox -[hidden]down-> T2Comp
 }
 
-T1Comp <-[#2563EB]down-> F1
-T2Comp <-[#2563EB]down-> F2
-TpRefus -[#9A3412]down-> F3
-T4Emit -[#15803D]down-> F4
+rectangle "3. Transaction Pivot (Tp)" as TpBox #FEF9C3;line:9A3412 {
+  rectangle TpAgent #FEF9C3;line:FEF9C3 [
+    **Agent Garantie BCA (IBM i)**
+    Point de bascule décisionnel
+    Règles Cedar • BSIF E-23 • CIBA
+  ]
+  rectangle TpSucc #ECFDF5;line:15803D [
+    **SUCCÈS → Non-retour**
+    Autorise les étapes réessayables
+  ]
+  rectangle TpRefus #FEF2F2;line:DC2626 [
+    **REFUS → Rollback Inverse**
+    Dépile LIFO : C2 puis C1
+  ]
+  TpAgent -[hidden]down-> TpSucc
+  TpSucc -[hidden]down-> TpRefus
+}
+
+rectangle "4. Tampon Irréversible (T4)" as T4Box #F8FAFC;line:1E293B {
+  rectangle T4Grace #F8FAFC;line:F8FAFC [
+    **Fenêtre de Grâce (120 s)**
+    Rétention avant effet externe
+    Vérifie absence d'AbortSignal
+  ]
+  rectangle T4Emit #EFF6FF;line:2563EB [
+    **Émissions Externes Scellées :**
+    • Avis transporteur EDI X12
+    • Courriel d'engagement client
+    • Règlement signé AP2 / x402
+    Revérification Cedar JIT
+  ]
+  T4Grace -[hidden]down-> T4Emit
+}
+
+T1Agent <-[#1E293B]up-> Solace
+T2Agent <-[#1E293B]up-> Solace
+TpAgent <-[#1E293B]up-> Kafka
+T4Grace <-[#1E293B]up-> Kafka
+
+T1Agent -[hidden]right-> T2Agent
+T2Agent -[hidden]right-> TpAgent
+TpAgent -[hidden]right-> T4Grace
+T1Outbox -[hidden]right-> T2Outbox
+T2Outbox -[hidden]right-> TpSucc
+TpSucc -[hidden]right-> T4Emit
+T1Comp -[hidden]right-> T2Comp
+T2Comp -[hidden]right-> TpRefus
+
+rectangle "Aller : T1 validé" as F1 #DBEAFE;line:2563EB
+rectangle "Aller : T2 validé" as F2 #DBEAFE;line:2563EB
+rectangle "Arbitrage Pivot Tp" as F3 #FEF3C7;line:9A3412
+rectangle "Commit post-grâce" as F4 #ECFDF5;line:15803D
+
+T1Comp -[hidden]down-> F1
+T2Comp -[hidden]down-> F2
+TpRefus -[hidden]down-> F3
+T4Emit -[hidden]down-> F4
+F1 -[#2563EB]right-> F2
+F2 -[#2563EB]right-> F3
+F3 -[#15803D]right-> F4 : Succès
+
+rectangle "2. Exécute C1" as R1 #FEF2F2;line:DC2626
+rectangle "1. Exécute C2" as R2 #FEF2F2;line:DC2626
+rectangle "Refus Conformité" as R3 #FEF2F2;line:DC2626
+rectangle "Purge du tampon" as R4 #F8FAFC;line:475569
+
+F1 -[hidden]down-> R1
+F2 -[hidden]down-> R2
+F3 -[hidden]down-> R3
+F4 -[hidden]down-> R4
+R1 -[hidden]right-> R2
+R2 -[hidden]right-> R3
+R3 .[#DC2626].> R4
+R3 .[#DC2626,norank].> R2
+R2 .[#DC2626,norank].> R1
 
 rectangle "Coordinateur de Saga Durable (Temporal / Restate) — Pile LIFO & Invariants de Résilience" as Coord #F8FAFC;line:1E293B {
   rectangle WA #FFFFFF;line:2563EB [
@@ -163,5 +163,4 @@ rectangle "Coordinateur de Saga Durable (Temporal / Restate) — Pile LIFO & Inv
 R1 -[hidden]down-> WA
 R2 -[hidden]down-> CompSem
 R4 -[hidden]down-> DLQ
-
 @enduml

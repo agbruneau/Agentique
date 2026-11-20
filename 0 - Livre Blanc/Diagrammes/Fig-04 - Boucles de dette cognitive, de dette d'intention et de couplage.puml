@@ -7,6 +7,8 @@ title Boucles de dette cognitive, de dette d'intention et de couplage aux modèl
 
 skinparam backgroundColor #FFFFFF
 skinparam shadowing false
+skinparam nodesep 38
+skinparam ranksep 55
 skinparam package {
   BackgroundColor #FFFFFF
   BorderColor #475569
@@ -45,7 +47,7 @@ package "Triple dette et vulnérabilités" {
 F1 --> D1 : Érosion mentale
 F2 --> D2 : Logique enfouie
 F2 --> D3 : Enchevêtrement
-F3 --> D3 : Changement de comportement
+F3 --> D3 : Changement de\ncomportement
 
 C1 --> D2 : Restaure le pourquoi
 C2 --> D3 : Découple l'API

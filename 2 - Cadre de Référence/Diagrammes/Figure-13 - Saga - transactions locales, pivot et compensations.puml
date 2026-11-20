@@ -8,9 +8,9 @@ skinparam defaultFontName "Segoe UI"
 skinparam defaultFontSize 11
 skinparam defaultTextAlignment center
 skinparam ranksep 34
-skinparam nodesep 20
+skinparam nodesep 22
 
-package "TRANSACTIONS LOCALES (VERS L’AVANT)" as Trans #FFFFFF;line:FFFFFF {
+rectangle "**TRANSACTIONS LOCALES (VERS L’AVANT)**" as Trans #FFFFFF;line:FFFFFF {
   rectangle "**<color:#0F7682>T1 (OK)</color>**\nRéserver le transport\ncompensable" as T1 #E2F4F0;line:0F7682
   rectangle "**<color:#0F7682>T2 (OK)</color>**\nRéserver le stock (ERP)\ncompensable" as T2 #E2F4F0;line:0F7682
   rectangle "**<color:#9C2F39>T3 — échec</color>**\nPréautoriser le paiement\ncompensable (P2)" as T3 #FCE8EB;line:9C2F39
@@ -21,7 +21,7 @@ package "TRANSACTIONS LOCALES (VERS L’AVANT)" as Trans #FFFFFF;line:FFFFFF {
   T3 .right. T4
 }
 
-package "COMPENSATIONS\n(ORDRE INVERSE, IDEMPOTENTES)" as Comp #FFFFFF;line:FFFFFF {
+rectangle "**COMPENSATIONS (ORDRE INVERSE, IDEMPOTENTES)**" as Comp #FFFFFF;line:FFFFFF {
   rectangle "**<color:#B45309>C1</color>**\nAnnuler la réservation" as C1 #FEF3DC;line:B45309
   rectangle "**<color:#B45309>C2</color>**\nLibérer le stock" as C2 #FEF3DC;line:B45309
   rectangle "**2 échecs d’une compensation**\n→ file humaine prioritaire" as Esc #FFFFFF;line:9C2F39;line.dashed
@@ -32,7 +32,7 @@ package "COMPENSATIONS\n(ORDRE INVERSE, IDEMPOTENTES)" as Comp #FFFFFF;line:FFFF
 
 T3 -[#9C2F39,thickness=2]down-> C2 : <color:#9C2F39>échec définitif → compenser de k−1 à 1</color>
 
-package "JOURNAL EN AJOUT SEUL (LA COMPENSATION EST JOURNALISÉE AVANT L’ACTION)" as Journal #F8FAFC;line:CBD5E1 {
+rectangle "**JOURNAL EN AJOUT SEUL (LA COMPENSATION EST JOURNALISÉE AVANT L’ACTION)**" as Journal #F8FAFC;line:CBD5E1 {
   rectangle "1. journaliser\nC1" as J1 #FFFFFF;line:CBD5E1
   rectangle "2. exécuter\nT1 (OK)" as J2 #FFFFFF;line:0F7682
   rectangle "3. journaliser\nC2" as J3 #FFFFFF;line:CBD5E1
@@ -53,9 +53,10 @@ package "JOURNAL EN AJOUT SEUL (LA COMPENSATION EST JOURNALISÉE AVANT L’ACTIO
 
 T1 -[hidden]down-> C1
 T2 -[hidden]down-> C2
-C1 -[hidden]down-> J1
-C2 -[hidden]down-> J3
-Esc -[hidden]down-> J6
+T4 -[hidden]down-> Esc
+C1 -[hidden]down-> J2
+C2 -[hidden]down-> J4
+Esc -[hidden]down-> J7
 
 legend bottom
   T3 n’a jamais été marquée « terminée » : C3 n’est exécutée que si l’issue de T3, une fois résolue, est un effet réalisé (EXIG-ORC-16). Le pivot T4 n’est atteint qu’après succès de T1 à T3.

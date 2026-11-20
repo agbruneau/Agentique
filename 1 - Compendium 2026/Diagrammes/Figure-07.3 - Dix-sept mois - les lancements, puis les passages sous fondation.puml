@@ -3,86 +3,60 @@
 
 @startuml
 top to bottom direction
-hide stereotype
-skinparam packageStyle rectangle
-skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam roundcorner 6
 skinparam defaultFontName "Segoe UI"
 skinparam defaultFontSize 13
-skinparam shadowing false
-skinparam roundCorner 4
+skinparam backgroundColor #FFFFFF
 skinparam nodesep 30
 skinparam ranksep 18
-
-skinparam package {
-  BackgroundColor #FFFFFF
-  BorderColor #FFFFFF
-  FontColor #555555
-  FontStyle bold
-}
-
-skinparam package<<accent>> {
-  BackgroundColor #FFFFFF
-  BorderColor #FFFFFF
-  FontColor #9E3A14
-  FontStyle bold
-}
-
-skinparam rectangle {
-  BackgroundColor #FAF7F2
-  BorderColor #B8B3AA
-  FontColor #222222
-}
-
-skinparam rectangle<<accent>> {
-  BackgroundColor #FFFFFF
-  BorderColor #9E3A14
-  BorderThickness 2
-  FontColor #222222
-}
-
-skinparam rectangle<<sub>> {
-  BackgroundColor #FFFFFF
-  BorderColor #FFFFFF
-  FontColor #222222
-}
 
 skinparam legendBackgroundColor #F7F5F0
 skinparam legendBorderColor #C4BEB5
 skinparam legendFontColor #333333
 
-package "LANCEMENTS" as P_LEFT {
-  rectangle L_BOX [
-    <b>De novembre 2024 à septembre 2025</b>
-    nov. 2024 — protocole agent-outil : un éditeur, une
-    spécification, un intendant
-    mars 2025 — couche d'infrastructure : annuaires et
-    transport dédié
-    17 mars 2025 — ACP protocolaire, en pré-alpha
-    avril 2025 — protocole agent-agent : délégation de pair
-    à pair
-    sept. 2025 — protocole de transaction (ch. 10)
-  ]
-  rectangle "<b>l'infrastructure précède l'agent-agent</b>" as L_SUB <<sub>>
-  L_BOX -[hidden]down- L_SUB
-}
+rectangle C1 #FAF6F0;line:B8B2A6 [
+  <color:#57534E>LANCEMENTS</color>
+  ----
+  <b>De novembre 2024 à septembre 2025</b>
 
-package "PASSAGES SOUS FONDATION" as P_RIGHT <<accent>> {
-  rectangle R_BOX <<accent>> [
-    <b>De juin 2025 à décembre 2025</b>
-    juin 2025 — le protocole agent-agent passe à une
-    fondation neutre
-    29 juill. 2025 — la couche d'infrastructure suit
-    29 août 2025 — l'ACP protocolaire fusionne dans
-    l'agent-agent
-    déc. 2025 — la gouvernance du protocole agent-outil est
-    transférée
-  ]
-  rectangle "<b>quatre protocoles, deux fondations, dont l'une héberge</b>\n<b>l'autre</b>" as R_SUB <<sub>>
-  R_BOX -[hidden]down- R_SUB
-}
+  nov. 2024 — protocole agent-outil : un éditeur, une
+  spécification, un intendant
 
-L_BOX -[hidden]right- R_BOX
-L_SUB -[hidden]right- R_SUB
+  mars 2025 — couche d'infrastructure : annuaires et
+  transport dédié
+
+  17 mars 2025 — ACP protocolaire, en pré-alpha
+
+  avril 2025 — protocole agent-agent : délégation de pair
+  à pair
+
+  sept. 2025 — protocole de transaction (ch. 10)
+  ----
+  <b>l'infrastructure précède l'agent-agent</b>
+]
+
+rectangle C2 #FFFFFF;line:9A3412 [
+  <color:#9A3412>PASSAGES SOUS FONDATION</color>
+  ----
+  <b>De juin 2025 à décembre 2025</b>
+
+  juin 2025 — le protocole agent-agent passe à une
+  fondation neutre
+
+  29 juill. 2025 — la couche d'infrastructure suit
+
+  29 août 2025 — l'ACP protocolaire fusionne dans
+  l'agent-agent
+
+  déc. 2025 — la gouvernance du protocole agent-outil est
+  transférée
+  ----
+  <b>quatre protocoles, deux fondations, dont l'une héberge</b>
+  <b>l'autre</b>
+]
+
+C1 -[hidden]right-> C2
 
 legend
   LES DEUX SÉQUENCES SONT INVERSES L'UNE DE L'AUTRE, et c'est le fait le plus instructif de la section :

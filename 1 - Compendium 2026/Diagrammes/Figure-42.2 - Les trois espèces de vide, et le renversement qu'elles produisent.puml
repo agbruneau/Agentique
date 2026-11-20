@@ -13,14 +13,12 @@ skinparam legendBorderColor #BBBBBB
 
 title TROIS VIDES, ET CE QU'ILS NE VEULENT PAS DIRE
 
-rectangle "TROIS ESPÈCES DE VIDE" as Vides {
-  rectangle "**1  Le protocole ne le porte pas**\n\nEt ne prétend pas le porter.\n\n<i>hors périmètre déclaré</i>" as V1
-  rectangle "**2  Le socle ne le documente pas**\n\nAbsence de documentation, non fait négatif.\n\n<i>degré 3</i>" as V2
-  rectangle "**3  Le texte n'exige rien**\n\nL'exigence supposée n'est pas dans l'instrument.\n\n<i>ne pas faire dire plus</i>" as V3
+rectangle "**1  Le protocole ne le porte pas**\n\nEt ne prétend pas le porter.\n\n<i>hors périmètre déclaré</i>" as V1
+rectangle "**2  Le socle ne le documente pas**\n\nAbsence de documentation, non fait négatif.\n\n<i>degré 3</i>" as V2
+rectangle "**3  Le texte n'exige rien**\n\nL'exigence supposée n'est pas dans l'instrument.\n\n<i>ne pas faire dire plus</i>" as V3
 
-  V1 -[hidden]right- V2
-  V2 -[hidden]right- V3
-}
+V1 -[hidden]right- V2
+V2 -[hidden]right- V3
 
 legend bottom
   Le renversement est LE RÉSULTAT LE PLUS UTILE DU CHAPITRE : la question cesse d'être

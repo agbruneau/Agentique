@@ -1,60 +1,57 @@
-' Fig. 52. – Pour un document traité par un pipeline séquentiel, l’entrée pèse plus de 97 % des jetons; trois multiplicateurs s’y ajoutent : la boucle (mesure interne d’Anthropic), la topologie, à modèle égal, et les outils, payés en jetons d’entrée.
+' Fig. 52. – Pour un document traité par un pipeline séquentiel, l'entrée pèse plus de 97 % des jetons; trois multiplicateurs s'y ajoutent : la boucle (mesure interne d'Anthropic), la topologie, à modèle égal, et les outils, payés en jetons d'entrée.
 @startuml
 top to bottom direction
 skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
+skinparam Padding 6
+skinparam nodesep 16
+skinparam ranksep 14
 skinparam rectangle {
   BackgroundColor #F8FAFC
   BorderColor #94A3B8
 }
 
-rectangle "Un document, pipeline séquentiel\nInstructions système, historique, contenu récupéré, dernier résultat d'outil : renvoyés à chaque tour" as PipelineSeq #FFFFFF;line:CBD5E1 {
-  rectangle Entree #2563EB;text:FFFFFF;line:2563EB [
-    **Entrée : 142 340 jetons, plus de 97 %**
-  ]
-  rectangle Sortie #64748B;text:FFFFFF;line:64748B [
-    Sortie : 3 820 jetons
-  ]
-  Entree -[hidden]right-> Sortie
-}
+rectangle PipelineSeq #FFFFFF;line:FFFFFF [
+  **Un document, pipeline séquentiel**
+  | <#2563EB><color:white><b>  Entrée : 142 340 jetons, plus de 97 %                                                                                                                        </b></color> | <#64748B><color:white><b>   </b></color> |
+  Instructions système, historique, contenu récupéré, dernier résultat d'outil : renvoyés à chaque tour                                          Sortie : 3 820 jetons
+]
 
-rectangle " " as Cartes #FFFFFF;line:FFFFFF {
-  rectangle Boucle #F8FAFC;line:94A3B8 [
-    **Boucle**
-    ----
-    Conversation : **1**
-    Agent : **≈ ×4**
-    Multi-agents : **≈ ×15**
-    ----
-    //Mesure interne d'Anthropic, en jetons//
-  ]
+rectangle Boucle #F8FAFC;line:94A3B8 [
+  **Boucle**
+  ----
+  Conversation   <back:#CBD5E1><color:#CBD5E1>.</color></back>  **1**
+  Agent                <back:#2563EB><color:#2563EB>---</color></back>  **≈ ×4**
+  Multi-agents      <back:#2563EB><color:#2563EB>-------------</color></back>  **≈ ×15**
+  ----
+  //Mesure interne d'Anthropic, en jetons//
+]
 
-  rectangle Topologie #F8FAFC;line:94A3B8 [
-    **Topologie**
-    ----
-    Pipeline : **0,187 $**
-    Réflexive : **0,430 $**
-    **Coût par document : ×2,3**
-    ----
-    //Même modèle//
-  ]
+rectangle Topologie #F8FAFC;line:94A3B8 [
+  **Topologie**
+  ----
+  Pipeline    <back:#CBD5E1><color:#CBD5E1>-----</color></back>  **0,187 $**
+  Réflexive   <back:#2563EB><color:#2563EB>------------</color></back>  **0,430 $**
+  **Coût par document : ×2,3**
+  ----
+  //Même modèle//
+]
 
-  rectangle Outils #F8FAFC;line:94A3B8 [
-    **Outils**
-    ----
-    Définitions d'outils, blocs d'appel
-    et de résultat : payés en jetons
-    d'entrée, à chaque requête
-    ----
-    Dizaines de serveurs MCP :
-    catalogue entier payé à chaque tour
-  ]
+rectangle Outils #F8FAFC;line:94A3B8 [
+  **Outils**
+  ----
+  Définitions d'outils, blocs d'appel
+  et de résultat : payés en jetons
+  d'entrée, à chaque requête
+  ----
+  Dizaines de serveurs MCP :
+  catalogue entier payé à chaque tour
+]
 
-  Boucle -[hidden]right-> Topologie
-  Topologie -[hidden]right-> Outils
-}
-
-Entree -[hidden]down-> Boucle
-Sortie -[hidden]down-> Outils
+Boucle -[hidden]right-> Topologie
+Topologie -[hidden]right-> Outils
+PipelineSeq -[hidden]down-> Boucle
+PipelineSeq -[hidden]down-> Topologie
+PipelineSeq -[hidden]down-> Outils
 @enduml

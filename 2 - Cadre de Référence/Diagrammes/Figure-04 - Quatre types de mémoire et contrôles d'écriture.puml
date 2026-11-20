@@ -1,0 +1,39 @@
+' Figure 4 — Quatre types de mémoire et contrôles d'écriture (2 - Cadre de Référence, ch. 5, p. 47)
+' Source : cadre CRE-IA-2026-01, d'après la taxonomie CoALA (Sumers et coll., 2024)
+@startuml
+left to right direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 11
+skinparam linetype polyline
+skinparam nodesep 20
+skinparam ranksep 65
+skinparam legendBackgroundColor #FCE8EB
+skinparam legendBorderColor #F4B4BC
+
+rectangle "**Agent en cours d’exécution**" as Agent #EDE8F5;line:6D28D9 {
+  rectangle "**1 · Mémoire de travail**\n\nFenêtre de contexte du modèle :\ninstructions, contrats d’outils,\nsous-objectif, derniers échanges\n\nÉtat de la tâche persisté hors du\nmodèle à chaque transition (points\nde contrôle du moteur durable)\n\n<color:#475569>Durée : la tâche · coût : chaque jeton</color>\n<color:#475569>réinjecté est payé à chaque appel</color>\n\n<color:#475569>Ce qui doit durer est persisté hors du modèle.</color>" as M1 #FFFFFF;line:CBD5E1
+}
+
+rectangle "Mémoires longues persistées hors du modèle" as Longue #FFFFFF;line:FFFFFF {
+  rectangle "**2 · Mémoire épisodique**\nRésumés horodatés des interactions, trajectoires d’outils et résolutions passées;\nprovenance consignée pour chaque entrée\n<color:#475569>//Calendrier de conservation · exposée en ressources ou outils MCP//</color>" as M2 #E6F0FA;line:93C5FD
+
+  rectangle "**3 · Mémoire sémantique**\nConnaissances du domaine : index vectoriels et lexicaux, graphes de connaissances,\ndocumentation; recherche hybride avec citations\n<color:#475569>//Mise à jour par les propriétaires des données · exposée par MCP//</color>" as M3 #E2F4EE;line:86EFAC
+
+  rectangle "**4 · Mémoire procédurale**\nSavoir-faire : invites système versionnées, contrats de compétences,\nflux et séquences d’outils validés\n<color:#475569>//Gérée comme du code : revue, version, évaluation avant déploiement//</color>" as M4 #FEF3DC;line:FCD34D
+
+  M2 -[hidden]> M3
+  M3 -[hidden]> M4
+}
+
+M1 <-[#0F2744]-> M2 : récupérer\nconsolider
+M1 <-[#0F2744]-> M3
+M1 <-[#0F2744]-> M4
+
+legend bottom
+  **<color:#9C2F39>Contrôles obligatoires avant toute écriture en mémoire épisodique ou sémantique (EXIG-ARC-23); mémoire procédurale : changement logiciel (EXIG-ARC-24)</color>**
+  Validation et provenance de la source · isolation par mandant ou par locataire (tableau 13) · expiration · instantanés restaurables
+  Interdits : état qui n’existe qu’en mémoire de processus · transcriptions brutes comme mémoire longue · magasin partagé en écriture entre plusieurs agents ou serveurs MCP
+endlegend
+@enduml

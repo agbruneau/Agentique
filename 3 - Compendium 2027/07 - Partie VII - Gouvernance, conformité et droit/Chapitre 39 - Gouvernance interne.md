@@ -14,9 +14,7 @@ La thèse de ce chapitre : la maîtrise tient à quatre objets que les cadres lu
 
 ### Un actif, donc un registre
 
-On ne gouverne que ce qu’on a recensé. Le NIST AI RMF fait de l’inventaire des systèmes d’IA une sous-catégorie de sa fonction Govern [5]. Le guide du ministère de la Cybersécurité et du Numérique du Québec (MCN), destiné aux organismes publics, est plus direct : un agent se gère comme un actif numérique, et l’organisation tient un registre des agents [3]. Le cadre de Singapour, lancé en janvier 2026 [11], y arrive par l’identité : pour éviter la prolifération, toutes les identités d’agent et leurs permissions devraient être émises et
-
-suivies par un système centralisé, pour suivre les agents déployés, repérer les anomalies et retirer les identités inutiles [2].
+On ne gouverne que ce qu’on a recensé. Le NIST AI RMF fait de l’inventaire des systèmes d’IA une sous-catégorie de sa fonction Govern [5]. Le guide du ministère de la Cybersécurité et du Numérique du Québec (MCN), destiné aux organismes publics, est plus direct : un agent se gère comme un actif numérique, et l’organisation tient un registre des agents [3]. Le cadre de Singapour, lancé en janvier 2026 [11], y arrive par l’identité : pour éviter la prolifération, toutes les identités d’agent et leurs permissions devraient être émises et suivies par un système centralisé, pour suivre les agents déployés, repérer les anomalies et retirer les identités inutiles [2].
 
 ### Que consigner
 
@@ -94,9 +92,7 @@ E-23 décrit un cycle voisin pour les modèles : conception, revue, déploiement
 
 **Le changement est une porte.** Le MCN demande de versionner modèle, instructions, règles, connecteurs et outils, et de réévaluer les risques quand l’un d’eux évolue [3]. La version 1.5 du cadre de Singapour ajoute des déclencheurs explicites de revue, car modifier un agent peut avoir des effets en cascade [2]. Un serveur MCP qui modifie ses outils change ainsi un agent dont la configuration n’a pas bougé (chapitres 5 et 31). Le modèle aussi change sans qu’on touche à l’agent, par routage (chapitre 44), bascule de secours (chapitre 46) ou distillation (chapitre 47); la revue porte alors d’avance sur la politique de routage et les modèles qualifiés, ce que ce chapitre déduit.
 
-**Le retrait est une étape.** Le NIST demande des procédures de mise hors service qui n’accroissent pas les risques [5]. Le guide fédéral les détaille : suppression des accès, archivage des documents, consignation des leçons [4]. L’inscription survit au retrait : E-23
-
-veut que les modèles déclassés restent à l’inventaire pendant une période jugée raisonnable [6], et Workday conserve l’historique d’un agent archivé [10].
+**Le retrait est une étape.** Le NIST demande des procédures de mise hors service qui n’accroissent pas les risques [5]. Le guide fédéral les détaille : suppression des accès, archivage des documents, consignation des leçons [4]. L’inscription survit au retrait : E-23 veut que les modèles déclassés restent à l’inventaire pendant une période jugée raisonnable [6], et Workday conserve l’historique d’un agent archivé [10].
 
 Le retrait de l’identité est traité au chapitre 29; le déploiement, les versions et le retour arrière, au chapitre 34.
 
@@ -174,9 +170,7 @@ Les sections précédentes disent qui décide et qui répond. Reste à savoir qu
 
 ### Le modèle des trois lignes
 
-Le modèle de l’Institute of Internal Auditors (IIA), révisé en 2020, répartit les rôles [12]. La direction en porte deux types. Les rôles de première ligne livrent les produits et les services, et gèrent le risque. Ceux de deuxième ligne apportent expertise, surveillance et remise en question, par exemple en conformité ou en sécurité de l’information. L’audit interne, troisième ligne, fournit une assurance indépendante et objective sur l’adéquation et l’efficacité de la gouvernance et de la gestion des risques. Son indépendance tient à ce qu’il rend compte à l’organe de gouvernance, accède sans entrave aux personnes et aux données, et ne porte aucune responsabilité de gestion. Le modèle précise que ces « lignes »
-
-distinguent des rôles, non des structures, et que la gestion du risque reste une responsabilité de première ligne.
+Le modèle de l’Institute of Internal Auditors (IIA), révisé en 2020, répartit les rôles [12]. La direction en porte deux types. Les rôles de première ligne livrent les produits et les services, et gèrent le risque. Ceux de deuxième ligne apportent expertise, surveillance et remise en question, par exemple en conformité ou en sécurité de l’information. L’audit interne, troisième ligne, fournit une assurance indépendante et objective sur l’adéquation et l’efficacité de la gouvernance et de la gestion des risques. Son indépendance tient à ce qu’il rend compte à l’organe de gouvernance, accède sans entrave aux personnes et aux données, et ne porte aucune responsabilité de gestion. Le modèle précise que ces « lignes » distinguent des rôles, non des structures, et que la gestion du risque reste une responsabilité de première ligne.
 
 Le tableau suivant, propre à ce chapitre, transpose ces rôles à un parc d’agents.
 

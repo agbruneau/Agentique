@@ -1,9 +1,17 @@
-' Fig. 49. – L’autorité réelle d’un agent logiciel, ce que le mandant configure, et son autorité apparente, ce que le tiers perçoit : selon la déduction proposée dans ce chapitre, le risque juridique loge dans l’écart entre les deux.
+' Fig. 49. – L'autorité réelle d'un agent logiciel, ce que le mandant configure, et son autorité apparente, ce que le tiers perçoit : selon la déduction proposée dans ce chapitre, le risque juridique loge dans l'écart entre les deux.
 @startuml
 left to right direction
 skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
+skinparam nodesep 20
+skinparam ranksep 34
+skinparam rectangle<<invis>> {
+  BackgroundColor transparent
+  BorderColor transparent
+  FontColor transparent
+  FontSize 1
+}
 skinparam rectangle {
   BackgroundColor #F8FAFC
   BorderColor #475569
@@ -15,17 +23,25 @@ rectangle Mandant #F8FAFC;line:475569 [
   déploie l'agent
 ]
 
-rectangle "Autorité apparente\nce que le tiers perçoit\ncanal, marque, carte d'agent, absence de limite annoncée" as Apparente #FEF2F2;line:991B1B;line.dashed {
+rectangle " " as Apparente #FEF2F2;line:991B1B;line.dashed {
+  rectangle AppHdr #FEF2F2;line:FEF2F2 [
+    **Autorité apparente**
+    ce que le tiers perçoit
+    canal, marque, carte d'agent, absence de limite annoncée
+  ]
   rectangle Reelle #F0FDF4;line:166534 [
     **Autorité réelle**
     ce qui est configuré : portées,
     politiques, mandats signés
   ]
   rectangle Ecart #FEF2F2;line:FEF2F2 [
-    **Écart : le risque juridique**
+    <color:#991B1B>**Écart : le risque juridique**</color>
     un acte non permis peut lier le mandant
   ]
-  Reelle -[hidden]right-> Ecart
+  rectangle AppRight <<invis>> [
+     
+  ]
+  Reelle -[hidden]-> AppRight
 }
 
 rectangle Tiers #F8FAFC;line:475569 [
@@ -34,6 +50,9 @@ rectangle Tiers #F8FAFC;line:475569 [
   l'agent autorisé
 ]
 
+Mandant -[hidden]-> AppHdr
 Mandant -[#475569]-> Reelle : configure
-Apparente <-[#475569]- Tiers : perçoit
+Mandant -[hidden]-> Ecart
+AppRight -[hidden]-> Tiers
+Tiers -[#475569,norank]-> AppRight : perçoit
 @enduml

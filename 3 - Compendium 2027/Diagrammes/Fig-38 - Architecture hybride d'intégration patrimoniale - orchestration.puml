@@ -6,6 +6,8 @@ top to bottom direction
 skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
+skinparam nodesep 20
+skinparam ranksep 16
 skinparam rectangle {
   BackgroundColor #FFFFFF
   BorderColor #334155
@@ -74,9 +76,11 @@ rectangle Gouvernance #F8FAFC;line:334155 [
   **Gouvernance du cycle de vie (ADR-016) : Chaque flux CUA homologué ouvre un chantier financé d'encapsulation MCP sous 12 mois**
 ]
 
-Orchestration -[#166534]down-> VoieA
-Orchestration -[#9A3412]down-> VoieB
-VoieA -[hidden]right-> VoieB
+Orchestration -[#166534]down-> McpIBMi
+Orchestration -[#9A3412]down-> Etape1
+McpIBMi -[hidden]right-> Etape1
+McpZOS -[hidden]right-> Etape2
+McpEDI -[hidden]right-> Etape3
 McpEDI -[hidden]down-> Gouvernance
 Etape4 -[hidden]down-> Gouvernance
 @enduml

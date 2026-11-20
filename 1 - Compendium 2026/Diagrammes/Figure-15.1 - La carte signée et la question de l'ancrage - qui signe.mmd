@@ -6,7 +6,7 @@ flowchart TB
         E1["<b>Carte publiée</b><br/>à un emplacement bien<br/>connu, conforme à un<br/>mécanisme normalisé"]
         E2["<b>Signature</b><br/>apposition MAY,<br/>vérification SHOULD<br/>(F-04, [A])"]
         E3["<b>Intégrité</b><br/>d'un contenu<br/>canonicalisé au regard<br/>d'une clé (F-01, F-02,<br/>[A])"]
-        E4["<b>Appartenance</b><br/>hors protocole :<br/>'kid', 'jku', ou un<br/>magasin facultatif"]
+        E4["<b>Appartenance</b><br/>hors protocole :<br/>`kid`, `jku`, ou un<br/>magasin facultatif"]
         E1 --> E2 --> E3 -. "×" .- E4
     end
 

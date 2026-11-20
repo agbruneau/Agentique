@@ -9,11 +9,9 @@ skinparam rectangleBackgroundColor #F5F1EB
 skinparam legendBackgroundColor #FBF9F5
 skinparam legendBorderColor #BBBBBB
 
-title LE RETOURNEMENT DU CH. 20 RELU COMME DÉFAUT DE PROVENANCE
+rectangle "<color:#57534E>**LU AU CH. 20 — IDENTITÉ**</color>\n----\n**La particularité est le moment**\n\nL'admission a réussi\n\nLe verdict n'est pas borné dans le temps\n\nL'objet vérifié change ensuite\n\n**un problème de fraîcheur du verdict**" as G #F5F1EB
 
-rectangle "**LU AU CH. 20 — IDENTITÉ**\n----\n**La particularité est le moment**\n\nL'admission a réussi\n\nLe verdict n'est pas borné dans le temps\n\nL'objet vérifié change ensuite\n\n**un problème de fraîcheur du verdict**" as G #F5F1EB
-
-rectangle "**LU ICI — PROVENANCE**\n----\n**La particularité est l'artefact**\n\nLe composant n'a pas de provenance attestée\n\nRien ne lie ce qui s'exécute à ce qui a été admis\n\nLa nomenclature ne voit pas tout (§ 47.7)\n\n**un problème de composition attestée**" as D #FFFFFF;line:8B2E0B;line.bold
+rectangle "<color:#9E3A14>**LU ICI — PROVENANCE**</color>\n----\n**La particularité est l'artefact**\n\nLe composant n'a pas de provenance attestée\n\nRien ne lie ce qui s'exécute à ce qui a été admis\n\nLa nomenclature ne voit pas tout (§ 47.7)\n\n**un problème de composition attestée**" as D #FFFFFF;line:8B2E0B;line.bold
 
 G -[hidden]right- D
 

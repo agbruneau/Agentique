@@ -11,14 +11,12 @@ skinparam legendBorderColor #BBBBBB
 
 title TROIS STATUTS, ET AUCUN N'EST UNE PRÉDICTION
 
-rectangle "CÔNE D'INCERTITUDE 2027-2032 (§ 49.0.1)" as Cone {
-  rectangle "**1  PROGRAMMÉ**\n\nUne date opposable, portée par un\ninstrument en vigueur ou une\ndécision prise.\n\n<i>le cône est étroit</i>" as C1
-  rectangle "**2  PROJETÉ**\n\nUne cible communiquée par celui\nqui la porte, sans force\nopposable.\n\n<i>le cône s'élargit</i>" as C2
-  rectangle "**3  SPÉCULATIF**\n\nAucun jalon daté au socle ; un\nraisonnement, et ses conditions.\n\n\n<i>le cône est ouvert</i>" as C3
+rectangle "**1  PROGRAMMÉ**\n\nUne date opposable, portée par un\ninstrument en vigueur ou une\ndécision prise.\n\n<i>le cône est étroit</i>" as C1
+rectangle "**2  PROJETÉ**\n\nUne cible communiquée par celui\nqui la porte, sans force\nopposable.\n\n<i>le cône s'élargit</i>" as C2
+rectangle "**3  SPÉCULATIF**\n\nAucun jalon daté au socle ; un\nraisonnement, et ses conditions.\n\n\n<i>le cône est ouvert</i>" as C3
 
-  C1 -[hidden]right- C2
-  C2 -[hidden]right- C3
-}
+C1 -[hidden]right- C2
+C2 -[hidden]right- C3
 
 legend bottom
   LE CÔNE S'ÉLARGIT AVEC LE TEMPS (2027-2032), et la discipline qui en découle est la REDATATION :

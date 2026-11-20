@@ -191,9 +191,7 @@ La fédération déplace une garantie. Dans MCP, un serveur ne voit pas les autr
 
 Trois sources chiffrent quelque chose. Aucune ne suffit à départager les produits.
 
-**Un banc de cabinet d’analyse.** AIMultiple a mesuré six passerelles MCP devant un serveur factice de seize outils, avec un client déterministe, sans modèle [14]. Le surcoût médian d’un appel relayé va de 0,84 ms à 23 ms pour les trois passerelles autohébergées mesurées. Les deux passerelles hébergées, jointes par le réseau étendu, affichent 55,5 ms et 211,1 ms, délais de réseau compris. Activer les contrôles de contenu ajoute 11,5 % chez l’une et fait passer une autre de 55,5 ms à 172,1 ms. Sur 60 injections placées dans des réponses d’outils, une passerelle en arrête 60 et une autre 55; les quatre autres laissent l’instruction atteindre
-
-le client. Quatre produits sur six appliquent une autorisation par outil, trois livrent leurs contrôles de contenu désactivés, et deux ne journalisent pas les appels bloqués.
+**Un banc de cabinet d’analyse.** AIMultiple a mesuré six passerelles MCP devant un serveur factice de seize outils, avec un client déterministe, sans modèle [14]. Le surcoût médian d’un appel relayé va de 0,84 ms à 23 ms pour les trois passerelles autohébergées mesurées. Les deux passerelles hébergées, jointes par le réseau étendu, affichent 55,5 ms et 211,1 ms, délais de réseau compris. Activer les contrôles de contenu ajoute 11,5 % chez l’une et fait passer une autre de 55,5 ms à 172,1 ms. Sur 60 injections placées dans des réponses d’outils, une passerelle en arrête 60 et une autre 55; les quatre autres laissent l’instruction atteindre le client. Quatre produits sur six appliquent une autorisation par outil, trois livrent leurs contrôles de contenu désactivés, et deux ne journalisent pas les appels bloqués.
 
 Le banc ne teste ni le contournement de la passerelle ni le comportement d’un modèle, n’emploie que deux formes d’injection, et ses auteurs précisent qu’il n’établit pas de classement. L’un des éditeurs testés est client du cabinet pour ses services de mesure, ce que la page déclare [14].
 
@@ -206,8 +204,7 @@ Le banc ne teste ni le contournement de la passerelle ni le comportement d’un 
 Pour dépasser les déclarations d’éditeurs sans prétendre à une mesure en production bancaire, le banc reproductible sous licence MIT `Borealis-Bench/` (passerelle Go `gateway-go` et module cryptographique Rust `crypto-rust`, synthèse dans `Borealis-Bench/results/SYNTHESE-BENCH.md`) a exécuté localement deux campagnes directement liées à ce chapitre :
 
 - **Campagne 1 — Latence cumulée des 9 contrôles PEP en échec fermé et coupe-circuit** `POR-003` **(**`Borealis-Bench/results/campagne1_pep_latence.json`**) :** sur `2 000` requêtes traversant les 9 contrôles en processus Go (`C1` schéma JSON, `C2` AuthN/DPoP, `C3` échange RFC 8693, `C4` règle de deux Cedar/OPA, `C5` quota/budget, `C6` filtre CaMeL, `C7` liaison JCS/SHA-256/CIBA, `C8` journal préalable Saga, `C9` télémétrie OpenTelemetry double couloir), la latence cumulée s’établit à `p50 = 52,85 µs`, `p95 = 202,83 µs`, `p99 = 234,06 µs` (max `255,94 µs`, `C6_CAMEL_INJECTION_FILTER` représentant `64,01 µs` en moyenne sur `68,30 µs`). Bout en bout sur `1 000` requêtes HTTP/TCP locales, la latence mesurée atteint `p50 = 59,09 µs`, `p95 = 1 006,70 µs` et `p99 = 3 523,10 µs` (moyenne `218,30 µs`). Sur `10` exercices concurrents (`4` workers), le coupe-circuit `POR-003` interrompt les mutations en `p50 = 50,00 µs` (`max = 0,050 ms`, strictement inférieur au seuil cible de `10 s`), avec `0` mutation fuite post-déclenchement et `10/10` compensations préservées.
-- **Campagne 3 — Interopérabilité** `MCP` **/** `A2A` **sur 3 adaptateurs ouverts (**`Borealis-Bench/results/campagne3_mcp_a2a_interop.json`**) :** trois adaptateurs ouverts (`LangGraph-adapter`, `AutoGen-adapter`, `CrewAI-adapter`) exécutent trois scénarios (`SC1-MCP-Tool-Governance`, `SC2-A2A-Cross-Framework-Delegation`, `SC3-`
-  `Trifecta-And-LogJack-Containment`) face au serveur réel `MCP JSON-RPC 2.0` + `A2A v1.0` de la passerelle Go.
+- **Campagne 3 — Interopérabilité** `MCP` **/** `A2A` **sur 3 adaptateurs ouverts (**`Borealis-Bench/results/campagne3_mcp_a2a_interop.json`**) :** trois adaptateurs ouverts (`LangGraph-adapter`, `AutoGen-adapter`, `CrewAI-adapter`) exécutent trois scénarios (`SC1-MCP-Tool-Governance`, `SC2-A2A-Cross-Framework-Delegation`, `SC3-Trifecta-And-LogJack-Containment`) face au serveur réel `MCP JSON-RPC 2.0` + `A2A v1.0` de la passerelle Go.
 
 | Adaptateur ouvert | Scénario `MCP` / `A2A` | Constaté (`Borealis-Bench`) | `DPoP` / `8693` + Règle 2 & `POR-003` | Latence (ms) |
 | --- | --- | --- | --- | --- |
@@ -215,7 +212,7 @@ Pour dépasser les déclarations d’éditeurs sans prétendre à une mesure en 
 | `AutoGen-adapter` | `SC1` / `SC2` / `SC3` | `PASS` **(3/3)** | Oui | `90,55` / `50,00` / `18,92` |
 | `CrewAI-adapter` | `SC1` / `SC2` / `SC3` | `PASS` **(3/3)** | Oui | `56,52` / `33,73` / `89,31` |
 
-Le taux constaté atteint `9/9` **(**`100,0 %`**)**, complété par la preuve exécutable Rust de l’arbitre SRE (`Extrait 47.7`) : l’hypothèse nulle 𝐻0 = 0, 25 ramène une hypothèse unique faible de `100 %` (contournement historique de Cedar `>= 88 %`) à `9 %` (bloquée en échec fermé), tandis qu’une hypothèse fortement corroborée atteint `93 %` (autorisée).
+Le taux constaté atteint `9/9` **(**`100,0 %`**)**, complété par la preuve exécutable Rust de l’arbitre SRE (`Extrait 47.7`) : l’hypothèse nulle 𝐻_0 = 0,25 ramène une hypothèse unique faible de `100 %` (contournement historique de Cedar `>= 88 %`) à `9 %` (bloquée en échec fermé), tandis qu’une hypothèse fortement corroborée atteint `93 %` (autorisée).
 
 ### Ce qui manque
 

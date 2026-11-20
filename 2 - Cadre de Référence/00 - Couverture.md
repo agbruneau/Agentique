@@ -12,7 +12,7 @@ Identifiant normatif | CRE-IA-2026-01
 
 Version et date | 1.2 — 19 novembre 2026
 
-Statut | Version 1.2 consolidée (305 exigences EXIG-*, socle unifié) — Production autonome IA, référentiel consultatif pour architectes d’entreprise (AE) et de solutions (AS)
+Statut | Version 1.2 consolidée (305 exigences EXIG-\*, socle unifié) — Production autonome IA, référentiel consultatif pour architectes d’entreprise (AE) et de solutions (AS)
 
 Auteur | André-Guy Bruneau M.Sc. IT
 

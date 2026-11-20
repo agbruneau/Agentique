@@ -1,59 +1,69 @@
 ' Fig. 2. – Architecture de référence unifiée à 5 couches et 3 volets de contrôle, raccordement exact aux 6 couches de CAD26 § 5.2 (fermeture DIV-02) et délimitation du noyau possédé face aux suites SaaS.
 ' Source : 5 - Memoire (Chapitre 2, p. 17)
 @startuml
-top to bottom direction
+left to right direction
 skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName SansSerif
 skinparam Padding 5
 skinparam linetype polyline
-skinparam nodesep 55
-skinparam ranksep 14
+skinparam nodesep 10
+skinparam ranksep 80
 skinparam legendBackgroundColor #FFFFFF
 skinparam legendBorderColor #FFFFFF
+hide stereotype
+
+<style>
+rectangle {
+  MinimumWidth 275
+}
+.hdr {
+  HorizontalAlignment center
+  MinimumWidth 275
+}
+</style>
 
 title
 <b>Architecture unifiée (5 couches + 3 volets) ↔ 6 couches CAD26 § 5.2</b>
 <size:11><color:#475569>Résorption DIV-02 et frontière noyau de contrôle possédé / suites SaaS</color></size>
 end title
 
-together {
-    rectangle "<color:#1D4ED8><b>6 vraies couches CAD26 § 5.2</b></color>" as CAD26 #F8FAFC;line:2563EB {
-        rectangle "<b>1. Canaux & déclencheurs</b>\nZéro logique · ARC-03..04" as D1 #FFFFFF;line:2563EB
-        rectangle "<b>2. Orchestration & état</b>\nDurable, A2A, mém. trav." as D2 #FFFFFF;line:2563EB
-        rectangle "<b>3. Agents & exéc. cognit.</b>\nAgents, modèles, MicroVM" as D3 #FFF7ED;line:C2410C
-        rectangle "<b>4. Médiation & connect.</b>\nPEP, catalogue, bus EVT" as D4 #FFFFFF;line:2563EB
-        rectangle "<b>5. Outils & données</b>\nMCP, index, mém. ép./sém." as D5 #F5F3FF;line:7C3AED
-        rectangle "<b>6. Syst. d’enregistrement</b>\nCœurs via API · ARC-17" as D6 #ECFDF5;line:16A34A
+rectangle "<color:#FFFFFF><b>Pivot PD28 (5 couches)</b></color>" as H1 <<hdr>> #0F172A;line:0F172A
+rectangle "<b>C1 · Interaction</b>  <color:#2563EB>CAP-001..006</color>\nCanaux, CIBA, Loi 25" as P1 #EFF6FF;line:2563EB
+rectangle "<b>C2 · Agents & orch.</b>  <color:#2563EB>CAP-007..014</color>\nOO3/OO4 [S], Saga, A2A" as P2 #EFF6FF;line:2563EB
+rectangle "<b>C3 · Contexte & conn.</b>  <color:#2563EB>CAP-015..021</color>\nACL, sémantique, CoALA" as P3 #EFF6FF;line:2563EB
+rectangle "<b>C4 · Accès & outils</b>  <color:#2563EB>CAP-022..028</color>\nPEP, MCP, COMP-3, OT" as P4 #EFF6FF;line:2563EB
+rectangle "<b>C5 · Modèles</b>  <color:#2563EB>CAP-029..034</color>\nRoutage, MicroVM, 6 sub." as P5 #EFF6FF;line:2563EB
 
-        D1 -[hidden]down-> D2
-        D2 -[hidden]down-> D3
-        D3 -[hidden]down-> D4
-        D4 -[hidden]down-> D5
-        D5 -[hidden]down-> D6
-    }
+H1 -[hidden]> P1
+P1 -[hidden]> P2
+P2 -[hidden]> P3
+P3 -[hidden]> P4
+P4 -[hidden]> P5
 
-    rectangle "<b>Pivot PD28 (5 couches)</b>" as PD28 #F8FAFC;line:0F172A {
-        rectangle "<b>C1 · Interaction</b>  <color:#2563EB>CAP-001..006</color>\nCanaux, CIBA, Loi 25" as P1 #EFF6FF;line:2563EB
-        rectangle "<b>C2 · Agents & orch.</b>  <color:#2563EB>CAP-007..014</color>\nOO3/OO4 [S], Saga, A2A" as P2 #EFF6FF;line:2563EB
-        rectangle "<b>C3 · Contexte & conn.</b>  <color:#2563EB>CAP-015..021</color>\nACL, sémantique, CoALA" as P3 #EFF6FF;line:2563EB
-        rectangle "<b>C4 · Accès & outils</b>  <color:#2563EB>CAP-022..028</color>\nPEP, MCP, COMP-3, OT" as P4 #EFF6FF;line:2563EB
-        rectangle "<b>C5 · Modèles</b>  <color:#2563EB>CAP-029..034</color>\nRoutage, MicroVM, 6 sub." as P5 #EFF6FF;line:2563EB
+rectangle "<color:#FFFFFF><b>6 vraies couches CAD26 § 5.2</b></color>" as H2 <<hdr>> #2563EB;line:2563EB
+rectangle "<b>1. Canaux & déclencheurs</b>\nZéro logique · ARC-03..04" as D1 #FFFFFF;line:2563EB
+rectangle "<b>2. Orchestration & état</b>\nDurable, A2A, mém. trav." as D2 #FFFFFF;line:2563EB
+rectangle "<b>3. Agents & exéc. cognit.</b>\nAgents, modèles, MicroVM" as D3 #FFF7ED;line:C2410C
+rectangle "<b>4. Médiation & connect.</b>\nPEP, catalogue, bus EVT" as D4 #FFFFFF;line:2563EB
+rectangle "<b>5. Outils & données</b>\nMCP, index, mém. ép./sém." as D5 #F5F3FF;line:7C3AED
+rectangle "<b>6. Syst. d’enregistrement</b>\nCœurs via API · ARC-17" as D6 #ECFDF5;line:16A34A
 
-        P1 -[hidden]down-> P2
-        P2 -[hidden]down-> P3
-        P3 -[hidden]down-> P4
-        P4 -[hidden]down-> P5
-    }
-}
+H2 -[hidden]> D1
+D1 -[hidden]> D2
+D2 -[hidden]> D3
+D3 -[hidden]> D4
+D4 -[hidden]> D5
+D5 -[hidden]> D6
 
-P1 <-[#0F172A,norank]-> D1 : <color:#9A3412><b>DIV</b></color>
-P2 -[#2563EB,norank]-> D2
-P2 .[#2563EB,norank].> D3
-P3 <-[#7C3AED,norank]-> D5
-P4 <-[#16A34A,norank]-> D4
-P4 <-[#16A34A,norank]-> D6
-P5 <-[#C2410C,norank]-> D3
+H1 -[hidden]--> H2
+P1 <-[#0F172A]--> D1 : <color:#9A3412><b>DIV</b></color>
+P2 -[#2563EB]--> D2
+P2 .[#2563EB]..> D3
+P3 <-[#7C3AED]--> D5
+P4 <-[#16A34A]--> D4
+P4 <-[#16A34A]--> D6
+P5 <-[#C2410C]--> D3
 
 legend center
 <b>Noyau de contrôle possédé — 42 CAP invariantes (Plans A, B, C)</b>

@@ -16,9 +16,7 @@ Ce que le chapitre ne traite pas. Le **vide fédéral** est au ch. 26 ; le **ré
 
 ## 25.1 Genèse et calendrier
 
-Le socle établit deux dates et un périmètre, et il faut mesurer à quel point c’est peu. La version finale d’E-23 a été publiée le 11 septembre
-
-2025. Elle entre en vigueur le 1ᵉʳ mai 2027. Elle s’applique à toutes les institutions financières fédérales, y compris les succursales étrangères, dans la mesure compatible (Vol. II F-09, strate **[A]**).
+Le socle établit deux dates et un périmètre, et il faut mesurer à quel point c’est peu. La version finale d’E-23 a été publiée le 11 septembre 2025. Elle entre en vigueur le 1ᵉʳ mai 2027. Elle s’applique à toutes les institutions financières fédérales, y compris les succursales étrangères, dans la mesure compatible (Vol. II F-09, strate **[A]**).
 
 L’arithmétique du préavis décide des plans de mise en conformité. Du 11 septembre 2025 au 1ᵉʳ mai 2027, dix-neuf mois et vingt jours séparent la publication du texte final de sa prise d’effet (le document d’information du Bureau parlant d’une période de transition de dix-huit mois, voir § 25.7). *Rapporté au gel de la somme — le 27 juillet 2026 —, le compte à rebours est plus serré : il reste neuf mois et quatre jours.* *Une institution qui lirait ce chapitre à sa date de gel disposerait donc d’un peu plus de trois trimestres pour inventorier, classer et encadrer ce qui, dans son parc, relève de la définition examinée à la section suivante.*
 

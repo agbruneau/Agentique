@@ -97,9 +97,7 @@ Contrairement au patron `Handoff`, le routeur exécute un aiguillage en une pass
 
 ### 7.2.3 Topologie Supervisor et patron Subagents-as-Tools
 
-Dans la topologie **Supervisor** (*Orchestrator-Workers* chez Anthropic ou *Magentic* dans le Microsoft Agent Framework), un coordonnateur central décompose dynamiquement la tâche, délègue des sous-mandats à des travailleurs spécialisés et synthétise le résultat [126] [131] [132] [133]. C’est cette architecture
-
-— un agent `Claude Opus 4` orchestrant des sous-agents `Claude Sonnet 4` en parallèle — qui a permis à Anthropic de surclasser de 90,2 % l’agent unique `Claude Opus 4` sur son banc de recherche interne [127].
+Dans la topologie **Supervisor** (*Orchestrator-Workers* chez Anthropic ou *Magentic* dans le Microsoft Agent Framework), un coordonnateur central décompose dynamiquement la tâche, délègue des sous-mandats à des travailleurs spécialisés et synthétise le résultat [126] [131] [132] [133]. C’est cette architecture — un agent `Claude Opus 4` orchestrant des sous-agents `Claude Sonnet 4` en parallèle — qui a permis à Anthropic de surclasser de 90,2 % l’agent unique `Claude Opus 4` sur son banc de recherche interne [127].
 
 Les cadriciels modernes convergent vers l’implémentation **Subagents-as-Tools** plutôt que vers le partage d’une file de messages brute entre pairs [133] [136]. Le superviseur invoque chaque sous-agent spécialisé comme un outil sans état [136], ce qui procure deux bénéfices majeurs :
 
@@ -245,9 +243,7 @@ L’orchestration en **Group Chat** (*roundtable* ou *council*) réunit plusieur
 
 *Tableau 7.2 — Matrice comparative des topologies d’orchestration : contrôle, profil économique, risques et cas d’usage.*
 
-> **Arbitrage EA / SA** — Exiger un plafond d’itérations (`max_iterations`) et un test de stagnation sur toute boucle `Generator-Verifier`, une politique de quorum et un `timeout SLA` sur tout `Scatter-Gather`, et interdire les `Group Chats` dépassant trois agents [128] [131] [141]. Le `SA` place la vérification déterministe avant le juge cognitif et filtre les historiques de `Handoff` via `input_filter`
-
-> [126] [140]; l’`EA` impose une escalade `HITL` en cas de non-convergence sur les processus à effet externe [128] [135].
+> **Arbitrage EA / SA** — Exiger un plafond d’itérations (`max_iterations`) et un test de stagnation sur toute boucle `Generator-Verifier`, une politique de quorum et un `timeout SLA` sur tout `Scatter-Gather`, et interdire les `Group Chats` dépassant trois agents [128] [131] [141]. Le `SA` place la vérification déterministe avant le juge cognitif et filtre les historiques de `Handoff` via `input_filter` [126] [140]; l’`EA` impose une escalade `HITL` en cas de non-convergence sur les processus à effet externe [128] [135].
 
 ## 7.4 Ingénierie des transferts d’état : passage par référence (Artifact URI) et prévention du Goal Drift
 
@@ -317,8 +313,7 @@ Lorsque cette fragilité rencontre des données externes adverses ou non vérifi
 
 La prévention de ces dérives repose sur quatre défenses structurelles intégrées à l’orchestrateur [143] [146] [147] [135] :
 
-1. **Ancrage du mandat aux extrémités (**`Goal Pinning`**)** : exploiter la courbe en U de *Lost in the Middle* [146] en maintenant le contrat d’objectif immuable (mandat métier, seuils autorisés, critères d’arrêt)
-  hors de l’historique conversationnel mutable et en le réinjectant en tête système et en fin immédiate de contexte avant chaque décision d’action [143] [146].
+1. **Ancrage du mandat aux extrémités (**`Goal Pinning`**)** : exploiter la courbe en U de *Lost in the Middle* [146] en maintenant le contrat d’objectif immuable (mandat métier, seuils autorisés, critères d’arrêt) hors de l’historique conversationnel mutable et en le réinjectant en tête système et en fin immédiate de contexte avant chaque décision d’action [143] [146].
 2. **Hiérarchie stricte des instructions (**`Instruction Hierarchy`**)** : appliquer les principes de Wallace et al. (OpenAI) en distinguant hiérarchiquement consignes développeur, requêtes utilisateur et données tierces (retours d’outils, artefacts et messages de pairs) afin que les données ne puissent jamais surclasser le mandat privilégié [147] [135].
 3. **Validation typée des enveloppes inter-nœuds** : imposer des schémas structurés (`input_type`, `JSON Schema`) sur tout transfert d’état et rejeter les champs textuels libres susceptibles de redéfinir le rôle du nœud aval (`MAST FC1`) [125] [140].
 4. **Séparation planification/exécution et coupe-circuits SRE** : conformément aux recommandations de l’OWASP [135], soumettre toute action irréversible issue du graphe à une porte de politique déterministe (les *Intent Gates* `OPA` /`Cedar` et identités `NHI` /`SPIFFE` du chapitre 10) et appliquer des plafonds stricts de profondeur de délégation et de budget [135].

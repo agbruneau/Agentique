@@ -8,6 +8,8 @@ skinparam defaultFontName "Segoe UI"
 skinparam defaultFontSize 12
 skinparam defaultTextAlignment center
 skinparam linetype ortho
+skinparam nodesep 12
+skinparam ranksep 16
 skinparam rectangle {
   BorderThickness 1.5
 }
@@ -35,15 +37,15 @@ rectangle "**Mise en œuvre : maturité en 5 niveaux, feuille de route en 4 phas
 
 Toit -[hidden]down-> Principes
 Principes -[hidden]down-> P1
-Principes -[hidden]down-> P2
 Principes -[hidden]down-> P3
-Principes -[hidden]down-> P4
 Principes -[hidden]down-> P5
 P1 -[hidden]right-> P2
 P2 -[hidden]right-> P3
 P3 -[hidden]right-> P4
 P4 -[hidden]right-> P5
+P1 -[hidden]down-> Arch
 P3 -[hidden]down-> Arch
+P5 -[hidden]down-> Arch
 Arch -[hidden]down-> Gouv
 Arch -[hidden]down-> Risq
 Gouv -[hidden]right-> Risq

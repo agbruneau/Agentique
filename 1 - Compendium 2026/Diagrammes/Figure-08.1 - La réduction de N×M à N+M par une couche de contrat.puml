@@ -44,7 +44,7 @@ skinparam legendBackgroundColor #FFFFFF
 skinparam legendBorderColor #9A958C
 skinparam legendFontColor #222222
 
-package "SANS COUCHE DE CONTRAT\n<color:#222222>N × M intégrations point-à-point</color>" as P_LEFT {
+package "<color:#555555>SANS COUCHE DE CONTRAT</color>\n<color:#222222>N × M intégrations point-à-point</color>" as P_LEFT {
   rectangle "Agent" as A1
   rectangle "Agent" as A2
   rectangle "Agent" as A3
@@ -63,7 +63,7 @@ package "SANS COUCHE DE CONTRAT\n<color:#222222>N × M intégrations point-à-po
   A3 -- O3 #B8B3AA
 }
 
-package "AVEC UNE COUCHE DE CONTRAT\n<color:#222222>N + M — le geste du modèle canonique (ch. 1 § 1.6.1)</color>" as P_RIGHT <<accent>> {
+package "<color:#9E3A14>AVEC UNE COUCHE DE CONTRAT</color>\n<color:#222222>N + M — le geste du modèle canonique (ch. 1 § 1.6.1)</color>" as P_RIGHT <<accent>> {
   rectangle "Agent" as B1
   rectangle "Agent" as B2
   rectangle "Agent" as B3

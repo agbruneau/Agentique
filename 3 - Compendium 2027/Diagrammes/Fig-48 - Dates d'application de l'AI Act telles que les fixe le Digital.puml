@@ -1,0 +1,99 @@
+' Fig. 48. – Dates d'application de l'AI Act telles que les fixe le Digital Omnibus (règlement (UE) 2026/1744) : les échéances de 2025 et d'août 2026 restent inchangées, une échéance s'ajoute en décembre 2026 et les obligations à haut risque sont reportées à 2027 et 2028.
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam nodesep 14
+skinparam ranksep 14
+skinparam rectangle<<invis>> {
+  BackgroundColor transparent
+  BorderColor transparent
+  FontColor transparent
+  FontSize 1
+}
+
+rectangle D1 #F8FAFC;line:475569 [
+  INCHANGÉ
+  **2 août 2025**
+  Modèles GPAI
+]
+rectangle " " as SpTop2 <<invis>>
+rectangle D3 #EFF6FF;line:2563EB [
+  <color:#2563EB>**NOUVEAU**</color>
+  **2 décembre 2026**
+  Marquage (art. 50(2)), délai transitoire
+  Nouvelles interdictions (art. 5)
+]
+rectangle " " as SpTop4 <<invis>>
+rectangle D5 #FFF7ED;line:9A3412 [
+  <color:#9A3412>**REPORTÉ**</color>
+  **2 décembre 2027**
+  Haut risque, annexe III
+]
+rectangle " " as SpTop6 <<invis>>
+
+D1 -[hidden]right-> SpTop2
+SpTop2 -[hidden]right-> D3
+D3 -[hidden]right-> SpTop4
+SpTop4 -[hidden]right-> D5
+D5 -[hidden]right-> SpTop6
+
+circle " " as P1 #FFFFFF;line:475569
+circle " " as P2 #FFFFFF;line:475569
+circle " " as P3 #FFFFFF;line:2563EB
+circle " " as P4 #FFFFFF;line:9A3412
+circle " " as P5 #FFFFFF;line:9A3412
+circle " " as P6 #FFFFFF;line:9A3412
+
+P1 -[hidden]right-> P2
+P2 -[hidden]right-> P3
+P3 -[hidden]right-> P4
+P4 -[hidden]right-> P5
+P5 -[hidden]right-> P6
+P1 -[#94A3B8,norank]- P2
+P2 -[#94A3B8,norank]- P3
+P3 -[#94A3B8,norank]- P4
+P4 -[#94A3B8,norank]- P5
+P5 -[#94A3B8,norank]- P6
+
+rectangle " " as SpBot1 <<invis>>
+rectangle D2 #F8FAFC;line:475569 [
+  **2 août 2026**
+  Transparence (art. 50)
+  INCHANGÉ
+]
+rectangle " " as SpBot3 <<invis>>
+rectangle D4 #FFF7ED;line:9A3412 [
+  **2 août 2027**
+  Bac à sable par État membre
+  <color:#9A3412>**REPORTÉ**</color>
+]
+rectangle " " as SpBot5 <<invis>>
+rectangle D6 #FFF7ED;line:9A3412 [
+  **2 août 2028**
+  Haut risque, annexe I
+  <color:#9A3412>**REPORTÉ**</color>
+]
+
+SpBot1 -[hidden]right-> D2
+D2 -[hidden]right-> SpBot3
+SpBot3 -[hidden]right-> D4
+D4 -[hidden]right-> SpBot5
+SpBot5 -[hidden]right-> D6
+
+D1 -[#94A3B8]down- P1
+SpTop2 -[hidden]down-> P2
+D3 -[#94A3B8]down- P3
+SpTop4 -[hidden]down-> P4
+D5 -[#94A3B8]down- P5
+SpTop6 -[hidden]down-> P6
+
+P1 -[hidden]down-> SpBot1
+P2 -[#94A3B8]down- D2
+P3 -[hidden]down-> SpBot3
+P4 -[#94A3B8]down- D4
+P5 -[hidden]down-> SpBot5
+P6 -[#94A3B8]down- D6
+
+@enduml

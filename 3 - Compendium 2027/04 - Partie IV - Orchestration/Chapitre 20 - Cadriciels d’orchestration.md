@@ -14,9 +14,7 @@ Le plan initial retient quatre critères et donne pour appui le relevé de Zhu e
 
 ### Gestion d’état
 
-L’état est ce que le système sait entre deux appels au modèle. Les pages lues en montrent trois formes. La première est un état partagé et typé, que chaque étape lit et met à jour selon des règles de fusion déclarées : c’est le modèle de LangGraph [2]. La deuxième est une session, c’est-à-dire l’historique d’une conversation que la boucle d’agent prolonge :
-
-c’est le modèle des SDK des fournisseurs [9][12]. La troisième sépare l’état d’un workflow de l’historique des agents qu’il coordonne, comme le fait Microsoft Agent Framework [7].
+L’état est ce que le système sait entre deux appels au modèle. Les pages lues en montrent trois formes. La première est un état partagé et typé, que chaque étape lit et met à jour selon des règles de fusion déclarées : c’est le modèle de LangGraph [2]. La deuxième est une session, c’est-à-dire l’historique d’une conversation que la boucle d’agent prolonge : c’est le modèle des SDK des fournisseurs [9][12]. La troisième sépare l’état d’un workflow de l’historique des agents qu’il coordonne, comme le fait Microsoft Agent Framework [7].
 
 ### Coût en jetons
 
@@ -82,9 +80,7 @@ La documentation tranche entre agent et workflow.
 
 Elle ajoute une règle qui vaut pour tout le chapitre : si une fonction suffit, écrire la fonction plutôt qu’un agent [6].
 
-Les workflows définissent des chemins d’exécution explicites et inspectables [7]. Tous les SDK offrent une API à graphe : des exécuteurs typés reliés par des arêtes et des conditions, avec fan-out et fan-in, et des points de contrôle écrits aux frontières de super-étapes. Python ajoute une API fonctionnelle, expérimentale, où le flux s’exprime en code natif. La demande d’information à un humain est une primitive du workflow (chapitre 22). Un workflow peut
-
-enfin s’exposer comme un agent, donc s’emboîter dans un autre ou se publier derrière un protocole.
+Les workflows définissent des chemins d’exécution explicites et inspectables [7]. Tous les SDK offrent une API à graphe : des exécuteurs typés reliés par des arêtes et des conditions, avec fan-out et fan-in, et des points de contrôle écrits aux frontières de super-étapes. Python ajoute une API fonctionnelle, expérimentale, où le flux s’exprime en code natif. La demande d’information à un humain est une primitive du workflow (chapitre 22). Un workflow peut enfin s’exposer comme un agent, donc s’emboîter dans un autre ou se publier derrière un protocole.
 
 Sur l’échelle de reprise, ces points de contrôle relèvent du niveau intermédiaire; une extension durable, en préversion, vise le niveau supérieur (chapitre 18).
 
@@ -130,9 +126,7 @@ Deux attaches ressortent. L’une est écrite : l’usage est régi par les cond
 
 ### Deux objets sous un même nom
 
-Une distinction pèse plus que le nom du fournisseur. Une **bibliothèque de primitives** laisse l’équipe construire sa boucle et sa topologie. Un **harnais** livre une boucle déjà réglée (planification, compaction du contexte, accès aux fichiers, approbations) et se pilote par configuration. Microsoft offre les deux dans le même cadriciel [6]. Le harnais convient aux
-
-tâches longues et ouvertes; il transfère à l’éditeur des décisions d’ingénierie du contexte (chapitre 13).
+Une distinction pèse plus que le nom du fournisseur. Une **bibliothèque de primitives** laisse l’équipe construire sa boucle et sa topologie. Un **harnais** livre une boucle déjà réglée (planification, compaction du contexte, accès aux fichiers, approbations) et se pilote par configuration. Microsoft offre les deux dans le même cadriciel [6]. Le harnais convient aux tâches longues et ouvertes; il transfère à l’éditeur des décisions d’ingénierie du contexte (chapitre 13).
 
 ## 20.5 Approches déclaratives : DSPy, MetaGPT
 
@@ -150,9 +144,7 @@ L’idée centrale dépasse le projet : une procédure écrite, avec des livrabl
 
 ### Ce que les protocoles rendent portable
 
-Deux frontières sont désormais standardisées. Un outil exposé par MCP est utilisable par tout cadriciel qui possède un client MCP : c’est le cas de Microsoft Agent Framework, de l’OpenAI Agents SDK, d’ADK et du Claude Agent SDK, d’après leurs propres pages [6][9] [10][12]. LangChain et CrewAI en fournissent un aussi, limité aux outils dans les pages lues [16][18]. Un agent exposé par A2A est appelable par un agent bâti autrement : CrewAI,
-
-Microsoft Agent Framework et ADK documentent les deux rôles, client et serveur [5][8] [11]. Les protocoles eux-mêmes sont décrits aux chapitres 5 et 6.
+Deux frontières sont désormais standardisées. Un outil exposé par MCP est utilisable par tout cadriciel qui possède un client MCP : c’est le cas de Microsoft Agent Framework, de l’OpenAI Agents SDK, d’ADK et du Claude Agent SDK, d’après leurs propres pages [6][9] [10][12]. LangChain et CrewAI en fournissent un aussi, limité aux outils dans les pages lues [16][18]. Un agent exposé par A2A est appelable par un agent bâti autrement : CrewAI, Microsoft Agent Framework et ADK documentent les deux rôles, client et serveur [5][8] [11]. Les protocoles eux-mêmes sont décrits aux chapitres 5 et 6.
 
 D’autres actifs se transportent aussi : les Agent Skills, que lisent ADK et le Claude Agent SDK [10][12], dont le format voyage, mais non le comportement (chapitre 13); et les traces, si elles suivent OpenTelemetry (chapitre 33).
 
@@ -174,9 +166,7 @@ La documentation d’ADK donne la règle la plus utile [11]. Des sous-agents loc
 
 **Le protocole ne livre pas le service.** Chez Microsoft, l’adaptateur Python traduit l’agent en événements A2A, mais l’application assemble le reste : carte d’agent, magasin de tâches, routes, authentification, déploiement. La page avertit aussi que les métadonnées transmises ne constituent pas une frontière d’authentification [8]. CrewAI renvoie les besoins de production (état distribué, authentification d’entreprise, mise à l’échelle) vers sa plateforme commerciale, AMP [5].
 
-**La délégation devient un choix du modèle.** Dans CrewAI, l’agent analyse chaque tâche et décide de la traiter lui-même ou de la confier à un agent distant [5]. Le routage entre organisations hérite alors du non-déterminisme du modèle; une politique explicite est
-
-préférable pour les actions sensibles (chapitre 22) et pour les échanges entre entreprises (chapitre 45).
+**La délégation devient un choix du modèle.** Dans CrewAI, l’agent analyse chaque tâche et décide de la traiter lui-même ou de la confier à un agent distant [5]. Le routage entre organisations hérite alors du non-déterminisme du modèle; une politique explicite est préférable pour les actions sensibles (chapitre 22) et pour les échanges entre entreprises (chapitre 45).
 
 Le verrouillage se déplace donc plus qu’il ne disparaît. Il quitte la bibliothèque, souvent libre, pour l’environnement d’exécution géré, l’outillage d’observabilité et la plateforme (chapitres 26 et 27).
 
@@ -245,7 +235,6 @@ Pages primaires lues le 11 novembre 2026; [2], [5], [6], [8], [9], [10], [12] et
 3. LangGraph — persistance (l’adresse sert la page sur la persistance)
 4. CrewAI — introduction
 5. CrewAI — délégation d’agents par A2A
-
 6. Microsoft Agent Framework — vue d’ensemble (page datée du 23 octobre 2026)
 7. Microsoft Agent Framework — concepts de workflow (22 octobre 2026)
 8. Microsoft Agent Framework — héberger des agents avec A2A (23 octobre 2026)
@@ -279,8 +268,7 @@ Pages lues le 14 novembre 2026 :
 ## Limites de ce chapitre
 
 - Les sources [14] et [21], d’abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
-- Le relevé [15], appui prévu par le plan initial, n’a pas été lu : sa parution dans *Future Internet* (vol. 18, n° 6, art. 326, 15 juin 2026, DOI 10.3390/fi18060326) est confirmée via Crossref, mais la prépublication et la page MDPI retournent HTTP 403. Sa comparaison
-  des cadriciels n’est donc pas reprise, et rien n’établit que les quatre critères de la section 20.1 en proviennent.
+- Le relevé [15], appui prévu par le plan initial, n’a pas été lu : sa parution dans *Future Internet* (vol. 18, n° 6, art. 326, 15 juin 2026, DOI 10.3390/fi18060326) est confirmée via Crossref, mais la prépublication et la page MDPI retournent HTTP 403. Sa comparaison des cadriciels n’est donc pas reprise, et rien n’établit que les quatre critères de la section 20.1 en proviennent.
 - La plupart des pages ont été lues par un outil d’extraction qui en restitue le contenu en condensé; les pages de Microsoft et d’Anthropic l’ont été en texte intégral. La version A2A par défaut de CrewAI et la limite de récursion de LangGraph, à revérifier, ont été confirmées à la relecture.
 - La page d’accueil d’ADK n’annonce la version 2.0 en disponibilité générale que pour TypeScript; le statut des autres langages n’a pas été lu.
 - Une à quatre pages par produit ont été lues; restent non décrits les modèles acceptés par le Claude Agent SDK. La reprise sur échec dans ADK et dans l’OpenAI Agents SDK a été lue par passages le 14 novembre 2026, de [22] à [25]; le service de sessions qu’exige la reprise dans ADK, sa prise en charge dans les autres langages et le fonctionnement des intégrations d’exécution durable d’OpenAI ne l’ont pas été. La prise en charge de MCP par LangChain et par CrewAI, celle d’A2A par Agent Server et les licences de LangGraph, de CrewAI et de Microsoft Agent Framework ont été lues le 14 novembre 2026, de [16] à [19]; les licences viennent de la page d’accueil des dépôts, non du texte des licences.

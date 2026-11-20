@@ -47,7 +47,7 @@ Lorsqu’un traitement métier exige un suivi multi-étapes (panier, session de 
 > - 3 POST tools/list (cursor optionnel)
 > - 4 200 OK (tools[], nextCursor, ttlMs, cacheScope)
 > - 2. Invocation, MRTR et flux SSE par requête
-> - 5 POST tools/call (Mcp-Method, Mcp-Name, Mcp-Param-*)
+> - 5 POST tools/call (Mcp-Method, Mcp-Name, Mcp-Param-\*)
 > - alt [Information complémentaire requise (MRTR)]
 > - 6 200 OK (resultType: "input_required", inputRequests, requestState)
 > - 7 Collecte inputResponses (saisie ou approbation)
@@ -100,9 +100,7 @@ Pour l’`EA`, `MCP` sous gouvernance `AAIF` unifie le Plan 3 en supprimant le c
 
 Un transport standardisé ne garantit ni la justesse de sélection ni l’efficacité d’un outil. Dans *SWE-agent*, Yang et al. ont établi le concept d’`Agent-Computer Interface` **(**`ACI`**)** en montrant que les agents de langage forment une classe d’utilisateurs distincte des humains et des programmes déterministes [61]. En dotant le modèle d’une interface sur mesure — intégrant un visualiseur et un éditeur de fichiers dédiés, des commandes de recherche et de navigation dans les dépôts ainsi que l’exécution de tests — `SWE-agent` a atteint `12,5 %` de réussite `pass@1` sur `SWE-bench` et `87,7 %` sur `HumanEvalFix` [61].
 
-Anthropic transpose ce principe à l’ingénierie des serveurs `MCP` : un outil incarne un contrat entre un système déterministe et un consommateur non déterministe [62]. Ses noms, descriptions, paramètres et
-
-retours appartiennent de plein droit à l’ingénierie du contexte : l’interface la plus claire pour l’agent se révèle du même coup la plus lisible pour les équipes d’exploitation [62].
+Anthropic transpose ce principe à l’ingénierie des serveurs `MCP` : un outil incarne un contrat entre un système déterministe et un consommateur non déterministe [62]. Ses noms, descriptions, paramètres et retours appartiennent de plein droit à l’ingénierie du contexte : l’interface la plus claire pour l’agent se révèle du même coup la plus lisible pour les équipes d’exploitation [62].
 
 ### 4.2.2 L’anti-patron Swagger-to-MCP : saturation, confusion et double transit
 
@@ -173,8 +171,7 @@ Pour l’`EA`, proscrire la conversion mécanique `Swagger-to-MCP` protège les 
 
 Brancher chaque `Agent Harness` directement sur des dizaines de serveurs hétérogènes (`stdio` locaux, services distants, connecteurs tiers) multiplie les angles morts de sécurité et favorise l’apparition de `Shadow MCP Servers` non inventoriés dénoncés par l’`OWASP` [67] [60]. La `MCP Gateway` centralise cette couche verticale du Plan 3 autour de deux familles complémentaires :
 
-- **Les plans de données nativement agentiques (**`AAIF`**)** : écrit en `Rust`, `Agentgateway` fédère dans un unique proxy le routage `HTTP` /`gRPC`, l’aiguillage `LLM` et la médiation `MCP` (`stdio`, `HTTP`, `SSE`,
-  `Streamable HTTP`, traduction `OpenAPI`), avec moteur de politiques `CEL` par outil, limitation de débit et traces `OpenTelemetry` [68] (son versant `A2A` relevant du chapitre 5). De son côté, `Agent Router` (anciennement `Envoy AI Gateway`) s’appuie sur `Envoy` et `Envoy Gateway` via des ressources déclaratives (`AIGatewayRoute`, `AIServiceBackend`) et `ExtProc` sur `gRPC` pour multiplexer les serveurs `MCP` et appliquer des règles `CEL` granulaires [69].
+- **Les plans de données nativement agentiques (**`AAIF`**)** : écrit en `Rust`, `Agentgateway` fédère dans un unique proxy le routage `HTTP` /`gRPC`, l’aiguillage `LLM` et la médiation `MCP` (`stdio`, `HTTP`, `SSE`, `Streamable HTTP`, traduction `OpenAPI`), avec moteur de politiques `CEL` par outil, limitation de débit et traces `OpenTelemetry` [68] (son versant `A2A` relevant du chapitre 5). De son côté, `Agent Router` (anciennement `Envoy AI Gateway`) s’appuie sur `Envoy` et `Envoy Gateway` via des ressources déclaratives (`AIGatewayRoute`, `AIServiceBackend`) et `ExtProc` sur `gRPC` pour multiplexer les serveurs `MCP` et appliquer des règles `CEL` granulaires [69].
 - **Les passerelles d’**`API Management` **et iPaaS étendues** : `Azure API Management` (`APIM`) projette sélectivement des opérations `REST` gérées ou encapsule des serveurs `MCP` externes derrière ses produits et politiques [70]; `Amazon Bedrock AgentCore Gateway` traduit des contrats `OpenAPI 3.0` /`3.1` en outils gouvernés [65]; et `MuleSoft Agent Fabric` (`Omni Gateway` / `MCP Bridge`) expose les actifs `API-led` existants sans réécriture applicative [56].
 
 ### 4.3.2 Médiation multiprotocole : REST/OpenAPI, gRPC et GraphQL
@@ -276,9 +273,7 @@ Pour neutraliser l’impact de charge sur les `SoR`, l’`ACL` applique une sép
 
 Côté **lectures**, un pipeline de capture par journaux de transactions (`Change Data Capture` **—** `CDC`) tel que `Debezium` (déployé sur `Kafka Connect`, en `Debezium Server` ou opérateur `Kubernetes`) capte en quasi-temps réel les insertions, mises à jour et suppressions directement depuis les journaux des bases supportées (`Db2`, `Oracle`, `PostgreSQL`, `SQL Server`) sans scrutation `SQL` intrusive [75] [76]. Ces flux événementiels (`CloudEvents`, patron `Outbox`) alimentent des **projections de lecture** `CQRS` modernes (indexation rapide, cache distribué à invalidation automatique) dédiées aux outils `readOnlyHint: true` [58] [76]. Les requêtes répétitives des agents n’atteignent plus ni les moteurs transactionnels `ERP` ni les `MIPS` du mainframe.
 
-Côté **écritures**, toute mutation traverse la passerelle bornée de l’`ACL` vers les interfaces transactionnelles officielles (`z/OS Connect`, `MuleSoft`, `ERP`), soumise à trois verrous déterministes : validation des invariants métier en code applicatif, vérification d’une **clé d’idempotence** contre les doubles exécutions lors des réessais `Streamable HTTP`, et lissage de débit protégeant le `SoR`, avec recours à `MRTR` (`input_required`)
-
-pour toute opération irréversible exigeant une confirmation [58] [73] [56]. La figure 4.4 et le tableau 4.3 synthétisent ces patrons.
+Côté **écritures**, toute mutation traverse la passerelle bornée de l’`ACL` vers les interfaces transactionnelles officielles (`z/OS Connect`, `MuleSoft`, `ERP`), soumise à trois verrous déterministes : validation des invariants métier en code applicatif, vérification d’une **clé d’idempotence** contre les doubles exécutions lors des réessais `Streamable HTTP`, et lissage de débit protégeant le `SoR`, avec recours à `MRTR` (`input_required`) pour toute opération irréversible exigeant une confirmation [58] [73] [56]. La figure 4.4 et le tableau 4.3 synthétisent ces patrons.
 
 > **[Figure]**
 > - Couche Anti-Corruption (ACL) & découplage CQRS

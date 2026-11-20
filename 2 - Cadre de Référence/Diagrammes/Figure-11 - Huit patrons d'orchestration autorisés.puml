@@ -1,138 +1,238 @@
 ' Figure 11 — Huit patrons d'orchestration autorisés (2 - Cadre de Référence, ch. 7, p. 100)
 ' Source : cadre CRE-IA-2026-01, d'après Anthropic (2024) et le Centre d'architecture Azure (2026)
 @startuml
-!pragma layout smetana
 top to bottom direction
 skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
 skinparam defaultFontSize 10
-skinparam nodesep 16
-skinparam ranksep 22
+skinparam nodesep 12
+skinparam ranksep 14
+skinparam card {
+  MinimumWidth 195
+}
 
-  rectangle "**1 · Flux déterministe**" as V1 #FFFFFF;line:CBD5E1 {
-    rectangle "code" as v1_c1 #F1F5F9;line:64748B
-    rectangle "agent" as v1_a #EDE8F5;line:5A469B
-    rectangle "valide" as v1_v #F1F5F9;line:64748B
-    rectangle "code" as v1_c2 #F1F5F9;line:64748B
-    v1_c1 -right-> v1_a
-    v1_a -right-> v1_v
-    v1_v -right-> v1_c2
-    rectangle "Patron par défaut. Le code fixe\nle chemin; le modèle traite les\nétapes non structurées." as v1_t #FFFFFF;line:FFFFFF
-    v1_c1 -[hidden]down-> v1_t
-  }
+card V1 #FFFFFF;line:CBD5E1 [
+**1 · Flux déterministe**
 
-  rectangle "**2 · Chaîne séquentielle**" as V2 #FFFFFF;line:CBD5E1 {
-    rectangle "étape A" as v2_a #EDE8F5;line:5A469B
-    rectangle "étape B" as v2_b #EDE8F5;line:5A469B
-    rectangle "étape C" as v2_c #EDE8F5;line:5A469B
-    v2_a -right-> v2_b : <color:#B45309>●</color>
-    v2_b -right-> v2_c : <color:#B45309>●</color>
-    rectangle "Sortie typée de A → entrée de B;\ncontrôle de schéma entre étapes\n(points orangés)." as v2_t #FFFFFF;line:FFFFFF
-    v2_a -[hidden]down-> v2_t
-  }
+{{
+left to right direction
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 10
+skinparam nodesep 12
+skinparam ranksep 12
+rectangle "code" as c1 #F1F5F9;line:64748B
+rectangle "agent" as a #EDE8F5;line:5A469B
+rectangle "valide" as v #F1F5F9;line:64748B
+rectangle "code" as c2 #F1F5F9;line:64748B
+c1 --> a
+a --> v
+v --> c2
+}}
 
-  rectangle "**3 · Routage et transfert**" as V3 #FFFFFF;line:CBD5E1 {
-    rectangle "routeur" as v3_r #EDE8F5;line:5A469B
-    rectangle "spécialiste 1" as v3_s1 #EDE8F5;line:5A469B
-    rectangle "**spécialiste 2**" as v3_s2 #EDE8F5;line:5A469B
-    rectangle "spécialiste 3" as v3_s3 #EDE8F5;line:5A469B
-    v3_r .right.> v3_s1
-    v3_r -right-> v3_s2
-    v3_r .right.> v3_s3
-    v3_s1 -[hidden]down-> v3_s2
-    v3_s2 -[hidden]down-> v3_s3
-    rectangle "Qualifie l’intention puis cède la\nsession et le contexte utile;\nle routeur se retire." as v3_t #FFFFFF;line:FFFFFF
-    v3_s3 -[hidden]down-> v3_t
-    v3_r -[hidden]down-> v3_t
-  }
 
-  rectangle "**4 · Parallélisation**" as V4 #FFFFFF;line:CBD5E1 {
-    rectangle "répart." as v4_d #F1F5F9;line:64748B
-    rectangle "agent" as v4_a1 #EDE8F5;line:5A469B
-    rectangle "agent" as v4_a2 #EDE8F5;line:5A469B
-    rectangle "agent" as v4_a3 #EDE8F5;line:5A469B
-    rectangle "fusion" as v4_f #F1F5F9;line:64748B
-    v4_d -right-> v4_a1
-    v4_d -right-> v4_a2
-    v4_d -right-> v4_a3
-    v4_a1 -right-> v4_f
-    v4_a2 -right-> v4_f
-    v4_a3 -right-> v4_f
-    v4_a1 -[hidden]down-> v4_a2
-    v4_a2 -[hidden]down-> v4_a3
-    rectangle "Sectionnement (sous-tâches\nindépendantes) ou vote; règle de\nfusion explicite; coût × N." as v4_t #FFFFFF;line:FFFFFF
-    v4_a3 -[hidden]down-> v4_t
-  }
+Patron par défaut. Le code fixe
+le chemin; le modèle traite les
+étapes non structurées.
+]
 
-  rectangle "**5 · Orchestrateur et exécutants**" as V5 #FFFFFF;line:CBD5E1 {
-    rectangle "orchestrateur" as v5_o #0F2744;text:FFFFFF;line:0F2744
-    rectangle "spéc. A" as v5_a #EDE8F5;line:5A469B
-    rectangle "spéc. B" as v5_b #EDE8F5;line:5A469B
-    rectangle "spéc. C" as v5_c #EDE8F5;line:5A469B
-    v5_o -down-> v5_a
-    v5_o -down-> v5_b
-    v5_o -down-> v5_c
-    v5_a -[hidden]right-> v5_b
-    v5_b -[hidden]right-> v5_c
-    rectangle "Plan dynamique, délégation A2A,\nconsolidation des artefacts;\ndeux niveaux au plus." as v5_t #FFFFFF;line:FFFFFF
-    v5_b -[hidden]down-> v5_t
-  }
+card V2 #FFFFFF;line:CBD5E1 [
+**2 · Chaîne séquentielle**
 
-  rectangle "**6 · Évaluateur-optimiseur**" as V6 #FFFFFF;line:CBD5E1 {
-    rectangle "producteur" as v6_p #EDE8F5;line:5A469B
-    rectangle "évaluateur" as v6_e #F1F5F9;line:64748B
-    v6_p -right-> v6_e
-    v6_p <-right- v6_e
-    rectangle "**≤ 3 itérations (production + évaluation)**\n\nVérificateur déterministe d’abord\n(compilateur, règles), puis modèle ou\ninvite distincts; escalade au plafond." as v6_t #FFFFFF;line:FFFFFF
-    v6_p -[hidden]down-> v6_t
-    v6_e -[hidden]down-> v6_t
-  }
+{{
+left to right direction
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 10
+skinparam nodesep 12
+skinparam ranksep 16
+rectangle "étape A" as a #EDE8F5;line:5A469B
+rectangle "étape B" as b #EDE8F5;line:5A469B
+rectangle "étape C" as c #EDE8F5;line:5A469B
+a --> b : <color:#B45309>●</color>
+b --> c : <color:#B45309>●</color>
+}}
 
-  rectangle "**7 · Chorégraphie événementielle**" as V7 #FFFFFF;line:CBD5E1 {
-    rectangle "agent" as v7_a1 #EDE8F5;line:5A469B
-    rectangle "agent" as v7_a2 #EDE8F5;line:5A469B
-    rectangle "agent" as v7_a3 #EDE8F5;line:5A469B
-    rectangle "bus d’événements (CloudEvents)" as v7_bus #E2F4F0;line:0F7682
-    rectangle "agent" as v7_a4 #EDE8F5;line:5A469B
-    rectangle "agent" as v7_a5 #EDE8F5;line:5A469B
-    v7_a1 -down- v7_bus
-    v7_a2 -down- v7_bus
-    v7_a3 -down- v7_bus
-    v7_bus -down- v7_a4
-    v7_bus -down- v7_a5
-    v7_a1 -[hidden]right-> v7_a2
-    v7_a2 -[hidden]right-> v7_a3
-    v7_a4 -[hidden]right-> v7_a5
-    rectangle "Pas de chef d’orchestre; compteur\nde sauts, trace et saga obligatoires." as v7_t #FFFFFF;line:FFFFFF
-    v7_a4 -[hidden]down-> v7_t
-  }
 
-  rectangle "**8 · Agent unique outillé**" as V8 #FFFFFF;line:CBD5E1 {
-    usecase "raisonner\nagir\nobserver" as v8_ag #EDE8F5;line:5A469B
-    rectangle "outil" as v8_o1 #F1F5F9;line:64748B
-    rectangle "outil" as v8_o2 #F1F5F9;line:64748B
-    rectangle "outil" as v8_o3 #F1F5F9;line:64748B
-    v8_ag -right- v8_o1
-    v8_ag -right- v8_o2
-    v8_ag -right- v8_o3
-    v8_o1 -[hidden]down-> v8_o2
-    v8_o2 -[hidden]down-> v8_o3
-    rectangle "Boucle ouverte bornée (étapes,\nbudget, délai); base de référence\navant tout multiagent." as v8_t #FFFFFF;line:FFFFFF
-    v8_ag -[hidden]down-> v8_t
-    v8_o3 -[hidden]down-> v8_t
-  }
+Sortie typée de A → entrée de B;
+contrôle de schéma entre étapes
+(points orangés).
+]
 
-v1_c2 -[hidden]right-> v2_a
-v2_c -[hidden]right-> v3_r
-v3_s1 -[hidden]right-> v4_d
+card V3 #FFFFFF;line:CBD5E1 [
+**3 · Routage et transfert**
+{{
+left to right direction
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 10
+skinparam nodesep 6
+skinparam ranksep 26
+rectangle "routeur" as r #EDE8F5;line:5A469B
+rectangle "spécialiste 1" as s1 #EDE8F5;line:5A469B
+rectangle "**spécialiste 2**" as s2 #EDE8F5;line:5A469B
+rectangle "spécialiste 3" as s3 #EDE8F5;line:5A469B
+r ..> s1
+r --> s2
+r ..> s3
+s1 -[hidden]> s2
+s2 -[hidden]> s3
+}}
 
-v5_o -[hidden]right-> v6_p
-v6_e -[hidden]right-> v7_a1
-v7_a3 -[hidden]right-> v8_ag
+Qualifie l’intention puis cède la
+session et le contexte utile;
+le routeur se retire.
+]
 
-v1_t -[hidden]down-> v5_o
-v2_t -[hidden]down-> v6_p
-v3_t -[hidden]down-> v7_a2
-v4_t -[hidden]down-> v8_ag
+card V4 #FFFFFF;line:CBD5E1 [
+**4 · Parallélisation**
+{{
+left to right direction
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 10
+skinparam nodesep 6
+skinparam ranksep 20
+rectangle "répart." as d #F1F5F9;line:64748B
+rectangle "agent" as a1 #EDE8F5;line:5A469B
+rectangle "agent" as a2 #EDE8F5;line:5A469B
+rectangle "agent" as a3 #EDE8F5;line:5A469B
+rectangle "fusion" as f #F1F5F9;line:64748B
+d --> a1
+d --> a2
+d --> a3
+a1 --> f
+a2 --> f
+a3 --> f
+a1 -[hidden]> a2
+a2 -[hidden]> a3
+}}
+
+Sectionnement (sous-tâches
+indépendantes) ou vote; règle de
+fusion explicite; coût × N.
+]
+
+card V5 #FFFFFF;line:CBD5E1 [
+**5 · Orchestrateur et exécutants**
+
+{{
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 10
+skinparam nodesep 8
+skinparam ranksep 20
+rectangle "orchestrateur" as o #0F2744;text:FFFFFF;line:0F2744
+rectangle "spéc. A" as a #EDE8F5;line:5A469B
+rectangle "spéc. B" as b #EDE8F5;line:5A469B
+rectangle "spéc. C" as c #EDE8F5;line:5A469B
+o --> a
+o --> b
+o --> c
+a -[hidden]right-> b
+b -[hidden]right-> c
+}}
+
+Plan dynamique, délégation A2A,
+consolidation des artefacts;
+deux niveaux au plus.
+]
+
+card V6 #FFFFFF;line:CBD5E1 [
+**6 · Évaluateur-optimiseur**
+
+{{
+left to right direction
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 10
+skinparam nodesep 10
+skinparam ranksep 24
+rectangle "producteur" as p #EDE8F5;line:5A469B
+rectangle "évaluateur" as e #F1F5F9;line:64748B
+p --> e
+e --> p
+}}
+
+**≤ 3 itérations (production + évaluation)**
+
+Vérificateur déterministe d’abord
+(compilateur, règles), puis modèle ou
+invite distincts; escalade au plafond.
+]
+
+card V7 #FFFFFF;line:CBD5E1 [
+**7 · Chorégraphie événementielle**
+{{
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 10
+skinparam nodesep 8
+skinparam ranksep 14
+rectangle "agent" as a1 #EDE8F5;line:5A469B
+rectangle "agent" as a2 #EDE8F5;line:5A469B
+rectangle "agent" as a3 #EDE8F5;line:5A469B
+rectangle "bus d’événements (CloudEvents)" as bus #E2F4F0;line:0F7682
+rectangle "agent" as a4 #EDE8F5;line:5A469B
+rectangle "agent" as a5 #EDE8F5;line:5A469B
+a1 -- bus
+a2 -- bus
+a3 -- bus
+bus -- a4
+bus -- a5
+a1 -[hidden]right-> a2
+a2 -[hidden]right-> a3
+a4 -[hidden]right-> a5
+}}
+
+Pas de chef d’orchestre; compteur
+de sauts, trace et saga obligatoires.
+]
+
+card V8 #FFFFFF;line:CBD5E1 [
+**8 · Agent unique outillé**
+{{
+left to right direction
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 10
+skinparam nodesep 6
+skinparam ranksep 24
+usecase "raisonner\nagir\nobserver" as ag #EDE8F5;line:5A469B
+rectangle "outil" as o1 #F1F5F9;line:64748B
+rectangle "outil" as o2 #F1F5F9;line:64748B
+rectangle "outil" as o3 #F1F5F9;line:64748B
+ag -- o1
+ag -- o2
+ag -- o3
+o1 -[hidden]> o2
+o2 -[hidden]> o3
+}}
+
+Boucle ouverte bornée (étapes,
+budget, délai); base de référence
+avant tout multiagent.
+]
+
+V1 -[hidden]right-> V2
+V2 -[hidden]right-> V3
+V3 -[hidden]right-> V4
+V5 -[hidden]right-> V6
+V6 -[hidden]right-> V7
+V7 -[hidden]right-> V8
+V1 -[hidden]down-> V5
+V2 -[hidden]down-> V6
+V3 -[hidden]down-> V7
+V4 -[hidden]down-> V8
 @enduml

@@ -79,9 +79,9 @@ Trois plans transversaux fournissent leurs services à toutes les couches : A Id
 
 ### La règle centrale
 
-La passerelle d’agents joue le rôle d’un poste de contrôle unique : on y vérifie l’identité de l’appelant, son droit de passage et le contenu de chaque appel, et l’on peut y fermer le passage d’un geste. Ce patron vient de l’architecture à confiance zéro du NIST, où un point d’application des politiques (PEP) ouvre, surveille et termine chaque connexion selon la décision d’un moteur de politiques**[73]**. Le catalogue d’entreprise, lui, dit ce qui a le droit d’exister : un outil, une carte d’agent ou un contrat d’événement qui n’y figure pas est injoignable.
+La passerelle d’agents joue le rôle d’un poste de contrôle unique : on y vérifie l’identité de l’appelant, son droit de passage et le contenu de chaque appel, et l’on peut y fermer le passage d’un geste. Ce patron vient de l’architecture à confiance zéro du NIST, où un point d’application des politiques (PEP) ouvre, surveille et termine chaque connexion selon la décision d’un moteur de politiques **[73]**. Le catalogue d’entreprise, lui, dit ce qui a le droit d’exister : un outil, une carte d’agent ou un contrat d’événement qui n’y figure pas est injoignable.
 
-Cette règle répond à une limite des plateformes : la gouvernance native de chacune s’arrête à sa frontière. Des éditeurs de passerelles, MuleSoft et TrueFoundry notamment, en tirent l’argument d’une application des politiques au niveau du transport, indépendante du fournisseur et du cadriciel**[44, 45]**. Le cadre retient le principe, sans reprendre de gains chiffrés qui n’ont pas été mesurés de façon indépendante.
+Cette règle répond à une limite des plateformes : la gouvernance native de chacune s’arrête à sa frontière. Des éditeurs de passerelles, MuleSoft et TrueFoundry notamment, en tirent l’argument d’une application des politiques au niveau du transport, indépendante du fournisseur et du cadriciel **[44, 45]**. Le cadre retient le principe, sans reprendre de gains chiffrés qui n’ont pas été mesurés de façon indépendante.
 
 `EXIG-ARC-01` **· DOIT**
 
@@ -95,15 +95,13 @@ Pourquoi : un point d’application unique est la condition pour authentifier, a
 
 **Mandant, trace et plafonds dans chaque appel**
 
-Chaque appel descendant **DOIT** transporter l’identité du mandant (jeton délégué, ou identité de l’agent autonome et de son parrain), le contexte de trace et la part restante de l’enveloppe de la tâche
-
-(EXIG-FIN-04 : jetons de modèle, coût, appels d’outils, délai). L’homologation d’un composant incapable de les propager **DOIT** être refusée.
+Chaque appel descendant **DOIT** transporter l’identité du mandant (jeton délégué, ou identité de l’agent autonome et de son parrain), le contexte de trace et la part restante de l’enveloppe de la tâche (EXIG-FIN-04 : jetons de modèle, coût, appels d’outils, délai). L’homologation d’un composant incapable de les propager **DOIT** être refusée.
 
 Pourquoi : ces trois éléments rendent chaque action imputable à une personne, reconstituable après coup et bornée dans ses effets et son coût; il suffit d’un maillon qui les perd pour rompre toute la chaîne.
 
 ### Des rôles, pas des produits
 
-Chaque boîte de la figure 3 désigne un rôle. Un même produit peut en remplir plusieurs : Amazon Bedrock AgentCore, par exemple, réunit des services modulaires distincts pour l’exécution, la mémoire, la passerelle, l’identité, la politique, l’observabilité et le registre, utilisables séparément avec tout cadriciel**[102]**. À l’inverse, un rôle peut exiger plusieurs produits. La section 5.4 établit la correspondance entre rôles et produits.
+Chaque boîte de la figure 3 désigne un rôle. Un même produit peut en remplir plusieurs : Amazon Bedrock AgentCore, par exemple, réunit des services modulaires distincts pour l’exécution, la mémoire, la passerelle, l’identité, la politique, l’observabilité et le registre, utilisables séparément avec tout cadriciel **[102]**. À l’inverse, un rôle peut exiger plusieurs produits. La section 5.4 établit la correspondance entre rôles et produits.
 
 ## 5.2 Responsabilités et règles par couche
 
@@ -111,7 +109,7 @@ Cette section fixe, pour chaque couche, ce qu’elle fait, ce qu’elle ne fait 
 
 ### Couche 1 — Canaux et déclencheurs
 
-La couche 1 capte l’intention, diffuse les réponses en continu et affiche les formulaires d’approbation humaine. Elle authentifie la personne ou le système déclencheur, établit le mandant et ouvre la trace, mais ne décide de rien d’autre : elle ignore quel modèle sera appelé et quels outils seront employés. Un agent ambiant, qui réagit à un flux d’événements plutôt qu’à une personne, y est raccordé par un déclencheur (par exemple une tâche planifiée qui vérifie périodiquement les nouveaux événements)**[86]**. Les patrons d’interaction humaine propres à ces agents sont traités à la section 8.6.
+La couche 1 capte l’intention, diffuse les réponses en continu et affiche les formulaires d’approbation humaine. Elle authentifie la personne ou le système déclencheur, établit le mandant et ouvre la trace, mais ne décide de rien d’autre : elle ignore quel modèle sera appelé et quels outils seront employés. Un agent ambiant, qui réagit à un flux d’événements plutôt qu’à une personne, y est raccordé par un déclencheur (par exemple une tâche planifiée qui vérifie périodiquement les nouveaux événements) **[86]**. Les patrons d’interaction humaine propres à ces agents sont traités à la section 8.6.
 
 `EXIG-ARC-03` **· NE DOIT PAS**
 
@@ -125,17 +123,15 @@ Pourquoi : une logique d’agent dispersée dans les canaux échappe au registre
 
 **Mandant établi et trace ouverte à l’entrée**
 
-Tout déclencheur **DOIT** établir le mandant de la demande, soit la personne authentifiée, soit, pour un déclencheur système (planificateur, consommateur d’événements), l’identité du service et son propriétaire nommé, jamais un attribut porté par l’événement reçu (EXIG-EVT-07). Il **DOIT** aussi ouvrir une trace conforme à W3C Trace Context avant de transmettre la demande**[103]**; il ne poursuit une trace entrante que si elle vient d’une source de confiance, et la redémarre à une frontière de confiance (section 10.1).
+Tout déclencheur **DOIT** établir le mandant de la demande, soit la personne authentifiée, soit, pour un déclencheur système (planificateur, consommateur d’événements), l’identité du service et son propriétaire nommé, jamais un attribut porté par l’événement reçu (EXIG-EVT-07). Il **DOIT** aussi ouvrir une trace conforme à W3C Trace Context avant de transmettre la demande **[103]**; il ne poursuit une trace entrante que si elle vient d’une source de confiance, et la redémarre à une frontière de confiance (section 10.1).
 
 Pourquoi : sans mandant établi à l’entrée, ni la délégation ni le filtrage des droits ne sont possibles plus bas; sans trace dès l’origine, la chaîne ne peut être reconstituée (section 10.1).
 
 ### Couche 2 — Orchestration et état
 
-La couche 2 décide du chemin. Un routeur sémantique qualifie l’intention et choisit soit un flux déterministe, soit un agent; un moteur d’exécution durable conduit la tâche, conserve son état, attend les approbations et déclenche les compensations; la coordination entre agents passe par A2A. L’exécution durable signifie qu’une tâche reprend là où elle s’était arrêtée après une panne ou un redéploiement. Temporal, par exemple,
+La couche 2 décide du chemin. Un routeur sémantique qualifie l’intention et choisit soit un flux déterministe, soit un agent; un moteur d’exécution durable conduit la tâche, conserve son état, attend les approbations et déclenche les compensations; la coordination entre agents passe par A2A. L’exécution durable signifie qu’une tâche reprend là où elle s’était arrêtée après une panne ou un redéploiement. Temporal, par exemple, poursuit une exécution jusqu’à son terme sans limite de durée imposée et la reprend en rejouant son historique d’événements **[81]**. La documentation de Temporal borne toutefois cet historique (51 200 événements ou 50 Mo), si bien qu’une longue exécution doit repartir sous un nouvel historique (*Continue-As-New*), et ses activités sont réessayées sans limite par défaut, d’où la borne qu’exige l’EXIG-ORC-27 pour une activité à effet. Les flux Standard d’AWS Step Functions durent jusqu’à un an et n’exécutent jamais une tâche plus d’une fois, sauf si une règle `Retry` est déclarée, alors que les flux Express, limités à cinq minutes, s’exécutent au moins une fois en mode asynchrone (au plus une fois en mode synchrone) et sont mieux adaptés aux actions idempotentes **[104]**.
 
-poursuit une exécution jusqu’à son terme sans limite de durée imposée et la reprend en rejouant son historique d’événements**[81]**. La documentation de Temporal borne toutefois cet historique (51 200 événements ou 50 Mo), si bien qu’une longue exécution doit repartir sous un nouvel historique (*Continue-As-New*), et ses activités sont réessayées sans limite par défaut, d’où la borne qu’exige l’EXIG-ORC-27 pour une activité à effet. Les flux Standard d’AWS Step Functions durent jusqu’à un an et n’exécutent jamais une tâche plus d’une fois, sauf si une règle `Retry` est déclarée, alors que les flux Express, limités à cinq minutes, s’exécutent au moins une fois en mode asynchrone (au plus une fois en mode synchrone) et sont mieux adaptés aux actions idempotentes**[104]**.
-
-La persistance ne garantit pas, à elle seule, qu’une action ne sera pas répétée : à la reprise après une interruption, LangGraph réexécute le nœud depuis son début**[82]**. L’idempotence des effets reste donc nécessaire (section 7.4 et section 7.6).
+La persistance ne garantit pas, à elle seule, qu’une action ne sera pas répétée : à la reprise après une interruption, LangGraph réexécute le nœud depuis son début **[82]**. L’idempotence des effets reste donc nécessaire (section 7.4 et section 7.6).
 
 `EXIG-ARC-05` **· DOIT**
 
@@ -143,7 +139,7 @@ La persistance ne garantit pas, à elle seule, qu’une action ne sera pas rép�
 
 Toute tâche qui produit un effet en écriture, attend une approbation humaine ou compte plus d’une étape (déclencheur commun avec l’EXIG-ORC-11) **DOIT** s’exécuter sous un moteur d’exécution durable qui persiste l’état hors du processus après chaque transition. Hors du poste de développement, l’état d’une telle tâche **DOIT** résider dans le magasin persistant, jamais seulement en mémoire de processus.
 
-Pourquoi : un redémarrage de conteneur ne doit ni perdre une approbation obtenue ni relancer une écriture déjà faite; le Centre d’architecture Azure recommande de persister l’état partagé à l’extérieur de la mémoire et d’utiliser les points de contrôle**[9]**.
+Pourquoi : un redémarrage de conteneur ne doit ni perdre une approbation obtenue ni relancer une écriture déjà faite; le Centre d’architecture Azure recommande de persister l’état partagé à l’extérieur de la mémoire et d’utiliser les points de contrôle **[9]**.
 
 `EXIG-ARC-06` **· DOIT**
 
@@ -151,7 +147,7 @@ Pourquoi : un redémarrage de conteneur ne doit ni perdre une approbation obtenu
 
 Les magasins d’état et de points de contrôle **DOIVENT** être protégés comme des données de production (contrôle d’accès, chiffrement, contrôle d’intégrité). Un orchestrateur **DOIT** refuser de reprendre une exécution à partir d’un point de contrôle dont la provenance n’est pas vérifiée, ou plus ancien que la durée de conservation des clés d’idempotence des outils à effet de la tâche (EXIG-ORC-21); les autres règles de protection des points de contrôle sont celles de l’EXIG-ORC-13.
 
-Pourquoi : un point de contrôle contient l’état complet de la tâche; la documentation de Microsoft Agent Framework qualifie son stockage de frontière de confiance**[105]**.
+Pourquoi : un point de contrôle contient l’état complet de la tâche; la documentation de Microsoft Agent Framework qualifie son stockage de frontière de confiance **[105]**.
 
 `EXIG-ARC-07` **· NE DOIT PAS**
 
@@ -163,9 +159,7 @@ Pourquoi : le routage repose souvent sur un modèle, donc sur une sortie probabi
 
 ### Couche 3 — Agents et exécution cognitive
 
-La couche 3 exécute la boucle locale de chaque agent : raisonner, agir au moyen d’un outil, observer le résultat. Chaque agent s’exécute dans un environnement d’exécution indépendant du fournisseur de modèle, encadré par deux composants partagés. La passerelle de modèles centralise les identifiants des fournisseurs, le routage entre modèles, l’équilibrage de charge, le cache, le repli et les quotas de jetons. Agent Router, projet de l’AAIF anciennement nommé Envoy AI Gateway, illustre ce rôle : les développeurs y trouvent une interface unique vers les modèles, pendant que l’équipe plateforme y centralise fournisseurs, identifiants,
-
-quotas, routage et basculement**[36, 106]**. Le bac à sable, quant à lui, exécute en isolement le code que l’agent produit (section 9.7).
+La couche 3 exécute la boucle locale de chaque agent : raisonner, agir au moyen d’un outil, observer le résultat. Chaque agent s’exécute dans un environnement d’exécution indépendant du fournisseur de modèle, encadré par deux composants partagés. La passerelle de modèles centralise les identifiants des fournisseurs, le routage entre modèles, l’équilibrage de charge, le cache, le repli et les quotas de jetons. Agent Router, projet de l’AAIF anciennement nommé Envoy AI Gateway, illustre ce rôle : les développeurs y trouvent une interface unique vers les modèles, pendant que l’équipe plateforme y centralise fournisseurs, identifiants, quotas, routage et basculement **[36, 106]**. Le bac à sable, quant à lui, exécute en isolement le code que l’agent produit (section 9.7).
 
 `EXIG-ARC-08` **· DOIT**
 
@@ -173,7 +167,7 @@ quotas, routage et basculement**[36, 106]**. Le bac à sable, quant à lui, exé
 
 Tout appel d’inférence fait par un agent dont l’entreprise contrôle l’exécution, ou pour son compte (plongements, juges d’évaluation et classifieurs de garde-fous compris), **DOIT** passer par la passerelle de modèles de l’entreprise; l’agent ne détient aucune clé de fournisseur de modèles et n’appelle jamais un fournisseur directement. Un agent intégré à un logiciel-service relève de l’EXIG-ARC-21.
 
-Pourquoi : c’est le seul endroit où l’on peut appliquer des quotas de jetons (comme le fait la politique `llm-token-limit` d’Azure API Management**[107]**), imputer les coûts, changer de fournisseur et révoquer un accès sans toucher aux agents.
+Pourquoi : c’est le seul endroit où l’on peut appliquer des quotas de jetons (comme le fait la politique `llm-token-limit` d’Azure API Management **[107]**), imputer les coûts, changer de fournisseur et révoquer un accès sans toucher aux agents.
 
 `EXIG-ARC-09` **· DEVRAIT**
 
@@ -189,11 +183,11 @@ Pourquoi : les modèles changent plus vite que les agents; l’alias isole l’a
 
 Le code qu’un agent produit ou choisit dynamiquement **DOIT** s’exécuter dans un bac à sable éphémère et isolé, sans accès réseau par défaut ni accès aux secrets, selon les exigences de la section 9.7; jamais dans le processus de l’agent ni sur son hôte.
 
-Pourquoi : l’OWASP range l’exécution de code inattendue parmi les dix principaux risques des applications agentiques (ASI05 *Unexpected Code Execution*)**[28]**.
+Pourquoi : l’OWASP range l’exécution de code inattendue parmi les dix principaux risques des applications agentiques (ASI05 *Unexpected Code Execution*) **[28]**.
 
 ### Couche 4 — Médiation et connectivité
 
-La couche 4 masque le paysage applicatif derrière des contrats uniformes. Elle réunit trois rôles : la passerelle d’agents, devant les serveurs MCP et les pairs A2A, mandataire inverse pour le trafic entrant et mandataire sortant pour le trafic qui quitte l’entreprise; le catalogue d’entreprise, source unique de ce qui est joignable; le bus d’événements, pour les échanges découplés dans le temps (section 6.7). Le rôle de passerelle est réalisable avec des produits documentés : Azure API Management expose et gouverne des serveurs MCP et des API d’agents A2A, et Amazon Bedrock AgentCore Gateway sert de point d’entrée unique aux outils, aux agents et aux modèles**[108, 109, 110]**. Une passerelle relaie toutefois le trafic A2A sans assumer l’état des tâches : le greffon AI A2A Proxy de Kong Gateway (3.14 et plus, édition AI Gateway Enterprise), par exemple, ne modifie pas le routage et ne gère pas cet état**[111]**. L’état reste du ressort de l’agent ou de l’orchestrateur.
+La couche 4 masque le paysage applicatif derrière des contrats uniformes. Elle réunit trois rôles : la passerelle d’agents, devant les serveurs MCP et les pairs A2A, mandataire inverse pour le trafic entrant et mandataire sortant pour le trafic qui quitte l’entreprise; le catalogue d’entreprise, source unique de ce qui est joignable; le bus d’événements, pour les échanges découplés dans le temps (section 6.7). Le rôle de passerelle est réalisable avec des produits documentés : Azure API Management expose et gouverne des serveurs MCP et des API d’agents A2A, et Amazon Bedrock AgentCore Gateway sert de point d’entrée unique aux outils, aux agents et aux modèles **[108, 109, 110]**. Une passerelle relaie toutefois le trafic A2A sans assumer l’état des tâches : le greffon AI A2A Proxy de Kong Gateway (3.14 et plus, édition AI Gateway Enterprise), par exemple, ne modifie pas le routage et ne gère pas cet état **[111]**. L’état reste du ressort de l’agent ou de l’orchestrateur.
 
 `EXIG-ARC-11` **· DOIT**
 
@@ -203,7 +197,7 @@ Dans tout environnement serveur, la passerelle d’agents **DOIT** s’interpose
 
 Un agent intégré à un logiciel-service n’atteint les systèmes d’enregistrement de l’entreprise que par elle, comme client externe (EXIG-ARC-21). La portée du passage obligatoire est celle de l’EXIG-ARC-01, qui fait foi et que l’EXIG-IAM-17 reprend; ses fonctions obligatoires sont fixées à la section 9.4.
 
-Pourquoi : l’agent d’un partenaire qui appelle l’entreprise et un agent interne qui appelle un SaaS franchissent la même frontière de confiance; la confiance zéro vise des décisions d’accès au moindre privilège prises requête par requête et une confiance réévaluée en continu pendant la session, et non une confiance acquise une fois pour toute la durée d’une session**[73]**.
+Pourquoi : l’agent d’un partenaire qui appelle l’entreprise et un agent interne qui appelle un SaaS franchissent la même frontière de confiance; la confiance zéro vise des décisions d’accès au moindre privilège prises requête par requête et une confiance réévaluée en continu pendant la session, et non une confiance acquise une fois pour toute la durée d’une session **[73]**.
 
 `EXIG-ARC-12` **· DOIT**
 
@@ -223,9 +217,9 @@ Pourquoi : le bus est l’autre voie d’accès aux systèmes; s’il échappe a
 
 ### Couche 5 — Outils et données
 
-La couche 5 expose les capacités de l’entreprise sous forme d’outils et de ressources : serveurs MCP de domaine, adaptateurs qui traduisent une API existante en outils, index et graphes de connaissances, et outils de compensation qui défont ou corrigent une action (section 7.5). Des produits convertissent déjà des API en outils sans toucher aux services : AgentCore Gateway transforme des API OpenAPI ou Smithy et des fonctions Lambda en outils MCP, et IBM ContextForge virtualise des services REST ou gRPC en MCP**[110, 113]**.
+La couche 5 expose les capacités de l’entreprise sous forme d’outils et de ressources : serveurs MCP de domaine, adaptateurs qui traduisent une API existante en outils, index et graphes de connaissances, et outils de compensation qui défont ou corrigent une action (section 7.5). Des produits convertissent déjà des API en outils sans toucher aux services : AgentCore Gateway transforme des API OpenAPI ou Smithy et des fonctions Lambda en outils MCP, et IBM ContextForge virtualise des services REST ou gRPC en MCP **[110, 113]**.
 
-Un bon outil n’est pas le miroir d’un point d’accès. Anthropic recommande de choisir délibérément les outils plutôt que d’envelopper chaque point d’accès d’une API, de regrouper les opérations en plusieurs étapes et de renvoyer un contexte signifiant plutôt que des identifiants techniques**[114]**. OpenAI propose de vérifier qu’une personne pourrait utiliser la fonction avec la seule information fournie**[115]**. Ainsi, plutôt que trois outils « lire le client », « lire les factures » et « lire les paiements », on expose un outil `consulter_situation_compte` qui rend la synthèse utile à la tâche.
+Un bon outil n’est pas le miroir d’un point d’accès. Anthropic recommande de choisir délibérément les outils plutôt que d’envelopper chaque point d’accès d’une API, de regrouper les opérations en plusieurs étapes et de renvoyer un contexte signifiant plutôt que des identifiants techniques **[114]**. OpenAI propose de vérifier qu’une personne pourrait utiliser la fonction avec la seule information fournie **[115]**. Ainsi, plutôt que trois outils « lire le client », « lire les factures » et « lire les paiements », on expose un outil `consulter_situation_compte` qui rend la synthèse utile à la tâche.
 
 `EXIG-ARC-14` **· DOIT**
 
@@ -249,7 +243,7 @@ Pourquoi : chaque outil superflu consomme du contexte et accroît les erreurs de
 
 Un outil **DOIT** filtrer ses résultats selon les droits effectifs de la chaîne (PRIN-03), de sorte qu’aucun agent ne reçoive une donnée que le mandant ne pourrait pas consulter lui-même ou qui excède la portée de l’agent au registre.
 
-Pourquoi : le Centre d’architecture Azure demande ce filtrage de sécurité *(security trimming)* dans chaque agent**[9]**; le cadre le place à la source, dans l’outil, où il ne dépend pas du comportement d’un modèle.
+Pourquoi : le Centre d’architecture Azure demande ce filtrage de sécurité *(security trimming)* dans chaque agent **[9]**; le cadre le place à la source, dans l’outil, où il ne dépend pas du comportement d’un modèle.
 
 ### Couche 6 — Systèmes d’enregistrement
 
@@ -275,11 +269,11 @@ Pourquoi : lors d’un incident, on doit pouvoir remonter d’une ligne de l’E
 
 Les trois plans transversaux fournissent à toutes les couches des services communs, conçus une fois et consommés partout; le tableau 11 indique ce que chacun apporte à chaque couche.
 
-**A — Identité et sécurité.** Chaque agent reçoit une identité propre, délivrée par une infrastructure d’identité de charge de travail comme SPIFFE/SPIRE, projets diplômés de la Cloud Native Computing Foundation (CNCF)**[116, 117]**, ou par fédération OpenID Connect (OIDC) infonuagique. Lorsqu’il agit pour une personne, il obtient un jeton délégué par échange de jetons (RFC 8693)**[69]**; le cadre exige que ce jeton soit de courte durée. Le plan fournit aussi le moteur de politiques, les paliers d’outils, le coffre de secrets, les garde-fous et l’approbation humaine signée (chapitre 9 et section 8.5).
+**A — Identité et sécurité.** Chaque agent reçoit une identité propre, délivrée par une infrastructure d’identité de charge de travail comme SPIFFE/SPIRE, projets diplômés de la Cloud Native Computing Foundation (CNCF) **[116, 117]**, ou par fédération OpenID Connect (OIDC) infonuagique. Lorsqu’il agit pour une personne, il obtient un jeton délégué par échange de jetons (RFC 8693) **[69]**; le cadre exige que ce jeton soit de courte durée. Le plan fournit aussi le moteur de politiques, les paliers d’outils, le coffre de secrets, les garde-fous et l’approbation humaine signée (chapitre 9 et section 8.5).
 
-**B — Observabilité, évaluation et FinOps.** Les couches 1 à 5 émettent des traces OpenTelemetry reliées par un même contexte W3C Trace Context**[103]**, selon une version épinglée des conventions GenAI, qui distinguent notamment les spans `invoke_workflow`, `invoke_agent` et `execute_tool`**[119, 120]**. S’y ajoutent le journal d’audit chaîné et ancré, distinct des traces, l’évaluation continue et la mesure du coût par tâche réussie (chapitre 10).
+**B — Observabilité, évaluation et FinOps.** Les couches 1 à 5 émettent des traces OpenTelemetry reliées par un même contexte W3C Trace Context **[103]**, selon une version épinglée des conventions GenAI, qui distinguent notamment les spans `invoke_workflow`, `invoke_agent` et `execute_tool` **[119, 120]**. S’y ajoutent le journal d’audit chaîné et ancré, distinct des traces, l’évaluation continue et la mesure du coût par tâche réussie (chapitre 10).
 
-**C — Gouvernance et registre.** Le registre des agents et des serveurs MCP porte la classe de risque, le niveau d’autonomie (N0 à N4), le parrain, le responsable technique et l’état du cycle de vie de chaque agent (chapitre 11). Les plans de contrôle des éditeurs couvrent une partie de ce rôle, sans le couvrir entièrement : Microsoft Agent 365, en disponibilité générale depuis le 1er mai 2026, offre un registre et des contrôles comme le blocage des agents non gérés, mais les actions de cycle de vie sur des agents infonuagiques tiers y sont encore annoncées comme à venir**[46]**. D’où l’exigence d’un coupe-circuit appliqué à la passerelle à tout agent qui la traverse, quel que soit son éditeur (section 9.4); un agent qui s’exécute chez l’éditeur d’un logiciel-service est arrêté par le mécanisme propre de l’EXIG-ARC-21.
+**C — Gouvernance et registre.** Le registre des agents et des serveurs MCP porte la classe de risque, le niveau d’autonomie (N0 à N4), le parrain, le responsable technique et l’état du cycle de vie de chaque agent (chapitre 11). Les plans de contrôle des éditeurs couvrent une partie de ce rôle, sans le couvrir entièrement : Microsoft Agent 365, en disponibilité générale depuis le 1er mai 2026, offre un registre et des contrôles comme le blocage des agents non gérés, mais les actions de cycle de vie sur des agents infonuagiques tiers y sont encore annoncées comme à venir **[46]**. D’où l’exigence d’un coupe-circuit appliqué à la passerelle à tout agent qui la traverse, quel que soit son éditeur (section 9.4); un agent qui s’exécute chez l’éditeur d’un logiciel-service est arrêté par le mécanisme propre de l’EXIG-ARC-21.
 
 *Tableau 11 — Apport des plans transversaux à chaque couche*
 
@@ -302,7 +296,7 @@ Pourquoi : un registre ou une chaîne de télémétrie parallèle crée un angle
 
 ## 5.4 Blocs de construction
 
-Cette section relie les rôles de l’architecture aux produits qui peuvent les remplir. Le cadre reprend la distinction de TOGAF : les blocs de construction d’architecture (ABB) capturent les exigences et orientent le développement des blocs de construction de solution (SBB); les SBB désignent les produits et composants qui mettent en œuvre la fonction et dépendent du produit ou du fournisseur**[121]**. Le passage des uns aux autres est itératif : les ABB se définissent surtout aux phases A à D de la méthode de développement d’architecture (ADM), puis se raffinent en SBB, dont l’identification relève surtout de la phase E**[121]**. Concrètement, « passerelle d’agents » est un ABB neutre et durable; le produit retenu pour la réaliser est un SBB remplaçable.
+Cette section relie les rôles de l’architecture aux produits qui peuvent les remplir. Le cadre reprend la distinction de TOGAF : les blocs de construction d’architecture (ABB) capturent les exigences et orientent le développement des blocs de construction de solution (SBB); les SBB désignent les produits et composants qui mettent en œuvre la fonction et dépendent du produit ou du fournisseur **[121]**. Le passage des uns aux autres est itératif : les ABB se définissent surtout aux phases A à D de la méthode de développement d’architecture (ADM), puis se raffinent en SBB, dont l’identification relève surtout de la phase E **[121]**. Concrètement, « passerelle d’agents » est un ABB neutre et durable; le produit retenu pour la réaliser est un SBB remplaçable.
 
 `EXIG-ARC-20` **· DOIT**
 
@@ -316,9 +310,7 @@ Pourquoi : la correspondance révèle les rôles orphelins, par exemple un agent
 
 **SBB exposés par les standards retenus**
 
-Un SBB **DOIT** exposer ses fonctions d’interopérabilité par les standards retenus au catalogue des protocoles (section 6.3), de sorte qu’on puisse le remplacer sans réécrire les agents. Une fonction offerte seulement par une interface propriétaire exige une dérogation. PRIN-09, l’EXIG-ARC-03 et l’EXIG-ARC-08 visent les agents dont l’entreprise contrôle l’exécution. Un agent intégré à un logiciel-service, qui s’exécute chez son éditeur, **DOIT** : être inscrit au registre avec sa classe, son niveau d’autonomie et les actions qu’il exécute dans le logiciel-service; n’atteindre les systèmes d’enregistrement de l’entreprise que par la passerelle d’agents, comme client externe; relever d’un contrat qui comporte les clauses des EXIG-APP-05, EXIG-APP-06, EXIG-APP-08 et EXIG-APP-13, dont un préavis opposable de changement de modèle; disposer d’un mécanisme d’arrêt propre (fournisseur d’identité, retrait des consentements OAuth, CAEP), documenté à la fiche et éprouvé à l’exercice de l’EXIG-SEC-26; et n’employer que des schémas d’outils de tiers épinglés et approuvés au catalogue (EXIG-INT-02). Une action P3 exécutée dans le logiciel-service exige un mécanisme d’approbation du
-
-fournisseur jugé équivalent à l’EXIG-AUT-12 à l’homologation; à défaut, l’agent est plafonné à N2, et chaque action P3 est approuvée dans la console de l’éditeur, approbation consignée à la fiche. La quarantaine (EXIG-GOV-10) et la suspension d’un tel agent passent par son mécanisme d’arrêt propre, et non par la passerelle.
+Un SBB **DOIT** exposer ses fonctions d’interopérabilité par les standards retenus au catalogue des protocoles (section 6.3), de sorte qu’on puisse le remplacer sans réécrire les agents. Une fonction offerte seulement par une interface propriétaire exige une dérogation. PRIN-09, l’EXIG-ARC-03 et l’EXIG-ARC-08 visent les agents dont l’entreprise contrôle l’exécution. Un agent intégré à un logiciel-service, qui s’exécute chez son éditeur, **DOIT** : être inscrit au registre avec sa classe, son niveau d’autonomie et les actions qu’il exécute dans le logiciel-service; n’atteindre les systèmes d’enregistrement de l’entreprise que par la passerelle d’agents, comme client externe; relever d’un contrat qui comporte les clauses des EXIG-APP-05, EXIG-APP-06, EXIG-APP-08 et EXIG-APP-13, dont un préavis opposable de changement de modèle; disposer d’un mécanisme d’arrêt propre (fournisseur d’identité, retrait des consentements OAuth, CAEP), documenté à la fiche et éprouvé à l’exercice de l’EXIG-SEC-26; et n’employer que des schémas d’outils de tiers épinglés et approuvés au catalogue (EXIG-INT-02). Une action P3 exécutée dans le logiciel-service exige un mécanisme d’approbation du fournisseur jugé équivalent à l’EXIG-AUT-12 à l’homologation; à défaut, l’agent est plafonné à N2, et chaque action P3 est approuvée dans la console de l’éditeur, approbation consignée à la fiche. La quarantaine (EXIG-GOV-10) et la suspension d’un tel agent passent par son mécanisme d’arrêt propre, et non par la passerelle.
 
 Pourquoi : le risque de verrouillage s’est déplacé des protocoles vers les plateformes et leurs extensions (section 13.1), et un agent qui infère et agit chez son éditeur ne peut ni passer par la passerelle de modèles ni être arrêté par la passerelle d’agents; les contrôles compensatoires portent donc sur l’accès aux systèmes de l’entreprise, les contrats et les identités.
 
@@ -329,22 +321,22 @@ Les exemples du tableau sont non limitatifs et établis au 27 octobre 2026. Ils 
 | **Couche** | **ABB** | **Capacités exigées** | **Exemples de SBB (non limitatifs, état au 27 octobre 2026)** |
 | --- | --- | --- | --- |
 | 1. Canaux et déclencheurs | Interface conversationnelle et d’approbation; déclencheurs système | Authentifier, établir le mandant, ouvrir la trace, diffuser en continu, montrer l’action exacte à approuver | Portails et outils de collaboration existants; canaux intégrés des logiciels-services (dernière ligne); webhooks et planificateurs |
-| 1. Orchestration et état | Moteur d’exécution durable; orchestrateur et routeur; magasin d’état | Persistance après chaque transition, reprise, attente d’approbation, compensation | Temporal, dont l’intégration avec l’OpenAI Agents SDK est en disponibilité générale depuis le 23 mars 2026**[122]**; AWS Step Functions; LangGraph 1.0 avec persistance intégrée de l’état d’exécution (*checkpointer*)**[123, 124]**; Microsoft Agent Framework 1.0**[125]**; agents de flux de Google ADK**[126]** |
-| 1. Agents et exécution cognitive | Environnement d’exécution d’agents | Boucle d’agent, appels MCP et A2A, télémétrie OpenTelemetry, indépendance du modèle | OpenAI Agents SDK (boucle d’agent, MCP, traçage intégré et fournisseurs non OpenAI; A2A et OpenTelemetry non documentés), Strands Agents, Google ADK, Microsoft Agent Framework, LangGraph**[127, 128, 129]**; AgentCore Runtime |
-| 1. Agents et exécution cognitive | Passerelle de modèles | Identifiants centralisés, routage, repli, cache, quotas de jetons, imputation des coûts | Agent Router (AAIF)**[130]**; fonction de passerelle de modèles d’agentgateway**[131]**; Kong AI Gateway**[132]**; Azure API Management |
-| 1. Agents et exécution cognitive | Bac à sable de code | Isolation par microVM, noyau applicatif ou environnement WebAssembly sans autorité ambiante, réseau fermé par défaut, exécution éphémère | MicroVM Firecracker**[133]**; gVisor**[134]**; Kata Containers**[135]**; WebAssembly et WASI**[136]**; agent-sandbox pour Kubernetes**[137]** |
-| 1. Médiation et connectivité | Passerelle d’agents (PEP pour MCP et A2A) | Mandataire inverse en entrée et mandataire sortant en sortie, autorisation par appel, garde-fous, plafonds, journalisation, coupe-circuit | agentgateway, projet de l’AAIF sous licence Apache 2.0**[31]**; Azure API Management (outils MCP seulement, agents A2A en JSON-RPC seulement)**[108, 109]**; AgentCore Gateway**[110]**; Kong AI Gateway**[132]**; MuleSoft Agent Fabric et sa passerelle Flex Gateway**[138]**; IBM ContextForge (licence Apache 2.0; modèle de soutien non précisé par le projet)**[113]**; portails MCP de Cloudflare**[139]** |
-| 1. Médiation et connectivité | Catalogue d’entreprise et registre privé | Source unique des outils, cartes et contrats; versions et empreintes; cycle de vie | Azure API Center; AgentCore Registry (publication, revue et approbation)**[102]**; Agent Registry de MuleSoft Agent Fabric |
-| 1. Médiation et connectivité | Bus d’événements | Enveloppe CloudEvents, contrats AsyncAPI, rétention et rejeu | Apache Kafka, qui garantit par défaut une livraison au moins une fois**[140]**; services infonuagiques équivalents |
-| 1. Outils et données | Serveurs MCP de domaine et adaptateurs | Outils conçus pour la tâche, effets déclarés, filtrage selon le mandant | Conversion d’API en outils par AgentCore Gateway, Azure API Management ou IBM ContextForge; serveur MCP Action Fabric de ServiceNow**[50]** |
+| 1. Orchestration et état | Moteur d’exécution durable; orchestrateur et routeur; magasin d’état | Persistance après chaque transition, reprise, attente d’approbation, compensation | Temporal, dont l’intégration avec l’OpenAI Agents SDK est en disponibilité générale depuis le 23 mars 2026 **[122]**; AWS Step Functions; LangGraph 1.0 avec persistance intégrée de l’état d’exécution (*checkpointer*) **[123, 124]**; Microsoft Agent Framework 1.0 **[125]**; agents de flux de Google ADK **[126]** |
+| 1. Agents et exécution cognitive | Environnement d’exécution d’agents | Boucle d’agent, appels MCP et A2A, télémétrie OpenTelemetry, indépendance du modèle | OpenAI Agents SDK (boucle d’agent, MCP, traçage intégré et fournisseurs non OpenAI; A2A et OpenTelemetry non documentés), Strands Agents, Google ADK, Microsoft Agent Framework, LangGraph **[127, 128, 129]**; AgentCore Runtime |
+| 1. Agents et exécution cognitive | Passerelle de modèles | Identifiants centralisés, routage, repli, cache, quotas de jetons, imputation des coûts | Agent Router (AAIF) **[130]**; fonction de passerelle de modèles d’agentgateway **[131]**; Kong AI Gateway **[132]**; Azure API Management |
+| 1. Agents et exécution cognitive | Bac à sable de code | Isolation par microVM, noyau applicatif ou environnement WebAssembly sans autorité ambiante, réseau fermé par défaut, exécution éphémère | MicroVM Firecracker **[133]**; gVisor **[134]**; Kata Containers **[135]**; WebAssembly et WASI **[136]**; agent-sandbox pour Kubernetes **[137]** |
+| 1. Médiation et connectivité | Passerelle d’agents (PEP pour MCP et A2A) | Mandataire inverse en entrée et mandataire sortant en sortie, autorisation par appel, garde-fous, plafonds, journalisation, coupe-circuit | agentgateway, projet de l’AAIF sous licence Apache 2.0 **[31]**; Azure API Management (outils MCP seulement, agents A2A en JSON-RPC seulement) **[108, 109]**; AgentCore Gateway **[110]**; Kong AI Gateway **[132]**; MuleSoft Agent Fabric et sa passerelle Flex Gateway **[138]**; IBM ContextForge (licence Apache 2.0; modèle de soutien non précisé par le projet) **[113]**; portails MCP de Cloudflare **[139]** |
+| 1. Médiation et connectivité | Catalogue d’entreprise et registre privé | Source unique des outils, cartes et contrats; versions et empreintes; cycle de vie | Azure API Center; AgentCore Registry (publication, revue et approbation) **[102]**; Agent Registry de MuleSoft Agent Fabric |
+| 1. Médiation et connectivité | Bus d’événements | Enveloppe CloudEvents, contrats AsyncAPI, rétention et rejeu | Apache Kafka, qui garantit par défaut une livraison au moins une fois **[140]**; services infonuagiques équivalents |
+| 1. Outils et données | Serveurs MCP de domaine et adaptateurs | Outils conçus pour la tâche, effets déclarés, filtrage selon le mandant | Conversion d’API en outils par AgentCore Gateway, Azure API Management ou IBM ContextForge; serveur MCP Action Fabric de ServiceNow **[50]** |
 | 1. Outils et données | Index et graphes de connaissances | Recherche hybride avec citations, provenance, validité temporelle | GraphRAG (génération augmentée par récupération sur graphe); Zep et Graphiti (section 5.5) |
 | 1. Systèmes d’enregistrement | Systèmes existants | Contrôles métier conservés; corrélation des écritures | Aucun nouveau SBB : seuls des adaptateurs s’ajoutent |
-| Plan A | Identité de charge de travail; serveur d’autorisation; moteur de politiques; coffre de secrets; garde-fous; service d’approbation humaine signée | Identité par agent, jetons délégués, décision par appel; secrets jamais exposés à l’agent (EXIG-SEC-14); approbation signée par une personne (section 8.5) | SPIFFE/SPIRE; Microsoft Entra Agent ID**[90]**; AgentCore Identity et AgentCore Policy (langage de règles compatible avec Cedar)**[102]**; coffre de secrets, garde-fous et service d’approbation : SBB à désigner à l’homologation (EXIG-ARC-20), sans exemple retenu ici |
-| Plan B | Collecte et traitement de la télémétrie; évaluation; journal d’audit; budgets et quotas | Collecte OpenTelemetry, caviardage, évaluation continue; journal d’audit chaîné, signé et ancré (EXIG-OBS-12, EXIG-OBS-13); enveloppes et quotas de coûts (EXIG-FIN-04, EXIG-FIN-05) | OpenTelemetry Collector et son processeur de caviardage *(redaction)***[141]**; AgentCore Observability et Evaluations**[102]**; journal d’audit et budgets : SBB à désigner à l’homologation (EXIG-ARC-20), sans exemple retenu ici |
-| Plan C | Registre et plan de contrôle des agents | Inventaire, quarantaine, cycle de vie, coupe-circuit | Microsoft Agent 365; ServiceNow AI Control Tower**[47, 51]**; AgentCore Registry; MuleSoft Agent Fabric |
-| Couches 1 à 3 | Logiciel-service à agents intégrés | MCP et A2A natifs, identité par agent, télémétrie exportable; contrôles compensatoires de l’EXIG-ARC-21 (accès aux systèmes de l’entreprise par la passerelle, clauses contractuelles, arrêt propre) | Microsoft Copilot Studio (A2A en disponibilité générale depuis avril 2026; identité Entra Agent ID créée pour chaque nouvel agent)**[48]**; Salesforce Agentforce (A2A entrant et sortant, client et serveur MCP)**[49]**; ServiceNow AI Agent Fabric |
+| Plan A | Identité de charge de travail; serveur d’autorisation; moteur de politiques; coffre de secrets; garde-fous; service d’approbation humaine signée | Identité par agent, jetons délégués, décision par appel; secrets jamais exposés à l’agent (EXIG-SEC-14); approbation signée par une personne (section 8.5) | SPIFFE/SPIRE; Microsoft Entra Agent ID **[90]**; AgentCore Identity et AgentCore Policy (langage de règles compatible avec Cedar) **[102]**; coffre de secrets, garde-fous et service d’approbation : SBB à désigner à l’homologation (EXIG-ARC-20), sans exemple retenu ici |
+| Plan B | Collecte et traitement de la télémétrie; évaluation; journal d’audit; budgets et quotas | Collecte OpenTelemetry, caviardage, évaluation continue; journal d’audit chaîné, signé et ancré (EXIG-OBS-12, EXIG-OBS-13); enveloppes et quotas de coûts (EXIG-FIN-04, EXIG-FIN-05) | OpenTelemetry Collector et son processeur de caviardage *(redaction)* **[141]**; AgentCore Observability et Evaluations **[102]**; journal d’audit et budgets : SBB à désigner à l’homologation (EXIG-ARC-20), sans exemple retenu ici |
+| Plan C | Registre et plan de contrôle des agents | Inventaire, quarantaine, cycle de vie, coupe-circuit | Microsoft Agent 365; ServiceNow AI Control Tower **[47, 51]**; AgentCore Registry; MuleSoft Agent Fabric |
+| Couches 1 à 3 | Logiciel-service à agents intégrés | MCP et A2A natifs, identité par agent, télémétrie exportable; contrôles compensatoires de l’EXIG-ARC-21 (accès aux systèmes de l’entreprise par la passerelle, clauses contractuelles, arrêt propre) | Microsoft Copilot Studio (A2A en disponibilité générale depuis avril 2026; identité Entra Agent ID créée pour chaque nouvel agent) **[48]**; Salesforce Agentforce (A2A entrant et sortant, client et serveur MCP) **[49]**; ServiceNow AI Agent Fabric |
 
-Les performances annoncées par les fournisseurs, comme celles d’agentgateway**[142]** et de TrueFoundry**[143, 144]**, ne remplacent pas une mesure (encadré de la section 9.4).
+Les performances annoncées par les fournisseurs, comme celles d’agentgateway **[142]** et de TrueFoundry **[143, 144]**, ne remplacent pas une mesure (encadré de la section 9.4).
 
 ## 5.5 Mémoire des agents
 
@@ -352,11 +344,11 @@ Cette section distingue le contexte du modèle de la mémoire, définit quatre t
 
 ### Le contexte n’est pas une mémoire
 
-Les fenêtres de contexte atteignent environ un million de jetons chez les modèles de pointe, par exemple GPT-5.4 d’OpenAI (mars 2026, 1,05 million) et Gemini 2.5 Pro ou Gemini 3 Pro de Google (1 million) de jetons**[145, 146, 147]**. Elles ne rendent pas la mémoire inutile, pour trois raisons. D’abord, la qualité baisse quand le contexte s’allonge : les modèles exploitent mieux l’information placée au début ou à la fin de l’entrée qu’au milieu, même lorsqu’ils sont conçus pour les longs contextes**[148]**. Anthropic décrit ce phénomène de « pourrissement du contexte » *(context rot)* : le rappel diminue à mesure que les jetons s’accumulent, et le contexte doit être traité comme une ressource finie**[149]**; une étude de Chroma sur 18 modèles montre qu’un seul distracteur suffit à réduire la performance**[150]**. Ensuite, chaque jeton réinjecté se paie à chaque appel. Enfin, le contexte disparaît à la fin de la session. La règle qui en découle : ce qui doit durer est persisté hors du modèle, puis récupéré au moment où il sert.
+Les fenêtres de contexte atteignent environ un million de jetons chez les modèles de pointe, par exemple GPT-5.4 d’OpenAI (mars 2026, 1,05 million) et Gemini 2.5 Pro ou Gemini 3 Pro de Google (1 million) de jetons **[145, 146, 147]**. Elles ne rendent pas la mémoire inutile, pour trois raisons. D’abord, la qualité baisse quand le contexte s’allonge : les modèles exploitent mieux l’information placée au début ou à la fin de l’entrée qu’au milieu, même lorsqu’ils sont conçus pour les longs contextes **[148]**. Anthropic décrit ce phénomène de « pourrissement du contexte » *(context rot)* : le rappel diminue à mesure que les jetons s’accumulent, et le contexte doit être traité comme une ressource finie **[149]**; une étude de Chroma sur 18 modèles montre qu’un seul distracteur suffit à réduire la performance **[150]**. Ensuite, chaque jeton réinjecté se paie à chaque appel. Enfin, le contexte disparaît à la fin de la session. La règle qui en découle : ce qui doit durer est persisté hors du modèle, puis récupéré au moment où il sert.
 
 ### Quatre types de mémoire
 
-Le cadre reprend la taxonomie CoALA (Sumers et coll., 2024), qui distingue une mémoire de travail à court terme et trois mémoires à long terme : épisodique (expériences passées), sémantique (connaissances sur le monde et sur l’agent lui-même) et procédurale (savoir-faire)**[100]**. Pour CoALA, la mémoire procédurale comprend aussi les poids du modèle; l’ajustement des modèles étant hors de la portée du cadre, celui-ci la limite aux invites système, aux contrats de compétences et aux flux d’outils validés. LangChain applique la même grille : des faits sur l’utilisateur relèvent de la mémoire sémantique, des exemples tirés d’actions antérieures de la mémoire épisodique, et l’invite système de la mémoire procédurale**[151]**. La figure 4 et le tableau 13 en présentent l’organisation.
+Le cadre reprend la taxonomie CoALA (Sumers et coll., 2024), qui distingue une mémoire de travail à court terme et trois mémoires à long terme : épisodique (expériences passées), sémantique (connaissances sur le monde et sur l’agent lui-même) et procédurale (savoir-faire) **[100]**. Pour CoALA, la mémoire procédurale comprend aussi les poids du modèle; l’ajustement des modèles étant hors de la portée du cadre, celui-ci la limite aux invites système, aux contrats de compétences et aux flux d’outils validés. LangChain applique la même grille : des faits sur l’utilisateur relèvent de la mémoire sémantique, des exemples tirés d’actions antérieures de la mémoire épisodique, et l’invite système de la mémoire procédurale **[151]**. La figure 4 et le tableau 13 en présentent l’organisation.
 
 > **[Figure]**
 > - Agent en cours d’exécution
@@ -399,7 +391,7 @@ Le cadre reprend la taxonomie CoALA (Sumers et coll., 2024), qui distingue une m
 
 ### Écrire en mémoire longue
 
-L’écriture peut se faire dans le chemin critique, en temps réel (transparente, mais plus lente), ou en arrière-plan (sans latence, mais avec une fréquence à choisir)**[151]**. Le cadre accepte les deux modes, à condition qu’ils passent par les mêmes contrôles. En arrière-plan, le tampon des transcriptions en attente de consolidation porte l’identité du mandant captée pendant la session, est chiffré, a une durée de rétention maximale déclarée à la fiche et est purgé après la consolidation. Anthropic, pour son outil mémoire exécuté côté client, exige de valider chaque chemin d’accès contre la traversée de répertoires et recommande de filtrer les données sensibles avant l’écriture, de plafonner la taille des fichiers et de supprimer les mémoires longtemps inutilisées**[152]**. Les renseignements personnels conservés en mémoire sont détruits ou anonymisés une fois leurs fins accomplies, comme l’exige l’article 23 de la Loi sur la protection des renseignements personnels dans le secteur privé (RLRQ, c. P-39.1, ci-après « Loi sur le privé ») (EXIG-CON-10, section 12.2).
+L’écriture peut se faire dans le chemin critique, en temps réel (transparente, mais plus lente), ou en arrière-plan (sans latence, mais avec une fréquence à choisir) **[151]**. Le cadre accepte les deux modes, à condition qu’ils passent par les mêmes contrôles. En arrière-plan, le tampon des transcriptions en attente de consolidation porte l’identité du mandant captée pendant la session, est chiffré, a une durée de rétention maximale déclarée à la fiche et est purgé après la consolidation. Anthropic, pour son outil mémoire exécuté côté client, exige de valider chaque chemin d’accès contre la traversée de répertoires et recommande de filtrer les données sensibles avant l’écriture, de plafonner la taille des fichiers et de supprimer les mémoires longtemps inutilisées **[152]**. Les renseignements personnels conservés en mémoire sont détruits ou anonymisés une fois leurs fins accomplies, comme l’exige l’article 23 de la Loi sur la protection des renseignements personnels dans le secteur privé (RLRQ, c. P-39.1, ci-après « Loi sur le privé ») (EXIG-CON-10, section 12.2).
 
 `EXIG-ARC-22` **· NE DOIT PAS**
 
@@ -415,7 +407,7 @@ Pourquoi : un historique brut coûte à chaque appel, dégrade le rappel et accu
 
 Toute écriture en mémoire épisodique ou sémantique **DOIT** passer par des contrôles qui consignent la provenance de l’entrée, valident sa source, retirent les secrets et les renseignements personnels non nécessaires et permettent de restaurer un instantané antérieur. En mémoire épisodique, l’entrée est en outre isolée par locataire, par mandant et par serveur MCP, et porte une date d’expiration (EXIG-CON-10). En mémoire sémantique, connaissance partagée du domaine, elle est isolée par locataire et par serveur MCP, filtrée en lecture selon les droits effectifs (EXIG-ARC-16) et expire avec la validité de sa source. Valider la source d’un résumé produit par un modèle, c’est le contrôler contre un schéma qui fixe les champs admis et exclut le texte libre issu des outils. Une entrée écrite par une session marquée porte l’étiquette de cette session (EXIG-SEC-04); toute entrée relue est un contenu non fiable (EXIG-SEC-03), et l’outil de mémoire est marqué au catalogue.
 
-Pourquoi : une information fausse inscrite en mémoire oriente toutes les décisions suivantes; l’OWASP en fait un risque distinct, l’empoisonnement de la mémoire et du contexte (ASI06 *Memory & Context Poisoning*)**[28]**.
+Pourquoi : une information fausse inscrite en mémoire oriente toutes les décisions suivantes; l’OWASP en fait un risque distinct, l’empoisonnement de la mémoire et du contexte (ASI06 *Memory & Context Poisoning*) **[28]**.
 
 `EXIG-ARC-24` **· DOIT**
 
@@ -423,7 +415,7 @@ Pourquoi : une information fausse inscrite en mémoire oriente toutes les décis
 
 Toute modification de la mémoire procédurale (invites système, contrats de compétences, flux et séquences d’outils validés) **DOIT** suivre le processus de changement logiciel : revue, version, évaluation avant déploiement et inscription au registre. Un agent **DOIT** être privé de tout droit d’écriture sur sa propre mémoire procédurale en production.
 
-Pourquoi : CoALA juge l’écriture en mémoire procédurale nettement plus risquée que l’écriture épisodique ou sémantique**[100]**; elle change le comportement de l’agent pour toutes les tâches à venir, comme un déploiement de code.
+Pourquoi : CoALA juge l’écriture en mémoire procédurale nettement plus risquée que l’écriture épisodique ou sémantique **[100]**; elle change le comportement de l’agent pour toutes les tâches à venir, comme un déploiement de code.
 
 `EXIG-ARC-25` **· NE DOIT PAS**
 
@@ -431,23 +423,21 @@ Pourquoi : CoALA juge l’écriture en mémoire procédurale nettement plus risq
 
 Une mémoire longue **NE DOIT PAS** être accessible en écriture directe à plus d’un composant, agent ou serveur MCP; le partage passe par des ressources en lecture seule ou par un service de mémoire qui applique les contrôles de l’EXIG-ARC-23, n’accepte que des écritures conditionnelles (ETag ou numéro de version) et tient un journal des écritures. Chaque écrivain direct a sa propre identité de charge de travail et son propre espace de noms dans le magasin.
 
-Pourquoi : le Centre d’architecture Azure proscrit le partage d’état mutable entre agents concurrents**[9]**; un magasin partagé permet à un composant compromis d’empoisonner tous les autres.
+Pourquoi : le Centre d’architecture Azure proscrit le partage d’état mutable entre agents concurrents **[9]**; un magasin partagé permet à un composant compromis d’empoisonner tous les autres.
 
 **ANTI-PATRONS PROSCRITS**
 
-- Conserver un état qui n’existe qu’en mémoire de processus : le *checkpointer* en mémoire de LangGraph, par exemple, perd ses points de contrôle au redémarrage**[124]**.
+- Conserver un état qui n’existe qu’en mémoire de processus : le *checkpointer* en mémoire de LangGraph, par exemple, perd ses points de contrôle au redémarrage **[124]**.
 - Archiver les transcriptions brutes comme mémoire longue.
 - Partager en écriture une table de mémoire entre plusieurs agents ou serveurs MCP.
 - Stocker des secrets, des jetons ou des approbations dans le contexte du modèle ou en mémoire longue (l’état d’orchestration ne conserve qu’une référence à l’approbation signée et au jeton, dans le magasin protégé de l’EXIG-ARC-06).
 - Laisser un agent réécrire ses propres invites système ou contrats de compétences.
 
-Plusieurs technologies réalisent ces rôles; elles sont citées à titre d’exemples non normatifs. LangGraph sépare les *checkpointers*, qui conservent l’état par fil d’exécution, d’un magasin distinct pour la mémoire à long terme partagée entre fils**[124]**. Letta maintient le patron MemGPT, qui déplace l’information entre le contexte et un stockage externe à la manière d’une mémoire virtuelle**[153, 154]**. Zep s’appuie sur Graphiti, un graphe de connaissances temporel qui conserve l’historique des relations, utile pour l’audit puisqu’on peut savoir à quel moment un fait était vrai**[155]**. GraphRAG construit un graphe d’entités et des résumés de communautés qui aident à répondre aux questions de synthèse sur un vaste corpus**[156]**. Le cadre ne fixe ni produit ni latence cible : ces paramètres se mesurent dans l’environnement de l’entreprise.
+Plusieurs technologies réalisent ces rôles; elles sont citées à titre d’exemples non normatifs. LangGraph sépare les *checkpointers*, qui conservent l’état par fil d’exécution, d’un magasin distinct pour la mémoire à long terme partagée entre fils **[124]**. Letta maintient le patron MemGPT, qui déplace l’information entre le contexte et un stockage externe à la manière d’une mémoire virtuelle **[153, 154]**. Zep s’appuie sur Graphiti, un graphe de connaissances temporel qui conserve l’historique des relations, utile pour l’audit puisqu’on peut savoir à quel moment un fait était vrai **[155]**. GraphRAG construit un graphe d’entités et des résumés de communautés qui aident à répondre aux questions de synthèse sur un vaste corpus **[156]**. Le cadre ne fixe ni produit ni latence cible : ces paramètres se mesurent dans l’environnement de l’entreprise.
 
 ## 5.6 Parcours d’une demande de bout en bout
 
-Cette section suit une demande à travers les six couches pour montrer comment les règles s’enchaînent. Exemple : une conseillère du service à la clientèle demande l’émission d’un avoir de 1 200 $ sur la facture d’un client. L’agent de facturation est de classe de risque modérée, plafonné au niveau N3, car aucun avoir qu’il peut émettre n’excède le seuil de classe que la fonction risques et conformité arrête pour lui (tableau
-
-46); l’outil `emettre_avoir` est de palier P2 (écriture réversible), et le catalogue lui fixe un seuil d’exécution autonome de 500 $, valeur propre à l’exemple et distincte du seuil de classe.
+Cette section suit une demande à travers les six couches pour montrer comment les règles s’enchaînent. Exemple : une conseillère du service à la clientèle demande l’émission d’un avoir de 1 200 $ sur la facture d’un client. L’agent de facturation est de classe de risque modérée, plafonné au niveau N3, car aucun avoir qu’il peut émettre n’excède le seuil de classe que la fonction risques et conformité arrête pour lui (tableau 46); l’outil `emettre_avoir` est de palier P2 (écriture réversible), et le catalogue lui fixe un seuil d’exécution autonome de 500 $, valeur propre à l’exemple et distincte du seuil de classe.
 
 1. **Canal.** La conseillère formule sa demande dans l’outil de collaboration. Le canal l’authentifie, établit le mandant, ouvre la trace et transmet l’intention sans la transformer (EXIG-ARC-03, EXIG-ARC-04).
 2. **Routage.** Le routeur qualifie l’intention (« émettre un avoir ») et choisit le flux déterministe de traitement des avoirs inscrit au catalogue d’entreprise, plutôt qu’un agent libre; ce choix ne confère aucun droit (EXIG-ARC-07).
@@ -462,6 +452,4 @@ Cette section suit une demande à travers les six couches pour montrer comment l
 
 **À RETENIR**
 
-Trois éléments descendent avec chaque appel : le mandant, le contexte de trace et la part restante de l’enveloppe de la tâche. Trois éléments remontent : le résultat, ses artefacts et les mesures de coût et de qualité. En environnement serveur, aucun appel MCP ou A2A, quel que soit le domaine, ni aucune
-
-action P2 ou P3 n’échappe à la passerelle, et aucune écriture n’atteint un système d’enregistrement sans ses propres contrôles métier.
+Trois éléments descendent avec chaque appel : le mandant, le contexte de trace et la part restante de l’enveloppe de la tâche. Trois éléments remontent : le résultat, ses artefacts et les mesures de coût et de qualité. En environnement serveur, aucun appel MCP ou A2A, quel que soit le domaine, ni aucune action P2 ou P3 n’échappe à la passerelle, et aucune écriture n’atteint un système d’enregistrement sans ses propres contrôles métier.

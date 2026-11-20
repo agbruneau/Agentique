@@ -46,9 +46,7 @@ Un système d’enregistrement est celui dont la donnée fait foi pour un objet 
 
 **L’agent cite le système, il ne s’en souvient pas.** Une valeur gardée en mémoire d’agent (chapitre 14), dans un cache de lecture (chapitre 5) ou dans une copie préparée pour les agents (chapitre 15) n’a pas d’autorité. Elle sert à orienter le raisonnement. Toute décision qui engage l’entreprise relit la donnée à la source, ou porte la date de sa copie.
 
-**L’écriture passe par l’interface d’affaires du système.** Le patron décrit en 25.1 envoie au moteur patrimonial la même requête structurée que le processus existant [1]. Le système applique alors ses propres validations, comme il le fait pour tout autre appelant. Écrire
-
-directement dans ses tables contourne ces validations et retire au système ce qui fonde son autorité.
+**L’écriture passe par l’interface d’affaires du système.** Le patron décrit en 25.1 envoie au moteur patrimonial la même requête structurée que le processus existant [1]. Le système applique alors ses propres validations, comme il le fait pour tout autre appelant. Écrire directement dans ses tables contourne ces validations et retire au système ce qui fonde son autorité.
 
 **C’est le système qui autorise.** Le serveur MCP de CICS reprend la configuration de sécurité de l’interface de gestion existante, rôle compris [5]. SAP écrit que le client demeure responsable des permissions du système dorsal, du choix des outils et des politiques configurées, même derrière sa passerelle [10]. IBM présente pour z/OS Connect une autorisation au niveau de l’opération [7]. Dans les trois cas, la couche agentique n’ajoute pas un régime d’accès parallèle : elle se soumet à celui qui existe. La difficulté est d’acheminer jusqu’au système l’identité au nom de laquelle l’agent agit, puisque MCP interdit de relayer en aval le jeton reçu (chapitre 5). L’échange de jetons et la délégation sont traités aux chapitres 29 et 30. À défaut, le serveur appelle le système sous un compte de service, souvent le justificatif le plus large de la chaîne (chapitre 30).
 
@@ -70,9 +68,7 @@ L’éditeur lui-même commence par le diagnostic en lecture seule : c’est le 
 
 Pour la transformation du code, Capco défend un modèle mixte (*blended*) [2] : un flux de travail conçu par des humains, qui exécute des étapes déterministes pour les tâches prévisibles, utilise des prompts précis pour la génération ciblée, et ne déploie une approche pleinement agentique que là où un raisonnement complexe est requis.
 
-Le cabinet attribue deux risques à l’autonomie complète. L'**erreur amplifiée** : un agent qui interprète mal une règle d’affaires reproduit le défaut, sans bruit, dans des dizaines
-
-d’applications. Le **piège de l’hétérogénéité** : des agents en parallèle résolvent le même problème de façons légèrement différentes, et le système cible perd sa cohérence. La supervision humaine reste obligatoire pour l’architecture du cœur, celle des données et le déploiement final. L’autonomie complète convient aux tâches bien définies où la variation est acceptable, comme la documentation tirée d’un code déjà validé.
+Le cabinet attribue deux risques à l’autonomie complète. L'**erreur amplifiée** : un agent qui interprète mal une règle d’affaires reproduit le défaut, sans bruit, dans des dizaines d’applications. Le **piège de l’hétérogénéité** : des agents en parallèle résolvent le même problème de façons légèrement différentes, et le système cible perd sa cohérence. La supervision humaine reste obligatoire pour l’architecture du cœur, celle des données et le déploiement final. L’autonomie complète convient aux tâches bien définies où la variation est acceptable, comme la documentation tirée d’un code déjà validé.
 
 Capco propose quatre questions à poser à chaque étape [2].
 
@@ -119,9 +115,7 @@ Ni [1] ni [2] ne traitent ces deux risques. Ce qui suit relie des exigences lues
 
 ### La charge
 
-Un système patrimonial est dimensionné pour des appelants connus : des guichets au rythme humain, des lots en fenêtre de nuit. Un agent décide lui-même du nombre de ses
-
-appels : il boucle, réessaie, lance des lectures en parallèle. Ce constat relève du raisonnement, non d’une mesure lue.
+Un système patrimonial est dimensionné pour des appelants connus : des guichets au rythme humain, des lots en fenêtre de nuit. Un agent décide lui-même du nombre de ses appels : il boucle, réessaie, lance des lectures en parallèle. Ce constat relève du raisonnement, non d’une mesure lue.
 
 Les textes lus offrent trois prises.
 
@@ -141,9 +135,7 @@ S’y ajoutent des mesures traitées ailleurs : cache des lectures (chapitre 5),
 
 **L’erreur d’affaires doit remonter.** MCP range l’erreur de logique d’affaires parmi les erreurs d’exécution d’outil, distinctes des erreurs de protocole, que le client devrait transmettre au modèle pour qu’il se corrige [9]. Un rejet du système patrimonial doit donc être traduit en message exploitable. Un échec partiel présenté comme un succès est le pire résultat possible.
 
-**La parité se vérifie.** Les tests de parité sur un jeu de référence [1] se rejouent à chaque changement de la couche. Pour un remplacement, l’exécution en miroir ne vaut sans risque
-
-que pour les lectures; les écritures et les traitements par lots demandent une double écriture ou une exécution parallèle rapprochée (chapitre 47).
+**La parité se vérifie.** Les tests de parité sur un jeu de référence [1] se rejouent à chaque changement de la couche. Pour un remplacement, l’exécution en miroir ne vaut sans risque que pour les lectures; les écritures et les traitements par lots demandent une double écriture ou une exécution parallèle rapprochée (chapitre 47).
 
 ## Grille de décision
 
@@ -214,9 +206,7 @@ SYNTHÈSE EXÉCUTIVE
 
 ## 25.6 Patrimoine sans API : RPA déterministe, APA et UiPath Maestro
 
-Le pilotage de l’interface utilisateur par un agent, dernier recours quand aucune interface programmable n’existe, n’est couvert par aucune source lue et l’exposé ne le traite pas (section « Limites de ce chapitre ») : les ordres de grandeur de latence, de coût et de fiabilité
-
-que ce volet avance à son sujet sont purement illustratifs et ne reposent sur aucune source, hors cas fictif du Groupe Boréal.
+Le pilotage de l’interface utilisateur par un agent, dernier recours quand aucune interface programmable n’existe, n’est couvert par aucune source lue et l’exposé ne le traite pas (section « Limites de ce chapitre ») : les ordres de grandeur de latence, de coût et de fiabilité que ce volet avance à son sujet sont purement illustratifs et ne reposent sur aucune source, hors cas fictif du Groupe Boréal.
 
 Depuis 2025, des modèles vision-langage interagissent directement avec le tampon graphique d’un système d’exploitation (*Computer-Use Agents*, CUA). En production transactionnelle, fonder l’intégration d’un cœur bancaire CICS ou d’un système d’assurance IBM i (AS/400) sur la lecture probabiliste de captures d’écran a quatre limites :
 
@@ -285,9 +275,7 @@ Un serveur MCP adaptateur, déployé au plus près du système central, joue le 
 
 ### Programme RPGLE sur IBM i : idempotence atomique avec DB2 for i
 
-Un programme RPGLE ancien (par exemple WRTYADJ01R) n’a pas de clé d’idempotence native. L’adaptateur porte la clé et dédoublonne (25.5) dans une transaction DB2 for
-
-i (`autocommit=False`). Il verrouille et consulte la table locale `MCP_IDEMPOTENCY_LOG`, et restitue sans réexécution tout appel déjà traité. Sinon, il invoque le programme par XMLSERVICE / PCML avec une arithmétique Decimal exacte, puis valide (COMMIT) d’un seul bloc l’écriture d’affaires et la trace d’idempotence.
+Un programme RPGLE ancien (par exemple WRTYADJ01R) n’a pas de clé d’idempotence native. L’adaptateur porte la clé et dédoublonne (25.5) dans une transaction DB2 for i (`autocommit=False`). Il verrouille et consulte la table locale `MCP_IDEMPOTENCY_LOG`, et restitue sans réexécution tout appel déjà traité. Sinon, il invoque le programme par XMLSERVICE / PCML avec une arithmétique Decimal exacte, puis valide (COMMIT) d’un seul bloc l’écriture d’affaires et la trace d’idempotence.
 
 #### Extrait 25.1 — `[Schéma conceptuel]` · Serveur MCP Python encapsulant un programme RPGLE IBM i (PCML + COMP-3 + idempotence DB2)
 
@@ -492,8 +480,7 @@ Dans la banque, l’assurance vie et le transport aérien, l’encapsulation d�
 
 1. **Limite des 32 Ko de COMMAREA et clauses REDEFINES en COBOL** : Les transactions CICS historiques échangent jusqu’à 32 763 octets (DFHCOMMAREA), décrits par un *copybook* COBOL qui mêle OCCURS DEPENDING ON et REDEFINES (unions binaires conditionnelles). Le serveur MCP s’appuie sur z/OS Connect (ou sur les CICS Channels & Containers au-delà de 32 Ko). Il expose chaque variante d’affaires d’un REDEFINES comme un outil MCP distinct, au schéma JSON sans ambiguïté.
 2. **Propagation d’identité jusqu’à RACF (ACF2 / Top Secret)** : Chaque code transaction CICS (par exemple CLM4) est protégé par RACF. Le serveur MCP traduit le jeton OAuth 2.1 OBO par le *Distributed Identity Mapping* de z/OS, ou par un RACF PassTicket à usage unique (valide 10 minutes). Il scelle ainsi l’identifiant personnel de l’employé initiateur dans le journal SMF Type 80 / 110.
-3. **Coupe-circuit sur la consommation MIPS / MSU** : La tarification de l’ordinateur central (*Tailored Fit Pricing* ou plafond *Rolling 4-Hour Average* en MSU) pénalise toute rafale de lectures agentiques. Les outils MCP de l’ordinateur central appliquent donc un cache court (TTL 15–60 s) et un limiteur de cadence calé sur les fenêtres de lots nocturnes. Une valeur ainsi gardée en cache n’a pas d’autorité : toute décision qui engage l’entreprise relit la donnée à la source ou porte la date de sa copie (section 25.2).
-  Ce limiteur propre aux outils va au-delà de ce que l’exposé retient, soit une limite de débit par agent et par outil, posée à la passerelle (section 25.5).
+3. **Coupe-circuit sur la consommation MIPS / MSU** : La tarification de l’ordinateur central (*Tailored Fit Pricing* ou plafond *Rolling 4-Hour Average* en MSU) pénalise toute rafale de lectures agentiques. Les outils MCP de l’ordinateur central appliquent donc un cache court (TTL 15–60 s) et un limiteur de cadence calé sur les fenêtres de lots nocturnes. Une valeur ainsi gardée en cache n’a pas d’autorité : toute décision qui engage l’entreprise relit la donnée à la source ou porte la date de sa copie (section 25.2). Ce limiteur propre aux outils va au-delà de ce que l’exposé retient, soit une limite de débit par agent et par outil, posée à la passerelle (section 25.5).
 
 ## 25.8 Fiabilisation et confinement des CUA sur Citrix et terminaux 3270/5250
 
@@ -684,8 +671,8 @@ Les donneurs d’ordres manufacturiers et détaillants appliquent des guides EDI
   3. *Encapsulation MCP prioritaire + orchestration APA (UiPath Maestro) + harnais CUA dérogatoire* : Retenue.
 - **Décision** : (a) Tout programme (RPG, COBOL, CICS) ou flux (EDI X12) disposant d’une interface binaire ou fichier accessible est encapsulé en serveur MCP déterministe; (b) aucun LLM ne génère de trame EDI brute; (c) l’usage d’un CUA exige une dérogation motivée, un harnais avec caviardage des données personnelles, zones interdites, relecture et archive WORM, ainsi qu’un budget d’extinction à 12 mois.
 - **Conséquences** :
-  - ‣ *Positives* : Latence maîtrisée sur la majorité des flux programmables, conformité réglementaire démontrable, déblocage sécurisé des écrans réellement fermés.
-  - ‣ *Négatives / Coûts assumés* : Maintien temporaire d’une double compétence : connecteurs centraux MCP et ingénierie VDI/APA.
+  - *Positives* : Latence maîtrisée sur la majorité des flux programmables, conformité réglementaire démontrable, déblocage sécurisé des écrans réellement fermés.
+  - *Négatives / Coûts assumés* : Maintien temporaire d’une double compétence : connecteurs centraux MCP et ingénierie VDI/APA.
 - **Condition de révision** : Extinction progressive des modules patrimoniaux verrouillés.
 
 ### Liste de contrôle de mise en production

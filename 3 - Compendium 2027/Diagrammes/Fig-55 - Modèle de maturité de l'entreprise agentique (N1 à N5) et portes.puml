@@ -6,9 +6,16 @@ top to bottom direction
 skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
+skinparam nodesep 16
+skinparam ranksep 24
 skinparam rectangle {
   BackgroundColor #FFFFFF
   BorderColor #334155
+}
+skinparam legend {
+  BackgroundColor #FFF7ED
+  BorderColor #9A3412
+  FontName "Segoe UI"
 }
 
 rectangle N1 #FEF2F2;line:DC2626 [
@@ -118,15 +125,16 @@ G2 -[hidden]right-> G3
 G3 -[hidden]right-> G4
 
 N1 .[#DC2626]down. G1
+N2 .[#DC2626,norank]. G1
 N2 .[#D97706]down. G2
+N3 .[#D97706,norank]. G2
 N3 .[#2563EB]down. G3
+N4 .[#2563EB,norank]. G3
 N4 .[#4F46E5]down. G4
+N5 .[#4F46E5,norank]. G4
 
-rectangle LoiProgression #FFF7ED;line:9A3412 [
+legend bottom
   **Loi de Progression Architecturale : Aucun saut direct N1 → N4 sans franchissement intégral de la Porte G2**
   Tout système patrimonial dépourvu d'identité nominative ou d'idempotence reste plafonné en lecture seule (L1) jusqu'à encapsulation MCP
-]
-
-G2 -[hidden]down-> LoiProgression
-G3 -[hidden]down-> LoiProgression
+endlegend
 @enduml

@@ -171,9 +171,7 @@ Microsoft signale deux risques : la boucle de transferts sans fin et un parcours
 
 ### L’essaim
 
-Un essaim est un ensemble d’agents qui se passent le travail par transferts, sans superviseur. Aucun agent n’a de vue d’ensemble; la coordination émerge des décisions locales. Il n’y a
-
-pas d’orchestrateur à écrire, mais la difficulté se reporte sur l’observabilité : reconstituer qui a décidé quoi exige une trace complète de chaque transfert (chapitre 33).
+Un essaim est un ensemble d’agents qui se passent le travail par transferts, sans superviseur. Aucun agent n’a de vue d’ensemble; la coordination émerge des décisions locales. Il n’y a pas d’orchestrateur à écrire, mais la difficulté se reporte sur l’observabilité : reconstituer qui a décidé quoi exige une trace complète de chaque transfert (chapitre 33).
 
 Multiplier les canaux ne s’amortit pas de soi. L’architecture hybride de Kim et coll., qui ajoute des échanges latéraux à un orchestrateur, est la plus coûteuse de l’étude : 44,3 tours par essai en moyenne, six fois plus que l’agent unique [2].
 
@@ -385,7 +383,7 @@ La consommation de jetons d’entrée croît aussi de façon quadratique. Si cha
 
 𝑉_{jetons}(𝑇) = ∑_{𝑡=1}^{𝑇} (𝐿_0 + 𝑡⋅𝐿) = 𝑇⋅𝐿_0 + (𝑇(𝑇+1)/2)⋅𝐿
 
-où 𝐿0 désigne l’empreinte initiale des consignes système et des schémas d’outils. Au-delà de huit à dix échanges croisés, trois dégradations s’ajoutent :
+où 𝐿_0 désigne l’empreinte initiale des consignes système et des schémas d’outils. Au-delà de huit à dix échanges croisés, trois dégradations s’ajoutent :
 
 1. **Érosion du rapport signal/bruit.** Une hypothèse erronée émise au tour 2 reste dans la fenêtre de contexte au tour 9 et continue d’influencer l’attention des agents aval, même réfutée.
 2. **Contagion des rationalisations (OWASP ASI08).** Quand un agent amont énonce avec assurance une déduction inexacte, les agents pairs tendent statistiquement à s’aligner sur cette prémisse plutôt qu’à la contredire, par sycophantie entre modèles.
@@ -393,9 +391,7 @@ où 𝐿0 désigne l’empreinte initiale des consignes système et des schémas
 
 ### Dualité : gouverner localement, fédérer globalement
 
-Le principe de dualité échelle-couplage du *Domain-Driven Design* (DDD) écarte à la fois le maillage libre et l’orchestrateur monolithique omniscient qui régenterait toute l’entreprise (voir aussi la section 16.5). La règle qui suit s’écarte de ce que retient l’exposé : la section 16.5 et la grille de décision posent, entre domaines, le pair-à-pair par protocole (A2A, chapitre 6)
-
-et, à l’intérieur d’un domaine, une topologie centralisée; la grille ne propose de s’en écarter que pour une plateforme unique sous une seule autorité.
+Le principe de dualité échelle-couplage du *Domain-Driven Design* (DDD) écarte à la fois le maillage libre et l’orchestrateur monolithique omniscient qui régenterait toute l’entreprise (voir aussi la section 16.5). La règle qui suit s’écarte de ce que retient l’exposé : la section 16.5 et la grille de décision posent, entre domaines, le pair-à-pair par protocole (A2A, chapitre 6) et, à l’intérieur d’un domaine, une topologie centralisée; la grille ne propose de s’en écarter que pour une plateforme unique sous une seule autorité.
 
 - **Dans un contexte borné, l’orchestration déterministe.** Un processus relève d’un domaine métier unique, sous une responsabilité claire : l’instruction d’une réclamation d’assurance chez BCA, le diagnostic complet d’une alerte machine chez BSN. Un coordinateur explicite pilote les étapes, détient l’état d’avancement, applique les délais de garde et agrège les preuves. Un seul identifiant d’exécution indique où en est le dossier.
 - **Entre domaines, la chorégraphie événementielle.** Quand la clôture d’un diagnostic technique chez BSN doit déclencher une mise à jour du risque client dans le CRM, un réajustement des prévisions de pièces dans l’ERP industriel et une écriture analytique de provision financière, aucun orchestrateur central ne doit coupler ces trois divisions. Le domaine source publie un événement métier immuable et typé (`EquipmentFailureDiagnosed.v2`, conforme à Apache Ossie) sur le courtier d’entreprise (Kafka ou Solace). Chaque domaine abonné déclenche de façon autonome son propre micro-orchestrateur interne.
@@ -411,9 +407,7 @@ et, à l’intérieur d’un domaine, une topologie centralisée; la grille ne p
 
 ## 16.10 Anatomie comparative des six topologies canoniques en 2027
 
-Une fois les frontières de domaines tracées, il reste à structurer la collaboration des agents à l’intérieur d’une cellule orchestrée ou d’un sous-réseau coopératif. Ce volet retient six topologies canoniques, illustrées à la figure ci-dessous; l’exposé, qui ne cite aucune donnée d’adoption des patrons en entreprise, classe neuf patrons selon trois topologies et un axe
-
-adaptatif (section 16.1). Toute architecture candidate justifie laquelle elle instancie, ou comment elle les compose hiérarchiquement.
+Une fois les frontières de domaines tracées, il reste à structurer la collaboration des agents à l’intérieur d’une cellule orchestrée ou d’un sous-réseau coopératif. Ce volet retient six topologies canoniques, illustrées à la figure ci-dessous; l’exposé, qui ne cite aucune donnée d’adoption des patrons en entreprise, classe neuf patrons selon trois topologies et un axe adaptatif (section 16.1). Toute architecture candidate justifie laquelle elle instancie, ou comment elle les compose hiérarchiquement.
 
 > **[Figure]**
 > - Six Topologies Canoniques d'Orchestration et de Chorégraphie Multi-Agents (2027)
@@ -488,12 +482,10 @@ Le superviseur, la hiérarchie et le routeur sont décrits aux sections 16.2 et 
 
 ### 2. Planificateur, exécuteur et critique bornés
 
-Cette topologie prolonge la boucle de réflexion de la section 16.4 par un troisième rôle. Le planificateur structure la démarche, l’exécuteur produit l’artefact ou prépare la transaction
-
-avec ses outils MCP, le critique évalue le résultat face aux pièces justificatives, aux invariants métier et aux politiques de conformité avant d’autoriser la sortie ou d’exiger une révision ciblée.
+Cette topologie prolonge la boucle de réflexion de la section 16.4 par un troisième rôle. Le planificateur structure la démarche, l’exécuteur produit l’artefact ou prépare la transaction avec ses outils MCP, le critique évalue le résultat face aux pièces justificatives, aux invariants métier et aux politiques de conformité avant d’autoriser la sortie ou d’exiger une révision ciblée.
 
 - **Indépendance épistémique.** Faire jouer l’exécuteur et le critique par le même modèle, avec deux consignes système différentes, ne corrige qu’une fraction marginale des erreurs : le modèle partage les mêmes angles morts et valide ses propres hallucinations avec une confiance élevée. En production, le critique combine des vérificateurs déterministes (schémas JSON, moteurs Cedar/OPA, solveurs arithmétiques) et un modèle évaluateur issu d’une famille d’entraînement distincte de celle de l’exécuteur.
-- **Condition d’arrêt.** La boucle est bornée par une constante dure 𝑁max ∈{2, 3} et par un détecteur de convergence. Si l’écart sémantique entre deux révisions successives stagne, ou si le plafond 𝑁max est atteint sans approbation du critique, l’exécution n’échoue pas en silence : elle bascule de façon déterministe en escalade HOTL, avec le journal exact des objections du critique.
+- **Condition d’arrêt.** La boucle est bornée par une constante dure 𝑁_{max} ∈ {2, 3} et par un détecteur de convergence. Si l’écart sémantique entre deux révisions successives stagne, ou si le plafond 𝑁_{max} est atteint sans approbation du critique, l’exécution n’échoue pas en silence : elle bascule de façon déterministe en escalade HOTL, avec le journal exact des objections du critique.
 
 ### 3. Graphe orienté acyclique dynamique typé
 
@@ -523,16 +515,14 @@ Quand plusieurs agents, fournisseurs internes ou passerelles externes peuvent ac
 
 Dans les secteurs très réglementés (banque sous BSIF E-23, assurance, santé, aéronautique, secteur public), le flux directeur d’un dossier ne peut pas dépendre de l’interprétation d’un modèle de langage : la séquence légale des notifications, les délais de rétractation, les contrôles anti-blanchiment (KYC/AML) et les seuils de délégation de signature doivent être prouvables.
 
-L’architecture hybride garde comme flux directeur un moteur de processus normatif : ISO/IEC 19510 BPMN 2.0 couplé aux tables de règles OMG DMN, exécuté sur Camunda 8 / Zeebe, UiPath Maestro ou IBM BAMOE. Seules les étapes qui exigent une synthèse documentaire non structurée, un rapprochement sémantique flou ou une négociation assistée sont déléguées à une Service Task qui encapsule un sous-graphe agentique borné, typiquement
-
-une cellule planificateur–exécuteur–critique. Quand la cellule retourne sa recommandation structurée, une porte déterministe DMN reprend la main et valide les seuils d’affaires avant toute écriture dans le système d’enregistrement.
+L’architecture hybride garde comme flux directeur un moteur de processus normatif : ISO/IEC 19510 BPMN 2.0 couplé aux tables de règles OMG DMN, exécuté sur Camunda 8 / Zeebe, UiPath Maestro ou IBM BAMOE. Seules les étapes qui exigent une synthèse documentaire non structurée, un rapprochement sémantique flou ou une négociation assistée sont déléguées à une Service Task qui encapsule un sous-graphe agentique borné, typiquement une cellule planificateur–exécuteur–critique. Quand la cellule retourne sa recommandation structurée, une porte déterministe DMN reprend la main et valide les seuils d’affaires avant toute écriture dans le système d’enregistrement.
 
 ### Matrice de sélection topologique
 
 | Topologie multi-agents | Latence bout-en-bout | Multiplicateur coût jetons | Déterminisme du parcours | Tolérance aux pannes partielles | Auditabilité prudentielle | Risque dominant (OWASP ASI) | Cas d’usage de référence |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | 1. Superviseur hiérarchique | Moyenne (séquentielle ou semi-parallèle) | Faible à modéré (1, 3 × à 2, 0 ×) | Moyen-élevé (étoile contrôlée) | Bonne (réessai ou repli par feuille) | Élevée si le passage par référence est actif | ASI01 / Surcharge du nœud racine | Triage omnicanal, assistance employé multi-applications |
-| 2. Planificateur–exécuteur–critique | Moyenne à haute (1 à 3 cycles) | Modéré à élevé (2, 2 × à 3, 8 ×) | Moyen (boucle bornée par 𝑁max) | Élevée (autocorrection sémantique) | Très élevée (journal des objections) | Collusion de biais si même famille de modèles | Souscription complexe, génération de code/SQL, analyse légale |
+| 2. Planificateur–exécuteur–critique | Moyenne à haute (1 à 3 cycles) | Modéré à élevé (2, 2 × à 3, 8 ×) | Moyen (boucle bornée par 𝑁_{max}) | Élevée (autocorrection sémantique) | Très élevée (journal des objections) | Collusion de biais si même famille de modèles | Souscription complexe, génération de code/SQL, analyse légale |
 | 3. DAG dynamique typé | Très faible (parallélisme maximal) | Très faible (1, 1 × à 1, 5 ×) | Élevé une fois le DAG compilé | Moyenne (recompilation locale sur échec) | Très élevée (graphe figé avant action) | Mauvaise décomposition initiale | Vue 360° client, audit multi-systèmes, due diligence |
 | 4. Tableau noir partagé | Variable (convergence opportuniste) | Modéré à élevé selon le nombre d’experts | Faible sur l’ordre, strict sur l’arrêt | Excellente (experts découplés) | Bonne via le journal des révisions ETag | ASI06 Empoisonnement d’état partagé | Diagnostic de cause racine (RCA) télécoms, cyber SOC, maintenance OT |
 | 5. Contract Net (enchères) | Moyenne (+1 aller-retour d’enchère) | Modéré (annonces légères JSON) | Élevé (adjudication algébrique) | Excellente (routage hors nœuds saturés) | Élevée (traces d’offres et scores) | Sur-promesse d’un agent mal calibré | Allocation logistique multi-dépôts, approvisionnement B2B, routage GPU |
@@ -841,9 +831,9 @@ Même quand une équipe choisit d’abord une topologie saine, la maintenance co
 
 Pour qu’un graphe multi-agents se termine en temps fini et à coût borné, quatre garde-fous d’infrastructure s’appliquent indépendamment du raisonnement des agents :
 
-1. **Compteur de sauts décrémenté de façon atomique.** Comme le champ TTL d’un paquet IPv4, l’entier `maxRemainingHops` transporté dans l’en-tête signé de l’`ActionEnvelope` perd une unité à chaque délégation horizontale A2A v1.0. Quand un orchestrateur délègue en parallèle à trois spécialistes (fan-out), il divise ou plafonne de même le sous-budget de chaque branche 𝐵𝑖 :
+1. **Compteur de sauts décrémenté de façon atomique.** Comme le champ TTL d’un paquet IPv4, l’entier `maxRemainingHops` transporté dans l’en-tête signé de l’`ActionEnvelope` perd une unité à chaque délégation horizontale A2A v1.0. Quand un orchestrateur délègue en parallèle à trois spécialistes (fan-out), il divise ou plafonne de même le sous-budget de chaque branche 𝐵_𝑖 :
 
-𝐵𝑖≤𝛼𝑖⋅𝐵rest, ∑𝑘 𝑖=1 𝛼𝑖≤1 −𝜀
+𝐵_𝑖 ≤ 𝛼_𝑖 ⋅ 𝐵_{rest}, ∑_{𝑖=1}^{𝑘} 𝛼_𝑖 ≤ 1 − 𝜀
 
 où 𝜀 réserve le budget de l’étape finale d’agrégation. Tout appel entrant dont le compteur vaut zéro est rejeté par la passerelle en HTTP 429 Too Many Requests, avant même d’invoquer un GPU.
 
@@ -855,7 +845,7 @@ où 𝜀 réserve le budget de l’étape finale d’agrégation. Tout appel ent
 
 | Antipatron topologique | Description du dysfonctionnement | Signature télémétrique (OpenTelemetry) | Correctif architectural normatif |
 | --- | --- | --- | --- |
-| Le comité bavard | Quatre à six agents débattent en boucle ouverte sur un tampon commun, sans arbitre déterministe | Ratio jetons générés / jetons utiles > 12 : 1; variance extrême de durée (P99 > 8 × P50) | Remplacer par un DAG typé (collecte) suivi d’une cellule exécuteur–critique bornée à 𝑁max = 2 |
+| Le comité bavard | Quatre à six agents débattent en boucle ouverte sur un tampon commun, sans arbitre déterministe | Ratio jetons générés / jetons utiles > 12 : 1; variance extrême de durée (P99 > 8 × P50) | Remplacer par un DAG typé (collecte) suivi d’une cellule exécuteur–critique bornée à 𝑁_{max} = 2 |
 | Le superviseur entonnoir | Le superviseur central recopie par génération du modèle de gros tableaux ou documents d’un agent feuille à un autre | Spans du superviseur représentant > 65 % du coût total et dégradations d’exactitude sur les codes SKU/ID | Imposer le passage par référence : transfert d’URI d’artefacts immuables hors de la voie cognitive |
 | Le ping-pong de politesse | Deux agents autonomes se remercient ou se redemandent mutuellement confirmation de clôture d’une tâche | Alternance périodique `agent.A <-> agent.B` avec charge utile quasi vide avant épuisement du TTL | Protocole d’état fini A2A strict (COMPLETED terminal non réentrant) + détection de cycle sur `traceId` |
 | La critique incestueuse | L’agent critique utilise le même modèle et le même contexte RAG bruité que l’agent exécuteur | Taux d’approbation au tour 1 > 99 %, mais taux de défauts découverts après coup inchangé | Imposer deux familles de modèles distinctes (ADR-011) + exécuter en amont les gardes déterministes Cedar |
@@ -879,7 +869,7 @@ L’erreur la plus fréquente d’un centre d’excellence nouvellement créé e
   - Chaque agent de dépôt calcule sa soumission à partir du stock libre dans SAP S/4HANA, de la charge instantanée des quais d’expédition et de l’empreinte carbone et du coût du transport. L’adjudicateur (Extrait 16.2) attribue la réservation au dépôt optimal, souvent Québec ou Mississauga plutôt que Montréal-Est saturé. Les coûts de fret d’urgence baissent de 23 % et le respect du SLA passe à 98,7 %.
 3. **Boréal Capital & Assurances (BCA) : flux directeur hybride BPMN 2.0 / DMN qui encapsule une cellule planificateur–exécuteur–critique.**
   - Pour toute instruction de garantie ou de sinistre bris de machine, BCA impose un flux directeur déterministe sur Camunda 8 / Zeebe (Extrait 16.3). Les vérifications de police en vigueur sur l’IBM i (AS/400) et le calcul des plafonds de franchise sont exécutés à 100 % par des tables DMN, sans aucun appel à un modèle.
-  - Seule l’analyse croisée du rapport technique de panne et des clauses particulières d’exclusion est confiée à une cellule planificateur–exécuteur–critique limitée à 𝑁max = 3 tours : exécuteur sur Claude, critique indépendant sur Gemini, hébergés en région canadienne conformément à la Loi 25. Cette isolation a permis aux auditeurs internes de valider la conformité BSIF E-23 avant l’échéance du 1er mai 2027.
+  - Seule l’analyse croisée du rapport technique de panne et des clauses particulières d’exclusion est confiée à une cellule planificateur–exécuteur–critique limitée à 𝑁_{max} = 3 tours : exécuteur sur Claude, critique indépendant sur Gemini, hébergés en région canadienne conformément à la Loi 25. Cette isolation a permis aux auditeurs internes de valider la conformité BSIF E-23 avant l’échéance du 1er mai 2027.
 
 **Scénario illustratif cible (horizon 90 jours).** Les boucles infinies entre agents ont disparu : 0 incident, contre 3 par mois en phase prototype. Le facteur d’amplification de jetons baisse de 68 % chez BSN, de 84 000 à 26 500 jetons sur les cas complexes. La traçabilité OpenTelemetry est unifiée, de l’alerte du capteur à la comptabilisation financière.
 
@@ -891,8 +881,7 @@ Les opérateurs engagés en 2027 vers le niveau 4 des réseaux autonomes du TM F
 
 Une orchestration centralisée unique s’effondrerait sous la latence et le volume de télémétrie. Les architectures déployées en production chez les grands opérateurs combinent donc deux topologies :
 
-1. **Grappe régionale MEC : tableau noir à haute vitesse.** Des agents spécialisés par couche réseau (radio RF, routage IP/MPLS, tranches réseau B2B) alimentent un tableau
-  noir d’incident local et isolent en moins de 5 secondes le défaut physique racine parmi des milliers d’alarmes symptômes.
+1. **Grappe régionale MEC : tableau noir à haute vitesse.** Des agents spécialisés par couche réseau (radio RF, routage IP/MPLS, tranches réseau B2B) alimentent un tableau noir d’incident local et isolent en moins de 5 secondes le défaut physique racine parmi des milliers d’alarmes symptômes.
 2. **NOC national : superviseur hiérarchique borné à deux niveaux.** Quand la remédiation locale exige de réallouer du spectre ou de réacheminer du trafic inter-régional qui touche des SLA entreprises critiques, le superviseur régional soumet un plan d’action chiffré au contrôleur déterministe national (vérificateur de politiques SON, jumeau de topologie réseau) avant application sur les contrôleurs SMO. Tout contournement direct entre deux agents de cellules radio voisines, sans passage par les gardes de stabilité, est bloqué pour éviter les oscillations de charge (flapping).
 
 ÉCLAIRAGE SECTORIEL
@@ -911,20 +900,19 @@ Un graphe libre d’agents autonomes qui statuerait sur un écart de stérilisat
 **DÉCISION D’ARCHITECTURE — ADR-011 — Standardisation des topologies multi-agents et interdiction des graphes cycliques non bornés**
 
 - **Statut** : Acceptée | Périmètre : Ensemble des systèmes multi-agents (L1 à L4) | Révision : Semestrielle
-- **Contexte** : les équipes produits assemblent des flottes d’agents spécialisés par A2A v1.0 et divers cadriciels applicatifs. Sans contrainte structurelle sur la topologie des graphes d’interaction, l’organisation s’expose à des croissances quadratiques de consommation de jetons, à des boucles entre pairs, à la dégradation du cache KV et à l’impossibilité de
-  démontrer le déterminisme des contrôles devant les régulateurs (BSIF E-23, Loi 25, EU AI Act).
+- **Contexte** : les équipes produits assemblent des flottes d’agents spécialisés par A2A v1.0 et divers cadriciels applicatifs. Sans contrainte structurelle sur la topologie des graphes d’interaction, l’organisation s’expose à des croissances quadratiques de consommation de jetons, à des boucles entre pairs, à la dégradation du cache KV et à l’impossibilité de démontrer le déterminisme des contrôles devant les régulateurs (BSIF E-23, Loi 25, EU AI Act).
 - **Options évaluées** :
   1. *Liberté totale laissée aux cadriciels d’équipes (maillage conversationnel ouvert)* : rejetée. Les coûts deviennent imprévisibles, les défaillances en cascade ne sont pas contenues (OWASP ASI08) et la piste d’audit est illisible.
   2. *Topologie unique (superviseur hiérarchique partout)* : rejetée. Elle crée des goulots artificiels sur les diagnostics parallèles, interdit l’optimisation économique par enchères logistiques et ne suffit pas aux exigences formelles BPMN des processus financiers réglementés.
   3. *Catalogue fermé de six topologies homologuées, sous architecture cellulaire fédérée* : chorégraphie événementielle typée entre domaines métiers, choix explicite et documenté parmi les six topologies canoniques à l’intérieur de chaque domaine, garde-fous déterministes obligatoires. Retenue.
 - **Décision** :
   1. Toute intégration entre domaines privilégie la chorégraphie, avec des événements métier immuables conformes aux schémas Apache Ossie. L’orchestration directe est réservée aux frontières d’un même contexte borné ou d’une saga définie par contrat.
-  2. Les graphes cycliques libres sont interdits en production. Seules sont autorisées les boucles de rétroaction planificateur–exécuteur–critique, sous réserve d’un plafond dur 𝑁max ≤3, d’un détecteur de stagnation et de l’emploi obligatoire de deux familles de modèles distinctes pour l’exécuteur et le critique.
+  2. Les graphes cycliques libres sont interdits en production. Seules sont autorisées les boucles de rétroaction planificateur–exécuteur–critique, sous réserve d’un plafond dur 𝑁_{max} ≤ 3, d’un détecteur de stagnation et de l’emploi obligatoire de deux familles de modèles distinctes pour l’exécuteur et le critique.
   3. Tout transfert de données volumineuses (> 2 000 jetons) entre agents par l’intermédiaire d’un superviseur doit emprunter le passage par référence plutôt que la régénération textuelle.
   4. Les processus soumis à une cotation de matérialité élevée (BSIF E-23, GxP, octroi financier) doivent adopter la topologie hybride n° 6 (flux directeur BPMN 2.0 / DMN).
 - **Conséquences** :
-  - ‣ *Positives* : coût maximal par transaction prévisible, parallélisme maîtrisé, conformité prudentielle native, élimination par construction des rafales d’appels entre agents.
-  - ‣ *Négatives et coûts assumés* : un magasin d’artefacts éphémères à maintenir pour le passage par référence, un double approvisionnement en fournisseurs de modèles pour l’hétérogénéité exécuteur/critique, et une revue d’architecture préalable à l’enregistrement de tout nouveau graphe orchestrateur.
+  - *Positives* : coût maximal par transaction prévisible, parallélisme maîtrisé, conformité prudentielle native, élimination par construction des rafales d’appels entre agents.
+  - *Négatives et coûts assumés* : un magasin d’artefacts éphémères à maintenir pour le passage par référence, un double approvisionnement en fournisseurs de modèles pour l’hétérogénéité exécuteur/critique, et une revue d’architecture préalable à l’enregistrement de tout nouveau graphe orchestrateur.
 - **Condition de révision** : réévaluation semestrielle des seuils de latence et des poids d’utilité du Contract Net à la lumière des métriques OpenTelemetry de production.
 
 ### Liste de contrôle de mise en production
@@ -934,7 +922,7 @@ Avant d’homologuer un système multi-agents, et avant d’aborder au chapitre 
 1. **Frontières DDD respectées.** Le graphe évite-t-il de coupler les bases internes de plusieurs divisions dans un orchestrateur dieu, au profit d’événements métier typés aux frontières organisationnelles ?
 
 2. **Rattachement explicite au catalogue topologique.** Le dossier d’architecture justifie-t-il laquelle des six topologies canoniques il emploie, au regard des contraintes de latence, de budget et d’auditabilité ?
-3. **Acyclicité prouvée ou bornage strict.** Si le graphe est un DAG dynamique, un tri topologique déterministe rejette-t-il tout cycle avant l’exécution ? S’il comporte une boucle critique, la constante 𝑁max ≤3 et l’arrêt sur stagnation sont-ils codés en dur hors du prompt ?
+3. **Acyclicité prouvée ou bornage strict.** Si le graphe est un DAG dynamique, un tri topologique déterministe rejette-t-il tout cycle avant l’exécution ? S’il comporte une boucle critique, la constante 𝑁_{max} ≤ 3 et l’arrêt sur stagnation sont-ils codés en dur hors du prompt ?
 4. **Indépendance épistémique du critique.** Dans toute cellule exécuteur–critique de niveau L2 à L4, le modèle critique vient-il d’une famille distincte de celle du modèle producteur, et des contrôles déterministes gratuits le précèdent-ils ?
 5. **Hygiène du contexte et passage par référence.** Chaque sous-agent reçoit-il seulement son schéma d’entrée minimal, et les charges utiles volumineuses transitent-elles par un pointeur URI signé, sans traverser la fenêtre de génération du superviseur ?
 6. **Coupe-circuits en passerelle.** La passerelle décrémente-t-elle `maxRemainingHops` à chaque saut A2A et bloque-t-elle les combinaisons `(agent, skill, inputHash)` répétées dans une même trace OpenTelemetry ?

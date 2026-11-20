@@ -4,91 +4,18 @@ top to bottom direction
 skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
-
-rectangle "● échéance fixée par un texte    |    ○ jalon annoncé par une charte, susceptible de glisser" as Legende #FFFFFF;line:CBD5E1
-
-rectangle "Normalisation — jalons annoncés" as Norm #F8FAFC;line:94A3B8 {
-  rectangle N1 #FFFFFF;line:64748B [
-    ○ **31 mars 2027**
-    IETF : projet de protocole
-    de dialogue adopté
-  ]
-  rectangle N2 #FFFFFF;line:64748B [
-    ○ **31 déc. 2027**
-    IETF : découverte
-    d'agents à l'IESG
-  ]
-  rectangle N3 #FFFFFF;line:64748B [
-    ○ **31 mars 2028**
-    IETF : protocole de
-    dialogue à l'IESG
-  ]
-  N1 -[#94A3B8]right- N2
-  N2 -[#94A3B8]right- N3
+skinparam Padding 8
+skinparam rectangle {
+  BackgroundColor #FFFFFF
+  BorderColor #CBD5E1
 }
 
-rectangle "Réglementation — échéances fixées" as Reg #EFF6FF;line:2563EB {
-  rectangle R1 #FFFFFF;line:2563EB [
-    ● **1er mai 2027**
-    E-23 et AMF
-  ]
-  rectangle R2 #FFFFFF;line:2563EB [
-    ● **2 et 11 déc. 2027**
-    AI Act, annexe III;
-    cyberrésilience
-  ]
-  rectangle R3 #FFFFFF;line:2563EB [
-    ● **2 août 2028**
-    AI Act, annexe I
-  ]
-  rectangle R4 #FFFFFF;line:2563EB [
-    ● **2 août 2029**
-    Réexamen de l'AI Act
-  ]
-  rectangle R5 #FFFFFF;line:2563EB [
-    ● **2 août 2030**
-    AI Act, systèmes des
-    autorités publiques
-  ]
-  R1 -[#2563EB]right- R2
-  R2 -[#2563EB]right- R3
-  R3 -[#2563EB]right- R4
-  R4 -[#2563EB]right- R5
-}
+rectangle Timeline #FFFFFF;line:CBD5E1 [
+  <color:#2563EB>●</color> échéance fixée par un texte      <color:#2563EB>○</color> jalon annoncé par une charte, susceptible de glisser
 
-rectangle "Cryptographie — échéances fixées" as Crypto #F0FDF4;line:166534 {
-  rectangle C1 #FFFFFF;line:166534 [
-    ● **Fin de 2030**
-    NIST : dépréciation;
-    clés post-quantiques
-  ]
-  rectangle C2 #FFFFFF;line:166534 [
-    ● **Fin de 2031**
-    Signatures; systèmes
-    prioritaires au Canada
-  ]
-  C1 -[#166534]right- C2
-}
-
-rectangle "Horizon 2027 – 2031" as Axe #FFFFFF;line:475569 {
-  rectangle "**2027**" as Y2027 #F8FAFC;line:64748B
-  rectangle "**2028**" as Y2028 #F8FAFC;line:64748B
-  rectangle "**2029**" as Y2029 #F8FAFC;line:64748B
-  rectangle "**2030**" as Y2030 #F8FAFC;line:64748B
-  rectangle "**2031**" as Y2031 #F8FAFC;line:64748B
-  Y2027 -[#475569]right- Y2028
-  Y2028 -[#475569]right- Y2029
-  Y2029 -[#475569]right- Y2030
-  Y2030 -[#475569]right- Y2031
-}
-
-Legende -[hidden]down-> N2
-N1 -[hidden]down-> R1
-N2 -[hidden]down-> R2
-N3 -[hidden]down-> R3
-R1 -[hidden]down-> Y2027
-R4 -[hidden]down-> C1
-R5 -[hidden]down-> C2
-C1 -[hidden]down-> Y2030
-C2 -[hidden]down-> Y2031
+  |= Horizon 2027 – 2031 |= **2027** |= **2028** |= **2029** |= **2030** |= **2031** |
+  | **Normalisation**\n//jalons annoncés// | <#F8FAFC> ○ **31 mars 2027**\nIETF : projet de protocole\nde dialogue adopté\n\n○ **31 déc. 2027**\nIETF : découverte\nd'agents à l'IESG | <#F8FAFC> ○ **31 mars 2028**\nIETF : protocole de\ndialogue à l'IESG | <#F8FAFC> | <#F8FAFC> | <#F8FAFC> |
+  | **Réglementation**\n//échéances fixées// | <#EFF6FF> ● **1er mai 2027**\nE-23 et AMF\n\n● **2 et 11 déc. 2027**\nAI Act, annexe III;\ncyberrésilience | <#EFF6FF> ● **2 août 2028**\nAI Act, annexe I | <#EFF6FF> ● **2 août 2029**\nRéexamen de l'AI Act | <#EFF6FF> ● **2 août 2030**\nAI Act, systèmes des\nautorités publiques | <#EFF6FF> |
+  | **Cryptographie**\n//échéances fixées// | <#F0FDF4> | <#F0FDF4> | <#F0FDF4> | <#F0FDF4> ● **Fin de 2030**\nNIST : dépréciation;\nclés post-quantiques | <#F0FDF4> ● **Fin de 2031**\nSignatures; systèmes\nprioritaires au Canada |
+]
 @enduml

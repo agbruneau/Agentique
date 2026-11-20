@@ -30,6 +30,6 @@ Cette annexe donne l’index des fondations, protocoles et textes réglementaire
 | **OWASP ASI01–ASI10** | Référentiel de cybersécurité | Fondation OWASP | Top 10 des risques de sécurité propres aux applications agentiques autonomes |
 | **ROS 2 / OMG DDS** | Robotique et temps réel | Open Robotics / OMG | Cadriciel robotique modulaire et bus de publication-abonnement en temps réel pour l’IA physique |
 | **SPIFFE / SPIRE** | Standard d’identité machine | CNCF (Linux Foundation) | Identités cryptographiques universelles qui attestent les charges de travail et les agents |
-| **Tau-bench (𝜏-bench)** (𝜏, 𝜏2, 𝜏3) | Bancs d’essai | Recherche ouverte | Évaluation multi-tours d’agents à état, avec simulateurs d’utilisateurs et métrique pass𝑘 |
+| **Tau-bench (𝜏-bench)** (𝜏, 𝜏^2, 𝜏^3) | Bancs d’essai | Recherche ouverte | Évaluation multi-tours d’agents à état, avec simulateurs d’utilisateurs et métrique pass^𝑘 |
 | **TUF / Sigstore** | Chaîne logicielle | CNCF / OpenSSF | Distribution signée, résiliente aux compromissions de dépôts, pour des flottes en périphérie |
 | **x402** | Protocole de règlement | x402 Foundation | Paiement machine-à-machine natif par requête HTTP, via le code 402 Payment Required |

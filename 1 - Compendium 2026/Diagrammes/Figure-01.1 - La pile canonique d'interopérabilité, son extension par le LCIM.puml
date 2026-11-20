@@ -40,22 +40,35 @@ skinparam rectangle<<proto>> {
 }
 
 skinparam rectangle<<axis>> {
-  BackgroundColor #FFFFFF
-  BorderColor #FFFFFF
+  BackgroundColor transparent
+  BorderColor transparent
   FontColor #555555
+}
+
+skinparam rectangle<<dot>> {
+  BackgroundColor transparent
+  BorderColor transparent
+  FontColor transparent
+  FontSize 1
 }
 
 skinparam legendBackgroundColor #F7F5F0
 skinparam legendBorderColor #C4BEB5
 skinparam legendFontColor #333333
 
+rectangle AXIS_LBL <<axis>> [
+  chaque palier
+  présuppose
+  les précédents
+]
+
 together {
-  rectangle " " as AXIS_TOP <<axis>>
-  rectangle " " as AXIS_BOT <<axis>>
-  AXIS_BOT -left-> AXIS_TOP #9E3A14 : "chaque palier\nprésuppose\nles précédents"
+  rectangle " " as AXIS_TOP <<dot>>
+  rectangle " " as AXIS_BOT <<dot>>
+  AXIS_BOT -right-> AXIS_TOP #9E3A14 : " \n \n \n \n \n \n \n "
 }
 
-package "PILE CANONIQUE" as PILE {
+package "<color:#9E3A14>PILE CANONIQUE</color>" as PILE {
   rectangle "<color:#9E3A14><b>4</b></color>   <b>Organisationnel</b>" as L4
   rectangle "<color:#9E3A14><b>3</b></color>   <b>Sémantique</b>" as L3
   rectangle "<color:#9E3A14><b>2</b></color>   <b>Syntaxique</b>" as L2
@@ -66,7 +79,7 @@ package "PILE CANONIQUE" as PILE {
   L3 -[hidden]right- L4
 }
 
-package "EXTENSION LCIM" as EXT_PKG {
+package "<color:#9E3A14>EXTENSION LCIM</color>" as EXT_PKG {
   rectangle LCIM <<ext>> [
     <b>Pragmatique · Dynamique · Conceptuel</b>
     Superposés à la couche sémantique. Sept niveaux,
@@ -81,6 +94,8 @@ package "EXTENSION LCIM" as EXT_PKG {
   PROTO -[hidden]right- LCIM
 }
 
+AXIS_LBL -[hidden]down- AXIS_TOP
+AXIS_LBL -[hidden]down- AXIS_BOT
 AXIS_TOP -[hidden]down- L4
 AXIS_BOT -[hidden]down- L1
 

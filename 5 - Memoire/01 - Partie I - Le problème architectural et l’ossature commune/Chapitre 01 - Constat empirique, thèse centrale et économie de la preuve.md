@@ -12,15 +12,13 @@ L’architecte d’entreprise (AE) et l’architecte de solutions (AS) séparent
 
 Aucun office statistique n’isole encore les agents fin 2026. Statistique Canada lancera TechStat dès 2027 A (`ANC-045`). La stratégie *« L’IA pour tous »* vise 60 % d’adoption IA d’ici 2034 A (`PD28 M-7 § 7.5`, `ANC-046`). Au Québec, le recensement de 432 initiatives d’IA dans les ministères et organismes des administrations publiques n’isole pas les agents. Il ne mesure aucun effet en service et ne s’extrapole pas aux institutions privées (`C27 ch. 42 § 42.1, § 42.5`).
 
-Sur le terrain, l’étude `MAP` (*Measuring Agents in Production*, 20 cas et 306 réponses dont 86 systèmes déployés) montre des systèmes bornés. Ainsi, 68 % exécutent au plus dix étapes avant intervention humaine et 16 cas sur 20 (80 %) suivent des flux prédéfinis. Par ailleurs, 70 % emploient des modèles standards sans réentraînement et 74 % reposent sur l’évaluation humaine (`C27 ch. 4 § 4.2`, `ch. 42 § 42.1` ; `PD28 M-2 § 2.2`, `SIG-013`). Ni les 789 sources de `C27 ch. 1–47` ni la revue rapide du 13 novembre 2026 sur Consensus ne recensent d’étude arbitrée mesurant `MCP` ou `A2A` en production (`C27 ch. 42 § 42.6`, `ch. 48 § 48.1–48.3`). Cette revue couvre 10 requêtes et 123 notices, dont 83 retenues et lues sur résumé seulement (31 évaluées par les pairs, 52 prépublications). L’unique cas évalué par les pairs à grande échelle sur trafic réel (`Nubank`, `KDD 2026`) orchestre cinq agents ReAct simples sur graphes déterministes. Il progresse en libre-service mais reste inférieur aux experts
-
-humains. Il exige aussi une réingénierie d’invites lors de la migration `GPT-4.1 → GPT-5` et n’utilise ni `MCP`, ni `A2A`, ni multiagent autonome (`C27 ch. 42 § 42.1–42.2`).
+Sur le terrain, l’étude `MAP` (*Measuring Agents in Production*, 20 cas et 306 réponses dont 86 systèmes déployés) montre des systèmes bornés. Ainsi, 68 % exécutent au plus dix étapes avant intervention humaine et 16 cas sur 20 (80 %) suivent des flux prédéfinis. Par ailleurs, 70 % emploient des modèles standards sans réentraînement et 74 % reposent sur l’évaluation humaine (`C27 ch. 4 § 4.2`, `ch. 42 § 42.1` ; `PD28 M-2 § 2.2`, `SIG-013`). Ni les 789 sources de `C27 ch. 1–47` ni la revue rapide du 13 novembre 2026 sur Consensus ne recensent d’étude arbitrée mesurant `MCP` ou `A2A` en production (`C27 ch. 42 § 42.6`, `ch. 48 § 48.1–48.3`). Cette revue couvre 10 requêtes et 123 notices, dont 83 retenues et lues sur résumé seulement (31 évaluées par les pairs, 52 prépublications). L’unique cas évalué par les pairs à grande échelle sur trafic réel (`Nubank`, `KDD 2026`) orchestre cinq agents ReAct simples sur graphes déterministes. Il progresse en libre-service mais reste inférieur aux experts humains. Il exige aussi une réingénierie d’invites lors de la migration `GPT-4.1 → GPT-5` et n’utilise ni `MCP`, ni `A2A`, ni multiagent autonome (`C27 ch. 42 § 42.1–42.2`).
 
 D’où la règle de `C26 ch. 7 § 7.6` et `ch. 35 § 35.0` : *« soutien » n’est pas « production »*. Les communiqués d’institutions canadiennes (`TD` `S-014, S-015`, `RBC` `S-016, S-017`, `Scotiabank` `S-018`, `Manuvie` `S-019`, `CIBC` `S-028`, `BMO` `S-045`, `Sun Life` `S-046`) documentent des intentions ou des volumes auto-déclarés. Il en va de même pour les rapports annuels 2025 (`Desjardins` `S-021`, `Intact` `S-029`) ou l’absence documentée (`Banque Nationale`, `C26 § 35.8.3, § 35.9`, `Annexe B`). Aucun de ces documents ne décrit une architecture d’exécution ni des métriques vérifiées de production.
 
 ## 1.2 Défaillances systémiques, loi de Lusser, bancs saturés et marché
 
-Selon la loi de Lusser, sans validation déterministe intermédiaire, dix étapes consécutives fiables chacune à 94 % tombent à 𝑅 = 0,94^10 ≈ 53,9 % (`C27 § 0.2`, `ch. 17 § 17.8`, `ch. 21 § 21.1`). Sur 10 000 dépôts SEC, l’exactitude d’extraction plafonne à 0,758 par document (`C27 ch. 42 § 42.3`). La résolution autonome d’incidents TI plafonne entre 10 % et 25 % (`§ 42.4`). Selon Kim et coll., l’ajout d’agents varie de `-70 %` sur tâches séquentielles couplées à `+80,8 %` sur sous-tâches parallélisables (`C27 ch. 16 § 16.7`, `ch. 48 § 48.4`).
+Selon la loi de Lusser, sans validation déterministe intermédiaire, dix étapes consécutives fiables chacune à 94 % tombent à 𝑅 = 0,94^{10} ≈ 53,9 % (`C27 § 0.2`, `ch. 17 § 17.8`, `ch. 21 § 21.1`). Sur 10 000 dépôts SEC, l’exactitude d’extraction plafonne à 0,758 par document (`C27 ch. 42 § 42.3`). La résolution autonome d’incidents TI plafonne entre 10 % et 25 % (`§ 42.4`). Selon Kim et coll., l’ajout d’agents varie de `-70 %` sur tâches séquentielles couplées à `+80,8 %` sur sous-tâches parallélisables (`C27 ch. 16 § 16.7`, `ch. 48 § 48.4`).
 
 La taxonomie `MAST` (Cemri et al., 1 642 traces en `v3` sur sept cadriciels open source, 41 % à 86,7 % d’échecs) prouve que la défaillance est d’abord architecturale. Elle regroupe quatorze modes en trois familles (`C27 ch. 21 § 21.1–21.4` ; `CAD26 § 7.9` ; `PD28 M-6 § 6.2`). La spécification et la conception système comptent pour `44,2 %` en `v3` (`41,77 %` en `v2`). Le désalignement inter-agents pèse `32,4 %` en `v3` (`36,94 %` en `v2`), et la vérification/terminaison `23,5 %` (`21,30 %` en `v2`). L’audit de 168 bancs publics relève en outre des défauts critiques dans plus de 25 % des tâches (`C27 ch. 48 § 48.5`). Après saturation du seuil de 16 h, `METR` a gelé sa série le 8 septembre 2026. `METR Time Horizon v1.1 (Claude Mythos Preview)` atteint ~17,4 h à 50 % de réussite (IC : 8,5 à 55 h, génie logiciel/ML/cyber). Toutefois, cet horizon chute à ~3,1 h à 80 % de constance, soit un écart de 5 à 6 fois (`C27 ch. 49 § 49.2` ; `PD28 M-2 § 2.1.2`, `M-6 § 6.1–6.2`, `SIG-013`).
 
@@ -47,7 +45,7 @@ Ce mémoire condense (~21:1 en v1.2) un corpus fermé de 2 541 pages (complété
 > - CAD26 · CRE-IA v1.2 (351 p. + AMF 49 p.)
 > - 15 ch. · Ann. A–H + Note AMF IA
 > - 12 PRIN · 6 vraies couches § 5.2
-> - 305 EXIG-* (255+34+16, +12 AMF)
+> - 305 EXIG-\* (255+34+16, +12 AMF)
 > - 10 interdictions GOV-17 (46 ND)
 > - C27 · Compendium 2027 (1 117 p.)
 > - 50 ch. · Ann. A–H (1 033 sources)
@@ -61,7 +59,7 @@ Ce mémoire condense (~21:1 en v1.2) un corpus fermé de 2 541 pages (complété
 > - 24 PEX · 43 INI · 15 POR · 27 SIG
 > - Socle consolidé : 2 541 p. + Note AMF (49 p.) · 141 ch. · 27 annexes
 > - 1. Fermeture DIV-02 (DC-P07)
-> - 52 CAP ↔ 305 EXIG-* v1.2
+> - 52 CAP ↔ 305 EXIG-\* v1.2
 > - 24 PEX (13 spéc. + 11 lacunes)
 > - 5 couches + 3 volets ↔ 6 CAD26
 > - Liens typés : directe / ext. / lacune
@@ -103,7 +101,7 @@ Décisions AE
 Spécifications AS
 
 1. Appliquer l’arbre (`C27 Annexe F.3` `[S]`) E : EXIG-ORC-01 E : EXIG-ORC-02 : code/*Decision Model and Notation* (`DMN`, `N0`) → flux déterministe → agent unique → multiagent sur gain `pass^k` P : CAP-043.
-2. Contrer Lusser (0,94^10 ≈ 53,9 %) et les 14 modes `MAST` par schémas JSON, invariants hors modèle et points de contrôle persistés P : CAP-007.
+2. Contrer Lusser (0,94^{10} ≈ 53,9 %) et les 14 modes `MAST` par schémas JSON, invariants hors modèle et points de contrôle persistés P : CAP-007.
 3. Qualifier chaque agent sur un banc interne versionné de `≥ 50` scénarios incluant cas limites et injections E : EXIG-EVA-02 (`≥ 100` `[S]` dans `C27 PRR O-04`).
 
 ## 1.5 Grille de décision

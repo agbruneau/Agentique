@@ -5,9 +5,10 @@ top to bottom direction
 skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName SansSerif
+skinparam Padding 5
 skinparam linetype ortho
-skinparam nodesep 25
-skinparam ranksep 12
+skinparam nodesep 36
+skinparam ranksep 28
 
 title
 <b>Matrice d’autonomie (Classes 1–6 × N0–N4) & circuit JCS / CIBA</b>

@@ -125,9 +125,7 @@ Cette grille prolonge la gradation « interpréter, choisir, engager » du chapi
 
 L’approbation doit être imposée par des contrôles au niveau du système plutôt que par des consignes dans le prompt, qui peuvent être contournées ou « oubliées » [2]. Une politique qui cantonne un agent aux systèmes de développement ne vaut rien s’il peut techniquement atteindre la production [4]. L’agent ne doit jamais pouvoir élargir ses permissions, modifier ses règles, effacer ses journaux ou contourner les validations prévues [12].
 
-La classe d’une décision s’évalue donc hors du modèle : dans l’outil, à la passerelle (chapitre 24) ou dans la couche d’autorisation (chapitre 30). Elle ne peut pas non plus reposer sur ce qu’un outil déclare de lui-même. MCP exige que le client tienne les annotations d’un
-
-outil pour non fiables, sauf si le serveur est de confiance [9]. Classer les actions revient à l’entreprise.
+La classe d’une décision s’évalue donc hors du modèle : dans l’outil, à la passerelle (chapitre 24) ou dans la couche d’autorisation (chapitre 30). Elle ne peut pas non plus reposer sur ce qu’un outil déclare de lui-même. MCP exige que le client tienne les annotations d’un outil pour non fiables, sauf si le serveur est de confiance [9]. Classer les actions revient à l’entreprise.
 
 ## 22.5 Concevoir les points d’approbation : fatigue et goulots
 
@@ -143,9 +141,7 @@ La seule mesure de la fatigue d’approbation qui précède vient d’un éditeu
 
 **Le biais d’automatisation est mesuré depuis longtemps.** Une revue systématique de 74 études, surtout sur l’aide à la décision clinique, établit que l’utilisateur d’un système d’aide suit aussi ses erreurs. Quand le conseil est faux, le risque de décision incorrecte augmente de 26 % (rapport de risques de 1,26, calculé à titre indicatif sur quatre études), et de 6 % à 11 % des réponses d’abord justes deviennent fausses après consultation du système [16]. La charge de travail, la complexité de la tâche et la pression du temps aggravent le biais. L’expérience le réduit sans l’éliminer, et l’effet de la formation est incertain. Ce qui aide tient à la conception : rendre l’utilisateur comptable de sa décision, afficher un niveau de confiance tenu à jour, fournir une information plutôt qu’une recommandation, et moins mettre le conseil en évidence [16]. L’article a été publié en ligne en 2011 (numéro de 2012) et porte sur des aides à la décision, non sur des agents.
 
-**Les développeurs supervisent par raccourcis.** Trois chercheurs de Microsoft ont interrogé 17 développeurs expérimentés, en juillet et en août 2025, sur leur façon de superviser des agents de programmation [15]. Ils distinguent quatre formes de travail : le cadrage préalable, la planification conjointe, la surveillance en temps réel et la révision après coup. La surveillance en temps réel est rarement pratiquée. La révision repose sur quatre raccourcis : tenir le plan de l’agent pour un reflet fidèle de son travail, tenir des tests réussis pour une garantie, parcourir des yeux plutôt que lire, et se fier à l’agent en terrain inconnu. Les auteurs y voient une supervision « suffisante », imposée par le coût d’une révision complète, et non
-
-de la négligence. L’étude est exploratoire, et douze participants travaillent chez l’employeur des auteurs [15].
+**Les développeurs supervisent par raccourcis.** Trois chercheurs de Microsoft ont interrogé 17 développeurs expérimentés, en juillet et en août 2025, sur leur façon de superviser des agents de programmation [15]. Ils distinguent quatre formes de travail : le cadrage préalable, la planification conjointe, la surveillance en temps réel et la révision après coup. La surveillance en temps réel est rarement pratiquée. La révision repose sur quatre raccourcis : tenir le plan de l’agent pour un reflet fidèle de son travail, tenir des tests réussis pour une garantie, parcourir des yeux plutôt que lire, et se fier à l’agent en terrain inconnu. Les auteurs y voient une supervision « suffisante », imposée par le coût d’une révision complète, et non de la négligence. L’étude est exploratoire, et douze participants travaillent chez l’employeur des auteurs [15].
 
 **La conception actuelle des agents use le superviseur.** Un article de position de chercheurs de Hugging Face et de Data & Society reprend le terme de fatigue d’approbation et en décrit les ressorts [14]. La même personne doit à la fois utiliser l’agent et autoriser ses actions. Une révision de routine mobilise une pensée rapide, peu propice à l’analyse. Déléguer fait perdre la pratique des tâches qu’il faudra ensuite juger. Enfin, un signal d’approbation dégradé, s’il sert à l’entraînement, apprend au système à réduire la friction. L’article ne rapporte aucune mesure propre.
 
@@ -163,9 +159,7 @@ Ces sources confirment la direction, non l’ampleur : aucune ne mesure l’usur
 
 **4. Choisir l’approbateur.** Il doit avoir l’expertise du domaine [2] et l’information nécessaire pour comprendre l’action, l’accepter, la modifier, la refuser ou l’escalader [12].
 
-**5. Mesurer la supervision.** Le cadre de Singapour propose trois indicateurs : le taux de rejet ou de modification, dont une valeur faible peut signaler une approbation machinale; le
-
-temps de réponse, dont la brièveté peut signaler la fatigue; et les approbateurs dont le profil s’écarte nettement de la norme [2]; l’audit interne peut en être chargé (section 39.6).
+**5. Mesurer la supervision.** Le cadre de Singapour propose trois indicateurs : le taux de rejet ou de modification, dont une valeur faible peut signaler une approbation machinale; le temps de réponse, dont la brièveté peut signaler la fatigue; et les approbateurs dont le profil s’écarte nettement de la norme [2]; l’audit interne peut en être chargé (section 39.6).
 
 **6. Prévoir la panne.** Refus par défaut si l’approbateur est injoignable [2]; critères d’escalade fixés d’avance, par exemple des sources contradictoires, une incertitude élevée ou un seuil de coût dépassé [12]. Hors ligne, faute d’approbateur, l’autonomie se borne par des droits alloués avant la coupure (chapitre 46).
 
@@ -184,9 +178,7 @@ Côté protocoles, un serveur MCP à qui il manque une information renvoie un r�
 
 ## 22.6 Exigences réglementaires de supervision
 
-**Union européenne.** L’article 14 du règlement sur l’IA exige que les systèmes à haut risque soient conçus pour être supervisés efficacement par des personnes physiques. Les mesures doivent être proportionnées aux risques, au niveau d’autonomie et au contexte d’utilisation. Les personnes chargées de la supervision doivent pouvoir comprendre les capacités et les limites du système, rester conscientes du biais d’automatisation, interpréter les sorties,
-
-décider de ne pas utiliser le système ou d’en écarter le résultat, et l’interrompre par un bouton d’arrêt ou une procédure équivalente, vers un état sûr [11]. La double vérification par deux personnes n’est imposée que pour l’identification biométrique à distance. La page consultée affiche une application le 2 décembre 2027 pour les systèmes de l’annexe III et le 2 août 2028 pour ceux de l’annexe I [11]; le chapitre 35 traite ce calendrier.
+**Union européenne.** L’article 14 du règlement sur l’IA exige que les systèmes à haut risque soient conçus pour être supervisés efficacement par des personnes physiques. Les mesures doivent être proportionnées aux risques, au niveau d’autonomie et au contexte d’utilisation. Les personnes chargées de la supervision doivent pouvoir comprendre les capacités et les limites du système, rester conscientes du biais d’automatisation, interpréter les sorties, décider de ne pas utiliser le système ou d’en écarter le résultat, et l’interrompre par un bouton d’arrêt ou une procédure équivalente, vers un état sûr [11]. La double vérification par deux personnes n’est imposée que pour l’identification biométrique à distance. La page consultée affiche une application le 2 décembre 2027 pour les systèmes de l’annexe III et le 2 août 2028 pour ceux de l’annexe I [11]; le chapitre 35 traite ce calendrier.
 
 L’article exige une capacité de supervision, non l’approbation de chaque action. Et il nomme le biais d’automatisation parmi les risques à maîtriser : selon la lecture proposée ici, un approbateur qui clique machinalement n’en respecte pas l’esprit.
 
@@ -202,9 +194,7 @@ L’étude MAP repose sur 20 études de cas et 306 réponses valides à un sonda
 
 Les mesures d’Anthropic sur son API publique concordent. Sur un échantillon d’environ un million d’appels d’outils, quelque 73 % semblent comporter un humain dans la boucle sous une forme ou une autre, et 80 % viennent d’agents dotés d’au moins une protection; les auteurs tiennent ces chiffres pour des bornes supérieures. Environ 0,8 % des appels paraissent irréversibles, et près de la moitié relèvent du génie logiciel [5].
 
-La courte portée est donc un choix d’ingénierie, non un plafond technique. Et si les actions irréversibles sont rares, une politique qui leur réserve l’approbation ne vise qu’une petite
-
-fraction du trafic : la file peut rester courte, donc lisible. Les auteurs de la seconde étude jugent qu’exiger l’approbation de chaque action crée de la friction sans gain de sécurité assuré, et s’attachent à la capacité de surveiller et d’intervenir [5].
+La courte portée est donc un choix d’ingénierie, non un plafond technique. Et si les actions irréversibles sont rares, une politique qui leur réserve l’approbation ne vise qu’une petite fraction du trafic : la file peut rester courte, donc lisible. Les auteurs de la seconde étude jugent qu’exiger l’approbation de chaque action crée de la friction sans gain de sécurité assuré, et s’attachent à la capacité de surveiller et d’intervenir [5].
 
 Les deux sources ont leurs limites : MAP ne prétend pas couvrir l’ensemble des agents et signale un biais de participation, et les données d’Anthropic viennent d’un seul fournisseur, qui classe les appels avec son propre modèle.
 

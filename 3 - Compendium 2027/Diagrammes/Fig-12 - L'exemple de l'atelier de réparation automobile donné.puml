@@ -1,36 +1,51 @@
 ' Fig. 12. – L'exemple de l'atelier de réparation automobile donné par la documentation d'A2A : A2A horizontal, MCP vertical.
 @startuml
-top to bottom direction
+left to right direction
 skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
+skinparam nodesep 28
+skinparam ranksep 34
+skinparam rectangle<<invis>> {
+  BackgroundColor transparent
+  BorderColor transparent
+  FontColor transparent
+  FontSize 1
+}
+skinparam rectangle {
+  BackgroundColor #FFFFFF
+  BorderColor #475569
+}
 
 rectangle "**Client**" as Client #F8FAFC;line:475569
 
 rectangle "ATELIER" as Atelier #FFFFFF;line:64748B;line.dashed {
   rectangle "**Agent « gérant**\n**d'atelier »**" as Gerant #EFF6FF;line:2563EB
   rectangle "**Agent « mécanicien »**" as Mecano #EFF6FF;line:2563EB
-  Gerant -[hidden]right-> Mecano
+  Gerant -[hidden]-> Mecano
 }
 
 rectangle "**Agent d'un**\n**fournisseur**" as Fourn #EFF6FF;line:2563EB
 
-Gerant <-[#2563EB]left-> Client : A2A\nplusieurs\ntours
-Fourn <-[#2563EB]left-> Mecano : A2A\ncommande\nd'une pièce
-
 rectangle "**Lecteur de**\n**diagnostic**" as Diag #F8FAFC;line:475569
-rectangle "**Base de manuels**" as Manuels #F8FAFC;line:475569
-rectangle "**Pont élévateur**" as Pont #F8FAFC;line:475569
+rectangle "**Base de**\n**manuels**" as Manuels #F8FAFC;line:475569
+rectangle "**Pont**\n**élévateur**" as Pont #F8FAFC;line:475569
 
-Diag -[hidden]right-> Manuels
-Manuels -[hidden]right-> Pont
+Client -[hidden]-> Gerant
+Client <-[#2563EB,norank]-> Gerant : <color:#2563EB>A2A</color>\nplusieurs tours
+Mecano -[hidden]-> Fourn
+Mecano <-[#2563EB,norank]-> Fourn : <color:#2563EB>A2A</color>\ncommande d'une pièce
 
-Mecano -[#475569]down-> Diag : MCP
-Mecano -[#475569]down-> Manuels
-Mecano -[#475569]down-> Pont
+Gerant -[hidden]right-> Diag
+Mecano -[hidden]right-> Manuels
+Fourn -[hidden]right-> Pont
 
-rectangle "A2A, horizontal : des agents s'associent sur des tâches. MCP, vertical : un agent utilise des capacités." as Note #FFFFFF;line:FFFFFF
+Diag -[hidden]-> Manuels
+Manuels -[hidden]-> Pont
 
-Manuels -[hidden]down-> Note
+Mecano -[#475569,norank]-> Diag
+Mecano -[#475569,norank]-> Manuels : **MCP**
+Mecano -[#475569,norank]-> Pont
 
+caption A2A, horizontal : des agents s'associent sur des tâches. MCP, vertical : un agent utilise des capacités.
 @enduml

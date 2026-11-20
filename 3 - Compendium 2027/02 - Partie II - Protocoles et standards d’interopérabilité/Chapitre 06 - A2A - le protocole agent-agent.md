@@ -22,9 +22,7 @@ A2A a été lancé par Google en avril 2025, avec l’appui d’une cinquantaine
 | 12 mars 2026 | Version 1.0, première spécification stable | [8][12] |
 | 27 août 2026 | Entrée à l’Agentic AI Foundation, au stade « Growth » | [7] |
 
-La dernière étape place A2A dans la même fondation que MCP. Le billet du projet, daté du 27 août 2026, présente A2A comme la pièce qui standardise la manière dont des agents
-
-autonomes se trouvent, se délèguent des tâches et collaborent entre cadriciels et fournisseurs [7]. L’Agentic AI Foundation recense aujourd’hui les deux protocoles parmi ses dix projets [9].
+La dernière étape place A2A dans la même fondation que MCP. Le billet du projet, daté du 27 août 2026, présente A2A comme la pièce qui standardise la manière dont des agents autonomes se trouvent, se délèguent des tâches et collaborent entre cadriciels et fournisseurs [7]. L’Agentic AI Foundation recense aujourd’hui les deux protocoles parmi ses dix projets [9].
 
 Ce regroupement compte pour un acheteur. Deux protocoles complémentaires gouvernés séparément peuvent diverger; sous un même toit, la coordination devient possible, sans être garantie. La feuille de route publiée au premier anniversaire du projet mentionne d’ailleurs une spécification d’interopérabilité et une consolidation des registres [8].
 
@@ -88,9 +86,7 @@ Une tâche dans un état terminal n’accepte plus de message. Les tâches liée
 
 Un **message** est un tour de communication. Il a un rôle, utilisateur ou agent, et contient une ou plusieurs **parties** (`Part`) : du texte, des octets bruts, une URL ou des données structurées [1].
 
-Un **artefact** est un livrable produit par la tâche : un document, une image, un jeu de données. La spécification pose ici une règle qui a des conséquences de conception : les messages ne
-
-doivent pas être tenus pour un mécanisme de livraison fiable de l’information critique; les artefacts sont le moyen à privilégier pour rendre des résultats [1]. Les messages servent à converser, les artefacts à livrer.
+Un **artefact** est un livrable produit par la tâche : un document, une image, un jeu de données. La spécification pose ici une règle qui a des conséquences de conception : les messages ne doivent pas être tenus pour un mécanisme de livraison fiable de l’information critique; les artefacts sont le moyen à privilégier pour rendre des résultats [1]. Les messages servent à converser, les artefacts à livrer.
 
 ## 6.3 Les modes d’interaction
 
@@ -195,9 +191,7 @@ Trois observations nuancent cette répartition; hormis ce qui est cité, elles r
 
 **Les deux protocoles se rapprochent.** Depuis sa révision de juillet 2026, MCP encadre des extensions officielles, notamment deux en bêta : Tasks, dont les états recoupent ceux d’A2A, et Server Cards, pour la découverte (chapitres 5 et 8). A2A, de son côté, sait livrer des résultats structurés. Les deux s’appuient sur HTTP pour l’accès distant et déclarent leurs capacités.
 
-**Le critère utile est l’opacité, pas la technique.** La bonne question n’est pas « est-ce un agent ou un outil ? », mais « qui contrôle ce qui se passe de l’autre côté ? ». Si l’appelant maîtrise ou connaît précisément le comportement attendu, un outil convient. S’il délègue un objectif à un système qui décide lui-même de la manière de l’atteindre, c’est une délégation
-
-entre agents, avec ce qu’elle implique de négociation, de refus possible et de vérification du résultat.
+**Le critère utile est l’opacité, pas la technique.** La bonne question n’est pas « est-ce un agent ou un outil ? », mais « qui contrôle ce qui se passe de l’autre côté ? ». Si l’appelant maîtrise ou connaît précisément le comportement attendu, un outil convient. S’il délègue un objectif à un système qui décide lui-même de la manière de l’atteindre, c’est une délégation entre agents, avec ce qu’elle implique de négociation, de refus possible et de vérification du résultat.
 
 ### L’autorisation en cours de tâche
 
@@ -333,8 +327,7 @@ Les liaisons, la distinction entre message et tâche, et les parties sont décri
 Toute interaction commence par la lecture de l’Agent Card (`/.well-known/agent-card.json`; structure à la section 6.2). Deux mécanismes de la version 1.0 en verrouillent l’exposition en production :
 
 - **Carte publique minimale, carte étendue authentifiée** (`capabilities.extendedAgentCard: true`) : l’URL publique anonyme ne révèle que l’identité de routage et les schémas d’authentification. Les compétences fines autorisées pour le locataire de l’appelant se lisent par l’opération `GetExtendedAgentCard`, avec un jeton valide.
-- **Signature canonique** (`signatures`, JWS RFC 7515) : l’autorité de plateforme signe la carte canonisée (RFC 8785 JCS), contre l’usurpation de capacités (OWASP ASI07), où un
-  conteneur compromis annoncerait de fausses compétences financières pour intercepter des dossiers. La passerelle agentgateway bloque tout routage vers une carte non certifiée.
+- **Signature canonique** (`signatures`, JWS RFC 7515) : l’autorité de plateforme signe la carte canonisée (RFC 8785 JCS), contre l’usurpation de capacités (OWASP ASI07), où un conteneur compromis annoncerait de fausses compétences financières pour intercepter des dossiers. La passerelle agentgateway bloque tout routage vers une carte non certifiée.
 
 ### Machine à états d’une tâche et exécution sans interrogation périodique
 
@@ -513,20 +506,18 @@ OASF fournit un schéma déclaratif versionné qui encadre le cycle de vie d’u
 
 1. **Taxonomie hiérarchique contrôlée (**`skills` **et** `domains`**)** : des identifiants normalisés (`supply_chain/trade_compliance/hs_tariff_classification`), extensibles par espace de noms privé (`x-boreal/*`), remplacent les synonymes flous. La présélection devient une requête d’index exacte, en moins d’une milliseconde.
 2. **Localisateurs multiprotocoles (**`locators`**)** : une fiche unique relie la référence de l’artefact conteneur, l’URL de l’Agent Card A2A v1.0 et l’identifiant de routage SLIM en temps réel.
-3. **Modules d’évaluation et de conformité (**`modules`**)** : ils attachent les métriques mesurées en CI/CD (ADLC, chapitre 34), soit la stabilité pass𝑘, la latence P95 et le coût médian, ainsi que la juridiction d’hébergement et la classification BSIF E-23 ou EU AI Act.
+3. **Modules d’évaluation et de conformité (**`modules`**)** : ils attachent les métriques mesurées en CI/CD (ADLC, chapitre 34), soit la stabilité pass^𝑘, la latence P95 et le coût médian, ainsi que la juridiction d’hébergement et la classification BSIF E-23 ou EU AI Act.
 4. **Signature Sigstore sur registre OCI** : chaque manifeste OASF est publié comme artefact OCI (*Open Container Initiative*) et signé par Cosign / Sigstore dans un journal de transparence vérifiable.
 
 ### Routage distribué par Agent Directory (DHT Kademlia)
 
 Pour fédérer plusieurs entités sans registre central vulnérable, Agent Directory sépare le stockage de l’indexation. Chaque division garde ses manifestes complets dans son registre OCI local et annonce les empreintes cryptographiques (SHA-256) de ses compétences sur une table de hachage distribuée (DHT) Kademlia. Après une résolution en 𝒪︀(log 𝑀) sauts et la vérification des signatures, le routeur du plan de contrôle évalue chaque candidat 𝑎 selon un score déterministe :
 
-Score(𝑎) = 𝕀pol(𝑎) ⋅(𝑤𝑠𝑆sem(𝑎) + 𝑤𝑟pass𝑘(𝑎) −𝑤𝑐𝐶̂(𝑎) −𝑤𝑙𝐿̂95(𝑎))
+Score(𝑎) = 𝕀_{pol}(𝑎) ⋅ (𝑤_𝑠 𝑆_{sem}(𝑎) + 𝑤_𝑟 pass^𝑘(𝑎) − 𝑤_𝑐 𝐶̂(𝑎) − 𝑤_𝑙 𝐿̂_{95}(𝑎))
 
-Ici, 𝕀pol(𝑎) ∈{0, 1} représente le filtre éliminatoire Cedar/OPA (résidence des données, plafond d’autonomie), 𝑆sem(𝑎) la compatibilité des schémas JSON, pass𝑘(𝑎) la fiabilité certifiée, et 𝐶̂(𝑎), 𝐿̂95(𝑎) le coût et la latence P95 normalisés.
+Ici, 𝕀_{pol}(𝑎) ∈ {0, 1} représente le filtre éliminatoire Cedar/OPA (résidence des données, plafond d’autonomie), 𝑆_{sem}(𝑎) la compatibilité des schémas JSON, pass^𝑘(𝑎) la fiabilité certifiée, et 𝐶̂(𝑎), 𝐿̂_{95}(𝑎) le coût et la latence P95 normalisés.
 
-Le cache et la révocation sont gouvernés. Les passerelles agentgateway gardent localement les résolutions OASF fréquentes avec un bail court (TTL de 60 à 300 secondes), pour ne pas
-
-solliciter la DHT à chaque micro-transaction. Si la surveillance OpenTelemetry (chapitre 33) détecte en production une dérive soudaine du taux d’erreur ou la compromission d’un serveur sous-jacent, le centre d’opérations AgentOps publie sur le canal prioritaire de l’Agent Directory un avis de révocation signé (*Revocation Record*). En moins de cinq secondes, 𝕀pol(𝑎) passe à zéro sur toutes les passerelles du groupe : l’agent fautif est isolé et le trafic bascule vers le candidat de rang 2, sans interrompre les sagas en cours.
+Le cache et la révocation sont gouvernés. Les passerelles agentgateway gardent localement les résolutions OASF fréquentes avec un bail court (TTL de 60 à 300 secondes), pour ne pas solliciter la DHT à chaque micro-transaction. Si la surveillance OpenTelemetry (chapitre 33) détecte en production une dérive soudaine du taux d’erreur ou la compromission d’un serveur sous-jacent, le centre d’opérations AgentOps publie sur le canal prioritaire de l’Agent Directory un avis de révocation signé (*Revocation Record*). En moins de cinq secondes, 𝕀_{pol}(𝑎) passe à zéro sur toutes les passerelles du groupe : l’agent fautif est isolé et le trafic bascule vers le candidat de rang 2, sans interrompre les sagas en cours.
 
 #### Extrait 6.2 — `[Exécuté en CI]` · Manifeste de capacité AGNTCY OASF signé et relié à A2A v1.0
 
@@ -621,7 +612,7 @@ SLIM (*Secure Low-Latency Interactive Messaging*), implémenté en Rust pour une
 > - Clés éphémères X25519MLKEM768
 > - Maillage de Relais SLIM (Zero-Trust)
 > - Routage sémantique par noms hiérarchiques :
-> - boreal/supply/rfq-session-884/*
+> - boreal/supply/rfq-session-884/\*
 > - Multiplexage QUIC sans blocage HOL
 > - Topologies : Unicast, Streaming, Pub/Sub
 > - Aveugle aux charges utiles (Chiffrées E2E)
@@ -644,8 +635,7 @@ Au-dessus du routage SLIM, le protocole *Messaging Layer Security* (MLS, RFC 942
 En 2027, les sessions SLIM/MLS inter-organisations imposent la suite hybride post-quantique X25519MLKEM768, qui combine la courbe elliptique X25519 et l’encapsulation ML-KEM-768 (NIST FIPS 203), avec des signatures ML-DSA (FIPS 204). Cette suite pare les collectes passives de type *Harvest Now, Decrypt Later* sur les secrets industriels qui transitent par Internet. Deux enseignements de déploiement :
 
 - **Surcoût post-quantique négligeable devant l’inférence** : un `KeyPackage` hybride X25519MLKEM768 ajoute environ 1,2 kilooctet à la poignée de main initiale du groupe MLS. L’encapsulation et la décapsulation s’exécutent en moins de 0,4 milliseconde sur un processeur serveur standard, puis un chiffrement symétrique matériel AES-256-GCM tourne à débit filaire. Ce coût est imperceptible devant une inférence de modèle de 300 à 2 000 millisecondes.
-- **Pontage d’A2A sur SLIM par démon local et collisions d’époques** : les équipes métiers n’ont pas à réécrire leurs agents. L’agent spécialiste expose localement sur 127.0.0.1 son serveur A2A v1.0 standard; un démon SLIM local gère l’attestation SPIFFE, l’arbre MLS et l’encapsulation JSON-RPC ou gRPC sur HTTP/2, dans des salles d’exécution éphémères détruites dès la clôture de la saga. Conformément à la RFC 9420, le relais
-  SLIM ordonne linéairement les trames Commit concurrentes, sans accès au clair, pour prévenir toute bifurcation d’époque, et il évince les feuilles silencieuses qui retarderaient le renouvellement post-compromission (PCS).
+- **Pontage d’A2A sur SLIM par démon local et collisions d’époques** : les équipes métiers n’ont pas à réécrire leurs agents. L’agent spécialiste expose localement sur 127.0.0.1 son serveur A2A v1.0 standard; un démon SLIM local gère l’attestation SPIFFE, l’arbre MLS et l’encapsulation JSON-RPC ou gRPC sur HTTP/2, dans des salles d’exécution éphémères détruites dès la clôture de la saga. Conformément à la RFC 9420, le relais SLIM ordonne linéairement les trames Commit concurrentes, sans accès au clair, pour prévenir toute bifurcation d’époque, et il évince les feuilles silencieuses qui retarderaient le renouvellement post-compromission (PCS).
 
 #### Extrait 6.3 — `[Exécuté en CI]` · Configuration d’un nœud passerelle SLIM sous MLS hybride post-quantique
 
@@ -707,9 +697,7 @@ ANP évite les registres spéculatifs complexes et s’appuie sur la méthode `d
 | AGNTCY SLIM + MLS | Messagerie gRPC sans port entrant et chiffrement de bout en bout post-quantique | Essaims en temps réel, sites IT/OT, salles B2B | Feuilles TreeKEM (SPIFFE / `did:wba`) | À l’essai : SLIM en brouillon IETF individuel; MLS normalisé (RFC 9420) |
 | ANP (`did:wba`) | Identité décentralisée sur DNS/TLS et découverte Web ouverte | Écosystèmes B2B multi-fournisseurs | W3C DID (`did:wba`) + vLEI | À l’essai, derrière une DMZ |
 
-En production, aucun agent interne n’est exposé directement au réseau externe. Toute interaction ANP/A2A franchit une DMZ agentique, qui vérifie le `did:wba` et le vLEI, rejette
-
-tout champ de texte libre non borné pour bloquer l’injection indirecte (OWASP ASI01), applique des quotas stricts par partenaire (isolation des locataires) et marque le contexte interne avec `external_partner_origin = true`.
+En production, aucun agent interne n’est exposé directement au réseau externe. Toute interaction ANP/A2A franchit une DMZ agentique, qui vérifie le `did:wba` et le vLEI, rejette tout champ de texte libre non borné pour bloquer l’injection indirecte (OWASP ASI01), applique des quotas stricts par partenaire (isolation des locataires) et marque le contexte interne avec `external_partner_origin = true`.
 
 La passerelle réécrit aussi les en-têtes de télémétrie distribuée (W3C Trace Context `traceparent` / `tracestate`). Elle tient une table de corrélation locale avec l’identifiant de trace externe, pour faciliter le diagnostic conjoint des incidents B2B, et retire tout attribut interne susceptible de révéler aux tiers la topologie des microservices ou les noms des modèles utilisés en interne.
 
@@ -777,9 +765,7 @@ En 2027, les chargeurs et transitaires combinent OASF, ANP et SLIM/MLS en trois 
 
 **ÉCLAIRAGE SECTORIEL — Secteur Financier & Assurances — Muraille de Chine informationnelle inter-filiales sous BSIF E-23 et Loi 25**
 
-Dans un groupe qui détient à la fois des filiales commerciales et une institution financière supervisée, l’interopérabilité agentique ne doit pas violer les murailles de Chine (*Information Barriers*). La Loi 25 québécoise interdit le partage interne de renseignements personnels hors
-
-de la finalité consentie, et la ligne directrice BSIF E-23 (1er mai 2027) impose une frontière d’auditabilité autour des modèles de risque.
+Dans un groupe qui détient à la fois des filiales commerciales et une institution financière supervisée, l’interopérabilité agentique ne doit pas violer les murailles de Chine (*Information Barriers*). La Loi 25 québécoise interdit le partage interne de renseignements personnels hors de la finalité consentie, et la ligne directrice BSIF E-23 (1er mai 2027) impose une frontière d’auditabilité autour des modèles de risque.
 
 A2A v1.0 matérialise ici le patron d’adjudication à divulgation minimale. Interrogé par la filiale industrielle, l’agent de la filiale d’assurance n’expose ni le dossier financier ni l’historique de sinistralité; son `outputSchema` ne renvoie qu’un verdict signé (APPROVED / ESCALATE), le plafond couvert en dollars et un jeton d’autorisation opaque. La donnée sensible reste confinée dans son enclave réglementaire, et le processus transversal demeure automatisé.
 
@@ -817,8 +803,8 @@ A2A v1.0 matérialise ici le patron d’adjudication à divulgation minimale. In
   3. Toute tâche dont la durée P95 dépasse 60 secondes utilise obligatoirement le mode non bloquant, avec des notifications poussées par webhook signé, reliées au moteur durable. Cette règle va au-delà de ce que retient l’exposé : la grille de décision garde les notifications poussées par défaut et admet l’interrogation périodique si le client ne peut pas recevoir d’appels entrants.
   4. Les flux vers les sites IT/OT et les sessions multipartites B2B passent par SLIM sous chiffrement IETF MLS (X25519MLKEM768) et traversent la DMZ agentique (ANP `did:wba` + Cedar).
 - **Conséquences** :
-  - ‣ *Positives* : Découplage des équipes, remplacement sans interruption des modèles sous-jacents, résilience aux coupures longues et confidentialité post-quantique de bout en bout.
-  - ‣ *Négatives / Coûts assumés* : Exploitation de la chaîne de signature Sigstore/JWS, gouvernance des schémas JSON inter-domaines et maintien des relais SLIM en DMZ.
+  - *Positives* : Découplage des équipes, remplacement sans interruption des modèles sous-jacents, résilience aux coupures longues et confidentialité post-quantique de bout en bout.
+  - *Négatives / Coûts assumés* : Exploitation de la chaîne de signature Sigstore/JWS, gouvernance des schémas JSON inter-domaines et maintien des relais SLIM en DMZ.
 - **Condition de révision** : Publication d’une révision majeure d’A2A ou convergence normative W3C/AAIF sur l’identité d’agents B2B.
 
 ### Liste de contrôle de mise en production
@@ -826,7 +812,7 @@ A2A v1.0 matérialise ici le patron d’adjudication à divulgation minimale. In
 Avant d’homologuer une interconnexion horizontale inter-domaines ou B2B, vérifiez les huit points suivants :
 
 1. **Authenticité de l’Agent Card** : Le fichier `/.well-known/agent-card.json` comporte-t-il une signature JWS canonique vérifiée en coupure, et réserve-t-il ses compétences sensibles à la carte étendue (`GetExtendedAgentCard`) ?
-2. **Provenance OASF certifiée** : Le manifeste OASF est-il signé dans le registre OCI par Sigstore/Cosign, avec des métriques pass𝑘, de coût et de latence P95 à jour ?
+2. **Provenance OASF certifiée** : Le manifeste OASF est-il signé dans le registre OCI par Sigstore/Cosign, avec des métriques pass^𝑘, de coût et de latence P95 à jour ?
 3. **Aucune interrogation périodique sur les tâches longues** : Toute délégation de plus de 60 secondes utilise-t-elle des notifications `taskPushNotificationConfig` qui réveillent un état durable, plutôt qu’une boucle d’interrogation `GetTask` ? Cette exigence va au-delà de ce que retient l’exposé : la grille de décision admet l’interrogation périodique si le client ne peut pas recevoir d’appels entrants.
 4. **Durcissement anti-SSRF des webhooks** : Les URL de rappel sont-elles restreintes par liste blanche d’identité, protégées contre les adresses IP internes privées et munies d’un `nonce` horodaté et signé ?
 5. **Schémas JSON fermés** : Les parties de données structurées et les artefacts imposent-ils `additionalProperties: false` et le rejet de toute prose d’instruction libre sur les flux externes (OWASP ASI01) ?

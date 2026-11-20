@@ -4,38 +4,53 @@ top to bottom direction
 skinparam shadowing false
 skinparam roundcorner 8
 skinparam defaultFontName "Segoe UI"
+skinparam Padding 6
+skinparam nodesep 16
+skinparam ranksep 10
 
-rectangle "COUCHE" as ColC #FFFFFF;line:FFFFFF {
-  rectangle "**Découverte**" as C1 #EFF6FF;line:2563EB
-  rectangle "**Autorisation**" as C2 #EFF6FF;line:2563EB
-  rectangle "**Paiement**" as C3 #EFF6FF;line:2563EB
-  rectangle "**Règlement**" as C4 #EFF6FF;line:2563EB
-  C1 -[hidden]down-> C2
-  C2 -[hidden]down-> C3
-  C3 -[hidden]down-> C4
-}
+rectangle "<color:#2563EB>**COUCHE**</color>" as H1 #FFFFFF;line:FFFFFF
+rectangle "<color:#2563EB>**QUESTION**</color>" as H2 #FFFFFF;line:FFFFFF
+rectangle "<color:#2563EB>**PROTOCOLES**</color>" as H3 #FFFFFF;line:FFFFFF
+H1 -[hidden]right-> H2
+H2 -[hidden]right-> H3
 
-rectangle "QUESTION" as ColQ #FFFFFF;line:FFFFFF {
-  rectangle "Que vend ce marchand, et par quelle interface ?" as Q1 #FFFFFF;line:CBD5E1
-  rectangle "Qu'a permis l'utilisateur, et qui est l'agent ?" as Q2 #FFFFFF;line:CBD5E1
-  rectangle "Quel justificatif à portée limitée\nl'agent présente-t-il ?" as Q3 #FFFFFF;line:CBD5E1
-  rectangle "Comment la valeur change-t-elle de mains ?" as Q4 #FFFFFF;line:CBD5E1
-  Q1 -[hidden]down-> Q2
-  Q2 -[hidden]down-> Q3
-  Q3 -[hidden]down-> Q4
-}
+rectangle "**Découverte**" as C1 #EFF6FF;line:2563EB
+rectangle "//Que vend ce marchand, et par quelle interface ?//" as Q1 #FFFFFF;line:CBD5E1
+rectangle "UCP : catalogue, profil /.well-known/ucp\nACP : flux de produits" as P1 #F8FAFC;line:64748B
+C1 -[hidden]right-> Q1
+Q1 -[hidden]right-> P1
 
-rectangle "PROTOCOLES" as ColP #FFFFFF;line:FFFFFF {
-  rectangle "UCP : catalogue, profil /.well-known/ucp\nACP : flux de produits" as P1 #F8FAFC;line:64748B
-  rectangle "AP2, Verifiable Intent\nVisa Trusted Agent Protocol" as P2 #F8FAFC;line:64748B
-  rectangle "Jetons des réseaux et des prestataires\nde paiement" as P3 #F8FAFC;line:64748B
-  rectangle "Rails de cartes existants\nx402; MPP" as P4 #F8FAFC;line:64748B
-  P1 -[hidden]down-> P2
-  P2 -[hidden]down-> P3
-  P3 -[hidden]down-> P4
-}
+rectangle "**Autorisation**" as C2 #EFF6FF;line:2563EB
+rectangle "//Qu'a permis l'utilisateur, et qui est l'agent ?//" as Q2 #FFFFFF;line:CBD5E1
+rectangle "AP2, Verifiable Intent\nVisa Trusted Agent Protocol" as P2 #F8FAFC;line:64748B
+C2 -[hidden]right-> Q2
+Q2 -[hidden]right-> P2
 
-ColC -[hidden]right-> ColQ
-ColQ -[hidden]right-> ColP
+rectangle "**Paiement**" as C3 #EFF6FF;line:2563EB
+rectangle "//Quel justificatif à portée limitée//\n//l'agent présente-t-il ?//" as Q3 #FFFFFF;line:CBD5E1
+rectangle "Jetons des réseaux et des prestataires\nde paiement" as P3 #F8FAFC;line:64748B
+C3 -[hidden]right-> Q3
+Q3 -[hidden]right-> P3
+
+rectangle "**Règlement**" as C4 #EFF6FF;line:2563EB
+rectangle "//Comment la valeur change-t-elle de mains ?//" as Q4 #FFFFFF;line:CBD5E1
+rectangle "Rails de cartes existants\nx402; MPP" as P4 #F8FAFC;line:64748B
+C4 -[hidden]right-> Q4
+Q4 -[hidden]right-> P4
+
+H1 -[hidden]down-> C1
+C1 -[hidden]down-> C2
+C2 -[hidden]down-> C3
+C3 -[hidden]down-> C4
+
+H2 -[hidden]down-> Q1
+Q1 -[hidden]down-> Q2
+Q2 -[hidden]down-> Q3
+Q3 -[hidden]down-> Q4
+
+H3 -[hidden]down-> P1
+P1 -[hidden]down-> P2
+P2 -[hidden]down-> P3
+P3 -[hidden]down-> P4
 
 @enduml

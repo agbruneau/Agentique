@@ -8,7 +8,7 @@
 - **Parties / Sections** : 5
 - **Unités extraites** : 27
 - **Diagrammes (Mermaid / PlantUML)** : [Diagrammes/README.md](Diagrammes/README.md) (8 diagrammes — 8 PlantUML, 0 Mermaid)
-- **Statistiques du texte complet** : 62,283 mots · 2,552 lignes
+- **Statistiques du texte complet** : 62,285 mots · 2,523 lignes
 
 ## Table des matières
 
@@ -33,7 +33,7 @@
   - [Chapitre 11 — Modèle opérationnel à trois lignes, usine logicielle interne et approvisionnement réversible](04%20-%20Partie%20IV%20-%20Gouverner%2C%20conformer%20et%20cadencer%20la%20trajectoire/Chapitre%2011%20-%20Mod%C3%A8le%20op%C3%A9rationnel%20%C3%A0%20trois%20lignes%2C%20usine%20logicielle%20interne.md) (p. 80–84)
   - [Chapitre 12 — Homologation unifiée et trajectoire adaptative (90 jours → 18 mois → Paliers P1–P3) sous signaux](04%20-%20Partie%20IV%20-%20Gouverner%2C%20conformer%20et%20cadencer%20la%20trajectoire/Chapitre%2012%20-%20Homologation%20unifi%C3%A9e%20et%20trajectoire%20adaptative.md) (p. 85–91)
 - **[Annexes — Instruments de travail de l’architecte](05%20-%20Annexes%20-%20Instruments%20de%20travail%20de%20l%E2%80%99architecte/README.md)** (p. 92)
-  - [Annexe A — Tables de concordance 2026-2035 et pont CAP/PEX vers EXIG-*](05%20-%20Annexes%20-%20Instruments%20de%20travail%20de%20l%E2%80%99architecte/Annexe%20A%20-%20Tables%20de%20concordance%202026-2035%20et%20pont%20CAP-PEX%20vers%20EXIG.md) (p. 93–97)
+  - [Annexe A — Tables de concordance 2026-2035 et pont CAP/PEX vers EXIG-\*](05%20-%20Annexes%20-%20Instruments%20de%20travail%20de%20l%E2%80%99architecte/Annexe%20A%20-%20Tables%20de%20concordance%202026-2035%20et%20pont%20CAP-PEX%20vers%20EXIG.md) (p. 93–97)
   - [Annexe B — Catalogue de poche des décisions d’architecture AE / AS](05%20-%20Annexes%20-%20Instruments%20de%20travail%20de%20l%E2%80%99architecte/Annexe%20B%20-%20Catalogue%20de%20poche%20des%20d%C3%A9cisions%20d%E2%80%99architecture%20AE%20-%20AS.md) (p. 98–100)
   - [Annexe C — Grille unifiée d’homologation avant mise en production](05%20-%20Annexes%20-%20Instruments%20de%20travail%20de%20l%E2%80%99architecte/Annexe%20C%20-%20Grille%20unifi%C3%A9e%20d%E2%80%99homologation%20avant%20mise%20en%20production.md) (p. 101–104)
   - [Annexe D — Guide d’orientation vers les 2 541 pages sources et bibliographie maîtresse](05%20-%20Annexes%20-%20Instruments%20de%20travail%20de%20l%E2%80%99architecte/Annexe%20D%20-%20Guide%20d%E2%80%99orientation%20vers%20les%202%20541%20pages%20sources%20et%20bibliographie.md) (p. 105–107)

@@ -6,11 +6,12 @@ top to bottom direction
 skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
-skinparam rectangle<<invis>> {
-  BackgroundColor transparent
-  BorderColor transparent
-  FontColor transparent
-  FontSize 1
+skinparam nodesep 18
+skinparam ranksep 18
+skinparam linetype polyline
+skinparam rectangle {
+  BackgroundColor #FFFFFF
+  BorderColor #334155
 }
 
 rectangle "Médiateur Neuro-Symbolique Pré-Planification (GraphRAG Hybride + Vérificateur d'Invariants)" as Mediateur #EFF6FF;line:2563EB {
@@ -30,53 +31,46 @@ rectangle "Médiateur Neuro-Symbolique Pré-Planification (GraphRAG Hybride + V�
   M2 -[#15803D]right-> M3
 }
 
-rectangle " " as DualLayer <<invis>> {
-  rectangle "Couche Sémantique Analytique — Apache Ossie (YAML)\nOrientée Lecture, Vérité Chiffrée & Agrégations Sans Text-to-SQL Brut" as Ossie #EFF6FF;line:2563EB {
-    rectangle " " as OssieTop <<invis>> {
-      rectangle Datasets #FFFFFF;line:64748B [
-        **datasets & relationships**
-        Jointures certifiées, clés primaires
-        Cardinalités explicites (1:N)
-      ]
-      rectangle Fields #FFFFFF;line:64748B [
-        **fields & metrics**
-        Calculs gouvernés : Stock ATP,
-        Client Actif, Marge, SLA
-      ]
-      Datasets -[hidden]right-> Fields
-    }
-    rectangle AiContext #FFFFFF;line:2563EB [
-      **Bloc ai_context (Ancrage Sémantique Agentique)**
-      Instructions métier normatives, synonymes par division, exclusions
-      Compilé vers : Snowflake Semantic Views • dbt • Cube • Serveurs MCP
-    ]
-    OssieTop -[hidden]down-> AiContext
-  }
+rectangle "Couche Sémantique Analytique — Apache Ossie (YAML)\nOrientée Lecture, Vérité Chiffrée & Agrégations Sans Text-to-SQL Brut" as Ossie #EFF6FF;line:2563EB {
+  rectangle Datasets #FFFFFF;line:64748B [
+    **datasets & relationships**
+    Jointures certifiées, clés primaires
+    Cardinalités explicites (1:N)
+  ]
+  rectangle Fields #FFFFFF;line:64748B [
+    **fields & metrics**
+    Calculs gouvernés : Stock ATP,
+    Client Actif, Marge, SLA
+  ]
+  rectangle AiContext #FFFFFF;line:2563EB [
+    **Bloc ai_context (Ancrage Sémantique Agentique)**
+    Instructions métier normatives, synonymes par division, exclusions
+    Compilé vers : Snowflake Semantic Views • dbt • Cube • Serveurs MCP
+  ]
+  Datasets -[hidden]right-> Fields
+  Datasets -[hidden]down-> AiContext
+  Fields -[hidden]down-> AiContext
+}
 
-  rectangle "Ontologie Opérationnelle Causale (Graphe & Contrats)\nOrientée Action, États Légaux, Invariants SHACL & Mutations Sûres" as Ontologie #ECFDF5;line:15803D {
-    rectangle " " as OntoTop <<invis>> {
-      rectangle Objets #FFFFFF;line:15803D [
-        **Objets & États Légaux**
-        Équipement, Contrat, Réservation
-        Automates d'états autorisés
-      ]
-      rectangle Contraintes #FFFFFF;line:15803D [
-        **Contraintes & Causalité**
-        Invariants SHACL / Cedar
-        Dépendances inter-divisions
-      ]
-      Objets -[hidden]right-> Contraintes
-    }
-    rectangle ActionTypes #FFF7ED;line:9A3412 [
-      **Types d'Actions Cinétiques (ActionTypes Gouvernés)**
-      Préconditions formelles • Effets attendus • Outil MCP de compensation
-      Bloque tout plan violant un invariant avant exécution transactionnelle
-    ]
-    OntoTop -[hidden]down-> ActionTypes
-  }
-
-  Ontologie -[hidden]left-> Ossie
-  Fields -[#1E293B]right- Objets
+rectangle "Ontologie Opérationnelle Causale (Graphe & Contrats)\nOrientée Action, États Légaux, Invariants SHACL & Mutations Sûres" as Ontologie #ECFDF5;line:15803D {
+  rectangle Objets #FFFFFF;line:15803D [
+    **Objets & États Légaux**
+    Équipement, Contrat, Réservation
+    Automates d'états autorisés
+  ]
+  rectangle Contraintes #FFFFFF;line:15803D [
+    **Contraintes & Causalité**
+    Invariants SHACL / Cedar
+    Dépendances inter-divisions
+  ]
+  rectangle ActionTypes #FFF7ED;line:9A3412 [
+    **Types d'Actions Cinétiques (ActionTypes Gouvernés)**
+    Préconditions formelles • Effets attendus • Outil MCP de compensation
+    Bloque tout plan violant un invariant avant exécution transactionnelle
+  ]
+  Objets -[hidden]right-> Contraintes
+  Objets -[hidden]down-> ActionTypes
+  Contraintes -[hidden]down-> ActionTypes
 }
 
 rectangle "Systèmes d'Enregistrement Hétérogènes Réconciliés via Clés Maîtres Canoniques (MDM)" as MDM #F8FAFC;line:475569 {
@@ -88,8 +82,15 @@ rectangle "Systèmes d'Enregistrement Hétérogènes Réconciliés via Clés Ma�
 }
 
 M1 -[#2563EB]down-> Datasets
+M2 -[hidden]down-> Fields
+M2 -[hidden]down-> Objets
 M3 -[#15803D]down-> Contraintes
-AiContext -[#1E293B]down-> BSN
-ActionTypes -[#1E293B]down-> BEL
 
+Fields -[hidden]right-> Objets
+AiContext -[hidden]right-> ActionTypes
+AiContext -[#1E293B,norank]- ActionTypes
+
+AiContext -[#1E293B]down-> BSN
+AiContext -[#1E293B]down-> BCA
+ActionTypes -[#1E293B]down-> BEL
 @enduml

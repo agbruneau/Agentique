@@ -126,9 +126,7 @@ Les relevés universitaires comparent les protocoles : le premier par leurs mode
 | La sécurité est-elle spécifiée ? | Authentification et autorisation dans le texte | Renvoi implicite à l’intégrateur |
 | Peut-on en sortir ? | Confinement derrière un adaptateur ou une passerelle | Types du protocole répandus dans le code métier |
 
-Appliquée aux cas du chapitre, la grille tranche : AG-UI réussit sur le besoin, la composition et les mises en œuvre, mais pas sur la gouvernance ni la sécurité. ANP et AGNTCY
-
-répondent à des besoins réels avec une maturité inégale selon les pièces. LAP et TEA sont des idées à suivre.
+Appliquée aux cas du chapitre, la grille tranche : AG-UI réussit sur le besoin, la composition et les mises en œuvre, mais pas sur la gouvernance ni la sécurité. ANP et AGNTCY répondent à des besoins réels avec une maturité inégale selon les pièces. LAP et TEA sont des idées à suivre.
 
 ## Grille de décision
 
@@ -181,7 +179,6 @@ Pages primaires lues le 11 novembre 2026; [3], [4], [7], [8], [14] et [16] à [1
 19. Governance Gaps in Agent Interoperability Protocols (arXiv 2606.31498) — résumé initial, puis extraits relus le 14 novembre 2026
 20. A survey of agent interoperability protocols (arXiv 2505.02279) — résumé initial, puis extraits relus le 14 novembre 2026
 21. A Survey of AI Agent Protocols (arXiv 2504.16736) — résumé initial, puis extraits relus le 14 novembre 2026
-
 22. IETF Datatracker — draft-zyyhl-agent-networks-framework-01 (*Framework for AI Agent Networks*, soumission individuelle expirée le 23 avril 2026) — aucune adoption par un groupe de travail (quatre autres soumissions individuelles `draft-song-anp-*-00` également expirées le 26 septembre 2026).
 
 ## Limites de ce chapitre

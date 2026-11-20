@@ -38,9 +38,7 @@ La RFC 8693 distingue deux sémantiques [6]. Dans l’usurpation, l’agent reç
 
 ### Ce que la chaîne perd
 
-Quand un agent en mandate un autre, la RFC 8693 permet d’imbriquer des revendications `act` : la plus externe désigne l’acteur courant, les plus profondes les acteurs antérieurs. Le texte précise toutefois que ces acteurs antérieurs sont informatifs et n’entrent pas dans
-
-la décision d’accès [6]. À deux sauts de profondeur, le serveur de ressources décide donc sur la foi de l’utilisateur et du dernier agent seulement. Rien ne garantit que les agents intermédiaires avaient le droit de déléguer, ni qu’ils ont réduit ce qu’ils transmettaient.
+Quand un agent en mandate un autre, la RFC 8693 permet d’imbriquer des revendications `act` : la plus externe désigne l’acteur courant, les plus profondes les acteurs antérieurs. Le texte précise toutefois que ces acteurs antérieurs sont informatifs et n’entrent pas dans la décision d’accès [6]. À deux sauts de profondeur, le serveur de ressources décide donc sur la foi de l’utilisateur et du dernier agent seulement. Rien ne garantit que les agents intermédiaires avaient le droit de déléguer, ni qu’ils ont réduit ce qu’ils transmettaient.
 
 AIMS ne comble pas ce vide. Le brouillon ne mentionne pas la revendication `act`, ne représente pas de chaîne d’acteurs, et son champ d’audit « sujet délégant » est au singulier. Sa seule règle d’atténuation porte sur la suite d’échanges qui produit les jetons de transaction : la portée de chaque jeton ne peut jamais excéder celle du jeton présenté pour l’obtenir [4]. Il recommande en revanche de pouvoir reconstituer la chaîne d’exécution complète d’une tâche [4], ce que le jeton seul ne permet pas.
 
@@ -75,9 +73,7 @@ AIMS ne comble pas ce vide. Le brouillon ne mentionne pas la revendication `act`
 | Transaction Tokens | JWT de courte durée, lié à une transaction, qui conserve identité et contexte le long de la chaîne d’appels | Valable dans un seul domaine de confiance; n’est pas un jeton d’accès | Brouillon du groupe OAuth, envoi à l’IESG visé pour décembre 2026 [8][10] |
 | Délégation atténuée vérifiable | Chaîne signée, vérifiable hors ligne maillon par maillon | Voir ci-dessous | Brouillon individuel visant la voie normative, 27 octobre 2026 [9] |
 
-Le dernier mécanisme montre vers quoi tend la réflexion. Chaque jeton enfant porte son autorité dans une entrée `authorization_details` et s’engage sur son parent par une empreinte. Un vérificateur contrôle, sans appeler de serveur d’autorisation, que chaque saut est un sous-ensemble du précédent, que la profondeur reste sous un maximum, que le
-
-mandant est le même partout, que l’expiration ne dépasse jamais celle du parent et que le porteur détient la clé [9].
+Le dernier mécanisme montre vers quoi tend la réflexion. Chaque jeton enfant porte son autorité dans une entrée `authorization_details` et s’engage sur son parent par une empreinte. Un vérificateur contrôle, sans appeler de serveur d’autorisation, que chaque saut est un sous-ensemble du précédent, que la profondeur reste sous un maximum, que le mandant est le même partout, que l’expiration ne dépasse jamais celle du parent et que le porteur détient la clé [9].
 
 Ses limites, reconnues par l’auteur, mesurent la difficulté du problème. Des agents frères peuvent chacun respecter leur plafond et le dépasser ensemble : un budget global exige un registre partagé, hors du jeton. La révocation est retardée par le cache du vérificateur. La comparaison des portées est syntaxique, si bien que deux déploiements peuvent lire différemment la même chaîne [9]. D’autres brouillons individuels circulent, dont un sur des jetons atténuables hors ligne [16] et un sur un en-tête de délégation vérifié maillon par maillon [17].
 
@@ -268,9 +264,7 @@ SYNTHÈSE EXÉCUTIVE
 
 La gestion des identités et des accès (IAM) classique connaît deux appelants. Le premier est la personne présente derrière un écran, authentifiée par fédération OpenID Connect (OIDC) et par authentification multifacteur (FIDO2/WebAuthn). Le second est le démon logiciel déterministe, lot nocturne ou microservice d’intégration, doté d’un identifiant technique fixe (*service principal*) et dont le graphe d’appels a été codé en dur, puis validé avant la mise en production.
 
-Un système multi-agents de troisième génération ne relève d’aucun des deux. La séquence d’appels d’un agent orchestrateur n’est pas figée à la compilation : elle émerge de la décomposition d’un objectif métier, confronté à un contexte événementiel variable. L’agent exécute des dizaines de requêtes inter-domaines par minute, reste exposé à la confusion
-
-entre données et instructions (OWASP ASI01) et travaille souvent de façon asynchrone, à 3 heures du matin, quand l’employé à l’origine du mandat est hors ligne.
+Un système multi-agents de troisième génération ne relève d’aucun des deux. La séquence d’appels d’un agent orchestrateur n’est pas figée à la compilation : elle émerge de la décomposition d’un objectif métier, confronté à un contexte événementiel variable. L’agent exécute des dizaines de requêtes inter-domaines par minute, reste exposé à la confusion entre données et instructions (OWASP ASI01) et travaille souvent de façon asynchrone, à 3 heures du matin, quand l’employé à l’origine du mandat est hors ligne.
 
 Quand une organisation plaque ses patrons IAM traditionnels sur une flotte agentique sans les adapter, elle tombe dans l’un des deux antipatrons observés lors de la vague 2024–2025.
 
@@ -290,14 +284,14 @@ Ce raccourci généralise à l’entreprise le cas du serveur plus puissant que 
 
 ### Loi d’atténuation monotone sur un graphe de délégation
 
-La loi qui suit est une cible de conception. Aucune norme adoptée ne garantit l’atténuation de saut en saut : en attendant, chaque saut repasse par le serveur d’autorisation et l’orchestrateur consigne la chaîne (section 30.2). Dans un graphe d’exécution dynamique de 𝑘 sauts successifs entre un sujet initiateur 𝑢 et des acteurs non humains 𝑎1, 𝑎2, …, 𝑎𝑘, le modèle de confiance zéro agentique impose que l’ensemble des permissions effectives 𝑃𝑖 au saut 𝑖 obéisse à une loi d’intersection et d’atténuation monotone stricte :
+La loi qui suit est une cible de conception. Aucune norme adoptée ne garantit l’atténuation de saut en saut : en attendant, chaque saut repasse par le serveur d’autorisation et l’orchestrateur consigne la chaîne (section 30.2). Dans un graphe d’exécution dynamique de 𝑘 sauts successifs entre un sujet initiateur 𝑢 et des acteurs non humains 𝑎_1, 𝑎_2, …, 𝑎_𝑘, le modèle de confiance zéro agentique impose que l’ensemble des permissions effectives 𝑃_𝑖 au saut 𝑖 obéisse à une loi d’intersection et d’atténuation monotone stricte :
 
-𝑃𝑖⊆𝑃𝑖−1 ∩𝑀(𝑎𝑖) ∩𝑅𝑖, 𝑃0 = 𝐷(𝑢) ∩𝑆0
+𝑃_𝑖 ⊆ 𝑃_{𝑖−1} ∩ 𝑀(𝑎_𝑖) ∩ 𝑅_𝑖, 𝑃_0 = 𝐷(𝑢) ∩ 𝑆_0
 
-𝐷(𝑢) et 𝑆0 bornent les droits initiaux de la session humaine. 𝑀(𝑎𝑖) est le plafond maximal de permissions homologué statiquement sur le gabarit (*Blueprint*) de l’agent 𝑎𝑖. 𝑅𝑖 est le sous-ensemble minimal d’opérations que requiert la seule sous-tâche déléguée au saut 𝑖. Deux corollaires en découlent :
+𝐷(𝑢) et 𝑆_0 bornent les droits initiaux de la session humaine. 𝑀(𝑎_𝑖) est le plafond maximal de permissions homologué statiquement sur le gabarit (*Blueprint*) de l’agent 𝑎_𝑖. 𝑅_𝑖 est le sous-ensemble minimal d’opérations que requiert la seule sous-tâche déléguée au saut 𝑖. Deux corollaires en découlent :
 
-- **Aucune amplification de privilèges.** Dans ce modèle, un agent aval 𝑎𝑖 n’exerce jamais un droit que l’initiateur humain 𝑢 n’a pas, même si son connecteur technique le permettrait. Inversement, un utilisateur très privilégié ne peut pas forcer un agent spécialisé de lecture (L1) à écrire hors de son mandat 𝑀(𝑎𝑖).
-- **Décroissance monotone du rayon d’impact.** Plus l’exécution approche des feuilles spécialisées du graphe (𝑃𝑘⊂… ⊂𝑃1 ⊂𝑃0), plus le jeton transporté est étroit, éphémère et lié à un objet métier précis, par exemple un seul numéro de série d’équipement et un plafond monétaire explicite.
+- **Aucune amplification de privilèges.** Dans ce modèle, un agent aval 𝑎_𝑖 n’exerce jamais un droit que l’initiateur humain 𝑢 n’a pas, même si son connecteur technique le permettrait. Inversement, un utilisateur très privilégié ne peut pas forcer un agent spécialisé de lecture (L1) à écrire hors de son mandat 𝑀(𝑎_𝑖).
+- **Décroissance monotone du rayon d’impact.** Plus l’exécution approche des feuilles spécialisées du graphe (𝑃_𝑘 ⊂ … ⊂ 𝑃_1 ⊂ 𝑃_0), plus le jeton transporté est étroit, éphémère et lié à un objet métier précis, par exemple un seul numéro de série d’équipement et un plafond monétaire explicite.
 
 Le tableau compare les quatre approches d’identité observées dans l’industrie.
 
@@ -326,13 +320,11 @@ SPIFFE (projet gradué de la CNCF) et son implémentation de référence SPIRE n
 
 ### Couche 2 : gouvernance d’annuaire, *Blueprints* et parrainage humain (Microsoft Entra Agent ID)
 
-SPIFFE prouve quel code s’exécute sur quelle infrastructure. Il ne gère ni les politiques d’entreprise, ni les revues d’accès trimestrielles, ni la responsabilité hiérarchique. C’est le
-
-rôle du plan de gouvernance d’annuaire, que Microsoft Entra Agent ID incarne en 2026–2027, avec des extensions NHI équivalentes chez Okta, Ping et AWS IAM.
+SPIFFE prouve quel code s’exécute sur quelle infrastructure. Il ne gère ni les politiques d’entreprise, ni les revues d’accès trimestrielles, ni la responsabilité hiérarchique. C’est le rôle du plan de gouvernance d’annuaire, que Microsoft Entra Agent ID incarne en 2026–2027, avec des extensions NHI équivalentes chez Okta, Ping et AWS IAM.
 
 Ces annuaires distinguent les agents des *service principals* applicatifs par trois primitives (section 29.2) :
 
-- **Le gabarit d’identité (*Agent Identity Blueprint*).** Modèle déclaratif immuable qui décrit une classe d’agent : son niveau d’autonomie L1–L4, les portées maximales 𝑀(𝑎𝑖) qu’il pourra solliciter en délégation, sa classification de risque BSIF E-23 et ses justificatifs d’identité fédérés (*Federated Identity Credentials*, FIC), qui pointent vers l’émetteur SPIRE de l’entreprise.
+- **Le gabarit d’identité (*Agent Identity Blueprint*).** Modèle déclaratif immuable qui décrit une classe d’agent : son niveau d’autonomie L1–L4, les portées maximales 𝑀(𝑎_𝑖) qu’il pourra solliciter en délégation, sa classification de risque BSIF E-23 et ses justificatifs d’identité fédérés (*Federated Identity Credentials*, FIC), qui pointent vers l’émetteur SPIRE de l’entreprise.
 - **L’instance d’identité d’exécution (*Agent Identity*).** Entité distincte, instanciée à partir du Blueprint pour un environnement ou une division. Elle a ses propres journaux de connexion, ses politiques d’accès conditionnel, qui évaluent l’état de conformité du cluster ou le score de risque en temps réel, et un interrupteur de désactivation immédiate.
 - **Le parrain humain obligatoire.** Entra exige un parrain, laisse le propriétaire technique facultatif et ne décrit aucun mécanisme de succession automatique (section 29.2). L’architecture prescrite va plus loin : aucune identité d’agent n’est créée ni maintenue active sans être rattachée nominativement, dans l’annuaire, à un responsable métier et à un propriétaire technique actifs dans le SIRH (Workday). Si le parrain quitte l’organisation ou change de division, un flux de gouvernance d’identité (IGA), à bâtir, transfère la responsabilité sous 72 heures ou suspend le renouvellement des jetons de l’agent.
 
@@ -474,8 +466,7 @@ En mode délégation (section 30.2), la RFC 8693 distingue le `subject_token`, q
 
 1. **Authentification sans secret de l’agent appelant.** L’agent s’authentifie auprès du point de terminaison `/token` en présentant son JWT-SVID SPIFFE frais par `client_assertion` (RFC 7523).
 2. **Jeton amont et restriction par RAR.** L’agent fournit dans `subject_token` le jeton reçu à l’entrée, désigne l’audience (`audience`) unique du prochain destinataire et précise la restriction des droits par `authorization_details` (RFC 9396, section 30.3). Une chaîne comme `sap.spare_parts.reserve` ignore les paramètres métiers. Un objet structuré `authorization_details` permet d’encoder dans le jeton signé que l’agent aval ne peut réserver qu’une seule unité de la pièce ROTOR-KIT-HX9 pour le dossier SN-WO-773190, sous un plafond de 5 000 $ CAD.
-3. **Liaison à la clé de l’agent et garde-fous anti-rejeu.** L’agent joint un en-tête DPoP (RFC 9449, section 29.5), signé avec une clé privée asymétrique générée en mémoire non exportable, ou présente son certificat X.509-SVID en mTLS. Le STS inscrit l’empreinte SHA-256 de la clé publique dans la revendication `cnf` (*Confirmation*) et impose un plafond de profondeur de délégation (`max_act_depth <= 4`). À l’appel de l’outil MCP, la passerelle vérifie que la preuve DPoP lie la méthode HTTP (`htm`), l’URI exacte sans paramètres de requête (`htu`), le condensat du jeton d’accès (`ath`) et un défi serveur frais
-  (DPoP-Nonce), avec un cache anti-rejeu sur `jti`. Un jeton ou une preuve interceptés dans un journal restent inexploitables ailleurs.
+3. **Liaison à la clé de l’agent et garde-fous anti-rejeu.** L’agent joint un en-tête DPoP (RFC 9449, section 29.5), signé avec une clé privée asymétrique générée en mémoire non exportable, ou présente son certificat X.509-SVID en mTLS. Le STS inscrit l’empreinte SHA-256 de la clé publique dans la revendication `cnf` (*Confirmation*) et impose un plafond de profondeur de délégation (`max_act_depth <= 4`). À l’appel de l’outil MCP, la passerelle vérifie que la preuve DPoP lie la méthode HTTP (`htm`), l’URI exacte sans paramètres de requête (`htu`), le condensat du jeton d’accès (`ath`) et un défi serveur frais (DPoP-Nonce), avec un cache anti-rejeu sur `jti`. Un jeton ou une preuve interceptés dans un journal restent inexploitables ailleurs.
 
 #### Extrait 30.2 — `[Schéma conceptuel]` (bloc 1) / `[Exécuté en CI]` (bloc 2) · Requête HTTP d’échange RFC 8693 + RAR + DPoP et jeton JWT résultant
 
@@ -663,7 +654,7 @@ Les comptes d’employés suivent les processus d’embauche et de départ. Les 
 
 | Phase du cycle de vie | Événement déclencheur | Contrôles obligatoires d’ingénierie et IGA | Indicateur / SLA de conformité |
 | --- | --- | --- | --- |
-| 1. Conception & Blueprint | Création d’une nouvelle classe d’agent (L1–L4) | Définition du plafond 𝑀(𝑎𝑖), affectation de deux parrains humains (Workday), revue BSIF E-23 | Zéro *Blueprint* sans parrain actif ni cote d’autonomie |
+| 1. Conception & Blueprint | Création d’une nouvelle classe d’agent (L1–L4) | Définition du plafond 𝑀(𝑎_𝑖), affectation de deux parrains humains (Workday), revue BSIF E-23 | Zéro *Blueprint* sans parrain actif ni cote d’autonomie |
 | 2. Amorçage attesté | Déploiement CI/CD signé (Sigstore) en cluster | Vérification du condensat OCI par SPIRE, fédération FIC sans secret vers Entra Agent ID | 0 secret statique stocké en variable ou volume |
 | 3. Exécution & Rotation | Activité opérationnelle nominale | Rotation automatique des SVID aux 15 min, échange RFC 8693 par saut (TTL ≤5 min), liaison DPoP/mTLS | 100 % d’appels MCP mutatifs sous jeton contraint |
 | 4. Revue périodique | Échéance mensuelle ou dérive télémétrique | Analyse d’écart entre portées accordées au Blueprint et portées réellement utilisées | Élagage automatique des portées inutilisées après 30 jours |
@@ -696,8 +687,7 @@ Pour les institutions financières fédérales canadiennes soumises à la ligne 
 Dans une chaîne d’indemnisation d’assurance ou de restructuration de prêt outillée par des agents, trois invariants cryptographiques doivent pouvoir être reconstitués après coup devant un auditeur externe, pour toute écriture comptable :
 
 1. **Non-répudiation tripartite.** Le journal immuable (WORM, rétention minimale de 7 ans) lie, dans un même enregistrement signé, le sujet initiateur (`sub`), la version exacte du Blueprint et du modèle qui a formulé la proposition (`act` + attributs OpenTelemetry `gen_ai.request.model`) et, au-delà du seuil autonome, l’identité humaine distincte qui a apposé sa signature matérielle FIDO2 par CIBA.
-2. **Séparation des tâches cryptographique, entre agents et entre humain et agent.** Comme un analyste crédit ne peut approuver son propre décaissement, un *Agent Critique* (Archétype 5), chargé de contrôler la conformité d’un dossier instruit par un *Agent Spécialiste* (Archétype 2), doit posséder un SPIFFE ID distinct et un Blueprint distinct, et ne partager aucun jeton d’état mutable avec l’agent évalué. Le STS refuse d’émettre un
-  jeton de décaissement final si la revendication `act` ne contient pas les deux attestations indépendantes ou un jeton CIBA d’un supérieur habilité.
+2. **Séparation des tâches cryptographique, entre agents et entre humain et agent.** Comme un analyste crédit ne peut approuver son propre décaissement, un *Agent Critique* (Archétype 5), chargé de contrôler la conformité d’un dossier instruit par un *Agent Spécialiste* (Archétype 2), doit posséder un SPIFFE ID distinct et un Blueprint distinct, et ne partager aucun jeton d’état mutable avec l’agent évalué. Le STS refuse d’émettre un jeton de décaissement final si la revendication `act` ne contient pas les deux attestations indépendantes ou un jeton CIBA d’un supérieur habilité.
 3. **Revalidation de fraîcheur après mise en veille (T4).** Quand une instruction de sinistre suspendue plusieurs jours se réveille, tout jeton antérieur est échu. Le STS réévalue en temps réel le statut actif de l’initiateur et du parrain dans l’annuaire avant d’accorder un nouveau mandat RFC 8693.
 
 ÉCLAIRAGE SECTORIEL
@@ -723,8 +713,8 @@ L’ADR suivant va au-delà de ce que retient l’exposé. Il exige l’empileme
   3. *Attestation de charge de travail SPIFFE/SPIRE fédérée à l’annuaire NHI (Entra Agent ID), échange obligatoire RFC 8693 + RAR à chaque saut avec jetons contraints (DPoP/mTLS), et escalade asynchrone OpenID CIBA* : Retenue.
 - **Décision** : (a) Tout agent de niveau L1 à L4 reçoit un Blueprint nominatif, avec un parrain humain actif, et s’authentifie exclusivement par SVID éphémère (`TTL <= 15 min`), sans aucun secret persistant; (b) tout franchissement de frontière A2A ou MCP exige un échange RFC 8693 qui produit un jeton `at+jwt` (`TTL <= 5 min`) d’audience unique, contraint cryptographiquement (`cnf`), qui préserve `sub`, empile `act` et restreint les paramètres sensibles par la RFC 9396; (c) toute approbation humaine sur un flux asynchrone passe par OpenID CIBA, avec une signature matérielle FIDO2 liée au condensat `tx_hash`.
 - **Conséquences** :
-  - ‣ *Positives* : Suppression des secrets statiques d’agents, confinement du rayon d’impact à la sous-tâche courante, conformité native aux audits BSIF E-23 et Loi 25, prise en charge des sagas multi-jours.
-  - ‣ *Négatives / Coûts assumés* : Exploitation d’une infrastructure SPIRE à haute disponibilité, latence réseau marginale de 4 à 8 ms par saut d’échange STS, et mise à niveau des serveurs MCP patrimoniaux pour qu’ils inspectent les revendications `sub`, `act` et `authorization_details`.
+  - *Positives* : Suppression des secrets statiques d’agents, confinement du rayon d’impact à la sous-tâche courante, conformité native aux audits BSIF E-23 et Loi 25, prise en charge des sagas multi-jours.
+  - *Négatives / Coûts assumés* : Exploitation d’une infrastructure SPIRE à haute disponibilité, latence réseau marginale de 4 à 8 ms par saut d’échange STS, et mise à niveau des serveurs MCP patrimoniaux pour qu’ils inspectent les revendications `sub`, `act` et `authorization_details`.
 - **Condition de révision** : Révision semestrielle, alignée sur les travaux du groupe de travail OAuth de l’IETF sur les profils de délégation agentique native.
 
 ### Liste de contrôle de mise en production

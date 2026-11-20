@@ -28,7 +28,7 @@ Cette section délimite les systèmes visés (tableau 1). Le critère est foncti
 | Plateformes | Plateformes et moteurs d’orchestration, passerelles d’agents et de modèles, registres et catalogues | Choix des fournisseurs de modèles, qui relève de l’architecture d’entreprise et de l’approvisionnement |
 | Modèles et automatisation | Usage des modèles par les agents; flux de travail assisté par IA (section 3.2); flux déterministe qui appelle un agent ou qui est appelé par lui, soumis aux contrôles de cet agent | Entraînement et ajustement fin des modèles; automatisation robotisée des processus (RPA) sans composante agentique |
 
-Trois règles tranchent les cas limites. Un assistant qui reçoit un premier outil, même en lecture seule, ou un premier accès à une ressource ou à des données de l’entreprise (un index documentaire, par exemple), entre dans la portée dès ce moment. À l’inverse, une fonction qu’un éditeur qualifie d’agentique n’y entre que si elle appelle des outils ou agit; l’étiquetage agentique abusif que relève Gartner est traité à la section 2.1**[3]**. En cas de doute, le système est traité comme visé et inscrit au registre (section 11.4).
+Trois règles tranchent les cas limites. Un assistant qui reçoit un premier outil, même en lecture seule, ou un premier accès à une ressource ou à des données de l’entreprise (un index documentaire, par exemple), entre dans la portée dès ce moment. À l’inverse, une fonction qu’un éditeur qualifie d’agentique n’y entre que si elle appelle des outils ou agit; l’étiquetage agentique abusif que relève Gartner est traité à la section 2.1 **[3]**. En cas de doute, le système est traité comme visé et inscrit au registre (section 11.4).
 
 ## 1.3 Public cible et usages par rôle
 
@@ -85,7 +85,7 @@ Le reste du texte, y compris l’annexe H, les exemples et les figures, est info
 
 ### Exigence externe ou choix du cadre
 
-Le cadre distingue toujours ce qui vient d’un texte externe de ce qu’il décide lui-même. « La spécification MCP exige » ou « selon l’article 14 du règlement (UE) 2024/1689 sur l’IA (RIA) » rapportent le contenu d’une norme ou d’une loi, vérifié à la source. « Le cadre fixe » ou « choix du cadre » signalent une décision interne, que le comité peut réviser. Exemple : le guide de Microsoft recommande un plafond d’itérations pour la boucle producteur-vérificateur (évaluateur-optimiseur au chapitre 7), sans en fixer la valeur**[9]**; le plafond de trois itérations retenu au chapitre 7 est donc un choix du cadre. Le cadre n’attribue jamais à une norme une exigence qu’elle ne contient pas et présente ses seuils chiffrés (délais, plafonds, fréquences) comme les siens.
+Le cadre distingue toujours ce qui vient d’un texte externe de ce qu’il décide lui-même. « La spécification MCP exige » ou « selon l’article 14 du règlement (UE) 2024/1689 sur l’IA (RIA) » rapportent le contenu d’une norme ou d’une loi, vérifié à la source. « Le cadre fixe » ou « choix du cadre » signalent une décision interne, que le comité peut réviser. Exemple : le guide de Microsoft recommande un plafond d’itérations pour la boucle producteur-vérificateur (évaluateur-optimiseur au chapitre 7), sans en fixer la valeur **[9]**; le plafond de trois itérations retenu au chapitre 7 est donc un choix du cadre. Le cadre n’attribue jamais à une norme une exigence qu’elle ne contient pas et présente ses seuils chiffrés (délais, plafonds, fréquences) comme les siens.
 
 **À RETENIR**
 
@@ -123,9 +123,7 @@ Un terme anglais figure entre parenthèses et en italique à sa première occurr
 
 ## 1.6 Relation avec les autres politiques et cycle de révision
 
-Le cadre complète, sans les remplacer, les politiques de sécurité de l’information, de gouvernance des données, de protection des RP, d’usage de l’IA, de gestion des risques et d’approvisionnement. Celles-ci
-
-continuent de régir leur objet; le cadre en précise l’application aux agents. Choix du cadre : lorsqu’une règle du cadre et celle d’une autre politique visent le même objet, les deux s’appliquent si elles sont cumulables; sinon, l’ordre de départage de la section 4.3 tranche et la contradiction est soumise au comité. Le droit applicable prime toujours; les engagements contractuels en vigueur à l’adoption du cadre priment pour une transition bornée et inscrite au registre, sauf sur les points de l’EXIG-GOV-17 (section 4.3).
+Le cadre complète, sans les remplacer, les politiques de sécurité de l’information, de gouvernance des données, de protection des RP, d’usage de l’IA, de gestion des risques et d’approvisionnement. Celles-ci continuent de régir leur objet; le cadre en précise l’application aux agents. Choix du cadre : lorsqu’une règle du cadre et celle d’une autre politique visent le même objet, les deux s’appliquent si elles sont cumulables; sinon, l’ordre de départage de la section 4.3 tranche et la contradiction est soumise au comité. Le droit applicable prime toujours; les engagements contractuels en vigueur à l’adoption du cadre priment pour une transition bornée et inscrite au registre, sauf sur les points de l’EXIG-GOV-17 (section 4.3).
 
 Deux rythmes de révision coexistent, semestriel pour le cadre et trimestriel pour le catalogue; les versions applicables suivent celui du catalogue.
 

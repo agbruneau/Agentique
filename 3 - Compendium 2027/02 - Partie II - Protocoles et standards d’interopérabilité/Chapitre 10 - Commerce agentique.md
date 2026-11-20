@@ -41,9 +41,7 @@ Ils s’appuient sur les protocoles déjà décrits : UCP et ACP se transportent
 
 ### Le mandat, unité de preuve
 
-AP2 (Agent Payments Protocol), publié par Google, ne décrit ni catalogue ni panier. La spécification se définit comme une fonction de sécurité logée dans un protocole de commerce,
-
-et se dit conçue pour être compatible avec UCP [1]. Son objet est le mandat : un justificatif signé qui atteste ce qu’un utilisateur a approuvé.
+AP2 (Agent Payments Protocol), publié par Google, ne décrit ni catalogue ni panier. La spécification se définit comme une fonction de sécurité logée dans un protocole de commerce, et se dit conçue pour être compatible avec UCP [1]. Son objet est le mandat : un justificatif signé qui atteste ce qu’un utilisateur a approuvé.
 
 Le 28 avril 2026, Google a apporté AP2 à la FIDO Alliance. Celle-ci rédige des spécifications pour le commerce initié par des agents au sein de son groupe de travail technique sur les paiements, présidé par des membres de Mastercard et de Visa; le communiqué ne donne aucune échéance [20].
 
@@ -101,9 +99,7 @@ Le format et la logique sont ceux d’AP2. L’apport propre est le premier mail
 
 ### Agentic Commerce Protocol
 
-L’Agentic Commerce Protocol (ACP) a été élaboré par Stripe et OpenAI, sous licence Apache 2.0 [5]. Il permet à un marchand d’exposer un passage en caisse destiné aux agents, par
-
-REST ou par MCP. Le marchand demeure le marchand attitré (*merchant of record*) : il décide des produits vendus, de leur présentation et de l’exécution des commandes.
+L’Agentic Commerce Protocol (ACP) a été élaboré par Stripe et OpenAI, sous licence Apache 2.0 [5]. Il permet à un marchand d’exposer un passage en caisse destiné aux agents, par REST ou par MCP. Le marchand demeure le marchand attitré (*merchant of record*) : il décide des produits vendus, de leur présentation et de l’exécution des commandes.
 
 Le dépôt qualifie la spécification de **bêta** [6]. Cinq versions datées se sont succédé depuis septembre 2025, dont deux en janvier 2026 (négociation de capacités, extensions, gestionnaires de paiement); la plus récente, `2026-04-17`, couvre le panier, le flux de produits, les commandes, l’authentification et MCP. Le paiement délégué s’appuie sur un jeton à portée limitée, le Shared Payment Token, dont Stripe est le premier prestataire compatible [5].
 
@@ -201,9 +197,7 @@ Les quatre prépublications retenues ont d’abord été lues en résumé puis v
 
 ### Des garanties implicites
 
-Une analyse formelle modélise x402, MPP, ACP et AP2 dans le vérificateur Tamarin [13]. Sur 86 cas de vérification, elle reproduit 46 cas connus ou d’étalonnage et relève 40 constats
-
-de cohérence formelle non documentés jusque-là. Les contre-exemples se répartissent en 17 cas d’intégrité, 16 de paiement et 7 de service, et touchent surtout aux liaisons entre rôles, à l’ambiguïté d’autorisation, aux effets dupliqués et à l’état de règlement et de livraison. Les auteurs en tirent 18 principes de sécurité communs.
+Une analyse formelle modélise x402, MPP, ACP et AP2 dans le vérificateur Tamarin [13]. Sur 86 cas de vérification, elle reproduit 46 cas connus ou d’étalonnage et relève 40 constats de cohérence formelle non documentés jusque-là. Les contre-exemples se répartissent en 17 cas d’intégrité, 16 de paiement et 7 de service, et touchent surtout aux liaisons entre rôles, à l’ambiguïté d’autorisation, aux effets dupliqués et à l’état de règlement et de livraison. Les auteurs en tirent 18 principes de sécurité communs.
 
 Leur diagnostic : intention, délégation, usage du justificatif, règlement et exécution sont répartis entre acteurs et étapes, si bien qu’aucun message ni participant ne peut seul faire respecter la sécurité. Les garanties restent implicites dans des spécifications et des mises en œuvre de référence mouvantes; elles devraient y être écrites.
 
@@ -336,8 +330,7 @@ Page primaire lue le 14 novembre 2026 :
 
 SYNTHÈSE EXÉCUTIVE
 
-- **Enjeu stratégique** : une fabrique agentique bien orchestrée en arrière-plan (MCP + A2A v1.0) échoue en bout de chaîne si elle restitue ses arbitrages dans une boîte de clavardage, oblige un technicien ganté à taper sur un écran en atelier bruyant, ou confie une carte
-  bancaire partagée à un modèle probabiliste pour payer un fournisseur externe. L’interface humaine et le règlement financier concentrent le risque de complaisance cognitive (OWASP ASI09) et de fraude transactionnelle.
+- **Enjeu stratégique** : une fabrique agentique bien orchestrée en arrière-plan (MCP + A2A v1.0) échoue en bout de chaîne si elle restitue ses arbitrages dans une boîte de clavardage, oblige un technicien ganté à taper sur un écran en atelier bruyant, ou confie une carte bancaire partagée à un modèle probabiliste pour payer un fournisseur externe. L’interface humaine et le règlement financier concentrent le risque de complaisance cognitive (OWASP ASI09) et de fraude transactionnelle.
 - **Décisions architecturales structurantes** :
   1. *Irréversible côté sécurité client* : interdire aux agents d’émettre du HTML ou du JavaScript exécutable vers le navigateur; imposer AG-UI avec des descripteurs déclaratifs A2UI, rendus par un catalogue local de composants natifs homologués.
   2. *Structurante pour le terrain industriel* : déployer WebRTC en duplex intégral (UDP/SRTP) plutôt que des flux TCP pour toute assistance vocale et visuelle en temps réel, avec interruption sous 200 ms et troncature exacte du contexte serveur.
@@ -453,9 +446,9 @@ Une architecture terrain de production repose donc sur WebRTC en duplex intégra
 
 La fluidité conversationnelle exige un délai inférieur à 450 millisecondes entre la fin sémantique du tour humain et le premier échantillon sonore de réponse :
 
-𝐿voix = 𝐿net + 𝐿VAD/EOU + 𝐿inf + 𝐿audio ≤450 ms
+𝐿_{voix} = 𝐿_{net} + 𝐿_{VAD/EOU} + 𝐿_{inf} + 𝐿_{audio} ≤ 450 ms
 
-Dans cette décomposition, 𝐿net couvre le transport aller-retour UDP/SRTP, 𝐿VAD/EOU la détection de fin de tour, 𝐿inf le temps au premier jeton du modèle et 𝐿audio la synthèse vocale. Les modèles parole à parole (S2S) natifs abaissent ce délai vers 280 ms, mais les chaînes cascadées en diffusion continue (VAD neuronale + STT + SLM + TTS basse latence, environ 390 ms) restent privilégiées en environnement industriel réglementé : leur étape texte intermédiaire permet un filtrage déterministe du vocabulaire de sûreté et produit une transcription d’audit exacte.
+Dans cette décomposition, 𝐿_{net} couvre le transport aller-retour UDP/SRTP, 𝐿_{VAD/EOU} la détection de fin de tour, 𝐿_{inf} le temps au premier jeton du modèle et 𝐿_{audio} la synthèse vocale. Les modèles parole à parole (S2S) natifs abaissent ce délai vers 280 ms, mais les chaînes cascadées en diffusion continue (VAD neuronale + STT + SLM + TTS basse latence, environ 390 ms) restent privilégiées en environnement industriel réglementé : leur étape texte intermédiaire permet un filtrage déterministe du vocabulaire de sûreté et produit une transcription d’audit exacte.
 
 L’invariant critique est l’interruption. Lorsque le technicien coupe la parole à l’agent (« *Stop, la vanne est grippée !* »), le détecteur vocal, qui filtre les bruits d’impact mécanique, doit purger le tampon audio du client en moins de 200 ms, interrompre la synthèse serveur par le `DataChannel` et tronquer l’historique conversationnel de l’agent au mot exact réellement entendu, afin d’éviter tout décalage dangereux sur les consignes non prononcées.
 
@@ -535,8 +528,7 @@ Une carte d’entreprise partagée confiée à un agent viole la non-répudiatio
 AP2, publié par Google, définit dans sa v0.2 un Checkout Mandate (le contenu de l’achat) et un Payment Mandate (l’autorisation de payer), chacun ouvert ou fermé, au format SD-JWT (section 10.2). L’exposé retient pour leur approbation une surface de confiance non agentique et une validation en code déterministe; l’exigence d’une signature matérielle (passkey FIDO2 ou HSM) va au-delà. La mise en œuvre repose sur les deux parcours de la v0.2 :
 
 1. **Parcours avec présence humaine (mandats fermés, validation HOTL)** : l’approbateur signe via WebAuthn le hachage SHA-256 exact du panier (articles, quantités, montant, devise et DID marchand), ce qui rend impossible toute altération ultérieure par l’agent.
-2. **Parcours sans présence humaine (mandats ouverts, autonomie L3/L4)** : délégation préalable à contraintes déterministes (plafond unitaire et journalier, catégories
-  UNSPSC, liste blanche de DID marchands et expiration TTL), qui permet aux agents d’acheter sans attente humaine dans un cadre borné.
+2. **Parcours sans présence humaine (mandats ouverts, autonomie L3/L4)** : délégation préalable à contraintes déterministes (plafond unitaire et journalier, catégories UNSPSC, liste blanche de DID marchands et expiration TTL), qui permet aux agents d’acheter sans attente humaine dans un cadre borné.
 
 Cette architecture ne règle pas la question de l’attribution de responsabilité en cas de litige. Mandats et reçus donnent de la transaction une image non répudiable, utilisable comme preuve une fois les vérifications réussies; mais AP2 exclut expressément la résolution des litiges et ne répartit pas la responsabilité entre les rôles (sections 10.2 et 10.7). La preuve existe; la règle qui dit quoi en faire n’y est pas. La mesure minimale retenue par l’exposé est de verser mandats et reçus à la piste d’audit (section 10.7).
 
@@ -597,9 +589,7 @@ L’Intent Mandate de mars 2027 borne les achats de l’orchestrateur BEL : mont
 
 #### Extrait 10.3 — `[Schéma conceptuel]` · Séquence HTTP 402 (x402) couplée à la vérification du mandat AP2
 
-Une vérification tarifaire douanière à 0,04 USD : défi 402, relance par la passerelle après contrôle du mandat, puis reçu. L’extrait montre un montage de mise en œuvre, où la passe
-
-relle contrôle le mandat AP2 avant la relance et où le reçu est qualifié d’immuable; l’exposé retient qu’AP2 et x402 sont des protocoles distincts, que les pages x402 lues ne décrivent aucune autorisation distincte du paiement et que le serveur sert la ressource avec `PAYMENT-RESPONSE` après règlement (sections 10.1 et 10.5).
+Une vérification tarifaire douanière à 0,04 USD : défi 402, relance par la passerelle après contrôle du mandat, puis reçu. L’extrait montre un montage de mise en œuvre, où la passerelle contrôle le mandat AP2 avant la relance et où le reçu est qualifié d’immuable; l’exposé retient qu’AP2 et x402 sont des protocoles distincts, que les pages x402 lues ne décrivent aucune autorisation distincte du paiement et que le serveur sert la ressource avec `PAYMENT-RESPONSE` après règlement (sections 10.1 et 10.5).
 
 ```
 ### 1. Requête initiale de l'agent vers un service externe de décisions tarifaires douanières
@@ -630,8 +620,7 @@ PAYMENT-RESPONSE: eyJzZXR0bGVkIjp0cnVlLCJ0eEhhc2giOiIweDRmOGIyYzE5Li4uIn0=
 
 L’homologation d’AP2 et de x402 par une direction financière exige trois verrous en passerelle sortante :
 
-1. **Ségrégation des clés et criblage LCB-FT (KYT)** : aucun conteneur d’agent ne détient de clé de signature financière. Cette règle va au-delà de ce que retient l’exposé : en parcours sans présence humaine, l’agent signe lui-même les mandats fermés avec sa
-  propre clé, publiée dans la revendication `cnf` du mandat ouvert (section 10.2). Seul le module trésorerie d’agentgateway signe `PAYMENT-SIGNATURE`, après filtrage en temps réel des listes de sanctions (OFAC, CANAFE/SCRS, UE) et validation par un facilitateur institutionnel agréé.
+1. **Ségrégation des clés et criblage LCB-FT (KYT)** : aucun conteneur d’agent ne détient de clé de signature financière. Cette règle va au-delà de ce que retient l’exposé : en parcours sans présence humaine, l’agent signe lui-même les mandats fermés avec sa propre clé, publiée dans la revendication `cnf` du mandat ouvert (section 10.2). Seul le module trésorerie d’agentgateway signe `PAYMENT-SIGNATURE`, après filtrage en temps réel des listes de sanctions (OFAC, CANAFE/SCRS, UE) et validation par un facilitateur institutionnel agréé.
 2. **Coupe-circuit de vélocité horaire** : indépendamment des mandats individuels, un coupe-circuit déterministe bloque toute signature si le flux agrégé de la flotte dépasse un plafond horaire anormal (par exemple 500 $ CAD/h sur les API externes), ce qui interrompt toute boucle de drainage.
 3. **Imputation ERP automatisée** : chaque `PAYMENT-RESPONSE` est corrélé au `sagaId` OpenTelemetry et versé quotidiennement au grand livre SAP S/4HANA avec sa preuve AP2, opposable aux auditeurs externes.
 
@@ -668,8 +657,8 @@ L’homologation d’AP2 et de x402 par une direction financière exige trois ve
   2. Tout canal vocal ou visuel en temps réel emprunte WebRTC (SRTP + `DataChannel`), avec troncature du contexte à l’interruption (< 200 ms), sans biométrie vocale ni inférence émotionnelle.
   3. Tout décaissement initié par un agent requiert un mandat AP2 ouvert ou fermé (SD-JWT) signé matériellement (FIDO2/HSM), validé par Cedar et réglé en passerelle par des rails agréés ou par HTTP x402.
 - **Conséquences** :
-  - ‣ *Positives* : protection contre les XSS génératifs, revues HOTL rapides et éclairées, utilisabilité mains libres en atelier et auditabilité financière complète.
-  - ‣ *Négatives / coûts assumés* : gouvernance du catalogue A2UI, infrastructure de relais WebRTC et raccordement à un facilitateur AP2/x402.
+  - *Positives* : protection contre les XSS génératifs, revues HOTL rapides et éclairées, utilisabilité mains libres en atelier et auditabilité financière complète.
+  - *Négatives / coûts assumés* : gouvernance du catalogue A2UI, infrastructure de relais WebRTC et raccordement à un facilitateur AP2/x402.
 - **Condition de révision** : unification éventuelle d’A2UI et de MCP-UI sous l’AAIF, ou ouverture des API agentiques sur le rail canadien RTR.
 
 ### Liste de contrôle de mise en production

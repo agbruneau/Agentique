@@ -99,9 +99,7 @@ Les deux lectures se complètent. Un gestionnaire de billets recense ce qui plan
 
 ### Ce que couvre la catégorie
 
-La première catégorie réunit les échecs qui naissent, selon les auteurs, des décisions de conception du système et de consignes pauvres ou ambiguës [2]. Ses cinq modes répondent
-
-à cinq questions que le concepteur a laissées ouvertes : que faut-il produire, qui fait quoi, qu’est-ce qui a déjà été fait, que s’est-il dit avant, et quand le travail est-il fini ?
+La première catégorie réunit les échecs qui naissent, selon les auteurs, des décisions de conception du système et de consignes pauvres ou ambiguës [2]. Ses cinq modes répondent à cinq questions que le concepteur a laissées ouvertes : que faut-il produire, qui fait quoi, qu’est-ce qui a déjà été fait, que s’est-il dit avant, et quand le travail est-il fini ?
 
 Deux modes dominent. La répétition d’étapes et la condition d’arrêt ignorée totalisent environ 28 % des échecs de la version 3 [1]. Ce sont des défauts de contrôle du déroulement, et non de compétence : l’agent sait faire l’étape, il ignore qu’elle est faite ou que la tâche est close.
 
@@ -234,9 +232,7 @@ Trois résultats intéressent ce chapitre.
 - **Un meilleur modèle ne protège pas toujours.** Sous cette même faute, Table-Critic garde 70,61 % de robustesse avec DeepSeek-V3 et 6,32 % avec GPT-5 : selon les auteurs, le modèle le plus fort suit plus fidèlement une directive corrompue. Il fait mieux, en revanche, contre l’hallucination et les plans inexécutables [10].
 - **La structure compte autant que le modèle.** D’après le résumé, les architectures itératives en boucle fermée neutralisent plus de 40 % des fautes qui font s’effondrer une chaîne linéaire. Les fautes de communication (tempête, cycle ou amplification de messages) sont les moins destructrices dans MetaGPT, dont la robustesse reste au-dessus de 93 % [10].
 
-L’étude recoupe la section 21.2 : les deux étages qui ne dépendent pas du modèle, le mécanisme et la règle, sont ceux que la conception maîtrise. Elle fournit aussi une méthode
-
-d’essai, voisine de l’ingénierie du chaos de la section 34.10, qui injecte des pannes d’outils et de protocole plutôt que des fautes entre agents. Sa portée reste étroite : trois systèmes, deux modèles, un seul essai par cas, des comportements étiquetés par un modèle juge, et des fautes de communication éprouvées sur un seul des trois systèmes [10].
+L’étude recoupe la section 21.2 : les deux étages qui ne dépendent pas du modèle, le mécanisme et la règle, sont ceux que la conception maîtrise. Elle fournit aussi une méthode d’essai, voisine de l’ingénierie du chaos de la section 34.10, qui injecte des pannes d’outils et de protocole plutôt que des fautes entre agents. Sa portée reste étroite : trois systèmes, deux modèles, un seul essai par cas, des comportements étiquetés par un modèle juge, et des fautes de communication éprouvées sur un seul des trois systèmes [10].
 
 ## 21.6 Évaluer la qualité de coordination
 
@@ -280,9 +276,7 @@ Les humains restent donc dans l’évaluation. Anthropic décrit une pratique en
 
 ## 21.7 Un problème de conception organisationnelle
 
-Les auteurs de MAST soutiennent qu’une bonne conception multi-agents exige une compréhension des organisations. Ils invoquent Perrow, pour qui des organisations composées d’individus compétents peuvent échouer de façon catastrophique, et la recherche sur les
-
-organisations à haute fiabilité, selon laquelle des principes de conception bien définis préviennent de tels échecs [1].
+Les auteurs de MAST soutiennent qu’une bonne conception multi-agents exige une compréhension des organisations. Ils invoquent Perrow, pour qui des organisations composées d’individus compétents peuvent échouer de façon catastrophique, et la recherche sur les organisations à haute fiabilité, selon laquelle des principes de conception bien définis préviennent de tels échecs [1].
 
 Leurs données appuient la lecture. Avec les mêmes modèles, deux architectures donnent deux profils d’échec différents. Les deux interventions qui améliorent ChatDev portent sur la structure, soit qui a le dernier mot et qui vérifie quoi, et non sur le modèle. La tactique d’imputabilité fait le même chemin en sens inverse : elle emprunte un patron écrit pour décrire des organisations humaines [4].
 

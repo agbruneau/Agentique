@@ -29,7 +29,7 @@ Chaque volet « Mise en œuvre » établit un invariant d’architecture à resp
 | **ADR-019** | 31 | Modélisation de menaces ASI01–ASI10 obligatoire et épinglage cryptographique des schémas MCP | Signature SHA-256/Sigstore des schémas d’outils contre les attaques *Rug-Pull* |
 | **ADR-020** | 32 | Découplage systématique des garde-fous déterministes (Cedar/OPA) et exécution en microVM isolée | Exécution de code sans sortie réseau implicite et coupe-circuit SOC testé |
 | **ADR-021** | 33 | Standardisation sur OpenTelemetry GenAI et collecte souveraine à double couloir PII | Traces distribuées + caviardage PII (réserve : conventions OTel `gen_ai.*` en Development) |
-| **ADR-022** | 34 | Cycle ADLC gouverné par SemVer+Intent, portes de constance pass5 et déploiement Canary | Homologation sur bancs d’essai de type 𝜏-bench et injection de pannes avant trafic réel |
+| **ADR-022** | 34 | Cycle ADLC gouverné par SemVer+Intent, portes de constance pass^5 et déploiement Canary | Homologation sur bancs d’essai de type 𝜏-bench et injection de pannes avant trafic réel |
 | **ADR-023** | 40 | Pilotage FinOps par le *Cost-per-Outcome*, disjoncteurs par saga et refacturation interne | Disjoncteur financier (réserve : afficher d’abord, refacturer sur clé fiable, 40.2) |
 | **ADR-024** | 38 | Qualification réglementaire dynamique par empreinte de déploiement et mandats B2B bornés | Alignement croisé ISO/IEC 42001, BSIF E-23 (mai 2027), Loi 25 et EU AI Act |
 | **ADR-025** | 41 | Modèle *Hub-and-Spoke*, propriétaire métier nominatif et vigilance HOTL instrumentée | Responsabilité humaine explicite et contrôle anti-complaisance cognitive HOTL |
@@ -38,7 +38,7 @@ Chaque volet « Mise en œuvre » établit un invariant d’architecture à resp
 | **ADR-028** | 46 | Architecture Edge *Local-First* à synchronisation CRDT et pont robotique ROS 2 sous enveloppe matérielle Simplex | CRDT + moniteur Simplex (réserve : 72 h = cible non sourcée, à calculer par site, 46.5) |
 | **ADR-029** | 47 | Pipeline Agentic SDLC à séparation des devoirs et modernisation patrimoniale par oracle *Golden Master* et *Shadow Mirroring* | Aucune auto-approbation (réserve : rôles extrapolés, ≥85 % et 30 j non sourcés, 47.4) |
 | **ADR-030** | 47 | Contrats de données *Write-Audit-Publish* (ODCS) et SRE autonome à séparation stricte diagnostic lecture seule / runbooks Cedar | Quarantaine WAP avant exposition aval et aucun shell libre en production |
-| **ADR-031** | 47 | Compilation déclarative des consignes et volant de distillation continue LLM → SLM sous sas anti-PII et porte pass5 | Sas Loi 25 et sentinelle 2 % (réserve : recette et pass5 ≥99 % = cibles à valider, 47.8) |
+| **ADR-031** | 47 | Compilation déclarative des consignes et volant de distillation continue LLM → SLM sous sas anti-PII et porte pass^5 | Sas Loi 25 et sentinelle 2 % (réserve : recette et pass^5 ≥99 % = cibles à valider, 47.8) |
 
 ## F.2 Arbre de décision : choix du protocole d’interopérabilité
 
@@ -80,7 +80,7 @@ Pour un nouveau service ou flux métier, la question la plus fréquente soumise 
 > - Découplage total
 > - Socle Transversal Invariant (Exigé quelle que soit la branche retenue ci-dessus)
 > - 1. Passage par passerelle AI-native (agentgateway) • 2. Identité NHI + Jeton OAuth 2.1 OBO atténué (RFC 8693)
-> - 3. Vocabulaire aligné Apache Ossie • 4. Clé d'idempotence + Budget FinOps • 5. Span OpenTelemetry (gen_ai.*)
+> - 3. Vocabulaire aligné Apache Ossie • 4. Clé d'idempotence + Budget FinOps • 5. Span OpenTelemetry (gen_ai.\*)
 
 *Fig. 67. – Arbre de décision normatif pour le choix du protocole d’interopérabilité selon la nature du destinataire et le couplage requis.*
 

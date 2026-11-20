@@ -150,9 +150,7 @@ Ce second motif intègre au protocole une considération de coût d’inférence
 
 ### La traçabilité
 
-La révision documente enfin la propagation du contexte de trace OpenTelemetry dans les métadonnées de requête [2]. Un appel d’outil peut donc s’inscrire dans une trace distribuée
-
-qui commence chez l’agent et se poursuit dans le système appelé. Les conventions sémantiques qui décrivent ces traces ne sont, elles, pas encore stables, et celles qui visent MCP renvoient encore à la session supprimée (chapitre 33).
+La révision documente enfin la propagation du contexte de trace OpenTelemetry dans les métadonnées de requête [2]. Un appel d’outil peut donc s’inscrire dans une trace distribuée qui commence chez l’agent et se poursuit dans le système appelé. Les conventions sémantiques qui décrivent ces traces ne sont, elles, pas encore stables, et celles qui visent MCP renvoient encore à la session supprimée (chapitre 33).
 
 ### Ce que cela change pour l’entreprise
 
@@ -202,9 +200,7 @@ L’extension est au stade **bêta**, avec pour destination déclarée l’inté
 
 ### Notifications et événements
 
-Par défaut, le client interroge le serveur à intervalles. S’il préfère être averti, il ouvre un flux `subscriptions/listen` en précisant les types de notifications qu’il veut recevoir : changement de la liste d’outils, de prompts ou de ressources, mise à jour d’une ressource suivie [2]. L’extension Tasks y ajoute ses propres notifications d’état (`notifications/tasks`), qui portent l’état complet et dispensent d’un `tasks/get` tant que le flux reste ouvert [7]. La
-
-spécification ne prévoit aucun rattrapage des notifications manquées pendant une rupture : à la reconnexion, un `tasks/get` reste nécessaire [16].
+Par défaut, le client interroge le serveur à intervalles. S’il préfère être averti, il ouvre un flux `subscriptions/listen` en précisant les types de notifications qu’il veut recevoir : changement de la liste d’outils, de prompts ou de ressources, mise à jour d’une ressource suivie [2]. L’extension Tasks y ajoute ses propres notifications d’état (`notifications/tasks`), qui portent l’état complet et dispensent d’un `tasks/get` tant que le flux reste ouvert [7]. La spécification ne prévoit aucun rattrapage des notifications manquées pendant une rupture : à la reconnexion, un `tasks/get` reste nécessaire [16].
 
 La feuille de route range ce sujet parmi ses cinq priorités, sous le nom de primitives de messagerie agentique [12]. Elle reconnaît un risque : avoir trois réponses différentes à la question « le serveur n’a pas fini », sans cycle de vie, modèle d’annulation ni surface d’erreur communs. Les travaux en cours portent sur des événements poussés par le serveur, y compris par webhooks, afin d’éviter une interrogation coûteuse. Le chapitre 19 replace ces mécanismes dans l’orchestration événementielle.
 
@@ -228,9 +224,7 @@ Les portées se demandent progressivement. Le serveur indique dans sa réponse 4
 
 ### L’enregistrement des clients
 
-Un client doit obtenir un identifiant auprès du serveur d’autorisation. Trois voies existent : les Client ID Metadata Documents, où l’identifiant du client est une URL HTTPS qui pointe vers ses métadonnées; le préenregistrement; et l’enregistrement dynamique (RFC 7591). La
-
-révision de juillet 2026 recommande la première et **déprécie** la troisième, conservée pour les serveurs d’autorisation qui n’offrent pas la première [2][5]. Elle lie aussi les justificatifs du client au serveur d’autorisation qui les a émis, sans réemploi auprès d’un autre, et oblige le client à vérifier l’émetteur (`iss`) d’une réponse d’autorisation quand il est présent (RFC 9207) [2].
+Un client doit obtenir un identifiant auprès du serveur d’autorisation. Trois voies existent : les Client ID Metadata Documents, où l’identifiant du client est une URL HTTPS qui pointe vers ses métadonnées; le préenregistrement; et l’enregistrement dynamique (RFC 7591). La révision de juillet 2026 recommande la première et **déprécie** la troisième, conservée pour les serveurs d’autorisation qui n’offrent pas la première [2][5]. Elle lie aussi les justificatifs du client au serveur d’autorisation qui les a émis, sans réemploi auprès d’un autre, et oblige le client à vérifier l’émetteur (`iss`) d’une réponse d’autorisation quand il est présent (RFC 9207) [2].
 
 ### Le modèle grand public ne suffit pas
 
@@ -250,9 +244,7 @@ Une autre extension stable, OAuth Client Credentials, couvre l’authentificatio
 
 ### L’identité des agents, chantier ouvert
 
-Les concepteurs du protocole le disent sans détour : l’autorisation de MCP suppose une personne devant un navigateur au moment du consentement, alors que l’appelant est de plus en plus un agent, c’est-à-dire une charge de travail infonuagique qui agit pour un utilisateur absent ou qui lance des sous-agents censés recevoir une autorité plus étroite que la sienne
-
-[12]. En pratique, beaucoup de serveurs s’appuient encore sur des clés d’API collées à la main et sur des jetons de rafraîchissement de longue durée.
+Les concepteurs du protocole le disent sans détour : l’autorisation de MCP suppose une personne devant un navigateur au moment du consentement, alors que l’appelant est de plus en plus un agent, c’est-à-dire une charge de travail infonuagique qui agit pour un utilisateur absent ou qui lance des sous-agents censés recevoir une autorité plus étroite que la sienne [12]. En pratique, beaucoup de serveurs s’appuient encore sur des clés d’API collées à la main et sur des jetons de rafraîchissement de longue durée.
 
 Un groupe de travail sur l’identité des agents est en formation. Son programme comprend la preuve de possession des jetons (DPoP), la fédération d’identités de charges de travail, l’ID-JAG et l’échange de jetons (RFC 8693), en coordination avec les groupes OAuth et WIMSE de l’IETF. L’attestation de présence humaine, qui distinguerait un client interactif d’un agent sans surveillance, est à l’étude [12]. Le chapitre 29 traite ce chantier dans son ensemble; le chapitre 30, la délégation à autorité réduite et l’attestation de présence humaine.
 
@@ -432,14 +424,13 @@ SYNTHÈSE EXÉCUTIVE
   1. *Irréversible à moyen terme* : Imposer MCP sur Streamable HTTP derrière agentgateway comme unique standard vertical côté serveur, sans transport hérité ni clé statique, avec OAuth 2.1 OBO.
   2. *Structurante dès la conception* : Proscrire le mappage `OpenAPI -> MCP` 1:1 au profit de façades orientées intention métier (5 à 12 outils par spécialiste), dotées d’un `outputSchema`, de clés d’idempotence et d’erreurs cognitives qui guident la correction.
   3. *Réversible et modulaire* : Empaqueter le savoir-faire procédural dans Agent Skills (`SKILL.md` à divulgation progressive) et instrumenter les portails web internes avec WebMCP (chapitre 9), pour limiter au strict nécessaire le recours aux agents de capture d’écran (CUA).
-- **Indicateurs de gouvernance associés** : Empreinte de schémas d’outils par session (< 2 000 jetons), précision d’appel au premier essai (pass5 ≥95 %), latence verticale MCP P95 et couverture d’idempotence des outils mutatifs.
+- **Indicateurs de gouvernance associés** : Empreinte de schémas d’outils par session (< 2 000 jetons), précision d’appel au premier essai (pass^5 ≥95 %), latence verticale MCP P95 et couverture d’idempotence des outils mutatifs.
 
 ## 5.9 Architecture de production : hôte, client, passerelle et serveur
 
 Les rôles d’hôte, de client et de serveur sont décrits à la section 5.1. En production, l’hôte est un travailleur Temporal, un hôte Goose, un environnement de développement ou un poste opérateur. Une passerelle s’intercale entre le client et le serveur, et le serveur prend la forme d’une façade de domaine, comme le montre la figure ci-dessous.
 
-- **La passerelle (agentgateway)** : Coupure réseau obligatoire, elle inspecte les trames JSON-RPC 2.0, valide OAuth 2.1 et DPoP, exécute l’échange *On-Behalf-Of* (RFC 8693), filtre les outils selon les politiques Cedar et émet les traces OpenTelemetry (`gen_ai.*`). Exiger DPoP et l’échange *On-Behalf-Of* à la passerelle va au-delà de ce que retient la section 5.5 : l’option par défaut y est l’Enterprise-Managed Authorization (ID-JAG) si le fournisseur d’identité et les clients la prennent en charge, sinon le flux OAuth de base,
-  et DPoP comme l’échange de jetons (RFC 8693) figurent au programme d’un groupe de travail en formation. Le serveur aval suit le profil d’autorisation de la section 5.5 : il publie ses métadonnées sur `/.well-known/oauth-protected-resource` (RFC 9728) et refuse tout passage de jeton, c’est-à-dire la réutilisation du jeton reçu pour appeler une autre API. Un jeton dont l’audience (`aud`) ne le désigne pas est rejeté, ce qui empêche qu’un jeton émis pour un service serve à en atteindre un autre.
+- **La passerelle (agentgateway)** : Coupure réseau obligatoire, elle inspecte les trames JSON-RPC 2.0, valide OAuth 2.1 et DPoP, exécute l’échange *On-Behalf-Of* (RFC 8693), filtre les outils selon les politiques Cedar et émet les traces OpenTelemetry (`gen_ai.*`). Exiger DPoP et l’échange *On-Behalf-Of* à la passerelle va au-delà de ce que retient la section 5.5 : l’option par défaut y est l’Enterprise-Managed Authorization (ID-JAG) si le fournisseur d’identité et les clients la prennent en charge, sinon le flux OAuth de base, et DPoP comme l’échange de jetons (RFC 8693) figurent au programme d’un groupe de travail en formation. Le serveur aval suit le profil d’autorisation de la section 5.5 : il publie ses métadonnées sur `/.well-known/oauth-protected-resource` (RFC 9728) et refuse tout passage de jeton, c’est-à-dire la réutilisation du jeton reçu pour appeler une autre API. Un jeton dont l’audience (`aud`) ne le désigne pas est rejeté, ce qui empêche qu’un jeton émis pour un service serve à en atteindre un autre.
 - **Le serveur de domaine** : Une façade sans planification autonome, qui traduit des intentions d’affaires bornées en transactions sur le système d’enregistrement sous-jacent.
 
 > **[Figure]**
@@ -487,7 +478,7 @@ Les rôles d’hôte, de client et de serveur sont décrits à la section 5.1. E
 > - Vérif. SHA-256 schémas
 > - Observabilité & FinOps
 > - Traces OpenTelemetry
-> - (attributs gen_ai.* / mcp.*)
+> - (attributs gen_ai.\* / mcp.\*)
 > - Limitation de débit HTTP
 > - & Coupe-circuit d'erreurs
 > - Serveur MCP — SAP S/4HANA
@@ -597,8 +588,7 @@ Le résultat porte le champ `resultType`, obligatoire depuis cette révision, un
 Les primitives sont définies à la section 5.1. Le tableau plus bas fixe l’usage et le garde-fou de chacune; les points suivants en précisent les mécanismes. Les racines et l’échantillonnage sont toutefois dépréciés depuis la révision de juillet 2026 : ils fonctionnent encore pendant la fenêtre de dépréciation, mais une nouvelle mise en œuvre ne devrait pas les adopter (section 5.1). Les garde-fous qui les concernent valent tant qu’on les utilise.
 
 - **Outils** : Les annotations (`readOnlyHint`, `destructiveHint`, `idempotentHint`, `openWorldHint`) restent des indices non fiables face à un serveur tiers; seule la politique Cedar appliquée sur agentgateway autorise l’exécution. La passerelle bloque aussi toute notification `notifications/tools/list_changed` dont l’empreinte SHA-256 de schéma n’a pas été scellée au préalable au registre d’homologation, ce qui neutralise les attaques par mutation différée (OWASP ASI04).
-- **Ressources et** `resource_link` : Les entités sont exposées sous un URI canonique (`boreal://bca/contracts/CTR-9921`), avec abonnement optionnel par un flux `subscriptions/listen` (section 5.4). Plutôt que d’injecter un rapport de 180 Ko dans
-  la réponse à `tools/call`, l’outil retourne un pointeur `resource_link` (URI, type MIME, taille), que `resources/read` ne lit qu’au besoin.
+- **Ressources et** `resource_link` : Les entités sont exposées sous un URI canonique (`boreal://bca/contracts/CTR-9921`), avec abonnement optionnel par un flux `subscriptions/listen` (section 5.4). Plutôt que d’injecter un rapport de 180 Ko dans la réponse à `tools/call`, l’outil retourne un pointeur `resource_link` (URI, type MIME, taille), que `resources/read` ne lit qu’au besoin.
 - **Prompts** : L’équipe propriétaire du progiciel maintient des procédures d’investigation paramétrées et versionnées, pour uniformiser les pratiques d’analyse.
 - **Racines (**`roots`**)** : L’hôte restreint le serveur à des racines d’espaces ou à des compartiments (`file:///workspace/bel`, `s3://boreal-audit/`).
 - **Échantillonnage** : Le serveur sollicite une synthèse auprès de l’hôte (`sampling/createMessage`) sans détenir de clé d’API de modèle. Pour contrer l’injection indirecte (OWASP ASI01), l’hôte exécute tout échantillonnage dans un contexte isolé, sans outils mutatifs et sous un plafond `maxTokens`.
@@ -667,11 +657,11 @@ L’erreur la plus coûteuse des premiers déploiements MCP, en 2025–2026, est
 
 *Fig. 11. – Comparaison architecturale : mappage naïf 1:1 CRUD REST vers MCP face à la conception orientée intention métier agrégée.*
 
-Deux phénomènes expliquent l’échec d’un mappage CRUD 1:1. D’abord, chaque définition d’outil injectée dans la session consomme 𝑡𝑖 jetons d’instructions et de schémas JSON, répétés à chaque tour 𝑘∈{1, …, 𝐾} de la boucle de raisonnement. Le surcoût fixe de contexte d’une tâche s’écrit :
+Deux phénomènes expliquent l’échec d’un mappage CRUD 1:1. D’abord, chaque définition d’outil injectée dans la session consomme 𝑡_𝑖 jetons d’instructions et de schémas JSON, répétés à chaque tour 𝑘∈{1, …, 𝐾} de la boucle de raisonnement. Le surcoût fixe de contexte d’une tâche s’écrit :
 
-𝑇schémas(𝑁outils, 𝐾) = 𝐾⋅∑𝑁outils 𝑖=1 𝑡𝑖
+𝑇_{schémas}(𝑁_{outils}, 𝐾) = 𝐾 ⋅ ∑_{𝑖=1}^{𝑁_{outils}} 𝑡_𝑖
 
-Avec 𝑁outils = 85 points d’accès moyens (𝑡𝑖≈290 jetons) et une transaction de 𝐾= 6 appels séquentiels pour reconstituer une jointure métier, l’agent consomme 147 900 jetons à relire le catalogue d’outils, avant de compter les données retournées. Ensuite, si la probabilité que le modèle choisisse le bon point d’accès et renseigne sans erreur ses clés étrangères internes vaut 𝑝= 0, 85 à chaque étape, la fiabilité d’une séquence de 𝐾 = 6 appels tombe à 𝑝^6 ≈ 0,377 (37,7 %), en deçà du seuil d’exploitation industrielle.
+Avec 𝑁_{outils} = 85 points d’accès moyens (𝑡_𝑖 ≈ 290 jetons) et une transaction de 𝐾 = 6 appels séquentiels pour reconstituer une jointure métier, l’agent consomme 147 900 jetons à relire le catalogue d’outils, avant de compter les données retournées. Ensuite, si la probabilité que le modèle choisisse le bon point d’accès et renseigne sans erreur ses clés étrangères internes vaut 𝑝 = 0,85 à chaque étape, la fiabilité d’une séquence de 𝐾 = 6 appels tombe à 𝑝^6 ≈ 0,377 (37,7 %), en deçà du seuil d’exploitation industrielle.
 
 | Dimension d’ingénierie | Antipatron : mappage CRUD REST 1:1 | Patron cible : outils MCP orientés intention métier |
 | --- | --- | --- |
@@ -932,7 +922,7 @@ Pour les écrans de saisie simples, WebMCP offre aussi une syntaxe HTML déclara
 
 **FIL ROUGE — GROUPE BORÉAL · CAS FICTIF — Groupe Boréal : Industrialisation des serveurs MCP SAP S/4HANA, Snowflake et ServiceNow**
 
-**Problème rencontré début 2027** : Lors des premiers essais d’intégration chez BEL et BSN, un prestataire avait généré automatiquement un serveur MCP qui exposait 112 opérations OData brutes de SAP S/4HANA. Une équipe analytique de BCA laissait un agent exécuter du SQL généré à la volée sur Snowflake, avec un compte de service partagé. Résultat : 29 000 jetons consommés par tour, un taux de réussite pass5 plafonné à 54 % sur les réservations complexes, et un veto immédiat du CISO devant le risque d’injection SQL sémantique et d’accès transversal aux tables clients soumises à la Loi 25.
+**Problème rencontré début 2027** : Lors des premiers essais d’intégration chez BEL et BSN, un prestataire avait généré automatiquement un serveur MCP qui exposait 112 opérations OData brutes de SAP S/4HANA. Une équipe analytique de BCA laissait un agent exécuter du SQL généré à la volée sur Snowflake, avec un compte de service partagé. Résultat : 29 000 jetons consommés par tour, un taux de réussite pass^5 plafonné à 54 % sur les réservations complexes, et un veto immédiat du CISO devant le risque d’injection SQL sémantique et d’accès transversal aux tables clients soumises à la Loi 25.
 
 **Architecture verticale mise en production (T1–T2 2027)** : L’équipe plateforme remplace ces prototypes par trois serveurs MCP orientés domaine, en Streamable HTTP sans état derrière agentgateway. Un registre Git interne de compétences et l’instrumentation WebMCP les complètent :
 
@@ -944,7 +934,7 @@ Pour les écrans de saisie simples, WebMCP offre aussi une syntaxe HTML déclara
 **Scénario illustratif cible (horizon 90 jours)** :
 
 - **Empreinte de contexte** : −94,3 % sur les schémas et métadonnées par tour (de 29 000 à 1 650 jetons) et −78 % sur le volume total de jetons consommés par tâche verticale complète.
-- **Fiabilité d’exécution (pass5 sous OpenEnv)** : de 54 % à 96,8 %, grâce aux outils d’intention agrégés, aux sorties `structuredContent` et aux messages `recoveryGuidance`.
+- **Fiabilité d’exécution (pass^5 sous OpenEnv)** : de 54 % à 96,8 %, grâce aux outils d’intention agrégés, aux sorties `structuredContent` et aux messages `recoveryGuidance`.
 - **Poste répartiteur (WebMCP)** : préparation d’un dossier d’affectation complexe ramenée de 38 secondes (prototype CUA visuel) à 1,4 seconde, avec validation finale humaine garantie (`toolautosubmit="false"`).
 - **Conformité de sécurité** : 100 % des appels tracés nominalement par employé ou par saga initiatrice, par OAuth 2.1 OBO et DPoP sur agentgateway; zéro secret applicatif stocké dans les agents.
 
@@ -964,8 +954,8 @@ Pour les écrans de saisie simples, WebMCP offre aussi une syntaxe HTML déclara
   3. Les procédures opérationnelles transversales sont externalisées dans des paquets Agent Skills (`SKILL.md` à divulgation progressive), dont les scripts s’exécutent sous OpenSandbox.
   4. Toute nouvelle vue d’application web interne fréquemment assistée par agent expose ses actions par WebMCP plutôt que de recourir à un CUA par capture d’écran, réservé aux systèmes patrimoniaux fermés traités au chapitre 25.
 - **Conséquences** :
-  - ‣ *Positives* : Précision d’appel supérieure à 95 %, économie de jetons, sécurité par moindre privilège et portabilité des compétences métiers.
-  - ‣ *Négatives / Coûts assumés* : Travail explicite de conception produit pour façonner les façades MCP de domaine, plutôt que de générer des connecteurs bruts.
+  - *Positives* : Précision d’appel supérieure à 95 %, économie de jetons, sécurité par moindre privilège et portabilité des compétences métiers.
+  - *Négatives / Coûts assumés* : Travail explicite de conception produit pour façonner les façades MCP de domaine, plutôt que de générer des connecteurs bruts.
 - **Condition de révision** : Semestrielle, selon l’évolution des spécifications MCP (AAIF) et l’avancement du standard WebMCP au sein du W3C.
 
 ### Liste de contrôle de mise en production

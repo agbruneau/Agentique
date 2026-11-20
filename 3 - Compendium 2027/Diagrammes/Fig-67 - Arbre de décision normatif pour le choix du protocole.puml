@@ -1,0 +1,107 @@
+' Fig. 67. – Arbre de décision normatif pour le choix du protocole d’interopérabilité selon la nature du destinataire et le couplage requis.
+@startuml
+title Arbre de Décision — Sélection du Protocole d'Interopérabilité (Édition 2027)
+
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam nodesep 14
+skinparam ranksep 24
+skinparam rectangle {
+  BackgroundColor #FFFFFF
+  BorderColor #1E293B
+}
+skinparam legend {
+  BackgroundColor #F8FAFC
+  BorderColor #1E293B
+  FontName "Segoe UI"
+}
+
+rectangle Q1 #0F172A;line:0F172A [
+  <color:white><b>Q1 : Quelle est la nature du destinataire</b></color>
+  <color:#93C5FD><b>de l'interaction issue de l'agent ou du système ?</b></color>
+]
+
+rectangle Q2a #FFF7ED;line:9A3412 [
+  <color:#9A3412>**Un opérateur ou client humain**</color>
+  Q2a : Modalité requise ?
+]
+
+rectangle Q2b #EFF6FF;line:2563EB [
+  **Une fonction, API, BD ou équipement**
+  Q2b : Interface programmable disponible ?
+]
+
+rectangle Q2c #F0FDF4;line:166534 [
+  <color:#166534>**Un ou plusieurs agents autonomes**</color>
+  Q2c : Couplage souhaité ?
+]
+
+rectangle Ecran #FFFFFF;line:2563EB [
+  **Écran Réactif**
+  <color:#2563EB>AG-UI + A2UI</color>
+  (+ CIBA si approbation
+  hors bande critique)
+]
+
+rectangle Voix #FFFFFF;line:2563EB [
+  **Voix / Vidéo**
+  <color:#2563EB>WebRTC / SIP</color>
+  Full-duplex < 500 ms
+  avec gestion barge-in
+]
+
+rectangle OuiAPI #F0FDF4;line:166534 [
+  <color:#166534>**Oui (API / Web / OT)**</color>
+  <color:#166534>**MCP Streamable HTTP**</color>
+  (ou WebMCP navigateur /
+  passerelle MCP-OPC-UA)
+]
+
+rectangle NonLegacy #FEF2F2;line:DC2626 [
+  <color:#991B1B>**Non (Écran Legacy)**</color>
+  <color:#991B1B>**CUA / RPA Confiné**</color>
+  Encapsulé derrière
+  un serveur MCP audité
+]
+
+rectangle Deleg #F0FDF4;line:166534 [
+  <color:#166534>**Délégation ciblée**</color>
+  <color:#166534>**A2A v1.0 (+ SLIM)**</color>
+  Découverte OASF
+  (+ EDC/AP2/x402 B2B)
+]
+
+rectangle Diff #EFF6FF;line:1E293B [
+  **Diffusion 1-vers-N**
+  <color:#2563EB>**Kafka / Solace**</color>
+  CloudEvents typés
+  Découplage total
+]
+
+Q1 -[#1E293B]down-> Q2a
+Q1 -[#1E293B]down-> Q2b
+Q1 -[#1E293B]down-> Q2c
+Q2a -[hidden]right-> Q2b
+Q2b -[hidden]right-> Q2c
+
+Q2a -[#1E293B]down-> Ecran
+Q2a -[#1E293B]down-> Voix
+Q2b -[#1E293B]down-> OuiAPI
+Q2b -[#1E293B]down-> NonLegacy
+Q2c -[#1E293B]down-> Deleg
+Q2c -[#1E293B]down-> Diff
+
+Ecran -[hidden]right-> Voix
+Voix -[hidden]right-> OuiAPI
+OuiAPI -[hidden]right-> NonLegacy
+NonLegacy -[hidden]right-> Deleg
+Deleg -[hidden]right-> Diff
+
+legend bottom
+  **Socle Transversal Invariant (Exigé quelle que soit la branche retenue ci-dessus)**
+  1. Passage par passerelle AI-native (agentgateway) • 2. Identité NHI + Jeton OAuth 2.1 OBO atténué (RFC 8693)
+  3. Vocabulaire aligné Apache Ossie • 4. Clé d'idempotence + Budget FinOps • 5. Span OpenTelemetry (gen_ai.*)
+endlegend
+@enduml

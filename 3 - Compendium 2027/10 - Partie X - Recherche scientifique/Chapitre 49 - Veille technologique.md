@@ -44,9 +44,7 @@ Cette veille a buté sur quatre obstacles qu’un dispositif doit prévoir.
 
 **Les sources primaires qui se ferment.** Les sites de l’ISO, de Gartner et d’EUR-Lex, ainsi que la page du NCCoE sur l’identité des agents, ont refusé la lecture automatique. L’état des travaux du comité ISO/IEC JTC 1/SC 42 sur les agents n’a pas pu être établi. Une veille outillée a besoin d’un relais humain pour ces sources.
 
-**Le vocabulaire qui change.** Un décret américain du 29 septembre 2026 impose à l’exécutif fédéral d’employer « Super Intelligence » et « SI » à la place de « Artificial Intelligence »
-
-et « AI » [1]. Les pages du NIST ont suivi : le projet de surcouches de contrôles de sécurité pour l’IA a été renommé le 20 octobre 2026, sans modification des documents antérieurs [2]. Une requête qui ne cherche que l’ancien terme manque désormais les nouvelles pages fédérales.
+**Le vocabulaire qui change.** Un décret américain du 29 septembre 2026 impose à l’exécutif fédéral d’employer « Super Intelligence » et « SI » à la place de « Artificial Intelligence » et « AI » [1]. Les pages du NIST ont suivi : le projet de surcouches de contrôles de sécurité pour l’IA a été renommé le 20 octobre 2026, sans modification des documents antérieurs [2]. Une requête qui ne cherche que l’ancien terme manque désormais les nouvelles pages fédérales.
 
 **L’événement qui n’a pas encore eu lieu.** La conférence Ignite de Microsoft se tient du 17 au 19 novembre 2026 [3], après la date de référence. Ses annonces sur le registre d’agents et l’identité d’agent ne figurent donc pas dans cet ouvrage. Toute veille a un bord, qu’il faut écrire.
 
@@ -74,9 +72,7 @@ Trois réserves accompagnent ces chiffres, et elles viennent de l’émetteur.
 
 **Le temps de doublement exclut les points saturés.** Le fichier de données précise que le calcul écarte les modèles dont l’estimation centrale dépasse seize heures [5].
 
-Deux lectures en découlent pour l’ouvrage. L’écart entre les deux horizons est le fait le plus utile : à 80 % de réussite, la tâche accessible est cinq à six fois plus courte qu’à 50 %. Une
-
-entreprise qui exige une fiabilité supérieure à 80 % travaille sur un horizon plus court encore, que personne ne publie. L’hypothèse H2 ne tient donc pas à un plafond de capacité, qui recule vite, mais au prix de la fiabilité. C’est une interprétation.
+Deux lectures en découlent pour l’ouvrage. L’écart entre les deux horizons est le fait le plus utile : à 80 % de réussite, la tâche accessible est cinq à six fois plus courte qu’à 50 %. Une entreprise qui exige une fiabilité supérieure à 80 % travaille sur un horizon plus court encore, que personne ne publie. L’hypothèse H2 ne tient donc pas à un plafond de capacité, qui recule vite, mais au prix de la fiabilité. C’est une interprétation.
 
 La seconde lecture touche la méthode. Si l’horizon continue de doubler en quatre à six mois, la portée des agents changera plusieurs fois avant 2030, et la mesure qui permettait de le dire n’existe plus sous sa forme publique. Le chapitre 43 tenait la portée des agents pour une variable transversale de ses scénarios; elle est devenue une variable non observée.
 
@@ -113,9 +109,7 @@ Aucun banc d’essai de l’interopérabilité entre protocoles, avec des résul
 
 ### Ce que ce calendrier change
 
-**La normalisation des agents a quitté le stade des intentions.** Jusqu’à l’automne 2026, aucun groupe de travail de l’IETF n’avait les agents pour objet principal. Deux groupes ont maintenant une charte et des jalons. Le premier doit définir un protocole commun de gestion du dialogue entre agents, qui ne remplace pas les protocoles applicatifs existants et ne définit pas de nouveau transport [9]. Le second traite la découverte, en coordination
-
-avec les groupes WIMSE et OAuth [10]. C’est un signal en faveur du scénario A du chapitre 43, celui du socle étendu.
+**La normalisation des agents a quitté le stade des intentions.** Jusqu’à l’automne 2026, aucun groupe de travail de l’IETF n’avait les agents pour objet principal. Deux groupes ont maintenant une charte et des jalons. Le premier doit définir un protocole commun de gestion du dialogue entre agents, qui ne remplace pas les protocoles applicatifs existants et ne définit pas de nouveau transport [9]. Le second traite la découverte, en coordination avec les groupes WIMSE et OAuth [10]. C’est un signal en faveur du scénario A du chapitre 43, celui du socle étendu.
 
 **Les deux couches manquantes restent hors mandat.** La charte du groupe sur la découverte renvoie à une charte ultérieure la gestion de l’identité des agents et l’évaluation de la confiance [10]. Le projet de l’IEEE sur la description et le registre d’agents écarte de même les cadres d’identité, les systèmes de notation de la confiance et les politiques de gouvernance [15]. Le document de WIMSE sur l’identité ne crée pas de protocole : il décrit comment appliquer des standards existants, et vise un statut informatif [11]. L’identité et la gouvernance, que le chapitre 43 désigne comme les couches dont dépend le scénario A, ne sont donc à l’ordre du jour d’aucun texte normatif daté.
 
@@ -255,9 +249,7 @@ Aucune des techniques recensées n’atteint le niveau 5.
 
 La prépublication d’octobre 2026 sur les systèmes multi-agents mérite qu’on s’y arrête. Elle construit une attaque par injection qui réussit alors que chaque agent applique individuellement la défense de référence. Le mécanisme est simple : une donnée non fiable est réinterprétée comme une entrée de confiance par l’agent situé en aval [50]. Les taux de succès d’attaque rapportés sont de 12,9 % sans défense, de 0,2 % avec la défense appliquée agent par agent, et de 0,0 % avec la variante conçue pour le collectif.
 
-Ce résultat rejoint, par l’expérience, deux constats de l’ouvrage. Un ensemble d’agents sûrs ne fait pas un ensemble sûr (chapitre 48). Et un protocole qui transporte un message d’un agent à l’autre sans transporter sa provenance efface la frontière de confiance (chapitres 6
-
-et 31). La défense ne peut pas rester locale à chaque agent : elle doit suivre la donnée. C’est une prépublication, non répliquée, dont le banc d’essai n’a pas été lu.
+Ce résultat rejoint, par l’expérience, deux constats de l’ouvrage. Un ensemble d’agents sûrs ne fait pas un ensemble sûr (chapitre 48). Et un protocole qui transporte un message d’un agent à l’autre sans transporter sa provenance efface la frontière de confiance (chapitres 6 et 31). La défense ne peut pas rester locale à chaque agent : elle doit suivre la donnée. C’est une prépublication, non répliquée, dont le banc d’essai n’a pas été lu.
 
 ### Ce qui peut atteindre la production d’ici 2030
 
@@ -443,6 +435,5 @@ Sources reprises des chapitres 4, 8, 26, 37 et 38 pour le registre de veille (aj
 - Les incidents de la section 49.7 sont connus par la recension [45], non par les divulgations d’origine. La source [46] n’a été lue qu’en partie.
 - Les conférences Ignite et re:Invent de la fin de 2026 sont postérieures à la date de référence.
 - L’échelle de maturité de 49.6, la conjecture sur ce qui atteindra la production, la lecture de l’écart entre les deux horizons de METR et le rapprochement du calendrier de l’IETF avec les scénarios du chapitre 43 sont des interprétations.
-- Les deux échéances et les cinq lignes du registre ajoutées le 14 novembre 2026 sont reliées aux sources [69] à [75] reprises des chapitres 4, 8, 26, 37 et 38; leurs réserves complètes y figurent et le PDF officiel de la ligne directrice AMF [73] demeure en statut F
-  (erreur 403 en collecte automatisée), tout en étant raccordé à l’instruction interne `2026/documents/Note AMF IA.pdf` (`CRE-IA-2026-01-QC`, 41 attentes, `EXIG-AMF-01` à `EXIG-AMF-12`, chapitre 38).
+- Les deux échéances et les cinq lignes du registre ajoutées le 14 novembre 2026 sont reliées aux sources [69] à [75] reprises des chapitres 4, 8, 26, 37 et 38; leurs réserves complètes y figurent et le PDF officiel de la ligne directrice AMF [73] demeure en statut F (erreur 403 en collecte automatisée), tout en étant raccordé à l’instruction interne `2026/documents/Note AMF IA.pdf` (`CRE-IA-2026-01-QC`, 41 attentes, `EXIG-AMF-01` à `EXIG-AMF-12`, chapitre 38).
 - Les intervalles de confiance des horizons de METR sont convertis de minutes en heures et arrondis par l’ouvrage.

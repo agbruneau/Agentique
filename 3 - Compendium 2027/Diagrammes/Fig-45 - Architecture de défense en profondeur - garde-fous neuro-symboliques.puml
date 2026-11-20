@@ -6,6 +6,9 @@ top to bottom direction
 skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
+skinparam nodesep 22
+skinparam ranksep 18
+skinparam linetype polyline
 skinparam rectangle {
   BackgroundColor #FFFFFF
   BorderColor #334155
@@ -51,7 +54,7 @@ rectangle "2. Garde-Fous Déterministes Hors du LLM\n(Architecture PEP / PDP Neu
   ]
 
   PEP -[#166534]down-> PDP : (< 1,5 ms)
-  PDP -[#166534]up-> PEP
+  PDP -[#166534,norank]up-> PEP
 }
 
 rectangle "3. Exécution Confinée (AAIF OpenSandbox)\n(Isolation Matérielle & Zéro Egress par Défaut)" as OpenSandbox #F0FDF4;line:166534 {
@@ -75,8 +78,10 @@ rectangle "3. Exécution Confinée (AAIF OpenSandbox)\n(Isolation Matérielle & 
   MicroVM -[hidden]down-> VaultProxy
 }
 
-PlanCog -[#2563EB]right-> GardeFous
-GardeFous -[#166534]right-> OpenSandbox
+CelluleLLM -[#2563EB]right-> PEP
+PEP -[#166534]right-> MicroVM
+ZeroTrust -[hidden]right-> PDP
+PDP -[hidden]right-> VaultProxy
 
 rectangle "4. Coupe-Circuit Centralisé Multi-Nuages (SOC Kill Switch — Cible < 2 s • Plafond S-14 < 10 s)" as KillSwitch #FEF2F2;line:DC2626 {
   rectangle Detection #FFFFFF;line:DC2626 [
@@ -96,6 +101,10 @@ rectangle "4. Coupe-Circuit Centralisé Multi-Nuages (SOC Kill Switch — Cible 
   Signalisation -[#DC2626]right-> GelPurge
 }
 
-PDP <-[#DC2626]down- KillSwitch
-VaultProxy <-[#DC2626]down- KillSwitch
+ZeroTrust -[hidden]down-> Detection
+PDP -[hidden]down-> Signalisation
+VaultProxy -[hidden]down-> GelPurge
+
+Signalisation -[#DC2626,norank]-> PDP
+GelPurge -[#DC2626,norank]-> VaultProxy
 @enduml

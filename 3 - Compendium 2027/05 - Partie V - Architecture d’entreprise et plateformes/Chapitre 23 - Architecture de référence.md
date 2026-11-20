@@ -57,9 +57,7 @@ Ici, il ne s’agit plus de structurer un agent, mais de faire cohabiter des age
 | Modèles | Modèles de langage, routage, choix du fournisseur et repli | 40, 44, 46 |
 | **Plan de contrôle** (transversal) | Registre, identité, politique, observabilité, budgets | 8, 29, 30, 33, 34, 39 |
 
-D’autres découpages circulent. La Cloud Security Alliance annonce dix couches réparties en trois domaines : infrastructure, intelligence et connaissance; agentivité, environnement et exécution; gouvernance et imputabilité [10]. Le cabinet Futurum propose cinq couches
-
-(environnement d’exécution, autorité de connaissance, garde-fous de comportement, gouvernance, coordination) et trois fondations transversales [11].
+D’autres découpages circulent. La Cloud Security Alliance annonce dix couches réparties en trois domaines : infrastructure, intelligence et connaissance; agentivité, environnement et exécution; gouvernance et imputabilité [10]. Le cabinet Futurum propose cinq couches (environnement d’exécution, autorité de connaissance, garde-fous de comportement, gouvernance, coordination) et trois fondations transversales [11].
 
 Le nombre de couches varie du simple au double. Une seule propriété se retrouve partout : la gouvernance forme un groupe distinct de l’intelligence.
 
@@ -240,9 +238,7 @@ Un catalogue fournit un scénario général pour chacun de onze attributs : pré
 
 Appliquée à Luna, la méthode a notamment révélé que le composant de désensibilisation ne couvrait que le prompt de l’utilisateur; l’équipe a étendu les garde-fous à tous les composants [4]. Ce constat rejoint l’architecture de garde-fous multicouches de Shamsujjoha et de ses collègues, bâtie sur 32 études. Aucune barrière n’étant étanche, il en faut plusieurs dont les failles ne s’alignent pas, réparties selon trois axes : les qualités visées, les étapes du traitement (prompts, résultats intermédiaires, résultats finaux) et les artefacts (buts, plans, mémoire, outils, autres agents, modèles) [5].
 
-La preuve reste limitée. AgentArcEval s’appuie sur une seule étude de cas, qualitative, dont deux auteurs sont affiliés à l’éditeur du produit évalué, sans déclaration de conflit d’intérêts; les mesures citées sont des cibles, non des résultats [4]. Les auteurs des garde-fous multi
-
-couches placent quant à eux la validation opérationnelle hors du périmètre de leur article [5]. Le chapitre 32 traite de l’assurance.
+La preuve reste limitée. AgentArcEval s’appuie sur une seule étude de cas, qualitative, dont deux auteurs sont affiliés à l’éditeur du produit évalué, sans déclaration de conflit d’intérêts; les mesures citées sont des cibles, non des résultats [4]. Les auteurs des garde-fous multicouches placent quant à eux la validation opérationnelle hors du périmètre de leur article [5]. Le chapitre 32 traite de l’assurance.
 
 ## 23.9 Antipatrons
 

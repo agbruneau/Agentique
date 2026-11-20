@@ -43,7 +43,7 @@ L’infrastructure d’`Event Mesh` s’articule autour de trois substrats majeu
 > - & Schema Registry
 > - [Contrats versionnés]
 > - Valide canaux, actions
-> - et en-têtes ce_*
+> - et en-têtes ce_\*
 > - «container» Dorsale Kafka [Journal partitionné]
 > - Rétention longue, compactage et replay
 > - «container» Courtiers Solace
@@ -63,7 +63,7 @@ L’infrastructure d’`Event Mesh` s’articule autour de trois substrats majeu
 > - «container» MCP Gateway locale
 > - [Outils typés]
 > - Exécute les actions idempotentes sur SoR
-> - CloudEvent (ce_*)
+> - CloudEvent (ce_\*)
 > - Stream / poll
 > - Abonnement
 > - Contrats Fédère
@@ -244,7 +244,7 @@ Or, les mécanismes HTTP standards peinent à refléter ce goulot : l’IETF `dr
 > - Clore lot (< max.poll.interval.ms)
 > - [Capacité disponible]
 > - Réponse structurée + RateLimit (r, t)
-> - Ack + CloudEvent (ce_hopcount + 1 )
+> - Ack + CloudEvent (ce_hopcount + 1)
 
 *Fig. 31. – Séquence de confinement des pathologies réactives : anti-écho, files de réessai non bloquantes et backpressure LLM*
 
@@ -263,9 +263,7 @@ Or, les mécanismes HTTP standards peinent à refléter ce goulot : l’IETF `dr
 
 ### 8.4.1 Inversion ciblée à l’ère agentique : pourquoi le macro-plan doit rester orchestré
 
-Dans les architectures microservices déterministes inspirées du *Domain-Driven Design (DDD)*, il est courant de recommander la chorégraphie entre contextes bornés et l’orchestration à l’intérieur de chacun d’eux afin d’éviter un ESB central monolithique [155]. Toutefois, l’introduction d’acteurs cognitifs probabi
-
-listes dans des processus réglementés (octroi de crédit, triage clinique, conformité douanière ou financière) impose d’inverser cette répartition aux frontières critiques.
+Dans les architectures microservices déterministes inspirées du *Domain-Driven Design (DDD)*, il est courant de recommander la chorégraphie entre contextes bornés et l’orchestration à l’intérieur de chacun d’eux afin d’éviter un ESB central monolithique [155]. Toutefois, l’introduction d’acteurs cognitifs probabilistes dans des processus réglementés (octroi de crédit, triage clinique, conformité douanière ou financière) impose d’inverser cette répartition aux frontières critiques.
 
 AWS Prescriptive Guidance rappelle que la chorégraphie convient lorsque l’équipe maîtrise toutes les dépendances dans son périmètre, tandis que les processus franchissant plusieurs frontières organisationnelles avec exigence de suivi d’état, de délais ou de contrôle d’erreur relèvent de l’orchestration [154]. Les résultats en simulation contrôlée confirment ce découpage : à l’échelle d’un petit groupe de spécialistes (`Persona`, moins de 10 agents), la réactivité locale reste précise, alors qu’à l’échelle `Enterprise` (200 agents), la confusion de découverte pénalise l’autonomie non encadrée face à une planification structurée (`DAG Plan & Execute`) [151].
 

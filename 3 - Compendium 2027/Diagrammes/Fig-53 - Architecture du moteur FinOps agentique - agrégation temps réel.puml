@@ -2,118 +2,65 @@
 @startuml
 title Architecture du Moteur FinOps Agentique & Attribution du Cost-per-Outcome\nAgrégation Temps Réel des Coûts Complets, Disjoncteur Budgétaire par Saga et Rapprochement avec la Valeur Métier
 
-top to bottom direction
+left to right direction
 skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
-skinparam rectangle<<invis>> {
-  BackgroundColor transparent
-  BorderColor transparent
-  FontColor transparent
-  FontSize 1
-}
+skinparam Padding 8
+skinparam nodesep 22
+skinparam ranksep 32
 skinparam rectangle {
   BackgroundColor #FFFFFF
   BorderColor #334155
 }
-
-rectangle "1. Flux de Consommation (Spans OTel)" as FluxConso #F8FAFC;line:475569 {
-  rectangle InfModeles #FFFFFF;line:7C3AED [
-    **Inférence Modèles (LLM & SLM)**
-    Jetons entrée, sortie & raisonnement
-    Remise lecture KV-cache (-75 % à -90 %)
-  ]
-  rectangle OutilsMCP #FFFFFF;line:166534 [
-    **Outils MCP & Crédits SaaS Tiers**
-    API tarifées, exécution OpenSandbox, CUA
-  ]
-  rectangle MemoireEtat #FFFFFF;line:C2410C [
-    **Mémoire & État Durable**
-    Indexation Graphiti, embeddings, Temporal
-  ]
-  rectangle CoutHumain #FFF7ED;line:C2410C [
-    **Coût Cognitif Humain (HOTL)**
-    Durée d'examen CIBA / A2UI × taux horaire
-    + Sagas échouées ou compensées
-  ]
-
-  InfModeles -[hidden]down-> OutilsMCP
-  OutilsMCP -[hidden]down-> MemoireEtat
-  MemoireEtat -[hidden]down-> CoutHumain
+skinparam legend {
+  BackgroundColor #F8FAFC
+  BorderColor #334155
+  FontName "Segoe UI"
 }
 
-rectangle " " as Col2 <<invis>> {
-  rectangle "2a. Disjoncteur Temps Réel (agentgateway)\nSuivi atomique Redis/Lua sur ActionEnvelope.budget" as Disjoncteur #FEF2F2;line:DC2626 {
-    rectangle Seuils #FFFFFF;line:DC2626 [
-      • < 70 % plafond : Routage nominal
-      • 70 % – 95 % : Repli forcé vers SLM économique
-      • ≥ 100 % : Arrêt propre Saga + Compensation
-      Zéro récidive de boucle non bornée la fin de semaine
-    ]
-  }
+rectangle FluxConso #F8FAFC;line:475569 [
+  **1. Flux de Consommation (Spans OTel)**
 
-  rectangle "2b. Moteur de Rapprochement FinOps\nJointure par saga.id & business.process.code" as Rapprochement #EFF6FF;line:2563EB {
-    rectangle Evenements #FFFFFF;line:2563EB [
-      **Événements de Valeur Métier (Kafka / ERP)**
-      Garantie adjugée • Panne évitée • Litige clos
-      **Exclusion des résultats annulés < 72 h**
-      Amortissement complet des essais infructueux
-    ]
-  }
+  | <#FFFFFF> **Inférence Modèles (LLM & SLM)**\nJetons entrée, sortie & raisonnement\n<color:#7C3AED>Remise lecture KV-cache (-75 % à -90 %)</color> |
 
-  Disjoncteur -[hidden]down-> Rapprochement
-}
+  | <#FFFFFF> **Outils MCP & Crédits SaaS Tiers**\nAPI tarifées, exécution OpenSandbox, CUA |
 
-rectangle "3. Pilotage Cost-per-Outcome" as Pilotage #F0FDF4;line:166534 {
-  rectangle Equation #FFFFFF;line:166534 [
-    **Équation Unitaire Nette :**
-    **CPO = Σ Coûts Complets (Succès + Échecs) / Résultats Métiers Validés Nets**
-  ]
-  rectangle Chargeback #FFFFFF;line:475569 [
-    **Refacturation Interne (Chargeback)**
-    • Imputation directe BEL / BCA / BSN
-    • Clé de répartition socle partagé
-    Comparaison continue vs coût humain
-  ]
-  rectangle Arbitrage #FFFFFF;line:475569 [
-    **Arbitrage Trimestriel Portefeuille**
-    • Distillation LLM → SLM spécialisé
-    • Rétrogradation L3 → Workflow L0
-    • Mise hors service si ROI net < 1
-  ]
+  | <#FFFFFF> **Mémoire & État Durable**\nIndexation Graphiti, embeddings, Temporal |
 
-  Equation -[hidden]down-> Chargeback
-  Chargeback -[hidden]down-> Arbitrage
-}
+  | <#FFF7ED> **Coût Cognitif Humain (HOTL)**\nDurée d'examen CIBA / A2UI × taux horaire\n<color:#C2410C>+ Sagas échouées ou compensées</color> |
+]
 
-InfModeles -[hidden]right-> Seuils
-OutilsMCP -[#2563EB]right-> Seuils
-MemoireEtat -[#2563EB]right-> Evenements
-Seuils -[#166534]right-> Equation
-Evenements -[#166534]right-> Chargeback
+rectangle Disjoncteur #FEF2F2;line:DC2626 [
+  <color:#991B1B>**2a. Disjoncteur Temps Réel (agentgateway)**</color>
+  Suivi atomique Redis/Lua sur ActionEnvelope.budget
+  | <#FFFFFF> • < 70 % plafond : Routage nominal\n<color:#B45309>• 70 % – 95 % : Repli forcé vers SLM économique</color>\n<color:#991B1B>• ≥ 100 % : Arrêt propre Saga + Compensation</color>\nZéro récidive de boucle non bornée la fin de semaine |
+]
 
-rectangle "4. Quatre Leviers Architecturaux d'Optimisation Structurelle du Cost-per-Outcome" as Leviers #F8FAFC;line:334155 {
-  rectangle Levier1 #EFF6FF;line:93C5FD [
-    **Affinité de Préfixe KV-Cache**
-    Prompts statiques en tête (> 80 % hits)
-  ]
-  rectangle Levier2 #EFF6FF;line:93C5FD [
-    **Cascade SLM → LLM Frontière**
-    Escalade uniquement sur score d'incertitude
-  ]
-  rectangle Levier3 #EFF6FF;line:93C5FD [
-    **Hygiène des Schémas MCP**
-    Chargement progressif < 12 outils actifs
-  ]
-  rectangle Levier4 #EFF6FF;line:93C5FD [
-    **Budget de Raisonnement Borné**
-    Plafond max_reasoning_tokens par tâche
-  ]
+rectangle Rapprochement #EFF6FF;line:2563EB [
+  <color:#1E3A8A>**2b. Moteur de Rapprochement FinOps**</color>
+  Jointure par saga.id & business.process.code
+  | <#FFFFFF> **Événements de Valeur Métier (Kafka / ERP)**\nGarantie adjugée • Panne évitée • Litige clos\n<color:#2563EB>**Exclusion des résultats annulés < 72 h**</color>\nAmortissement complet des essais infructueux |
+]
 
-  Levier1 -[hidden]right-> Levier2
-  Levier2 -[hidden]right-> Levier3
-  Levier3 -[hidden]right-> Levier4
-}
+rectangle Pilotage #F0FDF4;line:166534 [
+  <color:#166534>**3. Pilotage Cost-per-Outcome**</color>
 
-Evenements -[hidden]down-> Leviers
+  | <#FFFFFF> **Équation Unitaire Nette :**\n**CPO = Σ Coûts Complets (Succès + Échecs) / Résultats Métiers Validés Nets** |
+
+  | <#FFFFFF> **Refacturation Interne (Chargeback)**\n• Imputation directe BEL / BCA / BSN\n• Clé de répartition socle partagé\n<color:#2563EB>Comparaison continue vs coût humain</color> |
+
+  | <#FFFFFF> **Arbitrage Trimestriel Portefeuille**\n• Distillation LLM → SLM spécialisé\n• Rétrogradation L3 → Workflow L0\n<color:#DC2626>• Mise hors service si ROI net < 1</color> |
+]
+
+FluxConso -[#2563EB]-> Disjoncteur
+FluxConso -[#2563EB]-> Rapprochement
+Disjoncteur -[hidden]right-> Rapprochement
+Disjoncteur -[#166534]-> Pilotage
+Rapprochement -[#166534]-> Pilotage
+
+legend bottom
+  **4. Quatre Leviers Architecturaux d'Optimisation Structurelle du Cost-per-Outcome**
+  | <#EFF6FF> **Affinité de Préfixe KV-Cache**\nPrompts statiques en tête (> 80 % hits) | <#EFF6FF> **Cascade SLM → LLM Frontière**\nEscalade uniquement sur score d'incertitude | <#EFF6FF> **Hygiène des Schémas MCP**\nChargement progressif < 12 outils actifs | <#EFF6FF> **Budget de Raisonnement Borné**\nPlafond max_reasoning_tokens par tâche |
+endlegend
 @enduml

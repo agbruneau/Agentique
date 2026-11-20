@@ -14,7 +14,7 @@ rectangle TableIso #FFFFFF;line:FFFFFF [
   |<#EDE8F5> Code généré par l’agent |<#EDE8F5> Code généré par l’agent |<#EDE8F5> Code généré par l’agent |<#EDE8F5> Module compilé en Wasm |
   |<#FEF3DC> Espaces de noms, cgroups |<#FEF3DC> Noyau applicatif en espace\nutilisateur (Sentry) |<#FEF3DC> Noyau invité dédié |<#FEF3DC> Environnement sans autorité\nambiante (capacités) |
   |<#FFFFFF> <color:#9C2F39>- - - - - - - - - - - - - - - - - -</color> |<#FFFFFF> <color:#9C2F39>- - - - frontière d’isolation principale - - - -</color> |<#FFFFFF> <color:#9C2F39>- - - - - - - - - - - - - - - - - -</color> |<#FFFFFF> <color:#9C2F39>- - - - - - - - - - - - - - - - - -</color> |
-  |<#E6EBF1> Noyau de l’hôte\nPARTAGÉ |<#E6EBF1> Noyau de l’hôte\nappels système filtrés\n(seccomp) |<#FEF3DC> VMM minimal + jailer\n----\nNoyau hôte + KVM |<#E6EBF1> Processus hôte distinct\net noyau |
+  |<#E6EBF1> Noyau de l’hôte\nPARTAGÉ |<#E6EBF1> Noyau de l’hôte\nappels système filtrés\n(seccomp) |<#FEF3DC> VMM minimal + jailer\n<back:#E6EBF1>  Noyau hôte + KVM  </back> |<#E6EBF1> Processus hôte distinct\net noyau |
   |<#CBD5E1> Matériel |<#CBD5E1> Matériel |<#CBD5E1> Matériel (virtualisation) |<#CBD5E1> Matériel |
   |<#FCE8EB> <color:#9C2F39>**Interdit pour le code non fiable**</color> |<#FEF3DC> <color:#B45309>**Admis; option GPU avec réserves**</color> |<#E6F4EA> <color:#28774E>**Par défaut (Kata : Kubernetes)**</color> |<#E6F0FA> <color:#1B5E9E>**Admis : greffons et fonctions**</color> |
 ]

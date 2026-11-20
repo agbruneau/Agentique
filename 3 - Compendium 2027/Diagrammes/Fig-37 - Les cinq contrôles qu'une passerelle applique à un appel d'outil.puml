@@ -1,0 +1,62 @@
+' Fig. 37. – Les cinq contrôles qu'une passerelle applique à un appel d'outil : l'appel traverse les cinq avant d'atteindre l'outil, et la réponse repasse par l'inspection avant son retour à l'agent. Le regroupement en cinq contrôles est une grille de lecture tirée du brouillon de Microsoft et de la documentation des produits, pas un résultat éprouvé.
+@startuml
+left to right direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam nodesep 20
+skinparam ranksep 24
+skinparam rectangle {
+  BackgroundColor #FFFFFF
+  BorderColor #2563EB
+}
+
+rectangle "**Agent**" as Agent #EFF6FF;line:2563EB
+
+rectangle "PASSERELLE" as PASSERELLE #FFFFFF;line:2563EB;line.dashed {
+  rectangle Identite #EFF6FF;line:2563EB [
+    **Identité**
+    Jeton émis pour
+    ce destinataire
+  ]
+  rectangle Autorisation #EFF6FF;line:2563EB [
+    **Autorisation**
+    **par outil**
+    Outil permis à
+    cet appelant
+  ]
+  rectangle Approbation #EFF6FF;line:2563EB [
+    **Approbation**
+    Accord humain
+    exigé ou non
+  ]
+  rectangle Quota #EFF6FF;line:2563EB [
+    **Quota et**
+    **budget**
+    Débit ou enveloppe de
+    l'appelant
+  ]
+  rectangle Inspection #EFF6FF;line:2563EB [
+    **Inspection des**
+    **contenus**
+    Arguments,
+    réponse et définition de
+    l'outil
+  ]
+
+  Identite -[#1E293B]-> Autorisation
+  Autorisation -[#1E293B]-> Approbation
+  Approbation -[#1E293B]-> Quota
+  Quota -[#1E293B]-> Inspection
+}
+
+rectangle "**Outil**" as Outil #F8FAFC;line:475569
+
+Agent -[#1E293B]-> Identite
+Inspection -[#1E293B]-> Outil
+
+Outil -[#64748B,norank]-> Inspection
+Inspection -[#64748B,norank]-> Agent : Réponse balayée avant son retour à l'agent
+
+caption **Toute erreur vaut refus · Chaque décision laisse une trace d'audit**
+@enduml

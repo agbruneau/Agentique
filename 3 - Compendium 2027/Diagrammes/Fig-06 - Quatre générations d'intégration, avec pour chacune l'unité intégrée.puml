@@ -4,28 +4,51 @@ top to bottom direction
 skinparam shadowing false
 skinparam roundcorner 8
 skinparam defaultFontName "Segoe UI"
+skinparam nodesep 22
+skinparam ranksep 14
+skinparam linetype ortho
+skinparam rectangle<<invis>> {
+  BackgroundColor transparent
+  BorderColor transparent
+  FontColor transparent
+  FontSize 1
+}
+
+rectangle " " as H0 <<invis>>
+rectangle "<color:#2563EB>**EAI**</color>" as H1 #FFFFFF;line:FFFFFF
+rectangle "<color:#2563EB>**SOA**</color>" as H2 #FFFFFF;line:FFFFFF
+rectangle "<color:#2563EB>**API**</color>" as H3 #FFFFFF;line:FFFFFF
+rectangle "<color:#2563EB>**EDA**</color>" as H4 #FFFFFF;line:FFFFFF
+H0 -[hidden]right-> H1
+H1 -[hidden]right-> H2
+H2 -[hidden]right-> H3
+H3 -[hidden]right-> H4
 
 rectangle "**Unité intégrée**" as LU #FFFFFF;line:FFFFFF
-rectangle "**EAI**\n\n**Le message**" as U1 #EFF6FF;line:2563EB
-rectangle "**SOA**\n\n**Le service**" as U2 #EFF6FF;line:2563EB
-rectangle "**API**\n\n**La ressource**" as U3 #EFF6FF;line:2563EB
-rectangle "**EDA**\n\n**L'événement**" as U4 #EFF6FF;line:2563EB
+rectangle "**Le message**" as U1 #EFF6FF;line:2563EB
+rectangle "**Le service**" as U2 #EFF6FF;line:2563EB
+rectangle "**La ressource**" as U3 #EFF6FF;line:2563EB
+rectangle "**L'événement**" as U4 #EFF6FF;line:2563EB
+LU -[hidden]right-> U1
+U1 -[hidden]right-> U2
+U2 -[hidden]right-> U3
+U3 -[hidden]right-> U4
 
 rectangle "**Forme du contrat**" as LC #FFFFFF;line:FFFFFF
 rectangle "Formats et canaux\nconvenus" as C1 #F8FAFC;line:64748B
 rectangle "Description de\nservice, politiques" as C2 #F8FAFC;line:64748B
 rectangle "Description\nd'interface HTTP" as C3 #F8FAFC;line:64748B
 rectangle "Attributs de contexte" as C4 #F8FAFC;line:64748B
-
-LU -[hidden]right-> U1
-U1 -[hidden]right-> U2
-U2 -[hidden]right-> U3
-U3 -[hidden]right-> U4
-
 LC -[hidden]right-> C1
 C1 -[hidden]right-> C2
 C2 -[hidden]right-> C3
 C3 -[hidden]right-> C4
+
+H0 -[hidden]down-> LU
+H1 -[hidden]down-> U1
+H2 -[hidden]down-> U2
+H3 -[hidden]down-> U3
+H4 -[hidden]down-> U4
 
 LU -[hidden]down-> LC
 U1 -[#94A3B8]down-> C1
@@ -34,8 +57,9 @@ U3 -[#94A3B8]down-> C3
 U4 -[#94A3B8]down-> C4
 
 rectangle "//Des générations qui se chevauchent : un centre de gravité, pas une succession stricte//" as Note #FFFFFF;line:FFFFFF
-
+C1 -[hidden]down-> Note
 C2 -[hidden]down-> Note
 C3 -[hidden]down-> Note
+C4 -[hidden]down-> Note
 
 @enduml

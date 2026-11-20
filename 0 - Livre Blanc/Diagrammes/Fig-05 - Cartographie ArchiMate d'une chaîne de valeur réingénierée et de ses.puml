@@ -26,7 +26,7 @@ package "Capacités mobilisées" {
 
 vs ..|> goal : réalise
 proc ..|> vs : matérialise
-Rel_Assignment_Right(gest, proc, "supervise")
+Rel_Assignment(gest, proc, "supervise")
 
 triage --> orch : contrat
 orch --> gest : escalade
@@ -37,7 +37,7 @@ orch --> cap2 : orchestre
 triage --> cap1 : augmente
 
 vs *-- cap1 : mobilise
-cap2 --> vs : mobilise
-cap3 --> vs : mobilise
+vs <-- cap2 : mobilise
+vs <-- cap3 : mobilise
 
 @enduml

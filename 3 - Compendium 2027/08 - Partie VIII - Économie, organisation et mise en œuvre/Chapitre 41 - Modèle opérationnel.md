@@ -157,9 +157,7 @@ La recherche suggère une quatrième compétence, la métaconnaissance [9] : sav
 
 L’expertise se construit en faisant le travail d’entrée : l’analyste apprend en analysant. Si les agents absorbent ce travail, le gain de productivité d’aujourd’hui peut devenir un déficit de jugement demain [2]. Or le jugement est précisément ce que les rôles de supervision exigent.
 
-Le modèle opérationnel doit donc prévoir comment se forme un superviseur qui n’a jamais exécuté la tâche supervisée. McKinsey avance trois réponses : la pratique délibérée et la rétroaction à la place du travail d’entrée disparu, des gestionnaires qui coordonnent moins et font davantage exercer un jugement à conséquences croissantes, et des cheminements
-
-qui récompensent la maîtrise d’un métier et l’orchestration d’agents plutôt que la taille de l’équipe dirigée [2].
+Le modèle opérationnel doit donc prévoir comment se forme un superviseur qui n’a jamais exécuté la tâche supervisée. McKinsey avance trois réponses : la pratique délibérée et la rétroaction à la place du travail d’entrée disparu, des gestionnaires qui coordonnent moins et font davantage exercer un jugement à conséquences croissantes, et des cheminements qui récompensent la maîtrise d’un métier et l’orchestration d’agents plutôt que la taille de l’équipe dirigée [2].
 
 ### Former par rôle
 
@@ -281,8 +279,7 @@ Source ajoutée le 14 novembre 2026 :
 - La recherche citée en 41.2 et 41.3 précède les agents à base de modèle de langage ou porte sur des assistants. Sa transposition aux agents autonomes est une hypothèse de ce chapitre.
 - Aucune étude évaluée par les pairs n’a été trouvée sur le nombre d’agents qu’une personne peut superviser, ni sur l’efficacité comparée d’un centre d’excellence et d’un modèle fédéré.
 - Le lien entre travail d’entrée et formation de l’expertise (41.5) relève de la connaissance générale et de l’argument de [2], non d’une mesure.
-- La sous-section « Emploi et perte de pratique » (41.5) date du 14 novembre 2026. Elle n’apporte aucune mesure nouvelle sur l’emploi : elle renvoie à la section 41.6 pour les
-  effectifs déclarés et à la section 48.8 pour la productivité des assistants, et repose, pour la perte de pratique, sur un article de position [12].
+- La sous-section « Emploi et perte de pratique » (41.5) date du 14 novembre 2026. Elle n’apporte aucune mesure nouvelle sur l’emploi : elle renvoie à la section 41.6 pour les effectifs déclarés et à la section 48.8 pour la productivité des assistants, et repose, pour la perte de pratique, sur un article de position [12].
 - Les tableaux de 41.4 et de 41.7 sont des synthèses de ce chapitre.
 
 **MISE EN ŒUVRE — Modèle opérationnel cible, facteur humain (HOTL) et prospective 2028–2030**
@@ -298,9 +295,7 @@ SYNTHÈSE EXÉCUTIVE
 
 ## 41.8 Organisation Hub-and-Spoke : centre d’excellence agentique, propriétaires métiers nommés et tandem RH-IT
 
-Les deux défaillances de la section 41.7 se reconnaissent à des symptômes précis. Dans un laboratoire central éloigné des opérations d’usine, de souscription ou de logistique, la file d’attente dépasse neuf mois en deux trimestres, l’équipe maîtrise mal les cas limites de SAP ou Guidewire et les directions métiers contournent le blocage en achetant clandestinement des agents SaaS non gouvernés. Dans la décentralisation sans socle partagé d’identité, d’ontologie ni de FinOps, cinq départements recodent cinq connecteurs incompatibles vers
-
-le même référentiel client et, lors d’un incident critique, l’auteur initial du prompt a changé de poste depuis des mois sans successeur désigné.
+Les deux défaillances de la section 41.7 se reconnaissent à des symptômes précis. Dans un laboratoire central éloigné des opérations d’usine, de souscription ou de logistique, la file d’attente dépasse neuf mois en deux trimestres, l’équipe maîtrise mal les cas limites de SAP ou Guidewire et les directions métiers contournent le blocage en achetant clandestinement des agents SaaS non gouvernés. Dans la décentralisation sans socle partagé d’identité, d’ontologie ni de FinOps, cinq départements recodent cinq connecteurs incompatibles vers le même référentiel client et, lors d’un incident critique, l’auteur initial du prompt a changé de poste depuis des mois sans successeur désigné.
 
 ### Centre d’excellence et cellules métiers
 
@@ -361,7 +356,7 @@ Le modèle fédéré de la section 41.7 prend ici la forme Hub-and-Spoke : l’i
 
 *Fig. 54. – Modèle opérationnel cible Hub-and-Spoke : Centre d’Excellence Agentique, tandem RH-IT, cellules métiers fédérées et supervision HOTL.*
 
-1. **Le *Hub*, centre d’excellence agentique** : une équipe de douze à vingt-cinq spécialistes (pour un groupe de 10 000 à 20 000 personnes), qui ne code pas la logique métier des divisions. Elle livre des chemins pavés : exploitation du moteur d’exécution durable (Temporal / Restate), administration d’agentgateway et du registre OASF/AIMS, gouvernance ontologique (Apache Ossie), harnais d’évaluation CI/CD pass𝑘, politiques globales Cedar/OPA et pilotage FinOps IA (capacités GPU/API, routage SLM/LLM, refacturation interne au *Cost-per-Outcome*).
+1. **Le *Hub*, centre d’excellence agentique** : une équipe de douze à vingt-cinq spécialistes (pour un groupe de 10 000 à 20 000 personnes), qui ne code pas la logique métier des divisions. Elle livre des chemins pavés : exploitation du moteur d’exécution durable (Temporal / Restate), administration d’agentgateway et du registre OASF/AIMS, gouvernance ontologique (Apache Ossie), harnais d’évaluation CI/CD pass^𝑘, politiques globales Cedar/OPA et pilotage FinOps IA (capacités GPU/API, routage SLM/LLM, refacturation interne au *Cost-per-Outcome*).
 2. **Les *Spokes*, cellules métiers fédérées** : installée dans chaque division, la cellule réunit experts métiers, ingénieurs d’intégration MCP/orchestration, curateur d’ontologie locale et superviseurs HOTL. Avec les gabarits certifiés du *Hub*, elle livre un agent spécialiste homologué en quelques semaines. Sur le plan économique, la relation entre le *Hub* et les *Spokes* passe en six mois d’une simple visibilité des coûts (*Showback*) à une refacturation analytique directe (*Chargeback*) : le *Hub* absorbe le coût fixe du socle mutualisé, tandis que chaque *Spoke* paie mensuellement ses exécutions réelles au *Cost-per-Outcome*, ce qui incite les métiers à préférer les SLM spécialisés à des appels inutiles à des modèles frontières coûteux.
 
 ### Propriétaire métier nominatif et tandem RH–IT
@@ -441,7 +436,7 @@ La console A2UI et le routeur d’escalade appliquent quatre règles, pour que l
 
 𝑁_{max}^{quart} = ⌊(𝑇_{effectif} ⋅ 𝜂_{vig}) / 𝑡_{min analyse}⌋
 
-Pour 𝑇effectif = 360 min, un coefficient de maintien de vigilance 𝜂vig = 0, 65 et un examen sérieux incompressible 𝑡_{min analyse} = 7 min, la charge maximale s’établit à 33 dossiers complexes par quart. Au-delà, le système met les sagas non urgentes en file durable plutôt que de presser l’examen. Ce plafond calculé va au-delà de ce que retient l’exposé : aucune norme publiée ne fixe la charge d’un superviseur, et la supervision se dimensionne selon la charge mesurée d’exceptions et d’approbations (section 41.4).
+Pour 𝑇_{effectif} = 360 min, un coefficient de maintien de vigilance 𝜂_{vig} = 0,65 et un examen sérieux incompressible 𝑡_{min analyse} = 7 min, la charge maximale s’établit à 33 dossiers complexes par quart. Au-delà, le système met les sagas non urgentes en file durable plutôt que de presser l’examen. Ce plafond calculé va au-delà de ce que retient l’exposé : aucune norme publiée ne fixe la charge d’un superviseur, et la supervision se dimensionne selon la charge mesurée d’exceptions et d’approbations (section 41.4).
 
 - **Règle 4 — Tests canaris d’attention** : la plateforme insère au hasard (3 à 5 % du volume) des dossiers synthétiques plausibles qui contiennent une anomalie subtile connue d’avance (garantie échue la veille, numéro de série discordant), afin de mesurer l’étanchéité réelle du contrôle humain. Si l’interface A2UI les présente à l’identique d’un dossier réel (*aveugle* côté opérateur), leur enveloppe Temporal porte un scellé `dryRunCanary` bloqué sur agentgateway, de sorte qu’une approbation accidentelle ne déclenche jamais d’écriture ni de virement effectif dans un système d’enregistrement (*System of Record*).
 
@@ -595,9 +590,7 @@ Pour faire coopérer un modèle robotique VLA adaptatif avec des opérateurs hum
 
 ### Vers la partie IX
 
-Une fois la fabrique interne en régime nominal, deux chantiers s’ouvrent en partie IX, après le plan de données d’inférence du chapitre 44. Le premier (chapitres 45 et 46) franchit les frontières de confiance légale, de juridiction infonuagique et de connectivité permanente : interconnecter les agents à ceux de centaines de partenaires B2B par des espaces de données régulés (Dataspace EDC / ODRL et identité vLEI) sans divulguer ni prix de réserve ni marges internes; protéger la souveraineté cognitive face aux lois extraterritoriales par des enclaves matérielles GPU TEE et la reprise après sinistre cognitif (Cognitive DR); opérer en
-
-coupure réseau totale sur des sites industriels distants ou robotisés (CRDT, pont ROS 2 sous enveloppe matérielle Simplex).
+Une fois la fabrique interne en régime nominal, deux chantiers s’ouvrent en partie IX, après le plan de données d’inférence du chapitre 44. Le premier (chapitres 45 et 46) franchit les frontières de confiance légale, de juridiction infonuagique et de connectivité permanente : interconnecter les agents à ceux de centaines de partenaires B2B par des espaces de données régulés (Dataspace EDC / ODRL et identité vLEI) sans divulguer ni prix de réserve ni marges internes; protéger la souveraineté cognitive face aux lois extraterritoriales par des enclaves matérielles GPU TEE et la reprise après sinistre cognitif (Cognitive DR); opérer en coupure réseau totale sur des sites industriels distants ou robotisés (CRDT, pont ROS 2 sous enveloppe matérielle Simplex).
 
 Le second (chapitre 47) applique la fabrique gouvernée au système d’information lui-même : décapsuler les cœurs patrimoniaux RPG/COBOL par une usine logicielle à séparation des devoirs (Agentic SDLC), protéger automatiquement les contrats de données et les SLO d’exploitation (Agentic DataOps et SRE autonome), et réduire trimestre après trimestre les coûts d’inférence par compilation déclarative et distillation continue LLM → SLM.
 

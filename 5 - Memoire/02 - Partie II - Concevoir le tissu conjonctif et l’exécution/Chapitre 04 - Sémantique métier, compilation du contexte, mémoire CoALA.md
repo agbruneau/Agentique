@@ -12,9 +12,7 @@ Au-delà des registres de schémas (`C26 § 2.2–2.4`), deux agents partageant 
 
 Une dissonance interne du corpus doit ici être tranchée ouvertement. En `C27 § 12.13` (p. 250), l’`ADR-009` (`[S]`, reprise dans `PRR G-09`) écarte la branche `0.3.0.dev0` (impropre à la production, `§ 12.4`) et retient `Apache Ossie` `0.1.1` (format en incubation sans moteur depuis juin 2026). Or l’Extrait 12.1 (p. 240) affiche une version `"1.0.0"` inexistante.
 
-Aussi `PD28 M-13` généralise-t-il `ADR-009` dans `DEC-003`. L’institution exige un référentiel sémantique déclaratif versionné comme du code, indépendant du moteur analytique, avec médiation
-
-canonique et `60 jours` de coexistence (`SIG-110`) P : PRI-008 P : CAP-015 P : CAP-016 P : DEC-003 E : EXIG-INT-02 E : EXIG-INT-13 E : EXIG-INT-14.
+Aussi `PD28 M-13` généralise-t-il `ADR-009` dans `DEC-003`. L’institution exige un référentiel sémantique déclaratif versionné comme du code, indépendant du moteur analytique, avec médiation canonique et `60 jours` de coexistence (`SIG-110`) P : PRI-008 P : CAP-015 P : CAP-016 P : DEC-003 E : EXIG-INT-02 E : EXIG-INT-13 E : EXIG-INT-14.
 
 En amont, des « données prêtes pour les agents » (`C27 ch. 15`) exigent quatre garanties cumulatives. D’abord, chaque champ, unité et règle de calcul relève d’un propriétaire identifié E : EXIG-INT-12 E : EXIG-INT-19. Ensuite, un sas *Write-Audit-Publish* valide fraîcheur et intégrité statistique avant exposition, au-delà d’un simple `ttlMs` (`C27 § 15.2`, `PRR F-13`) P : CAP-020 P : DEC-010 P : POR-005. Troisièmement, le **filtrage** `ACL` **pré-récupération** s’exécute sous l’identité du mandant propagée dans chaque appel (`ADR-008` maintenue) E : EXIG-ARC-02 E : EXIG-ARC-16. Ses droits forment un plafond strict **sans repli silencieux vers un compte de service**, vérifié par tests actifs sur chaque serveur `MCP` d’entrepôt (`C27 § 15.3–15.4`). Quatrièmement, chaque actif reçoit dès l’ingestion son étiquette immuable d’entité juridique, de finalité consentie et de prohibition inter-filiales P : PRI-010 P : CAP-021 P : PEX-041 E : EXIG-CON-06.
 
@@ -65,10 +63,10 @@ Selon `CAD26 § 5.5` (`Figure 4`, `Tableau 13`), la mémoire longue est gouvern�
 
 *Fig. 4. – Architecture des quatre mémoires CoALA, pipeline déterministe de compilation du contexte (KV-cache, ACL amont) et couche anticorruption patrimoniale (EBCDIC/COMP-3 Decimal exact) et périphérique OT.*
 
-- **Mémoire de travail (**`CAD26` **C2) :** état et sous-objectifs persistés hors processus à chaque transition dans un magasin chiffré E : EXIG-ARC-05 E : EXIG-ARC-06 E : EXIG-ORC-11.
-- **Mémoire épisodique (**`CAD26` **C5) :** résumés structurés horodatés (zéro transcription brute), isolés **par locataire, mandant et serveur** `MCP`, avec expiration par entrée E : EXIG-ARC-22 E : EXIG-ARC-23.
-- **Mémoire sémantique (**`CAD26` **C5) :** index hybrides et graphes métiers filtrés `ACL` en lecture et expirant avec la source E : EXIG-ARC-16 E : EXIG-ARC-23.
-- **Mémoire procédurale (**`CAD26` **C3) :** invites système et `Agent Skills` signés sans aucune modification autonome en production (`PC4` `[S]`) P : CAP-018 E : EXIG-ARC-24.
+- **Mémoire de travail (`CAD26` C2) :** état et sous-objectifs persistés hors processus à chaque transition dans un magasin chiffré E : EXIG-ARC-05 E : EXIG-ARC-06 E : EXIG-ORC-11.
+- **Mémoire épisodique (`CAD26` C5) :** résumés structurés horodatés (zéro transcription brute), isolés **par locataire, mandant et serveur** `MCP`, avec expiration par entrée E : EXIG-ARC-22 E : EXIG-ARC-23.
+- **Mémoire sémantique (`CAD26` C5) :** index hybrides et graphes métiers filtrés `ACL` en lecture et expirant avec la source E : EXIG-ARC-16 E : EXIG-ARC-23.
+- **Mémoire procédurale (`CAD26` C3) :** invites système et `Agent Skills` signés sans aucune modification autonome en production (`PC4` `[S]`) P : CAP-018 E : EXIG-ARC-24.
 
 Contre l’empoisonnement mémoriel (`OWASP ASI06`, `C26 S-069` ; `C27 § 14.5`), **aucun magasin de mémoire longue n’est partagé en écriture** entre agents ou serveurs `MCP` E : EXIG-ARC-25. Chaque écriture épisodique valide un schéma excluant le texte brut externe et propage l’étiquette « contenu non fiable ». Tout souvenir relu demeure incapable d’autoriser seul une action sensible E : EXIG-SEC-03 E : EXIG-SEC-04. Enfin, un **graphe bi-temporel** dissocie validité métier (`valid_from` / `valid_to`) et ingestion système. Il reconstitue l’état exact connu lors d’une décision sous `BSIF E-23`, tout en assurant la **destruction ou l’anonymisation sélective vérifiable** exigée par l’**article 23 de la Loi 25** (`C27 § 14.6`) sans briser les index adjacents P : CAP-019 P : DEC-004 P : POR-005 E : EXIG-CON-10.
 
@@ -115,6 +113,6 @@ Spécifications AS
 
 ## 4.6 Limites et renvois
 
-- **Coquille** `CAD26`**, dissonance** `ADR-009` **et cas fictif exclu.** `CAD26` (pp. 258, 342) porte la coquille `EXIG-MEM-01` au lieu d’`EXIG-ARC-22` (p. 47). `ADR-009` (épinglant en `C27` p. 250 `Apache Ossie` `0.1.1` en incubation sans moteur, face à l’Extrait 12.1 p. 240 en `"1.0.0"` et à `0.3.0.dev0` impropre à la production en `§ 12.4`, et reprise en `PRR G-09`) est généralisée par `DEC-003`. Les chiffres fictifs du *Groupe Boréal Inc.* (`C27 § 14.10, 25.10, 28.10`) sont exclus comme sans valeur probante.
-- **Textes** `statut F` **et réserve** `OT`**.** `FDX`, `ACORD` et `CSIO` restent au `statut F` (`PD28 M-4 § 4.5`, aucun `[N]`), et les ponts `MCP`/`OPC UA` (`ADR-017`) n’ont pas d’essai indépendant sur équipement réel.
+- **Coquille `CAD26`, dissonance `ADR-009` et cas fictif exclu.** `CAD26` (pp. 258, 342) porte la coquille `EXIG-MEM-01` au lieu d’`EXIG-ARC-22` (p. 47). `ADR-009` (épinglant en `C27` p. 250 `Apache Ossie` `0.1.1` en incubation sans moteur, face à l’Extrait 12.1 p. 240 en `"1.0.0"` et à `0.3.0.dev0` impropre à la production en `§ 12.4`, et reprise en `PRR G-09`) est généralisée par `DEC-003`. Les chiffres fictifs du *Groupe Boréal Inc.* (`C27 § 14.10, 25.10, 28.10`) sont exclus comme sans valeur probante.
+- **Textes `statut F` et réserve `OT`.** `FDX`, `ACORD` et `CSIO` restent au `statut F` (`PD28 M-4 § 4.5`, aucun `[N]`), et les ponts `MCP`/`OPC UA` (`ADR-017`) n’ont pas d’essai indépendant sur équipement réel.
 - **Renvois aux 4 PDF :** `C26` ch. 2, 5, 34, 43 (`PC4` `[S]`) ; `CAD26` § 5.2 (C5–C6), § 5.5 ; `C27` § 3.3, ch. 12–15, 25, 28 ; `PD28` `M-4` § 4.5, `M-10`, `M-13`.

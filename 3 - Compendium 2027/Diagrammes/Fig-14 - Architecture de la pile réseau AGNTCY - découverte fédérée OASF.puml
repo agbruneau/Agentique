@@ -6,6 +6,8 @@ top to bottom direction
 skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
+skinparam nodesep 22
+skinparam ranksep 16
 
 rectangle "Plan de Découverte Sémantique et d'Attestation de Provenance (Control Plane)" as CP #F8FAFC;line:1E293B {
   rectangle OASF #FFFFFF;line:1E293B [
@@ -26,8 +28,8 @@ rectangle "Plan de Découverte Sémantique et d'Attestation de Provenance (Contr
     Ancrage DNS/TLS sans registre opaque
     Filtrage politiques DMZ B2B
   ]
-  OASF -[#1E293B]-> DHT
-  DHT <-[#2563EB]-> ANP
+  OASF -[#1E293B]right-> DHT
+  DHT <-[#2563EB]right-> ANP
 }
 
 rectangle "Plan de Transport Temps Réel SLIM et Chiffrement de Groupe IETF MLS (Data Plane)" as DP #EFF6FF;line:2563EB {
@@ -63,13 +65,15 @@ rectangle "Plan de Transport Temps Réel SLIM et Chiffrement de Groupe IETF MLS 
     Rotation d'époque en O(log N) • Forward Secrecy (FS) & Post-Compromise Security (PCS) contre l'interception différée
   ]
 
-  DomA <-[#2563EB]-> Relais
-  Relais <-[#2563EB]-> DomB
+  DomA <-[#2563EB]right-> Relais
+  Relais <-[#2563EB]right-> DomB
   DomA -[hidden]down-> MLS
   Relais -[hidden]down-> MLS
   DomB -[hidden]down-> MLS
 }
 
-CP -[hidden]down-> DP
+OASF -[hidden]down-> DomA
+DHT -[hidden]down-> Relais
+ANP -[hidden]down-> DomB
 
 @enduml

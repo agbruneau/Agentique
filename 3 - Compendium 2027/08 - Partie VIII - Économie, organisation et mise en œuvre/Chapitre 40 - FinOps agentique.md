@@ -184,9 +184,7 @@ La dernière colonne est un calcul fait pour ce chapitre, non un résultat de l�
 
 ### La valeur de la tâche borne l’architecture
 
-Anthropic tire de ses mesures une règle simple : un système multi-agents ne se justifie que pour des tâches dont la valeur paie le surcroît de performance [6]. Dans l’une de ses évaluations, la consommation de jetons expliquait à elle seule 80 % de la variance de
-
-performance. Dépenser plus de jetons achète de la performance; reste à savoir ce que vaut le point supplémentaire.
+Anthropic tire de ses mesures une règle simple : un système multi-agents ne se justifie que pour des tâches dont la valeur paie le surcroît de performance [6]. Dans l’une de ses évaluations, la consommation de jetons expliquait à elle seule 80 % de la variance de performance. Dépenser plus de jetons achète de la performance; reste à savoir ce que vaut le point supplémentaire.
 
 ### Trois précautions
 
@@ -211,9 +209,7 @@ Puisque l’entrée domine, les leviers rentables agissent sur ce que le modèle
 
 ### Le cache d’abord
 
-Le cache de prompts est le seul levier sans effet sur la qualité : le modèle reçoit le même contexte. D’après la page d’Anthropic, il devient rentable dès la première relecture pour une durée de cinq minutes, et dès la deuxième pour une heure [7]. Une boucle agentique, qui renvoie le même préfixe à chaque tour, en est le cas d’usage idéal. La condition est de
-
-construction : le stable en tête, le variable à la fin. C’est pourquoi MCP recommande aux serveurs un ordre d’outils déterministe (chapitre 5).
+Le cache de prompts est le seul levier sans effet sur la qualité : le modèle reçoit le même contexte. D’après la page d’Anthropic, il devient rentable dès la première relecture pour une durée de cinq minutes, et dès la deuxième pour une heure [7]. Une boucle agentique, qui renvoie le même préfixe à chaque tour, en est le cas d’usage idéal. La condition est de construction : le stable en tête, le variable à la fin. C’est pourquoi MCP recommande aux serveurs un ordre d’outils déterministe (chapitre 5).
 
 ### Le routage ensuite
 
@@ -265,7 +261,6 @@ Pages primaires lues le 11 novembre 2026 :
 5. FinOps Foundation — FinOps for AI Overview, mise à jour du 28 octobre 2026
 6. Anthropic — How we built our multi-agent research system, 13 juin 2025 — billet du fournisseur.
 7. Anthropic — Pricing, documentation de la plateforme
-
 8. Salesforce — Agentforce Pricing
 9. Intercom — Pricing
 10. Ong et coll. — RouteLLM: Learning to Route LLMs with Preference Data (arXiv 2406.18665) — prépublication; résumé puis extraits relus le 14 novembre 2026.
@@ -301,16 +296,14 @@ SYNTHÈSE EXÉCUTIVE
 - **Décisions architecturales structurantes** :
   1. *Irréversible à moyen terme* : Adopter le coût complet par résultat métier validé (*Cost-per-Outcome*, CPO) comme unité de gouvernance économique, en amortissant le coût des sagas avortées, des compensations et du temps de révision humaine (HOTL) sur les seuls dossiers résolus avec succès.
   2. *Structurante dès le jour 1* : Implanter dans agentgateway et dans l’`ActionEnvelope` un disjoncteur budgétaire progressif en temps réel, qui fait passer un flux vers un petit modèle (SLM) économique avant d’interrompre proprement toute saga qui atteint son plafond monétaire.
-  3. *Réversible par conception* : La répartition du trafic entre modèles frontières infonuagiques et SLM spécialisés, réarbitrée chaque trimestre selon le couple coût/constance pass5.
+  3. *Réversible par conception* : La répartition du trafic entre modèles frontières infonuagiques et SLM spécialisés, réarbitrée chaque trimestre selon le couple coût/constance pass^5.
 - **Indicateurs de gouvernance associés** : *Cost-per-Outcome* net par processus, comparé au coût humain de référence; taux de lecture du cache de préfixe (≥75 %); part des appels absorbés par des SLM (≥70 %); taux trimestriel de rationalisation du portefeuille.
 
 ## 40.7 Le prix au million de jetons et le coût complet des systèmes multi-agents
 
 Une direction financière qui budgète une initiative agentique avec la grille linéaire des copilotes de 2024 (nombre de requêtes multiplié par mille jetons) sous-estime fortement le coût réel de production en raison de la dynamique multiplicative des tours d’outils (section 40.1).
 
-Cet écart tient à la dynamique multiplicative d’une saga autonome L3/L4. Un seul événement métier déclenche un orchestrateur qui sollicite trois spécialistes A2A; chacun exécute
-
-quatre cycles *ReAct* avec huit outils MCP et du raisonnement étendu, soit de quinze à trente inférences successives, chacune relisant l’historique et les schémas d’outils (section 40.1). L’ordonnancement qui casse l’affinité du cache ou les réessais d’une API tierce font monter la dépense sans alerte.
+Cet écart tient à la dynamique multiplicative d’une saga autonome L3/L4. Un seul événement métier déclenche un orchestrateur qui sollicite trois spécialistes A2A; chacun exécute quatre cycles *ReAct* avec huit outils MCP et du raisonnement étendu, soit de quinze à trente inférences successives, chacune relisant l’historique et les schémas d’outils (section 40.1). L’ordonnancement qui casse l’affinité du cache ou les réessais d’une API tierce font monter la dépense sans alerte.
 
 > **[Figure]**
 > - Architecture du Moteur FinOps Agentique & Attribution du Cost-per-Outcome
@@ -385,19 +378,17 @@ Deux implémentations d’une même saga d’instruction de dossier, à dix éta
 
 ## 40.8 Modèle et attribution du *Cost-per-Outcome* (CPO)
 
-Une facture mensuelle brute de *« 420 millions de jetons pour 18 400 $ CAD »* ne dit pas si la plateforme crée de la richesse ou subventionne du gaspillage. L’unité d’œuvre métier
-
-auditable est le *Cost-per-Outcome* net (CPO), qui reprend le coût par résultat réussi de la section 40.5.
+Une facture mensuelle brute de *« 420 millions de jetons pour 18 400 $ CAD »* ne dit pas si la plateforme crée de la richesse ou subventionne du gaspillage. L’unité d’œuvre métier auditable est le *Cost-per-Outcome* net (CPO), qui reprend le coût par résultat réussi de la section 40.5.
 
 Un résultat métier validé n’est ni un message affiché, ni la fin technique d’un flux de travail sans exception : c’est l’accomplissement vérifié et durable de l’objectif d’affaires (garantie instruite non contestée sous 72 h, intervention préventive confirmée, facture rapprochée et comptabilisée). Pour que le coût des échecs ne soit pas masqué, le CPO net se calcule sur l’ensemble 𝒮︀ des sagas exécutées sur la période, réussies, échouées ou compensées :
 
-CPOnet = (∑_{𝑠∈𝒮︀} (𝐶_{inf}(𝑠) + 𝐶_{mcp}(𝑠) + 𝐶_{mem}(𝑠) + 𝐶_{hotl}(𝑠))) / (𝑁_{validés} − 𝑁_{annulés})
+CPO_{net} = (∑_{𝑠∈𝒮︀} (𝐶_{inf}(𝑠) + 𝐶_{mcp}(𝑠) + 𝐶_{mem}(𝑠) + 𝐶_{hotl}(𝑠))) / (𝑁_{validés} − 𝑁_{annulés})
 
-Dans cette équation, 𝐶inf(𝑠) cumule le coût exact des *spans* d’inférence (tarif plein hors cache, tarif d’amorçage et de lecture du cache, tarif de sortie couvrant génération et raisonnement). 𝐶mcp(𝑠) additionne les crédits d’outils tiers et les bacs à sable OpenSandbox, 𝐶mem(𝑠) intègre les opérations de mémoire et d’exécution durable, et 𝐶hotl(𝑠) valorise le temps réel de révision humaine au taux horaire chargé de l’approbateur. Au dénominateur, toute décision annulée ou reprise manuellement sous 72 heures (𝑁annulés) est déduite.
+Dans cette équation, 𝐶_{inf}(𝑠) cumule le coût exact des *spans* d’inférence (tarif plein hors cache, tarif d’amorçage et de lecture du cache, tarif de sortie couvrant génération et raisonnement). 𝐶_{mcp}(𝑠) additionne les crédits d’outils tiers et les bacs à sable OpenSandbox, 𝐶_{mem}(𝑠) intègre les opérations de mémoire et d’exécution durable, et 𝐶_{hotl}(𝑠) valorise le temps réel de révision humaine au taux horaire chargé de l’approbateur. Au dénominateur, toute décision annulée ou reprise manuellement sous 72 heures (𝑁_{annulés}) est déduite.
 
-- Le calcul de 𝐶inf(𝑠) comporte un piège d’instrumentation : les fournisseurs d’inférence rapportent différemment les jetons lus en cache. Certains incluent `cache_read_input_tokens` dans `input_tokens`, d’autres ne rapportent dans `input_tokens` que le reliquat non caché. La passerelle agentgateway normalise donc `gen_ai.usage.input_tokens` en volume total d’entrée avant l’export OTLP, et l’entrepôt analytique protège la soustraction par un plancher `GREATEST( — , 0)`.
+- Le calcul de 𝐶_{inf}(𝑠) comporte un piège d’instrumentation : les fournisseurs d’inférence rapportent différemment les jetons lus en cache. Certains incluent `cache_read_input_tokens` dans `input_tokens`, d’autres ne rapportent dans `input_tokens` que le reliquat non caché. La passerelle agentgateway normalise donc `gen_ai.usage.input_tokens` en volume total d’entrée avant l’export OTLP, et l’entrepôt analytique protège la soustraction par un plancher `GREATEST( — , 0)`.
 
-Hausser la constance pass5 (chapitre 34) ou couper les boucles dès la deuxième répétition stérile (chapitre 33) réduit donc le CPO net.
+Hausser la constance pass^5 (chapitre 34) ou couper les boucles dès la deuxième répétition stérile (chapitre 33) réduit donc le CPO net.
 
 ### Extrait 40.1 — `[Exécuté en CI]` · Requête SQL analytique d’attribution du *Cost-per-Outcome* sur les *spans* OpenTelemetry
 
@@ -538,7 +529,7 @@ export async function enforceSagaBudgetPolicy(
 }
 ```
 
-Quatre leviers d’architecture, dont les principes figurent à la section 40.6, réduisent structurellement de 50 à 75 % le numérateur du CPO, à constance pass5 égale :
+Quatre leviers d’architecture, dont les principes figurent à la section 40.6, réduisent structurellement de 50 à 75 % le numérateur du CPO, à constance pass^5 égale :
 
 1. **Affinité stricte du cache de préfixe** : D’après la page de prix d’Anthropic, la lecture d’un préfixe déjà en cache coûte 0,1 fois le prix d’entrée sur la plupart des modèles, et 0,05 ou 0,025 fois sur certains récents (section 40.6) : il faut pour cela bannir tout horodatage ou UUID dynamique en tête de consigne système. Constitution statique et schémas d’outils triés figés en début de contexte, plus routage par affinité d’agent, portent le taux de lecture du cache au-delà de 80 %.
 2. **Cascade asymétrique SLM → LLM frontière** : Confier 75 % des étapes atomiques (triage, extraction JSON, formatage MCP) à des SLM de 7 à 14 milliards de paramètres, affinés sur les traces d’or validées au chapitre 34, pour un vingtième du coût d’un modèle frontière.
@@ -605,7 +596,7 @@ spec:
 
 Chaque trimestre, le comité conjoint (CTO, CFO, métiers) arbitre le registre d’agents selon quatre décisions normatives :
 
-| Profil observé sur 90 jours | Constance pass5 | CPO par rapport à la référence (humain ou L0) | Décision obligatoire du comité de portefeuille |
+| Profil observé sur 90 jours | Constance pass^5 | CPO par rapport à la référence (humain ou L0) | Décision obligatoire du comité de portefeuille |
 | --- | --- | --- | --- |
 | **1. Champion stratégique** | ≥0, 95 | Gain net > 3 × et forte baisse du délai de cycle | **Industrialiser et étendre** : déploiement multi-pays et durcissement des contrats MCP |
 | **2. Efficace mais dispendieux** | ≥0, 95 | Valeur prouvée, mais coût LLM élevé à grand volume | **Distiller (LLM → SLM)** : affiner un SLM interne sur les traces d’or (-85 % de coût) |
@@ -621,7 +612,7 @@ Chaque trimestre, le comité conjoint (CTO, CFO, métiers) arbitre le registre d
 **Transformation FinOps sur T1–T2 2027** :
 
 1. **Disjoncteur par saga** : Activation universelle du disjoncteur `enforceSagaBudgetPolicy` sur agentgateway. Lors d’une panne réelle de la passerelle EDI X12 d’un transporteur, un dimanche de février, 42 sagas logistiques basculent en SLM à 0,84 $ CAD puis se mettent proprement en pause à 1,20 $ CAD : la facture totale de l’incident est contenue à 50,40 $ CAD, contre 41 000 $ CAD quatre mois plus tôt.
-2. **Cache et distillation SLM** : La normalisation des préfixes système fait passer le taux de lecture du cache de 19 % à 84,6 %, tandis que deux SLM de 14 milliards de paramètres hébergés chez BSN absorbent 76 % des appels d’inférence du groupe sans dégrader le score pass5.
+2. **Cache et distillation SLM** : La normalisation des préfixes système fait passer le taux de lecture du cache de 19 % à 84,6 %, tandis que deux SLM de 14 milliards de paramètres hébergés chez BSN absorbent 76 % des appels d’inférence du groupe sans dégrader le score pass^5.
 3. **Rationalisation du portefeuille** : La première revue de refacturation interne, en mars 2027, conduit à mettre hors service 7 agents « zombies » déficitaires, à rétrograder 4 pseudo-agents en workflows déterministes Temporal L0 (coût divisé par 400), et à réallouer l’enveloppe dégagée vers l’extension européenne de la plateforme télématique.
 
 **Scénario illustratif cible (fin T2 2027)** :
@@ -638,12 +629,12 @@ Chaque trimestre, le comité conjoint (CTO, CFO, métiers) arbitre le registre d
 - **Contexte** : L’autonomie multi-agents expose l’entreprise à une forte variance des coûts unitaires (boucles, raisonnement étendu, crédits SaaS) que les plafonds mensuels globaux ne détectent qu’après sinistre, sans corrélation avec la valeur créée.
 - **Options évaluées** :
   1. *Quotas mensuels globaux par clé d’API* : Paralyse toute une division en fin de mois lorsqu’un seul agent dérive. Rejetée.
-  2. *Sélection systématique du modèle le moins cher au million de jetons* : Dégrade pass5, multiplie réessais et escalades HOTL, et renchérit le coût complet par résultat. Rejetée.
+  2. *Sélection systématique du modèle le moins cher au million de jetons* : Dégrade pass^5, multiplie réessais et escalades HOTL, et renchérit le coût complet par résultat. Rejetée.
   3. *Gouvernance par le Cost-per-Outcome net (CPO), disjoncteur progressif par saga sur agentgateway et refacturation interne* : Protège chaque transaction en temps réel et aligne l’architecture sur la marge métier vérifiée. Retenue.
 - **Décision** : Tout flux L2–L4 doit définir un événement formel de résultat validé, imposer un plafond `maxTotalCostCad` dans son `ActionEnvelope` contrôlé par disjoncteur progressif, refacturer ses coûts complets (échecs et HOTL inclus) à sa division métier et subir un arbitrage trimestriel de portefeuille.
 - **Conséquences** :
-  - ‣ *Positives* : Risque d’emballement financier freiné, non exclu (un plafond est un frein, pas un mur : section 40.3), élimination naturelle des cas d’usage sans ROI, autofinancement du socle par les gains unitaires prouvés.
-  - ‣ *Négatives / Coûts assumés* : Instrumentation des événements de clôture métier dans les systèmes d’enregistrement et mise à jour continue du barème multi-modèles.
+  - *Positives* : Risque d’emballement financier freiné, non exclu (un plafond est un frein, pas un mur : section 40.3), élimination naturelle des cas d’usage sans ROI, autofinancement du socle par les gains unitaires prouvés.
+  - *Négatives / Coûts assumés* : Instrumentation des événements de clôture métier dans les systèmes d’enregistrement et mise à jour continue du barème multi-modèles.
 - **Condition de révision** : Révision semestrielle des barèmes fournisseurs et des seuils de distillation SLM.
 
 ### Liste de contrôle de mise en production
@@ -653,6 +644,6 @@ Chaque trimestre, le comité conjoint (CTO, CFO, métiers) arbitre le registre d
 3. **Disjoncteur progressif actif** : Chaque saga porte-t-elle un plafond `maxTotalCostCad` appliqué en ligne par agentgateway, avec repli SLM à 70 % et arrêt propre à 100 % ?
 4. **Affinité de cache vérifiée** : Les préfixes système sont-ils exempts de champs dynamiques, pour plus de 75 % de lectures en cache ?
 5. **Plafond de raisonnement borné** : Le paramètre `max_reasoning_tokens` est-il calibré par tâche plutôt que laissé sans limite ?
-6. **Cascade SLM prioritaire** : Les tâches atomiques d’extraction et de triage sont-elles servies par des SLM qualifiés en pass5 ?
+6. **Cascade SLM prioritaire** : Les tâches atomiques d’extraction et de triage sont-elles servies par des SLM qualifiés en pass^5 ?
 7. **Protection contre la double taxation SaaS** : Les connecteurs d’agents tiers excluent-ils le débit de crédits sur erreurs techniques et doublons d’idempotence ?
 8. **Rattachement de la refacturation et arbitrage** : Chaque agent possède-t-il un centre de coûts métier imputable et une revue trimestrielle planifiée ?

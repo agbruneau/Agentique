@@ -1,18 +1,16 @@
 # B Gabarit de fiche d’agent
 
-La fiche d’agent est l’entrée du registre d’entreprise décrite à la section 11.4. Ce gabarit fixe son contenu minimal et l’étape du cycle de vie où chaque champ devient exigible. Il est normatif par son contenu, pas
+La fiche d’agent est l’entrée du registre d’entreprise décrite à la section 11.4. Ce gabarit fixe son contenu minimal et l’étape du cycle de vie où chaque champ devient exigible. Il est normatif par son contenu, pas par sa forme, parce que l’EXIG-GOV-07 y renvoie (section 1.4) : tout outil de registre convient s’il conserve ces champs et leur historique.
 
-par sa forme, parce que l’EXIG-GOV-07 y renvoie (section 1.4) : tout outil de registre convient s’il conserve ces champs et leur historique.
-
-### Règles d’utilisation
+## Règles d’utilisation
 
 - **Ouverture et complétude.** La fiche s’ouvre à l’étape Proposition et se complète au fil du cycle de vie (section 11.5). Elle est complète lorsque tous les champs exigés à l’étape Pilote sont remplis, ce que vérifie le jalon qui clôt l’étape Construction et évaluation; avant cela, l’agent n’obtient aucun jeton d’exécution en production, et un pilote sur données réelles est une mise en production (section 11.5). Un agent déjà en exploitation à l’adoption du cadre reçoit une fiche minimale (champs de l’étape Proposition) sous la mesure transitoire de l’EXIG-GOV-16.
 - **Source de vérité.** Les valeurs qui commandent un contrôle (palier d’outil, seuil, plafond, portées, niveau d’autonomie) sont lues par la passerelle dans le registre et le catalogue, jamais dans ce que l’agent déclare de lui-même ni dans les annotations d’un serveur MCP (EXIG-GOV-07, EXIG-AUT-08, section 8.3). Le palier et le seuil d’un outil sont tenus au seul catalogue : la fiche ne peut fixer qu’un seuil plus strict, et la passerelle signale tout écart de palier entre la fiche et le catalogue comme un incident de réconciliation. La grandeur qu’un seuil mesure est calculée par la passerelle ou fournie par le système visé, jamais déclarée par l’agent (EXIG-AUT-13).
-- **Réévaluation.** Tout changement visé par l’EXIG-GOV-12, qui tient seule la liste des déclencheurs, entraîne une réévaluation de la classe de risque et du niveau d’autonomie avant la mise en service. Le niveau d’autonomie fonctionne comme un certificat interne qui se renouvelle à chaque changement de l’agent ou de son environnement, sans l’indépendance du tiers qui délivre le « certificat d’autonomie » de Feng et coll.**[83]**. S’il y a des RP, l’EFVP est mise à jour, comme le recommande le guide de la CAI lorsqu’un projet change**[413]**.
-- **Attestation.** Le parrain atteste périodiquement que l’agent est encore requis et que sa fiche est exacte. Le cadre exige l’attestation au moins tous les 12 mois, et tous les 6 mois pour la classe élevée (EXIG-GOV-13); à titre d’exemple, les bonnes pratiques de Microsoft Entra Agent ID prévoient que le parrain atteste tous les 6 à 12 mois que chaque agent est encore requis**[92]**. Un agent dont l’attestation est échue doit passer à l’état « suspendu » (EXIG-GOV-09).
+- **Réévaluation.** Tout changement visé par l’EXIG-GOV-12, qui tient seule la liste des déclencheurs, entraîne une réévaluation de la classe de risque et du niveau d’autonomie avant la mise en service. Le niveau d’autonomie fonctionne comme un certificat interne qui se renouvelle à chaque changement de l’agent ou de son environnement, sans l’indépendance du tiers qui délivre le « certificat d’autonomie » de Feng et coll. **[83]**. S’il y a des RP, l’EFVP est mise à jour, comme le recommande le guide de la CAI lorsqu’un projet change **[413]**.
+- **Attestation.** Le parrain atteste périodiquement que l’agent est encore requis et que sa fiche est exacte. Le cadre exige l’attestation au moins tous les 12 mois, et tous les 6 mois pour la classe élevée (EXIG-GOV-13); à titre d’exemple, les bonnes pratiques de Microsoft Entra Agent ID prévoient que le parrain atteste tous les 6 à 12 mois que chaque agent est encore requis **[92]**. Un agent dont l’attestation est échue doit passer à l’état « suspendu » (EXIG-GOV-09).
 - **Contenu exclu.** La fiche ne contient ni secret ni renseignement personnel de clients. Chaque serveur MCP a aussi une fiche au registre, qui reprend les blocs de ce gabarit qui le concernent (identification, propriétaires, données et RP, identité et portées, garde-fous, évaluation, observabilité, cycle de vie, dérogations); ses outils ont en plus leur propre entrée au catalogue (section 6.8, annexe C).
 
-### Champs de la fiche
+## Champs de la fiche
 
 *Tableau 63 — Champs de la fiche d’agent et étape où ils deviennent exigibles*
 
@@ -46,7 +44,7 @@ par sa forme, parce que l’EXIG-GOV-07 y renvoie (section 1.4) : tout outil de 
 | **Cycle de vie** | État et revues | État (proposé, conception, construction, pilote, production, suspendu, retiré), énumération commune au registre et au catalogue (annexe C, C.2); dates de mise en production, de dernière attestation et de prochaine revue; historique des versions | Proposition |
 | **Dérogations** | Dérogations en vigueur | Identifiant, exigence visée, mesures compensatoires, échéance et approbateur (section 11.6) | Dès qu’une dérogation existe |
 
-### Exemple de fiche lisible par machine
+## Exemple de fiche lisible par machine
 
 L’exemple suivant décrit un agent fictif de classe modérée, plafonné à N3. Les noms de champs sont un choix du cadre; seules comptent leur présence et leur cohérence avec le gabarit. Les personnes y sont désignées par un identifiant fictif, et les empreintes sont abrégées par « … ».
 
@@ -106,6 +104,4 @@ L’exemple suivant décrit un agent fictif de classe modérée, plafonné à N3
 }
 ```
 
-Lecture : l’agent apparie seul les factures jusqu’à 5 000 $ inclusivement, seuil inscrit au catalogue pour l’outil d’appariement, que la fiche ne reprend pas; au-delà, le contrôle calculé (EXIG-AUT-10) exige une approbation. Les paliers recopiés dans la fiche servent à la lecture : le catalogue fait foi. L’émission d’un paiement, de palier P3, exige toujours une approbation signée hors bande; c’est l’étape pivot, sans compensation, et elle porte une clé d’idempotence vérifiée par la trésorerie. Les tâches lancées par une personne ou par l’orchestrateur passent par l’échange de jetons, et le rapprochement nocturne, déclenché par planification, emploie l’identité propre de l’agent (section 9.3). `renew_on` renvoie à l’EXIG-GOV-12 au lieu d’en recopier la liste. Le niveau N3 est demandé par le parrain et approuvé par une autre personne. Les conventions OpenTelemetry sont consignées par version de référence, version émise et réglage d’adhésion
-
-(EXIG-OBS-01). Les valeurs de l’enveloppe budgétaire sont illustratives et se calibrent par mesure (section 10.6).
+Lecture : l’agent apparie seul les factures jusqu’à 5 000 $ inclusivement, seuil inscrit au catalogue pour l’outil d’appariement, que la fiche ne reprend pas; au-delà, le contrôle calculé (EXIG-AUT-10) exige une approbation. Les paliers recopiés dans la fiche servent à la lecture : le catalogue fait foi. L’émission d’un paiement, de palier P3, exige toujours une approbation signée hors bande; c’est l’étape pivot, sans compensation, et elle porte une clé d’idempotence vérifiée par la trésorerie. Les tâches lancées par une personne ou par l’orchestrateur passent par l’échange de jetons, et le rapprochement nocturne, déclenché par planification, emploie l’identité propre de l’agent (section 9.3). `renew_on` renvoie à l’EXIG-GOV-12 au lieu d’en recopier la liste. Le niveau N3 est demandé par le parrain et approuvé par une autre personne. Les conventions OpenTelemetry sont consignées par version de référence, version émise et réglage d’adhésion (EXIG-OBS-01). Les valeurs de l’enveloppe budgétaire sont illustratives et se calibrent par mesure (section 10.6).

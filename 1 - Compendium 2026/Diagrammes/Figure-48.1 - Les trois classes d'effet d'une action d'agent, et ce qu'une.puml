@@ -11,14 +11,12 @@ skinparam legendBorderColor #BBBBBB
 
 title TROIS CLASSES, ET CE QU'UNE REPRISE PRODUIT
 
-rectangle "TROIS CLASSES D'EFFET D'UNE ACTION D'AGENT" as Classes {
-  rectangle "**1  Lecture**\n\nRien : rejouer une lecture ne\nchange pas l'état du système\nd'enregistrement.\n\n<i>bornée par le coût et la fraîcheur,</i>\n<i>non par la correction</i>" as C1
-  rectangle "**2  Écriture**\n\nUn doublon, sauf si l'opération\nest idempotente.\n\n\n<i>l'idempotence est une propriété de</i>\n<i>l'outil</i>" as C2
-  rectangle "**3  Engagement**\n\nUn second engagement, que rien ne\ndéfait.\n\n\n<i>seule la compensation agit, et elle</i>\n<i>est sémantique</i>" as C3
+rectangle "**1  Lecture**\n\nRien : rejouer une lecture ne\nchange pas l'état du système\nd'enregistrement.\n\n<i>bornée par le coût et la fraîcheur,</i>\n<i>non par la correction</i>" as C1
+rectangle "**2  Écriture**\n\nUn doublon, sauf si l'opération\nest idempotente.\n\n\n<i>l'idempotence est une propriété de</i>\n<i>l'outil</i>" as C2
+rectangle "**3  Engagement**\n\nUn second engagement, que rien ne\ndéfait.\n\n\n<i>seule la compensation agit, et elle</i>\n<i>est sémantique</i>" as C3
 
-  C1 -[hidden]right- C2
-  C2 -[hidden]right- C3
-}
+C1 -[hidden]right- C2
+C2 -[hidden]right- C3
 
 legend bottom
   L'IDEMPOTENCE EST UNE PROPRIÉTÉ DE L'OUTIL, JAMAIS DU PROTOCOLE QUI L'INVOQUE (ch. 4 § 4.4.2).

@@ -43,9 +43,7 @@ Quatre mécanismes de rapprochement entre registres ont été lus. Aucun n’est
 | Scanners MuleSoft [8] | Détection sur des plateformes tierces | Agents et serveurs trouvés | Ne voit que les plateformes prévues |
 | Registre d’Agent 365 [7] | Inventaire unifié | Agents Microsoft et non Microsoft | Contrôles d’identité liés à Entra Agent ID et à sa licence |
 
-Le modèle du sous-registre MCP est le plus instructif. Un agrégateur lit l’API REST du registre officiel à intervalles espacés, de l’ordre de l’heure, et conserve sa propre copie. S’il expose la même spécification OpenAPI, il devient un sous-registre consultable par les hôtes, et peut ajouter ses métadonnées sous une clé à son nom. Seul le statut d’un serveur change
-
-en principe; l’agrégateur doit le tenir à jour [2]. C’est une fédération hiérarchique, à sens unique, limitée aux serveurs MCP.
+Le modèle du sous-registre MCP est le plus instructif. Un agrégateur lit l’API REST du registre officiel à intervalles espacés, de l’ordre de l’heure, et conserve sa propre copie. S’il expose la même spécification OpenAPI, il devient un sous-registre consultable par les hôtes, et peut ajouter ses métadonnées sous une clé à son nom. Seul le statut d’un serveur change en principe; l’agrégateur doit le tenir à jour [2]. C’est une fédération hiérarchique, à sens unique, limitée aux serveurs MCP.
 
 AWS Agent Registry se veut un catalogue unifié et expose un point d’accès MCP que tout client compatible interroge sans SDK d’AWS, avec un jeton du fournisseur d’identité de l’entreprise [6]. Chez Microsoft, Agent 365 devient le registre et le plan de contrôle unifiés, tandis qu’Entra garde l’identité; l’inventaire complet, agents sans identité Entra compris, ne se consulte que dans Agent 365 [7]. Chaque éditeur offre ainsi d’être le registre des autres (chapitre 8).
 
@@ -64,8 +62,7 @@ Proposition de ce chapitre :
 - **Un registre de référence**, désigné par l’entreprise, comme l’inventaire de gouvernance du chapitre 39, fait autorité sur l’existence, le propriétaire et le statut de chaque agent et de chaque serveur. Les registres des plateformes restent des sources, alimentées localement et lues par synchronisation ou par scanner.
 - **Une décision prise une fois, appliquée partout.** L’approbation et le retrait se décident au registre de référence. Leur exécution passe par le point de contrôle de chaque plateforme et par les passerelles (chapitre 24), puisque aucun mécanisme lu ne propage une politique d’agent d’un plan de contrôle à l’autre.
 - **Une identité hors plateforme.** L’agent s’authentifie auprès du fournisseur d’identité de l’entreprise (chapitre 29); sans ce point fixe, chaque plateforme réinvente l’agent sous un autre nom.
-- **Un socle minimal commun** : identifiant unique, propriétaire nommé, plateforme d’origine, statut, arrêt d’urgence (chapitre 34), traces versées dans un entrepôt commun
-  (chapitre 33). Fédérer davantage aligne les politiques sur la plateforme la moins expressive.
+- **Un socle minimal commun** : identifiant unique, propriétaire nommé, plateforme d’origine, statut, arrêt d’urgence (chapitre 34), traces versées dans un entrepôt commun (chapitre 33). Fédérer davantage aligne les politiques sur la plateforme la moins expressive.
 
 Prendre ce registre chez un éditeur crée une dépendance de plus; l’exploiter soi-même coûte une équipe. Dans les deux cas, son contenu doit rester exportable (section 27.5).
 
@@ -113,9 +110,7 @@ Fédérer n’est pas gratuit : intégration des registres, double inventaire à
 
 ### Deux ancrages lus
 
-**Le règlement européen sur les données** s’applique depuis le 12 septembre 2025 et consacre son chapitre VI au changement de fournisseur de services de traitement de données [10]. Le contrat doit prévoir un préavis d’au plus deux mois, une période de transition de 30 jours civils, portée à sept mois au plus en cas d’impossibilité technique, la liste exhaustive des données et actifs numériques exportables, une période de récupération d’au moins 30 jours, puis l’effacement (article 25). Les frais de changement sont interdits à compter du 12 janvier 2027 (article 29). Les services autres que d’infrastructure doivent offrir sans frais des
-
-interfaces ouvertes et, faute de spécification commune, exporter dans un format structuré, couramment utilisé et lisible par machine (article 30). Les services sur mesure et les versions d’essai bénéficient d’exemptions (article 31).
+**Le règlement européen sur les données** s’applique depuis le 12 septembre 2025 et consacre son chapitre VI au changement de fournisseur de services de traitement de données [10]. Le contrat doit prévoir un préavis d’au plus deux mois, une période de transition de 30 jours civils, portée à sept mois au plus en cas d’impossibilité technique, la liste exhaustive des données et actifs numériques exportables, une période de récupération d’au moins 30 jours, puis l’effacement (article 25). Les frais de changement sont interdits à compter du 12 janvier 2027 (article 29). Les services autres que d’infrastructure doivent offrir sans frais des interfaces ouvertes et, faute de spécification commune, exporter dans un format structuré, couramment utilisé et lisible par machine (article 30). Les services sur mesure et les versions d’essai bénéficient d’exemptions (article 31).
 
 Deux réserves. L’article 2, point 8, vise l’accès à la demande à des ressources informatiques partagées, configurables et élastiques [12]; une plateforme d’agents en logiciel-service s’y range vraisemblablement, sans que ce soit acquis pour chaque offre. Et le texte ne dit pas ce qu’est une donnée exportable pour un agent : prompts, mémoire et traces restent à nommer dans le contrat.
 
@@ -285,14 +280,14 @@ Dans un groupe qui exploite cinq suites majeures, cette idée ne donne pas une a
 
 Comment désigner qui orchestre quoi, sans guerre politique entre directions métiers et sans maillage quadratique de 𝑁(𝑁−1)/2 intégrations point à point ? La réponse repose sur la gravité des données, appliquée au raisonnement agentique.
 
-Déplacer des données brutes hors de leur progiciel maître vers un orchestrateur externe détruit trois propriétés : la gravité ontologique (les règles implicites codées dans SAP ou Salesforce), la gravité sécuritaire (les permissions fines par ligne et par champ) et la gravité transactionnelle (la fraîcheur d’un stock). Pour une tâche 𝑡 qui sollicite les domaines 𝐷1, …, 𝐷𝑚, le score d’affinité gravitationnelle envers 𝐷𝑘 est :
+Déplacer des données brutes hors de leur progiciel maître vers un orchestrateur externe détruit trois propriétés : la gravité ontologique (les règles implicites codées dans SAP ou Salesforce), la gravité sécuritaire (les permissions fines par ligne et par champ) et la gravité transactionnelle (la fraîcheur d’un stock). Pour une tâche 𝑡 qui sollicite les domaines 𝐷_1, …, 𝐷_𝑚, le score d’affinité gravitationnelle envers 𝐷_𝑘 est :
 
-𝐺(𝑡, 𝐷𝑘) = 𝛼𝜇𝑘(𝑡) + 𝛽𝜌𝑘(𝑡) + 𝛾𝜋𝑘(𝑡)
+𝐺(𝑡, 𝐷_𝑘) = 𝛼 𝜇_𝑘(𝑡) + 𝛽 𝜌_𝑘(𝑡) + 𝛾 𝜋_𝑘(𝑡)
 
-où 𝜇𝑘(𝑡) mesure la fraction des écritures ciblant 𝐷𝑘, 𝜌𝑘(𝑡) la part des invariants métiers critiques portés par 𝐷𝑘, et 𝜋𝑘(𝑡) l’indice de confidentialité réglementaire interdisant l’exportation des attributs hors de 𝐷𝑘 (𝛼+ 𝛽+ 𝛾= 1). Trois règles d’arbitrage déterministes en découlent :
+où 𝜇_𝑘(𝑡) mesure la fraction des écritures ciblant 𝐷_𝑘, 𝜌_𝑘(𝑡) la part des invariants métiers critiques portés par 𝐷_𝑘, et 𝜋_𝑘(𝑡) l’indice de confidentialité réglementaire interdisant l’exportation des attributs hors de 𝐷_𝑘 (𝛼 + 𝛽 + 𝛾 = 1). Trois règles d’arbitrage déterministes en découlent :
 
-1. **Localité intra-domaine (𝐺(𝑡, 𝐷𝑘) ≥0, 85, écriture mono-silo)** : quand une tâche opère presque entièrement dans un seul domaine (par exemple requalifier des opportunités et éditer un devis standard dans Salesforce), le studio natif (Agentforce) l’orchestre localement, sans détour externe.
-2. **Enrichissement ponctuel en lecture (𝐺(𝑡, 𝐷𝑘) ≥0, 75, zéro écriture externe)** : si un agent ServiceNow doit seulement lire un statut de livraison SAP, il émet une lecture par agentgateway vers le serveur MCP de SAP, sans transférer l’orchestration.
+1. **Localité intra-domaine (𝐺(𝑡, 𝐷_𝑘) ≥ 0,85, écriture mono-silo)** : quand une tâche opère presque entièrement dans un seul domaine (par exemple requalifier des opportunités et éditer un devis standard dans Salesforce), le studio natif (Agentforce) l’orchestre localement, sans détour externe.
+2. **Enrichissement ponctuel en lecture (𝐺(𝑡, 𝐷_𝑘) ≥ 0,75, zéro écriture externe)** : si un agent ServiceNow doit seulement lire un statut de livraison SAP, il émet une lecture par agentgateway vers le serveur MCP de SAP, sans transférer l’orchestration.
 3. **Élévation au plan de contrôle neutre (mutations sur ≥2 systèmes d’enregistrement, ou saga longue)** : dès qu’un processus modifie au moins deux silos, exige des compensations transactionnelles ou engage une supervision réglementaire (BSIF E-23), aucun studio SaaS n’est autorisé à être l’orchestrateur maître. La coordination remonte dans le plan neutre de l’entreprise.
 
 ### Trois topologies de coordination inter-SaaS
@@ -305,13 +300,11 @@ où 𝜇𝑘(𝑡) mesure la fraction des écritures ciblant 𝐷𝑘, 𝜌𝑘(
 | Maîtrise de l’empilement tarifaire | Mauvaise : le studio maître taxe chaque étape déléguée | Modérée : facturation aux flux et aux messages gérés | Optimale : zéro crédit SaaS consommé durant l’attente HOTL ou l’orchestration |
 | Sécurité temps réel unifiée | Hétérogène selon les studios | Politiques API classiques + annuaire | Unifiée : inspection MCP/A2A, Cedar et anti-boucle dans agentgateway |
 
-L’architecture de référence (approche C) combine trois briques sans confondre plan d’état et plan de transport. Temporal gouverne l’état durable et les compensations des sagas multi-silos. agentgateway est le point d’application des politiques universel (SPIFFE, Cedar, OpenTelemetry). MuleSoft Agent Fabric, lorsqu’il est déjà présent dans le patrimoine iPaaS, se limite au courtage certifié (*Agent Registry*, *Agent Broker* et connecteurs homologués SAP, Salesforce et Workday, avec lissage des quotas HTTP 429), exposé sous contrats canoniques Apache Ossie. Il ne détient jamais la logique d’état maîtresse. Les limites de l’application
-
-des politiques chez MuleSoft sont décrites à la section 27.2. Posséder ce plan neutre, comme le prescrit l’ADR-015 (section 27.11), va au-delà de ce que retient l’exposé : la section 27.4 recommande de fédérer le plan de contrôle d’ensemble, aucun éditeur ne gouvernant les agents des autres comme les siens, et de ne posséder que le registre de référence, l’identité et les politiques.
+L’architecture de référence (approche C) combine trois briques sans confondre plan d’état et plan de transport. Temporal gouverne l’état durable et les compensations des sagas multi-silos. agentgateway est le point d’application des politiques universel (SPIFFE, Cedar, OpenTelemetry). MuleSoft Agent Fabric, lorsqu’il est déjà présent dans le patrimoine iPaaS, se limite au courtage certifié (*Agent Registry*, *Agent Broker* et connecteurs homologués SAP, Salesforce et Workday, avec lissage des quotas HTTP 429), exposé sous contrats canoniques Apache Ossie. Il ne détient jamais la logique d’état maîtresse. Les limites de l’application des politiques chez MuleSoft sont décrites à la section 27.2. Posséder ce plan neutre, comme le prescrit l’ADR-015 (section 27.11), va au-delà de ce que retient l’exposé : la section 27.4 recommande de fédérer le plan de contrôle d’ensemble, aucun éditeur ne gouvernant les agents des autres comme les siens, et de ne posséder que le registre de référence, l’identité et les politiques.
 
 | Scénario opérationnel type | Domaines sollicités | Orchestrateur élu | Justification architecturale |
 | --- | --- | --- | --- |
-| Génération d’avenant tarifaire commercial standard | Salesforce (95 %), lecture M365 (5 %) | Local : Agentforce | Gravité CRM dominante (𝐺= 0, 95), mutation mono-silo |
+| Génération d’avenant tarifaire commercial standard | Salesforce (95 %), lecture M365 (5 %) | Local : Agentforce | Gravité CRM dominante (𝐺 = 0,95), mutation mono-silo |
 | Qualification d’alerte IT et redémarrage infonuagique | ServiceNow (90 %), logs (10 %) | Local : ServiceNow AI Agents | Gravité CMDB/ITSM native en boucle fermée |
 | Régularisation comptable mensuelle GR/IR | SAP S/4HANA (100 %) | Local : SAP Joule | Invariants FI/CO exclusifs, zéro exposition externe |
 | Retour marchandise : SAV + avoir SAP + technicien + note CRM | ServiceNow + SAP + Salesforce | Plan neutre (Temporal) | Mutations coordonnées sur 3 silos avec compensation atomique |
@@ -476,7 +469,7 @@ export class CrossSaasOboBroker {
 
 ### Prévention des boucles circulaires
 
-Les boucles distribuées (𝐴→𝐵→𝐶→𝐴) naissent quand des agents autonomes croisent des webhooks de modification de données (*Change Data Capture*). Agentforce modifie la priorité d’un dossier, ce qui alerte ServiceNow; celui-ci demande à SAP Joule un recalcul de délai ATP; S/4HANA publie alors l’événement `SalesOrder.Changed`, qui réveille Agentforce dans une nouvelle session où un simple compteur applicatif `hop_count` repartirait à zéro. agentgateway combine trois barrières déterministes contre ces appels circulaires :
+Les boucles distribuées (𝐴 → 𝐵 → 𝐶 → 𝐴) naissent quand des agents autonomes croisent des webhooks de modification de données (*Change Data Capture*). Agentforce modifie la priorité d’un dossier, ce qui alerte ServiceNow; celui-ci demande à SAP Joule un recalcul de délai ATP; S/4HANA publie alors l’événement `SalesOrder.Changed`, qui réveille Agentforce dans une nouvelle session où un simple compteur applicatif `hop_count` repartirait à zéro. agentgateway combine trois barrières déterministes contre ces appels circulaires :
 
 - **Vecteur d’origine signé (**`x-a2a-hop-vector`**)** : chaque nœud traversé s’ajoute à un vecteur signé par HMAC-SHA256 avec une clé secrète de la passerelle, vérifié en temps constant après contrôle strict de la longueur en octets. La requête est rejetée en moins d’une milliseconde (`409 LOOP_DETECTED`) si la cible demandée figure déjà parmi les ancêtres du vecteur ou si le budget résiduel ne décroît pas strictement.
 - **Disjoncteur d’oscillation par entité métier, avec déduplication de livraison** : les bus SaaS (*Salesforce Platform Events*, *SAP Event Mesh*) livrent leurs webhooks selon une sémantique de livraison « au moins une fois ». La passerelle déduplique donc d’abord les réessais réseau légitimes par `eventId`, puis comptabilise les mutations distinctes par identifiant canonique (`urn:boreal:order:SO-99182`) sur une fenêtre glissante de 120 secondes. Au-delà de trois réévaluations rapides, l’entité passe en quarantaine HOTL.
@@ -605,8 +598,7 @@ Les studios agentiques SaaS facturent des unités propriétaires (*Copilot Credi
 
 Trois règles neutralisent cet empilement :
 
-- **Privilégier MCP sur API standard pour le déterministe** : pour lire trois champs ou bloquer un article codifié, le plan neutre invoque un serveur MCP adossé à l’API standard
-  incluse au contrat de base. Il réserve l’appel A2A vers Joule ou Agentforce aux tâches qui exigent un raisonnement métier complexe.
+- **Privilégier MCP sur API standard pour le déterministe** : pour lire trois champs ou bloquer un article codifié, le plan neutre invoque un serveur MCP adossé à l’API standard incluse au contrat de base. Il réserve l’appel A2A vers Joule ou Agentforce aux tâches qui exigent un raisonnement métier complexe.
 - **Exiger des tarifs « Headless A2A » décotés** : au renouvellement des contrats, pour les appels machine à machine préqualifiés, avec portabilité annuelle des crédits non consommés.
 - **Surveiller le multiplicateur de crédits SaaS** : une alerte FinOps se déclenche dès qu’un flux dépasse 1,25 fois le coût de l’étape principale.
 
@@ -645,15 +637,15 @@ Trois règles neutralisent cet empilement :
   3. *Fédération selon la gravité des données sous plan de contrôle neutre* : retenue. Exécution locale intra-silo (𝐺≥0, 85), orchestration durable neutre (Temporal, agentgateway et médiation iPaaS) dès que deux silos sont mutés, et propagation OAuth 2.1 OBO obligatoire.
 - **Décision** : (a) tout appel inter-SaaS transite obligatoirement par agentgateway; (b) les sagas mutatives multi-domaines sont orchestrées par le moteur durable neutre; (c) les comptes techniques partagés sont interdits au profit de RFC 8693 (Entra ID → SAP CIS, Salesforce, ServiceNow); (d) les lectures et écritures structurées simples utilisent MCP sur API standard plutôt qu’une délégation conversationnelle taxée à l’acte.
 - **Conséquences** :
-  - ‣ *Positives* : maîtrise des coûts FinOps et des licences ERP, respect natif des permissions par ligne et des autorisations ABAP, prévention des boucles circulaires, intégration M&A accélérée.
-  - ‣ *Négatives et coûts assumés* : gouvernance continue du modèle canonique d’échange et maintien de la chaîne cryptographique Entra ID ↔︎ SAP CIS.
+  - *Positives* : maîtrise des coûts FinOps et des licences ERP, respect natif des permissions par ligne et des autorisations ABAP, prévention des boucles circulaires, intégration M&A accélérée.
+  - *Négatives et coûts assumés* : gouvernance continue du modèle canonique d’échange et maintien de la chaîne cryptographique Entra ID ↔︎ SAP CIS.
 - **Condition de révision** : évolution des clauses tarifaires inter-agents A2A des grands éditeurs ou refonte majeure du parc SaaS.
 
 ### Liste de contrôle de mise en production
 
 Avant d’ouvrir en production un flux qui fédère plusieurs plateformes SaaS, validez huit exigences :
 
-1. **Qualification de gravité** : le score 𝐺(𝑡, 𝐷𝑘) confirme-t-il le choix entre l’orchestration locale intra-SaaS et l’élévation vers le plan neutre ?
+1. **Qualification de gravité** : le score 𝐺(𝑡, 𝐷_𝑘) confirme-t-il le choix entre l’orchestration locale intra-SaaS et l’élévation vers le plan neutre ?
 2. **Blocage des ponts directs** : les politiques réseau des instances SaaS interdisent-elles tout appel A2A ou webhook direct d’un studio vers un autre sans passage par agentgateway ?
 3. **Propagation nominative intégrale** : la chaîne OAuth 2.1 OBO (RFC 8693) préserve-t-elle l’identité humaine jusqu’au système cible (y compris SY-UNAME via SAP CIS), sans compte technique partagé ?
 4. **Arbitrage contractuel FinOps** : l’impact en crédits éditeurs et en *SAP Digital Access* a-t-il été validé, avec MCP sur API standard pour les opérations déterministes ?

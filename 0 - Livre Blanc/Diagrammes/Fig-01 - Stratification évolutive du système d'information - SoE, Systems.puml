@@ -24,12 +24,12 @@ Grouping(s3, "Strate 3 — Systems of Record (SoR — déterministe)") {
 }
 
 op -> soe : Intention
-soe -[dashed]-> plan : Requête asynchrone
-plan -> noyau : Plan borné
-noyau -[dashed]-> porte : Action
+soe -[dashed]down-> plan : Requête asynchrone
+plan -right-> noyau : Plan borné
+noyau -[dashed]right-> porte : Action
 
-verite --> noyau : Lecture seule filtrée\n(vérité terrain)
-verite <.[dotted].> erp : Transaction validée
-porte <.[dotted].> erp : Mutation idempotente\nvalidée uniquement
+verite -up-> noyau : Lecture seule filtrée\n(vérité terrain)
+verite <.[dotted]right.> erp : Transaction validée
+porte <.[dotted]down.> erp : Mutation idempotente\nvalidée uniquement
 
 @enduml

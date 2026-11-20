@@ -8,7 +8,7 @@ skinparam defaultFontName "Segoe UI"
 skinparam defaultFontSize 11
 skinparam Padding 5
 
-rectangle "**Autonomie croissante**  ························································  **contrôles compensatoires croissants**" as Barre #1B5E9E;text:FFFFFF;line:0F2744
+rectangle "**Autonomie croissante**          →          **contrôles compensatoires croissants**" as Barre #1B5E9E;text:FFFFFF;line:0F2744
 
 together {
   card Matrice #FFFFFF;line:FFFFFF [

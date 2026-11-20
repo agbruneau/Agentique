@@ -21,7 +21,7 @@ System_Boundary(domB, "Domaine B / SaaS — Pair\nopaque") {
   ContainerDb(sorB, "SoR Domaine B", "SI partenaire", "Autorité cloisonnée")
 }
 
-Rel_R(orchA, gw, "Horizontal : Task A2A (HTTPS / JWS)")
+Rel_R(orchA, gw, "Horizontal : Task A2A\n(HTTPS / JWS)")
 Rel_R(gw, a2aB, "Délégation contrôlée (JSON-RPC / gRPC)")
 Rel_D(orchA, mcpA, "Vertical : outils (MCP)")
 Rel_D(mcpA, sorA, "Accès (Idempotent)")

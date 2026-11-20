@@ -11,14 +11,12 @@ skinparam legendBorderColor #BBBBBB
 
 title QUATORZE ÉVÉNEMENTS DU TABLEAU 50.1 ILLUSTRÉS PAR TROIS ÉTATS TYPES
 
-rectangle "TROIS ÉTATS TYPES DE PÉREMPTION" as Etats {
-  rectangle "**agent-outil  —  Révisions protocolaires**\n\nLa couche protocolaire du Livre I se périme\nau rythme de ses DEUX spécifications,\nnon de la seule première.\n\n<i>survenu côté MCP (revalidé le 30 juill. 2026) ; A2A inchangé</i>" as E1
-  rectangle "**à moitié  —  Transfert de gouvernance**\n\nL'annonce du don est établie ;\nla suite ne l'est pas.\n\n\n<i>candidat survenu à moitié, et c'est la moitié qui compte</i>" as E2
-  rectangle "**attendu  —  Désignation de l'organisme**\n\nFait négatif vérifié : quatre chaînes,\ntrois textes, zéro occurrence.\n\n\n<i>ch. 32 — ce qui se refait est tout le chapitre</i>" as E3
+rectangle "**agent-outil  —  Révisions protocolaires**\n\nLa couche protocolaire du Livre I se périme\nau rythme de ses DEUX spécifications,\nnon de la seule première.\n\n<i>survenu côté MCP (revalidé le 30 juill. 2026) ; A2A inchangé</i>" as E1
+rectangle "**à moitié  —  Transfert de gouvernance**\n\nL'annonce du don est établie ;\nla suite ne l'est pas.\n\n\n<i>candidat survenu à moitié, et c'est la moitié qui compte</i>" as E2
+rectangle "**attendu  —  Désignation de l'organisme**\n\nFait négatif vérifié : quatre chaînes,\ntrois textes, zéro occurrence.\n\n\n<i>ch. 32 — ce qui se refait est tout le chapitre</i>" as E3
 
-  E1 -[hidden]right- E2
-  E2 -[hidden]right- E3
-}
+E1 -[hidden]right- E2
+E2 -[hidden]right- E3
 
 legend bottom
   UN ÉVÉNEMENT SURVENU N'EST PAS UN ÉVÉNEMENT PAYÉ. L'un des quatorze est survenu à moitié —

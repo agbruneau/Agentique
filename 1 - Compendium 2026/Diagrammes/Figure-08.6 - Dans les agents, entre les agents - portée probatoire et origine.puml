@@ -3,77 +3,47 @@
 
 @startuml
 top to bottom direction
-hide stereotype
-skinparam packageStyle rectangle
-skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam roundcorner 6
 skinparam defaultFontName "Segoe UI"
 skinparam defaultFontSize 13
-skinparam shadowing false
-skinparam roundCorner 4
+skinparam backgroundColor #FFFFFF
 skinparam nodesep 30
 skinparam ranksep 18
-
-skinparam package {
-  BackgroundColor #FFFFFF
-  BorderColor #FFFFFF
-  FontColor #555555
-  FontStyle bold
-}
-
-skinparam package<<accent>> {
-  BackgroundColor #FFFFFF
-  BorderColor #FFFFFF
-  FontColor #9E3A14
-  FontStyle bold
-}
-
-skinparam rectangle {
-  BackgroundColor #FAF7F2
-  BorderColor #B8B3AA
-  FontColor #222222
-}
-
-skinparam rectangle<<accent>> {
-  BackgroundColor #FFFFFF
-  BorderColor #9E3A14
-  BorderThickness 2
-  FontColor #222222
-}
-
-skinparam rectangle<<sub>> {
-  BackgroundColor #FFFFFF
-  BorderColor #FFFFFF
-  FontColor #222222
-}
 
 skinparam legendBackgroundColor #F7F5F0
 skinparam legendBorderColor #C4BEB5
 skinparam legendFontColor #333333
 
-package "DANS LES AGENTS" as P_LEFT {
-  rectangle L_BOX [
-    <b>Axe vertical — agent-outil</b>
-    L'intégration des outils et du contexte
-    Au niveau de l'agent individuel
-    ch. 8 § 8.1 à § 8.3
-  ]
-  rectangle "<b>un agent étend ses capacités</b>" as L_SUB <<sub>>
-  L_BOX -[hidden]down- L_SUB
-}
+rectangle C1 #FAF6F0;line:B8B2A6 [
+  <color:#57534E>DANS LES AGENTS</color>
+  ----
+  <b>Axe vertical — agent-outil</b>
 
-package "ENTRE LES AGENTS" as P_RIGHT <<accent>> {
-  rectangle R_BOX <<accent>> [
-    <b>Axe horizontal — agent-agent</b>
-    La communication et la coordination
-    Entre agents autonomes, par-delà les frontières
-    ch. 8 § 8.4 à § 8.6
-  ]
-  rectangle "<b>des agents se délèguent des tâches</b>" as R_SUB <<sub>>
-  R_BOX -[hidden]down- R_SUB
-}
+  L'intégration des outils et du contexte
 
-L_BOX -[hidden]right- R_BOX
-L_SUB -[hidden]right- R_SUB
+  Au niveau de l'agent individuel
+
+  ch. 8 § 8.1 à § 8.3
+  ----
+  <b>un agent étend ses capacités</b>
+]
+
+rectangle C2 #FFFFFF;line:9A3412 [
+  <color:#9A3412>ENTRE LES AGENTS</color>
+  ----
+  <b>Axe horizontal — agent-agent</b>
+
+  La communication et la coordination
+
+  Entre agents autonomes, par-delà les frontières
+
+  ch. 8 § 8.4 à § 8.6
+  ----
+  <b>des agents se délèguent des tâches</b>
+]
+
+C1 -[hidden]right-> C2
 
 legend
   CETTE DOCTRINE EST CELLE DU PROJET AGENT-AGENT. Elle est déclarée par une partie, et le socle

@@ -14,9 +14,7 @@ L’intégration d’entreprise connaît ce problème depuis longtemps et l’a 
 
 Le cadre européen d’interopérabilité (EIF), publié par la Commission européenne en 2017, décompose l’interopérabilité en quatre couches : juridique, organisationnelle, sémantique et technique [1]. La couche sémantique y couvre à la fois le sens des données et leur syntaxe; sa formule est restée : « what is sent is what is understood ». Le cadre vise les administrations publiques, mais son découpage se transpose sans peine.
 
-Le Levels of Conceptual Interoperability Model (LCIM), issu du monde de la simulation, propose sept niveaux, de l’absence de connexion à l’alignement des modèles conceptuels [2]. Deux de ses idées servent ici. Les niveaux sont cumulatifs, ce qui permet d’employer l’échelle comme modèle de maturité. Et le modèle distingue le sens d’un terme (sémantique)
-
-du contexte dans lequel l’information est employée (pragmatique), distinction centrale quand le destinataire est un modèle de langage.
+Le Levels of Conceptual Interoperability Model (LCIM), issu du monde de la simulation, propose sept niveaux, de l’absence de connexion à l’alignement des modèles conceptuels [2]. Deux de ses idées servent ici. Les niveaux sont cumulatifs, ce qui permet d’employer l’échelle comme modèle de maturité. Et le modèle distingue le sens d’un terme (sémantique) du contexte dans lequel l’information est employée (pragmatique), distinction centrale quand le destinataire est un modèle de langage.
 
 ### Le découpage retenu
 
@@ -44,9 +42,7 @@ Cet ouvrage retient cinq niveaux. Il part des quatre couches de l’EIF, sépare
 
 ### Ce que les agents changent
 
-Premier changement : l’accord sémantique n’est plus fixé à la conception. Dans une intégration classique, un développeur lit la documentation et code la correspondance une fois pour toutes. Avec un agent, un modèle lit une description en langage naturel et décide à l’exécution. Une synthèse historique décrit ce déplacement comme le passage d’une séman
-
-tique portée par les données à une sémantique portée par les modèles [14]. L’accord devient probabiliste.
+Premier changement : l’accord sémantique n’est plus fixé à la conception. Dans une intégration classique, un développeur lit la documentation et code la correspondance une fois pour toutes. Avec un agent, un modèle lit une description en langage naturel et décide à l’exécution. Une synthèse historique décrit ce déplacement comme le passage d’une sémantique portée par les données à une sémantique portée par les modèles [14]. L’accord devient probabiliste.
 
 Second changement : les agents agissent. Un système qui ne fait que lire tolère une ambiguïté d’organisation ou de droit. Un agent qui commande, paie ou modifie un dossier ne la tolère pas. Les niveaux supérieurs, longtemps traités en fin de projet, deviennent des conditions préalables.
 
@@ -124,9 +120,7 @@ Trois réserves s’imposent. L’étude cote ce que les spécifications encoden
 
 ### Pourquoi ce niveau pèse
 
-MAST range 41,77 % des échecs observés dans les défauts de spécification : consignes, rôles, conditions d’arrêt. Ses auteurs soutiennent que nombre d’échecs tiennent à la conception
-
-de l’organisation et à la coordination plutôt qu’aux limites des agents pris un à un [8]. Un protocole impeccable ne corrige pas une répartition des rôles mal pensée (chapitre 21).
+MAST range 41,77 % des échecs observés dans les défauts de spécification : consignes, rôles, conditions d’arrêt. Ses auteurs soutiennent que nombre d’échecs tiennent à la conception de l’organisation et à la coordination plutôt qu’aux limites des agents pris un à un [8]. Un protocole impeccable ne corrige pas une répartition des rôles mal pensée (chapitre 21).
 
 Le cadre de gouvernance de Singapour pour l’IA agentique, dans sa version 1.5 du 20 mai 2026, aborde ce niveau de front [9]. L’organisation qui déploie des agents et les humains qui les supervisent restent imputables de leurs actions. Le cadre demande d’établir des chaînes d’imputabilité à l’intérieur de l’organisation et envers les autres acteurs de la chaîne de valeur : développeurs de modèles, fournisseurs de plateformes, hôtes de serveurs MCP ou d’outils externes.
 
@@ -146,9 +140,7 @@ Les protocoles fournissent ici des briques. Dans A2A, un agent déclare dans sa 
 
 ### Le droit : hors du protocole
 
-Aucun des protocoles d’agents lus ne permet d’exprimer une obligation : limite de responsabilité, finalité permise d’une donnée, juridiction, durée de conservation. Ces termes vivent dans des contrats et des politiques que l’agent ne lit pas. Le cadre de Singapour en tire une conséquence pratique : préciser par contrat la répartition des obligations avec les tiers,
-
-exiger d’eux de la transparence, une authentification propre à chaque agent et la journalisation des appels d’outils, et, à défaut, réduire la portée du cas d’usage [9]. Hors de ces protocoles, ODRL exprime une politique d’usage et le Dataspace Protocol en fait un accord entre organisations, sans en garantir l’application une fois les données copiées (chapitre 45).
+Aucun des protocoles d’agents lus ne permet d’exprimer une obligation : limite de responsabilité, finalité permise d’une donnée, juridiction, durée de conservation. Ces termes vivent dans des contrats et des politiques que l’agent ne lit pas. Le cadre de Singapour en tire une conséquence pratique : préciser par contrat la répartition des obligations avec les tiers, exiger d’eux de la transparence, une authentification propre à chaque agent et la journalisation des appels d’outils, et, à défaut, réduire la portée du cas d’usage [9]. Hors de ces protocoles, ODRL exprime une politique d’usage et le Dataspace Protocol en fait un accord entre organisations, sans en garantir l’application une fois les données copiées (chapitre 45).
 
 Un document de travail d’avril 2026 sur le droit européen applicable aux agents fait de l’inventaire complet des actions externes de l’agent, de ses flux de données et des systèmes connectés la première tâche de conformité d’un fournisseur [16]. Un registre et des traces devraient le fournir (chapitres 8 et 33); les cadres sont traités aux chapitres 35 à 38.
 

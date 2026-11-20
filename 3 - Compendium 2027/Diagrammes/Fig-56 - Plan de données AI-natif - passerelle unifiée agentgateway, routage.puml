@@ -2,13 +2,27 @@
 @startuml
 title Plan de Données AI-Natif : agentgateway, Routage Cognitif Hybride et Affinité de KV-Cache
 
-top to bottom direction
+left to right direction
+hide stereotype
 skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
+skinparam nodesep 14
+skinparam ranksep 32
+skinparam rectangle<<invis>> {
+  BackgroundColor transparent
+  BorderColor transparent
+  FontColor transparent
+  FontSize 1
+}
 skinparam rectangle {
   BackgroundColor #FFFFFF
   BorderColor #334155
+}
+skinparam legend {
+  BackgroundColor #F8FAFC
+  BorderColor #1E293B
+  FontName "Segoe UI"
 }
 
 rectangle "Sources & Trafic Entrant" as Sources #F8FAFC;line:475569 {
@@ -30,9 +44,6 @@ rectangle "Sources & Trafic Entrant" as Sources #F8FAFC;line:475569 {
     SAP Joule • Partenaires B2B
     Délégation A2A v1.0 signée
   ]
-
-  SrcAgents -[hidden]down-> SrcCanaux
-  SrcCanaux -[hidden]down-> SrcPairs
 }
 
 rectangle "Plan de Données Unifié — agentgateway\nLinux Foundation AAIF (Noyau Rust haute cadence)" as Gateway #EFF6FF;line:2563EB {
@@ -57,14 +68,9 @@ rectangle "Plan de Données Unifié — agentgateway\nLinux Foundation AAIF (Noy
     **5. Masquage PII & Traces OTel (gen_ai.*)**
     Auditabilité sans modification du code agent
   ]
-
-  Gw1 -[hidden]down-> Gw2
-  Gw2 -[hidden]down-> Gw3
-  Gw3 -[hidden]down-> Gw4
-  Gw4 -[hidden]down-> Gw5
 }
 
-rectangle " " as Paliers #FFFFFF;line:FFFFFF {
+rectangle " " as Paliers <<invis>> {
   rectangle Palier1 #F0FDF4;line:166534 [
     **Palier 1 — SLM Spécialisés Souverains (~73 % vol.)**
     Modèles 3B–14B (vLLM / SGLang sur GPU internes)
@@ -87,56 +93,23 @@ rectangle " " as Paliers #FFFFFF;line:FFFFFF {
     **Fédération Aval : Serveurs MCP & Pairs A2A v1.0**
     SAP S/4HANA • ServiceNow • IBM i • Jumeaux OPC-UA
   ]
-
-  Palier1 -[hidden]down-> Palier2
-  Palier2 -[hidden]down-> Palier3
-  Palier3 -[hidden]down-> FedAval
 }
 
-SrcAgents -[#1E293B]right-> Gw1
-SrcCanaux -[#1E293B]right-> Gw3
-SrcPairs -[#1E293B]right-> Gw5
+SrcAgents -[#1E293B]-> Gw1
+SrcAgents -[hidden]-> Gw2
+SrcCanaux -[#1E293B]-> Gw3
+SrcCanaux -[hidden]-> Gw4
+SrcPairs -[#1E293B]-> Gw5
 
-Gw3 -[#166534]right-> Palier1
-Gw3 -[#2563EB]right-> Palier2
-Gw3 -[#9A3412]right-> Palier3
-Gw4 .[#1E293B]right.> FedAval
+Gw1 -[hidden]-> Palier1
+Gw3 -[#166534]-> Palier1
+Gw3 -[#2563EB]-> Palier2
+Gw3 -[#9A3412]-> Palier3
+Gw4 .[#1E293B].> FedAval
+Gw5 -[hidden]-> FedAval
 
-rectangle "Ordonnancement Kubernetes Conscient du Préfixe (Gateway API Inference Extension / llm-d) — Partage du KV-Cache" as K8sKV #F8FAFC;line:1E293B {
-  rectangle SessionMulti #FFFFFF;line:475569 [
-    **Anatomie d'une Session Multi-Tours (Tours 1 à 8)**
-    Préfixe Invariant : Prompt + Schémas MCP (88 %) | Delta Tour k
-    • Round-Robin naïf : invalide le KV-cache à chaque tour d'outil
-    • Recalcul coûteux du Prefill (9 000+ jetons répétés 8 fois)
-    • **Affinité de préfixe : ne calcule que le Delta (~300 jetons)**
-  ]
-
-  rectangle "Endpoint Picker (EPP) : Score = α·Hit(Préfixe) − β·File(GPU) − γ·HBM" as EPP #FFFFFF;line:2563EB {
-    rectangle Pod1 #F8FAFC;line:94A3B8 [
-      **Pod GPU #1**
-      Préfixe absent (0 %)
-      HBM : 64 %
-      Non sélectionné
-    ]
-    rectangle Pod2 #F0FDF4;line:166534 [
-      **Pod GPU #2 (Cible)**
-      **KV-Cache CHAUD 88 %**
-      HBM : 58 % • File : 2
-      **Routage Tours 1..8**
-    ]
-    rectangle Pod3 #FFF7ED;line:C2410C [
-      **Pod GPU #3 (Secours)**
-      Cache partiel (45 %)
-      HBM : 31 % • File : 0
-      Débordement anti-hotspot
-    ]
-
-    Pod1 -[hidden]right-> Pod2
-    Pod2 -[hidden]right-> Pod3
-  }
-
-  SessionMulti -[#2563EB]right-> EPP
-}
-
-Gw5 -[hidden]down-> SessionMulti
+legend bottom
+  **Ordonnancement Kubernetes Conscient du Préfixe (Gateway API Inference Extension / llm-d) — Partage du KV-Cache**
+  | <#FFFFFF> **Anatomie d'une Session Multi-Tours (Tours 1 à 8)**\nPréfixe Invariant : Prompt + Schémas MCP (88 %)  ¦  Delta Tour k \n• Round-Robin naïf : invalide le KV-cache à chaque tour d'outil\n• Recalcul coûteux du Prefill (9 000+ jetons répétés 8 fois)\n• **Affinité de préfixe : ne calcule que le Delta (~300 jetons)** | <#F8FAFC> <color:#2563EB><b> → </b></color> | <#FFFFFF> <color:#1D4ED8>**Endpoint Picker (EPP) : Score = α·Hit(Préfixe) − β·File(GPU) − γ·HBM**</color>\n<color:#64748B>**Pod GPU #1**</color> (Préfixe absent 0 % • HBM : 64 % • Non sélectionné)\n<color:#166534>**Pod GPU #2 (Cible)**</color> (**KV-Cache CHAUD 88 %** • HBM : 58 % • File : 2 • **Routage Tours 1..8**)\n<color:#C2410C>**Pod GPU #3 (Secours)**</color> (Cache partiel 45 % • HBM : 31 % • File : 0 • Débordement anti-hotspot) |
+endlegend
 @enduml

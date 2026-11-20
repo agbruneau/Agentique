@@ -14,9 +14,7 @@ Ce qui distingue une entreprise agentique n’est ni le nombre de ses agents ni 
 
 ### Une boucle plutôt qu’un échange
 
-Un assistant fonctionne par tours : une demande, une réponse. Un agent fonctionne en boucle. La description la plus dépouillée vient d’Anthropic : un agent est, le plus souvent, un modèle de langage qui utilise des outils dans une boucle, en se réglant sur ce que l’environnement lui renvoie [1]. À chaque étape, il obtient un résultat d’outil ou d’exécution, évalue son avancement et choisit la suite. Il peut s’arrêter à un point de contrôle pour
-
-consulter un humain; une condition d’arrêt, par exemple un nombre maximal d’itérations, sert à garder la maîtrise.
+Un assistant fonctionne par tours : une demande, une réponse. Un agent fonctionne en boucle. La description la plus dépouillée vient d’Anthropic : un agent est, le plus souvent, un modèle de langage qui utilise des outils dans une boucle, en se réglant sur ce que l’environnement lui renvoie [1]. À chaque étape, il obtient un résultat d’outil ou d’exécution, évalue son avancement et choisit la suite. Il peut s’arrêter à un point de contrôle pour consulter un humain; une condition d’arrêt, par exemple un nombre maximal d’itérations, sert à garder la maîtrise.
 
 > **[Figure]**
 > - ASSISTANT : PAR TOURS
@@ -56,9 +54,7 @@ Quatre propriétés séparent l’agent de l’assistant. Aucune n’est binaire
 
 ### Les composants, y compris ceux qui retiennent
 
-Le cadre de Singapour décompose un agent en huit composants [4]. Six le rendent capable : le modèle, les instructions, la mémoire, la planification et le raisonnement, les outils, et les protocoles, dont MCP et A2A, par lesquels il communique avec des outils et d’autres agents.
-
-Deux le rendent sûr : les contrôles (contrôles d’accès, garde-fous, approbations humaines) et la journalisation avec la surveillance.
+Le cadre de Singapour décompose un agent en huit composants [4]. Six le rendent capable : le modèle, les instructions, la mémoire, la planification et le raisonnement, les outils, et les protocoles, dont MCP et A2A, par lesquels il communique avec des outils et d’autres agents. Deux le rendent sûr : les contrôles (contrôles d’accès, garde-fous, approbations humaines) et la journalisation avec la surveillance.
 
 Ces deux derniers ont rejoint les composants de base dans la version 1.5 [4] : ce qui borne et ce qui trace l’agent fait désormais partie de sa définition.
 
@@ -155,9 +151,7 @@ L’alignement des lignes est une lecture propre à ce chapitre : les trois éch
 
 **L’approbation humaine ne passe pas à l’échelle.** Le cadre de Singapour reconnaît qu’une supervision continue de tous les agents devient impraticable, et qu’elle nourrit le biais d’automatisation. Il recommande de réserver l’approbation à des points de contrôle significatifs, comme les actions irréversibles ou à fort enjeu [4].
 
-**La pratique est prudente.** L’étude MAP repose sur vingt études de cas et sur une enquête de 306 répondants, dont 86 décrivent des systèmes en production ou en pilote; les 26
-
-domaines sont relevés parmi 69 agents déployés [7]. Parmi ces systèmes, 68 % exécutent moins de dix étapes avant une intervention humaine (« au plus dix » selon le résumé), et 74 % dépendent surtout d’une évaluation humaine. Chaque proportion repose sur quelques dizaines de réponses.
+**La pratique est prudente.** L’étude MAP repose sur vingt études de cas et sur une enquête de 306 répondants, dont 86 décrivent des systèmes en production ou en pilote; les 26 domaines sont relevés parmi 69 agents déployés [7]. Parmi ces systèmes, 68 % exécutent moins de dix étapes avant une intervention humaine (« au plus dix » selon le résumé), et 74 % dépendent surtout d’une évaluation humaine. Chaque proportion repose sur quelques dizaines de réponses.
 
 ## 1.4 Définition opérationnelle de l’entreprise agentique
 
@@ -318,7 +312,7 @@ Les exigences de 2027 découlent des impasses techniques de trois générations 
 > - Serveurs MCP • API
 > - CUA (Legacy) • OPC-UA
 > - Clés d'idempotence
-> - Supervision Human-on-the-Loop (HOTL via AG-UI / CIBA) & Télémétrie OpenTelemetry (gen_ai.*)
+> - Supervision Human-on-the-Loop (HOTL via AG-UI / CIBA) & Télémétrie OpenTelemetry (gen_ai.\*)
 > - Escalade uniquement sur seuil de risque ou anomalie • Audit immuable de bout en bout
 
 *Fig. 4. – Basculement architectural de la Génération 1 (copilote synchrone centré interface) vers la Génération 3 (maillage d’exécution asynchrone gouverné).*
@@ -371,9 +365,7 @@ Placés à la périphérie des canaux humains (portails web réactifs via AG-UI 
 
 ### 2. Agents spécialistes de domaine
 
-Ces agents portent le métier : Agent Conformité Garantie, Agent Planification Stocks SAP, Agent Diagnostic Vibratoire, Agent Rapprochement Comptable. Selon le principe de gravité des données, chaque spécialiste réside au plus près du domaine qu’il maîtrise, s’appuie sur
-
-l’ontologie de ce domaine (Apache Ossie) et ne manipule qu’un ensemble resserré de cinq à douze outils MCP très cohérents.
+Ces agents portent le métier : Agent Conformité Garantie, Agent Planification Stocks SAP, Agent Diagnostic Vibratoire, Agent Rapprochement Comptable. Selon le principe de gravité des données, chaque spécialiste réside au plus près du domaine qu’il maîtrise, s’appuie sur l’ontologie de ce domaine (Apache Ossie) et ne manipule qu’un ensemble resserré de cinq à douze outils MCP très cohérents.
 
 **Invariant d’architecture.** Un spécialiste publie ses capacités dans l’annuaire interne par une Agent Card A2A v1.0 versionnée et exige, à chaque invocation, un jeton OAuth 2.1 dont la portée correspond exactement à l’opération demandée. Il ignore les interfaces graphiques finales et les divisions étrangères à son mandat.
 
@@ -395,9 +387,7 @@ Placés en coupure ou en observation parallèle sur les flux sensibles (L3 et L4
 
 **Invariant d’architecture.** Un agent critique ne remplace jamais une règle déterministe programmable en Cedar ou OPA : un plafond monétaire de 10 000 $ CAD, par exemple, se vérifie toujours par du code déterministe. Il complète ces règles sur les dimensions sémantiques que les expressions booléennes n’expriment pas, et il utilise un modèle d’une famille distincte de celle de l’agent évalué, pour éviter des angles morts corrélés.
 
-Les niveaux L0 à L4 employés ici et dans la suite forment l’échelle propre à l’ouvrage : L2 y désigne l’approbation préalable et L3 la supervision sur exception (HOTL). Ces numéros ne se transposent pas aux échelles de l’exposé (Feng et coll., Singapour, CSA), qui ne se
-
-recouvrent qu’approximativement : chez Feng et coll., L3 est « consultant », et chez la CSA, 3 est « conditionnelle » (section 1.3).
+Les niveaux L0 à L4 employés ici et dans la suite forment l’échelle propre à l’ouvrage : L2 y désigne l’approbation préalable et L3 la supervision sur exception (HOTL). Ces numéros ne se transposent pas aux échelles de l’exposé (Feng et coll., Singapour, CSA), qui ne se recouvrent qu’approximativement : chez Feng et coll., L3 est « consultant », et chez la CSA, 3 est « conditionnelle » (section 1.3).
 
 | Archétype d’acteur | Profil de modèle cible | Protocoles principaux | Niveau d’autonomie | Risque principal à confiner |
 | --- | --- | --- | --- | --- |
@@ -413,7 +403,7 @@ Pour les banques, assureurs et sociétés de fiducie sous réglementation fédé
 
 Dans un système monolithique où un seul « super-agent » interagit avec le client, évalue le risque de crédit et déclenche la mise en place contractuelle, tout le composant hérite de la cote de matérialité maximale. Chaque modification mineure de la consigne d’accueil exige alors une validation indépendante lourde. Le découpage en cinq archétypes permet :
 
-1. **D’isoler la matérialité du risque de modèle.** L’agent d’interface (L1) et le travailleur d’extraction documentaire reçoivent une cote de risque modérée, avec un cycle d’évolution agile. L’agent spécialiste d’octroi ou d’indemnisation (L2/L3) relève d’une gouvernance E-23 complète : documentation des hypothèses, tests de stabilité pass𝑘, surveillance de la dérive.
+1. **D’isoler la matérialité du risque de modèle.** L’agent d’interface (L1) et le travailleur d’extraction documentaire reçoivent une cote de risque modérée, avec un cycle d’évolution agile. L’agent spécialiste d’octroi ou d’indemnisation (L2/L3) relève d’une gouvernance E-23 complète : documentation des hypothèses, tests de stabilité pass^𝑘, surveillance de la dérive.
 2. **D’appliquer la séparation des tâches (SoD) par construction.** En associant des identités NHI distinctes à l’agent qui propose un règlement et au méta-gouverneur (ou au superviseur humain HOTL) qui l’autorise, l’institution prouve cryptographiquement qu’aucun composant probabiliste unique ne peut à la fois instruire et décaisser un dossier.
 
 ## 1.8 Le *System of Action* au-dessus des systèmes d’enregistrement
@@ -443,7 +433,7 @@ En 2027, l’entreprise agentique insère entre les systèmes d’engagement et 
 > - agentgateway (Proxy MCP / A2A / LLM)
 > - Identités NHI + OAuth 2.1 OBO
 > - Politiques Cedar / OPA + Quotas FinOps
-> - Traces OpenTelemetry (gen_ai.*)
+> - Traces OpenTelemetry (gen_ai.\*)
 > - Boréal Services Numériques (BSN)
 > - Salesforce Agentforce • ServiceNow
 > - Connecteurs : A2A v1.0 + Serveurs MCP
@@ -638,9 +628,7 @@ Une plateforme SaaS B2B moderne expose désormais trois surfaces de première cl
 
 ## 1.9 Cycle d’exécution asynchrone : régimes temporels et supervision sur exception
 
-Passer d’un assistant synchrone à une main-d’œuvre d’exécution oblige à concevoir explicitement la gestion du temps. Une requête HTTP classique dure de 50 millisecondes à 30 secondes; les processus d’entreprise s’étalent sur quatre ordres de grandeur temporels, qui
-
-ne peuvent partager ni les mêmes protocoles de transport, ni les mêmes mécanismes de persistance.
+Passer d’un assistant synchrone à une main-d’œuvre d’exécution oblige à concevoir explicitement la gestion du temps. Une requête HTTP classique dure de 50 millisecondes à 30 secondes; les processus d’entreprise s’étalent sur quatre ordres de grandeur temporels, qui ne peuvent partager ni les mêmes protocoles de transport, ni les mêmes mécanismes de persistance.
 
 | Régime temporel | Horizon de durée | Exemples types en entreprise | Transport et infrastructure d’état requis |
 | --- | --- | --- | --- |
@@ -660,11 +648,11 @@ Le cadre de Singapour reconnaît qu’une supervision continue de tous les agent
 
 La maturité opérationnelle en 2027 repose donc sur le passage à la supervision sur exception (HOTL, niveau L3), régie par une fonction de score de risque à la fois déterministe et sémantique :
 
-EscaladeHOTL(𝑥) = 𝕀(Impact (𝑥) > 𝑆fin ∨Incertitude (𝑥) > 𝑆inc ∨AlertePolitique (𝑥) = 1)
+Escalade_{HOTL}(𝑥) = 𝕀(Impact(𝑥) > 𝑆_{fin} ∨ Incertitude(𝑥) > 𝑆_{inc} ∨ AlertePolitique(𝑥) = 1)
 
-La majorité des transactions courantes qui respectent à la fois les seuils financiers (𝑆fin), une cohérence inter-sources élevée (𝑆inc bas) et zéro alerte des règles Cedar/OPA s’exécutent sans interruption en L3, sous télémétrie complète. Seule la minorité de dossiers atypiques, ambigus ou à fort enjeu financier est routée vers un superviseur humain reposé. L’interface A2UI lui présente non pas un récit généré par un modèle, mais le différentiel exact des preuves contradictoires qui ont déclenché l’escalade.
+La majorité des transactions courantes qui respectent à la fois les seuils financiers (𝑆_{fin}), une cohérence inter-sources élevée (𝑆_{inc} bas) et zéro alerte des règles Cedar/OPA s’exécutent sans interruption en L3, sous télémétrie complète. Seule la minorité de dossiers atypiques, ambigus ou à fort enjeu financier est routée vers un superviseur humain reposé. L’interface A2UI lui présente non pas un récit généré par un modèle, mais le différentiel exact des preuves contradictoires qui ont déclenché l’escalade.
 
-Pour contrer l’érosion progressive de la vigilance en exploitation, la plateforme injecte en outre environ 2 % de dossiers canaris d’étalonnage, à anomalie connue, dans la file de supervision. Toute baisse du taux d’interception ou du temps médian d’examen sous le plancher ergonomique déclenche un réétalonnage du seuil 𝑆inc et une rotation des files.
+Pour contrer l’érosion progressive de la vigilance en exploitation, la plateforme injecte en outre environ 2 % de dossiers canaris d’étalonnage, à anomalie connue, dans la file de supervision. Toute baisse du taux d’interception ou du temps médian d’examen sous le plancher ergonomique déclenche un réétalonnage du seuil 𝑆_{inc} et une rotation des files.
 
 ## 1.10 Application au fil rouge : premier flux transversal chez Groupe Boréal
 
@@ -698,9 +686,7 @@ Au Groupe Boréal Inc. (14 500 employés, 6,8 G$ CAD de chiffre d’affaires con
 
 ## 1.11 Décision d’architecture et points de contrôle
 
-La fiche ADR-001 formalise l’invariant fondateur qu’un comité d’architecture d’entreprise doit entériner avant d’autoriser le déploiement d’agents mutatifs. Sa règle de spécialisation en cinq archétypes va au-delà de ce que retient l’exposé : un seul agent par défaut (section
-
-1.1 et grille de décision). La liste de contrôle qui suit donne les critères d’homologation correspondants.
+La fiche ADR-001 formalise l’invariant fondateur qu’un comité d’architecture d’entreprise doit entériner avant d’autoriser le déploiement d’agents mutatifs. Sa règle de spécialisation en cinq archétypes va au-delà de ce que retient l’exposé : un seul agent par défaut (section 1.1 et grille de décision). La liste de contrôle qui suit donne les critères d’homologation correspondants.
 
 **DÉCISION D’ARCHITECTURE — ADR-001 — Superposition d’un System of Action découplé et séparation stricte MCP / A2A**
 
@@ -712,8 +698,8 @@ La fiche ADR-001 formalise l’invariant fondateur qu’un comité d’architect
   3. *Architecture stratifiée à System of Action fédéré.* Garder les agents spécialistes près de la gravité de leurs données, imposer MCP pour l’accès vertical aux outils et aux ressources, imposer A2A v1.0 pour la délégation horizontale entre domaines par une passerelle contrôlée, et ancrer les flux à plusieurs étapes dans un moteur d’exécution durable. Retenue.
 - **Décision** : tout système agentique de niveau L2, L3 ou L4 s’inscrit dans la strate *System of Action* et respecte : (a) la spécialisation en cinq archétypes fonctionnels; (b) l’interdiction d’écrire directement en base en contournant la logique métier des systèmes d’enregistrement; (c) l’usage exclusif de MCP (vertical) et d’A2A v1.0 (horizontal), avec transport obligatoire d’une `ActionEnvelope` idempotente et budgétée.
 - **Conséquences** :
-  - ‣ *Positives* : indépendance envers les fournisseurs de modèles, confinement du rayon d’impact en sécurité par domaine, auditabilité native de bout en bout, réutilisation des serveurs MCP et des spécialistes A2A dans toute l’entreprise.
-  - ‣ *Négatives et coûts assumés* : investissement initial de plateforme (passerelle native pour l’IA, moteur d’exécution durable, registre d’agents) et discipline de conception des schémas d’outils idempotents.
+  - *Positives* : indépendance envers les fournisseurs de modèles, confinement du rayon d’impact en sécurité par domaine, auditabilité native de bout en bout, réutilisation des serveurs MCP et des spécialistes A2A dans toute l’entreprise.
+  - *Négatives et coûts assumés* : investissement initial de plateforme (passerelle native pour l’IA, moteur d’exécution durable, registre d’agents) et discipline de conception des schémas d’outils idempotents.
 - **Condition de révision** : réévaluation semestrielle lors des mises à jour majeures des spécifications de la Linux Foundation AAIF.
 
 ### Liste de contrôle de mise en production

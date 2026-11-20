@@ -121,9 +121,7 @@ Ce brouillon importe au-delà de l’IETF : l’extension Enterprise-Managed Aut
 
 Le groupe Workload Identity in Multi-System Environments traite de l’identité des charges de travail. Sa charte ne mentionne pas les agents : elle parle de microservices qui doivent s’authentifier entre eux à travers des frontières de confiance, et constate que OAuth, JWT et SPIFFE se combinent de multiples façons sans que leur interopération soit claire [14].
 
-Les agents y sont entrés par un document. Un brouillon individuel a été remplacé par un document adopté par le groupe, « AI Identity Management System », dont la révision 01
-
-date du 2 novembre 2026 [16][17]. Ses auteurs viennent notamment d’AWS, de Ping Identity, d’OpenAI et d’Okta. Sa thèse tient dans un titre de section : les agents sont des charges de travail. Le document compose SPIFFE, WIMSE et la famille OAuth 2.0 (chapitre 29).
+Les agents y sont entrés par un document. Un brouillon individuel a été remplacé par un document adopté par le groupe, « AI Identity Management System », dont la révision 01 date du 2 novembre 2026 [16][17]. Ses auteurs viennent notamment d’AWS, de Ping Identity, d’OpenAI et d’Okta. Sa thèse tient dans un titre de section : les agents sont des charges de travail. Le document compose SPIFFE, WIMSE et la famille OAuth 2.0 (chapitre 29).
 
 Le document est de portée informative, et le groupe n’a publié aucun RFC [15].
 
@@ -340,7 +338,6 @@ Pages primaires lues le 11 novembre 2026 :
 6. AAIF — dépôt des propositions de projets
 7. A2A — entrée à l’AAIF, 27 août 2026
 8. MCP — gouvernance
-
 9. W3C — AI Agent Protocol Community Group — accès automatisé refusé (HTTP 403) le 14 novembre 2026; fiche vérifiée par recherche web
 10. W3C — Agent Trust Protocol Community Group — accès automatisé refusé (HTTP 403) le 14 novembre 2026; fiche vérifiée par recherche web
 11. W3C — Agent Identity Registry Protocol Community Group — accès automatisé refusé (HTTP 403) le 14 novembre 2026; fiche vérifiée par recherche web
@@ -390,7 +387,7 @@ Page primaire lue lors de l’audit, le 12 novembre 2026 :
 
 SYNTHÈSE EXÉCUTIVE
 
-- **Enjeu stratégique** : entre 2024 et 2025, la prolifération de cadriciels d’agents captifs et de connecteurs sur mesure a imposé aux entreprises un coût d’intégration quadratique (𝑁× 𝑀) et recréé un verrouillage fournisseur. En 2027, une pile protocolaire gouvernée par des fondations neutres conditionne toute mise à l’échelle rentable et auditable entre divisions.
+- **Enjeu stratégique** : entre 2024 et 2025, la prolifération de cadriciels d’agents captifs et de connecteurs sur mesure a imposé aux entreprises un coût d’intégration quadratique (𝑁 × 𝑀) et recréé un verrouillage fournisseur. En 2027, une pile protocolaire gouvernée par des fondations neutres conditionne toute mise à l’échelle rentable et auditable entre divisions.
 - **Décisions architecturales structurantes** :
   1. *Irréversible à moyen terme* : standardiser les contrats « sur le fil » autour du socle de l’AAIF (MCP en vertical, A2A v1.0 en horizontal, agentgateway en coupure réseau) et d’ontologies métiers canoniques (Apache Ossie).
   2. *Structurante dès le cadrage* : appliquer sans dérogation la loi de non-substituabilité entre un outil déterministe (MCP) et un pair autonome (A2A), pour préserver les délais réseau, la chaîne d’identité et le périmètre réglementaire (BSIF E-23, EU AI Act).
@@ -401,7 +398,7 @@ SYNTHÈSE EXÉCUTIVE
 
 Un code source ouvert ne suffit pas : il faut une gouvernance ouverte. Bâtir sur une bibliothèque sous licence MIT contrôlée à 95 % par un éditeur unique expose à des ruptures d’API trimestrielles, à des optimisations qui favorisent le nuage de son créateur et à une inflation combinatoire des ponts d’intégration. Pour 𝑁 environnements hôtes et 𝑀 systèmes cibles, soumis à un facteur annuel de dérive 𝛿, le passage aux protocoles canoniques change l’équation économique :
 
-𝐶propriétaire = (1 + 𝛿) ⋅(𝑁× 𝑀) → 𝐶ouvert = 𝑁+ 𝑀
+𝐶_{propriétaire} = (1 + 𝛿) ⋅ (𝑁 × 𝑀) → 𝐶_{ouvert} = 𝑁 + 𝑀
 
 Dans un groupe qui exploite 𝑁= 12 environnements d’agents et 𝑀= 45 systèmes métiers, avec un taux annuel de rupture d’API propriétaires 𝛿= 0, 35, passer de 540 intégrations point-à-point (soit 1, 35 × 540 ≈729 maintenances correctives annuelles) à 57 adaptateurs normalisés réduit d’un ordre de grandeur la surface d’attaque et la dette d’entretien.
 
@@ -438,7 +435,7 @@ Dans un groupe qui exploite 𝑁= 12 environnements d’agents et 𝑀= 45 syst�
 > - Isolation d'Exécution, Évaluation & Moteurs Durables
 > - Bacs à sable microVM / WASM : OpenSandbox • Bancs d'essai RL : OpenEnv
 > - Hôte de référence Goose • Orchestration durable (Temporal / Restate)
-> - Télémétrie transversale : OpenTelemetry (conventions sémantiques gen_ai.*)
+> - Télémétrie transversale : OpenTelemetry (conventions sémantiques gen_ai.\*)
 > - Autorités de Gouvernance Ouverte
 > - Linux Foundation — AAIF (10 Projets)
 > - Agentic AI Foundation (Socle neutre inter-éditeurs)
@@ -502,8 +499,7 @@ Ce modèle de référence en six couches (C1 à C6) décompose, selon une lectur
 2. **Couche 2 — Plan de données IA, routage et identité (agentgateway, Agent Router, SLIM/MLS, OAuth 2.1 OBO)** : assure l’acheminement chiffré post-quantique, la vérification des identités non humaines (NHI via SPIFFE/WIMSE), l’atténuation des portées à chaque saut, l’arbitrage coût/latence entre modèles et l’évaluation des politiques Cedar ou OPA.
 3. **Couche 3 — Connectivité verticale (MCP sur Streamable HTTP)** : normalise l’invocation déterministe et typée des fonctions métiers, la lecture de ressources adressables par URI et les demandes contrôlées d’échantillonnage ou d’élicitation.
 4. **Couche 4 — Sémantique et portabilité cognitive (Apache Ossie, Agent Skills,** `AGENTS.md`**, Open Responses)** : découple le sens des entités d’affaires, le savoir-faire procédural de l’organisation et le contrat d’appel d’inférence des poids propriétaires d’un modèle particulier.
-5. **Couche 5 — Coordination horizontale (A2A v1.0, AGNTCY OASF et Agent Directory, ANP)** : assure la découverte dynamique des capacités publiées, la négociation
-  de modalités et le cycle de vie asynchrone de tâches déléguées entre pairs autonomes opaques, y compris au-delà des frontières de l’entreprise.
+5. **Couche 5 — Coordination horizontale (A2A v1.0, AGNTCY OASF et Agent Directory, ANP)** : assure la découverte dynamique des capacités publiées, la négociation de modalités et le cycle de vie asynchrone de tâches déléguées entre pairs autonomes opaques, y compris au-delà des frontières de l’entreprise.
 6. **Couche 6 — Interaction humaine et commerce (AG-UI, A2UI, WebRTC, WebMCP, AP2, x402)** : couvre la synchronisation d’état bidirectionnelle avec les opérateurs humains, le rendu d’interfaces génératives déclaratives sans injection de code, les flux vocaux temps réel et la signature cryptographique de mandats financiers.
 
 ### La loi de non-substituabilité : un outil MCP n’est pas un pair A2A
@@ -675,15 +671,15 @@ Pour les organismes publics québécois, canadiens et européens soumis à la Lo
 **DÉCISION D’ARCHITECTURE — ADR-004 — Alignement normatif sur la pile Linux Foundation AAIF et gouvernance anti-verrouillage**
 
 - **Statut** : Acceptée sous réserve (niveau de 9 projets AAIF sur 10 non établi; seuil Growth/Impact, section 11.2) | Périmètre : entreprise (développements internes et acquisitions SaaS) | Révision : semestrielle
-- **Contexte** : la dispersion des SDK propriétaires et des états d’inférence hébergés multiplie les coûts d’intégration (𝑁× 𝑀) et crée un verrouillage incompatible avec les exigences de BSIF E-23, de la Loi 25 et de l’EU AI Act.
+- **Contexte** : la dispersion des SDK propriétaires et des états d’inférence hébergés multiplie les coûts d’intégration (𝑁 × 𝑀) et crée un verrouillage incompatible avec les exigences de BSIF E-23, de la Loi 25 et de l’EU AI Act.
 - **Options évaluées** :
   1. *Autonomie totale par produit* : rejetée — silos entre divisions, duplication des connecteurs et failles d’identité.
   2. *Cadriciel logiciel unique imposé* : rejetée — incompatible avec les agents natifs des progiciels SaaS (SAP, Salesforce, ServiceNow) et avec la diversité des piles internes.
   3. *Standardisation des protocoles sur le fil (socle AAIF + AGNTCY + IETF + Ossie)* : liberté de mise en œuvre interne, sous réserve du respect des contrats protocolaires ouverts, vérifiés en passerelle. Retenue.
 - **Décision** : adopter le modèle en 6 couches fondé sur MCP (Streamable HTTP), A2A v1.0, AGNTCY OASF, Apache Ossie, Open Responses (`storeStateRemotely: false`), agentgateway (OAuth 2.1 OBO + DPoP) et OpenSandbox/OpenEnv. Confiner toute extension d’éditeur sous `_meta.vendor`, avec une dégradation gracieuse vérifiée en CI/CD.
 - **Conséquences** :
-  - ‣ *Positives* : complexité réduite à 𝑁+ 𝑀, substitution de modèle en moins de 4 heures, clauses d’achat opposables aux éditeurs.
-  - ‣ *Négatives, coûts assumés* : gouvernance continue du registre ontologique Apache Ossie et exploitation des pipelines de conformité OpenEnv.
+  - *Positives* : complexité réduite à 𝑁+ 𝑀, substitution de modèle en moins de 4 heures, clauses d’achat opposables aux éditeurs.
+  - *Négatives, coûts assumés* : gouvernance continue du registre ontologique Apache Ossie et exploitation des pipelines de conformité OpenEnv.
 - **Condition de révision** : semestrielle, selon les publications techniques de l’AAIF, de l’IETF (WIMSE) et du W3C (WebMCP).
 
 ### Liste de contrôle de mise en production

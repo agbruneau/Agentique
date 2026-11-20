@@ -46,9 +46,9 @@ GD --> Harnais : Injecte tâches
 Harnais <--> Sim : Mock outils
 Harnais --> T1 : Transcripts &\nétats finaux
 T1 --> T2 : Cas conformes\nau juge
-T1 --> Gate : Verdict T1
+T1 ---> Gate : Verdict T1
 T2 --> Gate : Verdict T2
 T3 ..> T2 : Corrige biais &\ncriteria drift
-T3 --> GD : Promeut cas
-Prod --> T3 : Échecs annotés
+GD <-- T3 : Promeut cas
+T3 <-- Prod : Échecs annotés
 @enduml

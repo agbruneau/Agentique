@@ -79,8 +79,7 @@ Une organisation opérant au Québec, au Canada et en Europe doit satisfaire sim
 
 Au Québec, la *Loi sur la protection des renseignements personnels dans le secteur privé* (`RLRQ, c. P-39.1`, modernisée par la **Loi 25**) impose trois exigences directes sur les `Systems of Agency` [281] :
 
-1. **Responsable de la protection des renseignements personnels (**`RPRP`**,** `article 3.1`**)** : l’entreprise répond de tout renseignement personnel (`RP`) détenu, y compris ceux traités ou inférés par
-  des agents [281]. Le rôle incombe par défaut à la plus haute autorité (délégation écrite possible) et agit en vérificateur `2LoD` sur les projets `R3–R4` [278] [281].
+1. **Responsable de la protection des renseignements personnels (**`RPRP`**,** `article 3.1`**)** : l’entreprise répond de tout renseignement personnel (`RP`) détenu, y compris ceux traités ou inférés par des agents [281]. Le rôle incombe par défaut à la plus haute autorité (délégation écrite possible) et agit en vérificateur `2LoD` sur les projets `R3–R4` [278] [281].
 2. `ÉFVP` **dès l’amorce et portabilité (**`article 3.3`**)** : tout projet d’acquisition, de développement ou de refonte traitant des `RP` impose une évaluation des facteurs relatifs à la vie privée (`ÉFVP`) proportionnelle à la sensibilité, à la finalité, à la quantité, à la répartition et au support des données, avec consultation du `RPRP` **dès le début du projet** [281]. Elle vérifie aussi la restitution des `RP` informatisés dans un **format technologique structuré et couramment utilisé**, contraignant les mémoires du chapitre 6 [281].
 3. **Décisions exclusivement automatisées (**`article 12.1` **au privé,** `article 65.2` **au public)** : l’organisation informe la personne concernée **au plus tard lors de la communication de la décision** [281] [286]. Sur demande, elle divulgue les `RP` utilisés, les **raisons, facteurs et paramètres principaux**, le droit de rectification et permet de **présenter des observations à un membre du personnel habilité à réviser la décision** [281] [286].
 
@@ -241,7 +240,7 @@ Enfin, la réversibilité prolonge les verrous du chapitre 2 [276] [304]. L’en
 > - Collecte normalisée
 > - Moteur d'imputation FinOps
 > - Pilotage & Réversibilité
-> - Traces OTel GenAI gen_ai.usage.* & Agent ID
+> - Traces OTel GenAI gen_ai.usage.\* & Agent ID
 > - Factures Cloud & API Schéma FOCUS v1.4 / v1.5
 > - TCO complet par résultat (Jetons + Infra + EvalOps + HITL)
 > - Détection d'anomalies & Plafonds budgétaires

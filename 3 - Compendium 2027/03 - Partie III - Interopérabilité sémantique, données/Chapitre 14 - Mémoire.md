@@ -69,9 +69,7 @@ Un pipeline extrait les éléments saillants d’une conversation, les consolide
 
 ### Des graphes
 
-Zep, avec son moteur Graphiti, range la mémoire dans un graphe de connaissances temporel qui conserve l’historique des relations. Ses auteurs, ceux du produit, rapportent 94,8 % sur le banc DMR, contre 93,4 % pour MemGPT (chiffre repris de l’article de MemGPT); ils jugent eux-mêmes ce banc peu représentatif des usages d’entreprise [11]. D’après un compte rendu publié par ZenML, quand une donnée nouvelle contredit une ancienne, Graphiti n’efface
-
-pas la relation : il la marque comme invalide à partir d’une date. La construction du graphe coûte cher [31].
+Zep, avec son moteur Graphiti, range la mémoire dans un graphe de connaissances temporel qui conserve l’historique des relations. Ses auteurs, ceux du produit, rapportent 94,8 % sur le banc DMR, contre 93,4 % pour MemGPT (chiffre repris de l’article de MemGPT); ils jugent eux-mêmes ce banc peu représentatif des usages d’entreprise [11]. D’après un compte rendu publié par ZenML, quand une donnée nouvelle contredit une ancienne, Graphiti n’efface pas la relation : il la marque comme invalide à partir d’une date. La construction du graphe coûte cher [31].
 
 | Architecture | Force | Faiblesse | Convient quand |
 | --- | --- | --- | --- |
@@ -95,9 +93,7 @@ L’article de position cité plus haut ramène la question à deux modèles cla
 
 ### La cohérence, lacune principale
 
-Les auteurs tiennent la cohérence pour le plus grand vide conceptuel et la décomposent en deux exigences [14]. À la lecture, traiter les conflits : un enregistrement évolue, et une version périmée peut rester visible. À l’écriture, fixer la visibilité et l’ordre : quand l’écriture d’un agent devient-elle observable par les autres, et dans quel ordre des écritures concurrentes peuvent-elles être vues ? Le problème est plus dur que dans une base classique, parce
-
-que les conflits sont souvent sémantiques : deux faits peuvent se contredire sans porter la même clé.
+Les auteurs tiennent la cohérence pour le plus grand vide conceptuel et la décomposent en deux exigences [14]. À la lecture, traiter les conflits : un enregistrement évolue, et une version périmée peut rester visible. À l’écriture, fixer la visibilité et l’ordre : quand l’écriture d’un agent devient-elle observable par les autres, et dans quel ordre des écritures concurrentes peuvent-elles être vues ? Le problème est plus dur que dans une base classique, parce que les conflits sont souvent sémantiques : deux faits peuvent se contredire sans porter la même clé.
 
 Letta recommande de confier les réécritures à un seul agent, les autres se bornant à ajouter [7]. Les *memory stores* appliquent une concurrence optimiste : une précondition sur l’empreinte du contenu refuse l’écriture si celui-ci a changé depuis la lecture [5]. Les dépôts partagés de Letta s’en remettent à la gestion de versions : chaque agent valide et pousse ses changements, les autres les tirent [6].
 
@@ -203,9 +199,7 @@ Appliquée à une mémoire d’agent, l’obligation bute sur trois difficultés
 
 **L’historique.** Les versions immuables qui protègent contre l’empoisonnement conservent aussi ce qu’on voulait effacer. La documentation des *memory stores* montre comment un produit tranche : toute modification crée une version immuable, conservée trente jours, et supprimer une mémoire n’efface pas ses versions. Une opération `redact` retire le contenu d’une version passée en gardant la piste d’audit; elle est destinée aux demandes de suppression et au retrait de secrets [5]. L’invalidation temporelle d’un graphe pose le même problème : elle sert l’audit, mais elle n’efface rien [31].
 
-**Le dépositaire.** Le lieu de stockage détermine qui répond de la rétention. L’outil de mémoire côté client laisse les données dans l’infrastructure de l’entreprise, qui en fixe la
-
-durée; une mémoire hébergée par le fournisseur suit les règles de rétention du fournisseur [4][5]. Des clés détenues par l’entreprise rendent le contenu hébergé irrécupérable quand elle les coupe, mais arrêtent l’agent si le gestionnaire de clés devient injoignable (chapitre 46, section 46.3).
+**Le dépositaire.** Le lieu de stockage détermine qui répond de la rétention. L’outil de mémoire côté client laisse les données dans l’infrastructure de l’entreprise, qui en fixe la durée; une mémoire hébergée par le fournisseur suit les règles de rétention du fournisseur [4][5]. Des clés détenues par l’entreprise rendent le contenu hébergé irrécupérable quand elle les coupe, mais arrêtent l’agent si le gestionnaire de clés devient injoignable (chapitre 46, section 46.3).
 
 ### En pratique
 
@@ -322,7 +316,7 @@ Une architecture durable transpose en systèmes distribués les quatre types de 
 1. **Mémoire de travail** : état consolidé du dossier courant, contraintes immédiates et calepin structuré, paginé dans la fenêtre compilée le temps d’une saga.
 2. **Mémoire épisodique** : journal chronologique immuable, en ajout seul, des événements vécus (alertes reçues, diagnostics posés, appels MCP commis, arbitrages humains HOTL, issues constatées). Elle répond à la question « Qu’est-il arrivé sur cet actif lors des interventions passées ? ».
 3. **Mémoire sémantique évolutive** : graphe consolidé des faits, des attributs d’instances et des relations, extraits des épisodes et des systèmes sources. L’ontologie du chapitre 12 fixe les lois invariantes du domaine; la mémoire sémantique suit l’état daté des instances réelles (p. ex. le compresseur `#90441` exécute le firmware v4.3 depuis le 2 mars).
-4. **Mémoire procédurale gouvernée** : plans types et recettes de résolution validées. En production réglementée L2–L4, un agent ne réécrit jamais lui-même ses consignes procédurales à chaud; toute évolution passe par une évaluation hors ligne pass𝑘 et une promotion CI/CD auditée (BSIF E-23).
+4. **Mémoire procédurale gouvernée** : plans types et recettes de résolution validées. En production réglementée L2–L4, un agent ne réécrit jamais lui-même ses consignes procédurales à chaud; toute évolution passe par une évaluation hors ligne pass^𝑘 et une promotion CI/CD auditée (BSIF E-23).
 
 | Registre de mémoire | Fonction dans le système d’action | Horizon de rétention | Substrat de référence (2027) | Mode de mutation autorisé | Menace principale à parer |
 | --- | --- | --- | --- | --- | --- |
@@ -345,15 +339,15 @@ Ce patron convient à l’état local d’une cellule sur un dossier long. Il ne
 
 Pour fédérer la mémoire épisodique et sémantique entre agents, Graphiti tient un graphe de connaissances temporel qui conserve l’historique des relations. D’après un compte rendu secondaire, quand une donnée nouvelle contredit une ancienne, il n’efface pas la relation : il la marque comme invalide à partir d’une date (section 14.2). Le contrat d’accès de l’architecture retient, pour sa part, le modèle des bases temporelles financières : chaque relation métier (arête du graphe) porte quatre horodatages répartis sur deux axes indépendants :
 
-- **Le temps de validité métier 𝑇val = [𝑡+𝑣, 𝑡−𝑣)** (`valid_from`, `valid_to`) : intervalle où le fait était vrai dans le monde physique ou contractuel (soupape montée le 10 janvier à 14 h, démontée le 2 mars à 9 h 30).
+- **Le temps de validité métier 𝑇_{val} = [𝑡_𝑣^+, 𝑡_𝑣^−)** (`valid_from`, `valid_to`) : intervalle où le fait était vrai dans le monde physique ou contractuel (soupape montée le 10 janvier à 14 h, démontée le 2 mars à 9 h 30).
 
-- **Le temps transactionnel système 𝑇sys = [𝑡+𝑠, 𝑡−𝑠)** (`ingested_at`, `superseded_at`) : intervalle où le système tenait cet enregistrement pour actif dans sa base (le rapport papier hors réseau du 10 janvier n’a été synchronisé que le 14 janvier à 19 h 15).
+- **Le temps transactionnel système 𝑇_{sys} = [𝑡_𝑠^+, 𝑡_𝑠^−)** (`ingested_at`, `superseded_at`) : intervalle où le système tenait cet enregistrement pour actif dans sa base (le rapport papier hors réseau du 10 janvier n’a été synchronisé que le 14 janvier à 19 h 15).
 
-Quand un nouvel événement modifie un état (passage du firmware v4.2 à v4.3), le magasin bi-temporel n’écrase pas l’arête antérieure : il ferme ses bornes (𝑡−𝑣 à la date réelle du changement, 𝑡−𝑠 à l’instant d’ingestion) et insère la nouvelle arête ouverte. Une requête à date (*Point-in-Time*) (𝑡𝑣, 𝑡𝑠) s’évalue alors de façon exacte :
+Quand un nouvel événement modifie un état (passage du firmware v4.2 à v4.3), le magasin bi-temporel n’écrase pas l’arête antérieure : il ferme ses bornes (𝑡_𝑣^− à la date réelle du changement, 𝑡_𝑠^− à l’instant d’ingestion) et insère la nouvelle arête ouverte. Une requête à date (*Point-in-Time*) (𝑡_𝑣, 𝑡_𝑠) s’évalue alors de façon exacte :
 
-Actif(𝑒, 𝑡𝑣, 𝑡𝑠) ⇔𝑡𝑣∈[𝑡+𝑣, 𝑡−𝑣) ∧𝑡𝑠∈[𝑡+𝑠, 𝑡−𝑠)
+Actif(𝑒, 𝑡_𝑣, 𝑡_𝑠) ⇔ 𝑡_𝑣 ∈ [𝑡_𝑣^+, 𝑡_𝑣^−) ∧ 𝑡_𝑠 ∈ [𝑡_𝑠^+, 𝑡_𝑠^−)
 
-Avec (𝑡𝑣= maintenant, 𝑡𝑠= maintenant), la requête livre l’état courant, sans les faits périmés. Avec (𝑡𝑣= 𝑡sinistre, 𝑡𝑠= maintenant), elle restitue l’état matériel au moment du bris, y compris les rapports reçus après coup. Avec (𝑡𝑣= 𝑡sinistre, 𝑡𝑠= 𝑡décision), elle établit pour le régulateur ce que l’agent savait au moment de sa décision.
+Avec (𝑡_𝑣 = maintenant, 𝑡_𝑠 = maintenant), la requête livre l’état courant, sans les faits périmés. Avec (𝑡_𝑣 = 𝑡_{sinistre}, 𝑡_𝑠 = maintenant), elle restitue l’état matériel au moment du bris, y compris les rapports reçus après coup. Avec (𝑡_𝑣 = 𝑡_{sinistre}, 𝑡_𝑠 = 𝑡_{décision}), elle établit pour le régulateur ce que l’agent savait au moment de sa décision.
 
 Pour garder une latence constante au-delà de plusieurs dizaines de millions d’arêtes, Graphiti entretient de façon incrémentale des nœuds de synthèse communautaire, qui regroupent les entités fortement connexes d’un même site industriel ou compte client. Quand un épisode neuf invalide une arête, seules les communautés touchées sont recalculées en tâche de fond asynchrone. Les reconstructions globales des approches *GraphRAG* statiques de première génération sont évitées, et la lecture en ligne reste sous les 75 millisecondes au 95e centile.
 
@@ -400,7 +394,7 @@ Pour garder une latence constante au-delà de plusieurs dizaines de millions d�
 | --- | --- | --- | --- | --- |
 | **Unité de stockage** | Fragment texte + vecteur dense | Blocs texte à quota fixe + archive | Entités, épisodes et arêtes à 4 dates | Blocs locaux en contexte + graphe fédéré |
 | **Mutation d’un fait** | Défaillante (doublons contradictoires) | Écrasement du texte par le modèle | Invalidation d’arête sans perte | Blocs rafraîchis depuis la vue graphe active |
-| **Audit à date** | Impossible | Limité (rejeu lourd de journaux) | Natif sur double axe (𝑡𝑣, 𝑡𝑠) | Natif et opposable (BSIF E-23) |
+| **Audit à date** | Impossible | Limité (rejeu lourd de journaux) | Natif sur double axe (𝑡_𝑣, 𝑡_𝑠) | Natif et opposable (BSIF E-23) |
 | **Événements hors séquence** | Confusion chronologique | Risque d’écraser un fait plus récent | Insertion exacte sur `valid_from` | Réconciliation graphe + alerte au bloc actif |
 | **Latence lecture (p95)** | 25 à 50 ms | 0 ms (en fenêtre) à 40 ms | 45 à 75 ms (BM25 + vecteur + 2 sauts) | Optimale (0 ms chaud / ~60 ms graphe) |
 | **Partage multi-agents** | Collisions sémantiques fréquentes | Concurrence fragile sur blocs texte | Robuste (URI canoniques partagées) | Blocs privés par saga + graphe entre agents |
@@ -411,7 +405,7 @@ Trois mécanismes rendent l’architecture robuste : l’ingestion tolérante au
 
 ### 1. Ingestion bi-temporelle des événements hors séquence
 
-Sur le terrain industriel ou logistique, les rapports n’arrivent pas toujours dans l’ordre des gestes. Si un rapport daté du lundi (𝑡𝑣) est synchronisé le jeudi (𝑡𝑠) alors qu’un changement du mercredi est déjà enregistré, remplacer l’état courant créerait une régression anachronique. La transaction ci-dessous prend un verrou exclusif sur le nœud sujet pour sérialiser les écritures concurrentes, insère la tranche historique [lundi, mercredi) sans toucher à l’état postérieur au mercredi, et évite de créer une arête dégénérée de durée nulle quand un correctif partage la même borne `valid_from`.
+Sur le terrain industriel ou logistique, les rapports n’arrivent pas toujours dans l’ordre des gestes. Si un rapport daté du lundi (𝑡_𝑣) est synchronisé le jeudi (𝑡_𝑠) alors qu’un changement du mercredi est déjà enregistré, remplacer l’état courant créerait une régression anachronique. La transaction ci-dessous prend un verrou exclusif sur le nœud sujet pour sérialiser les écritures concurrentes, insère la tranche historique [lundi, mercredi) sans toucher à l’état postérieur au mercredi, et évite de créer une arête dégénérée de durée nulle quand un correctif partage la même borne `valid_from`.
 
 #### Extrait 14.1 — `[Exécuté en CI]` · Magasin bi-temporel et requête d’audit *Point-in-Time* (Python / Cypher)
 
@@ -644,8 +638,8 @@ La synthèse exécutive et l’ADR-010 prescrivent l’architecture hybride pour
   3. *Architecture hybride : blocs de travail Letta sous garde, graphe bi-temporel Graphiti et pipeline d’oubli avec déchiquetage cryptographique* : combiner une pagination locale bornée et un graphe partagé à quatre horodatages. Retenue.
 - **Décision** : (a) toute mémoire sémantique partagée utilise des arêtes bi-temporelles (`valid_from`/`valid_to`, `ingested_at`/`superseded_at`), sans écrasement destructif; (b) la mémoire procédurale est en lecture seule en production et toute écriture en mémoire exige une preuve SHA-256 validée par `GovernedMemoryBlockController`; (c) toute donnée personnelle porte `tenant_id`, `data_subject_id` et `purpose_scope`, avec une clé KMS dédiée qui permet le déchiquetage cryptographique sous 72 heures.
 - **Conséquences** :
-  - ‣ *Positives* : disparition des erreurs dues à des faits périmés, auditabilité à date, résistance à l’empoisonnement persistant et conformité native à la Loi 25 et au RGPD.
-  - ‣ *Négatives / coûts assumés* : exploitation d’un moteur graphe indexé et gestion du cycle de clés KMS par sujet.
+  - *Positives* : disparition des erreurs dues à des faits périmés, auditabilité à date, résistance à l’empoisonnement persistant et conformité native à la Loi 25 et au RGPD.
+  - *Négatives / coûts assumés* : exploitation d’un moteur graphe indexé et gestion du cycle de clés KMS par sujet.
 - **Condition de révision** : alignement sur les futurs standards d’interchangeabilité de la mémoire de la Linux Foundation AAIF.
 
 ### Liste de contrôle de mise en production

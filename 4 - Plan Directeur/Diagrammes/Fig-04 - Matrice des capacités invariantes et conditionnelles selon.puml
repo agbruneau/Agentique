@@ -5,7 +5,8 @@ top to bottom direction
 skinparam shadowing false
 skinparam roundcorner 8
 skinparam defaultFontName SansSerif
-skinparam ranksep 12
+skinparam Padding 5
+skinparam ranksep 14
 
 title
 <b>Matrice des capacités par scénario — Noyau sans regret (42) et options conditionnelles (10)</b>

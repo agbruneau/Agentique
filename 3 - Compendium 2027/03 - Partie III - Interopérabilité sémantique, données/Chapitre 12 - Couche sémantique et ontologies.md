@@ -50,9 +50,7 @@ Le mot « sens » recouvre trois objets différents, qui n’appellent pas le m�
 
 Laisser un modèle écrire du SQL sur un schéma brut revient à lui faire deviner la couche sémantique. Un banc d’essai de 2023 a mesuré le prix de cette devinette. Sur un schéma d’assurance et 43 questions d’entreprise allant du rapport à la métrique, GPT-4 interrogeant directement la base SQL, sans exemples, obtenait 16 % de bonnes réponses; les mêmes questions posées sur une représentation en graphe de connaissances, bâtie d’une ontologie et de correspondances, en obtenaient 54 % (mesure des auteurs de data.world, dont la plateforme interrogeait le graphe; GPT-4 seul testé) [11].
 
-Deux précautions s’imposent. Ces chiffres viennent de l’article [11] (résumé et extraits relus), datent de novembre 2023 et portent sur un modèle dépassé. Et 54 % n’est pas un résultat de production. La leçon durable est le sens de l’écart : un modèle répond mieux quand le vocabulaire d’affaires lui est donné que lorsqu’il doit le reconstruire à partir de
-
-noms de colonnes. Le chapitre 15 arrive au même constat avec Spider 2.0, banc d’essai de la fin de 2024 sur des schémas d’entreprise réels.
+Deux précautions s’imposent. Ces chiffres viennent de l’article [11] (résumé et extraits relus), datent de novembre 2023 et portent sur un modèle dépassé. Et 54 % n’est pas un résultat de production. La leçon durable est le sens de l’écart : un modèle répond mieux quand le vocabulaire d’affaires lui est donné que lorsqu’il doit le reconstruire à partir de noms de colonnes. Le chapitre 15 arrive au même constat avec Spider 2.0, banc d’essai de la fin de 2024 sur des schémas d’entreprise réels.
 
 ## 12.2 La couche sémantique : métriques et dimensions gouvernées
 
@@ -255,9 +253,7 @@ Dans sa version 2, la taxonomie MAST range 36,94 % des échecs multi-agents obse
 
 Cette prépublication propose un intergiciel à six composants, qui couvrent le contexte partagé, la représentation de l’intention, la détection des conflits, leur résolution, le suivi de la dérive et la gouvernance [10]. D’après cet article, l’idée est de représenter explicitement l’intention de chaque agent et de la confronter au contexte du processus d’affaires.
 
-L’article rapporte une évaluation de 600 exécutions sur trois cadriciels et quatre scénarios d’entreprise. Le cadre y atteint 100 % de complétion des workflows, contre 25,1 % pour
-
-la meilleure solution de comparaison. Il détecte 65,2 % des conflits sémantiques, avec une précision de 27,9 %. L’auteur le présente comme indépendant du protocole et compatible avec MCP et A2A.
+L’article rapporte une évaluation de 600 exécutions sur trois cadriciels et quatre scénarios d’entreprise. Le cadre y atteint 100 % de complétion des workflows, contre 25,1 % pour la meilleure solution de comparaison. Il détecte 65,2 % des conflits sémantiques, avec une précision de 27,9 %. L’auteur le présente comme indépendant du protocole et compatible avec MCP et A2A.
 
 Ces résultats appellent une lecture prudente. La prépublication a un seul auteur et n’a pas été évaluée par les pairs. Selon le chapitre 21, qui en a lu le texte, les 600 exécutions sont simulées, sans vrais appels de modèle, et l’agent juge de comparaison atteint 93,2 % de précision. Une précision de 27,9 % signifie que près de trois alertes sur quatre sont fausses; à ce taux, un point de contrôle humain branché sur le détecteur serait vite ignoré (chapitre 22).
 
@@ -334,7 +330,6 @@ Ce que le format ne porte pas reste à gouverner ailleurs. Le contrôle d’acc�
 Pages primaires lues le 11 novembre 2026 :
 
 1. Apache Ossie — dépôt et README
-
 2. Apache Incubator — page du projet Ossie
 3. Apache Ossie — spécification cœur, version 0.3.0.dev0
 4. Apache Ossie — feuille de route
@@ -378,8 +373,7 @@ SYNTHÈSE EXÉCUTIVE
   1. *Irréversible à moyen terme* : interdire à tout agent de production d’émettre du SQL libre contre des schémas physiques; imposer le passage exclusif par une couche sémantique déclarative neutre, décrite dans le format d’échange Apache Ossie (section 12.4), projet en incubation dont la seule version parue est la `0.1.1`, et versionnée sous Git.
   2. *Structurante dès le jour 1* : coupler cette couche de lecture à une ontologie opérationnelle causale, qui formalise les identifiants maîtres inter-systèmes (MDM), les automates d’états légaux et les contrats de préconditions et d’effets des actions mutatives.
   3. *Réversible par conception* : les moteurs d’exécution vers lesquels l’architecture vise à compiler le manifeste (Snowflake Semantic Views, dbt Semantic Layer, Cube, moteurs d’intelligence d’affaires, serveurs MCP) et le substrat de stockage du graphe ontologique.
-- **Indicateurs de gouvernance associés** : taux de couverture des concepts partagés par des manifestes Apache Ossie, taux de rejet transactionnel aval pour violation d’invariant métier (cible < 0,5 %), écart nul entre les chiffres que l’intelligence d’affaires présente aux
-  comités exécutifs et ceux que consomment les agents, délai de propagation d’une règle d’affaires modifiée.
+- **Indicateurs de gouvernance associés** : taux de couverture des concepts partagés par des manifestes Apache Ossie, taux de rejet transactionnel aval pour violation d’invariant métier (cible < 0,5 %), écart nul entre les chiffres que l’intelligence d’affaires présente aux comités exécutifs et ceux que consomment les agents, délai de propagation d’une règle d’affaires modifiée.
 
 ## 12.8 Les limites du SQL libre sur un patrimoine d’entreprise
 
@@ -394,11 +388,9 @@ Un agent qui improvise ses jointures et ses formules d’agrégation sur un tel 
 
 La probabilité d’exactitude d’une décision qui croise 𝑘 concepts métier s’écrit :
 
-𝑃(Exact) = 𝑃(Syntaxe) ⋅∏𝑘 𝑗=1 𝑃(Sens𝑗∣𝒪︀)
+𝑃(Exact) = 𝑃(Syntaxe) ⋅ ∏_{𝑗=1}^{𝑘} 𝑃(Sens_𝑗 ∣ 𝒪︀)
 
-Les protocoles de la partie II (MCP, schémas JSON stricts, A2A v1.0) portent 𝑃(Syntaxe) au-delà de 0, 999. Sans référentiel sémantique partagé 𝒪︀, si chaque concept a une probabilité
-
-d’interprétation exacte de 0, 80, croiser quatre concepts (client, garantie, stock, priorité SLA) abaisse la fiabilité globale à 0,80^4 ≈ 0,41, soit près de trois décisions erronées sur cinq.
+Les protocoles de la partie II (MCP, schémas JSON stricts, A2A v1.0) portent 𝑃(Syntaxe) au-delà de 0, 999. Sans référentiel sémantique partagé 𝒪︀, si chaque concept a une probabilité d’interprétation exacte de 0, 80, croiser quatre concepts (client, garantie, stock, priorité SLA) abaisse la fiabilité globale à 0,80^4 ≈ 0,41, soit près de trois décisions erronées sur cinq.
 
 | Approche d’accès au sens métier | Exactitude analytique chiffrée | Maîtrise des actions mutatives | Portabilité (intelligence d’affaires et agents) | Risque majeur en exploitation |
 | --- | --- | --- | --- | --- |
@@ -441,9 +433,7 @@ Un pipeline de validation continue applique donc trois garde-fous automatisés �
 - **Détection des ruptures de contrat.** Renommer une métrique, modifier le type de retour d’un champ ou changer la logique d’un prédicat sans mise à jour de version sémantique (SemVer) bloque le déploiement tant que les propriétaires des Agent Cards abonnées n’ont pas contresigné l’impact.
 - **Tests d’assertion de référence.** Des requêtes témoins s’exécutent sur un jeu de données figé. Chaque cible de compilation (Snowflake, dbt et Cube, serveur MCP) doit restituer les mêmes valeurs décimales à 10^{−6} près.
 
-L’Extrait 12.1 ci-dessous épingle la seule version parue d’Apache Ossie, `0.1.1` (aucune version 1.0 n’existe et la branche `0.3.0.dev0` se déclare impropre à la production; section 12.4). Il arrête aussi une définition unique du « client actif »; or, quand deux domaines
-
-définissent un terme différemment, la section 12.7 recommande de nommer deux métriques distinctes, de documenter l’écart et de retirer le terme nu du catalogue exposé aux agents.
+L’Extrait 12.1 ci-dessous épingle la seule version parue d’Apache Ossie, `0.1.1` (aucune version 1.0 n’existe et la branche `0.3.0.dev0` se déclare impropre à la production; section 12.4). Il arrête aussi une définition unique du « client actif »; or, quand deux domaines définissent un terme différemment, la section 12.7 recommande de nommer deux métriques distinctes, de documenter l’écart et de retirer le terme nu du catalogue exposé aux agents.
 
 #### Extrait 12.1 — `[Exécuté en CI]` · Manifeste sémantique complet Apache Ossie (boreal_core_operations.ossie.yaml)
 
@@ -677,9 +667,7 @@ Le modèle garde sa souplesse linguistique pour qualifier un symptôme complexe,
 
 Une alerte textuelle imprécise (« Usine Boisbriand – Compresseur ligne 3 en surchauffe ») doit être reliée aux clés canoniques `boreal_party_id` et `matnr_canonical`. Un pipeline de résolution neuro-symbolique, ancré dans l’ontologie, s’en charge avant la planification.
 
-Le *GraphRAG* documentaire de 2024 demandait à un modèle d’extraire des triplets approximatifs de documents PDF. Celui de 2027 projette les référentiels maîtres (MDM), les
-
-nomenclatures d’ingénierie (BOM) et les relations d’Apache Ossie dans un graphe typé et gouverné. Avant toute génération de plan par le modèle orchestrateur, le médiateur exécute quatre étapes déterministes en moins de 80 ms.
+Le *GraphRAG* documentaire de 2024 demandait à un modèle d’extraire des triplets approximatifs de documents PDF. Celui de 2027 projette les référentiels maîtres (MDM), les nomenclatures d’ingénierie (BOM) et les relations d’Apache Ossie dans un graphe typé et gouverné. Avant toute génération de plan par le modèle orchestrateur, le médiateur exécute quatre étapes déterministes en moins de 80 ms.
 
 1. **Résolution d’entités.** Un appariement lexical et vectoriel sur les alias de sites résout la mention brute vers l’URI unique `urn:boreal:asset:BOR-CMP-90441`. Si plusieurs actifs candidats subsistent, le médiateur suspend toute action mutative et exige une désambiguïsation explicite.
 2. **Expansion bornée à deux sauts.** Le médiateur traverse les relations certifiées (Actif → Pièces compatibles BOM → Dépôts régionaux rattachés; Actif → Contrat de garantie BCA).
@@ -820,8 +808,8 @@ L’ADR-009 ci-dessous adopte Apache Ossie pour la production. Selon la section 
   3. *Architecture duale ouverte : manifestes YAML Apache Ossie et ontologie opérationnelle causale* : standardiser les métriques, les relations et les instructions `ai_context` sous Apache Ossie, compilé vers l’entrepôt et les serveurs MCP, et lier chaque outil mutatif à un contrat formel d’état et de préconditions, évalué avant la planification. Retenue.
 - **Décision** : (a) le SQL libre sur tables physiques est interdit en production pour tout agent L1–L4; (b) tout concept partagé entre deux applications ou divisions doit figurer au référentiel Git Apache Ossie; (c) tout outil MCP mutatif L2+ doit être adossé à une action ontologique qui déclare ses états sources légaux, ses préconditions vérifiables sur Ossie et sa compensation.
 - **Conséquences** :
-  - ‣ *Positives* : identité mathématique entre les rapports d’intelligence d’affaires et les agents, indépendance vis-à-vis des moteurs analytiques, quasi-disparition des rejets aval et auditabilité formelle (BSIF E-23).
-  - ‣ *Négatives et coûts assumés* : gouvernance inter-divisions (intendance sémantique), maintien des clés maîtres MDM et modélisation explicite des automates d’états.
+  - *Positives* : identité mathématique entre les rapports d’intelligence d’affaires et les agents, indépendance vis-à-vis des moteurs analytiques, quasi-disparition des rejets aval et auditabilité formelle (BSIF E-23).
+  - *Négatives et coûts assumés* : gouvernance inter-divisions (intendance sémantique), maintien des clés maîtres MDM et modélisation explicite des automates d’états.
 - **Condition de révision** : l’adoption porte sur la version parue `0.1.1`, épinglée dans chaque manifeste, non sur la branche `0.3.0.dev0`; révision à chaque version publiée d’Apache Ossie (ASF), et alignement annuel sur la Linux Foundation AAIF.
 
 ### Liste de contrôle de mise en production

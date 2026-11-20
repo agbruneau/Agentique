@@ -6,6 +6,8 @@ top to bottom direction
 skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
+skinparam nodesep 16
+skinparam ranksep 18
 skinparam rectangle {
   BackgroundColor #F8FAFC
   BorderColor #334155
@@ -98,12 +100,14 @@ rectangle Invariant #FEF2F2;line:DC2626 [
   **Invariant ADR-015 : Interdiction de tout pont A2A direct entre studios SaaS (évite les boucles A → B → C → A et l'usurpation par compte technique)**
 ]
 
-SurfaceEmploye -[#2563EB]-> PlanNeutre
-ChaineIdentite -[#991B1B]-> PlanNeutre
-PlanNeutre -[#1E3A8A]-> Salesforce : A2A + OBO
-PlanNeutre -[#1E3A8A]-> ServiceNow : A2A + OBO
-PlanNeutre -[#9A3412]-> SAPJoule : A2A + SAP CIS
-PlanNeutre -[#166534]-> Workday : MCP / A2A
+SurfaceEmploye -[#2563EB]down-> AgentGateway
+SurfaceEmploye -[hidden]down-> Temporal
+ChaineIdentite -[#991B1B]down-> MuleSoft
+
+AgentGateway -[#1E3A8A]down-> Salesforce : A2A + OBO
+Temporal -[#1E3A8A]down-> ServiceNow : A2A + OBO
+Temporal -[#9A3412]down-> SAPJoule : A2A + SAP CIS
+MuleSoft -[#166534]down-> Workday : MCP / A2A
 
 Salesforce -[hidden]down-> Invariant
 ServiceNow -[hidden]down-> Invariant

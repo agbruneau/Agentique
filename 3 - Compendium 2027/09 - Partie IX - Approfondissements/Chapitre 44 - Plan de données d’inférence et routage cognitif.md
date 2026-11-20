@@ -58,10 +58,9 @@ Ces prépublications de 2023 et 2024 rapportent les chiffres de leurs auteurs, s
 
 ### Le troisième palier est un autre axe
 
-Le calcul au moment de l’inférence (*test-time compute*) consiste à dépenser plus de calcul sur une requête sans changer de modèle. Snell et ses coauteurs en étudient deux formes, la recherche guidée par un modèle vérificateur et l’ajustement adaptatif de la distribution de sortie, sur un seul modèle (PaLM 2-S*) et un seul jeu de problèmes (MATH); leur résumé en tire trois constats [11] :
+Le calcul au moment de l’inférence (*test-time compute*) consiste à dépenser plus de calcul sur une requête sans changer de modèle. Snell et ses coauteurs en étudient deux formes, la recherche guidée par un modèle vérificateur et l’ajustement adaptatif de la distribution de sortie, sur un seul modèle (PaLM 2-S\*) et un seul jeu de problèmes (MATH); leur résumé en tire trois constats [11] :
 
 - l’efficacité de chaque approche varie fortement selon la difficulté du prompt;
-
 - une allocation adaptative, requête par requête, est plus de quatre fois plus efficace qu’une base de type « meilleur de N »;
 - à calcul égal, un petit modèle ainsi aidé peut dépasser un modèle quatorze fois plus gros, mais seulement sur les problèmes où il obtient déjà un taux de succès non négligeable.
 
@@ -89,9 +88,7 @@ Ni llm-d [8] ni la page d’OpenTelemetry sur les métriques d’IA générative
 
 ### Le cache KV
 
-Pendant le traitement de l’entrée, le serveur calcule pour chaque jeton un état d’attention, dit état KV. S’il le conserve, une requête qui commence par le même préfixe n’a pas à le
-
-recalculer. Les prompts se répètent beaucoup : consignes de domaine, exemples d’usage d’outils, contexte long [12]. C’est le mécanisme que les fournisseurs vendent sous le nom de cache de prompts (chapitres 13 et 40), avec la même condition : le stable en tête, le variable à la fin.
+Pendant le traitement de l’entrée, le serveur calcule pour chaque jeton un état d’attention, dit état KV. S’il le conserve, une requête qui commence par le même préfixe n’a pas à le recalculer. Les prompts se répètent beaucoup : consignes de domaine, exemples d’usage d’outils, contexte long [12]. C’est le mécanisme que les fournisseurs vendent sous le nom de cache de prompts (chapitres 13 et 40), avec la même condition : le stable en tête, le variable à la fin.
 
 La difficulté tient au lieu : le cache vit dans la mémoire d’une réplique. Preble note que les travaux antérieurs sur la réutilisation de l’état KV se limitaient à un seul GPU, alors que le service en production est distribué [12]. Une répartition aveugle disperse les tours d’une même conversation et annule le gain. Envoyer chaque requête là où son préfixe réside surcharge en revanche les répliques populaires. Preble optimise conjointement réutilisation et équilibrage.
 
@@ -166,7 +163,6 @@ Pour la latence, le TTFT, le débit et le taux de succès du cache se mesurent p
 Pages primaires lues le 12 novembre 2026 :
 
 1. Agentic AI Foundation — projets
-
 2. Agent Router — README du dépôt
 3. agentgateway — documentation LLM
 4. agentgateway — modèles virtuels
@@ -193,8 +189,7 @@ Sources secondaires : aucune. Le banc d’essai financier et l’indicateur de l
 - Le billet de publication de llm-d 1.0 n’a été lu que par son extrait [15]; le README ne rattache pas ses chiffres à cette version. Le statut de l’API `v1` de l’extension d’inférence n’est pas précisé par son site.
 - La prise en charge de l’extension d’inférence par Agent Router est déduite de son sélecteur de point d’accès; le README ne cite ni `InferencePool` ni le contributeur d’origine.
 - Les pages d’agentgateway sur les contrôles de coût, l’observabilité et les bancs d’essai n’ont pas été lues.
-- RouterArena porte sur des questions isolées et des modèles de 2023 à 2025. Hors le banc d’essai documentaire repris du chapitre 40, aucune mesure indépendante de routage sur
-  des trajectoires d’agents n’a été trouvée, y compris par une nouvelle recherche le 14 novembre 2026.
+- RouterArena porte sur des questions isolées et des modèles de 2023 à 2025. Hors le banc d’essai documentaire repris du chapitre 40, aucune mesure indépendante de routage sur des trajectoires d’agents n’a été trouvée, y compris par une nouvelle recherche le 14 novembre 2026.
 - Les renvois aux chapitres 13, 16, 21, 23, 24, 33, 40, 46 et 47 ont été vérifiés; aucune contradiction n’a été relevée.
 
 **MISE EN ŒUVRE — Plan de données AI-natif, passerelles et routage cognitif hybride**
@@ -212,8 +207,7 @@ SYNTHÈSE EXÉCUTIVE
 
 Une passerelle classique (NGINX, Kong, Apigee, AWS API Gateway) repose sur quatre hypothèses : une requête HTTP dure quelques dizaines de millisecondes, deux appels à la même route ont un coût voisin, l’échange est sans état persistant et l’autorisation se vérifie sur l’URL. Le trafic d’une flotte agentique en 2027 les invalide toutes (section 44.1) :
 
-1. **Asymétrie du coût unitaire** : À titre d’ordre de grandeur illustratif (chapitre 40), deux requêtes POST de 1,5 Ko vers la même route d’inférence peuvent varier de plusieurs ordres de grandeur : un SLM qui renvoie 40 jetons JSON coûte une fraction de cent, alors qu’un modèle à calcul au moment de l’inférence qui génère 32 000 jetons de
-  réflexion interne coûte plusieurs milliers de fois plus. Un quota en requêtes par seconde (RPS) laisse passer une dérive de coût à faible cadence tout en bloquant des travailleurs légitimes.
+1. **Asymétrie du coût unitaire** : À titre d’ordre de grandeur illustratif (chapitre 40), deux requêtes POST de 1,5 Ko vers la même route d’inférence peuvent varier de plusieurs ordres de grandeur : un SLM qui renvoie 40 jetons JSON coûte une fraction de cent, alors qu’un modèle à calcul au moment de l’inférence qui génère 32 000 jetons de réflexion interne coûte plusieurs milliers de fois plus. Un quota en requêtes par seconde (RPS) laisse passer une dérive de coût à faible cadence tout en bloquant des travailleurs légitimes.
 2. **Multiplexage bidirectionnel à état (MCP et A2A v1.0)** : MCP sur Streamable HTTP maintient des sessions longues, où le serveur pousse des notifications et gère des annulations en vol. Un proxy REST classique coupe ces flux ou ignore les méthodes JSON-RPC 2.0 internes.
 3. **Autorisation intra-protocole par outil** : Ouvrir une session vers un serveur MCP SAP n’autorise pas tous ses outils. L’échange OAuth 2.1 OBO (RFC 8693) et la politique Cedar/OPA doivent s’appliquer à l’attribut `params.name` de chaque appel `tools/call`.
 4. **Hétérogénéité des API de modèles** : Sans la spécification ouverte Open Responses de la Linux Foundation (AAIF), basculer d’un fournisseur infonuagique en panne vers une grappe vLLM brise la sérialisation des appels d’outils.
@@ -252,7 +246,7 @@ Le multiplexeur MCP intégré à agentgateway résout quatre problèmes d’expl
 > - Score complexité C(q) • Résidence Loi 25 SLA latence • Escalade sur confiance calibrée
 > - 4. Multiplexeur MCP & Proxy A2A / Open Responses
 > - Streamable HTTP • Schéma d'inférence unifié
-> - 5. Masquage PII & Traces OTel (gen_ai.*)
+> - 5. Masquage PII & Traces OTel (gen_ai.\*)
 > - Auditabilité sans modification du code agent
 > - Palier 1 — SLM Spécialisés Souverains (~73 % vol.)
 > - Modèles 3B–14B (vLLM / SGLang sur GPU internes)
@@ -381,9 +375,7 @@ En production, 70 à 80 % des appels d’une saga exécutent des micro-tâches b
 - **Palier 2 — LLM généralistes frontières (standard)** : Dédiés à la synthèse multi-documents, au dialogue client nuancé et à la coordination de 6 à 12 outils MCP.
 - **Palier 3 — Calcul au moment de l’inférence** : Effort de calcul accru, second axe qui se combine à la taille du modèle (section 44.3), réservé aux 3 à 7 % de cas qui exigent une planification sous contraintes contradictoires ou une contre-expertise critique (BSIF E-23), sous plafond de jetons de réflexion. Cet effort ne rattrape pas un problème hors de portée du modèle.
 
-La formule suivante ordonne les trois paliers en escalade; l’exposé fait pourtant du calcul au moment de l’inférence un second axe, l’effort, et non un échelon au-dessus du grand modèle (section 44.3). Pour toute requête 𝑞 associée à un seuil de fiabilité exigé 𝜃, le routeur choisit
-
-le palier minimal 𝜏∗(𝑞) dont la probabilité de succès calibrée 𝑃̂(𝑞, 𝜏) franchit le seuil tout en respectant résidence et budget :
+La formule suivante ordonne les trois paliers en escalade; l’exposé fait pourtant du calcul au moment de l’inférence un second axe, l’effort, et non un échelon au-dessus du grand modèle (section 44.3). Pour toute requête 𝑞 associée à un seuil de fiabilité exigé 𝜃, le routeur choisit le palier minimal 𝜏∗(𝑞) dont la probabilité de succès calibrée 𝑃̂(𝑞, 𝜏) franchit le seuil tout en respectant résidence et budget :
 
 𝜏∗(𝑞) = min{𝜏∈{1, 2, 3} : 𝑃̂(𝑞, 𝜏) ≥𝜃}
 
@@ -473,13 +465,11 @@ Pour les ministères, le réseau de la santé québécois soumis à la Loi 25 et
 
 Lorsqu’un spécialiste enchaîne sept appels d’outils MCP, la consigne système, l’ontologie Apache Ossie et les schémas JSON d’outils (~9 000 jetons) se répètent à l’identique à chaque tour, suivis d’à peine ~300 jetons nouveaux : près de 90 % du contexte forme un préfixe invariant. Un service Kubernetes en tourniquet, qui expédie chaque tour vers un pod vLLM différent, force chaque GPU à recalculer les 9 000 jetons et plus du traitement de l’entrée à chaque étape. Selon llm-d et ses contributeurs (Tesla et Red Hat), le routage conscient du cache donne un débit de sortie triplé et un TTFT deux fois plus court contre un tourniquet (Llama 3.1 70B, quatre AMD MI300X). Ces chiffres viennent du projet, le tourniquet y est la base la plus faible, et aucune évaluation indépendante n’a été trouvée (section 44.5).
 
-L’extension Gateway API Inference Extension (architectures llm-d, SGLang RadixAttention, NVIDIA Dynamo) confie le choix du pod à l’Endpoint Picker (EPP) de la section 44.5. L’EPP
+L’extension Gateway API Inference Extension (architectures llm-d, SGLang RadixAttention, NVIDIA Dynamo) confie le choix du pod à l’Endpoint Picker (EPP) de la section 44.5. L’EPP indexe en temps réel les blocs de préfixes résidents en HBM sur chaque pod 𝑝 et maximise un score équilibré :
 
-indexe en temps réel les blocs de préfixes résidents en HBM sur chaque pod 𝑝 et maximise un score équilibré :
+𝑆(𝑟, 𝑝) = 𝛼 𝐻_{kv}(𝑟, 𝑝) − 𝛽 𝑄(𝑝) − 𝛾 𝑈(𝑝)
 
-𝑆(𝑟, 𝑝) = 𝛼𝐻kv(𝑟, 𝑝) −𝛽𝑄(𝑝) −𝛾𝑈(𝑝)
-
-Dans ce score, 𝐻kv(𝑟, 𝑝) ∈[0, 1] mesure la fraction des blocs de 64 jetons de la requête 𝑟 déjà en cache sur le pod 𝑝, 𝑄(𝑝) pénalise la file d’attente et 𝑈(𝑝) la pression mémoire HBM. Tous les tours d’une même session convergent ainsi vers le pod au cache chaud, sans créer de point chaud en cas de rafale.
+Dans ce score, 𝐻_{kv}(𝑟, 𝑝) ∈ [0, 1] mesure la fraction des blocs de 64 jetons de la requête 𝑟 déjà en cache sur le pod 𝑝, 𝑄(𝑝) pénalise la file d’attente et 𝑈(𝑝) la pression mémoire HBM. Tous les tours d’une même session convergent ainsi vers le pod au cache chaud, sans créer de point chaud en cas de rafale.
 
 Pour les déploiements à très haute densité, deux techniques de la section 44.4 complètent cette affinité au sein des moteurs d’inférence distribués (llm-d et Mooncake) :
 
@@ -558,14 +548,13 @@ Groupe Boréal : unification du plan de données AI-natif et réduction de 63 % 
 
 - **Succès du cache KV interne** : passage de 19 % à 88 %, qui fait baisser l’occupation des 16 GPU H200 de 89 % à 41 % et évite 1,4 M$ CAD d’investissement matériel immédiat.
 - **Latence TTFT p95 multi-tours** : baisse de 62 % (de 2,90 s à 1,10 s globalement, et 135 ms sur le palier 1 SLM).
-- **Facture et coût par résultat réussi** : réduction de 63 % (de 0,38 $ CAD à 0,14 $ CAD par incident résolu), à score pass5 quasi inchangé (97,8 % vs 98,0 %). Lors d’une panne régionale de quarante-sept minutes chez le fournisseur infonuagique primaire en mai 2027, agentgateway a de plus basculé en 800 millisecondes le trafic du palier 2 vers le fournisseur secondaire canadien et absorbé le surplus sur la grappe H200 locale, avec zéro interruption de saga visible côté métier.
+- **Facture et coût par résultat réussi** : réduction de 63 % (de 0,38 $ CAD à 0,14 $ CAD par incident résolu), à score pass^5 quasi inchangé (97,8 % vs 98,0 %). Lors d’une panne régionale de quarante-sept minutes chez le fournisseur infonuagique primaire en mai 2027, agentgateway a de plus basculé en 800 millisecondes le trafic du palier 2 vers le fournisseur secondaire canadien et absorbé le surplus sur la grappe H200 locale, avec zéro interruption de saga visible côté métier.
 
 ## 44.11 Décision d’architecture normative et points de contrôle
 
 **DÉCISION D’ARCHITECTURE — ADR-014 — Imposition d’agentgateway comme plan de données unique, routage hybride à 3 paliers et affinité de KV-cache**
 
 - **Statut** : Acceptée | Périmètre : Charges agentiques internes et fédérées | Révision : Semestrielle
-
 - **Contexte** : L’accès direct des agents aux modèles et aux serveurs MCP fait dériver les coûts, empêche l’application uniforme de la Loi 25 et dégrade les GPU internes par invalidation du cache KV.
 - **Options évaluées** :
   1. *SDK client riche dans chaque agent* : Rejetée — ingérable sur un parc polyglotte et SaaS hétérogène.
@@ -573,8 +562,8 @@ Groupe Boréal : unification du plan de données AI-natif et réduction de 63 % 
   3. *Plan de données AI-natif (agentgateway) + Gateway API Inference Extension* : Coupure unique unifiant Open Responses, MCP et A2A, couplée à un routeur cognitif hybride et à l’ordonnanceur conscient du préfixe. Retenue.
 - **Décision** : Tout flux vers un modèle, un serveur MCP ou un pair A2A inter-divisions transite obligatoirement par agentgateway sous mTLS SPIFFE, est routé par classe de tâche (palier 1 SLM là où une règle explicite l’établit, palier supérieur pour toute classe inconnue; section 44.3) et utilise un Endpoint Picker conscient du préfixe sur grappe GPU interne.
 - **Conséquences** :
-  - ‣ *Positives* : Suppression réseau des *Shadow Agents*, baisse de plus de 55 % du coût par résultat réussi, bascule multi-fournisseurs instantanée, télémétrie `gen_ai.*` universelle.
-  - ‣ *Négatives / Coûts assumés* : Criticité *Tier-0* de la passerelle, qui exige une haute disponibilité multi-zones.
+  - *Positives* : Suppression réseau des *Shadow Agents*, baisse de plus de 55 % du coût par résultat réussi, bascule multi-fournisseurs instantanée, télémétrie `gen_ai.*` universelle.
+  - *Négatives / Coûts assumés* : Criticité *Tier-0* de la passerelle, qui exige une haute disponibilité multi-zones.
 - **Condition de révision** : Réévaluation semestrielle des seuils cognitifs et des standards AAIF.
 
 ### Liste de contrôle de mise en production
@@ -586,6 +575,6 @@ Validez les huit points suivants :
 3. **Autorisation MCP par outil** : La passerelle exige-t-elle un échange OAuth 2.1 OBO (RFC 8693) et un contrôle Cedar distinct sur chaque méthode `tools/call` ?
 4. **Contrat Open Responses** : Les agents consomment-ils l’API d’inférence normalisée, qui permet de permuter un modèle à chaud sans recompilation ?
 5. **Épinglage de souveraineté** : Les flux marqués `LOI25_PII` ou données contrôlées sont-ils routés sans exception vers des paliers hébergés dans la juridiction autorisée ?
-6. **Escalade calibrée homologuée** : Les seuils d’escalade du palier 1 (SLM) vers les paliers 2 et 3 sont-ils validés sur le banc 𝜏-bench sans régression de pass𝑘 ?
+6. **Escalade calibrée homologuée** : Les seuils d’escalade du palier 1 (SLM) vers les paliers 2 et 3 sont-ils validés sur le banc 𝜏-bench sans régression de pass^𝑘 ?
 7. **Invariance des préfixes** : Un linter vérifie-t-il qu’aucune donnée volatile (horodatage, UUID) n’est injectée en tête de consigne système, au détriment du cache KV ?
 8. **Ordonnancement GPU conscient du préfixe** : Les grappes internes utilisent-elles un Endpoint Picker qui pondère la présence du préfixe et la pression HBM, plutôt qu’un tourniquet ?

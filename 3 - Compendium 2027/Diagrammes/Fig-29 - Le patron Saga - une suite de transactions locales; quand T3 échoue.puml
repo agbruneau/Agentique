@@ -1,12 +1,26 @@
 ' Fig. 29. – Le patron Saga : suite de transactions locales et compensations en ordre inverse.
 @startuml
 top to bottom direction
+hide stereotype
 skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
+skinparam nodesep 20
+skinparam ranksep 14
+skinparam linetype ortho
+skinparam rectangle<<invis>> {
+  BackgroundColor transparent
+  BorderColor transparent
+  FontColor transparent
+  FontSize 1
+}
+skinparam rectangle {
+  BackgroundColor #FFFFFF
+  BorderColor #475569
+}
 
-rectangle "**TRANSACTIONS LOCALES**" as HdrT #FFFFFF;line:FFFFFF
-rectangle "**COMPENSATIONS, EN ORDRE INVERSE**" as HdrC #FFFFFF;line:FFFFFF
+rectangle "<color:#2563EB>**TRANSACTIONS LOCALES**</color>" as HdrT #FFFFFF;line:FFFFFF
+rectangle "<color:#475569>**COMPENSATIONS, EN ORDRE INVERSE**</color>" as HdrC #FFFFFF;line:FFFFFF
 HdrT -[hidden]right-> HdrC
 
 rectangle "**T1**\nvalidée" as T1 #EFF6FF;line:2563EB
@@ -15,22 +29,41 @@ rectangle "**T3**\néchec" as T3 #FEF2F2;line:DC2626
 rectangle "**C2**\ncompense T2" as C2 #F8FAFC;line:475569
 rectangle "**C1**\ncompense T1" as C1 #F8FAFC;line:475569
 
-HdrT -[hidden]down-> T1
+T1 -[hidden]right-> T2
+T2 -[hidden]right-> T3
+T3 -[hidden]right-> C2
+C2 -[hidden]right-> C1
+
 HdrT -[hidden]down-> T2
-HdrT -[hidden]down-> T3
 HdrC -[hidden]down-> C2
-HdrC -[hidden]down-> C1
 
-T1 -[#475569]right-> T2
-T2 -[#475569]right-> T3
-T3 -[#991B1B]right-> C2
-C2 -[#475569]right-> C1
+T1 -[#475569,norank]-> T2
+T2 -[#475569,norank]-> T3
+T3 -[#991B1B,norank]-> C2
+C2 -[#475569,norank]-> C1
 
-T2 .[#854D0E,dashed,norank]. C2
-T1 .[#854D0E,dashed,norank]. C1
+rectangle " " as BT1r <<invis>>
+rectangle " " as BT2 <<invis>>
+rectangle " " as BC2 <<invis>>
+rectangle " " as BC1r <<invis>>
+rectangle " " as BT1 <<invis>>
+rectangle " " as BC1 <<invis>>
+
+T2 .[#854D0E,dashed]down. BT2
+C2 .[#854D0E,dashed]down. BC2
+BT2 .[#854D0E,dashed,norank]. BC2
+
+T1 .[#854D0E,dashed]down. BT1r
+BT1r .[#854D0E,dashed]down. BT1
+C1 .[#854D0E,dashed]down. BC1r
+BC1r .[#854D0E,dashed]down. BC1
+BT1 .[#854D0E,dashed,norank]. BC1
+
+BT2 -[hidden]down-> BT1
+BC2 -[hidden]down-> BC1
 
 rectangle "**État intermédiaire visible entre une étape et sa compensation**\nUn autre agent peut lire une réservation qui sera annulée, et décider sur cette base" as Note #FFFFFF;line:FFFFFF
 
-T3 -[hidden]down-> Note
-
+BT1 -[hidden]down-> Note
+BC1 -[hidden]down-> Note
 @enduml

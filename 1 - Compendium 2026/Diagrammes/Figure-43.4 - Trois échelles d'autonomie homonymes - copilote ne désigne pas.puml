@@ -11,14 +11,12 @@ skinparam legendBorderColor #BBBBBB
 
 title UN MÊME MOT, TROIS RANGS
 
-rectangle "TROIS ÉCHELLES D'AUTONOMIE HOMONYMES" as Echelles {
-  rectangle "**1  Quatre paliers non numérotés**\n\nAssistance, copilote,\norchestration sous revue,\nautonomie bornée.\n\n<i>ce paragraphe, et ch. 14 § 14.4</i>" as E1
-  rectangle "**2  Six niveaux, 0 à 5**\n\n« Copilote » y est le niveau 2.\n\n\n\n<i>ch. 4 § 4.1.4</i>" as E2
-  rectangle "**3  Quatre niveaux L0-L3**\n\n« Copilote » y est le niveau L0.\n\n\n\n<i>ch. 45 § 45.7</i>" as E3
+rectangle "**1  Quatre paliers non numérotés**\n\nAssistance, copilote,\norchestration sous revue,\nautonomie bornée.\n\n<i>ce paragraphe, et ch. 14 § 14.4</i>" as E1
+rectangle "**2  Six niveaux, 0 à 5**\n\n« Copilote » y est le niveau 2.\n\n\n\n<i>ch. 4 § 4.1.4</i>" as E2
+rectangle "**3  Quatre niveaux L0-L3**\n\n« Copilote » y est le niveau L0.\n\n\n\n<i>ch. 45 § 45.7</i>" as E3
 
-  E1 -[hidden]right- E2
-  E2 -[hidden]right- E3
-}
+E1 -[hidden]right- E2
+E2 -[hidden]right- E3
 
 legend bottom
   « COPILOTE » DÉSIGNE UN PALIER DE LA PREMIÈRE, LE NIVEAU 2 DE LA DEUXIÈME ET LE NIVEAU L0 DE LA TROISIÈME.

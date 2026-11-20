@@ -136,9 +136,7 @@ La traçabilité des chapitres `01` à `15` (Parties I à V) repose sur quatre v
 
 Selon `RAND`, plus de `80 %` des projets d’IA échouent faute de cadrage métier et d’infrastructure; seuls `21 %` des dirigeants possèdent une gouvernance mature et `40 %` des projets agentiques risquent l’abandon d’ici 2027 (chapitre 15). L’`EA` urbanise donc les `Systems of Agency` sans exposer les `SoR`.
 
-**Urbanisation et portefeuille (Partie I).** Face aux queues de latence, erreurs sous `200 OK` et mutations irréversibles, le **chapitre 1** gradue l’autonomie (`L0` –`L4`), proscrit la validation mécanique et contient la **quadruple dette** (technique, cognitive, d’intention, couplage `CACE`) en écartant les règles métier
-
-des prompts. Le **chapitre 2** étend `TOGAF ADM` et `ArchiMate 3.2` : tout agent est un `«Cognitive Actor»` (`Application Component`, jamais `Business Actor`), relié à `«Human-on-the-Loop»` et `«Guardrail Policy»`. Il découpe le SI en **quatre plans** (Expérience, Orchestration, Interopérabilité/Contexte, Confiance/Observabilité) et arbitre **Acheter (**`SaaS`**) vs Assembler (**`MCP` **/**`A2A`**, défaut) vs Construire**. Le **chapitre 3** impose la **règle 80/20** devant l’`ARB`.
+**Urbanisation et portefeuille (Partie I).** Face aux queues de latence, erreurs sous `200 OK` et mutations irréversibles, le **chapitre 1** gradue l’autonomie (`L0` –`L4`), proscrit la validation mécanique et contient la **quadruple dette** (technique, cognitive, d’intention, couplage `CACE`) en écartant les règles métier des prompts. Le **chapitre 2** étend `TOGAF ADM` et `ArchiMate 3.2` : tout agent est un `«Cognitive Actor»` (`Application Component`, jamais `Business Actor`), relié à `«Human-on-the-Loop»` et `«Guardrail Policy»`. Il découpe le SI en **quatre plans** (Expérience, Orchestration, Interopérabilité/Contexte, Confiance/Observabilité) et arbitre **Acheter (**`SaaS`**) vs Assembler (**`MCP` **/**`A2A`**, défaut) vs Construire**. Le **chapitre 3** impose la **règle 80/20** devant l’`ARB`.
 
 **Souveraineté, conformité et FinOps (Parties II à V).** Les chapitres **04 à 06** préviennent l’enfermement via `MCP` devant couches anti-corruption (`ERP` /mainframes), `A2A` /`AGNTCY` (`OASF`) pour l’opacité B2B, et arrimage `ODCS`, `BI`, `MDM` et `OWL 2` /`SHACL`. Les chapitres **07 à 09** justifient le multi-agents face au facteur `~15×`, imposent une orchestration macro-réglementaire inter-domaines et sécurisent les transactions par exécution durable.
 
@@ -205,9 +203,7 @@ L’adoption de composants cognitifs autonomes n’efface pas l’urbanisation h
 
 L’architecture d’entreprise classique s’est structurée autour de deux plans complémentaires [3]. À la base résident les systèmes d’enregistrement, ou `Systems of Record (SoR)` : progiciels `ERP`, moteurs bancaires centraux, systèmes de gestion du capital humain (`HCM`), bases `CRM` maîtresses et référentiels de gestion des identités [1] [3]. Leur raison d’être demeure la préservation de la source unique de vérité (`SSOT`) consolidée par les dispositifs de données maîtresses (`MDM`), la haute disponibilité, l’intégrité des enregistrements et la conformité aux exigences réglementaires (`SOX`, `PCI DSS`, `RGPD`) [1]. Ces systèmes reposent sur des flux de validation stricts et n’acceptent que des mises à jour rigoureusement contrôlées [1].
 
-Au-dessus se sont développés les systèmes d’engagement, ou `Systems of Engagement (SoE)` : portails web, messageries, applications mobiles, outils collaboratifs et canaux conversationnels [3]. Ils optimisent l’ergonomie, la collaboration humaine et la réactivité d’interaction tout en générant d’importants volumes
-
-de signaux non structurés [3]. Dans cette urbanisation à deux strates, l’orchestration cognitive entre silos incombait toutefois aux humains : l’opérateur naviguait d’un écran `SoE` à l’autre, interprétait des demandes non structurées, croisait les données de plusieurs `SoR` et saisissait manuellement les écritures finales [3].
+Au-dessus se sont développés les systèmes d’engagement, ou `Systems of Engagement (SoE)` : portails web, messageries, applications mobiles, outils collaboratifs et canaux conversationnels [3]. Ils optimisent l’ergonomie, la collaboration humaine et la réactivité d’interaction tout en générant d’importants volumes de signaux non structurés [3]. Dans cette urbanisation à deux strates, l’orchestration cognitive entre silos incombait toutefois aux humains : l’opérateur naviguait d’un écran `SoE` à l’autre, interprétait des demandes non structurées, croisait les données de plusieurs `SoR` et saisissait manuellement les écritures finales [3].
 
 Les `Systems of Agency` (`SoA`, ou *Systems of Agents*) occupent cet intervalle opérationnel [3]. Ils désignent des plateformes et environnements d’exécution capables de capter les signaux métier en temps réel, de planifier, de raisonner et de conduire de manière autonome des actions multi-étapes à travers les silos vers un objectif explicite [4] [3]. Contrairement à un agent conversationnel limité à un échange en un seul tour, le `System of Agency` opère dans une boucle d’exécution continue — observer l’intention, planifier, récupérer le contexte, raisonner, agir via des appels d’outils et vérifier la vérité terrain — dans des contextes asynchrones faiblement couplés [2] [4] [3].
 
@@ -290,9 +286,7 @@ Cette instabilité locale s’amplifie de manière critique dans les boucles mul
 
 La convergence du non-déterminisme et de l’accès aux outils d’entreprise produit le risque le plus critique : l’exécution d’effets de bord irréversibles [5] [7]. Le référentiel `OWASP LLM06:2025` définit l’*agence excessive* (`Excessive Agency`) comme l’octroi à un agent de fonctions, de permissions ou d’une autonomie excédant son strict mandat [5]. Une hallucination, une erreur de typage ou un détournement d’objectif (*Agent Goal Hijack*, `ASI01` de l’*OWASP Top 10 for Agentic Applications*) déclenché par une injection indirecte dans un document ou un courriel externe se traduit alors par un abus d’outils (`ASI02`), un détournement de privilèges hérités (`ASI03`) ou des défaillances en cascade (`ASI08`) [5] [7].
 
-L’architecte de solutions doit classer chaque interface selon sa réversibilité et son rayon d’impact (`blast radius`) : lecture de dossiers ou création d’un brouillon interne contre virement financier, suppression en base de production, révocation de certificats ou envoi d’une notification client officielle [5]. De plus, la reprise sur panne par simple relance automatique (*retry*), sûre dans un contrat `REST` idempotent, devient dangereuse si l’état intermédiaire n’est pas consigné : relancer une inférence après coupure réseau
-
-peut amener le modèle à générer un plan différent et déclencher une double mutation sémantique. Les lectures et préparations réversibles doivent donc demeurer isolées des mutations critiques, ces dernières étant verrouillées derrière une porte déterministe et une validation appropriée [5] [7].
+L’architecte de solutions doit classer chaque interface selon sa réversibilité et son rayon d’impact (`blast radius`) : lecture de dossiers ou création d’un brouillon interne contre virement financier, suppression en base de production, révocation de certificats ou envoi d’une notification client officielle [5]. De plus, la reprise sur panne par simple relance automatique (*retry*), sûre dans un contrat `REST` idempotent, devient dangereuse si l’état intermédiaire n’est pas consigné : relancer une inférence après coupure réseau peut amener le modèle à générer un plan différent et déclencher une double mutation sémantique. Les lectures et préparations réversibles doivent donc demeurer isolées des mutations critiques, ces dernières étant verrouillées derrière une porte déterministe et une validation appropriée [5] [7].
 
 > **[Figure]**
 > - Rupture épistémique : boucle probabiliste et porte d'irréversibilité
@@ -409,8 +403,7 @@ La viabilité pluriannuelle d’une architecture agentique dépend enfin de sa r
 Dans le développement traditionnel, la dette technique s’accumule dans le code source. Les recherches de Margaret-Anne Storey montrent que l’IA générative et agentique réduit la friction d’écriture tout en créant un goulet d’étranglement sur l’assimilation humaine, et proposent un **modèle à trois dettes** (*Triple Debt Model*) [6] :
 
 1. **La dette technique (dans le code)** : compromis structurels, connecteurs fragiles et défauts de modularité qui freinent l’évolution logicielle [6].
-2. **La dette cognitive (dans les personnes)** : érosion des modèles mentaux partagés au sein des équipes lorsque la vélocité de production d’artefacts générés par l’IA dépasse la capacité humaine de
-  révision et de compréhension [6]. Cette *capitulation cognitive* produit des systèmes qui fonctionnent en apparence mais dont plus personne ne maîtrise les décisions sous-jacentes lors d’un incident [6].
+2. **La dette cognitive (dans les personnes)** : érosion des modèles mentaux partagés au sein des équipes lorsque la vélocité de production d’artefacts générés par l’IA dépasse la capacité humaine de révision et de compréhension [6]. Cette *capitulation cognitive* produit des systèmes qui fonctionnent en apparence mais dont plus personne ne maîtrise les décisions sous-jacentes lors d’un incident [6].
 3. **La dette d’intention (dans les artefacts)** : disparition des justifications, objectifs, hypothèses de conformité et contraintes métier (*the why*) [6]. Lorsque des règles critiques sont enfouies dans des instructions narratives sans documentation vivante ni dossier de décision, ni les nouveaux ingénieurs ni les autres agents ne peuvent faire évoluer le système sûrement [6].
 
 ### 1.4.2 Enchevêtrement `CACE`, cascades de correction et consommateurs non déclarés
@@ -473,9 +466,7 @@ L’erreur stratégique la plus répandue consiste à greffer un assistant gén�
 
 Lorsqu’un agent accélère uniquement une micro-tâche locale — par exemple résumer un courriel avant qu’un opérateur ne recopie les champs dans deux progiciels — le gain local est absorbé par les files d’attente inter-départementales, les ressaisies et les délais de cycle globaux [30] [31]. L’augmentation agentique ne produit un effet structurel que par la cartographie croisée entre les étapes d’une chaîne de valeur et les capacités qu’elles invoquent [23] [30].
 
-Dans des chaînes telles que le règlement de sinistres, l’octroi de prêts ou la gestion de l’approvisionnement, la latence découle de trois frictions : l’ingestion d’entrées non structurées, l’assemblage de contexte dispersé entre plusieurs `SoR` et l’escalade humaine sur des exceptions courantes [30] [31]. En décomposant la chaîne selon les guides `TOGAF Value Streams`, l’architecte supprime les transferts inutiles et réorganise le
-
-flux autour du traitement par exception [23] [30]. Les dossiers nominaux et les pré-instructions documentaires sont confiés à des acteurs cognitifs opérant sous contrat, tandis que l’expertise humaine est recentrée sur la validation des seuils critiques (`Human-on-the-Loop`) et l’arbitrage des cas ambigus [24] [32].
+Dans des chaînes telles que le règlement de sinistres, l’octroi de prêts ou la gestion de l’approvisionnement, la latence découle de trois frictions : l’ingestion d’entrées non structurées, l’assemblage de contexte dispersé entre plusieurs `SoR` et l’escalade humaine sur des exceptions courantes [30] [31]. En décomposant la chaîne selon les guides `TOGAF Value Streams`, l’architecte supprime les transferts inutiles et réorganise le flux autour du traitement par exception [23] [30]. Les dossiers nominaux et les pré-instructions documentaires sont confiés à des acteurs cognitifs opérant sous contrat, tandis que l’expertise humaine est recentrée sur la validation des seuils critiques (`Human-on-the-Loop`) et l’arbitrage des cas ambigus [24] [32].
 
 > **[Figure]**
 > - Capacités mobilisées Réalisation métier et applicative
@@ -701,8 +692,7 @@ Afin de cloisonner les responsabilités techniques et organisationnelles à trav
 
 1. **Plan 1 — Plan d’expérience et de déclenchement** : Surface d’entrée des intentions vers le `System of Agency` [24] [19]. Il réunit les `Systems of Engagement (SoE)` humains (portails, interfaces conversationnelles, consoles de validation `Human-in/on-the-Loop`) et les points d’entrée API ou événementiels captant les signaux métiers et partenaires B2B [24] [27]. Ce plan ne porte ni logique de planification ni accès direct aux bases maîtres; il normalise l’intention et transmet le contexte d’identité initial [28] [19].
 2. **Plan 2 — Plan d’orchestration et d’exécution durable** : Moteur de cycle de vie des tâches longues, garantissant la cohérence d’état face aux pannes, aux attentes humaines et aux limites de quotas [27] [31]. Il héberge le routeur arbitrant entre flux déterministes et nœuds cognitifs (voir le chapitre 3) ainsi que les topologies de coordination dirigée, collaborative ou réactive traitées dans la Partie III (chapitres 7 à 9) [27] [32] [31].
-3. **Plan 3 — Plan d’interopérabilité et de contexte** : Couche d’abstraction isolant les orchestrateurs du patrimoine applicatif et documentaire [28] [35] [33]. Il regroupe la médiation verticale vers les outils
-  et `SoR` (`MCP Gateway`), la délégation horizontale inter-agents (`A2A` et annuaires `AGNTCY`) incluant les agents `SaaS` tiers, et la couche mémoire et sémantique appliquant les contrôles `ACL` [28] [19] [35] [33]. Ces mécanismes constituent l’objet de la Partie II (chapitres 4 à 6).
+3. **Plan 3 — Plan d’interopérabilité et de contexte** : Couche d’abstraction isolant les orchestrateurs du patrimoine applicatif et documentaire [28] [35] [33]. Il regroupe la médiation verticale vers les outils et `SoR` (`MCP Gateway`), la délégation horizontale inter-agents (`A2A` et annuaires `AGNTCY`) incluant les agents `SaaS` tiers, et la couche mémoire et sémantique appliquant les contrôles `ACL` [28] [19] [35] [33]. Ces mécanismes constituent l’objet de la Partie II (chapitres 4 à 6).
 4. **Plan 4 — Plan transversal de confiance, de sécurité et d’observabilité** : Plan de contrôle irriguant verticalement les trois autres plans [24] [29] [21]. Il concentre les identités non humaines (`NHI`), la délégation restreinte, les portes d’intention, la défense en sept couches contre les menaces `MAESTRO` et `OWASP`, la télémétrie distribuée, les boucles `EvalOps`, la gouvernance `FinOps` et la conformité (`NIST AI RMF`, `ISO/IEC 42001`) [24] [21] [34] [25] [26]. Ces domaines sont détaillés dans la Partie IV (chapitres 10 à 12), et leur socle d’ingénierie unifié (`IAP` et `AI Gateway`) est présenté au chapitre 13.
 
 | Plan | Enjeu `EA` | Enjeu `SA` | Contrats d’interface | Chapitres |
@@ -720,9 +710,7 @@ La pérennité de cette topologie tient au strict respect des contrats entre pla
 
 La topologie en quatre plans offre une réponse structurée aux défaillances opérationnelles comme aux attaques multi-couches [21] [34].
 
-En **lecture EA**, ce découplage prévient le verrouillage intégral de la pile technologique : l’entreprise peut remplacer une interface du Plan 1, faire évoluer son moteur du Plan 2 ou basculer de modèle fondationnel sans reconstruire ses connecteurs `MCP` du Plan 3 ni affaiblir l’audit du Plan 4 [29] [35] [20]. L’alignement sur le cadre `MAESTRO` de la `Cloud Security Alliance` (`CSA`) montre en outre qu’en séparant ces plans,
-
-une compromission d’écosystème ou de données (Plan 3) ne peut ni escalader librement dans la logique d’orchestration (Plan 2) ni altérer les journaux et garde-fous (Plan 4) [21] [34].
+En **lecture EA**, ce découplage prévient le verrouillage intégral de la pile technologique : l’entreprise peut remplacer une interface du Plan 1, faire évoluer son moteur du Plan 2 ou basculer de modèle fondationnel sans reconstruire ses connecteurs `MCP` du Plan 3 ni affaiblir l’audit du Plan 4 [29] [35] [20]. L’alignement sur le cadre `MAESTRO` de la `Cloud Security Alliance` (`CSA`) montre en outre qu’en séparant ces plans, une compromission d’écosystème ou de données (Plan 3) ne peut ni escalader librement dans la logique d’orchestration (Plan 2) ni altérer les journaux et garde-fous (Plan 4) [21] [34].
 
 En **lecture SA**, les frontières inter-plans proscrivent les court-circuits architecturaux : aucune interface du Plan 1 ne requête directement un index vectoriel du Plan 3 sans traverser l’orchestrateur et les contrôles du Plan 4, et aucun nœud du Plan 2 ne dépend des schémas physiques d’un `SoR` [24] [28] [19]. En environnement multi-locataires, le `SA` arbitre entre l’isolement physique (`Silo`) pour les unités sensibles et la mutualisation sous quotas (`Pooled`) pour les services communs, tout en conservant un Plan 4 unifié [28] [19].
 
@@ -780,9 +768,7 @@ L’arbitrage du portefeuille cristallise l’alignement permanent entre `EA` et
 
 En **lecture EA**, l’objectif consiste à concentrer l’ingénierie sur les capacités différenciatrices (*Construire* et *Assembler*) tout en prévenant la prolifération redondante d’agents `SaaS` [24] [20] [36]. Les progiciels horizontaux conservent leur rôle de `SoR`, tandis que la couche de `Systems of Agency` garde sa portabilité grâce aux standards ouverts de l’`AAIF` [35] [20]. Si les coûts ou limites d’un agent acheté freinent une chaîne de valeur, l’`EA` planifie sa bascule vers une composition ouverte [24] [35].
 
-En **lecture SA**, ce choix dicte la maîtrise de la dette d’intégration [27] [33]. Devant un agent `SaaS`, le `SA` interpose des adaptateurs anti-corruption, des délégations bornées et des coupe-circuits contre la
-
-saturation des API ou la fuite de contexte [28] [21] [34] [20]. En régime assemblé ou construit, le `SA` consomme un harnais d’entreprise léger adossé aux chemins pavés de la plateforme interne présentée au chapitre 13 [29] [36] [33].
+En **lecture SA**, ce choix dicte la maîtrise de la dette d’intégration [27] [33]. Devant un agent `SaaS`, le `SA` interpose des adaptateurs anti-corruption, des délégations bornées et des coupe-circuits contre la saturation des API ou la fuite de contexte [28] [21] [34] [20]. En régime assemblé ou construit, le `SA` consomme un harnais d’entreprise léger adossé aux chemins pavés de la plateforme interne présentée au chapitre 13 [29] [36] [33].
 
 > **Arbitrage EA / SA** — Adopter le régime **Assembler** sur standards ouverts (`MCP`, `A2A`) comme choix par défaut pour les workflows inter-systèmes, confiner l’option **Acheter** aux commodités contenues dans un seul `SaaS`, et réserver l’option **Construire** aux capacités à forte propriété intellectuelle, souveraineté stricte ou latence critique justifiées devant l’`ARB`. Dans tous les cas, l’entreprise garde la maîtrise de ses contrats sémantiques, journaux et évaluations.
 
@@ -809,8 +795,7 @@ Un modèle de langage isolé demeure un prédicteur de jetons sans état, dépou
 Les retours d’ingénierie sur les agents longue durée montrent qu’un `Agent Harness` articule quatre sous-systèmes déterministes [37] [39] :
 
 1. **Boucle de contrôle et garde-fous de budget (*control loop*)** : elle exécute le cycle perception-raisonnement-action (patron `ReAct` lors d’explorations ouvertes) dans une machine à états bornée [37] [44]. Elle maintient des plafonds explicites d’itérations, de jetons et de latence pour stopper toute boucle circulaire ou erreur répétée d’outil, capturant la trace d’échec afin d’engager un repli déterministe [39] [43].
-2. **Assembleur de contexte et sessions longues** : lorsque les tâches dépassent une fenêtre de contexte, la cohérence se dégrade sans discipline de passation [39]. Les travaux d’Anthropic préconisent
-  de séparer un agent initialiseur d’un agent d’exécution incrémentale consignant des artefacts de passation structurés (journaux de progression, état des vérifications) entre fenêtres successives [39].
+2. **Assembleur de contexte et sessions longues** : lorsque les tâches dépassent une fenêtre de contexte, la cohérence se dégrade sans discipline de passation [39]. Les travaux d’Anthropic préconisent de séparer un agent initialiseur d’un agent d’exécution incrémentale consignant des artefacts de passation structurés (journaux de progression, état des vérifications) entre fenêtres successives [39].
 3. **Sélecteur d’inférence** : cette abstraction découple le code applicatif d’un fournisseur donné, aiguille chaque appel (`SLM` spécialisé ou `frontier LLM`) et impose le décodage contraint [41] [42], dialoguant à l’échelle de l’entreprise avec l’`AI Gateway` (chapitre 13).
 4. **Répartiteur d’outils et vérification** : il expose les capacités autorisées, valide les arguments avant exécution et retourne des diagnostics exploitables [37] [43]. L’ajout de vérificateurs déterministes indépendants (analyseurs statiques, tests) — ou d’évaluateurs isolés du contexte générateur — évite que le modèle n’auto-valide ses erreurs [39].
 
@@ -955,9 +940,7 @@ Deux patrons optimisent dynamiquement le compromis coût/précision entre `SLM` 
 
 Dans une **cascade d’inférence** (`FrugalGPT` [49]), illustrée par le diagramme de séquence ci-dessus, le harnais soumet d’abord la requête à un modèle économique (`SLM`), puis contrôle un score de confiance ou la validité structurée du résultat : seule la fraction incertaine est escaladée vers le modèle frontalier [41] [49]. Combinée à l’adaptation de prompt et à l’approximation, cette stratégie atteint la précision du meilleur modèle individuel tout en réduisant le coût jusqu’à **98 %**, ou améliore la précision de `GPT-4` de **4 %** à budget égal [49]. Elle impose toutefois une pénalité de latence additive sur les requêtes escaladées, puisqu’un premier appel a déjà été consommé avant le repli.
 
-À l’inverse, le **routage prédictif amont** (`RouteLLM` [50]) entraîne un routeur léger sur des données de préférence humaine (comme `Chatbot Arena`) enrichies par augmentation de données afin de diriger chaque requête dès l’entrée vers le modèle économique ou le modèle fort, évitant le coût de latence d’un double appel sur les cas difficiles. `RouteLLM` réduit les dépenses d’inférence de **plus de 50 %** (facteur supérieur à **2×**) à qualité comparable tout en transférant efficacement vers de nouveaux couples de modèles lors des
-
-évolutions de portefeuille [50]. La mutualisation réseau de ces routeurs dans une `AI Gateway` d’entreprise relève du chapitre 13.
+À l’inverse, le **routage prédictif amont** (`RouteLLM` [50]) entraîne un routeur léger sur des données de préférence humaine (comme `Chatbot Arena`) enrichies par augmentation de données afin de diriger chaque requête dès l’entrée vers le modèle économique ou le modèle fort, évitant le coût de latence d’un double appel sur les cas difficiles. `RouteLLM` réduit les dépenses d’inférence de **plus de 50 %** (facteur supérieur à **2×**) à qualité comparable tout en transférant efficacement vers de nouveaux couples de modèles lors des évolutions de portefeuille [50]. La mutualisation réseau de ces routeurs dans une `AI Gateway` d’entreprise relève du chapitre 13.
 
 | Famille de modèles | Rôle unitaire | Ordre de grandeur coût / latence | Atout principal | Garde-fou `SA` / `EA` |
 | --- | --- | --- | --- | --- |
@@ -978,9 +961,7 @@ Déléguer l’ensemble d’un processus métier à une boucle `ReAct` libre acc
 
 Anthropic distingue les **workflows** (où des chemins de code prédéfinis orchestrent modèles et outils) des **agents** (où le modèle contrôle dynamiquement sa propre trajectoire et ses appels d’outils) [37]. Google Cloud recommande pareillement de conserver le routage et les garde-fous dans du code déterministe dès que les étapes sont prévisibles, en réservant le `LLM` à l’interprétation, à l’extraction ou à la synthèse [44].
 
-Selon la **règle hybride 80/20**, environ **80 %** du traitement d’un processus d’entreprise — normalisation d’entrée, validations de schémas, règles réglementaires et calculs financiers, aiguillages conditionnels,
-
-journalisation et écritures dans les `SoR` — demeure dans du **code déterministe**, tandis qu’environ **20 %** — les points confrontés à du langage ambigu ou à des exceptions non structurées — mobilisent un **nœud cognitif** (le plus souvent sans boucle, exceptionnellement en boucle bornée) [37] [38] [44]. Le ratio varie selon la nature du dossier (moins de 10 % en règlement financier, jusqu’à 30 % en analyse documentaire), mais le principe demeure invariable : le déterminisme est le défaut architectural et le probabilisme l’exception justifiée.
+Selon la **règle hybride 80/20**, environ **80 %** du traitement d’un processus d’entreprise — normalisation d’entrée, validations de schémas, règles réglementaires et calculs financiers, aiguillages conditionnels, journalisation et écritures dans les `SoR` — demeure dans du **code déterministe**, tandis qu’environ **20 %** — les points confrontés à du langage ambigu ou à des exceptions non structurées — mobilisent un **nœud cognitif** (le plus souvent sans boucle, exceptionnellement en boucle bornée) [37] [38] [44]. Le ratio varie selon la nature du dossier (moins de 10 % en règlement financier, jusqu’à 30 % en analyse documentaire), mais le principe demeure invariable : le déterminisme est le défaut architectural et le probabilisme l’exception justifiée.
 
 ### 3.3.2 Arbre de tri en cinq régimes et décomposition mixte
 
@@ -996,9 +977,7 @@ Cinq régimes d’exécution en découlent :
 4. **Nœud** `LLM` **contraint sans boucle** : un appel unique à schéma contraint extrait ou classe un texte libre dans un workflow déterministe sans décider du flux suivant [37] [42].
 5. **Boucle agentique bornée** : réservée aux investigations ouvertes où les étapes ne peuvent être figées d’avance, sous plafond strict d’itérations, confinement `SHADI` ou microVM et validation humaine sur action critique [37] [39] [43].
 
-Pour illustrer cette décomposition sur un dossier de réclamation d’assurance commerciale pouvant atteindre 250 k$ CA, une approche naïve « tout-agent » exposerait l’entreprise à un risque critique : une injection dissimulée dans une pièce jointe pourrait altérer le calcul d’indemnité ou déclencher un paiement hors plafond [43]. En appliquant la règle 80/20 dans un graphe mixte à état partagé fortement typé, le harnais sépare : (1) ingestion, vérification d’intégrité et génération d’identifiant de traçabilité en code pur; (2) extraction narrative par un nœud `SLM` contraint en `JSON Schema` [41] [51]; (3) vérification de couverture et calcul exact de franchise sur le `SoR` par moteur de règles déterministe; (4) avis juridique structuré
-
-par `LLM` uniquement si une clause d’exclusion ambiguë est détectée [48] [44]; (5) routage déterministe vers approbation humaine au-delà de 25 k$ CA ou en cas d’ambiguïté [43]; (6) mutation transactionnelle encadrée par exécution durable (chapitre 9); (7) rédaction de notification suivie d’une vérification déterministe des montants numériques avant envoi. Sur le plan `SA`, chaque nœud déterministe reste isolément testable par jeux de tests unitaires et simulacres (*mocks*); sur le plan `EA`, le suivi de la part d’étapes cognitives — maintenue sous le seuil cible de 20 % hors exceptions documentaires — sert d’indicateur de santé architecturale lors des revues de portefeuille.
+Pour illustrer cette décomposition sur un dossier de réclamation d’assurance commerciale pouvant atteindre 250 k$ CA, une approche naïve « tout-agent » exposerait l’entreprise à un risque critique : une injection dissimulée dans une pièce jointe pourrait altérer le calcul d’indemnité ou déclencher un paiement hors plafond [43]. En appliquant la règle 80/20 dans un graphe mixte à état partagé fortement typé, le harnais sépare : (1) ingestion, vérification d’intégrité et génération d’identifiant de traçabilité en code pur; (2) extraction narrative par un nœud `SLM` contraint en `JSON Schema` [41] [51]; (3) vérification de couverture et calcul exact de franchise sur le `SoR` par moteur de règles déterministe; (4) avis juridique structuré par `LLM` uniquement si une clause d’exclusion ambiguë est détectée [48] [44]; (5) routage déterministe vers approbation humaine au-delà de 25 k$ CA ou en cas d’ambiguïté [43]; (6) mutation transactionnelle encadrée par exécution durable (chapitre 9); (7) rédaction de notification suivie d’une vérification déterministe des montants numériques avant envoi. Sur le plan `SA`, chaque nœud déterministe reste isolément testable par jeux de tests unitaires et simulacres (*mocks*); sur le plan `EA`, le suivi de la part d’étapes cognitives — maintenue sous le seuil cible de 20 % hors exceptions documentaires — sert d’indicateur de santé architecturale lors des revues de portefeuille.
 
 | Sous-tâche métier | Régime retenu | Part cible | Contrat d’interface | Auditabilité `EA` |
 | --- | --- | --- | --- | --- |
@@ -1014,9 +993,7 @@ par `LLM` uniquement si une clause d’exclusion ambiguë est détectée [48] [4
 
 ## 3.4 Contrats typés d’entrée/sortie (Structured Outputs et JSON Schema)
 
-La partition 80/20 exige des frontières aussi fiables que des contrats d’API entre les 20 % de nœuds cognitifs et les 80 % de code déterministe. Le simple « JSON Mode » probabiliste des premiers modèles ne garantissait que la validité syntaxique globale du document JSON, sans empêcher l’omission de champs obligatoires, l’inversion de types (une chaîne à la place d’un entier), les virgules excédentaires ou l’invention de propriétés non déclarées [42]. Par conséquent, les équipes applicatives devaient multiplier les parseurs
-
-tolérants, les expressions régulières fragiles et les boucles de réessai coûteuses [42] [51]. Le **décodage contraint** (*constrained decoding*) résout cette fragilité directement au niveau de l’échantillonnage des jetons [42] [52].
+La partition 80/20 exige des frontières aussi fiables que des contrats d’API entre les 20 % de nœuds cognitifs et les 80 % de code déterministe. Le simple « JSON Mode » probabiliste des premiers modèles ne garantissait que la validité syntaxique globale du document JSON, sans empêcher l’omission de champs obligatoires, l’inversion de types (une chaîne à la place d’un entier), les virgules excédentaires ou l’invention de propriétés non déclarées [42]. Par conséquent, les équipes applicatives devaient multiplier les parseurs tolérants, les expressions régulières fragiles et les boucles de réessai coûteuses [42] [51]. Le **décodage contraint** (*constrained decoding*) résout cette fragilité directement au niveau de l’échantillonnage des jetons [42] [52].
 
 ### 3.4.1 Mécanisme du décodage contraint et accélération `XGrammar`
 
@@ -1088,9 +1065,7 @@ Ce validateur déterministe applique quatre contrôles systématiques avant tout
 
 Cette rigueur contractuelle prépare directement le typage des outils `MCP` étudié à la Partie II.
 
-> **Arbitrage EA / SA** — Imposer une **source de vérité unique** par nœud cognitif : générer le contrat `JSON Schema Draft 2020-12` depuis les modèles typés applicatifs (`Pydantic` ou équivalent), tester sa compatibilité `strict: true` en intégration continue et doubler chaque appel contraint d’une
-
-> validation sémantique déterministe [42] [54]. Pour le `SA`, le cache `CFG` reste chaud et les parseurs ne cassent plus; pour l’`EA`, les états explicites d’escalade permettent de mesurer objectivement la précision réelle lors des changements de modèle ou des audits.
+> **Arbitrage EA / SA** — Imposer une **source de vérité unique** par nœud cognitif : générer le contrat `JSON Schema Draft 2020-12` depuis les modèles typés applicatifs (`Pydantic` ou équivalent), tester sa compatibilité `strict: true` en intégration continue et doubler chaque appel contraint d’une validation sémantique déterministe [42] [54]. Pour le `SA`, le cache `CFG` reste chaud et les parseurs ne cassent plus; pour l’`EA`, les états explicites d’escalade permettent de mesurer objectivement la précision réelle lors des changements de modèle ou des audits.
 
 ## Synthèse architecturale du chapitre
 
@@ -1147,7 +1122,7 @@ Lorsqu’un traitement métier exige un suivi multi-étapes (panier, session de 
 > - 3 POST tools/list (cursor optionnel)
 > - 4 200 OK (tools[], nextCursor, ttlMs, cacheScope)
 > - 2. Invocation, MRTR et flux SSE par requête
-> - 5 POST tools/call (Mcp-Method, Mcp-Name, Mcp-Param-*)
+> - 5 POST tools/call (Mcp-Method, Mcp-Name, Mcp-Param-\*)
 > - alt [Information complémentaire requise (MRTR)]
 > - 6 200 OK (resultType: "input_required", inputRequests, requestState)
 > - 7 Collecte inputResponses (saisie ou approbation)
@@ -1200,9 +1175,7 @@ Pour l’`EA`, `MCP` sous gouvernance `AAIF` unifie le Plan 3 en supprimant le c
 
 Un transport standardisé ne garantit ni la justesse de sélection ni l’efficacité d’un outil. Dans *SWE-agent*, Yang et al. ont établi le concept d’`Agent-Computer Interface` **(**`ACI`**)** en montrant que les agents de langage forment une classe d’utilisateurs distincte des humains et des programmes déterministes [61]. En dotant le modèle d’une interface sur mesure — intégrant un visualiseur et un éditeur de fichiers dédiés, des commandes de recherche et de navigation dans les dépôts ainsi que l’exécution de tests — `SWE-agent` a atteint `12,5 %` de réussite `pass@1` sur `SWE-bench` et `87,7 %` sur `HumanEvalFix` [61].
 
-Anthropic transpose ce principe à l’ingénierie des serveurs `MCP` : un outil incarne un contrat entre un système déterministe et un consommateur non déterministe [62]. Ses noms, descriptions, paramètres et
-
-retours appartiennent de plein droit à l’ingénierie du contexte : l’interface la plus claire pour l’agent se révèle du même coup la plus lisible pour les équipes d’exploitation [62].
+Anthropic transpose ce principe à l’ingénierie des serveurs `MCP` : un outil incarne un contrat entre un système déterministe et un consommateur non déterministe [62]. Ses noms, descriptions, paramètres et retours appartiennent de plein droit à l’ingénierie du contexte : l’interface la plus claire pour l’agent se révèle du même coup la plus lisible pour les équipes d’exploitation [62].
 
 ### 4.2.2 L’anti-patron Swagger-to-MCP : saturation, confusion et double transit
 
@@ -1273,8 +1246,7 @@ Pour l’`EA`, proscrire la conversion mécanique `Swagger-to-MCP` protège les 
 
 Brancher chaque `Agent Harness` directement sur des dizaines de serveurs hétérogènes (`stdio` locaux, services distants, connecteurs tiers) multiplie les angles morts de sécurité et favorise l’apparition de `Shadow MCP Servers` non inventoriés dénoncés par l’`OWASP` [67] [60]. La `MCP Gateway` centralise cette couche verticale du Plan 3 autour de deux familles complémentaires :
 
-- **Les plans de données nativement agentiques (**`AAIF`**)** : écrit en `Rust`, `Agentgateway` fédère dans un unique proxy le routage `HTTP` /`gRPC`, l’aiguillage `LLM` et la médiation `MCP` (`stdio`, `HTTP`, `SSE`,
-  `Streamable HTTP`, traduction `OpenAPI`), avec moteur de politiques `CEL` par outil, limitation de débit et traces `OpenTelemetry` [68] (son versant `A2A` relevant du chapitre 5). De son côté, `Agent Router` (anciennement `Envoy AI Gateway`) s’appuie sur `Envoy` et `Envoy Gateway` via des ressources déclaratives (`AIGatewayRoute`, `AIServiceBackend`) et `ExtProc` sur `gRPC` pour multiplexer les serveurs `MCP` et appliquer des règles `CEL` granulaires [69].
+- **Les plans de données nativement agentiques (**`AAIF`**)** : écrit en `Rust`, `Agentgateway` fédère dans un unique proxy le routage `HTTP` /`gRPC`, l’aiguillage `LLM` et la médiation `MCP` (`stdio`, `HTTP`, `SSE`, `Streamable HTTP`, traduction `OpenAPI`), avec moteur de politiques `CEL` par outil, limitation de débit et traces `OpenTelemetry` [68] (son versant `A2A` relevant du chapitre 5). De son côté, `Agent Router` (anciennement `Envoy AI Gateway`) s’appuie sur `Envoy` et `Envoy Gateway` via des ressources déclaratives (`AIGatewayRoute`, `AIServiceBackend`) et `ExtProc` sur `gRPC` pour multiplexer les serveurs `MCP` et appliquer des règles `CEL` granulaires [69].
 - **Les passerelles d’**`API Management` **et iPaaS étendues** : `Azure API Management` (`APIM`) projette sélectivement des opérations `REST` gérées ou encapsule des serveurs `MCP` externes derrière ses produits et politiques [70]; `Amazon Bedrock AgentCore Gateway` traduit des contrats `OpenAPI 3.0` /`3.1` en outils gouvernés [65]; et `MuleSoft Agent Fabric` (`Omni Gateway` / `MCP Bridge`) expose les actifs `API-led` existants sans réécriture applicative [56].
 
 ### 4.3.2 Médiation multiprotocole : REST/OpenAPI, gRPC et GraphQL
@@ -1376,9 +1348,7 @@ Pour neutraliser l’impact de charge sur les `SoR`, l’`ACL` applique une sép
 
 Côté **lectures**, un pipeline de capture par journaux de transactions (`Change Data Capture` **—** `CDC`) tel que `Debezium` (déployé sur `Kafka Connect`, en `Debezium Server` ou opérateur `Kubernetes`) capte en quasi-temps réel les insertions, mises à jour et suppressions directement depuis les journaux des bases supportées (`Db2`, `Oracle`, `PostgreSQL`, `SQL Server`) sans scrutation `SQL` intrusive [75] [76]. Ces flux événementiels (`CloudEvents`, patron `Outbox`) alimentent des **projections de lecture** `CQRS` modernes (indexation rapide, cache distribué à invalidation automatique) dédiées aux outils `readOnlyHint: true` [58] [76]. Les requêtes répétitives des agents n’atteignent plus ni les moteurs transactionnels `ERP` ni les `MIPS` du mainframe.
 
-Côté **écritures**, toute mutation traverse la passerelle bornée de l’`ACL` vers les interfaces transactionnelles officielles (`z/OS Connect`, `MuleSoft`, `ERP`), soumise à trois verrous déterministes : validation des invariants métier en code applicatif, vérification d’une **clé d’idempotence** contre les doubles exécutions lors des réessais `Streamable HTTP`, et lissage de débit protégeant le `SoR`, avec recours à `MRTR` (`input_required`)
-
-pour toute opération irréversible exigeant une confirmation [58] [73] [56]. La figure 4.4 et le tableau 4.3 synthétisent ces patrons.
+Côté **écritures**, toute mutation traverse la passerelle bornée de l’`ACL` vers les interfaces transactionnelles officielles (`z/OS Connect`, `MuleSoft`, `ERP`), soumise à trois verrous déterministes : validation des invariants métier en code applicatif, vérification d’une **clé d’idempotence** contre les doubles exécutions lors des réessais `Streamable HTTP`, et lissage de débit protégeant le `SoR`, avec recours à `MRTR` (`input_required`) pour toute opération irréversible exigeant une confirmation [58] [73] [56]. La figure 4.4 et le tableau 4.3 synthétisent ces patrons.
 
 > **[Figure]**
 > - Couche Anti-Corruption (ACL) & découplage CQRS
@@ -1703,9 +1673,7 @@ Le document IETF `draft-mpsb-agntcy-messaging-03` met toutefois en garde le `SA`
 
 *Tableau 5.2 — Comparaison architecturale des substrats de transport et de session pour l’interopérabilité inter-agents.*
 
-> **Arbitrage EA / SA** — Déployer `AGNTCY` de manière incrémentale plutôt que dogmatique [94] [91] [83]. L’`EA` adopte dès le départ les schémas `OASF` dans son catalogue interne pour unifier la taxonomie des capacités et exige une provenance signée (`JWS` ou `Sigstore` via `ADS`) lors des échanges
-
-> inter-organisations [82] [91] ; le `SA` réserve `SLIM` /`MLS` aux topologies nécessitant traversée de pare-feu sans exposition entrante, chiffrement bout en bout face à des relais tiers ou sessions de groupe dynamiques, tout en plaçant les contrôles `PII` dans l’enclave d’extrémité avant chiffrement `MLS` [92] [83].
+> **Arbitrage EA / SA** — Déployer `AGNTCY` de manière incrémentale plutôt que dogmatique [94] [91] [83]. L’`EA` adopte dès le départ les schémas `OASF` dans son catalogue interne pour unifier la taxonomie des capacités et exige une provenance signée (`JWS` ou `Sigstore` via `ADS`) lors des échanges inter-organisations [82] [91] ; le `SA` réserve `SLIM` /`MLS` aux topologies nécessitant traversée de pare-feu sans exposition entrante, chiffrement bout en bout face à des relais tiers ou sessions de groupe dynamiques, tout en plaçant les contrôles `PII` dans l’enclave d’extrémité avant chiffrement `MLS` [92] [83].
 
 ## 5.4 Ponts inter-cadriciels (`LangGraph`, `Semantic Kernel`, `AutoGen`) et fédération B2B avec agents SaaS tiers
 
@@ -1748,9 +1716,7 @@ Enfin, sur le plan `FinOps`, déléguer une `Task` ouverte à un agent SaaS exte
 
 ## Synthèse architecturale et transition
 
-L’interopérabilité horizontale parachève le modèle d’outillage vertical : `MCP` apporte la profondeur locale sur les outils d’un domaine, tandis qu’`A2A` confère la portée inter-domaines entre pairs autonomes opaques [77]. Grâce au modèle `Protobuf` unique, aux `AgentCard` signées en `JWS` après canonisation `RFC 8785`, aux états asynchrones des `Tasks` (`SSE`, `INPUT_REQUIRED`, `AUTH_REQUIRED` et webhooks durcis anti-SSRF),
-
-`A2A v1.0` réunit `LangGraph`, le `Microsoft Agent Framework`, `Amazon Bedrock AgentCore` et les agents SaaS d’entreprise derrière un contrat stable [82] [78] [90] [89] [96]. Lorsque le maillage requiert une recherche sémantique fédérée et un chiffrement de bout en bout insensible aux relais réseau ou aux pare-feu, `AGNTCY` (`OASF`, `ADS` sur `OCI` /`Kademlia` /`Sigstore` et `SLIM` /`MLS`) complète la pile protocolaire [91] [92] [95] [93].
+L’interopérabilité horizontale parachève le modèle d’outillage vertical : `MCP` apporte la profondeur locale sur les outils d’un domaine, tandis qu’`A2A` confère la portée inter-domaines entre pairs autonomes opaques [77]. Grâce au modèle `Protobuf` unique, aux `AgentCard` signées en `JWS` après canonisation `RFC 8785`, aux états asynchrones des `Tasks` (`SSE`, `INPUT_REQUIRED`, `AUTH_REQUIRED` et webhooks durcis anti-SSRF), `A2A v1.0` réunit `LangGraph`, le `Microsoft Agent Framework`, `Amazon Bedrock AgentCore` et les agents SaaS d’entreprise derrière un contrat stable [82] [78] [90] [89] [96]. Lorsque le maillage requiert une recherche sémantique fédérée et un chiffrement de bout en bout insensible aux relais réseau ou aux pare-feu, `AGNTCY` (`OASF`, `ADS` sur `OCI` /`Kademlia` /`Sigstore` et `SLIM` /`MLS`) complète la pile protocolaire [91] [92] [95] [93].
 
 Standardiser la découverte et l’échange de tâches ne règle cependant ni la souveraineté des connaissances partagées ni les algorithmes qui coordonnent plusieurs pairs. Le chapitre 6 traite de l’ingénierie du contexte, de la mémoire distribuée et de la souveraineté sémantique des données, avant que le chapitre 7 ne formalise les patrons d’orchestration multi-agents qui exploitent ces contrats horizontaux.
 
@@ -1997,9 +1963,7 @@ Dans les domaines réglementaires ou industriels à forte densité de règles, d
 
 *Fig. 23. – Chaîne de souveraineté sémantique : des contrats de données ODCS et du MDM à la consommation agentique*
 
-> **Arbitrage EA / SA** — Interdire de redéfinir des indicateurs métier ou des entités maîtresses dans les prompts d’agents ou des index vectoriels détachés de la gouvernance de données [100] [101]. L’`EA` rattache la propriété des contrats `ODCS` [106], des couches sémantiques (`MetricFlow` / vues séman
-
-> tiques) [113] [101], du `MDM` et de l’ontologie `OWL 2` [116] aux *Data Owners* métier afin de maintenir une source de vérité unique entre `BI` et agents. Le `SA` couple les outils `MCP` et le `Text-to-SQL` exclusivement à ces couches gouvernées, interdit l’indexation de jeux sans contrat `ODCS` valide et exécute des contrôles `SHACL` avant toute publication dans le graphe d’entreprise [115].
+> **Arbitrage EA / SA** — Interdire de redéfinir des indicateurs métier ou des entités maîtresses dans les prompts d’agents ou des index vectoriels détachés de la gouvernance de données [100] [101]. L’`EA` rattache la propriété des contrats `ODCS` [106], des couches sémantiques (`MetricFlow` / vues sémantiques) [113] [101], du `MDM` et de l’ontologie `OWL 2` [116] aux *Data Owners* métier afin de maintenir une source de vérité unique entre `BI` et agents. Le `SA` couple les outils `MCP` et le `Text-to-SQL` exclusivement à ces couches gouvernées, interdit l’indexation de jeux sans contrat `ODCS` valide et exécute des contrôles `SHACL` avant toute publication dans le graphe d’entreprise [115].
 
 ## 6.4 Gouvernance mémorielle : propagation des ACL, prévention de l’empoisonnement et isolation multi-locataires
 
@@ -2016,8 +1980,7 @@ L’indexation sous un compte de service unique sans filtrage au moment de la re
 
 Contrairement aux injections éphémères, l’empoisonnement de mémoire persistante (`OWASP ASI06: Memory & Context Poisoning`) grave une altération durable dans l’état de l’agent [118]. Trois travaux de sécurité démontrent l’efficacité redoutable de cette classe d’attaques :
 
-1. `PoisonedRAG` modélise la corruption de base `RAG` comme une optimisation conjointe et prouve que l’injection de **cinq textes malveillants** par question cible dans un corpus de millions de documents
-  suffit à atteindre **90 %** de taux de succès pour imposer la réponse voulue, tout en échappant aux filtres simples de perplexité [119].
+1. `PoisonedRAG` modélise la corruption de base `RAG` comme une optimisation conjointe et prouve que l’injection de **cinq textes malveillants** par question cible dans un corpus de millions de documents suffit à atteindre **90 %** de taux de succès pour imposer la réponse voulue, tout en échappant aux filtres simples de perplexité [119].
 2. `AgentPoison` implante des portes dérobées dans la mémoire à long terme ou les bases `RAG` d’agents autonomes sans modifier ni ré-entraîner le modèle [102]. Par optimisation contrainte de déclencheurs dans un sous-espace d’embeddings, l’attaque obtient plus de **80 %** de succès avec un taux d’empoisonnement sous **0,1 %** et moins de **1 %** de dégradation sur requêtes légitimes [102].
 3. `MINJA` (*Memory Injection Attacks via Query-Only Interaction*) démontre qu’un attaquant dépourvu d’accès direct en écriture peut empoisonner la mémoire d’un agent par de simples requêtes conversationnelles, en l’amenant à enregistrer des étapes de pontage logique (*bridging steps*) raccourcies progressivement jusqu’à détourner les requêtes futures d’autres victimes [103].
 
@@ -2050,7 +2013,7 @@ Deux moteurs matérialisent ces régimes :
 > - 1 Requête métier (mandat OBO)
 > - 2 ListObjects(user, "viewer", "doc")
 > - 3 ID autorisés [doc_12, doc_48]
-> - 4 Recherche hybride (tenant_id = T 1 AND doc_id IN autorisés)
+> - 4 Recherche hybride (tenant_id = T1 AND doc_id IN autorisés)
 > - 5 Fragments cloisonnés (HNSW + IDF par locataire)
 > - 6 BatchCheck(user, "viewer", candidats) [contrôle de fraîcheur si révocations]
 > - 7 Verdict autorisé
@@ -2058,7 +2021,7 @@ Deux moteurs matérialisent ces régimes :
 > - 8 Propose écriture mémoire (source, locataire T1, contenu)
 > - 9 Vérifie provenance, confiance et détecte directives injectées
 > - alt [Contenu sain et provenance attestée]
-> - 10 Écrit sous tenant_id = T 1 avec empreinte et horodatage
+> - 10 Écrit sous tenant_id = T1 avec empreinte et horodatage
 > - 1 1 Confirmation indexée
 > - [Contenu suspect ou origine non fiable]
 > - 12 Rejet ou mise en quarantaine (audit immuable)
@@ -2182,9 +2145,7 @@ Contrairement au patron `Handoff`, le routeur exécute un aiguillage en une pass
 
 ### 7.2.3 Topologie Supervisor et patron Subagents-as-Tools
 
-Dans la topologie **Supervisor** (*Orchestrator-Workers* chez Anthropic ou *Magentic* dans le Microsoft Agent Framework), un coordonnateur central décompose dynamiquement la tâche, délègue des sous-mandats à des travailleurs spécialisés et synthétise le résultat [126] [131] [132] [133]. C’est cette architecture
-
-— un agent `Claude Opus 4` orchestrant des sous-agents `Claude Sonnet 4` en parallèle — qui a permis à Anthropic de surclasser de 90,2 % l’agent unique `Claude Opus 4` sur son banc de recherche interne [127].
+Dans la topologie **Supervisor** (*Orchestrator-Workers* chez Anthropic ou *Magentic* dans le Microsoft Agent Framework), un coordonnateur central décompose dynamiquement la tâche, délègue des sous-mandats à des travailleurs spécialisés et synthétise le résultat [126] [131] [132] [133]. C’est cette architecture — un agent `Claude Opus 4` orchestrant des sous-agents `Claude Sonnet 4` en parallèle — qui a permis à Anthropic de surclasser de 90,2 % l’agent unique `Claude Opus 4` sur son banc de recherche interne [127].
 
 Les cadriciels modernes convergent vers l’implémentation **Subagents-as-Tools** plutôt que vers le partage d’une file de messages brute entre pairs [133] [136]. Le superviseur invoque chaque sous-agent spécialisé comme un outil sans état [136], ce qui procure deux bénéfices majeurs :
 
@@ -2330,9 +2291,7 @@ L’orchestration en **Group Chat** (*roundtable* ou *council*) réunit plusieur
 
 *Tableau 7.2 — Matrice comparative des topologies d’orchestration : contrôle, profil économique, risques et cas d’usage.*
 
-> **Arbitrage EA / SA** — Exiger un plafond d’itérations (`max_iterations`) et un test de stagnation sur toute boucle `Generator-Verifier`, une politique de quorum et un `timeout SLA` sur tout `Scatter-Gather`, et interdire les `Group Chats` dépassant trois agents [128] [131] [141]. Le `SA` place la vérification déterministe avant le juge cognitif et filtre les historiques de `Handoff` via `input_filter`
-
-> [126] [140]; l’`EA` impose une escalade `HITL` en cas de non-convergence sur les processus à effet externe [128] [135].
+> **Arbitrage EA / SA** — Exiger un plafond d’itérations (`max_iterations`) et un test de stagnation sur toute boucle `Generator-Verifier`, une politique de quorum et un `timeout SLA` sur tout `Scatter-Gather`, et interdire les `Group Chats` dépassant trois agents [128] [131] [141]. Le `SA` place la vérification déterministe avant le juge cognitif et filtre les historiques de `Handoff` via `input_filter` [126] [140]; l’`EA` impose une escalade `HITL` en cas de non-convergence sur les processus à effet externe [128] [135].
 
 ## 7.4 Ingénierie des transferts d’état : passage par référence (Artifact URI) et prévention du Goal Drift
 
@@ -2402,8 +2361,7 @@ Lorsque cette fragilité rencontre des données externes adverses ou non vérifi
 
 La prévention de ces dérives repose sur quatre défenses structurelles intégrées à l’orchestrateur [143] [146] [147] [135] :
 
-1. **Ancrage du mandat aux extrémités (**`Goal Pinning`**)** : exploiter la courbe en U de *Lost in the Middle* [146] en maintenant le contrat d’objectif immuable (mandat métier, seuils autorisés, critères d’arrêt)
-  hors de l’historique conversationnel mutable et en le réinjectant en tête système et en fin immédiate de contexte avant chaque décision d’action [143] [146].
+1. **Ancrage du mandat aux extrémités (**`Goal Pinning`**)** : exploiter la courbe en U de *Lost in the Middle* [146] en maintenant le contrat d’objectif immuable (mandat métier, seuils autorisés, critères d’arrêt) hors de l’historique conversationnel mutable et en le réinjectant en tête système et en fin immédiate de contexte avant chaque décision d’action [143] [146].
 2. **Hiérarchie stricte des instructions (**`Instruction Hierarchy`**)** : appliquer les principes de Wallace et al. (OpenAI) en distinguant hiérarchiquement consignes développeur, requêtes utilisateur et données tierces (retours d’outils, artefacts et messages de pairs) afin que les données ne puissent jamais surclasser le mandat privilégié [147] [135].
 3. **Validation typée des enveloppes inter-nœuds** : imposer des schémas structurés (`input_type`, `JSON Schema`) sur tout transfert d’état et rejeter les champs textuels libres susceptibles de redéfinir le rôle du nœud aval (`MAST FC1`) [125] [140].
 4. **Séparation planification/exécution et coupe-circuits SRE** : conformément aux recommandations de l’OWASP [135], soumettre toute action irréversible issue du graphe à une porte de politique déterministe (les *Intent Gates* `OPA` /`Cedar` et identités `NHI` /`SPIFFE` du chapitre 10) et appliquer des plafonds stricts de profondeur de délégation et de budget [135].
@@ -2470,7 +2428,7 @@ L’infrastructure d’`Event Mesh` s’articule autour de trois substrats majeu
 > - & Schema Registry
 > - [Contrats versionnés]
 > - Valide canaux, actions
-> - et en-têtes ce_*
+> - et en-têtes ce_\*
 > - «container» Dorsale Kafka [Journal partitionné]
 > - Rétention longue, compactage et replay
 > - «container» Courtiers Solace
@@ -2490,7 +2448,7 @@ L’infrastructure d’`Event Mesh` s’articule autour de trois substrats majeu
 > - «container» MCP Gateway locale
 > - [Outils typés]
 > - Exécute les actions idempotentes sur SoR
-> - CloudEvent (ce_*)
+> - CloudEvent (ce_\*)
 > - Stream / poll
 > - Abonnement
 > - Contrats Fédère
@@ -2671,7 +2629,7 @@ Or, les mécanismes HTTP standards peinent à refléter ce goulot : l’IETF `dr
 > - Clore lot (< max.poll.interval.ms)
 > - [Capacité disponible]
 > - Réponse structurée + RateLimit (r, t)
-> - Ack + CloudEvent (ce_hopcount + 1 )
+> - Ack + CloudEvent (ce_hopcount + 1)
 
 *Fig. 31. – Séquence de confinement des pathologies réactives : anti-écho, files de réessai non bloquantes et backpressure LLM*
 
@@ -2690,9 +2648,7 @@ Or, les mécanismes HTTP standards peinent à refléter ce goulot : l’IETF `dr
 
 ### 8.4.1 Inversion ciblée à l’ère agentique : pourquoi le macro-plan doit rester orchestré
 
-Dans les architectures microservices déterministes inspirées du *Domain-Driven Design (DDD)*, il est courant de recommander la chorégraphie entre contextes bornés et l’orchestration à l’intérieur de chacun d’eux afin d’éviter un ESB central monolithique [155]. Toutefois, l’introduction d’acteurs cognitifs probabi
-
-listes dans des processus réglementés (octroi de crédit, triage clinique, conformité douanière ou financière) impose d’inverser cette répartition aux frontières critiques.
+Dans les architectures microservices déterministes inspirées du *Domain-Driven Design (DDD)*, il est courant de recommander la chorégraphie entre contextes bornés et l’orchestration à l’intérieur de chacun d’eux afin d’éviter un ESB central monolithique [155]. Toutefois, l’introduction d’acteurs cognitifs probabilistes dans des processus réglementés (octroi de crédit, triage clinique, conformité douanière ou financière) impose d’inverser cette répartition aux frontières critiques.
 
 AWS Prescriptive Guidance rappelle que la chorégraphie convient lorsque l’équipe maîtrise toutes les dépendances dans son périmètre, tandis que les processus franchissant plusieurs frontières organisationnelles avec exigence de suivi d’état, de délais ou de contrôle d’erreur relèvent de l’orchestration [154]. Les résultats en simulation contrôlée confirment ce découpage : à l’échelle d’un petit groupe de spécialistes (`Persona`, moins de 10 agents), la réactivité locale reste précise, alors qu’à l’échelle `Enterprise` (200 agents), la confusion de découverte pénalise l’autonomie non encadrée face à une planification structurée (`DAG Plan & Execute`) [151].
 
@@ -2780,9 +2736,7 @@ Deux effets cumulatifs expliquent cette rupture [176]. D’une part, la probabil
 
 Chaque appel distant doit être borné par des délais d’expiration (`timeouts`) de connexion et de lecture afin d’éviter l’immobilisation prolongée de fils d’exécution, de connexions réseau et de mémoire jusqu’à l’épuisement du service [178]. Toutefois, les répartiteurs de charge et mandataires inverses d’entreprise imposent des plafonds synchrones courts, incompatibles avec des trajectoires agentiques combinant plusieurs passes d’inférence ou des modèles à raisonnement étendu.
 
-En diffusion continue (*Server-Sent Events*, `SSE`), une réponse initiale `HTTP 200` masque parfois une erreur survenant au milieu du flux ou une coupure réseau avant l’achèvement complet [185] [180]. L’appelant
-
-se retrouve dans l’ambiguïté décrite par Stripe : il ignore si l’action distante a échoué avant exécution, réussi juste avant la coupure ou laissé un état partiel [180]. Faute de journal externe et de propagation de l’échéance globale (*deadline*), des tentatives de reprise non coordonnées entre couches empilées amplifient la charge sur un système déjà dégradé [178].
+En diffusion continue (*Server-Sent Events*, `SSE`), une réponse initiale `HTTP 200` masque parfois une erreur survenant au milieu du flux ou une coupure réseau avant l’achèvement complet [185] [180]. L’appelant se retrouve dans l’ambiguïté décrite par Stripe : il ignore si l’action distante a échoué avant exécution, réussi juste avant la coupure ou laissé un état partiel [180]. Faute de journal externe et de propagation de l’échéance globale (*deadline*), des tentatives de reprise non coordonnées entre couches empilées amplifient la charge sur un système déjà dégradé [178].
 
 ### 9.1.3 Saturation de débit (`429`, `503`), `Retry-After` et gigue aléatoire
 
@@ -2839,9 +2793,7 @@ Les infrastructures conteneurisées aggravent la vulnérabilité des boucles non
 
 Les moteurs d’exécution durable (`Durable Execution`) garantissent qu’un processus applicatif progresse jusqu’à complétion sans limite de durée imposée, malgré les pannes de travailleurs ou coupures réseau [181] [176] [191]. Leur mécanisme repose sur la journalisation immuable de chaque transition d’état avant le passage à l’étape suivante, couplée à un rejeu (*replay*) déterministe lors d’une reprise [181] [191].
 
-Pour que le rejeu reconstitue exactement les variables locales sans dupliquer les effets de bord, le code orchestrateur doit respecter des **contraintes de déterminisme** strictes [190] [192]. À entrées et historique identiques, il doit produire la même séquence de commandes [190]. Il est donc proscrit d’exécuter directement dans le code de workflow des appels réseau, requêtes `LLM`, accès SQL, lectures d’horloge
-
-système ou tirages aléatoires non amorcés [190] [192]. Toute opération non déterministe est isolée dans une primitive dédiée (`Activity` ou `ctx.run`) dont la sortie sérialisée est inscrite au journal ; au rejeu, le moteur restitue cette sortie enregistrée sans ré-exécuter l’opération [181] [191] [192].
+Pour que le rejeu reconstitue exactement les variables locales sans dupliquer les effets de bord, le code orchestrateur doit respecter des **contraintes de déterminisme** strictes [190] [192]. À entrées et historique identiques, il doit produire la même séquence de commandes [190]. Il est donc proscrit d’exécuter directement dans le code de workflow des appels réseau, requêtes `LLM`, accès SQL, lectures d’horloge système ou tirages aléatoires non amorcés [190] [192]. Toute opération non déterministe est isolée dans une primitive dédiée (`Activity` ou `ctx.run`) dont la sortie sérialisée est inscrite au journal ; au rejeu, le moteur restitue cette sortie enregistrée sans ré-exécuter l’opération [181] [191] [192].
 
 Ce journal transactionnel demeure distinct des mémoires cognitives du chapitre 06 : un résumé conversationnel ou épisodique ne doit jamais servir à reconstruire le curseur d’exécution d’un workflow [181] [193]. Quant aux techniques de compatibilité lors des mises à jour de code sur des instances dormantes (`Patching`, `Worker Versioning`), elles relèvent du cycle `GitOps` étudié au chapitre 13 [190].
 
@@ -2862,9 +2814,7 @@ Temporal fournit quatre temporisations complémentaires pour détecter finement 
 
 ### 9.2.4 `Dapr Workflow` et `Checkpointers` de graphe (`LangGraph`)
 
-Intégré à l’écosystème Cloud Native Computing Foundation (`CNCF`), `Dapr Workflow` embarque le moteur `durabletask-go` directement dans le *sidecar* Dapr de chaque pod applicatif, relié au SDK par un flux gRPC
-
-bidirectionnel [196]. Le moteur orchestre des acteurs virtuels internes (`Workflow actor` et `Activity actor`) garantissant une exécution mono-fil par instance et délègue la persistance des points de reprise à un magasin d’état enfichable (`PostgreSQL`, `Redis`, etc.) [196]. Ce choix favorise la standardisation Kubernetes et la portabilité des bases d’état, au prix d’une exécution couplée au cycle de vie du sidecar par pod et d’une sémantique dépendante du `State Store` configuré [196].
+Intégré à l’écosystème Cloud Native Computing Foundation (`CNCF`), `Dapr Workflow` embarque le moteur `durabletask-go` directement dans le *sidecar* Dapr de chaque pod applicatif, relié au SDK par un flux gRPC bidirectionnel [196]. Le moteur orchestre des acteurs virtuels internes (`Workflow actor` et `Activity actor`) garantissant une exécution mono-fil par instance et délègue la persistance des points de reprise à un magasin d’état enfichable (`PostgreSQL`, `Redis`, etc.) [196]. Ce choix favorise la standardisation Kubernetes et la portabilité des bases d’état, au prix d’une exécution couplée au cycle de vie du sidecar par pod et d’une sémantique dépendante du `State Store` configuré [196].
 
 Enfin, les `Checkpointers` intégrés aux cadriciels d’agents tels que `LangGraph` enregistrent l’état d’un graphe par fil d’exécution (`thread_id`) à chaque frontière de super-étape pour offrir tolérance aux pannes locales, reprise après interruption humaine et voyage temporel, en complément de `Stores` dédiés à la mémoire transversale inter-fils [193]. Toutefois, un checkpointer de graphe seul ne fournit ni files de tâches distribuées avec travailleurs indépendants, ni minuteurs serveur persistants multi-semaines, ni détection par battements de cœur [194] [177] [193]. En entreprise, les graphes cognitifs gagnent donc à être encapsulés dans un moteur d’exécution durable complet [176] [195] [193]. La figure 9.2 compare ces architectures.
 
@@ -2933,9 +2883,7 @@ Enfin, les `Checkpointers` intégrés aux cadriciels d’agents tels que `LangGr
 
 ### 9.3.1 Impossibilité du protocole `Two-Phase Commit` (`2PC`) en contexte agentique
 
-Garantir la reprise de l’orchestrateur ne protège pas à lui seul l’intégrité des systèmes cibles dès que le workflow sollicite des `Systems of Record`, des serveurs `MCP` et des API SaaS possédant chacun leur propre stockage [197] [183]. Le protocole de validation distribuée `Two-Phase Commit` (`2PC`) s’avère inopérant pour trois motifs structurels [197] [186] [183]. D’abord, la majorité des progiciels modernes, des API HTTP et des courtiers de messages ne supportent pas de coordinateur XA distribué [197]. Ensuite, comme l’ont
-
-démontré Garcia-Molina et Salem pour les transactions de longue durée (*Long-Lived Transactions*), maintenir des verrous de base de données pendant des appels lents effondre la concurrence et multiplie les interblocages [186] [183]. Enfin, les reprises automatiques et la livraison au-moins-une-fois (*at-least-once*) imposent de rendre chaque frontière tolérante aux réémissions [180] [198].
+Garantir la reprise de l’orchestrateur ne protège pas à lui seul l’intégrité des systèmes cibles dès que le workflow sollicite des `Systems of Record`, des serveurs `MCP` et des API SaaS possédant chacun leur propre stockage [197] [183]. Le protocole de validation distribuée `Two-Phase Commit` (`2PC`) s’avère inopérant pour trois motifs structurels [197] [186] [183]. D’abord, la majorité des progiciels modernes, des API HTTP et des courtiers de messages ne supportent pas de coordinateur XA distribué [197]. Ensuite, comme l’ont démontré Garcia-Molina et Salem pour les transactions de longue durée (*Long-Lived Transactions*), maintenir des verrous de base de données pendant des appels lents effondre la concurrence et multiplie les interblocages [186] [183]. Enfin, les reprises automatiques et la livraison au-moins-une-fois (*at-least-once*) imposent de rendre chaque frontière tolérante aux réémissions [180] [198].
 
 ### 9.3.2 Idempotence de bout en bout : contrat `Idempotency-Key` et phases atomiques
 
@@ -3068,9 +3016,9 @@ Toutefois, côté moteur durable, un impératif s’impose : **l’exécution du
 > - En cas de replay ultérieur, Wf lit LLM2/P3 depuis le journal sans ré-interroger LLM1 ni LLM2.
 > - 2. Attente asynchrone HOTL et escalade sous SLA
 > - 7 Émet demande d'approbation (Awakeable ID / Workflow ID)
-> - 8 Démarre Durable Timer (SLA N 1 = 4 heures)
+> - 8 Démarre Durable Timer (SLA N1 = 4 heures)
 > - Libère thread et RAM. Zéro consommation de worker.
-> - 9 Notifie Approbateur N 1
+> - 9 Notifie Approbateur N1
 > - Délai SLA N1 expiré sans réponse
 > - 10 Déclenche escalade vers N2 + nouveau Durable Timer (SLA N2)
 > - 1 1 Notifie Approbateur N2 (prioritaire)
@@ -3144,9 +3092,7 @@ Cette indistinction réactive le problème du **Confused Deputy** (mandataire co
 
 Les injonctions défensives dans le prompt système cèdent systématiquement devant des attaques adaptatives [206] [228]. Une défense robuste combine renforcement statistique du modèle et séparation déterministe dans l’`Agent Harness` [221] [228] [211].
 
-Côté modèle, la **hiérarchie d’instructions** (*Instruction Hierarchy*) de Wallace et al. [228] entraîne le `LLM` à prioriser les consignes système privilégiées face aux requêtes utilisateurs et aux textes tiers de rang
-
-inférieur [228]. Toutefois, cette propriété demeure probabiliste et n’offre aucune garantie formelle [206] [228] [211].
+Côté modèle, la **hiérarchie d’instructions** (*Instruction Hierarchy*) de Wallace et al. [228] entraîne le `LLM` à prioriser les consignes système privilégiées face aux requêtes utilisateurs et aux textes tiers de rang inférieur [228]. Toutefois, cette propriété demeure probabiliste et n’offre aucune garantie formelle [206] [228] [211].
 
 Pour atteindre une protection **par conception**, l’architecture **CaMeL** (*Defeating Prompt Injections by Design*) de Debenedetti et al. [211] isole strictement flot de contrôle et flot de données :
 
@@ -3320,8 +3266,7 @@ Le chapitre 03 a posé l’usage de `SHADI` et de `Agent Sandbox` / `SandboxWarm
 
 1. **MicroVM matérielles (**`Firecracker` **et** `Kata Containers`**)** : `Firecracker` isole chaque charge sous l’hyperviseur Linux `KVM` avec un noyau invité minimal et des périphériques virtio restreints (`Net`, `Block`, `Vsock` avec limitation de débit I/O) [222]. Le processus `VMM` est confiné en production par `jailer` via `chroot`, `cgroups`, espaces de noms PID/réseau et abandon de privilèges `UID` /`GID` [222]. Avec un noyau minimal et 128 Mio de RAM, un hôte de 36 cœurs crée jusqu’à 5 microVM par cœur et par seconde (180/s) [222]. Pour préserver la compatibilité avec les images `OCI` et l’interface `CRI` Kubernetes, **Kata Containers** exécute les conteneurs dans des microVM à noyau dédié via `Firecracker`, `Cloud-Hypervisor` ou `QEMU` [232].
 2. **Noyau applicatif en espace utilisateur (**`gVisor`**)** : `gVisor` (`runsc`) interpose le noyau applicatif `Sentry`, écrit en `Go` (mémoire sûre), qui intercepte et traite en espace utilisateur la majorité des appels système Linux du conteneur [223]. Les accès fichiers passent par un mandataire cloisonné distinct, `Gofer`, via `LISAFS` (ou `Directfs`) [223]. Cette couche réduit drastiquement la surface exposée au noyau hôte C sans exiger `KVM`, au prix d’un surcoût sur les charges intensives en I/O ou appels système [223].
-3. **Isolation par capacités et mémoire linéaire (**`Wasmtime` **et** `Component Model`**)** : pour les extensions de passerelle, validateurs ou scripts *Code Mode* (chapitre 04) compilables en WebAssembly, `Wasmtime` procure une isolation logicielle stricte [224]. La pile d’appels demeure inaccessible au code invité, les
-  pointeurs sont vérifiés en bornes dans une mémoire linéaire dotée par défaut d’une **zone de garde de 2 Go**, les sauts de contrôle sont typés et aucun appel système brut n’est exposé (*zero ambient authority*) [224]. Grâce au **Component Model** et aux interfaces `WIT` **/**`WASI`, l’hôte n’accorde que des capacités explicitement liées (répertoires pré-ouverts, requêtes HTTP ciblées) [224].
+3. **Isolation par capacités et mémoire linéaire (**`Wasmtime` **et** `Component Model`**)** : pour les extensions de passerelle, validateurs ou scripts *Code Mode* (chapitre 04) compilables en WebAssembly, `Wasmtime` procure une isolation logicielle stricte [224]. La pile d’appels demeure inaccessible au code invité, les pointeurs sont vérifiés en bornes dans une mémoire linéaire dotée par défaut d’une **zone de garde de 2 Go**, les sauts de contrôle sont typés et aucun appel système brut n’est exposé (*zero ambient authority*) [224]. Grâce au **Component Model** et aux interfaces `WIT` **/**`WASI`, l’hôte n’accorde que des capacités explicitement liées (répertoires pré-ouverts, requêtes HTTP ciblées) [224].
 
 | Régime d’isolation | Frontière de sécurité | Composants clés | Compatibilité | Compromis performance | Usage agentique cible |
 | --- | --- | --- | --- | --- | --- |
@@ -3469,9 +3414,7 @@ Les conventions `OpenTelemetry GenAI` ne normalisant pas encore nativement ces c
 2. **Attributs d’extension sur traces** : chaque span critique (`invoke_agent`, `execute_tool`, `a2a.server`) enregistre `spiffe.workload.id`, l’acteur courant `auth.obo.actor` extrait du `act` externe et un condensat cryptographique irréversible du `sub` humain afin de préserver la traçabilité sans exposer d’identifiant nominatif [244] [245] [254].
 3. **Propagation légère par** `W3C Baggage` : seuls des attributs de routage non sensibles (code de centre de coûts, classe de criticité métier) circulent via `OpenTelemetry Baggage` (y compris dans `params._meta` sous `MCP`), en proscrivant toute donnée personnelle ou charge volumineuse répliquée sur chaque saut réseau [252] [255].
 
-Pour la mesure technique des coûts et volumes d’exécution, `OpenTelemetry` sépare strictement deux familles métriques [256] [257]. Les **compteurs mo**
-
-**notones** (`gen_ai.client.inference.usage.input_tokens`, `output_tokens`, `cache_read.input_tokens`, `cache_write.input_tokens` et `reasoning.output_tokens`), ventilés par `gen_ai.token.modality`, alimentent le calcul des rythmes de dépense transmis au pilotage `FinOps` du chapitre 12 [256]. À l’inverse, les **histogrammes par opération** (`gen_ai.client.inference.operation.input_tokens` et `output_tokens`) suivent la distribution par appel et omettent délibérément la modalité afin que les quantiles `p95` /`p99` restent mathématiquement exacts — car sommer des percentiles par modalité fausserait l’estimation du coût unitaire réel [256]. Côté agent, `gen_ai.invoke_agent.inference_calls` comptabilise chaque invocation logique de modèle indépendamment des reprises réseau sous-jacentes, `gen_ai.invoke_agent.tool_calls` dénombre les appels d’outils par exécution et `gen_ai.invoke_agent.duration` adopte des bornes d’histogramme étendues de `0,1 s` à `86 400 s` (`24 h`) pour couvrir les boucles durables [257]. Enfin, `gen_ai.agent.name` doit demeurer de faible cardinalité (jamais un nom de classe générique tel `"StateGraph"` ni un identifiant de session) pour protéger la base `TSDB` [240] [257].
+Pour la mesure technique des coûts et volumes d’exécution, `OpenTelemetry` sépare strictement deux familles métriques [256] [257]. Les **compteurs monotones** (`gen_ai.client.inference.usage.input_tokens`, `output_tokens`, `cache_read.input_tokens`, `cache_write.input_tokens` et `reasoning.output_tokens`), ventilés par `gen_ai.token.modality`, alimentent le calcul des rythmes de dépense transmis au pilotage `FinOps` du chapitre 12 [256]. À l’inverse, les **histogrammes par opération** (`gen_ai.client.inference.operation.input_tokens` et `output_tokens`) suivent la distribution par appel et omettent délibérément la modalité afin que les quantiles `p95` /`p99` restent mathématiquement exacts — car sommer des percentiles par modalité fausserait l’estimation du coût unitaire réel [256]. Côté agent, `gen_ai.invoke_agent.inference_calls` comptabilise chaque invocation logique de modèle indépendamment des reprises réseau sous-jacentes, `gen_ai.invoke_agent.tool_calls` dénombre les appels d’outils par exécution et `gen_ai.invoke_agent.duration` adopte des bornes d’histogramme étendues de `0,1 s` à `86 400 s` (`24 h`) pour couvrir les boucles durables [257]. Enfin, `gen_ai.agent.name` doit demeurer de faible cardinalité (jamais un nom de classe générique tel `"StateGraph"` ni un identifiant de session) pour protéger la base `TSDB` [240] [257].
 
 > **[Figure]**
 > - Plan d'exécution
@@ -3488,13 +3431,13 @@ Pour la mesure technique des coûts et volumes d’exécution, `OpenTelemetry` s
 > - Extrait traceparent & baggage via params._meta
 > - «container» Pair A2A / Inférence
 > - [a2a.client / model]
-> - Propage contextId, usage.* & TTFT/TPOT
+> - Propage contextId, usage.\* & TTFT/TPOT
 > - «container» Collector Edge [redactionprocessor + OTTL]
 > - Allowlist clés, hache sub,
 > - masque PII (contenu=0)
 > - «container» Collector Tail-Sampling
 > - [tailsamplingprocessor]
-> - Retient 100 % erreurs, route métriques usage.*
+> - Retient 100 % erreurs, route métriques usage.\*
 > - «container» Backend Traces
 > - [OTLP / Phoenix]
 > - Traces liées trace_id,
@@ -3515,7 +3458,7 @@ Pour la mesure technique des coûts et volumes d’exécution, `OpenTelemetry` s
 > - sans PII
 > - Traces anomalie
 > - & échantillon
-> - Métriques gen_ai.*
+> - Métriques gen_ai.\*
 > - faible cardinalité
 > - Piste identités
 > - SPIFFE / OBO
@@ -3528,8 +3471,7 @@ L’observabilité brute entre en conflit direct avec la protection des renseign
 
 Comme l’illustre la figure 11.1, cet invariant est appliqué en enclave par un `OpenTelemetry Collector` combinant filtrage déterministe et sélection tardive :
 
-- **Assainissement (**`redactionprocessor` **et** `transformprocessor`**)** : le `redactionprocessor` supprime d’abord tout attribut absent de sa liste blanche (`allowed_keys`), puis masque les motifs interdits
-  (`blocked_values`) [246]. En parallèle, le `transformprocessor` (`OTTL`) hache les identifiants sujets et réécrit tout attribut résiduel avant exportation vers les puits partagés [254].
+- **Assainissement (**`redactionprocessor` **et** `transformprocessor`**)** : le `redactionprocessor` supprime d’abord tout attribut absent de sa liste blanche (`allowed_keys`), puis masque les motifs interdits (`blocked_values`) [246]. En parallèle, le `transformprocessor` (`OTTL`) hache les identifiants sujets et réécrit tout attribut résiduel avant exportation vers les puits partagés [254].
 - **Échantillonnage tardif (**`tailsamplingprocessor`**)** : plutôt qu’un échantillonnage aveugle en tête qui perdrait les défaillances rares, le collecteur tamponne les spans jusqu’à achèvement de la trace complète pour retenir **100 %** des erreurs, dépassements de latence ou déclenchements de garde-fous, tout en sous-échantillonnant les trajectoires nominales [258]. Cette topologie exige un équilibrage de charge conscient du `trace_id` entre instances de collecteur [258].
 
 | Signal / Attribut | Référence normative | Rôle `SA` | Exigence `EA` |
@@ -3543,9 +3485,7 @@ Comme l’illustre la figure 11.1, cet invariant est appliqué en enclave par un
 
 *Tableau 11.1 — Convention de mappage* `OpenTelemetry GenAI` *: corrélation traces, identités* `SPIFFE` */*`OBO` *et assainissement.*
 
-> **Arbitrage EA / SA** — Imposer `OpenTelemetry GenAI` (`invoke_agent`, `execute_tool`, `MCP` `SEP-414` et `A2A`) comme contrat télémétrique unique tout en maintenant la capture brute `Opt-In` désactivée par défaut en production [240] [252] [253] [250]. Le `SA` mappe les extensions d’entreprise `spiffe.workload.id`, `auth.obo.actor` (`act`) et `sub` haché par `OTTL`, sépare compteurs `usage.*` et histogrammes `operation.*`, et chaîne `redactionprocessor`, `transformprocessor` et `tailsamplingprocessor` derrière un routage par `trace_id` [256] [244] [246] [258] [254]. L’`EA` exige le
-
-> `mTLS` `SPIFFE` sur le pipeline `OTLP` et proscrit toute PII dans `W3C Baggage` ou les dimensions métriques [257] [255] [245].
+> **Arbitrage EA / SA** — Imposer `OpenTelemetry GenAI` (`invoke_agent`, `execute_tool`, `MCP` `SEP-414` et `A2A`) comme contrat télémétrique unique tout en maintenant la capture brute `Opt-In` désactivée par défaut en production [240] [252] [253] [250]. Le `SA` mappe les extensions d’entreprise `spiffe.workload.id`, `auth.obo.actor` (`act`) et `sub` haché par `OTTL`, sépare compteurs `usage.*` et histogrammes `operation.*`, et chaîne `redactionprocessor`, `transformprocessor` et `tailsamplingprocessor` derrière un routage par `trace_id` [256] [244] [246] [258] [254]. L’`EA` exige le `mTLS` `SPIFFE` sur le pipeline `OTLP` et proscrit toute PII dans `W3C Baggage` ou les dimensions métriques [257] [255] [245].
 
 ## 11.2 Pipeline `EvalOps` industriel : `golden datasets` de trajectoires, `mock MCP servers` et juges calibrés
 
@@ -3599,7 +3539,7 @@ Tester des trajectoires en `CI` contre des `SoR` réels provoque effets de bord 
 > - au juge
 > - Corrige biais &
 > - criteria drift
-> - Verdict T 1
+> - Verdict T1
 > - Verdict T2
 > - Échecs annotés
 > - Promeut cas
@@ -3727,14 +3667,14 @@ Comme le montre la figure 11.4, à l’échéance du délai de refroidissement, 
 > - METRICS_ONLY (Calibration silencieuse)
 > - CLOSED (Exécution nominale sous max_turns / recursion_limit)
 > - OPEN (Coupure cognitive immédiate : repli déterministe L0 / HITL)
-> - HALF_OPEN (Sondes canari bornées validées par Tier 1 )
+> - HALF_OPEN (Sondes canari bornées validées par Tier 1)
 > - FORCED_OPEN (Arrêt d'urgence opérateur ou alerte ASI10)
 > - Déploiement mode ombre
 > - Seuils validés (promotion prod)
 > - Répétition hachage >= N ou budget / dérive / erreurs >= seuil
 > - Expiration délai refroidissement Échec ou lenteur
 > - d'une sonde
-> - Sondes saines (succès Tier 1 )
+> - Sondes saines (succès Tier 1)
 > - Kill-switch manuel ou mandat violé (ASI10)
 > - Escalade incident systémique (ASI08)
 > - Réarmement autorisé
@@ -3847,8 +3787,7 @@ Une organisation opérant au Québec, au Canada et en Europe doit satisfaire sim
 
 Au Québec, la *Loi sur la protection des renseignements personnels dans le secteur privé* (`RLRQ, c. P-39.1`, modernisée par la **Loi 25**) impose trois exigences directes sur les `Systems of Agency` [281] :
 
-1. **Responsable de la protection des renseignements personnels (**`RPRP`**,** `article 3.1`**)** : l’entreprise répond de tout renseignement personnel (`RP`) détenu, y compris ceux traités ou inférés par
-  des agents [281]. Le rôle incombe par défaut à la plus haute autorité (délégation écrite possible) et agit en vérificateur `2LoD` sur les projets `R3–R4` [278] [281].
+1. **Responsable de la protection des renseignements personnels (**`RPRP`**,** `article 3.1`**)** : l’entreprise répond de tout renseignement personnel (`RP`) détenu, y compris ceux traités ou inférés par des agents [281]. Le rôle incombe par défaut à la plus haute autorité (délégation écrite possible) et agit en vérificateur `2LoD` sur les projets `R3–R4` [278] [281].
 2. `ÉFVP` **dès l’amorce et portabilité (**`article 3.3`**)** : tout projet d’acquisition, de développement ou de refonte traitant des `RP` impose une évaluation des facteurs relatifs à la vie privée (`ÉFVP`) proportionnelle à la sensibilité, à la finalité, à la quantité, à la répartition et au support des données, avec consultation du `RPRP` **dès le début du projet** [281]. Elle vérifie aussi la restitution des `RP` informatisés dans un **format technologique structuré et couramment utilisé**, contraignant les mémoires du chapitre 6 [281].
 3. **Décisions exclusivement automatisées (**`article 12.1` **au privé,** `article 65.2` **au public)** : l’organisation informe la personne concernée **au plus tard lors de la communication de la décision** [281] [286]. Sur demande, elle divulgue les `RP` utilisés, les **raisons, facteurs et paramètres principaux**, le droit de rectification et permet de **présenter des observations à un membre du personnel habilité à réviser la décision** [281] [286].
 
@@ -4009,7 +3948,7 @@ Enfin, la réversibilité prolonge les verrous du chapitre 2 [276] [304]. L’en
 > - Collecte normalisée
 > - Moteur d'imputation FinOps
 > - Pilotage & Réversibilité
-> - Traces OTel GenAI gen_ai.usage.* & Agent ID
+> - Traces OTel GenAI gen_ai.usage.\* & Agent ID
 > - Factures Cloud & API Schéma FOCUS v1.4 / v1.5
 > - TCO complet par résultat (Jetons + Infra + EvalOps + HITL)
 > - Détection d'anomalies & Plafonds budgétaires
@@ -4117,9 +4056,7 @@ Un *Golden Path* dépasse la documentation statique : DORA caractérise les plat
 
 ### 13.1.3 Frontière stricte plateforme/domaines et régimes d’exception
 
-Standardiser le socle ne signifie pas centraliser la logique métier. Si l’équipe plateforme écrit les prompts ou serveurs `MCP` propres aux `Systems of Record`, elle devient un goulot d’étranglement contraire à *Team*
-
-*Topologies* [307]. Réciproquement, laisser un domaine déployer sa propre passerelle `LLM` compromet sécurité et comptabilité `FinOps`.
+Standardiser le socle ne signifie pas centraliser la logique métier. Si l’équipe plateforme écrit les prompts ou serveurs `MCP` propres aux `Systems of Record`, elle devient un goulot d’étranglement contraire à *Team Topologies* [307]. Réciproquement, laisser un domaine déployer sa propre passerelle `LLM` compromet sécurité et comptabilité `FinOps`.
 
 Le *Golden Path* reste une incitation privilégiée et non un carcan [306] [307]. Une équipe `Complicated Subsystem` confrontée à des contraintes atypiques peut solliciter une dérogation devant l’`ARB` [307]. Elle supporte alors intégralement l’exploitation, la maintenance et l’audit de sa pile alternative, tout en satisfaisant aux portes d’admission les mêmes contrats `OTel`, `OPA` et d’identité [306] [309].
 
@@ -4154,8 +4091,7 @@ Le répartiteur HTTP classique (*round-robin*) échoue sur les moteurs d’infé
 
 1. `InferencePool` **et** `Endpoint Picker` **(**`EPP`**)** : `InferencePool` remplace le `Service` Kubernetes devant les pods de modèles [313] [315]. Envoy consulte l’ordonnanceur `EPP` via `ext-proc` [313] [315]. Un pipeline *Filter-Score-Pick* analyse files d’attente, partage équitable multi-locataires, adaptateurs `LoRA` et affinité de cache de préfixe pour diriger la requête vers le réplica détenant déjà le préfixe système [313] [315]. `llm-d` y ajoute des prédicteurs ML de latence (`TTFT` /`TPOT`) protégeant les `SLO` [315].
 2. **Architecture** `V1` **de** `vLLM` **et** `Automatic Prefix Caching` **(**`APC`**)** : `vLLM V1` sépare serveur API, noyau d’ordonnancement (`Engine Core`), travailleurs GPU et coordinateur de parallélisme de données (`DP Coordinator`) [314]. Avec `PagedAttention` et `APC` (`enable_prefix_caching=True`), les requêtes partageant consignes système ou schémas `MCP` réutilisent directement les blocs KV sans recalculer le pré-remplissage (`prefill`) [316]. Pour les modèles hybrides Mamba, `--enable-mamba-shared-prefix-checkpoint` enregistre un point de reprise à la jonction du préfixe partagé [316].
-3. **Désagrégation *Prefill / Decode* (**`P/D`**) et transfert RDMA (**`NIXL`**)** : la phase *prefill* est limitée par le calcul (*compute-bound*), alors que la phase *decode* dépend de la bande passante mémoire (*memory-bandwidth-bound*) [317] [315]. Sur une instance unifiée, l’arrivée d’un long contexte interrompt les
-  générations en cours et dégrade l’`ITL` [317]. La désagrégation `P/D` isole ces phases sur des pools GPU distincts reliés par transfert KV rapide (`NixlConnector` RDMA ou `LMCache`) [317] [315]. La documentation `vLLM` précise toutefois une règle capitale : **la désagrégation** `P/D` **n’augmente pas le débit brut (*throughput*)** ; elle permet de régler séparément le parallélisme (`tp`, `pp`) pour optimiser le `TTFT` et maîtriser la latence de queue (`tail ITL`) [317].
+3. **Désagrégation *Prefill / Decode* (**`P/D`**) et transfert RDMA (**`NIXL`**)** : la phase *prefill* est limitée par le calcul (*compute-bound*), alors que la phase *decode* dépend de la bande passante mémoire (*memory-bandwidth-bound*) [317] [315]. Sur une instance unifiée, l’arrivée d’un long contexte interrompt les générations en cours et dégrade l’`ITL` [317]. La désagrégation `P/D` isole ces phases sur des pools GPU distincts reliés par transfert KV rapide (`NixlConnector` RDMA ou `LMCache`) [317] [315]. La documentation `vLLM` précise toutefois une règle capitale : **la désagrégation** `P/D` **n’augmente pas le débit brut (*throughput*)** ; elle permet de régler séparément le parallélisme (`tp`, `pp`) pour optimiser le `TTFT` et maîtriser la latence de queue (`tail ITL`) [317].
 
 > **[Figure]**
 > - AI Gateway Hybride (Agent Router / LiteLLM)
@@ -4298,8 +4234,7 @@ Le `GitOps` cognitif verrouille simultanément schémas protocolaires, règles d
 
 Malgré les tests hors ligne, un changement de modèle ou de prompt reste exposé à la variance du trafic réel. La livraison progressive contient le rayon d’impact au moyen de `Kubernetes Gateway API` et `Argo Rollouts` [330] [331] :
 
-1. **Mode fantôme (*Shadow* /** `Traffic Mirroring`**)** : via le filtre `HTTPRouteRequestMirror` de la `Gateway API` (ou l’étape `setMirrorRoute` d’Argo Rollouts), la passerelle duplique de façon asynchrone les requêtes vers une version candidate `v2` tout en renvoyant au client la seule réponse de `v1` [332] [331]. La spécification impose qu’un seul point d’aboutissement reçoive la copie et que la réponse
-  miroir soit obligatoirement ignorée (`MUST be ignored`) [331]. Pour éviter qu’un agent `v2` n’exécute une **double écriture** sur le `System of Record` via un outil `MCP` mutateur, tout trafic miroir doit propager un en-tête de simulation forçant la `MCP Gateway` à détourner les écritures vers des bouchons [332].
+1. **Mode fantôme (*Shadow* /** `Traffic Mirroring`**)** : via le filtre `HTTPRouteRequestMirror` de la `Gateway API` (ou l’étape `setMirrorRoute` d’Argo Rollouts), la passerelle duplique de façon asynchrone les requêtes vers une version candidate `v2` tout en renvoyant au client la seule réponse de `v1` [332] [331]. La spécification impose qu’un seul point d’aboutissement reçoive la copie et que la réponse miroir soit obligatoirement ignorée (`MUST be ignored`) [331]. Pour éviter qu’un agent `v2` n’exécute une **double écriture** sur le `System of Record` via un outil `MCP` mutateur, tout trafic miroir doit propager un en-tête de simulation forçant la `MCP Gateway` à détourner les écritures vers des bouchons [332].
 2. **Canari (**`Canary`**) et** `AnalysisTemplate` : `Argo Rollouts` augmente par paliers le poids vers `v2` (`setWeight`, `pause`) via un routeur compatible plutôt que par le seul ratio de réplicas [330]. Chaque palier exécute un `AnalysisRun` issu d’un `AnalysisTemplate` interrogeant `Prometheus`, `OpenTelemetry` ou `EvalOps` selon des seuils `successCondition` ; au-delà de `failureLimit`, le contrôleur avorte et restaure `v1` [330] [333].
 3. **Bascule bleu/vert (**`Blue/Green`**)** : lorsque deux versions frontales ne peuvent cohabiter, `Argo Rollouts` valide `v2` sur un `previewService` via `prePromotionAnalysis` avant de commuter l’`activeService` [334]. Le délai `scaleDownDelaySeconds` maintient `v1` actif le temps que les nœuds mettent à jour leurs règles réseau et drainent les flux ouverts [334].
 
@@ -4315,8 +4250,7 @@ L’`IAP` industrialise les mécanismes natifs de compatibilité offerts par les
 
 1. `Temporal Worker Versioning` **et déploiements arc-en-ciel (*Rainbow*)** : depuis Temporal Server `v1.29.1+` et les SDK modernes (`Go v1.35+`, `Python v1.11+`, `TypeScript v1.12+`, `Java v1.29+`), chaque déploiement de travailleurs porte un `Build ID` au sein d’un `Worker Deployment` [335]. Le mode `Pinned` garantit que chaque workflow achève son exécution sur le `Build ID` exact de son démarrage au sein de **déploiements arc-en-ciel** (plus de deux versions simultanées) : `Current` ou `Ramping` reçoivent les nouveaux flux tandis que les anciens travailleurs terminent les dossiers en vol sans rustines ni erreur de rejeu, jusqu’à ce que Temporal signale leur drainage complet pour mise hors service [335]. Le mode `Auto-Upgrade` migre les workflows vers la nouvelle cible — utile au-delà de la durée de rétention des révisions — mais oblige à maintenir manuellement la compatibilité de rejeu [335]. `Temporal` proscrit toutefois d’activer ce versionnement sur des files spécifiques à un travailleur individuel pour ne pas épuiser les limites par version [335].
 2. `Temporal Patching API` **et rejeu CI** : sous `Auto-Upgrade`, le code protège chaque évolution logique par `patched("id")`, qui écrit un marqueur dans l’historique des nouvelles exécutions et garde l’ancienne branche (`false`) pour les dossiers antérieurs [338]. Règle impérative de `Temporal` : **toujours placer la branche la plus récente en tête du bloc** `if patched(...)` (`v3` avant `v2`), sinon les nouvelles exécutions évaluent d’abord l’ancienne branche à `true` et s’y figent [338]. La CI exécute en outre des tests de rejeu sur historiques de production réels [335].
-3. `Restate` **— Déploiements immuables par révision** : `Restate` enregistre chaque révision sous un point HTTP ou `ARN` FaaS **immuable** (`restate deployments register`) et achemine toute invocation,
-  reprise ou attente sur la révision exacte de départ, sans aucune logique conditionnelle dans le code [336]. Sur Kubernetes, l’opérateur `Restate` crée une révision par changement de gabarit et réduit les anciennes après drainage, tout en conseillant de scinder les traitements pluri-mensuels en appels différés enchaînés [336].
+3. `Restate` **— Déploiements immuables par révision** : `Restate` enregistre chaque révision sous un point HTTP ou `ARN` FaaS **immuable** (`restate deployments register`) et achemine toute invocation, reprise ou attente sur la révision exacte de départ, sans aucune logique conditionnelle dans le code [336]. Sur Kubernetes, l’opérateur `Restate` crée une révision par changement de gabarit et réduit les anciennes après drainage, tout en conseillant de scinder les traitements pluri-mensuels en appels différés enchaînés [336].
 4. `Dapr Workflow` **— Déterminisme et** `continue-as-new` : fondé sur un journal rejoué par sidecar avec concurrence bornée, `Dapr Workflow` exige un déterminisme strict en cours de vol et recommande `continue-as-new` (ou sous-workflows enfants) pour tronquer périodiquement l’historique des agents continus entre deux cycles [337].
 
 > **[Figure]**
@@ -4368,9 +4302,7 @@ L’`IAP` industrialise les mécanismes natifs de compatibilité offerts par les
 
 ## Synthèse architecturale et transition vers le chapitre 14
 
-Ce chapitre a défini le socle opérationnel de l’entreprise agentique. L’`Internal Agentic Platform` **(**`IAP`**)** réduit la charge cognitive extrinsèque via des *Golden Paths* exécutables (`Backstage`, `Kratix`, `Crossplane`) [306] [307] [308] [310] [309]. L’`AI Gateway` **hybride** (`Agent Router` /`GAIE`, `LiteLLM`) arbitre entre
-
-nuages publics et enclaves souveraines (`vLLM` /`llm-d`, `NVIDIA NIM`) sous budgets de jetons [311] [313] [312] [315] [319]. Enfin, le `GitOps` **cognitif** co-versionne, évalue et signe le quintette comportemental [320] [326] [328] [329] [323], tandis que l’épinglage des workflows durables sécurise les déploiements progressifs [330] [335] [336]. Le **chapitre 14** assemble ces standards au sein de trois **blueprints d’architecture de référence** prêts à être instanciés.
+Ce chapitre a défini le socle opérationnel de l’entreprise agentique. L’`Internal Agentic Platform` **(**`IAP`**)** réduit la charge cognitive extrinsèque via des *Golden Paths* exécutables (`Backstage`, `Kratix`, `Crossplane`) [306] [307] [308] [310] [309]. L’`AI Gateway` **hybride** (`Agent Router` /`GAIE`, `LiteLLM`) arbitre entre nuages publics et enclaves souveraines (`vLLM` /`llm-d`, `NVIDIA NIM`) sous budgets de jetons [311] [313] [312] [315] [319]. Enfin, le `GitOps` **cognitif** co-versionne, évalue et signe le quintette comportemental [320] [326] [328] [329] [323], tandis que l’épinglage des workflows durables sécurise les déploiements progressifs [330] [335] [336]. Le **chapitre 14** assemble ces standards au sein de trois **blueprints d’architecture de référence** prêts à être instanciés.
 
 # Chapitre 14 — Architectures de référence de bout en bout : trois blueprints sectoriels et fédérés instanciables
 
@@ -4454,8 +4386,7 @@ Une demande de sinistre ou de crédit suit cinq étapes contractuelles :
 1. **Ouverture durable** : après authentification `OIDC` au `SoE`, le service frontal démarre un `Workflow` `Temporal` sous identifiant métier unique servant de clé d’idempotence. L’état initial est répliqué de façon synchrone sur trois zones de disponibilité (`AZ`) avant l’acquittement client [339] [346]. Pour absorber les pointes saisonnières (fin d’exercice ou événements climatiques en assurance), l’espace de noms bascule entre les modes `On-Demand Capacity` et `Provisioned Capacity` dimensionné en unités `TRU` [347].
 2. **Extraction documentaire** `80/20` **et** `Claim-Check` : une `Activity` invoque l’`AI Gateway` pour analyser les justificatifs. Les définitions d’outils et consignes stables restent en préfixe pour préserver le cache `KV`, tandis que les extractions routinières sont routées vers un `SLM` spécialisé. Les pièces volumineuses et synthèses typées transitent par `Artifact URI` (chapitre 07) afin de ne pas alourdir l’historique d’événements `Temporal`.
 3. **Échange** `OAuth 2.0 OBO` **(**`RFC 8693`**) devant la** `MCP Gateway` : pour lire le dossier client sur la projection `CQRS`, le worker découvre les métadonnées de ressource protégée (`RFC 9728`) et du serveur d’autorisation (`RFC 8414`) [341], puis soumet au *Security Token Service* (`STS`) le `subject_token` de l’initiateur et son propre `actor_token` `SPIFFE` [343]. Le `STS` émet un jeton restreint (`read:policy`) ciblé sur l’audience exacte de la passerelle (`RFC 8707`) et porteur de la revendication structurée `act` [341] [343]. Conformément à la spécification `MCP 2025-11-25`, la passerelle agit en serveur de ressources `OAuth 2.1`, valide l’audience cible et interdit strictement le relais passif de jetons (*token passthrough*) [341] [342].
-4. **Décision déterministe, pause** `HITL` **et** `Intent Gate` : les règles impératives (ratios financiers, plafonds, exclusions) s’exécutent hors fenêtre cognitive. Si un seuil `HITL` est atteint, le `Workflow` suspend
-  son cours sans consommer de processus grâce à une attente durable (`wait_condition`) bornée par minuteur `SLA` (chapitre 09). Sur approbation ou rectification dans le `SoE`, un `Signal` (ou `Update`) réveille l’instance. Un second échange `RFC 8693` limite alors la portée à l’outil mutateur (`write:settlement`), que l’`Intent Gate` (`OPA` /`Cedar`) dans `agentgateway` confronte au mandat, au plafond et à l’identifiant d’approbation humaine [343] [342].
+4. **Décision déterministe, pause** `HITL` **et** `Intent Gate` : les règles impératives (ratios financiers, plafonds, exclusions) s’exécutent hors fenêtre cognitive. Si un seuil `HITL` est atteint, le `Workflow` suspend son cours sans consommer de processus grâce à une attente durable (`wait_condition`) bornée par minuteur `SLA` (chapitre 09). Sur approbation ou rectification dans le `SoE`, un `Signal` (ou `Update`) réveille l’instance. Un second échange `RFC 8693` limite alors la portée à l’outil mutateur (`write:settlement`), que l’`Intent Gate` (`OPA` /`Cedar`) dans `agentgateway` confronte au mandat, au plafond et à l’identifiant d’approbation humaine [343] [342].
 5. **Saga compensatoire et archivage** `WORM` : en cas d’échec après l’action pivot (ex. échec d’émission du paiement après réservation comptable), `Temporal` exécute en ordre inverse les compensations enregistrées (chapitre 09). En clôture, la trace `OpenTelemetry GenAI` (`trace_id`, `spiffe.workload.id`, chaîne `(sub, act[])`, motifs principaux sans `RP` bruts) est versée dans un compartiment versionné `S3 Object Lock` en mode `Compliance` [344] [345]. Ce mode interdit toute suppression ou réécriture jusqu’à la date d’échéance — même par l’administrateur racine — et permet de placer une mise en attente légale (*Legal Hold*) indépendante en cas de litige [344]. Adossé à l’évaluation *Cohasset Associates* pour `SEC 17a-4`, `FINRA` et `CFTC`, cet archivage soutient directement les vérifications de la troisième ligne de défense (`3LoD`) [344].
 
 ### 14.1.3 Continuité multi-régions, versionnement en vol et lecture EA / SA
@@ -4547,8 +4478,7 @@ Pour allier visibilité contractuelle globale et autonomie locale, ce blueprint 
 L’interopérabilité horizontale entre le *Process Manager*, les façades départementales et les pairs B2B s’appuie sur quatre verrous :
 
 1. **Catalogue** `AGNTCY ADS` **et taxonomie** `OASF` : chaque façade interne et chaque partenaire B2B déclare ses capacités, compétences et interfaces selon le modèle ouvert `OASF` (*Open Agentic Schema Framework*) publié dans l’`Agent Directory Service` **(**`ADS`**)** [349]. Comme établi au chapitre 05 (stockage adressable `OCI` /`ORAS` et provenance `Sigstore`), l’entreprise ne consomme en production que les fiches répliquées et approuvées dans le miroir interne du registre central d’agents.
-2. **Authentification sur** `Agent Card` `A2A` **et fédération** `SPIFFE` : avant toute délégation, la passerelle `A2A` valide l’`Agent Card` (`/.well-known/agent-card.json`) signée (canonisation `JWS`, chapitre 05) et
-  négocie le schéma déclaré dans `securitySchemes` (`OAuth 2.0`, `OIDC` ou fédération `mTLS` par *Trust Bundles* `SPIFFE` entre entités appairées) [348]. Respectant la spécification `A2A`, l’identité utilisateur n’est jamais placée dans le corps `JSON-RPC` : elle reste strictement véhiculée et vérifiée au niveau du transport `TLS 1.3` et des en-têtes `HTTP` [348].
+2. **Authentification sur** `Agent Card` `A2A` **et fédération** `SPIFFE` : avant toute délégation, la passerelle `A2A` valide l’`Agent Card` (`/.well-known/agent-card.json`) signée (canonisation `JWS`, chapitre 05) et négocie le schéma déclaré dans `securitySchemes` (`OAuth 2.0`, `OIDC` ou fédération `mTLS` par *Trust Bundles* `SPIFFE` entre entités appairées) [348]. Respectant la spécification `A2A`, l’identité utilisateur n’est jamais placée dans le corps `JSON-RPC` : elle reste strictement véhiculée et vérifiée au niveau du transport `TLS 1.3` et des en-têtes `HTTP` [348].
 3. **Délégation asynchrone (**`SSE`**, Webhooks et** `SLIM` **/**`MLS`**)** : lorsque le partenaire expose une terminaison `HTTPS` mutuellement authentifiée, le *Process Manager* choisit l’une des liaisons normalisées (`JSON-RPC`, `gRPC` ou `HTTP+JSON/REST`) et soumet une `Task` `A2A` avec notifications push par webhook ou diffusion en continu `SendStreamingMessage` (`SSE`) [348]. Si les pare-feu B2B interdisent tout port entrant ou si des relais intermédiaires sont non fiables, les échanges basculent sur le transport `SLIM` d’`AGNTCY` avec chiffrement de groupe `MLS`, maintenant des sessions chiffrées de bout en bout sur connexions sortantes uniquement [349].
 4. **Défense des frontières (**`ASI07` **/**`ASI08`**) et coupure** `CancelTask` : tout `Artifact` (bon de commande ou avis logistique structuré) reçu d’un pair externe est traité comme donnée non fiable. La passerelle `A2A` applique validation `JSON`, protection anti-`SSRF` sur toute `URI` distante conformément aux considérations de sécurité `A2A`, filtrage d’injection indirecte avant remise au *Process Manager* et émission de `CancelTask` dès dépassement de `SLA` ou de budget `FinOps` [348].
 
@@ -4819,9 +4749,7 @@ Remplacer d’un seul tenant un processus patrimonial par un système agentique 
 
 ### 15.2.1 Du Strangler Fig applicatif à l’étranglement progressif des flux cognitifs
 
-La transposition agentique conserve les trois phases d’`AWS Prescriptive Guidance` (**Transformer**, **Coexister**, **Éliminer**) [384] en ajoutant deux garanties propres aux systèmes probabilistes. Premièrement, la façade de routage logée dans l’`AI` /`API Gateway` s’appuie sur une **couche anti-corruption (**`ACL`**)**
-
-empêchant les schémas hérités du `SoR` de polluer le contexte et les contrats des agents; elle doit intégrer reprises bornées et coupe-circuits pour ne pas devenir un goulot ou point de défaillance unique [385] [379].
+La transposition agentique conserve les trois phases d’`AWS Prescriptive Guidance` (**Transformer**, **Coexister**, **Éliminer**) [384] en ajoutant deux garanties propres aux systèmes probabilistes. Premièrement, la façade de routage logée dans l’`AI` /`API Gateway` s’appuie sur une **couche anti-corruption (**`ACL`**)** empêchant les schémas hérités du `SoR` de polluer le contexte et les contrats des agents; elle doit intégrer reprises bornées et coupe-circuits pour ne pas devenir un goulot ou point de défaillance unique [385] [379].
 
 Deuxièmement, parce qu’un agent techniquement disponible peut néanmoins poser des actes erronés [382], la bascule franchit des portes d’évaluation continue (`EvalOps`) [386] et suit une **graduation stricte d’autorité** alignée sur le déploiement par étapes (*staged deployment*) d’`OpenAI` [380] et le principe d’autonomie contrôlée d’`AWS` [378]. Pour les dossiers longs déjà ouverts, la migration d’instances en vol (comme dans `Camunda 8` [374]) préserve l’état actif sans interruption.
 
@@ -4877,9 +4805,7 @@ Les analyses empiriques convergent sur les moteurs d’échec en production. La 
 
 ### 15.3.1 Famille A — Stratégie, portefeuille et économie
 
-`AP-01` **Syndrome du marteau agentique (*Technology-First*)**. *Symptômes* : des flux prévisibles à règles fixes sont réécrits avec des boucles `LLM` plus lentes et onéreuses, ou des scripts classiques sont rebaptisés agents [370] [369] [372]. *Cause racine* : poursuite de la nouveauté (*shiny object syndrome* [368]) sans tri entre automatisation déterministe et raisonnement [372]. *Remédiation* : appliquer l’arbre
-
-`80/20` (code déterministe ou `RAG` sans boucle sur les cas structurés) et exiger en revue `ARB` la justification écrite de toute boucle cognitive [370] [371] [372].
+`AP-01` **Syndrome du marteau agentique (*Technology-First*)**. *Symptômes* : des flux prévisibles à règles fixes sont réécrits avec des boucles `LLM` plus lentes et onéreuses, ou des scripts classiques sont rebaptisés agents [370] [369] [372]. *Cause racine* : poursuite de la nouveauté (*shiny object syndrome* [368]) sans tri entre automatisation déterministe et raisonnement [372]. *Remédiation* : appliquer l’arbre `80/20` (code déterministe ou `RAG` sans boucle sur les cas structurés) et exiger en revue `ARB` la justification écrite de toute boucle cognitive [370] [371] [372].
 
 `AP-02` **Étalement et agents fantômes (*Agent Sprawl*)**. *Symptômes* : prolifération sur plateformes *low-code* d’agents redondants, d’agents orphelins sans responsable et de délégations non inventoriées [369] [381]. *Cause racine* : ouverture de la création d’agents sans registre central ni politique de retrait [367] [369]. *Remédiation* : raccorder des scanners de découverte au registre central (chapitre 12), imposer un `Agent Owner` nominatif et une identité attestée, et suspendre les agents orphelins [367] [369] [381] [382].
 
@@ -5000,9 +4926,7 @@ Les trois horizons prescriptifs de **90, 180 et 360 jours** cadencent le passage
 
 Ce chapitre achève l’ouvrage en ancrant l’entreprise agentique dans le système d’information existant. La coexistence préserve l’autorité des moteurs `BPMN 2.0` grâce aux sous-processus ad hoc bornés, étend les couches `iPaaS` et de gestion d’API en plans de contrôle `MCP` /`A2A`, et confine puis résorbe les automates `RPA` fragiles derrière des couches anti-corruption [365] [367] [375] [379]. La migration *Strangler Fig* remplace les refontes risquées par une élévation réversible en quatre stades — ombre, recommandation, action bornée et autonomie sous contrat [383] [387] [380]. Enfin, les douze anti-patrons (`AP-01` à `AP-12`) et la feuille de route à 360 jours tracent un chemin vérifiable du palier `M1` aux paliers `M4–M5` pour déjouer les taux d’échec du secteur [368] [369].
 
-Au terme des cinq parties de cet ouvrage, une règle constante s’impose : l’entreprise agentique fiable repose sur l’ingénierie des frontières plutôt que sur la seule puissance des modèles. En maintenant `80 %` du contrôle transactionnel, des identités et des règles impératives dans des mécanismes déterministes et
-
-en confinant les `20 %` de liberté cognitive sous télémétrie, évaluation continue et contrat réversible, les architectes d’entreprise et de solutions transforment l’autonomie agentique en capacité industrielle durable [380] [370] [378] [388]. Les annexes qui suivent fournissent le glossaire bilingue normatif, le gabarit d’*Architecture Decision Record* (`ADR`) avec la liste de contrôle `EA` /`SA`, ainsi que les registres consolidés de bibliographie et d’ancrage.
+Au terme des cinq parties de cet ouvrage, une règle constante s’impose : l’entreprise agentique fiable repose sur l’ingénierie des frontières plutôt que sur la seule puissance des modèles. En maintenant `80 %` du contrôle transactionnel, des identités et des règles impératives dans des mécanismes déterministes et en confinant les `20 %` de liberté cognitive sous télémétrie, évaluation continue et contrat réversible, les architectes d’entreprise et de solutions transforment l’autonomie agentique en capacité industrielle durable [380] [370] [378] [388]. Les annexes qui suivent fournissent le glossaire bilingue normatif, le gabarit d’*Architecture Decision Record* (`ADR`) avec la liste de contrôle `EA` /`SA`, ainsi que les registres consolidés de bibliographie et d’ancrage.
 
 # Annexe A — Glossaire normatif bilingue (français canadien / anglais)
 

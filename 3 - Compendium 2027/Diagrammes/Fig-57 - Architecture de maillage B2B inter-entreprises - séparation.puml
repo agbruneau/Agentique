@@ -2,13 +2,20 @@
 @startuml
 title Maillage B2B Inter-Entreprises : Fédération A2A / AGNTCY, Connecteurs EDC et Règlement Tripartite
 
-top to bottom direction
+left to right direction
 skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
+skinparam nodesep 18
+skinparam ranksep 34
 skinparam rectangle {
   BackgroundColor #FFFFFF
   BorderColor #334155
+}
+skinparam legend {
+  BackgroundColor #F8FAFC
+  BorderColor #334155
+  FontName "Segoe UI"
 }
 
 rectangle "Domaine Acheteur (Groupe Boréal)" as Acheteur #F8FAFC;line:1E293B {
@@ -28,9 +35,6 @@ rectangle "Domaine Acheteur (Groupe Boréal)" as Acheteur #F8FAFC;line:1E293B {
     SAP S/4HANA MM • Trésorerie BCA
     Réception IoT / Quai intelligent
   ]
-
-  Evaluateur -[hidden]down-> ConnecteurAch
-  ConnecteurAch -[hidden]down-> SystemesMaitres
 }
 
 rectangle "Espace de Confiance Fédéré (Dataspace)" as Dataspace #F5F3FF;line:5B21B6;line.dashed {
@@ -50,9 +54,6 @@ rectangle "Espace de Confiance Fédéré (Dataspace)" as Dataspace #F5F3FF;line:
     Mandats AP2 cosignés (Intent + Cart)
     Journal d'audit opposable non répudiable
   ]
-
-  AnnuaireAGNTCY -[hidden]down-> CleanRoom
-  CleanRoom -[hidden]down-> EscrowWORM
 }
 
 rectangle "Partenaires B2B (Fournisseur & Fret)" as Partenaires #F0FDF4;line:166534 {
@@ -72,50 +73,24 @@ rectangle "Partenaires B2B (Fournisseur & Fret)" as Partenaires #F0FDF4;line:166
     Télématique scellé électronique
     Preuve cryptographique de livraison
   ]
-
-  AgentFournisseur -[hidden]down-> ConnecteurPart
-  ConnecteurPart -[hidden]down-> AgentTransporteur
 }
 
-Evaluateur <-[#5B21B6]right-> AnnuaireAGNTCY
-AnnuaireAGNTCY <-[#5B21B6]right-> AgentFournisseur
+Evaluateur -[hidden]-> AnnuaireAGNTCY
+AnnuaireAGNTCY -[hidden]-> AgentFournisseur
+Evaluateur <-[#5B21B6,norank]-> AnnuaireAGNTCY
+AnnuaireAGNTCY <-[#5B21B6,norank]-> AgentFournisseur
 
-ConnecteurAch <-[#2563EB]right-> CleanRoom
-CleanRoom <-[#2563EB]right-> ConnecteurPart
+ConnecteurAch -[hidden]-> CleanRoom
+CleanRoom -[hidden]-> ConnecteurPart
+ConnecteurAch <-[#2563EB,norank]-> CleanRoom
+CleanRoom <-[#2563EB,norank]-> ConnecteurPart
 
-SystemesMaitres -[#1E293B]right-> EscrowWORM
-EscrowWORM <-[#166534]right- AgentTransporteur
+SystemesMaitres -[#1E293B]-> EscrowWORM
+EscrowWORM -[hidden]-> AgentTransporteur
+EscrowWORM <-[#166534,norank]- AgentTransporteur
 
-rectangle "Cycle du Rapprochement Tripartite Autonome (Autonomous 3-Way Match) & Libération de Règlement" as CycleTripartite #F8FAFC;line:334155 {
-  rectangle Tri1 #FFFFFF;line:2563EB [
-    **1. Accord Contractuel**
-    Mandat AP2 CartMandate
-    Plafond, quantités, tolérance
-    Bon de commande SAP créé
-  ]
-  rectangle Tri2 #FFFFFF;line:166534 [
-    **2. Preuve Physique IoT**
-    Lecture RFID + pesée quai
-    Certificat métallurgique OASF
-    Réception signée sans écart
-  ]
-  rectangle Tri3 #FFFFFF;line:7C3AED [
-    **3. Arbitrage Déterministe**
-    Moteur Cedar : écart <= 0,5 %
-    Si litige : gel + escalade HOTL
-    Zéro hallucination comptable
-  ]
-  rectangle Tri4 #F0FDF4;line:166534 [
-    **4. Règlement Final**
-    Libération escrow AP2 / x402
-    Virement ISO 20022 programmé
-    **Archivage fiscal 7 ans**
-  ]
-
-  Tri1 -[#1E293B]right-> Tri2
-  Tri2 -[#1E293B]right-> Tri3
-  Tri3 -[#166534]right-> Tri4
-}
-
-EscrowWORM -[hidden]down-> CycleTripartite
+legend bottom
+  **Cycle du Rapprochement Tripartite Autonome (Autonomous 3-Way Match) & Libération de Règlement**
+  | <#FFFFFF> <color:#2563EB>**1. Accord Contractuel**</color>\nMandat AP2 CartMandate\nPlafond, quantités, tolérance\nBon de commande SAP créé | <#F8FAFC> <b> → </b> | <#FFFFFF> <color:#166534>**2. Preuve Physique IoT**</color>\nLecture RFID + pesée quai\nCertificat métallurgique OASF\nRéception signée sans écart | <#F8FAFC> <b> → </b> | <#FFFFFF> <color:#7C3AED>**3. Arbitrage Déterministe**</color>\nMoteur Cedar : écart <= 0,5 %\nSi litige : gel + escalade HOTL\nZéro hallucination comptable | <#F8FAFC> <color:#166534><b> → </b></color> | <#F0FDF4> <color:#166534>**4. Règlement Final**</color>\nLibération escrow AP2 / x402\nVirement ISO 20022 programmé \n**Archivage fiscal 7 ans** |
+endlegend
 @enduml

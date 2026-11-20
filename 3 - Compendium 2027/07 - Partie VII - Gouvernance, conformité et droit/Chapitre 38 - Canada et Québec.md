@@ -10,9 +10,7 @@ Cet empilement a un centre de gravité : la décision automatisée. Or savoir si
 
 ## 38.1 Le paysage fédéral : pas de loi sur l’IA, une stratégie
 
-« AI for All », lancée le 4 juin 2026, est une stratégie de cinq ans en trois piliers : bâtir la confiance, créer des occasions, renforcer la souveraineté [1]. Elle vise à faire passer
-
-l’adoption de l’IA d’un peu plus de 12 % à 60 % d’ici 2034. Le pilier de la confiance annonce une modernisation des cadres législatifs, une protection accrue des renseignements personnels et un régime de sécurité en ligne. Le communiqué ne nomme aucune loi propre à l’IA. Les agents n’y figurent qu’une fois : des agents « de confiance » promis aux étudiants du postsecondaire.
+« AI for All », lancée le 4 juin 2026, est une stratégie de cinq ans en trois piliers : bâtir la confiance, créer des occasions, renforcer la souveraineté [1]. Elle vise à faire passer l’adoption de l’IA d’un peu plus de 12 % à 60 % d’ici 2034. Le pilier de la confiance annonce une modernisation des cadres législatifs, une protection accrue des renseignements personnels et un régime de sécurité en ligne. Le communiqué ne nomme aucune loi propre à l’IA. Les agents n’y figurent qu’une fois : des agents « de confiance » promis aux étudiants du postsecondaire.
 
 Le projet de loi C-36, déposé le 15 juin 2026 par le ministre de l’Intelligence artificielle et de l’Innovation numérique, édicte la Loi visant à protéger la vie privée et les données des consommateurs [2][3]. C’est une réforme de la protection des renseignements personnels dans le secteur privé, pas une loi sur l’IA. Au 12 novembre 2026, il est inscrit à l’étape de la deuxième lecture à la Chambre des communes, sans débat consigné ni étude en comité [3].
 
@@ -97,9 +95,7 @@ Aucune des deux analyses ne relève de mention de l’IA agentique. La définiti
 
 Les personnes inscrites et les émetteurs relèvent du droit des valeurs mobilières. L’avis 11-348 du personnel des Autorités canadiennes en valeurs mobilières (ACVM), du 5 décembre 2024, explique comment ce droit s’applique aux systèmes d’IA [19]. Son principe : c’est l’activité, et non la technologie, qui est réglementée. Il ne nomme pas les agents, mais traite de l’autonomie. Pour les conseillers et les courtiers, le personnel juge possible d’adapter l’approche des systèmes algorithmiques, pourvu que le système d’IA présente un niveau d’explicabilité approprié; les attentes quant à l’intervention humaine varieraient alors selon l’étendue des services fournis et le degré d’autonomie du système.
 
-Pour la gestion de portefeuille, le personnel est net. Un système qui concevrait des portefeuilles de façon autonome et discrétionnaire, sans qu’une personne physique inscrite
-
-prenne les décisions finales, mettrait la personne inscrite en difficulté de démontrer sa conformité; le personnel ne croit pas possible, à ce stade, de substituer des systèmes d’IA aux représentants-conseils [19]. C’est, parmi les textes canadiens lus, la position la plus explicite sur une décision qu’un agent ne devrait pas prendre seul.
+Pour la gestion de portefeuille, le personnel est net. Un système qui concevrait des portefeuilles de façon autonome et discrétionnaire, sans qu’une personne physique inscrite prenne les décisions finales, mettrait la personne inscrite en difficulté de démontrer sa conformité; le personnel ne croit pas possible, à ce stade, de substituer des systèmes d’IA aux représentants-conseils [19]. C’est, parmi les textes canadiens lus, la position la plus explicite sur une décision qu’un agent ne devrait pas prendre seul.
 
 ## 38.4 Québec : décisions automatisées dans la Loi 25
 
@@ -141,9 +137,7 @@ La Loi 25 impose par ailleurs une évaluation des facteurs relatifs à la vie pr
 
 Le ministère de la Cybersécurité et du Numérique (MCN) encadre l’usage de l’IA par les organismes publics [11]. Trois instruments se superposent.
 
-**Une déclaration annuelle.** L’arrêté 2024-01 du 28 février 2024 oblige les organismes publics à déclarer chaque année leurs initiatives d’IA [14]. Le portrait qui en résulte recense, au 15 juin 2026, 432 initiatives dans 157 organismes, contre 258 et 83 un an plus tôt. Aucune
-
-catégorie n’isole les agents; la catégorie « décision automatisée » compte une seule initiative (chapitre 42).
+**Une déclaration annuelle.** L’arrêté 2024-01 du 28 février 2024 oblige les organismes publics à déclarer chaque année leurs initiatives d’IA [14]. Le portrait qui en résulte recense, au 15 juin 2026, 432 initiatives dans 157 organismes, contre 258 et 83 un an plus tôt. Aucune catégorie n’isole les agents; la catégorie « décision automatisée » compte une seule initiative (chapitre 42).
 
 **Un énoncé de principes.** L’édition 2025 de l’Énoncé est l’annexe de l’arrêté 2025-02 du 3 décembre 2025 [12]. Elle compte douze principes, dont trois visent les systèmes autonomes :
 
@@ -286,16 +280,14 @@ Textes primaires ouverts (statut L+) collectés le 19 novembre 2026 pour la purg
 ## Limites de ce chapitre
 
 - La Directive fédérale [17] rejette les requêtes automatiques simples par son WAF (« Request Rejected ») mais a été chargée le 14 novembre 2026 avec des en-têtes navigateur (HTTP 200, version modifiée le 24 juin 2025, échéance de mise à jour des évaluations aux paragraphes 1.2.1-1.2.2 au 24 juin 2026). Son champ d’application est décrit ici d’après le guide sur sa portée [18]; le détail de ses exigences par niveau (niveaux I à IV aux annexes B et C de la Directive) n’est pas exposé ici, et la section 38.2 repose pour le reste sur la page de l’EIA.
-- Les pages web [1] à [8], [10], [11] et [14] ont été lues au moyen d’un outil d’extraction automatique, sans recollationnement des citations. Les documents [9], [12], [13] et [15]
-  ont été lus en texte intégral. [1], [3], [4], [5], [8] et [9] ont été relus à l’audit du 12 novembre 2026.
+- Les pages web [1] à [8], [10], [11] et [14] ont été lues au moyen d’un outil d’extraction automatique, sans recollationnement des citations. Les documents [9], [12], [13] et [15] ont été lus en texte intégral. [1], [3], [4], [5], [8] et [9] ont été relus à l’audit du 12 novembre 2026.
 - Seule la première moitié du texte de C-36 a été lue; les sanctions viennent du document ministériel [2]. Le sort du projet C-27 est confirmé par l’analyse complète de Blakes [16] (17 juillet 2026, HTTP 200), comme la mention de la LPRPDE en 38.7, dont le régime d’effacement n’est pas décrit.
 - L’article 12.1 est cité d’après le texte sanctionné de 2021 [9]; la consultation le 14 novembre 2026 du recueil officiel LégisQuébec (P-39.1, à jour au 15 octobre 2026; HTTP 403 sur requête automatique simple, HTTP 200 avec en-têtes navigateur) confirme que cet article n’a reçu aucune modification depuis 2021. Le site de la Commission d’accès à l’information a été parcouru le 14 novembre 2026 [23] à [27] sans qu’y soit trouvée de décision ni d’orientation sur l’article 12.1; le répertoire de la SOQUIJ, la seconde moitié de la liste des décisions de surveillance et les documents de la Commission sur l’IA n’ont pas été lus.
 - L’encadrement des institutions financières à charte québécoise, décrit le 14 novembre 2026 d’après deux analyses de cabinets [20][21], est raccordé depuis le 19 novembre 2026 (lot W2.1) à l’instruction interne `2026/documents/Note AMF IA.pdf` (`CRE-IA-2026-01-QC`, 41 attentes, `EXIG-AMF-01` à `EXIG-AMF-12`). Le site de l’AMF maintenant une erreur 403 Cloudflare aux requêtes automatisées, le téléchargement direct de la ligne directrice sur l’IA [22] comme de la Ligne directrice sur la gestion du risque de modèle demeure en **statut F**, et l’adresse officielle du PDF du Bulletin du 2 avril 2026 citée en [22] (vol. 23, n° 13, section 5.2.2, décision n° 2026-PDG-0016) a été corrigée le 14 novembre 2026 d’après recherche web, le serveur maintenant une erreur 403 Cloudflare. L’avis 11-348 [19] a été lu par recherche de passages dans une copie officielle, non en entier; les suites de sa consultation n’ont pas été cherchées. Le droit des autres provinces n’est pas traité.
 - Les ajouts du 14 novembre 2026 sont le paragraphe sur le champ d’application de la Directive (38.2), les deux sous-sections de 38.3 et les lignes correspondantes du tableau de 38.7, de la grille et des points à retenir. Les colonnes « Portée pour un système d’agents » sont des lectures de ce chapitre.
 - Le guide québécois ne porte pas de date plus précise que 2026, et celle du guide fédéral correspond à la date sans libellé affichée sur sa page. Les lectures proposées en 38.2, 38.3, 38.4 et 38.6 sont des inférences, non des positions des autorités.
 - Lors de l’audit du 14 novembre 2026, les quatre pages hébergées sur `www.canada.ca` ([2], [5], [6] et [18]) ont expiré en délai d’attente aux requêtes automatisées; la fiche du Guide sur l’IA agentive [5] est confirmée en HTTP 200 au catalogue des Publications du gouvernement du Canada (`BT22-298/2026F-PDF`) et le contenu des quatre documents est confirmé par la relecture des 11 et 12 novembre ainsi que par recherche web.
-- Purge juridique ouverte de la section 38.10 (19 novembre 2026, lot W2.1) : six textes primaires ouverts (`statut L+`) ont été collectés et vérifiés mot à mot — LCCJTI sanctionnée `L.Q. 2001, c. 32` [28] (art. 5, 6 et 39; 0 occurrence d'« agent » ni d'« automatisé »), LUCE modèle CHLC/ULCC [29] (art. 21 et 22, *common law* uniquement), *Loi sur la concurrence* `L.R.C. (1985), ch. C-34` [30] (art. 45(1) et 90.1(1)), *Sherman Act* `15 U.S.C. § 1` [31], `TFUE art. 101` [32] et `RFC 8785` [33]. Demeurent en **statut F** (hors vérification primaire, sans contournement) : le *Code civil du Québec* (`CCQ-1991`, HTTP 403 LégisQuébec), la
-  `LCCJTI` consolidée (`RLRQ, c. C-1.1`, HTTP 403 LégisQuébec) et l'`UETA art. 14` (texte intégral non ouvert).
+- Purge juridique ouverte de la section 38.10 (19 novembre 2026, lot W2.1) : six textes primaires ouverts (`statut L+`) ont été collectés et vérifiés mot à mot — LCCJTI sanctionnée `L.Q. 2001, c. 32` [28] (art. 5, 6 et 39; 0 occurrence d'« agent » ni d'« automatisé »), LUCE modèle CHLC/ULCC [29] (art. 21 et 22, *common law* uniquement), *Loi sur la concurrence* `L.R.C. (1985), ch. C-34` [30] (art. 45(1) et 90.1(1)), *Sherman Act* `15 U.S.C. § 1` [31], `TFUE art. 101` [32] et `RFC 8785` [33]. Demeurent en **statut F** (hors vérification primaire, sans contournement) : le *Code civil du Québec* (`CCQ-1991`, HTTP 403 LégisQuébec), la `LCCJTI` consolidée (`RLRQ, c. C-1.1`, HTTP 403 LégisQuébec) et l'`UETA art. 14` (texte intégral non ouvert).
 
 **MISE EN ŒUVRE — Conformité réglementaire internationale et canadienne, et droit B2B inter-agents**
 
@@ -312,9 +304,7 @@ SYNTHÈSE EXÉCUTIVE
 
 Une charte déclarative et un tableur remplis une seule fois avant la mise en ligne ne suffisent pas pour une fabrique multi-agents de troisième génération : les consignes évoluent chaque quinzaine, le routage alterne entre SLM locaux et LLM frontières, et l’ajout d’un seul outil MCP mutatif modifie le risque juridique de toute une chaîne. Une revue statique rédigée six mois plus tôt n’a plus de valeur probatoire devant un régulateur.
 
-L’industrialisation de 2027 substitue à l’audit ponctuel un système de management de l’IA (AIMS) certifiable selon `ISO/IEC 42001:2023`, câblé dans le plan de contrôle logiciel. Bâtie sur la structure harmonisée commune à ISO/IEC 27001, cette norme permet de mutualiser près de 40 % du socle de cybersécurité existant (audits internes, revues de direction,
-
-actions correctives). Elle ajoute trente-huit contrôles normatifs dans son Annexe A, dédiés à l’évaluation d’impact sociétal et individuel (A.5), au cycle de vie probabiliste (A.6), à la lignée des données (A.7), à l’information des parties concernées (A.8) et à la gouvernance des fournisseurs tiers (A.10).
+L’industrialisation de 2027 substitue à l’audit ponctuel un système de management de l’IA (AIMS) certifiable selon `ISO/IEC 42001:2023`, câblé dans le plan de contrôle logiciel. Bâtie sur la structure harmonisée commune à ISO/IEC 27001, cette norme permet de mutualiser près de 40 % du socle de cybersécurité existant (audits internes, revues de direction, actions correctives). Elle ajoute trente-huit contrôles normatifs dans son Annexe A, dédiés à l’évaluation d’impact sociétal et individuel (A.5), au cycle de vie probabiliste (A.6), à la lignée des données (A.7), à l’information des parties concernées (A.8) et à la gouvernance des fournisseurs tiers (A.10).
 
 ### Du cycle PDCA d’ISO/IEC 42001 et des travaux du NIST au code exécutable
 
@@ -324,7 +314,7 @@ Les quatre phases PDCA d’ISO/IEC 42001 correspondent à des composants techniq
 
 - **Planifier (*Plan*, clauses 4 à 6)** : Le registre OASF matérialise l’inventaire obligatoire (A.4.2). Aucun certificat SPIFFE n’est émis sans finalité métier déclarée, étude d’impact et seuils d’appétit au risque.
 - **Déployer (*Do*, clauses 7 et 8)** : Les contrôles de l’Annexe A s’exécutent dans les portes CI/CD (signature des serveurs MCP, bancs adversariaux) et dans les politiques Cedar ou OPA évaluées en ligne par agentgateway.
-- **Évaluer (*Check*, clause 9)** : Les traces normalisées OpenTelemetry `gen_ai.*` et les campagnes périodiques de stabilité multi-essais pass𝑘 alimentent en continu les tableaux de conformité et la validation indépendante.
+- **Évaluer (*Check*, clause 9)** : Les traces normalisées OpenTelemetry `gen_ai.*` et les campagnes périodiques de stabilité multi-essais pass^𝑘 alimentent en continu les tableaux de conformité et la validation indépendante.
 - **Corriger (*Act*, clause 10)** : Toute dérive ou violation déclenche une remédiation tracée, du repli automatique de L3 vers L2 jusqu’à la révocation immédiate des jetons OAuth 2.1 par l’interrupteur d’urgence.
 
 Le contrôle A.10 vise la chaîne d’approvisionnement agentique. Lorsqu’un orchestrateur interne invoque un serveur MCP fourni par un éditeur tiers ou délègue une sous-tâche A2A à l’agent d’un partenaire infonuagique, le périmètre de responsabilité du système de management s’étend à cette frontière externe. L’entreprise exige une nomenclature logicielle et cognitive signée (AI-SBOM référençant la famille de modèle, la politique de rétention zéro des invites et les sous-traitants ultérieurs) avant d’inscrire le connecteur au catalogue autorisé.
@@ -339,7 +329,7 @@ Le contrôle A.10 vise la chaîne d’approvisionnement agentique. Lorsqu’un o
 > - Portes CI/CD, politiques OPA/Cedar
 > - & délégation OAuth 2.1 OBO
 > - 3. CHECK (Clause 9)
-> - Traces OTel gen_ai.*, stabilité pass^k & audit indépendant
+> - Traces OTel gen_ai.\*, stabilité pass^k & audit indépendant
 > - 4. ACT (Clause 10)
 > - Kill-Switch, gestion incidents, recalibrage seuils & prompts
 > - Règle de l'Empreinte de Déploiement (Deployment Footprint) — Qualification Dynamique du Risque
@@ -386,15 +376,13 @@ Une cote de risque fixe attribuée à un modèle de langage est une erreur d’a
 
 La section 38.4 qualifie la décision à chaque point de décision; la règle suivante étend ce principe à tous les régimes. La classe réglementaire d’une saga 𝑆 composée d’acteurs 𝑎∈ 𝑆 obéit à la règle du maillon le plus critique, évaluée sur son empreinte de déploiement :
 
-𝒞︀reg(𝑆) = max𝑎∈𝑆Φ (𝑀𝑎, 𝒯︀𝑎, 𝒟︀𝑎, 𝒥︀𝑎, 𝐿𝑎)
+𝒞︀_{reg}(𝑆) = max_{𝑎 ∈ 𝑆} Φ(𝑀_𝑎, 𝒯︀_𝑎, 𝒟︀_𝑎, 𝒥︀_𝑎, 𝐿_𝑎)
 
-Dans cette formule, 𝑀𝑎 désigne le modèle utilisé, 𝒯︀𝑎 la nature des outils MCP connectés (lecture, écriture financière ou physique), 𝒟︀𝑎 la sensibilité des données, 𝒥︀𝑎 les juridictions d’établissement et d’impact, et 𝐿𝑎∈{L0, …, L4} le plafond d’autonomie sans approbation humaine préalable.
+Dans cette formule, 𝑀_𝑎 désigne le modèle utilisé, 𝒯︀_𝑎 la nature des outils MCP connectés (lecture, écriture financière ou physique), 𝒟︀_𝑎 la sensibilité des données, 𝒥︀_𝑎 les juridictions d’établissement et d’impact, et 𝐿_𝑎 ∈ {L0, …, L4} le plafond d’autonomie sans approbation humaine préalable.
 
 #### Extrait 38.1 — `[Exécuté en CI]` · Fiche automatisée d’empreinte réglementaire évaluée en CI/CD (deployment-footprint.yaml)
 
-Versionné dans le dépôt Git de chaque agent, ce manifeste est vérifié par OPA à chaque fusion. Tout ajout d’outil mutatif ou d’extension géographique bloque le déploiement tant que les approbations requises manquent au registre AIMS, et le seuil de constance pass5 passe de 0,95 (socle général du chapitre 34) à 0,97 dès que le flux relève du palier matériel BSIF E-23; l’Extrait 34.1, qui garde 0,95 pour le même agent, précède ce
-
-relèvement. Le palier (`osfiE23ModelRiskTier`) et la durée de conservation de sept ans (`wormDecisionLogRetentionYears`) sont des choix de l’entreprise : la section 38.3 laisse la cote de risque des usages d’IA générative au jugement de chaque institution, et la section 38.4 retient pour les traces une durée fixée par finalité, puis la destruction ou l’anonymisation, sauf délai légal de conservation (art. 23).
+Versionné dans le dépôt Git de chaque agent, ce manifeste est vérifié par OPA à chaque fusion. Tout ajout d’outil mutatif ou d’extension géographique bloque le déploiement tant que les approbations requises manquent au registre AIMS, et le seuil de constance pass^5 passe de 0,95 (socle général du chapitre 34) à 0,97 dès que le flux relève du palier matériel BSIF E-23; l’Extrait 34.1, qui garde 0,95 pour le même agent, précède ce relèvement. Le palier (`osfiE23ModelRiskTier`) et la durée de conservation de sept ans (`wormDecisionLogRetentionYears`) sont des choix de l’entreprise : la section 38.3 laisse la cote de risque des usages d’IA générative au jugement de chaque institution, et la section 38.4 retient pour les traces une durée fixée par finalité, puis la destruction ou l’anonymisation, sauf délai légal de conservation (art. 23).
 
 ```
 apiVersion: aims.boreal.ca/v2027.1
@@ -436,9 +424,7 @@ Une fabrique transatlantique ou pancanadienne n’a pas à fragmenter son code e
 
 ### Union européenne : transparence (août 2026) et haut risque (décembre 2027)
 
-Le `Règlement (UE) 2024/1689` s’applique de façon extraterritoriale dès que les sorties d’un agent sont utilisées dans l’Union. Après l’interdiction des pratiques inacceptables et
-
-l’obligation de maîtrise de l’IA (art. 4, février 2025), puis les règles GPAI (août 2025), deux jalons gouvernent les systèmes agentiques en 2026–2027 :
+Le `Règlement (UE) 2024/1689` s’applique de façon extraterritoriale dès que les sorties d’un agent sont utilisées dans l’Union. Après l’interdiction des pratiques inacceptables et l’obligation de maîtrise de l’IA (art. 4, février 2025), puis les règles GPAI (août 2025), deux jalons gouvernent les systèmes agentiques en 2026–2027 :
 
 - **Août 2026 (art. 50, transparence)** : Dès le 2 août 2026, tout agent d’interface (AG-UI, voix WebRTC, courriel autonome) informe la personne physique qu’elle interagit avec une IA; pour les contenus synthétiques, l’art. 50 impose un marquage lisible par machine (reporté pour les systèmes déjà mis sur le marché, Annexe D) sans prescrire spécifiquement C2PA, retenu ici comme option technique de l’architecture.
 - **Décembre 2027 (Annexe III, haut risque)** : Les agents qui opèrent dans l’emploi, l’octroi de crédit aux particuliers, l’assurance vie ou santé ou les infrastructures critiques relèvent des articles 8 à 15. Selon l’ajustement réglementaire européen, la pleine exigibilité sectorielle est fixée au 2 décembre 2027, sans lien avec la disponibilité des normes harmonisées CEN-CENELEC. Quatre briques logicielles sont à livrer : gestion itérative des risques (art. 9), dossier technique généré depuis le code (art. 11 et Annexe IV), journalisation automatique sur toute la durée de vie (art. 12) et contrôle humain effectif muni d’un bouton d’arrêt (art. 14).
@@ -457,8 +443,7 @@ La date d’effet et la définition du modèle figurent à la section 38.3. Pour
 
 La Loi 25 est en vigueur (section 38.4). Les sanctions administratives atteignent 10 M$ CAD ou 2 % du chiffre d’affaires mondial; les sanctions pénales, 25 M$ CAD ou 4 % (art. 90.12 et 91 LPRPSP). Deux contraintes pèsent directement sur les architectures agentiques :
 
-- **Décisions exclusivement automatisées (art. 12.1)** : L’avis, l’explication sur demande et la révision humaine décrits à la section 38.4 s’appliquent lorsqu’un agent L3 ou L4
-  tranche seul une décision sur une personne physique, à partir de ses renseignements personnels, sans condition d’effet : « effets juridiques ou incidence importante » est la condition du projet de loi C-36 (art. 63; section 38.1), non de l’article 12.1. Une approbation humaine réflexe de trois secondes ne désactive pas l’article devant la Commission d’accès à l’information (CAI).
+- **Décisions exclusivement automatisées (art. 12.1)** : L’avis, l’explication sur demande et la révision humaine décrits à la section 38.4 s’appliquent lorsqu’un agent L3 ou L4 tranche seul une décision sur une personne physique, à partir de ses renseignements personnels, sans condition d’effet : « effets juridiques ou incidence importante » est la condition du projet de loi C-36 (art. 63; section 38.1), non de l’article 12.1. Une approbation humaine réflexe de trois secondes ne désactive pas l’article devant la Commission d’accès à l’information (CAI).
 - **EFVP et transferts hors Québec (art. 3.3 et 17)** : Tout système agentique qui traite des renseignements personnels requiert une EFVP dès sa conception, puis avant tout envoi de contexte vers une région d’inférence située hors du Québec (section 38.6).
 
 | Dimension | ISO/IEC 42001 | NIST AI RMF & Agent Init. | EU AI Act (UE) | BSIF E-23 (Canada) | Loi 25 (Québec) |
@@ -516,7 +501,7 @@ Quatre actions, coordonnées entre l’architecture et l’équipe de risque de 
 
 1. **Agents non déclarés** : Corréler les journaux réseau, Entra ID et passerelles API pour rapatrier 100 % des assistants et agents SaaS (Copilot, Agentforce, ServiceNow) dans l’inventaire E-23.
 2. **Triage de matérialité** : Séparer architecturalement les agents de lecture et de synthèse (palier 3, homologation allégée sous 5 jours) des agents qui instruisent l’octroi, la tarification ou l’indemnisation (paliers 1 et 2), afin de préserver la capacité de validation de 2e ligne.
-3. **Validation stochastique outillée** : Exiger un score pass5 ≥0, 97 sur un jeu d’or gelé de 300 dossiers historiques et 100 cas adversariaux, et la preuve que les plafonds financiers sont exécutés hors modèle par Cedar ou OPA.
+3. **Validation stochastique outillée** : Exiger un score pass^5 ≥ 0,97 sur un jeu d’or gelé de 300 dossiers historiques et 100 cas adversariaux, et la preuve que les plafonds financiers sont exécutés hors modèle par Cedar ou OPA.
 
 4. **Avenants fournisseurs tiers et rejouabilité septennale** : Imposer un préavis contractuel de 30 jours avant tout retrait d’un modèle épinglé et tester semestriellement le basculement vers un modèle de repli. Les points de contrôle infonuagiques sont dépréciés tous les 12 à 18 mois, alors que l’entreprise veut rejouer sur sept ans une décision soumise à l’inspection BSIF E-23 : le protocole d’audit ne réexécute donc jamais un ancien LLM. Il rejoue de façon déterministe dans Cedar le triplet archivé en WORM (faits structurés extraits, condensat du paquet de règles et certificat d’homologation SemVer + Intent), ce qui établit la conformité de la décision historique.
 
@@ -623,7 +608,7 @@ Dans les organismes publics québécois, le réseau de la santé (LRSSS) et l’
 
 **Solution déployée (T2–T3 2027)** :
 
-1. **Dorsale GitOps ISO/IEC 42001** : Adoption du manifeste unique `deployment-footprint.yaml` (extrait 38.1), contrôlé par OPA. Les rapports pass5, les politiques Cedar et les traces OpenTelemetry génèrent automatiquement la liasse d’audit.
+1. **Dorsale GitOps ISO/IEC 42001** : Adoption du manifeste unique `deployment-footprint.yaml` (extrait 38.1), contrôlé par OPA. Les rapports pass^5, les politiques Cedar et les traces OpenTelemetry génèrent automatiquement la liasse d’audit.
 2. **BSIF E-23 et Loi 25 chez BCA** : Classification des 14 agents financiers (3 de palier 2 matériel, 11 de palier 3 interne) et archivage systématique du jeton d’explicabilité WORM (extrait 38.2) pour chaque décision de crédit-bail PME québécoise. Lors de la revue préparatoire BSIF E-23, début avril 2027, BCA a extrait en 2 h 15 la preuve complète de 18 400 décisions et obtenu un feu vert sans réserve avant le 1er mai 2027.
 3. **Pilote d’achat B2B AP2 chez BEL** : Signature d’un avenant électronique avec six fournisseurs nord-américains de fixations haute résistance. L’*Agent Réapprovisionnement Spot* négocie de nuit via A2A v1.0 sous un mandat AP2 plafonné à 15 000 $ CAD, protégé par `verifyB2bAgentCommitment` (extrait 38.3).
 
@@ -648,7 +633,7 @@ La fiche ADR-024 fixe les conditions d’homologation juridique et contractuelle
 
 1. **Registre AIMS complet** : Chaque identité NHI active pointe-t-elle vers une entrée ISO/IEC 42001 valide et un manifeste `deployment-footprint.yaml` vérifié en CI/CD ?
 2. **Règle du maillon critique** : La saga multi-agents hérite-t-elle automatiquement du régime réglementaire le plus strict parmi les outils et les données sollicités ?
-3. **Homologation BSIF E-23** : Les agents matériels disposent-ils d’une validation indépendante de 2e ligne, d’un score pass𝑘 documenté et d’un plan de repli pour les tiers ?
+3. **Homologation BSIF E-23** : Les agents matériels disposent-ils d’une validation indépendante de 2e ligne, d’un score pass^𝑘 documenté et d’un plan de repli pour les tiers ?
 4. **Explicabilité Loi 25 (art. 12.1)** : Toute décision exclusivement automatisée sur renseignements personnels génère-t-elle l’avis obligatoire, les facteurs déterministes exacts et un recours humain effectif ?
 5. **Résidence et EFVP** : Une EFVP signée couvre-t-elle chaque flux de renseignements personnels, avec blocage technique de toute inférence hors des régions autorisées ?
 6. **Obligations EU AI Act** : La divulgation de l’IA (art. 50), le marquage synthétique lisible par machine (p. ex. C2PA, option technique) et les journaux automatiques (art. 12) sont-ils actifs pour les utilisateurs européens ?

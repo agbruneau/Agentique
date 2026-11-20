@@ -43,8 +43,7 @@ Trois principes gouvernent impérativement cette mesure (C27, § 43.1) :
 
 1. **Proposition analytique non validée empiriquement.** Ces cinq stades constituent un repère d’architecture d’entreprise et non une échelle empiriquement étalonnée sur un échantillon statistique externe.
 2. **Règle du critère le plus faible.** Le stade d’un domaine est borné par son maillon de contrôle le plus bas. Un domaine d’octroi de crédit (`D3`) qui chaînerait techniquement plusieurs agents sans identité dédiée [2], sans revue indépendante E-23 [1] ou sans dispositif d’explication et de révision conforme à l’article 12.1 de la Loi 25 [4] demeure au **Stade 1**.
-3. **Le sommet n’est pas une cible.** Le Stade 4 qualifie une ouverture inter-organisationnelle, non une supériorité intrinsèque (C27, § 43.1). Ouvrir `D6` (enquêtes anti-blanchiment) ou le
-  jugement de convenance de `D2` [6] à des agents tiers autonomes dégraderait la conformité sans bénéfice légitime : pour plusieurs domaines financiers, **le Stade 2 ou le Stade 3 constitue la cible définitive en 2035** C : tous ; SIG-101, SIG-105.
+3. **Le sommet n’est pas une cible.** Le Stade 4 qualifie une ouverture inter-organisationnelle, non une supériorité intrinsèque (C27, § 43.1). Ouvrir `D6` (enquêtes anti-blanchiment) ou le jugement de convenance de `D2` [6] à des agents tiers autonomes dégraderait la conformité sans bénéfice légitime : pour plusieurs domaines financiers, **le Stade 2 ou le Stade 3 constitue la cible définitive en 2035** C : tous ; SIG-101, SIG-105.
 
 ## 12.4 Les six classes de décision (`Classe 1` à `Classe 6`) : plafonds, contrôles et preuves d’élargissement
 
@@ -100,8 +99,7 @@ La trajectoire 2028-2035 privilégie ainsi la solidité sur l’affichage : amen
 Trois réserves encadrent la portée de ce chapitre :
 
 1. **Caractère analytique des référentiels.** Tant le découpage en huit domaines (`D1` à `D8`) et six classes (`Classe 1` à `Classe 6`) que l’échelle des stades `0` à `4` du Compendium 2027 (C27, § 43.1) constituent des constructions analytiques d’architecture non validées empiriquement sur un échantillon externe.
-2. **Corpus absents et textes réglementaires fermés.** L’absence de `../2026/` sur disque ne permet pas de vérifier sur pièce l’échelle `NiveauMaturité` du Cadre 2026. Au Québec, les lignes directrices `T-01` (IA) et `T-02` (risque de modèle) de l’AMF demeurent fermées
-  (`F`, `HTTP 403`), et la codification LégisQuébec `T-04` (`F`) est suppléée par le texte officiel sanctionné de la Loi 25 (`QC-01.txt`, `L+`).
+2. **Corpus absents et textes réglementaires fermés.** L’absence de `../2026/` sur disque ne permet pas de vérifier sur pièce l’échelle `NiveauMaturité` du Cadre 2026. Au Québec, les lignes directrices `T-01` (IA) et `T-02` (risque de modèle) de l’AMF demeurent fermées (`F`, `HTTP 403`), et la codification LégisQuébec `T-04` (`F`) est suppléée par le texte officiel sanctionné de la Loi 25 (`QC-01.txt`, `L+`).
 3. **Série publique de portée d’agents interrompue.** La mesure publique de METR n’étant plus actualisée depuis le 8 septembre 2026 au-delà de seize heures [14], tout élargissement futur de portée doit être prouvé sur les bancs métiers internes de l’institution (`CAP-043`).
 
 ## Sources

@@ -4,8 +4,9 @@
 top to bottom direction
 skinparam shadowing false
 skinparam roundcorner 10
-skinparam defaultFontName "Segoe UI"
+skinparam defaultFontName SansSerif
 skinparam defaultFontSize 11
+skinparam Padding 6
 
 card FeuilleDeRoute #FFFFFF;line:FFFFFF [
   |= Chantier |= <#1B5E9E><color:#FFFFFF>**Fondations**</color>\n<color:#FFFFFF>mois 0 à 3</color> |= <#0F7682><color:#FFFFFF>**Plateforme**</color>\n<color:#FFFFFF>mois 3 à 9</color> |= <#28774E><color:#FFFFFF>**Industrialisation**</color>\n<color:#FFFFFF>mois 9 à 18</color> |= <#0F2744><color:#FFFFFF>**Mise à l’échelle**</color>\n<color:#FFFFFF>mois 18 et plus</color> |
@@ -17,21 +18,6 @@ card FeuilleDeRoute #FFFFFF;line:FFFFFF [
   | **Orchestration** | | <#0F7682> <color:#FFFFFF>Flux durables, approbation</color> | <#22929F> <color:#FFFFFF>Multiagent, sagas et compensation</color> | <#22929F> <color:#FFFFFF>Chorégraphie élargie</color> |
   | **Conformité** | <#5C6B7F> <color:#FFFFFF>EFVP en cours</color> | <#738296> <color:#FFFFFF>EFVP, inventaire E-23</color> | <#738296> <color:#FFFFFF>Base de preuves; J2a (annexe III)</color> | <#738296> <color:#FFFFFF>Certification ISO/IEC 42001</color> |
   | **Autonomie autorisée** | <#E6EBF1> **N0 et N1** | <#E6EBF1> **N2, premiers N3 bornés** | <#E6EBF1> **N3 entre domaines, par la passerelle** | <#E6EBF1> **N4 sur ODD homologué** |
+  | **Jalons clés** | <#FEF3DC> <color:#B45309>◆ **Jalon 1**</color>\nregistre complet,\ncomité, dates MCP | <#FEF3DC> <color:#B45309>◆ **Jalon 2**</color>\npilotes homologués,\nmaturité 2, MCP migré | <#FCE8EB> <color:#9C2F39>◆ **Jalon 2a**</color> : RIA, annexe III, cible 1er nov. 2027\n<color:#B45309>◆ **Jalon 3**</color> : maturité 3 sur les cinq dimensions | <#FEF3DC> <color:#B45309>◆ **Jalon 4**</color> : maturité 4\n<color:#B45309>◆ **Jalon 5**</color> : certificat ISO/IEC 42001 |
 ]
-
-together {
-  rectangle "**<color:#B45309>Jalon 1</color>**\nregistre complet,\ncomité, dates MCP" as J1 #FEF3DC;line:B45309
-  rectangle "**<color:#B45309>Jalon 2</color>**\npilotes homologués,\nmaturité 2, MCP migré" as J2 #FEF3DC;line:B45309
-  rectangle "**<color:#9C2F39>Jalon 2a</color>**\nRIA, annexe III,\ncible 1er nov. 2027" as J2a #FCE8EB;line:9C2F39
-  rectangle "**<color:#B45309>Jalon 3</color>**\nmaturité 3 sur les\ncinq dimensions" as J3 #FEF3DC;line:B45309
-  rectangle "**<color:#B45309>Jalon 4</color>**\nmaturité 4" as J4 #FEF3DC;line:B45309
-  rectangle "**<color:#B45309>Jalon 5</color>**\ncertificat\nISO/IEC 42001" as J5 #FEF3DC;line:B45309
-}
-
-J1 -[hidden]right-> J2
-J2 -[hidden]right-> J2a
-J2a -[hidden]right-> J3
-J3 -[hidden]right-> J4
-J4 -[hidden]right-> J5
-FeuilleDeRoute -[hidden]down-> J1
 @enduml

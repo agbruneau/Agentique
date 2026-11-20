@@ -35,9 +35,7 @@ Les conventions `OpenTelemetry GenAI` ne normalisant pas encore nativement ces c
 2. **Attributs d’extension sur traces** : chaque span critique (`invoke_agent`, `execute_tool`, `a2a.server`) enregistre `spiffe.workload.id`, l’acteur courant `auth.obo.actor` extrait du `act` externe et un condensat cryptographique irréversible du `sub` humain afin de préserver la traçabilité sans exposer d’identifiant nominatif [244] [245] [254].
 3. **Propagation légère par** `W3C Baggage` : seuls des attributs de routage non sensibles (code de centre de coûts, classe de criticité métier) circulent via `OpenTelemetry Baggage` (y compris dans `params._meta` sous `MCP`), en proscrivant toute donnée personnelle ou charge volumineuse répliquée sur chaque saut réseau [252] [255].
 
-Pour la mesure technique des coûts et volumes d’exécution, `OpenTelemetry` sépare strictement deux familles métriques [256] [257]. Les **compteurs mo**
-
-**notones** (`gen_ai.client.inference.usage.input_tokens`, `output_tokens`, `cache_read.input_tokens`, `cache_write.input_tokens` et `reasoning.output_tokens`), ventilés par `gen_ai.token.modality`, alimentent le calcul des rythmes de dépense transmis au pilotage `FinOps` du chapitre 12 [256]. À l’inverse, les **histogrammes par opération** (`gen_ai.client.inference.operation.input_tokens` et `output_tokens`) suivent la distribution par appel et omettent délibérément la modalité afin que les quantiles `p95` /`p99` restent mathématiquement exacts — car sommer des percentiles par modalité fausserait l’estimation du coût unitaire réel [256]. Côté agent, `gen_ai.invoke_agent.inference_calls` comptabilise chaque invocation logique de modèle indépendamment des reprises réseau sous-jacentes, `gen_ai.invoke_agent.tool_calls` dénombre les appels d’outils par exécution et `gen_ai.invoke_agent.duration` adopte des bornes d’histogramme étendues de `0,1 s` à `86 400 s` (`24 h`) pour couvrir les boucles durables [257]. Enfin, `gen_ai.agent.name` doit demeurer de faible cardinalité (jamais un nom de classe générique tel `"StateGraph"` ni un identifiant de session) pour protéger la base `TSDB` [240] [257].
+Pour la mesure technique des coûts et volumes d’exécution, `OpenTelemetry` sépare strictement deux familles métriques [256] [257]. Les **compteurs monotones** (`gen_ai.client.inference.usage.input_tokens`, `output_tokens`, `cache_read.input_tokens`, `cache_write.input_tokens` et `reasoning.output_tokens`), ventilés par `gen_ai.token.modality`, alimentent le calcul des rythmes de dépense transmis au pilotage `FinOps` du chapitre 12 [256]. À l’inverse, les **histogrammes par opération** (`gen_ai.client.inference.operation.input_tokens` et `output_tokens`) suivent la distribution par appel et omettent délibérément la modalité afin que les quantiles `p95` /`p99` restent mathématiquement exacts — car sommer des percentiles par modalité fausserait l’estimation du coût unitaire réel [256]. Côté agent, `gen_ai.invoke_agent.inference_calls` comptabilise chaque invocation logique de modèle indépendamment des reprises réseau sous-jacentes, `gen_ai.invoke_agent.tool_calls` dénombre les appels d’outils par exécution et `gen_ai.invoke_agent.duration` adopte des bornes d’histogramme étendues de `0,1 s` à `86 400 s` (`24 h`) pour couvrir les boucles durables [257]. Enfin, `gen_ai.agent.name` doit demeurer de faible cardinalité (jamais un nom de classe générique tel `"StateGraph"` ni un identifiant de session) pour protéger la base `TSDB` [240] [257].
 
 > **[Figure]**
 > - Plan d'exécution
@@ -54,13 +52,13 @@ Pour la mesure technique des coûts et volumes d’exécution, `OpenTelemetry` s
 > - Extrait traceparent & baggage via params._meta
 > - «container» Pair A2A / Inférence
 > - [a2a.client / model]
-> - Propage contextId, usage.* & TTFT/TPOT
+> - Propage contextId, usage.\* & TTFT/TPOT
 > - «container» Collector Edge [redactionprocessor + OTTL]
 > - Allowlist clés, hache sub,
 > - masque PII (contenu=0)
 > - «container» Collector Tail-Sampling
 > - [tailsamplingprocessor]
-> - Retient 100 % erreurs, route métriques usage.*
+> - Retient 100 % erreurs, route métriques usage.\*
 > - «container» Backend Traces
 > - [OTLP / Phoenix]
 > - Traces liées trace_id,
@@ -81,7 +79,7 @@ Pour la mesure technique des coûts et volumes d’exécution, `OpenTelemetry` s
 > - sans PII
 > - Traces anomalie
 > - & échantillon
-> - Métriques gen_ai.*
+> - Métriques gen_ai.\*
 > - faible cardinalité
 > - Piste identités
 > - SPIFFE / OBO
@@ -94,8 +92,7 @@ L’observabilité brute entre en conflit direct avec la protection des renseign
 
 Comme l’illustre la figure 11.1, cet invariant est appliqué en enclave par un `OpenTelemetry Collector` combinant filtrage déterministe et sélection tardive :
 
-- **Assainissement (**`redactionprocessor` **et** `transformprocessor`**)** : le `redactionprocessor` supprime d’abord tout attribut absent de sa liste blanche (`allowed_keys`), puis masque les motifs interdits
-  (`blocked_values`) [246]. En parallèle, le `transformprocessor` (`OTTL`) hache les identifiants sujets et réécrit tout attribut résiduel avant exportation vers les puits partagés [254].
+- **Assainissement (**`redactionprocessor` **et** `transformprocessor`**)** : le `redactionprocessor` supprime d’abord tout attribut absent de sa liste blanche (`allowed_keys`), puis masque les motifs interdits (`blocked_values`) [246]. En parallèle, le `transformprocessor` (`OTTL`) hache les identifiants sujets et réécrit tout attribut résiduel avant exportation vers les puits partagés [254].
 - **Échantillonnage tardif (**`tailsamplingprocessor`**)** : plutôt qu’un échantillonnage aveugle en tête qui perdrait les défaillances rares, le collecteur tamponne les spans jusqu’à achèvement de la trace complète pour retenir **100 %** des erreurs, dépassements de latence ou déclenchements de garde-fous, tout en sous-échantillonnant les trajectoires nominales [258]. Cette topologie exige un équilibrage de charge conscient du `trace_id` entre instances de collecteur [258].
 
 | Signal / Attribut | Référence normative | Rôle `SA` | Exigence `EA` |
@@ -109,9 +106,7 @@ Comme l’illustre la figure 11.1, cet invariant est appliqué en enclave par un
 
 *Tableau 11.1 — Convention de mappage* `OpenTelemetry GenAI` *: corrélation traces, identités* `SPIFFE` */*`OBO` *et assainissement.*
 
-> **Arbitrage EA / SA** — Imposer `OpenTelemetry GenAI` (`invoke_agent`, `execute_tool`, `MCP` `SEP-414` et `A2A`) comme contrat télémétrique unique tout en maintenant la capture brute `Opt-In` désactivée par défaut en production [240] [252] [253] [250]. Le `SA` mappe les extensions d’entreprise `spiffe.workload.id`, `auth.obo.actor` (`act`) et `sub` haché par `OTTL`, sépare compteurs `usage.*` et histogrammes `operation.*`, et chaîne `redactionprocessor`, `transformprocessor` et `tailsamplingprocessor` derrière un routage par `trace_id` [256] [244] [246] [258] [254]. L’`EA` exige le
-
-> `mTLS` `SPIFFE` sur le pipeline `OTLP` et proscrit toute PII dans `W3C Baggage` ou les dimensions métriques [257] [255] [245].
+> **Arbitrage EA / SA** — Imposer `OpenTelemetry GenAI` (`invoke_agent`, `execute_tool`, `MCP` `SEP-414` et `A2A`) comme contrat télémétrique unique tout en maintenant la capture brute `Opt-In` désactivée par défaut en production [240] [252] [253] [250]. Le `SA` mappe les extensions d’entreprise `spiffe.workload.id`, `auth.obo.actor` (`act`) et `sub` haché par `OTTL`, sépare compteurs `usage.*` et histogrammes `operation.*`, et chaîne `redactionprocessor`, `transformprocessor` et `tailsamplingprocessor` derrière un routage par `trace_id` [256] [244] [246] [258] [254]. L’`EA` exige le `mTLS` `SPIFFE` sur le pipeline `OTLP` et proscrit toute PII dans `W3C Baggage` ou les dimensions métriques [257] [255] [245].
 
 ## 11.2 Pipeline `EvalOps` industriel : `golden datasets` de trajectoires, `mock MCP servers` et juges calibrés
 
@@ -165,7 +160,7 @@ Tester des trajectoires en `CI` contre des `SoR` réels provoque effets de bord 
 > - au juge
 > - Corrige biais &
 > - criteria drift
-> - Verdict T 1
+> - Verdict T1
 > - Verdict T2
 > - Échecs annotés
 > - Promeut cas
@@ -293,14 +288,14 @@ Comme le montre la figure 11.4, à l’échéance du délai de refroidissement, 
 > - METRICS_ONLY (Calibration silencieuse)
 > - CLOSED (Exécution nominale sous max_turns / recursion_limit)
 > - OPEN (Coupure cognitive immédiate : repli déterministe L0 / HITL)
-> - HALF_OPEN (Sondes canari bornées validées par Tier 1 )
+> - HALF_OPEN (Sondes canari bornées validées par Tier 1)
 > - FORCED_OPEN (Arrêt d'urgence opérateur ou alerte ASI10)
 > - Déploiement mode ombre
 > - Seuils validés (promotion prod)
 > - Répétition hachage >= N ou budget / dérive / erreurs >= seuil
 > - Expiration délai refroidissement Échec ou lenteur
 > - d'une sonde
-> - Sondes saines (succès Tier 1 )
+> - Sondes saines (succès Tier 1)
 > - Kill-switch manuel ou mandat violé (ASI10)
 > - Escalade incident systémique (ASI08)
 > - Réarmement autorisé

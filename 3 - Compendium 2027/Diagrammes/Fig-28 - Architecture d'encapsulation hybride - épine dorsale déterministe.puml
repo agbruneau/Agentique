@@ -6,6 +6,8 @@ top to bottom direction
 skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
+skinparam nodesep 20
+skinparam ranksep 18
 
 rectangle "1. Épine Dorsale Déterministe — Plan de Contrôle Durable (Temporal / Restate / BPMN 2.0 & DMN)" as Tier1 #EFF6FF;line:2563EB {
   rectangle S1 #FFFFFF;line:1E293B [
@@ -34,10 +36,14 @@ rectangle "1. Épine Dorsale Déterministe — Plan de Contrôle Durable (Tempor
     Audit immuable
   ]
 
-  S1 -[#2563EB]-> S2
-  S2 -[#2563EB]-> S3
-  S3 -[#2563EB]-> S4
-  S4 -[#2563EB]-> S5
+  S1 -[hidden]right-> S2
+  S2 -[hidden]right-> S3
+  S3 -[hidden]right-> S4
+  S4 -[hidden]right-> S5
+  S1 -[#2563EB,norank]-> S2
+  S2 -[#2563EB,norank]-> S3
+  S3 -[#2563EB,norank]-> S4
+  S4 -[#2563EB,norank]-> S5
 }
 
 rectangle "2. Enceinte d'Isolation de la Cellule Cognitive Bornée (Zéro Écriture Irréversible Directe)" as Tier2 #ECFDF5;line:15803D {
@@ -66,8 +72,10 @@ rectangle "2. Enceinte d'Isolation de la Cellule Cognitive Bornée (Zéro Écrit
     • Rejet immédiat si hallucination
   ]
 
-  InputGuard -[#15803D]-> Noyau
-  Noyau -[#15803D]-> OutputGuard
+  InputGuard -[hidden]right-> Noyau
+  Noyau -[hidden]right-> OutputGuard
+  InputGuard -[#15803D,norank]-> Noyau
+  Noyau -[#15803D,norank]-> OutputGuard
 }
 
 rectangle "3. Disjoncteur et Circuit de Repli Déterministe (Deterministic Fallback & Circuit Breaker)" as Tier3 #FFF7ED;line:9A3412 {
@@ -80,9 +88,12 @@ rectangle "3. Disjoncteur et Circuit de Repli Déterministe (Deterministic Fallb
   VoieA -[hidden]right-> VoieB
 }
 
-S3 -[#15803D]-> InputGuard : Entrée typée + Budget
-OutputGuard -[#15803D]-> S3 : Proposition validée
-Noyau -[#DC2626]-> Tier3 : Timeout / HTTP 429 / K > K_max
-OutputGuard -[#DC2626]-> Tier3 : Violation invariant / Confiance < τ
+Tier1 -[hidden]down-> Tier2
+Tier2 -[hidden]down-> Tier3
+
+S3 -[#15803D,norank]-> InputGuard : Entrée typée + Budget
+OutputGuard -[#15803D,norank]-> S3 : Proposition validée
+Noyau -[#DC2626,norank]-> VoieA : Timeout / HTTP 429 / K > K_max
+OutputGuard -[#DC2626,norank]-> VoieB : Violation invariant / Confiance < τ
 
 @enduml

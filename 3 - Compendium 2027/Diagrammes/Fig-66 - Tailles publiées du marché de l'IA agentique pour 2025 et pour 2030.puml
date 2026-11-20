@@ -4,58 +4,25 @@ top to bottom direction
 skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
+skinparam Padding 6
 skinparam rectangle {
   BackgroundColor #FFFFFF
-  BorderColor #94A3B8
+  BorderColor #CBD5E1
 }
 
-rectangle Echelle #F8FAFC;line:475569 [
-  **Échelle logarithmique, en dollars américains**
-  1 G$  |  10 G$  |  100 G$  |  1 000 G$
+rectangle MarcheLog #FFFFFF;line:CBD5E1 [
+  //échelle logarithmique, en dollars américains//
+  |= Périmètre & Source |= **1 G$** |= **10 G$** |= **100 G$** |= **1 000 G$** |
+  | <#EFF6FF> <color:#1D4ED8>**MARCHÉ DE 2025**</color> | <#EFF6FF> | <#EFF6FF> | <#EFF6FF> | <#EFF6FF> |
+  | **Omdia**\n//logiciel d'entreprise seulement// | <color:#2563EB>●</color> **1,5** | | | |
+  | **Huit séries de cabinets d'études**\n//agents IA ou IA agentique// |        <back:#DBEAFE>   </back> **7,1 à 8,0** | | | |
+  | **Gartner, agents et assistants**\n//ligne de la prévision de dépenses// | | <color:#2563EB>●</color> **16,5** | | |
+  | **Gartner, agentique intégrée**\n//selon un blogue tiers, non vérifié// | |        <color:#2563EB>○</color> **88** | | |
+  | <#EFF6FF> <color:#1D4ED8>**MARCHÉ DE 2030**</color> | <#EFF6FF> | <#EFF6FF> | <#EFF6FF> | <#EFF6FF> |
+  | **Treize séries de cabinets d'études**\n//interpolées par l'ouvrage; trait : médiane// | |   <back:#DBEAFE>  ¦  </back> **25 à 55** | | |
+  | **Deloitte**\n//moyenne de sept rapports de tiers// | |     <back:#DBEAFE>   </back> **35 à 45** | | |
+  | **Omdia**\n//logiciel d'entreprise seulement// | |      <color:#2563EB>●</color> **41,8** | | |
+  | **Gartner, agents et assistants**\n//selon un blogue tiers, non vérifié// | | | <color:#2563EB>○</color> **220** | |
+  | **Gartner, agentique intégrée**\n//selon un blogue tiers, non vérifié// | | | | <color:#2563EB>○</color> **1 004** |
 ]
-
-rectangle "MARCHÉ DE 2025" as M2025 #EFF6FF;line:2563EB {
-  rectangle M25_1 #FFFFFF;line:94A3B8 [
-    **Omdia** — //logiciel d'entreprise seulement// : **1,5** G$
-  ]
-  rectangle M25_2 #FFFFFF;line:94A3B8 [
-    **Huit séries de cabinets d'études** — //agents IA ou IA agentique// : **7,1 à 8,0** G$
-  ]
-  rectangle M25_3 #FFFFFF;line:94A3B8 [
-    **Gartner, agents et assistants** — //ligne de la prévision de dépenses// : **16,5** G$
-  ]
-  rectangle M25_4 #FFFFFF;line:94A3B8 [
-    **Gartner, agentique intégrée** — //selon un blogue tiers, non vérifié// : **88** G$
-  ]
-
-  M25_1 -[hidden]down-> M25_2
-  M25_2 -[hidden]down-> M25_3
-  M25_3 -[hidden]down-> M25_4
-}
-
-rectangle "MARCHÉ DE 2030" as M2030 #EFF6FF;line:2563EB {
-  rectangle M30_1 #FFFFFF;line:94A3B8 [
-    **Treize séries de cabinets d'études** — //interpolées par l'ouvrage; trait : médiane// : **25 à 55** G$
-  ]
-  rectangle M30_2 #FFFFFF;line:94A3B8 [
-    **Deloitte** — //moyenne de sept rapports de tiers// : **35 à 45** G$
-  ]
-  rectangle M30_3 #FFFFFF;line:94A3B8 [
-    **Omdia** — //logiciel d'entreprise seulement// : **41,8** G$
-  ]
-  rectangle M30_4 #FFFFFF;line:94A3B8 [
-    **Gartner, agents et assistants** — //selon un blogue tiers, non vérifié// : **220** G$
-  ]
-  rectangle M30_5 #FFFFFF;line:94A3B8 [
-    **Gartner, agentique intégrée** — //selon un blogue tiers, non vérifié// : **1 004** G$
-  ]
-
-  M30_1 -[hidden]down-> M30_2
-  M30_2 -[hidden]down-> M30_3
-  M30_3 -[hidden]down-> M30_4
-  M30_4 -[hidden]down-> M30_5
-}
-
-Echelle -[hidden]down-> M25_1
-M25_4 -[hidden]down-> M30_1
 @enduml

@@ -6,28 +6,24 @@ top to bottom direction
 skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
+skinparam Padding 5
+skinparam nodesep 20
+skinparam ranksep 16
 skinparam rectangle {
   BackgroundColor #FFFFFF
   BorderColor #334155
 }
 
-rectangle "1. Arbre Causal des Spans (trace_id: 4bf92f35...e4736 | saga.id: saga-inc-2027-088412)\n0 ms — 800 ms — 1 800 ms — 2 640 ms" as ArbreSpans #F8FAFC;line:475569 {
-  rectangle "**Orchestrateur Durable (Temporal)**\nsaga.workflow.run [L3] — budget.max_cad=1.20 | hops.remaining=4 (2 640 ms)" as Span0 #1E293B;text:FFFFFF;line:1E293B
-  rectangle "**Saut A2A v1.0 (agentgateway)**\ninvoke_agent bca-warranty — security.nhi.spiffe_id=spiffe:~//boreal.ca/bsn/maint | obo.actor=usr-882 (2 310 ms)" as Span1 #2563EB;text:FFFFFF;line:2563EB
-  rectangle "**Inférence Raisonnement**\nchat sonnet-4-6 (in:1840, cache:1400, reason:310)" as Span2 #7C3AED;text:FFFFFF;line:7C3AED
-  rectangle "**Appel Outil MCP (JSON-RPC)**\nexecute_tool check_policy_as400" as Span3 #166534;text:FFFFFF;line:166534
-  rectangle "**Mémoire Bi-Temporelle**\nmemory.retrieve" as Span4 #C2410C;text:FFFFFF;line:C2410C
-  rectangle "**Décision Structurée**\nemit" as Span5 #7C3AED;text:FFFFFF;line:7C3AED
-
-  Span0 -down-> Span1
-  Span1 -down-> Span2
-  Span1 -down-> Span3
-  Span1 -down-> Span4
-  Span1 -down-> Span5
-  Span2 -[hidden]right-> Span3
-  Span3 -[hidden]right-> Span4
-  Span4 -[hidden]right-> Span5
-}
+rectangle ArbreSpans #F8FAFC;line:475569 [
+  **1. Arbre Causal des Spans (trace_id: 4bf92f35...e4736 | saga.id: saga-inc-2027-088412)**
+  |= Composant / Span |= 0 ms |= 800 ms |= 1 800 ms |= 2 640 ms |
+  | **Orchestrateur Durable (Temporal)** | <#1E293B><color:white><b>saga.workflow.run [L3] — budget.max_cad=1.20</b></color> | <#1E293B><color:white><b>hops.remaining=4</b></color> | <#1E293B><color:white><b>(2 640 ms)</b></color> | <#1E293B> |
+  |   » **<color:#2563EB>Saut A2A v1.0 (agentgateway)</color>** | <#2563EB><color:white><b>invoke_agent bca-warranty</b></color> | <#2563EB><color:white><b>security.nhi.spiffe_id=spiffe:~//boreal.ca/bsn/maint</b></color> | <#2563EB><color:white><b>obo.actor=usr-882 (2 310 ms)</b></color> | <#FFFFFF> |
+  |     » **<color:#7C3AED>Inférence Raisonnement</color>** | <#7C3AED><color:white>chat sonnet-4-6 (in:1840, cache:1400, reason:310)</color> | <#FFFFFF> | <#FFFFFF> | <#FFFFFF> |
+  |     » **<color:#166534>Appel Outil MCP (JSON-RPC)</color>** | <#FFFFFF> | <#166534><color:white>execute_tool check_policy_as400</color> | <#FFFFFF> | <#FFFFFF> |
+  |     » **<color:#C2410C>Mémoire Bi-Temporelle</color>** | <#FFFFFF> | <#FFFFFF> | <#C2410C><color:white>memory.retrieve</color> | <#FFFFFF> |
+  |     » **<color:#7C3AED>Décision Structurée</color>** | <#FFFFFF> | <#FFFFFF> | <#FFFFFF> | <#7C3AED><color:white>emit</color> |
+]
 
 rectangle "2. Passerelle OpenTelemetry Collector : Assainissement PII (Loi 25 / RGPD) & Analyse en Flux" as Collector #EFF6FF;line:2563EB {
   rectangle Caviardage #FFF7ED;line:C2410C [
@@ -56,11 +52,11 @@ rectangle "2. Passerelle OpenTelemetry Collector : Assainissement PII (Loi 25 / 
     **Action : Arrêt Saga + Escalade HOTL**
   ]
 
+  APM -[hidden]down-> Voute
   Caviardage -[#166534]right-> APM
   Caviardage -[#9A3412]right-> Voute
-  APM -[hidden]down-> Voute
   APM -[#1E293B]right-> Sentinelle
 }
 
-Span3 -[#2563EB]down-> Caviardage : Export OTLP/gRPC mTLS
+ArbreSpans -[#2563EB]down-> Caviardage : Export OTLP/gRPC mTLS
 @enduml

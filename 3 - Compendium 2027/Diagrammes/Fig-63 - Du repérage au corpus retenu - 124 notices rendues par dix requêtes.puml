@@ -1,46 +1,48 @@
 ' Fig. 63. – Du repérage au corpus retenu : 124 notices rendues par dix requêtes, 83 retenues après tri, 82 confirmées auprès d'arXiv ou de Crossref. À droite, les notices rendues et retenues pour chaque requête.
 @startuml
-top to bottom direction
+left to right direction
 skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
-
-rectangle "DU REPÉRAGE AU CORPUS" as Entonnoir #F8FAFC;line:CBD5E1 {
-  rectangle N124 #EFF6FF;line:2563EB [
-    **124**
-    notices rendues par dix requêtes
-  ]
-  rectangle N123 #EFF6FF;line:2563EB [
-    **123**
-    notices distinctes
-  ]
-  rectangle N83 #EFF6FF;line:2563EB [
-    **83**
-    retenues, lues par leur résumé
-  ]
-  rectangle N82 #2563EB;line:1E3A8A;text:FFFFFF [
-    **82**
-    confirmées par arXiv ou par un DOI
-  ]
-  N124 -[#475569]down-> N123
-  N123 -[#475569]down-> N83
-  N83 -[#475569]down-> N82
+skinparam Padding 6
+skinparam nodesep 24
+skinparam ranksep 26
+skinparam rectangle {
+  BackgroundColor #FFFFFF
+  BorderColor #CBD5E1
 }
 
-rectangle "NOTICES PAR REQUÊTE — ○ rendues   ● retenues" as Requetes #F8FAFC;line:CBD5E1 {
-  rectangle RList #FFFFFF;line:CBD5E1 [
-    Protocoles : **16 sur 20**
-    Coordination : **9 sur 14**
-    Évaluation : **9 sur 15**
-    Sécurité : **10 sur 12**
-    Productivité : **7 sur 12**
-    Mémoire : **7 sur 10**
-    Gouvernance : **7 sur 12**
-    Mono-agent ou multi-agents : **9 sur 9**
-    Adoption : **4 sur 10**
-    Sémantique : **5 sur 10**
-  ]
-}
+rectangle Entonnoir #F8FAFC;line:CBD5E1 [
+  <color:#1D4ED8>**DU REPÉRAGE AU CORPUS**</color>
 
-RList -[hidden]left-> N124
+  | <#EFF6FF>         **124**\nnotices rendues par dix requêtes |
+
+  <color:#475569>                  ↓</color>
+
+  | <#EFF6FF>         **123**\n       notices distinctes |
+
+  <color:#475569>                  ↓</color>
+
+  | <#EFF6FF>          **83**\n   retenues, lues par leur résumé |
+
+  <color:#475569>                  ↓</color>
+
+  | <#2563EB> <color:white><b>          82</b></color>\n<color:white>confirmées par arXiv ou par un DOI</color> |
+]
+
+rectangle Requetes #F8FAFC;line:CBD5E1 [
+  <color:#1D4ED8>**NOTICES PAR REQUÊTE**</color>  —  <back:#E2E8F0><color:#E2E8F0>..</color></back> ○ rendues   <back:#2563EB><color:#2563EB>..</color></back> ● retenues
+  | Protocoles | <font:Consolas><back:#2563EB><color:#2563EB>................................</color></back><back:#E2E8F0><color:#E2E8F0>........</color></back></font> | **16 sur 20** |
+  | Coordination | <font:Consolas><back:#2563EB><color:#2563EB>..................</color></back><back:#E2E8F0><color:#E2E8F0>..........</color></back></font> | **9 sur 14** |
+  | Évaluation | <font:Consolas><back:#2563EB><color:#2563EB>..................</color></back><back:#E2E8F0><color:#E2E8F0>............</color></back></font> | **9 sur 15** |
+  | Sécurité | <font:Consolas><back:#2563EB><color:#2563EB>....................</color></back><back:#E2E8F0><color:#E2E8F0>....</color></back></font> | **10 sur 12** |
+  | Productivité | <font:Consolas><back:#2563EB><color:#2563EB>..............</color></back><back:#E2E8F0><color:#E2E8F0>..........</color></back></font> | **7 sur 12** |
+  | Mémoire | <font:Consolas><back:#2563EB><color:#2563EB>..............</color></back><back:#E2E8F0><color:#E2E8F0>......</color></back></font> | **7 sur 10** |
+  | Gouvernance | <font:Consolas><back:#2563EB><color:#2563EB>..............</color></back><back:#E2E8F0><color:#E2E8F0>..........</color></back></font> | **7 sur 12** |
+  | Mono-agent ou multi-agents | <font:Consolas><back:#2563EB><color:#2563EB>..................</color></back></font> | **9 sur 9** |
+  | Adoption | <font:Consolas><back:#2563EB><color:#2563EB>........</color></back><back:#E2E8F0><color:#E2E8F0>............</color></back></font> | **4 sur 10** |
+  | Sémantique | <font:Consolas><back:#2563EB><color:#2563EB>..........</color></back><back:#E2E8F0><color:#E2E8F0>..........</color></back></font> | **5 sur 10** |
+]
+
+Entonnoir -[hidden]-> Requetes
 @enduml

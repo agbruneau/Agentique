@@ -241,9 +241,7 @@ Dans les domaines réglementaires ou industriels à forte densité de règles, d
 
 *Fig. 23. – Chaîne de souveraineté sémantique : des contrats de données ODCS et du MDM à la consommation agentique*
 
-> **Arbitrage EA / SA** — Interdire de redéfinir des indicateurs métier ou des entités maîtresses dans les prompts d’agents ou des index vectoriels détachés de la gouvernance de données [100] [101]. L’`EA` rattache la propriété des contrats `ODCS` [106], des couches sémantiques (`MetricFlow` / vues séman
-
-> tiques) [113] [101], du `MDM` et de l’ontologie `OWL 2` [116] aux *Data Owners* métier afin de maintenir une source de vérité unique entre `BI` et agents. Le `SA` couple les outils `MCP` et le `Text-to-SQL` exclusivement à ces couches gouvernées, interdit l’indexation de jeux sans contrat `ODCS` valide et exécute des contrôles `SHACL` avant toute publication dans le graphe d’entreprise [115].
+> **Arbitrage EA / SA** — Interdire de redéfinir des indicateurs métier ou des entités maîtresses dans les prompts d’agents ou des index vectoriels détachés de la gouvernance de données [100] [101]. L’`EA` rattache la propriété des contrats `ODCS` [106], des couches sémantiques (`MetricFlow` / vues sémantiques) [113] [101], du `MDM` et de l’ontologie `OWL 2` [116] aux *Data Owners* métier afin de maintenir une source de vérité unique entre `BI` et agents. Le `SA` couple les outils `MCP` et le `Text-to-SQL` exclusivement à ces couches gouvernées, interdit l’indexation de jeux sans contrat `ODCS` valide et exécute des contrôles `SHACL` avant toute publication dans le graphe d’entreprise [115].
 
 ## 6.4 Gouvernance mémorielle : propagation des ACL, prévention de l’empoisonnement et isolation multi-locataires
 
@@ -260,8 +258,7 @@ L’indexation sous un compte de service unique sans filtrage au moment de la re
 
 Contrairement aux injections éphémères, l’empoisonnement de mémoire persistante (`OWASP ASI06: Memory & Context Poisoning`) grave une altération durable dans l’état de l’agent [118]. Trois travaux de sécurité démontrent l’efficacité redoutable de cette classe d’attaques :
 
-1. `PoisonedRAG` modélise la corruption de base `RAG` comme une optimisation conjointe et prouve que l’injection de **cinq textes malveillants** par question cible dans un corpus de millions de documents
-  suffit à atteindre **90 %** de taux de succès pour imposer la réponse voulue, tout en échappant aux filtres simples de perplexité [119].
+1. `PoisonedRAG` modélise la corruption de base `RAG` comme une optimisation conjointe et prouve que l’injection de **cinq textes malveillants** par question cible dans un corpus de millions de documents suffit à atteindre **90 %** de taux de succès pour imposer la réponse voulue, tout en échappant aux filtres simples de perplexité [119].
 2. `AgentPoison` implante des portes dérobées dans la mémoire à long terme ou les bases `RAG` d’agents autonomes sans modifier ni ré-entraîner le modèle [102]. Par optimisation contrainte de déclencheurs dans un sous-espace d’embeddings, l’attaque obtient plus de **80 %** de succès avec un taux d’empoisonnement sous **0,1 %** et moins de **1 %** de dégradation sur requêtes légitimes [102].
 3. `MINJA` (*Memory Injection Attacks via Query-Only Interaction*) démontre qu’un attaquant dépourvu d’accès direct en écriture peut empoisonner la mémoire d’un agent par de simples requêtes conversationnelles, en l’amenant à enregistrer des étapes de pontage logique (*bridging steps*) raccourcies progressivement jusqu’à détourner les requêtes futures d’autres victimes [103].
 
@@ -294,7 +291,7 @@ Deux moteurs matérialisent ces régimes :
 > - 1 Requête métier (mandat OBO)
 > - 2 ListObjects(user, "viewer", "doc")
 > - 3 ID autorisés [doc_12, doc_48]
-> - 4 Recherche hybride (tenant_id = T 1 AND doc_id IN autorisés)
+> - 4 Recherche hybride (tenant_id = T1 AND doc_id IN autorisés)
 > - 5 Fragments cloisonnés (HNSW + IDF par locataire)
 > - 6 BatchCheck(user, "viewer", candidats) [contrôle de fraîcheur si révocations]
 > - 7 Verdict autorisé
@@ -302,7 +299,7 @@ Deux moteurs matérialisent ces régimes :
 > - 8 Propose écriture mémoire (source, locataire T1, contenu)
 > - 9 Vérifie provenance, confiance et détecte directives injectées
 > - alt [Contenu sain et provenance attestée]
-> - 10 Écrit sous tenant_id = T 1 avec empreinte et horodatage
+> - 10 Écrit sous tenant_id = T1 avec empreinte et horodatage
 > - 1 1 Confirmation indexée
 > - [Contenu suspect ou origine non fiable]
 > - 12 Rejet ou mise en quarantaine (audit immuable)

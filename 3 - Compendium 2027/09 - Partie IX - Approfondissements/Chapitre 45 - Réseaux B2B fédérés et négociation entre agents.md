@@ -112,9 +112,7 @@ Une salle blanche de données (*data clean room*) y répond : les données de ch
 
 ### Un exemple documenté
 
-La documentation de Confidential Space, chez Google Cloud, décrit ce modèle sans employer le terme de salle blanche [9]. Trois rôles y sont séparés et supposés se méfier les uns des autres. Les collaborateurs de données fixent les conditions d’accès à leurs données; ils ne voient pas celles des autres et ne modifient pas le code. L’auteur de la charge de travail
-
-écrit le code, sans accès aux données ni aux résultats. L’exploitant la lance, sans accès aux données ni prise sur le code.
+La documentation de Confidential Space, chez Google Cloud, décrit ce modèle sans employer le terme de salle blanche [9]. Trois rôles y sont séparés et supposés se méfier les uns des autres. Les collaborateurs de données fixent les conditions d’accès à leurs données; ils ne voient pas celles des autres et ne modifient pas le code. L’auteur de la charge de travail écrit le code, sans accès aux données ni aux résultats. L’exploitant la lance, sans accès aux données ni prise sur le code.
 
 Le mécanisme central est l’attestation. Un service vérifie des assertions sur l’image du système, le conteneur et la machine virtuelle, puis émet un jeton. Chaque collaborateur conditionne l’accès à ses clés aux attributs de ce jeton : la donnée ne se déchiffre que pour la charge de travail convenue. Le matériel pris en charge comprend AMD SEV, Intel TDX et Intel TDX avec NVIDIA Confidential Computing [9].
 
@@ -231,8 +229,7 @@ Repérés, non lus :
 ## Limites de ce chapitre
 
 - Les sources [7], [8], [11] et [12], d’abord connues par leur seul résumé, ont été relues au-delà du résumé le 14 novembre 2026, par un outil qui en rend des extraits; les écarts relevés sont corrigés dans le texte.
-- **Éléments sans source.** « Diplomate / Évaluateur interne » et le rapprochement à trois voies avant un règlement AP2 ou x402 figurent comme cibles de conception. « Clean Rooms sur TEE » repose sur une seule documentation d’éditeur, qui n’emploie pas
-  le terme; la définition d’une salle blanche et la description de l’intégration bilatérale viennent de la connaissance générale.
+- **Éléments sans source.** « Diplomate / Évaluateur interne » et le rapprochement à trois voies avant un règlement AP2 ou x402 figurent comme cibles de conception. « Clean Rooms sur TEE » repose sur une seule documentation d’éditeur, qui n’emploie pas le terme; la définition d’une salle blanche et la description de l’intégration bilatérale viennent de la connaissance générale.
 - **vLEI.** La page du cadre n’explique ni la vérification des rôles ni le lien avec ISO 5009. La répartition entité / OOR / délégation est une déduction. Le Delegated Agent Participant ID est repris du chapitre 37, sans relecture de sa source.
 - **DSP, EDC, ODRL.** La machine à états a été lue dans la branche principale du dépôt; la page 2025-1, relue à l’audit, n’en affiche pas le texte. DCP, le moteur de politiques d’EDC, la fin de la recommandation ODRL et son vocabulaire n’ont pas été lus.
 - **Articles.** [10] reste connu par son résumé; [7], [8], [11] et [12], d’abord lus par leur résumé, ont été recoupés par extraits le 14 novembre 2026.
@@ -247,8 +244,7 @@ SYNTHÈSE EXÉCUTIVE
 - **Enjeu stratégique.** Les gains internes de la fabrique agentique butent sur la frontière juridique de l’organisation : relances de fournisseurs par courriel, messages EDI X12 rigides, litiges de facturation de soixante jours, appels d’offres manuels. Exposer un agent d’achat ou de souscription à des agents externes, sans architecture de confiance mutuelle, expose l’entreprise à l’extraction de ses marges, à l’usurpation d’un mandataire social et à des engagements contractuels non autorisés.
 - **Décisions architecturales structurantes.**
   1. *Irréversible à moyen terme* : fédérer les relations B2B en couplant la découverte et la délégation AGNTCY / A2A v1.0 à un connecteur EDC / DSP, à des politiques d’usage W3C ODRL 2.2, qui expriment l’usage sans l’appliquer (section 45.2), et à des identifiants d’entités juridiques vLEI (GLEIF).
-  2. *Non négociable en sécurité économique* : isoler physiquement le graphe privé de valorisation interne (coûts de revient, prix de réserve, pénalités de rupture) de l’agent
-  - diplomate exposé au tiers, et déporter les enchères multi-attributs sensibles dans des salles blanches confidentielles sur TEE attesté.
+  2. *Non négociable en sécurité économique* : isoler physiquement le graphe privé de valorisation interne (coûts de revient, prix de réserve, pénalités de rupture) de l’agent diplomate exposé au tiers, et déporter les enchères multi-attributs sensibles dans des salles blanches confidentielles sur TEE attesté.
   3. *Structurante pour la finance opérationnelle* : remplacer le contrôle a posteriori des factures par un rapprochement à trois voies autonome, qui subordonne la libération d’un séquestre AP2 à la concordance déterministe (Cedar) entre le mandat contractuel, la preuve physique IoT de réception et la facture; le micropaiement x402 passe par un portefeuille dédié et plafonné, avec rapprochement a posteriori (section 45.7).
 - **Indicateurs de gouvernance.** Partenaires B2B actifs authentifiés par vLEI et sous contrat ODRL signé (100 %), taux de fuite de paramètres de réserve lors des campagnes Red Team B2B (0 %), délai médian de rapprochement commande-réception-règlement (< 8 min hors litige physique) et taux d’écarts interceptés sans perte financière.
 
@@ -264,9 +260,7 @@ Remplacer un flux EDI par un canal A2A v1.0 libre serait une régression en séc
 
 ### Les quatre strates du maillage
 
-Le maillage B2B de référence, pensé dans le sillage de Catena-X, de Manufacturing-X et de la fondation Eclipse, superpose quatre strates à chaque frontière d’entreprise. C’est une
-
-cible pour 2027, non un état de l’art vérifié : la négociation entre agents et la prévention de la collusion relèvent encore de la recherche (section 45.1).
+Le maillage B2B de référence, pensé dans le sillage de Catena-X, de Manufacturing-X et de la fondation Eclipse, superpose quatre strates à chaque frontière d’entreprise. C’est une cible pour 2027, non un état de l’art vérifié : la négociation entre agents et la prévention de la collusion relèvent encore de la recherche (section 45.1).
 
 1. **Identité vérifiable.** Un identifiant SPIFFE interne (`spiffe://boreal.ca/...`) n’a aucune valeur probante pour une banque ou un fournisseur externe. Chaque passerelle B2B présente donc un justificatif vLEI, émis par un émetteur qualifié accrédité par la GLEIF, sur infrastructure KERI / ACDC ou W3C Verifiable Credentials. Le justificatif d’entité établit qui est la contrepartie et le justificatif OOR, quel dirigeant peut l’engager; l’agent `boreal-bel-procurement` agit au nom de Groupe Boréal Inc. (division Boréal Équipements & Logistique, BEL) sous une délégation opposable du vice-président aux approvisionnements, distincte, bornée et révocable, qui renvoie à ces deux justificatifs. Le justificatif OOR désigne une personne qui occupe une fonction officielle : rien ne prévoit son émission à un agent logiciel, et l’acceptation du vLEI par un espace de données n’a pas été vérifiée (section 45.3).
 2. **Souveraineté d’usage des données.** Avant qu’un agent fournisseur transmette une nomenclature technique, un passeport numérique de produit (DPP) ou une courbe de capacité d’usine, les deux connecteurs EDC négocient automatiquement en DSP une offre, puis un accord immuable `ContractAgreement` exprimé en ODRL 2.2. Après la signature bilatérale, le plan de contrôle émet un jeton éphémère `EndpointDataReference` (EDR) qui ouvre le transfert sur le plan de données. La politique ODRL exprime l’interdiction de l’ingestion des données du partenaire dans l’entraînement de modèles (`aiTrainingProhibited`), de la rétention au-delà de la clôture de l’appel d’offres et de toute retransmission à des sous-agents tiers non listés. ODRL n’applique rien : retirer un accord n’efface pas une copie, et le respect de l’accord dépend du consommateur et du contrat (section 45.2).
@@ -338,7 +332,7 @@ cible pour 2027, non un état de l’art vérifié : la négociation entre agent
 
 ## 45.9 Négociation asymétrique, isolation des consignes et salles blanches confidentielles
 
-La négociation entre un agent acheteur et un agent vendeur repose sur une asymétrie d’information privée. Pour arbitrer entre trois aciéristes sur un lot critique de tôles magnétiques, la fonction d’utilité de l’entreprise acheteuse dépend de paramètres confidentiels : son prix maximal tolérable (prix de réserve 𝑃max), le coût horaire réel d’arrêt de sa ligne d’assemblage si la livraison glisse de quarante-huit heures et le niveau exact de son stock de sécurité. Le risque est décrit à la section 45.4.
+La négociation entre un agent acheteur et un agent vendeur repose sur une asymétrie d’information privée. Pour arbitrer entre trois aciéristes sur un lot critique de tôles magnétiques, la fonction d’utilité de l’entreprise acheteuse dépend de paramètres confidentiels : son prix maximal tolérable (prix de réserve 𝑃_{max}), le coût horaire réel d’arrêt de sa ligne d’assemblage si la livraison glisse de quarante-huit heures et le niveau exact de son stock de sécurité. Le risque est décrit à la section 45.4.
 
 ### Le contre-exemple de l’agent négociateur monolithique
 
@@ -353,13 +347,11 @@ La scission de la section 45.4 prend la forme de deux composants séparés par u
 
 𝑈(𝐱) = 𝑤_𝑝 ⋅ (𝑃_{max} − 𝑝)/(𝑃_{max} − 𝑃_{cible}) + 𝑤_𝑑 ⋅ exp(−𝜆 max(0, 𝑑 − 𝑑_{req})) + 𝑤_𝑞 ⋅ 𝑆_{qual}(𝑞) − 𝑤_𝑐 ⋅ 𝐸_{CO2}/𝐸_{plafond}
 
-Tant que 𝑝≤𝑃max et que les contraintes dures de conformité sont satisfaites, le moteur calcule la contre-proposition optimale du tour 𝑡+ 1, avec un plafond dur de 𝑇max = 4 tours qui interdit le sondage statistique prolongé par un tiers, ou émet un jeton d’acceptation vers le sas de signature AP2.
+Tant que 𝑝 ≤ 𝑃_{max} et que les contraintes dures de conformité sont satisfaites, le moteur calcule la contre-proposition optimale du tour 𝑡+ 1, avec un plafond dur de 𝑇_{max} = 4 tours qui interdit le sondage statistique prolongé par un tiers, ou émet un jeton d’acceptation vers le sas de signature AP2.
 
 ### Vérifications sans divulgation en salle blanche
 
-Quand la coopération exige de croiser des données mutuellement secrètes, les parties recourent à une salle blanche exécutée dans un TEE (Intel TDX, AMD SEV-SNP ou NVIDIA
-
-H100/B200 Confidential Computing). Deux cas : vérifier qu’un sous-traitant dispose de la capacité machine libre promise sur les six prochaines semaines, sans qu’il révèle son carnet de commandes clients; calculer une tarification d’assurance flotte sur la sinistralité fine, sans transférer les données brutes.
+Quand la coopération exige de croiser des données mutuellement secrètes, les parties recourent à une salle blanche exécutée dans un TEE (Intel TDX, AMD SEV-SNP ou NVIDIA H100/B200 Confidential Computing). Deux cas : vérifier qu’un sous-traitant dispose de la capacité machine libre promise sur les six prochaines semaines, sans qu’il révèle son carnet de commandes clients; calculer une tarification d’assurance flotte sur la sinistralité fine, sans transférer les données brutes.
 
 Chaque entreprise vérifie à distance l’empreinte cryptographique (PCR) du binaire d’évaluation neutre avant de lui libérer ses entrées chiffrées. L’attestation et la répartition des rôles sont décrites à la section 45.5. Le TEE exécute le calcul conjoint (optimisation linéaire, score de compatibilité ou audit d’empreinte carbone Scope 3), détruit la mémoire vive éphémère et ne renvoie aux agents A2A des deux rives qu’un résultat booléen ou agrégé signé (*« Capacité disponible confirmée à 99,4 %; prix d’équilibre mutuellement gagnant : 131 400 $ CAD »*).
 
@@ -457,8 +449,7 @@ Une négociation conclue en quelques secondes perd son intérêt si le cycle ava
 ### Les quatre temps de la saga de règlement
 
 1. **Verrouillage contractuel initial.** À l’issue de la négociation A2A, l’évaluateur interne émet un mandat contractuel vérifiable `CartMandate`, cosigné par le connecteur du fournisseur. Il fige l’identifiant d’article Apache Ossie, la quantité exacte, le prix unitaire convenu, la fourchette de tolérance industrielle (par exemple ±0, 5 % sur pesée vrac) et les pénalités de retard. Ce séquestre logique crée le bon de commande dans SAP S/4HANA et réserve l’enveloppe budgétaire, sans émettre de mandat de paiement AP2 ni déclencher de transfert bancaire : le mandat de paiement ne s’émet qu’après un rapprochement à trois voies réussi (section 45.7).
-2. **Attestation physique de réception (IoT, OASF).** À l’arrivée du camion au quai, le pont-bascule étalonné, le portique RFID et le lecteur optique du certificat d’analyse mé
-  tallurgique génèrent un justificatif signé de réception. L’opérateur de quai n’intervient en HOTL que si l’inspection visuelle signale un dommage d’emballage.
+2. **Attestation physique de réception (IoT, OASF).** À l’arrivée du camion au quai, le pont-bascule étalonné, le portique RFID et le lecteur optique du certificat d’analyse métallurgique génèrent un justificatif signé de réception. L’opérateur de quai n’intervient en HOTL que si l’inspection visuelle signale un dommage d’emballage.
 3. **Arbitrage comptable hors modèle de langage, par politique Cedar.** Lorsque la demande de règlement du fournisseur arrive (`InvoiceArtifact` A2A), aucun modèle de langage ne décide de la conformité comptable. Une activité déterministe évalue la règle de rapprochement à trois voies dans les tolérances du contrat; l’arbitre de l’Extrait 45.3 en donne la logique : 0,02 $ sur le montant, ratio convenu sur la quantité. Le micropaiement x402 (en-tête) pour les services logistiques ou numériques à l’acte, où le service est rendu dans la réponse qui suit le paiement, échappe à ce rapprochement préalable : on le traite par un portefeuille dédié et plafonné (le jeton de règlement x402 sur compte pré-provisionné) et un rapprochement a posteriori (section 45.7).
 4. **Libération du paiement ou quarantaine du litige.** Si l’écart sur les trois pièces est inférieur aux seuils contractuels, le mandat de paiement AP2 est alors émis (section 45.7), puis le connecteur de trésorerie libère l’ordre de paiement ISO 20022 et scelle le dossier fiscal en stockage WORM septennal. Pour les commandes fractionnées en plusieurs camions, le moteur Temporal décrémente de façon atomique le solde ouvert du `CartMandate` à chaque bordereau de réception unique (`lot_receipt_id`), ce qui empêche de rejouer une même pesée IoT sur deux factures partielles. Au moindre dépassement de tolérance, la somme litigieuse est gelée, la portion conforme peut faire l’objet d’un règlement partiel prévu au contrat, et un dossier contradictoire pré-instruit est transmis à l’arbitrage humain.
 

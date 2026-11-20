@@ -31,34 +31,38 @@ left to right direction
 package "A. Orchestration dirigée (Process\nManager explicite)" {
   rectangle "Déclencheur\nmétier" as trig
   rectangle "Orchestrateur\nd'état\n(Process Manager)" as pm
-  rectangle "Agent C\n(Validation)" as agC
-  rectangle "Agent B\n(Risque)" as agB
-  rectangle "Agent A\n(Extraction)" as agA
+  together {
+    rectangle "Agent C\n(Validation)" as agC
+    rectangle "Agent B\n(Risque)" as agB
+    rectangle "Agent A\n(Extraction)" as agA
+  }
 
   trig --> pm : 1. Démarre\ninstance
   pm --> agC : 4. Commande\nfinale
   pm --> agB : 3. Commande\nsuivante
   pm --> agA : 2. Commande\ncorrélée
-  agC -[hidden]down-> agB
-  agB -[hidden]down-> agA
+  agC -[hidden]right-> agB
+  agB -[hidden]right-> agA
 }
 
 package "B. Chorégraphie pure non bornée\n(Dérive « Pinball Machine »)" {
   rectangle "Événement\ninitial" as evt
   queue "Event Mesh\n(Sujets partagés)" as em
-  rectangle "Agent Z\n(Décision)" as agZ
-  rectangle "Agent Y\n(Enrichissement)" as agY
-  rectangle "Agent X\n(Triage)" as agX
+  together {
+    rectangle "Agent Z\n(Décision)" as agZ
+    rectangle "Agent Y\n(Enrichissement)" as agY
+    rectangle "Agent X\n(Triage)" as agX
+  }
 
   evt --> em : Émet fait
   em --> agZ : Réagit
-  agZ -[#C0392B,dashed]-> em : Écho implicite\n(boucle / état diffus)
+  em <-[#C0392B,dashed]- agZ : Écho implicite\n(boucle / état diffus)
   em --> agY : Réagit
-  agY --> em : Ré-émet
+  em <-- agY : Ré-émet
   em --> agX : Réagit
-  agX --> em : Ré-émet
-  agZ -[hidden]down-> agY
-  agY -[hidden]down-> agX
+  em <-- agX : Ré-émet
+  agZ -[hidden]right-> agY
+  agY -[hidden]right-> agX
 }
 
 pm -[hidden]down-> evt

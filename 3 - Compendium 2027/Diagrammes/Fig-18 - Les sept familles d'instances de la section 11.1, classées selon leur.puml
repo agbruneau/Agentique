@@ -4,6 +4,8 @@ top to bottom direction
 skinparam shadowing false
 skinparam roundcorner 8
 skinparam defaultFontName "Segoe UI"
+skinparam Padding 8
+skinparam ranksep 6
 skinparam rectangle<<invis>> {
   BackgroundColor transparent
   BorderColor transparent
@@ -11,99 +13,17 @@ skinparam rectangle<<invis>> {
   FontSize 1
 }
 
-rectangle " " as AxL <<invis>>
+rectangle "//degré d'avancement//" as AxL #FFFFFF;line:FFFFFF
 rectangle " " as AxR <<invis>>
-AxL -[#475569]right-> AxR : degré d'avancement
+AxL -[#475569]right-> AxR
 
-rectangle " " as H0 #FFFFFF;line:FFFFFF
-rectangle "**Rien de propre**\n**aux agents**" as H1 #FFFFFF;line:FFFFFF
-rectangle "**Aucun texte publié**" as H2 #FFFFFF;line:FFFFFF
-rectangle "**Brouillons**" as H3 #FFFFFF;line:FFFFFF
-rectangle "**Textes publiés**" as H4 #FFFFFF;line:FFFFFF
-
-H0 -[hidden]right-> H1
-H1 -[hidden]right-> H2
-H2 -[hidden]right-> H3
-H3 -[hidden]right-> H4
-
-AxL -[hidden]down-> H1
-AxR -[hidden]down-> H4
-
-rectangle "**Fondation et**\n**instances ouvertes**" as Row1Lbl #FFFFFF;line:FFFFFF
-rectangle " " as C11 <<invis>>
-rectangle " " as C12 <<invis>>
-rectangle C13 #F8FAFC;line:64748B [
-  **W3C, groupes communautaires**
-  Protocole, identité, confiance,
-  conformité
-  ----
-  **IETF**
-  Profils d'OAuth et de WIMSE
-  Web Bot Auth
-]
-rectangle AAIF #EFF6FF;line:2563EB [
-  **AAIF**
-  Dix projets, dont MCP et
-  A2A : spécifications
-  publiées et mises en œuvre
+rectangle Matrice #FFFFFF;line:FFFFFF [
+  |=  |= **Rien de propre**\n**aux agents** |= **Aucun texte publié** |= **Brouillons** |= **Textes publiés** |
+  | <#FFFFFF>**Fondation et**\n**instances ouvertes** | <#FFFFFF> | <#FFFFFF> | <#F8FAFC>**W3C, groupes communautaires**\nProtocole, identité, confiance,\nconformité\n\n**IETF**\nProfils d'OAuth et de WIMSE\nWeb Bot Auth | <#EFF6FF>**AAIF**\nDix projets, dont MCP et\nA2A : spécifications\npubliées et mises en œuvre |
+  | <#FFFFFF>**Organismes formels** | <#F8FAFC>**ISO/IEC SC 42** | <#F8FAFC>**UIT-T, IEEE**\nSujet à l'étude;\nprojets autorisés | <#FFFFFF> | <#FFFFFF> |
+  | <#FFFFFF>**Puissances**\n**publiques** | <#FFFFFF> | <#F8FAFC>**NIST/CAISI**\nConsultations; document de\nréflexion sur l'identité | <#FFFFFF> | <#F8FAFC>**SAC (Chine)**\nSérie GB/Z 185-2026\nen sept parties |
 ]
 
-Row1Lbl -[hidden]right-> C11
-C11 -[hidden]right-> C12
-C12 -[hidden]right-> C13
-C13 -[hidden]right-> AAIF
+AxL -[hidden]down-> Matrice
 
-rectangle "**Organismes formels**" as Row2Lbl #FFFFFF;line:FFFFFF
-rectangle "**ISO/IEC SC 42**" as ISO #F8FAFC;line:64748B
-rectangle UIT #F8FAFC;line:64748B [
-  **UIT-T, IEEE**
-  Sujet à l'étude;
-  projets autorisés
-]
-rectangle " " as C23 <<invis>>
-rectangle " " as C24 <<invis>>
-
-Row2Lbl -[hidden]right-> ISO
-ISO -[hidden]right-> UIT
-UIT -[hidden]right-> C23
-C23 -[hidden]right-> C24
-
-rectangle "**Puissances**\n**publiques**" as Row3Lbl #FFFFFF;line:FFFFFF
-rectangle " " as C31 <<invis>>
-rectangle NIST #F8FAFC;line:64748B [
-  **NIST/CAISI**
-  Consultations; document de
-  réflexion sur l'identité
-]
-rectangle " " as C33 <<invis>>
-rectangle SAC #F8FAFC;line:64748B [
-  **SAC (Chine)**
-  Série GB/Z 185-2026
-  en sept parties
-]
-
-Row3Lbl -[hidden]right-> C31
-C31 -[hidden]right-> NIST
-NIST -[hidden]right-> C33
-C33 -[hidden]right-> SAC
-
-H0 -[hidden]down-> Row1Lbl
-Row1Lbl -[hidden]down-> Row2Lbl
-Row2Lbl -[hidden]down-> Row3Lbl
-
-H1 -[hidden]down-> C11
-C11 -[hidden]down-> ISO
-ISO -[hidden]down-> C31
-
-H2 -[hidden]down-> C12
-C12 -[hidden]down-> UIT
-UIT -[hidden]down-> NIST
-
-H3 -[hidden]down-> C13
-C13 -[hidden]down-> C23
-C23 -[hidden]down-> C33
-
-H4 -[hidden]down-> AAIF
-AAIF -[hidden]down-> C24
-C24 -[hidden]down-> SAC
 @enduml

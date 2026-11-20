@@ -5,12 +5,13 @@ skinparam shadowing false
 skinparam roundcorner 10
 skinparam defaultFontName "Segoe UI"
 skinparam defaultFontSize 11
+skinparam Padding 5
 
 together {
   card Trace #FFFFFF;line:FFFFFF [
     |= **SPANS (CONVENTIONS OPENTELEMETRY GENAI ET MCP)**\n""traceparent 00-4bf92f3577b34da6a3ce929d0e0e4736-…-01"" |= Chronologie (0 s → ≈ 40 s) |
     | ""invoke_workflow traitement-dossier"" | <#FFFFFF> <back:#0F2744><color:#0F2744>----------------------------------------</color></back> |
-    |   ""chat modele-compact"" (routage) | <#FFFFFF> <back:#6B98C9><color:#6B98C9>--</color></back> |
+    |   ""chat modele-compact""  (routage) | <#FFFFFF> <back:#6B98C9><color:#6B98C9>--</color></back> |
     |   ""invoke_agent agent-risque-credit""  CLIENT · A2A | <#FFFFFF>   <back:#5A469B><color:#5A469B>----------------------</color></back> |
     |     ""invoke_agent agent-risque-credit""  INTERNAL | <#FFFFFF>    <back:#7C6BB8><color:#7C6BB8>---------------------</color></back> |
     |       ""chat modele-raisonnement"" | <#FFFFFF>     <back:#1B5E9E><color:#1B5E9E>-----</color></back> |
@@ -19,9 +20,9 @@ together {
     |       ""chat modele-raisonnement"" | <#FFFFFF>             <back:#1B5E9E><color:#1B5E9E>----</color></back> |
     |       attente d’approbation : deux événements, lien de span | <#FFFFFF>                 <color:#9C2F39>o- - - - -o</color> |
     |       ""execute_tool enregistrer_decision""  MCP CLIENT | <#FFFFFF>                       <back:#B45309><color:#B45309>-</color></back> |
-    |   ""chat modele-compact"" (réponse) | <#FFFFFF>                         <back:#6B98C9><color:#6B98C9>--</color></back> |
+    |   ""chat modele-compact""  (réponse) | <#FFFFFF>                         <back:#6B98C9><color:#6B98C9>--</color></back> |
     | Événement ""gen_ai.evaluation.result"" rattaché au span | <#FFFFFF>                                    <color:#28774E>(*)</color> |
-    | | 0 s ········································ ≈ 40 s |
+    | | 0 s                                        →                                        ≈ 40 s |
   ]
 
   rectangle "**Attributs portés**\n\n""gen_ai.operation.name""\n""gen_ai.agent.name""\n""gen_ai.agent.version""\n""gen_ai.provider.name""\n""gen_ai.request.model""\n""gen_ai.response.model""\n""gen_ai.usage.input_tokens""\n""gen_ai.usage.output_tokens""\n""gen_ai.usage.cache_read""\n""  .input_tokens""\n""gen_ai.tool.name""\n""gen_ai.tool.call.id""\n""mcp.method.name""\n""error.type""\n\nAttributs d’entreprise sous\npréfixe DNS inversé :\n""ca.ent.cost_center""" as Attrs #F1F5F9;line:CBD5E1

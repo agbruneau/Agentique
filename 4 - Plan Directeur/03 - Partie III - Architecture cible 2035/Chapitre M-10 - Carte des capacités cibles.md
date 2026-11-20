@@ -64,7 +64,7 @@ Chaque capacité est définie une seule fois par une **fiche à dix champs** : i
 | `controle-identite-securite` | `CAP-035`–`CAP-041` | 7 | 6 | 1 | 5 | 1 | 1 |
 | `controle-observabilite-finops` | `CAP-042`–`CAP-046` | 5 | 5 | 0 | 3 | 2 | 0 |
 | `controle-gouvernance-registre` | `CAP-047`–`CAP-052` | 6 | 6 | 0 | 5 | 1 | 0 |
-| **Total** | `CAP-001`**–**`CAP-052` | **52** | **42** | **10** | **30** | **18** | **4** |
+| **Total** | **`CAP-001`–`CAP-052`** | **52** | **42** | **10** | **30** | **18** | **4** |
 
 ## 10.1 Couche 1 — Interaction (`CAP-001` à `CAP-006`)
 
@@ -910,7 +910,7 @@ Dans le modèle de maturité retenu (C27, § 43.1), l’ouverture au **Stade 4 (
 
 1. **Clôture sectorielle et grilles analytiques.** L’épreuve des cinq profils sectoriels (`M-14` à `M-18`, synthétisée au chapitre `M-19`) a confirmé que ces cinquante-deux fiches couvrent l’ensemble des exigences sans capacité manquante; par ailleurs, le découpage en six substrats d’état repris dans `CAP-032` (`C27, § 46.1`) demeure une grille analytique d’inventaire propre à l’ouvrage 2027.
 
-2. **Absence du répertoire** `../2026/`**.** Le champ *Renvois* pointe vers les plans transversaux attestés (`Plan A`, `Plan B`, `Plan C`) sans identifiant individuel `EXIG-…`.
+2. **Absence du répertoire `../2026/`.** Le champ *Renvois* pointe vers les plans transversaux attestés (`Plan A`, `Plan B`, `Plan C`) sans identifiant individuel `EXIG-…`.
 3. **Référentiels sous adhésion et PDF fermés.** Les schémas complets `FDX`, `ACORD` et `CSIO` (à la différence des métadonnées `FIBO` [14]), l’avis télématique québécois de 2015 (`N-03`) ainsi que les cinq lignes directrices en PDF de l’AMF (`T-01` sur l’IA, `T-02` sur les modèles, `T-14` et `T-15` sur les technologies et la continuité, `T-13` sur la conduite commerciale) restent classés fermés (`F`) sans appuyer aucune obligation `[N]`.
 
 ## Sources
@@ -941,7 +941,7 @@ Dans le modèle de maturité retenu (C27, § 43.1), l’ouverture au **Stade 4 (
 23. Union européenne, *Règlement (UE) 2026/1744 du 8 juillet 2026 modifiant les échéances de l’AI Act*, JOUE du 2026-07-24, lu le 2026-11-16, lu en entier, statut L+, texte : P-02.txt.
 24. Union européenne, *Règlement (UE) 2023/2854 (Data Act, art. 29)*, du 13 décembre 2023 (JOUE du 2023-12-22), lu le 2026-11-16, lu par passages, statut L+, texte : P-08.txt.
 25. IETF WIMSE, *Charter & draft-ietf-wimse-aims-01*, révision 2026-11-02, lu le 2026-11-16, lu en entier, statut L+, texte : P-12.txt.
-26. IETF OAuth, *ID-JAG-06 et profils d’échange de jetons (*`RFC 8693`*,* `RFC 9449`*)*, 2026-10-31, lu le 2026-11-16, lu en entier, statut L+, texte : P-13.txt.
+26. IETF OAuth, *ID-JAG-06 et profils d’échange de jetons (`RFC 8693`, `RFC 9449`)*, 2026-10-31, lu le 2026-11-16, lu en entier, statut L+, texte : P-13.txt.
 27. W3C, *Verifiable Credentials Data Model v2.0*, 2025-05-15, lu le 2026-11-16, lu par passages, statut L+, texte : P-17.txt.
 28. OpenTelemetry, *GenAI & Agentic Semantic Conventions (Status: Development)*, lu le 2026-11-16, lu par passages, statut L+, texte : P-19.txt.
 29. G7 Cyber Expert Group, *Post-Quantum Cryptography Roadmap in the Financial Sector*, janvier 2026, lu le 2026-11-16, lu en entier, statut L+, texte : P-24.txt.

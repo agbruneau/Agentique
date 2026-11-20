@@ -11,14 +11,12 @@ skinparam legendBorderColor #BBBBBB
 
 title TROIS RÉGIMES, ET UN SEUL JALON DATÉ
 
-rectangle "TROIS STATUTS PROSPECTIFS (§ 49.0.1)" as Statuts {
-  rectangle "**1  Programmé**\n\nUne date opposable, portée par un\ninstrument en vigueur.\n\n<i>un seul des jalons</i>" as S1
-  rectangle "**2  Projeté**\n\nUne cible communiquée par celui\nqui la porte.\n\n<i>ni opposable ni garantie</i>" as S2
-  rectangle "**3  Spéculatif**\n\nAucun jalon daté au socle.\n\n\n<i>ne fonde aucune planification</i>" as S3
+rectangle "**1  Programmé**\n\nUne date opposable, portée par un\ninstrument en vigueur.\n\n<i>un seul des jalons</i>" as S1
+rectangle "**2  Projeté**\n\nUne cible communiquée par celui\nqui la porte.\n\n<i>ni opposable ni garantie</i>" as S2
+rectangle "**3  Spéculatif**\n\nAucun jalon daté au socle.\n\n\n<i>ne fonde aucune planification</i>" as S3
 
-  S1 -[hidden]right- S2
-  S2 -[hidden]right- S3
-}
+S1 -[hidden]right- S2
+S2 -[hidden]right- S3
 
 legend bottom
   UN SEUL EST PROGRAMMÉ. Les autres sont attendus, annoncés ou spéculatifs — et bâtir une feuille de route

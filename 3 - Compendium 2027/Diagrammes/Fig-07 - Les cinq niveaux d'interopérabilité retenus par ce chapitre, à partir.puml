@@ -4,44 +4,62 @@ top to bottom direction
 skinparam shadowing false
 skinparam roundcorner 8
 skinparam defaultFontName "Segoe UI"
+skinparam Padding 6
+skinparam nodesep 16
+skinparam ranksep 10
 
-rectangle "NIVEAU" as ColN #FFFFFF;line:FFFFFF {
-  rectangle "**Juridique et de confiance**" as N5 #EFF6FF;line:2563EB
-  rectangle "**Organisationnel**" as N4 #EFF6FF;line:2563EB
-  rectangle "**Sémantique**" as N3 #EFF6FF;line:2563EB
-  rectangle "**Syntaxique**" as N2 #EFF6FF;line:2563EB
-  rectangle "**Technique**" as N1 #EFF6FF;line:2563EB
-  N5 -[hidden]down-> N4
-  N4 -[hidden]down-> N3
-  N3 -[hidden]down-> N2
-  N2 -[hidden]down-> N1
-}
+rectangle "<color:#2563EB>**NIVEAU**</color>" as H1 #FFFFFF;line:FFFFFF
+rectangle "<color:#2563EB>**QUESTION**</color>" as H2 #FFFFFF;line:FFFFFF
+rectangle "<color:#2563EB>**CE QUE FOURNISSENT LES PROTOCOLES EN 2026**</color>" as H3 #FFFFFF;line:FFFFFF
+H1 -[hidden]right-> H2
+H2 -[hidden]right-> H3
 
-rectangle "QUESTION" as ColQ #FFFFFF;line:FFFFFF {
-  rectangle "Ont-elles le droit d'agir, et peut-on le prouver ?" as Q5 #F8FAFC;line:CBD5E1
-  rectangle "Qui fait quoi, qui décide, qui répond ?" as Q4 #F8FAFC;line:CBD5E1
-  rectangle "Comprennent-elles la même chose ?" as Q3 #F8FAFC;line:CBD5E1
-  rectangle "Peuvent-elles lire le message ?" as Q2 #F8FAFC;line:CBD5E1
-  rectangle "Les parties peuvent-elles se joindre ?" as Q1 #F8FAFC;line:CBD5E1
-  Q5 -[hidden]down-> Q4
-  Q4 -[hidden]down-> Q3
-  Q3 -[hidden]down-> Q2
-  Q2 -[hidden]down-> Q1
-}
+rectangle "**Juridique et de confiance**" as N5 #EFF6FF;line:2563EB
+rectangle "Ont-elles le droit d'agir, et peut-on le prouver ?" as Q5 #F8FAFC;line:CBD5E1
+rectangle "Des mécanismes d'authentification; aucune\nexpression des obligations" as P5 #FEF2F2;line:DC2626
+N5 -[hidden]right-> Q5
+Q5 -[hidden]right-> P5
 
-rectangle "CE QUE FOURNISSENT LES PROTOCOLES EN 2026" as ColP #FFFFFF;line:FFFFFF {
-  rectangle "Des mécanismes d'authentification; aucune\nexpression des obligations" as P5 #FEF2F2;line:DC2626
-  rectangle "Des états de tâche; presque rien d'autre" as P4 #FEF2F2;line:DC2626
-  rectangle "Des descriptions en langage naturel;\nl'interprétation revient au modèle" as P3 #FEFCE8;line:A16207
-  rectangle "**Standardisé**" as P2 #ECFDF5;line:15803D
-  rectangle "**Standardisé**" as P1 #ECFDF5;line:15803D
-  P5 -[hidden]down-> P4
-  P4 -[hidden]down-> P3
-  P3 -[hidden]down-> P2
-  P2 -[hidden]down-> P1
-}
+rectangle "**Organisationnel**" as N4 #EFF6FF;line:2563EB
+rectangle "Qui fait quoi, qui décide, qui répond ?" as Q4 #F8FAFC;line:CBD5E1
+rectangle "Des états de tâche; presque rien d'autre" as P4 #FEF2F2;line:DC2626
+N4 -[hidden]right-> Q4
+Q4 -[hidden]right-> P4
 
-ColN -[hidden]right-> ColQ
-ColQ -[hidden]right-> ColP
+rectangle "**Sémantique**" as N3 #EFF6FF;line:2563EB
+rectangle "Comprennent-elles la même chose ?" as Q3 #F8FAFC;line:CBD5E1
+rectangle "Des descriptions en langage naturel;\nl'interprétation revient au modèle" as P3 #FEFCE8;line:A16207
+N3 -[hidden]right-> Q3
+Q3 -[hidden]right-> P3
+
+rectangle "**Syntaxique**" as N2 #EFF6FF;line:2563EB
+rectangle "Peuvent-elles lire le message ?" as Q2 #F8FAFC;line:CBD5E1
+rectangle "**Standardisé**" as P2 #ECFDF5;line:15803D
+N2 -[hidden]right-> Q2
+Q2 -[hidden]right-> P2
+
+rectangle "**Technique**" as N1 #EFF6FF;line:2563EB
+rectangle "Les parties peuvent-elles se joindre ?" as Q1 #F8FAFC;line:CBD5E1
+rectangle "**Standardisé**" as P1 #ECFDF5;line:15803D
+N1 -[hidden]right-> Q1
+Q1 -[hidden]right-> P1
+
+H1 -[hidden]down-> N5
+N5 -[hidden]down-> N4
+N4 -[hidden]down-> N3
+N3 -[hidden]down-> N2
+N2 -[hidden]down-> N1
+
+H2 -[hidden]down-> Q5
+Q5 -[hidden]down-> Q4
+Q4 -[hidden]down-> Q3
+Q3 -[hidden]down-> Q2
+Q2 -[hidden]down-> Q1
+
+H3 -[hidden]down-> P5
+P5 -[hidden]down-> P4
+P4 -[hidden]down-> P3
+P3 -[hidden]down-> P2
+P2 -[hidden]down-> P1
 
 @enduml

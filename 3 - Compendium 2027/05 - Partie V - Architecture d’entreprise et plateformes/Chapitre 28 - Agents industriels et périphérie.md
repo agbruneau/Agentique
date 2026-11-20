@@ -14,9 +14,7 @@ La thèse tient en trois propositions. Les mêmes protocoles valent en usine s�
 
 Le NIST définit les technologies opérationnelles comme des systèmes programmables qui interagissent avec l’environnement physique, et fonde son guide de sécurité sur leurs exigences propres de performance, de fiabilité et de sûreté [9].
 
-**Une commande n’est pas une transaction.** Selon la documentation du serveur MCP de l’OPC Foundation, une commande est une demande adressée au serveur; son acceptation ne prouve pas l’exécution physique. Un délai expiré ne prouve pas qu’une écriture n’a pas eu lieu : il faut relire l’état avant de décider d’un nouvel essai. Un refus n’en justifie aucun, et le
-
-serveur ne réessaie jamais implicitement une commande [4]. Or la révision du 28 juillet 2026 de MCP prévoit qu’une requête interrompue soit réémise (chapitre 5). Ce comportement, sain pour une lecture, est dangereux pour une consigne : la compensation suppose un effet annulable, et le chapitre 18 range la commande à un équipement parmi les points de non-retour (18.7).
+**Une commande n’est pas une transaction.** Selon la documentation du serveur MCP de l’OPC Foundation, une commande est une demande adressée au serveur; son acceptation ne prouve pas l’exécution physique. Un délai expiré ne prouve pas qu’une écriture n’a pas eu lieu : il faut relire l’état avant de décider d’un nouvel essai. Un refus n’en justifie aucun, et le serveur ne réessaie jamais implicitement une commande [4]. Or la révision du 28 juillet 2026 de MCP prévoit qu’une requête interrompue soit réémise (chapitre 5). Ce comportement, sain pour une lecture, est dangereux pour une consigne : la compensation suppose un effet annulable, et le chapitre 18 range la commande à un équipement parmi les points de non-retour (18.7).
 
 **Le parc est hétérogène.** Les équipements parlent Modbus, MQTT avec Sparkplug B ou OPC UA [5], et chaque fabricant d’automates a son dialecte du langage Structured Text de la norme IEC 61131-3 [6]. Le problème se rapproche de celui des systèmes patrimoniaux (chapitre 25).
 
@@ -233,9 +231,7 @@ Un agent dont l’inférence dure plusieurs secondes et reste probabiliste doit 
 
 ### Règles d’urbanisation par niveau Purdue et conduits IEC 62443
 
-La norme IEC 62443-3-2 divise l’usine en zones, chacune dotée d’un niveau de sécurité cible (SL-1 à SL-4), reliées par des conduits filtrés. L’invariant : aucune session réseau initiée dans
-
-le nuage ou dans le réseau IT (niveaux 4 et 5) ne franchit directement le réseau d’usine (niveau 3 et inférieurs). Toute communication subit une rupture de protocole dans l’IDMZ (niveau 3.5).
+La norme IEC 62443-3-2 divise l’usine en zones, chacune dotée d’un niveau de sécurité cible (SL-1 à SL-4), reliées par des conduits filtrés. L’invariant : aucune session réseau initiée dans le nuage ou dans le réseau IT (niveaux 4 et 5) ne franchit directement le réseau d’usine (niveau 3 et inférieurs). Toute communication subit une rupture de protocole dans l’IDMZ (niveau 3.5).
 
 | Niveau Purdue et zone IEC 62443 | Constante de temps | Cible SL-T | Prérogatives autorisées aux composants agentiques | Interdictions d’architecture |
 | --- | --- | --- | --- | --- |
@@ -250,8 +246,7 @@ le nuage ou dans le réseau IT (niveaux 4 et 5) ne franchit directement le rése
 
 Pour atteindre le niveau SL-3 de l’IEC 62443-3-3, l’IDMZ ne se limite pas à un sous-réseau traversé par des règles NAT : elle termine les sessions TCP et applicatives dans les deux sens.
 
-- **Sens montant (OT vers IT).** La connexion est initiée exclusivement depuis le niveau 3, ou transite par une passerelle unidirectionnelle à isolation optique pour les sites classés critiques, vers un courtier réplica MQTT Sparkplug B et un serveur d’agrégation OPC UA situés dans l’IDMZ. Le pare-feu interne entre l’IDMZ et le niveau 3 peut donc bloquer 100 % des paquets SYN entrants vers l’atelier sur la voie de télémétrie. Le serveur MCP
-  interrogé par les agents de diagnostic du niveau 4 ne voit que cette copie, synchronisée à la milliseconde près. Même si un agent dans le nuage est compromis, ou si 5 000 appels MCP simultanés surviennent par accident, seul le réplica en supporte la charge; les automates du niveau 1 ne sont pas touchés.
+- **Sens montant (OT vers IT).** La connexion est initiée exclusivement depuis le niveau 3, ou transite par une passerelle unidirectionnelle à isolation optique pour les sites classés critiques, vers un courtier réplica MQTT Sparkplug B et un serveur d’agrégation OPC UA situés dans l’IDMZ. Le pare-feu interne entre l’IDMZ et le niveau 3 peut donc bloquer 100 % des paquets SYN entrants vers l’atelier sur la voie de télémétrie. Le serveur MCP interrogé par les agents de diagnostic du niveau 4 ne voit que cette copie, synchronisée à la milliseconde près. Même si un agent dans le nuage est compromis, ou si 5 000 appels MCP simultanés surviennent par accident, seul le réplica en supporte la charge; les automates du niveau 1 ne sont pas touchés.
 - **Sens descendant (IT vers OT).** Le conduit inverse n’expose qu’un point de terminaison HTTPS, authentifié mutuellement par des certificats courts SPIFFE (mTLS). Un validateur matériel de schéma JSON rejette tout paquet de plus de 16 Ko ou contenant des champs non déclarés, avant que l’intention parvienne au sas du jumeau numérique du niveau 3.
 
 ## 28.7 Exploration sémantique et diagnostic autonome sur OPC UA, MQTT Sparkplug et historiens
@@ -370,11 +365,11 @@ Passer du diagnostic (L1) à l’action corrective (L2/L3), par exemple moduler 
 Toute consigne descendante franchit trois barrières déterministes; les deux premières sont décrites ici, la troisième (le récepteur côté MES/SCADA) plus bas :
 
 1. **Proposition paramétrique sur gabarit homologué.** L’agent planificateur d’atelier ne cible aucun registre d’automate. Il propose le choix d’une recette pré-cataloguée ISA-88 (par exemple `DERATED_THERMAL_86`) et, le cas échéant, une répartition de lot.
-2. **Simulation déterministe avant exécution (niveau 3, solveur FMI 3.0 / FMU).** Le jumeau numérique simule sur l’horizon 𝐻 la trajectoire physique à partir de l’état réel 𝑥(𝑡0) et vérifie :
+2. **Simulation déterministe avant exécution (niveau 3, solveur FMI 3.0 / FMU).** Le jumeau numérique simule sur l’horizon 𝐻 la trajectoire physique à partir de l’état réel 𝑥(𝑡_0) et vérifie :
 
-∀𝑡∈[𝑡0, 𝑡0 + 𝐻], Φ(𝑥(𝑡), 𝑢) ≤0 ∧𝐶(𝑢) = 1
+∀𝑡 ∈ [𝑡_0, 𝑡_0 + 𝐻], Φ(𝑥(𝑡), 𝑢) ≤ 0 ∧ 𝐶(𝑢) = 1
 
-où Φ regroupe les plafonds physiques (température palier ≤78 ∘C, charge broche ≤88 %, épaisseur minimale de copeau anti-écrouissage) et 𝐶(𝑢) valide la qualité géométrique. En cas de succès, le jumeau signe en matériel (Ed25519 sur TPM/HSM de niveau 3) un jeton d’attestation à validité courte, lié à l’ordre de fabrication exact; sinon, il rejette la proposition, motif à l’appui.
+où Φ regroupe les plafonds physiques (température palier ≤ 78 °C, charge broche ≤88 %, épaisseur minimale de copeau anti-écrouissage) et 𝐶(𝑢) valide la qualité géométrique. En cas de succès, le jumeau signe en matériel (Ed25519 sur TPM/HSM de niveau 3) un jeton d’attestation à validité courte, lié à l’ordre de fabrication exact; sinon, il rejette la proposition, motif à l’appui.
 
 #### Extrait 28.2 — `[Exécuté en CI]` · Sas TypeScript de validation pré-exécution auprès du jumeau numérique déterministe (FMI 3.0)
 
@@ -443,10 +438,10 @@ export class DeterministicDigitalTwinGate {
 
 ### Protocole de passage de consigne signée vers MES/SCADA et contrôle de non-dérive (Δ𝑡)
 
-Entre la capture 𝑡0 de la simulation et la réception aux niveaux 3 et 2 (Siemens Opcenter MES, SCADA), l’atelier a évolué. Avant de charger la recette, et une fois la validation humaine acquise (section 28.4), le récepteur déterministe vérifie quatre conditions atomiques :
+Entre la capture 𝑡_0 de la simulation et la réception aux niveaux 3 et 2 (Siemens Opcenter MES, SCADA), l’atelier a évolué. Avant de charger la recette, et une fois la validation humaine acquise (section 28.4), le récepteur déterministe vérifie quatre conditions atomiques :
 
 - **Signature.** La signature Ed25519 du jumeau numérique est valide sur les paramètres exacts de la recette et le `workOrderId` courant, ce qui empêche le rejeu entre lots d’alliages distincts et toute falsification depuis la zone IT.
-- **Fraîcheur temporelle et non-dérive physique.** Certificat non expiré, âge du capteur local Δ𝑡≤5 s, écart thermique depuis 𝑡0 inférieur à 𝛿max = 1, 5 ∘C.
+- **Fraîcheur temporelle et non-dérive physique.** Certificat non expiré, âge du capteur local Δ𝑡 ≤ 5 s, écart thermique depuis 𝑡_0 inférieur à 𝛿_{max} = 1,5 °C.
 - **Interverrouillage de sûreté.** Barrières immatérielles dégagées et sélecteur physique sur AUTO (hors cadenassage de maintenance, LOTO).
 
 - **Frontière de cycle PackML.** Application différée à la fin de la pièce en cours (COMPLETE ou IDLE), jamais au milieu d’une passe d’usinage.
@@ -537,8 +532,7 @@ La sûreté du sas dépend de la fidélité du modèle physique sous-jacent (Fun
 
 Deux mécanismes encadrent le jumeau en exploitation continue :
 
-- **Surveillance post-application et retour automatique au profil sûr.** Dès qu’une nouvelle recette homologuée entre en vigueur sur la cellule, un chien de garde déterministe local compare toutes les dix secondes la courbe thermique mesurée 𝑇réel(𝑡) à la trajectoire prédite 𝑇sim(𝑡) lors de l’attestation. Si l’écart résiduel dépasse 2, 0 ∘C pendant trois cycles consécutifs, le SCADA révoque la recette active sans attendre d’ordre de
-  l’IT, rebascule la cellule en repli conservateur pré-programmé et notifie l’orchestrateur Temporal.
+- **Surveillance post-application et retour automatique au profil sûr.** Dès qu’une nouvelle recette homologuée entre en vigueur sur la cellule, un chien de garde déterministe local compare toutes les dix secondes la courbe thermique mesurée 𝑇_{réel}(𝑡) à la trajectoire prédite 𝑇_{sim}(𝑡) lors de l’attestation. Si l’écart résiduel dépasse 2,0 °C pendant trois cycles consécutifs, le SCADA révoque la recette active sans attendre d’ordre de l’IT, rebascule la cellule en repli conservateur pré-programmé et notifie l’orchestrateur Temporal.
 - **Réétalonnage hors ligne gouverné.** Les résidus d’observation sont accumulés dans l’historien pour recalibrer périodiquement les coefficients de transfert thermique de la FMU. Selon les principes de gestion du changement industriel, aucune mise à jour des paramètres internes du jumeau n’est déployée de façon autonome en ligne : chaque nouvelle version de FMU passe une batterie de tests de validation sur des incidents historiques rejoués et reçoit le visa d’un ingénieur procédés avant signature et mise en service au niveau 3.
 
 ### Coordination intralogistique multi-constructeurs (VDA 5050) et horizon OPC UA FX sur TSN
@@ -553,9 +547,7 @@ Le déploiement progressif en 2026–2027 d’OPC UA FX (*Field eXchange*) sur E
 
 **ÉCLAIRAGE SECTORIEL — [Extrapolation illustrative hors champ financier démontré] Énergie, mines et sûreté fonctionnelle — isolement des systèmes SIS (IEC 61511 SIL 2/3) et NERC CIP**
 
-Dans une centrale électrique soumise à NERC CIP, ou dans un procédé lourd régi par IEC 61508 et IEC 61511, le contrôle de procédé courant (BPCS : SCADA, automates) est doublé d’un système instrumenté de sécurité (SIS) certifié SIL 2 ou SIL 3, qui ramène physiquement
-
-l’installation à un état sûr avant tout emballement critique. La fabrique agentique n’a aucun lien d’écriture, logique ou électrique, vers le SIS (section 28.4).
+Dans une centrale électrique soumise à NERC CIP, ou dans un procédé lourd régi par IEC 61508 et IEC 61511, le contrôle de procédé courant (BPCS : SCADA, automates) est doublé d’un système instrumenté de sécurité (SIS) certifié SIL 2 ou SIL 3, qui ramène physiquement l’installation à un état sûr avant tout emballement critique. La fabrique agentique n’a aucun lien d’écriture, logique ou électrique, vers le SIS (section 28.4).
 
 - Toute modification dynamique d’un seuil SIS par un agent invaliderait l’homologation légale d’exploitation et engagerait la responsabilité pénale de la direction.
 - Même si l’agent et le jumeau numérique sont défaillants en même temps sur une consigne du MES, le SIS, câblé indépendamment, garde son autorité matérielle pour couper l’énergie avant tout dommage humain ou structurel.
@@ -601,11 +593,10 @@ Le patron déploie au niveau 3 du site un serveur durci Industrial Edge qui exé
   1. *Isolement complet sans passerelle agentique* : rejetée; maintient des délais manuels de plusieurs jours entre l’alerte du capteur, le stock ERP et l’ordonnancement.
   2. *Serveurs MCP en lecture/écriture directe sur automates OPC UA / Modbus* : rejetée, pour danger physique et violation de l’IEC 62443.
   3. *Segmentation IDMZ, avec lecture sur réplica et sas obligatoire par jumeau numérique déterministe avant recette signée MES/SCADA* : retenue.
-- **Décision** : (a) toute lecture OT s’effectue sur un réplica dans l’IDMZ (niveau 3.5), avec validation du `StatusCode` et de l’âge du signal; (b) tout accès direct d’un agent aux automates du niveau 1 ou au SIS est interdit; (c) toute consigne descendante cible un gabarit de
-  recette pré-homologué, obtient du jumeau numérique une signature Ed25519, avec rejet par défaut, et franchit les contrôles de fraîcheur (Δ𝑡≤5 s), d’interverrouillage humain et d’état PackML au niveau MES/SCADA. Ces contrôles automatiques ne dispensent pas de la validation humaine, obligatoire avant toute écriture (section 28.4).
+- **Décision** : (a) toute lecture OT s’effectue sur un réplica dans l’IDMZ (niveau 3.5), avec validation du `StatusCode` et de l’âge du signal; (b) tout accès direct d’un agent aux automates du niveau 1 ou au SIS est interdit; (c) toute consigne descendante cible un gabarit de recette pré-homologué, obtient du jumeau numérique une signature Ed25519, avec rejet par défaut, et franchit les contrôles de fraîcheur (Δ𝑡≤5 s), d’interverrouillage humain et d’état PackML au niveau MES/SCADA. Ces contrôles automatiques ne dispensent pas de la validation humaine, obligatoire avant toute écriture (section 28.4).
 - **Conséquences** :
-  - ‣ *Positives* (effets attendus; aucun déploiement en production n’est documenté par une source lue, section 28.5) : sûreté physique visée, déterminisme `< 10 ms` préservé, certification IEC 62443 SL-3 et adhésion des équipes d’automaticiens.
-  - ‣ *Négatives (coûts assumés)* : étalonnage continu des modèles physiques FMU du jumeau et exploitation de la zone IDMZ.
+  - *Positives* (effets attendus; aucun déploiement en production n’est documenté par une source lue, section 28.5) : sûreté physique visée, déterminisme `< 10 ms` préservé, certification IEC 62443 SL-3 et adhésion des équipes d’automaticiens.
+  - *Négatives (coûts assumés)* : étalonnage continu des modèles physiques FMU du jumeau et exploitation de la zone IDMZ.
 - **Condition de révision** : déploiement sur de nouvelles usines ou évolution des standards OPC UA FX et IEC 62443.
 
 ### Liste de contrôle de mise en production
