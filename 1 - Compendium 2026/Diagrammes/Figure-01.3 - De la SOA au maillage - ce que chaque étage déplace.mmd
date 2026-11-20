@@ -1,0 +1,24 @@
+%% Figure 1.3 — De la SOA au maillage : ce que chaque étage déplace, et le couplage qui se déplace sans disparaître.
+%% Source : 1 - Compendium 2026, Chapitre 1 (page 17)
+
+%%{init: {'flowchart': {'wrappingWidth': 900}}}%%
+flowchart TB
+    subgraph SG_ETAGES["QUATRE ÉTAGES, UN COUPLAGE QUI SE DÉPLACE"]
+        direction LR
+        E1["<b>1 · SOA</b><br/><br/>Contrat de service<br/>explicite, découverte,<br/>composition.<br/><br/><i>§ 1.3.1</i>"]
+        E2["<b>2 · ESB</b><br/><br/>Le bus centralise<br/>routage et<br/>transformation.<br/><br/><i>§ 1.3.2</i>"]
+        E3["<b>3 · Microservices</b><br/><br/>Décentralisation,<br/>communication<br/>inter-services.<br/><br/><i>§ 1.3.3</i>"]
+        E4["<b>4 · Maillage</b><br/><br/>Les préoccupations<br/>transversales quittent<br/>chaque service.<br/><br/><i>§ 1.3.4</i>"]
+        E1 --> E2 --> E3 --> E4
+    end
+
+    NOTE["Chaque étage déplace le couplage, aucun ne le supprime. Le maillage n'est ici que le socle transposable — sa déclinaison<br/>agentique est le ch. 37, et ce chapitre ne la construit pas."]
+
+    SG_ETAGES ~~~ NOTE
+
+    classDef card fill:#FAF7F2,stroke:#C4BEB5,stroke-width:1px,color:#222222,text-align:left;
+    classDef noteBox fill:#F7F5F0,stroke:#C4BEB5,stroke-width:1px,color:#333333,text-align:left;
+    class E1,E2,E3,E4 card;
+    class NOTE noteBox;
+    style SG_ETAGES fill:#FFFFFF,stroke:none,color:#9E3A14
+    linkStyle 0,1,2 stroke:#9E3A14,stroke-width:2px

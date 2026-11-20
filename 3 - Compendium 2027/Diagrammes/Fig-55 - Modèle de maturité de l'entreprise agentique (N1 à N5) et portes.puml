@@ -1,0 +1,132 @@
+' Fig. 55. – Modèle de maturité de l’entreprise agentique (N1 à N5) et portes de gouvernance bloquantes.
+@startuml
+title Modèle de Maturité de l'Entreprise Agentique (N1 à N5) et Portes de Gouvernance
+
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam rectangle {
+  BackgroundColor #FFFFFF
+  BorderColor #334155
+}
+
+rectangle N1 #FEF2F2;line:DC2626 [
+  **N1 • Ad hoc**
+  ----
+  **Exploratoire / Shadow AI**
+  • Copilotes UI synchrones
+  • Clés API partagées
+  • Presse-papiers humain
+  • Zéro trace OpenTelemetry
+  • État perdu à la fermeture
+  ----
+  **Risque : Fuite Loi 25 &**
+  **Shadow Sprawl incontrôlé**
+]
+
+rectangle N2 #F0F9FF;line:0284C7 [
+  **N2 • Départemental**
+  ----
+  **Outillé en Silos Locaux**
+  • Studios SaaS isolés
+  • Premiers serveurs MCP
+  • Boucles ReAct volatiles
+  • Validation HITL à 100 %
+  • Comptes service larges
+  • Facture jetons globale
+  ----
+  **Limite : Goulot HITL &**
+  **spaghetti d'adaptateurs**
+]
+
+rectangle N3 #EFF6FF;line:2563EB [
+  **N3 • Gouverné**
+  ----
+  **Socle Production Critique**
+  • Runtime durable Temporal
+  • Identité NHI + OAuth OBO
+  • Passerelle agentgateway
+  • Politiques Cedar / OPA
+  • Outils MCP idempotents
+  • Supervision HOTL calibrée
+  • Tests stabilité pass^k
+  ----
+  **Seuil minimal exigé pour**
+  **BSIF E-23 & EU AI Act**
+]
+
+rectangle N4 #F0FDF4;line:166534 [
+  **N4 • Orchestré**
+  ----
+  **Maillage Multi-Domaines**
+  • Délégation A2A v1.0 + MCP
+  • Sagas compensées inter-SI
+  • Convergence ERP / CRM / OT
+  • Ontologie domaine partagée
+  • Routage économique SLM/LLM
+  • Méta-gouverneurs critiques
+  • FinOps Cost-per-Outcome
+  ----
+  **Cible optimale des grands**
+  **flux internes transversaux**
+]
+
+rectangle N5 #EEF2FF;line:4F46E5 [
+  **N5 • Fédéré B2B**
+  ----
+  **Écosystème Inter-Entreprises**
+  • Annuaire AGNTCY / OASF
+  • Fédération DID / mTLS DMZ
+  • Négociation B2B sous mandat
+  • Règlements AP2 / x402
+  • Contrats SLA opposables
+  • Coupe-circuits inter-firmes
+  • Preuves cryptographiques
+  ----
+  **Réservé aux chaînes B2B**
+  **fournisseurs & partenaires**
+]
+
+N1 -[#1E293B]right-> N2
+N2 -[#1E293B]right-> N3
+N3 -[#1E293B]right-> N4
+N4 -[#1E293B]right-> N5
+
+rectangle G1 #FEF2F2;line:DC2626 [
+  **Porte G1 • Visibilité**
+  Inventaire & Proxy sortant
+]
+
+rectangle G2 #FFF7ED;line:D97706 [
+  **Porte G2 • Homologation**
+  NHI, idempotence & pass^5
+]
+
+rectangle G3 #EFF6FF;line:2563EB [
+  **Porte G3 • Industrialisation**
+  Agent Cards A2A & HOTL
+]
+
+rectangle G4 #EEF2FF;line:4F46E5 [
+  **Porte G4 • Fédération**
+  DMZ mTLS & Mandats B2B
+]
+
+G1 -[hidden]right-> G2
+G2 -[hidden]right-> G3
+G3 -[hidden]right-> G4
+
+N1 .[#DC2626]down. G1
+N2 .[#D97706]down. G2
+N3 .[#2563EB]down. G3
+N4 .[#4F46E5]down. G4
+
+rectangle LoiProgression #FFF7ED;line:9A3412 [
+  **Loi de Progression Architecturale : Aucun saut direct N1 → N4 sans franchissement intégral de la Porte G2**
+  Tout système patrimonial dépourvu d'identité nominative ou d'idempotence reste plafonné en lecture seule (L1) jusqu'à encapsulation MCP
+]
+
+G2 -[hidden]down-> LoiProgression
+G3 -[hidden]down-> LoiProgression
+@enduml

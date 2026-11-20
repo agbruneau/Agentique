@@ -1,0 +1,60 @@
+' Figure 16.2 — Portée intra-organisationnelle des quatre substituts provisoires face à la frontière inter-organisationnelle.
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 6
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 13
+skinparam backgroundColor #FFFFFF
+skinparam legendBackgroundColor #F8F5F0
+skinparam legendBorderColor #D6D3CD
+skinparam legendBorderThickness 1
+
+rectangle "QUATRE SUBSTITUTS, QUATRE ÉCARTS" as CADRE #FFFDF9;line:9A3412 {
+  rectangle S1 #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**1**</color>  **Carte signée**
+    ----
+    La carte d'agent, signée et vérifiée hors bande — le
+    mécanisme existe et il est spécifié.
+    ----
+    <color:#57534E>ne fournit pas l'ancrage organisationnel de la clé</color>
+  ]
+
+  rectangle S2 #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**2**</color>  **Inscription**
+    ----
+    Un registre interne, tenu par l'exploitant du maillage,
+    avec ses propres champs.
+    ----
+    <color:#57534E>ne fournit pas l'opposabilité inter-organisationnelle</color>
+  ]
+
+  rectangle S3 #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**3**</color>  **Chaîne de mandat**
+    ----
+    L'échange de jeton RFC 8693 et son attribut d'acteur — à
+    un saut, dans un domaine unique.
+    ----
+    <color:#57534E>ne fournit ni la composition au-delà du premier saut, ni l'interrogeabilité</color>
+  ]
+
+  rectangle S4 #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**4**</color>  **Attestations**
+    ----
+    Rien de protocolaire : un inventaire documentaire, lu
+    par des humains.
+    ----
+    <color:#57534E>ne fournit rien de ce qui en ferait une pièce</color>
+  ]
+
+  S1 -[hidden]right-> S2
+  S3 -[hidden]right-> S4
+  S1 -[hidden]down-> S3
+  S2 -[hidden]down-> S4
+}
+
+legend
+  Aucun substitut n'est une pièce : chacun règle le problème CHEZ SOI et le laisse entier à la frontière. La quatrième n'a même
+  pas de substitut protocolaire — ce qui en tient lieu est documentaire, tenu hors du maillage et lu par des humains.
+endlegend
+@enduml

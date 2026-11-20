@@ -1,0 +1,117 @@
+' Fig. 54. – Modèle opérationnel cible Hub-and-Spoke : Centre d’Excellence Agentique, tandem RH-IT, cellules métiers fédérées et supervision HOTL.
+@startuml
+title Modèle Opérationnel Cible (Hub-and-Spoke) : CoE Agentique, Tandem RH–IT et Supervision HOTL
+
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam rectangle {
+  BackgroundColor #FFFFFF
+  BorderColor #334155
+}
+
+rectangle TandemRH #F8FAFC;line:1E293B [
+  **Tandem RH – IT (Gouvernance de la Main-d'Œuvre Hybride)**
+  • Cycle de vie unifié : arrivée et départ NHI couplés au SIRH (72 h)
+  • Refonte des fiches de poste & parcours de requalification certifiants
+  • Dialogue social : transparence algorithmique & droit à la déconnexion
+]
+
+rectangle PosteHOTL #FFF7ED;line:9A3412 [
+  **Poste de Supervision Human-on-the-Loop (HOTL)**
+  • Console différentielle A2UI (preuves contradictoires, zéro prose flatteuse)
+  • Budget cognitif borné (≤ 33 arbitrages complexes / quart) & CIBA
+  • Injection de Tests Canaris (anti-complaisance OWASP ASI09)
+]
+
+TandemRH -[hidden]right-> PosteHOTL
+
+rectangle "HUB CENTRAL — Centre d'Excellence Agentique (CoE Plateforme, Sécurité, Ontologies & FinOps)" as HubCentral #EFF6FF;line:2563EB {
+  rectangle HubSocle #FFFFFF;line:2563EB [
+    **Socle & Runtime**
+    Temporal / Restate
+    Passerelle agentgateway
+    Registre OASF / A2A
+  ]
+  rectangle HubSec #FFFFFF;line:2563EB [
+    **Sécurité & Conformité**
+    Identités SPIFFE & OBO
+    Politiques Cedar / OPA
+    Kill-Switch & AIMS 42001
+  ]
+  rectangle HubSem #FFFFFF;line:2563EB [
+    **Sémantique & Qualité**
+    Gouvernance Apache Ossie
+    Harnais CI/CD pass^k
+    Red-Teaming continu
+  ]
+  rectangle HubFinOps #FFFFFF;line:2563EB [
+    **Cellule FinOps IA**
+    Routage SLM / LLM
+    Refacturation interne
+    Cost-per-Outcome
+  ]
+
+  HubSocle -[hidden]right-> HubSec
+  HubSec -[hidden]right-> HubSem
+  HubSem -[hidden]right-> HubFinOps
+}
+
+rectangle Pill #FFFFFF;line:94A3B8 [
+  **Golden Paths, garde-fous mutuels & télémétrie OpenTelemetry**
+]
+
+rectangle "SPOKE 1 — Boréal Équipements & Logistique (BEL)\nNamed Business Owner : VP Chaîne d'Approvisionnement" as Spoke1 #FFFFFF;line:166534 {
+  rectangle Spoke1Info #FFFFFF;line:FFFFFF [
+    • Périmètre : SAP S/4HANA, MES, achats AP2
+    • Équipe : Responsable Produit + Ing. MCP/OT
+    • Budget : P&L résultat logistique & stocks
+  ]
+  rectangle Spoke1Imput #F0FDF4;line:86EFAC [
+    **Imputabilité directe du propriétaire :**
+    Plafonds d'achat B2B, recettes jumeau OT
+    & validation trimestrielle des compensations
+  ]
+  Spoke1Info -[hidden]down-> Spoke1Imput
+}
+
+rectangle "SPOKE 2 — Boréal Capital & Assurances (BCA)\nNamed Business Owner : VP Souscription" as Spoke2 #FFFFFF;line:1E293B {
+  rectangle Spoke2Info #FFFFFF;line:FFFFFF [
+    • Périmètre : IBM i (AS/400), Guidewire
+    • Équipe : Actuaire Risques + Ing. Agents
+    • Budget : Coût par dossier instruit & sinistres
+  ]
+  rectangle Spoke2Imput #EFF6FF;line:93C5FD [
+    **Imputabilité directe du propriétaire :**
+    Dossier BSIF E-23, explicabilité Loi 25
+    & seuils d'escalade vers souscripteurs HOTL
+  ]
+  Spoke2Info -[hidden]down-> Spoke2Imput
+}
+
+rectangle "SPOKE 3 — Boréal Services Numériques (BSN)\nNamed Business Owner : VP Succès Client" as Spoke3 #FFFFFF;line:2563EB {
+  rectangle Spoke3Info #FFFFFF;line:FFFFFF [
+    • Périmètre : Télématique, ServiceNow, CRM
+    • Équipe : Curateur Ontologie + SRE AgentOps
+    • Budget : SLA disponibilité 99,5 % & rétention
+  ]
+  rectangle Spoke3Imput #F8FAFC;line:CBD5E1 [
+    **Imputabilité directe du propriétaire :**
+    Exactitude triage, transparence EU Art. 50
+    & activation d'urgence du mode dégradé
+  ]
+  Spoke3Info -[hidden]down-> Spoke3Imput
+}
+
+TandemRH -[#1E293B]-> HubCentral
+PosteHOTL <-[#9A3412]-> HubCentral
+
+HubCentral <-[#2563EB]-> Pill
+Pill <-[#2563EB]-> Spoke1
+Pill <-[#2563EB]-> Spoke2
+Pill <-[#2563EB]-> Spoke3
+
+Spoke1 -[hidden]right-> Spoke2
+Spoke2 -[hidden]right-> Spoke3
+@enduml

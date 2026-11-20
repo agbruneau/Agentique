@@ -1,0 +1,29 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 49 (page 185)
+' Légende : Fig. 49. – Architecture de référence d’une Internal Agentic Platform (IAP) en quatre strates découplées
+@startuml
+!include <C4/C4_Container>
+
+LAYOUT_LEFT_RIGHT()
+
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+
+Person(domaine, "Équipe Domaine", "Stream-aligned : logique 80/20, prompts et outils MCP métier")
+Person(plateforme, "Équipe Plateforme", "Produit interne : conçoit et itère les Golden Paths")
+
+System_Boundary(iap, "Internal Agentic Platform (IAP) — Thinnest Viable Platform") {
+  Container(portail, "Portail développeur", "Backstage Scaffolder", "Catalogue unifié et gabarits Golden Path exécutables")
+  Container(kratix, "Orchestrateur d'API plateforme", "Kratix Promises", "Validation conformité, sécurité et distribution multi-grappes")
+  Container(socle, "Socle managé pré-câblé", "AI/MCP Gateway, Temporal, OTel, OPA", "Identités SPIFFE, quotas FinOps et EvalOps CI")
+  Container(crossplane, "Plan de contrôle infrastructure", "Crossplane (XRD / Compositions)", "Approvisionnement déclaratif GPU, BD, Redis et files")
+}
+
+Rel(domaine, socle, "Déploie et opère les agents via GitOps")
+Rel(domaine, portail, "Instancie un gabarit en libre-service")
+Rel(plateforme, portail, "Publie gabarits versionnés")
+Rel(plateforme, kratix, "Maintient les Promises et politiques")
+Rel(portail, kratix, "Déclenche requête de capacité")
+Rel(kratix, socle, "Configure passerelles, identités et télémétrie")
+Rel(kratix, crossplane, "Compose ressources infonuagiques/locales")
+@enduml

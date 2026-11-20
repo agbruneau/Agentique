@@ -1,0 +1,22 @@
+%% Figure 20.6 — La révocation en cascade : ce qui tombe quand le mandat d’origine est retiré.
+%%{init: {'flowchart': {'wrappingWidth': 900}}}%%
+flowchart TB
+    subgraph CHAINE["LE MANDAT D'ORIGINE EST RETIRÉ — ET CE QUI EN A ÉTÉ DÉRIVÉ ?"]
+        direction LR
+        M["<b>Mandant</b><br/>retire l'autorisation qu'il avait<br/>accordée"]
+        A1["<b>Agent</b><br/>détenait le mandat, l'avait<br/>transmis"]
+        A2["<b>Second agent</b><br/>l'exerce encore auprès d'un<br/>service"]
+        M --> A1 -. "×" .- A2
+    end
+
+    SYNTH["<b>Aucun balayage documenté ne répond de ce qui se propage, ni de la vitesse à laquelle il se propage.</b>"]
+    NOTE["Le socle NE DOCUMENTE PAS de mécanisme de révocation en cascade dans une chaîne de délégation — absence de documentation, non<br/>fait négatif vérifié (degré 3). La distinction décide de ce qu'une institution peut inscrire dans un dossier de diligence<br/>raisonnable."]
+
+    CHAINE ~~~ SYNTH ~~~ NOTE
+
+    style CHAINE fill:#FFFDF9,stroke:#9A3412,stroke-width:1px,color:#9A3412
+    style M fill:#FAF6F0,stroke:#B8B2A6,color:#1F2937
+    style A1 fill:#FAF6F0,stroke:#B8B2A6,color:#1F2937
+    style A2 fill:#FAF6F0,stroke:#B8B2A6,color:#1F2937
+    style SYNTH fill:#FFFDF9,stroke:#D6D3CD,color:#111827
+    style NOTE fill:#F8F5F0,stroke:#D6D3CD,color:#374151

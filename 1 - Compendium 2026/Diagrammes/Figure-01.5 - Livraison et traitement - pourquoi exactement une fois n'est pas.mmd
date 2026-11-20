@@ -1,0 +1,21 @@
+%% Figure 1.5 — Livraison et traitement : pourquoi « exactement une fois » n'est pas une garantie de livraison.
+%% Source : 1 - Compendium 2026, Chapitre 1 (page 21)
+
+%%{init: {'flowchart': {'wrappingWidth': 900}}}%%
+flowchart TB
+    subgraph SG_GAR["TROIS GARANTIES DE LIVRAISON"]
+        direction LR
+        G1["<b>1 · Au plus une fois</b><br/><br/>Perte possible, jamais de doublon."]
+        G2["<b>2 · Au moins une fois</b><br/><br/>Jamais de perte, doublons<br/>possibles."]
+        G3["<b>3 · Exactement une fois</b><br/><br/>Irréalisable comme garantie de<br/>livraison sous pannes."]
+    end
+
+    NOTE["La voie praticable n'est pas une livraison exactement-une-fois — irréalisable sous pannes, instance du problème des deux<br/>généraux — mais un TRAITEMENT exactement-une-fois : au-moins-une-fois composé avec un consommateur idempotent (ch. 48 § 48.2)."]
+
+    SG_GAR ~~~ NOTE
+
+    classDef card fill:#FAF7F2,stroke:#C4BEB5,stroke-width:1px,color:#222222,text-align:left;
+    classDef noteBox fill:#F7F5F0,stroke:#C4BEB5,stroke-width:1px,color:#333333,text-align:left;
+    class G1,G2,G3 card;
+    class NOTE noteBox;
+    style SG_GAR fill:#FFFFFF,stroke:none,color:#9E3A14

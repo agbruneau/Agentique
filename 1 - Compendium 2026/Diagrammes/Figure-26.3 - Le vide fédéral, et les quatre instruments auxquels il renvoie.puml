@@ -1,0 +1,61 @@
+' Figure 26.3 — Le vide fédéral, et les quatre instruments auxquels il renvoie (trois porteurs d’obligations ou d’attentes et un rappelant l’application du droit existant ; E-23 prend effet le 1ᵉʳ mai 2027).
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 6
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 13
+skinparam backgroundColor #FFFFFF
+skinparam legendBackgroundColor #F8F5F0
+skinparam legendBorderColor #D6D3CD
+skinparam legendBorderThickness 1
+
+rectangle "QUATRE INSTRUMENTS, QUATRE RÉGIMES" as CADRE #FFFDF9;line:9A3412 {
+  rectangle I1 #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**1**</color>  **E-23**
+    ----
+    Risque de modèle, fédéral prudentiel. Version finale
+    publiée le 11 septembre 2025.
+    ----
+    <color:#57534E>prend effet le 1er mai 2027 · ch. 25</color>
+  ]
+
+  rectangle I2 #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**2**</color>  **Ligne directrice IA de l'AMF**
+    ----
+    Québec, sectoriel. Finale — jamais « en attente » ni «
+    en projet ».
+    ----
+    <color:#57534E>publication non datée au jour près — ch. 27</color>
+  ]
+
+  rectangle I3 #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**3**</color>  **Art. 12.1 de la Loi 25**
+    ----
+    Québec, droit général des renseignements personnels. En
+    vigueur.
+    ----
+    <color:#57534E>opposable depuis le 22 septembre 2023 — ch. 27</color>
+  ]
+
+  rectangle I4 #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**4**</color>  **Avis 11-348 des ACVM**
+    ----
+    Valeurs mobilières. Publié le 5 décembre 2024 ; ne crée
+    ni ne modifie aucune exigence.
+    ----
+    <color:#57534E>aucune date — les lois existantes s'appliquent — ch. 28</color>
+  ]
+
+  I1 -[hidden]right-> I2
+  I3 -[hidden]right-> I4
+  I1 -[hidden]down-> I3
+  I2 -[hidden]down-> I4
+}
+
+legend
+  Les quatre ne sont pas de même nature : l'un relève du droit général des renseignements personnels et non du secteur
+  financier, et le quatrième NE CRÉE NI NE MODIFIE aucune exigence. Un instrument qui porte la charge n'est pas nécessairement un
+  instrument qui l'impose.
+endlegend
+@enduml

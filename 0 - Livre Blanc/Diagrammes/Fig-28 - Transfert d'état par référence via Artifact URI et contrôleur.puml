@@ -1,0 +1,24 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 28 (p. 107)
+' Légende : Transfert d’état par référence via Artifact URI et contrôleur anti-dérive Goal Pinning
+
+@startuml
+!include <C4/C4_Component>
+
+Container_Boundary(flux, "Flux d'orchestration et\ntransfert d'état gouverné") {
+  Component(emit, "Agent Émetteur", "Contexte isolé", "Produit un livrable ou résultat massif")
+  Component(env, "Enveloppe typée", "StateGraph / JSON", "Artifact URI, résumé, Goal Pin immuable")
+  Component(ctrl, "Contrôleur anti-dérive", "Instruction Hierarchy", "Ancre primauté/récence, filtre entrées tierces")
+  Component(rec, "Agent Récepteur", "Contexte minimal", "Charge à la demande les extraits requis")
+}
+
+ContainerDb(store, "Artifact Store\n(Claim-Check / GCS)", "Stockage gouverné", "Blobs versionnés, ACL par locataire, empreinte SHA-256 et politique TTL")
+
+Rel_R(emit, env, "3. Met à jour état (sans payload brut)")
+Rel_R(env, ctrl, "4. Applique hiérarchie et vérifie mandat")
+Rel_R(ctrl, rec, "5. Transmet enveloppe compacte ancrée")
+Rel(emit, store, "1. Écrit payload volumineux")
+Rel(store, env, "2. Retourne URI + version")
+Rel(rec, store, "6. Lit extraits ciblés (juste-à-temps)")
+
+@enduml

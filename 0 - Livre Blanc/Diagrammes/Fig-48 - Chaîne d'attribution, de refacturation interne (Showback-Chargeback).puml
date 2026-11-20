@@ -1,0 +1,42 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 48 (page 181)
+' Légende : Fig. 48. – Chaîne d’attribution, de refacturation interne (Showback/Chargeback) et de réversibilité FinOps
+@startuml
+left to right direction
+
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+skinparam roundcorner 6
+skinparam defaultFontName SansSerif
+skinparam ArrowColor #324e67
+skinparam ArrowFontColor #172025
+skinparam PackageBackgroundColor #ffffff
+skinparam PackageBorderColor #5b6b76
+skinparam PackageFontColor #1a4964
+skinparam RectangleBackgroundColor #f3f7f9
+skinparam RectangleBorderColor #324e67
+skinparam RectangleFontColor #172025
+
+package "Collecte normalisée" as Col {
+  rectangle "Traces OTel GenAI\ngen_ai.usage.* & Agent ID" as OTel
+  rectangle "Factures Cloud & API\nSchéma FOCUS v1.4 / v1.5" as FOCUS
+}
+
+package "Moteur d'imputation FinOps" as Eng {
+  rectangle "TCO complet par résultat\n(Jetons + Infra + EvalOps + HITL)" as TCO
+  rectangle "Détection d'anomalies\n& Plafonds budgétaires" as Anom
+}
+
+package "Pilotage & Réversibilité" as Pil {
+  rectangle "Arbitrage capacité\nPAYG vs PTU vs Batch" as Arb
+  rectangle "Showback → Chargeback\npar Centre de coûts / P&L" as Show
+  rectangle "Tests de réversibilité\n(EU Data Act & Portabilité)" as Rev
+}
+
+OTel --> TCO : Attribution agent
+FOCUS --> TCO : Coûts normalisés
+TCO --> Anom : Alertes dérive
+TCO --> Arb : Taux d'utilisation
+TCO --> Show : Imputation P&L
+Show --> Rev : ROI ajusté du risque
+@enduml

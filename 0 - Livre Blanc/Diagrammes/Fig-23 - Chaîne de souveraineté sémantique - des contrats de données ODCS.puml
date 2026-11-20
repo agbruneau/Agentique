@@ -1,0 +1,38 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 23 (p. 89)
+' Légende : Chaîne de souveraineté sémantique : des contrats de données ODCS et du MDM à la consommation agentique
+
+@startuml
+!include <archimate/Archimate>
+
+package "Données maîtresses et Contrats (Plan 3)" {
+  Application_DataObject(odcs, "Data Contracts\n«ODCS v3 YAML»")
+  Application_Component(mdm, "Moteur MDM\n«Golden Records»")
+  Application_DataObject(raw, "Données brutes\n(ERP, CRM, SoR)")
+}
+
+package "Souveraineté sémantique" {
+  Application_Component(sem, "Couche sémantique\n«MetricFlow / Views»")
+  Application_Component(onto, "Ontologie métier\n«OWL 2 / SHACL»")
+  Application_DataObject(gctx, "Graphe métier\n«Golden Context»")
+}
+
+package "Consommateurs gouvernés" {
+  Application_Component(bi, "Tableaux de bord BI\n«Usage humain»")
+  Application_Component(rag, "Agentic RAG &\nText-to-SQL")
+  Application_Service(mcp, "MCP Gateway\n(Ch. 04)")
+  Application_Component(agents, "Acteurs cognitifs\n«Agents»")
+}
+
+odcs -- raw : qualité /\nsensibilité
+mdm .[dotted]. raw : résout
+odcs -- sem : types / SLA
+mdm -> gctx : alimente
+onto .[dotted]. gctx : valide\nSHACL
+sem --> bi : KPI uniques
+sem --> rag : vues /\njointures
+gctx --> rag : relations
+rag --> mcp : expose
+mcp --> agents : contexte
+
+@enduml

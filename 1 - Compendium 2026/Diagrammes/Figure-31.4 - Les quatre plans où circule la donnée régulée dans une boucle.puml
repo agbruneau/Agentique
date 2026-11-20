@@ -1,0 +1,43 @@
+' Ouvrage : 1 - Compendium 2026
+' Chapitre : 31 · Le vertical financier : pourquoi l'agentique y est durcie (p. 369)
+' Figure : Figure 31.4 — Les quatre plans où circule la donnée régulée dans une boucle agentique.
+@startuml
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+skinparam defaultFontName SansSerif
+skinparam roundcorner 6
+skinparam package {
+    BackgroundColor #fdfbf7
+    BorderColor #d4cfc7
+    FontColor #9c3d14
+}
+skinparam rectangle {
+    BackgroundColor #f7f4ee
+    BorderColor #b8b4ac
+    FontColor #1f1f1f
+}
+skinparam note {
+    BackgroundColor #faf8f4
+    BorderColor #b8b4ac
+    FontColor #333333
+}
+
+package "QUATRE PLANS, ET LA RÉSIDENCE DOIT LES COUVRIR TOUS" {
+    rectangle "<color:#9c3d14><b>1</b></color>   <b>Inférence</b>\n\nL'invite soumise au modèle contient invariablement du\ncontexte client — extraits de dossier, montants,\nidentifiants.\n\n<color:#666666>rarement pensé en termes de résidence</color>" as P1
+    rectangle "<color:#9c3d14><b>2</b></color>   <b>Plongements</b>\n\nLa représentation vectorielle du contenu régulé.\n\n\n<color:#666666>rarement pensé en termes de résidence</color>" as P2
+
+    rectangle "<color:#9c3d14><b>3</b></color>   <b>Traces</b>\n\nCe que l'observabilité conserve de la boucle.\n\n<color:#666666>rarement pensé en termes de résidence</color>" as P3
+    rectangle "<color:#9c3d14><b>4</b></color>   <b>Journaux d'audit</b>\n\nCe qui vaut pièce, et se conserve pour cela.\n\n<color:#666666>le seul plan habituellement traité</color>" as P4
+
+    P1 -[hidden]right-> P2
+    P3 -[hidden]right-> P4
+    P1 -[hidden]down-> P3
+    P2 -[hidden]down-> P4
+}
+
+note bottom
+LES TROIS PREMIERS SONT RAREMENT PENSÉS EN TERMES DE RÉSIDENCE. Une architecture qui ne couvre que le stockage laisse
+circuler la donnée régulée sur trois plans qu'elle ne voit pas — et l'invite contient invariablement du contexte client, même
+quand la sortie paraît anodine.
+end note
+@enduml

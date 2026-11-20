@@ -1,0 +1,46 @@
+' Figure 24.1 — L’agent comme acteur du tissu d’intégration : une dualité de rôles.
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 6
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 13
+skinparam backgroundColor #FFFFFF
+
+rectangle C1 #FAF6F0;line:B8B2A6 [
+  <color:#57534E>AGENT-CONSOMMATEUR</color>
+  ----
+  **Il invoque, il lit, il interroge**
+
+  Invoque une API ou un outil
+
+  Lit un flux d'événements
+
+  Interroge une source pour fonder son raisonnement
+  ----
+  **l'acteur récepteur du ch. 1**
+]
+
+rectangle C2 #FFFFFF;line:9A3412 [
+  <color:#9A3412>AGENT-PRODUCTEUR</color>
+  ----
+  **Il déclenche, il émet, il écrit**
+
+  Déclenche un workflow
+
+  Émet un événement
+
+  Écrit dans un système d'information
+  ----
+  **l'acteur émetteur du ch. 1**
+]
+
+rectangle NOTE #F8F5F0;line:D6D3CD [
+  La dualité RECOUPE celle de l'acteur émetteur et récepteur du ch. 1 : ce n'est pas une nouveauté agentique, c'est le tissu
+  existant qui reçoit un acteur de plus. Ce qui change n'est pas le rôle, c'est que son enchaînement n'est plus décidé d'avance.
+]
+
+C1 -[hidden]right-> C2
+C1 -[hidden]down-> NOTE
+C2 -[hidden]down-> NOTE
+@enduml

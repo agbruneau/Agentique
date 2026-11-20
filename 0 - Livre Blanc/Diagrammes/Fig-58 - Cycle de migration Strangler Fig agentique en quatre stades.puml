@@ -1,0 +1,40 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 58 (page 216)
+' Légende : Fig. 58. – Cycle de migration Strangler Fig agentique en quatre stades sous façade et mécanismes de repli
+@startuml
+left to right direction
+
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+skinparam roundcorner 6
+skinparam defaultFontName SansSerif
+skinparam ArrowColor #324e67
+skinparam ArrowFontColor #172025
+skinparam PackageBackgroundColor #ffffff
+skinparam PackageBorderColor #5b6b76
+skinparam PackageFontColor #1a4964
+skinparam RectangleBackgroundColor #f3f7f9
+skinparam RectangleBorderColor #324e67
+skinparam RectangleFontColor #172025
+
+package "Façade d'interception (Passerelle)" as Facade {
+  rectangle "Routeur de façade\n(AI & API Gateway)" as Router
+  rectangle "Flux patrimonial L0\n(BPMN / API / RPA)" as L0
+}
+
+package "Stades progressifs d'autonomie sous\ncontrat" as Stades {
+  rectangle "**Stade 1 : Mode ombre**\nTrafic dupliqué hors chemin critique\nZéro écriture SoR / outils simulés" as S1
+  rectangle "**Stade 2 : Recommandation**\nProposition structurée + preuves\nValidation & écriture humain / BPMN" as S2
+  rectangle "**Stade 3 : Action bornée**\nÉcritures réversibles sous seuils OPA\nPorte HITL sur pivots irréversibles" as S3
+  rectangle "**Stade 4 : Autonomie sous contrat**\nExécution durable sous SLO et budget\nCoupe-circuit + retrait patrimonial" as S4
+}
+
+Router --> L0 : Trafic de référence\n(100 % initial)
+Router --> S1 : Copie miroir\n(Shadow traffic)
+S1 --> S2 : Écart EvalOps <= seuil\net coût validé
+S2 --> S3 : Taux d'acceptation stable\net contrôle ACL
+S3 --> S4 : Zéro incident R3/R4\net conformité SLO
+S3 --> S2 : Dégradation qualité\nou dérive
+S2 --> L0 : Retrait ou échec\nROI baseline
+S4 --> L0 : Repli coupe-circuit\n(FORCED_OPEN -> L0)
+@enduml

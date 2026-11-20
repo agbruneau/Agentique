@@ -1,0 +1,25 @@
+%% Ouvrage : 1 - Compendium 2026
+%% Chapitre : 33 · ISO 20022 : Lynx accompli, RTR visé (p. 380)
+%% Figure : Figure 33.2 — La chronologie du rail de paiement en temps réel, telle que l’exploitant la communique.
+flowchart TB
+    subgraph S["UN AVANCEMENT DÉCLARÉ, ET SON DERNIER JALON OUVERT"]
+        direction LR
+        M1["● <b>juin 2023</b><br/><b>Composante d'échange</b><br/>livrée par un<br/>premier partenaire"]
+        M2["● <b>16 avr. 2024</b><br/><b>Reprise du programme</b><br/>deux nouveaux partenaires<br/>de livraison et d'exploitation"]
+        M3["● <b>T3 2025</b><br/><b>Compensation et règlement</b><br/>construction complétée"]
+        M4["● <b>T4 2025</b><br/><b>Tests internes</b><br/>complétés"]
+        M5["● <b>T1 2026</b><br/><b>Acceptation utilisateur</b><br/>complétée"]
+        M6["○ <b>mi-2026</b><br/><b>Tests industriels</b><br/>en cours"]
+        M1 --> M2 --> M3 --> M4 --> M5 --> M6
+    end
+    NOTE["La chronologie est celle que L'EXPLOITANT COMMUNIQUE : elle décrit un avancement déclaré, non un rail en service. Le dernier<br/>jalon est en cours, et aucune date de mise en service n'y figure."]
+    S ~~~ NOTE
+
+    style S fill:#fdfbf7,stroke:#d4cfc7,color:#9c3d14
+    style M1 fill:#f7f4ee,stroke:#9c3d14,color:#1a1a1a
+    style M2 fill:#f7f4ee,stroke:#9c3d14,color:#1a1a1a
+    style M3 fill:#f7f4ee,stroke:#9c3d14,color:#1a1a1a
+    style M4 fill:#f7f4ee,stroke:#9c3d14,color:#1a1a1a
+    style M5 fill:#f7f4ee,stroke:#9c3d14,color:#1a1a1a
+    style M6 fill:#ffffff,stroke:#9c3d14,stroke-dasharray: 5 5,color:#1a1a1a
+    style NOTE fill:#faf8f4,stroke:#b8b4ac,color:#444444

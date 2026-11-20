@@ -1,0 +1,36 @@
+' Figure 9 — Délégation A2A avec appel MCP et approbation humaine (2 - Cadre de Référence, ch. 6, p. 84)
+' Source : élaboration du cadre, d'après la spécification A2A 1.0 et MCP 2026-07-28
+@startuml
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 11
+skinparam sequenceMessageAlign center
+
+participant "**Personnes**\n//utilisateur, 2 approbateurs//" as Pers #E6F0FA
+participant "**Orchestrateur**\n//client A2A//" as Orch #EDE8F5
+participant "**Catalogue**\n//cartes signées (via passerelle)//" as Cat #EFE9F7
+participant "**Passerelle**\n//d’agents//" as Gw #FEF3DC
+participant "**Agent crédit**\n//serveur A2A//" as Credit #E2F4F0
+participant "**Serveurs MCP**\n//bureau de crédit, ERP//" as MCP #F1F5F9
+
+Pers -> Orch : **1** « Analyser le dossier 8841 »
+Orch -> Cat : **2** compétence « risque de crédit »
+Cat -[#0F7682]-> Orch : carte d’agent (signature vérifiée)
+
+Orch -> Gw : **3** ""SendStreamingMessage""\n""A2A-Version: 1.0"" · jeton délégué · ""traceparent""
+Gw -> Credit : relais (via passerelle d’agents)
+
+Credit -> MCP : **4** ""WORKING""\n""tools/call lire_dossier""
+
+Credit -[#B45309]-> Orch : **5** ""INPUT_REQUIRED"" : approbation requise
+
+Orch -> Pers : **6** action exacte à approuver
+Pers -[#15803D]-> Gw : deux jetons d’approbation signés : remis à la passerelle, qui les conserve
+
+Orch -> Credit : **7** ""SendStreamingMessage"" (même ""taskId"") + références d’approbation
+Credit -> MCP : **8** ""tools/call enregistrer""\n+ même clé, réf. d’approbation
+
+Credit -[#15803D]-> Orch : **9** artefact + ""COMPLETED""
+Orch -> Pers : **10** confirmation + réf. d’audit
+@enduml

@@ -1,0 +1,23 @@
+%% Figure 45.1 — La vue en couches C1-C8 du blueprint instancié et ses statuts auto-déclarés datés
+flowchart TB
+    subgraph COUCHES["HUIT COUCHES, HUIT STATUTS AUTO-DÉCLARÉS"]
+        direction TB
+        C8["<b>C8 · Socle d'exécution et souveraineté</b><br/>Cloud Pak for Integration v16.1, MZR Toronto et Montréal, Sovereign Core."]
+        C7["<b>C7 · Observabilité et opérations</b><br/>Instana (observabilité agentique en préversion publique), OpenTelemetry natif."]
+        C6["<b>C6 · Gouvernance IA et risque de modèle</b><br/>watsonx.governance, Compliance Accelerators · ch. 25, ch. 42."]
+        C5["<b>C5 · Couche agentique</b><br/>watsonx Orchestrate (MCP et A2A), Granite 4.0 · ch. 22, ch. 23."]
+        C4["<b>C4 · Données</b><br/>Data Fabric et accès gouverné · ch. 5, ch. 24 § 24.4."]
+        C3["<b>C3 · Messagerie et événements</b><br/>IBM MQ 9.4 LTS, Event Endpoint Management, Confluent."]
+        C2["<b>C2 · Intégration applicative et B2B</b><br/>App Connect Enterprise v13.0, webMethods Hybrid Integration."]
+        C1["<b>C1 · Exposition et gouvernance des interactions</b><br/>API Connect v10.0.8, API Agent, DataPower Nano Gateway, ContextForge."]
+        C8 ~~~ C7 ~~~ C6 ~~~ C5 ~~~ C4 ~~~ C3 ~~~ C2 ~~~ C1
+    end
+
+    NOTE["TOUS LES STATUTS SONT AUTO-DÉCLARÉS. Une couche « livrée » l'est au dire de son fournisseur, et la somme n'a rien vérifié en production.<br/>Instancier un blueprint ne prouve pas qu'il fonctionne — c'est ce que le § 45.0 pose, et le § 45.15 y revient."]
+    C1 ~~~ NOTE
+
+    classDef layer fill:#F5F1EB,stroke:#BBBBBB,color:#222222,text-align:left
+    classDef note fill:#FBF9F5,stroke:#CCCCCC,color:#444444,text-align:left
+    class C8,C7,C6,C5,C4,C3,C2,C1 layer
+    class NOTE note
+    style COUCHES fill:#FAF8F5,stroke:#8B2E0B,color:#8B2E0B

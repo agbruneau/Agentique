@@ -1,0 +1,97 @@
+' Fig. 59. – Architecture d’orchestration Edge déconnectée : cellule locale SLM + CRDT sur coupure WAN 72 h, passerelle MCP vers ROS 2 (DDS) et enveloppe cyber-physique Simplex.
+@startuml
+title Orchestration Edge Déconnectée (Air-Gapped), Réconciliation CRDT et Pont Robotique Simplex (ROS 2)
+
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam rectangle {
+  BackgroundColor #FFFFFF
+  BorderColor #334155
+}
+
+rectangle "Plan Central d'Entreprise (Hub Cloud — Connectivité Satellite / WAN Intermittente)" as HubCloud #F8FAFC;line:1E293B {
+  rectangle DepotTUF #FFFFFF;line:2563EB [
+    **Dépôt Signé TUF / Sigstore**
+    Poids SLM quantifiés • Bundles Cedar
+  ]
+  rectangle ReconcilSaga #FFFFFF;line:7C3AED [
+    **Moteur de Réconciliation Saga**
+    Fusion CRDT & arbitrage conflits stock
+  ]
+  rectangle CollecteurOTel #FFFFFF;line:166534 [
+    **Collecteur OTel Différé**
+    Ingestion par rafales compressées
+  ]
+
+  DepotTUF -[hidden]right-> ReconcilSaga
+  ReconcilSaga -[hidden]right-> CollecteurOTel
+}
+
+rectangle CoupureWAN #FFF7ED;line:9A3412 [
+  **Coupure WAN 0 à 72 h (Site isolé / Mode Air-Gapped)**
+]
+
+rectangle "Nœud Edge Industriel Durci (Autonomie Locale Complète sans Dépendance Cloud)" as NoeudEdge #EFF6FF;line:2563EB {
+  rectangle CelluleEdge #FFFFFF;line:1E293B [
+    **Cellule Cognitive Embarquée**
+    • SLM 3B–8B INT4 sur NPU / GPU local
+    • Runtime Restate / SQLite WAL local
+    • Agent Skills hors ligne pré-chargés
+    • **Latence déterministe < 80 ms**
+    • Attestation TPM 2.0 + SPIRE local
+  ]
+  rectangle MagasinCRDT #FFFFFF;line:7C3AED [
+    **Magasin d'État CRDT & Quotas**
+    • Compteurs PN-Counter (stocks réservés)
+    • Ensembles OR-Set (tâches assignées)
+    • Journal d'intention signé horodaté
+    • **Enveloppe d'escrow hors ligne bornée**
+    • Zéro blocage sur perte WAN
+  ]
+  rectangle PasserelleROS #FFFFFF;line:166534 [
+    **Passerelle MCP ↔ ROS 2 (DDS)**
+    • Traduction missions A2A en Action ROS 2
+    • Abstraction topologique (waypoints)
+    • Zéro commande couple moteur par LLM
+    • **Validation pré-exécution sur carte 3D**
+    • QoS DDS temps réel fiable
+  ]
+
+  CelluleEdge -[hidden]right-> MagasinCRDT
+  MagasinCRDT -[hidden]right-> PasserelleROS
+}
+
+DepotTUF .[#2563EB]down.> CelluleEdge
+ReconcilSaga <-[#1E293B]down-> CoupureWAN
+CoupureWAN <-[#1E293B]down-> MagasinCRDT
+CollecteurOTel <-[#166534]down. PasserelleROS
+
+rectangle "Enveloppe Cyber-Physique Simplex (Normes ISO 10218:2025 / ISO 3691-4 / IEC 61508 SIL 3)" as Simplex #FEF2F2;line:DC2626 {
+  rectangle CtrlAdaptatif #FFFFFF;line:2563EB [
+    **Contrôleur Adaptatif (VLA / Nav2)**
+    Planification trajectoire optimale
+    Contournement obstacles dynamiques
+    (Non certifié SIL — Haute performance)
+  ]
+  rectangle ArbitreMateriel #FFFFFF;line:DC2626 [
+    **Arbitre Matériel Déterministe**
+    MCU temps réel isolé (cycle 1 ms)
+    Vérifie LiDAR, vitesse, zone humaine
+    **Coupe le canal IA si marge violée**
+  ]
+  rectangle CtrlRepli #FFFFFF;line:166534 [
+    **Contrôleur de Repli Sûr Certifié**
+    Freinage cinématique prouvé SIL 3
+    Maintien d'état sécuritaire (Safe Stop)
+    **Actionneurs AMR, grues & vannes**
+  ]
+
+  CtrlAdaptatif -[#1E293B]right-> ArbitreMateriel
+  ArbitreMateriel -[#DC2626]right-> CtrlRepli
+}
+
+CelluleEdge -[#1E293B]down-> CtrlAdaptatif
+PasserelleROS -[#166534]down-> CtrlRepli
+@enduml

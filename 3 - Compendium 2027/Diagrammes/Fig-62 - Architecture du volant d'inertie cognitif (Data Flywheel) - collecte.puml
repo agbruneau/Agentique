@@ -1,0 +1,86 @@
+' Fig. 62. – Architecture du volant d’inertie cognitif (Data Flywheel) : collecte OTel et corrections HOTL, sas d’assainissement Loi 25, compilation déclarative + distillation LoRA et courbe économique trimestrielle.
+@startuml
+title Volant d'Inertie Cognitif (Data Flywheel) : Compilation Déclarative et Distillation Continue LLM → SLM
+
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam rectangle {
+  BackgroundColor #FFFFFF
+  BorderColor #334155
+}
+
+rectangle F1 #F8FAFC;line:1E293B [
+  **1. Trafic Production & Arbitrages Humains HOTL**
+  ----
+  • Modèle enseignant frontière (Teacher LLM) sur les 20 % durs
+  • Traces complètes OpenTelemetry GenAI + issue métier réelle
+  • Corrections contrastives des superviseurs HOTL (paires DPO)
+  • **Signal d'ancrage : uniquement les sagas sans compensation**
+]
+
+rectangle F2 #F5F3FF;line:5B21B6 [
+  **2. Sas d'Assainissement Loi 25 & Curation d'Or**
+  ----
+  • Anonymisation irréversible PII & secrets d'affaires B2B
+  • Filtrage anti-empoisonnement (rejet traces suspectes ASI06)
+  • Dédoublonnage sémantique & équilibrage des cas rares
+  • **Partition stricte : Train (70 %) / Dev (15 %) / Holdout (15 %)**
+]
+
+rectangle F4 #F0FDF4;line:166534 [
+  **4. Homologation τ-bench (pass^5) & Promotion**
+  ----
+  • Banc de non-régression τ-bench sur jeu Holdout scellé
+  • Exigence : pass^5(SLM) >= 99 % du pass^5(Teacher LLM)
+  • Déploiement Shadow Mode → Canary 10 % sur agentgateway
+  • Surveillance continue de dérive (PSI / entropie / escalade)
+  • **Retour automatique au Teacher LLM si cas hors distribution**
+]
+
+rectangle F3 #EFF6FF;line:2563EB [
+  **3. Compilation de Graphes & Distillation SLM**
+  ----
+  • Niveau A (Sans poids) : Compilateur déclaratif type DSPy
+    (optimise consignes et exemples few-shot par métrique)
+  • Niveau B (Poids légers) : Affinage SFT + DPO par LoRA
+  • Modèle élève (Student SLM 4B–8B) sur schémas MCP internes
+  • **Coût d'inférence divisé par 8 à 14 et TTFT divisé par 4**
+]
+
+F1 -[#1E293B]right-> F2 : OTel
+F2 -[#5B21B6]down-> F3
+F4 <-[#2563EB]right- F3 : LoRA
+F1 <-[#166534]down- F4
+
+rectangle "Trajectoire Économique d'un Flux Agentique Mature sur 4 Trimestres (Compression du Cost-per-Outcome)" as Trajectoire #F8FAFC;line:334155 {
+  rectangle T1 #FFFFFF;line:9A3412 [
+    **T1 — Amorçage (100 % LLM)**
+    Collecte traces initiales
+    **1,28 $ CAD / résultat**
+  ]
+  rectangle T2 #FFFFFF;line:2563EB [
+    **T2 — Compilation Prompt**
+    Compression contexte + cache
+    **0,74 $ CAD / résultat**
+  ]
+  rectangle T3 #FFFFFF;line:7C3AED [
+    **T3 — 1re Distillation SLM**
+    65 % trafic sur SLM LoRA
+    **0,39 $ CAD / résultat**
+  ]
+  rectangle T4 #F0FDF4;line:166534 [
+    **T4 — Régime Continu**
+    86 % SLM + 14 % Teacher
+    **0,19 $ CAD / résultat (-85 %)**
+  ]
+
+  T1 -[#1E293B]right-> T2
+  T2 -[#2563EB]right-> T3
+  T3 -[#166534]right-> T4
+}
+
+F4 -[hidden]down-> T2
+F3 -[hidden]down-> T3
+@enduml

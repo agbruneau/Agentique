@@ -1,0 +1,43 @@
+' Ouvrage : 1 - Compendium 2026
+' Chapitre : 40 · Les indicateurs de l'AgentOps et le FinOps des agents (p. 467)
+' Figure : Figure 40.1 — La grille minimale d’indicateurs et ce qui manque pour calculer chacun d’eux : dénominateur du parc (1), clé de jointure trace-mandat (2), bornes de propagation du retrait — le socle ne documentant aucun délai de propagation fixé par un cadre canadien instruit, au degré 3 — (3) et horodatage d’évaluation exportable (4).
+@startuml
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+skinparam defaultFontName SansSerif
+skinparam roundcorner 6
+skinparam package {
+    BackgroundColor #fdfbf7
+    BorderColor #d4cfc7
+    FontColor #9c3d14
+}
+skinparam rectangle {
+    BackgroundColor #f7f4ee
+    BorderColor #b8b4ac
+    FontColor #1f1f1f
+}
+skinparam note {
+    BackgroundColor #faf8f4
+    BorderColor #b8b4ac
+    FontColor #333333
+}
+
+package "QUATRE GRANDEURS, QUATRE MANQUES" {
+    rectangle "<color:#9c3d14><b>1</b></color>   <b>Disponibilité du parc</b>\n\nDénombrement des agents identifiables à l'instant t.\n\n<color:#666666>E-23 attend un inventaire — attente sous condition</color>" as G1
+    rectangle "<color:#9c3d14><b>2</b></color>   <b>Couverture de traçabilité</b>\n\nPart des actions tracées et rattachées à une identité\némise et à un mandat.\n\n<color:#666666>l'art. 12.1 impose la restitution des facteurs et paramètres</color>\n<color:#666666>sur demande</color>" as G2
+
+    rectangle "<color:#9c3d14><b>3</b></color>   <b>Délai de révocation</b>\n\nDurée entre la décision de retrait et le refus par le\ndernier point d'application.\n\n<color:#666666>aucun cadre canadien instruit ne fixe de délai de propagation</color>" as G3
+    rectangle "<color:#9c3d14><b>4</b></color>   <b>Fraîcheur des évaluations</b>\n\nÂge de la dernière évaluation de chaque agent, rapporté\nà un seuil.\n\n<color:#666666>deux attentes, aucune exigence</color>" as G4
+
+    G1 -[hidden]right-> G2
+    G3 -[hidden]right-> G4
+    G1 -[hidden]down-> G3
+    G2 -[hidden]down-> G4
+}
+
+note bottom
+CONSTRUCTION D'AUTEUR EN TOTALITÉ, et aucune valeur n'est prescrite. La colonne qui compte est la dernière : pour chacune des
+quatre grandeurs, quelque chose manque encore pour que l'indicateur se calcule — et l'une d'elles n'a même pas d'exigence de
+délai au socle.
+end note
+@enduml

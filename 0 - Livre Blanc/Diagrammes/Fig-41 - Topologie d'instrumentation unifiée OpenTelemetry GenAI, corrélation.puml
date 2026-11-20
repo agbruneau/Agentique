@@ -1,0 +1,37 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 41 (page 157)
+' Légende : Fig. 41. – Topologie d’instrumentation unifiée OpenTelemetry GenAI, corrélation SPIFFE/OBO et pipeline collecteur assaini
+@startuml
+!include <C4/C4_Container>
+
+LAYOUT_LEFT_RIGHT()
+
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+
+System_Boundary(exec, "Plan d'exécution agentique") {
+  Container(harness, "Agent Harness", "invoke_agent / chat", "Émet spans OTel GenAI, SVID SPIFFE & jeton OBO")
+  Container(a2a, "Pair A2A / Inférence", "a2a.client / model", "Propage contextId, usage.* & TTFT/TPOT")
+  Container(mcpgw, "MCP Gateway", "execute_tool / mcp", "Extrait traceparent & baggage via params._meta")
+}
+
+System_Boundary(otel, "Pipeline Collecteur OTel (Enclave)") {
+  Container(edge, "Collector Edge", "redactionprocessor + OTTL", "Allowlist clés, hache sub, masque PII (contenu=0)")
+  Container(tail, "Collector Tail-Sampling", "tailsamplingprocessor", "Retient 100 % erreurs, route métriques usage.*")
+}
+
+System_Boundary(sinks, "Puits Observabilité & Audit") {
+  ContainerDb(traces, "Backend Traces", "OTLP / Phoenix", "Traces liées trace_id, act & SPIFFE ID")
+  ContainerDb(tsdb, "TSDB Métriques SRE", "Prometheus", "Compteurs jetons & histogrammes latence")
+  ContainerDb(worm, "Journal Audit WORM", "SIEM Immuable", "Chaîne OBO sub -> act sans payload brut")
+}
+
+Rel(harness, a2a, "SendMessage / inférence")
+Rel(harness, mcpgw, "tools/call + _meta traceparent")
+Rel(harness, edge, "Export OTLP (mTLS SPIFFE)")
+Rel(mcpgw, edge, "Spans MCP + attributs OBO")
+Rel(edge, tail, "Spans assainis sans PII")
+Rel(tail, traces, "Traces anomalie & échantillon")
+Rel(tail, tsdb, "Métriques gen_ai.* faible cardinalité")
+Rel(tail, worm, "Piste identités SPIFFE / OBO")
+@enduml

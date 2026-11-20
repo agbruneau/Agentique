@@ -1,0 +1,39 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 32 (page 123)
+' Légende : Fig. 32. – Topologie C4 du patron hybride cible : macro-orchestration réglementaire et chorégraphie intra-domaine
+@startuml
+!include <C4/C4_Container>
+
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+
+System_Boundary(plan_macro, "Plan macro-réglementaire") {
+  Container(orch, "Orchestrateur de flux réglementaire", "Process Manager / SLA", "Détient l'état global, les jalons et la piste d'audit")
+  Container(hitl, "Porte HITL / Intent Gate", "Approbation & Audit", "Valide les seuils légaux et irréversibles")
+}
+
+System_Boundary(domaine_a, "Domaine A — Analyse") {
+  ContainerQueue(bus_a, "Bus intra-domaine A", "Kafka / NATS", "Sujets privés (ce_ttl borné, DLQ locale)")
+  Container(enrichisseur, "Agent Enrichisseur", "Agent Harness", "Réagit à DemandeOuverte")
+  Container(evaluateur, "Agent Évaluateur", "Agent Harness", "Émet jalon AnalyseTerminée")
+}
+
+System_Boundary(domaine_b, "Domaine B — Conformité") {
+  ContainerQueue(bus_b, "Bus intra-domaine B", "Solace / Kafka", "Isolation par Message VPN / ACL")
+  Container(kyc, "Agent Contrôle KYC", "Agent Harness", "Vérification sous contrat")
+  Container(mcp_b, "MCP Gateway Domaine B", "Façade SoR", "Écriture idempotente sur System of Record")
+}
+
+Rel_R(orch, hitl, "3. Contrôle réglementaire")
+Rel_D(orch, bus_a, "1. Commande (AsyncAPI send)")
+Rel_D(bus_a, enrichisseur, "Souscription")
+Rel_R(enrichisseur, evaluateur, "Événement interne (hop + 1)")
+Rel_U(evaluateur, orch, "2. Jalon AnalyseTerminée")
+
+Rel_D(orch, bus_b, "4. Commande engagement")
+Rel_D(bus_b, kyc, "Souscription")
+Rel_R(kyc, mcp_b, "Outils (MCP)")
+Rel_U(kyc, orch, "5. Jalon final DossierClôturé")
+
+Lay_R(domaine_a, domaine_b)
+@enduml

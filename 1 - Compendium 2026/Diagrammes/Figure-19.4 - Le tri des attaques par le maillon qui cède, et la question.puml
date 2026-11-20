@@ -1,0 +1,54 @@
+' Figure 19.4 — Le tri des attaques par le maillon qui cède, et la question de la grille en défaut (Q-A à Q-D, plus la composition hors grille, Q-E relevant de l’imputabilité juridique).
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 6
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 13
+skinparam backgroundColor #FFFFFF
+skinparam legendBackgroundColor #F8F5F0
+skinparam legendBorderColor #D6D3CD
+skinparam legendBorderThickness 1
+
+rectangle "CINQ MAILLONS, QUATRE QUESTIONS EN DÉFAUT (Q-A À Q-D, PLUS LA COMPOSITION)" as CADRE #FFFDF9;line:9A3412 {
+  rectangle M1 #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**Q-A**</color>   **L'identifiant**
+    Jeton porteur non lié à l'appelant, à l'appareil ni à la session — compromission de jetons d'application tierce, août 2025.
+    <color:#57534E>l'identifiant n'est pas résistant à la détention par un tiers</color>
+  ]
+
+  rectangle M2 #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**Q-B**</color>   **La provenance**
+    Empoisonnement à la publication, en amont de toute vérification ; entrée de mémoire ou document récupéré sans origine vérifiable.
+    <color:#57534E>extension de la grille aux sources</color>
+  ]
+
+  rectangle M3 #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**Q-C**</color>   **Le mandat**
+    L'instruction inter-agents fait agir le mandataire hors du mandat qu'il détient.
+    <color:#57534E>chaîne de mandat non interrogeable à l'exécution</color>
+  ]
+
+  rectangle M4 #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**Q-D**</color>   **Les bornes**
+    Absence de réduction de portée entre mandant et mandataire ; invocation d'outils inaccessibles à l'utilisateur.
+    <color:#57534E>bornes de privilège non opposables</color>
+  ]
+
+  rectangle M5 #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**—**</color>   **La composition**
+    Le détournement réussit même lorsque les agents pris isolément ne sont pas vulnérables.
+    <color:#57534E>aucune question de la grille ne porte sur l'assemblage</color>
+  ]
+
+  M1 -[hidden]down-> M2
+  M2 -[hidden]down-> M3
+  M3 -[hidden]down-> M4
+  M4 -[hidden]down-> M5
+}
+
+legend
+  Chaque cellule du tableau source porte LA BORNE DE SON ENTRÉE, et la figure ne la reprend pas : une attaque documentée par une
+  préimpression non revue et un incident daté ne s'opposent pas au même régime de preuve. Se reporter au tableau pour la borne.
+endlegend
+@enduml

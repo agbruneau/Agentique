@@ -1,0 +1,43 @@
+' Ouvrage : 1 - Compendium 2026
+' Chapitre : 39 · Le cycle de vie opérationnel : évaluation continue, dérive et incident (p. 456)
+' Figure : Figure 39.1 — Les trois dérives traitées par la section et la quatrième source relevée en front ouvert (§ 39.2.1 à § 39.2.4).
+@startuml
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+skinparam defaultFontName SansSerif
+skinparam roundcorner 6
+skinparam package {
+    BackgroundColor #fdfbf7
+    BorderColor #d4cfc7
+    FontColor #9c3d14
+}
+skinparam rectangle {
+    BackgroundColor #f7f4ee
+    BorderColor #b8b4ac
+    FontColor #1f1f1f
+}
+skinparam note {
+    BackgroundColor #faf8f4
+    BorderColor #b8b4ac
+    FontColor #333333
+}
+
+package "TROIS DÉRIVES DU SOCLE ET UNE QUATRIÈME SOURCE RELEVÉE (FRONT OUVERT)" {
+    rectangle "<color:#9c3d14><b>1</b></color>   <b>Dérive d'outil</b>\n\nLa mieux documentée, parce qu'un chapitre l'a instruite.\n\n<color:#666666>§ 39.2.1</color>" as D1
+    rectangle "<color:#9c3d14><b>2</b></color>   <b>Dérive de modèle</b>\n\nN'est pas au socle — le mot ne doit pas faire croire\nl'inverse.\n\n<color:#666666>§ 39.2.2</color>" as D2
+
+    rectangle "<color:#9c3d14><b>3</b></color>   <b>Dérive d'autonomie</b>\n\nNommée par les cadres ; le seul relevé d'instrumentation\nne l'instrumente pas.\n\n<color:#666666>§ 39.2.3</color>" as D3
+    rectangle "<b>Quatrième source (front ouvert)</b>\n\nMémoire réécrite par modèles auxiliaires · relève [C] hors socle.\n\n<color:#666666>§ 39.2.4</color>" as D4
+
+    D1 -[hidden]right-> D2
+    D3 -[hidden]right-> D4
+    D1 -[hidden]down-> D3
+    D2 -[hidden]down-> D4
+}
+
+note bottom
+LES QUATRE NE SONT PAS DOCUMENTÉES AU MÊME DEGRÉ. Une seule est instruite par un chapitre ; une n'est pas au socle et le mot
+ne doit pas faire croire l'inverse ; une est nommée par les cadres sans être instrumentée ; la quatrième est portée par une relève [C]
+hors socle (front ouvert).
+end note
+@enduml

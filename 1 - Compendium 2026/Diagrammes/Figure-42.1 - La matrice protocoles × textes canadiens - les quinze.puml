@@ -1,0 +1,29 @@
+' Figure 42.1 — La matrice protocoles × textes canadiens : les quinze croisements sans lien documenté
+@startuml
+skinparam backgroundColor #FAF8F5
+skinparam shadowing false
+skinparam defaultFontName "DejaVu Sans"
+skinparam titleFontColor #8B2E0B
+skinparam rectangleBorderColor #BBBBBB
+skinparam rectangleBackgroundColor #FAF8F5
+skinparam legendBackgroundColor #FBF9F5
+skinparam legendBorderColor #BBBBBB
+
+title CE QUE LES PROTOCOLES PORTENT DES EXIGENCES
+
+rectangle M [
+|= |= Agent-outil |= Agent-agent |= Paiement agentique |
+| **E-23 · gouvernance et surveillance** | — | — | — |
+| **Ligne directrice IA de l'AMF** | — | — | — |
+| **Art. 12.1 — informer, expliquer, réviser** | substrat typé de frontière (inférence) | cartes signées = identité d'appelant | · |
+| **ACVM 11-348 — adaptativité** | — | — | — |
+| **Cadre bancaire — interface d'accès** | — | — | — |
+]
+
+legend bottom
+  · aucun lien documenté au socle (15 croisements). Se reporter au Tableau 42.1 pour chaque cellule.
+  ----
+  Une case vide n'est pas un défaut du protocole : aucun de ces protocoles n'a été écrit pour répondre à un texte canadien.
+  Le résultat n'est pas un palmarès, c'est une carte de ce que l'architecture devra compenser (§ 42.4).
+endlegend
+@enduml

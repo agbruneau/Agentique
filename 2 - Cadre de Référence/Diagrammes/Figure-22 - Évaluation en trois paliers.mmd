@@ -1,0 +1,40 @@
+%% Figure 22 — Évaluation en trois paliers (2 - Cadre de Référence, ch. 10, p. 180)
+%% Source : cadre CRE-IA-2026-01
+flowchart TB
+    subgraph P3[" "]
+        direction LR
+        E3["<b>Étage E3</b><br/>Production, en continu<br/>échantillon 5–10 %"]
+        M3["<b>Mesure en production</b><br/>100 % des traces en erreur, relance ou refus<br/>d’approbation; juges automatisés hors du chemin<br/>critique et revue humaine; détection de dérive"]
+        E3 --- M3
+    end
+
+    subgraph P2[" "]
+        direction LR
+        E2["<b>Étage E2 — Trajectoires</b><br/>préproduction, jeu de référence<br/>50 scénarios au moins, cas adverses"]
+        M2["<b>Mesure de trajectoire</b><br/>bons outils, bon ordre, bons arguments;<br/>ancrage factuel dans les résultats d’outils;<br/>respect des garde-fous et du budget"]
+        E2 --- M2
+    end
+
+    subgraph P1[" "]
+        direction LR
+        E1["<b>Étage E1 — Contrats déterministes</b><br/>à chaque modification : schémas MCP, cartes<br/>d’agent, outils simulés, règles de passerelle"]
+        M1["<b>Mesure déterministe</b><br/>tests de contrat et d’instantané du catalogue;<br/>tests d’injection de fautes des sagas;<br/>tests des politiques de la passerelle"]
+        E1 --- M1
+    end
+
+    Note["Tout changement de modèle, d’invite, d’outil ou de version de protocole relance les étages E1 et E2."]
+
+    P3 ~~~ P2 ~~~ P1 ~~~ Note
+
+    classDef wrap fill:transparent,stroke:none
+    classDef e3 fill:#0f2744,stroke:#0f2744,color:#ffffff
+    classDef e2 fill:#0f7682,stroke:#0f7682,color:#ffffff
+    classDef e1 fill:#1b5e9e,stroke:#1b5e9e,color:#ffffff
+    classDef desc fill:#f8fafc,stroke:#cbd5e1,color:#0f2744,text-align:left
+    classDef foot fill:transparent,stroke:none,color:#5a469b
+    class P3,P2,P1 wrap
+    class E3 e3
+    class E2 e2
+    class E1 e1
+    class M3,M2,M1 desc
+    class Note foot

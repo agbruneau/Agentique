@@ -1,0 +1,48 @@
+' Ouvrage : 1 - Compendium 2026
+' Chapitre : 29 · Le pont : des contraintes réglementaires aux frames déterministes (p. 335)
+' Figure : Figure 29.1 — Six exemples tirés de la table de traduction (quatre attentes d’E-23 et deux obligations de l’article 12.1) : ce qu’ils imposent au cadre, et le statut du lien.
+@startuml
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+skinparam defaultFontName SansSerif
+skinparam roundcorner 6
+skinparam rectangle {
+    BackgroundColor #f7f4ee
+    BorderColor #b8b4ac
+    FontColor #1f1f1f
+}
+skinparam package {
+    BackgroundColor #fdfbf7
+    BorderColor #d4cfc7
+    FontColor #9c3d14
+}
+skinparam note {
+    BackgroundColor #faf8f4
+    BorderColor #b8b4ac
+    FontColor #333333
+}
+
+package "SIX EXIGENCES, ET CE QUE LE CADRE DOIT PORTER" {
+    rectangle "<color:#9c3d14><b>E-23</b></color>   <b>Inventaire</b>\n\nUn inventaire d'entreprise des modèles à risque non\nnégligeable, exact et tenu à jour.\n\n<color:#666666>le cadre doit porter l'ensemble de ce qui peut être invoqué</color>" as E1
+    rectangle "<color:#9c3d14><b>E-23</b></color>   <b>Cotation</b>\n\nUne cote de risque par modèle ; le degré d'autonomie est\nun facteur qualitatif.\n\n<color:#666666>la cote doit être connue au point d'invocation</color>" as E2
+
+    rectangle "<color:#9c3d14><b>E-23</b></color>   <b>Cycle de vie</b>\n\nCinq composantes, « pas nécessairement séquentielles » —\ndont la mise hors service.\n\n<color:#666666>la mise hors service s'interpose entre la décision et</color>\n<color:#666666>l'invocation</color>" as E3
+    rectangle "<color:#9c3d14><b>E-23</b></color>   <b>Documentation</b>\n\nUsages approuvés, limites, dépendances, sources de\ndonnées.\n\n<color:#666666>l'usage approuvé doit être opposable, donc porté par ce qui</color>\n<color:#666666>autorise</color>" as E4
+
+    rectangle "<color:#9c3d14><b>Art. 12.1</b></color>   <b>Informer</b>\n\nAu plus tard au moment où l'entreprise informe la\npersonne de la décision · sans demande préalable.\n\n<color:#666666>la décision et sa communication doivent être des</color>\n<color:#666666>événements émis, identifiables et datés</color>" as A1
+    rectangle "<color:#9c3d14><b>Art. 12.1</b></color>   <b>Présenter ses observations</b>\n\nL'occasion de présenter ses observations à un membre du\npersonnel en mesure de réviser la décision.\n\n<color:#666666>un point de reprise, et des effets aval bornés — donc</color>\n<color:#666666>défaisables</color>" as A2
+
+    E1 -[hidden]right-> E2
+    E3 -[hidden]right-> E4
+    A1 -[hidden]right-> A2
+    E1 -[hidden]down-> E3
+    E3 -[hidden]down-> A1
+    E2 -[hidden]down-> E4
+    E4 -[hidden]down-> A2
+}
+
+note bottom
+LE STATUT DU LIEN EST LA COLONNE QUI COMPTE. Plusieurs liens sont des INFÉRENCES D'AUTEUR, un est une LACUNE OUVERTE — le
+contenu de la ligne directrice de l'AMF n'est pas au socle, et rien n'en est dérivable. Traduire n'est pas lire (§ 29.0).
+end note
+@enduml

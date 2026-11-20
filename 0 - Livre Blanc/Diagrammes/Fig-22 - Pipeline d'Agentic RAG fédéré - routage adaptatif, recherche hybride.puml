@@ -1,0 +1,34 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 22 (p. 86)
+' Légende : Pipeline d’Agentic RAG fédéré : routage adaptatif, recherche hybride RRF, Text-to-SQL gouverné et GraphRAG
+
+@startuml
+!include <C4/C4_Component>
+
+LAYOUT_LEFT_RIGHT()
+
+Container(node, "Nœud cognitif", "Agent Harness", "Formule requête initiale ou itérative")
+
+Container_Boundary(pipe, "Pipeline Agentic RAG\nfédéré") {
+  Component(rout, "Routeur et planificateur", "Classification d'intention", "Décompose la requête et sélectionne les moteurs")
+  Component(hyb, "Recherche hybride", "Contextual BM25 + Vecteurs", "Fusion RRF (k=60) puis Cross-Encoder")
+  Component(graph, "Moteur GraphRAG", "Entités + Communautés", "Traversée multi-sauts ou synthèse globale Map-Reduce")
+  Component(sql, "Text-to-SQL gouverné", "Modèle sémantique + AST", "Compile SQL contraint sur métriques et jointures")
+  Component(crag, "Évaluateur CRAG", "Confiance à 3 verdicts", "Correct / Ambigu / Incorrect et filtrage de bandes")
+}
+
+System_Ext(ctx, "Fenêtre de contexte", "Preuves sourcées compactes")
+System_Ext(dw, "Entrepôt analytique", "Vues sémantiques en lecture seule")
+
+Rel(node, rout, "Soumet requête")
+Rel(rout, hyb, "Texte / Réf. exactes")
+Rel(rout, graph, "Thèmes globaux / liens multi-sauts")
+Rel(rout, sql, "Agrégations / KPI chiffrés")
+Rel(hyb, crag, "Top-K fusionnés")
+Rel(graph, crag, "Synthèse graphe")
+Rel(sql, crag, "Résultat typé")
+Rel(sql, dw, "Exécute lecture seule")
+Rel(crag, rout, "Incorrect : réécrit / réplique")
+Rel(crag, ctx, "Correct : injecte preuves")
+
+@enduml

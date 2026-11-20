@@ -1,0 +1,84 @@
+' Fig. 51. – Les six étapes du cycle de vie d’un agent et la décision prise à chacune. Le guide québécois propose un parcours en trois étapes; les autres sources lues le portent à six.
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam rectangle {
+  BackgroundColor #F8FAFC
+  BorderColor #94A3B8
+}
+
+rectangle E1 #EFF6FF;line:2563EB [
+  **Qualification**
+]
+rectangle E2 #EFF6FF;line:2563EB [
+  **Pilote**
+]
+rectangle E3 #EFF6FF;line:2563EB [
+  **Production**
+]
+rectangle E4 #EFF6FF;line:2563EB [
+  **Exploitation**
+]
+rectangle E5 #EFF6FF;line:2563EB [
+  **Changement**
+]
+rectangle E6 #EFF6FF;line:2563EB [
+  **Retrait**
+]
+
+E1 -[#2563EB]right-> E2
+E2 -[#2563EB]right-> E3
+E3 -[#2563EB]right-> E4
+E4 -[#2563EB]right-> E5
+E5 -[#2563EB]right-> E6
+
+rectangle D1 #F8FAFC;line:94A3B8 [
+  Une solution
+  moins autonome
+  suffirait-elle ?
+]
+rectangle D2 #F8FAFC;line:94A3B8 [
+  Propriétaire,
+  accès limités,
+  journaux,
+  critères d'arrêt,
+  plafond de
+  consommation
+  en place ?
+]
+rectangle D3 #F8FAFC;line:94A3B8 [
+  Mise en service
+  graduelle,
+  approuvée par
+  une autorité
+  imputable
+]
+rectangle D4 #F8FAFC;line:94A3B8 [
+  Les usages réels
+  correspondent-ils
+  aux usages
+  autorisés ?
+]
+rectangle D5 #F8FAFC;line:94A3B8 [
+  Ce changement
+  déclenche-t-il
+  une nouvelle
+  revue ?
+]
+rectangle D6 #F8FAFC;line:94A3B8 [
+  Accès supprimés,
+  documents
+  archivés,
+  inscription
+  conservée
+]
+
+E1 -[#94A3B8]down- D1
+E2 -[#94A3B8]down- D2
+E3 -[#94A3B8]down- D3
+E4 -[#94A3B8]down- D4
+E5 -[#94A3B8]down- D5
+E6 -[#94A3B8]down- D6
+@enduml

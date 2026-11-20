@@ -1,0 +1,35 @@
+---
+title: "Basculement Architectural : Du Copilote Synchrone au Maillage d'Exécution Asynchrone"
+---
+%% Fig. 4. – Basculement architectural de la Génération 1 (copilote synchrone) vers la Génération 3 (maillage d'exécution asynchrone gouverné).
+flowchart TB
+    subgraph G1["Génération 1 (2023–2024) — Assistance Conversationnelle Synchrone (UI-First, Sans État Durable)"]
+        direction LR
+        U["Utilisateur Humain<br/>Attend devant l'écran"] --> Cop["Copilote / Chatbot<br/>Prompt monolithique + LLM"]
+        Cop --> RAG["RAG Documentaire<br/>Lecture seule vectorielle"]
+        RAG ~~~ Lim["Limite structurelle :<br/>L'humain reste le<br/>seul intégrateur SI"]
+    end
+
+    subgraph G3["Génération 3 (2026–2027) — Main-d'Œuvre d'Exécution Asynchrone Gouvernée (Event-Driven & Durable)"]
+        direction TB
+        subgraph G3Row[" "]
+            direction LR
+            Dec["Déclencheurs<br/>• Événement Kafka/OT<br/>• Alerte Webhook / SLA<br/>• Intention Humaine"] --> Plan["Plan de Contrôle Durable<br/>Temporal / Restate / Maestro<br/>État persisté • Saga • Quotas<br/>Politiques PDP (OPA/Cedar)"]
+            Plan --> Cel["Cellules Agentiques Bornées<br/>Délégation horizontale A2A v1.0<br/>Identité NHI + OAuth 2.1 OBO<br/>Routage hybride SLM / LLM"]
+            Cel --> Act["Actions & Outils<br/>Serveurs MCP • API<br/>CUA (Legacy) • OPC-UA<br/>Clés d'idempotence"]
+        end
+        Sup["Supervision Human-on-the-Loop (HOTL via AG-UI / CIBA) & Télémétrie OpenTelemetry (gen_ai.*)<br/>Escalade uniquement sur seuil de risque ou anomalie • Audit immuable de bout en bout"]
+        Plan ~~~ Sup
+        Cel ~~~ Sup
+        Act ~~~ Sup
+    end
+
+    G1 ~~~ G3
+
+    style G1 fill:#F8FAFC,stroke:#94A3B8
+    style G3 fill:#EFF6FF,stroke:#2563EB
+    style G3Row fill:transparent,stroke:transparent
+    style Lim fill:#FEF2F2,stroke:#DC2626
+    style Plan fill:#FFFFFF,stroke:#2563EB
+    style Cel fill:#FFFFFF,stroke:#16A34A
+    style Sup fill:#FFF7ED,stroke:#C2410C

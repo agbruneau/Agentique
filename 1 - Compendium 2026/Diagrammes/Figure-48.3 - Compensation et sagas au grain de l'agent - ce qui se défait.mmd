@@ -1,0 +1,21 @@
+%% Figure 48.3 — Compensation et sagas au grain de l'agent : ce qui se défait et ce qui se compense
+flowchart TB
+    subgraph SAGA["QUAND UNE ÉTAPE ÉCHOUE À MI-PARCOURS"]
+        direction LR
+        E1["<b>Étape 1</b><br/>engagée, et son effet est acquis"]
+        E2["<b>Étape 2</b><br/>échoue (×)"]
+        C1["<b>Compensation 1</b><br/>une seconde opération, avec ses<br/>propres effets"]
+        E1 --> E2 -.->|"×"| C1
+    end
+
+    REGLE["<b>L'étape échoue : ce qui précède ne se défait pas, il se compense —<br/>en sens inverse, une opération à la fois.</b>"]
+    NOTE["UNE COMPENSATION EST UNE SECONDE OPÉRATION, jamais une annulation : elle est sémantique<br/>et non transactionnelle, et elle a ses propres effets. Le seuil d'irréversibilité du<br/>ch. 31 § 31.1.1 est ce qui la rend nécessaire, et ce qui la rend insuffisante."]
+    SAGA ~~~ REGLE ~~~ NOTE
+
+    classDef step fill:#F5F1EB,stroke:#BBBBBB,color:#222222,text-align:left
+    classDef regle fill:#FAF8F5,stroke:#8B2E0B,color:#222222,text-align:left
+    classDef note fill:#FBF9F5,stroke:#CCCCCC,color:#444444,text-align:left
+    class E1,E2,C1 step
+    class REGLE regle
+    class NOTE note
+    style SAGA fill:#FAF8F5,stroke:#8B2E0B,color:#8B2E0B

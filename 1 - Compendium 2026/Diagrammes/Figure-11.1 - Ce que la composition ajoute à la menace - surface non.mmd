@@ -1,0 +1,21 @@
+%% Figure 11.1 — Ce que la composition ajoute à la menace : surface non composable (§ 11.1.1), frontière franchie (§ 11.1.3), effet cumulé (§ 11.2.2).
+%% Source : 1 - Compendium 2026, Chapitre 11 (page 131)
+
+%%{init: {'flowchart': {'wrappingWidth': 900}}}%%
+flowchart TB
+    subgraph SG_MEN["CE QUE LA COMPOSITION AJOUTE À LA MENACE"]
+        direction LR
+        C1["<b>1 · La surface n'est pas composable</b><br/><br/>Deux systèmes sûrs séparément ne<br/>font pas un assemblage sûr.<br/><br/><i>§ 11.1.1</i>"]
+        C2["<b>2 · La frontière est franchie</b><br/><br/>Ce qui traverse un protocole<br/>échappe au périmètre qui le<br/>validait.<br/><br/><i>§ 11.1.3</i>"]
+        C3["<b>3 · L'effet se cumule</b><br/><br/>Une défaillance locale se propage<br/>en cascade dans le graphe.<br/><br/><i>§ 11.2.2</i>"]
+    end
+
+    NOTE["LA TRIADE LÉTALE N'EST PAS POSÉE ICI : son siège est le ch. 19 § 19.2, qui en porte le modèle de menace, les conditions et<br/>les incidents. Ce chapitre n'en traite que l'amplification, propre à la couche d'interopérabilité — et l'amplification n'est<br/>pas la menace."]
+
+    SG_MEN ~~~ NOTE
+
+    classDef card fill:#FAF7F2,stroke:#C4BEB5,stroke-width:1px,color:#222222,text-align:left;
+    classDef noteBox fill:#F7F5F0,stroke:#C4BEB5,stroke-width:1px,color:#333333,text-align:left;
+    class C1,C2,C3 card;
+    class NOTE noteBox;
+    style SG_MEN fill:#FFFFFF,stroke:none,color:#9E3A14

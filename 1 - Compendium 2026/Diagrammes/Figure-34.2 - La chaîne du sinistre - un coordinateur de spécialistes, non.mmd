@@ -1,0 +1,21 @@
+%% Ouvrage : 1 - Compendium 2026
+%% Chapitre : 34 · Les sous-domaines financiers : banque, assurance, patrimoine (p. 387)
+%% Figure : Figure 34.2 — La chaîne du sinistre : un coordinateur de spécialistes, non un décideur unique.
+flowchart TB
+    subgraph S["QUATRE TEMPS, ET QUATRE SOUS-TÂCHES ORCHESTRÉES"]
+        direction LR
+        N1["<b>Déclaration</b><br/>le premier avis, et<br/>les pièces qui<br/>l'accompagnent"]
+        N2["<b>Instruction</b><br/>extraction de pièces,<br/>évaluation des<br/>dommages, détection de<br/>fraude"]
+        N3["<b>Règlement</b><br/>calcul d'indemnité —<br/>et il est irréversible"]
+        N4["<b>Subrogation</b><br/>le recours, après coup"]
+        N1 --> N2 --> N3 --> N4
+    end
+    NOTE["CHAQUE SOUS-TÂCHE COMPORTE UN RISQUE DE CASCADE : une erreur propagée le long de la chaîne aboutit à un RÈGLEMENT<br/>IRRÉVERSIBLE. Le patron directeur est celui du coordinateur de spécialistes — l'agent orchestre, il ne décide pas seul."]
+    S ~~~ NOTE
+
+    style S fill:#fdfbf7,stroke:#d4cfc7,color:#9c3d14
+    style N1 fill:#f7f4ee,stroke:#b8b4ac,color:#1a1a1a
+    style N2 fill:#f7f4ee,stroke:#b8b4ac,color:#1a1a1a
+    style N3 fill:#f7f4ee,stroke:#9c3d14,color:#1a1a1a
+    style N4 fill:#f7f4ee,stroke:#b8b4ac,color:#1a1a1a
+    style NOTE fill:#faf8f4,stroke:#b8b4ac,color:#444444

@@ -1,0 +1,44 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 10 (p. 42)
+' Légende : Séquence de récupération en deux étages et cascade d’inférence SLM vers Frontier LLM
+
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam sequence {
+  ArrowColor #2B4C65
+  LifeLineBorderColor #64748B
+  LifeLineBackgroundColor #FFFFFF
+  ParticipantBorderColor #2B4C65
+  ParticipantBackgroundColor #F1F6F9
+  GroupBorderColor #334155
+  GroupBackgroundColor #FFFFFF
+  GroupHeaderFontColor #0F172A
+}
+
+autonumber
+
+participant "Boucle\nAgent Harness" as harness
+participant "Récupération 2 étages\n(Bi-Encoder + Cross-Encoder)" as rag
+participant "Routeur / Cascade\n(SLM vs Frontier)" as router
+participant "SLM spécialisé\n(≤ 14B paramètres)" as slm
+participant "Frontier LLM\n(Escalade complexe)" as frontier
+
+harness -> rag : Requête métier normalisée
+rag -> rag : Bi-Encoder (rappel vectoriel top 50-100)
+rag -> rag : Cross-Encoder (réordonnancement top 3-5)
+rag --> harness : Extraits contextuels compacts
+
+harness -> router : Tâche typée + contexte ancré
+router -> slm : Inférence rapide (ex. extraction / routage\nJSON)
+slm --> router : Réponse structurée + score de confiance
+
+alt Confiance >= seuil et schéma valide
+  router --> harness : Résultat retenu (coût et latence réduits)
+else Ambiguïté ou échec de validation
+  router -> frontier : Escalade avec trace et contexte borné
+  frontier --> router : Raisonnement résiduel structuré
+  router --> harness : Résultat consolidé
+end
+
+@enduml

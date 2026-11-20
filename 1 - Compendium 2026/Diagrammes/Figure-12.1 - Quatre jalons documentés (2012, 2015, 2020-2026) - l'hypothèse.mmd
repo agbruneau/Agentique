@@ -1,0 +1,22 @@
+%% Figure 12.1 — Quatre jalons documentés (2012, 2015, 2020-2026) : l’hypothèse humaine, absente des définitions, se loge dans les flux.
+%%{init: {'flowchart': {'wrappingWidth': 900}}}%%
+flowchart TB
+    subgraph FRISE["QUATRE JALONS DOCUMENTÉS, ET AUCUNE CONTINUITÉ"]
+        direction LR
+        M1["<b>2012 — RFC 6749</b><br/>le détenteur de ressource est « une entité » ;<br/>« utilisateur final » est réservé<br/>au cas où c'est une personne"]
+        M2["<b>... — L'hypothèse humaine</b><br/>elle n'est pas dans les définitions :<br/>elle est dans le flux"]
+        M3["<b>... — Identité de charge</b><br/>l'exécution reçoit une identité propre,<br/>à courte durée de vie"]
+        M4["<b>2026 — L'agent</b><br/>identité stable, comportement<br/>variable — § 12.3"]
+        M1 --> M2 --> M3 --> M4
+    end
+
+    NOTE["Chacun a sa date, son statut et sa borne. Les fondre en une continuité produirait un RÉCIT<br/>là où le socle ne porte que des jalons — et c'est exactement ce que cette figure refuse de faire."]
+
+    FRISE ~~~ NOTE
+
+    style FRISE fill:#FFFDF9,stroke:#9A3412,stroke-width:1px,color:#9A3412
+    style M1 fill:#FAF6F0,stroke:#9A3412,stroke-width:2px,color:#1F2937
+    style M2 fill:#FFFFFF,stroke:#9A3412,stroke-width:2px,stroke-dasharray:5 3,color:#1F2937
+    style M3 fill:#FAF6F0,stroke:#9A3412,stroke-width:2px,color:#1F2937
+    style M4 fill:#FAF6F0,stroke:#9A3412,stroke-width:2px,color:#1F2937
+    style NOTE fill:#F8F5F0,stroke:#B8B2A6,stroke-width:1px,color:#374151

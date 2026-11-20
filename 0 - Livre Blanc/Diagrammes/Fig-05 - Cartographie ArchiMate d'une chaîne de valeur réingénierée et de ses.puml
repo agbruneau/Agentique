@@ -1,0 +1,43 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 5 (p. 26)
+' Légende : Cartographie ArchiMate d’une chaîne de valeur réingénierée et de ses capacités augmentées
+
+@startuml
+!include <archimate/Archimate>
+
+left to right direction
+
+Motivation_Goal(goal, "Réduire le délai de cycle\nde bout en bout")
+Strategy_ValueStream(vs, "Chaîne de valeur :\nTraitement de dossier")
+
+package "Réalisation métier et applicative" {
+  Business_Actor(gest, "Gestionnaire métier\n«Human-on-the-Loop»")
+  Business_Process(proc, "Processus réingénieré\npar exception")
+  Application_Component(triage, "Agent de triage\net extraction\n«Cognitive Actor»")
+  Application_Component(orch, "Orchestrateur borné\n«Cognitive Actor»")
+  Application_Component(sor, "Système central\n(SoR)\n«Deterministic SoR»")
+}
+
+package "Capacités mobilisées" {
+  Strategy_Capability(cap2, "Instruction et\ncontrôle conformité\n«Hybrid 80/20»")
+  Strategy_Capability(cap3, "Décision financière\net règlement\n«Deterministic Core»")
+  Strategy_Capability(cap1, "Capture et triage\nsémantique\n«Agentic Capability»")
+}
+
+vs ..|> goal : réalise
+proc ..|> vs : matérialise
+Rel_Assignment_Right(gest, proc, "supervise")
+
+triage --> orch : contrat
+orch --> gest : escalade
+orch .[dotted].. sor : via passerelle
+
+sor --> cap3 : exécute
+orch --> cap2 : orchestre
+triage --> cap1 : augmente
+
+vs *-- cap1 : mobilise
+cap2 --> vs : mobilise
+cap3 --> vs : mobilise
+
+@enduml

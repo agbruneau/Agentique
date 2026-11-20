@@ -1,0 +1,32 @@
+%% Figure 26 — Réponse à un incident agentique (2 - Cadre de Référence, ch. 12, p. 225)
+%% Source : cadre CRE-IA-2026-01
+%%{init: {'flowchart': {'wrappingWidth': 900}}}%%
+flowchart TB
+    subgraph Temps[" "]
+        direction LR
+        S1["<b>1 · Contenir</b><br/>Coupe-circuit de l’agent;<br/>jetons et accès révoqués;<br/>bacs à sable conservés"]
+        S2["<b>2 · Préserver</b><br/>Gel des traces, de l’audit,<br/>de la mémoire, des bacs à sable,<br/>des tâches A2A, des approbations;<br/>purges suspendues"]
+        S3["<b>3 · Évaluer et aviser</b><br/>Impact et rayon d’atteinte;<br/>incident de confidentialité :<br/>registre, avis à la CAI et aux<br/>personnes si risque de préjudice<br/>sérieux, avec diligence"]
+        S4["<b>4 · Corriger et compenser</b><br/>Sagas en cours compensées;<br/>actions terminées réparées<br/>par le métier; correctif;<br/>relance des étages d’évaluation"]
+        S5["<b>5 · Apprendre</b><br/>Retour d’expérience sans<br/>blâme; mise à jour des<br/>contrôles et du cadre"]
+        S1 --> S2 -.->|"en parallèle"| S3 --> S4 --> S5
+    end
+
+    Def["Incident agentique : action non autorisée, fuite de données, décision erronée à effet,<br/>contournement de garde-fou ou emballement des coûts"]
+
+    Temps ~~~ Def
+
+    classDef wrap fill:transparent,stroke:none
+    classDef t1 fill:#fce8eb,stroke:#9c2f39,stroke-width:2px,color:#0f2744
+    classDef t2 fill:#fef3dc,stroke:#b45309,stroke-width:2px,color:#0f2744
+    classDef t3 fill:#ede8f5,stroke:#5a469b,stroke-width:2px,color:#0f2744
+    classDef t4 fill:#e2f4f0,stroke:#0f7682,stroke-width:2px,color:#0f2744
+    classDef t5 fill:#e6f4ea,stroke:#28774e,stroke-width:2px,color:#0f2744
+    classDef defBox fill:#f1f5f9,stroke:#cbd5e1,color:#475569
+    class Temps wrap
+    class S1 t1
+    class S2 t2
+    class S3 t3
+    class S4 t4
+    class S5 t5
+    class Def defBox

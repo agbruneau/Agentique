@@ -1,0 +1,23 @@
+%% Figure 43.2 — Quand agentifier, quand s'abstenir
+flowchart TB
+    subgraph ARBRE["LA QUESTION SE POSE AVANT L'ARCHITECTURE"]
+        direction TB
+        Q{"<b>L'enchaînement peut-il être décidé d'avance ?</b>"}
+        OUI["<b>S'abstenir</b><br/>un cadre déterministe fait le travail,<br/>à coût prévisible et chemin testable · ch. 22 § 22.5"]
+        NON["<b>Agentifier, encadré</b><br/>le non-déterminisme apporte une valeur,<br/>et l'encadrement en borne le domaine · OO3 ou OO4"]
+        SEUIL["<b>Ne pas franchir</b><br/>autorisation et règlement restent déterministes ·<br/>ch. 36 § 36.2.1"]
+        Q -->|"oui"| OUI
+        Q -->|"non"| NON
+        Q -->|"au seuil d'irréversibilité"| SEUIL
+    end
+
+    NOTE["La grille est un CRITÈRE D'AUTEUR : le socle ne porte pas de règle d'abstention.<br/>Elle réordonne ce que les chapitres établissent · elle n'ajoute pas<br/>d'exigence, et elle ne dispense d'aucune."]
+    NON ~~~ NOTE
+
+    classDef question fill:#FAF8F5,stroke:#8B2E0B,color:#222222
+    classDef branch fill:#F5F1EB,stroke:#BBBBBB,color:#222222,text-align:left
+    classDef note fill:#FBF9F5,stroke:#CCCCCC,color:#444444,text-align:left
+    class Q question
+    class OUI,NON,SEUIL branch
+    class NOTE note
+    style ARBRE fill:#FAF8F5,stroke:#8B2E0B,color:#8B2E0B

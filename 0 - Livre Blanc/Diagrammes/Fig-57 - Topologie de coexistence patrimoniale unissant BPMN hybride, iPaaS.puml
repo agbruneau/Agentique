@@ -1,0 +1,37 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 57 (page 214)
+' Légende : Fig. 57. – Topologie de coexistence patrimoniale unissant BPMN hybride, iPaaS, AI/MCP Gateway et RPA confiné
+@startuml
+!include <C4/C4_Container>
+
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+
+Person(op, "Opérateur / Client", "SoE et portes HITL")
+
+System_Boundary(orch, "Orchestration hybride") {
+  Container(adhoc, "Sous-processus ad hoc (~)", "AI Agent Connector", "Boucle cognitive bornée sur outils déclarés")
+  Container(bpmn, "Moteur BPMN 2.0", "Camunda / Maestro", "Flux réglementaires, SLA et tâches humaines")
+}
+
+System_Boundary(med, "Médiation iPaaS & Passerelles") {
+  Container(gw, "AI & MCP Gateway", "Plan de contrôle", "Quotas jetons, OPA Intent Gate, télémétrie OTel et routage")
+  Container(ipaas, "iPaaS & API Management", "MuleSoft / Kong", "Flux ETL stables, Agent Registry et MCP Bridge")
+}
+
+System_Boundary(pat, "Exécution patrimoniale & SoR") {
+  Container(acl, "Couche Anti-Corruption", "ACL + CDC/CQRS", "Traduction sémantique, idempotence et projection")
+  Container(rpa, "Worker RPA confiné", "Desktop / Robot", "Écrans sans API uniquement, encapsulé en tâche bornée")
+  ContainerDb(sor, "Systems of Record", "ERP / Mainframe", "Autorité comptable et transactionnelle")
+}
+
+Rel_D(op, bpmn, "Initie dossier / HITL")
+Rel_L(bpmn, adhoc, "Délègue exception")
+Rel_D(adhoc, gw, "Appels modèles & MCP")
+Rel_D(bpmn, ipaas, "Appels haute volumétrie")
+Rel_D(bpmn, rpa, "Sous-tâche sans API")
+Rel_R(gw, ipaas, "Pont MCP Bridge")
+Rel_D(ipaas, acl, "Contrats typés")
+Rel_D(acl, sor, "CQRS / écriture idempotente")
+Rel_D(rpa, sor, "Action UI bornée")
+@enduml

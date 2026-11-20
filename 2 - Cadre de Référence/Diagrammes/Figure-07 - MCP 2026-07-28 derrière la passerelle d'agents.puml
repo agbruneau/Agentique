@@ -1,0 +1,53 @@
+' Figure 7 — MCP 2026-07-28 derrière la passerelle d'agents (2 - Cadre de Référence, ch. 6, p. 63)
+' Source : cadre CRE-IA-2026-01, d'après la spécification MCP 2026-07-28 [198]
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 11
+
+together {
+  rectangle "**Hôte MCP**\n//agent, orchestrateur ou poste//" as Hote #EDE8F5;line:6D28D9 {
+    rectangle "Client MCP no 1\n→ serveur CRM" as C1 #FFFFFF;line:CBD5E1
+    rectangle "Client MCP no 2\n→ serveur ERP" as C2 #FFFFFF;line:CBD5E1
+    rectangle "Client MCP no 3\n→ serveur SGED" as C3 #FFFFFF;line:CBD5E1
+    rectangle "Un client par point d’accès;\nl’hôte applique le consentement,\nl’approbation et les délais." as HoteNote #EDE8F5;line:EDE8F5
+  }
+
+  rectangle "**Passerelle d’agents**\n\n• valide le jeton (audience)\n• compare en-têtes et corps\n  Mcp-Method, Mcp-Name\n• filtre tools/list selon\n  les portées du jeton\n• applique paliers P0–P3\n• cache selon cacheScope\n• retire les clés _meta non admises\n• propage traceparent\n• bloque tout serveur\n  absent du catalogue\n• journalise chaque appel" as Passerelle #FEF3DC;line:B45309
+
+  rectangle "**Serveur MCP de domaine**" as Serveur #F1F5F9;line:64748B {
+    together {
+      rectangle "**<color:#B45309>Outils</color>**\n""tools/call""" as Outils #FEF3DC;line:B45309
+      rectangle "**<color:#0F7682>Ressources</color>**\n""resources/read""" as Ressources #E2F4F0;line:0F7682
+      rectangle "**<color:#1B5E9E>Invites</color>**\n""prompts/get""" as Invites #E6F0FA;line:1B5E9E
+    }
+    rectangle "Découverte : ""server/discover""\nContrats : JSON Schema 2020-12\nErreurs métier : ""isError: true""\nÉtat explicite par identifiant revalidé\nInteraction humaine : tâches et élicitation\n""InputRequiredResult → elicitation""\nExtensions (activation explicite) :\n""tasks · apps · auth (CIMD)""\nEMA : statut Évaluer, pilotes seulement (section 6.3)" as Specs #F1F5F9;line:F1F5F9
+  }
+}
+
+together {
+  rectangle "**<color:#93C5FD>Requête 2026-07-28 : autonome, sans session</color>**\n\n""POST /mcp · MCP-Protocol-Version: 2026-07-28 · Mcp-Method: tools/call · Mcp-Name: approvisionnement_creer_bon_commande""\n""Authorization: Bearer <jeton émis pour ce point d'accès de la passerelle>""\n""{"jsonrpc":"2.0","id":42,"method":"tools/call","params":{"name":"approvisionnement_creer_bon_commande","arguments":{…},""\n"""_meta":{"io.modelcontextprotocol/protocolVersion":"2026-07-28","traceparent":"00-…"}}}""" as Req #0F2744;text:E2E8F0;line:0F2744
+
+  rectangle "API OpenAPI, bases de données, SaaS, ERP, CRM" as Backend #E6EBF1;text:0F2744;line:CBD5E1
+}
+
+C1 -[hidden]down-> C2
+C2 -[hidden]down-> C3
+C3 -[hidden]down-> HoteNote
+
+Outils -[hidden]right-> Ressources
+Ressources -[hidden]right-> Invites
+Outils -[hidden]down-> Specs
+Ressources -[hidden]down-> Specs
+Invites -[hidden]down-> Specs
+
+C2 <-right-> Passerelle : Streamable\nHTTP + TLS
+Passerelle <-right-> Specs
+
+Specs -down-> Backend
+HoteNote -[hidden]down-> Req
+Passerelle -[hidden]down-> Req
+Req -[hidden]right-> Backend
+@enduml

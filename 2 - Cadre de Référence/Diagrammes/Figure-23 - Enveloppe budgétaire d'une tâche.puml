@@ -1,0 +1,34 @@
+' Figure 23 — Enveloppe budgétaire d'une tâche (2 - Cadre de Référence, ch. 10, p. 185)
+' Source : cadre CRE-IA-2026-01; valeurs illustratives
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 11
+
+card Enveloppe #FFFFFF;line:CBD5E1 [
+  **ENVELOPPE ATTRIBUÉE À LA DEMANDE (EXEMPLE)**
+
+  | **Jetons** | <back:#B45309><color:#B45309>----------------</color></back><back:#E2E8F0><color:#E2E8F0>----</color></back> | 41 200 / 50 000 | **Étapes** | <back:#0F7682><color:#0F7682>------------</color></back><back:#E2E8F0><color:#E2E8F0>--------</color></back> | 6 / 10 |
+  | **Coût** | <back:#0F7682><color:#0F7682>--------------</color></back><back:#E2E8F0><color:#E2E8F0>------</color></back> | 0,52 $ CA / 0,75 $ CA | **Appels d’outils** | <back:#0F7682><color:#0F7682>------------</color></back><back:#E2E8F0><color:#E2E8F0>--------</color></back> | 9 / 15 |
+  | **Durée** | <back:#0F7682><color:#0F7682>-------------</color></back><back:#E2E8F0><color:#E2E8F0>-------</color></back> | 38 s / 60 s | | | |
+]
+
+card Etapes #FFFFFF;line:CBD5E1 [
+  **CONSOMMATION DES JETONS PAR ÉTAPE**
+
+  | <#6B98C9> <color:#FFFFFF> 1 </color> | <#1B5E9E> <color:#FFFFFF> 2 · planification </color> | <#6B98C9> <color:#FFFFFF> 3 </color> | <#1B5E9E> <color:#FFFFFF> 4 · arbitrage </color> | <#6B98C9> <color:#FFFFFF> 5 </color> | <#1B5E9E> <color:#FFFFFF> 6 </color> | <#F1F5F9> <color:#64748B> marge restante </color> |
+
+  <color:#B45309>**80 % : alerte au responsable technique**</color>          <color:#9C2F39>**100 % : arrêt propre et escalade**</color>
+]
+
+together {
+  rectangle "<back:#6B98C9><color:#6B98C9>--</color></back> Modèle compact : triage, extraction, routage, appel d’outil simple\n<back:#1B5E9E><color:#1B5E9E>--</color></back> Modèle de raisonnement : planification complexe, arbitrage, ambiguïté critique" as Leg #F8FAFC;line:CBD5E1
+  rectangle "La passerelle de modèles tient l’enveloppe\net la décrémente à chaque étape;\nle coût est imputé au centre de coûts de la trace." as Note #FFFFFF;line:FFFFFF
+}
+
+Enveloppe -[hidden]down-> Etapes
+Etapes -[hidden]down-> Leg
+Leg -[hidden]right-> Note
+@enduml

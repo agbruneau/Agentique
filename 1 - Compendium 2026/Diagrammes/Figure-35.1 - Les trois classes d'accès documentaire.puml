@@ -1,0 +1,38 @@
+' Ouvrage : 1 - Compendium 2026
+' Chapitre : 35 · Études de cas : la production agentique canadienne (2025-2026) (p. 403)
+' Figure : Figure 35.1 — Les trois classes d’accès documentaire (classe 1 : 5 institutions à sources primaires accessibles ; classe 2 : 4 institutions en accès dégradé ; classe 3 : 1 institution sans source primaire, soit dix institutions totalisant douze entrées au socle), et ce que chacune autorise à écrire.
+@startuml
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+skinparam defaultFontName SansSerif
+skinparam roundcorner 6
+skinparam package {
+    BackgroundColor #fdfbf7
+    BorderColor #d4cfc7
+    FontColor #9c3d14
+}
+skinparam rectangle {
+    BackgroundColor #f7f4ee
+    BorderColor #b8b4ac
+    FontColor #1f1f1f
+}
+skinparam note {
+    BackgroundColor #faf8f4
+    BorderColor #b8b4ac
+    FontColor #333333
+}
+
+package "DIX INSTITUTIONS (DOUZE ENTRÉES AU SOCLE), TROIS CLASSES D'ACCÈS" {
+    rectangle "<color:#9c3d14><b>5</b></color>   <b>Sources primaires directement accessibles</b>\n\nTrois communiqués et deux rapports\nannuels.\n\n\n<color:#666666>aucune réserve d'accès</color>" as C1
+    rectangle "<color:#9c3d14><b>4</b></color>   <b>Accès dégradé</b>\n\nPage rendue par script vérifiée\npar index ; domaines refusant le\nchargement automatisé, lus sur\nmiroirs ; rapport trop volumineux\npour extraction complète.\n\n<color:#666666>la réserve accompagne chaque énoncé</color>" as C2
+    rectangle "<color:#9c3d14><b>1</b></color>   <b>Aucune source primaire</b>\n\nAbsence documentée.\n\n\n\n<color:#666666>non absence d'activité — § 35.8</color>" as C3
+
+    C1 -[hidden]right-> C2
+    C2 -[hidden]right-> C3
+}
+
+note bottom
+La troisième classe est une ABSENCE DOCUMENTÉE, non une absence d'activité (§ 35.8). Tout le chapitre se lit à travers cette
+échelle : un cas de la première classe et un cas de la troisième ne s'opposent pas au même régime de preuve.
+end note
+@enduml

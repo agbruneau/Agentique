@@ -1,0 +1,33 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 3 (p. 19)
+' Légende : Spectre d’autonomie opérationnelle (L0–L4) et transitions de supervision humaine
+
+@startuml
+title Spectre d'autonomie (L0-L4) et transitions de supervision humaine
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam state {
+  BackgroundColor #F1F6F9
+  BorderColor #2B4C65
+  ArrowColor #2B4C65
+  FontColor #0F172A
+}
+
+state "L0 — Déterministe (Workflow codé)" as L0 : Logique figée, zéro autonomie LLM; repli\nsûr par défaut
+state "L1 — Opérateur assisté (HITL strict)" as L1 : Suggestion ponctuelle; exécution sur\ncommande explicite
+state "L2 — Collaborateur guidé (HITL partagé)" as L2 : Plan proposé par l'agent; co-édition et\npassage de relais
+state "L3 — Exécuteur supervisé (HITL sélectif + HOTL)" as L3 : Boucle bornée; arrêt sur effet irréversible\nou seuil
+state "L4 — Autonomie bornée (HOTL + certificat)" as L4 : Enveloppe réversible; vigilance continue\net arrêt sûr
+
+[*] --> L0
+L0 --> L1 : Ambiguïté sémantique
+L1 --> L2 : Itération rapide
+L2 --> L3 : Outils compensables
+L3 --> L2 : Mutation irréversible (HITL)
+L3 --> L0 : Plafond d'itérations
+L3 --> L4 : Enveloppe certifiée
+L4 --> L3 : Dérive HOTL
+L4 --> L0 : Bouton d'arrêt sûr (Art. 14)
+
+@enduml

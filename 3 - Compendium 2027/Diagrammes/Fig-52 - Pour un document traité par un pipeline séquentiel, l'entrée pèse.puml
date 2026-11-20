@@ -1,0 +1,60 @@
+' Fig. 52. – Pour un document traité par un pipeline séquentiel, l’entrée pèse plus de 97 % des jetons; trois multiplicateurs s’y ajoutent : la boucle (mesure interne d’Anthropic), la topologie, à modèle égal, et les outils, payés en jetons d’entrée.
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam rectangle {
+  BackgroundColor #F8FAFC
+  BorderColor #94A3B8
+}
+
+rectangle "Un document, pipeline séquentiel\nInstructions système, historique, contenu récupéré, dernier résultat d'outil : renvoyés à chaque tour" as PipelineSeq #FFFFFF;line:CBD5E1 {
+  rectangle Entree #2563EB;text:FFFFFF;line:2563EB [
+    **Entrée : 142 340 jetons, plus de 97 %**
+  ]
+  rectangle Sortie #64748B;text:FFFFFF;line:64748B [
+    Sortie : 3 820 jetons
+  ]
+  Entree -[hidden]right-> Sortie
+}
+
+rectangle " " as Cartes #FFFFFF;line:FFFFFF {
+  rectangle Boucle #F8FAFC;line:94A3B8 [
+    **Boucle**
+    ----
+    Conversation : **1**
+    Agent : **≈ ×4**
+    Multi-agents : **≈ ×15**
+    ----
+    //Mesure interne d'Anthropic, en jetons//
+  ]
+
+  rectangle Topologie #F8FAFC;line:94A3B8 [
+    **Topologie**
+    ----
+    Pipeline : **0,187 $**
+    Réflexive : **0,430 $**
+    **Coût par document : ×2,3**
+    ----
+    //Même modèle//
+  ]
+
+  rectangle Outils #F8FAFC;line:94A3B8 [
+    **Outils**
+    ----
+    Définitions d'outils, blocs d'appel
+    et de résultat : payés en jetons
+    d'entrée, à chaque requête
+    ----
+    Dizaines de serveurs MCP :
+    catalogue entier payé à chaque tour
+  ]
+
+  Boucle -[hidden]right-> Topologie
+  Topologie -[hidden]right-> Outils
+}
+
+Entree -[hidden]down-> Boucle
+Sortie -[hidden]down-> Outils
+@enduml

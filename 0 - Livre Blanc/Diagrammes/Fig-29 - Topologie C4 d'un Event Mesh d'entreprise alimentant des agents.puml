@@ -1,0 +1,36 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 29 (p. 112)
+' Légende : Topologie C4 d’un Event Mesh d’entreprise alimentant des agents ambiants
+
+@startuml
+!include <C4/C4_Container>
+
+System_Boundary(prod, "Producteurs et Contrats") {
+  Container(sor, "Systems of Record\n& CDC", "Debezium / API", "Émet les faits métier en CloudEvents v1.0.2")
+  Container(cat, "Catalogue AsyncAPI 3.0\n& Schema Registry", "Contrats versionnés", "Valide canaux, actions et en-têtes ce_*")
+}
+
+System_Boundary(mesh, "Event Mesh d'entreprise") {
+  ContainerQueue(kafka, "Dorsale Kafka", "Journal partitionné", "Rétention longue, compactage et replay")
+  ContainerQueue(solace, "Courtiers Solace", "Maillage multi-sites", "Routage dynamique sur Event Mesh")
+  ContainerQueue(nats, "NATS JetStream", "Pull / WorkQueue", "Périphérie et files à contre-pression")
+}
+
+System_Boundary(agents, "Agents ambiants\ndécouplés") {
+  Container(triage, "Agent Triage", "Agent Harness", "Filtre ce_type et planifie sous quota")
+  Container(conf, "Agent Conformité", "Agent Harness", "Consomme par groupe ou file bornée")
+  Container(mcp, "MCP Gateway locale", "Outils typés", "Exécute les actions idempotentes sur SoR")
+}
+
+Rel_U(cat, sor, "Contrats")
+Rel_R(sor, kafka, "CloudEvent (ce_*)")
+Rel(sor, solace, "Sujet hiérarchique")
+Rel_D(kafka, solace, "Fédère")
+Rel_D(solace, nats, "Ponte")
+Rel(kafka, triage, "Stream / poll")
+Rel(solace, conf, "Abonnement")
+Rel_R(nats, conf, "Pull / MaxAckPending")
+Rel_D(triage, conf, "Isole")
+Rel_D(conf, mcp, "Outils (MCP)")
+
+@enduml

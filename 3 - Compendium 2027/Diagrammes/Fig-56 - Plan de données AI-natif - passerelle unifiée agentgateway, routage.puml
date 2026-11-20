@@ -1,0 +1,142 @@
+' Fig. 56. – Plan de données AI-natif : passerelle unifiée agentgateway, routage cognitif hybride à trois paliers et ordonnancement Kubernetes conscient du préfixe KV-cache.
+@startuml
+title Plan de Données AI-Natif : agentgateway, Routage Cognitif Hybride et Affinité de KV-Cache
+
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam rectangle {
+  BackgroundColor #FFFFFF
+  BorderColor #334155
+}
+
+rectangle "Sources & Trafic Entrant" as Sources #F8FAFC;line:475569 {
+  rectangle SrcAgents #FFFFFF;line:475569 [
+    **Agents & Workflows**
+    Sagas Temporal • Spécialistes
+    BSN / BEL / BCA
+    mTLS SPIFFE + ActionEnvelope
+  ]
+  rectangle SrcCanaux #FFFFFF;line:475569 [
+    **Canaux Interactifs**
+    Portails AG-UI / A2UI
+    Flux vocaux WebRTC
+    Contrainte TTFT < 250 ms
+  ]
+  rectangle SrcPairs #FFFFFF;line:475569 [
+    **Pairs Fédérés Externes**
+    Agentforce • ServiceNow
+    SAP Joule • Partenaires B2B
+    Délégation A2A v1.0 signée
+  ]
+
+  SrcAgents -[hidden]down-> SrcCanaux
+  SrcCanaux -[hidden]down-> SrcPairs
+}
+
+rectangle "Plan de Données Unifié — agentgateway\nLinux Foundation AAIF (Noyau Rust haute cadence)" as Gateway #EFF6FF;line:2563EB {
+  rectangle Gw1 #FFFFFF;line:2563EB [
+    **1. Identité NHI & Échange OAuth 2.1 OBO**
+    Atténuation de portée RFC 8693 par outil MCP
+  ]
+  rectangle Gw2 #FFFFFF;line:2563EB [
+    **2. Quotas en Jetons & Coupe-Circuit FinOps**
+    Plafonds TPM / $ CAD par saga et par division
+  ]
+  rectangle Gw3 #FEF3C7;line:D97706 [
+    **3. Routeur cognitif (Arbitrage Multicritère)**
+    Score complexité C(q) • Résidence Loi 25
+    SLA latence • Escalade sur confiance calibrée
+  ]
+  rectangle Gw4 #FFFFFF;line:166534 [
+    **4. Multiplexeur MCP & Proxy A2A / Open Responses**
+    Streamable HTTP • Schéma d'inférence unifié
+  ]
+  rectangle Gw5 #FFFFFF;line:475569 [
+    **5. Masquage PII & Traces OTel (gen_ai.*)**
+    Auditabilité sans modification du code agent
+  ]
+
+  Gw1 -[hidden]down-> Gw2
+  Gw2 -[hidden]down-> Gw3
+  Gw3 -[hidden]down-> Gw4
+  Gw4 -[hidden]down-> Gw5
+}
+
+rectangle " " as Paliers #FFFFFF;line:FFFFFF {
+  rectangle Palier1 #F0FDF4;line:166534 [
+    **Palier 1 — SLM Spécialisés Souverains (~73 % vol.)**
+    Modèles 3B–14B (vLLM / SGLang sur GPU internes)
+    Triage, extraction JSON stricte, normalisation OT/EDI
+    **TTFT < 150 ms • ~0,04 $ / M jetons • Résidence Loi 25**
+  ]
+  rectangle Palier2 #EFF6FF;line:2563EB [
+    **Palier 2 — LLM Généralistes Frontières (~22 % vol.)**
+    Synthèse multi-sources, appels d'outils MCP (6–12 outils)
+    Bascule multi-régions transparente via Open Responses
+    **TTFT 350–900 ms • Équilibre coût / polyvalence**
+  ]
+  rectangle Palier3 #FFF7ED;line:9A3412 [
+    **Palier 3 — Raisonnement / Test-Time Compute (~5 % vol.)**
+    Planification L3/L4 contradictoire, contre-audit BSIF E-23
+    Contingenté par plafond dur maxReasoningTokens
+    **Escalade sélective uniquement si confiance < seuil**
+  ]
+  rectangle FedAval #F8FAFC;line:475569 [
+    **Fédération Aval : Serveurs MCP & Pairs A2A v1.0**
+    SAP S/4HANA • ServiceNow • IBM i • Jumeaux OPC-UA
+  ]
+
+  Palier1 -[hidden]down-> Palier2
+  Palier2 -[hidden]down-> Palier3
+  Palier3 -[hidden]down-> FedAval
+}
+
+SrcAgents -[#1E293B]right-> Gw1
+SrcCanaux -[#1E293B]right-> Gw3
+SrcPairs -[#1E293B]right-> Gw5
+
+Gw3 -[#166534]right-> Palier1
+Gw3 -[#2563EB]right-> Palier2
+Gw3 -[#9A3412]right-> Palier3
+Gw4 .[#1E293B]right.> FedAval
+
+rectangle "Ordonnancement Kubernetes Conscient du Préfixe (Gateway API Inference Extension / llm-d) — Partage du KV-Cache" as K8sKV #F8FAFC;line:1E293B {
+  rectangle SessionMulti #FFFFFF;line:475569 [
+    **Anatomie d'une Session Multi-Tours (Tours 1 à 8)**
+    Préfixe Invariant : Prompt + Schémas MCP (88 %) | Delta Tour k
+    • Round-Robin naïf : invalide le KV-cache à chaque tour d'outil
+    • Recalcul coûteux du Prefill (9 000+ jetons répétés 8 fois)
+    • **Affinité de préfixe : ne calcule que le Delta (~300 jetons)**
+  ]
+
+  rectangle "Endpoint Picker (EPP) : Score = α·Hit(Préfixe) − β·File(GPU) − γ·HBM" as EPP #FFFFFF;line:2563EB {
+    rectangle Pod1 #F8FAFC;line:94A3B8 [
+      **Pod GPU #1**
+      Préfixe absent (0 %)
+      HBM : 64 %
+      Non sélectionné
+    ]
+    rectangle Pod2 #F0FDF4;line:166534 [
+      **Pod GPU #2 (Cible)**
+      **KV-Cache CHAUD 88 %**
+      HBM : 58 % • File : 2
+      **Routage Tours 1..8**
+    ]
+    rectangle Pod3 #FFF7ED;line:C2410C [
+      **Pod GPU #3 (Secours)**
+      Cache partiel (45 %)
+      HBM : 31 % • File : 0
+      Débordement anti-hotspot
+    ]
+
+    Pod1 -[hidden]right-> Pod2
+    Pod2 -[hidden]right-> Pod3
+  }
+
+  SessionMulti -[#2563EB]right-> EPP
+}
+
+Gw5 -[hidden]down-> SessionMulti
+@enduml

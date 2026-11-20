@@ -1,0 +1,68 @@
+' Fig. 11. – Comparaison architecturale : mappage naïf 1:1 CRUD REST vers MCP face à la conception orientée intention métier agrégée.
+@startuml
+title Conception d'Outils MCP : Antipattern CRUD REST 1:1 vs Façade Orientée Intention Métier
+
+left to right direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+
+rectangle "ANTIPATTERN — Mappage Naïf 1:1 CRUD REST → MCP\nConversion automatique OpenAPI exposant 85 endpoints granulaires" as Anti #FEF2F2;line:991B1B {
+  rectangle AntiAgent #FFFFFF;line:DC2626 [
+    **Agent Surchargé (+24 500 jetons de schémas / tour)**
+    Le modèle doit improviser les jointures, l'ordre d'appels et les clés étrangères
+  ]
+
+  rectangle AntiSteps #F8FAFC;line:CBD5E1 [
+    **6 allers-retours probabilistes séquentiels :**
+    1. GET /equipments?serial=... → Renvoie 92 colonnes internes brutes
+    2. GET /boms/{id}/components → 400 lignes non paginées dans le prompt
+    3. GET /plants/stocks → Jointure calculée de tête par le LLM
+    4. POST /reservations/header → Mutation partielle (sans idempotence)
+    5. POST /reservations/line → HTTP 500 : trace SQL opaque illisible
+    6. Réessai aveugle de l'agent → Doublon d'en-tête orphelin dans SAP
+    Fuite de la topologie relationnelle interne et couplage fort aux tables
+  ]
+
+  rectangle AntiImpact #FEF2F2;line:DC2626 [
+    **Impact opérationnel mesuré :**
+    • Latence médiane : 18,4 s (6 cycles d'inférence de bout en bout)
+    • Coût d'inférence : 0,42 $ CAD / tentative (inflation quadratique)
+    • Stabilité pass~^5 : 38 % • Corruption d'état en cas d'échec partiel
+  ]
+
+  AntiAgent -[#DC2626]-> AntiSteps
+  AntiSteps -[hidden]down-> AntiImpact
+}
+
+rectangle "PATRON CIBLE — Serveur MCP Orienté Intention Métier\nFaçade de domaine gouvernée : 7 outils cohésifs alignés sur les actes métiers" as Patron #ECFDF5;line:14532D {
+  rectangle PatronAgent #FFFFFF;line:15803D [
+    **Spécialiste Domaine (~1 350 jetons de schémas nets)**
+    1 intention métier = 1 appel atomique typé (sap_reserve_critical_spare_part)
+  ]
+
+  rectangle PatronSteps #FFFFFF;line:15803D [
+    **Exécution déterministe interne au Serveur MCP (TypeScript / Go) :**
+    1. Vérification immédiate du cache d'idempotence (idempotencyKey)
+    2. Jointure rapide en code : Série → Nomenclature → Stock dépôt optimal
+    3. Transaction BAPI atomique unique avec bail d'expiration (ttlHoldMinutes)
+    4. Projection stricte outputSchema → structuredContent (6 champs utiles)
+    5. Si rupture : isError=true + recoveryGuidance (dépôts alternatifs triés)
+    6. Référence de compensation attachée (_meta.compensationTool)
+    Isolation totale du modèle physique SAP : zéro dette de couplage
+  ]
+
+  rectangle PatronImpact #ECFDF5;line:15803D [
+    **Impact opérationnel mesuré :**
+    • Latence médiane : 1,7 s (1 seule inférence + appel RPC compilé)
+    • Coût d'inférence : 0,019 $ CAD / action (-95 % de consommation jetons)
+    • Stabilité pass~^5 : 96,8 % • Intégrité transactionnelle garantie
+  ]
+
+  PatronAgent -[#15803D]-> PatronSteps
+  PatronSteps -[hidden]down-> PatronImpact
+}
+
+Anti -[hidden]right-> Patron
+
+@enduml

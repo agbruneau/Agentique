@@ -1,0 +1,40 @@
+' Fig. 32. – Orchestration et chorégraphie : coordinateur détenant le plan vs réaction aux événements sans plan écrit.
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+
+rectangle "**ORCHESTRATION**" as Orch #FFFFFF;line:CBD5E1 {
+  rectangle "**Coordinateur**\ndétient le plan" as Coord #EFF6FF;line:2563EB
+  rectangle "**Agent**" as OA1 #F8FAFC;line:475569
+  rectangle "**Agent**" as OA2 #F8FAFC;line:475569
+  rectangle "**Agent**" as OA3 #F8FAFC;line:475569
+  OA1 -[hidden]right-> OA2
+  OA2 -[hidden]right-> OA3
+  Coord -[#2563EB]down-> OA1
+  Coord -[#2563EB]down-> OA2
+  Coord -[#2563EB]down-> OA3
+  rectangle "Le coordinateur déclenche les étapes" as FootO #FFFFFF;line:FFFFFF
+  OA2 -[hidden]down-> FootO
+}
+
+rectangle "**CHORÉGRAPHIE**" as Chore #FFFFFF;line:CBD5E1 {
+  rectangle "**Agent**" as CA1 #F8FAFC;line:475569
+  rectangle "//aucun plan écrit//" as NoPlan #FFFFFF;line:FFFFFF
+  rectangle "**Agent**" as CA2 #F8FAFC;line:475569
+  rectangle "**Agent**" as CA3 #F8FAFC;line:475569
+  CA2 -[hidden]right-> CA3
+  CA2 .[#475569,dashed]right.> CA3
+  CA1 .[#475569,dashed]down.> CA2
+  CA1 .[#475569,dashed]down.> CA3
+  CA1 -[hidden]down-> NoPlan
+  NoPlan -[hidden]down-> CA2
+  rectangle "Chaque agent réagit aux événements des autres" as FootC #FFFFFF;line:FFFFFF
+  CA2 -[hidden]down-> FootC
+  CA3 -[hidden]down-> FootC
+}
+
+Orch -[hidden]right-> Chore
+
+@enduml

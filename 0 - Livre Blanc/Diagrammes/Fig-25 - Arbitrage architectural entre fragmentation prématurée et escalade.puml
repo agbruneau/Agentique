@@ -1,0 +1,43 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 25 (p. 98)
+' Légende : Arbitrage architectural entre fragmentation prématurée et escalade graduée depuis l’agent unique outillé
+
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam rectangle {
+  BackgroundColor #F1F6F9
+  BorderColor #2B4C65
+  FontColor #0F172A
+  RoundCorner 4
+}
+skinparam arrow {
+  Color #2B4C65
+  FontColor #0F172A
+}
+
+package "Arbitrage cible : escalade graduée\n(agent unique outillé → graphe\ngouverné)" #F4F8FB {
+  rectangle "Requête &\nprofil de tâche" as C1
+  rectangle "Agent unique outillé\n(Skills / ReWOO)" as C2
+  rectangle "Graphe dirigé borné\n(Supervisor / DAG)" as C3
+  rectangle "Endiguement 4,4x\net budget maîtrisé" as C4
+
+  C1 -> C2 : Règle par défaut\n(base >= 45 % ou séquentiel)
+  C2 -> C3 : Escalade si contexte saturé\nou sous-tâches parallèles
+  C3 -> C4 : Validation centralisée\net passage par référence
+}
+
+package "Anti-patron : fragmentation\nprématurée (tâche séquentielle / > 45\n% base)" #FDF6F2 {
+  rectangle "Requête\ncomplexe" as A1
+  rectangle "Essaim parallèle\nsans vérification" as A2
+  rectangle "Contexte fragmenté &\nchoix implicites en conflit" as A3
+  rectangle "Amplification 17,2x\net coût ~15x jetons" as A4
+
+  A1 -> A2 : Éclatement naïf
+  A2 -> A3 : Écritures concurrentes\nsans trace commune
+  A3 -> A4 : Dérive MAST FC1/FC2\n(-70 % en séquentiel)
+}
+
+C1 -[hidden]down-> A1
+
+@enduml

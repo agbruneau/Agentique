@@ -1,0 +1,24 @@
+' Fig. 6. – Frise 2028-2035 des trois paliers, de leurs portes et des échéances réglementaires
+' Source : 4 - Plan Directeur (Chapitre M-20, p. 263)
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam defaultFontName SansSerif
+skinparam ranksep 10
+
+title
+<b>Feuille de route 2028–2035 — Trois paliers franchis sur preuve et portes (15 portes POR définies)</b>
+<size:11><color:#475569>Règle d’ordre (C27) : le contrôle précède l’autonomie · Dates de paliers indicatives, franchissement sur preuves vérifiables</color></size>
+end title
+
+rectangle Roadmap #FFFFFF;line:CBD5E1 [
+|= <#0F172A><color:white>Axe / Horizon |= <#0F172A><color:white>2027 |= <#0F172A><color:white>2028 · 2029 |= <#0F172A><color:white>2030 · 2031 · 2032 |= <#0F172A><color:white>2033 · 2034 · 2035 |
+|<#F8FAFC> **Paliers &**\n**stades cibles** |<#F8FAFC> **Pont 2027**\nSocle C27\nStades 0–1 |<#ECFDF5> <color:#166534>**Palier 1 — Fonder**</color>\n2028–2029 · Sans regret\n<color:#166534>**Sortie : Stade 2**</color> |<#EFF6FF> <color:#1D4ED8>**Palier 2 — Étendre**</color>\n2030–2032 · Fédération & PQC\n<color:#1D4ED8>**Sortie : Stade 3**</color> |<#F5F3FF> <color:#6D28D9>**Palier 3 — Élargir**</color>\n2033–2035 · Sous plafond légal\n<color:#6D28D9>**Sortie : Stade 3–4***</color> |
+|<#F8FAFC> <color:#1D4ED8>**Initiatives**</color>\n<color:#1D4ED8>**structurantes**</color> |<#F8FAFC> Prérequis\nfin 2027 |<#FFFFFF> • Registre E-23, NHI & TLS 47 j\n• Passerelle 5 contrôles & sas\n• Sagas & Loi 25 art. 12.1\n• Coût complet & clauses B-10 |<#FFFFFF> • Sémantique & mémoire bi-temp.\n• PQC ML-DSA/SLH-DSA (CAP-040)\n• Lecture ouverte 99,5 % (CAP-026)\n• Fédération multi-plateformes |<#FFFFFF> • Mandats externes (CAP-014/041)\n• Espaces fédérés & enclave\n• Alignement lois fin. post-2033\n• Achèvement PQC de bout en bout |
+|<#FFF7ED> <color:#9A3412>**Portes sur**</color>\n<color:#9A3412>**preuve (POR)**</color> |<#FFF7ED> |<#FFF7ED> ◆ <color:#9A3412>**POR-001..003**</color> NHI, TLS 47 j, Loi 25, 10 s\n◆ <color:#9A3412>**POR-004 (Sortie P1)**</color> CPO, tiers B-10, fin CUA |<#FFF7ED> ◆ <color:#9A3412>**POR-005..008 (PQC)**</color> ML-DSA/SLH-DSA, API 99,5 %\n◆ <color:#9A3412>**POR-009 (Sortie P2)**</color> Stade 3 & reprise humaine |<#FFF7ED> ◆ <color:#9A3412>**POR-011..014 (Sortie P3)**</color> Mandats B2B & PQC 100 % |
+|<#F8FAFC> <color:#166534>**Échéances**</color>\n<color:#166534>**externes**</color> |<#F8FAFC> ● <color:#166534>[D] 2027-05 BSIF E-23</color>\n● <color:#166534>[D] 2027-12 AI Act Ann. III</color> |<#F8FAFC> ● <color:#166534>[D] 2028 ACVM 31-103 & B-15</color>\n● <color:#1D4ED8>[D] 2029-03 TLS 47 j</color> |<#F8FAFC> ● <color:#6D28D9>[A] 2030–32 Fenêtre PQC G7</color> |<#F8FAFC> ● <color:#166534>[D] 2033-06 Lois fin. fédérales</color>\n● <color:#6D28D9>[D/A] 2035 Fin transition PQC</color> |
+]
+
+footer ~* Au Palier 3, les domaines soumis à un plafond légal ou à l’irréversibilité (Classes 4 et 5 critiques) demeurent aux Stades 2 ou 3.
+@enduml

@@ -1,0 +1,24 @@
+%% Figure 17.6 — Le problème des deux sauts : où la chaîne de mandat cesse d’être interrogeable de bout en bout.
+%%{init: {'flowchart': {'wrappingWidth': 900}}}%%
+flowchart TB
+    subgraph CHAINE["UN SAUT PORTÉ, LE SECOND NON"]
+        direction LR
+        S0["<b>Mandant</b><br/>l'humain qui délègue,<br/>premier et dernier<br/>maillon (§ 17.4)"]
+        S1["<b>Agent</b><br/>détient le mandat,<br/>l'exerce — premier<br/>saut"]
+        S2["<b>Sous-agent</b><br/>reçoit un mandat<br/>dérivé — second saut"]
+        S3["<b>Service</b><br/>applique, sans pouvoir<br/>remonter la chaîne à<br/>l'instant t"]
+        S0 --> S1 --> S2 -. "×" .- S3
+    end
+
+    SYNTH["<b>Au-delà du premier saut : degré 3 — absence de documentation, non fait négatif vérifié.</b>"]
+    NOTE["« Deux sauts » N'EST PAS UNE MESURE : c'est la formulation d'un front ouvert (H-28, [C]). Aucune entrée du socle propre ne<br/>compte de sauts, n'en fixe le seuil, ni ne définit le terme — la définition employée par le chapitre est déclarée par lui."]
+
+    CHAINE ~~~ SYNTH ~~~ NOTE
+
+    style CHAINE fill:#FFFDF9,stroke:#9A3412,stroke-width:1px,color:#9A3412
+    style S0 fill:#FAF6F0,stroke:#B8B2A6,color:#1F2937
+    style S1 fill:#FAF6F0,stroke:#B8B2A6,color:#1F2937
+    style S2 fill:#FAF6F0,stroke:#B8B2A6,color:#1F2937
+    style S3 fill:#FAF6F0,stroke:#B8B2A6,color:#1F2937
+    style SYNTH fill:#FFFDF9,stroke:#D6D3CD,color:#111827
+    style NOTE fill:#F8F5F0,stroke:#D6D3CD,color:#374151

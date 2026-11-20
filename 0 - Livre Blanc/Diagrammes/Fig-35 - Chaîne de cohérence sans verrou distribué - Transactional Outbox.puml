@@ -1,0 +1,62 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 35 (page 134)
+' Légende : Fig. 35. – Chaîne de cohérence sans verrou distribué : Transactional Outbox, Idempotency-Key à 3 états et Saga orchestrée
+@startuml
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+skinparam roundcorner 6
+skinparam defaultFontName SansSerif
+skinparam ArrowColor #324e67
+skinparam ArrowFontColor #172025
+skinparam ParticipantBackgroundColor #f3f7f9
+skinparam ParticipantBorderColor #324e67
+skinparam ParticipantFontColor #172025
+skinparam SequenceLifeLineBorderColor #7e8a93
+skinparam SequenceGroupBorderColor #324e67
+skinparam SequenceGroupBackgroundColor #edf3f7
+skinparam SequenceGroupHeaderFontColor #1a4964
+skinparam NoteBackgroundColor #fdfaf0
+skinparam NoteBorderColor #b0a372
+skinparam NoteFontColor #172025
+
+autonumber
+
+participant "Orchestrateur Durable\n(Saga)" as Orch
+participant "Base Locale\n+ Table Outbox" as DB
+participant "Relais CDC\n(Debezium WAL)" as CDC
+participant "MCP Gateway\n(Idempotency Store)" as MCP
+participant "System of Record\n(ERP / Paiement)" as SoR
+
+group 1. Transactional Outbox (élimination du dual-write sans 2PC)
+  Orch -> DB : BEGIN TX : MAJ état + INSERT Outbox
+  DB --> Orch : COMMIT ACID local
+  CDC -> DB : Lit journal WAL (zéro verrou)
+  CDC -> Orch : Publie événement ordonné (at-least-once)
+end
+
+group 2. Contrat Idempotency-Key à 3 états et étape compensable
+  Orch -> MCP : POST /reserve (Idempotency-Key: K1, hash\nH1)
+  note over MCP
+    Enregistre K1 en état « En vol ».
+    Si K1 concurrent : HTTP 409.
+    Si K1 avec autre corps : HTTP 422.
+  end note
+  MCP -> SoR : Réserver crédit client
+  SoR --> MCP : HTTP 200 Réservation #R1
+  MCP --> Orch : HTTP 200 (stocke réponse sur K1)
+  note over Orch
+    Empile compensation C1 :
+    annulerReservation(#R1)
+  end note
+end
+
+group 3. Échec d'étape et compensation inverse avant le pivot
+  Orch -> MCP : POST /provision (Idempotency-Key: K2, hash\nH2)
+  MCP -> SoR : Allouer licence partenaire
+  SoR --> MCP : Refus métier définitif (TerminalError)
+  MCP --> Orch : Erreur terminale non réessayable
+  Orch -> MCP : Compensation C1 : POST /release/#R1 (Key:\nC-K1)
+  MCP -> SoR : Libère crédit #R1
+  SoR --> MCP : HTTP 200 Compensé
+end
+@enduml

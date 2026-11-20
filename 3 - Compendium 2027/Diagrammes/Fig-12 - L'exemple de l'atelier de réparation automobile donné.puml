@@ -1,0 +1,36 @@
+' Fig. 12. – L'exemple de l'atelier de réparation automobile donné par la documentation d'A2A : A2A horizontal, MCP vertical.
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+
+rectangle "**Client**" as Client #F8FAFC;line:475569
+
+rectangle "ATELIER" as Atelier #FFFFFF;line:64748B;line.dashed {
+  rectangle "**Agent « gérant**\n**d'atelier »**" as Gerant #EFF6FF;line:2563EB
+  rectangle "**Agent « mécanicien »**" as Mecano #EFF6FF;line:2563EB
+  Gerant -[hidden]right-> Mecano
+}
+
+rectangle "**Agent d'un**\n**fournisseur**" as Fourn #EFF6FF;line:2563EB
+
+Gerant <-[#2563EB]left-> Client : A2A\nplusieurs\ntours
+Fourn <-[#2563EB]left-> Mecano : A2A\ncommande\nd'une pièce
+
+rectangle "**Lecteur de**\n**diagnostic**" as Diag #F8FAFC;line:475569
+rectangle "**Base de manuels**" as Manuels #F8FAFC;line:475569
+rectangle "**Pont élévateur**" as Pont #F8FAFC;line:475569
+
+Diag -[hidden]right-> Manuels
+Manuels -[hidden]right-> Pont
+
+Mecano -[#475569]down-> Diag : MCP
+Mecano -[#475569]down-> Manuels
+Mecano -[#475569]down-> Pont
+
+rectangle "A2A, horizontal : des agents s'associent sur des tâches. MCP, vertical : un agent utilise des capacités." as Note #FFFFFF;line:FFFFFF
+
+Manuels -[hidden]down-> Note
+
+@enduml

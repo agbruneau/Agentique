@@ -1,0 +1,53 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 7 (p. 31)
+' Légende : Architecture cible de référence en quatre plans découplés de l’entreprise agentique
+
+@startuml
+!include <C4/C4_Container>
+
+LAYOUT_LEFT_RIGHT()
+
+Person(op, "Opérateur / Client", "Intention / HITL")
+System_Ext(sig, "Signaux B2B", "Événements")
+
+System_Boundary(ent, "Entreprise agentique —\nArchitecture cible en\nquatre plans") {
+  Container_Boundary(p1, "Plan 1 : Expérience") {
+    Container(soe, "SoE / Portails", "UI, CRM", "Intention et HITL")
+    Container(pe, "Points d'entrée", "API, Bus", "Signaux ambiants")
+  }
+
+  Container_Boundary(p4, "Plan 4 : Confiance et\nobservabilité") {
+    Container(otel, "OTel, EvalOps, FinOps", "Télémétrie", "Dérive et coûts")
+    Container(zt, "Zero-Trust", "NHI, OBO, OPA", "Moindre privilège")
+  }
+
+  Container_Boundary(p2, "Plan 2 : Orchestration") {
+    Container(wf, "Workflows durables", "États", "Replay et Sagas")
+    Container(rout, "Routeur 80/20", "Code + LLM", "Isole logique critique")
+  }
+
+  Container_Boundary(p3, "Plan 3 : Interopérabilité") {
+    Container(mem, "Mémoire et sémantique", "RAG, ACL", "Gouverne contexte")
+    Container(a2a, "Maillage A2A / AGNTCY", "Pairs", "Annuaires, Artifacts")
+    Container(mcp, "MCP Gateway", "Outils", "Contrats API et SoR")
+  }
+}
+
+System_Ext(saas, "Agents SaaS tiers", "Éditeurs fédérés")
+System_Ext(sor, "Systems of Record", "ERP, core banking")
+
+Rel(op, soe, "Mandat", "HTTPS")
+Rel(sig, pe, "Signal", "Events")
+Rel(soe, wf, "Soumet")
+Rel(pe, wf, "Démarre")
+Rel(otel, wf, "Traces et coûts")
+Rel(zt, wf, "Garde-fous")
+Rel(zt, mcp, "Portées OBO")
+Rel(wf, rout, "Pilote")
+Rel(rout, mem, "Contexte", "ACL")
+Rel(rout, a2a, "Tâches", "A2A")
+Rel(rout, mcp, "Outils", "MCP")
+Rel(a2a, saas, "Fédère", "B2B")
+Rel(mcp, sor, "Mute", "Idempotent")
+
+@enduml

@@ -1,0 +1,19 @@
+%% Figure 45.3 — Flux 1 — la décision de crédit assistée par agents
+flowchart TB
+    subgraph FLUX1["LE PROCESSUS COMMANDE, LES AGENTS EXÉCUTENT"]
+        direction LR
+        E1["<b>Demande</b><br/>reçue, qualifiée"]
+        E2["<b>Agents</b><br/>invoqués par le cadre,<br/>chacun sur une<br/>capacité bornée"]
+        E3["<b>Décision</b><br/>rendue par le<br/>processus, non par un<br/>agent"]
+        E4["<b>Restitution</b><br/>point d'arrêt et trace<br/>outillant l'art. 12.1<br/>(personne habilitée)"]
+        E1 --> E2 --> E3 --> E4
+    end
+
+    NOTE["Le processus COMMANDE, et c'est ce qui range ce flux en OO3 ou OO4 : la décision de crédit est une décision opposable au client<br/>(ch. 27), et son enchaînement doit être lisible avant l'exécution."]
+    FLUX1 ~~~ NOTE
+
+    classDef step fill:#F5F1EB,stroke:#BBBBBB,color:#222222,text-align:left
+    classDef note fill:#FBF9F5,stroke:#CCCCCC,color:#444444,text-align:left
+    class E1,E2,E3,E4 step
+    class NOTE note
+    style FLUX1 fill:#FAF8F5,stroke:#8B2E0B,color:#8B2E0B

@@ -1,0 +1,53 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 27 (p. 104)
+' Légende : Séquences d’orchestration des topologies Handoff, Scatter-Gather et Generator-Verifier bornée
+
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam sequence {
+  ArrowColor #2B4C65
+  LifeLineBorderColor #64748B
+  LifeLineBackgroundColor #FFFFFF
+  ParticipantBorderColor #2B4C65
+  ParticipantBackgroundColor #F1F6F9
+  GroupBorderColor #334155
+  GroupBackgroundColor #FFFFFF
+  GroupHeaderFontColor #0F172A
+}
+
+autonumber
+
+participant "Client / SoE" as client
+participant "Orchestrateur /\nRouteur d'état" as orch
+participant "Agent A\n(Triage / Générateur)" as agA
+participant "Agent B / Pool\n(Spécialistes)" as agB
+participant "Vérificateur\n(Critique indépendant)" as verif
+
+group 1. Handoff orienté état (transfert direct de contrôle)
+  client -> agA : Requête utilisateur (session active)
+  agA -> orch : transfer_to_AgentB(input_type, input_filter)
+  orch -> orch : Filtre HandoffInputData & met à jour\nactive_agent
+  orch -> agB : Active Agent B avec contexte filtré
+  agB --> client : Réponse directe sous contrôle du domaine B
+end
+
+group 2. Scatter-Gather parallèle (fan-out / agrégateur sous quorum)
+  orch -> agB : Broadcast tâches indépendantes\n(correlationId)
+  agB --> orch : Réponses partielles parallèles (nœuds 1..k)
+  orch -> orch : Aggregator attend quorum ou timeout SLA
+end
+
+group 3. Boucle Generator-Verifier bornée (critère d'arrêt strict)
+  loop i = 1 .. max_iterations (avec contrôle déterministe préalable)
+    agA -> verif : Artefact candidat (URI + métadonnées)
+    verif -> verif : Tests déterministes puis revue critique isolée
+    alt Conforme au contrat ou max_iterations atteint
+      verif --> orch : Verdict VALIDÉ / ESCALADE HITL
+    else Défauts actionnables identifiés
+      verif --> agA : Feedback structuré (écart & correctifs)
+    end
+  end
+end
+
+@enduml

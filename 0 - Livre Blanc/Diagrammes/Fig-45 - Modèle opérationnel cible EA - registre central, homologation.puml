@@ -1,0 +1,40 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 45 (page 171)
+' Légende : Fig. 45. – Modèle opérationnel cible EA : registre central, homologation par palier de risque et Trois Lignes de Défense
+@startuml
+!include <archimate/Archimate>
+
+left to right direction
+
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+
+package "1re ligne (1LoD — Produit & Plateforme)" as lod1 #ffffff {
+  Business_Role(owner, "Agent Owner /\nSponsor métier")
+  Application_Component(domaine, "Équipe Domaine\n& Harnais 80/20")
+}
+
+Motivation_Driver(driver, "Conformité, traçabilité\net maîtrise du risque")
+
+package "Gouvernance centrale (ARB)" as arb #ffffff {
+  Business_Process(homolog, "Homologation par\npalier (R1 à R4)")
+  Application_DataObject(registre, "Registre central\n(OASF + Agent ID)")
+}
+
+package "2e ligne (2LoD — Contrôle)" as lod2 #ffffff {
+  Business_Role(reviewer, "Model Reviewer\n(Risque, RPRP, Sécurité)")
+  Business_Role(approver, "Model Approver\n(ARB / Comité IA)")
+}
+
+package "3e ligne (3LoD — Audit)" as lod3 #ffffff {
+  Business_Role(audit, "Audit interne\n(Pistes immuables)")
+}
+
+Rel_Assignment(owner, registre, "endosse mandat")
+Rel_Triggering(domaine, homolog, "soumet dossier")
+Rel_Influence(driver, homolog, "cadre")
+Rel_Association(homolog, registre, "inscrit / suspend")
+Rel_Triggering(reviewer, homolog, "évalue R3-R4")
+Rel_Assignment(approver, homolog, "homologue")
+Rel_Triggering(audit, registre, "vérifie preuves")
+@enduml

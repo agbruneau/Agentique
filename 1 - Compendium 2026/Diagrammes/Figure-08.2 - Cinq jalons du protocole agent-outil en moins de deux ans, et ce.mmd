@@ -1,0 +1,29 @@
+%% Figure 8.2 — Cinq jalons du protocole agent-outil en moins de deux ans, et ce que chacun ajoute au contrat (points pleins : révisions acquises au gel ; point creux : révision ratifiée le 28 juillet 2026 ; les racines figurant dès 2024-11).
+%% Source : 1 - Compendium 2026, Chapitre 8 (page 95)
+
+%%{init: {'flowchart': {'wrappingWidth': 900}}}%%
+flowchart TB
+    subgraph SG_FRISE["CINQ RÉVISIONS, VINGT MOIS"]
+        direction LR
+        J1["<b>2024-11 · Version initiale</b><br/><br/>primitives de base et racines ;<br/>transports local et HTTP à<br/>deux points d'accès"]
+        J2["<b>2025-03 · Autorisation</b><br/><br/>transport diffusable à point<br/>unique ; cadre d'autorisation"]
+        J3["<b>2025-06 · Sorties structurées</b><br/><br/>sollicitation ; serveur qualifié<br/>serveur de ressources"]
+        J4["<b>2025-11 · Découverte d'identité</b><br/><br/>schémas 2020-12 ; tâches<br/>asynchrones expérimentales"]
+        J5["<b>2026-07 · Cœur sans état</b><br/><br/>suppression des sessions et de<br/>la poignée de main ; cadre<br/>d'extensions ; dépréciation à<br/>douze mois"]
+        J1 --> J2 --> J3 --> J4 --> J5
+    end
+
+    NOTE["Le cinquième jalon n'était PAS ACQUIS au gel de la somme : il était annoncé pour le lendemain, et la revalidation du 30 juillet<br/>2026 l'a constaté ratifié à sa source. Une densité de révisions millésimées est elle-même une forme de fragmentation (§ 8.2.1)."]
+
+    SG_FRISE ~~~ NOTE
+
+    classDef solidJalon fill:#FAF7F2,stroke:#9E3A14,stroke-width:2px,color:#222222,text-align:left;
+    classDef hollowJalon fill:#FFFFFF,stroke:#9E3A14,stroke-width:2px,stroke-dasharray: 5 4,color:#222222,text-align:left;
+    classDef noteBox fill:#F7F5F0,stroke:#C4BEB5,stroke-width:1px,color:#333333,text-align:left;
+
+    class J1,J2,J3,J4 solidJalon;
+    class J5 hollowJalon;
+    class NOTE noteBox;
+
+    style SG_FRISE fill:#FFFFFF,stroke:none,color:#9E3A14
+    linkStyle 0,1,2,3 stroke:#9E3A14,stroke-width:2px

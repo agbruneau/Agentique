@@ -1,0 +1,21 @@
+%% Ouvrage : 1 - Compendium 2026
+%% Chapitre : 37 · Le maillage d'agents : du service mesh au point d'application (PEP/PDP et zero trust agentique) (p. 431)
+%% Figure : Figure 37.3 — La non-compositionnalité de la sûreté : deux arêtes sûres, un chemin qui ne l’est pas.
+flowchart TB
+    subgraph S["CHAQUE ARÊTE EST AUTORISÉE — LE CHEMIN NE L'EST PAS"]
+        direction LR
+        A["<b>Agent A</b><br/>autorisé à demander à B"]
+        B["<b>Agent B</b><br/>autorisé à demander à C"]
+        C["<b>Agent C</b><br/>détient l'accès sensible"]
+        A --> B --> C
+    end
+    SYN["<b>Aucune arête n'est en faute ; c'est leur composition qui l'est, et aucune ne la voit.</b>"]
+    NOTE["C'est ce que le maillage NE PEUT PAS corriger par l'arête : une politique vérifiée à chaque saut ne dit rien du chemin complet.<br/>Le même constat porte la composabilité du ch. 11 § 11.1.1 et le détournement multi-agents du ch. 19 § 19.4."]
+    S ~~~ SYN ~~~ NOTE
+
+    style S fill:#fdfbf7,stroke:#d4cfc7,color:#9c3d14
+    style A fill:#f7f4ee,stroke:#b8b4ac,color:#1a1a1a
+    style B fill:#f7f4ee,stroke:#b8b4ac,color:#1a1a1a
+    style C fill:#f7f4ee,stroke:#9c3d14,color:#1a1a1a
+    style SYN fill:#ffffff,stroke:none,color:#1a1a1a
+    style NOTE fill:#faf8f4,stroke:#b8b4ac,color:#444444

@@ -1,0 +1,19 @@
+%% Ouvrage : 1 - Compendium 2026
+%% Chapitre : 39 · Le cycle de vie opérationnel : évaluation continue, dérive et incident (p. 458)
+%% Figure : Figure 39.2 — Révoquer, confiner, imputer : la séquence de réponse à incident agentique.
+flowchart TB
+    subgraph S["TROIS LEVIERS, DANS CET ORDRE"]
+        direction LR
+        N1["<b>Révoquer</b><br/>retirer ce qui autorise — et la<br/>cascade n'est pas documentée"]
+        N2["<b>Confiner</b><br/>borner le rayon plutôt que<br/>prévenir — ch. 11 § 11.4.1"]
+        N3["<b>Imputer</b><br/>rattacher l'action à un<br/>responsable — Q-E de la grille"]
+        N1 --> N2 --> N3
+    end
+    NOTE["Le premier levier suppose ce que le ch. 20 § 20.6 déclare absent : aucun mécanisme de révocation en cascade n'est documenté.<br/>Révoquer à la racine ne dit rien de ce qui en a été dérivé, et la séquence ne se déroule pas d'elle-même."]
+    S ~~~ NOTE
+
+    style S fill:#fdfbf7,stroke:#d4cfc7,color:#9c3d14
+    style N1 fill:#f7f4ee,stroke:#9c3d14,color:#1a1a1a
+    style N2 fill:#f7f4ee,stroke:#b8b4ac,color:#1a1a1a
+    style N3 fill:#f7f4ee,stroke:#b8b4ac,color:#1a1a1a
+    style NOTE fill:#faf8f4,stroke:#b8b4ac,color:#444444

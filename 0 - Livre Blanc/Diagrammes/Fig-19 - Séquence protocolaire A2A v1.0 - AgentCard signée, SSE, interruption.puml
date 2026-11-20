@@ -1,0 +1,57 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 19 (p. 71)
+' Légende : Séquence protocolaire A2A v1.0 : AgentCard signée, SSE, interruption et webhook
+
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam sequence {
+  ArrowColor #2B4C65
+  LifeLineBorderColor #64748B
+  LifeLineBackgroundColor #FFFFFF
+  ParticipantBorderColor #2B4C65
+  ParticipantBackgroundColor #F1F6F9
+  GroupBorderColor #334155
+  GroupBackgroundColor #FFFFFF
+  GroupHeaderFontColor #0F172A
+}
+
+autonumber
+
+participant "Client A2A\n(Domaine A)" as client
+participant "Endpoint\nWell-Known / JWKS" as wk
+participant "Serveur A2A\n(Pair B)" as srv
+participant "Récepteur Webhook\n(Domaine A)" as wh
+
+group 1. Découverte et vérification cryptographique (RFC 8785 + RFC 7515)
+  client -> wk : GET /.well-known/agent-card.json
+  wk --> client : AgentCard JSON + signatures[] (JWS ES256)
+  client -> wk : GET jwks.json (clé publique selon kid)
+  wk --> client : JWKS (vérification JCS RFC 8785 + JWS)
+end
+
+group 2. Cycle asynchrone SSE et interruption multi-tours
+  client -> srv : SendStreamingMessage (Authorization:\nBearer, contextId)
+  srv --> client : HTTP 200 text/event-stream : Task\n(SUBMITTED)
+  srv --> client : TaskStatusUpdateEvent\n(TASK_STATE_WORKING)
+  srv --> client : TaskStatusUpdateEvent (INPUT_REQUIRED) +\nArtifact Interrupt
+  note over client
+    Le flux SSE se ferme sur état interrompu.
+    Validation ou précision requise.
+  end note
+  client -> srv : SendMessage (taskId, contextId, DataPart\nresume)
+  srv --> client : TaskArtifactUpdateEvent (append: true,\nlastChunk: true)
+  srv --> client : TaskStatusUpdateEvent\n(TASK_STATE_COMPLETED)
+end
+
+group 3. Tâche longue en mode déconnecté (Push Notification)
+  client -> srv : SendMessage (returnImmediately: true,\nTaskPushNotificationConfig)
+  srv --> client : Task (TASK_STATE_WORKING, taskId)
+  ... Traitement autonome différé (minutes ou heures) ...
+  srv -> wh : HTTP POST webhook URL (Bearer token,\nStreamResponse)
+  wh --> srv : HTTP 200 OK (traitement idempotent)
+  client -> srv : GetTask (id: taskId)
+  srv --> client : Task (TASK_STATE_COMPLETED + Artifacts\nfinaux)
+end
+
+@enduml

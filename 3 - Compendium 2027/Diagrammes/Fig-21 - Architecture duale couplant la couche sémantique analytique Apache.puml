@@ -1,0 +1,88 @@
+' Fig. 21. – Architecture duale couplant la couche sémantique analytique Apache Ossie et l'ontologie opérationnelle causale au sein d'un pipeline neuro-symbolique.
+@startuml
+title Architecture Sémantique Duale : Apache Ossie (Analytique) & Ontologie Causale (Opérationnelle)
+
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+
+rectangle "Médiateur Neuro-Symbolique Pré-Planification (GraphRAG Hybride + Vérificateur d'Invariants)" as Mediateur #EFF6FF;line:2563EB {
+  rectangle M1 #FFFFFF;line:2563EB [
+    **1. Désambiguïsation des Termes**
+    Résout synonymes & clés canoniques
+  ]
+  rectangle M2 #FFFFFF;line:2563EB [
+    **2. Lecture Analytique Exacte**
+    Exécute les métriques certifiées Ossie
+  ]
+  rectangle M3 #FFFFFF;line:15803D [
+    **3. Validation Préconditions Action**
+    Vérifie états légaux avant appel MCP
+  ]
+  M1 -[#2563EB]-> M2
+  M2 -[#15803D]-> M3
+}
+
+rectangle DualLayer #FFFFFF;line:FFFFFF {
+  rectangle "Couche Sémantique Analytique — Apache Ossie (YAML)\nOrientée Lecture, Vérité Chiffrée & Agrégations Sans Text-to-SQL Brut" as Ossie #EFF6FF;line:2563EB {
+    rectangle OssieTop #EFF6FF;line:EFF6FF {
+      rectangle Datasets #FFFFFF;line:64748B [
+        **datasets & relationships**
+        Jointures certifiées, clés primaires
+        Cardinalités explicites (1:N)
+      ]
+      rectangle Fields #FFFFFF;line:64748B [
+        **fields & metrics**
+        Calculs gouvernés : Stock ATP,
+        Client Actif, Marge, SLA
+      ]
+      Datasets -[hidden]right-> Fields
+    }
+    rectangle AiContext #FFFFFF;line:2563EB [
+      **Bloc ai_context (Ancrage Sémantique Agentique)**
+      Instructions métier normatives, synonymes par division, exclusions
+      Compilé vers : Snowflake Semantic Views • dbt • Cube • Serveurs MCP
+    ]
+    OssieTop -[hidden]down-> AiContext
+  }
+
+  rectangle "Ontologie Opérationnelle Causale (Graphe & Contrats)\nOrientée Action, États Légaux, Invariants SHACL & Mutations Sûres" as Ontologie #ECFDF5;line:15803D {
+    rectangle OntoTop #ECFDF5;line:ECFDF5 {
+      rectangle Objets #FFFFFF;line:15803D [
+        **Objets & États Légaux**
+        Équipement, Contrat, Réservation
+        Automates d'états autorisés
+      ]
+      rectangle Contraintes #FFFFFF;line:15803D [
+        **Contraintes & Causalité**
+        Invariants SHACL / Cedar
+        Dépendances inter-divisions
+      ]
+      Objets -[hidden]right-> Contraintes
+    }
+    rectangle ActionTypes #FFF7ED;line:9A3412 [
+      **Types d'Actions Cinétiques (ActionTypes Gouvernés)**
+      Préconditions formelles • Effets attendus • Outil MCP de compensation
+      Bloque tout plan violant un invariant avant exécution transactionnelle
+    ]
+    OntoTop -[hidden]down-> ActionTypes
+  }
+
+  Ossie -[#1E293B]- Ontologie
+}
+
+rectangle "Systèmes d'Enregistrement Hétérogènes Réconciliés via Clés Maîtres Canoniques (MDM)" as MDM #F8FAFC;line:475569 {
+  rectangle "**BSN : Salesforce CRM & ServiceNow FSM**" as BSN #FFFFFF;line:64748B
+  rectangle "**BCA : IBM i (AS/400), Guidewire & Snowflake**" as BCA #FFFFFF;line:64748B
+  rectangle "**BEL : SAP S/4HANA (MM/SD) & Siemens MES**" as BEL #FFFFFF;line:64748B
+  BSN -[hidden]right-> BCA
+  BCA -[hidden]right-> BEL
+}
+
+M2 -[#2563EB]-> Ossie
+M3 -[#15803D]-> Ontologie
+Ossie -[#1E293B]-> MDM
+Ontologie -[#1E293B]-> MDM
+
+@enduml

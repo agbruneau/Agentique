@@ -1,0 +1,35 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 54 (page 203)
+' Légende : Fig. 54. – Architecture de référence C4 Container du Blueprint 2 — Maillage inter-départemental et B2B via A2A, AGNTCY/OASF et Event Mesh
+@startuml
+!include <C4/C4_Container>
+
+LAYOUT_LEFT_RIGHT()
+
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+
+Container(pm, "Process Manager Macro", "Orchestrateur Durable", "Pilote jalons SLA, quorum & compensations")
+
+System_Boundary(fed, "Strate Fédérée B2B (A2A & AGNTCY)") {
+  Container(a2a_gw, "Passerelle A2A B2B", "A2A v1.0 + AgentCard", "Valide schémas, TLS 1.3, anti-SSRF & CancelTask")
+  Container(slim, "Transport SLIM / MLS", "Pub/Sub + E2EE MLS", "Traverse pare-feu B2B sans exposition entrante")
+  Container(ads, "Annuaire AGNTCY ADS", "OASF + OCI/ORAS + Sigstore", "Indexe capacités fédérées et atteste la provenance")
+}
+
+System_Boundary(intra, "Strate Intra-Domaine : Event Mesh") {
+  ContainerQueue(mesh, "Event Mesh Hybride", "Solace DMR / Kafka Linking", "CloudEvents, AsyncAPI 3.0 & files Retry / DLQ")
+  Container(fin, "Agents Domaine Finance", "Agents ambiants + MCP GW", "Rapprochement factures et projection SoR")
+  Container(achats, "Agents Domaine Achats", "Agents ambiants + MCP GW", "Chorégraphie intra-domaine sous plafond ce_ttl")
+}
+
+System_Ext(partner, "Agent Partenaire B2B", "Agent SaaS / Fournisseur (Opaque A2A / SLIM)")
+
+Rel(pm, a2a_gw, "Délègue Task & reçoit Artifacts", "A2A SSE / Webhook")
+Rel(pm, mesh, "Commandes & jalons", "CloudEvents")
+Rel(a2a_gw, slim, "Chiffre session externe", "MLS Group E2EE")
+Rel(a2a_gw, ads, "Découvre & vérifie fiche OASF", "ADS / Sigstore")
+Rel(slim, partner, "Échange Tasks & Artifacts signés", "SLIM Sortant")
+Rel(mesh, fin, "Diffuse événements Finance", "Retry / Backpressure")
+Rel(mesh, achats, "Diffuse événements Achats", "Retry / Backpressure")
+@enduml

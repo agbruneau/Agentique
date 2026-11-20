@@ -1,0 +1,50 @@
+' Ouvrage : 1 - Compendium 2026
+' Chapitre : 37 · Le maillage d'agents : du service mesh au point d'application (PEP/PDP et zero trust agentique) (p. 437)
+' Figure : Figure 37.7 — Zero trust transposé : de « jamais confiance au réseau » à « jamais confiance au graphe ».
+@startuml
+hide stereotype
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+skinparam defaultFontName SansSerif
+skinparam roundcorner 6
+skinparam package {
+    BackgroundColor #fdfbf7
+    BorderColor #d4cfc7
+    FontColor #444444
+}
+skinparam package<<accent>> {
+    BackgroundColor #fdfbf7
+    BorderColor #9c3d14
+    FontColor #9c3d14
+}
+skinparam rectangle {
+    BackgroundColor #f7f4ee
+    BorderColor #b8b4ac
+    FontColor #1f1f1f
+}
+skinparam rectangle<<accent>> {
+    BackgroundColor #ffffff
+    BorderColor #9c3d14
+    FontColor #1f1f1f
+}
+skinparam note {
+    BackgroundColor #faf8f4
+    BorderColor #b8b4ac
+    FontColor #333333
+}
+
+package "ZERO TRUST RÉSEAU" as P1 {
+    rectangle "<b>Jamais confiance au réseau</b>\n\nLa localisation n'accorde rien\n\nChaque appel s'authentifie\n\nLe périmètre cesse d'être une frontière\n\n<b>NIST SP 800-207</b>" as C1
+}
+
+package "ZERO TRUST AGENTIQUE" as P2 <<accent>> {
+    rectangle "<b>Jamais confiance au graphe</b>\n\nLa position dans le graphe n'accorde rien\n\nChaque arête se vérifie\n\nÊtre invoqué par un pair n'est pas une autorisation\n\n<b>transposition — ce chapitre</b>" as C2 <<accent>>
+}
+
+P1 -[hidden]right-> P2
+
+note bottom
+La transposition est une LECTURE, non un mécanisme : nommer le graphe à la place du réseau ne fournit ni l'identité qui s'y
+vérifie, ni la fraîcheur du verdict (§ 37.8.3). Le principe change de domaine ; les manques ne changent pas.
+end note
+@enduml

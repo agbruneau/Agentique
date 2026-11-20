@@ -1,0 +1,22 @@
+%% Figure 20.0 — La classe d’attaques dont la particularité n’est pas le maillon mais le moment.
+%%{init: {'flowchart': {'wrappingWidth': 900}}}%%
+flowchart TB
+    subgraph FRISE["L'ADMISSION RÉUSSIT, PUIS L'OBJET CHANGE"]
+        direction LR
+        T0["<b>t0 — Publication</b><br/>un serveur d'outils est<br/>publié, décrit, référencé"]
+        T1["<b>t1 — Admission</b><br/>le mécanisme fonctionne, le<br/>verdict est rendu"]
+        T2["<b>t2 — Usage</b><br/>l'agent l'invoque sur la foi<br/>du verdict de t1"]
+        T3["<b>t3 — Retournement</b><br/>l'objet vérifié change — et<br/>rien ne re-pose la question"]
+        T0 --> T1 --> T2 --> T3
+    end
+
+    NOTE["L'attaque NE DÉFAIT PAS la vérification : elle attend qu'elle soit faite. La question qu'elle pose n'est donc pas celle de la<br/>robustesse du mécanisme d'admission, mais celle de la DURÉE DE VALIDITÉ d'un verdict que rien ne borne."]
+
+    FRISE ~~~ NOTE
+
+    style FRISE fill:#FFFDF9,stroke:#9A3412,stroke-width:1px,color:#9A3412
+    style T0 fill:#FAF6F0,stroke:#9A3412,stroke-width:2px,color:#1F2937
+    style T1 fill:#FAF6F0,stroke:#9A3412,stroke-width:2px,color:#1F2937
+    style T2 fill:#FAF6F0,stroke:#9A3412,stroke-width:2px,color:#1F2937
+    style T3 fill:#FFFFFF,stroke:#9A3412,stroke-width:2px,stroke-dasharray:5 3,color:#1F2937
+    style NOTE fill:#F8F5F0,stroke:#D6D3CD,color:#374151

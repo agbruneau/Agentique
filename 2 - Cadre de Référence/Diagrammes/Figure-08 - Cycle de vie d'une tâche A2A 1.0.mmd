@@ -1,0 +1,50 @@
+%% Figure 8 — Cycle de vie d'une tâche A2A 1.0 (2 - Cadre de Référence, ch. 6, p. 80)
+%% Source : A2A Project, a2a.proto, version de protocole 1.0
+stateDiagram-v2
+    direction LR
+
+    state "ÉTATS ACTIFS" as Actifs {
+        SUBMITTED : TASK_STATE_SUBMITTED
+        WORKING : TASK_STATE_WORKING
+        [*] --> SUBMITTED
+        SUBMITTED --> WORKING
+    }
+
+    state "ÉTATS INTERROMPUS" as Interrompus {
+        state "TASK_STATE_INPUT_REQUIRED<br/>précision ou approbation" as INPUT_REQUIRED
+        state "TASK_STATE_AUTH_REQUIRED<br/>justificatif supplémentaire" as AUTH_REQUIRED
+    }
+
+    state "ÉTATS TERMINAUX" as Terminaux {
+        COMPLETED : TASK_STATE_COMPLETED
+        FAILED : TASK_STATE_FAILED
+        CANCELED : TASK_STATE_CANCELED
+        REJECTED : TASK_STATE_REJECTED
+    }
+
+    WORKING --> INPUT_REQUIRED : précision ou approbation
+    INPUT_REQUIRED --> WORKING : retour vers exécution
+    WORKING --> AUTH_REQUIRED : justificatif supplémentaire
+    AUTH_REQUIRED --> WORKING : retour vers exécution
+
+    WORKING --> COMPLETED : fin de traitement
+    WORKING --> FAILED : fin de traitement
+    WORKING --> CANCELED : annulation
+    SUBMITTED --> REJECTED : l’agent distant refuse la tâche
+
+    note right of Terminaux
+        Un message vers une tâche terminale renvoie UnsupportedOperationError;
+        annuler une tâche terminale renvoie TaskNotCancelableError.
+        Valeur zéro : TASK_STATE_UNSPECIFIED.
+    end note
+
+    classDef active fill:#e6f0fa,stroke:#1b5e9e,color:#0f2744
+    classDef paused fill:#fef3dc,stroke:#b45309,color:#92400e
+    classDef ok fill:#e6f4ea,stroke:#28774e,color:#14532d
+    classDef err fill:#fce8eb,stroke:#9c2f39,color:#7f1d1d
+    classDef muted fill:#f1f5f9,stroke:#64748b,color:#334155
+    class SUBMITTED,WORKING active
+    class INPUT_REQUIRED,AUTH_REQUIRED paused
+    class COMPLETED ok
+    class FAILED err
+    class CANCELED,REJECTED muted

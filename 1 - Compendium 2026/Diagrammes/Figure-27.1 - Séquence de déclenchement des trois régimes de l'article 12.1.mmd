@@ -1,0 +1,24 @@
+%% Figure 27.1 — Séquence de déclenchement des trois régimes de l’article 12.1 lors d’une décision exclusivement automatisée (information au moment de la communication de la décision, informations sur demande 1° à 3°, et occasion de présenter ses observations).
+%%{init: {'flowchart': {'wrappingWidth': 900}}}%%
+flowchart TB
+    subgraph DECL["UNE DÉCISION EXCLUSIVEMENT AUTOMATISÉE EST RENDUE"]
+        direction TB
+        DEC["<b>Une décision fondée exclusivement sur un traitement automatisé est rendue</b>"]
+        R1["<b>Informer</b><br/>que la décision a été rendue, au plus<br/>tard lorsqu'on informe la personne ·<br/>l'information l'accompagne"]
+        R2["<b>Trois informations</b><br/>1° les renseignements utilisés ;<br/>2° les raisons, facteurs et paramètres ;<br/>3° le droit de faire rectifier"]
+        R3["<b>Présenter ses observations</b><br/>l'occasion de présenter ses observations<br/>à un membre du personnel en mesure<br/>de réviser la décision"]
+        DEC -->|"sans demande"| R1
+        DEC -->|"sur demande"| R2
+        DEC -->|"alinéa distinct"| R3
+    end
+
+    NOTE["La troisième information due sur demande · LE DROIT DE FAIRE RECTIFIER · fait partie de l'énumération,<br/>et l'alinéa distinct est le seul que le socle individualise : il est hors de l'énumération, non son quatrième terme."]
+
+    DECL ~~~ NOTE
+
+    style DECL fill:#FFFDF9,stroke:#9A3412,stroke-width:1px,color:#9A3412
+    style DEC fill:#FFFDF9,stroke:#9A3412,stroke-width:2px,color:#111827
+    style R1 fill:#FAF6F0,stroke:#B8B2A6,color:#1F2937
+    style R2 fill:#FAF6F0,stroke:#B8B2A6,color:#1F2937
+    style R3 fill:#FAF6F0,stroke:#B8B2A6,color:#1F2937
+    style NOTE fill:#F8F5F0,stroke:#D6D3CD,color:#374151

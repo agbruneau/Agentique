@@ -1,0 +1,101 @@
+' Fig. 42. – Délégation cryptographique multi-sauts : attestation SPIFFE, échange RFC 8693 à portée atténuée (RAR), preuve de possession et escalade hors bande OpenID CIBA.
+@startuml
+title Délégation Cryptographique Multi-Sauts : Attestation SPIFFE, Échange RFC 8693 et Escalade CIBA
+
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam rectangle {
+  BackgroundColor #F8FAFC
+  BorderColor #334155
+}
+
+rectangle "Plan d'Autorité Zero Trust : Attestation de Charge de Travail & Serveur d'Autorisation (OAuth 2.1 STS)" as PlanAutorite #F8FAFC;line:334155 {
+  rectangle SPIRE #FFFFFF;line:475569 [
+    **Serveur SPIRE (Attestation Continue NHI)**
+    Émet X.509-SVID & JWT-SVID (TTL 15 min, zéro secret statique)
+  ]
+
+  rectangle EntraSTS #EFF6FF;line:2563EB [
+    **Microsoft Entra Agent ID / STS OAuth 2.1 (RFC 8693 + RAR)**
+    Valide FIC SPIFFE • Atténue la portée • Imbrique sub + act + cnf
+  ]
+
+  SPIRE -[hidden]right-> EntraSTS
+}
+
+rectangle "Chaîne d'Exécution à Portée Monotone Décroissante (P2 ⊂ P1 ⊂ P0)" as ChaineExecution #EFF6FF;line:2563EB {
+  rectangle Sujet #FFFFFF;line:334155 [
+    **1. Sujet Initiateur**
+    Employé authentifié OIDC
+    sub: "emp-8841"
+    Portée P0 : incident.manage,
+    warranty.read, sap.reserve
+  ]
+
+  rectangle Orchestrateur #FFFFFF;line:2563EB [
+    **2. Agent Orchestrateur**
+    spiffe:~//boreal.ca/ns/bsn/sa/orch
+    Échange RFC 8693 Saut 1 → T1
+    sub: "emp-8841" | act: orch
+    Portée P1 : warranty.evaluate
+  ]
+
+  rectangle Specialiste #FFFFFF;line:166534 [
+    **3. Spécialiste Domaine BCA**
+    spiffe:~//boreal.ca/ns/bca/sa/warr
+    Échange RFC 8693 Saut 2 → T2
+    act: {sub: warr, act: {sub: orch}}
+    Portée P2 (RAR) : contrat #90441
+  ]
+
+  rectangle ServeurMCP #FFFFFF;line:334155 [
+    **4. Serveur MCP**
+    via agentgateway
+    Vérifie cnf (x5t#S256)
+    Journalise sub + act
+    dans Guidewire / DB2
+  ]
+
+  Sujet -[hidden]right-> Orchestrateur
+  Orchestrateur -[hidden]right-> Specialiste
+  Specialiste -[hidden]right-> ServeurMCP
+
+  Sujet -[#2563EB]-> Orchestrateur : Jeton T0
+  Orchestrateur -[#2563EB]-> Specialiste : A2A + T1\n(DPoP)
+  Specialiste -[#166534]-> ServeurMCP : MCP + T2\n(mTLS)
+
+  rectangle GarantiesT2 #F8FAFC;line:94A3B8 [
+    **Garanties Cryptographiques du Jeton T2 (Sender-Constrained JWT) :**
+    • Identité initiale préservée (sub = emp-8841) • Généalogie complète et non répudiable des agents traversés (act imbriqué)
+    • Jeton inutilisable en cas d'exfiltration grâce à cnf (empreinte clé privée DPoP jkt ou certificat mTLS x5t#S256) • TTL ≤ 300 s
+  ]
+
+  Orchestrateur -[hidden]down-> GarantiesT2
+}
+
+rectangle "Escalade Hors Bande sur Exception de Politique (Montant > 5 000 $ CAD) — Protocole OpenID CIBA" as EscaladeCIBA #FFF7ED;line:C2410C {
+  rectangle Ciba1 #FFFFFF;line:C2410C [
+    **1. Suspension Durable (Temporal)**
+    POST /bc-authorize + condensat tx_hash
+  ]
+  rectangle Ciba2 #FFFFFF;line:C2410C [
+    **2. Défi Hors Bande FIDO2 / Passkey**
+    Superviseur distinct (SoD : approver ≠ sub)
+  ]
+  rectangle Ciba3 #FFFFFF;line:166534 [
+    **3. Jeton CIBA Borné à la Transaction**
+    Usage unique • Lié à tx_hash • Audit E-23
+  ]
+
+  Ciba1 -[#C2410C]right-> Ciba2
+  Ciba2 -[#C2410C]right-> Ciba3
+}
+
+SPIRE <.[#334155]down. Orchestrateur
+EntraSTS <.[#2563EB]down. Orchestrateur
+EntraSTS <.[#2563EB]down. Specialiste
+GarantiesT2 -[hidden]down-> Ciba2
+Specialiste .[#C2410C]down.> EscaladeCIBA
+@enduml

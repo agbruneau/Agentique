@@ -1,0 +1,25 @@
+%% Ouvrage : 0 - Livre Blanc
+%% Figure : Fig. 11 (p. 44)
+%% Légende : Arbre de décision d’allocation des sous-tâches métier selon la règle hybride 80/20
+
+flowchart LR
+  classDef nodeStyle fill:#eef3f8,stroke:#2b4c65,color:#0f172a,stroke-width:1.2px;
+
+  Q1{"Règle exacte ou<br/>calcul formulable ?"}:::nodeStyle
+  R1["Code déterministe /<br/>moteur de règles (80 %)"]:::nodeStyle
+  Q2{"Données structurées<br/>sans texte libre ?"}:::nodeStyle
+  R2["ML prédictif /<br/>scoreur classique"]:::nodeStyle
+  Q3{"Séquence d'étapes<br/>connue d'avance ?"}:::nodeStyle
+  R3["Workflow fixe +<br/>nœud LLM JSON"]:::nodeStyle
+  Q4{"Exceptions ouvertes<br/>et outils dynamiques ?"}:::nodeStyle
+  R4["Boucle agentique (20 %)<br/>Plafond + HITL"]:::nodeStyle
+  R5["Règle déterministe ou<br/>escalade manuelle"]:::nodeStyle
+
+  Q1 -->|"Oui"| R1
+  Q1 -->|"Non"| Q2
+  Q2 -->|"Oui"| R2
+  Q2 -->|"Non"| Q3
+  Q3 -->|"Oui"| R3
+  Q3 -->|"Non"| Q4
+  Q4 -->|"Oui (borné)"| R4
+  Q4 -->|"Non"| R5

@@ -1,0 +1,56 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 52 (page 196)
+' Légende : Fig. 52. – Séquence de déploiement progressif (Shadow, Canary) articulée avec l’épinglage des workflows durables en vol
+@startuml
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+skinparam roundcorner 6
+skinparam defaultFontName SansSerif
+skinparam ArrowColor #324e67
+skinparam ArrowFontColor #172025
+skinparam ParticipantBackgroundColor #f3f7f9
+skinparam ParticipantBorderColor #324e67
+skinparam ParticipantFontColor #172025
+skinparam SequenceLifeLineBorderColor #7e8a93
+skinparam SequenceGroupBorderColor #324e67
+skinparam SequenceGroupBackgroundColor #edf3f7
+skinparam SequenceGroupHeaderFontColor #1a4964
+skinparam NoteBackgroundColor #fdfaf0
+skinparam NoteBorderColor #b0a372
+skinparam NoteFontColor #172025
+
+autonumber
+
+participant "Passerelle /\nArgo Rollouts" as GW
+participant "Moteur Durable\n(Temporal / Restate)" as Moteur
+participant "Worker v1\n(Current / Révision A)" as W1
+participant "Worker v2\n(Canary / Révision B)" as W2
+participant "AnalysisTemplate\n(OTel / EvalOps)" as AT
+
+group 1. Phase Shadow (Traffic Mirroring sans effet de bord)
+  GW -> W1 : Requête réelle client (réponse retournée)
+  GW --> W2 : Copie asynchrone RequestMirror\n(réponse ignorée, écritures bloquées)
+  W2 -> AT : Émet latence, erreurs et scores fantômes
+end
+
+group 2. Phase Canary / Ramping avec Workflow Pinning (en vol)
+  GW -> Moteur : Déclare v2 en Ramping (ex. 20 % nouveaux\nflux)
+  note over Moteur
+    Workflow wf-101 (démarré sur v1)
+    se réveille après attente HITL / minuteur
+  end note
+  Moteur -> W1 : Route wf-101 (Pinned sur Build ID v1 /\nendpoint immuable A) -> zéro erreur de\nrejeu
+  Moteur -> W2 : Route nouveau wf-204 (Build ID v2 /\nendpoint immuable B)
+  W2 -> AT : Télémétrie SLO comportementale et coûts
+end
+
+group 3. Promotion progressive ou retour arrière et drainage
+  AT --> GW : successCondition validée -> promeut v2\n(Current)
+  note over W1
+    Anciens workers v1 maintenus
+    jusqu'au drainage complet de wf-101
+  end note
+  W1 --> Moteur : Achève wf-101 proprement
+  GW -> W1 : Mise à zéro (scaleDown) après drainage
+end
+@enduml

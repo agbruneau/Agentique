@@ -1,0 +1,23 @@
+%% Ouvrage : 0 - Livre Blanc
+%% Figure : Fig. 8 (p. 34)
+%% Légende : Arbre décisionnel de gouvernance du portefeuille : Acheter, Assembler ou Construire
+
+flowchart LR
+  classDef nodeStyle fill:#eef3f8,stroke:#2b4c65,color:#0f172a,stroke-width:1.2px;
+
+  Start["Capacité éligible"]:::nodeStyle
+  Q1{"Différenciation métier<br/>ou PI stratégique ?"}:::nodeStyle
+  Buy["ACHETER<br/>Agent SaaS natif<br/>(registre EA obligatoire)"]:::nodeStyle
+  Q2{"Données souveraines ou<br/>couplage profond aux SoR ?"}:::nodeStyle
+  Assemble["ASSEMBLER<br/>Couche composable<br/>sur MCP et A2A"]:::nodeStyle
+  Build["CONSTRUIRE<br/>Agent sur mesure<br/>sur plateforme interne"]:::nodeStyle
+  ARB["Contrôle ARB :<br/>réversibilité, NHI, FinOps"]:::nodeStyle
+
+  Start --> Q1
+  Q1 -->|"Non : processus standard<br/>dans un progiciel"| Buy
+  Q1 -->|"Oui : avantage métier<br/>ou flux inter-systèmes"| Q2
+  Q2 -->|"Modéré : orchestrer API<br/>et SaaS existants"| Assemble
+  Q2 -->|"Élevé : logique 80/20,<br/>latence ou souveraineté"| Build
+  Buy --> ARB
+  Assemble --> ARB
+  Build --> ARB

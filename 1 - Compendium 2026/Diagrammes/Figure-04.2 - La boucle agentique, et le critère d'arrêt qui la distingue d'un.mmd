@@ -1,0 +1,24 @@
+%% Figure 4.2 — La boucle agentique, et le critère d'arrêt qui la distingue d'un appel unique.
+%% Source : 1 - Compendium 2026, Chapitre 4 (page 54)
+
+%%{init: {'flowchart': {'wrappingWidth': 900}}}%%
+flowchart TB
+    subgraph SG_BOUCLE["LE MODÈLE AUGMENTÉ, ET SA BOUCLE DE CONTRÔLE"]
+        direction LR
+        S1["<b>Percevoir</b><br/><br/>l'invite courante et<br/>les observations<br/>accumulées"]
+        S2["<b>Raisonner</b><br/><br/>une étape de réflexion<br/>ou une décision"]
+        S3["<b>Agir</b><br/><br/>émettre un appel<br/>d'outil ou une réponse"]
+        S4["<b>Observer</b><br/><br/>intégrer le résultat<br/>au contexte"]
+        S1 --> S2 --> S3 --> S4 --> S1
+    end
+
+    NOTE["Ce qui fait l'agent n'est pas la boucle mais SON CRITÈRE D'ARRÊT — but atteint, budget d'appels épuisé, échec irrécupérable,<br/>demande d'intervention humaine. Sans critère, la boucle est un générateur de texte qui recommence."]
+
+    SG_BOUCLE ~~~ NOTE
+
+    classDef card fill:#FAF7F2,stroke:#C4BEB5,stroke-width:1px,color:#222222,text-align:left;
+    classDef noteBox fill:#F7F5F0,stroke:#C4BEB5,stroke-width:1px,color:#333333,text-align:left;
+    class S1,S2,S3,S4 card;
+    class NOTE noteBox;
+    style SG_BOUCLE fill:#FFFFFF,stroke:none,color:#9E3A14
+    linkStyle 0,1,2,3 stroke:#9E3A14,stroke-width:2px

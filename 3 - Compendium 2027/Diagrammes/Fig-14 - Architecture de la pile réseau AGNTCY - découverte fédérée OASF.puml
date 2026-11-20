@@ -1,0 +1,75 @@
+' Fig. 14. – Architecture de la pile réseau AGNTCY : découverte fédérée OASF / Agent Directory et transport SLIM chiffré de bout en bout par MLS post-quantique.
+@startuml
+title Pile Réseau Inter-Agents AGNTCY : Découverte Fédérée OASF, Transport SLIM et MLS Post-Quantique
+
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+
+rectangle "Plan de Découverte Sémantique et d'Attestation de Provenance (Control Plane)" as CP #F8FAFC;line:1E293B {
+  rectangle OASF #FFFFFF;line:1E293B [
+    **Descripteur OASF & Artefact OCI**
+    Taxonomie normalisée skills & domaines
+    Signature d'intégrité Sigstore / Cosign
+    Métriques SLA, coût & conformité
+  ]
+  rectangle DHT #FFFFFF;line:2563EB [
+    **Agent Directory Fédéré (DHT)**
+    Indexation distribuée Kademlia
+    Requêtes multi-critères par capacité
+    Synchronisation pair-à-pair sans SPOF
+  ]
+  rectangle ANP #FFFFFF;line:15803D [
+    **Passerelle Inter-Domaines ANP**
+    Identités Web décentralisées (did:wba)
+    Ancrage DNS/TLS sans registre opaque
+    Filtrage politiques DMZ B2B
+  ]
+  OASF -[#1E293B]-> DHT
+  DHT <-[#2563EB]-> ANP
+}
+
+rectangle "Plan de Transport Temps Réel SLIM et Chiffrement de Groupe IETF MLS (Data Plane)" as DP #EFF6FF;line:2563EB {
+  rectangle DomA #FFFFFF;line:1E293B [
+    **Domaine A — Groupe Boréal**
+    • Agent Achats BEL & Agent Risque BCA
+    • Identités locales SPIFFE / SVID
+    • Routeur local SLIM (QUIC / HTTP/2)
+    ----
+    **Feuilles TreeKEM #1 & #2**
+    Clés éphémères X25519MLKEM768
+  ]
+  rectangle Relais #FFFBEB;line:9A3412 [
+    **Maillage de Relais SLIM (Zero-Trust)**
+    Routage sémantique par noms hiérarchiques :
+    boreal/supply/rfq-session-884/*
+    • Multiplexage QUIC sans blocage HOL
+    • Topologies : Unicast, Streaming, Pub/Sub
+    Aveugle aux charges utiles (Chiffrées E2E)
+    Traversée NAT sortante uniquement (port 443)
+  ]
+  rectangle DomB #FFFFFF;line:15803D [
+    **Domaine B — Partenaire Externe**
+    • Agent Cotation Transporteur Maritime
+    • Identité vérifiée did:wba + mTLS
+    • Passerelle DMZ SLIM / A2A v1.0
+    ----
+    **Feuille TreeKEM #3**
+    Révocation atomique fin de tâche
+  ]
+  rectangle MLS #ECFDF5;line:15803D [
+    **Tunnel Cryptographique de Bout en Bout IETF MLS (RFC 9420) — Suite Hybride Post-Quantique (FIPS 203 ML-KEM + X25519)**
+    Rotation d'époque en O(log N) • Forward Secrecy (FS) & Post-Compromise Security (PCS) contre l'interception différée
+  ]
+
+  DomA <-[#2563EB]-> Relais
+  Relais <-[#2563EB]-> DomB
+  DomA -[hidden]down-> MLS
+  Relais -[hidden]down-> MLS
+  DomB -[hidden]down-> MLS
+}
+
+CP -[hidden]down-> DP
+
+@enduml

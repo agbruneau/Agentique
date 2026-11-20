@@ -1,0 +1,85 @@
+' Fig. 43. – Le trajet d’une injection indirecte : un tiers dépose une consigne dans un contenu que l’agent lit pour une tâche légitime, et le résultat d’outil détourne l’objectif de l’agent. Ce que l’attaquant en tire dépend des capacités dont l’agent dispose.
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam rectangle {
+  BackgroundColor #FFFFFF
+  BorderColor #475569
+}
+
+rectangle Utilisateur #F8FAFC;line:475569 [
+  **Utilisateur**
+  la victime, non
+  l'auteur
+]
+
+rectangle Tiers #FEF2F2;line:991B1B [
+  **Tiers**
+  auteur de la
+  consigne
+]
+
+rectangle Contenu #FEF2F2;line:991B1B [
+  **Contenu lu par l'agent**
+  page, courriel, billet, ligne de
+  base de données, réponse d'API
+]
+
+rectangle Agent #EFF6FF;line:2563EB [
+  **Agent**
+]
+
+rectangle Detournement #FEF2F2;line:991B1B [
+  **Détournement d'objectif**
+  **(ASI01)**
+  un but qui n'est plus celui du
+  mandant, poursuivi avec des
+  moyens légitimes
+]
+
+Utilisateur -[hidden]down-> Tiers
+Utilisateur -[#475569]right-> Agent : tâche légitime
+Tiers -[#991B1B]right-> Contenu : dépose une\nconsigne
+Contenu -[#991B1B]right-> Agent : résultat\nd'outil
+Agent -[#991B1B]right-> Detournement
+
+rectangle "Selon les capacités de l'agent" as Capacites #F8FAFC;line:CBD5E1 {
+  rectangle Exfil #FFFFFF;line:475569 [
+    **Exfiltration**
+    données privées et
+    canal sortant
+  ]
+  rectangle Action #FFFFFF;line:475569 [
+    **Action non voulue**
+    outils à effet
+    (ASI02)
+  ]
+  rectangle Code #FFFFFF;line:475569 [
+    **Exécution de code**
+    interpréteur (ASI05, MCP05)
+  ]
+  rectangle Persist #FFFFFF;line:475569 [
+    **Persistance**
+    écriture en mémoire
+    (ASI06)
+  ]
+  rectangle Approb #FFFFFF;line:475569 [
+    **Approbation**
+    obtenue par tromperie
+    (ASI09)
+  ]
+
+  Exfil -[hidden]right-> Action
+  Action -[hidden]right-> Code
+  Code -[hidden]right-> Persist
+  Persist -[hidden]right-> Approb
+}
+
+Detournement -[#94A3B8]down-> Exfil
+Detournement -[#94A3B8]down-> Action
+Detournement -[#94A3B8]down-> Code
+Detournement -[#94A3B8]down-> Persist
+Detournement -[#94A3B8]down-> Approb
+@enduml

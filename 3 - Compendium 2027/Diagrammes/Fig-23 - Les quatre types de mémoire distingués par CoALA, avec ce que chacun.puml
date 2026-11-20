@@ -1,0 +1,47 @@
+' Fig. 23. – Les quatre types de mémoire distingués par CoALA, avec ce que chacun contient et le risque propre à l'écriture.
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+
+rectangle "**De travail**\nL'information active du\ncycle de décision en cours" as M1 #EFF6FF;line:2563EB
+rectangle "**RISQUE PROPRE À L'ÉCRITURE**" as RLbl #FFFFFF;line:FFFFFF
+rectangle "Faible :\nelle disparaît avec la session" as R1 #ECFDF5;line:15803D
+
+rectangle "**Mémoires à long terme : apprendre, c'est y écrire**" as LTM #FFFFFF;line:2563EB {
+  rectangle "**Épisodique**\nL'expérience des cycles\nantérieurs : historiques,\ntrajectoires" as M2 #EFF6FF;line:2563EB
+  rectangle "**Sémantique**\nLe savoir de l'agent sur\nle monde et sur lui-même" as M3 #EFF6FF;line:2563EB
+  rectangle "**Procédurale**\nLe savoir-faire : poids du\nmodèle et code de l'agent" as M4 #EFF6FF;line:2563EB
+
+  rectangle " " as S2 #FFFFFF;line:FFFFFF
+  rectangle " " as S3 #FFFFFF;line:FFFFFF
+  rectangle " " as S4 #FFFFFF;line:FFFFFF
+
+  rectangle "Un épisode faux sert\nensuite de précédent" as R2 #F8FAFC;line:94A3B8
+  rectangle "Un fait périmé ou injecté\npasse pour établi" as R3 #F8FAFC;line:94A3B8
+  rectangle "Le plus élevé :\nelle modifie le comportement" as R4 #FEF2F2;line:DC2626
+
+  M2 -[hidden]right-> M3
+  M3 -[hidden]right-> M4
+  S2 -[hidden]right-> S3
+  S3 -[hidden]right-> S4
+  R2 -[hidden]right-> R3
+  R3 -[hidden]right-> R4
+
+  M2 -[hidden]down-> S2
+  S2 -[hidden]down-> R2
+  M3 -[hidden]down-> S3
+  S3 -[hidden]down-> R3
+  M4 -[hidden]down-> S4
+  S4 -[hidden]down-> R4
+}
+
+M1 -[hidden]down-> RLbl
+RLbl -[hidden]down-> R1
+
+M2 -[hidden]left-> M1
+S2 -[hidden]left-> RLbl
+R2 -[hidden]left-> R1
+
+@enduml

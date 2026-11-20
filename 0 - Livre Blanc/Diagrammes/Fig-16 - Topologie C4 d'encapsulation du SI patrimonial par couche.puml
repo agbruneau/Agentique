@@ -1,0 +1,31 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 16 (p. 63)
+' Légende : Topologie C4 d’encapsulation du SI patrimonial par couche anti-corruption, CDC Debezium et séparation CQRS
+
+@startuml
+!include <C4/C4_Container>
+
+Container(mcp, "MCP Gateway", "Streamable HTTP", "Outils métier idempotents")
+
+System_Boundary(acl, "Couche Anti-Corruption\n(ACL) & découplage CQRS") {
+  Container(facade, "Façade sémantique ACL", "Traducteur DDD", "Convertit modèles, clés et erreurs isError")
+  Container(cdc, "Pipeline CDC asynchrone", "Debezium / Kafka", "Capture journaux sans scrutation SQL")
+  Container(write, "Passerelle d'écriture", "Idempotence / Limiteur", "Lisse les mutations vers les SoR")
+  ContainerDb(read, "Réplicat de lecture", "PostgreSQL / Redis", "Absorbe rafales d'exploration")
+}
+
+System_Ext(crm, "CRM (Salesforce)", "System of Record — API / Flows")
+System_Ext(erp, "ERP (SAP / Oracle)", "System of Record — Connecteurs / API")
+System_Ext(mf, "Mainframe IBM Z", "System of Record — z/OS Connect / CICS / Db2")
+
+Rel(mcp, facade, "Appelle outil", "JSON-RPC 2.0")
+Rel(facade, read, "Lectures rapides (readOnlyHint)")
+Rel(facade, write, "Écritures bornées (clé d'idempotence)")
+Rel(cdc, read, "Projette état quasi-temps réel")
+Rel(write, crm, "Mute", "API CRM")
+Rel(write, erp, "Mute", "REST / iPaaS")
+Rel(write, mf, "Déclenche", "z/OS Connect")
+Rel(erp, cdc, "Journaux Oracle / SQL", "CDC")
+Rel(mf, cdc, "Journaux Db2", "CDC")
+
+@enduml

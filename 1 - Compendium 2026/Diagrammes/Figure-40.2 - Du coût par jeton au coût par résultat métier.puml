@@ -1,0 +1,51 @@
+' Ouvrage : 1 - Compendium 2026
+' Chapitre : 40 · Les indicateurs de l'AgentOps et le FinOps des agents (p. 471)
+' Figure : Figure 40.2 — Du coût par jeton au coût par résultat métier.
+@startuml
+hide stereotype
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+skinparam defaultFontName SansSerif
+skinparam roundcorner 6
+skinparam package {
+    BackgroundColor #fdfbf7
+    BorderColor #d4cfc7
+    FontColor #444444
+}
+skinparam package<<accent>> {
+    BackgroundColor #fdfbf7
+    BorderColor #9c3d14
+    FontColor #9c3d14
+}
+skinparam rectangle {
+    BackgroundColor #f7f4ee
+    BorderColor #b8b4ac
+    FontColor #1f1f1f
+}
+skinparam rectangle<<accent>> {
+    BackgroundColor #ffffff
+    BorderColor #9c3d14
+    FontColor #1f1f1f
+}
+skinparam note {
+    BackgroundColor #faf8f4
+    BorderColor #b8b4ac
+    FontColor #333333
+}
+
+package "COÛT PAR JETON" as P1 {
+    rectangle "<b>Ce que l'infrastructure facture</b>\n\nImmédiatement mesurable\n\nBaisse quand l'agent échoue vite\n\nNe dit rien de ce qui a été produit\n\n<b>une grandeur de fournisseur</b>" as C1
+}
+
+package "COÛT PAR RÉSULTAT MÉTIER" as P2 <<accent>> {
+    rectangle "<b>Ce que l'organisation obtient</b>\n\nExige de définir le résultat\n\nIntègre les reprises et les échecs\n\nRend l'effet de plateforme visible\n\n<b>la seule grandeur qui décide</b>" as C2 <<accent>>
+}
+
+P1 -[hidden]right-> P2
+
+note bottom
+Le coût par jeton est mesurable et trompeur : il baisse quand l'agent échoue vite. Le coût par résultat est la seule grandeur
+qui rende l'effet de plateforme visible — et c'est aussi celle qui exige de savoir ce qu'est un résultat, ce qu'aucun compteur
+ne dit.
+end note
+@enduml

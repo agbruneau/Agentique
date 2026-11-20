@@ -1,0 +1,52 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 24 (p. 92)
+' Légende : Séquence de propagation des ACL (OpenFGA), garde d’écriture anti-empoisonnement et isolation multi-locataires
+
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam sequence {
+  ArrowColor #2B4C65
+  LifeLineBorderColor #64748B
+  LifeLineBackgroundColor #FFFFFF
+  ParticipantBorderColor #2B4C65
+  ParticipantBackgroundColor #F1F6F9
+  ActorBorderColor #2B4C65
+  ActorBackgroundColor #F1F6F9
+  DatabaseBorderColor #2B4C65
+  DatabaseBackgroundColor #F1F6F9
+  GroupBorderColor #334155
+  GroupBackgroundColor #FFFFFF
+  GroupHeaderFontColor #0F172A
+}
+
+autonumber
+
+actor "Utilisateur\n(Jeton OBO)" as user
+participant "Agent Harness" as harness
+participant "Garde mémoire\n(Policy / ASI06)" as garde
+participant "OpenFGA\n(ReBAC)" as fga
+database "Stockage vectoriel\net épisodique isolé" as store
+
+group Flux A — Récupération gouvernée par ACL (Pre-filtering / Post-filtering)
+  user -> harness : Requête métier (mandat OBO)
+  harness -> fga : ListObjects(user, "viewer", "doc")
+  fga --> harness : ID autorisés [doc_12, doc_48]
+  harness -> store : Recherche hybride\n(tenant_id = T1 AND doc_id IN autorisés)
+  store --> harness : Fragments cloisonnés (HNSW + IDF par\nlocataire)
+  harness -> fga : BatchCheck(user, "viewer", candidats)\n[contrôle de fraîcheur si révocations]
+  fga --> harness : Verdict autorisé
+end
+
+group Flux B — Écriture protégée contre l'empoisonnement (Hot Path / Async)
+  harness -> garde : Propose écriture mémoire\n(source, locataire T1, contenu)
+  garde -> garde : Vérifie provenance, confiance\net détecte directives injectées
+  alt Contenu sain et provenance attestée
+    garde -> store : Écrit sous tenant_id = T1\navec empreinte et horodatage
+    store --> harness : Confirmation indexée
+  else Contenu suspect ou origine non fiable
+    garde --> harness : Rejet ou mise en quarantaine\n(audit immuable)
+  end
+end
+
+@enduml

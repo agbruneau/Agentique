@@ -1,0 +1,101 @@
+' Fig. 45. – Architecture de défense en profondeur : garde-fous neuro-symboliques PEP/PDP hors du LLM, confinement OpenSandbox et coupe-circuit SOC.
+@startuml
+title Architecture de Défense en Profondeur : Garde-Fous Neuro-Symboliques, OpenSandbox et Kill Switch
+
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam rectangle {
+  BackgroundColor #FFFFFF
+  BorderColor #334155
+}
+
+rectangle "1. Plan Cognitif\n(Présumé faillible / compromis)" as PlanCog #F8FAFC;line:64748B {
+  rectangle CelluleLLM #FFFFFF;line:475569 [
+    **Cellule Agentique LLM**
+    Raisonnement probabiliste
+    Propose une intention :
+    • Appel d'outil MCP
+    • Code Python / Script CUA
+  ]
+
+  rectangle ZeroTrust #FFF7ED;line:C2410C [
+    **Postulat Zero Trust :**
+    Aucun invariant métier,
+    plafond financier ou secret
+    maître ne réside jamais
+    dans le prompt système
+    du modèle de langage.
+  ]
+
+  CelluleLLM -[hidden]down-> ZeroTrust
+}
+
+rectangle "2. Garde-Fous Déterministes Hors du LLM\n(Architecture PEP / PDP Neuro-Symbolique)" as GardeFous #EFF6FF;line:2563EB {
+  rectangle PEP #FFFFFF;line:2563EB [
+    **PEP : Passerelle agentgateway**
+    • Vérifie mTLS / DPoP & chaîne JWT RFC 8693
+    • Valide le schéma MCP épinglé (SHA-256)
+    • Extrait (principal, delegator, action, args)
+    • Bloque tout contournement réseau direct
+  ]
+
+  rectangle PDP #F0FDF4;line:166534 [
+    **PDP : Moteur Cedar / OPA (Rego)**
+    • Règles formelles vérifiées par solveur SMT
+    • Sémantique forbid prioritaire (plafonds, SoD)
+    • Contrôle de teinte (interdit écriture si Taint)
+    • Zéro probabilité d'injection de prompt
+    **Décision : ALLOW | DENY | STEP_UP_CIBA**
+  ]
+
+  PEP -[#166534]down-> PDP : (< 1,5 ms)
+  PDP -[#166534]up-> PEP
+}
+
+rectangle "3. Exécution Confinée (AAIF OpenSandbox)\n(Isolation Matérielle & Zéro Egress par Défaut)" as OpenSandbox #F0FDF4;line:166534 {
+  rectangle MicroVM #FFFFFF;line:166534 [
+    **MicroVM Firecracker / Module WASI 0.2**
+    • Noyau invité dédié (KVM) ou bac à capacités WASI
+    • Restauration snapshot < 15 ms • Rootfs lecture seule
+    • Quotas stricts CPU / RAM / descripteurs / PIDs
+    • Egress réseau = DENY ALL (aucun accès Internet
+    ni API métadonnées cloud 169.254.169.254)
+  ]
+
+  rectangle VaultProxy #F8FAFC;line:334155 [
+    **Mandataire de Secrets (Credential Vault Proxy)**
+    • Le code dans la microVM ne voit aucun jeton réel
+    • Sortie unique via vsock vers liste blanche stricte
+    • Injection TLS/OAuth à la frontière externe
+    **Destruction cryptographique après chaque tâche**
+  ]
+
+  MicroVM -[hidden]down-> VaultProxy
+}
+
+PlanCog -[#2563EB]right-> GardeFous
+GardeFous -[#166534]right-> OpenSandbox
+
+rectangle "4. Coupe-Circuit Centralisé Multi-Nuages (SOC Kill Switch — Cible < 2 s • Plafond S-14 < 10 s)" as KillSwitch #FEF2F2;line:DC2626 {
+  rectangle Detection #FFFFFF;line:DC2626 [
+    **Détection Télémétrique Continue**
+    Flux OTel gen_ai.* • Dérive coût/sauts • Alerte SIEM
+  ]
+  rectangle Signalisation #FFFFFF;line:DC2626 [
+    **Signalisation OpenID SSF / CAEP**
+    Révocation SVID SPIRE + Blocage cache PEP
+  ]
+  rectangle GelPurge #FFFFFF;line:DC2626 [
+    **Gel Forensique & Purge Exécution**
+    Pause sagas Temporal + Purge microVMs actives
+  ]
+
+  Detection -[#DC2626]right-> Signalisation
+  Signalisation -[#DC2626]right-> GelPurge
+}
+
+PDP <-[#DC2626]down- KillSwitch
+VaultProxy <-[#DC2626]down- KillSwitch
+@enduml

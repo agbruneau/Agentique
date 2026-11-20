@@ -1,0 +1,85 @@
+' Figure 2.3 — La pile du Web sémantique, et ce que chaque brique ajoute au graphe (JSON-LD opérant comme format de sérialisation transversal de RDF et non comme couche logique au-dessus d'OWL).
+' Source : 1 - Compendium 2026, Chapitre 2 (page 34)
+
+@startuml
+top to bottom direction
+hide stereotype
+skinparam packageStyle rectangle
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 13
+skinparam shadowing false
+skinparam roundCorner 4
+skinparam nodesep 25
+skinparam ranksep 18
+
+skinparam package {
+  BackgroundColor #FFFFFF
+  BorderColor #E0DDD7
+  FontColor #9E3A14
+  FontStyle bold
+}
+
+skinparam rectangle {
+  BackgroundColor #FAF7F2
+  BorderColor #B8B3AA
+  FontColor #222222
+}
+
+skinparam rectangle<<side>> {
+  BackgroundColor #FFFFFF
+  BorderColor #FFFFFF
+  FontColor #222222
+}
+
+skinparam legendBackgroundColor #F7F5F0
+skinparam legendBorderColor #C4BEB5
+skinparam legendFontColor #333333
+
+package "CE QUE CHAQUE ÉTAGE AJOUTE" as STACK {
+  rectangle L4 [
+    <color:#9E3A14><b>4</b></color>  <b>JSON-LD</b>
+    Sérialisation ; le pont vers les piles de développement
+    existantes.
+  ]
+  rectangle L3 [
+    <color:#9E3A14><b>3</b></color>  <b>OWL</b>
+    Axiomes et inférence sur le graphe.
+  ]
+  rectangle L2 [
+    <color:#9E3A14><b>2</b></color>  <b>RDFS</b>
+    Vocabulaire et hiérarchies de classes et de propriétés.
+  ]
+  rectangle L1 [
+    <color:#9E3A14><b>1</b></color>  <b>RDF</b>
+    Triplets sujet-prédicat-objet ; chaque ressource porte un
+    identifiant globalement résolvable.
+  ]
+
+  L4 -[hidden]down- L3
+  L3 -[hidden]down- L2
+  L2 -[hidden]down- L1
+}
+
+rectangle SIDE1 <<side>> [
+  <b>SHACL et ShEx</b>
+  La validation vient par-dessus : un contrat sémantique se
+  pose sur le graphe, il n'en fait pas partie (§ 2.3.3).
+]
+rectangle SIDE2 <<side>> [
+  <b>La propriété rare</b>
+  Fusionner deux schémas relationnels exige un projet ;
+  fusionner deux graphes qui partagent des identifiants
+  n'exige rien.
+]
+
+SIDE1 -[hidden]down- SIDE2
+L4 -[hidden]right- SIDE1
+L2 -[hidden]right- SIDE2
+
+legend
+  Deux graphes fusionnent par simple union de leurs triplets — POURVU QU'ILS PARTAGENT DES IDENTIFIANTS.
+  La pile ne fournit pas l'accord sémantique : elle le suppose, et c'est le même constat que la pile canonique
+  du ch. 1 § 1.1.2 porte un étage plus bas.
+endlegend
+@enduml

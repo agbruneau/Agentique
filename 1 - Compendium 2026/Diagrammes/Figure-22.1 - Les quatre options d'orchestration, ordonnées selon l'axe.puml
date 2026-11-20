@@ -1,0 +1,70 @@
+' Figure 22.1 — Les quatre options d’orchestration, ordonnées selon l’axe du commandement de l’enchaînement (agents en haut, cadre en bas) et celui de la connaissance du processus ; la discontinuité OO2 → OO3 relève d’une lecture de l’auteur.
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 6
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 13
+skinparam backgroundColor #FFFFFF
+skinparam legendBackgroundColor #F8F5F0
+skinparam legendBorderColor #D6D3CD
+skinparam legendBorderThickness 1
+
+rectangle "DEUX AXES : QUI SAIT, ET QUI COMMANDE · EN HAUT, LES AGENTS COMMANDENT ; EN BAS, LE CADRE" as CADRE #FFFDF9;line:9A3412 {
+  rectangle "En haut — les agents commandent l'enchaînement" as HAUT #FFFDF9;line:D6D3CD {
+    rectangle OO1 #FAF6F0;line:B8B2A6 [
+      <color:#9A3412>**OO1**</color>  **Aucun cadre explicite**
+      ----
+      Personne ne détient la connaissance du processus ;
+      les agents commandent l'enchaînement.
+      ----
+      <color:#57534E>//on ne peut rien lire avant l'exécution//</color>
+    ]
+
+    rectangle OO2 #FAF6F0;line:B8B2A6 [
+      <color:#9A3412>**OO2**</color>  **Le cadre est dans l'invite**
+      ----
+      Les agents détiennent la connaissance, par l'invite
+      ou le contexte ; ils commandent encore.
+      ----
+      <color:#57534E>//une description, sans force exécutoire établie//</color>
+    ]
+
+    OO1 -[hidden]right-> OO2
+  }
+
+  rectangle "<color:#9A3412>**DISCONTINUITÉ : OO2 → OO3 (le commandement quitte les agents pour le cadre)**</color>" as DISC #FEF2F2;line:9A3412
+
+  rectangle "En bas — le cadre commande l'enchaînement" as BAS #FFFDF9;line:D6D3CD {
+    rectangle OO3 #FAF6F0;line:B8B2A6 [
+      <color:#9A3412>**OO3**</color>  **Le cadre seul**
+      ----
+      Le cadre détient la connaissance — les agents
+      l'ignorent — et il commande.
+      ----
+      <color:#57534E>//l'enchaînement complet est lisible//</color>
+    ]
+
+    rectangle OO4 #FAF6F0;line:B8B2A6 [
+      <color:#9A3412>**OO4**</color>  **Le cadre et les agents**
+      ----
+      Les deux détiennent la connaissance ; le cadre
+      commande.
+      ----
+      <color:#57534E>//l'enchaînement complet est lisible//</color>
+    ]
+
+    OO3 -[hidden]right-> OO4
+  }
+
+  OO1 -[hidden]down-> DISC
+  OO2 -[hidden]down-> DISC
+  DISC -[hidden]down-> OO3
+  DISC -[hidden]down-> OO4
+}
+
+legend
+  La seule DISCONTINUITÉ est le passage d'OO2 à OO3 : c'est là que le commandement de l'enchaînement quitte les agents pour le
+  cadre, et que l'enchaînement devient lisible avant l'exécution. Les autres passages sont graduels.
+endlegend
+@enduml

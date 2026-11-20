@@ -1,0 +1,20 @@
+%% Fig. 2. – L'assistant répond en un tour; l'agent boucle : le modèle utilise un outil, se règle sur le résultat et choisit la suite.
+flowchart TB
+    subgraph S2["AGENT : EN BOUCLE"]
+        direction TB
+        Ctrl["Point de contrôle<br/>consulter un humain"] <-.-> Modele["Modèle<br/>évalue son avancement et<br/>choisit la suite"]
+        Modele -->|"utilise l'outil"| Outil["Outil<br/>agit sur un autre système"]
+        Outil -->|"résultat renvoyé par l'environnement"| Modele
+        Modele --> Arret["Condition d'arrêt<br/>p. ex. nombre maximal<br/>d'itérations"]
+    end
+
+    subgraph S1["ASSISTANT : PAR TOURS"]
+        direction TB
+        Demande["Demande"] --> Assistant["Assistant"]
+        Assistant --> Reponse["Réponse"]
+        Reponse ~~~ Fin(["un tour, puis fin"])
+    end
+
+    style S1 fill:#F8FAFC,stroke:#CBD5E1
+    style S2 fill:#F8FAFC,stroke:#CBD5E1
+    style Modele fill:#EFF6FF,stroke:#2563EB

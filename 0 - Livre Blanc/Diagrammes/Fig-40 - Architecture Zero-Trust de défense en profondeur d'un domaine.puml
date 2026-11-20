@@ -1,0 +1,42 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 40 (page 153)
+' Légende : Fig. 40. – Architecture Zero-Trust de défense en profondeur d’un domaine agentique : AISPM pré-déploiement, AI Gateway PII, Agent Harness CaMeL, Intent Gate, confinement et AIDR
+@startuml
+!include <C4/C4_Container>
+
+LAYOUT_LEFT_RIGHT()
+
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+
+System_Boundary(gov, "Plan de gouvernance et d'identité") {
+  Container(spire, "SPIRE Server & STS", "Identité & Jetons", "Attestation SPIFFE, OAuth OBO et Txn-Tokens")
+  Container(aispm, "AISPM & AI-BOM", "Posture continue", "Inventaire Shadow AI, audit NHI et serveurs MCP")
+}
+
+System_Boundary(data_plane, "Plan d'exécution Zero-Trust (Data Plane)") {
+  Container(camel, "Agent Harness (CaMeL)", "Flots séparés", "Séparation contrôle/données et étiquettes provenance")
+  Container(aigw, "AI Gateway & Filtre PII", "Presidio / NeMo / AIRS", "Masquage PII en ligne, blocage injections")
+  Container(mcpgw, "MCP Gateway & Intent Gate", "OPA Rego / Cedar (PEP/PDP)", "Validation DPoP/RFC 8707, politiques et anti-SSRF")
+}
+
+System_Boundary(runtime, "Confinement, cibles et détection runtime") {
+  System_Ext(llm, "Modèles d'inférence", "LLM cloud ou souverain")
+  Container(aidr, "Plateforme AIDR", "Détection & Réponse", "Corrélation trajectoires, coupe-circuit et révocation")
+  Container(sandbox, "Confinement d'exécution", "Firecracker / gVisor / Wasm", "Isolation noyau/capacités pour code et outils risqués")
+  System_Ext(sor, "Systems of Record & Outils", "ERP, CRM, dépôts internes")
+}
+
+Rel(spire, camel, "Délivre SVID et jetons OBO")
+Rel(aispm, mcpgw, "Durcit posture et catalogue")
+
+Rel(camel, aigw, "Appels modèles sous contrôle")
+Rel(camel, mcpgw, "Requêtes outils signées DPoP")
+
+Rel(aigw, llm, "Inférence sans PII (données masquées)")
+Rel(aigw, aidr, "Alertes PII/injections")
+Rel(mcpgw, aidr, "Télémétrie décisions")
+Rel(mcpgw, sandbox, "Délègue code et outils risqués")
+Rel(mcpgw, sor, "Appels bornés et idempotents")
+Rel_Back(spire, aidr, "Révoque SVID sur dérive ASI10")
+@enduml

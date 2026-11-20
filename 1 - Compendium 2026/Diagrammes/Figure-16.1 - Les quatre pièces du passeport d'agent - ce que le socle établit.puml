@@ -1,0 +1,58 @@
+' Figure 16.1 — Les quatre pièces du passeport d’agent : ce que le socle établit de chacune, et ce qu’il n’établit pas.
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 6
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 13
+skinparam backgroundColor #FFFFFF
+skinparam legendBackgroundColor #F8F5F0
+skinparam legendBorderColor #D6D3CD
+skinparam legendBorderThickness 1
+
+rectangle "QUATRE PIÈCES, QUATRE SIÈGES" as CADRE #FFFDF9;line:9A3412 {
+  rectangle P1 #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**1**</color>  **Carte signée**
+    ----
+    Intégrité d'un contenu canonicalisé au regard d'une clé.
+    ----
+    <color:#57534E>ch. 15 § 15.1 — n'établit pas l'appartenance de la clé</color>
+  ]
+
+  rectangle P2 #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**2**</color>  **Inscription au registre**
+    ----
+    Champs obligatoires d'accès aux outils et de bornes de
+    permission.
+    ----
+    <color:#57534E>ch. 15 § 15.3 — n'établit pas leur opposabilité</color>
+  ]
+
+  rectangle P3 #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**3**</color>  **Chaîne de mandat**
+    ----
+    Format versionné, attributs temporels, expression de la
+    délégation.
+    ----
+    <color:#57534E>ch. 17 — n'établit pas l'interrogeabilité à l'instant t</color>
+  ]
+
+  rectangle P4 #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**4**</color>  **Attestations de conformité**
+    ----
+    Un nom de champ facultatif, hors socle.
+    ----
+    <color:#57534E>ch. 15 § 15.3.3 et ch. 25 § 25.5 — ni format, ni contenu, ni émetteur</color>
+  ]
+
+  P1 -[hidden]right-> P2
+  P3 -[hidden]right-> P4
+  P1 -[hidden]down-> P3
+  P2 -[hidden]down-> P4
+}
+
+legend
+  Le passeport est un OBJET DE SYNTHÈSE CONSTRUIT PAR LA SOMME : le socle ne le documente dans aucune des
+  spécifications relevées (degré 3). Les quatre pièces existent séparément ; leur assemblage est un énoncé d'auteur.
+endlegend
+@enduml

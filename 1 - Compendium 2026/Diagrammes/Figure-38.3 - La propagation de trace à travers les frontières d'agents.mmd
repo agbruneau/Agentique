@@ -1,0 +1,21 @@
+%% Ouvrage : 1 - Compendium 2026
+%% Chapitre : 38 · L'observabilité agentique (p. 447)
+%% Figure : Figure 38.3 — La propagation de trace à travers les frontières d’agents, et l’endroit où le contexte se perd.
+flowchart TB
+    subgraph S["UN IDENTIFIANT DE TRACE, ET LES FRONTIÈRES QU'IL DOIT FRANCHIR"]
+        direction LR
+        N1["<b>Appelant</b><br/>ouvre la trace, émet le contexte"]
+        N2["<b>Agent</b><br/>doit le propager à son tour"]
+        N3["<b>Outil</b><br/>le reçoit — ou ne le reçoit pas"]
+        N1 --> N2 -. "×" .- N3
+    end
+    SYN["<b>Au franchissement d'une frontière d'agents, rien ne garantit que le contexte soit repropagé.</b>"]
+    NOTE["La propagation est un mécanisme du monde applicatif, transposé : ce qui traverse une frontière d'agents n'est pas garanti d'y<br/>survivre, et une trace interrompue ne se recolle pas après coup. Le ch. 3 § 3.4.5 en porte le versant classique."]
+    S ~~~ SYN ~~~ NOTE
+
+    style S fill:#fdfbf7,stroke:#d4cfc7,color:#9c3d14
+    style N1 fill:#f7f4ee,stroke:#b8b4ac,color:#1a1a1a
+    style N2 fill:#f7f4ee,stroke:#b8b4ac,color:#1a1a1a
+    style N3 fill:#f7f4ee,stroke:#9c3d14,color:#1a1a1a
+    style SYN fill:#ffffff,stroke:none,color:#1a1a1a
+    style NOTE fill:#faf8f4,stroke:#b8b4ac,color:#444444

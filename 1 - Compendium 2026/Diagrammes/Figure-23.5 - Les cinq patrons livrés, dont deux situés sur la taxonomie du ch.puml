@@ -1,0 +1,55 @@
+' Figure 23.5 — Les cinq patrons livrés, dont deux situés sur la taxonomie du ch. 22 (OO4/OO3 et OO1) et trois laissés hors rang.
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 6
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 13
+skinparam backgroundColor #FFFFFF
+skinparam legendBackgroundColor #F8F5F0
+skinparam legendBorderColor #D6D3CD
+skinparam legendBorderThickness 1
+
+rectangle "CE QUE LE SOCLE ÉTABLIT, ET CE QUE L'AUTEUR EN TIRE" as CADRE #FFFDF9;line:9A3412 {
+  rectangle R1 #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**OO4/OO3**</color>   **Workflows à base de graphes**
+    Le graphe est un cadre explicite extérieur aux agents — le rang dépend de ce que les agents invoqués savent du processus.
+    <color:#57534E>Agent Framework, GA 1.0</color>
+  ]
+
+  rectangle R2 #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**—**</color>   **Points de contrôle**
+    Instrument de la propriété de traçabilité, non une option d'orchestration en soi.
+    <color:#57534E>limites en multi-conteneurs</color>
+  ]
+
+  rectangle R3 #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**—**</color>   **Humain dans la boucle**
+    Point d'arrêt de supervision ; critère de sélection du § 22.3, non un positionnement.
+    <color:#57534E>Agent Framework, GA 1.0</color>
+  ]
+
+  rectangle R4 #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**aucun**</color>   **Agents durables**
+    Aucun positionnement proposé : le niveau de preuve ne le permet pas.
+    <color:#57534E>repérage [C], ne porte aucun fait central</color>
+  ]
+
+  rectangle R5 #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**OO1**</color>   **Bus d'événements**
+    Le protocole agent-agent sans cadre de processus explicite est la définition même d'OO1.
+    <color:#57534E>préversion publique sur dorsale rejouable</color>
+  ]
+
+  R1 -[hidden]down-> R2
+  R2 -[hidden]down-> R3
+  R3 -[hidden]down-> R4
+  R4 -[hidden]down-> R5
+}
+
+legend
+  Le POSITIONNEMENT EST UNE CONSTRUCTION D'AUTEUR. Le socle établit ce que chaque produit livre ; il ne le situe pas sur la
+  taxonomie. Un patron dont le régime de preuve est un simple repérage [C] ne reçoit AUCUN positionnement — et c'est le cas de
+  l'un des cinq.
+endlegend
+@enduml

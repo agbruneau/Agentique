@@ -1,0 +1,44 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 12 (p. 47)
+' Légende : Séquence d’exécution d’un contrat typé par décodage contraint CFG et validation sémantique
+
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam sequence {
+  ArrowColor #2B4C65
+  LifeLineBorderColor #64748B
+  LifeLineBackgroundColor #FFFFFF
+  ParticipantBorderColor #2B4C65
+  ParticipantBackgroundColor #F1F6F9
+  GroupBorderColor #334155
+  GroupBackgroundColor #FFFFFF
+  GroupHeaderFontColor #0F172A
+}
+
+autonumber
+
+participant "Harnais déterministe\n(Pydantic / Validateur)" as harnais
+participant "Moteur d'inférence\n(CFG + Cache)" as moteur
+participant "Modèle de langage\n(Logits bruts)" as llm
+participant "Système aval\n(Workflow / Outil)" as aval
+
+harnais -> moteur : Requête + JSON Schema Draft 2020-12\n(strict: true)
+moteur -> moteur : Compile grammaire CFG (si schéma inédit) +\nmise en cache
+
+loop À chaque jeton généré
+  llm -> moteur : Distribution de logits bruts
+  moteur -> moteur : Masque binaire CFG (jetons invalides ->\n-infini)
+  moteur --> llm : Échantillonnage syntaxique contraint
+end
+
+moteur --> harnais : Charge utile JSON conforme à la grammaire
+harnais -> harnais : Validation sémantique déterministe (Pydantic\n/ règles)
+
+alt Invariants métier satisfaits
+  harnais -> aval : Exécute transition ou appel typé
+else Violation sémantique ou refus typé
+  harnais -> moteur : Réessai borné (max N) ou repli déterministe
+end
+
+@enduml

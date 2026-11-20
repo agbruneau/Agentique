@@ -1,0 +1,43 @@
+' Figure 44.2 — Les sept patrons de modélisation (§ 44.1.2 à § 44.1.8) et le registre des stéréotypes (§ 44.1.9) qui les réunit
+@startuml
+skinparam backgroundColor #FAF8F5
+skinparam shadowing false
+skinparam defaultFontName "DejaVu Sans"
+skinparam titleFontColor #8B2E0B
+skinparam rectangleBorderColor #BBBBBB
+skinparam rectangleBackgroundColor #F5F1EB
+skinparam legendBackgroundColor #FBF9F5
+skinparam legendBorderColor #BBBBBB
+
+title SEPT PATRONS DE MODÉLISATION ET LE REGISTRE DES STÉRÉOTYPES
+
+rectangle "PATRONS ARCHIMATE ET REGISTRE" as Patrons {
+  rectangle "**1  Agent**\n\nApplication Component, Role, Collaboration.\n\n<i>§ 44.1.2</i>" as P1
+  rectangle "**2  Appel d'outil**\n\nApplication Service, Interface, Serving.\n\n<i>§ 44.1.3</i>" as P2
+  rectangle "**3  Interaction agent-agent**\n\nCollaboration, Flow, Triggering.\n\n<i>§ 44.1.4</i>" as P3
+  rectangle "**4  Identité non humaine**\n\nRole, structure active, overlay de sécurité.\n\n<i>§ 44.1.5</i>" as P4
+  rectangle "**5  Plan de contrôle d'agents**\n\nEt la limite de la découverte dynamique.\n\n<i>§ 44.1.6</i>" as P5
+  rectangle "**6  Humain-agent**\n\nPoint d'arrêt, double regard, autonomie graduée.\n\n<i>§ 44.1.7</i>" as P6
+  rectangle "**7  Mémoire et ancrage**\n\nRécupération et ancrage gouverné.\n\n<i>§ 44.1.8</i>" as P7
+  rectangle "**8  Registre des stéréotypes**\n\nCe qui tient les sept précédents ensemble.\n\n<i>§ 44.1.9 — reproduit en [C]</i>" as P8
+
+  P1 -[hidden]right- P2
+  P3 -[hidden]right- P4
+  P5 -[hidden]right- P6
+  P7 -[hidden]right- P8
+
+  P1 -[hidden]down- P3
+  P3 -[hidden]down- P5
+  P5 -[hidden]down- P7
+
+  P2 -[hidden]down- P4
+  P4 -[hidden]down- P6
+  P6 -[hidden]down- P8
+}
+
+legend bottom
+  CHAQUE PATRON EST UNE SPÉCIALISATION, non un élément du langage : le registre des stéréotypes (§ 44.1.9)
+  est reproduit du Vol. I en [C]. Modéliser un agent en ArchiMate est un arbitrage de notation,
+  et le § 44.9 dit ce que le formalisme ne sait pas dire.
+endlegend
+@enduml

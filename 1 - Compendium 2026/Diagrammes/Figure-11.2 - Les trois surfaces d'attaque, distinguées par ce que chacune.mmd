@@ -1,0 +1,21 @@
+%% Figure 11.2 — Les trois surfaces d'attaque, distinguées par ce que chacune corrompt.
+%% Source : 1 - Compendium 2026, Chapitre 11 (page 133)
+
+%%{init: {'flowchart': {'wrappingWidth': 900}}}%%
+flowchart TB
+    subgraph SG_SURF["TROIS SURFACES, TROIS CANAUX"]
+        direction LR
+        S1["<b>1 · L'outil</b><br/><br/>Corrompt la capacité de l'agent.<br/><br/><i>canal : la description lue à<br/>l'inférence</i>"]
+        S2["<b>2 · L'invite</b><br/><br/>Corrompt son instruction.<br/><br/><i>canal : le contexte</i>"]
+        S3["<b>3 · La mémoire</b><br/><br/>Corrompt son état.<br/><br/><i>canal : la persistance entre<br/>exécutions</i>"]
+    end
+
+    NOTE["La typologie est une CONSTRUCTION D'ÉDITEUR, non un énoncé de source primaire, et elle ne doit pas masquer l'asymétrie : les<br/>trois surfaces ne sont ni également documentées ni également défendues (§ 11.1.4)."]
+
+    SG_SURF ~~~ NOTE
+
+    classDef card fill:#FAF7F2,stroke:#C4BEB5,stroke-width:1px,color:#222222,text-align:left;
+    classDef noteBox fill:#F7F5F0,stroke:#C4BEB5,stroke-width:1px,color:#333333,text-align:left;
+    class S1,S2,S3 card;
+    class NOTE noteBox;
+    style SG_SURF fill:#FFFFFF,stroke:none,color:#9E3A14

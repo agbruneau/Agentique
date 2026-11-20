@@ -1,0 +1,20 @@
+%% Figure 25.3 — Comment un texte qui ne nomme pas l’agent l’atteint quand même.
+%%{init: {'flowchart': {'wrappingWidth': 900}}}%%
+flowchart TB
+    subgraph CHAINE["TROIS MEMBRES, ET UN SEUL EST UNE LECTURE"]
+        direction LR
+        M1["<b>Le texte</b><br/>E-23 ne nomme ni l'agentique, ni<br/>les agents"]
+        M2["<b>La définition</b><br/>sa définition de « modèle »<br/>englobe les méthodes d'IA et<br/>d'apprentissage automatique"]
+        M3["<b>La lecture</b><br/>d'où une couverture implicite,<br/>que les analystes juridiques<br/>canadiens tiennent pour acquise"]
+        M1 --> M2 --> M3
+    end
+
+    NOTE["CHAQUE MEMBRE PORTE DU POIDS, et le dernier n'est pas du même ordre que les deux premiers : que la couverture soit « tenue<br/>pour acquise » par des analystes n'est pas qu'elle soit établie par le texte. La formulation est imposée par la méthode, et<br/>rendue dans sa substance."]
+
+    CHAINE ~~~ NOTE
+
+    style CHAINE fill:#FFFDF9,stroke:#9A3412,stroke-width:1px,color:#9A3412
+    style M1 fill:#FAF6F0,stroke:#B8B2A6,color:#1F2937
+    style M2 fill:#FAF6F0,stroke:#B8B2A6,color:#1F2937
+    style M3 fill:#FAF6F0,stroke:#B8B2A6,color:#1F2937
+    style NOTE fill:#F8F5F0,stroke:#D6D3CD,color:#374151

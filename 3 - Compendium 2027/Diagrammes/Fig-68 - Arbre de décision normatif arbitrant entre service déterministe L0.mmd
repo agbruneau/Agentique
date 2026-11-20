@@ -1,0 +1,28 @@
+%% Fig. 68. – Arbre de décision normatif arbitrant entre service déterministe L0, workflow enrichi par SLM, automatisation HITL L2 et orchestration multi-agents L3/L4.
+flowchart TB
+    Titre["Arbre de Décision — Arbitrage entre Code Déterministe, Workflow et Agent LLM"]
+    Q1["1. Les entrées sont-elles structurées et la règle<br/>de décision entièrement formalisable (SQL/DMN) ?"]
+    Q2["2. La séquence des étapes est-elle connue d'avance<br/>(seule une extraction ou classification est floue) ?"]
+    Q3["3. L'impact d'une erreur est-il irréversible, létal<br/>ou supérieur au seuil réglementaire sans appel ?"]
+
+    L0["Niveau L0 — Service Déterministe / Règle DMN<br/>N'utilisez PAS de LLM : coût nul, latence < 10 ms, fiabilité 100 %"]
+    L1["Workflow Déterministe + Travailleur SLM<br/>Orchestration fixe (Temporal/BPMN) invoquant un SLM typé"]
+    L2["Niveau L2 (HITL) + Simulation / Jumeau Numérique<br/>L'agent prépare et prouve le dossier ; approbation CIBA requise"]
+    L34["Niveau L3 / L4 — Orchestration Multi-Agents Bornée sous Supervision HOTL<br/>Cellules spécialistes A2A/MCP • Runtime durable + Saga à compensation • Garde-fous Cedar/OPA en ligne • Escalade sur exception"]
+
+    Titre ~~~ Q1
+    Q1 -->|"OUI"| L0
+    Q1 -->|"NON"| Q2
+    Q2 -->|"OUI"| L1
+    Q2 -->|"NON"| Q3
+    Q3 -->|"OUI"| L2
+    Q3 -->|"NON (Compensable)"| L34
+
+    style Titre fill:#FFFFFF,stroke:none
+    style Q1 fill:#F8FAFC,stroke:#334155
+    style Q2 fill:#F8FAFC,stroke:#334155
+    style Q3 fill:#F8FAFC,stroke:#334155
+    style L0 fill:#F0FDF4,stroke:#166534
+    style L1 fill:#F0F9FF,stroke:#0284C7
+    style L2 fill:#FFF7ED,stroke:#C2410C
+    style L34 fill:#F5F3FF,stroke:#7C3AED

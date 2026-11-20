@@ -1,0 +1,19 @@
+%% Ouvrage : 1 - Compendium 2026
+%% Chapitre : 38 · L'observabilité agentique (p. 451)
+%% Figure : Figure 38.5 — L’identité comme clé de jointure entre la trace et le passeport.
+flowchart TB
+    subgraph S["CE QUI RATTACHE UNE ACTION À QUELQU'UN"]
+        direction LR
+        N1["<b>Trace</b><br/>ce que l'observabilité a<br/>enregistré de l'action"]
+        N2["<b>Identité</b><br/>la clé de jointure — encore<br/>faut-il qu'elle soit la même des<br/>deux côtés"]
+        N3["<b>Passeport</b><br/>carte, registre, mandat,<br/>attestations — ch. 16"]
+        N1 --> N2 --> N3
+    end
+    NOTE["La jointure suppose que les deux côtés portent LE MÊME identifiant — et le ch. 16 établit que les quatre pièces du passeport<br/>n'ont pas d'émetteur commun. Corréler est une exigence d'architecture, pas une propriété du socle."]
+    S ~~~ NOTE
+
+    style S fill:#fdfbf7,stroke:#d4cfc7,color:#9c3d14
+    style N1 fill:#f7f4ee,stroke:#b8b4ac,color:#1a1a1a
+    style N2 fill:#f7f4ee,stroke:#9c3d14,color:#1a1a1a
+    style N3 fill:#f7f4ee,stroke:#b8b4ac,color:#1a1a1a
+    style NOTE fill:#faf8f4,stroke:#b8b4ac,color:#444444

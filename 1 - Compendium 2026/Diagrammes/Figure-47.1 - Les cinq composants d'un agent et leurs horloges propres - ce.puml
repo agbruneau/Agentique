@@ -1,0 +1,34 @@
+' Figure 47.1 — Les cinq composants d'un agent et leurs horloges propres : ce qui les fait changer, et qui en décide
+@startuml
+skinparam backgroundColor #FAF8F5
+skinparam shadowing false
+skinparam defaultFontName "DejaVu Sans"
+skinparam titleFontColor #8B2E0B
+skinparam componentBorderColor #BBBBBB
+skinparam componentBackgroundColor #F5F1EB
+skinparam rectangleBorderColor #DDDDDD
+skinparam rectangleBackgroundColor #FAF8F5
+skinparam legendBackgroundColor #FBF9F5
+skinparam legendBorderColor #BBBBBB
+
+title CINQ COMPOSANTS, CINQ HORLOGES, UN SEUL EXPLOITANT
+
+rectangle "COMPOSANTS D'UN AGENT ET DÉCIDEURS" as Agent {
+  component "**1  Poids de modèle**\nVersion publiée par son fournisseur ; retrait d'une version antérieure.\n<i>décidé par le fournisseur, pas l'exploitant — ch. 6 § 6.3 ; § 47.8</i>" as C1
+  component "**2  Serveurs d'outils**\nRévision d'une définition d'outil ; ajout ou retrait d'un serveur.\n<i>décidé par l'éditeur, et le protocole autorise le changement à l'exécution — ch. 20 § 20.1 ; § 47.4</i>" as C2
+  component "**3  Bibliothèques et hôte**\nMise à jour de dépendance ; correctif de sécurité.\n<i>décidé par la chaîne de distribution — § 47.2, § 47.3</i>" as C3
+  component "**4  Invites et instructions**\nÉdition d'un fichier, sans compilation ni déploiement.\n<i>décidé par quiconque a accès au dépôt — § 47.7, § 47.8</i>" as C4
+  component "**5  Politique d'autorisation**\nRévision d'une règle, d'une portée, d'un seuil d'approbation.\n<i>décidé par l'exploitant — et c'est le seul des cinq</i>" as C5
+
+  C1 -[hidden]down- C2
+  C2 -[hidden]down- C3
+  C3 -[hidden]down- C4
+  C4 -[hidden]down- C5
+}
+
+legend bottom
+  UN SEUL DES CINQ EST DÉCIDÉ PAR L'EXPLOITANT. Les quatre autres changent sous la main d'un fournisseur,
+  d'un éditeur, d'une chaîne de distribution ou de quiconque a accès au dépôt — et le protocole autorise
+  le deuxième à changer À L'EXÉCUTION.
+endlegend
+@enduml

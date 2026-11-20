@@ -1,0 +1,32 @@
+' Figure 14 — Échelle d'autonomie N0 à N4 (2 - Cadre de Référence, ch. 8, p. 119)
+' Source : cadre CRE-IA-2026-01, d'après Gartner (2026), AWS, Feng et coll. (2025) et l'IMDA
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 11
+
+rectangle "**Autonomie croissante**  ························································  **contrôles compensatoires croissants**" as Barre #1B5E9E;text:FFFFFF;line:0F2744
+
+together {
+  card Matrice #FFFFFF;line:FFFFFF [
+    |= Dimension |= <#8291A6><color:#FFFFFF>**N0**</color>\n<color:#FFFFFF>Automatisation déterministe</color> |= <#6B98C9><color:#FFFFFF>**N1**</color>\n<color:#FFFFFF>Consultatif</color> |= <#2D73B8><color:#FFFFFF>**N2**</color>\n<color:#FFFFFF>Exécution approuvée</color> |= <#1B5E9E><color:#FFFFFF>**N3**</color>\n<color:#FFFFFF>Autonomie bornée et supervisée</color> |= <#0F2744><color:#FFFFFF>**N4**</color>\n<color:#FFFFFF>Autonomie étendue sous ODD certifié</color> |
+    | **L’AGENT** | aucun modèle : flux\ncodé, règles, RPA, API | lit, analyse, recommande;\naucun effet en écriture | prépare l’action, attend\nl’accord pour chaque écriture | exécute seul le réversible\nsous seuils, dans un ODD | s’autodéclenche, opère en\ncontinu, ODD certifié |
+    | **LA PERSONNE** | conçoit les règles\net exploite | exécute elle-même\n(opératrice) | approuve chaque action\n(dans la boucle) | supervise, traite les\nexceptions (sur la boucle) | gouverne : politiques,\naudit, coupe-circuit |
+    | **PALIERS D’OUTILS PERMIS** | hors IA | P0 et P1 en lecture | P2 après approbation signée;\nP3 après approbation hors bande | P2 sous seuils; P3 après\napprobation hors bande | comme N3; P3 toujours\napprouvé |
+    | **CONTRÔLES MINIMAUX** | tests logiciels,\nrevue de code | accès circonscrit, journalisation,\nessais d’exactitude | points d’arrêt, jeton\nd’approbation, audit | budgets, sagas, disjoncteurs,\nretour arrière rapide | évaluation continue,\narrêts testés, réautorisation |
+    | **PLAFOND PAR CLASSE** | | | <#FCE8EB> **risque élevé** | <#FEF3DC> **risque modéré ou faible** | <#E6EBF1> **risque faible, sur décision du comité** |
+  ]
+
+  rectangle "**<color:#9C2F39>NX</color>**\n\n<color:#9C2F39>Interdit : l’agent fixe</color>\n<color:#9C2F39>ses objectifs ou</color>\n<color:#9C2F39>ses permissions</color>" as NX #FCE8EB;line:9C2F39;line.dashed
+}
+
+Barre -[hidden]down-> Matrice
+Matrice -[hidden]right-> NX
+
+legend bottom
+  Le niveau est un plafond inscrit au registre, distinct du nombre d’agents et de la capacité du modèle.
+  Toute action P3 (critique, externe ou irréversible) exige une approbation humaine, quel que soit le niveau.
+endlegend
+@enduml

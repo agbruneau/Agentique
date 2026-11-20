@@ -1,0 +1,95 @@
+' Fig. 40. – Architecture de convergence IT/OT conforme IEC 62443 (modèle Purdue) : télémétrie OPC UA / MQTT Sparkplug en lecture seule et sas obligatoire par Jumeau numérique déterministe.
+@startuml
+title Convergence IT/OT (IEC 62443 / Modèle Purdue) : Lecture OPC-UA et Sas par Jumeau Numérique
+
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam rectangle {
+  BackgroundColor #F8FAFC
+  BorderColor #334155
+}
+
+rectangle "Niveaux 4 & 5 — Zone Entreprise IT (Fabrique Agentique Boréal & ERP SAP S/4HANA)" as Niveaux45 #EFF6FF;line:2563EB {
+  rectangle AgentsDiag #FFFFFF;line:2563EB [
+    **Agents Diagnostic & Prédictif (L1)**
+    Corrélation spectrale, thermique & stocks
+  ]
+  rectangle OrchSAP #FFFFFF;line:475569 [
+    **Orchestrateur Durable & SAP S/4HANA**
+    Ordres clients, nomenclatures & coûts
+  ]
+  rectangle AgentPlanif #FFFFFF;line:166534 [
+    **Agent Planificateur d'Atelier (L2/L3)**
+    Propose un scénario paramétrique borné
+  ]
+
+  AgentsDiag -[hidden]right-> OrchSAP
+  OrchSAP -[hidden]right-> AgentPlanif
+}
+
+rectangle "Niveau 3.5 — DMZ Industrielle (IDMZ — Rupture protocolaire IEC 62443 SL-3 • Zéro routage IP direct IT↔OT)" as Niveau35 #FFF7ED;line:9A3412;line.dashed {
+  rectangle VoieMontante #FFFFFF;line:2563EB [
+    **Voie Montante : Serveur MCP OT en Lecture Seule Stricte**
+    Miroir OPC-UA AddressSpace & courtier réplica MQTT Sparkplug B
+  ]
+  rectangle VoieDescendante #FFFFFF;line:166534 [
+    **Voie Descendante : Sas d'Inspection des Demandes & Signatures**
+    Filtrage schéma JSON strict, mTLS SPIFFE & soumission au Jumeau
+  ]
+
+  VoieMontante -[hidden]right-> VoieDescendante
+}
+
+rectangle "Niveau 3 — Opérations d'Usine (MES, Historien & Validation Physique Pré-Exécution)" as Niveau3 #F0FDF4;line:166534 {
+  rectangle Historien #FFFFFF;line:475569 [
+    **Historien & Unified Namespace**
+    Séries temporelles 1 kHz, spectres,
+    modèles OPC 40001 Machinery
+  ]
+  rectangle SASJumeau #FFFFFF;line:166534 [
+    **SAS : Jumeau Numérique Déterministe (FMI 3.0)**
+    Vérifie enveloppe thermique, couple, cinématique
+    Émet jeton d'homologation signé Ed25519 (ou Rejet)
+  ]
+  rectangle MES #FFFFFF;line:334155 [
+    **MES (Siemens Opcenter)**
+    Traduit en recette homologuée ISA-88
+    Vérifie fraîcheur état (Δt ≤ 5 s)
+  ]
+
+  Historien -[hidden]right-> SASJumeau
+  SASJumeau -[#166534]right-> MES
+}
+
+rectangle Niveau2 #F8FAFC;line:334155 [
+  **Niveau 2 — Supervision de Cellule (SCADA / Pupitres HMI Opérateurs)**
+  Collecte OPC-UA locale • Contrôle d'occupation de zone (barrières immatérielles) • Acquittement opérateur local HOTL / HITL sur changement de recette
+  Application exclusivement sur frontière sécuritaire du cycle d'usinage (PackML : état IDLE ou COMPLETE)
+]
+
+rectangle Niveaux10 #F8FAFC;line:334155 [
+  **Niveaux 1 & 0 — Automates PLC / CNC (< 10 ms) & Processus Physique**
+  Asservissements PID temps réel dur, variateurs, broches 5 axes, capteurs vibratoires
+  INTERDICTION ABSOLUE d'écriture directe d'un agent IA sur un registre automate
+]
+
+rectangle SIS #FEF2F2;line:991B1B [
+  **SIS Sanctuarisé (IEC 61511 SIL 2/3)**
+  Automates de sécurité câblés indépendamment
+  Isolé physiquement • Priorité d'arrêt d'urgence
+]
+
+Niveaux10 -[hidden]right-> SIS
+
+AgentsDiag <-[#2563EB]down- VoieMontante
+VoieMontante <-[#2563EB]down- Historien
+Historien <-[#2563EB]down- Niveau2
+Niveau2 <-[#2563EB]down- Niveaux10
+
+AgentPlanif -[#166534]down-> VoieDescendante
+VoieDescendante -[#166534]down-> SASJumeau
+MES -[#166534]down-> Niveau2
+Niveau2 -[#166534]down-> Niveaux10
+@enduml

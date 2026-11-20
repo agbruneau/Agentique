@@ -1,0 +1,49 @@
+%% Figure 25 — Cycle de vie d'un agent et jalons (2 - Cadre de Référence, ch. 11, p. 199)
+%% Source : cadre CRE-IA-2026-01
+flowchart TB
+    subgraph Etapes["ÉTAPES"]
+        direction LR
+        E1["<b>1 · Proposition</b><br/>Cas d’usage, valeur<br/>attendue, propriétaire<br/>métier nommé"]
+        E2["<b>2 · Conception</b><br/>Classe de risque, niveau<br/>d’autonomie, patron,<br/>contrats, EFVP"]
+        E3["<b>3 · Construction</b><br/>Gabarits de plateforme,<br/>jeu de référence,<br/>tests de sécurité"]
+        E4["<b>4 · Pilote</b><br/>Périmètre et durée<br/>bornés, du niveau<br/>inférieur au visé"]
+        E5["<b>5 · Production</b><br/>Surveillance, évaluation<br/>continue, gestion<br/>des changements"]
+        E6["<b>6 · Retrait</b><br/>Révocation des identités,<br/>retrait du catalogue,<br/>archivage, avis"]
+        E1 --> E2 --> E3 --> E4 --> E5 --> E6
+    end
+
+    subgraph Jalons["JALONS DU CYCLE DE VIE"]
+        direction LR
+        J1{"<b>Fiche au registre</b><br/>état « proposé »"}
+        J2{"<b>Revue d’architecture</b><br/>et de sécurité"}
+        J3{"<b>Seuils d’évaluation</b><br/>atteints"}
+        J4{"<b>Homologation</b><br/>(annexe A)"}
+        J5{"<b>Attestation périodique</b><br/>(12 mois; 6 si élevé)"}
+        J6{"<b>Preuve de</b><br/>révocation"}
+        J1 ~~~ J2 ~~~ J3 ~~~ J4 ~~~ J5 ~~~ J6
+        J5 -.->|"Changement de modèle, d’invite, d’outil, de protocole ou de population visée → réévaluation"| J2
+    end
+
+    E1 ~~~ J1
+    E2 ~~~ J2
+    E3 ~~~ J3
+    E4 ~~~ J4
+    E5 ~~~ J5
+    E6 ~~~ J6
+
+    classDef wrap fill:#f8fafc,stroke:#cbd5e1,color:#334155
+    classDef s1 fill:#1b5e9e,stroke:#1b5e9e,color:#ffffff
+    classDef s2 fill:#165b7a,stroke:#165b7a,color:#ffffff
+    classDef s3 fill:#0f7682,stroke:#0f7682,color:#ffffff
+    classDef s4 fill:#28774e,stroke:#28774e,color:#ffffff
+    classDef s5 fill:#0f2744,stroke:#0f2744,color:#ffffff
+    classDef s6 fill:#475569,stroke:#475569,color:#ffffff
+    classDef jalon fill:#fef3dc,stroke:#b45309,stroke-width:2px,color:#0f2744
+    class Etapes,Jalons wrap
+    class E1 s1
+    class E2 s2
+    class E3 s3
+    class E4 s4
+    class E5 s5
+    class E6 s6
+    class J1,J2,J3,J4,J5,J6 jalon

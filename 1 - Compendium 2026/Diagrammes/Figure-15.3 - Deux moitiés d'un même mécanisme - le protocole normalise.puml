@@ -1,0 +1,46 @@
+' Figure 15.3 — Deux moitiés d’un même mécanisme : le protocole normalise le chemin, l’infrastructure spécifie le magasin.
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 6
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 13
+skinparam backgroundColor #FFFFFF
+
+rectangle C1 #FAF6F0;line:B8B2A6 [
+  <color:#57534E>LE CHEMIN</color>
+  ----
+  **Ce que le protocole agent-agent normalise**
+
+  L'emplacement bien connu où se publie la carte
+
+  La forme de l'auto-description
+
+  Le chemin par lequel on trouve
+  ----
+  **normalisé, et le registre décliné**
+]
+
+rectangle C2 #FFFFFF;line:9A3412 [
+  <color:#9A3412>LE MAGASIN</color>
+  ----
+  **Ce que la couche d'infrastructure spécifie**
+
+  Le magasin où les descriptions sont tenues
+
+  Ses champs d'accès aux outils et de bornes
+
+  Ce qui décide de la confiance
+  ----
+  **spécifié, et à statut déclaré**
+]
+
+rectangle NOTE #F8F5F0;line:D6D3CD [
+  Ce paragraphe est le versant IDENTITÉ ET CONFORMITÉ d'une matière partagée : le versant protocolaire — les trois moments de la
+  découverte, les catalogues fédérés, les modes d'échec des registres — est au ch. 9, et n'est pas reconstruit ici.
+]
+
+C1 -[hidden]right-> C2
+C1 -[hidden]down-> NOTE
+C2 -[hidden]down-> NOTE
+@enduml

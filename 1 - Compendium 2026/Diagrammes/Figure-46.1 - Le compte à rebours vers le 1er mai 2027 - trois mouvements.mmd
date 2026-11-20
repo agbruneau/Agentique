@@ -1,0 +1,21 @@
+%% Figure 46.1 — Le compte à rebours vers le 1er mai 2027 : trois mouvements séquentiels
+flowchart TB
+    subgraph REBOURS["TROIS MOUVEMENTS, UNE DATE"]
+        direction LR
+        T3["<b>● T · 3 (−3)</b><br/><b>Inventorier</b><br/>premier mouvement · § 46.2.2"]
+        T2["<b>○ T · 2 (−2)</b><br/><b>Coter, puis encadrer</b><br/>deuxième mouvement · § 46.2.3"]
+        T1["<b>○ T · 1 (−1)</b><br/><b>Surveiller</b><br/>troisième mouvement · § 46.2.4"]
+        ECHEANCE["<b>● 1er mai 2027</b><br/><b>Prise d'effet E-23 / AMF</b><br/>institutions financières<br/>(278 jours depuis le gel)"]
+        T3 --> T2 --> T1 --> ECHEANCE
+    end
+
+    NOTE["Le compte à rebours est RECALCULÉ, non recopié (§ 46.2.1) : une durée citée d'un document antérieur serait fausse dès sa publication.<br/>La feuille de route est un patron d'auteur ; aucun instrument n'impose cette séquence."]
+    REBOURS ~~~ NOTE
+
+    classDef plein fill:#8B2E0B,stroke:#8B2E0B,color:#FFFFFF,text-align:left
+    classDef ouvert fill:#FFFFFF,stroke:#8B2E0B,stroke-width:2px,color:#222222,text-align:left
+    classDef note fill:#FBF9F5,stroke:#CCCCCC,color:#444444,text-align:left
+    class T3,ECHEANCE plein
+    class T2,T1 ouvert
+    class NOTE note
+    style REBOURS fill:#FAF8F5,stroke:#8B2E0B,color:#8B2E0B

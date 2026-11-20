@@ -1,0 +1,66 @@
+' Fig. 46. – Trace distribuée OpenTelemetry (gen_ai.*) de bout en bout et pipeline d’assainissement PII via OpenTelemetry Collector.
+@startuml
+title Trace Distribuée OpenTelemetry (gen_ai.*) & Pipeline de Caviardage PII de Bout en Bout\nPropagation W3C Trace Context (traceparent + baggage NHI/FinOps) à travers Sagas, A2A v1.0, Inférence LLM, MCP et Mémoire
+
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam rectangle {
+  BackgroundColor #FFFFFF
+  BorderColor #334155
+}
+
+rectangle "1. Arbre Causal des Spans (trace_id: 4bf92f35...e4736 | saga.id: saga-inc-2027-088412)\n0 ms — 800 ms — 1 800 ms — 2 640 ms" as ArbreSpans #F8FAFC;line:475569 {
+  rectangle "**Orchestrateur Durable (Temporal)**\nsaga.workflow.run [L3] — budget.max_cad=1.20 | hops.remaining=4 (2 640 ms)" as Span0 #1E293B;text:FFFFFF;line:1E293B
+  rectangle "**Saut A2A v1.0 (agentgateway)**\ninvoke_agent bca-warranty — security.nhi.spiffe_id=spiffe:~//boreal.ca/bsn/maint | obo.actor=usr-882 (2 310 ms)" as Span1 #2563EB;text:FFFFFF;line:2563EB
+  rectangle "**Inférence Raisonnement**\nchat sonnet-4-6 (in:1840, cache:1400, reason:310)" as Span2 #7C3AED;text:FFFFFF;line:7C3AED
+  rectangle "**Appel Outil MCP (JSON-RPC)**\nexecute_tool check_policy_as400" as Span3 #166534;text:FFFFFF;line:166534
+  rectangle "**Mémoire Bi-Temporelle**\nmemory.retrieve" as Span4 #C2410C;text:FFFFFF;line:C2410C
+  rectangle "**Décision Structurée**\nemit" as Span5 #7C3AED;text:FFFFFF;line:7C3AED
+
+  Span0 -down-> Span1
+  Span1 -down-> Span2
+  Span1 -down-> Span3
+  Span1 -down-> Span4
+  Span1 -down-> Span5
+  Span2 -[hidden]right-> Span3
+  Span3 -[hidden]right-> Span4
+  Span4 -[hidden]right-> Span5
+}
+
+rectangle "2. Passerelle OpenTelemetry Collector : Assainissement PII (Loi 25 / RGPD) & Analyse en Flux" as Collector #EFF6FF;line:2563EB {
+  rectangle Caviardage #FFF7ED;line:C2410C [
+    **Processeur de Caviardage & Pseudonymisation**
+    • Masquage NAS, IBAN, courriels, téléphones
+    • Séparation attributs gen_ai.input.messages
+    • Condensat SHA-256 poivré des clés clients
+    **Zéro PII en clair dans les index APM**
+  ]
+
+  rectangle APM #F0FDF4;line:166534 [
+    **Plateforme d'Observabilité & Moteur FinOps**
+    Métriques SLI/SLO, coûts jetons, graphes causaux
+  ]
+
+  rectangle Voute #FFF7ED;line:9A3412 [
+    **Voûte Forensique Chiffrée (Bris de Glace)**
+    Charges complètes sous clé KMS régionale (TTL 14–30 j)
+  ]
+
+  rectangle Sentinelle #FEF2F2;line:DC2626 [
+    **Sentinelle Anti-Livelock Temps Réel**
+    • Similarité cosinus d'intentions ≥ 0,94
+    • Répétition A2A/MCP à état constant
+    • Dérive ratio jetons raisonnement / sortie
+    **Action : Arrêt Saga + Escalade HOTL**
+  ]
+
+  Caviardage -[#166534]right-> APM
+  Caviardage -[#9A3412]right-> Voute
+  APM -[hidden]down-> Voute
+  APM -[#1E293B]right-> Sentinelle
+}
+
+Span3 -[#2563EB]down-> Caviardage : Export OTLP/gRPC mTLS
+@enduml

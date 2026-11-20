@@ -1,0 +1,33 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 15 (p. 60)
+' Légende : Topologie C4 d’une MCP Gateway d’entreprise assurant la médiation REST, gRPC et GraphQL
+
+@startuml
+!include <C4/C4_Container>
+
+Container(harness, "Agent Harness", "Client MCP", "Tool Search et appels JSON-RPC 2.0")
+
+System_Boundary(gw, "MCP Gateway d'entreprise\n(Agentgateway / Agent\nRouter / APIM)") {
+  Container(term, "Terminaison Streamable HTTP", "POST /mcp + SSE", "Routage Mcp-Method, Mcp-Name, en-têtes x-mcp-header")
+  Container(pol, "Politiques & garde-fous", "CEL / Schémas", "RBAC par outil, quotas, anti-poisoning")
+  Container(cat, "Catalogue dynamique", "Registry / server.json", "Filtrage par portées et ordre déterministe")
+  Container(cache, "Cache & Code Mode", "ttlMs / Isolat V8", "Cache lectures et scripts multi-serveurs sans réseau")
+  Container(adap, "Adaptateurs protocolaires", "Médiation aval", "OpenAPI 3.x curé, gRPC, Persisted Queries")
+}
+
+System_Ext(rest, "API REST / OpenAPI", "Microservices JSON")
+System_Ext(grpc, "Services gRPC", "Protobuf / GRPCRoute")
+System_Ext(gql, "Graphe GraphQL", "GraphOS Persisted Queries")
+System_Ext(otel, "Télémétrie OTel (ch. 11)", "Traces _meta.traceparent")
+
+Rel(harness, term, "Appels MCP", "Streamable HTTP")
+Rel(term, pol, "Valide contrat et droits")
+Rel(pol, cat, "Résout outils autorisés")
+Rel(pol, cache, "Vérifie cache ou exécute")
+Rel(pol, otel, "Émet spans OTel")
+Rel(cache, adap, "Médiation si défaut cache")
+Rel(adap, rest, "Projette", "HTTP / JSON")
+Rel(adap, grpc, "Achemine", "gRPC / Protobuf")
+Rel(adap, gql, "Exécute", "Liste blanche")
+
+@enduml

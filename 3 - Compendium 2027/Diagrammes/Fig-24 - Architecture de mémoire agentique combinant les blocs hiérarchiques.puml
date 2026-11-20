@@ -1,0 +1,82 @@
+' Fig. 24. – Architecture de mémoire agentique combinant les blocs hiérarchiques de type OS (Letta) et le graphe de connaissances bi-temporel partagé (Graphiti) sous isolation multi-locataire.
+@startuml
+title Architecture de Mémoire Hybride : Hiérarchie OS (Letta) & Graphe Bi-Temporel (Graphiti)
+
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+
+rectangle TopRow #FFFFFF;line:FFFFFF {
+  rectangle "1. Gestionnaire de Mémoire Type OS (Letta)\nÉtat local par cellule agentique • Pagination explicite bornée" as Letta #EFF6FF;line:2563EB {
+    rectangle CoreMem #FFFFFF;line:2563EB [
+      **Core Memory Blocks (RAM Contextuelle Épinglée)**
+      • Bloc Mandat & Politiques (Lecture seule, signé plateforme)
+      • Bloc État Dossier & Préférences (Quota strict : ex. 2 048 car.)
+      Outils : memory_replace / memory_rethink (filtrés anti-ASI06)
+    ]
+    rectangle RecallMem #FFFFFF;line:64748B [
+      **Recall Memory (Journal Épisodique paginé)**
+      Traces d'interactions, décisions passées & appels d'outils
+      Éviction FIFO avec synthèse structurée sur dépassement
+    ]
+    rectangle WriteGuard #FFF7ED;line:9A3412 [
+      **Garde d'Écriture Déterministe (MemoryWriteGuard)**
+      Vérifie provenance source, bloque instructions cachées (ASI06)
+      Scelle tenant_id + subject_id avant toute persistance
+    ]
+    CoreMem -[#2563EB]-> RecallMem
+    RecallMem -[#1E293B]-> WriteGuard
+  }
+
+  rectangle "2. Graphe de Connaissances Bi-Temporel (Graphiti / Zep)\nMémoire sémantique & relationnelle partagée • Invalidation sans écrasement" as Graphiti #ECFDF5;line:15803D {
+    rectangle "Anatomie d'une Arête Bi-Temporelle (Fait Métier Versionné)\n(Compresseur #90441) —[FIRMWARE_ACTIF: v4.2]⟶ (Contrôleur HX9)" as Anatomie #FFFFFF;line:15803D {
+      rectangle Axe1 #EFF6FF;line:2563EB [
+        **Axe 1 : Temps Métier Réel**
+        valid_from : 2027-01-10
+        valid_to : 2027-03-02 (MAJ v4.3)
+      ]
+      rectangle Axe2 #F8FAFC;line:64748B [
+        **Axe 2 : Temps Système**
+        ingested_at : 2027-01-14 (Sync)
+        superseded_at : 2027-03-02
+      ]
+      Axe1 -[hidden]right-> Axe2
+    }
+    rectangle PointInTime #FFFFFF;line:1E293B [
+      **Résolution des Retards Terrain & Requêtes Point-in-Time (As-Of)**
+      Reconstruit l'état exact du monde à t_sinistre ET ce que savait l'agent à t_décision
+      Auditabilité intégrale exigée par BSIF E-23 & contentieux assurances
+    ]
+    rectangle SubGraphs #FFFFFF;line:15803D [
+      **Sous-Graphes d'Épisodes & Communautés Pré-Synthétisées**
+      Recherche hybride (BM25 + Vecteur + Traversée 2-sauts) en < 75 ms p95
+    ]
+    Anatomie -[hidden]down-> PointInTime
+    PointInTime -[hidden]down-> SubGraphs
+  }
+
+  Letta -[#15803D]-> Graphiti
+  Graphiti -[#2563EB]-> Letta
+}
+
+rectangle "Socle de Gouvernance Transversal : Cloisonnement Multi-Locataire & Droit à l'Effacement (Loi 25 / RGPD)" as Gov #F8FAFC;line:475569 {
+  rectangle PartCrypto #FFFFFF;line:2563EB [
+    **Partitionnement Cryptographique**
+    Clés KMS dédiées par locataire / division
+  ]
+  rectangle Oubli #FFFFFF;line:9A3412 [
+    **Oubli Sélectif Coordonné (Art. 17)**
+    Purge Blocs + Vecteurs + Arêtes PII
+  ]
+  rectangle Shredding #FFFFFF;line:15803D [
+    **Crypto-Shredding Législatif**
+    Préserve intégrité comptable anonymisée
+  ]
+  PartCrypto -[hidden]right-> Oubli
+  Oubli -[hidden]right-> Shredding
+}
+
+TopRow -[hidden]down-> Gov
+
+@enduml

@@ -1,0 +1,19 @@
+%% Figure 50.2 — Le protocole de revalidation : la boucle complète et son déclencheur
+flowchart TB
+    subgraph BOUCLE["CE QUI SE REFAIT, ET DANS QUEL ORDRE"]
+        direction LR
+        E1["<b>Événement</b><br/>l'un des quatorze survient,<br/>et la veille le constate"]
+        E2["<b>Extraction et socle</b><br/>extrait à la source ;<br/>l'entrée S-nnn de l'annexe B<br/>est amendée"]
+        E3["<b>Confrontation</b><br/>chaque énoncé y est confronté —<br/>non retouché"]
+        E4["<b>Registre</b><br/>le gel est repoussé,<br/>et la date inscrite"]
+        E1 --> E2 --> E3 --> E4 --> E1
+    end
+
+    NOTE["Le protocole ne se déclenche pas seul : il suppose une VEILLE qui constate l'événement.<br/>Revalider n'est pas retoucher un texte gelé — c'est confronter chaque énoncé<br/>au texte neuf (ch. 8, revalidation du 30 juillet 2026)."]
+    BOUCLE ~~~ NOTE
+
+    classDef step fill:#F5F1EB,stroke:#BBBBBB,color:#222222,text-align:left
+    classDef note fill:#FBF9F5,stroke:#CCCCCC,color:#444444,text-align:left
+    class E1,E2,E3,E4 step
+    class NOTE note
+    style BOUCLE fill:#FAF8F5,stroke:#8B2E0B,color:#8B2E0B

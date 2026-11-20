@@ -1,0 +1,34 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 56 (page 210)
+' Légende : Fig. 56. – Modèle opérationnel ArchiMate et topologie d’équipes Team Topologies reliant l’IAP aux trois blueprints sectoriels
+@startuml
+!include <archimate/Archimate>
+
+left to right direction
+
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+
+package "Équipe Plateforme (IAP — Mode X-as-a-Service)" as plat #ffffff {
+  Technology_Service(moteurs, "Moteurs & Enclaves\n(Temporal, Event Mesh, CoCo/GPU)")
+  Application_Service(socle, "Socle IAP & Golden Paths\n(AI GW, MCP GW, SPIRE, OTel)")
+}
+
+package "Équipe Habilitante (Enabling — Mode Facilitation)" as enabling #ffffff {
+  Business_Role(cellule, "Cellule EvalOps, FinOps &\nConformité 2LoD (E-23 / Loi 25)")
+}
+
+package "Équipes Alignées sur le Flux (Stream-aligned)" as stream #ffffff {
+  Application_Component(bp1, "Domaine Crédit / Sinistres\n(Blueprint 1 — R3/R4, Temporal)")
+  Application_Component(bp2, "Domaine Achats & B2B\n(Blueprint 2 — A2A, AGNTCY, Mesh)")
+  Application_Component(bp3, "Domaine R&D / Santé Souverain\n(Blueprint 3 — vLLM TEE, RAG ACL)")
+}
+
+Rel_Serving(moteurs, socle, "soutient")
+Rel_Serving(socle, bp1, "X-as-a-Service")
+Rel_Serving(socle, bp2, "X-as-a-Service")
+Rel_Serving(socle, bp3, "X-as-a-Service")
+Rel_Serving(cellule, bp1, "facilite EvalOps/Audit")
+Rel_Serving(cellule, bp2, "cadre OASF/SLA")
+Rel_Serving(cellule, bp3, "valide ÉFVP/TEE")
+@enduml

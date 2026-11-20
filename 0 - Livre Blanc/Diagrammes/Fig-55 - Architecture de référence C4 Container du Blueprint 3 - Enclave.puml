@@ -1,0 +1,31 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 55 (page 206)
+' Légende : Fig. 55. – Architecture de référence C4 Container du Blueprint 3 — Enclave souveraine avec AI Gateway locale, RAG ACL et microVM
+@startuml
+!include <C4/C4_Container>
+
+LAYOUT_LEFT_RIGHT()
+
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+
+Person(chercheur, "Chercheur / Clinicien", "Accès interne authentifié (Haute confidentialité)")
+
+System_Boundary(bp3, "Blueprint 3 — Enclave Souveraine Sur Site (Air-Gapped)") {
+  Container(sandbox, "Agent Sandbox", "WarmPool + Firecracker / Kata", "Exécution code & harnais en microVM (≤ 125 ms)")
+  ContainerDb(pg, "Base Relationnelle RLS", "PostgreSQL (Row Security)", "Mémoire & métadonnées verrouillées par session")
+  ContainerDb(qdrant, "Index Vectoriel Silo", "Qdrant (is_tenant / Silo)", "Segments filtrés par ACL & recherche hybride RRF")
+  Container(openfga, "Moteur ReBAC", "OpenFGA (ListObjects)", "Résout droits utilisateur avant recherche vectorielle")
+  Container(aigw, "AI Gateway & EPP", "Envoy / Gateway API Inference", "Routage KV-cache aware, quotas TPM & Zéro Egress")
+  Container(llm, "Inférence Confidentielle", "llm-d + vLLM / NIM (CoCo)", "CPU SEV-SNP/TDX + GPU TEE (Mémoire chiffrée)")
+  Container(kms, "Attestation & KMS Local", "NRAS / Trustee / SPIRE", "Vérifie enclave avant déchiffrement des poids")
+}
+
+Rel(chercheur, sandbox, "Requête métier (Jeton OIDC interne)", "mTLS SPIFFE")
+Rel(sandbox, pg, "Lit/écrit contexte sous politique RLS", "SQL + tenant_id")
+Rel(sandbox, qdrant, "Recherche hybride filtrée par IDs", "TLS interne")
+Rel(sandbox, openfga, "Demande objets autorisés", "gRPC / ListObjects")
+Rel(sandbox, aigw, "Inférence locale (aucune sortie WAN)", "OpenAI API")
+Rel(aigw, llm, "Aiguillage EPP (préfixe KV chaud)", "gRPC / HTTP")
+Rel(llm, kms, "Preuve matérielle SEV-SNP / TDX / GPU", "Attestation")
+@enduml

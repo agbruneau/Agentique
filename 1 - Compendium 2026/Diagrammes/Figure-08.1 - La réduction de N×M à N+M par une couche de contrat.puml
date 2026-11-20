@@ -1,0 +1,96 @@
+' Figure 8.1 — La réduction de N×M à N+M par une couche de contrat, et les trois choses que cette couche ne porte pas.
+' Source : 1 - Compendium 2026, Chapitre 8 (page 91)
+
+@startuml
+left to right direction
+hide stereotype
+skinparam packageStyle rectangle
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 13
+skinparam shadowing false
+skinparam roundCorner 4
+skinparam nodesep 22
+skinparam ranksep 45
+
+skinparam package {
+  BackgroundColor #FFFFFF
+  BorderColor #E0DDD7
+  FontColor #555555
+  FontStyle bold
+}
+
+skinparam package<<accent>> {
+  BackgroundColor #FFFFFF
+  BorderColor #E0DDD7
+  FontColor #9E3A14
+  FontStyle bold
+}
+
+skinparam rectangle {
+  BackgroundColor #FAF7F2
+  BorderColor #B8B3AA
+  FontColor #222222
+}
+
+skinparam rectangle<<contrat>> {
+  BackgroundColor #FFFFFF
+  BorderColor #9E3A14
+  BorderThickness 2
+  FontColor #9E3A14
+}
+
+skinparam legendBackgroundColor #FFFFFF
+skinparam legendBorderColor #9A958C
+skinparam legendFontColor #222222
+
+package "SANS COUCHE DE CONTRAT\n<color:#222222>N × M intégrations point-à-point</color>" as P_LEFT {
+  rectangle "Agent" as A1
+  rectangle "Agent" as A2
+  rectangle "Agent" as A3
+  rectangle "Outil" as O1
+  rectangle "Outil" as O2
+  rectangle "Outil" as O3
+
+  A1 -- O1 #B8B3AA
+  A1 -- O2 #B8B3AA
+  A1 -- O3 #B8B3AA
+  A2 -- O1 #B8B3AA
+  A2 -- O2 #B8B3AA
+  A2 -- O3 #B8B3AA
+  A3 -- O1 #B8B3AA
+  A3 -- O2 #B8B3AA
+  A3 -- O3 #B8B3AA
+}
+
+package "AVEC UNE COUCHE DE CONTRAT\n<color:#222222>N + M — le geste du modèle canonique (ch. 1 § 1.6.1)</color>" as P_RIGHT <<accent>> {
+  rectangle "Agent" as B1
+  rectangle "Agent" as B2
+  rectangle "Agent" as B3
+  rectangle CONTRAT <<contrat>> [
+    <b>COUCHE</b>
+    <b>DE</b>
+    <b>CONTRAT</b>
+  ]
+  rectangle "Outil" as P1
+  rectangle "Outil" as P2
+  rectangle "Outil" as P3
+
+  B1 -- CONTRAT #9E3A14
+  B2 -- CONTRAT #9E3A14
+  B3 -- CONTRAT #9E3A14
+  CONTRAT -- P1 #9E3A14
+  CONTRAT -- P2 #9E3A14
+  CONTRAT -- P3 #9E3A14
+}
+
+O1 -[hidden]- B1
+O2 -[hidden]- B2
+O3 -[hidden]- B3
+
+legend
+  <b>CE QUE LA COUCHE NE PORTE PAS</b>
+  <b>Négociation riche de capacités · confiance établie entre les parties · accord sémantique</b>
+  La conformité est au transport et au schéma, non au sens — rien ne garantit que l'intention corresponde au comportement.
+endlegend
+@enduml

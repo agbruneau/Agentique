@@ -1,0 +1,21 @@
+%% Figure 49.2 — La grappe d'échéances 2027-2035 : engagements datés (PROGRAMMÉ) et jalons visés (PROJETÉ)
+flowchart TB
+    subgraph GRAPPE["LA GRAPPE DE 2027 (PROGRAMMÉ) ET L'HORLOGE DE FOND 2028-2035 (PROJETÉ)"]
+        direction LR
+        J1["<b>● 2027</b><br/><b>La concentration</b><br/>E-23 opposable le 1er mai ;<br/>l'essentiel des jalons de la<br/>somme y tombe — § 49.1.1"]
+        J2["<b>○ 2028-2029</b><br/><b>Identité et standards</b><br/>l'horloge de fond des travaux<br/>normatifs — § 49.1.2"]
+        J3["<b>○ 2030/2035</b><br/><b>Post-quantique</b><br/>premier jalon des instruments<br/>fédéraux — ch. 21"]
+        J4["<b>○ 2032</b><br/><b>Règlement</b><br/>les échéances financières et<br/>de règlement — § 49.1.3"]
+        J1 --> J2 --> J3 --> J4
+    end
+
+    NOTE["LA GRAPPE DE 2027 CONCENTRE LES ENGAGEMENTS PROGRAMMÉS ; L'HORLOGE 2028-2035 PORTE AUSSI DES JALONS PROJETÉS.<br/>Une date opposable peut être reportée (§ 49.1.4). La frise distingue engagements fermes (●) et cibles projetées (○)."]
+    GRAPPE ~~~ NOTE
+
+    classDef plein fill:#8B2E0B,stroke:#8B2E0B,color:#FFFFFF,text-align:left
+    classDef ouvert fill:#FFFFFF,stroke:#8B2E0B,stroke-width:2px,color:#222222,text-align:left
+    classDef note fill:#FBF9F5,stroke:#CCCCCC,color:#444444,text-align:left
+    class J1 plein
+    class J2,J3,J4 ouvert
+    class NOTE note
+    style GRAPPE fill:#FAF8F5,stroke:#8B2E0B,color:#8B2E0B

@@ -1,0 +1,46 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 31 (page 120)
+' Légende : Fig. 31. – Séquence de confinement des pathologies réactives : anti-écho, files de réessai non bloquantes et backpressure LLM
+@startuml
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+skinparam roundcorner 6
+skinparam defaultFontName SansSerif
+skinparam ArrowColor #324e67
+skinparam ArrowFontColor #172025
+skinparam ParticipantBackgroundColor #f3f7f9
+skinparam ParticipantBorderColor #324e67
+skinparam ParticipantFontColor #172025
+skinparam QueueBackgroundColor #f3f7f9
+skinparam QueueBorderColor #324e67
+skinparam QueueFontColor #172025
+skinparam SequenceLifeLineBorderColor #7e8a93
+skinparam SequenceGroupBorderColor #324e67
+skinparam SequenceGroupBackgroundColor #edf3f7
+skinparam SequenceGroupHeaderFontColor #1a4964
+
+queue "Courtier\n(Kafka / NATS)" as Broker
+participant "Garde-fou Mesh\n(TTL & Dédup)" as Guard
+participant "Agent ambiant\n(Pull borné)" as Agent
+queue "Retry Topics\n& DLQ" as RetryDLQ
+participant "AI Gateway\n(Quota TPM / 429)" as AIGW
+
+Broker -> Guard : Lot borné (max.poll.records / batch)
+Guard -> Guard : Contrôle ce_idempotencykey\net ce_hopcount ≤ ce_ttl
+
+alt Boucle d'écho ou saut > ce_ttl
+  Guard -> RetryDLQ : Isoler en DLQ (echo_loop_ttl)
+  Guard -> Broker : Ack / Flux principal débloqué
+else Événement admissible
+  Guard -> Agent : Message corrélé (ce_correlationid)
+  Agent -> AIGW : Requête inférence (quota TPM)
+  alt Saturation GPU / TPM dépassé
+    AIGW --> Agent : HTTP 429 + RateLimit (r=0, t)
+    Agent -> RetryDLQ : Router vers Retry-Topic différé
+    Agent -> Broker : Clore lot (< max.poll.interval.ms)
+  else Capacité disponible
+    AIGW --> Agent : Réponse structurée + RateLimit (r, t)
+    Agent -> Broker : Ack + CloudEvent (ce_hopcount + 1)
+  end
+end
+@enduml

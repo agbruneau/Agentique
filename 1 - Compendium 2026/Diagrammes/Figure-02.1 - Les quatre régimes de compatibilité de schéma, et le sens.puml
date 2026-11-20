@@ -1,0 +1,69 @@
+' Figure 2.1 — Les quatre régimes de compatibilité de schéma, et le sens d'évolution que chacun protège (la transitivité qualifiant l'étendue temporelle des trois premiers régimes).
+' Source : 1 - Compendium 2026, Chapitre 2 (page 29)
+
+@startuml
+top to bottom direction
+hide stereotype
+skinparam packageStyle rectangle
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 13
+skinparam shadowing false
+skinparam roundCorner 4
+skinparam nodesep 25
+skinparam ranksep 25
+
+skinparam package {
+  BackgroundColor #FFFFFF
+  BorderColor #E0DDD7
+  FontColor #9E3A14
+  FontStyle bold
+}
+
+skinparam rectangle {
+  BackgroundColor #FAF7F2
+  BorderColor #B8B3AA
+  FontColor #222222
+}
+
+skinparam legendBackgroundColor #F7F5F0
+skinparam legendBorderColor #C4BEB5
+skinparam legendFontColor #333333
+
+package "QUATRE RÉGIMES, DEUX SENS D'ÉVOLUTION" {
+  rectangle R1 [
+    <color:#9E3A14><b>1</b></color>  <b>Ascendante</b>
+    Un consommateur mis à jour lit des données produites
+    selon l'ancien schéma.
+    <color:#666666>backward</color>
+  ]
+  rectangle R2 [
+    <color:#9E3A14><b>2</b></color>  <b>Descendante</b>
+    Un consommateur resté sur l'ancien schéma lit des
+    données produites selon le nouveau.
+    <color:#666666>forward</color>
+  ]
+  rectangle R3 [
+    <color:#9E3A14><b>3</b></color>  <b>Complète</b>
+    Les deux à la fois : la mise à jour des deux parties
+    dans un ordre quelconque.
+    <color:#666666>full</color>
+  ]
+  rectangle R4 [
+    <color:#9E3A14><b>4</b></color>  <b>Transitive</b>
+    La garantie s'étend à toutes les versions antérieures,
+    non à la seule précédente.
+    <color:#666666>transitive</color>
+  ]
+
+  R1 -[hidden]right- R2
+  R3 -[hidden]right- R4
+  R1 -[hidden]down- R3
+  R2 -[hidden]down- R4
+}
+
+legend
+  La compatibilité transitive est la seule qui interdise la dérive cumulative
+  que des sauts successifs, compatibles deux à deux, peuvent produire.
+endlegend
+@enduml

@@ -1,0 +1,19 @@
+%% Figure 45.5 — L'exemple de bout en bout : la souscription vie augmentée (et sa transposition homologue en règlement de sinistres)
+flowchart TB
+    subgraph CHAINE["UNE CHAÎNE D'ORCHESTRATION RÉGULÉE (SOUSCRIPTION VIE ET SINISTRES)"]
+        direction LR
+        E1["<b>Proposition</b><br/>reçue, et le<br/>consentement recueilli"]
+        E2["<b>Collecte</b><br/>dossiers,<br/>déclarations, données<br/>de santé"]
+        E3["<b>Évaluation</b><br/>agents invoqués sur<br/>des capacités bornées"]
+        E4["<b>Décision</b><br/>point d'arrêt humain<br/>avant décision (art. 12.1)"]
+        E1 --> E2 --> E3 --> E4
+    end
+
+    NOTE["La donnée de santé est une donnée sensible, et la souscription est un domaine de HAUT RISQUE (ch. 34 § 34.3.5). Chaque maillon<br/>de cette chaîne est un endroit où le régime mord — et l'exemple ne prouve pas que le blueprint tienne : c'est ce que le § 45.15 arbitre."]
+    CHAINE ~~~ NOTE
+
+    classDef step fill:#F5F1EB,stroke:#BBBBBB,color:#222222,text-align:left
+    classDef note fill:#FBF9F5,stroke:#CCCCCC,color:#444444,text-align:left
+    class E1,E2,E3,E4 step
+    class NOTE note
+    style CHAINE fill:#FAF8F5,stroke:#8B2E0B,color:#8B2E0B

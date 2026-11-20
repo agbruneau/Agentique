@@ -1,0 +1,121 @@
+' Fig. 64. – Diagramme de flux PRISMA-ScR / Garousi (lot W3.2 — CHANTIER-10) : 582 notices brutes issues de 5 API scientifiques ouvertes productives, 453 dédupliquées (67,11 % évaluées par les pairs), 223 textes intégraux OA hachés SHA-256, double filtrage indépendant (κ = 0,7935) et 160 études incluses sur texte intégral (33,75 % évaluées par les pairs, 0,0 % sur résumé seul).
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam padding 8
+skinparam defaultFontName "Segoe UI"
+skinparam rectangle {
+  BackgroundColor #FFFFFF
+  BorderColor #334155
+}
+
+rectangle Header #0F172A;text:FFFFFF;line:0F172A [
+  **Diagramme PRISMA-ScR / Garousi — Revue multivocale automatisée ouverte (W3.2 · DC-P13)**
+  Protocole figé : Borealis-Bench/mlr/protocole-mlr-prisma.json · Fenêtre 2023–2026 · Double filtrage indépendant sur texte intégral OA (SHA-256)
+]
+
+rectangle P_ID #2563EB;text:FFFFFF;line:1E40AF [
+  IDENTIFICATION
+]
+
+rectangle N582 #EFF6FF;line:2563EB [
+  **Notices identifiées via API ouvertes (n = 582)**
+  APIs actives (5) : crossref, europepmc, arxiv, hal, doaj
+  Crossref=200 · arXiv=160 · DOAJ=78 · EPMC=75 · HAL=69
+  APIs statut F (429/Anubis) : openalex, semantic_scholar, dblp
+  Zéro contournement 403/WAF/CAPTCHA/Anubis (A4)
+]
+
+rectangle E129 #FEF2F2;line:DC2626 [
+  **Retirées avant filtrage principal (n = 129)**
+  Doublons fusionnés par DOI / titre normalisé (EC2) : n = 27
+  Hors fenêtre temporelle 2023–2026 (EC1) : n = 4
+  Bruit thématique manifeste hors périmètre (EC3) : n = 98
+  Déduplication déterministe multi-index
+]
+
+rectangle P_FIL #166534;text:FFFFFF;line:14532D [
+  FILTRAGE
+]
+
+rectangle N453 #F0FDF4;line:166534 [
+  **Corpus consolidé dédupliqué évalué (n = 453)**
+  Articles évalués par les pairs (DOI vérifié) : n = 304 (67.11 %)
+  Prépublications scientifiques (Tier 1 Grey) : n = 149 (32.9 %)
+  Grille AACODS calculée sur 100 % du corpus (moy. 9.97/12)
+  Répartition RQ : RQ1=183 · RQ2=76 · RQ3=97 · RQ4=97
+  Textes intégraux OA (SHA-256) : n = 223 (49.23 %)
+]
+
+rectangle E230 #FEF2F2;line:DC2626 [
+  **Écartées : métadonnées seules / non-OA (n = 230)**
+  Statut METADATA_ONLY (EC5, sans contournement) : n = 230
+  Accès payant, 403 éditeur ou absence d'URL OA libre
+  Conservées dans dataset-bibliometrique.json pour traçabilité
+  Exclues de l'analyse sur texte intégral (prévention P2-F3)
+  Respect strict du plafond < 5 % de résumés en inclusion
+]
+
+rectangle P_ELI #C2410C;text:FFFFFF;line:9A3412 [
+  ÉLIGIBILITÉ
+]
+
+rectangle N223 #FFFBEB;line:D97706 [
+  **Double filtrage indépendant sur texte intégral OA (n = 223)**
+  Passe 1 (lexicale + structure scientifique) : 199 éligibles / 223
+  Passe 2 (évaluation critique AACODS + preuves) : 156 éligibles / 223
+  Accord inter-passes (corpus 453) : Po = 90.07 % · Cohen κ = 0.7935
+  Accord sur sous-corpus OA (223) : Po = 79.82 % · Cohen κ = 0.4124
+  Conflits arbitrés selon protocole figé : n = 45 (retenus : 5)
+]
+
+rectangle E63 #FEF2F2;line:DC2626 [
+  **Exclues après lecture texte intégral OA (n = 63)**
+  Hors périmètre entreprise agentique / PQC (EC3) : n = 24
+  Structure / densité probante ou AACODS (EC6) : n = 39
+  Dont exclusions après arbitrage inter-passes : n = 40
+  Chaque exclusion motivée dans resultats-filtrage-prisma.json
+  Vérification SHA-256 100 % conforme sur corpus_oa/
+]
+
+rectangle P_INC #16A34A;text:FFFFFF;line:15803D [
+  INCLUSION
+]
+
+rectangle N160 #F0FDF4;line:16A34A [
+  **Corpus inclus final analysé sur texte intégral (n = 160)**
+  Articles évalués par les pairs inclus (DOI / revue / actes vérifiés) : n = 54 (33.75 % — cible CA-P13 >= 25 %)
+  Prépublications scientifiques OA incluses (Tier 1 Grey avec limites explicites) : n = 106 (66.2 %)
+  Notices retenues sur résumé seul (METADATA_ONLY) : n = 0 (0.0 % — cible CA-P13 < 5 %)
+  Couverture thématique finale : RQ1=59 · RQ2=26 · RQ3=41 · RQ4=34 | Score AACODS moyen = 10.55/12
+  Années : 2023=1 · 2024=5 · 2025=50 · 2026=104 | Impact corpus : relève la part arbitrée T0 (5,5 %) vers >= 25–30 %
+]
+
+rectangle Footer #F8FAFC;line:CBD5E1 [
+  Généré automatiquement par Borealis-Bench/mlr/filtrage_prisma.py · Production 100 % autonome IA (référentiel consultatif AE / AS) · Horodatage : 2026-11-19T15:11:21Z
+]
+
+Header -[hidden]down-> N582
+
+P_ID -[hidden]right-> N582
+N582 -[#334155]right-> E129
+
+P_FIL -[hidden]right-> N453
+N453 -[#334155]right-> E230
+
+P_ELI -[hidden]right-> N223
+N223 -[#334155]right-> E63
+
+P_INC -[hidden]right-> N160
+
+N582 -[#334155]down-> N453
+N453 -[#334155]down-> N223
+N223 -[#334155]down-> N160
+
+P_ID -[hidden]down-> P_FIL
+P_FIL -[hidden]down-> P_ELI
+P_ELI -[hidden]down-> P_INC
+
+N160 -[hidden]down-> Footer
+@enduml

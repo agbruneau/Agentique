@@ -1,0 +1,41 @@
+%% Figure 4 — Quatre types de mémoire et contrôles d'écriture (2 - Cadre de Référence, ch. 5, p. 47)
+%% Source : cadre CRE-IA-2026-01, d'après la taxonomie CoALA (Sumers et coll., 2024)
+%%{init: {'flowchart': {'wrappingWidth': 900}}}%%
+flowchart TB
+    subgraph Main[" "]
+        direction LR
+        subgraph Agent["Agent en cours d’exécution"]
+            M1["<b>1 · Mémoire de travail</b><br/><br/>Fenêtre de contexte du modèle :<br/>instructions, contrats d’outils,<br/>sous-objectif, derniers échanges<br/><br/>État de la tâche persisté hors du<br/>modèle à chaque transition (points<br/>de contrôle du moteur durable)<br/><br/>Durée : la tâche · coût : chaque jeton<br/>réinjecté est payé à chaque appel<br/><br/>Ce qui doit durer est persisté hors du modèle."]
+        end
+
+        subgraph Longue["Mémoires longues persistées hors du modèle"]
+            M2["<b>2 · Mémoire épisodique</b><br/>Résumés horodatés des interactions, trajectoires d’outils et résolutions passées;<br/>provenance consignée pour chaque entrée<br/><i>Calendrier de conservation · exposée en ressources ou outils MCP</i>"]
+            M3["<b>3 · Mémoire sémantique</b><br/>Connaissances du domaine : index vectoriels et lexicaux, graphes de connaissances,<br/>documentation; recherche hybride avec citations<br/><i>Mise à jour par les propriétaires des données · exposée par MCP</i>"]
+            M4["<b>4 · Mémoire procédurale</b><br/>Savoir-faire : invites système versionnées, contrats de compétences,<br/>flux et séquences d’outils validés<br/><i>Gérée comme du code : revue, version, évaluation avant déploiement</i>"]
+        end
+
+        M1 <-->|"récupérer / consolider"| M2
+        M1 <--> M3
+        M1 <--> M4
+    end
+
+    Ctrl["<b>Contrôles obligatoires avant toute écriture en mémoire épisodique ou sémantique (EXIG-ARC-23);<br/>mémoire procédurale : changement logiciel (EXIG-ARC-24)</b><br/>Validation et provenance de la source · isolation par mandant ou par locataire (tableau 13) · expiration · instantanés restaurables<br/>Interdits : état qui n’existe qu’en mémoire de processus · transcriptions brutes comme mémoire longue ·<br/>magasin partagé en écriture entre plusieurs agents ou serveurs MCP"]
+
+    Main ~~~ Ctrl
+
+    classDef outer fill:transparent,stroke:none
+    classDef agentBox fill:#ede8f5,stroke:#6d28d9,stroke-width:2px,color:#0f2744
+    classDef workMem fill:#ffffff,stroke:#cbd5e1,color:#0f2744,text-align:left
+    classDef longWrap fill:transparent,stroke:none
+    classDef epMem fill:#e6f0fa,stroke:#93c5fd,color:#0f2744,text-align:left
+    classDef semMem fill:#e2f4ee,stroke:#86efac,color:#0f2744,text-align:left
+    classDef procMem fill:#fef3dc,stroke:#fcd34d,color:#0f2744,text-align:left
+    classDef ctrlBox fill:#fce8eb,stroke:#f4b4bc,color:#7f1d1d,text-align:left
+    class Main outer
+    class Agent agentBox
+    class M1 workMem
+    class Longue longWrap
+    class M2 epMem
+    class M3 semMem
+    class M4 procMem
+    class Ctrl ctrlBox

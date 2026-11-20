@@ -1,0 +1,43 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 14 (p. 56)
+' Légende : Comparaison structurelle entre l’anti-patron Swagger-to-MCP 1:1 et l’architecture ACI consolidée
+
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam rectangle {
+  BackgroundColor #F1F6F9
+  BorderColor #2B4C65
+  FontColor #0F172A
+  RoundCorner 4
+}
+skinparam arrow {
+  Color #2B4C65
+  FontColor #0F172A
+}
+
+package "Architecture cible : Façade ACI et\ndécouverte dynamique" #F4F8FB {
+  rectangle "Harnais LLM\n(Contexte épuré)" as C1
+  rectangle "Tool Search ou\nCode Mode isolé" as C2
+  rectangle "Outils ACI consolidés\n(Intention métier)" as C3
+  rectangle "Orchestrateur aval\n(REST / OData agrégé)" as C4
+
+  C1 -> C2 : Charge à la demande\n(schémas pertinents)
+  C2 -> C3 : Contrats sémantiques\n& outputSchema
+  C3 -> C4 : Enchaîne et filtre\navant retour concis
+}
+
+package "Anti-patron : Wrapper\nSwagger-to-MCP 1:1" #FDF6F2 {
+  rectangle "Harnais LLM\n(Contexte saturé)" as A1
+  rectangle "Catalogue brut\n200+ outils CRUD" as A2
+  rectangle "Endpoints fins\nGET / POST / PATCH" as A3
+  rectangle "Sélection erratique &\ndouble transit de jetons" as A4
+
+  A1 -> A2 : Charge tous les\nschémas d'entrée
+  A2 -> A3 : Appels séquentiels\nsans agrégation
+  A3 -> A4 : Payloads bruts\nrenvoyés au LLM
+}
+
+C1 -[hidden]down-> A1
+
+@enduml

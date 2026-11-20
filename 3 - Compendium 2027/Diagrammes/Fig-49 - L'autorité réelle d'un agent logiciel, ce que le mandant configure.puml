@@ -1,0 +1,39 @@
+' Fig. 49. – L’autorité réelle d’un agent logiciel, ce que le mandant configure, et son autorité apparente, ce que le tiers perçoit : selon la déduction proposée dans ce chapitre, le risque juridique loge dans l’écart entre les deux.
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam rectangle {
+  BackgroundColor #F8FAFC
+  BorderColor #475569
+}
+
+rectangle Mandant #F8FAFC;line:475569 [
+  **Mandant**
+  la personne qui
+  déploie l'agent
+]
+
+rectangle "Autorité apparente\nce que le tiers perçoit\ncanal, marque, carte d'agent, absence de limite annoncée" as Apparente #FEF2F2;line:991B1B;line.dashed {
+  rectangle Reelle #F0FDF4;line:166534 [
+    **Autorité réelle**
+    ce qui est configuré : portées,
+    politiques, mandats signés
+  ]
+  rectangle Ecart #FEF2F2;line:FEF2F2 [
+    **Écart : le risque juridique**
+    un acte non permis peut lier le mandant
+  ]
+  Reelle -[hidden]down-> Ecart
+}
+
+rectangle Tiers #F8FAFC;line:475569 [
+  **Tiers**
+  croit raisonnablement
+  l'agent autorisé
+]
+
+Mandant -[#475569]right-> Reelle : configure
+Apparente <-[#475569]right- Tiers : perçoit
+@enduml

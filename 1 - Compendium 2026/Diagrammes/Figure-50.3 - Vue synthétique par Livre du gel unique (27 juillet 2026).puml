@@ -1,0 +1,29 @@
+' Figure 50.3 — Vue synthétique par Livre du gel unique (27 juillet 2026) et exemples d'événements de péremption qui l'entament
+@startuml
+skinparam backgroundColor #FAF8F5
+skinparam shadowing false
+skinparam defaultFontName "DejaVu Sans"
+skinparam titleFontColor #8B2E0B
+skinparam rectangleBorderColor #BBBBBB
+skinparam rectangleBackgroundColor #FAF8F5
+skinparam legendBackgroundColor #FBF9F5
+skinparam legendBorderColor #BBBBBB
+
+title VUE SYNTHÉTIQUE PAR LIVRE DU GEL UNIQUE (27 JUILLET 2026) ET EXEMPLES D'ÉVÉNEMENTS
+
+rectangle M [
+|= |= Gel de la somme |= Événements de péremption qui le touchent |
+| **Livre I — Coopérer** | 27 juillet 2026 | révisions protocolaires (MCP payé ch. 8) ; gouvernance AP2 (ch. 10) ; Assistants API |
+| **Livre II — Faire confiance** | 27 juillet 2026 | normalisation du passeport ; jalons post-quantiques ; premier incident public |
+| **Livre III — Encadrer** | 27 juillet 2026 | désignation de l'organisme ; lancement du rail temps réel |
+| **Livre IV — Appliquer** | 27 juillet 2026 | conventions sémantiques d'observabilité |
+| **Livre V — Livrer et clore** | 27 juillet 2026 | suivi du transfert AP2 (§ 49.3.1, § 49.9) et registre des 14 événements (Tableau 50.1) |
+]
+
+legend bottom
+  Se reporter au Tableau 50.1 pour les quatorze événements, leur trace et leur tri prospectif.
+  ----
+  UNE DATE DE GEL N'EST PAS UNE DATE DE PÉREMPTION : un chapitre gelé plus tôt n'est pas faux, il est daté.
+  Ce que la carte montre est l'ordre dans lequel la revalidation devrait s'exercer, non un classement de fiabilité.
+endlegend
+@enduml

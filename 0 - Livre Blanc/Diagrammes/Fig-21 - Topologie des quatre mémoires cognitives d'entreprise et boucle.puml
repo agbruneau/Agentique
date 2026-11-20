@@ -1,0 +1,32 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 21 (p. 83)
+' Légende : Topologie des quatre mémoires cognitives d’entreprise et boucle d’ingénierie du contexte
+
+@startuml
+!include <C4/C4_Component>
+
+LAYOUT_LEFT_RIGHT()
+
+Container_Boundary(harness, "Agent Harness (Exécution\ncognitive en session)") {
+  Component(trav, "Mémoire de travail", "Fenêtre active", "Instructions, tours récents et notes structurées")
+  Component(mgr, "Gestionnaire mémoriel", "Hot Path / Async", "Arbitre lecture et écriture des mémoires long terme")
+  Component(comp, "Moteur de compaction", "Curation / Éviction", "Synthèse de contexte et divulgation juste-à-temps")
+}
+
+System_Ext(dur, "Exécution durable\n(Chapitre 09)", "Checkpointing transactionnel, replay déterministe et Sagas")
+
+Container_Boundary(longterm, "Couche de mémoires\ncognitives distribuées") {
+  ComponentDb(epis, "Mémoire épisodique", "Vecteurs + Horodatage", "Trajectoires passées, cas similaires et préférences")
+  ComponentDb(sem, "Mémoire sémantique", "RAG + Graphe + Profils", "Corpus documentaire, faits et ontologie métier")
+  ComponentDb(proc, "Mémoire procédurale", "Git / Registre YAML", "Règles validées, prompts et gabarits de compétences")
+}
+
+Rel(trav, mgr, "Interroge / extrait")
+Rel(trav, comp, "Sature budget O(n²)")
+Rel(comp, trav, "Réinitialise avec synthèse")
+Rel(mgr, epis, "Lit / consolide expériences")
+Rel(mgr, sem, "Récupère connaissances")
+Rel(mgr, proc, "Charge règles versionnées")
+Rel(mgr, dur, "Distingue état transactionnel", "Hors mémoire cognitive")
+
+@enduml

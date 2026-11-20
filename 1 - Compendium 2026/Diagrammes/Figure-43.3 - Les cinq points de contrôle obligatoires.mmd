@@ -1,0 +1,20 @@
+%% Figure 43.3 — Les cinq points de contrôle obligatoires (PC1 à PC5)
+flowchart TB
+    subgraph POINTS["CINQ POINTS, ET LEUR COUCHE"]
+        direction TB
+        P1["<b>1 · L'émission</b><br/>Une identité et ses pièces, avant toute invocation.<br/><i>couche identité et registre — ch. 15, ch. 16</i>"]
+        P2["<b>2 · L'admission</b><br/>Le verdict d'entrée au maillage, et sa durée de validité.<br/><i>couche maillage — ch. 18, ch. 20</i>"]
+        P3["<b>3 · L'arête</b><br/>La politique appliquée à chaque passage.<br/><i>couche maillage — ch. 37</i>"]
+        P4["<b>4 · La trace</b><br/>Produite par le cadre, non par les agents.<br/><i>couche orchestration — ch. 38, zone Z1</i>"]
+        P5["<b>5 · Le point d'arrêt humain</b><br/>L'occasion de réviser, exigée par l'art. 12.1.<br/><i>couche gouvernance — zone Z2</i>"]
+        P1 ~~~ P2 ~~~ P3 ~~~ P4 ~~~ P5
+    end
+
+    NOTE["« Obligatoires » qualifie LE PATRON, non un texte : aucun instrument réglementaire n'impose ces cinq points.<br/>Le tableau source distingue pour chacun ce que le socle porte et ce qui est de l'auteur — et la figure ne dispense pas de l'y lire."]
+    P5 ~~~ NOTE
+
+    classDef pt fill:#F5F1EB,stroke:#BBBBBB,color:#222222,text-align:left
+    classDef note fill:#FBF9F5,stroke:#CCCCCC,color:#444444,text-align:left
+    class P1,P2,P3,P4,P5 pt
+    class NOTE note
+    style POINTS fill:#FAF8F5,stroke:#8B2E0B,color:#8B2E0B

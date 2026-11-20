@@ -1,0 +1,31 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 17 (p. 66)
+' Légende : Dualité verticale MCP et horizontale A2A entre domaines opaques
+
+@startuml
+!include <C4/C4_Container>
+
+System_Boundary(domA, "Domaine A — Client") {
+  Container(orchA, "Agent orchestrateur A", "Agent Harness", "Planifie et délègue")
+  Container(mcpA, "MCP Gateway A", "Serveurs MCP", "Outils typés sans état")
+  ContainerDb(sorA, "SoR Domaine A", "ERP / CRM", "Données locales")
+}
+
+System_Boundary(front, "Frontière inter-domaines") {
+  Container(gw, "Passerelle API / A2A", "HTTPS + OAuth 2.0", "JWS, portées, quotas et traces")
+}
+
+System_Boundary(domB, "Domaine B / SaaS — Pair\nopaque") {
+  Container(a2aB, "Serveur A2A B", "AgentCard + Tasks", "Boîte noire : prompts et mémoire privés")
+  Container(mcpB, "MCP privé B", "Outils encapsulés", "Invisibles pour A")
+  ContainerDb(sorB, "SoR Domaine B", "SI partenaire", "Autorité cloisonnée")
+}
+
+Rel_R(orchA, gw, "Horizontal : Task A2A (HTTPS / JWS)")
+Rel_R(gw, a2aB, "Délégation contrôlée (JSON-RPC / gRPC)")
+Rel_D(orchA, mcpA, "Vertical : outils (MCP)")
+Rel_D(mcpA, sorA, "Accès (Idempotent)")
+Rel_D(a2aB, mcpB, "Vertical : outils (MCP privé)")
+Rel_D(mcpB, sorB, "Exécution (Domaine B)")
+
+@enduml

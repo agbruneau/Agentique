@@ -1,0 +1,36 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 50 (page 189)
+' Légende : Fig. 50. – Topologie de l’AI Gateway hybride reliant routage multi-nuages, GAIE/llm-d, vLLM P/D et enclave souveraine NVIDIA NIM
+@startuml
+!include <C4/C4_Component>
+
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+
+Component(harness, "Agent Harness / SoA", "Client OpenAI-compatible", "Appelle /v1/chat/completions avec clé virtuelle et balises FinOps")
+
+Container_Boundary(aigw, "AI Gateway Hybride (Agent Router / LiteLLM)") {
+  Component(quota, "Garde d'accès & Quotas", "Virtual Keys + Redis", "Plafonds TPM/RPM et imputation coûts")
+  Component(router, "Routeur sémantique & repli", "AIGatewayRoute / Router", "Résidence Loi 25, cache_control et failover")
+}
+
+Container_Boundary(cloud, "Inférence multi-nuages (R1-R2 / PII filtrées)") {
+  Component(frontier, "API Frontier LLMs", "PAYG / PTU infonuagique", "Raisonnement complexe et débordement")
+}
+
+Container_Boundary(enclave, "Enclave GPU souveraine sur site (R3-R4 / Air-gap)") {
+  Component(gaie, "Inference Gateway (GAIE)", "InferencePool + EPP (llm-d)", "Affinité cache KV et prédiction TTFT/TPOT")
+  Component(vllm, "Grappes vLLM (P/D + NIXL)", "PagedAttention + APC", "Pools Prefill/Decode sur RDMA")
+  Component(nim, "NVIDIA NIM Operator", "NIMCache + NIMService", "Microservices sur PVC hors ligne")
+}
+
+Rel_D(harness, quota, "Envoie requête")
+Rel_D(quota, router, "Valide budget et jetons")
+Rel_D(router, frontier, "Flux autorisés / PTU")
+Rel_D(router, gaie, "Flux souverains R3-R4")
+Rel_D(gaie, vllm, "ext-proc")
+Rel_D(gaie, nim, "Routage local")
+
+Lay_R(cloud, enclave)
+Lay_R(vllm, nim)
+@enduml

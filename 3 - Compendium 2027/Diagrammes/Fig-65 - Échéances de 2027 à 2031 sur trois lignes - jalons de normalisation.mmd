@@ -1,0 +1,35 @@
+%% Fig. 65. – Échéances de 2027 à 2031 sur trois lignes : jalons de normalisation annoncés par les chartes de l’IETF, échéances réglementaires fixées par des textes adoptés, échéances de la transition post-quantique. Les jalons de normalisation sont des intentions; une échéance réglementaire peut être déplacée par un nouveau texte.
+flowchart TB
+    Legende["● échéance fixée par un texte   |   ○ jalon annoncé par une charte, susceptible de glisser"]
+
+    subgraph Norm["Normalisation — jalons annoncés"]
+        direction LR
+        N1["31 mars 2027<br/>IETF : projet de protocole<br/>de dialogue adopté"] --- N2["31 déc. 2027<br/>IETF : découverte<br/>d'agents à l'IESG"]
+        N2 --- N3["31 mars 2028<br/>IETF : protocole de<br/>dialogue à l'IESG"]
+    end
+
+    subgraph Reg["Réglementation — échéances fixées"]
+        direction LR
+        R1["1er mai 2027<br/>E-23 et AMF"] --- R2["2 et 11 déc. 2027<br/>AI Act, annexe III;<br/>cyberrésilience"]
+        R2 --- R3["2 août 2028<br/>AI Act, annexe I"]
+        R3 --- R4["2 août 2029<br/>Réexamen de l'AI Act"]
+        R4 --- R5["2 août 2030<br/>AI Act, systèmes des<br/>autorités publiques"]
+    end
+
+    subgraph Crypto["Cryptographie — échéances fixées"]
+        direction LR
+        C1["Fin de 2030<br/>NIST : dépréciation;<br/>clés post-quantiques"] --- C2["Fin de 2031<br/>Signatures; systèmes<br/>prioritaires au Canada"]
+    end
+
+    subgraph Axe["Horizon 2027 – 2031"]
+        direction LR
+        Y2027["2027"] --- Y2028["2028"] --- Y2029["2029"] --- Y2030["2030"] --- Y2031["2031"]
+    end
+
+    Legende ~~~ Norm ~~~ Reg ~~~ Crypto ~~~ Axe
+
+    style Legende fill:#FFFFFF,stroke:none
+    style Norm fill:#F8FAFC,stroke:#94A3B8
+    style Reg fill:#EFF6FF,stroke:#2563EB
+    style Crypto fill:#F0FDF4,stroke:#166534
+    style Axe fill:#FFFFFF,stroke:#475569

@@ -1,0 +1,23 @@
+%% Figure 9.1 — Les trois moments de la découverte agentique, que le monde des services web réduisait à un seul.
+%% Source : 1 - Compendium 2026, Chapitre 9 (page 106)
+
+%%{init: {'flowchart': {'wrappingWidth': 900}}}%%
+flowchart TB
+    subgraph SG_MOM["TROIS QUESTIONS, TROIS MÉCANISMES"]
+        direction LR
+        M1["<b>Découverte</b><br/><br/>qui existe ? — énumérer les<br/>agents et outils accessibles dans<br/>un périmètre"]
+        M2["<b>Sélection</b><br/><br/>qui convient à cette tâche ? —<br/>choisir celui dont les capacités<br/>répondent à l'intention"]
+        M3["<b>Résolution</b><br/><br/>où et comment l'atteindre ? —<br/>adresse, transport, paramètres de<br/>connexion"]
+        M1 --> M2 --> M3
+    end
+
+    NOTE["Les réduire à un seul est la leçon d'UDDI, et elle se répète : un registre qui répond « qui existe ? » ne répond ni « qui<br/>convient ? » ni « comment l'atteindre ? »."]
+
+    SG_MOM ~~~ NOTE
+
+    classDef card fill:#FAF7F2,stroke:#C4BEB5,stroke-width:1px,color:#222222,text-align:left;
+    classDef noteBox fill:#F7F5F0,stroke:#C4BEB5,stroke-width:1px,color:#333333,text-align:left;
+    class M1,M2,M3 card;
+    class NOTE noteBox;
+    style SG_MOM fill:#FFFFFF,stroke:none,color:#9E3A14
+    linkStyle 0,1 stroke:#9E3A14,stroke-width:2px

@@ -1,0 +1,44 @@
+' Figure 6 — Carte des interactions de l'agent et protocoles retenus (2 - Cadre de Référence, ch. 6, p. 54)
+' Source : cadre CRE-IA-2026-01; répartition MCP et A2A conforme au guide officiel du projet A2A
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 12
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 11
+skinparam defaultTextAlignment center
+
+together {
+  rectangle "**Identité et autorisation**\n\nOAuth 2.0 (RFC 9700), échange de jetons (RFC 8693),\nOpenID Connect, SPIFFE; mTLS ou DPoP" as Id #FCE8EB;text:0F2744;line:F4B4BC
+  rectangle "**Agent → interface utilisateur**\n\n**<color:#1B5E9E>AG-UI · flux SSE</color>**\n\nétat partagé, formulaires d’approbation" as UI #E6F0FA;text:0F2744;line:93C5FD
+  rectangle "**Observabilité**\n\nOpenTelemetry (conventions GenAI),\ncontexte W3C Trace Context" as Obs #E6F4EA;text:0F2744;line:A7DFB5
+}
+
+together {
+  rectangle "**Agent ↔ bus d’événements**\n\n**CloudEvents · AsyncAPI**\n\ndécouplage temporel, plusieurs\nabonnés, rejeu; Kafka ou\néquivalent infonuagique" as Bus #F1F5F9;text:0F2744;line:CBD5E1
+  rectangle "**Agent**\n\nraisonne, planifie, appelle\ndes outils, délègue, publie" as Agent #EDE8F5;text:0F2744;line:5A469B
+  rectangle "**Agent → agent pair opaque**\n\n**<color:#0F7682>A2A</color>**\n\ncarte d’agent, tâche à états,\ndiffusion en continu, notifications;\nautre cadriciel, autre organisation" as A2A #E2F4F0;text:0F2744;line:86D5C8
+}
+
+together {
+  rectangle "**Découverte et confiance**\n\nCatalogue d’entreprise, cartes d’agent\nsignées, registre de serveurs MCP,\nversions épinglées et empreintes" as Disc #EFE9F7;text:0F2744;line:CBB6EA
+  rectangle "**Agent → outils et données**\n\n**<color:#B45309>MCP</color>**\n\noutils, ressources, invites;\nAPI existantes via OpenAPI 3.1\net adaptateurs" as MCP #FEF3DC;text:0F2744;line:FCD34D
+  rectangle "**À surveiller ou à contenir**\n\nCommerce et paiements agentiques :\nveille hors production; formats propres\nà un fournisseur, derrière un adaptateur" as Surv #F8FAFC;text:0F2744;line:94A3B8;line.dashed
+}
+
+Id -[hidden]right-> UI
+UI -[hidden]right-> Obs
+
+Bus <-> Agent : asynchrone
+Agent <-> A2A : horizontale
+
+Disc -[hidden]right-> MCP
+MCP -[hidden]right-> Surv
+
+Id -[hidden]down-> Bus
+Bus -[hidden]down-> Disc
+UI <-> Agent
+Agent <-> MCP : intégration verticale
+Obs -[hidden]down-> A2A
+A2A -[hidden]down-> Surv
+@enduml

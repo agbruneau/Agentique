@@ -1,0 +1,49 @@
+%% Figure 18 — Contrôles appliqués par la passerelle d'agents à chaque appel (2 - Cadre de Référence, ch. 9, p. 150)
+%% Source : cadre CRE-IA-2026-01
+%%{init: {'flowchart': {'wrappingWidth': 900}}}%%
+flowchart TB
+    subgraph Aller["ALLER : CHAQUE APPEL AGENT → OUTIL OU AGENT → AGENT"]
+        direction LR
+        AgA["<b>Agent</b><br/>appelant"]
+        C1["<b>1</b><br/>Authentifier<br/>l’agent et<br/>le mandant (cnf)"]
+        C2["<b>2</b><br/>Contrôler<br/>l’inscription<br/>et la version"]
+        C3["<b>3</b><br/>Autoriser<br/>(droits effectifs,<br/>palier, politique)"]
+        C4["<b>4</b><br/>Garde-fous<br/>d’entrée (schéma,<br/>injection)"]
+        C5["<b>5</b><br/>Vérifier le jeton<br/>d’approbation<br/>(P3, P2 > seuil, N2)"]
+        C6["<b>6</b><br/>Débit (dès 1),<br/>quotas, budget<br/>de la tâche"]
+        C7["<b>7</b><br/>Injecter les<br/>justificatifs si prévu,<br/>hors de l’agent"]
+        Outil["<b>Outil MCP</b><br/><b>ou pair A2A</b><br/>(inscrit au catalogue)"]
+        AgA --> C1 --> C2 --> C3 --> C4 --> C5 --> C6 --> C7 --> Outil
+    end
+
+    NoteInt["Appel P2 ou P3 : l’enregistrement d’intention est écrit avant le relais (EXIG-OBS-11);<br/>celui de l’issue, au retour."]
+
+    subgraph Retour["RETOUR : RÉSULTAT DE L’OUTIL"]
+        direction RL
+        Res["<b>Résultat</b><br/>structuré"]
+        C8["<b>8 · Filtrer la sortie</b><br/>masquage des RP et des secrets, sans annuler un effet déjà produit;<br/>balisage « contenu non fiable » avant le contexte du modèle"]
+        C9["<b>9 · Tracer et journaliser</b><br/>span OpenTelemetry, audit de l’issue<br/>(mandant, agent, outil, décision)"]
+        AgR["<b>Agent</b><br/>appelant"]
+        Res --> C8 --> C9 --> AgR
+    end
+
+    CC["<b>Coupe-circuit central</b><br/>Suspendre un agent, un outil, un serveur MCP ou une catégorie d’actions en une seule action, appliquée par toutes les passerelles;<br/>tout refus renvoie un code d’erreur typé à l’agent et produit un événement d’audit.<br/>Testé au moins une fois par trimestre."]
+
+    Aller ~~~ NoteInt ~~~ Retour ~~~ CC
+
+    classDef wrap fill:#ffffff,stroke:#cbd5e1,color:#334155
+    classDef agent fill:#ede8f5,stroke:#5a469b,color:#0f2744
+    classDef ctrl fill:#fef3dc,stroke:#b45309,color:#0f2744
+    classDef target fill:#f1f5f9,stroke:#64748b,color:#0f2744
+    classDef filt fill:#fce8eb,stroke:#9c2f39,color:#0f2744
+    classDef trace fill:#e6f4ea,stroke:#28774e,color:#0f2744
+    classDef cc fill:#0f2744,stroke:#0f2744,color:#ffffff,text-align:left
+    classDef note fill:transparent,stroke:none,color:#475569
+    class Aller,Retour wrap
+    class AgA,AgR agent
+    class C1,C2,C3,C4,C5,C6,C7 ctrl
+    class Outil,Res target
+    class C8 filt
+    class C9 trace
+    class CC cc
+    class NoteInt note

@@ -1,0 +1,68 @@
+' Fig. 41. – Une chaîne de délégation à deux sauts selon la RFC 8693 : le sous-agent obtient par échange un jeton plus étroit que celui de l’agent, mais le serveur de ressources ne décide que sur le sujet et l’acteur courant. Les règles de réduction sont celles que le chapitre déduit des textes.
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam rectangle {
+  BackgroundColor #F8FAFC
+  BorderColor #475569
+}
+
+rectangle Utilisateur #F8FAFC;line:475569 [
+  **Utilisateur**
+]
+rectangle Agent #EFF6FF;line:2563EB [
+  **Agent**
+]
+rectangle SousAgent #EFF6FF;line:2563EB [
+  **Sous-agent**
+]
+rectangle ServeurRessources #F8FAFC;line:475569 [
+  **Serveur de ressources**
+]
+
+Utilisateur -right-> Agent : délègue
+Agent -right-> SousAgent : mandate
+SousAgent -right-> ServeurRessources : présente
+
+rectangle JetonAgent #FFFFFF;line:2563EB [
+  **Jeton de l'agent**
+  sub : utilisateur
+  act : agent
+]
+
+rectangle JetonSousAgent #FFFFFF;line:2563EB [
+  **Jeton du sous-agent**
+  sub : utilisateur
+  act : sous-agent
+  //act : agent//
+]
+
+rectangle DecideSur #FFFFFF;line:475569 [
+  **Décide sur**
+  sub et acteur courant
+  //Acteurs antérieurs : informatifs//
+]
+
+Agent -down- JetonAgent
+SousAgent -down- JetonSousAgent
+ServeurRessources -down- DecideSur
+JetonAgent -[hidden]right-> JetonSousAgent
+JetonSousAgent -[hidden]right-> DecideSur
+
+rectangle ServeurAutorisation #F8FAFC;line:475569 [
+  **Serveur d'autorisation**
+]
+
+JetonAgent <-[#64748B]down- ServeurAutorisation : émet
+JetonSousAgent <-[#2563EB]down- ServeurAutorisation : échange de jeton\nune seule audience\nmoins de droits\nexpire avant le parent
+
+rectangle NotePerte #FFFFFF;line:FFFFFF [
+  **CE QUE LA CHAÎNE PERD**
+  Rien ne garantit que l'agent avait le droit de déléguer, ni qu'il a réduit ce qu'il transmettait.
+  L'orchestrateur consigne la chaîne complète, que le jeton ne porte pas de façon probante.
+]
+
+ServeurAutorisation -[hidden]down-> NotePerte
+@enduml

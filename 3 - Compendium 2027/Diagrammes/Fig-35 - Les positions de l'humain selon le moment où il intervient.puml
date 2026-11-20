@@ -1,0 +1,60 @@
+' Fig. 35. – Les positions de l’humain selon le moment où il intervient par rapport à l’action de l’agent (avant, pendant ou après); la position « aux commandes » englobe les trois. L’expression « hors de la boucle » vient de l’usage, non des lignes directrices de 2019.
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam rectangle {
+  BackgroundColor #EFF6FF
+  BorderColor #2563EB
+}
+
+rectangle "Avant" as Avant #FFFFFF;line:FFFFFF {
+  rectangle DansBoucle #EFF6FF;line:2563EB [
+    **Dans la boucle**
+    Validation avant exécution
+  ]
+}
+
+rectangle "Pendant" as Pendant #FFFFFF;line:FFFFFF {
+  rectangle SurBoucle #EFF6FF;line:2563EB [
+    **Sur la boucle**
+    Surveillance pendant l'exécution
+  ]
+}
+
+rectangle "Après" as Apres #FFFFFF;line:FFFFFF {
+  rectangle HorsBoucle #EFF6FF;line:2563EB [
+    **Hors de la boucle**
+    Revue après coup
+  ]
+}
+
+Avant -[hidden]right-> Pendant
+Pendant -[hidden]right-> Apres
+
+circle " " as T1 #2563EB
+rectangle Exec #F8FAFC;line:475569 [
+  **Exécution de l'action**
+]
+circle " " as T2 #2563EB
+rectangle Temps #FFFFFF;line:FFFFFF [
+  //temps//
+]
+
+T1 -[#94A3B8]right-> Exec
+Exec -[#94A3B8]right-> T2
+T2 -[#94A3B8]right-> Temps
+
+DansBoucle -[#2563EB]down-> T1
+SurBoucle -[#2563EB]down-> Exec
+HorsBoucle -[#2563EB]down-> T2
+
+rectangle AuxCommandes #EFF6FF;line:2563EB [
+  **Aux commandes**
+  Supervise l'activité d'ensemble, décide quand et comment utiliser le système, y compris de ne pas l'utiliser
+  Ne se délègue pas : une personne désignée fixe les limites de l'agent et peut l'arrêter
+]
+
+Exec -[hidden]down-> AuxCommandes
+@enduml

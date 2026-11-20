@@ -1,0 +1,37 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 39 (page 152)
+' Légende : Fig. 39. – Arbre de décision architectural pour la sélection du confinement d’exécution (Wasmtime, gVisor, Firecracker/Kata) et du niveau d’Intent Gate
+@startuml
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+skinparam roundcorner 6
+skinparam defaultFontName SansSerif
+skinparam ArrowColor #324e67
+skinparam ArrowFontColor #172025
+skinparam ActivityBackgroundColor #f0f1f0
+skinparam ActivityBorderColor #324e67
+skinparam ActivityFontColor #172025
+skinparam ActivityDiamondBackgroundColor #edf3f7
+skinparam ActivityDiamondBorderColor #324e67
+skinparam ActivityDiamondFontColor #172025
+
+start
+:Outil ou code invoqué par l'agent\naprès passage Intent Gate (OPA / Cedar);
+
+if (Exécution de code arbitraire,\nbinaire natif ou multi-locataires hostile ?) then (oui)
+  if (Charge compatible OCI standard\nsans réécriture en Wasm ?) then (oui)
+    if (Exigence d'isolation matérielle\n(KVM et noyau invité dédié) ?) then (oui)
+      :**Firecracker / Kata Containers**\nMicroVM + Jailer (chroot, cgroups)\nJusqu'à 5 microVM/cœur/s (128 Mio\nRAM);
+    else (non — pas de KVM ou forte densité)
+      :**gVisor (runsc)**\nNoyau Sentry en Go + proxy Gofer\nSurface noyau hôte réduite sans VM;
+    endif
+  else (non — greffon / parseur compilable)
+    :**Wasmtime / Component Model**\n**(WASI)**\nMémoire linéaire bornée (garde 2 Go)\nZero ambient authority (interfaces WIT);
+  endif
+else (non — appel d'API métier déterministe)
+  :**Conteneur durci + Proxy Egress**\nNon-root, seccomp, FS lecture seule\nBlocage réseaux privés / métadonnées\n(anti-SSRF);
+endif
+
+:Appliquer filtrage PII (Presidio / NeMo)\net remonter traces vers AIDR;
+stop
+@enduml

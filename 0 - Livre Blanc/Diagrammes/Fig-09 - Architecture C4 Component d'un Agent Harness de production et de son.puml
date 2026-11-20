@@ -1,0 +1,35 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 9 (p. 38)
+' Légende : Architecture C4 Component d’un Agent Harness de production et de son confinement SHADI
+
+@startuml
+!include <C4/C4_Component>
+
+Container_Boundary(harness, "Agent Harness (Boucle\napplicative déterministe)") {
+  Component(ctrl, "Boucle de contrôle", "Machine d'états / Budget", "Tours, plafonds et reprise")
+  Component(ctx, "Assembleur contexte", "Fenêtre & compaction", "Mémoire travail et passation")
+  Component(disp, "Répartiteur d'outils", "JSON Schema", "Valide arguments avant appel")
+  Component(sel, "Sélecteur inférence", "Cascade SLM / LLM", "Aiguille SLM ou frontier LLM")
+}
+
+System_Boundary(shadi, "Enveloppe d'exécution\ndurcie (SHADI / Bac à\nsable)") {
+  ComponentDb(mem, "Mémoire chiffrée", "SQLCipher", "État chiffré au repos")
+  Component(did, "Dérivation identité", "HKDF-SHA256", "did:key par session")
+  Component(sec, "Porte de secrets", "agent_secrets", "Trousseau attesté")
+  Component(kern, "Confinement noyau", "Landlock / gVisor / KVM", "Syscalls, fichiers, réseau")
+}
+
+System_Ext(inf, "Modèles d'inférence", "SLM local / Frontier LLM (ch. 13)")
+System_Ext(tools, "Outils et SI cible", "Code, shell, API (Partie II)")
+
+Rel(ctrl, ctx, "Compacte")
+Rel(ctrl, disp, "Invoque")
+Rel(ctrl, sel, "Étape cognitive")
+Rel(ctx, mem, "Lit / écrit")
+Rel_R(did, sec, "Atteste")
+Rel_R(sec, kern, "Scelle")
+Rel(disp, kern, "Exécute")
+Rel(sel, inf, "Appel CFG")
+Rel(kern, tools, "Sous politique")
+
+@enduml

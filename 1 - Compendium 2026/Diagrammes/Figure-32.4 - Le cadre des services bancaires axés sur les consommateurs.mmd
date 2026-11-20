@@ -1,0 +1,23 @@
+%% Ouvrage : 1 - Compendium 2026
+%% Chapitre : 32 · Le cadre des services bancaires axés sur les consommateurs (p. 376)
+%% Figure : Figure 32.4 — Le cadre des services bancaires axés sur les consommateurs : la chaîne, et le maillon qui manque.
+flowchart TB
+    subgraph S["LA LOI IMPOSE UN STANDARD TECHNIQUE UNIQUE"]
+        direction LR
+        N1["<b>La loi</b><br/>impose un standard<br/>technique unique"]
+        N2["<b>La désignation</b><br/>par arrêté du ministre<br/>des Finances, d'un<br/>organisme de<br/>normalisation"]
+        N3["<b>Le standard</b><br/>reste à fixer"]
+        N4["<b>L'interface</b><br/>n'existe pas"]
+        N1 --> N2 -. "×" .- N3 --> N4
+    end
+    STOP["<b>Sans organisme désigné, pas de standard ; sans standard, pas d'interface — la chaîne s'arrête ici.</b>"]
+    NOTE["C'est un FAIT NÉGATIF VÉRIFIÉ, non une absence de documentation — et c'est la formulation la plus stricte du Livre. L'état de<br/>la désignation est porté par le ch. 30 § 30.3, et il n'est pas doublé ici."]
+    S ~~~ STOP ~~~ NOTE
+
+    style S fill:#fdfbf7,stroke:#d4cfc7,color:#9c3d14
+    style N1 fill:#f7f4ee,stroke:#b8b4ac,color:#1a1a1a
+    style N2 fill:#f7f4ee,stroke:#b8b4ac,color:#1a1a1a
+    style N3 fill:#f7f4ee,stroke:#9c3d14,color:#1a1a1a
+    style N4 fill:#f7f4ee,stroke:#b8b4ac,color:#1a1a1a
+    style STOP fill:#ffffff,stroke:none,color:#1a1a1a
+    style NOTE fill:#faf8f4,stroke:#b8b4ac,color:#444444

@@ -1,0 +1,32 @@
+%% Fig. 63. – Du repérage au corpus retenu : 124 notices rendues par dix requêtes, 83 retenues après tri, 82 confirmées auprès d’arXiv ou de Crossref. À droite, les notices rendues et retenues pour chaque requête.
+flowchart LR
+    subgraph Entonnoir["DU REPÉRAGE AU CORPUS"]
+        direction TB
+        N124["124<br/>notices rendues par dix requêtes"] --> N123["123<br/>notices distinctes"]
+        N123 --> N83["83<br/>retenues, lues par leur résumé"]
+        N83 --> N82["82<br/>confirmées par arXiv ou par un DOI"]
+    end
+
+    subgraph Requetes["NOTICES PAR REQUÊTE — rendues vs retenues"]
+        direction LR
+        subgraph ColA[" "]
+            direction TB
+            R1["Protocoles : 16 sur 20"] ~~~ R2["Coordination : 9 sur 14"] ~~~ R3["Évaluation : 9 sur 15"] ~~~ R4["Sécurité : 10 sur 12"] ~~~ R5["Productivité : 7 sur 12"]
+        end
+        subgraph ColB[" "]
+            direction TB
+            R6["Mémoire : 7 sur 10"] ~~~ R7["Gouvernance : 7 sur 12"] ~~~ R8["Mono-agent ou multi-agents : 9 sur 9"] ~~~ R9["Adoption : 4 sur 10"] ~~~ R10["Sémantique : 5 sur 10"]
+        end
+        ColA ~~~ ColB
+    end
+
+    Entonnoir ~~~ Requetes
+
+    style Entonnoir fill:#F8FAFC,stroke:#CBD5E1
+    style Requetes fill:#F8FAFC,stroke:#CBD5E1
+    style ColA fill:#F8FAFC,stroke:none
+    style ColB fill:#F8FAFC,stroke:none
+    style N124 fill:#EFF6FF,stroke:#2563EB
+    style N123 fill:#EFF6FF,stroke:#2563EB
+    style N83 fill:#EFF6FF,stroke:#2563EB
+    style N82 fill:#2563EB,stroke:#1E3A8A,color:#FFFFFF

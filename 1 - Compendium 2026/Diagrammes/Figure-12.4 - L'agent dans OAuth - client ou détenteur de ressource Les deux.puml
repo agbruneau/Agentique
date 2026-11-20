@@ -1,0 +1,46 @@
+' Figure 12.4 — L’agent dans OAuth : client ou détenteur de ressource ? Les deux placements (client mandataire ou détenteur de ressource), et ce que chacun engage.
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 6
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 13
+skinparam backgroundColor #FFFFFF
+
+rectangle C1 #FAF6F0;line:B8B2A6 [
+  <color:#57534E>L'AGENT COMME CLIENT</color>
+  ----
+  **« Une application qui demande des ressources protégées pour… »**
+
+  Le client est déjà, par construction, un mandataire
+
+  L'agent hérite d'un rôle qui existe
+
+  Mais le mandant reste hors du jeton
+  ----
+  **le rôle existe, la chaîne n'y est pas**
+]
+
+rectangle C2 #FFFFFF;line:9A3412 [
+  <color:#9A3412>L'AGENT COMME DÉTENTEUR DE RESSOURCE</color>
+  ----
+  **« Une entité capable d'accorder l'accès à une ressource protégée »**
+
+  Le détenteur est une ENTITÉ, non nécessairement une personne
+
+  « Utilisateur final » est réservé au cas humain
+
+  Un agent peut donc en tenir le rôle
+  ----
+  **la définition l'admet, l'imputabilité s'y perd**
+]
+
+rectangle NOTE #F8F5F0;line:D6D3CD [
+  Rien dans les deux définitions n'écarte un mandataire logiciel — et rien ne l'y installe. Le RFC ne tranche pas :
+  il n'avait pas la question. C'est un standard étiré, non un standard qui répond.
+]
+
+C1 -[hidden]right-> C2
+C1 -[hidden]down-> NOTE
+C2 -[hidden]down-> NOTE
+@enduml

@@ -1,0 +1,119 @@
+' Fig. 22. – Pipeline industriel de Context Engineering : filtrage ACL pré-récupération, allocation du budget d'attention avec ancrage KV-cache et compilation d'enveloppe de transfert sans Context Rot.
+@startuml
+title Pipeline Industriel de Context Engineering : Du Flux Brut au Handoff Sans Context Rot
+
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+
+rectangle Pipeline #FFFFFF;line:FFFFFF {
+  rectangle "1. Sources Hétérogènes" as S1 #F8FAFC;line:475569 {
+    rectangle S1a #FFFFFF;line:64748B [
+      **Corpus Documentaire**
+      Index Dense + BM25
+    ]
+    rectangle S1b #FFFFFF;line:64748B [
+      **Sorties d'Outils MCP**
+      JSON / Logs Télématiques
+    ]
+    rectangle S1c #FFFFFF;line:64748B [
+      **Mémoire & Ontologie**
+      Faits Ossie & Graphiti
+    ]
+    rectangle S1d #FEF2F2;line:DC2626 [
+      **Risque brut : 150k+ tok**
+      Bruit, PII & ASI01
+    ]
+    S1a -[hidden]down-> S1b
+    S1b -[hidden]down-> S1c
+    S1c -[hidden]down-> S1d
+  }
+
+  rectangle "2. Garde ACL & Hygiène" as S2 #FFF7ED;line:9A3412 {
+    rectangle S2a #FFFFFF;line:9A3412 [
+      **Filtre Pré-Récupération**
+      Portée OAuth 2.1 OBO
+      Prédicats Cedar / ABAC
+    ]
+    rectangle S2b #FFFFFF;line:9A3412 [
+      **Assainissement & Caviardage**
+      Masquage PII (Loi 25)
+      Isolation balises données
+    ]
+    rectangle S2c #FFFFFF;line:475569 [
+      **Scellement de Lignée**
+      URI source + SHA-256
+      Score Reranker & Fraîcheur
+      Rejet si score < seuil
+    ]
+    S2a -[hidden]down-> S2b
+    S2b -[hidden]down-> S2c
+  }
+
+  rectangle "3. Fenêtre Compilée (Budget Fixe)" as S3 #EFF6FF;line:2563EB {
+    rectangle S3a #DBEAFE;line:2563EB [
+      **Strate 0 : Préfixe Immuable**
+      Règles + Outils (<12) • KV-Cache Hit
+    ]
+    rectangle S3b #FFFFFF;line:2563EB [
+      **Strate 1 : Cadre Sémantique**
+      Définitions Ossie + État Saga
+    ]
+    rectangle S3c #FFFFFF;line:2563EB [
+      **Strate 2 : Preuves Compressées**
+      Tri Tête/Queue (Anti-Creux Médian)
+      Plafond dur : ex. 8 192 jetons
+    ]
+    rectangle S3d #FFFFFF;line:15803D [
+      **Strate 3 : Objectif Courant**
+      Instruction locale + Schéma sortie
+    ]
+    S3a -[hidden]down-> S3b
+    S3b -[hidden]down-> S3c
+    S3c -[hidden]down-> S3d
+  }
+
+  rectangle "4. Transfert A2A Propre" as S4 #ECFDF5;line:15803D {
+    rectangle S4a #FFFFFF;line:15803D [
+      **Cellule Agentique**
+      Raisonnement haute densité
+      TTFT minimal • Précision max
+    ]
+    rectangle S4b #FFFFFF;line:1E293B [
+      **Enveloppe de Handoff**
+      • Décisions & Faits typés
+      • Hypothèses écartées
+      • Pointeurs URI (Claim-Check)
+      • Incertitudes résiduelles
+      Zéro historique brut copié
+      Élimine le Context Rot
+    ]
+    S4a -[#15803D]-> S4b
+  }
+
+  S1 -[#1E293B]-> S2
+  S2 -[#2563EB]-> S3
+  S3 -[#15803D]-> S4
+}
+
+rectangle "Plan Sous-Jacent : Stockage par Référence (Claim-Check) & Observabilité du Budget d'Attention" as SubPlan #F8FAFC;line:475569 {
+  rectangle CAS #FFFFFF;line:64748B [
+    **Magasin d'Artefacts Immuables (CAS)**
+    Stocke journaux complets & PDF hors prompt
+  ]
+  rectangle Cache #FFFFFF;line:2563EB [
+    **Affinité de Cache Préfixe (Tenant-Salted)**
+    70 % à 88 % d'économie sur jetons d'entrée
+  ]
+  rectangle OTel #FFFFFF;line:15803D [
+    **Métriques OpenTelemetry (gen_ai.context.*)**
+    Ratio Signal/Bruit • Taux Cache Hit • Troncatures
+  ]
+  CAS -[hidden]right-> Cache
+  Cache -[hidden]right-> OTel
+}
+
+Pipeline -[hidden]down-> SubPlan
+
+@enduml

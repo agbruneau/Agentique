@@ -1,0 +1,63 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 2 (p. 16)
+' Légende : Rupture épistémique en exécution : boucle probabiliste, latence cumulée et porte d’irréversibilité
+
+@startuml
+title Rupture épistémique : boucle probabiliste et porte d'irréversibilité
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam sequence {
+  ArrowColor #2B4C65
+  LifeLineBorderColor #64748B
+  LifeLineBackgroundColor #FFFFFF
+  ParticipantBorderColor #2B4C65
+  ParticipantBackgroundColor #F1F6F9
+  ActorBorderColor #2B4C65
+  ActorBackgroundColor #F1F6F9
+  DatabaseBorderColor #2B4C65
+  DatabaseBackgroundColor #F1F6F9
+  GroupBorderColor #334155
+  GroupBackgroundColor #FFFFFF
+  GroupHeaderFontColor #0F172A
+}
+
+autonumber
+
+actor "SoE" as soe
+participant "Noyau d'agence\n(SoA)" as soa
+participant "Inférence LLM\n(probabiliste)" as llm
+participant "Porte d'impact\n(HITL / Idempot.)" as porte
+database "SoR\n(Autorité)" as sor
+
+soe -> soa : Intention ambiguë + mandat
+activate soa
+
+loop Raisonnement (k tours bornés)
+  soa -> llm : Prompt + outils + contexte
+  llm --> soa : Plan / outil (TTFT + TPOT)
+  note right of llm
+    Même à temperature=0, la
+    variance de lots (batch) peut
+    modifier les jetons choisis.
+  end note
+end
+
+alt Lecture réversible
+  soa -> porte : Requête faible impact
+  porte -> sor : Lecture moindre privilège
+  sor --> porte : Vérité terrain
+  porte --> soa : Résultat (HTTP 200 OK)
+else Mutation irréversible
+  soa -> porte : Proposition + justification
+  porte -> soe : Attente validation HITL
+  soe --> porte : Approbation explicite
+  porte -> sor : Écriture + clé idempotence
+  sor --> porte : Confirmation + audit
+  porte --> soa : Effet de bord confirmé
+end
+
+soa --> soe : Synthèse (contrôle sémantique)
+deactivate soa
+
+@enduml

@@ -1,0 +1,27 @@
+' Figure 44.3 — Les neuf anti-patrons du Tableau 44.2 et leur regroupement
+@startuml
+skinparam backgroundColor #FAF8F5
+skinparam shadowing false
+skinparam defaultFontName "DejaVu Sans"
+skinparam titleFontColor #8B2E0B
+skinparam rectangleBorderColor #BBBBBB
+skinparam rectangleBackgroundColor #F5F1EB
+skinparam legendBackgroundColor #FBF9F5
+skinparam legendBorderColor #BBBBBB
+
+title NEUF ANTI-PATRONS, ET UNE CORRECTION CHACUN
+
+rectangle "REGROUPEMENT DES NEUF ANTI-PATRONS" as AntiPatrons {
+  rectangle "**1-3  Sur la notation**\n\nConfondre un agent avec un\ncomposant, un outil avec un\nservice, une collaboration avec un\nflux.\n\n<i>corrections au Tableau 44.2</i>" as A1
+  rectangle "**4-6  Sur la gouvernance**\n\nModéliser l'autonomie sans son\npoint d'arrêt, l'identité sans son\nancrage, la trace sans son\nproducteur.\n\n<i>corrections au Tableau 44.2</i>" as A2
+  rectangle "**7-9  Sur la portée**\n\nÉtendre le formalisme au-delà de\nce qu'il sait dire — dont le\ndernier, que ce chapitre risque de\ncommettre.\n\n<i>§ 44.9</i>" as A3
+
+  A1 -[hidden]right- A2
+  A2 -[hidden]right- A3
+}
+
+legend bottom
+  LE DERNIER EST CELUI QUE CE CHAPITRE RISQUE DE COMMETTRE — modéliser pour modéliser, et produire un blueprint
+  que personne n'instancie. Le tableau source porte les neuf et leur correction ; la figure n'en donne que la structure.
+endlegend
+@enduml

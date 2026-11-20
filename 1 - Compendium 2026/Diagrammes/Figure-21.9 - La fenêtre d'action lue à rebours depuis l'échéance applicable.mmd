@@ -1,0 +1,22 @@
+%% Figure 21.9 — La fenêtre d’action lue à rebours depuis l’échéance applicable (jalons amont J−1 : migration exécutée ; J−2 : patrons de migration ; Aujourd’hui : inventaire, § 21.8).
+%%{init: {'flowchart': {'wrappingWidth': 900}}}%%
+flowchart TB
+    subgraph FRISE["SE LIT À REBOURS, NON DANS LE SENS DE LA LECTURE"]
+        direction RL
+        A["<b>Aujourd'hui — Inventaire</b><br/>la méthode est au § 21.8 ;<br/>sans inventaire, aucune des<br/>dates ne se calcule"]
+        J2["<b>−2 — Patrons de migration</b><br/>sans rupture de la chaîne de<br/>confiance (§ 21.6)"]
+        J1["<b>−1 — Migration exécutée</b><br/>les artefacts de longue durée<br/>sont réémis"]
+        E["<b>Échéance — La date la plus contraignante</b><br/>celle qui s'applique réellement à l'institution —<br/>et le socle établit qu'elles ne sont pas une"]
+        A --> J2 --> J1 --> E
+    end
+
+    NOTE["La fenêtre est une CONSTRUCTION DE LA SOMME. Le socle porte des échéances datées ; il ne porte AUCUN délai de mise en œuvre<br/>applicable à une institution — et encore faut-il savoir laquelle des dates publiées s'applique."]
+
+    FRISE ~~~ NOTE
+
+    style FRISE fill:#FFFDF9,stroke:#9A3412,stroke-width:1px,color:#9A3412
+    style E fill:#FAF6F0,stroke:#9A3412,stroke-width:2px,color:#1F2937
+    style J1 fill:#FFFFFF,stroke:#9A3412,stroke-width:2px,stroke-dasharray:5 3,color:#1F2937
+    style J2 fill:#FFFFFF,stroke:#9A3412,stroke-width:2px,stroke-dasharray:5 3,color:#1F2937
+    style A fill:#FAF6F0,stroke:#9A3412,stroke-width:2px,color:#1F2937
+    style NOTE fill:#F8F5F0,stroke:#D6D3CD,color:#374151

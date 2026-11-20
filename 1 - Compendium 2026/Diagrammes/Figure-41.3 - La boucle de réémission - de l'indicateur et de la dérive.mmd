@@ -1,0 +1,22 @@
+%% Ouvrage : 1 - Compendium 2026
+%% Chapitre : 41 · La fabrique d'agents : produire, certifier et réémettre le parc (p. 477)
+%% Figure : Figure 41.3 — La boucle de réémission : de l’indicateur et de la dérive au gabarit corrigé (où la dérive d’autonomie nommée par les cadres n’est pas instrumentée par le seul relevé du socle, § 39.2).
+flowchart TB
+    subgraph S["CE QUI REVIENT AU GABARIT"]
+        direction LR
+        N1["<b>Gabarit</b><br/>ce qui se décide une<br/>fois pour tout le parc"]
+        N2["<b>Parc</b><br/>les agents produits,<br/>admis, en exploitation"]
+        N3["<b>Indicateurs et dérive</b><br/>ce que l'AgentOps<br/>mesure — ch. 39, ch.<br/>40"]
+        N4["<b>Correction</b><br/>portée au gabarit, non<br/>à l'agent"]
+        N1 --> N2 --> N3 --> N4
+        N4 --> N1
+    end
+    NOTE["La boucle suppose que la dérive soit DÉTECTÉE, or le ch. 39 § 39.2 établit que la dérive d'autonomie n'est pas instrumentée<br/>au socle, que la dérive de modèle n'est pas au socle et que la quatrième source reste un front ouvert."]
+    S ~~~ NOTE
+
+    style S fill:#fdfbf7,stroke:#d4cfc7,color:#9c3d14
+    style N1 fill:#f7f4ee,stroke:#9c3d14,color:#1a1a1a
+    style N2 fill:#f7f4ee,stroke:#b8b4ac,color:#1a1a1a
+    style N3 fill:#f7f4ee,stroke:#b8b4ac,color:#1a1a1a
+    style N4 fill:#f7f4ee,stroke:#9c3d14,color:#1a1a1a
+    style NOTE fill:#faf8f4,stroke:#b8b4ac,color:#444444

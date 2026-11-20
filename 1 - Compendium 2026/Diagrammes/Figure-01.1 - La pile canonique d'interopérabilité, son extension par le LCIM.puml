@@ -1,0 +1,93 @@
+' Figure 1.1 — La pile canonique d'interopérabilité, son extension par le LCIM et le palier où opèrent MCP et A2A (quatre paliers cumulatifs numérotés de 1 à 4).
+' Source : 1 - Compendium 2026, Chapitre 1 (page 9)
+
+@startuml
+top to bottom direction
+hide stereotype
+skinparam packageStyle rectangle
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 13
+skinparam shadowing false
+skinparam roundCorner 4
+skinparam nodesep 25
+skinparam ranksep 20
+
+skinparam package {
+  BackgroundColor #FFFFFF
+  BorderColor #E0DDD7
+  FontColor #9E3A14
+  FontStyle bold
+}
+
+skinparam rectangle {
+  BackgroundColor #FAF7F2
+  BorderColor #B8B3AA
+  FontColor #222222
+}
+
+skinparam rectangle<<ext>> {
+  BackgroundColor #FFFFFF
+  BorderColor #B8B3AA
+  FontColor #222222
+}
+
+skinparam rectangle<<proto>> {
+  BackgroundColor #FFFFFF
+  BorderColor #9E3A14
+  BorderThickness 2
+  FontColor #222222
+}
+
+skinparam rectangle<<axis>> {
+  BackgroundColor #FFFFFF
+  BorderColor #FFFFFF
+  FontColor #555555
+}
+
+skinparam legendBackgroundColor #F7F5F0
+skinparam legendBorderColor #C4BEB5
+skinparam legendFontColor #333333
+
+rectangle " " as AXIS_TOP <<axis>>
+rectangle " " as AXIS_BOT <<axis>>
+AXIS_BOT -up-> AXIS_TOP #9E3A14 : "chaque palier\nprésuppose\nles précédents"
+
+package "PILE CANONIQUE" as PILE {
+  rectangle "<color:#9E3A14><b>4</b></color>   <b>Organisationnel</b>   " as L4
+  rectangle "<color:#9E3A14><b>3</b></color>   <b>Sémantique</b>        " as L3
+  rectangle "<color:#9E3A14><b>2</b></color>   <b>Syntaxique</b>        " as L2
+  rectangle "<color:#9E3A14><b>1</b></color>   <b>Technique</b>         " as L1
+
+  L4 -[hidden]down- L3
+  L3 -[hidden]down- L2
+  L2 -[hidden]down- L1
+}
+
+package "EXTENSION LCIM" as EXT_PKG {
+  rectangle LCIM <<ext>> [
+    <b>Pragmatique · Dynamique · Conceptuel</b>
+    Superposés à la couche sémantique. Sept niveaux,
+    du niveau 0 — absence — à l'interopérabilité
+    conceptuelle.
+  ]
+  rectangle PROTO <<proto>> [
+    <b>MCP et A2A</b>
+    Syntaxique, et partiellement technique. Aucun
+    mécanisme d'accord sémantique : ils le présupposent.
+  ]
+  LCIM -[hidden]down- PROTO
+}
+
+AXIS_TOP -[hidden]right- L4
+AXIS_BOT -[hidden]right- L1
+
+L4 -right- LCIM #B8B3AA
+L3 -right- LCIM #B8B3AA
+L2 -right- PROTO #9E3A14
+L1 -right- PROTO #9E3A14
+
+legend
+  Un accord sémantique est sans effet si la syntaxe diffère ; un accord syntaxique reste vain si le transport échoue.
+endlegend
+@enduml

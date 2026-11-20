@@ -1,0 +1,109 @@
+' Fig. 58. – Architecture de souveraineté cognitive : routage par géorepérage, enclaves GPU TEE sous clé HYOK et bascule Cognitive DR vers grappe Open-Weights souveraine.
+@startuml
+title Souveraineté Cognitive : Résidence Juridictionnelle, Enclaves GPU TEE et Reprise Cognitive (Cognitive DR)
+
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam rectangle {
+  BackgroundColor #FFFFFF
+  BorderColor #334155
+}
+
+rectangle "Cellule de Contrôle Juridictionnel & Cryptographique (Agentgateway Souverain + HSM HYOK)" as CelluleCtrl #F8FAFC;line:1E293B {
+  rectangle RouteurGeo #FFFFFF;line:2563EB [
+    **Routeur Géofencé (Cedar)**
+    Classification : Loi 25 • E-23 • UE
+  ]
+  rectangle Pseudonymisation #FFFFFF;line:7C3AED [
+    **Pseudonymisation Réversible**
+    Jetons HMAC-FPE détenus en HSM local
+  ]
+  rectangle SondeSante #FFFFFF;line:166534 [
+    **Sonde de Santé & Parité Cognitive**
+    Disjoncteur SLA, latence, retrait API
+  ]
+
+  RouteurGeo -[hidden]right-> Pseudonymisation
+  Pseudonymisation -[hidden]right-> SondeSante
+}
+
+rectangle "Zone A — Souveraine CA / QC" as ZoneA #FFFFFF;line:1E293B {
+  rectangle ZoneAInfo #FFFFFF;line:FFFFFF [
+    **Périmètre : Loi 25 & BSIF E-23**
+    • État Temporal & graphe Graphiti locaux
+    • KV-cache isolé chiffré en mémoire
+    • Zéro transit sous CLOUD Act non chiffré
+  ]
+  rectangle EnclaveGPU #EFF6FF;line:93C5FD [
+    **Enclave GPU TEE (H100 / B200)**
+    Attestation matérielle distante
+    Libération clé HSM uniquement si
+    **mesure PCR firmware conforme**
+  ]
+  ZoneAInfo -[hidden]down-> EnclaveGPU
+}
+
+rectangle "Zone B — Modèles Frontières (API)" as ZoneB #FFFFFF;line:2563EB {
+  rectangle ZoneBInfo #FFFFFF;line:FFFFFF [
+    **Raisonnement Complexe (System-2)**
+    • Entrées expurgées de PII directe
+    • Contrat Zero-Data-Retention (ZDR)
+    • Normalisation Open Responses
+  ]
+  rectangle Aleas #FFF7ED;line:FDBA74 [
+    **Aléas Externes Surveillés :**
+    Panne régionale hyperscaler, 429 massif,
+    dépréciation modèle ou choc tarifaire,
+    **injonction juridique extraterritoriale**
+  ]
+  ZoneBInfo -[hidden]down-> Aleas
+}
+
+rectangle "Zone C — Secours Open-Weights (DR)" as ZoneC #FFFFFF;line:166534 {
+  rectangle ZoneCInfo #FFFFFF;line:FFFFFF [
+    **Continuité Souveraine CA & UE**
+    • Grappe vLLM / SGLang pré-chauffée
+    • Poids ouverts audités & figés en registre
+    • Adaptateurs de consignes pré-calibrés
+  ]
+  rectangle GarantieDR #F0FDF4;line:86EFAC [
+    **Garantie Cognitive DR :**
+    RTO cognitif < 15 min sans perte d'état
+    Schémas MCP & pass^5 pré-homologués
+    **Autonomie complète hors hyperscaler**
+  ]
+  ZoneCInfo -[hidden]down-> GarantieDR
+}
+
+RouteurGeo -[#1E293B]down-> ZoneAInfo
+Pseudonymisation -[#2563EB]down-> ZoneBInfo
+SondeSante -[#166534]down-> ZoneCInfo
+
+ZoneAInfo -[hidden]right-> ZoneBInfo
+Aleas -[#C2410C]right-> GarantieDR
+
+rectangle "Mécanique d'Exercice Trimestriel de Bascule Cognitive (GameDay BSIF E-23)" as GameDay #F8FAFC;line:334155 {
+  rectangle GD1 #FFFFFF;line:475569 [
+    **1. Détection & Gel Propre (T + 30 s)**
+    Mise en pause des activités Temporal
+    Zéro perte de transaction (RPO = 0)
+  ]
+  rectangle GD2 #FFFFFF;line:2563EB [
+    **2. Commutation Profil (T + 3 min)**
+    Activation gabarit prompt Open-Weights
+    Montée en charge auto-scaling GPU
+  ]
+  rectangle GD3 #FFFFFF;line:166534 [
+    **3. Reprise Bornée (T + 12 min)**
+    Seuils d'escalade HOTL resserrés +15 %
+    Continuité métier certifiée en audit
+  ]
+
+  GD1 -[#1E293B]right-> GD2
+  GD2 -[#166534]right-> GD3
+}
+
+Aleas -[hidden]down-> GD2
+@enduml

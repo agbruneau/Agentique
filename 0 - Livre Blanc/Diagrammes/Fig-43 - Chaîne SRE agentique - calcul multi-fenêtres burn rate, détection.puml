@@ -1,0 +1,48 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 43 (page 163)
+' Légende : Fig. 43. – Chaîne SRE agentique : calcul multi-fenêtres burn rate, détection de dérive sémantique et rejeu forensique
+@startuml
+left to right direction
+
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+skinparam roundcorner 6
+skinparam defaultFontName SansSerif
+skinparam ArrowColor #324e67
+skinparam ArrowFontColor #172025
+skinparam PackageBackgroundColor #ffffff
+skinparam PackageBorderColor #5b6b76
+skinparam PackageFontColor #1a4964
+skinparam RectangleBackgroundColor #f3f7f9
+skinparam RectangleBorderColor #324e67
+skinparam RectangleFontColor #172025
+skinparam DatabaseBackgroundColor #edf3f7
+skinparam DatabaseBorderColor #324e67
+skinparam DatabaseFontColor #172025
+
+package "Sources Télémétrie & État" as Src {
+  rectangle "Spans & Métriques OTLP\n(TTFT, TPOT, tool_calls)" as OTLP
+  rectangle "Vecteurs Embeddings\n(Entrées & Sorties)" as Emb
+  database "Journal Durable /\nCheckpoints" as Jour
+}
+
+package "Détection & Alertes SRE" as Det {
+  rectangle "Moteur SLI/SLO Burn Rate\n(14.4x / 6x -> Page\n1x -> Ticket)" as Burn
+  rectangle "Détecteur Dérive Sémantique\n(Classifieur + Cosinus + MMD)" as Drift
+}
+
+package "Rejeu Forensique & Remédiation" as Replay {
+  rectangle "Escalade Astreinte &\nPromotion EvalOps" as Esc
+  rectangle "Replayer Déterministe\n(Temporal History JSON)" as Rep
+  rectangle "Banc Fork & Sandbox\n(LangGraph / Inspect AI)" as Fork
+}
+
+OTLP --> Burn : Fenêtres longues &\ncourtes (1/12)
+Emb --> Drift : Compare référence\nvs flux courant
+Burn --> Esc : Alerte burn rate /\ndépassement SLO
+Drift --> Esc : Signal dérive\nsans vérité terrain
+Esc --> Rep : Diagnostic\nd'orchestration
+Esc --> Fork : Reproduit branche\ncognitive
+Jour --> Rep : Historique\nimmuable
+Jour --> Fork : Snapshot\nsuper-étape
+@enduml

@@ -1,0 +1,29 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 20 (p. 74)
+' Légende : Architecture fédérée AGNTCY : enregistrement OASF/ADS et session chiffrée SLIM/MLS
+
+@startuml
+!include <C4/C4_Container>
+
+System_Boundary(disc, "Découverte fédérée (OASF\n+ ADS)") {
+  Container(dht, "Annuaire Kademlia DHT", "ADS (agntcy/dir)", "Index 2 niveaux : Skill -> CID -> Pair")
+  Container(oci, "Registre OCI / ORAS", "SHA-256 + Sigstore", "Records immuables et référents signés")
+  Container(oasf, "Descripteur OASF", "Schema Record", "Skills, domaines, locators A2A/MCP")
+}
+
+System_Boundary(slim, "Transport et session (SLIM\n+ MLS RFC 9420)") {
+  Container(epA, "Endpoint Agent A", "SLIM SDK + SPIRE", "Derrière NAT, session MLS E2E")
+  Container(dp, "Nœuds Data Plane SLIM", "gRPC HTTP/2 / WS", "Routage hiérarchique org/ns/svc/<id>")
+  Container(epB, "Endpoint Pair B", "SLIM SDK + SPIRE", "Déchiffrement E2E, SLIMRPC ou A2A/MCP")
+  Container(cp, "SLIM Control Plane", "Controller & Channel Mgr", "Tables de routage et groupes MLS")
+}
+
+Rel_L(oasf, oci, "Publie et signe")
+Rel_L(oci, dht, "Annonce Skill -> CID")
+Rel_U(epA, dht, "Requête multi-axes")
+Rel_U(epA, oci, "Tire OASF + Sigstore")
+Rel_R(epA, dp, "Connexion sortante TLS / HTTP/2")
+Rel_R(dp, epB, "Relais chiffré MLS (RFC 9420)")
+Rel_U(cp, dp, "Configure routes et adhésions")
+
+@enduml

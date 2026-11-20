@@ -1,0 +1,48 @@
+' Figure 22.10 — L’écart de responsabilité : quatre parties, et personne qui ait décidé.
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 6
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 13
+skinparam backgroundColor #FFFFFF
+skinparam legendBackgroundColor #F8F5F0
+skinparam legendBorderColor #D6D3CD
+skinparam legendBorderThickness 1
+
+rectangle "QUATRE PARTIES, UNE IMPUTABILITÉ INDÉTERMINÉE" as CADRE #FFFDF9;line:9A3412 {
+  rectangle P1 #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**1**</color>  **Le développeur**
+    ----
+    Qui a écrit l'agent.
+  ]
+
+  rectangle P2 #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**2**</color>  **L'organisation**
+    ----
+    Qui impose le cadre.
+  ]
+
+  rectangle P3 #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**3**</color>  **Le fournisseur**
+    ----
+    Du modèle.
+  ]
+
+  rectangle P4 #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**4**</color>  **Le système**
+    ----
+    Dont le comportement
+    est émergent.
+  ]
+
+  P1 -[hidden]right-> P2
+  P2 -[hidden]right-> P3
+  P3 -[hidden]right-> P4
+}
+
+legend
+  La section PRÉPARE l'écart, elle ne le traite pas : l'imputabilité du comportement émergent est au ch. 29 § 29.3.
+  L'indétermination est celle du manifeste, et la somme n'y répond pas — elle en fixe le lieu.
+endlegend
+@enduml

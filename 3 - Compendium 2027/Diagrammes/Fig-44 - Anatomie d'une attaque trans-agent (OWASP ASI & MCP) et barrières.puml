@@ -1,0 +1,131 @@
+' Fig. 44. – Anatomie d’une attaque trans-agent (OWASP ASI & MCP) et barrières de rupture déterministes.
+@startuml
+title Anatomie d'une Attaque Trans-Agent (OWASP ASI & MCP) et Barrières de Rupture Déterministes
+
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam rectangle {
+  BackgroundColor #FFFFFF
+  BorderColor #334155
+}
+
+rectangle "Chaîne d'Exploitation Offensive Multi-Sauts (En l'absence d'isolation structurelle)" as KillChain #FEF2F2;line:DC2626 {
+  rectangle E1 #FFFFFF;line:DC2626 [
+    **1. Entrée Piégée**
+    **Injection Indirecte**
+    Bordereau PDF, courriel
+    ou billet contenant un
+    calque invisible / Unicode
+    furtif (U+E0000) lu par
+    l'agent d'ingestion
+    ----
+    Vecteur Initial
+  ]
+
+  rectangle E2 #FFFFFF;line:DC2626 [
+    **2. Détournement**
+    **ASI01 : Goal Hijack**
+    Confusion données /
+    instructions : le LLM
+    adopte l'objectif caché
+    de l'attaquant (modifier
+    un IBAN ou exfiltrer)
+    ----
+    ASI01 + ASI03
+  ]
+
+  rectangle E3 #FFFFFF;line:DC2626 [
+    **3. Pivot Protocole MCP**
+    **Poisoning & Rug-Pull**
+    Schéma tools/list piégé,
+    mutation post-approbation
+    (CVE-2025-54136), Tool
+    Shadowing inter-serveurs
+    ou Confused Deputy
+    ----
+    ASI02 + ASI04
+  ]
+
+  rectangle E4 #FFFFFF;line:DC2626 [
+    **4. Persistance Latente**
+    **ASI06 : Memory Poison**
+    Écriture d'une fausse
+    règle métier dans l'index
+    vectoriel ou la mémoire
+    épisodique partagée afin de
+    biaiser les sagas futures
+    ----
+    ASI06 + ASI07
+  ]
+
+  rectangle E5 #FFFFFF;line:DC2626 [
+    **5. Impact Systémique**
+    **ASI08 : Cascade**
+    Propagation latérale A2A,
+    biais d'approbation HOTL
+    (ASI09), dérive autonome
+    (ASI10) et corruption des
+    Systems of Record (ERP)
+    ----
+    ASI08 + ASI09 + ASI10
+  ]
+
+  E1 -[#DC2626]right-> E2
+  E2 -[#DC2626]right-> E3
+  E3 -[#DC2626]right-> E4
+  E4 -[#DC2626]right-> E5
+}
+
+rectangle "Barrières de Rupture Architecturales (Coupure de la Kill Chain à Chaque Frontière)" as Barrieres #F0FDF4;line:166534 {
+  rectangle B1 #FFFFFF;line:166534 [
+    **Barrière B1 — Isolation Flot de Données**
+    • Travailleur SLM d'extraction sans aucun outil
+    • Délimitation Spotlighting & JSON Schema fermé
+    • Purge des points de code Unicode furtifs / Bidi
+    • Marquage de teinte (Taint = UNTRUSTED_EXT)
+    ----
+    Bloque ASI01 à la périphérie documentaire
+  ]
+
+  rectangle B2 #FFFFFF;line:166534 [
+    **Barrière B2 — Verrouillage MCP**
+    • Épinglage SHA-256 + Sigstore
+    • Rejet auto de list_changed non signé
+    • Assainisseur de descriptions MCP
+    • Préfixage strict d'espace de noms
+    ----
+    Neutralise ASI02 & ASI04
+  ]
+
+  rectangle B3 #FFFFFF;line:166534 [
+    **Barrière B3 — Mémoire**
+    • Provenance HMAC
+    • Quarantaine données
+    externes non validées
+    • TTL & cloisonnement
+    ----
+    Bloque ASI06
+  ]
+
+  rectangle B4 #FFFFFF;line:166534 [
+    **Barrière B4 — Maillage**
+    • Signature JWS A2A
+    • Plafond sauts & coût
+    • Vue A2UI différentielle
+    • Red Teaming CI/CD
+    ----
+    Stoppe ASI07–ASI10
+  ]
+
+  B1 -[hidden]right-> B2
+  B2 -[hidden]right-> B3
+  B3 -[hidden]right-> B4
+}
+
+E2 <-[#166534]down- B1
+E3 <-[#166534]down- B2
+E4 <-[#166534]down- B3
+E5 <-[#166534]down- B4
+@enduml

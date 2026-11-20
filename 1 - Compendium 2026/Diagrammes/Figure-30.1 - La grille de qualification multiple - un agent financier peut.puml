@@ -1,0 +1,47 @@
+' Ouvrage : 1 - Compendium 2026
+' Chapitre : 30 · Le maillage réglementaire international et la normalisation institutionnelle (p. 345)
+' Figure : Figure 30.1 — La grille de qualification multiple : un agent financier peut relever des trois régimes à la fois.
+@startuml
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+skinparam defaultFontName SansSerif
+skinparam roundcorner 12
+skinparam package {
+    BackgroundColor #fdfbf7
+    BorderColor #d4cfc7
+    FontColor #9c3d14
+}
+skinparam usecase {
+    BackgroundColor #f7f4ee
+    BorderColor #b8b4ac
+    FontColor #1f1f1f
+}
+skinparam card {
+    BackgroundColor #efe8dc
+    BorderColor #9c3d14
+    FontColor #9c3d14
+}
+skinparam note {
+    BackgroundColor #faf8f4
+    BorderColor #b8b4ac
+    FontColor #333333
+}
+
+package "TROIS DÉCLENCHEURS, ET ILS SE CUMULENT" {
+    usecase "<b>Tiers TIC</b>\ndès qu'il s'exécute chez un tiers" as TIC
+    usecase "<b>Modèle</b>\ndès qu'il décide ou oriente" as MOD
+    card "<b>les trois</b>\n(coexistence des régimes)" as ALL
+    usecase "<b>Décision automatisée</b>\ndès qu'elle est opposable au client" as DEC
+
+    TIC -[hidden]right-> MOD
+    TIC -- ALL
+    MOD -- ALL
+    ALL -- DEC
+}
+
+note bottom
+Le point méthodologique décisif est LA COEXISTENCE : les trois qualifications ne s'excluent pas. Un agent qui s'exécute chez
+un tiers, qui décide, et dont la décision est opposable au client relève des trois régimes en même temps — et de leurs trois
+calendriers.
+end note
+@enduml

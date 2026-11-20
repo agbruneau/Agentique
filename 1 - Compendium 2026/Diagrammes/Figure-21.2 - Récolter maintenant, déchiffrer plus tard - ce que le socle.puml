@@ -1,0 +1,48 @@
+' Figure 21.2 — Récolter maintenant, déchiffrer plus tard : ce que le socle établit, et où le raisonnement le quitte.
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 6
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 13
+skinparam backgroundColor #FFFFFF
+
+rectangle C1 #FAF6F0;line:B8B2A6 [
+  <color:#57534E>CE QUE LE SOCLE ÉTABLIT</color>
+  ----
+  **La longévité des artefacts**
+
+  Un artefact d'identité de longue durée survit à
+  l'horloge
+
+  Les échéances publiées sont datées et sourcées (§ 21.1)
+
+  L'inventaire par artefact est dressé (§ 21.3)
+  ----
+  **faits établis, avec leurs bornes**
+]
+
+rectangle C2 #FFFFFF;line:9A3412 [
+  <color:#9A3412>CE QUE LE RAISONNEMENT AJOUTE</color>
+  ----
+  **La collecte anticipée**
+
+  Ce qui est chiffré aujourd'hui peut être conservé
+
+  et déchiffré quand l'horloge aura tourné
+
+  ni mécanique ni faisabilité datée au socle
+  ----
+  **degré 3 — le raisonnement quitte le socle ici**
+]
+
+rectangle NOTE #F8F5F0;line:D6D3CD [
+  Le socle NE DOCUMENTE PAS la collecte anticipée en vue d'un déchiffrement ultérieur — degré 3. Cette section ne s'écrit pas
+  comme un chapitre de fait mais comme un RAISONNEMENT D'ARCHITECTURE appuyé sur des faits établis, et elle dit où le
+  raisonnement quitte le socle.
+]
+
+C1 -[hidden]right-> C2
+C1 -[hidden]down-> NOTE
+C2 -[hidden]down-> NOTE
+@enduml

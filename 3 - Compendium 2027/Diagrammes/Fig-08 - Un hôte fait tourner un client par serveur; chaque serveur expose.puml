@@ -1,0 +1,45 @@
+' Fig. 8. – Un hôte fait tourner un client par serveur; chaque serveur expose des outils, des ressources et des prompts, et ne voit ni la conversation entière ni les autres serveurs.
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+
+rectangle "HÔTE" as HOTE #EFF6FF;line:2563EB {
+  rectangle Roles #EFF6FF;line:EFF6FF [
+    Crée les clients
+    Applique les politiques
+    Garde l'historique complet
+    Contrôle toute interaction
+    entre serveurs
+  ]
+  rectangle "**Client 1**" as C1 #FFFFFF;line:2563EB
+  rectangle "**Client 2**" as C2 #FFFFFF;line:2563EB
+  rectangle "**Client 3**" as C3 #FFFFFF;line:2563EB
+  C1 -[hidden]down-> C2
+  C2 -[hidden]down-> C3
+  Roles -[hidden]right-> C1
+}
+
+rectangle "SERVEURS" as SERVEURS #FFFFFF;line:FFFFFF {
+  rectangle "**Fichiers d'un dépôt**\noutils · ressources · prompts" as S1 #F8FAFC;line:475569
+  rectangle "//aucun lien direct//" as N12 #FFFFFF;line:FFFFFF
+  rectangle "**Base de données**\noutils · ressources · prompts" as S2 #F8FAFC;line:475569
+  rectangle "//aucun lien direct//" as N23 #FFFFFF;line:FFFFFF
+  rectangle "**API externe**\noutils · ressources · prompts" as S3 #F8FAFC;line:475569
+  S1 -[hidden]down-> N12
+  N12 -[hidden]down-> S2
+  S2 -[hidden]down-> N23
+  N23 -[hidden]down-> S3
+}
+
+S1 <-[#475569]left-> C1 : JSON-RPC
+S2 <-[#475569]left-> C2
+S3 <-[#475569]left-> C3
+
+rectangle "Un client par serveur. Un serveur ne voit ni la conversation entière ni les autres serveurs." as Note #FFFFFF;line:FFFFFF
+
+Roles -[hidden]down-> Note
+S3 -[hidden]down-> Note
+
+@enduml

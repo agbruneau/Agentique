@@ -1,0 +1,30 @@
+' Fig. 20. – L'agent des ventes et l'agent des finances échangent un message conforme au schéma mais donnent deux sens au « revenu du trimestre ».
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+
+rectangle "**Agent des ventes**" as Ventes #EFF6FF;line:2563EB
+rectangle "**Agent des finances**" as Finances #EFF6FF;line:2563EB
+
+Ventes -[#1E293B]right-> Finances : demande le « revenu du trimestre »
+Finances -[#64748B]left-> Ventes : réponse : revenue, nombre décimal\n**schéma respecté**
+
+rectangle "//entend ://\ncommandes signées" as EV #FFFFFF;line:94A3B8;line.dashed
+rectangle "**≠**\n**même terme, deux sens**" as Diff #FFFFFF;line:FFFFFF
+rectangle "//entend ://\nmontants reconnus\nen comptabilité" as EF #FFFFFF;line:94A3B8;line.dashed
+
+Ventes .[#94A3B8]down. EV
+Finances .[#94A3B8]down. EF
+EV -[hidden]right-> Diff
+Diff -[hidden]right-> EF
+
+rectangle "**Erreur de syntaxe**\nProduit un rejet" as Syn #F8FAFC;line:475569
+rectangle "**Erreur de sens : silencieuse**\nProduit une réponse bien formée,\nque l'agent suivant reprend comme un fait" as Sem #FEF2F2;line:DC2626
+
+EV -[hidden]down-> Syn
+EF -[hidden]down-> Sem
+Syn -[hidden]right-> Sem
+
+@enduml

@@ -1,0 +1,28 @@
+' Figure 44.1 — Le cadre ArchiMate et où les concepts agentiques se posent
+@startuml
+skinparam backgroundColor #FAF8F5
+skinparam shadowing false
+skinparam defaultFontName "DejaVu Sans"
+skinparam titleFontColor #8B2E0B
+skinparam rectangleBorderColor #BBBBBB
+skinparam rectangleBackgroundColor #FAF8F5
+skinparam legendBackgroundColor #FBF9F5
+skinparam legendBorderColor #BBBBBB
+
+title DOMAINES × ASPECTS, ET LE VERROU
+
+rectangle M [
+|= |= Actif — structure |= Comportement |= Passif — objets |
+| **Common / Business** | Role, Actor,\nCollaboration | Process, Function,\nService, Event | Object (Business Object) |
+| **Application** | Component, Interface,\nCollaboration | Service, Function, Flow | Object (Data Object) |
+| **Technology** | Node, Device | Technology Service | Artifact |
+]
+
+legend bottom
+  En v4, Common est transverse, Physical rejoint Technology et Interaction est retiré ; aucun élément « agent ».
+  ----
+  AUCUN ÉLÉMENT NATIF NE DÉSIGNE UN AGENT (§ 44.1.1). Les concepts agentiques ne se posent dans ce cadre que par
+  SPÉCIALISATION d'éléments existants — c'est le verrou méthodologique du chapitre, et la figure le montre
+  en laissant les cases telles qu'elles sont.
+endlegend
+@enduml

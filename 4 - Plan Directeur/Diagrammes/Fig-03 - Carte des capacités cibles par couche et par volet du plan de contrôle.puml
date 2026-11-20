@@ -1,0 +1,99 @@
+' Fig. 3. – Carte des capacités cibles par couche et par volet du plan de contrôle
+' Source : 4 - Plan Directeur (Chapitre M-10, p. 128)
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam defaultFontName SansSerif
+skinparam ranksep 8
+skinparam nodesep 12
+
+title
+<b>Carte des capacités cibles 2035 (52 capacités : 42 invariantes, 10 conditionnelles)</b>
+<size:11><color:#475569>Paliers : P1 (2028–29) · P2 (2030–32) · P3 (2033–35)</color></size>
+end title
+
+rectangle Legende #FFFFFF;line:FFFFFF [
+|<#FFFFFF> Invariante (A, B, C) |<#F5F3FF> Conditionnelle (scénarios nommés) |<#14532D> <color:white>**P1** 2028–29</color> |<#1E40AF> <color:white>**P2** 2030–32</color> |<#78350F> <color:white>**P3** 2033–35</color> |
+]
+
+rectangle L1 #F8FAFC;line:CBD5E1 [
+<b>Couche 1 — Interaction (6)</b>
+| **001** Interfaces déclaratives bornées |<#14532D> <color:white>**P1**</color> | **002** Supervision humaine liée |<#14532D> <color:white>**P1**</color> | **003** Transparence et révision (Loi 25) |<#14532D> <color:white>**P1**</color> |
+|<#F5F3FF> **004** Voix et multimodal temps réel |<#1E40AF> <color:white>**P2·AB**</color> | **005** Archivage communications |<#14532D> <color:white>**P1**</color> |<#F5F3FF> **006** Encadrement agents externes |<#78350F> <color:white>**P3·AB**</color> |
+]
+
+rectangle L2 #F8FAFC;line:CBD5E1 [
+<b>Couche 2 — Agents et orchestration (8)</b>
+| **007** Séquencement déterministe |<#14532D> <color:white>**P1**</color> | **008** Exécution durable et réveil |<#14532D> <color:white>**P1**</color> | **009** Idempotence et sagas |<#14532D> <color:white>**P1**</color> |
+| **010** Topologies et revue hétérogène |<#1E40AF> <color:white>**P2**</color> | **011** Dorsale événementielle audit |<#1E40AF> <color:white>**P2**</color> | **012** Délégation et garde anti-boucle |<#1E40AF> <color:white>**P2**</color> |
+|<#F5F3FF> **013** Fédération gravité données |<#1E40AF> <color:white>**P2·BC**</color> |<#F5F3FF> **014** Négociation inter-organisations |<#78350F> <color:white>**P3·AB**</color> | | |
+]
+
+rectangle L3 #F8FAFC;line:CBD5E1 [
+<b>Couche 3 — Contexte et connaissance (7)</b>
+| **015** Couche sémantique gouvernée |<#1E40AF> <color:white>**P2**</color> | **016** Médiation standards sectoriels |<#1E40AF> <color:white>**P2**</color> | **017** Contexte compilé et ACL amont |<#14532D> <color:white>**P1**</color> |
+| **018** Compétences signées portables |<#14532D> <color:white>**P1**</color> | **019** Mémoire bi-temporelle et oubli |<#1E40AF> <color:white>**P2**</color> | **020** Contrats qualité et quarantaine |<#1E40AF> <color:white>**P2**</color> |
+| **021** Cloisonnement entités et Loi 25 |<#14532D> <color:white>**P1**</color> | | | | |
+]
+
+rectangle L4 #F8FAFC;line:CBD5E1 [
+<b>Couche 4 — Accès (7)</b>
+| **022** Passerelle à cinq contrôles |<#14532D> <color:white>**P1**</color> | **023** Outils métier et schémas signés |<#14532D> <color:white>**P1**</color> | **024** Encapsulation patrimoniale |<#14532D> <color:white>**P1**</color> |
+|<#F5F3FF> **025** Harnais dérogatoire CUA (12 m) |<#14532D> <color:white>**P1·BC**</color> | **026** Passerelles bancaires ouvertes |<#1E40AF> <color:white>**P2**</color> |<#F5F3FF> **027** Connecteurs espaces fédérés |<#78350F> <color:white>**P3·AC**</color> |
+|<#F5F3FF> **028** Sas télématique/OT hors ligne |<#1E40AF> <color:white>**P2·BC**</color> | | | | |
+]
+
+rectangle L5 #F8FAFC;line:CBD5E1 [
+<b>Couche 5 — Modèles (6)</b>
+| **029** Routage d'inférence à 3 paliers |<#14532D> <color:white>**P1**</color> | **030** Confinement sans réseau sortant |<#14532D> <color:white>**P1**</color> | **031** Continuité cognitive bimodèle |<#1E40AF> <color:white>**P2**</color> |
+| **032** Résidence des 6 substrats d'état |<#14532D> <color:white>**P1**</color> |<#F5F3FF> **033** Inférence confidentielle enclave |<#1E40AF> <color:white>**P2·BC**</color> |<#F5F3FF> **034** Distillation sous sas anti-PII |<#1E40AF> <color:white>**P2·BC**</color> |
+]
+
+rectangle "<color:white><b>Plan de contrôle transversal possédé par l’institution (Volets A, B et C)</b></color>" as Banner #0F172A;line:0F172A
+
+together {
+    rectangle VA #FFFFFF;line:16A34A [
+    <color:#166534><b>Volet A — Identité & sécurité (7)</b></color>
+    | **035** NHI sans secret & TLS 47 j |<#14532D> <color:white>**P1**</color> |
+    | **036** Délégation atténuée par saut |<#14532D> <color:white>**P1**</color> |
+    | **037** Décision politique hors modèle |<#14532D> <color:white>**P1**</color> |
+    | **038** Défense injections et menaces |<#14532D> <color:white>**P1**</color> |
+    | **039** Coupe-circuit hiérarchisé |<#14532D> <color:white>**P1**</color> |
+    | **040** Agilité CBOM & PQC ML-DSA |<#1E40AF> <color:white>**P2**</color> |
+    |<#F5F3FF> **041** Identité légale et mandats tiers |<#78350F> <color:white>**P3·AC**</color> |
+    ]
+
+    rectangle VB #FFFFFF;line:2563EB [
+    <color:#1D4ED8><b>Volet B — Observabilité & FinOps (5)</b></color>
+    | **042** Traces causales et couloir PII |<#14532D> <color:white>**P1**</color> |
+    | **043** Simulation, chaos et canari |<#14532D> <color:white>**P1**</color> |
+    | **044** Surveillance dérive et budgets |<#1E40AF> <color:white>**P2**</color> |
+    | **045** Coût par résultat et disjoncteur |<#14532D> <color:white>**P1**</color> |
+    | **046** Empreinte énergie et Scope 3 |<#1E40AF> <color:white>**P2**</color> |
+    ]
+
+    rectangle VC #FFFFFF;line:7C3AED [
+    <color:#6D28D9><b>Volet C — Gouvernance & registre (6)</b></color>
+    | **047** Registre central et cote E-23 |<#14532D> <color:white>**P1**</color> |
+    | **048** Matrice D1–D8 × Classes 1–6 |<#14532D> <color:white>**P1**</color> |
+    | **049** Qualification et preuve légale |<#14532D> <color:white>**P1**</color> |
+    | **050** Validation 2e et 3e lignes |<#14532D> <color:white>**P1**</color> |
+    | **051** Gouvernance tiers et sortie |<#14532D> <color:white>**P1**</color> |
+    | **052** Usine logicielle et SRE borné |<#1E40AF> <color:white>**P2**</color> |
+    ]
+}
+
+Legende -[hidden]down-> L1
+L1 -[hidden]down-> L2
+L2 -[hidden]down-> L3
+L3 -[hidden]down-> L4
+L4 -[hidden]down-> L5
+L5 -[hidden]down-> Banner
+Banner -[hidden]down-> VA
+Banner -[hidden]down-> VB
+Banner -[hidden]down-> VC
+VA -[hidden]right-> VB
+VB -[hidden]right-> VC
+
+@enduml

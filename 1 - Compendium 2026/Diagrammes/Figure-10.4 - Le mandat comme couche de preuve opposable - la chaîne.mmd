@@ -1,0 +1,24 @@
+%% Figure 10.4 — Le mandat comme couche de preuve opposable : la chaîne qui rattache une transaction à un consentement.
+%% Source : 1 - Compendium 2026, Chapitre 10 (page 125)
+
+%%{init: {'flowchart': {'wrappingWidth': 900}}}%%
+flowchart TB
+    subgraph SG_CHAINE["SIGNÉE ET HORODATÉE À CHAQUE MAILLON"]
+        direction LR
+        M1["<b>Intention</b><br/><br/>ce que le mandant a<br/>voulu, avant la<br/>recherche"]
+        M2["<b>Panier</b><br/><br/>ce que l'agent a<br/>composé, et sur quoi<br/>le mandant s'est<br/>accordé"]
+        M3["<b>Paiement</b><br/><br/>l'opération, rattachée<br/>aux deux précédents"]
+        M4["<b>Litige</b><br/><br/>l'élément probant,<br/>s'il faut remonter la<br/>chaîne"]
+        M1 --> M2 --> M3 --> M4
+    end
+
+    NOTE["Un mandat signé est un cadre d'autorisation opposable ; il n'est JAMAIS un dispositif « sécurisé ». Il prouve qu'un<br/>consentement a été émis — pas qu'il était éclairé, ni que l'agent qui l'a sollicité était intègre (réserve F-01 du Vol. II)."]
+
+    SG_CHAINE ~~~ NOTE
+
+    classDef card fill:#FAF7F2,stroke:#C4BEB5,stroke-width:1px,color:#222222,text-align:left;
+    classDef noteBox fill:#F7F5F0,stroke:#C4BEB5,stroke-width:1px,color:#333333,text-align:left;
+    class M1,M2,M3,M4 card;
+    class NOTE noteBox;
+    style SG_CHAINE fill:#FFFFFF,stroke:none,color:#9E3A14
+    linkStyle 0,1,2 stroke:#9E3A14,stroke-width:2px

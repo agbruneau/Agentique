@@ -1,0 +1,39 @@
+' Ouvrage : 1 - Compendium 2026
+' Chapitre : 36 · Prospective : AP2 sur les rails canadiens ? (p. 421)
+' Figure : Figure 36.2 — L’achat non intentionnel : le trou que les cadres de litige existants ne couvrent pas.
+@startuml
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+skinparam defaultFontName SansSerif
+skinparam roundcorner 6
+skinparam package {
+    BackgroundColor #fdfbf7
+    BorderColor #d4cfc7
+    FontColor #9c3d14
+}
+skinparam rectangle {
+    BackgroundColor #f7f4ee
+    BorderColor #b8b4ac
+    FontColor #1f1f1f
+}
+skinparam note {
+    BackgroundColor #faf8f4
+    BorderColor #b8b4ac
+    FontColor #333333
+}
+
+package "TROIS CAUSES, UN MÊME RÉSULTAT" {
+    rectangle "<color:#9c3d14><b>1</b></color>   <b>Dérive d'interprétation</b>\n\nDe l'intention exprimée par le\nmandant." as C1
+    rectangle "<color:#9c3d14><b>2</b></color>   <b>Empoisonnement</b>\n\nDu contexte ou de la mémoire — ch.\n19." as C2
+    rectangle "<color:#9c3d14><b>3</b></color>   <b>Collusion</b>\n\nEntre agents." as C3
+
+    C1 -[hidden]right-> C2
+    C2 -[hidden]right-> C3
+}
+
+note bottom
+Ce sont L'IRRÉVERSIBILITÉ ET LA DÉLÉGATION COMBINÉES qui ouvrent le trou — ni l'une ni l'autre séparément. L'agent exécute
+DANS LES LIMITES APPARENTES de son mandat : il n'y a ni fraude ni dépassement, et c'est pourquoi les cadres de litige ne s'y
+appliquent pas.
+end note
+@enduml

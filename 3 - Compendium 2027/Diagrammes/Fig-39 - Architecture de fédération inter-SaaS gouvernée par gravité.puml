@@ -1,0 +1,112 @@
+' Fig. 39. – Architecture de fédération inter-SaaS gouvernée par gravité des données, propagation d’identité Entra ID ↔ SAP CIS et plan d’arbitrage neutre.
+@startuml
+title Fédération des Jardins Clos SaaS : Gravité des Données, Plan Neutre et Identité OBO
+
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam rectangle {
+  BackgroundColor #F8FAFC
+  BorderColor #334155
+}
+
+rectangle SurfaceEmploye #F8FAFC;line:334155 [
+  **Surface d'Expérience Employé — Microsoft Copilot Studio (Teams / M365)**
+  Archétype 1 : Médiation & Triage conversationnel (L1) • Aucune écriture directe inter-silos
+  Émet l'intention structurée vers le plan neutre avec le jeton initial de l'employé
+]
+
+rectangle ChaineIdentite #FEF2F2;line:991B1B [
+  **Chaîne d'Identité Fédérée (IdP Racine)**
+  Microsoft Entra ID ↔ OAuth 2.1 OBO (RFC 8693)
+  Pont vers SAP CIS (Principal Propagation SAML/X.509)
+]
+
+SurfaceEmploye -[hidden]right-> ChaineIdentite
+
+rectangle "Plan d'Orchestration Maître & Médiation Neutre (Découplé des Jardins Clos SaaS)" as PlanNeutre #EFF6FF;line:2563EB {
+  rectangle AgentGateway #FFFFFF;line:9A3412 [
+    **Passerelle AI-Native (agentgateway)**
+    • Anti-boucle : vecteur signé x-a2a-hop-vector
+    • Politiques Cedar / OPA & filtrage PII
+    • Coupe-circuit FinOps (crédits SaaS + jetons)
+    • Corrélation W3C traceparent unifiée
+  ]
+
+  rectangle Temporal #FFFFFF;line:2563EB [
+    **Arbitrage & État Durable (Temporal)**
+    • Gravité des données (G ≥ 0,85 : local)
+    • Sagas inter-SaaS (≥ 2 domaines mutés)
+    • Annuaire fédéré OASF d'Agent Cards A2A
+    • Modèle canonique Apache Ossie
+  ]
+
+  rectangle MuleSoft #FFFFFF;line:166534 [
+    **Courtage iPaaS (MuleSoft Agent Fabric)**
+    • Connecteurs normalisés A2A v1.0 & MCP
+    • Traduction d'objets CRM ↔ ITSM ↔ ERP
+    • Lissage de débits (429) & anti-tempête CDC
+    • Échange OBO → Salesforce / SAP CIS
+  ]
+
+  AgentGateway -[hidden]right-> Temporal
+  Temporal -[hidden]right-> MuleSoft
+}
+
+rectangle Salesforce #F8FAFC;line:1E293B [
+  **Salesforce Agentforce**
+  Spécialiste Domaine CRM
+  Gravité : Comptes, opportunités,
+  remises commerciales, Data Cloud
+  Droits : Profil utilisateur CRM
+  Confiné : Zéro appel direct ERP
+]
+
+rectangle ServiceNow #F8FAFC;line:1E293B [
+  **ServiceNow AI Agents**
+  Spécialiste ITSM & Terrain
+  Gravité : CMDB, incidents,
+  planification techniciens FSM
+  Droits : ACL ServiceNow OBO
+  Confiné : Délègue via Plan Neutre
+]
+
+rectangle SAPJoule #F8FAFC;line:1E293B [
+  **SAP Joule (S/4HANA)**
+  Spécialiste ERP & Finance
+  Gravité : Stocks MM/SD, achats,
+  grand livre FI/CO, BAPI métier
+  Droits : Named User ABAP propagé
+  Conformité : Digital Access tracé
+]
+
+rectangle Workday #F8FAFC;line:1E293B [
+  **Workday Illuminate**
+  Spécialiste Capital Humain
+  Gravité : Effectifs, certifications
+  sécurité, organigramme, paie
+  Droits : Portées minimales Loi 25
+  Zéro export massif de dossiers RH
+]
+
+Salesforce -[hidden]right-> ServiceNow
+ServiceNow -[hidden]right-> SAPJoule
+SAPJoule -[hidden]right-> Workday
+
+rectangle Invariant #FEF2F2;line:DC2626 [
+  **Invariant ADR-015 : Interdiction de tout pont A2A direct entre studios SaaS (évite les boucles A → B → C → A et l'usurpation par compte technique)**
+]
+
+SurfaceEmploye -[#2563EB]-> PlanNeutre
+ChaineIdentite -[#991B1B]-> PlanNeutre
+PlanNeutre -[#1E3A8A]-> Salesforce : A2A + OBO
+PlanNeutre -[#1E3A8A]-> ServiceNow : A2A + OBO
+PlanNeutre -[#9A3412]-> SAPJoule : A2A + SAP CIS
+PlanNeutre -[#166534]-> Workday : MCP / A2A
+
+Salesforce -[hidden]down-> Invariant
+ServiceNow -[hidden]down-> Invariant
+SAPJoule -[hidden]down-> Invariant
+Workday -[hidden]down-> Invariant
+@enduml

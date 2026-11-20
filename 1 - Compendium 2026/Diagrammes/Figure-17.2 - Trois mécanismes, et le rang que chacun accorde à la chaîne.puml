@@ -1,0 +1,50 @@
+' Figure 17.2 — Trois mécanismes, et le rang que chacun accorde à la chaîne de délégation.
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 6
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 13
+skinparam backgroundColor #FFFFFF
+skinparam legendBackgroundColor #F8F5F0
+skinparam legendBorderColor #D6D3CD
+skinparam legendBorderThickness 1
+
+rectangle "TROIS MÉCANISMES, TROIS RANGS" as CADRE #FFFDF9;line:9A3412 {
+  rectangle R1 #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**1**</color>  **Document d'autorisation d'agent**
+    ----
+    Décrit la chaîne comme l'objet
+    qu'il spécifie.
+    ----
+    <color:#57534E>F-46, [B] — format versionné,</color>
+    <color:#57534E>attributs temporels</color>
+  ]
+
+  rectangle R2 #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**2**</color>  **Échange de jeton**
+    ----
+    Exprime la délégation, et laisse
+    la sécurité du jeton hors
+    périmètre.
+    ----
+    <color:#57534E>F-47, [A]</color>
+  ]
+
+  rectangle R3 #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**3**</color>  **Carte d'agent**
+    ----
+    Porte l'identité, non la chaîne.
+    ----
+    <color:#57534E>F-04/F-07, [A]</color>
+  ]
+
+  R1 -[hidden]right-> R2
+  R2 -[hidden]right-> R3
+}
+
+legend
+  La mise en rang est une CONSTRUCTION DE LA SOMME. Le socle établit trois faits séparés, un par mécanisme ; il n'établit aucun
+  classement entre eux — aucun lot n'a balayé de corpus, et « énoncer la chaîne comme structure propre » est un critère d'auteur.
+endlegend
+@enduml

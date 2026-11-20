@@ -1,0 +1,33 @@
+' Fig. 9. – Un échange entre client et serveur avant et depuis la révision du 28 juillet 2026.
+@startuml
+!pragma teoz true
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam defaultFontName "Segoe UI"
+
+box "JUSQU'À 2025-11-25" #FDF8EE
+  participant "Client" as C1 #FDF8EE
+  participant "Serveur" as S1 #FDF8EE
+end box
+
+box "DEPUIS 2026-07-28" #ECFDF5
+  participant "Client" as C2 #ECFDF5
+  participant "Serveur" as S2 #ECFDF5
+end box
+
+C1 -[#854D0E]> S1 : initialize : poignée de main
+& C2 -[#15803D]> S2 : requête + version et capacités
+
+S1 -[#854D0E]> C1 : session ouverte : Mcp-Session-Id
+& S2 -[#15803D]> C2 : input_required : ce qu'il manque
+
+C1 -[#854D0E]> S1 : requêtes avec Mcp-Session-Id
+& C2 -[#15803D]> S2 : requête d'origine réémise, avec les réponses
+
+S1 -[#854D0E]> C1 : requête initiée par le serveur
+& S2 -[#15803D]> C2 : complete
+
+note over C1, S1 #FFFFFF : État de session côté serveur, canal de retour ouvert
+& note over C2, S2 #FFFFFF : Aucune session : des paires requête-réponse HTTP ordinaires
+
+@enduml

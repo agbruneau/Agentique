@@ -1,0 +1,121 @@
+' Fig. 57. – Architecture de maillage B2B inter-entreprises : séparation acheteur-fournisseur, connecteurs EDC sous politique ODRL, Clean Room confidentielle et rapprochement tripartite autonome.
+@startuml
+title Maillage B2B Inter-Entreprises : Fédération A2A / AGNTCY, Connecteurs EDC et Règlement Tripartite
+
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam rectangle {
+  BackgroundColor #FFFFFF
+  BorderColor #334155
+}
+
+rectangle "Domaine Acheteur (Groupe Boréal)" as Acheteur #F8FAFC;line:1E293B {
+  rectangle Evaluateur #FFFFFF;line:2563EB [
+    **Évaluateur Scellé ↔ Diplomate DMZ**
+    Prix de réserve isolé hors zone DMZ
+    Zéro fuite de secret sur canal B2B
+  ]
+  rectangle ConnecteurAch #FFFFFF;line:166534 [
+    **Connecteur EDC & Passerelle B2B**
+    Identité légale vérifiable (vLEI / DID)
+    Contrat d'usage ODRL signé
+    Agentgateway Egress + DPoP
+  ]
+  rectangle SystemesMaitres #FFFFFF;line:475569 [
+    **Systèmes Maîtres Internes**
+    SAP S/4HANA MM • Trésorerie BCA
+    Réception IoT / Quai intelligent
+  ]
+
+  Evaluateur -[hidden]down-> ConnecteurAch
+  ConnecteurAch -[hidden]down-> SystemesMaitres
+}
+
+rectangle "Espace de Confiance Fédéré (Dataspace)" as Dataspace #F5F3FF;line:5B21B6;line.dashed {
+  rectangle AnnuaireAGNTCY #FFFFFF;line:7C3AED [
+    **Annuaire AGNTCY & Registre vLEI**
+    Découverte OASF d'Agent Cards B2B
+    Canal A2A v1.0 chiffré SLIM (MLS)
+  ]
+  rectangle CleanRoom #FFFFFF;line:2563EB [
+    **Clean Room Confidentielle (TEE)**
+    Enchère asymétrique multi-parties
+    Vérification SLA / empreinte carbone
+    Zéro exposition des coûts marginaux
+  ]
+  rectangle EscrowWORM #FFF7ED;line:9A3412 [
+    **Chambre d'Escrow & Preuves WORM**
+    Mandats AP2 cosignés (Intent + Cart)
+    Journal d'audit opposable non répudiable
+  ]
+
+  AnnuaireAGNTCY -[hidden]down-> CleanRoom
+  CleanRoom -[hidden]down-> EscrowWORM
+}
+
+rectangle "Partenaires B2B (Fournisseur & Fret)" as Partenaires #F0FDF4;line:166534 {
+  rectangle AgentFournisseur #FFFFFF;line:166534 [
+    **Agent Commercial Fournisseur**
+    Calcul dynamique capacité & délai
+    Offre ferme signée (Verifiable Cred.)
+  ]
+  rectangle ConnecteurPart #FFFFFF;line:2563EB [
+    **Connecteur EDC Partenaire**
+    Application locale politique ODRL
+    Passerelle EDI X12 / API ERP tiers
+    Protection anti-collusion tarifaire
+  ]
+  rectangle AgentTransporteur #FFFFFF;line:475569 [
+    **Agent Transporteur & Douanes**
+    Télématique scellé électronique
+    Preuve cryptographique de livraison
+  ]
+
+  AgentFournisseur -[hidden]down-> ConnecteurPart
+  ConnecteurPart -[hidden]down-> AgentTransporteur
+}
+
+Evaluateur <-[#5B21B6]right-> AnnuaireAGNTCY
+AnnuaireAGNTCY <-[#5B21B6]right-> AgentFournisseur
+
+ConnecteurAch <-[#2563EB]right-> CleanRoom
+CleanRoom <-[#2563EB]right-> ConnecteurPart
+
+SystemesMaitres -[#1E293B]right-> EscrowWORM
+EscrowWORM <-[#166534]right- AgentTransporteur
+
+rectangle "Cycle du Rapprochement Tripartite Autonome (Autonomous 3-Way Match) & Libération de Règlement" as CycleTripartite #F8FAFC;line:334155 {
+  rectangle Tri1 #FFFFFF;line:2563EB [
+    **1. Accord Contractuel**
+    Mandat AP2 CartMandate
+    Plafond, quantités, tolérance
+    Bon de commande SAP créé
+  ]
+  rectangle Tri2 #FFFFFF;line:166534 [
+    **2. Preuve Physique IoT**
+    Lecture RFID + pesée quai
+    Certificat métallurgique OASF
+    Réception signée sans écart
+  ]
+  rectangle Tri3 #FFFFFF;line:7C3AED [
+    **3. Arbitrage Déterministe**
+    Moteur Cedar : écart <= 0,5 %
+    Si litige : gel + escalade HOTL
+    Zéro hallucination comptable
+  ]
+  rectangle Tri4 #F0FDF4;line:166534 [
+    **4. Règlement Final**
+    Libération escrow AP2 / x402
+    Virement ISO 20022 programmé
+    **Archivage fiscal 7 ans**
+  ]
+
+  Tri1 -[#1E293B]right-> Tri2
+  Tri2 -[#1E293B]right-> Tri3
+  Tri3 -[#166534]right-> Tri4
+}
+
+EscrowWORM -[hidden]down-> CycleTripartite
+@enduml

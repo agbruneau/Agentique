@@ -1,0 +1,50 @@
+' Ouvrage : 1 - Compendium 2026
+' Chapitre : 31 · Le vertical financier : pourquoi l'agentique y est durcie (p. 358)
+' Figure : Figure 31.2 — La double-qualification : l’agent comme modèle et comme tiers TIC.
+@startuml
+hide stereotype
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+skinparam defaultFontName SansSerif
+skinparam roundcorner 6
+skinparam package {
+    BackgroundColor #fdfbf7
+    BorderColor #d4cfc7
+    FontColor #444444
+}
+skinparam package<<accent>> {
+    BackgroundColor #fdfbf7
+    BorderColor #9c3d14
+    FontColor #9c3d14
+}
+skinparam rectangle {
+    BackgroundColor #f7f4ee
+    BorderColor #b8b4ac
+    FontColor #1f1f1f
+}
+skinparam rectangle<<accent>> {
+    BackgroundColor #ffffff
+    BorderColor #9c3d14
+    FontColor #1f1f1f
+}
+skinparam note {
+    BackgroundColor #faf8f4
+    BorderColor #b8b4ac
+    FontColor #333333
+}
+
+package "L'AGENT COMME MODÈLE" as P1 {
+    rectangle "<b>Parce qu'il décide</b>\n\nInventaire, cotation, cycle de vie\n\nDocumentation des usages approuvés\n\nSurveillance continue\n\n<b>régime du risque de modèle — ch. 25</b>" as C1
+}
+
+package "L'AGENT COMME TIERS TIC" as P2 <<accent>> {
+    rectangle "<b>Parce qu'il s'exécute chez un tiers</b>\n\nRésilience opérationnelle\n\nInscription au registre des tiers\n\nContinuité et sortie\n\n<b>régime de la résilience — § 30.2.2</b>" as C2 <<accent>>
+}
+
+P1 -[hidden]right-> P2
+
+note bottom
+SIÈGE DU PATRON-SIGNATURE POUR TOUTE LA SOMME, et il n'est re-dérivé nulle part : le ch. 30 § 30.2.1 déclare lui-même ne
+faire que l'instancier. Les deux qualifications ne se choisissent pas — elles se cumulent, avec leurs deux régimes.
+end note
+@enduml

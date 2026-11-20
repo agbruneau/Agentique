@@ -1,0 +1,35 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 53 (page 200)
+' Légende : Fig. 53. – Architecture de référence C4 Container du Blueprint 1 — Traitement transactionnel hautement réglementé sur quatre plans
+@startuml
+!include <C4/C4_Container>
+
+LAYOUT_LEFT_RIGHT()
+
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+
+Person(conseiller, "Conseiller / Client", "Initie dossier crédit ou sinistre (L2-L3)")
+
+System_Boundary(bp1, "Blueprint 1 — Enclave Transactionnelle Réglementée (4 Plans)") {
+  Container(p1, "Plan 1 : Portail & HITL", "SoE / Révision Loi 25", "Affiche différentiel SoR et preuve source")
+  Container(p2, "Plan 2 : Moteur Durable", "Temporal HA + Harness 80/20", "Journalise replay, Sagas, Signals & Worker Versioning")
+  Container(p4_id, "Plan 4 : Identité & OBO", "SPIRE + STS RFC 8693", "Émet X.509-SVID et jetons OBO (sub, act[], aud RFC 8707)")
+  Container(p3_mcp, "Plan 3 : MCP Gateway", "agentgateway + Intent Gate", "Médiation Streamable HTTP, OPA/Cedar & Idempotency-Key")
+  Container(p4_worm, "Plan 4 : Télémétrie & WORM", "OTel GenAI + S3 Object Lock", "Collecteur mTLS, payload=0 et archivage Compliance Mode")
+  Container(p3_acl, "Plan 3 : Couche ACL / CQRS", "Debezium CDC + Projection", "Isole lectures SoR et sérialise mutations pivot")
+}
+
+System_Ext(aigw, "AI Gateway / Inférence", "Cascade SLM/LLM (PTU + Spillover)")
+System_Ext(sor, "System of Record", "Core Banking / ERP (Autorité comptable)")
+
+Rel(conseiller, p1, "Soumet mandat et valide HITL", "OIDC / TLS 1.3")
+Rel(p1, p2, "Démarre workflow / Signal approbation", "gRPC mTLS")
+Rel(p2, p4_worm, "Spans & traces décisionnelles", "OTLP mTLS")
+Rel(p2, p4_id, "Échange OBO (subject + SVID)", "RFC 8693")
+Rel(p2, p3_mcp, "tools/call + Jeton OBO + Idempotency", "MCP HTTP")
+Rel(p2, aigw, "Appels cognitifs bornés (20 %)", "AI Gateway")
+Rel(p3_mcp, p4_worm, "Journaux OPA et piste OBO", "OTLP / WORM")
+Rel(p3_mcp, p3_acl, "Lit projection / Mutation pivot", "gRPC / REST")
+Rel(p3_acl, sor, "CDC lecture / Écriture amortie", "BAPI / SQL")
+@enduml

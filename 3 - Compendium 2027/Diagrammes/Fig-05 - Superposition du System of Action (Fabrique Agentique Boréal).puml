@@ -1,0 +1,72 @@
+' Fig. 5. – Superposition du System of Action (Fabrique Agentique Boréal) sur les Systems of Record des trois divisions opérationnelles.
+@startuml
+title Superposition du « System of Action » sur les « Systems of Record » (Cas Groupe Boréal)
+
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+
+rectangle SOE #F8FAFC;line:64748B [
+  **Systems of Engagement (Interfaces Humaines & Télématique)**
+  Portail Client AG-UI / A2UI • Microsoft Teams (Copilot Studio) • Console Opérateur Usine (WebRTC) • Alertes IoT MQTT
+]
+
+rectangle "System of Action — Fabrique Agentique Boréal (Tissu d'Interopérabilité et d'Orchestration)" as SOA #EFF6FF;line:2563EB {
+  rectangle Orch #FFFFFF;line:2563EB [
+    **Orchestration & État Durable**
+    • Workflows Temporal (Sagas inter-divisions)
+    • Bus événementiel Kafka & Solace
+    • Approbations HOTL via CIBA
+    • Découplage Contrôle / Raisonnement
+  ]
+
+  rectangle Mesh #FFFFFF;line:16A34A [
+    **Maillage A2A v1.0 & Sémantique**
+    • Annuaire fédéré d'Agent Cards (OASF)
+    • Ontologie unifiée (Apache Ossie)
+    • Mémoire bi-temporelle (Graphiti)
+    • Délégation horizontale inter-silos
+  ]
+
+  rectangle Gate #FFFFFF;line:C2410C [
+    **Passerelle AI-Native & Sécurité**
+    • agentgateway (Proxy MCP / A2A / LLM)
+    • Identités NHI + OAuth 2.1 OBO
+    • Politiques Cedar / OPA + Quotas FinOps
+    • Traces OpenTelemetry (gen_ai.*)
+  ]
+
+  Orch -[hidden]right-> Mesh
+  Mesh -[hidden]right-> Gate
+}
+
+rectangle BSN #F8FAFC;line:1E293B [
+  **Boréal Services Numériques (BSN)**
+  Salesforce Agentforce • ServiceNow
+  Connecteurs : A2A v1.0 + Serveurs MCP
+  Gravité : Clients & Billets terrain
+]
+
+rectangle BCA #F8FAFC;line:1E293B [
+  **Boréal Capital & Assurances (BCA)**
+  IBM i (AS/400) • Guidewire • Snowflake
+  Connecteurs : CUA confiné + Façade MCP
+  Régime : BSIF E-23 (mai 2027) & Loi 25
+]
+
+rectangle BEL #F8FAFC;line:1E293B [
+  **Boréal Équipements & Logistique (BEL)**
+  SAP S/4HANA (Joule) • Automates OPC-UA
+  Connecteurs : MCP BAPI + Jumeau Numérique
+  Gravité : Stocks, Usines & Achats B2B
+]
+
+SOE -[hidden]down-> SOA
+SOA --> BSN
+SOA --> BCA
+SOA --> BEL
+BSN -[hidden]right-> BCA
+BCA -[hidden]right-> BEL
+
+@enduml

@@ -1,0 +1,130 @@
+' Fig. 10. – Architecture d'entreprise du Model Context Protocol (MCP) sur Streamable HTTP, articulée avec Agent Skills, Open Responses et WebMCP.
+@startuml
+title Architecture MCP d'Entreprise : Host, Client, Streamable HTTP, Agent Skills et WebMCP
+
+left to right direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+
+rectangle LeftCol #FFFFFF;line:FFFFFF {
+  rectangle "Hôte Agentique (MCP Host)\nWorker Temporal, Goose ou Application Métier" as Host #EFF6FF;line:2563EB {
+    rectangle Portabilite #FFFFFF;line:93C5FD [
+      **Portabilité Cognitive (Standards AAIF)**
+      • Open Responses : API d'inférence unifiée
+      • Agent Skills : SKILL.md (divulgation progressive)
+      • AGENTS.md : consignes et invariants locaux
+    ]
+
+    rectangle Connecteurs #FFFFFF;line:2563EB [
+      **Connecteurs MCP Client (Isolation 1:1)**
+      • Négociation cycle de vie (initialize)
+      • Exposition bornée des périmètres (Roots)
+      • Validation stricte JSON Schema entrée/sortie
+      • 1 instance Client dédiée par Serveur MCP
+    ]
+
+    rectangle Primitives #FFFBEB;line:B45309 [
+      **Contrôle des Primitives Inversées**
+      • sampling/createMessage : quota & filtre prompt
+      • elicitation/create (Formulaire JSON plat)
+      • elicitation/create (Mode URL hors-bande OAuth)
+      Approbation de l'hôte obligatoire avant exécution
+    ]
+
+    Portabilite -[hidden]down-> Connecteurs
+    Connecteurs -[hidden]down-> Primitives
+  }
+
+  rectangle WebMCP #FEF2F2;line:DC2626 [
+    **Surface Client Navigateur : WebMCP (W3C)**
+    • API : navigator.modelContext.registerTool()
+    • Mode déclaratif : <form toolname="...">
+    • Cycle de vie lié à l'UI via AbortSignal
+    Exécution locale dans l'onglet actif (zéro scraping)
+  ]
+
+  Host -[hidden]down-> WebMCP
+}
+
+rectangle "agentgateway\nPlan de Données MCP (AAIF)" as Gateway #FFFFFF;line:9A3412 {
+  rectangle Transport #F8FAFC;line:CBD5E1 [
+    **Transport & Versions**
+    MCP-Protocol-Version
+    Sans état / Mcp-Session-Id
+  ]
+
+  rectangle Identite #F8FAFC;line:CBD5E1 [
+    **Identité & Délégation**
+    Échange OAuth 2.1 OBO
+    (RFC 8693) + Preuve DPoP
+    Zéro secret partagé
+  ]
+
+  rectangle Autorisation #F8FAFC;line:CBD5E1 [
+    **Autorisation & Filtrage**
+    Politiques Cedar par outil
+    Inspection anti-injection
+    Vérif. SHA-256 schémas
+  ]
+
+  rectangle ObsFinOps #F8FAFC;line:CBD5E1 [
+    **Observabilité & FinOps**
+    Traces OpenTelemetry
+    (attributs gen_ai.* / mcp.*)
+    Limitation de débit HTTP
+    & Coupe-circuit d'erreurs
+  ]
+
+  Transport -[hidden]down-> Identite
+  Identite -[hidden]down-> Autorisation
+  Autorisation -[hidden]down-> ObsFinOps
+}
+
+rectangle RightCol #FFFFFF;line:FFFFFF {
+  rectangle SAP #ECFDF5;line:15803D [
+    **Serveur MCP — SAP S/4HANA**
+    • 8 Tools orientés intention métier
+    • Clés d'idempotence & baux TTL
+    • Sorties typées structuredContent
+    Appels officiels BAPI / OData v4
+  ]
+
+  rectangle Snowflake #ECFDF5;line:15803D [
+    **Serveur MCP — Snowflake & BCA**
+    • Resources URI (boreal://bca/...)
+    • Références légères resource_link
+    • Pagination sémantique par curseur
+    Masquage dynamique Loi 25 / E-23
+  ]
+
+  rectangle ServiceNow #ECFDF5;line:15803D [
+    **Serveur MCP — ServiceNow**
+    • Prompts d'incident standardisés
+    • Erreurs cognitives auto-correctrices
+    • Escalade Elicitation URL (HOTL)
+    Synchronisation ITSM & Terrain FSM
+  ]
+
+  rectangle OpenSandbox #F8FAFC;line:334155 [
+    **Bac à Sable — OpenSandbox**
+    • Isolation microVM / gVisor / WASM
+    • Exécution des scripts/ déterministes
+    • Système de fichiers éphémère
+    Zéro accès réseau sortant non autorisé
+  ]
+
+  SAP -[hidden]down-> Snowflake
+  Snowflake -[hidden]down-> ServiceNow
+  ServiceNow -[hidden]down-> OpenSandbox
+}
+
+Host -[#2563EB]-> Gateway : **Streamable HTTP**\nPOST /mcp (Tools,\nResources, Prompts)
+Gateway .[#C2410C].> Host : **Flux SSE Serveur**\nSampling, Elicitation\n& Notifications
+Host .[#475569].> OpenSandbox : Exécution confinée des scripts/ Agent Skills (stdio local isolé)
+
+Gateway -[#15803D]-> SAP
+Gateway -[#15803D]-> Snowflake
+Gateway -[#15803D]-> ServiceNow
+
+@enduml

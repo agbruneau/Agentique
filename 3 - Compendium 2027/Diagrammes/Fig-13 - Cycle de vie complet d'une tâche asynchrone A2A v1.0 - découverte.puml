@@ -1,0 +1,80 @@
+' Fig. 13. – Cycle de vie complet d'une tâche asynchrone A2A v1.0 : découverte, négociation multi-tours, streaming SSE et notifications push signées.
+@startuml
+title Cycle de Vie d'une Tâche Asynchrone A2A v1.0 : Découverte, Machine à États et Double Canal
+
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+
+rectangle "Phases 1 & 2 — Découverte Authentifiée de l'Agent Card et Soumission de Tâche Enveloppée" as P12 #F8FAFC;line:475569 {
+  rectangle ClientOrch #FFFFFF;line:1E293B [
+    **Agent Client / Orchestrateur**
+    Workflow Temporal • Identité SPIFFE
+  ]
+  rectangle Step1 #FFFFFF;line:2563EB [
+    **1. GET /.well-known/agent-card.json**
+    Vérification signature JWS & schémas I/O
+  ]
+  rectangle Step2 #FFFFFF;line:15803D [
+    **2. POST message/send | stream**
+    JSON-RPC 2.0 + Jeton OAuth 2.1 OBO
+  ]
+  ClientOrch -[#1E293B]-> Step1
+  Step1 -[#2563EB]-> Step2
+}
+
+rectangle "Phase 3 — Machine à États Normative de l'Objet Task (Corrélation contextId & taskId)" as P3 #EFF6FF;line:2563EB {
+  rectangle Submitted #FFFFFF;line:1E293B [
+    **submitted**
+    Quotas & idempotence
+    validés en passerelle
+  ]
+  rectangle Working #FFFFFF;line:2563EB [
+    **working**
+    Inférence spécialiste active
+    Appels verticaux outils MCP
+  ]
+  rectangle InputReq #FFF7ED;line:C2410C [
+    **input-required | auth-required**
+    Suspension sans CPU : demande pièce manquante
+    ou consentement hors bande (CIBA / OBO)
+  ]
+  rectangle Completed #ECFDF5;line:15803D [
+    **completed (État Terminal)**
+    Livraison d'Artifact typé immuable :
+    DataPart (JSON) • FilePart (URI) • TextPart
+  ]
+  rectangle Failed #FEF2F2;line:DC2626 [
+    **failed | canceled | rejected**
+    Diagnostic normalisé JSON-RPC & déclenchement
+    de la compensation Saga côté orchestrateur
+  ]
+
+  Submitted -[#2563EB]-> Working
+  Working -[#15803D]-> Completed
+  Working -[#DC2626]-> Failed
+  Working -[#C2410C]-> InputReq
+  InputReq .[#2563EB].> Working : Reprise message/send (taskId)
+}
+
+rectangle Canaux #FFFFFF;line:FFFFFF {
+  rectangle CanalA #ECFDF5;line:15803D [
+    **Canal A — Streaming SSE (Régime T2 : 2 s à 3 min)**
+    • Flux ouvert via message/stream ou tasks/resubscribe
+    • Événements temps réel : TaskStatusUpdateEvent
+    • Fragments d'artefacts : TaskArtifactUpdateEvent (lastChunk)
+  ]
+  rectangle CanalB #FFF7ED;line:9A3412 [
+    **Canal B — Push Webhooks Signés (Régimes T3–T4 : > 3 min)**
+    • Enregistré via pushNotificationConfig (zéro polling actif)
+    • Rappel HTTPS sortant vers l'awakeable Temporal / Restate
+    • Vérification cryptographique : JWS / HMAC + anti-rejeu
+  ]
+  CanalA -[hidden]right-> CanalB
+}
+
+P12 -[hidden]down-> P3
+P3 -[hidden]down-> Canaux
+
+@enduml

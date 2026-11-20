@@ -1,0 +1,21 @@
+%% Ouvrage : 1 - Compendium 2026
+%% Chapitre : 34 · Les sous-domaines financiers : banque, assurance, patrimoine (p. 389)
+%% Figure : Figure 34.3 — La souscription vie accélérée : la chaîne d’orchestration où la contrainte réglementaire est la plus directe.
+flowchart TB
+    subgraph S["LA CHAÎNE TYPE, ET CE QUI MORD À CHAQUE MAILLON"]
+        direction LR
+        N1["<b>Preuves</b><br/>récupération de pièces<br/>hétérogènes — dont la<br/>donnée de santé"]
+        N2["<b>Règles</b><br/>application des règles<br/>de mortalité"]
+        N3["<b>Tarification</b><br/>du risque, sur une<br/>personne physique —<br/>haut risque"]
+        N4["<b>Décision</b><br/>sans intervention<br/>humaine : art. 12.1"]
+        N1 --> N2 --> N3 --> N4
+    end
+    NOTE["DEUX RÉGIMES SE DÉCLENCHENT ENSEMBLE : c'est une décision de tarification du risque sur une personne physique — donc<br/>explicitement de HAUT RISQUE — et, rendue sans intervention humaine, une décision EXCLUSIVEMENT AUTOMATISÉE qui déclenche les<br/>obligations de l'article 12.1 (ch. 27 § 27.2)."]
+    S ~~~ NOTE
+
+    style S fill:#fdfbf7,stroke:#d4cfc7,color:#9c3d14
+    style N1 fill:#f7f4ee,stroke:#b8b4ac,color:#1a1a1a
+    style N2 fill:#f7f4ee,stroke:#b8b4ac,color:#1a1a1a
+    style N3 fill:#f7f4ee,stroke:#9c3d14,color:#1a1a1a
+    style N4 fill:#f7f4ee,stroke:#9c3d14,color:#1a1a1a
+    style NOTE fill:#faf8f4,stroke:#b8b4ac,color:#444444

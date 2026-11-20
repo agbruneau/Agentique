@@ -1,0 +1,104 @@
+' Fig. 1. – Architecture de référence à 6 couches et 2 piliers transversaux de l'entreprise agentique en 2027.
+@startuml
+title Architecture de Référence à 6 Couches — Entreprise Agentique 2027
+
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam rectangle {
+  BackgroundColor #F8FAFC
+  BorderColor #334155
+}
+
+rectangle ZeroTrust #FEF2F2;line:DC2626 [
+  **TRANSVERSAL**
+  **Zero Trust & NHI**
+  ----
+  SPIFFE / SPIRE
+  W3C DIDs / VCs
+
+  **Délégation**
+  OAuth 2.1 OBO
+  RFC 8693 (act/sub)
+  CIBA Asynchrone
+
+  **Protection Runtime**
+  OWASP ASI01–10
+  OPA / Cedar PDP
+  OpenSandbox
+  MicroVMs / WASI
+
+  **Résilience**
+  Pinning MCP
+  Kill Switches SOC
+]
+
+rectangle Couches #FFFFFF;line:FFFFFF {
+  rectangle C6 #EFF6FF;line:1E3A8A [
+    **Couche 6 — Gouvernance, Conformité Légale et Commerce Agentique B2B**
+    Cadres : ISO/IEC 42001 • EU AI Act (2026–2027) • BSIF E-23 (mai 2027) • Loi 25 • NIST AI Agent Standards
+    Transactions B2B : AP2 (FIDO / Mandats W3C VCs) • x402 (Règlement HTTP 402) • Contrats & SLA signés
+  ]
+
+  rectangle C5 #F8FAFC;line:334155 [
+    **Couche 5 — Interaction Humain-Agent (HITL / HOTL) et Multimodalité Temps Réel**
+    Interfaces : AG-UI (Flux d'événements et deltas d'état) • A2UI / MCP-UI (Composants déclaratifs JSON)
+    Canaux : Voix et vidéo temps réel WebRTC / SIP • Escalade graduée par le risque • Anti-biais (ASI09)
+  ]
+
+  rectangle C4 #EFF6FF;line:2563EB [
+    **Couche 4 — Orchestration Hybride, Exécution Durable et Intégrité Transactionnelle**
+    Durabilité : Temporal • Restate • Microsoft Agent Framework • Bedrock AgentCore • UiPath Maestro (BPMN)
+    Événements & Cohérence : Confluent Kafka • Solace Agent Mesh • NATS • Patron Saga & Compensations
+  ]
+
+  rectangle C3 #F8FAFC;line:334155 [
+    **Couche 3 — Coordination Horizontale Inter-Agents et Fédération des Silos SaaS**
+    Protocoles : A2A v1.0 (Agent Cards, Tâches asynchrones, Artefacts ; fusion ACP) • AGNTCY (OASF, SLIM/MLS)
+    Fédération : MuleSoft Agent Fabric • Agentforce ↔ ServiceNow ↔ SAP Joule ↔ Copilot Studio
+  ]
+
+  rectangle C2 #FFF7ED;line:C2410C [
+    **Couche 2 — Sémantique Métier, Ontologies d'Entreprise et Mémoire Partagée**
+    Modèle métier : Apache Ossie (Open Semantic Interchange) • Ontologies causales • Jumeaux numériques
+    Mémoire & Contexte : Graphes bi-temporels (Graphiti) • État hiérarchique (Letta) • Context Engineering
+  ]
+
+  rectangle C1 #F8FAFC;line:1E293B [
+    **Couche 1 — Connectivité Outils, Passerelles AI-Natives, Legacy et IT/OT**
+    Intégration : MCP • Agent Skills • AGENTS.md • Open Responses • WebMCP • CUA (Écrans) • OPC-UA (Usine)
+    Plan de données : agentgateway • Agent Router (Envoy) • Inférence hybride & partage de KV-cache
+  ]
+
+  C6 -[hidden]down-> C5
+  C5 -[hidden]down-> C4
+  C4 -[hidden]down-> C3
+  C3 -[hidden]down-> C2
+  C2 -[hidden]down-> C1
+}
+
+rectangle AgentOps #F0FDF4;line:16A34A [
+  **TRANSVERSAL**
+  **AgentOps & FinOps**
+  ----
+  **Observabilité**
+  OpenTelemetry
+  gen_ai.* Traces
+
+  **Qualité & ADLC**
+  Agent Registry
+  OpenEnv / τ-bench
+  Shadow & Canary
+  Chaos Agentique
+
+  **FinOps**
+  Budgets de jetons
+  Cost-per-Outcome
+  Routage SLM/LLM
+]
+
+ZeroTrust -[hidden]right-> Couches
+Couches -[hidden]right-> AgentOps
+
+@enduml

@@ -1,0 +1,23 @@
+%% Figure 24.3 — Le cycle de vie de l’identité d’agent à l’échelle du parc, de l’enregistrement à la révocation.
+%%{init: {'flowchart': {'wrappingWidth': 900}}}%%
+flowchart TB
+    subgraph CYCLE["AUCUNE IDENTITÉ SANS CYCLE DE VIE GOUVERNÉ DE BOUT EN BOUT"]
+        direction LR
+        E["<b>Enregistrement</b><br/>un propriétaire humain<br/>responsable identifié,<br/>un parrainage explicite"]
+        A["<b>Attestation</b><br/>de sa raison d'être"]
+        C["<b>Certification</b><br/>périodique, de ses accès"]
+        R["<b>Révocation</b><br/>et ce qui en a été dérivé"]
+        E --> A --> C --> R
+        R --> E
+    end
+
+    NOTE["Le risque dominant n'est pas l'attribution mais L'ACCUMULATION : sans propriétaire humain responsable, parrainage explicite<br/>et certification périodique, l'organisation accumule des identités dont plus personne ne répond — et la révocation, dernier<br/>maillon, n'a pas de mécanisme en cascade documenté (ch. 20 § 20.6)."]
+
+    CYCLE ~~~ NOTE
+
+    style CYCLE fill:#FFFDF9,stroke:#9A3412,stroke-width:1px,color:#9A3412
+    style E fill:#FAF6F0,stroke:#B8B2A6,color:#1F2937
+    style A fill:#FAF6F0,stroke:#B8B2A6,color:#1F2937
+    style C fill:#FAF6F0,stroke:#B8B2A6,color:#1F2937
+    style R fill:#FAF6F0,stroke:#B8B2A6,color:#1F2937
+    style NOTE fill:#F8F5F0,stroke:#D6D3CD,color:#374151

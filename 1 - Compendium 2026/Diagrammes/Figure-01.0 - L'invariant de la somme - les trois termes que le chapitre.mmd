@@ -1,0 +1,27 @@
+%% Figure 1.0 — L'invariant de la somme : les trois termes que le chapitre éprouve (§ 1.1.3-1.1.4), et le quatrième qu'il pose au § 1.0.2 pour le Livre IV (ch. 38-40).
+%% Source : 1 - Compendium 2026, Chapitre 1 (page 7)
+
+%%{init: {'flowchart': {'wrappingWidth': 900}}}%%
+flowchart TB
+    subgraph SG_EP["TROIS TERMES, ÉPROUVÉS DANS CE CHAPITRE"]
+        direction LR
+        T1["<b>1 · Découplage</b><br/><br/>Réduction des dépendances entre systèmes :<br/>technologie, format, localisation,<br/>temporalité, modèle d'interaction.<br/><br/><i>§ 1.1.3</i>"]
+        T2["<b>2 · Contrat</b><br/><br/>L'interface explicite — syntaxique,<br/>sémantique, comportementale — sur laquelle<br/>deux parties s'accordent pour évoluer séparément.<br/><br/><i>§ 1.1.3.2</i>"]
+        T3["<b>3 · Évolution</b><br/><br/>Le contrat change sans rompre les<br/>consommateurs : compatibilité ascendante et<br/>descendante, versionnement, lecteurs tolérants.<br/><br/><i>§ 1.1.4.1</i>"]
+        T1 --> T2 --> T3
+    end
+
+    subgraph SG_NON["QUATRIÈME TERME, ANNONCÉ ET NON ÉPROUVÉ ICI"]
+        direction TB
+        T4["<b>4 · Exploitation</b><br/>Aucun agent à exploiter dans la matière pré-agentique. Posé en entier au § 1.0.2, éprouvé au Livre IV (ch. 38-40)."]
+    end
+
+    SG_EP ~~~ SG_NON
+
+    classDef card fill:#FAF7F2,stroke:#C4BEB5,stroke-width:1px,color:#222222,text-align:left;
+    classDef dashedCard fill:#FFFFFF,stroke:#9A958C,stroke-width:1.5px,stroke-dasharray: 6 4,color:#222222,text-align:left;
+    class T1,T2,T3 card;
+    class T4 dashedCard;
+    style SG_EP fill:#FFFFFF,stroke:none,color:#9E3A14
+    style SG_NON fill:#FFFFFF,stroke:none,color:#555555
+    linkStyle 0,1 stroke:#9E3A14,stroke-width:2px

@@ -1,0 +1,69 @@
+' Figure 7.2 — Les quatre axes de l'interopérabilité agentique et le lieu de traitement de chacun (seuls les axes vertical et horizontal disposant de protocoles stabilisés).
+' Source : 1 - Compendium 2026, Chapitre 7 (page 84)
+
+@startuml
+top to bottom direction
+hide stereotype
+skinparam packageStyle rectangle
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 13
+skinparam shadowing false
+skinparam roundCorner 4
+skinparam nodesep 25
+skinparam ranksep 25
+
+skinparam package {
+  BackgroundColor #FFFFFF
+  BorderColor #E0DDD7
+  FontColor #9E3A14
+  FontStyle bold
+}
+
+skinparam rectangle {
+  BackgroundColor #FAF7F2
+  BorderColor #B8B3AA
+  FontColor #222222
+}
+
+skinparam legendBackgroundColor #F7F5F0
+skinparam legendBorderColor #C4BEB5
+skinparam legendFontColor #333333
+
+package "QUATRE AXES, ET OÙ CHACUN EST TRAITÉ" {
+  rectangle A1 [
+    <color:#9E3A14><b>1</b></color>  <b>Agent-outil</b>
+    Un agent invoque des outils et ressources pour étendre
+    ses capacités.
+    <color:#666666>vertical — ch. 8 § 8.1-8.3</color>
+  ]
+  rectangle A2 [
+    <color:#9E3A14><b>2</b></color>  <b>Agent-agent</b>
+    Des agents autonomes se délèguent des tâches par-delà
+    les frontières.
+    <color:#666666>horizontal — ch. 8 § 8.4-8.6</color>
+  ]
+  rectangle A3 [
+    <color:#9E3A14><b>3</b></color>  <b>Agent-humain</b>
+    Points de validation, consentement, modalités de
+    l'interaction.
+    <color:#666666>ch. 9 § 9.2.5, ch. 17 § 17.4, ch. 24 § 24.5</color>
+  ]
+  rectangle A4 [
+    <color:#9E3A14><b>4</b></color>  <b>Agent-données</b>
+    Accès gouverné aux données, récupération
+    inter-organisationnelle.
+    <color:#666666>ch. 2, ch. 9 § 9.4</color>
+  ]
+
+  A1 -[hidden]right- A2
+  A3 -[hidden]right- A4
+  A1 -[hidden]down- A3
+  A2 -[hidden]down- A4
+}
+
+legend
+  Deux axes seulement disposent de protocoles stabilisés · le vertical et l'horizontal.
+  Les deux autres sont traités ailleurs dans la somme.
+endlegend
+@enduml

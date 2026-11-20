@@ -1,0 +1,67 @@
+' Fig. 3. – Passerelle d’agents bidirectionnelle (PEP) à neuf contrôles ordonnés en échec fermé, séparation des flux MCP, A2A et CloudEvents/AsyncAPI, règle de deux et retrait déterministe EXIG-SEC-06.
+' Source : 5 - Memoire (Chapitre 3, p. 28)
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName SansSerif
+skinparam linetype ortho
+skinparam nodesep 20
+skinparam ranksep 16
+
+title
+<b>Passerelle d’agents (PEP) à 9 contrôles et séparation protocolaire</b>
+<size:11><color:#475569>Chemin obligé en échec fermé (EXIG-IAM-17..18), règle de deux et retrait SEC-06</color></size>
+end title
+
+together {
+    rectangle "<b>Cellule appelante</b>\nSPIFFE SVID + sub/act\nModèle sans clés (IAM-06)" as Cellule #F8FAFC;line:0F172A
+    rectangle "<color:#1D4ED8><b>Catalogue interne</b></color>\n4e op. : approuver\nSHA-256 & paliers P0–P3" as Cat #EFF6FF;line:2563EB
+    rectangle "<color:#6D28D9><b>PDP & Approbation</b></color>\nPolitique hors modèle\nh=SHA-256(JCS) · <10 s [S]" as PDP #F5F3FF;line:6D28D9
+
+    Cellule -[hidden]right-> Cat
+    Cat -[hidden]right-> PDP
+}
+
+rectangle "<color:#0F172A><b>Passerelle d’agents — PEP bidirectionnel en échec fermé (EXIG-IAM-17)</b></color>" as PEP #FFFFFF;line:0F172A {
+    rectangle Aller #EFF6FF;line:2563EB [
+    <color:#1D4ED8><b>ALLER · Contrôles 1 à 7 avant relais</b></color>
+    |<#FFFFFF> (1) AuthN SVID/mTLS & débit |<#FFFFFF> (2) Catalogue & SHA-256 |
+    |<#FFFFFF> (3) AuthZ & paliers P0–P3 |<#FFFFFF> (4) Schéma & anti-injection |
+    |<#FFFFFF> (5) Jeton h = SHA-256(JCS) |<#FFFFFF> (6) Quotas & budget tâche |
+    ----
+    <b>(7) Échange RFC 8693 aud. unique · zéro relais de jeton (EXIG-IAM-12)</b>
+    ]
+
+    rectangle "<color:#166534><b>+ Pré-audit d’intention écrit AVANT relais P2/P3 (EXIG-OBS-11)</b></color>" as PreAudit #ECFDF5;line:16A34A
+
+    rectangle "<color:#9A3412><b>RETOUR · Contrôles 8 et 9 avant remise au contexte</b></color>\n(8) Masquage RP/PII & retrait déterministe EXIG-SEC-06\n(9) Span OpenTelemetry & issue au journal d’audit JCS" as Retour #FFF7ED;line:C2410C
+
+    Aller -[hidden]down-> PreAudit
+    PreAudit -[hidden]down-> Retour
+}
+
+together {
+    rectangle "<color:#1D4ED8><b>MCP 2026-07-28</b></color>\nHTTP sans état · ≤ 15 [S]\nProd ≤ juill. 27 · SEP-3398" as MCP #EFF6FF;line:2563EB
+    rectangle "<color:#166534><b>A2A 1.0 (1.0.1)</b></color>\nAAIF · Tâches opaques\nAgent Card JWS/JCS" as A2A #ECFDF5;line:16A34A
+    rectangle "<color:#6D28D9><b>CloudEvents 1.0</b></color>\nAsyncAPI · maxhops = 4\nZéro RP · EXIG-EVT-07" as CE #F5F3FF;line:6D28D9
+
+    MCP -[hidden]right-> A2A
+    A2A -[hidden]right-> CE
+}
+
+rectangle "<color:#991B1B><b>Règle de deux (EXIG-SEC-04) & retrait anti-exfiltration (EXIG-SEC-06)</b></color>\n<color:#991B1B><b>[A] Entrée non fiable (web, courriel, tiers) + [B] Accès privé/sensible</b></color>\n→ Action PEP immédiate : retrait outils d’envoi (même P0) et tout P3\nMarquage propagé sur toute la session · non dérogeable (GOV-17)" as Regle2 #FEF2F2;line:991B1B
+
+Cellule -[#0F172A]-> Aller
+Cat <-[#2563EB]-> Aller
+PDP <-[#6D28D9]-> Aller
+
+Retour <-[#2563EB]-> MCP
+Retour <-[#16A34A]-> A2A
+Retour <-[#6D28D9]-> CE
+
+MCP -[hidden]down-> Regle2
+A2A -[hidden]down-> Regle2
+CE -[hidden]down-> Regle2
+
+@enduml

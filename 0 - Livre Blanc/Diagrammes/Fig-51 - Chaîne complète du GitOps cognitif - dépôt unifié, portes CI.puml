@@ -1,0 +1,58 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 51 (page 193)
+' Légende : Fig. 51. – Chaîne complète du GitOps cognitif : dépôt unifié, portes CI multi-artefacts, attestation Sigstore/SLSA et réconciliation Argo CD
+@startuml
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+skinparam roundcorner 6
+skinparam defaultFontName SansSerif
+skinparam ArrowColor #324e67
+skinparam ArrowFontColor #172025
+skinparam PackageBackgroundColor #ffffff
+skinparam PackageBorderColor #5b6b76
+skinparam PackageFontColor #1a4964
+skinparam RectangleBackgroundColor #f3f7f9
+skinparam RectangleBorderColor #324e67
+skinparam RectangleFontColor #172025
+skinparam DatabaseBackgroundColor #edf3f7
+skinparam DatabaseBorderColor #324e67
+skinparam DatabaseFontColor #172025
+
+package "1. Dépôt Git (Source unique immuable)" as Git {
+  rectangle "Prompts versionnés\n& jeux EvalOps" as Prompts
+  rectangle "Contrats OASF &\nMCP server.json" as Contracts
+  rectangle "Politiques OPA (Rego)\n& manifestes K8s" as Policies
+  rectangle "Code Harnais 80/20\n& Workflows durables" as Code
+}
+
+package "2. Portes CI automatisées (Pull Request)" as CI {
+  rectangle "Promptfoo / EvalOps\n(non-régression PR)" as Promptfoo
+  rectangle "Validateur OASF &\nserver.schema.json" as Validator
+  rectangle "Conftest / OPA Test\n(règles deny_)" as Conftest
+  rectangle "Build OCI + Cosign\n& provenance SLSA v1.2" as Build
+}
+
+package "3. Réconciliation GitOps et admission" as Argo {
+  database "Registre OCI &\nJournal Rekor" as Reg
+  rectangle "Argo CD\n(Sync & Self-Heal)" as ArgoCD
+  rectangle "Contrôle d'admission\n(Gatekeeper / Sigstore)" as Admission
+}
+
+package "4. Exécution cible" as Exec {
+  rectangle "Pods Agents &\nWorkers durables" as Pods
+  rectangle "Registre OASF &\nMCP Gateway" as OASF
+}
+
+Prompts --> Promptfoo : compare vs main
+Contracts --> Validator : valide SemVer
+Policies --> Conftest : contrôle statique
+Code --> Build : empaquette
+Promptfoo --> Build : approuve PR
+Validator --> Build : approuve PR
+Conftest --> Build : approuve PR
+Build --> Reg : pousse artefacts signés
+Reg --> ArgoCD : vérifie signatures
+ArgoCD --> Admission : soumet état désiré
+Admission --> Pods : déploie si attesté
+Admission --> OASF : publie fiches validées
+@enduml

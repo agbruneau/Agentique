@@ -1,0 +1,54 @@
+' Figure 24.5 — Progression de la frontière de confiance et du régime de gouvernance à travers les trois échelles d’orchestration (intra- équipe, inter-équipes, inter-organisations).
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 6
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 13
+skinparam backgroundColor #FFFFFF
+skinparam legendBackgroundColor #F8F5F0
+skinparam legendBorderColor #D6D3CD
+skinparam legendBorderThickness 1
+
+rectangle "TROIS ÉCHELLES, ET UNE RUPTURE À LA TROISIÈME" as CADRE #FFFDF9;line:9A3412 {
+  rectangle E1 #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**1**</color>  **Intra-équipe**
+    ----
+    Domaine unique, un propriétaire
+    responsable.
+    ----
+    <color:#57534E>plan de contrôle homogène, contexte</color>
+    <color:#57534E>partagé sans friction</color>
+  ]
+
+  rectangle E2 #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**2**</color>  **Inter-équipes**
+    ----
+    Plusieurs propriétaires internes.
+    ----
+    <color:#57534E>accords de niveau de service croisés,</color>
+    <color:#57534E>contrats d'interface stables,</color>
+    <color:#57534E>attribution des défaillances</color>
+  ]
+
+  rectangle E3 #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**3**</color>  **Inter-organisations**
+    ----
+    Une frontière de confiance :
+    contrats juridiques,
+    responsabilité distribuée, aucune
+    autorité centrale.
+    ----
+    <color:#57534E>la nature du problème change — § 24.7</color>
+  ]
+
+  E1 -[hidden]right-> E2
+  E2 -[hidden]right-> E3
+}
+
+legend
+  La troisième échelle ne prolonge pas les deux premières : à la frontière de confiance, LA NATURE DU PROBLÈME CHANGE —
+  contrats juridiques, responsabilité distribuée, aucune autorité centrale commune. C'est ce que le § 24.7 traite, et non une
+  orchestration plus grande.
+endlegend
+@enduml

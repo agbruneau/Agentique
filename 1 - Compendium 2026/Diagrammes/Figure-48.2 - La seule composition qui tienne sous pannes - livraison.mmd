@@ -1,0 +1,18 @@
+%% Figure 48.2 — La seule composition qui tienne sous pannes : livraison au-moins-une-fois et consommateur idempotent
+flowchart TB
+    subgraph COMPO["CE QUI SE COMPOSE, ET CE QUI EN RÉSULTE"]
+        direction LR
+        E1["<b>Au moins une fois</b><br/>la livraison ne perd rien, et<br/>peut répéter"]
+        E2["<b>Consommateur idempotent</b><br/>la répétition ne produit pas de<br/>second effet"]
+        E3["<b>Exactement une fois</b><br/>un traitement, non une livraison"]
+        E1 --> E2 --> E3
+    end
+
+    NOTE["La livraison exactement-une-fois est IRRÉALISABLE sous pannes — instance du problème des deux généraux (ch. 1 § 1.5.2).<br/>Ce qui s'obtient est un TRAITEMENT exactement-une-fois, et il se paie du côté du consommateur, jamais du protocole."]
+    COMPO ~~~ NOTE
+
+    classDef step fill:#F5F1EB,stroke:#BBBBBB,color:#222222,text-align:left
+    classDef note fill:#FBF9F5,stroke:#CCCCCC,color:#444444,text-align:left
+    class E1,E2,E3 step
+    class NOTE note
+    style COMPO fill:#FAF8F5,stroke:#8B2E0B,color:#8B2E0B

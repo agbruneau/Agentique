@@ -1,0 +1,34 @@
+' Figure 17 — Délégation par échange de jetons et droits effectifs (2 - Cadre de Référence, ch. 9, p. 143)
+' Source : cadre CRE-IA-2026-01, d'après la RFC 8693 et la RFC 9068
+@startuml
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 11
+skinparam sequenceMessageAlign center
+
+participant "**Alice**\n//utilisatrice (mandante)//" as Alice #E6F0FA
+participant "**Agent orchestrateur**\n//identité SPIFFE propre//" as Orch #EDE8F5
+participant "**Fournisseur d’identité**\n//serveur d’autorisation//" as IdP #FCE8EB
+participant "**Passerelle d’agents**\n//point d’application//" as Gw #FEF3DC
+participant "**Serveur MCP finance**\n//système cible : autre audience//" as MCP #F1F5F9
+
+Alice -> Orch : **1** demande + jeton d’Alice
+Orch -> IdP : **2** échange de jetons (RFC 8693)\n""subject_token = jeton d’Alice""\n""actor_token = JWT-SVID de l’agent""\n""resource = passerelle-agents""
+IdP -[#0F7682]-> Orch : **3** jeton délégué signé, durée courte
+Orch -> Gw : **4** appel d’outil MCP + jeton délégué + ""traceparent""
+
+rnote over Gw #FEF3DC
+  **5** vérifie signature,
+  audience, portée,
+  droits effectifs
+end note
+
+Gw -> MCP : **6** second jeton, au nom d’Alice
+note right of MCP #F8FAFC : filtrage par ligne
+
+legend bottom
+  |= <#0F2744> <color:#93C5FD>**Revendications du jeton délégué (étape 3, extrait)**</color> |= <#FFFFFF> **Droits effectifs = intersection des trois ensembles** |
+  | <#0F2744> <color:#E2E8F0>""{ "sub": "alice",""</color>\n<color:#E2E8F0>""  "act": { "sub": "spiffe://ent.ca/agent-orch" },""</color>\n<color:#E2E8F0>""  "aud": "https://passerelle-agents.ent.ca",""</color>\n<color:#E2E8F0>""  "scope": "finance:read",""</color>\n<color:#E2E8F0>""  "exp": 1793085600, "cnf": { … } }""</color>\n\n<color:#CBD5E1>sub = mandant humain · act = agent qui agit (imbriqué à chaque saut)</color>\n<color:#93C5FD>aud = un seul destinataire (rééchangé à l’étape 5 pour mcp-finance) · cnf = jeton lié à une clé (mTLS ou DPoP)</color> | <#FFFFFF> • Droits d’Alice\n• Portée de l’agent\n• Portée de la tâche\n\nChaque saut conserve ou réduit la portée;\njamais il ne l’élargit. |
+endlegend
+@enduml

@@ -1,0 +1,23 @@
+%% Ouvrage : 0 - Livre Blanc
+%% Figure : Fig. 18 (p. 68)
+%% Légende : Arbre de décision entre API déterministe, MCP, A2A sur HTTP et pile fédérée AGNTCY
+
+flowchart LR
+  classDef nodeStyle fill:#eef3f8,stroke:#2b4c65,color:#0f172a,stroke-width:1.2px;
+
+  Start["Besoin d'interopérabilité"]:::nodeStyle
+  Q1{"Règles stables,<br/>contrat figé et<br/>haut débit ?"}:::nodeStyle
+  R1["API déterministe<br/>(REST, gRPC, iPaaS)"]:::nodeStyle
+  Q2{"Cible = outil<br/>passif sans<br/>raisonnement ?"}:::nodeStyle
+  R2["MCP vertical<br/>(MCP Gateway +<br/>JSON Schema)"]:::nodeStyle
+  Q3{"Inter-org sensible,<br/>NAT ou groupe<br/>dynamique ?"}:::nodeStyle
+  R3["A2A sur HTTP<br/>(JSON-RPC, gRPC,<br/>SSE / Webhook)"]:::nodeStyle
+  R4["A2A + AGNTCY<br/>(OASF/ADS +<br/>SLIM/MLS)"]:::nodeStyle
+
+  Start --> Q1
+  Q1 -->|"Oui"| R1
+  Q1 -->|"Non : piloté<br/>par agent"| Q2
+  Q2 -->|"Oui"| R2
+  Q2 -->|"Non : pair<br/>opaque"| Q3
+  Q3 -->|"Non"| R3
+  Q3 -->|"Oui"| R4

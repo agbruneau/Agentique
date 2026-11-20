@@ -1,0 +1,107 @@
+' Fig. 47. – Pipeline CI/CD probabiliste du cycle de vie ADLC : du registre SemVer+Intent au déploiement Canary sous contrôle pass⁵ et chaos.
+@startuml
+title Pipeline CI/CD Probabiliste du Cycle de Vie Agentique (ADLC)\nDu Registre Composite SemVer+Intent au Déploiement Canary Gouverné par la Constance pass⁵ et le Chaos Protocolaire
+
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam rectangle {
+  BackgroundColor #FFFFFF
+  BorderColor #334155
+}
+
+rectangle E1 #F8FAFC;line:1E293B [
+  **1. Registre SemVer+Intent**
+  ----
+  **Artefact Immuable Signé**
+  • Code graphe & schémas
+  • Empreinte modèle / SLM
+  • Prompts & Agent Skills
+  • Contrats outils MCP
+  • Politiques Cedar / OPA
+  ----
+  **v2.4.0+intent.9f3a81c**
+  Analyse statique & contrats
+]
+
+rectangle E2 #EFF6FF;line:2563EB [
+  **2. Simulation τ-bench**
+  ----
+  **Arène Multi-Tours OpenEnv**
+  • Personas clients adverses
+  • Bouchons SAP / IBM i
+  • Vérification état final BD
+  • Trajectoires stochastiques
+  ----
+  **Porte Qualité Stricte :**
+  **pass⁵ ≥ 0,95 (Critique)**
+  0 violation politique Cedar
+]
+
+rectangle E3 #FFF7ED;line:C2410C [
+  **3. Chaos Agentique**
+  ----
+  **Résilience & Sécurité**
+  • Erreurs HTTP 429 / 503
+  • Latence MCP > 14 s
+  • Schéma JSON tronqué
+  • Injection indirecte ASI01
+  ----
+  **Invariants Vérifiés :**
+  Idempotence + Repli SLM
+  Compensation Saga exacte
+]
+
+rectangle E4 #F5F3FF;line:7C3AED [
+  **4. Shadow Mode**
+  ----
+  **Trafic Réel Sans Effet**
+  • Miroir du trafic réel
+  • Outils mutatifs simulés
+  • Comparaison trajectoire
+  • Mesure latence & coût
+  ----
+  **Concordance ≥ 98 %**
+  Fenêtre d'observation 24 h
+]
+
+rectangle E5 #F0FDF4;line:166534 [
+  **5. Canary 5% → 100%**
+  ----
+  **Exposition Graduée**
+  • Palier 1 : 5 % (2 h)
+  • Palier 2 : 25 % (6 h)
+  • Palier 3 : 100 %
+  • Affinité saga épinglée
+  ----
+  **Promotion Auto**
+  Sous SLO OTel continus
+]
+
+E1 -[#2563EB]right-> E2
+E2 -[#2563EB]right-> E3
+E3 -[#2563EB]right-> E4
+E4 -[#2563EB]right-> E5
+
+rectangle "Boucle Fermée de Sûreté en Production : Retour en Arrière Instantané & Enrichissement du Corpus τ-bench" as BoucleSurete #FEF2F2;line:DC2626 {
+  rectangle Conversion #FFFFFF;line:1E293B [
+    **Conversion Trace → Test de Non-Régression**
+    • Extraction trace OTel anonymisée
+    • Génération d'un scénario OpenEnv dédié
+    • Ajout permanent à la suite d'or τ-bench
+  ]
+
+  rectangle Rollback #FFFFFF;line:DC2626 [
+    **Déclencheurs de Rollback (< 30 s)**
+    • Escalade HOTL > +35 % vs référence
+    • Coût p95 > 0,55 $ CAD ou livelock > 0,2 %
+    • Rejet Cedar / erreur schéma MCP > +0,5 pt
+  ]
+
+  Conversion <-[#DC2626]right- Rollback
+}
+
+E5 -[#DC2626]down-> Rollback
+E2 <-[#1E293B]down. Conversion
+@enduml

@@ -1,0 +1,49 @@
+' Figure 13.5 — Le fossé d’adoption : ce que le corpus documente, et à quel degré d’absence.
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 6
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 13
+skinparam backgroundColor #FFFFFF
+
+rectangle C1 #FAF6F0;line:B8B2A6 [
+  <color:#57534E>CE QUE LE CORPUS PORTE</color>
+  ----
+  **Des spécifications, et leurs stades**
+
+  Modèle de données d'accréditation et identifiants
+  décentralisés du W3C
+
+  Des profils d'interopérabilité, avec leur lacune de
+  couverture déclarée
+
+  Des groupes communautaires agentiques
+  ----
+  **l'appareil normatif existe**
+]
+
+rectangle C2 #FFFFFF;line:9A3412 [
+  <color:#9A3412>CE QU'IL NE PORTE PAS</color>
+  ----
+  **Aucun établissement financier réglementé, nommément**
+
+  exploitant EN PRODUCTION
+
+  des accréditations vérifiables ou des identifiants
+  décentralisés
+
+  au corpus consulté le 21 juillet 2026
+  ----
+  **troisième degré d'absence**
+]
+
+rectangle NOTE #F8F5F0;line:D6D3CD [
+  C'est une ABSENCE DE DOCUMENTATION, non un fait négatif vérifié (troisième degré). Elle ne soutient en
+  aucun cas l'énoncé « aucune banque n'emploie ces mécanismes » — et la figure ne doit pas laisser lire ce qu'elle ne dit pas.
+]
+
+C1 -[hidden]right-> C2
+C1 -[hidden]down-> NOTE
+C2 -[hidden]down-> NOTE
+@enduml

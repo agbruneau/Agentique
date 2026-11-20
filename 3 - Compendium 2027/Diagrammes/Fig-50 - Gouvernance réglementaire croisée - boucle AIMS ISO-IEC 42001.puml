@@ -1,0 +1,115 @@
+' Fig. 50. – Gouvernance réglementaire croisée : boucle AIMS ISO/IEC 42001, qualification dynamique par empreinte de déploiement et encadrement B2B AP2.
+@startuml
+title Gouvernance Réglementaire Croisée : Cycle ISO/IEC 42001, Empreinte Dynamique et Droit B2B (AP2)
+
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam rectangle {
+  BackgroundColor #FFFFFF
+  BorderColor #334155
+}
+
+rectangle "Système de Management de l'IA (AIMS) — Boucle Continue ISO/IEC 42001 & Profil NIST AI RMF" as AIMS #F8FAFC;line:475569 {
+  rectangle Plan #FFFFFF;line:475569 [
+    **1. PLAN (Clauses 4–6)**
+    Inventaire NHI/Agents, appétit
+    au risque & études d'impact
+  ]
+  rectangle Do #FFFFFF;line:475569 [
+    **2. DO (Clauses 7–8, Annexe A)**
+    Portes CI/CD, politiques OPA/Cedar
+    & délégation OAuth 2.1 OBO
+  ]
+  rectangle Check #FFFFFF;line:475569 [
+    **3. CHECK (Clause 9)**
+    Traces OTel gen_ai.*, stabilité
+    pass^k & audit indépendant
+  ]
+  rectangle Act #FFFFFF;line:475569 [
+    **4. ACT (Clause 10)**
+    Kill-Switch, gestion incidents,
+    recalibrage seuils & prompts
+  ]
+
+  Plan -[#2563EB]right-> Do
+  Do -[#2563EB]right-> Check
+  Check -[#2563EB]right-> Act
+}
+
+rectangle "Règle de l'Empreinte de Déploiement (Deployment Footprint) — Qualification Dynamique du Risque" as Footprint #EFF6FF;line:2563EB {
+  rectangle Vecteur #FFFFFF;line:475569 [
+    **Vecteur d'Empreinte Évalué en CI/CD et sur Passerelle :**
+    Footprint = (Modèle, Outils MCP mutatifs, Sensibilité Données/Juridiction, Autonomie L0–L4)
+    Un même LLM change de classe légale dès qu'on lui greffe un outil d'écriture ou des PII
+  ]
+  rectangle HWM #FFFFFF;line:2563EB [
+    **Moteur d'Héritage « High-Water Mark » (OPA)**
+    Toute saga multi-agents hérite des exigences du maillon
+    le plus critique (bloque le déploiement si dossier incomplet)
+  ]
+
+  Vecteur -[#2563EB]right-> HWM
+}
+
+rectangle BSIF #F8FAFC;line:1E293B [
+  **BSIF / OSFI E-23 (1er mai 2027)**
+  ----
+  • Périmètre élargi aux systèmes agentiques
+  • Cote de matérialité & validation 2e ligne
+  • Preuve de constance (pass⁵ ≥ 0,97) & suivi dérive
+  • Séparation des tâches (NHI distincts)
+  **Cible : Institutions financières fédérales**
+]
+
+rectangle Loi25 #F8FAFC;line:166534 [
+  **Loi 25 — Québec (Art. 12.1 & ÉFVP)**
+  ----
+  • Avis explicite de décision 100 % automatisée
+  • Accès aux renseignements & facteurs clés
+  • Droit d'observation & révision humaine HOTL
+  • ÉFVP obligatoire avant transfert hors Québec
+  **Cible : Tout traitement de PII de résidents QC**
+]
+
+rectangle EUAI #F8FAFC;line:C2410C [
+  **EU AI Act (Août 2026 & Déc. 2027)**
+  ----
+  • Art. 50 (août 2026) : transparence & marquage
+  • Annexe III (déc. 2027) : emploi, crédit, infra.
+  • Journaux automatiques Art. 12 & dossier Ann. IV
+  • Contrôle humain effectif Art. 14 + bouton arrêt
+  **Cible : Mise sur le marché ou impact dans l'UE**
+]
+
+BSIF -[hidden]right-> Loi25
+Loi25 -[hidden]right-> EUAI
+
+rectangle "Encadrement Juridique et Technique du Commerce B2B Inter-Agents (A2A v1.0 + Protocole AP2)" as B2B #F0FDF4;line:166534 {
+  rectangle MandatAP2 #FFFFFF;line:166534 [
+    **Mandat Cryptographique AP2 Borné**
+    Plafond CAD, incoterms & SKU signés (confinement
+    opposable du mandat apparent face au tiers)
+  ]
+  rectangle AntiCollusion #FFFFFF;line:166534 [
+    **Garde-Fous Anti-Collusion & Erreur**
+    Cloisonnement mémoire par enchère, interdiction
+    d'alignement tarifaire & seuil d'anomalie prix
+  ]
+  rectangle PreuveWORM #FFFFFF;line:166534 [
+    **Preuve Non-Répudiable & Contrat-Cadre**
+    Journaux WORM scellés (JWS/Merkle), délai de
+    rétractation erreur manifeste & arbitrage
+  ]
+
+  MandatAP2 -[hidden]right-> AntiCollusion
+  AntiCollusion -[hidden]right-> PreuveWORM
+}
+
+Do -[#1E293B]down-> Vecteur
+HWM -[#1E293B]down-> BSIF
+HWM -[#1E293B]down-> Loi25
+HWM -[#1E293B]down-> EUAI
+Loi25 -[#166534]down-> AntiCollusion
+@enduml

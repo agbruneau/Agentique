@@ -1,0 +1,18 @@
+%% Figure 25.1 — E-23 : de la publication à la date de prise d’effet (au 1ᵉʳ mai 2027, les attentes nouvelles du Bureau prennent effet sans modification du texte).
+%%{init: {'flowchart': {'wrappingWidth': 900}}}%%
+flowchart TB
+    subgraph FRISE["UNE PUBLICATION, UNE ENTRÉE EN VIGUEUR"]
+        direction LR
+        J1["<b>11 sept. 2025 — Version finale publiée</b><br/>le texte est arrêté ; aucune attente nouvelle du Bureau<br/>n'en découle encore"]
+        J2["<b>1er mai 2027 — Date de prise d'effet</b><br/>institutions financières fédérales ; le texte n'a pas changé,<br/>sa portée si"]
+        J1 --> J2
+    end
+
+    NOTE["La date de prise d'effet est celle de l'ENTRÉE EN VIGUEUR, non celle de la publication : entre les deux, une institution n'a aucune<br/>attente nouvelle du Bureau · et après, ces attentes prennent effet sans que le texte ait changé d'un mot."]
+
+    FRISE ~~~ NOTE
+
+    style FRISE fill:#FFFDF9,stroke:#9A3412,stroke-width:1px,color:#9A3412
+    style J1 fill:#FAF6F0,stroke:#9A3412,stroke-width:2px,color:#1F2937
+    style J2 fill:#FFFFFF,stroke:#9A3412,stroke-width:2px,stroke-dasharray:5 3,color:#1F2937
+    style NOTE fill:#F8F5F0,stroke:#D6D3CD,color:#374151

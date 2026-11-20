@@ -1,0 +1,21 @@
+%% Figure 43.1 — Les six couches de l'architecture de référence unifiée : ce que chacune tient et ce qu'elle ne porte pas
+flowchart TB
+    subgraph COUCHES["SIX COUCHES, ET CE QUE CHACUNE TIENT"]
+        direction TB
+        C6["<b>6 · Gouvernance</b><br/>Inventaire, cotation, cycle de vie, documentation, surveillance."]
+        C5["<b>5 · Exploitation — AgentOps</b><br/>Seize métriques au grain de l'opération, aucune de parc ;<br/>la dimension d'agent est un nom, pas une identité."]
+        C4["<b>4 · Maillage</b><br/>Appliquer la politique à l'arête — siège ch. 37. Ne porte pas l'émission."]
+        C3["<b>3 · Orchestration</b><br/>Tenir l'enchaînement, produire la trace. Taxonomie OO1-OO4, cinq propriétés, sept critères."]
+        C2["<b>2 · Identité et registre</b><br/>Identités et gabarits d'identité sur des protocoles d'autorisation<br/>qui étendent les RFC plutôt qu'ils ne s'y conforment."]
+        C1["<b>1 · Protocoles</b><br/>Accès aux outils, données typées, cadre d'autorisation ; délégation de pair à pair,<br/>cartes signées. Ne porte ni le sens, ni l'ancrage."]
+        C6 ~~~ C5 ~~~ C4 ~~~ C3 ~~~ C2 ~~~ C1
+    end
+
+    NOTE["LE DÉCOUPAGE EST UNE CONSTRUCTION DE LA SOMME ; sa vertu est d'obliger à dire<br/>au Tableau 43.1 ce que chaque couche tient et ce qu'elle ne porte pas.<br/>Quatre réserves commandent la lecture du tableau source (§ 43.1.2)."]
+    C1 ~~~ NOTE
+
+    classDef layer fill:#F5F1EB,stroke:#BBBBBB,color:#222222,text-align:left
+    classDef note fill:#FBF9F5,stroke:#CCCCCC,color:#444444,text-align:left
+    class C6,C5,C4,C3,C2,C1 layer
+    class NOTE note
+    style COUCHES fill:#FAF8F5,stroke:#8B2E0B,color:#8B2E0B

@@ -1,0 +1,54 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 13 (p. 53)
+' Légende : Séquence protocolaire MCP 2026-07-28 : découverte sans état, transport Streamable HTTP, reprise MRTR et cache ttlMs
+
+@startuml
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam sequence {
+  ArrowColor #2B4C65
+  LifeLineBorderColor #64748B
+  LifeLineBackgroundColor #FFFFFF
+  ParticipantBorderColor #2B4C65
+  ParticipantBackgroundColor #F1F6F9
+  DividerBorderColor #2B4C65
+  DividerBackgroundColor #F1F6F9
+  GroupBorderColor #334155
+  GroupBackgroundColor #FFFFFF
+  GroupHeaderFontColor #0F172A
+}
+
+autonumber
+
+participant "Hôte & Client MCP\n(Agent Harness)" as client
+participant "Passerelle / Serveur MCP\n(Point POST /mcp unique)" as mcp
+participant "Système aval\n(API / Données)" as aval
+
+== 1. Découverte sans état et cache (ttlMs) ==
+
+client -> mcp : POST server/discover\n(_meta.protocolVersion: "2026-07-28",\nMCP-Protocol-Version)
+mcp --> client : 200 OK (supportedVersions, capabilities,\nttlMs, cacheScope: "public")
+client -> mcp : POST tools/list (cursor optionnel)
+mcp --> client : 200 OK (tools[], nextCursor, ttlMs,\ncacheScope)
+
+== 2. Invocation, MRTR et flux SSE par requête ==
+
+client -> mcp : POST tools/call\n(Mcp-Method, Mcp-Name, Mcp-Param-*)
+
+alt Information complémentaire requise (MRTR)
+  mcp --> client : 200 OK (resultType: "input_required",\ninputRequests, requestState)
+  client -> client : Collecte inputResponses\n(saisie ou approbation)
+  client -> mcp : POST tools/call (nouvel id,\ninputResponses + requestState)
+end
+
+mcp -> aval : Appel métier normalisé (idempotent)
+aval --> mcp : Réponse aval
+mcp --> client : 200 OK (text/event-stream SSE :\nnotifications/progress -> resultType:\n"complete",\nstructuredContent)
+
+== 3. Notifications sur abonnement explicite ==
+
+client -> mcp : POST subscriptions/listen\n(toolsListChanged: true)
+mcp --> client : Flux SSE ouvert\n(notifications/subscriptions/acknowledged)
+mcp --> client : SSE : notifications/tools/list_changed
+
+@enduml

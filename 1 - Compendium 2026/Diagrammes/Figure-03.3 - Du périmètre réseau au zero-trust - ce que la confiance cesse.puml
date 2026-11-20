@@ -1,0 +1,83 @@
+' Figure 3.3 — Du périmètre réseau au zero-trust : ce que la confiance cesse de dériver de la localisation.
+' Source : 1 - Compendium 2026, Chapitre 3 (page 42)
+
+@startuml
+top to bottom direction
+hide stereotype
+skinparam packageStyle rectangle
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 13
+skinparam shadowing false
+skinparam roundCorner 4
+skinparam nodesep 30
+skinparam ranksep 18
+
+skinparam package {
+  BackgroundColor #FFFFFF
+  BorderColor #FFFFFF
+  FontColor #555555
+  FontStyle bold
+}
+
+skinparam package<<accent>> {
+  BackgroundColor #FFFFFF
+  BorderColor #FFFFFF
+  FontColor #9E3A14
+  FontStyle bold
+}
+
+skinparam rectangle {
+  BackgroundColor #FAF7F2
+  BorderColor #B8B3AA
+  FontColor #222222
+}
+
+skinparam rectangle<<accent>> {
+  BackgroundColor #FFFFFF
+  BorderColor #9E3A14
+  BorderThickness 2
+  FontColor #222222
+}
+
+skinparam rectangle<<sub>> {
+  BackgroundColor #FFFFFF
+  BorderColor #FFFFFF
+  FontColor #222222
+}
+
+skinparam legendBackgroundColor #F7F5F0
+skinparam legendBorderColor #C4BEB5
+skinparam legendFontColor #333333
+
+package "PÉRIMÈTRE RÉSEAU" as P_LEFT {
+  rectangle L_BOX [
+    <b>La confiance dérive de la localisation</b>
+    Dedans le périmètre : implicitement autorisé
+    Dehors : authentifié à l'entrée, une fois
+    Le déplacement latéral n'est pas vérifié
+  ]
+  rectangle "<b>un mur, et ce qu'il laisse passer une fois franchi</b>" as L_SUB <<sub>>
+  L_BOX -[hidden]down- L_SUB
+}
+
+package "ZERO-TRUST" as P_RIGHT <<accent>> {
+  rectangle R_BOX <<accent>> [
+    <b>Aucune confiance n'est dérivée de la localisation</b>
+    Authentification et autorisation à CHAQUE appel
+    Point de décision et point d'application distincts
+    TLS mutuel systématique entre charges de travail
+  ]
+  rectangle "<b>SPIFFE/SPIRE porte l'identité de charge ; WIMSE l'étend</b>" as R_SUB <<sub>>
+  R_BOX -[hidden]down- R_SUB
+}
+
+L_BOX -[hidden]right- R_BOX
+L_SUB -[hidden]right- R_SUB
+
+legend
+  NIST SP 800-207 nomme les composants — point de décision, point d'application, évaluation continue par requête.
+  Il ne dit pas ce qu'un point d'application doit LIRE quand l'appelant est un agent : c'est l'objet du ch. 37,
+  et le socle n'y répond pas davantage.
+endlegend
+@enduml

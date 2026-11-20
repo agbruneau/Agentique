@@ -1,0 +1,67 @@
+' Figure 7.5 — Les quatre branches de la collision « ACP » / « (agentic) control plane », et le statut de chacune.
+' Source : 1 - Compendium 2026, Chapitre 7 (page 88)
+
+@startuml
+top to bottom direction
+hide stereotype
+skinparam packageStyle rectangle
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 13
+skinparam shadowing false
+skinparam roundCorner 4
+skinparam nodesep 25
+skinparam ranksep 25
+
+skinparam package {
+  BackgroundColor #FFFFFF
+  BorderColor #E0DDD7
+  FontColor #9E3A14
+  FontStyle bold
+}
+
+skinparam rectangle {
+  BackgroundColor #FAF7F2
+  BorderColor #B8B3AA
+  FontColor #222222
+}
+
+skinparam legendBackgroundColor #F7F5F0
+skinparam legendBorderColor #C4BEB5
+skinparam legendFontColor #333333
+
+package "UN SIGLE, QUATRE OBJETS" {
+  rectangle B1 [
+    <color:#9E3A14><b>a</b></color>  <b>ACP protocolaire</b>
+    Agent Communication Protocol d'IBM Research et BeeAI.
+    <color:#666666>fusionné en août 2025 — jamais un standard vivant</color>
+  ]
+  rectangle B2 [
+    <color:#9E3A14><b>b</b></color>  <b>Agentic Control Plane</b>
+    Programme d'un consortium d'institutions financières et
+    de télécommunications.
+    <color:#666666>annoncé en juillet 2026 — Livre III</color>
+  ]
+  rectangle B3 [
+    <color:#9E3A14><b>c</b></color>  <b>« agentic control plane »</b>
+    Expression employée par IBM pour positionner un produit
+    d'orchestration.
+    <color:#666666>positionnement commercial, à attribuer</color>
+  ]
+  rectangle B4 [
+    <color:#9E3A14><b>d</b></color>  <b>Composante ACP</b>
+    De la couche d'infrastructure agentique.
+    <color:#666666>ni intitulé ni identité établis — lacune</color>
+  ]
+
+  B1 -[hidden]right- B2
+  B3 -[hidden]right- B4
+  B1 -[hidden]down- B3
+  B2 -[hidden]down- B4
+}
+
+legend
+  Quatre objets, un seul sigle, et aucun n'est l'autre. La quatrième branche n'a NI INTITULÉ COMPLET
+  NI IDENTITÉ ÉTABLIS — c'est une lacune du socle, non une abréviation.
+endlegend
+@enduml

@@ -1,0 +1,21 @@
+%% Figure 5.0 — Frontières de gouvernance entre mémoire interne, récupération externe (RAG) et protocole d'accès : pourquoi un même contrôle ne peut régir les trois.
+%% Source : 1 - Compendium 2026, Chapitre 5 (page 62)
+
+%%{init: {'flowchart': {'wrappingWidth': 900}}}%%
+flowchart TB
+    subgraph SG_OBJ["TROIS OBJETS, TROIS PROVENANCES"]
+        direction LR
+        O1["<b>1 · Mémoire</b><br/><br/>Ce que l'agent produit et conserve<br/>de sa propre activité.<br/><br/><i>interne, écrite par l'agent</i>"]
+        O2["<b>2 · Récupération</b><br/><br/>Ce qu'il va chercher dans un<br/>corpus tiers.<br/><br/><i>externe, écrite par d'autres</i>"]
+        O3["<b>3 · Protocole d'accès</b><br/><br/>La tuyauterie qui relie l'un et<br/>l'autre aux sources.<br/><br/><i>ni l'un ni l'autre — un transport</i>"]
+    end
+
+    NOTE["Les trois n'ont NI LE MÊME CYCLE DE VIE NI LA MÊME GOUVERNANCE. Les confondre revient à gouverner l'un par les règles de<br/>l'autre — une mémoire interne traitée comme un corpus tiers, ou l'inverse."]
+
+    SG_OBJ ~~~ NOTE
+
+    classDef card fill:#FAF7F2,stroke:#C4BEB5,stroke-width:1px,color:#222222,text-align:left;
+    classDef noteBox fill:#F7F5F0,stroke:#C4BEB5,stroke-width:1px,color:#333333,text-align:left;
+    class O1,O2,O3 card;
+    class NOTE noteBox;
+    style SG_OBJ fill:#FFFFFF,stroke:none,color:#9E3A14

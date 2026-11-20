@@ -1,0 +1,42 @@
+' Figure 24 — Modèle opérationnel en étoile (2 - Cadre de Référence, ch. 11, p. 195)
+' Source : cadre CRE-IA-2026-01; les six domaines sont donnés à titre d'exemple
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 12
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 11
+
+package "Sécurité, risques et gouvernance : politiques, audit, approbations" as Ring #FFFFFF;line:9C2F39;line.dashed {
+  rectangle "**Finance**\nMCP, agents, budget" as D1 #EDE8F5;line:5A469B
+  rectangle "**Ventes**\nMCP, agents, budget" as D2 #EDE8F5;line:5A469B
+  rectangle "**Ressources humaines**\nMCP, agents, budget" as D3 #EDE8F5;line:5A469B
+  usecase "**Plateforme**\n**agentique centrale**\n\npasserelles, catalogue,\nregistre, gabarits,\nobservabilité, évaluation" as Hub #0F2744;text:FFFFFF;line:0F2744
+  rectangle "**Approvisionnement**\nMCP, agents, budget" as D4 #EDE8F5;line:5A469B
+  rectangle "**Service à la clientèle**\nMCP, agents, budget" as D5 #EDE8F5;line:5A469B
+  rectangle "**Opérations TI**\nMCP, agents, budget" as D6 #EDE8F5;line:5A469B
+
+  D1 -[#0F7682]- Hub
+  D2 -[#0F7682]- Hub
+  D3 -[#0F7682]- Hub
+  Hub -[#0F7682]- D4
+  Hub -[#0F7682]- D5
+  Hub -[#0F7682]- D6
+  D2 -[hidden]right-> D1
+  D1 -[hidden]right-> D3
+  D4 -[hidden]right-> D6
+  D6 -[hidden]right-> D5
+}
+
+together {
+  rectangle "**Plateforme centrale — fournit et opère**\n\nPasserelles de modèles et d’agents, bus d’événements,\ncatalogue et registre, gabarits (SDK, CI/CD, traçage),\noutillage d’évaluation, tableaux de bord de coûts,\ncoupe-circuit global." as R1 #E6F0FA;line:93C5FD
+  rectangle "**Domaines métier — bâtissent et exploitent**\n\nServeurs MCP de domaine et logique des agents,\nclassement des outils par palier, jeux d’évaluation\nmétier, budget et imputation, propriétaire nommé\net équipe de garde pour chaque agent." as R2 #EDE8F5;line:C4B5FD
+  rectangle "**Sécurité, risques, gouvernance — encadrent**\n\nPolitiques d’identité, paliers et seuils d’approbation,\ntests d’abus et d’intrusion, audit des contrôles,\ndérogations; le comité approuve le niveau N4 et\nles agents à risque élevé." as R3 #FCE8EB;line:F4B4BC
+
+  R1 -[hidden]down-> R2
+  R2 -[hidden]down-> R3
+}
+
+D3 -[hidden]right-> R1
+D5 -[hidden]right-> R3
+@enduml

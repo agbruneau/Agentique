@@ -1,0 +1,55 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 33 (page 126)
+' Légende : Fig. 33. – Anatomie des modes de défaillance d’une boucle agentique exécutée en mémoire volatile
+@startuml
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+skinparam roundcorner 6
+skinparam defaultFontName SansSerif
+skinparam ArrowColor #324e67
+skinparam ArrowFontColor #172025
+skinparam ParticipantBackgroundColor #f3f7f9
+skinparam ParticipantBorderColor #324e67
+skinparam ParticipantFontColor #172025
+skinparam SequenceLifeLineBorderColor #7e8a93
+skinparam SequenceGroupBorderColor #324e67
+skinparam SequenceGroupBackgroundColor #edf3f7
+skinparam SequenceGroupHeaderFontColor #1a4964
+skinparam NoteBackgroundColor #fdfaf0
+skinparam NoteBorderColor #b0a372
+skinparam NoteFontColor #172025
+
+autonumber
+
+participant "Boucle Agent\n(Pod K8s volatile)" as Agent
+participant "API Inférence\n(LLM Externe)" as LLM
+participant "MCP Gateway\n/ SoR" as MCP
+participant "Contrôleur K8s\n(RollingUpdate)" as K8s
+
+group 1. Saturation débit et tempête de reprises (sans gigue)
+  Agent -> LLM : POST /messages (Tour N, contexte en RAM)
+  LLM --> Agent : HTTP 429 rate_limit_error\n(Retry-After) ou 503 overloaded
+  note over Agent
+    Sans backoff ni gigue :
+    reprises synchronisées des workers.
+    Risque de timeout proxy HTTP 504.
+  end note
+end
+
+group 2. Éviction de pod et perte de pile en mémoire vive
+  Agent -> MCP : Mutation 1 : réserver inventaire (POST)
+  MCP --> Agent : HTTP 201 Réservation #R-402
+  Agent -> LLM : Tour N+1 : planifier facturation
+  K8s -> Agent : SIGTERM (déploiement / nœud préempté)\nDécompte terminationGracePeriodSeconds\n(30s)
+  note over LLM
+    Appel LLM en cours > 30s :
+    le délai expire avant la fin du tour.
+  end note
+  K8s -x Agent : SIGKILL (arrêt brutal du conteneur)
+  note over Agent
+    Pile d'appels, historique de session
+    et reçu #R-402 perdus en RAM.
+    La relance à zéro risque la double écriture.
+  end note
+end
+@enduml

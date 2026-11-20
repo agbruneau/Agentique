@@ -1,0 +1,72 @@
+' Fig. 15. – Trois modèles de découverte, distingués par l'endroit où réside l'index : centralisé, fédéré ou distribué.
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+
+rectangle "**Centralisé**" as Centralise #FFFFFF;line:94A3B8 {
+  rectangle "éditeur" as E1 #F8FAFC;line:64748B
+  rectangle "éditeur" as E2 #F8FAFC;line:64748B
+  rectangle "éditeur" as E3 #F8FAFC;line:64748B
+  E1 -[hidden]right-> E2
+  E2 -[hidden]right-> E3
+
+  rectangle "**Index unique**" as Idx #EFF6FF;line:2563EB
+  E1 -[#94A3B8]down-> Idx
+  E2 -[#94A3B8]down-> Idx
+  E3 -[#94A3B8]down-> Idx
+
+  rectangle "**Où réside l'index**\nUn dépôt unique, public ou interne" as DescC #FFFFFF;line:FFFFFF
+  Idx -[hidden]down-> DescC
+}
+
+rectangle "**Fédéré**" as Federe #FFFFFF;line:94A3B8 {
+  rectangle "domaine" as D1 #F8FAFC;line:64748B
+  rectangle "domaine" as D2 #F8FAFC;line:64748B
+  rectangle "domaine" as D3 #F8FAFC;line:64748B
+  D1 -[hidden]right-> D2
+  D2 -[hidden]right-> D3
+
+  rectangle "**registre**" as R1 #EFF6FF;line:2563EB
+  rectangle "**registre**" as R2 #EFF6FF;line:2563EB
+  R1 -[hidden]right-> R2
+  R1 <-[#2563EB]right-> R2
+
+  D1 -[#94A3B8]down-> R1
+  D2 -[#94A3B8]down-> R1
+  D2 -[#94A3B8]down-> R2
+  D3 -[#94A3B8]down-> R2
+
+  rectangle "**Où réside l'index**\nChaque domaine publie; des registres\nindexent et se renvoient les requêtes" as DescF #FFFFFF;line:FFFFFF
+  R1 -[hidden]down-> DescF
+  R2 -[hidden]down-> DescF
+}
+
+rectangle "**Distribué**" as Distribue #FFFFFF;line:94A3B8 {
+  usecase "pair" as P1 #EFF6FF;line:2563EB
+  usecase "pair" as P2 #EFF6FF;line:2563EB
+  usecase "pair" as P3 #EFF6FF;line:2563EB
+  usecase "pair" as P4 #EFF6FF;line:2563EB
+  usecase "pair" as P5 #EFF6FF;line:2563EB
+
+  P2 -[hidden]right-> P3
+  P4 -[hidden]right-> P5
+  P1 -[#94A3B8]down- P2
+  P1 -[#94A3B8]down- P3
+  P2 -[#94A3B8]- P3
+  P2 -[#94A3B8]down- P4
+  P2 -[#94A3B8]down- P5
+  P3 -[#94A3B8]down- P4
+  P3 -[#94A3B8]down- P5
+  P4 -[#94A3B8]- P5
+
+  rectangle "**Où réside l'index**\nUn réseau pair-à-pair\nsans opérateur central" as DescD #FFFFFF;line:FFFFFF
+  P4 -[hidden]down-> DescD
+  P5 -[hidden]down-> DescD
+}
+
+Centralise -[hidden]right-> Federe
+Federe -[hidden]right-> Distribue
+
+@enduml

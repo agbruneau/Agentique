@@ -1,0 +1,19 @@
+%% Ouvrage : 1 - Compendium 2026
+%% Chapitre : 36 · Prospective : AP2 sur les rails canadiens ? (p. 418)
+%% Figure : Figure 36.1 — La stratification de la chaîne de paiement (de la couche 1 d’intention en bas à la couche 3 de règlement en haut) : l’agentique est admise dans la couche 1 et le non-déterminisme ne doit pas remonter au-dessus de cette première couche vers l’autorisation et le règlement.
+flowchart TB
+    subgraph S["TROIS COUCHES, UNE SEULE ADMET L'AGENTIQUE"]
+        direction TB
+        C3["<b>3 · Règlement</b><br/>La finalité. NON — doit rester déterministe et fondé sur des règles."]
+        C2["<b>2 · Autorisation</b><br/>Vérifier qu'une instruction est conforme à un mandat préexistant : montant, bénéficiaire, fenêtre temporelle, politique de<br/>consentement. NON — vérification, non délibération."]
+        C1["<b>1 · Intention, orchestration, négociation</b><br/>Interpréter un besoin exprimé en langage naturel, comparer des offres, composer un panier, préparer une instruction. OUI —<br/>c'est là que le non-déterminisme apporte une valeur réelle."]
+        C3 ~~~ C2 ~~~ C1
+    end
+    NOTE["L'ERREUR DE CONCEPTION À PROSCRIRE est de laisser le non-déterminisme remonter au-dessus de la première couche. L'autorisation est<br/>une VÉRIFICATION, non une délibération ; le règlement doit rester déterministe et fondé sur des règles, identique à ce qu'il<br/>est aujourd'hui."]
+    S ~~~ NOTE
+
+    style S fill:#fdfbf7,stroke:#d4cfc7,color:#9c3d14
+    style C3 fill:#f7f4ee,stroke:#b8b4ac,color:#1a1a1a
+    style C2 fill:#f7f4ee,stroke:#b8b4ac,color:#1a1a1a
+    style C1 fill:#f7f4ee,stroke:#9c3d14,color:#1a1a1a
+    style NOTE fill:#faf8f4,stroke:#b8b4ac,color:#444444

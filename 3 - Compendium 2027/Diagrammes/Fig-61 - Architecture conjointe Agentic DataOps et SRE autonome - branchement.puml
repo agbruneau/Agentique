@@ -1,0 +1,83 @@
+' Fig. 61. – Architecture conjointe Agentic DataOps et SRE autonome : branchement Write-Audit-Publish sous Data Contracts et investigation causale OTel avec remédiation bornée par Cedar.
+@startuml
+title Agentic DataOps & SRE Autonome : Gardiens de Data Contracts, Quarantaine et Remédiation sous Cedar
+
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam rectangle {
+  BackgroundColor #FFFFFF
+  BorderColor #334155
+}
+
+rectangle "Couloir 1 — Agentic DataOps & Contrats de Données" as Couloir1 #EFF6FF;line:2563EB {
+  rectangle C1_1 #FFFFFF;line:475569 [
+    **1. Détection de Rupture Amont (CDC / Kafka / Iceberg)**
+    Changement de schéma, dérive d'unité (bar/kPa, °F/°C), nulls
+    Blocage immédiat avant pollution de la couche Or & RAG
+  ]
+  rectangle C1_2 #FFFFFF;line:2563EB [
+    **2. Agent Gardien Sémantique & Lignée (OpenLineage)**
+    Croise commit Git producteur + ontologie Apache Ossie
+    Dérive bénigne (renommage) → génère PR dbt/Spark testée
+    **Dérive sémantique grave → isolement en branche WAP**
+  ]
+  rectangle C1_3 #F0FDF4;line:166534 [
+    **3. Protection de la Flotte Aval (Write-Audit-Publish)**
+    Publication atomique uniquement après validation contrat
+    **Zéro empoisonnement silencieux des agents métiers (ASI06)**
+  ]
+
+  C1_1 -[#2563EB]down-> C1_2
+  C1_2 -[#166534]down-> C1_3
+}
+
+rectangle "Couloir 2 — SRE Autonome Borné (Incident → Remédiation)" as Couloir2 #F5F3FF;line:5B21B6 {
+  rectangle C2_1 #FFFFFF;line:475569 [
+    **1. Corrélation Causale OpenTelemetry (Traces + Logs)**
+    Déduplication tempête d'alertes via graphe de topologie
+    Ouverture d'une enquête en lecture seule stricte (L1)
+  ]
+  rectangle C2_2 #FFFFFF;line:7C3AED [
+    **2. Essaim d'Hypothèses Concurrentes (Lecture Seule)**
+    Agent Réseau • Agent DB/Locks • Agent Déploiement récent
+    Réfutation factuelle par requêtes PromQL / eBPF / Git
+    **Sélection d'un Runbook paramétré pré-homologué**
+  ]
+  rectangle C2_3 #FFF7ED;line:C2410C [
+    **3. Exécution sous Garde-Fou Cedar (Zéro Shell Libre)**
+    Actions bornées : rollback Canary, drain pod, purge cache
+    **Actions destructives (DROP, IAM) : CIBA humain requis**
+  ]
+
+  C2_1 -[#1E293B]down-> C2_2
+  C2_2 -[#C2410C]down-> C2_3
+}
+
+C2_2 <-[#1E293B]-> C1_2
+
+rectangle "Gouvernance par Rayon d'Impact (Blast Radius) & Boucle Post-Mortem Automatisée" as BlastRadius #F8FAFC;line:334155 {
+  rectangle PalierR1 #FFFFFF;line:166534 [
+    **Palier R1 — Réversible Local (L3)**
+    Redémarrage pod isolé, quarantaine WAP
+    Exécution immédiate + notification SRE
+  ]
+  rectangle PalierR2 #FFFFFF;line:2563EB [
+    **Palier R2 — Service Régional (L3/L2)**
+    Rollback release N-1, bascule trafic
+    Budget max 1 action / 30 min par cluster
+  ]
+  rectangle PalierR3 #FFFFFF;line:DC2626 [
+    **Palier R3 — État Persistant (L2 CIBA)**
+    Migration schéma DB, rejeu massif Kafka
+    **Double signature humaine obligatoire**
+  ]
+
+  PalierR1 -[hidden]right-> PalierR2
+  PalierR2 -[hidden]right-> PalierR3
+}
+
+C1_3 -[hidden]down-> PalierR1
+C2_3 -[hidden]down-> PalierR3
+@enduml

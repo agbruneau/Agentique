@@ -1,0 +1,55 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 37 (page 145)
+' Légende : Fig. 37. – Cycle d’attestation SPIFFE/SPIRE à deux étages, délivrance de SVID éphémères et fédération de domaines de confiance pour charges agentiques
+@startuml
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+skinparam roundcorner 6
+skinparam defaultFontName SansSerif
+skinparam ArrowColor #324e67
+skinparam ArrowFontColor #172025
+skinparam ParticipantBackgroundColor #f3f7f9
+skinparam ParticipantBorderColor #324e67
+skinparam ParticipantFontColor #172025
+skinparam SequenceLifeLineBorderColor #7e8a93
+skinparam SequenceDividerBackgroundColor #edf3f7
+skinparam SequenceDividerBorderColor #324e67
+skinparam SequenceDividerFontColor #172025
+skinparam NoteBackgroundColor #fdfaf0
+skinparam NoteBorderColor #b0a372
+skinparam NoteFontColor #172025
+
+autonumber
+
+participant "Nœud / Infra hôte\n(Kernel & Orchestrateur)" as Node
+participant "SPIRE Server\n(Trust Domain A)" as Server
+participant "SPIRE Agent\n(Socket Unix locale)" as SpireAgent
+participant "Agent Harness &\nEnvoy SDS" as Harness
+participant "Pair Domaine B\n(Trust Bundle B)" as PeerB
+
+== 1. Attestation du nœud (Node Attestation — sans secret statique) ==
+
+SpireAgent -> Node : Collecte preuve d'infrastructure\n(Node Attestor plugin)
+Node --> SpireAgent : Preuve vérifiable du nœud
+SpireAgent -> Server : Attestation de nœud\n(authentification automatique)
+Server --> SpireAgent : Node SVID signé +\ncache des enregistrements
+
+== 2. Attestation de charge de travail (Workload API / SDS) ==
+
+Harness -> SpireAgent : Connecte socket Unix locale\n(SPIFFE Workload API / SDS)
+SpireAgent -> Node : Inspecte sélecteurs du processus\n(Workload Attestors)
+Node --> SpireAgent : Sélecteurs confirmés
+SpireAgent --> Harness : X.509-SVID éphémère (mTLS)\n+ JWT-SVID / WIT-SVID + Trust Bundle
+note over SpireAgent, Harness
+  Rotation continue en mémoire via SDS :
+  aucune clé privée ni jeton écrit sur disque
+  (NHI7 éliminé).
+end note
+
+== 3. Authentification inter-domaines et fédération ==
+
+Server -> PeerB : Échange SPIFFE Bundle Endpoint (Trust\nBundles publics A <-> B)
+Harness -> PeerB : Requête mTLS (X.509-SVID)\nou WIMSE WIT / JWT-SVID
+PeerB -> PeerB : Vérifie SPIFFE ID\n(spiffe://domaine-a/agent/facturation)\ncontre Trust Bundle A
+PeerB --> Harness : Canal authentifié établi
+@enduml

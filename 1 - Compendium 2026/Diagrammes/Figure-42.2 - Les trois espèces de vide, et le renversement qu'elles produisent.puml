@@ -1,0 +1,30 @@
+' Figure 42.2 — Les trois espèces de vide, et le renversement qu'elles produisent
+@startuml
+skinparam backgroundColor #FAF8F5
+skinparam shadowing false
+skinparam defaultFontName "DejaVu Sans"
+skinparam titleFontColor #8B2E0B
+skinparam rectangleBorderColor #BBBBBB
+skinparam rectangleBackgroundColor #F5F1EB
+skinparam packageBorderColor #DDDDDD
+skinparam packageBackgroundColor #FAF8F5
+skinparam legendBackgroundColor #FBF9F5
+skinparam legendBorderColor #BBBBBB
+
+title TROIS VIDES, ET CE QU'ILS NE VEULENT PAS DIRE
+
+rectangle "TROIS ESPÈCES DE VIDE" as Vides {
+  rectangle "**1  Le protocole ne le porte pas**\n\nEt ne prétend pas le porter.\n\n<i>hors périmètre déclaré</i>" as V1
+  rectangle "**2  Le socle ne le documente pas**\n\nAbsence de documentation, non fait négatif.\n\n<i>degré 3</i>" as V2
+  rectangle "**3  Le texte n'exige rien**\n\nL'exigence supposée n'est pas dans l'instrument.\n\n<i>ne pas faire dire plus</i>" as V3
+
+  V1 -[hidden]right- V2
+  V2 -[hidden]right- V3
+}
+
+legend bottom
+  Le renversement est LE RÉSULTAT LE PLUS UTILE DU CHAPITRE : la question cesse d'être
+  « quel protocole répond à quelle exigence » pour devenir « qu'est-ce que l'architecture doit
+  porter que rien ne porte ». Les cinq zones du § 42.4 en sont la réponse.
+endlegend
+@enduml

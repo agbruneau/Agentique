@@ -1,0 +1,112 @@
+' Fig. 19. – Cartographie institutionnelle 2026–2027 et alignement sur le modèle de référence en 6 couches.
+@startuml
+title Écosystème Institutionnel 2026–2027 et Modèle de Référence en 6 Couches (OSI / Agentique)
+
+left to right direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+
+rectangle "Pile Protocolaire d'Entreprise (Correspondance OSI)" as Pile #F8FAFC;line:64748B {
+  rectangle C6 #FEF2F2;line:991B1B [
+    **Couche 6** | OSI L7 (UI & Tx)
+    **Interaction Humaine, Navigateur & Commerce**
+    • Flux réactifs AG-UI, interfaces A2UI / MCP-UI, voix temps réel WebRTC
+    • Outils client WebMCP (W3C) • Mandats AP2 (FIDO) & règlement HTTP x402
+  ]
+  rectangle C5 #ECFDF5;line:14532D [
+    **Couche 5** | OSI L7 (Maillage)
+    **Coordination Horizontale & Découverte Inter-Agents**
+    • Délégation entre pairs autonomes : A2A v1.0 (convergence ACP, Agent Cards)
+    • Annuaire fédéré AGNTCY (OASF, Agent Directory) & traversée B2B (ANP)
+  ]
+  rectangle C4 #FAF5FF;line:7E22CE [
+    **Couche 4** | OSI L6 (Présentation)
+    **Sémantique Métier & Portabilité Cognitive**
+    • Ontologies canoniques d'entreprise : Apache Ossie (JSON Schema / RDF)
+    • Savoir-faire portable : Agent Skills (SKILL.md), AGENTS.md, Open Responses
+  ]
+  rectangle C3 #EFF6FF;line:2563EB [
+    **Couche 3** | OSI L5–L6 (Session)
+    **Connectivité Verticale & Accès Outillé aux Systèmes**
+    • Model Context Protocol (MCP) sur JSON-RPC 2.0 & Streamable HTTP
+    • Primitives : Tools, Resources, Prompts, Roots, Sampling, Elicitation
+  ]
+  rectangle C2 #FFF7ED;line:9A3412 [
+    **Couche 2** | OSI L4–L5 (Transport)
+    **Plan de Données IA, Routage & Identité Cryptographique**
+    • Proxy agentgateway, Agent Router, transport SLIM chiffré MLS (RFC 9420)
+    • Identités NHI (SPIFFE/WIMSE), délégation OAuth 2.1 OBO (RFC 8693) & Cedar
+  ]
+  rectangle C1 #F8FAFC;line:334155 [
+    **Couche 1** | OSI L1–L3 (Infra)
+    **Isolation d'Exécution, Évaluation & Moteurs Durables**
+    • Bacs à sable microVM / WASM : OpenSandbox • Bancs d'essai RL : OpenEnv
+    • Hôte de référence Goose • Orchestration durable (Temporal / Restate)
+    • Télémétrie transversale : OpenTelemetry (conventions sémantiques gen_ai.*)
+  ]
+
+  C6 -[hidden]down-> C5
+  C5 -[hidden]down-> C4
+  C4 -[hidden]down-> C3
+  C3 -[hidden]down-> C2
+  C2 -[hidden]down-> C1
+}
+
+rectangle "Autorités de Gouvernance Ouverte" as Gov #F8FAFC;line:64748B {
+  rectangle "Linux Foundation — AAIF (10 Projets)\nAgentic AI Foundation (Socle neutre inter-éditeurs)" as AAIF #FFFFFF;line:2563EB {
+    rectangle ColAAIF1 #FFFFFF;line:FFFFFF {
+      rectangle "**1. MCP (C3 Vertical)**" as A1 #F8FAFC;line:93C5FD
+      rectangle "**2. A2A v1.0 (C5 Pairs)**" as A2 #F8FAFC;line:93C5FD
+      rectangle "**3. AGENTS.md (C4 Dépôts)**" as A3 #F8FAFC;line:93C5FD
+      rectangle "**4. Goose (C1 Hôte Réf.)**" as A4 #F8FAFC;line:93C5FD
+      rectangle "**5. Agent Router (C2)**" as A5 #F8FAFC;line:93C5FD
+      A1 -[hidden]down-> A2
+      A2 -[hidden]down-> A3
+      A3 -[hidden]down-> A4
+      A4 -[hidden]down-> A5
+    }
+    rectangle ColAAIF2 #FFFFFF;line:FFFFFF {
+      rectangle "**6. agentgateway (C2)**" as A6 #F8FAFC;line:93C5FD
+      rectangle "**7. Agent Skills (C4)**" as A7 #F8FAFC;line:93C5FD
+      rectangle "**8. Open Responses (C4)**" as A8 #F8FAFC;line:93C5FD
+      rectangle "**9. OpenEnv (C1 Éval.)**" as A9 #F8FAFC;line:93C5FD
+      rectangle "**10. OpenSandbox (C1)**" as A10 #F8FAFC;line:93C5FD
+      A6 -[hidden]down-> A7
+      A7 -[hidden]down-> A8
+      A8 -[hidden]down-> A9
+      A9 -[hidden]down-> A10
+    }
+    ColAAIF1 -[hidden]right-> ColAAIF2
+  }
+
+  rectangle AGNTCY #ECFDF5;line:15803D [
+    **Linux Foundation — AGNTCY**
+    Taxonomie OASF • Agent Directory (DHT/OCI) • Messagerie SLIM
+  ]
+  rectangle ASF #FAF5FF;line:7E22CE [
+    **Apache Software Foundation (ASF)**
+    Apache Ossie (Ontologies métiers & contrats JSON canoniques)
+  ]
+  rectangle IETF #FFF7ED;line:9A3412 [
+    **IETF (Sécurité, Identité & Chiffrement)**
+    OAuth 2.1 • RFC 8693 (OBO) • RFC 9449 (DPoP) • MLS • WIMSE
+  ]
+  rectangle W3C #FEF2F2;line:991B1B [
+    **W3C & Alliance FIDO**
+    WebMCP navigateur • DID & VC 2.0 • Mandats de paiement AP2
+  ]
+
+  AAIF -[hidden]down-> AGNTCY
+  AGNTCY -[hidden]down-> ASF
+  ASF -[hidden]down-> IETF
+  IETF -[hidden]down-> W3C
+}
+
+AAIF .[#2563EB].> C5
+AGNTCY .[#475569].> C5
+ASF .[#475569].> C4
+IETF .[#475569].> C2
+W3C .[#475569].> C6
+
+@enduml

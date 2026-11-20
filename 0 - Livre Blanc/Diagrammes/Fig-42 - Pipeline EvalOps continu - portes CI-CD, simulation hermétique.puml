@@ -1,0 +1,54 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 42 (page 160)
+' Légende : Fig. 42. – Pipeline EvalOps continu : portes CI/CD, simulation hermétique et calibration des juges
+@startuml
+left to right direction
+
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+skinparam roundcorner 6
+skinparam defaultFontName SansSerif
+skinparam ArrowColor #324e67
+skinparam ArrowFontColor #172025
+skinparam PackageBackgroundColor #ffffff
+skinparam PackageBorderColor #5b6b76
+skinparam PackageFontColor #1a4964
+skinparam RectangleBackgroundColor #f3f7f9
+skinparam RectangleBorderColor #324e67
+skinparam RectangleFontColor #172025
+skinparam DatabaseBackgroundColor #edf3f7
+skinparam DatabaseBorderColor #324e67
+skinparam DatabaseFontColor #172025
+
+package "1. Déclencheurs & Référentiel" as P1 {
+  rectangle "PR Git\n(Code / Prompt / MCP)" as PR
+  database "Golden Dataset\n(Trajectoires & cas prod)" as GD
+}
+
+package "2. Banc Hermétique CI/CD" as P2 {
+  rectangle "Harnais EvalOps\n(Essais k : pass@k / pass^k)" as Harnais
+  rectangle "Simulateur MCP / Env\n(Injection 503 & Mock)" as Sim
+}
+
+package "3. Évaluateurs Étagés" as P3 {
+  rectangle "Tier 1 : Code Graders\n(Exact / In-Order / État DB)" as T1
+  rectangle "Tier 3 : Calibration SME\n(Accord κ validé)" as T3
+  rectangle "Tier 2 : Juge LLM Calibré\n(Swap + rubrique G-Eval)" as T2
+}
+
+package "4. Porte & Rétroaction" as P4 {
+  rectangle "Porte CI/CD\n(Bloque si régression)" as Gate
+  rectangle "Traces Production\n(Échantillons échecs)" as Prod
+}
+
+PR --> Harnais : Déclenche suite
+GD --> Harnais : Injecte tâches
+Harnais <--> Sim : Mock outils
+Harnais --> T1 : Transcripts &\nétats finaux
+T1 --> T2 : Cas conformes\nau juge
+T1 --> Gate : Verdict T1
+T2 --> Gate : Verdict T2
+T3 ..> T2 : Corrige biais &\ncriteria drift
+T3 --> GD : Promeut cas
+Prod --> T3 : Échecs annotés
+@enduml

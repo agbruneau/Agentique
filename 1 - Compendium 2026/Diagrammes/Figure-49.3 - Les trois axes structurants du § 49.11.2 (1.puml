@@ -1,0 +1,27 @@
+' Figure 49.3 — Les trois axes structurants du § 49.11.2 et les six conditions du § 49.11.4
+@startuml
+skinparam backgroundColor #FAF8F5
+skinparam shadowing false
+skinparam defaultFontName "DejaVu Sans"
+skinparam titleFontColor #8B2E0B
+skinparam rectangleBorderColor #BBBBBB
+skinparam rectangleBackgroundColor #F5F1EB
+skinparam legendBackgroundColor #FBF9F5
+skinparam legendBorderColor #BBBBBB
+
+title TROIS AXES, ET AUCUNE PONDÉRATION
+
+rectangle "LES TROIS AXES STRUCTURANTS (§ 49.11.2)" as Axes {
+  rectangle "**1  Convergence / fragmentation**\n\nÉcosystèmes de protocoles ou\ncoexistence stratifiée · § 49.2.\n\n<i>le verrou est la portabilité neutre</i>" as A1
+  rectangle "**2  Intensité réglementaire**\n\nGrappe de 2027, gouvernance et\nresponsabilité · § 49.1, 49.3, 49.10.\n\n<i>fermeté des échéances et du régime</i>" as A2
+  rectangle "**3  Souveraineté / ouverture**\n\nSouveraineté, menace et horloge\npost-quantique · § 49.4, 49.5, 49.7.\n\n<i>localisation et migration cryptographique</i>" as A3
+
+  A1 -[hidden]right- A2
+  A2 -[hidden]right- A3
+}
+
+legend bottom
+  SIX CONDITIONS, ET AUCUNE N'EST ACQUISE (§ 49.11.4). Les axes ordonnent des lectures ;
+  ils ne pondèrent aucun scénario, et les discontinuités à faible probabilité et fort impact (§ 49.11.3) ne s'y rangent pas.
+endlegend
+@enduml

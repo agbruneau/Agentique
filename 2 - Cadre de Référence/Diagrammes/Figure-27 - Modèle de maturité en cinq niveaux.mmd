@@ -1,0 +1,31 @@
+%% Figure 27 — Modèle de maturité en cinq niveaux (2 - Cadre de Référence, ch. 14, p. 242)
+%% Source : cadre CRE-IA-2026-01
+%%{init: {'flowchart': {'wrappingWidth': 450}}}%%
+flowchart LR
+    Rule["Niveau global = dimension la plus faible<br/>(interopérabilité, orchestration, identité, observabilité, gouvernance)"]
+    Cible(["<b>Cible de la feuille de route : 18 mois environ</b>"])
+
+    N1["<b>1 · Initial</b><br/>Connecteurs ad hoc, clés<br/>partagées, aucun inventaire"]
+    N2["<b>2 · Reproductible</b><br/>Premiers serveurs MCP,<br/>identité par agent, traces<br/>par projet, registre en partie manuel"]
+    N3["<b>3 · Défini</b><br/>Catalogue d’entreprise,<br/>passerelle, jetons délégués,<br/>traçage de bout en bout,<br/>cycle de vie à contrôles"]
+    N4["<b>4 · Géré</b><br/>Multiagent en production,<br/>sagas, autorisation fine,<br/>évaluation continue, coût<br/>par tâche, préparation ISO/IEC 42001"]
+    N5["<b>5 · Optimisé</b><br/>Confiance vérifiable<br/>entre organisations,<br/>autonomie ajustée par les<br/>mesures, revue externe ou ISO/IEC 42001"]
+
+    N1 --> N2 --> N3 --> N4 --> N5
+    Cible -.-> N3
+    Rule ~~~ N1
+
+    classDef n1 fill:#8291a6,stroke:#8291a6,color:#ffffff,text-align:left
+    classDef n2 fill:#5c6b7f,stroke:#5c6b7f,color:#ffffff,text-align:left
+    classDef n3 fill:#0f7682,stroke:#0f7682,color:#ffffff,text-align:left
+    classDef n4 fill:#1b5e9e,stroke:#1b5e9e,color:#ffffff,text-align:left
+    classDef n5 fill:#0f2744,stroke:#0f2744,color:#ffffff,text-align:left
+    classDef target fill:#fef3dc,stroke:#b45309,stroke-width:2px,color:#b45309
+    classDef ruleBox fill:transparent,stroke:none,color:#475569,text-align:left
+    class N1 n1
+    class N2 n2
+    class N3 n3
+    class N4 n4
+    class N5 n5
+    class Cible target
+    class Rule ruleBox

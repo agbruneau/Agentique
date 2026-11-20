@@ -1,0 +1,23 @@
+%% Figure 4.3 — Du raisonnement linéaire à la recherche structurée : trois régimes, et ce que chacun corrige. (§ 4.3.1-4.3.2).
+%% Source : 1 - Compendium 2026, Chapitre 4 (page 56)
+
+%%{init: {'flowchart': {'wrappingWidth': 900}}}%%
+flowchart TB
+    subgraph SG_REG["TROIS RÉGIMES, ET CE QUE CHACUN CORRIGE"]
+        direction LR
+        R1["<b>1 · Chaîne</b><br/><br/>Une trace linéaire d'étapes<br/>explicitées. Une erreur précoce se<br/>propage jusqu'à la conclusion.<br/><br/><i>§ 4.3.1</i>"]
+        R2["<b>2 · Cohérence interne</b><br/><br/>Plusieurs traces échantillonnées,<br/>et la réponse majoritaire retenue.<br/><br/><i>§ 4.3.1</i>"]
+        R3["<b>3 · Recherche structurée</b><br/><br/>L'exploration devient un arbre,<br/>guidée par un vérificateur à<br/>l'inférence.<br/><br/><i>§ 4.3.2</i>"]
+        R1 --> R2 --> R3
+    end
+
+    NOTE["Aucun de ces régimes ne rend le raisonnement VÉRIFIABLE : ils réduisent la variance d'une trace, ils n'en établissent pas la<br/>validité. Le vérificateur à l'inférence déplace la question, il ne la ferme pas."]
+
+    SG_REG ~~~ NOTE
+
+    classDef card fill:#FAF7F2,stroke:#C4BEB5,stroke-width:1px,color:#222222,text-align:left;
+    classDef noteBox fill:#F7F5F0,stroke:#C4BEB5,stroke-width:1px,color:#333333,text-align:left;
+    class R1,R2,R3 card;
+    class NOTE noteBox;
+    style SG_REG fill:#FFFFFF,stroke:none,color:#9E3A14
+    linkStyle 0,1 stroke:#9E3A14,stroke-width:2px

@@ -1,0 +1,64 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 36 (page 137)
+' Légende : Fig. 36. – Séquence de bascule multi-fournisseurs journalisée et d’escalade Human-on-the-Loop sous SLA
+@startuml
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+skinparam roundcorner 6
+skinparam defaultFontName SansSerif
+skinparam ArrowColor #324e67
+skinparam ArrowFontColor #172025
+skinparam ParticipantBackgroundColor #f3f7f9
+skinparam ParticipantBorderColor #324e67
+skinparam ParticipantFontColor #172025
+skinparam SequenceLifeLineBorderColor #7e8a93
+skinparam SequenceGroupBorderColor #324e67
+skinparam SequenceGroupBackgroundColor #edf3f7
+skinparam SequenceGroupHeaderFontColor #1a4964
+skinparam NoteBackgroundColor #fdfaf0
+skinparam NoteBorderColor #b0a372
+skinparam NoteFontColor #172025
+
+autonumber
+
+participant "Workflow Durable\n(Suspendu hors RAM)" as Wf
+participant "Activity Inférence\n+ Circuit Breaker" as Act
+participant "LLM Principal\n(Région A)" as LLM1
+participant "LLM Secours\n(Région B / Souverain)" as LLM2
+participant "Portail HOTL\n(Signals / Awakeables)" as HOTL
+participant "Approbateurs\n(N1 -> N2)" as App
+
+group 1. Bascule multi-fournisseurs journalisée (préservation du replay)
+  Wf -> Act : Exécuter nœud cognitif (étape S3)
+  Act -> LLM1 : Requête inférence
+  LLM1 --> Act : HTTP 429 / 503 répétés (seuil dépassé)
+  note over Act
+    Coupe-circuit passe à Open.
+    Bascule vers fournisseur secondaire.
+  end note
+  Act -> LLM2 : Requête de repli (contrat typé identique)
+  LLM2 --> Act : HTTP 200 Réponse + proposition P3
+  Act --> Wf : Journalise (fournisseur=LLM2, sortie=P3)
+  note over Wf
+    En cas de replay ultérieur,
+    Wf lit LLM2/P3 depuis le journal
+    sans ré-interroger LLM1 ni LLM2.
+  end note
+end
+
+group 2. Attente asynchrone HOTL et escalade sous SLA
+  Wf -> HOTL : Émet demande d'approbation\n(Awakeable ID / Workflow ID)
+  Wf -> Wf : Démarre Durable Timer\n(SLA N1 = 4 heures)
+  note over Wf
+    Libère thread et RAM.
+    Zéro consommation de worker.
+  end note
+  HOTL -> App : Notifie Approbateur N1
+  ... Délai SLA N1 expiré sans réponse ...
+  Wf -> HOTL : Déclenche escalade vers N2\n+ nouveau Durable Timer (SLA N2)
+  HOTL -> App : Notifie Approbateur N2 (prioritaire)
+  App -> HOTL : Valide dossier P3
+  HOTL -> Wf : Signal / Resolve Awakeable\n(APPROUVÉ, identité, horodatage)
+  Wf -> Wf : Reprend et engage le pivot transactionnel
+end
+@enduml

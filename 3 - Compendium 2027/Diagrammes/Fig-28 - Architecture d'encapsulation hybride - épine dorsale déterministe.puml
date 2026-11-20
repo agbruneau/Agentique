@@ -1,0 +1,88 @@
+' Fig. 28. – Architecture d'encapsulation hybride : épine dorsale déterministe gouvernant des cellules cognitives bornées avec gardes d'entrée/sortie et repli.
+@startuml
+title Architecture d'Encapsulation Hybride : Épine Dorsale Déterministe & Cellule Cognitive Bornée
+
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+
+rectangle "1. Épine Dorsale Déterministe — Plan de Contrôle Durable (Temporal / Restate / BPMN 2.0 & DMN)" as Tier1 #EFF6FF;line:2563EB {
+  rectangle S1 #FFFFFF;line:1E293B [
+    **S1 • Ingestion**
+    Schéma & Clé Idemp.
+    Journalisation durable
+  ]
+  rectangle S2 #FFFFFF;line:1E293B [
+    **S2 • Règles DMN**
+    Admissibilité & Barèmes
+    100 % Déterministe
+  ]
+  rectangle S3 #ECFDF5;line:15803D [
+    **S3 • Activité Cognitive**
+    Invocation sous contrat
+    Budget & SLA bornés
+  ]
+  rectangle S4 #FFFFFF;line:1E293B [
+    **S4 • Transaction SI**
+    Outil MCP Idempotent
+    Compensation Saga
+  ]
+  rectangle S5 #FFFFFF;line:1E293B [
+    **S5 • Clôture**
+    Traces OTel gen_ai.*
+    Audit immuable
+  ]
+
+  S1 -[#2563EB]-> S2
+  S2 -[#2563EB]-> S3
+  S3 -[#2563EB]-> S4
+  S4 -[#2563EB]-> S5
+}
+
+rectangle "2. Enceinte d'Isolation de la Cellule Cognitive Bornée (Zéro Écriture Irréversible Directe)" as Tier2 #ECFDF5;line:15803D {
+  rectangle InputGuard #FFFFFF;line:15803D [
+    **Garde d'Entrée (Input Guard)**
+    • Validation JSON Schema strict
+    • Masquage PII (Loi 25 / RGPD)
+    • Sélection du moindre contexte
+    • **Bornes : K ≤ 6 tours | SLA 8,0 s**
+    • Filtrage injection OWASP ASI01
+  ]
+  rectangle Noyau #FFFFFF;line:2563EB [
+    **Noyau Probabiliste Borné (SLM / LLM)**
+    • Raisonnement sur signaux ambigus / non structurés
+    • Compteur externe d'itérations k = 1..K_max
+    • **Outils MCP : Lecture & Simulation uniquement**
+    • Plafond dur jetons raisonnement & budget CAD
+    • Décodage contraint par grammaire (CFG)
+  ]
+  rectangle OutputGuard #FFFFFF;line:15803D [
+    **Garde de Sortie & Invariants**
+    • Conformité schéma typé fermé
+    • Politiques OPA / Cedar (plafonds)
+    • Ancrage factuel (empreinte SHA-256)
+    • **Confiance calibrée ≥ seuil τ**
+    • Rejet immédiat si hallucination
+  ]
+
+  InputGuard -[#15803D]-> Noyau
+  Noyau -[#15803D]-> OutputGuard
+}
+
+rectangle "3. Disjoncteur et Circuit de Repli Déterministe (Deterministic Fallback & Circuit Breaker)" as Tier3 #FFF7ED;line:9A3412 {
+  rectangle VoieA #FFFFFF;line:D97706 [
+    **Voie A — Repli Heuristique Statique : Règle métier sûre par défaut**
+  ]
+  rectangle VoieB #FEF2F2;line:DC2626 [
+    **Voie B — Escalade Human-on-the-Loop (HOTL / CIBA) avec dossier d'écart**
+  ]
+  VoieA -[hidden]right-> VoieB
+}
+
+S3 -[#15803D]-> InputGuard : Entrée typée + Budget
+OutputGuard -[#15803D]-> S3 : Proposition validée
+Noyau -[#DC2626]-> Tier3 : Timeout / HTTP 429 / K > K_max
+OutputGuard -[#DC2626]-> Tier3 : Violation invariant / Confiance < τ
+
+@enduml

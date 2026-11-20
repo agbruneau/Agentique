@@ -1,0 +1,34 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 34 (page 130)
+' Légende : Fig. 34. – Topologie comparative des moteurs d’exécution durable : Temporal, Restate et Dapr Workflow
+@startuml
+!include <C4/C4_Component>
+
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+
+Container_Boundary(dapr, "Modèle Dapr Workflow (Sidecar CNCF)") {
+  Component(dapr_sdk, "Application SDK", "Flux gRPC", "Enregistre workflows et activités métier")
+  Component(dapr_sidecar, "Sidecar Dapr", "durabletask-go", "Orchestre via Workflow et Activity Actors")
+  ComponentDb(dapr_store, "State Store enfichable", "PostgreSQL / Redis", "Persiste points de reprise et files d'acteurs")
+  Rel_R(dapr_sdk, dapr_sidecar, "Échange items sur flux gRPC")
+  Rel_R(dapr_sidecar, dapr_store, "Persiste état des acteurs")
+}
+
+Container_Boundary(restate, "Modèle Restate (Push + Journal en ligne)") {
+  ComponentDb(restate_srv, "Restate Server (Rust)", "Proxy + Log répliqué", "Journalise étapes en ligne, sérialise par clé")
+  Component(restate_svc, "Service / Virtual Object", "Handler + ctx.run()", "Logique métier, état KV et suspension sans serveur")
+  Rel_R(restate_srv, restate_svc, "Pousse RPC HTTP + journaux d'état")
+}
+
+Container_Boundary(temporal, "Modèle Temporal (Pull + Replay)") {
+  Component(temp_wf, "Workflow Worker", "Code déterministe", "Rejoue l'historique, émet des Commands")
+  ComponentDb(temp_srv, "Temporal Service", "Event History", "Journal immuable, timers et Task Queues")
+  Component(temp_act, "Activity Worker", "Code non déterministe", "Appels LLM / MCP, RetryPolicy et Heartbeats")
+  Rel_R(temp_wf, temp_srv, "Scrute Task Queue / envoie Commands")
+  Rel_R(temp_srv, temp_act, "Distribue tâches d'Activity")
+}
+
+Lay_D(dapr_sdk, restate_srv)
+Lay_D(restate_srv, temp_wf)
+@enduml

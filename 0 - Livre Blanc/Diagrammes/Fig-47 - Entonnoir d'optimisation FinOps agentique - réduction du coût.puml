@@ -1,0 +1,41 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 47 (page 178)
+' Légende : Fig. 47. – Entonnoir d’optimisation FinOps agentique : réduction du coût unitaire et endiguement de l’amplification
+@startuml
+left to right direction
+
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+skinparam roundcorner 6
+skinparam defaultFontName SansSerif
+skinparam ArrowColor #324e67
+skinparam ArrowFontColor #172025
+skinparam PackageBackgroundColor #ffffff
+skinparam PackageBorderColor #5b6b76
+skinparam PackageFontColor #1a4964
+skinparam RectangleBackgroundColor #f3f7f9
+skinparam RectangleBorderColor #324e67
+skinparam RectangleFontColor #172025
+
+rectangle "Transaction métier\nentrante" as TxIn
+
+package "Filtres de déflation FinOps" as Deflation {
+  rectangle "1. Règle 80/20\nCode déterministe\n(0 jeton)" as R8020
+  rectangle "2. Cache sémantique\nIndex HNSW (0,70-0,95)\n(0 jeton sur hit)" as Cache
+}
+
+package "Optimisation d'inférence (20 %\ncognitif)" as InfOpt {
+  rectangle "3. Routeur / Cascade\nSLM vs Frontier\n(RouteLLM / FrugalGPT)" as Router
+  rectangle "4. Préfixe & Budget\nKV Prompt Caching (-50 % à -95 %)\n+ Compaction anti-O(T²)" as Prefix
+}
+
+rectangle "Résultat métier\nvalidé (Coût unitaire)" as TxOut
+
+TxIn --> R8020 : Évalue
+R8020 --> Cache : 20 % cognitif
+R8020 --> TxOut : 80 % déterministe
+Cache --> Router : Miss cache
+Cache --> TxOut : Hit cache\n(latence -89 %)
+Router --> Prefix : Modèle calibré
+Prefix --> TxOut : Sortie bornée
+@enduml

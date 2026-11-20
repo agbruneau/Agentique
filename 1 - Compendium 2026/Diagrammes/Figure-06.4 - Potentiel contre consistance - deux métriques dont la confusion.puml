@@ -1,0 +1,83 @@
+' Figure 6.4 — Potentiel contre consistance : deux métriques dont la confusion masque l'effondrement.
+' Source : 1 - Compendium 2026, Chapitre 6 (page 77)
+
+@startuml
+top to bottom direction
+hide stereotype
+skinparam packageStyle rectangle
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 13
+skinparam shadowing false
+skinparam roundCorner 4
+skinparam nodesep 30
+skinparam ranksep 18
+
+skinparam package {
+  BackgroundColor #FFFFFF
+  BorderColor #FFFFFF
+  FontColor #555555
+  FontStyle bold
+}
+
+skinparam package<<accent>> {
+  BackgroundColor #FFFFFF
+  BorderColor #FFFFFF
+  FontColor #9E3A14
+  FontStyle bold
+}
+
+skinparam rectangle {
+  BackgroundColor #FAF7F2
+  BorderColor #B8B3AA
+  FontColor #222222
+}
+
+skinparam rectangle<<accent>> {
+  BackgroundColor #FFFFFF
+  BorderColor #9E3A14
+  BorderThickness 2
+  FontColor #222222
+}
+
+skinparam rectangle<<sub>> {
+  BackgroundColor #FFFFFF
+  BorderColor #FFFFFF
+  FontColor #222222
+}
+
+skinparam legendBackgroundColor #F7F5F0
+skinparam legendBorderColor #C4BEB5
+skinparam legendFontColor #333333
+
+package "pass@k — LE POTENTIEL" as P_LEFT {
+  rectangle L_BOX [
+    <b>Au moins une parmi k tentatives réussit</b>
+    Ce qu'elle mesure : le potentiel
+    Ce qu'elle flatte : les systèmes capables de trouver
+    occasionnellement la bonne réponse
+  ]
+  rectangle "<b>monte avec k</b>" as L_SUB <<sub>>
+  L_BOX -[hidden]down- L_SUB
+}
+
+package "pass^k — LA CONSISTANCE" as P_RIGHT <<accent>> {
+  rectangle R_BOX <<accent>> [
+    <b>Les k tentatives réussissent toutes</b>
+    Ce qu'elle mesure : la consistance
+    Ce qu'elle révèle : la chute brutale dès que la
+    fiabilité par étape s'éloigne de la perfection
+  ]
+  rectangle "<b>s'effondre avec k</b>" as R_SUB <<sub>>
+  R_BOX -[hidden]down- R_SUB
+}
+
+L_BOX -[hidden]right- R_BOX
+L_SUB -[hidden]right- R_SUB
+
+legend
+  Une probabilité d'échec par pas même faible SE COMPOSE GÉOMÉTRIQUEMENT sur une longue trajectoire :
+  c'est l'un des constats les plus robustes du domaine, et la raison pour laquelle un agent se caractérise
+  par sa courbe de consistance, non par son meilleur potentiel.
+endlegend
+@enduml

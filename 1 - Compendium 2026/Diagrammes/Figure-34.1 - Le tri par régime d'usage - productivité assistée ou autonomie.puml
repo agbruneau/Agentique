@@ -1,0 +1,50 @@
+' Ouvrage : 1 - Compendium 2026
+' Chapitre : 34 · Les sous-domaines financiers : banque, assurance, patrimoine (p. 384)
+' Figure : Figure 34.1 — Le tri par régime d’usage : productivité assistée ou autonomie transactionnelle.
+@startuml
+hide stereotype
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+skinparam defaultFontName SansSerif
+skinparam roundcorner 6
+skinparam package {
+    BackgroundColor #fdfbf7
+    BorderColor #d4cfc7
+    FontColor #444444
+}
+skinparam package<<accent>> {
+    BackgroundColor #fdfbf7
+    BorderColor #9c3d14
+    FontColor #9c3d14
+}
+skinparam rectangle {
+    BackgroundColor #f7f4ee
+    BorderColor #b8b4ac
+    FontColor #1f1f1f
+}
+skinparam rectangle<<accent>> {
+    BackgroundColor #ffffff
+    BorderColor #9c3d14
+    FontColor #1f1f1f
+}
+skinparam note {
+    BackgroundColor #faf8f4
+    BorderColor #b8b4ac
+    FontColor #333333
+}
+
+package "PRODUCTIVITÉ ASSISTÉE" as P1 {
+    rectangle "<b>Un copilote rédige, résume, prépare</b>\n\nAucune transaction irréversible n'est exécutée sans\nintervention humaine\n\nLe seuil du ch. 31 § 31.1.1 n'est pas franchi\n\nLa quasi-totalité des déploiements observés\n\n<b>le régime dominant, 2024-2026</b>" as C1
+}
+
+package "AUTONOMIE TRANSACTIONNELLE" as P2 <<accent>> {
+    rectangle "<b>L'agent initie une action à effet financier irrévocable</b>\n\nLe seuil de finalité est franchi par l'agent\n\nLe régime réglementaire change avec lui\n\nRare, et rarement ce que le discours désigne\n\n<b>le régime que le vertical durcit</b>" as C2 <<accent>>
+}
+
+P1 -[hidden]right-> P2
+
+note bottom
+LA QUASI-TOTALITÉ DES DÉPLOIEMENTS OBSERVÉS EN 2024-2026 RELÈVENT DU PREMIER RÉGIME. Présenter un copilote comme une
+autonomie transactionnelle est la confusion que le discours commercial entretient, et que ce tri existe pour défaire.
+end note
+@enduml

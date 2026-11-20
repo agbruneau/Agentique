@@ -1,0 +1,38 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 59 (page 223)
+' Légende : Fig. 59. – Trajectoire d’urbanisation ArchiMate et feuille de route séquencée sur 90, 180 et 360 jours
+@startuml
+!include <archimate/Archimate>
+
+left to right direction
+
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+
+package "Horizon 1 : J0-J90 (M1 -> M2)" as h1 #ffffff {
+  Implementation_WorkPackage(sa1, "SA : AI/MCP Gateway, 1re ACL,\npilote Strangler Ombre / Reco")
+  Implementation_WorkPackage(ea1, "EA : Inventaire Shadow AI,\nAgent Owners, R1-R4 & Baseline")
+  Implementation_Plateau(j90, "Jalon J90 (ARB 1)\nPérimètre assaini")
+}
+
+package "Horizon 2 : J90-J180 (M2 -> M3)" as h2 #ffffff {
+  Implementation_WorkPackage(sa2, "SA : Golden Paths IAP, NHI/OBO,\nEvalOps CI, Durable / BPMN")
+  Implementation_WorkPackage(ea2, "EA : Registre central, Showback,\nsortie des bots RPA fragiles")
+  Implementation_Plateau(j180, "Jalon J180 (ARB 2)\nSocle IAP en prod")
+}
+
+package "Horizon 3 : J180-J360 (M3 -> M4/M5)" as h3 #ffffff {
+  Implementation_WorkPackage(sa3, "SA : Autonomie sous SLO,\nfédération A2A/OASF, anti-sprawl")
+  Implementation_WorkPackage(ea3, "EA : Chargeback, ROI ajusté,\nréversibilité & audit 3LoD")
+  Implementation_Plateau(j360, "Jalon J360 (ARB 3)\nPortefeuille M4/M5 gouverné")
+}
+
+Rel_Triggering(sa1, j90, "valide")
+Rel_Triggering(ea1, j90, "valide")
+Rel_Triggering(j90, j180, "ouvre H2")
+Rel_Triggering(sa2, j180, "valide")
+Rel_Triggering(ea2, j180, "valide")
+Rel_Triggering(j180, j360, "ouvre H3")
+Rel_Triggering(sa3, j360, "atteint")
+Rel_Triggering(ea3, j360, "atteint")
+@enduml

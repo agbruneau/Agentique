@@ -1,0 +1,35 @@
+' Figure 16 — Approbation humaine signée, liée à l'action exacte (2 - Cadre de Référence, ch. 8, p. 129)
+' Source : cadre CRE-IA-2026-01
+@startuml
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 11
+skinparam sequenceMessageAlign center
+
+participant "**Agent**\n//prépare l’action//" as Ag #EDE8F5
+participant "**Passerelle d’agents**\n//point d’application//" as Gw #FEF3DC
+participant "**Service d’approbation**\n//adossé au fournisseur d’identité//" as Svc #FCE8EB
+participant "**Approbateur**\n//personne habilitée//" as App #E6F0FA
+
+Ag -> Gw : **1** appel soumis à approbation, sans jeton
+Gw -> Svc : **2** calcule l’empreinte et crée la demande\n""h = SHA-256(JCS({outil, version, definition_digest, agent_id, task_id, arguments}))""
+Svc -> App : **3** présente l’action exacte, ses\nparamètres et son effet attendu
+App -> Svc : **4** approuve (authentification forte)
+Svc -[#15803D]-> Gw : **5** jeton d’approbation signé, à usage unique\n""{ h, agent, approbateur, rôle, jti, tâche, exp }""
+
+note over Svc, App #FCE8EB
+  **<color:#9C2F39>N’est jamais une approbation</color>**
+  • un « oui » écrit dans la conversation de l’agent
+  • un résumé rédigé par l’agent
+  • une approbation donnée pour d’autres arguments
+end note
+
+Ag -> Gw : **6** rejoue : même clé, réf. de la demande
+
+rnote over Gw, Svc #E6F4EA
+  **7** apparie le jeton qu’elle conserve, vérifie signature, expiration
+  et usage unique, recalcule h : toute modification des arguments
+  invalide l’approbation → exécution, puis audit
+end note
+@enduml

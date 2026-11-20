@@ -1,0 +1,45 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 46 (page 175)
+' Légende : Fig. 46. – Cartographie croisée des obligations réglementaires multi-juridictionnelles et des artefacts de preuve d’audit
+@startuml
+left to right direction
+
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+skinparam roundcorner 6
+skinparam defaultFontName SansSerif
+skinparam ArrowColor #324e67
+skinparam ArrowFontColor #172025
+skinparam PackageBackgroundColor #ffffff
+skinparam PackageBorderColor #5b6b76
+skinparam PackageFontColor #1a4964
+skinparam RectangleBackgroundColor #f3f7f9
+skinparam RectangleBorderColor #324e67
+skinparam RectangleFontColor #172025
+
+package "Juridictions applicables" as Jur {
+  rectangle "EU AI Act + Digital Omnibus\nArt. 12, 14, 50 & Annexe III" as EU
+  rectangle "LPRPDE & Directive SCT\nPrincipes CPVP / Score AIA" as LPRPDE
+  rectangle "Loi 25 (Québec)\nP-39.1 art. 3.1, 3.3, 12.1" as Loi25
+}
+
+package "Référentiels d'ingénierie" as Ref {
+  rectangle "ISO/IEC 42001:2023\nAIMS & Annexe A" as ISO
+  rectangle "NIST AI RMF 1.0 & AI 600-1\nGovern, Map, Measure, Manage" as NIST
+}
+
+package "Artefacts de preuve exigibles" as Art {
+  rectangle "Déclaration d'applicabilité\n(SoA) & Registre risques" as SoA
+  rectangle "Preuves d'exécution\nJournal Art. 12 & Recours HITL" as Exec
+  rectangle "Dossier ÉFVP + Fiche AIA\n& Mandat RPRP" as EFVP
+}
+
+EU --> ISO
+LPRPDE --> NIST
+ISO --> SoA : Contrôles A.4-A.9
+NIST --> SoA
+EU --> Exec : Traçabilité
+Loi25 --> Exec : Recours humain
+LPRPDE --> EFVP : Score AIA
+Loi25 --> EFVP : ÉFVP préalable
+@enduml

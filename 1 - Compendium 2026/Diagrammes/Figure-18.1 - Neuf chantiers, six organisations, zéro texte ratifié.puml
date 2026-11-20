@@ -1,0 +1,87 @@
+' Figure 18.1 — Neuf chantiers, six organisations, zéro texte ratifié.
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 6
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 13
+skinparam backgroundColor #FFFFFF
+skinparam legendBackgroundColor #F8F5F0
+skinparam legendBorderColor #D6D3CD
+skinparam legendBorderThickness 1
+
+rectangle "SIX ORGANISATIONS, NEUF CHANTIERS, AUCUN TEXTE" as CADRE #FFFDF9;line:9A3412 {
+  rectangle O1 #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**W3C**</color>  **Deux groupes communautaires**
+    ----
+    « Agent Identity Registry Protocol »
+    (22 avr. 2026) et « AI Agent Protocol »
+    (8 mai 2025).
+    ----
+    <color:#57534E>ni voie des normes, ni Recommandation</color>
+  ]
+
+  rectangle O2 #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**OIDF**</color>  **Gestion d'identité pour l'IA**
+    ----
+    Sa charte place hors périmètre le
+    développement de protocoles de
+    normalisation mondiaux.
+    ----
+    <color:#57534E>renvoie le travail ailleurs</color>
+  ]
+
+  rectangle O3 #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**DIF**</color>  **Connaissance de l'agent**
+    ----
+    Version 1 encore soumise à
+    relecture et à approbation au 22
+    juin 2026.
+    ----
+    <color:#57534E>[B, degré 2] · non ratifiée</color>
+  ]
+
+  rectangle O4 #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**IETF**</color>  **Deux brouillons individuels**
+    ----
+    Identité d'agent (26 mars 2026) et
+    registre d'identité (23 mai 2026).
+    ----
+    <color:#57534E>non adoptés par un groupe de travail</color>
+  ]
+
+  rectangle O5 #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**NIST**</color>  **Deux initiatives**
+    ----
+    Document de concept (5 févr. 2026)
+    et initiative de normalisation (17
+    févr. 2026).
+    ----
+    <color:#57534E>projet public initial ; volet identité</color>
+    <color:#57534E>à l'état de concept</color>
+  ]
+
+  rectangle O6 #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**Éditeur**</color>  **Cadre commercial**
+    ----
+    « Know Your Agent », annoncé le 15
+    juin 2026.
+    ----
+    <color:#57534E>[B, degré 3] · une offre, pas une norme</color>
+  ]
+
+  O1 -[hidden]right-> O2
+  O2 -[hidden]right-> O3
+  O4 -[hidden]right-> O5
+  O5 -[hidden]right-> O6
+  O1 -[hidden]down-> O4
+  O2 -[hidden]down-> O5
+  O3 -[hidden]down-> O6
+}
+
+legend
+  ZÉRO TEXTE RATIFIÉ. Un chantier ouvert n'est pas une norme en cours d'adoption : deux brouillons de l'IETF sont des
+  soumissions individuelles non adoptées, une charte place la normalisation HORS de son périmètre, et l'un des neuf est un cadre
+  commercial.
+endlegend
+@enduml

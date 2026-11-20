@@ -1,0 +1,50 @@
+' Ouvrage : 1 - Compendium 2026
+' Chapitre : 37 · Le maillage d'agents : du service mesh au point d'application (PEP/PDP et zero trust agentique) (p. 439)
+' Figure : Figure 37.8 — Ce que le maillage voit de la chaîne de mandat, et ce qu’il ne peut pas suppléer.
+@startuml
+hide stereotype
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+skinparam defaultFontName SansSerif
+skinparam roundcorner 6
+skinparam package {
+    BackgroundColor #fdfbf7
+    BorderColor #d4cfc7
+    FontColor #444444
+}
+skinparam package<<accent>> {
+    BackgroundColor #fdfbf7
+    BorderColor #9c3d14
+    FontColor #9c3d14
+}
+skinparam rectangle {
+    BackgroundColor #f7f4ee
+    BorderColor #b8b4ac
+    FontColor #1f1f1f
+}
+skinparam rectangle<<accent>> {
+    BackgroundColor #ffffff
+    BorderColor #9c3d14
+    FontColor #1f1f1f
+}
+skinparam note {
+    BackgroundColor #faf8f4
+    BorderColor #b8b4ac
+    FontColor #333333
+}
+
+package "CE QU'IL VOIT" as P1 {
+    rectangle "<b>Une arête, à l'instant du passage</b>\n\nQui appelle qui\n\nCe que la politique dit de cette arête\n\nEt il peut en produire une trace\n\n<b>énumérable — § 37.8.1 et § 37.8.4</b>" as C1
+}
+
+package "CE QU'IL NE PEUT PAS SUPPLÉER" as P2 <<accent>> {
+    rectangle "<b>Ce qui ne se lit pas sur une arête</b>\n\nLa chaîne au-delà du saut courant\n\nLa fraîcheur du mandat invoqué\n\nL'ancrage de l'identité qui se présente\n\n<b>trois entrées, aucune ne dépend du maillage</b>" as C2 <<accent>>
+}
+
+P1 -[hidden]right-> P2
+
+note bottom
+Ce qu'il voit EST ÉNUMÉRABLE, et l'énumération est le résultat. Les manques se lisent sur trois entrées, et AUCUNE NE DÉPEND
+DU MAILLAGE : ce ne sont pas des défauts de mise en œuvre, ce sont des propriétés que l'arête ne porte pas.
+end note
+@enduml

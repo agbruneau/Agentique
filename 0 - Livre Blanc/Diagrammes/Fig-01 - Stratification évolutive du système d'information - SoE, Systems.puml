@@ -1,0 +1,35 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 1 (p. 11)
+' Légende : Stratification évolutive du système d’information : SoE, Systems of Agency et SoR
+
+@startuml
+!include <archimate/Archimate>
+
+title Stratification du SI : SoE, Systems of Agency et SoR
+
+Grouping(s1, "Strate 1 — Systems of Engagement (SoE)") {
+  Business_Actor(op, "Opérateur /\nClient métier")
+  Application_Component(soe, "Portails, CRM\net canaux")
+}
+
+Grouping(s2, "Strate 2 — Systems of Agency (couche probabiliste bornée)") {
+  Application_Service(plan, "Planification\nadaptative")
+  Application_Component(noyau, "Noyau d'agence\n(paliers L1-L4)")
+  Application_Interface(porte, "Porte d'impact\net HITL / HOTL")
+}
+
+Grouping(s3, "Strate 3 — Systems of Record (SoR — déterministe)") {
+  Application_DataObject(verite, "Vérité maîtresse\net journal d'audit")
+  Application_Component(erp, "ERP, Core Banking\net SGBD maîtres")
+}
+
+op -> soe : Intention
+soe -[dashed]-> plan : Requête asynchrone
+plan -> noyau : Plan borné
+noyau -[dashed]-> porte : Action
+
+verite --> noyau : Lecture seule filtrée\n(vérité terrain)
+verite <.[dotted].> erp : Transaction validée
+porte <.[dotted].> erp : Mutation idempotente\nvalidée uniquement
+
+@enduml

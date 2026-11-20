@@ -1,0 +1,44 @@
+%% Fig. 60. – Architecture de l’usine logicielle Agentic SDLC et modernisation patrimoniale Strangler Fig : extraction AST/SCIP, séparation bâtisseur/oracle/critique et bascule Shadow Mirroring.
+flowchart TB
+    Titre["Usine Logicielle Agentique (Agentic SDLC) & Modernisation Patrimoniale Strangler Fig (RPG / COBOL)"]
+
+    subgraph Phase1["Phase 1 — Extraction Neuro-Symbolique & Cartographie d'Impact Déterministe"]
+        direction LR
+        P1A["Socle Patrimonial (IBM i / Mainframe)<br/>Sources RPG ILE, COBOL, DB2/400, JCL<br/>Journaux d'exécution historiques réels<br/>Règles implicites non documentées"]
+        P1B["Indexeur AST / SCIP & Graphe Appel<br/>Analyse statique exacte des dépendances<br/>Découpage des sous-domaines isolables<br/>Zéro oubli d'effet de bord table"]
+        P1C["Agent Spécificateur & Caractérisation<br/>Synthèse invariants Apache Ossie / DMN<br/>Génération Golden Master (10k–100k cas)<br/>Oracle de parité entrée/sortie figé"]
+        P1A --> P1B --> P1C
+    end
+
+    subgraph Phase2["Phase 2 — Pipeline Agentic SDLC à Séparation des Devoirs (OpenSandbox Isolé)"]
+        direction LR
+        P2A["Agent Bâtisseur (Worktree Dédié)<br/>Implémente service cible (Rust/Go/TS)<br/>Expose contrat MCP typé idempotent<br/>Aucun droit d'écriture sur les tests d'or<br/>Interdiction d'auto-approbation"]
+        P2B["Portes Déterministes Non-IA<br/>Compilateur strict + SAST + SBOM<br/>Tests de mutation (>= 85 % tués)<br/>Parité centime près sur Golden Master<br/>Preuve objective reproductible"]
+        P2C["Critique Contradictoire & Architecte<br/>Modèle famille distincte (anti-biais)<br/>Audit concurrence, fuites & sécurité<br/>Signature finale par ingénieur humain<br/>Traçabilité BSIF E-23 complète"]
+        P2A --> P2B --> P2C
+    end
+
+    subgraph Phase3["Phase 3 — Bascule Progressive Strangler Fig par Double Exécution en Ombre (Shadow Mirroring)"]
+        direction LR
+        P3A["1. Duplication Trafic (30 jours)<br/>IBM i reste maître ; nouveau service<br/>calcule en parallèle sans muter<br/>Comparateur temps réel des sorties"]
+        P3B["2. Bascule Canary & CDC<br/>0 divergence sur 100 000 dossiers<br/>Routage 5 % → 50 % → 100 %<br/>Réplication inverse CDC de sécurité"]
+        P3C["3. Extinction Module Legacy<br/>Retrait de l'agent CUA transitoire<br/>Serveur MCP natif sous 18 ms<br/>Réduction dette & coûts MIPS"]
+        P3A --> P3B --> P3C
+    end
+
+    Titre ~~~ Phase1
+    Phase1 --> Phase2 --> Phase3
+
+    style Titre fill:#FFFFFF,stroke:none
+    style Phase1 fill:#F8FAFC,stroke:#1E293B
+    style Phase2 fill:#EFF6FF,stroke:#2563EB
+    style Phase3 fill:#F0FDF4,stroke:#166534
+    style P1A fill:#FFFFFF,stroke:#475569
+    style P1B fill:#FFFFFF,stroke:#2563EB
+    style P1C fill:#FFFFFF,stroke:#7C3AED
+    style P2A fill:#FFFFFF,stroke:#2563EB
+    style P2B fill:#FFFFFF,stroke:#1E293B
+    style P2C fill:#FFFFFF,stroke:#7C3AED
+    style P3A fill:#FFFFFF,stroke:#475569
+    style P3B fill:#FFFFFF,stroke:#166534
+    style P3C fill:#FFFFFF,stroke:#166534

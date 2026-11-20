@@ -1,0 +1,38 @@
+' Ouvrage : 1 - Compendium 2026
+' Chapitre : 35 · Études de cas : la production agentique canadienne (2025-2026) (p. 414)
+' Figure : Figure 35.2 — Cinq dispositifs de gouvernance sur dix institutions (§ 35.1, § 35.2, § 35.3, § 35.4, § 35.6), et ce qu’ils ont en commun : aucune documentation sur la chaîne de mandat (ch. 17, ch. 25 § 25.4) ni sur l’option d’orchestration (ch. 43 § 43.2).
+@startuml
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+skinparam defaultFontName SansSerif
+skinparam roundcorner 6
+skinparam package {
+    BackgroundColor #fdfbf7
+    BorderColor #d4cfc7
+    FontColor #9c3d14
+}
+skinparam rectangle {
+    BackgroundColor #f7f4ee
+    BorderColor #b8b4ac
+    FontColor #1f1f1f
+}
+skinparam note {
+    BackgroundColor #faf8f4
+    BorderColor #b8b4ac
+    FontColor #333333
+}
+
+package "CE QUE CINQ DISPOSITIFS PUBLIÉS ONT EN COMMUN" {
+    rectangle "<color:#9c3d14><b>1</b></color>   <b>Un titulaire nommé au sommet</b>\n\nDeux titulaires reconstatés au\ncorps (une responsable mondiale\ndepuis mai 2026, § 35.4 ; un chef\nde groupe depuis févr. 2026,\n§ 35.3) et un troisième déclaré à\nl'entrée initiale (§ 35.2).\n\n<color:#666666>§ 35.2, § 35.3, § 35.4</color>" as G1
+    rectangle "<color:#9c3d14><b>2</b></color>   <b>Un dispositif identifiable</b>\n\nPublié, et donc opposable à sa\npropre communication.\n\n\n\n\n<color:#666666>cinq des dix institutions examinées</color>" as G2
+    rectangle "<color:#9c3d14><b>3</b></color>   <b>Rien sur mandat ni architecture</b>\n\nAucun des cinq ne documente\nl'option d'orchestration de son\ndéploiement.\n\n\n\n<color:#666666>ch. 43 § 43.2 — absence de</color>\n<color:#666666>documentation</color>" as G3
+
+    G1 -[hidden]right-> G2
+    G2 -[hidden]right-> G3
+}
+
+note bottom
+CINQ SUR DIX. Les cinq autres ne publient pas de dispositif identifiable — ce qui est une absence de publication, non une
+absence de gouvernance (§ 35.0, troisième classe d'accès). La comparaison porte sur ce qui est publié, et rien d'autre.
+end note
+@enduml

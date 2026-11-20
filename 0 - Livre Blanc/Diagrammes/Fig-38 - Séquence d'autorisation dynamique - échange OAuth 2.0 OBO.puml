@@ -1,0 +1,50 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 38 (page 148)
+' Légende : Fig. 38. – Séquence d’autorisation dynamique : échange OAuth 2.0 OBO (RFC 8693 + RFC 8707 + DPoP), downscoping multi-sauts et évaluation par Intent Gate
+@startuml
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+skinparam roundcorner 6
+skinparam defaultFontName SansSerif
+skinparam ArrowColor #324e67
+skinparam ArrowFontColor #172025
+skinparam ActorBackgroundColor #f3f7f9
+skinparam ActorBorderColor #324e67
+skinparam ActorFontColor #172025
+skinparam ParticipantBackgroundColor #f3f7f9
+skinparam ParticipantBorderColor #324e67
+skinparam ParticipantFontColor #172025
+skinparam SequenceLifeLineBorderColor #7e8a93
+skinparam SequenceDividerBackgroundColor #edf3f7
+skinparam SequenceDividerBorderColor #324e67
+skinparam SequenceDividerFontColor #172025
+
+autonumber
+
+actor "Utilisateur / SoE" as User
+participant "Agent Orchestrateur\n(SVID + clé DPoP)" as Agent
+participant "STS / Serveur OAuth\n(RFC 8693, 8707, 9396)" as STS
+participant "MCP Gateway (PEP)\n& Intent Gate (PDP)" as MCP
+participant "System of Record\n(API / SoR cible)" as SoR
+
+== 1. Requête initiale et échange On-Behalf-Of (downscoping) ==
+
+User -> Agent : Requête avec jeton OAuth\n(portée initiale large)
+Agent -> STS : Token Exchange (RFC 8693)\nsubject_token + actor_token (SVID)\n+ resource (RFC 8707) + DPoP (RFC 9449)\n+ authorization_details (RFC 9396)
+STS --> Agent : Jeton OBO lié DPoP + Txn-Token\n(sub: user, act: agent, aud: mcp-gw,\nportée réduite et plafond RAR)
+
+== 2. Contrôle déterministe par Intent Gate (OPA / Cedar) ==
+
+Agent -> MCP : POST /mcp tools/call\n(Authorization: DPoP + preuve HTTP,\noutil et paramètres conformes)
+MCP -> MCP : Vérifie signature JWT, audience RFC 8707,\npreuve DPoP et chaîne act[]
+MCP -> MCP : Évalue politique OPA/Cedar (PDP) :\nPrincipal, Action, Resource, Context
+MCP -> SoR : Exécution bornée et idempotente\n(Txn-Token propagé en audit)
+SoR --> MCP : 200 OK (confirmation)
+MCP --> Agent : Réponse MCP filtrée
+
+== 3. Rejet déterministe d'une dérive par injection indirecte (ASI01/ASI03) ==
+
+Agent -> MCP : tools/call injecté\n(outil exclu ou paramètre hors plafond)
+MCP -> MCP : Intent Gate (forbid / deny) :\nportée ou contrainte RFC 9396 violée
+MCP --> Agent : 403 Forbidden / Escalade HITL\n+ Alerte AIDR (aucun appel SoR)
+@enduml

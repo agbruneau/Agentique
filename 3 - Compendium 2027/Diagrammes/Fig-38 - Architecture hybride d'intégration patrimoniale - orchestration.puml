@@ -1,0 +1,82 @@
+' Fig. 38. – Architecture hybride d’intégration patrimoniale : orchestration UiPath Maestro, serveurs MCP d’encapsulation IBM i / CICS / EDI et cellules CUA confinées à double vérification.
+@startuml
+title Intégration Patrimoniale : Orchestration UiPath Maestro, Encapsulation MCP et CUA Confiné
+
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam rectangle {
+  BackgroundColor #FFFFFF
+  BorderColor #334155
+}
+
+rectangle Orchestration #EFF6FF;line:2563EB [
+  **Plan d'Orchestration Patrimoniale — UiPath Maestro + Passerelle agentgateway (BPMN / État Durable)**
+  Arbitrage déterministe : privilégier l'encapsulation programme/flux via MCP (≥ 92 % du volume) • Confiner le CUA au dernier recours (≤ 8 %)
+  Contrôle de conformité BSIF E-23 : clés d'idempotence obligatoires, plafonds L2/L3 et escalade HOTL sur anomalie d'écran
+]
+
+rectangle "Voie A (Prioritaire) — Serveurs MCP d'Encapsulation\nZéro interface graphique • Latence 40–250 ms • Déterminisme 99,95 %" as VoieA #F0FDF4;line:166534 {
+  rectangle McpIBMi #FFFFFF;line:166534 [
+    **1. Serveur MCP IBM i (AS/400) — Programmes RPGLE / COBOL**
+    Appel natif PCML / XMLSERVICE • Conversion EBCDIC (CP037/1147) ↔ UTF-8
+    Décimales condensées COMP-3 + Registre d'idempotence DB2 for i
+  ]
+
+  rectangle McpZOS #FFFFFF;line:166534 [
+    **2. Serveur MCP Mainframe z/OS — Transactions CICS / IMS**
+    Passerelle z/OS Connect / IBM MQ • Mappage COMMAREA vers JSON Schema
+    Propagation d'identité jusqu'au jeton RACF / ACF2 individuel
+  ]
+
+  rectangle McpEDI #FFFFFF;line:166534 [
+    **3. Serveur MCP Passerelle B2B — Flux EDI ANSI X12 / EDIFACT**
+    Intention JSON typée soumise par l'agent (zéro trame EDI générée par LLM)
+    Sérialiseur déterministe X12 / EDIFACT + contrôle ISA / GS / ST / CTT
+    Transmission signée AS2 et rapprochement automatique des accusés 997 / CONTRL
+  ]
+
+  McpIBMi -[hidden]down-> McpZOS
+  McpZOS -[hidden]down-> McpEDI
+}
+
+rectangle "Voie B (Dernier Recours) — Cellule CUA Confinée\nTerminaux TN5250 / TN3270 & Bureaux Citrix sans API ni code source" as VoieB #FFF7ED;line:9A3412 {
+  rectangle Etape1 #FFFFFF;line:9A3412 [
+    **Étape 1 — Bac à sable VDI éphémère & Masquage géométrique**
+    Caviardage PII en amont du modèle visuel • Verrouillage matériel des
+    zones interdites (Forbidden Boxes) et touches destructrices (F23 / Suppr)
+  ]
+
+  rectangle Etape2 #FFFFFF;line:9A3412 [
+    **Étape 2 — Pré-Assertion d'état & Action atomique bornée**
+    Assertion du code d'écran 5250/Citrix et absence de fenêtre modale
+    Exécution d'un geste atomique unique (saisie bornée, zéro rafale aveugle)
+  ]
+
+  rectangle Etape3 #EFF6FF;line:2563EB [
+    **Étape 3 — Double Vérification Post-Action (Read-Back)**
+    Relecture OCR déterministe + Vérificateur indépendant confirmant la valeur
+    écrite à l'écran avant autorisation de la touche de validation (COMMIT)
+  ]
+
+  rectangle Etape4 #FEF2F2;line:DC2626 [
+    **Étape 4 — Enregistrement WORM & Piste d'Audit BSIF E-23**
+    Captures signées avant/après chaque frappe + lien traceId OpenTelemetry
+  ]
+
+  Etape1 -[hidden]down-> Etape2
+  Etape2 -[hidden]down-> Etape3
+  Etape3 -[hidden]down-> Etape4
+}
+
+rectangle Gouvernance #F8FAFC;line:334155 [
+  **Gouvernance du cycle de vie (ADR-016) : Chaque flux CUA homologué ouvre un chantier financé d'encapsulation MCP sous 12 mois**
+]
+
+Orchestration -[#166534]down-> VoieA
+Orchestration -[#9A3412]down-> VoieB
+VoieA -[hidden]right-> VoieB
+McpEDI -[hidden]down-> Gouvernance
+Etape4 -[hidden]down-> Gouvernance
+@enduml

@@ -1,0 +1,20 @@
+' Figure 15 — Contrôle exigé selon la classe de l'agent et le palier de l'outil (2 - Cadre de Référence, ch. 8, p. 127)
+' Source : cadre CRE-IA-2026-01
+@startuml
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 11
+
+card Matrice #FFFFFF;line:FFFFFF [
+  |= CLASSE DE L’AGENT ↓ · PALIER DE L’OUTIL → |= <#28774E><color:#FFFFFF>**P0 · lecture publique**</color>\n<color:#FFFFFF>catalogue, documentation</color> |= <#1B5E9E><color:#FFFFFF>**P1 · lecture interne**</color>\n<color:#FFFFFF>dossier client, paie</color> |= <#B45309><color:#FFFFFF>**P2 · écriture réversible**</color>\n<color:#FFFFFF>billet, brouillon, statut</color> |= <#9C2F39><color:#FFFFFF>**P3 · action critique**</color>\n<color:#FFFFFF>virement, suppression, envoi</color> |
+  | **Faible**\nplafond N3\n(N4 sur décision) | <#E6F4EA> <color:#28774E>**Automatique**</color>\nidentité de charge, débit | <#E6F4EA> <color:#28774E>**Automatique**</color>\ncontrôles du palier (tableau 31) | <#FEF3DC> <color:#B45309>**Approbation au-delà**</color>\ndu seuil métier déclaré | <#FCE8EB> <color:#9C2F39>**Approbation hors bande**</color>\nà chaque appel |
+  | **Modéré**\nplafond N3 | <#E6F4EA> <color:#28774E>**Automatique**</color>\nidentité de charge, débit | <#E6F4EA> <color:#28774E>**Automatique**</color>\ncontrôles du palier (tableau 31) | <#FEF3DC> <color:#B45309>**Approbation au-delà**</color>\ndu seuil métier déclaré | <#FCE8EB> <color:#9C2F39>**Approbation hors bande**</color>\nà chaque appel |
+  | **Élevé**\nplafond N2 | <#E6F0FA> <color:#1B5E9E>**Automatique + audit**</color>\njournalisation complète | <#FEF3DC> <color:#B45309>**Revue a posteriori**</color>\néchantillon : finalité, minimisation | <#FCE8EB> <color:#9C2F39>**Approbation signée**</color>\nà chaque action (N2) | <#9C2F39> <color:#FFFFFF>**Approbation hors bande**</color>\n<color:#FFFFFF>+ second approbateur</color> |
+]
+
+legend bottom
+  Les contrôles se cumulent; l’approbation la plus stricte l’emporte (EXIG-AUT-10).
+  Le palier d’un outil est inscrit au catalogue; la passerelle ne se fie pas aux annotations déclarées par le serveur.
+endlegend
+@enduml

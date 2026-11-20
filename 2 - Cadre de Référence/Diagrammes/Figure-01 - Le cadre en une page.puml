@@ -1,0 +1,52 @@
+' Figure 1 — Le cadre en une page (2 - Cadre de Référence, Sommaire exécutif, p. 8)
+' Source : CRE-IA-2026-01
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 12
+skinparam defaultTextAlignment center
+skinparam linetype ortho
+skinparam rectangle {
+  BorderThickness 1.5
+}
+
+rectangle "**Des agents branchés, collaboratifs et orchestrés**\n//de façon sûre, traçable, réversible et économiquement maîtrisée//" as Toit #0F2744;text:FFFFFF;line:0F2744
+
+rectangle "**12 principes directeurs (PRIN-01 à PRIN-12)**\nstandards ouverts · contrat avant code · moindre privilège et moindre agence · autonomie proportionnée au risque · réversibilité · simplicité d’abord" as Principes #116D78;text:FFFFFF;line:116D78
+
+together {
+  rectangle "**Interopérabilité**\n\nMCP 2026-07-28\nA2A 1.0\nCloudEvents, AsyncAPI\nOpenAPI, catalogue\n4 niveaux (EIF)\n\nchapitre 6" as P1 #1B5E9E;text:FFFFFF;line:1B5E9E
+  rectangle "**Orchestration**\n\n8 patrons autorisés\nagent unique d’abord\nexécution durable\nsagas, idempotence\ndégradation maîtrisée\n\nchapitre 7" as P2 #16477A;text:FFFFFF;line:16477A
+  rectangle "**Autonomie**\n\nniveaux N0 à N4\npaliers d’outils P0 à P3\napprobation signée\nanti-approbation\nmachinale\n\nchapitre 8" as P3 #53469B;text:FFFFFF;line:53469B
+  rectangle "**Identité et sécurité**\n\nconfiance zéro\ndélégation RFC 8693\npasserelle d’agents\nOWASP ASI, injection\nbacs à sable\n\nchapitre 9" as P4 #9C2F39;text:FFFFFF;line:9C2F39
+  rectangle "**Observabilité**\n**et FinOps**\n\nOpenTelemetry GenAI\naudit chaîné et ancré\névaluation en 3 étages\ncoût par tâche\n\nchapitre 10" as P5 #28774E;text:FFFFFF;line:28774E
+}
+
+rectangle "**Architecture de référence : six couches et trois plans transversaux (chapitre 5)**\ncanaux · orchestration · agents · médiation · outils · systèmes d’enregistrement — identité, observabilité, gouvernance" as Arch #E6EBF1;text:0F2744;line:CBD5E1
+
+together {
+  rectangle "**Gouvernance et cycle de vie (chapitre 11)**\nregistre · RACI · modèle en étoile · homologation" as Gouv #EDE8F5;text:0F2744;line:D8CEF0
+  rectangle "**Risques, conformité et approvisionnement (chapitres 12 et 13)**\nLoi 25 · BSIF E-23 · RIA · NIST AI RMF · ISO/IEC 42001 · contrats" as Risq #FCE8EB;text:0F2744;line:F4CCD2
+}
+
+rectangle "**Mise en œuvre : maturité en 5 niveaux, feuille de route en 4 phases, calée sur 2027-2030, indicateurs (chapitres 14 et 15)**\nannexes : grille d’homologation, fiche d’agent, contrats types, registre des exigences, glossaire, validation des sources, références, actualisation" as Mise #FEF2DC;text:0F2744;line:F6DFB5
+
+Toit -[hidden]down-> Principes
+Principes -[hidden]down-> P1
+Principes -[hidden]down-> P2
+Principes -[hidden]down-> P3
+Principes -[hidden]down-> P4
+Principes -[hidden]down-> P5
+P1 -[hidden]right-> P2
+P2 -[hidden]right-> P3
+P3 -[hidden]right-> P4
+P4 -[hidden]right-> P5
+P3 -[hidden]down-> Arch
+Arch -[hidden]down-> Gouv
+Arch -[hidden]down-> Risq
+Gouv -[hidden]right-> Risq
+Gouv -[hidden]down-> Mise
+Risq -[hidden]down-> Mise
+@enduml

@@ -1,0 +1,22 @@
+%% Figure 6.1 — Les quatre topologies de coordination multi-agents (supervisée en étoile, séquentielle en chaîne, hiérarchique en arbre, pair-à-pair en graphe) et la propriété dominante de chacune.
+%% Source : 1 - Compendium 2026, Chapitre 6 (page 72)
+
+%%{init: {'flowchart': {'wrappingWidth': 900}}}%%
+flowchart TB
+    subgraph SG_TOPO["QUATRE TOPOLOGIES, QUATRE ARBITRAGES"]
+        direction LR
+        T1["<b>1 · Étoile</b><br/><br/>Un orchestrateur délègue à des<br/>travailleurs.<br/><br/><i>visibilité maximale,<br/>orchestrateur point de dépendance</i>"]
+        T2["<b>2 · Chaîne</b><br/><br/>La sortie d'un agent est l'entrée<br/>du suivant.<br/><br/><i>simple, mais l'erreur se<br/>propage sans recours</i>"]
+        T3["<b>3 · Arbre</b><br/><br/>Délégation hiérarchique.<br/><br/><i>passage à l'échelle,<br/>diagnostic plus difficile</i>"]
+        T4["<b>4 · Graphe</b><br/><br/>Interactions arbitraires.<br/><br/><i>expressivité maximale,<br/>état global inobservable</i>"]
+    end
+
+    NOTE["Chaque topologie échange une propriété contre une autre : la visibilité contre la dépendance, la simplicité contre le recours,<br/>l'échelle contre le diagnostic, l'expressivité contre l'observabilité de l'état global."]
+
+    SG_TOPO ~~~ NOTE
+
+    classDef card fill:#FAF7F2,stroke:#C4BEB5,stroke-width:1px,color:#222222,text-align:left;
+    classDef noteBox fill:#F7F5F0,stroke:#C4BEB5,stroke-width:1px,color:#333333,text-align:left;
+    class T1,T2,T3,T4 card;
+    class NOTE noteBox;
+    style SG_TOPO fill:#FFFFFF,stroke:none,color:#9E3A14

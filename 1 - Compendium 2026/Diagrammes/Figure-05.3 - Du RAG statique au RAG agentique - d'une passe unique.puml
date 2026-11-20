@@ -1,0 +1,88 @@
+' Figure 5.3 — Du RAG statique au RAG agentique : d'une passe unique à une boucle de contrôle.
+' Source : 1 - Compendium 2026, Chapitre 5 (page 68)
+
+@startuml
+top to bottom direction
+hide stereotype
+skinparam packageStyle rectangle
+skinparam backgroundColor #FFFFFF
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 13
+skinparam shadowing false
+skinparam roundCorner 4
+skinparam nodesep 35
+skinparam ranksep 18
+skinparam padding 14
+
+skinparam package {
+  BackgroundColor #FAF7F2
+  BorderColor #B8B3AA
+  FontColor #555555
+  FontStyle bold
+}
+
+skinparam package<<accent>> {
+  BackgroundColor #FFFFFF
+  BorderColor #9E3A14
+  BorderThickness 2
+  FontColor #9E3A14
+  FontStyle bold
+}
+
+skinparam rectangle {
+  BackgroundColor #FFFFFF
+  BorderColor #B8B3AA
+  FontColor #222222
+}
+
+skinparam rectangle<<accent>> {
+  BackgroundColor #FFFFFF
+  BorderColor #9E3A14
+  FontColor #222222
+}
+
+skinparam rectangle<<sub>> {
+  BackgroundColor #FFFFFF
+  BorderColor #FFFFFF
+  FontColor #222222
+}
+
+skinparam legendBackgroundColor #F7F5F0
+skinparam legendBorderColor #C4BEB5
+skinparam legendFontColor #333333
+
+package "RAG NAÏF — Une passe, une fois pour toutes" as P_LEFT {
+  rectangle "Encoder la requête" as N1
+  rectangle "Récupérer les passages les plus proches" as N2
+  rectangle "Conditionner la génération" as N3
+  rectangle "<b>la linéarité fait la fragilité</b>" as L_SUB <<sub>>
+
+  N1 -down-> N2 #888888
+  N2 -down-> N3 #888888
+  N3 -[hidden]down- L_SUB
+}
+
+package "RAG AGENTIQUE — Une boucle de contrôle" as P_RIGHT <<accent>> {
+  rectangle "Planifier la stratégie de recherche" as A1 <<accent>>
+  rectangle "Déclencher une ou plusieurs récupérations" as A2 <<accent>>
+  rectangle "Critiquer ce qui remonte" as A3 <<accent>>
+  rectangle "Itérer, ou s'arrêter" as A4 <<accent>>
+  rectangle "<b>le pipeline figé devient une boucle</b>" as R_SUB <<sub>>
+
+  A1 -down-> A2 #9E3A14
+  A2 -down-> A3 #9E3A14
+  A3 -down-> A4 #9E3A14
+  A4 .up.> A1 #9E3A14 : Itérer
+  A4 -[hidden]down- R_SUB
+}
+
+N1 -[hidden]right- A1
+N2 -[hidden]right- A2
+N3 -[hidden]right- A3
+L_SUB -[hidden]right- R_SUB
+
+legend
+  Sept points de défaillance récurrents sont recensés sur la chaîne de récupération (Barnett et coll., 2024).
+  La boucle les rend DÉTECTABLES ; elle ne les supprime pas, et une passe unique ne pouvait ni les détecter ni les corriger.
+endlegend
+@enduml

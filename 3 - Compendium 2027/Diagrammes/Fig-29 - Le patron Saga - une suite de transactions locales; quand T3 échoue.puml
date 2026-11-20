@@ -1,0 +1,36 @@
+' Fig. 29. – Le patron Saga : suite de transactions locales et compensations en ordre inverse.
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+
+rectangle "**TRANSACTIONS LOCALES**" as HdrT #FFFFFF;line:FFFFFF
+rectangle "**COMPENSATIONS, EN ORDRE INVERSE**" as HdrC #FFFFFF;line:FFFFFF
+HdrT -[hidden]right-> HdrC
+
+rectangle "**T1**\nvalidée" as T1 #EFF6FF;line:2563EB
+rectangle "**T2**\nvalidée" as T2 #EFF6FF;line:2563EB
+rectangle "**T3**\néchec" as T3 #FEF2F2;line:DC2626
+rectangle "**C2**\ncompense T2" as C2 #F8FAFC;line:475569
+rectangle "**C1**\ncompense T1" as C1 #F8FAFC;line:475569
+
+HdrT -[hidden]down-> T1
+HdrT -[hidden]down-> T2
+HdrT -[hidden]down-> T3
+HdrC -[hidden]down-> C2
+HdrC -[hidden]down-> C1
+
+T1 -[#475569]right-> T2
+T2 -[#475569]right-> T3
+T3 -[#991B1B]right-> C2
+C2 -[#475569]right-> C1
+
+T2 .[#854D0E,dashed,norank]. C2
+T1 .[#854D0E,dashed,norank]. C1
+
+rectangle "**État intermédiaire visible entre une étape et sa compensation**\nUn autre agent peut lire une réservation qui sera annulée, et décider sur cette base" as Note #FFFFFF;line:FFFFFF
+
+T3 -[hidden]down-> Note
+
+@enduml

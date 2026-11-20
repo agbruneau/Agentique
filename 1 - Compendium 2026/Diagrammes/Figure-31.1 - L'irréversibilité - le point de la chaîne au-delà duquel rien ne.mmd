@@ -1,0 +1,23 @@
+%% Ouvrage : 1 - Compendium 2026
+%% Chapitre : 31 · Le vertical financier : pourquoi l'agentique y est durcie (p. 356)
+%% Figure : Figure 31.1 — L’irréversibilité : le point de la chaîne au-delà duquel rien ne se défait.
+flowchart TB
+    subgraph S["AVANT LE SEUIL, APRÈS LE SEUIL"]
+        direction LR
+        N1["<b>Intention</b><br/>se reformule sans<br/>conséquence"]
+        N2["<b>Instruction</b><br/>se corrige tant<br/>qu'elle n'est pas<br/>passée"]
+        N3["<b>Règlement</b><br/>franchi, il est final"]
+        N4["<b>Compensation</b><br/>une seconde opération,<br/>jamais une annulation"]
+        N1 --> N2 --> N3 -. "×" .- N4
+    end
+    SEUIL["<b>Le seuil est la finalité du règlement — il ne se rejoue pas.</b>"]
+    NOTE["SIÈGE DU PATRON POUR TOUTE LA SOMME : il est posé ici une seule fois et n'est re-dérivé nulle part. Ce qui précède le seuil<br/>se corrige ; ce qui le franchit se COMPENSE, et une compensation est une seconde opération, non une annulation (ch. 48 § 48.3)."]
+    S ~~~ SEUIL ~~~ NOTE
+
+    style S fill:#fdfbf7,stroke:#d4cfc7,color:#9c3d14
+    style N1 fill:#f7f4ee,stroke:#b8b4ac,color:#1a1a1a
+    style N2 fill:#f7f4ee,stroke:#b8b4ac,color:#1a1a1a
+    style N3 fill:#f7f4ee,stroke:#9c3d14,color:#1a1a1a
+    style N4 fill:#f7f4ee,stroke:#b8b4ac,color:#1a1a1a
+    style SEUIL fill:#ffffff,stroke:none,color:#1a1a1a
+    style NOTE fill:#faf8f4,stroke:#b8b4ac,color:#444444

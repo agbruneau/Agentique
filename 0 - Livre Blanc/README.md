@@ -7,6 +7,7 @@
 - **Pages** : 251
 - **Parties / Sections** : 6
 - **Unités extraites** : 27
+- **Diagrammes (Mermaid / PlantUML)** : [Diagrammes/README.md](Diagrammes/README.md) (59 diagrammes — 56 PlantUML, 3 Mermaid)
 - **Statistiques du texte complet** : 96,029 mots · 5,563 lignes
 
 ## Table des matières

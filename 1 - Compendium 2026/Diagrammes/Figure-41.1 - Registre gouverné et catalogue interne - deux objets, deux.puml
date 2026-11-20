@@ -1,0 +1,40 @@
+' Ouvrage : 1 - Compendium 2026
+' Chapitre : 41 · La fabrique d'agents : produire, certifier et réémettre le parc (p. 475)
+' Figure : Figure 41.1 — Registre gouverné et catalogue interne : deux objets, deux autorités.
+@startuml
+skinparam backgroundColor #ffffff
+skinparam shadowing false
+skinparam defaultFontName SansSerif
+skinparam roundcorner 6
+skinparam package {
+    BackgroundColor #fdfbf7
+    BorderColor #d4cfc7
+    FontColor #444444
+}
+skinparam rectangle {
+    BackgroundColor #f7f4ee
+    BorderColor #b8b4ac
+    FontColor #1f1f1f
+}
+skinparam note {
+    BackgroundColor #faf8f4
+    BorderColor #b8b4ac
+    FontColor #333333
+}
+
+package "REGISTRE GOUVERNÉ (ch. 15)" as P1 {
+    rectangle "<b>Qu'un tiers vérifie une identité qu'il n'a pas émise</b>\n\nOpposable à des tiers, dans les limites du Livre II\n\nPorte l'ancrage — le verrou du Livre II\n\nPeuplé par l'émission\n\n<b>un instrument de preuve</b>" as C1
+}
+
+package "CATALOGUE INTERNE (ce chapitre)" as P2 {
+    rectangle "<b>Que l'organisation énumère ce qu'elle a produit</b>\n\nOpposable à personne\n\nPorte le gabarit d'origine et l'état de certification\n\nPeuplé par la fabrique\n\n<b>un instrument de gestion</b>" as C2
+}
+
+P1 -[hidden]right-> P2
+
+note bottom
+CONSTRUCTION D'AUTEUR EN TOTALITÉ. La différence qui compte n'est pas le contenu mais L'OPPOSABILITÉ : le catalogue n'est
+opposable à personne — c'est un instrument de gestion, non de preuve. Le confondre avec un registre fait croire à une preuve
+qui n'existe pas.
+end note
+@enduml

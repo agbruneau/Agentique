@@ -1,0 +1,22 @@
+%% Figure 9.5 — La pyramide d'évaluation de l'interopérabilité agentique : trois étages, aucun ne subsumant le suivant.
+%% Source : 1 - Compendium 2026, Chapitre 9 (page 115)
+
+%%{init: {'flowchart': {'wrappingWidth': 900}}}%%
+flowchart TB
+    subgraph SG_PYR["TROIS ÉTAGES, TROIS NATURES"]
+        direction TB
+        E3["<b>3 · Bancs de tâches inter-agents</b><br/>La collaboration produit-elle le résultat attendu ? — non déterministe."]
+        E2["<b>2 · Interopérabilité entre implémentations</b><br/>Deux implémentations distinctes du même protocole se comprennent-elles ? — déterministe, plus coûteux."]
+        E1["<b>1 · Conformité protocolaire</b><br/>Un message est-il valide ? Une transition d'état légale ? — déterministe et automatisable."]
+        E3 ~~~ E2 ~~~ E1
+    end
+
+    NOTE["Aucun étage ne subsume le suivant : une conformité protocolaire parfaite n'établit ni l'interopérabilité entre implémentations,<br/>ni le résultat d'une collaboration. Le troisième étage est INTRINSÈQUEMENT NON DÉTERMINISTE, et c'est pourquoi il ne se<br/>certifie pas comme les deux autres."]
+
+    SG_PYR ~~~ NOTE
+
+    classDef card fill:#FAF7F2,stroke:#C4BEB5,stroke-width:1px,color:#222222,text-align:left;
+    classDef noteBox fill:#F7F5F0,stroke:#C4BEB5,stroke-width:1px,color:#333333,text-align:left;
+    class E3,E2,E1 card;
+    class NOTE noteBox;
+    style SG_PYR fill:#FFFFFF,stroke:none,color:#9E3A14

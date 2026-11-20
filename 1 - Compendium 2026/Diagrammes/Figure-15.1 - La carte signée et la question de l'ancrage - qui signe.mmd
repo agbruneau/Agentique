@@ -1,0 +1,24 @@
+%% Figure 15.1 — La carte signée et la question de l’ancrage : qui signe les signataires ?
+%%{init: {'flowchart': {'wrappingWidth': 900}}}%%
+flowchart TB
+    subgraph CHAINE["CE QUE LA VÉRIFICATION ÉTABLIT, ET OÙ ELLE S'ARRÊTE"]
+        direction LR
+        E1["<b>Carte publiée</b><br/>à un emplacement bien<br/>connu, conforme à un<br/>mécanisme normalisé"]
+        E2["<b>Signature</b><br/>apposition MAY,<br/>vérification SHOULD<br/>(F-04, [A])"]
+        E3["<b>Intégrité</b><br/>d'un contenu<br/>canonicalisé au regard<br/>d'une clé (F-01, F-02,<br/>[A])"]
+        E4["<b>Appartenance</b><br/>hors protocole :<br/>'kid', 'jku', ou un<br/>magasin facultatif"]
+        E1 --> E2 --> E3 -. "×" .- E4
+    end
+
+    SYNTH["<b>La chaîne casse au dernier maillon : l'appartenance de la clé à une organisation n'est pas spécifiée.</b>"]
+    NOTE["L'ANCRAGE EST RENVOYÉ HORS DU PROTOCOLE. Le magasin de clés de confiance est un dispositif que les clients « MAY maintain » :<br/>le texte n'en définit ni la provenance, ni le format, ni les critères d'inscription (F-09, [B]). Le vérificateur établit<br/>l'intégrité — jamais l'appartenance."]
+
+    CHAINE ~~~ SYNTH ~~~ NOTE
+
+    style CHAINE fill:#FFFDF9,stroke:#9A3412,stroke-width:1px,color:#9A3412
+    style E1 fill:#FAF6F0,stroke:#B8B2A6,color:#1F2937
+    style E2 fill:#FAF6F0,stroke:#B8B2A6,color:#1F2937
+    style E3 fill:#FAF6F0,stroke:#B8B2A6,color:#1F2937
+    style E4 fill:#FAF6F0,stroke:#B8B2A6,color:#1F2937
+    style SYNTH fill:#FFFDF9,stroke:#D6D3CD,color:#111827
+    style NOTE fill:#F8F5F0,stroke:#D6D3CD,color:#374151

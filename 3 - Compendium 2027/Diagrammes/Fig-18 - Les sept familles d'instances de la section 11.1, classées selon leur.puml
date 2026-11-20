@@ -1,0 +1,92 @@
+' Fig. 18. – Les sept familles d'instances de la section 11.1, classées selon leur nature et selon le degré d'avancement de leur texte le plus avancé pour les agents.
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam defaultFontName "Segoe UI"
+
+rectangle Axe #FFFFFF;line:FFFFFF {
+  rectangle " " as A_Start #FFFFFF;line:FFFFFF
+  rectangle " " as A_End #FFFFFF;line:FFFFFF
+  A_Start -[#475569]-> A_End : degré d'avancement
+}
+
+rectangle Matrice #FFFFFF;line:FFFFFF {
+  rectangle "Catégorie" as Col0 #FFFFFF;line:FFFFFF {
+    rectangle "**Fondation et\ninstances ouvertes**" as Cat1 #FFFFFF;line:FFFFFF
+    rectangle "**Organismes formels**" as Cat2 #FFFFFF;line:FFFFFF
+    rectangle "**Puissances\npubliques**" as Cat3 #FFFFFF;line:FFFFFF
+    Cat1 -[hidden]down-> Cat2
+    Cat2 -[hidden]down-> Cat3
+  }
+
+  rectangle "Rien de propre\naux agents" as Col1 #FFFFFF;line:FFFFFF {
+    rectangle " " as E11 #FFFFFF;line:FFFFFF
+    rectangle "**ISO/IEC SC 42**" as ISO #F8FAFC;line:64748B
+    rectangle " " as E13 #FFFFFF;line:FFFFFF
+    E11 -[hidden]down-> ISO
+    ISO -[hidden]down-> E13
+  }
+
+  rectangle "Aucun texte publié" as Col2 #FFFFFF;line:FFFFFF {
+    rectangle " " as E21 #FFFFFF;line:FFFFFF
+    rectangle UIT #F8FAFC;line:64748B [
+      **UIT-T, IEEE**
+      Sujet à l'étude;
+      projets autorisés
+    ]
+    rectangle NIST #F8FAFC;line:64748B [
+      **NIST/CAISI**
+      Consultations; document de
+      réflexion sur l'identité
+    ]
+    E21 -[hidden]down-> UIT
+    UIT -[hidden]down-> NIST
+  }
+
+  rectangle "Brouillons" as Col3 #FFFFFF;line:FFFFFF {
+    rectangle BrouillonsFond #FFFFFF;line:FFFFFF {
+      rectangle W3C #F8FAFC;line:64748B [
+        **W3C, groupes communautaires**
+        Protocole, identité, confiance,
+        conformité
+      ]
+      rectangle IETF #F8FAFC;line:64748B [
+        **IETF**
+        Profils d'OAuth et de WIMSE
+        Web Bot Auth
+      ]
+      W3C -[hidden]down-> IETF
+    }
+    rectangle " " as E32 #FFFFFF;line:FFFFFF
+    rectangle " " as E33 #FFFFFF;line:FFFFFF
+    BrouillonsFond -[hidden]down-> E32
+    E32 -[hidden]down-> E33
+  }
+
+  rectangle "Textes publiés" as Col4 #FFFFFF;line:FFFFFF {
+    rectangle AAIF #EFF6FF;line:2563EB [
+      **AAIF**
+      Dix projets, dont MCP et
+      A2A : spécifications
+      publiées et mises en œuvre
+    ]
+    rectangle " " as E42 #FFFFFF;line:FFFFFF
+    rectangle SAC #F8FAFC;line:64748B [
+      **SAC (Chine)**
+      Série GB/Z 185-2026
+      en sept parties
+    ]
+    AAIF -[hidden]down-> E42
+    E42 -[hidden]down-> SAC
+  }
+
+  Col0 -[hidden]right-> Col1
+  Col1 -[hidden]right-> Col2
+  Col2 -[hidden]right-> Col3
+  Col3 -[hidden]right-> Col4
+}
+
+Axe -[hidden]down-> Matrice
+
+@enduml

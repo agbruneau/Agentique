@@ -1,0 +1,22 @@
+%% Figure 45.4 — Flux 2 — le paiement normalisé vers le rail de grande valeur
+flowchart TB
+    subgraph FLUX2["L'AGENT S'ARRÊTE AVANT LE SEUIL"]
+        direction LR
+        E1["<b>Intention</b><br/>l'agent interprète,<br/>compose, prépare"]
+        E2["<b>Instruction</b><br/>normalisée, validable<br/>par schéma"]
+        E3["<b>Rail</b><br/>exécute, de façon<br/>déterministe"]
+        E4["<b>Observation</b><br/>l'agent lit ce qui<br/>s'est passé"]
+        E1 --> E2 --> E3 -.-|"×"| E4
+    end
+
+    SEUIL["<b>Le seuil de finalité : l'agent observe, il ne franchit pas.</b>"]
+    NOTE["L'AGENT N'EXÉCUTE PAS. Le rail est déterministe et le reste :<br/>c'est l'application directe de la stratification du ch. 36 § 36.2.1<br/>et du seuil d'irréversibilité du ch. 31 § 31.1.1."]
+    FLUX2 ~~~ SEUIL ~~~ NOTE
+
+    classDef step fill:#F5F1EB,stroke:#BBBBBB,color:#222222,text-align:left
+    classDef seuil fill:#FAF8F5,stroke:#8B2E0B,color:#222222,text-align:left
+    classDef note fill:#FBF9F5,stroke:#CCCCCC,color:#444444,text-align:left
+    class E1,E2,E3,E4 step
+    class SEUIL seuil
+    class NOTE note
+    style FLUX2 fill:#FAF8F5,stroke:#8B2E0B,color:#8B2E0B

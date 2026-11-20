@@ -1,0 +1,48 @@
+%% Fig. 1. – Frise 2027-2035 des ancres réglementaires, normatives et post-quantiques vérifiées sur textes primaires
+%% Source : 4 - Plan Directeur (Chapitre M-3, p. 43)
+%%{init: {'theme': 'base', 'gantt': {'leftPadding': 195, 'rightPadding': 30, 'barHeight': 22, 'barGap': 6, 'fontSize': 12, 'sectionFontSize': 13}, 'themeVariables': {'primaryColor': '#EAF6EE', 'primaryBorderColor': '#1B6E3A', 'primaryTextColor': '#0F172A', 'secondaryColor': '#EBF2FC', 'secondaryBorderColor': '#2563EB', 'tertiaryColor': '#F3EEFD', 'tertiaryBorderColor': '#6D28D9', 'gridColor': '#CBD5E1', 'sectionBkgColor': '#F8FAFC', 'altSectionBkgColor': '#F1F5F9', 'taskBkgColor': '#EAF6EE', 'taskBorderColor': '#1B6E3A', 'taskTextColor': '#0F172A', 'taskTextOutsideColor': '#0F172A', 'doneTaskBkgColor': '#EAF6EE', 'doneTaskBorderColor': '#1B6E3A', 'activeTaskBkgColor': '#EBF2FC', 'activeTaskBorderColor': '#2563EB', 'critBkgColor': '#FEF2F2', 'critBorderColor': '#991B1B'}}}%%
+gantt
+    title Frise 2027–2035 des ancres vérifiées (67 ancres au registre, dont 2 de marché)
+    dateFormat YYYY-MM-DD
+    axisFormat %Y
+    tickInterval 1year
+    todayMarker off
+
+    section Paliers et portée
+    Pont 2027 :active, p0, 2027-01-01, 2027-12-31
+    P1 · Fonder (2028–29) :active, p1, 2028-01-01, 2029-12-31
+    P2 · Étendre (2030–32) :active, p2, 2030-01-01, 2032-12-31
+    P3 · Élargir (2033–35) :active, p3, 2033-01-01, 2035-12-31
+    Séparation entre textes adoptés [D] et jalons annoncés [A] :done, sub1, 2027-01-01, 2035-12-31
+    Obligations visant les administrations (adm.) :done, sub2, 2027-01-01, 2035-12-31
+
+    section Réglementation (42 ancres)
+    [D] 2027-05 BSIF E-23 :done, reg1, 2027-05-01, 2029-05-01
+    [D] 2027-12 AI Act Ann. III & CRA :done, reg2, 2027-12-01, 2031-02-01
+    [A] Fin 2027 Règl. bancaire ouvert :active, reg3, 2027-12-15, 2031-04-01
+    [D] 2028-08 AI Act Ann. I :done, reg4, 2028-08-01, 2031-01-01
+    [D] 2028-10 ACVM 31-103 / B-15 :done, reg5, 2028-10-01, 2031-09-01
+    [D] 2030-08 AI Act (adm.) :done, reg6, 2030-08-01, 2033-01-01
+    [D] 2031-08 Réex. AI Act (adm.) :done, reg7, 2031-08-01, 2034-08-01
+    [D] 2033-06 Temporisation lois fin. CAN :done, reg8, 2030-01-01, 2033-06-30
+
+    section Normalisation (9 ancres)
+    [D] 2027-03 TLS 100 j (CA/B) :done, norm1, 2027-03-01, 2029-11-01
+    [A] 2027-06/12 IETF DAWN :active, norm2, 2027-06-01, 2029-10-01
+    [A] 2027-08 Feuille route MCP :active, norm3, 2027-08-01, 2030-06-01
+    [A] 2028-01/03 DAWN & AGENTPROTO :active, norm4, 2028-01-01, 2031-05-01
+    [D] 2029-03 Certificats TLS 47 j :done, norm5, 2029-03-01, 2032-05-01
+
+    section Post-quantique (14 ancres)
+    [D] 2027-04 Plan SCT (adm.) :done, pqc1, 2027-04-01, 2029-11-01
+    [D] 2028-04 Inv. SCT (adm.) :done, pqc2, 2028-04-01, 2030-11-01
+    [D] 2030 OMB HVA (adm.) :done, pqc3, 2030-01-01, 2032-05-01
+    [A] Fin 2030 UE haut risque :active, pqc4, 2030-12-01, 2033-08-01
+    [D] Fin 2031 SCT & OMB sign. (adm.) :done, pqc5, 2031-12-01, 2035-05-01
+    [D] 2035 Fin PQC SCT/OMB [D] & G7/UE [A] :done, pqc6, 2032-01-01, 2035-11-01
+    Fenêtre G7 2030–32 (secteur fin.) [A] :active, pqc7, 2030-01-01, 2032-12-31
+
+    section Légende
+    [D] Texte adopté (force obligatoire) :done, leg1, 2027-01-01, 2030-06-01
+    [A] Jalon annoncé ou feuille de route :active, leg2, 2030-06-01, 2033-06-01
+    (adm.) Vise les administrations publiques (EF-06) :done, leg3, 2031-06-01, 2035-12-31

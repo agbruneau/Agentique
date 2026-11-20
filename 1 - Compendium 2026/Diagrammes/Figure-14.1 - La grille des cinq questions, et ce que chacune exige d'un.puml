@@ -1,0 +1,49 @@
+' Figure 14.1 — La grille des cinq questions, et ce que chacune exige d’un mécanisme.
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 6
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 13
+skinparam backgroundColor #FFFFFF
+skinparam legendBackgroundColor #F8F5F0
+skinparam legendBorderColor #D6D3CD
+skinparam legendBorderThickness 1
+
+rectangle "CINQ QUESTIONS, CINQ EXIGENCES" as CADRE #FFFDF9;line:9A3412 {
+  rectangle QA #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**Q-A**</color>   **Qui es-tu ?**
+    Un identifiant stable, vérifiable, résistant à l'usurpation et révocable.
+  ]
+
+  rectangle QB #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**Q-B**</color>   **Qui t'a créé ?**
+    Une chaîne de provenance jusqu'à une autorité d'émission, avec son ancrage de confiance.
+  ]
+
+  rectangle QC #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**Q-C**</color>   **Pour qui agis-tu ?**
+    Une chaîne de mandat interrogeable à l'instant t, et non seulement à l'admission.
+  ]
+
+  rectangle QD #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**Q-D**</color>   **Que peux-tu faire ?**
+    Des bornes de privilège explicites et opposables au point d'application.
+  ]
+
+  rectangle QE #FAF6F0;line:B8B2A6 [
+    <color:#9A3412>**Q-E**</color>   **Qui en répond ?**
+    Une imputabilité traçable jusqu'à une personne ou une entité juridique.
+  ]
+
+  QA -[hidden]down-> QB
+  QB -[hidden]down-> QC
+  QC -[hidden]down-> QD
+  QD -[hidden]down-> QE
+}
+
+legend
+  La grille TRIE, elle ne certifie pas : répondre aux cinq questions n'établit pas qu'un mécanisme est sûr,
+  seulement qu'il porte ce qu'il faut pour être interrogé. Son inspiration n'autorise pas davantage (§ 14.1).
+endlegend
+@enduml

@@ -1,0 +1,21 @@
+%% Figure 3.2 — SAML, OAuth 2.x et OpenID Connect : trois protocoles, et ce que chacun établit (SAML 2.0 pour la fédération par assertions, OAuth 2.x pour l'autorisation déléguée, OpenID Connect pour la couche d'identité).
+%% Source : 1 - Compendium 2026, Chapitre 3 (page 40)
+
+%%{init: {'flowchart': {'wrappingWidth': 900}}}%%
+flowchart TB
+    subgraph SG_PROTO["TROIS PROTOCOLES, TROIS OBJETS"]
+        direction LR
+        P1["<b>1 · SAML</b><br/><br/>Fédération d'authentification par<br/>assertions, au navigateur.<br/><br/><i>§ 3.2.1</i>"]
+        P2["<b>2 · OAuth 2.x</b><br/><br/>Autorisation déléguée : l'accès à<br/>une ressource, jamais une<br/>identité.<br/><br/><i>§ 3.2.1</i>"]
+        P3["<b>3 · OpenID Connect</b><br/><br/>Une couche d'identité posée sur<br/>OAuth, qui lui manquait.<br/><br/><i>§ 3.2.1</i>"]
+    end
+
+    NOTE["OAuth AUTORISE, il n'authentifie pas : l'employer comme preuve d'identité est précisément la confusion qu'OpenID Connect existe<br/>pour corriger. C'est aussi l'ambiguïté que le ch. 12 § 12.4 retrouve intacte quand le porteur du jeton est un agent."]
+
+    SG_PROTO ~~~ NOTE
+
+    classDef card fill:#FAF7F2,stroke:#C4BEB5,stroke-width:1px,color:#222222,text-align:left;
+    classDef noteBox fill:#F7F5F0,stroke:#C4BEB5,stroke-width:1px,color:#333333,text-align:left;
+    class P1,P2,P3 card;
+    class NOTE noteBox;
+    style SG_PROTO fill:#FFFFFF,stroke:none,color:#9E3A14

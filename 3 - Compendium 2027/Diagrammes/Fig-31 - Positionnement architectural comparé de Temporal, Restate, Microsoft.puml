@@ -1,0 +1,83 @@
+' Fig. 31. – Positionnement architectural comparé de Temporal, Restate, Microsoft Agent Framework (Durable Task) et Amazon Bedrock AgentCore.
+@startuml
+title Positionnement Architectural des Runtimes d'Exécution Durable Agentique (2027)\nArbitrage entre portabilité multi-cloud, latence de transition par étape, horizon temporel et intégration écosystémique
+
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+
+rectangle Cadre #F8FAFC;line:CBD5E1 {
+  rectangle "**PORTABILITÉ OUVERTE & NEUTRALITÉ MULTI-CLOUD / SUR SITE**" as AxisTop #F8FAFC;line:F8FAFC
+
+  rectangle RowTop #F8FAFC;line:F8FAFC {
+    rectangle "Restate (Moteur Rust • Journal Bifrost intégré)" as Restate #FFFFFF;line:15803D {
+      rectangle RestateBody #FFFFFF;line:FFFFFF [
+        • Primitives : Services RPC, Virtual Objects (clé K/V), Workflows
+        • Modèle d'exécution : Push HTTP/2 vers conteneurs ou FaaS
+        • Latence par étape journalisée (ctx.run) : ~1 à 5 ms
+        • Force : Déploiement binaire unique, Awakeables ultra-légers
+        **Idéal : Micro-orchestration A2A/MCP, agents sans serveur, T2-T3**
+        SDK : TypeScript, Python, Go, Java/Kotlin, Rust
+      ]
+    }
+    rectangle "Temporal + Temporal Nexus (Licence MIT)" as Temporal #FFFFFF;line:2563EB {
+      rectangle TemporalBody #FFFFFF;line:FFFFFF [
+        • Primitives : Workflows, Activities, Signals, Queries, Updates
+        • Modèle d'exécution : Workers en Pull sur Task Queues isolées
+        • Fédération inter-divisions : Contrats RPC durables via Nexus
+        • Force : Résilience multi-régions, Versioning, Codec AES-GCM
+        **Idéal : Sagas critiques multi-semaines, banque/assurance (T3-T4)**
+        SDK : TypeScript, Python, Go, Java, .NET, PHP
+      ]
+    }
+    Restate -[hidden]right-> Temporal
+  }
+
+  rectangle AxisMid #F8FAFC;line:94A3B8 {
+    rectangle "**HAUTE FRÉQUENCE & LATENCE MS (T2 / T3)**" as MidL #F8FAFC;line:F8FAFC
+    rectangle "**SAGAS LONGUES & SESSIONS LOURDES (T3 / T4)**" as MidR #F8FAFC;line:F8FAFC
+    MidL -[hidden]right-> MidR
+  }
+
+  rectangle RowBot #F8FAFC;line:F8FAFC {
+    rectangle "Microsoft Agent Framework (Durable Task)" as MSFT #FFFFFF;line:1E293B {
+      rectangle MSFTBody #FFFFFF;line:FFFFFF [
+        • Convergence officielle : AutoGen + Semantic Kernel unifiés
+        • Moteur sous-jacent : Durable Task Framework / Azure / Dapr
+        • État : Déshydratation native des Agent Threads & Workflows
+        • Force : Identité Entra ID OBO native, pont Copilot Studio
+        **Idéal : Entreprises standardisées Azure / .NET & Python**
+        Portabilité : Haute sur Azure Functions, moyenne via Dapr K8s
+      ]
+    }
+    rectangle "Amazon Bedrock AgentCore (Runtime AWS)" as AWS #FFFFFF;line:9A3412 {
+      rectangle AWSBody #FFFFFF;line:FFFFFF [
+        • Architecture : Sessions microVM isolées à longue durée de vie
+        • Composants intégrés : Runtime, Gateway MCP, Memory, Identity
+        • Agnostique au cadriciel : Exécute LangGraph, CrewAI, Strands
+        • Force : Isolation matérielle + couplage Step Functions T4
+        **Idéal : Charges AWS intensives avec bac à sable code intégré**
+        Portabilité : Faible hors AWS (adhérence plan de contrôle IAM)
+      ]
+    }
+    MSFT -[hidden]right-> AWS
+  }
+
+  rectangle "**INTÉGRATION NATIVE ÉCOSYSTÈME HYPERSCALER (CLÉ EN MAIN)**" as AxisBot #F8FAFC;line:F8FAFC
+
+  AxisTop -[hidden]down-> RowTop
+  RowTop -[hidden]down-> AxisMid
+  AxisMid -[hidden]down-> RowBot
+  RowBot -[hidden]down-> AxisBot
+}
+
+rectangle Urbanisation #EFF6FF;line:2563EB [
+  **Patron d'urbanisation recommandé (Architecture Bi-Vitesse Groupe Boréal) :**
+  • Couche Macro-Sagas (T3/T4, 1 h à 90 j) : Temporal + Nexus pour la gouvernance inter-divisions, le versionnage long et la piste d'audit BSIF E-23.
+  • Couche Micro-Agents (T2, secondes à minutes) : Restate ou Durable Task pour sérialiser l'état par entité (Virtual Object) avec surcharge minimale.
+]
+
+Cadre -[hidden]down-> Urbanisation
+
+@enduml

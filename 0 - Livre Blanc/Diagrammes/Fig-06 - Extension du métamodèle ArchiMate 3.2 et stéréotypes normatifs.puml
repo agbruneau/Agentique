@@ -1,0 +1,42 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 6 (p. 28)
+' Légende : Extension du métamodèle ArchiMate 3.2 et stéréotypes normatifs pour acteurs cognitifs
+
+@startuml
+!include <archimate/Archimate>
+
+package "Couche Strategy et Business (Capacités et Mandat)" {
+  Business_Actor(resp, "Responsable métier\n«Human-on-the-Loop»")
+  Strategy_Resource(comp, "Compétence agentique\n«Skill / Playbook»")
+  Business_Object(mandat, "Mandat d'intention\n«Intent Contract»")
+  Strategy_Capability(cap_aug, "Capacité augmentée\n«Agentic Capability»")
+  Strategy_Capability(cap_base, "Capability\n(Base ArchiMate 3.2)")
+}
+
+package "Couche Motivation (Gouvernance)" {
+  Motivation_Requirement(req, "Exigence d'audit et SLO\n«Eval / Risk Gate»")
+  Motivation_Requirement(pol, "Politique de garde-fou\n«Guardrail Policy»")
+}
+
+package "Couche Application (Acteurs cognitifs et Contrats)" {
+  Application_Component(reg, "Catalogue gouverné\n«Agent Registry»")
+  Application_Collaboration(mesh, "Maillage multi-agents\n«Agent Collaboration»")
+  Application_Service(tool, "Contrat d'outil\n«Tool Contract (MCP)»")
+  Application_Component(cog, "Acteur cognitif\n«Cognitive Actor»")
+  Application_Component(app_base, "Application Component\n(Base ArchiMate 3.2)")
+}
+
+Rel_Assignment_Down(resp, mandat, "délègue")
+Rel_Assignment_Down(comp, cap_aug, "équipe")
+mandat --> cap_aug : cadre
+cap_aug --|> cap_base : spécialise
+
+pol -[dashed]-> cog : borne
+reg ..|> req : prouve
+reg .[dotted]. cog : inventorie
+cog --* mesh : fédère
+tool --> cog : expose SI
+cog ..|> cap_aug : réalise
+cog --|> app_base : spécialise
+
+@enduml

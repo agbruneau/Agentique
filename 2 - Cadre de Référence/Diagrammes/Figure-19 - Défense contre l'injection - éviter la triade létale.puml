@@ -1,0 +1,50 @@
+' Figure 19 — Défense contre l'injection : éviter la triade létale (2 - Cadre de Référence, ch. 9, p. 157)
+' Source : cadre CRE-IA-2026-01, d'après Willison (2025), Meta (2025) et Beurer-Kellner et coll. (2025)
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+skinparam defaultFontSize 11
+
+package "LA TRIADE LÉTALE" as Triade #FFFFFF;line:CBD5E1 {
+  usecase "**<color:#1B5E9E>Données</color>**\n**<color:#1B5E9E>privées</color>**" as D #E6F0FA;line:1B5E9E
+  usecase "**<color:#B45309>Contenu</color>**\n**<color:#B45309>non fiable</color>**" as U #FEF3DC;line:B45309
+  usecase "**<color:#9C2F39>Communication</color>**\n**<color:#9C2F39>externe ou effet</color>**" as C #FCE8EB;line:9C2F39
+  usecase "**fuite**\n**possible**" as Fuite #9C2F39;text:FFFFFF;line:9C2F39
+
+  D -down- Fuite
+  U -down- Fuite
+  Fuite -down- C
+
+  rectangle "Un agent qui réunit les trois propriétés peut être\namené à exfiltrer des données par un texte piégé." as TNote #FFFFFF;line:FFFFFF
+  C -[hidden]down-> TNote
+}
+
+together {
+  together {
+    rectangle "**Règle de deux par session**\n\nAu plus deux de ces propriétés :\n\n• [A] traite des entrées non fiables\n• [B] accède à des données ou systèmes sensibles\n• [C] change un état ou communique\n\nLes trois à la fois : approbation de l’action\nexacte ou nouveau contexte vierge obligatoire." as Regle #F1F5F9;line:CBD5E1
+
+    rectangle "**Patrons de conception résistants**\n\n• Plan puis exécution (plan figé avant\n  toute lecture non fiable)\n• Double modèle : privilégié sans texte\n  non fiable, quarantaine sans outils\n• Sélecteur d’actions, map-reduce,\n  minimisation du contexte\n• Séparation des flux de contrôle\n  et de données (CaMeL)" as Patrons #E2F4F0;line:86D5C8
+  }
+
+  package "CONTRÔLES DU CADRE, DU SIGNALEMENT À L’APPROBATION" as Controles #FFFFFF;line:CBD5E1 {
+    rectangle "**1 · Signaler**\nenveloppe « non\nfiable », détection\nréduit la probabilité" as K1 #F8FAFC;line:94A3B8
+    rectangle "**2 · Retirer**\noutils d’envoi retirés\ndès que du contenu\nnon fiable est lu" as K2 #FEF3DC;line:B45309
+    rectangle "**3 · Concevoir**\npatrons ci-dessus\nselon la classe\nde risque" as K3 #E2F4F0;line:0F7682
+    rectangle "**4 · Approuver**\njeton signé pour\ntoute action P3 et\ntout envoi externe" as K4 #FCE8EB;line:9C2F39
+    K1 -[hidden]right-> K2
+    K2 -[hidden]right-> K3
+    K3 -[hidden]right-> K4
+  }
+
+  rectangle "Présomption d’injection : un filtre de détection n’est jamais le contrôle principal." as Pres #FCE8EB;line:F4B4BC
+}
+
+Regle -[hidden]right-> Patrons
+Regle -[hidden]down-> K1
+Patrons -[hidden]down-> K3
+K1 -[hidden]down-> Pres
+U -[hidden]right-> Regle
+C -[hidden]right-> K1
+@enduml

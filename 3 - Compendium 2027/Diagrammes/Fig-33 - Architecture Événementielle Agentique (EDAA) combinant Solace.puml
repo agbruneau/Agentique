@@ -1,0 +1,152 @@
+' Fig. 33. – Architecture Événementielle Agentique (EDAA) combinant Solace PubSub+, Confluent Kafka et le cycle aller-retour d'une Saga à compensation.
+@startuml
+title Architecture Événementielle Agentique (EDAA) et Cycle d'une Saga à Compensation
+
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+
+rectangle "Maillage Événementiel Hybride — Enveloppes CloudEvents 1.0 • Identités SPIFFE • Traceparent OpenTelemetry" as Mesh #ECFDF5;line:15803D {
+  rectangle Solace #FFFFFF;line:15803D [
+    **Solace PubSub+ (Event Mesh Temps Réel & OT)**
+    Hiérarchies dynamiques (boreal/bel/ot/+/alert) • MQTT / AMQP
+    Filtrage courtier sous la milliseconde & routage multi-sites
+  ]
+  rectangle Kafka #FFFFFF;line:15803D [
+    **Confluent / Apache Kafka (Journal d'Événements Immuable)**
+    Partitions ordonnées • Schema Registry (Apache Ossie) • Claim-Check
+    Rejeu déterministe d'audit (BSIF E-23) & DLQ sémantique
+  ]
+  Solace <-[#15803D]-> Kafka : **Pont**\nfiltré
+}
+
+rectangle SagaCols #FFFFFF;line:FFFFFF {
+  rectangle "1. Étape Compensable (T1)" as T1Box #EFF6FF;line:2563EB {
+    rectangle T1Agent #EFF6FF;line:EFF6FF [
+      **Agent Stocks BEL (SAP)**
+      Réservation pièce critique
+      Bail TTL = 240 min via MCP
+    ]
+    rectangle T1Outbox #FFF7ED;line:9A3412 [
+      **Transactional Outbox + CDC**
+      Commit BD + événement atomique
+    ]
+    rectangle T1Comp #FEF2F2;line:DC2626 [
+      **Action Inverse C1 :**
+      sap_release_reservation()
+    ]
+    T1Agent -[hidden]down-> T1Outbox
+    T1Outbox -[hidden]down-> T1Comp
+  }
+
+  rectangle "2. Étape Compensable (T2)" as T2Box #EFF6FF;line:2563EB {
+    rectangle T2Agent #EFF6FF;line:EFF6FF [
+      **Agent Terrain BSN (FSM)**
+      Pré-affectation technicien
+      Blocage créneau & camion-grue
+    ]
+    rectangle T2Outbox #FFF7ED;line:9A3412 [
+      **Outbox + Idempotency Key**
+      Zéro doublon en cas de réessai
+    ]
+    rectangle T2Comp #FEF2F2;line:DC2626 [
+      **Action Inverse C2 :**
+      fsm_cancel_slot_allocation()
+    ]
+    T2Agent -[hidden]down-> T2Outbox
+    T2Outbox -[hidden]down-> T2Comp
+  }
+
+  rectangle "3. Transaction Pivot (Tp)" as TpBox #FEF9C3;line:9A3412 {
+    rectangle TpAgent #FEF9C3;line:FEF9C3 [
+      **Agent Garantie BCA (IBM i)**
+      Point de bascule décisionnel
+      Règles Cedar • BSIF E-23 • CIBA
+    ]
+    rectangle TpSucc #ECFDF5;line:15803D [
+      **SUCCÈS → Non-retour**
+      Autorise les étapes réessayables
+    ]
+    rectangle TpRefus #FEF2F2;line:DC2626 [
+      **REFUS → Rollback Inverse**
+      Dépile LIFO : C2 puis C1
+    ]
+    TpAgent -[hidden]down-> TpSucc
+    TpSucc -[hidden]down-> TpRefus
+  }
+
+  rectangle "4. Tampon Irréversible (T4)" as T4Box #F8FAFC;line:1E293B {
+    rectangle T4Grace #F8FAFC;line:F8FAFC [
+      **Fenêtre de Grâce (120 s)**
+      Rétention avant effet externe
+      Vérifie absence d'AbortSignal
+    ]
+    rectangle T4Emit #EFF6FF;line:2563EB [
+      **Émissions Externes Scellées :**
+      • Avis transporteur EDI X12
+      • Courriel d'engagement client
+      • Règlement signé AP2 / x402
+      Revérification Cedar JIT
+    ]
+    T4Grace -[hidden]down-> T4Emit
+  }
+
+  T1Box -[hidden]right-> T2Box
+  T2Box -[hidden]right-> TpBox
+  TpBox -[hidden]right-> T4Box
+}
+
+Mesh <-[#1E293B]-> T1Box
+Mesh <-[#1E293B]-> T2Box
+Mesh <-[#1E293B]-> TpBox
+Mesh <-[#1E293B]-> T4Box
+
+rectangle Flows #FFFFFF;line:FFFFFF {
+  rectangle FwdRow #FFFFFF;line:FFFFFF {
+    rectangle "Aller : T1 validé" as F1 #DBEAFE;line:2563EB
+    rectangle "Aller : T2 validé" as F2 #DBEAFE;line:2563EB
+    rectangle "Arbitrage Pivot Tp" as F3 #FEF3C7;line:9A3412
+    rectangle "Commit post-grâce" as F4 #ECFDF5;line:15803D
+    F1 -[#2563EB]-> F2
+    F2 -[#2563EB]-> F3
+    F3 -[#15803D]-> F4 : Succès
+  }
+
+  rectangle RevRow #FFFFFF;line:FFFFFF {
+    rectangle "2. Exécute C1" as R1 #FEF2F2;line:DC2626
+    rectangle "1. Exécute C2" as R2 #FEF2F2;line:DC2626
+    rectangle "Refus Conformité" as R3 #FEF2F2;line:DC2626
+    rectangle "Purge du tampon" as R4 #F8FAFC;line:475569
+    R3 .[#DC2626].> R2
+    R2 .[#DC2626].> R1
+    R3 .[#DC2626].> R4
+  }
+
+  FwdRow -[hidden]down-> RevRow
+}
+
+rectangle "Coordinateur de Saga Durable (Temporal / Restate) — Pile LIFO & Invariants de Résilience" as Coord #F8FAFC;line:1E293B {
+  rectangle WA #FFFFFF;line:2563EB [
+    **Enregistrement Préalable (Write-Ahead)**
+    Empile Ci sur disque avant d'invoquer Ti
+    Aucun effet orphelin en cas de crash
+  ]
+  rectangle CompSem #FFFFFF;line:15803D [
+    **Compensation Déterministe vs Sémantique**
+    API inverse exacte ou écriture rectificative
+    Zéro suppression destructive comptable
+  ]
+  rectangle DLQ #FFFFFF;line:DC2626 [
+    **Garde-Fou SagaDeadLetter (HOTL)**
+    Réessais bornés avec recul exponentiel
+    Escalade opérateur si Ci diverge
+  ]
+  WA -[hidden]right-> CompSem
+  CompSem -[hidden]right-> DLQ
+}
+
+SagaCols -[hidden]down-> Flows
+Flows -[hidden]down-> Coord
+
+@enduml

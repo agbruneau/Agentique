@@ -1,0 +1,50 @@
+' Fig. 34. – Les quatorze modes d'échec de MAST, groupés en trois catégories, avec la part de chacun dans la version 3 et les totaux v3/v2.
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+
+rectangle "**Défauts de spécification**\nv3 : 44,2 % · v2 : 41,77 %" as H1 #EFF6FF;line:2563EB
+rectangle "Consigne de tâche non respectée : 11,8 %" as S1 #F8FAFC;line:2563EB
+rectangle "Rôle non respecté : 1,5 %" as S2 #F8FAFC;line:2563EB
+rectangle "Répétition d'étapes : 15,7 %" as S3 #F8FAFC;line:2563EB
+rectangle "Perte de l'historique de conversation : 2,8 %" as S4 #F8FAFC;line:2563EB
+rectangle "Condition d'arrêt ignorée : 12,4 %" as S5 #F8FAFC;line:2563EB
+
+H1 -[hidden]down-> S1
+S1 -[hidden]down-> S2
+S2 -[hidden]down-> S3
+S3 -[hidden]down-> S4
+S4 -[hidden]down-> S5
+
+rectangle "**Désalignement entre agents**\nv3 : 32,4 % · v2 : 36,94 %" as H2 #EFF6FF;line:2563EB
+rectangle "Réinitialisation de la conversation : 2,2 %" as D1 #F8FAFC;line:2563EB
+rectangle "Clarification non demandée : 6,8 %" as D2 #F8FAFC;line:2563EB
+rectangle "Dérive hors de la tâche : 7,4 %" as D3 #F8FAFC;line:2563EB
+rectangle "Rétention d'information : 0,85 %" as D4 #F8FAFC;line:2563EB
+rectangle "Apport d'un autre agent ignoré : 1,9 %" as D5 #F8FAFC;line:2563EB
+rectangle "Écart entre raisonnement et action : 13,2 %" as D6 #F8FAFC;line:2563EB
+
+H2 -[hidden]down-> D1
+D1 -[hidden]down-> D2
+D2 -[hidden]down-> D3
+D3 -[hidden]down-> D4
+D4 -[hidden]down-> D5
+D5 -[hidden]down-> D6
+
+rectangle "**Vérification de la tâche**\nv3 : 23,5 % · v2 : 21,30 %" as H3 #EFF6FF;line:2563EB
+rectangle "Arrêt prématuré : 6,2 %" as V1 #F8FAFC;line:2563EB
+rectangle "Vérification absente ou incomplète : 8,2 %" as V2 #F8FAFC;line:2563EB
+rectangle "Vérification incorrecte : 9,1 %" as V3 #F8FAFC;line:2563EB
+
+H3 -[hidden]down-> V1
+V1 -[hidden]down-> V2
+V2 -[hidden]down-> V3
+
+H1 -[hidden]right-> H2
+H2 -[hidden]right-> H3
+S1 -[hidden]right-> D1
+D1 -[hidden]right-> V1
+
+@enduml

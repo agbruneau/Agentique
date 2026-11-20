@@ -1,0 +1,30 @@
+' Ouvrage : 0 - Livre Blanc
+' Figure : Fig. 26 (p. 101)
+' Légende : Comparaison entre topologie Supervisor à sous-agents outillés et planification dynamique par graphe DAG
+
+@startuml
+!include <C4/C4_Component>
+
+Container_Boundary(top2, "Topologie 2 : Planification\nDAG dynamique\n(LLMCompiler / ReWOO)") {
+  Component(plan, "Planner DAG", "Graphe + #E1..#En", "Produit le graphe de dépendances")
+  Component(tfu, "Task Fetching Unit", "Ordonnanceur", "Résout variables et déclenche dès prêt")
+  Component(exec, "Parallel Executors", "Pool asynchrone", "Exécute les nœuds indépendants")
+  Component(join, "JoinNode / Solver", "Synthèse bornée", "Agrège les sorties et valide l'état")
+}
+
+Container_Boundary(top1, "Topologie 1 : Supervisor /\nSubagents-as-Tools") {
+  Component(sup, "Agent Supervisor", "LLM frontière", "Décompose, route et consolide")
+  Component(subB, "Sous-agent B", "Contexte isolé", "Exécution outillée (retour synthétisé)")
+  Component(subA, "Sous-agent A", "Contexte isolé", "Exécution outillée (retour synthétisé)")
+}
+
+Rel_R(plan, tfu, "Émet DAG typé")
+Rel_R(tfu, exec, "Dispatche en parallèle")
+Rel_R(exec, join, "Transmet #E1..#En")
+Rel_R(sup, subB, "Invoque comme outil")
+Rel_R(sup, subA, "Invoque comme outil")
+Lay_D(subB, subA)
+
+Lay_D(plan, sup)
+
+@enduml

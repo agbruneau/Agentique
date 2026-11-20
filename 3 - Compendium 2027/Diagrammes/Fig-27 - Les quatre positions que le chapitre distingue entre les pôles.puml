@@ -1,0 +1,76 @@
+' Fig. 27. – Les quatre positions que le chapitre distingue entre les pôles workflow et agent, avec la frontière de visibilité.
+@startuml
+top to bottom direction
+skinparam shadowing false
+skinparam roundcorner 10
+skinparam defaultFontName "Segoe UI"
+
+rectangle "Workflow : chemins de code prédéfinis" as AxL #FFFFFF;line:FFFFFF
+rectangle "Agent : le modèle dirige son processus" as AxR #FFFFFF;line:FFFFFF
+AxL <-[#64748B]right-> AxR
+
+rectangle " " as H0 #FFFFFF;line:FFFFFF
+rectangle "**Workflow**" as T1 #FFFFFF;line:FFFFFF
+rectangle "**Étapes agentiques**" as T2 #FFFFFF;line:FFFFFF
+rectangle " " as V0 #FFFFFF;line:FFFFFF
+rectangle "**Agent borné**" as T3 #FFFFFF;line:FFFFFF
+rectangle "**Agent ouvert**" as T4 #FFFFFF;line:FFFFFF
+
+rectangle "**Qui décide du chemin**" as H1 #FFFFFF;line:FFFFFF
+rectangle "**Le concepteur**\nentièrement" as P1 #F8FAFC;line:64748B
+rectangle "**Le concepteur**\nentre les étapes" as P2 #F8FAFC;line:64748B
+rectangle "**Frontière de visibilité**" as Vis #FFFFFF;line:2563EB;line.dashed
+rectangle "**Le modèle**\ndans une région\ndélimitée" as P3 #EFF6FF;line:2563EB
+rectangle "**Le modèle**" as P4 #EFF6FF;line:2563EB
+
+rectangle "**Ce que décide le modèle**" as H2 #FFFFFF;line:FFFFFF
+rectangle "Le contenu d'une\nétape : classer,\nextraire, rédiger" as D1 #FFFFFF;line:94A3B8
+rectangle "La conduite d'une\nétape, outils\ncompris" as D2 #FFFFFF;line:94A3B8
+rectangle " " as V2 #FFFFFF;line:FFFFFF
+rectangle "Outils, ordre et\nparamètres, dans une\nliste fermée et sous\nun plafond" as D3 #FFFFFF;line:94A3B8
+rectangle "Le plan, les outils,\nle critère d'arrêt" as D4 #FFFFFF;line:94A3B8
+
+rectangle "//le processus ne voit que l'entrée et la sortie//" as Foot1 #FFFFFF;line:FFFFFF
+rectangle "//chaque appel d'outil est une activité du processus//" as Foot2 #FFFFFF;line:FFFFFF
+
+AxL -[hidden]down-> T1
+AxR -[hidden]down-> T4
+
+H0 -[hidden]right-> T1
+T1 -[hidden]right-> T2
+T2 -[hidden]right-> V0
+V0 -[hidden]right-> T3
+T3 -[hidden]right-> T4
+
+H1 -[hidden]right-> P1
+P1 -[hidden]right-> P2
+P2 -[hidden]right-> Vis
+Vis -[hidden]right-> P3
+P3 -[hidden]right-> P4
+
+H2 -[hidden]right-> D1
+D1 -[hidden]right-> D2
+D2 -[hidden]right-> V2
+V2 -[hidden]right-> D3
+D3 -[hidden]right-> D4
+
+H0 -[hidden]down-> H1
+H1 -[hidden]down-> H2
+T1 -[hidden]down-> P1
+P1 -[hidden]down-> D1
+T2 -[hidden]down-> P2
+P2 -[hidden]down-> D2
+V0 -[hidden]down-> Vis
+Vis -[hidden]down-> V2
+T3 -[hidden]down-> P3
+P3 -[hidden]down-> D3
+T4 -[hidden]down-> P4
+P4 -[hidden]down-> D4
+
+D1 -[hidden]down-> Foot1
+D2 -[hidden]down-> Foot1
+D3 -[hidden]down-> Foot2
+D4 -[hidden]down-> Foot2
+Foot1 -[hidden]right-> Foot2
+
+@enduml
