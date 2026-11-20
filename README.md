@@ -11,14 +11,14 @@ Le dépôt rassemble **6 ouvrages PDF** totalisant **2 917 pages** (état de ré
 
 ## Vue d'ensemble des ouvrages
 
-| # | Fichier | Sigle / ID | Rôle dans le corpus | Horizon | Pages | Taille | Édition / État |
-|---|---|---|---|---|---:|---:|---|
-| 0 | [`0 - Livre Blanc.pdf`](0%20-%20Livre%20Blanc.pdf) | Livre blanc EA/SA | Ouvrage de référence généraliste (double entrée EA / SA) | 2026–2027 | 251 | 5,5 Mo | Nov. 2026 (Pipeline Gemini / Wyvern) |
-| 1 | [`1 - Compendium 2026.pdf`](1%20-%20Compendium%202026.pdf) | `C26` | Somme encyclopédique (5 livres, 50 chapitres) centrée sur les services financiers réglementés | 2024–2032 | 673 | 18,0 Mo | Nov. 2026 (gel 27 juill. 2026, actualisé 1er nov.) |
-| 2 | [`2 - Cadre de Référence.pdf`](2%20-%20Cadre%20de%20R%C3%A9f%C3%A9rence.pdf) | `CAD26` (`CRE-IA-2026-01`) | Cadre normatif d'architecture d'entreprise (12 principes, 305 exigences vérifiables) | 2026–2030 | 351 | 11,7 Mo | v1.2 — 19 nov. 2026 |
-| 3 | [`3 - Compendium 2027.pdf`](3%20-%20Compendium%202027.pdf) | `C27` | Somme consolidée 2027 (exposés sourcés + 31 volets « Mise en œuvre » + recherche) | 2026–2030 | 1 117 | 16,1 Mo | Nov. 2026 (gel 11–14 nov. 2026) |
-| 4 | [`4 - Plan Directeur.pdf`](4%20-%20Plan%20Directeur.pdf) | `PD28` | Prospective, architecture cible neutre (52 capacités) et plan directeur adaptatif | 2028–2035 | 400 | 7,5 Mo | 16–19 nov. 2026 |
-| 5 | [`5 - Memoire.pdf`](5%20-%20Memoire.pdf) | Mémoire v2.0 | Synthèse exécutive et architecturale unifiée AE / AS des volumes `1` à `4` (~21:1) | 2026–2035 | 125 | 4,2 Mo | v2.0 — 19 nov. 2026 |
+| # | Fichier | Rôle dans le corpus | Horizon | Pages |
+|---|---|---|---|---:|
+| 0 | [`0 - Livre Blanc.pdf`](0%20-%20Livre%20Blanc.pdf) | Ouvrage de référence généraliste (double entrée EA / SA) | 2026–2027 | 251 |
+| 1 | [`1 - Compendium 2026.pdf`](1%20-%20Compendium%202026.pdf) | Somme encyclopédique (5 livres, 50 chapitres) centrée sur les services financiers réglementés | 2024–2032 | 673 |
+| 2 | [`2 - Cadre de Référence.pdf`](2%20-%20Cadre%20de%20R%C3%A9f%C3%A9rence.pdf) | Cadre normatif d'architecture d'entreprise (12 principes, 305 exigences vérifiables) | 2026–2030 | 351 |
+| 3 | [`3 - Compendium 2027.pdf`](3%20-%20Compendium%202027.pdf) | Somme consolidée 2027 (exposés sourcés + 31 volets « Mise en œuvre » + recherche) | 2026–2030 | 1 117 |
+| 4 | [`4 - Plan Directeur.pdf`](4%20-%20Plan%20Directeur.pdf) | Prospective, architecture cible neutre (52 capacités) et plan directeur adaptatif | 2028–2035 | 400 |
+| 5 | [`5 - Memoire.pdf`](5%20-%20Memoire.pdf) | Synthèse exécutive et architecturale unifiée AE / AS des volumes `1` à `4` (~21:1) | 2026–2035 | 125 |
 
 ---
 
