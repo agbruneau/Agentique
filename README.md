@@ -1,11 +1,10 @@
 # Interopérabilité et Orchestration en Entreprise Agentique
 
-Corpus documentaire de référence consacré à l'architecture d'entreprise (AE / EA) et à l'architecture de solutions (AS / SA) pour concevoir, intégrer, sécuriser, orchestrer et gouverner des systèmes agentiques à l'échelle de l'organisation, avec un ancrage approfondi sur les services financiers réglementés au Canada fédéral et au Québec (horizon 2024–2035).
+Collection de référence destinée aux dirigeants, comités de direction, responsables technologiques et responsables des risques qui préparent le passage d'assistants conversationnels isolés vers des agents autonomes fiables, gouvernés et vérifiables à l'échelle de l'entreprise.
 
-Le dépôt rassemble **6 ouvrages PDF** totalisant **2 917 pages** (état de référence : **novembre 2026**) :
-- un **livre blanc architectural généraliste** ([`0 - Livre Blanc.pdf`](0%20-%20Livre%20Blanc.pdf), 251 p.) ;
-- un **corpus principal en quatre volumes** ([`1`](1%20-%20Compendium%202026.pdf) à [`4`](4%20-%20Plan%20Directeur.pdf), 2 541 p.) couvrant la somme encyclopédique 2026, le cadre normatif, le compendium 2027 et le plan directeur 2028–2035 ;
-- un **mémoire d'architecture AE / AS** ([`5 - Memoire.pdf`](5%20-%20Memoire.pdf), 125 p.) qui opère la synthèse et l'alignement formel des quatre volumes précédents.
+Le dépôt réunit **six ouvrages** totalisant **2 917 pages** (état de référence : **novembre 2026**), avec un ancrage approfondi dans les services financiers réglementés au Canada fédéral et au Québec sur l'horizon **2024–2035**.
+
+> **Idée maîtresse** — La fiabilité et la valeur durable d'une entreprise agentique tiennent moins à la puissance d'un modèle d'intelligence artificielle qu'à la qualité des frontières, des contrôles déterministes, de la gouvernance et de la capacité de preuve. Les modèles sont des composants remplaçables ; le noyau de contrôle, les règles métier et les standards d'interopérabilité forment l'actif stratégique que l'organisation doit posséder.
 
 ---
 
@@ -13,151 +12,92 @@ Le dépôt rassemble **6 ouvrages PDF** totalisant **2 917 pages** (état de ré
 
 | # | Fichier | Rôle dans le corpus | Horizon | Pages |
 |---|---|---|---|---:|
-| 0 | [`0 - Livre Blanc.pdf`](0%20-%20Livre%20Blanc.pdf) | Ouvrage de référence généraliste (double entrée EA / SA) | 2026–2027 | 251 |
-| 1 | [`1 - Compendium 2026.pdf`](1%20-%20Compendium%202026.pdf) | Somme encyclopédique (5 livres, 50 chapitres) centrée sur les services financiers réglementés | 2024–2032 | 673 |
-| 2 | [`2 - Cadre de Référence.pdf`](2%20-%20Cadre%20de%20R%C3%A9f%C3%A9rence.pdf) | Cadre normatif d'architecture d'entreprise (12 principes, 305 exigences vérifiables) | 2026–2030 | 351 |
-| 3 | [`3 - Compendium 2027.pdf`](3%20-%20Compendium%202027.pdf) | Somme consolidée 2027 (exposés sourcés + 31 volets « Mise en œuvre » + recherche) | 2026–2030 | 1 117 |
-| 4 | [`4 - Plan Directeur.pdf`](4%20-%20Plan%20Directeur.pdf) | Prospective, architecture cible neutre (52 capacités) et plan directeur adaptatif | 2028–2035 | 400 |
-| 5 | [`5 - Memoire.pdf`](5%20-%20Memoire.pdf) | Synthèse exécutive et architecturale unifiée AE / AS des volumes `1` à `4` (~21:1) | 2026–2035 | 125 |
+| 0 | [`0 - Livre Blanc.pdf`](0%20-%20Livre%20Blanc.pdf) | Ouvrage de référence généraliste sur l'architecture, les standards ouverts et la feuille de route d'adoption | 2026–2027 | 251 |
+| 1 | [`1 - Compendium 2026.pdf`](1%20-%20Compendium%202026.pdf) | Somme encyclopédique sur l'interopérabilité, la confiance et l'encadrement en services financiers réglementés | 2024–2032 | 673 |
+| 2 | [`2 - Cadre de Référence.pdf`](2%20-%20Cadre%20de%20R%C3%A9f%C3%A9rence.pdf) | Cadre normatif d'entreprise regroupant 12 principes directeurs et 305 exigences vérifiables | 2026–2030 | 351 |
+| 3 | [`3 - Compendium 2027.pdf`](3%20-%20Compendium%202027.pdf) | État de l'art consolidé, guides de mise en œuvre concrets, veille technologique et étude de marché | 2026–2030 | 1 117 |
+| 4 | [`4 - Plan Directeur.pdf`](4%20-%20Plan%20Directeur.pdf) | Prospective, architecture cible neutre en 52 capacités et feuille de route adaptative par secteur financier | 2028–2035 | 400 |
+| 5 | [`5 - Memoire.pdf`](5%20-%20Memoire.pdf) | Synthèse unifiée consolidant les ouvrages 1 à 4 en une vision commune direction et architecture | 2026–2035 | 125 |
 
 ---
 
-## Articulation du corpus et parcours de lecture
+## Comment naviguer dans la collection
 
-### Relation entre les six volumes
+La collection s'articule en deux ensembles complémentaires :
+- Un **livre blanc généraliste autonome** ([`0 - Livre Blanc.pdf`](0%20-%20Livre%20Blanc.pdf)) applicable à toute grande organisation souhaitant structurer ses premiers déploiements sur 90, 180 et 360 jours.
+- Une **collection financière consolidée** regroupant quatre ouvrages de fond ([`1`](1%20-%20Compendium%202026.pdf) à [`4`](4%20-%20Plan%20Directeur.pdf), 2 541 pages) et un **mémoire de synthèse** ([`5 - Memoire.pdf`](5%20-%20Memoire.pdf), 125 pages) qui en résume les décisions majeures et en aligne les modèles.
 
-1. **Volet généraliste autonome** : [`0 - Livre Blanc.pdf`](0%20-%20Livre%20Blanc.pdf) offre une référence complète, agnostique au secteur, structurée autour de la règle hybride **80/20** (80 % de contrôle déterministe, 20 % cognitif), de quatre plans découplés, de trois blueprints instanciables et d'une feuille de route 90 / 180 / 360 jours.
-2. **Collection consolidée 2026–2035 (`1` à `5`)** :
-   - [`1 - Compendium 2026.pdf`](1%20-%20Compendium%202026.pdf) (`C26`) pose les fondations théoriques, protocolaires, identitaires, réglementaires et opérationnelles en services financiers réglementés.
-   - [`2 - Cadre de Référence.pdf`](2%20-%20Cadre%20de%20R%C3%A9f%C3%A9rence.pdf) (`CAD26` / `CRE-IA-2026-01` v1.2) traduit ces fondations en exigences normatives opposables (`PRIN-01`–`PRIN-12`, 305 `EXIG-*`).
-   - [`3 - Compendium 2027.pdf`](3%20-%20Compendium%202027.pdf) (`C27`) élargit l'état de l'art (protocoles 2026–2027, mémoire, orchestration, plateforme, FinOps, recherche scientifique) et ajoute 31 volets d'application technique, 31 ADR et une liste d'homologation en 75 points.
-   - [`4 - Plan Directeur.pdf`](4%20-%20Plan%20Directeur.pdf) (`PD28`) projette la trajectoire 2028–2035 sous incertitude profonde (méthode DAPP, 3 scénarios sans probabilité), définit 52 capacités cibles neutres et décline 5 profils financiers (banque, patrimoine, assurance de personnes, assurance de dommages, groupe diversifié).
-   - [`5 - Memoire.pdf`](5%20-%20Memoire.pdf) soude les 2 541 pages de `C26`, `CAD26`, `C27` et `PD28` (incluant la réconciliation formelle des modèles de couches — fermeture de la divergence `DIV-02` — et les tables de concordance `CAP` / `PEX` ↔ `EXIG-*`).
+### Par où commencer selon votre objectif
 
-### Par où commencer selon votre rôle
-
-| Profil | Point d'entrée recommandé | Approfondissements ciblés |
+| Priorité de direction | Ouvrage à ouvrir en premier | Pour approfondir |
 |---|---|---|
-| **Découverte rapide (AE / AS)** | [`5 - Memoire.pdf`](5%20-%20Memoire.pdf) (Synthèse exécutive, pp. 6–8, puis Ch. 1–2) | [`0 - Livre Blanc.pdf`](0%20-%20Livre%20Blanc.pdf) (Liminaire EA/SA, pp. 5–8) |
-| **Architecture d'entreprise (AE)** | [`5 - Memoire.pdf`](5%20-%20Memoire.pdf) (Partie IV & Annexes A–C) → [`2 - Cadre de Référence.pdf`](2%20-%20Cadre%20de%20R%C3%A9f%C3%A9rence.pdf) (Ch. 1–5, 11–15) | [`4 - Plan Directeur.pdf`](4%20-%20Plan%20Directeur.pdf) (Parties III–VI) |
-| **Architecture de solutions & Plateforme (AS / SRE)** | [`0 - Livre Blanc.pdf`](0%20-%20Livre%20Blanc.pdf) (Ch. 3–11, 13–14) → [`5 - Memoire.pdf`](5%20-%20Memoire.pdf) (Parties II–III) | [`3 - Compendium 2027.pdf`](3%20-%20Compendium%202027.pdf) (volets « Mise en œuvre », Annexes F–G) |
-| **Sécurité, IAM & Risques** | [`2 - Cadre de Référence.pdf`](2%20-%20Cadre%20de%20R%C3%A9f%C3%A9rence.pdf) (Ch. 8–9) → [`5 - Memoire.pdf`](5%20-%20Memoire.pdf) (Ch. 3, 6, 7) | [`1 - Compendium 2026.pdf`](1%20-%20Compendium%202026.pdf) (Livre II — Faire confiance) et [`4 - Plan Directeur.pdf`](4%20-%20Plan%20Directeur.pdf) (Ch. M-5 PQC) |
-| **Conformité, Droit & Audit financier** | [`2 - Cadre de Référence.pdf`](2%20-%20Cadre%20de%20R%C3%A9f%C3%A9rence.pdf) (Ch. 12 & Annexe D) → [`5 - Memoire.pdf`](5%20-%20Memoire.pdf) (Ch. 10 & Annexe C) | [`1 - Compendium 2026.pdf`](1%20-%20Compendium%202026.pdf) (Livre III) et [`4 - Plan Directeur.pdf`](4%20-%20Plan%20Directeur.pdf) (Ch. M-3, M-14 à M-18) |
+| **Obtenir une vision d'ensemble rapide** | [`5 - Memoire.pdf`](5%20-%20Memoire.pdf) (Synthèse exécutive, pages 6 à 8) | [`0 - Livre Blanc.pdf`](0%20-%20Livre%20Blanc.pdf) (Résumés exécutifs, pages 5 à 8) |
+| **Fixer les règles de gouvernance, de risque et d'approvisionnement** | [`2 - Cadre de Référence.pdf`](2%20-%20Cadre%20de%20R%C3%A9f%C3%A9rence.pdf) (Sommaire exécutif et Parties I et IV) | [`5 - Memoire.pdf`](5%20-%20Memoire.pdf) (Partie IV — Gouverner et conformer) |
+| **Bâtir une feuille de route pluriannuelle sous incertitude** | [`4 - Plan Directeur.pdf`](4%20-%20Plan%20Directeur.pdf) (Synthèse exécutive et Parties III à VI) | [`2 - Cadre de Référence.pdf`](2%20-%20Cadre%20de%20R%C3%A9f%C3%A9rence.pdf) (Modèle de maturité et feuille de route) |
+| **Structurer la transformation technologique et éviter les pièges courants** | [`0 - Livre Blanc.pdf`](0%20-%20Livre%20Blanc.pdf) (Parties I, IV et V) | [`3 - Compendium 2027.pdf`](3%20-%20Compendium%202027.pdf) (Parties IV, V et VIII) |
+| **Évaluer les impacts par métier financier et les obligations réglementaires** | [`4 - Plan Directeur.pdf`](4%20-%20Plan%20Directeur.pdf) (Partie IV — Profils sectoriels) | [`1 - Compendium 2026.pdf`](1%20-%20Compendium%202026.pdf) (Livre III — Encadrer) |
+| **Suivre les tendances du marché et la recherche** | [`3 - Compendium 2027.pdf`](3%20-%20Compendium%202027.pdf) (Partie X — Recherche et projection 2027–2030) | [`4 - Plan Directeur.pdf`](4%20-%20Plan%20Directeur.pdf) (Partie II — Prospective 2028–2035) |
 
 ---
 
-## Contenu détaillé de chaque PDF
+## Présentation des six ouvrages
 
-### 0. [`0 - Livre Blanc.pdf`](0%20-%20Livre%20Blanc.pdf) — Ouvrage de référence architecturale (EA / SA)
+### 0. [`0 - Livre Blanc.pdf`](0%20-%20Livre%20Blanc.pdf) — Référence généraliste d'architecture et d'adoption
+- **Pour quelles décisions** : cadrer la place des agents dans le système d'information, arbitrer entre achat de solutions infonuagiques, assemblage sur standards ouverts ou développement interne, et séquencer la première année de déploiement.
+- **Ce qu'on y trouve** : une approche hybride visant à maintenir environ 80 % des règles métier, identités et contrôles dans une logique déterministe tout en encadrant strictement les 20 % confiés aux modèles ; la connexion aux progiciels existants sans réécriture complète ; la sécurité par confiance zéro ; la maîtrise budgétaire par transaction réussie ; et la coexistence avec l'automatisation existante.
+- **Livrables utiles à la direction** : trois modèles d'architecture complets (environnement réglementé, collaboration inter-entreprises, exploitation souveraine à haute confidentialité), un catalogue de 12 pièges majeurs à éviter, un modèle de maturité en 5 paliers, une feuille de route sur 90, 180 et 360 jours, et une grille d'homologation en 40 critères.
 
-- **Titre complet** : *Interopérabilité et Orchestration en Entreprise Agentique — Architecture de référence, protocoles ouverts et gouvernance d'exécution pour architectes d'entreprise et de solutions*
-- **Production** : Cellule d'architecture automatisée — Pipeline Gemini / Wyvern (novembre 2026) · 251 pages, 59 figures, 52 tableaux.
-- **Thèse centrale** : La fiabilité de l'entreprise agentique tient à l'ingénierie des frontières plutôt qu'à la puissance des modèles. Maintenir environ **80 %** du contrôle, des règles, des identités et des mutations en logique déterministe et confiner les **20 %** cognitifs sous contrats typés, télémétrie et réversibilité.
-- **Structure** :
-  - **Liminaire** : Colophon d'ingénierie 100 % IA et protocole Wyvern, doubles résumés exécutifs (EA et SA), parcours par rôle.
-  - **Partie I — Fondations architecturales** (Ch. 1–3) : stratification *Systems of Record / Engagement / Agency*, non-déterminisme et blast radius, échelle d'autonomie `L0`–`L4`, quadruple dette (technique, cognitive, d'intention, CACE), extension TOGAF ADM / ArchiMate (`«Cognitive Actor»`), topologie en 4 plans, *Agent Harness* (SHADI, microVM), partition 80/20 et Structured Outputs (JSON Schema).
-  - **Partie II — Interopérabilité** (Ch. 4–6) : MCP sans état (`2026-07-28`), ergonomie ACI (contre *Swagger-to-MCP*), MCP Gateways, couches anti-corruption sur SI patrimonial ; A2A v1.0, fédération AGNTCY (OASF, ADS, SLIM/MLS), ponts inter-cadriciels ; 4 mémoires d'entreprise, Agentic RAG fédéré, souveraineté sémantique et propagation des ACL.
-  - **Partie III — Orchestration, chorégraphie et exécution durable** (Ch. 7–9) : critères contre le multi-agents injustifié, topologies dirigées et collaboratives, transfert par *Artifact URI* et *Goal Pinning* ; Event Mesh (Kafka, Solace, NATS, CloudEvents, AsyncAPI) ; *Durable Execution* (Temporal, Restate, Dapr), idempotence, Outbox, Sagas compensatoires et cycles HOTL.
-  - **Partie IV — Confiance, sécurité Zero-Trust, observabilité et gouvernance** (Ch. 10–12) : OWASP Agentic Top 10 / MAESTRO, SPIFFE/SPIRE, OAuth 2.0 OBO (`RFC 8693`), Intent Gates (OPA/Cedar), confinement (Firecracker, gVisor, WASM) ; OpenTelemetry GenAI, pipeline EvalOps, SRE agentique et coupe-circuits cognitifs ; gouvernance (registre, 3LoD, Loi 25, LPRPDE, EU AI Act, BSIF E-23, NIST AI RMF, ISO/IEC 42001) et FinOps (FOCUS, coût par résultat).
-  - **Partie V — Ingénierie de plateforme, blueprints et transformation** (Ch. 13–15) : *Internal Agentic Platform* (IAP), AI Gateway hybride, GitOps cognitif ; 3 blueprints instanciables (transactionnel réglementé, maillage B2B, exploitation souveraine) ; coexistence BPM/iPaaS/RPA, migration *Strangler Fig*, 12 anti-patrons (`AP-01`–`AP-12`), maturité `M1`–`M5` et feuille de route 90 / 180 / 360 jours.
-  - **Annexes A–D** : glossaire bilingue FR-CA/EN, gabarit ADR + liste de contrôle d'homologation EA/SA (40 critères), bibliographie maîtresse (394 sources primaires), bilan d'ancrage atomique Wyvern (1 002 affirmations vérifiées, 88,1 % supportées au premier jet, 119 rectifiées/retirées).
+### 1. [`1 - Compendium 2026.pdf`](1%20-%20Compendium%202026.pdf) — Somme encyclopédique en services financiers
+- **Pour quelles décisions** : comprendre en profondeur les défis structurels de l'interopérabilité, de l'identité des agents, de la délégation d'autorité et de la conformité dans les institutions financières canadiennes et québécoises.
+- **Ce qu'on y trouve** : cinq livres thématiques couvrant la coopération entre systèmes, la fabrique de confiance (identité vérifiable, chaîne de mandat, sécurité face aux attaques et transition post-quantique), l'encadrement réglementaire canadien et québécois (banque, assurance, gestion de patrimoine, paiements modernes), l'exploitation industrielle à grande échelle et la gestion durable des effets opérationnels.
+- **Livrables utiles à la direction** : une analyse croisée montrant que les protocoles techniques ouverts ne couvrent pas nativement les obligations réglementaires financières, des études de cas canadiennes, et une feuille de route ciblant l'échéance réglementaire du 1er mai 2027.
 
----
+### 2. [`2 - Cadre de Référence.pdf`](2%20-%20Cadre%20de%20R%C3%A9f%C3%A9rence.pdf) — Cadre normatif d'entreprise
+- **Pour quelles décisions** : adopter une politique d'entreprise opposable pour autoriser, sécuriser, auditer et acheter des solutions agentiques tout en préservant la réversibilité vis-à-vis des fournisseurs.
+- **Ce qu'on y trouve** : dix décisions structurantes, douze principes directeurs et 305 exigences vérifiables couvrant l'architecture, les standards ouverts, les niveaux d'autonomie, la supervision humaine signée, la sécurité par confiance zéro, la traçabilité, la gestion financière, la conformité multi-juridictionnelle et les clauses contractuelles d'approvisionnement.
+- **Livrables utiles à la direction** : une grille d'homologation avant mise en production, un gabarit de fiche d'identité d'agent, un modèle de gouvernance des responsabilités, un modèle de maturité en 5 niveaux, des indicateurs de pilotage et un plan d'action pour les 90 premiers jours.
 
-### 1. [`1 - Compendium 2026.pdf`](1%20-%20Compendium%202026.pdf) — Somme encyclopédique (`C26`)
+### 3. [`3 - Compendium 2027.pdf`](3%20-%20Compendium%202027.pdf) — État de l'art consolidé et mise en œuvre
+- **Pour quelles décisions** : évaluer la maturité réelle des technologies agentiques, prévenir la création de nouveaux silos propriétaires entre grands progiciels d'entreprise et éclairer les investissements jusqu'en 2030.
+- **Ce qu'on y trouve** : cinquante chapitres en dix parties combinant synthèses sourcées et 31 volets d'application concrète, couvrant les standards ouverts d'interaction, la gouvernance des données et de la mémoire, la coordination fiable, l'intégration des systèmes patrimoniaux, la sécurité, le droit canadien et international, l'économie par résultat, l'usine logicielle interne ainsi qu'une revue de littérature, une veille technologique et une étude de marché 2027–2030.
+- **Livrables utiles à la direction** : un registre de 31 décisions d'architecture structurantes, des arbres de choix, des grilles d'évaluation de fournisseurs et de solutions, et une liste complète de vérification avant mise en production en 75 points.
 
-- **Titre complet** : *Interopérabilité et orchestration en entreprise agentique — Autonomie encadrée et fabrique de confiance : déployer des agents en services financiers réglementés (2024-2032)*
-- **Auteur & édition** : André-Guy Bruneau M.Sc. IT · Édition intégrale de novembre 2026 (faits gelés au 27 juillet 2026, revalidations jusqu'au 29 octobre 2026, actualisation au 1er novembre 2026 en Annexe N) · 673 pages.
-- **Fil conducteur** : L'interopérabilité et l'orchestration sont des propriétés à maintenir, gouvernées par un invariant à quatre termes — **découplage, contrat, évolution et exploitation** — appuyé sur une identité opposable, un contrôle de finalité et une provenance attestée.
-- **Structure (5 livres, 50 chapitres, 3 annexes)** :
-  - **Livre I — Coopérer** (Ch. 1–11) : intégration d'entreprise, pile canonique d'interopérabilité et LCIM, sémantique et ontologies, héritage IAM, ingénierie agentique, mémoire et RAG agentique, multi-agents, anatomie MCP / A2A, découverte et registres, AP2 et AGNTCY, taxonomie des risques protocolaires.
-  - **Livre II — Faire confiance** (Ch. 12–21) : identités non humaines (NHI), OAuth/OIDC/SCIM, identité décentralisée (DID/VC), grille des cinq questions (`Q-A` à `Q-E`), Agent Cards signées, passeport d'agent, chaîne de mandat et problème des deux sauts, *Know Your Agent* (KYA), attaques d'identité/délégation, révocation et SOC agentique, transition post-quantique.
-  - **Livre III — Encadrer** (Ch. 22–36) : options d'orchestration (`OO1`–`OO4`) et passage à l'échelle ; cadre réglementaire canadien et québécois (BSIF E-23, vide fédéral C-27/C-36, ligne directrice IA de l'AMF et Loi 25 art. 12.1, ACVM 11-348, pont vers les frames déterministes, maillage international) ; vertical financier (services bancaires axés sur les consommateurs, ISO 20022 / Lynx / RTR, banque, assurance, patrimoine, études de cas canadiennes 2025–2026, prospective AP2).
-  - **Livre IV — Appliquer, exploiter, produire et composer** (Ch. 37–46) : *AgentMesh* (PEP/PDP Zero-Trust), observabilité, évaluation continue et dérive, indicateurs AgentOps et FinOps, fabrique d'agents, matrice protocoles × exigences réglementaires (constat 0/15 lien natif), architecture de référence unifiée par couches, formalisation ArchiMate, blueprint instancié et feuille de route vers le 1er mai 2027.
-  - **Livre V — Livrer et clore** (Ch. 47–50) : provenance logicielle et mise en service, sémantique d'effet (idempotence, compensation, réconciliation), horizon 2027–2032, péremption et protocole de revalidation.
-  - **Annexes B, I et N** : 159 fiches sources (`S-001`–`S-159`), bibliographie générale consolidée et actualisation du 1er novembre 2026 (incluant les reports de la Note AMF IA).
+### 4. [`4 - Plan Directeur.pdf`](4%20-%20Plan%20Directeur.pdf) — Prospective et architecture cible 2028–2035
+- **Pour quelles décisions** : orienter les investissements pluriannuels sans parier sur un seul avenir technologique, identifier les capacités « sans regret » à bâtir dès maintenant et adapter l'ambition d'autonomie aux limites légales de chaque secteur financier.
+- **Ce qu'on y trouve** : une prospective appuyée sur 98 textes officiels primaires et trois scénarios d'évolution du marché sans probabilité (socle ouvert étendu, archipel de plateformes propriétaires, fragmentation en blocs juridictionnels) ; une architecture cible neutre vis-à-vis des fournisseurs structurée en 52 capacités (dont 42 invariantes sans regret et 10 conditionnelles) ; et cinq profils détaillés (banque, gestion de patrimoine, assurance de personnes, assurance de dommages, groupe financier diversifié).
+- **Livrables utiles à la direction** : un calendrier réglementaire et technologique consolidé de 2027 à 2035, une trajectoire en trois paliers (2028–2029, 2030–2032, 2033–2035) franchis uniquement sur preuve, 15 portes de gouvernance et un registre de 27 signaux de veille permettant d'ajuster la trajectoire.
 
----
-
-### 2. [`2 - Cadre de Référence.pdf`](2%20-%20Cadre%20de%20R%C3%A9f%C3%A9rence.pdf) — Cadre normatif d'architecture d'entreprise (`CAD26` / `CRE-IA-2026-01`)
-
-- **Titre complet** : *Interopérabilité et orchestration en entreprise agentique — Cadre de référence d'architecture d'entreprise*
-- **Auteur & version** : André-Guy Bruneau M.Sc. IT · Identifiant `CRE-IA-2026-01`, **version 1.2 (19 novembre 2026)** · 351 pages, 28 figures, 72 tableaux · Licence `CC BY 4.0` / `MIT`.
-- **Portée normative** : Énonce **12 principes directeurs** (`PRIN-01` à `PRIN-12`), **10 décisions structurantes** et un registre unifié de **305 exigences vérifiables** (`EXIG-*` : 255 `DOIT`, 34 `NE DOIT PAS`, 16 `DEVRAIT`), incluant en v1.2 les 12 exigences québécoises `EXIG-AMF-01`–`12` issues de la Note AMF IA ainsi que 6 exigences couvrant la transition post-quantique (`NIST IR 8547`), `ACVM 11-348`, `RTR / ISO 20022` et `EN 18286:2026`.
-- **Structure (4 parties, 15 chapitres, 8 annexes)** :
-  - **Partie I — Fondements** (Ch. 1–4) : objet, parcours par rôle, degrés d'obligation, contexte et enjeux, définitions normatives, 12 principes directeurs et arbitrages de tensions.
-  - **Partie II — Architecture, interopérabilité et orchestration** (Ch. 5–8) : architecture de référence en **6 couches** (canaux, orchestration, agents, médiation, outils, systèmes d'enregistrement) et **3 plans transversaux** (identité, observabilité, gouvernance), correspondance ABB/SBB, mémoire ; interopérabilité (`MCP 2026-07-28`, `A2A 1.0`, CloudEvents/AsyncAPI, catalogue trimestriel) ; orchestration (simplicité d'abord, 8 patrons autorisés, anti-patrons proscrits, exécution durable et Sagas) ; autonomie graduée (`N0`–`N4`), paliers de risque d'outils (`P0`–`P3`) et approbation humaine signée.
-  - **Partie III — Confiance et exploitation** (Ch. 9–10) : confiance zéro, NHI, délégation `RFC 8693`, passerelle d'agents obligatoire, défense contre l'injection et OWASP ASI, isolation de code ; observabilité `OpenTelemetry GenAI`, évaluation en 3 étages, audit chaîné et FinOps (enveloppes budgétaires).
-  - **Partie IV — Gouvernance, conformité et mise en œuvre** (Ch. 11–15) : gouvernance (RACI, modèle en étoile, cycle de vie), conformité (Loi 25, BSIF E-23, RIA / EU AI Act, NIST AI RMF, ISO/IEC 42001), approvisionnement et anti-verrouillage, modèle de maturité en 5 niveaux, feuille de route en 4 phases (calée sur 2027–2030) et plan des 90 premiers jours.
-  - **Annexes A–H** : grille d'homologation, gabarit de fiche d'agent, exemples de contrats, registre des 305 exigences, glossaire, audit et validation des sources, bibliographie (449 + 22 références) et actualisation de novembre 2026.
+### 5. [`5 - Memoire.pdf`](5%20-%20Memoire.pdf) — Synthèse unifiée de la collection
+- **Pour quelles décisions** : disposer d'un point d'entrée unique de 125 pages qui rassemble l'essentiel des 2 541 pages des quatre volumes précédents et aligne les décisions de gouvernance d'entreprise avec les choix d'exécution technologique.
+- **Ce qu'on y trouve** : dix thèses structurantes fondées sur les constats empiriques de fin 2026, six arbitrages conjoints entre direction d'entreprise et équipes de réalisation, une réconciliation complète des modèles de la collection et une trajectoire unifiée allant des 90 premiers jours jusqu'à 2035.
+- **Livrables utiles à la direction** : un catalogue de poche des décisions d'architecture, une grille unifiée d'homologation avant mise en production, un guide d'orientation vers les chapitres correspondants des ouvrages sources et un glossaire complet.
 
 ---
 
-### 3. [`3 - Compendium 2027.pdf`](3%20-%20Compendium%202027.pdf) — Édition consolidée 2027 (`C27`)
+## Cinq constats stratégiques transversaux
 
-- **Titre complet** : *Interopérabilité et Orchestration en Entreprise Agentique — Compendium 2027 (Protocoles, sémantique, orchestration, architecture, confiance et gouvernance)*
-- **Production** : Corpus Agentique — Production autonome IA, usage consultatif AE / AS (novembre 2026 ; faits arrêtés aux 11–14 novembre 2026) · 1 117 pages · Licence `CC BY 4.0` / `MIT`.
-- **Construction** : Réunit en un seul volume un exposé de référence sourcé (50 chapitres) et une édition d'architecture appliquée comptant **31 volets « Mise en œuvre »** (architectures prescrites, extraits de code, décisions d'architecture ADR, listes de contrôle et fil rouge illustratif *Groupe Boréal Inc.*).
-- **Structure (Ouverture, 10 parties, 50 chapitres, 8 annexes)** :
-  - **Ouverture** : tissu conjonctif en 6 couches + 2 plans transversaux, 6 parcours par rôle, échelle `L0`–`L4`, carte des standards 2027.
-  - **Parties I à IV** (Ch. 1–22) : fondements et état des lieux 2026–2027 ; protocoles MCP, A2A, périphériques, découverte/registres, web et commerce agentique (`AP2`, `x402`), géopolitique des standards (AAIF) ; couche sémantique, ingénierie du contexte, mémoire distribuée bi-temporelle et données prêtes pour les agents ; topologies d'orchestration, découplage déterministe/probabiliste, exécution durable, événements, cadriciels, fiabilité et humain dans la boucle.
-  - **Parties V à VIII** (Ch. 23–43) : architecture d'entreprise, passerelles, intégration au patrimoine sans API (CUA, RPA/APA, mainframes), fédération des silos SaaS, convergence IT/OT et périphérie ; identité NHI, autorisation/délégation, menaces OWASP ASI, bacs à sable/coupe-circuits, OpenTelemetry GenAI, ADLC/chaos ; cadres juridiques internationaux, responsabilité, souveraineté, Canada/Québec, gouvernance interne ; FinOps (*Cost-per-Outcome*), modèle opérationnel, études de cas et maturité (niveaux 1 à 5).
-  - **Parties IX et X** (Ch. 44–50) : approfondissements (plan de données d'inférence et routage cognitif, réseaux B2B fédérés, inférence confidentielle et IA physique, usine logicielle agentique, Agentic DataOps et distillation LLM → SLM) et recherche scientifique (revue de littérature, veille technologique, projection 2027–2030 et étude de marché).
-  - **Annexes A–H** : glossaire FR-EN, fiches protocoles, grilles d'évaluation, chronologie 2024–2028, bibliographie et niveaux de preuve, registre des **31 ADR** (`ADR-001`–`ADR-031`), listes de contrôle d'homologation avant production (**75 points PRR**) et index des standards.
+1. **Le contrôle précède l'autonomie.** Les déploiements réels observés en production demeurent majoritairement courts et encadrés par des règles déterministes. La démarche recommandée privilégie la simplicité : automatisation déterministe d'abord, agent unique bien encadré ensuite, et systèmes multi-agents uniquement lorsque le gain est mesuré.
+2. **Posséder son noyau de contrôle pour éviter le verrouillage.** Alors que les grands éditeurs s'accordent sur certains standards d'échange, le risque de dépendance se déplace vers les plateformes de gouvernance et d'orchestration. L'organisation doit conserver la maîtrise de son registre d'agents, de ses identités, de ses passerelles de contrôle et de ses journaux d'audit.
+3. **Graduer l'autonomie selon le risque et préserver une supervision humaine réelle.** Aucune action critique ou irréversible ne devrait être confiée sans garde-fou à un agent isolé. Les ouvrages encadrent la séparation des pouvoirs, la validation humaine liée à l'action exacte, la prévention de l'approbation machinale et les mécanismes d'arrêt rapide.
+4. **Piloter la valeur par le coût complet d'un résultat conforme.** La rentabilité ne se mesure pas au nombre d'appels techniques, mais au coût total de bout en bout par transaction métier réussie, incluant gouvernance, supervision, évaluation continue et gestion des risques.
+5. **Ce qui est daté porte sur la preuve, jamais sur une obligation d'autonomisation.** L'analyse réglementaire montre qu'aucune loi n'oblige à déléguer des décisions à des agents ; en revanche, les échéances fermes imposent des exigences strictes de gouvernance, de traçabilité, de protection des renseignements personnels et de résilience cryptographique.
 
 ---
 
-### 4. [`4 - Plan Directeur.pdf`](4%20-%20Plan%20Directeur.pdf) — Prospective et architecture cible 2028–2035 (`PD28`)
+## Échéances réglementaires et technologiques clés
 
-- **Titre complet** : *Interopérabilité et Orchestration en Entreprise Agentique — Prospective, architecture cible et plan directeur 2028-2035*
-- **Production** : Corpus Agentique — Production autonome IA (état de référence : 16–19 novembre 2026 ; statut informatif) · 400 pages · Licence `CC BY 4.0` / `MIT`.
-- **Thèse vérifiée** : Toutes les échéances fermes qui lient le secteur financier canadien et québécois d'ici 2035 portent sur la **preuve, la gouvernance, la transparence et la cryptographie**, jamais sur une obligation d'autonomisation. La cible invariante de l'institution est le **noyau de contrôle possédé en propre**.
-- **Rigueur documentaire** : Appuyé sur **98 textes primaires bruts** (`L+`) conservés localement, **67 ancres chronologiques**, **27 signaux de veille** (`SIG`), séparation explicite des sources inaccessibles (statut `F`) et double recollation indépendante (`CA-16`) sur 120 énoncés distincts (2 tirages de 60 énoncés, 100 % conformes après correction).
-- **Structure (6 parties, 26 chapitres `M-1` à `M-26`, 8 annexes)** :
-  - **Parties I–II — Cadrage et Prospective 2028–2035** (`M-1` à `M-8`) : méthode, marques d'énoncé (`[D]`, `[A]`, `[C]`), état de référence 2027, calendriers réglementaire et prudentiel, normalisation, transition post-quantique de l'identité et de la délégation, capacités des agents, marché/coûts/énergie/compétences, et **3 scénarios DAPP sans probabilité** (A : Socle étendu, B : Archipel de plateformes propriétaires, C : Blocs juridictionnels).
-  - **Partie III — Architecture cible 2035** (`M-9` à `M-13`) : architecture neutre vis-à-vis des éditeurs en **5 couches horizontales** et **3 volets de contrôle**, **15 principes** (`PRI-001`–`PRI-015`), **52 capacités cibles** (`CAP-001`–`CAP-052` : **42 invariantes sans regret** + **10 conditionnelles**), autonomie par domaine et classe de décision, révision des 31 ADR et 12 décisions nouvelles (`DEC-001`–`DEC-012`).
-  - **Partie IV — Profils sectoriels** (`M-14` à `M-18`) : déclinaison réglementaire et capacitaire pour **Banque**, **Gestion de patrimoine**, **Assurance de personnes**, **Assurance de dommages** et **Groupe financier diversifié** (24 propositions d'exigences sectorielles `PEX`).
-  - **Parties V–VI — Feuille de route et Pilotage** (`M-19` à `M-26`) : analyse d'écarts, trajectoire en **3 paliers franchis sur preuve** (Palier 1 : 2028–2029, Palier 2 : 2030–2032, Palier 3 : 2033–2035), portefeuille d'initiatives (`INI`), **15 portes** (`POR`), registre de veille (27 `SIG`) et gestion des risques du plan.
-  - **Annexes A–H** : calendrier consolidé 2027–2035, registres des capacités, principes, décisions, portes, initiatives et `PEX`, matrice de traçabilité, correspondances inter-modèles, registre de veille, glossaire et bibliographie.
+- **Déjà en vigueur** : dispositions de la Loi 25 du Québec encadrant les décisions exclusivement automatisées et la protection des renseignements personnels ; attentes des Autorités canadiennes en valeurs mobilières sur l'usage de l'intelligence artificielle ; premières obligations européennes de transparence.
+- **Mars 2027 et mars 2029** : réduction progressive de la durée de validité des certificats de sécurité web à 100 jours, puis à 47 jours, imposant l'automatisation complète du cycle de vie des certificats.
+- **1er mai 2027** : entrée en vigueur de la ligne directrice révisée sur la gestion du risque de modèle du Bureau du surintendant des institutions financières (incluant les systèmes génératifs et agentiques) et prise d'effet de la ligne directrice sur l'utilisation de l'intelligence artificielle de l'Autorité des marchés financiers au Québec.
+- **2 décembre 2027** : entrée en application des exigences européennes visant les systèmes d'intelligence artificielle à haut risque pour les groupes ayant des activités en Europe.
+- **2028** : interdiction des rétrofacturations de commissions en gestion de patrimoine (octobre 2028) et divulgation des émissions financées et assurées de portée 3 sous l'encadrement prudentiel fédéral.
+- **2030 à 2035** : transition coordonnée du secteur financier du groupe des sept vers une cryptographie résistante aux ordinateurs quantiques, et échéance de renouvellement des lois financières fédérales canadiennes (30 juin 2033).
 
 ---
 
-### 5. [`5 - Memoire.pdf`](5%20-%20Memoire.pdf) — Mémoire d'architecture unifié AE / AS (v2.0)
+## Portée et transparence éditoriale
 
-- **Titre complet** : *Interopérabilité et Orchestration en Entreprise Agentique — Architecture de référence, patrons de solutions et trajectoire 2026-2035 — Mémoire sous forme de livre blanc à l'intention des architectes d'entreprise et des architectes de solutions*
-- **Production** : Corpus Agentique — Production autonome IA, **version 2.0 (19 novembre 2026)** · 125 pages · Licence `CC BY 4.0` / `MIT`.
-- **Rôle clé** : Point d'entrée synthétique du corpus consolidé. Compresse (~21:1) les 2 541 pages de `C26`, `CAD26`, `C27` et `PD28` (plus la Note AMF IA et l'extension `CRE-IA-2027 v2.0`), ferme la divergence `DIV-02` en raccordant le modèle 5 couches / 3 volets de `PD28` aux 6 couches de `CAD26`, et scelle **10 thèses structurantes (`T1`–`T10`)** ainsi que **6 décisions conjointes AE ↔ AS**.
-- **Structure (4 parties, 12 chapitres, 6 annexes)** :
-  - **Synthèse exécutive** : contrat de lecture croisé AE / AS, thèses `T1`–`T10`, 6 décisions conjointes, trajectoire unifiée 90 jours → 18 mois → Paliers `P1`–`P3`.
-  - **Partie I — Problème architectural et ossature commune** (Ch. 1–2) : constat empirique fin 2026, loi de Lusser, sobriété agentique, réconciliation des modèles (`DIV-02`) et séparation ABB → SBB.
-  - **Partie II — Chantier de l'architecte de solutions** (Ch. 3–6) : couche protocolaire (`MCP`, `A2A`, événements) et passerelle PEP à 9 contrôles ; sémantique métier, contexte compilé, mémoire CoALA et encapsulation patrimoniale (`EBCDIC`/`COMP-3`, CUA, IT/OT) ; orchestration hybride (`OO1`–`OO4`), exécution durable et Sagas ; autonomie graduée et liaison cryptographique (`CIBA` + `FIDO2` + `JCS SHA-256`).
-  - **Partie III — Socle partagé AE / AS** (Ch. 7–9) : fabrique de confiance (NHI `SPIFFE`, `RFC 8693`, `DPoP`, défense anti-injection `CaMeL`, PKI 47 jours et PQC `ML-DSA` / `SCITT`) ; observabilité à double couloir PII (`OpenTelemetry`), audit JCS, évaluation `E1`–`E3` et FinOps CPO ; plan d'inférence, six substrats d'état, confidentialité matérielle, continuité bimodèle et réseaux B2B.
-  - **Partie IV — Chantier de l'architecte d'entreprise** (Ch. 10–12) : conformité dès la conception (Canada, Québec, UE) et 5 profils financiers ; modèle opérationnel à trois lignes, usine logicielle interne et approvisionnement réversible ; homologation unifiée et trajectoire adaptative DAPP.
-  - **Annexes A–F** : tables de concordance 2026–2035 (`CAP`/`PEX` → `EXIG-*`), catalogue de poche des décisions AE / AS, grille unifiée d'homologation avant mise en production, guide d'orientation vers les 2 541 pages sources, glossaire unifié (**385 entrées**) et bibliographie primaire sélective (**70 normes, lois et études**).
-
----
-
-## Repères transversaux (architecture, protocoles et échéances)
-
-- **Principe directeur commun** : Le contrôle déterministe, l'identité vérifiable et la capacité de preuve précèdent toute extension d'autonomie (du flux déterministe à l'agent unique outillé, puis au multi-agents uniquement sur gain mesuré).
-- **Pile protocolaire et technique de référence** :
-  - *Agent ↔ Outil* : `MCP` (révision `2026-07-28`, sans état) derrière une passerelle d'agents (PEP) et un registre/catalogue gouverné.
-  - *Agent ↔ Agent* : `A2A` (`v1.0` / `v1.0.1`, *Agent Cards* signées) et fédération `AGNTCY` (`OASF`, `SLIM`/`MLS`).
-  - *Événements et exécution durable* : `CloudEvents 1.0`, `AsyncAPI 3.0`, moteurs durables (`Temporal`, `Restate`, `Dapr`), idempotence et Sagas compensatoires.
-  - *Identité, sécurité et observabilité* : `SPIFFE`/`SPIRE`, `OAuth 2.0/2.1` (`RFC 8693`, `RFC 8707`, `RFC 9396`, `DPoP`), `CIBA`/`FIDO2`, `OPA`/`Cedar`, `OWASP ASI01–10`, `OpenTelemetry GenAI` (`gen_ai.*`), `FOCUS` (FinOps).
-- **Échéances réglementaires et cryptographiques structurantes** :
-  - **En vigueur** : Loi 25 du Québec (notamment art. 12.1 sur les décisions exclusivement automatisées et ÉFVP), avis `ACVM 11-348`, transparence `EU AI Act` art. 50 (août 2026).
-  - **15 mars 2027** : abaissement de la durée de validité des certificats TLS à 100 jours (puis 47 jours le **15 mars 2029**).
-  - **1er mai 2027** : entrée en vigueur de la ligne directrice **BSIF E-23** (risque de modèle incluant l'IA générative et agentique) et prise d'effet de la ligne directrice IA de l'**AMF** au Québec.
-  - **2 décembre 2027** : application de l'Annexe III (systèmes à haut risque) du règlement européen sur l'IA (`EU AI Act`, calendrier révisé).
-  - **2028** : interdiction des rétrofacturations en gestion de patrimoine (1er oct. 2028) et divulgation portée 3 sous **BSIF B-15**.
-  - **2030–2035** : fenêtre de transition post-quantique coordonnée du secteur financier du G7 (`NIST IR 8547`, `FIPS 203–205`) et temporisation des lois financières fédérales canadiennes (**30 juin 2033**).
-
----
-
-## Statut éditorial, périmètre probatoire et licences
-
-- **Usage consultatif** : Les ouvrages de ce dépôt constituent des référentiels techniques et architecturaux à des fins de consultation par les architectes d'entreprise et de solutions. Ils ne constituent **ni un avis juridique, ni une homologation réglementaire**.
-- **Périmètre démontré vs extrapolations** : L'appareil réglementaire et probatoire des volumes `1` à `5` porte sur les **services financiers réglementés** (Canada fédéral, Québec et obligations transfrontalières UE) et sur l'ingénierie de contrôle déterministe hors modèle. Les mentions hors finance (santé, IT/OT, industrie, énergie, secteur public non financier) y sont balisées comme extrapolations illustratives.
-- **Transparence sur la production IA** : Les volumes [`0`](0%20-%20Livre%20Blanc.pdf), [`3`](3%20-%20Compendium%202027.pdf), [`4`](4%20-%20Plan%20Directeur.pdf) et [`5`](5%20-%20Memoire.pdf) documentent explicitement leur production et leur vérification automatisées par agents d'IA (ancrage atomique Wyvern, recollation sur textes bruts `CA-16`, séparation des textes inaccessibles de statut `F`, absence de relecture humaine intégrale). Les volumes [`1`](1%20-%20Compendium%202026.pdf) et [`2`](2%20-%20Cadre%20de%20R%C3%A9f%C3%A9rence.pdf) portent la mention d'auteur d'**André-Guy Bruneau M.Sc. IT** (le volume `2` v1.2 précisant également le régime de production autonome IA pour consultation AE / AS).
-- **Licences mentionnées dans les documents** : Les volumes [`2`](2%20-%20Cadre%20de%20R%C3%A9f%C3%A9rence.pdf), [`3`](3%20-%20Compendium%202027.pdf), [`4`](4%20-%20Plan%20Directeur.pdf) et [`5`](5%20-%20Memoire.pdf) indiquent une diffusion sous **CC BY 4.0** (textes, figures et registres) et **MIT** (code, scripts et outils). Les volumes [`0`](0%20-%20Livre%20Blanc.pdf) et [`1`](1%20-%20Compendium%202026.pdf) ne comportent pas de mention de licence explicite en page de titre.
+- **Usage consultatif** : cette collection constitue un outil d'aide à la décision et de réflexion stratégique et architecturale. Elle ne remplace ni un avis juridique, ni une validation indépendante des risques, ni une homologation réglementaire.
+- **Périmètre démontré** : les analyses réglementaires et probatoires des ouvrages 1 à 5 portent sur les services financiers réglementés (Canada fédéral, Québec et activités transfrontalières européennes) ainsi que sur le contrôle logiciel déterministe. Les exemples issus d'autres secteurs (santé, industrie, énergie, secteur public) sont présentés à titre illustratif.
+- **Transparence sur la production** : les ouvrages rédigés en novembre 2026 documentent explicitement leur production et leur vérification automatisées par agents d'intelligence artificielle (sous la direction d'André-Guy Bruneau pour les ouvrages de fond 2026), avec recoupements systématiques sur textes primaires mais sans relecture humaine intégrale.
+- **Diffusion** : les ouvrages 2 à 5 mentionnent une diffusion ouverte sous licence Creative Commons Attribution 4.0 pour les textes et figures ; les ouvrages 0 et 1 ne comportent pas de mention de licence explicite en page de titre.
