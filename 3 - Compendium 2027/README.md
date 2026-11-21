@@ -2,8 +2,8 @@
 
 ## Informations sur le document
 
-- **Source PDF** : `3 - Compendium 2027.pdf`
-- **Fichier Markdown complet** : [3 - Compendium 2027.md](../3%20-%20Compendium%202027.md)
+- **Source PDF** : [3 - Compendium 2027.pdf](../0%20-%20PDF/3%20-%20Compendium%202027.pdf)
+- **Fichier Markdown complet** : [3 - Compendium 2027.md](../0%20-%20MD/3%20-%20Compendium%202027.md)
 - **Pages** : 1117
 - **Parties / Sections** : 11
 - **Unités extraites** : 73

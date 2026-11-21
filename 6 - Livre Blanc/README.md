@@ -2,8 +2,8 @@
 
 ## Informations sur le document
 
-- **Source PDF** : `0 - Livre Blanc.pdf`
-- **Fichier Markdown complet** : [0 - Livre Blanc.md](../0%20-%20Livre%20Blanc.md)
+- **Source PDF** : [6 - Livre Blanc.pdf](../0%20-%20PDF/6%20-%20Livre%20Blanc.pdf)
+- **Fichier Markdown complet** : [6 - Livre Blanc.md](../0%20-%20MD/6%20-%20Livre%20Blanc.md)
 - **Pages** : 251
 - **Parties / Sections** : 6
 - **Unités extraites** : 27

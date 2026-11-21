@@ -1,4 +1,4 @@
-' Ouvrage : 0 - Livre Blanc
+' Ouvrage : 6 - Livre Blanc
 ' Figure : Fig. 35 (page 134)
 ' Légende : Fig. 35. – Chaîne de cohérence sans verrou distribué : Transactional Outbox, Idempotency-Key à 3 états et Saga orchestrée
 @startuml

@@ -1,4 +1,4 @@
-' Ouvrage : 0 - Livre Blanc
+' Ouvrage : 6 - Livre Blanc
 ' Figure : Fig. 51 (page 193)
 ' Légende : Fig. 51. – Chaîne complète du GitOps cognitif : dépôt unifié, portes CI multi-artefacts, attestation Sigstore/SLSA et réconciliation Argo CD
 @startuml

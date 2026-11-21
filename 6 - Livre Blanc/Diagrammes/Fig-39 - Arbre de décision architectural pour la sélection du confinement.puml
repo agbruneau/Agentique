@@ -1,4 +1,4 @@
-' Ouvrage : 0 - Livre Blanc
+' Ouvrage : 6 - Livre Blanc
 ' Figure : Fig. 39 (page 152)
 ' Légende : Fig. 39. – Arbre de décision architectural pour la sélection du confinement d’exécution (Wasmtime, gVisor, Firecracker/Kata) et du niveau d’Intent Gate
 @startuml

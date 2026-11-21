@@ -2,8 +2,8 @@
 
 ## Informations sur le document
 
-- **Source PDF** : `1 - Compendium 2026.pdf`
-- **Fichier Markdown complet** : [1 - Compendium 2026.md](../1%20-%20Compendium%202026.md)
+- **Source PDF** : [1 - Compendium 2026.pdf](../0%20-%20PDF/1%20-%20Compendium%202026.pdf)
+- **Fichier Markdown complet** : [1 - Compendium 2026.md](../0%20-%20MD/1%20-%20Compendium%202026.md)
 - **Pages** : 673
 - **Parties / Sections** : 6
 - **Unités extraites** : 61

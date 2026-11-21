@@ -2,8 +2,8 @@
 
 ## Informations sur le document
 
-- **Source PDF** : `5 - Memoire.pdf`
-- **Fichier Markdown complet** : [5 - Memoire.md](../5%20-%20Memoire.md)
+- **Source PDF** : [5 - Memoire.pdf](../0%20-%20PDF/5%20-%20Memoire.pdf)
+- **Fichier Markdown complet** : [5 - Memoire.md](../0%20-%20MD/5%20-%20Memoire.md)
 - **Pages** : 125
 - **Parties / Sections** : 5
 - **Unités extraites** : 27

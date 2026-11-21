@@ -1,4 +1,4 @@
-' Ouvrage : 0 - Livre Blanc
+' Ouvrage : 6 - Livre Blanc
 ' Figure : Fig. 38 (page 148)
 ' Légende : Fig. 38. – Séquence d’autorisation dynamique : échange OAuth 2.0 OBO (RFC 8693 + RFC 8707 + DPoP), downscoping multi-sauts et évaluation par Intent Gate
 @startuml

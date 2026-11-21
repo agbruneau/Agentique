@@ -1,6 +1,6 @@
-# Diagrammes — 0 - Livre Blanc
+# Diagrammes — 6 - Livre Blanc
 
-Index des 59 diagrammes extraits et reconstruits depuis `0 - Livre Blanc.pdf` (retour au [sommaire du document](../README.md)).
+Index des 59 diagrammes extraits et reconstruits depuis `6 - Livre Blanc.pdf` (retour au [sommaire du document](../README.md)).
 
 - **Total des diagrammes** : 59
 - **PlantUML (`.puml`)** : 56

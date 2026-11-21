@@ -1,4 +1,4 @@
-' Ouvrage : 0 - Livre Blanc
+' Ouvrage : 6 - Livre Blanc
 ' Figure : Fig. 37 (page 145)
 ' Légende : Fig. 37. – Cycle d’attestation SPIFFE/SPIRE à deux étages, délivrance de SVID éphémères et fédération de domaines de confiance pour charges agentiques
 @startuml
