@@ -41,11 +41,12 @@ skinparam defaultFontName "DejaVu Sans"
 skinparam defaultFontSize 11
 skinparam shadowing false
 skinparam roundcorner 8
-skinparam nodesep 14
-skinparam ranksep 18
-skinparam padding 5
+skinparam packageStyle frame
+skinparam nodesep 22
+skinparam ranksep 24
+skinparam padding 7
 
-package "Boucle d'érosion silencieuse (sans garde-fous)" {
+package "Érosion silencieuse" {
   rectangle "Automatisation des tâches\nde premier niveau" as E1 <<prob>>
   rectangle "Contraction relève junior\n(recul ~20 %, 22–25 ans)" as E2 <<ext>>
   rectangle "Biais de complaisance\net approbation réflexe" as E3 <<prob>>
@@ -53,7 +54,7 @@ package "Boucle d'érosion silencieuse (sans garde-fous)" {
   rectangle "Échec du repli sous panne\net décision automatisée" as E5 <<prob>>
 }
 
-package "Trois disjoncteurs organisationnels possédés" {
+package "Disjoncteurs" {
   rectangle "Disjoncteur 1 : Responsable\nnommé et couloir lecture seule" as D1 <<det>>
   rectangle "Disjoncteur 2 : Cas témoins\nà l'aveugle et taux d'infirmation" as D2 <<det>>
   rectangle "Disjoncteur 3 : Quotas manuels\nformateurs sans agent" as D3 <<det>>
@@ -71,9 +72,9 @@ E5 ..> E1 : pousse à automatiser
 D1 --> GOV
 D2 --> JUG
 D3 --> REPLI
-D1 -up-> E1 : borne portée
-D2 -up-> E3 : mesure vigilance
-D3 -up-> E4 : entretient acquis
+D1 -up-> E1
+D2 -up-> E3
+D3 -up-> E4
 JUG --> REPLI
 
 E1 -[hidden]right-> E2

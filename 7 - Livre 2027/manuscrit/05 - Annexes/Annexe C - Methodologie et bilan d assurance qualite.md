@@ -25,8 +25,8 @@ Les six ouvrages antérieurs du dépôt constituent exclusivement une carte de r
 | `G2` — Ancrage atomique Wyvern | Auditeurs indépendants par unité (`00`–`12`) | `CA-10`, `CA-12` | 13 / 13 journaux produits |
 | `G3` — Recollation passe 1 (`202701`) | Échantillon stratifié de 60 énoncés sur `.txt` | `CA-07`, `CA-13` | 60/60 vérifiés (100 %) |
 | `G4` — Critique stylistique à l'aveugle | Boucle `gauntlet-loop` A/B sur extraits étalons | `CA-15` | Journal complété |
-| `G5` — Lissage et inspection visuelle | Cohérence inter-unités et rendu `Pandoc`/`Typst` | `CA-16` à `CA-18` | En attente d'exécution |
-| `G3` — Recollation finale à froid (`202702`) | Échantillon disjoint sur le texte publié | `CA-14` | En attente d'exécution |
+| `G5` — Lissage et inspection visuelle | Cohérence inter-unités et rendu `Pandoc`/`Typst` | `CA-16` à `CA-18` | Rapport complété |
+| `G3` — Recollation finale à froid (`202702`) | Échantillon disjoint sur le texte publié | `CA-14` | 60/60 vérifiés (100 %) |
 
 ## Règles de traçabilité et d'étanchéité éditoriale
 

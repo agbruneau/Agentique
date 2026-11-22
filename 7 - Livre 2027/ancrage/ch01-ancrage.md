@@ -83,3 +83,15 @@ Verdict final — non supportés résiduels : 0
 Verdict différentiel post-G4 — supportés : 100 %
 Verdict différentiel post-G4 — imprécis résiduels : 0
 Verdict différentiel post-G4 — non supportés résiduels : 0
+
+---
+
+## Contrôle différentiel post-lissage G5
+
+- **Périmètre contrôlé** : `git diff HEAD` sur `manuscrit/01 - Partie I/Chapitre 01 - Apres le copilote, l industrialisation cognitive.md` depuis `fe6e945` — `35` items différentiels (`12` lignes à retrait seul de rétro-apostrophes et `23` blocs substantifs couvrant `L5`, `L13`–`L29`, `L43`, `L51`–`L67`, `L79`, `L82`–`L84`, `L90`, `L102`–`L110`, `L118`), vérifiés contre `sources/ch01-sources.md` et `recherche/corpus_l_plus/*.txt`.
+- **Constat et rectifications appliquées dans `Chapitre 01`** :
+  - `12` lignes à retrait seul de rétro-apostrophes et `11` blocs substantifs conformes d'emblée ; tableau `L0`–`L4` et renvois `[n]` intacts.
+  - `13` lignes réparties sur les blocs modifiés rectifiées directement dans le manuscrit : `L15` (rétablissement de `expérimental` pour `29 %` dans `SRC-016.txt` et suppression de l'exclusivité erronée `hormis le secteur technologique` au profit de `taux comparativement plus élevés` selon `SRC-008.txt`), `L17` (statut `document de travail`, estimation chez les adoptants et `pull requests achevées par semaine` selon `SRC-010.txt`), `L19` (statuts exacts `document de travail du NBER` et `chapitre en prépublication préparé pour le NBER Handbook`, `plusieurs centaines de milliards`, `spécifications de récompense` selon `SRC-004.txt` et `SRC-005.txt`), `L21` (`seuil fixé de fiabilité`, `a doublé`, `évalués en mars 2025` selon `SRC-025.txt`), `L27` (sujet `fournisseurs de systèmes destinés à interagir directement` et rétablissement de la disjonction `ou ne modifient pas substantiellement les données d'entrée fournies par le déployeur ou leur sémantique` selon `SRC-060.txt` art. 50), `L51` (`modèles à poids ouverts`), `L65` (`et l'abondance`), `L67` (suppression de l'amalgame `4×–10× par an` au profit de `déflation rapide du coût de calcul d'au moins 4× par an` selon `SRC-001.txt`), `L79` (`en produisant et distillant`), `L102` (`algorithmes de négociation bien plus rudimentaires` et `capacité d'absorption du risque limitée` selon `SRC-005.txt`), `L104` (`apprentissage par renforcement`), `L106` (`à leurs instances futures`, `ou de résister`), `L108` (`pour tenter d'alerter` selon `SRC-001.txt`).
+- **Verdict final — supporté** : `100 %` (`35/35` items différentiels)
+- **Imprécis résiduel** : `0`
+- **Non supporté résiduel** : `0`

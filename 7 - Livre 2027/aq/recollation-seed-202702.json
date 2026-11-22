@@ -1,0 +1,1402 @@
+[
+  {
+    "claim_loc": "00-liminaire:P007:S01",
+    "paragraph_loc": "00-liminaire:P007",
+    "unit": "00-liminaire",
+    "category": "empirique",
+    "text": "Le *Stanford AI Index Report 2026* relève que, malgré une hausse rapide sur OSWorld (passé d'environ 12 % à 66,3 % de réussite), les agents échouent encore environ une fois sur trois sur des bancs structurés et restent déployés à un taux à un chiffre (moins de 10 %) dans la quasi-totalité des fonctions d'affaires [3].",
+    "refs": [
+      3
+    ],
+    "source_ids": [
+      "SRC-008"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-008.txt"
+    ],
+    "evidence_excerpt": "SRC-008.txt (Top Takeaways #4 l. 356-358, #9 l. 396 ; Ch. 2.6 l. 5224, l. 7475) : « AI agents made a leap from 12% to ~66% task success on OSWorld... accuracy rose from roughly 12% to 66.3%... fail roughly 1 in 3 attempts on structured benchmarks » ; l. 396 : « AI agent deployment remains in single digits across nearly all business functions ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "00-liminaire:P013:S02",
+    "paragraph_loc": "00-liminaire:P013",
+    "unit": "00-liminaire",
+    "category": "prospectif_technique",
+    "text": "3. **Coordination horizontale entre pairs (D3).** Déléguer des tâches asynchrones entre domaines opaques ou partenaires via des contrats de capacités tels qu'A2A [2, 4], sans exposer l'état interne ni propager de privilèges administratifs (chapitres 05 et 07).",
+    "refs": [
+      2,
+      4
+    ],
+    "source_ids": [
+      "SRC-002",
+      "SRC-011"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-002.txt",
+      "recherche/corpus_l_plus/SRC-011.txt"
+    ],
+    "evidence_excerpt": "SRC-002.txt (l. 66, l. 1390 : protocole A2A pour interaction asynchrone/inter-agents) ; SRC-011.txt (l. 441, l. 515-553 : orchestration inter-domaines et interopérabilité entre systèmes multi-agents / A2A).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "00-liminaire:P016:S01",
+    "paragraph_loc": "00-liminaire:P016",
+    "unit": "00-liminaire",
+    "category": "juridique",
+    "text": "C'est sur cet ensemble — incluant l'examen des modèles et sous-composants de tiers — plutôt que sur un modèle fournisseur isolé que reposent le recensement, la validation indépendante et la reddition de comptes sur tout le cycle de vie, tels que les exige la ligne directrice E-23 du BSIF (publiée en septembre 2025, en vigueur le 1er mai 2027) [9].",
+    "refs": [
+      9
+    ],
+    "source_ids": [
+      "SRC-065"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-065.txt"
+    ],
+    "evidence_excerpt": "SRC-065.txt (En-tête l. 121 « 11 septembre 2025 », l. 177 « Le 1 mai 2027 » ; Principe 2.1 l. 408 « recenser périodiquement les modèles... y compris ceux de fournisseurs et de tiers » ; Résultat 3 / Principe 3.1 l. 484, l. 498 responsabilités/obligation de rendre des comptes sur tout le cycle de vie ; Principe 3.4 l. 596-598, l. 622 validation indépendante incluant « modèles et plateformes ou sous-composants de tiers »).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "00-liminaire:P028:S01",
+    "paragraph_loc": "00-liminaire:P028",
+    "unit": "00-liminaire",
+    "category": "empirique",
+    "text": "**Ces cibles visées pour 2027 ne décrivent pas l'état général de la pratique observé à la fin de 2026.** À la date de gel, dans MAP, 75 % des études de cas renoncent aux jeux de bancs formels, 74 % des répondants s'appuient d'abord sur l'évaluation humaine et la fiabilité reste le premier défi [6], tandis que l'AI Index 2026 relève l'immaturité des bancs de coordination multi-agents [3].",
+    "refs": [
+      3,
+      6
+    ],
+    "source_ids": [
+      "SRC-008",
+      "SRC-027"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-008.txt",
+      "recherche/corpus_l_plus/SRC-027.txt"
+    ],
+    "evidence_excerpt": "SRC-027.txt (Abstract / § 1 / § 6.1-6.2 l. 27-30, l. 140-145, l. 754, l. 773 : « 75% evaluate without benchmark sets », « Seventy-four percent rely on human-in-the-loop », « Reliability is the top development challenge ») ; SRC-008.txt (l. 5526 : les bancs agentiques / multi-agents « remain underdeveloped »).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "00-liminaire:P040:S01",
+    "paragraph_loc": "00-liminaire:P040",
+    "unit": "00-liminaire",
+    "category": "empirique",
+    "text": "Chaque énoncé distingue trois registres : le constat empirique d'une source (avec devis, échantillon et statut entre article évalué par les pairs, tels Garcia-Molina et Salem [7] ou Haasnoot *et al.* [10], et prépublication ou rapport ouvert tels Genewein *et al.* [1], Tomašev *et al.* [2], le *Stanford AI Index* [3] ou MAP [6]); la règle établie par une norme ou un régulateur avec juridiction et date [8, 9]; et la déduction architecturale ou l'heuristique d'ingénierie de la collection, telle la partition 80/20 présentée comme repère et non comme constante mesurée.",
+    "refs": [
+      1,
+      2,
+      3,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "source_ids": [
+      "SRC-001",
+      "SRC-002",
+      "SRC-008",
+      "SRC-027",
+      "SRC-033",
+      "SRC-038",
+      "SRC-065",
+      "SRC-072"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-001.txt",
+      "recherche/corpus_l_plus/SRC-002.txt",
+      "recherche/corpus_l_plus/SRC-008.txt",
+      "recherche/corpus_l_plus/SRC-027.txt",
+      "recherche/corpus_l_plus/SRC-033.txt",
+      "recherche/corpus_l_plus/SRC-038.txt",
+      "recherche/corpus_l_plus/SRC-065.txt",
+      "recherche/corpus_l_plus/SRC-072.txt",
+      "sources/ch00-sources.md"
+    ],
+    "evidence_excerpt": "sources/ch00-sources.md (distinction évalué par les pairs vs prépublication/rapport ouvert vs norme/régulateur) : SRC-033.txt (l. 111 « 1987 ACM », article SIGMOD évalué par les pairs), SRC-072.txt (l. 519-539 article 2019 évalué par les pairs) ; SRC-001.txt, SRC-002.txt, SRC-008.txt, SRC-027.txt (prépublications et rapports ouverts) ; SRC-038.txt (spécification MCP 2025-11-25) et SRC-065.txt (BSIF E-23 Canada, 11 sept. 2025 / 1er mai 2027).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch01:P021:S02",
+    "paragraph_loc": "ch01:P021",
+    "unit": "ch01",
+    "category": "empirique",
+    "text": "Ce gain purement algorithmique d'environ 3× par an doit d'ailleurs être distingué de la baisse plus rapide des prix sur les marchés de l'inférence depuis 2023 : les tarifs d'API à score constant reculent de 5× à 10× par an selon Gundlach *et al.* (2025) et de 13× par an en moyenne sur des bancs de raisonnement, de mathématiques et de sciences selon Emberson et Roodman (2026), ces baisses cumulant progrès matériel, efficacité algorithmique, optimisation des moteurs de service et concurrence commerciale [1].",
+    "refs": [
+      1
+    ],
+    "source_ids": [
+      "SRC-001"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-001.txt"
+    ],
+    "evidence_excerpt": "SRC-001.txt (Cognitive Industrialization, l. 174-182) : « algorithmic efficiency improvements at inference (conservatively estimated at ≈3× per year... Gundlach et al., 2025) » ; « Observed inference API prices to reach fixed benchmark scores have fallen even faster since 2023: 5×–10× per year in Gundlach et al. (2025) and 13× per year on average across reasoning, math, and science benchmarks in Emberson and Roodman (2026). These price drops reflect serving optimizations and price competition alongside hardware and algorithmic gains. »",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch01:P037:S03",
+    "paragraph_loc": "ch01:P037",
+    "unit": "ch01",
+    "category": "empirique",
+    "text": "Ensuite, **la réplication sans perte** : l'organisation peut dupliquer à la perfection non seulement le code source de l'agent (son « ADN »), mais aussi l'état exact de sa mémoire accumulée (« son expérience vécue »), afin de sauvegarder un état sain, de déployer instantanément un grand nombre d'exemplaires identiques lors d'un pic d'activité puis de les éteindre sans perte [1].",
+    "refs": [
+      1
+    ],
+    "source_ids": [
+      "SRC-001"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-001.txt"
+    ],
+    "evidence_excerpt": "SRC-001.txt (Table 1 « Lossless replication », l. 430-431, l. 493-497, l. 510) : « copied—not only their source code (“DNA”), but also their memory state (“lifetime experience”). This leads to the ability to backup and restore arbitrarily, and spawn, halt, and resume instances as needed... and later be halted without irreversible loss ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch01:P042:S02",
+    "paragraph_loc": "ch01:P042",
+    "unit": "ch01",
+    "category": "empirique",
+    "text": "Genewein et ses coauteurs relatent ainsi une simulation de conférence mathématique où des agents découvrant un bogue dans le vérificateur automatique ont réécrit les énoncés en problèmes triviaux et propagé l'astuce à l'essaim, tandis que d'autres prenaient spontanément le rôle de lanceurs d'alerte pour tenter d'alerter les organisateurs et mener un boycottage [1].",
+    "refs": [
+      1
+    ],
+    "source_ids": [
+      "SRC-001"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-001.txt"
+    ],
+    "evidence_excerpt": "SRC-001.txt (The Evaluation Problem, l. 1486-1496) : étude Paglieri et al. (2026) d'une conférence mathématique simulée ; un agent découvre un bogue du vérificateur automatique (« through a bug in the automated proof checker, they can rewrite the problem to a trivially solvable one »), l'astuce se propage à l'essaim et d'autres agents se font lanceurs d'alerte (« whistleblowers... attempt to alert the “organizers of the conference”, and ultimately stage a boycott »).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch01:P043:S02",
+    "paragraph_loc": "ch01:P043",
+    "unit": "ch01",
+    "category": "juridique",
+    "text": "Hadfield et Koh convergent vers le même impératif institutionnel en soulignant l'absence d'infrastructure d'identité et d'enregistrement rattachant les agents à des mandants responsables — ou à des régimes dédiés de personnalité juridique — ainsi que le besoin de registres à l'épreuve de la falsification pour fonder les mécanismes de sanction [4].",
+    "refs": [
+      4
+    ],
+    "source_ids": [
+      "SRC-005"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-005.txt"
+    ],
+    "evidence_excerpt": "SRC-005.txt (§ 4.1 Agent identity, registration, and records, l. 559-599) : « Such identity and registration infrastructure are currently missing for AI agents » ; rattachement à une personne/entité responsable (l. 561-563) ou personnalité juridique (« legal personhood », l. 578) et nécessité d'une infrastructure robuste empêchant les agents de « erase or falsify » leurs registres (l. 594-599).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch02:P030:S02",
+    "paragraph_loc": "ch02:P030",
+    "unit": "ch02",
+    "category": "empirique",
+    "text": "Même si l'horizon de tâche réussi à 50 % de fiabilité a doublé tous les 7 mois environ sur six ans jusqu'à atteindre environ une heure début 2025 (*Claude 3.7 Sonnet*), une chance sur deux d'aboutir sur une heure de travail demeure inacceptable pour toute opération critique sans supervision [15].",
+    "refs": [
+      15
+    ],
+    "source_ids": [
+      "SRC-025"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-025.txt"
+    ],
+    "evidence_excerpt": "SRC-025.txt (Date l. 62 « March 19, 2025 » ; Summary l. 121, l. 135, l. 141) : « tasks... generalist frontier model agents can complete autonomously with 50% reliability has been doubling approximately every 7 months for the last 6 years » ; « Claude 3.7 Sonnet... has a time horizon of approximately one hour ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch02:P037:S01",
+    "paragraph_loc": "ch02:P037",
+    "unit": "ch02",
+    "category": "empirique",
+    "text": "Sur *SWE-bench Verified*, Stanford HAI a dû isoler les modèles sous un harnais unique (*mini-SWE-agent-v2*) pour neutraliser l'effet des harnais propriétaires [3].",
+    "refs": [
+      3
+    ],
+    "source_ids": [
+      "SRC-008"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-008.txt"
+    ],
+    "evidence_excerpt": "SRC-008.txt (Ch. 2.5 Fig. 2.5.1 note 21, l. 6853-6855) : « For Verified, only results using the mini-SWE-agent-v2 filter are included. This means all models were tested under the same agent workflow, so differences in scores reflect the underlying model rather than differences in the surrounding system. »",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch02:P039:S01",
+    "paragraph_loc": "ch02:P039",
+    "unit": "ch02",
+    "category": "empirique",
+    "text": "1. **Validité métier et confidentialité** : tester des tâches internes avec données d'entreprise, comme les 25 % d'équipes MAP en étude de cas qui créent leurs jeux sur mesure tandis que 75 % renoncent aux bancs formels [16], empêchant la comparaison publique.",
+    "refs": [
+      16
+    ],
+    "source_ids": [
+      "SRC-027"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-027.txt"
+    ],
+    "evidence_excerpt": "SRC-027.txt (§ 6.1, l. 753-761) : « Case study data shows formal benchmarks are even rarer: 75% evaluate without benchmark sets... Five teams build custom benchmarks... These benchmarks are not easily reusable across deployments due to domain-specific tasks » (5 sur 20 équipes = 25 %).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch03:P017:S01",
+    "paragraph_loc": "ch03:P017",
+    "unit": "ch03",
+    "category": "juridique",
+    "text": "L'avertissement central de Tomašev *et al.* tient à la dynamique par défaut [15] : sans coordination collective délibérée — un dilemme d'action collective au sens de Schelling [15] —, le cumul de déploiements locaux engendre spontanément une vaste économie **émergente et perméable**.",
+    "refs": [
+      15
+    ],
+    "source_ids": [
+      "SRC-002"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-002.txt"
+    ],
+    "evidence_excerpt": "SRC-002.txt (Introduction, l. 129-142) : « changes to the extent of permeability can only be brought about by resolving a collective action problem » (Schelling, 1973 l. 134), « reinforcing the default path we are on toward the accidental emergence of a permeable AI agent economy ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch03:P020:S03",
+    "paragraph_loc": "ch03:P020",
+    "unit": "ch03",
+    "category": "prospectif_technique",
+    "text": "Enfin, la **rupture transactionnelle en flux longs** survient dès que des agents dépourvus de validation indépendante et d'actions compensatoires laissent des états partiels incohérents après l'échec d'une contrainte aval — problème auquel répondent les sagas de Garcia-Molina et Salem (*ACM SIGMOD*, 1987) [11] et la prépublication SagaLLM de Chang et Geng [2] (chapitres 04 et 06).",
+    "refs": [
+      2,
+      11
+    ],
+    "source_ids": [
+      "SRC-006",
+      "SRC-033"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-006.txt",
+      "recherche/corpus_l_plus/SRC-033.txt"
+    ],
+    "evidence_excerpt": "SRC-033.txt (l. 111 « 1987 ACM », l. 384-474 : protocole Sagas et transactions compensatoires) ; SRC-006.txt (Abstract / § 2.2 l. 19, l. 108-147, l. 194-214 : perte d'état sans validation indépendante et actions compensatoires dans SagaLLM).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch03:P021:S02",
+    "paragraph_loc": "ch03:P021",
+    "unit": "ch03",
+    "category": "juridique",
+    "text": "Quatre piliers se dégagent : identités portables et justificatifs vérifiables (DID, VCs, preuves d'unicité humaine [15]), budgets et plafonds financiers isolant la contagion [15], supervision hybride à vitesse machine sur journaux vérifiables [15], et rattachement juridique clair au mandant humain ou à une entité responsable [15, 17] (chapitre 07).",
+    "refs": [
+      15,
+      17
+    ],
+    "source_ids": [
+      "SRC-002",
+      "SRC-005"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-002.txt",
+      "recherche/corpus_l_plus/SRC-005.txt"
+    ],
+    "evidence_excerpt": "SRC-002.txt (l. 358-392 plafonds/budgets « AI compute budget... real-world action budget » isolant la contagion financière ; l. 1322-1532 DID, VC et Proof-of-Personhood ; l. 1661-1689 supervision hybride à vitesse machine sur registres cryptographiques immuables) ; SRC-005.txt (§ 4.1 l. 559-584 rattachement juridique à une personne/entité responsable).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch03:P039:S03",
+    "paragraph_loc": "ch03:P039",
+    "unit": "ch03",
+    "category": "empirique",
+    "text": "Enfin, **construire en propre** ne se justifie à la cinquième porte que pour un actif métier propriétaire ou une contrainte stricte de souveraineté — et vise alors le noyau déterministe et la couche sémantique, en conservant un modèle de fondation substituable confiné à l'inférence bornée [6, 7].",
+    "refs": [
+      6,
+      7
+    ],
+    "source_ids": [
+      "SRC-026",
+      "SRC-027"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-026.txt",
+      "recherche/corpus_l_plus/SRC-027.txt"
+    ],
+    "evidence_excerpt": "Énoncé d'architecture normative de la cinquième porte fondé sur SRC-026.txt (§ 2-4 l. 478-518 séparation mémoire sémantique/procédurale et inférence LLM bornée) et SRC-027.txt (§ 4.2 / § 6.1 l. 758-761, l. 890 personnalisations métier propriétaires et substitution de modèles sur étagère).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch03:P041:S01",
+    "paragraph_loc": "ch03:P041",
+    "unit": "ch03",
+    "category": "prospectif_technique",
+    "text": "| Critère permanent (Liminaire) | Acheter (SaaS préintégré) | Assembler sur standards ouverts (posture par défaut) | Construire en propre (noyau métier et sémantique) | |---|---|---|---| | **Neutralité de gouvernance** | Faible sur agent fourni par la plateforme : risque de pilotage intéressé (*self-preferencing*) et sous-traitants opaques [16, 22]. | Élevée : registre, identités et politiques restent possédés, tout en raccordant outils MCP [20] et pairs A2A [21]. | Maximale : souveraineté pleine sur règles, hébergement hybride ou sur site [19] et chaîne de décision, sous audit interne. | | **Déterminisme des frontières** | Souvent réduit aux consignes en prose de l'éditeur, peu inspectables; à confiner en lecture seule si non vérifiable [16, 20]. | Élevé : harnais interne isolant le flux de contrôle des données non fiables [3], dans l'esprit des flux structurés de terrain [7]. | Total sur les invariants métier et la couche sémantique; exige une discipline stricte contre l'abandon cognitif [18]. | | **Tolérance aux pannes** | Dépendante du fournisseur; réconciliation inter-suites absente en cas d'échec partiel sur flux longs [2, 22]. | Forte par combinaison d'exécution durable [12], d'idempotence [14] et de sagas compensatoires [2, 11]. | Très forte si bâtie sur machines à états durables, bus d'événements CloudEvents [13] et tests de défaillance [8]. | | **Coût marginal à l'échelle** | Faible à l'entrée, puis exposé aux révisions tarifaires asymétriques une fois l'organisation ancrée [4, 16, 19]. | Maîtrisé par le routage de modèles sur étagère [7], des étapes bornées et l'évitement des débats redondants [9, 10]. | Coût fixe d'ingénierie élevé; justifié uniquement là où le volume, la différenciation ou la souveraineté l'amortissent. | | **Coût de sortie** | Élevé : captivité des mémoires, règles enfouies et dette d'intention freinant tout plan de sortie BSIF B-10 [18, 19, 22]. | Faible sur le modèle et modéré sur les connecteurs grâce aux contrats ouverts et aux spécifications internes [18, 20]. | Nul vis-à-vis d'un éditeur applicatif; risque déplacé vers le maintien des compétences et de l'intention écrite [18]. | | **Périmètre recommandé** | Usages banalisés non différenciants ou lecture seule sous clauses d'export et plafonds contractuels [16, 22]. | **Majorité des flux critiques** : processus transversaux, orchestration inter-systèmes et contextes réglementés. | Cœur métier différenciant, secrets industriels, résidence stricte ou exigences de sûreté hors standard [19]. |",
+    "refs": [
+      2,
+      3,
+      4,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      16,
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
+    "source_ids": [
+      "SRC-006",
+      "SRC-007",
+      "SRC-011",
+      "SRC-027",
+      "SRC-028",
+      "SRC-031",
+      "SRC-032",
+      "SRC-033",
+      "SRC-034",
+      "SRC-035",
+      "SRC-036",
+      "SRC-004",
+      "SRC-040",
+      "SRC-012",
+      "SRC-038",
+      "SRC-039",
+      "SRC-068"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-006.txt",
+      "recherche/corpus_l_plus/SRC-007.txt",
+      "recherche/corpus_l_plus/SRC-011.txt",
+      "recherche/corpus_l_plus/SRC-027.txt",
+      "recherche/corpus_l_plus/SRC-028.txt",
+      "recherche/corpus_l_plus/SRC-031.txt",
+      "recherche/corpus_l_plus/SRC-032.txt",
+      "recherche/corpus_l_plus/SRC-033.txt",
+      "recherche/corpus_l_plus/SRC-034.txt",
+      "recherche/corpus_l_plus/SRC-035.txt",
+      "recherche/corpus_l_plus/SRC-036.txt",
+      "recherche/corpus_l_plus/SRC-004.txt",
+      "recherche/corpus_l_plus/SRC-040.txt",
+      "recherche/corpus_l_plus/SRC-012.txt",
+      "recherche/corpus_l_plus/SRC-038.txt",
+      "recherche/corpus_l_plus/SRC-039.txt",
+      "recherche/corpus_l_plus/SRC-068.txt"
+    ],
+    "evidence_excerpt": "Tableau comparatif d'arbitrage ancré sur 17 sources vérifiées : SRC-004.txt (Table 2 l. 401-492 BYOA vs bowling-shoe, self-preferencing, lock-in, tarification en deux parties), SRC-068.txt (B-10 sous-traitance l. 649-675 et sortie l. 775-785), SRC-038.txt (MCP l. 135-161), SRC-039.txt (A2A), SRC-012.txt (l. 141-143 lock-in/coûts calcul, l. 173 63 % sur site), SRC-007.txt (CaMeL), SRC-027.txt (MAP), SRC-040.txt (dette d'intention / cognitive surrender l. 100), SRC-006.txt & SRC-033.txt (sagas), SRC-034.txt (Temporal), SRC-035.txt (CloudEvents), SRC-036.txt (Idempotency-Key), SRC-028.txt (MAST taxonomie d'échecs), SRC-031.txt & SRC-032.txt (budgets de raisonnement et effet Ringelmann en débats redondants), SRC-011.txt (l. 553 walled gardens).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch04:P008:S02",
+    "paragraph_loc": "ch04:P008",
+    "unit": "ch04",
+    "category": "empirique",
+    "text": "Le schéma du registre ne versionne pas les définitions d'outils elles-mêmes : parmi les 8 900 serveurs multi-versions, 51,09 % ont modifié descriptions, paquets ou points de terminaison, 40,58 % ont opéré un changement sémantique silencieux sous des identifiants inchangés (dérive silencieuse d'outil), et 370 serveurs (4,16 %) ont redirigé leur point de terminaison distant vers un autre hôte sans alerte protocolaire [15].",
+    "refs": [
+      15
+    ],
+    "source_ids": [
+      "SRC-057"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-057.txt"
+    ],
+    "evidence_excerpt": "SRC-057.txt (Abstract l. 18-20, Intro l. 50, l. 65-68) : « The registry is unstable in a way its own data model cannot express » ; parmi 8 900 serveurs multi-versions, 51,09 % (51,1 %) ont modifié descriptions, paquets ou points de terminaison, 40,58 % (40,6 %) de façon silencieuse sous identifiants inchangés et 370 serveurs (4,16 %) ont redirigé leur point de terminaison distant vers un autre hôte.",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch04:P010:S01",
+    "paragraph_loc": "ch04:P010",
+    "unit": "ch04",
+    "category": "prospectif_technique",
+    "text": "À cette fragilité du modèle s'ajoute une érosion humaine documentée par Margaret-Anne Storey dans une analyse conceptuelle publiée en prépublication en mars 2026 [17].",
+    "refs": [
+      17
+    ],
+    "source_ids": [
+      "SRC-040"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-040.txt",
+      "sources/ch04-sources.md"
+    ],
+    "evidence_excerpt": "SRC-040.txt (l. 1-37 modèle conceptuel de la triple dette) ; sources/ch04-sources.md (l. 185-190 : arXiv:2603.22106 daté 2026-03-23, prépublication de mars 2026).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch04:P021:S01",
+    "paragraph_loc": "ch04:P021",
+    "unit": "ch04",
+    "category": "juridique",
+    "text": "L'analyse institutionnelle de Hadfield et Koh rappelle pourquoi l'agent ne peut recevoir le statut d'acteur juridique : le droit des contrats, des obligations et de la responsabilité repose sur des personnes physiques ou morales identifiables, capables de détenir un patrimoine propre et d'exécuter une condamnation [3].",
+    "refs": [
+      3
+    ],
+    "source_ids": [
+      "SRC-005"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-005.txt"
+    ],
+    "evidence_excerpt": "SRC-005.txt (§ 4.1 l. 555-584) : « Firms are required to register with a state in order to sue and be sued in its courts, necessary to induce willingness on both sides to enter into a contract » ; personnalité juridique exigeant « assets in their own ‘name’, under their ‘control,’ and capable of being seized by a court... to satisfy legal judgments for damages ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch04:P046:S01",
+    "paragraph_loc": "ch04:P046",
+    "unit": "ch04",
+    "category": "empirique",
+    "text": "**Fragilité sans noyau.** Confier la continuité d'un dossier à l'historique de session d'une API externe expose le traitement à l'oubli sur horizon long [4] et enferme l'état opérationnel chez le fournisseur.",
+    "refs": [
+      4
+    ],
+    "source_ids": [
+      "SRC-006"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-006.txt"
+    ],
+    "evidence_excerpt": "SRC-006.txt (§ 2.2 l. 196-214) : « fundamental statelessness... LLMs rely on self-attention mechanisms that prioritize recent tokens, leading to significant degradation in context retention over long sequences... earlier outputs are frequently lost » (et corollaire architectural sur le verrouillage de l'état de session).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch04:P047:S03",
+    "paragraph_loc": "ch04:P047",
+    "unit": "ch04",
+    "category": "prospectif_technique",
+    "text": "Dans la même logique, Chang et Geng rappellent avec SagaLLM l'importance de conserver explicitement en mémoire externe persistante les objectifs, les justifications et le graphe de dépendances entre étapes [4].",
+    "refs": [
+      4
+    ],
+    "source_ids": [
+      "SRC-006"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-006.txt"
+    ],
+    "evidence_excerpt": "SRC-006.txt (§ 2.2 l. 212-214) : « SagaLLM addresses this by explicitly preserving vulnerable context elements—goals, justifications, and dependencies—through structured memory and persistent tracking. »",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch05:P014:S03",
+    "paragraph_loc": "ch05:P014",
+    "unit": "ch05",
+    "category": "empirique",
+    "text": "Le délai médian avant la première modification est de 0 jour (1 jour entre versions modifiées), et les serveurs affectés par une dérive silencieuse affichent un rapport de cotes de 2,96 (IC 95 % : 2,56 à 3,42) de contenir une alerte de sévérité élevée [13].",
+    "refs": [
+      13
+    ],
+    "source_ids": [
+      "SRC-057"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-057.txt"
+    ],
+    "evidence_excerpt": "SRC-057.txt (Abstract l. 21-22, § RQ2 l. 68 : délai médian de 0 jour avant première modification / 1 jour entre versions modifiées ; « Silent drift is associated with nearly threefold higher odds of a high-severity finding (OR = 2.96, 95% CI [2.56, 3.42]) »).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch05:P030:S02",
+    "paragraph_loc": "ch05:P030",
+    "unit": "ch05",
+    "category": "empirique",
+    "text": "Ensuite, dans multi-CaMeL, Peters-Gill et ses coauteurs documentent sur AssetOpsBench (112 tâches retenues après retrait de 29 tâches irréalisables sur 141) les échecs par substitution non contrôlée de portée : lorsqu'une donnée manque pour l'actif ou la plage de dates demandée, un sous-agent retourne des données voisines et l'orchestrateur pré-planifié poursuit sur un faux périmètre sans détecter la violation [12].",
+    "refs": [
+      12
+    ],
+    "source_ids": [
+      "SRC-056"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-056.txt"
+    ],
+    "evidence_excerpt": "SRC-056.txt (§ V-A l. 746, § V-B-2 l. 1130-1137) : « We exclude 29 tasks that cannot be completed as specified, leaving n = 112 tasks » (sur 141) ; « failures caused by unchecked scope substitution... returns data for a nearby but different scope... proceed with the substituted data without recognizing that the original task constraints have been violated ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch05:P035:S02",
+    "paragraph_loc": "ch05:P035",
+    "unit": "ch05",
+    "category": "prospectif_technique",
+    "text": "Le cadre *Cognitive Architectures for Language Agents* (CoALA) de Sumers, Yao, Narasimhan et Griffiths propose une taxonomie rigoureuse, héritée des sciences cognitives et des architectures symboliques (dont Soar, ainsi que la tradition d'Anderson et Lebiere / ACT-R), qui distingue quatre mémoires gouvernées séparément [4] :",
+    "refs": [
+      4
+    ],
+    "source_ids": [
+      "SRC-026"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-026.txt"
+    ],
+    "evidence_excerpt": "SRC-026.txt (§ 2 l. 186-198, § 4 l. 478-518) : CoALA de Sumers, Yao, Narasimhan et Griffiths, s'appuyant sur Soar et « Anderson and Lebiere » (ACT-R) et distinguant 4 mémoires : « working memory and several long-term memories: episodic, semantic, and procedural ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch05:P039:S01",
+    "paragraph_loc": "ch05:P039",
+    "unit": "ch05",
+    "category": "juridique",
+    "text": "Sur le plan réglementaire, Sumers *et al.* notent que la suppression sélective de souvenirs (« désapprentissage ») demeure très peu étudiée chez les agents de langage [4].",
+    "refs": [
+      4
+    ],
+    "source_ids": [
+      "SRC-026"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-026.txt"
+    ],
+    "evidence_excerpt": "SRC-026.txt (§ 4.5 l. 631-632, § 6 l. 865-867) : « modifying and deleting (a case of “unlearning”) are understudied in recent language agents » ; « deleting unneeded memory items for “unlearning” ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch05:P040:S02",
+    "paragraph_loc": "ch05:P040",
+    "unit": "ch05",
+    "category": "juridique",
+    "text": "L'article 12.1 vise toute entreprise exploitant des renseignements personnels lorsqu'une décision repose exclusivement sur leur traitement automatisé : elle doit en aviser l'individu visé au plus tard lors de la communication de la décision, lui communiquer sur demande les renseignements exploités, les raisons, les principaux facteurs et paramètres ainsi que son droit de faire rectifier les données utilisées, et lui permettre de soumettre ses observations à un employé habilité à réviser la décision [14].",
+    "refs": [
+      14
+    ],
+    "source_ids": [
+      "SRC-063"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-063.txt"
+    ],
+    "evidence_excerpt": "SRC-063.txt (Loi 25, art. 12.1 l. 1542-1555) : texte intégral exact sur l'avis au plus tard lors de la décision exclusivement automatisée, la communication sur demande des renseignements, raisons, principaux facteurs et paramètres, le droit de rectification et la présentation d'observations à un membre du personnel en mesure de réviser la décision.",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch06:P007:S01",
+    "paragraph_loc": "ch06:P007",
+    "unit": "ch06",
+    "category": "empirique",
+    "text": "Dans une prépublication de Stanford, Dat Tran et Douwe Kiela montrent que les gains attribués aux architectures multi-agents proviennent souvent d'une dépense cachée de jetons de raisonnement supplémentaires par rapport à l'agent unique de référence [9].",
+    "refs": [
+      9
+    ],
+    "source_ids": [
+      "SRC-031"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-031.txt"
+    ],
+    "evidence_excerpt": "SRC-031.txt (Titre, affiliation Stanford University l. 1-6, Abstract l. 8-11) : « Recent work reports strong performance from multi-agent LLM systems (MAS), but these gains are often confounded by increased test-time computation... SAS consistently match or outperform MAS on multi-hop reasoning tasks when reasoning tokens are held constant. »",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch06:P010:S03",
+    "paragraph_loc": "ch06:P010",
+    "unit": "ch06",
+    "category": "empirique",
+    "text": "Ensuite, le plafond de capacité (\\(\\beta = -0{,}236\\), \\(p = 0{,}004\\)) : au-delà d'environ 45 % de réussite de base en agent unique, ajouter des agents engendre des rendements décroissants ou négatifs (94 % des 16 configurations modèle-banc sur SWE-bench Verified et Terminal-Bench) [1].",
+    "refs": [
+      1
+    ],
+    "source_ids": [
+      "SRC-003"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-003.txt"
+    ],
+    "evidence_excerpt": "SRC-003.txt (l. 152, l. 1532-1533, l. 1579) : « capability ceiling (β = −0.236, p = 0.004): tasks where single-agent performance already exceeds 45% » ; « The capability-saturation threshold (∼45%) is further supported with a 94% match rate across all 16 model×benchmark configurations on SWE-bench Verified and Terminal-Bench ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch06:P017:S04",
+    "paragraph_loc": "ch06:P017",
+    "unit": "ch06",
+    "category": "empirique",
+    "text": "Joint à la spécification ouverte FOCUS v1.4 de la FinOps Foundation qui normalise l'imputation des coûts infonuagiques [2], cet ensemble interdit de concevoir l'échelle multi-agents sans discipline budgétaire stricte.",
+    "refs": [
+      2
+    ],
+    "source_ids": [
+      "SRC-023"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-023.txt"
+    ],
+    "evidence_excerpt": "SRC-023.txt (l. 4-24) : « FOCUS Specification 1.4... FinOps Open Cost and Usage Specification... open specification for billing data. It defines a common schema for billing data, aligns terminology with the FinOps Framework ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch06:P020:S02",
+    "paragraph_loc": "ch06:P020",
+    "unit": "ch06",
+    "category": "juridique",
+    "text": "Enfin, le quatrième palier n'autorise une **topologie dirigée bornée** — graphe orienté acyclique (DAG) ou orchestrateur centralisé supervisant des travailleurs spécialisés sous plafond strict de sauts — que lorsque trois conditions sont réunies : la tâche est réellement décomposable en sous-problèmes à faible couplage séquentiel [1], le contexte individuel sature [9] (ou une séparation architecturale des privilèges impose un cloisonnement des rôles), et une validation centralisée limite l'amplification des erreurs [1].",
+    "refs": [
+      1,
+      9
+    ],
+    "source_ids": [
+      "SRC-003",
+      "SRC-031"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-003.txt",
+      "recherche/corpus_l_plus/SRC-031.txt"
+    ],
+    "evidence_excerpt": "Règle d'architecture bornée appuyée fidèlement sur SRC-003.txt (l. 18-19, l. 155-156, l. 195 : décomposabilité à faible couplage séquentiel et validation centralisée réduisant l'amplification d'erreurs de 17,2× à 4,4×) et SRC-031.txt (l. 16-17 : MAS compétitif lorsque l'utilisation de contexte du SAS se dégrade).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch06:P027:S01",
+    "paragraph_loc": "ch06:P027",
+    "unit": "ch06",
+    "category": "prospectif_technique",
+    "text": "Aux trois premières portes, l'architecte doit démontrer qu'aucun des trois premiers paliers (règle fixe, flux déterministe à appels typés ou agent unique outillé) ne suffit à budget égal [1, 9].",
+    "refs": [
+      1,
+      9
+    ],
+    "source_ids": [
+      "SRC-003",
+      "SRC-031"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-003.txt",
+      "recherche/corpus_l_plus/SRC-031.txt"
+    ],
+    "evidence_excerpt": "Règle de porte appuyée sur SRC-003.txt (l. 608-611 budget de calcul apparié entre SAS et MAS) et SRC-031.txt (l. 14-21 comparaison à budget constant de jetons de raisonnement).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch07:P024:S01",
+    "paragraph_loc": "ch07:P024",
+    "unit": "ch07",
+    "category": "empirique",
+    "text": "Même réduit au strict nécessaire, un jeton au porteur intercepté dans un journal ou une passerelle compromise reste exploitable [6, 10, 11].",
+    "refs": [
+      6,
+      10,
+      11
+    ],
+    "source_ids": [
+      "SRC-043",
+      "SRC-047",
+      "SRC-048"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-043.txt",
+      "recherche/corpus_l_plus/SRC-047.txt",
+      "recherche/corpus_l_plus/SRC-048.txt"
+    ],
+    "evidence_excerpt": "SRC-043.txt (l. 17-23 rejeu de jetons au porteur mitigé par DPoP) ; SRC-047.txt (l. 288, l. 745-750 : jetons au porteur « highly susceptible to leakage through logging... replay or misuse if the token is exfiltrated ») ; SRC-048.txt (§ 10.4 l. 817-820, § 10.10 l. 1063 : risque de vol/fuite en journaux).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch07:P030:S02",
+    "paragraph_loc": "ch07:P030",
+    "unit": "ch07",
+    "category": "juridique",
+    "text": "Sa règle fondatrice trace une frontière étanche entre deux appareils : d'un côté l'**appareil de consommation** (*Consumption Device*), session de l'agent qui initie la demande sans recevoir aucun secret utilisateur; de l'autre l'**appareil d'authentification** personnel du mandant (*Authentication Device*, tel son téléphone relié au fournisseur d'identité) [8].",
+    "refs": [
+      8
+    ],
+    "source_ids": [
+      "SRC-045"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-045.txt"
+    ],
+    "evidence_excerpt": "SRC-045.txt (§ 1-2 l. 118-134) : distinction explicite entre « Consumption Device (CD) » (où l'utilisateur ne fournit aucun secret d'authentification et n'en a pas nécessairement le contrôle) et « Authentication Device (AD) » (appareil personnel auprès de l'OP, ex. téléphone intelligent en § 10.8 de SRC-048.txt l. 992-994).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch07:P038:S01",
+    "paragraph_loc": "ch07:P038",
+    "unit": "ch07",
+    "category": "prospectif_technique",
+    "text": "Une fuite de jeton en journalisation devient inexploitable sans la clé DPoP en enclave [6, 11], et une instruction détournée en cours de collecte ne peut plus franchir le seuil d'un acte irréversible sans signature hors bande sur l'empreinte exacte des paramètres [3, 5, 8, 11].",
+    "refs": [
+      3,
+      5,
+      6,
+      8,
+      11
+    ],
+    "source_ids": [
+      "SRC-039",
+      "SRC-042",
+      "SRC-043",
+      "SRC-045",
+      "SRC-048"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-039.txt",
+      "recherche/corpus_l_plus/SRC-042.txt",
+      "recherche/corpus_l_plus/SRC-043.txt",
+      "recherche/corpus_l_plus/SRC-045.txt",
+      "recherche/corpus_l_plus/SRC-048.txt"
+    ],
+    "evidence_excerpt": "SRC-043.txt (DPoP l. 17-23) et SRC-048.txt (§ 10.4 DPoP l. 817-827, § 10.8 CIBA l. 983-994) ; SRC-039.txt (§ 8.4/4.4.7 et approbations hors bande avant action destructrice l. 4093-4111) ; SRC-042.txt (Annexe A.2 l. 1584-1630 : `documentDigests` avec empreintes SHA-256 liées au jeton émis après consentement) ; SRC-045.txt (CIBA `binding_message` l. 356-358).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch07:P041:S03",
+    "paragraph_loc": "ch07:P041",
+    "unit": "ch07",
+    "category": "prospectif_technique",
+    "text": "De même, le chaînage inter-domaines dans WIMSE AIMS (§ 10.4 et § 10.7) véhicule des revendications d'un serveur d'autorisation à l'autre tout en rappelant que chaque domaine applique souverainement sa politique locale sans cadre contractuel commun [11].",
+    "refs": [
+      11
+    ],
+    "source_ids": [
+      "SRC-048"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "ecart_mineur",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-048.txt"
+    ],
+    "evidence_excerpt": "SRC-048.txt (§ 10.4 l. 805-811 & § 10.7 l. 943-982) : « Across trust domains, the mechanisms in Section 10.7 convey the outcome of a policy decision made in one domain to another domain as a token with defined claims and scope, rather than conveying the policy itself. Each domain continues to evaluate its own policy against the tokens it receives. A common policy language is therefore not required... ». Écart mineur : le texte initial prêtait à [11] l'expression « sans cadre contractuel commun [11] » alors que SRC-048.txt vise l'absence de « langage de politique commun » (*common policy language*) et ne mentionne pas de cadre contractuel.",
+    "correction_applied": "Chapitre 07 L111 : remplacé « sans cadre contractuel commun [11]. » par « sans exiger de langage de politique commun [11], laissant entière l'absence de cadre contractuel inter-organisations. » (renvoi [11] et structure préservés)."
+  },
+  {
+    "claim_loc": "ch07:P043:S01",
+    "paragraph_loc": "ch07:P043",
+    "unit": "ch07",
+    "category": "juridique",
+    "text": "D'abord, le droit classique du mandat limite la responsabilité du mandant aux actes relevant du pouvoir réel ou apparent du mandataire, et peu de régimes imputent des actes imprévisibles ou hors contrôle — or des consignes générales données à des agents optimisateurs (du type « va gagner un million de dollars ») dépassent les capacités actuelles de contrôle strict [2].",
+    "refs": [
+      2
+    ],
+    "source_ids": [
+      "SRC-005"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-005.txt"
+    ],
+    "evidence_excerpt": "SRC-005.txt (§ 4.1 l. 564-572) : « Few legal regimes of accountability impose liability on a person or organization for actions that were not foreseeable by them or which are beyond their control to avoid... conventional human agency rules limit the liability of the principal to actions that were within the scope of the agent’s actual or apparent authority. The trajectory... is towards evermore general instructions (“go make $1 million”) and it is unclear what technological capacity users will have to reliably implement controls ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch08:P007:S04",
+    "paragraph_loc": "ch08:P007",
+    "unit": "ch08",
+    "category": "juridique",
+    "text": "S'y ajoutent la corruption persistante de la mémoire ou des entrepôts RAG et plongements (traitée au chapitre 05) et l'exploitation de la confiance humain-agent poussant le valideur à entériner des commandes malveillantes ou des actions préjudiciables [9], point repris au chapitre 11.",
+    "refs": [
+      9
+    ],
+    "source_ids": [
+      "SRC-055"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-055.txt"
+    ],
+    "evidence_excerpt": "SRC-055.txt (l. 25-27 « ASI06 Memory & Context Poisoning High : Persistent corruption of agent memory, RAG stores, embeddings » ; l. 37-39 « ASI09 Human-Agent Trust Exploitation Medium... manipulate humans into approving malicious commands, sharing sensitive data, or performing harmful actions »).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch08:P013:S01",
+    "paragraph_loc": "ch08:P013",
+    "unit": "ch08",
+    "category": "juridique",
+    "text": "Pris ensemble, ces sept indicateurs confirment que la fragilité des serveurs d'outils tient autant aux réglages permissifs par défaut qu'à l'instabilité silencieuse de leurs définitions après déploiement [11].",
+    "refs": [
+      11
+    ],
+    "source_ids": [
+      "SRC-057"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-057.txt"
+    ],
+    "evidence_excerpt": "SRC-057.txt (Abstract l. 13-24, Table 3 l. 405-430, Table 4 l. 430-465, § 4.1 l. 470-494) : les sept indicateurs résumés dans le tableau du chapitre 08 (l. 29-35) proviennent directement du recensement de Kraishan (exposition sans authentification 9,57 %, SSE 44,2 % vs 12,3 %, délégation 1,57 %, modification 51,09 % / dérive silencieuse 40,58 %, redirection 4,16 %, popularité faible protectrice OR = 0,78 par unité de log d'étoiles).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch08:P016:S01",
+    "paragraph_loc": "ch08:P016",
+    "unit": "ch08",
+    "category": "prospectif_technique",
+    "text": "Sur le plan théorique, le rapport NIST AI 100-2e2025 s'appuie sur Tramèr et Fang *et al.* pour rappeler que bâtir un détecteur fiable d'exemples adverses équivaut au problème non résolu de la classification robuste, avec bornes d'impossibilité dès que données en distribution et hors distribution se chevauchent [8].",
+    "refs": [
+      8
+    ],
+    "source_ids": [
+      "SRC-054"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-054.txt"
+    ],
+    "evidence_excerpt": "SRC-054.txt (§ 4.1.3 / § 4.2 l. 2797-2804) : cite explicitement « Tramèr [373] » sur le lien avec la classification robuste et « Fang et al. [124] » sur « an impossibility result when there is an overlap between the in-distribution and out-of-distribution data ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch08:P033:S01",
+    "paragraph_loc": "ch08:P033",
+    "unit": "ch08",
+    "category": "empirique",
+    "text": "| Dimension d'arbitrage | Alignement natif et structuration d'invite | Filtres par modèle auxiliaire | Isolation structurelle et confinement | |---|---|---|---| | **Nature de la garantie** | Probabiliste : hiérarchie d'instructions, *Spotlighting*, *Sandwiching* [1, 8] | Probabiliste : détecteur LLM, *Tool Filter*, *DataFilter*, *DeBERTa* [1, 8, 10] | Déterministe sur le graphe de contrôle et les capacités typées (CaMeL, multi-CaMeL) [1, 10] | | **Résultats et failles sur bancs** | 276 attaques réussies sur GPT-4o Mini (hiérarchie native); 5 (*Spotlighting*) et 24 (*Sandwiching*) sur Claude 3.5 Sonnet (AgentDojo) [1] | 8 attaques réussies (*Tool Filter* sur Claude 3.5 Sonnet, AgentDojo); défaillances corrélées et échec sous attaques adaptatives [1, 8, 10] | 77 % vs 84 % d'utilité sur AgentDojo avec garantie structurelle (politiques actives); 0,0 % d'ASR multi-agents avec multi-CaMeL [1, 10] | | **Coût d'inférence et utilité** | Surcoût médian faible (1,06× entrée, 0,98× sortie pour *Spotlighting* sous attaque) [1] | Surcharge d'entrée élevée (7,77× médian pour *Tool Filter* nominal) et utilité abaissée (73,20 % vs 90,72 %) [1] | Surcoût médian d'environ 2,7 à 2,8× hors attaque (Claude 3.5 Sonnet), réductible via Q-LLM léger; échoue si l'action dépend de données non fiables [1] | | **Chaînes multi-agents** | Exposée au détournement si des données transitent en texte libre entre agents [10] | Sans suivi de provenance inter-agents; vulnérable aux attaques adaptatives [10] | Exige la propagation de provenance inter-agents (multi-CaMeL) contre le blanchiment à la frontière [10] | | **Intégration patrimoniale** | Immédiate par invite ou API fournisseur [1, 10] | Modérée : intégration au pipeline d'inférence [10] | Exigeante : schémas de retour documentés, interpréteur typé et capacités sur les outils [1, 10] |",
+    "refs": [
+      1,
+      8,
+      10
+    ],
+    "source_ids": [
+      "SRC-007",
+      "SRC-054",
+      "SRC-056"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-007.txt",
+      "recherche/corpus_l_plus/SRC-054.txt",
+      "recherche/corpus_l_plus/SRC-056.txt"
+    ],
+    "evidence_excerpt": "SRC-007.txt (l. 13-14 utilité 77 % vs 84 % ; § 6.1.2/Table 1 l. 629-630 & l. 727 « Data requires action » ; § 6.1.3 l. 698-704 Q-LLM léger ; § 6.3 l. 956-965 276 GPT-4o mini, 8 Tool Filter ; Table 5 l. 2150/2156 73,20 % vs 90,72 % ; Table 7 l. 2265/2271 24 Sandwiching, 5 Spotlighting ; Table 10 l. 2419/2423/2437 CaMeL hors attaque médiane 2,73× entrée / 2,82× sortie & Fig. 21 l. 2465/2481/2495-2496 2,7× sur Claude 3.5 Sonnet, Tool Filter 7,77× ; Table 13 l. 2639/2643 Spotlighting sous attaque 1,06× / 0,98× ; l. 1583 DeBERTa) ; SRC-054.txt (l. 2496 défaillances corrélées) ; SRC-056.txt (l. 33 ASR 0,0 % multi-CaMeL, l. 66 DataFilter, l. 1018 attaques adaptatives, l. 1074 boundary laundering).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch08:P035:S01",
+    "paragraph_loc": "ch08:P035",
+    "unit": "ch08",
+    "category": "prospectif_technique",
+    "text": "La spécification MCP rappelle que les outils représentent une exécution de code arbitraire [2], OWASP ASI05 classe l'exécution de code inattendue au rang critique [9], et Kraishan rappelle que le code derrière un nom du registre MCP s'exécute avec les justificatifs, la position réseau et le système de fichiers de l'utilisateur [11].",
+    "refs": [
+      2,
+      9,
+      11
+    ],
+    "source_ids": [
+      "SRC-038",
+      "SRC-055",
+      "SRC-057"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-038.txt",
+      "recherche/corpus_l_plus/SRC-055.txt",
+      "recherche/corpus_l_plus/SRC-057.txt"
+    ],
+    "evidence_excerpt": "SRC-038.txt (l. 135 « Tools represent arbitrary code execution ») ; SRC-055.txt (l. 21 « ASI05 Unexpected Code Execution Critical ») ; SRC-057.txt (l. 33 « the code behind a registry name runs with the user’s credentials, network position, and file system »).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch09:P008:S01",
+    "paragraph_loc": "ch09:P008",
+    "unit": "ch09",
+    "category": "juridique",
+    "text": "En Europe, le Règlement (UE) 2024/1689 (EU AI Act) impose à l'article 12 l'enregistrement automatique des événements tout au long de la vie des systèmes à haut risque, et à l'article 19 leur conservation par les fournisseurs pendant au moins six mois — voire plus selon le droit financier — en conciliation avec la protection des données personnelles [11].",
+    "refs": [
+      11
+    ],
+    "source_ids": [
+      "SRC-060"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-060.txt"
+    ],
+    "evidence_excerpt": "SRC-060.txt (art. 12 l. 3777 enregistrement automatique tout au long de la vie ; art. 19 l. 4036-4048 conservation par les fournisseurs pendant « au moins six mois, sauf disposition contraire... en particulier dans le droit de l'Union sur la protection des données à caractère personnel » et § 2 articulation avec la législation sur les services financiers).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch09:P013:S04",
+    "paragraph_loc": "ch09:P013",
+    "unit": "ch09",
+    "category": "juridique",
+    "text": "L'entreprise désactive ces captures `Opt-In` dans le couloir 1, caviarde les exceptions de façon déterministe et ne conserve que des jetons opaques de corrélation vers l'identité non humaine et le mandat (chapitre 07), livrant au centre de sécurité la télémétrie temps réel demandée par le BSIF [14] et DORA [12] sans exposer de données confidentielles.",
+    "refs": [
+      12,
+      14
+    ],
+    "source_ids": [
+      "SRC-062",
+      "SRC-066"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "ecart_mineur",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-062.txt",
+      "recherche/corpus_l_plus/SRC-066.txt"
+    ],
+    "evidence_excerpt": "SRC-066.txt (l. 423-431 : saines pratiques que « institutions can consider... enabling real-time detection... feed AI telemetry into existing security operations and monitoring tools » — recommandation, non exigence impérative) ; SRC-062.txt (DORA art. 10 l. 1902-1913 « détecter rapidement les activités anormales... mécanismes d'alerte automatique... surveiller l'activité des utilisateurs » et art. 17 l. 2231-2259 gestion/consignation des incidents TIC, sans employer l'expression « télémétrie temps réel »). Écart mineur : « télémétrie temps réel demandée par le BSIF [14] et DORA [12] » surévaluait le bulletin consultatif du BSIF et prêtait l'expression exacte à DORA.",
+    "correction_applied": "Chapitre 09 L31 : remplacé « livrant au centre de sécurité la télémétrie temps réel demandée par le BSIF [14] et DORA [12] sans exposer de données confidentielles. » par « livrant au centre de sécurité la télémétrie IA préconisée par le BSIF pour la détection en temps réel [14] à l'appui de la détection rapide des activités anormales requise par DORA [12], sans exposer de données confidentielles. » (renvois [14] et [12] préservés)."
+  },
+  {
+    "claim_loc": "ch09:P024:S02",
+    "paragraph_loc": "ch09:P024",
+    "unit": "ch09",
+    "category": "prospectif_technique",
+    "text": "De l'autre, l'analyse STAMP/STPA de Steve Barrett *et al.* constitue une modélisation théorique de sûreté système illustrée sur un scénario hypothétique ; elle caractérise néanmoins structurellement le scénario de perte où un agent anticipant la méthode d'échantillonnage d'audit limite sa conformité aux seuls cas qu'il prévoit inspectés [9].",
+    "refs": [
+      9
+    ],
+    "source_ids": [
+      "SRC-058"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-058.txt"
+    ],
+    "evidence_excerpt": "SRC-058.txt (l. 1063 « hypothetical scenario involving an AI agent » ; l. 2137-2146 scénario où l'agent anticipe la méthode d'échantillonnage d'audit et limite sa conformité aux sorties inspectées).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch09:P029:S02",
+    "paragraph_loc": "ch09:P029",
+    "unit": "ch09",
+    "category": "empirique",
+    "text": "L'enquête de Dhanorkar *et al.* (17 développeurs) montre qu'ils surveillent rarement l'exécution en direct, réagissent à des signaux tardifs — durée anormale ou dérive après trente à soixante minutes selon un témoin — et jugent la redirection en vol inefficace, imposant l'arrêt et le redémarrage [17].",
+    "refs": [
+      17
+    ],
+    "source_ids": [
+      "SRC-075"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-075.txt"
+    ],
+    "evidence_excerpt": "SRC-075.txt (l. 9 « interviews with 17 experienced developers », l. 401 « rarely monitored agents in real time », l. 413 « If you spend 30 minutes or one hour », l. 419-420 P02 « if you try to redirect [the agent]... it doesn't get back on track. I have to sort of stop it... and restart all over again »).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch09:P030:S02",
+    "paragraph_loc": "ch09:P030",
+    "unit": "ch09",
+    "category": "prospectif_technique",
+    "text": "Dans tout système socio-technique gouverné par contraintes, une action de contrôle devient dangereuse selon quatre modes : absente quand le seuil est franchi, déclenchée à tort, trop tardive ou précoce face à la vitesse machine dépassant la boucle humaine OODA (*Observe, Orient, Decide, Act*), ou maintenue et levée pour une durée erronée [9].",
+    "refs": [
+      9
+    ],
+    "source_ids": [
+      "SRC-058"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-058.txt"
+    ],
+    "evidence_excerpt": "SRC-058.txt (l. 414-417 & l. 1271-1277 les 4 modes d'action de contrôle dangereuse UCA : not provided, provided unsafely, too early/too late, stopped too soon/applied too long ; l. 867 boucle relative OODA à vitesse machine).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch10:P002:S01",
+    "paragraph_loc": "ch10:P002",
+    "unit": "ch10",
+    "category": "empirique",
+    "text": "Selon l'enquête *Business Leaders' Pulse* de la Banque du Canada (décembre 2025, 314 répondants, publiée en juin 2026) [2], 70 % des répondants utilisent personnellement l'IA chaque semaine, mais seuls 8 % des entreprises déclarent un usage opérationnel important, contre 21 % d'usage modéré, 29 % d'expérimentation peu fréquente ou en pilote et 11 % d'adoption prévue sous douze mois.",
+    "refs": [
+      2
+    ],
+    "source_ids": [
+      "SRC-016"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-016.txt"
+    ],
+    "evidence_excerpt": "SRC-016.txt (Paper 2026-22, June 2, 2026 ; l. 90-94 : 314 réponses d'enquête BLP de déc. 2025, 70 % d'usage hebdomadaire personnel ; l. 158-160 : 8 % d'usage opérationnel important, 21 % modéré, 29 % peu fréquent, 11 % planifiant sous 12 mois).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch10:P012:S01",
+    "paragraph_loc": "ch10:P012",
+    "unit": "ch10",
+    "category": "juridique",
+    "text": "Publiée dans sa version révisée le 11 septembre 2025, la ligne directrice E-23 sur la gestion du risque de modélisation entrera en vigueur le 1er mai 2027 pour toutes les institutions financières fédérales : banques, succursales étrangères (banques et assureurs), assureurs vie, sociétés de secours mutuels, assureurs multirisques et sociétés de fiducie et de prêt [10].",
+    "refs": [
+      10
+    ],
+    "source_ids": [
+      "SRC-065"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-065.txt"
+    ],
+    "evidence_excerpt": "SRC-065.txt (l. 121 Date « 11 septembre 2025 », l. 177 Date d'entrée en vigueur « Le 1 mai 2027 », l. 141-149 & Portée A.2 l. 258 : ensemble des institutions financières fédérales dont banques, succursales de banques étrangères et succursales de sociétés d'assurance étrangères, sociétés d'assurance vie et de secours mutuels, sociétés des assurances multirisques, sociétés de fiducie et de prêts).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch10:P015:S03",
+    "paragraph_loc": "ch10:P015",
+    "unit": "ch10",
+    "category": "juridique",
+    "text": "La section 2.3.2.2 rappelle l'obligation de conserver des copies complètes des dossiers électroniques au Canada — ou, en cas d'exemption, de garantir un accès immédiat, direct, complet et continu au surintendant —, complétée par des droits d'audit indépendant (principe 8) et des plans de sortie avec portabilité nuage (sections 2.3.5 et 4.4) [12].",
+    "refs": [
+      12
+    ],
+    "source_ids": [
+      "SRC-068"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-068.txt"
+    ],
+    "evidence_excerpt": "SRC-068.txt (§ 2.3.2.2 l. 727-729 copies complètes des dossiers électroniques au Canada ou, si exemption, « immediate, direct, complete and ongoing access to the Records » ; Principe 8 l. 733 droit d'audit indépendant ; § 2.3.5 l. 775 plans de sortie ; § 4.4 l. 993-997 portabilité nuage).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch10:P025:S03",
+    "paragraph_loc": "ch10:P025",
+    "unit": "ch10",
+    "category": "prospectif_technique",
+    "text": "6) et dossier 10 ans (art. 18) [5] | Télémétrie et RFC 8785 (chap.",
+    "refs": [
+      5
+    ],
+    "source_ids": [
+      "SRC-060"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-060.txt"
+    ],
+    "evidence_excerpt": "SRC-060.txt (art. 18 l. 4012-4016 : conservation du dossier technique/documentation « 10 ans » ; art. 26 par. 6 l. 4279-4282 : tenue des journaux par les déployeurs « d'au moins six mois »). (Note : découpage d'extraction JSON à l'abréviation « chap. » de la cellule L60 de Chapitre 10.)",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch11:P007:S02",
+    "paragraph_loc": "ch11:P007",
+    "unit": "ch11",
+    "category": "empirique",
+    "text": "En pratique, 68 % des systèmes déployés exécutent au plus 10 étapes avant intervention humaine, 80 % des cas étudiés (16 sur 20) suivent des flux structurés fixes et les équipes privilégient l'usage interne (52 % des usagers contre 40 % de clients externes) afin de contenir le risque [9].",
+    "refs": [
+      9
+    ],
+    "source_ids": [
+      "SRC-027"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-027.txt"
+    ],
+    "evidence_excerpt": "SRC-027.txt (§ 4.3 l. 423-428, l. 639, l. 659 : « 68% execute at most 10 steps », « 80% (16/20) use structured workflows », « Internal employees comprise 52% of users, external customers 40%... deploying internally first to mitigate reliability and security risks »).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch11:P012:S02",
+    "paragraph_loc": "ch11:P012",
+    "unit": "ch11",
+    "category": "empirique",
+    "text": "De leur côté, Genewein *et al.* rappellent avec le problème de l'évaluation (*Evaluation Problem*) qu'une forte pression d'optimisation exercée par des essaims d'agents épuise rapidement les bancs statiques et trouve des régimes comportementaux auxquels les évaluateurs automatisés restent aveugles [1], pendant que Margaret-Anne Storey montre comment la vitesse de génération engendre une **dette cognitive et d'intention** qui prive l'équipe de la compréhension et de la mémoire des contraintes métier [10].",
+    "refs": [
+      1,
+      10
+    ],
+    "source_ids": [
+      "SRC-001",
+      "SRC-040"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-001.txt",
+      "recherche/corpus_l_plus/SRC-040.txt"
+    ],
+    "evidence_excerpt": "SRC-001.txt (Evaluation Problem l. 1450-1462 : pression d'optimisation d'essaims épuisant les bancs statiques et trouvant des régimes auxquels l'évaluateur automatisé est aveugle) ; SRC-040.txt (l. 20-37 : dette cognitive et dette d'intention érodant compréhension partagée et mémoire des contraintes).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch11:P022:S01",
+    "paragraph_loc": "ch11:P022",
+    "unit": "ch11",
+    "category": "empirique",
+    "text": "Selon l'*AI Index Report 2026* de Stanford HAI, l'emploi des développeurs logiciels américains dans la tranche d'âge des 22 à 25 ans s'est contracté de près de 20 % depuis 2024, alors même que les effectifs des développeurs plus âgés ont poursuivi leur croissance [3].",
+    "refs": [
+      3
+    ],
+    "source_ids": [
+      "SRC-008"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-008.txt"
+    ],
+    "evidence_excerpt": "SRC-008.txt (Top Takeaways #9, l. 397-399) : « In software development... U.S. developers ages 22 to 25 saw employment fall nearly 20% from 2024, even as the headcount for older developers continues to grow. »",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch11:P023:S04",
+    "paragraph_loc": "ch11:P023",
+    "unit": "ch11",
+    "category": "juridique",
+    "text": "Chawla et Arnburg relèvent simultanément que les firmes qui n'adoptent pas encore l'IA citent le manque de personnel qualifié parmi leurs principaux obstacles opérationnels [8] — paradoxe saisissant d'organisations qui déplorent la pénurie de spécialistes tout en refermant la porte d'entrée qui formait leurs futurs experts.",
+    "refs": [
+      8
+    ],
+    "source_ids": [
+      "SRC-016"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-016.txt"
+    ],
+    "evidence_excerpt": "SRC-016.txt (l. 210-211, Chart 3 l. 232, l. 483) : parmi les entreprises n'adoptant pas encore l'IA, « Other reasons include lack of skilled staff » (citée au Graphique 3 parmi les principaux obstacles).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch12:P005:S01",
+    "paragraph_loc": "ch12:P005",
+    "unit": "ch12",
+    "category": "prospectif_technique",
+    "text": "Personne ne connaît au 31 décembre 2026 la trajectoire exacte du coût marginal d'inférence, l'issue de la concurrence entre protocoles ouverts et suites fermées, ni la date d'apparition d'un ordinateur quantique cryptographiquement pertinent (*Cryptographically Relevant Quantum Computer*, CRQC) [6, 7].",
+    "refs": [
+      6,
+      7
+    ],
+    "source_ids": [
+      "SRC-051",
+      "SRC-052"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-051.txt",
+      "recherche/corpus_l_plus/SRC-052.txt"
+    ],
+    "evidence_excerpt": "SRC-051.txt (l. 1179-1180 incertitudes importantes sur les caractéristiques futures d'ordinateurs quantiques et CRQC) ; SRC-052.txt (l. 179-181 « While the trajectory of quantum computing development is uncertain... prior to the availability of cryptographically relevant quantum computers (CRQCs) »).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch12:P006:S03",
+    "paragraph_loc": "ch12:P006",
+    "unit": "ch12",
+    "category": "empirique",
+    "text": "Le décideur conçoit alors une stratégie dynamique combinant des actions initiales immédiates (fondations sans regret, mesures correctives et habilitantes gardant les options ouvertes), des choix de long terme suspendus jusqu'à nécessité avérée et des **signaux avancés** (*signposts*) déclenchant la transition avant l'échec [18].",
+    "refs": [
+      18
+    ],
+    "source_ids": [
+      "SRC-072"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-072.txt"
+    ],
+    "evidence_excerpt": "SRC-072.txt (DAPP, l. 148-154) : « initial actions and the enabling actions needed to keep the long-term options open », choix à déclencher par « signposts to monitor and related trigger points ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch12:P019:S01",
+    "paragraph_loc": "ch12:P019",
+    "unit": "ch12",
+    "category": "juridique",
+    "text": "*Note méthodologique : le domaine `lautorite.qc.ca` demeurant en statut bloqué (HTTP 403 WAF) à la date de gel, la prise d'effet au 1er mai 2027 de la ligne directrice sur l'intelligence artificielle de l'AMF est documentée par le registre secondaire ouvert AIBanks.ca (relevé du 1er novembre 2026) en complément des textes fédéraux vérifiés [17].*",
+    "refs": [
+      17
+    ],
+    "source_ids": [
+      "SRC-071"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-071.txt"
+    ],
+    "evidence_excerpt": "SRC-071.txt (l. 6-8 relevé « November 1, 2026 » ; l. 271-275 « AMF guideline on AI (Quebec)... takes effect May 1, 2027 ») et note de transparence conforme au statut bloqué F du domaine `lautorite.qc.ca`.",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch12:P024:S01",
+    "paragraph_loc": "ch12:P024",
+    "unit": "ch12",
+    "category": "juridique",
+    "text": "Ouvrir un couloir borné en lecture seule sous schémas typés.** Le BSIF invite les institutions à traiter les sorties générées comme des éléments d'entrée soumis à vérification plutôt que comme des décisions définitives, et à subordonner toute action à fort impact à des points d'approbation humaine explicites [13].",
+    "refs": [
+      13
+    ],
+    "source_ids": [
+      "SRC-066"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-066.txt"
+    ],
+    "evidence_excerpt": "SRC-066.txt (Bulletin BSIF juillet 2026 l. 215, l. 217, l. 289) : modalité consultative exacte (« invite les institutions » pour *Institutions can consider*), traiter les sorties IA « as inputs to decision-making rather than definitive outcomes » et imposer des « approval checkpoints for high-risk actions ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch12:P026:S01",
+    "paragraph_loc": "ch12:P026",
+    "unit": "ch12",
+    "category": "juridique",
+    "text": "Unifier le socle de preuves d'audit avant le 1er mai 2027.** Plutôt que d'empiler des journaux incompatibles, l'organisation assemble d'emblée un journal probatoire unique couvrant simultanément l'inventaire et la validation BSIF E-23 au 1er mai 2027 [12], les obligations documentaires de l'EU AI Act Annexe III au 2 décembre 2027 [11], la traçabilité des recommandations visée par ACVM 31-103 au 1er octobre 2028 [15] et les données climatiques BSIF B-15 attendues pour fin 2028 [14].",
+    "refs": [
+      11,
+      12,
+      14,
+      15
+    ],
+    "source_ids": [
+      "SRC-061",
+      "SRC-065",
+      "SRC-067",
+      "SRC-069"
+    ],
+    "vigilance_mandatory": false,
+    "verdict_initial": "conforme",
+    "verdict_final": "conforme",
+    "source_files": [
+      "recherche/corpus_l_plus/SRC-061.txt",
+      "recherche/corpus_l_plus/SRC-065.txt",
+      "recherche/corpus_l_plus/SRC-067.txt",
+      "recherche/corpus_l_plus/SRC-069.txt"
+    ],
+    "evidence_excerpt": "SRC-065.txt (E-23 inventaire/validation, « Le 1 mai 2027 » l. 177) ; SRC-061.txt (Règlement 2026/1744, Annexe III au « 2 décembre 2027 » l. 709-710) ; SRC-069.txt (ACVM NI 31-103, entrée en vigueur « October 1, 2028 » l. 142, l. 733) ; SRC-067.txt (BSIF B-15 Annexe 2-2 b)ii, portée 3 exercice financier « 2028 » l. 498-500, l. 669-679).",
+    "correction_applied": null
+  }
+]

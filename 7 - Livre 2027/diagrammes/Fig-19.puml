@@ -41,13 +41,14 @@ skinparam defaultFontName "DejaVu Sans"
 skinparam defaultFontSize 11
 skinparam shadowing false
 skinparam roundcorner 8
-skinparam nodesep 16
-skinparam ranksep 24
-skinparam padding 6
+skinparam packageStyle frame
+skinparam nodesep 20
+skinparam ranksep 28
+skinparam padding 7
 
 rectangle "Agents et modèles en production\n(composants encadrés)" as AGT <<prob>>
 
-package "Socle probatoire déterministe unique" {
+package "Socle probatoire" {
   rectangle "Inventaire, autonomie\net chaîne de mandat" as INV <<det>>
   rectangle "Journal probatoire (RFC 8785)\net explication traçable" as JRN <<det>>
   rectangle "Validation humaine effective\net droit de contestation" as REV <<det>>
@@ -57,7 +58,7 @@ package "Socle probatoire déterministe unique" {
 
 rectangle "Dossier d'audit unique\net référentiel ISO/IEC 42001" as ISO <<det>>
 
-package "Exigences multi-juridictionnelles satisfaites" {
+package "Cadres réglementaires" {
   rectangle "Québec — Loi 25 (art. 12.1)\nEn vigueur (jusqu'à 25 M CAD ou 4 %)" as LOI25 <<ext>>
   rectangle "Canada — BSIF E-23 et B-10\nÉchéance à venir : 1er mai 2027" as BSIF <<ext>>
   rectangle "Québec — AMF (ligne IA)\nÉchéance annoncée : 1er mai 2027" as AMF <<ext>>

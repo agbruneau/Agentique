@@ -71,8 +71,8 @@ S6 -down-> S7 : affiche synthèse
 S7 -down-> S8 : consentement
 S8 -down-> S9 : assertion signée
 S9 -down-> S10 : feu vert lié
-S9 --> S11 : archive preuve
-S10 --> S11 : scelle acte
+S9 --> S11 : archive\npreuve
+S10 --> S11 : scelle\nacte
 
 S1 -[hidden]right-> S6
 S2 -[hidden]right-> S7

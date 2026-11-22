@@ -537,3 +537,18 @@
 
 - **Typographie (`L1–L39`, `L49–L111`)** : Aucun écart factuel ni défaut typographique introduit par `G4` (`0` double espace, `0` tabulation, `0` espace manquant avant `:`, `%` ou `?`, `0` espace avant `;`, guillemets français `« »` conformes, formules `\(X\)`, `\(Y\)`, `\(Z\)` et `\(X + Y > Z\)` conformes à `L75`). Les renvois `A36–A78` conservent leur validité intégrale avec un décalage mécanique de `+2` lignes (`L49–L111` pour anciens `L47–L109`).
 - **Barrière déterministe (`verifie_manuscrit.py --unit ch12 --strict`)** : Passée (`OK : Barriere deterministe G1 passee avec 0 erreur.`).
+
+---
+
+## Contrôle différentiel post-lissage G5
+
+- **Périmètre contrôlé** : `git diff HEAD` (depuis `fe6e945`) sur [Chapitre 12 - Decider sous incertitude profonde 2027-2035.md](../manuscrit/04%20-%20Partie%20IV/Chapitre%2012%20-%20Decider%20sous%20incertitude%20profonde%202027-2035.md) — `48` lignes modifiées (`11` lignes de retrait exclusif de rétro-apostrophes vérifiées pour identifiants et acronymes, `37` lignes reformulées, scindées ou comprimées contrôlées mot pour mot contre [ch12-sources.md](../sources/ch12-sources.md) et `corpus_l_plus/SRC-*.txt`, `2` tableaux intacts, `113` appels `[n]` et `127` occurrences de renvois vérifiés intacts, `5 006` mots).
+- **Rectifications effectuées au manuscrit (`4` paragraphes)** :
+  1. `L17` : rétablissement de « sur l'origine de logiciels » et de « sans devoir faire confiance à un intermédiaire unique » (`SRC-044.txt` `l. 1391` : *does not require trust in a single centralized TS*), évitant l'assertion inexacte d'absence d'intermédiaire.
+  2. `L53` : rétablissement du terme prudentiel exact « consigné à l'inventaire » (`BSIF E-23`, `SRC-065.txt` `l. 714`) au lieu de « registre ».
+  3. `L61` : rétablissement du verbe « analyse comment » au lieu de « montre que » pour l'article conceptuel de Margaret-Anne Storey (`SRC-040.txt`), préservant l'alignement sur la portée non empirique (`A43`).
+  4. `L97` : rétablissement de « systèmes de contrôle » au lieu de « boucles de contrôle » pour la section `7` de Barrett *et al.* (`SRC-058.txt` `l. 1031–1049`), préservant la fidélité exacte (`A68`).
+- **Certification différentielle post-lissage G5** :
+  - Verdict différentiel : **100 % `supporté`**
+  - Imprécis résiduel : `0`
+  - Non supporté résiduel : `0`

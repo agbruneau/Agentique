@@ -710,3 +710,17 @@
 - **Taux de support post-rectification** : **`100 %` `supporté`**
 - **Imprécis résiduels** : **`0`**
 - **Non supportés résiduels** : **`0`**
+
+---
+
+## Contrôle différentiel post-lissage G5
+
+- **Date et portée** : 2026-11-22 — Audit différentiel indépendant `auditeur-wyvern` (`git diff HEAD` depuis `fe6e945`) sur `ch06` (`36` éléments différentiels contrôlés : `24` lignes de retrait mécanique de rétro-apostrophes vérifiées exactes sur sigles/identifiants et `12` blocs substantiels couvrant `L5`, `L21`, `L43`, `L51`, `L53`, `L55–L57`, `L63`, `L87`, `L97`, `L103`, `L105`, `L107`).
+- **Primaires `L+` vérifiés** : `SRC-003.txt` (`[1]`), `SRC-024.txt` (`[3]`), `SRC-027.txt` (`[5]`), `SRC-028.txt` (`[6]`), `SRC-030.txt` (`[8]`), `SRC-031.txt` (`[9]`), `SRC-032.txt` (`[10]`), `SRC-033.txt` (`[16]`), `SRC-034.txt` (`[17]`), `SRC-036.txt` (`[19]`), `SRC-037.txt` (`[11]`), `SRC-040.txt` (`[12]`), `SRC-065.txt` (`[13]`), `SRC-073.txt` (`[14]`), `sources/ch06-sources.md`, `diagrammes/Fig-11.mmd` et renvoi au chapitre 11 (`L97`).
+- **Rectifications appliquées dans le manuscrit (`5`)** :
+  1. `L43` (`NIST/SEMATECH` `SRC-024.txt` § 8.1.8.1) : replacé `[3]` avant la conséquence architecturale sur le harnais et rétabli les deux hypothèses effectives de Lusser (indépendance des défaillances et échec dès la première erreur) au lieu d'attribuer « harnais », « assertions déterministes » et « hypothèse d'absence de vérification » à `[3]`.
+  2. `L51` (`MAP` `SRC-027.txt` L680–685) : rétabli « s'intégrer à l'infrastructure et aux pipelines propriétaires » et « avec des cadriciels tels que CrewAI » (*e.g., CrewAI*).
+  3. `L63` (`Tran & Kiela` `SRC-031.txt` `[9]`, `Kim et al.` `[1]`, `Bertalanič & Fortuna` `[10]`, `Fig-11.mmd`) : rétabli l'attribution exacte du goulot d'information central à `[9]` et de la perte marginale de coordination à `[1, 10]` à la quatrième porte.
+  4. `L97` (`AL-Ali et al.` `SRC-073.txt` L46, L190, L346, L357, L408) : rétabli « simulateur numérique de maintenance critique informé par la physique » et « opérateur humain simulé » afin de respecter le statut de proxy comportemental paramétrique documenté dans `[14]`.
+  5. `L103` (`Temporal` `SRC-034.txt` L160, L176–182) : rétabli « ou, par extension architecturale, l'appel à un LLM » et corrigé le flux d'écriture vers l'*Event History* (« transmettent chaque commande et résultat d'activité au service d'orchestration, qui les consigne dans un journal persistant (*Event History*) [17] ») au lieu d'imputer l'écriture directe aux travailleurs.
+- **Verdict différentiel final post-G5** : `36 / 36` items (`100 %` `supporté`), **`0` imprécis résiduel**, **`0` non supporté résiduel**, aucun tableau ajouté ni supprimé, aucune collision `CA-03` ni motif `CA-02`.

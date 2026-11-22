@@ -41,13 +41,14 @@ skinparam defaultFontName "DejaVu Sans"
 skinparam defaultFontSize 11
 skinparam shadowing false
 skinparam roundcorner 8
-skinparam nodesep 14
-skinparam ranksep 20
-skinparam padding 5
+skinparam packageStyle frame
+skinparam nodesep 20
+skinparam ranksep 26
+skinparam padding 7
 
 rectangle "Systèmes d'engagement (SoE)\ninterfaces et canaux métiers" as SOE <<ext>>
 
-package "Noyau de contrôle déterministe possédé (~80 %)" {
+package "Noyau possédé (~80 %)" {
   rectangle "Systèmes d'agence (SoA)\nlogique métier et états explicites" as SOA <<det>>
   rectangle "Plan 1 : Registre et\nidentités NHI" as P1 <<det>>
   rectangle "Plan 2 : Passerelle\nde politiques" as P2 <<det>>
@@ -56,9 +57,9 @@ package "Noyau de contrôle déterministe possédé (~80 %)" {
   rectangle "Routeur d'inférence\nagnostique" as RTR <<det>>
 }
 
-package "Modèles substituables (~20 %)" {
-  rectangle "Modèle externe A\n(infonuagique)" as MA <<prob>>
-  rectangle "Modèle B\n(bascule qualifiée)" as MB <<prob>>
+package "Modèles (~20 %)" {
+  rectangle "Modèle externe A\n(infonuagique actif)" as MA <<prob>>
+  rectangle "Modèle B\n(repli qualifié)" as MB <<prob>>
 }
 
 rectangle "Couche anti-corruption\n(ACL patrimoniale)" as ACL <<det>>
@@ -72,8 +73,8 @@ SOA --> P4
 P1 -[hidden]down-> P3
 P2 -[hidden]down-> P4
 SOA --> RTR : appel typé
-RTR ..> MA : actif
-RTR ..> MB : repli
+RTR ..> MA
+RTR ..> MB
 P2 --> ACL : autorisé
 ACL --> SOR : mutation fiable
 

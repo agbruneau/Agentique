@@ -6,7 +6,7 @@ La règle d'étanchéité inter-unités impose que chaque mécanisme fondateur n
 
 ## Définitions raisonnées
 
-### Analyse de contrôle stpa (*Systems-Theoretic Process Analysis (STPA)*)
+### Analyse de contrôle STPA (*Systems-Theoretic Process Analysis (STPA)*)
 
 Méthode de sûreté système dérivée du modèle STAMP qui recense les actions de contrôle dangereuses et les défauts de rétroaction entre agents, logiciels déterministes et superviseurs humains avant tout déploiement. *(Unité propriétaire : ch08.)*
 
@@ -42,10 +42,6 @@ Coût complet d'une transaction métier menée à terme sans erreur ni reprise, 
 
 Capacité architecturale à renouveler et négocier sans refonte applicative des algorithmes de chiffrement et de signature résistants aux attaques quantiques malgré l'accroissement des tailles de clés, de signatures et de rotation des certificats. *(Unité propriétaire : ch12.)*
 
-### Dette cognitive et d'intention (*cognitive and intent debt*)
-
-Accumulation d'artefacts logiciels et de décisions automatisées dont l'organisation ne maîtrise plus la logique sous-jacente ni les hypothèses métier initiales, fragilisant la maintenance et la conformité. *(Unité propriétaire : ch04.)*
-
 ### Décision fondée exclusivement sur un traitement automatisé (*solely automated decision*)
 
 Décision affectant une personne sans intervention humaine réelle et critique dans la boucle, déclenchant en vertu de l'article 12.1 de la Loi 25 des obligations d'information, d'explication et de révision. *(Unité propriétaire : ch10.)*
@@ -58,7 +54,15 @@ Mécanisme d'échange de jetons distinguant explicitement l'identité du mandant
 
 Altération discrète des descriptions, schémas ou comportements d'un serveur d'outils exposé sous un même identifiant logique après autorisation initiale, créant un vecteur d'empoisonnement de la chaîne d'approvisionnement. *(Unité propriétaire : ch08.)*
 
-### Effet ringelmann multi-agents (*multi-agent Ringelmann effect*)
+### Dette cognitive et d'intention (*cognitive and intent debt*)
+
+Accumulation d'artefacts logiciels et de décisions automatisées dont l'organisation ne maîtrise plus la logique sous-jacente ni les hypothèses métier initiales, fragilisant la maintenance et la conformité. *(Unité propriétaire : ch04.)*
+
+### Économie d'agents virtuels (*virtual agent economy*)
+
+Écosystème d'agents autonomes coordonnés par des mécanismes d'enchères, d'entiercement, de réputation et d'audit réglementaire qui réalisent des échanges économiques à haute fréquence sous mandat humain. *(Unité propriétaire : ch03.)*
+
+### Effet Ringelmann multi-agents (*multi-agent Ringelmann effect*)
 
 Dégradation marginale de l'efficacité et hausse du coût de coordination lorsque la taille d'un collectif d'agents dépasse le seuil optimal de la tâche au lieu de maintenir une spécialisation frugale. *(Unité propriétaire : ch06.)*
 
@@ -82,7 +86,7 @@ Standardisation, automatisation à grande échelle et chute exponentielle du co�
 
 Séparation architecturale entre les protocoles verticaux reliant un agent à ses outils et sources de contexte et les protocoles horizontaux coordonnant la délégation asynchrone entre agents de domaines ou d'organisations distincts. *(Unité propriétaire : ch05.)*
 
-### Loi de lusser appliquée aux chaînes d'agents (*Lusser's reliability law for agent chains*)
+### Loi de Lusser appliquée aux chaînes d'agents (*Lusser's reliability law for agent chains*)
 
 Loi multiplicative de fiabilité en série montrant que la probabilité de succès sans erreur d'une chaîne de n étapes indépendantes décroît exponentiellement avec la longueur lorsque chaque maillon probabiliste demeure imparfait. *(Unité propriétaire : ch02.)*
 
@@ -106,21 +110,17 @@ Séquence de transactions locales coordonnées sans verrou distribué où toute 
 
 Architecture de sécurité inspirée des langages à capacités qui extrait le graphe d'appels d'outils depuis l'instruction fiable tout en confinant les contenus externes non approuvés afin d'empêcher toute injection indirecte. *(Unité propriétaire : ch08.)*
 
-### Tissu conjonctif agentique (*agentic connective tissue*)
-
-Combinaison de l'architecture d'interopérabilité (protocolaire, sémantique, mémorielle et contractuelle) et du plan d'orchestration déterministe qui relie les agents spécialisés, les systèmes patrimoniaux, les partenaires externes et les superviseurs humains. *(Unité propriétaire : 00-liminaire.)*
-
-### Trajectoire adaptative sous seuils (dapp) (*Dynamic Adaptive Policy Pathways (DAPP)*)
-
-Méthode de gouvernance et de planification stratégique pré-positionnant des bascules d'architecture et de conformité déclenchées par des signaux mesurables (coût, réglementation, cryptographie ou compétence) plutôt que par des prévisions rigides. *(Unité propriétaire : ch12.)*
-
 ### Télémétrie à double couloir (*dual-lane telemetry*)
 
 Architecture d'observabilité séparant la télémétrie opérationnelle à faible latence des preuves canoniques horodatées et hachées dédiées à l'audit réglementaire et à la relecture d'incidents. *(Unité propriétaire : ch09.)*
 
-### Économie d'agents virtuels (*virtual agent economy*)
+### Tissu conjonctif agentique (*agentic connective tissue*)
 
-Écosystème d'agents autonomes coordonnés par des mécanismes d'enchères, d'entiercement, de réputation et d'audit réglementaire qui réalisent des échanges économiques à haute fréquence sous mandat humain. *(Unité propriétaire : ch03.)*
+Combinaison de l'architecture d'interopérabilité (protocolaire, sémantique, mémorielle et contractuelle) et du plan d'orchestration déterministe qui relie les agents spécialisés, les systèmes patrimoniaux, les partenaires externes et les superviseurs humains. *(Unité propriétaire : 00-liminaire.)*
+
+### Trajectoire adaptative sous seuils (DAPP) (*Dynamic Adaptive Policy Pathways (DAPP)*)
+
+Méthode de gouvernance et de planification stratégique pré-positionnant des bascules d'architecture et de conformité déclenchées par des signaux mesurables (coût, réglementation, cryptographie ou compétence) plutôt que par des prévisions rigides. *(Unité propriétaire : ch12.)*
 
 ## Table synoptique d'équivalence bilingue
 
@@ -135,10 +135,11 @@ Architecture d'observabilité séparant la télémétrie opérationnelle à faib
 | coût de transaction cognitif | cognitive transaction cost | ch03 |
 | coût par résultat conforme | Cost per Compliant Outcome (CPO) | ch09 |
 | crypto-agilité post-quantique | post-quantum cryptographic agility | ch12 |
-| dette cognitive et d'intention | cognitive and intent debt | ch04 |
 | décision fondée exclusivement sur un traitement automatisé | solely automated decision | ch10 |
 | délégation au nom de | On-Behalf-Of (OBO) delegation | ch07 |
 | dérive silencieuse d'outil | silent tool drift | ch08 |
+| dette cognitive et d'intention | cognitive and intent debt | ch04 |
+| économie d'agents virtuels | virtual agent economy | ch03 |
 | effet Ringelmann multi-agents | multi-agent Ringelmann effect | ch06 |
 | exécution durable | durable execution | ch06 |
 | harnais d'agent | agent harness | ch04 |
@@ -151,10 +152,9 @@ Architecture d'observabilité séparant la télémétrie opérationnelle à faib
 | règle du maillon le plus élevé | High-Water Mark Rule | 00-liminaire |
 | saga à point pivot | pivot-transaction saga | ch06 |
 | séparation par construction entre contrôle et données | control-data separation by design | ch08 |
+| télémétrie à double couloir | dual-lane telemetry | ch09 |
 | tissu conjonctif agentique | agentic connective tissue | 00-liminaire |
 | trajectoire adaptative sous seuils (DAPP) | Dynamic Adaptive Policy Pathways (DAPP) | ch12 |
-| télémétrie à double couloir | dual-lane telemetry | ch09 |
-| économie d'agents virtuels | virtual agent economy | ch03 |
 
 ## Repères d'usage entre couches déterministes et probabilistes
 

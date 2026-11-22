@@ -393,3 +393,25 @@
   - Verdict post-G4 : **supporté** (après rectification)
 - **L129 (ex-`L123`, `C76`)** — Conforme sans écart : `SPIFFE` / `WIMSE`, attestation de plateforme, audience unique (`SRC-047.txt` § 5.7 l. 1148–1176), durée brève (§ 5.4 l. 1081–1091), proscription des variables d'environnement (§ 3.3 l. 290–292, § 5.1.4 l. 992–994), interdiction d'accès du modèle aux secrets (`SRC-048.txt` § 8 l. 551–555), échéances `PKI` du 15 mars 2027 (100 jours) et du 15 mars 2029 (47 jours) (`SRC-053.txt` § 6.3.2 l. 2189–2200), crypto-agilité post-quantique 2030–2035 (`SRC-049..052`).
   - Verdict post-G4 : **supporté**
+
+---
+
+## Contrôle différentiel post-lissage G5
+
+- **Périmètre inspecté** : intégralité du `git diff HEAD` (depuis le commit `fe6e945`) sur [Chapitre 07 - Identite non humaine et chaine de mandat.md](file:///c:/Github/Agentique/7%20-%20Livre%202027/manuscrit/03%20-%20Partie%20III/Chapitre%2007%20-%20Identite%20non%20humaine%20et%20chaine%20de%20mandat.md) — **59** items contrôlés (`10` lignes à simple retrait de rétro-apostrophes et `49` lignes/paragraphes comportant des retouches rédactionnelles), vérifiés contre `sources/ch07-sources.md` (`[1]`–`[16]`), `corpus_l_plus/*.txt`, les registres et `verifie_manuscrit.py --unit ch07 --strict`.
+- **Rectifications appliquées** (`14` paragraphes ajustés) : `L19` (distinction explicite entre le terme *NHI* du livre et *workload/machine identity* de `SPIFFE`/`WIMSE` + « lient cryptographiquement »), `L29` (« révoquer ou cesser le renouvellement » selon `WIMSE WIP-08` § 5.5), `L31` (« deux leviers s'offrent » au lieu d'une injonction obligatoire, corrigeant une régression sur `C23` / `AIMS` § 8), `L35` (« durée de confidentialité exigée » dans le théorème de Mosca `NIST IR 8547`), `L37` (« vise 2035 comme cible générale » selon `G7 CEG`), `L43` (« l'identité du mandataire »), `L51` (modalité facultative `peut découvrir ... repérer ... exposer ... peuvent interroger` conforme à `AIMS` §§ 10.4, 10.11), `L57` (« dans le contexte même du client » et « contre l'exfiltration » pour `TPM`/enclave selon `RFC 9449` § 11.4, corrigeant une régression sur `C44`), `L59` (« coupure ou restriction des accès » selon `AIMS` § 11), `L79` (« authentificateur matériel FIDO »), `L105` (liaison au matériel présenté par le client à l'initiation selon `CIBA` § 5), `L111` (« frontières d'autorisation ou de locataires » corrigeant une régression critique sur `A2A` § 13.1 / `C63`), `L119` (« attestation cryptographique vérifiable »), `L123` (« politique d'inscription transparente et vérifiable » selon `RFC 9943` § 5.1.1, corrigeant une régression sur `C74`).
+- **Taux d'ancrage certifié post-G5** : **100 % `supporté`**
+- **Imprécis résiduel** : **0**
+- **Non supporté résiduel** : **0**
+
+---
+
+## Contrôle différentiel post-recollation G3 (`seed=202702`, `CA-14`)
+
+- **Objet** : Micro-rectification à `L111` (`ch07:P041:S03`, anciennement `C64`) identifiée lors de la recollation indépendante à froid `G3` passe 2 (`seed=202702`).
+- **Écart détecté** : L'énoncé attribuait à `WIMSE AIMS` (`SRC-048.txt` [11], § 10.4 et § 10.7) l'affirmation « sans cadre contractuel commun [11] », alors que `SRC-048.txt` (§ 10.4, l. 808–811) énonce *« Each domain continues to evaluate its own policy against the tokens it receives. A common policy language is therefore not required for the mechanisms in this document to interoperate across trust domains »* (absence de **langage de politique commun**, le terme *contract* étant absent de `SRC-048.txt`).
+- **Rectification appliquée (`L111`)** : « sans cadre contractuel commun [11]. » remplacé par « sans exiger de langage de politique commun [11], laissant entière l'absence de cadre contractuel inter-organisations. » (`[11]` préservé sans modification des tableaux ni de la numérotation).
+- **Verdict post-G3 (`L111`)** : **supporté**
+- **Imprécis résiduel** : **0**
+- **Non supporté résiduel** : **0**
+

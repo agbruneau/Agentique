@@ -41,18 +41,19 @@ skinparam defaultFontName "DejaVu Sans"
 skinparam defaultFontSize 11
 skinparam shadowing false
 skinparam roundcorner 8
-skinparam nodesep 14
-skinparam ranksep 18
-skinparam padding 5
+skinparam packageStyle frame
+skinparam nodesep 20
+skinparam ranksep 26
+skinparam padding 7
 
 rectangle "Agent lecteur / rédacteur\n(demande de contexte)" as AGT <<prob>>
 rectangle "Requête typée et jeton\nde mandat (portée)" as REQ <<det>>
 rectangle "Filtre de droits en amont\n(cloisonnement avant rappel)" as FILT <<det>>
 
-package "Quatre mémoires cloisonnées (CoALA)" {
+package "Quatre mémoires (CoALA)" {
   rectangle "Mémoire de travail\n(session éphémère)" as M1 <<prob>>
-  database "Mémoire épisodique\n(historique dossiers)" as M2 <<det>>
-  database "Mémoire sémantique\n(ontologie validée)" as M3 <<det>>
+  database "Mémoire épisodique\n(dossiers, rappel filtré)" as M2 <<det>>
+  database "Mémoire sémantique\n(ontologie, faits autorisés)" as M3 <<det>>
   database "Mémoire procédurale\n(outils approuvés)" as M4 <<det>>
 }
 
@@ -66,8 +67,8 @@ REQ --> FILT : contrôle d'accès
 FILT --> M1 : session isolée
 FILT --> RET : périmètre permis
 FILT --> M4 : procédures permises
-RET --> M2 : rappel filtré
-RET --> M3 : faits autorisés
+RET --> M2
+RET --> M3
 AGT ..> SAS : écriture proposée
 SAS --> M2 : validée
 SAS --> M3 : contrôlée

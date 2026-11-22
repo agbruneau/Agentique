@@ -103,3 +103,25 @@ Verdict final — non supportés résiduels : 0
 ## Rappel consolidé de la passe G2 initiale (lignes actualisées `1` à `128`)
 
 Les 52 contrôles atomiques de la passe initiale G2 couvrant l'ensemble du chapitre (ouverture illustrative `AO-07` à la ligne 5, section `9.1` lignes 13–35, section `9.2` lignes 37–67 après refonte G4 Tour 1, section `9.3` lignes 69–87, section `9.4` lignes 89–118 incluant le tableau unique lignes 107–114, encadré des trois arbitrages et conclusion lignes 120–128) demeurent intégralement au verdict `supporté`. Aucun renvoi `[n]` orphelin ni aucune source en `statut F` n'est utilisé.
+
+---
+
+## Contrôle différentiel post-lissage G5
+
+- **Périmètre inspecté** : intégralité du `git diff HEAD` (depuis le commit `fe6e945`) sur [Chapitre 09 - Observer, prouver et compter.md](file:///c:/Github/Agentique/7%20-%20Livre%202027/manuscrit/03%20-%20Partie%20III/Chapitre%2009%20-%20Observer%2C%20prouver%20et%20compter.md) — **47** items contrôlés (`25` lignes à simple retrait de rétro-apostrophes et `22` lignes/paragraphes comportant des retouches rédactionnelles), vérifiés contre `sources/ch09-sources.md` (`[1]`–`[21]`), `corpus_l_plus/*.txt`, les registres et `verifie_manuscrit.py --unit ch09 --strict`.
+- **Rectifications appliquées** (`15` paragraphes/lignes ajustés) : `L17` (renvoi `(chapitre 10)` rattaché à l'article 12.1 de la `Loi 25` et « 4 % du chiffre d'affaires mondial »), `L19` (« par les fournisseurs » et « voire plus selon le droit financier » à l'art. 19 de l'`EU AI Act`), `L31` (« consignes système » et « vers l'identité non humaine et le mandat »), `L33` (« ni signature, ni hachage, ni horodatage, ni ancrage immuable » pour `RFC 8785`), `L35` (« signe un énoncé `COSE_Sign1` et l'enregistre auprès d'un service de transparence » et « forme écrite intelligible » selon `BSIF B-10`), `L37` (dénominateur exact des `8 900` serveurs multi-versions pour `40,6 %` et `4,2 %` chez Kraishan `[8]`, et « données traçables jusqu'à leurs sources » selon `BSIF B-15`), `L51` (« 20 études de cas et 306 répondants sur 26 domaines (filtrés à 86 systèmes en production ou pilote) » selon `MAP`), `L52` (« arguments ou informations erronés » selon `τ-bench`), `L53` (périmètre des trois bancs pour les `40 %` d'obstacles d'environnement et « non-prise en compte des économies de cache dans le calcul des coûts sur SWE-Agent » selon `HAL`), `L59` (« validations indépendantes proportionnées au risque lors d'erreurs importantes, de dérives ou de violations de seuils » pour `BSIF E-23`, et mention des dépositaires centraux et contreparties centrales à l'art. 25 de `DORA`), `L73` (« quand le seuil est franchi », « maintenue et levée pour une durée erronée », « économiquement précieux » et « revues périodiques » selon `STAMP`/`STPA`), `L83` (« pouvant s'appuyer sur des solutions redondantes ou mesures après défaillance » selon `EU AI Act` art. 15(4)), `L91` (« à taux d'échec égal » et « coût réel » selon `HAL`), `L95` (correction de la coquille grammaticale « à fois » -> « à la fois ») et `L118` (« environ 1 % »).
+- **Taux d'ancrage certifié post-G5** : **100 % `supporté`**
+- **Imprécis résiduel** : **0**
+- **Non supporté résiduel** : **0**
+
+---
+
+## Contrôle différentiel post-recollation G3 (`seed=202702`, `CA-14`)
+
+- **Objet** : Micro-rectification à `L31` (`ch09:P013:S04`) identifiée lors de la recollation indépendante à froid `G3` passe 2 (`seed=202702`).
+- **Écart détecté** : L'énoncé écrivait *« la télémétrie temps réel demandée par le BSIF [14] et DORA [12] »*, attribuant à tort un caractère impératif au bulletin technologique du BSIF de juillet 2026 (`SRC-066.txt` l. 423–431 : saines pratiques que *« institutions can consider... enabling real-time detection... feed AI telemetry into existing security operations »*) et attribuant littéralement l'expression *« télémétrie temps réel »* à DORA (`SRC-062.txt` art. 10 § 1–3 l. 1902–1913 et art. 17 l. 2231–2259 exigent des mécanismes permettant de *« détecter rapidement les activités anormales »*, des alertes automatiques et le suivi des incidents TIC).
+- **Rectification appliquée (`L31`)** : « livrant au centre de sécurité la télémétrie temps réel demandée par le BSIF [14] et DORA [12] sans exposer de données confidentielles. » remplacé par « livrant au centre de sécurité la télémétrie IA préconisée par le BSIF pour la détection en temps réel [14] à l'appui de la détection rapide des activités anormales requise par DORA [12], sans exposer de données confidentielles. » (`[14]` et `[12]` préservés sans modification des tableaux ni de la numérotation).
+- **Verdict post-G3 (`L31`)** : **supporté**
+- **Imprécis résiduel** : **0**
+- **Non supporté résiduel** : **0**
+

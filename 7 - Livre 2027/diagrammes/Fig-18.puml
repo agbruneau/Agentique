@@ -41,11 +41,12 @@ skinparam defaultFontName "DejaVu Sans"
 skinparam defaultFontSize 11
 skinparam shadowing false
 skinparam roundcorner 8
-skinparam nodesep 16
-skinparam ranksep 24
-skinparam padding 6
+skinparam packageStyle frame
+skinparam nodesep 20
+skinparam ranksep 28
+skinparam padding 7
 
-package "Composantes du coût complet" {
+package "Coût complet" {
   rectangle "1. Prix facial des jetons\n(inférence nominale)" as C1 <<prob>>
   rectangle "2. Boucles de réessai et\nvérifications probabilistes" as C2 <<prob>>
   rectangle "3. Évaluation continue\n(constance pass^k et simulation)" as C3 <<det>>
@@ -56,7 +57,7 @@ package "Composantes du coût complet" {
 rectangle "Coût complet par résultat conforme\n(seule métrique de rentabilité réelle)" as CPO <<det>>
 rectangle "Imputation FinOps FOCUS\n(transparence showback / chargeback)" as FOCUS <<det>>
 
-package "Trois seuils de disjonction automatique" {
+package "Disjoncteurs" {
   rectangle "Disjoncteur 1 : Plafond\nbudgétaire par dossier" as D1 <<det>>
   rectangle "Disjoncteur 2 : Chute de\nconstance pass^k sous seuil" as D2 <<det>>
   rectangle "Disjoncteur 3 : Bascule\nbimodèle qualifiée" as D3 <<det>>

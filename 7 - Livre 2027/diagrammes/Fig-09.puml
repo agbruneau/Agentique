@@ -41,14 +41,15 @@ skinparam defaultFontName "DejaVu Sans"
 skinparam defaultFontSize 11
 skinparam shadowing false
 skinparam roundcorner 8
-skinparam nodesep 16
-skinparam ranksep 18
-skinparam padding 5
+skinparam packageStyle frame
+skinparam nodesep 24
+skinparam ranksep 24
+skinparam padding 7
 
 rectangle "Agent orchestrateur interne\n(raisonnement borné)" as AGT <<prob>>
 rectangle "Anti-patron rejeté :\nSwagger-to-MCP brut (300 API)" as ANTI <<prob>>
 
-package "Médiation et sémantique possédées" {
+package "Médiation possédée" {
   rectangle "Registre d'outils\népinglés" as REG <<det>>
   rectangle "Passerelle MCP durcie\n(interfaces ACI)" as MCP <<det>>
   rectangle "Passerelle A2A gouvernée\n(contrats et mandats)" as A2A <<det>>
@@ -60,7 +61,7 @@ package "Médiation et sémantique possédées" {
 
 database "Outils métier\ngranulaires (APIs)" as TOOLS <<ext>>
 database "Patrimoine central\n(mainframe, ERP)" as LEGACY <<ext>>
-rectangle "Agent pair externe\n(domaine opaque)" as PEER <<prob>>
+rectangle "Agent pair externe\n(échange de tâches A2A)" as PEER <<prob>>
 
 ANTI ..> AGT : sature le contexte
 AGT --> MCP : médiation verticale
@@ -73,7 +74,7 @@ VAL --> TOOLS : appel granulaire
 VAL --> ACL : traduction sûre
 ACL --> LEGACY : écriture exacte
 EVT --> A2A : déclenchement
-A2A <--> PEER : échange de tâches
+A2A <--> PEER
 
 AGT -[hidden]right-> ANTI
 MCP -[hidden]right-> A2A

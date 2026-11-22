@@ -41,13 +41,14 @@ skinparam defaultFontName "DejaVu Sans"
 skinparam defaultFontSize 11
 skinparam shadowing false
 skinparam roundcorner 8
-skinparam nodesep 18
-skinparam ranksep 20
-skinparam padding 5
+skinparam packageStyle frame
+skinparam nodesep 24
+skinparam ranksep 24
+skinparam padding 7
 
 rectangle "Entrée métier typée\n(dossier et mandat)" as IN <<det>>
 
-package "Harnais d'agent 80/20 (enveloppe déterministe)" {
+package "Harnais 80/20" {
   rectangle "1. Validation d'entrée\net vérification de portée" as VALIN <<det>>
   rectangle "2. Assemblage borné\ndu contexte filtré" as CTX <<det>>
   rectangle "3. Contrôleur de budget\net de tours max" as BUD <<det>>
@@ -71,8 +72,8 @@ VALOUT -up-> GATE : conforme
 VALOUT --> REPLI : hors schéma
 GATE -up-> TOOL : permis
 GATE --> REPLI : refusé
-TOOL --> LOG : trace scellée
-REPLI --> LOG : incident scellé
+TOOL --> LOG : trace\nscellée
+REPLI --> LOG : incident\nscellé
 
 VALIN -[hidden]right-> TOOL
 CTX -[hidden]right-> GATE

@@ -41,32 +41,33 @@ skinparam defaultFontName "DejaVu Sans"
 skinparam defaultFontSize 11
 skinparam shadowing false
 skinparam roundcorner 8
-skinparam nodesep 20
-skinparam ranksep 20
-skinparam padding 5
+skinparam packageStyle frame
+skinparam nodesep 26
+skinparam ranksep 28
+skinparam padding 7
 
 rectangle "Effondrement des coûts de transaction (Coase)\nrecherche, négociation et vérification accélérées" as COASE <<ext>>
 
-package "Matrice des économies d'agents (Tomašev et al.)" {
-  rectangle "Émergente × Perméable\n(cascades systémiques et capture)" as Q1 <<prob>>
+package "Matrice (Tomašev et al.)" {
+  rectangle "Émergente × Perméable\n(sans règles : cascades et capture)" as Q1 <<prob>>
   rectangle "Émergente × Imperméable\n(banc d'observation isolé)" as Q2 <<prob>>
-  rectangle "Conçue × Perméable\n(marché gouverné sous mandats)" as Q3 <<det>>
+  rectangle "Conçue × Perméable\n(sous architecture : mandats)" as Q3 <<det>>
   rectangle "Conçue × Imperméable\n(simulateur hermétique d'audit)" as Q4 <<det>>
 }
 
 rectangle "Asymétrie SaaS fermée\n(ouvert sur le fil, opaque au contrôle)" as SAAS <<prob>>
 
-package "Garde-fous institutionnels de la firme" {
+package "Garde-fous institutionnels" {
   rectangle "Plafonds d'engagement\net coupe-circuit financier" as G1 <<det>>
   rectangle "Identité et imputation\ncontractuelle explicite" as G2 <<det>>
   rectangle "Médiation sémantique\ninter-organisations" as G3 <<det>>
   rectangle "Frontière souveraine\ndu plan de contrôle" as G4 <<det>>
 }
 
-COASE --> Q1 : sans règles
-COASE --> Q3 : sous architecture
+COASE --> Q1
+COASE --> Q3
 Q1 ..> SAAS : fragilité partagée
-Q1 --> G1 : impose
+Q1 --> G1
 Q3 --> G2
 Q3 --> G3
 Q4 --> G4

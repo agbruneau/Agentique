@@ -652,3 +652,15 @@
   - Source : transition éditoriale vers `ch04` cohérente avec `registre/glossaire-termes.json` (`partition 80/20`, `noyau de contrôle déterministe`, `saga à point pivot`).
   - Constat initial : supporté
   - Verdict final : supporté
+
+---
+
+## Contrôle différentiel post-lissage G5
+
+- **Périmètre contrôlé** : `git diff HEAD` sur `manuscrit/01 - Partie I/Chapitre 03 - Les nouvelles frontieres de la firme.md` depuis `fe6e945` — `29` items différentiels (`19` lignes à retrait seul de rétro-apostrophes et `10` blocs substantifs couvrant `L41`, `L43`, `L45`, `L53`, `L55`, `L82`, `L90`, `L92`, `L105`, `L117`), vérifiés contre `sources/ch03-sources.md` et `recherche/corpus_l_plus/*.txt`.
+- **Constat et rectifications appliquées dans `Chapitre 03`** :
+  - `19` lignes à retrait seul de rétro-apostrophes et `5` blocs substantifs (`L53`, `L55`, `L90`, `L92`, `L117` après vérification contre le contenu du ch. 04) conformes d'emblée ; tableau unique et renvois `[n]` intacts.
+  - `5` paragraphes rectifiés directement dans le manuscrit : `L41` (dissociation entre le *Flash Crash* de 2010 et l'aggravation par clonage d'un même agent selon `SRC-005.txt`, précision `prépublication` et `erreurs de trace` pour `SRC-003.txt`, rétablissement de la condition d'étapes `indépendantes` pour la loi en série `SRC-024.txt`), `L43` (précision `écarts de capacité entre modèles, d'accès aux données ou de budget de calcul` et `systématiquement plus favorables` selon `SRC-002.txt`), `L45` (`apprentissage par renforcement`, modalisation `cherchant/tentant` selon `SRC-005.txt`, et correction du rattachement syntaxique des sagas `SRC-033.txt`/`SRC-006.txt`), `L82` (statut `prépublication`, `en production ou pilote`, et séparation des dénominateurs `études de cas` vs `systèmes sondés` avec `retours d'utilisateurs et d'experts` selon `SRC-027.txt`), `L105` (rétablissement de `budget de jetons de raisonnement égal` selon `SRC-031.txt` et `en débat` pour les seuils `1,2`–`1,8` à `N=30` selon `SRC-032.txt`).
+- **Verdict final — supporté** : `100 %` (`29/29` items différentiels)
+- **Imprécis résiduel** : `0`
+- **Non supporté résiduel** : `0`

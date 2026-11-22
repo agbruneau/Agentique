@@ -7,6 +7,7 @@ import argparse
 import json
 import re
 import sys
+import unicodedata
 from pathlib import Path
 
 _TOOLS_DIR = Path(__file__).resolve().parent
@@ -53,7 +54,10 @@ def _fit_word_budget(
 
 def _render_annexe_a(root: Path, unit_meta: dict) -> str:
     glossaire = _load_json(root / "registre" / "glossaire-termes.json", {"terms": []})
-    terms = sorted(glossaire.get("terms", []), key=lambda t: t.get("fr", "").lower())
+    terms = sorted(
+        glossaire.get("terms", []),
+        key=lambda t: unicodedata.normalize("NFD", t.get("fr", "")).encode("ascii", "ignore").decode("ascii").lower(),
+    )
 
     intro = (
         f"# {unit_meta['title']}\n\n"
@@ -84,8 +88,9 @@ def _render_annexe_a(root: Path, unit_meta: dict) -> str:
     for t in terms:
         owner = t.get("chapitre_proprietaire")
         owner_note = f" *(Unité propriétaire : {owner}.)*" if owner else ""
+        title_fr = (t["fr"][:1].upper() + t["fr"][1:]) if t["fr"] else ""
         entries.append(
-            f"### {t['fr'].capitalize()} (*{t['en']}*)\n\n"
+            f"### {title_fr} (*{t['en']}*)\n\n"
             f"{t['definition']}{owner_note}"
         )
     entries_block = "\n\n".join(entries)

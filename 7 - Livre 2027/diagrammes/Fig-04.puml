@@ -49,7 +49,7 @@ package "Chaîne autonome libre (loi de Lusser)" {
   rectangle "Étape 1 (94,0 %)" as U1 <<prob>>
   rectangle "Étapes 2–4 (78,1 %)" as U2 <<prob>>
   rectangle "Étapes 5–7 (64,8 %)" as U3 <<prob>>
-  rectangle "Étapes 8–10 (53,9 % : 0,94^10)" as U4 <<prob>>
+  rectangle "Étapes 8–10 (53,9 % : 0,94¹⁰)" as U4 <<prob>>
   rectangle "Erreur plausible\nsilencieuse (~46,1 %)" as U5 <<prob>>
 }
 

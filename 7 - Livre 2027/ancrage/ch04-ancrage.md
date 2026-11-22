@@ -414,3 +414,17 @@
   - *Verdict final : supporté*
 - **D-15 (`L137`) — Ligne « Harnais 80/20 » du tableau comparatif (`[4]`, `[5]`, `[6]`)** : vérification directe contre `SRC-026.txt` (L829–831), `SRC-006.txt` (L877) et `SRC-033.txt` (transactions compensatoires).
   - *Verdict final : supporté*
+
+---
+
+## Contrôle différentiel post-lissage G5
+
+- **Date et portée** : 2026-11-22 — Audit différentiel indépendant `auditeur-wyvern` (`git diff HEAD` depuis `fe6e945`) sur `ch04` (`36` éléments différentiels contrôlés : `22` lignes de retrait mécanique de rétro-apostrophes vérifiées exactes sur sigles/identifiants et `14` blocs substantiels `L5`, `L19`, `L43`, `L49`, `L51`, `L63`, `L81`, `L93`, `L103`, `L111`, `L119`, `L121`, `L136`, `L137`).
+- **Primaires `L+` vérifiés** : `SRC-002.txt` (`[1]`), `SRC-006.txt` (`[4]`), `SRC-026.txt` (`[5]`), `SRC-034.txt` (`[7]`), `SRC-035.txt` (`[8]`), `SRC-036.txt` (`[9]`), `SRC-037.txt` (`[10]`), `SRC-038.txt` (`[11]`), `SRC-039.txt` (`[12]`), `SRC-041.txt` (`[13]`), `SRC-046.txt` (`[14]`), `SRC-057.txt` (`[15]`), `SRC-068.txt` (`[16]`), ainsi que `sources/ch04-sources.md` et le renvoi au chapitre 08 (`L19`, `L103`).
+- **Rectifications appliquées dans le manuscrit (`5`)** :
+  1. `L49` (`SPIFFE` `SRC-046.txt`, `OpenTelemetry` `SRC-037.txt`) : retiré le qualificatif « locale » absent de `SRC-046.txt` devant `API Workload`, rétabli « document éphémère » (contre le rejeu de jetons) et « sous un attribut stable tel que `gen_ai.agent.id` ».
+  2. `L51` (`RFC 8693` `SRC-041.txt` § 4.4, `Kraishan` `SRC-057.txt` § 4.1.1) : rétabli « sur le jeton présenté » pour `may_act` et la disjonction explicite (« soit une autorité ambiante, soit un transfert direct de jetons ») dont la seconde seule efface la trace en aval.
+  3. `L63` (`Temporal` `SRC-034.txt` L160) : rétabli la démarcation « ou, pour un agent, inférence LLM » afin de ne pas attribuer l'exemple LLM à la documentation `Temporal` `[7]`.
+  4. `L81` (`Idempotency-Key` `SRC-036.txt` § 2.2, § 2.4) : rétabli le caractère recommandé de l'UUID aléatoire à haute entropie et optionnel côté ressource (`MAY`) de l'empreinte de charge utile.
+  5. `L121` (`OpenTelemetry GenAI` `SRC-037.txt` L62/L236, `Tomašev et al.` `SRC-002.txt` L1678–1683) : rétabli la distinction `gen_ai.agent.id` (création) vs `gen_ai.agent.name` (invocation) et dissocié les spans `OpenTelemetry` `[10]` des registres cryptographiquement intègres et pistes d'audit normalisées exigés par `[1]`.
+- **Verdict différentiel final post-G5** : `36 / 36` items (`100 %` `supporté`), **`0` imprécis résiduel**, **`0` non supporté résiduel**, aucun tableau ajouté ni supprimé, aucune collision `CA-03` ni motif `CA-02`.

@@ -713,3 +713,29 @@ Chaque paragraphe, puce, ligne de tableau, légende de figure et point d'encadr�
   - **Ancrage** : `[8]` (`SRC-063`, `art. 12.1 al. 3`), `[9]` (`SRC-064`, `L7230`–`L7231`), renvois Chap. 7 et 11.
   - **Constat post-G4** : supporté.
   - Verdict final : supporté
+
+---
+
+## Contrôle différentiel post-lissage G5
+
+- **Périmètre contrôlé** : `git diff HEAD` (depuis `fe6e945`) sur [Chapitre 10 - Le laboratoire reglemente.md](../manuscrit/04%20-%20Partie%20IV/Chapitre%2010%20-%20Le%20laboratoire%20reglemente.md) — `53` lignes modifiées (`15` lignes de retrait exclusif de rétro-apostrophes vérifiées pour identifiants et acronymes, `38` lignes reformulées, scindées ou comprimées contrôlées mot pour mot contre [ch10-sources.md](../sources/ch10-sources.md) et `corpus_l_plus/SRC-*.txt`, `2` tableaux intacts, `137` appels `[n]` et `170` occurrences de renvois vérifiés intacts, `5 055` mots).
+- **Rectifications effectuées au manuscrit (`15` paragraphes/lignes)** :
+  1. `L5` : insertion d'une virgule (`au 1er novembre 2026, 210 déploiements`) évitant la collision visuelle et numérique de `2026` et `210`.
+  2. `L7` : rétablissement de « dans les lois sur les données et l'IA » pour ne pas prêter de sanctions pécuniaires directes à la ligne directrice `E-23` (`[10]`).
+  3. `L17` : rétablissement du critère statutaire « lorsqu'il est nécessaire » à l'exception de l'article `12`, al. `2`, par. `3°` (`SRC-063.txt`).
+  4. `L19` : rétablissement de « pour les utiliser à des fins sérieuses et légitimes » (`art. 23`) et « tests nécessaires de protection et de sécurité » (`art. 12`, `SRC-063.txt`).
+  5. `L21` : rétablissement de « prestation électronique de services » (`art. 3.3`), « mandat ou au contrat » et « ou tentative de violation » (`art. 18.3`), « enquête autorisée par la loi » et du seuil légal critique « en cas de risque de préjudice sérieux » (`art. 3.5`, `SRC-063.txt`).
+  6. `L23` : rétablissement de la sanction de l'omission d'`ÉFVP` (`rec. 52`) et de la distinction avec le registre interne d'`ÉFVP` (`rec. 54`, `SRC-064.txt`), précision « de renseignements personnels » pour l'aspiration Web brute (`§ 2.1.4`), et rétablissement de « à une personne désignée par la CAI d'imposer à une entreprise » (`art. 90.1`, `90.12`) et de « (le plus élevé) » (`art. 91`, `SRC-063.txt`).
+  7. `L25` : rétablissement de « une fois les fins accomplies et les délais légaux expirés » (`art. 23`).
+  8. `L31` : rétablissement de « cote de risque de modélisation » (`C.2`) et « plans de contingence et d'urgence » (`principe 3.6`, `SRC-065.txt`).
+  9. `L33` : rétablissement de « bulletin sur le risque technologique », de la portée « pour les décisions importantes ou à fort impact » pour la supervision humaine documentée (`SRC-066.txt` `l. 217`), et de « à moindre privilège ».
+  10. `L45` : rétablissement de l'exception de l'`art. 50(1)` (« lorsque cela ne ressort pas clairement »), du sujet « les fournisseurs de contenus synthétiques » (`art. 50(2)`), et restriction de l'exception d'examen et responsabilité éditoriaux aux seuls textes publiés sur des questions d'intérêt public (`art. 50(4)`, sans l'étendre aux hypertrucages, `SRC-060.txt`).
+  11. `L47` : rétablissement de « sur le plan de surveillance après commercialisation » (`art. 72(3)`, `SRC-061.txt`).
+  12. `L53` : rétablissement de « registre des accords de services TIC » (`DORA`, `SRC-062.txt`).
+  13. `L55` : précision « dépendances tierces » (`SRC-052.txt`).
+  14. `L86` : rétablissement de « publication différée de l'avis anticipé », « entrée en vigueur attendue » et « toute personne ou société inscrite » (`SRC-069.txt`).
+  15. `L102` : rétablissement de « apparenté qui n'est pas une institution financière fédérale » (`art. 495.2(1)`) et du champ exact de l'article `627.15` (« interdit de collaborer avec un intermédiaire ou une entité du groupe visée sans parité de protection des consommateurs, de plaintes et de signalement », `SRC-070.txt`).
+- **Certification différentielle post-lissage G5** :
+  - Verdict différentiel : **100 % `supporté`**
+  - Imprécis résiduel : `0`
+  - Non supporté résiduel : `0`

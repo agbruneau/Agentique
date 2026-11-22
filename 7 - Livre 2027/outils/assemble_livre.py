@@ -269,6 +269,231 @@ def _escape_typst_content(text: str) -> str:
     return text.replace("\\", "\\\\").replace("#", "\\#").replace("$", "\\$").replace("[", "\\[").replace("]", "\\]")
 
 
+def _strip_typst_markup(cell: str) -> str:
+    s = re.sub(r"#(?:strong|emph|link\([^)]*\))\[", "", cell)
+    s = s.replace("[", "").replace("]", "").replace("`", "")
+    s = re.sub(r"\\([\[\]$#_])", r"\1", s)
+    return " ".join(s.split())
+
+
+def _break_long_tokens_in_cell(cell: str) -> str:
+    def _wrap_raw(m: re.Match[str]) -> str:
+        inner = m.group(1)
+        if len(inner) >= 14:
+            inner = re.sub(r"([_./:])(?=[A-Za-z0-9])", lambda x: x.group(1) + "\u200b", inner)
+        return f"`{inner}`"
+
+    return re.sub(r"`([^`\n]+)`", _wrap_raw, cell)
+
+
+def _split_top_level_args(body: str) -> list[str]:
+    args: list[str] = []
+    cur: list[str] = []
+    paren_stack = [0]
+    in_str = False
+    in_raw = False
+    i = 0
+    n = len(body)
+    while i < n:
+        ch = body[i]
+        if in_str:
+            cur.append(ch)
+            if ch == "\\" and i + 1 < n:
+                cur.append(body[i + 1])
+                i += 2
+                continue
+            if ch == '"':
+                in_str = False
+            i += 1
+            continue
+        if in_raw:
+            cur.append(ch)
+            if ch == "`":
+                in_raw = False
+            i += 1
+            continue
+        if ch == "\\":
+            cur.append(ch)
+            if i + 1 < n:
+                cur.append(body[i + 1])
+                i += 2
+                continue
+        elif ch == '"':
+            in_str = True
+        elif ch == "`":
+            in_raw = True
+        elif ch == "[":
+            paren_stack.append(0)
+        elif ch == "]":
+            if len(paren_stack) > 1:
+                paren_stack.pop()
+        elif ch == "(":
+            paren_stack[-1] += 1
+        elif ch == ")":
+            paren_stack[-1] = max(0, paren_stack[-1] - 1)
+        elif ch == "," and len(paren_stack) == 1 and paren_stack[0] == 0:
+            args.append("".join(cur))
+            cur = []
+            i += 1
+            continue
+        cur.append(ch)
+        i += 1
+    if "".join(cur).strip():
+        args.append("".join(cur))
+    return args
+
+
+def _rebalance_single_table(table_inner: str) -> str:
+    args = _split_top_level_args(table_inner)
+    col_idx = -1
+    ncols = 0
+    for idx, arg in enumerate(args):
+        m = re.match(r"^\s*columns:\s*\(([^)]+)\)\s*$", arg, re.DOTALL)
+        if m:
+            col_idx = idx
+            ncols = len([x for x in m.group(1).split(",") if x.strip()])
+            break
+    if col_idx < 0 or ncols <= 1:
+        return table_inner
+
+    cell_texts: list[str] = []
+    new_args: list[str] = []
+    for arg in args:
+        st = arg.strip()
+        if st.startswith("table.header(") and st.endswith(")"):
+            h_inner = st[len("table.header(") : -1]
+            h_args = _split_top_level_args(h_inner)
+            fixed_h = []
+            for h in h_args:
+                hs = h.strip()
+                if hs.startswith("[") and hs.endswith("]"):
+                    cell_texts.append(_strip_typst_markup(hs))
+                    hs = _break_long_tokens_in_cell(hs)
+                fixed_h.append(hs)
+            new_args.append("\n    table.header(" + ", ".join(fixed_h) + ",)")
+        elif st.startswith("[") and st.endswith("]"):
+            cell_texts.append(_strip_typst_markup(st))
+            new_args.append(arg.replace(st, _break_long_tokens_in_cell(st), 1))
+        else:
+            new_args.append(arg)
+
+    if len(cell_texts) < ncols:
+        return table_inner
+
+    col_scores: list[float] = []
+    min_shares: list[float] = []
+    for c in range(ncols):
+        vals = [cell_texts[i] for i in range(c, len(cell_texts), ncols)]
+        lens = sorted(len(v) for v in vals)
+        med = lens[len(lens) // 2]
+        p90 = lens[min(len(lens) - 1, int(0.9 * len(lens)))]
+        hdr_len = len(vals[0]) if vals else 4
+        # Respect exact longest unbroken word width in column (especially narrow header/label columns)
+        max_word = max((max((len(w) for w in v.split()), default=0) for v in vals), default=0)
+        hdr_max_word = max((len(w) for w in vals[0].split()), default=0) if vals else 0
+        eff_word = max(max_word, hdr_max_word)
+        req_floor = max(0.095, min(0.27, (eff_word * 4.5 + 13.0) / 321.0))
+        min_shares.append(req_floor)
+        score = max(float(hdr_len) * 1.15, 0.55 * max(med, 5) + 0.45 * min(p90, 95), min(eff_word, 24) * 1.4)
+        col_scores.append(max(score, 8.0))
+
+    floor_sum = sum(min_shares)
+    if floor_sum > 0.85:
+        scale_f = 0.85 / floor_sum
+        min_shares = [s * scale_f for s in min_shares]
+        floor_sum = sum(min_shares)
+
+    remaining = max(0.0, 1.0 - floor_sum)
+    total_score = sum(col_scores) or 1.0
+    shares = [min_shares[c] + remaining * (col_scores[c] / total_score) for c in range(ncols)]
+    sh_sum = sum(shares)
+    pcts = [round(100.0 * s / sh_sum, 2) for s in shares]
+    pcts[-1] = round(100.0 - sum(pcts[:-1]), 2)
+    col_spec = ", ".join(f"{p:.2f}%" for p in pcts)
+
+    new_args[col_idx] = f"\n    columns: ({col_spec})"
+    return ",".join(new_args) + ("," if not table_inner.rstrip().endswith(",") else "")
+
+
+def _postprocess_typst_body(typst_src: str) -> str:
+    out: list[str] = []
+    pos = 0
+    marker = "#table("
+    n = len(typst_src)
+    while pos < n:
+        hit = typst_src.find(marker, pos)
+        if hit == -1:
+            out.append(typst_src[pos:])
+            break
+        out.append(typst_src[pos:hit])
+        i = hit + len(marker)
+        paren_stack = [1]
+        in_str = False
+        in_raw = False
+        while i < n and paren_stack[0] > 0:
+            ch = typst_src[i]
+            if in_str:
+                if ch == "\\":
+                    i += 2
+                    continue
+                if ch == '"':
+                    in_str = False
+            elif in_raw:
+                if ch == "`":
+                    in_raw = False
+            else:
+                if ch == "\\":
+                    i += 2
+                    continue
+                elif ch == '"':
+                    in_str = True
+                elif ch == "`":
+                    in_raw = True
+                elif ch == "[":
+                    paren_stack.append(0)
+                elif ch == "]":
+                    if len(paren_stack) > 1:
+                        paren_stack.pop()
+                elif ch == "(":
+                    paren_stack[-1] += 1
+                elif ch == ")":
+                    if len(paren_stack) > 1:
+                        paren_stack[-1] = max(0, paren_stack[-1] - 1)
+                    else:
+                        paren_stack[0] -= 1
+            i += 1
+        if paren_stack[0] == 0:
+            inner = typst_src[hit + len(marker) : i - 1]
+            out.append("#table(" + _rebalance_single_table(inner) + ")")
+            pos = i
+        else:
+            out.append(marker)
+            pos = hit + len(marker)
+
+    res = "".join(out)
+
+    # Centrer les legendes canoniques *Figure X — ...*, *Fig-00 — ...* et *Tableau X.Y — ...*
+    res = re.sub(
+        r"(?ms)^(#emph\[(?:Figure\s+|Fig-\d+\s+|Tableau\s+)[^\n]+(?:\n(?!\s*\n)[^\n]+)*\])(?=\s*(?:\n\s*\n|\Z))",
+        r'#align(center)[#set par(justify: false); #set text(size: 8.6pt, fill: rgb("#475569")); \1]',
+        res,
+    )
+
+    # Desactiver la justification excessive et permettre la coupure des URLs dans la bibliographie d'Annexe C
+    m_bib = re.search(r"(?m)^=+\s+Bibliographie classée des sources intégrales vérifiées\b[^\n]*(?:\n<[^>\n]+>)?", res)
+    if m_bib:
+        b_idx = m_bib.end()
+        head, tail = res[:b_idx], res[b_idx:]
+        tail = re.sub(r"(https?://[^\s`\]\)\"]+)", lambda m: m.group(1).replace("/", "/\u200b").replace("-", "-\u200b"), tail)
+        tail = re.sub(
+            r"#link\(\"([^\"]+)\"\)\[([^\]]+)\]",
+            lambda m: f'#link("{m.group(1).replace("/\u200b", "/").replace("-\u200b", "-")}")[{m.group(2)}]',
+            tail,
+        )
+        res = head + "\n\n#block(width: 100%, breakable: true)[\n#set par(justify: false, leading: 0.56em, spacing: 0.45em)\n" + tail.strip() + "\n]\n"
+    return res
+
+
 def compile_pdf(root: Path, body_md: str, meta: dict) -> Path:
     """Convertit en Typst via Pandoc, injecte dans gabarit-livre.typ et compile en PDF."""
     template_path = Path(__file__).resolve().parent / "gabarit-livre.typ"
@@ -284,6 +509,8 @@ def compile_pdf(root: Path, body_md: str, meta: dict) -> Path:
     if p.returncode != 0:
         raise RuntimeError(f"Echec pandoc -> typst (code {p.returncode}) :\n{p.stderr}")
 
+    body_typst = _postprocess_typst_body(p.stdout)
+
     typst_source = template_src
     replacements = {
         "/* {{TITLE}} */": _escape_typst_content(meta["title"]),
@@ -292,7 +519,7 @@ def compile_pdf(root: Path, body_md: str, meta: dict) -> Path:
         "/* {{FREEZE_DATE}} */": _escape_typst_content(meta["freeze_date"]),
         "/* {{PUB_DATE}} */": _escape_typst_content(meta["pub_date"]),
         "/* {{LICENSE_TEXT}} */": _escape_typst_content(meta["license_text"]),
-        "/* {{BODY_TYPST}} */": p.stdout,
+        "/* {{BODY_TYPST}} */": body_typst,
     }
     for marker, val in replacements.items():
         typst_source = typst_source.replace(marker, val)

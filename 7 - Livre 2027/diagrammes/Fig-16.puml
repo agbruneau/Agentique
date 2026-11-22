@@ -67,7 +67,7 @@ FA --> R2
 FB --> R2
 FC --> R2
 R2 --> LLM : contexte maximal permis (≤ 2)
-R2 --> LOG : refuse combinaison A+B+C
+R2 --> LOG : refuse\nA + B + C
 LLM --> GATE : demande d'outil
 REG --> GATE : vérifie signature outil
 GATE --> VM : exécution confinée

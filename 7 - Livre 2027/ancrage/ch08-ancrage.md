@@ -577,3 +577,14 @@
   - **Supportés : `100 %`** (toutes les affirmations et statistiques de `L15`–`L39`, incluant `L15`, `L21`, `L23`, `L27`–`L29`, `L31`, `L39` et les `9` lignes rectifiées, sont intégralement appuyées sur les textes `L+` de `corpus_l_plus/`).
   - **Imprécis résiduels : `0`**
   - **Non supportés résiduels : `0`**
+
+---
+
+## Contrôle différentiel post-lissage G5
+
+- **Périmètre inspecté** : intégralité du `git diff HEAD` (depuis le commit `fe6e945`) sur [Chapitre 08 - Securite par construction.md](file:///c:/Github/Agentique/7%20-%20Livre%202027/manuscrit/03%20-%20Partie%20III/Chapitre%2008%20-%20Securite%20par%20construction.md) — **49** items contrôlés (`12` lignes à simple retrait de rétro-apostrophes et `37` lignes/paragraphes comportant des retouches rédactionnelles), vérifiés contre `sources/ch08-sources.md` (`[1]`–`[13]`), `corpus_l_plus/*.txt`, les registres et `verifie_manuscrit.py --unit ch08 --strict`.
+- **Rectifications appliquées** (`15` paragraphes ajustés) : `L17` (`OWASP ASI06`/`ASI09` : « entrepôts RAG et plongements » et « commandes malveillantes ou des actions préjudiciables » selon `SRC-055.txt`), `L19` (« extraire des pièces privées et à les exfiltrer »), `L23` (« serveur de confiance » selon `MCP` `SRC-038.txt`), `L25` (« dont la précision est mesurée sur 414 cas » corrigeant la régression « calibrés » contre `A29` / `SRC-057.txt`), `L37` (énoncés `COSE_Sign1` et reçus `COSE` en ajout seul sous politiques d'enregistrement transparentes et émetteur autorisé selon `RFC 9943`), `L43` (« signaler les données suspectes » et « désescalade douce de consignes » selon `SRC-056.txt`), `L49` (« taux de succès d'attaque non nul »), `L54` (« baisse artificielle de l'utilité bénigne mesurée » selon `A53`), `L68` (« tout message d'exception dépendant d'une donnée non fiable et retourné au P-LLM » selon `CaMeL` § 5.4), `L82` (dissociation nette `LLMbda` `[10]` vs absence d'atomicité/compensation `CaMeL` `[1]`), `L84` (« par rapport à CaMeL individuel » rétabli pour l'écart `3,2` / `0,85` point sur `AssetOpsBench`, corrigeant une régression critique sur `A78`), `L98` (« système de fichiers » selon `SRC-057.txt`), `L100` (« lorsque l'outil requiert des binaires système complets »), `L104` (octroi vérifiable du serveur d'autorisation selon `AIMS` § 10.8, « plages d'adresses IP privées » selon `A2A` § 13.2 et « `SHA-256` dans les preuves d'inclusion » selon `RFC 9943`), `L112` (« recommande » au lieu d'« exige » pour le bulletin `BSIF` de juillet 2026 `SRC-066.txt`).
+- **Taux d'ancrage certifié post-G5** : **100 % `supporté`**
+- **Imprécis résiduel** : **0**
+- **Non supporté résiduel** : **0**
+

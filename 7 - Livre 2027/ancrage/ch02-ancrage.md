@@ -539,3 +539,15 @@
 - **Couverture globale certifiée (`ch02`, `A001–A079`)** : `100 %` `supporté` (`79/79`)
 - **Imprécis résiduel** : `0`
 - **Non supporté résiduel** : `0`
+
+---
+
+## Contrôle différentiel post-lissage G5
+
+- **Périmètre contrôlé** : `git diff HEAD` sur `manuscrit/01 - Partie I/Chapitre 02 - L epreuve des mesures.md` depuis `fe6e945` — `47` items différentiels (`31` lignes à retrait seul de rétro-apostrophes et `16` blocs substantifs couvrant `L13`, `L17`, `L19`, `L21`, `L23`, `L49`, `L68`–`L74`, `L80`, `L84`, `L86`, `L102`, `L112`, `L120`), vérifiés contre `sources/ch02-sources.md` et `recherche/corpus_l_plus/*.txt`.
+- **Constat et rectifications appliquées dans `Chapitre 02`** :
+  - `31` lignes à retrait seul de rétro-apostrophes et `12` blocs substantifs conformes d'emblée ; `2` tableaux et renvois `[n]` intacts.
+  - `4` paragraphes rectifiés directement dans le manuscrit : `L68` (rétablissement des dénominateurs exacts `entreprises utilisatrices de l'IA` et `parmi celles prévoyant d'y recourir` pour `SRC-014.txt`/`SRC-015.txt`, libellé complet `très peu fréquent, expérimental ou en projets pilotes` et filtre de sous-échantillon `parmi les firmes utilisatrices ou planifiant d'adopter l'IA` pour `SRC-016.txt`), `L70` (`synthèses reprises par Stanford HAI`, `+0,01 point de pourcentage`, `environ deux tiers ou plus` et suppression de l'exclusivité erronée `hormis le secteur technologique` au profit de `taux comparativement plus élevés` selon `SRC-008.txt`), `L72` (attribution exacte de `80 %` / `72 %` aux `praticiens sondés` plutôt qu'aux `équipes interrogées`, remplacement de `graphes d'exécution fixes` par `flux structurés fixes` selon `SRC-027.txt`, et séparation entre l'apport `[16]` et la qualification normative `régime L1`), `L102` (rétablissement de la définition exacte de l'`ACI` selon `SRC-003.txt`).
+- **Verdict final — supporté** : `100 %` (`47/47` items différentiels)
+- **Imprécis résiduel** : `0`
+- **Non supporté résiduel** : `0`

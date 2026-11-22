@@ -18,6 +18,7 @@ REAL_BOOK_DIR = TOOLS_DIR.parent
 if str(TOOLS_DIR) not in sys.path:
     sys.path.insert(0, str(TOOLS_DIR))
 
+from assemble_livre import _postprocess_typst_body  # noqa: E402
 from echantillon_aq import draw_stratified_sample  # noqa: E402
 from genere_annexes import build_annexes  # noqa: E402
 from verifie_manuscrit import check_manuscrit, count_prose_words  # noqa: E402
@@ -706,3 +707,17 @@ def test_cli_echantillon_and_check_deliverables_end_to_end(tmp_book: Path) -> No
     (aq_dir / "recollation-seed-202702.md").unlink()
     errs = check_manuscrit(tmp_book, strict=True, check_deliverables=True)
     assert any("CA-14" in e for e in errs)
+
+
+def test_postprocess_typst_table_escaped_open_paren_in_cell() -> None:
+    sample = (
+        "#table(\n"
+        "  columns: (auto, auto),\n"
+        "  table.header([Piège], [Conséquence],),\n"
+        "  [6. Choc tarifaire #emph[\\(nommé ici)]], [Facture],\n"
+        ")"
+    )
+    out = _postprocess_typst_body(sample)
+    assert "ici,)" not in out
+    assert "#emph[\\(nommé ici)]" in out
+    assert out.count("%") == 2

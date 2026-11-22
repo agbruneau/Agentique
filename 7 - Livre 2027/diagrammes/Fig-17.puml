@@ -41,21 +41,22 @@ skinparam defaultFontName "DejaVu Sans"
 skinparam defaultFontSize 11
 skinparam shadowing false
 skinparam roundcorner 8
-skinparam nodesep 16
-skinparam ranksep 24
-skinparam padding 6
+skinparam packageStyle frame
+skinparam nodesep 24
+skinparam ranksep 30
+skinparam padding 8
 
 rectangle "Inférence du modèle\n(invites et réponses brutes)" as LLM <<prob>>
 rectangle "Harnais d'agent déterministe\n(événements d'exécution)" as HARN <<det>>
 rectangle "Séparateur déterministe de flux\n(routage à la source)" as SPLIT <<det>>
 
-package "Couloir 1 : Télémétrie opérationnelle" {
-  rectangle "Filtre de minimisation et\ncaviardage des renseignements personnels" as REDACT <<det>>
+package "Couloir 1" {
+  rectangle "Filtre de minimisation et\ncaviardage des RP" as REDACT <<det>>
   rectangle "Métadonnées OpenTelemetry GenAI\n(latence, jetons, erreurs sans RP)" as OTEL <<det>>
   rectangle "Supervision SRE et FinOps\n(exploitation courante)" as SRE <<ext>>
 }
 
-package "Couloir 2 : Journal d'audit probatoire" {
+package "Couloir 2" {
   rectangle "Canonisation JCS (RFC 8785)\n(forme déterministe des preuves)" as JCS <<det>>
   rectangle "Chaînage SHA-256 et horodatage\n(intégrité cryptographique)" as HASH <<det>>
   database "Stockage immuable WORM\n(accès cloisonné par mandat)" as WORM <<det>>
@@ -65,11 +66,11 @@ package "Couloir 2 : Journal d'audit probatoire" {
 
 LLM --> HARN : sortie brute
 HARN --> SPLIT : événement complet
-SPLIT --> REDACT : métriques
-REDACT --> OTEL : zéro donnée personnelle
+SPLIT -down-> REDACT
+REDACT --> OTEL : zéro donnée\npersonnelle
 OTEL --> SRE
 
-SPLIT --> JCS : actes probatoires
+SPLIT -down-> JCS
 JCS --> HASH : empreinte liée
 HASH --> WORM : écriture append-only
 PURGE --> WORM : cycle de conservation

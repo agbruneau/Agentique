@@ -452,3 +452,22 @@
   - **Supportés : `100 %`**
   - **Imprécis résiduels : `0`**
   - **Non supportés résiduels : `0`**
+
+---
+
+## Contrôle différentiel post-lissage G5
+
+- **Périmètre contrôlé** : `git diff HEAD` (depuis `fe6e945`) sur [Chapitre 11 - Les sept pieges et l atrophie des competences.md](../manuscrit/04%20-%20Partie%20IV/Chapitre%2011%20-%20Les%20sept%20pieges%20et%20l%20atrophie%20des%20competences.md) — `40` lignes modifiées (`9` lignes de retrait exclusif de rétro-apostrophes vérifiées pour identifiants et acronymes, `31` lignes reformulées, scindées ou fusionnées contrôlées mot pour mot contre [ch11-sources.md](../sources/ch11-sources.md) et `corpus_l_plus/SRC-*.txt`, `2` tableaux intacts, `85` appels `[n]` et `96` occurrences de renvois vérifiés intacts, `5 013` mots).
+- **Rectifications effectuées au manuscrit (`8` paragraphes)** :
+  1. `L17` : rétablissement de « `80 %` des cas étudiés (`16` sur `20`) » (`SRC-027.txt` `§ 5.4`), évitant d'attribuer ce taux aux `86` systèmes déployés de l'enquête.
+  2. `L27` : rétablissement de « de la compréhension et de la mémoire des contraintes métier » (`SRC-040.txt`).
+  3. `L41` : rétablissement du délai statutaire « au plus tard lors de la décision » et du qualificatif « principaux » (« principaux facteurs et paramètres ») à l'article `12.1` (`SRC-063.txt`).
+  4. `L45` : rétablissement de la portée « pour les décisions importantes » sur l'imputabilité humaine documentée (`SRC-066.txt` `l. 217`).
+  5. `L55` : levée d'ambiguïté sur Cui *et al.* : « n'appuie faiblement l'hypothèse d'un codage par essai et erreur que dans l'essai Accenture » (`SRC-010.txt` `l. 769–771`).
+  6. `L57` : rétablissement de « la génération de code ou de dossiers » pour la perte de mémoire transactive (`SRC-040.txt`).
+  7. `L59` : alignement de l'article `15(4)` de l'*EU AI Act* sur l'exigence de « résilience aux défaillances, au besoin par des plans de sauvegarde » (`SRC-060.txt`) et du bulletin `BSIF` sur « tester des scénarios de panne d'IA » (`SRC-066.txt` `l. 495`).
+  8. `L67` : rétablissement de l'attribution exacte des renvois `[15, 17]` aux heuristiques de survol et biais sous pression combattus par le mécanisme de dossiers témoins, sans prêter l'injection de cas témoins ni la suspension sur taux d'infirmation à `[15, 17]` (`SRC-073.txt`, `SRC-075.txt`).
+- **Certification différentielle post-lissage G5** :
+  - Verdict différentiel : **100 % `supporté`**
+  - Imprécis résiduel : `0`
+  - Non supporté résiduel : `0`

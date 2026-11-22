@@ -41,11 +41,12 @@ skinparam defaultFontName "DejaVu Sans"
 skinparam defaultFontSize 11
 skinparam shadowing false
 skinparam roundcorner 8
+skinparam packageStyle frame
 skinparam nodesep 14
 skinparam ranksep 18
 skinparam padding 5
 
-package "Socle invariant sans regret (2027–2032)" {
+package "Socle sans regret (2027–2032)" {
   rectangle "2027 : Noyau sans regret\n(80/20, NHI, journal)" as S27 <<det>>
   rectangle "2027–2029 : Collision PKI\n(TLS 100 j → 47 j mars 2029)" as PKI <<det>>
   rectangle "Agilité cryptographique\net passerelles adaptables" as AGIL <<det>>
@@ -53,7 +54,7 @@ package "Socle invariant sans regret (2027–2032)" {
   rectangle "Capteurs de signaux\net portes budgétaires DAPP" as SIG <<det>>
 }
 
-package "Bifurcations conditionnelles (2028–2035)" {
+package "Bifurcations (2028–2035)" {
   rectangle "Scénario A : Socle\nouvert (MCP / A2A)" as SA <<prob>>
   rectangle "Scénario B : Archipel\nde suites fermées" as SB <<prob>>
   rectangle "Scénario C : Blocs\nsouverains isolés" as SC <<prob>>
@@ -68,9 +69,9 @@ S27 --> PKI
 PKI --> AGIL : automatisation
 AGIL --> PQC : absorption taille
 S27 --> SIG : veille budgétée
-SIG ..> SA : ouverture
-SIG ..> SB : fermeture
-SIG ..> SC : fragmentation
+SIG ..> SA
+SIG ..> SB
+SIG ..> SC
 SA --> OA
 SB --> OB
 SC --> OC
