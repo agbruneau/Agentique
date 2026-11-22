@@ -426,6 +426,34 @@ def test_registry_accuracy_ca07_detects_numeric_and_date_drift(tmp_book: Path) -
     assert len(ca07_errors) >= 2
 
 
+def test_ca07_junior_dev_no_false_positives_and_catches_ch11_drift(tmp_book: Path) -> None:
+    ch02 = tmp_book / "manuscrit" / "01 - Partie I" / "Chapitre 02 - L epreuve des mesures.md"
+    txt2 = ch02.read_text(encoding="utf-8")
+    txt2 = txt2.replace(
+        "Paragraphe 0",
+        (
+            "Dans un essai METR cité par Stanford HAI, des développeurs expérimentés travaillent -19 % plus lentement [1].\n\n"
+            "Dans l'enquête McKinsey citée par Stanford HAI, 88 % utilisent l'IA et 22 % en exploitation informatique [1].\n\n"
+            "Selon Stanford HAI 2026 sur AA-Omniscience, les taux d'erreur vont de 22 % à 94 % [1].\n\n"
+            "Paragraphe 0"
+        ),
+        1,
+    )
+    ch02.write_text(txt2, encoding="utf-8")
+
+    # Aucun faux positif sur ch02
+    assert check_manuscrit(tmp_book, strict=True) == []
+
+    # Mais une derive reelle sur ch11 (20 % -> 35 %) est detectee
+    ch11 = tmp_book / "manuscrit" / "04 - Partie IV" / "Chapitre 11 - Les sept pieges et l atrophie des competences.md"
+    ch11.write_text(
+        ch11.read_text(encoding="utf-8").replace("près de 20 %", "près de 35 %"),
+        encoding="utf-8",
+    )
+    errors = check_manuscrit(tmp_book, strict=True)
+    assert any("CA-07" in e and "FACT-JUNIOR-DEV-CONTRACTION" in e for e in errors)
+
+
 def test_two_seeds_produce_disjoint_60_item_samples(tmp_book: Path) -> None:
     s1 = draw_stratified_sample(tmp_book, seed=202701, exclude_ids=set())
     excluded = {x["claim_loc"] for x in s1} | {x["paragraph_loc"] for x in s1}

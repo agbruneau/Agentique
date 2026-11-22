@@ -642,7 +642,13 @@ def _fact_matches_sentence(fact_id: str, sent_lower: str) -> tuple[bool, bool]:
     if fact_id == "FACT-CAMEL-AGENTDOJO":
         return ("camel" in sent_lower and "agentdojo" in sent_lower and "%" in sent_lower), True
     if fact_id == "FACT-JUNIOR-DEV-CONTRACTION":
-        return ("stanford hai" in sent_lower and ("22" in sent_lower or "développeur" in sent_lower) and "%" in sent_lower), True
+        has_age_or_cohort = (
+            "22 à 25" in sent_lower
+            or "22-25" in sent_lower
+            or "jeunes développeurs" in sent_lower
+            or ("emploi" in sent_lower and "développeur" in sent_lower)
+        )
+        return ("stanford hai" in sent_lower and has_age_or_cohort and "%" in sent_lower), True
     if fact_id == "FACT-PQC-SIGNATURE-SIZE":
         return (("ml-dsa-65" in sent_lower or "ml-dsa-87" in sent_lower) and "octet" in sent_lower), True
     return False, False
