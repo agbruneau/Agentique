@@ -1,0 +1,1189 @@
+THEME DEBUG
+THEME HOOK: 'region'
+FILE NAME SUGGESTIONS:
+▪️ region--content--gcweb.html.twig
+▪️ region--content.html.twig
+✅ region.html.twig
+
+BEGIN OUTPUT from 'themes/contrib/wxt_bootstrap/templates/system/region.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'block'
+FILE NAME SUGGESTIONS:
+▪️ block--content--gcweb--osfi-wxt-content.html.twig
+▪️ block--content--osfi-wxt-content.html.twig
+▪️ block--osfi-wxt-content.html.twig
+▪️ block--system-main-block.html.twig
+✅ block--system.html.twig
+▪️ block.html.twig
+
+BEGIN OUTPUT from 'themes/contrib/wxt_bootstrap/templates/block/block--system.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'node'
+FILE NAME SUGGESTIONS:
+▪️ node--3412--full.html.twig
+▪️ node--3412.html.twig
+✅ node--general-content--full.html.twig
+▪️ node--general-content.html.twig
+▪️ node--full.html.twig
+▪️ node.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/node/node--general-content--full.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'field'
+FILE NAME SUGGESTIONS:
+▪️ field--node--title--general-content.html.twig
+✅ field--node--title.html.twig
+▪️ field--node--general-content.html.twig
+▪️ field--title.html.twig
+▪️ field--string.html.twig
+▪️ field.html.twig
+
+BEGIN OUTPUT from 'core/modules/node/templates/field--node--title.html.twig'
+
+Generative and Agentic Artificial Intelligence: Implications for Technology, Cyber Security, and Operational Resilience
+
+END OUTPUT from 'core/modules/node/templates/field--node--title.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'field'
+FILE NAME SUGGESTIONS:
+✅ field--body-container.html.twig
+▪️ field--node--body--general-content.html.twig
+▪️ field--node--body.html.twig
+▪️ field--node--general-content.html.twig
+▪️ field--body.html.twig
+▪️ field--text-with-summary.html.twig
+▪️ field.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/field/field--body-container.html.twig'
+
+Date: July 2026
+
+Introduction
+
+Generative artificial intelligence (Gen AIFootnote 1 ) enables content creation, while agentic AIFootnote 2 introduces autonomous reasoning and execution. Although these technologies enhance productivity, they also amplify the speed, scale, and automation of cyber and operational risks, driving a structural shift in the risk landscape and challenging existing risk management frameworks.
+
+Earlier this year, we raised awareness of risks associated with frontier AIFootnote 3 models. This bulletin builds on that work and outlines sound practices to help institutions manage risks associated with use of generative and agentic AI. These practices align with our Guidelines B-13 – Technology and Cyber Risk Management (B-13), E-21 – Operational Risk Management and Resilience (E-21) and B-10 – Third-Party Risk Management (B-10).
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/field/field--body-container.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'field'
+FILE NAME SUGGESTIONS:
+▪️ field--node--field-wdcb--general-content.html.twig
+▪️ field--node--field-wdcb.html.twig
+▪️ field--node--general-content.html.twig
+✅ field--field-wdcb.html.twig
+▪️ field--entity-reference-revisions.html.twig
+▪️ field.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/field/field--field-wdcb.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'paragraph'
+FILE NAME SUGGESTIONS:
+▪️ paragraph--wdcb-section--default.html.twig
+✅ paragraph--wdcb-section.html.twig
+▪️ paragraph--default.html.twig
+▪️ paragraph.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-section.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'field'
+FILE NAME SUGGESTIONS:
+▪️ field--paragraph--field-wdcb-columns--wdcb-section.html.twig
+▪️ field--paragraph--field-wdcb-columns.html.twig
+▪️ field--paragraph--wdcb-section.html.twig
+✅ field--field-wdcb-columns.html.twig
+▪️ field--entity-reference-revisions.html.twig
+▪️ field.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/field/field--field-wdcb-columns.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'paragraph'
+FILE NAME SUGGESTIONS:
+▪️ paragraph--wdcb-columns--column.html.twig
+✅ paragraph--wdcb-columns.html.twig
+▪️ paragraph--column.html.twig
+▪️ paragraph.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-columns.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'field'
+FILE NAME SUGGESTIONS:
+▪️ field--paragraph--field-column-content--wdcb-columns.html.twig
+▪️ field--paragraph--field-column-content.html.twig
+▪️ field--paragraph--wdcb-columns.html.twig
+▪️ field--field-column-content.html.twig
+▪️ field--text-long.html.twig
+✅ field.html.twig
+
+BEGIN OUTPUT from 'themes/contrib/wxt_bootstrap/templates/field/field.html.twig'
+
+Enhance governance and strategic accountability
+
+AI adoption can outpace governance frameworks. AI systems can act with limited human oversight and with heightened reliance on third-party models, plugins, data, and application programming interfaces (APIs). At the same time, gaps in senior management understanding can lead to over-reliance on vendor-provided assessments, limiting effective scrutiny of AI behaviour.
+
+Institutions can assess whether their governance frameworks adequately address risks from rapid AI adoption, autonomous decision-making, and third-party dependencies. Consistent with B-13 Principles 1 to 3, institutions can consider the following risk control and mitigation measures:
+
+strengthen senior management literacy
+
+align AI strategy with risk appetite, with clear escalation triggers to enable timely risk response and intervention
+
+integrate AI risks into the enterprise risk management framework —covering cyber, technology, model, and third‑party risks—to ensure consistent identification, aggregation, and mitigation of interconnected risks
+
+ensure robust oversight of AI-related third‑party dependencies
+
+define ownership across the AI lifecycle and establish limits on autonomy
+
+implement AI harnessingFootnote 4 alongside human oversight to maintain accountability and prevent unintended actions
+
+Additionally, institutions can refer to our Corporate Governance Guideline for expectations on governance, including the role of the Board and Senior Management in promoting a risk culture grounded in integrity and effective risk management.
+
+END OUTPUT from 'themes/contrib/wxt_bootstrap/templates/field/field.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-columns.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/field/field--field-wdcb-columns.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-section.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'paragraph'
+FILE NAME SUGGESTIONS:
+▪️ paragraph--wdcb-section--default.html.twig
+✅ paragraph--wdcb-section.html.twig
+▪️ paragraph--default.html.twig
+▪️ paragraph.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-section.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'field'
+FILE NAME SUGGESTIONS:
+▪️ field--paragraph--field-wdcb-columns--wdcb-section.html.twig
+▪️ field--paragraph--field-wdcb-columns.html.twig
+▪️ field--paragraph--wdcb-section.html.twig
+✅ field--field-wdcb-columns.html.twig
+▪️ field--entity-reference-revisions.html.twig
+▪️ field.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/field/field--field-wdcb-columns.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'paragraph'
+FILE NAME SUGGESTIONS:
+▪️ paragraph--wdcb-columns--column.html.twig
+✅ paragraph--wdcb-columns.html.twig
+▪️ paragraph--column.html.twig
+▪️ paragraph.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-columns.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'field'
+FILE NAME SUGGESTIONS:
+▪️ field--paragraph--field-column-content--wdcb-columns.html.twig
+▪️ field--paragraph--field-column-content.html.twig
+▪️ field--paragraph--wdcb-columns.html.twig
+▪️ field--field-column-content.html.twig
+▪️ field--text-long.html.twig
+✅ field.html.twig
+
+BEGIN OUTPUT from 'themes/contrib/wxt_bootstrap/templates/field/field.html.twig'
+
+Maintain information and decision integrity
+
+Gen AI processes large volumes of sensitive and proprietary data from prompts, internet sources, and other training datasets. However, it can produce hallucinated outputs, leading to inaccurate or misleading results—particularly when underlying data is ambiguous, inconsistent, or incomplete. Agentic AI can amplify risks of Gen AI by acting on such outputs, which can trigger unvalidated downstream actions and lead to data leakage, among other financial and non-financial impacts.
+
+Other key risks include data leakage through prompts, outputs, logs, third-party providers or AI users, as well as limited explainability and auditability of AI outputs.
+
+Institutions can assess the effectiveness of their controls across the end-to-end AI lifecycleFootnote 5 —including inputs, prompts, data sources, outputs, and downstream decisions—and can consider the following risk control and mitigation measures consistent with Guideline B-13 principles 3, 4, 5, 14, and 15:
+
+apply data classification and provenanceFootnote 6 controls to ensure data lineage and integrity is maintained
+
+restrict AI inputs to trusted and approved data sources
+
+prohibit sensitive data use in public or unapproved AI tools
+
+treat AI-generated outputs as inputs to decision-making rather than definitive outcomes
+
+ensure human oversight with accountability for material or high-impact decisions, with clear and auditable documentation to demonstrate how AI outputs inform analysis and final outcomes
+
+monitor prompts and outputs to enable early detection of anomalies and policy violations
+
+Additionally, given that AI models use diverse data sources and complex techniques that can heighten several aspects of model risk, institutions can refer to our Guideline E-23 – Model Risk Management for expectations on enterprise-wide model risk management.
+
+END OUTPUT from 'themes/contrib/wxt_bootstrap/templates/field/field.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-columns.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/field/field--field-wdcb-columns.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-section.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'paragraph'
+FILE NAME SUGGESTIONS:
+▪️ paragraph--wdcb-section--default.html.twig
+✅ paragraph--wdcb-section.html.twig
+▪️ paragraph--default.html.twig
+▪️ paragraph.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-section.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'field'
+FILE NAME SUGGESTIONS:
+▪️ field--paragraph--field-wdcb-columns--wdcb-section.html.twig
+▪️ field--paragraph--field-wdcb-columns.html.twig
+▪️ field--paragraph--wdcb-section.html.twig
+✅ field--field-wdcb-columns.html.twig
+▪️ field--entity-reference-revisions.html.twig
+▪️ field.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/field/field--field-wdcb-columns.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'paragraph'
+FILE NAME SUGGESTIONS:
+▪️ paragraph--wdcb-columns--column.html.twig
+✅ paragraph--wdcb-columns.html.twig
+▪️ paragraph--column.html.twig
+▪️ paragraph.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-columns.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'field'
+FILE NAME SUGGESTIONS:
+▪️ field--paragraph--field-column-content--wdcb-columns.html.twig
+▪️ field--paragraph--field-column-content.html.twig
+▪️ field--paragraph--wdcb-columns.html.twig
+▪️ field--field-column-content.html.twig
+▪️ field--text-long.html.twig
+✅ field.html.twig
+
+BEGIN OUTPUT from 'themes/contrib/wxt_bootstrap/templates/field/field.html.twig'
+
+Controlled software development and changes
+
+Gen AI can accelerate software development. However, it can inadvertently produce insecure code based on flawed or unsafe patterns from training data. Agentic AI can increase this risk by autonomously deploying defective code into production environments.
+
+In addition, AI system behaviour is also subject to unintended change due to updates to underlying prompts, models, data sources, tools, or third-party services.
+
+Institutions can ensure their software development and change management controls are commensurate with these AI adoption risks. Consistent with Guideline B-13 principles 6 to 9, institutions can consider the following risk control and mitigation measures:
+
+use trusted data sources to train AI models
+
+validate AI-generated code for vulnerabilities and secure-coding infractions prior to production deployment
+
+implement AI harnessing and monitor AI agent actions
+
+enforce approval checkpoints for high-risk actions to prevent unintended impacts
+
+treat AI components, including models, data, tools, and agents as controlled technology assets
+
+embed security controls across the AI lifecycle
+
+apply enterprise secure development and change management controls to AI components, to improve traceability of changes and deter unintended AI system behaviour
+
+conduct rigorous testing of AI models and workloads to ensure reliability under normal and stressed conditions, including AI edge casesFootnote 7
+
+END OUTPUT from 'themes/contrib/wxt_bootstrap/templates/field/field.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-columns.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/field/field--field-wdcb-columns.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-section.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'paragraph'
+FILE NAME SUGGESTIONS:
+▪️ paragraph--wdcb-section--default.html.twig
+✅ paragraph--wdcb-section.html.twig
+▪️ paragraph--default.html.twig
+▪️ paragraph.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-section.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'field'
+FILE NAME SUGGESTIONS:
+▪️ field--paragraph--field-wdcb-columns--wdcb-section.html.twig
+▪️ field--paragraph--field-wdcb-columns.html.twig
+▪️ field--paragraph--wdcb-section.html.twig
+✅ field--field-wdcb-columns.html.twig
+▪️ field--entity-reference-revisions.html.twig
+▪️ field.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/field/field--field-wdcb-columns.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'paragraph'
+FILE NAME SUGGESTIONS:
+▪️ paragraph--wdcb-columns--column.html.twig
+✅ paragraph--wdcb-columns.html.twig
+▪️ paragraph--column.html.twig
+▪️ paragraph.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-columns.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'field'
+FILE NAME SUGGESTIONS:
+▪️ field--paragraph--field-column-content--wdcb-columns.html.twig
+▪️ field--paragraph--field-column-content.html.twig
+▪️ field--paragraph--wdcb-columns.html.twig
+▪️ field--field-column-content.html.twig
+▪️ field--text-long.html.twig
+✅ field.html.twig
+
+BEGIN OUTPUT from 'themes/contrib/wxt_bootstrap/templates/field/field.html.twig'
+
+Control AI agent autonomy and access
+
+AI systems and agents require access to data, tools, and systems. Excessive permissions increase the risk of unauthorized actions, including multi-step attacks such as data exfiltration via tools or APIs.
+
+Institutions can assess whether identity and access management controls remain effective for AI systems and agents. Key risks include over‑privileged access and the use of shared or inherited credentials that undermine accountability. Additional risks arise from tool chainingFootnote 8 , weak traceability of AI‑initiated activities, and automated execution, increasing the likelihood of uncontrolled outcomes.
+
+Consistent with Guideline B-13 principles 5, 8, and 14 to 16, institutions can consider the following risk control and mitigation measures:
+
+assign unique non-human identities, enforce least privilege, apply scoped permissions, and use just-in-time access with short-lived credentials to reduce unauthorized access and limit compromised agents
+
+restrict tool usage via allow-lists and API gateways and apply approval checkpoints for high-impact actions, preventing misuse of high-risk functions and sensitive operations
+
+log and review agent activity and tool usage along with periodic access recertification to improve detection of anomalies and maintain ongoing access integrity
+
+END OUTPUT from 'themes/contrib/wxt_bootstrap/templates/field/field.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-columns.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/field/field--field-wdcb-columns.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-section.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'paragraph'
+FILE NAME SUGGESTIONS:
+▪️ paragraph--wdcb-section--default.html.twig
+✅ paragraph--wdcb-section.html.twig
+▪️ paragraph--default.html.twig
+▪️ paragraph.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-section.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'field'
+FILE NAME SUGGESTIONS:
+▪️ field--paragraph--field-wdcb-columns--wdcb-section.html.twig
+▪️ field--paragraph--field-wdcb-columns.html.twig
+▪️ field--paragraph--wdcb-section.html.twig
+✅ field--field-wdcb-columns.html.twig
+▪️ field--entity-reference-revisions.html.twig
+▪️ field.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/field/field--field-wdcb-columns.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'paragraph'
+FILE NAME SUGGESTIONS:
+▪️ paragraph--wdcb-columns--column.html.twig
+✅ paragraph--wdcb-columns.html.twig
+▪️ paragraph--column.html.twig
+▪️ paragraph.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-columns.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'field'
+FILE NAME SUGGESTIONS:
+▪️ field--paragraph--field-column-content--wdcb-columns.html.twig
+▪️ field--paragraph--field-column-content.html.twig
+▪️ field--paragraph--wdcb-columns.html.twig
+▪️ field--field-column-content.html.twig
+▪️ field--text-long.html.twig
+✅ field.html.twig
+
+BEGIN OUTPUT from 'themes/contrib/wxt_bootstrap/templates/field/field.html.twig'
+
+Embed AI into cyber security operations
+
+AI expands the cyber threat landscape and increases the scale, speed, and sophistication of attacks. Key threats include automated phishing, malicious prompt generation, and AI-generated malicious code or exploits.
+
+Institutions can use AI to strengthen cyber security operations. AI can help detect, prevent, and respond to threats faster and more effectively than traditional methods.
+
+Consistent with Guideline B-13 principles 14 to 17, institutions can consider the following risk control and mitigation measures:
+
+incorporate AI misuse scenarios (such as, prompt injection) into threat modelling and adversarial testing, improving preparedness and reducing exploitability of AI systems
+
+use AI, including advanced frontier models, to prioritize risks and accelerate patching, reducing exposure time to critical vulnerabilities
+
+enhance AI-behavioural anomaly detection, prompt monitoring, output filtering, and adaptive access, enabling real-time detection and containment of malicious activity
+
+feed AI telemetry into existing security operations and monitoring tools, improving AI interaction visibility and enabling faster, automated actions, such as blocking access or isolating systems
+
+develop and test AI-focused incident response playbooks, improving response effectiveness for AI-related incidents
+
+END OUTPUT from 'themes/contrib/wxt_bootstrap/templates/field/field.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-columns.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/field/field--field-wdcb-columns.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-section.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'paragraph'
+FILE NAME SUGGESTIONS:
+▪️ paragraph--wdcb-section--default.html.twig
+✅ paragraph--wdcb-section.html.twig
+▪️ paragraph--default.html.twig
+▪️ paragraph.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-section.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'field'
+FILE NAME SUGGESTIONS:
+▪️ field--paragraph--field-wdcb-columns--wdcb-section.html.twig
+▪️ field--paragraph--field-wdcb-columns.html.twig
+▪️ field--paragraph--wdcb-section.html.twig
+✅ field--field-wdcb-columns.html.twig
+▪️ field--entity-reference-revisions.html.twig
+▪️ field.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/field/field--field-wdcb-columns.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'paragraph'
+FILE NAME SUGGESTIONS:
+▪️ paragraph--wdcb-columns--column.html.twig
+✅ paragraph--wdcb-columns.html.twig
+▪️ paragraph--column.html.twig
+▪️ paragraph.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-columns.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'field'
+FILE NAME SUGGESTIONS:
+▪️ field--paragraph--field-column-content--wdcb-columns.html.twig
+▪️ field--paragraph--field-column-content.html.twig
+▪️ field--paragraph--wdcb-columns.html.twig
+▪️ field--field-column-content.html.twig
+▪️ field--text-long.html.twig
+✅ field.html.twig
+
+BEGIN OUTPUT from 'themes/contrib/wxt_bootstrap/templates/field/field.html.twig'
+
+Increase resilience and manage third-party risk
+
+AI can pose a significant risk to operational resilience when failures in AI-based systems disrupt critical operations or create correlated impacts across institutions. Dependency of AI systems on vendor offerings such as third-party models, data, APIs etc. increase concentration risk and overall third-party risk. Additionally, third parties can also be using AI to deliver services, increasing an institutions dependency on AI.
+
+Institutions can consider the following risk control and mitigation measures. These are consistent with Guidelines E-21 and B-13 principles 11 to 13 and Guideline B-10 outcome expectations 2, 3, and 4. Specifically, institutions can:
+
+map AI responsibilities and dependencies (internal and external) to critical operations, improving visibility into concentration risk and dependency exposure
+
+test AI failure and outage scenarios and establish manual fallbacks and continuity measures for AI-supported business processes, reducing operational disruption
+
+assess portability and substitutability of AI services and report material concentration risks to senior management and boards to enable informed decisions
+
+enhance third-party risk management programs to include effective governance and management of risks arising from AI usage
+
+enforce an obligation on third parties to notify if and how they are using AI to deliver services
+
+Where usage of AI increases the probability and potential severity of a disruption, institutions can reflect the heightened risk in business continuity and disaster recovery testing scenarios, including third-party contingency plans.
+
+END OUTPUT from 'themes/contrib/wxt_bootstrap/templates/field/field.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-columns.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/field/field--field-wdcb-columns.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-section.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'paragraph'
+FILE NAME SUGGESTIONS:
+▪️ paragraph--wdcb-section--default.html.twig
+✅ paragraph--wdcb-section.html.twig
+▪️ paragraph--default.html.twig
+▪️ paragraph.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-section.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'field'
+FILE NAME SUGGESTIONS:
+▪️ field--paragraph--field-wdcb-columns--wdcb-section.html.twig
+▪️ field--paragraph--field-wdcb-columns.html.twig
+▪️ field--paragraph--wdcb-section.html.twig
+✅ field--field-wdcb-columns.html.twig
+▪️ field--entity-reference-revisions.html.twig
+▪️ field.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/field/field--field-wdcb-columns.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'paragraph'
+FILE NAME SUGGESTIONS:
+▪️ paragraph--wdcb-columns--column.html.twig
+✅ paragraph--wdcb-columns.html.twig
+▪️ paragraph--column.html.twig
+▪️ paragraph.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-columns.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'field'
+FILE NAME SUGGESTIONS:
+▪️ field--paragraph--field-column-content--wdcb-columns.html.twig
+▪️ field--paragraph--field-column-content.html.twig
+▪️ field--paragraph--wdcb-columns.html.twig
+▪️ field--field-column-content.html.twig
+▪️ field--text-long.html.twig
+✅ field.html.twig
+
+BEGIN OUTPUT from 'themes/contrib/wxt_bootstrap/templates/field/field.html.twig'
+
+Conclusion
+
+Advances in AI present a material evolution in technology and cyber risk. These technologies expand attack surfaces, accelerate risk, and challenge the effectiveness of existing controls.
+
+The sound practices outlined in this bulletin complement existing expectations under Guidelines B-13, B-10, and E-21. By strengthening governance, managing autonomy, enhancing monitoring, and improving resilience, institutions can better manage risks associated with AI.
+
+END OUTPUT from 'themes/contrib/wxt_bootstrap/templates/field/field.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-columns.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/field/field--field-wdcb-columns.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-section.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'paragraph'
+FILE NAME SUGGESTIONS:
+▪️ paragraph--wdcb-section--default.html.twig
+✅ paragraph--wdcb-section.html.twig
+▪️ paragraph--default.html.twig
+▪️ paragraph.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-section.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'field'
+FILE NAME SUGGESTIONS:
+▪️ field--paragraph--field-wdcb-columns--wdcb-section.html.twig
+▪️ field--paragraph--field-wdcb-columns.html.twig
+▪️ field--paragraph--wdcb-section.html.twig
+✅ field--field-wdcb-columns.html.twig
+▪️ field--entity-reference-revisions.html.twig
+▪️ field.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/field/field--field-wdcb-columns.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'paragraph'
+FILE NAME SUGGESTIONS:
+▪️ paragraph--wdcb-columns--column.html.twig
+✅ paragraph--wdcb-columns.html.twig
+▪️ paragraph--column.html.twig
+▪️ paragraph.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-columns.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'field'
+FILE NAME SUGGESTIONS:
+▪️ field--paragraph--field-column-content--wdcb-columns.html.twig
+▪️ field--paragraph--field-column-content.html.twig
+▪️ field--paragraph--wdcb-columns.html.twig
+▪️ field--field-column-content.html.twig
+▪️ field--text-long.html.twig
+✅ field.html.twig
+
+BEGIN OUTPUT from 'themes/contrib/wxt_bootstrap/templates/field/field.html.twig'
+
+Related links
+
+Canadian Centre for Cyber Security (CCCS), Top 10 Artificial Intelligence Security Actions – ITSAP.10.049  (March 2026)
+
+Department of Finance Canada, Global Risk Institute, OSFI, FIFAI II: A Collaborative Approach to AI Threats, Opportunities, and Best Practices: Security and Cybersecurity (July 2025)
+
+National Institute of Standards and Technology (NIST), Artificial Intelligence Risk Management Framework (AI RMF 1.0) (PDF) (January 2023)
+
+National Institute of Standards and Technology (NIST), Artificial Intelligence Risk Management Framework: Generative AI Profile (PDF) (July 2024)
+
+Open Worldwide Application Security Project (OWASP), Top 10 Risks for Large Language Model Applications (2025) (November 2024)
+
+Open Worldwide Application Security Project (OWASP), State of Agentic AI Security and Governance 1.0 (August 2025)
+
+Monetary Authority of Singapore (MAS), Cyber Risks Associated with Generative Artificial Intelligence (PDF) (July 2024)
+
+Cybersecurity and Infrastructure Security Agency (CISA), AI Data Security: Best Practices for Securing Data Used to Train & Operate AI Systems (PDF) (May 2025)
+
+Financial Stability Board (FSB), The Financial Stability Implications of Artificial Intelligence (PDF) (November 2024)
+
+END OUTPUT from 'themes/contrib/wxt_bootstrap/templates/field/field.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-columns.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/field/field--field-wdcb-columns.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-section.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'paragraph'
+FILE NAME SUGGESTIONS:
+▪️ paragraph--wdcb-section--default.html.twig
+✅ paragraph--wdcb-section.html.twig
+▪️ paragraph--default.html.twig
+▪️ paragraph.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-section.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'field'
+FILE NAME SUGGESTIONS:
+▪️ field--paragraph--field-wdcb-columns--wdcb-section.html.twig
+▪️ field--paragraph--field-wdcb-columns.html.twig
+▪️ field--paragraph--wdcb-section.html.twig
+✅ field--field-wdcb-columns.html.twig
+▪️ field--entity-reference-revisions.html.twig
+▪️ field.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/field/field--field-wdcb-columns.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'paragraph'
+FILE NAME SUGGESTIONS:
+▪️ paragraph--wdcb-columns--column.html.twig
+✅ paragraph--wdcb-columns.html.twig
+▪️ paragraph--column.html.twig
+▪️ paragraph.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-columns.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'field'
+FILE NAME SUGGESTIONS:
+▪️ field--paragraph--field-column-content--wdcb-columns.html.twig
+▪️ field--paragraph--field-column-content.html.twig
+▪️ field--paragraph--wdcb-columns.html.twig
+▪️ field--field-column-content.html.twig
+▪️ field--text-long.html.twig
+✅ field.html.twig
+
+BEGIN OUTPUT from 'themes/contrib/wxt_bootstrap/templates/field/field.html.twig'
+
+Footnotes
+
+Footnote 1
+
+Gen AI is a type of AI that generates new content by modelling features from large datasets that humans feed into the model. Canadian Centre for Cyber Security, ITSAP.00.041
+
+Return to footnote 1 referrer
+
+Footnote 2
+
+Agentic AI systems are composed of agents that rely on large language models (LLMs) to autonomously reason, plan, make decisions and take actions without human intervention. Canadian Centre for Cyber Security, Joint guidance on the careful adoption of agentic artificial intelligence services
+
+Return to footnote 2 referrer
+
+Footnote 3
+
+Frontier AI encompasses the most recent, capable and advanced models available. Canadian Centre for Cyber Security, ITSAP.10.050
+
+Return to footnote 3 referrer
+
+Footnote 4
+
+AI harnessing refers to a collection of software components, controls, monitoring functions, guardrails, connectors, policies, and governance mechanisms that manage how AI models interact with users, applications, data sources, tools, and external systems throughout their lifecycle.
+
+Return to footnote 4 referrer
+
+Footnote 5
+
+AI lifecycle refers to the end-to-end process by which an AI system is developed, deployed, operated, and retired, including its interactions and resulting decisions or actions.
+
+Return to footnote 5 referrer
+
+Footnote 6
+
+Data provenance is the documented record of a dataset's origin and the processes it has undergone, providing a verifiable history that supports the dataset's integrity and reliability for analysis and decision-making.
+
+Return to footnote 6 referrer
+
+Footnote 7
+
+Edge case testing is a quality assurance methodology focused on validating software behavior at operational boundaries, input extremes, and rare scenario combinations which do not follow the expected patterns.
+
+Return to footnote 7 referrer
+
+Footnote 8
+
+Tool chaining is an AI pattern where an agent executes multiple tool calls in sequence. The output of one tool automatically becomes the input for the next tool, allowing LLMs to automate complex, dependent tasks.
+
+Return to footnote 8 referrer
+
+END OUTPUT from 'themes/contrib/wxt_bootstrap/templates/field/field.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-columns.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/field/field--field-wdcb-columns.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-section.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'paragraph'
+FILE NAME SUGGESTIONS:
+▪️ paragraph--wdcb-section--default.html.twig
+✅ paragraph--wdcb-section.html.twig
+▪️ paragraph--default.html.twig
+▪️ paragraph.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-section.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'field'
+FILE NAME SUGGESTIONS:
+▪️ field--paragraph--field-wdcb-columns--wdcb-section.html.twig
+▪️ field--paragraph--field-wdcb-columns.html.twig
+▪️ field--paragraph--wdcb-section.html.twig
+✅ field--field-wdcb-columns.html.twig
+▪️ field--entity-reference-revisions.html.twig
+▪️ field.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/field/field--field-wdcb-columns.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'paragraph'
+FILE NAME SUGGESTIONS:
+▪️ paragraph--wdcb-columns--column.html.twig
+✅ paragraph--wdcb-columns.html.twig
+▪️ paragraph--column.html.twig
+▪️ paragraph.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-columns.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'field'
+FILE NAME SUGGESTIONS:
+▪️ field--paragraph--field-column-content--wdcb-columns.html.twig
+▪️ field--paragraph--field-column-content.html.twig
+▪️ field--paragraph--wdcb-columns.html.twig
+▪️ field--field-column-content.html.twig
+▪️ field--text-long.html.twig
+✅ field.html.twig
+
+BEGIN OUTPUT from 'themes/contrib/wxt_bootstrap/templates/field/field.html.twig'
+
+END OUTPUT from 'themes/contrib/wxt_bootstrap/templates/field/field.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-columns.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/field/field--field-wdcb-columns.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/paragraph/paragraph--wdcb-section.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/field/field--field-wdcb.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/node/node--general-content--full.html.twig'
+
+END OUTPUT from 'themes/contrib/wxt_bootstrap/templates/block/block--system.html.twig'
+
+END OUTPUT from 'themes/contrib/wxt_bootstrap/templates/system/region.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'region'
+FILE NAME SUGGESTIONS:
+▪️ region--content-footer--gcweb.html.twig
+✅ region--content-footer.html.twig
+▪️ region.html.twig
+
+BEGIN OUTPUT from 'themes/contrib/wxt_bootstrap/templates/system/region--content-footer.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'block'
+FILE NAME SUGGESTIONS:
+▪️ block--content-footer--gcweb--osfi-wxt-reportproblemblock.html.twig
+▪️ block--content-footer--osfi-wxt-reportproblemblock.html.twig
+▪️ block--osfi-wxt-reportproblemblock.html.twig
+✅ block--report-problem-block.html.twig
+▪️ block--wxt-ext-webform.html.twig
+▪️ block.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/block/block--report-problem-block.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'gcweb-inline-webform'
+BEGIN OUTPUT from 'themes/contrib/wxt_bootstrap/templates/webform/gcweb-inline-webform.html.twig'
+
+Report a problem or mistake on this page
+
+THEME DEBUG
+THEME HOOK: 'webform'
+FILE NAME SUGGESTIONS:
+✅ webform--gcweb-report-a-problem.html.twig
+▪️ webform.html.twig
+
+BEGIN OUTPUT from 'themes/contrib/wxt_bootstrap/templates/webform/webform--gcweb-report-a-problem.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'webform_submission_form'
+FILE NAME SUGGESTIONS:
+▪️ webform-submission-form--gcweb-report-a-problem.html.twig
+✅ webform-submission-form.html.twig
+
+BEGIN OUTPUT from 'modules/contrib/webform/templates/webform-submission-form.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'antibot_no_js'
+BEGIN OUTPUT from 'modules/contrib/antibot/templates/antibot-no-js.html.twig'
+
+END OUTPUT from 'modules/contrib/antibot/templates/antibot-no-js.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'fieldset'
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/system/fieldset.html.twig'
+
+Please select all that apply: (required)
+
+THEME DEBUG
+THEME HOOK: 'checkboxes'
+BEGIN OUTPUT from 'core/modules/system/templates/checkboxes.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'form_element'
+FILE NAME SUGGESTIONS:
+▪️ form-element--webform-checkbox.html.twig
+✅ form-element.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/input/form-element.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'form_element_label'
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/input/form-element-label.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'input__checkbox'
+FILE NAME SUGGESTIONS:
+▪️ input--checkbox.html.twig
+▪️ input--checkbox.html.twig
+✅ input.html.twig
+
+BEGIN OUTPUT from 'themes/contrib/wxt_bootstrap/templates/input/input.html.twig'
+
+END OUTPUT from 'themes/contrib/wxt_bootstrap/templates/input/input.html.twig'
+
+A link, button or video is not working
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/input/form-element-label.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/input/form-element.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'form_element'
+FILE NAME SUGGESTIONS:
+▪️ form-element--webform-checkbox.html.twig
+✅ form-element.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/input/form-element.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'form_element_label'
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/input/form-element-label.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'input__checkbox'
+FILE NAME SUGGESTIONS:
+▪️ input--checkbox.html.twig
+▪️ input--checkbox.html.twig
+✅ input.html.twig
+
+BEGIN OUTPUT from 'themes/contrib/wxt_bootstrap/templates/input/input.html.twig'
+
+END OUTPUT from 'themes/contrib/wxt_bootstrap/templates/input/input.html.twig'
+
+It has a spelling mistake
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/input/form-element-label.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/input/form-element.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'form_element'
+FILE NAME SUGGESTIONS:
+▪️ form-element--webform-checkbox.html.twig
+✅ form-element.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/input/form-element.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'form_element_label'
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/input/form-element-label.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'input__checkbox'
+FILE NAME SUGGESTIONS:
+▪️ input--checkbox.html.twig
+▪️ input--checkbox.html.twig
+✅ input.html.twig
+
+BEGIN OUTPUT from 'themes/contrib/wxt_bootstrap/templates/input/input.html.twig'
+
+END OUTPUT from 'themes/contrib/wxt_bootstrap/templates/input/input.html.twig'
+
+Information is missing
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/input/form-element-label.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/input/form-element.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'form_element'
+FILE NAME SUGGESTIONS:
+▪️ form-element--webform-checkbox.html.twig
+✅ form-element.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/input/form-element.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'form_element_label'
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/input/form-element-label.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'input__checkbox'
+FILE NAME SUGGESTIONS:
+▪️ input--checkbox.html.twig
+▪️ input--checkbox.html.twig
+✅ input.html.twig
+
+BEGIN OUTPUT from 'themes/contrib/wxt_bootstrap/templates/input/input.html.twig'
+
+END OUTPUT from 'themes/contrib/wxt_bootstrap/templates/input/input.html.twig'
+
+Information is outdated or wrong
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/input/form-element-label.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/input/form-element.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'form_element'
+FILE NAME SUGGESTIONS:
+▪️ form-element--webform-checkbox.html.twig
+✅ form-element.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/input/form-element.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'form_element_label'
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/input/form-element-label.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'input__checkbox'
+FILE NAME SUGGESTIONS:
+▪️ input--checkbox.html.twig
+▪️ input--checkbox.html.twig
+✅ input.html.twig
+
+BEGIN OUTPUT from 'themes/contrib/wxt_bootstrap/templates/input/input.html.twig'
+
+END OUTPUT from 'themes/contrib/wxt_bootstrap/templates/input/input.html.twig'
+
+I can't find what I'm looking for
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/input/form-element-label.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/input/form-element.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'form_element'
+FILE NAME SUGGESTIONS:
+▪️ form-element--webform-checkbox.html.twig
+✅ form-element.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/input/form-element.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'form_element_label'
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/input/form-element-label.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'input__checkbox'
+FILE NAME SUGGESTIONS:
+▪️ input--checkbox.html.twig
+▪️ input--checkbox.html.twig
+✅ input.html.twig
+
+BEGIN OUTPUT from 'themes/contrib/wxt_bootstrap/templates/input/input.html.twig'
+
+END OUTPUT from 'themes/contrib/wxt_bootstrap/templates/input/input.html.twig'
+
+Other issue not in this list
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/input/form-element-label.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/input/form-element.html.twig'
+
+END OUTPUT from 'core/modules/system/templates/checkboxes.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/system/fieldset.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'form_element'
+FILE NAME SUGGESTIONS:
+▪️ form-element--gcweb-report-a-problem--additional-information.html.twig
+▪️ form-element--webform-textarea.html.twig
+✅ form-element.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/input/form-element.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'form_element_label'
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/input/form-element-label.html.twig'
+Additional information (required)
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/input/form-element-label.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'textarea'
+BEGIN OUTPUT from 'themes/contrib/wxt_bootstrap/templates/input/textarea.html.twig'
+
+END OUTPUT from 'themes/contrib/wxt_bootstrap/templates/input/textarea.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/input/form-element.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'input__hidden'
+FILE NAME SUGGESTIONS:
+▪️ input--hidden.html.twig
+▪️ input--hidden.html.twig
+✅ input.html.twig
+
+BEGIN OUTPUT from 'themes/contrib/wxt_bootstrap/templates/input/input.html.twig'
+
+END OUTPUT from 'themes/contrib/wxt_bootstrap/templates/input/input.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'input__hidden'
+FILE NAME SUGGESTIONS:
+▪️ input--hidden.html.twig
+▪️ input--hidden.html.twig
+✅ input.html.twig
+
+BEGIN OUTPUT from 'themes/contrib/wxt_bootstrap/templates/input/input.html.twig'
+
+END OUTPUT from 'themes/contrib/wxt_bootstrap/templates/input/input.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'input__hidden'
+FILE NAME SUGGESTIONS:
+▪️ input--hidden.html.twig
+▪️ input--hidden.html.twig
+✅ input.html.twig
+
+BEGIN OUTPUT from 'themes/contrib/wxt_bootstrap/templates/input/input.html.twig'
+
+END OUTPUT from 'themes/contrib/wxt_bootstrap/templates/input/input.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'container'
+BEGIN OUTPUT from 'themes/contrib/wxt_bootstrap/templates/system/container.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'webform_actions'
+BEGIN OUTPUT from 'modules/contrib/webform/templates/webform-actions.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'input__submit'
+FILE NAME SUGGESTIONS:
+▪️ input--submit.html.twig
+▪️ input--submit.html.twig
+✅ input--button--submit.html.twig
+▪️ input--button.html.twig
+▪️ input.html.twig
+
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/input/input--button--submit.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/input/input--button--submit.html.twig'
+
+END OUTPUT from 'modules/contrib/webform/templates/webform-actions.html.twig'
+
+END OUTPUT from 'themes/contrib/wxt_bootstrap/templates/system/container.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'container'
+BEGIN OUTPUT from 'themes/contrib/wxt_bootstrap/templates/system/container.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'form_element'
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/input/form-element.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'form_element_label'
+💡 BEGIN CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/input/form-element-label.html.twig'
+Leave this field blank
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/input/form-element-label.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'input__textfield'
+FILE NAME SUGGESTIONS:
+▪️ input--textfield.html.twig
+▪️ input--textfield.html.twig
+▪️ input--form-control--textfield.html.twig
+✅ input--form-control.html.twig
+▪️ input.html.twig
+
+BEGIN OUTPUT from 'themes/contrib/wxt_bootstrap/templates/input/input--form-control.html.twig'
+
+END OUTPUT from 'themes/contrib/wxt_bootstrap/templates/input/input--form-control.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/input/form-element.html.twig'
+
+END OUTPUT from 'themes/contrib/wxt_bootstrap/templates/system/container.html.twig'
+
+END OUTPUT from 'modules/contrib/webform/templates/webform-submission-form.html.twig'
+
+END OUTPUT from 'themes/contrib/wxt_bootstrap/templates/webform/webform--gcweb-report-a-problem.html.twig'
+
+END OUTPUT from 'themes/contrib/wxt_bootstrap/templates/webform/gcweb-inline-webform.html.twig'
+
+END CUSTOM TEMPLATE OUTPUT from 'themes/custom/osfi_wxt/templates/block/block--report-problem-block.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'block'
+FILE NAME SUGGESTIONS:
+▪️ block--content-footer--gcweb--osfi-wxt-datemodifiedblock.html.twig
+▪️ block--content-footer--osfi-wxt-datemodifiedblock.html.twig
+▪️ block--osfi-wxt-datemodifiedblock.html.twig
+▪️ block--date-modified-block.html.twig
+▪️ block--wxt-library.html.twig
+✅ block.html.twig
+
+BEGIN OUTPUT from 'themes/contrib/wxt_bootstrap/templates/block/block.html.twig'
+
+Date modified:
+
+2026-07-13
+
+END OUTPUT from 'themes/contrib/wxt_bootstrap/templates/block/block.html.twig'
+
+THEME DEBUG
+THEME HOOK: 'block'
+FILE NAME SUGGESTIONS:
+▪️ block--content-footer--gcweb--osfi-wxt-sharewidgetblock.html.twig
+▪️ block--content-footer--osfi-wxt-sharewidgetblock.html.twig
+▪️ block--osfi-wxt-sharewidgetblock.html.twig
+▪️ block--share-widget-block.html.twig
+▪️ block--wxt-library.html.twig
+✅ block.html.twig
+
+BEGIN OUTPUT from 'themes/contrib/wxt_bootstrap/templates/block/block.html.twig'
+
+END OUTPUT from 'themes/contrib/wxt_bootstrap/templates/block/block.html.twig'
+
+END OUTPUT from 'themes/contrib/wxt_bootstrap/templates/system/region--content-footer.html.twig'

@@ -1,0 +1,720 @@
+{
+  "protocol_id": "MLR-PRISMA-SCR-LIVRE-2027-V1.2",
+  "freeze_date": "2026-12-31",
+  "api_discovery_probes": [
+    {"api": "arxiv", "axis": "RQ1", "query": "all:\"virtual agent economies\" OR all:\"From AGI to ASI\" OR all:\"economy of AI agents\""},
+    {"api": "arxiv", "axis": "RQ2", "query": "all:\"multi-agent\" AND (all:\"scaling\" OR all:\"Ringelmann\" OR all:\"fail\")"},
+    {"api": "arxiv", "axis": "RQ3", "query": "all:\"SagaLLM\" OR all:\"cognitive and intent debt\""},
+    {"api": "arxiv", "axis": "RQ4", "query": "all:\"Agent Identity Protocol\" OR all:\"WIMSE\""},
+    {"api": "arxiv", "axis": "RQ5", "query": "all:\"Defeating Prompt Injections\" OR all:\"Model Context Protocol\" OR all:\"STPA\""},
+    {"api": "arxiv", "axis": "RQ6", "query": "all:\"human oversight\" AND all:\"agentic\""},
+    {"api": "crossref", "axis": "RQ6", "query": "generative AI system level governance accountability"},
+    {"api": "hal", "axis": "RQ6", "query": "agentic AI"},
+    {"api": "europepmc", "axis": "RQ6", "query": "\"automation bias\" AND \"artificial intelligence\""},
+    {"api": "doaj", "axis": "RQ6", "query": "artificial intelligence governance automation bias"},
+    {"api": "ietf_datatracker", "axis": "RQ4", "query": "wimse"},
+    {"api": "nist_csrc", "axis": "RQ4", "query": "FIPS 204"}
+  ],
+  "blocked_candidates_status_f": [
+    {"source_hint": "AMF Québec (Autorité des marchés financiers)", "url": "https://lautorite.qc.ca/", "note": "Ligne directrice sur l'utilisation de l'IA en finance (prd.md § 7); protégé par Cloudflare WAF."},
+    {"source_hint": "LégisQuébec — Loi P-39.1 consolidée", "url": "https://www.legisquebec.gouv.qc.ca/fr/document/lc/P-39.1", "note": "Portail consolidé bloqué en automatisation HTTP 403; compensé par 2021C25F.PDF (Loi 25 sanctionnée) et CAI_RQ_2026.pdf en L+."},
+    {"source_hint": "EUR-Lex HTML direct (2024/1689)", "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/HTML/?uri=OJ:L_202401689", "note": "Défi AWS WAF HTTP 202 sur eur-lex.europa.eu; compensé par le PDF officiel du JOUE via publications.europa.eu/resource/cellar/."},
+    {"source_hint": "Gartner Communiqué 25 juin 2025 (> 40 % abandon)", "url": "https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027", "note": "HTTP 403 sur gartner.com; documenté secondairement dans Deloitte TMT 2026 (L+) avec mention explicite du statut F du communiqué primaire."},
+    {"source_hint": "Reuters couverture Gartner 25 juin 2025", "url": "https://www.reuters.com/technology/over-40-agentic-ai-projects-will-be-scrapped-by-2027-gartner-says-2025-06-25/", "note": "HTTP 401/Paywall sur reuters.com."},
+    {"source_hint": "McKinsey State of AI", "url": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai", "note": "Expiration réseau / blocage Akamai sur mckinsey.com."},
+    {"source_hint": "Statistique Canada article HTML 11-621-m", "url": "https://www150.statcan.gc.ca/n1/pub/11-621-m/11-621-m2026010-fra.htm", "note": "HTTP 403 sur l'article rédactionnel; compensé par les archives CSV ouvertes WDS 33101167-fra.zip et 33101207-fra.zip en L+."},
+    {"source_hint": "Publications du Canada (9.505677)", "url": "https://publications.gc.ca/site/fra/9.505677/publication.html", "note": "Défi WAF HTTP 202 sur publications.gc.ca."},
+    {"source_hint": "Dell'Acqua et al. (INFORMS Organization Science / HBS / SSRN)", "url": "https://www.hbs.edu/ris/Publication%20Files/24-013_d9b45b68-9e74-42d6-a1c6-c72fb70c7282.pdf", "note": "HTTP 403 sur hbs.edu, pubsonline.informs.org et ssrn.com; retiré de l'évidence probante."},
+    {"source_hint": "Bainbridge (1983) / Coase (1937) — éditeurs commerciaux", "url": "https://onlinelibrary.wiley.com/doi/10.1111/j.1468-0335.1937.tb00002.x", "note": "Mur payant / HTTP 403 Wiley Online Library; théorie coasienne documentée via Shahidi et al. (NBER w34468, L+)."},
+    {"source_hint": "Leveson & Thomas — STPA Handbook MIT", "url": "https://psas.scripts.mit.edu/home/get_file.php?name=STPA_handbook.pdf", "note": "Erreur TLS/réseau sur serveur scripts.mit.edu; méthode STPA/STAMP documentée en L+ via Barrett et al. (arXiv:2512.17600)."},
+    {"source_hint": "Goddard et al. (2012) PMC3240751 Web", "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3240751/", "note": "CAPTCHA g-recaptcha sur pmc.ncbi.nlm.nih.gov; biais d'automatisation documenté via AL-Ali et al. (Nat. Sci. Rep. 2026) et Dhanorkar et al. (arXiv:2606.05391)."},
+    {"source_hint": "Akyol & Hakiki (2026) EuropePMC fullTextXML (PMC13776542)", "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13776542/fullTextXML", "note": "Erreur serveur HTTP 500 sur le point d'extraction XML intégral lors de la collecte; exclu selon AO-01."},
+    {"source_hint": "OCRI / CIRO Règles consolidées", "url": "https://www.ciro.ca/rules-and-guidance/investment-dealer-and-partially-consolidated-rules", "note": "HTTP 403 sur ciro.ca."},
+    {"source_hint": "ACVM / CSA News portal", "url": "https://www.securities-administrators.ca/news/", "note": "HTTP 403 sur securities-administrators.ca; texte officiel Règl. 31-103 obtenu en L+ via osc.ca."},
+    {"source_hint": "OWASP GenAI PDF portal", "url": "https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/", "note": "HTTP 403 sur genai.owasp.org; compensé par le crosswalk officiel ouvert sur github.io (L+)."},
+    {"source_hint": "Polaris Market Research", "url": "https://www.polarismarketresearch.com/industry-analysis/enterprise-agentic-ai-market", "note": "Défi Cloudflare Turnstile/JS."},
+    {"source_hint": "Fortune Business Insights", "url": "https://www.fortunebusinessinsights.com/agentic-ai-market-114233", "note": "HTTP 403."},
+    {"source_hint": "IDC Press Release 2025", "url": "https://www.idc.com/getdoc.jsp?containerId=prUS53863225", "note": "HTTP 403."},
+    {"source_hint": "MDPI Information / Systems", "url": "https://www.mdpi.com/2079-8954/14/4/447", "note": "HTTP 403 Cloudflare sur mdpi.com."},
+    {"source_hint": "IEEE Xplore OA Portal", "url": "https://ieeexplore.ieee.org/document/11580353/", "note": "Défi WAF HTTP 202 sur ieeexplore.ieee.org."},
+    {"source_hint": "Fasken Knowledge Portal", "url": "https://www.fasken.com/en/knowledge/topics/artificial-intelligence", "note": "HTTP 403."},
+    {"source_hint": "MIT Economics PDF mirror (Cui et al.)", "url": "https://economics.mit.edu/sites/default/files/2024-11/The%20Effects%20of%20Generative%20AI%20on%20High-Skilled%20Work.pdf", "note": "HTTP 403 sur economics.mit.edu; compensé par la version ouverte auteur sur mertdemirer.com (L+)."}
+  ],
+  "l_plus_catalog": [
+    {
+      "source_id": "SRC-001", "seed_id": "SEED-01", "category": "preprint", "peer_reviewed": false,
+      "title": "From AGI to ASI",
+      "authors": "Tim Genewein, Matija Franklin, Alexander Lerchner, Laurent Orseau et al.",
+      "year": 2026, "publication_date": "2026-06-10", "venue_or_issuer": "arXiv (Google DeepMind)",
+      "identifier": "arXiv:2606.12683", "url": "https://arxiv.org/pdf/2606.12683",
+      "aacods_score": 11.0, "research_axes": ["RQ1", "RQ2"],
+      "chapters": ["ch00", "ch01", "ch02", "ch11"]
+    },
+    {
+      "source_id": "SRC-002", "seed_id": "SEED-02", "category": "preprint", "peer_reviewed": false,
+      "title": "Virtual Agent Economies",
+      "authors": "Nenad Tomašev, Matija Franklin, Joel Z. Leibo, Julian Jacobs et al.",
+      "year": 2025, "publication_date": "2025-09-12", "venue_or_issuer": "arXiv (Google DeepMind)",
+      "identifier": "arXiv:2509.10147", "url": "https://arxiv.org/pdf/2509.10147",
+      "aacods_score": 11.0, "research_axes": ["RQ1"],
+      "chapters": ["ch00", "ch01", "ch04", "ch07", "ch11"]
+    },
+    {
+      "source_id": "SRC-003", "seed_id": "SEED-03", "category": "preprint", "peer_reviewed": false,
+      "title": "Towards a Science of Scaling Agent Systems",
+      "authors": "Yubin Kim, Ken Gu, Chanwoo Park, Chunjong Park et al.",
+      "year": 2025, "publication_date": "2025-12-09", "venue_or_issuer": "arXiv",
+      "identifier": "arXiv:2512.08296", "url": "https://arxiv.org/pdf/2512.08296",
+      "aacods_score": 10.5, "research_axes": ["RQ2"],
+      "chapters": ["ch02", "ch03", "ch06"]
+    },
+    {
+      "source_id": "SRC-004", "seed_id": "SEED-04", "category": "working_paper", "peer_reviewed": false,
+      "title": "The Coasean Singularity? Demand, Supply, and Market Design with AI Agents",
+      "authors": "Peyman Shahidi, Gili Rusak, Benjamin S. Manning, Andrey Fradkin, John J. Horton",
+      "identifier": "NBER-w34468", "url": "https://www.nber.org/system/files/working_papers/w34468/w34468.pdf",
+      "year": 2025, "publication_date": "2025-11-01", "venue_or_issuer": "NBER Working Paper 34468",
+      "aacods_score": 11.5, "research_axes": ["RQ1"],
+      "chapters": ["ch01", "ch04", "ch05", "ch11"]
+    },
+    {
+      "source_id": "SRC-005", "seed_id": "SEED-05", "category": "preprint", "peer_reviewed": false,
+      "title": "An Economy of AI Agents",
+      "authors": "Gillian K. Hadfield, Andrew Koh",
+      "year": 2025, "publication_date": "2025-09-01", "venue_or_issuer": "arXiv / Schwartz Reisman Institute",
+      "identifier": "arXiv:2509.01063", "url": "https://arxiv.org/pdf/2509.01063",
+      "aacods_score": 11.0, "research_axes": ["RQ1", "RQ4"],
+      "chapters": ["ch01", "ch04", "ch07", "ch10"]
+    },
+    {
+      "source_id": "SRC-006", "seed_id": "SEED-06", "category": "preprint", "peer_reviewed": false,
+      "title": "SagaLLM: Context Management, Validation, and Transaction Guarantees for Multi-Agent LLM Planning",
+      "authors": "Edward Y. Chang, Longling Geng",
+      "year": 2025, "publication_date": "2025-03-15", "venue_or_issuer": "arXiv / VLDB",
+      "identifier": "arXiv:2503.11951", "url": "https://arxiv.org/pdf/2503.11951",
+      "aacods_score": 10.5, "research_axes": ["RQ3"],
+      "chapters": ["ch03", "ch04", "ch05", "ch06"]
+    },
+    {
+      "source_id": "SRC-007", "seed_id": "SEED-07", "category": "conference_paper", "peer_reviewed": true,
+      "title": "Defeating Prompt Injections by Design (CaMeL)",
+      "authors": "Edoardo Debenedetti, Ilia Shumailov, Tianqi Fan, Jamie Hayes et al.",
+      "year": 2025, "publication_date": "2025-03-24", "venue_or_issuer": "arXiv / IEEE SaTML",
+      "identifier": "arXiv:2503.18813", "url": "https://arxiv.org/pdf/2503.18813",
+      "aacods_score": 11.5, "research_axes": ["RQ5"],
+      "chapters": ["ch03", "ch05", "ch08", "ch09"]
+    },
+    {
+      "source_id": "SRC-008", "category": "report", "peer_reviewed": false,
+      "title": "Artificial Intelligence Index Report 2026",
+      "authors": "Sha Sajadieh, Loredana Fattorini, Raymond Perrault, Yolanda Gil et al.",
+      "year": 2026, "publication_date": "2026-04-14", "venue_or_issuer": "Stanford HAI / arXiv",
+      "identifier": "arXiv:2606.15708", "url": "https://arxiv.org/pdf/2606.15708",
+      "aacods_score": 11.5, "research_axes": ["RQ1", "RQ6"],
+      "chapters": ["ch00", "ch01", "ch02", "ch11", "ch12"]
+    },
+    {
+      "source_id": "SRC-009", "category": "journal_article", "peer_reviewed": true,
+      "title": "Experimental evidence on the productivity effects of generative artificial intelligence",
+      "authors": "Shakked Noy, Whitney Zhang",
+      "year": 2023, "publication_date": "2023-07-14", "venue_or_issuer": "Science (open author manuscript)",
+      "identifier": "DOI:10.1126/science.adh2586-oa", "url": "https://shakkednoy.com/Noy%20Zhang%20NBER%20SI.pdf",
+      "aacods_score": 11.5, "research_axes": ["RQ1", "RQ6"],
+      "chapters": ["ch01", "ch11"]
+    },
+    {
+      "source_id": "SRC-010", "category": "working_paper", "peer_reviewed": false,
+      "title": "The Effects of Generative AI on High-Skilled Work: Evidence from Three Field Experiments with Software Developers",
+      "authors": "Kevin Zheyuan Cui, Mert Demirer, Sonia Jaffe, Leon Musolff, Sida Peng, Tobias Salz",
+      "year": 2025, "publication_date": "2025-06-01", "venue_or_issuer": "MIT / Microsoft / Wharton Open Paper",
+      "identifier": "SSRN-4945566-oa", "url": "https://www.mertdemirer.com/Papers/Demirer_AI_productivity.pdf",
+      "aacods_score": 11.0, "research_axes": ["RQ1", "RQ6"],
+      "chapters": ["ch01", "ch11"]
+    },
+    {
+      "source_id": "SRC-011", "category": "industry_report", "peer_reviewed": false,
+      "title": "Agentic AI orchestration: TMT Predictions 2026",
+      "authors": "Deloitte Insights",
+      "year": 2025, "publication_date": "2025-11-18", "venue_or_issuer": "Deloitte Center for Technology, Media & Telecommunications",
+      "identifier": "DELOITTE-TMT-2026-AGENTS", "url": "https://www.deloitte.com/us/en/insights/industry/technology/technology-media-and-telecom-predictions/2026/ai-agent-orchestration.html",
+      "aacods_score": 9.5, "research_axes": ["RQ1", "RQ2"],
+      "chapters": ["ch00", "ch02", "ch03", "ch11"]
+    },
+    {
+      "source_id": "SRC-012", "category": "industry_report", "peer_reviewed": false,
+      "title": "Agentic AI Market Size & Share Analysis — Growth Trends and Forecast",
+      "authors": "Mordor Intelligence",
+      "year": 2026, "publication_date": "2026-06-01", "venue_or_issuer": "Mordor Intelligence",
+      "identifier": "MORDOR-AGENTIC-AI-2026", "url": "https://www.mordorintelligence.com/industry-reports/agentic-ai-market",
+      "aacods_score": 9.0, "research_axes": ["RQ1"],
+      "chapters": ["ch02"]
+    },
+    {
+      "source_id": "SRC-013", "category": "industry_report", "peer_reviewed": false,
+      "title": "Enterprise Agentic AI Market Size, Share & Trends Analysis Report",
+      "authors": "Grand View Research",
+      "year": 2025, "publication_date": "2025-10-01", "venue_or_issuer": "Grand View Research",
+      "identifier": "GVR-ENT-AGENTIC-AI-2025", "url": "https://www.grandviewresearch.com/industry-analysis/enterprise-agentic-ai-market-report",
+      "aacods_score": 9.0, "research_axes": ["RQ1"],
+      "chapters": ["ch02"]
+    },
+    {
+      "source_id": "SRC-014", "category": "official_statistics", "peer_reviewed": false,
+      "title": "Utilisation de l'intelligence artificielle par les entreprises au Canada, deuxième trimestre de 2026 (Tableau 33-10-1167-01)",
+      "authors": "Statistique Canada",
+      "year": 2026, "publication_date": "2026-06-30", "venue_or_issuer": "Statistique Canada (API WDS CSV)",
+      "identifier": "STC-33-10-1167-01", "url": "https://www150.statcan.gc.ca/n1/tbl/csv/33101167-fra.zip",
+      "aacods_score": 11.5, "research_axes": ["RQ1", "RQ6"],
+      "chapters": ["ch01", "ch02", "ch11"]
+    },
+    {
+      "source_id": "SRC-015", "category": "official_statistics", "peer_reviewed": false,
+      "title": "Utilisation de l'intelligence artificielle par les entreprises au Canada, troisième trimestre de 2026 (Tableau 33-10-1207-01)",
+      "authors": "Statistique Canada",
+      "year": 2026, "publication_date": "2026-09-30", "venue_or_issuer": "Statistique Canada (API WDS CSV)",
+      "identifier": "STC-33-10-1207-01", "url": "https://www150.statcan.gc.ca/n1/tbl/csv/33101207-fra.zip",
+      "aacods_score": 11.5, "research_axes": ["RQ1", "RQ6"],
+      "chapters": ["ch01", "ch11"]
+    },
+    {
+      "source_id": "SRC-016", "category": "official_report", "peer_reviewed": false,
+      "title": "Staff Analytical Paper 2026-22 : Survey Evidence on Firm AI Adoption and its Implications",
+      "authors": "Chanya Chawla, Crystal Arnburg",
+      "year": 2026, "publication_date": "2026-06-02", "venue_or_issuer": "Banque du Canada",
+      "identifier": "BoC-SAP-2026-22", "url": "https://www.bankofcanada.ca/wp-content/uploads/2026/05/sap2026-22.pdf",
+      "aacods_score": 11.5, "research_axes": ["RQ1", "RQ6"],
+      "chapters": ["ch01", "ch10", "ch11"]
+    },
+    {
+      "source_id": "SRC-017", "category": "regulatory_filing", "peer_reviewed": false,
+      "title": "Alphabet Inc. Form 8-K Exhibit 99.1 — Q3 2026 Financial Results",
+      "authors": "Alphabet Inc.",
+      "year": 2026, "publication_date": "2026-10-28", "venue_or_issuer": "U.S. SEC EDGAR",
+      "identifier": "SEC-GOOG-8K-2026Q3", "url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000080/googexhibit991q32026.htm",
+      "aacods_score": 11.5, "research_axes": ["RQ1"],
+      "chapters": ["ch02"]
+    },
+    {
+      "source_id": "SRC-018", "category": "regulatory_filing", "peer_reviewed": false,
+      "title": "Amazon.com, Inc. Form 8-K Exhibit 99.1 — Q3 2026 Financial Results and 2026 CapEx Guidance",
+      "authors": "Amazon.com, Inc.",
+      "year": 2026, "publication_date": "2026-10-29", "venue_or_issuer": "U.S. SEC EDGAR",
+      "identifier": "SEC-AMZN-8K-2026Q3", "url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000038/amzn-20260930xex991.htm",
+      "aacods_score": 11.5, "research_axes": ["RQ1"],
+      "chapters": ["ch02"]
+    },
+    {
+      "source_id": "SRC-019", "category": "regulatory_filing", "peer_reviewed": false,
+      "title": "Meta Platforms, Inc. Form 8-K Exhibit 99.1 — Q3 2026 Results and 2026 CapEx Guidance",
+      "authors": "Meta Platforms, Inc.",
+      "year": 2026, "publication_date": "2026-10-21", "venue_or_issuer": "U.S. SEC EDGAR",
+      "identifier": "SEC-META-8K-2026Q3", "url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026066700/meta-09302026xexhibit991.htm",
+      "aacods_score": 11.5, "research_axes": ["RQ1"],
+      "chapters": ["ch02"]
+    },
+    {
+      "source_id": "SRC-020", "category": "regulatory_filing", "peer_reviewed": false,
+      "title": "Microsoft Corporation Form 10-Q — Quarter Ended September 30, 2026 (Q1 FY2027)",
+      "authors": "Microsoft Corporation",
+      "year": 2026, "publication_date": "2026-10-28", "venue_or_issuer": "U.S. SEC EDGAR",
+      "identifier": "SEC-MSFT-10Q-2026Q3", "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526436133/msft-20260930.htm",
+      "aacods_score": 11.5, "research_axes": ["RQ1"],
+      "chapters": ["ch02"]
+    },
+    {
+      "source_id": "SRC-021", "category": "regulatory_filing", "peer_reviewed": false,
+      "title": "Microsoft Corporation Form 10-K — Fiscal Year Ended June 30, 2026",
+      "authors": "Microsoft Corporation",
+      "year": 2026, "publication_date": "2026-07-29", "venue_or_issuer": "U.S. SEC EDGAR",
+      "identifier": "SEC-MSFT-10K-FY2026", "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm",
+      "aacods_score": 11.5, "research_axes": ["RQ1"],
+      "chapters": ["ch02"]
+    },
+    {
+      "source_id": "SRC-022", "category": "regulatory_filing", "peer_reviewed": false,
+      "title": "Microsoft Corporation Form 10-Q — Six Months Ended December 31, 2025 (Q2 FY2026)",
+      "authors": "Microsoft Corporation",
+      "year": 2026, "publication_date": "2026-01-28", "venue_or_issuer": "U.S. SEC EDGAR",
+      "identifier": "SEC-MSFT-10Q-2025Q4", "url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526027207/msft-20251231.htm",
+      "aacods_score": 11.5, "research_axes": ["RQ1"],
+      "chapters": ["ch02"]
+    },
+    {
+      "source_id": "SRC-023", "category": "standard_spec", "peer_reviewed": false,
+      "title": "FinOps Open Cost and Usage Specification (FOCUS) v1.4",
+      "authors": "FinOps Foundation",
+      "year": 2026, "publication_date": "2026-06-01", "venue_or_issuer": "Linux Foundation / FinOps Foundation",
+      "identifier": "FINOPS-FOCUS-1.4", "url": "https://focus.finops.org/focus-specification/v1-4/",
+      "aacods_score": 10.5, "research_axes": ["RQ1", "RQ3"],
+      "chapters": ["ch02", "ch06", "ch09"]
+    },
+    {
+      "source_id": "SRC-024", "category": "standard_reference", "peer_reviewed": false,
+      "title": "NIST/SEMATECH e-Handbook of Statistical Methods — Section 8.1.8.1 Series Model (Lusser Reliability Law)",
+      "authors": "National Institute of Standards and Technology (NIST) / SEMATECH",
+      "year": 2012, "publication_date": "2012-04-01", "venue_or_issuer": "NIST Information Technology Laboratory",
+      "identifier": "NIST-HANDBOOK-8.1.8.1", "url": "https://www.itl.nist.gov/div898/handbook/apr/section1/apr181.htm",
+      "aacods_score": 11.5, "research_axes": ["RQ2"],
+      "chapters": ["ch00", "ch02", "ch03", "ch06"]
+    },
+    {
+      "source_id": "SRC-025", "category": "empirical_benchmark", "peer_reviewed": false,
+      "title": "Measuring AI Ability to Complete Long Tasks",
+      "authors": "METR Research",
+      "year": 2025, "publication_date": "2025-03-19", "venue_or_issuer": "METR",
+      "identifier": "METR-HORIZON-2025", "url": "https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/",
+      "aacods_score": 10.5, "research_axes": ["RQ2"],
+      "chapters": ["ch01", "ch02", "ch06"]
+    },
+    {
+      "source_id": "SRC-026", "category": "journal_article", "peer_reviewed": true,
+      "title": "Cognitive Architectures for Language Agents (CoALA)",
+      "authors": "Theodore R. Sumers, Shunyu Yao, Karthik Narasimhan, Thomas L. Griffiths",
+      "year": 2024, "publication_date": "2024-03-15", "venue_or_issuer": "TMLR / arXiv",
+      "identifier": "arXiv:2309.02427", "url": "https://arxiv.org/pdf/2309.02427",
+      "aacods_score": 11.5, "research_axes": ["RQ2", "RQ3"],
+      "chapters": ["ch03", "ch04", "ch05"]
+    },
+    {
+      "source_id": "SRC-027", "category": "preprint", "peer_reviewed": false,
+      "title": "Measuring Agents in Production (MAP)",
+      "authors": "Melissa Z. Pan, Negar Arabzadeh, Riccardo Cogo, Yuxuan Zhu et al.",
+      "year": 2025, "publication_date": "2025-12-02", "venue_or_issuer": "arXiv (UC Berkeley)",
+      "identifier": "arXiv:2512.04123", "url": "https://arxiv.org/pdf/2512.04123",
+      "aacods_score": 11.0, "research_axes": ["RQ2", "RQ6"],
+      "chapters": ["ch00", "ch02", "ch03", "ch06", "ch11"]
+    },
+    {
+      "source_id": "SRC-028", "category": "conference_paper", "peer_reviewed": true,
+      "title": "Why Do Multi-Agent LLM Systems Fail? (MAST)",
+      "authors": "Mert Cemri, Melissa Z. Pan, Shuyi Yang, Lakshya A. Agrawal et al.",
+      "year": 2025, "publication_date": "2025-03-17", "venue_or_issuer": "NeurIPS 2025 / arXiv",
+      "identifier": "arXiv:2503.13657", "url": "https://arxiv.org/pdf/2503.13657",
+      "aacods_score": 11.5, "research_axes": ["RQ2"],
+      "chapters": ["ch02", "ch03", "ch06", "ch09"]
+    },
+    {
+      "source_id": "SRC-029", "category": "preprint", "peer_reviewed": false,
+      "title": "τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains",
+      "authors": "Shunyu Yao, Noah Shinn, Pedram Razavi, Karthik Narasimhan",
+      "year": 2024, "publication_date": "2024-06-17", "venue_or_issuer": "arXiv (Princeton)",
+      "identifier": "arXiv:2406.12045", "url": "https://arxiv.org/pdf/2406.12045",
+      "aacods_score": 11.0, "research_axes": ["RQ2"],
+      "chapters": ["ch02", "ch06"]
+    },
+    {
+      "source_id": "SRC-030", "category": "preprint", "peer_reviewed": false,
+      "title": "Holistic Agent Leaderboard: The Missing Infrastructure for AI Agent Evaluation (HAL)",
+      "authors": "Sayash Kapoor, Benedikt Stroebl, Peter Kirgis, Nitya Nadgir et al.",
+      "year": 2025, "publication_date": "2025-10-13", "venue_or_issuer": "arXiv (Princeton)",
+      "identifier": "arXiv:2510.11977", "url": "https://arxiv.org/pdf/2510.11977",
+      "aacods_score": 11.0, "research_axes": ["RQ2"],
+      "chapters": ["ch02", "ch06"]
+    },
+    {
+      "source_id": "SRC-031", "category": "preprint", "peer_reviewed": false,
+      "title": "Single-Agent LLMs Outperform Multi-Agent Systems on Multi-Hop Reasoning Under Equal Thinking Token Budgets",
+      "authors": "Dat Tran, Douwe Kiela",
+      "year": 2026, "publication_date": "2026-04-02", "venue_or_issuer": "arXiv",
+      "identifier": "arXiv:2604.02460", "url": "https://arxiv.org/pdf/2604.02460",
+      "aacods_score": 10.5, "research_axes": ["RQ2"],
+      "chapters": ["ch02", "ch03", "ch06"]
+    },
+    {
+      "source_id": "SRC-032", "category": "preprint", "peer_reviewed": false,
+      "title": "The Ringelmann Effect in Multi-Agent LLM Systems: A Scaling Law for Effective Team Size",
+      "authors": "Blaž Bertalanič, Carolina Fortuna",
+      "year": 2026, "publication_date": "2026-05-31", "venue_or_issuer": "arXiv",
+      "identifier": "arXiv:2606.02646", "url": "https://arxiv.org/pdf/2606.02646",
+      "aacods_score": 10.5, "research_axes": ["RQ2", "RQ6"],
+      "chapters": ["ch02", "ch03", "ch06"]
+    },
+    {
+      "source_id": "SRC-033", "category": "conference_paper", "peer_reviewed": true,
+      "title": "Sagas",
+      "authors": "Hector Garcia-Molina, Kenneth Salem",
+      "year": 1987, "publication_date": "1987-05-01", "venue_or_issuer": "ACM SIGMOD 1987 (Princeton Dept. CS OA)",
+      "identifier": "ACM-SIGMOD-1987-SAGAS", "url": "https://www.cs.cornell.edu/andru/cs711/2002fa/reading/sagas.pdf",
+      "aacods_score": 11.5, "research_axes": ["RQ3"],
+      "chapters": ["ch00", "ch03", "ch04", "ch05"]
+    },
+    {
+      "source_id": "SRC-034", "category": "technical_spec", "peer_reviewed": false,
+      "title": "Temporal SDKs — Durable Execution, Event History and Deterministic Replay",
+      "authors": "Temporal Technologies",
+      "year": 2026, "publication_date": "2026-06-01", "venue_or_issuer": "Temporal Documentation",
+      "identifier": "TEMPORAL-SDKS-2026", "url": "https://docs.temporal.io/encyclopedia/temporal-sdks",
+      "aacods_score": 10.5, "research_axes": ["RQ3"],
+      "chapters": ["ch03", "ch04"]
+    },
+    {
+      "source_id": "SRC-035", "category": "standard_spec", "peer_reviewed": false,
+      "title": "CloudEvents Specification — Version 1.0.2",
+      "authors": "CNCF Serverless Working Group",
+      "year": 2022, "publication_date": "2022-04-01", "venue_or_issuer": "Cloud Native Computing Foundation (CNCF)",
+      "identifier": "CLOUDEVENTS-1.0.2", "url": "https://raw.githubusercontent.com/cloudevents/spec/v1.0.2/cloudevents/spec.md",
+      "aacods_score": 11.0, "research_axes": ["RQ3", "RQ5"],
+      "chapters": ["ch03", "ch04", "ch09"]
+    },
+    {
+      "source_id": "SRC-036", "category": "standard_draft", "peer_reviewed": false,
+      "title": "The Idempotency-Key HTTP Header Field (draft-ietf-httpapi-idempotency-key-header)",
+      "authors": "Sanjay Dalal, Jae-Hoon Lee (IETF HTTPAPI WG)",
+      "year": 2026, "publication_date": "2026-06-01", "venue_or_issuer": "IETF Datatracker",
+      "identifier": "IETF-DRAFT-IDEMPOTENCY-KEY", "url": "https://datatracker.ietf.org/doc/draft-ietf-httpapi-idempotency-key-header/",
+      "aacods_score": 10.5, "research_axes": ["RQ3"],
+      "chapters": ["ch03", "ch04", "ch05"]
+    },
+    {
+      "source_id": "SRC-037", "category": "standard_spec", "peer_reviewed": false,
+      "title": "OpenTelemetry Semantic Conventions for Generative AI Agents (gen-ai-agent-spans)",
+      "authors": "OpenTelemetry GenAI SIG",
+      "year": 2026, "publication_date": "2026-06-01", "venue_or_issuer": "CNCF / OpenTelemetry",
+      "identifier": "OTEL-GENAI-AGENT-SPANS", "url": "https://raw.githubusercontent.com/open-telemetry/semantic-conventions-genai/main/docs/gen-ai/gen-ai-agent-spans.md",
+      "aacods_score": 10.5, "research_axes": ["RQ3", "RQ6"],
+      "chapters": ["ch04", "ch06", "ch09"]
+    },
+    {
+      "source_id": "SRC-038", "category": "standard_spec", "peer_reviewed": false,
+      "title": "Model Context Protocol (MCP) Specification — Revision 2025-11-25",
+      "authors": "Model Context Protocol Maintainers",
+      "year": 2025, "publication_date": "2025-11-25", "venue_or_issuer": "modelcontextprotocol.io",
+      "identifier": "MCP-SPEC-2025-11-25", "url": "https://modelcontextprotocol.io/specification/2025-11-25",
+      "aacods_score": 11.0, "research_axes": ["RQ3", "RQ5"],
+      "chapters": ["ch00", "ch04", "ch05", "ch08"]
+    },
+    {
+      "source_id": "SRC-039", "category": "standard_spec", "peer_reviewed": false,
+      "title": "Agent2Agent (A2A) Protocol Specification",
+      "authors": "Linux Foundation / A2A Project",
+      "year": 2026, "publication_date": "2026-06-01", "venue_or_issuer": "a2a-protocol.org",
+      "identifier": "A2A-SPEC-2026", "url": "https://a2a-protocol.org/latest/specification/",
+      "aacods_score": 10.5, "research_axes": ["RQ3", "RQ5"],
+      "chapters": ["ch04", "ch05", "ch07", "ch08"]
+    },
+    {
+      "source_id": "SRC-040", "category": "preprint", "peer_reviewed": false,
+      "title": "From Technical Debt to Cognitive and Intent Debt: Rethinking Software Health in the Age of AI",
+      "authors": "Margaret-Anne Storey",
+      "year": 2026, "publication_date": "2026-03-23", "venue_or_issuer": "arXiv (University of Victoria)",
+      "identifier": "arXiv:2603.22106", "url": "https://arxiv.org/pdf/2603.22106",
+      "aacods_score": 11.0, "research_axes": ["RQ3", "RQ6"],
+      "chapters": ["ch03", "ch05", "ch11", "ch12"]
+    },
+    {
+      "source_id": "SRC-041", "category": "standard_rfc", "peer_reviewed": true,
+      "title": "RFC 8693: OAuth 2.0 Token Exchange",
+      "authors": "Michael B. Jones, Anthony Nadalin, Brian Campbell, John Bradley, Chuck Mortimore",
+      "year": 2020, "publication_date": "2020-01-01", "venue_or_issuer": "IETF RFC Editor",
+      "identifier": "RFC8693", "url": "https://www.rfc-editor.org/rfc/rfc8693.txt",
+      "aacods_score": 11.5, "research_axes": ["RQ4"],
+      "chapters": ["ch04", "ch07"]
+    },
+    {
+      "source_id": "SRC-042", "category": "standard_rfc", "peer_reviewed": true,
+      "title": "RFC 9396: OAuth 2.0 Rich Authorization Requests (RAR)",
+      "authors": "Torsten Lodderstedt, Justin Richer, Brian Campbell",
+      "year": 2023, "publication_date": "2023-05-01", "venue_or_issuer": "IETF RFC Editor",
+      "identifier": "RFC9396", "url": "https://www.rfc-editor.org/rfc/rfc9396.txt",
+      "aacods_score": 11.5, "research_axes": ["RQ4"],
+      "chapters": ["ch05", "ch07", "ch08"]
+    },
+    {
+      "source_id": "SRC-043", "category": "standard_rfc", "peer_reviewed": true,
+      "title": "RFC 9449: OAuth 2.0 Demonstrating Proof of Possession (DPoP)",
+      "authors": "Daniel Fett, Brian Campbell, John Bradley, Torsten Lodderstedt et al.",
+      "year": 2023, "publication_date": "2023-09-01", "venue_or_issuer": "IETF RFC Editor",
+      "identifier": "RFC9449", "url": "https://www.rfc-editor.org/rfc/rfc9449.txt",
+      "aacods_score": 11.5, "research_axes": ["RQ4"],
+      "chapters": ["ch07", "ch08"]
+    },
+    {
+      "source_id": "SRC-044", "category": "standard_rfc", "peer_reviewed": true,
+      "title": "RFC 9943: An Architecture for Trustworthy and Transparent Digital Supply Chains (SCITT)",
+      "authors": "Henk Birkholz, Antoine Delignat-Lavaud, Cedric Fournet, Yogesh Deshpande, Steve Lasker",
+      "year": 2026, "publication_date": "2026-06-01", "venue_or_issuer": "IETF RFC Editor",
+      "identifier": "RFC9943", "url": "https://www.rfc-editor.org/rfc/rfc9943.txt",
+      "aacods_score": 11.5, "research_axes": ["RQ4", "RQ5"],
+      "chapters": ["ch07", "ch08", "ch09", "ch12"]
+    },
+    {
+      "source_id": "SRC-045", "category": "standard_spec", "peer_reviewed": false,
+      "title": "OpenID Connect Client-Initiated Backchannel Authentication Flow — Core 1.0",
+      "authors": "Gonzalo Fernandez, Axel Nennker, Dave Tonge et al. (OpenID Foundation)",
+      "year": 2021, "publication_date": "2021-09-01", "venue_or_issuer": "OpenID Foundation",
+      "identifier": "OIDC-CIBA-1.0", "url": "https://openid.net/specs/openid-client-initiated-backchannel-authentication-core-1_0.html",
+      "aacods_score": 11.0, "research_axes": ["RQ4", "RQ6"],
+      "chapters": ["ch07", "ch11"]
+    },
+    {
+      "source_id": "SRC-046", "category": "standard_spec", "peer_reviewed": false,
+      "title": "SPIFFE Concepts — Workload Identity, SPIFFE ID and SVID",
+      "authors": "SPIFFE / Cloud Native Computing Foundation",
+      "year": 2026, "publication_date": "2026-06-01", "venue_or_issuer": "CNCF SPIFFE",
+      "identifier": "SPIFFE-CONCEPTS-2026", "url": "https://spiffe.io/docs/latest/spiffe-about/spiffe-concepts/",
+      "aacods_score": 11.0, "research_axes": ["RQ4"],
+      "chapters": ["ch04", "ch07"]
+    },
+    {
+      "source_id": "SRC-047", "category": "standard_draft", "peer_reviewed": false,
+      "title": "Workload Identity Practices (draft-ietf-wimse-workload-identity-practices-08)",
+      "authors": "IETF WIMSE Working Group",
+      "year": 2026, "publication_date": "2026-11-14", "venue_or_issuer": "IETF Datatracker",
+      "identifier": "IETF-WIMSE-WIP-08", "url": "https://www.ietf.org/archive/id/draft-ietf-wimse-workload-identity-practices-08.txt",
+      "aacods_score": 10.5, "research_axes": ["RQ4"],
+      "chapters": ["ch07"]
+    },
+    {
+      "source_id": "SRC-048", "category": "standard_draft", "peer_reviewed": false,
+      "title": "AI Identity Management System (draft-ietf-wimse-aims-01)",
+      "authors": "IETF WIMSE Working Group",
+      "year": 2026, "publication_date": "2026-11-02", "venue_or_issuer": "IETF Datatracker",
+      "identifier": "IETF-WIMSE-AIMS-01", "url": "https://www.ietf.org/archive/id/draft-ietf-wimse-aims-01.txt",
+      "aacods_score": 10.5, "research_axes": ["RQ4"],
+      "chapters": ["ch07", "ch08"]
+    },
+    {
+      "source_id": "SRC-049", "category": "standard_gov", "peer_reviewed": false,
+      "title": "NIST FIPS 203: Module-Lattice-Based Key-Encapsulation Mechanism Standard (ML-KEM)",
+      "authors": "National Institute of Standards and Technology (NIST)",
+      "year": 2024, "publication_date": "2024-08-13", "venue_or_issuer": "NIST Computer Security Resource Center",
+      "identifier": "NIST-FIPS-203", "url": "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.203.pdf",
+      "aacods_score": 12.0, "research_axes": ["RQ4"],
+      "chapters": ["ch07", "ch12"]
+    },
+    {
+      "source_id": "SRC-050", "category": "standard_gov", "peer_reviewed": false,
+      "title": "NIST FIPS 204: Module-Lattice-Based Digital Signature Standard (ML-DSA)",
+      "authors": "National Institute of Standards and Technology (NIST)",
+      "year": 2024, "publication_date": "2024-08-13", "venue_or_issuer": "NIST Computer Security Resource Center",
+      "identifier": "NIST-FIPS-204", "url": "https://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.204.pdf",
+      "aacods_score": 12.0, "research_axes": ["RQ4"],
+      "chapters": ["ch07", "ch12"]
+    },
+    {
+      "source_id": "SRC-051", "category": "standard_gov", "peer_reviewed": false,
+      "title": "NIST IR 8547 (ipd): Transition to Post-Quantum Cryptography Standards",
+      "authors": "Dustin Moody, Lily Chen, David Cooper, Quynh Dang et al. (NIST)",
+      "year": 2024, "publication_date": "2024-11-12", "venue_or_issuer": "NIST",
+      "identifier": "NIST-IR-8547", "url": "https://nvlpubs.nist.gov/nistpubs/ir/2024/NIST.IR.8547.ipd.pdf",
+      "aacods_score": 12.0, "research_axes": ["RQ4"],
+      "chapters": ["ch07", "ch12"]
+    },
+    {
+      "source_id": "SRC-052", "category": "official_report", "peer_reviewed": false,
+      "title": "Advancing a Coordinated Roadmap for the Transition to Post-Quantum Cryptography in the Financial Sector",
+      "authors": "G7 Cyber Expert Group (CEG)",
+      "year": 2026, "publication_date": "2026-01-14", "venue_or_issuer": "G7 Cyber Expert Group / UK HM Treasury & Bank of England",
+      "identifier": "G7-CEG-PQC-ROADMAP-2026", "url": "https://assets.publishing.service.gov.uk/media/6966149d8d599f4c09e1ffab/G7-CEG-Quantum-Roadmap.pdf",
+      "aacods_score": 11.5, "research_axes": ["RQ4", "RQ6"],
+      "chapters": ["ch07", "ch10", "ch12"]
+    },
+    {
+      "source_id": "SRC-053", "category": "standard_spec", "peer_reviewed": false,
+      "title": "Baseline Requirements for the Issuance and Management of Publicly-Trusted TLS Server Certificates (incl. Ballot SC-081v3)",
+      "authors": "CA/Browser Forum Server Certificate Working Group",
+      "year": 2026, "publication_date": "2026-06-01", "venue_or_issuer": "CA/Browser Forum",
+      "identifier": "CABF-BR-SC081V3", "url": "https://raw.githubusercontent.com/cabforum/servercert/main/docs/BR.md",
+      "aacods_score": 11.5, "research_axes": ["RQ4"],
+      "chapters": ["ch07", "ch12"]
+    },
+    {
+      "source_id": "SRC-054", "category": "standard_gov", "peer_reviewed": false,
+      "title": "NIST AI 100-2e2025: Adversarial Machine Learning — A Taxonomy and Terminology of Attacks and Mitigations",
+      "authors": "Alina Oprea, Apostol Vassilev et al. (NIST)",
+      "year": 2025, "publication_date": "2025-03-01", "venue_or_issuer": "NIST",
+      "identifier": "NIST-AI-100-2E2025", "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-2e2025.pdf",
+      "aacods_score": 12.0, "research_axes": ["RQ5"],
+      "chapters": ["ch05", "ch08", "ch09"]
+    },
+    {
+      "source_id": "SRC-055", "category": "industry_standard", "peer_reviewed": false,
+      "title": "OWASP Top 10 for Agentic Applications (2026) — Threat Crosswalk",
+      "authors": "OWASP GenAI Security Project",
+      "year": 2026, "publication_date": "2026-06-01", "venue_or_issuer": "OWASP GenAI Security Project (GitHub Open Pages)",
+      "identifier": "OWASP-AGENTIC-TOP10-2026", "url": "https://genai-security-project.github.io/crosswalk/agentic-ai-top10/",
+      "aacods_score": 10.5, "research_axes": ["RQ5"],
+      "chapters": ["ch04", "ch08"]
+    },
+    {
+      "source_id": "SRC-056", "category": "preprint", "peer_reviewed": false,
+      "title": "Can CaMeLs Talk? Securing Multi-Agent Systems Against Indirect Prompt Injection Attacks",
+      "authors": "James Peters-Gill, Avi Semler, Henning Bartsch, Ilia Shumailov et al.",
+      "year": 2026, "publication_date": "2026-10-05", "venue_or_issuer": "arXiv",
+      "identifier": "arXiv:2610.05640", "url": "https://arxiv.org/pdf/2610.05640",
+      "aacods_score": 10.5, "research_axes": ["RQ5"],
+      "chapters": ["ch05", "ch08", "ch09"]
+    },
+    {
+      "source_id": "SRC-057", "category": "preprint", "peer_reviewed": false,
+      "title": "Same Name, Different Server: A Security Census of Silent Drift in the Model Context Protocol Ecosystem",
+      "authors": "Obada Kraishan",
+      "year": 2026, "publication_date": "2026-09-12", "venue_or_issuer": "arXiv",
+      "identifier": "arXiv:2609.14119", "url": "https://arxiv.org/pdf/2609.14119",
+      "aacods_score": 10.5, "research_axes": ["RQ5"],
+      "chapters": ["ch04", "ch05", "ch08", "ch09"]
+    },
+    {
+      "source_id": "SRC-058", "category": "preprint", "peer_reviewed": false,
+      "title": "STAMP/STPA Informed Characterization of Factors Leading to Loss of Control in AI Systems",
+      "authors": "Steve Barrett, Anna Bruvere, Sean P. Fillingham, Catherine Rhodes",
+      "year": 2025, "publication_date": "2025-12-19", "venue_or_issuer": "arXiv (Centre for the Study of Existential Risk)",
+      "identifier": "arXiv:2512.17600", "url": "https://arxiv.org/pdf/2512.17600",
+      "aacods_score": 11.0, "research_axes": ["RQ5", "RQ6"],
+      "chapters": ["ch08", "ch09", "ch11", "ch12"]
+    },
+    {
+      "source_id": "SRC-059", "category": "journal_article", "peer_reviewed": true,
+      "title": "System level governance of generative AI risks in cross border e-commerce supply chains",
+      "authors": "Ionel Bostan",
+      "year": 2026, "publication_date": "2026-08-27", "venue_or_issuer": "Discover Computing (Springer OA)",
+      "identifier": "DOI:10.1007/s10791-026-10509-y", "url": "https://link.springer.com/article/10.1007/s10791-026-10509-y",
+      "aacods_score": 10.5, "research_axes": ["RQ5", "RQ6"],
+      "chapters": ["ch09", "ch10"]
+    },
+    {
+      "source_id": "SRC-060", "category": "legislation", "peer_reviewed": false,
+      "title": "Règlement (UE) 2024/1689 (EU AI Act)",
+      "authors": "Parlement européen et Conseil de l'Union européenne",
+      "year": 2024, "publication_date": "2024-07-12", "venue_or_issuer": "Journal officiel de l'Union européenne",
+      "identifier": "CELEX:32024R1689", "url": "https://publications.europa.eu/resource/cellar/dc8116a1-3fe6-11ef-865a-01aa75ed71a1.0009.01/DOC_1",
+      "aacods_score": 12.0, "research_axes": ["RQ6"],
+      "chapters": ["ch01", "ch09", "ch10", "ch11", "ch12"]
+    },
+    {
+      "source_id": "SRC-061", "category": "legislation", "peer_reviewed": false,
+      "title": "Règlement (UE) 2026/1744 du 8 juillet 2026 modifiant le règlement (UE) 2024/1689 (simplification / échéances IA)",
+      "authors": "Parlement européen et Conseil de l'Union européenne",
+      "year": 2026, "publication_date": "2026-07-24", "venue_or_issuer": "Journal officiel de l'Union européenne (JO L 24.7.2026)",
+      "identifier": "CELEX:32026R1744", "url": "https://publications.europa.eu/resource/cellar/b459c07f-86fb-11f1-bf5e-01aa75ed71a1.0009.01/DOC_1",
+      "aacods_score": 12.0, "research_axes": ["RQ6"],
+      "chapters": ["ch10", "ch12"]
+    },
+    {
+      "source_id": "SRC-062", "category": "legislation", "peer_reviewed": false,
+      "title": "Règlement (UE) 2022/2554 sur la résilience opérationnelle numérique du secteur financier (DORA)",
+      "authors": "Parlement européen et Conseil de l'Union européenne",
+      "year": 2022, "publication_date": "2022-12-27", "venue_or_issuer": "Journal officiel de l'Union européenne",
+      "identifier": "CELEX:32022R2554", "url": "https://publications.europa.eu/resource/cellar/0caf473a-85bd-11ed-9887-01aa75ed71a1.0009.01/DOC_1",
+      "aacods_score": 12.0, "research_axes": ["RQ6"],
+      "chapters": ["ch09", "ch10"]
+    },
+    {
+      "source_id": "SRC-063", "category": "legislation", "peer_reviewed": false,
+      "title": "Loi modernisant des dispositions législatives en matière de protection des renseignements personnels (Loi 25 / LQ 2021, c. 25, art. 12.1)",
+      "authors": "Assemblée nationale du Québec",
+      "year": 2021, "publication_date": "2021-09-22", "venue_or_issuer": "Publications du Québec",
+      "identifier": "LQ-2021-C25", "url": "https://www.publicationsduquebec.gouv.qc.ca/fileadmin/Fichiers_client/lois_et_reglements/LoisAnnuelles/fr/2021/2021C25F.PDF",
+      "aacods_score": 12.0, "research_axes": ["RQ6"],
+      "chapters": ["ch05", "ch10", "ch11"]
+    },
+    {
+      "source_id": "SRC-064", "category": "official_report", "peer_reviewed": false,
+      "title": "Rapport quinquennal 2026 sur l'application de la Loi sur la protection des renseignements personnels dans le secteur privé",
+      "authors": "Commission d'accès à l'information du Québec (CAI)",
+      "year": 2026, "publication_date": "2026-06-01", "venue_or_issuer": "Commission d'accès à l'information du Québec",
+      "identifier": "CAI-RQ-2026", "url": "https://www.cai.gouv.qc.ca/uploads/pdfs/CAI_RQ_2026.pdf",
+      "aacods_score": 11.5, "research_axes": ["RQ6"],
+      "chapters": ["ch10", "ch11"]
+    },
+    {
+      "source_id": "SRC-065", "category": "regulatory_guideline", "peer_reviewed": false,
+      "title": "Ligne directrice E-23 — Gestion du risque de modélisation à l'échelle de l'entreprise (édition 2027)",
+      "authors": "Bureau du surintendant des institutions financières (BSIF / OSFI)",
+      "year": 2025, "publication_date": "2025-09-11", "venue_or_issuer": "BSIF Canada",
+      "identifier": "BSIF-E23-2027", "url": "https://www.osfi-bsif.gc.ca/fr/consignes/repertoire-consignes/ligne-directrice-e-23-gestion-du-risque-modelisation-2027",
+      "aacods_score": 12.0, "research_axes": ["RQ6"],
+      "chapters": ["ch00", "ch06", "ch09", "ch10", "ch11", "ch12"]
+    },
+    {
+      "source_id": "SRC-066", "category": "regulatory_guideline", "peer_reviewed": false,
+      "title": "Generative and Agentic Artificial Intelligence: Implications for Technology, Cyber Security and Operational Risk",
+      "authors": "Office of the Superintendent of Financial Institutions (OSFI / BSIF)",
+      "year": 2026, "publication_date": "2026-07-01", "venue_or_issuer": "OSFI Technology Risk Bulletin",
+      "identifier": "OSFI-BULLETIN-AGENTIC-2026", "url": "http://www.osfi-bsif.gc.ca/en/risks/technology-cyber-risk-management/technology-risk-bulletin/generative-agentic-artificial-intelligence-implications-technology-cyber-security-operational",
+      "aacods_score": 12.0, "research_axes": ["RQ5", "RQ6"],
+      "chapters": ["ch08", "ch09", "ch10", "ch12"]
+    },
+    {
+      "source_id": "SRC-067", "category": "regulatory_guideline", "peer_reviewed": false,
+      "title": "Guideline B-15: Climate Risk Management",
+      "authors": "Office of the Superintendent of Financial Institutions (OSFI / BSIF)",
+      "year": 2025, "publication_date": "2025-03-07", "venue_or_issuer": "OSFI Canada",
+      "identifier": "OSFI-B15", "url": "https://www.osfi-bsif.gc.ca/en/guidance/guidance-library/climate-risk-management",
+      "aacods_score": 12.0, "research_axes": ["RQ6"],
+      "chapters": ["ch09", "ch12"]
+    },
+    {
+      "source_id": "SRC-068", "category": "regulatory_guideline", "peer_reviewed": false,
+      "title": "Guideline B-10: Third-Party Risk Management",
+      "authors": "Office of the Superintendent of Financial Institutions (OSFI / BSIF)",
+      "year": 2023, "publication_date": "2023-04-24", "venue_or_issuer": "OSFI Canada",
+      "identifier": "OSFI-B10", "url": "https://www.osfi-bsif.gc.ca/en/guidance/guidance-library/third-party-risk-management-guideline",
+      "aacods_score": 12.0, "research_axes": ["RQ6"],
+      "chapters": ["ch04", "ch09", "ch10"]
+    },
+    {
+      "source_id": "SRC-069", "category": "regulatory_notice", "peer_reviewed": false,
+      "title": "CSA / OSC Notice of Amendments to National Instrument 31-103 — Prohibition of Chargebacks",
+      "authors": "Autorités canadiennes en valeurs mobilières / Ontario Securities Commission",
+      "year": 2026, "publication_date": "2026-10-08", "venue_or_issuer": "Commission des valeurs mobilières de l'Ontario (OSC)",
+      "identifier": "CSA-NI31-103-2026-10-08", "url": "https://www.osc.ca/sites/default/files/2026-10/csa_20261008_31-103_amendments-investment-fund-securities.pdf",
+      "aacods_score": 12.0, "research_axes": ["RQ6"],
+      "chapters": ["ch10", "ch12"]
+    },
+    {
+      "source_id": "SRC-070", "category": "legislation", "peer_reviewed": false,
+      "title": "Loi sur les banques (L.C. 1991, ch. 46 — révision statutaire au 30 juin 2033)",
+      "authors": "Parlement du Canada / Ministère de la Justice",
+      "year": 2026, "publication_date": "2026-06-01", "venue_or_issuer": "Justice Canada (Lois codifiées)",
+      "identifier": "LC-1991-C46", "url": "https://laws-lois.justice.gc.ca/fra/lois/b-1.01/TexteComplet.html",
+      "aacods_score": 12.0, "research_axes": ["RQ6"],
+      "chapters": ["ch10", "ch12"]
+    },
+    {
+      "source_id": "SRC-071", "category": "official_tracker", "peer_reviewed": false,
+      "title": "AIBanks.ca — Suivi réglementaire canadien ouvert (BSIF E-23 et Ligne directrice IA de l'AMF)",
+      "authors": "AIBanks.ca",
+      "year": 2026, "publication_date": "2026-06-01", "venue_or_issuer": "AIBanks.ca",
+      "identifier": "AIBANKS-CA-AMF-2026", "url": "https://www.aibanks.ca/",
+      "aacods_score": 9.0, "research_axes": ["RQ6"],
+      "chapters": ["ch10", "ch12"]
+    },
+    {
+      "source_id": "SRC-072", "category": "book_chapter", "peer_reviewed": true,
+      "title": "Dynamic Adaptive Policy Pathways (DAPP)",
+      "authors": "Marjolijn Haasnoot, Andrew Warren, Jan H. Kwakkel",
+      "year": 2019, "publication_date": "2019-03-01", "venue_or_issuer": "Decision Making under Deep Uncertainty (Springer OA)",
+      "identifier": "DOI:10.1007/978-3-030-05252-2_4", "url": "https://link.springer.com/chapter/10.1007/978-3-030-05252-2_4",
+      "aacods_score": 11.5, "research_axes": ["RQ6"],
+      "chapters": ["ch00", "ch10", "ch12"]
+    },
+    {
+      "source_id": "SRC-073", "category": "journal_article", "peer_reviewed": true,
+      "title": "Calibrated adaptive framework for trustworthy human and artificial intelligence decision systems",
+      "authors": "Maytha AL-Ali, Adam Marks, Abdallah A. Mohamed, Hossam Magdy Balaha, Mahmoud Badawy",
+      "year": 2026, "publication_date": "2026-08-20", "venue_or_issuer": "Scientific Reports (Nature Portfolio OA)",
+      "identifier": "DOI:10.1038/s41598-026-65730-y", "url": "https://www.nature.com/articles/s41598-026-65730-y",
+      "aacods_score": 11.0, "research_axes": ["RQ6"],
+      "chapters": ["ch06", "ch11"]
+    },
+    {
+      "source_id": "SRC-074", "category": "preprint", "peer_reviewed": false,
+      "title": "How does Agentic AI Influence the Developer Skills in the Software Industry? — A Literature Review",
+      "authors": "Amit Chandra, Sylvie Michel",
+      "year": 2026, "publication_date": "2026-05-20", "venue_or_issuer": "HAL Open Archive",
+      "identifier": "hal-05789314", "url": "https://hal.science/hal-05789314/document",
+      "aacods_score": 10.0, "research_axes": ["RQ6"],
+      "chapters": ["ch11", "ch12"]
+    },
+    {
+      "source_id": "SRC-075", "category": "preprint", "peer_reviewed": false,
+      "title": "Human oversight of agentic systems in practice: Examining the oversight work, challenges, and heuristics of developers using software agents",
+      "authors": "Shipi Dhanorkar, Samir Passi, Mihaela Vorvoreanu",
+      "year": 2026, "publication_date": "2026-06-03", "venue_or_issuer": "arXiv (Microsoft Research)",
+      "identifier": "arXiv:2606.05391", "url": "https://arxiv.org/pdf/2606.05391",
+      "aacods_score": 11.0, "research_axes": ["RQ5", "RQ6"],
+      "chapters": ["ch09", "ch11", "ch12"]
+    }
+  ]
+}

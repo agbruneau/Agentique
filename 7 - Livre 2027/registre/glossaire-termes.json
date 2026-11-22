@@ -1,76 +1,180 @@
 {
-  "registry_version": "1.0.0",
-  "description": "Glossaire normatif français canadien / anglais — source unique de vérité terminologique pour les 12 chapitres et l'Annexe A.",
+  "registry_version": "1.2.0",
+  "description": "Glossaire normatif français canadien / anglais — source unique de vérité terminologique pour les 13 unités narratives et l'Annexe A.",
   "terms": [
     {
       "fr": "tissu conjonctif agentique",
       "en": "agentic connective tissue",
-      "definition": "Combinaison de l'architecture d'interopérabilité (protocolaire, sémantique, mémorielle et contractuelle) et du plan d'orchestration déterministe qui relie les agents spécialisés, les systèmes patrimoniaux, les partenaires externes et les superviseurs humains."
+      "definition": "Combinaison de l'architecture d'interopérabilité (protocolaire, sémantique, mémorielle et contractuelle) et du plan d'orchestration déterministe qui relie les agents spécialisés, les systèmes patrimoniaux, les partenaires externes et les superviseurs humains.",
+      "chapitre_proprietaire": "00-liminaire"
     },
     {
       "fr": "règle du maillon le plus élevé",
       "en": "High-Water Mark Rule",
-      "definition": "Principe de durcissement selon lequel le niveau d'exigence sécuritaire et de conformité d'une chaîne d'agents s'aligne sur le maillon aval le plus critique qu'elle alimente sans sas d'assainissement, sans pour autant étendre les droits de mutation aux maillons amont."
+      "definition": "Principe de durcissement selon lequel le niveau d'exigence sécuritaire et de conformité d'une chaîne d'agents s'aligne sur le maillon aval le plus critique qu'elle alimente sans sas d'assainissement, sans pour autant étendre les droits de mutation aux maillons amont.",
+      "chapitre_proprietaire": "00-liminaire"
     },
     {
       "fr": "industrialisation cognitive",
       "en": "cognitive industrialization",
-      "definition": "Standardisation, automatisation à grande échelle et chute exponentielle du coût unitaire de nombreuses tâches cognitives sous l'effet composé des gains matériels, algorithmiques et d'investissement."
+      "definition": "Standardisation, automatisation à grande échelle et chute exponentielle du coût unitaire de nombreuses tâches cognitives sous l'effet composé des gains matériels, algorithmiques et d'investissement.",
+      "chapitre_proprietaire": "ch01"
     },
     {
-      "fr": "noyau de contrôle déterministe",
-      "en": "deterministic control core",
-      "definition": "Ensemble des composants logiciels non probabilistes possédés par l'organisation (registre d'agents, identités, passerelles de politiques, contrats typés, machines à états durables et journaux d'audit) qui encadrent des modèles substituables."
+      "fr": "coût de transaction cognitif",
+      "en": "cognitive transaction cost",
+      "definition": "Ensemble des coûts de recherche d'information, de négociation contractuelle, de traduction inter-organisations et de vérification qui déterminent les frontières de la firme lorsqu'ils sont abaissés par des agents logiciels.",
+      "chapitre_proprietaire": "ch01"
     },
     {
-      "fr": "partition 80/20",
-      "en": "80/20 deterministic-probabilistic split",
-      "definition": "Principe d'ingénierie consistant à maintenir environ 80 % des règles métier, autorisations, transitions d'état et mutations en code déterministe vérifiable, en confinant les 20 % de raisonnement probabiliste à l'interprétation et à la synthèse bornées."
-    },
-    {
-      "fr": "harnais d'agent",
-      "en": "agent harness",
-      "definition": "Enveloppe d'exécution durcie qui isole le modèle, valide les schémas d'entrée et de sortie, applique les plafonds de tours et de budget, et médiatise tout appel d'outil."
-    },
-    {
-      "fr": "identité non humaine",
-      "en": "Non-Human Identity (NHI)",
-      "definition": "Identité cryptographique distincte, attestée et à courte durée de vie attribuée à une charge de travail ou à un agent logiciel, par opposition aux comptes génériques ou clés statiques partagées."
-    },
-    {
-      "fr": "délégation au nom de",
-      "en": "On-Behalf-Of (OBO) delegation",
-      "definition": "Mécanisme d'échange de jetons distinguant explicitement l'identité du mandant humain initial et celle de l'agent mandataire exécutant l'action, tout en réduisant les privilèges au strict nécessaire."
-    },
-    {
-      "fr": "exécution durable",
-      "en": "durable execution",
-      "definition": "Modèle d'orchestration persistant chaque étape et chaque réponse d'inférence dans un journal d'événements afin de reprendre exactement une tâche longue après panne sans réexécuter les effets de bord déjà produits."
-    },
-    {
-      "fr": "saga à point pivot",
-      "en": "pivot-transaction saga",
-      "definition": "Séquence de transactions locales coordonnées sans verrou distribué où toute étape précédant l'acte irréversible (point pivot) possède une action compensatoire idempotente acheminée sur un canal dédié."
-    },
-    {
-      "fr": "coût par résultat conforme",
-      "en": "Cost per Compliant Outcome (CPO)",
-      "definition": "Coût complet d'une transaction métier menée à terme sans erreur ni reprise, intégrant l'inférence, les réessais, l'évaluation, l'infrastructure de sécurité, la conformité et la supervision humaine."
+      "fr": "économie d'agents virtuels",
+      "en": "virtual agent economy",
+      "definition": "Écosystème d'agents autonomes coordonnés par des mécanismes d'enchères, d'entiercement, de réputation et d'audit réglementaire qui réalisent des échanges économiques à haute fréquence sous mandat humain.",
+      "chapitre_proprietaire": "ch01"
     },
     {
       "fr": "constance multi-essais",
       "en": "pass^k consistency",
-      "definition": "Probabilité qu'un agent réussisse intégralement une même tâche opérationnelle sur k exécutions indépendantes consécutives, mesurant la fiabilité en production plutôt que la performance moyenne."
+      "definition": "Probabilité qu'un agent réussisse intégralement une même tâche opérationnelle sur k exécutions indépendantes consécutives, mesurant la fiabilité en production plutôt que la performance moyenne.",
+      "chapitre_proprietaire": "ch02"
     },
     {
-      "fr": "approbation réflexe",
-      "en": "rubber-stamping / automation bias",
-      "definition": "Défaut de supervision où un valideur humain entérine machinalement les propositions persuasives d'un agent sans examen critique des pièces, exposant l'organisation au régime juridique des décisions exclusivement automatisées."
+      "fr": "coût par résultat conforme",
+      "en": "Cost per Compliant Outcome (CPO)",
+      "definition": "Coût complet d'une transaction métier menée à terme sans erreur ni reprise, intégrant l'inférence, les réessais, l'évaluation, l'infrastructure de sécurité, la conformité et la supervision humaine.",
+      "chapitre_proprietaire": "ch02"
+    },
+    {
+      "fr": "loi de Lusser appliquée aux chaînes d'agents",
+      "en": "Lusser's reliability law for agent chains",
+      "definition": "Loi multiplicative de fiabilité en série montrant que la probabilité de succès sans erreur d'une chaîne de n étapes indépendantes décroît exponentiellement avec la longueur lorsque chaque maillon probabiliste demeure imparfait.",
+      "chapitre_proprietaire": "ch02"
+    },
+    {
+      "fr": "partition 80/20",
+      "en": "80/20 deterministic-probabilistic split",
+      "definition": "Principe d'ingénierie consistant à maintenir environ 80 % des règles métier, autorisations, transitions d'état et mutations en code déterministe vérifiable, en confinant les 20 % de raisonnement probabiliste à l'interprétation et à la synthèse bornées.",
+      "chapitre_proprietaire": "ch03"
+    },
+    {
+      "fr": "harnais d'agent",
+      "en": "agent harness",
+      "definition": "Enveloppe d'exécution durcie qui isole le modèle, valide les schémas d'entrée et de sortie, applique les plafonds de tours et de budget, et médiatise tout appel d'outil.",
+      "chapitre_proprietaire": "ch03"
+    },
+    {
+      "fr": "noyau de contrôle déterministe",
+      "en": "deterministic control core",
+      "definition": "Ensemble des composants logiciels non probabilistes possédés par l'organisation (registre d'agents, identités, passerelles de politiques, contrats typés, machines à états durables et journaux d'audit) qui encadrent des modèles substituables.",
+      "chapitre_proprietaire": "ch03"
+    },
+    {
+      "fr": "exécution durable",
+      "en": "durable execution",
+      "definition": "Modèle d'orchestration persistant chaque étape et chaque réponse d'inférence dans un journal d'événements afin de reprendre exactement une tâche longue après panne sans réexécuter les effets de bord déjà produits.",
+      "chapitre_proprietaire": "ch03"
+    },
+    {
+      "fr": "saga à point pivot",
+      "en": "pivot-transaction saga",
+      "definition": "Séquence de transactions locales coordonnées sans verrou distribué où toute étape précédant l'acte irréversible (point pivot) possède une action compensatoire idempotente acheminée sur un canal dédié.",
+      "chapitre_proprietaire": "ch03"
+    },
+    {
+      "fr": "interopérabilité verticale et horizontale",
+      "en": "vertical and horizontal interoperability",
+      "definition": "Séparation architecturale entre les protocoles verticaux reliant un agent à ses outils et sources de contexte et les protocoles horizontaux coordonnant la délégation asynchrone entre agents de domaines ou d'organisations distincts.",
+      "chapitre_proprietaire": "ch04"
+    },
+    {
+      "fr": "clé d'idempotence transactionnelle",
+      "en": "transactional idempotency key",
+      "definition": "Jeton unique et déterministe associé par l'appelant à une requête de mutation pour garantir qu'une reprise après timeout ou réessai de réseau n'applique l'effet métier qu'une seule fois.",
+      "chapitre_proprietaire": "ch04"
     },
     {
       "fr": "couche anti-corruption",
       "en": "Anti-Corruption Layer (ACL)",
-      "definition": "Façade d'adaptation déterministe placée devant les systèmes centraux patrimoniaux pour traduire les formats historiques, préserver l'exactitude décimale et protéger les bases d'autorité contre les requêtes directes des agents."
+      "definition": "Façade d'adaptation déterministe placée devant les systèmes centraux patrimoniaux pour traduire les formats historiques, préserver l'exactitude décimale et protéger les bases d'autorité contre les requêtes directes des agents.",
+      "chapitre_proprietaire": "ch05"
+    },
+    {
+      "fr": "couche sémantique métier",
+      "en": "enterprise semantic layer",
+      "definition": "Registre gouverné de définitions univoques des entités, métriques, règles d'agrégation et invariants juridiques qui ancre l'interprétation des agents sur une sémantique commune plutôt que sur des schémas techniques bruts.",
+      "chapitre_proprietaire": "ch05"
+    },
+    {
+      "fr": "dette cognitive et d'intention",
+      "en": "cognitive and intent debt",
+      "definition": "Accumulation d'artefacts logiciels et de décisions automatisées dont l'organisation ne maîtrise plus la logique sous-jacente ni les hypothèses métier initiales, fragilisant la maintenance et la conformité.",
+      "chapitre_proprietaire": "ch05"
+    },
+    {
+      "fr": "effet Ringelmann multi-agents",
+      "en": "multi-agent Ringelmann effect",
+      "definition": "Dégradation marginale de l'efficacité et hausse du coût de coordination lorsque la taille d'un collectif d'agents dépasse le seuil optimal de la tâche au lieu de maintenir une spécialisation frugale.",
+      "chapitre_proprietaire": "ch06"
+    },
+    {
+      "fr": "identité non humaine",
+      "en": "Non-Human Identity (NHI)",
+      "definition": "Identité cryptographique distincte, attestée et à courte durée de vie attribuée à une charge de travail ou à un agent logiciel, par opposition aux comptes génériques ou clés statiques partagées.",
+      "chapitre_proprietaire": "ch07"
+    },
+    {
+      "fr": "délégation au nom de",
+      "en": "On-Behalf-Of (OBO) delegation",
+      "definition": "Mécanisme d'échange de jetons distinguant explicitement l'identité du mandant humain initial et celle de l'agent mandataire exécutant l'action, tout en réduisant les privilèges au strict nécessaire.",
+      "chapitre_proprietaire": "ch07"
+    },
+    {
+      "fr": "crypto-agilité post-quantique",
+      "en": "post-quantum cryptographic agility",
+      "definition": "Capacité architecturale à renouveler et négocier sans refonte applicative des algorithmes de chiffrement et de signature résistants aux attaques quantiques malgré l'accroissement des tailles de clés, de signatures et de rotation des certificats.",
+      "chapitre_proprietaire": "ch07"
+    },
+    {
+      "fr": "séparation par construction entre contrôle et données",
+      "en": "control-data separation by design",
+      "definition": "Architecture de sécurité inspirée des langages à capacités qui extrait le graphe d'appels d'outils depuis l'instruction fiable tout en confinant les contenus externes non approuvés afin d'empêcher toute injection indirecte.",
+      "chapitre_proprietaire": "ch08"
+    },
+    {
+      "fr": "dérive silencieuse d'outil",
+      "en": "silent tool drift",
+      "definition": "Altération discrète des descriptions, schémas ou comportements d'un serveur d'outils exposé sous un même identifiant logique après autorisation initiale, créant un vecteur d'empoisonnement de la chaîne d'approvisionnement.",
+      "chapitre_proprietaire": "ch08"
+    },
+    {
+      "fr": "analyse de contrôle STPA",
+      "en": "Systems-Theoretic Process Analysis (STPA)",
+      "definition": "Méthode de sûreté système dérivée du modèle STAMP qui recense les actions de contrôle dangereuses et les défauts de rétroaction entre agents, logiciels déterministes et superviseurs humains avant tout déploiement.",
+      "chapitre_proprietaire": "ch09"
+    },
+    {
+      "fr": "télémétrie à double couloir",
+      "en": "dual-lane telemetry",
+      "definition": "Architecture d'observabilité séparant la télémétrie opérationnelle à faible latence des preuves canoniques horodatées et hachées dédiées à l'audit réglementaire et à la relecture d'incidents.",
+      "chapitre_proprietaire": "ch09"
+    },
+    {
+      "fr": "décision fondée exclusivement sur un traitement automatisé",
+      "en": "solely automated decision",
+      "definition": "Décision affectant une personne sans intervention humaine réelle et critique dans la boucle, déclenchant en vertu de l'article 12.1 de la Loi 25 des obligations d'information, d'explication et de révision.",
+      "chapitre_proprietaire": "ch10"
+    },
+    {
+      "fr": "approbation réflexe",
+      "en": "rubber-stamping / automation bias",
+      "definition": "Défaut de supervision où un valideur humain entérine machinalement les propositions persuasives d'un agent sans examen critique des pièces, exposant l'organisation au régime juridique des décisions exclusivement automatisées.",
+      "chapitre_proprietaire": "ch11"
+    },
+    {
+      "fr": "trajectoire adaptative sous seuils (DAPP)",
+      "en": "Dynamic Adaptive Policy Pathways (DAPP)",
+      "definition": "Méthode de gouvernance et de planification stratégique pré-positionnant des bascules d'architecture et de conformité déclenchées par des signaux mesurables (coût, réglementation, cryptographie ou compétence) plutôt que par des prévisions rigides.",
+      "chapitre_proprietaire": "ch12"
     }
   ]
 }

@@ -1,0 +1,1672 @@
+HAL Id: hal-05789314
+https://hal.science/hal-05789314v1
+Submitted on 9 Oct 2026
+HAL is a multi-disciplinary open access archive
+for the deposit and dissemination of scientific re-
+search documents, whether they are published or not.
+The documents may come from teaching and research
+institutions in France or abroad, or from public or pri-
+vate research centers.
+L’archive ouverte pluridisciplinaire HAL, est des-
+tinée au dépôt et à la diffusion de documents scien-
+tifiques de niveau recherche, publiés ou non, émanant
+des établissements d’enseignement et de recherche
+français ou étrangers, des laboratoires publics ou
+privés.
+Distributed under a Creative Commons CC BY 4.0 - Attribution - International License
+How does Agentic AI Influence the Developer Skills in the
+Software Industry? – A Literature Review
+Amit Chandra, Sylvie Michel
+To cite this version:
+Amit Chandra, Sylvie Michel. How does Agentic AI Influence the Developer Skills in the Software Industry?
+– A Literature Review. AIM 2026 : 31e conférence de l’Association Information et Management, Haute École
+spécialisée de Suisse occidentale = HES-SO University of Applied Sciences and Arts Western Switzerland =
+Fachhochschule Westschweiz [Schweiz] [HES-SO], May 2026, Neuchâtel, Switzerland. ⟨hal-05789314⟩
+
+31st Conference of the Information and Management Association
+May 20-22, 2026 in Neuchâtel (CH)
+
+How does Agentic AI Influence the Developer Skills in the
+Software Industry? – A Literature Review
+Amit CHANDRA, University of Bordeaux, IRGO, UR 4190, F-33000 Bordeaux, France
+Sylvie MICHEL, University of Bordeaux, IRGO, UR 4190, F-33000 Bordeaux, France
+Abstract
+The rapid proliferation of Artificial Intelligence (AI) technologies has transformed work
+practices and skill requirements across industries, particularly within the Information
+Technology (IT) sector. Unlike traditional automation tools, agentic AI possesses autonomous
+decision-making capabilities and can collaborate with humans as “team members” in complex
+software development tasks. While existing research has examined Agentic AI's productivity
+impacts in software development, there remains a limited understanding of how it influences
+skill changes across different experience levels. This article aims to investigate whether the
+collaboration between agentic agents and human agents influences the developers’ skills in the
+software industry. To achieve this aim, we conducted a systematic literature review (SLR) that
+examines the impact of agentic AI on developer skills in the software industry. The findings
+indicate that agentic AI does not remove the need for developer skills but instead reshapes them.
+As AI agents take on routine and repetitive development tasks, human developers increasingly
+focus on higher-level activities such as system design, coordination, supervision, and
+governance. The outcome of this literature review will allow us to initiate further research for
+understanding how agentic AI impacts software development skills.
+Keywords
+agentic artificial intelligence; human-ai collaboration; skill; automation-augmentation paradox;
+IT sector
+
+31st Conference of the Information and Management Association
+AIM 2026: May 20-22 in Neuchâtel (CH)
+2
+How does Agentic AI Influence the Developer Skills in the
+Software Industry? – A Literature Review
+1. Introduction
+Artificial intelligence has become increasingly embedded in software development work.
+Recent advances in machine learning and large language models have transformed AI from a
+simple decision-support tool to one that requires combining AI and human expertise more
+collaboratively (Brynjolfsson et al., 2025).
+While earlier forms of AI were largely decision-support or automation tools (Davenport &
+Ronanki, 2018), recent developments have led to the emergence of agentic AI. AI agents are
+characterized by autonomy, goal-directed behavior, and the ability to act on behalf of humans
+(Wooldridge & Jennings, 1998). These systems not only provide recommendations but can also
+plan tasks, make decisions, coordinate actions, and execute workflows with minimal human
+intervention (Baird & Maruping, 2021; Seeber et al., 2020). They interpret intent, manage
+complex sub-goals, and operate with a degree of independence. So, agentic AI is intelligent
+systems that exhibit autonomy, learning, and proactivity, and act as partners or agents on behalf
+of human professionals (Benbya et al., 2020).
+In the software industry, agentic AI is being targeted for activities such as code generation,
+testing, debugging, and task coordination (Li et al., 2024) that were previously considered
+uniquely human domains. As a result, the role and the skill requirements of the software
+developer are changing. Skills in the agentic AI paradigm refer to higher-order human
+capabilities centered on orchestration, judgment, problem framing, learning stewardship, and
+governance that enable effective collaboration with autonomous, goal-directed AI systems
+rather than direct task execution (Raisch & Krakowski, 2021; Faraj et al., 2018; Benbya et al.,
+2020; Jarrahi, 2018; Ågerfalk, 2020). This shift raises important questions about how developer
+skills are affected, how skills evolve, and whether different experience levels (such as early-
+career versus experienced developers) are impacted differently.
+In software development specifically, this is becoming relevant as agentic AI tools (e.g., code
+assistants and multi-step coding agents) propose, generate, test, and refine code, moving beyond
+static recommendations to more interactive human-AI collaboration cycles (Peng et al., 2023;
+Cui et al., 2024; Campero et al., 2022). Although practitioner-oriented discussions emphasize
+productivity improvements (Peng et al., 2023; Vaithilingam et al., 2022), academic research-
+particularly in Information Systems Management has begun to examine deeper implications
+related to skills. For example, Baird & Maruping (2021) explain the delegation hand-off
+between human-AI systems, while Faraj et al. (2018) argue that learning algorithms shift human
+work away from execution toward interpretation and judgment. Benbya et al. (2020) frame AI
+systems as organizational actors with agency, requiring new governance and stewardship skills.
+Raisch & Krakowski (2021) explain skill polarization, reskilling, and the rise of meta-skills
+(problem framing, orchestration, judgment). Mikalef et al. (2019) discuss technical, analytical,
+and human skills required to exploit AI systems. To the best of our knowledge, research studies
+on human–agentic AI collaboration in software work are still emerging, so most insights come
+
+31st Conference of the Information and Management Association
+AIM 2026: May 20-22 in Neuchâtel (CH)
+3
+from adjacent studies on generative AI and human–AI collaboration in knowledge work
+involving algorithmic interactions. Indeed, these studies indicate that there is limited synthesis
+focusing specifically on developer skills in the context of agentic AI.
+The objective of this work in progress is to conduct a systematic review of the literature
+published in information systems journals to understand how agentic AI influences the skills of
+software developers.
+In the first part, we present the study’s concepts. We then go on to explain our research
+methodology for the literature review. We then present our main findings and conclude with
+avenues for further research.
+2. Definition of Concepts
+2.1. Defining Agentic AI
+Agentic AI can be understood as a class of intelligent systems that act with a degree of
+autonomy on behalf of human professionals. These systems are capable of setting and pursuing
+goals, learning from their environment, and carrying out complex, multi-step tasks with limited
+human oversight (Baird & Maruping, 2021; Benbya et al., 2020; Wooldridge & Jennings, 1998).
+What sets agentic AI apart from conventional tools is the nature of the interaction: rather than
+responding to step-by-step instructions, an agentic system is given a broad objective and works
+out on its own how to accomplish it - breaking the objective down into smaller tasks, deciding
+on the order of actions, and adjusting its course when things do not go as expected (Baird &
+Maruping, 2021). In short, a traditional tool is operated, whereas an agentic system is delegated
+to.
+It is worth noting that agentic AI is sometimes confused with two related but distinct categories
+of technology. The first is LLM-based generative AI, including the emerging practice of "vibe
+coding," where developers describe what they want in plain language and accept AI-generated
+code with little scrutiny. While useful, these systems are fundamentally reactive - they respond
+to prompts one at a time and do not retain context across tasks. The second is low-code and no-
+code platforms, which simplify software creation through visual interfaces and pre-built
+components but do not reason, learn, or pursue goals on their own. Agentic AI tools (Appendix
+A) differ from both in that it maintains an ongoing awareness of the task at hand, plans ahead
+across several steps, and takes an active part in problem-solving and decision-making.
+Tarafdar et al. (2022) further conceptualize algorithms as co-workers and examine role
+interactions in algorithmic work. They identify several interaction patterns: humans relying on
+algorithmic outputs, humans modifying algorithmic outputs, algorithms learning from human
+inputs, and reciprocal adaptation where both human and algorithm adjust to each other. These
+interaction patterns become especially relevant in the agentic paradigm, where the degree of
+mutual adaptation between human and AI is substantially higher than in traditional tool-use
+relationships.
+
+31st Conference of the Information and Management Association
+AIM 2026: May 20-22 in Neuchâtel (CH)
+4
+2.2. Skill and Changing Skills
+In the context of technology, Leonardi (2011) explains skills as the ability to effectively engage
+with material and digital artifacts to accomplish work goals, emphasizing that skills change as
+technologies change. Classic task-reallocation research shows new technologies displace some
+tasks while creating others, changing the skill content of jobs (Acemoglu & Restrepo, 2019;
+Autor et al., 2003). More recently, Leonardi & Barley (2024) describe skills as part of evolving
+expertise, where professionals must continuously adapt their knowledge and judgment as
+technologies increasingly participate in decision-making.
+In the context of agentic AI, the skills that matter most are no longer about carrying out tasks
+directly. Instead, they involve higher-order capabilities such as orchestrating AI workflows,
+exercising judgment over AI outputs, framing problems in ways that AI systems can act on,
+guiding how learning takes place within human-AI teams, and governing the boundaries of AI
+autonomy. These are the competencies that allow professionals to work effectively alongside
+AI systems that operate with a degree of independence and pursue goals on their own (Raisch
+& Krakowski, 2021; Faraj et al., 2018; Jarrahi, 2018).
+Together, these developments underline the need for a systematic literature review to identify
+and synthesize how agentic AI is reshaping software developers’ skills.
+3. Literature Review Methodology
+This study adopted a Systematic Literature Review (SLR) methodology guided by well-
+established methodological recommendations in the Information Systems field, particularly
+those proposed by Webster & Watson (2002) and further supported by later IS review practices
+(Bandara et al., 2015).
+3.1. Research Question
+The research question guiding this literature review is: How does agentic AI affect the skills,
+skill development, and work roles of software developers in the software industry?
+3.2. Literature Review Design
+The literature review (Webster & Watson, 2002) was conducted in sequential steps (Figure 1).
+
+31st Conference of the Information and Management Association
+AIM 2026: May 20-22 in Neuchâtel (CH)
+5
+
+Figure 1: Steps for Literature Review
+3.3. Scope and Eligibility Definition
+The scope of the review was defined using explicit inclusion and exclusion criteria, as
+recommended for systematic reviews (Webster & Watson, 2002).
+3.3.1. Primary Evidence
+The review prioritized peer-reviewed journal articles published between January 2018 and
+October 2025. To ensure conceptual relevance, the review strictly included studies that
+explicitly examined agentic AI, AI agents, or autonomous agents, and that addressed issues
+related to skills, expertise, delegation, or role changes in work contexts relevant to software
+development. Studies that discussed artificial intelligence without agentic behavior, conference
+papers, practitioner reports, or research outside Information Systems and Management domains
+were excluded. Research that did not address skills or work-related outcomes was also
+excluded. This primary corpus constitutes the formal SLR sample and forms the basis of the
+thematic findings presented in Section 4.
+3.3.2. Complementary Evidence
+Agentic AI technologies are evolving at a pace that outstrips the traditional academic
+publication cycle. As a result, some relevant empirical evidence on AI-assisted software
+development currently exists in the form of working papers issued by well-regarded research
+
+31st Conference of the Information and Management Association
+AIM 2026: May 20-22 in Neuchâtel (CH)
+6
+institutions rather than in peer-reviewed journals. To avoid overlooking this body of work, a
+small number of empirical working papers were included in the review as a separate,
+complementary evidence. These sources are not treated as part of the formal SLR findings
+presented in Section 4. Instead, they are discussed on their own terms in Section 5 (Discussion),
+where they are used to examine points of agreement and tension with the peer-reviewed
+literature. This separation was intended to keep the core review focused and internally
+consistent, while still ensuring that important recent evidence was not left out of the analysis.
+3.4. Journal and Database Selection
+In line with quality-focused review practices in IS research, the review prioritized journals
+ranked A or A* in the ABDC Journal Quality List (Webster & Watson, 2002; Bandara et al.,
+2015). The primary focus was on leading IS and Management journals, including MIS
+Quarterly, Information Systems Research, Journal of Management Information Systems,
+Information and Organization, Organization Science, and Academy of Management Journal.
+Where ABDC-ranked journals provided limited coverage of agentic AI, top-quartile (Q1)
+Scimago journals were included selectively to avoid omitting relevant high-quality research.
+Searches were conducted using Scopus, Web of Science, and publisher-specific platforms. In
+addition, targeted searches were conducted directly on journal websites to ensure coverage of
+recent publications.
+3.5. Development of Search Strings
+A combination of keywords related to agentic AI, software development, and skills was used
+(Table 1). Keywords were grouped into three conceptual blocks: Agentic AI and intelligent
+systems, Employee skills and human capital, and Organizational and industry context.
+Concept
+Keywords & Synonyms
+Concept 1: Agentic AI
+“agentic AI”
+“autonomous AI”
+“AI agents”
+“artificial intelligence”
+Concept 2: Employee Skills
+and Human Capital
+“employee skills”
+“skill development”
+“upskilling”
+“deskilling”
+“human capital”
+Concept 3: Organizational
+and Industry Context
+“software industry”
+“software development”
+“IT professionals”
+“human–AI collaboration”
+Table 1- Selected Keywords
+The following Boolean search string was used across databases, with minor syntactic
+adjustments as required:
+(“agentic AI” OR “autonomous AI” OR “AI agents” OR “artificial intelligence”)
+
+31st Conference of the Information and Management Association
+AIM 2026: May 20-22 in Neuchâtel (CH)
+7
+AND
+(“employee skills” OR “skill development” OR upskilling OR deskilling OR “human capital”)
+AND
+(“software industry” OR “software development” OR “IT professionals” OR “human-AI
+collaboration”)
+We intentionally included the broad term "artificial intelligence" in our search alongside
+specific terms like "agentic AI." This decision was driven by two factors. First, the Information
+Systems field has not yet established a clear boundary between agentic AI and general AI
+(Ågerfalk, 2020; Berente et al., 2021; Baird & Maruping, 2021). Many studies examine agentic
+behaviors-such as autonomous decision-making or proactive collaboration-but simply refer to
+the technology as "artificial intelligence" (e.g., Jarrahi, 2018; Faraj et al., 2018; Kellogg et al.,
+2020; Raisch & Krakowski, 2021). Using only narrow keywords would have excluded these
+conceptually relevant papers.
+Second, the specific term "agentic AI" is still emerging in the literature. An initial search using
+only that phrase and its direct synonyms returned very few results. To address this, we cast a
+wider net with our search terms but applied screening criteria during the reading phase. This
+strategy ensured we gathered enough literature for a meaningful analysis while strictly limiting
+our final sample to studies that actually focus on agentic behaviors and skill transformations.
+After finalizing the search expressions, searches were applied to article titles, abstracts, and
+keywords.
+3.6. Screening and Selection Process
+The screening process was conducted in multiple stages: title and abstract screening, followed
+by full-text assessment. Only studies that clearly met the inclusion criteria and demonstrated
+strong theoretical grounding and methodological rigor were retained. The initial search
+returned 243 articles (Table 2). After removing duplicates, 196 articles remained. Title and
+abstract screening reduced this number to 61 articles, which were then subjected to full-text
+review. Based on relevance and eligibility criteria, 21 articles were retained for quality
+assessment. Following quality appraisal, 19 articles were included in the final review (Annex
+A).
+Review Stage
+Number of Articles
+Initial search results
+243
+After duplicate removal
+196
+After title and abstract screening
+61
+After full-text screening
+21
+Final articles included (See Annex A)
+19
+Table 2 - Articles Filtered by Stages
+3.7. Quality Appraisal
+Quality appraisal was conducted differently for the two evidence layers defined in Section 3.3.
+
+31st Conference of the Information and Management Association
+AIM 2026: May 20-22 in Neuchâtel (CH)
+8
+For the primary evidence (15 peer-reviewed articles), quality appraisal considered journal
+ranking (ABDC A or A* classification, or Scimago Q1 ranking), theoretical grounding, clarity
+of research design, and relevance to agentic AI and human skill outcomes, following established
+IS review norms (Bandara et al., 2015).
+For the complementary evidence (4 empirical working papers), quality was assessed based on
+methodological rigor (e.g., use of randomized field experiments), empirical scale, institutional
+affiliation, and direct relevance to the research question. These sources were not evaluated
+against journal ranking criteria, as they have not yet completed the formal publication process.
+Their status as working papers is reported in Appendix B, and their findings are discussed
+separately in Section 5.
+3.8. Thematic Analysis
+Given the conceptual and methodological diversity of the selected studies, a thematic synthesis
+approach (Braun & Clarke, 2006) was used. Consistent with established guidelines for
+systematic literature reviews in information systems research (Okoli & Schabram, 2010),
+themes were iteratively developed through abstraction, allowing for theory-oriented synthesis
+rather than descriptive summarization. This approach has been widely adopted in structured
+literature reviews (Thomas & Harden, 2008).
+The analysis followed a three-stage coding procedure:
+Stage 1- Initial coding: Each of the 15 peer-reviewed articles was read in full and annotated
+with descriptive codes capturing key concepts, mechanisms, and findings. Codes were
+generated inductively from the data rather than imposed a priori. For example, reading Baird &
+Maruping (2021) produced codes such as "AI agency," "delegated authority," and "agentic IS
+artifacts." Reading Dennis et al. (2023) yielded "AI as team member," "trust," "perceived ability
+and integrity," and "opportunity vs. threat framing." In total, the initial coding pass produced
+56 descriptive codes across the 15 articles.
+Stage 2 - Category formation: Initial codes were then grouped into higher-level categories
+based on conceptual similarity. For instance, codes such as "AI agency," "delegated authority,"
+"bidirectional delegation," and "agentic IS artifacts" (from Baird & Maruping, 2021) together
+with "cobots," "delegation strategies," and "AI proficiency effects" (from Sowa et al., 2021)
+and "human-AI symbiosis" and "contextual understanding vs. data processing" (from Jarrahi,
+2018) were grouped under a category, “Delegation and Skill Transformation”. This process
+yielded eight intermediate categories.
+Stage 3- Theme abstraction: The eight categories were further abstracted into four
+overarching themes through iterative comparison and refinement, consistent with established
+guidelines for systematic literature reviews in information systems research (Okoli &
+Schabram, 2010). The four themes are: (1) Delegation and Skill Re-composition; (2) Shift from
+Coding to Orchestration Skills; (3) Human-AI Teaming; (4) Differential Skill Impacts Across
+Experience Levels. Table 3 presents the concept-coding matrix that maps the 15 peer-reviewed
+articles to the four themes, showing the distribution of evidence across the corpus:
+
+31st Conference of the Information and Management Association
+AIM 2026: May 20-22 in Neuchâtel (CH)
+9
+Article
+Initial Codes
+Theme
+1:
+Delegation
+&
+Skill
+Re-
+composition
+Theme 2: Shift
+from Coding to
+Orchestration
+Theme 3:
+Human-AI
+Teaming
+Theme
+4:
+Differential Skills
+Impacts
+across
+Experience-
+Levels
+Baird
+&
+Maruping
+(2021)
+AI
+agency;
+delegated
+authority;
+bidirectional
+delegation;
+agentic
+IS
+artifacts
+✓
+Brynjolfsson
+et al. (2025)
+Knowledge
+transfer;
+novice productivity gains;
+AI-enabled
+competency
+acceleration
+✓
+✓
+Chen & Chan
+(2024)
+Collaboration modalities;
+expert co-creation vs. AI-
+lead modes; user expertise
+as moderator
+✓
+✓
+✓
+Dellermann et
+al. (2019)
+Hybrid
+intelligence;
+human-AI
+interaction
+taxonomy; complementary
+strengths
+✓
+Dennis et al.
+(2023)
+AI as team member; trust;
+perceived
+ability
+and
+integrity; opportunity vs.
+threat framing
+✓
+✓
+✓
+Faraj
+et al.
+(2018)
+Learning algorithms; new
+work organization; human-
+AI
+boundaries;
+interpretation
+over
+execution
+✓
+✓
+Jarrahi (2018)
+Human-AI
+symbiosis;
+contextual
+understanding
+vs. data processing; AI
+collaboration skills
+✓
+Kellogg et al.
+(2020)
+Algorithmic control; expert
+shift
+to
+orchestration;
+coping
+strategies;
+performance measurement
+✓
+✓
+✓
+Lu
+et
+al.
+(2024)
+User proficiency × AI
+capability
+interaction;
+disproportionate gains for
+low-proficiency users
+✓
+Nguyen
+&
+Elbanna
+(2025)
+Human-AI augmentation;
+AI literacy; demographic
+influences
+on
+collaboration;
+organizational support
+✓
+✓
+Noy & Zhang
+(2023)
+Productivity effects; task
+complexity
+variation;
+individual
+characteristic
+moderation
+✓
+✓
+Raisch
+&
+Krakowski
+(2021)
+Automation-augmentation
+paradox; human expertise
+erosion
+risk;
+interdependence
+of
+✓
+✓
+
+31st Conference of the Information and Management Association
+AIM 2026: May 20-22 in Neuchâtel (CH)
+10
+automation
+and
+augmentation
+Seeber et al.
+(2020)
+Machine
+teammates;
+collaborative
+work
+practices; research agenda
+for AI in teams
+✓
+Sowa et al.
+(2021)
+Cobots;
+delegation
+strategies; AI proficiency
+effects; knowledge work
+collaboration boundaries
+✓
+✓
+Xu
+et
+al.
+(2025)
+Individual AI proficiency;
+trust;
+mental
+workload;
+performance moderation
+✓
+Table 3: Concept-Coding Matrix - Mapping of Peer-Reviewed Articles to Themes
+This coding matrix demonstrates that each theme is supported by multiple independent sources
+(Theme 1: 7 articles; Theme 2: 6 articles; Theme 3: 6 articles; Theme 4: 8 articles), ensuring
+robust thematic coverage. The interconnections between themes - for instance, articles
+contributing to both Theme 1 (delegation) and Theme 2 (orchestration) - reflect the inherently
+intertwined nature of skill transformation under agentic AI.
+4. Findings
+The analysis organized findings into four interconnected themes that capture the transformation
+of skills relevant to the concept of agency in AI. The findings presented below are derived
+exclusively from the 15 peer-reviewed articles that constitute the primary evidence.
+Complementary evidence from the empirical working papers is examined separately in Section
+5.2.
+4.1. Delegation to Agentic AI and Skill Re-composition
+A central theme across the literature is the delegation of tasks and decision-making authority
+from humans to agentic AI systems. The emerging paradigm is that of AI Agency, which can
+"act with delegated authority to affect change in the world" (Baird & Maruping, 2021). This
+distinction – from a tool to “agentic IS artifacts” (Baird & Maruping, 2021) – is important: a
+tool is operated, but an agent is delegated to. Dennis et al. (2023) found that AI team members
+can take on tasks independently and redistribute work to humans or other AI agents.
+This shift does not imply that human skills become less important. Instead, skills are
+recomposed. Technical skills remain necessary, but they are complemented by higher-level
+cognitive and supervisory capabilities. Jarrahi (2018) proposed a symbiotic view where AI
+handles data processing and pattern recognition while humans contribute contextual
+understanding and intuitive judgment. This division requires workers to strengthen distinctly
+human capabilities-such as emotional intelligence, ethical reasoning, and creative synthesis-
+while developing new skills in AI collaboration.
+4.2. Shift from Coding to Orchestration Skills
+This theme explores how employees’ skills evolve as new technologies -especially AI-
+transform their tasks and responsibilities. The peer-reviewed literature shows that generative
+
+31st Conference of the Information and Management Association
+AIM 2026: May 20-22 in Neuchâtel (CH)
+11
+and agentic AI accelerate a shift away from routine execution while amplifying higher-order
+reasoning.
+Noy & Zhang (2023) demonstrated that AI assistance improved productivity across multiple
+dimensions, with effects varying by task complexity and individual characteristics. Importantly,
+the gains were not uniform: workers facing simpler, more structured tasks benefited more
+immediately, while complex tasks required workers to orchestrate AI outputs more actively -
+suggesting that orchestration skills become increasingly important as task difficulty rises.
+Brynjolfsson et al. (2025) found that generative AI enabled customer service representatives to
+resolve 14% more issues per hour. The technology effectively transferred knowledge from
+experienced workers to novices, reducing the time needed to achieve competency. This suggests
+that orchestration skills-knowing how to leverage AI to access organizational expertise-become
+more valuable than accumulated individual experience.
+Chen & Chan (2024) challenge the traditional assumption that humans provide "usefulness"
+while AI provides "novelty". Instead, it suggests that AI as a co-creation partner can
+significantly enhance both the perceived novelty and usefulness of outputs.
+Experimental research by Dennis et al. (2023) shows that when AI agents are introduced as
+team members, human participants adjust their behavior by focusing more on coordination,
+conflict resolution, and decision-making rather than execution tasks. Kellogg et al. (2020)
+suggest that the value of experts shifts from hands-on work to orchestration when AI is
+competent enough to automate parts of tasks.
+Freshers often experience rapid upskilling when AI provides examples and structured feedback,
+but they also risk shallow learning if they depend too heavily on AI outputs (Raisch &
+Krakowski, 2021).
+4.3. Human-AI Teaming
+Human–AI Teaming is based on the idea that AI systems are no longer just tools but teammates
+that share tasks, goals, and responsibilities with humans. Human–AI teaming is seen as a form
+of collective intelligence, where humans provide context, ethics, and creativity, while AI
+contributes speed, pattern recognition, and autonomous problem solving (Faraj et al., 2018).
+Dellermann et al. (2019) explored the concept of hybrid intelligence, which argues that humans
+and AI contribute different strengths and must be intentionally integrated. Later on, Seeber et
+al. (2020) called for systematic research on how collaboration researchers could study the
+design of machine teammates and their effects on work practices and outcomes in team
+collaboration. They emphasized the need to understand how AI team members affect human
+team members, collaborative work practices, and organizational outcomes.
+Dennis et al. (2023) provided initial empirical evidence that AI team members are perceived as
+having greater ability and integrity but lower benevolence; perceiving AI as an opportunity
+fostered positive outcomes, while threat perceptions engendered negative results. This suggests
+that the framing of AI's role - as a collaborator rather than a replacement - significantly shapes
+
+31st Conference of the Information and Management Association
+AIM 2026: May 20-22 in Neuchâtel (CH)
+12
+the quality of human-AI teaming and the willingness of developers to engage in productive
+collaboration.
+Nguyen & Elbanna (2025) identified several key themes relevant to software development.
+First, AI is shifting emphasis from routine technical tasks to higher-order cognitive activities
+like strategic planning, system design, and problem-solving. Second, effective AI collaboration
+requires new competencies, including AI literacy, critical evaluation of AI outputs, and the
+ability to guide AI systems effectively. Third, organizations need to support this transition
+through training, clear role definitions, and frameworks for human-AI collaboration.
+4.4. Differential Skill Impacts Across Experience Levels
+The peer-reviewed literature suggests that the impact of AI agency on skills differs depending
+on their experience and skill levels. Brynjolfsson et al. (2025) documented that the largest
+productivity gains from generative AI occurred among novice and low-skilled customer service
+workers. This suggests AI may have equalizing effects, helping those with less experience or
+more time pressure achieve performance closer to their more advantaged peers.
+Chen & Chan (2024) provide complementary evidence from creative work: less-expert users
+benefit most from AI-lead collaboration modes, while experts benefit more from co-creation
+modes. This indicates that the optimal collaboration pattern itself is experience-dependent,
+which has direct implications for how software organizations should design AI-assisted
+workflows for developers at different career stages.
+Lu et al. (2024) demonstrate that user proficiency interacts with AI capability, so that
+performance improves most when users have enough skill to interpret and monitor AI outputs.
+Xu et al. (2025) show that AI proficiency itself is an important predictor of collaboration
+success. Users with higher AI proficiency showed better task performance and increased trust
+in AI agents. These findings support a focus on freshers and experienced workers as distinct
+groups in this study.
+Kellogg et al. (2020) suggest that the value of experts shifts from hands-on work to
+orchestration when AI is competent enough to automate parts of tasks. Sowa et al. (2021) found
+that differences in AI proficiency affect delegation strategies and the degree of effective
+collaboration within teams. They emphasized that boundaries, factors, and circumstances of
+human-AI collaboration should be studied empirically to understand how worker characteristics
+influence outcomes.
+Nguyen & Elbanna (2025) reinforce that demographic characteristics and professional
+background create heterogeneity in collaboration outcomes. Raisch & Krakowski (2021) warn
+that this experience-dependent dynamic creates an automation-augmentation paradox: the very
+automation that accelerates novice productivity may undermine the deep practice that would
+develop genuine expertise, while experienced workers risk skill atrophy if they delegate
+excessively.
+
+31st Conference of the Information and Management Association
+AIM 2026: May 20-22 in Neuchâtel (CH)
+13
+5. Discussion
+5.1. Synthesis of Systematic Literature Review Findings
+The fifteen peer-reviewed studies collectively reveal that AI adoption in organizations creates
+complex dynamics across all four thematic areas. The shift toward delegation to agentic AI
+demands fundamental skill re-composition, as workers transition from hands-on execution to
+strategic orchestration of AI capabilities. Technical skills remain important, but they are
+increasingly combined with meta-skills such as oversight, governance, and coordination.
+The emergence of genuine human-AI teaming requires new frameworks for collaboration that
+treat AI as an active partner rather than a passive tool. Throughout these transformations,
+impacts vary significantly across experience levels, with less experienced workers often gaining
+the most from AI support but also facing unique challenges in developing appropriate trust and
+evaluation skills.
+For early-career developers, structured learning environments are necessary to prevent shallow
+skill development. For experienced developers, continuous reskilling is required to adapt to
+supervisory and governance roles.
+5.2. Tensions with Empirical Evidence
+As noted in Section 3.3, a small number of recent empirical working papers (Table 4) provide
+field-experimental data that are directly relevant to the themes identified in this review but have
+not yet undergone formal peer review. We examine how these complementary sources converge
+with or challenge the SLR findings.
+Reference
+Source
+Empirical Scale
+Cui et al. (2025)
+NBER / SSRN Working Paper
+4,867
+developers;
+3
+field
+experiments
+(Microsoft,
+Accenture)
+Del Acqua et al.
+(2025)
+Harvard Business School Working
+Paper No. 25-043
+Field experiment on AI-enabled
+teamwork
+Dell'Acqua et al.
+(2023)
+Harvard Business School Working
+Paper No. 24-013
+758
+consultants
+at
+BCG;
+randomized field experiment
+Peng
+et
+al.
+(2023)
+arXiv preprint (arXiv:2302.06590)
+Controlled experiment on GitHub
+Copilot
+Table 4 - Four sources of complementary evidence
+5.3. Convergences
+These four studies (Table 4) broadly reinforce the SLR findings:
+On delegation and skill re-composition (Theme 1): Cui et al. (2025) report a 26.08% increase
+in completed tasks among software developers using AI-based coding assistants, providing
+field-level evidence that AI shifts developer work from manual coding to reviewing and
+
+31st Conference of the Information and Management Association
+AIM 2026: May 20-22 in Neuchâtel (CH)
+14
+orchestrating AI-generated output. Peng et al. (2023) show that GitHub Copilot significantly
+reduces completion time for coding tasks, especially for boilerplate work. Both findings are
+consistent with the delegation framework of Baird & Maruping (2021) and the symbiotic model
+of Jarrahi (2018).
+On orchestration skills (Theme 2): Dell'Acqua et al. (2023) document two distinct
+orchestration strategies among high-skilled consultants - the "Centaur" approach (strategic
+division of labor between human and AI) and the "Cyborg" approach (continuous, interwoven
+interaction with AI). These behavioral patterns provide a richer typology of the orchestration
+shift identified in the peer-reviewed literature (Noy & Zhang, 2023; Brynjolfsson et al., 2025;
+Kellogg et al., 2020).
+On human-AI teaming (Theme 3): Del Acqua et al. (2025) demonstrate empirically that AI
+functions as a "cybernetic teammate" by dynamically interfacing with human problem-solvers,
+providing real-time feedback, and bridging cross-functional expertise. Their finding that AI
+helped reduce dominance effects in team collaboration and create more balanced contributions
+directly extends the theoretical arguments of Dellermann et al. (2019) and the research agenda
+of Seeber et al. (2020).
+On differential experience-level impacts (Theme 4): Dell'Acqua et al. (2023) report that
+consultants below average performance increased their output by 43% when using AI, while
+that above average improved by 17%. This is the most precise quantification available of the
+differential AI impact that is theorized but not precisely measured in the peer-reviewed SLR
+corpus. Peng et al. (2023) similarly show that GitHub Copilot disproportionately benefits less-
+experienced developers. Cui et al. (2025) confirm that less experienced developers had higher
+adoption rates and greater productivity gains.
+5.4. Limitations
+Despite these convergences, these studies also highlight some limitations that must be noted:
+From productivity to skill: A critical tension exists between what the working papers measure
+and what this review seeks to understand. Cui et al. (2025), Dell'Acqua et al. (2023), and Peng
+et al. (2023) primarily measure productivity outcomes (task completion rates, speed, output
+quality). The peer-reviewed literature (Raisch & Krakowski, 2021; Faraj et al., 2018) warns
+that productivity gains do not automatically translate into skill development.
+Generalizability: The working papers report on specific organizational settings (BCG,
+Microsoft, Accenture) and specific AI tools (GitHub Copilot, GPT-4). Whether these findings
+transfer to the full diversity of software development contexts (e.g., startups, open-source
+projects, safety-critical systems) remains to be established through peer-reviewed replications.
+While these working papers originate from respected institutions and employ rigorous
+methodologies, they have not undergone formal peer review. Their findings should be
+interpreted with the understanding that they may be revised through the review process.
+5.5. Research Gaps and Future Directions
+Our review of the literature highlights several gaps:
+
+31st Conference of the Information and Management Association
+AIM 2026: May 20-22 in Neuchâtel (CH)
+15
+5.5.1. Lack of Software-Industry-Specific Evidence
+Most of the peer-reviewed literature available discusses Human-AI collaboration broadly
+(Raisch & Krakowski, 2021; Faraj et al., 2018), but Agentic AI - AI systems with autonomy,
+proactivity, and delegated authority - is not well-studied in the software development context.
+This suggests that most empirical work is on generative AI assistants (e.g., Copilot, GPT) and
+general human–AI collaboration, but not on agentic AI. Hence, the specific skill implications
+of delegating work to agentic AI in software development remain understudied.
+5.5.2. Skill Transformation Under Agentic AI and the Automation–Augmentation Paradox
+The literature consistently shows that AI affects novices and experts in different ways. Novices
+gain more immediate benefits from AI assistance, while experienced developers tend to use AI
+more selectively and focus on oversight (Lu et al., 2024; Xu et al., 2025; Sowa et al., 2021). Yet
+existing research does not compare how skills evolve for these two groups when working with
+agentic AI. The experiential differences highlighted in automation and augmentation literature
+(Raisch & Krakowski, 2021) remain largely conceptual and untested in real software
+development settings.
+5.5.3. Incomplete Understanding of Differences Between Freshers and Experienced
+Developers
+The existing studies show strong indications that AI affects junior and senior workers differently
+(e.g., larger productivity boosts for novices; experts shifting toward orchestration and
+oversight), but to the best of our knowledge, very little or no study explicitly compares freshers
+vs. experienced software professionals in terms of skill development, upskilling, or deskilling
+from human-agentic AI collaboration.
+5.6. Future Research
+Based on the gaps found, our research will examine the impact of human–agentic AI
+collaboration on the developer skills in the context of software development. A key unresolved
+issue is whether using AI in software development helps people truly learn new skills or instead
+makes them dependent on the technology. Brynjolfsson et al. (2025) found that AI can help
+beginners perform at a level closer to experienced workers by transferring expert knowledge.
+However, it is still unclear whether users retain these skills over time or whether the learning
+disappears once the AI support is removed.
+AI-assisted coding shows faster task completion and higher output quality (as suggested by
+recent working papers discussed in Section 5.2). However, these studies rarely examine how
+HAIC influences technical, interpersonal, and conceptual skills. Performance improvements do
+not automatically translate into deeper learning or genuine skill development. This requires
+systematic investigation of skill transformation, not only productivity gains.
+This research further attempts to understand how using agentic AI in software development
+affects the skills that developers build at different experience levels. This includes examining
+whether entry-level developers still learn basic programming skills when AI handles routine
+tasks, and whether experienced developers use AI to solve more complex problems or mainly
+to work faster on their usual tasks.
+
+31st Conference of the Information and Management Association
+AIM 2026: May 20-22 in Neuchâtel (CH)
+16
+Implementing this research agenda requires interdisciplinary collaboration bridging computer
+science, organizational behavior, cognitive psychology, and learning sciences. As Hoffman et
+al. (2023) noted regarding human-AI teaming measurement, developing "explanation goodness,
+user satisfaction, mental models, curiosity, trust, and human-AI performance" metrics demands
+theoretical integration across traditionally separate domains.
+Our research will employ a mixed-methods approach combining quantitative and qualitative
+data collection and analysis. Mixed methods are appropriate because the research questions
+span multiple levels, from measuring skill development outcomes (suited to quantitative
+methods) to understanding collaboration processes and human-AI augmentation strategies
+(suited to qualitative methods).
+The research will target approximately 150-200 developers total, with roughly equal numbers
+of freshers (0-2 years of experience) and experienced developers (3+ years of experience). This
+sample size for quantitative analysis will be 10-15 developers and will be a subset from all
+participants. Developers will be recruited through participating organizations, professional
+networks, and online developer communities.
+6. References
+Acemoglu, D., & Restrepo, P. (2019). Automation and new tasks: How technology displaces
+and reinstates labor. Journal of Economic Perspectives, 33(2), 3–30.
+Adam, M., Bauer, K., Jussupow, E., Stein, M. K., & Benlian, A. (2025). Generating
+Tomorrow’s Me: How Collaborating with Generative AI Changes Humans. Business
+& Information Systems Engineering, 67(5), 583–594.
+Ågerfalk, P. J. (2020). Artificial intelligence as digital agency. European Journal of
+Information Systems, 29(1), 1–8.
+Autor, D. H., Levy, F., & Murnane, R. J. (2003). The skill content of recent technological
+change: An empirical exploration. The Quarterly Journal of Economics, 118(4),
+1279–1333.
+Baird, A., & Maruping, L. M. (2021). The Next Generation of Research on IS Use: A
+Theoretical Framework of Delegation to and from Agentic IS Artifacts. MIS
+Quarterly, 45(1), 315–341.
+Bandara, W., Miskon, S., & Fielt, E. (2015). A systematic, tool-supported method for
+conducting literature reviews in information systems. Communications of the
+Association for Information Systems, 37, 154–204.
+Benbya, H., Davenport, T. H., & Pachidi, S. (2020). Artificial intelligence in organizations:
+Current state and future opportunities. MIS Quarterly Executive, 19(4), 1–18.
+Berente, N., Gu, B., Recker, J., & Santhanam, R. (2021). Managing Artificial Intelligence.
+MIS Quarterly, 45(3), 1433–1450.
+
+31st Conference of the Information and Management Association
+AIM 2026: May 20-22 in Neuchâtel (CH)
+17
+Braun, V., & Clarke, V. (2006). Using thematic analysis in psychology. Qualitative Research
+in Psychology, 3(2), 77–101.
+Brynjolfsson, E., & Mitchell, T. (2017). What can machine learning do? Workforce
+implications. Science, 358(6370), 1530–1534.
+Brynjolfsson, E., Li, D., & Raymond, L. R. (2025). Generative AI at work. The Quarterly
+Journal of Economics, 140(2), 889–942.
+Brynjolfsson, E., Rock, D., & Syverson, C. (2017). Artificial intelligence and the modern
+productivity paradox: A clash of expectations and statistics (National Bureau of
+Economic Research, Working Paper No. 24001).
+Campero, A., Vaccaro, M. V., Song, J., Wen, H., Almaatouq, A., & Malone, T. W. (2022). A
+test for evaluating performance in human-computer systems. arXiv preprint
+arXiv:2210.02324.
+Chen, Z., & Chan, J. (2024). Large language model in creative work: The role of
+collaboration modality and user expertise. Management Science, 70(12), 9101–
+9117.
+Cui, Z., Demirer, M., Jaffe, S., Musolff, L., Peng, S., & Salz, T. (2025). The effects of
+generative AI on high-skilled work: Evidence from three field experiments with
+software developers. SSRN.
+Davenport, T. H., & Ronanki, R. (2018). Artificial intelligence for the real world. Harvard
+Business Review, 96(1), 108–116.
+Dell'Acqua, F., Ayoubi, C., Lifshitz, H., Sadun, R., Mollick, E. R., Mollick, L., Han, Y.,
+Goldman, J., Nair, H., Taub, S., & Lakhani, K. R. (2025). The Cybernetic Teammate:
+A Field Experiment on Generative AI Reshaping Teamwork and Expertise (Harvard
+Business School, Working Paper No. 25-043).
+Dell'Acqua, F., McFowland III, E., Mollick, E. R., Rajendran, S., Krayer, L., Candelon, F.,
+Lifshitz-Assaf, H., Lakhani, K. R., & Kellogg, K. C. (2023). Navigating the jagged
+technological frontier: Field experimental evidence of the effects of AI on knowledge
+worker productivity and quality (Harvard Business School, Working Paper No. 24-
+013).
+Dellermann, D., Ebel, P., Söllner, M., & Leimeister, J. M. (2019). Hybrid Intelligence.
+Business & Information Systems Engineering, 61(5), 637–643
+Dennis, A. R., Lakhiwal, A., & Sachdeva, A. (2023). AI agents as team members: Effects
+on satisfaction, conflict, trustworthiness, and willingness to work with. Journal of
+Management Information Systems, 40(2), 307–337
+Faraj, S., Pachidi, S., & Sayegh, K. (2018). Working and organizing in the age of the
+learning algorithm. Information and Organization, 28(1), 62–70
+
+31st Conference of the Information and Management Association
+AIM 2026: May 20-22 in Neuchâtel (CH)
+18
+Hoffman, R. R., Mueller, S. T., Klein, G., & Litman, J. (2023). Metrics for explainable AI:
+Challenges and prospects. Artificial Intelligence, 320, 103986.
+Jarrahi, M. H. (2018). Artificial intelligence and the future of work: Human–AI symbiosis
+in organizational decision making. Business Horizons, 61(4), 577–586.
+Kellogg, K. C., Valentine, M. A., & Christin, A. (2020). Algorithms at work: The new
+contested terrain of control. Academy of Management Annals, 14(1), 419–465.
+Li, X., Huang, L., & Zhou, Y. (2024). When do employees learn from artificial intelligence?
+The moderating effects of perceived enjoyment and task-related complexity.
+Technology in Society, 77, Article 102464.
+Leonardi, P. M. (2011). When Flexible Routines Meet Flexible Technologies: Affordance,
+Constraint, and the Imbrication of Human and Material Agencies. MIS Quarterly,
+35(1), 147–167.
+Leonardi, P. M., & Barley, S. R. (2024). From knowing to doing: Expertise in the age of
+artificial intelligence. Academy of Management Review. Advance online
+publication.
+Lu, Y., Wang, Z., & Liu, C. (2024). Human–AI collaboration: Unraveling the effects of user
+proficiency and AI capability in decision support. Computers in Human Behavior
+Reports, 16, Article 100492.
+Maruping, L. M., & Matook, S. (2020). The evolution of software development
+orchestration: Current state and an agenda for future research. European Journal of
+Information Systems, 29(4), 405–421.
+Mikalef, P., Fjørtoft, S. O., & Torvatn, H. Y. (2019). Artificial intelligence in the information
+systems research agenda. Information Systems Frontiers, 21(3), 497–515.
+Mikalef, P., & Gupta, M. (2021). Artificial intelligence capability: Conceptualization,
+measurement calibration, and empirical study on its impact on organizational
+creativity and firm performance. Information & Management, 58(3), Article
+103444.
+Nguyen, T., & Elbanna, A. (2025). Understanding human-AI augmentation in the
+workplace: A review and a future research agenda. Information Systems Frontiers,
+27, 1–21.
+Noy, S., & Zhang, W. (2023). Experimental evidence on the productivity effects of
+generative AI. Science, 381(6654), 187–192.
+Okoli, C., & Schabram, K. (2010). A guide to conducting a systematic literature review of
+information systems research. MIS Quarterly, 34(2), 1–49.
+Peng, X., Ma, E., Barcelos, R., Ming, N., & Murphy, G. C. (2023). The impact of AI on
+developer productivity: Evidence from GitHub Copilot. arXiv preprint
+arXiv:2302.06590.
+
+31st Conference of the Information and Management Association
+AIM 2026: May 20-22 in Neuchâtel (CH)
+19
+Raisch, S., & Krakowski, S. (2021). Artificial intelligence and management: The
+automation–augmentation paradox. Academy of Management Review, 46(1), 192–
+210.
+Seeber, I., Bittner, E. A. C., Briggs, R. O., de Vreede, T., de Vreede, G.-J., Elkins, A., Maier,
+R., Merz, A. B., Oeste-Reiß, S., Randrup, N., Schwabe, G., & Söllner, M. (2020).
+Machines as Teammates: A Research Agenda on AI in Team Collaboration.
+Information & Management, 57(2), 103174.
+Sowa, K., Przegalinska, A., & Ciechanowski, L. (2021). Cobots in knowledge work:
+Human–AI collaboration in managerial professions. Journal of Business Research,
+125, 135–142.
+Sowa, K., Przegalinska, A., Triantoro, T., Kovbasiuk, A., Ciechanowski, L., & Freeman, R.
+(2025). Collaborative AI in the workplace: Enhancing organizational performance
+through resource-based and task-technology fit perspectives. International Journal
+of Information Management, 81, Article 102853.
+Tarafdar, M., Page, X., & Marabelli, M. (2022). Algorithms as co-workers: Human–
+algorithm role interactions in algorithmic work. Information Systems Journal, 32(4),
+653–682.
+Thomas, J., & Harden, A. (2008). Methods for the thematic synthesis of qualitative research
+in systematic reviews. BMC Medical Research Methodology, 8, Article 45.
+Vaithilingam, P., Zhang, T., & Glassman, E. L. (2022). Expectation vs. experience:
+Evaluating the usability of code generation tools powered by large language models.
+Proceedings of the 35th Annual ACM Symposium on User Interface Software and
+Technology (UIST '22).
+Wang, X., Lin, X., & Shao, B. (2023). Artificial intelligence changes the way we work: A
+close look at innovating with chatbots. Journal of the Association for Information
+Science and Technology, 74(7), 808–822.
+Webster, J., & Watson, R. T. (2002). Analyzing the past to prepare for the future: Writing a
+literature review. MIS Quarterly, 26(2), xiii–xxiii.
+Wooldridge, M., & Jennings, N. R. (1998). Intelligent agents: Theory and practice. The
+Knowledge Engineering Review, 10(2), 115–152.
+Xu, Y., Peng, J., & Sun, Y. (2025). The impact of individual AI proficiency on human–agent
+collaboration: Higher sensitivity to discern the comprehension ability of intelligent
+agents for users with higher AI proficiency levels. International Journal of
+Industrial Ergonomics, 97, Article 103986.
+
+31st Conference of the Information and Management Association
+AIM 2026: May 20-22 in Neuchâtel (CH)
+20
+Appendix A. Agentic AI Tools for Software Developers
+Tool Name
+Developer
+/
+Vendor
+Agentic Capabilities
+Claude Code
+Anthropic
+Full
+agentic
+coding:
+accepts
+high-level
+goals,
+autonomously plans and executes multi-file changes,
+self-corrects through iterative testing
+GitHub Copilot
+(Agent Mode)
+GitHub
+/
+Microsoft
+Autonomous multi-step task execution; iterative code
+generation, testing, and debugging within IDE
+Cursor
+(Agent
+Mode)
+Cursor Inc.
+Full codebase awareness; autonomous file creation,
+editing, and terminal command execution
+Amazon
+Q
+Developer
+(Agent)
+Amazon Web
+Services
+Autonomous code transformation; multi-step feature
+implementation; security vulnerability remediation
+OpenAI Codex
+(Agent)
+OpenAI
+Cloud-based
+autonomous
+software
+agent;
+reads
+codebases, plans implementations, writes and tests code
+in sandboxed environments
+Devin
+Cognition AI
+Full-stack autonomous software engineering agent;
+plans, codes, debugs, and deploys with minimal human
+intervention
+SWE-Agent
+Princeton
+NLP Group
+Autonomous bug fixing and feature implementation
+from GitHub issues
+
+Note: This table reflects the state of the market as of early 2026. The agentic AI tool landscape
+is evolving rapidly, and new tools with enhanced autonomous capabilities continue to emerge.
+
+Appendix B. Analysis of 19 Selected Articles
+Authors
+Year
+Journal
+Name
+Evidence Type
+Title
+Empirical
+research (yes/no)
+Sector
+Main results
+Baird,
+A.
+&
+Maruping, L.M.
+2021
+MIS Quarterly Primary
+(Peer-
+reviewed)
+The Next Generation
+of Research on IS
+Use: A Theoretical
+Framework
+of
+Delegation to and
+from
+Agentic
+IS
+Artifacts
+No
+General IS
+Developed
+a
+theoretical
+framework of delegation flows
+bidirectionally between humans
+and AI
+Brynjolfsson, E.,
+Li,
+D.
+&
+Raymond, L
+2025
+Quarterly
+Journal
+of
+Economics
+Primary
+(Peer-
+reviewed)
+Generative
+AI
+at
+Work
+Yes
+Customer Service
+AI
+increased
+productivity;
+largest gains for novice workers;
+AI transferred knowledge from
+experienced to novice workers
+Chen,
+Z.,
+&
+Chan, J.
+2024
+Management
+Science
+Primary
+(Peer-
+reviewed)
+Large
+language
+model in creative
+work: The role of
+collaboration
+modality and user
+expertise.
+Yes
+General
+LLM collaboration improves
+performance overall; less-expert
+users benefit most from AI-lead
+modes, experts from co-creation
+modes.
+
+31st Conference of the Information and Management Association
+AIM 2026: May 20-22 in Neuchâtel (CH)
+22
+Authors
+Year
+Journal
+Name
+Evidence Type
+Title
+Empirical
+research (yes/no)
+Sector
+Main results
+Cui,
+K.Z.,
+Demirer,
+M.,
+Jaffe, S., Musolff,
+L., Peng, S. &
+Salz, T.
+2025
+NBER
+Working Paper
+Complementary
+(Working Paper)
+The
+Effects
+of
+Generative AI on
+High-Skilled Work:
+Evidence from Three
+Field
+Experiments
+with
+Software
+Developers.
+Yes
+Software
+Development
+26.08% increase in completed
+tasks;
+less
+experienced
+developers had higher adoption
+rates and greater productivity
+gains; shift from manual coding
+to AI orchestration
+Del Acqua, F.,
+Hohenberg, S. &
+Watson, R.
+2025
+Harvard
+Business
+School,
+Working Paper
+Complementary
+(Working Paper)
+The
+Cybernetic
+Teammate: A Field
+Experiment
+on
+Generative
+AI
+Reshaping
+Teamwork
+and
+Expertise.
+Yes
+General Business
+AI-enabled individuals produced
+solutions comparable to two-
+person
+teams;
+AI
+reduced
+dominance effects; teams with
+AI showed higher likelihood of
+exceptional performance
+Dell'Acqua,
+F.,
+McFowland, E.,
+Mollick, E., et al.
+2023
+Harvard
+Business
+School
+Working Paper
+Complementary
+(Working Paper)
+Navigating
+the
+Jagged
+Technological
+Frontier:
+Field
+Experimental
+Evidence
+of
+the
+Yes
+R&D
+professionals
+in
+Consumer space
+12.2% more tasks completed,
+25.1% faster completion, 40%
+higher quality; below-average
+performers
+improved
+43%,
+above-average 17%; identified
+"jagged technological frontier"
+
+31st Conference of the Information and Management Association
+AIM 2026: May 20-22 in Neuchâtel (CH)
+23
+Authors
+Year
+Journal
+Name
+Evidence Type
+Title
+Empirical
+research (yes/no)
+Sector
+Main results
+Effects of AI on
+Knowledge Worker
+Productivity
+and
+Quality
+Dellermann, D.,
+Ebel, P., Söllner,
+M., & Leimeister,
+J. M.
+2019
+Business
+&
+Information
+Systems
+Engineering
+Primary
+(Peer-
+reviewed)
+Hybrid Intelligence
+No
+General
+AI
+Systems
+Developed taxonomy with four
+meta-dimensions:
+task
+characteristics,
+learning
+paradigm, human-AI interaction,
+AI-human interaction; 16 sub-
+dimensions, 50 categories
+Dennis, A. R.,
+Lakhiwal, A., &
+Sachdeva, A.
+2023
+Journal
+of
+Management
+Information
+Systems
+Primary
+(Peer-
+reviewed)
+AI Agents as Team
+Members: Effects on
+Satisfaction,
+Conflict, and Trust
+Yes
+Human-AI Team
+Collaboration
+AI perceived as having greater
+ability and integrity but lower
+benevolence; perceiving AI as
+opportunity
+fostered
+positive
+outcomes;
+threat
+perceptions
+engendered negative results
+
+31st Conference of the Information and Management Association
+AIM 2026: May 20-22 in Neuchâtel (CH)
+24
+Authors
+Year
+Journal
+Name
+Evidence Type
+Title
+Empirical
+research (yes/no)
+Sector
+Main results
+Faraj, S., Pachidi,
+S., & Sayegh, K.
+2018
+Information
+and
+Organization
+Primary
+(Peer-
+reviewed)
+Working
+and
+Organizing in the
+Age of the Learning
+Algorithm
+No
+General
+Organizations
+Algorithms create new forms of
+work organization; Need for
+understanding
+boundaries
+of
+human-AI collaboration
+Jarrahi, M.H
+2018
+Business
+Horizons
+Primary
+(Peer-
+reviewed)
+Artificial
+Intelligence and the
+Future
+of
+Work:
+Human-AI
+Symbiosis
+in
+Organizational
+Decision Making
+No (Conceptual)
+General
+Organizations
+AI handles data processing and
+pattern
+recognition
+while
+humans contribute contextual
+understanding; requires workers
+to strengthen human capabilities
+while
+developing
+AI
+collaboration skills
+Kellogg, K. C.,
+Valentine, M. A.,
+& Christin, A.
+2020
+Academy
+of
+Management
+Annals
+Primary
+(Peer-
+reviewed)
+Algorithms at Work:
+The New Contested
+No
+(Literature
+Review)
+General
+Workplace
+Algorithms reshape workplace
+control;
+new
+forms
+of
+surveillance and performance
+measurement; workers develop
+coping
+strategies;
+need
+for
+understanding power dynamics
+
+31st Conference of the Information and Management Association
+AIM 2026: May 20-22 in Neuchâtel (CH)
+25
+Authors
+Year
+Journal
+Name
+Evidence Type
+Title
+Empirical
+research (yes/no)
+Sector
+Main results
+Lu, Y., Wang, Z.,
+& Liu, C.
+2024
+International
+Journal
+of
+Industrial
+Ergonomics
+Primary
+(Peer-
+reviewed)
+Human–AI
+Collaboration:
+Unraveling
+the
+Effects
+of
+User
+Proficiency and AI
+Capability
+in
+Decision Support
+Yes
+Software
+Development
+High AI capability benefits all,
+but low-proficiency users gain
+disproportionately;
+high-
+proficiency users prefer balanced
+control.
+Nguyen, T.
+&
+Elbanna, A.
+2025
+Information
+Systems
+Frontiers
+Primary
+(Peer-
+reviewed)
+Understanding
+Human-AI
+Augmentation in the
+Workplace:
+A
+Review and a Future
+Research Agenda
+No
+(Systematic
+Review)
+General
+Demographic characteristics and
+background
+influence
+collaboration
+outcomes;
+organizational culture affects
+effectiveness;
+one-size-fits-all
+approaches fail to account for
+differential impacts
+Noy, S. & Zhang,
+W.
+2023
+Science
+Primary
+(Peer-
+reviewed)
+Experimental
+Evidence
+on
+the
+Productivity Effects
+of
+Generative
+Artificial
+Intelligence
+Yes
+General AI
+AI
+assistance
+improved
+productivity
+across
+multiple
+dimensions; time savings and
+quality improvements; effects
+varied by task complexity and
+individual characteristics
+
+31st Conference of the Information and Management Association
+AIM 2026: May 20-22 in Neuchâtel (CH)
+26
+Authors
+Year
+Journal
+Name
+Evidence Type
+Title
+Empirical
+research (yes/no)
+Sector
+Main results
+Peng, X., Ma, E.,
+Barcelos,
+R.,
+Ming,
+N.,
+&
+Murphy, G. C.
+2023
+arXiv
+Complementary
+(Working Paper)
+The impact of AI on
+Developer
+Productivity:
+Evidence
+from
+GitHub Copilot
+Yes,
+Software (Coding
+Tasks)
+Copilot
+significantly
+reduces
+completion time and sometimes
+improves correctness, especially
+for less-experienced developers
+and boilerplate tasks.
+Raisch,
+S.
+&
+Krakowski, S.
+2021
+Academy
+of
+Management
+Review
+Primary
+(Peer-
+reviewed)
+Artificial
+Intelligence
+and
+Management:
+The
+Automation-
+Augmentation
+Paradox
+No (Theoretical)
+General
+Management
+Automation and augmentation
+are
+fundamentally
+interdependent; automation can
+lead to loss of human expertise;
+need to balance both approaches
+Seeber,
+I.,
+Bittner,
+E.A.C.,
+Briggs, R.O., et
+al.
+2020
+Information &
+Management
+Primary
+(Peer-
+reviewed)
+Machines
+as
+Teammates:
+A
+Research Agenda on
+AI
+in
+Team
+Collaboration
+No
+(Research
+Agenda)
+
+General
+Team
+Collaboration
+Need to understand how AI team
+members
+affect
+humans,
+collaborative work practices, and
+organizational
+outcomes;
+systematic research needed on
+machine teammate design
+
+31st Conference of the Information and Management Association
+AIM 2026: May 20-22 in Neuchâtel (CH)
+27
+Authors
+Year
+Journal
+Name
+Evidence Type
+Title
+Empirical
+research (yes/no)
+Sector
+Main results
+Xu, L., Chen, J.
+& Wang, P.
+2025
+International
+Journal
+of
+Industrial
+Ergonomics
+Primary
+(Peer-
+reviewed)
+The
+Impact
+of
+Individual
+AI
+Proficiency
+on
+Human-Agent
+Collaboration
+Yes
+General
+Users with higher AI proficiency
+demonstrated
+better
+task
+performance, increased trust, and
+lower
+mental
+workload;
+individual
+differences
+significantly
+moderate
+collaboration outcomes
+Sowa,
+K.,
+Przegalinska, A.
+& Ciechanowski,
+L.
+2021
+Journal
+of
+Business
+Research
+Primary
+(Peer-
+reviewed)
+Cobots
+in
+Knowledge
+Work:
+Human-AI
+Collaboration
+in
+Managerial
+Professions
+Yes
+Managerial
+Professions
+Differences in AI proficiency
+affect delegation strategies and
+collaboration
+effectiveness;
+boundaries and circumstances of
+collaboration should be studied
+empirically

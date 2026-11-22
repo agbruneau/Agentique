@@ -1,0 +1,352 @@
+The Canadian Bank AI Index · 2026 Q4 edition
+Which Canadian banks use AI, and how openly?
+
+Short answer
+The Canadian Bank AI Index scores 35 Canadian banks, credit unions and fintechs out of 100 on public evidence of AI: what reaches customers, governance, model-risk readiness, transparency and talent. TD leads the 2026 Q4 edition with 84. Every point links to a dated source, and the 210-entry database is free to download.
+Figures as of November 1, 2026 .
+
+Mitey , data editor · Evidence checked November 1, 2026Independent. Not affiliated with any bank. No paid placement.
+
+Jump to the scores What AI touches my account? Download CSV
+
+Mitey, the Index’s data editor, scored 35 institutions for the 2026 Q4 edition and logged every source.
+
+Scorecard
+
+The top 12 , out of 100
+
+Five pillars, 20 points each. Bars show where each institution earns its points. Tap a name for the evidence behind every point.
+
+Customer deployment
+
+Governance disclosure
+
+Model-risk readiness
+
+Transparency to customers
+
+AI talent & capacity
+Canadian Bank AI Index 2026 Q4: top 12 scores out of 100
+
+1 TD
+
+84
+
+2 RBC
+
+81
+
+3 CIBC
+
+80
+
+4 National Bank
+
+69
+
+5 BMO
+
+57
+
+6 Scotiabank
+
+55
+
+7 Desjardins Caisse network
+
+54
+
+8 EQ Bank Digital bank
+
+42
+
+9 Wealthsimple Fintech
+
+37
+
+10 ATB Provincial crown institution
+
+30
+
+11 Meridian Credit union
+
+24
+
+12 Neo Fintech
+
+24
+
+All 35 institutions, sortable, with every criterion
+
+Read this before the ranking
+
+A score measures how much an institution has published and launched , not whether its AI is good, fair or safe. Smaller institutions often use vendor AI they never announce, so a low score can mean “quiet”, not “behind”.
+
+How points are earned
+
+Deployment : live customer uses across six areas
+
+Governance : principles, board oversight, risk disclosure, an accountable executive
+
+Model risk : model-risk controls that cover AI, aligned to OSFI E-23
+
+Transparency : customers told; voluntary code; regular reporting
+
+Talent : AI lab, disclosed headcount, active hiring
+Full method
+
+By the numbers
+What the public record shows
+
+210
+
+AI deployments in our database
+
+27 institutions, 2017–2026, every row sourced
+
+21%
+
+are used by customers directly
+
+Another 13% run on customer accounts unseen, like fraud screening
+
+6 of 35
+
+publish responsible-AI principles
+
+13 tell customers when AI or automated decisions are used
+
+181
+
+days until OSFI E-23 applies to AI models
+
+Model-risk rules for federally regulated banks take effect May 1, 2027
+
+Deployment database
+AI announcements and disclosures by year
+
+By the year each use launched, was announced or was first disclosed, never by a web page’s last-updated date, and coloured by who the AI actually reaches. Most of what banks announce is for staff or research, not for customers. 5 entries with no published date are not charted.
+
+0 35 70
+
+’17 ’18 ’19 ’20 ’21 ’22 ’23 ’24 ’25 ’26
+
+Number of sourced AI deployments by year, split by reach
+Year Customers use it directly Runs on customer accounts Staff tools Research & governance
+
+2017 3 0 0 3
+
+2018 1 0 0 3
+
+2019 5 1 1 3
+
+2020 5 0 2 1
+
+2021 5 3 3 2
+
+2022 2 0 0 3
+
+2023 0 3 1 2
+
+2024 3 2 14 7
+
+2025 11 11 23 20
+
+2026 7 8 29 18
+
+Customers use it directly
+
+Runs on customer accounts
+
+Staff tools
+
+Research & governance
+
+Share of all 210 deployments
+
+Share of deployments by reach
+
+Customers use it directly 45
+
+Runs on customer accounts 28
+
+Staff tools 75
+
+Research & governance 62
+Search the database
+
+How the Index is built
+From a bank’s own words to a score you can check
+
+Collect what institutions publish
+
+Annual reports, filings, newsrooms, product pages, patents, job boards and reputable news: 210 AI uses at 27 institutions, each dated by when it launched and linked to its source.
+
+Score five pillars, 20 points each
+
+Customer deployment, governance, model-risk readiness, transparency and talent. Every point is a yes-or-no criterion met only with a public, dated source, and the same rules apply to every institution.
+
+Show customers what it means
+
+Pick your bank to see the AI it has disclosed on accounts like yours, your rights, and how to ask a person to review an automated decision.
+
+Latest launches
+Newest AI that reaches customers
+
+Launched Jul 30, 2026 Questrade
+
+Flows: plain-language trading automation engine
+
+Questrade announced Flows, which lets clients describe an investment strategy in plain language and then builds and runs the automation, including placing trades for them; Questrade presents it as part of its 'agentic finance' launch.
+
+Context: The release does not name the AI model behind Flows; Fintech.ca (2026-07-29) describes it under 'AI-Powered Trading Automations'. Not marked 'coming soon' in the release, but rollout status not verified. 'Canada's first' is Questrade's claim.
+
+Customers use it directly Wealth & investing Launched Press release : Questrade (GlobeNewswire via BNN Bloomberg)
+
+Announced Jul 30, 2026 Questrade
+
+Questrade MCP: client accounts connected to Claude and ChatGPT
+
+Questrade announced an MCP integration that lets clients connect accounts to AI assistants such as Claude and ChatGPT to view and analyse holdings, research markets and initiate orders, which clients confirm in the Questrade app; Questrade calls itself the first Canadian institution to do this officially.
+
+Context: Beta: NCFA Canada (https://ncfacanada.org/questrade-mcp-ai-brokerage-accounts/) reports Questrade published beta documentation on 2026-07-23 supporting Claude and Claude Code. 'First' is Questrade's claim. The AI models are third-party (the client's own assistant). In-app order confirmation per BetaKit 2026-07-30.
+
+Customers use it directly Assistants & chat Pilot Press release : Questrade (GlobeNewswire via BNN Bloomberg)
+
+Launched Jul 9, 2026 BMO
+
+SmartDecision AI-enhanced life insurance underwriting
+
+BMO Insurance launched SmartDecision, which uses predictive modelling and AI-enhanced capabilities to give real-time underwriting decisions on eligible life applications up to $5 million, often without medical requirements.
+
+Context: Advisor-led application; eligible applications only.
+
+Runs on customer accounts Staff & operations Launched Newsroom / blog : BMO
+
+Announced Jun 22, 2026 Tru (First West)
+
+DataVisor AI fraud and risk platform via VeriPark
+
+Tru Cooperative Bank (formerly First West) selected DataVisor's AI-powered fraud and AML platform, delivered through VeriPark's digital banking platform, for real-time fraud detection across onboarding, login, profile changes, Interac e-Transfer and bill pay.
+
+Context: vendor-issued (DataVisor release via Business Wire, 2026-06-16, not opened). Selection announced; go-live not confirmed.
+
+Runs on customer accounts Fraud & identity Announced News report : Finovate
+
+Announced May 25, 2026 Interac
+
+Interac Verified: passive liveness and AI-generated media detection (Incode)
+
+Interac announced it is adding Incode's passive liveness detection and Deepsight, which tests for AI-generated images or video, virtual cameras and device tampering, to its Interac Verified identity service, with a phased rollout targeting Q3 2026.
+
+Context: Published 2026-05-25, updated 2026-06-15. Whether the Q3 2026 launch happened was not verified. End users of businesses using Interac Verified go through the check.
+
+Customers use it directly Fraud & identity Announced Press release : Interac Corp.
+
+Launched May 21, 2026 TD
+
+Agentic AI for mortgage and HELOC pre-adjudication
+
+TD launched its first agentic AI system, built by Layer 6, which classifies documents, calculates income and checks applications against policy before producing a memo for human underwriters on mortgage and HELOC applications.
+
+Context: Underwriters make the decisions. A July 2026 TD Stories article says 100% of new personal mortgages go through the process (TD-reported).
+
+Runs on customer accounts Credit & lending Launched Newsroom / blog : TD Bank Group
+
+All 210 entries
+
+Regulation tracker
+The rules, and when they bite
+
+Coming Federal (Canada)
+
+OSFI Guideline E-23 (model risk)
+
+Final, published September 11, 2025. Takes effect May 1, 2027, and expressly covers AI and machine-learning models.
+
+E-23 effective for federally regulated financial institutions , May 1, 2027 : 181 days to go
+
+Coming Quebec
+
+AMF guideline on AI (Quebec)
+
+Final. The guideline is dated March 2026, the AMF’s guideline page was updated April 24, 2026, and it takes effect May 1, 2027 for institutions the AMF regulates, including Desjardins.
+
+AMF AI guideline effective , May 1, 2027 : 181 days to go
+
+Coming Federal (Canada)
+
+Consumer-Driven Banking Act (open banking)
+
+Royal Assent March 26, 2026, but most provisions are not in force. Regulations were proposed June 27, 2026; final rules are targeted for late 2026 or early 2027. No date yet for data sharing to start.
+
+Proposed Federal (Canada)
+
+Bank anti-fraud regulations (proposed)
+
+Proposed in Canada Gazette Part I on June 27, 2026, with a proposed start date of July 1, 2027. Final version not yet published.
+
+Proposed coming-into-force date , July 1, 2027 : 242 days to go
+
+All 19 items with dates
+
+Global context
+How Canada’s biggest banks rank worldwide
+
+The Evident AI Index ranks the world’s largest banks on AI talent, innovation, leadership and transparency. Only the largest Canadian banks are in it.
+
+Bank 2026 of 50 2025 of 50 2024 of 50
+
+RBC #3 #3 #3
+
+TD #10 #13 #9
+
+BMO #20 #19 #24
+
+CIBC #21 #22 #22
+
+Scotiabank #30 #29 #20
+
+Global rank among the large banks Evident assesses. Source: Evident AI Index 2026 ( Evident (primary); corroborated by The Logic 2026-10-06 and bank press releases ) ; Evident AI Index 2025 ( news (The Logic; RBC rank corroborated by Fintech.ca 2025-10-09); Evident's own page for this edition not found ) ; Evident AI Index 2024 ( news (The Logic; corroborated by Fintech.ca 2024-10-18); Evident's own page for this edition not found ) .
+
+Why two indexes?
+
+Evident covers the largest banks worldwide and uses data it does not publish. Our Index covers 35 Canadian institutions, including credit unions and digital banks, and every point is a link you can check.
+
+For customers
+What AI touches your account, and your rights
+
+Pick your bank to see the AI it has disclosed on accounts like yours: fraud screening, chat, credit decisions. Then see what you can ask for, including a human review of an automated decision and how to complain.
+
+Check my bank AI scams: spot one, and what to do
+
+Open data
+Use the data
+
+Every score, criterion, deployment and regulation item is free to reuse under CC BY 4.0. Credit “Canadian Bank AI Index, AIBanks.ca”, or embed the live ranking on your own site.
+
+Scores by institution (CSV)
+
+Every scoring criterion with its source (CSV)
+
+Deployment database (CSV)
+
+Regulation tracker (CSV)
+
+Everything (JSON)
+
+Free to reuse with credit: “Canadian Bank AI Index, AIBanks.ca”. Licensed CC BY 4.0.
+Embed the Index
+
+About the Index
+
+What is the Canadian Bank AI Index? +
+An independent scorecard of 35 Canadian banks, credit unions and fintechs, built only from public evidence: where AI reaches customers, how it is governed, whether customers are told, and the talent behind it. Every point links to its source. Read the method .
+Which Canadian bank is furthest ahead on AI? +
+On public evidence, TD Bank Group (The Toronto-Dominion Bank) scores highest in this edition, with 84 out of 100. See the scorecard for everyone else. Our score measures what institutions disclose and launch, not whether their AI is good or safe. Globally, the Evident AI Index ranks the large banks on talent, innovation, leadership and transparency.
+Does my bank use AI on my account? +
+Almost certainly for fraud screening, and often for chat, credit and marketing. Our “What AI touches my account?” page lists what each institution has disclosed and explains your rights, including how to ask for a human to review a decision.
+Is there an AI bank in Canada? +
+Not in the sense of a bank run by AI. Every Canadian bank is run by people and regulated as usual; what differs is how much AI each uses and discloses. Digital banks and fintechs often use AI heavily in onboarding and fraud checks but publish little about it. Compare them on the scorecard .
+How often is the Index updated? +
+Quarterly, with new deployments added as they are announced. This is the 2026 Q4 edition, with evidence checked to 2026-11-01. The change log lists every update.
