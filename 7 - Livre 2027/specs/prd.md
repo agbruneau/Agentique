@@ -54,11 +54,11 @@ Les volumes `1` à `6` du dépôt (`2 917 pages`, novembre 2026) constituent des
 
 ## 6. Calibrage quantitatif et structurel
 
-- **Volume cible total** : **72 000 mots** ($\pm 8\ \%$, soit plage admissible de `66 240` à `77 760` mots; environ **250 à 265 pages** en mise en page livre).
-  - Texte narratif (`00-liminaire` + `Chapitres 01 à 12`) : **68 000 mots** ($\pm 8\ \%$ par unité).
+- **Volume cible total** : **74 000 mots** ($\pm 8\ \%$, soit plage admissible de `68 080` à `79 920` mots; environ **260 à 270 pages** en mise en page livre).
+  - Texte narratif (`00-liminaire` de `4 200` mots posant le cadre d'interopérabilité et d'orchestration + `Chapitres 01 à 12` de `65 800` mots) : **70 000 mots** ($\pm 8\ \%$ par unité).
   - Annexes de référence générées depuis `registre/` (`Annexes A, B, C`) : **4 000 mots** hors liste bibliographique brute.
-- **Iconographie** : **22 figures vectorielles originales** (`Fig-01` à `Fig-22`), limitées à `10–14` éléments lisibles par schéma pour une édition imprimée soignée (zéro capture d'écran récupérée sur le web).
-- **Tableaux** : `12 à 18` tableaux comparatifs synthétiques sur l'ensemble du livre (maximum `2` par chapitre) afin de préserver le rythme d'un essai suivi.
+- **Iconographie** : **23 figures vectorielles originales** (`Fig-00` inaugurale dans le liminaire + `Fig-01` à `Fig-22` dans les chapitres), limitées à `10–14` éléments lisibles par schéma pour une édition imprimée soignée (zéro capture d'écran récupérée sur le web).
+- **Tableaux** : `13 à 19` tableaux comparatifs synthétiques sur l'ensemble du livre (`1` tableau synoptique dans le liminaire et maximum `2` par chapitre) afin de préserver le rythme d'un essai suivi.
 
 ---
 
@@ -66,21 +66,21 @@ Les volumes `1` à `6` du dépôt (`2 917 pages`, novembre 2026) constituent des
 
 | ID | Critère d'acceptation | Barrière de contrôle | Seuil de réussite bloquant |
 |---|---|---|---|
-| `CA-01` | Respect du budget global (`66 240`–`77 760` mots) et de la fourchette $\pm 8\ \%$ par unité | `G1` (`verifie.py`) | `100 %` des 16 unités dans leur plage |
+| `CA-01` | Respect du budget global (`68 080`–`79 920` mots) et de la fourchette $\pm 8\ \%$ par unité | `G1` (`verifie.py`) | `100 %` des 16 unités dans leur plage |
 | `CA-02` | Absence totale des préfixes matriciels bannis (`AO-03`) dans le liminaire et les 12 chapitres | `G1` (`verifie.py`) | `0` occurrence détectée par regex |
 | `CA-03` | Absence de séquences de $\ge 12$ mots consécutifs identiques à `0 - MD/` hors citations entre guillemets (`AO-04`) | `G1` (`verifie.py`) | `0` collision non citée |
-| `CA-04` | Présence effective des sous-sections, de l'ouverture par cas concret et de l'encadré final prescrits par `toc.md` | `G1` (`verifie.py`) | `12 / 12` chapitres conformes |
-| `CA-05` | Plafond de densité tabulaire et de listes à puces (`charte-editoriale.md`) pour garantir une prose de livre | `G1` (`verifie.py`) | $\le 2$ tableaux/ch.; part des lignes en puces $\le 18\ \%$ |
+| `CA-04` | Présence effective des sous-sections (`0.1`–`0.6` et `X.1`–`X.4`), de l'ouverture par cas concret et des encadrés prescrits par `toc.md` et `charte-editoriale.md` | `G1` (`verifie.py`) | `13 / 13` unités narratives conformes |
+| `CA-05` | Plafond de densité tabulaire et de listes à puces (`charte-editoriale.md`) pour garantir une prose de livre | `G1` (`verifie.py`) | $\le 2$ tableaux/unité; part des lignes en puces $\le 18\ \%$ |
 | `CA-06` | Échappement valide des symboles monétaires (`\$`) et intégrité des formules mathématiques | `G1` (`verifie.py`) | `0` paire `$` non intentionnelle |
-| `CA-07` | Concordance exacte des dates et repères chiffrés avec `registre/ancres-chronologiques.json` et `faits-empiriques.json` | `G1` + `G3` | `0` divergence inter-chapitres |
-| `CA-08` | Compilation stricte sans erreur ni avertissement des 22 figures (`PlantUML` `-failfast2` / `Mermaid`) | `G1` (`verifie.py`) | `22 / 22` figures compilées et référencées |
+| `CA-07` | Concordance exacte des dates et repères chiffrés avec `registre/ancres-chronologiques.json` et `faits-empiriques.json` | `G1` + `G3` | `0` divergence inter-unités |
+| `CA-08` | Compilation stricte sans erreur ni avertissement des 23 figures (`Fig-00` à `Fig-22`, `PlantUML` `-failfast2` / `Mermaid`) | `G1` (`verifie.py`) | `23 / 23` figures compilées et référencées |
 | `CA-09` | Traçabilité `SHA-256` de 100 % des textes intégraux ouverts `L+` dans `manifeste-sources-sha256.json` | `G1` (`verifie.py`) | `100 %` des empreintes vérifiées |
 | `CA-10` | Respect absolu de `AO-01` : aucune citation normative ou empirique appuyée sur une source en `statut F` ou sur résumé seul | `G1` + `G2` | `0 %` de `METADATA_ONLY` ou `statut F` en preuve |
 | `CA-11` | Couverture en `L+` des 6 questions de recherche `RQ1`–`RQ6` de `protocole-mlr-2027.json` | `G1` + `G2` | $\ge 5$ études `L+` pertinentes par axe `RQ` |
-| `CA-12` | Ancrage atomique Wyvern indépendant sur les 12 chapitres (`supporté` / `imprécis` / `non supporté`) | `G2` (Wyvern) | `100 %` de *claims* `supportés` après rectification |
+| `CA-12` | Ancrage atomique Wyvern indépendant sur le liminaire et les 12 chapitres (`supporté` / `imprécis` / `non supporté`) | `G2` (Wyvern) | `100 %` de *claims* `supportés` sur les `13` unités après rectification |
 | `CA-13` | Premier tirage stratifié à l'aveugle (`seed=202701`, 60 énoncés) recollé mot à mot sur textes bruts `.txt` | `G3` (Recollation 1) | `60 / 60` (`100 %`) après rectification |
 | `CA-14` | Second tirage disjoint à froid (`seed=202702`, 60 nouveaux énoncés, 0 chevauchement) sur textes bruts `.txt` | `G3` (Recollation 2) | $\ge 95\ \%$ (`57 / 60`) avant correction; `100 %` après |
-| `CA-15` | Boucle critique comparative à l'aveugle (`gauntlet-loop`) chapitre par chapitre contre la barre stylistique nommée | `G4` (`gauntlet-loop`) | Victoire A/B, palier marginal sur 2 tours ou plafond atteint |
+| `CA-15` | Boucle critique comparative à l'aveugle (`gauntlet-loop`) sur le liminaire et les 12 chapitres contre la barre stylistique nommée | `G4` (`gauntlet-loop`) | Victoire A/B, palier marginal sur 2 tours ou plafond atteint |
 | `CA-16` | Passe de lissage transversal sur le manuscrit assemblé (transitions, élimination des redites inter-chapitres) | `G5` (Lissage) | `0` redite structurelle signalée au rapport final |
 | `CA-17` | Régénération déterministe des Annexes A, B et C à partir des registres JSON et des journaux d'AQ | `G1` + `G5` | `0` édition manuelle hors registre dans les annexes |
 | `CA-18` | Compilation `Pandoc` / `Typst` (PDF + HTML autonome) et inspection visuelle automatisée de 100 % des pages | `G5` (Visuel) | `0` page tronquée, tableau écrasé ou formule cassée |

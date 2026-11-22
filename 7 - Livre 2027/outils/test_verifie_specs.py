@@ -48,3 +48,23 @@ def test_detects_duplicate_owned_concepts_and_metadata_only_violation(tmp_path: 
     errors = validate_specs(clone)
     assert any("Collision dans owned_concepts" in e for e in errors)
     assert any("METADATA_ONLY" in e for e in errors)
+
+
+def test_liminaire_interoperabilite_contract_enforced(tmp_path: Path) -> None:
+    clone = tmp_path / "7 - Livre 2027"
+    shutil.copytree(REAL_BOOK_DIR, clone)
+    manifest_path = clone / "specs" / "manifest.json"
+    data = json.loads(manifest_path.read_text(encoding="utf-8"))
+    data["internal_corpus_paths"] = []
+    data["stylistic_benchmarks_for_gauntlet"] = []
+    # Simuler collision d'un concept du Liminaire avec le Chapitre 05
+    data["units"][5]["owned_concepts"].append(data["units"][0]["owned_concepts"][1])
+    manifest_path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    toc_path = clone / "specs" / "toc.md"
+    toc_path.write_text(toc_path.read_text(encoding="utf-8").replace("**0.6**", "0-6"), encoding="utf-8")
+
+    errors = validate_specs(clone)
+    assert any("Collision dans owned_concepts" in e for e in errors)
+    assert any("Sous-section du Liminaire **0.6**" in e for e in errors)
+

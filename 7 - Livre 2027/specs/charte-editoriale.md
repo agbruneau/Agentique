@@ -17,7 +17,20 @@ Cette charte gouverne tous les agents rédacteurs, réviseurs et lisseurs. Son o
 
 ---
 
-## 2. Architecture interne obligatoire de chaque chapitre
+## 2. Architecture interne obligatoire des unités narratives
+
+### 2.1 Unité `00 — Liminaire` (ouverture architecturale de l'ouvrage, `4 200 mots`)
+
+L'unité `00 — Liminaire` ne se limite pas à un avant-propos éditorial : elle pose d'entrée de jeu le **cadre unificateur de l'interopérabilité et de l'orchestration** comme tissu conjonctif de l'entreprise agentique. Elle s'articule en sept éléments obligatoires :
+
+1. **Exergue et ouverture narrative par le réel (`350 à 550 mots`)** : `*Question directrice :*` suivie d'un récit concret montrant comment le retrait de l'humain « seul point d'intégration » entre des agents `SaaS` et internes isolés provoque paralysie inter-silos, perte de piste d'audit ou boucle d'appels non bornée.
+2. **Six sections analytiques et méthodologiques (`0.1` à `0.6`)** conformes aux intitulés exacts de `toc.md` : rupture d'exécution (`0.1`), les six dimensions de l'interopérabilité et la séparation *qui parle* / *qui en répond* (`0.2`), l'orchestration déterministe comme discipline de retenue (`0.3`), la logique des quatre parties, la règle du maillon le plus élevé et les quatre parcours par mandat (`0.4`), l'hygiène probatoire et le périmètre démontré (`0.5`), puis le colophon d'intégrité 100 % agentique (`0.6`).
+3. **Figure inaugurale (`Fig-00`)** commentée dans la prose de `0.2`–`0.3`, synthétisant visuellement les six dimensions d'interopérabilité et le plan d'orchestration déterministe traversés par la confiance et l'économie du résultat.
+4. **Tableau synoptique unique (en `0.3`)** contrastant les sept ruptures entre pratiques prototypes héritées (`2024–2025`) et cibles de production d'entreprise (`2027`).
+5. **Encadré méthodologique (en `0.3`)** intitulé `> **Cinq critères permanents d'évaluation architecturale**` fixant la grille d'analyse appliquée à chaque standard ou patron dans le reste du livre (neutralité de gouvernance, déterminisme des frontières, tolérance aux pannes, coût marginal à l'échelle, coût de sortie).
+6. **Ancrage factuel complet** : comme pour les douze chapitres, toute affirmation empirique, normative ou datée du liminaire porte sa référence `[n]` vers `sources/ch00-sources.md` et passe la barrière Wyvern `G2` (`ancrage/ch00-ancrage.md`).
+
+### 2.2 Chapitres `01` à `12` (cinq mouvements par chapitre)
 
 Chaque chapitre (`Ch. 01` à `Ch. 12`) suit cinq mouvements dans un flux continu :
 

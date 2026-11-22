@@ -8,7 +8,7 @@
 
 | Unité | Intitulé | Cible (mots) | Plage $\pm 8\ \%$ | Figures |
 |---|---|---:|---:|---|
-| `00` | Liminaire — Pourquoi ce livre, méthode de preuve et transparence agentique | 2 200 | 2 024 – 2 376 | — |
+| `00` | Liminaire — Interopérabilité et orchestration : le tissu conjonctif de l'entreprise agentique | 4 200 | 3 864 – 4 536 | `Fig-00` |
 | **Partie I** | **L'industrialisation cognitive face au réel** | **15 600** | | `Fig-01` à `Fig-06` |
 | `Ch. 01` | Après le copilote : l'industrialisation cognitive et les collectifs d'agents | 5 000 | 4 600 – 5 400 | `Fig-01`, `Fig-02` |
 | `Ch. 02` | L'épreuve des mesures : investissements géants, bancs biaisés et productivité réelle | 5 600 | 5 152 – 6 048 | `Fig-03`, `Fig-04` |
@@ -29,17 +29,23 @@
 | `Annexe A` | Glossaire raisonné français-anglais de l'entreprise agentique | 1 800 | 1 656 – 1 944 | — |
 | `Annexe B` | Chronologie réglementaire et cryptographique consolidée (2026–2035) | 1 200 | 1 104 – 1 296 | — |
 | `Annexe C` | Méthodologie bibliométrique, bibliographie classée et bilan d'assurance qualité | 1 000 | 920 – 1 080 | *(+ notices `L+`)* |
-| **Total** | | **72 000** | **66 240 – 77 760** | **22 figures** |
+| **Total** | | **74 000** | **68 080 – 79 920** | **23 figures** |
 
 ---
 
 ## Détail contractuel unité par unité
 
-### `00` — Liminaire : Pourquoi ce livre, méthode de preuve et transparence agentique (2 200 mots)
-- **0.1** De la consultation d'assistants à l'institutionnalisation d'agents qui écrivent dans le réel
-- **0.2** Règle de lecture des preuves : faits mesurés, textes normatifs et extrapolations sectorielles balisées
-- **0.3** Parcours de lecture selon votre responsabilité (Direction générale, Architecture et ingénierie, Risques et conformité)
-- **0.4** Colophon d'intégrité : conception par spécifications humaines, rédaction et quintuple vérification 100 % agentiques
+### `00` — Liminaire : Interopérabilité et orchestration, le tissu conjonctif de l'entreprise agentique (4 200 mots)
+- **Question directrice** : Pourquoi la viabilité opérationnelle, économique et juridique d'une entreprise agentique tient-elle moins à la puissance brute de ses modèles qu'à l'architecture d'interopérabilité et d'orchestration qui relie ses agents, son patrimoine applicatif, ses partenaires et ses superviseurs humains ?
+- **Ouverture narrative** : De 2023 à 2025, l'employé humain demeurait l'unique point d'intégration entre un copilote conversationnel et les systèmes d'enregistrement; lorsqu'en 2026–2027 l'organisation active des agents capables d'agir directement dans ses suites `CRM`, `ERP`, `ITSM` et ses bases internes sans tissu conjonctif commun, quatre agents locaux pourtant performants restent incapables de coopérer sur un même dossier sans recopie humaine, perte de trace d'audit ou boucle d'appels incontrôlée.
+- **0.1** De l'humain intégrateur au tissu conjonctif agentique : îlots d'agents propriétaires, consolidation inachevée des standards ouverts (`AAIF`, `AGNTCY`, `IETF`) et échéances réglementaires 2026–2028
+- **0.2** L'interopérabilité au-delà du transport syntaxique : les six dimensions indissociables (connectivité verticale aux outils et au patrimoine, sémantique et mémoire métier, coordination horizontale entre pairs, événements et état, interaction humain-agent, gouvernance contractuelle `B2B`) et la coupure fondamentale entre *qui parle* et *qui en répond*
+- **0.3** L'orchestration comme discipline de retenue et de contrôle déterministe : l'axiome directeur (*on n'orchestre durablement que ce qui est interopérable et sémantiquement aligné, et l'on ne met à l'échelle que ce qui est borné, compensable et réversible*), le tableau synoptique des sept ruptures entre prototypes hérités (2024–2025) et cibles de production (2027), et les cinq critères permanents d'évaluation technologique de l'ouvrage
+- **0.4** Progression architecturale des quatre parties, règle du maillon le plus élevé (*High-Water Mark Rule*) sur les chaînes d'agents et quatre parcours de lecture par responsabilité (`CEO`/`CRO`/Administrateurs, `CIO`/`CTO`/`EA`, `SA`/Plateforme/`SRE`, `CISO`/Juridique/Conformité)
+- **0.5** Hygiène probatoire et frontière du démontré : distinguer les mesures empiriques indépendantes, l'état réel des spécifications fin 2026 – 2027 (absence d'étude arbitrée mesurant `MCP` ou `A2A` en production à cette date), le périmètre juridique démontré (services financiers au Québec, au Canada fédéral et en Union européenne) et les analogies sectorielles balisées
+- **0.6** Colophon d'intégrité : conception sur cahier des charges humain, collecte ouverte `L+` hachée `SHA-256` sans contournement, rédaction et quintuple assurance qualité 100 % agentiques, et portée consultative
+- **Propriétaire exclusif** : Rupture du point d'intégration humain vers le tissu conjonctif agentique, vue synoptique des six dimensions de l'interopérabilité et distinction *échange technique vs imputabilité*, axiome reliant interopérabilité et orchestration + tableau des sept ruptures `2024–2025` vs `2027`, cinq critères transversaux d'évaluation technologique (neutralité de gouvernance, déterminisme des frontières, tolérance aux pannes, coût marginal à l'échelle, coût de sortie) et règle du maillon le plus élevé (*High-Water Mark Rule*). *(Les mécanismes détaillés de `MCP`/`A2A`/ontologies et d'exécution durable demeurent la propriété respective des Chapitres 05 et 06.)*
+- **Figures** : `Fig-00` (Architecture du tissu conjonctif de l'entreprise agentique : six dimensions d'interopérabilité et plan d'orchestration déterministe traversés par la confiance et l'économie du résultat).
 
 ---
 

@@ -63,6 +63,14 @@ def validate_specs(book_dir: Path) -> list[str]:
     if sum_annexes != wb["annexes_target"]:
         errors.append(f"Somme annexes ({sum_annexes}) != annexes_target ({wb['annexes_target']})")
 
+    exp_tot_min = math.ceil(wb["total_target"] * (1.0 - tol))
+    exp_tot_max = math.floor(wb["total_target"] * (1.0 + tol))
+    if wb["total_min"] != exp_tot_min or wb["total_max"] != exp_tot_max:
+        errors.append(
+            f"Bornes globales invalides : ({wb['total_min']}, {wb['total_max']}) "
+            f"attendu ({exp_tot_min}, {exp_tot_max})"
+        )
+
     for u in units:
         exp_min = math.ceil(u["target_words"] * (1.0 - tol))
         exp_max = math.floor(u["target_words"] * (1.0 + tol))
@@ -72,23 +80,26 @@ def validate_specs(book_dir: Path) -> list[str]:
                 f"attendu ({exp_min}, {exp_max})"
             )
 
-    # 2. Validation des chapitres, concepts possedes sans doublon et figures
+    # 2. Validation des unites narratives (liminaire + 12 chapitres), concepts possedes et figures
     chapters = [u for u in units if u["kind"] == "chapter"]
+    narrative_units = [u for u in units if u["kind"] in {"frontmatter", "chapter"}]
     if len(chapters) != 12:
         errors.append(f"Nombre de chapitres attendu = 12, trouve = {len(chapters)}")
+    if len(narrative_units) != 13:
+        errors.append(f"Nombre d'unites narratives attendu = 13, trouve = {len(narrative_units)}")
 
     owned_all: list[str] = []
-    for ch in chapters:
-        owned = ch.get("owned_concepts", [])
+    for nu in narrative_units:
+        owned = nu.get("owned_concepts", [])
         if not owned:
-            errors.append(f"Chapitre {ch['id']} sans owned_concepts")
+            errors.append(f"Unite narrative {nu['id']} sans owned_concepts")
         owned_all.extend(owned)
     if len(owned_all) != len(set(owned_all)):
-        errors.append("Collision dans owned_concepts entre plusieurs chapitres")
+        errors.append("Collision dans owned_concepts entre plusieurs unites narratives")
 
     declared_figs = {f["id"]: f for f in manifest["figures"]}
-    if len(declared_figs) != 22:
-        errors.append(f"Nombre de figures attendu = 22, trouve = {len(declared_figs)}")
+    if len(declared_figs) != 23:
+        errors.append(f"Nombre de figures attendu = 23 (Fig-00..Fig-22), trouve = {len(declared_figs)}")
 
     assigned_figs = [fid for u in units for fid in u.get("figures", [])]
     if sorted(assigned_figs) != sorted(declared_figs.keys()):
@@ -117,12 +128,14 @@ def validate_specs(book_dir: Path) -> list[str]:
     if mlr["strict_access_policy"]["max_metadata_only_pct_in_included_corpus"] != 0.0:
         errors.append("Le plafond METADATA_ONLY du protocole MLR doit etre strictement 0.0 %")
 
-    for ch in chapters:
-        for rq in ch.get("research_axes", []):
+    for nu in narrative_units:
+        if not nu.get("research_axes"):
+            errors.append(f"Unite narrative {nu['id']} sans research_axes")
+        for rq in nu.get("research_axes", []):
             if rq not in rq_ids:
-                errors.append(f"Axe inconnu {rq} dans {ch['id']}")
+                errors.append(f"Axe inconnu {rq} dans {nu['id']}")
 
-    # 5. Validation des registres initiaux et des criteres CA-01..CA-18
+    # 5. Validation des registres initiaux, du contrat du Liminaire et des criteres CA-01..CA-18
     chapter_id_set = {ch["id"] for ch in chapters}
     for anchor in ancres["anchors"]:
         for ch_ref in anchor["chapters"]:
@@ -131,18 +144,22 @@ def validate_specs(book_dir: Path) -> list[str]:
     for fact in faits["facts"]:
         if fact["owner_chapter"] not in chapter_id_set:
             errors.append(f"Fait {fact['id']} pointe vers un chapitre inconnu : {fact['owner_chapter']}")
-    if len(glossaire["terms"]) < 10:
-        errors.append("Glossaire initial trop court (< 10 termes)")
+    if len(glossaire["terms"]) < 12:
+        errors.append("Glossaire initial trop court (< 12 termes)")
 
     prd_text = (specs_dir / "prd.md").read_text(encoding="utf-8")
     aq_text = (specs_dir / "contrat-aq.md").read_text(encoding="utf-8")
     toc_text = (specs_dir / "toc.md").read_text(encoding="utf-8")
 
+    for sub in ("**0.1**", "**0.2**", "**0.3**", "**0.4**", "**0.5**", "**0.6**"):
+        if sub not in toc_text:
+            errors.append(f"Sous-section du Liminaire {sub} absente de toc.md")
+
     for idx in range(1, 19):
         ca_id = f"CA-{idx:02d}"
         if ca_id not in prd_text:
             errors.append(f"Critere {ca_id} absent de prd.md")
-    for idx in range(1, 23):
+    for idx in range(0, 23):
         fig_id = f"Fig-{idx:02d}"
         if fig_id not in toc_text:
             errors.append(f"Figure {fig_id} absente de toc.md")
@@ -162,8 +179,8 @@ def main() -> int:
             print(f"  - {err}", file=sys.stderr)
         return 1
     print(
-        "OK : Specifications amont valides (16 unites = 72 000 mots, 12 chapitres, "
-        "22 figures, RQ1-RQ6, CA-01..CA-18, registres et chemins internes verifies)."
+        "OK : Specifications amont valides (16 unites = 74 000 mots, Liminaire 0.1-0.6 + 12 chapitres, "
+        "23 figures Fig-00..Fig-22, RQ1-RQ6, CA-01..CA-18, registres et chemins internes verifies)."
     )
     return 0
 

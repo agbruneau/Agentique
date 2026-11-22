@@ -16,11 +16,11 @@
     "human_role": "upstream_specs_and_gate_thresholds_only"
   },
   "word_budget": {
-    "total_target": 72000,
+    "total_target": 74000,
     "tolerance_pct": 8,
-    "total_min": 66240,
-    "total_max": 77760,
-    "narrative_target": 68000,
+    "total_min": 68080,
+    "total_max": 79920,
+    "narrative_target": 70000,
     "annexes_target": 4000,
     "max_tables_per_chapter": 2,
     "max_bullet_line_ratio": 0.18,
@@ -71,12 +71,19 @@
       "id": "00-liminaire",
       "kind": "frontmatter",
       "file": "manuscrit/00 - Liminaire.md",
-      "title": "Liminaire — Pourquoi ce livre, méthode de preuve et transparence agentique",
-      "target_words": 2200,
-      "min_words": 2024,
-      "max_words": 2376,
-      "figures": [],
-      "research_axes": []
+      "title": "Liminaire — Interopérabilité et orchestration : le tissu conjonctif de l'entreprise agentique",
+      "target_words": 4200,
+      "min_words": 3864,
+      "max_words": 4536,
+      "figures": ["Fig-00"],
+      "research_axes": ["RQ1", "RQ2", "RQ3"],
+      "owned_concepts": [
+        "human_as_sole_integrator_shift",
+        "six_dimensions_of_agentic_interoperability",
+        "interoperability_before_orchestration_axiom",
+        "five_technology_evaluation_criteria",
+        "high_water_mark_assurance_rule"
+      ]
     },
     {
       "id": "ch01",
@@ -272,6 +279,7 @@
     }
   ],
   "figures": [
+    {"id": "Fig-00", "unit": "00-liminaire", "engine": "puml", "title": "Architecture du tissu conjonctif de l'entreprise agentique : six dimensions d'interopérabilité et plan d'orchestration déterministe"},
     {"id": "Fig-01", "unit": "ch01", "engine": "puml", "title": "Spectre d'autonomie opérationnelle (L0–L4) et déplacement du point d'intégration humain"},
     {"id": "Fig-02", "unit": "ch01", "engine": "puml", "title": "Moteurs composés de l'industrialisation cognitive et quatre voies post-AGI"},
     {"id": "Fig-03", "unit": "ch02", "engine": "puml", "title": "Six périmètres emboîtés du marché agentique face aux investissements d'infrastructure"},

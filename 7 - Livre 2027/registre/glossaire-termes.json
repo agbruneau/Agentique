@@ -3,6 +3,16 @@
   "description": "Glossaire normatif français canadien / anglais — source unique de vérité terminologique pour les 12 chapitres et l'Annexe A.",
   "terms": [
     {
+      "fr": "tissu conjonctif agentique",
+      "en": "agentic connective tissue",
+      "definition": "Combinaison de l'architecture d'interopérabilité (protocolaire, sémantique, mémorielle et contractuelle) et du plan d'orchestration déterministe qui relie les agents spécialisés, les systèmes patrimoniaux, les partenaires externes et les superviseurs humains."
+    },
+    {
+      "fr": "règle du maillon le plus élevé",
+      "en": "High-Water Mark Rule",
+      "definition": "Principe de durcissement selon lequel le niveau d'exigence sécuritaire et de conformité d'une chaîne d'agents s'aligne sur le maillon aval le plus critique qu'elle alimente sans sas d'assainissement, sans pour autant étendre les droits de mutation aux maillons amont."
+    },
+    {
       "fr": "industrialisation cognitive",
       "en": "cognitive industrialization",
       "definition": "Standardisation, automatisation à grande échelle et chute exponentielle du coût unitaire de nombreuses tâches cognitives sous l'effet composé des gains matériels, algorithmiques et d'investissement."

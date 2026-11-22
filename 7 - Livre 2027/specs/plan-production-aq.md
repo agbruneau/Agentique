@@ -2,9 +2,9 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task **uniquement lorsque l'utilisateur donnera le feu vert de lancement après validation de `specs/`**. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Produire, illustrer, vérifier par cinq barrières indépendantes et assembler en PDF/HTML l'ouvrage complet *Gouverner l'industrialisation cognitive* (~72 000 mots, 12 chapitres, 22 figures) à partir du dossier normatif `7 - Livre 2027/specs/`.
+**Goal:** Produire, illustrer, vérifier par cinq barrières indépendantes et assembler en PDF/HTML l'ouvrage complet *Gouverner l'industrialisation cognitive* (~74 000 mots, liminaire architectural + 12 chapitres, 23 figures) à partir du dossier normatif `7 - Livre 2027/specs/`.
 
-**Architecture:** Pipeline séquentiel en cinq étages découplés par fichiers versionnés : (1) outillage déterministe de validation et d'échantillonnage, (2) collecte scientifique ouverte `L+` hachée `SHA-256` et indexation du corpus local sans contournement, (3) génération compilée des 22 figures et rédaction cloisonnée des 13 unités narratives sur base de sources fermée, (4) exécution étanche des barrières `G1`–`G4` (garde mécanique, ancrage Wyvern, double recollation `CA-13`/`CA-14`, boucle A/B `gauntlet-loop`), puis (5) lissage transversal, génération déterministe des annexes et inspection visuelle `Pandoc`/`Typst` (`G5`).
+**Architecture:** Pipeline séquentiel en cinq étages découplés par fichiers versionnés : (1) outillage déterministe de validation et d'échantillonnage, (2) collecte scientifique ouverte `L+` hachée `SHA-256` et indexation du corpus local sans contournement, (3) génération compilée des 23 figures (`Fig-00` à `Fig-22`) et rédaction cloisonnée des 13 unités narratives sur base de sources fermée, (4) exécution étanche des barrières `G1`–`G4` (garde mécanique, ancrage Wyvern, double recollation `CA-13`/`CA-14`, boucle A/B `gauntlet-loop`), puis (5) lissage transversal, génération déterministe des annexes et inspection visuelle `Pandoc`/`Typst` (`G5`).
 
 **Tech Stack:** Python 3.12+ (`pytest`, `hashlib`, `json`, `re`), `PlantUML` (`.svg`), `Mermaid CLI` (`.png` 300 DPI), `Pandoc` (`-f markdown-tex_math_dollars`), `Typst`, orchestration multi-agents isolée via `invoke_subagent`.
 
@@ -13,7 +13,7 @@
 ## Global Constraints
 
 - Zéro contournement d'accès (`AO-01`) : tout `HTTP 403`, `429`, WAF, CAPTCHA, Anubis ou mur payant stoppe net la requête et classe la notice en `statut F` (interdite en preuve, `0 %` de `METADATA_ONLY`).
-- Plage stricte de volume (`CA-01`) : `66 240` à `77 760` mots au total, et tolérance $\pm 8\ \%$ sur chacune des 16 unités de `manifest.json`.
+- Plage stricte de volume (`CA-01`) : `68 080` à `79 920` mots au total, et tolérance $\pm 8\ \%$ sur chacune des 16 unités de `manifest.json`.
 - Zéro jargon matriciel (`CA-02`) ni auto-plagiat $\ge 12$ mots consécutifs face à `../0 - MD/` hors citations entre guillemets (`CA-03`).
 - Tous les montants en dollars littéraux sont échappés en `\$` dans les fichiers `.md` (`CA-06`), et `Pandoc` est invoqué avec `-f markdown-tex_math_dollars`.
 - Étanchéité stricte d'AQ (`contrat-aq.md`) : aucun sous-agent rédacteur n'exécute `G2`, `G3`, `G4` (rôle critique) ou `G5` sur son propre texte; `gauntlet-loop` n'utilise jamais un tableau de messages partagé public.
@@ -91,12 +91,12 @@ git commit -m "Ajouter l'outillage deterministe G1, G3 et generateur d'annexes d
 - Create: `7 - Livre 2027/outils/collecte_mlr_ouverte.py`
 - Create: `7 - Livre 2027/recherche/manifeste-sources-sha256.json`
 - Create: `7 - Livre 2027/recherche/registre-statut-f.json`
-- Create: `7 - Livre 2027/sources/ch01-sources.md` .. `ch12-sources.md`
+- Create: `7 - Livre 2027/sources/ch00-sources.md` .. `ch12-sources.md`
 - Test: `7 - Livre 2027/outils/test_collecte_mlr.py`
 
 **Interfaces:**
 - Consumes: `specs/protocole-mlr-2027.json`, `sources-locales/*`, `../0 - MD/*`, essai DeepMind à la racine
-- Produces: `recherche/corpus_l_plus/*.txt` (UTF-8 intégraux hachés `SHA-256`), `recherche/manifeste-sources-sha256.json` et les `12` bases fermées `sources/ch01-sources.md` à `sources/ch12-sources.md`
+- Produces: `recherche/corpus_l_plus/*.txt` (UTF-8 intégraux hachés `SHA-256`), `recherche/manifeste-sources-sha256.json` et les `13` bases fermées `sources/ch00-sources.md` à `sources/ch12-sources.md`
 
 - [ ] **Step 1: Écrire le test garantissant l'arrêt sans contournement sur `403`/`429` (`AO-01`) et le hachage `SHA-256`**
 
@@ -109,7 +109,7 @@ def test_blocked_response_logged_as_status_f_without_retry_bypass(mock_http_403)
 
 - [ ] **Step 2: Vérifier l'échec du test, puis implémenter `collecte_mlr_ouverte.py` et exécuter la collecte sur `RQ1`–`RQ6`**
 
-Interroger uniquement les API ouvertes de `protocole-mlr-2027.json`, extraire en `.txt` UTF-8 les textes intégraux libres et les PDF de `sources-locales/` (incluant l'essai DeepMind du dépôt), calculer les `SHA-256`, noter `AACODS` et constituer les 12 dossiers fermés `sources/chNN-sources.md` (résumé factuel de 3–5 phrases lu sur texte complet par référence).
+Interroger uniquement les API ouvertes de `protocole-mlr-2027.json`, extraire en `.txt` UTF-8 les textes intégraux libres et les PDF de `sources-locales/` (incluant l'essai DeepMind du dépôt), calculer les `SHA-256`, noter `AACODS` et constituer les 13 dossiers fermés `sources/ch00-sources.md` à `sources/ch12-sources.md` (résumé factuel de 3–5 phrases lu sur texte complet par référence).
 
 - [ ] **Step 3: Vérifier la couverture `CA-09`, `CA-10`, `CA-11`**
 
@@ -120,35 +120,35 @@ Expected: PASS (`>= 5` études `L+` par axe `RQ1`–`RQ6`, `0 %` de `METADATA_ON
 
 ```powershell
 git add "7 - Livre 2027/outils/collecte_mlr_ouverte.py" "7 - Livre 2027/outils/test_collecte_mlr.py" "7 - Livre 2027/recherche" "7 - Livre 2027/sources"
-git commit -m "Constituer le corpus ouvert L+ hache SHA-256 et les 12 bases de sources fermees"
+git commit -m "Constituer le corpus ouvert L+ hache SHA-256 et les 13 bases de sources fermees"
 ```
 
 ---
 
-### Task 3: Conception et compilation stricte des 22 figures vectorielles (`Fig-01` à `Fig-22`)
+### Task 3: Conception et compilation stricte des 23 figures vectorielles (`Fig-00` à `Fig-22`)
 
 **Files:**
-- Create: `7 - Livre 2027/diagrammes/Fig-01.puml` .. `Fig-22.mmd` (selon `manifest.json`)
+- Create: `7 - Livre 2027/diagrammes/Fig-00.puml` .. `Fig-22.mmd` (selon `manifest.json`)
 - Create: `7 - Livre 2027/outils/compile_figures.py`
 
 **Interfaces:**
 - Consumes: `specs/manifest.json` (`figures`), `specs/charte-editoriale.md` (§ 4.3 : `10–14` nœuds max, distinction trait plein déterministe / pointillé probabiliste)
-- Produces: `7 - Livre 2027/diagrammes/rendus/Fig-01.svg` .. `Fig-22.png`
+- Produces: `7 - Livre 2027/diagrammes/rendus/Fig-00.svg` .. `Fig-22.png`
 
-- [ ] **Step 1: Rédiger les 22 sources `PlantUML` et `Mermaid` et `compile_figures.py`**
+- [ ] **Step 1: Rédiger les 23 sources `PlantUML` et `Mermaid` et `compile_figures.py`**
 
 Appliquer `-failfast2` pour `PlantUML` et résolution `300 DPI` pour les 3 arbres `Mermaid` (`Fig-06`, `Fig-11`, `Fig-22`).
 
 - [ ] **Step 2: Compiler et vérifier `CA-08`**
 
 Run: `python "7 - Livre 2027/outils/compile_figures.py" --strict`
-Expected: PASS (`22/22` figures générées sans avertissement, chacune $\le 14$ nœuds)
+Expected: PASS (`23/23` figures générées sans avertissement, chacune $\le 14$ nœuds)
 
 - [ ] **Step 3: Commit des figures**
 
 ```powershell
 git add "7 - Livre 2027/diagrammes" "7 - Livre 2027/outils/compile_figures.py"
-git commit -m "Produire et compiler les 22 figures vectorielles du Livre 2027"
+git commit -m "Produire et compiler les 23 figures vectorielles du Livre 2027"
 ```
 
 ---
@@ -160,8 +160,8 @@ git commit -m "Produire et compiler les 22 figures vectorielles du Livre 2027"
 - Create: `7 - Livre 2027/manuscrit/01 - Partie I/Chapitre 01 ... .md` à `04 - Partie IV/Chapitre 12 ... .md` (chemins exacts de `manifest.json`)
 
 **Interfaces:**
-- Consumes: `specs/prd.md`, `specs/toc.md`, `specs/charte-editoriale.md`, `specs/manifest.json`, `registre/*.json`, `sources/chNN-sources.md`, `diagrammes/rendus/*`
-- Produces: les `13` fichiers Markdown narratifs totalisant `68 000 mots ± 8 %`
+- Consumes: `specs/prd.md`, `specs/toc.md`, `specs/charte-editoriale.md`, `specs/manifest.json`, `registre/*.json`, `sources/ch00..ch12-sources.md`, `diagrammes/rendus/*`
+- Produces: les `13` fichiers Markdown narratifs totalisant `70 000 mots ± 8 %`
 
 - [ ] **Step 1: Rédiger les 4 parties par lots cloisonnés en parallèle (`invoke_subagent`, `TypeName: "self"`, `Workspace: "share"` ou écriture sur fichiers disjoints)**
 
@@ -184,7 +184,7 @@ git commit -m "Livrer le manuscrit initial complet (Liminaire, Ch. 01-12, Annexe
 ### Task 5: Exécution étanche des barrières d'AQ `G2` (Wyvern), `G3` (Double recollation) et `G4` (`gauntlet-loop`)
 
 **Files:**
-- Create: `7 - Livre 2027/ancrage/ch01-ancrage.md` .. `ch12-ancrage.md`
+- Create: `7 - Livre 2027/ancrage/ch00-ancrage.md` .. `ch12-ancrage.md`
 - Create: `7 - Livre 2027/aq/recollation-seed-202701.json` et `aq/recollation-seed-202701.md`
 - Create: `7 - Livre 2027/aq/recollation-seed-202702.json` et `aq/recollation-seed-202702.md`
 - Create: `7 - Livre 2027/aq/gauntlet-log.md`
@@ -194,9 +194,9 @@ git commit -m "Livrer le manuscrit initial complet (Liminaire, Ch. 01-12, Annexe
 - Consumes: `specs/contrat-aq.md`, `manuscrit/**`, `sources/**`, `recherche/corpus_l_plus/**`
 - Produces: journaux de preuve `ancrage/` et `aq/`, manuscrit vérifié à `100 %` sur `CA-12`..`CA-15`
 
-- [ ] **Step 1: Exécuter `G2` — Ancrage atomique Wyvern par 12 sous-agents d'audit neufs**
+- [ ] **Step 1: Exécuter `G2` — Ancrage atomique Wyvern par 13 sous-agents d'audit neufs (`00` à `12`)**
 
-Chaque agent décompose chaque paragraphe en *claims* atomiques, vérifie contre `sources/chNN-sources.md` et `corpus_l_plus/`, rectifie les `imprécis`, retire/réancre les `non supportés` et écrit `ancrage/chNN-ancrage.md`.
+Chaque agent décompose chaque paragraphe en *claims* atomiques, vérifie contre `sources/chNN-sources.md` (`00` à `12`) et `corpus_l_plus/`, rectifie les `imprécis`, retire/réancre les `non supportés` et écrit `ancrage/chNN-ancrage.md`.
 
 - [ ] **Step 2: Exécuter `G3` — Tirage 1 (`seed=202701`) puis Tirage 2 disjoint à froid (`seed=202702`)**
 
@@ -204,7 +204,7 @@ Run: `python "7 - Livre 2027/outils/echantillon_aq.py" --seed 202701 -o "7 - Liv
 Dépêcher un agent `recollateur-1` neuf sur les `.txt` bruts, rectifier jusqu'à `60/60`, puis tirer `seed=202702` hors tirage 1 et dépêcher un agent `recollateur-2` neuf.
 Expected: $\ge 57/60$ (`95 %`) avant correction au tirage 2, et `60/60` (`100 %`) après correction (`CA-13`, `CA-14`).
 
-- [ ] **Step 3: Exécuter `G4` — Boucle `gauntlet-loop` A/B à l'aveugle sur les 12 chapitres**
+- [ ] **Step 3: Exécuter `G4` — Boucle `gauntlet-loop` A/B à l'aveugle sur le liminaire et les 12 chapitres**
 
 Présenter en aveugle (`Texte A` / `Texte B`, ordre alterné) chaque chapitre face aux étalons de `manifest.json` à des sous-agents critiques neufs jusqu'à victoire A/B, gains marginaux sur 2 tours ou plafond de budget; consigner chaque tour dans `aq/gauntlet-log.md` et repasser `G1` + différentiel `G2` sur tout paragraphe retouché.
 
