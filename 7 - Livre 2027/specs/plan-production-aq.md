@@ -4,18 +4,20 @@
 
 **Goal:** Produire, illustrer, vérifier par cinq barrières indépendantes et assembler en PDF/HTML l'ouvrage complet *Gouverner l'industrialisation cognitive* (~74 000 mots, liminaire architectural + 12 chapitres, 23 figures) à partir du dossier normatif `7 - Livre 2027/specs/`.
 
-**Architecture:** Pipeline séquentiel en cinq étages découplés par fichiers versionnés : (1) outillage déterministe de validation et d'échantillonnage, (2) collecte scientifique ouverte `L+` hachée `SHA-256` et indexation du corpus local sans contournement, (3) génération compilée des 23 figures (`Fig-00` à `Fig-22`) et rédaction cloisonnée des 13 unités narratives sur base de sources fermée, (4) exécution étanche des barrières `G1`–`G4` (garde mécanique, ancrage Wyvern, double recollation `CA-13`/`CA-14`, boucle A/B `gauntlet-loop`), puis (5) lissage transversal, génération déterministe des annexes et inspection visuelle `Pandoc`/`Typst` (`G5`).
+**Architecture:** Pipeline séquentiel en cinq étages découplés par fichiers versionnés : (1) outillage déterministe de validation et d'échantillonnage, (2) collecte scientifique ouverte `L+` hachée `SHA-256`, réancrage des registres et indexation du corpus local sans contournement, (3) génération compilée des 23 figures (`Fig-00` à `Fig-22`) et rédaction cloisonnée des 13 unités narratives sur base de sources fermée, (4) exécution étanche de `G1`, `G2`, `G3` passe 1 et `G4`, puis (5) lissage transversal `G5`, recollation finale à froid `G3` passe 2, génération déterministe des annexes et inspection visuelle `Pandoc`/`Typst`.
 
-**Tech Stack:** Python 3.12+ (`pytest`, `hashlib`, `json`, `re`), `PlantUML` (`.svg`), `Mermaid CLI` (`.png` 300 DPI), `Pandoc` (`-f markdown-tex_math_dollars`), `Typst`, orchestration multi-agents isolée via `invoke_subagent`.
+**Tech Stack:** Python 3.12+ (`pytest`, `hashlib`, `json`, `re`), `PlantUML` (`.svg`), `Mermaid CLI` (`.png` 300 DPI), `Pandoc` (`-f markdown-tex_math_dollars+tex_math_single_backslash`), `Typst`, orchestration multi-agents isolée via `invoke_subagent`.
 
 **Spec:** `7 - Livre 2027/specs/prd.md`, `7 - Livre 2027/specs/toc.md`, `7 - Livre 2027/specs/manifest.json`, `7 - Livre 2027/specs/charte-editoriale.md`, `7 - Livre 2027/specs/protocole-mlr-2027.json`, `7 - Livre 2027/specs/contrat-aq.md`.
 
 ## Global Constraints
 
 - Zéro contournement d'accès (`AO-01`) : tout `HTTP 403`, `429`, WAF, CAPTCHA, Anubis ou mur payant stoppe net la requête et classe la notice en `statut F` (interdite en preuve, `0 %` de `METADATA_ONLY`).
-- Plage stricte de volume (`CA-01`) : `68 080` à `79 920` mots au total, et tolérance $\pm 8\ \%$ sur chacune des 16 unités de `manifest.json`.
-- Zéro jargon matriciel (`CA-02`) ni auto-plagiat $\ge 12$ mots consécutifs face à `../0 - MD/` hors citations entre guillemets (`CA-03`).
-- Tous les montants en dollars littéraux sont échappés en `\$` dans les fichiers `.md` (`CA-06`), et `Pandoc` est invoqué avec `-f markdown-tex_math_dollars`.
+- Plage stricte de volume (`CA-01`) : `68 080` à `79 920` mots au total, et tolérance ± 8 % sur chacune des 16 unités de `manifest.json`.
+- Zéro jargon matriciel (`CA-02`) ni auto-plagiat de 12 mots consécutifs ou plus face à `../0 - MD/` hors citations entre guillemets (`CA-03`).
+- Tous les montants en dollars littéraux sont échappés en `\$` dans les fichiers `.md`, toute formule est écrite en `\(...\)` (`CA-06`), et `Pandoc` est invoqué avec `-f markdown-tex_math_dollars+tex_math_single_backslash`.
+- Les volumes `1` à `6` du dépôt sont une carte de repérage, jamais une preuve (`AO-02`) : tout fait qui en provient est réancré sur la source primaire qu'ils citent.
+- Ordre des barrières imposé par `contrat-aq.md` : `G1` → `G2` → `G3` passe 1 → `G4` → `G5` lissage → `G3` passe 2 sur le texte final → `G5` rendu.
 - Étanchéité stricte d'AQ (`contrat-aq.md`) : aucun sous-agent rédacteur n'exécute `G2`, `G3`, `G4` (rôle critique) ou `G5` sur son propre texte; `gauntlet-loop` n'utilise jamais un tableau de messages partagé public.
 
 ## Review Focus
@@ -40,7 +42,7 @@
 - Consumes: `specs/manifest.json`, `specs/protocole-mlr-2027.json`, `registre/*.json`
 - Produces:
   - `verifie_manuscrit.check_manuscrit(root: Path, strict: bool = True) -> list[str]` (retourne la liste vide si `CA-01`..`CA-11` et `CA-17` passent)
-  - `echantillon_aq.draw_stratified_sample(root: Path, seed: int, exclude_ids: set[str]) -> list[dict]` (`60` items : `25` empiriques, `20` juridiques, `15` prospectifs/techniques)
+  - `echantillon_aq.draw_stratified_sample(root: Path, seed: int, exclude_ids: set[str]) -> list[dict]` (`60` items : `25` empiriques, `20` juridiques, `15` prospectifs/techniques; au moins `2` par unité narrative)
   - `genere_annexes.build_annexes(root: Path) -> list[Path]` (écrit les Annexes `A`, `B`, `C` dans `manuscrit/05 - Annexes/`)
 
 - [ ] **Step 1: Écrire les tests unitaires échouants couvrant les 5 cas limites de `Review Focus`**
@@ -60,6 +62,12 @@ def test_two_seeds_produce_disjoint_60_item_samples(populated_book):
     s2 = draw_stratified_sample(populated_book, seed=202702, exclude_ids={x["claim_loc"] for x in s1})
     assert len(s1) == 60 and len(s2) == 60
     assert {x["claim_loc"] for x in s1}.isdisjoint({x["claim_loc"] for x in s2})
+    assert all(sum(1 for x in s1 if x["unit"] == u) >= 2 for u in UNITS_NARRATIVES)
+
+def test_dollar_math_rejected_and_backslash_math_accepted(tmp_book):
+    errors = check_manuscrit(tmp_book, strict=True)
+    assert any("CA-06" in e and "$0{,}94" in e for e in errors)
+    assert not any("CA-06" in e and "\\(0{,}94" in e for e in errors)
 ```
 
 - [ ] **Step 2: Exécuter `pytest` pour vérifier l'échec initial**
@@ -109,12 +117,12 @@ def test_blocked_response_logged_as_status_f_without_retry_bypass(mock_http_403)
 
 - [ ] **Step 2: Vérifier l'échec du test, puis implémenter `collecte_mlr_ouverte.py` et exécuter la collecte sur `RQ1`–`RQ6`**
 
-Interroger uniquement les API ouvertes de `protocole-mlr-2027.json`, extraire en `.txt` UTF-8 les textes intégraux libres et les PDF de `sources-locales/` (incluant l'essai DeepMind du dépôt), calculer les `SHA-256`, noter `AACODS` et constituer les 13 dossiers fermés `sources/ch00-sources.md` à `sources/ch12-sources.md` (résumé factuel de 3–5 phrases lu sur texte complet par référence).
+Interroger uniquement les API ouvertes de `protocole-mlr-2027.json`, extraire en `.txt` UTF-8 les textes intégraux libres et les PDF de `sources-locales/` (incluant l'essai DeepMind du dépôt), calculer les `SHA-256`, noter `AACODS`, réancrer sur source primaire chaque entrée de `registre/` dont le `statut_preuve` vaut `a_reancrer`, fixer la date de gel des faits et constituer les 13 dossiers fermés `sources/ch00-sources.md` à `sources/ch12-sources.md` (résumé factuel de 3–5 phrases lu sur texte complet par référence).
 
 - [ ] **Step 3: Vérifier la couverture `CA-09`, `CA-10`, `CA-11`**
 
 Run: `pytest "7 - Livre 2027/outils/test_collecte_mlr.py" -v; python "7 - Livre 2027/outils/verifie_manuscrit.py" --sources-only`
-Expected: PASS (`>= 5` études `L+` par axe `RQ1`–`RQ6`, `0 %` de `METADATA_ONLY`)
+Expected: PASS (seuil `min_included_studies` atteint pour chaque axe `RQ1`–`RQ6`, `0 %` de `METADATA_ONLY`, `0` entrée de registre restée `a_reancrer`)
 
 - [ ] **Step 4: Commit de la base documentaire `L+`**
 
@@ -181,74 +189,79 @@ git commit -m "Livrer le manuscrit initial complet (Liminaire, Ch. 01-12, Annexe
 
 ---
 
-### Task 5: Exécution étanche des barrières d'AQ `G2` (Wyvern), `G3` (Double recollation) et `G4` (`gauntlet-loop`)
+### Task 5: Exécution étanche des barrières d'AQ `G2` (Wyvern), `G3` passe 1 et `G4` (`gauntlet-loop`)
 
 **Files:**
 - Create: `7 - Livre 2027/ancrage/ch00-ancrage.md` .. `ch12-ancrage.md`
 - Create: `7 - Livre 2027/aq/recollation-seed-202701.json` et `aq/recollation-seed-202701.md`
-- Create: `7 - Livre 2027/aq/recollation-seed-202702.json` et `aq/recollation-seed-202702.md`
 - Create: `7 - Livre 2027/aq/gauntlet-log.md`
 - Modify: `7 - Livre 2027/manuscrit/**` (rectifications d'ancrage, de recollation et d'écriture)
 
 **Interfaces:**
 - Consumes: `specs/contrat-aq.md`, `manuscrit/**`, `sources/**`, `recherche/corpus_l_plus/**`
-- Produces: journaux de preuve `ancrage/` et `aq/`, manuscrit vérifié à `100 %` sur `CA-12`..`CA-15`
+- Produces: journaux de preuve `ancrage/` et `aq/`, manuscrit vérifié à `100 %` sur `CA-12`, `CA-13` et `CA-15`
 
 - [ ] **Step 1: Exécuter `G2` — Ancrage atomique Wyvern par 13 sous-agents d'audit neufs (`00` à `12`)**
 
 Chaque agent décompose chaque paragraphe en *claims* atomiques, vérifie contre `sources/chNN-sources.md` (`00` à `12`) et `corpus_l_plus/`, rectifie les `imprécis`, retire/réancre les `non supportés` et écrit `ancrage/chNN-ancrage.md`.
 
-- [ ] **Step 2: Exécuter `G3` — Tirage 1 (`seed=202701`) puis Tirage 2 disjoint à froid (`seed=202702`)**
+- [ ] **Step 2: Exécuter `G3` passe 1 (`seed=202701`)**
 
 Run: `python "7 - Livre 2027/outils/echantillon_aq.py" --seed 202701 -o "7 - Livre 2027/aq/recollation-seed-202701.json"`
-Dépêcher un agent `recollateur-1` neuf sur les `.txt` bruts, rectifier jusqu'à `60/60`, puis tirer `seed=202702` hors tirage 1 et dépêcher un agent `recollateur-2` neuf.
-Expected: $\ge 57/60$ (`95 %`) avant correction au tirage 2, et `60/60` (`100 %`) après correction (`CA-13`, `CA-14`).
+Dépêcher un agent `recollateur-1` neuf sur les `.txt` bruts et rectifier jusqu'à `60/60` (`CA-13`). La passe 2 à froid est exécutée à la Tâche 6, sur le texte final.
 
 - [ ] **Step 3: Exécuter `G4` — Boucle `gauntlet-loop` A/B à l'aveugle sur le liminaire et les 12 chapitres**
 
-Présenter en aveugle (`Texte A` / `Texte B`, ordre alterné) chaque chapitre face aux étalons de `manifest.json` à des sous-agents critiques neufs jusqu'à victoire A/B, gains marginaux sur 2 tours ou plafond de budget; consigner chaque tour dans `aq/gauntlet-log.md` et repasser `G1` + différentiel `G2` sur tout paragraphe retouché.
+Présenter en aveugle (`Texte A` / `Texte B`, ordre alterné) chaque unité face aux extraits étalons en français de `manifest.json` à des sous-agents critiques neufs jusqu'à victoire A/B, gains marginaux sur 2 tours ou plafond de budget; consigner chaque tour dans `aq/gauntlet-log.md` et repasser `G1` + différentiel `G2` sur tout paragraphe retouché.
 
-- [ ] **Step 4: Revalider `G1` intégralement et commiter les preuves `G2`–`G4`**
+- [ ] **Step 4: Revalider `G1` intégralement et commiter les preuves `G2`, `G3` passe 1 et `G4`**
 
 Run: `python "7 - Livre 2027/outils/verifie_manuscrit.py" --strict`
 Expected: PASS (`0` erreur)
 
 ```powershell
 git add "7 - Livre 2027/manuscrit" "7 - Livre 2027/ancrage" "7 - Livre 2027/aq"
-git commit -m "Valider les barrieres d'AQ agentiques G2 (Wyvern), G3 (double recollation) et G4 (gauntlet)"
+git commit -m "Valider les barrieres d'AQ agentiques G2 (Wyvern), G3 passe 1 et G4 (gauntlet)"
 ```
 
 ---
 
-### Task 6: Lissage transversal, assemblage `Pandoc`/`Typst` et inspection visuelle page par page (`G5`)
+### Task 6: Lissage transversal, recollation finale à froid, assemblage `Pandoc`/`Typst` et inspection visuelle (`G5`, `G3` passe 2)
 
 **Files:**
 - Create: `7 - Livre 2027/outils/assemble_livre.py`
 - Create: `7 - Livre 2027/outils/gabarit-livre.typ`
 - Create: `7 - Livre 2027/aq/rapport-lissage-et-visuel.md`
+- Create: `7 - Livre 2027/aq/recollation-seed-202702.json` et `aq/recollation-seed-202702.md`
 - Create: `7 - Livre 2027/livrables/7 - Livre 2027.md`, `7 - Livre 2027.html`, `7 - Livre 2027.pdf`
 
 **Interfaces:**
 - Consumes: `manuscrit/**`, `registre/**`, `ancrage/**`, `aq/**`, `diagrammes/rendus/**`
-- Produces: éditions intégrales `.md`, `.html` autonome et `.pdf` inspectées visuellement (`CA-16` à `CA-18`)
+- Produces: éditions intégrales `.md`, `.html` autonome et `.pdf` inspectées visuellement (`CA-14`, `CA-16` à `CA-18`)
 
 - [ ] **Step 1: Dépêcher un agent `lisseur-editorial` neuf sur l'assemblage complet (`CA-16`)**
 
-Harmoniser les transitions inter-chapitres et éliminer toute redite résiduelle sans altérer les affirmations sourcées (contrôle différentiel Wyvern sur le `git diff`).
+Harmoniser les transitions inter-unités et éliminer toute redite résiduelle sans altérer les affirmations sourcées (contrôle différentiel Wyvern sur le `git diff`).
 
-- [ ] **Step 2: Régénérer les Annexes `A`–`C` (`CA-17`) et compiler les éditions `.md`, `.html` et `.pdf`**
+- [ ] **Step 2: Exécuter `G3` passe 2 à froid sur le texte final (`seed=202702`, `CA-14`)**
+
+Run: `python "7 - Livre 2027/outils/echantillon_aq.py" --seed 202702 --exclude "7 - Livre 2027/aq/recollation-seed-202701.json" -o "7 - Livre 2027/aq/recollation-seed-202702.json"`
+Dépêcher un agent `recollateur-2` neuf, distinct de `recollateur-1`.
+Expected: $\ge 57/60$ (`95 %`) avant correction et `60/60` (`100 %`) après; sinon retour des unités fautives en `G2` puis nouveau tirage disjoint à graine `202703`.
+
+- [ ] **Step 3: Régénérer les Annexes `A`–`C` (`CA-17`) et compiler les éditions `.md`, `.html` et `.pdf`**
 
 Run: `python "7 - Livre 2027/outils/genere_annexes.py"; python "7 - Livre 2027/outils/assemble_livre.py" --all`
-Expected: Génération sans erreur de `livrables/7 - Livre 2027.md`, `.html` (`-f markdown-tex_math_dollars --embed-resources`) et `.pdf` (`Typst`).
+Expected: Génération sans erreur de `livrables/7 - Livre 2027.md`, `.html` (`-f markdown-tex_math_dollars+tex_math_single_backslash --embed-resources`) et `.pdf` (`Typst`).
 
-- [ ] **Step 3: Inspecter visuellement 100 % des pages rendues et exécuter la vérification finale stricte (`CA-18`)**
+- [ ] **Step 4: Inspecter visuellement 100 % des pages rendues et exécuter la vérification finale stricte (`CA-18`)**
 
-Convertir le PDF en images de pages, inspecter chaque page (tableaux, figures, montants `\$`, coupures) dans `aq/rapport-lissage-et-visuel.md`, corriger tout défaut de mise en page, puis relancer `verifie_manuscrit.py --strict`.
+Convertir le PDF en images de pages, inspecter chaque page (tableaux, figures, formules, montants `\$`, coupures) dans `aq/rapport-lissage-et-visuel.md`, corriger tout défaut de mise en page, puis relancer `verifie_manuscrit.py --strict`.
 
 Run: `python "7 - Livre 2027/outils/verifie_manuscrit.py" --strict --check-deliverables`
 Expected: PASS (`CA-01` à `CA-18` conformes à `100 %`)
 
-- [ ] **Step 4: Commit final du livre assemblé**
+- [ ] **Step 5: Commit final du livre assemblé**
 
 ```powershell
 git add "7 - Livre 2027"

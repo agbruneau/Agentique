@@ -68,3 +68,41 @@ def test_liminaire_interoperabilite_contract_enforced(tmp_path: Path) -> None:
     assert any("Collision dans owned_concepts" in e for e in errors)
     assert any("Sous-section du Liminaire **0.6**" in e for e in errors)
 
+
+
+def test_title_drift_and_unescaped_dollar_in_toc_detected(tmp_path: Path) -> None:
+    clone = tmp_path / "7 - Livre 2027"
+    shutil.copytree(REAL_BOOK_DIR, clone)
+    manifest_path = clone / "specs" / "manifest.json"
+    data = json.loads(manifest_path.read_text(encoding="utf-8"))
+    data["internal_corpus_paths"] = []
+    data["stylistic_benchmarks_for_gauntlet"] = []
+    data["stylistic_benchmark_sections"] = {}
+    data["units"][8]["title"] = "Chapitre 08 — Intitule divergent"
+    manifest_path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    toc_path = clone / "specs" / "toc.md"
+    toc_path.write_text(toc_path.read_text(encoding="utf-8") + "\n- **9.9** Formule $x$\n", encoding="utf-8")
+
+    errors = validate_specs(clone)
+    assert any("Intitule de ch08 absent de toc.md" in e for e in errors)
+    assert any("Symbole $ non echappe dans toc.md" in e for e in errors)
+
+
+def test_registry_entry_without_evidence_status_detected(tmp_path: Path) -> None:
+    clone = tmp_path / "7 - Livre 2027"
+    shutil.copytree(REAL_BOOK_DIR, clone)
+    manifest_path = clone / "specs" / "manifest.json"
+    data = json.loads(manifest_path.read_text(encoding="utf-8"))
+    data["internal_corpus_paths"] = []
+    data["stylistic_benchmarks_for_gauntlet"] = []
+    data["stylistic_benchmark_sections"] = {}
+    manifest_path.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    faits_path = clone / "registre" / "faits-empiriques.json"
+    faits = json.loads(faits_path.read_text(encoding="utf-8"))
+    del faits["facts"][0]["statut_preuve"]
+    faits_path.write_text(json.dumps(faits, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    errors = validate_specs(clone)
+    assert any("statut_preuve" in e for e in errors)

@@ -121,6 +121,10 @@ def validate_specs(book_dir: Path) -> list[str]:
         if not resolved.is_file():
             errors.append(f"Chemin de corpus interne introuvable : {rel_path} -> {resolved}")
 
+    for rel_path in manifest.get("stylistic_benchmark_sections", {}):
+        if rel_path not in manifest["stylistic_benchmarks_for_gauntlet"]:
+            errors.append(f"Section etalon hors des etalons declares : {rel_path}")
+
     # 4. Validation du protocole MLR et des axes RQ1..RQ6
     rq_ids = {rq["id"] for rq in mlr["research_questions_and_queries"]}
     if rq_ids != {"RQ1", "RQ2", "RQ3", "RQ4", "RQ5", "RQ6"}:
@@ -144,6 +148,9 @@ def validate_specs(book_dir: Path) -> list[str]:
     for fact in faits["facts"]:
         if fact["owner_chapter"] not in chapter_id_set:
             errors.append(f"Fait {fact['id']} pointe vers un chapitre inconnu : {fact['owner_chapter']}")
+    for entry in [*faits["facts"], *ancres["anchors"]]:
+        if entry.get("statut_preuve") not in {"a_reancrer", "l_plus"}:
+            errors.append(f"Entree de registre sans statut_preuve valide : {entry.get('id', entry.get('key'))}")
     if len(glossaire["terms"]) < 12:
         errors.append("Glossaire initial trop court (< 12 termes)")
 
@@ -154,6 +161,22 @@ def validate_specs(book_dir: Path) -> list[str]:
     for sub in ("**0.1**", "**0.2**", "**0.3**", "**0.4**", "**0.5**", "**0.6**"):
         if sub not in toc_text:
             errors.append(f"Sous-section du Liminaire {sub} absente de toc.md")
+
+    # Concordance des intitules manifest.json <-> toc.md (partie apres le premier tiret cadratin)
+    for u in units:
+        short_title = u["title"].split(" — ", 1)[-1]
+        if short_title not in toc_text:
+            errors.append(f"Intitule de {u['id']} absent de toc.md : {short_title}")
+
+    # Les intitules de toc.md sont recopies dans le manuscrit : aucun `$` non echappe (CA-06)
+    for lineno, line in enumerate(toc_text.splitlines(), start=1):
+        if re.search(r"(?<!\\)\$", line):
+            errors.append(f"Symbole $ non echappe dans toc.md (ligne {lineno})")
+
+    for idx in range(1, 8):
+        ao_id = f"AO-{idx:02d}"
+        if ao_id not in prd_text:
+            errors.append(f"Anti-objectif {ao_id} absent de prd.md")
 
     for idx in range(1, 19):
         ca_id = f"CA-{idx:02d}"
@@ -179,8 +202,9 @@ def main() -> int:
             print(f"  - {err}", file=sys.stderr)
         return 1
     print(
-        "OK : Specifications amont valides (16 unites = 74 000 mots, Liminaire 0.1-0.6 + 12 chapitres, "
-        "23 figures Fig-00..Fig-22, RQ1-RQ6, CA-01..CA-18, registres et chemins internes verifies)."
+        "OK : Specifications amont valides (v1.1 : 16 unites = 74 000 mots, Liminaire 0.1-0.6 + 12 chapitres, "
+        "23 figures Fig-00..Fig-22, RQ1-RQ6, AO-01..AO-07, CA-01..CA-18, intitules concordants, "
+        "registres avec statut de preuve et chemins internes verifies)."
     )
     return 0
 

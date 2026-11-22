@@ -1,9 +1,17 @@
 {
-  "protocol_id": "MLR-PRISMA-SCR-LIVRE-2027-V1",
+  "protocol_id": "MLR-PRISMA-SCR-LIVRE-2027-V1.1",
   "inherits_from": "MLR-PRISMA-SCR-AGENTIQUE-2026-W3.2",
   "strict_access_policy": {
     "rule": "AO-01",
-    "bypass_forbidden": ["HTTP_403", "HTTP_429", "WAF", "CAPTCHA", "Turnstile", "Anubis", "Paywall"],
+    "bypass_forbidden": [
+      "HTTP_403",
+      "HTTP_429",
+      "WAF",
+      "CAPTCHA",
+      "Turnstile",
+      "Anubis",
+      "Paywall"
+    ],
     "on_blocked": "record_as_status_F_and_exclude_from_evidentiary_corpus",
     "max_metadata_only_pct_in_included_corpus": 0.0,
     "require_fulltext_sha256": true
@@ -18,7 +26,7 @@
     "nist_csrc"
   ],
   "time_window": {
-    "primary": "2025-01-01/2027-12-31",
+    "primary": "2023-01-01/2027-12-31",
     "foundational_classics_allowed_in_open_access": true
   },
   "aacods_threshold": {
@@ -31,43 +39,58 @@
       "citation": "Genewein et al. (2026), From AGI to ASI",
       "identifier": "arXiv:2606.12683",
       "local_companion": "../Google Deepmind - What comes after AGI_ From AGI to Superintelligence — DeepMind Institute.pdf",
-      "target_axes": ["RQ1"]
+      "target_axes": [
+        "RQ1"
+      ]
     },
     {
       "id": "SEED-02",
       "citation": "Tomašev et al. (2025), Virtual Agent Economies",
       "identifier": "arXiv:2509.10147",
-      "target_axes": ["RQ1"]
+      "target_axes": [
+        "RQ1"
+      ]
     },
     {
       "id": "SEED-03",
       "citation": "Kim et al. (2025), Towards a Science of Scaling Agent Systems",
       "identifier": "arXiv:2512.08296",
-      "target_axes": ["RQ2"]
+      "target_axes": [
+        "RQ2"
+      ]
     },
     {
       "id": "SEED-04",
       "citation": "Shahidi, Rusak, Manning, Fradkin & Horton (2025/2026), The Coasean Singularity? Demand, Supply, and Market Design with AI Agents",
       "identifier": "NBER / open working paper if L+ accessible",
-      "target_axes": ["RQ1"]
+      "target_axes": [
+        "RQ1"
+      ]
     },
     {
       "id": "SEED-05",
       "citation": "Hadfield & Koh (2025/2026), An Economy of AI Agents",
       "identifier": "NBER / open working paper if L+ accessible",
-      "target_axes": ["RQ1", "RQ4"]
+      "target_axes": [
+        "RQ1",
+        "RQ4"
+      ]
     },
     {
       "id": "SEED-06",
       "citation": "Chang & Geng (2025), SagaLLM: Context Management, Validation, and Transaction Guarantees for Multi-Agent LLM Planning",
       "identifier": "VLDB 2025 / arXiv OA",
-      "target_axes": ["RQ3"]
+      "target_axes": [
+        "RQ3"
+      ]
     },
     {
       "id": "SEED-07",
       "citation": "Debenedetti et al. (2026), Defeating Prompt Injections by Design (CaMeL)",
       "identifier": "IEEE SaTML 2026 / arXiv OA",
-      "target_axes": ["RQ5"]
+      "target_axes": [
+        "RQ5"
+      ]
     }
   ],
   "research_questions_and_queries": [

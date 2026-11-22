@@ -1,12 +1,14 @@
-# Table des matières contractuelle (TOC) — Livre 2027 (v1.0)
+# Table des matières contractuelle (TOC) — Livre 2027 (v1.1)
 
-> **Règle d'étanchéité inter-chapitres** : chaque chapitre est seul propriétaire des concepts listés sous **Propriétaire exclusif**. Lorsqu'un autre chapitre mobilise l'un de ces concepts, il l'invoque en une ou deux phrases et renvoie au chapitre propriétaire sans redéfinir le mécanisme, l'étude ou le texte de loi.
+> **Règle d'étanchéité inter-unités** : le liminaire et chaque chapitre sont seuls propriétaires des concepts listés sous **Propriétaire exclusif**. Lorsqu'une autre unité mobilise l'un de ces concepts, elle l'invoque en une ou deux phrases et renvoie à l'unité propriétaire sans redéfinir le mécanisme, l'étude ou le texte de loi. Le liminaire peut annoncer un concept détenu par un chapitre (renvoi prospectif), sans le développer.
+
+> **Ouvertures narratives** : les ouvertures décrites ci-dessous sont des intentions. Si aucun cas documenté en `statut L+` ne les appuie, l'agent rédacteur les présente explicitement comme **scénarios illustratifs** (`AO-07`), sans chiffre présenté comme mesuré.
 
 ---
 
 ## Vue synoptique des volumes
 
-| Unité | Intitulé | Cible (mots) | Plage $\pm 8\ \%$ | Figures |
+| Unité | Intitulé | Cible (mots) | Plage ± 8 % | Figures |
 |---|---|---:|---:|---|
 | `00` | Liminaire — Interopérabilité et orchestration : le tissu conjonctif de l'entreprise agentique | 4 200 | 3 864 – 4 536 | `Fig-00` |
 | **Partie I** | **L'industrialisation cognitive face au réel** | **15 600** | | `Fig-01` à `Fig-06` |
@@ -19,7 +21,7 @@
 | `Ch. 06` | Quand ne pas multiplier les agents : lois d'échelle et exécution durable | 6 400 | 5 888 – 6 912 | `Fig-11`, `Fig-12` |
 | **Partie III** | **La fabrique de confiance et l'économie de la preuve** | **16 800** | | `Fig-13` à `Fig-18` |
 | `Ch. 07` | Qui agit et au nom de qui ? Identité non humaine et chaîne de mandat | 5 600 | 5 152 – 6 048 | `Fig-13`, `Fig-14` |
-| `Ch. 08` | Sécurité par construction : pourquoi un modèle plus fort devient plus vulnérable | 5 600 | 5 152 – 6 048 | `Fig-15`, `Fig-16` |
+| `Ch. 08` | Sécurité par construction : pourquoi un modèle plus capable n'est pas plus sûr | 5 600 | 5 152 – 6 048 | `Fig-15`, `Fig-16` |
 | `Ch. 09` | Observer, prouver et compter au coût complet du résultat conforme | 5 600 | 5 152 – 6 048 | `Fig-17`, `Fig-18` |
 | **Partie IV** | **Gouverner jusqu'en 2035 sans atrophier l'humain** | **15 200** | | `Fig-19` à `Fig-22` |
 | `Ch. 10` | Le laboratoire réglementé : Québec, Canada et Europe face à l'exigence de preuve | 5 000 | 4 600 – 5 400 | `Fig-19` |
@@ -35,16 +37,17 @@
 
 ## Détail contractuel unité par unité
 
-### `00` — Liminaire : Interopérabilité et orchestration, le tissu conjonctif de l'entreprise agentique (4 200 mots)
+### `00` — Liminaire — Interopérabilité et orchestration : le tissu conjonctif de l'entreprise agentique (4 200 mots)
 - **Question directrice** : Pourquoi la viabilité opérationnelle, économique et juridique d'une entreprise agentique tient-elle moins à la puissance brute de ses modèles qu'à l'architecture d'interopérabilité et d'orchestration qui relie ses agents, son patrimoine applicatif, ses partenaires et ses superviseurs humains ?
 - **Ouverture narrative** : De 2023 à 2025, l'employé humain demeurait l'unique point d'intégration entre un copilote conversationnel et les systèmes d'enregistrement; lorsqu'en 2026–2027 l'organisation active des agents capables d'agir directement dans ses suites `CRM`, `ERP`, `ITSM` et ses bases internes sans tissu conjonctif commun, quatre agents locaux pourtant performants restent incapables de coopérer sur un même dossier sans recopie humaine, perte de trace d'audit ou boucle d'appels incontrôlée.
 - **0.1** De l'humain intégrateur au tissu conjonctif agentique : îlots d'agents propriétaires, consolidation inachevée des standards ouverts (`AAIF`, `AGNTCY`, `IETF`) et échéances réglementaires 2026–2028
 - **0.2** L'interopérabilité au-delà du transport syntaxique : les six dimensions indissociables (connectivité verticale aux outils et au patrimoine, sémantique et mémoire métier, coordination horizontale entre pairs, événements et état, interaction humain-agent, gouvernance contractuelle `B2B`) et la coupure fondamentale entre *qui parle* et *qui en répond*
 - **0.3** L'orchestration comme discipline de retenue et de contrôle déterministe : l'axiome directeur (*on n'orchestre durablement que ce qui est interopérable et sémantiquement aligné, et l'on ne met à l'échelle que ce qui est borné, compensable et réversible*), le tableau synoptique des sept ruptures entre prototypes hérités (2024–2025) et cibles de production (2027), et les cinq critères permanents d'évaluation technologique de l'ouvrage
-- **0.4** Progression architecturale des quatre parties, règle du maillon le plus élevé (*High-Water Mark Rule*) sur les chaînes d'agents et quatre parcours de lecture par responsabilité (`CEO`/`CRO`/Administrateurs, `CIO`/`CTO`/`EA`, `SA`/Plateforme/`SRE`, `CISO`/Juridique/Conformité)
-- **0.5** Hygiène probatoire et frontière du démontré : distinguer les mesures empiriques indépendantes, l'état réel des spécifications fin 2026 – 2027 (absence d'étude arbitrée mesurant `MCP` ou `A2A` en production à cette date), le périmètre juridique démontré (services financiers au Québec, au Canada fédéral et en Union européenne) et les analogies sectorielles balisées
+- **0.4** Progression architecturale des quatre parties, règle du maillon le plus élevé (*High-Water Mark Rule*) sur les chaînes d'agents — énoncée en termes de criticité des actions, avec renvoi à l'échelle d'autonomie définie au chapitre 01 — et quatre parcours de lecture par responsabilité (`CEO`/`CRO`/Administrateurs, `CIO`/`CTO`/`EA`, `SA`/Plateforme/`SRE`, `CISO`/Juridique/Conformité)
+- **0.5** Hygiène probatoire et frontière du démontré : date de gel des faits, distinction entre mesures empiriques indépendantes, textes normatifs et déductions d'architecture, état réel des spécifications à la date de gel (aucune étude arbitrée mesurant `MCP` ou `A2A` en production n'était repérée en novembre 2026; constat à revérifier à la date de gel), statut des volumes du dépôt (carte de repérage, non preuve), périmètre juridique démontré (services financiers au Québec, au Canada fédéral et en Union européenne) et analogies sectorielles balisées
 - **0.6** Colophon d'intégrité : conception sur cahier des charges humain, collecte ouverte `L+` hachée `SHA-256` sans contournement, rédaction et quintuple assurance qualité 100 % agentiques, et portée consultative
-- **Propriétaire exclusif** : Rupture du point d'intégration humain vers le tissu conjonctif agentique, vue synoptique des six dimensions de l'interopérabilité et distinction *échange technique vs imputabilité*, axiome reliant interopérabilité et orchestration + tableau des sept ruptures `2024–2025` vs `2027`, cinq critères transversaux d'évaluation technologique (neutralité de gouvernance, déterminisme des frontières, tolérance aux pannes, coût marginal à l'échelle, coût de sortie) et règle du maillon le plus élevé (*High-Water Mark Rule*). *(Les mécanismes détaillés de `MCP`/`A2A`/ontologies et d'exécution durable demeurent la propriété respective des Chapitres 05 et 06.)*
+- **Clôture** : un court paragraphe de transition vers la Partie I.
+- **Propriétaire exclusif** : Rupture du point d'intégration humain vers le tissu conjonctif agentique, vue synoptique des six dimensions de l'interopérabilité et distinction *échange technique vs imputabilité*, axiome reliant interopérabilité et orchestration + tableau des sept ruptures `2024–2025` vs `2027`, cinq critères transversaux d'évaluation technologique (neutralité de gouvernance, déterminisme des frontières, tolérance aux pannes, coût marginal à l'échelle, coût de sortie) et règle du maillon le plus élevé (*High-Water Mark Rule*). *(Les mécanismes détaillés de `MCP`/`A2A`/ontologies et d'exécution durable demeurent la propriété respective des chapitres 05 et 06; l'échelle `L0`–`L4`, celle du chapitre 01.)*
 - **Figures** : `Fig-00` (Architecture du tissu conjonctif de l'entreprise agentique : six dimensions d'interopérabilité et plan d'orchestration déterministe traversés par la confiance et l'économie du résultat).
 
 ---
@@ -54,26 +57,26 @@
 #### Chapitre 01 — Après le copilote : l'industrialisation cognitive et les collectifs d'agents (5 000 mots)
 - **Question directrice** : Que change pour une organisation le passage d'un modèle consulté par un humain à une population d'agents abondants, rapides et réplicables sans perte ?
 - **Ouverture narrative** : Le basculement silencieux entre résumer un dossier et exécuter dix mutations applicatives en chaîne sans témoin humain.
-- **1.1** Du clavardoir synchrone à l'action autonome : spectre d'autonomie opérationnelle (`L0` à `L4`)
-- **1.2** Les moteurs composés de l'industrialisation cognitive : matériel, efficacité algorithmique et investissement ($\ge 10\times$/an)
+- **1.1** Une échelle commune pour un mot ambigu : le spectre d'autonomie opérationnelle (`L0` à `L4`) défini par les droits de mutation, le régime de supervision et les contrôles exigés
+- **1.2** Les moteurs composés de l'industrialisation cognitive : matériel, efficacité algorithmique et investissement (au moins un ordre de grandeur par an selon Genewein *et al.*)
 - **1.3** Au-delà du seuil humain : les quatre voies vers la superintelligence et le rôle décisif de la coordination collective
 - **1.4** Réplication sans perte, partage à haut débit et émergence spontanée de comportements stratégiques ou collusifs
-- **Propriétaire exclusif** : Continuum de l'intelligence générale, équation d'industrialisation cognitive (Genewein *et al.*), spectre `L0`–`L4`, propriétés distinctives de l'intelligence numérique (réplication, substrat, vitesse).
-- **Figures** : `Fig-01` (Spectre d'autonomie `L0`–`L4` et déplacement du point d'intégration humain); `Fig-02` (Les moteurs composés de l'industrialisation cognitive et les quatre voies post-`AGI`).
+- **Propriétaire exclusif** : Continuum de l'intelligence générale, équation d'industrialisation cognitive (Genewein *et al.*), spectre `L0`–`L4`, propriétés distinctives de l'intelligence numérique (réplication, substrat, vitesse). *(Le déplacement du point d'intégration humain appartient au liminaire et n'est ici que rappelé.)*
+- **Figures** : `Fig-01` (Spectre d'autonomie `L0`–`L4` : droits de mutation, régime de supervision et contrôles exigés par niveau); `Fig-02` (Les moteurs composés de l'industrialisation cognitive et les quatre voies post-`AGI`).
 
 #### Chapitre 02 — L'épreuve des mesures : investissements géants, bancs biaisés et productivité réelle (5 600 mots)
 - **Question directrice** : Que sait-on réellement, par la mesure indépendante, de la fiabilité et de la rentabilité des agents fin 2026 – début 2027 ?
-- **Ouverture narrative** : Le paradoxe des 720–740 G\$ US d'infrastructures infonuagiques annoncés face à des bilans d'entreprise où le gain net des agents autonomes demeure statistiquement introuvable.
+- **Ouverture narrative** : Le contraste entre les 720 à 740 G\$ US de dépenses d'investissement annoncées pour 2026 par quatre grands fournisseurs infonuagiques et l'absence, à la date de gel, de toute étude indépendante mesurant l'effet des agents autonomes sur les résultats d'une entreprise.
 - **2.1** Déconstruire les chiffres de marché : six périmètres incompatibles, du logiciel pur aux dépenses déplacées
-- **2.2** Ce que prouvent les essais randomisés : des gains réels sur les assistants (`L1`), une frontière en dents de scie et zéro preuve au compte de résultat pour les agents autonomes
-- **2.3** L'arithmétique impitoyable de l'enchaînement : loi de Lusser ($0{,}94^{10} \approx 53{,}9\ \%$) et passage de l'erreur visible à l'erreur plausible silencieuse
+- **2.2** Ce que prouvent les essais randomisés : des gains réels sur les assistants (`L1`), une frontière en dents de scie et aucune mesure publiée de l'effet des agents autonomes sur le compte de résultat
+- **2.3** L'arithmétique impitoyable de l'enchaînement : loi de Lusser (dix étapes fiables à 94 % n'aboutissent sans erreur qu'environ une fois sur deux) et passage de l'erreur visible à l'erreur plausible silencieuse
 - **2.4** Pourquoi les palmarès publics trompent les acheteurs : contamination, défauts de correction et confusion entre modèle et échafaudage
 - **Propriétaire exclusif** : Dispersion des estimations de marché, `CapEx` infonuagique, synthèse des essais randomisés de productivité (Noy & Zhang, Cui *et al.*, Dell'Acqua *et al.*, Statistique Canada), loi de Lusser, critique méthodologique des bancs d'essai (`ABC`, `HAL`, trilemme d'évaluation).
 - **Figures** : `Fig-03` (Échelle logarithmique des six périmètres du marché agentique face au `CapEx` d'infrastructure); `Fig-04` (Dégradation géométrique de la fiabilité sans contrôle déterministe selon le nombre d'étapes).
 
 #### Chapitre 03 — Les nouvelles frontières de la firme : Coase chez les agents autonomes (5 000 mots)
 - **Question directrice** : Comment l'effondrement des coûts cognitifs de transaction redessine-t-il les frontières de l'entreprise et le rapport de force avec les éditeurs logiciels ?
-- **Ouverture narrative** : Une grande institution qui découvre, six mois après avoir activé les agents gratuits inclus dans ses suites `CRM`, `ITSM` et bureautiques, qu'elle a fragmenté sa logique d'affaires dans cinq boîtes noires incapables de s'auditer mutuellement.
+- **Ouverture narrative** : Une grande institution qui découvre, six mois après avoir activé les agents préintégrés à ses suites `CRM`, `ITSM` et bureautiques, qu'elle a fragmenté sa logique d'affaires dans cinq boîtes noires incapables de s'auditer mutuellement.
 - **3.1** Ronald Coase revisité : quand chercher, négocier et vérifier ne coûtent presque plus de temps humain
 - **3.2** Économies d'agents émergentes et perméables : pourquoi le laisser-faire algorithmique mène aux cascades et à l'enfermement
 - **3.3** Silos applicatifs hier, silos d'agents aujourd'hui : l'asymétrie « ouvert sur le fil, fermé sur le plan de contrôle »
@@ -102,14 +105,14 @@
 - **5.2** Délégation horizontale entre domaines opaques (`A2A`) et bus d'événements : ce que couvrent les standards et la gouvernance qui leur manque
 - **5.3** La dette sémantique cachée : pourquoi les ontologies, contrats de données et couches métriques priment sur l'orchestration
 - **5.4** Gouverner les quatre mémoires de l'agent et protéger le patrimoine transactionnel par couches anti-corruption
-- **Propriétaire exclusif** : Répartition des rôles `MCP` / `A2A` / `CloudEvents`, ergonomie `Agent-Computer Interface` vs *Swagger-to-MCP*, couche sémantique et ontologies, taxonomie des quatre mémoires (`CoALA` : travail, épisodique, sémantique, procédurale) et purge légale, encapsulation décimale exacte des mainframes et fin programmée de l'automatisation par capture d'écran.
+- **Propriétaire exclusif** : Répartition des rôles `MCP` / `A2A` / `CloudEvents`, ergonomie `Agent-Computer Interface` vs *Swagger-to-MCP*, couche sémantique et ontologies, taxonomie des quatre mémoires (`CoALA` : travail, épisodique, sémantique, procédurale) et purge légale, encapsulation décimale exacte des mainframes et sortie technique de l'automatisation par capture d'écran. *(L'interdiction juridique de l'accès par capture d'écran en banque ouverte relève du chapitre 10.)*
 - **Figures** : `Fig-09` (Topologie d'interopérabilité distinguant médiation verticale `MCP`, délégation horizontale `A2A` et couche anti-corruption patrimoniale); `Fig-10` (Cloisonnement des quatre mémoires d'entreprise et filtrage des droits en amont).
 
 #### Chapitre 06 — Quand ne pas multiplier les agents : lois d'échelle et exécution durable (6 400 mots)
 - **Question directrice** : À quelles conditions mesurables la coordination de plusieurs agents surpasse-t-elle un agent unique, et comment garantir la cohérence transactionnelle face aux pannes ?
 - **Ouverture narrative** : Une équipe qui déploie un comité virtuel de six agents en débat libre, triple sa facture de jetons et sa latence, et obtient une précision inférieure à un seul agent adossé à un flux déterministe.
-- **6.1** La controverse scientifique tranchée à budget égal : effet Ringelmann, goulot de compression et supériorité fréquente de l'agent unique sur les tâches séquentielles
-- **6.2** L'arbre de sobriété opérationnelle : règle fixe $\rightarrow$ flux déterministe $\rightarrow$ agent unique outillé $\rightarrow$ topologies dirigées bornées
+- **6.1** La controverse réexaminée à budget de calcul égal : effet Ringelmann, goulot de compression, avantage fréquent de l'agent unique sur les tâches séquentielles et gains réels sur les tâches décomposables et parallélisables (état d'une littérature encore dominée par les prépublications)
+- **6.2** L'arbre de sobriété opérationnelle : règle fixe → flux déterministe → agent unique outillé → topologies dirigées bornées
 - **6.3** Pathologies des systèmes réactifs et multi-agents : taxonomie des modes d'échec, boucles d'écho et plafonds de sauts
 - **6.4** Machines à états durables, clés d'idempotence canoniques et sagas à point pivot dotées d'un canal de compensation isolé
 - **Propriétaire exclusif** : Lois d'échelle multi-agents à budget constant (Kim *et al.*, Tran & Kiela, diversité vs nombre), taxonomie d'échecs `MAST`, topologies d'orchestration bornées vs essaims libres, moteurs d'exécution durable (`replay` déterministe), idempotence canonique et patron Saga à canal de compensation indépendant de l'arrêt d'urgence.
@@ -129,9 +132,9 @@
 - **Propriétaire exclusif** : Identité non humaine (`SPIFFE`/`WIMSE`), délégation `OAuth` *On-Behalf-Of* (`act`/`sub`, `RFC 8693`, `RFC 9396`, `DPoP`), approbation asynchrone signée (`CIBA` + `FIDO2` sur empreinte canonique `JCS SHA-256`), révocation temps réel et théorie juridique mandant-mandataire dans les échanges inter-entreprises (`vLEI`).
 - **Figures** : `Fig-13` (Chaîne de délégation cryptographique du mandant humain jusqu'à l'outil cible à travers deux sauts); `Fig-14` (Séquence d'approbation humaine hors bande liée à l'empreinte canonique de l'acte).
 
-#### Chapitre 08 — Sécurité par construction : pourquoi un modèle plus fort devient plus vulnérable (5 600 mots)
+#### Chapitre 08 — Sécurité par construction : pourquoi un modèle plus capable n'est pas plus sûr (5 600 mots)
 - **Question directrice** : Pourquoi les garde-fous probabilistes cèdent-ils face aux attaques indirectes, et comment sécuriser un agent par l'architecture même de son flux d'exécution ?
-- **Ouverture narrative** : Le résultat expérimental contre-intuitif montrant que les modèles frontières les plus obéissants et les plus habiles avec les outils sont précisément ceux qui exécutent le mieux une instruction malveillante dissimulée dans un document externe ou une fiche d'outil empoisonnée.
+- **Ouverture narrative** : Le résultat contre-intuitif d'un banc d'attaques spécifiques à `MCP`, où les modèles les plus performants, parce qu'ils suivent mieux les instructions et appellent mieux les outils, se sont montrés les plus vulnérables — résultat d'une prépublication sur un banc unique, présenté avec cette limite.
 - **8.1** Nouvelle surface d'attaque : injection indirecte, détournement d'objectif et compromission de la chaîne d'approvisionnement des registres d'outils
 - **8.2** Les limites mesurées des filtres par modèle auxiliaire et le piège de l'évaluation sur banc unique
 - **8.3** Sécurité par construction : séparation stricte entre flux de contrôle et flux de données non fiables, et « règle de deux »
@@ -146,7 +149,7 @@
 - **9.2** Juger sur la constance et non sur la moyenne : pipelines d'évaluation continue (`pass^k`), simulation hermétique et déploiement progressif
 - **9.3** Disjoncteurs cognitifs et continuité d'exploitation : plafonds budgétaires, bascule bimodèle qualifiée et arrêt d'urgence rapide
 - **9.4** Gouvernance économique (`FinOps` agentique) : piloter au coût complet du résultat conforme plutôt qu'au prix facial du jeton
-- **Propriétaire exclusif** : Double couloir `OpenTelemetry GenAI` vs journal d'audit immuable ancré (`RFC 8785`), métrique de constance `pass^k`, automate de coupe-circuit cognitif, continuité bimodèle et métrique économique du coût complet par résultat conforme (`FOCUS`, *showback* / *chargeback*).
+- **Propriétaire exclusif** : Double couloir `OpenTelemetry GenAI` vs journal d'audit immuable (entrées canonisées selon `RFC 8785`, puis ancrées par empreinte horodatée), métrique de constance `pass^k`, automate de coupe-circuit cognitif, continuité bimodèle et métrique économique du coût complet par résultat conforme (`FOCUS`, *showback* / *chargeback*).
 - **Figures** : `Fig-17` (Architecture à double couloir conciliant minimisation des renseignements personnels et preuve d'audit immuable); `Fig-18` (Entonnoir du coût complet par résultat conforme et points de disjonction `FinOps`).
 
 ---
@@ -155,9 +158,9 @@
 
 #### Chapitre 10 — Le laboratoire réglementé : Québec, Canada et Europe face à l'exigence de preuve (5 000 mots)
 - **Question directrice** : Quelles frontières infranchissables le droit positif trace-t-il autour de l'autonomie algorithmique, et comment y répondre par un socle unique de preuves ?
-- **Ouverture narrative** : La convergence frappante des régulateurs de Montréal, d'Ottawa et de Bruxelles en 2026–2027 : aucun texte n'impose d'automatiser, mais tous sanctionnent lourdement l'opacité, l'absence d'inventaire et la dilution de responsabilité.
-- **10.1** Transparence, vie privée et contestation humaine : l'article 12.1 de la `Loi 25` au Québec comme révélateur mondial
-- **10.2** Gestion prudentielle du risque de modèle et d'impartition : le tournant du 1er mai 2027 (`BSIF E-23` et ligne directrice `AMF`)
+- **Ouverture narrative** : La convergence des autorités de Québec, d'Ottawa et de Bruxelles en 2026–2027 : aucun texte n'impose d'automatiser, mais tous exigent inventaire, transparence et imputabilité, et plusieurs assortissent ces exigences de sanctions pécuniaires.
+- **10.1** Transparence, vie privée et contestation humaine : l'article 12.1 de la `Loi 25` au Québec comme révélateur
+- **10.2** Gestion prudentielle du risque de modèle et d'impartition : le tournant du 1er mai 2027 (`BSIF E-23`; ligne directrice de l'`AMF` présentée avec le statut exact de sa source, cf. `prd.md` § 7)
 - **10.3** L'articulation transatlantique avec l'`EU AI Act` (août 2026 – août 2028) et le référentiel de gouvernance `ISO/IEC 42001`
 - **10.4** Cinq frontières métier non délégables : banque ouverte, conseil en patrimoine, assurance de personnes, assurance de dommages et cloisons intra-groupe
 - **Propriétaire exclusif** : Analyse juridique structurée (`Loi 25`, `BSIF E-23`/`B-10`, `AMF IA`, `ACVM 11-348`, `OCRI`, `EU AI Act` et report *Digital Omnibus*), matrice de preuve unique multi-juridictionnelle et plafonds légaux des cinq métiers financiers.
@@ -165,17 +168,17 @@
 
 #### Chapitre 11 — Les sept pièges de la gouvernance et l'atrophie silencieuse des compétences (5 200 mots)
 - **Question directrice** : Pourquoi les plans de gouvernance les mieux intentionnés échouent-ils en exécution, et comment empêcher l'automatisation de détruire le filet humain sur lequel elle repose ?
-- **Ouverture narrative** : En 2032, une panne majeure contraint une institution financière à basculer en traitement manuel; elle découvre alors qu'ayant supprimé depuis cinq ans les tâches formatrices de premier niveau, plus aucun analyste interne ne sait instruire un dossier complexe sans agent.
+- **Ouverture narrative** (scénario illustratif prospectif) : En 2032, une panne majeure contraint une institution financière à basculer en traitement manuel; elle découvre alors qu'ayant supprimé depuis cinq ans les tâches formatrices de premier niveau, plus aucun analyste interne ne sait instruire un dossier complexe sans agent.
 - **11.1** Sur-ingénierie initiale et engorgement de la deuxième ligne : comment une gouvernance trop lourde provoque la prolifération d'agents fantômes
 - **11.2** Les « ironies de l'automatisation » : biais de complaisance, approbation réflexe et requalification juridique d'une révision humaine décorative
 - **11.3** La crise de la relève : contraction des postes juniors et perte progressive de la capacité réelle de repli manuel
 - **11.4** Parades organisationnelles : couloir rapide de lecture seule, un seul responsable humain nommé par agent, cas témoins à l'aveugle et quotas formateurs
-- **Propriétaire exclusif** : Les sept modes d'échec endogènes du plan, modèle opérationnel à trois lignes de défense avec couloir pré-homologué de Classe 1, *Ironies of Automation* (Bainbridge), biais d'automatisation, données sur l'emploi junior (*Stanford HAI 2026*, Banque du Canada) et mécanismes anti-complaisance (dossiers témoins, mesure du taux d'infirmation, quotas manuels).
+- **Propriétaire exclusif** : Typologie des sept modes d'échec endogènes d'un plan de gouvernance, modèle opérationnel à trois lignes de défense avec couloir pré-homologué pour les agents en lecture seule, *Ironies of Automation* (Bainbridge), biais d'automatisation, données sur l'emploi junior (*Stanford HAI 2026*, Banque du Canada) et mécanismes anti-complaisance (dossiers témoins, mesure du taux d'infirmation, quotas manuels). *(Deux des sept modes ne sont ici que nommés : le choc tarifaire relève du chapitre 09, la collision des certificats courts et du post-quantique du chapitre 12.)*
 - **Figures** : `Fig-20` (Boucle de rétroaction entre automatisation junior, érosion de l'expertise humaine et effondrement du filet réglementaire, avec ses trois disjoncteurs).
 
 #### Chapitre 12 — Décider sous incertitude profonde : des 90 premiers jours à l'ère post-quantique (5 000 mots)
 - **Question directrice** : Comment séquencer les investissements entre l'urgence des 90 premiers jours et les mutations structurelles de 2028–2035 sans parier sur un scénario unique ?
-- **Ouverture narrative** : La collision prévisible entre des certificats web ramenés à 47 jours en 2029, des signatures post-quantiques soixante fois plus volumineuses dès 2030 et des passerelles patrimoniales incapables d'absorber le choc faute d'anticipation.
+- **Ouverture narrative** : La collision prévisible entre des certificats web publics ramenés à 47 jours le 15 mars 2029, des signatures post-quantiques `ML-DSA` environ 52 à 72 fois plus volumineuses qu'une signature elliptique de 64 octets, attendues dans la fenêtre financière 2030–2032, et des passerelles patrimoniales incapables d'absorber le choc faute d'anticipation.
 - **12.1** Trois avenirs plausibles sans probabilité : socle ouvert étendu, archipel de plateformes fermées ou fragmentation en blocs souverains
 - **12.2** Les six priorités irréductibles des 90 premiers jours avant toute mise à l'échelle
 - **12.3** Investissements sans regret contre capacités conditionnelles : préparer dès maintenant l'agilité cryptographique et post-quantique

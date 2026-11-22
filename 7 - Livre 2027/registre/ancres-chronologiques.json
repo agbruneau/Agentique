@@ -1,5 +1,5 @@
 {
-  "registry_version": "1.0.0",
+  "registry_version": "1.1.0",
   "description": "Ancres chronologiques vérifiées dans le dépôt Agentique (novembre 2026) — source unique de vérité pour toutes les dates citées dans le manuscrit et régénérées à l'Annexe B.",
   "anchors": [
     {
@@ -8,7 +8,11 @@
       "nature": "Entrée en application réglementaire",
       "jurisdiction": "Union européenne",
       "label": "Obligations de transparence de l'article 50 de l'EU AI Act en application",
-      "chapters": ["ch01", "ch10"]
+      "chapters": [
+        "ch01",
+        "ch10"
+      ],
+      "statut_preuve": "a_reancrer"
     },
     {
       "key": "2026-LOI25-ART12-1",
@@ -16,7 +20,12 @@
       "nature": "Loi applicable",
       "jurisdiction": "Québec",
       "label": "Encadrement des décisions fondées exclusivement sur un traitement automatisé (art. 12.1 de la Loi 25 : information, explication, observation et révision humaine effective; sanctions jusqu'à 25 M$ CA ou 4 % du chiffre d'affaires mondial)",
-      "chapters": ["ch05", "ch10", "ch11"]
+      "chapters": [
+        "ch05",
+        "ch10",
+        "ch11"
+      ],
+      "statut_preuve": "a_reancrer"
     },
     {
       "key": "2027-03-15-TLS-100J",
@@ -24,7 +33,11 @@
       "nature": "Échéance technique CA/Browser Forum (Ballot SC-081v3)",
       "jurisdiction": "International (PKI publique)",
       "label": "Abaissement de la durée maximale de validité des certificats TLS publics à 100 jours",
-      "chapters": ["ch07", "ch12"]
+      "chapters": [
+        "ch07",
+        "ch12"
+      ],
+      "statut_preuve": "a_reancrer"
     },
     {
       "key": "2027-05-01-BSIF-E23-AMF",
@@ -32,7 +45,13 @@
       "nature": "Entrée en vigueur prudentielle",
       "jurisdiction": "Canada fédéral et Québec",
       "label": "Entrée en vigueur de la ligne directrice E-23 révisée du BSIF sur la gestion du risque de modèle (incluant IA générative et agents) et prise d'effet de la ligne directrice sur l'IA de l'Autorité des marchés financiers au Québec",
-      "chapters": ["ch10", "ch11", "ch12"]
+      "chapters": [
+        "ch10",
+        "ch11",
+        "ch12"
+      ],
+      "statut_preuve": "a_reancrer",
+      "vigilance": "Texte officiel de l'AMF en statut F (HTTP 403) dans les volumes 3 et 4; voir prd.md § 7."
     },
     {
       "key": "2027-12-02-EU-AI-ACT-ANNEXE-III",
@@ -40,7 +59,11 @@
       "nature": "Entrée en application réglementaire (calendrier révisé Digital Omnibus)",
       "jurisdiction": "Union européenne",
       "label": "Entrée en application des obligations visant les systèmes d'IA à haut risque de l'Annexe III de l'EU AI Act",
-      "chapters": ["ch10", "ch12"]
+      "chapters": [
+        "ch10",
+        "ch12"
+      ],
+      "statut_preuve": "a_reancrer"
     },
     {
       "key": "2028-08-02-EU-AI-ACT-ANNEXE-I",
@@ -48,7 +71,10 @@
       "nature": "Entrée en application réglementaire",
       "jurisdiction": "Union européenne",
       "label": "Entrée en application des obligations visant les systèmes d'IA à haut risque intégrés à des produits réglementés (Annexe I de l'EU AI Act)",
-      "chapters": ["ch10"]
+      "chapters": [
+        "ch10"
+      ],
+      "statut_preuve": "a_reancrer"
     },
     {
       "key": "2028-10-01-GESTION-PATRIMOINE-RETROFACTURATION",
@@ -56,7 +82,12 @@
       "nature": "Échéance sectorielle financière",
       "jurisdiction": "Canada",
       "label": "Interdiction des rétrofacturations de commissions en gestion de patrimoine et valeurs mobilières",
-      "chapters": ["ch10", "ch12"]
+      "chapters": [
+        "ch10",
+        "ch12"
+      ],
+      "statut_preuve": "a_reancrer",
+      "vigilance": "Non relu sur texte primaire lors de la spécification; voir prd.md § 7."
     },
     {
       "key": "2028-12-31-BSIF-B15-PORTEE3",
@@ -64,7 +95,11 @@
       "nature": "Échéance prudentielle climatique",
       "jurisdiction": "Canada fédéral",
       "label": "Exigences prudentielles de divulgation climatique du BSIF (ligne directrice B-15, émissions financées et assurées de portée 3)",
-      "chapters": ["ch09", "ch12"]
+      "chapters": [
+        "ch09",
+        "ch12"
+      ],
+      "statut_preuve": "a_reancrer"
     },
     {
       "key": "2029-03-15-TLS-47J",
@@ -72,7 +107,11 @@
       "nature": "Échéance technique CA/Browser Forum (Ballot SC-081v3)",
       "jurisdiction": "International (PKI publique)",
       "label": "Abaissement de la durée maximale de validité des certificats TLS publics à 47 jours, rendant l'automatisation complète indispensable",
-      "chapters": ["ch07", "ch12"]
+      "chapters": [
+        "ch07",
+        "ch12"
+      ],
+      "statut_preuve": "a_reancrer"
     },
     {
       "key": "2030-2035-G7-PQC-FINANCE",
@@ -80,7 +119,11 @@
       "nature": "Feuille de route coordonnée G7 Cyber Expert Group / NIST IR 8547",
       "jurisdiction": "G7 / International",
       "label": "Fenêtre coordonnée de migration du secteur financier vers la cryptographie post-quantique (jalon des systèmes critiques 2030–2032, achèvement cible 2035)",
-      "chapters": ["ch07", "ch12"]
+      "chapters": [
+        "ch07",
+        "ch12"
+      ],
+      "statut_preuve": "a_reancrer"
     },
     {
       "key": "2033-06-30-LOIS-FINANCIERES-CANADA",
@@ -88,7 +131,15 @@
       "nature": "Échéance législative statutaire",
       "jurisdiction": "Canada fédéral",
       "label": "Date statutaire de révision des lois fédérales régissant les institutions financières canadiennes",
-      "chapters": ["ch10", "ch12"]
+      "chapters": [
+        "ch10",
+        "ch12"
+      ],
+      "statut_preuve": "a_reancrer"
     }
-  ]
+  ],
+  "statut_preuve_legende": {
+    "a_reancrer": "Date reprise des volumes du dépôt; non opposable avant vérification sur le texte officiel en statut L+ (AO-02).",
+    "l_plus": "Vérifiée sur texte officiel intégral haché SHA-256."
+  }
 }
