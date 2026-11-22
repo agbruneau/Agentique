@@ -54,12 +54,13 @@ Revue intégrale de `prd.md`, `toc.md`, `charte-editoriale.md`, `contrat-aq.md`,
 |---|---|---|
 | Date de gel des faits | **Décembre 2026**, pour une **publication en janvier 2027** | `prd.md` § 1 (calendrier, conséquence rédactionnelle); charte § 1.4 (échéances de 2027 au futur); fenêtre `MLR` close au 31 décembre 2026; `toc.md` purgé des formulations « début 2027 » et « tournant du 1er mai 2027 »; plan d'exécution |
 | Essai du DeepMind Institute | **Procéder comme recommandé** : copie locale dans `sources-locales/`, hors versionnement; preuve par `arXiv:2606.12683` | Fichier retiré de l'arborescence versionnée; `.gitignore` exclut `sources-locales/*` sauf le `README.md`; `SEED-01` mis à jour |
+| Crédit d'auteur | **André-Guy Bruneau, M.Sc IT** | `prd.md` § 1; champ `author_credit` de `manifest.json`; mention de la rédaction par agents d'IA au colophon (`0.6`) |
 
 **Rectificatif.** La version précédente de ce journal affirmait que l'essai n'était pas versionné. C'était inexact : il avait été ajouté au dépôt (commit `520c3f2`) avant la revue. Il est désormais retiré de l'arborescence, mais reste présent dans l'historique public du dépôt; l'en effacer exigerait une réécriture de l'historique et une poussée forcée, qui ne seront faites que sur demande expresse de l'auteur.
 
-### 4.2 Arbitrage encore ouvert
+### 4.2 Arbitrages encore ouverts
 
-1. **Nom en couverture** : nom (ou pseudonyme) de la personne présentée comme responsable de l'ouvrage, et formulation retenue pour mentionner la rédaction par agents d'IA (`prd.md` § 1).
+Aucun. Les spécifications sont prêtes pour le lancement de la production.
 
 ## 5. Vérification
 

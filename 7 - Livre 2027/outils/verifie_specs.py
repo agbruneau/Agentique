@@ -44,6 +44,13 @@ def validate_specs(book_dir: Path) -> list[str]:
     except json.JSONDecodeError as exc:
         return [f"JSON invalide : {exc}"]
 
+    # 0. Credit d'auteur fixe par l'auteur, identique dans manifest.json et prd.md
+    credit = manifest.get("author_credit", "").strip()
+    if not credit:
+        errors.append("author_credit absent de manifest.json")
+    elif credit not in (specs_dir / "prd.md").read_text(encoding="utf-8"):
+        errors.append(f"author_credit non reproduit a l'identique dans prd.md : {credit}")
+
     # 1. Validation des budgets de mots et des bornes +-8 %
     wb = manifest["word_budget"]
     tol = wb["tolerance_pct"] / 100.0

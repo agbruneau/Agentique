@@ -1,8 +1,9 @@
 {
-  "manifest_version": "1.1.0",
+  "manifest_version": "1.2.0",
   "project_id": "LIVRE-AGENTIQUE-2027",
   "title": "Gouverner l'industrialisation cognitive",
   "subtitle": "Architecture de contrôle, preuve et souveraineté dans l'entreprise agentique",
+  "author_credit": "André-Guy Bruneau, M.Sc IT",
   "edition_year": 2027,
   "language": "fr-CA",
   "license_mode": {

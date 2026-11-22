@@ -5,7 +5,7 @@
 - **Titre de travail** : *Gouverner l'industrialisation cognitive*
 - **Sous-titre** : *Architecture de contrôle, preuve et souveraineté dans l'entreprise agentique*
 - **Millésime de parution visé** : janvier 2027
-- **Crédit d'auteur et de direction** : *à trancher par l'auteur avant lancement* (p. ex. « Direction de l'ouvrage : \<nom\> — rédaction et vérification par agents d'IA »). Aucun agent ne choisit ni n'invente ce crédit.
+- **Crédit d'auteur** : **André-Guy Bruneau, M.Sc IT** — reproduit à l'identique en couverture et en page de titre. Aucun agent ne modifie ce crédit. La rédaction et la vérification par agents d'IA sont déclarées au colophon du liminaire (`0.6`), conformément à `AO-05`.
 - **Calendrier et date de gel des faits (état de référence)** : collecte, rédaction et assurance qualité en **décembre 2026**; gel des faits au jour de clôture de la collecte, **au plus tard le 31 décembre 2026**; **publication en janvier 2027**. La date exacte de gel est inscrite dans le liminaire (`0.5`) et dans chaque base `sources/chNN-sources.md`.
 - **Conséquence rédactionnelle du gel** : tout événement postérieur à la date de gel (certificats `TLS` à 100 jours le 15 mars 2027, `BSIF E-23` le 1er mai 2027, Annexe III de l'`EU AI Act` le 2 décembre 2027, etc.) est présenté comme une **échéance à venir**, avec son statut (adoptée ou annoncée); le livre ne contient aucun bilan ni retour d'expérience de 2027. Une édition consolidée, facultative, pourra être relancée après le 1er mai 2027 avec une nouvelle date de gel.
 - **Langue** : Français canadien soigné, accessible à l'ensemble du lectorat francophone international; maintien des termes techniques anglais établis (`AGI`, `ASI`, `MCP`, `A2A`, `Zero-Trust`, `FinOps`, `pass^k`, etc.).
