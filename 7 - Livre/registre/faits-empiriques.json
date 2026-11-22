@@ -1,0 +1,110 @@
+{
+  "registry_version": "1.2.0",
+  "description": "Repères quantitatifs et empiriques vérifiés sur sources primaires intégrales L+ (SHA-256) au gel du 2 décembre 2026 — source unique de vérité interdisant toute dérive chiffrée entre chapitres.",
+  "facts": [
+    {
+      "id": "FACT-COMPUTE-10X",
+      "metric": "Croissance annuelle composée du stock mondial de calcul effectif pour l'IA",
+      "value": "Environ 10× par an sur la dernière décennie (~1,5× matériel/dollar × ~3× algorithmes/inférence × ~2,5× dépenses matérielles = 11,25× arrondi prudemment à 10×)",
+      "source": "Genewein et al. (2026), From AGI to ASI (arXiv:2606.12683, note 2)",
+      "owner_chapter": "ch01",
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-001",
+      "commentaire_annexe": "Vérifié directement dans arXiv:2606.12683 (note 2, p. 4 : « 1.5 * 2.5 * 3 = 11.25, which we round down to 10× per year », SRC-001)."
+    },
+    {
+      "id": "FACT-LUSSER-10-STEPS",
+      "metric": "Fiabilité composée sans erreur de 10 étapes autonomes indépendantes fiables chacune à 94 %",
+      "value": "53,9 % (0,94^10 ≈ 53,86 %)",
+      "source": "Loi multiplicative des composants en série (NIST/SEMATECH e-Handbook § 8.1.8.1) appliquée à 10 étapes autonomes à 94 %",
+      "owner_chapter": "ch02",
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-024",
+      "commentaire_annexe": "Relation mathématique Rc = produit des Ri vérifiée dans NIST/SEMATECH e-Handbook § 8.1.8.1 (SRC-024); 0,94^10 = 0,538615 ≈ 53,9 %."
+    },
+    {
+      "id": "FACT-GARTNER-ABANDON-2027",
+      "metric": "Part des initiatives agentiques exposées à l'abandon d'ici fin 2027 faute de contrôles, de ROI démontré et de maîtrise des coûts",
+      "value": "Plus de 40 %",
+      "source": "Deloitte Insights, TMT Predictions 2026 (citant l'estimation attribuée à Gartner, juin 2025; communiqué primaire gartner.com et Reuters en statut F)",
+      "owner_chapter": "ch02",
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-011",
+      "commentaire_annexe": "Le communiqué primaire de Gartner (HTTP 403) et Reuters (HTTP 401) sont consignés en statut F (AO-01); le seuil « more than 40% ... cancelled by 2027 » est documenté via Deloitte TMT 2026 (SRC-011)."
+    },
+    {
+      "id": "FACT-HYPERSCALER-CAPEX-2026",
+      "metric": "Dépenses d'investissement (CapEx) 2026 d'Alphabet, Amazon, Meta et Microsoft",
+      "value": "496,7 G\\$ US décaissés en trésorerie sur 9 mois calendaires 2026 (132,0 Alphabet, 175,7 Amazon, 83,1 Meta, 106,0 Microsoft); fourchette annualisée 2026 strictement dérivée des dépôts SEC de 683,7 à 693,7 G\\$ US en trésorerie hors baux financiers Microsoft, ou environ 703 à 713 G\\$ US baux financiers Microsoft inclus (~220 G\\$ chez Amazon et 135 à 145 G\\$ chez Meta, location-financement incluse)",
+      "source": "Dépôts SEC EDGAR Q3 2026 / FY2026 : Alphabet 8-K (SRC-017), Amazon 8-K (SRC-018), Meta 8-K (SRC-019), Microsoft 10-Q/10-K (SRC-020..SRC-022)",
+      "owner_chapter": "ch02",
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-017, SRC-018, SRC-019, SRC-020, SRC-021, SRC-022",
+      "commentaire_annexe": "Somme exacte des achats d'immobilisations en trésorerie sur 9 mois calendaires 2026 vérifiée dans les 6 dépôts SEC EDGAR : 131 953 + 175 670 + 83 055 + 106 045 = 496 723 M\\$ US (496,7 G\\$ US); baux financiers Microsoft 9M = 14 323 M\\$ US (9 131 H1 + 5 192 T1 FY27), donnant 683,7–693,7 G\\$ US hors baux Microsoft ou 703,2–713,2 G\\$ US baux inclus selon T4=T3."
+    },
+    {
+      "id": "FACT-MARKET-ENVELOPE-2027-2030",
+      "metric": "Fourchette des études ouvertes L+ sur la taille du marché de l'IA agentique (2026–2030)",
+      "value": "2026 : 5,3 à 9,9 G\\$ US; 2027 : 7,8 (interpolé) à 14,1 G\\$ US; 2030 : 24,5 à 40,6 (interpolé) ou 45,0 G\\$ US (trois synthèses publiques ouvertes L+ : Grand View Enterprise, Deloitte TMT et Mordor Intelligence; Polaris, Fortune et IDC exclus en statut F)",
+      "source": "Deloitte TMT 2026 (SRC-011), synthèse publique Mordor Intelligence 2026 (SRC-012) et synthèse publique Grand View Research (SRC-013)",
+      "owner_chapter": "ch02",
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-011, SRC-012, SRC-013",
+      "commentaire_annexe": "Réancré exclusivement sur les séries L+ accessibles après exclusion AO-01 des portails bloqués Polaris, Fortune et IDC (statut F) : 5,3–9,89 G\\$ en 2026, 7,75 (interpolé à 46,2 % CAGR pour GVR)–14,06 G\\$ en 2027, 24,5–40,61 (interpolé à 30,38 % CAGR pour Mordor)–45,0 G\\$ en 2030 (82,27 G\\$ en 2032 chez Mordor)."
+    },
+    {
+      "id": "FACT-MAP-STUDY",
+      "metric": "Profil réel des agents déployés en production selon l'étude MAP",
+      "value": "68 % exécutent au plus 10 étapes avant intervention humaine; 16 cas sur 20 (80 %) suivent un flux structuré fixe",
+      "source": "Pan et al. (2025), Measuring Agents in Production (arXiv:2512.04123)",
+      "owner_chapter": "ch06",
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-027",
+      "commentaire_annexe": "Vérifié directement dans arXiv:2512.04123 (§ 5.4 et résumé : « 68% execute ≤10 steps before human intervention » sur 306 répondants et « Eighty percent (16/20) of case studies use structured workflows », SRC-027)."
+    },
+    {
+      "id": "FACT-MAST-FAILURES",
+      "metric": "Taux d'échec observés sur bancs d'essai de systèmes multi-agents open source (taxonomie MAST)",
+      "value": "41 % à 86,7 % d'échecs sur plus de 1 600 traces annotées (1 642 dans MAST-Data) couvrant 7 cadriciels et 14 modes de défaillance",
+      "source": "Cemri et al. (NeurIPS 2025), Why Do Multi-Agent LLM Systems Fail? (arXiv:2503.13657)",
+      "owner_chapter": "ch06",
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-028",
+      "commentaire_annexe": "Vérifié mot pour mot dans arXiv:2503.13657 (« 41% to 86.7% failure rate on 7 state-of-the-art open-source MAS » et « 1642 annotated traces from seven popular MAS frameworks », 14 modes répartis en 3 catégories, SRC-028)."
+    },
+    {
+      "id": "FACT-CAMEL-AGENTDOJO",
+      "metric": "Compromis sécurité / utilité de l'isolation par construction CaMeL sur le banc AgentDojo",
+      "value": "77 % des tâches résolues avec garantie structurelle de sécurité contre 84 % sans défense",
+      "source": "Debenedetti et al. (2025, prépublication arXiv:2503.18813v2), Defeating Prompt Injections by Design",
+      "owner_chapter": "ch08",
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-007",
+      "commentaire_annexe": "Vérifié mot pour mot dans arXiv:2503.18813 (« solving 77% of tasks with provable security (compared to 84% with an undefended system) in AgentDojo », SRC-007)."
+    },
+    {
+      "id": "FACT-JUNIOR-DEV-CONTRACTION",
+      "metric": "Évolution de l'emploi des développeurs logiciels âgés de 22 à 25 ans aux États-Unis (synthèse depuis 2024 vs pic fin 2022 – sept. 2025)",
+      "value": "Recul de près de 20 % depuis le pic de fin 2022 jusqu'à septembre 2025 (formulé « depuis 2024 » en synthèse, ~16 % d'écart relatif et -11 % aux universités américaines de 4 ans au § 4.4)",
+      "source": "Stanford HAI, Artificial Intelligence Index Report 2026 (arXiv:2606.15708)",
+      "owner_chapter": "ch11",
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-008",
+      "commentaire_annexe": "Vérifié dans l'AI Index Report 2026 de Stanford HAI (SRC-008) : le résumé exécutif indique « nearly 20% from 2024 », tandis que le § 4.4 mesure le repli de près de 20 % depuis le pic de fin 2022 jusqu'à septembre 2025 (~16 % d'écart relatif avec les développeurs plus âgés et -11 % d'inscriptions en informatique sur 4 ans)."
+    },
+    {
+      "id": "FACT-PQC-SIGNATURE-SIZE",
+      "metric": "Taille des signatures post-quantiques normalisées sur réseaux euclidiens face aux signatures elliptiques classiques (64 octets)",
+      "value": "ML-DSA-65 : 3 309 octets (~52×); ML-DSA-87 : 4 627 octets (~72×)",
+      "source": "NIST FIPS 204 (SRC-050) et IRTF/IETF RFC 8032 (SRC-076 : Ed25519 = 64 octets)",
+      "owner_chapter": "ch12",
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-050, SRC-076",
+      "commentaire_annexe": "Tailles ML-DSA-65 (3 309 octets) et ML-DSA-87 (4 627 octets) vérifiées dans NIST FIPS 204 (SRC-050, p. 16); taille de signature Ed25519 de 64 octets vérifiée dans RFC 8032 (SRC-076, § 3.3 / § 5.1.6)."
+    }
+  ],
+  "statut_preuve_legende": {
+    "a_reancrer": "Repère issu des volumes du dépôt ou d'une source secondaire; non opposable avant réancrage sur la source primaire en statut L+ (AO-02).",
+    "l_plus": "Réancré et vérifié sur texte primaire intégral haché SHA-256."
+  }
+}

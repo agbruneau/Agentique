@@ -1,0 +1,92 @@
+# Rapport de lissage éditorial et visuel — Livre 2027
+
+## 1. Lissage éditorial inter-chapitres (Barrière G5)
+
+Ce relevé consigne le lissage éditorial indépendant (`G5`) exécuté en lecture continue sur les 13 unités narratives du manuscrit (`00 - Liminaire.md` et chapitres `01` à `12`), sans modification de `05 - Annexes/`. Toutes les vérifications factuelles (`CA-01` à `CA-18`), notes `[n]`, ancres chronologiques, balises illustratives et figures liées restent préservées, et les `19` tableaux narratifs d'origine sont intacts.
+
+### 1.1 Tableau unité par unité (avant -> après)
+
+| Unité | Mots `G1` avant -> après (`count_prose_words`) | Mots bruts avant -> après (`len.split`) | Plage `manifest.json` | Tableaux | Rétro-apostrophes avant -> après | Transitions harmonisées, dédoublonnage `owned_concepts` et retouches `G4` Tour 2 |
+|---|---|---|---|---|---|---|
+| `00-liminaire` | `4 477` -> `4 313` (`-164`) | `4 655` -> `4 485` (`-170`) | `[3 864, 4 536]` | `1` -> `1` | `88` -> `0` | Suppression du doublon final des 6 intitulés en `0.2` (chute nette sur *qui parle* / *qui en répond*); allègement du facteur `11,25×` (propriété `ch01`); scission de phrases longues; unification `*Scénario illustratif.*` et `chapitre XX`; transition nette vers la Partie I. |
+| `ch01` | `5 315` -> `5 017` (`-298`) | `5 523` -> `5 220` (`-303`) | `[4 600, 5 400]` | `1` -> `1` | `40` -> `0` | Élimination des répétitions de l'arithmétique `11,25×` en `1.2` en conservant toutes les bornes et formules; lien fluidifié vers l'abstraction déterministe; harmonisation `Figure 1` / `Figure 2` et `*Scénario illustratif.*`; passe fluide vers `ch02`. |
+| `ch02` | `5 451` -> `5 249` (`-202`) | `5 809` -> `5 595` (`-214`) | `[5 152, 6 048]` | `2` -> `2` | `63` -> `6` | Suppression des redites chiffrées entre prose et tableau `2.2` sans perte d'ancre `[n]` ni de donnée unique; intégration explicite de `MAP` dans la synthèse post-tableau; conservation ciblée des rétro-apostrophes sur `` `pass@1` ``, `` `pass^k` ``, `` `pass^8` ``; renvoi sobre vers `ch03`. |
+| `ch03` | `5 033` -> `4 833` (`-200`) | `5 226` -> `5 025` (`-201`) | `[4 600, 5 400]` | `1` -> `1` | `53` -> `0` | Harmonisation `Figure 5` / `Figure 6` et de la formulation `L'enquête MAP`; correction de la transition finale vers `ch04` (retrait de la mention anticipée des sagas compensatoires, propres à `ch06`). |
+| `ch04` | `5 971` -> `5 643` (`-328`) | `6 145` -> `5 812` (`-333`) | `[5 152, 6 048]` | `1` -> `1` | `122` -> `15` | Allègement de l'accumulation d'identifiants dans les Plans 2 et 4 (conservation stricte de `gen_ai.agent.id`, `invoke_agent`, `invoke_workflow`, `Opt-In`, `Idempotency-Key`, `PATCH`, `POST`, `sub`, `act`, `may_act`, `data`); harmonisation `figure 7` (`Fig-07`) et `figure 8` (`Fig-08`); resserrement du rappel Kraishan en `4.1`; passe nette vers `ch05`. |
+| `ch05` | `6 186` -> `6 000` (`-186`) | `6 369` -> `6 183` (`-186`) | `[5 704, 6 696]` | `1` -> `1` | `238` -> `50` | Séparation plus nette en `5.1` entre mesures empiriques sur le registre public MCP et posture d'ingénierie de la passerelle, avec élagage des sous-métriques secondaires; scission du long paragraphe `Loi 25` en `5.4`; maintien séparé de `MultiAgentDojo` et `multi-CaMeL`; harmonisation `Figure 9` / `Figure 10`; renvoi vers `ch06`. |
+| `ch06` | `6 736` -> `6 353` (`-383`) | `7 046` -> `6 651` (`-395`) | `[5 888, 6 912]` | `2` -> `2` | `156` -> `21` | Scission du long § 5 (>300 mots) en `6.2` en deux paragraphes respirants; allègement des redites autour de `Fig-11`; resserrement des rappels croisés (Lusser, AL-Ali, Storey) renvoyant aux chapitres propriétaires; ouverture de la Partie III vers `ch07`. |
+| `ch07` | `5 925` -> `5 291` (`-634`) | `6 122` -> `5 482` (`-640`) | `[5 152, 6 048]` | `1` -> `1` | `308` -> `76` | Remplacement du calque `« rappel poussé »` par `en mode \`push\`` et suppression des répétitions de `« tandis que »` (`7.2`–`7.3`); harmonisation `Figure 13` (`Fig-13`) et `Figure 14` (`Fig-14`); compression sobre du volet PKI/PQC avec renvoi au `ch12` tout en préservant toutes les dates et tailles `ML-DSA`; fusion de redite sur `VC`/`did:ion` en `7.4`. |
+| `ch08` | `5 914` -> `5 552` (`-362`) | `6 174` -> `5 807` (`-367`) | `[5 152, 6 048]` | `2` -> `2` | `256` -> `13` | Correction de l'introduction du tableau `8.1` (`« Le tableau 8.1 décline en sept indicateurs clés les deux vulnérabilités structurelles... »`) et ajout d'une phrase conclusive synthétique après le tableau; scission des paragraphes >200 mots en `8.2`–`8.4`; allègement sobre des rappels `SCITT`/`DPoP` (`ch07`); passe vers `ch09`. |
+| `ch09` | `5 828` -> `5 347` (`-481`) | `6 045` -> `5 547` (`-498`) | `[5 152, 6 048]` | `1` -> `1` | `201` -> `33` | Désimbrication des incises statistiques dans les puces `MAP` / `τ-bench` / `HAL` (`9.2`) et fluidification de la transition vers les trois étages d'`EvalOps`; scission des longs blocs `Loi 25` / Kraishan en `9.1`; unification `*Scénario illustratif.*`; passe vers la Partie IV (`ch10`). |
+| `ch10` | `5 337` -> `4 922` (`-415`) | `5 545` -> `5 126` (`-419`) | `[4 600, 5 400]` | `2` -> `2` | `340` -> `2` | Scission des phrases-tunnels (>80 mots) en `10.1` (`Loi 25`, rapport `CAI` 2026) et sur `NC 31-103` en `10.4`; scission du bloc de 296 mots sur la télémétrie `RFC 8785`; harmonisation `Figure 19` (`Fig-19`) et tableau `10.2`; transition finale harmonisée avec les sept pièges de `ch11`. |
+| `ch11` | `5 335` -> `4 970` (`-365`) | `5 529` -> `5 169` (`-360`) | `[4 784, 5 616]` | `2` -> `2` | `62` -> `0` | Réduction de la redondance prose/tableau `11.1` en `11.4` et rationalisation du renvoi `Figure 20` (`Fig-20`); scission des longs paragraphes et phrases sur Statistique Canada (`11.1`) et la `Loi 25` (`11.2`); dédoublonnage sobre vers `ch09`, `ch10` et `ch12`. |
+| `ch12` | `5 255` -> `4 999` (`-256`) | `5 414` -> `5 150` (`-264`) | `[4 600, 5 400]` | `2` -> `2` | `155` -> `4` | Scission des phrases-tunnels en `12.2` et `12.3`; allègement de la priorité 5 (`dette cognitive`) par renvoi au `ch11` tout en gardant intactes les six priorités `1..6`; harmonisation `Figure 21` / `Figure 22` et tableaux `12.1` / `12.2`; ouverture vers les annexes A, B et C préservée. |
+| **Sous-total narratif (13 unités)** | **`72 763` -> `68 489` (`-4 274`)** | **`75 602` -> `71 252` (`-4 350`)** | `manifest.json` respecté partout | **`19` -> `19`** | **`2 082` -> `220`** | Continuité `00 -> ch01 -> ... -> ch12` harmonisée; `0` ajout ou suppression de tableau; `0` modification aux annexes. |
+| `05 - Annexes/` (`annexe-a`, `b`, `c`) | `4 026` -> `4 026` (`0`) | `7 405` -> `7 405` (`0`) | Non modifiées | `3` -> `3` | `373` -> `373` | Intouchées conformément au mandat `G5`. |
+| **Total global du livre (16 unités)** | **`76 789` -> `72 515` (`-4 274`)** | `79 628` -> `75 278`* | Plafond `79 920` max | **`22` -> `22`** | — | Marge sous plafond `79 920` : **`7 405` mots** (`count_prose_words` total) / **`4 642` mots** (mots bruts narratifs + `4 026` mots `G1` d'annexes). |
+
+*\*Note méthodologique sur les métriques de volume : `count_prose_words` désigne le décompte officiel de la barrière `G1` (`verifie_manuscrit.py`, hors métadonnées YAML, blocs de code, séparateurs de tableaux et commentaires bibliographiques), soit `72 515` mots au total après lissage (`68 489` narratifs + `4 026` d'annexes). Sur la base mixte employée en préparation (`len(text.split())` narratif + `4 026` mots `G1` d'annexes), le total passe de `79 628` à `75 278` mots, dégageant une marge de `4 642` mots sous le plafond `79 920`.*
+
+### 1.2 Bilan synthétique `G5`
+
+1. **Conformité stricte aux plages et marge sous plafond** : chacune des 13 unités narratives demeure strictement à l'intérieur de sa plage `[min_words, max_words]` dans `manifest.json`. La compression stylistique totale s'établit à `-4 274` mots `G1` (`-4 350` mots bruts), portant la marge sous le plafond global de `79 920` mots à `7 405` mots selon la métrique `G1` (`4 642` mots selon la base mixte).
+2. **Nettoyage typographique des rétro-apostrophes** : les `2 082` occurrences initiales dans la partie narrative ont été réduites à `220` (`-89,4 %`), en supprimant systématiquement les rétro-apostrophes entourant sigles, institutions, normes, modèles, dates et valeurs chiffrées en prose courante, tout en les conservant exclusivement sur les identifiants techniques (`gen_ai.*`, `auth_req_id`, `authorization_details`, `binding_message`, `id_token_hint`, `login_hint`, `expires_in`, `invoke_agent`, `invoke_workflow`, `Idempotency-Key`, `Opt-In`, `documentDigests`, `COSE_Sign1`, etc.) et sur la notation `pass@1`/`pass^k`/`pass^8` requise par Pandoc/Typst.
+3. **Continuité inter-chapitres et propriété conceptuelle (`owned_concepts`)** : les chutes de fin de chapitre et ouvertures suivantes s'enchaînent de manière continue du `Liminaire` au `Chapitre 12` sans redondance mécanique; les rappels longs sur le facteur `11,25×` (`ch01`), `SCITT`/`DPoP` (`ch07`), la dette cognitive (`ch11`) ou l'agilité `PKI`/`ML-DSA` (`ch12`) ont été ramenés à de brefs rappels croisés.
+4. **Intégration complète des retours `G4` Tour 2 et intégrité `G1`** : tous les points relevés dans `7 - Livre 2027/aq/gauntlet-log.md` (`0.2`, `1.2`, `2.2`, `4.4`, `5.1`, `6.2`, `7.3`, `8.1`, `9.2`, `10.1`, `11.4`, `12.2`) ont été appliqués sans ajout ni suppression de tableau (`narrative_tables == 19`) et sans aucune dérive sur les `[n]`, dates d'ancrage, `\$` échappés ni balises `AO-07`. La barrière déterministe `verifie_manuscrit.py --strict` passe avec `0` erreur.
+
+---
+
+## 2. Inspection visuelle intégrale (100 % des pages PDF)
+
+La mise en page finale du PDF (`0 - PDF-MD/7 - Livre.pdf`, compilé via Pandoc + Typst avec `gabarit-livre.typ` et `_postprocess_typst_body` dans `assemble_livre.py`) a fait l'objet de trois cycles complets d'inspection visuelle sur rendu PNG (150 dpi) par des inspecteurs aveugles indépendants, couvrant **100 % des pages** à chaque passe :
+
+1. **Passe 1 (version initiale, `270/270` pages inspectées sur 4 lots parallèles)** :
+   - **Défauts corrigés** : refonte complète de `gabarit-livre.typ` (`#table` pleine largeur avec `repeat: true` sur `table.header` et `breakable: false` sur cellules/encadrés, déduplication des légendes `Fig. N.` générées par Pandoc, liaison `sticky: true` des figures à leur légende canonique, largeur images `96 %` sans écrasement par `scale()`), rééquilibrage proportionnel des colonnes de tableaux dans `assemble_livre.py`, désactivation de la justification excessive sur la bibliographie avec césure propre des URLs, passage des conteneurs PlantUML en `skinparam packageStyle frame` et raccourcissement des étiquettes transversales sur les schémas critiques.
+2. **Passe 2 (recompilation intermédiaire, `256/256` pages inspectées sur 4 lots parallèles)** :
+   - **Défauts corrigés** : extraction complète du texte des en-têtes courants (`extract-plain-text` gérant `[ ]` et `smartquote` typographique sans caractère manquant), scission sur deux lignes de l'équation d'affichage du `ch01` (`\begin{aligned}`) afin d'éliminer tout rognage latéral, remplacement de `>=` par `≥` dans le tableau comparatif du `ch10`, plancher dynamique par largeur de mot maximal (`eff_word`) et césures `\u200b` sur les jetons techniques longs en tableaux, et élagage des croisements flèches/bordures sur les diagrammes PlantUML concernés.
+3. **Passe 3 (version v3 consolidée, `256/256` pages inspectées = `100 %` sur 4 lots aveugles `P001-064`, `P065-128`, `P129-192`, `P193-256`)** :
+   - **Verdict des 4 lots** : **PASS** à l'unanimité (**`0` défaut bloquant** sur les `256` pages; `0` anomalie détectée par le contrôle programmatique PyMuPDF; `0` page involontairement vide; `23/23` figures nettes et rattachées à leur légende unique; `22/22` tableaux lisibles sans débordement; équations LaTeX et encadrés *Trois arbitrages sans regret* intacts).
+   - **Finitions localisées appliquées après Passe 3 (sans modifier les chapitres narratifs `.md`)** :
+     - Correction du parseur de cellules `#table(...)` et `_split_top_level_args` dans `assemble_livre.py` (`paren_stack` par portée de crochets) afin d'éviter la virgule parasite `(nommé ici,)` dans le `Tableau 11.2`, couverte par un test unitaire ajouté dans `test_outillage_aq.py`.
+     - Troncature d'en-têtes courants sur frontière de mot dans `gabarit-livre.typ` (`truncate-header-words`) pour éliminer les coupures en milieu de mot (`Annexe B` et `Chapitre 09`).
+     - Tri insensible aux diacritiques (`unicodedata` NFD) et préservation de la casse des sigles et noms propres (`STPA`, `Ringelmann`, `Lusser`, `DAPP`) dans `genere_annexes.py` pour l'Annexe A.
+     - Élagage des libellés franchissant les bordures de cadres dans `Fig-17.puml`, `Fig-20.puml` et `Fig-21.puml`.
+   - **Tolérances mineures résiduelles (non bloquantes, 100 % lisibles)** : micro-espacements typographiques ponctuels autour d'espaces avant `%`, de séparateurs de milliers ou de virgules en mode mathématique LaTeX, césures occasionnelles en colonnes étroites, et deux énumérations en prose continue au `ch08` (l'inversion éditoriale `Figure 8` / `Figure 7` du `ch04` ayant été résolue en `v1.3`), sans incidence sur la lisibilité ni sur la traçabilité documentaire.
+
+---
+
+## 3. Passe de consolidation post-audit `v1.3` (gel du 2 décembre 2026)
+
+À la suite de l'audit intégral post-production (`154` constats traités sur les axes `P1`–`P4`, `CORP-001..030` et `TECH-001..016`), la révision `v1.3` fixe la date de gel documentaire officielle au **`2 décembre 2026`** et consolide les livrables aux emplacements canoniques :
+- **Version Markdown unifiée** : `0 - PDF-MD/7 - Livre.md` (préfixe images `../7 - Livre/diagrammes/rendus/`) ;
+- **Édition PDF imprimable** : `0 - PDF-MD/7 - Livre.pdf` ;
+- **Édition HTML autonome** : `7 - Livre/livrables/7 - Livre 2027.html` (seul fichier conservé dans `livrables/`).
+
+### 3.1 Comptes lexicaux finaux par unité (post-remédiation `v1.3`)
+
+| Unité | Mots `G1` finaux (`count_prose_words`) | Mots bruts (`len.split`) | Plage `manifest.json` | Principales évolutions `v1.3` |
+|---|---|---|---|---|
+| `00-liminaire` | `4 350` | `4 542` | `[3 864, 4 536]` | Gel `2 décembre 2026`, `Tableau 0.1`, scission § `0.1`, aération `D1`–`D6` et profils, Pass 3 `#04`, formule `20` PlantUML + `3` Mermaid. |
+| `ch01` | `5 146` | `5 356` | `[4 600, 5 400]` | Ajout `SRC-061` (Règl. UE `2026/1744`, art. `111(4)` au `2 déc. 2026`), `SRC-025` (*Long Software Tasks*), `Tableau 1.1`. |
+| `ch02` | `5 552` | `5 904` | `[5 152, 6 048]` | CapEx SEC consolidés (`683,7–693,7 G$ US` hors baux MSFT / `~703–713 G$ US` baux inclus, `14 323 M$ US` baux 9M, `98,5 G$ US` bilan 30 sept.), `FOCUS v1.4`, Pass 3 `#13` (`ABC`), `passᵏ`/`pass⁸`. |
+| `ch03` | `4 993` | `5 198` | `[4 600, 5 400]` | `Tableau 3.1`, corpus `MCP` complet (`SRC-038`), levée collision `CA-03` (`L63`). |
+| `ch04` | `5 749` | `5 921` | `[5 152, 6 048]` | Permutation `Fig-07` (harnais `80/20`) / `Fig-08` (4 plans), `OTel GenAI SemConv` (`SRC-037`). |
+| `ch05` | `6 074` | `6 244` | `[5 704, 6 696]` | Corpus `MCP` complet (`SRC-038`), `Loi 25` `22 septembre 2023`, scissions `L17` / `L94` et aération `ACI`. |
+| `ch06` | `6 484` | `6 796` | `[5 888, 6 912]` | `FOCUS v1.4`, `METR` *Long Software Tasks*, `SagaLLM` (`C1..Cn`), scissions phrases longues, aération listes et `pass⁸`. |
+| `ch07` | `5 622` | `5 818` | `[5 152, 6 048]` | `NIST IR 8547` Final oct. 2026 (`SRC-051`), `RFC 8032` (`SRC-076`), `vLEI` (`SRC-079`), aération listes `WIMSE`/`JCS`. |
+| `ch08` | `5 629` | `5 888` | `[5 152, 6 048]` | Ouverture `MCP` (`Oligo Security`), `OWASP Agentic Top 10 v1.0`, corpus `MCP`, conversion limites `CaMeL` en paragraphes et aération `UCA`. |
+| `ch09` | `5 518` | `5 716` | `[5 152, 6 048]` | Intervalle `execute_tool` (`SRC-037`), `RFC 8785 JCS` (`SRC-077`), Pass 3 `#44` (`gen_ai.usage.input_tokens`/`output_tokens` + versionnage/épinglage `[8]`), `pass¹`/`pass⁸`/`passᵏ`, aération. |
+| `ch10` | `5 338` | `5 549` | `[4 600, 5 400]` | `Loi 25` `22 septembre 2023`, `CDBA L.C. 2026, ch. 3` art. `171` & `224` (`SRC-078`), `AIBanks.ca` Q4 2026 (`SRC-071`), `passᵏ`. |
+| `ch11` | `5 239` | `5 448` | `[4 784, 5 616]` | Retrait `SRC-004`, `P4-007` (`contre 40,4 %`), Pass 3 `#55` (`L79`, `L88`, `L120`), § `11.2` sans Bainbridge. |
+| `ch12` | `5 317` | `5 473` | `[4 600, 5 400]` | `NIST IR 8547` Final (`2030`/`2035`), `RFC 8032 Ed25519` (`SRC-076`), `Tableau 12.2`, `passᵏ`. |
+| **Sous-total narratif (13 unités)** | **`71 011`** | **`73 853`** | Toutes dans plage | Réindexation différentielle `ancrage/ch00..12-ancrage.md`, Pass 3 `seed=202703` (`56/60 -> 60/60`, `100 %`). |
+| `05 - Annexes/` (`annexe-a`, `b`, `c`) | **`4 054`** (`1 834` + `1 255` + `965`) | **`7 790`** (`2 095` + `1 368` + `4 327`) | `[1 656..1 944]` / `[1 104..1 296]` / `[920..1 080]` | `33` termes (`FIDO`, `passᵏ`), jalons `2026–2035` (`;` espacés), `79` sources `L+` (`BSIF` normalisé), `24` statut `F`, scores dynamiques `G2`/`G3`. |
+| **Total global `v1.3` (16 unités)** | **`75 065`** | **`81 643`** (`77 907` mixte) | Plafond `G1` `79 920` max | Marge `G1` sous plafond : `4 855` mots ; PDF `0 - PDF-MD/7 - Livre.pdf` (`264` p. physiques / `p. 1–260` imprimées, `236` liens `/URI`), HTML `2,10 Mo` (`2 098 365` octets), MD `81 776` mots / `2 327` lignes (`584 236` octets). |
+
+---
+
+## 4. Clôture finale Phase 5 (`@fix-final`) — `2 décembre 2026`
+
+- **Pass 3 `recollation-seed-202703` (`56/60 -> 60/60`, `100 %`)** : clôture des `4` écarts mineurs (`#04`, `#13`, `#44`, `#55`) et de `P4-007` (`Chapitre 11` L23 `contre 40,4 %`), avec préservation explicite des 2 faux positifs rejetés (`Chapitre 09` « notamment pour corriger le code généré [1] » et guillemets français `« »`).
+- **Diagrammes & outillage** : `Fig-11.mmd` (`R3` en style déterministe `:::det`, `Q4` complété), `Fig-12.puml` (classe morte `.ext` retirée), `10` légendes `.puml` dotées de `Trait plein gris : composant externe`, `_parse_g3_scores` dynamique, `FIDO`, normalisation `SRC-065..068` (`Bureau du surintendant des institutions financières (BSIF)`), espacement `;` en Annexe B et versions `v1.3` alignées (`manifest.json` `1.3.0`).
+- **Contrôle visuel final (`visuel_v4_final/`, `29` pages PNG à `150 dpi`)** : inspection de `Fig-11` (`p. 118` PDF / `114` impr.), `Annexe A` (`p. 237–243`), `Annexe B` (`p. 244–248`) et `Annexe C` (`p. 249–264`) confirmant `0` défaut bloquant, `0` `(BSIF / BSIF)`, `0` `FIDO2`, `Initial 56/60 (93,3 %) -> final 60/60 (100 %)` et `236` liens `/URI` actifs.

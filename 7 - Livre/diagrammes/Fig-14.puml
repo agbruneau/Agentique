@@ -1,0 +1,88 @@
+@startuml
+<style>
+document {
+  BackgroundColor #FFFFFF
+}
+.det {
+  BackgroundColor #EBF2F7
+  LineColor #1E4E79
+  LineThickness 2.5
+  FontColor #0F2942
+}
+.prob {
+  BackgroundColor #FFF5E0
+  LineColor #B45309
+  LineThickness 2.0
+  LineStyle 5
+  FontColor #451A03
+}
+.ext {
+  BackgroundColor #F3F4F6
+  LineColor #4B5563
+  LineThickness 1.5
+  FontColor #111827
+}
+package {
+  BackgroundColor #F8FAFC
+  LineColor #64748B
+  LineThickness 1.2
+  FontColor #334155
+}
+legend {
+  BackgroundColor #FFFFFF
+  LineColor #CBD5E1
+  FontColor #1E293B
+  FontSize 10
+}
+</style>
+hide stereotype
+top to bottom direction
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam nodesep 22
+skinparam ranksep 18
+skinparam padding 5
+
+package "Séquence liée à l'empreinte canonique" {
+  rectangle "1. Agent proposeur\n(intention d'acte sensible)" as S1 <<prob>>
+  rectangle "2. Porte de politique\n(interception avant mutation)" as S2 <<det>>
+  rectangle "3. Canoniseur JCS (RFC 8785)\n(forme déterministe)" as S3 <<det>>
+  rectangle "4. Empreinte SHA-256 unique\n(montant et cible scellés)" as S4 <<det>>
+  rectangle "5. Serveur CIBA\n(requête asynchrone)" as S5 <<det>>
+
+  rectangle "6. Canal hors bande dédié\n(hors fenêtre du modèle)" as S6 <<det>>
+  actor "7. Approbateur humain\n(lit les paramètres exacts)" as S7 <<ext>>
+  rectangle "8. Jeton matériel FIDO\n(signature du défi)" as S8 <<det>>
+  rectangle "9. Vérificateur cryptographique\n(concordance acte = empreinte)" as S9 <<det>>
+  rectangle "10. Exécution bornée (RFC 9396)\n(autorisation à usage unique)" as S10 <<det>>
+}
+
+database "11. Journal probatoire\n(chaîne mandat + signature FIDO)" as S11 <<det>>
+
+S1 -down-> S2 : proposition
+S2 -down-> S3 : bloque
+S3 -down-> S4 : canonise
+S4 -down-> S5 : lie le défi
+S6 <-- S5 : notifie hors bande
+
+S6 -down-> S7 : affiche synthèse
+S7 -down-> S8 : consentement
+S8 -down-> S9 : assertion signée
+S9 -down-> S10 : feu vert lié
+S9 --> S11 : archive\npreuve
+S10 --> S11 : scelle\nacte
+
+S1 -[hidden]right-> S6
+S2 -[hidden]right-> S7
+S3 -[hidden]right-> S8
+S4 -[hidden]right-> S9
+S5 -[hidden]right-> S10
+
+legend bottom
+  **Trait plein ardoise** : frontière déterministe possédée
+  **Trait pointillé ambre** : composant probabiliste substituable
+  **Trait plein gris** : composant externe
+end legend
+@enduml

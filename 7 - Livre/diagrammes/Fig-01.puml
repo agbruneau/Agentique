@@ -1,0 +1,90 @@
+@startuml
+<style>
+document {
+  BackgroundColor #FFFFFF
+}
+.det {
+  BackgroundColor #EBF2F7
+  LineColor #1E4E79
+  LineThickness 2.5
+  FontColor #0F2942
+}
+.prob {
+  BackgroundColor #FFF5E0
+  LineColor #B45309
+  LineThickness 2.0
+  LineStyle 5
+  FontColor #451A03
+}
+.ext {
+  BackgroundColor #F3F4F6
+  LineColor #4B5563
+  LineThickness 1.5
+  FontColor #111827
+}
+package {
+  BackgroundColor #F8FAFC
+  LineColor #64748B
+  LineThickness 1.2
+  FontColor #334155
+}
+legend {
+  BackgroundColor #FFFFFF
+  LineColor #CBD5E1
+  FontColor #1E293B
+  FontSize 10
+}
+</style>
+hide stereotype
+top to bottom direction
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam nodesep 16
+skinparam ranksep 18
+skinparam padding 5
+
+package "Spectre d'autonomie (L0 à L4) et contrôles exigés" {
+  rectangle "L0 — Lecture et synthèse\n(aucune mutation)" as L0 <<prob>>
+  rectangle "Journalisation de lecture\net filtrage d'entrée" as C0 <<det>>
+
+  rectangle "L1 — Assistant supervisé\n(brouillon proposé)" as L1 <<prob>>
+  rectangle "Revue et déclenchement\nhumains explicites" as C1 <<det>>
+
+  rectangle "L2 — Exécution bornée\n(mutation réversible)" as L2 <<prob>>
+  rectangle "Schémas typés, portée\nminimale et idempotence" as C2 <<det>>
+
+  rectangle "L3 — Orchestration déléguée\n(chaîne multi-étapes)" as L3 <<prob>>
+  rectangle "Exécution durable, saga\net disjoncteur de budget" as C3 <<det>>
+
+  rectangle "L4 — Autonomie sous mandat\n(inter-systèmes à seuil)" as L4 <<prob>>
+  rectangle "Approbation hors bande\nsignée et confinement" as C4 <<det>>
+}
+
+rectangle "Règle du maillon le plus élevé : toute chaîne s'aligne sur la criticité aval" as HWM <<det>>
+
+L0 -right-> C0 : lecture seule
+L1 -right-> C1 : proposition
+L2 -right-> C2 : écriture locale
+L3 -right-> C3 : flux compensable
+L4 -right-> C4 : acte critique
+
+L0 ..> L1
+L1 ..> L2
+L2 ..> L3
+L3 ..> L4 : héritage amont → aval
+
+C0 -[hidden]down-> C1
+C1 -[hidden]down-> C2
+C2 -[hidden]down-> C3
+C3 -[hidden]down-> C4
+
+C4 --> HWM
+L4 --> HWM : aligne toute la chaîne
+
+legend bottom
+  **Trait plein ardoise** : frontière déterministe possédée
+  **Trait pointillé ambre** : composant probabiliste substituable
+end legend
+@enduml

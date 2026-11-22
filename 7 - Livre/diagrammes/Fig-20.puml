@@ -1,0 +1,95 @@
+@startuml
+<style>
+document {
+  BackgroundColor #FFFFFF
+}
+.det {
+  BackgroundColor #EBF2F7
+  LineColor #1E4E79
+  LineThickness 2.5
+  FontColor #0F2942
+}
+.prob {
+  BackgroundColor #FFF5E0
+  LineColor #B45309
+  LineThickness 2.0
+  LineStyle 5
+  FontColor #451A03
+}
+.ext {
+  BackgroundColor #F3F4F6
+  LineColor #4B5563
+  LineThickness 1.5
+  FontColor #111827
+}
+package {
+  BackgroundColor #F8FAFC
+  LineColor #64748B
+  LineThickness 1.2
+  FontColor #334155
+}
+legend {
+  BackgroundColor #FFFFFF
+  LineColor #CBD5E1
+  FontColor #1E293B
+  FontSize 10
+}
+</style>
+hide stereotype
+top to bottom direction
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 30
+skinparam ranksep 20
+skinparam padding 22
+
+package "Érosion silencieuse (en haut)" {
+  rectangle "Automatisation des tâches\nde premier niveau" as E1 <<prob>>
+  rectangle "Contraction relève junior\n(recul ~20 %, 22–25 ans)" as E2 <<ext>>
+  rectangle "Biais de complaisance\net approbation réflexe" as E3 <<ext>>
+  rectangle "Atrophie du savoir-faire\nde traitement manuel" as E4 <<ext>>
+  rectangle "Échec du repli sous panne\net décision automatisée" as E5 <<ext>>
+}
+
+package "Disjoncteurs\n(en bas)" {
+  rectangle "Disjoncteur 1 : Responsable\nnommé et couloir lecture seule" as D1 <<det>>
+  rectangle "Disjoncteur 2 : Cas témoins\nà l'aveugle et taux d'infirmation" as D2 <<det>>
+  rectangle "Disjoncteur 3 : Quotas manuels\nformateurs sans agent" as D3 <<det>>
+  rectangle "Gouvernance proportionnée\n(zéro contournement)" as GOV <<det>>
+  rectangle "Maintien du jugement\ncritique humain" as JUG <<det>>
+  rectangle "Capacité éprouvée\nde bascule manuelle" as REPLI <<det>>
+}
+
+E1 -right-> E2 : réduit postes
+E2 -right-> E3 : raréfie relève
+E3 -down-> E4 : efface réflexes
+E5 <-- E4 : expose en crise
+E1 <.up. E5 : pousse à automatiser
+
+E1 -[hidden]right-> E2
+E2 -[hidden]right-> E3
+E2 -[hidden]down-> E5
+E3 -[hidden]down-> E4
+E5 -[hidden]right-> E4
+
+D1 --> GOV
+D2 --> JUG
+D3 --> REPLI
+D1 -up-> E1 : borne accès
+D2 -up-> E3 : mesure vigilance
+D3 -up-> E4 : protège relève
+JUG -right-> REPLI
+
+D1 -[hidden]right-> D2
+D2 -[hidden]right-> D3
+GOV -[hidden]right-> JUG
+
+legend bottom
+  **Trait plein ardoise** : frontière ou disjoncteur possédé
+  **Trait pointillé ambre** : composant probabiliste substituable
+  **Trait plein gris** : phénomène humain, organisationnel ou dérive
+end legend
+@enduml

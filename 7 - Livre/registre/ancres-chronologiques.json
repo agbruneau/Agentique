@@ -1,0 +1,167 @@
+{
+  "registry_version": "1.2.0",
+  "description": "Ancres chronologiques vérifiées sur sources primaires intégrales L+ (SHA-256) au gel du 2 décembre 2026 — source unique de vérité pour l'ensemble des chapitres et l'Annexe B.",
+  "anchors": [
+    {
+      "key": "2026-08-02-EU-AI-ACT-ART50",
+      "date": "2026-08",
+      "nature": "Entrée en application réglementaire",
+      "jurisdiction": "Union européenne",
+      "label": "Obligations de transparence de l'article 50 de l'EU AI Act en application (2 août 2026, avec délai transitoire au 2 décembre 2026 pour certains systèmes déjà sur le marché selon l'art. 111 modifié)",
+      "chapters": [
+        "ch01",
+        "ch10"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-060, SRC-061",
+      "commentaire_annexe": "Vérifié à l'article 113 du Règlement (UE) 2024/1689 (SRC-060) et aux aménagements transitoires de l'article 111 modifiés par le Règlement (UE) 2026/1744 du 8 juillet 2026 (SRC-061)."
+    },
+    {
+      "key": "2026-LOI25-ART12-1",
+      "date": "2023-09-22",
+      "nature": "Loi applicable",
+      "jurisdiction": "Québec",
+      "label": "Entrée en vigueur de l'encadrement des décisions fondées exclusivement sur un traitement automatisé (art. 12.1 de la Loi 25, en vigueur depuis le 22 septembre 2023 ; droit à la portabilité en vigueur depuis le 22 septembre 2024 : information, explication, observation et révision humaine effective ; sanctions administratives jusqu'à 10 M\\$ CA ou 2 % et amendes pénales jusqu'à 25 M\\$ CA ou 4 % du chiffre d'affaires mondial)",
+      "chapters": [
+        "ch05",
+        "ch10",
+        "ch11"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-063, SRC-064",
+      "commentaire_annexe": "Vérifié aux articles 12.1 (en vigueur depuis le 22 septembre 2023 ; portabilité depuis le 22 septembre 2024), 90.12 (SAP jusqu'à 10 M\\$ CA ou 2 %) et 91 (amende pénale jusqu'à 25 M\\$ CA ou 4 %) de la LQ 2021, c. 25 (SRC-063) et au rapport quinquennal 2026 de la CAI (SRC-064) ; la version consolidée LégisQuébec (P-39.1) est en statut F."
+    },
+    {
+      "key": "2027-03-15-TLS-100J",
+      "date": "2027-03-15",
+      "nature": "Échéance technique CA/Browser Forum (Ballot SC-081v3)",
+      "jurisdiction": "International (PKI publique)",
+      "label": "Abaissement de la durée maximale de validité et de réutilisation des données de validation des certificats TLS publics à 100 jours",
+      "chapters": [
+        "ch07",
+        "ch12"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-053",
+      "commentaire_annexe": "Vérifié aux sections 4.2.1 et 6.3.2 des Baseline Requirements v2.3.1 du CA/Browser Forum intégrant le Ballot SC081 (SRC-053)."
+    },
+    {
+      "key": "2027-05-01-BSIF-E23-AMF",
+      "date": "2027-05-01",
+      "nature": "Entrée en vigueur prudentielle",
+      "jurisdiction": "Canada fédéral et Québec",
+      "label": "Entrée en vigueur de la ligne directrice E-23 révisée du BSIF sur la gestion du risque de modélisation (incluant IA générative et agentique) et prise d'effet corrélative au Québec de la ligne directrice sur l'IA de l'AMF",
+      "chapters": [
+        "ch06",
+        "ch10",
+        "ch11",
+        "ch12"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-065, SRC-071",
+      "vigilance": "Texte primaire de l'AMF (lautorite.qc.ca) en statut F (HTTP 403 WAF Cloudflare); date AMF corroborée par l'agrégateur tiers ouvert AIBanks.ca (SRC-071, third_party_aggregator).",
+      "commentaire_annexe": "Date d'entrée en vigueur « Le 1 mai 2027 » vérifiée directement dans le texte officiel de la ligne directrice E-23 du BSIF (SRC-065) ; le volet AMF est consigné sur AIBanks.ca (SRC-071) en raison du blocage HTTP 403 sur lautorite.qc.ca (statut F)."
+    },
+    {
+      "key": "2027-12-02-EU-AI-ACT-ANNEXE-III",
+      "date": "2027-12-02",
+      "nature": "Entrée en application réglementaire (calendrier révisé par le règlement 2026/1744)",
+      "jurisdiction": "Union européenne",
+      "label": "Entrée en application des obligations visant les systèmes d'IA à haut risque de l'Annexe III de l'EU AI Act",
+      "chapters": [
+        "ch10",
+        "ch12"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-061, SRC-060",
+      "commentaire_annexe": "Vérifié à l'article 1er, point 40), lettre b), modifiant l'article 113, point c), i) du Règlement (UE) 2024/1689 via le Règlement (UE) 2026/1744 du 8 juillet 2026 publié au JOUE le 24 juillet 2026 (SRC-061)."
+    },
+    {
+      "key": "2028-08-02-EU-AI-ACT-ANNEXE-I",
+      "date": "2028-08-02",
+      "nature": "Entrée en application réglementaire",
+      "jurisdiction": "Union européenne",
+      "label": "Entrée en application des obligations visant les systèmes d'IA à haut risque intégrés à des produits réglementés (Annexe I de l'EU AI Act)",
+      "chapters": [
+        "ch10"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-061, SRC-060",
+      "commentaire_annexe": "Vérifié à l'article 1er, point 40), lettre b), modifiant l'article 113, point c), ii) via le Règlement (UE) 2026/1744 (SRC-061)."
+    },
+    {
+      "key": "2028-10-01-GESTION-PATRIMOINE-RETROFACTURATION",
+      "date": "2028-10-01",
+      "nature": "Échéance sectorielle financière (ACVM / Norme canadienne 31-103)",
+      "jurisdiction": "Canada",
+      "label": "Entrée en vigueur de l'interdiction des rétrofacturations de commissions liées à la distribution de titres de fonds d'investissement",
+      "chapters": [
+        "ch10",
+        "ch12"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-069",
+      "commentaire_annexe": "Vérifié dans l'avis des ACVM / OSC du 8 octobre 2026 modifiant la Norme canadienne 31-103 (« This Instrument comes into force on October 1, 2028 », SRC-069)."
+    },
+    {
+      "key": "2028-12-31-BSIF-B15-PORTEE3",
+      "date": "Fin 2028",
+      "nature": "Échéance prudentielle climatique (exercice financier 2028)",
+      "jurisdiction": "Canada fédéral",
+      "label": "Exigences prudentielles de divulgation climatique du BSIF (ligne directrice B-15, annexe 2-2 : émissions absolues brutes de portée 3 incluant les émissions financées et assurées)",
+      "chapters": [
+        "ch09",
+        "ch12"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-067",
+      "commentaire_annexe": "Vérifié à l'élément b) ii de l'annexe 2-2 de la ligne directrice B-15 du BSIF (SRC-067), fixant à l'exercice financier 2028 la divulgation Scope 3 (catégorie 15 financée et assurée) ; le volet AUM b) iii demeure marqué TBD."
+    },
+    {
+      "key": "2029-03-15-TLS-47J",
+      "date": "2029-03-15",
+      "nature": "Échéance technique CA/Browser Forum (Ballot SC-081v3)",
+      "jurisdiction": "International (PKI publique)",
+      "label": "Abaissement de la durée maximale de validité des certificats TLS publics à 47 jours (réutilisation des validations ramenée à 10 jours), rendant l'automatisation complète indispensable",
+      "chapters": [
+        "ch07",
+        "ch12"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-053",
+      "commentaire_annexe": "Vérifié aux sections 4.2.1 et 6.3.2 des Baseline Requirements v2.3.1 du CA/Browser Forum (SRC-053)."
+    },
+    {
+      "key": "2030-2035-G7-PQC-FINANCE",
+      "date": "2030–2035",
+      "nature": "Feuille de route coordonnée G7 Cyber Expert Group / NIST IR 8547",
+      "jurisdiction": "G7 / International",
+      "label": "Fenêtre coordonnée non contraignante du secteur financier G7 (systèmes critiques en 2030–2032, cible générale 2035) et calendrier NIST IR 8547 final d'octobre 2026 : cryptographie asymétrique vulnérable dépréciée après 2030 puis interdite après 2035 (systèmes fédéraux sensibles HVA : 31 déc. 2030 établissement de clés, 31 déc. 2031 signatures ; algorithmes symétriques 112 bits interdits en 2030)",
+      "chapters": [
+        "ch07",
+        "ch12"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-052, SRC-051",
+      "commentaire_annexe": "Vérifié dans la déclaration du G7 Cyber Expert Group de janvier 2026 (SRC-052, p. 4–5 : jalon indicatif 2030–2032 et cible 2035) et dans la version finale publiée d'octobre 2026 de NIST IR 8547 (SRC-051 : asymétrique >= 112 bits « Deprecated after 2030 » / « Disallowed after 2035 », HVA fédéraux 31 déc. 2030/2031, symétrique 112 bits interdit en 2030)."
+    },
+    {
+      "key": "2033-06-30-LOIS-FINANCIERES-CANADA",
+      "date": "2033-06-30",
+      "nature": "Échéance législative statutaire",
+      "jurisdiction": "Canada fédéral",
+      "label": "Clause statutaire de temporisation et de révision des lois fédérales régissant les institutions financières canadiennes (Loi sur les banques, art. 21)",
+      "chapters": [
+        "ch10",
+        "ch12"
+      ],
+      "statut_preuve": "l_plus",
+      "source_l_plus_id": "SRC-070",
+      "commentaire_annexe": "Vérifié directement dans la codification officielle de la Loi sur les banques (L.C. 1991, ch. 46, art. 21 : « après le 30 juin 2033 », SRC-070)."
+    }
+  ],
+  "statut_preuve_legende": {
+    "a_reancrer": "Date reprise des volumes du dépôt; non opposable avant vérification sur le texte officiel en statut L+ (AO-02).",
+    "l_plus": "Vérifiée sur texte officiel intégral haché SHA-256."
+  }
+}

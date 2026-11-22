@@ -1,0 +1,85 @@
+@startuml
+<style>
+document {
+  BackgroundColor #FFFFFF
+}
+.det {
+  BackgroundColor #EBF2F7
+  LineColor #1E4E79
+  LineThickness 2.5
+  FontColor #0F2942
+}
+.prob {
+  BackgroundColor #FFF5E0
+  LineColor #B45309
+  LineThickness 2.0
+  LineStyle 5
+  FontColor #451A03
+}
+.ext {
+  BackgroundColor #F3F4F6
+  LineColor #4B5563
+  LineThickness 1.5
+  FontColor #111827
+}
+package {
+  BackgroundColor #F8FAFC
+  LineColor #64748B
+  LineThickness 1.2
+  FontColor #334155
+}
+legend {
+  BackgroundColor #FFFFFF
+  LineColor #CBD5E1
+  FontColor #1E293B
+  FontSize 10
+}
+</style>
+hide stereotype
+top to bottom direction
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 16
+skinparam ranksep 22
+skinparam padding 6
+
+package "Six périmètres de marché (ordre croissant)" {
+  rectangle "1. Logiciels d'agents purs\n(2026 : 5,3–9,9 G$ US ; 2027 : 7,8–14,1 G$ US ;\n2030 : 24,5–45,0 G$ US)" as P1 <<prob>>
+  rectangle "2. Plateformes d'orchestration\net connectivité ouverte" as P2 <<det>>
+  rectangle "3. Copilotes et suites\nSaaS préintégrées" as P3 <<prob>>
+  rectangle "4. Intégration, audit,\nsécurité et conformité" as P4 <<det>>
+  rectangle "5. Calcul infonuagique\net inférence dédiée" as P5 <<ext>>
+  rectangle "6. Dépenses cognitives\ndéplacées (travail adressable)" as P6 <<ext>>
+}
+
+rectangle "CapEx 2026 (4 grands fournisseurs) :\n496,7 G$ US sur 9M ; 683,7–693,7 G$ US\nhors baux / ~703–713 G$ US baux inclus" as CAPEX <<ext>>
+rectangle "Biais des palmarès publics\n(contamination et échafaudage)" as BANC <<prob>>
+rectangle "Risque d'abandon > 40 % fin 2027\nsans ROI démontré ni contrôles" as ABANDON <<prob>>
+rectangle "Mesure indépendante\n(essais randomisés, coût conforme)" as RCT <<det>>
+rectangle "Valeur durable possédée\n(noyau et gouvernance)" as VAL <<det>>
+
+P1 -down-> P2
+P2 -down-> P3
+P3 -down-> P4
+P4 -down-> P5
+P5 -down-> P6
+CAPEX --> P5 : finance la capacité
+BANC --> ABANDON : masque la fragilité
+P1 ..> ABANDON : exposition élevée
+RCT --> VAL : prouve l'impact réel
+P2 --> VAL
+P4 --> VAL
+
+P1 -[hidden]right-> BANC
+P3 -[hidden]right-> ABANDON
+P5 -[hidden]right-> RCT
+
+legend bottom
+  **Trait plein ardoise** : frontière déterministe possédée
+  **Trait pointillé ambre** : composant probabiliste substituable
+  **Trait plein gris** : composant externe
+end legend
+@enduml

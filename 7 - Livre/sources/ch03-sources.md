@@ -1,0 +1,231 @@
+# Dossier fermé de sources L+ — Chapitre 03 — Les nouvelles frontières de la firme : Coase chez les agents autonomes
+
+- **Unité du livre** : `ch03` (`sources/ch03-sources.md`)
+- **Axes de recherche couverts** : `RQ1`
+- **Date de gel des faits** : 2 décembre 2026
+- **Protocole** : `MLR-PRISMA-SCR-LIVRE-2027-V1.2` (`metadata_only_pct = 0.0 %`, règle stricte `AO-01` sans contournement)
+- **Nombre de sources probantes incluses** : 22 sources intégrales `L+`
+
+> Ce dossier fermé recense exclusivement les sources primaires et travaux ouverts dont le texte intégral UTF-8 a été extrait, conservé sous `recherche/corpus_l_plus/` et authentifié par empreinte `SHA-256`. Aucune source en `statut F` ni copie locale non ouverte n'entre dans l'argumentation probante.
+
+---
+
+### [1] SRC-003 — Towards a Science of Scaling Agent Systems
+
+- **Auteurs / Émetteur** : Yubin Kim, Ken Gu, Chanwoo Park, Chunjong Park et al. (2025, 2025-12-09)
+- **Revue / Organisme / Dépôt** : arXiv — Identifiant : `arXiv:2512.08296`
+- **URL ouverte vérifiée** : https://arxiv.org/pdf/2512.08296
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-003.txt` (18743 mots, 145288 octets)
+- **Empreinte SHA-256** : `991148d77ecdcd5a7ba19a0f6ce1ff3c5d8f54c8abea67debf7182a1296a559f`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `10.5/12` | Devis : Étude empirique expérimentale sur lois d'échelle multi-agents | Axes : `RQ2`
+- **Synthèse factuelle** : Kim et al. évaluent systématiquement comment la performance d'agents à base de modèles de langage évolue lorsqu'on augmente le nombre d'agents coordonnés sur des tâches séquentielles ou parallélisables. Leurs courbes (figure 5, p. 22) démontrent que les systèmes multi-agents centralisés et décentralisés plafonnent rapidement et se dégradent selon la capacité du modèle sous-jacent (Gemini 2.0 Flash vs 2.5 Pro) et la nature de la tâche. Les auteurs identifient trois mécanismes majeurs de dégradation : les erreurs de logique sur les prémisses, la dérive numérique cumulée dépassant 5 % d'écart et l'omission progressive du contexte partagé. Ce travail contredit l'heuristique naïvement additive voulant que multiplier les agents améliore automatiquement la fiabilité.
+
+### [2] SRC-006 — SagaLLM: Context Management, Validation, and Transaction Guarantees for Multi-Agent LLM Planning
+
+- **Auteurs / Émetteur** : Edward Y. Chang, Longling Geng (2025, 2025-07-09)
+- **Revue / Organisme / Dépôt** : arXiv (prépublication, gabarit PVLDB) — Identifiant : `arXiv:2503.11951v3`
+- **URL ouverte vérifiée** : https://arxiv.org/pdf/2503.11951
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-006.txt` (9679 mots, 73051 octets)
+- **Empreinte SHA-256** : `c2565e8391cc57e98ad4c7f26cac6b52dd76360de5a461152d2a94765e64e694`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `10.5/12` | Devis : Architecture transactionnelle et validation expérimentale (SagaLLM) | Axes : `RQ3`
+- **Synthèse factuelle** : Chang et Geng documentent quatre défauts structurels des planificateurs multi-agents à base de LLM : l'auto-validation peu fiable, la perte de contexte sur horizons longs, l'absence de garanties transactionnelles et la coordination fragile entre agents distribués. Pour y remédier, SagaLLM adapte le patron des sagas compensatoires de Garcia-Molina en combinant mémoire persistante externe, validation indépendante par des agents tiers et journalisation explicite des états avant et après chaque action. L'architecture permet d'annuler ou de compenser les effets partiels d'un flux distribué lorsqu'une contrainte aval échoue sans immobiliser les ressources par verrou distribué ACID. Elle forme la référence directe de l'ouvrage pour les sagas à point pivot et l'exécution durable.
+
+### [3] SRC-007 — Defeating Prompt Injections by Design (CaMeL)
+
+- **Auteurs / Émetteur** : Edoardo Debenedetti, Ilia Shumailov, Tianqi Fan, Jamie Hayes et al. (2025, 2025-06-24)
+- **Revue / Organisme / Dépôt** : arXiv (prépublication) — Identifiant : `arXiv:2503.18813v2`
+- **URL ouverte vérifiée** : https://arxiv.org/pdf/2503.18813
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-007.txt` (50342 mots, 361916 octets)
+- **Empreinte SHA-256** : `7a9735abcbdcbea1569be50b290f7e8198648a57f378a27bdb796e0f38cb3d2b`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `11.5/12` | Devis : Prépublication technique d'exécution sécurisée évaluée sur banc AgentDojo (arXiv:2503.18813v2) | Axes : `RQ5`
+- **Synthèse factuelle** : Debenedetti et al. présentent CaMeL, une couche système de sécurité inspirée des langages à capacités et du patron Dual-LLM qui isole par construction le graphe d'appels d'outils du traitement de données externes non fiables. Un modèle planificateur traduit la requête approuvée en un sous-ensemble restreint de Python dont l'arbre syntaxique est interprété sous politiques de flux de données et de capacités, tandis qu'un modèle confiné sans accès aux outils privilégiés résume les données brutes. Sur le banc AgentDojo, CaMeL résout 77 % des tâches avec une garantie structurelle contre l'injection de prompt indirecte, contre 84 % pour un agent sans défense. Cette source valide l'arbitrage sécurité-utilité et le principe de séparation contrôle-données en ingénierie.
+
+### [4] SRC-011 — Agentic AI orchestration: TMT Predictions 2026
+
+- **Auteurs / Émetteur** : Deloitte Insights (2025, 2025-11-18)
+- **Revue / Organisme / Dépôt** : Deloitte Center for Technology, Media & Telecommunications — Identifiant : `DELOITTE-TMT-2026-AGENTS`
+- **URL ouverte vérifiée** : https://www.deloitte.com/us/en/insights/industry/technology/technology-media-and-telecom-predictions/2026/ai-agent-orchestration.html
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-011.txt` (5425 mots, 39392 octets)
+- **Empreinte SHA-256** : `e7d41d25e64a998140f9d6510c553c62821273c598d9de5f92be40839362271b`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `9.5/12` | Devis : Rapport sectoriel de veille technologique (Deloitte TMT Predictions 2026) | Axes : `RQ1, RQ2`
+- **Synthèse factuelle** : Publié le 18 novembre 2025, ce rapport analyse le passage des assistants isolés à l'orchestration multi-agents en entreprise et détaille les couches requises : plan de contexte et mémoire, sélection adaptative de modèles, télémétrie et expérience utilisateur. Deloitte rapporte que les estimations de marché placent les agents autonomes à 8,5 G\$ US en 2026 et 35 G\$ US en 2030, voire jusqu'à 45 G\$ US si les entreprises résolvent les goulots d'orchestration. Surtout, le document reprend l'estimation de Gartner (juin 2025, dont le communiqué primaire et Reuters sont en statut F) selon laquelle plus de 40 % des projets agentiques actuels risquent d'être annulés d'ici 2027 faute de maîtrise des coûts, de complexité d'échelle ou de gestion des risques.
+
+### [5] SRC-024 — NIST/SEMATECH e-Handbook of Statistical Methods — Section 8.1.8.1 Series Model (Lusser Reliability Law)
+
+- **Auteurs / Émetteur** : National Institute of Standards and Technology (NIST) / SEMATECH (2012, 2012-04)
+- **Revue / Organisme / Dépôt** : NIST Information Technology Laboratory — Identifiant : `NIST-HANDBOOK-8.1.8.1`
+- **URL ouverte vérifiée** : https://www.itl.nist.gov/div898/handbook/apr/section1/apr181.htm
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-024.txt` (467 mots, 3049 octets)
+- **Empreinte SHA-256** : `8734d2a7119029ec0a3459f4c9f33332967e14e2742b40938f3c53a2e94c01da`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `11.5/12` | Devis : Manuel statistique normatif de fiabilité industrielle (NIST/SEMATECH § 8.1.8.1) | Axes : `RQ2`
+- **Synthèse factuelle** : La section 8.1.8.1 du manuel NIST/SEMATECH formalise le modèle des risques concurrents (système en série ou loi multiplicative de Lusser) lorsque les modes de défaillance de composants enchaînés sont indépendants et que la première défaillance fait échouer l'ensemble. La fiabilité globale du système s'écrit comme le produit des fiabilités individuelles des composants, tandis que les taux de défaillance s'additionnent. Le calcul illustratif de l'ouvrage appliquant cette formule à une chaîne de 10 étapes autonomes indépendantes fiables chacune à 94 % donne une réussite sans erreur de 0,94^10 = 53,86 % (53,9 %) — valeur calculée par l'auteur et non tirée de SRC-024.txt.
+
+### [6] SRC-026 — Cognitive Architectures for Language Agents (CoALA)
+
+- **Auteurs / Émetteur** : Theodore R. Sumers, Shunyu Yao, Karthik Narasimhan, Thomas L. Griffiths (2024, 2024-03-15)
+- **Revue / Organisme / Dépôt** : TMLR / arXiv — Identifiant : `arXiv:2309.02427`
+- **URL ouverte vérifiée** : https://arxiv.org/pdf/2309.02427
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-026.txt` (18434 mots, 123231 octets)
+- **Empreinte SHA-256** : `831e99a3f99a9f1e2cdc1c2940b3a2046ca2973226130c16ebf5d58b2acb3dde`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Oui | Score AACODS : `11.5/12` | Devis : Article de synthèse architecturale évalué par les pairs (TMLR 2024) | Axes : `RQ2, RQ3`
+- **Synthèse factuelle** : Sumers, Yao, Narasimhan et Griffiths transposent les sciences cognitives et les architectures symboliques classiques (SOAR, ACT-R) dans le cadre CoALA (Cognitive Architectures for Language Agents). Ils structurent tout agent autour d'une boucle décisionnelle itérative reliant une mémoire de travail et trois mémoires à long terme (épisodique, sémantique et procédurale) à un espace d'actions internes et d'appels d'outils externes. CoALA montre que le modèle de langage n'est qu'un composant statistique au sein d'un programme de flux de contrôle explicite, appuyant la séparation architecturale entre noyau déterministe et inférence.
+
+### [7] SRC-027 — Measuring Agents in Production (MAP)
+
+- **Auteurs / Émetteur** : Melissa Z. Pan, Negar Arabzadeh, Riccardo Cogo, Yuxuan Zhu et al. (2025, 2025-12-02)
+- **Revue / Organisme / Dépôt** : arXiv (UC Berkeley) — Identifiant : `arXiv:2512.04123`
+- **URL ouverte vérifiée** : https://arxiv.org/pdf/2512.04123
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-027.txt` (22684 mots, 160353 octets)
+- **Empreinte SHA-256** : `3f8f34adaeb523b3cdc740f8df9d4c97b621f9ac7f955c10d94e3fbc97dcc2e1`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `11.0/12` | Devis : Étude mixte terrain (20 études de cas et enquête sur 306 répondants / 86 systèmes) | Axes : `RQ2, RQ6`
+- **Synthèse factuelle** : L'étude Measuring Agents in Production (MAP) de Pan et al. documente comment les praticiens conçoivent réellement les agents en exploitation à travers 20 entrevues approfondies et 306 réponses d'enquête couvrant 26 domaines (86 praticiens en production). Contre le mythe de l'autonomie ouverte, 68 % des systèmes déployés exécutent au plus 10 étapes avant intervention humaine, 80 % des études de cas (16 sur 20) utilisent des flux de travail structurés fixes, 70 % conservent des modèles commerciaux sans réentraînement des poids et 79 % rédigent les invites manuellement. Les organisations sacrifient délibérément l'autonomie ouverte au profit de la prévisibilité et de la maîtrise du risque.
+
+### [8] SRC-028 — Why Do Multi-Agent LLM Systems Fail? (MAST)
+
+- **Auteurs / Émetteur** : Mert Cemri, Melissa Z. Pan, Shuyi Yang, Lakshya A. Agrawal et al. (2025, 2025-10-26)
+- **Revue / Organisme / Dépôt** : NeurIPS 2025 / arXiv — Identifiant : `arXiv:2503.13657v3`
+- **URL ouverte vérifiée** : https://arxiv.org/pdf/2503.13657
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-028.txt` (19765 mots, 136729 octets)
+- **Empreinte SHA-256** : `7eeb1c6dfd098f1f6507ab979bdae4a7a2eacc1888efc0d599aca663f6577933`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Oui | Score AACODS : `11.5/12` | Devis : Taxonomie empirique et jeu de données annoté (NeurIPS 2025 / MAST-Data) | Axes : `RQ2`
+- **Synthèse factuelle** : Cemri et al. analysent plus de 1 600 traces (1 642 traces dans MAST-Data) issues de sept cadriciels multi-agents open source populaires (dont AutoGen, CrewAI, ChatDev, MetaGPT et Manus) et construisent la taxonomie MAST à 14 modes de défaillance regroupés en 3 catégories : conception système, désalignement inter-agents et vérification/terminaison. Les taux d'échec observés sur les systèmes évalués varient de 41 % à 86,7 %, mettant en évidence que la plupart des défaillances proviennent de la coordination, de l'oubli de spécifications ou d'absences de garde-fous de vérification plutôt que des capacités intrinsèques du LLM. Ces mesures fondent l'exigence de tests structurels et de contrôle déterministe.
+
+### [9] SRC-031 — Single-Agent LLMs Outperform Multi-Agent Systems on Multi-Hop Reasoning Under Equal Thinking Token Budgets
+
+- **Auteurs / Émetteur** : Dat Tran, Douwe Kiela (2026, 2026-04-11)
+- **Revue / Organisme / Dépôt** : arXiv — Identifiant : `arXiv:2604.02460v2`
+- **URL ouverte vérifiée** : https://arxiv.org/pdf/2604.02460
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-031.txt` (11295 mots, 74996 octets)
+- **Empreinte SHA-256** : `80b064f92eb145f5ff0977ee03fb95543bb95599007e69ded99c08927edac0e9`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `10.5/12` | Devis : Analyse théorique et expérimentale à budget de calcul constant (Stanford) | Axes : `RQ2`
+- **Synthèse factuelle** : Tran et Kiela établissent, à partir de l'inégalité de traitement des données, qu'à budget égal de jetons de raisonnement et sous utilisation efficace du contexte, un agent unique est théoriquement plus efficace en information qu'un système multi-agents sur le raisonnement à sauts multiples. Leurs expériences montrent que les gains publiés en faveur des systèmes multi-agents proviennent souvent d'un biais de confusion lié à l'augmentation cachée du calcul en phase d'inférence. Lorsque le budget est normalisé, l'agent unique égale ou surpasse la plupart des architectures multi-agents, ces dernières ne redevenant compétitives que lorsque le contexte individuel sature.
+
+### [10] SRC-032 — The Ringelmann Effect in Multi-Agent LLM Systems: A Scaling Law for Effective Team Size
+
+- **Auteurs / Émetteur** : Blaž Bertalanič, Carolina Fortuna (2026, 2026-05-31)
+- **Revue / Organisme / Dépôt** : arXiv — Identifiant : `arXiv:2606.02646`
+- **URL ouverte vérifiée** : https://arxiv.org/pdf/2606.02646
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-032.txt` (20794 mots, 135378 octets)
+- **Empreinte SHA-256** : `dd138f578d07f36f25b962fc8a5c346c1461587184ab85121087e8731feaee72`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `10.5/12` | Devis : Modélisation mathématique et validation multi-modèles (Jozef Stefan Institute) | Axes : `RQ2, RQ6`
+- **Synthèse factuelle** : Bertalanič et Fortuna transposent l'effet Ringelmann aux systèmes multi-agents et dérivent une loi d'échelle à deux paramètres mesurant la taille effective d'une équipe N_eff/N = 1/(1 + c(N−1)N^−β) à travers 44 cellules expérimentales. Leurs résultats montrent que dans de nombreuses configurations de débat et de vote majoritaire sur Qwen, Llama et autres familles ouvertes, N_eff plafonne rapidement près de 1,1 à 1,8 agent effectif même à N = 30 agents nominaux, tandis que les coûts en jetons explosent à plus de 64 000–101 000 jetons par question. L'article offre aux architectes un test pilote frugal pour décider si l'ajout d'agents reste économiquement rentable.
+
+### [11] SRC-033 — Sagas
+
+- **Auteurs / Émetteur** : Hector Garcia-Molina, Kenneth Salem (1987, 1987-05)
+- **Revue / Organisme / Dépôt** : ACM SIGMOD 1987 (Princeton Dept. CS OA) — Identifiant : `ACM-SIGMOD-1987-SAGAS`
+- **URL ouverte vérifiée** : https://www.cs.cornell.edu/andru/cs711/2002fa/reading/sagas.pdf
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-033.txt` (7817 mots, 46158 octets)
+- **Empreinte SHA-256** : `61c64fc7900604a34fcae13f7907df581d97c48ff19ec0d7db579a3bd1bd332e`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Oui | Score AACODS : `11.5/12` | Devis : Article fondateur d'informatique distribuée évalué par les pairs (ACM SIGMOD 1987) | Axes : `RQ3`
+- **Synthèse factuelle** : Garcia-Molina et Salem introduisent le concept de « saga » pour traiter les transactions de longue durée (LLT) sans maintenir de verrous exclusifs bloquants sur les bases de données critiques. Une saga décompose une LLT en une séquence de transactions locales indépendantes T_1..T_n accompagnées chacune d'une transaction compensatoire C_i capable d'annuler sémantiquement son effet si une étape ultérieure échoue et doit revenir en arrière. Cette formalisation des garanties « tout ou compensation » sans verrouillage distribué demeure la pierre angulaire de l'orchestration d'agents reliés à des systèmes d'enregistrement patrimoniaux.
+
+### [12] SRC-034 — Temporal SDKs — Durable Execution, Event History and Deterministic Replay
+
+- **Auteurs / Émetteur** : Temporal Technologies (2026, 2026)
+- **Revue / Organisme / Dépôt** : Temporal Documentation — Identifiant : `TEMPORAL-SDKS-2026`
+- **URL ouverte vérifiée** : https://docs.temporal.io/encyclopedia/temporal-sdks
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-034.txt` (2327 mots, 15387 octets)
+- **Empreinte SHA-256** : `95aa625eecff574cd1e55188823cb0b0e10a7c36a2f78b415913ca3bf1fcf35b`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `10.5/12` | Devis : Documentation d'architecture d'exécution durable (Temporal Technologies) | Axes : `RQ3`
+- **Synthèse factuelle** : Cette spécification architecturale des SDK Temporal décrit comment les workflows persistants enregistrent chaque étape, minuterie et réponse d'activité dans un journal d'événements immuable (Event History) géré par le service d'orchestration. En cas de redémarrage, d'expiration ou de panne de processus, le moteur rejoue le code déterministe du workflow en récupérant les résultats déjà mémorisés dans le journal sans réexécuter les effets de bord externes déjà validés. Ce modèle impose une frontière stricte entre la logique déterministe du workflow et les appels non déterministes (LLM, API externes) confinés dans des activités idempotentes.
+
+### [13] SRC-035 — CloudEvents Specification — Version 1.0.2
+
+- **Auteurs / Émetteur** : CNCF Serverless Working Group (2022, 2022-04)
+- **Revue / Organisme / Dépôt** : Cloud Native Computing Foundation (CNCF) — Identifiant : `CLOUDEVENTS-1.0.2`
+- **URL ouverte vérifiée** : https://raw.githubusercontent.com/cloudevents/spec/v1.0.2/cloudevents/spec.md
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-035.txt` (3651 mots, 25147 octets)
+- **Empreinte SHA-256** : `8f4d59dd27f8807741321b3145c5c9c2f22bba5bf9a9299b0c2020d769dc92ae`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `11.0/12` | Devis : Spécification ouverte CNCF de format d'événement (CloudEvents v1.0.2) | Axes : `RQ3, RQ5`
+- **Synthèse factuelle** : Publiée par le groupe Serverless de la Cloud Native Computing Foundation, la spécification CloudEvents v1.0.2 standardise une enveloppe neutre de métadonnées contextuelles (identifiant id, source, type, specversion, datacontenttype, heure) pour décrire les événements traversant des routeurs, bus de messages et systèmes de traçage hétérogènes. Cette séparation nette entre attributs de contexte routables par les intermédiaires et charge utile métier facilite la mise en place de files d'attente, de journaux de reprise et de politiques de sécurité indépendantes du protocole de transport. Elle appuie l'orchestration événementielle et les canaux de compensation dédiés aux chapitres 3 et 4.
+
+### [14] SRC-036 — The Idempotency-Key HTTP Header Field (draft-ietf-httpapi-idempotency-key-header)
+
+- **Auteurs / Émetteur** : Jayadeba Jena, Sanjay Dalal, Dmitrii Tishkin (2026, 2026-11-21)
+- **Revue / Organisme / Dépôt** : IETF Datatracker — Identifiant : `IETF-DRAFT-IDEMPOTENCY-KEY-09`
+- **URL ouverte vérifiée** : https://datatracker.ietf.org/doc/draft-ietf-httpapi-idempotency-key-header/
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-036.txt` (3668 mots, 24607 octets)
+- **Empreinte SHA-256** : `d737453f458f71e135b6bee31e4bdda076f6bca90f264add649fd738b75714cb`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `10.5/12` | Devis : Spécification technique en cours de normalisation IETF (HTTPAPI WG) | Axes : `RQ3`
+- **Synthèse factuelle** : Le brouillon normatif de l'IETF HTTPAPI définit l'en-tête HTTP « Idempotency-Key » destiné à rendre les méthodes mutantes non idempotentes telles que POST et PATCH tolérantes aux pannes et aux réessais réseau. Il formalise les obligations du client (unicité et durée de validité de la clé) et celles de la ressource (calcul d'empreinte de requête, détection de conflit en cas de réutilisation avec une charge utile différente et restitution déterministe de la réponse mise en cache). En orchestration agentique, ce mécanisme empêche qu'un agent relancé après délai d'attente ne déclenche deux paiements ou écritures comptables.
+
+### [15] SRC-002 — Virtual Agent Economies
+
+- **Auteurs / Émetteur** : Nenad Tomašev, Matija Franklin, Joel Z. Leibo, Julian Jacobs et al. (2025, 2025-09-12)
+- **Revue / Organisme / Dépôt** : arXiv (Google DeepMind) — Identifiant : `arXiv:2509.10147`
+- **URL ouverte vérifiée** : https://arxiv.org/pdf/2509.10147
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-002.txt` (23147 mots, 153510 octets)
+- **Empreinte SHA-256** : `f475a70c3b55b02a344241b1e1e6e1634cd904922b191f8bed2b89c1ca5d1554`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `11.0/12` | Devis : Cadre d'analyse socio-économique et de design institutionnel | Axes : `RQ1`
+- **Synthèse factuelle** : Tomašev et al. caractérisent l'émergence spontanée d'« économies d'agents virtuels » où des agents autonomes négocient, vérifient des états et exécutent des transactions à des fréquences dépassant la supervision humaine directe. Ils proposent la typologie de l'« économie bac à sable » selon deux axes orthogonaux : son origine (émergente ou intentionnelle) et son degré de perméabilité envers l'économie humaine établie. Le texte étudie les mécanismes d'enchères équitables, d'attestation vérifiable des échanges et de prévention des avantages asymétriques liés aux écarts de capacité entre modèles. Il fournit le soubassement conceptuel des chapitres sur la frontière de l'entreprise, les marchés d'agents et l'imputabilité financière.
+
+### [16] SRC-004 — The Coasean Singularity? Demand, Supply, and Market Design with AI Agents
+
+- **Auteurs / Émetteur** : Peyman Shahidi, Gili Rusak, Benjamin S. Manning, Andrey Fradkin, John J. Horton (2025, 2025-11)
+- **Revue / Organisme / Dépôt** : NBER Working Paper 34468 — Identifiant : `NBER-w34468`
+- **URL ouverte vérifiée** : https://www.nber.org/system/files/working_papers/w34468/w34468.pdf
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-004.txt` (9028 mots, 64339 octets)
+- **Empreinte SHA-256** : `45b9200d9e59c5eff7cb6ee35688c38f65ee372e0d547be0596409c1b2810292`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `11.5/12` | Devis : Document de travail économique (NBER Working Paper 34468) | Axes : `RQ1`
+- **Synthèse factuelle** : Shahidi, Rusak, Manning, Fradkin et Horton examinent l'effet des agents IA sur les marchés numériques à travers le prisme coasien de l'effondrement des coûts de recherche, de négociation et de vérification. Du côté de la demande, les utilisateurs arbitrent entre qualité décisionnelle et réduction d'effort selon le contexte et la capacité de l'agent. Du côté de l'offre, les plateformes arbitrent entre intégration verticale fermée et interopérabilité ouverte entre domaines, ce qui conditionne l'allocation de la valeur économique. Ce papier remplace en L+ les éditions commerciales bloquées de la théorie des coûts de transaction pour ancrer la réflexion sur les frontières de la firme.
+
+### [17] SRC-005 — An Economy of AI Agents
+
+- **Auteurs / Émetteur** : Gillian K. Hadfield, Andrew Koh (2025, 2025-09-01)
+- **Revue / Organisme / Dépôt** : arXiv / Schwartz Reisman Institute — Identifiant : `arXiv:2509.01063`
+- **URL ouverte vérifiée** : https://arxiv.org/pdf/2509.01063
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-005.txt` (11074 mots, 74078 octets)
+- **Empreinte SHA-256** : `c87fd1c3cd815ba6ae355c6b34203dd83f75b20406e1eded6fbac6787e0eb0e9`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `11.0/12` | Devis : Analyse microéconomique et institutionnelle (NBER Handbook chapter) | Axes : `RQ1, RQ4`
+- **Synthèse factuelle** : Hadfield et Koh modélisent une économie peuplée d'agents IA capables de planifier et d'exécuter sur des horizons longs avec une supervision humaine intermittente. Les auteurs montrent que le bon fonctionnement de ces marchés exige de nouvelles infrastructures institutionnelles : identités vérifiables des mandataires, régimes de responsabilité civile, mémoire corrélée des engagements et mécanismes de sanction contre la collusion ou la défection. Ils soulignent le risque que des agents optimisateurs exploitent les failles contractuelles ou expérimentales des environnements numériques plus vite que les régulateurs humains. Ce cadre éclaire la jonction entre délégation économique, droit des obligations et identité cryptographique.
+
+### [18] SRC-040 — From Technical Debt to Cognitive and Intent Debt: Rethinking Software Health in the Age of AI
+
+- **Auteurs / Émetteur** : Margaret-Anne Storey (2026, 2026-03-23)
+- **Revue / Organisme / Dépôt** : arXiv (University of Victoria) — Identifiant : `arXiv:2603.22106`
+- **URL ouverte vérifiée** : https://arxiv.org/pdf/2603.22106
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-040.txt` (4902 mots, 32784 octets)
+- **Empreinte SHA-256** : `ea4b2e2a02be74d9ea58c479f65fd32ca0dd95a60fab65538792e41a844dd052`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `11.0/12` | Devis : Analyse conceptuelle en génie logiciel (Université de Victoria, arXiv 2026) | Axes : `RQ3, RQ6`
+- **Synthèse factuelle** : Margaret-Anne Storey montre que l'accélération fulgurante du codage assisté par IA générative déplace la dette technique classique vers deux passifs plus insidieux : la dette cognitive (perte de compréhension partagée par les équipes du fonctionnement du logiciel produit) et la dette d'intention (oubli des hypothèses métier et contraintes pour lesquelles le système a été conçu). Même lorsque les tests unitaires réussissent, les équipes deviennent incapables de faire évoluer ou de corriger le code en toute confiance face à des effets de bord inattendus. Cette thèse éclaire l'érosion de la maîtrise d'ouvrage technologique dans l'architecture et la gouvernance de l'ouvrage.
+
+### [19] SRC-012 — Agentic AI Market Size & Share Analysis — Growth Trends and Forecast
+
+- **Auteurs / Émetteur** : Mordor Intelligence (2026, 2026-10-22)
+- **Revue / Organisme / Dépôt** : Mordor Intelligence (synthèse publique ouverte de rapport commercial) — Identifiant : `MORDOR-AGENTIC-AI-2026`
+- **URL ouverte vérifiée** : https://www.mordorintelligence.com/industry-reports/agentic-ai-market
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-012.txt` (6584 mots, 47538 octets)
+- **Empreinte SHA-256** : `d36ecb1c274ce55607835b6e3c6c5b4e02d1868265e37f73a79173ace448bef6`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `9.0/12` | Devis : Synthèse publique ouverte d'une étude de marché sectorielle (rapport complet payant exclu) | Axes : `RQ1`
+- **Synthèse factuelle** : Cette synthèse publique ouverte de rapport commercial évalue le marché mondial de l'IA agentique à 9,89 G\$ US en 2026 et à 14,06 G\$ US en 2027, avec une projection atteignant 82,27 G\$ US en 2032 au taux de croissance annuel composé de 42,38 % sur la période 2027–2032 (soit environ 40,6 G\$ US par interpolation calculée de l'ouvrage à l'horizon 2030). Le rapport identifie les services financiers et bancaires (BFSI) et l'automatisation de processus comme moteurs principaux en Amérique du Nord, tout en soulignant la hausse des coûts de calcul d'orchestration, le manque d'interopérabilité et le verrouillage fournisseur comme freins majeurs. Utilisée conjointement avec Deloitte et Grand View, elle borne la fourchette haute ouverte du marché 2026–2030.
+
+### [20] SRC-038 — Model Context Protocol (MCP) Specification — Revision 2025-11-25 (corpus normatif complet)
+
+- **Auteurs / Émetteur** : Model Context Protocol Maintainers (2025, 2025-11-25)
+- **Revue / Organisme / Dépôt** : Model Context Protocol (GitHub modelcontextprotocol/modelcontextprotocol — spec 2025-11-25) — Identifiant : `MCP-SPEC-2025-11-25`
+- **URL ouverte vérifiée** : https://github.com/modelcontextprotocol/modelcontextprotocol/tree/main/docs/specification/2025-11-25
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-038.txt` (62231 mots, 757889 octets)
+- **Empreinte SHA-256** : `938fca60c06c92e10cd6448f31d90fbb81d03adcb1952a21915d219f685e96a9`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `11.0/12` | Devis : Spécification protocolaire ouverte de connectivité (MCP 2025-11-25) | Axes : `RQ3, RQ5`
+- **Synthèse factuelle** : La spécification du Model Context Protocol (révision du 25 novembre 2025) définit un protocole standardisé fondé sur JSON-RPC 2.0 inspiré du Language Server Protocol pour relier des applications hôtes LLM, des clients connecteurs et des serveurs exposant outils, ressources et gabarits. Le texte encadre le cycle de vie des sessions, les mécanismes de consentement utilisateur et les considérations de sûreté liées à l'exposition d'outils locaux ou distants. Dans l'ouvrage, MCP incarne l'axe vertical d'interopérabilité agent-outil tout en exigeant des contrôles supplémentaires d'authentification et de sémantique métier.
+
+### [21] SRC-039 — Agent2Agent (A2A) Protocol Specification
+
+- **Auteurs / Émetteur** : Linux Foundation / A2A Project (2026, 2026-05-28)
+- **Revue / Organisme / Dépôt** : Linux Foundation / A2A Project (release v1.0.1) — Identifiant : `A2A-SPEC-2026`
+- **URL ouverte vérifiée** : https://a2a-protocol.org/latest/specification/
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-039.txt` (24333 mots, 179807 octets)
+- **Empreinte SHA-256** : `fb9823ce13380143b0509c404cc5098c945ba2ec21f0dda779ddf90f4a351727`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `10.5/12` | Devis : Spécification ouverte d'interopérabilité inter-agents (Linux Foundation A2A) | Axes : `RQ3, RQ5`
+- **Synthèse factuelle** : La spécification Agent2Agent (A2A) propose une architecture à trois couches — modèle de données canonique, opérations abstraites et liaisons protocolaires JSON-RPC, gRPC et HTTP/REST — permettant à des agents opaques de domaines ou d'organisations distincts de se découvrir et de collaborer sur des tâches asynchrones de longue durée. Le protocole encadre la découverte par Agent Cards, les flux multi-tours, l'architecture d'extensions typées et la sécurité multi-locataires. A2A représente dans l'ouvrage le protocole horizontal complémentaire de MCP pour les échanges inter-entreprises.
+
+### [22] SRC-068 — Guideline B-10: Third-Party Risk Management
+
+- **Auteurs / Émetteur** : Office of the Superintendent of Financial Institutions (OSFI / BSIF) (2023, 2023-04-30)
+- **Revue / Organisme / Dépôt** : OSFI Canada — Identifiant : `OSFI-B10`
+- **URL ouverte vérifiée** : https://www.osfi-bsif.gc.ca/en/guidance/guidance-library/third-party-risk-management-guideline
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-068.txt` (7859 mots, 55115 octets)
+- **Empreinte SHA-256** : `db7ccc401ea3b392f22b42c75b63d657eb95cd1c6ab5ccf2d55551bf9be01625`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `12.0/12` | Devis : Ligne directrice prudentielle officielle sur les tiers (OSFI/BSIF B-10) | Axes : `RQ6`
+- **Synthèse factuelle** : La ligne directrice B-10 du BSIF encadre la gestion des risques liés aux accords avec des tiers pour toutes les banques, sociétés d'assurances et succursales étrangères sous réglementation fédérale canadienne. Elle exige une diligence raisonnable continue, l'évaluation du risque de concentration, la maîtrise des chaînes de sous-traitance de niveau n (« fourth parties ») et des plans de sortie et de réversibilité robustes pour les services technologiques critiques. Elle appuie l'exigence de substituabilité des modèles et d'encadrement des serveurs d'outils externes dans l'ouvrage.

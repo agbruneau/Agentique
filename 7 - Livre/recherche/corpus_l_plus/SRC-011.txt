@@ -1,0 +1,835 @@
+Skip to main content
+
+Deloitte Insights and our research centers deliver proprietary research designed to help organizations turn their aspirations into action.
+
+DELOITTE INSIGHTS
+
+Home
+
+Spotlight
+
+Digital Media Trends
+
+FSI Predictions
+
+Human Capital Trends
+
+Tech Trends
+
+TMT Predictions
+
+Weekly Global Economic Outlook
+
+Topics
+
+Economics
+
+Sustainability
+
+Industries
+
+Operations
+
+Strategy
+
+Technology
+
+Workforce
+
+More
+
+About
+
+Deloitte Insights Magazine
+
+Top 10 Reading Guide
+
+Videos
+
+Mobile For You - Add after first section only (DELOITTE INSIGHTS)
+
+For You
+
+DELOITTE RESEARCH CENTERS
+
+Consumer
+
+Consumer Industry Center Home
+
+Automotive
+
+Consumer Products
+
+Food
+
+Hospitality & Airlines
+
+Retail, Wholesale & Distribution
+
+Transportation
+
+Cross-Industry
+
+Center for Integrated Research Home
+
+Enterprise Growth & Innovation
+
+Environmental & Social Issues
+
+Technology & Transformation
+
+Workforce Trends
+
+Economics
+
+Global Economics Research Center Home
+
+Business Investment
+
+Consumer Spending
+
+Fiscal & Monetary Policy
+
+Globalization & International Trade
+
+Housing
+
+Labor Markets
+
+Prices & Inflation
+
+Energy & Industrials
+
+Research Center for Energy & Industrials Home
+
+Aerospace & Defense
+
+Chemicals & Specialty Materials
+
+Engineering & Construction
+
+Industrial Manufacturing
+
+Mining & Metals
+
+Oil & Gas
+
+Power & Utilities
+
+Renewable Energy
+
+Financial Services
+
+Center for Financial Services Home
+
+Banking & Capital Markets
+
+Commercial Real Estate
+
+Insurance
+
+Investment Management
+
+Private Capital
+
+Cross Financial Services
+
+Government & Public Services
+
+Center for Government Insights Home
+
+Defense, Security & Justice
+
+Government Health
+
+Higher Education
+
+Human Services
+
+State & Local Government
+
+Transportation & Infrastructure
+
+Whole of Government
+
+Life Sciences & Healthcare
+
+Center for Health Solutions Home
+
+Health Plans & Payers​
+
+Hospitals, Health Systems & Providers​
+
+Medtech & Health Tech Organizations
+
+Pharmaceutical Manufacturers​
+
+Tech, Media & Telecom
+
+Center for Tech, Media & Telecom Home
+
+Media & Entertainment
+
+Technology
+
+Telecommunications
+
+Semiconductor
+
+Sports
+
+Mobile For You - Add after first section only (DELOITTE INSIGHTS)
+
+Visually hidden title for dialog label (screen reader announces once via aria-labelledby)
+
+For You
+
+Mobile header with close button
+
+Mobile accordion container for Experience Fragment content
+
+Welcome Section (static, non-accordion)
+
+This will be populated from the XF's welcome section via JavaScript
+
+Accordion Container (data-section-fallback-label used when XF section has no title; i18n for translations)
+
+Accordion items will be dynamically created from XF sections via JavaScript
+
+Hidden: Original Experience Fragment content (will be transformed by JS)
+
+Welcome!
+
+For personalized content and settings, go to your My Deloitte Dashboard
+
+Latest Insights
+
+2026 Global Human Capital Trends
+
+Article
+
+•
+
+9-min read
+
+Tech Trends 2026
+
+Article
+
+•
+
+4-min read
+
+Recommendations
+
+2026 Industry outlooks
+
+Collection
+
+TMT Predictions 2026
+
+Article
+
+•
+
+9-min read
+
+About Deloitte Insights
+
+About Deloitte Insights
+
+Deloitte Insights Magazine, issue 33
+
+Magazine
+
+Topics for you
+
+Business Strategy & Growth
+
+Leadership
+
+Operations
+
+Technology
+
+Workforce
+
+Economics
+
+Watch & Listen
+
+Dbriefs
+
+Get timely business insights and practical knowledge from Deloitte specialists, plus earn CPE credit.
+
+Deloitte Insights Videos on YouTube
+
+From data visualizations to expert commentary, our video content delivers concise, actionable information to help you lead with clarity in a complex world. Visit Deloitte Insights on YouTube.
+
+Subscribe
+
+Deloitte Insights Newsletters
+
+Looking to stay on top of the latest news and trends? With MyDeloitte you'll never miss out on the information you need to lead. Simply link your email or social profile and select the newsletters and alerts that matter most to you.
+
+Need to update to Title of page on authoring instead of Image
+
+Tech, Media & Telecom
+
+SECTORS
+
+Media & Entertainment
+
+Technology
+
+Telecommunications
+
+Semiconductor
+
+Sports
+
+RESEARCH CENTERS
+
+Consumer
+
+Cross-Industry
+
+Economics
+
+Energy & Industrials
+
+Financial Services
+
+Government & Public Services
+
+Life Sciences & Healthcare
+
+Tech, Media & Telecom
+
+For You
+
+Welcome!
+
+For personalized content and settings, go to your My Deloitte Dashboard
+
+Latest Insights
+
+2026 Global Human Capital Trends
+
+Article
+
+•
+
+9-min read
+
+Tech Trends 2026
+
+Article
+
+•
+
+4-min read
+
+Recommendations
+
+2026 Industry outlooks
+
+Collection
+
+TMT Predictions 2026
+
+Article
+
+•
+
+9-min read
+
+About Deloitte Insights
+
+About Deloitte Insights
+
+Deloitte Insights Magazine, issue 33
+
+Magazine
+
+Topics for you
+
+Business Strategy & Growth
+
+Leadership
+
+Operations
+
+Technology
+
+Workforce
+
+Economics
+
+Watch & Listen
+
+Dbriefs
+
+Get timely business insights and practical knowledge from Deloitte specialists, plus earn CPE credit.
+
+Deloitte Insights Videos on YouTube
+
+From data visualizations to expert commentary, our video content delivers concise, actionable information to help you lead with clarity in a complex world. Visit Deloitte Insights on YouTube.
+
+Subscribe
+
+Deloitte Insights Newsletters
+
+Looking to stay on top of the latest news and trends? With MyDeloitte you'll never miss out on the information you need to lead. Simply link your email or social profile and select the newsletters and alerts that matter most to you.
+
+Variables used for elastic search purpose starts
+
+Variables used for elastic search purpose ends
+
+Primary image condition
+
+text
+
+title
+
+Unlocking exponential value with AI agent orchestration
+
+Sub title
+
+Autonomous AI agents may be transformational, but orchestration can be key for intelligent automation. Open source and proprietary communication protocols will compete to lead the way.
+
+diauthors
+
+article info
+
+Article
+
+•
+
+9-min read
+
+•
+
+18 November 2025
+
+•
+
+Deloitte Center for Technology Media & Telecommunications
+
+Share
+
+linkedin
+
+twitter
+
+facebook
+
+Print
+
+Image
+
+sectional-divider
+
+Full Image
+
+Secondary Image condition
+
+No Image
+
+Unlocking exponential value with AI agent orchestration
+
+As companies integrate multiagent systems—where different AI reasoning engines interact seamlessly across domains—agent orchestration (the effective coordination of role-specific agents) will be essential to help unlock their full potential. Thoughtful orchestration unleashes intelligent workflows by enabling multiagent systems to interpret requests, design workflows, delegate and coordinate tasks, and continuously validate and enhance outcomes.1 Conversely, poor agent orchestration can significantly limit this business value.
+
+On average, market estimates suggest that the autonomous AI agent market could reach US$8.5 billion by 2026 and US$35 billion by 2030 (figure 1).2  Deloitte predicts that if enterprises orchestrate agents better and thoughtfully address the associated challenges and risks, this market projection could increase by 15% to 30%—or as high as US$45 billion by 2030. According to an estimate, more than 40% of today’s agentic AI projects could be cancelled by 2027, due to unanticipated cost, complexity of scaling, or unexpected risks.3 These projects could drive significant revenue growth if enterprises remediate the potential pitfalls preemptively.
+
+Share infographic
+
+Share
+
+linkedin
+
+twitter
+
+facebook
+
+Or copy link
+
+Copy
+
+To leverage multiagent systems fully, businesses will likely work on their readiness to orchestrate agents with a specific degree of autonomy and address the early potential pitfalls. At the same time, multiagent systems will likely work for those businesses that focus on agent interoperability and management and implement the required changes in workflows and talent, effectively.
+
+Making businesses work for multiagent systems
+
+As businesses work through decisions related to their agent orchestration preparation, these three guideposts will likely be pivotal.
+
+From single-purpose agents to multiagent systems: Are enterprises ready?
+
+Enterprises today could leverage single-purpose AI agents to carry out multiple steps autonomously.4 Increasingly, they’re realizing that the benefits of agentic AI also extend to multiagent systems, unlocking broader and exponential enterprise value.5 However, tech implementations could be far from maturity for many organizations.
+
+In Deloitte’s 2025 Tech Value Survey of nearly 550 US cross-industry leaders, 80% of respondents believe their organization has mature capabilities with basic automation efforts, whereas only 28% believe the same with basic automation and AI agent–related efforts. Furthermore, among those pursuing each strategy, 45% expect that their basic automation efforts could yield the desired return on investment within three years, whereas only 12% expect the same for basic automation and agents, within a similar time frame.6
+
+How can they get there faster? Step one is to consider the three potential multiagent approaches (figure 2).7
+
+Share infographic
+
+Share
+
+linkedin
+
+twitter
+
+facebook
+
+Or copy link
+
+Copy
+
+The human layer in agent orchestration
+
+In 2025, businesses have been implementing relatively simple yet promising agent orchestrations in specific domains, like financial investment research and health care for critical illnesses.8 In such applications, agents often work together under the purview of human supervision or a dedicated “supervisor agent” to provide insights for human professionals to act on. More complex and autonomous agent orchestration spanning across multiple business domains has been limited, for the most part, to select industry leaders.9 As such efforts intensify, businesses will increasingly need to balance agentic autonomy and human oversight—carefully weighing innovation against risk, accountability, and trust.
+
+Research suggests that today’s emerging multiagent systems can perform better with humans in the loop, as they benefit from human experience and remain aligned with the nuanced organizational expectations.10 We predict that, in the next 12 to 18 months, more businesses will accelerate experimenting and scaling of complex agent orchestrations, keeping humans in the loop. They will likely adopt frameworks and solutions to integrate human judgment into agentic workflows for higher confidence, quality, and accountability.11
+
+Additionally, a progressive “autonomy spectrum”—humans in the loop, on the loop, and out of the loop—will emerge based on task complexity, business domain, workflow design, and outcome criticality (figure 3). While the humans out of the loop approach will still need continuous monitoring—human-in-the-loop and human-on-the-loop approaches will rely more on platforms and agent telemetry dashboards offering outcome tracing, orchestration visualization, and other details to guide human interventions. We predict, in 2026, the most advanced businesses will begin to lay the foundation of shifting toward human-on-the-loop orchestration.
+
+Share infographic
+
+Share
+
+linkedin
+
+twitter
+
+facebook
+
+Or copy link
+
+Copy
+
+Classic UI author placeholder, this is required
+
+Classic UI author placeholder, this is required
+
+Taming the fragmented AI agent proliferation
+
+In 2026, AI agent sprawl is likely to increase across different programming languages, frameworks, infrastructure, and communication protocols. To add complexity, some agents might need multimodal capabilities (the ability to interpret different information types and formats like text, audio, and images) to reach peak intelligence. Additionally, web protocol developments for agents, like Massachusetts Institute of Technology’s project NANDA, can define how agents coordinate on digital interfaces, external to businesses.12 In the longer term, it can enable strategic agent orchestration across internal and external networks of businesses, unlocking new capabilities.
+
+These variables will make multiagent interoperability critical yet challenging. Additionally, businesses will increasingly look for ways to direct, observe, and manage disparate AI agents through a unified platform. Lack of digital workforce operational standards may make building, configuring, and deploying AI agents decentralized and uncoordinated. This, in turn, will likely increase potential risks and costs of performance degradation and ethical, cyber, and regulatory compliance issues.
+
+Businesses can draw inspiration from previous technologies that shaped today’s information technology and business architecture, like cloud and microservices. Standardized protocols (like HTTPS, JSON, etc.), clear application programming interface blueprints, and domain-specific microservices enabled interoperability, stability, and ownership. Service registries, distributed tracking, and centralized logs improved discovery of capabilities, error resolution, and service management. Governance, service catalogs, and “zero-trust” security ensured robust systems and prevented confusion about versions. All these measures could offer lessons for building resilient and scalable multiagent systems. However, businesses should also adopt a fresh approach and focus on creating unique layers in their enterprise architecture.
+
+Enterprise architecture for resilient and scalable multiagent systems
+
+Share infographic
+
+Share
+
+linkedin
+
+twitter
+
+facebook
+
+Or copy link
+
+Copy
+
+Context layer: This robust knowledge engineering foundation is important for scalable AI agent architecture. It translates raw and diverse data into structured and well-governed knowledge representations (for example, knowledge graphs, ontologies, domain taxonomies, etc.) to provide agents with a “small world” model of the problem space. Optimized context retrieval techniques can empower agents with precise and timely access to relevant information, while context shaping can refine inputs to reduce noise and conflicts, enhancing agent accuracy and efficiency.
+
+Agent layer: This component leverages the underlying context layer to enable agent operations, focusing on safety, autonomy, and interoperability. Central to this layer is a modular and composable architecture that can integrate and adapt to new technologies. Strategies emphasizing tool relevance and abstraction help prevent agent overload. Additionally, thoughtful memory strategies optimize access to the right blend of factual, experiential, and procedural memories to enhance context awareness. This layer also selects appropriate AI models (ranging from compact, specialized models to expansive, powerful ones) to optimize agent performance across orchestration tasks. Robust security measures and comprehensive observability via advanced telemetry help ensure secure, transparent, and reliable agent activities.
+
+Experience layer: This primary interface between enterprise users and agents helps to control and course-correct agent actions. It provides users with relevant information like agent status and contextual data. It also enables prompt suggestions and comprehensible results in easy-to-review formats. Intuitive controls for human oversight, advanced feedback capabilities, and explainability features like displaying agent reasoning help make the outcomes more transparent and trustworthy. Additionally, when errors or ambiguous situations arise, it provides clear explanations and options to recover.
+
+Show more
+
+Making multiagent systems work for businesses
+
+As businesses master the technical foundations, these three guideposts can help enable better alignment with business imperatives.
+
+Flexible, scalable, and secure communication protocols
+
+Multiagent orchestration requires a standard form of communication among agents and between agents and other tools or platforms. It’s essential for predictable messaging on agent capabilities, insights, and actions. Over the last year, several inter-agent communication protocols have emerged, each promising coordination among agents built on different frameworks or models. These include Google’s A2A, Cisco-led AGNTCY, Anthropic’s MCP, and others.13 Tech providers are rallying their partners, alliances, and customers to achieve dominance in this category. Additionally, some of these protocols are being extended for trustworthy agent interoperability in specific domains like financial transactions.14
+
+Excessive competition across protocols could risk the development of “walled gardens,” where companies are locked into one communication protocol and agent ecosystem.15 It’s likely, however, that, by next year, these protocols will begin converging, resulting in two or three leading standards that other tech providers will need to align with to remain competitive.
+
+Which select protocols rise to the top will likely depend on multiple parameters and how businesses prioritize them according to their multiagent use, industry, and orchestration maturity. For example, lightweight protocols with standard application programming interfaces and developer tools for testing and simulation can ease experimentation. Support for peer-to-peer and hub-and-spoke agent interactions with shared context and memory and built-in negotiation, delegation, and conflict resolution can enable diverse orchestrations. Agent registries for trusted discovery and workload balance, asynchronous messaging, high throughput, low latency, and support for chained and nested workflows can help scale up agent orchestrations. Additionally, authentication, secure messaging, and access control can help mitigate security risks, while inter-agent messages and explanations can ensure auditability and error traceability.
+
+Management platforms and observability tools
+
+As multiagent systems scale, businesses will increasingly need to manage agents and understand the decisions being taken by them. They can leverage the unified and scalable platforms available, with supervising capabilities or “supervisor agents”—to interpret requests, route tasks, grant and manage access, and execute parallel or multi-step processes.16 It’s likely that, in the next year, tech companies will launch new capabilities here, leaving businesses to decide how they want such orchestration platforms set up. For example, central in-house platforms can limit vendor dependency and increase data and agent control. However, off-the-shelf platforms can help accelerate testing and manage the cost of innovation.
+
+Whatever businesses choose, agent orchestration platforms will be important to track operational metrics, enhance performance, and manage cost. Currently, some platforms are developing ways to integrate monitoring of agent telemetry such as latency, error rates, token usage, and other tool insights.17 Guardrail assessments and capabilities to detect unusual behaviors can help mitigate risks. Over time, such platforms will likely bring innovative features, such as layered business insights and additional control mechanisms. For example, an emerging category called guardian agent can both own tasks and govern other agents to sense and manage risky behaviors.18
+
+Agent orchestration platforms will also need to incorporate regulatory compliance, an area where international efforts are advancing. The European Union AI Act sets requirements around risk assessment, transparency measures, technical safeguards, and human oversight.19 In addition, the EU’s standards bodies are working to develop harmonized legal standards as per the EU AI Act.20
+
+Business process and workforce changes
+
+Gartner® predicts that, by 2028, “33% of enterprise software applications will include agentic AI, up from less than 1% in 2024, with at least 15% of day-to-day work decisions being made autonomously through AI agents.”21 To get there, more businesses will likely begin reimagining their workflows in 2026, defining concrete and unique modules. This will help determine the kinds of agent orchestration needed, depending on criticality, dependencies, task predictability, and targeted resilience. For example, some modules may benefit from agents working sequentially—where one agent’s output becomes another’s input—while other modules might leverage agents operating in parallel or collaboratively.
+
+Another major consideration is how humans will collaborate with multiagent systems. A global survey of 200 human resources leaders found that 86% of chief human resources officers see integrating digital labor (that is, technologies performing intelligent work) as central to their role.22 Early models show humans acting as “agent bosses,” or working alongside agents.23 In 2026, businesses will likely delve deeper into these collaboration models across more roles, functions, and tasks to identify where agent orchestration can enhance efficiency and where human strengths and collaboration can bring more meaningful value.24
+
+By next year, enterprises will also likely start reimagining how existing roles can unlock higher-value outcomes with multiagent systems.25 For example, human contributions can include more creative prompting and guiding multiagent systems while solving problems and taking strategic decisions efficiently. At the same time, businesses will also likely focus on defining the new human skills and responsibilities for agent training, orchestration, oversight, and governance.26 Tailored training programs and developing leaders to manage both human and digital workers will be important—to embed higher quality, accountability, and resilience in multiagent decisions while leveraging uniquely human skills.27
+
+The bottom line: 2026 could be an inflection point for agent orchestration
+
+Agent orchestration will likely shape the next era of intelligent enterprises. Next year, we expect businesses to start scaling multiagent systems, bringing additional complexity to their IT and business environments. Agent communication protocols will likely consolidate around those offering ease of experimentation, flexibility, scalability, and security. Enterprise workflows will likely start becoming more modular, powered by agents—built internally or acquired through software as a service and other third-party providers. New and modified roles for human workers will begin emerging, facilitating effective collaboration with multiagent systems.
+
+However, businesses and technology providers should act decisively to shape that journey.
+
+Considerations for businesses adopting multiagent systems
+
+Define ownership and accountability. Businesses should identify who in the C-suite will own their company’s AI agent vision, strategy, and execution with aligned incentives and accountability. This role could most naturally align with those leading strategic technology initiatives and driving innovation, but an integrated function can demonstrate more holistic impact and risk management.
+
+Design for evolution, not just deployment. Agents and orchestration capabilities are advancing fast. Modular “plug-and-play” orchestration frameworks can help businesses boost flexibility, cost-efficiency, and innovation, while minimizing disruption to system architectures.
+
+Stress-test orchestrations rigorously. Before scaling, businesses should simulate agent orchestration with real complexities of businesses—incomplete data, conflicting goals, or adversarial scenarios. Controlled environments can reveal hidden failure points and strengthen safeguards before enterprisewide deployments.
+
+Take governance and measurement seriously. AI agent governance will be critical to help ensure secure, compliant, and reliable orchestration on a scale. Setting clear rules for AI agent roles, defining their accountability, designing fallback routes to address errors, and oversight can help prevent misuse, ensure auditability, and build trust. Beyond technical readiness, enterprises should identify and track metrics that connect agent orchestration to value creation—such as quicker decisions, better customer experience, or faster innovation.
+
+Considerations for tech providers
+
+Build with interoperability. Besides adhering to inter-agent communication standards, tech providers should design solutions that are modular, and where agents understand each other’s intent and context of actions, to enable seamless coordination.
+
+Rethink trust. Insight delivery won’t be enough; the ability to understand or validate AI agent output is essential for trust and adoption. Novel security measures like digital identity for agents will also be pertinent to build and run trustworthy multiagent systems.
+
+Make governance inherent. Learning what businesses will need over time, to align with human values and organizational policies, could be key to providing relevant governance frameworks. Future solutions should have innovative agent monitoring and advanced governance, and ethical guardrails to enable compliance and efficacy.
+
+Expand the ecosystem. Tech providers should continue forming and strengthening industrywide alliances to achieve necessary standards in communication protocols, trust, and governance. Innovative and cross-platform orchestration tools are gaining traction, signaling opportunities for new and established tech players to strengthen their market position through acquisitions, partnerships, and collaboration.28
+
+by
+
+Sayantani Mazumder
+
+Deloitte India
+
+Sayantani Mazumder
+
+Manager, Center for Technology, Media & Telecommunications
+
+Deloitte India
+
+Sayantani Mazumder is a manager with the Deloitte Center for Technology, Media & Telecommunications. She specifically focuses on researching and writing about emerging trends and challenges that businesses need to navigate in the dynamic technology space around software, services & platforms, and hardware & consumer tech. She is passionate about working with businesses to turn insights into scalable actions.
+
+sayamazumder@deloitte.com
+
+China Widener
+
+Deloitte United States
+
+China Widener
+
+Vice Chair | US Tech, Media & Telecommunications leader
+
+Deloitte United States
+
+China is Deloitte’s vice chair and US Technology, Media & Telecommunications (TMT) industry leader. She also serves on Deloitte's US Board of Directors.
+
+She offers a distinctive perspective on the future of the TMT industry, with a particular interest in the evolution of Agentic AI—intelligent systems capable of autonomous decision-making—and their transformative impact across the enterprise. She is passionate about helping clients unlock the full potential of Agentic AI to accelerate innovation, improve operational efficiency, and create new sources of competitive advantage, all while maintaining a steadfast commitment to trustworthy AI.
+
+China has co-authored articles on AI, technology frameworks for enterprises, delivery model analysis, and closing the talent gap. She is a highly sought-after speaker and facilitator and her technology experience and career progression has been featured on several podcasts and publications.
+
+cwidener@deloitte.com
+
++1 513 723 4174
+
+Gillian Crossan
+
+Deloitte Global
+
+Gillian Crossan
+
+Global Technology, Media & Telecommunications Industry Leader
+
+Deloitte Global
+
+Gillian Crossan is the Global Technology, Media & Telecommunications industry (TMT) leader. In addition, she is a principal in Risk & Financial Advisory, Deloitte & Touche LLP and serves as the Global Lead Client Service partner for a $1B+ Digital Platform Company and a 360-degree relationship for Deloitte. Gillian has been with Deloitte for more than 25 years and has worked in both the UK and the US across sectors including energy, healthcare, consumer products, and technology and enjoys being at the heart of industry convergence. Gillian is passionate about working with organizations that are not just transforming themselves but are transforming our world. Gillian has always focused on Diversity, Equity, and Inclusion and works to support female client executives in preparing for corporate board service. In the past, she worked with the US Chief Inclusion officer to roll out Inclusion Councils and lead People and Purpose for the Global TMT Industry.
+
+gicrossan@deloitte.com
+
++1 206 716 6254
+
+Girija Krishnamurthy
+
+Deloitte United States
+
+Girija Krishnamurthy
+
+Global Technology sector leader
+
+Deloitte United States
+
+Girija Krishnamurthy is the Global Technology sector leader at Deloitte. She also serves as the global lead client service partner for a Fortune 100, leading technology company.  She has previously served as the National Hardware and Consumer Tech Industry leader at Deloitte Consulting LLP . With over 20 years of consulting experience, Girija has advised C-suite executives and led large-scale business transformations for leading technology clients, including several Fortune 100 and private equity-owned fast-growth companies. She has also held key leadership roles within Deloitte  US, such as leading finance digital transformation for major technology practices. In addition, Girija leads Global Portco Services for Private Equity, a rapidly expanding area. She is passionate about delivering innovative, executable solutions that help clients simplify complexity and achieve meaningful results.
+
+gkrishnamurthy@deloitte.com
+
++1 949 735 9918
+
+Baris Sarer
+
+Deloitte United States
+
+Baris Sarer
+
+AI Strategy Market Offering Leader
+
+Deloitte United States
+
+Baris leads the AI Strategy market offering for Deloitte US. He also serves as Deloitte's Global AI Leader for the Technology, Media & Telecommunications (TMT) industry. In these roles, he focuses on unleashing the power of AI for clients, scaling Deloitte's capabilities through strategic investments, assets, and partnerships.
+
+With over 20 years of experience as a technology strategist in the TMT industry, Baris has successfully guided clients in business transformation through data-driven strategies and intelligent technology investments that prioritize business value. His track record includes leading large-scale, complex programs focused on maximizing returns on technology assets, capitalizing on data, and scaling AI capabilities.
+
+Before joining Deloitte in 2012, Baris spent over a decade in the wireless communications industry, where he held diverse leadership roles in research and development, operations, and sales. His global experience in advising clients and delivering projects has been a cornerstone of his success in driving innovation and value for organizations.
+
+bsarer@deloitte.com
+
++1 212 313 2697
+
+Diana Kearns-Manolatos
+
+Deloitte United States
+
+Diana Kearns-Manolatos
+
+Senior Research Leader | Technology and Transformation
+
+Deloitte United States
+
+Diana Kearns-Manolatos is a senior manager with Deloitte Services LP’s Center for Integrated Research, where she leads Deloitte’s global research on digital transformation. She is based in New York, United States.
+
+dkearnsmanolatos@deloitte.com
+
++1 212 436 3301
+
+Share
+
+linkedin
+
+twitter
+
+facebook
+
+Print
+
+Endnotes
+
+Deloitte, “The cognitive leap: How to reimagine work with AI agents ,” December 2024.
+
+The baseline projection is derived from a Deloitte analysis of global autonomous AI agent market projections as per seven publicly available and third-party research reports. The estimated increase of 15% to 30% in the projected market is modeled on future scenarios where fewer agentic AI projects are cancelled owing to improved enterprise readiness.
+
+Gartner, “Gartner predicts over 40% of agentic AI projects will be canceled by end of 2027 ,” press release, June 25, 2025.
+
+Bojan Ciric and Prakul Sharma, “Generative AI meets the virtual world: A model for human-AI collaboration ,” Deloitte Insights, Feb. 10, 2025.
+
+Abdi Goodarzi and Nitin Mittal, “A new digitally-enabled workforce era: How AI agents can help deliver functional efficiency and value across the enterprise ,” Forbes, Aug. 18, 2025.
+
+Tim Smith, Gregory Dost, Garima Dhasmana, Parth Patwari, Diana Kearns-Manolatos, and Iram Parveen, “Digital budgets are rising, but investment strategies may need a recalibration ,” Deloitte Insights, Oct. 16, 2025. The survey asked respondents about four types of AI automation and their incremental actions across each: mature or very mature respondents for basic automation (n = 443) and basic automation and AI agents (n = 153); and those with up to three-year expectations for basic AI automation (n = 245) and basic automation and AI agents (n = 68).
+
+Prakul Sharma, Val Srinivas, and Abhinav Chauhan, “How banks can supercharge intelligent automation with agentic AI ,” Deloitte Insights, Aug. 14, 2025; Kausik Chaudhuri, “Applying agentic AI to legacy systems? Prepare for these 4 challenges ,” CIO, July 16, 2025; SaaS meets AI agents: Transforming budgets, customer experience, and workforce dynamics ; Bojan Ciric and Prakul Sharma, “Scaling AI agents may be risky without an enterprise marketplace ,” Deloitte Insights, Sept. 15, 2025.
+
+Julian Horsey, “AI investment research agent “Ask David” built by JP Morgan ,” Geeky Gadgets, May 30, 2025; Irene Iglesias Álvarez, “The agentic AI assist Stanford University cancer care staff needed ,” CIO, May 30, 2025.
+
+Isabelle Bousquette, “Why Walmart is overhauling its approach to AI agents ,” The Wall Street Journal, July 24, 2025.
+
+Henry Peng Zou et. al, “A call for collaborative intelligence: Why human-agent systems should precede AI autonomy ,” arxiv, June 11, 2025.
+
+Jesus Olivera, “Ensuring accuracy in AI with human-in-the-loop ,” Medium, Sept. 27, 2024.
+
+John Werner, “They’re making TCP/IP for AI, and it’s called NANDA ,” Forbes, May 01, 2025
+
+Emilia David, “Google’s Agent2Agent interoperability protocol aims to standardize agentic communication ,” VentureBeat, April 9, 2025.
+
+Emilia David, “Google’s new agent Payments Protocol (AP2) allows AI agents to complete purchases — is your enterprise ready? ” VentureBeat, Sept. 16, 2025.
+
+Leslie Joseph and Rowan Curran, “Interoperability is key to unlocking agentic AI’s future ,” Forrester, March 25, 2025.
+
+Alfred Shen and Anya Derbakova, “Design multi-agent orchestration with reasoning using Amazon Bedrock and open source frameworks ,” Amazon Web Services, Dec. 19, 2024; IBM, “Multiagent orchestration , accessed Oct. 7, 2025.
+
+Amazon Web Services, “Observe your agent applications on Amazon Bedrock AgentCore Observability ,” accessed Oct. 13, 2025.
+
+Gartner, “Gartner predicts that guardian agents will capture 10-15% of the agentic AI market by 2030 ,” press release, June 11, 2025.
+
+The Future Society, “How AI agents are governed under the EU AI Act ,” June 4, 2025.
+
+CEN-CENELEC, “Artificial intelligence ,” accessed Oct. 7, 2025.
+
+Daniel Sun, “Capitalize on the AI agent opportunity ,” Gartner, Feb. 27, 2025.
+
+GARTNER is a registered trademark and service mark of Gartner, Inc. and/or its affiliates in the U.S. and internationally and is used herein with permission. All rights reserved.
+
+Salesforce, “HR leaders to redeploy a quarter of their workforce as agentic AI adoption expected to grow 327% by 2027 ,” May 5, 2025.
+
+Ibid; Atikah Amalia, “The marketer’s new job title: AI boss ,” Content Grip, April 29, 2025.
+
+Kyle Forrest, Brad Kreit, Abha Kulkarni, Roxana Corduneanu, and Sue Cantrell, “AI, demographic shifts, and agility: Preparing for the next workforce evolution ,” Deloitte Insights, Aug. 25, 2025.
+
+Michael Caplan et al., “The technology operating model of the future: Rise of the agentic enterprise ,” The Wall Street Journal, Aug. 23, 2025.
+
+Ritu Jyoti, “The rise of the agentic economy: How autonomous AI is reshaping the future of work ,” CIO, Sept. 8, 2025.
+
+Isabelle Bousquette, “Digital workers have arrived in banking ,” The Wall Street Journal, June 30, 2025.
+
+Marina Temkin, “Why AI agent startup /dev/agents commanded a massive $56M seed round at a $500M valuation ,” TechCrunch, Nov. 28, 2024; Hui Wong, “Questflow secures $6.5M seed round to build AI agent economy for every workflow ,” Marketers Media, July 24, 2025.
+
+Tooltip for Endnotes hidden by default
+
+COPY
+
+Bootstrap Mobile Modal for Endnotes, hidden by default
+
+ENDNOTE
+
+Endnote content will be inserted here
+
+Modal Footer with Copy Button
+
+COPY
+
+Acknowledgments
+
+This report was researched and co-authored by Ankit Dhameja and Michael Steinhart.
+
+The authors would like to thank Prakul Sharma, Rajib Deb, Mark Szarka, David Jarvis, Abhinav Chauhan, and Iram Parveen for their contributions to this article.
+
+Cover image by: Jaime Austin; Adobe Stock
+
+Copyright
+
+Copyright © 2026  Deloitte Development LLC. All rights reserved. Member of Deloitte Touche Tohmatsu Limited
+
+About Deloitte Insights
+
+Deloitte Insights publishes original articles, reports and periodicals that provide insights for businesses, the public sector and NGOs. Our goal is to draw upon research and experience from throughout our professional services organization, and that of coauthors in academia and business, to advance the conversation on a broad spectrum of topics of interest to executives and government leaders.
+
+Deloitte Insights is an imprint of Deloitte Development LLC.
+
+About this publication
+
+This publication contains general information only, and none of Deloitte Touche Tohmatsu Limited, its member firms, or its and their affiliates are, by means of this publication, rendering accounting, business, financial, investment, legal, tax, or other professional advice or services. This publication is not a substitute for such professional advice or services, nor should it be used as a basis for any decision or action that may affect your finances or your business. Before making any decision or taking any action that may affect your finances or your business, you should consult a qualified professional adviser. None of Deloitte Touche Tohmatsu Limited, its member firms, or its and their respective affiliates shall be responsible for any loss whatsoever sustained by any person who relies on this publication.
+
+About Deloitte
+
+Deloitte refers to one or more of Deloitte Touche Tohmatsu Limited, a UK private company limited by guarantee (“DTTL”), its network of member firms, and their related entities. DTTL and each of its member firms are legally separate and independent entities. DTTL (also referred to as "Deloitte Global") does not provide services to clients. In the United States, Deloitte refers to one of more of the US member firms of DTTL, their related entities that operate using the "Deloitte" name in the United States and their respective affiliates. Certain services may not be available to attest clients under the rules and regulation of public accounting. Please see www.deloitte.com/about to learn more about our global network of member firms.
+
+related content
+
+Scaling AI agents may be risky without an enterprise marketplace
+
+App store–like marketplaces where users can discover and subscribe to AI agents could help solve common agentic AI scaling and security challenges
+
+Article
+
+•
+
+6-min read
+
+Generative AI meets the virtual world: A model for human-AI collaboration
+
+Imagine a future in which virtual meetings with specialized AI agents felt similar to meetings with human coworkers. Could this enhance decision-making and boost performance?
+
+Article
+
+•
+
+10-min read
+
+Deloitte Insights and our research centers deliver proprietary research designed to help organizations turn their aspirations into action.

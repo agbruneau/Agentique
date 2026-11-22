@@ -1,0 +1,87 @@
+@startuml
+<style>
+document {
+  BackgroundColor #FFFFFF
+}
+.det {
+  BackgroundColor #EBF2F7
+  LineColor #1E4E79
+  LineThickness 2.5
+  FontColor #0F2942
+}
+.prob {
+  BackgroundColor #FFF5E0
+  LineColor #B45309
+  LineThickness 2.0
+  LineStyle 5
+  FontColor #451A03
+}
+.ext {
+  BackgroundColor #F3F4F6
+  LineColor #4B5563
+  LineThickness 1.5
+  FontColor #111827
+}
+package {
+  BackgroundColor #F8FAFC
+  LineColor #64748B
+  LineThickness 1.2
+  FontColor #334155
+}
+legend {
+  BackgroundColor #FFFFFF
+  LineColor #CBD5E1
+  FontColor #1E293B
+  FontSize 10
+}
+</style>
+hide stereotype
+top to bottom direction
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam nodesep 16
+skinparam ranksep 24
+skinparam padding 6
+
+package "Trois facteurs de la règle de deux" {
+  rectangle "Facteur A : Entrée externe\nnon fiable" as FA <<ext>>
+  rectangle "Facteur B : Accès aux données\nsensibles internes" as FB <<det>>
+  rectangle "Facteur C : Action externe\nou mutation irréversible" as FC <<det>>
+}
+
+rectangle "Moteur de la règle de deux\n(interdit A + B + C dans un même tour)" as R2 <<det>>
+rectangle "Modèle dans le tour courant\n(au plus deux facteurs actifs)" as LLM <<prob>>
+
+package "Défense en profondeur hors modèle" {
+  rectangle "Registre d'outils épinglé\n(hachage SHA-256 et provenance)" as REG <<det>>
+  rectangle "Sas d'assainissement inter-tours\n(rupture d'état résiduel)" as SAS <<det>>
+  rectangle "Porte de politique hors modèle\n(validation déterministe)" as GATE <<det>>
+  rectangle "Confinement microVM / WASI\n(système et réseau cloisonnés)" as VM <<det>>
+  rectangle "Boucle de sûreté STAMP / STPA\n(contrôle des dérives système)" as STAMP <<det>>
+  database "Journal de blocage\net alertes d'intégrité" as LOG <<det>>
+}
+
+FA --> R2
+FB --> R2
+FC --> R2
+R2 --> LLM : contexte maximal permis (≤ 2)
+R2 --> LOG : refuse\nA + B + C
+LLM --> GATE : demande d'outil
+REG --> GATE : vérifie signature outil
+GATE --> VM : exécution confinée
+VM --> SAS : sortie filtrée
+STAMP --> GATE : ajuste invariants
+GATE --> LOG : trace refus ou succès
+
+FA -[hidden]right-> FB
+FB -[hidden]right-> FC
+REG -[hidden]right-> SAS
+
+legend bottom
+  **Trait plein ardoise** : frontière déterministe possédée
+  **Trait pointillé ambre** : composant probabiliste substituable
+  **Trait plein gris** : composant externe
+end legend
+@enduml
