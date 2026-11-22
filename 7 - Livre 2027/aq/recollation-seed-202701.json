@@ -1,0 +1,1158 @@
+[
+  {
+    "claim_loc": "00-liminaire:P006:S01",
+    "paragraph_loc": "00-liminaire:P006",
+    "unit": "00-liminaire",
+    "category": "empirique",
+    "text": "Dans leur étude de 2026, Genewein et ses coauteurs estiment la croissance du stock mondial de calcul effectif pour l'IA à au moins un ordre de grandeur par an sur la dernière décennie — un facteur composé de \\(11{,}25\\times\\) (gains matériels par dollar, dépenses d'infrastructure et progrès algorithmiques) prudemment arrondi à \\(10\\times\\) —, tandis que le coût de calcul sous-jacent d'une charge fixe recule d'au moins \\(4\\times\\) par an et que les tarifs d'inférence observés pour un niveau de performance donné chutent de \\(5\\times\\) à \\(13\\times\\) par an depuis 2023 [1].",
+    "refs": [
+      1
+    ],
+    "source_ids": [
+      "SRC-001"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-001.txt (§ 2 Rates of progress / Cognitive Industrialization, note 2) : « 1.5 * 2.5 * 3 = 11.25, which we round down to 10× per year as a conservative estimate... an order of magnitude per year is on the lower end » ; « bring the underlying compute cost of running a fixed AI workload down by at least 4× per year » ; « Observed inference API prices... have fallen even faster since 2023: 5×–10× per year in Gundlach et al. (2025) and 13× per year on average... in Emberson and Roodman (2026) ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "00-liminaire:P009:S01",
+    "paragraph_loc": "00-liminaire:P009",
+    "unit": "00-liminaire",
+    "category": "juridique",
+    "text": "Dans les services financiers fédéraux canadiens, le `BSIF` mettra en vigueur le 1er mai 2027 sa ligne directrice `E-23` révisée sur le risque de modélisation [9].",
+    "refs": [
+      9
+    ],
+    "source_ids": [
+      "SRC-065"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-065.txt (en-tête BSIF E-23 édition 2027) : « Ligne directrice E-23 – Gestion du risque de modélisation à l'échelle de l'entreprise (2027) », « Date d'entrée en vigueur : Le 1 mai 2027 », applicable aux institutions financières fédérales.",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "00-liminaire:P011:S02",
+    "paragraph_loc": "00-liminaire:P011",
+    "unit": "00-liminaire",
+    "category": "prospectif_technique",
+    "text": "Or sa section consacrée à la sûreté énonce deux avertissements décisifs : d'une part, les outils représentent une exécution de code arbitraire dont les annotations descriptives doivent être tenues pour non fiables sauf source vérifiée; d'autre part, la spécification reconnaît explicitement que le protocole `MCP` lui-même ne peut faire respecter au niveau du protocole les règles de consentement, de confidentialité et de contrôle d'accès, laissant cette responsabilité aux implémenteurs [8].",
+    "refs": [
+      8
+    ],
+    "source_ids": [
+      "SRC-038"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-038.txt (Security and Trust & Safety — Tool Safety & Implementation Guidelines) : « Tools represent arbitrary code execution... descriptions of tool behavior such as annotations should be considered untrusted, unless obtained from a trusted server » ; « While MCP itself cannot enforce these security principles at the protocol level, implementors SHOULD : Build robust consent and authorization flows... Implement appropriate access controls and data protections... Consider privacy implications ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "00-liminaire:P014:S01",
+    "paragraph_loc": "00-liminaire:P014",
+    "unit": "00-liminaire",
+    "category": "empirique",
+    "text": "L'étude terrain *Measuring Agents in Production* (`MAP`) de Pan et ses coauteurs, menée d'avril à novembre 2025 auprès de 86 systèmes en production ou phase pilote (filtrés parmi 306 répondants dans 26 domaines) et 20 équipes interviewées, constate que 70 % des cas étudiés (14 sur 20) sollicitent des modèles sur étagère guidés par invite, sans ajustement des poids (`SFT` ni `RL`) — tandis que 85 % (17 sur 20) emploient des modèles propriétaires — afin d'éviter des réentraînements coûteux lors des mises à jour de versions [6].",
+    "refs": [
+      6
+    ],
+    "source_ids": [
+      "SRC-027"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-027.txt (Abstract, § 1, § 5.1, § 5.2, Fig. 5) : étude menée « from April to November of 2025 », 20 études de cas interviewées et 306 répondants dans 26 domaines filtrés à 86 systèmes en production ou pilote ; « Seventeen of 20 case studies use closed-source models » (85 %) ; « Fourteen of 20 cases (70%) use off-the-shelf models without supervised fine-tuning (SFT) or reinforcement learning (RL) » ; « SFT and RL require substantial implementation effort and are brittle to model upgrades, requiring costly retraining when versions change ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "00-liminaire:P023:S01",
+    "paragraph_loc": "00-liminaire:P023",
+    "unit": "00-liminaire",
+    "category": "empirique",
+    "text": "Les praticiens de l'étude `MAP` pratiquent déjà cette retenue : 80 % des études de cas (16 sur 20) suivent des flux structurés fixes plutôt qu'une planification autonome ouverte; 68 % des systèmes déployés s'arrêtent au plus à 10 étapes avant intervention humaine — et 47 % en franchissent moins de 5 — tandis que 85 % des études de cas en production (17 sur 20) privilégient une implémentation interne directe par appels d'API plutôt qu'un cadriciel tiers jugé rigide, lourd ou incompatible avec la sécurité interne [6].",
+    "refs": [
+      6
+    ],
+    "source_ids": [
+      "SRC-027"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-027.txt (Abstract, § 5.4, § 5.5, Fig. 7a) : « Eighty percent (16/20) of case studies use structured workflows rather than open-ended autonomous planning » ; « 68% execute at most 10 steps before human intervention » (Fig. 7a : 28/60 à 1–4 étapes = 47 % et 13/60 à 5–10 étapes, soit 41/60 = 68 %, texte § 5.4 « 47% execute fewer than 5 steps ») ; « Among case studies with production deployments, 85% (17/20) build custom in-house implementations with direct API calls » invoquant flexibilité (« rigid frameworks cannot support »), simplicité (« dependency bloat ») et sécurité (« enterprise policies prohibit certain external libraries »).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch01:P016:S02",
+    "paragraph_loc": "ch01:P016",
+    "unit": "ch01",
+    "category": "empirique",
+    "text": "Les auteurs qualifient d'**industrialisation cognitive** le processus par lequel la standardisation et la chute exponentielle du coût du calcul transforment une vaste part du travail intellectuel automatisable en capacité industrielle abondante et interchangeable [1].",
+    "refs": [
+      1
+    ],
+    "source_ids": [
+      "SRC-001"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-001.txt (Cognitive Industrialization) : « cheap availability is highly likely to lead to standardization and exchangeability of suppliers for automated cognitive work. The result would be that at least the cognitive work that can be done by today's AIs would become a commodity, enabling large-scale automation and industrial build-out, i.e., Cognitive Industrialization ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch01:P024:S02",
+    "paragraph_loc": "ch01:P024",
+    "unit": "ch01",
+    "category": "empirique",
+    "text": "Ils ancrent leur analyse dans la théorie de l'intelligence artificielle universelle (*Universal AI*, formalisée par l'agent idéal `AIXI` de Marcus Hutter) et dans le score de Legg-Hutter, qui mesure l'intelligence comme la performance moyenne espérée sur l'ensemble des tâches calculables, pondérées par leur simplicité algorithmique [1].",
+    "refs": [
+      1
+    ],
+    "source_ids": [
+      "SRC-001"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-001.txt (§ 3 note 4, § 4) : « Universal AI (UAI)... defined formally via the AIXI agent (Hutter, 2005; Hutter et al., 2024). It is (per definition) an agent that maximizes the Legg-Hutter score of intelligence » ; « The Legg-Hutter score formalizes intelligence as the average performance of an agent across all computable tasks » ; note 4 : « Across all these tasks, simpler ones (lower Kolmogorov complexity) are given more weight when taking the average ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch01:P028:S02",
+    "paragraph_loc": "ch01:P028",
+    "unit": "ch01",
+    "category": "empirique",
+    "text": "Or, soulignent Genewein et ses collègues, même si chaque modèle individuel plafonnait près du niveau humain en raison de cette barrière, l'abondance du calcul permettrait encore de déployer des millions ou des milliards d'instances et de former des collectifs d'agents qui atteindraient des capacités collectivement superhumaines par échelle et division cognitive du travail [1].",
+    "refs": [
+      1
+    ],
+    "source_ids": [
+      "SRC-001"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-001.txt (§ 5.1, § 5.3, § 5.5 Embodied Bottleneck) : « running human-level AGI systems at scale: millions or billions of instances... It seems hard to argue that such a leap would not constitute the step change from AGI to ASI, even though each individual AGI system may be at human level » ; § 5.1/5.3 « organizations of digital workers that may be collectively much more intelligent and capable... collectively superhuman capabilities... cognitive division of labor ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch01:P038:S02",
+    "paragraph_loc": "ch01:P038",
+    "unit": "ch01",
+    "category": "juridique",
+    "text": "Hadfield et Koh convergent vers le même impératif institutionnel en soulignant l'absence d'infrastructure d'identité et d'enregistrement rattachant les agents à des mandants responsables — ou à des régimes dédiés de personnalité juridique — ainsi que le besoin de registres à l'épreuve de la falsification pour fonder les mécanismes de sanction [4].",
+    "refs": [
+      4
+    ],
+    "source_ids": [
+      "SRC-005"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-005.txt (§ 4.1 Agent identity, registration, and records) : « Such identity and registration infrastructure are currently missing for AI agents » ; « registered to a formally identified human (entity) who is legally accountable... » ; « second possible route... accorded legal personhood » ; « in the absence of robust record-keeping infrastructure, AI agents might be able to erase or falsify their records... record-keeping institutions can allow agents to sustain cooperation since bad behavior can be observed and punished ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch02:P002:S04",
+    "paragraph_loc": "ch02:P002",
+    "unit": "ch02",
+    "category": "empirique",
+    "text": "Microsoft déclarait au même moment 364,6 G\\$ US de baux futurs, principalement des centres de données, non encore entrés en vigueur [10].",
+    "refs": [
+      10
+    ],
+    "source_ids": [
+      "SRC-020"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-020.txt (Note 12 — Leases, p. 22) : « As of September 30, 2026, we had additional leases, primarily for datacenters, that had not yet commenced of $ 364.6 billion ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch02:P008:S02",
+    "paragraph_loc": "ch02:P008",
+    "unit": "ch02",
+    "category": "prospectif_technique",
+    "text": "Deloitte retient dans ses prévisions *TMT Predictions 2026* une base de 8,5 G\\$ US en 2026, avec un scénario central à 35 G\\$ US en 2030 pouvant monter à 45 G\\$ US si les verrous d'orchestration et de gouvernance sont levés [4].",
+    "refs": [
+      4
+    ],
+    "source_ids": [
+      "SRC-011"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-011.txt (corps & Endnotes) : « market estimates suggest that the autonomous AI agent market could reach US$8.5 billion by 2026 and US$35 billion by 2030 (figure 1). Deloitte predicts that if enterprises orchestrate agents better and thoughtfully address the associated challenges and risks, this market projection could increase by 15% to 30%—or as high as US$45 billion by 2030 ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch02:P011:S01",
+    "paragraph_loc": "ch02:P011",
+    "unit": "ch02",
+    "category": "empirique",
+    "text": "| Périmètre ou émetteur | Période vérifiée | Montant en dollars US | Périmètre comptable et statut probatoire | | :--- | :--- | :--- | :--- | | Alphabet [7] | 9M calendaires 2026 | 132,0 G\\$ US (131 953 M\\$ US) | Trésorerie ; T3 = 51 355 M\\$ US, flux libre T3 = -9,1 G\\$ US (`Form 8-K`) | | Amazon [8] | 9M calendaires 2026 | 175,7 G\\$ US (175 670 M\\$ US) | Décaissements bruts ; prévision 2026 ~220 G\\$ US, flux libre TTM = -42,4 G\\$ US (`Form 8-K`) | | Meta [9] | 9M calendaires 2026 | 83,1 G\\$ US (83 055 M\\$ US) | Hors 2 769 M\\$ US de locations-financement ; prévision 2026 135 à 145 G\\$ US locations incluses (`Form 8-K`) | | Microsoft [10, 11, 12] | 9M calendaires 2026 | 106,0 G\\$ US (106 045 M\\$ US) | Reconstitués (`FY26` 115 948 - `S1 FY26` 49 270 + `T1 FY27` 39 367 M\\$ US), hors 5 192 M\\$ US de baux financiers T1 (`10-K`/`10-Q`) | | **Total 4 hyperscalers** [7, 8, 9, 10, 11, 12] | **9M 2026 / rythme annuel** | **496,7 G\\$ US / ~690 à 740 G\\$ US** | Somme exacte 496 723 M\\$ US sur 9 mois ; ordre de grandeur annuel combinant prévisions et rythmes | | Logiciel agentique (série ouverte) [4, 5, 6] | Année 2026 | 5,3 à 9,9 G\\$ US | Trois études ouvertes (`GVR`, `Deloitte`, `Mordor`), rapports payants exclus | | Logiciel agentique (projections) [4, 5, 6] | Années 2027 et 2030 | 7,8 à 14,1 G\\$ US (2027) ; 24,5 à 45,0 G\\$ US (2030) | Projections de marché (`GVR` 2027 interpolé à 46,2 % ; `Mordor` 2030 interpolé à 42,38 %) |",
+    "refs": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "source_ids": [
+      "SRC-011",
+      "SRC-012",
+      "SRC-013",
+      "SRC-017",
+      "SRC-018",
+      "SRC-019",
+      "SRC-020",
+      "SRC-021",
+      "SRC-022"
+    ],
+    "vigilance_mandatory": true,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-017.txt (9M26 = 131 953 M$ US, Q3 = 51 355 M$ US, Q3 FCF = -9 065 M$ US = -9,1 G$ US) ; SRC-018.txt (9M26 = 175 670 M$ US, guidance 2026 ~220 G$ US, TTM FCF = -42,4 G$ US) ; SRC-019.txt (9M26 = 83 055 M$ US hors 2 769 M$ US finance leases, guidance 2026 135–145 G$ US finance leases inclus) ; SRC-020/021/022.txt (115 948 - 49 270 + 39 367 = 106 045 M$ US, hors 5 192 M$ US finance leases Q1 FY27 ; total 4 hyperscalers = 496 723 M$ US = 496,7 G$ US) ; SRC-011/012/013.txt (2026 : 5,3 / 8,5 / 9,89 G$ US ; 2027 : 7,75 / 14,06 G$ US ; 2030 : 24,5 / 35–45 / 40,58 G$ US).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch02:P014:S01",
+    "paragraph_loc": "ch02:P014",
+    "unit": "ch02",
+    "category": "empirique",
+    "text": "Deloitte rapporte dans *TMT Predictions 2026* l'estimation attribuée à Gartner (juin 2025) selon laquelle plus de 40 % des projets agentiques risquent l'abandon d'ici fin 2027 faute de maîtrise des coûts imprévus, de l'échelle ou des risques [4].",
+    "refs": [
+      4
+    ],
+    "source_ids": [
+      "SRC-011"
+    ],
+    "vigilance_mandatory": true,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-011.txt (corps & Endnote 3) : « According to an estimate, more than 40% of today's agentic AI projects could be cancelled by 2027, due to unanticipated cost, complexity of scaling, or unexpected risks. » ; Endnote 3 : « Gartner, 'Gartner predicts over 40% of agentic AI projects will be canceled by end of 2027,' press release, June 25, 2025. »",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch03:P012:S02",
+    "paragraph_loc": "ch03:P012",
+    "unit": "ch03",
+    "category": "juridique",
+    "text": "Hadfield et Koh rapprochent l'impossibilité d'écrire des contrats exhaustifs du problème d'alignement des modèles [17] : un mandant humain ne peut ni formuler toutes ses préférences multidimensionnelles ni anticiper chaque cas limite, ce que Shahidi *et al.* résument comme les limites d'articulation du mandant et les limites de synthèse de l'agent [16].",
+    "refs": [
+      16,
+      17
+    ],
+    "source_ids": [
+      "SRC-004",
+      "SRC-005"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-005.txt (« unavoidable incompleteness of contracts (reward specification) between principal (designer) and agent (AI)... known as the AI 'alignment problem' ») ; SRC-004.txt (« not possible for a principal to fully specify all edge cases... (1) principal's articulation limits: the principal cannot fully or consistently specify their preferences [high-dimensional]... and (2) agent's synthesis limits: the agent misinterprets what is stated, including via inaccurate inference or hallucination »).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch03:P018:S05",
+    "paragraph_loc": "ch03:P018",
+    "unit": "ch03",
+    "category": "empirique",
+    "text": "Rappelons aussi la loi multiplicative en série formalisée par le `NIST/SEMATECH` [5] et analysée au chapitre 02 : dix étapes probabilistes indépendantes fiables chacune à 94 % n'aboutissent sans erreur que dans 53,9 % des cas [5].",
+    "refs": [
+      5
+    ],
+    "source_ids": [
+      "SRC-024"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-024.txt (§ 8.1.8.1 Competing risk model) : « R_c(t) = product_{i=1}^k R_i(t) » sous hypothèses d'indépendance et d'échec dès la première défaillance ; pour 10 étapes à 94 %, 0,94^10 = 0,538615 ≈ 53,9 %.",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch03:P022:S01",
+    "paragraph_loc": "ch03:P022",
+    "unit": "ch03",
+    "category": "prospectif_technique",
+    "text": "Dans le détail opérationnel, Tomašev *et al.* montrent comment ces garde-fous résistent aux asymétries réelles [15].",
+    "refs": [
+      15
+    ],
+    "source_ids": [
+      "SRC-002"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "ecart_mineur",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-002.txt (Abstract, § Dworkin/ZKP/three-tier oversight) : document conceptuel et normatif (« We propose... », « may be structured... », « aiming to counteract... », « would enable... », « scaled-down empirical validation ») et non démonstration empirique de résistance à des asymétries réelles (« montrent comment ces garde-fous résistent aux asymétries réelles »).",
+    "correction_applied": "Chapitre 03 L49 : remplacé « montrent comment ces garde-fous résistent aux asymétries réelles » par « esquissent comment ces garde-fous viseraient à contenir les asymétries entre acteurs »."
+  },
+  {
+    "claim_loc": "ch03:P026:S02",
+    "paragraph_loc": "ch03:P026",
+    "unit": "ch03",
+    "category": "empirique",
+    "text": "Ces auteurs croisent la spécialisation (horizontale ou verticale) et la détention de l'agent, opposant l'agent **apporté par l'organisation (*bring-your-own agent*)** à l'agent **fourni par la plateforme hôte (*bowling-shoe agent*)** [16].",
+    "refs": [
+      16
+    ],
+    "source_ids": [
+      "SRC-004"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "ecart_mineur",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-004.txt (Table 2, § 3.1) : oppose les deux axes « Ownership » (« bring-your-own » vs « bowling-shoe ») et « Specialization » (« horizontal » vs « vertical »), où le BYOA est défini pour les utilisateurs/consommateurs (« User-controlled agent; not operated by the platform », « consumers will face two types of agents »), et non spécifiquement « apporté par l'organisation ».",
+    "correction_applied": "Chapitre 03 L61 : remplacé « apporté par l'organisation (*bring-your-own agent*) » par « apporté par l'utilisateur (*bring-your-own agent*) »."
+  },
+  {
+    "claim_loc": "ch04:P011:S02",
+    "paragraph_loc": "ch04:P011",
+    "unit": "ch04",
+    "category": "juridique",
+    "text": "Shahidi, Rusak, Manning, Fradkin et Horton décomposent ce déficit en deux goulots distincts : les *limites d'articulation du mandant*, incapable d'énoncer de façon cohérente des préférences de haute dimensionnalité, et les *limites de synthèse de l'agent*, qui réinterprète ou hallucine face à l'ambiguïté [2].",
+    "refs": [
+      2
+    ],
+    "source_ids": [
+      "SRC-004"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-004.txt (auteurs Peyman Shahidi, Gili Rusak, Benjamin S. Manning, Andrey Fradkin, John J. Horton) : « (1) principal's articulation limits: the principal cannot fully or consistently specify their preferences... high-dimensional... and (2) agent's synthesis limits: the agent misinterprets what is stated, including via inaccurate inference or hallucination ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch04:P014:S01",
+    "paragraph_loc": "ch04:P014",
+    "unit": "ch04",
+    "category": "empirique",
+    "text": "D'une part, Hadfield et Koh avertissent que la copie d'un même agent (modèle et échafaudage identiques) au sein d'une organisation ou entre firmes produit des erreurs corrélées qui ne s'annulent pas au niveau agrégé — mécanisme comparable aux réactions algorithmiques qui avaient amplifié le krach éclair de 2010 sur les marchés financiers américains, effaçant environ 1 000 G\\$ US en quinze minutes selon les travaux cités par ces auteurs [3].",
+    "refs": [
+      3
+    ],
+    "source_ids": [
+      "SRC-005"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-005.txt (§ 3.4 Systemic fragility) : « the same agent is 'copied' both within and between firms, inducing correlated mistakes that do not wash out in the aggregate. For instance, automated trading algorithms likely exacerbated the 2010 'Flash Crash' that wiped out approximately $1 trillion over the span of 15 minutes (Kirilenko et al., 2017) » (1 trillion $ = 1 000 G$ US).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch04:P019:S01",
+    "paragraph_loc": "ch04:P019",
+    "unit": "ch04",
+    "category": "empirique",
+    "text": "Dès 1987, Garcia-Molina et Salem montraient que les transactions de longue durée (*Long Lived Transactions*) multiplient les blocages et les taux d'annulation lorsqu'elles conservent des verrous sur des bases critiques [6].",
+    "refs": [
+      6
+    ],
+    "source_ids": [
+      "SRC-033"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-033.txt (Abstract & Introduction, p. 249) : « Long lived transactions (LLTs) hold on to database resources for relatively long periods of time... locks the objects accessed... increased blocking rate... transaction abort rate can also be increased by LLTs... frequency of deadlock grows with the fourth power of the transaction size ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch04:P023:S03",
+    "paragraph_loc": "ch04:P023",
+    "unit": "ch04",
+    "category": "empirique",
+    "text": "Les mesures du recensement de Kraishan montrent combien l'oubli de cette frontière expose les systèmes dès le stade expérimental : sur les 14 353 serveurs `MCP` scannés, 9,57 % (6,83 % après correction de précision) présentent une exposition réseau sans authentification et 225 serveurs (1,57 % observés; environ 0,75 % corrigés) présentent soit une autorité ambiante, soit une transmission directe de jetons (*token passthrough*) — deux défaillances disjointes qui ne coexistent jamais dans le corpus, la seconde effaçant la trace du composant intermédiaire dans l'audit aval [15].",
+    "refs": [
+      15
+    ],
+    "source_ids": [
+      "SRC-057"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-057.txt (Table 4 & § 4.1.1 Delegation Risk) : n = 14 353 serveurs scannés ; Unauth. exposure : 9,57 % obs. (6,83 % corr.) ; Ambient authority + Token passthrough : « Either class affects 225 servers (1.57%...); notably the two never co-occur (0 of 14,353...), so they mark disjoint failure modes... Corrected, the joint figure is roughly 0.75% » ; § 3.2 « Token passthrough... any upstream audit trail attributes its actions to the original token holder ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch04:P039:S01",
+    "paragraph_loc": "ch04:P039",
+    "unit": "ch04",
+    "category": "prospectif_technique",
+    "text": "L'authentification de chaque instance s'appuie sur une **identité non humaine** (*Non-Human Identity*, `NHI`) éphémère émise par attestation de charge de travail selon `SPIFFE`, éliminant les clés d'API statiques et les comptes partagés [14].",
+    "refs": [
+      14
+    ],
+    "source_ids": [
+      "SRC-046"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-046.txt (SPIFFE ID, SVID, SPIFFE Workload API) : identité attestée dynamiquement par charge de travail, documents SVID éphémères à rotation automatique (« short lived, rotated frequently and automatically »), « need not co-deploy any authentication secrets with the workload ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch05:P007:S02",
+    "paragraph_loc": "ch05:P007",
+    "unit": "ch05",
+    "category": "prospectif_technique",
+    "text": "La spécification énonce d'ailleurs elle-même ses limites de gouvernance [7] : les outils représentent une capacité d'exécution arbitraire, leurs descriptions et annotations doivent être considérées comme non fiables (*untrusted*) lorsqu'elles n'émanent pas d'un serveur de confiance, l'hôte doit recueillir le consentement explicite de l'utilisateur avant toute invocation, et le protocole lui-même ne peut pas imposer le respect de ces garanties de sécurité [7].",
+    "refs": [
+      7
+    ],
+    "source_ids": [
+      "SRC-038"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-038.txt (Tool Safety & Implementation Guidelines) : « Tools represent arbitrary code execution... descriptions of tool behavior such as annotations should be considered untrusted, unless obtained from a trusted server. Hosts must obtain explicit user consent before invoking any tool... While MCP itself cannot enforce these security principles at the protocol level ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch05:P009:S02",
+    "paragraph_loc": "ch05:P009",
+    "unit": "ch05",
+    "category": "empirique",
+    "text": "Sur le banc sécuritaire `AgentDojo`, Edoardo Debenedetti et ses coauteurs montrent que la sous-documentation des structures de sortie d'API constitue la première cause d'échec de leur planificateur structuré `CaMeL` sur la suite voyage : `13` des `20` tâches bénignes y échouent avec `Claude 3.5 Sonnet` faute de schéma de retour permettant de rédiger l'analyse avant exécution [3].",
+    "refs": [
+      3
+    ],
+    "source_ids": [
+      "SRC-007"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-007.txt (§ 6.1.2, Table 1) : analyse des échecs de Claude 3.5 Sonnet sur AgentDojo ; dans la suite Travel (20 tâches), « Underdocumented API: The API returns data in a structure that is not documented. 13 » (13 échecs sur 20 ; § 6.1.2 : « tool outputs structure is not well documented. The P-LLM does not have a way to observe the format of the output of these tools, and, as a consequence, cannot parse them »).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch05:P027:S02",
+    "paragraph_loc": "ch05:P027",
+    "unit": "ch05",
+    "category": "prospectif_technique",
+    "text": "Aux côtés de la dette technique logée dans le code — la plus visible et la mieux outillée —, elle identifie la **dette cognitive**, c'est-à-dire l'érosion progressive de la compréhension partagée du système au sein des équipes humaines (ce que Peter Naur nommait la « théorie du système »), et la **dette d'intention**, qui résulte de l'absence ou du vieillissement des artefacts externes capturant les objectifs, les contraintes non fonctionnelles et la justification des arbitrages passés [9].",
+    "refs": [
+      9
+    ],
+    "source_ids": [
+      "SRC-040"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-040.txt (Abstract/Intro & Intent Debt: The Forgotten Layer) : « technical debt refers to problems in the code layer, cognitive debt refers to erosion of shared understanding across a team over time [theory of the system, Naur 1985], and intent debt refers to a lack of externalized goals, constraints, and rationale » ; « Loss of articulated constraints: non-functional requirements... are gradually forgotten ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch05:P037:S02",
+    "paragraph_loc": "ch05:P037",
+    "unit": "ch05",
+    "category": "prospectif_technique",
+    "text": "Le NIST rappelle qu'aucun filtre ou détecteur actuel ne garantit l'immunité contre les injections indirectes dès lors qu'un modèle ingère des sources non fiables, et recommande de cloisonner les privilèges entre modèles et de passer par des interfaces bien définies [11].",
+    "refs": [
+      11
+    ],
+    "source_ids": [
+      "SRC-054"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-054.txt (§ 3.4.4 Mitigations, p. 53) : « Because current mitigations do not offer full protection against all attacker techniques, application designers may design systems with the assumption that prompt injection attacks are possible if a model is exposed to untrusted input sources, such as by using multiple LLMs with different permissions [145, 405] or by allowing models to interact with potentially untrustworthy data sources only through well-defined interfaces [410] ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch05:P044:S01",
+    "paragraph_loc": "ch05:P044",
+    "unit": "ch05",
+    "category": "empirique",
+    "text": "Tandis que l'interdiction juridique de cette pratique en banque ouverte est analysée au Chapitre 10, son abandon s'impose sur le seul terrain technique pour quatre raisons : fragilité extrême face au moindre changement visuel ou de libellé; absence de schéma de retour structuré, cause documentée d'échecs majeurs même sur des API textuelles dans `CaMeL` [3]; impossibilité d'appliquer des clés d'idempotence `HTTP` [6] ou de distinguer un ralentissement d'affichage d'une écriture validée; et exposition directe aux injections indirectes dans le contenu affiché [11] ainsi qu'aux mesures de blocage juridique, contractuel ou technique (contentieux, règles `robots.txt`, conditions d'utilisation restrictives, limitation de débit) déployées par les plateformes face à l'accès des agents externes, relevées par Shahidi *et al.* [1].",
+    "refs": [
+      1,
+      3,
+      6,
+      11
+    ],
+    "source_ids": [
+      "SRC-004",
+      "SRC-007",
+      "SRC-036",
+      "SRC-054"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-007.txt (§ 6.1.2/Table 1 échecs API non documentée) ; SRC-036.txt (en-tête HTTP Idempotency-Key face aux timeouts) ; SRC-054.txt (§ 3.4 injections indirectes sur ressources externes) ; SRC-004.txt (§ 6.2–6.3 « litigation (The New York Times Co. v. Microsoft Corp. 2023), robots.txt rules (Smith 2025), and tighter terms of service » et « rate-limited APIs »).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch06:P023:S02",
+    "paragraph_loc": "ch06:P023",
+    "unit": "ch06",
+    "category": "juridique",
+    "text": "Ces garde-fous convergent avec les futures exigences prudentielles canadiennes : dans sa mouture révisée de la ligne directrice `E-23` sur le risque de modélisation qui entrera en vigueur le 1er mai 2027, le `BSIF` demande aux institutions financières fédérales de proportionner la validation et le suivi au risque inhérent tout au long du cycle de vie, en prévoyant explicitement d'autres mécanismes de contrôle pour les « approches boîte noire » ou les modèles autonomes [13].",
+    "refs": [
+      13
+    ],
+    "source_ids": [
+      "SRC-065"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-065.txt (En-tête « Le 1 mai 2027 » ; B.1/D.1 proportionnalité au niveau de risque tout au long du cycle de vie ; D.2 Conception des modèles : « la nécessité de mettre en place d'autres mécanismes de contrôle, en particulier dans le cas des « approches boîte noire » ou des modèles autonomes »).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch06:P038:S01",
+    "paragraph_loc": "ch06:P038",
+    "unit": "ch06",
+    "category": "prospectif_technique",
+    "text": "D'autre part, Margaret-Anne Storey montre que la multiplication rapide de code et de flux générés par IA déplace le risque de la simple dette technique vers une **dette cognitive et d'intention** (*cognitive and intent debt*) : les équipes perdent le modèle mental partagé du système (« théorie du système » au sens de Peter Naur) ainsi que la trace écrite des contraintes et justifications initiales, rendant toute correction d'incident opaque et hasardeuse [12].",
+    "refs": [
+      12
+    ],
+    "source_ids": [
+      "SRC-040"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-040.txt (Margaret-Anne Storey, « From Technical Debt to Cognitive and Intent Debt ») : perte de compréhension partagée (« theory of the system [Naur 1985] ») et d'artefacts externes de contraintes/justifications (« cognitive and intent debt »), paralysant l'équipe face aux cassures inattendues.",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch06:P041:S02",
+    "paragraph_loc": "ch06:P041",
+    "unit": "ch06",
+    "category": "prospectif_technique",
+    "text": "Selon la `RFC 9110`, `OPTIONS`, `HEAD`, `GET`, `PUT` et `DELETE` sont idempotentes par construction, contrairement à `POST` et `PATCH` : après un `timeout`, le client ignore si le serveur a appliqué l'écriture [19], et réessayer risque de doubler une écriture [19].",
+    "refs": [
+      19
+    ],
+    "source_ids": [
+      "SRC-036"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-036.txt (§ 1 Introduction) : « Per [RFC9110], the methods OPTIONS, HEAD, GET, PUT and DELETE are idempotent while methods POST and PATCH are not... the request timed out. The client is left uncertain... Repeating the request multiple times can result in duplication ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch06:P042:S03",
+    "paragraph_loc": "ch06:P042",
+    "unit": "ch06",
+    "category": "empirique",
+    "text": "Ils proposent de découper la `LLT` en sous-transactions localement atomiques \\(T_1, T_2, \\dots, T_n\\), chacune associée à une transaction compensatoire \\(C_i\\) qui en annule sémantiquement l'effet métier si la suite échoue [16].",
+    "refs": [
+      16
+    ],
+    "source_ids": [
+      "SRC-033"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-033.txt (Introduction & § 2, p. 249–250) : découpage d'une LLT en sous-transactions T_1, T_2, ..., T_n et définition de transactions compensatoires C_1, C_2, ..., C_{n-1} annulant sémantiquement l'effet partiel si la saga échoue avant la fin.",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch06:P048:S01",
+    "paragraph_loc": "ch06:P048",
+    "unit": "ch06",
+    "category": "empirique",
+    "text": "D'abord, le composant probabiliste reste cantonné à une synthèse préparatoire en amont, sans accès direct aux écritures ni à l'improvisation du repli [15, 17].",
+    "refs": [
+      15,
+      17
+    ],
+    "source_ids": [
+      "SRC-006",
+      "SRC-034"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-006.txt (SagaLLM : transactions compensatoires validées indépendamment et non improvisées) ; SRC-034.txt (Temporal SDKs : logique de workflow déterministe rejouée sur journal d'événements, appels non déterministes isolés en activités).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch07:P021:S02",
+    "paragraph_loc": "ch07:P021",
+    "unit": "ch07",
+    "category": "juridique",
+    "text": "Le `STS` vérifie que les paramètres `resource`, `audience` et `authorization_details` demandés par l'agent aval forment un sous-ensemble valide du mandat amont, rejetant toute tentative d'escalade par `invalid_target` [4] ou `invalid_authorization_details` [5].",
+    "refs": [
+      4,
+      5
+    ],
+    "source_ids": [
+      "SRC-041",
+      "SRC-042"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-041.txt (RFC 8693 § 2.1.1 & § 2.2.2 : paramètres « resource » et « audience », erreur « invalid_target ») ; SRC-042.txt (RFC 9396 § 5 & § 6.1 : paramètre « authorization_details » comparé aux permissions sous-jacentes, erreur « invalid_authorization_details »).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch07:P025:S02",
+    "paragraph_loc": "ch07:P025",
+    "unit": "ch07",
+    "category": "prospectif_technique",
+    "text": "La passerelle cible rejette tout jeton dérobé présenté sans sa preuve correspondante, sur une autre `URI` ou en mode `Bearer`, et peut imposer un aléa serveur (`DPoP-Nonce`) pour interdire la pré-génération de preuves futures [6].",
+    "refs": [
+      6
+    ],
+    "source_ids": [
+      "SRC-043"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-043.txt (RFC 9449 § 4.3 validation de « htu »/URI et clé ; § 7.2 « MUST reject a DPoP-bound access token received as a bearer token » ; § 8–9 et § 11.2 « DPoP-Nonce » empêchant la pré-génération de preuves).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch07:P042:S02",
+    "paragraph_loc": "ch07:P042",
+    "unit": "ch07",
+    "category": "juridique",
+    "text": "En second lieu, Hadfield et Koh rapprochent l'opacité des réseaux neuronaux du problème économique des **contrats incomplets** : puisque aucune fonction de récompense ni consigne ne spécifie chaque situation future, un écart d'alignement subsiste entre l'intention du mandant et le comportement de l'agent [2].",
+    "refs": [
+      2
+    ],
+    "source_ids": [
+      "SRC-005"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-005.txt (§ 3.1 & § 3.4) : « opaque 'black box' agents » ; « unavoidable incompleteness of contracts (reward specification) between principal (designer) and agent (AI). As a result, even though AI agents are optimizers, we can- not be sure what they are optimizing. This is known as the AI 'alignment problem' ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch07:P044:S02",
+    "paragraph_loc": "ch07:P044",
+    "unit": "ch07",
+    "category": "juridique",
+    "text": "Pour bâtir la confiance entre agents d'organisations distinctes, ils proposent d'associer des triangles de confiance de **justificatifs vérifiables** (*Verifiable Credentials*, `VCs` — attestations cryptographiques de licences, de conformité ou d'historique signées par des émetteurs reconnus) à des identifiants décentralisés (`DIDs`, distinguant les `did:key` éphémères des identifiants persistants ancrés comme `did:ion` pour des agents corporatifs ou étatiques), complétés aux points de perméabilité critiques par une preuve d'unicité humaine (*Proof-of-Personhood*) contre les attaques Sybil [1].",
+    "refs": [
+      1
+    ],
+    "source_ids": [
+      "SRC-002"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-002.txt (p. 13–14) : « Verifiable Credentials (VCs), as the digital equivalent of physical credentials like licenses or certificates... formal trust triangles: Issuer... Holder... Verifier » ; « did:key... ideal for disposable agents... did:ion... persistent, high-value agents... corporate or state-level agents » ; « defend against Sybil attacks... Proof-of-Personhood (PoP) ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch07:P045:S02",
+    "paragraph_loc": "ch07:P045",
+    "unit": "ch07",
+    "category": "prospectif_technique",
+    "text": "Avant d'ouvrir une négociation `A2A` externe, la passerelle doit exiger une attestation cryptographique vérifiable rattachant l'agent appelant à une entité morale identifiée et enregistrée, au-delà des simples champs déclaratifs `provider` de sa carte `AgentCard` [1, 2, 3].",
+    "refs": [
+      1,
+      2,
+      3
+    ],
+    "source_ids": [
+      "SRC-002",
+      "SRC-005",
+      "SRC-039"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-002.txt (VCs/DIDs pour entités corporatives) ; SRC-005.txt (§ 4.1 enregistrement auprès d'entités juridiquement imputables) ; SRC-039.txt (A2A § 4.4.1–4.4.2 : « provider » de type AgentProvider est un champ optionnel déclaratif composé de « url » et « organization », distinct des mécanismes d'authentification/TLS § 7.2).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch08:P006:S01",
+    "paragraph_loc": "ch08:P006",
+    "unit": "ch08",
+    "category": "prospectif_technique",
+    "text": "Dans le dialogue classique avec un seul interlocuteur humain, la menace visée par le `NIST` porte d'abord sur le contournement direct exercé par l'usager lui-même pour obtenir une réponse interdite ou extraire les consignes système [8].",
+    "refs": [
+      8
+    ],
+    "source_ids": [
+      "SRC-054"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-054.txt (§ 3.3 Direct Prompting Attacks, p. 43) : « arise when the attacker is the primary user of the system... Enable misuse... A JAILBREAK is a direct prompting attack intended to circumvent restrictions... Invade privacy: extract the system prompt ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch08:P008:S01",
+    "paragraph_loc": "ch08:P008",
+    "unit": "ch08",
+    "category": "prospectif_technique",
+    "text": "Le `NIST` distingue trois effets adverses majeurs de ces injections indirectes [8].",
+    "refs": [
+      8
+    ],
+    "source_ids": [
+      "SRC-054"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-054.txt (§ 3.4 Indirect Prompt Injection Attacks, p. 50) : « Indirect prompt injection attacks can result in violations across at least three categories of attacker goals: 1) availability violation, 2) integrity violation, and 3) privacy compromise. »",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch08:P019:S01",
+    "paragraph_loc": "ch08:P019",
+    "unit": "ch08",
+    "category": "empirique",
+    "text": "Seules la réplication sur des jeux variés et l'épreuve continue par attaque adaptative évitent les angles morts [8, 10].",
+    "refs": [
+      8,
+      10
+    ],
+    "source_ids": [
+      "SRC-054",
+      "SRC-056"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-054.txt (§ 4.1.3 Evaluation, p. 57 : manque de bancs standardisés, « tested adversarially » contre « unforeseen types of attacks ») ; SRC-056.txt (p. 11 : le 0 % sur MultiAgentDojo ne vaut pas immunité contre de plus fortes « adaptive attacks », « large-scale adaptive red teaming »).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch08:P020:S01",
+    "paragraph_loc": "ch08:P020",
+    "unit": "ch08",
+    "category": "juridique",
+    "text": "Si le filtrage statistique échoue en théorie et cède sous pression adaptative, la sortie de crise exige de suivre l'une des recommandations indirectes du `NIST` : concevoir l'application en présumant qu'un modèle exposé à des ressources hostiles produira tôt ou tard des sorties malveillantes, et donc structurer le système pour qu'il ne puisse ni exfiltrer de données privées ni déclencher d'action non autorisée [8].",
+    "refs": [
+      8
+    ],
+    "source_ids": [
+      "SRC-054"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "ecart_mineur",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-054.txt (§ 3.4.4 Mitigations, p. 53 & § 3.5, p. 54) : § 3.4.4 énonce explicitement (« application designers may design systems with the assumption that prompt injection attacks are possible if a model is exposed to untrusted input sources... ») comme mesure directe face aux injections indirectes — il ne s'agit pas de « recommandations indirectes » du NIST mais d'une piste architecturale contre les injections indirectes.",
+    "correction_applied": "Chapitre 08 L50 : remplacé « exige de suivre l'une des recommandations indirectes du `NIST` : concevoir l'application en présumant qu'un modèle exposé à des ressources hostiles produira tôt ou tard des sorties malveillantes, et donc structurer le système pour qu'il » par « impose de suivre la piste du `NIST` contre les injections indirectes : concevoir l'application en présumant ces attaques possibles dès qu'un modèle traite des sources non fiables, afin qu'il »."
+  },
+  {
+    "claim_loc": "ch08:P027:S02",
+    "paragraph_loc": "ch08:P027",
+    "unit": "ch08",
+    "category": "empirique",
+    "text": "Dès qu'un orchestrateur insère une donnée issue d'outil dans la consigne naturelle envoyée à un sous-agent, le taux moyen d'attaques réussies atteint `12,9 %` sans défense et demeure à `0,2 %` sous `CaMeL` individuel (`0,5 %` sur `GPT-4.1` et `0,4 %` sur `Gemini 2.5 Pro`) par blanchiment à la frontière [10].",
+    "refs": [
+      10
+    ],
+    "source_ids": [
+      "SRC-056"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-056.txt (Abstract & Table III, MultiAgentDojo n = 949) : « boundary laundering » ; Table III Average ASR : 12.9 % (No CaMeL), 0.2 % (Individual CaMeL) ; GPT-4.1 Individual CaMeL = 0.5 % ; Gemini 2.5 Pro Individual CaMeL = 0.4 %.",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch09:P015:S03",
+    "paragraph_loc": "ch09:P015",
+    "unit": "ch09",
+    "category": "juridique",
+    "text": "Par ailleurs, au Canada fédéral, la `ligne directrice B-15` du `BSIF` exigera pour l'exercice financier `2028` (`fin 2028`) la divulgation des émissions absolues brutes de **portée 3**, incluant la catégorie 15 des émissions financées (prêts, placements) et assurées selon le `GHG Protocol` et la norme `PCAF` (le volet des actifs sous gestion demeurant marqué `TBD`), avec des données traçables jusqu'à leurs sources et soumises à des contrôles comparables à ceux de l'information financière [15].",
+    "refs": [
+      15
+    ],
+    "source_ids": [
+      "SRC-067"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-067.txt (B-15, Principle 4 « amounts disclosed should be traceable to their sources », « internal governance processes and controls that are the same or substantially like those used for financial reporting », Annex 2-1 GHG Protocol & PCAF, Annex 2-2 b) ii « 2028 » Scope 3 Category 15 financed and insurance-associated emissions, b) iii AUM « TBD »).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch09:P022:S01",
+    "paragraph_loc": "ch09:P022",
+    "unit": "ch09",
+    "category": "juridique",
+    "text": "La `ligne directrice E-23` du `BSIF`, qui entrera en vigueur le `1er mai 2027`, impose aux principes 3.4 et 3.6 de déclencher une validation indépendante lors de toute dérive, violation de seuil ou mise à jour de dépendances externes et d'assurer un suivi continu [13], tandis que le bulletin technologique de juillet 2026 demande de tester rigoureusement les cas limites (*edge cases*) sous contrainte [14].",
+    "refs": [
+      13,
+      14
+    ],
+    "source_ids": [
+      "SRC-065",
+      "SRC-066"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "ecart_mineur",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-065.txt (E-23 Principes 3.4 & 3.6) : les validations sont « proportionnées à la cote de risque de modélisation » et déclenchées notamment par « des erreurs importantes, des dérives ou des violations des seuils », tandis que le principe 3.6 vise le suivi continu incluant « les dépendances externes (par exemple, mises à jour des versions) » et des critères pour « les modifications importantes » (non « lors de toute dérive... ou mise à jour »). SRC-066.txt : « outlines sound practices... institutions can consider... conduct rigorous testing... including AI edge cases » (recommandation, non « demande »).",
+    "correction_applied": "Chapitre 09 L51 : reformulé en « prévoit aux principes 3.4 et 3.6 un suivi continu — couvrant notamment les dépendances externes et mises à jour de versions — et des validations indépendantes proportionnées au risque lors d'erreurs importantes, de dérives ou de violations de seuils [13], tandis que le bulletin technologique de juillet 2026 recommande de tester rigoureusement les cas limites (*edge cases*) sous contrainte [14]. »"
+  },
+  {
+    "claim_loc": "ch09:P026:S01",
+    "paragraph_loc": "ch09:P026",
+    "unit": "ch09",
+    "category": "empirique",
+    "text": "Même validé en simulation, un agent en production peut dériver entre deux campagnes sous l'effet d'une donnée atypique, d'une modification silencieuse de fournisseur [20] ou d'une injection indirecte.",
+    "refs": [
+      20
+    ],
+    "source_ids": [
+      "SRC-030"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-030.txt (§ 2 Table 2 Cross-model evaluation) : « We also found that some providers swap model weights behind the same endpoint without notice, and aggregators like OpenRouter could serve different quantizations... ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch09:P041:S01",
+    "paragraph_loc": "ch09:P041",
+    "unit": "ch09",
+    "category": "empirique",
+    "text": "| Dimension économique | Pilotage au prix facial du jeton | Pilotage au coût complet par résultat conforme (`CPO`) | |---|---|---| | **Inférence nominale (\\(C_{\\text{inf}}\\))** | Suit le tarif public affiché par million de jetons sur appel nominal | Mesure les jetons réellement facturés (cache et raisonnement inclus) via `OpenTelemetry GenAI` [5] | | **Réessais et échecs (\\(C_{\\text{réessai}}\\))** | Noyés dans la facture infonuagique globale | Isolés par dossier et plafonnés par disjoncteurs, révélant la queue de distribution [1, 3] | | **Évaluation et juges (\\(C_{\\text{éval}}\\))** | Ignorés ou absorbés en frais généraux | Imputés au produit (`pass^k`, juges calibrés, déploiement ombre et canari) [3, 19, 20] | | **Sécurité et sortie (\\(C_{\\text{sécu}}\\))** | Sous-estimés ; réversibilité non budgétée | Incluent confinement, double couloir, ancrage `SCITT` [6] et tests de sortie `B-10` [16] | | **Reprises humaines (\\(C_{\\text{hum}}\\))** | Présumées gratuites dans le calcul de gain | Valorisées au coût horaire réel de relecture et d'escalade [17, 18] | | **Arbitrage produit** | Course au tarif unitaire le plus bas | Routage multi-modèles, sobriété (ch. 06) et arrêt des flux déficitaires |",
+    "refs": [
+      1,
+      3,
+      5,
+      6,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "source_ids": [
+      "SRC-007",
+      "SRC-028",
+      "SRC-037",
+      "SRC-044",
+      "SRC-068",
+      "SRC-075",
+      "SRC-027",
+      "SRC-029",
+      "SRC-030"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "ecart_mineur",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-037.txt ([14]/[15] cached + reasoning tokens + billed count) ; SRC-007.txt & SRC-028.txt (boucles/échecs et LLM-as-a-Judge) ; SRC-029.txt (pass^k) ; SRC-030.txt (HAL) ; SRC-044.txt (SCITT) ; SRC-075.txt & SRC-027.txt (relecture humaine). Toutefois, SRC-068.txt (B-10) exige des tests réguliers de continuité/reprise (§ 2.3.4) et la révision régulière de plans de sortie (§ 2.3.5), et non spécifiquement des « tests de sortie B-10 ».",
+    "correction_applied": "Chapitre 09 L104 : remplacé « et tests de sortie `B-10` [16] » par « et plans de sortie et continuité `B-10` [16] »."
+  },
+  {
+    "claim_loc": "ch10:P010:S02",
+    "paragraph_loc": "ch10:P010",
+    "unit": "ch10",
+    "category": "empirique",
+    "text": "Par voie pénale, les articles `91`, `92.1` et `92.2` portent les amendes jusqu'à `25 M\\$` ou `4 %` du chiffre d'affaires mondial (`5 000 \\$` à `100 000 \\$` pour un particulier), doublées en récidive (`art. 92.1`) avec prescription de cinq ans (`art. 92.2`) [8].",
+    "refs": [
+      8
+    ],
+    "source_ids": [
+      "SRC-063"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-063.txt (LQ 2021, c. 25, art. 160 édictant art. 91, 92.1, 92.2 de P-39.1) : art. 91 « amende de 5 000 $ à 100 000 $ dans le cas d'une personne physique et, dans les autres cas, de 15 000 $ à 25 000 000 $ ou... 4 % du chiffre d'affaires mondial » ; art. 92.1 « portées au double » en récidive ; art. 92.2 « délai de cinq ans ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch10:P022:S01",
+    "paragraph_loc": "ch10:P022",
+    "unit": "ch10",
+    "category": "juridique",
+    "text": "Dans le secteur financier, deux cas d'usage de l'`Annexe III` basculeront sous ce régime complet le `2 décembre 2027` : l'évaluation de la solvabilité ou l'établissement de la note de crédit des personnes physiques visés à la rubrique `5(b)`, de même que l'évaluation des risques et la tarification concernant les personnes physiques en matière d'assurance-vie et d'assurance maladie visées à la rubrique `5(c)` [5, 6].",
+    "refs": [
+      5,
+      6
+    ],
+    "source_ids": [
+      "SRC-060",
+      "SRC-061"
+    ],
+    "vigilance_mandatory": true,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-060.txt (Annexe III point 5 b) solvabilité/note de crédit des personnes physiques et point 5 c) évaluation des risques et tarification en assurance-vie et assurance maladie) ; SRC-061.txt (Règlement UE 2026/1744 modifiant art. 113 point c) i) : application au 2 décembre 2027 pour l'Annexe III).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch10:P039:S04",
+    "paragraph_loc": "ch10:P039",
+    "unit": "ch10",
+    "category": "juridique",
+    "text": "(2), (4)`) [14].",
+    "refs": [
+      14
+    ],
+    "source_ids": [
+      "SRC-070"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-070.txt (Loi sur les banques, art. 21(1)–(4) et art. 670(1)–(4)) : temporarisation au 30 juin 2033 pour banques, banques étrangères autorisées et sociétés de portefeuille bancaires, sauf prorogation d'au plus 6 mois par décret (par. (2)) ou exception lors d'une dissolution du Parlement (par. (4)). (Note : fragmentation de phrase au niveau de l'abréviation « par. » dans l'extraction JSON.)",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch10:P041:S02",
+    "paragraph_loc": "ch10:P041",
+    "unit": "ch10",
+    "category": "juridique",
+    "text": "5) | | Conseil en patrimoine | Commerce bancaire restreint, ordre sans confirmation et rétrofacturations | `Loi sur les banques art. 415` [14] ; `NC 31-103 art. 11.11` (`1er oct. 2028`) [13] ; *Questrade* [15] | Confirmation humaine d'ordre et blocage des rétrofacturations | | Assurance de personnes | Tarification opaque, transfert médical sans consentement et cumul audit/actuariat | `Annexe III 5(c)` et `art. 27` (`2 déc. 2027`) [5, 6] ; `Loi 25 art. 12–14, 12.1` [8] ; `E-23` `1er mai 2027` [10] | Décideur humain, consentement exprès et `AIPD` | | Assurance de dommages | Sollicitation bancaire interdite et refus automatisé sans appel | `Loi sur les banques art. 416` [14] ; `Loi 25 art. 12.1` [8] ; `E-23` (`1er mai 2027`) [10] | Cloisonnement de distribution et révision humaine | | Cloisons intra-groupe | Mutualisation brute de données, délégation de direction et dépassement de capital | `Loi sur les banques art. 495–495.3, 501, 627.15` et `art. 21(1), 670(1)` (`30 juin 2033`) [14] ; `B-10 A3` [12] ; `DORA` [7] | Ententes inter-entités, isolation et registre de sortie |",
+    "refs": [
+      5,
+      6,
+      7,
+      8,
+      10,
+      12,
+      13,
+      14,
+      15
+    ],
+    "source_ids": [
+      "SRC-060",
+      "SRC-061",
+      "SRC-062",
+      "SRC-063",
+      "SRC-065",
+      "SRC-068",
+      "SRC-069",
+      "SRC-070",
+      "SRC-071"
+    ],
+    "vigilance_mandatory": true,
+    "initial_verdict": "ecart_mineur",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-070.txt (art. 415, 416, 495–495.3, 501, 627.15, 21(1), 670(1)), SRC-069.txt (NC 31-103 art. 11.11, 1er oct. 2028), SRC-071.txt (Questrade), SRC-060/061.txt (Annexe III 5(c) et art. 27, 2 déc. 2027), SRC-063.txt (art. 12–14, 12.1), SRC-065.txt (E-23 1er mai 2027), SRC-068.txt (B-10 A3 & § 3.3.2), SRC-062.txt (DORA cons. 31, art. 31 par. 8). Toutefois, la ligne « Assurance de personnes » mentionne « cumul audit/actuariat » sans citer l'ancrage B-10 3.3.2 [12] dans sa cellule d'ancrage juridique.",
+    "correction_applied": "Chapitre 10 L117 : ajouté « ; `B-10 3.3.2` [12] » dans la colonne d'ancrage juridique de la ligne « Assurance de personnes »."
+  },
+  {
+    "claim_loc": "ch11:P009:S01",
+    "paragraph_loc": "ch11:P009",
+    "unit": "ch11",
+    "category": "juridique",
+    "text": "Le problème devient aigu à l'approche du 1er mai 2027, date d'entrée en vigueur fixée par le `BSIF` pour sa directive `E-23` sur le risque de modélisation [18] — parallèlement à la prise d'effet attendue au Québec de la ligne directrice sur l'IA de l'`AMF` (dont le texte primaire reste inaccessible en statut bloqué, comme indiqué au chapitre 10).",
+    "refs": [
+      18
+    ],
+    "source_ids": [
+      "SRC-065"
+    ],
+    "vigilance_mandatory": true,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-065.txt (date d'entrée en vigueur « Le 1 mai 2027 » pour E-23) ; mention explicite du statut bloqué du texte primaire de l'AMF (renvoyant au chapitre 10, conforme à la note AO-01 / registre).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch11:P010:S01",
+    "paragraph_loc": "ch11:P010",
+    "unit": "ch11",
+    "category": "prospectif_technique",
+    "text": "Les entretiens de Dhanorkar *et al.* montrent ce morcellement dès l'échelle technique : un participant rapporte utiliser des agents intégrés par une autre équipe sans pouvoir choisir le modèle, tandis qu'un autre déclare ignorer quel raisonnement ces agents mobilisent [17].",
+    "refs": [
+      17
+    ],
+    "source_ids": [
+      "SRC-075"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-075.txt (§ 4.1.1, p. 7–8) : P02 « We had to request from another team to have it integrated. I don't think we choose which specific model » ; P16 « not even sure what reasoning [agents] are using ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch11:P017:S03",
+    "paragraph_loc": "ch11:P017",
+    "unit": "ch11",
+    "category": "empirique",
+    "text": "Elle doit surtout garantir à la personne visée la faculté d'exposer ses observations devant un membre du personnel **« en mesure de réviser la décision »** [13].",
+    "refs": [
+      13
+    ],
+    "source_ids": [
+      "SRC-063"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-063.txt (LQ 2021, c. 25, art. 110 édictant l'art. 12.1 de P-39.1) : « Il doit être donné à la personne concernée l'occasion de présenter ses observations à un membre du personnel de l'entreprise en mesure de réviser la décision. »",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch11:P018:S02",
+    "paragraph_loc": "ch11:P018",
+    "unit": "ch11",
+    "category": "juridique",
+    "text": "L'article `26`, paragraphe `2`, oblige le déployeur à confier ce contrôle à des personnes dotées **« des compétences, de la formation et de l'autorité nécessaires ainsi que du soutien nécessaire »** [12], tandis que le bulletin du `BSIF` de juillet 2026 exige de traiter les sorties d'IA comme des intrants et non comme des décisions définitives, avec une imputabilité humaine documentée sur les décisions importantes [19].",
+    "refs": [
+      12,
+      19
+    ],
+    "source_ids": [
+      "SRC-060",
+      "SRC-066"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "ecart_mineur",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-060.txt (art. 26 par. 2 exact mot à mot : « des compétences, de la formation et de l'autorité nécessaires ainsi que du soutien nécessaire »). En revanche, SRC-066.txt (Bulletin BSIF juillet 2026) présente des « sound practices » que « Institutions can consider » (« treat AI-generated outputs as inputs... ensure human oversight with accountability... »), sans caractère contraignant (« exige »).",
+    "correction_applied": "Chapitre 11 L41 : remplacé « le bulletin du `BSIF` de juillet 2026 exige de traiter » par « le bulletin du `BSIF` de juillet 2026 recommande de traiter »."
+  },
+  {
+    "claim_loc": "ch11:P027:S01",
+    "paragraph_loc": "ch11:P027",
+    "unit": "ch11",
+    "category": "juridique",
+    "text": "Aucune identité non humaine (au sens du chapitre 07) ne doit recevoir de jeton d'accès actif sans être liée au registre à un titulaire physique nommément désigné au sein de l'entité juridique qui consomme le service, investi de l'autorité requise par l'article `26(2)` de l'`EU AI Act` [12] et par l'exigence de propriété du cycle de vie du bulletin `BSIF` de juillet 2026 [19].",
+    "refs": [
+      12,
+      19
+    ],
+    "source_ids": [
+      "SRC-060",
+      "SRC-066"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "ecart_mineur",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-060.txt (art. 26(2)) ; SRC-066.txt (Bulletin BSIF juillet 2026 : « Institutions can consider... define ownership across the AI lifecycle »). Qualifier cette pratique saine recommandée d'« exigence de propriété du cycle de vie » surévalue sa portée juridique.",
+    "correction_applied": "Chapitre 11 L63 : remplacé « par l'exigence de propriété du cycle de vie du bulletin `BSIF` de juillet 2026 [19] » par « par la responsabilité sur le cycle de vie préconisée dans le bulletin `BSIF` de juillet 2026 [19] »."
+  },
+  {
+    "claim_loc": "ch12:P012:S02",
+    "paragraph_loc": "ch12:P012",
+    "unit": "ch12",
+    "category": "prospectif_technique",
+    "text": "Enfin, l'ensemble converge vers la cible `2035` d'achèvement post-quantique du `G7 CEG` [7] et de `NIST IR 8547` [6], rappelant que la souveraineté opérationnelle future dépend tout autant de la cryptographie que des modèles d'intelligence artificielle.",
+    "refs": [
+      6,
+      7
+    ],
+    "source_ids": [
+      "SRC-051",
+      "SRC-052"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-052.txt (G7 CEG Roadmap, janv. 2026 : « often points to 2035 as an overall target date for quantum-resistant cryptography migration ») ; SRC-051.txt (NIST IR 8547 ipd : « Disallowed after 2035 »).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch12:P016:S03",
+    "paragraph_loc": "ch12:P016",
+    "unit": "ch12",
+    "category": "juridique",
+    "text": "S'y ajoute, pour la fin de l'exercice financier `2028`, l'attente fixée à l'annexe `2-2` (`b) ii`) de la ligne directrice `B-15` du `BSIF` pour la divulgation des émissions absolues brutes de portée `3`, incluant obligatoirement la catégorie `15` des prêts, investissements et portefeuilles d'assurance multirisque (hors assurance hypothécaire, tandis que le volet `b) iii` sur les actifs sous gestion demeure à déterminer) [14].",
+    "refs": [
+      14
+    ],
+    "source_ids": [
+      "SRC-067"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-067.txt (Annex 2-2 b) ii : exercice financier « 2028 », « Scope 3 absolute gross GHG emissions... ensure inclusion of Category 15: Investments emissions » incluant prêts/investissements et, pour « property and casualty insurance (excluding mortgage insurance) », portefeuilles d'assurance ; b) iii AUM marqué « TBD »).",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch12:P017:S02",
+    "paragraph_loc": "ch12:P017",
+    "unit": "ch12",
+    "category": "juridique",
+    "text": "Dès juillet 2026, le bulletin du `BSIF` sur l'intelligence artificielle générative et agentique a rappelé que le raisonnement et l'exécution autonomes accroissent la vitesse et l'ampleur des défaillances au regard des lignes directrices `B-13`, `B-10` et `E-21`, et recommande l'encadrement technique (*AI harnessing*), la maîtrise stricte des identités et des plans de repli manuel [13].",
+    "refs": [
+      13
+    ],
+    "source_ids": [
+      "SRC-066"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-066.txt (Date : July 2026) : « agentic AI introduces autonomous reasoning and execution... amplify the speed, scale, and automation of cyber and operational risks... align with our Guidelines B-13... E-21... and B-10... implement AI harnessing... assign unique non-human identities... establish manual fallbacks ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch12:P021:S01",
+    "paragraph_loc": "ch12:P021",
+    "unit": "ch12",
+    "category": "juridique",
+    "text": "Ouvrir un couloir borné en lecture seule sous schémas typés.** Le `BSIF` invite les institutions à traiter les sorties générées comme des éléments d'entrée soumis à vérification plutôt que comme des décisions définitives, et à subordonner toute action à fort impact à des points d'approbation humaine explicites [13].",
+    "refs": [
+      13
+    ],
+    "source_ids": [
+      "SRC-066"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "conforme",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-066.txt (Bulletin BSIF juillet 2026) : « Institutions can consider... treat AI-generated outputs as inputs to decision-making rather than definitive outcomes... enforce approval checkpoints for high-risk actions ».",
+    "correction_applied": null
+  },
+  {
+    "claim_loc": "ch12:P035:S04",
+    "paragraph_loc": "ch12:P035",
+    "unit": "ch12",
+    "category": "empirique",
+    "text": "Ils insistent également sur la prise en compte des **coûts de transfert** (*transfer costs*) dans le calcul économique : ignorer le prix réel de sortie d'un connecteur ou d'un fournisseur fausse la comparaison et entretient les actifs échoués [18].",
+    "refs": [
+      18
+    ],
+    "source_ids": [
+      "SRC-072"
+    ],
+    "vigilance_mandatory": false,
+    "initial_verdict": "ecart_mineur",
+    "final_verdict": "conforme",
+    "txt_evidence": "SRC-072.txt (Haasnoot et al., 2019) : traite bien de la prise en compte des « transfer costs » et de la prévention des « stranded assets and inflexible 'lock-ins' », mais dans le contexte général de la planification adaptative (ex. eau/climat), sans mentionner de « connecteur » ni de « fournisseur » informatiques.",
+    "correction_applied": "Chapitre 12 L87 : déplacé `[18]` avant la transposition informatique : « Ils insistent également sur la prise en compte des **coûts de transfert** (*transfer costs*) dans le calcul économique pour prévenir les actifs échoués et les verrouillages [18], ce qui impose en ingénierie de chiffrer le prix réel de sortie d'un connecteur ou d'un fournisseur. »"
+  }
+]
