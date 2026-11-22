@@ -54,6 +54,7 @@
       "chapters": [
         "ch00",
         "ch01",
+        "ch03",
         "ch04",
         "ch07",
         "ch11"
@@ -111,6 +112,7 @@
       ],
       "chapters": [
         "ch01",
+        "ch03",
         "ch04",
         "ch05",
         "ch11"
@@ -141,6 +143,7 @@
       ],
       "chapters": [
         "ch01",
+        "ch03",
         "ch04",
         "ch07",
         "ch10"
@@ -199,6 +202,7 @@
       ],
       "chapters": [
         "ch03",
+        "ch04",
         "ch05",
         "ch08",
         "ch09"
@@ -260,6 +264,7 @@
       ],
       "chapters": [
         "ch01",
+        "ch02",
         "ch11"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-009.txt",
@@ -288,6 +293,7 @@
       ],
       "chapters": [
         "ch01",
+        "ch02",
         "ch11"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-010.txt",
@@ -344,7 +350,8 @@
         "RQ1"
       ],
       "chapters": [
-        "ch02"
+        "ch02",
+        "ch03"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-012.txt",
       "sha256": "d36ecb1c274ce55607835b6e3c6c5b4e02d1868265e37f73a79173ace448bef6",
@@ -427,6 +434,7 @@
       ],
       "chapters": [
         "ch01",
+        "ch02",
         "ch11"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-015.txt",
@@ -455,6 +463,7 @@
       ],
       "chapters": [
         "ch01",
+        "ch02",
         "ch10",
         "ch11"
       ],
@@ -758,6 +767,7 @@
         "ch02",
         "ch03",
         "ch06",
+        "ch09",
         "ch11"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-027.txt",
@@ -814,7 +824,8 @@
       ],
       "chapters": [
         "ch02",
-        "ch06"
+        "ch06",
+        "ch09"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-029.txt",
       "sha256": "7c4348e669e0a2a0d84ff25777571db0f62483c2dded581d1ae493e90242ec68",
@@ -841,7 +852,8 @@
       ],
       "chapters": [
         "ch02",
-        "ch06"
+        "ch06",
+        "ch09"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-030.txt",
       "sha256": "4f1e326b6b314f5856566ce21a588bd934508fc767159859376315a94fcb2dfd",
@@ -927,7 +939,8 @@
         "ch00",
         "ch03",
         "ch04",
-        "ch05"
+        "ch05",
+        "ch06"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-033.txt",
       "sha256": "61c64fc7900604a34fcae13f7907df581d97c48ff19ec0d7db579a3bd1bd332e",
@@ -954,7 +967,8 @@
       ],
       "chapters": [
         "ch03",
-        "ch04"
+        "ch04",
+        "ch06"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-034.txt",
       "sha256": "95aa625eecff574cd1e55188823cb0b0e10a7c36a2f78b415913ca3bf1fcf35b",
@@ -983,6 +997,8 @@
       "chapters": [
         "ch03",
         "ch04",
+        "ch05",
+        "ch06",
         "ch09"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-035.txt",
@@ -1011,7 +1027,8 @@
       "chapters": [
         "ch03",
         "ch04",
-        "ch05"
+        "ch05",
+        "ch06"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-036.txt",
       "sha256": "d737453f458f71e135b6bee31e4bdda076f6bca90f264add649fd738b75714cb",
@@ -1068,6 +1085,7 @@
       ],
       "chapters": [
         "ch00",
+        "ch03",
         "ch04",
         "ch05",
         "ch08"
@@ -1097,6 +1115,7 @@
         "RQ5"
       ],
       "chapters": [
+        "ch03",
         "ch04",
         "ch05",
         "ch07",
@@ -1128,6 +1147,7 @@
       ],
       "chapters": [
         "ch03",
+        "ch04",
         "ch05",
         "ch11",
         "ch12"
@@ -1768,6 +1788,7 @@
       ],
       "chapters": [
         "ch05",
+        "ch09",
         "ch10",
         "ch11"
       ],
@@ -1857,6 +1878,7 @@
         "ch08",
         "ch09",
         "ch10",
+        "ch11",
         "ch12"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-066.txt",
@@ -1910,9 +1932,11 @@
         "RQ6"
       ],
       "chapters": [
+        "ch03",
         "ch04",
         "ch09",
-        "ch10"
+        "ch10",
+        "ch11"
       ],
       "local_txt_path": "recherche/corpus_l_plus/SRC-068.txt",
       "sha256": "596393b79ecc10a1f5b9a3e1b38e9932ccc9fa4c2303afb5c3756947fae9ce4f",

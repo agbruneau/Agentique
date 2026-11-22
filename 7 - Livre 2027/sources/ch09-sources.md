@@ -4,7 +4,7 @@
 - **Axes de recherche couverts** : `RQ3, RQ5`
 - **Date de gel des faits** : 31 décembre 2026
 - **Protocole** : `MLR-PRISMA-SCR-LIVRE-2027-V1.2` (`metadata_only_pct = 0.0 %`, règle stricte `AO-01` sans contournement)
-- **Nombre de sources probantes incluses** : 17 sources intégrales `L+`
+- **Nombre de sources probantes incluses** : 21 sources intégrales `L+`
 
 > Ce dossier fermé recense exclusivement les sources primaires et travaux ouverts dont le texte intégral UTF-8 a été extrait, conservé sous `recherche/corpus_l_plus/` et authentifié par empreinte `SHA-256`. Aucune source en `statut F` ni copie locale non ouverte n'entre dans l'argumentation probante.
 
@@ -181,3 +181,43 @@ Note AO-01 (statut F) : le manuel STPA MIT hébergé sur scripts.mit.edu (erreur
 - **Empreinte SHA-256** : `a0b7c487a5e089136bbd97d1f4d9dc54ce8376634f6f270ea425689f31dd179c`
 - **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `11.0/12` | Devis : Étude empirique qualitative auprès de développeurs (Microsoft Research, arXiv 2026) | Axes : `RQ5, RQ6`
 - **Synthèse factuelle** : Dhanorkar, Passi et Vorvoreanu observent directement comment des développeurs exercent concrètement la supervision humaine d'agents logiciels autonomes au quotidien, depuis la co-planification jusqu'à l'inspection des résultats. L'étude documente les dilemmes de granularité des instructions — où les agents prennent des décisions fragiles faute d'exigences implicites de sécurité ou de maintenabilité — ainsi que les heuristiques improvisées de vérification face à la fatigue cognitive. Elle ancre empiriquement les exigences concrètes d'ergonomie cognitive et de « révision humaine effective » aux chapitres 9, 11 et 12.
+
+### [18] SRC-027 — Measuring Agents in Production (MAP)
+
+- **Auteurs / Émetteur** : Melissa Z. Pan, Negar Arabzadeh, Riccardo Cogo, Yuxuan Zhu et al. (2025, 2025-12-02)
+- **Revue / Organisme / Dépôt** : arXiv (UC Berkeley) — Identifiant : `arXiv:2512.04123`
+- **URL ouverte vérifiée** : https://arxiv.org/pdf/2512.04123
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-027.txt` (22684 mots, 160353 octets)
+- **Empreinte SHA-256** : `3f8f34adaeb523b3cdc740f8df9d4c97b621f9ac7f955c10d94e3fbc97dcc2e1`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `11.0/12` | Devis : Étude mixte terrain (20 études de cas et enquête sur 306 répondants / 86 systèmes) | Axes : `RQ2, RQ6`
+- **Synthèse factuelle** : L'étude Measuring Agents in Production (MAP) de Pan et al. documente comment les praticiens conçoivent réellement les agents en exploitation à travers 20 entrevues approfondies et 306 réponses d'enquête couvrant 26 domaines (86 praticiens en production). Contre le mythe de l'autonomie ouverte, 68 % des systèmes déployés exécutent au plus 10 étapes avant intervention humaine, 80 % des études de cas (16 sur 20) utilisent des flux de travail structurés fixes, 70 % conservent des modèles commerciaux sans réentraînement des poids et 79 % rédigent les invites manuellement. Les organisations sacrifient délibérément l'autonomie ouverte au profit de la prévisibilité et de la maîtrise du risque.
+
+### [19] SRC-029 — τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains
+
+- **Auteurs / Émetteur** : Shunyu Yao, Noah Shinn, Pedram Razavi, Karthik Narasimhan (2024, 2024-06-17)
+- **Revue / Organisme / Dépôt** : arXiv (Princeton) — Identifiant : `arXiv:2406.12045`
+- **URL ouverte vérifiée** : https://arxiv.org/pdf/2406.12045
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-029.txt` (17797 mots, 130060 octets)
+- **Empreinte SHA-256** : `7c4348e669e0a2a0d84ff25777571db0f62483c2dded581d1ae493e90242ec68`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `11.0/12` | Devis : Banc d'essai conversationnel à état de base de données (arXiv Princeton / Sierra) | Axes : `RQ2`
+- **Synthèse factuelle** : Yao, Shinn, Razavi et Narasimhan conçoivent τ-bench pour évaluer des agents confrontés simultanément à des usagers simulés, à des outils d'API réels et à des politiques métier strictes (secteurs aérien et commerce de détail), en comparant l'état final exact de la base de données avec l'état cible. Ils introduisent la métrique pass^k, mesurant la probabilité qu'un agent réussisse sans défaillance les k répétitions d'une même tâche, révélant qu'un agent appelant des outils à 50 % sur un essai chute rapidement sous pass^8. L'article démontre que les scores moyens à essai unique surestiment gravement l'aptitude à la production.
+
+### [20] SRC-030 — Holistic Agent Leaderboard: The Missing Infrastructure for AI Agent Evaluation (HAL)
+
+- **Auteurs / Émetteur** : Sayash Kapoor, Benedikt Stroebl, Peter Kirgis, Nitya Nadgir et al. (2025, 2025-10-13)
+- **Revue / Organisme / Dépôt** : arXiv (Princeton) — Identifiant : `arXiv:2510.11977`
+- **URL ouverte vérifiée** : https://arxiv.org/pdf/2510.11977
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-030.txt` (25986 mots, 173603 octets)
+- **Empreinte SHA-256** : `4f1e326b6b314f5856566ce21a588bd934508fc767159859376315a94fcb2dfd`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `11.0/12` | Devis : Infrastructure normalisée d'évaluation et méta-analyse (21 730 exécutions, Princeton) | Axes : `RQ2`
+- **Synthèse factuelle** : Kapoor et al. mettent au point le Holistic Agent Leaderboard (HAL), un harnais d'évaluation standardisé exécuté sur machines virtuelles isolées qui orchestre 21 730 exécutions à travers 9 modèles et 9 bancs d'essai afin d'éliminer les biais d'implémentation des harnais ad hoc. Leur analyse tridimensionnelle (modèle × harnais × banc) révèle que le coût en jetons varie d'un ordre de grandeur entre architectures pour des gains parfois marginaux et recense des défaillances silencieuses de contournement ou de devinette face aux blocages d'outils. HAL fournit la justification méthodologique de la chaîne d'ingénierie et d'évaluation sur les protocoles d'évaluation Pareto coût-constance.
+
+### [21] SRC-063 — Loi modernisant des dispositions législatives en matière de protection des renseignements personnels (Loi 25 / LQ 2021, c. 25, art. 12.1)
+
+- **Auteurs / Émetteur** : Assemblée nationale du Québec (2021, 2021-09-22)
+- **Revue / Organisme / Dépôt** : Publications du Québec — Identifiant : `LQ-2021-C25`
+- **URL ouverte vérifiée** : https://www.publicationsduquebec.gouv.qc.ca/fileadmin/Fichiers_client/lois_et_reglements/LoisAnnuelles/fr/2021/2021C25F.PDF
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-063.txt` (21658 mots, 143588 octets)
+- **Empreinte SHA-256** : `829e67f777ca0645b5b51a2ec4d8ec94739232c5a33ef76b7944d2bb81b61d87`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `12.0/12` | Devis : Texte législatif officiel sanctionné du Québec (Loi 25 / LQ 2021, c. 25) | Axes : `RQ6`
+- **Synthèse factuelle** : La Loi modernisant des dispositions législatives en matière de protection des renseignements personnels (LQ 2021, c. 25, sanctionnée le 22 septembre 2021) insère l'article 12.1 dans la Loi sur le privé encadrant toute décision rendue fondée exclusivement sur un traitement automatisé (information de la personne concernée, communication sur demande des renseignements, facteurs et paramètres utilisés, correction et droit de présenter ses observations devant un membre du personnel). Elle instaure des sanctions administratives pécuniaires pouvant atteindre 10 000 000 \$ ou 2 % du chiffre d'affaires mondial (art. 90.12) et des amendes pénales allant jusqu'à 25 000 000 \$ ou 4 % du chiffre d'affaires mondial (art. 91). Ce texte sanctionné fournit la preuve L+ face au blocage HTTP 403 de LégisQuébec (statut F).

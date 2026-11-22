@@ -4,7 +4,7 @@
 - **Axes de recherche couverts** : `RQ2, RQ3`
 - **Date de gel des faits** : 31 décembre 2026
 - **Protocole** : `MLR-PRISMA-SCR-LIVRE-2027-V1.2` (`metadata_only_pct = 0.0 %`, règle stricte `AO-01` sans contournement)
-- **Nombre de sources probantes incluses** : 14 sources intégrales `L+`
+- **Nombre de sources probantes incluses** : 15 sources intégrales `L+`
 
 > Ce dossier fermé recense exclusivement les sources primaires et travaux ouverts dont le texte intégral UTF-8 a été extrait, conservé sous `recherche/corpus_l_plus/` et authentifié par empreinte `SHA-256`. Aucune source en `statut F` ni copie locale non ouverte n'entre dans l'argumentation probante.
 
@@ -149,3 +149,13 @@
 - **Empreinte SHA-256** : `829e67f777ca0645b5b51a2ec4d8ec94739232c5a33ef76b7944d2bb81b61d87`
 - **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `12.0/12` | Devis : Texte législatif officiel sanctionné du Québec (Loi 25 / LQ 2021, c. 25) | Axes : `RQ6`
 - **Synthèse factuelle** : La Loi modernisant des dispositions législatives en matière de protection des renseignements personnels (LQ 2021, c. 25, sanctionnée le 22 septembre 2021) insère l'article 12.1 dans la Loi sur le privé encadrant toute décision rendue fondée exclusivement sur un traitement automatisé (information de la personne concernée, communication sur demande des renseignements, facteurs et paramètres utilisés, correction et droit de présenter ses observations devant un membre du personnel). Elle instaure des sanctions administratives pécuniaires pouvant atteindre 10 000 000 \$ ou 2 % du chiffre d'affaires mondial (art. 90.12) et des amendes pénales allant jusqu'à 25 000 000 \$ ou 4 % du chiffre d'affaires mondial (art. 91). Ce texte sanctionné fournit la preuve L+ face au blocage HTTP 403 de LégisQuébec (statut F).
+
+### [15] SRC-035 — CloudEvents Specification — Version 1.0.2
+
+- **Auteurs / Émetteur** : CNCF Serverless Working Group (2022, 2022-04-01)
+- **Revue / Organisme / Dépôt** : Cloud Native Computing Foundation (CNCF) — Identifiant : `CLOUDEVENTS-1.0.2`
+- **URL ouverte vérifiée** : https://raw.githubusercontent.com/cloudevents/spec/v1.0.2/cloudevents/spec.md
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-035.txt` (3651 mots, 25147 octets)
+- **Empreinte SHA-256** : `8f4d59dd27f8807741321b3145c5c9c2f22bba5bf9a9299b0c2020d769dc92ae`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `11.0/12` | Devis : Spécification ouverte CNCF de format d'événement (CloudEvents v1.0.2) | Axes : `RQ3, RQ5`
+- **Synthèse factuelle** : Publiée par le groupe Serverless de la Cloud Native Computing Foundation, la spécification CloudEvents v1.0.2 standardise une enveloppe neutre de métadonnées contextuelles (identifiant id, source, type, specversion, datacontenttype, heure) pour décrire les événements traversant des routeurs, bus de messages et systèmes de traçage hétérogènes. Cette séparation nette entre attributs de contexte routables par les intermédiaires et charge utile métier facilite la mise en place de files d'attente, de journaux de reprise et de politiques de sécurité indépendantes du protocole de transport. Elle appuie l'orchestration événementielle et les canaux de compensation dédiés dans l'architecture et la gouvernance de l'ouvrage.

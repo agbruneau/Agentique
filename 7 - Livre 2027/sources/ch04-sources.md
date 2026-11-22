@@ -4,7 +4,7 @@
 - **Axes de recherche couverts** : `RQ2, RQ3`
 - **Date de gel des faits** : 31 décembre 2026
 - **Protocole** : `MLR-PRISMA-SCR-LIVRE-2027-V1.2` (`metadata_only_pct = 0.0 %`, règle stricte `AO-01` sans contournement)
-- **Nombre de sources probantes incluses** : 16 sources intégrales `L+`
+- **Nombre de sources probantes incluses** : 18 sources intégrales `L+`
 
 > Ce dossier fermé recense exclusivement les sources primaires et travaux ouverts dont le texte intégral UTF-8 a été extrait, conservé sous `recherche/corpus_l_plus/` et authentifié par empreinte `SHA-256`. Aucune source en `statut F` ni copie locale non ouverte n'entre dans l'argumentation probante.
 
@@ -169,3 +169,23 @@
 - **Empreinte SHA-256** : `596393b79ecc10a1f5b9a3e1b38e9932ccc9fa4c2303afb5c3756947fae9ce4f`
 - **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `12.0/12` | Devis : Ligne directrice prudentielle officielle sur les tiers (OSFI/BSIF B-10) | Axes : `RQ6`
 - **Synthèse factuelle** : La ligne directrice B-10 du BSIF encadre la gestion des risques liés aux accords avec des tiers pour toutes les banques, sociétés d'assurances et succursales étrangères sous réglementation fédérale canadienne. Elle exige une diligence raisonnable continue, l'évaluation du risque de concentration, la maîtrise des chaînes de sous-traitance de niveau n (« fourth parties ») et des plans de sortie et de réversibilité robustes pour les services technologiques critiques. Elle appuie l'exigence de substituabilité des modèles et d'encadrement des serveurs d'outils externes dans l'ouvrage.
+
+### [17] SRC-040 — From Technical Debt to Cognitive and Intent Debt: Rethinking Software Health in the Age of AI
+
+- **Auteurs / Émetteur** : Margaret-Anne Storey (2026, 2026-03-23)
+- **Revue / Organisme / Dépôt** : arXiv (University of Victoria) — Identifiant : `arXiv:2603.22106`
+- **URL ouverte vérifiée** : https://arxiv.org/pdf/2603.22106
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-040.txt` (4902 mots, 32784 octets)
+- **Empreinte SHA-256** : `ea4b2e2a02be74d9ea58c479f65fd32ca0dd95a60fab65538792e41a844dd052`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `11.0/12` | Devis : Analyse conceptuelle en génie logiciel (Université de Victoria, arXiv 2026) | Axes : `RQ3, RQ6`
+- **Synthèse factuelle** : Margaret-Anne Storey montre que l'accélération fulgurante du codage assisté par IA générative déplace la dette technique classique vers deux passifs plus insidieux : la dette cognitive (perte de compréhension partagée par les équipes du fonctionnement du logiciel produit) et la dette d'intention (oubli des hypothèses métier et contraintes pour lesquelles le système a été conçu). Même lorsque les tests unitaires réussissent, les équipes deviennent incapables de faire évoluer ou de corriger le code en toute confiance face à des effets de bord inattendus. Cette thèse éclaire l'érosion de la maîtrise d'ouvrage technologique dans l'architecture et la gouvernance de l'ouvrage.
+
+### [18] SRC-007 — Defeating Prompt Injections by Design (CaMeL)
+
+- **Auteurs / Émetteur** : Edoardo Debenedetti, Ilia Shumailov, Tianqi Fan, Jamie Hayes et al. (2025, 2025-03-24)
+- **Revue / Organisme / Dépôt** : arXiv / IEEE SaTML — Identifiant : `arXiv:2503.18813`
+- **URL ouverte vérifiée** : https://arxiv.org/pdf/2503.18813
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-007.txt` (50342 mots, 361916 octets)
+- **Empreinte SHA-256** : `49dbe34fe4cd657f9d22e5dfc3a6088dbce5935172937af6374bafdbf2bc188b`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Oui | Score AACODS : `11.5/12` | Devis : Système d'exécution sécurisé et évaluation sur banc AgentDojo (peer-reviewed) | Axes : `RQ5`
+- **Synthèse factuelle** : Debenedetti et al. présentent CaMeL, une couche système de sécurité inspirée des langages à capacités et du patron Dual-LLM qui isole par construction le graphe d'appels d'outils du traitement de données externes non fiables. Un modèle planificateur traduit la requête approuvée en un sous-ensemble restreint de Python dont l'arbre syntaxique est interprété sous politiques de flux de données et de capacités, tandis qu'un modèle confiné sans accès aux outils privilégies résume les données brutes. Sur le banc AgentDojo, CaMeL résout 77 % des tâches avec une garantie structurelle contre l'injection de prompt indirecte, contre 84 % pour un agent sans défense. Cette source valide l'arbitrage sécurité-utilité et le principe de séparation contrôle-données en ingénierie.

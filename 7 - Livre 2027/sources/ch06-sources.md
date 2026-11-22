@@ -4,7 +4,7 @@
 - **Axes de recherche couverts** : `RQ2, RQ3`
 - **Date de gel des faits** : 31 décembre 2026
 - **Protocole** : `MLR-PRISMA-SCR-LIVRE-2027-V1.2` (`metadata_only_pct = 0.0 %`, règle stricte `AO-01` sans contournement)
-- **Nombre de sources probantes incluses** : 14 sources intégrales `L+`
+- **Nombre de sources probantes incluses** : 19 sources intégrales `L+`
 
 > Ce dossier fermé recense exclusivement les sources primaires et travaux ouverts dont le texte intégral UTF-8 a été extrait, conservé sous `recherche/corpus_l_plus/` et authentifié par empreinte `SHA-256`. Aucune source en `statut F` ni copie locale non ouverte n'entre dans l'argumentation probante.
 
@@ -149,3 +149,53 @@
 - **Empreinte SHA-256** : `f06eb8eca755edcd0c919c7f55a5493baa75067ac6fb28848e4486419653708a`
 - **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Oui | Score AACODS : `11.0/12` | Devis : Article scientifique évalué par les pairs (Nature Scientific Reports, août 2026) | Axes : `RQ6`
 - **Synthèse factuelle** : AL-Ali et al. (publié le 20 août 2026) montrent que le déploiement d'IA en environnements opérationnels critiques échoue fréquemment en raison de l'interaction entre des estimations de risque mal calibrées, des hypothèses statiques de confiance et des biais cognitifs humains sous pression temporelle. Les auteurs démontrent qu'un dispositif adaptatif calibré qui tient compte de l'incertitude épistémique et modélise le biais d'automatisation évite la déstabilisation conjointe de l'opérateur et du système. Ce travail évalué par les pairs appuie l'ergonomie de supervision et les mesures anti-approbation réflexe aux chapitres 6 et 11.
+
+### [15] SRC-006 — SagaLLM: Context Management, Validation, and Transaction Guarantees for Multi-Agent LLM Planning
+
+- **Auteurs / Émetteur** : Edward Y. Chang, Longling Geng (2025, 2025-03-15)
+- **Revue / Organisme / Dépôt** : arXiv / VLDB — Identifiant : `arXiv:2503.11951`
+- **URL ouverte vérifiée** : https://arxiv.org/pdf/2503.11951
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-006.txt` (9679 mots, 73051 octets)
+- **Empreinte SHA-256** : `c2565e8391cc57e98ad4c7f26cac6b52dd76360de5a461152d2a94765e64e694`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `10.5/12` | Devis : Architecture transactionnelle et validation expérimentale (SagaLLM) | Axes : `RQ3`
+- **Synthèse factuelle** : Chang et Geng documentent quatre défauts structurels des planificateurs multi-agents à base de LLM : l'auto-validation peu fiable, la perte de contexte sur horizons longs, l'absence de garanties transactionnelles et la coordination fragile entre agents distribués. Pour y remédier, SagaLLM adapte le patron des sagas compensatoires de Garcia-Molina en combinant mémoire persistante externe, validation indépendante par des agents tiers et journalisation explicite des états avant et après chaque action. L'architecture permet d'annuler ou de compenser les effets partiels d'un flux distribué lorsqu'une contrainte aval échoue sans immobiliser les ressources par verrou distribué ACID. Elle forme la référence directe de l'ouvrage pour les sagas à point pivot et l'exécution durable.
+
+### [16] SRC-033 — Sagas
+
+- **Auteurs / Émetteur** : Hector Garcia-Molina, Kenneth Salem (1987, 1987-05-01)
+- **Revue / Organisme / Dépôt** : ACM SIGMOD 1987 (Princeton Dept. CS OA) — Identifiant : `ACM-SIGMOD-1987-SAGAS`
+- **URL ouverte vérifiée** : https://www.cs.cornell.edu/andru/cs711/2002fa/reading/sagas.pdf
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-033.txt` (7817 mots, 46158 octets)
+- **Empreinte SHA-256** : `61c64fc7900604a34fcae13f7907df581d97c48ff19ec0d7db579a3bd1bd332e`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Oui | Score AACODS : `11.5/12` | Devis : Article fondateur d'informatique distribuée évalué par les pairs (ACM SIGMOD 1987) | Axes : `RQ3`
+- **Synthèse factuelle** : Garcia-Molina et Salem introduisent le concept de « saga » pour traiter les transactions de longue durée (LLT) sans maintenir de verrous exclusifs bloquants sur les bases de données critiques. Une saga décompose une LLT en une séquence de transactions locales indépendantes T_1..T_n accompagnées chacune d'une transaction compensatoire C_i capable d'annuler sémantiquement son effet si une étape ultérieure échoue et doit revenir en arrière. Cette formalisation des garanties « tout ou compensation » sans verrouillage distribué demeure la pierre angulaire de l'orchestration d'agents reliés à des systèmes d'enregistrement patrimoniaux.
+
+### [17] SRC-034 — Temporal SDKs — Durable Execution, Event History and Deterministic Replay
+
+- **Auteurs / Émetteur** : Temporal Technologies (2026, 2026-06-01)
+- **Revue / Organisme / Dépôt** : Temporal Documentation — Identifiant : `TEMPORAL-SDKS-2026`
+- **URL ouverte vérifiée** : https://docs.temporal.io/encyclopedia/temporal-sdks
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-034.txt` (2327 mots, 15387 octets)
+- **Empreinte SHA-256** : `95aa625eecff574cd1e55188823cb0b0e10a7c36a2f78b415913ca3bf1fcf35b`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `10.5/12` | Devis : Documentation d'architecture d'exécution durable (Temporal Technologies) | Axes : `RQ3`
+- **Synthèse factuelle** : Cette spécification architecturale des SDK Temporal décrit comment les workflows persistants enregistrent chaque étape, minuterie et réponse d'activité dans un journal d'événements immuable (Event History) géré par le service d'orchestration. En cas de redémarrage, d'expiration ou de panne de processus, le moteur rejoue le code déterministe du workflow en récupérant les résultats déjà mémorisés dans le journal sans réexécuter les effets de bord externes déjà validés. Ce modèle impose une frontière stricte entre la logique déterministe du workflow et les appels non déterministes (LLM, API externes) confinés dans des activités idempotentes.
+
+### [18] SRC-035 — CloudEvents Specification — Version 1.0.2
+
+- **Auteurs / Émetteur** : CNCF Serverless Working Group (2022, 2022-04-01)
+- **Revue / Organisme / Dépôt** : Cloud Native Computing Foundation (CNCF) — Identifiant : `CLOUDEVENTS-1.0.2`
+- **URL ouverte vérifiée** : https://raw.githubusercontent.com/cloudevents/spec/v1.0.2/cloudevents/spec.md
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-035.txt` (3651 mots, 25147 octets)
+- **Empreinte SHA-256** : `8f4d59dd27f8807741321b3145c5c9c2f22bba5bf9a9299b0c2020d769dc92ae`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `11.0/12` | Devis : Spécification ouverte CNCF de format d'événement (CloudEvents v1.0.2) | Axes : `RQ3, RQ5`
+- **Synthèse factuelle** : Publiée par le groupe Serverless de la Cloud Native Computing Foundation, la spécification CloudEvents v1.0.2 standardise une enveloppe neutre de métadonnées contextuelles (identifiant id, source, type, specversion, datacontenttype, heure) pour décrire les événements traversant des routeurs, bus de messages et systèmes de traçage hétérogènes. Cette séparation nette entre attributs de contexte routables par les intermédiaires et charge utile métier facilite la mise en place de files d'attente, de journaux de reprise et de politiques de sécurité indépendantes du protocole de transport. Elle appuie l'orchestration événementielle et les canaux de compensation dédiés dans l'architecture et la gouvernance de l'ouvrage.
+
+### [19] SRC-036 — The Idempotency-Key HTTP Header Field (draft-ietf-httpapi-idempotency-key-header)
+
+- **Auteurs / Émetteur** : Sanjay Dalal, Jae-Hoon Lee (IETF HTTPAPI WG) (2026, 2026-06-01)
+- **Revue / Organisme / Dépôt** : IETF Datatracker — Identifiant : `IETF-DRAFT-IDEMPOTENCY-KEY`
+- **URL ouverte vérifiée** : https://datatracker.ietf.org/doc/draft-ietf-httpapi-idempotency-key-header/
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-036.txt` (3668 mots, 24607 octets)
+- **Empreinte SHA-256** : `d737453f458f71e135b6bee31e4bdda076f6bca90f264add649fd738b75714cb`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `10.5/12` | Devis : Spécification technique en cours de normalisation IETF (HTTPAPI WG) | Axes : `RQ3`
+- **Synthèse factuelle** : Le brouillon normatif de l'IETF HTTPAPI définit l'en-tête HTTP « Idempotency-Key » destiné à rendre les méthodes mutantes non idempotentes telles que POST et PATCH tolérantes aux pannes et aux réessais réseau. Il formalise les obligations du client (unicité et durée de validité de la clé) et celles de la ressource (calcul d'empreinte de requête, détection de conflit en cas de réutilisation avec une charge utile différente et restitution déterministe de la réponse mise en cache). En orchestration agentique, ce mécanisme empêche qu'un agent relancé après délai d'attente ne déclenche deux paiements ou écritures comptables.

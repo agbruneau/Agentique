@@ -4,7 +4,7 @@
 - **Axes de recherche couverts** : `RQ1`
 - **Date de gel des faits** : 31 décembre 2026
 - **Protocole** : `MLR-PRISMA-SCR-LIVRE-2027-V1.2` (`metadata_only_pct = 0.0 %`, règle stricte `AO-01` sans contournement)
-- **Nombre de sources probantes incluses** : 14 sources intégrales `L+`
+- **Nombre de sources probantes incluses** : 22 sources intégrales `L+`
 
 > Ce dossier fermé recense exclusivement les sources primaires et travaux ouverts dont le texte intégral UTF-8 a été extrait, conservé sous `recherche/corpus_l_plus/` et authentifié par empreinte `SHA-256`. Aucune source en `statut F` ni copie locale non ouverte n'entre dans l'argumentation probante.
 
@@ -149,3 +149,83 @@
 - **Empreinte SHA-256** : `d737453f458f71e135b6bee31e4bdda076f6bca90f264add649fd738b75714cb`
 - **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `10.5/12` | Devis : Spécification technique en cours de normalisation IETF (HTTPAPI WG) | Axes : `RQ3`
 - **Synthèse factuelle** : Le brouillon normatif de l'IETF HTTPAPI définit l'en-tête HTTP « Idempotency-Key » destiné à rendre les méthodes mutantes non idempotentes telles que POST et PATCH tolérantes aux pannes et aux réessais réseau. Il formalise les obligations du client (unicité et durée de validité de la clé) et celles de la ressource (calcul d'empreinte de requête, détection de conflit en cas de réutilisation avec une charge utile différente et restitution déterministe de la réponse mise en cache). En orchestration agentique, ce mécanisme empêche qu'un agent relancé après délai d'attente ne déclenche deux paiements ou écritures comptables.
+
+### [15] SRC-002 — Virtual Agent Economies
+
+- **Auteurs / Émetteur** : Nenad Tomašev, Matija Franklin, Joel Z. Leibo, Julian Jacobs et al. (2025, 2025-09-12)
+- **Revue / Organisme / Dépôt** : arXiv (Google DeepMind) — Identifiant : `arXiv:2509.10147`
+- **URL ouverte vérifiée** : https://arxiv.org/pdf/2509.10147
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-002.txt` (23147 mots, 153510 octets)
+- **Empreinte SHA-256** : `f475a70c3b55b02a344241b1e1e6e1634cd904922b191f8bed2b89c1ca5d1554`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `11.0/12` | Devis : Cadre d'analyse socio-économique et de design institutionnel | Axes : `RQ1`
+- **Synthèse factuelle** : Tomašev et al. caractérisent l'émergence spontanée d'« économies d'agents virtuels » où des agents autonomes négocient, vérifient des états et exécutent des transactions à des fréquences dépassant la supervision humaine directe. Ils proposent la typologie de l'« économie bac à sable » selon deux axes orthogonaux : son origine (émergente ou intentionnelle) et son degré de perméabilité envers l'économie humaine établie. Le texte étudie les mécanismes d'enchères équitables, d'attestation vérifiable des échanges et de prévention des avantages asymétriques liés aux écarts de capacité entre modèles. Il fournit le soubassement conceptuel des chapitres sur la frontière de l'entreprise, les marchés d'agents et l'imputabilité financière.
+
+### [16] SRC-004 — The Coasean Singularity? Demand, Supply, and Market Design with AI Agents
+
+- **Auteurs / Émetteur** : Peyman Shahidi, Gili Rusak, Benjamin S. Manning, Andrey Fradkin, John J. Horton (2025, 2025-11-01)
+- **Revue / Organisme / Dépôt** : NBER Working Paper 34468 — Identifiant : `NBER-w34468`
+- **URL ouverte vérifiée** : https://www.nber.org/system/files/working_papers/w34468/w34468.pdf
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-004.txt` (9028 mots, 64339 octets)
+- **Empreinte SHA-256** : `45b9200d9e59c5eff7cb6ee35688c38f65ee372e0d547be0596409c1b2810292`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `11.5/12` | Devis : Document de travail économique (NBER Working Paper 34468) | Axes : `RQ1`
+- **Synthèse factuelle** : Shahidi, Rusak, Manning, Fradkin et Horton examinent l'effet des agents IA sur les marchés numériques à travers le prisme coasien de l'effondrement des coûts de recherche, de négociation et de vérification. Du côté de la demande, les utilisateurs arbitrent entre qualité décisionnelle et réduction d'effort selon le contexte et la capacité de l'agent. Du côté de l'offre, les plateformes arbitrent entre intégration verticale fermée et interopérabilité ouverte entre domaines, ce qui conditionne l'allocation de la valeur économique. Ce papier remplace en L+ les éditions commerciales bloquées de la théorie des coûts de transaction pour ancrer la réflexion sur les frontières de la firme.
+
+### [17] SRC-005 — An Economy of AI Agents
+
+- **Auteurs / Émetteur** : Gillian K. Hadfield, Andrew Koh (2025, 2025-09-01)
+- **Revue / Organisme / Dépôt** : arXiv / Schwartz Reisman Institute — Identifiant : `arXiv:2509.01063`
+- **URL ouverte vérifiée** : https://arxiv.org/pdf/2509.01063
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-005.txt` (11074 mots, 74078 octets)
+- **Empreinte SHA-256** : `c87fd1c3cd815ba6ae355c6b34203dd83f75b20406e1eded6fbac6787e0eb0e9`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `11.0/12` | Devis : Analyse microéconomique et institutionnelle (NBER Handbook chapter) | Axes : `RQ1, RQ4`
+- **Synthèse factuelle** : Hadfield et Koh modélisent une économie peuplée d'agents IA capables de planifier et d'exécuter sur des horizons longs avec une supervision humaine intermittente. Les auteurs montrent que le bon fonctionnement de ces marchés exige de nouvelles infrastructures institutionnelles : identités vérifiables des mandataires, régimes de responsabilité civile, mémoire corrélée des engagements et mécanismes de sanction contre la collusion ou la défection. Ils soulignent le risque que des agents optimisateurs exploitent les failles contractuelles ou expérimentales des environnements numériques plus vite que les régulateurs humains. Ce cadre éclaire la jonction entre délégation économique, droit des obligations et identité cryptographique.
+
+### [18] SRC-040 — From Technical Debt to Cognitive and Intent Debt: Rethinking Software Health in the Age of AI
+
+- **Auteurs / Émetteur** : Margaret-Anne Storey (2026, 2026-03-23)
+- **Revue / Organisme / Dépôt** : arXiv (University of Victoria) — Identifiant : `arXiv:2603.22106`
+- **URL ouverte vérifiée** : https://arxiv.org/pdf/2603.22106
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-040.txt` (4902 mots, 32784 octets)
+- **Empreinte SHA-256** : `ea4b2e2a02be74d9ea58c479f65fd32ca0dd95a60fab65538792e41a844dd052`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `11.0/12` | Devis : Analyse conceptuelle en génie logiciel (Université de Victoria, arXiv 2026) | Axes : `RQ3, RQ6`
+- **Synthèse factuelle** : Margaret-Anne Storey montre que l'accélération fulgurante du codage assisté par IA générative déplace la dette technique classique vers deux passifs plus insidieux : la dette cognitive (perte de compréhension partagée par les équipes du fonctionnement du logiciel produit) et la dette d'intention (oubli des hypothèses métier et contraintes pour lesquelles le système a été conçu). Même lorsque les tests unitaires réussissent, les équipes deviennent incapables de faire évoluer ou de corriger le code en toute confiance face à des effets de bord inattendus. Cette thèse éclaire l'érosion de la maîtrise d'ouvrage technologique dans l'architecture et la gouvernance de l'ouvrage.
+
+### [19] SRC-012 — Agentic AI Market Size & Share Analysis — Growth Trends and Forecast
+
+- **Auteurs / Émetteur** : Mordor Intelligence (2026, 2026-06-01)
+- **Revue / Organisme / Dépôt** : Mordor Intelligence — Identifiant : `MORDOR-AGENTIC-AI-2026`
+- **URL ouverte vérifiée** : https://www.mordorintelligence.com/industry-reports/agentic-ai-market
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-012.txt` (6584 mots, 47538 octets)
+- **Empreinte SHA-256** : `d36ecb1c274ce55607835b6e3c6c5b4e02d1868265e37f73a79173ace448bef6`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `9.0/12` | Devis : Étude de marché sectorielle en accès ouvert (Mordor Intelligence 2026) | Axes : `RQ1`
+- **Synthèse factuelle** : Cette analyse ouverte du marché de l'IA agentique évalue la taille mondiale à 9,89 G\$ US en 2026 et à 14,06 G\$ US en 2027, avec une projection atteignant 82,27 G\$ US en 2032 au taux de croissance annuel composé de 42,38 % sur la période 2027–2032 (soit environ 40,6 G\$ US par interpolation à l'horizon 2030). Le rapport identifie les services financiers et bancaires (BFSI) et l'automatisation de processus comme moteurs principaux en Amérique du Nord, tout en soulignant la hausse des coûts de calcul d'orchestration, le manque d'interopérabilité et le verrouillage fournisseur comme freins majeurs. Utilisée conjointement avec Deloitte et Grand View, elle borne la fourchette haute ouverte du marché 2026–2030.
+
+### [20] SRC-038 — Model Context Protocol (MCP) Specification — Revision 2025-11-25
+
+- **Auteurs / Émetteur** : Model Context Protocol Maintainers (2025, 2025-11-25)
+- **Revue / Organisme / Dépôt** : modelcontextprotocol.io — Identifiant : `MCP-SPEC-2025-11-25`
+- **URL ouverte vérifiée** : https://modelcontextprotocol.io/specification/2025-11-25
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-038.txt` (658 mots, 4720 octets)
+- **Empreinte SHA-256** : `4c51bbc2f467fee7c2e5a4a61a05dac44533734db74af5244320f32be7ec46da`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `11.0/12` | Devis : Spécification protocolaire ouverte de connectivité (MCP 2025-11-25) | Axes : `RQ3, RQ5`
+- **Synthèse factuelle** : La spécification du Model Context Protocol (révision du 25 novembre 2025) définit un protocole standardisé fondé sur JSON-RPC 2.0 inspiré du Language Server Protocol pour relier des applications hôtes LLM, des clients connecteurs et des serveurs exposant outils, ressources et gabarits. Le texte encadre le cycle de vie des sessions, les mécanismes de consentement utilisateur et les considérations de sûreté liées à l'exposition d'outils locaux ou distants. Dans l'ouvrage, MCP incarne l'axe vertical d'interopérabilité agent-outil tout en exigeant des contrôles supplémentaires d'authentification et de sémantique métier.
+
+### [21] SRC-039 — Agent2Agent (A2A) Protocol Specification
+
+- **Auteurs / Émetteur** : Linux Foundation / A2A Project (2026, 2026-06-01)
+- **Revue / Organisme / Dépôt** : a2a-protocol.org — Identifiant : `A2A-SPEC-2026`
+- **URL ouverte vérifiée** : https://a2a-protocol.org/latest/specification/
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-039.txt` (24333 mots, 179807 octets)
+- **Empreinte SHA-256** : `fb9823ce13380143b0509c404cc5098c945ba2ec21f0dda779ddf90f4a351727`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `10.5/12` | Devis : Spécification ouverte d'interopérabilité inter-agents (Linux Foundation A2A) | Axes : `RQ3, RQ5`
+- **Synthèse factuelle** : La spécification Agent2Agent (A2A) propose une architecture à trois couches — modèle de données canonique, opérations abstraites et liaisons protocolaires JSON-RPC, gRPC et HTTP/REST — permettant à des agents opaques de domaines ou d'organisations distincts de se découvrir et de collaborer sur des tâches asynchrones de longue durée. Le protocole encadre la découverte par Agent Cards, les flux multi-tours, l'architecture d'extensions typées et la sécurité multi-locataires. A2A représente dans l'ouvrage le protocole horizontal complémentaire de MCP pour les échanges inter-entreprises.
+
+### [22] SRC-068 — Guideline B-10: Third-Party Risk Management
+
+- **Auteurs / Émetteur** : Office of the Superintendent of Financial Institutions (OSFI / BSIF) (2023, 2023-04-24)
+- **Revue / Organisme / Dépôt** : OSFI Canada — Identifiant : `OSFI-B10`
+- **URL ouverte vérifiée** : https://www.osfi-bsif.gc.ca/en/guidance/guidance-library/third-party-risk-management-guideline
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-068.txt` (9964 mots, 88262 octets)
+- **Empreinte SHA-256** : `596393b79ecc10a1f5b9a3e1b38e9932ccc9fa4c2303afb5c3756947fae9ce4f`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `12.0/12` | Devis : Ligne directrice prudentielle officielle sur les tiers (OSFI/BSIF B-10) | Axes : `RQ6`
+- **Synthèse factuelle** : La ligne directrice B-10 du BSIF encadre la gestion des risques liés aux accords avec des tiers pour toutes les banques, sociétés d'assurances et succursales étrangères sous réglementation fédérale canadienne. Elle exige une diligence raisonnable continue, l'évaluation du risque de concentration, la maîtrise des chaînes de sous-traitance de niveau n (« fourth parties ») et des plans de sortie et de réversibilité robustes pour les services technologiques critiques. Elle appuie l'exigence de substituabilité des modèles et d'encadrement des serveurs d'outils externes dans l'ouvrage.

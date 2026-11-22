@@ -4,7 +4,7 @@
 - **Axes de recherche couverts** : `RQ6`
 - **Date de gel des faits** : 31 décembre 2026
 - **Protocole** : `MLR-PRISMA-SCR-LIVRE-2027-V1.2` (`metadata_only_pct = 0.0 %`, règle stricte `AO-01` sans contournement)
-- **Nombre de sources probantes incluses** : 17 sources intégrales `L+`
+- **Nombre de sources probantes incluses** : 20 sources intégrales `L+`
 
 > Ce dossier fermé recense exclusivement les sources primaires et travaux ouverts dont le texte intégral UTF-8 a été extrait, conservé sous `recherche/corpus_l_plus/` et authentifié par empreinte `SHA-256`. Aucune source en `statut F` ni copie locale non ouverte n'entre dans l'argumentation probante.
 
@@ -181,3 +181,33 @@ Note AO-01 (statut F) : le miroir économie MIT de Cui et al. (HTTP 403), Dell'A
 - **Empreinte SHA-256** : `a0b7c487a5e089136bbd97d1f4d9dc54ce8376634f6f270ea425689f31dd179c`
 - **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `11.0/12` | Devis : Étude empirique qualitative auprès de développeurs (Microsoft Research, arXiv 2026) | Axes : `RQ5, RQ6`
 - **Synthèse factuelle** : Dhanorkar, Passi et Vorvoreanu observent directement comment des développeurs exercent concrètement la supervision humaine d'agents logiciels autonomes au quotidien, depuis la co-planification jusqu'à l'inspection des résultats. L'étude documente les dilemmes de granularité des instructions — où les agents prennent des décisions fragiles faute d'exigences implicites de sécurité ou de maintenabilité — ainsi que les heuristiques improvisées de vérification face à la fatigue cognitive. Elle ancre empiriquement les exigences concrètes d'ergonomie cognitive et de « révision humaine effective » aux chapitres 9, 11 et 12.
+
+### [18] SRC-065 — Ligne directrice E-23 — Gestion du risque de modélisation à l'échelle de l'entreprise (édition 2027)
+
+- **Auteurs / Émetteur** : Bureau du surintendant des institutions financières (BSIF / OSFI) (2025, 2025-09-11)
+- **Revue / Organisme / Dépôt** : BSIF Canada — Identifiant : `BSIF-E23-2027`
+- **URL ouverte vérifiée** : https://www.osfi-bsif.gc.ca/fr/consignes/repertoire-consignes/ligne-directrice-e-23-gestion-du-risque-modelisation-2027
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-065.txt` (7675 mots, 64813 octets)
+- **Empreinte SHA-256** : `886e1d96170f5def8a72bc30a2d8d68ef49d2fc2728e79cf97b3d7dbedd19322`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `12.0/12` | Devis : Ligne directrice prudentielle fédérale officielle (BSIF E-23, édition 2027) | Axes : `RQ6`
+- **Synthèse factuelle** : La ligne directrice E-23 révisée du Bureau du surintendant des institutions financières sur la gestion du risque de modélisation à l'échelle de l'entreprise affiche explicitement une date d'entrée en vigueur fixée « Le 1 mai 2027 ». Elle étend formellement le champ du risque de modélisation au-delà des modèles statistiques classiques pour englober les modèles d'intelligence artificielle et d'apprentissage automatique à travers tout leur cycle de vie (inventaire, validation indépendante, surveillance continue et gouvernance des compétences). Elle constitue l'ancre prudentielle canadienne structurante de la troisième et quatrième partie.
+
+### [19] SRC-066 — Generative and Agentic Artificial Intelligence: Implications for Technology, Cyber Security and Operational Risk
+
+- **Auteurs / Émetteur** : Office of the Superintendent of Financial Institutions (OSFI / BSIF) (2026, 2026-07-01)
+- **Revue / Organisme / Dépôt** : OSFI Technology Risk Bulletin — Identifiant : `OSFI-BULLETIN-AGENTIC-2026`
+- **URL ouverte vérifiée** : http://www.osfi-bsif.gc.ca/en/risks/technology-cyber-risk-management/technology-risk-bulletin/generative-agentic-artificial-intelligence-implications-technology-cyber-security-operational
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-066.txt` (4194 mots, 49330 octets)
+- **Empreinte SHA-256** : `362c9639e348264a5fb303562725378b726185cd4d26914724182736c0c07d69`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `12.0/12` | Devis : Bulletin officiel de risque technologique et cyber (OSFI/BSIF, juillet 2026) | Axes : `RQ5, RQ6`
+- **Synthèse factuelle** : Publié en juillet 2026, ce bulletin du BSIF analyse spécifiquement les risques technologiques, cybernétiques et opérationnels introduits par l'IA générative et l'IA agentique (définie par le raisonnement et l'exécution autonomes) dans les institutions financières fédérales. Le régulateur avertit que ces technologies élargissent les surfaces d'attaque, accélèrent la propagation des défaillances et mettent à l'épreuve les contrôles existants sous les lignes directrices B-13, B-10 et E-21. Il recommande une gouvernance renforcée de l'autonomie, une journalisation et surveillance accrues ainsi que des plans de continuité adaptés aux collectifs d'agents.
+
+### [20] SRC-068 — Guideline B-10: Third-Party Risk Management
+
+- **Auteurs / Émetteur** : Office of the Superintendent of Financial Institutions (OSFI / BSIF) (2023, 2023-04-24)
+- **Revue / Organisme / Dépôt** : OSFI Canada — Identifiant : `OSFI-B10`
+- **URL ouverte vérifiée** : https://www.osfi-bsif.gc.ca/en/guidance/guidance-library/third-party-risk-management-guideline
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-068.txt` (9964 mots, 88262 octets)
+- **Empreinte SHA-256** : `596393b79ecc10a1f5b9a3e1b38e9932ccc9fa4c2303afb5c3756947fae9ce4f`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `12.0/12` | Devis : Ligne directrice prudentielle officielle sur les tiers (OSFI/BSIF B-10) | Axes : `RQ6`
+- **Synthèse factuelle** : La ligne directrice B-10 du BSIF encadre la gestion des risques liés aux accords avec des tiers pour toutes les banques, sociétés d'assurances et succursales étrangères sous réglementation fédérale canadienne. Elle exige une diligence raisonnable continue, l'évaluation du risque de concentration, la maîtrise des chaînes de sous-traitance de niveau n (« fourth parties ») et des plans de sortie et de réversibilité robustes pour les services technologiques critiques. Elle appuie l'exigence de substituabilité des modèles et d'encadrement des serveurs d'outils externes dans l'ouvrage.

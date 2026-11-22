@@ -4,7 +4,7 @@
 - **Axes de recherche couverts** : `RQ1, RQ2`
 - **Date de gel des faits** : 31 décembre 2026
 - **Protocole** : `MLR-PRISMA-SCR-LIVRE-2027-V1.2` (`metadata_only_pct = 0.0 %`, règle stricte `AO-01` sans contournement)
-- **Nombre de sources probantes incluses** : 18 sources intégrales `L+`
+- **Nombre de sources probantes incluses** : 25 sources intégrales `L+`
 
 > Ce dossier fermé recense exclusivement les sources primaires et travaux ouverts dont le texte intégral UTF-8 a été extrait, conservé sous `recherche/corpus_l_plus/` et authentifié par empreinte `SHA-256`. Aucune source en `statut F` ni copie locale non ouverte n'entre dans l'argumentation probante.
 
@@ -191,3 +191,73 @@ Note AO-01 (statut F) : le communiqué primaire de Gartner (25 juin 2025, HTTP 4
 - **Empreinte SHA-256** : `80b064f92eb145f5ff0977ee03fb95543bb95599007e69ded99c08927edac0e9`
 - **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `10.5/12` | Devis : Analyse théorique et expérimentale à budget de calcul constant (Stanford) | Axes : `RQ2`
 - **Synthèse factuelle** : Tran et Kiela établissent, à partir de l'inégalité de traitement des données, qu'à budget égal de jetons de raisonnement et sous utilisation efficace du contexte, un agent unique est théoriquement plus efficace en information qu'un système multi-agents sur le raisonnement à sauts multiples. Leurs expériences montrent que les gains publiés en faveur des systèmes multi-agents proviennent souvent d'un biais de confusion lié à l'augmentation cachée du calcul en phase d'inférence. Lorsque le budget est normalisé, l'agent unique égale ou surpasse la plupart des architectures multi-agents, ces dernières ne redevenant compétitives que lorsque le contexte individuel sature.
+
+### [19] SRC-009 — Experimental evidence on the productivity effects of generative artificial intelligence
+
+- **Auteurs / Émetteur** : Shakked Noy, Whitney Zhang (2023, 2023-07-14)
+- **Revue / Organisme / Dépôt** : Science (open author manuscript) — Identifiant : `DOI:10.1126/science.adh2586-oa`
+- **URL ouverte vérifiée** : https://shakkednoy.com/Noy%20Zhang%20NBER%20SI.pdf
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-009.txt` (5888 mots, 39185 octets)
+- **Empreinte SHA-256** : `454df0409d081bd558bdb7b8dc0427d0c995178ab676795dcda876f6de5f31fc`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Oui | Score AACODS : `11.5/12` | Devis : Expérience randomisée contrôlée (Science, manuscrit auteur OA) | Axes : `RQ1, RQ6`
+- **Synthèse factuelle** : Noy et Zhang mènent une expérience préenregistrée randomisée auprès de 453 professionnels diplômés affectés à des tâches d'écriture professionnelle réalistes et rémunérées selon la qualité. Le groupe ayant accès à ChatGPT réduit son temps moyen d'exécution de 40 % tout en augmentant la qualité évaluée de 18 %, avec un rattrapage plus marqué chez les participants initialement moins performants. L'expérience révèle aussi une persistance d'usage à moyen terme deux semaines après le protocole. Ces résultats illustrent l'effet égalisateur initial de l'IA générative sur des tâches cognitives bornées et préfigurent le contraste entre gain individuel de rédaction et risque d'érosion des compétences fondamentales.
+
+### [20] SRC-010 — The Effects of Generative AI on High-Skilled Work: Evidence from Three Field Experiments with Software Developers
+
+- **Auteurs / Émetteur** : Kevin Zheyuan Cui, Mert Demirer, Sonia Jaffe, Leon Musolff, Sida Peng, Tobias Salz (2025, 2025-06-01)
+- **Revue / Organisme / Dépôt** : MIT / Microsoft / Wharton Open Paper — Identifiant : `SSRN-4945566-oa`
+- **URL ouverte vérifiée** : https://www.mertdemirer.com/Papers/Demirer_AI_productivity.pdf
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-010.txt` (14293 mots, 93164 octets)
+- **Empreinte SHA-256** : `5e63271a93867019b07e6beb0c80666b0d8b1df8ee1f8791426595edb8339c5e`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `11.0/12` | Devis : Synthèse de trois essais contrôlés sur le terrain (4 867 développeurs) | Axes : `RQ1, RQ6`
+- **Synthèse factuelle** : Cui, Demirer, Jaffe, Musolff, Peng et Salz analysent trois expérimentations randomisées conduites en conditions réelles d'exploitation chez Microsoft, Accenture et une entreprise du classement Fortune 100 auprès de 4 867 développeurs logiciels. L'agrégation des essais mesure une hausse moyenne de 26,08 % (erreur-type de 10,3 %) des tâches complétées par les développeurs disposant d'un assistant de codage par IA. Les développeurs ayant moins d'ancienneté affichent les taux d'adoption les plus élevés et les gains de productivité relative les plus forts, bien que la dispersion hebdomadaire demeure élevée. Cette étude tempère les extrapolations macroéconomiques simplistes en situant le gain au niveau de la production de code sous contrôle organisationnel.
+
+### [21] SRC-014 — Utilisation de l'intelligence artificielle par les entreprises au Canada, deuxième trimestre de 2026 (Tableau 33-10-1167-01)
+
+- **Auteurs / Émetteur** : Statistique Canada (2026, 2026-06-30)
+- **Revue / Organisme / Dépôt** : Statistique Canada (API WDS CSV) — Identifiant : `STC-33-10-1167-01`
+- **URL ouverte vérifiée** : https://www150.statcan.gc.ca/n1/tbl/csv/33101167-fra.zip
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-014.txt` (325245 mots, 4854425 octets)
+- **Empreinte SHA-256** : `2e07bdc05646acfdea82572de31a2c950b9bdc0a892d975f56054c0d11a97686`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `11.5/12` | Devis : Enquête statistique officielle fédérale (Statistique Canada WDS, T2 2026) | Axes : `RQ1, RQ6`
+- **Synthèse factuelle** : Le fichier officiel du tableau 33-10-1167-01 de Statistique Canada (Enquête canadienne sur la situation des entreprises, 2e trimestre 2026) mesure l'utilisation effective de l'IA par les entreprises au Canada pour produire des biens ou fournir des services au cours des 12 mois précédents. À l'échelle nationale, pour l'ensemble des industries SCIAN, le taux s'établit exactement à 19,2 % (vecteur v1865629154, cote de qualité A), avec une ventilation fine par province, taille et type d'application dont les agents virtuels ou robots conversationnels (28,2 % parmi les utilisateurs, v1865629168). Cette archive CSV complète directement en L+ les articles d'analyse bloqués en HTTP 403 sur le portail rédactionnel.
+
+### [22] SRC-015 — Utilisation de l'intelligence artificielle par les entreprises au Canada, troisième trimestre de 2026 (Tableau 33-10-1207-01)
+
+- **Auteurs / Émetteur** : Statistique Canada (2026, 2026-09-30)
+- **Revue / Organisme / Dépôt** : Statistique Canada (API WDS CSV) — Identifiant : `STC-33-10-1207-01`
+- **URL ouverte vérifiée** : https://www150.statcan.gc.ca/n1/tbl/csv/33101207-fra.zip
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-015.txt` (416409 mots, 5870503 octets)
+- **Empreinte SHA-256** : `ea9fc801ab53e49a43c12b8796a0c118cb0a8a76dcb028a10b23ec913aaac413`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `11.5/12` | Devis : Enquête statistique officielle fédérale (Statistique Canada WDS, T3 2026) | Axes : `RQ1, RQ6`
+- **Synthèse factuelle** : Le tableau 33-10-1207-01 de Statistique Canada (3e trimestre 2026) prolonge le suivi en mesurant l'intention d'utilisation de l'IA au cours des 12 prochains mois pour l'ensemble des industries canadiennes. Les données officielles montrent que 25,2 % des entreprises (vecteur v1937048767, qualité A) prévoient recourir à l'IA pour produire des biens ou services, les agents virtuels et robots conversationnels constituant le premier cas d'usage envisagé parmi les adoptants (31,8 %, v1937048782). Combiné au tableau du 2e trimestre, ce jeu de données met en lumière le décalage persistant entre intention déclarée et déploiement opérationnel au Canada.
+
+### [23] SRC-016 — Staff Analytical Paper 2026-22 : Survey Evidence on Firm AI Adoption and its Implications
+
+- **Auteurs / Émetteur** : Chanya Chawla, Crystal Arnburg (2026, 2026-06-02)
+- **Revue / Organisme / Dépôt** : Banque du Canada — Identifiant : `BoC-SAP-2026-22`
+- **URL ouverte vérifiée** : https://www.bankofcanada.ca/wp-content/uploads/2026/05/sap2026-22.pdf
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-016.txt` (3960 mots, 24662 octets)
+- **Empreinte SHA-256** : `b46da71236a3698319ad67a17391b5d4e79010dc1527f61abba216e0cff66aea`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `11.5/12` | Devis : Note analytique de banque centrale (Banque du Canada SAP 2026-22) | Axes : `RQ1, RQ6`
+- **Synthèse factuelle** : Rédigée par Chanya Chawla et Crystal Arnburg (2 juin 2026) à partir de l'enquête Le Pouls des leaders d'entreprise de décembre 2025, cette étude documente l'écart considérable entre l'usage personnel et la mise en production de l'IA au Canada. Alors que 70 % des décideurs utilisent l'IA individuellement chaque semaine, seules 8 % des entreprises déclarent un usage significatif en exploitation (21 % modéré, 29 % peu fréquent, 11 % en prévision sur un an). Sur un horizon de trois ans, 18 % des entreprises anticipent une baisse nette d'embauche attribuable à l'IA contre 9 % anticipant une hausse, tandis que 30 % prévoient un effet positif sur leurs dépenses d'investissement.
+
+### [24] SRC-029 — τ-bench: A Benchmark for Tool-Agent-User Interaction in Real-World Domains
+
+- **Auteurs / Émetteur** : Shunyu Yao, Noah Shinn, Pedram Razavi, Karthik Narasimhan (2024, 2024-06-17)
+- **Revue / Organisme / Dépôt** : arXiv (Princeton) — Identifiant : `arXiv:2406.12045`
+- **URL ouverte vérifiée** : https://arxiv.org/pdf/2406.12045
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-029.txt` (17797 mots, 130060 octets)
+- **Empreinte SHA-256** : `7c4348e669e0a2a0d84ff25777571db0f62483c2dded581d1ae493e90242ec68`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `11.0/12` | Devis : Banc d'essai conversationnel à état de base de données (arXiv Princeton / Sierra) | Axes : `RQ2`
+- **Synthèse factuelle** : Yao, Shinn, Razavi et Narasimhan conçoivent τ-bench pour évaluer des agents confrontés simultanément à des usagers simulés, à des outils d'API réels et à des politiques métier strictes (secteurs aérien et commerce de détail), en comparant l'état final exact de la base de données avec l'état cible. Ils introduisent la métrique pass^k, mesurant la probabilité qu'un agent réussisse sans défaillance les k répétitions d'une même tâche, révélant qu'un agent appelant des outils à 50 % sur un essai chute rapidement sous pass^8. L'article démontre que les scores moyens à essai unique surestiment gravement l'aptitude à la production.
+
+### [25] SRC-030 — Holistic Agent Leaderboard: The Missing Infrastructure for AI Agent Evaluation (HAL)
+
+- **Auteurs / Émetteur** : Sayash Kapoor, Benedikt Stroebl, Peter Kirgis, Nitya Nadgir et al. (2025, 2025-10-13)
+- **Revue / Organisme / Dépôt** : arXiv (Princeton) — Identifiant : `arXiv:2510.11977`
+- **URL ouverte vérifiée** : https://arxiv.org/pdf/2510.11977
+- **Texte intégral L+** : `recherche/corpus_l_plus/SRC-030.txt` (25986 mots, 173603 octets)
+- **Empreinte SHA-256** : `4f1e326b6b314f5856566ce21a588bd934508fc767159859376315a94fcb2dfd`
+- **Évaluation et devis** : Statut `L+` (`metadata_only: false`) | Évalué par les pairs : Non (document officiel, norme ou prépublication ouverte) | Score AACODS : `11.0/12` | Devis : Infrastructure normalisée d'évaluation et méta-analyse (21 730 exécutions, Princeton) | Axes : `RQ2`
+- **Synthèse factuelle** : Kapoor et al. mettent au point le Holistic Agent Leaderboard (HAL), un harnais d'évaluation standardisé exécuté sur machines virtuelles isolées qui orchestre 21 730 exécutions à travers 9 modèles et 9 bancs d'essai afin d'éliminer les biais d'implémentation des harnais ad hoc. Leur analyse tridimensionnelle (modèle × harnais × banc) révèle que le coût en jetons varie d'un ordre de grandeur entre architectures pour des gains parfois marginaux et recense des défaillances silencieuses de contournement ou de devinette face aux blocages d'outils. HAL fournit la justification méthodologique de la chaîne d'ingénierie et d'évaluation sur les protocoles d'évaluation Pareto coût-constance.
