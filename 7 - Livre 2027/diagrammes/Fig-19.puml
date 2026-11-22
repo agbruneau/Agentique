@@ -1,0 +1,92 @@
+@startuml
+<style>
+document {
+  BackgroundColor #FFFFFF
+}
+.det {
+  BackgroundColor #EBF2F7
+  LineColor #1E4E79
+  LineThickness 2.5
+  FontColor #0F2942
+}
+.prob {
+  BackgroundColor #FFF5E0
+  LineColor #B45309
+  LineThickness 2.0
+  LineStyle 5
+  FontColor #451A03
+}
+.ext {
+  BackgroundColor #F3F4F6
+  LineColor #4B5563
+  LineThickness 1.5
+  FontColor #111827
+}
+package {
+  BackgroundColor #F8FAFC
+  LineColor #64748B
+  LineThickness 1.2
+  FontColor #334155
+}
+legend {
+  BackgroundColor #FFFFFF
+  LineColor #CBD5E1
+  FontColor #1E293B
+  FontSize 10
+}
+</style>
+hide stereotype
+top to bottom direction
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam nodesep 16
+skinparam ranksep 24
+skinparam padding 6
+
+rectangle "Agents et modèles en production\n(composants encadrés)" as AGT <<prob>>
+
+package "Socle probatoire déterministe unique" {
+  rectangle "Inventaire, autonomie\net chaîne de mandat" as INV <<det>>
+  rectangle "Journal probatoire (RFC 8785)\net explication traçable" as JRN <<det>>
+  rectangle "Validation humaine effective\net droit de contestation" as REV <<det>>
+  rectangle "Évaluation continue pass^k\net plan de repli manuel" as EVAL <<det>>
+  rectangle "Cinq frontières métier non délégables\n(banque ouverte, patrimoine, assurances, cloisons)" as BORN <<det>>
+}
+
+rectangle "Dossier d'audit unique\net référentiel ISO/IEC 42001" as ISO <<det>>
+
+package "Exigences multi-juridictionnelles satisfaites" {
+  rectangle "Québec — Loi 25 (art. 12.1)\nEn vigueur (jusqu'à 25 M CAD ou 4 %)" as LOI25 <<ext>>
+  rectangle "Canada — BSIF E-23 et B-10\nÉchéance à venir : 1er mai 2027" as BSIF <<ext>>
+  rectangle "Québec — AMF (ligne IA)\nÉchéance annoncée : 1er mai 2027" as AMF <<ext>>
+  rectangle "Europe — EU AI Act\nArt. 50 (août 2026) ; Ann. III (déc. 2027)" as EU <<ext>>
+}
+
+AGT --> INV
+AGT --> JRN
+AGT --> REV
+AGT --> EVAL
+INV --> BORN
+JRN --> BORN
+BORN --> ISO
+REV --> ISO
+EVAL --> ISO
+ISO --> LOI25
+ISO --> BSIF
+ISO --> AMF
+ISO --> EU
+
+INV -[hidden]right-> JRN
+JRN -[hidden]right-> REV
+REV -[hidden]right-> EVAL
+LOI25 -[hidden]right-> BSIF
+BSIF -[hidden]right-> AMF
+AMF -[hidden]right-> EU
+
+legend bottom
+  **Trait plein ardoise** : frontière déterministe possédée
+  **Trait pointillé ambre** : composant probabiliste substituable
+end legend
+@enduml

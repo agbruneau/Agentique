@@ -1,0 +1,86 @@
+@startuml
+<style>
+document {
+  BackgroundColor #FFFFFF
+}
+.det {
+  BackgroundColor #EBF2F7
+  LineColor #1E4E79
+  LineThickness 2.5
+  FontColor #0F2942
+}
+.prob {
+  BackgroundColor #FFF5E0
+  LineColor #B45309
+  LineThickness 2.0
+  LineStyle 5
+  FontColor #451A03
+}
+.ext {
+  BackgroundColor #F3F4F6
+  LineColor #4B5563
+  LineThickness 1.5
+  FontColor #111827
+}
+package {
+  BackgroundColor #F8FAFC
+  LineColor #64748B
+  LineThickness 1.2
+  FontColor #334155
+}
+legend {
+  BackgroundColor #FFFFFF
+  LineColor #CBD5E1
+  FontColor #1E293B
+  FontSize 10
+}
+</style>
+hide stereotype
+top to bottom direction
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam nodesep 14
+skinparam ranksep 18
+skinparam padding 5
+
+rectangle "Agent lecteur / rédacteur\n(demande de contexte)" as AGT <<prob>>
+rectangle "Requête typée et jeton\nde mandat (portée)" as REQ <<det>>
+rectangle "Filtre de droits en amont\n(cloisonnement avant rappel)" as FILT <<det>>
+
+package "Quatre mémoires cloisonnées (CoALA)" {
+  rectangle "Mémoire de travail\n(session éphémère)" as M1 <<prob>>
+  database "Mémoire épisodique\n(historique dossiers)" as M2 <<det>>
+  database "Mémoire sémantique\n(ontologie validée)" as M3 <<det>>
+  database "Mémoire procédurale\n(outils approuvés)" as M4 <<det>>
+}
+
+rectangle "Moteur d'indexation\net rappel vectoriel" as RET <<prob>>
+rectangle "Sas de validation des écritures\n(anti-empoisonnement)" as SAS <<det>>
+rectangle "Moteur de purge légale\net rétention (Loi 25)" as PURGE <<det>>
+database "Journal des lectures\net mutations mémorielles" as LOG <<det>>
+
+AGT --> REQ
+REQ --> FILT : contrôle d'accès
+FILT --> M1 : session isolée
+FILT --> RET : périmètre permis
+FILT --> M4 : procédures permises
+RET --> M2 : rappel filtré
+RET --> M3 : faits autorisés
+AGT ..> SAS : écriture proposée
+SAS --> M2 : validée
+SAS --> M3 : contrôlée
+PURGE --> M2 : effacement planifié
+FILT --> LOG
+SAS --> LOG
+
+AGT -[hidden]right-> SAS
+M1 -[hidden]right-> M4
+M2 -[hidden]right-> M3
+
+legend bottom
+  **Trait plein ardoise** : frontière déterministe possédée
+  **Trait pointillé ambre** : composant probabiliste substituable
+end legend
+@enduml

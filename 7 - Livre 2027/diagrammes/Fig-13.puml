@@ -1,0 +1,86 @@
+@startuml
+<style>
+document {
+  BackgroundColor #FFFFFF
+}
+.det {
+  BackgroundColor #EBF2F7
+  LineColor #1E4E79
+  LineThickness 2.5
+  FontColor #0F2942
+}
+.prob {
+  BackgroundColor #FFF5E0
+  LineColor #B45309
+  LineThickness 2.0
+  LineStyle 5
+  FontColor #451A03
+}
+.ext {
+  BackgroundColor #F3F4F6
+  LineColor #4B5563
+  LineThickness 1.5
+  FontColor #111827
+}
+package {
+  BackgroundColor #F8FAFC
+  LineColor #64748B
+  LineThickness 1.2
+  FontColor #334155
+}
+legend {
+  BackgroundColor #FFFFFF
+  LineColor #CBD5E1
+  FontColor #1E293B
+  FontSize 10
+}
+</style>
+hide stereotype
+top to bottom direction
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam nodesep 18
+skinparam ranksep 18
+skinparam padding 5
+
+actor "Mandant humain\n(identité initiale sub)" as HUM <<ext>>
+rectangle "Jeton d'identité initial\n(session OIDC)" as OIDC <<det>>
+rectangle "Attestation SPIFFE / WIMSE\n(certificat éphémère)" as SPIFFE <<det>>
+rectangle "Preuve de possession DPoP\n(clé liée à la charge)" as DPOP <<det>>
+
+package "Chaîne de délégation sans secret fixe" {
+  rectangle "Saut 1 : Agent orchestrateur" as A1 <<prob>>
+  rectangle "Échange de jetons OBO\n(OAuth RFC 8693)" as STS <<det>>
+  rectangle "Jeton OBO 1\n(sub + act[A1], portée réduite)" as T1 <<det>>
+  rectangle "Saut 2 : Agent spécialiste aval" as A2 <<prob>>
+  rectangle "Jeton OBO 2\n(sub + act[A1→A2], portée minimale)" as T2 <<det>>
+}
+
+rectangle "Passerelle de vérification\n(signature, DPoP, chaîne act/sub)" as VERIF <<det>>
+database "Outil ou système cible\n(révocation temps réel)" as TARGET <<ext>>
+
+HUM --> OIDC : authentifie
+OIDC --> A1 : délègue
+SPIFFE --> A1 : atteste
+SPIFFE --> A2 : atteste
+A1 --> STS : échange saut 1
+STS --> T1 : émet portée 1
+T1 --> A2 : transmet mandat
+A2 --> STS : échange saut 2
+DPOP --> STS : lie clé
+STS --> T2 : émet portée 2
+T2 --> VERIF : jeton + DPoP
+VERIF --> TARGET : accès borné
+
+HUM -[hidden]right-> SPIFFE
+SPIFFE -[hidden]right-> DPOP
+T1 -[hidden]right-> T2
+VERIF -[hidden]right-> TARGET
+
+legend bottom
+  **Trait plein ardoise** : frontière déterministe possédée
+  **Trait pointillé ambre** : composant probabiliste substituable
+end legend
+@enduml

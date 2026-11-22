@@ -1,0 +1,86 @@
+@startuml
+<style>
+document {
+  BackgroundColor #FFFFFF
+}
+.det {
+  BackgroundColor #EBF2F7
+  LineColor #1E4E79
+  LineThickness 2.5
+  FontColor #0F2942
+}
+.prob {
+  BackgroundColor #FFF5E0
+  LineColor #B45309
+  LineThickness 2.0
+  LineStyle 5
+  FontColor #451A03
+}
+.ext {
+  BackgroundColor #F3F4F6
+  LineColor #4B5563
+  LineThickness 1.5
+  FontColor #111827
+}
+package {
+  BackgroundColor #F8FAFC
+  LineColor #64748B
+  LineThickness 1.2
+  FontColor #334155
+}
+legend {
+  BackgroundColor #FFFFFF
+  LineColor #CBD5E1
+  FontColor #1E293B
+  FontSize 10
+}
+</style>
+hide stereotype
+top to bottom direction
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam nodesep 22
+skinparam ranksep 18
+skinparam padding 5
+
+package "Chaîne autonome libre (loi de Lusser)" {
+  rectangle "Étape 1 (94,0 %)" as U1 <<prob>>
+  rectangle "Étapes 2–4 (78,1 %)" as U2 <<prob>>
+  rectangle "Étapes 5–7 (64,8 %)" as U3 <<prob>>
+  rectangle "Étapes 8–10 (53,9 % : 0,94^10)" as U4 <<prob>>
+  rectangle "Erreur plausible\nsilencieuse (~46,1 %)" as U5 <<prob>>
+}
+
+package "Chaîne cloisonnée par contrôle déterministe" {
+  rectangle "Routage métier déterministe" as D1 <<det>>
+  rectangle "Inférence bornée A\n(schéma strict)" as D2 <<prob>>
+  rectangle "Validateur typé et reprise locale" as D3 <<det>>
+  rectangle "Inférence bornée B\n(portée réduite)" as D4 <<prob>>
+  rectangle "Garde d'invariants et journal durable" as D5 <<det>>
+  rectangle "Résultat conforme ou repli explicite" as D6 <<det>>
+}
+
+U1 -down-> U2
+U2 -down-> U3
+U3 -down-> U4
+U4 -down-> U5 : dérive cumulée
+
+D1 -down-> D2
+D2 -down-> D3 : contrôle sortie
+D3 -down-> D4 : étape validée
+D4 -down-> D5 : vérification
+D5 -down-> D6 : preuve scellée
+
+U1 -[hidden]right-> D1
+U2 -[hidden]right-> D2
+U3 -[hidden]right-> D3
+U4 -[hidden]right-> D4
+U5 -[hidden]right-> D5
+
+legend bottom
+  **Trait plein ardoise** : frontière déterministe possédée
+  **Trait pointillé ambre** : composant probabiliste substituable
+end legend
+@enduml

@@ -1,0 +1,85 @@
+@startuml
+<style>
+document {
+  BackgroundColor #FFFFFF
+}
+.det {
+  BackgroundColor #EBF2F7
+  LineColor #1E4E79
+  LineThickness 2.5
+  FontColor #0F2942
+}
+.prob {
+  BackgroundColor #FFF5E0
+  LineColor #B45309
+  LineThickness 2.0
+  LineStyle 5
+  FontColor #451A03
+}
+.ext {
+  BackgroundColor #F3F4F6
+  LineColor #4B5563
+  LineThickness 1.5
+  FontColor #111827
+}
+package {
+  BackgroundColor #F8FAFC
+  LineColor #64748B
+  LineThickness 1.2
+  FontColor #334155
+}
+legend {
+  BackgroundColor #FFFFFF
+  LineColor #CBD5E1
+  FontColor #1E293B
+  FontSize 10
+}
+</style>
+hide stereotype
+top to bottom direction
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam nodesep 22
+skinparam ranksep 16
+skinparam padding 5
+
+package "Séparation structurelle CaMeL" {
+  actor "Requête utilisateur fiable\n(mandat authentifié)" as USR <<ext>>
+  rectangle "Planificateur privilégié\n(zéro donnée externe lue)" as PLAN <<prob>>
+  rectangle "Graphe d'exécution typé\n(séquence fixe d'appels)" as GRAPH <<det>>
+
+  rectangle "Données externes non fiables\n(courriels, PDF, pages Web)" as EXT <<ext>>
+  rectangle "Lecteur en quarantaine\n(zéro accès aux outils)" as QUAR <<prob>>
+  rectangle "Valeurs typées étiquetées\n(provenance non fiable)" as TAG <<det>>
+
+  rectangle "Interpréteur déterministe\n(sépare contrôle et données)" as INTERP <<det>>
+  rectangle "Vérificateur de capacités\net règles de flux" as CAP <<det>>
+  rectangle "Porte de politique hors modèle\n(77 % résolus sous garantie)" as GATE <<det>>
+  rectangle "Outil autorisé\n(arguments assainis)" as TOOL <<det>>
+  rectangle "Blocage d'injection indirecte\n(donnée refusée en instruction)" as BLOCK <<det>>
+}
+
+USR -down-> PLAN : intention
+PLAN -down-> GRAPH : plan figé
+EXT -down-> QUAR : lecture isolée
+QUAR -down-> TAG : extrait typé
+GRAPH -down-> INTERP : flux contrôle
+TAG -down-> INTERP : flux données
+INTERP -down-> CAP : provenance
+CAP -down-> GATE : conforme
+CAP -down-> BLOCK : dérive refusée
+GATE -right-> TOOL : exécution sûre
+
+USR -[hidden]right-> EXT
+PLAN -[hidden]right-> QUAR
+GRAPH -[hidden]right-> TAG
+INTERP -[hidden]right-> CAP
+GATE -[hidden]right-> BLOCK
+
+legend bottom
+  **Trait plein ardoise** : frontière déterministe possédée
+  **Trait pointillé ambre** : composant probabiliste substituable
+end legend
+@enduml

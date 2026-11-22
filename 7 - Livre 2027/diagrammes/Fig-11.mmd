@@ -1,0 +1,27 @@
+%%{init: {'theme': 'base', 'themeVariables': {'fontFamily': 'DejaVu Sans', 'fontSize': '14px', 'lineColor': '#334155', 'edgeLabelBackground': '#FFFFFF', 'primaryTextColor': '#0F2942'}, 'flowchart': {'nodeSpacing': 28, 'rankSpacing': 32}}}%%
+flowchart TD
+  Q1{"Règles métier<br/>stables suffisantes ?"}:::det
+  R1["Règle fixe déterministe<br/>(zéro appel de modèle)"]:::det
+  Q2{"Flux connu d'avance<br/>à appels bornés ?"}:::det
+  R2["Flux déterministe avec<br/>appel ponctuel typé"]:::det
+  Q3{"Un agent outillé suffit-il<br/>à budget égal ?"}:::det
+  R3["Agent unique outillé<br/>dans harnais 80/20"]:::prob
+  Q4{"Tâche décomposable<br/>sans goulot central ?"}:::det
+  R4["Topologie dirigée bornée<br/>(DAG ou superviseur, plafond de sauts)"]:::det
+  R5["Maintenir l'agent unique<br/>(effet Ringelmann évité)"]:::det
+  Q5{"Essaim en débat libre<br/>proposé ?"}:::det
+  R6["Rejeter en production<br/>(échecs MAST : 41 % à 86,7 %)"]:::prob
+
+  Q1 -->|Oui| R1
+  Q1 -->|Non| Q2
+  Q2 -->|Oui| R2
+  Q2 -->|Non| Q3
+  Q3 -->|Oui| R3
+  Q3 -->|Non| Q4
+  Q4 -->|Oui| Q5
+  Q4 -->|Non| R5
+  Q5 -->|Oui| R6
+  Q5 -->|Non| R4
+
+  classDef det fill:#EBF2F7,stroke:#1E4E79,stroke-width:2.5px,color:#0F2942,font-weight:bold
+  classDef prob fill:#FFF5E0,stroke:#B45309,stroke-width:2px,stroke-dasharray:6 4,color:#451A03

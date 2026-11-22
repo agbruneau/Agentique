@@ -1,0 +1,90 @@
+@startuml
+<style>
+document {
+  BackgroundColor #FFFFFF
+}
+.det {
+  BackgroundColor #EBF2F7
+  LineColor #1E4E79
+  LineThickness 2.5
+  FontColor #0F2942
+}
+.prob {
+  BackgroundColor #FFF5E0
+  LineColor #B45309
+  LineThickness 2.0
+  LineStyle 5
+  FontColor #451A03
+}
+.ext {
+  BackgroundColor #F3F4F6
+  LineColor #4B5563
+  LineThickness 1.5
+  FontColor #111827
+}
+package {
+  BackgroundColor #F8FAFC
+  LineColor #64748B
+  LineThickness 1.2
+  FontColor #334155
+}
+legend {
+  BackgroundColor #FFFFFF
+  LineColor #CBD5E1
+  FontColor #1E293B
+  FontSize 10
+}
+</style>
+hide stereotype
+top to bottom direction
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam nodesep 16
+skinparam ranksep 24
+skinparam padding 6
+
+package "Moteurs composés (Genewein et al.)" {
+  rectangle "Matériel par dollar\n(~1,5× par an)" as M1 <<ext>>
+  rectangle "Efficacité d'inférence\n(~3× par an)" as M2 <<prob>>
+  rectangle "Dépenses matérielles\n(~2,5× par an)" as M3 <<ext>>
+}
+
+rectangle "Croissance du calcul effectif\n(≥ 10× par an sur la décennie)" as COMP <<prob>>
+rectangle "Propriétés du substrat numérique\n(réplication sans perte, haut débit)" as PROP <<prob>>
+
+package "Quatre voies post-AGI" {
+  rectangle "Voie 1 : Perfectionnement\ncontinu des modèles" as V1 <<prob>>
+  rectangle "Voie 2 : Auto-amélioration\nrécursive encadrée" as V2 <<prob>>
+  rectangle "Voie 3 : Apprentissage\nouvert continu" as V3 <<prob>>
+  rectangle "Voie 4 : Coordination\ncollective d'agents" as V4 <<prob>>
+}
+
+rectangle "Noyau de gouvernance déterministe\n(identité, contrats, preuve)" as GOV <<det>>
+rectangle "Garde-fous d'échelle\n(plafonds de vitesse, mandat, arrêt)" as LIM <<det>>
+
+M1 --> COMP
+M2 --> COMP
+M3 --> COMP
+COMP --> PROP
+PROP --> V1
+PROP --> V2
+PROP --> V3
+PROP --> V4
+V1 --> GOV : encadrement
+V2 --> GOV : validation
+V3 --> GOV : traçabilité
+V4 --> GOV : bornes
+GOV --> LIM
+
+M1 -[hidden]right-> M2
+M2 -[hidden]right-> M3
+V1 -[hidden]right-> V2
+V3 -[hidden]right-> V4
+
+legend bottom
+  **Trait plein ardoise** : frontière déterministe possédée
+  **Trait pointillé ambre** : composant probabiliste substituable
+end legend
+@enduml

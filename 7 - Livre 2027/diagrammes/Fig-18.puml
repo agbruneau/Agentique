@@ -1,0 +1,89 @@
+@startuml
+<style>
+document {
+  BackgroundColor #FFFFFF
+}
+.det {
+  BackgroundColor #EBF2F7
+  LineColor #1E4E79
+  LineThickness 2.5
+  FontColor #0F2942
+}
+.prob {
+  BackgroundColor #FFF5E0
+  LineColor #B45309
+  LineThickness 2.0
+  LineStyle 5
+  FontColor #451A03
+}
+.ext {
+  BackgroundColor #F3F4F6
+  LineColor #4B5563
+  LineThickness 1.5
+  FontColor #111827
+}
+package {
+  BackgroundColor #F8FAFC
+  LineColor #64748B
+  LineThickness 1.2
+  FontColor #334155
+}
+legend {
+  BackgroundColor #FFFFFF
+  LineColor #CBD5E1
+  FontColor #1E293B
+  FontSize 10
+}
+</style>
+hide stereotype
+top to bottom direction
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam nodesep 16
+skinparam ranksep 24
+skinparam padding 6
+
+package "Composantes du coût complet" {
+  rectangle "1. Prix facial des jetons\n(inférence nominale)" as C1 <<prob>>
+  rectangle "2. Boucles de réessai et\nvérifications probabilistes" as C2 <<prob>>
+  rectangle "3. Évaluation continue\n(constance pass^k et simulation)" as C3 <<det>>
+  rectangle "4. Socle sécurité, confinement\nmicroVM et télémétrie" as C4 <<det>>
+  rectangle "5. Reprises manuelles et\nsupervision humaine" as C5 <<ext>>
+}
+
+rectangle "Coût complet par résultat conforme\n(seule métrique de rentabilité réelle)" as CPO <<det>>
+rectangle "Imputation FinOps FOCUS\n(transparence showback / chargeback)" as FOCUS <<det>>
+
+package "Trois seuils de disjonction automatique" {
+  rectangle "Disjoncteur 1 : Plafond\nbudgétaire par dossier" as D1 <<det>>
+  rectangle "Disjoncteur 2 : Chute de\nconstance pass^k sous seuil" as D2 <<det>>
+  rectangle "Disjoncteur 3 : Bascule\nbimodèle qualifiée" as D3 <<det>>
+}
+
+rectangle "Arrêt rapide et repli\ndéterministe ou humain" as STOP <<det>>
+
+C1 --> CPO
+C2 --> CPO
+C3 --> CPO
+C4 --> CPO
+C5 --> CPO
+CPO --> FOCUS
+FOCUS --> D1
+FOCUS --> D2
+FOCUS --> D3
+D1 --> STOP : dépassement coût
+D2 --> STOP : dérive qualité
+D3 --> STOP : panne fournisseur
+
+C1 -[hidden]right-> C2
+C3 -[hidden]right-> C4
+D1 -[hidden]right-> D2
+D2 -[hidden]right-> D3
+
+legend bottom
+  **Trait plein ardoise** : frontière déterministe possédée
+  **Trait pointillé ambre** : composant probabiliste substituable
+end legend
+@enduml
