@@ -46,7 +46,7 @@ skinparam ranksep 22
 skinparam padding 6
 
 package "Six périmètres de marché (ordre croissant)" {
-  rectangle "1. Logiciels d'agents purs\n(2027 : 7,8–17,3 G USD ; médiane 15,5)" as P1 <<prob>>
+  rectangle "1. Logiciels d'agents purs\n(2027 : 7,8–14,1 G USD ; 2030 : 24,5–45,0 G USD)" as P1 <<prob>>
   rectangle "2. Plateformes d'orchestration\net connectivité ouverte" as P2 <<det>>
   rectangle "3. Copilotes et suites\nSaaS préintégrées" as P3 <<prob>>
   rectangle "4. Intégration, audit,\nsécurité et conformité" as P4 <<det>>
@@ -54,7 +54,7 @@ package "Six périmètres de marché (ordre croissant)" {
   rectangle "6. Dépenses cognitives\ndéplacées (travail adressable)" as P6 <<ext>>
 }
 
-rectangle "CapEx 2026 (4 grands fournisseurs) :\n720–740 G USD (définitions propres)" as CAPEX <<ext>>
+rectangle "CapEx 2026 (4 grands fournisseurs) :\n496,7 G USD sur 9M ; ~690–740 G USD annuels" as CAPEX <<ext>>
 rectangle "Biais des palmarès publics\n(contamination et échafaudage)" as BANC <<prob>>
 rectangle "Risque d'abandon > 40 % fin 2027\nsans ROI démontré ni contrôles" as ABANDON <<prob>>
 rectangle "Mesure indépendante\n(essais randomisés, coût conforme)" as RCT <<det>>
