@@ -2,7 +2,7 @@
 
 *Architecture de contrôle, preuve et souveraineté dans l'entreprise agentique*
 
-> **État actuel** : **Spécifications amont validées et révisées (`v1.1`, 22 novembre 2026) — En attente de trois arbitrages de l'auteur (crédit d'auteur, date de gel des faits, statut de l'essai DeepMind dans le dépôt) avant lancement de la production intégrale 100 % agentique.** Le détail des constats et corrections figure dans [`specs/validation-v1.1.md`](specs/validation-v1.1.md).
+> **État actuel** : **Spécifications amont validées (`v1.2`, 22 novembre 2026)** — gel des faits en décembre 2026, publication en janvier 2027. **Un seul arbitrage reste à l'auteur avant le lancement de la production 100 % agentique : le nom à inscrire en couverture.** Le détail des constats, corrections et décisions figure dans [`specs/validation-v1.1.md`](specs/validation-v1.1.md).
 
 Ce répertoire contient l'ensemble des livrables normatifs amont (`PRD`, `TOC`, contrat machine `manifest.json`, charte éditoriale, protocole `MLR` ouvert, registres de vérité et contrat d'assurance qualité multi-agents) conçus pour piloter sans intervention humaine la recherche complémentaire, la rédaction, l'illustration et la quintuple vérification d'un livre de **~260–270 pages (`74 000 mots ± 8 %`, liminaire architectural substantiel + 12 chapitres, 23 figures)** en 2027.
 

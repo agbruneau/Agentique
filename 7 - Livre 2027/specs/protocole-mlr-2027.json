@@ -1,5 +1,5 @@
 {
-  "protocol_id": "MLR-PRISMA-SCR-LIVRE-2027-V1.1",
+  "protocol_id": "MLR-PRISMA-SCR-LIVRE-2027-V1.2",
   "inherits_from": "MLR-PRISMA-SCR-AGENTIQUE-2026-W3.2",
   "strict_access_policy": {
     "rule": "AO-01",
@@ -26,8 +26,9 @@
     "nist_csrc"
   ],
   "time_window": {
-    "primary": "2023-01-01/2027-12-31",
-    "foundational_classics_allowed_in_open_access": true
+    "primary": "2023-01-01/2026-12-31",
+    "foundational_classics_allowed_in_open_access": true,
+    "freeze_rule": "Aucune source postérieure à la date de gel (décembre 2026, au plus tard le 31 décembre 2026)."
   },
   "aacods_threshold": {
     "scale_max": 12,
@@ -38,10 +39,12 @@
       "id": "SEED-01",
       "citation": "Genewein et al. (2026), From AGI to ASI",
       "identifier": "arXiv:2606.12683",
-      "local_companion": "../Google Deepmind - What comes after AGI_ From AGI to Superintelligence — DeepMind Institute.pdf",
+      "local_companion": "sources-locales/Google Deepmind - What comes after AGI_ From AGI to Superintelligence — DeepMind Institute.pdf",
       "target_axes": [
         "RQ1"
-      ]
+      ],
+      "local_companion_status": "Copie locale non versionnée (droit d'auteur); inspiration seulement.",
+      "evidence_source": "Prépublication en accès ouvert arXiv:2606.12683 : seule source admise comme preuve."
     },
     {
       "id": "SEED-02",
@@ -141,7 +144,7 @@
     },
     {
       "id": "RQ6",
-      "theme": "Biais d'automatisation, érosion des compétences juniors et retours réglementaires 2026-2027 (Loi 25, BSIF E-23, EU AI Act)",
+      "theme": "Biais d'automatisation, érosion des compétences juniors et cadres réglementaires en vigueur ou annoncés à la date de gel (Loi 25, BSIF E-23, EU AI Act)",
       "min_included_studies": 5,
       "queries": [
         "\"automation bias\" OR \"skill atrophy\" OR \"junior developers\" generative agentic AI oversight",

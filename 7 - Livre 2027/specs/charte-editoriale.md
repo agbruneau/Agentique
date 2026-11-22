@@ -1,4 +1,4 @@
-# Charte éditoriale, narrative et typographique — Livre 2027 (v1.1)
+# Charte éditoriale, narrative et typographique — Livre 2027 (v1.2)
 
 Cette charte gouverne tous les agents rédacteurs, réviseurs et lisseurs. Son objectif est d'obtenir un **ouvrage de librairie et de direction fluide, rigoureux et mémorable**, à l'opposé d'un rapport compilatoire ou d'une matrice d'exigences.
 
@@ -11,12 +11,13 @@ Cette charte gouverne tous les agents rédacteurs, réviseurs et lisseurs. Son o
    - ce qu'une étude empirique a *mesuré* (en nommant son devis, son statut — article évalué par les pairs ou prépublication — et sa limite);
    - ce qu'une loi ou un régulateur *impose* (en nommant la juridiction et l'échéance);
    - ce qui relève d'une *déduction architecturale*, d'une *heuristique de la collection* (p. ex. la partition 80/20) ou d'une *recommandation de prudence*.
-3. **Constats d'absence datés** : toute affirmation négative (« aucune étude ne mesure… », « aucun standard n'existe… ») est rattachée à la date de gel des faits et à l'étendue de la recherche qui la fonde.
-4. **Scénarios illustratifs (`AO-07`)** : une mise en situation non documentée est introduite comme telle (« Imaginons… », « Scénario illustratif : … »), ne contient aucun chiffre présenté comme mesuré et ne sert jamais de prémisse à une conclusion.
-5. **Barre stylistique de référence (pour la boucle `gauntlet-loop`)** : extraits en français, exempts de codes internes, tirés des passages suivants (déclarés dans `manifest.json`) :
+3. **Constats d'absence datés** : toute affirmation négative (« aucune étude ne mesure… », « aucun standard n'existe… ») est rattachée à la date de gel des faits (décembre 2026) et à l'étendue de la recherche qui la fonde.
+4. **Échéances postérieures au gel** : les dates de 2027 et au-delà sont écrites comme des échéances à venir (« entrera en vigueur le 1er mai 2027 »), en distinguant une date adoptée d'un jalon seulement annoncé; jamais au passé ni comme un acquis observé.
+5. **Scénarios illustratifs (`AO-07`)** : une mise en situation non documentée est introduite comme telle (« Imaginons… », « Scénario illustratif : … »), ne contient aucun chiffre présenté comme mesuré et ne sert jamais de prémisse à une conclusion.
+6. **Barre stylistique de référence (pour la boucle `gauntlet-loop`)** : extraits en français, exempts de codes internes, tirés des passages suivants (déclarés dans `manifest.json`) :
    - `3 - Compendium 2027/00 - Ouverture …` — sections `0.1` et `0.2` (récit d'ouverture et enjeux, phrases courtes à moyennes, refus des superlatifs commerciaux);
    - `3 - Compendium 2027/…/Chapitre 48 - Revue de littérature.md` — sections `48.4` et `48.8` (honnêteté épistémique, distinction mesuré / débattu / absent).
-   L'essai du DeepMind Institute déposé à la racine du dépôt reste une **source d'inspiration** pour la progression argumentative, mais n'entre pas dans la comparaison à l'aveugle : rédigé en anglais, il serait immédiatement identifiable par le critique.
+   L'essai du DeepMind Institute (copie locale non versionnée dans `sources-locales/`) reste une **source d'inspiration** pour la progression argumentative, mais n'entre pas dans la comparaison à l'aveugle : rédigé en anglais, il serait immédiatement identifiable par le critique.
 
 ---
 

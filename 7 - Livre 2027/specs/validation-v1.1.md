@@ -46,11 +46,20 @@ Revue intégrale de `prd.md`, `toc.md`, `charte-editoriale.md`, `contrat-aq.md`,
 | C11 | Intitulé du liminaire différent entre l'en-tête de section du `toc.md` et le `manifest.json` | Harmonisé; le vérificateur contrôle désormais la concordance de tous les intitulés |
 | C12 | Date de gel des faits et crédit d'auteur absents du `PRD` | Champs ajoutés, à trancher par l'auteur |
 
-## 4. Arbitrages restant à l'auteur (non tranchés par les agents)
+## 4. Arbitrages de l'auteur
 
-1. **Crédit d'auteur et de direction** à porter en couverture et au colophon (`prd.md` § 1).
-2. **Date de gel des faits** de l'édition `v1.0` (par défaut : date de lancement de la Tâche 2).
-3. **Essai du DeepMind Institute à la racine du dépôt** : le fichier n'est pas versionné. Le versionner dans un dépôt public pose une question de droit d'auteur; le laisser hors dépôt prive un agent travaillant sur un clone de la source `SEED-01`. Option prudente : le placer localement dans `sources-locales/` sans le versionner, et s'appuyer sur la prépublication `arXiv:2606.12683` en accès ouvert pour la preuve.
+### 4.1 Décisions du 22 novembre 2026 (v1.2)
+
+| Arbitrage | Décision | Répercussions |
+|---|---|---|
+| Date de gel des faits | **Décembre 2026**, pour une **publication en janvier 2027** | `prd.md` § 1 (calendrier, conséquence rédactionnelle); charte § 1.4 (échéances de 2027 au futur); fenêtre `MLR` close au 31 décembre 2026; `toc.md` purgé des formulations « début 2027 » et « tournant du 1er mai 2027 »; plan d'exécution |
+| Essai du DeepMind Institute | **Procéder comme recommandé** : copie locale dans `sources-locales/`, hors versionnement; preuve par `arXiv:2606.12683` | Fichier retiré de l'arborescence versionnée; `.gitignore` exclut `sources-locales/*` sauf le `README.md`; `SEED-01` mis à jour |
+
+**Rectificatif.** La version précédente de ce journal affirmait que l'essai n'était pas versionné. C'était inexact : il avait été ajouté au dépôt (commit `520c3f2`) avant la revue. Il est désormais retiré de l'arborescence, mais reste présent dans l'historique public du dépôt; l'en effacer exigerait une réécriture de l'historique et une poussée forcée, qui ne seront faites que sur demande expresse de l'auteur.
+
+### 4.2 Arbitrage encore ouvert
+
+1. **Nom en couverture** : nom (ou pseudonyme) de la personne présentée comme responsable de l'ouvrage, et formulation retenue pour mentionner la rédaction par agents d'IA (`prd.md` § 1).
 
 ## 5. Vérification
 

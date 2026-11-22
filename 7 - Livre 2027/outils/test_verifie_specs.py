@@ -106,3 +106,17 @@ def test_registry_entry_without_evidence_status_detected(tmp_path: Path) -> None
 
     errors = validate_specs(clone)
     assert any("statut_preuve" in e for e in errors)
+
+
+def test_freeze_window_and_local_sources_exclusion_enforced(tmp_path: Path) -> None:
+    clone = tmp_path / "7 - Livre 2027"
+    shutil.copytree(REAL_BOOK_DIR, clone, ignore=shutil.ignore_patterns("*.pdf"))
+    mlr_path = clone / "specs" / "protocole-mlr-2027.json"
+    mlr = json.loads(mlr_path.read_text(encoding="utf-8"))
+    mlr["time_window"]["primary"] = "2023-01-01/2027-06-30"
+    mlr_path.write_text(json.dumps(mlr, ensure_ascii=False, indent=2), encoding="utf-8")
+    (clone / ".gitignore").write_text("__pycache__/\n", encoding="utf-8")
+
+    errors = validate_specs(clone)
+    assert any("Fenetre MLR posterieure" in e for e in errors)
+    assert any("sources-locales/*" in e for e in errors)

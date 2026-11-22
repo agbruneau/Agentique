@@ -131,6 +131,14 @@ def validate_specs(book_dir: Path) -> list[str]:
         errors.append(f"Axes RQ attendus RQ1..RQ6, trouves : {sorted(rq_ids)}")
     if mlr["strict_access_policy"]["max_metadata_only_pct_in_included_corpus"] != 0.0:
         errors.append("Le plafond METADATA_ONLY du protocole MLR doit etre strictement 0.0 %")
+    window_end = mlr["time_window"]["primary"].split("/")[-1]
+    if window_end > "2026-12-31":
+        errors.append(f"Fenetre MLR posterieure a la date de gel (decembre 2026) : {window_end}")
+
+    gitignore_path = book_dir / ".gitignore"
+    gitignore = gitignore_path.read_text(encoding="utf-8") if gitignore_path.is_file() else ""
+    if "sources-locales/*" not in gitignore or "!sources-locales/README.md" not in gitignore:
+        errors.append(".gitignore doit exclure sources-locales/* (sauf README.md) : copies sous droit d'auteur")
 
     for nu in narrative_units:
         if not nu.get("research_axes"):
@@ -202,7 +210,7 @@ def main() -> int:
             print(f"  - {err}", file=sys.stderr)
         return 1
     print(
-        "OK : Specifications amont valides (v1.1 : 16 unites = 74 000 mots, Liminaire 0.1-0.6 + 12 chapitres, "
+        "OK : Specifications amont valides (v1.2 : 16 unites = 74 000 mots, Liminaire 0.1-0.6 + 12 chapitres, "
         "23 figures Fig-00..Fig-22, RQ1-RQ6, AO-01..AO-07, CA-01..CA-18, intitules concordants, "
         "registres avec statut de preuve et chemins internes verifies)."
     )

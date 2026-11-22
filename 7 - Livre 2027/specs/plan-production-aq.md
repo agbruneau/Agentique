@@ -18,6 +18,7 @@
 - Tous les montants en dollars littéraux sont échappés en `\$` dans les fichiers `.md`, toute formule est écrite en `\(...\)` (`CA-06`), et `Pandoc` est invoqué avec `-f markdown-tex_math_dollars+tex_math_single_backslash`.
 - Les volumes `1` à `6` du dépôt sont une carte de repérage, jamais une preuve (`AO-02`) : tout fait qui en provient est réancré sur la source primaire qu'ils citent.
 - Ordre des barrières imposé par `contrat-aq.md` : `G1` → `G2` → `G3` passe 1 → `G4` → `G5` lissage → `G3` passe 2 sur le texte final → `G5` rendu.
+- Calendrier (`prd.md` § 1) : production et AQ en décembre 2026, gel des faits au plus tard le 31 décembre 2026, publication en janvier 2027; les dates de 2027 et au-delà sont rédigées comme des échéances à venir.
 - Étanchéité stricte d'AQ (`contrat-aq.md`) : aucun sous-agent rédacteur n'exécute `G2`, `G3`, `G4` (rôle critique) ou `G5` sur son propre texte; `gauntlet-loop` n'utilise jamais un tableau de messages partagé public.
 
 ## Review Focus
@@ -103,7 +104,7 @@ git commit -m "Ajouter l'outillage deterministe G1, G3 et generateur d'annexes d
 - Test: `7 - Livre 2027/outils/test_collecte_mlr.py`
 
 **Interfaces:**
-- Consumes: `specs/protocole-mlr-2027.json`, `sources-locales/*`, `../0 - MD/*`, essai DeepMind à la racine
+- Consumes: `specs/protocole-mlr-2027.json`, `sources-locales/*` (dont la copie locale non versionnée de l'essai DeepMind), `../0 - MD/*`
 - Produces: `recherche/corpus_l_plus/*.txt` (UTF-8 intégraux hachés `SHA-256`), `recherche/manifeste-sources-sha256.json` et les `13` bases fermées `sources/ch00-sources.md` à `sources/ch12-sources.md`
 
 - [ ] **Step 1: Écrire le test garantissant l'arrêt sans contournement sur `403`/`429` (`AO-01`) et le hachage `SHA-256`**
@@ -117,7 +118,7 @@ def test_blocked_response_logged_as_status_f_without_retry_bypass(mock_http_403)
 
 - [ ] **Step 2: Vérifier l'échec du test, puis implémenter `collecte_mlr_ouverte.py` et exécuter la collecte sur `RQ1`–`RQ6`**
 
-Interroger uniquement les API ouvertes de `protocole-mlr-2027.json`, extraire en `.txt` UTF-8 les textes intégraux libres et les PDF de `sources-locales/` (incluant l'essai DeepMind du dépôt), calculer les `SHA-256`, noter `AACODS`, réancrer sur source primaire chaque entrée de `registre/` dont le `statut_preuve` vaut `a_reancrer`, fixer la date de gel des faits et constituer les 13 dossiers fermés `sources/ch00-sources.md` à `sources/ch12-sources.md` (résumé factuel de 3–5 phrases lu sur texte complet par référence).
+Interroger uniquement les API ouvertes de `protocole-mlr-2027.json`, extraire en `.txt` UTF-8 les textes intégraux libres et les PDF de `sources-locales/` (l'essai DeepMind n'y sert que d'inspiration; la preuve passe par `arXiv:2606.12683`), calculer les `SHA-256`, noter `AACODS`, réancrer sur source primaire chaque entrée de `registre/` dont le `statut_preuve` vaut `a_reancrer`, consigner la date de gel des faits (décembre 2026, au plus tard le 31 décembre 2026; aucune source postérieure) et constituer les 13 dossiers fermés `sources/ch00-sources.md` à `sources/ch12-sources.md` (résumé factuel de 3–5 phrases lu sur texte complet par référence).
 
 - [ ] **Step 3: Vérifier la couverture `CA-09`, `CA-10`, `CA-11`**
 

@@ -1,4 +1,4 @@
-# Table des matières contractuelle (TOC) — Livre 2027 (v1.1)
+# Table des matières contractuelle (TOC) — Livre 2027 (v1.2)
 
 > **Règle d'étanchéité inter-unités** : le liminaire et chaque chapitre sont seuls propriétaires des concepts listés sous **Propriétaire exclusif**. Lorsqu'une autre unité mobilise l'un de ces concepts, elle l'invoque en une ou deux phrases et renvoie à l'unité propriétaire sans redéfinir le mécanisme, l'étude ou le texte de loi. Le liminaire peut annoncer un concept détenu par un chapitre (renvoi prospectif), sans le développer.
 
@@ -39,10 +39,10 @@
 
 ### `00` — Liminaire — Interopérabilité et orchestration : le tissu conjonctif de l'entreprise agentique (4 200 mots)
 - **Question directrice** : Pourquoi la viabilité opérationnelle, économique et juridique d'une entreprise agentique tient-elle moins à la puissance brute de ses modèles qu'à l'architecture d'interopérabilité et d'orchestration qui relie ses agents, son patrimoine applicatif, ses partenaires et ses superviseurs humains ?
-- **Ouverture narrative** : De 2023 à 2025, l'employé humain demeurait l'unique point d'intégration entre un copilote conversationnel et les systèmes d'enregistrement; lorsqu'en 2026–2027 l'organisation active des agents capables d'agir directement dans ses suites `CRM`, `ERP`, `ITSM` et ses bases internes sans tissu conjonctif commun, quatre agents locaux pourtant performants restent incapables de coopérer sur un même dossier sans recopie humaine, perte de trace d'audit ou boucle d'appels incontrôlée.
+- **Ouverture narrative** : De 2023 à 2025, l'employé humain demeurait l'unique point d'intégration entre un copilote conversationnel et les systèmes d'enregistrement; lorsqu'en 2026 l'organisation active des agents capables d'agir directement dans ses suites `CRM`, `ERP`, `ITSM` et ses bases internes sans tissu conjonctif commun, quatre agents locaux pourtant performants restent incapables de coopérer sur un même dossier sans recopie humaine, perte de trace d'audit ou boucle d'appels incontrôlée.
 - **0.1** De l'humain intégrateur au tissu conjonctif agentique : îlots d'agents propriétaires, consolidation inachevée des standards ouverts (`AAIF`, `AGNTCY`, `IETF`) et échéances réglementaires 2026–2028
 - **0.2** L'interopérabilité au-delà du transport syntaxique : les six dimensions indissociables (connectivité verticale aux outils et au patrimoine, sémantique et mémoire métier, coordination horizontale entre pairs, événements et état, interaction humain-agent, gouvernance contractuelle `B2B`) et la coupure fondamentale entre *qui parle* et *qui en répond*
-- **0.3** L'orchestration comme discipline de retenue et de contrôle déterministe : l'axiome directeur (*on n'orchestre durablement que ce qui est interopérable et sémantiquement aligné, et l'on ne met à l'échelle que ce qui est borné, compensable et réversible*), le tableau synoptique des sept ruptures entre prototypes hérités (2024–2025) et cibles de production (2027), et les cinq critères permanents d'évaluation technologique de l'ouvrage
+- **0.3** L'orchestration comme discipline de retenue et de contrôle déterministe : l'axiome directeur (*on n'orchestre durablement que ce qui est interopérable et sémantiquement aligné, et l'on ne met à l'échelle que ce qui est borné, compensable et réversible*), le tableau synoptique des sept ruptures entre prototypes hérités (2024–2025) et cibles de production visées pour 2027, et les cinq critères permanents d'évaluation technologique de l'ouvrage
 - **0.4** Progression architecturale des quatre parties, règle du maillon le plus élevé (*High-Water Mark Rule*) sur les chaînes d'agents — énoncée en termes de criticité des actions, avec renvoi à l'échelle d'autonomie définie au chapitre 01 — et quatre parcours de lecture par responsabilité (`CEO`/`CRO`/Administrateurs, `CIO`/`CTO`/`EA`, `SA`/Plateforme/`SRE`, `CISO`/Juridique/Conformité)
 - **0.5** Hygiène probatoire et frontière du démontré : date de gel des faits, distinction entre mesures empiriques indépendantes, textes normatifs et déductions d'architecture, état réel des spécifications à la date de gel (aucune étude arbitrée mesurant `MCP` ou `A2A` en production n'était repérée en novembre 2026; constat à revérifier à la date de gel), statut des volumes du dépôt (carte de repérage, non preuve), périmètre juridique démontré (services financiers au Québec, au Canada fédéral et en Union européenne) et analogies sectorielles balisées
 - **0.6** Colophon d'intégrité : conception sur cahier des charges humain, collecte ouverte `L+` hachée `SHA-256` sans contournement, rédaction et quintuple assurance qualité 100 % agentiques, et portée consultative
@@ -65,7 +65,7 @@
 - **Figures** : `Fig-01` (Spectre d'autonomie `L0`–`L4` : droits de mutation, régime de supervision et contrôles exigés par niveau); `Fig-02` (Les moteurs composés de l'industrialisation cognitive et les quatre voies post-`AGI`).
 
 #### Chapitre 02 — L'épreuve des mesures : investissements géants, bancs biaisés et productivité réelle (5 600 mots)
-- **Question directrice** : Que sait-on réellement, par la mesure indépendante, de la fiabilité et de la rentabilité des agents fin 2026 – début 2027 ?
+- **Question directrice** : Que sait-on réellement, par la mesure indépendante, de la fiabilité et de la rentabilité des agents à la fin de 2026 ?
 - **Ouverture narrative** : Le contraste entre les 720 à 740 G\$ US de dépenses d'investissement annoncées pour 2026 par quatre grands fournisseurs infonuagiques et l'absence, à la date de gel, de toute étude indépendante mesurant l'effet des agents autonomes sur les résultats d'une entreprise.
 - **2.1** Déconstruire les chiffres de marché : six périmètres incompatibles, du logiciel pur aux dépenses déplacées
 - **2.2** Ce que prouvent les essais randomisés : des gains réels sur les assistants (`L1`), une frontière en dents de scie et aucune mesure publiée de l'effet des agents autonomes sur le compte de résultat
@@ -158,9 +158,9 @@
 
 #### Chapitre 10 — Le laboratoire réglementé : Québec, Canada et Europe face à l'exigence de preuve (5 000 mots)
 - **Question directrice** : Quelles frontières infranchissables le droit positif trace-t-il autour de l'autonomie algorithmique, et comment y répondre par un socle unique de preuves ?
-- **Ouverture narrative** : La convergence des autorités de Québec, d'Ottawa et de Bruxelles en 2026–2027 : aucun texte n'impose d'automatiser, mais tous exigent inventaire, transparence et imputabilité, et plusieurs assortissent ces exigences de sanctions pécuniaires.
+- **Ouverture narrative** : La convergence des textes adoptés ou annoncés à Québec, à Ottawa et à Bruxelles pour 2026–2028 : aucun n'impose d'automatiser, mais tous exigent inventaire, transparence et imputabilité, et plusieurs assortissent ces exigences de sanctions pécuniaires.
 - **10.1** Transparence, vie privée et contestation humaine : l'article 12.1 de la `Loi 25` au Québec comme révélateur
-- **10.2** Gestion prudentielle du risque de modèle et d'impartition : le tournant du 1er mai 2027 (`BSIF E-23`; ligne directrice de l'`AMF` présentée avec le statut exact de sa source, cf. `prd.md` § 7)
+- **10.2** Gestion prudentielle du risque de modèle et d'impartition : l'échéance à venir du 1er mai 2027 (`BSIF E-23`; ligne directrice de l'`AMF` présentée avec le statut exact de sa source, cf. `prd.md` § 7)
 - **10.3** L'articulation transatlantique avec l'`EU AI Act` (août 2026 – août 2028) et le référentiel de gouvernance `ISO/IEC 42001`
 - **10.4** Cinq frontières métier non délégables : banque ouverte, conseil en patrimoine, assurance de personnes, assurance de dommages et cloisons intra-groupe
 - **Propriétaire exclusif** : Analyse juridique structurée (`Loi 25`, `BSIF E-23`/`B-10`, `AMF IA`, `ACVM 11-348`, `OCRI`, `EU AI Act` et report *Digital Omnibus*), matrice de preuve unique multi-juridictionnelle et plafonds légaux des cinq métiers financiers.

@@ -1,4 +1,4 @@
-# Contrat d'assurance qualité 100 % agentique — Livre 2027 (v1.1)
+# Contrat d'assurance qualité 100 % agentique — Livre 2027 (v1.2)
 
 Ce contrat définit le protocole de contrôle indépendant auquel est soumis l'intégralité du manuscrit avant publication. **Principe d'étanchéité cardinal** : aucun agent ayant rédigé une unité, généré une figure ou assemblé une bibliographie n'est autorisé à auditer, recoller ou noter son propre livrable.
 

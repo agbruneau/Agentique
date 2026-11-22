@@ -1,12 +1,13 @@
-# Cahier des charges (PRD) — Livre 2027 (v1.1)
+# Cahier des charges (PRD) — Livre 2027 (v1.2)
 
 ## 1. Identité et vocation de l'ouvrage
 
 - **Titre de travail** : *Gouverner l'industrialisation cognitive*
 - **Sous-titre** : *Architecture de contrôle, preuve et souveraineté dans l'entreprise agentique*
-- **Millésime de parution visé** : 2027
+- **Millésime de parution visé** : janvier 2027
 - **Crédit d'auteur et de direction** : *à trancher par l'auteur avant lancement* (p. ex. « Direction de l'ouvrage : \<nom\> — rédaction et vérification par agents d'IA »). Aucun agent ne choisit ni n'invente ce crédit.
-- **Date de gel des faits (état de référence)** : *à fixer au lancement de la collecte (Tâche 2 de `plan-production-aq.md`)*. Elle est inscrite dans le liminaire (`0.5`) et dans chaque base `sources/chNN-sources.md`. Une édition consolidée est relancée après le 1er mai 2027 avec une nouvelle date de gel.
+- **Calendrier et date de gel des faits (état de référence)** : collecte, rédaction et assurance qualité en **décembre 2026**; gel des faits au jour de clôture de la collecte, **au plus tard le 31 décembre 2026**; **publication en janvier 2027**. La date exacte de gel est inscrite dans le liminaire (`0.5`) et dans chaque base `sources/chNN-sources.md`.
+- **Conséquence rédactionnelle du gel** : tout événement postérieur à la date de gel (certificats `TLS` à 100 jours le 15 mars 2027, `BSIF E-23` le 1er mai 2027, Annexe III de l'`EU AI Act` le 2 décembre 2027, etc.) est présenté comme une **échéance à venir**, avec son statut (adoptée ou annoncée); le livre ne contient aucun bilan ni retour d'expérience de 2027. Une édition consolidée, facultative, pourra être relancée après le 1er mai 2027 avec une nouvelle date de gel.
 - **Langue** : Français canadien soigné, accessible à l'ensemble du lectorat francophone international; maintien des termes techniques anglais établis (`AGI`, `ASI`, `MCP`, `A2A`, `Zero-Trust`, `FinOps`, `pass^k`, etc.).
 - **Mode de production et d'assurance qualité** : **100 % agentique** (zéro rédaction humaine, zéro relecture humaine intégrale), piloté par les spécifications du dossier `specs/` et vérifié par cinq barrières indépendantes (`contrat-aq.md`).
 - **Régime de diffusion par défaut** : Textes et figures sous licence **CC BY 4.0**, scripts et outils de validation sous licence **MIT** (modifiable via le champ `license_mode` de `manifest.json` en cas de cession à un éditeur commercial).
