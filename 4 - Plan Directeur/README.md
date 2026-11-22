@@ -2,8 +2,8 @@
 
 ## Informations sur le document
 
-- **Source PDF** : [4 - Plan Directeur.pdf](../0%20-%20PDF/4%20-%20Plan%20Directeur.pdf)
-- **Fichier Markdown complet** : [4 - Plan Directeur.md](../0%20-%20MD/4%20-%20Plan%20Directeur.md)
+- **Source PDF** : [4 - Plan Directeur.pdf](../0%20-%20PDF-MD/4%20-%20Plan%20Directeur.pdf)
+- **Fichier Markdown complet** : [4 - Plan Directeur.md](../0%20-%20PDF-MD/4%20-%20Plan%20Directeur.md)
 - **Pages** : 400
 - **Parties / Sections** : 7
 - **Unités extraites** : 45

@@ -160,7 +160,7 @@ def _make_valid_png_bytes(width: int = 16, height: int = 16) -> bytes:
 def _create_populated_book(tmp_path: Path, include_vigilance: bool = True) -> Path:
     """Cree un depot complet valide en memoire sur disque dans tmp_path."""
     book_dir = tmp_path / "7 - Livre 2027"
-    corpus_dir = tmp_path / "0 - MD"
+    corpus_dir = tmp_path / "0 - PDF-MD"
     corpus_dir.mkdir(parents=True)
     corpus_file = corpus_dir / "1 - Compendium 2026.md"
     corpus_file.write_text(
@@ -175,7 +175,7 @@ def _create_populated_book(tmp_path: Path, include_vigilance: bool = True) -> Pa
 
     manifest_path = book_dir / "specs" / "manifest.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-    manifest["internal_corpus_paths"] = ["../0 - MD/1 - Compendium 2026.md"]
+    manifest["internal_corpus_paths"] = ["../0 - PDF-MD/1 - Compendium 2026.md"]
     manifest["stylistic_benchmarks_for_gauntlet"] = []
     manifest["stylistic_benchmark_sections"] = {}
     manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -534,14 +534,19 @@ def test_genere_annexes_pre_post_qa_and_ca17(tmp_book: Path) -> None:
     assert any("CA-17" in e for e in errors)
 
 
-def test_assemble_livre_generates_md_html_pdf(tmp_book: Path) -> None:
-    assemble_script = TOOLS_DIR / "assemble_livre.py"
-    res = subprocess.run(
-        [sys.executable, str(assemble_script), "--root", str(tmp_book), "--all"],
+def _run_tool_script(script: Path, *args: str) -> subprocess.CompletedProcess[str]:
+    """Execute un script CLI de `outils/` en propageant l'option -B si active."""
+    py_flags = ["-B"] if sys.dont_write_bytecode else []
+    return subprocess.run(
+        [sys.executable, *py_flags, str(script), *args],
         capture_output=True,
         text=True,
         encoding="utf-8",
     )
+
+
+def test_assemble_livre_generates_md_html_pdf(tmp_book: Path) -> None:
+    res = _run_tool_script(TOOLS_DIR / "assemble_livre.py", "--root", str(tmp_book), "--all")
     assert res.returncode == 0, f"STDERR:\n{res.stderr}\nSTDOUT:\n{res.stdout}"
     livrables = tmp_book / "livrables"
     md_out = livrables / "7 - Livre 2027.md"
@@ -554,7 +559,7 @@ def test_assemble_livre_generates_md_html_pdf(tmp_book: Path) -> None:
 
 def test_12gram_rejects_long_quote_over_40_words_and_matches_real_corpus(tmp_book: Path) -> None:
     # Un segment > 40 mots entre guillemets meme suivi de [1] reste rejete
-    corpus_file = tmp_book.parent / "0 - MD" / "1 - Compendium 2026.md"
+    corpus_file = tmp_book.parent / "0 - PDF-MD" / "1 - Compendium 2026.md"
     long_50 = " ".join(f"termeunique{i}" for i in range(50))
     corpus_file.write_text(
         corpus_file.read_text(encoding="utf-8") + f"\n{long_50}.\n",
@@ -568,7 +573,7 @@ def test_12gram_rejects_long_quote_over_40_words_and_matches_real_corpus(tmp_boo
     errors = check_manuscrit(tmp_book, strict=True, unit_id="ch03")
     assert any("CA-03" in e for e in errors)
 
-    # Verification directe sur le vrai corpus 0 - MD du depot
+    # Verification directe sur le vrai corpus 0 - PDF-MD du depot
     from verifie_manuscrit import _CorpusIndex
 
     real_manifest = json.loads((REAL_BOOK_DIR / "specs" / "manifest.json").read_text(encoding="utf-8"))
@@ -630,10 +635,11 @@ def test_genere_annexes_with_30_enriched_glossary_terms(tmp_book: Path) -> None:
     assert check_manuscrit(tmp_book, strict=True) == []
 
 
-def test_cli_echantillon_and_check_deliverables_end_to_end(tmp_book: Path) -> None:
-    aq_dir = tmp_book / "aq"
+def _populate_qa_markdown_logs(book_dir: Path) -> Path:
+    """Cree les journaux Markdown ancrage/ et aq/ requis par --check-deliverables."""
+    aq_dir = book_dir / "aq"
     aq_dir.mkdir(exist_ok=True)
-    anc_dir = tmp_book / "ancrage"
+    anc_dir = book_dir / "ancrage"
     anc_dir.mkdir(exist_ok=True)
 
     for uid in UNITS_NARRATIVES:
@@ -643,63 +649,46 @@ def test_cli_echantillon_and_check_deliverables_end_to_end(tmp_book: Path) -> No
             encoding="utf-8",
         )
 
-    echantillon_script = TOOLS_DIR / "echantillon_aq.py"
-    p1_json = aq_dir / "recollation-seed-202701.json"
-    p2_json = aq_dir / "recollation-seed-202702.json"
-
-    r1 = subprocess.run(
-        [sys.executable, str(echantillon_script), "--root", str(tmp_book), "--seed", "202701", "-o", str(p1_json)],
-        capture_output=True,
-        text=True,
-        encoding="utf-8",
-    )
-    assert r1.returncode == 0, r1.stderr
-    r2 = subprocess.run(
-        [
-            sys.executable,
-            str(echantillon_script),
-            "--root",
-            str(tmp_book),
-            "--seed",
-            "202702",
-            "--exclude",
-            str(p1_json),
-            "-o",
-            str(p2_json),
-        ],
-        capture_output=True,
-        text=True,
-        encoding="utf-8",
-    )
-    assert r2.returncode == 0, r2.stderr
-
     (aq_dir / "recollation-seed-202701.md").write_text("# Passe 1\n\nResultat : 60/60.\n", encoding="utf-8")
     (aq_dir / "recollation-seed-202702.md").write_text("# Passe 2\n\nResultat : 60/60.\n", encoding="utf-8")
     (aq_dir / "gauntlet-log.md").write_text("# Gauntlet\n\n13/13 unites validees.\n", encoding="utf-8")
     (aq_dir / "rapport-lissage-et-visuel.md").write_text("# Lissage et visuel\n\n0 defaut.\n", encoding="utf-8")
+    return aq_dir
+
+
+def test_cli_echantillon_and_check_deliverables_end_to_end(tmp_book: Path) -> None:
+    aq_dir = _populate_qa_markdown_logs(tmp_book)
+
+    echantillon_script = TOOLS_DIR / "echantillon_aq.py"
+    p1_json = aq_dir / "recollation-seed-202701.json"
+    p2_json = aq_dir / "recollation-seed-202702.json"
+
+    r1 = _run_tool_script(echantillon_script, "--root", str(tmp_book), "--seed", "202701", "-o", str(p1_json))
+    assert r1.returncode == 0, r1.stderr
+    r2 = _run_tool_script(
+        echantillon_script,
+        "--root",
+        str(tmp_book),
+        "--seed",
+        "202702",
+        "--exclude",
+        str(p1_json),
+        "-o",
+        str(p2_json),
+    )
+    assert r2.returncode == 0, r2.stderr
 
     # Regenerer annexes C avec les vraies metriques aq/ et ancrage/, puis assembler les livrables
     build_annexes(tmp_book)
-    r_asm = subprocess.run(
-        [sys.executable, str(TOOLS_DIR / "assemble_livre.py"), "--root", str(tmp_book), "--all"],
-        capture_output=True,
-        text=True,
-        encoding="utf-8",
-    )
+    r_asm = _run_tool_script(TOOLS_DIR / "assemble_livre.py", "--root", str(tmp_book), "--all")
     assert r_asm.returncode == 0, r_asm.stderr
 
-    r_chk = subprocess.run(
-        [
-            sys.executable,
-            str(TOOLS_DIR / "verifie_manuscrit.py"),
-            "--root",
-            str(tmp_book),
-            "--strict",
-            "--check-deliverables",
-        ],
-        capture_output=True,
-        text=True,
-        encoding="utf-8",
+    r_chk = _run_tool_script(
+        TOOLS_DIR / "verifie_manuscrit.py",
+        "--root",
+        str(tmp_book),
+        "--strict",
+        "--check-deliverables",
     )
     assert r_chk.returncode == 0, f"STDOUT:\n{r_chk.stdout}\nSTDERR:\n{r_chk.stderr}"
 
@@ -707,6 +696,51 @@ def test_cli_echantillon_and_check_deliverables_end_to_end(tmp_book: Path) -> No
     (aq_dir / "recollation-seed-202702.md").unlink()
     errs = check_manuscrit(tmp_book, strict=True, check_deliverables=True)
     assert any("CA-14" in e for e in errs)
+
+
+def test_check_deliverables_accepts_consolidated_pdf_md(tmp_book: Path) -> None:
+    aq_dir = _populate_qa_markdown_logs(tmp_book)
+    s1 = draw_stratified_sample(tmp_book, seed=202701, exclude_ids=set())
+    excluded = {x["claim_loc"] for x in s1} | {x["paragraph_loc"] for x in s1}
+    s2 = draw_stratified_sample(tmp_book, seed=202702, exclude_ids=excluded)
+    (aq_dir / "recollation-seed-202701.json").write_text(json.dumps(s1, ensure_ascii=False), encoding="utf-8")
+    (aq_dir / "recollation-seed-202702.json").write_text(json.dumps(s2, ensure_ascii=False), encoding="utf-8")
+    build_annexes(tmp_book)
+
+    livrables = tmp_book / "livrables"
+    livrables.mkdir(parents=True, exist_ok=True)
+    html_out = livrables / "7 - Livre 2027.html"
+    md_local = livrables / "7 - Livre 2027.md"
+    pdf_local = livrables / "7 - Livre 2027.pdf"
+    html_out.write_text("<html><body>Livre 2027</body></html>", encoding="utf-8")
+    md_local.write_text("# Livre 2027\n\nContenu consolide.\n", encoding="utf-8")
+    pdf_local.write_bytes(b"%PDF-1.7\n")
+
+    assert check_manuscrit(tmp_book, strict=True, check_deliverables=True) == []
+
+    # Retrait des copies locales au profit des livrables consolides dans ../0 - PDF-MD/
+    consolidated_dir = tmp_book.parent / "0 - PDF-MD"
+    consolidated_md = consolidated_dir / "7 - Livre.md"
+    consolidated_pdf = consolidated_dir / "7 - Livre.pdf"
+    shutil.move(str(md_local), str(consolidated_md))
+    shutil.move(str(pdf_local), str(consolidated_pdf))
+
+    assert not md_local.exists() and not pdf_local.exists()
+    assert html_out.is_file()
+    assert check_manuscrit(tmp_book, strict=True, check_deliverables=True) == []
+
+    # Le HTML autonome reste exige meme lorsque les fichiers consolides sont presents
+    html_out.unlink()
+    errs_no_html = check_manuscrit(tmp_book, strict=True, check_deliverables=True)
+    assert any("CA-18" in e and "HTML" in e for e in errs_no_html)
+
+    # Sans Markdown consolide ni PDF valide -> CA-18 echoue
+    html_out.write_text("<html><body>Livre 2027</body></html>", encoding="utf-8")
+    consolidated_md.unlink()
+    consolidated_pdf.write_bytes(b"NOT_A_PDF")
+    errs_missing = check_manuscrit(tmp_book, strict=True, check_deliverables=True)
+    assert any("CA-18" in e and "Markdown" in e for e in errs_missing)
+    assert any("CA-18" in e and "PDF" in e for e in errs_missing)
 
 
 def test_postprocess_typst_table_escaped_open_paren_in_cell() -> None:

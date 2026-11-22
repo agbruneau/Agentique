@@ -14,7 +14,7 @@
 
 - Zéro contournement d'accès (`AO-01`) : tout `HTTP 403`, `429`, WAF, CAPTCHA, Anubis ou mur payant stoppe net la requête et classe la notice en `statut F` (interdite en preuve, `0 %` de `METADATA_ONLY`).
 - Plage stricte de volume (`CA-01`) : `68 080` à `79 920` mots au total, et tolérance ± 8 % sur chacune des 16 unités de `manifest.json`.
-- Zéro jargon matriciel (`CA-02`) ni auto-plagiat de 12 mots consécutifs ou plus face à `../0 - MD/` hors citations entre guillemets (`CA-03`).
+- Zéro jargon matriciel (`CA-02`) ni auto-plagiat de 12 mots consécutifs ou plus face à `../0 - PDF-MD/` hors citations entre guillemets (`CA-03`).
 - Tous les montants en dollars littéraux sont échappés en `\$` dans les fichiers `.md`, toute formule est écrite en `\(...\)` (`CA-06`), et `Pandoc` est invoqué avec `-f markdown-tex_math_dollars+tex_math_single_backslash`.
 - Les volumes `1` à `6` du dépôt sont une carte de repérage, jamais une preuve (`AO-02`) : tout fait qui en provient est réancré sur la source primaire qu'ils citent.
 - Ordre des barrières imposé par `contrat-aq.md` : `G1` → `G2` → `G3` passe 1 → `G4` → `G5` lissage → `G3` passe 2 sur le texte final → `G5` rendu.
@@ -78,7 +78,7 @@ Expected: FAIL (`ModuleNotFoundError` sur `verifie_manuscrit`)
 
 - [ ] **Step 3: Implémenter `verifie_manuscrit.py`, `echantillon_aq.py` et `genere_annexes.py`**
 
-Comptage de mots hors YAML/blocs de code/URLs; indexation par hachage glissant des `12-grammes` de `../0 - MD/`; stratification déterministe `random.Random(seed)`.
+Comptage de mots hors YAML/blocs de code/URLs; indexation par hachage glissant des `12-grammes` de `../0 - PDF-MD/`; stratification déterministe `random.Random(seed)`.
 
 - [ ] **Step 4: Exécuter `pytest` et `verifie_specs.py`**
 
@@ -104,7 +104,7 @@ git commit -m "Ajouter l'outillage deterministe G1, G3 et generateur d'annexes d
 - Test: `7 - Livre 2027/outils/test_collecte_mlr.py`
 
 **Interfaces:**
-- Consumes: `specs/protocole-mlr-2027.json`, `sources-locales/*` (dont la copie locale non versionnée de l'essai DeepMind), `../0 - MD/*`
+- Consumes: `specs/protocole-mlr-2027.json`, `sources-locales/*` (dont la copie locale non versionnée de l'essai DeepMind), `../0 - PDF-MD/*`
 - Produces: `recherche/corpus_l_plus/*.txt` (UTF-8 intégraux hachés `SHA-256`), `recherche/manifeste-sources-sha256.json` et les `13` bases fermées `sources/ch00-sources.md` à `sources/ch12-sources.md`
 
 - [ ] **Step 1: Écrire le test garantissant l'arrêt sans contournement sur `403`/`429` (`AO-01`) et le hachage `SHA-256`**

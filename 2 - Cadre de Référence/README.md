@@ -2,8 +2,8 @@
 
 ## Informations sur le document
 
-- **Source PDF** : [2 - Cadre de Référence.pdf](../0%20-%20PDF/2%20-%20Cadre%20de%20R%C3%A9f%C3%A9rence.pdf)
-- **Fichier Markdown complet** : [2 - Cadre de Référence.md](../0%20-%20MD/2%20-%20Cadre%20de%20R%C3%A9f%C3%A9rence.md)
+- **Source PDF** : [2 - Cadre de Référence.pdf](../0%20-%20PDF-MD/2%20-%20Cadre%20de%20R%C3%A9f%C3%A9rence.pdf)
+- **Fichier Markdown complet** : [2 - Cadre de Référence.md](../0%20-%20PDF-MD/2%20-%20Cadre%20de%20R%C3%A9f%C3%A9rence.md)
 - **Pages** : 351
 - **Parties / Sections** : 5
 - **Unités extraites** : 35

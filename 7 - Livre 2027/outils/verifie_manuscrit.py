@@ -790,6 +790,16 @@ def _check_ca17_annexes(root: Path) -> list[str]:
     return errors
 
 
+def _has_valid_pdf(candidates: tuple[Path, ...]) -> bool:
+    """Verifie qu'au moins un livrable PDF candidat existe et commence par %PDF-."""
+    for path in candidates:
+        if path.is_file():
+            with path.open("rb") as fh:
+                if fh.read(5) == b"%PDF-":
+                    return True
+    return False
+
+
 def _check_deliverables(root: Path, manifest: dict) -> list[str]:
     errors: list[str] = []
     narrative_units = [u for u in manifest["units"] if u["kind"] in {"frontmatter", "chapter"}]
@@ -847,17 +857,18 @@ def _check_deliverables(root: Path, manifest: dict) -> list[str]:
     if not rvis.is_file() or rvis.stat().st_size == 0:
         errors.append("[CA-16] Rapport aq/rapport-lissage-et-visuel.md manquant ou vide")
 
-    # Livrables assembles
+    # Livrables assembles (editions .md/.pdf locales ou consolidees dans ../0 - PDF-MD/)
     liv_dir = root / "livrables"
-    md_out = liv_dir / "7 - Livre 2027.md"
+    consolidated_dir = root.parent / "0 - PDF-MD"
+    md_candidates = (liv_dir / "7 - Livre 2027.md", consolidated_dir / "7 - Livre.md")
     html_out = liv_dir / "7 - Livre 2027.html"
-    pdf_out = liv_dir / "7 - Livre 2027.pdf"
-    if not md_out.is_file() or md_out.stat().st_size == 0:
-        errors.append("[CA-18] Livrable Markdown manquant : livrables/7 - Livre 2027.md")
+    pdf_candidates = (liv_dir / "7 - Livre 2027.pdf", consolidated_dir / "7 - Livre.pdf")
+    if not any(p.is_file() and p.stat().st_size > 0 for p in md_candidates):
+        errors.append("[CA-18] Livrable Markdown manquant : livrables/7 - Livre 2027.md ou ../0 - PDF-MD/7 - Livre.md")
     if not html_out.is_file() or "<html" not in html_out.read_text(encoding="utf-8", errors="replace"):
         errors.append("[CA-18] Livrable HTML autonome manquant ou invalide : livrables/7 - Livre 2027.html")
-    if not pdf_out.is_file() or not pdf_out.read_bytes().startswith(b"%PDF-"):
-        errors.append("[CA-18] Livrable PDF manquant ou invalide : livrables/7 - Livre 2027.pdf")
+    if not _has_valid_pdf(pdf_candidates):
+        errors.append("[CA-18] Livrable PDF manquant ou invalide : livrables/7 - Livre 2027.pdf ou ../0 - PDF-MD/7 - Livre.pdf")
 
     return errors
 
