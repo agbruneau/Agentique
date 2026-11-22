@@ -1,0 +1,66 @@
+{
+  "registry_version": "1.0.0",
+  "description": "Glossaire normatif français canadien / anglais — source unique de vérité terminologique pour les 12 chapitres et l'Annexe A.",
+  "terms": [
+    {
+      "fr": "industrialisation cognitive",
+      "en": "cognitive industrialization",
+      "definition": "Standardisation, automatisation à grande échelle et chute exponentielle du coût unitaire de nombreuses tâches cognitives sous l'effet composé des gains matériels, algorithmiques et d'investissement."
+    },
+    {
+      "fr": "noyau de contrôle déterministe",
+      "en": "deterministic control core",
+      "definition": "Ensemble des composants logiciels non probabilistes possédés par l'organisation (registre d'agents, identités, passerelles de politiques, contrats typés, machines à états durables et journaux d'audit) qui encadrent des modèles substituables."
+    },
+    {
+      "fr": "partition 80/20",
+      "en": "80/20 deterministic-probabilistic split",
+      "definition": "Principe d'ingénierie consistant à maintenir environ 80 % des règles métier, autorisations, transitions d'état et mutations en code déterministe vérifiable, en confinant les 20 % de raisonnement probabiliste à l'interprétation et à la synthèse bornées."
+    },
+    {
+      "fr": "harnais d'agent",
+      "en": "agent harness",
+      "definition": "Enveloppe d'exécution durcie qui isole le modèle, valide les schémas d'entrée et de sortie, applique les plafonds de tours et de budget, et médiatise tout appel d'outil."
+    },
+    {
+      "fr": "identité non humaine",
+      "en": "Non-Human Identity (NHI)",
+      "definition": "Identité cryptographique distincte, attestée et à courte durée de vie attribuée à une charge de travail ou à un agent logiciel, par opposition aux comptes génériques ou clés statiques partagées."
+    },
+    {
+      "fr": "délégation au nom de",
+      "en": "On-Behalf-Of (OBO) delegation",
+      "definition": "Mécanisme d'échange de jetons distinguant explicitement l'identité du mandant humain initial et celle de l'agent mandataire exécutant l'action, tout en réduisant les privilèges au strict nécessaire."
+    },
+    {
+      "fr": "exécution durable",
+      "en": "durable execution",
+      "definition": "Modèle d'orchestration persistant chaque étape et chaque réponse d'inférence dans un journal d'événements afin de reprendre exactement une tâche longue après panne sans réexécuter les effets de bord déjà produits."
+    },
+    {
+      "fr": "saga à point pivot",
+      "en": "pivot-transaction saga",
+      "definition": "Séquence de transactions locales coordonnées sans verrou distribué où toute étape précédant l'acte irréversible (point pivot) possède une action compensatoire idempotente acheminée sur un canal dédié."
+    },
+    {
+      "fr": "coût par résultat conforme",
+      "en": "Cost per Compliant Outcome (CPO)",
+      "definition": "Coût complet d'une transaction métier menée à terme sans erreur ni reprise, intégrant l'inférence, les réessais, l'évaluation, l'infrastructure de sécurité, la conformité et la supervision humaine."
+    },
+    {
+      "fr": "constance multi-essais",
+      "en": "pass^k consistency",
+      "definition": "Probabilité qu'un agent réussisse intégralement une même tâche opérationnelle sur k exécutions indépendantes consécutives, mesurant la fiabilité en production plutôt que la performance moyenne."
+    },
+    {
+      "fr": "approbation réflexe",
+      "en": "rubber-stamping / automation bias",
+      "definition": "Défaut de supervision où un valideur humain entérine machinalement les propositions persuasives d'un agent sans examen critique des pièces, exposant l'organisation au régime juridique des décisions exclusivement automatisées."
+    },
+    {
+      "fr": "couche anti-corruption",
+      "en": "Anti-Corruption Layer (ACL)",
+      "definition": "Façade d'adaptation déterministe placée devant les systèmes centraux patrimoniaux pour traduire les formats historiques, préserver l'exactitude décimale et protéger les bases d'autorité contre les requêtes directes des agents."
+    }
+  ]
+}

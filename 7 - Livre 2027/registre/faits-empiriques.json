@@ -1,0 +1,76 @@
+{
+  "registry_version": "1.0.0",
+  "description": "Repères quantitatifs et empiriques vérifiés — source unique de vérité interdisant toute dérive chiffrée entre chapitres.",
+  "facts": [
+    {
+      "id": "FACT-COMPUTE-10X",
+      "metric": "Croissance annuelle composée du stock mondial de calcul effectif pour l'IA",
+      "value": "Au moins 10× par an sur la dernière décennie (~1,5× matériel/dollar × ~3× efficacité d'inférence × ~2,5× dépenses matérielles)",
+      "source": "Genewein et al. (2026), What comes after AGI? / From AGI to ASI (DeepMind)",
+      "owner_chapter": "ch01"
+    },
+    {
+      "id": "FACT-LUSSER-10-STEPS",
+      "metric": "Fiabilité composée sans erreur de 10 étapes autonomes indépendantes fiables chacune à 94 %",
+      "value": "53,9 % (0,94^10 ≈ 53,86 %)",
+      "source": "Loi de Lusser appliquée aux chaînes d'actions autonomes (README / Mémoire / Compendium 2027)",
+      "owner_chapter": "ch02"
+    },
+    {
+      "id": "FACT-GARTNER-ABANDON-2027",
+      "metric": "Part des initiatives agentiques exposées à l'abandon d'ici fin 2027 faute de contrôles, de ROI démontré et de maîtrise des coûts",
+      "value": "Plus de 40 %",
+      "source": "README / Livre Blanc ch. 15",
+      "owner_chapter": "ch02"
+    },
+    {
+      "id": "FACT-HYPERSCALER-CAPEX-2026",
+      "metric": "Somme des dépenses d'investissement (CapEx) annoncées pour 2026 par Alphabet, Amazon, Meta et Microsoft",
+      "value": "720 à 740 G$ US (somme calculée avec définitions propres à chaque émetteur)",
+      "source": "Compendium 2027, Chapitre 50 (§ 50.3)",
+      "owner_chapter": "ch02"
+    },
+    {
+      "id": "FACT-MARKET-ENVELOPE-2027-2030",
+      "metric": "Enveloppe interpolée de 13 séries de cabinets d'études sur le marché de l'IA agentique",
+      "value": "2027 : 7,8 à 17,3 G$ US (médiane 15,5 G$ US); 2030 : 24,5 à 54,6 G$ US (médiane 46,0 G$ US)",
+      "source": "Compendium 2027, Chapitre 50 (§ 50.2)",
+      "owner_chapter": "ch02"
+    },
+    {
+      "id": "FACT-MAP-STUDY",
+      "metric": "Profil réel des agents déployés en production selon l'étude MAP",
+      "value": "68 % exécutent au plus 10 étapes avant intervention humaine; 16 cas sur 20 suivent un flux structuré fixe",
+      "source": "Pan et al. (2025), Measuring Agents in Production (arXiv:2512.04123), cité en Compendium 2027",
+      "owner_chapter": "ch06"
+    },
+    {
+      "id": "FACT-MAST-FAILURES",
+      "metric": "Taux d'échec observés sur bancs d'essai de systèmes multi-agents open source (taxonomie MAST)",
+      "value": "41 % à 86,7 % d'échecs sur plus de 1 600 traces annotées couvrant 7 cadriciels et 14 modes de défaillance",
+      "source": "Cemri et al. (NeurIPS 2025), Why Do Multi-Agent LLM Systems Fail? (MAST)",
+      "owner_chapter": "ch06"
+    },
+    {
+      "id": "FACT-CAMEL-AGENTDOJO",
+      "metric": "Compromis sécurité / utilité de l'isolation par construction CaMeL sur le banc AgentDojo",
+      "value": "77 % des tâches résolues avec garantie structurelle de sécurité contre 84 % sans défense",
+      "source": "Debenedetti et al. (IEEE SaTML 2026), Defeating Prompt Injections by Design",
+      "owner_chapter": "ch08"
+    },
+    {
+      "id": "FACT-JUNIOR-DEV-CONTRACTION",
+      "metric": "Évolution de l'emploi des développeurs logiciels âgés de 22 à 25 ans depuis 2024 dans les métiers exposés",
+      "value": "Recul de près de 20 %",
+      "source": "Stanford HAI, Artificial Intelligence Index Report 2026 (Ch. 4), cité au Plan Directeur Ch. M-26",
+      "owner_chapter": "ch11"
+    },
+    {
+      "id": "FACT-PQC-SIGNATURE-SIZE",
+      "metric": "Taille des signatures post-quantiques normalisées sur réseaux euclidiens face aux signatures elliptiques classiques (64 octets)",
+      "value": "ML-DSA-65 : 3 309 octets (~52×); ML-DSA-87 : 4 627 octets (~72×)",
+      "source": "NIST FIPS 204 / Plan Directeur Ch. M-26 (§ 26.4)",
+      "owner_chapter": "ch12"
+    }
+  ]
+}

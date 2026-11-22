@@ -1,0 +1,66 @@
+# Charte éditoriale, narrative et typographique — Livre 2027 (v1.0)
+
+Cette charte gouverne tous les agents rédacteurs, réviseurs et lisseurs. Son objectif est d'obtenir un **ouvrage de librairie et de direction fluide, rigoureux et mémorable**, à l'opposé d'un rapport compilatoire ou d'une matrice d'exigences.
+
+---
+
+## 1. Posture et voix d'écriture
+
+1. **Registre** : essai analytique et architectural en **français canadien** soutenu et limpide, directement lisible au Québec, au Canada francophone et en Europe francophone.
+2. **Ton** : posé, factuel, incisif et sobre. L'ouvrage défend une thèse claire (la primauté du contrôle déterministe et de la preuve sur la puissance brute des modèles), mais **distingue toujours explicitement** :
+   - ce qu'une étude empirique a *mesuré* (en nommant son devis et sa limite);
+   - ce qu'une loi ou un régulateur *impose* (en nommant la juridiction et l'échéance);
+   - ce qui relève d'une *déduction architecturale* ou d'une *recommandation de prudence*.
+3. **Barre stylistique de référence (pour la boucle `gauntlet-loop`)** :
+   - **Sobriété et honnêteté épistémique** : `3 - Compendium 2027/00 - Ouverture - Architecture et gouvernance du tissu conjonctif agentique.md` et `Chapitre 48 - Revue de littérature.md` (phrases courtes à moyennes, sujet-verbe-complément, refus des superlatifs commerciaux).
+   - **Fluidité argumentative sans codes internes** : `Google Deepmind - What comes after AGI_ From AGI to Superintelligence — DeepMind Institute.pdf` (progression logique limpide, analogies éclairantes, transition naturelle d'une section à la suivante).
+
+---
+
+## 2. Architecture interne obligatoire de chaque chapitre
+
+Chaque chapitre (`Ch. 01` à `Ch. 12`) suit cinq mouvements dans un flux continu :
+
+1. **Chapeau et ouverture par le réel (`350 à 550 mots`)** :
+   - Une ligne d'exergue sous le titre : `*Question directrice : <question précise du toc.md>*`.
+   - Trois à quatre paragraphes narratifs sans sous-titre posant un cas concret, un incident documenté ou un dilemme de direction qui rend palpable l'enjeu du chapitre avant tout concept abstrait.
+2. **Quatre sections analytiques numérotées (`X.1` à `X.4`)** :
+   - Les titres exacts de `toc.md` sont respectés.
+   - Le propos progresse en paragraphes construits (`90 à 180 mots` par paragraphe en moyenne). Les listes à puces ne servent qu'à énumérer des éléments véritablement parallèles (`3 à 5 items` maximum) et représentent **moins de 18 % des lignes du chapitre** (`CA-05`).
+3. **Intégration organique des preuves et de la littérature** :
+   - Chaque affirmation factuelle, statistique ou réglementaire porte son renvoi bibliographique `[n]` vers la base fermée `sources/chNN-sources.md`.
+   - Les auteurs majeurs (Coase, Simon, Bainbridge, Leveson, Genewein, Tomašev, Dell'Acqua, Cemri, Debenedetti, Haasnoot, etc.) sont nommés dans la phrase lorsqu'on discute leur idée directrice, plutôt que relégués uniquement derrière un crochet muet.
+4. **Figures et tableaux commentés** :
+   - Chaque figure assignée au chapitre (`1` ou `2` selon `toc.md`) est annoncée dans le paragraphe qui la précède, suivie de sa légende en italique, puis interprétée en trois à cinq phrases sur ce qu'elle oblige à trancher.
+   - Maximum **deux tableaux par chapitre** (`CA-05`), réservés aux comparaisons multidimensionnelles que la prose rendrait confuses.
+5. **Clôture décisionnelle (`250 à 400 mots`)** :
+   - Un encadré unique intitulé `> **Trois arbitrages sans regret — Chapitre X**` condensant trois décisions actionnables pour la direction et l'architecture.
+   - Un court paragraphe final assurant le passage logique vers le chapitre suivant.
+
+---
+
+## 3. Liste noire mécanique (contrôlée automatiquement par `verifie.py`)
+
+Toute apparition dans le liminaire ou les chapitres `01` à `12` des motifs suivants déclenche un échec immédiat de la barrière `G1` :
+
+### 3.1 Identifiants matriciels internes hérités des volumes 1 à 6 (`CA-02`)
+- Préfixes interdits : `\bCAP-\d{3}\b`, `\bEXIG-[A-Z]+-\d{2}\b`, `\bPOR-\d{3}\b`, `\bANC-\d{3}\b`, `\bINI-\d{3}\b`, `\bPEX-\d{2}\b`, `\bSIG-\d{3}\b`, `\bADR-\d{3}\b`, `\bPRR\b`, `\bDIV-\d{2}\b`.
+- Marqueurs bruts d'audit entre crochets : `\[S\]`, `\[D\]`, `\[A\]`, `\[M\]`, `\[N\]`, `\[L\+\]`. *(Le statut des preuves s'exprime en français clair dans la phrase et est codifié uniquement dans l'Annexe C.)*
+
+### 3.2 Formules creuses et tics de génération (`charte` anti-remplissage)
+- Expressions bannies : *« Dans un monde en constante évolution »*, *« À l'ère du numérique »*, *« Il convient de souligner que »*, *« Force est de constater que »*, *« En conclusion, nous avons vu que »*, *« changement de paradigme révolutionnaire »*, *« synergie holistique »*.
+- Titres à deux-points empilés au-delà d'un seul sous-segment explicatif.
+
+---
+
+## 4. Règles linguistiques, mathématiques et typographiques
+
+1. **Terminologie bilingue contrôlée** : employer systématiquement les termes de `registre/glossaire-termes.json`. À la première occurrence majeure d'un concept technique dans un chapitre, donner le terme français suivi de l'équivalent anglais entre parenthèses s'il éclaire l'usage de l'industrie — p. ex. *identité non humaine (`Non-Human Identity`, `NHI`)*, *exécution durable (`Durable Execution`)*, *coût par résultat conforme (`Cost per Compliant Outcome`)*.
+2. **Montants monétaires et symboles `$` (`CA-06`)** :
+   - Échapper systématiquement chaque symbole dollar littéral en `\$` dans le Markdown (`15,5 G\$ US`, `25 M\$ CA`, `1 000 \$ US`) afin d'éviter toute ouverture accidentelle de mode mathématique TeX/KaTeX entre deux montants d'un même paragraphe.
+   - Toujours préciser la devise (`\$ CA`, `\$ US` ou `€`) et utiliser l'espace insécable ou fine selon le gabarit `Typst`.
+   - Compiler `Pandoc` avec l'extension `-f markdown-tex_math_dollars` ou réserver les formules mathématiques aux expressions multi-termes explicites (`\(0{,}94^{10} \approx 53{,}9\ \%\)`).
+3. **Conventions des figures (`CA-08`)** :
+   - `10 à 14` nœuds maximum par diagramme pour garantir une lisibilité immédiate sur format livre imprimé (`6 × 9 po` ou `Lettre`).
+   - Distinction visuelle constante (trait plein épais / teinte sobre) pour la **frontière déterministe possédée** face aux **composants probabilistes substituables** (trait pointillé).
+   - Légendes et libellés intégralement en français canadien (hors identifiants de protocoles normalisés comme `MCP`, `A2A`, `SPIFFE`, `OAuth 2.0`, `SHA-256`).
