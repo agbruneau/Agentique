@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: MIT
-"""Pre-traitement Markdown partage pour adapter les 8 volumes du depot au gabarit Typst."""
+"""Pre-traitement Markdown partage pour adapter les 8 tomes du depot au gabarit Typst."""
 
 from __future__ import annotations
 
@@ -60,16 +60,16 @@ def _iter_lines_with_fence_state(lines: list[str]):
 
 
 def strip_legacy_preamble(md_text: str, keep_from_heading: str | None = None, wrap_orphan_intro: str | None = None) -> str:
-    """Supprime le preambule de couverture aplati en tete des volumes 1-6.
+    """Supprime le preambule de couverture aplati en tete des tomes 1-6.
 
     Si `keep_from_heading` est fourni (regex sur ligne H1), coupe avant ce titre.
-    Si `wrap_orphan_intro` est fourni (ex. presentation des 5 livres de Vol. 1 entre
+    Si `wrap_orphan_intro` est fourni (ex. presentation des 5 livres du Tome 1 entre
     le tableau de metadonnees et `# Table des matières`), conserve ce bloc sous un H1 dedie.
     """
     lines = md_text.splitlines(keepends=True)
 
     if wrap_orphan_intro:
-        # Cas specifique Vol. 1 : apres la ligne `Actualisation | ...`, avant `# Table des matières`
+        # Cas specifique Tome 1 : apres la ligne `Actualisation | ...`, avant `# Table des matières`
         start_intro = -1
         for idx, line, in_fence in _iter_lines_with_fence_state(lines):
             if in_fence:
@@ -194,7 +194,7 @@ def inject_rendered_diagrams(
 ) -> tuple[str, int]:
     """Injecte les diagrammes rendus (.svg/.png) au-dessus des legendes correspondantes s'ils existent.
 
-    Utile pour les volumes 1-6 une fois leurs sources PlantUML/Mermaid compilees dans `Diagrammes/rendus/`.
+    Utile pour les tomes 1-6 une fois leurs sources PlantUML/Mermaid compilees dans `Diagrammes/rendus/`.
     Remplace un eventuel encadre de texte aplati `> **[Figure]**` precedant immediatement la legende,
     et ne duplique jamais une image deja presente avant la legende.
     """

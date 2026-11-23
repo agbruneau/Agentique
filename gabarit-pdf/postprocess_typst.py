@@ -1,9 +1,9 @@
 # SPDX-License-Identifier: MIT
 """Post-traitement typographique Typst partage pour toute la collection Agentique.
 
-Extrait et generalise a partir du pipeline de reference de 8 - Manuel afin d'assurer
+Extrait et generalise a partir du pipeline de reference du Tome 8 afin d'assurer
 un rendu fr-CA uniforme (tableaux reequilibres, virgules decimales en math, legendes
-centrees, cesure d'URLs et de code inline, espaces insecables) pour les 8 volumes.
+centrees, cesure d'URLs et de code inline, espaces insecables) pour les 8 tomes.
 """
 
 from __future__ import annotations

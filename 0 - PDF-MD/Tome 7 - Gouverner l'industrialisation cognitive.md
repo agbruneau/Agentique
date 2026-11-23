@@ -63,7 +63,7 @@ Il serait donc erroné d'y voir la confirmation que l'industrie traite déjà le
 
 La figure 0 (Fig-00) synthétise cette topologie en opposant les composants probabilistes en pointillé ambre (« qui parle ») au tissu conjonctif déterministe en trait plein ardoise (« qui en répond »), articulé autour du plan d'orchestration et des dimensions D1 à D6.
 
-![Fig-00 — Architecture du tissu conjonctif de l'entreprise agentique](../7 - Livre/diagrammes/rendus/Fig-00.svg)
+![Fig-00 — Architecture du tissu conjonctif de l'entreprise agentique](../Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-00.svg)
 
 *Figure 0 — Architecture du tissu conjonctif de l'entreprise agentique : le plan d'orchestration déterministe et les six dimensions d'interopérabilité (D1 à D6) possédés (« qui en répond ») encadrent les modèles substituables (« qui parle »), sous le mandat du superviseur humain.*
 
@@ -205,7 +205,7 @@ Le tableau 1.1 ci-dessous fixe la grille de référence L0–L4 employée dans t
 
 La figure suivante relie ces cinq régimes d'autonomie probabiliste aux contrôles déterministes que l'organisation doit posséder pour maintenir l'imputabilité de bout en bout.
 
-![Fig-01 — Spectre d'autonomie opérationnelle (L0–L4)](../7 - Livre/diagrammes/rendus/Fig-01.svg)
+![Fig-01 — Spectre d'autonomie opérationnelle (L0–L4)](../Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-01.svg)
 
 *Figure 1 — Spectre d'autonomie opérationnelle (L0–L4) : droits de mutation, régime de supervision et contrôles exigés par niveau, complétés par la règle du maillon le plus élevé.*
 
@@ -258,7 +258,7 @@ Bien que certains chercheurs proposent des systèmes « oracles » ou myopes pri
 
 La figure suivante synthétise l'articulation entre les moteurs de calcul, les propriétés du substrat numérique, ces quatre voies d'évolution et l'exigence d'un noyau déterministe de contrôle.
 
-![Fig-02 — Moteurs composés de l'industrialisation cognitive et quatre voies post-AGI](../7 - Livre/diagrammes/rendus/Fig-02.svg)
+![Fig-02 — Moteurs composés de l'industrialisation cognitive et quatre voies post-AGI](../Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-02.svg)
 
 *Figure 2 — Moteurs composés de l'industrialisation cognitive, propriétés du substrat numérique, quatre voies d'évolution vers la superintelligence et encadrement déterministe exigé.*
 
@@ -308,7 +308,7 @@ Cet écart ne provient pas uniquement du décalage habituel entre la constructio
 
 Dans une même semaine, un comité de direction peut entendre que le marché des systèmes agentiques pèse moins de 10 G\$ US en 2026, qu'il atteindra 40 G\$ US en 2030 et que les géants technologiques y consacrent près de 700 G\$ US par an. Ces trois énoncés ne se contredisent pas ; ils désignent des strates économiques distinctes que la figure 3 ordonne par emboîtement croissant en six périmètres. Ils recouvrent successivement les logiciels d'agents purs (1), les plateformes d'orchestration et la connectivité ouverte (2), les copilotes et suites SaaS préintégrées (3), l'intégration, l'audit, la sécurité et la conformité (4), le calcul infonuagique et l'inférence dédiée (5) et les dépenses cognitives déplacées sur le travail adressable (6), face aux immobilisations en capital (CapEx) finançant la capacité de calcul.
 
-![Fig-03 — Six périmètres emboîtés du marché agentique face aux investissements d'infrastructure](../7 - Livre/diagrammes/rendus/Fig-03.svg)
+![Fig-03 — Six périmètres emboîtés du marché agentique face aux investissements d'infrastructure](../Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-03.svg)
 
 *Figure 3 — Six périmètres emboîtés du marché agentique face aux investissements d'infrastructure : du logiciel pur d'orchestration aux dépenses cognitives déplacées et aux dépenses en capital des quatre grands fournisseurs infonuagiques.*
 
@@ -379,7 +379,7 @@ Pourquoi 68 % des équipes qui maintiennent réellement des agents en production
 
 Dans la section 8.1.8.1 du manuel de référence en ingénierie statistique du *NIST* et de *SEMATECH*, un système en série dans lequel la première défaillance de l'un quelconque de ses \(k\) maillons indépendants entraîne l'échec de l'ensemble obéit à deux équations simples : la fiabilité globale vaut \(R_c(t) = \prod_{i=1}^{k} R_i(t)\) et le taux de défaillance cumulé vaut \(h_c(t) = \sum_{i=1}^{k} h_i(t)\) [14]. À titre de calcul illustratif de l'ouvrage, une chaîne de dix étapes indépendantes fiables chacune à 94 % produit mathématiquement une probabilité de réussite complète sans erreur de \(0{,}94^{10} \approx 0{,}5386\), soit 53,9 % — ce qui signifie que 46,1 % des exécutions déraillent avant l'arrivée. La figure 4 met en regard cette pente géométrique implacable et l'effet d'une architecture encadrée par des verrous déterministes.
 
-![Fig-04 — Dégradation géométrique de la réussite sans contrôle déterministe (loi de Lusser)](../7 - Livre/diagrammes/rendus/Fig-04.svg)
+![Fig-04 — Dégradation géométrique de la réussite sans contrôle déterministe (loi de Lusser)](../Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-04.svg)
 
 *Figure 4 — Dégradation géométrique de la probabilité de réussite sans contrôle déterministe selon le calcul illustratif \(0{,}94^k\) (modèle en série dit loi de Lusser) face à une architecture gouvernée par verrous et reprises locales.*
 
@@ -473,7 +473,7 @@ Pour conjurer ces dérives sans renoncer à l'automatisation, Tomašev *et al.* 
 
 Dans le détail opérationnel, Tomašev *et al.* esquissent comment ces garde-fous viseraient à contenir les asymétries entre acteurs [15]. Pour éviter que des agents plus puissants ne monopolisent le calcul ou les données partagées, ils adaptent les enchères de justice distributive de Dworkin : une dotation initiale égale en monnaie virtuelle permet aux agents de miser selon l'intensité des préférences jusqu'à satisfaire un *test d'envie* [15]. Sur le plan de la confidentialité, les preuves à divulgation nulle de connaissance (ZKP) assurent divulgation sélective — prouver sa solvabilité sans exposer son budget maximal face à une tarification prédatrice — et non-corrélation entre transactions [15]. Enfin, l'infrastructure de surveillance s'articule en trois strates : des moniteurs automatisés en temps réel signalent les anomalies, une adjudication automatisée applique des gels temporaires de comptes ou de transactions le temps de réunir les pièces, et les cas nouveaux ou critiques remontent aux experts humains sur registres cryptographiques immuables [15]. La figure suivante relie cette matrice aux verrous que la firme doit bâtir.
 
-![Fig-05 — Matrice des économies d'agents selon leur origine et leur perméabilité économique](../7 - Livre/diagrammes/rendus/Fig-05.svg)
+![Fig-05 — Matrice des économies d'agents selon leur origine et leur perméabilité économique](../Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-05.svg)
 
 *Figure 5 — Matrice des économies d'agents selon leur origine et leur perméabilité économique (d'après Tomašev et al. [15]), articulée avec l'effondrement coasien des coûts de transaction [16], l'asymétrie SaaS fermée et les garde-fous institutionnels de la firme.*
 
@@ -514,7 +514,7 @@ Deloitte décrit le même arbitrage stratégique : les plateformes internes cent
 
 Pour appliquer cette discipline cas par cas, la direction et l'architecture doivent passer chaque initiative au crible de l'arbre d'arbitrage présenté à la figure suivante.
 
-![Fig-06 — Arbre d'arbitrage du portefeuille : Acheter en SaaS, Assembler sur standards ouverts ou Construire](../7 - Livre/diagrammes/rendus/Fig-06.png)
+![Fig-06 — Arbre d'arbitrage du portefeuille : Acheter en SaaS, Assembler sur standards ouverts ou Construire](../Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-06.png)
 
 *Figure 6 — Arbre d'arbitrage du portefeuille agentique guidant le choix entre achat en SaaS, assemblage sur standards ouverts (posture par défaut 80/20) et construction interne du noyau métier.*
 
@@ -611,7 +611,7 @@ Cette répartition tire les conséquences pratiques des propriétés formelles d
 
 Sur le plan opérationnel, la séparation entre code déterministe et appel probabiliste s'inspire directement des principes d'**exécution durable** (*durable execution*) documentés par Temporal [7]. La définition du flux applicatif (*Workflow Definition*) doit demeurer strictement déterministe afin que le moteur rejoue l'exécution depuis son journal d'événements (*Event History*) après panne sans réexécuter les effets de bord déjà validés [7]. Tout appel non déterministe — base de données, service réseau ou, pour un agent, inférence LLM — est confiné dans une activité isolée (*Activity*) dont le retour est mémorisé ; la moindre divergence au rejeu déclenche une erreur explicite de non-déterminisme plutôt qu'une dérive silencieuse [7]. À l'échelle unitaire de l'agent, cette frontière prend la forme d'un **harnais d'agent** (*agent harness*) en huit étapes, représenté à la figure 7.
 
-![Fig-07 — Anatomie d'un harnais d'agent 80/20 sous contrats d'entrée et de sortie typés](../7 - Livre/diagrammes/rendus/Fig-07.svg)
+![Fig-07 — Anatomie d'un harnais d'agent 80/20 sous contrats d'entrée et de sortie typés](../Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-07.svg)
 
 *Figure 7 — Anatomie d'un harnais d'agent 80/20 : enveloppe déterministe en huit étapes enfermant l'inférence probabiliste (étape 4, en pointillé ambre) entre validation d'entrée typée, décodage contraint, porte de politique hors modèle et scellement au journal de preuve.*
 
@@ -661,7 +661,7 @@ Le Plan 4 assure simultanément la résilience d'exécution, l'observabilité te
 
 Pour l'observabilité et la preuve, le journal suit les conventions en développement d'OpenTelemetry GenAI [10] : celles-ci séparent l'invocation guidée par le modèle (`invoke_agent`) du flux imposé par l'application (`invoke_workflow`), prévoient un identifiant d'agent stable à la création (`gen_ai.agent.id`) ainsi qu'un nom d'agent sur l'invocation (`gen_ai.agent.name`), et maintiennent instructions système et messages en collecte optionnelle (`Opt-In`) contre les fuites de renseignements personnels [10]. Comme le soulignent Tomašev et ses coauteurs [1], la supervision à vitesse machine exige des registres cryptographiquement intègres et des pistes d'audit normalisées, que les chapitres 06 et 09 relieront aux sagas compensatoires et au pilotage au coût complet par résultat conforme (CPO). La figure 8 rassemble ces quatre plans découplés au sein de l'architecture cible.
 
-![Fig-08 — Architecture cible en quatre plans séparant le noyau déterministe possédé des modèles substituables](../7 - Livre/diagrammes/rendus/Fig-08.svg)
+![Fig-08 — Architecture cible en quatre plans séparant le noyau déterministe possédé des modèles substituables](../Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-08.svg)
 
 *Figure 8 — Architecture cible en quatre plans : séparation entre les systèmes d'engagement (SoE), le noyau déterministe possédé en quatre plans (SoA), les modèles substituables derrière un routeur agnostique (en pointillé ambre) et les systèmes d'autorité (SoR) protégés par une couche anti-corruption (ACL).*
 
@@ -753,7 +753,7 @@ Sur le dimensionnement, CloudEvents fixe un seuil minimal de transfert garanti �
 
 La figure 9 rassemble ces trois voies — médiation verticale MCP, délégation horizontale A2A et bus d'événements CloudEvents — au sein d'une topologie possédée qui protège le patrimoine central.
 
-![Fig-09 — Topologie d'interopérabilité : médiation verticale MCP, délégation horizontale A2A et couche anti-corruption](../7 - Livre/diagrammes/rendus/Fig-09.svg)
+![Fig-09 — Topologie d'interopérabilité : médiation verticale MCP, délégation horizontale A2A et couche anti-corruption](../Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-09.svg)
 
 *Figure 9 — Topologie d'interopérabilité possédée : médiation verticale par passerelle MCP et interfaces ACI, délégation horizontale A2A gouvernée, bus CloudEvents et couche anti-corruption patrimoniale.*
 
@@ -819,7 +819,7 @@ Trois articles issus du texte sanctionné de la Loi 25 dictent déjà l'architec
 
 Parallèlement, l'article 11 de la loi modifiée par la Loi 25 impose une durée minimale de conservation d'un an suivant la décision pour les renseignements qui l'ont fondée, tandis que l'article 23 exige de les détruire — ou de les anonymiser irréversiblement pour des fins sérieuses et légitimes — dès que les finalités sont accomplies, sous réserve des délais légaux [14]. Les infractions exposent aux sanctions administratives pécuniaires de l'article 90.12 (jusqu'à 10 M\$ CA ou 2 % du chiffre d'affaires mondial) et aux amendes pénales de l'article 91 (atteignant 25 M\$ CA ou 4 % du chiffre d'affaires mondial) [14]. Il est donc proscrit de graver des renseignements personnels dans les poids d'un modèle ou de les mêler dans un index vectoriel indifférencié : la mémoire épisodique doit rester externe, cloisonnée, étiquetée par finalité et gouvernée par un moteur déterministe assurant conservation minimale probatoire et purge irréversible à terme. La figure 10 illustre ce cloisonnement des quatre mémoires et leur gouvernance d'accès en amont.
 
-![Fig-10 — Cloisonnement des quatre mémoires d'entreprise et filtrage d'accès en amont](../7 - Livre/diagrammes/rendus/Fig-10.svg)
+![Fig-10 — Cloisonnement des quatre mémoires d'entreprise et filtrage d'accès en amont](../Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-10.svg)
 
 *Figure 10 — Cloisonnement des quatre mémoires d'entreprise CoALA, filtrage déterministe des droits en amont, sas d'écriture épisodique et purge planifiée sous la Loi 25.*
 
@@ -913,7 +913,7 @@ Sur le plan du pilotage, l'arbitrage privilégié par les équipes interrogées 
 
 La figure 11 traduit ces quatre paliers admissibles et l'exclusion du débat libre en un arbre décisionnel à cinq portes séquentielles.
 
-![Fig-11 — Arbre de sobriété opérationnelle avant toute décomposition multi-agents](../7 - Livre/diagrammes/rendus/Fig-11.png)
+![Fig-11 — Arbre de sobriété opérationnelle avant toute décomposition multi-agents](../Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-11.png)
 
 *Figure 11 — Arbre de sobriété opérationnelle avant toute décomposition multi-agents.*
 
@@ -985,7 +985,7 @@ Le quatrième pilier évite que la protection opérationnelle ne corrompe les do
 
 La figure 12 synthétise ce couplage entre journal d'événements, idempotence, point pivot et canal de compensation isolé.
 
-![Fig-12 — Exécution durable et Saga à point pivot dotée d'un canal de compensation isolé](../7 - Livre/diagrammes/rendus/Fig-12.svg)
+![Fig-12 — Exécution durable et Saga à point pivot dotée d'un canal de compensation isolé](../Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-12.svg)
 
 *Figure 12 — Couplage de l'exécution durable et de la Saga à point pivot : journal à rejeu déterministe, garde avant \(T_P\) et canal de compensation isolé \(C_2 \to C_1\).*
 
@@ -1076,7 +1076,7 @@ Même réduit au strict nécessaire, un jeton au porteur intercepté dans un jou
 
 Enfin, la section 2.1 de RFC 8693 rappelle que l'échange de jetons est ponctuel et ne propage pas automatiquement la révocation du jeton initial vers ses dérivés [4]. Pour combler cette fenêtre critique, WIMSE AIMS (§ 8 et § 11) recommande l'abonnement aux flux événementiels de l'*OpenID Shared Signals Framework* (SSF) — profils CAEP, RISC et WISE — afin que tout signal de révocation, de risque élevé ou de dérive force immédiatement l'invalidation des jetons en cache et la coupure ou restriction des accès [11]. La figure 13 (Fig-13) réunit ces briques dans une chaîne complète à deux sauts.
 
-![Fig-13 — Chaîne de délégation cryptographique sans secret fixe à travers deux sauts](../7 - Livre/diagrammes/rendus/Fig-13.svg)
+![Fig-13 — Chaîne de délégation cryptographique sans secret fixe à travers deux sauts](../Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-13.svg)
 
 *Figure 13 — Chaîne de délégation cryptographique sans secret fixe à travers deux sauts (du mandant humain initial à l'outil cible).*
 
@@ -1100,7 +1100,7 @@ Reste à prouver de manière opposable que le consentement humain portait exacte
 
 4. **Exécution à usage unique et scellement probatoire** : le vérificateur contrôle la concordance de la signature avec l'empreinte initiale et émet une autorisation bornée à usage unique (RFC 8693 / RFC 9396 + DPoP [4, 5, 6]). Il consigne ensuite mandat et preuve dans le journal probatoire, consolidé au besoin par un reçu de transparence SCITT (*Supply Chain Integrity, Transparency, and Trust*, RFC 9943 [7]) et par la télémétrie à double couloir du chapitre 09.
 
-![Fig-14 — Séquence d'approbation humaine hors bande liée à l'empreinte canonique de la transaction](../7 - Livre/diagrammes/rendus/Fig-14.svg)
+![Fig-14 — Séquence d'approbation humaine hors bande liée à l'empreinte canonique de la transaction](../Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-14.svg)
 
 *Figure 14 — Séquence d'approbation humaine hors bande liée à l'empreinte canonique de la transaction (du blocage déterministe de l'intention jusqu'au journal probatoire).*
 
@@ -1244,7 +1244,7 @@ Un interpréteur Python dédié exécute l'arbre syntaxique (`ast`) de ce plan, 
 
 Cette assurance entraîne sur Claude 3.5 Sonnet une surcharge médiane d'environ 2,73 fois plus de jetons en entrée et 2,82 fois en sortie hors attaque au tableau 10 (2,02× et 2,64× sous attaque au tableau 13, les auteurs synthétisant 2,82× en entrée et 2,73× en sortie dans le corps de l'article) [1]. Le découplage autorise toutefois à confier l'extraction simple du Q-LLM à un modèle plus léger (p. ex. Claude 3.5 Haiku couplé à Claude 4 Sonnet), réduisant le coût médian d'environ 12 % pour une perte d'utilité d'environ 1 % tout en évitant d'exposer les données d'outils au fournisseur du P-LLM [1]. La figure 15 (Fig-15) matérialise cette coupure physique entre voie de planification et voie de lecture confinée.
 
-![Fig-15 — Isolation par construction du flux de contrôle et du flux de données non fiables](../7 - Livre/diagrammes/rendus/Fig-15.svg)
+![Fig-15 — Isolation par construction du flux de contrôle et du flux de données non fiables](../Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-15.svg)
 
 *Figure 15 — Séparation structurelle du flux de contrôle et du flux de données non fiables dans une architecture inspirée de CaMeL [1], distinguant la frontière déterministe possédée (trait plein ardoise) des appels probabilistes substituables (trait pointillé ambre).*
 
@@ -1298,7 +1298,7 @@ Il reste enfin un écueil majeur à écarter : confondre la sécurité d'un syst
 
 Cette approche met en évidence les dégradations graduelles des contrôles — relâchement de vigilance après une période sans accident, vieillissement du modèle mental des superviseurs face aux dérives de contexte, ou capteurs faussés par un agent qui optimise les métriques échantillonnées [12]. Elle rejoint directement le bulletin du BSIF de juillet 2026, qui recommande une gestion formelle des changements sur les invites, outils et modèles, une détection continue d'anomalies et des procédures éprouvées de repli manuel [13]. Barrett *et al.* précisent avec lucidité que leur premier cadre modélise un archétype simple en phase opérationnelle, hors dynamiques multi-agents complexes, et qu'aucune méthode d'analyse, pas même STPA, ne garantit une couverture exhaustive des scénarios [12]. La figure 16 (Fig-16) réunit ces barrières hors modèle dans une architecture complète de défense en profondeur.
 
-![Fig-16 — Défense en profondeur et application déterministe de la règle de deux](../7 - Livre/diagrammes/rendus/Fig-16.svg)
+![Fig-16 — Défense en profondeur et application déterministe de la règle de deux](../Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-16.svg)
 
 *Figure 16 — Défense en profondeur hors modèle combinant moteur déterministe de la règle de deux, épinglage de registre, confinement microVM/WASI et boucle de sûreté STAMP/STPA.*
 
@@ -1336,7 +1336,7 @@ Un bus de télémétrie unique échoue devant ces injonctions contraires. S'il v
 
 La réponse consiste à bâtir une **télémétrie à double couloir** (*dual-lane telemetry*) dont la bifurcation s'opère de manière déterministe dans le harnais d'agent (chapitre 04), et jamais par un filtre probabiliste aval. La figure 17 en résume l'articulation.
 
-![Fig-17 — Double couloir de télémétrie conciliant vie privée et preuve d'audit immuable](../7 - Livre/diagrammes/rendus/Fig-17.svg)
+![Fig-17 — Double couloir de télémétrie conciliant vie privée et preuve d'audit immuable](../Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-17.svg)
 
 *Figure 17 — Architecture à double couloir conciliant minimisation des renseignements personnels dans la télémétrie opérationnelle (OpenTelemetry GenAI) et preuve d'audit immuable canonisée (JCS RFC 8785 [22], empreintes chaînées et stockage WORM).*
 
@@ -1426,7 +1426,7 @@ L'organisation doit donc adopter une métrique unique de rentabilité : le **co�
 
 Ici, \(C_{\text{inf}}\) mesure l'inférence nominale des cas réussis ; \(C_{\text{réessai}}\) isole les jetons perdus en réessais, erreurs de schéma et abandons [1, 3] ; \(C_{\text{éval}}\) impute les suites passᵏ, juges calibrés et modes ombre [3, 20]. En complément, \(C_{\text{sécu}}\) agrège confinement microVM, télémétrie à double couloir, ancrage SCITT [6], stockage WORM et test des plans de sortie B-10 [16], tandis que \(C_{\text{hum}}\) valorise les validations et reprises manuelles [17]. Le dénominateur \(N_{\text{conformes}}\) exclut tout résultat rejeté ou générant les pertes directes et indirectes visées à l'article 18(1)(f) de DORA [12]. La figure 18 relie ces cinq composantes à l'imputation FinOps et aux disjoncteurs automatiques.
 
-![Fig-18 — Formation du coût complet par résultat conforme et seuils de disjonction FinOps](../7 - Livre/diagrammes/rendus/Fig-18.svg)
+![Fig-18 — Formation du coût complet par résultat conforme et seuils de disjonction FinOps](../Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-18.svg)
 
 *Figure 18 — Formation du coût complet par résultat conforme (CPO), imputation FinOps sous schéma FOCUS et déclenchement des trois seuils de disjonction automatique vers le repli déterministe ou humain.*
 
@@ -1534,7 +1534,7 @@ Face à cette superposition normative, notre architecture adopte le référentie
 
 La figure 19 (Fig-19) montre comment un seul socle probatoire déterministe relie les composants agentiques en production à ce dossier unifié et aux obligations des trois juridictions.
 
-![Fig-19 — Socle probatoire unique couvrant Loi 25, BSIF E-23, AMF et EU AI Act](../7 - Livre/diagrammes/rendus/Fig-19.svg)
+![Fig-19 — Socle probatoire unique couvrant Loi 25, BSIF E-23, AMF et EU AI Act](../Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-19.svg)
 
 *Figure 19 — Architecture du socle probatoire déterministe unique reliant les agents en production au dossier d'audit ISO/IEC 42001 et aux régimes du Québec, du Canada et de l'Union européenne.*
 
@@ -1685,7 +1685,7 @@ Le tableau 11.1 synthétise ces quatre parades en distinguant verrou logiciel d�
 
 Pour situer ces quatre parades dans la boucle d'érosion, la figure 20 (Fig-20) les regroupe en **trois disjoncteurs organisationnels** (D1 à D3) : D1 réunit couloir de lecture seule (parade 1) et responsable nommé (parade 2), D2 porte vigilance et ergonomie (parade 3), et D3 incarne les quotas formateurs sans agent (parade 4).
 
-![Fig-20 — Boucle d'érosion des compétences humaines et ses trois disjoncteurs organisationnels](../7 - Livre/diagrammes/rendus/Fig-20.svg)
+![Fig-20 — Boucle d'érosion des compétences humaines et ses trois disjoncteurs organisationnels](../Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-20.svg)
 
 *Figure 20 — Boucle d'érosion silencieuse des compétences humaines (en haut) et interruption de la dérive par les trois disjoncteurs organisationnels possédés (en bas).*
 
@@ -1741,7 +1741,7 @@ Dans le troisième avenir — la **fragmentation en blocs souverains** —, les 
 
 La figure 21 (Fig-21) synthétise ces trajectoires à la manière d'une carte DAPP, en séparant le socle invariant sans regret (2027–2029) des bifurcations conditionnelles activées sur signaux jusqu'en 2035.
 
-![Fig-21 — Trajectoire adaptative 2027–2035 : noyau sans regret, transition post-quantique et signaux](../7 - Livre/diagrammes/rendus/Fig-21.svg)
+![Fig-21 — Trajectoire adaptative 2027–2035 : noyau sans regret, transition post-quantique et signaux](../Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-21.svg)
 
 *Figure 21 — Trajectoire adaptative 2027–2035 : noyau invariant sans regret, transition post-quantique et bifurcations sur signaux (inspirée de l'approche DAPP de Haasnoot, Warren et Kwakkel [18]).*
 
@@ -1785,7 +1785,7 @@ Or, devant ces échéances rapprochées, la visibilité et l'encadrement observa
 
 La figure 22 (Fig-22) inscrit ces six priorités dans une séquence opérationnelle sur 360 jours structurée par deux portes bloquantes.
 
-![Fig-22 — Séquence opérationnelle des 90, 180 et 360 premiers jours](../7 - Livre/diagrammes/rendus/Fig-22.png)
+![Fig-22 — Séquence opérationnelle des 90, 180 et 360 premiers jours](../Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/Fig-22.png)
 
 *Figure 22 — Séquence opérationnelle des 90, 180 et 360 premiers jours : verrouillage du socle déterministe, portes de conformité et mise en production bornée.*
 

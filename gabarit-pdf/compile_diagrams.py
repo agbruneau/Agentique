@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: MIT
 """Compilateur reutilisable des diagrammes PlantUML (.puml -> .svg) et Mermaid (.mmd -> .png).
 
-Destine aux volumes du catalogue `gabarit-pdf/volumes.json` (notamment volumes 1 a 6) ou a tout
+Destine aux tomes du catalogue `gabarit-pdf/volumes.json` (notamment tomes 1 a 6) ou a tout
 repertoire arbitraire (`--input-dir`). Prend en charge :
   - l'execution parallele (`-nbthread` pour PlantUML, `ThreadPoolExecutor` pour Mermaid CLI) ;
   - le cache incremental fonde sur la fraicheur (mtime) et la validite structurelle des rendus ;
@@ -826,17 +826,17 @@ def main(argv: list[str] | None = None) -> int:
     target.add_argument(
         "--volume",
         action="append",
-        help="Identifiant (1..8), slug ou liste separee par des virgules (ex. --volume 1,2,3)",
+        help="Identifiant (1..8), slug (ex. Tome 1 - ...), nom de tome (ex. Tome 5) ou liste séparée par des virgules (ex. --volume 1,2,3)",
     )
     target.add_argument(
         "--all",
         action="store_true",
-        help="Compiler les diagrammes des volumes 1 a 6 du catalogue",
+        help="Compiler les diagrammes des tomes 1 à 6 du catalogue",
     )
     target.add_argument(
         "--all-volumes",
         action="store_true",
-        help="Compiler les diagrammes de tous les volumes (1 a 8) du catalogue",
+        help="Compiler les diagrammes de tous les tomes (1 à 8) du catalogue",
     )
     target.add_argument(
         "--input-dir",

@@ -54,17 +54,32 @@ def test_catalog_covers_all_eight_volumes_and_sources_exist() -> None:
     vols = catalog["volumes"]
     assert [v["id"] for v in vols] == [str(i) for i in range(1, 9)]
 
+    assert (REPO_ROOT / catalog["reference_pdf"]).is_file()
+    assert catalog["reference_pdf"] == "0 - PDF-MD/Tome 8 - Ingénierie exécutable et homologation vérifiable.pdf"
+
     for v in vols:
         src = REPO_ROOT / v["source_md"]
         pdf = REPO_ROOT / v["default_pdf"]
-        assert src.is_file(), f"Markdown manquant pour volume {v['id']}: {src}"
-        assert pdf.is_file(), f"PDF de reference manquant pour volume {v['id']}: {pdf}"
+        slug_dir = REPO_ROOT / v["slug"]
+        diag_dir = REPO_ROOT / v["diagrams_dir"]
+        rendus_dir = REPO_ROOT / v["rendered_diagrams_dir"]
+        assert v["slug"].startswith(f"Tome {v['id']} - ")
+        assert slug_dir.is_dir(), f"Repertoire racine manquant pour tome {v['id']}: {slug_dir}"
+        assert diag_dir.is_dir(), f"Repertoire diagrammes manquant pour tome {v['id']}: {diag_dir}"
+        assert rendus_dir.is_dir(), f"Repertoire rendus manquant pour tome {v['id']}: {rendus_dir}"
+        assert src.is_file(), f"Markdown manquant pour tome {v['id']}: {src}"
+        assert pdf.is_file(), f"PDF de reference manquant pour tome {v['id']}: {pdf}"
+        assert src.stem == v["slug"]
+        assert pdf.stem == v["slug"]
         assert v["title"].strip()
         assert v["author"].strip()
 
-    assert get_volume_config("8")["slug"] == "8 - Manuel"
-    assert get_volume_config("8 - Manuel")["id"] == "8"
-    assert get_volume_config("memoire")["id"] == "5"
+    tome8_slug = "Tome 8 - Ingénierie exécutable et homologation vérifiable"
+    assert get_volume_config("8")["slug"] == tome8_slug
+    assert get_volume_config(tome8_slug)["id"] == "8"
+    assert get_volume_config("Tome 8")["id"] == "8"
+    assert get_volume_config(f"{tome8_slug}.md")["id"] == "8"
+    assert get_volume_config("concordance")["id"] == "5"
     with pytest.raises(KeyError):
         get_volume_config("99 - inexistant")
 
@@ -160,7 +175,7 @@ def test_postprocess_typst_covers_all_collection_conventions() -> None:
         "  , kind: table\n"
         "  )\n\n"
         "#emph[Tableau 1 — Synthese courte.]\n\n"
-        '#box(image("/8 - Manuel/diagrammes/rendus/Fig-01.svg", alt: "Schema"))\n\n'
+        '#box(image("/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-01.svg", alt: "Schema"))\n\n'
         "= Bibliographie générale consolidée\n"
         '- #link("https://example.org/a-b/c")\n'
     )
@@ -171,7 +186,7 @@ def test_postprocess_typst_covers_all_collection_conventions() -> None:
     assert "20\u00a0\\$\u00a0CA" in out
     assert "100\u00a0%" in out and "3\u00a0309\u00a0o" in out
     assert "5\u00a0-\u00a0Memoire" in out and "8\u00a0-\u00a0Manuel" in out
-    assert '#box(image("/8 - Manuel/diagrammes/rendus/Fig-01.svg"' in out
+    assert '#box(image("/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-01.svg"' in out
     assert " → " in out
     assert "d’\u200bauthentification" in out
     assert "`Opa\u200bStatic\u200bCheck\u200bError`" in out
@@ -273,7 +288,7 @@ def test_compile_real_volume_8_matches_reference(tmp_path: Path) -> None:
         assert "Tome 8 — Ingénierie exécutable et homologation vérifiable" in cover_txt
         assert "CC BY 4.0" in cover_txt
         title_txt = " ".join(doc[1].get_text().replace("\u00a0", " ").split())
-        assert "8 - Manuel/" in title_txt and "trousse/" in title_txt
+        assert "Tome 8 - Ingénierie exécutable et homologation vérifiable/" in title_txt and "trousse/" in title_txt
         assert "Table des matières" in doc[2].get_text()
     finally:
         doc.close()
@@ -389,8 +404,8 @@ def test_compile_diagrams_canonical_names_cache_force_and_error_report(tmp_path:
 
     cfg, src_dir, rendus_dir = resolve_volume_diagram_dirs("1")
     assert cfg["id"] == "1"
-    assert src_dir == REPO_ROOT / "1 - Compendium 2026" / "Diagrammes"
-    assert rendus_dir == REPO_ROOT / "1 - Compendium 2026" / "Diagrammes" / "rendus"
+    assert src_dir == REPO_ROOT / "Tome 1 - Confiance protocolaire et encadrement financier" / "Diagrammes"
+    assert rendus_dir == REPO_ROOT / "Tome 1 - Confiance protocolaire et encadrement financier" / "Diagrammes" / "rendus"
 
     src = tmp_path / "Diagrammes"
     out = src / "rendus"

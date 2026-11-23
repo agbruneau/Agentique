@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 // Gabarit Typst editorial partage — Collection Architecture & Gouvernance Agentique
-// Fonde sur la charte de reference de 0 - PDF-MD/8 - Manuel.pdf (6.14in x 9.21in, fr-CA).
+// Fonde sur la charte de reference de 0 - PDF-MD/Tome 8 - Ingénierie exécutable et homologation vérifiable.pdf (6.14in x 9.21in, fr-CA).
 // Exploitable par tous les volumes du depot (1 a 8+) via #import ou via gabarit-pdf/compile_pdf.py.
 
 #let horizontalRule = align(center, v(0.5em) + line(length: 36%, stroke: 0.6pt + rgb("#CBD5E1")) + v(0.5em))
@@ -127,7 +127,7 @@
     spacing: 0.96em,
   )
 
-  // 1. Page de couverture editoriale (identique a 8 - Manuel.pdf)
+  // 1. Page de couverture editoriale (identique a Tome 8 - Ingénierie exécutable et homologation vérifiable.pdf)
   if show-cover {
     let cover-meta = if has-content(edition-line) {
       edition-line

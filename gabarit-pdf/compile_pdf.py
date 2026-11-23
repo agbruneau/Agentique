@@ -3,9 +3,10 @@
 """Compilateur PDF unifie de la collection Agentique fonde sur gabarit-collection.typ.
 
 Permet de compiler :
-  - n'importe quel volume catalogue (1 a 8) dans `gabarit-pdf/volumes.json` ;
+  - n'importe quel tome catalogue (Tome 1 a Tome 8) dans `gabarit-pdf/volumes.json` ;
   - n'importe quel document Markdown arbitraire (avec metadonnees YAML ou options CLI) ;
-  - les pipelines existants `7 - Livre/outils/assemble_livre.py` et `8 - Manuel/outils/assemble_livre.py`.
+  - les pipelines existants `Tome 7 - Gouverner l'industrialisation cognitive/outils/assemble_livre.py`
+    et `Tome 8 - Ingénierie exécutable et homologation vérifiable/outils/assemble_livre.py`.
 """
 
 from __future__ import annotations
@@ -39,14 +40,23 @@ def load_catalog(catalog_path: Path = CATALOG_PATH) -> dict[str, Any]:
 
 
 def get_volume_config(volume_ref: str, catalog_path: Path = CATALOG_PATH) -> dict[str, Any]:
-    """Resout un volume par identifiant (`1`..`8`), slug (`8 - Manuel`) ou sous-chaine unique."""
+    """Resout un tome par identifiant (`1`..`8`), slug (`Tome 8 - ...`), nom (`Tome 8`) ou sous-chaine unique."""
     catalog = load_catalog(catalog_path)
     defaults = dict(catalog.get("defaults", {}))
     ref_norm = volume_ref.strip().lower()
     matches: list[dict[str, Any]] = []
     for vol in catalog.get("volumes", []):
-        pdf_stem = Path(vol.get("default_pdf", "")).stem.lower()
-        if vol["id"].lower() == ref_norm or vol["slug"].lower() == ref_norm or pdf_stem == ref_norm:
+        pdf_path = Path(vol.get("default_pdf", ""))
+        md_path = Path(vol.get("source_md", ""))
+        pdf_stem = pdf_path.stem.lower()
+        exact_keys = {
+            vol["id"].lower(),
+            vol["slug"].lower(),
+            pdf_stem,
+            pdf_path.name.lower(),
+            md_path.name.lower(),
+        }
+        if ref_norm in exact_keys:
             merged = dict(defaults)
             merged.update(vol)
             return merged
@@ -270,20 +280,23 @@ def compile_volume(
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
-        description="Compilateur PDF unifie de la collection Agentique (gabarit 8 - Manuel)."
+        description="Compilateur PDF unifié de la collection Agentique (gabarit de référence Tome 8)."
     )
     src_group = parser.add_mutually_exclusive_group(required=True)
-    src_group.add_argument("--list", action="store_true", help="Lister les volumes du catalogue")
-    src_group.add_argument("--volume", help="Identifiant (1..8) ou slug d'un volume du catalogue")
-    src_group.add_argument("--all", action="store_true", help="Compiler les 8 volumes du catalogue")
-    src_group.add_argument("--input", type=Path, help="Fichier Markdown arbitraire a compiler")
+    src_group.add_argument("--list", action="store_true", help="Lister les 8 tomes du catalogue")
+    src_group.add_argument(
+        "--volume",
+        help="Identifiant (1..8), slug de répertoire (ex. Tome 8 - ...) ou sous-chaîne unique (ex. Tome 8)",
+    )
+    src_group.add_argument("--all", action="store_true", help="Compiler les 8 tomes du catalogue")
+    src_group.add_argument("--input", type=Path, help="Fichier Markdown arbitraire à compiler")
 
     parser.add_argument("--output", type=Path, help="Chemin du PDF de sortie (avec --volume ou --input)")
-    parser.add_argument("--output-dir", type=Path, help="Repertoire de sortie (avec --all ou --volume)")
+    parser.add_argument("--output-dir", type=Path, help="Répertoire de sortie (avec --all ou --volume)")
     parser.add_argument(
         "--in-place",
         action="store_true",
-        help="Autoriser l'ecrasement des PDF cibles dans 0 - PDF-MD/",
+        help="Autoriser l'écrasement des PDF cibles (Tome 1 à Tome 8) dans 0 - PDF-MD/",
     )
     parser.add_argument(
         "--inject-diagrams",
@@ -310,7 +323,7 @@ def main(argv: list[str] | None = None) -> int:
         catalog = load_catalog()
         for v in catalog["volumes"]:
             lic = v.get("license_badge") or "aucune"
-            print(f"[{v['id']}] {v['slug']} — {v['title']} ({lic}) -> {v['default_pdf']}")
+            print(f"[{v['id']}] {v['title']} ({lic}) | {v['source_md']} -> {v['default_pdf']}")
         return 0
 
     if args.all:

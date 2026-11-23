@@ -55,7 +55,7 @@ Pour préserver la lisibilité éditoriale sans sacrifier la vérifiabilité log
 
 La trousse exécutable `8 - Manuel/trousse/`, sous licence MIT, rassemble le code exécutable sous Windows et Linux. Sa barrière `G0` s'exécute exclusivement sur Python 3.12+ (validée sous Python 3.14.10) et OPA / Rego (`v1.22.4`, Apache-2.0), en excluant Rust, Go, Firecracker (`/dev/kvm`), PostgreSQL, OpenFGA, Nginx, Envoy ou Cedar. Les paquets Python directs et transitifs sont épinglés par SHA-256 dans `requirements.lock` (`pip --require-hashes`), le binaire OPA dans `tools-lock.json`, et un contrôle contre `spdx-allowlist.json` bannit toute licence incompatible avec MIT — conformément à l'exclusion (`specs/architecture-trousse-g0.md`) de tout composant `LGPL-3.0-or-later` tel que *slh-dsa*, au profit de `slh_dsa_fips205.py` (MIT), résultat consigné dans `aq/rapports-g0.json`. La figure 0 schématise cette architecture bicéphale et son flux de preuve.
 
-![Architecture bicéphale du Volume 8](../8 - Manuel/diagrammes/rendus/Fig-00.svg)
+![Architecture bicéphale du Volume 8](../Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-00.svg)
 
 *Figure 0 — Architecture bicéphale du Volume 8 reliant le manuel concis à extraits ≤ 40 lignes, les quatre modules de 8 - Manuel/trousse/, la table de passage des cinq discordances et le pipeline G0–G5.*
 
@@ -201,7 +201,7 @@ Par ailleurs, la présence obligatoire de `statut_analyse` offre au modèle une 
 
 Envelopper l'extraction documentaire exige bien plus qu'un validateur syntaxique placé en sortie. Comme le synthétise la `Figure 1`, une fois l'entrée admise, le flux orchestré par `DeterministicHarness` dans `harness_proto/pipeline.py` consigne une trace d'audit fixe à huit jalons (`step_trace` ; en cas de rejet précoce `VALIDATION_FAILED`, la trace s'arrête à un ou deux jalons terminés par `*_fail`), dont un seul jalon — le quatrième (`4_model`) — délègue à l'adaptateur probabiliste externe. Sur le plan de l'exécution réelle, une boucle `while` bornée (`max_repair_retries = 2`) répète le contrôle `5_schema` (et `6_grounding` lorsque le schéma est valide) en aval d'une reprise éventuelle, portant le plafond pire cas à trois appels modèle avant l'enregistrement des quatre derniers jalons de trace (`5_schema` à `8_seal`) et le calcul d'une empreinte d'intégrité `output_sha256` non signée via JCS SHA-256.
 
-![Pipeline du harnais 80/20](../8 - Manuel/diagrammes/rendus/Fig-01.svg)
+![Pipeline du harnais 80/20](../Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-01.svg)
 *Figure 1 — Pipeline déterministe du harnais 80/20 à huit jalons et porte AMBIGU_ESCALADE sous schémas JSON Schema 2020-12 stricts.*
 
 Comme le montre la `Figure 1`, la frontière déterministe possédée et vérifiée en `G0` encercle intégralement l'adaptateur probabiliste (représenté en pointillé ambre) depuis la réception du dictionnaire d'entrée jusqu'au calcul final de l'empreinte d'intégrité JCS SHA-256. L'entrée externe non fiable est d'abord re-sérialisée en UTF-8 avec `allow_nan=False` pour borner sa taille à `64 Kio` (`65 536` octets) et rejeter tout flottant `NaN`/`Infinity`, puis validée contre le schéma d'entrée fermé `_INPUT_SCHEMA` avant même que le modèle ne soit invoqué.
@@ -464,7 +464,7 @@ Par ailleurs, la parution le 29 octobre 2026 de la version candidate `A2A v1.1.0
 
 La `Figure 2` unifie l'ensemble de la médiation protocolaire verticale (`mcp_pinning.py`) et horizontale (`a2a_card.py`) avec ses suites de vecteurs tiers.
 
-![Médiation protocolaire MCP et A2A](../8 - Manuel/diagrammes/rendus/Fig-02.svg)
+![Médiation protocolaire MCP et A2A](../Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-02.svg)
 *Figure 2 — Médiation protocolaire épinglée MCP 2026-07-28 avec JCS SHA-256, rejet HeaderMismatch et validation AgentCard A2A v1.0.1 par JWS et a2a-tck.*
 
 La `Figure 2` met en parallèle les deux couloirs d'entrée sortant du harnais appelant déterministe. Sur le couloir gauche, tout serveur MCP externe est traité comme source non fiable exposée à `40,58 %` de dérive silencieuse : les réponses `tools/list` passent au tamis de l'épinglage JCS SHA-256, les requêtes sortantes subissent la concordance d'en-têtes et l'épuration `_meta` sous peine de rejet `HeaderMismatch` (`HTTP 400` / `-32020`), puis l'adaptateur `McpTransportAdapter` bloque tout repli sur `HTTP+SSE`. Sur le couloir droit, toute `AgentCard` d'un pair A2A externe traverse la validation de schéma et d'extensions, la vérification cryptographique JWS `ES256` sur canonisation JCS avec épinglage `jku`/`kid`, puis l'articulation avec la garde anti-SSRF et l'automate d'états prescrits par la spécification `v1.0.1`, tandis que les suites tierces RFC 8785 et `a2a-tck 1.0.0.alpha3` ancrent indépendamment l'exactitude des deux validateurs.
@@ -703,7 +703,7 @@ Deuxièmement, retirer les clés publiques de l'en-tête au profit d'un identifi
 
 Troisièmement, seuls les profils à encombrement constant \(O(1)\) franchissent la barre des `5` sauts sous le plafond de `8 192` octets dans les deux algorithmes. Sous ML-DSA-65 (`3 309` octets de signature), `TRANSACTION_TOKEN_JWT` reste rigoureusement invariant à `4 778` octets et `TRANSACTION_TOKEN_CBOR` gagne encore `21` octets à `4 757` octets. Sous ML-DSA-87 (`4 627` octets de signature), `TRANSACTION_TOKEN_JWT` demeure figé à `6 536` octets et `TRANSACTION_TOKEN_CBOR` reste constant à `6 514` octets (`max - min == 0` de `1` à `5` sauts vérifié par `test_pqc_http431_vs_transaction_token_o1`). Cette invariance permet au service interne `TTS` de maintenir la marge de sécurité sous `8 192` octets même lors de chaînes d'appels profonds, tout en préparant l'échéancier `2030–2035` (`NIST IR 8547` : dépréciation après `2030`, interdiction après `2035`). La Figure 3 rassemble l'ensemble du mécanisme de délégation, d'approbation, de révocation et de dimensionnement post-quantique décrit aux sections 2.1 et 2.2.
 
-![Délégation bornée et choc ML-DSA](../8 - Manuel/diagrammes/rendus/Fig-03.svg)
+![Délégation bornée et choc ML-DSA](../Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-03.svg)
 *Figure 3 — Délégation cryptographique OAuth 2.0 OBO et DPoP à deux sauts, approbation CIBA / JCS et banc d'en-têtes HTTP 431 O(sauts) vs Transaction Tokens -11 O(1) sous ML-DSA-65/87.*
 
 La Figure 3 met en évidence la séparation stricte entre les composants déterministes vérifiés en `G0` (encadrés ardoise à trait plein) et les deux agents probabilistes substituables aux sauts `1` et `2` (encadrés ambre à trait pointillé). La porte OBO + DPoP (`obo_dpop.py`), le module hors bande CIBA / I-JSON / JCS (`ciba_approval.py`) et l'automate SSF / CAEP (`revocation_fsm.py`) convergent tous vers la passerelle cible vérificatrice avant tout accès outil. En parallèle, le banc `pqc_http431.py` isole les formats de chaîne empilée qui dépassent `8 192` octets dès les premiers sauts et oriente le trafic interne du domaine de confiance vers la transposition CBOR-COSE du *Transaction Token* \(O(1)\) (RFC 9964 [14]) validée sous ML-DSA-65 (`3 309` octets) et ML-DSA-87 (`4 627` octets).
@@ -826,7 +826,7 @@ Sur le plan numérique, `_to_decimal` rejette par `TypeError` tout flottant `flo
 
 *Tableau 2.3 — Complémentarité opérationnelle et probatoire des deux couloirs dans `authz-pqc-audit/`.*
 
-![Double couloir probatoire OTel et SCITT](../8 - Manuel/diagrammes/rendus/Fig-04.png)
+![Double couloir probatoire OTel et SCITT](../Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-04.png)
 
 *Figure 4 — Double couloir probatoire unifiant télémétrie OTel GenAI caviardée, jointure trace-mandat, chaîne JCS / SCITT rescellée SLH-DSA et calculateur CPO / FOCUS v1.4.*
 
@@ -1008,7 +1008,7 @@ Enfin, le verrou temporel (`EXIG-SEC-15`) borne toute exécution selon trois pla
 
 La figure suivante synthétise l'articulation complète de cette frontière de politiques hors modèle, depuis les entrées probabilistes et les étiquettes CaMeL jusqu'aux vérifications de confinement déclaratif.
 
-![Politiques OPA hors modèle et CaMeL](../8 - Manuel/diagrammes/rendus/Fig-05.svg)
+![Politiques OPA hors modèle et CaMeL](../Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-05.svg)
 
 *Figure 5 — Porte de politique hors modèle OPA / Rego fermée par défaut appliquant la Règle de deux, le suivi de contamination CaMeL et le contrôle déclaratif de confinement EXIG-SEC-12..15.*
 
@@ -1157,7 +1157,7 @@ La table ci-dessous récapitule la correspondance exacte entre chaque numéro de
 
 La figure suivante synthétise l'ensemble de cet automate transactionnel durable, en situant précisément le passage du point pivot, le chemin du canal de compensation isolé et le déclenchement de chacun des dix scénarios de fautes.
 
-![Sémantique d'effet Saga et 10 scénarios de fautes](../8 - Manuel/diagrammes/rendus/Fig-06.svg)
+![Sémantique d'effet Saga et 10 scénarios de fautes](../Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-06.svg)
 
 *Figure 6 — Orchestrateur Saga durable à clé idem-v1, Transactional Outbox, point pivot et canal de compensation isolé EXIG-ORC-28 face aux dix scénarios de fautes EXIG-ORC-20.*
 
@@ -1226,7 +1226,7 @@ Cette discipline hermétique supprime également deux causes silencieuses de dé
 
 La Figure 7 synthétise l'articulation complète du banc EvalOps hermétique de `evalops-prr/`, en montrant comment les doublures `MockMcpServer` alimentent conjointement la mesure de constance `pass^k`, le filtre d'indépendance de la borne de Wilson et le vérificateur de relations métamorphiques sans oracle.
 
-![Banc EvalOps hermétique et borne de Wilson](../8 - Manuel/diagrammes/rendus/Fig-07.svg)
+![Banc EvalOps hermétique et borne de Wilson](../Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-07.svg)
 
 *Figure 7 — Pipeline du banc EvalOps hermétique à doublures mock MCP, calcul pass^k, borne de Wilson ≥ 3/p et relations métamorphiques sans oracle sur scénarios FR/EN.*
 
@@ -1464,7 +1464,7 @@ Le Chapitre 04 détient en propre la gouvernance et la validation d'architecture
 
 L'enchaînement séquentiel de ces contrôles forme un arbre de décision déterministe représenté à la Figure 8. Chaque porte bloque immédiatement le passage en pré-production en amont de toute revue sur système réel (`SoR`). À la date de gel du 2 décembre 2026 (`2026-12-02`), le rapport consolidé `aq/rapports-g0.json` atteste le passage intégral de `8 - Manuel/trousse/` à `exit 0`. La suite totalise `83` tests `pytest` réussis sans aucun échec ni omission (dont `10` dans `tests/test_evalops_prr.py` et `7` dans `tests/test_third_party_vectors.py`), `50/50` fichiers de vecteurs tiers validés (`20` rfc8785, `12` `nist_acvp`, `5` `a2a_tck`, `13` `owasp_src055`), `21` schémas stricts sans violation, `45` tests OPA à `100,0 %` de couverture, `requirements.lock` verrouillé par empreinte SHA-256 et `50` fichiers vérifiés compatibles `MIT`.
 
-![Validation mécanique PRR, SBB et blueprints](../8 - Manuel/diagrammes/rendus/Fig-08.png)
+![Validation mécanique PRR, SBB et blueprints](../Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-08.png)
 
 *Figure 8 — Arbre décisionnel de validation mécanique des 24 [BLOQUANT] PRR, de 2027-B001, des 5 SBB et des contrats des trois blueprints C01–C40 avant mise en production.*
 
