@@ -2,7 +2,7 @@
 
 [Retour à l'index principal du dépôt](../README.md)
 
-Gabarit éditorial Typst unique et compilateur unifié pour les 8 tomes du dépôt (`Corpus/` et répertoires `Tome 1` à `Tome 8`), fondés sur la charte de référence de [Tome 8 - Ingénierie exécutable et homologation vérifiable.pdf](../Corpus/Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable.pdf).
+Gabarit éditorial Typst unique et compilateur unifié pour les 8 tomes du dépôt (`Corpus/`, regroupant les fichiers consolidés et les répertoires `Corpus/Tome 1` à `Corpus/Tome 8`), fondés sur la charte de référence de [Tome 8 - Ingénierie exécutable et homologation vérifiable.pdf](../Corpus/Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable.pdf).
 
 ## Contenu du dossier
 
@@ -11,8 +11,8 @@ Gabarit éditorial Typst unique et compilateur unifié pour les 8 tomes du dép�
 | [gabarit-collection.typ](gabarit-collection.typ) | Module Typst autonome exportant `collection-pdf(...)`, `divider` et `horizontalRule`. |
 | [postprocess_typst.py](postprocess_typst.py) | Post-traitement typographique `fr-CA` (rééquilibrage des tableaux y compris larges 8–11 colonnes, virgules décimales en math, légendes centrées, césure des URL et du code inline, espaces insécables, sections bibliographiques non justifiées). |
 | [preprocess_md.py](preprocess_md.py) | Pré-traitement Markdown (YAML liminaire, retrait des couvertures aplaties et TDM statiques des tomes 1–6, normalisation des chemins d'images, injection des diagrammes rendus avec remplacement automatique des blocs `> **[Figure]**`). |
-| [volumes.json](volumes.json) | Catalogue déclaratif des 8 tomes (`Tome 1` à `Tome 8` : répertoires racines, sources `.md` et cibles `.pdf` dans `Corpus/`, métadonnées de couverture, mentions de référence, conventions de titres, dossiers de diagrammes et options de pré-traitement). |
-| [compile_diagrams.py](compile_diagrams.py) | Compilateur parallèle avec cache incrémental des diagrammes `.puml` (`plantuml` → `.svg`) et `.mmd` (`mmdc` → `.png` haute résolution) vers `<Tome>/Diagrammes/rendus/` (noms canoniques courts, rapport console/JSON). |
+| [volumes.json](volumes.json) | Catalogue déclaratif des 8 tomes (`Tome 1` à `Tome 8` : répertoires sous `Corpus/`, sources `.md` et cibles `.pdf` dans `Corpus/`, métadonnées de couverture, mentions de référence, conventions de titres, dossiers de diagrammes et options de pré-traitement). |
+| [compile_diagrams.py](compile_diagrams.py) | Compilateur parallèle avec cache incrémental des diagrammes `.puml` (`plantuml` → `.svg`) et `.mmd` (`mmdc` → `.png` haute résolution) vers `Corpus/<Tome>/Diagrammes/rendus/` (noms canoniques courts, rapport console/JSON). |
 | [compile_pdf.py](compile_pdf.py) | Interface CLI et API Python pour compiler un tome catalogué, toute la collection ou un fichier Markdown arbitraire. |
 | [test_gabarit_pdf.py](test_gabarit_pdf.py) | Suite de tests automatisés (`pytest`) couvrant le catalogue, les transformations, `compile_diagrams.py` et la compilation Typst réelle. |
 
@@ -71,7 +71,7 @@ Contenu de l'ouvrage.
 
 ## Raccordement avec `Tome 7` et `Tome 8`
 
-Les assembleurs [Tome 7 - Gouverner l'industrialisation cognitive/outils/assemble_livre.py](../Tome%207%20-%20Gouverner%20l'industrialisation%20cognitive/outils/assemble_livre.py) et [Tome 8 - Ingénierie exécutable et homologation vérifiable/outils/assemble_livre.py](../Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable/outils/assemble_livre.py) utilisent désormais [gabarit-collection.typ](gabarit-collection.typ) (via `render_typst_document`), et [Tome 8 - Ingénierie exécutable et homologation vérifiable/outils/assemble_livre.py](../Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable/outils/assemble_livre.py) délègue également son post-traitement Typst à [postprocess_typst.py](postprocess_typst.py).
+Les assembleurs [Corpus/Tome 7 - Gouverner l'industrialisation cognitive/outils/assemble_livre.py](../Corpus/Tome%207%20-%20Gouverner%20l'industrialisation%20cognitive/outils/assemble_livre.py) et [Corpus/Tome 8 - Ingénierie exécutable et homologation vérifiable/outils/assemble_livre.py](../Corpus/Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable/outils/assemble_livre.py) utilisent désormais [gabarit-collection.typ](gabarit-collection.typ) (via `render_typst_document`), et [Corpus/Tome 8 - Ingénierie exécutable et homologation vérifiable/outils/assemble_livre.py](../Corpus/Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable/outils/assemble_livre.py) délègue également son post-traitement Typst à [postprocess_typst.py](postprocess_typst.py).
 
 ## Tests
 

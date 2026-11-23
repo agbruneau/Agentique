@@ -5,8 +5,8 @@
 Permet de compiler :
   - n'importe quel tome catalogue (Tome 1 a Tome 8) dans `gabarit-pdf/volumes.json` ;
   - n'importe quel document Markdown arbitraire (avec metadonnees YAML ou options CLI) ;
-  - les pipelines existants `Tome 7 - Gouverner l'industrialisation cognitive/outils/assemble_livre.py`
-    et `Tome 8 - Ingénierie exécutable et homologation vérifiable/outils/assemble_livre.py`.
+  - les pipelines existants `Corpus/Tome 7 - Gouverner l'industrialisation cognitive/outils/assemble_livre.py`
+    et `Corpus/Tome 8 - Ingénierie exécutable et homologation vérifiable/outils/assemble_livre.py`.
 """
 
 from __future__ import annotations
@@ -303,7 +303,7 @@ def main(argv: list[str] | None = None) -> int:
         dest="inject_diagrams",
         action="store_true",
         default=None,
-        help="Forcer l'injection automatique des diagrammes rendus (.svg/.png) depuis Diagrammes/rendus/",
+        help="Forcer l'injection automatique des diagrammes rendus (.svg/.png) depuis Corpus/<Tome>/Diagrammes/rendus/",
     )
     parser.add_argument(
         "--no-inject-diagrams",

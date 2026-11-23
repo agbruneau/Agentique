@@ -194,7 +194,7 @@ def inject_rendered_diagrams(
 ) -> tuple[str, int]:
     """Injecte les diagrammes rendus (.svg/.png) au-dessus des legendes correspondantes s'ils existent.
 
-    Utile pour les tomes 1-6 une fois leurs sources PlantUML/Mermaid compilees dans `Diagrammes/rendus/`.
+    Utile pour les tomes 1-6 une fois leurs sources PlantUML/Mermaid compilees dans `Corpus/<Tome>/Diagrammes/rendus/`.
     Remplace un eventuel encadre de texte aplati `> **[Figure]**` precedant immediatement la legende,
     et ne duplique jamais une image deja presente avant la legende.
     """
