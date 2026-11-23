@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ApprovalTokenC6",
+  "x-license": "MIT",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["header", "claims"],
+  "properties": {
+    "header": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["typ", "alg", "kid"],
+      "properties": {
+        "typ": { "type": "string", "const": "approbation+jwt" },
+        "alg": {
+          "type": "string", "enum": ["ES256", "EdDSA", "ML-DSA-65", "ML-DSA-87"]
+        },
+        "kid": { "type": "string", "minLength": 1 }
+      }
+    },
+    "claims": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "iss", "aud", "sub", "approbateur_role", "iat", "exp", "jti",
+        "task_id", "agent_id", "action_sha256", "authorization_details"
+      ],
+      "properties": {
+        "iss": { "type": "string", "pattern": "^https://" },
+        "aud": { "type": "string", "minLength": 1 },
+        "sub": { "type": "string", "minLength": 1 },
+        "approbateur_role": {
+          "type": "string", "enum": ["tiers", "superviseur", "comite"]
+        },
+        "iat": { "type": "integer", "minimum": 0 },
+        "exp": { "type": "integer", "minimum": 1 },
+        "jti": { "type": "string", "minLength": 8 },
+        "task_id": { "type": "string", "minLength": 1 },
+        "agent_id": { "type": "string", "minLength": 1 },
+        "action_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "authorization_details": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "type", "locations", "actions", "identifier", "grandeur_seuil"
+            ],
+            "properties": {
+              "type": { "type": "string" },
+              "locations": {
+                "type": "array", "minItems": 1, "items": { "type": "string" }
+              },
+              "actions": {
+                "type": "array", "minItems": 1, "items": { "type": "string" }
+              },
+              "identifier": { "type": "string" },
+              "grandeur_seuil": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["valeur", "unite", "portee"],
+                "properties": {
+                  "valeur": { "type": "integer", "minimum": 0 },
+                  "unite": { "type": "string" },
+                  "portee": { "type": "string" }
+                }
+              }
+            },
+            "patternProperties": {
+              "^(?!grandeur_seuil$)[a-z0-9]+_[a-z0-9_]+$": {
+                "type": ["string", "integer", "boolean", "array"]
+              },
+              "^(?!actions$|identifier$|locations$|type$)[a-z0-9]+$": {
+                "type": ["string", "integer", "boolean", "array"]
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

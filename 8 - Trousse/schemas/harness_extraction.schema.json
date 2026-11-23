@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HarnessExtraction",
+  "x-license": "MIT",
+  "type": "object", "additionalProperties": false,
+  "required": [
+    "statut_analyse", "categorie_sinistre",
+    "montant_reclame_cents", "reference_dossier", "motif_escalade"
+  ],
+  "properties": {
+    "statut_analyse": {
+      "type": "string",
+      "enum": ["EXTRAIT", "AMBIGU_ESCALADE", "DONNEES_INSUFFISANTES"]
+    },
+    "categorie_sinistre": { "type": "string", "minLength": 1 },
+    "montant_reclame_cents": {
+      "type": ["integer", "null"], "minimum": 0
+    },
+    "reference_dossier": {
+      "type": "string", "pattern": "^DOS-[0-9]{4,8}$"
+    },
+    "motif_escalade": { "type": ["string", "null"] }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SagaState",
+  "x-license": "MIT",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "saga_id", "task_id", "status", "pivot_step_id", "pivot_reached",
+    "current_step_index", "steps", "outbox",
+    "compensation_channel_id", "escalation_queue", "updated_at"
+  ],
+  "properties": {
+    "saga_id": { "type": "string", "minLength": 1 },
+    "task_id": { "type": "string", "minLength": 1 },
+    "status": {
+      "type": "string",
+      "enum": [
+        "PENDING", "RUNNING", "PIVOT_REACHED", "COMPENSATING",
+        "COMPLETED", "COMPENSATED", "HUMAN_ESCALATION"
+      ]
+    },
+    "pivot_step_id": { "type": ["string", "null"] },
+    "pivot_reached": { "type": "boolean" },
+    "current_step_index": { "type": "integer", "minimum": 0 },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "step_id", "idempotency_key", "status",
+          "compensation_attempts", "is_pivot"
+        ],
+        "properties": {
+          "step_id": { "type": "string", "minLength": 1 },
+          "idempotency_key": {
+            "type": "string", "pattern": "^[0-9a-f]{64}$"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "PENDING", "EXECUTED", "COMPENSATED", "FAILED", "ESCALATED"
+            ]
+          },
+          "compensation_attempts": { "type": "integer", "minimum": 0 },
+          "is_pivot": { "type": "boolean" }
+        }
+      }
+    },
+    "outbox": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["event_id", "step_id", "idempotency_key", "dispatched"],
+        "properties": {
+          "event_id": { "type": "string", "minLength": 1 },
+          "step_id": { "type": "string", "minLength": 1 },
+          "idempotency_key": {
+            "type": "string", "pattern": "^[0-9a-f]{64}$"
+          },
+          "dispatched": { "type": "boolean" }
+        }
+      }
+    },
+    "compensation_channel_id": {
+      "type": "string", "pattern": "^spiffe://.+"
+    },
+    "escalation_queue": { "type": ["string", "null"] },
+    "updated_at": { "type": "string", "minLength": 10 }
+  }
+}

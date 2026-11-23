@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Prr24Evidence",
+  "x-license": "MIT",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["system_id", "environment", "evaluated_at", "gates"],
+  "properties": {
+    "system_id": { "type": "string", "minLength": 1 },
+    "environment": { "type": "string", "enum": ["preprod", "prod"] },
+    "evaluated_at": { "type": "string", "minLength": 10 },
+    "gates": {
+      "type": "array",
+      "minItems": 24,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["prr_id", "status", "artifact_sha256", "artifact_ref"],
+        "properties": {
+          "prr_id": {
+            "type": "string",
+            "pattern": "^(S|R|O|G|F)-(0[1-9]|1[0-5])$"
+          },
+          "status": { "type": "string", "enum": ["PASS", "FAIL"] },
+          "artifact_sha256": {
+            "type": "string", "pattern": "^[0-9a-f]{64}$"
+          },
+          "artifact_ref": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

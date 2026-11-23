@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "McpToolCatalogEntry",
+  "x-license": "MIT",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "ref", "tool_name", "contract_version", "definition_digest",
+    "server", "lifecycle_state", "tier", "approval_thresholds",
+    "compensation", "idempotency", "oauth_scope",
+    "header_projection", "data_classification_max",
+    "personal_information", "owner", "on_call_team",
+    "known_consumers", "reviewed_by", "approved_on", "next_review"
+  ],
+  "$defs": {
+    "ThresholdWindowTask": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "measure", "computed_by", "unit", "scope",
+        "window", "max_without_approval", "inclusive"
+      ],
+      "properties": {
+        "measure": { "type": "string" },
+        "computed_by": { "type": "string", "const": "gateway" },
+        "unit": { "type": "string" },
+        "scope": { "type": "string" },
+        "window": { "type": "string", "minLength": 1 },
+        "max_without_approval": { "type": "integer", "minimum": 0 },
+        "inclusive": { "type": "boolean" }
+      }
+    },
+    "ThresholdWindowSeconds": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "measure", "computed_by", "unit", "scope",
+        "window_s", "max_without_approval", "inclusive"
+      ],
+      "properties": {
+        "measure": { "type": "string" },
+        "computed_by": { "type": "string", "const": "gateway" },
+        "unit": { "type": "string" },
+        "scope": { "type": "string" },
+        "window_s": { "type": "integer", "minimum": 1 },
+        "max_without_approval": { "type": "integer", "minimum": 0 },
+        "inclusive": { "type": "boolean" }
+      }
+    }
+  },
+  "properties": {
+    "ref": { "type": "string", "minLength": 3 },
+    "tool_name": { "type": "string", "minLength": 1 },
+    "contract_version": { "type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+$" },
+    "definition_digest": {
+      "type": "string", "pattern": "^sha256:[0-9a-f]{64}$"
+    },
+    "server": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "endpoint", "mcp_revision", "extensions_allowed"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "endpoint": { "type": "string", "pattern": "^https://" },
+        "mcp_revision": { "type": "string", "const": "2026-07-28" },
+        "extensions_allowed": {
+          "type": "array", "items": { "type": "string" }
+        }
+      }
+    },
+    "lifecycle_state": {
+      "type": "string",
+      "enum": ["draft", "staging", "production", "deprecated", "retired"]
+    },
+    "tier": { "type": "string", "enum": ["P0", "P1", "P2", "P3"] },
+    "approval_thresholds": {
+      "type": "array",
+      "items": {
+        "oneOf": [
+          { "$ref": "#/$defs/ThresholdWindowTask" },
+          { "$ref": "#/$defs/ThresholdWindowSeconds" }
+        ]
+      }
+    },
+    "compensation": {
+      "oneOf": [
+        { "type": "null" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["ref", "tier"],
+          "properties": {
+            "ref": { "type": "string", "minLength": 3 },
+            "tier": { "type": "string", "enum": ["P0", "P1", "P2", "P3"] }
+          }
+        }
+      ]
+    },
+    "idempotency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "argument", "mode", "checked_by_server", "on_conflict",
+        "on_in_progress", "on_duplicate", "key_retention_s"
+      ],
+      "properties": {
+        "argument": { "type": "string" },
+        "mode": { "type": "string", "enum": ["native", "adapter", "none"] },
+        "checked_by_server": { "type": "boolean" },
+        "on_conflict": { "type": "string", "const": "reject" },
+        "on_in_progress": { "type": "string", "const": "refuse" },
+        "on_duplicate": { "type": "string", "const": "replay_result" },
+        "key_retention_s": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "oauth_scope": { "type": "string", "pattern": "^[a-z0-9-]+:[a-z]+$" },
+    "header_projection": {
+      "type": "object",
+      "additionalProperties": false,
+      "patternProperties": {
+        "^[a-zA-Z0-9_.-]+$": { "type": "string" }
+      }
+    },
+    "data_classification_max": { "type": "string" },
+    "personal_information": { "type": "boolean" },
+    "owner": { "type": "string" },
+    "on_call_team": { "type": "string" },
+    "known_consumers": { "type": "array", "items": { "type": "string" } },
+    "reviewed_by": {
+      "type": "array", "minItems": 1, "items": { "type": "string" }
+    },
+    "approved_on": {
+      "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "next_review": {
+      "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    }
+  }
+}

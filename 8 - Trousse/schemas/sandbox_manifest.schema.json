@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SandboxManifest",
+  "x-license": "MIT",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "sandbox_id", "network", "env_secrets",
+    "read_only_root", "allow_shell", "timeouts"
+  ],
+  "properties": {
+    "sandbox_id": { "type": "string", "minLength": 1 },
+    "network": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode", "allowlist", "imds_blocked",
+        "special_iana_blocked", "blocked_cidrs"
+      ],
+      "properties": {
+        "mode": { "type": "string", "enum": ["none", "allowlist"] },
+        "allowlist": { "type": "array", "items": { "type": "string" } },
+        "imds_blocked": { "type": "boolean" },
+        "special_iana_blocked": { "type": "boolean" },
+        "blocked_cidrs": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "env_secrets": {
+      "type": "array", "maxItems": 0, "items": { "type": "string" }
+    },
+    "read_only_root": { "type": "boolean", "const": true },
+    "allow_shell": { "type": "boolean", "const": false },
+    "timeouts": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tool_s", "loop_s", "lifetime_s"],
+      "properties": {
+        "tool_s": { "type": "integer", "minimum": 1, "maximum": 30 },
+        "loop_s": { "type": "integer", "minimum": 1, "maximum": 1200 },
+        "lifetime_s": { "type": "integer", "minimum": 1, "maximum": 3600 }
+      }
+    }
+  }
+}

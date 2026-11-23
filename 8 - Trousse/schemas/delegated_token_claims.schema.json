@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DelegatedTokenClaimsC5",
+  "x-license": "MIT",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "iss", "sub", "aud", "client_id", "scope",
+    "authorization_details", "act", "cnf", "iat", "exp", "jti"
+  ],
+  "$defs": {
+    "ActLeaf": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sub"],
+      "properties": {
+        "sub": { "type": "string", "pattern": "^spiffe://.+" }
+      }
+    },
+    "ActHop2": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sub", "act"],
+      "properties": {
+        "sub": { "type": "string", "pattern": "^spiffe://.+" },
+        "act": { "$ref": "#/$defs/ActLeaf" }
+      }
+    }
+  },
+  "properties": {
+    "iss": { "type": "string", "pattern": "^https://" },
+    "sub": { "type": "string", "minLength": 1 },
+    "aud": { "type": "string", "minLength": 1 },
+    "client_id": { "type": "string", "minLength": 1 },
+    "scope": { "type": "string", "minLength": 1 },
+    "authorization_details": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["type"],
+        "properties": {
+          "type": { "type": "string", "minLength": 1 }
+        },
+        "patternProperties": {
+          "^(?!type$)[a-zA-Z0-9_.-]+$": {
+            "type": ["string", "integer", "boolean", "array"]
+          }
+        }
+      }
+    },
+    "act": {
+      "oneOf": [
+        { "$ref": "#/$defs/ActLeaf" },
+        { "$ref": "#/$defs/ActHop2" }
+      ]
+    },
+    "cnf": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["x5t#S256"],
+          "properties": { "x5t#S256": { "type": "string", "minLength": 16 } }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["jkt"],
+          "properties": { "jkt": { "type": "string", "minLength": 16 } }
+        }
+      ]
+    },
+    "iat": { "type": "integer", "minimum": 0 },
+    "exp": { "type": "integer", "minimum": 1 },
+    "jti": { "type": "string", "minLength": 8 }
+  }
+}

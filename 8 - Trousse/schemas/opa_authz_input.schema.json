@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OpaAuthzInput",
+  "x-license": "MIT",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "tool", "session", "human_approval", "computed_action_sha256",
+    "principal_sub", "egress_allowlist", "control_flow_source",
+    "args_derived_from_untrusted", "sensitive_args_grounded_against_sor",
+    "a2a_delegation"
+  ],
+  "properties": {
+    "tool": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name", "tier", "exfiltration_capable", "egress_destination"
+      ],
+      "properties": {
+        "name": { "type": "string", "minLength": 1 },
+        "tier": { "type": "string", "enum": ["P0", "P1", "P2", "P3"] },
+        "exfiltration_capable": { "type": "boolean" },
+        "egress_destination": { "type": ["string", "null"] }
+      }
+    },
+    "session": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["consumed_untrusted", "tainted_sources", "provenance_hops"],
+      "properties": {
+        "consumed_untrusted": { "type": "boolean" },
+        "tainted_sources": { "type": "array", "items": { "type": "string" } },
+        "provenance_hops": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "human_approval": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["verified", "action_sha256", "approver_sub"],
+      "properties": {
+        "verified": { "type": "boolean" },
+        "action_sha256": { "type": ["string", "null"] },
+        "approver_sub": { "type": ["string", "null"] }
+      }
+    },
+    "computed_action_sha256": {
+      "type": "string", "pattern": "^[0-9a-f]{64}$"
+    },
+    "principal_sub": { "type": "string", "minLength": 1 },
+    "egress_allowlist": { "type": "array", "items": { "type": "string" } },
+    "control_flow_source": {
+      "type": "string",
+      "enum": ["TRUSTED_PLAN", "UNTRUSTED_DATA", "USER_DIRECT"]
+    },
+    "args_derived_from_untrusted": { "type": "boolean" },
+    "sensitive_args_grounded_against_sor": { "type": "boolean" },
+    "a2a_delegation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enabled", "propagated_consumed_untrusted"],
+      "properties": {
+        "enabled": { "type": "boolean" },
+        "propagated_consumed_untrusted": { "type": "boolean" }
+      }
+    }
+  }
+}

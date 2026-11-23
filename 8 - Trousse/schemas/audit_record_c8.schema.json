@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AuditRecordC8",
+  "x-license": "MIT",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["empreinte", "enregistrement", "signature"],
+  "properties": {
+    "empreinte": { "type": "string", "pattern": "^sha256:[0-9a-f]{64}$" },
+    "enregistrement": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "action", "agent", "autorite", "correlation", "flux",
+        "horodatage", "intention_sequence", "mandant", "modele",
+        "nature", "precedent_sha256", "sequence"
+      ],
+      "properties": {
+        "action": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "arguments_sha256", "definition_sha256", "definition_version",
+            "issue", "outil", "palier", "reference_resultat"
+          ],
+          "properties": {
+            "arguments_sha256": {
+              "type": "string", "pattern": "^[0-9a-f]{64}$"
+            },
+            "definition_sha256": {
+              "type": "string", "pattern": "^sha256:[0-9a-f]{64}$"
+            },
+            "definition_version": { "type": "string" },
+            "issue": {
+              "type": "string",
+              "enum": ["succes", "echec", "refus", "en_attente"]
+            },
+            "outil": { "type": "string" },
+            "palier": { "type": "string", "enum": ["P0", "P1", "P2", "P3"] },
+            "reference_resultat": { "type": "string" }
+          }
+        },
+        "agent": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["id", "identite", "invite_systeme", "version"],
+          "properties": {
+            "id": { "type": "string" },
+            "identite": { "type": "string", "pattern": "^spiffe://.+" },
+            "invite_systeme": {
+              "type": "string", "pattern": "^sha256:[0-9a-f]{64}$"
+            },
+            "version": { "type": "string" }
+          }
+        },
+        "autorite": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "approbations", "classe_risque", "controle",
+            "empreinte_approbation", "grandeur_seuil",
+            "niveau_autonomie", "version_politique"
+          ],
+          "properties": {
+            "approbations": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["approbateur", "jti", "role"],
+                "properties": {
+                  "approbateur": { "type": "string" },
+                  "jti": { "type": "string" },
+                  "role": { "type": "string" }
+                }
+              }
+            },
+            "classe_risque": { "type": "string" },
+            "controle": { "type": "string" },
+            "empreinte_approbation": {
+              "type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"
+            },
+            "grandeur_seuil": { "type": "integer", "minimum": 0 },
+            "niveau_autonomie": { "type": "string" },
+            "version_politique": { "type": "string" }
+          }
+        },
+        "correlation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "cle_idempotence", "etape", "span_id", "tache", "trace_id"
+          ],
+          "properties": {
+            "cle_idempotence": {
+              "type": "string", "pattern": "^[0-9a-f]{64}$"
+            },
+            "etape": { "type": "string" },
+            "span_id": { "type": "string" },
+            "tache": { "type": "string" },
+            "trace_id": { "type": "string" }
+          }
+        },
+        "flux": { "type": "string" },
+        "horodatage": { "type": "string" },
+        "intention_sequence": { "type": "integer", "minimum": 0 },
+        "mandant": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["jeton_delegue_jti", "pseudonyme", "type"],
+          "properties": {
+            "jeton_delegue_jti": { "type": "string" },
+            "pseudonyme": { "type": "string" },
+            "type": { "type": "string", "enum": ["user", "service"] }
+          }
+        },
+        "modele": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["fournisseur", "servi", "version"],
+          "properties": {
+            "fournisseur": { "type": "string" },
+            "servi": { "type": "string" },
+            "version": { "type": "string" }
+          }
+        },
+        "nature": { "type": "string", "enum": ["intention", "issue"] },
+        "precedent_sha256": {
+          "type": "string", "pattern": "^sha256:[0-9a-f]{64}$"
+        },
+        "sequence": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "signature": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["alg", "kid", "valeur"],
+      "properties": {
+        "alg": { "type": "string" },
+        "kid": { "type": "string" },
+        "valeur": { "type": "string" }
+      }
+    }
+  }
+}

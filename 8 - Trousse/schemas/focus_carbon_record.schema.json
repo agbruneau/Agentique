@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FocusCarbonRecord",
+  "x-license": "MIT",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "BillingAccountId", "ChargePeriodStart", "ChargePeriodEnd",
+    "ProviderName", "ServiceName", "ResourceId",
+    "BilledCost", "EffectiveCost", "ConsumedQuantity", "ConsumedUnit",
+    "PricingCurrency", "x_carbon_gco2e", "x_energy_kwh"
+  ],
+  "properties": {
+    "BillingAccountId": { "type": "string", "minLength": 1 },
+    "ChargePeriodStart": { "type": "string", "minLength": 10 },
+    "ChargePeriodEnd": { "type": "string", "minLength": 10 },
+    "ProviderName": { "type": "string", "minLength": 1 },
+    "ServiceName": { "type": "string", "minLength": 1 },
+    "ResourceId": { "type": "string", "minLength": 1 },
+    "BilledCost": { "type": "string", "pattern": "^\\d+(?:\\.\\d+)?$" },
+    "EffectiveCost": { "type": "string", "pattern": "^\\d+(?:\\.\\d+)?$" },
+    "ConsumedQuantity": { "type": "string", "pattern": "^\\d+(?:\\.\\d+)?$" },
+    "ConsumedUnit": { "type": "string", "minLength": 1 },
+    "PricingCurrency": { "type": "string", "enum": ["CAD", "USD", "EUR"] },
+    "x_carbon_gco2e": { "type": "string", "pattern": "^\\d+(?:\\.\\d+)?$" },
+    "x_energy_kwh": { "type": "string", "pattern": "^\\d+(?:\\.\\d+)?$" }
+  }
+}
