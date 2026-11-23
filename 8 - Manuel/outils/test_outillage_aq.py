@@ -889,16 +889,49 @@ def test_12gram_ignores_quoted_statute_titles_and_matches_real_corpus(tmp_vol8: 
 def test_typst_postprocess_math_commas_and_links() -> None:
     raw = (
         "#emph[Figure 1 — Legende officielle]\n\n"
-        "Prix 15,5 \\$ US et calcul $0\\,94^(10)$.\n\n"
+        "Prix 15,5 \\$ US et 20 \\$ CA, calcul $0\\,94^(10)$ -> 100 % et 3 309 o.\n\n"
+        "`DeterministicHarness` et `StreamableHttpAdapter`.\n\n"
         "= Bibliographie classée des sources intégrales vérifiées\n<bibliographie>\n"
         '- #link("https://example.org/a-b/c") — `https://blocked.org/p-q`\n'
     )
     out = _postprocess_typst_body(raw)
     assert "#align(center)" in out and "Figure 1" in out
     assert '$0","94^(10)$' in out
-    assert "15,5 \\$ US" in out
-    assert '#link("https://example.org/a-b/c")[https://example.org/\u200ba-\u200bb/\u200bc]' in out
-    assert '`https://blocked.org/\u200bp-\u200bq`' in out
+    assert "15,5\u00a0\\$\u00a0US" in out
+    assert "20\u00a0\\$\u00a0CA" in out
+    assert "100\u00a0%" in out and "3\u00a0309\u00a0o" in out
+    assert " → " in out
+    assert "`DeterministicHarness` et `StreamableHttpAdapter`." in out
+    assert (
+        '#link("https://example.org/a-b/c")[#text(hyphenate: false)[#("https://example.\u200borg/\u200ba-\u200bb/\u200bc")]]'
+        in out
+    )
+    assert "`https://blocked.\u200borg/\u200bp-\u200bq`" in out
+
+
+def test_typst_postprocess_tables_camelcase_decimals_and_apostrophes() -> None:
+    raw = (
+        "#figure(\n"
+        "  align(center)[#table(\n"
+        "    columns: 3,\n"
+        "    align: (auto,right,center,),\n"
+        "    table.header([ID], [Énoncé], [Code],),\n"
+        "    table.hline(),\n"
+        "    [`CH03-001`], [Flux d’approvisionnement], [`OpaStaticCheckError`, `rétrocompatibilité` et `0.0089`],\n"
+        "  )]\n"
+        "  , kind: table\n"
+        "  )\n\n"
+        "#emph[Tableau 2.2 — Matrice courte.]\n"
+    )
+    out = _postprocess_typst_body(raw)
+    assert "align: (left,right,center,)" in out
+    assert "columns: (" in out
+    assert "d’\u200bapprovisionnement" in out
+    assert "`Opa\u200bStatic\u200bCheck\u200bError`" in out
+    assert "`rétrocompati\u200bbilité`" in out
+    assert "`0.0089`" in out
+    assert "#block(width: 100%, breakable: false)[" in out
+    assert "Tableau 2.2" in out
 
 
 def test_dynamic_book_stem_purges_residual_html_and_aligns_deliverables(tmp_path: Path) -> None:

@@ -1,8 +1,8 @@
 # Journal d'ancrage atomique Wyvern — Chapitre 04 (Barrière G2)
 
-**Unité auditée :** `8 - Manuel/manuscrit/02 - Partie II/Chapitre 04 - Banc EvalOps hermetique et 24 portes PRR.md`
-**Agent auditeur :** `auditeur-wyvern-ch04` (contexte isolé et indépendant du rédacteur)
-**Date de gel :** `2026-12-02` (2 décembre 2026)
+**Unité auditée :** `8 - Manuel/manuscrit/02 - Partie II/Chapitre 04 - Banc EvalOps hermetique et 24 portes PRR.md`  
+**Agent auditeur :** `auditeur-wyvern-ch04` (contexte isolé et indépendant du rédacteur)  
+**Date de gel :** `2026-12-02` (2 décembre 2026)  
 **Base documentaire fermée :** `8 - Manuel/sources/ch04-sources.md` (`26` sources `L+` : `[1]` à `[26]`), `8 - Manuel/recherche/corpus_l_plus/*.txt`, `8 - Manuel/recherche/registre-statut-f.json`, `8 - Manuel/aq/rapports-g0.json`, `8 - Manuel/registre/*.json`, `8 - Trousse/{evalops_prr,schemas,tests,policies_opa,policy_saga,authz_pqc_audit}/` (lecture seule).
 
 ## Bilan synthétique de la barrière G2 (`ch04`)
@@ -20,7 +20,7 @@
 ## Registre complet des rectifications et réancrages (36 écarts corrigés)
 
 1. **`C04-009` (`L009`, `τ-bench` [1]) — `imprécis` -> `supporté` :** Ajout de la mention explicite du modèle (`gpt-4o` par appel de fonctions) devant `~61 %` (`pass^1`) et `< 25 %` (`pass^8`) sur `τ-retail`, conformément à `SRC-029` (`L17–19`, `L105–107`).
-2. **`C04-013` (`L009`, Deloitte Insights / Gartner [9]) — `imprécis` -> `supporté` :** Remplacement de « risquent l'abandon... complexités d'industrialisation et de risques mal maîtrisés » par la formulation fidèle à `SRC-011` (`L443`, note 3 `L719`) « pourraient être abandonnées d'ici la fin de 2027 en raison de coûts imprévus, de la complexité de mise à l'échelle ou de risques inattendus ».
+2. **`C04-013` (`L009`, Deloitte Insights / Gartner [9]) — `imprécis` -> `supporté` :** Remplacement de « risquent l'abandon … complexités d'industrialisation et de risques mal maîtrisés » par la formulation fidèle à `SRC-011` (`L443`, note 3 `L719`) « pourraient être abandonnées d'ici la fin de 2027 en raison de coûts imprévus, de la complexité de mise à l'échelle ou de risques inattendus ».
 3. **`C04-024` (`L019`, HAL [8]) — `imprécis` -> `supporté` :** Précision complète contre `SRC-030` (`L47`, `L955–959`) : un effort de raisonnement supérieur « réduit l'exactitude dans la majorité des exécutions évaluées ; sur les quatre modèles comparés par niveau de raisonnement (`Claude Opus 4.1`, `Claude Sonnet 4`, `Claude-3.7 Sonnet` et `o4-mini`), il produit une exactitude égale ou inférieure dans `21` combinaisons modèle-agent-banc sur `36` ».
 4. **`C04-028` (`L019`, HAL [8]) — `imprécis` -> `supporté` :** Précision de l'échafaudage fautif en « l'échafaudage *Few Shot* de `τ-bench` » (`SRC-030` `L389`).
 5. **`C04-031` (`L021`, Barrett et al. [14]) — `imprécis` -> `supporté` :** Rectification de la paraphrase (« défaillance naît le plus souvent d'une boucle de rétroaction mal bornée... plutôt que d'une défaillance matérielle isolée ») selon `SRC-058` (`L373–431`, `L775–776`, `L1068`) : les pertes de contrôle peuvent survenir même lorsque chaque composant fonctionne conformément à sa conception ou à son entraînement, par interactions défectueuses dans la boucle hiérarchique reliant contrôleur, actionneurs, capteurs, modèle de processus et processus contrôlé.
@@ -339,3 +339,17 @@
 | `C04-253` | `L302` | Clause finale `non-avis` : ne vaut ni avis juridique ni homologation sur un `SoR` réel. | `specs/prd.md` (`AO-05`), `specs/contrat-aq.md` | `supporté` | — | `supporté` |
 | `C04-254` | `L304` | Transition récapitulative exacte Ch. `01` (`80/20`, épinglage), Ch. `02` (`PQC`, audit), Ch. `03` (`OPA`, sagas), Ch. `04` (`evalops-prr/`). | `specs/manifest.json`, `specs/toc.md` | `supporté` | — | `supporté` |
 | `C04-255` | `L304` | Annonce des instruments déterministes `Annexe A` (sources `L+` SHA-256, `statut F`, journal `G2`) et `Annexe B` (matrice et verdicts `G0–G5`). | `specs/contrat-aq.md` (`CA-17`), `outils/genere_annexes.py` | `supporté` | — | `supporté` |
+
+
+---
+
+## Révision `G2` différentielle post-lissage `G5` (`e9982661`)
+
+- **Périmètre contrôlé (`Chapitre 04`) :** `L296` (synthèse `Figure 8` : couverture de lignes OPA à `100 %` sur `45/45` cas incluant scénarios négatifs et mal typés, `pass^k` et borne de Wilson `0,8938 % < 1 %` pour `n = 300`).
+- **Verdict final post-G5 (`ch04`) :** **`100 % supporté`** (`0` `non supporté`, `0` `imprécis` résiduel).
+
+
+## Enrichissement d'ancrage en place pré-`G3` passe 2 (zéro décalage)
+
+- **Périmètre édité (`Chapitre 04`) :** rattachements explicites en place aux sources ouvertes déjà vérifiées de `ch04-sources.md` (`[13]` `SRC-055`, `[15]` `SRC-060`, `[16]` `SRC-061`, `[17]` `SRC-062`, `[18]` `SRC-063`, `[19]` `SRC-064`, `[20]` `SRC-065`, `[21]` `SRC-067`, `[22]` `SRC-068`, `[23]` `SRC-069`, `[24]` `SRC-070`) aux lignes `L11`, `L152`, `L207`, `L225`, `L263`, `L269` et `L302`, et resserrement lexical (`L135`, `L269`) dans le budget `[6 440, 7 560]`.
+- **Verdict d'ancrage :** `100 % supporté` (`0` nouvelle source, `0` énoncé spéculatif, `0` décalage d'indice `Pnnn`).

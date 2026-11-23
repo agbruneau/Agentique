@@ -26,19 +26,19 @@ legend {
   BackgroundColor #FFFFFF
   LineColor #CBD5E1
   FontColor #1E293B
-  FontSize 10
+  FontSize 11
 }
 </style>
 hide stereotype
 top to bottom direction
 skinparam defaultFontName "DejaVu Sans"
-skinparam defaultFontSize 11
+skinparam defaultFontSize 13
 skinparam shadowing false
 skinparam roundcorner 8
 skinparam packageStyle rectangle
-skinparam nodesep 20
-skinparam ranksep 24
-skinparam padding 6
+skinparam nodesep 22
+skinparam ranksep 30
+skinparam padding 7
 
 rectangle "Entrée externe brute\n(requête non vérifiée)" as RAW <<prob>>
 rectangle "Contrats JSON Schema stricts\n(_INPUT_SCHEMA & HarnessExtraction)" as SCH <<det>>
@@ -57,28 +57,29 @@ package "Harnais déterministe 80/20 (harness_proto/pipeline.py)" {
 
 database "Journal d'exécution G0\n(sortie EXTRAIT ou escalade)" as LOG <<det>>
 
-RAW ..> E1
+RAW .[#B45309].> E1
 E1 --> E2
 E2 --> E3
 E3 --> E4 : contexte filtré
-E4 ..> E5 : jetons bruts
-SCH --> E2 : valide _INPUT_SCHEMA
-SCH --> E5 : valide HarnessExtraction
+E4 .[#B45309].> E5 : jetons bruts
+SCH --> E2 : valide\n_INPUT_SCHEMA
+SCH --> E5 : valide\nHarnessExtraction
 E5 --> E6 : schéma conforme
 E5 --> E7 : écart schéma
 E6 --> E8 : ancrage vérifié
 E6 --> E7 : écart d'ancrage
 E6 --> ESC : ambiguïté / manque
-E7 ..> E4 : réessai ≤ 2
-E7 --> E8 : ESCALADED (plafond atteint)
-ESC --> E8 : passe par _seal_outcome
+E7 .[#B45309].> E4 : réessai ≤ 2
+E7 --> E8 : ESCALADED\n(plafond atteint)
+ESC --> E8 : passe par\n_seal_outcome
 E8 --> LOG
 
 RAW -[hidden]right-> SCH
-E1 -[hidden]right-> E8
+E1 -[hidden]right-> E5
 E2 -[hidden]right-> E6
-E3 -[hidden]right-> E5
-E7 -[hidden]right-> ESC
+E3 -[hidden]right-> E7
+E4 -[hidden]right-> ESC
+E7 -[hidden]down-> E8
 
 legend bottom
   **Trait plein ardoise** : frontière déterministe hors modèle possédée (G0)

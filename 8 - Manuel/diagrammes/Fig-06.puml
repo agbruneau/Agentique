@@ -32,23 +32,23 @@ legend {
   BackgroundColor #FFFFFF
   LineColor #CBD5E1
   FontColor #1E293B
-  FontSize 10
+  FontSize 11
 }
 </style>
 hide stereotype
 top to bottom direction
 skinparam defaultFontName "DejaVu Sans"
-skinparam defaultFontSize 11
+skinparam defaultFontSize 12
 skinparam shadowing false
 skinparam roundcorner 8
-skinparam packageStyle rectangle
-skinparam nodesep 16
-skinparam ranksep 24
-skinparam padding 6
+skinparam packageStyle frame
+skinparam nodesep 28
+skinparam ranksep 36
+skinparam padding 7
 
 rectangle "Agent métier probabiliste\n(propose plan, révocable ou coupé)" as PLAN <<prob>>
 rectangle "Clé canonique idem-v1 (JCS SHA-256)\nHTTP 409 en cours · 422 divergence" as IDEM <<det>>
-rectangle "Batterie 10 scénarios de fautes (EXIG-ORC-20)\ncrash Outbox, rejeux, double C_k, révocation" as FAULTS <<det>>
+rectangle "Batterie 10 scénarios (EXIG-ORC-20)\ncrash Outbox, rejeux, double C_k, révocation" as FAULTS <<det>>
 
 package "Automate Saga et point pivot (saga_orchestrator.py)" {
   rectangle "Étapes compensables T1 → T2\n(verrou sémantique par ressource)" as T12 <<det>>
@@ -66,25 +66,25 @@ package "Canal de compensation isolé (EXIG-ORC-28)" {
 
 database "Transactional Outbox & journal\n(persistance atomique, reprise sans doublon)" as OUTBOX <<det>>
 
-PLAN ..> T12 : proposition typée
+PLAN .[#B45309].> T12 : proposition\ntypée
 IDEM --> T12 : verrouille clé
 T12 --> GARDE
 GARDE --> PIVOT : pré-pivot OK
 PIVOT --> T3 : succès durable
 PIVOT --> RECON : faute post-pivot
-GARDE -right-> COMP_CH : faute pré-pivot
+GARDE -right-> COMP_CH : faute\npré-pivot
 FAULTS --> GARDE : fautes 1..9
-FAULTS --> COMP_CH : faute 10 (agent révoqué)
+FAULTS --> COMP_CH : faute 10\n(agent révoqué)
 COMP_CH --> C_INV : exécute C2 → C1
 C_INV --> ESC_H : 2 échecs C_k
 T12 --> OUTBOX : persiste état
-PIVOT --> OUTBOX : scelle pivot
-C_INV --> OUTBOX : clôt compensé
+PIVOT --> OUTBOX : scelle\npivot
+C_INV --> OUTBOX : clôt\ncompensé
 
 PLAN -[hidden]right-> IDEM
 IDEM -[hidden]right-> FAULTS
 T3 -[hidden]right-> RECON
-T3 -[hidden]down-> OUTBOX
+RECON -[hidden]down-> OUTBOX
 
 legend bottom
   **Trait plein ardoise** : frontière déterministe hors modèle possédée (G0)

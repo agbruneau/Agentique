@@ -32,24 +32,24 @@ legend {
   BackgroundColor #FFFFFF
   LineColor #CBD5E1
   FontColor #1E293B
-  FontSize 10
+  FontSize 11
 }
 </style>
 hide stereotype
 top to bottom direction
 skinparam defaultFontName "DejaVu Sans"
-skinparam defaultFontSize 11
+skinparam defaultFontSize 13
 skinparam shadowing false
 skinparam roundcorner 8
-skinparam packageStyle rectangle
-skinparam nodesep 16
-skinparam ranksep 22
-skinparam padding 6
+skinparam packageStyle frame
+skinparam nodesep 22
+skinparam ranksep 32
+skinparam padding 7
 
 rectangle "Modèles substituables (~20 %)\net entrées externes non fiables" as MOD <<prob>>
 rectangle "Table des 5 discordances (0.2)\n(L0–L4, plans, ArchiMate, MCP)" as TAB <<det>>
 
-package "Dépôt compagnon 8 - Trousse/ (MIT, Python 3.12+)" {
+package "Dépôt compagnon 8 - Trousse/ (MIT · Python 3.12+)" {
   rectangle "harness_proto/\n(Ch. 01 : harnais, MCP, A2A)" as M1 <<det>>
   rectangle "authz_pqc_audit/\n(Ch. 02 : OBO, ML-DSA, OTel)" as M2 <<det>>
   rectangle "policy_saga/\n(Ch. 03 : Règle de deux, Sagas)" as M3 <<det>>
@@ -66,27 +66,25 @@ package "Chaîne probatoire G0–G5" {
   rectangle "G1 → G2 Wyvern → G3 → G4 → G5\nAnnexes SSOT et triple rendu" as G1G5 <<det>>
 }
 
-MOD ..> M1 : appels bornés / doublures
-M1 --> M2
+MOD .[#B45309].> M1 : appels bornés /\ndoublures
+M1 -right-> M2
 M2 -[hidden]down-> M4
 M1 -[hidden]down-> M3
-M3 --> OPA : règles hors modèle
+M3 -right-> M4
+M3 --> OPA : règles\nhors modèle
 M4 --> G0
-OPA --> G0 : couverture 100 %
-VEC --> G0 : brise biais corrélé
-G0 --> SYNC : scelle empreintes
-SYNC -right-> MAN : injecte ≤ 40 L
+OPA --> G0 : couverture\n100 %
+VEC --> G0 : brise biais\ncorrélé
+G0 -right-> SYNC : scelle\nSHA-256
+SYNC --> MAN : injecte ≤ 40 L
 TAB --> MAN : unifie normes
 G0 -right-> G1G5 : preuve G0
-MAN --> G1G5 : vérifications L+ et AQ
+MAN --> G1G5 : vérif. L+ et AQ
 
 MOD -[hidden]right-> TAB
-M1 -[hidden]right-> M2
-M3 -[hidden]right-> M4
-M4 -[hidden]right-> OPA
 OPA -[hidden]right-> VEC
-OPA -[hidden]right-> SYNC
-SYNC -[hidden]right-> MAN
+OPA -[hidden]down-> G0
+VEC -[hidden]down-> SYNC
 
 legend bottom
   **Trait plein ardoise** : frontière déterministe hors modèle possédée (G0)

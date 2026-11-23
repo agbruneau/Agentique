@@ -32,30 +32,30 @@ legend {
   BackgroundColor #FFFFFF
   LineColor #CBD5E1
   FontColor #1E293B
-  FontSize 10
+  FontSize 11
 }
 </style>
 hide stereotype
 top to bottom direction
 skinparam defaultFontName "DejaVu Sans"
-skinparam defaultFontSize 11
+skinparam defaultFontSize 13
 skinparam shadowing false
 skinparam roundcorner 8
 skinparam packageStyle rectangle
-skinparam nodesep 16
-skinparam ranksep 20
-skinparam padding 6
+skinparam nodesep 20
+skinparam ranksep 30
+skinparam padding 7
 
 rectangle "Vecteurs OWASP SRC-055 L+\n(couverture ASI01–ASI10)" as OWASP <<ext>>
 rectangle "Générateur déterministe (≥ 100 scénarios)\nparamétriques FR/EN (étages E1–E2)" as GEN <<det>>
 
-package "Banc hermétique sans SoR réel (mock_mcp_harness.py)" {
+package "Banc hermétique sans SoR réel" {
   rectangle "Agent / modèle évalué\n(composant probabiliste substituable)" as AGT <<prob>>
   rectangle "Doublures MockMcpServer (DC-P12)\nréponses seedées, 0 réseau, 0 modèle payant" as MOCK <<det>>
   rectangle "Vérificateur evaluate_trajectory\n(ordre d'outils, ancrage, coût CAD)" as TRAJ <<det>>
 }
 
-package "Trois moteurs d'évaluation vérifiables (evalops_prr)" {
+package "Trois moteurs d'évaluation EvalOps" {
   rectangle "Filtre d'indépendance stricte\n(rejet des répétitions corrélées)" as INDEP <<det>>
   rectangle "Borne de Wilson à 95 % < p (EXIG-EVA-03)\nexige n ≥ ⌈3/p⌉ essais sans échec" as WILSON <<det>>
   rectangle "Métrique de constance pass^k\n(k ≥ 3 / k ≥ 5, rejette pass@k)" as PASSK <<det>>
@@ -65,13 +65,13 @@ package "Trois moteurs d'évaluation vérifiables (evalops_prr)" {
 rectangle "Rapport evalops_wilson_report\n(JSON Schema 2020-12 strict: true)" as RPT <<det>>
 rectangle "Décision EvalOps G0 (non-avis)\n(admis si pass^k, Wilson et FR/EN OK)" as GATE <<det>>
 
-OWASP -right-> GEN : alimente attaques
-GEN ..> AGT : cas base & transformés
-AGT <..> MOCK : appels MCP simulés
+OWASP -right-> GEN : alimente\nattaques
+GEN .[#B45309].> AGT : cas base &\ntransformés
+AGT <.[#B45309].> MOCK : appels MCP simulés
 MOCK --> TRAJ : trajectoire exacte
-TRAJ --> INDEP : scenario_ids uniques
-TRAJ --> PASSK : fenêtres disjointes
-TRAJ --> META : paires sans oracle
+TRAJ --> INDEP : scenario_ids\nuniques
+TRAJ --> PASSK : fenêtres\ndisjointes
+TRAJ --> META : paires sans\noracle
 INDEP --> WILSON : n indépendants
 WILSON --> RPT
 PASSK --> RPT

@@ -171,6 +171,17 @@
 - **Empreinte SHA-256 (LF) :** `2d39751c5fed55ad19aebd3cc238f8a1a26d6b266bb8bc3f7ee1e0e37a796e8b` (`12404` octets, `1985` mots)
 - **Synthèse factuelle vérifiée :** Agrégateur canadien ouvert AIBanks.ca (édition T4 au 1er novembre 2026) confirmant l'échéance du 1er mai 2027 pour BSIF E-23 et signalant l'échéance attendue du 1er mai 2027 de la ligne directrice IA de l'AMF (rapportée sous réserve car le portail lautorite.qc.ca est en statut F).
 
+### [16] SRC-082 — MCP SEP-3398: Release Cycle Updates (Status: Accepted)
+
+- **Auteurs / Émetteur :** Kurtis Van Gent (@kurtisvg)
+- **Date de publication :** `2026-10-14`
+- **Organisme / Revue :** GitHub modelcontextprotocol/modelcontextprotocol@862397ce
+- **Identifiant :** `MCP-SEP-3398`
+- **Statut de vérification :** `L+` (texte intégral archivé dans `recherche/corpus_l_plus/SRC-082.txt`, score AACODS `11.0/12`)
+- **URL d'origine :** https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/862397cec702e8f828713071da501cf56158e8fc/seps/3398-release-cycle-updates.md
+- **Empreinte SHA-256 (LF) :** `64aee02f2717dc1b290c079a012c470baccd53f6299103b6713a545ccae03be5` (`27669` octets, `3795` mots)
+- **Synthèse factuelle vérifiée :** Proposition SEP-3398 (Statut : Accepted) instaurant un cycle semestriel prévisible (dernier mardi de mars et de septembre) et reportant l'échéance de publication de la spécification MCP initialement prévue en décembre 2026 au 30 mars 2027.
+
 ---
 
 ## Exclusions documentaires et statut F (`AO-01`)

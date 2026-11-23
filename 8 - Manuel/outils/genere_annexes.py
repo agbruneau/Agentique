@@ -376,11 +376,11 @@ def _render_annexe_a(root: Path, unit_meta: dict, manifest: dict) -> str:
         (
             "## Isolement contre les dérives postérieures au gel (`2027+`)\n\n"
             "Lorsque des spécifications techniques connaissent des chantiers ouverts au lendemain de la date de "
-            "gel — tels que la révision `MCP SEP-3398` attendue en mars 2027, la stabilisation des attributs "
+            "gel — tels que la prochaine publication semestrielle de la spécification MCP (`SEP-3398`) attendue en mars 2027, la stabilisation des attributs "
             "`semantic-conventions-genai` ou la sortie finale d'`A2A v1.1.0` — les contrats du dépôt compagnon "
             "`8 - Trousse/` isolent la couche de transport et les tables de correspondance derrière des "
             "adaptateurs dédiés. Le présent ouvrage fige les preuves vérifiées au "
-            f"{freeze_fr} et formule toute échéance ultérieure au futur comme Jalons à venir.\n\n"
+            f"{freeze_fr} et formule toute échéance ultérieure au futur comme jalons à venir.\n\n"
             "L'audit atomique Wyvern complète les garde-fous mécaniques de `G1` en vérifiant l'exactitude "
             "sémantique de chaque chiffre, version de protocole, champ de schéma et clause réglementaire : une "
             "assertion qui omet le statut *Internet-Draft* d'un document IETF ou la portée synthétique `DC-P12` "
@@ -449,7 +449,7 @@ def _render_annexe_a(root: Path, unit_meta: dict, manifest: dict) -> str:
             "texte intégral sans troncature peuvent soutenir une assertion chiffrée, juridique ou protocolaire "
             "dans le corps du manuel.\n\n"
             "En présence d'un code retour restrictif ou d'une barrière interactive anti-robot, l'outil de collecte "
-            "applique une stratégie à tentative unique : aucune relance automatique, aucune contournement "
+            "applique une stratégie à tentative unique : aucune relance automatique, aucun contournement "
             "d'en-tête utilisateur et aucune extraction de résumé partiel ne sont autorisés. L'adresse refusée "
             "est consignée immédiatement au registre `statut F`, puis remplacée par un substitut primaire ouvert "
             "équivalent, tel un texte législatif officiel publié au journal réglementaire, un standard IETF ou "
@@ -508,9 +508,9 @@ def _render_annexe_a(root: Path, unit_meta: dict, manifest: dict) -> str:
         bib_lines.extend(["", "### Catalogue des spécifications épinglées (`specifications-lplus.json`)", ""])
         for sp in specs_list:
             bib_lines.append(
-                f"- `{sp.get('spec_id')}` — {sp.get('title')} (`{sp.get('version_or_tag')}`, "
+                f"- `{sp.get('spec_id')}` — {sp.get('title')} — `{sp.get('version_or_tag')}`, "
                 f"{sp.get('maturity_status')}, `SPDX: {sp.get('license_spdx')}`, "
-                f"`{sp.get('source_l_plus_id')}`, `SHA-256: {str(sp.get('sha256', ''))[:12]}...`)."
+                f"`{sp.get('source_l_plus_id')}`, `SHA-256: {str(sp.get('sha256', ''))[:12]}...`."
             )
 
     if metrics["blocked_list"]:
@@ -614,7 +614,7 @@ def _render_annexe_b(root: Path, unit_meta: dict, manifest: dict) -> str:
             "|---|---|---|\n"
             f"| Verdict global `execute_g0.py` | Code de retour `{g0.get('exit_code')}` (`{g0.get('overall_status')}`) | {'Conforme' if g0.get('exit_code') == 0 else 'Échec'} |\n"
             f"| Audit `SPDX MIT` & `requirements.lock` | `{spdx.get('checked_files', 0)}` fichiers, `{spdx.get('checked_packages', 0)}` paquets | {'Conforme' if spdx.get('passed') else 'Échec'} |\n"
-            f"| Politiques `OPA / Rego` (`default allow := false`) | Couverture `{opa.get('coverage_pct', 0.0):.1f} %`, `{opa.get('tests_passed', 0)}` tests | {'Conforme' if opa.get('coverage_pct') == 100.0 and opa.get('tests_failed', 1) == 0 else 'Échec'} |\n"
+            f"| Politiques `OPA / Rego` (`default allow := false`) | Couverture `{opa.get('coverage_pct', 0.0):.1f}\u00a0%`, `{opa.get('tests_passed', 0)}` tests | {'Conforme' if opa.get('coverage_pct') == 100.0 and opa.get('tests_failed', 1) == 0 else 'Échec'} |\n"
             f"| Harnais `pytest` & schémas `2020-12` | `{pyt.get('passed', 0)}` passés, `{pyt.get('failed', 0)}` échecs, `{pyt.get('skipped', 0)}` ignorés | {'Conforme' if pyt.get('failed', 1) == 0 and pyt.get('skipped', 1) == 0 else 'Échec'} |\n"
             f"| Quatre suites vecteurs tiers & `CA-G0-SYNC` | {vec_summary} ; `{len(g0.get('synced_excerpts', {}))}` extraits scellés | Actif |"
         )
@@ -623,7 +623,7 @@ def _render_annexe_b(root: Path, unit_meta: dict, manifest: dict) -> str:
             "## Bilan exécutable de la barrière logicielle `G0` (`aq/rapports-g0.json`)\n\n"
             "La barrière `G0` exécute `execute_g0.py` sur `8 - Trousse/` en vérifiant `requirements.lock` "
             "`SHA-256`, l'audit `SPDX MIT`, la validation `JSON Schema Draft 2020-12` (`strict: true`), la clause "
-            "`default allow := false` et `opa test --coverage 100 %`, les quatre suites officielles de vecteurs "
+            "`default allow := false` et `opa test --coverage 100\u00a0%`, les quatre suites officielles de vecteurs "
             "tiers (`RFC 8785`, `NIST ACVP FIPS 204/205`, `a2a-tck 1.0.0.alpha3`, `OWASP SRC-055 L+`), "
             "l'ensemble `pytest` et les condensats `SHA-256` des quatorze extraits `CA-G0-SYNC`."
         )
@@ -643,8 +643,8 @@ def _render_annexe_b(root: Path, unit_meta: dict, manifest: dict) -> str:
     rq_table = "\n".join(rq_rows)
 
     ancrage_label = (
-        f"{metrics['ancrage_count']} / 5 journaux ({metrics['ancrage_initial_claims']} -> "
-        f"{metrics['ancrage_final_claims']}, 100 % supportées)"
+        f"{metrics['ancrage_count']} / 5 journaux ({metrics['ancrage_initial_claims']} → "
+        f"{metrics['ancrage_final_claims']}, 100\u00a0% supportées)"
         if metrics["ancrage_count"] > 0
         else "En attente d'exécution"
     )
@@ -657,7 +657,7 @@ def _render_annexe_b(root: Path, unit_meta: dict, manifest: dict) -> str:
     qa_rows = [
         "| Barrière (ordre chronologique) | Rôle de contrôle indépendant | Critères | État constaté |",
         "|---|---|---|---|",
-        f"| `G0` — Banc logiciel `execute_g0.py` | `auteur-tests-oracle` ≠ `batisseur-code`, `OPA 100 %`, `4` vecteurs | `CA-19`, `CA-20` | {g0_status_str} |",
+        f"| `G0` — Banc logiciel `execute_g0.py` | `auteur-tests-oracle` ≠ `batisseur-code`, `OPA 100\u00a0%`, `4` vecteurs | `CA-19`, `CA-20` | {g0_status_str} |",
         "| `G1` — Garde déterministe sans modèle | Script `verifie_manuscrit.py --strict` (`CA-G0-SYNC`) | `CA-01`..`CA-11`, `CA-17`, `CA-20` | Contrôle actif |",
         f"| `G2` — Ancrage atomique Wyvern | Cinq `auditeur-wyvern` neufs (`00`–`04`) | `CA-10`, `CA-12` | {ancrage_label} |",
         f"| `G3` — Recollation passe 1 (`{metrics['seed1']}`) | Agent `recollateur-1` (`4` strates × `15`, `≥ 8`/unité) | `CA-07`, `CA-13` | {recol1_label} |",
@@ -788,7 +788,7 @@ def _render_annexe_b(root: Path, unit_meta: dict, manifest: dict) -> str:
         extra_lines.extend(["## Matrice détaillée `EXIG` / `PRR` / `C01–C40` / `5 SBB`", ""])
         for m in mappings:
             extra_lines.append(
-                f"- `{m.get('id')}` (`{m.get('family')}`, `{m.get('criticality')}`, `{m.get('owner_chapter')}`) -> "
+                f"- `{m.get('id')}` (`{m.get('family')}`, `{m.get('criticality')}`, `{m.get('owner_chapter')}`) → "
                 f"`{m.get('trousse_module')}.{m.get('implementation_symbol')}` | test `{m.get('pytest_nodeid')}` "
                 f"| ancre `{m.get('corpus_anchor')}`."
             )

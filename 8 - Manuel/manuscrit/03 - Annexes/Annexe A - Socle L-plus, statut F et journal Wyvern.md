@@ -35,7 +35,7 @@ Chaque fichier texte collecté en libre accès est normalisé en UTF-8 avec fins
 
 ## Isolement contre les dérives postérieures au gel (`2027+`)
 
-Lorsque des spécifications techniques connaissent des chantiers ouverts au lendemain de la date de gel — tels que la révision `MCP SEP-3398` attendue en mars 2027, la stabilisation des attributs `semantic-conventions-genai` ou la sortie finale d'`A2A v1.1.0` — les contrats du dépôt compagnon `8 - Trousse/` isolent la couche de transport et les tables de correspondance derrière des adaptateurs dédiés. Le présent ouvrage fige les preuves vérifiées au 2 décembre 2026 et formule toute échéance ultérieure au futur comme Jalons à venir.
+Lorsque des spécifications techniques connaissent des chantiers ouverts au lendemain de la date de gel — tels que la prochaine publication semestrielle de la spécification MCP (`SEP-3398`) attendue en mars 2027, la stabilisation des attributs `semantic-conventions-genai` ou la sortie finale d'`A2A v1.1.0` — les contrats du dépôt compagnon `8 - Trousse/` isolent la couche de transport et les tables de correspondance derrière des adaptateurs dédiés. Le présent ouvrage fige les preuves vérifiées au 2 décembre 2026 et formule toute échéance ultérieure au futur comme jalons à venir.
 
 L'audit atomique Wyvern complète les garde-fous mécaniques de `G1` en vérifiant l'exactitude sémantique de chaque chiffre, version de protocole, champ de schéma et clause réglementaire : une assertion qui omet le statut *Internet-Draft* d'un document IETF ou la portée synthétique `DC-P12` d'un essai est qualifiée `imprécise` et immédiatement reformulée selon le texte source. Toute affirmation dépourvue de témoin primaire vérifiable ou rattachée à une ressource `statut F` est retirée sans ambiguïté et consignée dans le journal reproduit ci-après.
 
@@ -67,7 +67,7 @@ Lorsqu'un référentiel logiciel épinglé provient d'un dépôt public `GitHub`
 
 L'évaluation qualitative d'une source ouverte s'appuie sur la grille `AACODS` notée sur douze points selon six dimensions : autorité de l'organisme émetteur, exactitude vérifiable des mesures, couverture du domaine agentique, objectivité méthodologique, actualité antérieure à la date de gel et traçabilité documentaire. Seules les pièces atteignant au moins le seuil requis et livrant leur texte intégral sans troncature peuvent soutenir une assertion chiffrée, juridique ou protocolaire dans le corps du manuel.
 
-En présence d'un code retour restrictif ou d'une barrière interactive anti-robot, l'outil de collecte applique une stratégie à tentative unique : aucune relance automatique, aucune contournement d'en-tête utilisateur et aucune extraction de résumé partiel ne sont autorisés. L'adresse refusée est consignée immédiatement au registre `statut F`, puis remplacée par un substitut primaire ouvert équivalent, tel un texte législatif officiel publié au journal réglementaire, un standard IETF ou NIST en libre accès, ou une archive ouverte épinglée. Cette discipline préserve l'intégrité juridique de la chaîne documentaire tout en maintenant une reproductibilité intégrale hors ligne.
+En présence d'un code retour restrictif ou d'une barrière interactive anti-robot, l'outil de collecte applique une stratégie à tentative unique : aucune relance automatique, aucun contournement d'en-tête utilisateur et aucune extraction de résumé partiel ne sont autorisés. L'adresse refusée est consignée immédiatement au registre `statut F`, puis remplacée par un substitut primaire ouvert équivalent, tel un texte législatif officiel publié au journal réglementaire, un standard IETF ou NIST en libre accès, ou une archive ouverte épinglée. Cette discipline préserve l'intégrité juridique de la chaîne documentaire tout en maintenant une reproductibilité intégrale hors ligne.
 
 Les retraits prononcés lors des passes Wyvern concernent principalement les énoncés formulés au présent pour une norme encore à l'état de brouillon, les attributions erronées entre spécifications voisines et les citations excédant le plafond de quarante mots.
 
@@ -176,52 +176,52 @@ La séparation matérielle entre la prose rédigée dans `manuscrit/` et les reg
 
 ### Catalogue des spécifications épinglées (`specifications-lplus.json`)
 
-- `SPEC-MCP-2026-07-28-TOOLS` — Model Context Protocol (MCP) Server Tools (`2026-07-28@5f5440bb`, FINAL_STANDARD, `SPDX: MIT`, `SRC-072`, `SHA-256: ed550806a58e...`).
-- `SPEC-MCP-2026-07-28-HTTP` — Model Context Protocol (MCP) Streamable HTTP Transport (`2026-07-28@5f5440bb`, FINAL_STANDARD, `SPDX: MIT`, `SRC-074`, `SHA-256: 22574bf11e00...`).
-- `SPEC-MCP-2026-07-28-SEC` — Model Context Protocol (MCP) Authorization Security Considerations (`2026-07-28@5f5440bb`, FINAL_STANDARD, `SPDX: MIT`, `SRC-078`, `SHA-256: 71dd5f0f236c...`).
-- `SPEC-MCP-2026-07-28-SCHEMA` — Model Context Protocol (MCP) TypeScript Schema (`2026-07-28@5f5440bb`, FINAL_STANDARD, `SPDX: MIT`, `SRC-080`, `SHA-256: 742750af0bb8...`).
-- `SPEC-MCP-SEP-2596` — MCP SEP-2596: Feature Lifecycle and Deprecation Policy (`Final@862397ce`, FINAL_STANDARD, `SPDX: MIT`, `SRC-081`, `SHA-256: 6608969be121...`).
-- `SPEC-MCP-SEP-3398` — MCP SEP-3398: Release Cycle Updates (`Accepted@862397ce`, SPEC_DEVELOPMENT, `SPDX: MIT`, `SRC-082`, `SHA-256: 64aee02f2717...`).
-- `SPEC-A2A-V1-0-1-SPEC` — Agent2Agent (A2A) Protocol Specification (`v1.0.1@33035925`, FINAL_STANDARD, `SPDX: Apache-2.0`, `SRC-083`, `SHA-256: 627ccfe6ffb1...`).
-- `SPEC-A2A-V1-0-1-PROTO` — Agent2Agent (A2A) Protobuf Contract (`v1.0.1@33035925`, FINAL_STANDARD, `SPDX: Apache-2.0`, `SRC-084`, `SHA-256: e195bf96ab63...`).
-- `SPEC-A2A-V1-1-0-RC` — Agent2Agent (A2A) Specification Release Candidate (`v1.1.0-rc@78e1d6a1`, RC_OR_ALPHA, `SPDX: Apache-2.0`, `SRC-085`, `SHA-256: 25a940c30c00...`).
-- `SPEC-A2A-TCK-ALPHA3` — A2A Technology Compatibility Kit (a2a-tck) (`1.0.0.alpha3@5daf0144`, RC_OR_ALPHA, `SPDX: Apache-2.0`, `SRC-086`, `SHA-256: 4889ec96433a...`).
-- `SPEC-OPA-REGO-V1-22-4` — Open Policy Agent (OPA) Rego Language Reference (`v1.22.4@ba39415d`, FINAL_STANDARD, `SPDX: Apache-2.0`, `SRC-087`, `SHA-256: 4b242f9eee53...`).
-- `SPEC-OPA-TEST-V1-22-4` — Open Policy Agent (OPA) Policy Testing & Coverage (`v1.22.4@ba39415d`, FINAL_STANDARD, `SPDX: Apache-2.0`, `SRC-088`, `SHA-256: 4e566ce11e03...`).
-- `SPEC-OTEL-V1-41-0` — OpenTelemetry Semantic Conventions GenAI Registry (`v1.41.0@e018fe6f`, FINAL_STANDARD, `SPDX: Apache-2.0`, `SRC-089`, `SHA-256: 74e99ecc4e35...`).
-- `SPEC-OTEL-GENAI-DEV-85` — OpenTelemetry semantic-conventions-genai (85 attributs Development) (`244465e9@2026-10-31`, SPEC_DEVELOPMENT, `SPDX: Apache-2.0`, `SRC-090`, `SHA-256: b05fc94233aa...`).
-- `SPEC-OTEL-AGENT-SPANS` — OpenTelemetry GenAI Agent and Framework Spans (`2026-11-05@main`, SPEC_DEVELOPMENT, `SPDX: Apache-2.0`, `SRC-037`, `SHA-256: 1b2526202e8a...`).
-- `SPEC-FOCUS-V1-4` — FinOps Open Cost and Usage Specification (FOCUS) (`v1.4`, FINAL_STANDARD, `SPDX: CC-BY-4.0`, `SRC-023`, `SHA-256: 67f651d7a5b0...`).
-- `SPEC-JSON-SCHEMA-2020-12` — JSON Schema Draft 2020-12 Core (draft-bhutton-json-schema-01) (`2020-12`, FINAL_STANDARD, `SPDX: BSD-3-Clause`, `SRC-021`, `SHA-256: ece40a120598...`).
-- `SPEC-CLOUDEVENTS-1-0-2` — CloudEvents Specification (`v1.0.2`, FINAL_STANDARD, `SPDX: Apache-2.0`, `SRC-035`, `SHA-256: 8f4d59dd27f8...`).
-- `SPEC-RFC-7493-IJSON` — RFC 7493: The I-JSON Message Format (`RFC 7493`, FINAL_STANDARD, `SPDX: IETF-Trust`, `SRC-004`, `SHA-256: 79cf90d87551...`).
-- `SPEC-RFC-7515-JWS` — RFC 7515: JSON Web Signature (JWS) (`RFC 7515`, FINAL_STANDARD, `SPDX: IETF-Trust`, `SRC-005`, `SHA-256: d5c3662fb6fe...`).
-- `SPEC-RFC-8032-EDDSA` — RFC 8032: Edwards-Curve Digital Signature Algorithm (EdDSA) (`RFC 8032`, FINAL_STANDARD, `SPDX: IETF-Trust`, `SRC-076`, `SHA-256: 29c43d9f68a7...`).
-- `SPEC-RFC-8693-OBO` — RFC 8693: OAuth 2.0 Token Exchange (`RFC 8693`, FINAL_STANDARD, `SPDX: IETF-Trust`, `SRC-041`, `SHA-256: 22f271006669...`).
-- `SPEC-RFC-8707-RESIND` — RFC 8707: Resource Indicators for OAuth 2.0 (`RFC 8707`, FINAL_STANDARD, `SPDX: IETF-Trust`, `SRC-009`, `SHA-256: 7fb70d66034a...`).
-- `SPEC-RFC-8785-JCS` — RFC 8785: JSON Canonicalization Scheme (JCS) (`RFC 8785`, FINAL_STANDARD, `SPDX: IETF-Trust`, `SRC-077`, `SHA-256: be00e8aeddaf...`).
-- `SPEC-RFC-9334-RATS` — RFC 9334: Remote ATtestation procedureS (RATS) Architecture (`RFC 9334 (Informational)`, FINAL_STANDARD, `SPDX: IETF-Trust`, `SRC-010`, `SHA-256: 9cf8aa2510be...`).
-- `SPEC-RFC-9396-RAR` — RFC 9396: OAuth 2.0 Rich Authorization Requests (RAR) (`RFC 9396`, FINAL_STANDARD, `SPDX: IETF-Trust`, `SRC-042`, `SHA-256: e334d06f1408...`).
-- `SPEC-RFC-9449-DPOP` — RFC 9449: OAuth 2.0 Demonstrating Proof of Possession (DPoP) (`RFC 9449`, FINAL_STANDARD, `SPDX: IETF-Trust`, `SRC-043`, `SHA-256: 5e0267f9b880...`).
-- `SPEC-RFC-9943-SCITT` — RFC 9943: Supply Chain Integrity, Transparency, and Trust (SCITT) Architecture (`RFC 9943`, FINAL_STANDARD, `SPDX: IETF-Trust`, `SRC-044`, `SHA-256: 1ed0ffb4007b...`).
-- `SPEC-RFC-9964-MLDSA` — RFC 9964: ML-DSA for JOSE and COSE (`RFC 9964`, FINAL_STANDARD, `SPDX: IETF-Trust`, `SRC-012`, `SHA-256: a7c42dac175c...`).
-- `SPEC-DRAFT-TXTOKENS-11` — OAuth Transaction Tokens (Internet-Draft) (`draft-ietf-oauth-transaction-tokens-11`, IETF_WORKING_GROUP_DRAFT, `SPDX: IETF-Trust`, `SRC-013`, `SHA-256: 64447dddda3a...`).
-- `SPEC-DRAFT-AGENT-REVOC-01` — OAuth 2.0 Agent Authorization Explicit Revocation (Internet-Draft) (`draft-chen-oauth-agent-revocation-01`, IETF_INDIVIDUAL_DRAFT, `SPDX: IETF-Trust`, `SRC-017`, `SHA-256: 25d9788ca0cb...`).
-- `SPEC-DRAFT-WIMSE-PRAC-08` — WIMSE Workload Identity Practices (Internet-Draft) (`draft-ietf-wimse-workload-identity-practices-08`, IETF_WORKING_GROUP_DRAFT, `SPDX: IETF-Trust`, `SRC-047`, `SHA-256: 863cee96178b...`).
-- `SPEC-DRAFT-WIMSE-AIMS-01` — WIMSE AI Identity Management System (Internet-Draft) (`draft-ietf-wimse-aims-01`, IETF_WORKING_GROUP_DRAFT, `SPDX: IETF-Trust`, `SRC-048`, `SHA-256: ab53c74913dd...`).
-- `SPEC-DRAFT-IDEMPOTENCY-KEY` — The Idempotency-Key HTTP Header Field (Internet-Draft) (`draft-ietf-httpapi-idempotency-key-header-09`, IETF_WORKING_GROUP_DRAFT, `SPDX: IETF-Trust`, `SRC-036`, `SHA-256: d737453f458f...`).
-- `SPEC-NIST-FIPS-203` — NIST FIPS 203: ML-KEM Key-Encapsulation Mechanism (`FIPS 203`, FIPS_STANDARD, `SPDX: NIST-PD`, `SRC-049`, `SHA-256: bb840af1e6a3...`).
-- `SPEC-NIST-FIPS-204` — NIST FIPS 204: ML-DSA Digital Signature Standard (`FIPS 204`, FIPS_STANDARD, `SPDX: NIST-PD`, `SRC-050`, `SHA-256: 14b6c1706d2c...`).
-- `SPEC-NIST-FIPS-205` — NIST FIPS 205: SLH-DSA Stateless Hash-Based Signature Standard (`FIPS 205`, FIPS_STANDARD, `SPDX: NIST-PD`, `SRC-018`, `SHA-256: c27445a0f736...`).
-- `SPEC-OPENID-CIBA-1-0` — OpenID Connect Client-Initiated Backchannel Authentication Core 1.0 (`1.0`, FINAL_STANDARD, `SPDX: OIDF-Spec`, `SRC-045`, `SHA-256: fb983307e736...`).
-- `SPEC-OPENID-SSF-1-0` — OpenID Shared Signals Framework Specification 1.0 (`1.0`, FINAL_STANDARD, `SPDX: OIDF-Spec`, `SRC-019`, `SHA-256: 68263a1cbe31...`).
-- `SPEC-OPENID-CAEP-1-0` — OpenID Continuous Access Evaluation Profile (CAEP) 1.0 (`1.0`, FINAL_STANDARD, `SPDX: OIDF-Spec`, `SRC-020`, `SHA-256: f3114cfa038f...`).
-- `SPEC-REG-EU-AI-ACT-2024-1689` — Règlement (UE) 2024/1689 sur l'intelligence artificielle (EU AI Act) (`(UE) 2024/1689 + (UE) 2026/1744`, REGULATION_IN_FORCE, `SPDX: EU-Public-Domain`, `SRC-060`, `SHA-256: e0a79e4f278c...`).
-- `SPEC-REG-EN-18286-2026` — Décision d'exécution (UE) 2026/2274 — Norme harmonisée EN 18286:2026 (QMS Art. 17) (`(UE) 2026/2274`, REGULATION_IN_FORCE, `SPDX: EU-Public-Domain`, `SRC-067`, `SHA-256: 3d1dcffce8ae...`).
-- `SPEC-REG-DORA-2022-2554` — Règlement (UE) 2022/2554 sur la résilience opérationnelle numérique (DORA) (`(UE) 2022/2554`, REGULATION_IN_FORCE, `SPDX: EU-Public-Domain`, `SRC-062`, `SHA-256: 6e4b138de7f0...`).
-- `SPEC-REG-QC-LOI25-2021-C25` — LQ 2021, c. 25 — Loi modernisant la protection des renseignements personnels (Loi 25) (`LQ 2021, c. 25`, REGULATION_IN_FORCE, `SPDX: QC-Public-Domain`, `SRC-063`, `SHA-256: 829e67f777ca...`).
-- `SPEC-REG-BSIF-E23-2027` — BSIF / OSFI Ligne directrice E-23 — Gestion du risque de modélisation (`E-23 (eff. 2027-05-01)`, REGULATION_ADOPTED_FUTURE, `SPDX: Canada-OGL`, `SRC-065`, `SHA-256: 60ef80b531aa...`).
-- `SPEC-REG-BSIF-B10-2023` — BSIF / OSFI Guideline B-10 — Third-Party Risk Management (`B-10 (2023)`, REGULATION_IN_FORCE, `SPDX: Canada-OGL`, `SRC-068`, `SHA-256: db7ccc401ea3...`).
+- `SPEC-MCP-2026-07-28-TOOLS` — Model Context Protocol (MCP) Server Tools — `2026-07-28@5f5440bb`, FINAL_STANDARD, `SPDX: MIT`, `SRC-072`, `SHA-256: ed550806a58e...`.
+- `SPEC-MCP-2026-07-28-HTTP` — Model Context Protocol (MCP) Streamable HTTP Transport — `2026-07-28@5f5440bb`, FINAL_STANDARD, `SPDX: MIT`, `SRC-074`, `SHA-256: 22574bf11e00...`.
+- `SPEC-MCP-2026-07-28-SEC` — Model Context Protocol (MCP) Authorization Security Considerations — `2026-07-28@5f5440bb`, FINAL_STANDARD, `SPDX: MIT`, `SRC-078`, `SHA-256: 71dd5f0f236c...`.
+- `SPEC-MCP-2026-07-28-SCHEMA` — Model Context Protocol (MCP) TypeScript Schema — `2026-07-28@5f5440bb`, FINAL_STANDARD, `SPDX: MIT`, `SRC-080`, `SHA-256: 742750af0bb8...`.
+- `SPEC-MCP-SEP-2596` — MCP SEP-2596: Feature Lifecycle and Deprecation Policy — `Final@862397ce`, FINAL_STANDARD, `SPDX: MIT`, `SRC-081`, `SHA-256: 6608969be121...`.
+- `SPEC-MCP-SEP-3398` — MCP SEP-3398: Release Cycle Updates — `Accepted@862397ce`, SPEC_DEVELOPMENT, `SPDX: MIT`, `SRC-082`, `SHA-256: 64aee02f2717...`.
+- `SPEC-A2A-V1-0-1-SPEC` — Agent2Agent (A2A) Protocol Specification — `v1.0.1@33035925`, FINAL_STANDARD, `SPDX: Apache-2.0`, `SRC-083`, `SHA-256: 627ccfe6ffb1...`.
+- `SPEC-A2A-V1-0-1-PROTO` — Agent2Agent (A2A) Protobuf Contract — `v1.0.1@33035925`, FINAL_STANDARD, `SPDX: Apache-2.0`, `SRC-084`, `SHA-256: e195bf96ab63...`.
+- `SPEC-A2A-V1-1-0-RC` — Agent2Agent (A2A) Specification Release Candidate — `v1.1.0-rc@78e1d6a1`, RC_OR_ALPHA, `SPDX: Apache-2.0`, `SRC-085`, `SHA-256: 25a940c30c00...`.
+- `SPEC-A2A-TCK-ALPHA3` — A2A Technology Compatibility Kit (a2a-tck) — `1.0.0.alpha3@5daf0144`, RC_OR_ALPHA, `SPDX: Apache-2.0`, `SRC-086`, `SHA-256: 4889ec96433a...`.
+- `SPEC-OPA-REGO-V1-22-4` — Open Policy Agent (OPA) Rego Language Reference — `v1.22.4@ba39415d`, FINAL_STANDARD, `SPDX: Apache-2.0`, `SRC-087`, `SHA-256: 4b242f9eee53...`.
+- `SPEC-OPA-TEST-V1-22-4` — Open Policy Agent (OPA) Policy Testing & Coverage — `v1.22.4@ba39415d`, FINAL_STANDARD, `SPDX: Apache-2.0`, `SRC-088`, `SHA-256: 4e566ce11e03...`.
+- `SPEC-OTEL-V1-41-0` — OpenTelemetry Semantic Conventions GenAI Registry — `v1.41.0@e018fe6f`, FINAL_STANDARD, `SPDX: Apache-2.0`, `SRC-089`, `SHA-256: 74e99ecc4e35...`.
+- `SPEC-OTEL-GENAI-DEV-85` — OpenTelemetry semantic-conventions-genai (85 attributs Development) — `244465e9@2026-10-31`, SPEC_DEVELOPMENT, `SPDX: Apache-2.0`, `SRC-090`, `SHA-256: b05fc94233aa...`.
+- `SPEC-OTEL-AGENT-SPANS` — OpenTelemetry GenAI Agent and Framework Spans — `2026-11-05@main`, SPEC_DEVELOPMENT, `SPDX: Apache-2.0`, `SRC-037`, `SHA-256: 1b2526202e8a...`.
+- `SPEC-FOCUS-V1-4` — FinOps Open Cost and Usage Specification (FOCUS) — `v1.4`, FINAL_STANDARD, `SPDX: CC-BY-4.0`, `SRC-023`, `SHA-256: 67f651d7a5b0...`.
+- `SPEC-JSON-SCHEMA-2020-12` — JSON Schema Draft 2020-12 Core (draft-bhutton-json-schema-01) — `2020-12`, FINAL_STANDARD, `SPDX: BSD-3-Clause`, `SRC-021`, `SHA-256: ece40a120598...`.
+- `SPEC-CLOUDEVENTS-1-0-2` — CloudEvents Specification — `v1.0.2`, FINAL_STANDARD, `SPDX: Apache-2.0`, `SRC-035`, `SHA-256: 8f4d59dd27f8...`.
+- `SPEC-RFC-7493-IJSON` — RFC 7493: The I-JSON Message Format — `RFC 7493`, FINAL_STANDARD, `SPDX: IETF-Trust`, `SRC-004`, `SHA-256: 79cf90d87551...`.
+- `SPEC-RFC-7515-JWS` — RFC 7515: JSON Web Signature (JWS) — `RFC 7515`, FINAL_STANDARD, `SPDX: IETF-Trust`, `SRC-005`, `SHA-256: d5c3662fb6fe...`.
+- `SPEC-RFC-8032-EDDSA` — RFC 8032: Edwards-Curve Digital Signature Algorithm (EdDSA) — `RFC 8032`, FINAL_STANDARD, `SPDX: IETF-Trust`, `SRC-076`, `SHA-256: 29c43d9f68a7...`.
+- `SPEC-RFC-8693-OBO` — RFC 8693: OAuth 2.0 Token Exchange — `RFC 8693`, FINAL_STANDARD, `SPDX: IETF-Trust`, `SRC-041`, `SHA-256: 22f271006669...`.
+- `SPEC-RFC-8707-RESIND` — RFC 8707: Resource Indicators for OAuth 2.0 — `RFC 8707`, FINAL_STANDARD, `SPDX: IETF-Trust`, `SRC-009`, `SHA-256: 7fb70d66034a...`.
+- `SPEC-RFC-8785-JCS` — RFC 8785: JSON Canonicalization Scheme (JCS) — `RFC 8785`, FINAL_STANDARD, `SPDX: IETF-Trust`, `SRC-077`, `SHA-256: be00e8aeddaf...`.
+- `SPEC-RFC-9334-RATS` — RFC 9334: Remote ATtestation procedureS (RATS) Architecture — `RFC 9334 (Informational)`, FINAL_STANDARD, `SPDX: IETF-Trust`, `SRC-010`, `SHA-256: 9cf8aa2510be...`.
+- `SPEC-RFC-9396-RAR` — RFC 9396: OAuth 2.0 Rich Authorization Requests (RAR) — `RFC 9396`, FINAL_STANDARD, `SPDX: IETF-Trust`, `SRC-042`, `SHA-256: e334d06f1408...`.
+- `SPEC-RFC-9449-DPOP` — RFC 9449: OAuth 2.0 Demonstrating Proof of Possession (DPoP) — `RFC 9449`, FINAL_STANDARD, `SPDX: IETF-Trust`, `SRC-043`, `SHA-256: 5e0267f9b880...`.
+- `SPEC-RFC-9943-SCITT` — RFC 9943: Supply Chain Integrity, Transparency, and Trust (SCITT) Architecture — `RFC 9943`, FINAL_STANDARD, `SPDX: IETF-Trust`, `SRC-044`, `SHA-256: 1ed0ffb4007b...`.
+- `SPEC-RFC-9964-MLDSA` — RFC 9964: ML-DSA for JOSE and COSE — `RFC 9964`, FINAL_STANDARD, `SPDX: IETF-Trust`, `SRC-012`, `SHA-256: a7c42dac175c...`.
+- `SPEC-DRAFT-TXTOKENS-11` — OAuth Transaction Tokens (Internet-Draft) — `draft-ietf-oauth-transaction-tokens-11`, IETF_WORKING_GROUP_DRAFT, `SPDX: IETF-Trust`, `SRC-013`, `SHA-256: 64447dddda3a...`.
+- `SPEC-DRAFT-AGENT-REVOC-01` — OAuth 2.0 Agent Authorization Explicit Revocation (Internet-Draft) — `draft-chen-oauth-agent-revocation-01`, IETF_INDIVIDUAL_DRAFT, `SPDX: IETF-Trust`, `SRC-017`, `SHA-256: 25d9788ca0cb...`.
+- `SPEC-DRAFT-WIMSE-PRAC-08` — WIMSE Workload Identity Practices (Internet-Draft) — `draft-ietf-wimse-workload-identity-practices-08`, IETF_WORKING_GROUP_DRAFT, `SPDX: IETF-Trust`, `SRC-047`, `SHA-256: 863cee96178b...`.
+- `SPEC-DRAFT-WIMSE-AIMS-01` — WIMSE AI Identity Management System (Internet-Draft) — `draft-ietf-wimse-aims-01`, IETF_WORKING_GROUP_DRAFT, `SPDX: IETF-Trust`, `SRC-048`, `SHA-256: ab53c74913dd...`.
+- `SPEC-DRAFT-IDEMPOTENCY-KEY` — The Idempotency-Key HTTP Header Field (Internet-Draft) — `draft-ietf-httpapi-idempotency-key-header-09`, IETF_WORKING_GROUP_DRAFT, `SPDX: IETF-Trust`, `SRC-036`, `SHA-256: d737453f458f...`.
+- `SPEC-NIST-FIPS-203` — NIST FIPS 203: ML-KEM Key-Encapsulation Mechanism — `FIPS 203`, FIPS_STANDARD, `SPDX: NIST-PD`, `SRC-049`, `SHA-256: bb840af1e6a3...`.
+- `SPEC-NIST-FIPS-204` — NIST FIPS 204: ML-DSA Digital Signature Standard — `FIPS 204`, FIPS_STANDARD, `SPDX: NIST-PD`, `SRC-050`, `SHA-256: 14b6c1706d2c...`.
+- `SPEC-NIST-FIPS-205` — NIST FIPS 205: SLH-DSA Stateless Hash-Based Signature Standard — `FIPS 205`, FIPS_STANDARD, `SPDX: NIST-PD`, `SRC-018`, `SHA-256: c27445a0f736...`.
+- `SPEC-OPENID-CIBA-1-0` — OpenID Connect Client-Initiated Backchannel Authentication Core 1.0 — `1.0`, FINAL_STANDARD, `SPDX: OIDF-Spec`, `SRC-045`, `SHA-256: fb983307e736...`.
+- `SPEC-OPENID-SSF-1-0` — OpenID Shared Signals Framework Specification 1.0 — `1.0`, FINAL_STANDARD, `SPDX: OIDF-Spec`, `SRC-019`, `SHA-256: 68263a1cbe31...`.
+- `SPEC-OPENID-CAEP-1-0` — OpenID Continuous Access Evaluation Profile (CAEP) 1.0 — `1.0`, FINAL_STANDARD, `SPDX: OIDF-Spec`, `SRC-020`, `SHA-256: f3114cfa038f...`.
+- `SPEC-REG-EU-AI-ACT-2024-1689` — Règlement (UE) 2024/1689 sur l'intelligence artificielle (EU AI Act) — `(UE) 2024/1689 + (UE) 2026/1744`, REGULATION_IN_FORCE, `SPDX: EU-Public-Domain`, `SRC-060`, `SHA-256: e0a79e4f278c...`.
+- `SPEC-REG-EN-18286-2026` — Décision d'exécution (UE) 2026/2274 — Norme harmonisée EN 18286:2026 (QMS Art. 17) — `(UE) 2026/2274`, REGULATION_IN_FORCE, `SPDX: EU-Public-Domain`, `SRC-067`, `SHA-256: 3d1dcffce8ae...`.
+- `SPEC-REG-DORA-2022-2554` — Règlement (UE) 2022/2554 sur la résilience opérationnelle numérique (DORA) — `(UE) 2022/2554`, REGULATION_IN_FORCE, `SPDX: EU-Public-Domain`, `SRC-062`, `SHA-256: 6e4b138de7f0...`.
+- `SPEC-REG-QC-LOI25-2021-C25` — LQ 2021, c. 25 — Loi modernisant la protection des renseignements personnels (Loi 25) — `LQ 2021, c. 25`, REGULATION_IN_FORCE, `SPDX: QC-Public-Domain`, `SRC-063`, `SHA-256: 829e67f777ca...`.
+- `SPEC-REG-BSIF-E23-2027` — BSIF / OSFI Ligne directrice E-23 — Gestion du risque de modélisation — `E-23 (eff. 2027-05-01)`, REGULATION_ADOPTED_FUTURE, `SPDX: Canada-OGL`, `SRC-065`, `SHA-256: 60ef80b531aa...`.
+- `SPEC-REG-BSIF-B10-2023` — BSIF / OSFI Guideline B-10 — Third-Party Risk Management — `B-10 (2023)`, REGULATION_IN_FORCE, `SPDX: Canada-OGL`, `SRC-068`, `SHA-256: db7ccc401ea3...`.
 
 ### Journal des accès refusés consignés en statut F (exclus des preuves)
 
@@ -244,7 +244,7 @@ La séparation matérielle entre la prose rédigée dans `manuscrit/` et les reg
 
 - **Unité auditée :** `8 - Manuel/manuscrit/00 - Liminaire.md` (`00-liminaire`)
 - **Agent auditeur :** `auditeur-wyvern-ch00` (contexte indépendant de rédaction, barrière `G2` selon `contrat-aq.md` § 2.2 ; révision indépendante complète après première passe)
-- **Base fermée autorisée :** `8 - Manuel/sources/ch00-sources.md` (`[1]`–`[15]`), textes intégraux bruts `8 - Manuel/recherche/corpus_l_plus/*.txt`, registres `8 - Manuel/registre/*.json`, manifestes `8 - Manuel/recherche/{manifeste-sources-sha256.json,registre-statut-f.json}`, rapport `8 - Manuel/aq/rapports-g0.json`, spécifications `8 - Manuel/specs/*.md`, sources amont des renvois prospectifs (`sources/ch01..ch04-sources.md`) et mesures directes sur le dépôt (`0 - PDF-MD/`, `8 - Trousse/`, `8 - Manuel/{manuscrit,diagrammes,outils}/`)
+- **Base fermée autorisée :** `8 - Manuel/sources/ch00-sources.md` (`[1]`–`[16]`, `[16]` `SRC-082` ajouté en `G3` passe 2), textes intégraux bruts `8 - Manuel/recherche/corpus_l_plus/*.txt`, registres `8 - Manuel/registre/*.json`, manifestes `8 - Manuel/recherche/{manifeste-sources-sha256.json,registre-statut-f.json}`, rapport `8 - Manuel/aq/rapports-g0.json`, spécifications `8 - Manuel/specs/*.md`, sources amont des renvois prospectifs (`sources/ch01..ch04-sources.md`) et mesures directes sur le dépôt (`0 - PDF-MD/`, `8 - Trousse/`, `8 - Manuel/{manuscrit,diagrammes,outils}/`)
 - **Date de référence et de gel :** `2026-12-02` (`2 décembre 2026`)
 - **Passe G2 initiale + révision G3 P1** : **89** affirmations atomiques auditées (`61` `supporté`, `25` `imprécis`, `3` `non supporté` dont `2` réancrées et `1` supprimée)
 - **Actions appliquées dans `00 - Liminaire.md` :** `1` affirmation supprimée en passe 1 (`CH00-058`, *EU Data Act* art. `29(1)` absent de la base `L+`), `2` affirmations réancrées (`CH00-003` en passe 1 : `3 181` pages PDF / `3 177` numérotées ; `CH00-012` en G3 P1 : surreprésentation des firmes `< 20` employés selon `SRC-016`), `25` affirmations `imprécis` rectifiées
@@ -329,7 +329,7 @@ La séparation matérielle entre la prose rédigée dans `manuscrit/` et les reg
 | `CH00-039` | `L47` | La barrière `G0` s'exécute exclusivement sur `Python 3.12+` (validée sous `Python 3.14.10`) et sur le moteur autonome `OPA / Rego` `v1.22.4` (`Apache-2.0`). | `supporté` | `8 - Trousse/pyproject.toml`, `8 - Trousse/tools-lock.json`, `aq/rapports-g0.json` (`python_version: "3.14.10"`, `opa_version: "1.22.4"`). | Aucune · **`supporté`** |
 | `CH00-040` | `L47` | Exclusions en `G0` : aucune dépendance requise à `Rust`, `Go`, `Firecracker` (`/dev/kvm`), `PostgreSQL`, `OpenFGA`, `Nginx`, `Envoy` ou `Cedar`. | `supporté` | `specs/contrat-aq.md L46, L51`, `specs/prd.md`. | Aucune · **`supporté`** |
 | `CH00-041` | `L47` | Bibliothèques Python épinglées par SHA-256 dans `requirements.lock` pour `pip --require-hashes`, et binaire OPA verrouillé dans `tools-lock.json`. | `supporté` | `8 - Trousse/requirements.lock` (`17` paquets, `205` lignes `--hash=sha256:`), `8 - Trousse/tools-lock.json`, `aq/rapports-g0.json` (`lockfile_check`). | Aucune · **`supporté`** |
-| `CH00-042` | `L47` | Contrôle contre `spdx-allowlist.json` interdisant toute licence incompatible `MIT`, incluant l'exclusion documentée en architecture (`specs/architecture-trousse-g0.md`) de tout composant `LGPL-3.0-or-later` tel que `*slh-dsa*` au profit de `slh_dsa_fips205.py` (`MIT`). | `imprécis` | Aucune source `L+` n'archive la fiche PyPI externe `slh-dsa` ; l'exclusion est documentée dans `specs/architecture-trousse-g0.md L110`, vérifiée par `spdx-allowlist.json` et implémentée dans `8 - Trousse/authz_pqc_audit/slh_dsa_fips205.py L1`. | **Rectifié passe 1 (`L47`)** : attribution explicite à `specs/architecture-trousse-g0.md` et `slh_dsa_fips205.py` · **`supporté`** |
+| `CH00-042` | `L47` | Contrôle contre `spdx-allowlist.json` interdisant toute licence incompatible `MIT`, incluant l'exclusion documentée en architecture (`specs/architecture-trousse-g0.md`) de tout composant `LGPL-3.0-or-later` tel que `slh-dsa` au profit de `slh_dsa_fips205.py` (`MIT`). | `imprécis` | Aucune source `L+` n'archive la fiche PyPI externe `slh-dsa` ; l'exclusion est documentée dans `specs/architecture-trousse-g0.md L110`, vérifiée par `spdx-allowlist.json` et implémentée dans `8 - Trousse/authz_pqc_audit/slh_dsa_fips205.py L1`. | **Rectifié passe 1 (`L47`)** : attribution explicite à `specs/architecture-trousse-g0.md` et `slh_dsa_fips205.py` · **`supporté`** |
 | `CH00-043` | `L49–L53` | La Figure 0 (`diagrammes/rendus/Fig-00.svg`) distingue par un trait plein ardoise la frontière déterministe possédée en `G0` face aux composants probabilistes en pointillé ambre. | `supporté` | `8 - Manuel/diagrammes/Fig-00.puml L6–18, L91–95`, `8 - Manuel/diagrammes/rendus/Fig-00.svg`. | Aucune · **`supporté`** |
 | `CH00-044` | `L53` | Les `4` suites de vecteurs officiels tiers alimentent `G0` en amont contre l'auto-validation circulaire, et les empreintes SHA-256 issues de `G0` verrouillent les extraits avant `G1` à `G5`. | `supporté` | `8 - Manuel/diagrammes/Fig-00.puml L58, L65–81`, `aq/rapports-g0.json`. | Aucune · **`supporté`** |
 
@@ -357,7 +357,7 @@ La séparation matérielle entre la prose rédigée dans `manuscrit/` et les reg
 | `CH00-057` | `L74` | Date de gel `2026-12-02` et partition en `4` registres (empirique, normatif/réglementaire, architectural `80/20`, vérifié `DC-P12`). | `supporté` | `specs/manifest.json`, `specs/prd.md`, `specs/contrat-aq.md`. | Aucune · **`supporté`** |
 | `CH00-058` | `L76` (ancien) | Article `29(1)` du règlement européen *EU Data Act* applicable le `12 janvier 2027`. | `non supporté` | Aucune source `L+` dans `corpus_l_plus/*.txt`, `manifeste-sources-sha256.json` ou `sources/ch00..ch04-sources.md` ne contient le texte de `(UE) 2023/2854`, son art. `29(1)` ni le `12 janvier 2027` (`AO-02` interdit les tomes `1–7` comme preuve). | **Supprimé passe 1 (`L76`)** : phrase retirée du manuscrit · *retiré* |
 | `CH00-059` | `L76` | Plafond de validité des certificats TLS publics à `100` jours dès le `15 mars 2027`, puis à `47` jours le `15 mars 2029` (Chapitre 02). | `supporté` | `SRC-053.txt`, `sources/ch02-sources.md`, `Chapitre 02 L23`. | Aucune · **`supporté`** |
-| `CH00-060` | `L76` | Pour MCP `2026-07-28` (`[10]`), la publication semestrielle de `SEP-3398` est attendue le `30 mars 2027` (Chapitre 01). | `supporté` | `SRC-072.txt`, `SRC-082.txt L13–17, L203`, `Chapitre 01 L258`. | Aucune · **`supporté`** |
+| `CH00-060` | `L76` | Pour MCP `2026-07-28` (`[10]`), la prochaine publication semestrielle de la spécification (instaurée par `SEP-3398`, statut `Accepted`) est attendue le `30 mars 2027` (Chapitre 01) (`[16]`). | `supporté` (révisé `G3` P2) | `SRC-072.txt`, `SRC-082.txt L1–17, L203`, `Chapitre 01 L260`. | Rectifié en `G3` P2 (`L76` + `[16]` `SRC-082` dans `ch00-sources.md`) · **`supporté`** |
 | `CH00-061` | `L76` | En vertu de `SEP-2596`, les primitives dépréciées dès `2026-07-28` (`roots`, `sampling`, `logging`) demeureront au moins `12` mois avant admissibilité au retrait dès le `28 juillet 2027` sur décision des mainteneurs, alors que `HTTP+SSE` n'a reçu qu'un délai transitoire de `3` mois. | `imprécis` | `SRC-080.txt L106, L724, L736, L801` ; `SRC-081.txt L106–111, L166–176, L223–235` : l'ancien libellé *courra jusqu'au 28 juillet 2027* omettait que `28 juillet 2027` ouvre l'admissibilité sur décision (pas de retrait automatique) et passait sous silence le délai transitoire de `3` mois de `HTTP+SSE`. | **Rectifié passes 1 & 2 (`L76`)** : primitives `roots`/`sampling`/`logging`, admissibilité dès le `28 juillet 2027` sur décision, et délai `3` mois pour `HTTP+SSE` · **`supporté`** |
 | `CH00-062` | `L78` | Ligne directrice `E-23` du BSIF prendra effet le `1er mai 2027` (`[12]`). | `supporté` | `SRC-065.txt` (*Le 1 mai 2027*, *Ligne directrice E-23*). | Aucune · **`supporté`** |
 | `CH00-063` | `L78` | Repère AMF du `1er mai 2027` sous réserve via `AIBanks.ca` (`[15]`, T4 `1er novembre 2026`, `35` institutions évaluées et `210` déploiements sur `27` d'entre elles) ; `lautorite.qc.ca` (`HTTP 403`) et `QC-AMF-NOTE-2026` en **Statut F**. | `imprécis` | `SRC-071.txt L5, L12, L183` (`scored 35 institutions`, `210 AI uses at 27 institutions`) ; `recherche/registre-statut-f.json`. | **Rectifié passe 1 (`L78`)** : précision `35 institutions` et `210 déploiements sur 27 d'entre elles` · **`supporté`** |
@@ -397,11 +397,31 @@ La séparation matérielle entre la prose rédigée dans `manuscrit/` et les reg
 
 ## 3. Contrôle final post-rectifications (`verifie_manuscrit.py --unit 00-liminaire --strict`)
 
-- **Mots vérifiés (`00 - Liminaire.md`) :** `3 766` mots (plage autorisée `[3 220, 3 780]`, conforme `CA-01`).
-- **Base fermée citée (`CA-09`, `CA-10`) :** `15 / 15` sources (`[1]`–`[15]`) citées, `0` référence orpheline, `0` source Statut F non qualifiée (`CA-11`).
+- **Mots vérifiés (`00 - Liminaire.md`) :** `3 766` mots en passe G2 initiale, puis `3 718` en post-G5 et `3 774` mots post-rectification G3 passe 2 (plage autorisée `[3 220, 3 780]`, conforme `CA-01`).
+- **Base fermée citée (`CA-09`, `CA-10`) :** `16 / 16` sources (`[1]`–`[16]`) citées, `0` référence orpheline, `0` source Statut F non qualifiée (`CA-11`).
 - **Hygiène typographique et structurelle (`CA-02..CA-08`) :** `0` symbole dollar non échappé dans `00 - Liminaire.md` et `ch00-ancrage.md`, `0` collision `12-grammes`, `1` tableau (`Tableau 0.1`), `0` bloc de code clôturé au liminaire, `3` vedettes du glossaire présentes (`Autonomie bornée`, `Clause non-avis`, `Statut F`).
 - **Barrière `G0` vérifiée (`execute_g0.py`) :** exécution indépendante vers fichier temporaire avec `--verify-sync-manifest` -> `exit 0` (`overall_status: "PASS"`), tous compteurs et empreintes conformes à `aq/rapports-g0.json`.
 - **Verdict final — supportés** : **88** (`100 % supporté`, `0` `non supporté`).
+
+
+---
+
+## Révision `G2` différentielle post-lissage `G5` (`e9982661`)
+
+- **Périmètre contrôlé (`00 - Liminaire.md`) :** `L47`, `L61`, `L63`, `L92`, `L105`, `L106`, `L110` (`3 718` mots vérifiés dans `[3 220, 3 780]`).
+- **Rectifications appliquées suite au contre-audit :** précision sur la couverture de lignes OPA `100 %` sur la suite complète `45/45` incluant les scénarios négatifs (`L61`, `L92`), distinction exacte des registres, manifestes et paramètres du dépôt (`L63`), formulation normative « exige » sur la passe `G3` à froid (`L106`) et cohérence terminologique « huit étapes (jalons `step_trace`) » (`L110`).
+- **Verdict final post-G5 (`00-liminaire`) :** **`100 % supporté`** (`0` `non supporté`).
+
+
+## Enrichissement d'ancrage en place pré-`G3` passe 2 (zéro décalage)
+
+- **Périmètre édité (`00 - Liminaire.md`) :** resserrement stylistique non exclu (`L7`, `L9`, `L11`), rattachement explicite des preuves logicielles à `aq/rapports-g0.json` (`L47`, `L53`, `L61`) et des renvois réglementaires/normatifs déjà validés en `ch00-sources.md` (`[10]` `SRC-072` en `L59`/`L110`, `[11]` `SRC-066`, `[12]` `SRC-065`, `[13]` `SRC-063`, `[14]` `SRC-060` en `L74`/`L84`).
+- **Verdict d'ancrage :** `100 % supporté` (`0` nouvelle source, `0` énoncé spéculatif, indices `P001..P037` inchangés).
+
+## Rectification `G3` passe 2 (Item `7` — `00-liminaire:P026:S01`)
+
+- **Écart constaté (`Recollateur G3 Passe 2`, `7180a9a4`) :** `00 - Liminaire.md#L76` évoquait « la publication semestrielle de `SEP-3398` » en la rattachant uniquement à `[10]` (`SRC-072`), alors que `SEP-3398` (`SRC-082`) possède déjà le statut `Accepted` (`2026-10-14`) et instaure la cadence semestrielle des publications de la **spécification MCP** (prochaine publication reportée au `30 mars 2027`).
+- **Rectification appliquée :** distinction explicite en `00 - Liminaire.md#L76` entre la révision épinglée MCP `2026-07-28` (`[10]`, `SRC-072`) et la prochaine publication semestrielle de la spécification instaurée par `SEP-3398` (`Accepted`, `[16]` `SRC-082` ajouté dans `sources/ch00-sources.md`).
 
 #### `ch01-ancrage.md`
 
@@ -449,7 +469,7 @@ La séparation matérielle entre la prose rédigée dans `manuscrit/` et les reg
 | ID | Ligne | Énoncé atomique vérifiable | Verdict initial | Preuve primaire vérifiée (`SRC-NNN` / dépôt) | Action appliquée & verdict final |
 | --- | :---: | --- | :---: | --- | --- |
 | `CH01-008` | `L15` | Thèse architecturale posant que la frontière déterministe/probabiliste évite l'accumulation multiplicative d'erreurs sur consignes en langage naturel. | `supporté` | Cadre architectural cohérent avec `[1]` et `[2]`. | Aucune · **`supporté`** |
-| `CH01-009` | `L19` | Loi multiplicative NIST/SEMATECH § 8.1.8.1 (`R_c(t) = \prod_{i=1}^k R_i(t)` `[1]`) et exemple `0,94^{10} \approx 0,5386`, soit `53,9 %` ; la prose attribuait *"modèles en série (loi de Lusser)"*, les *"étapes"* et l'exemple numérique à `[1]`. | `imprécis` | `SRC-024.txt L12–59` intitule la section *Competing risk model* (`R_c(t) = \prod R_i(t)` sur `k` modes de défaillance), sans mentionner *"étapes"*, Lusser ni `0,94^{10}`. | **Rectifié (`L19`)** : borné `[1]` aux *modes ou mécanismes de défaillance* (`R_c(t)`) et isolé la transposition aux `10` étapes séquentielles et son application arithmétique · **`supporté`** |
+| `CH01-009` | `L19` | Loi multiplicative NIST/SEMATECH § 8.1.8.1 (`R_c(t) = ∏ R_i(t)` pour `i = 1..k` `[1]`) et exemple `0,94¹⁰ ≈ 0,5386`, soit `53,9 %` ; la prose attribuait *"modèles en série (loi de Lusser)"*, les *"étapes"* et l'exemple numérique à `[1]`. | `imprécis` | `SRC-024.txt L12–59` intitule la section *Competing risk model* (`R_c(t) = ∏ R_i(t)` sur `k` modes de défaillance), sans mentionner *"étapes"*, Lusser ni `0,94¹⁰`. | **Rectifié (`L19`)** : borné `[1]` aux *modes ou mécanismes de défaillance* (`R_c(t)`) et isolé la transposition aux `10` étapes séquentielles et son application arithmétique · **`supporté`** |
 | `CH01-010` | `L21` | Étude MAP (`[2]`, Pan *et al.*, déc. 2025) : `68 %` des agents déployés exécutent au plus `10` étapes avant intervention humaine, et `80 %` des études de cas (`16` sur `20`) suivent des enchaînements prédéfinis bornés. | `supporté` | `SRC-027.txt L25, L135, L639–641, L659, L671, L749–751` (`Fig. 7a`, `N=60`). | Aucune · **`supporté`** |
 | `CH01-011` | `L21` | Chiffres MAP `70 %` (sans réentraînement), `79 %` (invites manuelles ou assistées) et `74 %` (évaluation humaine) : la prose omettait l'effectif d'enquête (`306` praticiens, `86` déployés) et confondait les bases d'échantillon. | `imprécis` | `SRC-027.txt L19–20, L541–542` (`14/20 = 70 %` sur études de cas), `L621, L635` (`79 %` sur enquête déployés `N=53`), `L773, L858, L864` (`74,2 %`, `23/31` sur `N=31`). | **Rectifié (`L21`)** : distingué les `306` praticiens (`86` systèmes déployés), les `20` études de cas (`14/20` = `70 %`) et les taux de l'enquête (`79 %`, `74 %`) · **`supporté`** |
 | `CH01-012` | `L23` | Cadre CoALA (`[4]`, Sumers *et al.*) : mémoire de travail, trois mémoires à long terme (procédurale, sémantique, épisodique), espace d'actions structuré (internes/externes) et boucle décisionnelle sans barrière bloquante. | `supporté` | `SRC-026.txt L16–22, L80–84, L438–480, L634–701`. | Aucune · **`supporté`** |
@@ -458,7 +478,7 @@ La séparation matérielle entre la prose rédigée dans `manuscrit/` et les reg
 | `CH01-015` | `L31` | RFC 9334 (`RATS`), catégorie *Informational* et énumération des rôles (*Attester*, *Verifier*, *Relying Party*, *Endorser*, *Reference Value Provider*) présentée comme exhaustive. | `imprécis` | `registre/specifications-lplus.json`, `0 - PDF-MD/1 - Compendium 2026.md § 47.3.1 L10800–10802`, `corpus_l_plus/SRC-010.txt L700–750` (qui inclut aussi *Relying Party Owner* et *Verifier Owner*). | **Rectifié (`L31`)** : ajouté `notamment` avant les cinq rôles cités · **`supporté`** |
 | `CH01-016` | `L31` | Statuts des spécifications utilisées dans `8 - Trousse/` : l'énoncé qualifiait collectivement JSON Schema Draft 2020-12 (`[3]`), RFC 8785 (`[12]`) et RFC 7515 (`[13]`) de *"standards ratifiés"*. | `imprécis` | `SRC-021.txt L1–24` = *Internet-Draft (Intended Status: Informational)* ; `SRC-077.txt L3–5, L32–40` = *Independent Submission, Category: Informational* ; seul `SRC-005.txt L3, L23` = *Standards Track*. | **Rectifié (`L31`)** : distingué explicitement *Internet-Draft Informational* (`[3]`), *Independent Submission Informational* (`[12]`) et *IETF Standards Track* (`[13]`) · **`supporté`** |
 | `CH01-017` | `L35` | Spécification JSON Schema Draft 2020-12 : le texte attribuait au seul `draft-bhutton-json-schema-01` (`[3]`) les assertions de validation (`required`, types, énumérations, motifs et bornes). | `imprécis` | `SRC-021.txt L322–330, L1514, L2041–2153, L2252–2330` spécifie *Core* et *Applicator* (`\$schema`, `\$ref`, `properties`, `additionalProperties`, `allOf`, `if`/`then`/`else`) et renvoie les assertions de validation au vocabulaire compagnon (`Draft202012Validator`). | **Rectifié (`L35`)** : distingué le texte central `[3]` du vocabulaire de validation compagnon · **`supporté`** |
-| `CH01-018` | `L37–L42` | Quatre règles mécaniques de `validate_strict_schema` (`harness_proto/pipeline.py`) : `additionalProperties: false`, exhaustivité de `required`, bannissement racine d'`allOf`/`if`/`then`/`else` et blocage de `\$ref` `http://`/`https://` (`EXIG-MCP-19`). | `supporté` | `8 - Trousse/harness_proto/pipeline.py L60–119`, `registre/matrice-exig-prr-c40.json`. | Aucune · **`supporté`** |
+| `CH01-018` | `L37–L42` | Quatre règles mécaniques de `validate_strict_schema` (`harness_proto/pipeline.py`) : `additionalProperties: false`, exhaustivité de `required`, bannissement racine d'`allOf`/`if`/`then`/`else` et blocage de `\$ref` `http://` ou `https://` (`EXIG-MCP-19`). | `supporté` | `8 - Trousse/harness_proto/pipeline.py L60–119`, `registre/matrice-exig-prr-c40.json`. | Aucune · **`supporté`** |
 | `CH01-019` | `L44–L76` | Extrait `G0-EX-CH01-01` (`schemas/harness_extraction.schema.json`, `24` L, SHA-256 `6b4428a1...`), `montant_reclame_cents` entier/`null`, motif `^DOS-[0-9]{4,8}\$`, `statut_analyse` (`EXTRAIT`, `AMBIGU_ESCALADE`, `DONNEES_INSUFFISANTES`), `x-license: "MIT"` et cas négatifs de `test_harness_proto.py`. | `supporté` | `aq/rapports-g0.json`, `8 - Trousse/schemas/harness_extraction.schema.json L1–24`, `tests/test_harness_proto.py L253–320, L385–404`. | Aucune · **`supporté`** |
 | `CH01-020` | `L80–L100` | `Figure 1` (`Fig-01.svg`, `<= 14` nœuds) et `Tableau 1.1` : `8` étapes (`1_size_utf8` à `8_seal`) dans `DeterministicHarness`, `max_payload_bytes = 65 536` (`64 Kio`), `allow_nan=False`, `_INPUT_SCHEMA`, `max_repair_retries = 2` (`3` appels max) et `HarnessOutcome`. | `supporté` | `8 - Manuel/diagrammes/Fig-01.puml`, `8 - Trousse/harness_proto/pipeline.py L16–58, L151–232`. | Aucune · **`supporté`** |
 | `CH01-021` | `L102` | Écart entre conformité syntaxique JSON Schema et véracité factuelle (`_check_grounding`) : la prose invoquait *"la littérature sur le décodage contraint"* absente de `ch01-sources.md`. | `imprécis` | Appel non sourcé dans `ch01-sources.md` ; le fait relève directement de la définition structurelle de JSON Schema (`SRC-021.txt`) et du contrôle `_check_grounding` (`pipeline.py L122–148`). | **Rectifié (`L102`)** : reformulé *"Par construction même de la validation structurelle"* sans source fictive · **`supporté`** |
@@ -474,7 +494,7 @@ La séparation matérielle entre la prose rédigée dans `manuscrit/` et les reg
 | `CH01-026` | `L159` | Défaut `F-52` (`1 - Compendium 2026.md` § 39.2.1), rejeu sur `MCP 2026-07-28` (`5f5440bb`, `tools.mdx` `[6]` et `schema.ts` `[9]`), avertissement normatif sur les annotations ; la liste des champs de `Tool` omettait `_meta` de `schema.ts`. | `imprécis` | `0 - PDF-MD/1 - Compendium 2026.md L4710, L9227`, `SRC-072.txt L284–306` (`7` champs) et `SRC-080.txt L1973–2015` (ajoute `_meta?: MetaObject` sans empreinte ni signature). | **Rectifié (`L159`)** : ajouté `_meta` attribué à `schema.ts [9]` · **`supporté`** |
 | `CH01-027` | `L161` | Étude d'Alfredo Metere (`arXiv:2605.24248`, juin 2026, `[18]`) : architecture `mcp-attested` et liste blanche fermée par serveur, initialement libellée *"toute capacité non autorisée"*. | `imprécis` | `SRC-095.txt L20–22, L80–81` restreint la liste blanche aux **outils** (*deny-by-default per-server tool allowlist*), non aux `capabilities` protocolaires MCP (`harness_proto/mcp_pinning.py`, `registre/matrice-exig-prr-c40.json`). | **Rectifié (`L161`)** : corrigé vers `"refusant par défaut tout outil non autorisé"` · **`supporté`** |
 | `CH01-028` | `L165` | Contrat `schemas/mcp_tool_catalog.schema.json` : `20` propriétés obligatoires (`tier` `P0..P3`, `lifecycle_state`, `definition_digest` `sha256:` + `64` hex, `mcp_revision` `"2026-07-28"`, `computed_by: "gateway"`, `compensation`, `idempotency`, `owner`, `on_call_team`, `reviewed_by`, `next_review`). | `supporté` | `8 - Trousse/schemas/mcp_tool_catalog.schema.json L7–139`. | Aucune · **`supporté`** |
-| `CH01-029` | `L167–L173` | Canonisation JCS `RFC 8785` (`[12]`, juin 2020) dans `harness_proto/jcs.py` : tri UTF-16BE (`utf-16-be`), format ECMAScript, rejet `NaN`/`Infinity` et entiers hors `\pm (2^{53} - 1)` via `JcsError`, échappement minimal et SHA-256 `64` hex. | `supporté` | `SRC-077.txt L9–329`, `8 - Trousse/harness_proto/jcs.py L10–128`. | Aucune · **`supporté`** |
+| `CH01-029` | `L167–L173` | Canonisation JCS `RFC 8785` (`[12]`, juin 2020) dans `harness_proto/jcs.py` : tri UTF-16BE (`utf-16-be`), format ECMAScript, rejet `NaN`/`Infinity` et entiers hors `±(2⁵³ - 1)` via `JcsError`, échappement minimal et SHA-256 `64` hex. | `supporté` | `SRC-077.txt L9–329`, `8 - Trousse/harness_proto/jcs.py L10–128`. | Aucune · **`supporté`** |
 | `CH01-030` | `L175` | Réutilisation partagée de `jcs.py` au Chapitre 02 (`C.6`) et au Chapitre 03 (`idem-v1`), et validation `G0` sur `20` fichiers de vecteurs `rfc8785` (Annexe B, UTF-16 § 3.2.3 et `6` paires de `testdata`). | `supporté` | `8 - Trousse/authz_pqc_audit/ciba_approval.py`, `policy_saga/saga_orchestrator.py`, `aq/rapports-g0.json`, `tests/test_third_party_vectors.py L59–109`. | Aucune · **`supporté`** |
 | `CH01-031` | `L177` | `McpCatalogEntry` (`10` champs) et `compute_tool_definition_digest` : l'exemple indiquait un sous-champ `"_meta.lastUpdated"` alors que l'implémentation filtre des clés de premier niveau. | `imprécis` | `8 - Trousse/harness_proto/mcp_pinning.py L49–63, L187–194` supprime les clés de premier niveau (`k not in vol`), testé avec `volatile_meta_keys=("_meta",)` en `test_harness_proto.py L454–458`. | **Rectifié (`L177`)** : précisé `"les clés de premier niveau déclarées volatiles (par exemple la clé _meta portant un horodatage lastUpdated)"` · **`supporté`** |
 | `CH01-032` | `L179` | `verify_tools_list_against_catalog` : tri déterministe (`EXIG-MCP-03`), rejet `collision_ou_hors_catalogue`, écart `derive_jcs_sha256` dès `1` caractère (`max_drift_before_suspend = 1`), purge `active_tools` et préfixe `server_id.tool_name` (`EXIG-MCP-20`, `C12`). | `supporté` | `8 - Trousse/harness_proto/mcp_pinning.py L196–245`, `tests/test_harness_proto.py L442–586`. | Aucune · **`supporté`** |
@@ -505,7 +525,7 @@ La séparation matérielle entre la prose rédigée dans `manuscrit/` et les reg
 | `CH01-047` | `L276` | Contrat `schemas/a2a_agent_card.schema.json` (`EXIG-A2A-03`, `C13`) : `additionalProperties: false`, `12` propriétés requises (`name`..`signatures`), `supportedInterfaces` `https://` (`JSONRPC`/`GRPC`/`HTTP+JSON`, `1.x`) ; distinction avec `a2a.proto` `[15]` omise initialement. | `imprécis` | `8 - Trousse/schemas/a2a_agent_card.schema.json L5–233` exige `12` champs là où `SRC-084.txt L361–398` ne porte `REQUIRED` que sur `8` champs (`provider`, `security_schemes`, `security_requirements`, `signatures` étant optionnels). | **Rectifié (`L276`)** : attribué les `12` propriétés requises au profil durci de `8 - Trousse/` face aux `8` champs `REQUIRED` de `a2a.proto [15]` · **`supporté`** |
 | `CH01-048` | `L278–L281` | `_check_card_structure_and_policies` (`a2a_card.py`) : rejet `password`/`implicit`, admission d'`authorizationCode`/`clientCredentials`/`deviceCode` et liste blanche `approved_extensions` ; la prose imposait *"avec PKCE"* sur `authorizationCode`. | `imprécis` | `8 - Trousse/harness_proto/a2a_card.py L22, L80–98` et `schemas/a2a_agent_card.schema.json L76–96` autorisent `pkceRequired` comme propriété booléenne optionnelle. | **Rectifié (`L280`)** : précisé `"avec propriété booléenne optionnelle pkceRequired"` · **`supporté`** |
 | `CH01-049` | `L285` | Signature `§ 8.4` (`A2A v1.0.1` `[14]`) : règles de présence Protobuf, exclusion de `signatures`, JCS (`[12]`), enveloppe JWS (`[13]`) avec `protected` et `signature`, `alg` et `kid` obligatoires, `typ: "JOSE"` (`SHOULD`), `jku` (`MAY`) ; `protected` était qualifié d'*"objet"*. | `imprécis` | `SRC-083.txt L2002–2077`, `SRC-084.txt L456–466` définissent `protected` comme une chaîne (`string`) JSON encodée en Base64url, et imposent `typ: "JOSE"` en `SHOULD`. | **Rectifié (`L285`)** : écrit `"chaîne protected encodée en Base64url"` et précisé `DEVRAIT inclure typ` · **`supporté`** |
-| `CH01-050` | `L287–L289` | `validate_agent_card` (`a2a_card.py`) : `alg == "ES256"`, `kid`, `jku == pinned_jku`, P-256, `card_etag`, `CARD-CACHE-001/002` (`[14, 17]`) ; la notation `` `protected.payload` `` omettait l'encodage Base64url des deux segments. | `imprécis` | `SRC-005.txt L254–257`, `a2a_card.py L178–180` (`<prot_b64>.<b64_pay>`), `SRC-083.txt L2219–2220`, `SRC-086.txt L187–213`. | **Rectifié (`L287`)** : précisé `` `<protected_b64>.<payload_b64>` `` (segments Base64url sans remplissage) · **`supporté`** |
+| `CH01-050` | `L287–L289` | `validate_agent_card` (`a2a_card.py`) : `alg == "ES256"`, `kid`, `jku == pinned_jku`, P-256, `card_etag`, `CARD-CACHE-001/002` (`[14, 17]`) ; la notation `protected.payload` omettait l'encodage Base64url des deux segments. | `imprécis` | `SRC-005.txt L254–257`, `a2a_card.py L178–180` (`<prot_b64>.<b64_pay>`), `SRC-083.txt L2219–2220`, `SRC-086.txt L187–213`. | **Rectifié (`L287`)** : précisé `` `<protected_b64>.<payload_b64>` `` (segments Base64url sans remplissage) · **`supporté`** |
 | `CH01-051` | `L291–L325` | Extrait `G0-EX-CH01-04` (`a2a_card.py L157–182`, `26` L, SHA-256 `1a58d5ea...`), calcul préalable de `etag`, garde `isinstance(raw_kid, str)`, `_verify_es256_jwk` (`kty == "EC"`, `crv == "P-256"`, `alg`, `use`, `64` octets) et rejets dans `test_a2a_agent_card_jws_es256_and_pinned_jku`. | `supporté` | `aq/rapports-g0.json`, `8 - Trousse/harness_proto/a2a_card.py L101–182`, `tests/test_harness_proto.py L714–832`. | Aucune · **`supporté`** |
 | `CH01-052` | `L329` | Sécurité des *webhooks* (`§ 13.2` d'`A2A v1.0.1`, `[14]`) contre le SSRF (`localhost`, `127.0.0.0/8`, *link-local*, plages privées), HTTPS, authentification et listes d'autorisation ; la prose transformait des `SHOULD` en `DOIT` / *"imposant"*. | `imprécis` | `SRC-083.txt L3109–3130` et `L1879` prescrivent `MUST` pour les justificatifs d'authentification (`PushNotificationConfig.authentication`) et HTTPS en production (`§ 7.1`), mais `SHOULD` pour la validation SSRF des *webhooks*, HTTPS sur *webhook* et listes d'autorisation *where appropriate*. | **Rectifié (`L329`)** : rétabli les verbes normatifs exacts `DOIT` (authentification, `§ 7.1` HTTPS en production) et `DEVRAIT` (SSRF *webhook* et listes d'autorisation le cas échéant) sans collision `CA-03` · **`supporté`** |
 | `CH01-053` | `L331` | Validation SSRF des références de fichiers dans les messages A2A (`[14]`) et renvoi vers `policy_saga/sandbox_manifest.py` au Chapitre 03 (`169.254.169.254`). | `supporté` | `SRC-083.txt L3245`, `8 - Trousse/policy_saga/sandbox_manifest.py`, `tests/test_policy_saga.py`. | Aucune · **`supporté`** |
@@ -533,12 +553,18 @@ La séparation matérielle entre la prose rédigée dans `manuscrit/` et les reg
 
 - **Périmètre contrôlé :** paragraphes modifiés en `G4` dans `Chapitre 01` (`L19`, `L21`, `L25`, `L31`, `L37–L42`, `L76`, `L80`, `L83`, `L85`, `L87`, `L89`, `Tableau 1.1`, `L102`) ainsi que `Fig-01.puml` / `Fig-01.svg` et `sources/ch01-sources.md`.
 - **Rectifications appliquées suite au contre-audit différentiel :**
-  1. `L19` : attribution exacte du modèle multiplicatif des risques concurrents à `SRC-024` (`[1]`) et équivalence mathématique avec la loi en série / exemple `0,94^{10}` posés hors citation `[1]`.
+  1. `L19` : attribution exacte du modèle multiplicatif des risques concurrents à `SRC-024` (`[1]`) et équivalence mathématique avec la loi en série / exemple `0,94¹⁰` posés hors citation `[1]`.
   2. `L31` : rôle explicite de `RFC 8785` (`[12]`) dans `1.1`, `1.2` et `1.4` (`a2a_card.py` : `canonicalize_jcs` et `card_etag`), en complément de `RFC 7515` (`[13]`) pour la signature en `1.4`.
   3. `L80`, `L85`, `L87`, `Tableau 1.1` (`L96–L100`) : trace `step_trace` (`8` jalons après admission, trace courte terminée par `*_fail` sur `VALIDATION_FAILED`), court-circuit `5_schema or 6_grounding`, facteur `3×` vs surcoût `+2` appels, `validate_strict_schema` couvrant méta-validation + instance `Draft202012Validator`, et scellement `8_seal` (`{"status", "payload", "trace"}`) incluant `ESCALADED`.
   4. `Fig-01.puml` (`L44`, `L65–L74`) : libellé `SCH` combiné (`_INPUT_SCHEMA` + `HarnessExtraction`), arc `E6 --> E7 : écart d'ancrage`, transition `E7 --> E8 : ESCALADED (plafond atteint)` et `ESC --> E8`, recompilés via `compile_figures.py --strict` (`exit 0`, `12` nœuds).
   5. `sources/ch01-sources.md` (`L9`, `L18`, `L139`) : alignement de `[1] SRC-024` (`Competing Risk Model`) et `[12] SRC-077` (`RFC 8785` *Independent Submission* / *Informational*).
 - **Verdict final post-G4 (`ch01`) :** **`100 % supporté`** (`0` `non supporté`, `0` `imprécis` résiduel).
+
+
+## Révision `G2` différentielle post-lissage `G5` (`e9982661`)
+
+- **Périmètre contrôlé (`Chapitre 01`) :** `L104–L106` (quatre statuts non-`OK` de `StepStatus` et harmonisation `jalons d'étape`), `L108` (`G0-EX-CH01-02`), `L367` (`huit étapes / jalons step_trace`).
+- **Verdict final post-G5 (`ch01`) :** **`100 % supporté`** (`0` `non supporté`, `0` `imprécis` résiduel).
 
 #### `ch02-ancrage.md`
 
@@ -900,6 +926,18 @@ La séparation matérielle entre la prose rédigée dans `manuscrit/` et les reg
 - **Rectification appliquée à `L73` :** sens exact `access_token` fourni *par* l'appelant, rétablissement de « au *champ interne* `jwk_thumbprint` ou `x5t#S256` de `dpop_proof` » (distinct de `jwk` JWT dans `RFC 9449`) et qualification « cache partagé à *fenêtre temporelle bornée* » conforme à `RFC 9449 § 11.1` (`SRC-043.txt L1324–1336`).
 - **Verdict final post-G4 (`ch02`) :** **`100 % supporté`** (`0` `non supporté`, `0` `imprécis` résiduel).
 
+
+## Révision `G2` différentielle post-lissage `G5` (`e9982661`)
+
+- **Périmètre contrôlé (`Chapitre 02`) :** `L89` (points de code *surrogates* isolés hors encodage UTF-8 valide selon `RFC 7493` et `ciba_approval.py`) et `L118` (`Tableau 2.1`, qualification *Final* OpenID Foundation pour `SSF 1.0` et `CAEP 1.0` recoupée avec `SRC-019`, `SRC-020`, `specifications-lplus.json` et `2 - Cadre de Référence.md#L4207`).
+- **Verdict final post-G5 (`ch02`) :** **`100 % supporté`** (`0` `non supporté`, `0` `imprécis` résiduel).
+
+
+## Enrichissement d'ancrage en place pré-`G3` passe 2 (zéro décalage)
+
+- **Périmètre édité (`Chapitre 02`) :** rattachements réglementaires explicites à l'article `12.1` et aux articles `90.12` / `91` de la Loi 25 (`LQ 2021, c. 25`, `SRC-063`, `[25]` dans `ch02-sources.md`) sur les paragraphes `L9`, `L219`, `L238`, `L240`, `L246` et `L293`, sans modifier l'indexation des paragraphes antérieurs.
+- **Verdict d'ancrage :** `100 % supporté` (vérifié contre `SRC-063.txt`, `otel_pii_mapper.py` et `audit_scitt_focus.py`, `0` dérive).
+
 #### `ch03-ancrage.md`
 
 # Journal d'ancrage atomique Wyvern — Chapitre 03 (`G2` · `CA-10`, `CA-12`)
@@ -1017,13 +1055,27 @@ La séparation matérielle entre la prose rédigée dans `manuscrit/` et les reg
 | `CH03-089` | Clôture (`L324-328`) | Encadré « Trois invariants exécutables — Chapitre 3 » (`45/45` Rego `100 %`, `verify_rego_default_deny`, Règle de deux, `camel_taint.rego`, `sandbox_*` `11` IANA / `IMDS` / `30 s` / `1 200 s` / `3 600 s`, `from_decimal_str`, `10/10` fautes `EXIG-ORC-20`, `EXIG-ORC-28`) | Synthèse des sections `3.1`–`3.4` et `aq/rapports-g0.json` | `supporté` | Aucune. | `supporté` |
 | `CH03-090` | Transition (`L330`) | Synthèse Ch01–Ch03 et annonce du Ch04 (banc `EvalOps`, `mock MCP servers`, Wilson `>= 3/p`, relations métamorphiques `FR/EN`, `24 [BLOQUANT] PRR`, `2027-B001`, `5 SBB`, `C01–C40`) | `toc.md`, `contrat-aq.md` § 2.0–2.1 | `supporté` | Aucune. | `supporté` |
 
+
+---
+
+## Révision `G2` différentielle post-lissage `G5` (`e9982661`)
+
+- **Périmètre contrôlé (`Chapitre 03`) :** `L17` (`modèle privilégié`), `L23–L41` (cadrage transparent du choix exclusif OPA / Rego en `G0` et exclusion portable de Cedar sans benchmark symétrique), `L43` et `L53` (couverture intégrale de lignes `100 %` sur `45/45` cas incluant scénarios négatifs et mal typés, face aux `83,59 %` des seuls `test_deny_*`).
+- **Verdict final post-G5 (`ch03`) :** **`100 % supporté`** (`0` `non supporté`, `0` `imprécis` résiduel).
+
+
+## Enrichissement d'ancrage en place pré-`G3` passe 2 (zéro décalage)
+
+- **Périmètre édité (`Chapitre 03`) :** rattachement explicite de la réserve `non-avis juridique` (`L9` et `L322`) au précédent documentaire `SRC-055` (`[1]` dans `ch03-sources.md`, mention « *does not, and is not intended to, constitute legal advice* » vérifiée aux pages liminaires de `corpus_l_plus/SRC-055.txt`).
+- **Verdict d'ancrage :** `100 % supporté` (`0` nouvelle source, `0` décalage de paragraphe).
+
 #### `ch04-ancrage.md`
 
 # Journal d'ancrage atomique Wyvern — Chapitre 04 (Barrière G2)
 
-**Unité auditée :** `8 - Manuel/manuscrit/02 - Partie II/Chapitre 04 - Banc EvalOps hermetique et 24 portes PRR.md`
-**Agent auditeur :** `auditeur-wyvern-ch04` (contexte isolé et indépendant du rédacteur)
-**Date de gel :** `2026-12-02` (2 décembre 2026)
+**Unité auditée :** `8 - Manuel/manuscrit/02 - Partie II/Chapitre 04 - Banc EvalOps hermetique et 24 portes PRR.md`  
+**Agent auditeur :** `auditeur-wyvern-ch04` (contexte isolé et indépendant du rédacteur)  
+**Date de gel :** `2026-12-02` (2 décembre 2026)  
 **Base documentaire fermée :** `8 - Manuel/sources/ch04-sources.md` (`26` sources `L+` : `[1]` à `[26]`), `8 - Manuel/recherche/corpus_l_plus/*.txt`, `8 - Manuel/recherche/registre-statut-f.json`, `8 - Manuel/aq/rapports-g0.json`, `8 - Manuel/registre/*.json`, `8 - Trousse/{evalops_prr,schemas,tests,policies_opa,policy_saga,authz_pqc_audit}/` (lecture seule).
 
 ## Bilan synthétique de la barrière G2 (`ch04`)
@@ -1041,7 +1093,7 @@ La séparation matérielle entre la prose rédigée dans `manuscrit/` et les reg
 ## Registre complet des rectifications et réancrages (36 écarts corrigés)
 
 1. **`C04-009` (`L009`, `τ-bench` [1]) — `imprécis` -> `supporté` :** Ajout de la mention explicite du modèle (`gpt-4o` par appel de fonctions) devant `~61 %` (`pass^1`) et `< 25 %` (`pass^8`) sur `τ-retail`, conformément à `SRC-029` (`L17–19`, `L105–107`).
-2. **`C04-013` (`L009`, Deloitte Insights / Gartner [9]) — `imprécis` -> `supporté` :** Remplacement de « risquent l'abandon... complexités d'industrialisation et de risques mal maîtrisés » par la formulation fidèle à `SRC-011` (`L443`, note 3 `L719`) « pourraient être abandonnées d'ici la fin de 2027 en raison de coûts imprévus, de la complexité de mise à l'échelle ou de risques inattendus ».
+2. **`C04-013` (`L009`, Deloitte Insights / Gartner [9]) — `imprécis` -> `supporté` :** Remplacement de « risquent l'abandon … complexités d'industrialisation et de risques mal maîtrisés » par la formulation fidèle à `SRC-011` (`L443`, note 3 `L719`) « pourraient être abandonnées d'ici la fin de 2027 en raison de coûts imprévus, de la complexité de mise à l'échelle ou de risques inattendus ».
 3. **`C04-024` (`L019`, HAL [8]) — `imprécis` -> `supporté` :** Précision complète contre `SRC-030` (`L47`, `L955–959`) : un effort de raisonnement supérieur « réduit l'exactitude dans la majorité des exécutions évaluées ; sur les quatre modèles comparés par niveau de raisonnement (`Claude Opus 4.1`, `Claude Sonnet 4`, `Claude-3.7 Sonnet` et `o4-mini`), il produit une exactitude égale ou inférieure dans `21` combinaisons modèle-agent-banc sur `36` ».
 4. **`C04-028` (`L019`, HAL [8]) — `imprécis` -> `supporté` :** Précision de l'échafaudage fautif en « l'échafaudage *Few Shot* de `τ-bench` » (`SRC-030` `L389`).
 5. **`C04-031` (`L021`, Barrett et al. [14]) — `imprécis` -> `supporté` :** Rectification de la paraphrase (« défaillance naît le plus souvent d'une boucle de rétroaction mal bornée... plutôt que d'une défaillance matérielle isolée ») selon `SRC-058` (`L373–431`, `L775–776`, `L1068`) : les pertes de contrôle peuvent survenir même lorsque chaque composant fonctionne conformément à sa conception ou à son entraînement, par interactions défectueuses dans la boucle hiérarchique reliant contrôleur, actionneurs, capteurs, modèle de processus et processus contrôlé.
@@ -1360,5 +1412,19 @@ La séparation matérielle entre la prose rédigée dans `manuscrit/` et les reg
 | `C04-253` | `L302` | Clause finale `non-avis` : ne vaut ni avis juridique ni homologation sur un `SoR` réel. | `specs/prd.md` (`AO-05`), `specs/contrat-aq.md` | `supporté` | — | `supporté` |
 | `C04-254` | `L304` | Transition récapitulative exacte Ch. `01` (`80/20`, épinglage), Ch. `02` (`PQC`, audit), Ch. `03` (`OPA`, sagas), Ch. `04` (`evalops-prr/`). | `specs/manifest.json`, `specs/toc.md` | `supporté` | — | `supporté` |
 | `C04-255` | `L304` | Annonce des instruments déterministes `Annexe A` (sources `L+` SHA-256, `statut F`, journal `G2`) et `Annexe B` (matrice et verdicts `G0–G5`). | `specs/contrat-aq.md` (`CA-17`), `outils/genere_annexes.py` | `supporté` | — | `supporté` |
+
+
+---
+
+## Révision `G2` différentielle post-lissage `G5` (`e9982661`)
+
+- **Périmètre contrôlé (`Chapitre 04`) :** `L296` (synthèse `Figure 8` : couverture de lignes OPA à `100 %` sur `45/45` cas incluant scénarios négatifs et mal typés, `pass^k` et borne de Wilson `0,8938 % < 1 %` pour `n = 300`).
+- **Verdict final post-G5 (`ch04`) :** **`100 % supporté`** (`0` `non supporté`, `0` `imprécis` résiduel).
+
+
+## Enrichissement d'ancrage en place pré-`G3` passe 2 (zéro décalage)
+
+- **Périmètre édité (`Chapitre 04`) :** rattachements explicites en place aux sources ouvertes déjà vérifiées de `ch04-sources.md` (`[13]` `SRC-055`, `[15]` `SRC-060`, `[16]` `SRC-061`, `[17]` `SRC-062`, `[18]` `SRC-063`, `[19]` `SRC-064`, `[20]` `SRC-065`, `[21]` `SRC-067`, `[22]` `SRC-068`, `[23]` `SRC-069`, `[24]` `SRC-070`) aux lignes `L11`, `L152`, `L207`, `L225`, `L263`, `L269` et `L302`, et resserrement lexical (`L135`, `L269`) dans le budget `[6 440, 7 560]`.
+- **Verdict d'ancrage :** `100 % supporté` (`0` nouvelle source, `0` énoncé spéculatif, `0` décalage d'indice `Pnnn`).
 
 <!-- BIBLIOGRAPHIE_BRUTE_FIN -->

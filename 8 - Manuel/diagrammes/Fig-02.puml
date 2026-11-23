@@ -32,59 +32,60 @@ legend {
   BackgroundColor #FFFFFF
   LineColor #CBD5E1
   FontColor #1E293B
-  FontSize 10
+  FontSize 11
 }
 </style>
 hide stereotype
 top to bottom direction
 skinparam defaultFontName "DejaVu Sans"
-skinparam defaultFontSize 11
+skinparam defaultFontSize 12
 skinparam shadowing false
 skinparam roundcorner 8
-skinparam packageStyle rectangle
-skinparam nodesep 16
-skinparam ranksep 24
-skinparam padding 6
+skinparam packageStyle frame
+skinparam nodesep 24
+skinparam ranksep 40
+skinparam padding 7
 
-rectangle "Serveur MCP externe\n(40,58 % dérive possible, non fiable)" as SRV_MCP <<prob>>
+rectangle "Serveur MCP externe\n(40,58 % dérive possible)" as SRV_MCP <<prob>>
 rectangle "Harnais appelant déterministe\n(requête d'outil ou de tâche)" as HARN <<det>>
 rectangle "Agent pair externe A2A\n(AgentCard non vérifiée)" as PEER_A2A <<prob>>
 
-package "Médiation MCP 2026-07-28 (mcp_pinning.py)" {
-  rectangle "Épinglage JCS + SHA-256\n(catalogue tools/list, anti-dérive)" as JCS_MCP <<det>>
+package "Médiation MCP" {
+  rectangle "Épinglage JCS + SHA-256\n(catalogue tools/list · mcp_pinning)" as JCS_MCP <<det>>
   rectangle "Contrôle en-têtes & _meta\n(rejet x-mcp-header PII/secret)" as HDR <<det>>
   rectangle "McpTransportAdapter\n(Streamable HTTP, refus HTTP+SSE)" as ADP_MCP <<det>>
   rectangle "Rejet HeaderMismatch\n(HTTP 400 / JSON-RPC -32020)" as ERR_MCP <<det>>
 }
 
-package "Validation A2A v1.0.1 (a2a_card.py)" {
-  rectangle "Schéma a2a_agent_card\n(& extensions approuvées)" as SCH_A2A <<det>>
+package "Validation A2A v1.0.1" {
+  rectangle "Schéma a2a_agent_card\n(extensions & a2a_card.py)" as SCH_A2A <<det>>
   rectangle "Vérificateur JWS ES256 sur JCS\n(& épinglage strict jku / kid)" as JWS_A2A <<det>>
-  rectangle "Garde anti-SSRF webhook\net automate d'états de tâche" as SSRF <<det>>
+  rectangle "Garde anti-SSRF webhook\net automate d'états" as SSRF <<det>>
   rectangle "Verdict AgentCardVerdict\n(rejet si signature ou jku altéré)" as VER_A2A <<det>>
 }
 
 rectangle "Vecteurs tiers épinglés\n(RFC 8785 & a2a-tck 1.0.0.alpha3)" as TCK <<ext>>
 
-SRV_MCP ..> JCS_MCP : tools/list
+SRV_MCP .[#B45309].> JCS_MCP : tools/list
 HARN --> JCS_MCP : appel MCP
-JCS_MCP --> HDR : empreinte conforme
+JCS_MCP --> HDR : empreinte OK
 HDR --> ADP_MCP : en-têtes valides
 HDR --> ERR_MCP : divergence
-ADP_MCP <..> SRV_MCP : JSON-RPC
+ADP_MCP <.left[#B45309].> SRV_MCP : JSON-RPC
 
-HARN --> SCH_A2A : délégation A2A
-PEER_A2A ..> SCH_A2A : AgentCard brute
+HARN --> SCH_A2A : délég. A2A
+PEER_A2A .[#B45309].> SCH_A2A : AgentCard\nbrute
 SCH_A2A --> JWS_A2A
 JWS_A2A --> SSRF : JWS valide
 SSRF --> VER_A2A
 
 TCK --> JCS_MCP : valide JCS
-TCK --> JWS_A2A : cas MUST alpha3
+TCK --> JWS_A2A : cas MUST\nalpha3
 
 SRV_MCP -[hidden]right-> HARN
 HARN -[hidden]right-> PEER_A2A
 JCS_MCP -[hidden]right-> SCH_A2A
+ADP_MCP -[hidden]right-> ERR_MCP
 ERR_MCP -[hidden]down-> TCK
 VER_A2A -[hidden]down-> TCK
 

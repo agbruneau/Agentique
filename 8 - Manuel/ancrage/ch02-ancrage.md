@@ -355,3 +355,15 @@
 - **Périmètre contrôlé :** retouches `G4` de `Chapitre 02` (`L21`, `L27`, `L29`, `L71`, `L73`, `L75`), vérifiées contre `8 - Trousse/authz_pqc_audit/obo_dpop.py`, `schemas/delegated_token_claims.schema.json`, `tests/test_authz_pqc_audit.py` (`23/23`), `SRC-009`, `SRC-010`, `SRC-042` et `SRC-043`.
 - **Rectification appliquée à `L73` :** sens exact `access_token` fourni *par* l'appelant, rétablissement de « au *champ interne* `jwk_thumbprint` ou `x5t#S256` de `dpop_proof` » (distinct de `jwk` JWT dans `RFC 9449`) et qualification « cache partagé à *fenêtre temporelle bornée* » conforme à `RFC 9449 § 11.1` (`SRC-043.txt L1324–1336`).
 - **Verdict final post-G4 (`ch02`) :** **`100 % supporté`** (`0` `non supporté`, `0` `imprécis` résiduel).
+
+
+## Révision `G2` différentielle post-lissage `G5` (`e9982661`)
+
+- **Périmètre contrôlé (`Chapitre 02`) :** `L89` (points de code *surrogates* isolés hors encodage UTF-8 valide selon `RFC 7493` et `ciba_approval.py`) et `L118` (`Tableau 2.1`, qualification *Final* OpenID Foundation pour `SSF 1.0` et `CAEP 1.0` recoupée avec `SRC-019`, `SRC-020`, `specifications-lplus.json` et `2 - Cadre de Référence.md#L4207`).
+- **Verdict final post-G5 (`ch02`) :** **`100 % supporté`** (`0` `non supporté`, `0` `imprécis` résiduel).
+
+
+## Enrichissement d'ancrage en place pré-`G3` passe 2 (zéro décalage)
+
+- **Périmètre édité (`Chapitre 02`) :** rattachements réglementaires explicites à l'article `12.1` et aux articles `90.12` / `91` de la Loi 25 (`LQ 2021, c. 25`, `SRC-063`, `[25]` dans `ch02-sources.md`) sur les paragraphes `L9`, `L219`, `L238`, `L240`, `L246` et `L293`, sans modifier l'indexation des paragraphes antérieurs.
+- **Verdict d'ancrage :** `100 % supporté` (vérifié contre `SRC-063.txt`, `otel_pii_mapper.py` et `audit_scitt_focus.py`, `0` dérive).

@@ -112,3 +112,17 @@
 | `CH03-088` | § 3.4 (`L316-322`) | `Fig-06.svg`, lecture (pointillés ambre agent probabiliste, trait plein ardoise `G0`, `idem-v1`, `Outbox`, `TP`, `C2 -> C1`, `EXIG-ORC-18`, scénario `10`) et exigence de test du contrat d'idempotence réel en essai partenaire (`EXIG-ORC-20`) | `diagrammes/Fig-06.puml`, `2 - Cadre de Référence.md` (`L3146`), `AO-05`/`DC-P12` | `supporté` | Aucune. | `supporté` |
 | `CH03-089` | Clôture (`L324-328`) | Encadré « Trois invariants exécutables — Chapitre 3 » (`45/45` Rego `100 %`, `verify_rego_default_deny`, Règle de deux, `camel_taint.rego`, `sandbox_*` `11` IANA / `IMDS` / `30 s` / `1 200 s` / `3 600 s`, `from_decimal_str`, `10/10` fautes `EXIG-ORC-20`, `EXIG-ORC-28`) | Synthèse des sections `3.1`–`3.4` et `aq/rapports-g0.json` | `supporté` | Aucune. | `supporté` |
 | `CH03-090` | Transition (`L330`) | Synthèse Ch01–Ch03 et annonce du Ch04 (banc `EvalOps`, `mock MCP servers`, Wilson `>= 3/p`, relations métamorphiques `FR/EN`, `24 [BLOQUANT] PRR`, `2027-B001`, `5 SBB`, `C01–C40`) | `toc.md`, `contrat-aq.md` § 2.0–2.1 | `supporté` | Aucune. | `supporté` |
+
+
+---
+
+## Révision `G2` différentielle post-lissage `G5` (`e9982661`)
+
+- **Périmètre contrôlé (`Chapitre 03`) :** `L17` (`modèle privilégié`), `L23–L41` (cadrage transparent du choix exclusif OPA / Rego en `G0` et exclusion portable de Cedar sans benchmark symétrique), `L43` et `L53` (couverture intégrale de lignes `100 %` sur `45/45` cas incluant scénarios négatifs et mal typés, face aux `83,59 %` des seuls `test_deny_*`).
+- **Verdict final post-G5 (`ch03`) :** **`100 % supporté`** (`0` `non supporté`, `0` `imprécis` résiduel).
+
+
+## Enrichissement d'ancrage en place pré-`G3` passe 2 (zéro décalage)
+
+- **Périmètre édité (`Chapitre 03`) :** rattachement explicite de la réserve `non-avis juridique` (`L9` et `L322`) au précédent documentaire `SRC-055` (`[1]` dans `ch03-sources.md`, mention « *does not, and is not intended to, constitute legal advice* » vérifiée aux pages liminaires de `corpus_l_plus/SRC-055.txt`).
+- **Verdict d'ancrage :** `100 % supporté` (`0` nouvelle source, `0` décalage de paragraphe).

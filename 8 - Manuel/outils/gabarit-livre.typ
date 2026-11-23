@@ -293,7 +293,7 @@
   #text(font: ("Segoe UI", "Libertinus Serif"), size: 10.2pt, weight: "bold", fill: rgb("#1E293B"), hyphenate: false)[#it.body]
 ]
 
-#show heading.where(level: 4): it => block(width: 100%, sticky: true, above: 0.12in, below: 0.04in)[
+#show heading.where(level: 4): it => block(width: 100%, sticky: true, above: 0.12in, below: 0.07in)[
   #set par(justify: false)
   #text(font: ("Segoe UI", "Libertinus Serif"), size: 9.8pt, weight: "bold", style: "italic", fill: rgb("#334155"), hyphenate: false)[#it.body]
 ]
@@ -311,44 +311,48 @@
 )[
   #set text(size: 9.3pt, fill: rgb("#1E293B"))
   #set par(leading: 0.56em, spacing: 0.55em)
+  #show raw.where(block: false): r => highlight(
+    fill: white,
+    extent: 1pt,
+    radius: 2pt,
+  )[#text(font: ("Consolas", "DejaVu Sans Mono"), size: 8.2pt, fill: rgb("#0F172A"))[#r]]
   #it.body
 ]
 
-// Code inline et blocs de code (extraits <= 40 L indivisibles sans debordement sur 4,46 po)
-#show raw.where(block: false): it => box(
+// Code inline enveloppant proprement et blocs de code (extraits <= 40 L indivisibles sans debordement sur 4,46 po)
+#show raw.where(block: false): it => highlight(
   fill: rgb("#F1F5F9"),
-  inset: (x: 3pt, y: 0pt),
-  outset: (y: 1.5pt),
+  extent: 1pt,
   radius: 2pt,
-)[#text(font: ("Consolas", "DejaVu Sans Mono"), size: 8.5pt, fill: rgb("#0F172A"))[#it]]
+)[#text(font: ("Consolas", "DejaVu Sans Mono"), size: 8.4pt, fill: rgb("#0F172A"))[#it]]
 
 #show raw.where(block: true): it => block(
   width: 100%,
   fill: rgb("#F8FAFC"),
   stroke: 0.5pt + rgb("#CBD5E1"),
-  inset: 7pt,
+  inset: 5pt,
   radius: 3pt,
   breakable: false,
 )[
   #set par(justify: false, leading: 0.48em, spacing: 0.40em)
-  #text(font: ("Consolas", "DejaVu Sans Mono"), size: 7.6pt, fill: rgb("#0F172A"))[#it]
+  #text(font: ("Consolas", "DejaVu Sans Mono"), size: 6.7pt, fill: rgb("#0F172A"))[#it]
 ]
 
 // Tableaux responsives bordes sans debordement ni coupure en milieu de ligne
 #set table(
   stroke: 0.45pt + rgb("#CBD5E1"),
-  inset: (x: 4.5pt, y: 4pt),
+  inset: (x: 3.0pt, y: 3.5pt),
   fill: (x, y) => if y == 0 { rgb("#1B365D") } else if calc.odd(y) { rgb("#F8FAFC") } else { white },
 )
 #set table.cell(breakable: false)
 #show figure.where(kind: table): set block(breakable: true, above: 0.9em, below: 1.0em)
 #show table: it => block(width: 100%)[
-  #set text(font: ("Segoe UI", "Libertinus Serif"), size: 7.4pt, hyphenate: true)
+  #set text(font: ("Segoe UI", "Libertinus Serif"), size: 7.0pt, hyphenate: true)
   #set par(justify: false, leading: 0.45em, spacing: 0.30em)
-  #show raw.where(block: false): r => text(font: ("Consolas", "DejaVu Sans Mono"), size: 7.0pt, fill: rgb("#0F172A"), r.text)
+  #show raw.where(block: false): r => text(font: ("Consolas", "DejaVu Sans Mono"), size: 6.5pt, fill: rgb("#0F172A"), r.text)
   #show table.cell.where(y: 0): it => {
     set text(fill: white, weight: "bold")
-    show raw.where(block: false): r => text(font: ("Consolas", "DejaVu Sans Mono"), size: 7.0pt, fill: white, r.text)
+    show raw.where(block: false): r => text(font: ("Consolas", "DejaVu Sans Mono"), size: 6.5pt, fill: white, r.text)
     it
   }
   #it

@@ -1,4 +1,4 @@
-%%{init: {'theme': 'base', 'themeVariables': {'fontFamily': 'DejaVu Sans', 'fontSize': '13px', 'lineColor': '#334155', 'edgeLabelBackground': '#FFFFFF', 'primaryTextColor': '#0F2942'}, 'flowchart': {'nodeSpacing': 20, 'rankSpacing': 22, 'padding': 9}}}%%
+%%{init: {'theme': 'base', 'themeVariables': {'fontFamily': 'DejaVu Sans', 'fontSize': '14px', 'lineColor': '#334155', 'edgeLabelBackground': '#FFFFFF', 'primaryTextColor': '#0F2942'}, 'themeCSS': '.edgeLabel, .edgeLabel rect, .edgeLabel span, .labelBkg { background-color: #ffffff !important; fill: #ffffff !important; opacity: 1 !important; padding: 2px 5px !important; }', 'flowchart': {'nodeSpacing': 24, 'rankSpacing': 26, 'padding': 10}}}%%
 flowchart TD
   CAND["Candidat blueprint (bp1 / bp2 / bp3)<br/>intégrant modèle probabiliste"]:::prob
   G_ADR{{"1. ADR 2027-B001 valide ?"}}:::det
@@ -10,7 +10,7 @@ flowchart TD
   REJ_ADR["Rejet ADR : schéma strict<br/>ou soc_killswitch_id absent"]:::det
   REJ_SBB["Rejet SBB : bloc Tableau 12<br/>(Plans A/B) manquant"]:::det
   REJ_PRR["Rejet PRR : porte S/R/O/G/F<br/>sans empreinte SHA-256"]:::det
-  REJ_C40["Rejet C40 / G0 : blueprint ou<br/>seuil pass^k / Wilson échoué"]:::det
+  REJ_C40["Rejet C40 / G0 : blueprint ou<br/>seuil pass<sup>k</sup> / Wilson échoué"]:::det
   GO["Conformité mécanique (DC-P12)<br/>éligible au contrôle SoR (non-avis)"]:::det
 
   subgraph LEG["Légende"]
@@ -36,3 +36,4 @@ flowchart TD
   classDef det fill:#EBF2F7,stroke:#1E4E79,stroke-width:2.5px,color:#0F2942,font-weight:bold
   classDef prob fill:#FFF5E0,stroke:#B45309,stroke-width:2px,stroke-dasharray:6 4,color:#451A03
   style LEG fill:#FFFFFF,stroke:#CBD5E1,stroke-width:1.2px,color:#1E293B
+  linkStyle 1 stroke:#B45309,stroke-width:2px,stroke-dasharray:6 4

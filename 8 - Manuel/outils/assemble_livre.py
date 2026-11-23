@@ -11,6 +11,7 @@ import re
 import subprocess
 import sys
 import tempfile
+from collections.abc import Callable
 from pathlib import Path
 
 _TOOLS_DIR = Path(__file__).resolve().parent
@@ -304,6 +305,61 @@ def assemble_markdown(root: Path) -> tuple[Path, str, dict]:
     return md_out, body_only, meta
 
 
+def _transform_inline_backticks(
+    text: str,
+    transform: Callable[[str], str],
+    *,
+    respect_escapes: bool = False,
+) -> str:
+    """Applique `transform` aux spans de code inline hors blocs de code clotures."""
+    out_lines: list[str] = []
+    fence_char: str | None = None
+    fence_len = 0
+
+    for ln in text.splitlines(keepends=True):
+        raw_ln = ln.rstrip("\r\n")
+        if fence_char is None:
+            m_fence = _FENCE_OPEN_RE.match(raw_ln)
+            if m_fence:
+                fence_char = m_fence.group(1)[0]
+                fence_len = len(m_fence.group(1))
+                out_lines.append(ln)
+                continue
+            res: list[str] = []
+            i = 0
+            n = len(ln)
+            while i < n:
+                if respect_escapes and ln[i] == "\\":
+                    res.append(ln[i : i + 2])
+                    i += 2
+                    continue
+                if ln[i] == "`":
+                    run = _count_backtick_run(ln, i)
+                    delim = "`" * run
+                    end = ln.find(delim, i + run)
+                    while end != -1 and _count_backtick_run(ln, end) != run:
+                        end = ln.find(delim, end + 1)
+                    if end != -1:
+                        res.append(delim + transform(ln[i + run : end]) + delim)
+                        i = end + run
+                        continue
+                res.append(ln[i])
+                i += 1
+            out_lines.append("".join(res))
+        else:
+            out_lines.append(ln)
+            stripped = raw_ln.strip()
+            if stripped.startswith(fence_char * fence_len) and stripped == fence_char * len(stripped):
+                fence_char = None
+                fence_len = 0
+    return "".join(out_lines)
+
+
+def _unescape_dollars_in_inline_code_md(md_text: str) -> str:
+    """Remplace \\$ par $ uniquement dans les spans de code inline Markdown (hors blocs clotures)."""
+    return _transform_inline_backticks(md_text, lambda s: s.replace(r"\$", "$"), respect_escapes=False)
+
+
 def compile_html(root: Path, md_path: Path) -> Path:
     """Compile l'edition HTML autonome via Pandoc dans livrables/8 - Manuel.html."""
     root = _resolve_book_root(root)
@@ -315,6 +371,11 @@ def compile_html(root: Path, md_path: Path) -> Path:
         str(p) for p in (md_path.parent, livrables_dir, root.parent, root)
     )
 
+    sanitized_md = _unescape_dollars_in_inline_code_md(md_path.read_text(encoding="utf-8"))
+    with tempfile.NamedTemporaryFile("w", suffix=".md", encoding="utf-8", delete=False) as mf:
+        mf.write(sanitized_md)
+        temp_md_path = Path(mf.name)
+
     with tempfile.NamedTemporaryFile("w", suffix=".html", encoding="utf-8", delete=False) as tf:
         tf.write(_HTML_HEADER_CSS)
         css_header_path = Path(tf.name)
@@ -322,9 +383,9 @@ def compile_html(root: Path, md_path: Path) -> Path:
     try:
         cmd = [
             "pandoc",
-            str(md_path),
+            str(temp_md_path),
             "-f",
-            "markdown-tex_math_dollars+tex_math_single_backslash-implicit_figures",
+            "markdown-tex_math_dollars+tex_math_single_backslash-implicit_figures-citations",
             "--standalone",
             "--embed-resources",
             "--toc",
@@ -342,6 +403,7 @@ def compile_html(root: Path, md_path: Path) -> Path:
             raise RuntimeError(f"Echec pandoc HTML (code {res.returncode}) :\n{res.stderr}")
     finally:
         css_header_path.unlink(missing_ok=True)
+        temp_md_path.unlink(missing_ok=True)
     return html_out
 
 
@@ -350,20 +412,67 @@ def _escape_typst_content(text: str) -> str:
 
 
 def _strip_typst_markup(cell: str) -> str:
-    s = re.sub(r"#(?:strong|emph|link\([^)]*\))\[", "", cell)
+    s = re.sub(r"#(?:strong|emph|link\([^)]*\)|text\([^)]*\))\[", "", cell)
     s = s.replace("[", "").replace("]", "").replace("`", "")
     s = re.sub(r"\\([\[\]$#_])", r"\1", s)
     return " ".join(s.split())
 
 
-def _break_long_tokens_in_cell(cell: str) -> str:
-    def _wrap_raw(m: re.Match[str]) -> str:
-        inner = m.group(1)
-        if len(inner) >= 14:
-            inner = re.sub(r"([_./:])(?=[A-Za-z0-9])", lambda x: x.group(1) + "\u200b", inner)
-        return f"`{inner}`"
+def _apply_cell_prose_nbsp(text: str) -> str:
+    text = re.sub(r"(?i)\b([cdjlmnst]['’])(?=[A-Za-zÀ-ÖØ-öø-ÿ]{9,})", lambda m: m.group(1) + "\u200b", text)
+    text = re.sub(r"(\d)\s+%", lambda m: m.group(1) + "\u00a0%", text)
+    text = re.sub(r"(\d)\s+\\\$", lambda m: m.group(1) + "\u00a0\\$", text)
+    text = re.sub(r"(\\\$)\s+(CA|US)\b", lambda m: m.group(1) + "\u00a0" + m.group(2), text)
+    text = re.sub(r"(?<=\d) (?=\d{3}\b)", "\u00a0", text)
+    text = re.sub(r"(\d)\s+(s|ms|min|h|o|Kio|Mio|po|pt)\b", lambda m: m.group(1) + "\u00a0" + m.group(2), text)
+    text = re.sub(r"(?<!-) -> (?!-)", " → ", text)
+    return text
 
-    return re.sub(r"`([^`\n]+)`", _wrap_raw, cell)
+
+def _break_long_tokens_in_cell(cell: str) -> str:
+    def _wrap_raw_inner(inner: str) -> str:
+        inner = inner.replace(r"\$", "$")
+        inner = re.sub(r"(\d)\s+%", lambda x: x.group(1) + "\u00a0%", inner)
+        inner = inner.replace("->", "-\u2060>")
+        inner = inner.replace("-*", "-\u2060*")
+        inner = re.sub(r"(?<![A-Za-z0-9])(--?)(?=[A-Za-z0-9*])", lambda x: "".join(c + "\u2060" for c in x.group(1)), inner)
+        if "://" in inner:
+            return f"`{_wrap_url_display(inner)}`"
+
+        def _chunk_cell(m2: re.Match[str]) -> str:
+            tok = m2.group(0)
+            return "\u200b".join(tok[k : k + 12] for k in range(0, len(tok), 12))
+
+        def _wrap_part(part: str) -> str:
+            if "\u200b" in part:
+                return part
+            part = re.sub(
+                r"(::|[_/:,=(]|(?<!\d)\.|(?<=\d)\.(?=[A-Za-z_]))(?=[A-Za-z0-9_{\"'])",
+                lambda x: x.group(1) + "\u200b",
+                part,
+            )
+            if len(part) >= 12:
+                part = re.sub(r"(?<=[a-z0-9])(?=[A-Z])", "\u200b", part)
+            return re.sub(r"[A-Za-zÀ-ÖØ-öø-ÿ0-9]{16,}", _chunk_cell, part)
+
+        wrapped = re.sub(r"\S+", lambda mm: _wrap_part(mm.group(0)), inner)
+        return f"`{wrapped}`"
+
+    protected_re = re.compile(r'((?<!`)`[^`\n]+`(?!`)|#link\("[^"]+"\)(?:\[[^\]]*\])?)')
+    parts: list[str] = []
+    pos = 0
+    for m in protected_re.finditer(cell):
+        if m.start() > pos:
+            parts.append(_apply_cell_prose_nbsp(cell[pos : m.start()]))
+        tok = m.group(0)
+        if tok.startswith("`"):
+            parts.append(_wrap_raw_inner(tok[1:-1]))
+        else:
+            parts.append(tok)
+        pos = m.end()
+    if pos < len(cell):
+        parts.append(_apply_cell_prose_nbsp(cell[pos:]))
+    return "".join(parts)
 
 
 def _count_backtick_run(text: str, idx: int) -> int:
@@ -528,10 +637,13 @@ def _rebalance_single_table(table_inner: str) -> str:
     col_idx = -1
     ncols = 0
     for idx, arg in enumerate(args):
-        m = re.match(r"^\s*columns:\s*\(([^)]+)\)\s*$", arg, re.DOTALL)
+        m = re.match(r"^\s*columns:\s*(?:\(([^)]+)\)|(\d+))\s*$", arg, re.DOTALL)
         if m:
             col_idx = idx
-            ncols = len([x for x in m.group(1).split(",") if x.strip()])
+            if m.group(1) is not None:
+                ncols = len([x for x in m.group(1).split(",") if x.strip()])
+            else:
+                ncols = int(m.group(2))
             break
     if col_idx < 0 or ncols <= 1:
         return table_inner
@@ -547,13 +659,16 @@ def _rebalance_single_table(table_inner: str) -> str:
             for h in h_args:
                 hs = h.strip()
                 if hs.startswith("[") and hs.endswith("]"):
-                    cell_texts.append(_strip_typst_markup(hs))
                     hs = _break_long_tokens_in_cell(hs)
+                    cell_texts.append(_strip_typst_markup(hs).replace("\u200b", " ").replace("\u2060", ""))
                 fixed_h.append(hs)
             new_args.append("\n    table.header(" + ", ".join(fixed_h) + ",)")
+        elif re.match(r"^align:\s*\(", st):
+            new_args.append(re.sub(r"\bauto\b", "left", arg))
         elif st.startswith("[") and st.endswith("]"):
-            cell_texts.append(_strip_typst_markup(st))
-            new_args.append(arg.replace(st, _break_long_tokens_in_cell(st), 1))
+            broken = _break_long_tokens_in_cell(st)
+            cell_texts.append(_strip_typst_markup(broken).replace("\u200b", " ").replace("\u2060", ""))
+            new_args.append(arg.replace(st, broken, 1))
         else:
             new_args.append(arg)
 
@@ -570,15 +685,21 @@ def _rebalance_single_table(table_inner: str) -> str:
         hdr_len = len(vals[0]) if vals else 4
         max_word = max((max((len(w) for w in v.split()), default=0) for v in vals), default=0)
         hdr_max_word = max((len(w) for w in vals[0].split()), default=0) if vals else 0
-        eff_word = max(max_word, hdr_max_word)
-        req_floor = max(0.095, min(0.27, (eff_word * 4.5 + 13.0) / _USABLE_PAGE_WIDTH_PT))
+        if med < 15:
+            eff_word = min(max(max_word, hdr_max_word), 12)
+            req_floor = max(0.085, (eff_word * 3.8 + 8.0) / _USABLE_PAGE_WIDTH_PT)
+        else:
+            eff_word = min(max(max_word, hdr_max_word), 16)
+            cap = 47.0 if ncols >= 6 else 72.0
+            req_floor = max(0.085, min(cap / _USABLE_PAGE_WIDTH_PT, (eff_word * 3.7 + 7.5) / _USABLE_PAGE_WIDTH_PT))
         min_shares.append(req_floor)
-        score = max(float(hdr_len) * 1.15, 0.55 * max(med, 5) + 0.45 * min(p90, 95), min(eff_word, 24) * 1.4)
+        score = max(float(hdr_len) * 1.15, 0.55 * max(med, 5) + 0.45 * min(p90, 95), min(eff_word, 16) * 1.4)
         col_scores.append(max(score, 8.0))
 
     floor_sum = sum(min_shares)
-    if floor_sum > 0.85:
-        scale_f = 0.85 / floor_sum
+    max_floor_sum = 0.94 if ncols >= 6 else 0.88
+    if floor_sum > max_floor_sum:
+        scale_f = max_floor_sum / floor_sum
         min_shares = [s * scale_f for s in min_shares]
         floor_sum = sum(min_shares)
 
@@ -597,8 +718,206 @@ def _rebalance_single_table(table_inner: str) -> str:
 def _wrap_url_display(url: str) -> str:
     if "://" in url:
         scheme, rest = url.split("://", 1)
-        return scheme + "://" + rest.replace("/", "/\u200b").replace("-", "-\u200b")
-    return url.replace("/", "/\u200b").replace("-", "-\u200b")
+        rest = rest.replace("/", "/\u200b").replace("-", "-\u200b")
+        rest = re.sub(r"(?<!\.)\.(?=[A-Za-z0-9])", ".\u200b", rest)
+        return scheme + "://" + rest
+    res = url.replace("/", "/\u200b").replace("-", "-\u200b")
+    return re.sub(r"(?<!\.)\.(?=[A-Za-z0-9])", ".\u200b", res)
+
+
+def _format_typst_link_safe(m: re.Match[str]) -> str:
+    url = m.group(1)
+    label = m.group(2)
+    if label is None:
+        disp = _wrap_url_display(url)
+    elif label.startswith(("http://", "https://")):
+        disp = _wrap_url_display(label.replace("\u200b", ""))
+    else:
+        return f'#link("{url}")[{label}]'
+    escaped = disp.replace("\\", "\\\\").replace('"', '\\"')
+    return f'#link("{url}")[#text(hyphenate: false)[#("{escaped}")]]'
+
+
+def _wrap_inline_raw_tokens_typst(inner: str) -> str:
+    """Deseschappe \\$ et ajoute des points de cesure discrets (\\u200b) dans le code inline hors tableaux."""
+    fixed = inner.replace(r"\$", "$")
+    fixed = re.sub(r"(\d)\s+%", lambda x: x.group(1) + "\u00a0%", fixed)
+    fixed = re.sub(r"\b8\s+-\s+(Trousse|Manuel)", lambda x: f"8\u00a0-\u00a0{x.group(1)}", fixed)
+    fixed = fixed.replace("->", "-\u2060>")
+    fixed = fixed.replace("-*", "-\u2060*")
+    fixed = re.sub(r"(?<![A-Za-z0-9])(--?)(?=[A-Za-z0-9*])", lambda x: "".join(c + "\u2060" for c in x.group(1)), fixed)
+    if "://" in fixed or "\u200b" in fixed:
+        return fixed
+
+    def _chunk_long_run(m: re.Match[str]) -> str:
+        tok = m.group(0)
+        if len(tok) < 32:
+            return tok
+        return "\u200b".join(tok[k : k + 16] for k in range(0, len(tok), 16))
+
+    def _wrap_part(part: str) -> str:
+        if len(part) < 16:
+            return part
+        part = re.sub(
+            r"(::|[_/,=]|(?<!\d)\.|(?<=\d)\.(?=[A-Za-z_]))(?=[A-Za-z0-9_{\"'])",
+            lambda x: x.group(1) + "\u200b",
+            part,
+        )
+        if len(part) >= 26:
+            part = re.sub(r"(?<=[a-z0-9])(?=[A-Z])", "\u200b", part)
+        return re.sub(r"[A-Za-zÀ-ÖØ-öø-ÿ0-9]{32,}", _chunk_long_run, part)
+
+    return re.sub(r"\S+", lambda m: _wrap_part(m.group(0)), fixed)
+
+
+def _postprocess_inline_raw_typst(typst_src: str) -> str:
+    """Traite le code inline hors blocs clotures sans alterer les blocs ``` ni la prose."""
+    return _transform_inline_backticks(typst_src, _wrap_inline_raw_tokens_typst, respect_escapes=True)
+
+
+def _protect_typst_prose_line(line: str) -> str:
+    """Applique les espaces insecables et -> en prose hors spans `...`, math $...$ et appels #link/#(...)."""
+    if line.lstrip().startswith(("#set ", "#show ", "#page", "#let ", "#import ", "#figure(", "#block(", "#align(")):
+        return line
+    protected_re = re.compile(r'(`[^`\n]+`|(?<!\\)\$(?:\\.|[^$\n\\])+\$|#link\("[^"]+"\)|#\("(?:[^"\\]|\\.)*"\))')
+    parts: list[str] = []
+    pos = 0
+    for m in protected_re.finditer(line):
+        if m.start() > pos:
+            parts.append(_apply_prose_nbsp_segment(line[pos : m.start()]))
+        parts.append(m.group(0))
+        pos = m.end()
+    if pos < len(line):
+        parts.append(_apply_prose_nbsp_segment(line[pos:]))
+    return "".join(parts)
+
+
+def _apply_prose_nbsp_segment(seg: str) -> str:
+    seg = re.sub(r"(\d)\s+%", lambda m: m.group(1) + "\u00a0%", seg)
+    seg = re.sub(r"(\d)\s+\\\$", lambda m: m.group(1) + "\u00a0\\$", seg)
+    seg = re.sub(r"(\\\$)\s+(CA|US)\b", lambda m: m.group(1) + "\u00a0" + m.group(2), seg)
+    seg = re.sub(r"(?<=\d) (?=\d{3}\b)", "\u00a0", seg)
+    seg = re.sub(r"(\d)\s+(s|ms|min|h|o|Kio|Mio|po|pt)\b", lambda m: m.group(1) + "\u00a0" + m.group(2), seg)
+    seg = re.sub(r"(§{1,2})\s+(?=\d)", lambda m: m.group(1) + "\u00a0", seg)
+    seg = re.sub(r"([−–])\s+(?=\d)", lambda m: m.group(1) + "\u00a0", seg)
+    seg = re.sub(r"\b8\s+-\s+(Trousse|Manuel)", lambda m: "8\u00a0-\u00a0" + m.group(1), seg)
+    seg = re.sub(r"(?<!-) -> (?!-)", " → ", seg)
+    return seg
+
+
+def _bind_small_tables_to_captions(typst_src: str) -> str:
+    """Enveloppe chaque petit tableau (<= 12 lignes) avec sa legende Tableau X.Y dans un bloc indivisible."""
+    out: list[str] = []
+    pos = 0
+    n = len(typst_src)
+    marker = "#figure("
+    cap_re = re.compile(
+        r"^\s*\n\s*\n(#align\(center\)\[#set par\(justify: false\); #set text\(size: 8\.6pt, fill: rgb\(\"#475569\"\)\); #emph\[Tableau\s+\d+\.\d+\b[^\n]*\]\])"
+    )
+    while pos < n:
+        hit = typst_src.find(marker, pos)
+        if hit == -1:
+            out.append(typst_src[pos:])
+            break
+        out.append(typst_src[pos:hit])
+        i = hit + len(marker)
+        paren_depth = 1
+        in_str = False
+        raw_ticks = 0
+        while i < n and paren_depth > 0:
+            ch = typst_src[i]
+            if in_str:
+                if ch == "\\" and i + 1 < n:
+                    i += 2
+                    continue
+                if ch == '"':
+                    in_str = False
+            elif raw_ticks > 0:
+                if ch == "`":
+                    run = _count_backtick_run(typst_src, i)
+                    if run == raw_ticks:
+                        raw_ticks = 0
+                    i += run
+                    continue
+            else:
+                if ch == "\\":
+                    i += 2
+                    continue
+                elif ch == '"':
+                    in_str = True
+                elif ch == "`":
+                    run = _count_backtick_run(typst_src, i)
+                    raw_ticks = run
+                    i += run
+                    continue
+                elif ch == "(":
+                    paren_depth += 1
+                elif ch == ")":
+                    paren_depth -= 1
+            i += 1
+        fig_block = typst_src[hit:i]
+        is_small_table = ", kind: table" in fig_block and fig_block.count("\n    [") <= 16
+        m_cap = cap_re.match(typst_src[i:]) if is_small_table else None
+        if m_cap and (typst_src[hit:hit + 6] == "#figur"):
+            end_cap = i + m_cap.end()
+            out.append(
+                "\n#block(width: 100%, breakable: false)[\n"
+                + fig_block
+                + "\n\n"
+                + m_cap.group(1)
+                + "\n]\n"
+            )
+            pos = end_cap
+        else:
+            out.append(fig_block)
+            pos = i
+    return "".join(out)
+
+
+def _apply_outside_fences(typst_src: str, line_fn: Callable[[str], str]) -> str:
+    out_lines: list[str] = []
+    fence_char: str | None = None
+    fence_len = 0
+    for ln in typst_src.splitlines(keepends=True):
+        raw_ln = ln.rstrip("\r\n")
+        if fence_char is None:
+            m_fence = _FENCE_OPEN_RE.match(raw_ln)
+            if m_fence:
+                fence_char = m_fence.group(1)[0]
+                fence_len = len(m_fence.group(1))
+                out_lines.append(ln)
+            else:
+                ending = ln[len(raw_ln) :]
+                out_lines.append(line_fn(raw_ln) + ending)
+        else:
+            out_lines.append(ln)
+            stripped = raw_ln.strip()
+            if stripped.startswith(fence_char * fence_len) and stripped == fence_char * len(stripped):
+                fence_char = None
+                fence_len = 0
+    return "".join(out_lines)
+
+
+def _wrap_unjustified_section(typst_src: str, start_pattern: str, stop_pattern: str) -> str:
+    m_start = re.search(start_pattern, typst_src, re.MULTILINE)
+    if not m_start:
+        return typst_src
+    s_idx = m_start.end()
+    after = typst_src[s_idx:]
+    m_stop = re.search(stop_pattern, after, re.MULTILINE)
+    if m_stop:
+        body = after[: m_stop.start()]
+        rest = "\n" + after[m_stop.start() :].lstrip("\n")
+    else:
+        body = after
+        rest = ""
+    return (
+        typst_src[:s_idx]
+        + "\n\n#block(width: 100%, breakable: true)[\n#set par(justify: false, leading: 0.56em, spacing: 0.45em)\n"
+        + body.strip()
+        + "\n]\n"
+        + rest
+    )
 
 
 def _postprocess_typst_body(typst_src: str) -> str:
@@ -666,6 +985,9 @@ def _postprocess_typst_body(typst_src: str) -> str:
 
     res = "".join(out)
 
+    # Retirer un separateur horizontal immédiatement avant un titre
+    res = re.sub(r"(?m)^#divider\(\)\s*\n+(?=={1,6}\s+)", "", res)
+
     # Centrer strictement les legendes numerotees *Figure N — ...* et *Tableau X.Y — ...*
     res = re.sub(
         r"(?ms)^(#emph\[(?:Figure\s+\d+\s*[—–-]|Tableau\s+\d+\.\d+\s*[—–-])[^\n]+(?:\n(?!\s*\n)[^\n]+)*\])(?=\s*(?:\n\s*\n|\Z))",
@@ -673,43 +995,30 @@ def _postprocess_typst_body(typst_src: str) -> str:
         res,
     )
 
-    # Desactiver la justification excessive et permettre la coupure visuelle des URLs sans corrompre #link("URL")
-    m_bib = re.search(r"(?m)^=+\s+Bibliographie classée des sources intégrales vérifiées\b[^\n]*(?:\n<[^>\n]+>)?", res)
-    if m_bib:
-        b_idx = m_bib.end()
-        after_head = res[b_idx:]
-        m_next = re.search(r"(?m)^={1,2}\s+", after_head)
-        if m_next:
-            tail = after_head[: m_next.start()]
-            rest_after = "\n" + after_head[m_next.start() :].lstrip("\n")
-        else:
-            tail = after_head
-            rest_after = ""
-        head = res[:b_idx]
+    # Lier chaque petit tableau (<= 16 lignes) a sa legende *Tableau X.Y*
+    res = _bind_small_tables_to_captions(res)
 
-        def _format_typst_link(m: re.Match[str]) -> str:
-            url = m.group(1)
-            label = m.group(2)
-            if label is None:
-                return f'#link("{url}")[{_wrap_url_display(url)}]'
-            if label.startswith(("http://", "https://")):
-                return f'#link("{url}")[{_wrap_url_display(label)}]'
-            return f'#link("{url}")[{label}]'
+    # Securiser tous les #link HTTP/HTTPS contre l'autolinker Typst et autoriser la cesure des URLs
+    def _fix_line_urls(line: str) -> str:
+        line = re.sub(r'#link\("(https?://[^"]+)"\)(?:\[([^\]]+)\])?', _format_typst_link_safe, line)
+        return re.sub(r"`(https?://[^`\n]+)`", lambda m: "`" + _wrap_url_display(m.group(1)) + "`", line)
 
-        tail = re.sub(r'#link\("([^"]+)"\)(?:\[([^\]]+)\])?', _format_typst_link, tail)
-        tail = re.sub(
-            r"`(https?://[^`\n]+)`",
-            lambda m: "`" + _wrap_url_display(m.group(1)) + "`",
-            tail,
-        )
-        res = (
-            head
-            + "\n\n#block(width: 100%, breakable: true)[\n#set par(justify: false, leading: 0.56em, spacing: 0.45em)\n"
-            + tail.strip()
-            + "\n]\n"
-            + rest_after
-        )
-    return res
+    res = _apply_outside_fences(res, _fix_line_urls)
+
+    # Desactiver la justification excessive dans la bibliographie/journaux d'Annexe A et les listes d'Annexe B
+    res = _wrap_unjustified_section(
+        res,
+        r"^=+\s+Bibliographie classée des sources intégrales vérifiées\b[^\n]*(?:\n<[^>\n]+>)?",
+        r"^={1,2}\s+(?:Annexe\s+|Chapitre\s+|Partie\s+)",
+    )
+    res = _wrap_unjustified_section(
+        res,
+        r"^=+\s+Matrice détaillée\b[^\n]*(?:\n<[^>\n]+>)?",
+        r"^={1,2}\s+(?:Annexe\s+|Chapitre\s+|Partie\s+)",
+    )
+
+    res = _apply_outside_fences(res, _protect_typst_prose_line)
+    return _postprocess_inline_raw_typst(res)
 
 
 def compile_pdf(root: Path, body_md: str, meta: dict) -> Path:
@@ -727,7 +1036,7 @@ def compile_pdf(root: Path, body_md: str, meta: dict) -> Path:
     body_for_pdf = _normalize_image_paths(body_md, fig_ext_map, prefix="/diagrammes/rendus")
 
     p = subprocess.run(
-        ["pandoc", "-f", "markdown-tex_math_dollars+tex_math_single_backslash", "-t", "typst"],
+        ["pandoc", "-f", "markdown-tex_math_dollars+tex_math_single_backslash-citations", "-t", "typst"],
         input=body_for_pdf,
         shell=False,
         capture_output=True,
