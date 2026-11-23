@@ -13,10 +13,13 @@ import tempfile
 from pathlib import Path
 
 _TOOLS_DIR = Path(__file__).resolve().parent
-if str(_TOOLS_DIR) not in sys.path:
-    sys.path.insert(0, str(_TOOLS_DIR))
+_GABARIT_PDF_DIR = _TOOLS_DIR.parent.parent / "gabarit-pdf"
+for _p in (_TOOLS_DIR, _GABARIT_PDF_DIR):
+    if str(_p) not in sys.path:
+        sys.path.insert(0, str(_p))
 
 from _communs import format_french_date, get_freeze_date  # noqa: E402
+from compile_pdf import render_typst_document  # noqa: E402
 from verifie_manuscrit import _FENCE_OPEN_RE, _strip_yaml_and_preserve_lines  # noqa: E402
 
 # Largeur utile Typst : page 6.14in - marges (0.90in + 0.78in) = 4.46in * 72 pt/in = 321.12 pt
@@ -678,10 +681,8 @@ def _postprocess_typst_body(typst_src: str) -> str:
 
 
 def compile_pdf(root: Path, body_md: str, meta: dict) -> Path:
-    """Convertit en Typst via Pandoc, injecte dans gabarit-livre.typ et compile en ../0 - PDF-MD/<root.name>.pdf."""
+    """Convertit en Typst via Pandoc, injecte dans gabarit-pdf/gabarit-collection.typ et compile en ../0 - PDF-MD/<root.name>.pdf."""
     root = _resolve_book_root(root)
-    template_path = Path(__file__).resolve().parent / "gabarit-livre.typ"
-    template_src = template_path.read_text(encoding="utf-8")
 
     manifest = json.loads((root / "specs" / "manifest.json").read_text(encoding="utf-8"))
     fig_ext_map = {
@@ -702,18 +703,29 @@ def compile_pdf(root: Path, body_md: str, meta: dict) -> Path:
 
     body_typst = _postprocess_typst_body(p.stdout)
 
-    typst_source = template_src
-    replacements = {
-        "/* {{TITLE}} */": _escape_typst_content(meta["title"]),
-        "/* {{SUBTITLE}} */": _escape_typst_content(meta["subtitle"]),
-        "/* {{AUTHOR}} */": _escape_typst_content(meta["author"]),
-        "/* {{FREEZE_DATE}} */": _escape_typst_content(meta["freeze_date"]),
-        "/* {{PUB_DATE}} */": _escape_typst_content(meta["pub_date"]),
-        "/* {{LICENSE_TEXT}} */": _escape_typst_content(meta["license_text"]),
-        "/* {{BODY_TYPST}} */": body_typst,
-    }
-    for marker, val in replacements.items():
-        typst_source = typst_source.replace(marker, val)
+    lic_escaped = _escape_typst_content(meta["license_text"])
+    typst_source = render_typst_document(
+        body_typst,
+        {
+            "title": meta["title"],
+            "subtitle": meta["subtitle"],
+            "author": meta["author"],
+            "pub_date": meta["pub_date"],
+            "freeze_date": meta["freeze_date"],
+            "license_badge": meta["license_text"],
+            "diffusion_note": (
+                f"*Régime de diffusion* : {lic_escaped} (textes et figures); "
+                "scripts d'assurance qualité sous licence MIT."
+            ),
+            "integrity_note": (
+                "*Note d'intégrité (`AO-05`)* : ouvrage conçu sur cahier des charges humain, "
+                "rédigé et vérifié intégralement par chaîne d'agents indépendants sur corpus ouvert "
+                "haché `SHA-256`. Document de référence architecturale à portée consultative; "
+                "ne constitue ni un avis juridique, ni une certification actuarielle ou d'audit."
+            ),
+        },
+        typst_root=root,
+    )
 
     consolidated_dir = root.parent / "0 - PDF-MD"
     consolidated_dir.mkdir(parents=True, exist_ok=True)
