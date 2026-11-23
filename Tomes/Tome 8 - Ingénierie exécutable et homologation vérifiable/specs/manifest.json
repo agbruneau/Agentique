@@ -1,0 +1,469 @@
+{
+  "manifest_version": "1.0.0",
+  "project_id": "MANUEL-AGENTIQUE-VOL8-2027",
+  "title": "Ingénierie exécutable de l'entreprise agentique",
+  "subtitle": "Manuel de spécifications testables, harnais 80/20, médiation MCP/A2A, délégation bornée, politiques OPA hors modèle, sémantique d'effet Saga et suite EvalOps vérifiable (non-avis)",
+  "author_credit": "André-Guy Bruneau, M.Sc IT",
+  "edition_year": 2027,
+  "language": "fr-CA",
+  "license_mode": {
+    "text_and_figures": "CC-BY-4.0",
+    "code_and_scripts": "MIT",
+    "commercial_override": false
+  },
+  "production_mode": {
+    "drafting": "100%_agentic",
+    "quality_assurance": "100%_agentic",
+    "human_role": "upstream_specs_and_gate_thresholds_only"
+  },
+  "word_budget": {
+    "total_target": 38000,
+    "tolerance_pct": 8,
+    "total_min": 34960,
+    "total_max": 41040,
+    "narrative_target": 35000,
+    "annexes_target": 3000,
+    "max_tables_per_chapter": 3,
+    "max_bullet_line_ratio": 0.25,
+    "max_verbatim_ngram_vs_corpus": 11
+  },
+  "part_titles": {
+    "I": "Partie I — Harnais déterministe et confiance cryptographique",
+    "II": "Partie II — Politiques hors modèle, sémantique d'effet et homologation vérifiable"
+  },
+  "deliverables": {
+    "md": "../../Corpus/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
+    "pdf": "../../Corpus/Tome 8 - Ingénierie exécutable et homologation vérifiable.pdf",
+    "html": "livrables/Tome 8 - Ingénierie exécutable et homologation vérifiable.html",
+    "image_prefix": "../Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus",
+    "pdf_title": "Tome 8 — Ingénierie exécutable et homologation vérifiable",
+    "pdf_collection": "COLLECTION ARCHITECTURE & GOUVERNANCE AGENTIQUE · TOME 8"
+  },
+  "g3_seeds": {
+    "pass1": 20270801,
+    "pass2": 20270802
+  },
+  "forbidden_prose_regexes": [
+    "\\bANC-\\d{3}\\b",
+    "\\bINI-\\d{3}\\b",
+    "\\bPEX-\\d{2}\\b",
+    "\\bSIG-\\d{3}\\b",
+    "\\bDIV-\\d{2}\\b",
+    "\\[S\\]",
+    "\\[D\\]",
+    "\\[A\\]",
+    "\\[M\\]",
+    "\\[N\\]",
+    "\\[L\\+\\]",
+    "\\bClasse [1-6]\\b",
+    "\\bStade [0-4]\\b",
+    "\\bPalier [1-3]\\b",
+    "Dans un monde en constante évolution",
+    "À l'ère du numérique",
+    "Il convient de souligner que",
+    "Force est de constater que",
+    "changement de paradigme révolutionnaire",
+    "synergie holistique",
+    "En conclusion, nous avons vu que"
+  ],
+  "internal_corpus_paths": [
+    "../../Corpus/Tome 1 - Confiance protocolaire et encadrement financier.md",
+    "../../Corpus/Tome 2 - Cadre normatif et exigences d'architecture.md",
+    "../../Corpus/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+    "../../Corpus/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
+    "../../Corpus/Tome 5 - Synthèse exécutive et concordance architecturale.md",
+    "../../Corpus/Tome 6 - Architecture multisectorielle et patrons de référence.md",
+    "../../Corpus/Tome 7 - Gouverner l'industrialisation cognitive.md",
+    "../Tome 3 - Ingénierie du tissu conjonctif et état de l'art/00 - Ouverture - Architecture et gouvernance du tissu conjonctif agentique.md",
+    "../Tome 3 - Ingénierie du tissu conjonctif et état de l'art/10 - Partie X - Recherche scientifique/Chapitre 48 - Revue de littérature.md"
+  ],
+  "stylistic_benchmarks_for_gauntlet": [
+    "../Tome 3 - Ingénierie du tissu conjonctif et état de l'art/00 - Ouverture - Architecture et gouvernance du tissu conjonctif agentique.md",
+    "../Tome 3 - Ingénierie du tissu conjonctif et état de l'art/10 - Partie X - Recherche scientifique/Chapitre 48 - Revue de littérature.md"
+  ],
+  "stylistic_benchmark_sections": {
+    "../Tome 3 - Ingénierie du tissu conjonctif et état de l'art/00 - Ouverture - Architecture et gouvernance du tissu conjonctif agentique.md": [
+      "0.1",
+      "0.2"
+    ],
+    "../Tome 3 - Ingénierie du tissu conjonctif et état de l'art/10 - Partie X - Recherche scientifique/Chapitre 48 - Revue de littérature.md": [
+      "48.4",
+      "48.8"
+    ]
+  },
+  "units": [
+    {
+      "id": "00-liminaire",
+      "kind": "frontmatter",
+      "file": "manuscrit/00 - Liminaire.md",
+      "title": "Liminaire — De la norme en prose au contrat exécutable : concordance, frontière hors modèle et méthode G0–G5",
+      "target_words": 3500,
+      "min_words": 3220,
+      "max_words": 3780,
+      "figures": [
+        "Fig-00"
+      ],
+      "research_axes": [
+        "RQ1",
+        "RQ5",
+        "RQ6"
+      ],
+      "owned_concepts": [
+        "canonical_five_intervolume_divergences",
+        "bicephalous_manual_and_trousse_split",
+        "ca_g0_sync_digest_contract",
+        "role_based_reading_tracks",
+        "dc_p12_non_avis_and_freeze_policy",
+        "six_gates_g0_g5_pipeline_and_third_party_vectors"
+      ]
+    },
+    {
+      "id": "ch01",
+      "kind": "chapter",
+      "part": "I",
+      "file": "manuscrit/01 - Partie I/Chapitre 01 - Harnais deterministe et mediation protocolaire.md",
+      "title": "Chapitre 01 — Harnais déterministe 80/20 à huit étapes et médiation protocolaire épinglée (MCP 2026-07-28, A2A v1.0.1)",
+      "target_words": 8000,
+      "min_words": 7360,
+      "max_words": 8640,
+      "figures": [
+        "Fig-01",
+        "Fig-02"
+      ],
+      "research_axes": [
+        "RQ1",
+        "RQ4"
+      ],
+      "owned_concepts": [
+        "eight_step_80_20_harness_pipeline",
+        "json_schema_2020_12_strict_profile",
+        "ambigu_escalade_gate",
+        "aibom_table_47_3_non_duplicate_ref",
+        "mcp_2026_07_28_jcs_sha256_pinning",
+        "header_mismatch_400_minus_32020_rejection",
+        "sep_2596_sep_3398_transport_adapter",
+        "a2a_v1_0_1_agent_card_jws_and_a2a_tck"
+      ]
+    },
+    {
+      "id": "ch02",
+      "kind": "chapter",
+      "part": "I",
+      "file": "manuscrit/01 - Partie I/Chapitre 02 - Identite non humaine, PQC et double couloir.md",
+      "title": "Chapitre 02 — Identité non humaine, délégation bornée à deux sauts, choc post-quantique (ML-DSA) et double couloir probatoire (OTel, JCS, SCITT, SLH-DSA, FOCUS)",
+      "target_words": 8500,
+      "min_words": 7820,
+      "max_words": 9180,
+      "figures": [
+        "Fig-03",
+        "Fig-04"
+      ],
+      "research_axes": [
+        "RQ2",
+        "RQ4",
+        "RQ6"
+      ],
+      "owned_concepts": [
+        "oauth_obo_two_hop_delegation_dpop",
+        "token_passthrough_rejection_exig_mcp_11",
+        "ssf_caep_revocation_and_agent_draft_01",
+        "ciba_ijson_jcs_approval_and_c5_c6_reprise",
+        "http_431_ml_dsa_o_hops_vs_tx_tokens_o1",
+        "otel_v1_41_0_genai_dev_85_attrs_cache_write",
+        "bilingual_fr_en_pii_redaction_and_lacune_21",
+        "jcs_scitt_rfc9943_slh_dsa_fips205_focus_cpo"
+      ]
+    },
+    {
+      "id": "ch03",
+      "kind": "chapter",
+      "part": "II",
+      "file": "manuscrit/02 - Partie II/Chapitre 03 - Politiques OPA hors modele et Sagas.md",
+      "title": "Chapitre 03 — Politiques hors modèle (OPA / Rego), Règle de deux, confinement déterministe et sémantique d'effet Saga à dix scénarios de fautes",
+      "target_words": 8000,
+      "min_words": 7360,
+      "max_words": 8640,
+      "figures": [
+        "Fig-05",
+        "Fig-06"
+      ],
+      "research_axes": [
+        "RQ3",
+        "RQ5"
+      ],
+      "owned_concepts": [
+        "opa_rego_vs_cedar_arbitrage_and_default_deny",
+        "rule_of_two_exig_sec_06_and_camel_taint",
+        "declarative_sandbox_manifest_no_kvm_imds",
+        "decimal_money_vs_ieee_754_float_guard",
+        "durable_saga_idem_v1_transactional_outbox",
+        "isolated_compensation_channel_exig_orc_28",
+        "ten_deterministic_saga_fault_scenarios_exig_orc_20"
+      ]
+    },
+    {
+      "id": "ch04",
+      "kind": "chapter",
+      "part": "II",
+      "file": "manuscrit/02 - Partie II/Chapitre 04 - Banc EvalOps hermetique et 24 portes PRR.md",
+      "title": "Chapitre 04 — Banc EvalOps hermétique (pass^k, bornes de Wilson, tests métamorphiques) et validation mécanique des 24 portes bloquantes et trois blueprints",
+      "target_words": 7000,
+      "min_words": 6440,
+      "max_words": 7560,
+      "figures": [
+        "Fig-07",
+        "Fig-08"
+      ],
+      "research_axes": [
+        "RQ5",
+        "RQ6"
+      ],
+      "owned_concepts": [
+        "hermetic_mock_mcp_evalops_and_pass_k",
+        "wilson_95_upper_bound_3_over_p_exig_eva_03",
+        "oracle_free_metamorphic_fr_en_100_scenarios",
+        "twenty_four_blocking_prr_and_2027_b001",
+        "five_sbb_table_12_instantiation",
+        "three_blueprints_c01_c40_validators"
+      ]
+    },
+    {
+      "id": "annexe-a",
+      "kind": "annex",
+      "generated_from_registry": true,
+      "file": "manuscrit/03 - Annexes/Annexe A - Socle L-plus, statut F et journal Wyvern.md",
+      "title": "Annexe A — Socle de spécifications primaires L+ hachées SHA-256, registre statut F et journal intégral d'ancrage atomique Wyvern (G2)",
+      "target_words": 1500,
+      "min_words": 1380,
+      "max_words": 1620,
+      "figures": [],
+      "research_axes": []
+    },
+    {
+      "id": "annexe-b",
+      "kind": "annex",
+      "generated_from_registry": true,
+      "file": "manuscrit/03 - Annexes/Annexe B - Tracabilite, vecteurs tiers et bilan AQ.md",
+      "title": "Annexe B — Matrice de traçabilité (EXIG-* / CAP-* / PRR-75 / C01–C40 / 5 SBB), catalogue des vecteurs tiers, rapports CI G0 et bilan d'assurance qualité G0–G5 & CA-16",
+      "target_words": 1500,
+      "min_words": 1380,
+      "max_words": 1620,
+      "figures": [],
+      "research_axes": []
+    }
+  ],
+  "unit_category_prior": {
+    "00-liminaire": "spec_technique",
+    "ch01": "spec_technique",
+    "ch02": "spec_technique",
+    "ch03": "assertions_g0",
+    "ch04": "assertions_g0"
+  },
+  "vigilance_matchers": [
+    {
+      "id": "vig_mcp_sep_a2a",
+      "label": "Évolution MCP (SEP-3398 / SEP-2596) et A2A v1.1.0-rc / 1.0.0.alpha3",
+      "pattern": "(?:sep-3398|sep-2596|1\\.0\\.0\\.alpha3|v1\\.1\\.0-rc)"
+    },
+    {
+      "id": "vig_otel_genai",
+      "label": "Mappage OTel v1.41.0 <-> semantic-conventions-genai (85 attributs, cache_write)",
+      "pattern": "(?=.*v1\\.41\\.0)(?:.*semantic-conventions-genai|.*cache_write|.*85)"
+    },
+    {
+      "id": "vig_rfc9964_tx_tokens",
+      "label": "RFC 9964 (ML-DSA) vs Transaction Tokens -11 (HTTP 431 O(sauts) vs O(1))",
+      "pattern": "(?:rfc\\s*9964|transaction\\s+tokens?|http\\s*431)"
+    },
+    {
+      "id": "vig_wilson_3p",
+      "label": "Dimensionnement EXIG-EVA-03 (Wilson 95 % < p, >= 3/p essais indépendants)",
+      "pattern": "(?:exig-eva-03|wilson|3/p)"
+    },
+    {
+      "id": "vig_statut_f_src055",
+      "label": "Exclusions statut F (403 / payant) vs substituts L+ et OWASP SRC-055",
+      "pattern": "(?:src-055|lq-2021-c25|genai\\.owasp\\.org|lautorite\\.qc\\.ca|statut\\s+f)"
+    },
+    {
+      "id": "vig_aibom_rfc9334_c5c6",
+      "label": "Non-doublon AIBOM (Tableau 47.3), statut RFC 9334 Informational et reprise C.5/C.6",
+      "pattern": "(?:rfc\\s*9334|cyclonedx|aibom|tableau\\s*47\\.3|\\bc\\.5\\b|\\bc\\.6\\b)"
+    },
+    {
+      "id": "vig_opa_default_deny",
+      "label": "Parade OPA / Rego à l'évaluation indéfinie (default allow := false, couverture 100 %)",
+      "pattern": "(?:default\\s+allow\\s*:=\\s*false|ind[eé]finie?.*rego|opa\\s+test.*100\\s*%)"
+    }
+  ],
+  "synced_excerpts_catalog": [
+    {
+      "id": "G0-EX-CH01-01",
+      "unit": "ch01",
+      "source_path": "schemas/harness_extraction.schema.json",
+      "max_lines": 24,
+      "is_full_file": true,
+      "description": "Schéma Draft 2020-12 strict: true avec porte AMBIGU_ESCALADE"
+    },
+    {
+      "id": "G0-EX-CH01-02",
+      "unit": "ch01",
+      "source_path": "harness_proto/pipeline.py",
+      "max_lines": 32,
+      "is_full_file": false,
+      "description": "Boucle 8 étapes de DeterministicHarness.run et validation sémantique"
+    },
+    {
+      "id": "G0-EX-CH01-03",
+      "unit": "ch01",
+      "source_path": "harness_proto/mcp_pinning.py",
+      "max_lines": 34,
+      "is_full_file": false,
+      "description": "Épinglage JCS SHA-256 tools/list et rejet HeaderMismatch (-32020)"
+    },
+    {
+      "id": "G0-EX-CH01-04",
+      "unit": "ch01",
+      "source_path": "harness_proto/a2a_card.py",
+      "max_lines": 28,
+      "is_full_file": false,
+      "description": "Vérification JWS + JCS sur AgentCard et épinglage jku/kid"
+    },
+    {
+      "id": "G0-EX-CH02-01",
+      "unit": "ch02",
+      "source_path": "authz_pqc_audit/obo_dpop.py",
+      "max_lines": 30,
+      "is_full_file": false,
+      "description": "Validation OBO <= 2 sauts, rejet passthrough et liaison DPoP"
+    },
+    {
+      "id": "G0-EX-CH02-02",
+      "unit": "ch02",
+      "source_path": "authz_pqc_audit/ciba_approval.py",
+      "max_lines": 24,
+      "is_full_file": false,
+      "description": "Calcul exact h = SHA-256(JCS(...)) sur payload I-JSON (C.6)"
+    },
+    {
+      "id": "G0-EX-CH02-03",
+      "unit": "ch02",
+      "source_path": "authz_pqc_audit/pqc_http431.py",
+      "max_lines": 30,
+      "is_full_file": false,
+      "description": "Mesure exacte en octets ML-DSA-65/87 (O(sauts) vs Transaction Token O(1))"
+    },
+    {
+      "id": "G0-EX-CH02-04",
+      "unit": "ch02",
+      "source_path": "authz_pqc_audit/otel_pii_mapper.py",
+      "max_lines": 32,
+      "is_full_file": false,
+      "description": "Mappage OTel v1.41.0 <-> genai_dev (cache_write) et liste fermée PII"
+    },
+    {
+      "id": "G0-EX-CH03-01",
+      "unit": "ch03",
+      "source_path": "policies_opa/rule_of_two.rego",
+      "max_lines": 28,
+      "is_full_file": false,
+      "description": "Politique Rego Règle de deux (default allow := false, EXIG-SEC-06)"
+    },
+    {
+      "id": "G0-EX-CH03-02",
+      "unit": "ch03",
+      "source_path": "policies_opa/camel_taint.rego",
+      "max_lines": 24,
+      "is_full_file": false,
+      "description": "Propagation d'étiquettes de contamination CaMeL inter-agents"
+    },
+    {
+      "id": "G0-EX-CH03-03",
+      "unit": "ch03",
+      "source_path": "policy_saga/saga_orchestrator.py",
+      "max_lines": 34,
+      "is_full_file": false,
+      "description": "Dérivation idem-v1, Outbox et CompensationChannel isolé (EXIG-ORC-28)"
+    },
+    {
+      "id": "G0-EX-CH04-01",
+      "unit": "ch04",
+      "source_path": "evalops_prr/wilson_bounds.py",
+      "max_lines": 28,
+      "is_full_file": false,
+      "description": "Borne supérieure de Wilson à 95 % < p exigeant >= 3/p essais indépendants"
+    },
+    {
+      "id": "G0-EX-CH04-02",
+      "unit": "ch04",
+      "source_path": "evalops_prr/metamorphic.py",
+      "max_lines": 26,
+      "is_full_file": false,
+      "description": "Vérificateur de relations métamorphiques sans oracle (FR/EN)"
+    },
+    {
+      "id": "G0-EX-CH04-03",
+      "unit": "ch04",
+      "source_path": "schemas/adr_2027_b001.schema.json",
+      "max_lines": 32,
+      "is_full_file": true,
+      "description": "Schéma Draft 2020-12 strict: true de la fiche ADR bloquante 2027-B001"
+    }
+  ],
+  "figures": [
+    {
+      "id": "Fig-00",
+      "unit": "00-liminaire",
+      "engine": "puml",
+      "title": "Architecture bicéphale du Tome 8 reliant le manuel concis à extraits <= 40 lignes, les quatre modules de trousse/, la table de passage des cinq discordances et le pipeline G0–G5"
+    },
+    {
+      "id": "Fig-01",
+      "unit": "ch01",
+      "engine": "puml",
+      "title": "Pipeline déterministe du harnais 80/20 à huit étapes et porte AMBIGU_ESCALADE sous schémas JSON Schema 2020-12 stricts"
+    },
+    {
+      "id": "Fig-02",
+      "unit": "ch01",
+      "engine": "puml",
+      "title": "Médiation protocolaire épinglée MCP 2026-07-28 avec JCS SHA-256 / rejet HeaderMismatch et validation AgentCard A2A v1.0.1 par JWS / a2a-tck"
+    },
+    {
+      "id": "Fig-03",
+      "unit": "ch02",
+      "engine": "puml",
+      "title": "Délégation cryptographique OAuth 2.0 OBO et DPoP à deux sauts, approbation CIBA / JCS et banc d'en-têtes HTTP 431 O(sauts) vs Transaction Tokens -11 O(1) sous ML-DSA-65/87"
+    },
+    {
+      "id": "Fig-04",
+      "unit": "ch02",
+      "engine": "mmd",
+      "title": "Double couloir probatoire unifiant télémétrie OTel GenAI caviardée, jointure trace-mandat, chaîne JCS / SCITT rescellée SLH-DSA et calculateur CPO / FOCUS v1.4"
+    },
+    {
+      "id": "Fig-05",
+      "unit": "ch03",
+      "engine": "puml",
+      "title": "Porte de politique hors modèle OPA / Rego fermée par défaut appliquant la Règle de deux, le suivi de contamination CaMeL et le contrôle déclaratif de confinement EXIG-SEC-12..15"
+    },
+    {
+      "id": "Fig-06",
+      "unit": "ch03",
+      "engine": "puml",
+      "title": "Orchestrateur Saga durable à clé idem-v1, Transactional Outbox, point pivot et canal de compensation isolé EXIG-ORC-28 face aux dix scénarios de fautes EXIG-ORC-20"
+    },
+    {
+      "id": "Fig-07",
+      "unit": "ch04",
+      "engine": "puml",
+      "title": "Pipeline du banc EvalOps hermétique à doublures mock MCP, calcul pass^k, borne de Wilson >= 3/p et relations métamorphiques sans oracle sur scénarios FR/EN"
+    },
+    {
+      "id": "Fig-08",
+      "unit": "ch04",
+      "engine": "mmd",
+      "title": "Arbre décisionnel de validation mécanique des 24 [BLOQUANT] PRR, de 2027-B001, des 5 SBB et des contrats des trois blueprints C01–C40 avant mise en production"
+    }
+  ]
+}

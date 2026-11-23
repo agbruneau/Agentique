@@ -60,11 +60,11 @@ def test_catalog_covers_all_eight_volumes_and_sources_exist() -> None:
     for v in vols:
         src = REPO_ROOT / v["source_md"]
         pdf = REPO_ROOT / v["default_pdf"]
-        slug_dir = REPO_ROOT / "Corpus" / v["slug"]
+        slug_dir = REPO_ROOT / "Tomes" / v["slug"]
         diag_dir = REPO_ROOT / v["diagrams_dir"]
         rendus_dir = REPO_ROOT / v["rendered_diagrams_dir"]
         assert v["slug"].startswith(f"Tome {v['id']} - ")
-        assert slug_dir.is_dir(), f"Repertoire de tome manquant sous Corpus/ pour tome {v['id']}: {slug_dir}"
+        assert slug_dir.is_dir(), f"Repertoire de tome manquant sous Tomes/ pour tome {v['id']}: {slug_dir}"
         assert diag_dir.is_dir(), f"Repertoire diagrammes manquant pour tome {v['id']}: {diag_dir}"
         assert rendus_dir.is_dir(), f"Repertoire rendus manquant pour tome {v['id']}: {rendus_dir}"
         assert src.is_file(), f"Markdown manquant pour tome {v['id']}: {src}"
@@ -107,9 +107,15 @@ def test_preprocess_markdown_all_eight_volumes_structure() -> None:
         assert clean.startswith(expected_prefix), f"Vol {vid} commence par: {clean[:80]!r}"
         assert "\n# Table des matières\n" not in "\n" + clean, f"TDM statique residuelle dans Vol {vid}"
 
-        # Verifier que toutes les images referencees existent sous REPO_ROOT
-        for img_rel in re.findall(r"!\[[^\]]*\]\((?:<(/[^>\n]+)>|(/[^)\n]+))\)", clean):
-            rel = img_rel[0] or img_rel[1]
+        # Verifier que toutes les images referencees existent sous REPO_ROOT/Tomes/
+        imgs = [
+            img_rel[0] or img_rel[1]
+            for img_rel in re.findall(r"!\[[^\]]*\]\((?:<(/[^>\n]+)>|(/[^)\n]+))\)", clean)
+        ]
+        if vid in ("7", "8"):
+            assert imgs, f"Aucune image trouvee dans Vol {vid}"
+        for rel in imgs:
+            assert rel.startswith("/Tomes/"), f"Chemin image hors /Tomes/ dans Vol {vid}: {rel}"
             assert (REPO_ROOT / rel.lstrip("/")).is_file(), f"Image introuvable Vol {vid}: {rel}"
 
 
@@ -145,19 +151,19 @@ def test_inject_rendered_diagrams_inserts_without_duplication(tmp_path: Path) ->
 
 def test_normalize_image_paths_handles_parentheses_and_angle_brackets(tmp_path: Path) -> None:
     md_dir = tmp_path / "Corpus"
-    rendus = md_dir / "Vol" / "Diagrammes" / "rendus"
+    rendus = tmp_path / "Tomes" / "Vol" / "Diagrammes" / "rendus"
     rendus.mkdir(parents=True)
-    md_path = md_dir / "Tome 5 - Synthèse exécutive et concordance architecturale.md"
+    md_path = md_dir / "Tome 8 - Ingénierie exécutable et homologation vérifiable.md"
 
     md = (
-        "![Fig 3](<Vol/Diagrammes/rendus/Fig-03 - Passerelle (PEP).svg>)\n"
-        "![Fig 4](Vol/Diagrammes/rendus/Fig-04 - Modele (v2).svg)\n"
-        "![Fig 5](../Externe/Diagrammes/rendus/Fig-05 - Hors Corpus (v1).svg)\n"
+        "![Fig 3](<../Tomes/Vol/Diagrammes/rendus/Fig-03 - Passerelle (PEP).svg>)\n"
+        "![Fig 4](../Tomes/Vol/Diagrammes/rendus/Fig-04 - Modele (v2).svg)\n"
+        "![Fig 5](../Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/fig01.svg)\n"
     )
     out = normalize_image_paths_for_typst(md, tmp_path, md_source_path=md_path)
-    assert "![Fig 3](</Corpus/Vol/Diagrammes/rendus/Fig-03 - Passerelle (PEP).svg>)" in out
-    assert "![Fig 4](</Corpus/Vol/Diagrammes/rendus/Fig-04 - Modele (v2).svg>)" in out
-    assert "![Fig 5](</Externe/Diagrammes/rendus/Fig-05 - Hors Corpus (v1).svg>)" in out
+    assert "![Fig 3](</Tomes/Vol/Diagrammes/rendus/Fig-03 - Passerelle (PEP).svg>)" in out
+    assert "![Fig 4](</Tomes/Vol/Diagrammes/rendus/Fig-04 - Modele (v2).svg>)" in out
+    assert "![Fig 5](/Tomes/Tome 7 - Gouverner l'industrialisation cognitive/diagrammes/rendus/fig01.svg)" in out
 
 
 def test_postprocess_typst_covers_all_collection_conventions() -> None:
@@ -176,7 +182,7 @@ def test_postprocess_typst_covers_all_collection_conventions() -> None:
         "  , kind: table\n"
         "  )\n\n"
         "#emph[Tableau 1 — Synthese courte.]\n\n"
-        '#box(image("/Corpus/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-01.svg", alt: "Schema"))\n\n'
+        '#box(image("/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-01.svg", alt: "Schema"))\n\n'
         "= Bibliographie générale consolidée\n"
         '- #link("https://example.org/a-b/c")\n'
     )
@@ -187,7 +193,7 @@ def test_postprocess_typst_covers_all_collection_conventions() -> None:
     assert "20\u00a0\\$\u00a0CA" in out
     assert "100\u00a0%" in out and "3\u00a0309\u00a0o" in out
     assert "5\u00a0-\u00a0Memoire" in out and "8\u00a0-\u00a0Manuel" in out
-    assert '#box(image("/Corpus/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-01.svg"' in out
+    assert '#box(image("/Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/diagrammes/rendus/Fig-01.svg"' in out
     assert " → " in out
     assert "d’\u200bauthentification" in out
     assert "`Opa\u200bStatic\u200bCheck\u200bError`" in out
@@ -289,7 +295,7 @@ def test_compile_real_volume_8_matches_reference(tmp_path: Path) -> None:
         assert "Tome 8 — Ingénierie exécutable et homologation vérifiable" in cover_txt
         assert "CC BY 4.0" in cover_txt
         title_txt = " ".join(doc[1].get_text().replace("\u00a0", " ").split())
-        assert "Corpus/Tome 8 - Ingénierie exécutable et homologation vérifiable/" in title_txt and "trousse/" in title_txt
+        assert "Tomes/Tome 8 - Ingénierie exécutable et homologation vérifiable/" in title_txt and "trousse/" in title_txt
         assert "Table des matières" in doc[2].get_text()
     finally:
         doc.close()
@@ -405,8 +411,8 @@ def test_compile_diagrams_canonical_names_cache_force_and_error_report(tmp_path:
 
     cfg, src_dir, rendus_dir = resolve_volume_diagram_dirs("1")
     assert cfg["id"] == "1"
-    assert src_dir == REPO_ROOT / "Corpus" / "Tome 1 - Confiance protocolaire et encadrement financier" / "Diagrammes"
-    assert rendus_dir == REPO_ROOT / "Corpus" / "Tome 1 - Confiance protocolaire et encadrement financier" / "Diagrammes" / "rendus"
+    assert src_dir == REPO_ROOT / "Tomes" / "Tome 1 - Confiance protocolaire et encadrement financier" / "Diagrammes"
+    assert rendus_dir == REPO_ROOT / "Tomes" / "Tome 1 - Confiance protocolaire et encadrement financier" / "Diagrammes" / "rendus"
 
     src = tmp_path / "Diagrammes"
     out = src / "rendus"
