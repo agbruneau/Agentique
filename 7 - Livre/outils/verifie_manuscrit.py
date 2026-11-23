@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Barriere deterministe G1 du Livre 2027 (verifie_manuscrit.py).
+"""Barriere deterministe G1 du volume 7 - Livre (verifie_manuscrit.py).
 
 Controle CA-01..CA-11, CA-17 et la presence/coherence des livrables G2..G5.
 """
@@ -1457,20 +1457,25 @@ def _check_deliverables(root: Path, manifest: dict) -> list[str]:
     if not rvis.is_file() or rvis.stat().st_size == 0:
         errors.append("[CA-16] Rapport aq/rapport-lissage-et-visuel.md manquant ou vide")
 
-    # Livrables : livrables/ ne contient UNIQUEMENT que 7 - Livre 2027.html
+    # Livrables : livrables/ contient UNIQUEMENT `<book_stem>.html`
+    root = Path(root) if Path(root).is_absolute() and Path(root).name else Path(root).resolve()
+    book_stem = root.name
+    html_name = f"{book_stem}.html"
+    md_name = f"{book_stem}.md"
+    pdf_name = f"{book_stem}.pdf"
     liv_dir = root / "livrables"
     consolidated_dir = root.parent / "0 - PDF-MD"
-    html_out = liv_dir / "7 - Livre 2027.html"
-    consolidated_md = consolidated_dir / "7 - Livre.md"
-    consolidated_pdf = consolidated_dir / "7 - Livre.pdf"
+    html_out = liv_dir / html_name
+    consolidated_md = consolidated_dir / md_name
+    consolidated_pdf = consolidated_dir / pdf_name
 
     if liv_dir.is_dir():
         unexpected_files = sorted(
-            p.name for p in liv_dir.iterdir() if p.name != "7 - Livre 2027.html"
+            p.name for p in liv_dir.iterdir() if p.name != html_name
         )
         if unexpected_files:
             errors.append(
-                f"[CA-18] livrables/ ne doit contenir que 7 - Livre 2027.html ; fichiers interdits/residuels detectes : {unexpected_files}"
+                f"[CA-18] livrables/ ne doit contenir que {html_name} ; fichiers interdits/residuels detectes : {unexpected_files}"
             )
 
     manifeste_path = root / "recherche" / "manifeste-sources-sha256.json"
@@ -1482,54 +1487,54 @@ def _check_deliverables(root: Path, manifest: dict) -> list[str]:
         except json.JSONDecodeError:
             has_open_sources = False
 
-    # 1. Markdown consolide 0 - PDF-MD/7 - Livre.md
+    # 1. Markdown consolide 0 - PDF-MD/<book_stem>.md
     if not consolidated_md.is_file() or consolidated_md.stat().st_size == 0:
-        errors.append("[CA-18] Livrable Markdown consolide manquant : ../0 - PDF-MD/7 - Livre.md")
+        errors.append(f"[CA-18] Livrable Markdown consolide manquant : ../0 - PDF-MD/{md_name}")
     else:
         md_actual = consolidated_md.read_text(encoding="utf-8").replace("\r\n", "\n")
         try:
             from assemble_livre import build_consolidated_markdown
 
-            expected_prefix = f"../{root.name}/diagrammes/rendus"
+            expected_prefix = f"../{book_stem}/diagrammes/rendus"
             md_expected, _, _ = build_consolidated_markdown(
                 root, image_prefix=expected_prefix
             )
             if md_actual.rstrip() != md_expected.replace("\r\n", "\n").rstrip():
                 errors.append(
-                    "[CA-18] ../0 - PDF-MD/7 - Livre.md desynchronise de l'assemblage du manuscrit"
+                    f"[CA-18] ../0 - PDF-MD/{md_name} desynchronise de l'assemblage du manuscrit"
                 )
         except Exception as exc:
-            errors.append(f"[CA-18] Impossible de comparer 7 - Livre.md a l'assemblage : {exc}")
+            errors.append(f"[CA-18] Impossible de comparer {md_name} a l'assemblage : {exc}")
 
         fig_matches = re.findall(r"!\[[^\]]*\]\(([^)]+)\)", md_actual)
         expected_figs = [f["id"] for f in manifest.get("figures", [])]
         expected_ext = {f["id"]: ("svg" if f["engine"] == "puml" else "png") for f in manifest.get("figures", [])}
         if len(fig_matches) != 23:
-            errors.append(f"[CA-18] 7 - Livre.md doit referencer 23 images (trouve : {len(fig_matches)})")
+            errors.append(f"[CA-18] {md_name} doit referencer 23 images (trouve : {len(fig_matches)})")
         else:
             seen_fids: list[str] = []
             for raw_img in fig_matches:
                 m_fid = re.search(r"(Fig-\d{2})\.(svg|png)$", raw_img.strip())
                 if not m_fid or not raw_img.strip().startswith(f"{expected_prefix}/"):
-                    errors.append(f"[CA-18] Chemin d'image invalide dans 7 - Livre.md : {raw_img}")
+                    errors.append(f"[CA-18] Chemin d'image invalide dans {md_name} : {raw_img}")
                     continue
                 fid, ext = m_fid.group(1), m_fid.group(2)
                 seen_fids.append(fid)
                 if expected_ext.get(fid) != ext:
-                    errors.append(f"[CA-18] Extension inattendue pour {fid} dans 7 - Livre.md : .{ext}")
+                    errors.append(f"[CA-18] Extension inattendue pour {fid} dans {md_name} : .{ext}")
                 resolved_img = (consolidated_md.parent / raw_img.strip()).resolve()
                 if not resolved_img.is_file():
-                    errors.append(f"[CA-18] Image introuvable depuis 7 - Livre.md : {raw_img} -> {resolved_img}")
+                    errors.append(f"[CA-18] Image introuvable depuis {md_name} : {raw_img} -> {resolved_img}")
             if seen_fids != expected_figs:
-                errors.append(f"[CA-18] Ordre des 23 figures dans 7 - Livre.md divergent : {seen_fids}")
+                errors.append(f"[CA-18] Ordre des 23 figures dans {md_name} divergent : {seen_fids}")
 
-    # 2. HTML autonome livrables/7 - Livre 2027.html
+    # 2. HTML autonome livrables/<book_stem>.html
     if not html_out.is_file():
-        errors.append("[CA-18] Livrable HTML autonome manquant : livrables/7 - Livre 2027.html")
+        errors.append(f"[CA-18] Livrable HTML autonome manquant : livrables/{html_name}")
     else:
         html_txt = html_out.read_text(encoding="utf-8", errors="replace")
         if "<html" not in html_txt:
-            errors.append("[CA-18] Livrable HTML invalide (balise <html> absente) : livrables/7 - Livre 2027.html")
+            errors.append(f"[CA-18] Livrable HTML invalide (balise <html> absente) : livrables/{html_name}")
         else:
             parser = _DeliverableHtmlParser()
             parser.feed(html_txt)
@@ -1549,9 +1554,9 @@ def _check_deliverables(root: Path, manifest: dict) -> list[str]:
             if has_open_sources and not parser.annexe_c_links:
                 errors.append("[CA-18] Aucun hyperlien cliquable (<a href=...>) en Annexe C du HTML")
 
-    # 3. PDF consolide 0 - PDF-MD/7 - Livre.pdf via pymupdf
+    # 3. PDF consolide 0 - PDF-MD/<book_stem>.pdf via pymupdf
     if not _has_valid_pdf((consolidated_pdf,)):
-        errors.append("[CA-18] Livrable PDF consolide manquant ou invalide : ../0 - PDF-MD/7 - Livre.pdf")
+        errors.append(f"[CA-18] Livrable PDF consolide manquant ou invalide : ../0 - PDF-MD/{pdf_name}")
     else:
         try:
             with pymupdf.open(consolidated_pdf) as doc:
@@ -1590,7 +1595,7 @@ def check_manuscrit(
     check_deliverables: bool = False,
 ) -> list[str]:
     """Execute les verifications deterministes du manuscrit selon le mode demande."""
-    root = Path(root)
+    root = Path(root) if Path(root).is_absolute() and Path(root).name else Path(root).resolve()
     manifest = _load_json(root / "specs" / "manifest.json")
     mlr = _load_json(root / "specs" / "protocole-mlr-2027.json")
 
@@ -1663,7 +1668,7 @@ def check_manuscrit(
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Verificateur deterministe G1 du Livre 2027.")
+    parser = argparse.ArgumentParser(description="Verificateur deterministe G1 du volume 7 - Livre.")
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parent.parent, help="Racine du livre")
     parser.add_argument("--strict", action="store_true", help="Verification complete stricte (defaut)")
     parser.add_argument("--sources-only", action="store_true", help="Verifier uniquement corpus L+, SHA-256 et bases sources")

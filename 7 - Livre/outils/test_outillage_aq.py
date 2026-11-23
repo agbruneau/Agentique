@@ -1,4 +1,4 @@
-"""Tests TDD de l'outillage deterministe G1, G3, annexes et assemblage du Livre 2027."""
+"""Tests TDD de l'outillage deterministe G1, G3, annexes et assemblage du volume 7 - Livre."""
 
 from __future__ import annotations
 
@@ -194,9 +194,13 @@ def _make_valid_png_bytes(width: int = 220, height: int = 160) -> bytes:
     return b"\x89PNG\r\n\x1a\n" + _chunk(b"IHDR", ihdr) + _chunk(b"IDAT", idat) + _chunk(b"IEND", b"")
 
 
-def _create_populated_book(tmp_path: Path, include_vigilance: bool = True) -> Path:
+def _create_populated_book(
+    tmp_path: Path,
+    include_vigilance: bool = True,
+    book_name: str = "7 - Livre",
+) -> Path:
     """Cree un depot complet valide en memoire sur disque dans tmp_path."""
-    book_dir = tmp_path / "7 - Livre 2027"
+    book_dir = tmp_path / book_name
     corpus_dir = tmp_path / "0 - PDF-MD"
     corpus_dir.mkdir(parents=True)
     corpus_file = corpus_dir / "1 - Compendium 2026.md"
@@ -611,12 +615,12 @@ def test_assemble_livre_generates_md_html_pdf(tmp_book: Path) -> None:
     livrables = tmp_book / "livrables"
     consolidated_dir = tmp_book.parent / "0 - PDF-MD"
     md_out = consolidated_dir / "7 - Livre.md"
-    html_out = livrables / "7 - Livre 2027.html"
+    html_out = livrables / "7 - Livre.html"
     pdf_out = consolidated_dir / "7 - Livre.pdf"
     assert md_out.is_file() and md_out.stat().st_size > 1000
     assert html_out.is_file() and "<html" in html_out.read_text(encoding="utf-8")
     assert pdf_out.is_file() and pdf_out.read_bytes().startswith(b"%PDF-")
-    assert [p.name for p in livrables.iterdir()] == ["7 - Livre 2027.html"]
+    assert [p.name for p in livrables.iterdir()] == ["7 - Livre.html"]
     assert "<figcaption>" not in html_out.read_text(encoding="utf-8")
 
 
@@ -788,7 +792,7 @@ def test_check_deliverables_accepts_consolidated_pdf_md(tmp_book: Path) -> None:
     outputs = build_deliverables(tmp_book, make_md=True, make_html=True, make_pdf=True)
     livrables = tmp_book / "livrables"
     consolidated_dir = tmp_book.parent / "0 - PDF-MD"
-    html_out = livrables / "7 - Livre 2027.html"
+    html_out = livrables / "7 - Livre.html"
     consolidated_md = consolidated_dir / "7 - Livre.md"
     consolidated_pdf = consolidated_dir / "7 - Livre.pdf"
 
@@ -1016,3 +1020,48 @@ def test_parse_g3_scores_and_reg_labels_normalization(tmp_book: Path) -> None:
     outputs = build_annexes(tmp_book)
     annex_a = outputs[tmp_book / "manuscrit" / "05 - Annexes" / "Annexe A - Glossaire raisonne.md"]
     assert "FIDO2" not in annex_a and "`FIDO`" in annex_a
+
+
+def test_dynamic_book_stem_purges_residual_html_and_aligns_deliverables(tmp_path: Path) -> None:
+    custom_book = _create_populated_book(tmp_path, include_vigilance=True, book_name="7 - Titre Test")
+    aq_dir = _populate_qa_markdown_logs(custom_book)
+    s1 = draw_stratified_sample(custom_book, seed=202701, exclude_ids=set())
+    excluded = {x["claim_loc"] for x in s1} | {x["paragraph_loc"] for x in s1}
+    s2 = draw_stratified_sample(custom_book, seed=202702, exclude_ids=excluded)
+    (aq_dir / "recollation-seed-202701.json").write_text(json.dumps(s1, ensure_ascii=False), encoding="utf-8")
+    (aq_dir / "recollation-seed-202702.json").write_text(json.dumps(s2, ensure_ascii=False), encoding="utf-8")
+    build_annexes(custom_book)
+
+    livrables = custom_book / "livrables"
+    livrables.mkdir(parents=True, exist_ok=True)
+    stray_ancien = livrables / "ancien.html"
+    stray_legacy = livrables / "7 - Livre 2027.html"
+    stray_ancien.write_text("<html><body>ancien</body></html>", encoding="utf-8")
+    stray_legacy.write_text("<html><body>legacy</body></html>", encoding="utf-8")
+
+    outputs = build_deliverables(custom_book, make_md=True, make_html=True, make_pdf=True)
+
+    consolidated_dir = custom_book.parent / "0 - PDF-MD"
+    expected_md = consolidated_dir / "7 - Titre Test.md"
+    expected_pdf = consolidated_dir / "7 - Titre Test.pdf"
+    expected_html = livrables / "7 - Titre Test.html"
+
+    assert outputs["md"] == expected_md and expected_md.is_file()
+    assert outputs["pdf"] == expected_pdf and expected_pdf.is_file() and expected_pdf.read_bytes().startswith(b"%PDF-")
+    assert outputs["html"] == expected_html and expected_html.is_file()
+    assert "<html" in expected_html.read_text(encoding="utf-8")
+    assert "../7 - Titre Test/diagrammes/rendus/" in expected_md.read_text(encoding="utf-8")
+
+    assert not stray_ancien.exists()
+    assert not stray_legacy.exists()
+    assert [p.name for p in livrables.iterdir()] == ["7 - Titre Test.html"]
+    assert sorted(p.name for p in consolidated_dir.iterdir() if p.name.startswith("7 - ")) == [
+        "7 - Titre Test.md",
+        "7 - Titre Test.pdf",
+    ]
+    assert check_manuscrit(custom_book, strict=True, check_deliverables=True) == []
+
+    # Reintroduction d'un HTML parasite -> CA-18 echoue avec le nom attendu dynamique
+    stray_legacy.write_text("<html><body>parasite</body></html>", encoding="utf-8")
+    errs = check_manuscrit(custom_book, strict=True, check_deliverables=True)
+    assert any("CA-18" in e and "7 - Titre Test.html" in e and "7 - Livre 2027.html" in e for e in errs)

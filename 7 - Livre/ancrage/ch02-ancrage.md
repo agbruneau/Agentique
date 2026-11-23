@@ -1,7 +1,7 @@
 # Ancrage atomique Wyvern — Chapitre 02 : L'épreuve des mesures
 
-- **Unité** : `ch02` (`7 - Livre 2027/manuscrit/01 - Partie I/Chapitre 02 - L epreuve des mesures.md`)
-- **Dossier fermé** : `7 - Livre 2027/sources/ch02-sources.md` (25 sources intégrales `L+`, `SHA-256`)
+- **Unité** : `ch02` (`7 - Livre/manuscrit/01 - Partie I/Chapitre 02 - L epreuve des mesures.md`)
+- **Dossier fermé** : `7 - Livre/sources/ch02-sources.md` (25 sources intégrales `L+`, `SHA-256`)
 - **Registres vérifiés** : `registre/faits-empiriques.json`, `registre/ancres-chronologiques.json`, `registre/glossaire-termes.json`
 - **Auditeur** : `auditeur-wyvern` (barrière indépendante `G2`, régime Production)
 - **Date d'audit** : 2026-11-22 (gel factuel au 2 décembre 2026)
@@ -506,7 +506,7 @@
 
 ## Contrôle différentiel post-G4
 
-- **Périmètre vérifié** : Lignes `43–78` de `7 - Livre 2027/manuscrit/01 - Partie I/Chapitre 02 - L epreuve des mesures.md` (assertions `A030–A050`) après retouche stylistique `G4`, contrôlées directement contre les textes intégraux `corpus_l_plus/*.txt` (`SRC-008.txt`, `SRC-009.txt`, `SRC-010.txt`, `SRC-014.txt`, `SRC-015.txt`, `SRC-016.txt`, `SRC-025.txt`, `SRC-027.txt`).
+- **Périmètre vérifié** : Lignes `43–78` de `7 - Livre/manuscrit/01 - Partie I/Chapitre 02 - L epreuve des mesures.md` (assertions `A030–A050`) après retouche stylistique `G4`, contrôlées directement contre les textes intégraux `corpus_l_plus/*.txt` (`SRC-008.txt`, `SRC-009.txt`, `SRC-010.txt`, `SRC-014.txt`, `SRC-015.txt`, `SRC-016.txt`, `SRC-025.txt`, `SRC-027.txt`).
 - **Date et régime** : 2026-11-22 (barrière `G2` différentielle, régime Production, gel documentaire au 2 décembre 2026).
 
 ### Écarts factuels détectés après `G4` et rectifiés dans le manuscrit (`L47–L84`)

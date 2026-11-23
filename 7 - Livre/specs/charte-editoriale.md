@@ -1,4 +1,4 @@
-# Charte éditoriale, narrative et typographique — Livre 2027 (v1.3)
+# Charte éditoriale, narrative et typographique — 7 - Livre (v1.3)
 
 Cette charte gouverne tous les agents rédacteurs, réviseurs et lisseurs. Son objectif est d'obtenir un **ouvrage de librairie et de direction fluide, rigoureux et mémorable**, à l'opposé d'un rapport compilatoire ou d'une matrice d'exigences.
 

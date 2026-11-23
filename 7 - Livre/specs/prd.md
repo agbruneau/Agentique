@@ -1,4 +1,4 @@
-# Cahier des charges (PRD) — Livre 2027 (v1.3)
+# Cahier des charges (PRD) — 7 - Livre (v1.3)
 
 ## 1. Identité et vocation de l'ouvrage
 

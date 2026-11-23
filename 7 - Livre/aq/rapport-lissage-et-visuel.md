@@ -1,4 +1,4 @@
-# Rapport de lissage éditorial et visuel — Livre 2027
+# Rapport de lissage éditorial et visuel — 7 - Livre
 
 ## 1. Lissage éditorial inter-chapitres (Barrière G5)
 
@@ -32,7 +32,7 @@ Ce relevé consigne le lissage éditorial indépendant (`G5`) exécuté en lectu
 1. **Conformité stricte aux plages et marge sous plafond** : chacune des 13 unités narratives demeure strictement à l'intérieur de sa plage `[min_words, max_words]` dans `manifest.json`. La compression stylistique totale s'établit à `-4 274` mots `G1` (`-4 350` mots bruts), portant la marge sous le plafond global de `79 920` mots à `7 405` mots selon la métrique `G1` (`4 642` mots selon la base mixte).
 2. **Nettoyage typographique des rétro-apostrophes** : les `2 082` occurrences initiales dans la partie narrative ont été réduites à `220` (`-89,4 %`), en supprimant systématiquement les rétro-apostrophes entourant sigles, institutions, normes, modèles, dates et valeurs chiffrées en prose courante, tout en les conservant exclusivement sur les identifiants techniques (`gen_ai.*`, `auth_req_id`, `authorization_details`, `binding_message`, `id_token_hint`, `login_hint`, `expires_in`, `invoke_agent`, `invoke_workflow`, `Idempotency-Key`, `Opt-In`, `documentDigests`, `COSE_Sign1`, etc.) et sur la notation `pass@1`/`pass^k`/`pass^8` requise par Pandoc/Typst.
 3. **Continuité inter-chapitres et propriété conceptuelle (`owned_concepts`)** : les chutes de fin de chapitre et ouvertures suivantes s'enchaînent de manière continue du `Liminaire` au `Chapitre 12` sans redondance mécanique; les rappels longs sur le facteur `11,25×` (`ch01`), `SCITT`/`DPoP` (`ch07`), la dette cognitive (`ch11`) ou l'agilité `PKI`/`ML-DSA` (`ch12`) ont été ramenés à de brefs rappels croisés.
-4. **Intégration complète des retours `G4` Tour 2 et intégrité `G1`** : tous les points relevés dans `7 - Livre 2027/aq/gauntlet-log.md` (`0.2`, `1.2`, `2.2`, `4.4`, `5.1`, `6.2`, `7.3`, `8.1`, `9.2`, `10.1`, `11.4`, `12.2`) ont été appliqués sans ajout ni suppression de tableau (`narrative_tables == 19`) et sans aucune dérive sur les `[n]`, dates d'ancrage, `\$` échappés ni balises `AO-07`. La barrière déterministe `verifie_manuscrit.py --strict` passe avec `0` erreur.
+4. **Intégration complète des retours `G4` Tour 2 et intégrité `G1`** : tous les points relevés dans `7 - Livre/aq/gauntlet-log.md` (`0.2`, `1.2`, `2.2`, `4.4`, `5.1`, `6.2`, `7.3`, `8.1`, `9.2`, `10.1`, `11.4`, `12.2`) ont été appliqués sans ajout ni suppression de tableau (`narrative_tables == 19`) et sans aucune dérive sur les `[n]`, dates d'ancrage, `\$` échappés ni balises `AO-07`. La barrière déterministe `verifie_manuscrit.py --strict` passe avec `0` erreur.
 
 ---
 
@@ -60,7 +60,7 @@ La mise en page finale du PDF (`0 - PDF-MD/7 - Livre.pdf`, compilé via Pandoc +
 À la suite de l'audit intégral post-production (`154` constats traités sur les axes `P1`–`P4`, `CORP-001..030` et `TECH-001..016`), la révision `v1.3` fixe la date de gel documentaire officielle au **`2 décembre 2026`** et consolide les livrables aux emplacements canoniques :
 - **Version Markdown unifiée** : `0 - PDF-MD/7 - Livre.md` (préfixe images `../7 - Livre/diagrammes/rendus/`) ;
 - **Édition PDF imprimable** : `0 - PDF-MD/7 - Livre.pdf` ;
-- **Édition HTML autonome** : `7 - Livre/livrables/7 - Livre 2027.html` (seul fichier conservé dans `livrables/`).
+- **Édition HTML autonome** : `7 - Livre/livrables/7 - Livre.html` (seul fichier conservé dans `livrables/`).
 
 ### 3.1 Comptes lexicaux finaux par unité (post-remédiation `v1.3`)
 

@@ -1,4 +1,4 @@
-# 7 — Livre 2027 : *Gouverner l'industrialisation cognitive*
+# 7 - Livre : *Gouverner l'industrialisation cognitive*
 
 *Architecture de contrôle, preuve et souveraineté dans l'entreprise agentique*
 
@@ -10,7 +10,7 @@ Ouvrage synthétique à lecture linéaire consacré à l'interopérabilité, à 
 
 - **Source PDF intégrale** : [7 - Livre.pdf](../0%20-%20PDF-MD/7%20-%20Livre.pdf) (`264` pages physiques dont `4` liminaires couverture/notice/TDM et `p. 5–264` pour le corps et les annexes = pagination imprimée / TDM `p. 1–260`, consolidée dans `../0 - PDF-MD/`)
 - **Fichier Markdown complet** : [7 - Livre.md](../0%20-%20PDF-MD/7%20-%20Livre.md) (`81 776` mots `split()` · `2 327` lignes · `584 236` octets · images préfixées `../7 - Livre/diagrammes/rendus/`, consolidé dans `../0 - PDF-MD/`)
-- **Édition HTML autonome** : [7 - Livre 2027.html](livrables/7%20-%20Livre%202027.html) (`2 098 365` octets / `~2,10 Mo`, seul livrable conservé dans `livrables/`)
+- **Édition HTML autonome** : [7 - Livre.html](livrables/7%20-%20Livre.html) (`2 098 365` octets / `~2,10 Mo`, seul livrable conservé dans `livrables/`)
 - **Parties / Sections** : Liminaire, 4 parties et 1 bloc d'annexes
 - **Unités du manuscrit** : 16 (Liminaire, 12 chapitres, 3 annexes)
 - **Diagrammes (PlantUML / Mermaid)** : [diagrammes/README.md](diagrammes/README.md) (23 diagrammes — 20 PlantUML `.puml` avec rendus `.svg`, 3 Mermaid `.mmd` avec rendus `.png`)

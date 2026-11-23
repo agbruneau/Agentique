@@ -16,7 +16,7 @@ def test_real_specs_are_valid() -> None:
 
 
 def test_detects_word_budget_drift(tmp_path: Path) -> None:
-    clone = tmp_path / "7 - Livre 2027"
+    clone = tmp_path / "7 - Livre"
     shutil.copytree(REAL_BOOK_DIR, clone)
     manifest_path = clone / "specs" / "manifest.json"
     data = json.loads(manifest_path.read_text(encoding="utf-8"))
@@ -31,7 +31,7 @@ def test_detects_word_budget_drift(tmp_path: Path) -> None:
 
 
 def test_detects_duplicate_owned_concepts_and_metadata_only_violation(tmp_path: Path) -> None:
-    clone = tmp_path / "7 - Livre 2027"
+    clone = tmp_path / "7 - Livre"
     shutil.copytree(REAL_BOOK_DIR, clone)
     manifest_path = clone / "specs" / "manifest.json"
     data = json.loads(manifest_path.read_text(encoding="utf-8"))
@@ -51,7 +51,7 @@ def test_detects_duplicate_owned_concepts_and_metadata_only_violation(tmp_path: 
 
 
 def test_liminaire_interoperabilite_contract_enforced(tmp_path: Path) -> None:
-    clone = tmp_path / "7 - Livre 2027"
+    clone = tmp_path / "7 - Livre"
     shutil.copytree(REAL_BOOK_DIR, clone)
     manifest_path = clone / "specs" / "manifest.json"
     data = json.loads(manifest_path.read_text(encoding="utf-8"))
@@ -71,7 +71,7 @@ def test_liminaire_interoperabilite_contract_enforced(tmp_path: Path) -> None:
 
 
 def test_title_drift_and_unescaped_dollar_in_toc_detected(tmp_path: Path) -> None:
-    clone = tmp_path / "7 - Livre 2027"
+    clone = tmp_path / "7 - Livre"
     shutil.copytree(REAL_BOOK_DIR, clone)
     manifest_path = clone / "specs" / "manifest.json"
     data = json.loads(manifest_path.read_text(encoding="utf-8"))
@@ -90,7 +90,7 @@ def test_title_drift_and_unescaped_dollar_in_toc_detected(tmp_path: Path) -> Non
 
 
 def test_registry_entry_without_evidence_status_detected(tmp_path: Path) -> None:
-    clone = tmp_path / "7 - Livre 2027"
+    clone = tmp_path / "7 - Livre"
     shutil.copytree(REAL_BOOK_DIR, clone)
     manifest_path = clone / "specs" / "manifest.json"
     data = json.loads(manifest_path.read_text(encoding="utf-8"))
@@ -109,7 +109,7 @@ def test_registry_entry_without_evidence_status_detected(tmp_path: Path) -> None
 
 
 def test_freeze_window_and_local_sources_exclusion_enforced(tmp_path: Path) -> None:
-    clone = tmp_path / "7 - Livre 2027"
+    clone = tmp_path / "7 - Livre"
     shutil.copytree(REAL_BOOK_DIR, clone, ignore=shutil.ignore_patterns("*.pdf"))
     mlr_path = clone / "specs" / "protocole-mlr-2027.json"
     mlr = json.loads(mlr_path.read_text(encoding="utf-8"))
@@ -123,7 +123,7 @@ def test_freeze_window_and_local_sources_exclusion_enforced(tmp_path: Path) -> N
 
 
 def test_detects_figure_order_swap_and_toc_subsection_drift(tmp_path: Path) -> None:
-    clone = tmp_path / "7 - Livre 2027"
+    clone = tmp_path / "7 - Livre"
     shutil.copytree(REAL_BOOK_DIR, clone, ignore=shutil.ignore_patterns("*.pdf"))
     manifest_path = clone / "specs" / "manifest.json"
     data = json.loads(manifest_path.read_text(encoding="utf-8"))
@@ -146,7 +146,7 @@ def test_detects_figure_order_swap_and_toc_subsection_drift(tmp_path: Path) -> N
 
 
 def test_detects_stale_freeze_date_and_invalid_glossary_owner(tmp_path: Path) -> None:
-    clone = tmp_path / "7 - Livre 2027"
+    clone = tmp_path / "7 - Livre"
     shutil.copytree(REAL_BOOK_DIR, clone, ignore=shutil.ignore_patterns("*.pdf"))
     manifest_path = clone / "specs" / "manifest.json"
     data = json.loads(manifest_path.read_text(encoding="utf-8"))

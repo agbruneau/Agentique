@@ -1,4 +1,4 @@
-// Gabarit Typst editorial — Livre 2027 (6.14in x 9.21in, fr-CA)
+// Gabarit Typst editorial — 7 - Livre (6.14in x 9.21in, fr-CA)
 // Utilise par assemble_livre.py avec pandoc (-f markdown-tex_math_dollars+tex_math_single_backslash -t typst)
 
 #let livre-title = [/* {{TITLE}} */]

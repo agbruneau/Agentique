@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generateur deterministe des Annexes A, B et C du Livre 2027 (CA-17)."""
+"""Generateur deterministe des Annexes A, B et C du volume 7 - Livre (CA-17)."""
 
 from __future__ import annotations
 

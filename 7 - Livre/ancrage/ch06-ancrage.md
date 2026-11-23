@@ -1,8 +1,8 @@
 # Dossier d'ancrage atomique — Chapitre 06 (`ch06`)
 
-- **Unité** : `ch06` — `7 - Livre 2027/manuscrit/02 - Partie II/Chapitre 06 - Sobriete d orchestration et execution durable.md`
+- **Unité** : `ch06` — `7 - Livre/manuscrit/02 - Partie II/Chapitre 06 - Sobriete d orchestration et execution durable.md`
 - **Barrière** : `G2` — Audit d'ancrage atomique indépendant (`CA-10`, `CA-12`, régime Production)
-- **Dossier de sources probantes** : `7 - Livre 2027/sources/ch06-sources.md` (`19` sources intégrales `L+`) et `7 - Livre 2027/recherche/corpus_l_plus/*.txt`
+- **Dossier de sources probantes** : `7 - Livre/sources/ch06-sources.md` (`19` sources intégrales `L+`) et `7 - Livre/recherche/corpus_l_plus/*.txt`
 - **Registres de référence vérifiés** : `faits-empiriques.json`, `ancres-chronologiques.json`, `glossaire-termes.json`
 - **Date de gel des faits** : 2 décembre 2026
 - **Volume final vérifié (`v1.3`)** : `6 484` mots lexicaux `G1` (`6 796` `split()`, cible `[5 888, 6 912]`)
@@ -685,7 +685,7 @@
 
 ## Contrôle différentiel post-G4
 
-- **Objet** : Audit `G2` différentiel post-retouche stylistique `G4` portant sur les lignes modifiées `L27` et `L47–L81` du chapitre 06 ainsi que sur l'alignement terminologique avec `7 - Livre 2027/diagrammes/Fig-11.mmd`.
+- **Objet** : Audit `G2` différentiel post-retouche stylistique `G4` portant sur les lignes modifiées `L27` et `L47–L81` du chapitre 06 ainsi que sur l'alignement terminologique avec `7 - Livre/diagrammes/Fig-11.mmd`.
 - **Corpus vérifié directement en texte intégral (`corpus_l_plus/*.txt`)** : `SRC-003.txt` (`[1]`), `SRC-024.txt` (`[3]`), `SRC-027.txt` (`[5]`), `SRC-028.txt` (`[6]`), `SRC-029.txt` (`[7]`), `SRC-031.txt` (`[9]`), `SRC-032.txt` (`[10]`), `SRC-037.txt` (`[11]`), `SRC-065.txt` (`[13]`).
 
 ### Constats différentiels et vérifications ciblées

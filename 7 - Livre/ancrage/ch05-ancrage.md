@@ -1,9 +1,9 @@
 # Audit d'ancrage atomique — Chapitre 05 (`ch05`)
 
 - **Unité** : `ch05`
-- **Manuscrit vérifié** : [Chapitre 05 - Connecter sans s enfermer.md](file:///c:/Github/Agentique/7%20-%20Livre%202027/manuscrit/02%20-%20Partie%20II/Chapitre%2005%20-%20Connecter%20sans%20s%20enfermer.md)
-- **Dossier de sources** : [ch05-sources.md](file:///c:/Github/Agentique/7%20-%20Livre%202027/sources/ch05-sources.md)
-- **Registres vérifiés** : [ancres-chronologiques.json](file:///c:/Github/Agentique/7%20-%20Livre%202027/registre/ancres-chronologiques.json), [faits-empiriques.json](file:///c:/Github/Agentique/7%20-%20Livre%202027/registre/faits-empiriques.json), [glossaire-termes.json](file:///c:/Github/Agentique/7%20-%20Livre%202027/registre/glossaire-termes.json)
+- **Manuscrit vérifié** : [Chapitre 05 - Connecter sans s enfermer.md](file:///c:/Github/Agentique/7%20-%20Livre/manuscrit/02%20-%20Partie%20II/Chapitre%2005%20-%20Connecter%20sans%20s%20enfermer.md)
+- **Dossier de sources** : [ch05-sources.md](file:///c:/Github/Agentique/7%20-%20Livre/sources/ch05-sources.md)
+- **Registres vérifiés** : [ancres-chronologiques.json](file:///c:/Github/Agentique/7%20-%20Livre/registre/ancres-chronologiques.json), [faits-empiriques.json](file:///c:/Github/Agentique/7%20-%20Livre/registre/faits-empiriques.json), [glossaire-termes.json](file:///c:/Github/Agentique/7%20-%20Livre/registre/glossaire-termes.json)
 - **Date de gel des faits** : 2 décembre 2026
 - **Volume final vérifié (`v1.3`)** : `6 074` mots lexicaux `G1` (`6 244` `split()`, cible `[5 704, 6 696]`)
 - **Auditeur indépendant** : `auditeur-wyvern` (barrière `G2` — `CA-10`, `CA-12`, régime Production)
@@ -468,7 +468,7 @@
 
 ## Contrôle différentiel post-G4
 
-- **Périmètre vérifié** : retouche stylistique `G4` sur [Chapitre 05 - Connecter sans s enfermer.md](file:///c:/Github/Agentique/7%20-%20Livre%202027/manuscrit/02%20-%20Partie%20II/Chapitre%2005%20-%20Connecter%20sans%20s%20enfermer.md), lignes `15–35` (et ligne `37`, correspondant à l'ancienne ligne `35` après scission de l'ancien paragraphe `21` en `L21` et `L23`, ce qui décale de `+2` les numéros de lignes à partir de `L23`).
+- **Périmètre vérifié** : retouche stylistique `G4` sur [Chapitre 05 - Connecter sans s enfermer.md](file:///c:/Github/Agentique/7%20-%20Livre/manuscrit/02%20-%20Partie%20II/Chapitre%2005%20-%20Connecter%20sans%20s%20enfermer.md), lignes `15–35` (et ligne `37`, correspondant à l'ancienne ligne `35` après scission de l'ancien paragraphe `21` en `L21` et `L23`, ce qui décale de `+2` les numéros de lignes à partir de `L23`).
 - **Sources primaires `L+` comparées directement** : `SRC-038.txt`, `SRC-026.txt`, `SRC-007.txt`, `SRC-056.txt`, `SRC-057.txt` (plus `ch05-sources.md`).
 - **Bilan différentiel post-G4 (`L15–L37` / `L39`)** :
   - Affirmations réauditées (`A-05-03` à `A-05-23`) : `21` sur `21` (`100 %` `supporté`)

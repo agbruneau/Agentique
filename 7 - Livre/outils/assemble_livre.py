@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Assembleur des editions integrales MD, HTML et PDF du Livre 2027 (Tache 6)."""
+"""Assembleur des editions integrales MD, HTML et PDF du volume 7 - Livre (Tache 6)."""
 
 from __future__ import annotations
 
@@ -163,13 +163,24 @@ def _normalize_image_paths(
     return re.sub(r"!\[([^\]]*)\]\(([^)]+)\)", _repl, text)
 
 
+def _resolve_book_root(root: Path) -> Path:
+    """Retourne un chemin racine exploitable (resout les chemins relatifs ou '.')."""
+    path = Path(root)
+    return path if path.is_absolute() and path.name else path.resolve()
+
+
 def _clean_residual_livrables(root: Path) -> None:
-    """Supprime tout fichier .md, .pdf ou .typ residuel dans livrables/ (seul le HTML y reste)."""
+    """Supprime tout fichier .md, .pdf, .typ ou .html parasite dans livrables/ (seul `<root.name>.html` y reste)."""
+    root = _resolve_book_root(root)
     livrables_dir = root / "livrables"
     if not livrables_dir.is_dir():
         return
+    expected_html = f"{root.name}.html"
     for item in livrables_dir.iterdir():
-        if item.is_file() and item.suffix.lower() in {".md", ".pdf", ".typ"}:
+        if not item.is_file():
+            continue
+        suffix = item.suffix.lower()
+        if suffix in {".md", ".pdf", ".typ"} or (suffix == ".html" and item.name != expected_html):
             item.unlink(missing_ok=True)
 
 
@@ -186,7 +197,7 @@ def build_consolidated_markdown(
     image_prefix: str | None = None,
 ) -> tuple[str, str, dict]:
     """Construit en memoire le Markdown consolide et retourne (full_md, body_sans_yaml, meta)."""
-    root = Path(root)
+    root = _resolve_book_root(root)
     effective_prefix = image_prefix if image_prefix is not None else f"../{root.name}/diagrammes/rendus"
     manifest = json.loads((root / "specs" / "manifest.json").read_text(encoding="utf-8"))
     fig_ext_map = {
@@ -253,24 +264,25 @@ def build_consolidated_markdown(
 
 
 def assemble_markdown(root: Path) -> tuple[Path, str, dict]:
-    """Assemble le fichier consolide ../0 - PDF-MD/7 - Livre.md et retourne (path, body_sans_yaml, meta)."""
-    root = Path(root)
+    """Assemble le fichier consolide ../0 - PDF-MD/<root.name>.md et retourne (path, body_sans_yaml, meta)."""
+    root = _resolve_book_root(root)
     full_md, body_only, meta = build_consolidated_markdown(
         root, image_prefix=f"../{root.name}/diagrammes/rendus"
     )
     consolidated_dir = root.parent / "0 - PDF-MD"
     consolidated_dir.mkdir(parents=True, exist_ok=True)
-    md_out = consolidated_dir / "7 - Livre.md"
+    md_out = consolidated_dir / f"{root.name}.md"
     md_out.write_text(full_md, encoding="utf-8")
     _clean_residual_livrables(root)
     return md_out, body_only, meta
 
 
 def compile_html(root: Path, md_path: Path) -> Path:
-    """Compile l'edition HTML autonome via Pandoc dans livrables/."""
+    """Compile l'edition HTML autonome via Pandoc dans livrables/<root.name>.html."""
+    root = _resolve_book_root(root)
     livrables_dir = root / "livrables"
     livrables_dir.mkdir(parents=True, exist_ok=True)
-    html_out = livrables_dir / "7 - Livre 2027.html"
+    html_out = livrables_dir / f"{root.name}.html"
     resource_path = os.pathsep.join(
         str(p) for p in (md_path.parent, livrables_dir, root.parent, root)
     )
@@ -666,8 +678,8 @@ def _postprocess_typst_body(typst_src: str) -> str:
 
 
 def compile_pdf(root: Path, body_md: str, meta: dict) -> Path:
-    """Convertit en Typst via Pandoc, injecte dans gabarit-livre.typ et compile en ../0 - PDF-MD/7 - Livre.pdf."""
-    root = Path(root)
+    """Convertit en Typst via Pandoc, injecte dans gabarit-livre.typ et compile en ../0 - PDF-MD/<root.name>.pdf."""
+    root = _resolve_book_root(root)
     template_path = Path(__file__).resolve().parent / "gabarit-livre.typ"
     template_src = template_path.read_text(encoding="utf-8")
 
@@ -705,7 +717,7 @@ def compile_pdf(root: Path, body_md: str, meta: dict) -> Path:
 
     consolidated_dir = root.parent / "0 - PDF-MD"
     consolidated_dir.mkdir(parents=True, exist_ok=True)
-    pdf_out = consolidated_dir / "7 - Livre.pdf"
+    pdf_out = consolidated_dir / f"{root.name}.pdf"
     _clean_residual_livrables(root)
 
     res = subprocess.run(
@@ -722,6 +734,7 @@ def compile_pdf(root: Path, body_md: str, meta: dict) -> Path:
 
 def build_deliverables(root: Path, make_md: bool = True, make_html: bool = True, make_pdf: bool = True) -> dict[str, Path]:
     """Construit les livrables demandes et nettoie tout residu dans livrables/."""
+    root = _resolve_book_root(root)
     _clean_residual_livrables(root)
     md_path, body_only, meta = assemble_markdown(root)
     results: dict[str, Path] = {}
@@ -736,7 +749,7 @@ def build_deliverables(root: Path, make_md: bool = True, make_html: bool = True,
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Assembleur MD / HTML / PDF du Livre 2027.")
+    parser = argparse.ArgumentParser(description="Assembleur MD / HTML / PDF du volume 7 - Livre.")
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parent.parent, help="Racine du livre")
     parser.add_argument("--all", action="store_true", help="Produire MD, HTML et PDF")
     parser.add_argument("--md", action="store_true", help="Produire le Markdown assemble")

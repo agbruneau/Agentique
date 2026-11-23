@@ -24,7 +24,7 @@ COMPILE_SCRIPT = Path(__file__).resolve().parent / "compile_figures.py"
 
 
 def _clone_book(tmp_path: Path) -> Path:
-    clone = tmp_path / "7 - Livre 2027"
+    clone = tmp_path / "7 - Livre"
     shutil.copytree(
         REAL_BOOK_DIR,
         clone,

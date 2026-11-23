@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validation et compilation stricte des 23 figures du Livre 2027 (20 schémas vectoriels PlantUML et 3 organigrammes Mermaid haute résolution)."""
+"""Validation et compilation stricte des 23 figures du volume 7 - Livre (20 schémas vectoriels PlantUML et 3 organigrammes Mermaid haute résolution)."""
 
 from __future__ import annotations
 
@@ -603,7 +603,7 @@ def compile_figures(
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         description=(
-            "Valide et compile les 23 figures du Livre 2027 "
+            "Valide et compile les 23 figures du volume 7 - Livre "
             "(20 schémas vectoriels PlantUML et 3 organigrammes Mermaid haute résolution)."
         )
     )
@@ -611,7 +611,7 @@ def main(argv: list[str] | None = None) -> int:
         "--root",
         type=Path,
         default=Path(__file__).resolve().parent.parent,
-        help="Racine du dossier `7 - Livre 2027`",
+        help="Racine du dossier `7 - Livre`",
     )
     parser.add_argument(
         "--strict",

@@ -79,7 +79,7 @@ Verdict final — non supportés résiduels : 0
   5. `L73` (**non supporté et imprécis**) : contresens « recherche opérationnelle » absent de `SRC-004.txt` (qui traite de recherche sur les marchés, de contrôle préalable et de négociation), « montrent » sur un document de travail analytique, « échantillonnage sommaire » et « vérifications exhaustives » au lieu de *search exhaustively* / *thorough due diligence*.
   6. `L75` (**imprécis**) : restriction du premier facteur modérateur aux seules situations adverses (cyberdéfense), alors que `SRC-001.txt` vise plus largement la nécessité possible de modèles beaucoup plus lourds pour une fraction importante du travail cognitif utile.
 - **Rectifications appliquées** : toutes les corrections ci-dessus ont été appliquées directement dans `Chapitre 01 - Apres le copilote, l industrialisation cognitive.md` (`L55`, `L62`, `L65`, `L67`, `L69`, `L71`, `L73`, `L75`, `L123`) sans régression sur `L13–L17` ni `L110`.
-- **Validation déterministe `G1`** : `python "7 - Livre 2027/outils/verifie_manuscrit.py" --unit ch01 --strict` → `OK : Barriere deterministe G1 passee avec 0 erreur.`
+- **Validation déterministe `G1`** : `python "7 - Livre/outils/verifie_manuscrit.py" --unit ch01 --strict` → `OK : Barriere deterministe G1 passee avec 0 erreur.`
 
 Verdict différentiel post-G4 — supportés : 100 %
 Verdict différentiel post-G4 — imprécis résiduels : 0

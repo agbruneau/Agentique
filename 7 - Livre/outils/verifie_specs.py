@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Verification mecanique de coherence du dossier amont `7 - Livre 2027/specs/`."""
+"""Verification mecanique de coherence du dossier amont `7 - Livre/specs/`."""
 
 from __future__ import annotations
 

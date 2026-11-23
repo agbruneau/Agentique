@@ -73,4 +73,4 @@ Aucun. Les spécifications sont prêtes pour le lancement de la production.
 
 ## 5. Vérification
 
-`python "7 - Livre 2027/outils/verifie_specs.py"` et `pytest "7 - Livre 2027/outils/test_verifie_specs.py"` (deux nouveaux tests : dérive d'intitulés et `$` non échappé dans le `toc.md`; entrée de registre sans statut de preuve).
+`python "7 - Livre/outils/verifie_specs.py"` et `pytest "7 - Livre/outils/test_verifie_specs.py"` (deux nouveaux tests : dérive d'intitulés et `$` non échappé dans le `toc.md`; entrée de registre sans statut de preuve).

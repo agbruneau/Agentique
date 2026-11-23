@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Utilitaires partagés (stdlib uniquement) pour l'outillage du Livre 2027."""
+"""Utilitaires partagés (stdlib uniquement) pour l'outillage du volume 7 - Livre."""
 
 from __future__ import annotations
 

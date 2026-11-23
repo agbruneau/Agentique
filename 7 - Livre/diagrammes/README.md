@@ -1,4 +1,4 @@
-# Diagrammes — 7 - Livre 2027
+# Diagrammes — 7 - Livre
 
 Index des 23 diagrammes originaux de l'ouvrage *Gouverner l'industrialisation cognitive* (retour au [sommaire du document](../README.md)).
 
