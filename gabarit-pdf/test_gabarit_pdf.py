@@ -15,6 +15,13 @@ REPO_ROOT = GABARIT_DIR.parent
 if str(GABARIT_DIR) not in sys.path:
     sys.path.insert(0, str(GABARIT_DIR))
 
+from compile_diagrams import (  # noqa: E402
+    canonical_render_stem,
+    compile_directory,
+    main as compile_diagrams_main,
+    resolve_volume_diagram_dirs,
+    validate_render,
+)
 from compile_pdf import (  # noqa: E402
     CATALOG_PATH,
     TEMPLATE_PATH,
@@ -26,6 +33,7 @@ from compile_pdf import (  # noqa: E402
 from postprocess_typst import postprocess_typst_body  # noqa: E402
 from preprocess_md import (  # noqa: E402
     inject_rendered_diagrams,
+    normalize_image_paths_for_typst,
     preprocess_markdown,
 )
 
@@ -85,8 +93,9 @@ def test_preprocess_markdown_all_eight_volumes_structure() -> None:
         assert "\n# Table des matières\n" not in "\n" + clean, f"TDM statique residuelle dans Vol {vid}"
 
         # Verifier que toutes les images referencees existent sous REPO_ROOT
-        for img_rel in re.findall(r"!\[[^\]]*\]\((/[^)\n]+)\)", clean):
-            assert (REPO_ROOT / img_rel.lstrip("/")).is_file(), f"Image introuvable Vol {vid}: {img_rel}"
+        for img_rel in re.findall(r"!\[[^\]]*\]\((?:<(/[^>\n]+)>|(/[^)\n]+))\)", clean):
+            rel = img_rel[0] or img_rel[1]
+            assert (REPO_ROOT / rel.lstrip("/")).is_file(), f"Image introuvable Vol {vid}: {rel}"
 
 
 def test_inject_rendered_diagrams_inserts_without_duplication(tmp_path: Path) -> None:
@@ -95,17 +104,44 @@ def test_inject_rendered_diagrams_inserts_without_duplication(tmp_path: Path) ->
     (rendus / "Figure-01.0 - Intro.svg").write_text("<svg/>", encoding="utf-8")
     (rendus / "Figure-01.0 - Intro.png").write_bytes(b"\x89PNG\r\n\x1a\n")
     (rendus / "Fig-02 - Flux.png").write_bytes(b"\x89PNG\r\n\x1a\n")
+    (rendus / "Figure-43.4.svg").write_text("<svg/>", encoding="utf-8")
+    (rendus / "Figure-03.svg").write_text("<svg/>", encoding="utf-8")
 
     md = (
         "Paragraphe initial.\n\n"
         "***Figure 1.0** — Premier schema.*\n\n"
         "![Deja present](/Diagrammes/rendus/Fig-02 - Flux.png)\n\n"
-        "*Fig. 2. – Second schema.*\n"
+        "*Fig. 2. – Second schema.*\n\n"
+        "***Figure 43.4** (anc. Figure 42.1) — Schema renumerote.*\n\n"
+        "> **[Figure]**\n"
+        "> - Texte aplati d'un ancien SVG\n"
+        "> - A supprimer lors de l'injection\n\n"
+        "***Figure 3 — Titre gras.** Description de la figure.*\n"
     )
     out, count = inject_rendered_diagrams(md, rendus, tmp_path)
-    assert count == 1
+    assert count == 3
     assert "![Figure 1.0](/Diagrammes/rendus/Figure-01.0 - Intro.svg)\n\n***Figure 1.0**" in out
     assert out.count("Fig-02 - Flux.png") == 1
+    assert "![Figure 43.4](/Diagrammes/rendus/Figure-43.4.svg)\n\n***Figure 43.4**" in out
+    assert "![Figure 3](/Diagrammes/rendus/Figure-03.svg)\n\n***Figure 3 — Titre gras.**" in out
+    assert "> **[Figure]**" not in out
+    assert "Texte aplati d'un ancien SVG" not in out
+
+
+def test_normalize_image_paths_handles_parentheses_and_angle_brackets(tmp_path: Path) -> None:
+    rendus = tmp_path / "Vol" / "Diagrammes" / "rendus"
+    rendus.mkdir(parents=True)
+    md_dir = tmp_path / "0 - PDF-MD"
+    md_dir.mkdir(parents=True)
+    md_path = md_dir / "5 - Memoire.md"
+
+    md = (
+        "![Fig 3](<../Vol/Diagrammes/rendus/Fig-03 - Passerelle (PEP).svg>)\n"
+        "![Fig 4](../Vol/Diagrammes/rendus/Fig-04 - Modele (v2).svg)\n"
+    )
+    out = normalize_image_paths_for_typst(md, tmp_path, md_source_path=md_path)
+    assert "![Fig 3](</Vol/Diagrammes/rendus/Fig-03 - Passerelle (PEP).svg>)" in out
+    assert "![Fig 4](</Vol/Diagrammes/rendus/Fig-04 - Modele (v2).svg>)" in out
 
 
 def test_postprocess_typst_covers_all_collection_conventions() -> None:
@@ -281,3 +317,123 @@ def test_compile_real_volume_excerpts_all_structural_variants(vid: str, tmp_path
         assert "Table des matières" in doc[2].get_text()
     finally:
         doc.close()
+
+
+def test_postprocess_typst_edge_cases_captions_bib_and_wide_tables() -> None:
+    cols = ", ".join(f"[{i}]" for i in range(1, 10))
+    cells = ", ".join(f"[Val {i}]" for i in range(1, 10))
+    raw = (
+        "#emph[#strong[Figure 43.4] (anc. Figure 42.1) — Renumerotation Vol 1]\n\n"
+        "#emph[#strong[Figure 1 — Titre Vol 2.] Description suite.]\n\n"
+        "#table(\n"
+        "  columns: 9,\n"
+        f"  table.header({cols},),\n"
+        f"  {cells},\n"
+        ")\n\n"
+        "== Annexe H — Bibliographie\n"
+        '- #link("https://example.org/ref-1")\n\n'
+        "== Annexe I — Autre section\n"
+        "Paragraphe normal.\n\n"
+        "== G Références\n"
+        '- #link("https://example.org/ref-2")\n\n'
+        "== H Actualisation\n"
+        "Fin.\n"
+    )
+    out = postprocess_typst_body(raw)
+    assert out.count("#align(center)") == 2
+    assert "inset: (x: 1.5pt, y: 2.5pt)" in out
+    assert out.count("#set par(justify: false, leading: 0.56em, spacing: 0.45em)") == 2
+    assert "== Annexe I — Autre section" in out
+    assert "== H Actualisation" in out
+
+
+def test_postprocess_typst_wraps_long_tokens_in_fenced_code_without_overflow(tmp_path: Path) -> None:
+    jwt = '"eyJhbGciOiJFUzI1NiIsInR5cCI6IkpPU0UiLCJraWQiOiJjYXJ0ZXMtYWdlbnRzLTIwMjYtMTAiLCJqa3UiOiJodHRwczovL2V4YW1wbGUuY29tL2p3a3MuanNvbiJ9"'
+    query = (
+        "grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Atoken-exchange"
+        "&client_id=agent-bca-warranty-adjudicator-prod"
+        "&client_assertion_type=urn%3Aietf%3Aparams%3Aoauth%3Aclient-assertion-type%3Ajwt-bearer"
+        "&client_assertion=eyJhbGciOiJFUzI1NiJ9.eyJzdWIiOiJhZ2VudCJ9.sig1234567890"
+        "&scope=bca.warranty.preauthorize&authorization_details=%5B%7B%22type%22%3A%22warranty%22%7D%5D"
+    )
+    raw = f"```json\n{{\n  \"sig\": {jwt}\n}}\n```\n\n```http\n{query}\n```\n"
+    out = postprocess_typst_body(raw)
+    assert "\u200b" in out
+
+    # Verifier en compilation Typst reelle qu'aucune ligne ne depasse le bord droit de la page (442.1pt)
+    pdf_out = tmp_path / "long-code.pdf"
+    compile_markdown_to_pdf(
+        f"# Liminaire\n\n{raw}",
+        pdf_out,
+        {"title": "Test debordement", "show_cover": False, "show_title_page": False, "show_toc": False},
+        typst_root=REPO_ROOT,
+    )
+    doc = pymupdf.open(pdf_out)
+    try:
+        for page in doc:
+            for blk in page.get_text("dict")["blocks"]:
+                for line in blk.get("lines", []):
+                    assert line["bbox"][2] < page.rect.width - 20.0, (
+                        f"Debordement horizontal detecte: x1={line['bbox'][2]:.1f}pt"
+                    )
+    finally:
+        doc.close()
+
+
+def test_compile_diagrams_canonical_names_cache_force_and_error_report(tmp_path: Path) -> None:
+    assert canonical_render_stem(Path("Figure-30.2 - Titre coupe (art.puml")) == "Figure-30.2"
+    assert canonical_render_stem(Path("Fig-03 - Passerelle (PEP).puml")) == "Fig-03"
+    assert canonical_render_stem(Path("schema-custom.puml")) == "schema-custom"
+
+    cfg, src_dir, rendus_dir = resolve_volume_diagram_dirs("1")
+    assert cfg["id"] == "1"
+    assert src_dir == REPO_ROOT / "1 - Compendium 2026" / "Diagrammes"
+    assert rendus_dir == REPO_ROOT / "1 - Compendium 2026" / "Diagrammes" / "rendus"
+
+    src = tmp_path / "Diagrammes"
+    out = src / "rendus"
+    src.mkdir()
+    puml_ok = src / "Figure-01.1 - Réseau N × M (art.puml"
+    mmd_ok = src / "Fig-02 - Flux agentique (PEP).mmd"
+    puml_ok.write_text("@startuml\nAlice -> Bob : OK\n@enduml\n", encoding="utf-8")
+    mmd_ok.write_text("flowchart LR\n  A[Entrée] --> B[Sortie]\n", encoding="utf-8")
+
+    # 1. Compilation initiale -> noms canoniques courts
+    rep1 = compile_directory(src, out, workers=2)
+    assert rep1["summary"]["failed"] == 0
+    assert rep1["summary"]["compiled"] == 2
+    assert (out / "Figure-01.1.svg").is_file()
+    assert (out / "Fig-02.png").is_file()
+    assert validate_render(out / "Figure-01.1.svg", "puml", puml_ok) == []
+    assert validate_render(out / "Fig-02.png", "mmd", mmd_ok) == []
+
+    # 2. Cache incremental -> 0 recompilation
+    rep2 = compile_directory(src, out, workers=2)
+    assert rep2["summary"]["failed"] == 0
+    assert rep2["summary"]["compiled"] == 0
+    assert rep2["summary"]["skipped_cached"] == 2
+
+    # 3. Mode --force -> 2 recompilations
+    rep3 = compile_directory(src, out, force=True, workers=2)
+    assert rep3["summary"]["failed"] == 0
+    assert rep3["summary"]["compiled"] == 2
+
+    # 4. Mode --check-only -> 2 ok
+    rep4 = compile_directory(src, out, check_only=True)
+    assert rep4["summary"]["failed"] == 0
+    assert rep4["summary"]["ok"] == 2
+
+    # 5. Erreur PlantUML -> detectee, aucun SVG d'erreur laisse dans rendus/, rapport JSON ecrit
+    puml_bad = src / "Fig-09 - Syntaxe cassee.puml"
+    puml_bad.write_text("@startuml\nclass {\n  invalid ??? ->\n@enduml\n", encoding="utf-8")
+    report_path = tmp_path / "report.json"
+    rc = compile_diagrams_main(
+        ["--input-dir", str(src), "--output-dir", str(out), "--json-report", str(report_path), "--workers", "2"]
+    )
+    assert rc == 1
+    assert not (out / "Fig-09.svg").exists()
+    assert report_path.is_file()
+    data = __import__("json").loads(report_path.read_text(encoding="utf-8"))
+    assert data["summary"]["failed"] == 1
+    assert data["summary"]["skipped_cached"] == 2
+    assert len(data["errors"]) == 1

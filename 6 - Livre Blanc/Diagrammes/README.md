@@ -3,8 +3,9 @@
 Index des 59 diagrammes extraits et reconstruits depuis `6 - Livre Blanc.pdf` (retour au [sommaire du document](../README.md)).
 
 - **Total des diagrammes** : 59
-- **PlantUML (`.puml`)** : 56
-- **Mermaid (`.mmd`)** : 3
+- **PlantUML (`.puml`)** : 56 (rendus vectoriels `.svg` dans `rendus/`)
+- **Mermaid (`.mmd`)** : 3 (rendus haute résolution `.png` dans `rendus/`)
+- **Compilation** : `python gabarit-pdf/compile_diagrams.py --volume 6` (génère `rendus/Fig-XX.svg` / `.png` injectés dans le PDF unifié via [`../../gabarit-pdf/`](../../gabarit-pdf/README.md))
 
 | Figure | Page | Chapitre / Section | Format | Fichier source | Légende |
 | --- | ---: | --- | --- | --- | --- |

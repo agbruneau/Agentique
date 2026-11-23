@@ -7,11 +7,12 @@ Gabarit éditorial Typst unique et compilateur unifié pour les 8 volumes du dé
 | Fichier | Rôle |
 |---|---|
 | `gabarit-collection.typ` | Module Typst autonome exportant `collection-pdf(...)`, `divider` et `horizontalRule`. |
-| `postprocess_typst.py` | Post-traitement typographique `fr-CA` (rééquilibrage des tableaux, virgules décimales en math, légendes centrées, césure des URL et du code inline, espaces insécables). |
-| `preprocess_md.py` | Pré-traitement Markdown (YAML liminaire, retrait des couvertures aplaties et TDM statiques des volumes 1–6, normalisation des chemins d'images, injection optionnelle de diagrammes rendus). |
-| `volumes.json` | Catalogue déclaratif des 8 volumes (métadonnées de couverture, mentions de référence, conventions de titres et options de pré-traitement). |
+| `postprocess_typst.py` | Post-traitement typographique `fr-CA` (rééquilibrage des tableaux y compris larges 8–11 colonnes, virgules décimales en math, légendes centrées, césure des URL et du code inline, espaces insécables, sections bibliographiques non justifiées). |
+| `preprocess_md.py` | Pré-traitement Markdown (YAML liminaire, retrait des couvertures aplaties et TDM statiques des volumes 1–6, normalisation des chemins d'images, injection des diagrammes rendus avec remplacement automatique des blocs `> **[Figure]**`). |
+| `volumes.json` | Catalogue déclaratif des 8 volumes (métadonnées de couverture, mentions de référence, conventions de titres, dossiers de diagrammes et options de pré-traitement). |
+| `compile_diagrams.py` | Compilateur parallèle avec cache incrémental des diagrammes `.puml` (`plantuml` → `.svg`) et `.mmd` (`mmdc` → `.png` haute résolution) vers `<Volume>/Diagrammes/rendus/` (noms canoniques courts, rapport console/JSON). |
 | `compile_pdf.py` | Interface CLI et API Python pour compiler un volume catalogué, toute la collection ou un fichier Markdown arbitraire. |
-| `test_gabarit_pdf.py` | Suite de tests automatisés (`pytest`) couvrant le catalogue, les transformations et la compilation Typst réelle. |
+| `test_gabarit_pdf.py` | Suite de tests automatisés (`pytest`) couvrant le catalogue, les transformations, `compile_diagrams.py` et la compilation Typst réelle. |
 
 ## Charte visuelle de référence (`8 - Manuel.pdf`)
 
@@ -27,6 +28,12 @@ Gabarit éditorial Typst unique et compilateur unifié pour les 8 volumes du dé
 # Lister les 8 volumes catalogués
 python gabarit-pdf/compile_pdf.py --list
 
+# Compiler les diagrammes (.puml -> .svg, .mmd -> .png) pour des volumes précis ou les volumes 1–6
+python gabarit-pdf/compile_diagrams.py --volume 1,2,3
+python gabarit-pdf/compile_diagrams.py --all
+python gabarit-pdf/compile_diagrams.py --volume 5 --force --json-report build/diagrams-vol5.json
+python gabarit-pdf/compile_diagrams.py --all --check-only
+
 # Compiler un volume vers un dossier de sortie (sans écraser 0 - PDF-MD/)
 python gabarit-pdf/compile_pdf.py --volume 5 --output-dir build/
 
@@ -36,8 +43,9 @@ python gabarit-pdf/compile_pdf.py --volume 8 --output build/8-manuel.pdf --emit-
 # Compiler un document Markdown arbitraire
 python gabarit-pdf/compile_pdf.py --input mon-doc.md --output build/mon-doc.pdf --title "Mon titre"
 
-# Regénérer un PDF directement dans 0 - PDF-MD/ (explicite)
-python gabarit-pdf/compile_pdf.py --volume 8 --in-place
+# Regénérer un PDF directement dans 0 - PDF-MD/ (diagrammes injectés automatiquement pour Vol. 1–6)
+python gabarit-pdf/compile_pdf.py --volume 5 --in-place
+python gabarit-pdf/compile_pdf.py --all --in-place
 ```
 
 ### Utilisation directe en Typst

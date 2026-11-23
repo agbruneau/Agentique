@@ -122,10 +122,19 @@ def strip_static_sections(md_text: str, heading_titles: tuple[str, ...] = ("Tabl
     return "".join(out)
 
 
+def _format_markdown_image_target(rel: str, title_suffix: str = "") -> str:
+    """Formate une cible d'image Markdown en l'entourant de `<...>` si elle contient des parentheses."""
+    if "(" in rel or ")" in rel:
+        return f"<{rel}>{title_suffix}"
+    return f"{rel}{title_suffix}"
+
+
 def normalize_image_paths_for_typst(md_text: str, repo_root: Path, md_source_path: Path | None = None) -> str:
     """Normalise les chemins d'images Markdown en chemins absolus Typst (`/rel/to/repo_root`)."""
     base_dir = md_source_path.parent if md_source_path is not None else repo_root
-    img_re = re.compile(r"!\[([^\]]*)\]\(([^)\n]+)\)")
+    img_re = re.compile(
+        r"!\[([^\]]*)\]\((<[^>\n]+>(?:\s+(?:\"[^\"]*\"|'[^']*'))?|(?:[^()\n]|\([^()\n]*\))+)\)"
+    )
 
     def _repl(m: re.Match[str]) -> str:
         alt, raw_spec = m.group(1), m.group(2).strip()
@@ -150,8 +159,8 @@ def normalize_image_paths_for_typst(md_text: str, repo_root: Path, md_source_pat
             return m.group(0)
         resolved = (base_dir / raw_target).resolve()
         try:
-            rel = resolved.relative_to(repo_root.resolve()).as_posix()
-            return f"![{alt}](/{rel}{title_suffix})"
+            rel = "/" + resolved.relative_to(repo_root.resolve()).as_posix()
+            return f"![{alt}]({_format_markdown_image_target(rel, title_suffix)})"
         except ValueError:
             return m.group(0)
 
@@ -159,6 +168,23 @@ def normalize_image_paths_for_typst(md_text: str, repo_root: Path, md_source_pat
     for _, line, in_fence in _iter_lines_with_fence_state(md_text.splitlines(keepends=True)):
         out.append(line if in_fence else img_re.sub(_repl, line))
     return "".join(out)
+
+
+def _strip_preceding_figure_placeholder_blockquote(out: list[str]) -> bool:
+    """Retire un bloc de citation `> **[Figure]**` contigu en fin de `out` (hors lignes vides finales)."""
+    end = len(out)
+    while end > 0 and not out[end - 1].strip():
+        end -= 1
+    if end == 0 or not out[end - 1].lstrip().startswith(">"):
+        return False
+    start = end
+    while start > 0 and out[start - 1].lstrip().startswith(">"):
+        start -= 1
+    first_line = out[start].lstrip()
+    if re.match(r"^>\s*\*\*\[Figure\]\*\*", first_line, re.IGNORECASE):
+        del out[start:]
+        return True
+    return False
 
 
 def inject_rendered_diagrams(
@@ -169,7 +195,8 @@ def inject_rendered_diagrams(
     """Injecte les diagrammes rendus (.svg/.png) au-dessus des legendes correspondantes s'ils existent.
 
     Utile pour les volumes 1-6 une fois leurs sources PlantUML/Mermaid compilees dans `Diagrammes/rendus/`.
-    Ne duplique jamais une image deja presente immediatement avant la legende.
+    Remplace un eventuel encadre de texte aplati `> **[Figure]**` precedant immediatement la legende,
+    et ne duplique jamais une image deja presente avant la legende.
     """
     if not rendered_dir.is_dir():
         return md_text, 0
@@ -189,7 +216,7 @@ def inject_rendered_diagrams(
         return md_text, 0
 
     cap_re = re.compile(
-        r"^\*(?:\*\*)?(?:Figure|Fig\.)\s*(\d+(?:\.\d+)?)\.?(?:\*\*)?\s*[—–-]"
+        r"^\*(?:\*\*)?(?:Figure|Fig\.)\s*(\d+(?:\.\d+)?)\.?(?:\*\*)?(?:\s*\([^)\n]+\))?\s*[—–-]"
     )
     lines = md_text.splitlines(keepends=True)
     out: list[str] = []
@@ -201,6 +228,7 @@ def inject_rendered_diagrams(
                 norm_num = ".".join(str(int(part)) for part in m.group(1).split("."))
                 asset = index.get(norm_num)
                 if asset is not None:
+                    _strip_preceding_figure_placeholder_blockquote(out)
                     prev_nonempty = ""
                     for prev in reversed(out):
                         if prev.strip():
@@ -211,7 +239,10 @@ def inject_rendered_diagrams(
                             rel = "/" + asset.resolve().relative_to(repo_root.resolve()).as_posix()
                         except ValueError:
                             rel = asset.as_posix()
-                        out.append(f"![Figure {norm_num}]({rel})\n\n")
+                        if out and out[-1].strip():
+                            out.append("\n")
+                        target = _format_markdown_image_target(rel)
+                        out.append(f"![Figure {norm_num}]({target})\n\n")
                         injected += 1
         out.append(line)
     return "".join(out), injected

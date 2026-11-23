@@ -233,7 +233,7 @@ def compile_volume(
     output_path: Path | None = None,
     *,
     in_place: bool = False,
-    inject_diagrams: bool = False,
+    inject_diagrams: bool | None = None,
     emit_typst: Path | None = None,
     repo_root: Path = REPO_ROOT,
     catalog_path: Path = CATALOG_PATH,
@@ -254,7 +254,8 @@ def compile_volume(
     else:
         pdf_out = output_path
 
-    cfg["inject_diagrams"] = inject_diagrams
+    if inject_diagrams is not None:
+        cfg["inject_diagrams"] = inject_diagrams
     md_text = src_md.read_text(encoding="utf-8")
     return compile_markdown_to_pdf(
         md_text,
@@ -285,8 +286,16 @@ def main(argv: list[str] | None = None) -> int:
     )
     parser.add_argument(
         "--inject-diagrams",
+        dest="inject_diagrams",
         action="store_true",
-        help="Injecter automatiquement les diagrammes rendus (.svg/.png) trouves dans Diagrammes/rendus/",
+        default=None,
+        help="Forcer l'injection automatique des diagrammes rendus (.svg/.png) depuis Diagrammes/rendus/",
+    )
+    parser.add_argument(
+        "--no-inject-diagrams",
+        dest="inject_diagrams",
+        action="store_false",
+        help="Desactiver l'injection automatique des diagrammes rendus meme si activee dans volumes.json",
     )
     parser.add_argument("--emit-typst", type=Path, help="Ecrire aussi la source Typst generee (.typ)")
     parser.add_argument("--title", help="Surcharge du titre (mode --input)")

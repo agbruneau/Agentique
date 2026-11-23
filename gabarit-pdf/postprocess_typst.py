@@ -395,14 +395,15 @@ def _rebalance_single_table(table_inner: str) -> str:
         hdr_len = len(vals[0]) if vals else 4
         max_word = max((max((len(w) for w in v.split()), default=0) for v in vals), default=0)
         hdr_max_word = max((len(w) for w in vals[0].split()), default=0) if vals else 0
+        min_floor = max(0.045, 0.55 / ncols) if ncols >= 8 else 0.085
         if med < 15:
             eff_word = min(max(max_word, hdr_max_word), 12)
-            req_floor = max(0.085, (eff_word * 3.8 + 8.0) / USABLE_PAGE_WIDTH_PT)
+            req_floor = max(min_floor, (eff_word * 3.8 + 8.0) / USABLE_PAGE_WIDTH_PT)
         else:
             eff_word = min(max(max_word, hdr_max_word), 16)
-            cap = 47.0 if ncols >= 6 else 72.0
+            cap = max(24.0, 220.0 / ncols) if ncols >= 8 else (47.0 if ncols >= 6 else 72.0)
             req_floor = max(
-                0.085,
+                min_floor,
                 min(cap / USABLE_PAGE_WIDTH_PT, (eff_word * 3.7 + 7.5) / USABLE_PAGE_WIDTH_PT),
             )
         min_shares.append(req_floor)
@@ -414,7 +415,7 @@ def _rebalance_single_table(table_inner: str) -> str:
         col_scores.append(max(score, 8.0))
 
     floor_sum = sum(min_shares)
-    max_floor_sum = 0.94 if ncols >= 6 else 0.88
+    max_floor_sum = 0.82 if ncols >= 8 else (0.94 if ncols >= 6 else 0.88)
     if floor_sum > max_floor_sum:
         scale_f = max_floor_sum / floor_sum
         min_shares = [s * scale_f for s in min_shares]
@@ -428,7 +429,12 @@ def _rebalance_single_table(table_inner: str) -> str:
     pcts[-1] = round(100.0 - sum(pcts[:-1]), 2)
     col_spec = ", ".join(f"{p:.2f}%" for p in pcts)
 
-    new_args[col_idx] = f"\n    columns: ({col_spec})"
+    if ncols >= 9:
+        new_args[col_idx] = f"\n    columns: ({col_spec}),\n    inset: (x: 1.5pt, y: 2.5pt)"
+    elif ncols == 8:
+        new_args[col_idx] = f"\n    columns: ({col_spec}),\n    inset: (x: 2.0pt, y: 2.8pt)"
+    else:
+        new_args[col_idx] = f"\n    columns: ({col_spec})"
     return ",".join(new_args) + ("," if not table_inner.rstrip().endswith(",") else "")
 
 
@@ -470,6 +476,48 @@ def _wrap_inline_raw_tokens_typst(inner: str) -> str:
         return re.sub(r"[A-Za-zÀ-ÖØ-öø-ÿ0-9]{32,}", _chunk_long_run, part)
 
     return re.sub(r"\S+", lambda m: _wrap_part(m.group(0)), fixed)
+
+
+def _wrap_long_tokens_in_fenced_raw(typst_src: str, max_token_len: int = 78, chunk_len: int = 64) -> str:
+    """Insere des points de cesure discrets (\\u200b) dans les jetons continus longs des blocs ```."""
+    out_lines: list[str] = []
+    fence_char: str | None = None
+    fence_len = 0
+
+    def _break_token(m: re.Match[str]) -> str:
+        tok = m.group(0)
+        if len(tok) <= max_token_len or "\u200b" in tok:
+            return tok
+        # 1. Points de cesure naturels apres separateurs courants (URL, query string, JSON, chemins)
+        broken = re.sub(r"([&=,;:/.?_-])(?=\S)", lambda x: x.group(1) + "\u200b", tok)
+        # 2. Couper tout segment residuel sans separateur (ex. JWT base64, empreinte SHA-256)
+        segments = broken.split("\u200b")
+        final_segs: list[str] = []
+        for seg in segments:
+            if len(seg) > chunk_len:
+                final_segs.extend(seg[k : k + chunk_len] for k in range(0, len(seg), chunk_len))
+            else:
+                final_segs.append(seg)
+        return "\u200b".join(final_segs)
+
+    for ln in typst_src.splitlines(keepends=True):
+        raw_ln = ln.rstrip("\r\n")
+        if fence_char is None:
+            m_fence = _FENCE_OPEN_RE.match(raw_ln)
+            if m_fence:
+                fence_char = m_fence.group(1)[0]
+                fence_len = len(m_fence.group(1))
+            out_lines.append(ln)
+        else:
+            stripped = raw_ln.strip()
+            if stripped.startswith(fence_char * fence_len) and stripped == fence_char * len(stripped):
+                fence_char = None
+                fence_len = 0
+                out_lines.append(ln)
+            else:
+                ending = ln[len(raw_ln) :]
+                out_lines.append(re.sub(r"\S+", _break_token, raw_ln) + ending)
+    return "".join(out_lines)
 
 
 def _postprocess_inline_raw_typst(typst_src: str) -> str:
@@ -697,9 +745,9 @@ def postprocess_typst_body(typst_src: str) -> str:
     # Retirer un separateur horizontal immediatement avant un titre
     res = re.sub(r"(?m)^#divider\(\)\s*\n+(?=={1,6}\s+)", "", res)
 
-    # Centrer les legendes numerotees (Figure N / Figure N.M / Fig. N. / Tableau X / Tableau X.Y)
+    # Centrer les legendes numerotees (Figure N / Figure N.M / (anc. Figure ...) / Fig. N. / Tableau X / Tableau X.Y)
     res = re.sub(
-        r"(?ms)^(#emph\[(?:#strong\[)?(?:Figure\s+\d+(?:\.\d+)?|Fig\.\s*\d+(?:\.\d+)?\.?|Tableau\s+\d+(?:\.\d+)?)(?:\])?\s*[—–-][^\n]+(?:\n(?!\s*\n)[^\n]+)*\])(?=\s*(?:\n\s*\n|\Z))",
+        r"(?ms)^(#emph\[(?:#strong\[)?(?:Figure\s+\d+(?:\.\d+)?|Fig\.\s*\d+(?:\.\d+)?\.?|Tableau\s+\d+(?:\.\d+)?)(?:\])?(?:\s*\([^)\n]+\))?\s*[—–-][^\n]+(?:\n(?!\s*\n)[^\n]+)*\])(?=\s*(?:\n\s*\n|\Z))",
         r'#align(center)[#set par(justify: false); #set text(size: 8.6pt, fill: rgb("#475569")); \1]',
         res,
     )
@@ -714,14 +762,15 @@ def postprocess_typst_body(typst_src: str) -> str:
 
     res = _apply_outside_fences(res, _fix_line_urls)
 
-    # Desactiver la justification excessive dans les sections bibliographiques et matrices denses
-    stop_major = r"^={1,2}\s+(?:Annexe\s+|Annexes\b|Chapitre\s+|Partie\s+|Livre\s+)"
+    # Desactiver la justification excessive dans les sections bibliographiques, references et matrices denses
+    stop_major = r"^={1,2}\s+(?:Annexe\s+|Annexes\b|Chapitre\s+|Partie\s+|Livre\s+|[A-Z]\s+[A-ZÀ-ÖØ-Þ])"
     for sec_pat in (
-        r"^=+\s+Bibliographie classée des sources intégrales vérifiées\b[^\n]*(?:\n<[^>\n]+>)?",
-        r"^=+\s+Bibliographie (?:générale|maîtresse) consolidée\b[^\n]*(?:\n<[^>\n]+>)?",
+        r"^=+\s+(?:Annexe\s+[A-Z0-9]+\s*[—–-]\s*)?Bibliographie\b[^\n]*(?:\n<[^>\n]+>)?",
+        r"^=+\s+(?:Annexe\s+[A-Z0-9]+\s*[—–-]\s*|[A-Z]\s+)Références\b[^\n]*(?:\n<[^>\n]+>)?",
         r"^=+\s+Matrice détaillée\b[^\n]*(?:\n<[^>\n]+>)?",
     ):
         res = _wrap_unjustified_section(res, sec_pat, stop_major)
 
     res = _apply_outside_fences(res, _protect_typst_prose_line)
+    res = _wrap_long_tokens_in_fenced_raw(res)
     return _postprocess_inline_raw_typst(res)

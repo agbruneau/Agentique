@@ -3,8 +3,9 @@
 Index des 28 diagrammes extraits et reconstruits depuis `2 - Cadre de Référence.pdf` (retour au [sommaire du document](../README.md)).
 
 - **Total des diagrammes** : 28
-- **PlantUML (`.puml`)** : 25
-- **Mermaid (`.mmd`)** : 3
+- **PlantUML (`.puml`)** : 25 (rendus vectoriels `.svg` dans `rendus/`)
+- **Mermaid (`.mmd`)** : 3 (rendus haute résolution `.png` dans `rendus/`)
+- **Compilation** : `python gabarit-pdf/compile_diagrams.py --volume 2` (génère `rendus/Figure-XX.svg` / `.png` injectés dans le PDF unifié via [`../../gabarit-pdf/`](../../gabarit-pdf/README.md))
 
 | Figure | Page | Chapitre / Section | Format | Fichier source | Légende |
 | --- | ---: | --- | --- | --- | --- |

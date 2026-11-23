@@ -3,8 +3,9 @@
 Index des 6 diagrammes extraits et reconstruits depuis `4 - Plan Directeur.pdf` (retour au [sommaire du document](../README.md)).
 
 - **Total des diagrammes** : 6
-- **PlantUML (`.puml`)** : 6
+- **PlantUML (`.puml`)** : 6 (rendus vectoriels `.svg` dans `rendus/`)
 - **Mermaid (`.mmd`)** : 0
+- **Compilation** : `python gabarit-pdf/compile_diagrams.py --volume 4` (génère `rendus/Fig-XX.svg` injectés dans le PDF unifié via [`../../gabarit-pdf/`](../../gabarit-pdf/README.md))
 
 | Figure | Page | Chapitre / Section | Format | Fichier source | Légende |
 | --- | ---: | --- | --- | --- | --- |

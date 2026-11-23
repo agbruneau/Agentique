@@ -453,17 +453,28 @@
   )
   set table.cell(breakable: false)
   show figure.where(kind: table): set block(breakable: true, above: 0.9em, below: 1.0em)
-  show table: it => block(width: 100%)[
-    #set text(font: ("Segoe UI", "Libertinus Serif"), size: 7.0pt, hyphenate: true)
-    #set par(justify: false, leading: 0.45em, spacing: 0.30em)
-    #show raw.where(block: false): r => text(font: ("Consolas", "DejaVu Sans Mono"), size: 6.5pt, fill: rgb("#0F172A"), r.text)
-    #show table.cell.where(y: 0): cell => {
-      set text(fill: white, weight: "bold")
-      show raw.where(block: false): r => text(font: ("Consolas", "DejaVu Sans Mono"), size: 6.5pt, fill: white, r.text)
-      cell
+  show table: it => {
+    let ncols = if type(it.columns) == array {
+      it.columns.len()
+    } else if type(it.columns) == int {
+      it.columns
+    } else {
+      1
     }
-    #it
-  ]
+    let fsize = if ncols >= 9 { 5.6pt } else if ncols >= 8 { 6.1pt } else { 7.0pt }
+    let csize = if ncols >= 9 { 5.1pt } else if ncols >= 8 { 5.6pt } else { 6.5pt }
+    block(width: 100%)[
+      #set text(font: ("Segoe UI", "Libertinus Serif"), size: fsize, hyphenate: true)
+      #set par(justify: false, leading: 0.45em, spacing: 0.30em)
+      #show raw.where(block: false): r => text(font: ("Consolas", "DejaVu Sans Mono"), size: csize, fill: rgb("#0F172A"), r.text)
+      #show table.cell.where(y: 0): cell => {
+        set text(fill: white, weight: "bold")
+        show raw.where(block: false): r => text(font: ("Consolas", "DejaVu Sans Mono"), size: csize, fill: white, r.text)
+        cell
+      }
+      #it
+    ]
+  }
 
   // 9. Figures vectorielles et matricielles centrees a 96 % max, hauteur plafonnee a 5.4in
   show figure.where(kind: image): it => block(

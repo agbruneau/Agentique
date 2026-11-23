@@ -3,8 +3,9 @@
 Index des 68 diagrammes extraits et reconstruits depuis `3 - Compendium 2027.pdf` (retour au [sommaire du document](../README.md)).
 
 - **Total des diagrammes** : 68
-- **PlantUML (`.puml`)** : 68
+- **PlantUML (`.puml`)** : 68 (rendus vectoriels `.svg` dans `rendus/`)
 - **Mermaid (`.mmd`)** : 0
+- **Compilation** : `python gabarit-pdf/compile_diagrams.py --volume 3` (génère `rendus/Fig-XX.svg` injectés dans le PDF unifié via [`../../gabarit-pdf/`](../../gabarit-pdf/README.md))
 
 | Figure | Page | Chapitre / Section | Format | Fichier source | Légende |
 | --- | ---: | --- | --- | --- | --- |

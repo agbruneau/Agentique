@@ -3,8 +3,9 @@
 Index des 8 diagrammes extraits et reconstruits depuis `5 - Memoire.pdf` (retour au [sommaire du document](../README.md)).
 
 - **Total des diagrammes** : 8
-- **PlantUML (`.puml`)** : 8
+- **PlantUML (`.puml`)** : 8 (rendus vectoriels `.svg` dans `rendus/`)
 - **Mermaid (`.mmd`)** : 0
+- **Compilation** : `python gabarit-pdf/compile_diagrams.py --volume 5` (génère `rendus/Fig-XX.svg` injectés dans le PDF unifié via [`../../gabarit-pdf/`](../../gabarit-pdf/README.md))
 
 | Figure | Page | Chapitre / Section | Format | Fichier source | Légende |
 | --- | ---: | --- | --- | --- | --- |
