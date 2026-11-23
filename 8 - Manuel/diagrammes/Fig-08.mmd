@@ -1,0 +1,38 @@
+%%{init: {'theme': 'base', 'themeVariables': {'fontFamily': 'DejaVu Sans', 'fontSize': '13px', 'lineColor': '#334155', 'edgeLabelBackground': '#FFFFFF', 'primaryTextColor': '#0F2942'}, 'flowchart': {'nodeSpacing': 20, 'rankSpacing': 22, 'padding': 9}}}%%
+flowchart TD
+  CAND["Candidat blueprint (bp1 / bp2 / bp3)<br/>intégrant modèle probabiliste"]:::prob
+  G_ADR{{"1. ADR 2027-B001 valide ?"}}:::det
+  G_SBB{{"2. Cinq SBB instanciés ?"}}:::det
+  G_PRR{{"3. 24 PRR bloquants à PASS ?"}}:::det
+  G_C40{{"4. Critères C01–C40<br/>sur 3 blueprints ?"}}:::det
+  G_G0{{"5. G0 exit 0, OPA 100 %<br/>et Wilson ≥ 3/p ?"}}:::det
+
+  REJ_ADR["Rejet ADR : schéma strict<br/>ou soc_killswitch_id absent"]:::det
+  REJ_SBB["Rejet SBB : bloc Tableau 12<br/>(Plans A/B) manquant"]:::det
+  REJ_PRR["Rejet PRR : porte S/R/O/G/F<br/>sans empreinte SHA-256"]:::det
+  REJ_C40["Rejet C40 / G0 : blueprint ou<br/>seuil pass^k / Wilson échoué"]:::det
+  GO["Conformité mécanique (DC-P12)<br/>éligible au contrôle SoR (non-avis)"]:::det
+
+  subgraph LEG["Légende"]
+    direction LR
+    L_DET["Trait plein ardoise : porte déterministe G0"]:::det
+    L_PROB["Trait pointillé ambre : candidat intégrant modèle probabiliste"]:::prob
+    L_DET ~~~ L_PROB
+  end
+
+  CAND -.-> G_ADR
+  G_ADR -->|Oui| G_SBB
+  G_ADR -->|Non| REJ_ADR
+  G_SBB -->|Oui| G_PRR
+  G_SBB -->|Non| REJ_SBB
+  G_PRR -->|Oui| G_C40
+  G_PRR -->|Non| REJ_PRR
+  G_C40 -->|Oui| G_G0
+  G_C40 -->|Non| REJ_C40
+  G_G0 -->|Oui| GO
+  G_G0 -->|Non| REJ_C40
+  GO ~~~ L_DET
+
+  classDef det fill:#EBF2F7,stroke:#1E4E79,stroke-width:2.5px,color:#0F2942,font-weight:bold
+  classDef prob fill:#FFF5E0,stroke:#B45309,stroke-width:2px,stroke-dasharray:6 4,color:#451A03
+  style LEG fill:#FFFFFF,stroke:#CBD5E1,stroke-width:1.2px,color:#1E293B

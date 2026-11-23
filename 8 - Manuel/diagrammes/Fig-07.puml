@@ -1,0 +1,90 @@
+@startuml
+<style>
+document {
+  BackgroundColor #FFFFFF
+}
+.det {
+  BackgroundColor #EBF2F7
+  LineColor #1E4E79
+  LineThickness 2.5
+  FontColor #0F2942
+}
+.prob {
+  BackgroundColor #FFF5E0
+  LineColor #B45309
+  LineThickness 2.0
+  LineStyle 5
+  FontColor #451A03
+}
+.ext {
+  BackgroundColor #F3F4F6
+  LineColor #4B5563
+  LineThickness 1.5
+  FontColor #111827
+}
+package {
+  BackgroundColor #F8FAFC
+  LineColor #64748B
+  LineThickness 1.2
+  FontColor #334155
+}
+legend {
+  BackgroundColor #FFFFFF
+  LineColor #CBD5E1
+  FontColor #1E293B
+  FontSize 10
+}
+</style>
+hide stereotype
+top to bottom direction
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 16
+skinparam ranksep 20
+skinparam padding 6
+
+rectangle "Vecteurs OWASP SRC-055 L+\n(couverture ASI01–ASI10)" as OWASP <<ext>>
+rectangle "Générateur déterministe (≥ 100 scénarios)\nparamétriques FR/EN (étages E1–E2)" as GEN <<det>>
+
+package "Banc hermétique sans SoR réel (mock_mcp_harness.py)" {
+  rectangle "Agent / modèle évalué\n(composant probabiliste substituable)" as AGT <<prob>>
+  rectangle "Doublures MockMcpServer (DC-P12)\nréponses seedées, 0 réseau, 0 modèle payant" as MOCK <<det>>
+  rectangle "Vérificateur evaluate_trajectory\n(ordre d'outils, ancrage, coût CAD)" as TRAJ <<det>>
+}
+
+package "Trois moteurs d'évaluation vérifiables (evalops_prr)" {
+  rectangle "Filtre d'indépendance stricte\n(rejet des répétitions corrélées)" as INDEP <<det>>
+  rectangle "Borne de Wilson à 95 % < p (EXIG-EVA-03)\nexige n ≥ ⌈3/p⌉ essais sans échec" as WILSON <<det>>
+  rectangle "Métrique de constance pass^k\n(k ≥ 3 / k ≥ 5, rejette pass@k)" as PASSK <<det>>
+  rectangle "Tests métamorphiques sans oracle\n(permutation, FR/EN, monotonie, paraphrase)" as META <<det>>
+}
+
+rectangle "Rapport evalops_wilson_report\n(JSON Schema 2020-12 strict: true)" as RPT <<det>>
+rectangle "Décision EvalOps G0 (non-avis)\n(admis si pass^k, Wilson et FR/EN OK)" as GATE <<det>>
+
+OWASP -right-> GEN : alimente attaques
+GEN ..> AGT : cas base & transformés
+AGT <..> MOCK : appels MCP simulés
+MOCK --> TRAJ : trajectoire exacte
+TRAJ --> INDEP : scenario_ids uniques
+TRAJ --> PASSK : fenêtres disjointes
+TRAJ --> META : paires sans oracle
+INDEP --> WILSON : n indépendants
+WILSON --> RPT
+PASSK --> RPT
+META --> RPT
+RPT -right-> GATE
+
+INDEP -[hidden]right-> PASSK
+PASSK -[hidden]right-> META
+RPT -[hidden]right-> GATE
+
+legend bottom
+  **Trait plein ardoise** : frontière déterministe hors modèle possédée (G0)
+  **Trait pointillé ambre** : agent ou modèle probabiliste substituable
+  **Trait plein gris** : suite ouverte OWASP SRC-055 épinglée
+end legend
+@enduml

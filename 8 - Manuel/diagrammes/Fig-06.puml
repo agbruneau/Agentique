@@ -1,0 +1,94 @@
+@startuml
+<style>
+document {
+  BackgroundColor #FFFFFF
+}
+.det {
+  BackgroundColor #EBF2F7
+  LineColor #1E4E79
+  LineThickness 2.5
+  FontColor #0F2942
+}
+.prob {
+  BackgroundColor #FFF5E0
+  LineColor #B45309
+  LineThickness 2.0
+  LineStyle 5
+  FontColor #451A03
+}
+.ext {
+  BackgroundColor #F3F4F6
+  LineColor #4B5563
+  LineThickness 1.5
+  FontColor #111827
+}
+package {
+  BackgroundColor #F8FAFC
+  LineColor #64748B
+  LineThickness 1.2
+  FontColor #334155
+}
+legend {
+  BackgroundColor #FFFFFF
+  LineColor #CBD5E1
+  FontColor #1E293B
+  FontSize 10
+}
+</style>
+hide stereotype
+top to bottom direction
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 16
+skinparam ranksep 24
+skinparam padding 6
+
+rectangle "Agent métier probabiliste\n(propose plan, révocable ou coupé)" as PLAN <<prob>>
+rectangle "Clé canonique idem-v1 (JCS SHA-256)\nHTTP 409 en cours · 422 divergence" as IDEM <<det>>
+rectangle "Batterie 10 scénarios de fautes (EXIG-ORC-20)\ncrash Outbox, rejeux, double C_k, révocation" as FAULTS <<det>>
+
+package "Automate Saga et point pivot (saga_orchestrator.py)" {
+  rectangle "Étapes compensables T1 → T2\n(verrou sémantique par ressource)" as T12 <<det>>
+  rectangle "Garde pré-pivot\n(détecte faute T2 ou réponse tardive)" as GARDE <<det>>
+  rectangle "Point pivot TP (PIVOT_REACHED)\nirréversible : bloque repli arrière" as PIVOT <<det>>
+  rectangle "Finalisation réessayable T3\n(reprise idempotente → COMPLETED)" as T3 <<det>>
+  rectangle "Routage réconciliation post-pivot\n(si anomalie après TP)" as RECON <<det>>
+}
+
+package "Canal de compensation isolé (EXIG-ORC-28)" {
+  rectangle "CompensationChannel dédié\n(SPIFFE propre, budget indépendant, immunisé)" as COMP_CH <<det>>
+  rectangle "Compensations inverses C2 → C1\n(strictement idempotentes → COMPENSATED)" as C_INV <<det>>
+  actor "File HUMAN_ESCALATION (EXIG-ORC-18)\naprès 2 échecs consécutifs de C_k" as ESC_H <<ext>>
+}
+
+database "Transactional Outbox & journal\n(persistance atomique, reprise sans doublon)" as OUTBOX <<det>>
+
+PLAN ..> T12 : proposition typée
+IDEM --> T12 : verrouille clé
+T12 --> GARDE
+GARDE --> PIVOT : pré-pivot OK
+PIVOT --> T3 : succès durable
+PIVOT --> RECON : faute post-pivot
+GARDE -right-> COMP_CH : faute pré-pivot
+FAULTS --> GARDE : fautes 1..9
+FAULTS --> COMP_CH : faute 10 (agent révoqué)
+COMP_CH --> C_INV : exécute C2 → C1
+C_INV --> ESC_H : 2 échecs C_k
+T12 --> OUTBOX : persiste état
+PIVOT --> OUTBOX : scelle pivot
+C_INV --> OUTBOX : clôt compensé
+
+PLAN -[hidden]right-> IDEM
+IDEM -[hidden]right-> FAULTS
+T3 -[hidden]right-> RECON
+T3 -[hidden]down-> OUTBOX
+
+legend bottom
+  **Trait plein ardoise** : frontière déterministe hors modèle possédée (G0)
+  **Trait pointillé ambre** : agent métier probabiliste substituable (révocable)
+  **Trait plein gris** : file d'escalade humaine prioritaire
+end legend
+@enduml

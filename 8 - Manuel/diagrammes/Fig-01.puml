@@ -1,0 +1,86 @@
+@startuml
+<style>
+document {
+  BackgroundColor #FFFFFF
+}
+.det {
+  BackgroundColor #EBF2F7
+  LineColor #1E4E79
+  LineThickness 2.5
+  FontColor #0F2942
+}
+.prob {
+  BackgroundColor #FFF5E0
+  LineColor #B45309
+  LineThickness 2.0
+  LineStyle 5
+  FontColor #451A03
+}
+package {
+  BackgroundColor #F8FAFC
+  LineColor #64748B
+  LineThickness 1.2
+  FontColor #334155
+}
+legend {
+  BackgroundColor #FFFFFF
+  LineColor #CBD5E1
+  FontColor #1E293B
+  FontSize 10
+}
+</style>
+hide stereotype
+top to bottom direction
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 20
+skinparam ranksep 24
+skinparam padding 6
+
+rectangle "Entrée externe brute\n(requête non vérifiée)" as RAW <<prob>>
+rectangle "Contrat harness_extraction.schema.json\n(Draft 2020-12, strict: true)" as SCH <<det>>
+
+package "Harnais déterministe 80/20 (harness_proto/pipeline.py)" {
+  rectangle "1. Contrôle taille & UTF-8\n(plafond 64 Kio)" as E1 <<det>>
+  rectangle "2. Validation schéma d'entrée\n(additionalProperties: false)" as E2 <<det>>
+  rectangle "3. Préparation contexte borné\n(enregistrements autorisés)" as E3 <<det>>
+  rectangle "4. Appel adaptateur modèle\n(inférence probabiliste ~20 %)" as E4 <<prob>>
+  rectangle "5. Validateur JSON Schema strict\n(zéro ref HTTP/HTTPS)" as E5 <<det>>
+  rectangle "6. Invariants relationnels\net ancrage (grounding_records)" as E6 <<det>>
+  rectangle "7. Boucle de réparation bornée\n(max_repair_retries = 2)" as E7 <<det>>
+  rectangle "Porte AMBIGU_ESCALADE\n(ou DONNEES_INSUFFISANTES)" as ESC <<det>>
+  rectangle "8. Scellement HarnessOutcome\n(step_trace et output_sha256)" as E8 <<det>>
+}
+
+database "Journal d'exécution G0\n(sortie EXTRAIT ou escalade)" as LOG <<det>>
+
+RAW ..> E1
+E1 --> E2
+E2 --> E3
+E3 --> E4 : contexte filtré
+E4 ..> E5 : jetons bruts
+SCH --> E2 : valide entrée
+SCH --> E5 : valide sortie
+E5 --> E6 : schéma conforme
+E5 --> E7 : écart schéma
+E6 --> E8 : ancrage vérifié
+E6 --> ESC : ambiguïté / manque
+E7 ..> E4 : réessai ≤ 2
+E7 --> ESC : plafond atteint
+E8 --> LOG
+ESC --> LOG
+
+RAW -[hidden]right-> SCH
+E1 -[hidden]right-> E8
+E2 -[hidden]right-> E6
+E3 -[hidden]right-> E5
+E7 -[hidden]right-> ESC
+
+legend bottom
+  **Trait plein ardoise** : frontière déterministe hors modèle possédée (G0)
+  **Trait pointillé ambre** : modèle probabiliste substituable ou entrée non fiable
+end legend
+@enduml

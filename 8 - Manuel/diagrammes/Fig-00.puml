@@ -1,0 +1,96 @@
+@startuml
+<style>
+document {
+  BackgroundColor #FFFFFF
+}
+.det {
+  BackgroundColor #EBF2F7
+  LineColor #1E4E79
+  LineThickness 2.5
+  FontColor #0F2942
+}
+.prob {
+  BackgroundColor #FFF5E0
+  LineColor #B45309
+  LineThickness 2.0
+  LineStyle 5
+  FontColor #451A03
+}
+.ext {
+  BackgroundColor #F3F4F6
+  LineColor #4B5563
+  LineThickness 1.5
+  FontColor #111827
+}
+package {
+  BackgroundColor #F8FAFC
+  LineColor #64748B
+  LineThickness 1.2
+  FontColor #334155
+}
+legend {
+  BackgroundColor #FFFFFF
+  LineColor #CBD5E1
+  FontColor #1E293B
+  FontSize 10
+}
+</style>
+hide stereotype
+top to bottom direction
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 16
+skinparam ranksep 22
+skinparam padding 6
+
+rectangle "Modèles substituables (~20 %)\net entrées externes non fiables" as MOD <<prob>>
+rectangle "Table des 5 discordances (0.2)\n(L0–L4, plans, ArchiMate, MCP)" as TAB <<det>>
+
+package "Dépôt compagnon 8 - Trousse/ (MIT, Python 3.12+)" {
+  rectangle "harness_proto/\n(Ch. 01 : harnais, MCP, A2A)" as M1 <<det>>
+  rectangle "authz_pqc_audit/\n(Ch. 02 : OBO, ML-DSA, OTel)" as M2 <<det>>
+  rectangle "policy_saga/\n(Ch. 03 : Règle de deux, Sagas)" as M3 <<det>>
+  rectangle "evalops_prr/\n(Ch. 04 : pass^k, Wilson, PRR)" as M4 <<det>>
+  rectangle "Moteur unique OPA / Rego\n(default allow := false, 100 %)" as OPA <<det>>
+  rectangle "4 suites de vecteurs tiers\n(RFC 8785, ACVP, a2a-tck, SRC-055)" as VEC <<ext>>
+}
+
+rectangle "Contrat CA-G0-SYNC (SHA-256)\n14 extraits prélevés sans saisie" as SYNC <<det>>
+rectangle "Manuel concis (CC BY 4.0)\n38 000 mots · extraits ≤ 40 L\n(statut non-avis, gel 2026-12-02)" as MAN <<det>>
+
+package "Chaîne probatoire G0–G5" {
+  rectangle "G0 (execute_g0.py)\nSPDX MIT, JSON Schema, rapports-g0.json" as G0 <<det>>
+  rectangle "G1 → G2 Wyvern → G3 → G4 → G5\nAnnexes SSOT et triple rendu" as G1G5 <<det>>
+}
+
+MOD ..> M1 : appels bornés / doublures
+M1 --> M2
+M2 -[hidden]down-> M4
+M1 -[hidden]down-> M3
+M3 --> OPA : règles hors modèle
+M4 --> G0
+OPA --> G0 : couverture 100 %
+VEC --> G0 : brise biais corrélé
+G0 --> SYNC : scelle empreintes
+SYNC -right-> MAN : injecte ≤ 40 L
+TAB --> MAN : unifie normes
+G0 -right-> G1G5 : preuve G0
+MAN --> G1G5 : vérifications L+ et AQ
+
+MOD -[hidden]right-> TAB
+M1 -[hidden]right-> M2
+M3 -[hidden]right-> M4
+M4 -[hidden]right-> OPA
+OPA -[hidden]right-> VEC
+OPA -[hidden]right-> SYNC
+SYNC -[hidden]right-> MAN
+
+legend bottom
+  **Trait plein ardoise** : frontière déterministe hors modèle possédée (G0)
+  **Trait pointillé ambre** : modèle probabiliste substituable ou composant externe non fiable
+  **Trait plein gris** : jeu officiel de vecteurs tiers épinglé
+end legend
+@enduml

@@ -1,0 +1,99 @@
+@startuml
+<style>
+document {
+  BackgroundColor #FFFFFF
+}
+.det {
+  BackgroundColor #EBF2F7
+  LineColor #1E4E79
+  LineThickness 2.5
+  FontColor #0F2942
+}
+.prob {
+  BackgroundColor #FFF5E0
+  LineColor #B45309
+  LineThickness 2.0
+  LineStyle 5
+  FontColor #451A03
+}
+.ext {
+  BackgroundColor #F3F4F6
+  LineColor #4B5563
+  LineThickness 1.5
+  FontColor #111827
+}
+package {
+  BackgroundColor #F8FAFC
+  LineColor #64748B
+  LineThickness 1.2
+  FontColor #334155
+}
+legend {
+  BackgroundColor #FFFFFF
+  LineColor #CBD5E1
+  FontColor #1E293B
+  FontSize 10
+}
+</style>
+hide stereotype
+top to bottom direction
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 18
+skinparam ranksep 24
+skinparam padding 6
+
+rectangle "Source externe non fiable\n(courriel, web, outil tiers)" as EXT_IN <<prob>>
+rectangle "Agent appelant probabiliste\n(requête d'outil ou délégation A2A)" as AGT <<prob>>
+rectangle "Suivi de contamination CaMeL\n(consumed_untrusted, propagation A2A)" as TAINT <<det>>
+rectangle "Preuve CIBA / JCS & MoneyAmount\n(Decimal exact, refus IEEE-754 float)" as CIBA_IN <<det>>
+
+package "Moteur unique OPA / Rego (default allow := false, couverture 100 %)" {
+  rectangle "rule_of_two.rego (EXIG-SEC-06)\nbloque trifecta sans approbation CIBA" as R2 <<det>>
+  rectangle "camel_taint.rego\ncontrôle flot TRUSTED_PLAN vs données" as CML <<det>>
+  rectangle "sandbox_confinement.rego\nvalide quotas, secrets et réseau" as SBX_R <<det>>
+}
+
+rectangle "Vérification G0 : opa test --coverage\n(100 % négatifs) & OWASP SRC-055" as OPA_CI <<ext>>
+rectangle "Refus déterministe (allow = false)\net journalisation échec fermé" as DENY <<det>>
+
+package "Confinement déclaratif sans KVM (EXIG-SEC-12..15)" {
+  rectangle "Blocage IMDS & plages IANA\n(network: none / allowlist sans joker)" as NET <<det>>
+  rectangle "Racine lecture seule, 0 secret\net délais 30 s / 20 min / 60 min" as LIM <<det>>
+}
+
+rectangle "Exécution bornée autorisée\n(outils P0–P3 sous garde)" as ALLOW <<det>>
+
+EXT_IN ..> AGT : données non fiables
+EXT_IN ..> TAINT : marque UNTRUSTED
+AGT ..> R2 : demande d'outil
+CIBA_IN --> R2 : action_sha256 & Decimal
+TAINT --> R2 : état contamination
+TAINT --> CML : provenance A2A
+R2 --> CML : règle de deux OK
+CML --> SBX_R : flot sain
+R2 --> DENY : trifecta / défaut
+CML --> DENY : flot contaminé
+SBX_R --> DENY : IMDS / secret / délai
+SBX_R --> NET : manifeste valide
+SBX_R --> LIM
+NET --> ALLOW
+LIM --> ALLOW
+OPA_CI --> R2 : certifie 100 %
+OPA_CI --> SBX_R
+
+EXT_IN -[hidden]right-> AGT
+CIBA_IN -[hidden]right-> TAINT
+TAINT -[hidden]right-> OPA_CI
+DENY -[hidden]right-> NET
+NET -[hidden]right-> LIM
+
+legend bottom
+  **Trait plein ardoise** : frontière déterministe hors modèle possédée (G0)
+  **Trait pointillé ambre** : agent probabiliste substituable ou source externe non fiable
+  **Trait plein gris** : vérification statique/couverture et corpus OWASP SRC-055
+end legend
+@enduml

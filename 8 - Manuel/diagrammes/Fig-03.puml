@@ -1,0 +1,91 @@
+@startuml
+<style>
+document {
+  BackgroundColor #FFFFFF
+}
+.det {
+  BackgroundColor #EBF2F7
+  LineColor #1E4E79
+  LineThickness 2.5
+  FontColor #0F2942
+}
+.prob {
+  BackgroundColor #FFF5E0
+  LineColor #B45309
+  LineThickness 2.0
+  LineStyle 5
+  FontColor #451A03
+}
+.ext {
+  BackgroundColor #F3F4F6
+  LineColor #4B5563
+  LineThickness 1.5
+  FontColor #111827
+}
+package {
+  BackgroundColor #F8FAFC
+  LineColor #64748B
+  LineThickness 1.2
+  FontColor #334155
+}
+legend {
+  BackgroundColor #FFFFFF
+  LineColor #CBD5E1
+  FontColor #1E293B
+  FontSize 10
+}
+</style>
+hide stereotype
+top to bottom direction
+skinparam defaultFontName "DejaVu Sans"
+skinparam defaultFontSize 11
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam packageStyle rectangle
+skinparam nodesep 14
+skinparam ranksep 22
+skinparam padding 6
+
+actor "Mandant & approbateur humain\n(sub distinct, hors bande)" as HUM <<ext>>
+rectangle "Approbation CIBA / I-JSON / JCS\nh = SHA-256(JCS) · approbation+jwt" as CIBA <<det>>
+rectangle "Automate révocation SSF / CAEP\n(+ draft agent-revocation-01)" as REV <<det>>
+
+package "Délégation bornée à deux sauts (obo_dpop.py)" {
+  rectangle "Saut 1 : Agent orchestrateur\n(composant probabiliste)" as A1 <<prob>>
+  rectangle "Porte OBO + DPoP (RFC 8693/9449)\naud exact, exp borné, rejet passthrough" as STS <<det>>
+  rectangle "Saut 2 : Agent spécialiste\n(plafond ≤ 2 sauts act/sub)" as A2 <<prob>>
+}
+
+package "Banc d'en-têtes HTTP 431 (pqc_http431.py)" {
+  rectangle "Signatures ML-DSA-65/87 (RFC 9964)\n3 309 o / 4 627 o · vecteurs ACVP" as ML_DSA <<det>>
+  rectangle "Banc exact en octets (Python)\nseuil strict ≤ 8 192 octets" as BANC <<det>>
+  rectangle "Chaîne JWT empilée O(sauts)\n> 8 192 o dès saut 1–2 → rejet 431" as CHAIN <<ext>>
+  rectangle "Transaction Token -11 (CBOR-COSE)\nO(1) constant 1..5 sauts (brouillon)" as TXN <<det>>
+}
+
+rectangle "Passerelle cible vérificatrice\n(valide OBO, DPoP, CIBA et Txn-Token)" as GW <<det>>
+
+HUM --> A1 : mandat initial
+HUM --> CIBA : consentement
+A1 ..> STS : échange saut 1
+STS --> A2 : jeton DPoP (saut 2)
+A2 ..> STS : échange saut 2
+STS --> BANC : profils 1..5 sauts
+ML_DSA --> BANC
+BANC --> CHAIN : dépasse 8 192 o
+BANC --> TXN : reste ≤ 8 192 o
+TXN --> GW : Txn-Token O(1)
+CIBA --> GW : action_sha256
+REV --> GW : état ACTIVE/REVOKED
+
+HUM -[hidden]right-> CIBA
+CIBA -[hidden]right-> REV
+STS -[hidden]right-> ML_DSA
+CHAIN -[hidden]right-> TXN
+
+legend bottom
+  **Trait plein ardoise** : frontière déterministe hors modèle possédée (G0)
+  **Trait pointillé ambre** : agent probabiliste substituable
+  **Trait plein gris** : acteur humain ou format rejeté hors seuil
+end legend
+@enduml

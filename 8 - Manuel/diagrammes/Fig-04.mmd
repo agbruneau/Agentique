@@ -1,0 +1,46 @@
+%%{init: {'theme': 'base', 'themeVariables': {'fontFamily': 'DejaVu Sans', 'fontSize': '13px', 'lineColor': '#334155', 'edgeLabelBackground': '#FFFFFF', 'primaryTextColor': '#0F2942'}, 'flowchart': {'nodeSpacing': 16, 'rankSpacing': 20, 'padding': 9}}}%%
+flowchart TB
+  EXT["Sources externes et saisies<br/>(invites, outils, PII brutes)"]:::prob
+  INF["Inférence modèle probabiliste<br/>(composant substituable)"]:::prob
+  SPLIT["Harnais et séparateur déterministe<br/>(routage à la source, 0 contenu brut)"]:::det
+
+  subgraph C2["Couloir 2 — Chaîne probatoire (audit_scitt_focus.py)"]
+    direction TB
+    JCS["Chaîne JCS RFC 8785<br/>(C.8, precedent_sha256,<br/>EXIG-OBS-12/13)"]:::det
+    SCITT["Arbre de Merkle SCITT<br/>(RFC 9943, preuve d'inclusion)"]:::det
+    SLH["Rescellement SLH-DSA<br/>(FIPS 205, vecteurs NIST ACVP)"]:::det
+    JCS --> SCITT --> SLH
+  end
+
+  subgraph C1["Couloir 1 — Télémétrie (otel_pii_mapper.py)"]
+    direction TB
+    PII["Caviardage PII bilingue FR/EN<br/>(NAS, RAMQ, JWT →<br/>HMAC-SHA256)"]:::det
+    OTEL["Mappage OTel v1.41.0 ↔ genai_dev<br/>(85 attr. Development, cache_write)"]:::det
+    JOIN["Jointure trace ↔ mandat<br/>(lacune 21 : task_id,<br/>autonomy_level, approval.jti)"]:::det
+    PII --> OTEL --> JOIN
+  end
+
+  CPO["Calculateur CPO exact (Decimal)<br/>(coût complet par résultat conforme)"]:::det
+  FOCUS["Export FOCUS v1.4 et carbone<br/>(x_carbon_gco2e, x_energy_kwh, CAP-046)"]:::det
+
+  subgraph LEG["Légende"]
+    direction LR
+    L_DET["Trait plein ardoise : frontière déterministe possédée (G0)"]:::det
+    L_PROB["Trait pointillé ambre : modèle probabiliste ou entrée non fiable"]:::prob
+    L_DET ~~~ L_PROB
+  end
+
+  EXT -.-> INF
+  INF -.-> SPLIT
+  SPLIT --> JCS
+  SPLIT --> PII
+  SLH --> CPO
+  JOIN --> CPO
+  CPO --> FOCUS
+  FOCUS ~~~ L_DET
+
+  classDef det fill:#EBF2F7,stroke:#1E4E79,stroke-width:2.5px,color:#0F2942,font-weight:bold
+  classDef prob fill:#FFF5E0,stroke:#B45309,stroke-width:2px,stroke-dasharray:6 4,color:#451A03
+  style C1 fill:#F8FAFC,stroke:#64748B,stroke-width:1.2px,color:#334155
+  style C2 fill:#F8FAFC,stroke:#64748B,stroke-width:1.2px,color:#334155
+  style LEG fill:#FFFFFF,stroke:#CBD5E1,stroke-width:1.2px,color:#1E293B
