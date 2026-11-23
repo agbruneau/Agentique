@@ -1,6 +1,6 @@
 # Diagrammes — 8 - Manuel
 
-Index des 9 diagrammes originaux du manuel *Ingénierie exécutable de l'entreprise agentique* (retour au [sommaire du document](../README.md)).
+Index des 9 diagrammes originaux du manuel *Ingénierie exécutable de l'entreprise agentique* (retour au [sommaire du manuel](../README.md) · [index principal du dépôt](../../README.md)).
 
 - **Total des diagrammes** : 9
 - **PlantUML (`.puml`)** : 7 (rendus vectoriels `.svg` dans [`rendus/`](rendus/))
