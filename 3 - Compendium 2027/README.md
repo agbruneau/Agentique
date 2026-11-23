@@ -1,10 +1,10 @@
-# Interopérabilité et Orchestration en Entreprise Agentique — Compendium 2027
+# Tome 3 — Ingénierie du tissu conjonctif et état de l'art (`3 - Compendium 2027`)
 
 [Retour à l'index principal du dépôt](../README.md)
 
 ## Informations sur le document
 
-- **Source PDF** : [3 - Compendium 2027.pdf](../0%20-%20PDF-MD/3%20-%20Compendium%202027.pdf) (format `6,14 × 9,21 po` sous `Typst` via [`gabarit-pdf/`](../gabarit-pdf/README.md) · `16 181 920` octets / `~16,18 Mo`)
+- **Source PDF** : [Tome 3 - Ingénierie du tissu conjonctif et état de l'art.pdf](../0%20-%20PDF-MD/Tome%203%20-%20Ing%C3%A9nierie%20du%20tissu%20conjonctif%20et%20%C3%A9tat%20de%20l%27art.pdf) (format `6,14 × 9,21 po` sous `Typst` via [`gabarit-pdf/`](../gabarit-pdf/README.md) · `16 194 080` octets / `~16,19 Mo`)
 - **Fichier Markdown complet** : [3 - Compendium 2027.md](../0%20-%20PDF-MD/3%20-%20Compendium%202027.md)
 - **Pages** : 1 287 (dont 5 liminaires couverture/notice/TDM et p. PDF 6–1 287 = pagination imprimée p. 1–1 282)
 - **Parties / Sections** : 11

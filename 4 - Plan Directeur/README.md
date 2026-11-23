@@ -1,10 +1,10 @@
-# Interopérabilité et Orchestration en Entreprise Agentique — Prospective, architecture cible et plan directeur 2028-2035
+# Tome 4 — Prospective stratégique et trajectoire 2028–2035 (`4 - Plan Directeur`)
 
 [Retour à l'index principal du dépôt](../README.md)
 
 ## Informations sur le document
 
-- **Source PDF** : [4 - Plan Directeur.pdf](../0%20-%20PDF-MD/4%20-%20Plan%20Directeur.pdf) (format `6,14 × 9,21 po` sous `Typst` via [`gabarit-pdf/`](../gabarit-pdf/README.md) · `9 415 859` octets / `~9,42 Mo`)
+- **Source PDF** : [Tome 4 - Prospective stratégique et trajectoire 2028-2035.pdf](../0%20-%20PDF-MD/Tome%204%20-%20Prospective%20strat%C3%A9gique%20et%20trajectoire%202028-2035.pdf) (format `6,14 × 9,21 po` sous `Typst` via [`gabarit-pdf/`](../gabarit-pdf/README.md) · `9 408 515` octets / `~9,41 Mo`)
 - **Fichier Markdown complet** : [4 - Plan Directeur.md](../0%20-%20PDF-MD/4%20-%20Plan%20Directeur.md)
 - **Pages** : 537 (dont 4 liminaires couverture/notice/TDM et p. PDF 5–537 = pagination imprimée p. 1–533)
 - **Parties / Sections** : 7

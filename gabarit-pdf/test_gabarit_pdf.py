@@ -262,14 +262,15 @@ def test_compile_volume_safety_guard() -> None:
 
 
 def test_compile_real_volume_8_matches_reference(tmp_path: Path) -> None:
-    out_pdf = tmp_path / "8 - Manuel.pdf"
+    cfg8 = get_volume_config("8")
+    out_pdf = tmp_path / Path(cfg8["default_pdf"]).name
     compile_volume("8", output_path=out_pdf)
     doc = _assert_book_page_geometry(out_pdf)
-    ref_doc = pymupdf.open(REPO_ROOT / "0 - PDF-MD" / "8 - Manuel.pdf")
+    ref_doc = pymupdf.open(REPO_ROOT / cfg8["default_pdf"])
     try:
         assert abs(len(doc) - len(ref_doc)) <= 2, f"Ecart pages Vol 8: {len(doc)} vs ref {len(ref_doc)}"
         cover_txt = " ".join(doc[0].get_text().replace("’", "'").split())
-        assert "Ingénierie exécutable de l'entreprise agentique" in cover_txt
+        assert "Tome 8 — Ingénierie exécutable et homologation vérifiable" in cover_txt
         assert "CC BY 4.0" in cover_txt
         title_txt = " ".join(doc[1].get_text().replace("\u00a0", " ").split())
         assert "8 - Manuel/" in title_txt and "trousse/" in title_txt
@@ -280,13 +281,14 @@ def test_compile_real_volume_8_matches_reference(tmp_path: Path) -> None:
 
 
 def test_compile_real_volume_5_full_legacy_volume(tmp_path: Path) -> None:
-    out_pdf = tmp_path / "5 - Memoire.pdf"
+    cfg5 = get_volume_config("5")
+    out_pdf = tmp_path / Path(cfg5["default_pdf"]).name
     compile_volume("5", output_path=out_pdf)
     doc = _assert_book_page_geometry(out_pdf)
     try:
         assert len(doc) >= 80
         cover_txt = " ".join(doc[0].get_text().split())
-        assert "Interopérabilité et Orchestration en Entreprise Agentique" in cover_txt
+        assert "Tome 5 — Synthèse exécutive et concordance architecturale" in cover_txt
         assert "Table des matières" in doc[2].get_text()
     finally:
         doc.close()

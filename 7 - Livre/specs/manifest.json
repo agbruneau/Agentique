@@ -16,6 +16,13 @@
     "quality_assurance": "100%_agentic",
     "human_role": "upstream_specs_and_gate_thresholds_only"
   },
+  "deliverables": {
+    "md": "../0 - PDF-MD/7 - Livre.md",
+    "pdf": "../0 - PDF-MD/Tome 7 - Gouverner l'industrialisation cognitive.pdf",
+    "html": "livrables/7 - Livre.html",
+    "pdf_title": "Tome 7 — Gouverner l'industrialisation cognitive",
+    "pdf_collection": "COLLECTION ARCHITECTURE & GOUVERNANCE AGENTIQUE · TOME 7"
+  },
   "word_budget": {
     "total_target": 74000,
     "tolerance_pct": 8,

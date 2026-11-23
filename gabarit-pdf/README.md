@@ -1,6 +1,6 @@
 # Gabarit PDF partagé de la collection
 
-Gabarit éditorial Typst unique et compilateur unifié pour les 8 volumes du dépôt (`0 - PDF-MD/`), fondés sur la charte de référence de [8 - Manuel.pdf](../0%20-%20PDF-MD/8%20-%20Manuel.pdf).
+Gabarit éditorial Typst unique et compilateur unifié pour les 8 tomes du dépôt (`0 - PDF-MD/`), fondés sur la charte de référence de [Tome 8 - Ingénierie exécutable et homologation vérifiable.pdf](../0%20-%20PDF-MD/Tome%208%20-%20Ing%C3%A9nierie%20ex%C3%A9cutable%20et%20homologation%20v%C3%A9rifiable.pdf).
 
 ## Contenu du dossier
 
@@ -14,7 +14,7 @@ Gabarit éditorial Typst unique et compilateur unifié pour les 8 volumes du dé
 | `compile_pdf.py` | Interface CLI et API Python pour compiler un volume catalogué, toute la collection ou un fichier Markdown arbitraire. |
 | `test_gabarit_pdf.py` | Suite de tests automatisés (`pytest`) couvrant le catalogue, les transformations, `compile_diagrams.py` et la compilation Typst réelle. |
 
-## Charte visuelle de référence (`8 - Manuel.pdf`)
+## Charte visuelle de référence (`Tome 8` / `8 - Manuel`)
 
 - **Format** : `6.14in × 9.21in`, marges `inside: 0.90in`, `outside: 0.78in`, `top: 0.92in`, `bottom: 0.90in` (largeur utile `4.46in`).
 - **Typographie** : corps `Libertinus Serif` `10.6pt` (`fr-CA`, justifié, césure active), titres et éléments d'interface `Segoe UI`, code `Consolas` / `DejaVu Sans Mono`.

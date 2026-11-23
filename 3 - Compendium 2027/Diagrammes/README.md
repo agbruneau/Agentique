@@ -1,6 +1,6 @@
 # Diagrammes — 3 - Compendium 2027
 
-Index des 68 diagrammes extraits et reconstruits depuis `3 - Compendium 2027.pdf` (retour au [sommaire du document](../README.md)).
+Index des 68 diagrammes extraits et reconstruits depuis `Tome 3 - Ingénierie du tissu conjonctif et état de l'art.pdf` (retour au [sommaire du document](../README.md)).
 
 - **Total des diagrammes** : 68
 - **PlantUML (`.puml`)** : 68 (rendus vectoriels `.svg` dans `rendus/`)

@@ -1,6 +1,6 @@
 # Diagrammes — 5 - Memoire
 
-Index des 8 diagrammes extraits et reconstruits depuis `5 - Memoire.pdf` (retour au [sommaire du document](../README.md)).
+Index des 8 diagrammes extraits et reconstruits depuis `Tome 5 - Synthèse exécutive et concordance architecturale.pdf` (retour au [sommaire du document](../README.md)).
 
 - **Total des diagrammes** : 8
 - **PlantUML (`.puml`)** : 8 (rendus vectoriels `.svg` dans `rendus/`)

@@ -1,10 +1,10 @@
-# Interopérabilité et Orchestration en Entreprise Agentique
+# Tome 1 — Confiance protocolaire et encadrement financier (`1 - Compendium 2026`)
 
 [Retour à l'index principal du dépôt](../README.md)
 
 ## Informations sur le document
 
-- **Source PDF** : [1 - Compendium 2026.pdf](../0%20-%20PDF-MD/1%20-%20Compendium%202026.pdf) (format `6,14 × 9,21 po` sous `Typst` via [`gabarit-pdf/`](../gabarit-pdf/README.md) · `17 117 733` octets / `~17,12 Mo`)
+- **Source PDF** : [Tome 1 - Confiance protocolaire et encadrement financier.pdf](../0%20-%20PDF-MD/Tome%201%20-%20Confiance%20protocolaire%20et%20encadrement%20financier.pdf) (format `6,14 × 9,21 po` sous `Typst` via [`gabarit-pdf/`](../gabarit-pdf/README.md) · `17 132 203` octets / `~17,13 Mo`)
 - **Fichier Markdown complet** : [1 - Compendium 2026.md](../0%20-%20PDF-MD/1%20-%20Compendium%202026.md)
 - **Pages** : 1 135 (dont 5 liminaires couverture/notice/TDM et p. PDF 6–1 135 = pagination imprimée p. 1–1 130)
 - **Parties / Sections** : 6

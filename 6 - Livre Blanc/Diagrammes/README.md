@@ -1,6 +1,6 @@
 # Diagrammes — 6 - Livre Blanc
 
-Index des 59 diagrammes extraits et reconstruits depuis `6 - Livre Blanc.pdf` (retour au [sommaire du document](../README.md)).
+Index des 59 diagrammes extraits et reconstruits depuis `Tome 6 - Architecture multisectorielle et patrons de référence.pdf` (retour au [sommaire du document](../README.md)).
 
 - **Total des diagrammes** : 59
 - **PlantUML (`.puml`)** : 56 (rendus vectoriels `.svg` dans `rendus/`)

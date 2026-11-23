@@ -1,6 +1,6 @@
 # Diagrammes — 4 - Plan Directeur
 
-Index des 6 diagrammes extraits et reconstruits depuis `4 - Plan Directeur.pdf` (retour au [sommaire du document](../README.md)).
+Index des 6 diagrammes extraits et reconstruits depuis `Tome 4 - Prospective stratégique et trajectoire 2028-2035.pdf` (retour au [sommaire du document](../README.md)).
 
 - **Total des diagrammes** : 6
 - **PlantUML (`.puml`)** : 6 (rendus vectoriels `.svg` dans `rendus/`)

@@ -616,7 +616,7 @@ def test_assemble_livre_generates_md_html_pdf(tmp_book: Path) -> None:
     consolidated_dir = tmp_book.parent / "0 - PDF-MD"
     md_out = consolidated_dir / "7 - Livre.md"
     html_out = livrables / "7 - Livre.html"
-    pdf_out = consolidated_dir / "7 - Livre.pdf"
+    pdf_out = consolidated_dir / "Tome 7 - Gouverner l'industrialisation cognitive.pdf"
     assert md_out.is_file() and md_out.stat().st_size > 1000
     assert html_out.is_file() and "<html" in html_out.read_text(encoding="utf-8")
     assert pdf_out.is_file() and pdf_out.read_bytes().startswith(b"%PDF-")
@@ -794,7 +794,7 @@ def test_check_deliverables_accepts_consolidated_pdf_md(tmp_book: Path) -> None:
     consolidated_dir = tmp_book.parent / "0 - PDF-MD"
     html_out = livrables / "7 - Livre.html"
     consolidated_md = consolidated_dir / "7 - Livre.md"
-    consolidated_pdf = consolidated_dir / "7 - Livre.pdf"
+    consolidated_pdf = consolidated_dir / "Tome 7 - Gouverner l'industrialisation cognitive.pdf"
 
     assert outputs["md"] == consolidated_md
     assert outputs["html"] == html_out

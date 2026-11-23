@@ -1,6 +1,6 @@
 # Diagrammes — 2 - Cadre de Référence
 
-Index des 28 diagrammes extraits et reconstruits depuis `2 - Cadre de Référence.pdf` (retour au [sommaire du document](../README.md)).
+Index des 28 diagrammes extraits et reconstruits depuis `Tome 2 - Cadre normatif et exigences d'architecture.pdf` (retour au [sommaire du document](../README.md)).
 
 - **Total des diagrammes** : 28
 - **PlantUML (`.puml`)** : 25 (rendus vectoriels `.svg` dans `rendus/`)

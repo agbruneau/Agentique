@@ -704,18 +704,22 @@ def compile_pdf(root: Path, body_md: str, meta: dict) -> Path:
     body_typst = _postprocess_typst_body(p.stdout)
 
     lic_escaped = _escape_typst_content(meta["license_text"])
+    deliv = manifest.get("deliverables", {}) if root.name == "7 - Livre" else {}
+    pdf_title = str(deliv.get("pdf_title") or meta["title"])
+    pdf_collection = str(deliv.get("pdf_collection") or "COLLECTION ARCHITECTURE & GOUVERNANCE AGENTIQUE")
     typst_source = render_typst_document(
         body_typst,
         {
-            "title": meta["title"],
+            "title": pdf_title,
             "subtitle": meta["subtitle"],
             "author": meta["author"],
+            "collection": pdf_collection,
             "pub_date": meta["pub_date"],
             "freeze_date": meta["freeze_date"],
             "license_badge": meta["license_text"],
             "diffusion_note": (
                 f"*Régime de diffusion* : {lic_escaped} (textes et figures); "
-                "scripts d'assurance qualité sous licence MIT."
+                "scripts d'assurance qualité sous licence MIT (`7 - Livre`)."
             ),
             "integrity_note": (
                 "*Note d'intégrité (`AO-05`)* : ouvrage conçu sur cahier des charges humain, "
@@ -729,7 +733,10 @@ def compile_pdf(root: Path, body_md: str, meta: dict) -> Path:
 
     consolidated_dir = root.parent / "0 - PDF-MD"
     consolidated_dir.mkdir(parents=True, exist_ok=True)
-    pdf_out = consolidated_dir / f"{root.name}.pdf"
+    if root.name == "7 - Livre" and isinstance(deliv, dict) and deliv.get("pdf"):
+        pdf_out = (root / str(deliv["pdf"])).resolve()
+    else:
+        pdf_out = consolidated_dir / f"{root.name}.pdf"
     _clean_residual_livrables(root)
 
     res = subprocess.run(

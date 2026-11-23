@@ -513,7 +513,7 @@ def validate_specs(book_dir: Path) -> list[str]:
     deliv = manifest.get("deliverables", {})
     for key, exp_val in (
         ("md", "../0 - PDF-MD/8 - Manuel.md"),
-        ("pdf", "../0 - PDF-MD/8 - Manuel.pdf"),
+        ("pdf", "../0 - PDF-MD/Tome 8 - Ingénierie exécutable et homologation vérifiable.pdf"),
         ("html", "livrables/8 - Manuel.html"),
     ):
         if deliv.get(key) != exp_val:

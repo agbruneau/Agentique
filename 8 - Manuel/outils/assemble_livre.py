@@ -388,12 +388,16 @@ def compile_pdf(root: Path, body_md: str, meta: dict) -> Path:
     body_typst = _postprocess_typst_body(p_conv.stdout)
 
     lic_escaped = _escape_typst_content(meta["license_text"])
+    deliv = manifest.get("deliverables", {}) if root.name == "8 - Manuel" else {}
+    pdf_title = str(deliv.get("pdf_title") or meta["title"])
+    pdf_collection = str(deliv.get("pdf_collection") or "COLLECTION ARCHITECTURE & GOUVERNANCE AGENTIQUE")
     typst_source = render_typst_document(
         body_typst,
         {
-            "title": meta["title"],
+            "title": pdf_title,
             "subtitle": meta["subtitle"],
             "author": meta["author"],
+            "collection": pdf_collection,
             "pub_date": meta["pub_date"],
             "freeze_date": meta["freeze_date"],
             "license_badge": meta["license_text"],

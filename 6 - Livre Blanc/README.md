@@ -1,10 +1,10 @@
-# Interopérabilité et Orchestration en Entreprise Agentique
+# Tome 6 — Architecture multisectorielle et patrons de référence (`6 - Livre Blanc`)
 
 [Retour à l'index principal du dépôt](../README.md)
 
 ## Informations sur le document
 
-- **Source PDF** : [6 - Livre Blanc.pdf](../0%20-%20PDF-MD/6%20-%20Livre%20Blanc.pdf) (format `6,14 × 9,21 po` sous `Typst` via [`gabarit-pdf/`](../gabarit-pdf/README.md) · `6 426 796` octets / `~6,43 Mo`)
+- **Source PDF** : [Tome 6 - Architecture multisectorielle et patrons de référence.pdf](../0%20-%20PDF-MD/Tome%206%20-%20Architecture%20multisectorielle%20et%20patrons%20de%20r%C3%A9f%C3%A9rence.pdf) (format `6,14 × 9,21 po` sous `Typst` via [`gabarit-pdf/`](../gabarit-pdf/README.md) · `6 433 794` octets / `~6,43 Mo`)
 - **Fichier Markdown complet** : [6 - Livre Blanc.md](../0%20-%20PDF-MD/6%20-%20Livre%20Blanc.md)
 - **Pages** : 305 (dont 4 liminaires couverture/notice/TDM et p. PDF 5–305 = pagination imprimée p. 1–301)
 - **Parties / Sections** : 6

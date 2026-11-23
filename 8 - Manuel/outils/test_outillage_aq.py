@@ -838,7 +838,7 @@ def test_cli_echantillon_assemble_and_check_deliverables_end_to_end(tmp_vol8: Pa
     livrables = tmp_vol8 / "livrables"
     consolidated_dir = tmp_vol8.parent / "0 - PDF-MD"
     assert (consolidated_dir / "8 - Manuel.md").is_file()
-    assert (consolidated_dir / "8 - Manuel.pdf").read_bytes().startswith(b"%PDF-")
+    assert (consolidated_dir / "Tome 8 - Ingénierie exécutable et homologation vérifiable.pdf").read_bytes().startswith(b"%PDF-")
     assert [p.name for p in livrables.iterdir()] == ["8 - Manuel.html"]
     assert "<figcaption>" not in (livrables / "8 - Manuel.html").read_text(encoding="utf-8")
 

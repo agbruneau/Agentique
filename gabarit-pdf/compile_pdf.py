@@ -45,11 +45,12 @@ def get_volume_config(volume_ref: str, catalog_path: Path = CATALOG_PATH) -> dic
     ref_norm = volume_ref.strip().lower()
     matches: list[dict[str, Any]] = []
     for vol in catalog.get("volumes", []):
-        if vol["id"].lower() == ref_norm or vol["slug"].lower() == ref_norm:
+        pdf_stem = Path(vol.get("default_pdf", "")).stem.lower()
+        if vol["id"].lower() == ref_norm or vol["slug"].lower() == ref_norm or pdf_stem == ref_norm:
             merged = dict(defaults)
             merged.update(vol)
             return merged
-        if ref_norm in vol["slug"].lower():
+        if ref_norm in vol["slug"].lower() or ref_norm in pdf_stem or ref_norm in vol.get("title", "").lower():
             matches.append(vol)
     if len(matches) == 1:
         merged = dict(defaults)
@@ -309,7 +310,7 @@ def main(argv: list[str] | None = None) -> int:
         catalog = load_catalog()
         for v in catalog["volumes"]:
             lic = v.get("license_badge") or "aucune"
-            print(f"[{v['id']}] {v['slug']} — {v['title']} ({lic}) -> {v['source_md']}")
+            print(f"[{v['id']}] {v['slug']} — {v['title']} ({lic}) -> {v['default_pdf']}")
         return 0
 
     if args.all:
@@ -317,7 +318,7 @@ def main(argv: list[str] | None = None) -> int:
         if args.output_dir is None and not args.in_place:
             parser.error("Avec --all, specifiez --output-dir <dir> ou --in-place.")
         for v in catalog["volumes"]:
-            out = (args.output_dir / f"{v['slug']}.pdf") if args.output_dir else None
+            out = (args.output_dir / Path(v["default_pdf"]).name) if args.output_dir else None
             pdf = compile_volume(
                 v["id"],
                 output_path=out,
@@ -331,7 +332,7 @@ def main(argv: list[str] | None = None) -> int:
         out = args.output
         if out is None and args.output_dir is not None:
             cfg = get_volume_config(args.volume)
-            out = args.output_dir / f"{cfg['slug']}.pdf"
+            out = args.output_dir / Path(cfg["default_pdf"]).name
         pdf = compile_volume(
             args.volume,
             output_path=out,

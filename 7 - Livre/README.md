@@ -1,4 +1,4 @@
-# 7 - Livre : *Gouverner l'industrialisation cognitive*
+# 7 - Livre — Tome 7 : *Gouverner l'industrialisation cognitive*
 
 *Architecture de contrôle, preuve et souveraineté dans l'entreprise agentique*
 
@@ -10,7 +10,7 @@ Ouvrage synthétique à lecture linéaire consacré à l'interopérabilité, à 
 
 ## Informations sur le document
 
-- **Source PDF intégrale** : [7 - Livre.pdf](../0%20-%20PDF-MD/7%20-%20Livre.pdf) (`258` pages physiques dont `4` liminaires couverture/notice/TDM et `p. 5–258` pour le corps et les annexes = pagination imprimée / TDM `p. 1–254`, format `6,14 × 9,21 po` sous `Typst` via [`gabarit-pdf/`](../gabarit-pdf/README.md) · `3 367 577` octets / `~3,37 Mo`, consolidée dans [`../0 - PDF-MD/`](../0%20-%20PDF-MD/README.md))
+- **Source PDF intégrale** : [Tome 7 - Gouverner l'industrialisation cognitive.pdf](../0%20-%20PDF-MD/Tome%207%20-%20Gouverner%20l%27industrialisation%20cognitive.pdf) (`258` pages physiques dont `4` liminaires couverture/notice/TDM et `p. 5–258` pour le corps et les annexes = pagination imprimée / TDM `p. 1–254`, format `6,14 × 9,21 po` sous `Typst` via [`gabarit-pdf/`](../gabarit-pdf/README.md) · `3 371 187` octets / `~3,37 Mo`, consolidée dans [`../0 - PDF-MD/`](../0%20-%20PDF-MD/README.md))
 - **Fichier Markdown complet** : [7 - Livre.md](../0%20-%20PDF-MD/7%20-%20Livre.md) (`81 776` mots `split()` · `2 327` lignes · `584 236` octets · images préfixées `../7 - Livre/diagrammes/rendus/`, consolidé dans [`../0 - PDF-MD/`](../0%20-%20PDF-MD/README.md))
 - **Édition HTML autonome** : [7 - Livre.html](livrables/7%20-%20Livre.html) (`2 098 365` octets / `~2,10 Mo`, seul livrable conservé dans [`livrables/`](livrables/))
 - **Parties / Sections** : Liminaire, 4 parties et 1 bloc d'annexes

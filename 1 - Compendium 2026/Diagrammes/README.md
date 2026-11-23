@@ -1,6 +1,6 @@
 # Diagrammes — 1 - Compendium 2026
 
-Index des 118 diagrammes extraits et reconstruits depuis `1 - Compendium 2026.pdf` (retour au [sommaire du document](../README.md)).
+Index des 118 diagrammes extraits et reconstruits depuis `Tome 1 - Confiance protocolaire et encadrement financier.pdf` (retour au [sommaire du document](../README.md)).
 
 - **Total des diagrammes** : 118
 - **PlantUML (`.puml`)** : 63 (rendus vectoriels `.svg` dans `rendus/`)

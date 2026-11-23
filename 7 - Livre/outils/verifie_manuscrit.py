@@ -1462,12 +1462,17 @@ def _check_deliverables(root: Path, manifest: dict) -> list[str]:
     book_stem = root.name
     html_name = f"{book_stem}.html"
     md_name = f"{book_stem}.md"
-    pdf_name = f"{book_stem}.pdf"
     liv_dir = root / "livrables"
     consolidated_dir = root.parent / "0 - PDF-MD"
     html_out = liv_dir / html_name
     consolidated_md = consolidated_dir / md_name
-    consolidated_pdf = consolidated_dir / pdf_name
+    deliv = manifest.get("deliverables", {})
+    if book_stem == "7 - Livre" and isinstance(deliv, dict) and deliv.get("pdf"):
+        consolidated_pdf = (root / str(deliv["pdf"])).resolve()
+        pdf_name = consolidated_pdf.name
+    else:
+        pdf_name = f"{book_stem}.pdf"
+        consolidated_pdf = consolidated_dir / pdf_name
 
     if liv_dir.is_dir():
         unexpected_files = sorted(
