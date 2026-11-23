@@ -133,7 +133,7 @@ def test_normalize_image_paths_handles_parentheses_and_angle_brackets(tmp_path: 
     rendus.mkdir(parents=True)
     md_dir = tmp_path / "0 - PDF-MD"
     md_dir.mkdir(parents=True)
-    md_path = md_dir / "5 - Memoire.md"
+    md_path = md_dir / "Tome 5 - Synthèse exécutive et concordance architecturale.md"
 
     md = (
         "![Fig 3](<../Vol/Diagrammes/rendus/Fig-03 - Passerelle (PEP).svg>)\n"

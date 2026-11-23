@@ -8,8 +8,15 @@
     "lang": "fr",
     "region": "CA",
     "toc_depth": 2,
-    "part_prefixes": ["Partie ", "Livre ", "Annexes"],
-    "chapter_prefixes": ["Chapitre ", "Annexe "],
+    "part_prefixes": [
+      "Partie ",
+      "Livre ",
+      "Annexes"
+    ],
+    "chapter_prefixes": [
+      "Chapitre ",
+      "Annexe "
+    ],
     "numbered_h2_chapters": false,
     "breakable_long_code": true,
     "code_break_threshold": 40,
@@ -19,7 +26,7 @@
     {
       "id": "1",
       "slug": "1 - Compendium 2026",
-      "source_md": "0 - PDF-MD/1 - Compendium 2026.md",
+      "source_md": "0 - PDF-MD/Tome 1 - Confiance protocolaire et encadrement financier.md",
       "default_pdf": "0 - PDF-MD/Tome 1 - Confiance protocolaire et encadrement financier.pdf",
       "diagrams_dir": "1 - Compendium 2026/Diagrammes",
       "rendered_diagrams_dir": "1 - Compendium 2026/Diagrammes/rendus",
@@ -42,7 +49,7 @@
     {
       "id": "2",
       "slug": "2 - Cadre de Référence",
-      "source_md": "0 - PDF-MD/2 - Cadre de Référence.md",
+      "source_md": "0 - PDF-MD/Tome 2 - Cadre normatif et exigences d'architecture.md",
       "default_pdf": "0 - PDF-MD/Tome 2 - Cadre normatif et exigences d'architecture.pdf",
       "diagrams_dir": "2 - Cadre de Référence/Diagrammes",
       "rendered_diagrams_dir": "2 - Cadre de Référence/Diagrammes/rendus",
@@ -65,7 +72,7 @@
     {
       "id": "3",
       "slug": "3 - Compendium 2027",
-      "source_md": "0 - PDF-MD/3 - Compendium 2027.md",
+      "source_md": "0 - PDF-MD/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
       "default_pdf": "0 - PDF-MD/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.pdf",
       "diagrams_dir": "3 - Compendium 2027/Diagrammes",
       "rendered_diagrams_dir": "3 - Compendium 2027/Diagrammes/rendus",
@@ -88,7 +95,7 @@
     {
       "id": "4",
       "slug": "4 - Plan Directeur",
-      "source_md": "0 - PDF-MD/4 - Plan Directeur.md",
+      "source_md": "0 - PDF-MD/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
       "default_pdf": "0 - PDF-MD/Tome 4 - Prospective stratégique et trajectoire 2028-2035.pdf",
       "diagrams_dir": "4 - Plan Directeur/Diagrammes",
       "rendered_diagrams_dir": "4 - Plan Directeur/Diagrammes/rendus",
@@ -111,7 +118,7 @@
     {
       "id": "5",
       "slug": "5 - Memoire",
-      "source_md": "0 - PDF-MD/5 - Memoire.md",
+      "source_md": "0 - PDF-MD/Tome 5 - Synthèse exécutive et concordance architecturale.md",
       "default_pdf": "0 - PDF-MD/Tome 5 - Synthèse exécutive et concordance architecturale.pdf",
       "diagrams_dir": "5 - Memoire/Diagrammes",
       "rendered_diagrams_dir": "5 - Memoire/Diagrammes/rendus",
@@ -134,7 +141,7 @@
     {
       "id": "6",
       "slug": "6 - Livre Blanc",
-      "source_md": "0 - PDF-MD/6 - Livre Blanc.md",
+      "source_md": "0 - PDF-MD/Tome 6 - Architecture multisectorielle et patrons de référence.md",
       "default_pdf": "0 - PDF-MD/Tome 6 - Architecture multisectorielle et patrons de référence.pdf",
       "diagrams_dir": "6 - Livre Blanc/Diagrammes",
       "rendered_diagrams_dir": "6 - Livre Blanc/Diagrammes/rendus",
@@ -158,7 +165,7 @@
     {
       "id": "7",
       "slug": "7 - Livre",
-      "source_md": "0 - PDF-MD/7 - Livre.md",
+      "source_md": "0 - PDF-MD/Tome 7 - Gouverner l'industrialisation cognitive.md",
       "default_pdf": "0 - PDF-MD/Tome 7 - Gouverner l'industrialisation cognitive.pdf",
       "diagrams_dir": "7 - Livre/diagrammes",
       "rendered_diagrams_dir": "7 - Livre/diagrammes/rendus",
@@ -180,7 +187,7 @@
     {
       "id": "8",
       "slug": "8 - Manuel",
-      "source_md": "0 - PDF-MD/8 - Manuel.md",
+      "source_md": "0 - PDF-MD/Tome 8 - Ingénierie exécutable et homologation vérifiable.md",
       "default_pdf": "0 - PDF-MD/Tome 8 - Ingénierie exécutable et homologation vérifiable.pdf",
       "diagrams_dir": "8 - Manuel/diagrammes",
       "rendered_diagrams_dir": "8 - Manuel/diagrammes/rendus",

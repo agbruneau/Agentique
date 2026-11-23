@@ -203,7 +203,7 @@ def _create_populated_book(
     book_dir = tmp_path / book_name
     corpus_dir = tmp_path / "0 - PDF-MD"
     corpus_dir.mkdir(parents=True)
-    corpus_file = corpus_dir / "1 - Compendium 2026.md"
+    corpus_file = corpus_dir / "Tome 1 - Confiance protocolaire et encadrement financier.md"
     corpus_file.write_text(
         "# Compendium\n\n"
         "Loi sur la protection des renseignements personnels dans le secteur privé du Québec et ses règlements d'application.\n"
@@ -216,7 +216,7 @@ def _create_populated_book(
 
     manifest_path = book_dir / "specs" / "manifest.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-    manifest["internal_corpus_paths"] = ["../0 - PDF-MD/1 - Compendium 2026.md"]
+    manifest["internal_corpus_paths"] = ["../0 - PDF-MD/Tome 1 - Confiance protocolaire et encadrement financier.md"]
     manifest["stylistic_benchmarks_for_gauntlet"] = []
     manifest["stylistic_benchmark_sections"] = {}
     manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -614,7 +614,7 @@ def test_assemble_livre_generates_md_html_pdf(tmp_book: Path) -> None:
     assert res.returncode == 0, f"STDERR:\n{res.stderr}\nSTDOUT:\n{res.stdout}"
     livrables = tmp_book / "livrables"
     consolidated_dir = tmp_book.parent / "0 - PDF-MD"
-    md_out = consolidated_dir / "7 - Livre.md"
+    md_out = consolidated_dir / "Tome 7 - Gouverner l'industrialisation cognitive.md"
     html_out = livrables / "7 - Livre.html"
     pdf_out = consolidated_dir / "Tome 7 - Gouverner l'industrialisation cognitive.pdf"
     assert md_out.is_file() and md_out.stat().st_size > 1000
@@ -626,7 +626,7 @@ def test_assemble_livre_generates_md_html_pdf(tmp_book: Path) -> None:
 
 def test_12gram_rejects_long_quote_over_40_words_and_matches_real_corpus(tmp_book: Path) -> None:
     # Un segment > 40 mots entre guillemets meme suivi de [1] reste rejete
-    corpus_file = tmp_book.parent / "0 - PDF-MD" / "1 - Compendium 2026.md"
+    corpus_file = tmp_book.parent / "0 - PDF-MD" / "Tome 1 - Confiance protocolaire et encadrement financier.md"
     long_50 = " ".join(f"termeunique{i}" for i in range(50))
     corpus_file.write_text(
         corpus_file.read_text(encoding="utf-8") + f"\n{long_50}.\n",
@@ -793,7 +793,7 @@ def test_check_deliverables_accepts_consolidated_pdf_md(tmp_book: Path) -> None:
     livrables = tmp_book / "livrables"
     consolidated_dir = tmp_book.parent / "0 - PDF-MD"
     html_out = livrables / "7 - Livre.html"
-    consolidated_md = consolidated_dir / "7 - Livre.md"
+    consolidated_md = consolidated_dir / "Tome 7 - Gouverner l'industrialisation cognitive.md"
     consolidated_pdf = consolidated_dir / "Tome 7 - Gouverner l'industrialisation cognitive.pdf"
 
     assert outputs["md"] == consolidated_md
@@ -873,7 +873,7 @@ def test_ca02_ca03_ca04_ca05_ca06_ca07_ca10_remediations(tmp_book: Path) -> None
     ch08.write_text(txt8, encoding="utf-8")
 
     # 4. CA-03 : renvoi [2] au milieu d'un 12-gramme et 2 collisions distinctes sur la meme ligne
-    compendium = tmp_book.parent / "0 - PDF-MD" / "1 - Compendium 2026.md"
+    compendium = tmp_book.parent / "0 - PDF-MD" / "Tome 1 - Confiance protocolaire et encadrement financier.md"
     compendium.write_text(
         compendium.read_text(encoding="utf-8")
         + "\nPremiere suite exacte de douze mots consecutifs distincts pour verifier le decoupage interne.\n"

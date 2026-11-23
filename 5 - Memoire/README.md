@@ -5,7 +5,7 @@
 ## Informations sur le document
 
 - **Source PDF** : [Tome 5 - Synthèse exécutive et concordance architecturale.pdf](../0%20-%20PDF-MD/Tome%205%20-%20Synth%C3%A8se%20ex%C3%A9cutive%20et%20concordance%20architecturale.pdf) (format `6,14 × 9,21 po` sous `Typst` via [`gabarit-pdf/`](../gabarit-pdf/README.md) · `4 913 012` octets / `~4,91 Mo`)
-- **Fichier Markdown complet** : [5 - Memoire.md](../0%20-%20PDF-MD/5%20-%20Memoire.md)
+- **Fichier Markdown complet** : [Tome 5 - Synthèse exécutive et concordance architecturale.md](../0%20-%20PDF-MD/Tome%205%20-%20Synth%C3%A8se%20ex%C3%A9cutive%20et%20concordance%20architecturale.md)
 - **Pages** : 175 (dont 4 liminaires couverture/notice/TDM et p. PDF 5–175 = pagination imprimée p. 1–171)
 - **Parties / Sections** : 5
 - **Unités extraites** : 27 (22 unités de contenu — 4 liminaires, 12 chapitres, 6 annexes — et 5 sommaires de section)

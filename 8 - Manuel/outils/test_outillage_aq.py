@@ -212,7 +212,7 @@ def _create_populated_vol8(
     trousse_dir = book_dir / "trousse"
     corpus_dir = tmp_path / "0 - PDF-MD"
     corpus_dir.mkdir(parents=True)
-    corpus_file = corpus_dir / "1 - Compendium 2026.md"
+    corpus_file = corpus_dir / "Tome 1 - Confiance protocolaire et encadrement financier.md"
     corpus_file.write_text(
         "# Compendium\n\n"
         "Loi sur la protection des renseignements personnels dans le secteur privé du Québec et ses règlements d'application.\n"
@@ -227,7 +227,7 @@ def _create_populated_vol8(
 
     manifest_path = book_dir / "specs" / "manifest.json"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-    manifest["internal_corpus_paths"] = ["../0 - PDF-MD/1 - Compendium 2026.md"]
+    manifest["internal_corpus_paths"] = ["../0 - PDF-MD/Tome 1 - Confiance protocolaire et encadrement financier.md"]
     manifest["stylistic_benchmarks_for_gauntlet"] = []
     manifest["stylistic_benchmark_sections"] = {}
     manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -837,7 +837,7 @@ def test_cli_echantillon_assemble_and_check_deliverables_end_to_end(tmp_vol8: Pa
 
     livrables = tmp_vol8 / "livrables"
     consolidated_dir = tmp_vol8.parent / "0 - PDF-MD"
-    assert (consolidated_dir / "8 - Manuel.md").is_file()
+    assert (consolidated_dir / "Tome 8 - Ingénierie exécutable et homologation vérifiable.md").is_file()
     assert (consolidated_dir / "Tome 8 - Ingénierie exécutable et homologation vérifiable.pdf").read_bytes().startswith(b"%PDF-")
     assert [p.name for p in livrables.iterdir()] == ["8 - Manuel.html"]
     assert "<figcaption>" not in (livrables / "8 - Manuel.html").read_text(encoding="utf-8")

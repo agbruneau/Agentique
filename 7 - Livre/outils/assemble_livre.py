@@ -267,15 +267,20 @@ def build_consolidated_markdown(
 
 
 def assemble_markdown(root: Path) -> tuple[Path, str, dict]:
-    """Assemble le fichier consolide ../0 - PDF-MD/<root.name>.md et retourne (path, body_sans_yaml, meta)."""
+    """Assemble le fichier consolide ../0 - PDF-MD/<livrable>.md et retourne (path, body_sans_yaml, meta)."""
     root = _resolve_book_root(root)
+    manifest = json.loads((root / "specs" / "manifest.json").read_text(encoding="utf-8"))
+    deliv = manifest.get("deliverables", {}) if root.name == "7 - Livre" else {}
     full_md, body_only, meta = build_consolidated_markdown(
         root, image_prefix=f"../{root.name}/diagrammes/rendus"
     )
     consolidated_dir = root.parent / "0 - PDF-MD"
     consolidated_dir.mkdir(parents=True, exist_ok=True)
-    md_out = consolidated_dir / f"{root.name}.md"
-    md_out.write_text(full_md, encoding="utf-8")
+    if root.name == "7 - Livre" and isinstance(deliv, dict) and deliv.get("md"):
+        md_out = (root / str(deliv["md"])).resolve()
+    else:
+        md_out = consolidated_dir / f"{root.name}.md"
+    md_out.write_text(full_md, encoding="utf-8", newline="\n")
     _clean_residual_livrables(root)
     return md_out, body_only, meta
 

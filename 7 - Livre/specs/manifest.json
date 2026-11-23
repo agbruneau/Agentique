@@ -17,7 +17,7 @@
     "human_role": "upstream_specs_and_gate_thresholds_only"
   },
   "deliverables": {
-    "md": "../0 - PDF-MD/7 - Livre.md",
+    "md": "../0 - PDF-MD/Tome 7 - Gouverner l'industrialisation cognitive.md",
     "pdf": "../0 - PDF-MD/Tome 7 - Gouverner l'industrialisation cognitive.pdf",
     "html": "livrables/7 - Livre.html",
     "pdf_title": "Tome 7 — Gouverner l'industrialisation cognitive",
@@ -63,12 +63,12 @@
     "En conclusion, nous avons vu que"
   ],
   "internal_corpus_paths": [
-    "../0 - PDF-MD/1 - Compendium 2026.md",
-    "../0 - PDF-MD/2 - Cadre de Référence.md",
-    "../0 - PDF-MD/3 - Compendium 2027.md",
-    "../0 - PDF-MD/4 - Plan Directeur.md",
-    "../0 - PDF-MD/5 - Memoire.md",
-    "../0 - PDF-MD/6 - Livre Blanc.md",
+    "../0 - PDF-MD/Tome 1 - Confiance protocolaire et encadrement financier.md",
+    "../0 - PDF-MD/Tome 2 - Cadre normatif et exigences d'architecture.md",
+    "../0 - PDF-MD/Tome 3 - Ingénierie du tissu conjonctif et état de l'art.md",
+    "../0 - PDF-MD/Tome 4 - Prospective stratégique et trajectoire 2028-2035.md",
+    "../0 - PDF-MD/Tome 5 - Synthèse exécutive et concordance architecturale.md",
+    "../0 - PDF-MD/Tome 6 - Architecture multisectorielle et patrons de référence.md",
     "../3 - Compendium 2027/00 - Ouverture - Architecture et gouvernance du tissu conjonctif agentique.md",
     "../3 - Compendium 2027/10 - Partie X - Recherche scientifique/Chapitre 48 - Revue de littérature.md",
     "../3 - Compendium 2027/10 - Partie X - Recherche scientifique/Chapitre 50 - Projection 2027-2030 et étude de marché.md",

@@ -1461,12 +1461,16 @@ def _check_deliverables(root: Path, manifest: dict) -> list[str]:
     root = Path(root) if Path(root).is_absolute() and Path(root).name else Path(root).resolve()
     book_stem = root.name
     html_name = f"{book_stem}.html"
-    md_name = f"{book_stem}.md"
     liv_dir = root / "livrables"
     consolidated_dir = root.parent / "0 - PDF-MD"
     html_out = liv_dir / html_name
-    consolidated_md = consolidated_dir / md_name
     deliv = manifest.get("deliverables", {})
+    if book_stem == "7 - Livre" and isinstance(deliv, dict) and deliv.get("md"):
+        consolidated_md = (root / str(deliv["md"])).resolve()
+        md_name = consolidated_md.name
+    else:
+        md_name = f"{book_stem}.md"
+        consolidated_md = consolidated_dir / md_name
     if book_stem == "7 - Livre" and isinstance(deliv, dict) and deliv.get("pdf"):
         consolidated_pdf = (root / str(deliv["pdf"])).resolve()
         pdf_name = consolidated_pdf.name

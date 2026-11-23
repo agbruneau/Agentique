@@ -5,7 +5,7 @@
 ## Informations sur le document
 
 - **Source PDF** : [Tome 1 - Confiance protocolaire et encadrement financier.pdf](../0%20-%20PDF-MD/Tome%201%20-%20Confiance%20protocolaire%20et%20encadrement%20financier.pdf) (format `6,14 × 9,21 po` sous `Typst` via [`gabarit-pdf/`](../gabarit-pdf/README.md) · `17 132 203` octets / `~17,13 Mo`)
-- **Fichier Markdown complet** : [1 - Compendium 2026.md](../0%20-%20PDF-MD/1%20-%20Compendium%202026.md)
+- **Fichier Markdown complet** : [Tome 1 - Confiance protocolaire et encadrement financier.md](../0%20-%20PDF-MD/Tome%201%20-%20Confiance%20protocolaire%20et%20encadrement%20financier.md)
 - **Pages** : 1 135 (dont 5 liminaires couverture/notice/TDM et p. PDF 6–1 135 = pagination imprimée p. 1–1 130)
 - **Parties / Sections** : 6
 - **Unités extraites** : 62 (56 unités de contenu — 3 liminaires, 50 chapitres, 3 annexes — et 6 sommaires de section)
