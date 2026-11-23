@@ -1,5 +1,7 @@
 # Annexes — Instruments de travail de l’architecte
 
+[Retour au sommaire du document](../README.md)
+
 Annexe A — Tables de concordance 2026-2035 et pont CAP/PEX vers EXIG-\*
 
 Annexe B — Catalogue de poche des décisions d’architecture AE / AS

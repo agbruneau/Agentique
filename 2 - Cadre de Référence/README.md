@@ -1,14 +1,16 @@
 # Interopérabilité et orchestration en entreprise agentique
 
+[Retour à l'index principal du dépôt](../README.md)
+
 ## Informations sur le document
 
 - **Source PDF** : [2 - Cadre de Référence.pdf](../0%20-%20PDF-MD/2%20-%20Cadre%20de%20R%C3%A9f%C3%A9rence.pdf)
 - **Fichier Markdown complet** : [2 - Cadre de Référence.md](../0%20-%20PDF-MD/2%20-%20Cadre%20de%20R%C3%A9f%C3%A9rence.md)
 - **Pages** : 351
 - **Parties / Sections** : 5
-- **Unités extraites** : 35
-- **Diagrammes (Mermaid / PlantUML)** : [Diagrammes/README.md](Diagrammes/README.md) (28 diagrammes — 25 PlantUML, 3 Mermaid)
-- **Statistiques du texte complet** : 187,424 mots · 8,780 lignes
+- **Unités extraites** : 35 (30 unités de contenu — 7 liminaires, 15 chapitres, 8 annexes — et 5 sommaires de section)
+- **Diagrammes (PlantUML / Mermaid)** : [Diagrammes/README.md](Diagrammes/README.md) (28 diagrammes — 25 PlantUML, 3 Mermaid)
+- **Statistiques du texte complet** : 187 424 mots · 8 780 lignes
 
 ## Table des matières
 

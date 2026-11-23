@@ -1,14 +1,16 @@
 # Interopérabilité et Orchestration en Entreprise Agentique
 
+[Retour à l'index principal du dépôt](../README.md)
+
 ## Informations sur le document
 
 - **Source PDF** : [6 - Livre Blanc.pdf](../0%20-%20PDF-MD/6%20-%20Livre%20Blanc.pdf)
 - **Fichier Markdown complet** : [6 - Livre Blanc.md](../0%20-%20PDF-MD/6%20-%20Livre%20Blanc.md)
 - **Pages** : 251
 - **Parties / Sections** : 6
-- **Unités extraites** : 27
-- **Diagrammes (Mermaid / PlantUML)** : [Diagrammes/README.md](Diagrammes/README.md) (59 diagrammes — 56 PlantUML, 3 Mermaid)
-- **Statistiques du texte complet** : 95,924 mots · 5,487 lignes
+- **Unités extraites** : 28 (22 unités de contenu — 3 liminaires, 15 chapitres, 4 annexes — et 6 sommaires de section)
+- **Diagrammes (PlantUML / Mermaid)** : [Diagrammes/README.md](Diagrammes/README.md) (59 diagrammes — 56 PlantUML, 3 Mermaid)
+- **Statistiques du texte complet** : 95 924 mots · 5 487 lignes
 
 ## Table des matières
 

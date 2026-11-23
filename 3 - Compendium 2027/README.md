@@ -1,14 +1,16 @@
 # Interopérabilité et Orchestration en Entreprise Agentique — Compendium 2027
 
+[Retour à l'index principal du dépôt](../README.md)
+
 ## Informations sur le document
 
 - **Source PDF** : [3 - Compendium 2027.pdf](../0%20-%20PDF-MD/3%20-%20Compendium%202027.pdf)
 - **Fichier Markdown complet** : [3 - Compendium 2027.md](../0%20-%20PDF-MD/3%20-%20Compendium%202027.md)
-- **Pages** : 1117
+- **Pages** : 1 117
 - **Parties / Sections** : 11
-- **Unités extraites** : 73
-- **Diagrammes (Mermaid / PlantUML)** : [Diagrammes/README.md](Diagrammes/README.md) (68 diagrammes — 68 PlantUML, 0 Mermaid)
-- **Statistiques du texte complet** : 440,977 mots · 28,594 lignes
+- **Unités extraites** : 73 (62 unités de contenu — 4 liminaires, 50 chapitres, 8 annexes — et 11 sommaires de section)
+- **Diagrammes (PlantUML / Mermaid)** : [Diagrammes/README.md](Diagrammes/README.md) (68 diagrammes — 68 PlantUML, 0 Mermaid)
+- **Statistiques du texte complet** : 440 977 mots · 28 594 lignes
 
 ## Table des matières
 

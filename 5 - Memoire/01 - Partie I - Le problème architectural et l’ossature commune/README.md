@@ -1,5 +1,7 @@
 # Partie I — Le problème architectural et l’ossature commune
 
+[Retour au sommaire du document](../README.md)
+
 Chapitre 1 — Constat empirique, thèse centrale et économie de la preuve
 
 Chapitre 2 — Architecture de référence unifiée, noyau possédé et réconciliation des modèles (DIV-02)

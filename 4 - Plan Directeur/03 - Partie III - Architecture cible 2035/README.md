@@ -1,5 +1,7 @@
 # Partie III — Architecture cible 2035
 
+[Retour au sommaire du document](../README.md)
+
 Chapitre M-9 — Principes et modèle de référence
 
 Chapitre M-10 — Carte des capacités cibles

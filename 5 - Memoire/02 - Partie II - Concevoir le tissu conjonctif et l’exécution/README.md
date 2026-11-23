@@ -1,5 +1,7 @@
 # Partie II — Concevoir le tissu conjonctif et l’exécution : le chantier de l’architecte de solutions
 
+[Retour au sommaire du document](../README.md)
+
 Chapitre 3 — Couche protocolaire (MCP, A2A, événements), passerelle à neuf contrôles et anti-verrouillage
 
 Chapitre 4 — Sémantique métier, compilation du contexte, mémoire CoALA et encapsulation patrimoniale/OT

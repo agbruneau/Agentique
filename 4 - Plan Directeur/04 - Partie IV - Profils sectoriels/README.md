@@ -1,5 +1,7 @@
 # Partie IV — Profils sectoriels
 
+[Retour au sommaire du document](../README.md)
+
 Chapitre M-14 — Banque
 
 Chapitre M-15 — Gestion de patrimoine

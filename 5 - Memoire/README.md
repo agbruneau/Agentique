@@ -1,14 +1,16 @@
 # Interopérabilité et Orchestration en Entreprise Agentique — Architecture de référence, patrons de solutions et trajectoire 2026-2035 — Mémoire sous forme de livre blanc à l’intention des architectes d’entreprise et des architectes de solutions
 
+[Retour à l'index principal du dépôt](../README.md)
+
 ## Informations sur le document
 
 - **Source PDF** : [5 - Memoire.pdf](../0%20-%20PDF-MD/5%20-%20Memoire.pdf)
 - **Fichier Markdown complet** : [5 - Memoire.md](../0%20-%20PDF-MD/5%20-%20Memoire.md)
 - **Pages** : 125
 - **Parties / Sections** : 5
-- **Unités extraites** : 27
-- **Diagrammes (Mermaid / PlantUML)** : [Diagrammes/README.md](Diagrammes/README.md) (8 diagrammes — 8 PlantUML, 0 Mermaid)
-- **Statistiques du texte complet** : 62,285 mots · 2,523 lignes
+- **Unités extraites** : 27 (22 unités de contenu — 4 liminaires, 12 chapitres, 6 annexes — et 5 sommaires de section)
+- **Diagrammes (PlantUML / Mermaid)** : [Diagrammes/README.md](Diagrammes/README.md) (8 diagrammes — 8 PlantUML, 0 Mermaid)
+- **Statistiques du texte complet** : 62 285 mots · 2 523 lignes
 
 ## Table des matières
 

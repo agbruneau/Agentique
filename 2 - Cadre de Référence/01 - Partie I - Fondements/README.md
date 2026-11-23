@@ -1,5 +1,7 @@
 # Partie I — Fondements
 
+[Retour au sommaire du document](../README.md)
+
 Pourquoi un cadre commun, ce qu’il couvre, le vocabulaire partagé et les principes qui tranchent les décisions d’architecture.
 
 1 · Objet, portée et mode d’emploi

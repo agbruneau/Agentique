@@ -1,5 +1,7 @@
 # Partie V — Ingénierie de plateforme, blueprints de référence et transformation
 
+[Retour au sommaire du document](../README.md)
+
 ---
 
 ## Sommaire de la section

@@ -1,5 +1,7 @@
 # Partie III — Orchestration, chorégraphie et exécution durable
 
+[Retour au sommaire du document](../README.md)
+
 ---
 
 ## Sommaire de la section

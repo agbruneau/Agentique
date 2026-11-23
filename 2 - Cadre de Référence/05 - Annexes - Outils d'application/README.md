@@ -1,6 +1,8 @@
 # Annexes — Outils d’application
 
-Grille d’homologation, gabarit de fiche d’agent, exemples de contrats, registre des exigences, glossaire, validation des sources et des ébauches, références.
+[Retour au sommaire du document](../README.md)
+
+Grille d’homologation, gabarit de fiche d’agent, exemples de contrats, registre des exigences, glossaire, validation des sources et des ébauches, références et actualisation de novembre 2026.
 
 A · Grille d’homologation
 
@@ -15,6 +17,8 @@ E · Glossaire
 F · Validation des sources et des ébauches
 
 G · Références
+
+H · Actualisation de novembre 2026
 
 ---
 

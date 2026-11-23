@@ -1,5 +1,7 @@
 # Partie IV — Orchestration
 
+[Retour au sommaire du document](../README.md)
+
 Chapitre 16 — Topologies et patrons
 
 Chapitre 17 — Déterministe ou agentique

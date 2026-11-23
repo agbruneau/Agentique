@@ -1,5 +1,7 @@
 # Partie IX — Approfondissements
 
+[Retour au sommaire du document](../README.md)
+
 Chapitre 44 — Plan de données d’inférence et routage cognitif
 
 Chapitre 45 — Réseaux B2B fédérés et négociation entre agents

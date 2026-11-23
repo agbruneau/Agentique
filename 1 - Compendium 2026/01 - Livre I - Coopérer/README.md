@@ -1,5 +1,7 @@
 # Livre I — Coopérer
 
+[Retour au sommaire du document](../README.md)
+
 *Fondements de l’interopérabilité et couche protocolaire agentique*
 
 ---

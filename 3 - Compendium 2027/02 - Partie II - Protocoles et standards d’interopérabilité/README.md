@@ -1,5 +1,7 @@
 # Partie II — Protocoles et standards d’interopérabilité
 
+[Retour au sommaire du document](../README.md)
+
 Chapitre 5 — MCP : le protocole agent-outil
 
 Chapitre 6 — A2A : le protocole agent-agent

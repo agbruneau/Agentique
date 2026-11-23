@@ -1,5 +1,7 @@
 # Annexes
 
+[Retour au sommaire du document](../README.md)
+
 Annexe A — Glossaire français-anglais
 
 Annexe B — Fiches protocoles

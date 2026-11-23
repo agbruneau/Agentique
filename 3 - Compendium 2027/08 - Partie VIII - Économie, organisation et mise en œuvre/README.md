@@ -1,5 +1,7 @@
 # Partie VIII — Économie, organisation et mise en œuvre
 
+[Retour au sommaire du document](../README.md)
+
 Chapitre 40 — FinOps agentique
 
 Chapitre 41 — Modèle opérationnel

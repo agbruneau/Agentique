@@ -1,5 +1,7 @@
 # Partie IV — Gouverner, conformer et cadencer la trajectoire : le chantier de l’architecte d’entreprise
 
+[Retour au sommaire du document](../README.md)
+
 Chapitre 10 — Conformité dès la conception (Canada, Québec, UE) et déclinaison des cinq profils financiers
 
 Chapitre 11 — Modèle opérationnel à trois lignes, usine logicielle interne et approvisionnement réversible

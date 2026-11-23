@@ -1,5 +1,7 @@
 # Partie X — Recherche scientifique
 
+[Retour au sommaire du document](../README.md)
+
 Chapitre 48 — Revue de littérature
 
 Chapitre 49 — Veille technologique

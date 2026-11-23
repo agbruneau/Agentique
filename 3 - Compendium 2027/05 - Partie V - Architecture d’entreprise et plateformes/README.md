@@ -1,5 +1,7 @@
 # Partie V — Architecture d’entreprise et plateformes
 
+[Retour au sommaire du document](../README.md)
+
 Chapitre 23 — Architecture de référence
 
 Chapitre 24 — Passerelles et intégration

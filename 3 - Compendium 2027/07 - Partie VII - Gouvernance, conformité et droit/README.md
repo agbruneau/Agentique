@@ -1,5 +1,7 @@
 # Partie VII — Gouvernance, conformité et droit
 
+[Retour au sommaire du document](../README.md)
+
 Chapitre 35 — Cadres internationaux
 
 Chapitre 36 — Responsabilité

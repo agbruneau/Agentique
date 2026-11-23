@@ -1,5 +1,7 @@
 # Partie II — Prospective 2028-2035
 
+[Retour au sommaire du document](../README.md)
+
 Chapitre M-3 — Calendrier réglementaire et prudentiel
 
 Chapitre M-4 — Calendrier de normalisation et standards de données sectoriels

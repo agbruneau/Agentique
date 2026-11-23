@@ -1,5 +1,7 @@
 # Livre V — Livrer et clore
 
+[Retour au sommaire du document](../README.md)
+
 *L’agent comme livrable logiciel, horizon et frontière*
 
 ---

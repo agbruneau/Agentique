@@ -1,5 +1,7 @@
 # Partie I — Fondations architecturales de l’entreprise agentique
 
+[Retour au sommaire du document](../README.md)
+
 ---
 
 ## Sommaire de la section

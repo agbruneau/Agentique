@@ -1,5 +1,7 @@
 # Partie VI — Confiance : identité, sécurité, observabilité
 
+[Retour au sommaire du document](../README.md)
+
 Chapitre 29 — Identité agentique
 
 Chapitre 30 — Autorisation et délégation

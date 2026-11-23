@@ -1,37 +1,74 @@
-# Manuel Volume 8 — *Ingénierie exécutable de l'entreprise agentique*
+# 8 - Manuel : *Ingénierie exécutable de l'entreprise agentique*
 
-Ce répertoire contient les sources éditoriales, les registres structurés (`SSOT`), le corpus documentaire vérifié (`L+`), les diagrammes, les journaux d'assurance qualité (`G0`–`G5`) et l'outillage de génération du manuel Volume 8. Le dépôt compagnon exécutable réside dans `../8 - Trousse/` (`MIT`).
+*Manuel de spécifications testables, harnais 80/20, médiation MCP/A2A, délégation bornée, politiques OPA hors modèle, sémantique d'effet Saga et suite EvalOps vérifiable (non-avis)*
 
-> **Statut non-avis :** cet ouvrage et son dépôt compagnon relèvent d'un régime technique strictement hors modèle exécuté sur doublures synthétiques (`DC-P12`). Ils ne constituent ni un avis juridique, ni une certification réglementaire formelle.
+> [Retour à l'index principal du dépôt](../README.md) · Trousse compagnon exécutable : [`8 - Trousse/`](../8%20-%20Trousse/README.md)
 
----
+> **État actuel** : **Ouvrage livré et vérifié (`v1.0`)** — Auteur : **André-Guy Bruneau, M.Sc IT**; gel des faits : **2 décembre 2026** (`2026-12-02`); édition de référence : **janvier 2027** (horizon `2026–2035`); licences `CC-BY-4.0` (texte et figures) et `MIT` (`8 - Trousse/` et outillage `outils/`).
+>
+> **Statut `non-avis` (`AO-05` / `DC-P12`)** : cet ouvrage et son dépôt compagnon [`8 - Trousse/`](../8%20-%20Trousse/README.md) relèvent d'un régime technique strictement hors modèle exécuté sur doublures synthétiques et vecteurs tiers hors ligne. Ils ne constituent ni un avis juridique, ni un conseil réglementaire personnalisé, ni une certification d'audit ou actuarielle, ni une homologation `BSIF E-23`, `AMF`, `ISO/IEC 42001` ou `Loi 25` sur un *System of Record* (`SoR`) réel.
 
-## Livrables publiés
+Manuel technique concis et exécutable conçu pour traduire les prescriptions architecturales, normes protocolaires et exigences de gouvernance de la collection en contrats typés, politiques `OPA / Rego` fermées par défaut, sémantique d'effet Saga et suite `EvalOps` hermétique. Rédigé et vérifié de bout en bout par des agents cloisonnés sur cahier des charges humain, sans bloc de code rédigé à la main dans la prose (`14` extraits `CA-G0-SYNC` injectés et scellés `SHA-256` depuis [`8 - Trousse/`](../8%20-%20Trousse/README.md)) et avec réancrage intégral sur sources primaires ouvertes `L+`.
 
-- **Édition Markdown consolidée :** `../0 - PDF-MD/8 - Manuel.md` (`CC BY 4.0`)
-- **Édition imprimée PDF (`6,14 × 9,21 po`, corps `10,6 pt`, Typst) :** `../0 - PDF-MD/8 - Manuel.pdf` (`CC BY 4.0`)
-- **Édition HTML autonome :** `./livrables/8 - Manuel.html` (seul fichier conservé dans `livrables/`)
-- **Trousse compagnon exécutable :** `../8 - Trousse/` (`Python 3.12+`, `OPA / Rego`, licence `MIT`)
+## Informations sur le document
 
-## Arborescence principale
+- **Source PDF intégrale** : [8 - Manuel.pdf](../0%20-%20PDF-MD/8%20-%20Manuel.pdf) (`311` pages physiques dont `4` liminaires couverture/notice/TDM et `p. 5–311` pour le corps et les annexes = pagination imprimée / TDM `p. 1–307`, format `6,14 × 9,21 po` sous `Typst`, `8 285 434` octets / `~8,29 Mo`, consolidée dans [0 - PDF-MD/](../0%20-%20PDF-MD/README.md))
+- **Fichier Markdown complet** : [8 - Manuel.md](../0%20-%20PDF-MD/8%20-%20Manuel.md) (`86 528` mots `split()` · `3 125` lignes · `670 885` octets · images préfixées `../8 - Manuel/diagrammes/rendus/`, consolidé dans [0 - PDF-MD/](../0%20-%20PDF-MD/README.md))
+- **Édition HTML autonome** : [8 - Manuel.html](livrables/8%20-%20Manuel.html) (`1 951 814` octets / `~1,95 Mo`, seul livrable conservé dans [`livrables/`](livrables/))
+- **Trousse compagnon exécutable** : [`8 - Trousse/`](../8%20-%20Trousse/README.md) (`Python >= 3.12`, `OPA` CLI `v1.22.4` `Apache-2.0`, `4` modules Python, `3` paquets `.rego` + `3` suites `*_test.rego` à `100 %` de couverture, `13` schémas `JSON Schema Draft 2020-12`, `4` suites officielles de vecteurs tiers [`50` fichiers], `6` fichiers `pytest` [`83` tests réussis], licence `MIT`)
+- **Parties / Sections** : Liminaire, 2 parties et 1 bloc d'annexes
+- **Unités du manuscrit** : `7` unités (Liminaire, 4 chapitres, 2 annexes régénérées depuis les registres `SSOT`)
+- **Diagrammes (PlantUML / Mermaid)** : [`diagrammes/README.md`](diagrammes/README.md) (`9` diagrammes originaux — `7` PlantUML `.puml` avec rendus vectoriels `.svg`, `2` Mermaid `.mmd` avec rendus haute résolution `.png` à `300 DPI`, bornés entre `10` et `14` nœuds chacun)
+- **Statistiques et métriques vérifiées (`v1.0`, gel du 2 décembre 2026)** :
+  - `40 294` mots `G1` (`37 230` narratifs + `3 064` annexes — dans la plage [`manifest.json`](specs/manifest.json) `[34 960, 41 040]`, cible `38 000 ± 8 %` ; `86 528` mots bruts `split()` dans l'édition consolidée)
+  - `95` sources primaires ouvertes `L+` hachées `SHA-256` (`0,0 %` de `METADATA_ONLY`, `10` URL exclues en statut `F` dans [`registre-statut-f.json`](recherche/registre-statut-f.json))
+  - `4` suites officielles de vecteurs tiers (`50` fichiers scellés dans [`vectors-manifest.json`](../8%20-%20Trousse/vectors/vectors-manifest.json) : `rfc8785`, `nist_acvp`, `a2a_tck`, `owasp_src055`) et `14` extraits `CA-G0-SYNC` (`<= 40` lignes) scellés par `SHA-256`
+  - `6` barrières AQ `G0`–`G5` validées : `G0` ([`rapports-g0.json`](aq/rapports-g0.json) `PASS` `exit 0` : `83/83` `pytest`, `45/45` `OPA` à `100,0 %`, `21` vérifications schémas/registres, `4/4` vecteurs tiers, `18` paquets / `50` fichiers `MIT`), `G1` (`verifie_manuscrit.py --strict --check-deliverables` `exit 0`), `G2` (`5/5` journaux Wyvern : `580 -> 577` affirmations actives `100 % supportées`), `G3` (`60/60` sur [`recollation-seed-20270801.md`](aq/recollation-seed-20270801.md) [`57/60 -> 60/60`] et `60/60` à froid sur [`recollation-seed-20270802.md`](aq/recollation-seed-20270802.md) [`59/60 -> 60/60`]), `G4` ([`gauntlet-log.md`](aq/gauntlet-log.md) : `4/5` unités victorieuses face aux étalons français et `ch01` corrigée au plafond de 2 tours) et `G5` ([`rapport-lissage-et-visuel.md`](aq/rapport-lissage-et-visuel.md) : lissage transversal contre-ancré à `100 %`, inspection visuelle de `314` pages au premier tirage puis `311` pages finales avec `0` dépassement horizontal et `189` liens `/URI` non tronqués)
+- **Édition et licences** : André-Guy Bruneau, M.Sc IT · gel des faits au 2 décembre 2026 (`2026-12-02`) · édition janvier 2027 · `CC-BY-4.0` (manuel et figures) et `MIT` (`8 - Trousse/` et outillage `outils/`)
 
-- `manuscrit/` : liminaire (`00 - Liminaire.md`, cible `3 500` mots `± 8 %`), Partie I (`Chapitre 01`, `Chapitre 02`), Partie II (`Chapitre 03`, `Chapitre 04`), et Annexes générées (`Annexe A`, `Annexe B`), pour un budget global cible de `38 000` mots `± 8 %`.
-- `diagrammes/` : sources et rendus des `9` figures originales (`Fig-00`..`Fig-03`, `Fig-05`..`Fig-07` en PlantUML SVG ; `Fig-04` et `Fig-08` en Mermaid PNG `300 DPI`), bornées entre `10` et `14` nœuds chacune.
-- `specs/` et `registre/` : contrat éditorial, manifeste `manifest.json`, matrice de traçabilité `matrice-exig-prr-c40.json` (`24 [BLOQUANT] PRR`, `40` critères `C01–C40`, `5 SBB`, `2027-B001`) et table canonique des `5` discordances (`concordance-taxonomies.json`).
-- `recherche/` et `sources/` : manifeste `L+` des `95` sources vérifiées par `SHA-256`, registre `statut F` (`AO-01`) et fiches bibliographiques chapitres (`ch00`–`ch04`).
-- `ancrage/` et `aq/` : journaux atomiques Wyvern (`G2`), recollations stratifiées `G3` (`20270801` et `20270802`), journal adversarial `G4` (`gauntlet-log.md`), rapport `G0` (`rapports-g0.json`) et rapport `G5`/visuel (`rapport-lissage-et-visuel.md`).
-- `outils/` : scripts déterministes `verifie_specs.py`, `execute_g0.py`, `compile_figures.py`, `genere_annexes.py`, `assemble_livre.py`, `verifie_manuscrit.py`, `echantillon_aq.py`, gabarit Typst (`gabarit-livre.typ`) et tests `pytest` (`test_outillage_aq.py`).
+## Table des matières
 
-## Chaîne de reproduction hors ligne (`Python 3.12+`)
+> *Note sur la pagination* : Les plages ci-dessous indiquent la page **PDF physique** suivie entre parenthèses de la **pagination imprimée / table des matières** (`impr. = PDF - 4`, après couverture, notice et TDM).
 
-Exécuter depuis la racine du dépôt (`Agentique/`) dans l'ordre suivant :
+- [Liminaire — De la norme en prose au contrat exécutable : concordance, frontière hors modèle et méthode G0–G5](manuscrit/00%20-%20Liminaire.md) (p. PDF 5–16 / impr. 1–12)
+- **Partie I — Harnais déterministe et confiance cryptographique** (p. PDF 17 / impr. 13)
+  - [Chapitre 01 — Harnais déterministe 80/20 à huit étapes et médiation protocolaire épinglée (MCP 2026-07-28, A2A v1.0.1)](manuscrit/01%20-%20Partie%20I/Chapitre%2001%20-%20Harnais%20deterministe%20et%20mediation%20protocolaire.md) (p. PDF 18–47 / impr. 14–43)
+  - [Chapitre 02 — Identité non humaine, délégation bornée à deux sauts, choc post-quantique (ML-DSA) et double couloir probatoire (OTel, JCS, SCITT, SLH-DSA, FOCUS)](manuscrit/01%20-%20Partie%20I/Chapitre%2002%20-%20Identite%20non%20humaine%2C%20PQC%20et%20double%20couloir.md) (p. PDF 48–78 / impr. 44–74)
+- **Partie II — Politiques hors modèle, sémantique d'effet et homologation vérifiable** (p. PDF 79 / impr. 75)
+  - [Chapitre 03 — Politiques hors modèle (OPA / Rego), Règle de deux, confinement déterministe et sémantique d'effet Saga à dix scénarios de fautes](manuscrit/02%20-%20Partie%20II/Chapitre%2003%20-%20Politiques%20OPA%20hors%20modele%20et%20Sagas.md) (p. PDF 80–109 / impr. 76–105)
+  - [Chapitre 04 — Banc EvalOps hermétique (pass^k, bornes de Wilson, tests métamorphiques) et validation mécanique des 24 portes bloquantes et trois blueprints](manuscrit/02%20-%20Partie%20II/Chapitre%2004%20-%20Banc%20EvalOps%20hermetique%20et%2024%20portes%20PRR.md) (p. PDF 110–135 / impr. 106–131)
+- **Annexes — Instruments de référence** (p. PDF 136 / impr. 132)
+  - [Annexe A — Socle de spécifications primaires L+ hachées SHA-256, registre statut F et journal intégral d'ancrage atomique Wyvern (G2)](manuscrit/03%20-%20Annexes/Annexe%20A%20-%20Socle%20L-plus%2C%20statut%20F%20et%20journal%20Wyvern.md) (p. PDF 137–295 / impr. 133–291)
+  - [Annexe B — Matrice de traçabilité (EXIG-* / CAP-* / PRR-75 / C01–C40 / 5 SBB), catalogue des vecteurs tiers, rapports CI G0 et bilan d'assurance qualité G0–G5 & CA-16](manuscrit/03%20-%20Annexes/Annexe%20B%20-%20Tracabilite%2C%20vecteurs%20tiers%20et%20bilan%20AQ.md) (p. PDF 296–311 / impr. 292–307)
+
+## Chaîne probatoire, spécifications et outillage
+
+- [`specs/`](specs/) — Spécifications amont du Volume 8 (`v1.1`) : cahier des charges ([`prd.md`](specs/prd.md)), table des matières contractuelle ([`toc.md`](specs/toc.md)), contrat machine ([`manifest.json`](specs/manifest.json)), charte éditoriale ([`charte-editoriale.md`](specs/charte-editoriale.md)), architecture logicielle et barrière `G0` ([`architecture-trousse-g0.md`](specs/architecture-trousse-g0.md)), protocole de revue ouverte ([`protocole-mlr-2027.json`](specs/protocole-mlr-2027.json)), contrat et plan d'assurance qualité ([`contrat-aq.md`](specs/contrat-aq.md), [`plan-production-aq.md`](specs/plan-production-aq.md)), prompt de lancement ([`prompt-lancement.md`](specs/prompt-lancement.md)) et journal de validation ([`validation-specs.md`](specs/validation-specs.md)).
+- [`specs-volume-8/`](specs-volume-8/) — Copie archivée des sept spécifications Markdown amont (`prd.md`, `toc.md`, `charte-editoriale.md`, `architecture-trousse-g0.md`, `contrat-aq.md`, `plan-production-aq.md`, `validation-specs.md`), complétée par le [`prompt-lancement.md`](prompt-lancement.md) conservé à la racine de `8 - Manuel/`.
+- [`registre/`](registre/) — Six sources uniques de vérité (`SSOT`) réancrées `l_plus` : `10` ancres chronologiques ([`ancres-chronologiques.json`](registre/ancres-chronologiques.json)), `10` faits empiriques ([`faits-empiriques.json`](registre/faits-empiriques.json)), `24` entrées de glossaire ([`glossaire-termes.json`](registre/glossaire-termes.json)), `46` spécifications `L+` ([`specifications-lplus.json`](registre/specifications-lplus.json)), `95` correspondances de traçabilité `EXIG` / `PRR-75` / `C01–C40` / `5 SBB` / `2027-B001` ([`matrice-exig-prr-c40.json`](registre/matrice-exig-prr-c40.json)) et `5` arbitrages de discordances ([`concordance-taxonomies.json`](registre/concordance-taxonomies.json)).
+- [`recherche/`](recherche/) — Corpus probant ouvert : `95` textes intégraux `UTF-8` dans [`corpus_l_plus/`](recherche/corpus_l_plus/), manifeste d'empreintes ([`manifeste-sources-sha256.json`](recherche/manifeste-sources-sha256.json)), catalogue ([`catalogue_mlr_2027.json`](recherche/catalogue_mlr_2027.json)), journal de collecte ([`journal-collecte-mlr.json`](recherche/journal-collecte-mlr.json)) et `10` URL exclues en statut `F` ([`registre-statut-f.json`](recherche/registre-statut-f.json)).
+- [`sources/`](sources/) — Cinq bases fermées de références ([`ch00-sources.md`](sources/ch00-sources.md) à [`ch04-sources.md`](sources/ch04-sources.md)) reliant chaque renvoi `[n]` du texte aux identifiants `SRC-NNN` vérifiés au plus tard le `2 décembre 2026`.
+- [`ancrage/`](ancrage/) — Cinq journaux d'audit atomique Wyvern (`G2`, [`ch00-ancrage.md`](ancrage/ch00-ancrage.md) à [`ch04-ancrage.md`](ancrage/ch04-ancrage.md)) attestant la couverture à `100 % supporté` des `577` affirmations actives (`580` initiales).
+- [`aq/`](aq/) — Rapports des vérifications indépendantes : rapport exécutable `G0` ([`rapports-g0.json`](aq/rapports-g0.json)), double recollation stratifiée à l'aveugle `G3` (`60/60` sur [`recollation-seed-20270801.md`](aq/recollation-seed-20270801.md) / [`recollation-seed-20270801.json`](aq/recollation-seed-20270801.json) et `60/60` à froid sur [`recollation-seed-20270802.md`](aq/recollation-seed-20270802.md) / [`recollation-seed-20270802.json`](aq/recollation-seed-20270802.json)), journal comparatif `G4` ([`gauntlet-log.md`](aq/gauntlet-log.md)) et bilan de lissage `G5` / inspection visuelle finale ([`rapport-lissage-et-visuel.md`](aq/rapport-lissage-et-visuel.md)).
+- [`outils/`](outils/) — Chaîne mécanique déterministe (`MIT`) et suites de tests (`14` scripts/tests Python et gabarit Typst) : utilitaires communs ([`_communs.py`](outils/_communs.py)), validation des spécifications ([`verifie_specs.py`](outils/verifie_specs.py)), barrière `G0` ([`execute_g0.py`](outils/execute_g0.py)), collecte `MLR` ouverte ([`collecte_mlr_ouverte.py`](outils/collecte_mlr_ouverte.py)), validation/compilation des `9` figures ([`compile_figures.py`](outils/compile_figures.py)), génération des annexes ([`genere_annexes.py`](outils/genere_annexes.py)), échantillonnage stratifié ([`echantillon_aq.py`](outils/echantillon_aq.py)), barrière `G1` ([`verifie_manuscrit.py`](outils/verifie_manuscrit.py)), assemblage `MD`/`HTML`/`PDF` ([`assemble_livre.py`](outils/assemble_livre.py), [`gabarit-livre.typ`](outils/gabarit-livre.typ)) et suites unitaires ([`test_verifie_specs.py`](outils/test_verifie_specs.py), [`test_execute_g0.py`](outils/test_execute_g0.py), [`test_collecte_mlr.py`](outils/test_collecte_mlr.py), [`test_compile_figures.py`](outils/test_compile_figures.py), [`test_outillage_aq.py`](outils/test_outillage_aq.py)).
+- [`sources-locales/README.md`](sources-locales/README.md) — Emplacement local hors Git (exclu par [`.gitignore`](.gitignore)) destiné aux documents licites non téléchargeables en accès ouvert (`0` fichier local requis pour le corpus `L+` du Volume 8).
+- [`8 - Trousse/`](../8%20-%20Trousse/README.md) — Dépôt compagnon exécutable (`Python >= 3.12`, `OPA v1.22.4`, `4` modules Python, `3` paquets Rego, `13` schémas, `4` suites de vecteurs tiers, `83` tests `pytest` et `45` tests `OPA`).
+
+## Vérification mécanique
+
+Depuis la racine du dépôt (`Agentique/`), sans générer de caches Python ni `pytest` :
 
 ```powershell
-C:\Python314\python.exe -B "8 - Manuel/outils/verifie_specs.py"
-C:\Python314\python.exe -B "8 - Manuel/outils/execute_g0.py"
-C:\Python314\python.exe -B "8 - Manuel/outils/compile_figures.py" --strict --check-only
-C:\Python314\python.exe -B "8 - Manuel/outils/genere_annexes.py"
-C:\Python314\python.exe -B "8 - Manuel/outils/assemble_livre.py" --all
-C:\Python314\python.exe -B "8 - Manuel/outils/verifie_manuscrit.py" --strict --check-deliverables
-C:\Python314\python.exe -B -m pytest -p no:cacheprovider "8 - Manuel/outils" -v
+python -B "8 - Manuel/outils/verifie_specs.py"
+python -B "8 - Manuel/outils/compile_figures.py" --strict --check-only
+python -B "8 - Manuel/outils/verifie_manuscrit.py" --strict --check-deliverables
+python -B -m pytest -p no:cacheprovider "8 - Manuel/outils"
 ```
+
+Pour exécuter la barrière logicielle `G0` sur [`8 - Trousse/`](../8%20-%20Trousse/README.md) avec son environnement épinglé (`8 - Trousse/.venv`, ou `.venv/bin/python` sous Linux/macOS) :
+
+```powershell
+& "8 - Trousse\.venv\Scripts\python.exe" -B "8 - Manuel\outils\execute_g0.py" --verify-sync-manifest
+```
+
+> *Astuce pour un contrôle en lecture seule sans modifier l'horodatage de [`aq/rapports-g0.json`](aq/rapports-g0.json)* : ajouter `--output <chemin-temporaire.json>`. Pour régénérer les annexes et les trois éditions livrables, exécuter au préalable `python -B "8 - Manuel/outils/genere_annexes.py"` puis `python -B "8 - Manuel/outils/assemble_livre.py" --all`.

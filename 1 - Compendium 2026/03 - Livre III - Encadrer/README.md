@@ -1,5 +1,7 @@
 # Livre III — Encadrer
 
+[Retour au sommaire du document](../README.md)
+
 *Orchestration en entreprise, cadre réglementaire canadien et terrain financier* (la Figure 21.9)
 
 ---

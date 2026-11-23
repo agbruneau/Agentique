@@ -1,5 +1,7 @@
 # Partie VI — Pilotage
 
+[Retour au sommaire du document](../README.md)
+
 Chapitre M-24 — Pilotage, indicateurs et portes
 
 Chapitre M-25 — Signaux, registre de veille et révision

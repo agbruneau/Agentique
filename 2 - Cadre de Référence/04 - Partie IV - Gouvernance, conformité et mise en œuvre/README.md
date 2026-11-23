@@ -1,5 +1,7 @@
 # Partie IV — Gouvernance, conformité et mise en œuvre
 
+[Retour au sommaire du document](../README.md)
+
 Qui décide et répond de quoi, quelles obligations s’appliquent, comment acheter, mesurer la maturité et déployer le cadre.
 
 11 · Gouvernance et cycle de vie

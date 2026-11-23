@@ -1,5 +1,7 @@
 # Livre II — Faire confiance
 
+[Retour au sommaire du document](../README.md)
+
 *Identité, délégation et fabrique de confiance — émission, confiance hostile, horloge post-quantique*
 
 ---

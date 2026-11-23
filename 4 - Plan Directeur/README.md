@@ -1,14 +1,16 @@
 # Interopérabilité et Orchestration en Entreprise Agentique — Prospective, architecture cible et plan directeur 2028-2035
 
+[Retour à l'index principal du dépôt](../README.md)
+
 ## Informations sur le document
 
 - **Source PDF** : [4 - Plan Directeur.pdf](../0%20-%20PDF-MD/4%20-%20Plan%20Directeur.pdf)
 - **Fichier Markdown complet** : [4 - Plan Directeur.md](../0%20-%20PDF-MD/4%20-%20Plan%20Directeur.md)
 - **Pages** : 400
 - **Parties / Sections** : 7
-- **Unités extraites** : 45
-- **Diagrammes (Mermaid / PlantUML)** : [Diagrammes/README.md](Diagrammes/README.md) (6 diagrammes — 6 PlantUML, 0 Mermaid)
-- **Statistiques du texte complet** : 175,685 mots · 5,934 lignes
+- **Unités extraites** : 45 (38 unités de contenu — 4 liminaires, 26 chapitres, 8 annexes — et 7 sommaires de section)
+- **Diagrammes (PlantUML / Mermaid)** : [Diagrammes/README.md](Diagrammes/README.md) (6 diagrammes — 6 PlantUML, 0 Mermaid)
+- **Statistiques du texte complet** : 175 685 mots · 5 934 lignes
 
 ## Table des matières
 

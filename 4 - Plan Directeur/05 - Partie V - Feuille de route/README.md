@@ -1,5 +1,7 @@
 # Partie V — Feuille de route
 
+[Retour au sommaire du document](../README.md)
+
 Chapitre M-19 — Analyse d’écarts
 
 Chapitre M-20 — Palier 1, 2028-2029

@@ -1,5 +1,7 @@
 # Partie III — Bâtir la fabrique de confiance et l’exploitation : le socle partagé AE / AS
 
+[Retour au sommaire du document](../README.md)
+
 Chapitre 7 — Fabrique de confiance : NHI, 2e saut, défense anti-injection et transition PKI / post-quantique
 
 Chapitre 8 — Observabilité à double couloir PII, journal d’audit JCS, évaluation E1–E3 et FinOps CPO

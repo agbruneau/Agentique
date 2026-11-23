@@ -1,5 +1,7 @@
 # Partie I — Cadrage et point de départ
 
+[Retour au sommaire du document](../README.md)
+
 Chapitre M-1 — Objet, lecteurs, méthode et degrés de certitude
 
 Chapitre M-2 — Point de départ : état de référence 2027 et stades de départ par sous-secteur

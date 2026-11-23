@@ -1,5 +1,7 @@
 # Partie II — Architecture, interopérabilité et orchestration
 
+[Retour au sommaire du document](../README.md)
+
 Comment les agents se branchent aux systèmes, collaborent entre eux et sont orchestrés, et jusqu’où ils peuvent agir seuls.
 
 5 · Architecture de référence

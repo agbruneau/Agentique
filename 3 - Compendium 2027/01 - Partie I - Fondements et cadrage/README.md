@@ -1,5 +1,7 @@
 # Partie I — Fondements et cadrage
 
+[Retour au sommaire du document](../README.md)
+
 Chapitre 1 — L’entreprise agentique
 
 Chapitre 2 — Généalogie

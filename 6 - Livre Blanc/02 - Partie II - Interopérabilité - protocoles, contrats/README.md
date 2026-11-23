@@ -1,5 +1,7 @@
 # Partie II — Interopérabilité : protocoles, contrats et patrimoine applicatif
 
+[Retour au sommaire du document](../README.md)
+
 ---
 
 ## Sommaire de la section

@@ -1,5 +1,7 @@
 # Annexes
 
+[Retour au sommaire du document](../README.md)
+
 Annexe A — Calendrier consolidé 2027-2035
 
 Annexe B — Registre des capacités

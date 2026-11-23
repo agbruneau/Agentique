@@ -1,5 +1,7 @@
 # Annexes
 
+[Retour au sommaire du document](../README.md)
+
 ---
 
 ## Sommaire de la section

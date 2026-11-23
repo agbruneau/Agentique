@@ -1,5 +1,7 @@
 # Partie III — Interopérabilité sémantique, données et contexte
 
+[Retour au sommaire du document](../README.md)
+
 Chapitre 12 — Couche sémantique et ontologies
 
 Chapitre 13 — Ingénierie du contexte
